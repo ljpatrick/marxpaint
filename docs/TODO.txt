@@ -116,6 +116,16 @@ PLATFORM-SPECIFIC BUGS:
 
 HIGH-PRIORITY TRANSLATION STUFF:
 --------------------------------
+  * Non-ASCII characters (in translations) aren't uppercased when using
+    '--uppercase'. Example: In the Norwegian Nynorsk ('nn') translation
+    the top left icon is shown as 'MåLING' instead of 'MÅLING'.
+    To fix: Convert to wide chars, use 'towupper' instead of 'toupper',
+    and convert back to UTF-8. 'mbstowcs' and 'wcstombs' unfortunately
+    depend on on LC_CTYPE, so the encoding they use is locale dependent
+    (and *not* necessarily UTF-8, which our strings are in). On the other
+    hand, 'towupper' must be locale-aware for correct conversion (e.g. a
+    Turkish uppercase 'i' is *not* an 'I').
+
   * Make right-to-left strings not wordwrap with the shortest line at
     the top!
 
