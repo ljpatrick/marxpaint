@@ -2048,6 +2048,9 @@ static void groupfonts(void)
 typedef struct stamp_type {
   double ratio;
   char *stxt;
+#ifndef NOSOUND
+  Mix_Chunk *ssnd;
+#endif
   unsigned tinter : 3;
   unsigned colorable : 1;
   unsigned tintable : 1;
@@ -2066,9 +2069,6 @@ static int num_stamps;
 static SDL_Surface * img_stamps[MAX_STAMPS];
 static SDL_Surface * img_stamps_premirror[MAX_STAMPS];
 static stamp_type * stamp_data[MAX_STAMPS];
-#ifndef NOSOUND
-static Mix_Chunk * snd_stamps[MAX_STAMPS];
-#endif
 static SDL_Surface * img_stamp_thumbs[MAX_STAMPS],
   * img_stamp_thumbs_premirror[MAX_STAMPS];
 
@@ -3303,7 +3303,7 @@ static void mainloop(void)
                             {
                               toolopt_changed = 1;
 #ifndef NOSOUND
-                              if (cur_tool != TOOL_STAMP || snd_stamps[which] == NULL)
+                              if (cur_tool != TOOL_STAMP || stamp_data[which]->ssnd == NULL)
                                 { 
                                   playsound(1, SND_BLEEP, 0);
                                 }
@@ -3539,8 +3539,8 @@ static void mainloop(void)
                           if (toolopt_changed)
                             {
                               // Only play when picking a different stamp
-                              if (snd_stamps[cur_thing] != NULL)
-                                Mix_PlayChannel(2, snd_stamps[cur_thing], 0);
+                              if (stamp_data[cur_thing]->ssnd != NULL)
+                                Mix_PlayChannel(2, stamp_data[cur_thing]->ssnd, 0);
                             }
 #endif
 
@@ -6831,7 +6831,7 @@ static void loadstamp_callback(const char *restrict const dir, unsigned dirlen, 
               // we have a stamp; finalize it
 #ifndef NOSOUND
               if (use_sound)
-                snd_stamps[num_stamps] = loadsound(fname);
+                stamp_data[num_stamps]->ssnd = loadsound(fname);
 #endif
               loadstamp_finisher(num_stamps);
               num_stamps++;       // FIXME: no limit and no resizing right now...
@@ -12043,6 +12043,13 @@ static void cleanup(void)
 
   for (i = 0; i < num_stamps; i++)
     {
+#ifndef NOSOUND
+      if (stamp_data[i]->ssnd)
+        {
+	  Mix_FreeChunk(stamp_data[i]->ssnd);
+	  stamp_data[i]->ssnd = NULL;
+	}
+#endif
       if (stamp_data[i]->stxt)
 	{
 	  free(stamp_data[i]->stxt);
@@ -12180,15 +12187,6 @@ static void cleanup(void)
 	    {
 	      Mix_FreeChunk(sounds[i]);
 	      sounds[i] = NULL;
-	    }
-	}
-
-      for (i = 0; i < num_stamps; i++)
-	{
-	  if (snd_stamps[i])
-	    {
-	      Mix_FreeChunk(snd_stamps[i]);
-	      snd_stamps[i] = NULL;
 	    }
 	}
 
