@@ -3848,9 +3848,20 @@ void setup(int argc, char * argv[])
 #endif
 
 
-  /* Load options from .rc file: */
+  /* Load options from user's own configuration (".rc" / ".cfg") file: */
 
-#if !defined(WIN32) && !defined(__BEOS__)
+#if defined(WIN32) || defined(__BEOS__)
+  /* Windows and BeOS: Use a "tuxpaint.cfg" file: */
+  
+  strcpy(str, "tuxpaint.cfg");
+
+//#elif __APPLE__
+  /* Mac: ??? */
+  /* FIXME! */
+  
+#else
+  /* Linux and other Unixes:  Use 'rc' style (~/.tuxpaintrc) */
+  
   if (getenv("HOME") != NULL)
   {
     /* Should it be "~/.tuxpaint/tuxpaintrc" instead???
@@ -3860,10 +3871,11 @@ void setup(int argc, char * argv[])
   }
   else
   {
+    /* WOAH! We don't know what our home directory is!? Last resort,
+       do it Windows/BeOS way: */
+
     strcpy(str, "tuxpaint.cfg");
   }
-#else
-  strcpy(str, "tuxpaint.cfg");
 #endif
 
 
@@ -8084,21 +8096,41 @@ char * get_fname(char * name)
   const char * tux_settings_dir;
 
 
+  /* Where is the user's data directory?
+     This is where their saved files are stored,
+     local fonts, brushes and stamps can be found,
+     and where the "current_id.txt" file is saved */
+
 #ifdef WIN32
+  /* Windows predefines "savedir" as "userdata", though it may get
+     overridden with "--savedir" option */
+
   snprintf(f, sizeof(f), "%s/%s", savedir, name);
+
 #elif __BEOS__
+  /* BeOS similarly predefines "savedir" as "./userdata"... */
+ 
   if (*name == '\0')
     strcpy(f, savedir);
   else
     snprintf(f, sizeof(f), "%s/%s", savedir, name);
 #else
-
+  /* On Mac, Linux and other Unixes, it's in a place under our home dir.: */
+  
+  
 #ifdef __APPLE__
+  /* Macintosh: It's under ~/Library/Preferences/tuxpaint */
+  
   tux_settings_dir = "Library/Preferences/tuxpaint";
 #else
+  /* Linux & Unix: It's under ~/.tuxpaint */
+  
   tux_settings_dir = ".tuxpaint";
 #endif
  
+
+  /* Put together home directory path + settings directory + filename... */
+  
   if (savedir == NULL)
   {
     /* Save directory not overridden: */
@@ -8119,14 +8151,25 @@ char * get_fname(char * name)
     }
     else
     {
+      /* WOAH!  Don't know where HOME directory is!  Last resort, use '.'! */
+
       strcpy(f, name);
     }
   }
   else
   {
-    printf("savedir set to: %s\n", savedir);
+    /* User had overridden save directory with "--savedir" option: */
 
-    snprintf(f, sizeof(f), "%s/%s", savedir, name);
+    if (*name == '\0')
+    {
+      /* (Some mkdir()'s don't like trailing slashes) */
+
+      snprintf(f, sizeof(f), "%s/%s", savedir, name);
+    }
+    else
+    {
+      snprintf(f, sizeof(f), "%s", savedir);
+    }
   }
 #endif
 
