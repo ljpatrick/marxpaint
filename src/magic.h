@@ -37,6 +37,7 @@ enum {
   MAGIC_THIN,
 
   MAGIC_FILL,
+  MAGIC_SMUDGE,
   
   NUM_MAGICS
 };
@@ -63,7 +64,8 @@ const char * const magic_names[NUM_MAGICS] = {
   gettext_noop("Thick"),
   gettext_noop("Thin"),
 
-  gettext_noop("Fill")
+  gettext_noop("Fill"),
+  gettext_noop("Smudge"),
 };
 
 
@@ -88,7 +90,8 @@ const char * const magic_tips[NUM_MAGICS] = {
   gettext_noop("Click and move the mouse to thicken the picture."),
   gettext_noop("Click and move the mouse to thin the picture."),
 
-  gettext_noop("Click in the picture to fill that area with color.")
+  gettext_noop("Click in the picture to fill that area with color."),
+  gettext_noop("Click and move the mouse around to smudge the picture."),
 };
 
 
@@ -113,7 +116,8 @@ const char * const magic_img_fnames[NUM_TOOLS] = {
   DATA_PREFIX "images/magic/thick.png",
   DATA_PREFIX "images/magic/thin.png",
 
-  DATA_PREFIX "images/magic/fill.png"
+  DATA_PREFIX "images/magic/fill.png",
+  DATA_PREFIX "images/magic/blur.png",  // FIXME: this is the smudge tool
 };
 
 

@@ -727,8 +727,8 @@ typedef struct dirent2 {
 static void mainloop(void);
 static void brush_draw(int x1, int y1, int x2, int y2, int update);
 static void blit_brush(int x, int y);
-static void magic_draw(int x1, int y1, int x2, int y2);
-static void blit_magic(int x, int y);
+static void magic_draw(int x1, int y1, int x2, int y2, int button_down);
+static void blit_magic(int x, int y, int button_down);
 static void stamp_draw(int x, int y);
 static void rec_undo_buffer(void);
 static void update_canvas(int x1, int y1, int x2, int y2);
@@ -2104,8 +2104,6 @@ static void mainloop(void)
 		{
 		  /* Draw something! */
 		  
-		  button_down = 1;
-		  
 		  old_x = event.button.x - 96;
 		  old_y = event.button.y;
 		  
@@ -2232,7 +2230,7 @@ static void mainloop(void)
 		     
 		      if (cur_magic != MAGIC_FILL)
 			{
-			  magic_draw(old_x, old_y, old_x, old_y);
+			  magic_draw(old_x, old_y, old_x, old_y, button_down);
 			}
 		      else
 			{
@@ -2284,7 +2282,8 @@ static void mainloop(void)
 		      do_render_cur_text(0);
 		    }
 		  
-		  
+		  button_down = 1;
+
 		  /* Make sure these commands are available now: */
 		  
 		  if (tool_avail[TOOL_NEW] == 0)
@@ -2818,7 +2817,7 @@ static void mainloop(void)
 			  cur_magic != MAGIC_MIRROR &&
 			  cur_magic != MAGIC_FILL)
 			{
-			  magic_draw(old_x, old_y, new_x, new_y);
+			  magic_draw(old_x, old_y, new_x, new_y, button_down);
 			}
 		    }
 		  else if (cur_tool == TOOL_ERASER)
@@ -3914,7 +3913,7 @@ static void stamp_draw(int x, int y)
 
 /* Draw using the current brush: */
 
-static void magic_draw(int x1, int y1, int x2, int y2)
+static void magic_draw(int x1, int y1, int x2, int y2, int button_down)
 {
   int dx, dy, y;
   int orig_x1, orig_y1, orig_x2, orig_y2, tmp;
@@ -3952,12 +3951,12 @@ static void magic_draw(int x1, int y1, int x2, int y2)
           if (y1 > y2)
 	    {
 	      for (y = y1; y >= y2; y--)
-		blit_magic(x1, y);
+		blit_magic(x1, y, button_down);
 	    }
           else
 	    {
 	      for (y = y1; y <= y2; y++)
-		blit_magic(x1, y);
+		blit_magic(x1, y, button_down);
 	    }
 	
 	  x1 = x1 + dx;
@@ -3968,12 +3967,12 @@ static void magic_draw(int x1, int y1, int x2, int y2)
       if (y1 > y2)
 	{
 	  for (y = y1; y >= y2; y--)
-	    blit_magic(x1, y);
+	    blit_magic(x1, y, button_down);
 	}
       else
 	{
 	  for (y = y1; y <= y2; y++)
-	    blit_magic(x1, y);
+	    blit_magic(x1, y, button_down);
 	}
     }
 
@@ -4029,7 +4028,7 @@ static void magic_draw(int x1, int y1, int x2, int y2)
 
 /* Draw the current brush in the current color: */
 
-static void blit_magic(int x, int y)
+static void blit_magic(int x, int y, int button_down)
 {
   int xx, yy, w, h;
   Uint32 colr;
@@ -4162,6 +4161,36 @@ static void blit_magic(int x, int y)
 	  SDL_UnlockSurface(canvas);
 	  SDL_UnlockSurface(last);
 	}
+      else if (cur_magic == MAGIC_SMUDGE)
+	{
+	  static double state[32][32][3];
+	  unsigned i = 32*32;
+	  double rate = button_down ? 0.5 : 0.0;
+
+	  SDL_LockSurface(last);
+	  SDL_LockSurface(canvas);
+
+	  while (i--)
+	    {
+	      int iy = i>>5;
+	      int ix = i&0x1f;
+	      // is it not on the circle of radius sqrt(120) at location 16,16?
+	      if ( (ix-16)*(ix-16) + (iy-16)*(iy-16) > 120)
+	        continue;
+	      // it is on the circle, so grab it
+
+	      //SDL_GetRGB(getpixel(last, x+ix-16, y+iy-16), last->format, &r, &g, &b);
+	      SDL_GetRGB(getpixel(canvas, x+ix-16, y+iy-16), last->format, &r, &g, &b);
+	      state[ix][iy][0] = rate*state[ix][iy][0] + (1.0-rate)*sRGB_to_linear_table[r];
+	      state[ix][iy][1] = rate*state[ix][iy][1] + (1.0-rate)*sRGB_to_linear_table[g];
+	      state[ix][iy][2] = rate*state[ix][iy][2] + (1.0-rate)*sRGB_to_linear_table[b];
+
+	      // opacity 100% --> new data not blended w/ existing data
+	      putpixel(canvas, x+ix-16, y+iy-16, SDL_MapRGB(canvas->format, linear_to_sRGB(state[ix][iy][0]), linear_to_sRGB(state[ix][iy][1]), linear_to_sRGB(state[ix][iy][2])));
+	    }
+	  SDL_UnlockSurface(canvas);
+	  SDL_UnlockSurface(last);
+	}
       else if (cur_magic == MAGIC_NEGATIVE)
 	{
 	  SDL_LockSurface(last);
@@ -4171,8 +4200,6 @@ static void blit_magic(int x, int y)
 	    {
 	      for (xx = x - 16; xx < x + 16; xx++)
 		{
-		  /* Get average color around here: */
-		
 		  SDL_GetRGB(getpixel(last, xx, yy), last->format,
 			     &r, &g, &b);
 	
