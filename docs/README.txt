@@ -1012,8 +1012,6 @@ Fonts
          options, for those who don't want to use Tux Paint Config.
        * [26]PNG.txt
          Notes on creating PNG format images for use in Tux Paint
-       * [27]TODO.txt
-         A list of pending features or bugs needing fixed
 
    ---------------------------------------------------------------------------
 

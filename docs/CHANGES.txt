@@ -8,6 +8,10 @@ http://www.newbreedsoftware.com/tuxpaint/
 
 
 2004.November.21 (0.9.15)
+  * Removed TODO.txt file and moved all bugs
+    and feature requests to the SourceForge
+    tracker: http://sourceforge.net/tracker/?group_id=66938
+
   * Updated Norwegian Bokmal translation.
     Klaus Ade Johnstad <klaus@skolelinux.no>
 
