@@ -39,9 +39,8 @@
 
 
 // plan to rip this out as soon as it is considered stable
-#ifndef NO_THREADS
-#define THREADED_FONTS
-#endif
+//#define THREADED_FONTS
+#define FORKED_FONTS
 
 /* Method for printing images: */
 
@@ -322,6 +321,9 @@ extern char* g_win32_getlocale(void);
 
 static SDL_Thread *font_thread;
 static volatile long font_thread_done;
+static void run_font_scanner(void);
+static int font_scanner_pid;
+static int font_socket_fd;
 
 #include "tools.h"
 #include "titles.h"
@@ -1544,6 +1546,8 @@ static style_info **user_font_styles;
 static int num_font_styles;
 static int num_font_styles_max;
 
+static void receive_some_font_info(void);
+
 static TTF_Font *getfonthandle(int desire)
 {
   family_info *fi = user_font_families[desire];
@@ -2407,6 +2411,10 @@ static void eat_startup_events(void)
 
 int main(int argc, char * argv[])
 {
+#ifdef FORKED_FONTS
+  run_font_scanner();
+#endif
+
   /* Set up locale support */
   setlocale(LC_ALL, "");
 
@@ -2998,6 +3006,9 @@ static void mainloop(void)
                               update_screen_rect(&r_toolopt);
                               update_screen_rect(&r_ttoolopt);
                               draw_tux_text(TUX_WAIT, "This is a slow computer with lots of fonts...", 1);
+#ifdef FORKED_FONTS
+                              receive_some_font_info();
+#else
                               while(!font_thread_done)
                                 {
                                   // FIXME: should respond to quit events
@@ -3007,6 +3018,7 @@ static void mainloop(void)
                                 }
                               // FIXME: should kill this in any case
                               SDL_WaitThread(font_thread, NULL);
+#endif
                             }
 		          draw_tux_text(tool_tux[cur_tool], tool_tips[cur_tool], 1);
 			  cur_thing = cur_font;
@@ -6513,7 +6525,7 @@ static void tp_ftw(char *restrict const dir, unsigned dirlen, int rsrc,
     }
 
   closedir(d);
-#if 1
+#if 0
 #ifndef THREADED_FONTS
   show_progress_bar();
   eat_startup_events();
@@ -6555,7 +6567,7 @@ static void loadfont_callback(const char *restrict const dir, unsigned dirlen, t
 {
   while(i--)
     {
-#if 1
+#if 0
 #ifndef THREADED_FONTS
       show_progress_bar();
       eat_startup_events();
@@ -6903,6 +6915,260 @@ static int load_user_fonts(void *vp)
   // FIXME: need a memory barrier here
   return 0; // useless, wanted by threading library
 }
+
+
+#ifdef FORKED_FONTS
+
+#include <sys/socket.h>
+#include <unistd.h>
+#include <fcntl.h>
+#include <sys/poll.h>
+#include <sys/wait.h>
+
+static void reliable_write(int fd, const void *buf, size_t count)
+{
+  do
+    {
+      ssize_t rc = write(fd,buf,count);
+      if(rc==-1)
+        {
+          switch(errno)
+            {
+              default:
+                return;
+              case EAGAIN:
+              case ENOSPC:
+                ; // satisfy a C syntax abomination
+                struct pollfd p = (struct pollfd){fd, POLLOUT, 0};
+                poll(&p, 1, -1);  // try not to burn CPU time
+                // FALL THROUGH
+              case EINTR:
+                continue;
+            }
+        }
+      buf += rc;
+      count -= rc;
+    } while(count);
+}
+
+
+static void reliable_read(int fd, void *buf, size_t count)
+{
+  do
+    {
+      ssize_t rc = read(fd,buf,count);
+      if(rc==-1)
+        {
+          switch(errno)
+            {
+              default:
+                return;
+              case EAGAIN:
+                ; // satisfy a C syntax abomination
+                struct pollfd p = (struct pollfd){fd, POLLIN, 0};
+                poll(&p, 1, -1);  // try not to burn CPU time
+                // FALL THROUGH
+              case EINTR:
+                continue;
+            }
+        }
+      if(rc==0)
+        break;  // EOF. Better not happen before the end!
+      buf += rc;
+      count -= rc;
+    } while(count);
+}
+
+
+static void run_font_scanner(void)
+{
+  int sv[2];
+  if(socketpair(AF_UNIX, SOCK_STREAM, 0, sv))
+    exit(42);
+  font_scanner_pid = fork();
+  if(font_scanner_pid)
+    {
+      // parent (or error -- but we're screwed in that case)
+      font_socket_fd = sv[0];
+      close(sv[1]);
+      return;
+    }
+  font_socket_fd = sv[1];
+  close(sv[0]);
+  reliable_read(font_socket_fd, &no_system_fonts, sizeof no_system_fonts);
+  SDL_Init(SDL_INIT_NOPARACHUTE);
+  TTF_Init();
+  load_user_fonts(NULL);
+  int size = 0;
+  int i = num_font_families;
+  while(i--)
+    {
+      char *s;
+      s = user_font_families[i]->directory;
+      if(s) size += strlen(s);
+      s = user_font_families[i]->family;
+      if(s) size += strlen(s);
+      s = user_font_families[i]->filename[0];
+      if(s) size += strlen(s);
+      s = user_font_families[i]->filename[1];
+      if(s) size += strlen(s);
+      s = user_font_families[i]->filename[2];
+      if(s) size += strlen(s);
+      s = user_font_families[i]->filename[3];
+      if(s) size += strlen(s);
+      size += 6;  // for '\0' on each of the above
+    }
+  size += 2;  // for 2-byte font count
+  char *buf = malloc(size);
+  char *walk = buf;
+//  printf("Sending %u bytes with %u families.\n", size, num_font_families);
+  *walk++ = num_font_families & 0xff;
+  *walk++ = num_font_families >> 8;
+  i = num_font_families;
+  while(i--)
+    {
+      int len;
+      char *s;
+
+      s = user_font_families[i]->directory;
+      if(s)
+        {
+          len = strlen(s);
+          memcpy(walk, s, len);
+          walk += len;
+        }
+      *walk++ = '\0';
+      
+      s = user_font_families[i]->family;
+      if(s)
+        {
+          len = strlen(s);
+          memcpy(walk, s, len);
+          walk += len;
+        }
+      *walk++ = '\0';
+      
+      s = user_font_families[i]->filename[0];
+      if(s)
+        {
+          len = strlen(s);
+          memcpy(walk, s, len);
+          walk += len;
+        }
+      *walk++ = '\0';
+      
+      s = user_font_families[i]->filename[1];
+      if(s)
+        {
+          len = strlen(s);
+          memcpy(walk, s, len);
+          walk += len;
+        }
+      *walk++ = '\0';
+      
+      s = user_font_families[i]->filename[2];
+      if(s)
+        {
+          len = strlen(s);
+          memcpy(walk, s, len);
+          walk += len;
+        }
+      *walk++ = '\0';
+      
+      s = user_font_families[i]->filename[3];
+      if(s)
+        {
+          len = strlen(s);
+          memcpy(walk, s, len);
+          walk += len;
+        }
+      *walk++ = '\0';
+    }
+  reliable_write(font_socket_fd, buf, size);
+  exit(0);
+}
+
+static void receive_some_font_info(void)
+{
+  char *buf = NULL;
+  unsigned buf_size = 0;
+  unsigned buf_fill = 0;
+  fcntl(font_socket_fd, F_SETFL, O_NONBLOCK);
+  for(;;)
+    {
+      if(buf_size <= buf_fill*9/8+128)
+        {
+          buf_size = buf_size*5/4+256;
+          buf = realloc(buf, buf_size);
+        }
+      ssize_t rc = read(font_socket_fd, buf+buf_fill, buf_size-buf_fill);
+//printf("read: fd=%d buf_fill=%u buf_size=%u rc=%ld\n", font_socket_fd, buf_fill, buf_size, rc);
+      if(rc==-1)
+        {
+          switch(errno)
+            {
+              default:
+                return;
+              case EAGAIN:
+                ; // satisfy a C syntax abomination
+                struct pollfd p = (struct pollfd){font_socket_fd, POLLIN, 0};
+                show_progress_bar();
+                poll(&p, 1, 29);  // try not to burn CPU time
+                continue;
+              case EINTR:
+                continue;
+            }
+        }
+      buf_fill += rc;
+      if(!rc)
+        break;
+    }
+  close(font_socket_fd);
+  show_progress_bar();
+  unsigned char *walk = buf;
+  num_font_families = *walk++;
+  num_font_families += *walk++ << 8;
+//  printf("Got %u bytes with %u families.\n", buf_fill, num_font_families);
+  user_font_families = malloc(num_font_families * sizeof *user_font_families);
+  family_info *fip = malloc(num_font_families * sizeof **user_font_families);
+  unsigned i = num_font_families;
+  while(i--)
+    {
+      user_font_families[i] = fip+i;
+      unsigned len;
+
+      len = strlen(walk);
+      user_font_families[i]->directory = len ? walk : NULL;
+      walk += len + 1;
+
+      len = strlen(walk);
+      user_font_families[i]->family = len ? walk : NULL;
+      walk += len + 1;
+
+      len = strlen(walk);
+      user_font_families[i]->filename[0] = len ? walk : NULL;
+      walk += len + 1;
+
+      len = strlen(walk);
+      user_font_families[i]->filename[1] = len ? walk : NULL;
+      walk += len + 1;
+
+      len = strlen(walk);
+      user_font_families[i]->filename[2] = len ? walk : NULL;
+      walk += len + 1;
+
+      len = strlen(walk);
+      user_font_families[i]->filename[3] = len ? walk : NULL;
+      walk += len + 1;
+
+      user_font_families[i]->handle = NULL;
+      
+      // score left uninitialized
+    }
+  waitpid(font_scanner_pid,NULL,0);
+  font_thread_done = 1;
+}
+#endif
 
 ////////////////////////////////////////////////////////////////////////////////
 /* Setup: */
@@ -7682,7 +7948,11 @@ static void setup(int argc, char * argv[])
   do_setcursor(cursor_watch);
   eat_startup_events();
 
+#ifdef FORKED_FONTS
+  reliable_write(font_socket_fd, &no_system_fonts, sizeof no_system_fonts);
+#else
   font_thread = SDL_CreateThread(load_user_fonts, NULL);
+#endif
 
   // continuing on with the rest of the cursors...
 
@@ -11871,6 +12141,9 @@ static void cleanup(void)
       large_font = NULL;
     }
 
+#ifdef FORKED_FONTS
+  free(user_font_families); // we'll leak the bodies... oh well
+#else
   for (i = 0; i < num_font_families; i++)
     {
       if (user_font_families[i])
@@ -11892,6 +12165,7 @@ static void cleanup(void)
 	  user_font_families[i] = NULL;
 	}
     }
+#endif
 
 #ifndef NOSOUND
   if (use_sound)
