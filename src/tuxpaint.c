@@ -1110,7 +1110,7 @@ static SDL_Rect r_colors; // was 544x48 @ 96,376
 static SDL_Rect r_ttools; // was 96x40 @ 0,0  (title for tools, "Tools")
 static SDL_Rect r_tcolors; // was 96x48 @ 0,376 (title for colors, "Colors")
 static SDL_Rect r_ttoolopt; // was 96x40 @ 544,0 (title for tool options)
-static SDL_Rect r_tuxarea; // was 640x56, though Tux can slop above
+static SDL_Rect r_tuxarea; // was 640x56
 
 static int button_w;  // was 48
 static int button_h;  // was 48
@@ -1947,7 +1947,7 @@ static SDL_Cursor * cursor_hand, * cursor_arrow, * cursor_watch,
 
 static int cur_tool, cur_color, cur_brush, cur_stamp, cur_shape, cur_magic;
 static int cur_font, cur_eraser;
-static int cursor_left, cursor_x, cursor_y, cursor_textwidth;
+static int cursor_left, cursor_x, cursor_y, cursor_textwidth; // canvas-relative
 static int been_saved;
 static char file_id[32];
 static char starter_id[32];
@@ -2578,16 +2578,10 @@ static void mainloop(void)
 			      texttool_len = 0;
 			      cursor_textwidth = 0;
 			    }
+			  int font_height = TTF_FontHeight(getfonthandle(cur_font));
 
 			  cursor_x = cursor_left;
-			  cursor_y = cursor_y + TTF_FontHeight(getfonthandle(cur_font));
-
-			  if (cursor_y > ((48 * 7 + 40 + HEIGHTOFFSET) -
-					  TTF_FontHeight(getfonthandle(cur_font))))
-			    {
-			      cursor_y = ((48 * 7 + 40 + HEIGHTOFFSET) -
-					  TTF_FontHeight(getfonthandle(cur_font)));
-			    }
+			  cursor_y = min(cursor_y+font_height, canvas->h-font_height);
 	    
 			  playsound(0, SND_RETURN, 1);
 			}
@@ -9573,37 +9567,26 @@ static void draw_tux_text(int which_tux, const char * const str,
   SDL_Rect dest;
   SDL_Color black = {0, 0, 0, 0};
 
-
   /* Remove any text-changing timer if one is running: */
-
   control_drawtext_timer(0, "");
 
-
   /* Clear first: */
-
-  dest.x = 0;
-  dest.y = (48 * 7) + 40 + 48 + HEIGHTOFFSET;
-  dest.w = WINDOW_WIDTH;
-  dest.h = WINDOW_HEIGHT - ((48 * 7) + 40 + 48 + HEIGHTOFFSET);
-
-  SDL_FillRect(screen, &dest, SDL_MapRGB(screen->format, 255, 255, 255));
-
+  SDL_FillRect(screen, &r_tuxarea, SDL_MapRGB(screen->format, 255, 255, 255));
 
   /* Draw tux: */
+  dest.x = r_tuxarea.x;
+  dest.y = r_tuxarea.y + r_tuxarea.h - img_tux[which_tux]->h;
 
-  dest.x = 0;
-  dest.y = WINDOW_HEIGHT - (img_tux[which_tux] -> h);
-
-  if (dest.y < ((48 * 7) + 40 + 48 + HEIGHTOFFSET))
-    dest.y = ((48 * 7) + 40 + 48 + HEIGHTOFFSET);
+  // if he's too tall to fit, go off the bottom (not top) edge
+  if (dest.y < r_tuxarea.y)
+    dest.y = r_tuxarea.y;
 
   SDL_BlitSurface(img_tux[which_tux], NULL, screen, &dest);
 
-
   wordwrap_text(str, black,
-	        img_tux[which_tux] -> w + 5,
-	        (48 * 7) + 40 + 48 + HEIGHTOFFSET,
-	        WINDOW_WIDTH,
+	        img_tux[which_tux]->w + 5,
+	        r_tuxarea.y,
+	        r_tuxarea.w,
 		want_right_to_left);
 
   update_screen_rect(&r_tuxarea);
