@@ -6,7 +6,7 @@
 # bill@newbreedsoftware.com
 # http://www.newbreedsoftware.com/tuxpaint/
 
-# June 14, 2002 - January 14, 2004
+# June 14, 2002 - January 21, 2004
 
 
 # Where to install things:
@@ -526,7 +526,7 @@ install-doc:
 	@echo "...Installing documentation..."
 	@install -d $(DOC_PREFIX)
 	@cp -R docs/* $(DOC_PREFIX)
-	@chmod a=rX,g=rX,o=rwX $(DOC_PREFIX)
+	@chmod a=rX,g=rX,u=rwX $(DOC_PREFIX)
 
 
 # Install the man page:
