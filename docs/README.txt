@@ -9,7 +9,7 @@
                            bill@newbreedsoftware.com
                    http://www.newbreedsoftware.com/tuxpaint/
 
-                          June 14, 2002 - May 16, 2004
+                          June 14, 2002 - May 30, 2004
 
      ----------------------------------------------------------------------
 
@@ -356,6 +356,12 @@ Options
                    When saving an existing drawing, you will be first asked
                    whether to save over the older version or not.
 
+           nosave=yes
+                   This disables Tux Paint's ability to save files (and
+                   therefore disables the on-screen "Save" button). It can be
+                   used in situations where the program is only being used
+                   for fun, or in a test environment.
+
            lang=LANGUAGE
 
                    Run Tux Paint in one of the supported languages. Possible
@@ -495,6 +501,7 @@ Options
            --savedir DIRECTORY
            --saveover
            --saveovernew
+           --nosave
            --lang LANGUAGE
                    These enable or correspond to the configuration file
                    options described above.
@@ -518,6 +525,7 @@ Options
            --dontmirrorstamps
            --mouse
            --saveoverask
+           --save
                    These options can be used to override any settings made in
                    the configuration file. (If the option isn't set in the
                    configuration file(s), no overriding option is necessary.)

@@ -21,12 +21,12 @@
   along with this program; if not, write to the Free Software
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   
-  June 14, 2002 - May 16, 2004
+  June 14, 2002 - May 30, 2004
 */
 
 
 #define VER_VERSION     "0.9.14"
-#define VER_DATE        "2004.05.16"
+#define VER_DATE        "2004.05.30"
 
 
 /* #define DEBUG */
@@ -428,7 +428,7 @@ int use_sound, fullscreen, disable_quit, simple_shapes, language,
   wheely, no_fancy_cursors, keymouse, mouse_x, mouse_y,
   mousekey_up, mousekey_down, mousekey_left, mousekey_right,
   dont_do_xor, use_print_config, dont_load_stamps, noshortcuts,
-  mirrorstamps, disable_stamp_controls;
+  mirrorstamps, disable_stamp_controls, disable_save;
 int recording, playing;
 char * playfile;
 FILE * demofi;
@@ -1296,7 +1296,9 @@ void mainloop(void)
 			  do_undo();
 			  
 			  been_saved = 0;
-			  tool_avail[TOOL_SAVE] = 1;
+
+			  if (!disable_save)
+			    tool_avail[TOOL_SAVE] = 1;
 			  
 			  cur_tool = old_tool;
 			  draw_toolbar();
@@ -1310,7 +1312,9 @@ void mainloop(void)
 			  do_redo();
 			  
 			  been_saved = 0;
-			  tool_avail[TOOL_SAVE] = 1;
+
+			  if (!disable_save)
+			    tool_avail[TOOL_SAVE] = 1;
 			  
 			  cur_tool = old_tool;
 			  draw_toolbar();
@@ -1926,7 +1930,10 @@ void mainloop(void)
 		  if (been_saved)
 		    {
 		      been_saved = 0;
-		      tool_avail[TOOL_SAVE] = 1;
+
+		      if (!disable_save)
+		        tool_avail[TOOL_SAVE] = 1;
+
 		      draw_toolbar();
 		      SDL_UpdateRect(screen,
 				     0, 0,
@@ -3762,6 +3769,7 @@ void show_usage(FILE * f, char * prg)
 	  "  %s [--nostampcontrols | --stampcontrols]\n"
 	  "  %s [--mirrorstamps | --dontmirrorstamps]\n"
 	  "  %s [--saveoverask | --saveover | --saveovernew]\n"
+	  "  %s [--nosave | --save]\n"
 	  "  %s [--savedir DIRECTORY]\n"
 #ifdef WIN32
 	  "  %s [--printcfg | --noprintcfg]\n"
@@ -3776,6 +3784,7 @@ void show_usage(FILE * f, char * prg)
 	  blank, blank, blank,
 	  blank, blank, blank,
 	  blank, blank, blank,
+	  blank,
 #ifdef WIN32
 	  blank,
 #endif
@@ -3960,6 +3969,7 @@ void setup(int argc, char * argv[])
   only_uppercase = 0;
   promptless_save = SAVE_OVER_PROMPT;
   disable_quit = 0;
+  disable_save = 0;
   disable_print = 0;
   dont_load_stamps = 0;
   print_delay = 0;
@@ -4189,6 +4199,14 @@ void setup(int argc, char * argv[])
       else if (strcmp(argv[i], "--quit") == 0)
 	{
 	  disable_quit = 0;
+	}
+      else if (strcmp(argv[i], "--nosave") == 0)
+	{
+	  disable_save = 1;
+	}
+      else if (strcmp(argv[i], "--save") == 0)
+	{
+	  disable_save = 0;
 	}
       else if (strcmp(argv[i], "--nostamps") == 0)
 	{
@@ -7270,6 +7288,12 @@ void reset_avail_tools(void)
     tool_avail[TOOL_QUIT] = 0;
 
 
+  /* Disable save? */
+
+  if (disable_save)
+    tool_avail[TOOL_SAVE] = 0;
+
+
 #ifdef WIN32
   if(!IsPrinterAvailable()) disallow_print = 1;
 #endif
@@ -9170,6 +9194,12 @@ int do_save(void)
 #endif
 
 
+  /* Was saving completely disabled? */
+
+  if (disable_save)
+    return 0;
+
+  
   if (promptless_save == SAVE_OVER_NO)
     {
       /* Never save over - _always_ save a new file! */
@@ -9547,7 +9577,7 @@ int do_quit(void)
 	           PROMPT_QUIT_YES,
 		   PROMPT_QUIT_NO);
 
-  if (done && !been_saved)
+  if (done && !been_saved && !disable_save)
     {
       if (do_prompt(PROMPT_QUIT_SAVE_TXT,
 		    PROMPT_QUIT_SAVE_YES,
@@ -10492,7 +10522,7 @@ int do_open(int want_new_tool)
 	    {
 	      /* Save old one first? */
 	  
-	      if (!been_saved)
+	      if (!been_saved && !disable_save)
 		{
 		  if (do_prompt(PROMPT_OPEN_SAVE_TXT,
 				PROMPT_OPEN_SAVE_YES,
@@ -12040,6 +12070,15 @@ void parse_options(FILE * fi)
 		   strcmp(str, "quit=yes") == 0)
 	    {
 	      disable_quit = 0;
+	    }
+	  else if (strcmp(str, "nosave=yes") == 0)
+	    {
+	      disable_save = 1;
+	    }
+	  else if (strcmp(str, "nosave=no") == 0 ||
+		   strcmp(str, "save=yes") == 0)
+	    {
+	      disable_save = 0;
 	    }
 	  else if (strcmp(str, "noprint=yes") == 0)
 	    {

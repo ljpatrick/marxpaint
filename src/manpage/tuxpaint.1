@@ -30,6 +30,7 @@ tuxpaint -- A drawing program for young children.
 [\-\-savedir \fIDIR\fP]
 [\-\-saveover]
 [\-\-saveovernew]
+[\-\-nosave]
 
 .TP 9
 .B tuxpaint
@@ -52,6 +53,7 @@ tuxpaint -- A drawing program for young children.
 [\-\-dontmirrorstamps]
 [\-\-mouse]
 [\-\-saveoverask]
+[\-\-save]
 
 .TP 9
 .B tuxpaint
@@ -213,6 +215,12 @@ If, when saving a picture, an older version of the file will be overwritten,
 can be disabled with \fI\-\-saveover\fP (which always saves over older versions
 of pictures) or \fI\-\-saveovernew\fP (which always saves a new file).
 The default is to prompt (\fI\-\-saveoverask\fP).
+
+.TP 8
+.B \-\-nosave \-\-save
+The \fInosave\fP option disables \fITux Paint's\fP ability to save files.
+This can be used in situations where the program is only being used for
+fun, or in a test environment.
 
 .SH OPTIONS - LANGUAGE
 .l
