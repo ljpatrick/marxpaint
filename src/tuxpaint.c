@@ -1447,7 +1447,6 @@ static SDL_Surface * img_tools[NUM_TOOLS], * img_tool_names[NUM_TOOLS];
 // split "Condensed" faces out into own family
 // group by family
 // end up with 34 user choices
-#define MAX_FONTS 256
 
 static int text_state;
 // nice progression (alternating 33% and 25%) 9 12 18 24 36 48 72 96 144 192
@@ -1456,7 +1455,7 @@ static int text_state;
 static int text_sizes[] = {9, 12, 18, 24, 36, 48,
 	                   56, 64, 96, 112, 128, 160};  // point sizes
 #define MIN_TEXT_SIZE 0u
-#define MAX_TEXT_SIZE (sizeof text_sizes / sizeof text_sizes[0])
+#define MAX_TEXT_SIZE (sizeof text_sizes / sizeof text_sizes[0] - 1)
 static unsigned text_size = 4;   // initial text size
 
 
@@ -1482,8 +1481,9 @@ typedef struct family_info {
 
 static TTF_Font * medium_font, * small_font, * large_font, * locale_font;
 
-static family_info * user_font_families[MAX_FONTS];
+static family_info **user_font_families;
 static int num_font_families;
+static int num_font_families_max;
 
 static style_info **user_font_styles;
 static int num_font_styles;
@@ -1788,6 +1788,12 @@ printf("               %s\n", base[i]->style);
           boldmap[0] = 0;
           //claimed_norm += boldcounts[0];
         }
+    }
+
+  if (num_font_families==num_font_families_max)
+    {
+      num_font_families_max = num_font_families_max * 5 / 4 + 30;
+      user_font_families = realloc(user_font_families, num_font_families_max * sizeof *user_font_families); 
     }
 
   family_info *fi = calloc(1, sizeof *fi);
@@ -3113,7 +3119,7 @@ static void mainloop(void)
                                   playsound(0, control_sound, 0);
                                   // need to invalidate all the cached user fonts, causing reload on demand
                                   int i;
-                                  for (i = 0; i < MAX_FONTS; i++)
+                                  for (i = 0; i < num_font_families; i++)
                                     {
                                       if (user_font_families[i] && user_font_families[i]->handle)
                                         {
@@ -11090,7 +11096,7 @@ static void cleanup(void)
       large_font = NULL;
     }
 
-  for (i = 0; i < MAX_FONTS; i++)
+  for (i = 0; i < num_font_families; i++)
     {
       if (user_font_families[i])
 	{
@@ -14120,7 +14126,7 @@ static void loadfonts(const char * const dir, int fatal)
 
   /* Do something with each file (load TTFs): */
 
-  for (i = 0; i < num_files /* && num_font_styles + 3 < MAX_FONTS */; i++)
+  for (i = 0; i < num_files; i++)
     {
       if (num_font_styles==num_font_styles_max)
         {
@@ -14194,19 +14200,8 @@ static void loadfonts(const char * const dir, int fatal)
 	      show_progress_bar();
 	    }
 	}
-
       free(d_names[i]);
     }
-
-#if 0
-  /* Give warning if too many files were found (e.g., some not loaded): */
-  if (num_font_styles == MAX_FONTS)
-    {
-      fprintf(stderr,
-	      "\nWarning: Reached maximum fonts (%d) which can be loaded.\n\n",
-	      MAX_FONTS);
-    }
-#endif
 }
 
 
