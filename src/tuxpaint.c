@@ -2055,10 +2055,17 @@ typedef struct stamp_type {
   char *stampname;
   SDL_Surface *full_norm;
   SDL_Surface *full_mirr;
-  SDL_Surface *thumb_norm;
-  SDL_Surface *thumb_mirr;
-  unsigned short w;
-  unsigned short h;
+
+  SDL_Surface *thumbnail;
+  unsigned thumb_mirrored : 1;
+  unsigned thumb_flipped : 1;
+  unsigned no_premirror : 1;
+
+  unsigned no_sound : 1;
+  unsigned no_txt : 1;
+  unsigned no_dat : 1;
+  unsigned no_local_sound : 1;
+
   unsigned tinter : 3;
   unsigned colorable : 1;
   unsigned tintable : 1;
@@ -2070,6 +2077,9 @@ typedef struct stamp_type {
   unsigned min : 5;
   unsigned size : 5;
   unsigned max : 5;
+
+  unsigned short w;
+  unsigned short h;
 } stamp_type;
 
 static int num_stamps;
@@ -6724,6 +6734,89 @@ static void load_brush_dir(const char * const dir)
   tp_ftw(buf, dirlen, 0, loadbrush_callback);
 }
 
+static void mirror_surface(SDL_Surface *s){
+}
+
+static void flip_surface(SDL_Surface *s){
+}
+
+static void get_stamp_thumb(stamp_type *sd)
+{
+  SDL_Surface *bigimg = NULL;
+  unsigned len = strlen(sd->stampname);
+  char *buf = alloca(len + strlen("_mirror.png") + 1);
+  memcpy(buf, sd->stampname, len);
+  SDL_Surface *wrongmirror = NULL;
+  int need_mirror = 0;
+
+  // first see if we can re-use an existing thumbnail
+  if(sd->thumbnail)
+    {
+      if(sd->mirrored == sd->thumb_mirrored)
+        {
+          if(sd->flipped  == sd->thumb_flipped)
+            return;
+          flip_surface(sd->thumbnail);
+          sd->thumb_flipped = !sd->thumb_flipped;
+          return;
+        }
+      wrongmirror = sd->thumbnail;
+    }
+
+  // nope, unless perhaps it can be mirrored
+  if(sd->mirrored && !sd->no_premirror)
+    {
+      memcpy(buf+len, "_mirror.png", 12);
+      bigimg = do_loadimage(buf, 0);
+      if(bigimg)
+        {
+          if(wrongmirror)
+            SDL_FreeSurface(wrongmirror);
+        }
+      else
+        sd->no_premirror = 1;
+    }
+  if(wrongmirror && sd->no_premirror)
+    {
+      mirror_surface(wrongmirror);
+      sd->thumbnail = wrongmirror;
+      sd->thumb_mirrored = !sd->thumb_mirrored;
+
+      if(sd->flipped  == sd->thumb_flipped)
+        return;
+      flip_surface(sd->thumbnail);
+      sd->thumb_flipped = !sd->thumb_flipped;
+      return;
+    }
+  if(!bigimg)
+    {
+      memcpy(buf+len, ".png", 5);
+      bigimg = do_loadimage(buf, 0);
+      if(sd->mirrored)
+        need_mirror = 1;  // want to mirror after scaling
+    }
+
+  if(!bigimg)
+    sd->thumbnail = thumbnail(img_dead40x40, 40, 40, 1); // copy
+  else if (bigimg->w > 40 || bigimg->h > 40)
+    {
+      sd->thumbnail = thumbnail(bigimg, 40, 40, 1);
+      SDL_FreeSurface(bigimg);
+    }
+  else
+    sd->thumbnail = bigimg;
+
+  if(need_mirror)
+    mirror_surface(sd->thumbnail);
+  sd->thumb_mirrored = sd->mirrored;
+
+  if(sd->flipped)
+    flip_surface(sd->thumbnail);
+  sd->thumb_flipped = sd->flipped;
+
+  return;
+}
+
 
 static unsigned default_stamp_size;
 
@@ -6733,16 +6826,12 @@ static void loadstamp_finisher(int i)
     {
       stamp_data[i]->w = stamp_data[i]->full_norm->w;
       stamp_data[i]->h = stamp_data[i]->full_norm->h;
-      if (stamp_data[i]->w > 40 || stamp_data[i]->h > 40)
-        stamp_data[i]->thumb_norm = thumbnail(stamp_data[i]->full_norm, 40, 40, 1);
     }
 
   if (stamp_data[i]->full_mirr)
     {
       stamp_data[i]->w = stamp_data[i]->full_mirr->w;
       stamp_data[i]->h = stamp_data[i]->full_mirr->h;
-      if (stamp_data[i]->w > 40 || stamp_data[i]->h > 40)
-        stamp_data[i]->thumb_mirr = thumbnail(stamp_data[i]->full_mirr, 40, 40, 1);
     }
 
   /* If Tux Paint is in mirror-image-by-default mode, mirror, if we can: */
@@ -9301,112 +9390,19 @@ static void draw_stamps(void)
 
       if (stamp < num_stamps)
 	{
-	  /* Draw the stamp itself: */
+          get_stamp_thumb(stamp_data[stamp]);
+          img = stamp_data[stamp]->thumbnail;
 
-	  if (stamp_data[stamp]->mirrored &&
-	      stamp_data[stamp]->full_mirr != NULL)
-	    {
-	      /* Use pre-drawn mirrored version! */
+          base_x = ((i % 2) * 48) + (WINDOW_WIDTH - 96) +
+            ((48 - (img->w)) / 2);
 
-	      if (stamp_data[stamp]->thumb_mirr != NULL)
-		img = stamp_data[stamp]->thumb_mirr;
-	      else
-		img = stamp_data[stamp]->full_mirr;
-	    }
-	  else
-	    {
-	      /* Use normal version: */
-	      
-	      if (stamp_data[stamp]->thumb_norm != NULL)
-		img = stamp_data[stamp]->thumb_norm;
-	      else
-		img = stamp_data[stamp]->full_norm;
-	    }
+          base_y = ((i / 2) * 48) + 40 + ((48 - (img->h)) / 2) + off_y;
 
+          dest.x = base_x;
+          dest.y = base_y;
 
-	  /* Where to put it? */
-      
-	  base_x = ((i % 2) * 48) + (WINDOW_WIDTH - 96) +
-	    ((48 - (img->w)) / 2);
-
-	  base_y = ((i / 2) * 48) + 40 + ((48 - (img->h)) / 2) + off_y;
-
-
-	  if (stamp_data[stamp]->mirrored &&
-	      stamp_data[stamp]->full_mirr == NULL)
-	    {
-	      /* It's mirrored!: */
-	      
-	      if (stamp_data[stamp]->flipped)
-		{
-		  /* It's flipped, too!  Mirror AND flip! */
-		
-		  for (xx = 0; xx < img->w; xx++)
-		    {
-		      for (yy = 0; yy < img->h; yy++)
-			{
-			  src.x = xx;
-			  src.y = yy;
-			  src.w = 1;
-			  src.h = 1;
-
-			  dest.x = base_x + img->w - xx - 1;
-			  dest.y = base_y + img->h - yy - 1;
-
-			  SDL_BlitSurface(img, &src, screen, &dest);
-			}
-		    }
-		}
-	      else
-		{
-		  /* Not flipped; just simple mirror-image: */
-	  
-		  for (xx = 0; xx < img->w; xx++)
-		    {
-		      src.x = xx;
-		      src.y = 0;
-		      src.w = 1;
-		      src.h = img->h;
-
-		      dest.x = base_x + img->w - xx - 1;
-		      dest.y = base_y;
-
-		      SDL_BlitSurface(img, &src, screen, &dest);
-		    }
-		}
-	    }
-	  else
-	    {
-	      /* It's not mirrored: */
-
-	      if (stamp_data[stamp]->flipped)
-		{
-		  /* Simple flip-image: */
-	  
-		  for (yy = 0; yy < img->h; yy++)
-		    {
-		      src.x = 0;
-		      src.y = yy;
-		      src.w = img->w;
-		      src.h = 1;
-
-		      dest.x = base_x;
-		      dest.y = base_y + img->h - yy - 1;
-
-		      SDL_BlitSurface(img, &src, screen, &dest);
-		    }
-		}
-	      else
-		{
-		  /* No flip or mirror: just blit! */
-
-		  dest.x = base_x;
-		  dest.y = base_y;
-
-		  SDL_BlitSurface(img, NULL, screen, &dest);
-		}
-	    }
-	}
+          SDL_BlitSurface(img, NULL, screen, &dest);
+        }
     }
 
 
@@ -12068,8 +12064,7 @@ static void cleanup(void)
 	}
       free_surface( &stamp_data[i]->full_norm );
       free_surface( &stamp_data[i]->full_mirr );
-      free_surface( &stamp_data[i]->thumb_norm );
-      free_surface( &stamp_data[i]->thumb_mirr );
+      free_surface( &stamp_data[i]->thumbnail );
         
       free(stamp_data[i]->stampname);
       free(stamp_data[i]);
