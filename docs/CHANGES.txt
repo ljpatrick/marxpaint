@@ -7,7 +7,7 @@ bill@newbreedsoftware.com
 http://www.newbreedsoftware.com/tuxpaint/
 
 
-2003.Jun.14 (0.9.11) [cvs]
+2003.Jun.17 (0.9.11) [cvs]
   * Windows bugfixes.
     John Popplewell <john@johnnypops.demon.co.uk>
 
@@ -68,6 +68,10 @@ http://www.newbreedsoftware.com/tuxpaint/
     (When it's not needed, they just take time to load, and RAM to store.)
 
   * Added missing "--nosysconfig" to "--help" usage output.
+
+  * Increased MAX_FILES from 256 to 2048.  Users with more than 128 images
+    saved were unable to load the newest images!  (Hopefully 1024 saved
+    files is sufficient.)
 
 
 2003.February.22 (0.9.10)

@@ -7,12 +7,12 @@
   bill@newbreedsoftware.com
   http://www.newbreedsoftware.com/tuxpaint/
   
-  June 14, 2002 - June 14, 2003
+  June 14, 2002 - June 17, 2003
 */
 
 
 #define VER_VERSION     "0.9.11"
-#define VER_DATE        "2003.06.14"
+#define VER_DATE        "2003.06.17"
 
 
 /* #define DEBUG */
@@ -32,7 +32,7 @@
 #define PROMPTOFFSETX (WINDOW_WIDTH - 640) / 2
 #define PROMPTOFFSETY (HEIGHTOFFSET / 2)
 
-#define MAX_FILES 256  /* Max. # of files in a dir. to worry about... */
+#define MAX_FILES 2048  /* Max. # of files in a dir. to worry about... */
 
 #define REPEAT_SPEED 300  /* Initial repeat speed for scrollbars */
 #define CURSOR_BLINK_SPEED 500  /* Initial repeat speed for cursor */
