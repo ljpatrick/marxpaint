@@ -468,6 +468,7 @@ SDL_Surface * img_btn_up, * img_btn_down, * img_btn_off;
 SDL_Surface * img_yes, * img_no;
 SDL_Surface * img_open, * img_erase, * img_back;
 SDL_Surface * img_cursor_up, * img_cursor_down;
+SDL_Surface * img_cursor_starter_up, * img_cursor_starter_down;
 SDL_Surface * img_scroll_up, * img_scroll_down;
 SDL_Surface * img_scroll_up_off, * img_scroll_down_off;
 SDL_Surface * img_paintcan;
@@ -5149,6 +5150,11 @@ void setup(int argc, char * argv[])
   img_cursor_up = loadimage(DATA_PREFIX "images/ui/cursor_up.png");
   img_cursor_down = loadimage(DATA_PREFIX "images/ui/cursor_down.png");
 #endif
+  
+  img_cursor_starter_up = loadimage(DATA_PREFIX
+		  		    "images/ui/cursor_starter_up.png");
+  img_cursor_starter_down = loadimage(DATA_PREFIX
+		  		      "images/ui/cursor_starter_down.png");
 
   img_scroll_up = loadimage(DATA_PREFIX "images/ui/scroll_up.png");
   img_scroll_down = loadimage(DATA_PREFIX "images/ui/scroll_down.png");
@@ -8856,6 +8862,9 @@ void cleanup(void)
   free_surface( &img_cursor_up );
   free_surface( &img_cursor_down );
 
+  free_surface( &img_cursor_starter_up );
+  free_surface( &img_cursor_starter_down );
+
   free_surface( &img_scroll_up );
   free_surface( &img_scroll_down );
   free_surface( &img_scroll_up_off );
@@ -10106,14 +10115,27 @@ int do_open(int want_new_tool)
 	 
 	  dest.x = THUMB_W * ((i - cur) % 4) + 96;
 	  dest.y = THUMB_H * ((i - cur) / 4) + 24;
-	  
-	  if (i == which)
+	 
+	  if (d_places[i] == PLACE_SAVED_DIR)
 	  {
-	    SDL_BlitSurface(img_cursor_down, NULL, screen, &dest);
-	    debug(d_names[i]);
+	    if (i == which)
+	    {
+	      SDL_BlitSurface(img_cursor_down, NULL, screen, &dest);
+	      debug(d_names[i]);
+	    }
+	    else
+	      SDL_BlitSurface(img_cursor_up, NULL, screen, &dest);
 	  }
 	  else
-	    SDL_BlitSurface(img_cursor_up, NULL, screen, &dest);
+	  {
+	    if (i == which)
+	    {
+	      SDL_BlitSurface(img_cursor_starter_down, NULL, screen, &dest);
+	      debug(d_names[i]);
+	    }
+	    else
+	      SDL_BlitSurface(img_cursor_starter_up, NULL, screen, &dest);
+	  }
 		  
 		  
 		  
