@@ -9083,7 +9083,7 @@ static void wordwrap_text(const char * const str, SDL_Color color,
       if (want_right_to_left == 0)
 	locale_str = strdup(gettext(str));
       else
-	locale_str = strdup(textdir(gettext(str)));
+	locale_str = textdir(gettext(str));
 
 
       /* For each UTF8 character: */
@@ -9267,10 +9267,17 @@ static void wordwrap_text(const char * const str, SDL_Color color,
     {
       /* Truncate if too big! (sorry!) */
 
-      if (want_right_to_left == 0)
-	tstr = strdup(uppercase(gettext(str)));
-      else
-	tstr = strdup(uppercase(textdir(gettext(str))));
+      {
+        char *s1 = gettext(str);
+        if (want_right_to_left)
+          {
+            char *freeme = s1;
+            s1 = textdir(s1);
+            free(freeme);
+          }
+	tstr = uppercase(s1);
+	free(s1);
+      }
 
       if (strlen(tstr) > sizeof(substr) - 1)
 	tstr[sizeof(substr) - 1] = '\0';
@@ -10245,7 +10252,7 @@ static int do_prompt(const char * const text, const char * const btn_yes, const 
   SDL_Color black = {0, 0, 0, 0};
   SDLKey key;
   SDLKey key_y, key_n;
-  char keystr[200];
+  char *keystr;
 #ifndef NO_PROMPT_SHADOWS
   int i;
   SDL_Surface * alpha_surf;
@@ -10254,11 +10261,13 @@ static int do_prompt(const char * const text, const char * const btn_yes, const 
 
   /* FIXME: Move elsewhere! Or not?! */
 
-  strcpy(keystr, textdir(gettext("Yes")));
+  keystr = textdir(gettext("Yes"));
   key_y = tolower(keystr[0]);
+  free(keystr);
 
-  strcpy(keystr, textdir(gettext("No")));
+  keystr = textdir(gettext("No"));
   key_n = tolower(keystr[0]);
+  free(keystr);
 
 
   do_setcursor(cursor_arrow);
@@ -11835,9 +11844,11 @@ static int do_open(int want_new_tool)
   {
     /* Let user choose an image: */
 
-    draw_tux_text(TUX_BORED,
+    char *freeme = 
   		textdir(gettext_noop("Choose the picture you want, "
-  				     "then click “Open”.")), 1);
+  				     "then click “Open”."));
+    draw_tux_text(TUX_BORED,freeme, 1);
+    free(freeme);
 
     /* NOTE: cur is now set above; if file_id'th file is found, it's
        set to that file's index; otherwise, we default to '0' */
@@ -13651,6 +13662,7 @@ static char * uppercase(char * str)
     sz = sizeof(wchar_t) * (strlen(str) + 1);
 
     dest = (wchar_t *) malloc(sz);
+    // FIXME: uppercase chars may need extra bytes
     ustr = (char *) malloc(sizeof(char) * (strlen(str) + 1));
 
     if (dest != NULL)
