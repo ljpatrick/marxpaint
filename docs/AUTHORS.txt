@@ -124,10 +124,10 @@ June 17, 2002 - December 18, 2003
     Marco Milanesi <kpanic@pavia.linux.it>
   
   * Japanese
-    TOYAMA Shin-ichi <kyone@tky2.3web.ne.jp>
+    TOYAMA Shin-ichi <shin1@wmail.plala.or.jp>
 
   * Korean
-    Mark Kim <markbk@cbreak.org>
+    Mark Kim <markslist@cbreak.org>
 
   * Lithuanian
     Mantas Kriauciunas <monte@mail.lt>
