@@ -2282,24 +2282,8 @@ int main(int argc, char * argv[])
 
   do_setcursor(cursor_arrow);
 
-  SDL_FillRect(screen, NULL, SDL_MapRGB(screen->format, 255, 255, 255));
-
-  dest.x = (WINDOW_WIDTH - img_title->w) / 2;
-  dest.y = (WINDOW_HEIGHT - img_title->h);
-
-  SDL_BlitSurface(img_title, NULL, screen, &dest);
-
-  snprintf(tmp_str, sizeof(tmp_str), "%s – %s", VER_VERSION, VER_DATE);
-  tmp_surf = render_text(medium_font, tmp_str, black);
-  dest.x = 20 + (WINDOW_WIDTH - img_title->w) / 2;
-  dest.y = WINDOW_HEIGHT - 60;
-  SDL_BlitSurface(tmp_surf, NULL, screen, &dest);
-  SDL_FreeSurface(tmp_surf);
-  SDL_Flip(screen);
-  playsound(0, SND_HARP, 1);
   
   do_wait();
-  SDL_FreeSurface(img_title);
 
 
   /* Set defaults! */
@@ -7553,7 +7537,43 @@ static void setup(int argc, char * argv[])
   show_progress_bar();
 
   SDL_Flip(screen);
-  
+
+
+  medium_font = TTF_OpenFont(DATA_PREFIX "fonts/default_font.ttf",
+		      18 - (only_uppercase * 3));
+
+  if (medium_font == NULL)
+    {
+      fprintf(stderr,
+	      "\nError: Can't load font file: "
+	      DATA_PREFIX "fonts/default_font.ttf\n"
+	      "The Simple DirectMedia Layer error that occurred was:\n"
+	      "%s\n\n", SDL_GetError());
+
+      cleanup();
+      exit(1);
+    }
+
+
+  SDL_FillRect(screen, NULL, SDL_MapRGB(screen->format, 255, 255, 255));
+
+  dest.x = (WINDOW_WIDTH - img_title->w) / 2;
+  dest.y = (WINDOW_HEIGHT - img_title->h);
+
+  SDL_BlitSurface(img_title, NULL, screen, &dest);
+
+  char tmp_str[128];
+  snprintf(tmp_str, sizeof(tmp_str), "%s – %s", VER_VERSION, VER_DATE);
+  tmp_surf = render_text(medium_font, tmp_str, black);
+  dest.x = 20 + (WINDOW_WIDTH - img_title->w) / 2;
+  dest.y = WINDOW_HEIGHT - 60;
+  SDL_BlitSurface(tmp_surf, NULL, screen, &dest);
+  SDL_FreeSurface(tmp_surf);
+  SDL_Flip(screen);
+  playsound(0, SND_HARP, 1);
+  SDL_FreeSurface(img_title);
+
+
  
   /* Load other images: */
 
@@ -7661,22 +7681,6 @@ static void setup(int argc, char * argv[])
 
   /* Load system fonts: */
 
-  medium_font = TTF_OpenFont(DATA_PREFIX "fonts/default_font.ttf",
-		      18 - (only_uppercase * 3));
-
-  if (medium_font == NULL)
-    {
-      fprintf(stderr,
-	      "\nError: Can't load font file: "
-	      DATA_PREFIX "fonts/default_font.ttf\n"
-	      "The Simple DirectMedia Layer error that occurred was:\n"
-	      "%s\n\n", SDL_GetError());
-
-      cleanup();
-      exit(1);
-    }
-
-  
   large_font = TTF_OpenFont(DATA_PREFIX "fonts/default_font.ttf",
 			    36 - (only_uppercase * 3));
 
