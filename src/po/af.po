@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint 0.9.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2004-07-16 21:12+0200\n"
+"POT-Creation-Date: 2005-01-06 12:31+0100\n"
 "PO-Revision-Date: 2004-07-14 13:44+0200\n"
 "Last-Translator: Petri Jooste <rkwjpj@puk.ac.za>\n"
 "Language-Team: Afrikaans <i18n@af.org.za>\n"
@@ -27,14 +27,20 @@ msgstr "Tux Verf"
 msgid "Black!"
 msgstr "Swart!"
 
+#, fuzzy
+msgid "Dark Gray!"
+msgstr "Grys!"
+
+#. using both valid spellings
+msgid "Light Grey!"
+msgstr ""
+
+#. using both valid spellings
 msgid "White!"
 msgstr "Wit!"
 
 msgid "Red!"
 msgstr "Rooi!"
-
-msgid "Pink!"
-msgstr "Pienk!"
 
 msgid "Orange!"
 msgstr "Oranje!"
@@ -42,14 +48,14 @@ msgstr "Oranje!"
 msgid "Yellow!"
 msgstr "Geel!"
 
-msgid "Lime!"
-msgstr "Lemmetjie!"
+msgid "Neon green!"
+msgstr ""
 
 msgid "Green!"
 msgstr "Groen!"
 
-msgid "Cyan!"
-msgstr "Cyan!"
+msgid "Sky blue!"
+msgstr ""
 
 msgid "Blue!"
 msgstr "Blou!"
@@ -57,17 +63,21 @@ msgstr "Blou!"
 msgid "Purple!"
 msgstr "Pers!"
 
-msgid "Fuchsia!"
-msgstr "Fuchsia!"
+msgid "Magenta!"
+msgstr ""
+
+msgid "Pink!"
+msgstr "Pienk!"
 
 msgid "Brown!"
 msgstr "Bruin!"
 
-msgid "Gray!"
-msgstr "Grys!"
+#, fuzzy
+msgid "Tan!"
+msgstr "Cyan!"
 
-msgid "Silver!"
-msgstr "Silwer!"
+msgid "Beige!"
+msgstr ""
 
 msgid "Great!"
 msgstr "Wonderlik!"
@@ -81,20 +91,37 @@ msgstr "Hou so aan!"
 msgid "Good job!"
 msgstr "Mooi so!"
 
+msgid "Fill"
+msgstr "Vul"
+
+#, fuzzy
+msgid "Grass"
+msgstr "Vee uit"
+
+#, fuzzy
+msgid "Bricks"
+msgstr "Blokke"
+
 msgid "Rainbow"
 msgstr "Reënboog"
 
 msgid "Sparkles"
 msgstr "Vonke"
 
-msgid "Mirror"
-msgstr "Spieël"
-
-msgid "Flip"
-msgstr "Flip"
-
 msgid "Blur"
 msgstr "Uit fokus"
+
+msgid "Smudge"
+msgstr ""
+
+msgid "Fade"
+msgstr "Verdof"
+
+msgid "Darken"
+msgstr ""
+
+msgid "Chalk"
+msgstr "Bordkryt"
 
 msgid "Blocks"
 msgstr "Blokke"
@@ -102,23 +129,36 @@ msgstr "Blokke"
 msgid "Negative"
 msgstr "Negatief"
 
-msgid "Fade"
-msgstr "Verdof"
-
-msgid "Chalk"
-msgstr "Bordkryt"
+#, fuzzy
+msgid "Tint"
+msgstr "Dun"
 
 msgid "Drip"
 msgstr "Drup"
 
-msgid "Thick"
-msgstr "Dik"
+msgid "Cartoon"
+msgstr ""
 
-msgid "Thin"
-msgstr "Dun"
+msgid "Mirror"
+msgstr "Spieël"
 
-msgid "Fill"
-msgstr "Vul"
+msgid "Flip"
+msgstr "Flip"
+
+msgid "Click in the picture to fill that area with color."
+msgstr "Klik in die prent om daardie area met kleur te vul."
+
+#, fuzzy
+msgid "Click and move to draw grass. Don't forget the dirt!"
+msgstr "Klik en beweeg om vonke te teken."
+
+#, fuzzy
+msgid "Click and move to draw large bricks."
+msgstr "Klik en beweeg om vonke te teken."
+
+#, fuzzy
+msgid "Click and move to draw small bricks."
+msgstr "Klik en beweeg om vonke te teken."
 
 msgid "You can draw in rainbow colors!"
 msgstr "Jy kan met reënboogkleure teken!"
@@ -126,22 +166,18 @@ msgstr "Jy kan met reënboogkleure teken!"
 msgid "Click and move to draw sparkles."
 msgstr "Klik en beweeg om vonke te teken."
 
-msgid "Click to make a mirror image."
-msgstr "Klik om 'n spieëlbeeld te maak!"
-
-msgid "Click to flip the picture upside-down."
-msgstr "Klik om die prent onderstebo te swaai!"
-
 msgid "Click and move the mouse around to blur the picture."
 msgstr "Klik en beweeg die muis om die prent uit fokus te maak."
 
-msgid "Click and move the mouse around to make the picture blocky."
-msgstr "Klik en beweeg die muis om die prent blokkerig te maak."
-
-msgid "Click and move the mouse around to draw a negative."
-msgstr "Klik en beweeg die muis om 'n negatief te maak."
+#, fuzzy
+msgid "Click and move the mouse around to smudge the picture."
+msgstr "Klik en beweeg die muis om die prent uit fokus te maak."
 
 msgid "Click and move to fade the colors."
+msgstr "Klik en beweeg om die kleure te verdof"
+
+#, fuzzy
+msgid "Click and move to darken the colors."
 msgstr "Klik en beweeg om die kleure te verdof"
 
 msgid ""
@@ -149,17 +185,29 @@ msgid ""
 msgstr ""
 "Klik en beweeg die muis om die prent te verander na 'n bordkryt-tekening."
 
+msgid "Click and move the mouse around to make the picture blocky."
+msgstr "Klik en beweeg die muis om die prent blokkerig te maak."
+
+msgid "Click and move the mouse around to draw a negative."
+msgstr "Klik en beweeg die muis om 'n negatief te maak."
+
+#, fuzzy
+msgid "Click and move the mouse around to change the picture's color."
+msgstr "Klik en beweeg die muis om die prent blokkerig te maak."
+
 msgid "Click and move the mouse around to make the picture drip."
 msgstr "Klik en beweeg die muis om die prent te laat afdrup!"
 
-msgid "Click and move the mouse to thicken the picture."
-msgstr "Klik en beweeg die muis om the prent dikker te maak."
+#, fuzzy
+msgid "Click and move the mouse around to turn the picture into a cartoon."
+msgstr ""
+"Klik en beweeg die muis om die prent te verander na 'n bordkryt-tekening."
 
-msgid "Click and move the mouse to thin the picture."
-msgstr "Klik en beweeg die muis om die prent dunner te maak."
+msgid "Click to make a mirror image."
+msgstr "Klik om 'n spieëlbeeld te maak!"
 
-msgid "Click in the picture to fill that area with color."
-msgstr "Klik in die prent om daardie area met kleur te vul."
+msgid "Click to flip the picture upside-down."
+msgstr "Klik om die prent onderstebo te swaai!"
 
 msgid "Square"
 msgstr "Vierkant"
@@ -209,6 +257,10 @@ msgstr "Kleure"
 msgid "Brushes"
 msgstr "Kwasse"
 
+#, fuzzy
+msgid "Erasers"
+msgstr "Uitveër"
+
 msgid "Stamps"
 msgstr "Stempels"
 
@@ -245,7 +297,7 @@ msgstr "Uitveër"
 msgid "New"
 msgstr "Nuwe"
 
-#. 'Open' label:
+#. buttons for the file open dialog
 msgid "Open"
 msgstr "Maak oop"
 
@@ -373,13 +425,14 @@ msgstr "Jy kan nog nie druk nie!"
 msgid "Erase this picture?"
 msgstr "Vee hierdie prent uit?"
 
-#. 'Erase' label:
 msgid "Erase"
 msgstr "Vee uit"
 
-#. 'Back' label:
 msgid "Back"
 msgstr "Terug"
+
+msgid "Aa"
+msgstr ""
 
 #. FIXME: Move elsewhere!!!
 msgid "Save over the older version of this picture?"
@@ -390,3 +443,21 @@ msgstr "Nee, stoor 'n nuwe lêer"
 
 msgid "Choose the picture you want, then click “Open”."
 msgstr "Kies die prent wat jy wil hê en klik 'Maak oop'."
+
+#~ msgid "Lime!"
+#~ msgstr "Lemmetjie!"
+
+#~ msgid "Fuchsia!"
+#~ msgstr "Fuchsia!"
+
+#~ msgid "Silver!"
+#~ msgstr "Silwer!"
+
+#~ msgid "Thick"
+#~ msgstr "Dik"
+
+#~ msgid "Click and move the mouse to thicken the picture."
+#~ msgstr "Klik en beweeg die muis om the prent dikker te maak."
+
+#~ msgid "Click and move the mouse to thin the picture."
+#~ msgstr "Klik en beweeg die muis om die prent dunner te maak."

@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint 0.9.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2004-07-16 21:12+0200\n"
+"POT-Creation-Date: 2005-01-06 12:31+0100\n"
 "PO-Revision-Date: 2002-09-26 00:00-0800\n"
 "Last-Translator: Peter Sterba <sterba@sterba.com>\n"
 "Language-Team: Czech\n"
@@ -25,6 +25,15 @@ msgstr "Kreslit"
 msgid "Black!"
 msgstr "Cerna!"
 
+#, fuzzy
+msgid "Dark Gray!"
+msgstr "Vyborne!"
+
+#. using both valid spellings
+msgid "Light Grey!"
+msgstr ""
+
+#. using both valid spellings
 msgid "White!"
 msgstr "Bila!"
 
@@ -32,23 +41,20 @@ msgstr "Bila!"
 msgid "Red!"
 msgstr "Znovu!"
 
-msgid "Pink!"
-msgstr "Ruzova!"
-
 msgid "Orange!"
 msgstr "Oranzova!"
 
 msgid "Yellow!"
 msgstr "Zluta!"
 
-msgid "Lime!"
-msgstr "Usecka!"
+msgid "Neon green!"
+msgstr ""
 
 msgid "Green!"
 msgstr "Zelena!"
 
-msgid "Cyan!"
-msgstr "Cerveno-fialova!"
+msgid "Sky blue!"
+msgstr ""
 
 msgid "Blue!"
 msgstr "Modra!"
@@ -56,17 +62,20 @@ msgstr "Modra!"
 msgid "Purple!"
 msgstr "Fialova!"
 
-msgid "Fuchsia!"
+msgid "Magenta!"
 msgstr ""
+
+msgid "Pink!"
+msgstr "Ruzova!"
 
 msgid "Brown!"
 msgstr "Hneda!"
 
 #, fuzzy
-msgid "Gray!"
-msgstr "Vyborne!"
+msgid "Tan!"
+msgstr "Cerveno-fialova!"
 
-msgid "Silver!"
+msgid "Beige!"
 msgstr ""
 
 msgid "Great!"
@@ -81,20 +90,37 @@ msgstr ""
 msgid "Good job!"
 msgstr ""
 
+msgid "Fill"
+msgstr ""
+
+#, fuzzy
+msgid "Grass"
+msgstr "Vymazani"
+
+#, fuzzy
+msgid "Bricks"
+msgstr "Kostka"
+
 msgid "Rainbow"
 msgstr "Duha"
 
 msgid "Sparkles"
 msgstr "Jiskry"
 
-msgid "Mirror"
-msgstr "Zrcadlo"
-
-msgid "Flip"
-msgstr "Otocit naruby"
-
 msgid "Blur"
 msgstr "Skvrna"
+
+msgid "Smudge"
+msgstr ""
+
+msgid "Fade"
+msgstr "Vyblednout"
+
+msgid "Darken"
+msgstr ""
+
+msgid "Chalk"
+msgstr "Krida"
 
 msgid "Blocks"
 msgstr "Kostka"
@@ -102,23 +128,37 @@ msgstr "Kostka"
 msgid "Negative"
 msgstr "Negativ"
 
-msgid "Fade"
-msgstr "Vyblednout"
-
-msgid "Chalk"
-msgstr "Krida"
+#, fuzzy
+msgid "Tint"
+msgstr "Tence"
 
 msgid "Drip"
 msgstr "Kapka"
 
-msgid "Thick"
-msgstr "Tucne"
-
-msgid "Thin"
-msgstr "Tence"
-
-msgid "Fill"
+msgid "Cartoon"
 msgstr ""
+
+msgid "Mirror"
+msgstr "Zrcadlo"
+
+msgid "Flip"
+msgstr "Otocit naruby"
+
+#, fuzzy
+msgid "Click in the picture to fill that area with color."
+msgstr "Klikni a posun pro vyblednuti barev."
+
+#, fuzzy
+msgid "Click and move to draw grass. Don't forget the dirt!"
+msgstr "Klikni a pohybuj pro kresleni jisker"
+
+#, fuzzy
+msgid "Click and move to draw large bricks."
+msgstr "Klikni a pohybuj pro kresleni jisker"
+
+#, fuzzy
+msgid "Click and move to draw small bricks."
+msgstr "Klikni a pohybuj pro kresleni jisker"
 
 msgid "You can draw in rainbow colors!"
 msgstr "Muzes kreslit v duhovych barvach!"
@@ -128,16 +168,23 @@ msgid "Click and move to draw sparkles."
 msgstr "Klikni a pohybuj pro kresleni jisker"
 
 #, fuzzy
-msgid "Click to make a mirror image."
-msgstr "Klikni pro ozrcadleni obrazku!"
-
-#, fuzzy
-msgid "Click to flip the picture upside-down."
-msgstr "Klikni pro otoceni obrazku naruby shora-dolu!"
-
-#, fuzzy
 msgid "Click and move the mouse around to blur the picture."
 msgstr "Klikni a pohybuj mysi dokola pro rozmazani obrazku"
+
+#, fuzzy
+msgid "Click and move the mouse around to smudge the picture."
+msgstr "Klikni a pohybuj mysi dokola pro rozmazani obrazku"
+
+msgid "Click and move to fade the colors."
+msgstr "Klikni a posun pro vyblednuti barev."
+
+#, fuzzy
+msgid "Click and move to darken the colors."
+msgstr "Klikni a posun pro vyblednuti barev."
+
+msgid ""
+"Click and move the mouse around to turn the picture into a chalk drawing."
+msgstr "Klikni a pohybuj mysi pro pretvoreni obrazku do kridoveho vzhledu."
 
 #, fuzzy
 msgid "Click and move the mouse around to make the picture blocky."
@@ -147,28 +194,25 @@ msgstr "Klikni a pohybuj mysi dokola pro vytvoreni kaskady"
 msgid "Click and move the mouse around to draw a negative."
 msgstr "Klikni a pohybuj mysi dokola pro vykresleni negativu"
 
-msgid "Click and move to fade the colors."
-msgstr "Klikni a posun pro vyblednuti barev."
-
-msgid ""
-"Click and move the mouse around to turn the picture into a chalk drawing."
-msgstr "Klikni a pohybuj mysi pro pretvoreni obrazku do kridoveho vzhledu."
+#, fuzzy
+msgid "Click and move the mouse around to change the picture's color."
+msgstr "Klikni a pohybuj mysi dokola pro vytvoreni kaskady"
 
 #, fuzzy
 msgid "Click and move the mouse around to make the picture drip."
 msgstr "Klikni a pohybuj mysi pro vytvoreni kapkoviteho obrazku."
 
 #, fuzzy
-msgid "Click and move the mouse to thicken the picture."
-msgstr "Klikni a pohybuj mysi pro rozsireni obrazku."
+msgid "Click and move the mouse around to turn the picture into a cartoon."
+msgstr "Klikni a pohybuj mysi pro pretvoreni obrazku do kridoveho vzhledu."
 
 #, fuzzy
-msgid "Click and move the mouse to thin the picture."
-msgstr "Klikni a pohybuj mysi pro zuzeni obrazku."
+msgid "Click to make a mirror image."
+msgstr "Klikni pro ozrcadleni obrazku!"
 
 #, fuzzy
-msgid "Click in the picture to fill that area with color."
-msgstr "Klikni a posun pro vyblednuti barev."
+msgid "Click to flip the picture upside-down."
+msgstr "Klikni pro otoceni obrazku naruby shora-dolu!"
 
 msgid "Square"
 msgstr "Ctverec"
@@ -219,6 +263,10 @@ msgid "Brushes"
 msgstr ""
 
 #, fuzzy
+msgid "Erasers"
+msgstr "Vymazani"
+
+#, fuzzy
 msgid "Stamps"
 msgstr "Narazit"
 
@@ -255,7 +303,7 @@ msgstr "Vymazani"
 msgid "New"
 msgstr "Novy"
 
-#. 'Open' label:
+#. buttons for the file open dialog
 msgid "Open"
 msgstr "Otevri"
 
@@ -385,15 +433,16 @@ msgstr ""
 msgid "Erase this picture?"
 msgstr "Vymazat tento obrazek?"
 
-#. 'Erase' label:
 #, fuzzy
 msgid "Erase"
 msgstr "Vymazani"
 
-#. 'Back' label:
 #, fuzzy
 msgid "Back"
 msgstr "Cerna"
+
+msgid "Aa"
+msgstr ""
 
 #. FIXME: Move elsewhere!!!
 #, fuzzy
@@ -405,6 +454,20 @@ msgstr "Ne, uloz jako novy soubor"
 
 msgid "Choose the picture you want, then click “Open”."
 msgstr ""
+
+#~ msgid "Lime!"
+#~ msgstr "Usecka!"
+
+#~ msgid "Thick"
+#~ msgstr "Tucne"
+
+#, fuzzy
+#~ msgid "Click and move the mouse to thicken the picture."
+#~ msgstr "Klikni a pohybuj mysi pro rozsireni obrazku."
+
+#, fuzzy
+#~ msgid "Click and move the mouse to thin the picture."
+#~ msgstr "Klikni a pohybuj mysi pro zuzeni obrazku."
 
 #~ msgid "Okay"
 #~ msgstr "OK"

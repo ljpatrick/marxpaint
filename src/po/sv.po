@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint 0.9.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2004-07-16 21:12+0200\n"
+"POT-Creation-Date: 2005-01-06 12:31+0100\n"
 "PO-Revision-Date: 2002-08-22 15:45-0800\n"
 "Last-Translator: Daniel Andersson <tuxpaint@septum.org>\n"
 "Language-Team: Swedish\n"
@@ -30,16 +30,21 @@ msgid "Black!"
 msgstr "Svart!"
 
 #, fuzzy
+msgid "Dark Gray!"
+msgstr "Perfekt!"
+
+#. using both valid spellings
+msgid "Light Grey!"
+msgstr ""
+
+#. using both valid spellings
+#, fuzzy
 msgid "White!"
 msgstr "Vit!"
 
 #, fuzzy
 msgid "Red!"
 msgstr "Gör om!"
-
-#, fuzzy
-msgid "Pink!"
-msgstr "Rosa!"
 
 #, fuzzy
 msgid "Orange!"
@@ -49,17 +54,15 @@ msgstr "Orange!"
 msgid "Yellow!"
 msgstr "Gul!"
 
-#, fuzzy
-msgid "Lime!"
-msgstr "Linjer"
+msgid "Neon green!"
+msgstr ""
 
 #, fuzzy
 msgid "Green!"
 msgstr "Grön!"
 
-#, fuzzy
-msgid "Cyan!"
-msgstr "Turkos!"
+msgid "Sky blue!"
+msgstr ""
 
 #, fuzzy
 msgid "Blue!"
@@ -69,18 +72,22 @@ msgstr "Blå!"
 msgid "Purple!"
 msgstr "Lila!"
 
-msgid "Fuchsia!"
+msgid "Magenta!"
 msgstr ""
+
+#, fuzzy
+msgid "Pink!"
+msgstr "Rosa!"
 
 #, fuzzy
 msgid "Brown!"
 msgstr "Brun!"
 
 #, fuzzy
-msgid "Gray!"
-msgstr "Perfekt!"
+msgid "Tan!"
+msgstr "Turkos!"
 
-msgid "Silver!"
+msgid "Beige!"
 msgstr ""
 
 msgid "Great!"
@@ -95,20 +102,37 @@ msgstr ""
 msgid "Good job!"
 msgstr ""
 
+msgid "Fill"
+msgstr ""
+
+#, fuzzy
+msgid "Grass"
+msgstr "Radergummi"
+
+#, fuzzy
+msgid "Bricks"
+msgstr "Block"
+
 msgid "Rainbow"
 msgstr "Rengbåge"
 
 msgid "Sparkles"
 msgstr "Gnistor"
 
-msgid "Mirror"
-msgstr "Spegel"
-
-msgid "Flip"
-msgstr "Vänd"
-
 msgid "Blur"
 msgstr "Suddig"
+
+msgid "Smudge"
+msgstr ""
+
+msgid "Fade"
+msgstr "Blekna"
+
+msgid "Darken"
+msgstr ""
+
+msgid "Chalk"
+msgstr "Krita"
 
 msgid "Blocks"
 msgstr "Block"
@@ -116,23 +140,37 @@ msgstr "Block"
 msgid "Negative"
 msgstr "Negativ"
 
-msgid "Fade"
-msgstr "Blekna"
-
-msgid "Chalk"
-msgstr "Krita"
+#, fuzzy
+msgid "Tint"
+msgstr "Tunn"
 
 msgid "Drip"
 msgstr "Droppa"
 
-msgid "Thick"
-msgstr "Tjock"
-
-msgid "Thin"
-msgstr "Tunn"
-
-msgid "Fill"
+msgid "Cartoon"
 msgstr ""
+
+msgid "Mirror"
+msgstr "Spegel"
+
+msgid "Flip"
+msgstr "Vänd"
+
+#, fuzzy
+msgid "Click in the picture to fill that area with color."
+msgstr "Klicka och rör musen runt för att blekna färgerna!"
+
+#, fuzzy
+msgid "Click and move to draw grass. Don't forget the dirt!"
+msgstr "Klicka och rör musen runt för att rita gnistor!"
+
+#, fuzzy
+msgid "Click and move to draw large bricks."
+msgstr "Klicka och rör musen runt för att rita gnistor!"
+
+#, fuzzy
+msgid "Click and move to draw small bricks."
+msgstr "Klicka och rör musen runt för att rita gnistor!"
 
 msgid "You can draw in rainbow colors!"
 msgstr "Du kan rita i rengbågs-färger!"
@@ -142,16 +180,23 @@ msgid "Click and move to draw sparkles."
 msgstr "Klicka och rör musen runt för att rita gnistor!"
 
 #, fuzzy
-msgid "Click to make a mirror image."
-msgstr "Klicka för att skapa en spegelbild!"
-
-#, fuzzy
-msgid "Click to flip the picture upside-down."
-msgstr "Klicka för att vända bilden upp-och-ner!"
-
-#, fuzzy
 msgid "Click and move the mouse around to blur the picture."
 msgstr "Klicka och rör musen runt för att göra den suddig"
+
+#, fuzzy
+msgid "Click and move the mouse around to smudge the picture."
+msgstr "Klicka och rör musen runt för att göra den suddig"
+
+msgid "Click and move to fade the colors."
+msgstr "Klicka och rör musen runt för att blekna färgerna!"
+
+#, fuzzy
+msgid "Click and move to darken the colors."
+msgstr "Klicka och rör musen runt för att blekna färgerna!"
+
+msgid ""
+"Click and move the mouse around to turn the picture into a chalk drawing."
+msgstr "Klicka och rör musen runt för att omvandla bilden till krit-ritning!"
 
 #, fuzzy
 msgid "Click and move the mouse around to make the picture blocky."
@@ -161,28 +206,25 @@ msgstr "Klicka och rör musen runt för att göra bilden 'blockig'"
 msgid "Click and move the mouse around to draw a negative."
 msgstr "Klicka och rör musen runt för att skapa ett negativ"
 
-msgid "Click and move to fade the colors."
-msgstr "Klicka och rör musen runt för att blekna färgerna!"
-
-msgid ""
-"Click and move the mouse around to turn the picture into a chalk drawing."
-msgstr "Klicka och rör musen runt för att omvandla bilden till krit-ritning!"
+#, fuzzy
+msgid "Click and move the mouse around to change the picture's color."
+msgstr "Klicka och rör musen runt för att göra bilden 'blockig'"
 
 #, fuzzy
 msgid "Click and move the mouse around to make the picture drip."
 msgstr "Klicka och rör musen runt för att göra så att bilden 'droppar'!"
 
 #, fuzzy
-msgid "Click and move the mouse to thicken the picture."
-msgstr "Klicka och rör musen runt för att göra bilden tjockare!"
+msgid "Click and move the mouse around to turn the picture into a cartoon."
+msgstr "Klicka och rör musen runt för att omvandla bilden till krit-ritning!"
 
 #, fuzzy
-msgid "Click and move the mouse to thin the picture."
-msgstr "Klicka och rör musen runt för att göra bilden smalare!"
+msgid "Click to make a mirror image."
+msgstr "Klicka för att skapa en spegelbild!"
 
 #, fuzzy
-msgid "Click in the picture to fill that area with color."
-msgstr "Klicka och rör musen runt för att blekna färgerna!"
+msgid "Click to flip the picture upside-down."
+msgstr "Klicka för att vända bilden upp-och-ner!"
 
 msgid "Square"
 msgstr "Fyrkant"
@@ -233,6 +275,10 @@ msgid "Brushes"
 msgstr ""
 
 #, fuzzy
+msgid "Erasers"
+msgstr "Radergummi"
+
+#, fuzzy
 msgid "Stamps"
 msgstr "Stämpel"
 
@@ -269,7 +315,7 @@ msgstr "Radergummi"
 msgid "New"
 msgstr "Ny"
 
-#. 'Open' label:
+#. buttons for the file open dialog
 msgid "Open"
 msgstr "Öppna"
 
@@ -400,15 +446,16 @@ msgstr ""
 msgid "Erase this picture?"
 msgstr "Radera den här bilden?"
 
-#. 'Erase' label:
 #, fuzzy
 msgid "Erase"
 msgstr "Radergummi"
 
-#. 'Back' label:
 #, fuzzy
 msgid "Back"
 msgstr "Svart!"
+
+msgid "Aa"
+msgstr ""
 
 #. FIXME: Move elsewhere!!!
 #, fuzzy
@@ -420,6 +467,21 @@ msgstr "Nej, spara i en ny fil!"
 
 msgid "Choose the picture you want, then click “Open”."
 msgstr ""
+
+#, fuzzy
+#~ msgid "Lime!"
+#~ msgstr "Linjer"
+
+#~ msgid "Thick"
+#~ msgstr "Tjock"
+
+#, fuzzy
+#~ msgid "Click and move the mouse to thicken the picture."
+#~ msgstr "Klicka och rör musen runt för att göra bilden tjockare!"
+
+#, fuzzy
+#~ msgid "Click and move the mouse to thin the picture."
+#~ msgstr "Klicka och rör musen runt för att göra bilden smalare!"
 
 #~ msgid "Okay"
 #~ msgstr "Okej"

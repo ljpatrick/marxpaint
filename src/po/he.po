@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: he\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2004-07-16 21:12+0200\n"
+"POT-Creation-Date: 2005-01-06 12:31+0100\n"
 "PO-Revision-Date: 2004-11-13 02:07+0200\n"
 "Last-Translator: dovix <dovix2003@yahoo.com>\n"
 "Language-Team: Hebrew <mdk-hebrew@iglu.org.il>\n"
@@ -30,14 +30,20 @@ msgstr "Tux Paint"
 msgid "Black!"
 msgstr "שחור!"
 
+#, fuzzy
+msgid "Dark Gray!"
+msgstr "אפור!"
+
+#. using both valid spellings
+msgid "Light Grey!"
+msgstr ""
+
+#. using both valid spellings
 msgid "White!"
 msgstr "לבן!"
 
 msgid "Red!"
 msgstr "אדום!"
-
-msgid "Pink!"
-msgstr "ורוד!"
 
 msgid "Orange!"
 msgstr "כתום!"
@@ -45,14 +51,14 @@ msgstr "כתום!"
 msgid "Yellow!"
 msgstr "צהוב!"
 
-msgid "Lime!"
-msgstr "ירוק בהיר!"
+msgid "Neon green!"
+msgstr ""
 
 msgid "Green!"
 msgstr "ירוק כהה!"
 
-msgid "Cyan!"
-msgstr "תכלת!"
+msgid "Sky blue!"
+msgstr ""
 
 msgid "Blue!"
 msgstr "כחול!"
@@ -60,17 +66,21 @@ msgstr "כחול!"
 msgid "Purple!"
 msgstr "סגול כהה!"
 
-msgid "Fuchsia!"
-msgstr "סגול בהיר!"
+msgid "Magenta!"
+msgstr ""
+
+msgid "Pink!"
+msgstr "ורוד!"
 
 msgid "Brown!"
 msgstr "חום!"
 
-msgid "Gray!"
-msgstr "אפור!"
+#, fuzzy
+msgid "Tan!"
+msgstr "תכלת!"
 
-msgid "Silver!"
-msgstr "כסף!"
+msgid "Beige!"
+msgstr ""
 
 msgid "Great!"
 msgstr "נהדר!"
@@ -84,20 +94,37 @@ msgstr "יפה מאוד!"
 msgid "Good job!"
 msgstr "עבודה טובה!"
 
+msgid "Fill"
+msgstr "מילוי"
+
+#, fuzzy
+msgid "Grass"
+msgstr "מחק"
+
+#, fuzzy
+msgid "Bricks"
+msgstr "לבנים"
+
 msgid "Rainbow"
 msgstr "קשת בענן"
 
 msgid "Sparkles"
 msgstr "ניצוצות"
 
-msgid "Mirror"
-msgstr "מראה"
-
-msgid "Flip"
-msgstr "היפוך"
-
 msgid "Blur"
 msgstr "טישטוש"
+
+msgid "Smudge"
+msgstr ""
+
+msgid "Fade"
+msgstr "עימעום"
+
+msgid "Darken"
+msgstr ""
+
+msgid "Chalk"
+msgstr "גיר"
 
 msgid "Blocks"
 msgstr "לבנים"
@@ -105,23 +132,36 @@ msgstr "לבנים"
 msgid "Negative"
 msgstr "תשליל"
 
-msgid "Fade"
-msgstr "עימעום"
-
-msgid "Chalk"
-msgstr "גיר"
+#, fuzzy
+msgid "Tint"
+msgstr "הצרה"
 
 msgid "Drip"
 msgstr "טפטוף"
 
-msgid "Thick"
-msgstr "עיבוי"
+msgid "Cartoon"
+msgstr ""
 
-msgid "Thin"
-msgstr "הצרה"
+msgid "Mirror"
+msgstr "מראה"
 
-msgid "Fill"
-msgstr "מילוי"
+msgid "Flip"
+msgstr "היפוך"
+
+msgid "Click in the picture to fill that area with color."
+msgstr "עליך ללחוץ בתוך התמונה כדי למלא את האזור הזה בצבע."
+
+#, fuzzy
+msgid "Click and move to draw grass. Don't forget the dirt!"
+msgstr "עליך ללחוץ ולהזיז כדי לצייר ניצוצות."
+
+#, fuzzy
+msgid "Click and move to draw large bricks."
+msgstr "עליך ללחוץ ולהזיז כדי לצייר ניצוצות."
+
+#, fuzzy
+msgid "Click and move to draw small bricks."
+msgstr "עליך ללחוץ ולהזיז כדי לצייר ניצוצות."
 
 msgid "You can draw in rainbow colors!"
 msgstr "יש באפשרותך לצייר בצבעי הקשת!"
@@ -129,14 +169,23 @@ msgstr "יש באפשרותך לצייר בצבעי הקשת!"
 msgid "Click and move to draw sparkles."
 msgstr "עליך ללחוץ ולהזיז כדי לצייר ניצוצות."
 
-msgid "Click to make a mirror image."
-msgstr "עליך ללחוץ כדי ליצור תמונת מראה."
-
-msgid "Click to flip the picture upside-down."
-msgstr "עליך ללחוץ כדי להפוך את התמונה מלמעלה למטה."
-
 msgid "Click and move the mouse around to blur the picture."
 msgstr "עליך ללחוץ ולהזיז את העכבר מסביב כדי לטשטש את התמונה."
+
+#, fuzzy
+msgid "Click and move the mouse around to smudge the picture."
+msgstr "עליך ללחוץ ולהזיז את העכבר מסביב כדי לטשטש את התמונה."
+
+msgid "Click and move to fade the colors."
+msgstr "עליך ללחוץ ולהזיז כדי לעמעם את הצבעים."
+
+#, fuzzy
+msgid "Click and move to darken the colors."
+msgstr "עליך ללחוץ ולהזיז כדי לעמעם את הצבעים."
+
+msgid ""
+"Click and move the mouse around to turn the picture into a chalk drawing."
+msgstr "עליך ללחוץ ולהזיז את העכבר כדי ליצור אפקט של ציור גיר."
 
 msgid "Click and move the mouse around to make the picture blocky."
 msgstr "עליך ללחוץ ולהזיז את העכבר כדי ליצור לבנים בתמונה שלך."
@@ -144,23 +193,22 @@ msgstr "עליך ללחוץ ולהזיז את העכבר כדי ליצור לב�
 msgid "Click and move the mouse around to draw a negative."
 msgstr "עליך ללחוץ ולהזיז את העכבר מסביב כדי להפוך את הצבעים."
 
-msgid "Click and move to fade the colors."
-msgstr "עליך ללחוץ ולהזיז כדי לעמעם את הצבעים."
-
-msgid "Click and move the mouse around to turn the picture into a chalk drawing."
-msgstr "עליך ללחוץ ולהזיז את העכבר כדי ליצור אפקט של ציור גיר."
+#, fuzzy
+msgid "Click and move the mouse around to change the picture's color."
+msgstr "עליך ללחוץ ולהזיז את העכבר כדי ליצור לבנים בתמונה שלך."
 
 msgid "Click and move the mouse around to make the picture drip."
 msgstr "עליך ללחוץ ולהזיז את העכבר כדי לגרום לתמונה שלך לטפטף."
 
-msgid "Click and move the mouse to thicken the picture."
-msgstr "עליך ללחוץ ולהזיז את העכבר כדי לעבות את הקוים."
+#, fuzzy
+msgid "Click and move the mouse around to turn the picture into a cartoon."
+msgstr "עליך ללחוץ ולהזיז את העכבר כדי ליצור אפקט של ציור גיר."
 
-msgid "Click and move the mouse to thin the picture."
-msgstr "עליך ללחוץ ולהזיז את העכבר כדי להצר את הקוים."
+msgid "Click to make a mirror image."
+msgstr "עליך ללחוץ כדי ליצור תמונת מראה."
 
-msgid "Click in the picture to fill that area with color."
-msgstr "עליך ללחוץ בתוך התמונה כדי למלא את האזור הזה בצבע."
+msgid "Click to flip the picture upside-down."
+msgstr "עליך ללחוץ כדי להפוך את התמונה מלמעלה למטה."
 
 msgid "Square"
 msgstr "ריבוע"
@@ -210,6 +258,10 @@ msgstr "צבעים"
 msgid "Brushes"
 msgstr "מברשות"
 
+#, fuzzy
+msgid "Erasers"
+msgstr "מחק"
+
 msgid "Stamps"
 msgstr "חותמות"
 
@@ -246,7 +298,7 @@ msgstr "מחק"
 msgid "New"
 msgstr "חדש"
 
-#. 'Open' label:
+#. buttons for the file open dialog
 msgid "Open"
 msgstr "פתיחה"
 
@@ -372,13 +424,14 @@ msgstr "עדיין אין באפשרותך להדפיס!"
 msgid "Erase this picture?"
 msgstr "האם למחוק תמונה זו?"
 
-#. 'Erase' label:
 msgid "Erase"
 msgstr "מחק"
 
-#. 'Back' label:
 msgid "Back"
 msgstr "חזרה"
+
+msgid "Aa"
+msgstr ""
 
 #. FIXME: Move elsewhere!!!
 msgid "Save over the older version of this picture?"
@@ -390,6 +443,24 @@ msgstr "לא, שמור בקובץ חדש"
 msgid "Choose the picture you want, then click “Open”."
 msgstr "עליך לבחור את התמונה הרצויה, ואז ללחוץ על 'פתיחה'"
 
+#~ msgid "Lime!"
+#~ msgstr "ירוק בהיר!"
+
+#~ msgid "Fuchsia!"
+#~ msgstr "סגול בהיר!"
+
+#~ msgid "Silver!"
+#~ msgstr "כסף!"
+
+#~ msgid "Thick"
+#~ msgstr "עיבוי"
+
+#~ msgid "Click and move the mouse to thicken the picture."
+#~ msgstr "עליך ללחוץ ולהזיז את העכבר כדי לעבות את הקוים."
+
+#~ msgid "Click and move the mouse to thin the picture."
+#~ msgstr "עליך ללחוץ ולהזיז את העכבר כדי להצר את הקוים."
+
 #~ msgid "Okay"
 #~ msgstr "בסדר"
 
@@ -398,4 +469,3 @@ msgstr "עליך לבחור את התמונה הרצויה, ואז ללחוץ ע
 
 #~ msgid "Grey"
 #~ msgstr "אפור"
-

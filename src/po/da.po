@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: da\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2004-08-18 19:42+0200\n"
+"POT-Creation-Date: 2005-01-06 12:31+0100\n"
 "PO-Revision-Date: 2004-07-31 04:39+0200\n"
 "Last-Translator: Mogens Jaeger <mogensjaeger@get2net.dk>\n"
 "Language-Team: Dansk <da@li.org>\n"
@@ -26,14 +26,20 @@ msgstr "Tux maling"
 msgid "Black!"
 msgstr "Sort."
 
+#, fuzzy
+msgid "Dark Gray!"
+msgstr "Grå."
+
+#. using both valid spellings
+msgid "Light Grey!"
+msgstr ""
+
+#. using both valid spellings
 msgid "White!"
 msgstr "Hvid."
 
 msgid "Red!"
 msgstr "Rød."
-
-msgid "Pink!"
-msgstr "Lyserød."
 
 msgid "Orange!"
 msgstr "Orange."
@@ -41,14 +47,14 @@ msgstr "Orange."
 msgid "Yellow!"
 msgstr "Gul."
 
-msgid "Lime!"
-msgstr "Lime."
+msgid "Neon green!"
+msgstr ""
 
 msgid "Green!"
 msgstr "Grøn."
 
-msgid "Cyan!"
-msgstr "Cyan."
+msgid "Sky blue!"
+msgstr ""
 
 msgid "Blue!"
 msgstr "Blå."
@@ -56,17 +62,21 @@ msgstr "Blå."
 msgid "Purple!"
 msgstr "Violet."
 
-msgid "Fuchsia!"
-msgstr "Fuchsia."
+msgid "Magenta!"
+msgstr ""
+
+msgid "Pink!"
+msgstr "Lyserød."
 
 msgid "Brown!"
 msgstr "Brun."
 
-msgid "Gray!"
-msgstr "Grå."
+#, fuzzy
+msgid "Tan!"
+msgstr "Cyan."
 
-msgid "Silver!"
-msgstr "Sølv."
+msgid "Beige!"
+msgstr ""
 
 msgid "Great!"
 msgstr "Godt."
@@ -80,20 +90,37 @@ msgstr "Fortsæt."
 msgid "Good job!"
 msgstr "Godt gået."
 
+msgid "Fill"
+msgstr "Fyld"
+
+#, fuzzy
+msgid "Grass"
+msgstr "Slet"
+
+#, fuzzy
+msgid "Bricks"
+msgstr "Tern"
+
 msgid "Rainbow"
 msgstr "Regnbue"
 
 msgid "Sparkles"
 msgstr "Gnister"
 
-msgid "Mirror"
-msgstr "Spejl"
-
-msgid "Flip"
-msgstr "Vend"
-
 msgid "Blur"
 msgstr "Sløring"
+
+msgid "Smudge"
+msgstr ""
+
+msgid "Fade"
+msgstr "Bleg"
+
+msgid "Darken"
+msgstr ""
+
+msgid "Chalk"
+msgstr "Kridt"
 
 msgid "Blocks"
 msgstr "Tern"
@@ -101,23 +128,36 @@ msgstr "Tern"
 msgid "Negative"
 msgstr "Negativ"
 
-msgid "Fade"
-msgstr "Bleg"
-
-msgid "Chalk"
-msgstr "Kridt"
+#, fuzzy
+msgid "Tint"
+msgstr "Tynd"
 
 msgid "Drip"
 msgstr "Dryp"
 
-msgid "Thick"
-msgstr "Tyk"
+msgid "Cartoon"
+msgstr ""
 
-msgid "Thin"
-msgstr "Tynd"
+msgid "Mirror"
+msgstr "Spejl"
 
-msgid "Fill"
-msgstr "Fyld"
+msgid "Flip"
+msgstr "Vend"
+
+msgid "Click in the picture to fill that area with color."
+msgstr "Klik på et område for at fylde det med en farve."
+
+#, fuzzy
+msgid "Click and move to draw grass. Don't forget the dirt!"
+msgstr "Klik og flyt for at tegne gnister."
+
+#, fuzzy
+msgid "Click and move to draw large bricks."
+msgstr "Klik og flyt for at tegne gnister."
+
+#, fuzzy
+msgid "Click and move to draw small bricks."
+msgstr "Klik og flyt for at tegne gnister."
 
 msgid "You can draw in rainbow colors!"
 msgstr "Du kan tegne med regnbuefarver!"
@@ -125,14 +165,23 @@ msgstr "Du kan tegne med regnbuefarver!"
 msgid "Click and move to draw sparkles."
 msgstr "Klik og flyt for at tegne gnister."
 
-msgid "Click to make a mirror image."
-msgstr "Klik for at spejlvende billedet."
-
-msgid "Click to flip the picture upside-down."
-msgstr "Vend billedet op og ned ved at klikke."
-
 msgid "Click and move the mouse around to blur the picture."
 msgstr "Klik of flyt musen for at sløre billedet."
+
+#, fuzzy
+msgid "Click and move the mouse around to smudge the picture."
+msgstr "Klik of flyt musen for at sløre billedet."
+
+msgid "Click and move to fade the colors."
+msgstr "Klik og flyt musen for at gøre billedet blegere."
+
+#, fuzzy
+msgid "Click and move to darken the colors."
+msgstr "Klik og flyt musen for at gøre billedet blegere."
+
+msgid ""
+"Click and move the mouse around to turn the picture into a chalk drawing."
+msgstr "Klik og flyt musen for at få billedet til at ligne en kridt tegning."
 
 msgid "Click and move the mouse around to make the picture blocky."
 msgstr "Klik og flyt muset for at gøre billedet ternet."
@@ -140,25 +189,23 @@ msgstr "Klik og flyt muset for at gøre billedet ternet."
 msgid "Click and move the mouse around to draw a negative."
 msgstr "Klik og flyt mysen, for at tegne et negativ."
 
-msgid "Click and move to fade the colors."
-msgstr "Klik og flyt musen for at gøre billedet blegere."
-
-msgid ""
-"Click and move the mouse around to turn the picture into a chalk drawing."
-msgstr "Klik og flyt musen for at få billedet til at ligne en kridt tegning."
+#, fuzzy
+msgid "Click and move the mouse around to change the picture's color."
+msgstr "Klik og flyt muset for at gøre billedet ternet."
 
 msgid "Click and move the mouse around to make the picture drip."
 msgstr ""
 "Klik og flyt musen for at få billedet til at få billedet til at dryppe."
 
-msgid "Click and move the mouse to thicken the picture."
-msgstr "Klik og flyt musen for at gøre billedet tykkere."
+#, fuzzy
+msgid "Click and move the mouse around to turn the picture into a cartoon."
+msgstr "Klik og flyt musen for at få billedet til at ligne en kridt tegning."
 
-msgid "Click and move the mouse to thin the picture."
-msgstr "Klik og flyt musen for at gøre billedet tyndere."
+msgid "Click to make a mirror image."
+msgstr "Klik for at spejlvende billedet."
 
-msgid "Click in the picture to fill that area with color."
-msgstr "Klik på et område for at fylde det med en farve."
+msgid "Click to flip the picture upside-down."
+msgstr "Vend billedet op og ned ved at klikke."
 
 msgid "Square"
 msgstr "Kvadrat"
@@ -209,6 +256,10 @@ msgstr "Farver"
 msgid "Brushes"
 msgstr "Pensler"
 
+#, fuzzy
+msgid "Erasers"
+msgstr "Viskelæder"
+
 msgid "Stamps"
 msgstr "Stempler"
 
@@ -245,7 +296,7 @@ msgstr "Viskelæder"
 msgid "New"
 msgstr "Ny"
 
-#. 'Open' label:
+#. buttons for the file open dialog
 msgid "Open"
 msgstr "Åbn"
 
@@ -375,13 +426,14 @@ msgstr "Du kan ikke udskrive endnu."
 msgid "Erase this picture?"
 msgstr "Skal billedet slettes?"
 
-#. 'Erase' label:
 msgid "Erase"
 msgstr "Slet"
 
-#. 'Back' label:
 msgid "Back"
 msgstr "Tilbage"
+
+msgid "Aa"
+msgstr ""
 
 #. FIXME: Move elsewhere!!!
 msgid "Save over the older version of this picture?"
@@ -392,6 +444,24 @@ msgstr "Nej, gem istedet som et nyt billede."
 
 msgid "Choose the picture you want, then click “Open”."
 msgstr "Vælg et billede, og tryk på »Åbn«."
+
+#~ msgid "Lime!"
+#~ msgstr "Lime."
+
+#~ msgid "Fuchsia!"
+#~ msgstr "Fuchsia."
+
+#~ msgid "Silver!"
+#~ msgstr "Sølv."
+
+#~ msgid "Thick"
+#~ msgstr "Tyk"
+
+#~ msgid "Click and move the mouse to thicken the picture."
+#~ msgstr "Klik og flyt musen for at gøre billedet tykkere."
+
+#~ msgid "Click and move the mouse to thin the picture."
+#~ msgstr "Klik og flyt musen for at gøre billedet tyndere."
 
 #~ msgid "Okay"
 #~ msgstr "OK"

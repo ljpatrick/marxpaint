@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint 0.9.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2004-07-16 21:12+0200\n"
+"POT-Creation-Date: 2005-01-06 12:31+0100\n"
 "PO-Revision-Date: 2004-03-30 17:24+0200\n"
 "Last-Translator: Pablo Saratxaga <pablo@walon.org>\n"
 "Language-Team: Walloon <linux-wa@walon.org>\n"
@@ -26,14 +26,20 @@ msgstr "Tux Paint"
 msgid "Black!"
 msgstr "Noer!"
 
+#, fuzzy
+msgid "Dark Gray!"
+msgstr "Gris!"
+
+#. using both valid spellings
+msgid "Light Grey!"
+msgstr ""
+
+#. using both valid spellings
 msgid "White!"
 msgstr "Blanc!"
 
 msgid "Red!"
 msgstr "Rodje!"
-
-msgid "Pink!"
-msgstr "Rôze!"
 
 msgid "Orange!"
 msgstr "Orandje!"
@@ -41,14 +47,14 @@ msgstr "Orandje!"
 msgid "Yellow!"
 msgstr "Djaene!"
 
-msgid "Lime!"
-msgstr "Djaene-vert!"
+msgid "Neon green!"
+msgstr ""
 
 msgid "Green!"
 msgstr "Vert!"
 
-msgid "Cyan!"
-msgstr "Cian!"
+msgid "Sky blue!"
+msgstr ""
 
 msgid "Blue!"
 msgstr "Bleu!"
@@ -56,17 +62,21 @@ msgstr "Bleu!"
 msgid "Purple!"
 msgstr "Poûrpe!"
 
-msgid "Fuchsia!"
-msgstr "Fuchia!"
+msgid "Magenta!"
+msgstr ""
+
+msgid "Pink!"
+msgstr "Rôze!"
 
 msgid "Brown!"
 msgstr "Brun!"
 
-msgid "Gray!"
-msgstr "Gris!"
+#, fuzzy
+msgid "Tan!"
+msgstr "Cian!"
 
-msgid "Silver!"
-msgstr "Årdjint!"
+msgid "Beige!"
+msgstr ""
 
 msgid "Great!"
 msgstr "Clapant!"
@@ -80,20 +90,37 @@ msgstr "Continouwez insi!"
 msgid "Good job!"
 msgstr "Bravo nosse pitit!"
 
+msgid "Fill"
+msgstr "Rimpli"
+
+#, fuzzy
+msgid "Grass"
+msgstr "Disfacer"
+
+#, fuzzy
+msgid "Bricks"
+msgstr "Cwårés"
+
 msgid "Rainbow"
 msgstr "Airdiè"
 
 msgid "Sparkles"
 msgstr "Sipites"
 
-msgid "Mirror"
-msgstr "Muroe"
-
-msgid "Flip"
-msgstr "Cou dzeu"
-
 msgid "Blur"
 msgstr "Adoûci"
+
+msgid "Smudge"
+msgstr ""
+
+msgid "Fade"
+msgstr "Blanki"
+
+msgid "Darken"
+msgstr ""
+
+msgid "Chalk"
+msgstr "Croye"
 
 msgid "Blocks"
 msgstr "Cwårés"
@@ -101,23 +128,36 @@ msgstr "Cwårés"
 msgid "Negative"
 msgstr "Negatif"
 
-msgid "Fade"
-msgstr "Blanki"
-
-msgid "Chalk"
-msgstr "Croye"
+#, fuzzy
+msgid "Tint"
+msgstr "Fén"
 
 msgid "Drip"
 msgstr "Gotes"
 
-msgid "Thick"
-msgstr "Sipès"
+msgid "Cartoon"
+msgstr ""
 
-msgid "Thin"
-msgstr "Fén"
+msgid "Mirror"
+msgstr "Muroe"
 
-msgid "Fill"
-msgstr "Rimpli"
+msgid "Flip"
+msgstr "Cou dzeu"
+
+msgid "Click in the picture to fill that area with color."
+msgstr "Clitchîz so l' imådje pol rimpli avou l' coleur tchoezeye."
+
+#, fuzzy
+msgid "Click and move to draw grass. Don't forget the dirt!"
+msgstr "Clitchîz et s' bodjîz l' sori po dessiner des spitaedjes."
+
+#, fuzzy
+msgid "Click and move to draw large bricks."
+msgstr "Clitchîz et s' bodjîz l' sori po dessiner des spitaedjes."
+
+#, fuzzy
+msgid "Click and move to draw small bricks."
+msgstr "Clitchîz et s' bodjîz l' sori po dessiner des spitaedjes."
 
 msgid "You can draw in rainbow colors!"
 msgstr "Vos ploz dessiner avou les coleurs di l' airdiè!"
@@ -125,14 +165,25 @@ msgstr "Vos ploz dessiner avou les coleurs di l' airdiè!"
 msgid "Click and move to draw sparkles."
 msgstr "Clitchîz et s' bodjîz l' sori po dessiner des spitaedjes."
 
-msgid "Click to make a mirror image."
-msgstr "Clitchîz po mete l' imådje come dins on muroe."
-
-msgid "Click to flip the picture upside-down."
-msgstr "Clitchîz po rtourner l' imådje cou å hôt."
-
 msgid "Click and move the mouse around to blur the picture."
 msgstr "Clitchîz et s' bodjîz l' sori po-z adoûci des bokets d' l' imådje."
+
+#, fuzzy
+msgid "Click and move the mouse around to smudge the picture."
+msgstr "Clitchîz et s' bodjîz l' sori po-z adoûci des bokets d' l' imådje."
+
+msgid "Click and move to fade the colors."
+msgstr "Clitchîz et s' bodjîz l' sori po blanki des bokets d' l' imådje."
+
+#, fuzzy
+msgid "Click and move to darken the colors."
+msgstr "Clitchîz et s' bodjîz l' sori po blanki des bokets d' l' imådje."
+
+msgid ""
+"Click and move the mouse around to turn the picture into a chalk drawing."
+msgstr ""
+"Clitchîz et s' bodjîz l' sori po mete des bokets d' l' imådje come dessinés "
+"al croye"
 
 msgid "Click and move the mouse around to make the picture blocky."
 msgstr ""
@@ -142,30 +193,27 @@ msgid "Click and move the mouse around to draw a negative."
 msgstr ""
 "Clitchîz et s' bodjîz l' sori po mete des bokets d' l' imådje e negatif."
 
-msgid "Click and move to fade the colors."
-msgstr "Clitchîz et s' bodjîz l' sori po blanki des bokets d' l' imådje."
-
-msgid ""
-"Click and move the mouse around to turn the picture into a chalk drawing."
+#, fuzzy
+msgid "Click and move the mouse around to change the picture's color."
 msgstr ""
-"Clitchîz et s' bodjîz l' sori po mete des bokets d' l' imådje come dessinés "
-"al croye"
+"Clitchîz et s' bodjîz l' sori po mete des bokets d' l' imådje e ptits cwårés."
 
 msgid "Click and move the mouse around to make the picture drip."
 msgstr ""
 "Clitchîz et s' bodjîz l' sori po mete des bokets d' l' imådje come moyîs "
 "avou des gotes d' aiwe."
 
-msgid "Click and move the mouse to thicken the picture."
+#, fuzzy
+msgid "Click and move the mouse around to turn the picture into a cartoon."
 msgstr ""
-"Clitchîz et s' bodjîz l' sori po mete des bokets d' l' imådje pus spès."
+"Clitchîz et s' bodjîz l' sori po mete des bokets d' l' imådje come dessinés "
+"al croye"
 
-msgid "Click and move the mouse to thin the picture."
-msgstr ""
-"Clitchîz et s' bodjîz l' sori po mete des bokets d' l' imådje pus féns."
+msgid "Click to make a mirror image."
+msgstr "Clitchîz po mete l' imådje come dins on muroe."
 
-msgid "Click in the picture to fill that area with color."
-msgstr "Clitchîz so l' imådje pol rimpli avou l' coleur tchoezeye."
+msgid "Click to flip the picture upside-down."
+msgstr "Clitchîz po rtourner l' imådje cou å hôt."
 
 msgid "Square"
 msgstr "Cwåré"
@@ -215,6 +263,10 @@ msgstr "Coleurs"
 msgid "Brushes"
 msgstr "Pinceas"
 
+#, fuzzy
+msgid "Erasers"
+msgstr "Gome"
+
 msgid "Stamps"
 msgstr "Tampons"
 
@@ -251,7 +303,7 @@ msgstr "Gome"
 msgid "New"
 msgstr "Novea"
 
-#. 'Open' label:
+#. buttons for the file open dialog
 msgid "Open"
 msgstr "Drovi"
 
@@ -384,13 +436,14 @@ msgstr "Vos n' poloz nén co imprimer!"
 msgid "Erase this picture?"
 msgstr "Disfacer ciste imådje chal?"
 
-#. 'Erase' label:
 msgid "Erase"
 msgstr "Disfacer"
 
-#. 'Back' label:
 msgid "Back"
 msgstr "En erî"
+
+msgid "Aa"
+msgstr ""
 
 #. FIXME: Move elsewhere!!!
 msgid "Save over the older version of this picture?"
@@ -401,3 +454,23 @@ msgstr "Neni, schaper en on novea fitchî"
 
 msgid "Choose the picture you want, then click “Open”."
 msgstr "Tchoezixhoz l' imådje ki vos vloz, poy clitchîz so «Drovi»."
+
+#~ msgid "Lime!"
+#~ msgstr "Djaene-vert!"
+
+#~ msgid "Fuchsia!"
+#~ msgstr "Fuchia!"
+
+#~ msgid "Silver!"
+#~ msgstr "Årdjint!"
+
+#~ msgid "Thick"
+#~ msgstr "Sipès"
+
+#~ msgid "Click and move the mouse to thicken the picture."
+#~ msgstr ""
+#~ "Clitchîz et s' bodjîz l' sori po mete des bokets d' l' imådje pus spès."
+
+#~ msgid "Click and move the mouse to thin the picture."
+#~ msgstr ""
+#~ "Clitchîz et s' bodjîz l' sori po mete des bokets d' l' imådje pus féns."

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Tuxpaint 0.9.2pre\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2004-07-16 21:12+0200\n"
+"POT-Creation-Date: 2005-01-06 12:31+0100\n"
 "PO-Revision-Date: 2003-01-03 21:32-0500\n"
 "Last-Translator: Laurentiu Buzdugan <buzdugan@voyager.net>\n"
 "Language-Team: Romanian <ro@li.org>\n"
@@ -32,16 +32,21 @@ msgid "Black!"
 msgstr "Negru!"
 
 #, fuzzy
+msgid "Dark Gray!"
+msgstr "Grozav!"
+
+#. using both valid spellings
+msgid "Light Grey!"
+msgstr ""
+
+#. using both valid spellings
+#, fuzzy
 msgid "White!"
 msgstr "Alb!"
 
 #, fuzzy
 msgid "Red!"
 msgstr "Re-fã!"
-
-#, fuzzy
-msgid "Pink!"
-msgstr "Roz!"
 
 #, fuzzy
 msgid "Orange!"
@@ -51,17 +56,15 @@ msgstr "Portocaliu!"
 msgid "Yellow!"
 msgstr "Galben!"
 
-#, fuzzy
-msgid "Lime!"
-msgstr "Linii"
+msgid "Neon green!"
+msgstr ""
 
 #, fuzzy
 msgid "Green!"
 msgstr "Verde!"
 
-#, fuzzy
-msgid "Cyan!"
-msgstr "Ceruleum!"
+msgid "Sky blue!"
+msgstr ""
 
 #, fuzzy
 msgid "Blue!"
@@ -71,18 +74,22 @@ msgstr "Albastru!"
 msgid "Purple!"
 msgstr "Violet!"
 
-msgid "Fuchsia!"
+msgid "Magenta!"
 msgstr ""
+
+#, fuzzy
+msgid "Pink!"
+msgstr "Roz!"
 
 #, fuzzy
 msgid "Brown!"
 msgstr "Maro!"
 
 #, fuzzy
-msgid "Gray!"
-msgstr "Grozav!"
+msgid "Tan!"
+msgstr "Ceruleum!"
 
-msgid "Silver!"
+msgid "Beige!"
 msgstr ""
 
 msgid "Great!"
@@ -97,20 +104,37 @@ msgstr "Þine-o tot aºa!"
 msgid "Good job!"
 msgstr "Bunã treabã!"
 
+msgid "Fill"
+msgstr "Umple"
+
+#, fuzzy
+msgid "Grass"
+msgstr "ªterge"
+
+#, fuzzy
+msgid "Bricks"
+msgstr "Blocuri"
+
 msgid "Rainbow"
 msgstr "Curcubeu"
 
 msgid "Sparkles"
 msgstr "Steluþe"
 
-msgid "Mirror"
-msgstr "Oglideºte"
-
-msgid "Flip"
-msgstr "Rãstoarnã"
-
 msgid "Blur"
 msgstr "Neclar"
+
+msgid "Smudge"
+msgstr ""
+
+msgid "Fade"
+msgstr "Estompeazã"
+
+msgid "Darken"
+msgstr ""
+
+msgid "Chalk"
+msgstr "Cretã"
 
 msgid "Blocks"
 msgstr "Blocuri"
@@ -118,23 +142,37 @@ msgstr "Blocuri"
 msgid "Negative"
 msgstr "Negativ"
 
-msgid "Fade"
-msgstr "Estompeazã"
-
-msgid "Chalk"
-msgstr "Cretã"
+#, fuzzy
+msgid "Tint"
+msgstr "Subþire"
 
 msgid "Drip"
 msgstr "Picurã"
 
-msgid "Thick"
-msgstr "Gros"
+msgid "Cartoon"
+msgstr ""
 
-msgid "Thin"
-msgstr "Subþire"
+msgid "Mirror"
+msgstr "Oglideºte"
 
-msgid "Fill"
-msgstr "Umple"
+msgid "Flip"
+msgstr "Rãstoarnã"
+
+#, fuzzy
+msgid "Click in the picture to fill that area with color."
+msgstr "Clic în desen pentru a umple acea zonã cu culoare"
+
+#, fuzzy
+msgid "Click and move to draw grass. Don't forget the dirt!"
+msgstr "Clic ºi miºcã pentru a desena steluþe"
+
+#, fuzzy
+msgid "Click and move to draw large bricks."
+msgstr "Clic ºi miºcã pentru a desena steluþe"
+
+#, fuzzy
+msgid "Click and move to draw small bricks."
+msgstr "Clic ºi miºcã pentru a desena steluþe"
 
 msgid "You can draw in rainbow colors!"
 msgstr "Poþi desena în culorile curcubeului!"
@@ -144,16 +182,24 @@ msgid "Click and move to draw sparkles."
 msgstr "Clic ºi miºcã pentru a desena steluþe"
 
 #, fuzzy
-msgid "Click to make a mirror image."
-msgstr "Clic pentru a face o imagine în oglindã!"
-
-#, fuzzy
-msgid "Click to flip the picture upside-down."
-msgstr "Clic pentru a rãsturna imaginea cu susul în jos!"
-
-#, fuzzy
 msgid "Click and move the mouse around to blur the picture."
 msgstr "Clic ºi miºcã maus-ul pentru a face imaginea neclarã"
+
+#, fuzzy
+msgid "Click and move the mouse around to smudge the picture."
+msgstr "Clic ºi miºcã maus-ul pentru a face imaginea neclarã"
+
+msgid "Click and move to fade the colors."
+msgstr "Clic ºi miºcã pentru a estompa culorile."
+
+#, fuzzy
+msgid "Click and move to darken the colors."
+msgstr "Clic ºi miºcã pentru a estompa culorile."
+
+msgid ""
+"Click and move the mouse around to turn the picture into a chalk drawing."
+msgstr ""
+"Clic ºi miºcã maus-ul pentru a schimba desenul într-un desen din cretã."
 
 #, fuzzy
 msgid "Click and move the mouse around to make the picture blocky."
@@ -163,29 +209,26 @@ msgstr "Clic ºi miºcã maus-ul pentru a face desenul pãtrãþos"
 msgid "Click and move the mouse around to draw a negative."
 msgstr "Clic ºi miºcã maus-ul pentru a desena un negativ"
 
-msgid "Click and move to fade the colors."
-msgstr "Clic ºi miºcã pentru a estompa culorile."
-
-msgid ""
-"Click and move the mouse around to turn the picture into a chalk drawing."
-msgstr ""
-"Clic ºi miºcã maus-ul pentru a schimba desenul într-un desen din cretã."
+#, fuzzy
+msgid "Click and move the mouse around to change the picture's color."
+msgstr "Clic ºi miºcã maus-ul pentru a face desenul pãtrãþos"
 
 #, fuzzy
 msgid "Click and move the mouse around to make the picture drip."
 msgstr "Clic ºi miºcã maus-ul pentru a face desenul curgãtor!"
 
 #, fuzzy
-msgid "Click and move the mouse to thicken the picture."
-msgstr "Clic ºi miºcã maus-ul pentru a îngroºa desenul"
+msgid "Click and move the mouse around to turn the picture into a cartoon."
+msgstr ""
+"Clic ºi miºcã maus-ul pentru a schimba desenul într-un desen din cretã."
 
 #, fuzzy
-msgid "Click and move the mouse to thin the picture."
-msgstr "Clic ºi miºcã maus-ul pentru a subþia desenul"
+msgid "Click to make a mirror image."
+msgstr "Clic pentru a face o imagine în oglindã!"
 
 #, fuzzy
-msgid "Click in the picture to fill that area with color."
-msgstr "Clic în desen pentru a umple acea zonã cu culoare"
+msgid "Click to flip the picture upside-down."
+msgstr "Clic pentru a rãsturna imaginea cu susul în jos!"
 
 msgid "Square"
 msgstr "Pãtrat"
@@ -235,6 +278,10 @@ msgstr "Culori"
 msgid "Brushes"
 msgstr "Pensule"
 
+#, fuzzy
+msgid "Erasers"
+msgstr "Gumã de ºters"
+
 msgid "Stamps"
 msgstr "ªtampile"
 
@@ -271,7 +318,7 @@ msgstr "Gumã de ºters"
 msgid "New"
 msgstr "Nou"
 
-#. 'Open' label:
+#. buttons for the file open dialog
 msgid "Open"
 msgstr "Deschide"
 
@@ -405,13 +452,14 @@ msgstr "Nu poþi încã tipãri!"
 msgid "Erase this picture?"
 msgstr "Stergi aceastã imagine?"
 
-#. 'Erase' label:
 msgid "Erase"
 msgstr "ªterge"
 
-#. 'Back' label:
 msgid "Back"
 msgstr "Înapoi"
+
+msgid "Aa"
+msgstr ""
 
 #. FIXME: Move elsewhere!!!
 #, fuzzy
@@ -424,6 +472,21 @@ msgstr "Nu, salveazã un nou fiºier"
 #, fuzzy
 msgid "Choose the picture you want, then click “Open”."
 msgstr "Alege imaginea doritã, apoi fã clic pe 'Deschide'"
+
+#, fuzzy
+#~ msgid "Lime!"
+#~ msgstr "Linii"
+
+#~ msgid "Thick"
+#~ msgstr "Gros"
+
+#, fuzzy
+#~ msgid "Click and move the mouse to thicken the picture."
+#~ msgstr "Clic ºi miºcã maus-ul pentru a îngroºa desenul"
+
+#, fuzzy
+#~ msgid "Click and move the mouse to thin the picture."
+#~ msgstr "Clic ºi miºcã maus-ul pentru a subþia desenul"
 
 #~ msgid "Okay"
 #~ msgstr "Bine"

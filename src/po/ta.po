@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TuxPaint 0.9.13\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2004-07-18 19:29+0200\n"
+"POT-Creation-Date: 2005-01-06 12:31+0100\n"
 "PO-Revision-Date: 2004-07-15 00:25+0800\n"
 "Last-Translator: Muguntharaj <mugunth@thamizha.com>\n"
 "Language-Team: \n"
@@ -22,14 +22,20 @@ msgstr "¼ìŠ ¦ÀÂ¢ýð"
 msgid "Black!"
 msgstr "¸ÕôÒ!"
 
+#, fuzzy
+msgid "Dark Gray!"
+msgstr "º¡õÀø¿¢Èõ!"
+
+#. using both valid spellings
+msgid "Light Grey!"
+msgstr ""
+
+#. using both valid spellings
 msgid "White!"
 msgstr "¦Åû¨Ç!"
 
 msgid "Red!"
 msgstr "º¢¸ôÒ!"
-
-msgid "Pink!"
-msgstr "þÇïº¢ÅôÒ!"
 
 msgid "Orange!"
 msgstr "¬ÃïÍ!"
@@ -37,14 +43,14 @@ msgstr "¬ÃïÍ!"
 msgid "Yellow!"
 msgstr "Áïºû!"
 
-msgid "Lime!"
-msgstr "þÇõÀî¨º!"
+msgid "Neon green!"
+msgstr ""
 
 msgid "Green!"
 msgstr "Àî¨º!"
 
-msgid "Cyan!"
-msgstr "´Ç¢÷¿£Äõ!"
+msgid "Sky blue!"
+msgstr ""
 
 msgid "Blue!"
 msgstr "¿£Äõ!"
@@ -52,17 +58,21 @@ msgstr "¿£Äõ!"
 msgid "Purple!"
 msgstr "°¾¡!"
 
-msgid "Fuchsia!"
+msgid "Magenta!"
 msgstr ""
+
+msgid "Pink!"
+msgstr "þÇïº¢ÅôÒ!"
 
 msgid "Brown!"
 msgstr "ÀØôÒ!"
 
-msgid "Gray!"
-msgstr "º¡õÀø¿¢Èõ!"
+#, fuzzy
+msgid "Tan!"
+msgstr "´Ç¢÷¿£Äõ!"
 
-msgid "Silver!"
-msgstr "¦ÅûÇ¢!"
+msgid "Beige!"
+msgstr ""
 
 msgid "Great!"
 msgstr "«ð¼¸¡ºõ!"
@@ -76,20 +86,38 @@ msgstr "¦¾¡¼ÃðÎõ!!"
 msgid "Good job!"
 msgstr "«üÒ¾Á¡É À½¢!"
 
+msgid "Fill"
+msgstr "¿¢ÃôÒ"
+
+#  'Erase' label:
+#, fuzzy
+msgid "Grass"
+msgstr "«Æ¢"
+
+#, fuzzy
+msgid "Bricks"
+msgstr "¸ð¼í¸û"
+
 msgid "Rainbow"
 msgstr "Å¡ÉÅ¢ø"
 
 msgid "Sparkles"
 msgstr "´Ç¢÷×"
 
-msgid "Mirror"
-msgstr "¸ñ½¡Ê À¢õÀõ"
-
-msgid "Flip"
-msgstr "ÍñÊÅ¢Î"
-
 msgid "Blur"
 msgstr "ÁíÌ"
+
+msgid "Smudge"
+msgstr ""
+
+msgid "Fade"
+msgstr "Áí¸Ä¡ìÌ"
+
+msgid "Darken"
+msgstr ""
+
+msgid "Chalk"
+msgstr "Á¡ì¸ðÊ"
 
 msgid "Blocks"
 msgstr "¸ð¼í¸û"
@@ -97,23 +125,37 @@ msgstr "¸ð¼í¸û"
 msgid "Negative"
 msgstr "±¾¢÷¿¢¨Ä"
 
-msgid "Fade"
-msgstr "Áí¸Ä¡ìÌ"
-
-msgid "Chalk"
-msgstr "Á¡ì¸ðÊ"
+#, fuzzy
+msgid "Tint"
+msgstr "¦ÁÄ¢¾¡É"
 
 msgid "Drip"
 msgstr "¦º¡ðÎ¾ø"
 
-msgid "Thick"
-msgstr "¾ÊÁÉ¡É"
+msgid "Cartoon"
+msgstr ""
 
-msgid "Thin"
-msgstr "¦ÁÄ¢¾¡É"
+msgid "Mirror"
+msgstr "¸ñ½¡Ê À¢õÀõ"
 
-msgid "Fill"
-msgstr "¿¢ÃôÒ"
+msgid "Flip"
+msgstr "ÍñÊÅ¢Î"
+
+#, fuzzy
+msgid "Click in the picture to fill that area with color."
+msgstr "À¼ò¾¢Ûû ¦º¡Îì¸¢É¡ø, «ó¾ ÀÃôÒ ÓØì¸ ¿¢Èõ Á¡Úõ"
+
+#, fuzzy
+msgid "Click and move to draw grass. Don't forget the dirt!"
+msgstr "¾ðÊÅ¢ðÎ ±Ä¢¨Â ¿¸÷ò¾¢É¡ø ´Ç¢ÕõÀ¼õ Å¨ÃÂÄ¡õ."
+
+#, fuzzy
+msgid "Click and move to draw large bricks."
+msgstr "¾ðÊÅ¢ðÎ ±Ä¢¨Â ¿¸÷ò¾¢É¡ø ´Ç¢ÕõÀ¼õ Å¨ÃÂÄ¡õ."
+
+#, fuzzy
+msgid "Click and move to draw small bricks."
+msgstr "¾ðÊÅ¢ðÎ ±Ä¢¨Â ¿¸÷ò¾¢É¡ø ´Ç¢ÕõÀ¼õ Å¨ÃÂÄ¡õ."
 
 msgid "You can draw in rainbow colors!"
 msgstr "Å¡ÉÅ¢øÄ¢ý ¿¢Èí¸Ç¢ø ¿£í¸û Å¨ÃÂÄ¡õ!"
@@ -121,14 +163,23 @@ msgstr "Å¡ÉÅ¢øÄ¢ý ¿¢Èí¸Ç¢ø ¿£í¸û Å¨ÃÂÄ¡õ!"
 msgid "Click and move to draw sparkles."
 msgstr "¾ðÊÅ¢ðÎ ±Ä¢¨Â ¿¸÷ò¾¢É¡ø ´Ç¢ÕõÀ¼õ Å¨ÃÂÄ¡õ."
 
-msgid "Click to make a mirror image."
-msgstr "¾ðÊÉ¡ø À¼õ ¸ñ½¡Ê À¢õÀÁ¡¸ Á¡Úõ."
-
-msgid "Click to flip the picture upside-down."
-msgstr "¾ðÊÉ¡ø À¼õ ¾¨Ä¸£Æ¡¸ Á¡Úõ."
-
 msgid "Click and move the mouse around to blur the picture."
 msgstr "¾ðÊÅ¢ðÎ ±Ä¢¨Â ¿¸÷ò¾¢É¡ø À¼õ Áí¸Ä¡Ìõ."
+
+#, fuzzy
+msgid "Click and move the mouse around to smudge the picture."
+msgstr "¾ðÊÅ¢ðÎ ±Ä¢¨Â ¿¸÷ò¾¢É¡ø À¼õ Áí¸Ä¡Ìõ."
+
+msgid "Click and move to fade the colors."
+msgstr "¿¢Èí¸¨Ç Áí¸Ä¡ì¸ ¾ðÊÅ¢ðÎ ¿¸÷ò¾×õ"
+
+#, fuzzy
+msgid "Click and move to darken the colors."
+msgstr "¿¢Èí¸¨Ç Áí¸Ä¡ì¸ ¾ðÊÅ¢ðÎ ¿¸÷ò¾×õ"
+
+msgid ""
+"Click and move the mouse around to turn the picture into a chalk drawing."
+msgstr "þó¾ À¼ò¨¾ Á¡ì¸ðÊÂ¡ø Å¨Ãó¾Ð §À¡ø ¬ì¸, ±Ä¢¨Â ¦º¡Îì¸¢ ¿¸÷ò¾×õ"
 
 msgid "Click and move the mouse around to make the picture blocky."
 msgstr "¾ðÊÅ¢ðÎ ±Ä¢¨Â ¿¸÷ò¾¢É¡ø À¼õ ¸ð¼í¸Ç¡¸ Á¡Úõ."
@@ -136,26 +187,22 @@ msgstr "¾ðÊÅ¢ðÎ ±Ä¢¨Â ¿¸÷ò¾¢É¡ø À¼õ ¸ð¼í¸Ç¡¸ Á�
 msgid "Click and move the mouse around to draw a negative."
 msgstr "¾ðÊÅ¢ðÎ ±Ä¢¨Â ¿¸÷ò¾¢É¡ø À¼õ ¦¿¸ðÊù À¼Á¡¸ Á¡Úõ."
 
-msgid "Click and move to fade the colors."
-msgstr "¿¢Èí¸¨Ç Áí¸Ä¡ì¸ ¾ðÊÅ¢ðÎ ¿¸÷ò¾×õ"
-
-msgid ""
-"Click and move the mouse around to turn the picture into a chalk drawing."
-msgstr "þó¾ À¼ò¨¾ Á¡ì¸ðÊÂ¡ø Å¨Ãó¾Ð §À¡ø ¬ì¸, ±Ä¢¨Â ¦º¡Îì¸¢ ¿¸÷ò¾×õ"
+#, fuzzy
+msgid "Click and move the mouse around to change the picture's color."
+msgstr "¾ðÊÅ¢ðÎ ±Ä¢¨Â ¿¸÷ò¾¢É¡ø À¼õ ¸ð¼í¸Ç¡¸ Á¡Úõ."
 
 msgid "Click and move the mouse around to make the picture drip."
 msgstr "±Ä¢¨Â ¦º¡Îì¸¢ ¿¸÷ò¾¢É¡ø þó¾ À¼õ , ¾ñ½£Ã¢ø ¿¨Éó¾ Á¡¾¢Ã¢ ¬Ìõ."
 
-msgid "Click and move the mouse to thicken the picture."
-msgstr "±Ä¢¨Â ¦º¡Îì¸¢ ¿¸÷ò¾¢É¡ø,þó¾ À¼õ ¾ÊÁÉ¡Ìõ."
-
 #, fuzzy
-msgid "Click and move the mouse to thin the picture."
-msgstr "±Ä¢¨Â ¦º¡Îì¸¢ ¿¸÷ò¾¢É¡ø, þó¾ À¼õ ¦ÁøÄ¢Â¾¡¸ Á¡Úõ"
+msgid "Click and move the mouse around to turn the picture into a cartoon."
+msgstr "þó¾ À¼ò¨¾ Á¡ì¸ðÊÂ¡ø Å¨Ãó¾Ð §À¡ø ¬ì¸, ±Ä¢¨Â ¦º¡Îì¸¢ ¿¸÷ò¾×õ"
 
-#, fuzzy
-msgid "Click in the picture to fill that area with color."
-msgstr "À¼ò¾¢Ûû ¦º¡Îì¸¢É¡ø, «ó¾ ÀÃôÒ ÓØì¸ ¿¢Èõ Á¡Úõ"
+msgid "Click to make a mirror image."
+msgstr "¾ðÊÉ¡ø À¼õ ¸ñ½¡Ê À¢õÀÁ¡¸ Á¡Úõ."
+
+msgid "Click to flip the picture upside-down."
+msgstr "¾ðÊÉ¡ø À¼õ ¾¨Ä¸£Æ¡¸ Á¡Úõ."
 
 msgid "Square"
 msgstr "ºÐÃõ"
@@ -205,6 +252,10 @@ msgstr "¿¢Èí¸û"
 msgid "Brushes"
 msgstr "àÃ¢¨¸¸û"
 
+#, fuzzy
+msgid "Erasers"
+msgstr "«Æ¢ôÀ¡ý"
+
 msgid "Stamps"
 msgstr "Óò¾¢¨Ã¸û"
 
@@ -241,7 +292,7 @@ msgstr "«Æ¢ôÀ¡ý"
 msgid "New"
 msgstr "Ò¾¢Â"
 
-#. 'Open' label:
+#. buttons for the file open dialog
 msgid "Open"
 msgstr "¾¢È"
 
@@ -373,14 +424,15 @@ msgid "Erase this picture?"
 msgstr "À¼ò¨¾ «Æ¢òÐÅ¢¼Ä¡Á¡?"
 
 #  'Erase' label:
-#. 'Erase' label:
 msgid "Erase"
 msgstr "«Æ¢"
 
 #  'Back' label:
-#. 'Back' label:
 msgid "Back"
 msgstr "À¢ý"
+
+msgid "Aa"
+msgstr ""
 
 #  FIXME: Move elsewhere!!!
 #. FIXME: Move elsewhere!!!
@@ -393,3 +445,19 @@ msgstr "§Åñ¼¡õ, þôÀ¼ò¨¾ Ò¾¢Â §¸¡ôÀ¡¸ §ºÁ¢"
 
 msgid "Choose the picture you want, then click “Open”."
 msgstr "§¾¨ÅÂ¡É À¼ò¨¾ §¾÷ó¦¾ÎòÐ, À¢ÈÌ '¾¢È'-³ò ¾ð¼×õ."
+
+#~ msgid "Lime!"
+#~ msgstr "þÇõÀî¨º!"
+
+#~ msgid "Silver!"
+#~ msgstr "¦ÅûÇ¢!"
+
+#~ msgid "Thick"
+#~ msgstr "¾ÊÁÉ¡É"
+
+#~ msgid "Click and move the mouse to thicken the picture."
+#~ msgstr "±Ä¢¨Â ¦º¡Îì¸¢ ¿¸÷ò¾¢É¡ø,þó¾ À¼õ ¾ÊÁÉ¡Ìõ."
+
+#, fuzzy
+#~ msgid "Click and move the mouse to thin the picture."
+#~ msgstr "±Ä¢¨Â ¦º¡Îì¸¢ ¿¸÷ò¾¢É¡ø, þó¾ À¼õ ¦ÁøÄ¢Â¾¡¸ Á¡Úõ"

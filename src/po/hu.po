@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TuxPaint 0.0.1pre\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2004-07-16 21:12+0200\n"
+"POT-Creation-Date: 2005-01-06 12:31+0100\n"
 "PO-Revision-Date: 2004-07-18 10:37+0200\n"
 "Last-Translator: Török Gábor <gabo@linuxportal.hu>\n"
 "Language-Team: Török Gábor <gabo@linuxportal.hu>\n"
@@ -25,14 +25,20 @@ msgstr "Tux Paint"
 msgid "Black!"
 msgstr "Fekete!"
 
+#, fuzzy
+msgid "Dark Gray!"
+msgstr "Szürke!"
+
+#. using both valid spellings
+msgid "Light Grey!"
+msgstr ""
+
+#. using both valid spellings
 msgid "White!"
 msgstr "Fehér!"
 
 msgid "Red!"
 msgstr "Piros!"
-
-msgid "Pink!"
-msgstr "Rózsaszín!"
 
 msgid "Orange!"
 msgstr "Narancs!"
@@ -40,14 +46,14 @@ msgstr "Narancs!"
 msgid "Yellow!"
 msgstr "Sárga!"
 
-msgid "Lime!"
-msgstr "Citrom!"
+msgid "Neon green!"
+msgstr ""
 
 msgid "Green!"
 msgstr "Zöld!"
 
-msgid "Cyan!"
-msgstr "Türkisz!"
+msgid "Sky blue!"
+msgstr ""
 
 msgid "Blue!"
 msgstr "Kék!"
@@ -55,17 +61,21 @@ msgstr "Kék!"
 msgid "Purple!"
 msgstr "Lila!"
 
-msgid "Fuchsia!"
-msgstr "Bíbor!"
+msgid "Magenta!"
+msgstr ""
+
+msgid "Pink!"
+msgstr "Rózsaszín!"
 
 msgid "Brown!"
 msgstr "Barna!"
 
-msgid "Gray!"
-msgstr "Szürke!"
+#, fuzzy
+msgid "Tan!"
+msgstr "Türkisz!"
 
-msgid "Silver!"
-msgstr "Ezüst!"
+msgid "Beige!"
+msgstr ""
 
 msgid "Great!"
 msgstr "Klassz!"
@@ -79,20 +89,37 @@ msgstr "Jó lesz!"
 msgid "Good job!"
 msgstr "Szép munka!"
 
+msgid "Fill"
+msgstr "Kitölt"
+
+#, fuzzy
+msgid "Grass"
+msgstr "Radír"
+
+#, fuzzy
+msgid "Bricks"
+msgstr "Kockák"
+
 msgid "Rainbow"
 msgstr "Szívárvány"
 
 msgid "Sparkles"
 msgstr "Festékszóró"
 
-msgid "Mirror"
-msgstr "Tükör"
-
-msgid "Flip"
-msgstr "Megfordít"
-
 msgid "Blur"
 msgstr "Maszat"
+
+msgid "Smudge"
+msgstr ""
+
+msgid "Fade"
+msgstr "Halvány"
+
+msgid "Darken"
+msgstr ""
+
+msgid "Chalk"
+msgstr "Kréta"
 
 msgid "Blocks"
 msgstr "Kockák"
@@ -100,23 +127,36 @@ msgstr "Kockák"
 msgid "Negative"
 msgstr "Színcsere"
 
-msgid "Fade"
-msgstr "Halvány"
-
-msgid "Chalk"
-msgstr "Kréta"
+#, fuzzy
+msgid "Tint"
+msgstr "Vékony"
 
 msgid "Drip"
 msgstr "Csepp"
 
-msgid "Thick"
-msgstr "Vastag"
+msgid "Cartoon"
+msgstr ""
 
-msgid "Thin"
-msgstr "Vékony"
+msgid "Mirror"
+msgstr "Tükör"
 
-msgid "Fill"
-msgstr "Kitölt"
+msgid "Flip"
+msgstr "Megfordít"
+
+msgid "Click in the picture to fill that area with color."
+msgstr "Kattints oda a rajzodon, amit kiszeretnél tölteni festékkel!"
+
+#, fuzzy
+msgid "Click and move to draw grass. Don't forget the dirt!"
+msgstr "Kattints oda a rajzodon, ahova festeni szeretnél!"
+
+#, fuzzy
+msgid "Click and move to draw large bricks."
+msgstr "Kattints oda a rajzodon, ahova festeni szeretnél!"
+
+#, fuzzy
+msgid "Click and move to draw small bricks."
+msgstr "Kattints oda a rajzodon, ahova festeni szeretnél!"
 
 msgid "You can draw in rainbow colors!"
 msgstr "Szívárványt is rajzolhatsz!"
@@ -124,14 +164,23 @@ msgstr "Szívárványt is rajzolhatsz!"
 msgid "Click and move to draw sparkles."
 msgstr "Kattints oda a rajzodon, ahova festeni szeretnél!"
 
-msgid "Click to make a mirror image."
-msgstr "Kattints a rajzlapra, hogy tükrözzük a rajzodat!"
-
-msgid "Click to flip the picture upside-down."
-msgstr "Kattints a rajzlapra, hogy fejjel-lefelé fordítsuk a rajzodat!"
-
 msgid "Click and move the mouse around to blur the picture."
 msgstr "Kattints oda a rajzodon, ahol maszatolni szeretnél!"
+
+#, fuzzy
+msgid "Click and move the mouse around to smudge the picture."
+msgstr "Kattints oda a rajzodon, ahol maszatolni szeretnél!"
+
+msgid "Click and move to fade the colors."
+msgstr "Kattints oda a rajzodon, ahol fakítani szeretnéd a színeket!"
+
+#, fuzzy
+msgid "Click and move to darken the colors."
+msgstr "Kattints oda a rajzodon, ahol fakítani szeretnéd a színeket!"
+
+msgid ""
+"Click and move the mouse around to turn the picture into a chalk drawing."
+msgstr "Kattints oda a rajzodon, ahol krétával szeretnél rajzolni!"
 
 msgid "Click and move the mouse around to make the picture blocky."
 msgstr "Kattins oda a rajzodon, ahova kockákat szeretnél rajzolni!"
@@ -139,24 +188,22 @@ msgstr "Kattins oda a rajzodon, ahova kockákat szeretnél rajzolni!"
 msgid "Click and move the mouse around to draw a negative."
 msgstr "Kattints oda a rajzodon, ahol fel szeretnéd cserélni a színeket!"
 
-msgid "Click and move to fade the colors."
-msgstr "Kattints oda a rajzodon, ahol fakítani szeretnéd a színeket!"
-
-msgid ""
-"Click and move the mouse around to turn the picture into a chalk drawing."
-msgstr "Kattints oda a rajzodon, ahol krétával szeretnél rajzolni!"
+#, fuzzy
+msgid "Click and move the mouse around to change the picture's color."
+msgstr "Kattins oda a rajzodon, ahova kockákat szeretnél rajzolni!"
 
 msgid "Click and move the mouse around to make the picture drip."
 msgstr "Kattints oda a rajzodon, ahova festéket szeretnél csepegtetni!"
 
-msgid "Click and move the mouse to thicken the picture."
-msgstr "Kattints arra a vonalra, amit vastagítani szeretnél!"
+#, fuzzy
+msgid "Click and move the mouse around to turn the picture into a cartoon."
+msgstr "Kattints oda a rajzodon, ahol krétával szeretnél rajzolni!"
 
-msgid "Click and move the mouse to thin the picture."
-msgstr "Kattints arra a vonalra, amit vékonyítani szeretnél!"
+msgid "Click to make a mirror image."
+msgstr "Kattints a rajzlapra, hogy tükrözzük a rajzodat!"
 
-msgid "Click in the picture to fill that area with color."
-msgstr "Kattints oda a rajzodon, amit kiszeretnél tölteni festékkel!"
+msgid "Click to flip the picture upside-down."
+msgstr "Kattints a rajzlapra, hogy fejjel-lefelé fordítsuk a rajzodat!"
 
 msgid "Square"
 msgstr "Négyzet"
@@ -206,6 +253,10 @@ msgstr "Színek"
 msgid "Brushes"
 msgstr "Ecsetek"
 
+#, fuzzy
+msgid "Erasers"
+msgstr "Radír"
+
 msgid "Stamps"
 msgstr "Matricák"
 
@@ -242,7 +293,7 @@ msgstr "Radír"
 msgid "New"
 msgstr "Új"
 
-#. 'Open' label:
+#. buttons for the file open dialog
 msgid "Open"
 msgstr "Megnyitás"
 
@@ -371,13 +422,14 @@ msgstr "Még nem nyomtathatsz!"
 msgid "Erase this picture?"
 msgstr "Biztos kitörlöd a rajzodat?"
 
-#. 'Erase' label:
 msgid "Erase"
 msgstr "Radír"
 
-#. 'Back' label:
 msgid "Back"
 msgstr "Vissza"
+
+msgid "Aa"
+msgstr ""
 
 #. FIXME: Move elsewhere!!!
 msgid "Save over the older version of this picture?"
@@ -388,6 +440,24 @@ msgstr "Nem, inkább mentsük el más néven"
 
 msgid "Choose the picture you want, then click “Open”."
 msgstr "Válaszd ki a megnyitandó rajzot, majd kattints a ”Megnyitás” gombra!"
+
+#~ msgid "Lime!"
+#~ msgstr "Citrom!"
+
+#~ msgid "Fuchsia!"
+#~ msgstr "Bíbor!"
+
+#~ msgid "Silver!"
+#~ msgstr "Ezüst!"
+
+#~ msgid "Thick"
+#~ msgstr "Vastag"
+
+#~ msgid "Click and move the mouse to thicken the picture."
+#~ msgstr "Kattints arra a vonalra, amit vastagítani szeretnél!"
+
+#~ msgid "Click and move the mouse to thin the picture."
+#~ msgstr "Kattints arra a vonalra, amit vékonyítani szeretnél!"
 
 #~ msgid "Okay"
 #~ msgstr "Oké"

@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint 0.9.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2004-07-16 21:12+0200\n"
+"POT-Creation-Date: 2005-01-06 12:31+0100\n"
 "PO-Revision-Date: 2004-04-26 11:20-0400\n"
 "Last-Translator: Gareth Owen <gowen72@yahoo.com>\n"
 "Language-Team: English (British) <en_gb@li.org>\n"
@@ -25,14 +25,20 @@ msgstr "Tux Paint"
 msgid "Black!"
 msgstr "Black!"
 
+#, fuzzy
+msgid "Dark Gray!"
+msgstr "Grey!"
+
+#. using both valid spellings
+msgid "Light Grey!"
+msgstr ""
+
+#. using both valid spellings
 msgid "White!"
 msgstr "White!"
 
 msgid "Red!"
 msgstr "Red!"
-
-msgid "Pink!"
-msgstr "Pink!"
 
 msgid "Orange!"
 msgstr "Orange!"
@@ -40,14 +46,14 @@ msgstr "Orange!"
 msgid "Yellow!"
 msgstr "Yellow!"
 
-msgid "Lime!"
-msgstr "Lime!"
+msgid "Neon green!"
+msgstr ""
 
 msgid "Green!"
 msgstr "Green!"
 
-msgid "Cyan!"
-msgstr "Cyan!"
+msgid "Sky blue!"
+msgstr ""
 
 msgid "Blue!"
 msgstr "Blue!"
@@ -55,17 +61,21 @@ msgstr "Blue!"
 msgid "Purple!"
 msgstr "Purple!"
 
-msgid "Fuchsia!"
-msgstr "Fuchsia!"
+msgid "Magenta!"
+msgstr ""
+
+msgid "Pink!"
+msgstr "Pink!"
 
 msgid "Brown!"
 msgstr "Brown!"
 
-msgid "Gray!"
-msgstr "Grey!"
+#, fuzzy
+msgid "Tan!"
+msgstr "Cyan!"
 
-msgid "Silver!"
-msgstr "Silver!"
+msgid "Beige!"
+msgstr ""
 
 msgid "Great!"
 msgstr "Great!"
@@ -79,20 +89,37 @@ msgstr "Keep it up!"
 msgid "Good job!"
 msgstr "Good job!"
 
+msgid "Fill"
+msgstr "Fill"
+
+#, fuzzy
+msgid "Grass"
+msgstr "Erase"
+
+#, fuzzy
+msgid "Bricks"
+msgstr "Blocks"
+
 msgid "Rainbow"
 msgstr "Rainbow"
 
 msgid "Sparkles"
 msgstr "Sparkles"
 
-msgid "Mirror"
-msgstr "Mirror"
-
-msgid "Flip"
-msgstr "Flip"
-
 msgid "Blur"
 msgstr "Blur"
+
+msgid "Smudge"
+msgstr ""
+
+msgid "Fade"
+msgstr "Fade"
+
+msgid "Darken"
+msgstr ""
+
+msgid "Chalk"
+msgstr "Chalk"
 
 msgid "Blocks"
 msgstr "Blocks"
@@ -100,23 +127,36 @@ msgstr "Blocks"
 msgid "Negative"
 msgstr "Negative"
 
-msgid "Fade"
-msgstr "Fade"
-
-msgid "Chalk"
-msgstr "Chalk"
+#, fuzzy
+msgid "Tint"
+msgstr "Thin"
 
 msgid "Drip"
 msgstr "Drip"
 
-msgid "Thick"
-msgstr "Thick"
+msgid "Cartoon"
+msgstr ""
 
-msgid "Thin"
-msgstr "Thin"
+msgid "Mirror"
+msgstr "Mirror"
 
-msgid "Fill"
-msgstr "Fill"
+msgid "Flip"
+msgstr "Flip"
+
+msgid "Click in the picture to fill that area with color."
+msgstr "Click in the picture to fill that area with colour."
+
+#, fuzzy
+msgid "Click and move to draw grass. Don't forget the dirt!"
+msgstr "Click and move to draw sparkles."
+
+#, fuzzy
+msgid "Click and move to draw large bricks."
+msgstr "Click and move to draw sparkles."
+
+#, fuzzy
+msgid "Click and move to draw small bricks."
+msgstr "Click and move to draw sparkles."
 
 msgid "You can draw in rainbow colors!"
 msgstr "You can draw in rainbow colours!"
@@ -124,22 +164,18 @@ msgstr "You can draw in rainbow colours!"
 msgid "Click and move to draw sparkles."
 msgstr "Click and move to draw sparkles."
 
-msgid "Click to make a mirror image."
-msgstr "Click to make a mirror image."
-
-msgid "Click to flip the picture upside-down."
-msgstr "Click to flip the picture upside-down."
-
 msgid "Click and move the mouse around to blur the picture."
 msgstr "Click and move the mouse around to blur the picture."
 
-msgid "Click and move the mouse around to make the picture blocky."
-msgstr "Click and move the mouse around to make the picture blocky."
-
-msgid "Click and move the mouse around to draw a negative."
-msgstr "Click and move the mouse around to draw a negative."
+#, fuzzy
+msgid "Click and move the mouse around to smudge the picture."
+msgstr "Click and move the mouse around to blur the picture."
 
 msgid "Click and move to fade the colors."
+msgstr "Click and move to fade the colours."
+
+#, fuzzy
+msgid "Click and move to darken the colors."
 msgstr "Click and move to fade the colours."
 
 msgid ""
@@ -147,17 +183,29 @@ msgid ""
 msgstr ""
 "Click and move the mouse around to turn the picture into a chalk drawing."
 
+msgid "Click and move the mouse around to make the picture blocky."
+msgstr "Click and move the mouse around to make the picture blocky."
+
+msgid "Click and move the mouse around to draw a negative."
+msgstr "Click and move the mouse around to draw a negative."
+
+#, fuzzy
+msgid "Click and move the mouse around to change the picture's color."
+msgstr "Click and move the mouse around to make the picture blocky."
+
 msgid "Click and move the mouse around to make the picture drip."
 msgstr "Click and move the mouse around to make the picture drip."
 
-msgid "Click and move the mouse to thicken the picture."
-msgstr "Click and move the mouse to thicken the picture."
+#, fuzzy
+msgid "Click and move the mouse around to turn the picture into a cartoon."
+msgstr ""
+"Click and move the mouse around to turn the picture into a chalk drawing."
 
-msgid "Click and move the mouse to thin the picture."
-msgstr "Click and move the mouse to thin the picture."
+msgid "Click to make a mirror image."
+msgstr "Click to make a mirror image."
 
-msgid "Click in the picture to fill that area with color."
-msgstr "Click in the picture to fill that area with colour."
+msgid "Click to flip the picture upside-down."
+msgstr "Click to flip the picture upside-down."
 
 msgid "Square"
 msgstr "Square"
@@ -207,6 +255,10 @@ msgstr "Colours"
 msgid "Brushes"
 msgstr "Brushes"
 
+#, fuzzy
+msgid "Erasers"
+msgstr "Eraser"
+
 msgid "Stamps"
 msgstr "Stamps"
 
@@ -243,7 +295,7 @@ msgstr "Eraser"
 msgid "New"
 msgstr "New"
 
-#. 'Open' label:
+#. buttons for the file open dialog
 msgid "Open"
 msgstr "Open"
 
@@ -370,13 +422,14 @@ msgstr "You can’t print yet!"
 msgid "Erase this picture?"
 msgstr "Erase this picture?"
 
-#. 'Erase' label:
 msgid "Erase"
 msgstr "Erase"
 
-#. 'Back' label:
 msgid "Back"
 msgstr "Back"
+
+msgid "Aa"
+msgstr ""
 
 #. FIXME: Move elsewhere!!!
 msgid "Save over the older version of this picture?"
@@ -387,3 +440,21 @@ msgstr "No, save a new file"
 
 msgid "Choose the picture you want, then click “Open”."
 msgstr "Choose the picture you want, then click ‘Open’."
+
+#~ msgid "Lime!"
+#~ msgstr "Lime!"
+
+#~ msgid "Fuchsia!"
+#~ msgstr "Fuchsia!"
+
+#~ msgid "Silver!"
+#~ msgstr "Silver!"
+
+#~ msgid "Thick"
+#~ msgstr "Thick"
+
+#~ msgid "Click and move the mouse to thicken the picture."
+#~ msgstr "Click and move the mouse to thicken the picture."
+
+#~ msgid "Click and move the mouse to thin the picture."
+#~ msgstr "Click and move the mouse to thin the picture."

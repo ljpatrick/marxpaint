@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: cy\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2004-07-16 21:12+0200\n"
+"POT-Creation-Date: 2005-01-06 12:31+0100\n"
 "PO-Revision-Date: 2004-09-21 14:28+0100\n"
 "Last-Translator: Kyfieithu <kyfieithu@dotmon.com>\n"
 "Language-Team: Cymraeg <cy@li.org>\n"
@@ -31,14 +31,20 @@ msgstr "Tux Paint"
 msgid "Black!"
 msgstr "Du!"
 
+#, fuzzy
+msgid "Dark Gray!"
+msgstr "Llwyd!"
+
+#. using both valid spellings
+msgid "Light Grey!"
+msgstr ""
+
+#. using both valid spellings
 msgid "White!"
 msgstr "Gwyn!"
 
 msgid "Red!"
 msgstr "Coch!"
-
-msgid "Pink!"
-msgstr "Pinc!"
 
 msgid "Orange!"
 msgstr "Oren!"
@@ -46,14 +52,14 @@ msgstr "Oren!"
 msgid "Yellow!"
 msgstr "Melyn!"
 
-msgid "Lime!"
-msgstr "Melynwyrdd!"
+msgid "Neon green!"
+msgstr ""
 
 msgid "Green!"
 msgstr "Gwyrdd!"
 
-msgid "Cyan!"
-msgstr "Gwyrddlas!"
+msgid "Sky blue!"
+msgstr ""
 
 msgid "Blue!"
 msgstr "Glas!"
@@ -61,17 +67,21 @@ msgstr "Glas!"
 msgid "Purple!"
 msgstr "Piws!"
 
-msgid "Fuchsia!"
-msgstr "Piwsgoch!"
+msgid "Magenta!"
+msgstr ""
+
+msgid "Pink!"
+msgstr "Pinc!"
 
 msgid "Brown!"
 msgstr "Brown!"
 
-msgid "Gray!"
-msgstr "Llwyd!"
+#, fuzzy
+msgid "Tan!"
+msgstr "Gwyrddlas!"
 
-msgid "Silver!"
-msgstr "Arian!"
+msgid "Beige!"
+msgstr ""
 
 msgid "Great!"
 msgstr "Gwych!"
@@ -85,20 +95,37 @@ msgstr "Dal ati!"
 msgid "Good job!"
 msgstr "Ardderchog!"
 
+msgid "Fill"
+msgstr "Llenwi"
+
+#, fuzzy
+msgid "Grass"
+msgstr "Dileu"
+
+#, fuzzy
+msgid "Bricks"
+msgstr "Blociau"
+
 msgid "Rainbow"
 msgstr "Enfys!"
 
 msgid "Sparkles"
 msgstr "Gwreichion"
 
-msgid "Mirror"
-msgstr "Drych"
-
-msgid "Flip"
-msgstr "Gwrthdroi"
-
 msgid "Blur"
 msgstr "Pylu"
+
+msgid "Smudge"
+msgstr ""
+
+msgid "Fade"
+msgstr "Afliwio"
+
+msgid "Darken"
+msgstr ""
+
+msgid "Chalk"
+msgstr "Sialc"
 
 msgid "Blocks"
 msgstr "Blociau"
@@ -106,23 +133,36 @@ msgstr "Blociau"
 msgid "Negative"
 msgstr "Gwrthliw"
 
-msgid "Fade"
-msgstr "Afliwio"
-
-msgid "Chalk"
-msgstr "Sialc"
+#, fuzzy
+msgid "Tint"
+msgstr "Tenau"
 
 msgid "Drip"
 msgstr "Diferu"
 
-msgid "Thick"
-msgstr "Tew"
+msgid "Cartoon"
+msgstr ""
 
-msgid "Thin"
-msgstr "Tenau"
+msgid "Mirror"
+msgstr "Drych"
 
-msgid "Fill"
-msgstr "Llenwi"
+msgid "Flip"
+msgstr "Gwrthdroi"
+
+msgid "Click in the picture to fill that area with color."
+msgstr "Clicia yn y llun i lenwi'r ardal yno efo lliw."
+
+#, fuzzy
+msgid "Click and move to draw grass. Don't forget the dirt!"
+msgstr "Clicia a symuda i lunio gwreichion."
+
+#, fuzzy
+msgid "Click and move to draw large bricks."
+msgstr "Clicia a symuda i lunio gwreichion."
+
+#, fuzzy
+msgid "Click and move to draw small bricks."
+msgstr "Clicia a symuda i lunio gwreichion."
 
 msgid "You can draw in rainbow colors!"
 msgstr "Mi alli di dynnu llun yn lliwiau'r enfys!"
@@ -130,14 +170,24 @@ msgstr "Mi alli di dynnu llun yn lliwiau'r enfys!"
 msgid "Click and move to draw sparkles."
 msgstr "Clicia a symuda i lunio gwreichion."
 
-msgid "Click to make a mirror image."
-msgstr "Clicia i adlewyrchu'r llun."
-
-msgid "Click to flip the picture upside-down."
-msgstr "Clicia i droi'r llun pen-i-lawr."
-
 msgid "Click and move the mouse around to blur the picture."
 msgstr "Clicia a symuda'r llygoden o gwmpas i bylu'r llun."
+
+#, fuzzy
+msgid "Click and move the mouse around to smudge the picture."
+msgstr "Clicia a symuda'r llygoden o gwmpas i bylu'r llun."
+
+msgid "Click and move to fade the colors."
+msgstr "Clicia a symuda i afliwio'r lliwiau."
+
+#, fuzzy
+msgid "Click and move to darken the colors."
+msgstr "Clicia a symuda i afliwio'r lliwiau."
+
+msgid ""
+"Click and move the mouse around to turn the picture into a chalk drawing."
+msgstr ""
+"Clicia a symuda'r llygoden o gwmpas i dro'i llun i mewn i ddarlun sialc."
 
 msgid "Click and move the mouse around to make the picture blocky."
 msgstr "Clicia a symuda'r llygoden o gwmpas i wneud blociau ar liwiau'r llun."
@@ -145,23 +195,23 @@ msgstr "Clicia a symuda'r llygoden o gwmpas i wneud blociau ar liwiau'r llun."
 msgid "Click and move the mouse around to draw a negative."
 msgstr "Clicia a symuda'r llygoden o gwmpas i dynnu gwrthliwiau."
 
-msgid "Click and move to fade the colors."
-msgstr "Clicia a symuda i afliwio'r lliwiau."
-
-msgid "Click and move the mouse around to turn the picture into a chalk drawing."
-msgstr "Clicia a symuda'r llygoden o gwmpas i dro'i llun i mewn i ddarlun sialc."
+#, fuzzy
+msgid "Click and move the mouse around to change the picture's color."
+msgstr "Clicia a symuda'r llygoden o gwmpas i wneud blociau ar liwiau'r llun."
 
 msgid "Click and move the mouse around to make the picture drip."
 msgstr "Clicia a symuda'r llygoden o gwmpas i wneud i'r llun ddiferu."
 
-msgid "Click and move the mouse to thicken the picture."
-msgstr "Clicia a symuda'r llygoden i dewhau'r llun."
+#, fuzzy
+msgid "Click and move the mouse around to turn the picture into a cartoon."
+msgstr ""
+"Clicia a symuda'r llygoden o gwmpas i dro'i llun i mewn i ddarlun sialc."
 
-msgid "Click and move the mouse to thin the picture."
-msgstr "Clicia a symuda'r llygoden i deneuo'r llun."
+msgid "Click to make a mirror image."
+msgstr "Clicia i adlewyrchu'r llun."
 
-msgid "Click in the picture to fill that area with color."
-msgstr "Clicia yn y llun i lenwi'r ardal yno efo lliw."
+msgid "Click to flip the picture upside-down."
+msgstr "Clicia i droi'r llun pen-i-lawr."
 
 msgid "Square"
 msgstr "Sgwâr"
@@ -211,6 +261,10 @@ msgstr "Lliwiau"
 msgid "Brushes"
 msgstr "Brwsiau"
 
+#, fuzzy
+msgid "Erasers"
+msgstr "Rwbiwr"
+
 msgid "Stamps"
 msgstr "Stampiau"
 
@@ -247,7 +301,7 @@ msgstr "Rwbiwr"
 msgid "New"
 msgstr "Newydd"
 
-#. 'Open' label:
+#. buttons for the file open dialog
 msgid "Open"
 msgstr "Agor"
 
@@ -373,13 +427,14 @@ msgstr "Rwyt yn methu argraffu eto!"
 msgid "Erase this picture?"
 msgstr "Dileu'r llun yma?"
 
-#. 'Erase' label:
 msgid "Erase"
 msgstr "Dileu"
 
-#. 'Back' label:
 msgid "Back"
 msgstr "Yn ôl"
+
+msgid "Aa"
+msgstr ""
 
 #. FIXME: Move elsewhere!!!
 msgid "Save over the older version of this picture?"
@@ -391,3 +446,20 @@ msgstr "Nage, cadw ffeil newydd"
 msgid "Choose the picture you want, then click “Open”."
 msgstr "Dewisa'r llun yr wyt eisiau, ac wedyn clicia 'Agor'."
 
+#~ msgid "Lime!"
+#~ msgstr "Melynwyrdd!"
+
+#~ msgid "Fuchsia!"
+#~ msgstr "Piwsgoch!"
+
+#~ msgid "Silver!"
+#~ msgstr "Arian!"
+
+#~ msgid "Thick"
+#~ msgstr "Tew"
+
+#~ msgid "Click and move the mouse to thicken the picture."
+#~ msgstr "Clicia a symuda'r llygoden i dewhau'r llun."
+
+#~ msgid "Click and move the mouse to thin the picture."
+#~ msgstr "Clicia a symuda'r llygoden i deneuo'r llun."

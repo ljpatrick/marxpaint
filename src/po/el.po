@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Tuxpaint 0.9.2pre\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2004-07-16 21:12+0200\n"
+"POT-Creation-Date: 2005-01-06 12:31+0100\n"
 "PO-Revision-Date: 2003-01-04 12:00+0200\n"
 "Last-Translator: N/A <i18ngr@lists.hellug.gr>\n"
 "Language-Team: N/A <i18ngr@lists.hellug.gr>\n"
@@ -31,16 +31,21 @@ msgid "Black!"
 msgstr "Μαύρο"
 
 #, fuzzy
+msgid "Dark Gray!"
+msgstr "Μπράβο!"
+
+#. using both valid spellings
+msgid "Light Grey!"
+msgstr ""
+
+#. using both valid spellings
+#, fuzzy
 msgid "White!"
 msgstr "Άσπρο"
 
 #, fuzzy
 msgid "Red!"
 msgstr "Επανάληψη!"
-
-#, fuzzy
-msgid "Pink!"
-msgstr "Ροζ"
 
 #, fuzzy
 msgid "Orange!"
@@ -50,17 +55,15 @@ msgstr "Πορτοκαλί"
 msgid "Yellow!"
 msgstr "Κίτρινο"
 
-#, fuzzy
-msgid "Lime!"
-msgstr "Γραμμές"
+msgid "Neon green!"
+msgstr ""
 
 #, fuzzy
 msgid "Green!"
 msgstr "Πράσινο"
 
-#, fuzzy
-msgid "Cyan!"
-msgstr "Γαλάζιο"
+msgid "Sky blue!"
+msgstr ""
 
 #, fuzzy
 msgid "Blue!"
@@ -70,18 +73,22 @@ msgstr "Μπλε"
 msgid "Purple!"
 msgstr "Μωβ"
 
-msgid "Fuchsia!"
+msgid "Magenta!"
 msgstr ""
+
+#, fuzzy
+msgid "Pink!"
+msgstr "Ροζ"
 
 #, fuzzy
 msgid "Brown!"
 msgstr "Καφέ"
 
 #, fuzzy
-msgid "Gray!"
-msgstr "Μπράβο!"
+msgid "Tan!"
+msgstr "Γαλάζιο"
 
-msgid "Silver!"
+msgid "Beige!"
 msgstr ""
 
 msgid "Great!"
@@ -96,20 +103,37 @@ msgstr "Καλά πας, συνέχισε!"
 msgid "Good job!"
 msgstr "Συγχαρητήρια!"
 
+msgid "Fill"
+msgstr "Γέμισμα"
+
+#, fuzzy
+msgid "Grass"
+msgstr "Σβήσιμο"
+
+#, fuzzy
+msgid "Bricks"
+msgstr "Κομματάκια"
+
 msgid "Rainbow"
 msgstr "Ουράνιο Τόξο"
 
 msgid "Sparkles"
 msgstr "Λάμψεις"
 
-msgid "Mirror"
-msgstr "Καθρέπτης"
-
-msgid "Flip"
-msgstr "Άνω-Κάτω"
-
 msgid "Blur"
 msgstr "Θάμπωμα"
+
+msgid "Smudge"
+msgstr ""
+
+msgid "Fade"
+msgstr "Ξεθώριασμα"
+
+msgid "Darken"
+msgstr ""
+
+msgid "Chalk"
+msgstr "Κιμωλία"
 
 msgid "Blocks"
 msgstr "Κομματάκια"
@@ -117,23 +141,37 @@ msgstr "Κομματάκια"
 msgid "Negative"
 msgstr "Αρνητικό"
 
-msgid "Fade"
-msgstr "Ξεθώριασμα"
-
-msgid "Chalk"
-msgstr "Κιμωλία"
+#, fuzzy
+msgid "Tint"
+msgstr "Λεπτό"
 
 msgid "Drip"
 msgstr "Στάζει"
 
-msgid "Thick"
-msgstr "Παχύ"
+msgid "Cartoon"
+msgstr ""
 
-msgid "Thin"
-msgstr "Λεπτό"
+msgid "Mirror"
+msgstr "Καθρέπτης"
 
-msgid "Fill"
-msgstr "Γέμισμα"
+msgid "Flip"
+msgstr "Άνω-Κάτω"
+
+#, fuzzy
+msgid "Click in the picture to fill that area with color."
+msgstr "Κάνε κλικ και κίνησε το ποντίκι για να γεμίσεις την περιοχή με χρώμα"
+
+#, fuzzy
+msgid "Click and move to draw grass. Don't forget the dirt!"
+msgstr "Κάνε κλικ και κινήσου για να ζωγραφίσεις λάμψεις"
+
+#, fuzzy
+msgid "Click and move to draw large bricks."
+msgstr "Κάνε κλικ και κινήσου για να ζωγραφίσεις λάμψεις"
+
+#, fuzzy
+msgid "Click and move to draw small bricks."
+msgstr "Κάνε κλικ και κινήσου για να ζωγραφίσεις λάμψεις"
 
 msgid "You can draw in rainbow colors!"
 msgstr "Μπορείς να ζωγραφίσεις με τα χρώματα του ουράνιου τόξου!"
@@ -143,26 +181,18 @@ msgid "Click and move to draw sparkles."
 msgstr "Κάνε κλικ και κινήσου για να ζωγραφίσεις λάμψεις"
 
 #, fuzzy
-msgid "Click to make a mirror image."
-msgstr "Κάνε κλικ για να φτιάξεις μια εικόνα-είδωλο!"
-
-#, fuzzy
-msgid "Click to flip the picture upside-down."
-msgstr "Κάνε κλικ για να γυρίσεις την εικόνα άνω-κάτω!"
-
-#, fuzzy
 msgid "Click and move the mouse around to blur the picture."
 msgstr "Κάνε κλικ και κίνησε το ποντίκι για να θαμπώσεις την εικόνα"
 
 #, fuzzy
-msgid "Click and move the mouse around to make the picture blocky."
-msgstr "Κάνε κλικ και κίνησε το ποντίκι για να κάνεις την εικόνα κομματάκια"
-
-#, fuzzy
-msgid "Click and move the mouse around to draw a negative."
-msgstr "Κάνε κλικ και κίνησε το ποντίκι για να σχεδιάσεις το αρνητικό"
+msgid "Click and move the mouse around to smudge the picture."
+msgstr "Κάνε κλικ και κίνησε το ποντίκι για να θαμπώσεις την εικόνα"
 
 msgid "Click and move to fade the colors."
+msgstr "Κάνε κλικ και κινήσου για να ξεθωριάσεις τα χρώματα."
+
+#, fuzzy
+msgid "Click and move to darken the colors."
 msgstr "Κάνε κλικ και κινήσου για να ξεθωριάσεις τα χρώματα."
 
 msgid ""
@@ -172,20 +202,34 @@ msgstr ""
 "κιμωλία."
 
 #, fuzzy
+msgid "Click and move the mouse around to make the picture blocky."
+msgstr "Κάνε κλικ και κίνησε το ποντίκι για να κάνεις την εικόνα κομματάκια"
+
+#, fuzzy
+msgid "Click and move the mouse around to draw a negative."
+msgstr "Κάνε κλικ και κίνησε το ποντίκι για να σχεδιάσεις το αρνητικό"
+
+#, fuzzy
+msgid "Click and move the mouse around to change the picture's color."
+msgstr "Κάνε κλικ και κίνησε το ποντίκι για να κάνεις την εικόνα κομματάκια"
+
+#, fuzzy
 msgid "Click and move the mouse around to make the picture drip."
 msgstr "Κάνε κλικ και κίνησε το ποντίκι για να κάνεις την εικόνα να στάζει!"
 
 #, fuzzy
-msgid "Click and move the mouse to thicken the picture."
-msgstr "Κάνε κλικ και κίνησε το ποντίκι για να παχύνεις την εικόνα"
+msgid "Click and move the mouse around to turn the picture into a cartoon."
+msgstr ""
+"Κάνε κλικ και κίνησε το ποντίκι για να μετατρέψεις την εικόνα σε σχέδιο με "
+"κιμωλία."
 
 #, fuzzy
-msgid "Click and move the mouse to thin the picture."
-msgstr "Κάνε κλικ και κίνησε το ποντίκι για να λεπτύνεις την εικόνα"
+msgid "Click to make a mirror image."
+msgstr "Κάνε κλικ για να φτιάξεις μια εικόνα-είδωλο!"
 
 #, fuzzy
-msgid "Click in the picture to fill that area with color."
-msgstr "Κάνε κλικ και κίνησε το ποντίκι για να γεμίσεις την περιοχή με χρώμα"
+msgid "Click to flip the picture upside-down."
+msgstr "Κάνε κλικ για να γυρίσεις την εικόνα άνω-κάτω!"
 
 msgid "Square"
 msgstr "Τετράγωνο"
@@ -235,6 +279,10 @@ msgstr "Χρώματα"
 msgid "Brushes"
 msgstr "Πινέλα"
 
+#, fuzzy
+msgid "Erasers"
+msgstr "Σβηστήρας"
+
 msgid "Stamps"
 msgstr "Στάμπες"
 
@@ -271,7 +319,7 @@ msgstr "Σβηστήρας"
 msgid "New"
 msgstr "Νέο"
 
-#. 'Open' label:
+#. buttons for the file open dialog
 msgid "Open"
 msgstr "Άνοιγμα"
 
@@ -407,13 +455,14 @@ msgstr "Δεν μπορείς να τυπώσεις ακόμη!"
 msgid "Erase this picture?"
 msgstr "Σβήσιμο αυτής της εικόνας;"
 
-#. 'Erase' label:
 msgid "Erase"
 msgstr "Σβήσιμο"
 
-#. 'Back' label:
 msgid "Back"
 msgstr "Προηγούμενο"
+
+msgid "Aa"
+msgstr ""
 
 #. FIXME: Move elsewhere!!!
 #, fuzzy
@@ -426,6 +475,21 @@ msgstr "Όχι, αποθήκευση σε νέο αρχείο"
 #, fuzzy
 msgid "Choose the picture you want, then click “Open”."
 msgstr "Επέλεξε την εικόνα που θέλεις, και μετά πάτησε 'Άνοιγμα'"
+
+#, fuzzy
+#~ msgid "Lime!"
+#~ msgstr "Γραμμές"
+
+#~ msgid "Thick"
+#~ msgstr "Παχύ"
+
+#, fuzzy
+#~ msgid "Click and move the mouse to thicken the picture."
+#~ msgstr "Κάνε κλικ και κίνησε το ποντίκι για να παχύνεις την εικόνα"
+
+#, fuzzy
+#~ msgid "Click and move the mouse to thin the picture."
+#~ msgstr "Κάνε κλικ και κίνησε το ποντίκι για να λεπτύνεις την εικόνα"
 
 #~ msgid "Okay"
 #~ msgstr "Εντάξει"

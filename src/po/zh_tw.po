@@ -8,7 +8,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Tuxpaint 0.9.5\n"
-"POT-Creation-Date: 2004-07-16 21:12+0200\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2005-01-06 12:31+0100\n"
 "PO-Revision-Date: 2004-08-14 13:11+0800\n"
 "Last-Translator: Song Huang <Song@song.idv.tw>\n"
 "Language-Team: Song Huang <song@ossacc.org>\n"
@@ -28,14 +29,20 @@ msgstr "繪畫"
 msgid "Black!"
 msgstr "黑色!"
 
+#, fuzzy
+msgid "Dark Gray!"
+msgstr "灰色!"
+
+#. using both valid spellings
+msgid "Light Grey!"
+msgstr ""
+
+#. using both valid spellings
 msgid "White!"
 msgstr "白色!"
 
 msgid "Red!"
 msgstr "紅色!"
-
-msgid "Pink!"
-msgstr "粉紅色!"
 
 msgid "Orange!"
 msgstr "橙色!"
@@ -43,14 +50,14 @@ msgstr "橙色!"
 msgid "Yellow!"
 msgstr "黃色!"
 
-msgid "Lime!"
-msgstr "淡黃綠色!"
+msgid "Neon green!"
+msgstr ""
 
 msgid "Green!"
 msgstr "綠色!"
 
-msgid "Cyan!"
-msgstr "青綠色!"
+msgid "Sky blue!"
+msgstr ""
 
 msgid "Blue!"
 msgstr "藍色!"
@@ -58,17 +65,21 @@ msgstr "藍色!"
 msgid "Purple!"
 msgstr "紫色!"
 
-msgid "Fuchsia!"
-msgstr "淡紫色!"
+msgid "Magenta!"
+msgstr ""
+
+msgid "Pink!"
+msgstr "粉紅色!"
 
 msgid "Brown!"
 msgstr "棕色!"
 
-msgid "Gray!"
-msgstr "灰色!"
+#, fuzzy
+msgid "Tan!"
+msgstr "青綠色!"
 
-msgid "Silver!"
-msgstr "銀色!"
+msgid "Beige!"
+msgstr ""
 
 msgid "Great!"
 msgstr "太棒了!"
@@ -82,20 +93,37 @@ msgstr "繼續下去!"
 msgid "Good job!"
 msgstr "作的好!"
 
+msgid "Fill"
+msgstr "填滿"
+
+#, fuzzy
+msgid "Grass"
+msgstr "刪除"
+
+#, fuzzy
+msgid "Bricks"
+msgstr "馬賽克"
+
 msgid "Rainbow"
 msgstr "彩虹"
 
 msgid "Sparkles"
 msgstr "火花"
 
-msgid "Mirror"
-msgstr "左右鏡射"
-
-msgid "Flip"
-msgstr "上下翻轉"
-
 msgid "Blur"
 msgstr "模糊"
+
+msgid "Smudge"
+msgstr ""
+
+msgid "Fade"
+msgstr "褪色"
+
+msgid "Darken"
+msgstr ""
+
+msgid "Chalk"
+msgstr "粉筆"
 
 msgid "Blocks"
 msgstr "馬賽克"
@@ -103,23 +131,36 @@ msgstr "馬賽克"
 msgid "Negative"
 msgstr "反相"
 
-msgid "Fade"
-msgstr "褪色"
-
-msgid "Chalk"
-msgstr "粉筆"
+#, fuzzy
+msgid "Tint"
+msgstr "變薄"
 
 msgid "Drip"
 msgstr "水滴"
 
-msgid "Thick"
-msgstr "加粗"
+msgid "Cartoon"
+msgstr ""
 
-msgid "Thin"
-msgstr "變薄"
+msgid "Mirror"
+msgstr "左右鏡射"
 
-msgid "Fill"
-msgstr "填滿"
+msgid "Flip"
+msgstr "上下翻轉"
+
+msgid "Click in the picture to fill that area with color."
+msgstr "點在圖像內來用顏色填滿整個區域。"
+
+#, fuzzy
+msgid "Click and move to draw grass. Don't forget the dirt!"
+msgstr "按著並移動滑鼠來繪製火花。"
+
+#, fuzzy
+msgid "Click and move to draw large bricks."
+msgstr "按著並移動滑鼠來繪製火花。"
+
+#, fuzzy
+msgid "Click and move to draw small bricks."
+msgstr "按著並移動滑鼠來繪製火花。"
 
 msgid "You can draw in rainbow colors!"
 msgstr "您可以畫出彩虹的顏色!"
@@ -127,14 +168,23 @@ msgstr "您可以畫出彩虹的顏色!"
 msgid "Click and move to draw sparkles."
 msgstr "按著並移動滑鼠來繪製火花。"
 
-msgid "Click to make a mirror image."
-msgstr "按下可以作出左右鏡射的圖像。"
-
-msgid "Click to flip the picture upside-down."
-msgstr "按下可以作出上下顛倒的圖像。"
-
 msgid "Click and move the mouse around to blur the picture."
 msgstr "按著並移動滑鼠來模糊圖像。"
+
+#, fuzzy
+msgid "Click and move the mouse around to smudge the picture."
+msgstr "按著並移動滑鼠來模糊圖像。"
+
+msgid "Click and move to fade the colors."
+msgstr "按著並移動滑鼠來退淡顏色。"
+
+#, fuzzy
+msgid "Click and move to darken the colors."
+msgstr "按著並移動滑鼠來退淡顏色。"
+
+msgid ""
+"Click and move the mouse around to turn the picture into a chalk drawing."
+msgstr "按著並移動滑鼠來擦出粉筆的痕跡。"
 
 msgid "Click and move the mouse around to make the picture blocky."
 msgstr "按著並移動滑鼠來打上馬賽克。"
@@ -142,23 +192,22 @@ msgstr "按著並移動滑鼠來打上馬賽克。"
 msgid "Click and move the mouse around to draw a negative."
 msgstr "按著並移動滑鼠來畫出反相的顏色。"
 
-msgid "Click and move to fade the colors."
-msgstr "按著並移動滑鼠來退淡顏色。"
-
-msgid "Click and move the mouse around to turn the picture into a chalk drawing."
-msgstr "按著並移動滑鼠來擦出粉筆的痕跡。"
+#, fuzzy
+msgid "Click and move the mouse around to change the picture's color."
+msgstr "按著並移動滑鼠來打上馬賽克。"
 
 msgid "Click and move the mouse around to make the picture drip."
 msgstr "按著並移動滑鼠來作出水滴狀。"
 
-msgid "Click and move the mouse to thicken the picture."
-msgstr "按著並移動滑鼠來將筆劃加粗。"
+#, fuzzy
+msgid "Click and move the mouse around to turn the picture into a cartoon."
+msgstr "按著並移動滑鼠來擦出粉筆的痕跡。"
 
-msgid "Click and move the mouse to thin the picture."
-msgstr "按著並移動滑鼠來將筆劃變薄。"
+msgid "Click to make a mirror image."
+msgstr "按下可以作出左右鏡射的圖像。"
 
-msgid "Click in the picture to fill that area with color."
-msgstr "點在圖像內來用顏色填滿整個區域。"
+msgid "Click to flip the picture upside-down."
+msgstr "按下可以作出上下顛倒的圖像。"
 
 msgid "Square"
 msgstr "正方形"
@@ -208,6 +257,10 @@ msgstr "顏色"
 msgid "Brushes"
 msgstr "筆刷"
 
+#, fuzzy
+msgid "Erasers"
+msgstr "橡皮擦"
+
 msgid "Stamps"
 msgstr "圖章"
 
@@ -244,7 +297,7 @@ msgstr "橡皮擦"
 msgid "New"
 msgstr "新圖"
 
-#. 'Open' label:
+#. buttons for the file open dialog
 msgid "Open"
 msgstr "開啟"
 
@@ -266,8 +319,12 @@ msgstr "挑選一個圖畫用來印在您的畫上。"
 msgid "Click to start drawing a line. Let go to complete it."
 msgstr "點一下就會開始繪製一條線，讓我們來完成他吧。"
 
-msgid "Pick a shape. Click to pick the center, drag, then let go when it is the size you want. Move around to rotate it, and click to draw it."
-msgstr "挑選一個形狀。點一下形狀的中心位置，然後拖拉他到您要的大小。環繞著移動來旋轉形狀，然後點一下把他畫下來。"
+msgid ""
+"Pick a shape. Click to pick the center, drag, then let go when it is the "
+"size you want. Move around to rotate it, and click to draw it."
+msgstr ""
+"挑選一個形狀。點一下形狀的中心位置，然後拖拉他到您要的大小。環繞著移動來旋轉"
+"形狀，然後點一下把他畫下來。"
 
 msgid "Choose a style of text. Click on your drawing and you can start typing."
 msgstr "選擇字母的樣式，在圖上點一下就可以開始輸入。"
@@ -366,13 +423,14 @@ msgstr "您還不可以列印!"
 msgid "Erase this picture?"
 msgstr "刪除這張圖畫？"
 
-#. 'Erase' label:
 msgid "Erase"
 msgstr "刪除"
 
-#. 'Back' label:
 msgid "Back"
 msgstr "回復"
+
+msgid "Aa"
+msgstr ""
 
 #. FIXME: Move elsewhere!!!
 msgid "Save over the older version of this picture?"
@@ -384,3 +442,20 @@ msgstr "不，儲存一個新的檔案"
 msgid "Choose the picture you want, then click “Open”."
 msgstr "選擇您想要的圖畫，然後按下「開啟」"
 
+#~ msgid "Lime!"
+#~ msgstr "淡黃綠色!"
+
+#~ msgid "Fuchsia!"
+#~ msgstr "淡紫色!"
+
+#~ msgid "Silver!"
+#~ msgstr "銀色!"
+
+#~ msgid "Thick"
+#~ msgstr "加粗"
+
+#~ msgid "Click and move the mouse to thicken the picture."
+#~ msgstr "按著並移動滑鼠來將筆劃加粗。"
+
+#~ msgid "Click and move the mouse to thin the picture."
+#~ msgstr "按著並移動滑鼠來將筆劃變薄。"

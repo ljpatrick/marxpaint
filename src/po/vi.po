@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TuxPaint 0.9.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2004-07-16 21:12+0200\n"
+"POT-Creation-Date: 2005-01-06 12:31+0100\n"
 "PO-Revision-Date: 2004-04-14 13:01-0800\n"
 "Last-Translator: Le Quang Phan <lqphan@hn.vnn.vn>\n"
 "Language-Team: N/A <>\n"
@@ -28,14 +28,20 @@ msgstr "Ve"
 msgid "Black!"
 msgstr "Den!"
 
+#, fuzzy
+msgid "Dark Gray!"
+msgstr "Xam!"
+
+#. using both valid spellings
+msgid "Light Grey!"
+msgstr ""
+
+#. using both valid spellings
 msgid "White!"
 msgstr "Trang!"
 
 msgid "Red!"
 msgstr "Do!"
-
-msgid "Pink!"
-msgstr "Hong!"
 
 msgid "Orange!"
 msgstr "Da cam!"
@@ -43,14 +49,14 @@ msgstr "Da cam!"
 msgid "Yellow!"
 msgstr "Vang!"
 
-msgid "Lime!"
-msgstr "Xanh la ma!"
+msgid "Neon green!"
+msgstr ""
 
 msgid "Green!"
 msgstr "Xanh la cay!"
 
-msgid "Cyan!"
-msgstr "Tim!"
+msgid "Sky blue!"
+msgstr ""
 
 msgid "Blue!"
 msgstr "Da troi!"
@@ -58,17 +64,21 @@ msgstr "Da troi!"
 msgid "Purple!"
 msgstr "Do tia!"
 
-msgid "Fuchsia!"
-msgstr "Tim hong!"
+msgid "Magenta!"
+msgstr ""
+
+msgid "Pink!"
+msgstr "Hong!"
 
 msgid "Brown!"
 msgstr "Nau!"
 
-msgid "Gray!"
-msgstr "Xam!"
+#, fuzzy
+msgid "Tan!"
+msgstr "Tim!"
 
-msgid "Silver!"
-msgstr "Bac!"
+msgid "Beige!"
+msgstr ""
 
 msgid "Great!"
 msgstr "Tuyet voi!"
@@ -82,20 +92,38 @@ msgstr "Dua len!"
 msgid "Good job!"
 msgstr "Tèt!"
 
+msgid "Fill"
+msgstr "Dien"
+
+#, fuzzy
+msgid "Grass"
+msgstr "Xoa"
+
+#, fuzzy
+msgid "Bricks"
+msgstr "Khoi"
+
 msgid "Rainbow"
 msgstr "CauVong"
 
 msgid "Sparkles"
 msgstr "SaoTuyet"
 
-msgid "Mirror"
-msgstr "Guong"
-
-msgid "Flip"
-msgstr "DayNhe"
-
 msgid "Blur"
 msgstr "Mo"
+
+msgid "Smudge"
+msgstr ""
+
+msgid "Fade"
+msgstr "Nhat"
+
+msgid "Darken"
+msgstr ""
+
+#, fuzzy
+msgid "Chalk"
+msgstr "Phan"
 
 msgid "Blocks"
 msgstr "Khoi"
@@ -103,27 +131,38 @@ msgstr "Khoi"
 msgid "Negative"
 msgstr "AmTinh"
 
-msgid "Fade"
-msgstr "Nhat"
-
 #, fuzzy
-msgid "Chalk"
-msgstr "Phan"
+msgid "Tint"
+msgstr "Manh"
 
 #, fuzzy
 msgid "Drip"
 msgstr "Nho giot"
 
-#, fuzzy
-msgid "Thick"
-msgstr "Dam"
+msgid "Cartoon"
+msgstr ""
+
+msgid "Mirror"
+msgstr "Guong"
+
+msgid "Flip"
+msgstr "DayNhe"
 
 #, fuzzy
-msgid "Thin"
-msgstr "Manh"
+msgid "Click in the picture to fill that area with color."
+msgstr "Kich vao hinh de to mau"
 
-msgid "Fill"
-msgstr "Dien"
+#, fuzzy
+msgid "Click and move to draw grass. Don't forget the dirt!"
+msgstr "Kich va di chuot de lam ruc ro"
+
+#, fuzzy
+msgid "Click and move to draw large bricks."
+msgstr "Kich va di chuot de lam ruc ro"
+
+#, fuzzy
+msgid "Click and move to draw small bricks."
+msgstr "Kich va di chuot de lam ruc ro"
 
 msgid "You can draw in rainbow colors!"
 msgstr "Ban co the ve bang cac mau cau vong!"
@@ -131,14 +170,25 @@ msgstr "Ban co the ve bang cac mau cau vong!"
 msgid "Click and move to draw sparkles."
 msgstr "Kich va di chuot de lam ruc ro"
 
-msgid "Click to make a mirror image."
-msgstr "Kich de tao doi xung guong"
-
-msgid "Click to flip the picture upside-down."
-msgstr "Kich de giam kÝch thuuooc cua hinh"
-
 msgid "Click and move the mouse around to blur the picture."
 msgstr "Kich va di chuot vong quanh de lam mo hinh"
+
+#, fuzzy
+msgid "Click and move the mouse around to smudge the picture."
+msgstr "Kich va di chuot vong quanh de lam mo hinh"
+
+#, fuzzy
+msgid "Click and move to fade the colors."
+msgstr "Kich va di chuot de lam nhat mau"
+
+#, fuzzy
+msgid "Click and move to darken the colors."
+msgstr "Kich va di chuot de lam nhat mau"
+
+#, fuzzy
+msgid ""
+"Click and move the mouse around to turn the picture into a chalk drawing."
+msgstr "Kich va di chuot de lat tranh"
 
 #, fuzzy
 msgid "Click and move the mouse around to make the picture blocky."
@@ -149,29 +199,22 @@ msgid "Click and move the mouse around to draw a negative."
 msgstr "Kich va di chuot de doi nguoc"
 
 #, fuzzy
-msgid "Click and move to fade the colors."
-msgstr "Kich va di chuot de lam nhat mau"
-
-#, fuzzy
-msgid ""
-"Click and move the mouse around to turn the picture into a chalk drawing."
-msgstr "Kich va di chuot de lat tranh"
+msgid "Click and move the mouse around to change the picture's color."
+msgstr "Kich va di chuot de tao khoi"
 
 #, fuzzy
 msgid "Click and move the mouse around to make the picture drip."
 msgstr "Kich va di chuot de tao giot"
 
 #, fuzzy
-msgid "Click and move the mouse to thicken the picture."
-msgstr "Kich va di chuot de lam day hinh len"
+msgid "Click and move the mouse around to turn the picture into a cartoon."
+msgstr "Kich va di chuot de lat tranh"
 
-#, fuzzy
-msgid "Click and move the mouse to thin the picture."
-msgstr "Kich va di chuot de lam mong hinh"
+msgid "Click to make a mirror image."
+msgstr "Kich de tao doi xung guong"
 
-#, fuzzy
-msgid "Click in the picture to fill that area with color."
-msgstr "Kich vao hinh de to mau"
+msgid "Click to flip the picture upside-down."
+msgstr "Kich de giam kÝch thuuooc cua hinh"
 
 #, fuzzy
 msgid "Square"
@@ -224,6 +267,10 @@ msgid "Brushes"
 msgstr "Choi"
 
 #, fuzzy
+msgid "Erasers"
+msgstr "Xoa"
+
+#, fuzzy
 msgid "Stamps"
 msgstr "Dau"
 
@@ -263,7 +310,7 @@ msgstr "Xoa"
 msgid "New"
 msgstr "Moi"
 
-#. 'Open' label:
+#. buttons for the file open dialog
 msgid "Open"
 msgstr "Mo"
 
@@ -390,14 +437,15 @@ msgstr "Luc nay, Ban khong the in duoc!"
 msgid "Erase this picture?"
 msgstr "Co xoa hinh nay khong?"
 
-#. 'Erase' label:
 msgid "Erase"
 msgstr "Xoa"
 
-#. 'Back' label:
 #, fuzzy
 msgid "Back"
 msgstr "Quay lui"
+
+msgid "Aa"
+msgstr ""
 
 #. FIXME: Move elsewhere!!!
 msgid "Save over the older version of this picture?"
@@ -408,3 +456,24 @@ msgstr "Khong, ghi vao mot file moi"
 
 msgid "Choose the picture you want, then click “Open”."
 msgstr "Chon mot buc tranh Ban muon, kich tiep vao o 'Mo'."
+
+#~ msgid "Lime!"
+#~ msgstr "Xanh la ma!"
+
+#~ msgid "Fuchsia!"
+#~ msgstr "Tim hong!"
+
+#~ msgid "Silver!"
+#~ msgstr "Bac!"
+
+#, fuzzy
+#~ msgid "Thick"
+#~ msgstr "Dam"
+
+#, fuzzy
+#~ msgid "Click and move the mouse to thicken the picture."
+#~ msgstr "Kich va di chuot de lam day hinh len"
+
+#, fuzzy
+#~ msgid "Click and move the mouse to thin the picture."
+#~ msgstr "Kich va di chuot de lam mong hinh"

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TuxPaint \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2004-07-16 21:12+0200\n"
+"POT-Creation-Date: 2005-01-06 12:31+0100\n"
 "PO-Revision-Date: 2004-07-14 16:30+0200\n"
 "Last-Translator: Juan Irigoien <juanirigoien@irakasle.net>\n"
 "Language-Team: basque <juanirigoien@irakasle.net>\n"
@@ -26,14 +26,20 @@ msgstr "Tux Paint"
 msgid "Black!"
 msgstr "Beltza!"
 
+#, fuzzy
+msgid "Dark Gray!"
+msgstr "Grisa!"
+
+#. using both valid spellings
+msgid "Light Grey!"
+msgstr ""
+
+#. using both valid spellings
 msgid "White!"
 msgstr "Zuria!"
 
 msgid "Red!"
 msgstr "Gorria!"
-
-msgid "Pink!"
-msgstr "Arrosa!"
 
 msgid "Orange!"
 msgstr "Laranja!"
@@ -41,14 +47,14 @@ msgstr "Laranja!"
 msgid "Yellow!"
 msgstr "Horia!"
 
-msgid "Lime!"
-msgstr "Lima!"
+msgid "Neon green!"
+msgstr ""
 
 msgid "Green!"
 msgstr "Berdea!"
 
-msgid "Cyan!"
-msgstr "Zyan kolorea!"
+msgid "Sky blue!"
+msgstr ""
 
 msgid "Blue!"
 msgstr "Urdina!"
@@ -56,17 +62,21 @@ msgstr "Urdina!"
 msgid "Purple!"
 msgstr "Purpura!"
 
-msgid "Fuchsia!"
-msgstr "Fuksia!"
+msgid "Magenta!"
+msgstr ""
+
+msgid "Pink!"
+msgstr "Arrosa!"
 
 msgid "Brown!"
 msgstr "Marroia!"
 
-msgid "Gray!"
-msgstr "Grisa!"
+#, fuzzy
+msgid "Tan!"
+msgstr "Zyan kolorea!"
 
-msgid "Silver!"
-msgstr "Zidar kolorea!"
+msgid "Beige!"
+msgstr ""
 
 msgid "Great!"
 msgstr "Zu bai, zu!"
@@ -80,20 +90,37 @@ msgstr "Ekin horrela!"
 msgid "Good job!"
 msgstr "Zein ondo ari zaren!"
 
+msgid "Fill"
+msgstr "Bete"
+
+#, fuzzy
+msgid "Grass"
+msgstr "Ezabatu"
+
+#, fuzzy
+msgid "Bricks"
+msgstr "Laukitxoak"
+
 msgid "Rainbow"
 msgstr "Ostadarra"
 
 msgid "Sparkles"
 msgstr "Txinpartak"
 
-msgid "Mirror"
-msgstr "Islatu"
-
-msgid "Flip"
-msgstr "Irauli"
-
 msgid "Blur"
 msgstr "Desenfokatu"
+
+msgid "Smudge"
+msgstr ""
+
+msgid "Fade"
+msgstr "Desagertaraziz"
+
+msgid "Darken"
+msgstr ""
+
+msgid "Chalk"
+msgstr "Klariona"
 
 msgid "Blocks"
 msgstr "Laukitxoak"
@@ -101,23 +128,36 @@ msgstr "Laukitxoak"
 msgid "Negative"
 msgstr "Negatiboa"
 
-msgid "Fade"
-msgstr "Desagertaraziz"
-
-msgid "Chalk"
-msgstr "Klariona"
+#, fuzzy
+msgid "Tint"
+msgstr "Mehetu"
 
 msgid "Drip"
 msgstr "Busti"
 
-msgid "Thick"
-msgstr "Loditu"
+msgid "Cartoon"
+msgstr ""
 
-msgid "Thin"
-msgstr "Mehetu"
+msgid "Mirror"
+msgstr "Islatu"
 
-msgid "Fill"
-msgstr "Bete"
+msgid "Flip"
+msgstr "Irauli"
+
+msgid "Click in the picture to fill that area with color."
+msgstr "Klik egin irudian eremu bat kolorez betetzeko."
+
+#, fuzzy
+msgid "Click and move to draw grass. Don't forget the dirt!"
+msgstr "Egin klik eta mugi ezazu sagua txinpartak marrazteko."
+
+#, fuzzy
+msgid "Click and move to draw large bricks."
+msgstr "Egin klik eta mugi ezazu sagua txinpartak marrazteko."
+
+#, fuzzy
+msgid "Click and move to draw small bricks."
+msgstr "Egin klik eta mugi ezazu sagua txinpartak marrazteko."
 
 msgid "You can draw in rainbow colors!"
 msgstr "Marraz ezazu ostadarraren koloreekin!"
@@ -125,22 +165,18 @@ msgstr "Marraz ezazu ostadarraren koloreekin!"
 msgid "Click and move to draw sparkles."
 msgstr "Egin klik eta mugi ezazu sagua txinpartak marrazteko."
 
-msgid "Click to make a mirror image."
-msgstr "Egin klik irudiaren isla sortzeko!"
-
-msgid "Click to flip the picture upside-down."
-msgstr "Klik egin eta irudia goikoz-behera irauliko da!"
-
 msgid "Click and move the mouse around to blur the picture."
 msgstr "Klik egin eta mugi ezazu sagua irudia desenfokatzeko."
 
-msgid "Click and move the mouse around to make the picture blocky."
-msgstr "Klik egin eta mugi ezazu sagua irudia laukitxotan marrazteko."
-
-msgid "Click and move the mouse around to draw a negative."
-msgstr "Klik egin eta mugi ezazu sagua irudiaren negatiboa marrazteko."
+#, fuzzy
+msgid "Click and move the mouse around to smudge the picture."
+msgstr "Klik egin eta mugi ezazu sagua irudia desenfokatzeko."
 
 msgid "Click and move to fade the colors."
+msgstr "Klik egin eta mugi ezazu sagua koloreak pixkanaka desagertarazteko."
+
+#, fuzzy
+msgid "Click and move to darken the colors."
 msgstr "Klik egin eta mugi ezazu sagua koloreak pixkanaka desagertarazteko."
 
 msgid ""
@@ -149,17 +185,30 @@ msgstr ""
 "Klik egin eta mugi ezazu sagua irudia klarionez eginda balego bezala "
 "marrazteko."
 
+msgid "Click and move the mouse around to make the picture blocky."
+msgstr "Klik egin eta mugi ezazu sagua irudia laukitxotan marrazteko."
+
+msgid "Click and move the mouse around to draw a negative."
+msgstr "Klik egin eta mugi ezazu sagua irudiaren negatiboa marrazteko."
+
+#, fuzzy
+msgid "Click and move the mouse around to change the picture's color."
+msgstr "Klik egin eta mugi ezazu sagua irudia laukitxotan marrazteko."
+
 msgid "Click and move the mouse around to make the picture drip."
 msgstr "Klik egin eta mugi ezazu sagua irudiari busti itxura emateko!"
 
-msgid "Click and move the mouse to thicken the picture."
-msgstr "Klik egin eta mugi ezazu sagua irudia loditzeko."
+#, fuzzy
+msgid "Click and move the mouse around to turn the picture into a cartoon."
+msgstr ""
+"Klik egin eta mugi ezazu sagua irudia klarionez eginda balego bezala "
+"marrazteko."
 
-msgid "Click and move the mouse to thin the picture."
-msgstr "Klik egin eta mugi ezazu sagua irudia mehetzeko."
+msgid "Click to make a mirror image."
+msgstr "Egin klik irudiaren isla sortzeko!"
 
-msgid "Click in the picture to fill that area with color."
-msgstr "Klik egin irudian eremu bat kolorez betetzeko."
+msgid "Click to flip the picture upside-down."
+msgstr "Klik egin eta irudia goikoz-behera irauliko da!"
 
 msgid "Square"
 msgstr "Laukia"
@@ -209,6 +258,10 @@ msgstr "Koloreak"
 msgid "Brushes"
 msgstr "Pintzelak"
 
+#, fuzzy
+msgid "Erasers"
+msgstr "Ezabatzailea"
+
 msgid "Stamps"
 msgstr "Zigiluak"
 
@@ -245,7 +298,7 @@ msgstr "Ezabatzailea"
 msgid "New"
 msgstr "Berria"
 
-#. 'Open' label:
+#. buttons for the file open dialog
 msgid "Open"
 msgstr "Ireki"
 
@@ -373,13 +426,14 @@ msgstr "Ezin duzu oraindik inprimitu!"
 msgid "Erase this picture?"
 msgstr "Irudi hau ezabatu?"
 
-#. 'Erase' label:
 msgid "Erase"
 msgstr "Ezabatu"
 
-#. 'Back' label:
 msgid "Back"
 msgstr "Atzera"
+
+msgid "Aa"
+msgstr ""
 
 #. FIXME: Move elsewhere!!!
 msgid "Save over the older version of this picture?"
@@ -391,6 +445,24 @@ msgstr "Ez, artxibo berria gorde"
 msgid "Choose the picture you want, then click “Open”."
 msgstr ""
 "Aukera ezazu ireki nahi duzun irudia. Ondoren klik egin ‘Ireki’ botoian"
+
+#~ msgid "Lime!"
+#~ msgstr "Lima!"
+
+#~ msgid "Fuchsia!"
+#~ msgstr "Fuksia!"
+
+#~ msgid "Silver!"
+#~ msgstr "Zidar kolorea!"
+
+#~ msgid "Thick"
+#~ msgstr "Loditu"
+
+#~ msgid "Click and move the mouse to thicken the picture."
+#~ msgstr "Klik egin eta mugi ezazu sagua irudia loditzeko."
+
+#~ msgid "Click and move the mouse to thin the picture."
+#~ msgstr "Klik egin eta mugi ezazu sagua irudia mehetzeko."
 
 #~ msgid "Okay"
 #~ msgstr "Onartu"

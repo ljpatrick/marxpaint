@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TuxPaint\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2004-07-16 21:12+0200\n"
+"POT-Creation-Date: 2005-01-06 12:31+0100\n"
 "PO-Revision-Date: 2004-07-06 12:00GMT\n"
 "Last-Translator: Eugene Zelenko <greendeath@mail.ru>\n"
 "Language-Team: Belarusian <kde-i18n-be@kde.org>\n"
@@ -27,14 +27,20 @@ msgstr "Малюй разам з Tux!"
 msgid "Black!"
 msgstr "Чорны!"
 
+#, fuzzy
+msgid "Dark Gray!"
+msgstr "Шэры!"
+
+#. using both valid spellings
+msgid "Light Grey!"
+msgstr ""
+
+#. using both valid spellings
 msgid "White!"
 msgstr "Белы!"
 
 msgid "Red!"
 msgstr "Чырвоны!"
-
-msgid "Pink!"
-msgstr "Ружовы!"
 
 msgid "Orange!"
 msgstr "Аранжавы!"
@@ -42,14 +48,14 @@ msgstr "Аранжавы!"
 msgid "Yellow!"
 msgstr "Жоўты!"
 
-msgid "Lime!"
+msgid "Neon green!"
 msgstr ""
 
 msgid "Green!"
 msgstr "Зялёны!"
 
-msgid "Cyan!"
-msgstr "Блакітны!"
+msgid "Sky blue!"
+msgstr ""
 
 msgid "Blue!"
 msgstr "Сіні!"
@@ -57,16 +63,20 @@ msgstr "Сіні!"
 msgid "Purple!"
 msgstr "Пурпуровы!"
 
-msgid "Fuchsia!"
+msgid "Magenta!"
 msgstr ""
+
+msgid "Pink!"
+msgstr "Ружовы!"
 
 msgid "Brown!"
 msgstr "Карычневы!"
 
-msgid "Gray!"
-msgstr "Шэры!"
+#, fuzzy
+msgid "Tan!"
+msgstr "Блакітны!"
 
-msgid "Silver!"
+msgid "Beige!"
 msgstr ""
 
 msgid "Great!"
@@ -81,20 +91,36 @@ msgstr ""
 msgid "Good job!"
 msgstr ""
 
+msgid "Fill"
+msgstr ""
+
+#, fuzzy
+msgid "Grass"
+msgstr "Шэры!"
+
+msgid "Bricks"
+msgstr ""
+
 msgid "Rainbow"
 msgstr "Вясёлка"
 
 msgid "Sparkles"
 msgstr "Іскры"
 
-msgid "Mirror"
-msgstr "Люстэрка"
-
-msgid "Flip"
-msgstr ""
-
 msgid "Blur"
 msgstr ""
+
+msgid "Smudge"
+msgstr ""
+
+msgid "Fade"
+msgstr ""
+
+msgid "Darken"
+msgstr ""
+
+msgid "Chalk"
+msgstr "Крэйда"
 
 msgid "Blocks"
 msgstr ""
@@ -102,22 +128,32 @@ msgstr ""
 msgid "Negative"
 msgstr "Нэгатыў"
 
-msgid "Fade"
-msgstr ""
-
-msgid "Chalk"
-msgstr "Крэйда"
+#, fuzzy
+msgid "Tint"
+msgstr "Друкаваць"
 
 msgid "Drip"
 msgstr ""
 
-msgid "Thick"
+msgid "Cartoon"
 msgstr ""
 
-msgid "Thin"
+msgid "Mirror"
+msgstr "Люстэрка"
+
+msgid "Flip"
 msgstr ""
 
-msgid "Fill"
+msgid "Click in the picture to fill that area with color."
+msgstr ""
+
+msgid "Click and move to draw grass. Don't forget the dirt!"
+msgstr ""
+
+msgid "Click and move to draw large bricks."
+msgstr ""
+
+msgid "Click and move to draw small bricks."
 msgstr ""
 
 msgid "You can draw in rainbow colors!"
@@ -126,13 +162,20 @@ msgstr ""
 msgid "Click and move to draw sparkles."
 msgstr ""
 
-msgid "Click to make a mirror image."
-msgstr ""
-
-msgid "Click to flip the picture upside-down."
-msgstr ""
-
 msgid "Click and move the mouse around to blur the picture."
+msgstr ""
+
+msgid "Click and move the mouse around to smudge the picture."
+msgstr ""
+
+msgid "Click and move to fade the colors."
+msgstr ""
+
+msgid "Click and move to darken the colors."
+msgstr ""
+
+msgid ""
+"Click and move the mouse around to turn the picture into a chalk drawing."
 msgstr ""
 
 msgid "Click and move the mouse around to make the picture blocky."
@@ -141,23 +184,19 @@ msgstr ""
 msgid "Click and move the mouse around to draw a negative."
 msgstr ""
 
-msgid "Click and move to fade the colors."
-msgstr ""
-
-msgid ""
-"Click and move the mouse around to turn the picture into a chalk drawing."
+msgid "Click and move the mouse around to change the picture's color."
 msgstr ""
 
 msgid "Click and move the mouse around to make the picture drip."
 msgstr ""
 
-msgid "Click and move the mouse to thicken the picture."
+msgid "Click and move the mouse around to turn the picture into a cartoon."
 msgstr ""
 
-msgid "Click and move the mouse to thin the picture."
+msgid "Click to make a mirror image."
 msgstr ""
 
-msgid "Click in the picture to fill that area with color."
+msgid "Click to flip the picture upside-down."
 msgstr ""
 
 msgid "Square"
@@ -208,6 +247,9 @@ msgstr "Колеры"
 msgid "Brushes"
 msgstr "Пэндзалі"
 
+msgid "Erasers"
+msgstr ""
+
 msgid "Stamps"
 msgstr "Пячаткі"
 
@@ -244,7 +286,7 @@ msgstr ""
 msgid "New"
 msgstr "Новы"
 
-#. 'Open' label:
+#. buttons for the file open dialog
 msgid "Open"
 msgstr "Адчыніць"
 
@@ -368,12 +410,13 @@ msgstr ""
 msgid "Erase this picture?"
 msgstr ""
 
-#. 'Erase' label:
 msgid "Erase"
 msgstr ""
 
-#. 'Back' label:
 msgid "Back"
+msgstr ""
+
+msgid "Aa"
 msgstr ""
 
 #. FIXME: Move elsewhere!!!

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ms\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2004-08-23 19:36+0200\n"
+"POT-Creation-Date: 2005-01-06 12:31+0100\n"
 "PO-Revision-Date: 2004-08-23 16:06+0800\n"
 "Last-Translator: Muhammad Najmi bin Ahmad Zabidi <md_najmi@yahoo.com>\n"
 "Language-Team: Malay <kedidiemas@yahoogroups.com>\n"
@@ -29,14 +29,20 @@ msgstr "Tux Paint"
 msgid "Black!"
 msgstr "Hitam!"
 
+#, fuzzy
+msgid "Dark Gray!"
+msgstr "Kelabu!"
+
+#. using both valid spellings
+msgid "Light Grey!"
+msgstr ""
+
+#. using both valid spellings
 msgid "White!"
 msgstr "Putih!"
 
 msgid "Red!"
 msgstr "Merah!"
-
-msgid "Pink!"
-msgstr "Merah Jambu!"
 
 msgid "Orange!"
 msgstr "Oren!"
@@ -44,14 +50,14 @@ msgstr "Oren!"
 msgid "Yellow!"
 msgstr "Kuning!"
 
-msgid "Lime!"
-msgstr "Lemon!"
+msgid "Neon green!"
+msgstr ""
 
 msgid "Green!"
 msgstr "Hijau!"
 
-msgid "Cyan!"
-msgstr "Cyan!"
+msgid "Sky blue!"
+msgstr ""
 
 msgid "Blue!"
 msgstr "Biru!"
@@ -59,17 +65,21 @@ msgstr "Biru!"
 msgid "Purple!"
 msgstr "Ungu!"
 
-msgid "Fuchsia!"
-msgstr "Fuchsia!"
+msgid "Magenta!"
+msgstr ""
+
+msgid "Pink!"
+msgstr "Merah Jambu!"
 
 msgid "Brown!"
 msgstr "Coklat!"
 
-msgid "Gray!"
-msgstr "Kelabu!"
+#, fuzzy
+msgid "Tan!"
+msgstr "Cyan!"
 
-msgid "Silver!"
-msgstr "Perak!"
+msgid "Beige!"
+msgstr ""
 
 msgid "Great!"
 msgstr "Hebat!"
@@ -83,20 +93,37 @@ msgstr "Teruskan usaha anda!"
 msgid "Good job!"
 msgstr "Usaha yang baik!"
 
+msgid "Fill"
+msgstr "Isi"
+
+#, fuzzy
+msgid "Grass"
+msgstr "Padam"
+
+#, fuzzy
+msgid "Bricks"
+msgstr "Blok"
+
 msgid "Rainbow"
 msgstr "Pelangi"
 
 msgid "Sparkles"
 msgstr "Percikan"
 
-msgid "Mirror"
-msgstr "Cermin"
-
-msgid "Flip"
-msgstr "Lipat"
-
 msgid "Blur"
 msgstr "Kabur"
+
+msgid "Smudge"
+msgstr ""
+
+msgid "Fade"
+msgstr "Luntur"
+
+msgid "Darken"
+msgstr ""
+
+msgid "Chalk"
+msgstr "Kapur"
 
 msgid "Blocks"
 msgstr "Blok"
@@ -104,23 +131,38 @@ msgstr "Blok"
 msgid "Negative"
 msgstr "Negatif"
 
-msgid "Fade"
-msgstr "Luntur"
-
-msgid "Chalk"
-msgstr "Kapur"
+#, fuzzy
+msgid "Tint"
+msgstr "Nipis"
 
 msgid "Drip"
 msgstr "Titisan"
 
-msgid "Thick"
-msgstr "Tebal"
+msgid "Cartoon"
+msgstr ""
 
-msgid "Thin"
-msgstr "Nipis"
+msgid "Mirror"
+msgstr "Cermin"
 
-msgid "Fill"
-msgstr "Isi"
+msgid "Flip"
+msgstr "Lipat"
+
+msgid "Click in the picture to fill that area with color."
+msgstr ""
+"Klik dan gerakkan tetikus di sekeliling untuk memenuhkan kawasan dengan "
+"warna."
+
+#, fuzzy
+msgid "Click and move to draw grass. Don't forget the dirt!"
+msgstr "Klik dan alihkan untuk melukis percikan."
+
+#, fuzzy
+msgid "Click and move to draw large bricks."
+msgstr "Klik dan alihkan untuk melukis percikan."
+
+#, fuzzy
+msgid "Click and move to draw small bricks."
+msgstr "Klik dan alihkan untuk melukis percikan."
 
 msgid "You can draw in rainbow colors!"
 msgstr "Anda boleh menulis di dalam warna pelangi!"
@@ -128,14 +170,23 @@ msgstr "Anda boleh menulis di dalam warna pelangi!"
 msgid "Click and move to draw sparkles."
 msgstr "Klik dan alihkan untuk melukis percikan."
 
-msgid "Click to make a mirror image."
-msgstr "Klik untuk membuat imej cermin!"
-
-msgid "Click to flip the picture upside-down."
-msgstr "Klik untuk melipat gambar ke atas dan ke bawah!"
-
 msgid "Click and move the mouse around to blur the picture."
 msgstr "Klik dan gerakkan tetikus di sekeliling untuk mengaburkan gambar."
+
+#, fuzzy
+msgid "Click and move the mouse around to smudge the picture."
+msgstr "Klik dan gerakkan tetikus di sekeliling untuk mengaburkan gambar."
+
+msgid "Click and move to fade the colors."
+msgstr "Klik dan alihkan untuk lunturkan warna"
+
+#, fuzzy
+msgid "Click and move to darken the colors."
+msgstr "Klik dan alihkan untuk lunturkan warna"
+
+msgid ""
+"Click and move the mouse around to turn the picture into a chalk drawing."
+msgstr "Klik dan alihkan tetikus di sekeliling untuk membuat lukisan kapur."
 
 msgid "Click and move the mouse around to make the picture blocky."
 msgstr ""
@@ -144,28 +195,25 @@ msgstr ""
 msgid "Click and move the mouse around to draw a negative."
 msgstr "Klik dan gerakkan tetikus di sekeliling untuk menegatifkan gambar."
 
-msgid "Click and move to fade the colors."
-msgstr "Klik dan alihkan untuk lunturkan warna"
-
-msgid ""
-"Click and move the mouse around to turn the picture into a chalk drawing."
-msgstr "Klik dan alihkan tetikus di sekeliling untuk membuat lukisan kapur."
+#, fuzzy
+msgid "Click and move the mouse around to change the picture's color."
+msgstr ""
+"Klik dan gerakkan tetikus di sekeliling untuk menjadikan gambar berblok."
 
 msgid "Click and move the mouse around to make the picture drip."
 msgstr ""
 "Klik dan gerakkan tetikus di sekeliling untuk menjadikan gambar berbentuk "
 "titisan."
 
-msgid "Click and move the mouse to thicken the picture."
-msgstr "Klik dan gerakkan tetikus di sekeliling untuk menebalkan gambar."
+#, fuzzy
+msgid "Click and move the mouse around to turn the picture into a cartoon."
+msgstr "Klik dan alihkan tetikus di sekeliling untuk membuat lukisan kapur."
 
-msgid "Click and move the mouse to thin the picture."
-msgstr "Klik dan gerakkan tetikus di sekeliling untuk menipiskan gambar."
+msgid "Click to make a mirror image."
+msgstr "Klik untuk membuat imej cermin!"
 
-msgid "Click in the picture to fill that area with color."
-msgstr ""
-"Klik dan gerakkan tetikus di sekeliling untuk memenuhkan kawasan dengan "
-"warna."
+msgid "Click to flip the picture upside-down."
+msgstr "Klik untuk melipat gambar ke atas dan ke bawah!"
 
 msgid "Square"
 msgstr "Segiempat Sama"
@@ -215,6 +263,10 @@ msgstr "Warna"
 msgid "Brushes"
 msgstr "Berus"
 
+#, fuzzy
+msgid "Erasers"
+msgstr "Pemadam"
+
 msgid "Stamps"
 msgstr "Cop"
 
@@ -251,7 +303,7 @@ msgstr "Pemadam"
 msgid "New"
 msgstr "Baru"
 
-#. 'Open' label:
+#. buttons for the file open dialog
 msgid "Open"
 msgstr "Buka"
 
@@ -377,13 +429,14 @@ msgstr "Anda tidak boleh cetak lagi!"
 msgid "Erase this picture?"
 msgstr "Padam hasil kerja?"
 
-#. 'Erase' label:
 msgid "Erase"
 msgstr "Padam"
 
-#. 'Back' label:
 msgid "Back"
 msgstr "Undur"
+
+msgid "Aa"
+msgstr ""
 
 #. FIXME: Move elsewhere!!!
 msgid "Save over the older version of this picture?"
@@ -394,3 +447,21 @@ msgstr "Tidak, simpan kepada fail baru"
 
 msgid "Choose the picture you want, then click “Open”."
 msgstr "Pilih gambar yang anda mahu, dan klik 'Buka'"
+
+#~ msgid "Lime!"
+#~ msgstr "Lemon!"
+
+#~ msgid "Fuchsia!"
+#~ msgstr "Fuchsia!"
+
+#~ msgid "Silver!"
+#~ msgstr "Perak!"
+
+#~ msgid "Thick"
+#~ msgstr "Tebal"
+
+#~ msgid "Click and move the mouse to thicken the picture."
+#~ msgstr "Klik dan gerakkan tetikus di sekeliling untuk menebalkan gambar."
+
+#~ msgid "Click and move the mouse to thin the picture."
+#~ msgstr "Klik dan gerakkan tetikus di sekeliling untuk menipiskan gambar."

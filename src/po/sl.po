@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: sl\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2004-07-19 19:11+0200\n"
+"POT-Creation-Date: 2005-01-06 12:31+0100\n"
 "PO-Revision-Date: 2004-07-19 14:46+0200\n"
 "Last-Translator: Urska Colner <urska.colner@agenda.si>\n"
 "Language-Team: slovenscina <users@sl.openoffice.org>\n"
@@ -35,16 +35,22 @@ msgid "Black!"
 msgstr "Črna!"
 
 #
+#, fuzzy
+msgid "Dark Gray!"
+msgstr "Siva!"
+
+#. using both valid spellings
+msgid "Light Grey!"
+msgstr ""
+
+#
+#. using both valid spellings
 msgid "White!"
 msgstr "Bela!"
 
 #
 msgid "Red!"
 msgstr "Rdeča!"
-
-#
-msgid "Pink!"
-msgstr "Roza!"
 
 #
 msgid "Orange!"
@@ -54,17 +60,15 @@ msgstr "Oranžna!"
 msgid "Yellow!"
 msgstr "Rumena!"
 
-#
-msgid "Lime!"
-msgstr "Rumeno-zelena!"
+msgid "Neon green!"
+msgstr ""
 
 #
 msgid "Green!"
 msgstr "Zelena!"
 
-#
-msgid "Cyan!"
-msgstr "Zeleno-modra!"
+msgid "Sky blue!"
+msgstr ""
 
 #
 msgid "Blue!"
@@ -74,21 +78,24 @@ msgstr "Modra!"
 msgid "Purple!"
 msgstr "Vijoličasta!"
 
+msgid "Magenta!"
+msgstr ""
+
 #
-msgid "Fuchsia!"
-msgstr "Rožnata!"
+msgid "Pink!"
+msgstr "Roza!"
 
 #
 msgid "Brown!"
 msgstr "Rjava!"
 
 #
-msgid "Gray!"
-msgstr "Siva!"
+#, fuzzy
+msgid "Tan!"
+msgstr "Zeleno-modra!"
 
-#
-msgid "Silver!"
-msgstr "Srebrna!"
+msgid "Beige!"
+msgstr ""
 
 #
 msgid "Great!"
@@ -107,6 +114,20 @@ msgid "Good job!"
 msgstr "Dobro opravljeno!"
 
 #
+msgid "Fill"
+msgstr "Napolni"
+
+#
+#, fuzzy
+msgid "Grass"
+msgstr "Izbriši"
+
+#
+#, fuzzy
+msgid "Bricks"
+msgstr "Bloki"
+
+#
 msgid "Rainbow"
 msgstr "Mavrica"
 
@@ -115,16 +136,22 @@ msgid "Sparkles"
 msgstr "Bleščice"
 
 #
-msgid "Mirror"
-msgstr "Ogledalo"
-
-#
-msgid "Flip"
-msgstr "Prezrcali"
-
-#
 msgid "Blur"
 msgstr "Zameglitev"
+
+msgid "Smudge"
+msgstr ""
+
+#
+msgid "Fade"
+msgstr "Pojemanje"
+
+msgid "Darken"
+msgstr ""
+
+#
+msgid "Chalk"
+msgstr "Kreda"
 
 #
 msgid "Blocks"
@@ -135,28 +162,43 @@ msgid "Negative"
 msgstr "Negativ"
 
 #
-msgid "Fade"
-msgstr "Pojemanje"
-
-#
-msgid "Chalk"
-msgstr "Kreda"
+#, fuzzy
+msgid "Tint"
+msgstr "Tanko"
 
 #
 msgid "Drip"
 msgstr "Kapljanje"
 
-#
-msgid "Thick"
-msgstr "Debelo"
+msgid "Cartoon"
+msgstr ""
 
 #
-msgid "Thin"
-msgstr "Tanko"
+msgid "Mirror"
+msgstr "Ogledalo"
 
 #
-msgid "Fill"
-msgstr "Napolni"
+msgid "Flip"
+msgstr "Prezrcali"
+
+#
+msgid "Click in the picture to fill that area with color."
+msgstr "Klikni na sliko, da napolniš to območje z barvo."
+
+#
+#, fuzzy
+msgid "Click and move to draw grass. Don't forget the dirt!"
+msgstr "Klikni in premakni za risanje bleščic."
+
+#
+#, fuzzy
+msgid "Click and move to draw large bricks."
+msgstr "Klikni in premakni za risanje bleščic."
+
+#
+#, fuzzy
+msgid "Click and move to draw small bricks."
+msgstr "Klikni in premakni za risanje bleščic."
 
 #
 msgid "You can draw in rainbow colors!"
@@ -167,27 +209,21 @@ msgid "Click and move to draw sparkles."
 msgstr "Klikni in premakni za risanje bleščic."
 
 #
-msgid "Click to make a mirror image."
-msgstr "Klikni, da narediš zrcalno sliko."
-
-#
-msgid "Click to flip the picture upside-down."
-msgstr "Klikni, da prezrcališ sliko odzgoraj navzdol."
-
-#
 msgid "Click and move the mouse around to blur the picture."
 msgstr "Klikni in premikaj miško, da zamegliš sliko."
 
 #
-msgid "Click and move the mouse around to make the picture blocky."
-msgstr "Klikni in premikaj miško naokrog, da narediš sliko blokasto."
-
-#
-msgid "Click and move the mouse around to draw a negative."
-msgstr "Klikni in premikaj miško naokrog, da narišeš negativ."
+#, fuzzy
+msgid "Click and move the mouse around to smudge the picture."
+msgstr "Klikni in premikaj miško, da zamegliš sliko."
 
 #
 msgid "Click and move to fade the colors."
+msgstr "Klikni in premikaj, da bi zamegliš barve."
+
+#
+#, fuzzy
+msgid "Click and move to darken the colors."
 msgstr "Klikni in premikaj, da bi zamegliš barve."
 
 #
@@ -198,21 +234,37 @@ msgstr ""
 "kredo."
 
 #
+msgid "Click and move the mouse around to make the picture blocky."
+msgstr "Klikni in premikaj miško naokrog, da narediš sliko blokasto."
+
+#
+msgid "Click and move the mouse around to draw a negative."
+msgstr "Klikni in premikaj miško naokrog, da narišeš negativ."
+
+#
+#, fuzzy
+msgid "Click and move the mouse around to change the picture's color."
+msgstr "Klikni in premikaj miško naokrog, da narediš sliko blokasto."
+
+#
 msgid "Click and move the mouse around to make the picture drip."
 msgstr ""
 "Klikni in premikaj miško naokrog, da bo izgledalo, kot da s slike kaplja."
 
 #
-msgid "Click and move the mouse to thicken the picture."
-msgstr "Klikni in premikaj miško, da se slika odebeli."
+#, fuzzy
+msgid "Click and move the mouse around to turn the picture into a cartoon."
+msgstr ""
+"Klikni in premikaj miško naokrog, da spremenš sliko v risbo, narisano s "
+"kredo."
 
 #
-msgid "Click and move the mouse to thin the picture."
-msgstr "Klikni in premakni miško, da se slika stanjša."
+msgid "Click to make a mirror image."
+msgstr "Klikni, da narediš zrcalno sliko."
 
 #
-msgid "Click in the picture to fill that area with color."
-msgstr "Klikni na sliko, da napolniš to območje z barvo."
+msgid "Click to flip the picture upside-down."
+msgstr "Klikni, da prezrcališ sliko odzgoraj navzdol."
 
 #
 msgid "Square"
@@ -279,6 +331,11 @@ msgid "Brushes"
 msgstr "Čopiči"
 
 #
+#, fuzzy
+msgid "Erasers"
+msgstr "Radirka"
+
+#
 msgid "Stamps"
 msgstr "Žigi"
 
@@ -327,7 +384,7 @@ msgid "New"
 msgstr "Novo"
 
 #
-#. 'Open' label:
+#. buttons for the file open dialog
 msgid "Open"
 msgstr "Odpri"
 
@@ -491,14 +548,15 @@ msgid "Erase this picture?"
 msgstr "Ali želiš izbrisati to sliko?"
 
 #
-#. 'Erase' label:
 msgid "Erase"
 msgstr "Izbriši"
 
 #
-#. 'Back' label:
 msgid "Back"
 msgstr "Nazaj"
+
+msgid "Aa"
+msgstr ""
 
 #
 #. FIXME: Move elsewhere!!!
@@ -512,6 +570,30 @@ msgstr "Ne, shrani kot novo sliko"
 #
 msgid "Choose the picture you want, then click “Open”."
 msgstr "Izberi sliko in klikni 'Odpri'."
+
+#
+#~ msgid "Lime!"
+#~ msgstr "Rumeno-zelena!"
+
+#
+#~ msgid "Fuchsia!"
+#~ msgstr "Rožnata!"
+
+#
+#~ msgid "Silver!"
+#~ msgstr "Srebrna!"
+
+#
+#~ msgid "Thick"
+#~ msgstr "Debelo"
+
+#
+#~ msgid "Click and move the mouse to thicken the picture."
+#~ msgstr "Klikni in premikaj miško, da se slika odebeli."
+
+#
+#~ msgid "Click and move the mouse to thin the picture."
+#~ msgstr "Klikni in premakni miško, da se slika stanjša."
 
 #
 #~ msgid "Okay"

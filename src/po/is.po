@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint-is 0.9.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2004-07-16 21:12+0200\n"
+"POT-Creation-Date: 2005-01-06 12:31+0100\n"
 "PO-Revision-Date: 2004-03-15 15:38GMT\n"
 "Last-Translator: Pjetur G. Hjaltason <pjetur@pjetur.net>\n"
 "Language-Team: Icelandic <kde-isl@molar.is>\n"
@@ -31,14 +31,20 @@ msgstr "Teikna"
 msgid "Black!"
 msgstr "Svart!"
 
+#, fuzzy
+msgid "Dark Gray!"
+msgstr "Grátt!"
+
+#. using both valid spellings
+msgid "Light Grey!"
+msgstr ""
+
+#. using both valid spellings
 msgid "White!"
 msgstr "Hvítt!"
 
 msgid "Red!"
 msgstr "Rautt!"
-
-msgid "Pink!"
-msgstr "Bleikt!"
 
 msgid "Orange!"
 msgstr "Appelsínugult!"
@@ -46,14 +52,14 @@ msgstr "Appelsínugult!"
 msgid "Yellow!"
 msgstr "Gult!"
 
-msgid "Lime!"
-msgstr "Gulgrænt!"
+msgid "Neon green!"
+msgstr ""
 
 msgid "Green!"
 msgstr "Grænt!"
 
-msgid "Cyan!"
-msgstr "Blágrænn!"
+msgid "Sky blue!"
+msgstr ""
 
 msgid "Blue!"
 msgstr "Blátt!"
@@ -61,17 +67,21 @@ msgstr "Blátt!"
 msgid "Purple!"
 msgstr "Fjólublátt!"
 
-msgid "Fuchsia!"
+msgid "Magenta!"
+msgstr ""
+
+msgid "Pink!"
 msgstr "Bleikt!"
 
 msgid "Brown!"
 msgstr "Brúnt!"
 
-msgid "Gray!"
-msgstr "Grátt!"
+#, fuzzy
+msgid "Tan!"
+msgstr "Blágrænn!"
 
-msgid "Silver!"
-msgstr "Silfur!"
+msgid "Beige!"
+msgstr ""
 
 msgid "Great!"
 msgstr "Frábært!"
@@ -85,20 +95,37 @@ msgstr "Haltu þessu áfram!"
 msgid "Good job!"
 msgstr "Vel gert!"
 
+msgid "Fill"
+msgstr "Fylla"
+
+#, fuzzy
+msgid "Grass"
+msgstr "Eyða"
+
+#, fuzzy
+msgid "Bricks"
+msgstr "Kassar"
+
 msgid "Rainbow"
 msgstr "Regnbogi"
 
 msgid "Sparkles"
 msgstr "Neistar"
 
-msgid "Mirror"
-msgstr "Spegla"
-
-msgid "Flip"
-msgstr "Hvolfa"
-
 msgid "Blur"
 msgstr "Óskýr"
+
+msgid "Smudge"
+msgstr ""
+
+msgid "Fade"
+msgstr "Þynna út"
+
+msgid "Darken"
+msgstr ""
+
+msgid "Chalk"
+msgstr "Krít"
 
 msgid "Blocks"
 msgstr "Kassar"
@@ -106,23 +133,36 @@ msgstr "Kassar"
 msgid "Negative"
 msgstr "Andhverfa"
 
-msgid "Fade"
-msgstr "Þynna út"
-
-msgid "Chalk"
-msgstr "Krít"
+#, fuzzy
+msgid "Tint"
+msgstr "þunn"
 
 msgid "Drip"
 msgstr "Leka"
 
-msgid "Thick"
-msgstr "Þykk"
+msgid "Cartoon"
+msgstr ""
 
-msgid "Thin"
-msgstr "þunn"
+msgid "Mirror"
+msgstr "Spegla"
 
-msgid "Fill"
-msgstr "Fylla"
+msgid "Flip"
+msgstr "Hvolfa"
+
+msgid "Click in the picture to fill that area with color."
+msgstr "Smelltu og hreyfðu músina til að fylla svæðið með lit."
+
+#, fuzzy
+msgid "Click and move to draw grass. Don't forget the dirt!"
+msgstr "Smelltu og hreyfðu músina til að búa til neista."
+
+#, fuzzy
+msgid "Click and move to draw large bricks."
+msgstr "Smelltu og hreyfðu músina til að búa til neista."
+
+#, fuzzy
+msgid "Click and move to draw small bricks."
+msgstr "Smelltu og hreyfðu músina til að búa til neista."
 
 msgid "You can draw in rainbow colors!"
 msgstr "Þú getur teiknað með regnboga-litum!"
@@ -130,14 +170,23 @@ msgstr "Þú getur teiknað með regnboga-litum!"
 msgid "Click and move to draw sparkles."
 msgstr "Smelltu og hreyfðu músina til að búa til neista."
 
-msgid "Click to make a mirror image."
-msgstr "Smelltu til að gera spegilmynd."
-
-msgid "Click to flip the picture upside-down."
-msgstr "Smelltu til að setja myndina á hvolf."
-
 msgid "Click and move the mouse around to blur the picture."
 msgstr "Smelltu og hreyfðu músina til að gera myndina óskýrari."
+
+#, fuzzy
+msgid "Click and move the mouse around to smudge the picture."
+msgstr "Smelltu og hreyfðu músina til að gera myndina óskýrari."
+
+msgid "Click and move to fade the colors."
+msgstr "Smelltu og hreyfðu músina til að þynna út litina!"
+
+#, fuzzy
+msgid "Click and move to darken the colors."
+msgstr "Smelltu og hreyfðu músina til að þynna út litina!"
+
+msgid ""
+"Click and move the mouse around to turn the picture into a chalk drawing."
+msgstr "Smelltu og hreyfðu músina til að búa til krítarmynd!"
 
 msgid "Click and move the mouse around to make the picture blocky."
 msgstr "Smelltu og hreyfðu músina til að gera myndina 'Kassa-lega'."
@@ -145,24 +194,22 @@ msgstr "Smelltu og hreyfðu músina til að gera myndina 'Kassa-lega'."
 msgid "Click and move the mouse around to draw a negative."
 msgstr "Smelltu og hreyfðu músina til að teikna andhverfu-liti."
 
-msgid "Click and move to fade the colors."
-msgstr "Smelltu og hreyfðu músina til að þynna út litina!"
-
-msgid ""
-"Click and move the mouse around to turn the picture into a chalk drawing."
-msgstr "Smelltu og hreyfðu músina til að búa til krítarmynd!"
+#, fuzzy
+msgid "Click and move the mouse around to change the picture's color."
+msgstr "Smelltu og hreyfðu músina til að gera myndina 'Kassa-lega'."
 
 msgid "Click and move the mouse around to make the picture drip."
 msgstr "Smelltu og hreyfðu músina til að láta myndina leka."
 
-msgid "Click and move the mouse to thicken the picture."
-msgstr "Smelltu og hreyfðu músina til að gera myndina þykkari."
+#, fuzzy
+msgid "Click and move the mouse around to turn the picture into a cartoon."
+msgstr "Smelltu og hreyfðu músina til að búa til krítarmynd!"
 
-msgid "Click and move the mouse to thin the picture."
-msgstr "Smelltu og hreyfðu músina til að gera myndina þynnri."
+msgid "Click to make a mirror image."
+msgstr "Smelltu til að gera spegilmynd."
 
-msgid "Click in the picture to fill that area with color."
-msgstr "Smelltu og hreyfðu músina til að fylla svæðið með lit."
+msgid "Click to flip the picture upside-down."
+msgstr "Smelltu til að setja myndina á hvolf."
 
 msgid "Square"
 msgstr "Ferningur"
@@ -212,6 +259,10 @@ msgstr "Litir"
 msgid "Brushes"
 msgstr "Penslar"
 
+#, fuzzy
+msgid "Erasers"
+msgstr "Strokleður"
+
 msgid "Stamps"
 msgstr "Stimplar"
 
@@ -248,7 +299,7 @@ msgstr "Strokleður"
 msgid "New"
 msgstr "Ný"
 
-#. 'Open' label:
+#. buttons for the file open dialog
 msgid "Open"
 msgstr "Opna"
 
@@ -375,13 +426,14 @@ msgstr "Þú getur ekki prentað strax!"
 msgid "Erase this picture?"
 msgstr "Eyða myndinni?"
 
-#. 'Erase' label:
 msgid "Erase"
 msgstr "Eyða"
 
-#. 'Back' label:
 msgid "Back"
 msgstr "Til baka"
+
+msgid "Aa"
+msgstr ""
 
 #. FIXME: Move elsewhere!!!
 msgid "Save over the older version of this picture?"
@@ -392,3 +444,21 @@ msgstr "Nei, geyma nýja mynd!"
 
 msgid "Choose the picture you want, then click “Open”."
 msgstr "Veldu teikningu, og smelltu svo á 'Opna'."
+
+#~ msgid "Lime!"
+#~ msgstr "Gulgrænt!"
+
+#~ msgid "Fuchsia!"
+#~ msgstr "Bleikt!"
+
+#~ msgid "Silver!"
+#~ msgstr "Silfur!"
+
+#~ msgid "Thick"
+#~ msgstr "Þykk"
+
+#~ msgid "Click and move the mouse to thicken the picture."
+#~ msgstr "Smelltu og hreyfðu músina til að gera myndina þykkari."
+
+#~ msgid "Click and move the mouse to thin the picture."
+#~ msgstr "Smelltu og hreyfðu músina til að gera myndina þynnri."

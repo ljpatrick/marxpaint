@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Tux Paint\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2004-08-18 19:42+0200\n"
+"POT-Creation-Date: 2005-01-06 12:31+0100\n"
 "PO-Revision-Date: 2004-08-16 23:14-0800\n"
 "Last-Translator: Bill Kendrick <bill@newbreedsoftware.com>\n"
 "Language-Team: Bill Kendrick <nbs@sonic.net>\n"
@@ -28,16 +28,21 @@ msgstr ""
 msgid "Black!"
 msgstr "qIj!"
 
+msgid "Dark Gray!"
+msgstr ""
+
+#. using both valid spellings
+msgid "Light Grey!"
+msgstr ""
+
 # white
+#. using both valid spellings
 msgid "White!"
 msgstr "chIS!"
 
 # red/orange
 msgid "Red!"
 msgstr "Doq!"
-
-msgid "Pink!"
-msgstr ""
 
 # red/orange
 msgid "Orange!"
@@ -47,14 +52,14 @@ msgstr "Doq!"
 msgid "Yellow!"
 msgstr "SuD!"
 
-msgid "Lime!"
+msgid "Neon green!"
 msgstr ""
 
 # Yellow, Green, Blue
 msgid "Green!"
 msgstr "SuD!"
 
-msgid "Cyan!"
+msgid "Sky blue!"
 msgstr ""
 
 # Yellow, Green, Blue
@@ -64,16 +69,19 @@ msgstr "SuD!"
 msgid "Purple!"
 msgstr ""
 
-msgid "Fuchsia!"
+msgid "Magenta!"
+msgstr ""
+
+msgid "Pink!"
 msgstr ""
 
 msgid "Brown!"
 msgstr ""
 
-msgid "Gray!"
+msgid "Tan!"
 msgstr ""
 
-msgid "Silver!"
+msgid "Beige!"
 msgstr ""
 
 msgid "Great!"
@@ -90,10 +98,57 @@ msgstr ""
 msgid "Good job!"
 msgstr "majQa'"
 
+# fill
+msgid "Fill"
+msgstr "teb"
+
+msgid "Grass"
+msgstr ""
+
+# back away from
+#, fuzzy
+msgid "Bricks"
+msgstr "DoH"
+
 msgid "Rainbow"
 msgstr ""
 
 msgid "Sparkles"
+msgstr ""
+
+msgid "Blur"
+msgstr ""
+
+msgid "Smudge"
+msgstr ""
+
+# brighten
+msgid "Fade"
+msgstr "wov"
+
+msgid "Darken"
+msgstr ""
+
+# scatter
+msgid "Chalk"
+msgstr "ghomHa'"
+
+msgid "Blocks"
+msgstr ""
+
+msgid "Negative"
+msgstr ""
+
+# thin
+#, fuzzy
+msgid "Tint"
+msgstr "lang"
+
+# melt
+msgid "Drip"
+msgstr "tet"
+
+msgid "Cartoon"
 msgstr ""
 
 msgid "Mirror"
@@ -102,37 +157,17 @@ msgstr ""
 msgid "Flip"
 msgstr ""
 
-msgid "Blur"
+msgid "Click in the picture to fill that area with color."
 msgstr ""
 
-msgid "Blocks"
+msgid "Click and move to draw grass. Don't forget the dirt!"
 msgstr ""
 
-msgid "Negative"
+msgid "Click and move to draw large bricks."
 msgstr ""
 
-# brighten
-msgid "Fade"
-msgstr "wov"
-
-# scatter
-msgid "Chalk"
-msgstr "ghomHa'"
-
-# melt
-msgid "Drip"
-msgstr "tet"
-
-msgid "Thick"
+msgid "Click and move to draw small bricks."
 msgstr ""
-
-# thin
-msgid "Thin"
-msgstr "lang"
-
-# fill
-msgid "Fill"
-msgstr "teb"
 
 msgid "You can draw in rainbow colors!"
 msgstr ""
@@ -140,13 +175,20 @@ msgstr ""
 msgid "Click and move to draw sparkles."
 msgstr ""
 
-msgid "Click to make a mirror image."
-msgstr ""
-
-msgid "Click to flip the picture upside-down."
-msgstr ""
-
 msgid "Click and move the mouse around to blur the picture."
+msgstr ""
+
+msgid "Click and move the mouse around to smudge the picture."
+msgstr ""
+
+msgid "Click and move to fade the colors."
+msgstr ""
+
+msgid "Click and move to darken the colors."
+msgstr ""
+
+msgid ""
+"Click and move the mouse around to turn the picture into a chalk drawing."
 msgstr ""
 
 msgid "Click and move the mouse around to make the picture blocky."
@@ -155,23 +197,19 @@ msgstr ""
 msgid "Click and move the mouse around to draw a negative."
 msgstr ""
 
-msgid "Click and move to fade the colors."
-msgstr ""
-
-msgid ""
-"Click and move the mouse around to turn the picture into a chalk drawing."
+msgid "Click and move the mouse around to change the picture's color."
 msgstr ""
 
 msgid "Click and move the mouse around to make the picture drip."
 msgstr ""
 
-msgid "Click and move the mouse to thicken the picture."
+msgid "Click and move the mouse around to turn the picture into a cartoon."
 msgstr ""
 
-msgid "Click and move the mouse to thin the picture."
+msgid "Click to make a mirror image."
 msgstr ""
 
-msgid "Click in the picture to fill that area with color."
+msgid "Click to flip the picture upside-down."
 msgstr ""
 
 msgid "Square"
@@ -224,6 +262,11 @@ msgstr ""
 msgid "Brushes"
 msgstr ""
 
+# remove
+#, fuzzy
+msgid "Erasers"
+msgstr "teq"
+
 msgid "Stamps"
 msgstr ""
 
@@ -268,7 +311,7 @@ msgid "New"
 msgstr "chu'"
 
 # open
-#. 'Open' label:
+#. buttons for the file open dialog
 msgid "Open"
 msgstr "poSmoH"
 
@@ -401,14 +444,15 @@ msgstr ""
 msgid "Erase this picture?"
 msgstr ""
 
-#. 'Erase' label:
 msgid "Erase"
 msgstr ""
 
 # back away from
-#. 'Back' label:
 msgid "Back"
 msgstr "DoH"
+
+msgid "Aa"
+msgstr ""
 
 #. FIXME: Move elsewhere!!!
 msgid "Save over the older version of this picture?"

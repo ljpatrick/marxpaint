@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint 0.9.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2004-07-16 21:12+0200\n"
+"POT-Creation-Date: 2005-01-06 12:31+0100\n"
 "PO-Revision-Date: 2004-05-26 08:44+0100\n"
 "Last-Translator: Ankit Malik <greatestankit@yahoo.co.in>\n"
 "Language-Team: Hindi\n"
@@ -27,14 +27,20 @@ msgstr ""
 msgid "Black!"
 msgstr "काला"
 
+#, fuzzy
+msgid "Dark Gray!"
+msgstr "ग्रे"
+
+#. using both valid spellings
+msgid "Light Grey!"
+msgstr ""
+
+#. using both valid spellings
 msgid "White!"
 msgstr "सफ्ेद"
 
 msgid "Red!"
 msgstr "लाल"
-
-msgid "Pink!"
-msgstr "गुलाबी"
 
 msgid "Orange!"
 msgstr "सन्तरा"
@@ -42,14 +48,14 @@ msgstr "सन्तरा"
 msgid "Yellow!"
 msgstr "पीला"
 
-msgid "Lime!"
-msgstr "नींबू"
+msgid "Neon green!"
+msgstr ""
 
 msgid "Green!"
 msgstr "हरा"
 
-msgid "Cyan!"
-msgstr "नीला १"
+msgid "Sky blue!"
+msgstr ""
 
 msgid "Blue!"
 msgstr "नीला २"
@@ -57,17 +63,21 @@ msgstr "नीला २"
 msgid "Purple!"
 msgstr "परपल"
 
-msgid "Fuchsia!"
-msgstr "फ्ुच्सीा"
+msgid "Magenta!"
+msgstr ""
+
+msgid "Pink!"
+msgstr "गुलाबी"
 
 msgid "Brown!"
 msgstr "भूरा"
 
-msgid "Gray!"
-msgstr "ग्रे"
+#, fuzzy
+msgid "Tan!"
+msgstr "नीला १"
 
-msgid "Silver!"
-msgstr "चांदी"
+msgid "Beige!"
+msgstr ""
 
 msgid "Great!"
 msgstr "शाबाश"
@@ -81,20 +91,37 @@ msgstr "वाह"
 msgid "Good job!"
 msgstr "स्वच्छ काम है"
 
+msgid "Fill"
+msgstr "भरो"
+
+#, fuzzy
+msgid "Grass"
+msgstr "नष्ट कर"
+
+#, fuzzy
+msgid "Bricks"
+msgstr "ब्लाक्स"
+
 msgid "Rainbow"
 msgstr "सतरंगी"
 
 msgid "Sparkles"
 msgstr "ग्लिटरस"
 
-msgid "Mirror"
-msgstr "शीशा"
-
-msgid "Flip"
-msgstr "ऊल्टा"
-
 msgid "Blur"
 msgstr "धुंध्ला"
+
+msgid "Smudge"
+msgstr ""
+
+msgid "Fade"
+msgstr "फ्ेड"
+
+msgid "Darken"
+msgstr ""
+
+msgid "Chalk"
+msgstr "चाक"
 
 msgid "Blocks"
 msgstr "ब्लाक्स"
@@ -102,23 +129,36 @@ msgstr "ब्लाक्स"
 msgid "Negative"
 msgstr "उल्टे रंग"
 
-msgid "Fade"
-msgstr "फ्ेड"
-
-msgid "Chalk"
-msgstr "चाक"
+#, fuzzy
+msgid "Tint"
+msgstr "दुबला"
 
 msgid "Drip"
 msgstr "गिरता हुआ"
 
-msgid "Thick"
-msgstr "मोटा"
+msgid "Cartoon"
+msgstr ""
 
-msgid "Thin"
-msgstr "दुबला"
+msgid "Mirror"
+msgstr "शीशा"
 
-msgid "Fill"
-msgstr "भरो"
+msgid "Flip"
+msgstr "ऊल्टा"
+
+msgid "Click in the picture to fill that area with color."
+msgstr "रंग भरो"
+
+#, fuzzy
+msgid "Click and move to draw grass. Don't forget the dirt!"
+msgstr "ग्लिटरस करो"
+
+#, fuzzy
+msgid "Click and move to draw large bricks."
+msgstr "ग्लिटरस करो"
+
+#, fuzzy
+msgid "Click and move to draw small bricks."
+msgstr "ग्लिटरस करो"
 
 msgid "You can draw in rainbow colors!"
 msgstr "सतरंगी काम करो"
@@ -126,14 +166,23 @@ msgstr "सतरंगी काम करो"
 msgid "Click and move to draw sparkles."
 msgstr "ग्लिटरस करो"
 
-msgid "Click to make a mirror image."
-msgstr "शीशे मे देखो"
-
-msgid "Click to flip the picture upside-down."
-msgstr "उल्टा करो"
-
 msgid "Click and move the mouse around to blur the picture."
 msgstr ""
+
+#, fuzzy
+msgid "Click and move the mouse around to smudge the picture."
+msgstr "ड्रिप करो"
+
+msgid "Click and move to fade the colors."
+msgstr "फेड करो"
+
+#, fuzzy
+msgid "Click and move to darken the colors."
+msgstr "फेड करो"
+
+msgid ""
+"Click and move the mouse around to turn the picture into a chalk drawing."
+msgstr "चाक करो।"
 
 msgid "Click and move the mouse around to make the picture blocky."
 msgstr "ब्लाकस करो।"
@@ -141,24 +190,22 @@ msgstr "ब्लाकस करो।"
 msgid "Click and move the mouse around to draw a negative."
 msgstr "रंग उल्टे करो"
 
-msgid "Click and move to fade the colors."
-msgstr "फेड करो"
-
-msgid ""
-"Click and move the mouse around to turn the picture into a chalk drawing."
-msgstr "चाक करो।"
+#, fuzzy
+msgid "Click and move the mouse around to change the picture's color."
+msgstr "ब्लाकस करो।"
 
 msgid "Click and move the mouse around to make the picture drip."
 msgstr "ड्रिप करो"
 
-msgid "Click and move the mouse to thicken the picture."
-msgstr "मोटा करो"
+#, fuzzy
+msgid "Click and move the mouse around to turn the picture into a cartoon."
+msgstr "चाक करो।"
 
-msgid "Click and move the mouse to thin the picture."
-msgstr "पतला करो"
+msgid "Click to make a mirror image."
+msgstr "शीशे मे देखो"
 
-msgid "Click in the picture to fill that area with color."
-msgstr "रंग भरो"
+msgid "Click to flip the picture upside-down."
+msgstr "उल्टा करो"
 
 msgid "Square"
 msgstr "चोकार १"
@@ -208,6 +255,10 @@ msgstr "रंग"
 msgid "Brushes"
 msgstr "बरश"
 
+#, fuzzy
+msgid "Erasers"
+msgstr "रबर"
+
 msgid "Stamps"
 msgstr "स्टॉम्प"
 
@@ -244,7 +295,7 @@ msgstr "रबर"
 msgid "New"
 msgstr "नया काम"
 
-#. 'Open' label:
+#. buttons for the file open dialog
 msgid "Open"
 msgstr "खोलो"
 
@@ -368,13 +419,14 @@ msgstr "अभी प्रिन्ट नहीं कर सकते"
 msgid "Erase this picture?"
 msgstr "नष्ट करू क्या ऋ"
 
-#. 'Erase' label:
 msgid "Erase"
 msgstr "नष्ट कर"
 
-#. 'Back' label:
 msgid "Back"
 msgstr "पीछे"
+
+msgid "Aa"
+msgstr ""
 
 #. FIXME: Move elsewhere!!!
 msgid "Save over the older version of this picture?"
@@ -385,3 +437,21 @@ msgstr "नया काम बनाओ"
 
 msgid "Choose the picture you want, then click “Open”."
 msgstr "काम को चुन कर ‘खोलो’।"
+
+#~ msgid "Lime!"
+#~ msgstr "नींबू"
+
+#~ msgid "Fuchsia!"
+#~ msgstr "फ्ुच्सीा"
+
+#~ msgid "Silver!"
+#~ msgstr "चांदी"
+
+#~ msgid "Thick"
+#~ msgstr "मोटा"
+
+#~ msgid "Click and move the mouse to thicken the picture."
+#~ msgstr "मोटा करो"
+
+#~ msgid "Click and move the mouse to thin the picture."
+#~ msgstr "पतला करो"

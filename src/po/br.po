@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TuxPaint 0.0.1pre\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2004-07-16 21:12+0200\n"
+"POT-Creation-Date: 2005-01-06 12:31+0100\n"
 "PO-Revision-Date: 2004-05-30 18:20+0100\n"
 "Last-Translator: KAD <drouizig@drouizig.org>\n"
 "Language-Team: Breton <drouizig@drouizig.org>\n"
@@ -26,14 +26,20 @@ msgstr "Livañ"
 msgid "Black!"
 msgstr "Du !"
 
+#, fuzzy
+msgid "Dark Gray!"
+msgstr "Gris !"
+
+#. using both valid spellings
+msgid "Light Grey!"
+msgstr ""
+
+#. using both valid spellings
 msgid "White!"
 msgstr "Gwenn !"
 
 msgid "Red!"
 msgstr "Ruz !"
-
-msgid "Pink!"
-msgstr "Roz !"
 
 msgid "Orange!"
 msgstr "Orañjez !"
@@ -41,14 +47,14 @@ msgstr "Orañjez !"
 msgid "Yellow!"
 msgstr "Melen !"
 
-msgid "Lime!"
-msgstr "Sitroñs glas !"
+msgid "Neon green!"
+msgstr ""
 
 msgid "Green!"
 msgstr "Gwer !"
 
-msgid "Cyan!"
-msgstr "Gwerc'hlas !"
+msgid "Sky blue!"
+msgstr ""
 
 msgid "Blue!"
 msgstr "Glas !"
@@ -56,17 +62,21 @@ msgstr "Glas !"
 msgid "Purple!"
 msgstr "Limestra !"
 
-msgid "Fuchsia!"
-msgstr "Fuchia !"
+msgid "Magenta!"
+msgstr ""
+
+msgid "Pink!"
+msgstr "Roz !"
 
 msgid "Brown!"
 msgstr "Kistin !"
 
-msgid "Gray!"
-msgstr "Gris !"
+#, fuzzy
+msgid "Tan!"
+msgstr "Gwerc'hlas !"
 
-msgid "Silver!"
-msgstr "Arc'hant !"
+msgid "Beige!"
+msgstr ""
 
 msgid "Great!"
 msgstr "Fiskal !"
@@ -80,20 +90,37 @@ msgstr "Kalon vat !"
 msgid "Good job!"
 msgstr "Labour mat !"
 
+msgid "Fill"
+msgstr "Leuniañ"
+
+#, fuzzy
+msgid "Grass"
+msgstr "Diverkañ"
+
+#, fuzzy
+msgid "Bricks"
+msgstr "Bloc'hadoù"
+
 msgid "Rainbow"
 msgstr "Gwareg ar Glav"
 
 msgid "Sparkles"
 msgstr "Fulennoù"
 
-msgid "Mirror"
-msgstr "Melezour"
-
-msgid "Flip"
-msgstr "Eilpennañ"
-
 msgid "Blur"
 msgstr "Luziañ"
+
+msgid "Smudge"
+msgstr ""
+
+msgid "Fade"
+msgstr "Goulariñ"
+
+msgid "Darken"
+msgstr ""
+
+msgid "Chalk"
+msgstr "Kleiz"
 
 msgid "Blocks"
 msgstr "Bloc'hadoù"
@@ -101,23 +128,36 @@ msgstr "Bloc'hadoù"
 msgid "Negative"
 msgstr "Rakluc'henn"
 
-msgid "Fade"
-msgstr "Goulariñ"
-
-msgid "Chalk"
-msgstr "Kleiz"
+#, fuzzy
+msgid "Tint"
+msgstr "Finoc'h"
 
 msgid "Drip"
 msgstr "Beradenn"
 
-msgid "Thick"
-msgstr "Tevoc'h"
+msgid "Cartoon"
+msgstr ""
 
-msgid "Thin"
-msgstr "Finoc'h"
+msgid "Mirror"
+msgstr "Melezour"
 
-msgid "Fill"
-msgstr "Leuniañ"
+msgid "Flip"
+msgstr "Eilpennañ"
+
+msgid "Click in the picture to fill that area with color."
+msgstr "Klik war ar skeudenn evit leuniañ al leur-se gant ul liv."
+
+#, fuzzy
+msgid "Click and move to draw grass. Don't forget the dirt!"
+msgstr "Klik ha fiñv al logodenn evit tresañ gant fulennoù."
+
+#, fuzzy
+msgid "Click and move to draw large bricks."
+msgstr "Klik ha fiñv al logodenn evit tresañ gant fulennoù."
+
+#, fuzzy
+msgid "Click and move to draw small bricks."
+msgstr "Klik ha fiñv al logodenn evit tresañ gant fulennoù."
 
 msgid "You can draw in rainbow colors!"
 msgstr "Gallout a rez tresañ gant livioù ar Garreg-ar-Glav !"
@@ -125,22 +165,18 @@ msgstr "Gallout a rez tresañ gant livioù ar Garreg-ar-Glav !"
 msgid "Click and move to draw sparkles."
 msgstr "Klik ha fiñv al logodenn evit tresañ gant fulennoù."
 
-msgid "Click to make a mirror image."
-msgstr "Klik evit kaout ar skeudenn en ur melezour."
-
-msgid "Click to flip the picture upside-down."
-msgstr "Klik evit lakaat ar skeudenn war an tu gin."
-
 msgid "Click and move the mouse around to blur the picture."
 msgstr "Klik ha fiñv al logodenn evit displanaat ar skeudenn."
 
-msgid "Click and move the mouse around to make the picture blocky."
-msgstr "Klik ha fiñv al logodenn evit kaout bloc'hadoù bihan."
-
-msgid "Click and move the mouse around to draw a negative."
-msgstr "Klik ha fiñv al logodenn evit kaout ar rakluc'henn."
+#, fuzzy
+msgid "Click and move the mouse around to smudge the picture."
+msgstr "Klik ha fiñv al logodenn evit displanaat ar skeudenn."
 
 msgid "Click and move to fade the colors."
+msgstr "Klik ha fiñv al logodenn evit lakaat al livioù da zislivañ."
+
+#, fuzzy
+msgid "Click and move to darken the colors."
 msgstr "Klik ha fiñv al logodenn evit lakaat al livioù da zislivañ."
 
 msgid ""
@@ -148,17 +184,29 @@ msgid ""
 msgstr ""
 "Klik ha fiñv al logodenn evit cheñch ar skeudenn en un dresadenn gleiz."
 
+msgid "Click and move the mouse around to make the picture blocky."
+msgstr "Klik ha fiñv al logodenn evit kaout bloc'hadoù bihan."
+
+msgid "Click and move the mouse around to draw a negative."
+msgstr "Klik ha fiñv al logodenn evit kaout ar rakluc'henn."
+
+#, fuzzy
+msgid "Click and move the mouse around to change the picture's color."
+msgstr "Klik ha fiñv al logodenn evit kaout bloc'hadoù bihan."
+
 msgid "Click and move the mouse around to make the picture drip."
 msgstr "Klik ha fiñv al logodenn evit lakaat ar skeudenn da c'hlebiañ."
 
-msgid "Click and move the mouse to thicken the picture."
-msgstr "Klik ha fiñv al logodenn evit lakaat an dresadenn tevoc'h."
+#, fuzzy
+msgid "Click and move the mouse around to turn the picture into a cartoon."
+msgstr ""
+"Klik ha fiñv al logodenn evit cheñch ar skeudenn en un dresadenn gleiz."
 
-msgid "Click and move the mouse to thin the picture."
-msgstr "Klik ha fiñv al logodenn evit lakaat an dresadenn finoc'h."
+msgid "Click to make a mirror image."
+msgstr "Klik evit kaout ar skeudenn en ur melezour."
 
-msgid "Click in the picture to fill that area with color."
-msgstr "Klik war ar skeudenn evit leuniañ al leur-se gant ul liv."
+msgid "Click to flip the picture upside-down."
+msgstr "Klik evit lakaat ar skeudenn war an tu gin."
 
 msgid "Square"
 msgstr "Karrezenn"
@@ -208,6 +256,10 @@ msgstr "Livioù"
 msgid "Brushes"
 msgstr "Barroù-livañ"
 
+#, fuzzy
+msgid "Erasers"
+msgstr "Gomenn"
+
 msgid "Stamps"
 msgstr "Dielloù"
 
@@ -244,7 +296,7 @@ msgstr "Gomenn"
 msgid "New"
 msgstr "Nevez"
 
-#. 'Open' label:
+#. buttons for the file open dialog
 msgid "Open"
 msgstr "Digeriñ"
 
@@ -372,13 +424,14 @@ msgstr "N'hallan ket moullañ atav !"
 msgid "Erase this picture?"
 msgstr "Diverkañ an dresadenn-se ?"
 
-#. 'Erase' label:
 msgid "Erase"
 msgstr "Diverkañ"
 
-#. 'Back' label:
 msgid "Back"
 msgstr "Distro"
+
+msgid "Aa"
+msgstr ""
 
 #. FIXME: Move elsewhere!!!
 msgid "Save over the older version of this picture?"
@@ -389,3 +442,21 @@ msgstr "Ket, gwarediñ dindan un anv nevez"
 
 msgid "Choose the picture you want, then click “Open”."
 msgstr "Diuz ur skeudenn ha klik war 'digeriñ' neuze."
+
+#~ msgid "Lime!"
+#~ msgstr "Sitroñs glas !"
+
+#~ msgid "Fuchsia!"
+#~ msgstr "Fuchia !"
+
+#~ msgid "Silver!"
+#~ msgstr "Arc'hant !"
+
+#~ msgid "Thick"
+#~ msgstr "Tevoc'h"
+
+#~ msgid "Click and move the mouse to thicken the picture."
+#~ msgstr "Klik ha fiñv al logodenn evit lakaat an dresadenn tevoc'h."
+
+#~ msgid "Click and move the mouse to thin the picture."
+#~ msgstr "Klik ha fiñv al logodenn evit lakaat an dresadenn finoc'h."

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint 0.9.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2004-09-14 22:06+0200\n"
+"POT-Creation-Date: 2005-01-06 12:31+0100\n"
 "PO-Revision-Date: 2004-08-19 20:32-0800\n"
 "Last-Translator: kill_u <mjekov@bginfo.net>\n"
 "Language-Team: Martin Zhekov <mjekov@bginfo.net>\n"
@@ -28,14 +28,20 @@ msgstr "Оцвети"
 msgid "Black!"
 msgstr "Черно!"
 
+#, fuzzy
+msgid "Dark Gray!"
+msgstr "Сиво!"
+
+#. using both valid spellings
+msgid "Light Grey!"
+msgstr ""
+
+#. using both valid spellings
 msgid "White!"
 msgstr "Бяло!"
 
 msgid "Red!"
 msgstr ")ервено!"
-
-msgid "Pink!"
-msgstr "Розово!"
 
 msgid "Orange!"
 msgstr "Оранжево!"
@@ -43,14 +49,14 @@ msgstr "Оранжево!"
 msgid "Yellow!"
 msgstr "Жълто!"
 
-msgid "Lime!"
-msgstr "Лимон!"
+msgid "Neon green!"
+msgstr ""
 
 msgid "Green!"
 msgstr "Зелено!"
 
-msgid "Cyan!"
-msgstr "Синьо-зелено!"
+msgid "Sky blue!"
+msgstr ""
 
 msgid "Blue!"
 msgstr "Синьо!"
@@ -58,17 +64,21 @@ msgstr "Синьо!"
 msgid "Purple!"
 msgstr "Лилаво!"
 
-msgid "Fuchsia!"
-msgstr "Обици!"
+msgid "Magenta!"
+msgstr ""
+
+msgid "Pink!"
+msgstr "Розово!"
 
 msgid "Brown!"
 msgstr "Кафяво!"
 
-msgid "Gray!"
-msgstr "Сиво!"
+#, fuzzy
+msgid "Tan!"
+msgstr "Синьо-зелено!"
 
-msgid "Silver!"
-msgstr "Сребро!"
+msgid "Beige!"
+msgstr ""
 
 msgid "Great!"
 msgstr "Страхотно!"
@@ -82,20 +92,37 @@ msgstr "Запази го!"
 msgid "Good job!"
 msgstr "Добра работа!"
 
+msgid "Fill"
+msgstr "Запълни"
+
+#, fuzzy
+msgid "Grass"
+msgstr "Изтрий"
+
+#, fuzzy
+msgid "Bricks"
+msgstr "Парчета"
+
 msgid "Rainbow"
 msgstr "Дъга!"
 
 msgid "Sparkles"
 msgstr "Искри"
 
-msgid "Mirror"
-msgstr "Огледало"
-
-msgid "Flip"
-msgstr "Преобърни"
-
 msgid "Blur"
 msgstr "Замъглявам"
+
+msgid "Smudge"
+msgstr ""
+
+msgid "Fade"
+msgstr "Избелване"
+
+msgid "Darken"
+msgstr ""
+
+msgid "Chalk"
+msgstr "Размазвам"
 
 msgid "Blocks"
 msgstr "Парчета"
@@ -103,23 +130,36 @@ msgstr "Парчета"
 msgid "Negative"
 msgstr "Негатив"
 
-msgid "Fade"
-msgstr "Избелване"
-
-msgid "Chalk"
-msgstr "Размазвам"
+#, fuzzy
+msgid "Tint"
+msgstr "Тънък"
 
 msgid "Drip"
 msgstr "Разкапвам"
 
-msgid "Thick"
-msgstr "Удебелявам"
+msgid "Cartoon"
+msgstr ""
 
-msgid "Thin"
-msgstr "Тънък"
+msgid "Mirror"
+msgstr "Огледало"
 
-msgid "Fill"
-msgstr "Запълни"
+msgid "Flip"
+msgstr "Преобърни"
+
+msgid "Click in the picture to fill that area with color."
+msgstr "Щтракни за да оцветиш в цвят."
+
+#, fuzzy
+msgid "Click and move to draw grass. Don't forget the dirt!"
+msgstr "Щтракни и движи за да начертаеш искри."
+
+#, fuzzy
+msgid "Click and move to draw large bricks."
+msgstr "Щтракни и движи за да начертаеш искри."
+
+#, fuzzy
+msgid "Click and move to draw small bricks."
+msgstr "Щтракни и движи за да начертаеш искри."
 
 msgid "You can draw in rainbow colors!"
 msgstr "Можеш да чертаеш дъга!"
@@ -127,14 +167,23 @@ msgstr "Можеш да чертаеш дъга!"
 msgid "Click and move to draw sparkles."
 msgstr "Щтракни и движи за да начертаеш искри."
 
-msgid "Click to make a mirror image."
-msgstr "Щтракни за д направиш огледално изображение."
-
-msgid "Click to flip the picture upside-down."
-msgstr "Щтракни да обърнеш картинката."
-
 msgid "Click and move the mouse around to blur the picture."
 msgstr "Щтракни и движи мишката за да замъглиш картинката."
+
+#, fuzzy
+msgid "Click and move the mouse around to smudge the picture."
+msgstr "Щтракни и движи мишката за да замъглиш картинката."
+
+msgid "Click and move to fade the colors."
+msgstr "Щтракни и движи за да избелиш картинката."
+
+#, fuzzy
+msgid "Click and move to darken the colors."
+msgstr "Щтракни и движи за да избелиш картинката."
+
+msgid ""
+"Click and move the mouse around to turn the picture into a chalk drawing."
+msgstr "Щтракни и движи мишката за размажеш."
 
 msgid "Click and move the mouse around to make the picture blocky."
 msgstr "Щтракни и движи мишката за да направиш картинката на парчета."
@@ -142,24 +191,22 @@ msgstr "Щтракни и движи мишката за да направиш �
 msgid "Click and move the mouse around to draw a negative."
 msgstr "Щтракни и движи мишката за да направиш негатив."
 
-msgid "Click and move to fade the colors."
-msgstr "Щтракни и движи за да избелиш картинката."
-
-msgid ""
-"Click and move the mouse around to turn the picture into a chalk drawing."
-msgstr "Щтракни и движи мишката за размажеш."
+#, fuzzy
+msgid "Click and move the mouse around to change the picture's color."
+msgstr "Щтракни и движи мишката за да направиш картинката на парчета."
 
 msgid "Click and move the mouse around to make the picture drip."
 msgstr "Щтракни и движи за да разкапеш картинката."
 
-msgid "Click and move the mouse to thicken the picture."
-msgstr "Щтракни и движи за да удебелиш линиите."
+#, fuzzy
+msgid "Click and move the mouse around to turn the picture into a cartoon."
+msgstr "Щтракни и движи мишката за размажеш."
 
-msgid "Click and move the mouse to thin the picture."
-msgstr "Щтракни и движи за да уплътниш линиите."
+msgid "Click to make a mirror image."
+msgstr "Щтракни за д направиш огледално изображение."
 
-msgid "Click in the picture to fill that area with color."
-msgstr "Щтракни за да оцветиш в цвят."
+msgid "Click to flip the picture upside-down."
+msgstr "Щтракни да обърнеш картинката."
 
 msgid "Square"
 msgstr "Квадратче"
@@ -209,6 +256,10 @@ msgstr "Цветове"
 msgid "Brushes"
 msgstr "Четчици"
 
+#, fuzzy
+msgid "Erasers"
+msgstr "Итривач"
+
 msgid "Stamps"
 msgstr "Печати"
 
@@ -245,7 +296,7 @@ msgstr "Итривач"
 msgid "New"
 msgstr "Ново"
 
-#. 'Open' label:
+#. buttons for the file open dialog
 msgid "Open"
 msgstr "Отвори"
 
@@ -371,13 +422,14 @@ msgstr "Не мога да принтирам!"
 msgid "Erase this picture?"
 msgstr "Да изтрия картинката?"
 
-#. 'Erase' label:
 msgid "Erase"
 msgstr "Изтрий"
 
-#. 'Back' label:
 msgid "Back"
 msgstr "Назад"
+
+msgid "Aa"
+msgstr ""
 
 #. FIXME: Move elsewhere!!!
 msgid "Save over the older version of this picture?"
@@ -388,3 +440,21 @@ msgstr "Не, запиши нов файл"
 
 msgid "Choose the picture you want, then click “Open”."
 msgstr "Избери картинката, която искаш и тогава натиснии  “Отвори”."
+
+#~ msgid "Lime!"
+#~ msgstr "Лимон!"
+
+#~ msgid "Fuchsia!"
+#~ msgstr "Обици!"
+
+#~ msgid "Silver!"
+#~ msgstr "Сребро!"
+
+#~ msgid "Thick"
+#~ msgstr "Удебелявам"
+
+#~ msgid "Click and move the mouse to thicken the picture."
+#~ msgstr "Щтракни и движи за да удебелиш линиите."
+
+#~ msgid "Click and move the mouse to thin the picture."
+#~ msgstr "Щтракни и движи за да уплътниш линиите."

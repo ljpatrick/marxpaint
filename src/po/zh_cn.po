@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint 0.9.11\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2004-07-18 19:29+0200\n"
+"POT-Creation-Date: 2005-01-06 12:31+0100\n"
 "PO-Revision-Date: 2004-07-18 13:50+0800\n"
 "Last-Translator: Wang Jian <lark@linux.net.cn>\n"
 "Language-Team: zh_CN <i18n-translation@lists.linux.net.cn>\n"
@@ -33,14 +33,20 @@ msgstr "Tux Paint"
 msgid "Black!"
 msgstr "黑色！"
 
+#, fuzzy
+msgid "Dark Gray!"
+msgstr "灰色！"
+
+#. using both valid spellings
+msgid "Light Grey!"
+msgstr ""
+
+#. using both valid spellings
 msgid "White!"
 msgstr "白色！"
 
 msgid "Red!"
 msgstr "红色！"
-
-msgid "Pink!"
-msgstr "粉红色！"
 
 msgid "Orange!"
 msgstr "橙色！"
@@ -48,14 +54,14 @@ msgstr "橙色！"
 msgid "Yellow!"
 msgstr "黄色！"
 
-msgid "Lime!"
-msgstr "浅绿！"
+msgid "Neon green!"
+msgstr ""
 
 msgid "Green!"
 msgstr "绿色！"
 
-msgid "Cyan!"
-msgstr "青色！"
+msgid "Sky blue!"
+msgstr ""
 
 msgid "Blue!"
 msgstr "蓝色"
@@ -63,17 +69,21 @@ msgstr "蓝色"
 msgid "Purple!"
 msgstr "紫色！"
 
-msgid "Fuchsia!"
-msgstr "紫红色！"
+msgid "Magenta!"
+msgstr ""
+
+msgid "Pink!"
+msgstr "粉红色！"
 
 msgid "Brown!"
 msgstr "棕色！"
 
-msgid "Gray!"
-msgstr "灰色！"
+#, fuzzy
+msgid "Tan!"
+msgstr "青色！"
 
-msgid "Silver!"
-msgstr "银色！"
+msgid "Beige!"
+msgstr ""
 
 msgid "Great!"
 msgstr "真不错！"
@@ -87,20 +97,37 @@ msgstr "继续呀！"
 msgid "Good job!"
 msgstr "干得好呀！"
 
+msgid "Fill"
+msgstr "填充"
+
+#, fuzzy
+msgid "Grass"
+msgstr "删除"
+
+#, fuzzy
+msgid "Bricks"
+msgstr "拼块"
+
 msgid "Rainbow"
 msgstr "彩虹"
 
 msgid "Sparkles"
 msgstr "火花"
 
-msgid "Mirror"
-msgstr "镜子"
-
-msgid "Flip"
-msgstr "翻转"
-
 msgid "Blur"
 msgstr "模糊"
+
+msgid "Smudge"
+msgstr ""
+
+msgid "Fade"
+msgstr "退色"
+
+msgid "Darken"
+msgstr ""
+
+msgid "Chalk"
+msgstr "粉笔"
 
 msgid "Blocks"
 msgstr "拼块"
@@ -108,23 +135,36 @@ msgstr "拼块"
 msgid "Negative"
 msgstr "底片"
 
-msgid "Fade"
-msgstr "退色"
-
-msgid "Chalk"
-msgstr "粉笔"
+#, fuzzy
+msgid "Tint"
+msgstr "变淡"
 
 msgid "Drip"
 msgstr "水滴"
 
-msgid "Thick"
-msgstr "变浓"
+msgid "Cartoon"
+msgstr ""
 
-msgid "Thin"
-msgstr "变淡"
+msgid "Mirror"
+msgstr "镜子"
 
-msgid "Fill"
-msgstr "填充"
+msgid "Flip"
+msgstr "翻转"
+
+msgid "Click in the picture to fill that area with color."
+msgstr "单击图片用颜色填充区域。"
+
+#, fuzzy
+msgid "Click and move to draw grass. Don't forget the dirt!"
+msgstr "单击然后移动来画火花。"
+
+#, fuzzy
+msgid "Click and move to draw large bricks."
+msgstr "单击然后移动来画火花。"
+
+#, fuzzy
+msgid "Click and move to draw small bricks."
+msgstr "单击然后移动来画火花。"
 
 msgid "You can draw in rainbow colors!"
 msgstr "你可以用彩虹的颜色画图耶！"
@@ -132,14 +172,23 @@ msgstr "你可以用彩虹的颜色画图耶！"
 msgid "Click and move to draw sparkles."
 msgstr "单击然后移动来画火花。"
 
-msgid "Click to make a mirror image."
-msgstr "单击做出镜子中的效果。"
-
-msgid "Click to flip the picture upside-down."
-msgstr "单击将图片上下翻转。"
-
 msgid "Click and move the mouse around to blur the picture."
 msgstr "单击然后移动鼠标，将图片变模糊。"
+
+#, fuzzy
+msgid "Click and move the mouse around to smudge the picture."
+msgstr "单击然后移动鼠标，将图片变模糊。"
+
+msgid "Click and move to fade the colors."
+msgstr "单击然后移动来将使颜色退色。"
+
+#, fuzzy
+msgid "Click and move to darken the colors."
+msgstr "单击然后移动来将使颜色退色。"
+
+msgid ""
+"Click and move the mouse around to turn the picture into a chalk drawing."
+msgstr "单击然后移动鼠标将图片变成粉笔画。"
 
 msgid "Click and move the mouse around to make the picture blocky."
 msgstr "单击然后移动鼠标将图片变成驳裂的效果。"
@@ -147,24 +196,22 @@ msgstr "单击然后移动鼠标将图片变成驳裂的效果。"
 msgid "Click and move the mouse around to draw a negative."
 msgstr "单击然后移动鼠标来绘制相片底片。"
 
-msgid "Click and move to fade the colors."
-msgstr "单击然后移动来将使颜色退色。"
-
-msgid ""
-"Click and move the mouse around to turn the picture into a chalk drawing."
-msgstr "单击然后移动鼠标将图片变成粉笔画。"
+#, fuzzy
+msgid "Click and move the mouse around to change the picture's color."
+msgstr "单击然后移动鼠标将图片变成驳裂的效果。"
 
 msgid "Click and move the mouse around to make the picture drip."
 msgstr "单击然后移动鼠标将图片变成水滴图。"
 
-msgid "Click and move the mouse to thicken the picture."
-msgstr "单击然后移动鼠标将图片变浓。"
+#, fuzzy
+msgid "Click and move the mouse around to turn the picture into a cartoon."
+msgstr "单击然后移动鼠标将图片变成粉笔画。"
 
-msgid "Click and move the mouse to thin the picture."
-msgstr "单击然后移动鼠标将图片变淡。"
+msgid "Click to make a mirror image."
+msgstr "单击做出镜子中的效果。"
 
-msgid "Click in the picture to fill that area with color."
-msgstr "单击图片用颜色填充区域。"
+msgid "Click to flip the picture upside-down."
+msgstr "单击将图片上下翻转。"
 
 msgid "Square"
 msgstr "正方形"
@@ -214,6 +261,10 @@ msgstr "颜色"
 msgid "Brushes"
 msgstr "画笔"
 
+#, fuzzy
+msgid "Erasers"
+msgstr "橡皮擦"
+
 msgid "Stamps"
 msgstr "印记"
 
@@ -250,7 +301,7 @@ msgstr "橡皮擦"
 msgid "New"
 msgstr "新建"
 
-#. 'Open' label:
+#. buttons for the file open dialog
 msgid "Open"
 msgstr "打开"
 
@@ -376,13 +427,14 @@ msgstr "你还不能打印耶！"
 msgid "Erase this picture?"
 msgstr "删除这个图片吗？"
 
-#. 'Erase' label:
 msgid "Erase"
 msgstr "删除"
 
-#. 'Back' label:
 msgid "Back"
 msgstr "退回"
+
+msgid "Aa"
+msgstr ""
 
 #. FIXME: Move elsewhere!!!
 msgid "Save over the older version of this picture?"
@@ -393,3 +445,21 @@ msgstr "不，保存到新文件"
 
 msgid "Choose the picture you want, then click “Open”."
 msgstr "选择你要打开的图片，然后点击“打开”。"
+
+#~ msgid "Lime!"
+#~ msgstr "浅绿！"
+
+#~ msgid "Fuchsia!"
+#~ msgstr "紫红色！"
+
+#~ msgid "Silver!"
+#~ msgstr "银色！"
+
+#~ msgid "Thick"
+#~ msgstr "变浓"
+
+#~ msgid "Click and move the mouse to thicken the picture."
+#~ msgstr "单击然后移动鼠标将图片变浓。"
+
+#~ msgid "Click and move the mouse to thin the picture."
+#~ msgstr "单击然后移动鼠标将图片变淡。"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint 0.9.14.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2004-07-16 21:12+0200\n"
+"POT-Creation-Date: 2005-01-06 12:31+0100\n"
 "PO-Revision-Date: 2004-05-27 22:17+0100\n"
 "Last-Translator: Roland Illig <roland.illig@gmx.de>\n"
 "Language-Team: German <de@li.org>\n"
@@ -28,14 +28,20 @@ msgstr "Malen"
 msgid "Black!"
 msgstr "Schwarz!"
 
+#, fuzzy
+msgid "Dark Gray!"
+msgstr "Grau!"
+
+#. using both valid spellings
+msgid "Light Grey!"
+msgstr ""
+
+#. using both valid spellings
 msgid "White!"
 msgstr "Weiß!"
 
 msgid "Red!"
 msgstr "Rot!"
-
-msgid "Pink!"
-msgstr "Rosa/Hautfarben!"
 
 msgid "Orange!"
 msgstr "Orange!"
@@ -43,14 +49,14 @@ msgstr "Orange!"
 msgid "Yellow!"
 msgstr "Gelb!"
 
-msgid "Lime!"
-msgstr "Hellgrün!"
+msgid "Neon green!"
+msgstr ""
 
 msgid "Green!"
 msgstr "Grün!"
 
-msgid "Cyan!"
-msgstr "Türkis!"
+msgid "Sky blue!"
+msgstr ""
 
 msgid "Blue!"
 msgstr "Blau!"
@@ -58,17 +64,21 @@ msgstr "Blau!"
 msgid "Purple!"
 msgstr "Lila!"
 
-msgid "Fuchsia!"
-msgstr "Flieder!"
+msgid "Magenta!"
+msgstr ""
+
+msgid "Pink!"
+msgstr "Rosa/Hautfarben!"
 
 msgid "Brown!"
 msgstr "Braun!"
 
-msgid "Gray!"
-msgstr "Grau!"
+#, fuzzy
+msgid "Tan!"
+msgstr "Türkis!"
 
-msgid "Silver!"
-msgstr "Silber!"
+msgid "Beige!"
+msgstr ""
 
 msgid "Great!"
 msgstr "Super! Cool ;-)"
@@ -82,20 +92,37 @@ msgstr "Mach weiter so!"
 msgid "Good job!"
 msgstr "Gute Arbeit!"
 
+msgid "Fill"
+msgstr "Füllen"
+
+#, fuzzy
+msgid "Grass"
+msgstr "Löschen"
+
+#, fuzzy
+msgid "Bricks"
+msgstr "Blöcke"
+
 msgid "Rainbow"
 msgstr "Bunt"
 
 msgid "Sparkles"
 msgstr "Sterne"
 
-msgid "Mirror"
-msgstr "Spiegel"
-
-msgid "Flip"
-msgstr "Flip"
-
 msgid "Blur"
 msgstr "Unscharf"
+
+msgid "Smudge"
+msgstr ""
+
+msgid "Fade"
+msgstr "Heller"
+
+msgid "Darken"
+msgstr ""
+
+msgid "Chalk"
+msgstr "Kreide"
 
 msgid "Blocks"
 msgstr "Blöcke"
@@ -103,23 +130,36 @@ msgstr "Blöcke"
 msgid "Negative"
 msgstr "Negativ"
 
-msgid "Fade"
-msgstr "Heller"
-
-msgid "Chalk"
-msgstr "Kreide"
+#, fuzzy
+msgid "Tint"
+msgstr "Dünn"
 
 msgid "Drip"
 msgstr "Schwamm"
 
-msgid "Thick"
-msgstr "Dick"
+msgid "Cartoon"
+msgstr ""
 
-msgid "Thin"
-msgstr "Dünn"
+msgid "Mirror"
+msgstr "Spiegel"
 
-msgid "Fill"
-msgstr "Füllen"
+msgid "Flip"
+msgstr "Flip"
+
+msgid "Click in the picture to fill that area with color."
+msgstr "Klicke in das Bild, um einen Bereich mit Farbe auszufüllen."
+
+#, fuzzy
+msgid "Click and move to draw grass. Don't forget the dirt!"
+msgstr "Klicke und bewege die Maus, um es funkeln zu lassen."
+
+#, fuzzy
+msgid "Click and move to draw large bricks."
+msgstr "Klicke und bewege die Maus, um es funkeln zu lassen."
+
+#, fuzzy
+msgid "Click and move to draw small bricks."
+msgstr "Klicke und bewege die Maus, um es funkeln zu lassen."
 
 msgid "You can draw in rainbow colors!"
 msgstr "Du kannst in Regenbogenfarben malen!"
@@ -127,14 +167,23 @@ msgstr "Du kannst in Regenbogenfarben malen!"
 msgid "Click and move to draw sparkles."
 msgstr "Klicke und bewege die Maus, um es funkeln zu lassen."
 
-msgid "Click to make a mirror image."
-msgstr "Klicke, um das Bild zu spiegeln."
-
-msgid "Click to flip the picture upside-down."
-msgstr "Klicke, um das Bild auf den Kopf zu stellen."
-
 msgid "Click and move the mouse around to blur the picture."
 msgstr "Klicke und bewege die Maus, um das Bild unscharf zu machen."
+
+#, fuzzy
+msgid "Click and move the mouse around to smudge the picture."
+msgstr "Klicke und bewege die Maus, um das Bild unscharf zu machen."
+
+msgid "Click and move to fade the colors."
+msgstr "Klick und beweg die Maus um die Farben auszublenden!"
+
+#, fuzzy
+msgid "Click and move to darken the colors."
+msgstr "Klick und beweg die Maus um die Farben auszublenden!"
+
+msgid ""
+"Click and move the mouse around to turn the picture into a chalk drawing."
+msgstr "Klick und beweg die Maus um dein Bild in ein Kreidebild zu verwandeln!"
 
 msgid "Click and move the mouse around to make the picture blocky."
 msgstr "Klicke und bewege die Maus, um das Bild pixelig zu machen."
@@ -142,24 +191,22 @@ msgstr "Klicke und bewege die Maus, um das Bild pixelig zu machen."
 msgid "Click and move the mouse around to draw a negative."
 msgstr "Klicke und bewege die Maus, um ein Negativ zu machen."
 
-msgid "Click and move to fade the colors."
-msgstr "Klick und beweg die Maus um die Farben auszublenden!"
-
-msgid ""
-"Click and move the mouse around to turn the picture into a chalk drawing."
-msgstr "Klick und beweg die Maus um dein Bild in ein Kreidebild zu verwandeln!"
+#, fuzzy
+msgid "Click and move the mouse around to change the picture's color."
+msgstr "Klicke und bewege die Maus, um das Bild pixelig zu machen."
 
 msgid "Click and move the mouse around to make the picture drip."
 msgstr "Klicke und bewege die Maus, um das Bild verlaufen zu lassen."
 
-msgid "Click and move the mouse to thicken the picture."
-msgstr "Klicke und bewege die Maus, um das Bild dicker zu machen."
+#, fuzzy
+msgid "Click and move the mouse around to turn the picture into a cartoon."
+msgstr "Klick und beweg die Maus um dein Bild in ein Kreidebild zu verwandeln!"
 
-msgid "Click and move the mouse to thin the picture."
-msgstr "Klicke und bewege die Maus, um das Bild dünner zu machen."
+msgid "Click to make a mirror image."
+msgstr "Klicke, um das Bild zu spiegeln."
 
-msgid "Click in the picture to fill that area with color."
-msgstr "Klicke in das Bild, um einen Bereich mit Farbe auszufüllen."
+msgid "Click to flip the picture upside-down."
+msgstr "Klicke, um das Bild auf den Kopf zu stellen."
 
 msgid "Square"
 msgstr "Quadrat"
@@ -209,6 +256,10 @@ msgstr "Farben"
 msgid "Brushes"
 msgstr "Pinsel"
 
+#, fuzzy
+msgid "Erasers"
+msgstr "Radierer"
+
 msgid "Stamps"
 msgstr "Stempel"
 
@@ -245,7 +296,7 @@ msgstr "Radierer"
 msgid "New"
 msgstr "Neu"
 
-#. 'Open' label:
+#. buttons for the file open dialog
 msgid "Open"
 msgstr "Öffnen"
 
@@ -376,13 +427,14 @@ msgstr "Du kannst noch nicht drucken!"
 msgid "Erase this picture?"
 msgstr "Möchtest du dieses Bild löschen?"
 
-#. 'Erase' label:
 msgid "Erase"
 msgstr "Löschen"
 
-#. 'Back' label:
 msgid "Back"
 msgstr "Zurück"
+
+msgid "Aa"
+msgstr ""
 
 #. FIXME: Move elsewhere!!!
 msgid "Save over the older version of this picture?"
@@ -393,3 +445,21 @@ msgstr "Nein, in eine neue Datei!"
 
 msgid "Choose the picture you want, then click “Open”."
 msgstr "Wähle ein Bild, dass du öffnen willst und klick auf 'Öffnen'"
+
+#~ msgid "Lime!"
+#~ msgstr "Hellgrün!"
+
+#~ msgid "Fuchsia!"
+#~ msgstr "Flieder!"
+
+#~ msgid "Silver!"
+#~ msgstr "Silber!"
+
+#~ msgid "Thick"
+#~ msgstr "Dick"
+
+#~ msgid "Click and move the mouse to thicken the picture."
+#~ msgstr "Klicke und bewege die Maus, um das Bild dicker zu machen."
+
+#~ msgid "Click and move the mouse to thin the picture."
+#~ msgstr "Klicke und bewege die Maus, um das Bild dünner zu machen."

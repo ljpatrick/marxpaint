@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint 0.9.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2004-07-30 15:11+0200\n"
+"POT-Creation-Date: 2005-01-06 12:31+0100\n"
 "PO-Revision-Date: 2004-07-26 02:40+0200\n"
 "Last-Translator: Andrej Kacian <andrej@kacian.sk>\n"
 "Language-Team: Slovak <sk-i18n@lists.linux.sk>\n"
@@ -26,14 +26,20 @@ msgstr "Kresliť"
 msgid "Black!"
 msgstr "Čierna!"
 
+#, fuzzy
+msgid "Dark Gray!"
+msgstr "Sivá!"
+
+#. using both valid spellings
+msgid "Light Grey!"
+msgstr ""
+
+#. using both valid spellings
 msgid "White!"
 msgstr "Biela!"
 
 msgid "Red!"
 msgstr "Červená!"
-
-msgid "Pink!"
-msgstr "Ružová!"
 
 msgid "Orange!"
 msgstr "Oranžová!"
@@ -41,14 +47,14 @@ msgstr "Oranžová!"
 msgid "Yellow!"
 msgstr "Žltá!"
 
-msgid "Lime!"
-msgstr "Žltozelená!"
+msgid "Neon green!"
+msgstr ""
 
 msgid "Green!"
 msgstr "Zelená!"
 
-msgid "Cyan!"
-msgstr "Svetlomodra!"
+msgid "Sky blue!"
+msgstr ""
 
 msgid "Blue!"
 msgstr "Modrá!"
@@ -56,17 +62,21 @@ msgstr "Modrá!"
 msgid "Purple!"
 msgstr "Fialová!"
 
-msgid "Fuchsia!"
-msgstr "Svetlofialová!"
+msgid "Magenta!"
+msgstr ""
+
+msgid "Pink!"
+msgstr "Ružová!"
 
 msgid "Brown!"
 msgstr "Hnedá!"
 
-msgid "Gray!"
-msgstr "Sivá!"
+#, fuzzy
+msgid "Tan!"
+msgstr "Svetlomodra!"
 
-msgid "Silver!"
-msgstr "Strieborná!"
+msgid "Beige!"
+msgstr ""
 
 msgid "Great!"
 msgstr "Vyborne!"
@@ -80,20 +90,37 @@ msgstr "Len tak ďalej!"
 msgid "Good job!"
 msgstr "Dobrá práca!"
 
+msgid "Fill"
+msgstr "Vyplniť"
+
+#, fuzzy
+msgid "Grass"
+msgstr "Guma"
+
+#, fuzzy
+msgid "Bricks"
+msgstr "Kocky"
+
 msgid "Rainbow"
 msgstr "Dúha"
 
 msgid "Sparkles"
 msgstr "Iskry"
 
-msgid "Mirror"
-msgstr "Zrkadlo"
-
-msgid "Flip"
-msgstr "Otočiť hore hlavou"
-
 msgid "Blur"
 msgstr "Rozmazať"
+
+msgid "Smudge"
+msgstr ""
+
+msgid "Fade"
+msgstr "Vyblednúť"
+
+msgid "Darken"
+msgstr ""
+
+msgid "Chalk"
+msgstr "Krieda"
 
 msgid "Blocks"
 msgstr "Kocky"
@@ -101,23 +128,36 @@ msgstr "Kocky"
 msgid "Negative"
 msgstr "Negatív"
 
-msgid "Fade"
-msgstr "Vyblednúť"
-
-msgid "Chalk"
-msgstr "Krieda"
+#, fuzzy
+msgid "Tint"
+msgstr "Úzke"
 
 msgid "Drip"
 msgstr "Roztiecť"
 
-msgid "Thick"
-msgstr "Hrubé"
+msgid "Cartoon"
+msgstr ""
 
-msgid "Thin"
-msgstr "Úzke"
+msgid "Mirror"
+msgstr "Zrkadlo"
 
-msgid "Fill"
-msgstr "Vyplniť"
+msgid "Flip"
+msgstr "Otočiť hore hlavou"
+
+msgid "Click in the picture to fill that area with color."
+msgstr "Klikni do obrázku pre vyplnenie oblasti farbou."
+
+#, fuzzy
+msgid "Click and move to draw grass. Don't forget the dirt!"
+msgstr "Klikni a pohybuj myšou a budeš kresliť iskry."
+
+#, fuzzy
+msgid "Click and move to draw large bricks."
+msgstr "Klikni a pohybuj myšou a budeš kresliť iskry."
+
+#, fuzzy
+msgid "Click and move to draw small bricks."
+msgstr "Klikni a pohybuj myšou a budeš kresliť iskry."
 
 msgid "You can draw in rainbow colors!"
 msgstr "Môžeš kresliť v dúhových farbách!"
@@ -125,14 +165,23 @@ msgstr "Môžeš kresliť v dúhových farbách!"
 msgid "Click and move to draw sparkles."
 msgstr "Klikni a pohybuj myšou a budeš kresliť iskry."
 
-msgid "Click to make a mirror image."
-msgstr "Klikni pre zrkadlové otočenie obrázku!"
-
-msgid "Click to flip the picture upside-down."
-msgstr "Klikni pre otočenie obrázku hlavou nadol."
-
 msgid "Click and move the mouse around to blur the picture."
 msgstr "Klikni a pohybuj myšou pre rozmazanie obrázku."
+
+#, fuzzy
+msgid "Click and move the mouse around to smudge the picture."
+msgstr "Klikni a pohybuj myšou pre rozmazanie obrázku."
+
+msgid "Click and move to fade the colors."
+msgstr "Klikni a pohybuj myšou pre vyblednutie farieb."
+
+#, fuzzy
+msgid "Click and move to darken the colors."
+msgstr "Klikni a pohybuj myšou pre vyblednutie farieb."
+
+msgid ""
+"Click and move the mouse around to turn the picture into a chalk drawing."
+msgstr "Klikni a pohybuj myšou pre prekreslenie obrázku kriedou."
 
 msgid "Click and move the mouse around to make the picture blocky."
 msgstr "Klikni a pohybuj myšou pre rozstvorcekovanie obrázku."
@@ -140,24 +189,22 @@ msgstr "Klikni a pohybuj myšou pre rozstvorcekovanie obrázku."
 msgid "Click and move the mouse around to draw a negative."
 msgstr "Klikni a pohybuj myšou pre vykreslenie negatívu."
 
-msgid "Click and move to fade the colors."
-msgstr "Klikni a pohybuj myšou pre vyblednutie farieb."
-
-msgid ""
-"Click and move the mouse around to turn the picture into a chalk drawing."
-msgstr "Klikni a pohybuj myšou pre prekreslenie obrázku kriedou."
+#, fuzzy
+msgid "Click and move the mouse around to change the picture's color."
+msgstr "Klikni a pohybuj myšou pre rozstvorcekovanie obrázku."
 
 msgid "Click and move the mouse around to make the picture drip."
 msgstr "Klikni a pohybuj myšou pre roztekanie obrázku."
 
-msgid "Click and move the mouse to thicken the picture."
-msgstr "Klikni a pohybuj mysou pre zhrubnutie obrázku."
+#, fuzzy
+msgid "Click and move the mouse around to turn the picture into a cartoon."
+msgstr "Klikni a pohybuj myšou pre prekreslenie obrázku kriedou."
 
-msgid "Click and move the mouse to thin the picture."
-msgstr "Klikni a pohybuj myšou pre zúženie obrázku."
+msgid "Click to make a mirror image."
+msgstr "Klikni pre zrkadlové otočenie obrázku!"
 
-msgid "Click in the picture to fill that area with color."
-msgstr "Klikni do obrázku pre vyplnenie oblasti farbou."
+msgid "Click to flip the picture upside-down."
+msgstr "Klikni pre otočenie obrázku hlavou nadol."
 
 msgid "Square"
 msgstr "Štvorec"
@@ -207,6 +254,10 @@ msgstr "Farby"
 msgid "Brushes"
 msgstr "Štetce"
 
+#, fuzzy
+msgid "Erasers"
+msgstr "Guma"
+
 msgid "Stamps"
 msgstr "Razítka"
 
@@ -243,7 +294,7 @@ msgstr "Guma"
 msgid "New"
 msgstr "Nový"
 
-#. 'Open' label:
+#. buttons for the file open dialog
 msgid "Open"
 msgstr "Otvor"
 
@@ -371,13 +422,14 @@ msgstr "Ešte sa nedá tlačiť!"
 msgid "Erase this picture?"
 msgstr "Vymazať tento obrázok?"
 
-#. 'Erase' label:
 msgid "Erase"
 msgstr "Guma"
 
-#. 'Back' label:
 msgid "Back"
 msgstr "Naspäť"
+
+msgid "Aa"
+msgstr ""
 
 #. FIXME: Move elsewhere!!!
 msgid "Save over the older version of this picture?"
@@ -388,3 +440,21 @@ msgstr "Nie, ulož ho ako nový súbor"
 
 msgid "Choose the picture you want, then click “Open”."
 msgstr "Vyber obrázok, ktorý chceš, a potom klikni na \"Otvor\"."
+
+#~ msgid "Lime!"
+#~ msgstr "Žltozelená!"
+
+#~ msgid "Fuchsia!"
+#~ msgstr "Svetlofialová!"
+
+#~ msgid "Silver!"
+#~ msgstr "Strieborná!"
+
+#~ msgid "Thick"
+#~ msgstr "Hrubé"
+
+#~ msgid "Click and move the mouse to thicken the picture."
+#~ msgstr "Klikni a pohybuj mysou pre zhrubnutie obrázku."
+
+#~ msgid "Click and move the mouse to thin the picture."
+#~ msgstr "Klikni a pohybuj myšou pre zúženie obrázku."
