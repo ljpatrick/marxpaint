@@ -36,9 +36,22 @@
 #define VIDEO_BPP 32 // might be fastest, if conversion funcs removed
 
 
+#define PRINTMETHOD_PS
+//#define PRINTMETHOD_PNM_PS
+//#define PRINTMETHOD_PNG_PNM_PS
+
+#ifdef PRINTMETHOD_PNG_PNM_PS
+#define PRINTCOMMAND "pngtopnm | pnmtops | lpr"
+#elif defined(PRINTMETHOD_PNM_PS)
+#define PRINTCOMMAND "pnmtops | lpr"
+#elif defined(PRINTMETHOD_PS)
+#define PRINTCOMMAND "lpr"
+#else
+#error No print method defined!
+#endif
+
 /* #define DEBUG */
 /* #define DEBUG_MALLOC */
-#define DEBUG_FONTS
 /* #define LOW_QUALITY_THUMBNAILS */
 /* #define LOW_QUALITY_COLOR_SELECTOR */
 /* #define LOW_QUALITY_STAMP_OUTLINE */
@@ -1418,7 +1431,7 @@ static int starter_mirrored, starter_flipped;
 static int recording, playing;
 static char * playfile;
 static FILE * demofi;
-static const char * printcommand;
+static const char * printcommand = PRINTCOMMAND;
 static int prog_bar_ctr;
 
 enum {
@@ -1706,9 +1719,7 @@ static void parse_font_style(style_info *si)
       if(!stumped)
         {
           stumped=1;
-#ifdef DEBUG_FONTS
           printf("Font style parser stumped by \"%s\".\n", si->style);
-#endif
         }
       sp++; // bad: an unknown character
     }
@@ -1732,7 +1743,6 @@ static void groupfonts_range(style_info **base, int count)
   int boldmap[4] = {-1,-1,-1,-1};
   int i;
 
-#ifdef DEBUG_FONTS
 if(count<1 || count>4)
 {
 printf("\n::::::: %d styles in %s:\n",count, base[0]->family);
@@ -1742,7 +1752,6 @@ while(i--)
 printf("               %s\n", base[i]->style);
 }
 }
-#endif
 
   i = count;
   while(i--)
@@ -1845,20 +1854,16 @@ printf("               %s\n", base[i]->style);
       int b = boldmap[base[i]->boldness];
       if(b==-1)
         {
-#ifdef DEBUG_FONTS
           printf("too many boldness levels, discarding: %s, %s\n", base[i]->family, base[i]->style);
-#endif
           continue;
         }
       int spot = b ? TTF_STYLE_BOLD : 0;
       spot += base[i]->italic ? TTF_STYLE_ITALIC : 0;
       if(fi->filename[spot])
         {
-#ifdef DEBUG_FONTS
           printf("duplicates, discarding: %s, %s\n", base[i]->family, base[i]->style);
           printf("b %d, spot %d\n", b, spot);
           printf("occupancy %p %p %p %p\n", fi->filename[0], fi->filename[1], fi->filename[2], fi->filename[3]);
-#endif
           continue;
         }
       fi->filename[spot] = strdup(base[i]->filename);
@@ -1961,13 +1966,9 @@ static void groupfonts(void)
       low = high;
     }
   qsort(user_font_families, num_font_families, sizeof user_font_families[0], compar_fontscore);
-
-#ifdef DEBUG_FONTS
   if(user_font_families[0]->score < 0)
     printf("sorted the wrong way, or all fonts were crap\n");
   printf("Trim starting with %d families\n", num_font_families);
-#endif
-
   while(num_font_families>1 && user_font_families[num_font_families-1]->score < 0)
     {
       i = --num_font_families;
@@ -1985,10 +1986,7 @@ static void groupfonts(void)
       free(user_font_families[i]);
       user_font_families[i] = NULL;
     }
-
-#ifdef DEBUG_FONTS
   printf("Trim ending with %d families\n", num_font_families);
-#endif
 }
 
 ////////////////////////////////////////////////////////////////////
@@ -6151,7 +6149,6 @@ static void setup(int argc, char * argv[])
   dont_load_stamps = 0;
   no_system_fonts = 0;
   print_delay = 0;
-  printcommand = "pngtopnm | pnmtops | lpr";
   use_print_config = 0;
   mirrorstamps = 0;
   disable_stamp_controls = 0;
@@ -6975,8 +6972,7 @@ static void setup(int argc, char * argv[])
 					       img_btn_off->format->Gmask,
 					       img_btn_off->format->Bmask,
 					       img_btn_off->format->Amask);
-  // SDL_FillRect(img_grey, NULL, SDL_MapRGBA(screen->format, 0xe7, 0xe7, 0xe7, 255)); // WAY too light!
-  SDL_FillRect(img_grey, NULL, SDL_MapRGBA(screen->format, 0x88, 0x88, 0x88, 255)); // Easier to see
+  SDL_FillRect(img_grey, NULL, SDL_MapRGBA(screen->format, 0xe7, 0xe7, 0xe7, 255));
 
   show_progress_bar();
 
@@ -12039,7 +12035,6 @@ static int do_save(void)
 
 
 /* Actually save the PNG data to the file stream: */
-
 static int do_png_save(FILE * fi, const char * const fname, SDL_Surface * surf)
 {
   png_structp png_ptr;
@@ -12160,9 +12155,71 @@ static int do_png_save(FILE * fi, const char * const fname, SDL_Surface * surf)
   return 0;
 }
 
+///////////////////////////////////// PostScript printing ///////////
+#ifdef PRINTMETHOD_PS
+
+static const char ps_footer[] =
+  "%%%%EndData\n"
+  "grestore\n"
+  "showpage\n"
+  "%%%%EOF\n"
+;
+
+/* Actually save the PostScript data to the file stream: */
+static int do_ps_save(FILE * fi, const char *restrict  const fname, SDL_Surface * surf)
+{
+  unsigned char *restrict const ps_row = malloc(surf->w * 3);
+  int x, y;
+  char buf[256];
+  
+  fprintf(fi, "%%!PS-Adobe-3.0 EPSF-3.0\n");
+  fprintf(fi, "%%%%Title: (TuxPaint)\n");
+  time_t t = time(NULL);
+  strftime(buf, sizeof buf - 1, "%a %b %e %H:%M:%S %Y", localtime(&t));
+  fprintf(fi, "%%%%CreationDate: (%s)\n", buf);
+  fprintf(fi, "%%%%Creator: (Tux Paint " VER_VERSION "--" VER_DATE ")\n");
+  fprintf(fi, "%%%%LanguageLevel: 2\n");
+  fprintf(fi, "%%%%BoundingBox: 72 214 540 578\n");
+  fprintf(fi, "%%%%DocumentData: Binary\n");
+  fprintf(fi, "%%%%EndComments\n");
+  fprintf(fi, "gsave\n");
+  fprintf(fi, "72.000000 214.560000 translate 468.000000 362.880000 scale\n");
+  fprintf(fi, "/DeviceRGB setcolorspace\n");
+  fprintf(fi, "<<\n");
+  fprintf(fi, "  /ImageType 1\n");
+  fprintf(fi, "  /Width %u /Height %u\n", surf->w, surf->h);
+  fprintf(fi, "  /BitsPerComponent 8\n");
+  fprintf(fi, "  /ImageMatrix [650 0 0 -504 0 504]\n");
+  fprintf(fi, "  /Decode [0 1 0 1 0 1]\n");
+  fprintf(fi, "  /DataSource currentfile\n");
+  fprintf(fi, ">>\n");
+  fprintf(fi, "%%%%BeginData: %u Binary Bytes\n", surf->w * surf->h * 3u);
+  fprintf(fi, "image\n");
+
+  /* Save the picture: */
+  for (y = 0; y < surf->h; y++)
+    {
+      for (x = 0; x < surf->w; x++)
+        {
+          Uint8 r, g, b;
+          SDL_GetRGB(getpixel(surf, x, y), surf->format, &r, &g, &b);
+          ps_row[x * 3 + 0] = r;
+          ps_row[x * 3 + 1] = g;
+          ps_row[x * 3 + 2] = b;
+        }
+      fwrite(ps_row,surf->w,3,fi);
+    }
+  free(ps_row);
+
+  fwrite(ps_footer,1,strlen(ps_footer),fi);
+  fclose(fi);
+  return 1;
+}
+
+#endif
+/////////////////////////////////////////////////////////////////
 
 /* Pick a new file ID: */
-
 static void get_new_file_id(void)
 {
   time_t t;
@@ -14086,8 +14143,17 @@ static void do_print(void)
     }
   else
     {
+#ifdef PRINTMETHOD_PNG_PNM_PS
       if (do_png_save(pi, printcommand, canvas))
 	do_prompt(PROMPT_PRINT_TXT, PROMPT_PRINT_YES, "");
+#elif defined(PRINTMETHOD_PNM_PS)
+      // nothing here
+#elif defined(PRINTMETHOD_PS)
+      if (do_ps_save(pi, printcommand, canvas))
+	do_prompt(PROMPT_PRINT_TXT, PROMPT_PRINT_YES, "");
+#else
+#error No print method defined!
+#endif
     }
 #else
 #ifdef WIN32
@@ -14464,16 +14530,12 @@ static void loadfonts(const char * const dir, int fatal)
                             }
                           else
                             {
-#ifdef DEBUG_FONTS
                               printf("Bad font, 'a' and 'z' match: %s, %s, %s\n", filename, family, style);
-#endif
                             }
                         }
                       else
                         {
-#ifdef DEBUG_FONTS
                           printf("could not render %s, %s, %s\n", filename, family, style);
-#endif
                         }
                       if(tmp_surf_a)
                         SDL_FreeSurface(tmp_surf_a);
@@ -14484,9 +14546,7 @@ static void loadfonts(const char * const dir, int fatal)
                 }
               else
                 {
-#ifdef DEBUG_FONTS
                   printf("could not open %s\n", filename);
-#endif
                 }
 	      show_progress_bar();
 	    }
