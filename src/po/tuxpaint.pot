@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2004-07-16 21:12+0200\n"
+"POT-Creation-Date: 2004-09-07 23:52-0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,373 +16,493 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
+#: tuxpaint.desktop.in.h:1
 msgid "A drawing program for children."
 msgstr ""
 
+#: tuxpaint.desktop.in.h:2
 msgid "Drawing program"
 msgstr ""
 
+#: tuxpaint.desktop.in.h:3
 msgid "Tux Paint"
 msgstr ""
 
+#: colors.h:62
 msgid "Black!"
 msgstr ""
 
+#: colors.h:63
 msgid "White!"
 msgstr ""
 
+#: colors.h:64
 msgid "Red!"
 msgstr ""
 
+#: colors.h:65
 msgid "Pink!"
 msgstr ""
 
+#: colors.h:66
 msgid "Orange!"
 msgstr ""
 
+#: colors.h:67
 msgid "Yellow!"
 msgstr ""
 
+#: colors.h:68
 msgid "Lime!"
 msgstr ""
 
+#: colors.h:69
 msgid "Green!"
 msgstr ""
 
+#: colors.h:70
 msgid "Cyan!"
 msgstr ""
 
+#: colors.h:71
 msgid "Blue!"
 msgstr ""
 
+#: colors.h:72
 msgid "Purple!"
 msgstr ""
 
+#: colors.h:73
 msgid "Fuchsia!"
 msgstr ""
 
+#: colors.h:74
 msgid "Brown!"
 msgstr ""
 
+#: colors.h:75
 msgid "Gray!"
 msgstr ""
 
+#: colors.h:76
 msgid "Silver!"
 msgstr ""
 
+#: great.h:20
 msgid "Great!"
 msgstr ""
 
+#: great.h:21
 msgid "Cool!"
 msgstr ""
 
+#: great.h:22
 msgid "Keep it up!"
 msgstr ""
 
+#: great.h:23
 msgid "Good job!"
 msgstr ""
 
+#: magic.h:48
 msgid "Rainbow"
 msgstr ""
 
+#: magic.h:49
 msgid "Sparkles"
 msgstr ""
 
+#: magic.h:51
 msgid "Mirror"
 msgstr ""
 
+#: magic.h:52
 msgid "Flip"
 msgstr ""
 
+#: magic.h:54
 msgid "Blur"
 msgstr ""
 
+#: magic.h:55
 msgid "Blocks"
 msgstr ""
 
+#: magic.h:57
 msgid "Negative"
 msgstr ""
 
+#: magic.h:58
 msgid "Fade"
 msgstr ""
 
+#: magic.h:60
 msgid "Chalk"
 msgstr ""
 
+#: magic.h:61
 msgid "Drip"
 msgstr ""
 
+#: magic.h:63
 msgid "Thick"
 msgstr ""
 
+#: magic.h:64
 msgid "Thin"
 msgstr ""
 
+#: magic.h:66
 msgid "Fill"
 msgstr ""
 
+#: magic.h:73
 msgid "You can draw in rainbow colors!"
 msgstr ""
 
+#: magic.h:74
 msgid "Click and move to draw sparkles."
 msgstr ""
 
+#: magic.h:76
 msgid "Click to make a mirror image."
 msgstr ""
 
+#: magic.h:77
 msgid "Click to flip the picture upside-down."
 msgstr ""
 
+#: magic.h:79
 msgid "Click and move the mouse around to blur the picture."
 msgstr ""
 
+#: magic.h:80
 msgid "Click and move the mouse around to make the picture blocky."
 msgstr ""
 
+#: magic.h:82
 msgid "Click and move the mouse around to draw a negative."
 msgstr ""
 
+#: magic.h:83
 msgid "Click and move to fade the colors."
 msgstr ""
 
+#: magic.h:85
 msgid ""
 "Click and move the mouse around to turn the picture into a chalk drawing."
 msgstr ""
 
+#: magic.h:86
 msgid "Click and move the mouse around to make the picture drip."
 msgstr ""
 
+#: magic.h:88
 msgid "Click and move the mouse to thicken the picture."
 msgstr ""
 
+#: magic.h:89
 msgid "Click and move the mouse to thin the picture."
 msgstr ""
 
+#: magic.h:91
 msgid "Click in the picture to fill that area with color."
 msgstr ""
 
+#: shapes.h:141 shapes.h:142
 msgid "Square"
 msgstr ""
 
+#: shapes.h:143 shapes.h:144
 msgid "Rectangle"
 msgstr ""
 
+#: shapes.h:145 shapes.h:146
 msgid "Circle"
 msgstr ""
 
+#: shapes.h:147 shapes.h:148 shapes.h:167 shapes.h:168
 msgid "Oval"
 msgstr ""
 
+#: shapes.h:149 shapes.h:150
 msgid "Triangle"
 msgstr ""
 
+#: shapes.h:151 shapes.h:152
 msgid "Pentagon"
 msgstr ""
 
+#: shapes.h:153 shapes.h:154
 msgid "Diamond"
 msgstr ""
 
+#: shapes.h:161 shapes.h:162
 msgid "A square has four sides, each the same length."
 msgstr ""
 
+#: shapes.h:163 shapes.h:164
 msgid "A rectangle has four sides."
 msgstr ""
 
+#: shapes.h:165 shapes.h:166
 msgid "A circle is exactly round."
 msgstr ""
 
+#: shapes.h:169 shapes.h:170
 msgid "A triangle has three sides."
 msgstr ""
 
+#: shapes.h:171 shapes.h:172
 msgid "A pentagon has five sides."
 msgstr ""
 
+#: shapes.h:173 shapes.h:174
 msgid "A diamond is a square, turned around slightly."
 msgstr ""
 
+#: titles.h:37
 msgid "Tools"
 msgstr ""
 
+#: titles.h:38
 msgid "Colors"
 msgstr ""
 
+#: titles.h:39
 msgid "Brushes"
 msgstr ""
 
+#: titles.h:40
 msgid "Stamps"
 msgstr ""
 
+#: titles.h:41 tools.h:45
 msgid "Shapes"
 msgstr ""
 
+#: titles.h:42
 msgid "Letters"
 msgstr ""
 
+#: titles.h:43 tools.h:47
 msgid "Magic"
 msgstr ""
 
+#: tools.h:42
 msgid "Paint"
 msgstr ""
 
+#: tools.h:43
 msgid "Stamp"
 msgstr ""
 
+#: tools.h:44
 msgid "Lines"
 msgstr ""
 
+#: tools.h:46
 msgid "Text"
 msgstr ""
 
+#: tools.h:48
 msgid "Undo"
 msgstr ""
 
+#: tools.h:49
 msgid "Redo"
 msgstr ""
 
+#: tools.h:50
 msgid "Eraser"
 msgstr ""
 
+#: tools.h:51
 msgid "New"
 msgstr ""
 
 #. 'Open' label:
+#: tools.h:52 tuxpaint.c:5477
 msgid "Open"
 msgstr ""
 
+#: tools.h:53
 msgid "Save"
 msgstr ""
 
+#: tools.h:54
 msgid "Print"
 msgstr ""
 
+#: tools.h:55
 msgid "Quit"
 msgstr ""
 
+#: tools.h:62
 msgid "Pick a color and a brush shape to draw with."
 msgstr ""
 
+#: tools.h:63
 msgid "Pick a picture to stamp around your drawing."
 msgstr ""
 
+#: tools.h:64
 msgid "Click to start drawing a line. Let go to complete it."
 msgstr ""
 
+#: tools.h:65
 msgid ""
 "Pick a shape. Click to pick the center, drag, then let go when it is the "
 "size you want. Move around to rotate it, and click to draw it."
 msgstr ""
 
+#: tools.h:66
 msgid "Choose a style of text. Click on your drawing and you can start typing."
 msgstr ""
 
+#: tools.h:67
 msgid "Pick a magical effect to use on your drawing!"
 msgstr ""
 
 #. Undo
+#: tools.h:68
 msgid "Undo!"
 msgstr ""
 
 #. Redo
+#: tools.h:69
 msgid "Redo!"
 msgstr ""
 
 #. Eraser
+#: tools.h:70
 msgid "Eraser!"
 msgstr ""
 
 #. New
+#: tools.h:71
 msgid "You now have a blank sheet to draw on!"
 msgstr ""
 
 #. Open
+#: tools.h:72
 msgid "Open…"
 msgstr ""
 
 #. Save
+#: tools.h:73
 msgid "Your image has been saved!"
 msgstr ""
 
 #. Print
+#: tools.h:74
 msgid "Printing…"
 msgstr ""
 
 #. Quit
+#: tools.h:75
 msgid "Bye bye!"
 msgstr ""
 
+#: tools.h:78
 msgid "Let go of the button to complete the line."
 msgstr ""
 
+#: tools.h:79
 msgid "Hold the button to stretch the shape."
 msgstr ""
 
+#: tools.h:80
 msgid "Move the mouse to rotate the shape. Click to draw it."
 msgstr ""
 
+#: tools.h:81
 msgid "OK then… Let’s keep drawing this one!"
 msgstr ""
 
 #. FIXME: Move elsewhere!!!
+#: tuxpaint.c:823
 msgid "Do you really want to quit?"
 msgstr ""
 
 #. FIXME: Move elsewhere! Or not?!
+#: tuxpaint.c:824 tuxpaint.c:828 tuxpaint.c:832 tuxpaint.c:846 tuxpaint.c:856
+#: tuxpaint.c:8345 tuxpaint.c:9053
 msgid "Yes"
 msgstr ""
 
+#: tuxpaint.c:825 tuxpaint.c:829 tuxpaint.c:833 tuxpaint.c:847 tuxpaint.c:857
+#: tuxpaint.c:8348
 msgid "No"
 msgstr ""
 
+#: tuxpaint.c:827
 msgid "If you quit, you’ll lose your picture! Save it?"
 msgstr ""
 
+#: tuxpaint.c:831
 msgid "Save your picture first?"
 msgstr ""
 
+#: tuxpaint.c:835
 msgid "Can’t open that picture!"
 msgstr ""
 
+#: tuxpaint.c:836 tuxpaint.c:843 tuxpaint.c:850 tuxpaint.c:853
 msgid "OK"
 msgstr ""
 
+#: tuxpaint.c:838
 msgid "Starting a new picture will erase the current one!"
 msgstr ""
 
+#: tuxpaint.c:839
 msgid "That’s OK!"
 msgstr ""
 
+#: tuxpaint.c:840
 msgid "Never mind!"
 msgstr ""
 
+#: tuxpaint.c:842
 msgid "There are no saved files!"
 msgstr ""
 
+#: tuxpaint.c:845
 msgid "Print your picture now?"
 msgstr ""
 
+#: tuxpaint.c:849
 msgid "Your picture has been printed!"
 msgstr ""
 
+#: tuxpaint.c:852
 msgid "You can’t print yet!"
 msgstr ""
 
+#: tuxpaint.c:855
 msgid "Erase this picture?"
 msgstr ""
 
 #. 'Erase' label:
+#: tuxpaint.c:5482
 msgid "Erase"
 msgstr ""
 
 #. 'Back' label:
+#: tuxpaint.c:5487
 msgid "Back"
 msgstr ""
 
 #. FIXME: Move elsewhere!!!
+#: tuxpaint.c:9052
 msgid "Save over the older version of this picture?"
 msgstr ""
 
+#: tuxpaint.c:9054
 msgid "No, save a new file"
 msgstr ""
 
+#: tuxpaint.c:9845
 msgid "Choose the picture you want, then click “Open”."
 msgstr ""
