@@ -804,7 +804,7 @@ void mainloop(void)
     line_start_x, line_start_y, w, h, shape_tool_mode,
     shape_ctr_x, shape_ctr_y, shape_outer_x, shape_outer_y;
   int num_things, thing_scroll, cur_thing, old_thing, do_draw, old_tool,
-    tmp_int;
+    tmp_int, max;
   int cur_time, last_print_time, scrolling, ignoring_motion;
   SDL_TimerID scrolltimer;
   SDL_Event event;
@@ -1451,8 +1451,13 @@ void mainloop(void)
 		      do_draw = 0;
 
 		      
-		      /* Deal with scrollbars: */
+		      /* Deal with scroll buttons: */
 		      
+		      max = 14;
+
+		      if (cur_tool == TOOL_STAMP && !disable_stamp_controls)
+			max = 10;
+
 		      if (num_things > 14 + TOOLOFFSET)
 			{
 			  if (event.button.y < 40 + 24)
@@ -1504,7 +1509,9 @@ void mainloop(void)
 				}
 			    }
 			  else if (event.button.y >=
-				   (48 * (6 + TOOLOFFSET / 2)) + 40 + 24)
+				   (48 * ((max - 2) / 2 + TOOLOFFSET / 2)) + 40 + 24 &&
+				   event.button.y <
+				   (48 * ((max - 2) / 2 + TOOLOFFSET / 2)) + 40 + 24 + 24)
 			    {
 			      if (thing_scroll < num_things - 12 - TOOLOFFSET)
 				{
@@ -1557,11 +1564,12 @@ void mainloop(void)
 			{
 			  off_y = 0;
 			}
-		      
+
+
 		      
 		      if (event.button.y > 40 + off_y &&
 			  event.button.y <
-			  (48 * (7 + TOOLOFFSET / 2)) + 40 - off_y)
+			  (48 * ((max / 2) + TOOLOFFSET / 2)) + 40 - off_y)
 			{
 			  which = ((event.button.y - 40 - off_y) / 48) * 2 +
 			    ((event.button.x - (WINDOW_WIDTH - 96)) / 48) +
@@ -1970,9 +1978,15 @@ void mainloop(void)
                      do_draw = 0;
 
 
-                     /* Deal with scrollbars: */
 
-                     if (num_things > 14 + TOOLOFFSET)
+                     /* Deal with scroll wheels: */
+
+		     max = 14;
+
+		     if (cur_tool == TOOL_STAMP && !disable_stamp_controls)
+		       max = 10;
+
+                     if (num_things > max + TOOLOFFSET)
                        {
                          if (event.button.button == 4)
                            {
@@ -1993,7 +2007,7 @@ void mainloop(void)
                            {
 			     /* Wheelmouse - DOWN "button" */
 				   
-                             if (thing_scroll < num_things - 12)
+                             if (thing_scroll < num_things - (max - 2))
                                {
                                  thing_scroll = thing_scroll + 2;
                                  do_draw = 1;
@@ -2012,7 +2026,9 @@ void mainloop(void)
                          off_y = 0;
                        }
                    }
-                 /* Assign the change(s), if any / redraw, if needed: */
+
+		 
+		 /* Assign the change(s), if any / redraw, if needed: */
 
                      if (cur_tool == TOOL_BRUSH || cur_tool == TOOL_LINES)
                        {
@@ -2299,9 +2315,14 @@ void mainloop(void)
 		      num_things = NUM_MAGICS;
 		      thing_scroll = 0;
 		    }
+
+
+		  max = 14;
+		  if (cur_tool == TOOL_STAMP && !disable_stamp_controls)
+		    max = 10;
 		  
 		  
-		  if (num_things > 14 + TOOLOFFSET)
+		  if (num_things > max + TOOLOFFSET)
 		    {
 		      /* Are there scroll buttons? */
 		      
@@ -2314,11 +2335,12 @@ void mainloop(void)
 			  else
 			    do_setcursor(cursor_arrow);
 			}
-		      else if (event.button.y > (48 * (6 + TOOLOFFSET / 2)) + 40 + 24)
+		      else if (event.button.y > (48 * ((max - 2) / 2 + TOOLOFFSET / 2)) + 40 + 24 &&
+		               event.button.y <= (48 * ((max - 2) / 2 + TOOLOFFSET / 2)) + 40 + 24 + 24)
 			{
 			  /* Down button; is it available? */
 			  
-			  if (thing_scroll < num_things - 12)
+			  if (thing_scroll < num_things - (max - 2))
 			    do_setcursor(cursor_down);
 			  else
 			    do_setcursor(cursor_arrow);
