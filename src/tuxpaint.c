@@ -1455,6 +1455,7 @@ static int cur_undo, oldest_undo, newest_undo;
 
 static SDL_Surface * img_title, * img_progress;
 static SDL_Surface * img_btn_up, * img_btn_down, * img_btn_off;
+static SDL_Surface * img_dead40x40;
 static SDL_Surface * img_black, * img_grey;
 static SDL_Surface * img_yes, * img_no;
 static SDL_Surface * img_open, * img_erase, * img_back, * img_trash;
@@ -8143,6 +8144,8 @@ static void setup(int argc, char * argv[])
   
   img_popup_arrow = loadimage(DATA_PREFIX "images/ui/popup_arrow.png");
   
+  img_dead40x40 = loadimage(DATA_PREFIX "images/ui/dead40x40.png");
+
   img_printer = loadimage(DATA_PREFIX "images/ui/printer.png");
   img_printer_wait = loadimage(DATA_PREFIX "images/ui/printer_wait.png");
 
@@ -12102,6 +12105,8 @@ static void cleanup(void)
   free_surface( &img_erase );
   free_surface( &img_back );
   free_surface( &img_trash );
+
+  free_surface( &img_dead40x40 );
 
   free_surface( &img_printer );
   free_surface( &img_printer_wait );
