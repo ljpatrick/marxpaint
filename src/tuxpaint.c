@@ -26,7 +26,7 @@
 
 
 #define VER_VERSION     "0.9.14"
-#define VER_DATE        "2004-09-13"
+#define VER_DATE        "2004-09-14"
 
 
 /* #define DEBUG */
@@ -72,6 +72,10 @@
 
 #include <locale.h>
 #include <iconv.h>
+
+#ifndef OLD_UPPERCASE_CODE
+#include <wctype.h>
+#endif
 
 #ifdef WIN32_OLD
 /* The following are required by libintl.h, so must be defined first: */
