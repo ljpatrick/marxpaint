@@ -504,8 +504,6 @@ static void debug(const char * const str)
 ///////////////////////////////////////////////////////////////////
 // Language stuff
 
-static int language_enum;
-
 /* Possible languages: */
 
 enum {
@@ -561,8 +559,6 @@ enum {
   NUM_LANGS
 };
 
-static const char * lang_prefix;
-
 static const char * lang_prefixes[NUM_LANGS] = {
   "af",
   "be",
@@ -612,13 +608,11 @@ static const char * lang_prefixes[NUM_LANGS] = {
   "vi",
   "wa",
   "zh_cn",
-  "zh_tw"
+  "zh_tw",
 };
 
 
-/* List of languages which doesn't use the default font: */
-
-
+// languages which don't use the default font
 static int lang_use_own_font[] = {
   LANG_EL,
   LANG_HE,
@@ -652,6 +646,7 @@ static int search_int_array(int l, int *array)
 
 static int need_own_font;
 static int need_right_to_left;
+static const char * lang_prefix;
 
 /* Determine the current language/locale, and set the language string: */
 
@@ -713,18 +708,33 @@ static void set_current_language(void)
   sleep(10);
 #endif
 
-  language_enum = lang;
   lang_prefix = lang_prefixes[lang];
   need_own_font = search_int_array(lang,lang_use_own_font);
   need_right_to_left = search_int_array(lang,lang_use_right_to_left);
 
 #ifdef DEBUG
-  printf("DEBUG: Language is %s (%d)\n", lang_prefix, language_enum);
+  printf("DEBUG: Language is %s (%d)\n", lang_prefix, lang);
 #endif
 
 }
 
+static TTF_Font *try_alternate_font(void)
+{
+  char  str[128];
+  char  prefix[64];
+  char  *p;
 
+  strcpy(prefix, lang_prefix);
+  if ((p = strrchr(prefix, '_')) != NULL)
+  {
+    *p = 0;
+    snprintf(str, sizeof(str), "%sfonts/locale/%s.ttf",
+             DATA_PREFIX, prefix);
+
+    return TTF_OpenFont(str, 18);
+  }
+  return NULL;
+}
 
 
 ///////////////////////////////////////////////////////////////////
@@ -1018,7 +1028,6 @@ static int mySDL_PollEvent(SDL_Event *event);
 static void load_starter_id(char * saved_id);
 static void load_starter(char * img_id);
 static SDL_Surface * duplicate_surface(SDL_Surface * orig);
-static TTF_Font *try_alternate_font(int language);
 static void mirror_starter(void);
 static void flip_starter(void);
 
@@ -6532,7 +6541,7 @@ static void setup(int argc, char * argv[])
 
       if (locale_font == NULL)
       {
-          locale_font = try_alternate_font(language_enum);
+          locale_font = try_alternate_font();
           if (locale_font == NULL)
 	  {
 	      fprintf(stderr,
@@ -14417,25 +14426,6 @@ static int mySDL_PollEvent(SDL_Event *event)
     }
 
   return ret;
-}
-
-
-static TTF_Font *try_alternate_font(int language)
-{
-  char  str[128];
-  char  prefix[64];
-  char  *p;
-
-  strcpy(prefix, lang_prefixes[language]);
-  if ((p = strrchr(prefix, '_')) != NULL)
-  {
-    *p = 0;
-    snprintf(str, sizeof(str), "%sfonts/locale/%s.ttf",
-             DATA_PREFIX, prefix);
-
-    return TTF_OpenFont(str, 18);
-  }
-  return NULL;
 }
 
 
