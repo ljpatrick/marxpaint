@@ -4,7 +4,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: TuxPaint 0.0.1pre\n"
-"POT-Creation-Date: 2004-07-16 21:12+0200\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2004-09-14 22:06+0200\n"
 "PO-Revision-Date: 2004-09-03 13:06-0300\n"
 "Last-Translator: Daniel José Viana <danjovic@vespanet.com.br>\n"
 "Language-Team: Português Brasileiro <danjovic@vespanet.com.br>\n"
@@ -142,11 +143,15 @@ msgstr "Clique e mova o mouse para inverter as cores da imagem."
 msgid "Click and move to fade the colors."
 msgstr "Clique e mova o mouse para desbotar as cores."
 
-msgid "Click and move the mouse around to turn the picture into a chalk drawing."
-msgstr "Clique e mova o mouse para transformar a imagem em desenho feito com giz."
+msgid ""
+"Click and move the mouse around to turn the picture into a chalk drawing."
+msgstr ""
+"Clique e mova o mouse para transformar a imagem em desenho feito com giz."
 
 msgid "Click and move the mouse around to make the picture drip."
-msgstr "Clique e mova o mouse para escorrer a tinta e deixar a figura com jeito de respingada."
+msgstr ""
+"Clique e mova o mouse para escorrer a tinta e deixar a figura com jeito de "
+"respingada."
 
 msgid "Click and move the mouse to thicken the picture."
 msgstr "Clique e mova o mouse para engrossar o desenho"
@@ -242,6 +247,7 @@ msgid "New"
 msgstr "Novo"
 
 #  'Open' label:
+#. 'Open' label:
 msgid "Open"
 msgstr "Abrir"
 
@@ -261,33 +267,46 @@ msgid "Pick a picture to stamp around your drawing."
 msgstr "Escolha uma figura para carimbar no seu desenho."
 
 msgid "Click to start drawing a line. Let go to complete it."
-msgstr "Clique e segure para começar a desenhar a linha. Solte onde quiser que ela termine."
+msgstr ""
+"Clique e segure para começar a desenhar a linha. Solte onde quiser que ela "
+"termine."
 
 # #: tools.h:65
 # msgid "Pick a shape to draw.  Click once to pick the center of the shape, #click again to draw it."
 # msgstr "Escolha uma forma para desenhar. Clique uma vez para definir o centro da imagem. Clique de novo para desenhá-la."
-msgid "Pick a shape. Click to pick the center, drag, then let go when it is the size you want. Move around to rotate it, and click to draw it."
-msgstr "Escolha uma forma para desenhar. Clique uma vez para marcar o centro. Mantenha clicado enquanto arrasta para ajustar o tamanho e então solte quando a figura estiver do tamanho que você quiser. Mova o mouse pela tela para girar a figura. Clique novamente para desenhá-la de vez."
+msgid ""
+"Pick a shape. Click to pick the center, drag, then let go when it is the "
+"size you want. Move around to rotate it, and click to draw it."
+msgstr ""
+"Escolha uma forma para desenhar. Clique uma vez para marcar o centro. "
+"Mantenha clicado enquanto arrasta para ajustar o tamanho e então solte "
+"quando a figura estiver do tamanho que você quiser. Mova o mouse pela tela "
+"para girar a figura. Clique novamente para desenhá-la de vez."
 
 msgid "Choose a style of text. Click on your drawing and you can start typing."
-msgstr "Escolha um tipo de letra e então clique no desenho para começar a escrever."
+msgstr ""
+"Escolha um tipo de letra e então clique no desenho para começar a escrever."
 
 msgid "Pick a magical effect to use on your drawing!"
 msgstr "Escolha um efeito mágico para usar no seu desenho!"
 
 #  Undo
+#. Undo
 msgid "Undo!"
 msgstr "Desfazer!"
 
 #  Redo
+#. Redo
 msgid "Redo!"
 msgstr "Refazer!"
 
 #  Eraser
+#. Eraser
 msgid "Eraser!"
 msgstr "Borracha!"
 
 #  New
+#. New
 msgid "You now have a blank sheet to draw on!"
 msgstr "Agora você tem uma nova folha para desenhar!"
 
@@ -367,14 +386,17 @@ msgid "Erase this picture?"
 msgstr "Apagar este desenho?"
 
 #  'Erase' label:
+#. 'Erase' label:
 msgid "Erase"
 msgstr "Apagar"
 
 #  'Back' label:
+#. 'Back' label:
 msgid "Back"
 msgstr "Voltar"
 
 #  FIXME: Move elsewhere!!!
+#. FIXME: Move elsewhere!!!
 msgid "Save over the older version of this picture?"
 msgstr "Guardar por cima do seu desenho anterior?"
 
@@ -383,4 +405,3 @@ msgstr "Não, guardar um novo desenho"
 
 msgid "Choose the picture you want, then click “Open”."
 msgstr "Escolha um desenho e então clique em “Abrir“"
-
