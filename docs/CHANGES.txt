@@ -39,6 +39,9 @@ http://www.newbreedsoftware.com/tuxpaint/
     'TTF_RenderUTF8...'.  Thanks to Mantas Kriauciunas, Robert Glowczynski,
     John Popplewell and Karl Ove Hufthammer.
 
+  * Simplified CFLAGS variable in Makefile.
+    Ben Armstrong <synrg@sanctuary.nslug.ns.ca>
+
 
 2003.Jun.17 (0.9.11)
   * Windows bugfixes.

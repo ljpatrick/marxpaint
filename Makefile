@@ -6,7 +6,7 @@
 # bill@newbreedsoftware.com
 # http://www.newbreedsoftware.com/tuxpaint/
 
-# June 14, 2002 - July 19, 2003
+# June 14, 2002 - July 20, 2003
 
 
 # Where to install things:
@@ -74,7 +74,8 @@ SDL_CFLAGS=$(shell sdl-config --cflags)
 
 # The entire set of CFLAGS:
 
-CFLAGS=-O2 -Wall $(SDL_CFLAGS) -DDATA_PREFIX=\"$(DATA_PREFIX)\" \
+CFLAGS=-O2 -Wall
+DEFS=-DDATA_PREFIX=\"$(DATA_PREFIX)\" \
 	-D$(NOSOUNDFLAG) -DDOC_PREFIX=\"$(DOC_PREFIX)\" \
 	-DLOCALEDIR=\"$(LOCALE_PREFIX)\" -DCONFDIR=\"$(CONFDIR)\"
 
@@ -115,11 +116,7 @@ beos:
 		ICON_PREFIX=./
 		X11_ICON_PREFIX=./ \
 		LOCALE_PREFIX=/boot/home/config/share/locale/ \
-		CFLAGS="-O1 -funroll-loops -fomit-frame-pointer -pipe -Wall \
-			$(SDL_FLAGS) -DDATA_PREFIX=\"$(DATA_PREFIX)\" \
-			-D$(NOSOUNDFLAG) -DDOC_PREFIX=\"$(DOC_PREFIX)\" \
-			-DLOCALEDIR=\"$(LOCALE_PREFIX)\" \
-			-DCONFDIR=\"$(CONFDIR)\"" \
+		CFLAGS="-O1 -funroll-loops -fomit-frame-pointer -pipe -Wall" \
 		RSRC_CMD="xres -o tuxpaint tuxpaint.rsrc" \
 		MIMESET_CMD="mimeset -f tuxpaint" \
 		ARCH_LINKS="-lintl -lpng -lz -lbe" \
@@ -166,11 +163,7 @@ install-beos:
 		ICON_PREFIX=./
 		X11_ICON_PREFIX=./ \
 		LOCALE_PREFIX=/boot/home/config/share/locale/ \
-		CFLAGS="-O1 -funroll-loops -fomit-frame-pointer -pipe -Wall \
-			$(SDL_FLAGS) -DDATA_PREFIX=\"$(DATA_PREFIX)\" \
-			-D$(NOSOUNDFLAG) -DDOC_PREFIX=\"$(DOC_PREFIX)\" \
-			-DLOCALEDIR=\"$(LOCALE_PREFIX)\" \
-			-DCONFDIR=\"$(CONFDIR)\"" \
+		CFLAGS="-O1 -funroll-loops -fomit-frame-pointer -pipe -Wall" \
 		RSRC_CMD="xres -o tuxpaint tuxpaint.rsrc" \
 		MIMESET_CMD="mimeset -f tuxpaint" \
 		ARCH_LINKS="-lintl -lpng -lz -lbe" \
@@ -516,7 +509,8 @@ install-man:
 tuxpaint:	obj/tuxpaint.o $(ARCH_LIBS)
 	@echo
 	@echo "...Linking Tux Paint..."
-	@$(CC) $(CFLAGS) -o tuxpaint obj/tuxpaint.o $(ARCH_LIBS) $(SDL_LIBS) \
+	@$(CC) $(CFLAGS) $(SDL_CFLAGS) $(DEFS) \
+		-o tuxpaint obj/tuxpaint.o $(ARCH_LIBS) $(SDL_LIBS) \
 		-lm $(ARCH_LINKS)
 	@$(RSRC_CMD)
 	@$(MIMESET_CMD)
@@ -541,13 +535,15 @@ obj/tuxpaint.o:	src/tuxpaint.c obj \
 		$(ARCH_HEADERS)
 	@echo
 	@echo "...Compiling Tux Paint from source..."
-	@$(CC) $(CFLAGS) -c src/tuxpaint.c -o obj/tuxpaint.o
+	@$(CC) $(CFLAGS) $(SDL_CFLAGS) $(DEFS) \
+		-c src/tuxpaint.c -o obj/tuxpaint.o
 
 
 obj/BeOS_Print.o:	src/BeOS_Print.cpp obj src/BeOS_print.h
 	@echo
 	@echo "...Compiling BeOS print support..."
-	@$(CC) $(CFLAGS) -c src/BeOS_print.cpp -o obj/BeOS_print.o
+	@$(CC) $(CFLAGS) $(SDL_CFLAGS) $(DEFS) \
+		-c src/BeOS_print.cpp -o obj/BeOS_print.o
 
 
 # Build the translation files for gettext
