@@ -1,0 +1,725 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 39;
+	objects = {
+		080E96DDFE201D6D7F000001 = {
+			children = (
+				22C0EA9A0735B76F008555A2,
+				22C0EA9B0735B76F008555A2,
+				22C0EA9C0735B76F008555A2,
+			);
+			isa = PBXGroup;
+			name = Classes;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		089C165CFE840E0CC02AAC07 = {
+			children = (
+				089C165DFE840E0CC02AAC07,
+			);
+			isa = PBXVariantGroup;
+			name = InfoPlist.strings;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		089C165DFE840E0CC02AAC07 = {
+			fileEncoding = 10;
+			isa = PBXFileReference;
+			lastKnownFileType = text.plist.strings;
+			name = English;
+			path = English.lproj/InfoPlist.strings;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+//080
+//081
+//082
+//083
+//084
+//100
+//101
+//102
+//103
+//104
+		1058C7A0FEA54F0111CA2CBB = {
+			children = (
+				1058C7A1FEA54F0111CA2CBB,
+			);
+			isa = PBXGroup;
+			name = "Linked Frameworks";
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		1058C7A1FEA54F0111CA2CBB = {
+			isa = PBXFileReference;
+			lastKnownFileType = wrapper.framework;
+			name = Cocoa.framework;
+			path = /System/Library/Frameworks/Cocoa.framework;
+			refType = 0;
+			sourceTree = "<absolute>";
+		};
+		1058C7A2FEA54F0111CA2CBB = {
+			children = (
+				2258162D074EB1A6005F774F,
+				2258162E074EB1A6005F774F,
+				2258162F074EB1A6005F774F,
+				22581630074EB1A6005F774F,
+			);
+			isa = PBXGroup;
+			name = "Local Frameworks";
+			refType = 4;
+			sourceTree = "<group>";
+		};
+//100
+//101
+//102
+//103
+//104
+//190
+//191
+//192
+//193
+//194
+		19C28FACFE9D520D11CA2CBB = {
+			children = (
+				8D1107320486CEB800E47090,
+			);
+			isa = PBXGroup;
+			name = Products;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+//190
+//191
+//192
+//193
+//194
+//220
+//221
+//222
+//223
+//224
+		2258162D074EB1A6005F774F = {
+			isa = PBXFileReference;
+			lastKnownFileType = wrapper.framework;
+			name = SDL_image.framework;
+			path = /Library/Frameworks/SDL_image.framework;
+			refType = 0;
+			sourceTree = "<absolute>";
+		};
+		2258162E074EB1A6005F774F = {
+			isa = PBXFileReference;
+			lastKnownFileType = wrapper.framework;
+			name = SDL_mixer.framework;
+			path = /Library/Frameworks/SDL_mixer.framework;
+			refType = 0;
+			sourceTree = "<absolute>";
+		};
+		2258162F074EB1A6005F774F = {
+			isa = PBXFileReference;
+			lastKnownFileType = wrapper.framework;
+			name = SDL_ttf.framework;
+			path = /Library/Frameworks/SDL_ttf.framework;
+			refType = 0;
+			sourceTree = "<absolute>";
+		};
+		22581630074EB1A6005F774F = {
+			isa = PBXFileReference;
+			lastKnownFileType = wrapper.framework;
+			name = SDL.framework;
+			path = /Library/Frameworks/SDL.framework;
+			refType = 0;
+			sourceTree = "<absolute>";
+		};
+		22581631074EB1A6005F774F = {
+			fileRef = 2258162D074EB1A6005F774F;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		22581632074EB1A6005F774F = {
+			fileRef = 2258162E074EB1A6005F774F;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		22581633074EB1A6005F774F = {
+			fileRef = 2258162F074EB1A6005F774F;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		22581634074EB1A6005F774F = {
+			fileRef = 22581630074EB1A6005F774F;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		22581666074EE1A5005F774F = {
+			fileEncoding = 4;
+			isa = PBXFileReference;
+			lastKnownFileType = text;
+			path = "Read Me.txt";
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		22581667074EE1A5005F774F = {
+			fileRef = 22581666074EE1A5005F774F;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		2286F34D0740B3FC001164FE = {
+			children = (
+				2286F34E0740B3FC001164FE,
+			);
+			isa = PBXVariantGroup;
+			name = SDLMain.nib;
+			path = "";
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		2286F34E0740B3FC001164FE = {
+			isa = PBXFileReference;
+			lastKnownFileType = wrapper.nib;
+			name = English;
+			path = English.lproj/SDLMain.nib;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		2286F34F0740B3FC001164FE = {
+			fileRef = 2286F34D0740B3FC001164FE;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		22C005D30736650D008555A2 = {
+			isa = PBXFileReference;
+			lastKnownFileType = image.icns;
+			path = tuxpaint.icns;
+			refType = 2;
+			sourceTree = SOURCE_ROOT;
+		};
+		22C005D40736650D008555A2 = {
+			fileRef = 22C005D30736650D008555A2;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		22C0EA9A0735B76F008555A2 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			path = SDLMain.h;
+			refType = 2;
+			sourceTree = SOURCE_ROOT;
+		};
+		22C0EA9B0735B76F008555A2 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.objc;
+			path = SDLMain.m;
+			refType = 2;
+			sourceTree = SOURCE_ROOT;
+		};
+		22C0EA9C0735B76F008555A2 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			path = wrapperdata.h;
+			refType = 2;
+			sourceTree = SOURCE_ROOT;
+		};
+		22C0EA9E0735B76F008555A2 = {
+			fileRef = 22C0EA9B0735B76F008555A2;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		22C0EAA30735B851008555A2 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = colors.h;
+			path = ../src/colors.h;
+			refType = 2;
+			sourceTree = SOURCE_ROOT;
+		};
+		22C0EAA40735B851008555A2 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = great.h;
+			path = ../src/great.h;
+			refType = 2;
+			sourceTree = SOURCE_ROOT;
+		};
+		22C0EAAB0735B851008555A2 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = macosx_print.h;
+			path = ../src/macosx_print.h;
+			refType = 2;
+			sourceTree = SOURCE_ROOT;
+		};
+		22C0EAAC0735B851008555A2 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.objc;
+			name = macosx_print.m;
+			path = ../src/macosx_print.m;
+			refType = 2;
+			sourceTree = SOURCE_ROOT;
+		};
+		22C0EAAD0735B851008555A2 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = magic.h;
+			path = ../src/magic.h;
+			refType = 2;
+			sourceTree = SOURCE_ROOT;
+		};
+		22C0EAAE0735B851008555A2 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = shapes.h;
+			path = ../src/shapes.h;
+			refType = 2;
+			sourceTree = SOURCE_ROOT;
+		};
+		22C0EAAF0735B851008555A2 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = sounds.h;
+			path = ../src/sounds.h;
+			refType = 2;
+			sourceTree = SOURCE_ROOT;
+		};
+		22C0EAB00735B851008555A2 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = tip_tux.h;
+			path = ../src/tip_tux.h;
+			refType = 2;
+			sourceTree = SOURCE_ROOT;
+		};
+		22C0EAB10735B851008555A2 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = titles.h;
+			path = ../src/titles.h;
+			refType = 2;
+			sourceTree = SOURCE_ROOT;
+		};
+		22C0EAB20735B851008555A2 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = tools.h;
+			path = ../src/tools.h;
+			refType = 2;
+			sourceTree = SOURCE_ROOT;
+		};
+		22C0EAB30735B851008555A2 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.c;
+			name = tuxpaint.c;
+			path = ../src/tuxpaint.c;
+			refType = 2;
+			sourceTree = SOURCE_ROOT;
+		};
+		22C0EABD0735B851008555A2 = {
+			fileRef = 22C0EAAC0735B851008555A2;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		22C0EAC40735B851008555A2 = {
+			fileRef = 22C0EAB30735B851008555A2;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		22C0EBB50735BED0008555A2 = {
+			isa = PBXFileReference;
+			lastKnownFileType = folder;
+			name = docs;
+			path = ../docs;
+			refType = 2;
+			sourceTree = SOURCE_ROOT;
+		};
+		22C0ED760735BED1008555A2 = {
+			isa = PBXFileReference;
+			lastKnownFileType = folder;
+			name = fonts;
+			path = ../fonts;
+			refType = 2;
+			sourceTree = SOURCE_ROOT;
+		};
+		22C0ED9A0735BED1008555A2 = {
+			isa = PBXFileReference;
+			lastKnownFileType = folder;
+			name = stamps;
+			path = ../stamps;
+			refType = 2;
+			sourceTree = SOURCE_ROOT;
+		};
+		22C0EDAF0735BED1008555A2 = {
+			isa = PBXFileReference;
+			lastKnownFileType = folder;
+			name = starters;
+			path = ../starters;
+			refType = 2;
+			sourceTree = SOURCE_ROOT;
+		};
+		22C0EDBB0735BED1008555A2 = {
+			fileRef = 22C0EBB50735BED0008555A2;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		22C0EDBC0735BED1008555A2 = {
+			fileRef = 22C0ED760735BED1008555A2;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		22C0EDBD0735BED1008555A2 = {
+			fileRef = 22C0ED9A0735BED1008555A2;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		22C0EDBE0735BED1008555A2 = {
+			fileRef = 22C0EDAF0735BED1008555A2;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		22C0F5350735BFA8008555A2 = {
+			isa = PBXFileReference;
+			lastKnownFileType = folder;
+			name = brushes;
+			path = ../data/brushes;
+			refType = 2;
+			sourceTree = SOURCE_ROOT;
+		};
+		22C0F5500735BFA8008555A2 = {
+			isa = PBXFileReference;
+			lastKnownFileType = folder;
+			name = fonts;
+			path = ../data/fonts;
+			refType = 2;
+			sourceTree = SOURCE_ROOT;
+		};
+		22C0F5600735BFA8008555A2 = {
+			isa = PBXFileReference;
+			lastKnownFileType = folder;
+			name = images;
+			path = ../data/images;
+			refType = 2;
+			sourceTree = SOURCE_ROOT;
+		};
+		22C0F5CE0735BFA8008555A2 = {
+			isa = PBXFileReference;
+			lastKnownFileType = folder;
+			name = sounds;
+			path = ../data/sounds;
+			refType = 2;
+			sourceTree = SOURCE_ROOT;
+		};
+		22C0F5F60735BFA8008555A2 = {
+			fileRef = 22C0F5350735BFA8008555A2;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		22C0F5F70735BFA8008555A2 = {
+			fileRef = 22C0F5500735BFA8008555A2;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		22C0F5F80735BFA8008555A2 = {
+			fileRef = 22C0F5600735BFA8008555A2;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		22C0F5F90735BFA8008555A2 = {
+			fileRef = 22C0F5CE0735BFA8008555A2;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		22D01F2F07434FD100494AE0 = {
+			isa = PBXFileReference;
+			lastKnownFileType = folder;
+			name = locale;
+			path = ../locale;
+			refType = 2;
+			sourceTree = SOURCE_ROOT;
+		};
+		22D0201207434FD200494AE0 = {
+			fileRef = 22D01F2F07434FD100494AE0;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		22D5D2A80738498300B67229 = {
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			isa = PBXCopyFilesBuildPhase;
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+//220
+//221
+//222
+//223
+//224
+//290
+//291
+//292
+//293
+//294
+		29B97313FDCFA39411CA2CEA = {
+			buildSettings = {
+			};
+			buildStyles = (
+				4A9504CCFFE6A4B311CA0CBA,
+				4A9504CDFFE6A4B311CA0CBA,
+			);
+			hasScannedForEncodings = 1;
+			isa = PBXProject;
+			mainGroup = 29B97314FDCFA39411CA2CEA;
+			projectDirPath = "";
+			targets = (
+				8D1107260486CEB800E47090,
+			);
+		};
+		29B97314FDCFA39411CA2CEA = {
+			children = (
+				22581666074EE1A5005F774F,
+				080E96DDFE201D6D7F000001,
+				29B97315FDCFA39411CA2CEA,
+				29B97317FDCFA39411CA2CEA,
+				29B97323FDCFA39411CA2CEA,
+				19C28FACFE9D520D11CA2CBB,
+			);
+			isa = PBXGroup;
+			name = TuxPaint;
+			path = "";
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		29B97315FDCFA39411CA2CEA = {
+			children = (
+				22C0EAA30735B851008555A2,
+				22C0EAA40735B851008555A2,
+				22C0EAAB0735B851008555A2,
+				22C0EAAC0735B851008555A2,
+				22C0EAAD0735B851008555A2,
+				22C0EAAE0735B851008555A2,
+				22C0EAAF0735B851008555A2,
+				22C0EAB00735B851008555A2,
+				22C0EAB10735B851008555A2,
+				22C0EAB20735B851008555A2,
+				22C0EAB30735B851008555A2,
+			);
+			isa = PBXGroup;
+			name = "TuxPaint Sources";
+			path = "";
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		29B97317FDCFA39411CA2CEA = {
+			children = (
+				22D01F2F07434FD100494AE0,
+				2286F34D0740B3FC001164FE,
+				22C005D30736650D008555A2,
+				22C0F5350735BFA8008555A2,
+				22C0F5500735BFA8008555A2,
+				22C0F5600735BFA8008555A2,
+				22C0F5CE0735BFA8008555A2,
+				22C0EBB50735BED0008555A2,
+				22C0ED760735BED1008555A2,
+				22C0ED9A0735BED1008555A2,
+				22C0EDAF0735BED1008555A2,
+				8D1107310486CEB800E47090,
+				089C165CFE840E0CC02AAC07,
+			);
+			isa = PBXGroup;
+			name = Resources;
+			path = "";
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		29B97323FDCFA39411CA2CEA = {
+			children = (
+				1058C7A0FEA54F0111CA2CBB,
+				1058C7A2FEA54F0111CA2CBB,
+			);
+			isa = PBXGroup;
+			name = Frameworks;
+			path = "";
+			refType = 4;
+			sourceTree = "<group>";
+		};
+//290
+//291
+//292
+//293
+//294
+//4A0
+//4A1
+//4A2
+//4A3
+//4A4
+		4A9504CCFFE6A4B311CA0CBA = {
+			buildSettings = {
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+			};
+			isa = PBXBuildStyle;
+			name = Development;
+		};
+		4A9504CDFFE6A4B311CA0CBA = {
+			buildSettings = {
+				COPY_PHASE_STRIP = YES;
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				ZERO_LINK = NO;
+			};
+			isa = PBXBuildStyle;
+			name = Deployment;
+		};
+//4A0
+//4A1
+//4A2
+//4A3
+//4A4
+//8D0
+//8D1
+//8D2
+//8D3
+//8D4
+		8D1107260486CEB800E47090 = {
+			buildPhases = (
+				8D1107290486CEB800E47090,
+				8D11072C0486CEB800E47090,
+				8D11072E0486CEB800E47090,
+				22D5D2A80738498300B67229,
+			);
+			buildRules = (
+			);
+			buildSettings = {
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "";
+				GCC_PREPROCESSOR_DEFINITIONS = "DATA_PREFIX=\\\"TuxPaint.app/Contents/Resources/\\\" DOC_PREFIX=\\\"./share/doc/tuxpaint/\\\" CONFDIR=\\\"$(HOME)/Library/Application\\ Support/TuxPaint/\\\" LOCALEDIR=\\\"TuxPaint.app/Contents/Resources/locale/\\\" CURSOR_SHAPES=SMALL __APPLE__";
+				HEADER_SEARCH_PATHS = "/sw/include/SDL /sw/include ../src/mouse/16x16/";
+				INFOPLIST_FILE = Info.plist;
+				INSTALL_PATH = "$(HOME)/Applications";
+				LIBRARY_STYLE = STATIC;
+				MACOSX_DEPLOYMENT_TARGET = 10.1;
+				OTHER_CFLAGS = "";
+				OTHER_CPLUSPLUSFLAGS = "";
+				OTHER_LDFLAGS = "/sw/lib/libpng.a /sw/lib/libintl.a -lz -liconv";
+				PRODUCT_NAME = TuxPaint;
+				WRAPPER_EXTENSION = app;
+			};
+			dependencies = (
+			);
+			isa = PBXNativeTarget;
+			name = TuxPaint;
+			productInstallPath = "$(HOME)/Applications";
+			productName = TuxPaint;
+			productReference = 8D1107320486CEB800E47090;
+			productType = "com.apple.product-type.application";
+		};
+		8D1107290486CEB800E47090 = {
+			buildActionMask = 2147483647;
+			files = (
+				8D11072B0486CEB800E47090,
+				22C0EDBB0735BED1008555A2,
+				22C0EDBC0735BED1008555A2,
+				22C0EDBD0735BED1008555A2,
+				22C0EDBE0735BED1008555A2,
+				22C0F5F60735BFA8008555A2,
+				22C0F5F70735BFA8008555A2,
+				22C0F5F80735BFA8008555A2,
+				22C0F5F90735BFA8008555A2,
+				22C005D40736650D008555A2,
+				2286F34F0740B3FC001164FE,
+				22D0201207434FD200494AE0,
+				22581667074EE1A5005F774F,
+			);
+			isa = PBXResourcesBuildPhase;
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8D11072B0486CEB800E47090 = {
+			fileRef = 089C165CFE840E0CC02AAC07;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		8D11072C0486CEB800E47090 = {
+			buildActionMask = 2147483647;
+			files = (
+				22C0EA9E0735B76F008555A2,
+				22C0EABD0735B851008555A2,
+				22C0EAC40735B851008555A2,
+			);
+			isa = PBXSourcesBuildPhase;
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8D11072E0486CEB800E47090 = {
+			buildActionMask = 2147483647;
+			files = (
+				8D11072F0486CEB800E47090,
+				22581631074EB1A6005F774F,
+				22581632074EB1A6005F774F,
+				22581633074EB1A6005F774F,
+				22581634074EB1A6005F774F,
+			);
+			isa = PBXFrameworksBuildPhase;
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8D11072F0486CEB800E47090 = {
+			fileRef = 1058C7A1FEA54F0111CA2CBB;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		8D1107310486CEB800E47090 = {
+			fileEncoding = 4;
+			isa = PBXFileReference;
+			lastKnownFileType = text.plist;
+			path = Info.plist;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		8D1107320486CEB800E47090 = {
+			explicitFileType = wrapper.application;
+			includeInIndex = 0;
+			isa = PBXFileReference;
+			path = TuxPaint.app;
+			refType = 3;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+	};
+	rootObject = 29B97313FDCFA39411CA2CEA;
+}
