@@ -3544,6 +3544,7 @@ static multichan *find_most_saturated(double initial_hue, multichan * work,
   // find the most saturated pixel near the initial hue guess
   multichan *key_color_ptr = NULL;
   double hue_range;
+  unsigned i;
   
   switch (inf_stamps[cur_stamp]->tinter)
   {
