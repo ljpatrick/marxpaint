@@ -8,6 +8,14 @@ http://www.newbreedsoftware.com/tuxpaint/
 
 
 2004.December.5 (0.9.15)
+  * Somewhat better treatment of wrong-sized images when loading them.
+    It works well for typical kid drawings, as long as objects don't
+    touch the edge of the screen. (the earth and sky -- and anything
+    else at the edge -- get extended to fill the space) This could be
+    better done with wavelets I think, or some vector-based notion of
+    what lies at the edge of the screen. Starters, as usual, need work.
+    Albert Cahalan <albert@users.sf.net>
+
   * Magic blur effect now gamma-aware, circular, and modifying all points
     within the brush instead of just 25% of them.
     Albert Cahalan <albert@users.sf.net>

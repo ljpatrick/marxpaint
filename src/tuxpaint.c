@@ -9359,6 +9359,187 @@ static void do_wait(void)
 }
 
 
+static void autoscale_copy_smear_free(SDL_Surface *src, SDL_Surface *dst)
+{
+  SDL_Surface *src1;
+  SDL_Rect dest;
+  // What to do when in 640x480 mode, and loading an
+  // 800x600 (or larger) image!? Scale it. Starters must
+  // be scaled too. Keep the pixels square though, filling
+  // in the gaps via a smear.
+  if(src->w != dst->w || src->h != dst->h)
+    {
+      if(src->w / (float)dst->w  >  src->h / (float)dst->h)
+        src1 = thumbnail(src, dst->w, src->h*dst->w/src->w, 0);
+      else
+        src1 = thumbnail(src, src->w*dst->h/src->h, dst->h, 0);
+      SDL_FreeSurface(src);
+      src = src1;
+    }
+
+  dest.x = (dst->w - src->w) / 2;
+  dest.y = (dst->h - src->h) / 2;
+  SDL_BlitSurface(src, NULL, dst, &dest);
+
+  if(src->w != dst->w)
+    {
+      // we know that the heights match, and src is narrower
+      SDL_Rect sour;
+      int i = (dst->w - src->w) / 2;
+      sour.w = 1;
+      sour.x = 0;
+      sour.h = src->h;
+      sour.y = 0;
+      while(i-- > 0)
+        {
+          dest.x = i;
+          SDL_BlitSurface(src, &sour, dst, &dest);
+        }
+      sour.x = src->w - 1;
+      i = (dst->w - src->w) / 2 + src->w - 1;
+      while(++i < dst->w)
+        {
+          dest.x = i;
+          SDL_BlitSurface(src, &sour, dst, &dest);
+        }
+    }
+
+  if(src->h != dst->h)
+    {
+      // we know that the widths match, and src is shorter
+      SDL_Rect sour;
+      int i = (dst->h - src->h) / 2;
+      sour.w = src->w;
+      sour.x = 0;
+      sour.h = 1;
+      sour.y = 0;
+      while(i-- > 0)
+        {
+          dest.y = i;
+          SDL_BlitSurface(src, &sour, dst, &dest);
+        }
+      sour.y = src->h - 1;
+      i = (dst->h - src->h) / 2 + src->h - 1;
+      while(++i < dst->h)
+        {
+          dest.y = i;
+          SDL_BlitSurface(src, &sour, dst, &dest);
+        }
+    }
+
+  SDL_FreeSurface(src);
+}
+
+
+static void load_starter_id(char * saved_id)
+{
+  char * rname;
+  char fname[32];
+  FILE * fi;
+  
+  snprintf(fname, sizeof(fname), "saved/%s.dat", saved_id);
+  rname = get_fname(fname);
+
+  starter_id[0] = '\0';
+
+  fi = fopen(rname, "r");
+  if (fi != NULL)
+  {
+    fgets(starter_id, sizeof(starter_id), fi);
+    starter_id[strlen(starter_id) - 1] = '\0';
+
+    fscanf(fi, "%d", &starter_mirrored);
+    fscanf(fi, "%d", &starter_flipped);
+
+    fclose(fi);
+  }
+
+  free(rname);
+}
+
+
+
+static void load_starter(char * img_id)
+{
+  char * dirname;
+  char fname[256];
+  SDL_Surface * tmp_surf;
+
+  /* Determine path to starter files: */
+  
+  dirname = strdup(DATA_PREFIX "starters");
+
+  /* Clear them to NULL first: */
+  img_starter = NULL;
+  img_starter_bkgd = NULL;
+
+  /* Load the core image: */
+  snprintf(fname, sizeof(fname), "%s/%s.png", dirname, img_id);
+  tmp_surf = IMG_Load(fname);
+
+  if (tmp_surf != NULL)
+  {
+    img_starter = SDL_DisplayFormatAlpha(tmp_surf);
+    SDL_FreeSurface(tmp_surf);
+  }
+
+  if (img_starter != NULL &&
+      (img_starter->w != canvas->w || img_starter->h != canvas->h))
+  {
+    tmp_surf = img_starter;
+
+    img_starter = SDL_CreateRGBSurface(canvas->flags,
+					    canvas->w, canvas->h,
+					    tmp_surf->format->BitsPerPixel,
+			     	            tmp_surf->format->Rmask,
+			      	            tmp_surf->format->Gmask,
+			      	            tmp_surf->format->Bmask,
+					    tmp_surf->format->Amask);
+
+    SDL_SetAlpha(tmp_surf, 0, 0);
+    autoscale_copy_smear_free(tmp_surf,img_starter);
+  }
+
+
+  /* Try to load the a background image: */
+
+  /* (JPEG first) */
+  snprintf(fname, sizeof(fname), "%s/%s-back.jpeg", dirname, img_id);
+  tmp_surf = IMG_Load(fname);
+ 
+  /* (Failed? Try PNG next) */
+  if (tmp_surf == NULL)
+  {
+    snprintf(fname, sizeof(fname), "%s/%s-back.png", dirname, img_id);
+    tmp_surf = IMG_Load(fname);
+  }
+  
+  if (tmp_surf != NULL)
+  {
+    img_starter_bkgd = SDL_DisplayFormat(tmp_surf);
+    SDL_FreeSurface(tmp_surf);
+  }
+
+  if (img_starter_bkgd != NULL &&
+      (img_starter_bkgd->w != canvas->w || img_starter_bkgd->h != canvas->h))
+  {
+    tmp_surf = img_starter_bkgd;
+
+    img_starter_bkgd = SDL_CreateRGBSurface(SDL_SWSURFACE,
+					    canvas->w, canvas->h,
+					    canvas->format->BitsPerPixel,
+			     	            canvas->format->Rmask,
+			      	            canvas->format->Gmask,
+			      	            canvas->format->Bmask,
+					    0);
+
+    autoscale_copy_smear_free(tmp_surf,img_starter_bkgd);
+  }
+
+  free(dirname);
+}
+
+
 /* Load current (if any) image: */
 
 static void load_current(void)
@@ -9367,8 +9548,6 @@ static void load_current(void)
   char * fname;
   char ftmp[1024];
   FILE * fi;
-  SDL_Rect dest;
-
 
   /* Determine the current picture's ID: */
 
@@ -9425,15 +9604,7 @@ static void load_current(void)
 	}
       else
 	{
-	  SDL_FillRect(canvas, NULL, SDL_MapRGB(canvas->format, 255, 255, 255));
-
-	  dest.x = (canvas->w - tmp->w) / 2;
-	  dest.y = (canvas->h - tmp->h) / 2;
-	  SDL_BlitSurface(tmp, NULL, canvas, &dest);
-
-	  SDL_FreeSurface(tmp);
-
-
+	  autoscale_copy_smear_free(tmp,canvas);
 	  load_starter_id(file_id);
 	  load_starter(starter_id);
 
@@ -10766,6 +10937,7 @@ static int do_quit(void)
 }
 
 
+
 /* Open a saved image: */
 
 #define PLACE_STARTERS_DIR 0
@@ -10798,10 +10970,7 @@ static int do_open(int want_new_tool)
   int last_click_which, last_click_button;
   int places_to_look;
 
-
-
   do_setcursor(cursor_watch);
-  
   
   /* Allocate some space: */
 
@@ -11730,19 +11899,8 @@ static int do_open(int want_new_tool)
 		  free_surface(&img_starter_bkgd);
 		  starter_mirrored = 0;
 		  starter_flipped = 0;
-		   
-		  SDL_FillRect(canvas, NULL,
-			       SDL_MapRGB(canvas->format, 255, 255, 255));
 
-		  /* FIXME: What to do when in 640x480 mode, and loading an
-		     800x600 (or larger) image!? */
-
-		  dest.x = (canvas->w - img->w) / 2;
-		  dest.y = (canvas->h - img->h) / 2;
-	      
-		  SDL_BlitSurface(img, NULL, canvas, &dest);
-		  SDL_FreeSurface(img);
-	      
+		  autoscale_copy_smear_free(img,canvas);
 
 		  cur_undo = 0;
 		  oldest_undo = 0;
@@ -13849,139 +14007,6 @@ static int mySDL_PollEvent(SDL_Event *event)
     }
 
   return ret;
-}
-
-
-static void load_starter_id(char * saved_id)
-{
-  char * rname;
-  char fname[32];
-  FILE * fi;
-  
-  snprintf(fname, sizeof(fname), "saved/%s.dat", saved_id);
-  rname = get_fname(fname);
-
-  starter_id[0] = '\0';
-
-  fi = fopen(rname, "r");
-  if (fi != NULL)
-  {
-    fgets(starter_id, sizeof(starter_id), fi);
-    starter_id[strlen(starter_id) - 1] = '\0';
-
-    fscanf(fi, "%d", &starter_mirrored);
-    fscanf(fi, "%d", &starter_flipped);
-
-    fclose(fi);
-  }
-
-  free(rname);
-}
-
-static void load_starter(char * img_id)
-{
-  char * dirname;
-  char fname[256];
-  SDL_Surface * tmp_surf;
-  SDL_Rect dest;
-
-
-  /* Determine path to starter files: */
-  
-  /* FIXME: On Windows, MacOSX, BeOS, etc. -- do it their way! */
-#if defined(WIN32) || defined(__BEOS__)
-  dirname = strdup(DATA_PREFIX "starters");
-#else
-  dirname = strdup("/usr/local/share/tuxpaint/starters");
-#endif
-
-
-  /* Clear them to NULL first: */
-
-  img_starter = NULL;
-  img_starter_bkgd = NULL;
-
-
-  /* Load the core image: */
-  
-  snprintf(fname, sizeof(fname), "%s/%s.png", dirname, img_id);
-  tmp_surf = IMG_Load(fname);
-
-  if (tmp_surf != NULL)
-  {
-    img_starter = SDL_DisplayFormatAlpha(tmp_surf);
-    SDL_FreeSurface(tmp_surf);
-  }
-
-  if (img_starter != NULL &&
-      (img_starter->w != canvas->w || img_starter->h != canvas->h))
-  {
-    tmp_surf = img_starter;
-
-    img_starter = SDL_CreateRGBSurface(canvas->flags,
-					    canvas->w, canvas->h,
-					    tmp_surf->format->BitsPerPixel,
-			     	            tmp_surf->format->Rmask,
-			      	            tmp_surf->format->Gmask,
-			      	            tmp_surf->format->Bmask,
-					    tmp_surf->format->Amask);
-
-    SDL_SetAlpha(tmp_surf, 0, 0);
-
-    if (img_starter != NULL)
-    {
-      dest.x = (canvas->w - tmp_surf->w) / 2;
-      dest.y = (canvas->h - tmp_surf->h) / 2;
-
-      SDL_BlitSurface(tmp_surf, NULL, img_starter, &dest);
-      SDL_FreeSurface(tmp_surf);
-    }
-  }
-
-
-  /* Try to load the a background image: */
-
-  /* (JPEG first) */
-  snprintf(fname, sizeof(fname), "%s/%s-back.jpeg", dirname, img_id);
-  tmp_surf = IMG_Load(fname);
- 
-  /* (Failed? Try PNG next) */
-  if (tmp_surf == NULL)
-  {
-    snprintf(fname, sizeof(fname), "%s/%s-back.png", dirname, img_id);
-    tmp_surf = IMG_Load(fname);
-  }
-  
-  if (tmp_surf != NULL)
-  {
-    img_starter_bkgd = SDL_DisplayFormat(tmp_surf);
-    SDL_FreeSurface(tmp_surf);
-  }
-
-  if (img_starter_bkgd != NULL &&
-      (img_starter_bkgd->w != canvas->w || img_starter_bkgd->h != canvas->h))
-  {
-    tmp_surf = img_starter_bkgd;
-
-    img_starter_bkgd = SDL_CreateRGBSurface(SDL_SWSURFACE,
-					    canvas->w, canvas->h,
-					    canvas->format->BitsPerPixel,
-			     	            canvas->format->Rmask,
-			      	            canvas->format->Gmask,
-			      	            canvas->format->Bmask,
-					    0);
-
-    if (img_starter_bkgd != NULL)
-    {
-      dest.x = (canvas->w - tmp_surf->w) / 2;
-      dest.y = (canvas->h - tmp_surf->h) / 2;
-
-      SDL_BlitSurface(tmp_surf, NULL, img_starter_bkgd, &dest);
-      SDL_FreeSurface(tmp_surf);
-    }
-  }
-
-  free(dirname);
 }
 
 
