@@ -1499,13 +1499,13 @@ static TTF_Font *getfonthandle(int desire)
   char *name = fi->filename[text_state];
   if(!name)
     {
-      name = fi->filename[text_state ^ TTF_STYLE_BOLD];
-      missing = text_state & TTF_STYLE_BOLD;
+      name = fi->filename[text_state ^ TTF_STYLE_ITALIC];
+      missing = text_state & TTF_STYLE_ITALIC;
     }
   if(!name)
     {
-      name = fi->filename[text_state ^ TTF_STYLE_ITALIC];
-      missing = text_state & TTF_STYLE_ITALIC;
+      name = fi->filename[text_state ^ TTF_STYLE_BOLD];
+      missing = text_state & TTF_STYLE_BOLD;
     }
   if(!name)
     {
@@ -1815,6 +1815,24 @@ printf("               %s\n", base[i]->style);
         }
       fi->filename[spot] = strdup(base[i]->filename);
       fi->score += 2;
+    }
+  if(!fi->filename[0] && !fi->filename[1])
+    {
+      fi->filename[0] = fi->filename[2];
+      fi->filename[2] = NULL;
+      fi->filename[1] = fi->filename[3];
+      fi->filename[3] = NULL;
+    }
+  if(!fi->filename[0] && !fi->filename[2])
+    {
+      fi->filename[0] = fi->filename[1];
+      fi->filename[1] = NULL;
+      fi->filename[2] = fi->filename[3];
+      fi->filename[3] = NULL;
+    }
+  if(!fi->filename[0])
+    {
+      fi->filename[0] = strdup(fi->filename[TTF_STYLE_BOLD]);
     }
 }
 
