@@ -6,7 +6,7 @@ Copyright (c) 2004 by Bill Kendrick
 bill@newbreedsoftware.com
 http://www.newbreedsoftware.com/tuxpaint/
 
-September 2, 2004
+September 7, 2004
 
 HIGH-PRIORITY DOCUMENTATION CHANGES:
 ------------------------------------
@@ -67,6 +67,9 @@ LOW-PRIORITY IMPLEMENTATION CHANGES:
 ------------------------------------
   * Add "include={filename}" option to .tuxpaintrc config file,
     to allow centralized config files.
+
+  * Adhere to Freedesktop Basedir Specification
+    ( http://freedesktop.org/Standards/basedir-spec/basedir-spec-0.6.html )
 
   * Allow keyboard buttons to alter shapes (+/- for size, e.g.)
 
