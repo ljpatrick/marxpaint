@@ -7,7 +7,10 @@ bill@newbreedsoftware.com
 http://www.newbreedsoftware.com/tuxpaint/
 
 
-2003.April.5 (0.9.11) [cvs]
+2003.April.11 (0.9.11) [cvs]
+  * Updated Korean translations.
+    Mark K. Kim <mark@cbreak.org>
+
   * UTF-8 support in the Text Tool!
     Robert Glowczynski <robertg@software.com.pl>,
     Mantas Kriauciunas <monte@mail.lt>
