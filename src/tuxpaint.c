@@ -7,12 +7,12 @@
   bill@newbreedsoftware.com
   http://www.newbreedsoftware.com/tuxpaint/
   
-  June 14, 2002 - February 26, 2003
+  June 14, 2002 - February 28, 2003
 */
 
 
 #define VER_VERSION     "0.9.11"
-#define VER_DATE        "2003.02.26"
+#define VER_DATE        "2003.02.28"
 
 
 /* #define DEBUG */
@@ -237,6 +237,7 @@ enum {
   LANG_IT,     /* Italian */
   LANG_JA,     /* Japanese */
   LANG_KO,     /* Korean */
+  LANG_LT,     /* Lithuanian */
   LANG_NL,     /* Dutch */
   LANG_NN,     /* Norwegian */
   LANG_PL,     /* Polish */
@@ -267,6 +268,7 @@ const char * lang_prefixes[NUM_LANGS] = {
   "it",
   "ja",
   "ko",
+  "lt",
   "nl",
   "nn",
   "pl",
@@ -290,6 +292,7 @@ int lang_use_utf8[] = {
   LANG_EL,
   LANG_JA,
   LANG_KO,
+  LANG_LT,
   LANG_ZH,
   -1
 };
@@ -3240,6 +3243,7 @@ void show_usage(FILE * f, char * prg)
     "  italian      italiano\n"
     "  japanese\n"
     "  korean\n"
+    "  lithuanian   lietuviu\n"
     "  norwegian    nynorsk                norsk\n"
     "  polish       polski\n"
     "  portuguese   portugues\n"
@@ -3658,6 +3662,12 @@ void setup(int argc, char * argv[])
 
   /* Set up language: */
 
+  if (langstr == NULL && getenv("LANG") != NULL &&
+      strncasecmp(getenv("LANG"), "lt_LT", 5) == 0)
+  {
+    langstr = strdup("lithuanian");
+  }
+
   if (langstr != NULL)
   {
     if (strcmp(langstr, "english") == 0 ||
@@ -3745,6 +3755,12 @@ void setup(int argc, char * argv[])
         else if (strcmp(langstr, "korean") == 0)
 	{
 	  putenv("LANG=ko_KR.UTF-8");
+	}
+        else if (strcmp(langstr, "lithuanian") == 0 ||
+                 strcmp(langstr, "lietuviu") == 0)
+	{
+	  putenv("LANG=lt_LT.UTF-8");
+	  putenv("LC_ALL=lt_LT.UTF-8");
 	}
         else if (strcmp(langstr, "chinese") == 0)
 	{
