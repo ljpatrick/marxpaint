@@ -7,7 +7,7 @@ bill@newbreedsoftware.com
 http://www.newbreedsoftware.com/tuxpaint/
 
 
-June 17, 2002 - February 13, 2005
+June 17, 2002 - March 9, 2005
 
 
 * Design and Coding:
@@ -138,6 +138,7 @@ June 17, 2002 - February 13, 2005
   * German
     Fabian Franz <FabianFranz@gmx.de>
     Roland Illig <roland.illig@gmx.de>
+    Patrick <nc-spechtpa3 {At} netcologne [Dot] de>
 
   * Greek
     The Greek Linux i18n Team <i18ngr@lists.hellug.gr>  [NOTE: mailing list]
