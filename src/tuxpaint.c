@@ -3544,6 +3544,9 @@ static multichan *find_most_saturated(double initial_hue, multichan * work,
   // find the most saturated pixel near the initial hue guess
   multichan *key_color_ptr = NULL;
   double hue_range;
+  unsigned int orig_i;
+
+  orig_i = i;
   
   switch (inf_stamps[cur_stamp]->tinter)
   {
@@ -3578,8 +3581,11 @@ hue_range_retry:;
       upper_hue_2 = upper_hue_1 - 2 * M_PI;
     }
   
+  i = orig_i;
   while (i--)
     {
+      //if (i < 10 || i > 20000)
+      //  printf("%d\n", i); fflush(stdout);
       mc = work + i;
 
       // if not in the first range, and not in the second range, skip this one
