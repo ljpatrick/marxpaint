@@ -21,12 +21,12 @@
   along with this program; if not, write to the Free Software
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   
-  June 14, 2002 - August 19, 2004
+  June 14, 2002 - September 4, 2004
 */
 
 
 #define VER_VERSION     "0.9.14"
-#define VER_DATE        "2004-08-23"
+#define VER_DATE        "2004-09-04"
 
 
 /* #define DEBUG */
@@ -548,6 +548,11 @@ char * savedir;
 
 int RGBtoYUV[65536];
 
+typedef struct dirent2 {
+  struct dirent f;
+  int place;
+} dirent2;
+
 
 /* Local function prototypes: */
 
@@ -608,7 +613,7 @@ void reset_avail_tools(void);
 void update_screen(int x1, int y1, int x2, int y2);
 Uint8 alpha(Uint8 c1, Uint8 c2, Uint8 a);
 int compare_strings(char * * s1, char * * s2);
-int compare_dirents(struct dirent * f1, struct dirent * f2);
+int compare_dirent2s(struct dirent2 * f1, struct dirent2 * f2);
 void draw_tux_text(int which_tux, char * str,
 		   int force_locale_font, int want_right_to_left);
 void wordwrap_text(TTF_Font * font, char * str, SDL_Color color,
@@ -7351,13 +7356,16 @@ int compare_strings(char * * s1, char * * s2)
 
 /* For qsort() call in do_open()... */
 
-int compare_dirents(struct dirent * f1, struct dirent * f2)
+int compare_dirent2s(struct dirent2 * f1, struct dirent2 * f2)
 {
 #ifdef DEBUG
-  printf("compare_dirents: %s\t%s\n", f1->d_name, f2->d_name);
+  printf("compare_dirents: %s\t%s\n", f1->f.d_name, f2->f.d_name);
 #endif
 
-  return (strcmp(f1->d_name, f2->d_name));
+  if (f1->place == f2->place)
+    return (strcmp(f1->f.d_name, f2->f.d_name));
+  else
+    return (f1->place - f2->place);
 }
 
 
@@ -9450,6 +9458,8 @@ int do_quit(void)
 
 #define PLACE_STARTERS_DIR 0
 #define PLACE_SAVED_DIR 1
+#define NUM_PLACES_TO_LOOK 2
+
 
 int do_open(int want_new_tool)
 {
@@ -9458,11 +9468,12 @@ int do_open(int want_new_tool)
   SDL_Surface * * thumbs = NULL;
   DIR * d;
   struct dirent * f;
-#ifndef __BEOS__
-  struct dirent * fs;
-#endif
-  char * dirname, * rfname;
+  struct dirent2 * fs;
+  int place;
+  char * dirname[NUM_PLACES_TO_LOOK];
+  char * rfname;
   char * * d_names = NULL, * * d_exts = NULL;
+  int * d_places;
   FILE * fi;
   char fname[1024];
   char * tmp_fname;
@@ -9474,9 +9485,6 @@ int do_open(int want_new_tool)
   Uint32 last_click_time;
   int last_click_which, last_click_button;
   int places_to_look;
-#ifdef __BEOS__
-  char * dot = NULL;
-#endif
 
 
 
@@ -9486,183 +9494,43 @@ int do_open(int want_new_tool)
   /* Allocate some space: */
 
   things_alloced = 32;
-#ifndef __BEOS__
-  fs = (struct dirent *) malloc(sizeof(struct dirent) * things_alloced);
-#else
-  thumbs = (SDL_Surface * *) malloc(sizeof(SDL_Surface *) * things_alloced);
-  d_names = (char * *) malloc(sizeof(char *) * things_alloced);
-  d_exts = (char * *) malloc(sizeof(char *) * things_alloced);
-#endif
+  
+  fs = (struct dirent2 *) malloc(sizeof(struct dirent2) * things_alloced);
   
   num_files = 0;
   cur = 0;
   which = 0;
   num_files_in_dirs = 0;
-  
-  thumbs = (SDL_Surface * *) malloc(sizeof(SDL_Surface *) * 1);
-  d_names = (char * *) malloc(sizeof(char *) * 1);
-  d_exts = (char * *) malloc(sizeof(char *) * 1);
 
 
   /* Open directories of images: */
 
-  for (places_to_look = 0; places_to_look < 2; places_to_look++)
+  for (places_to_look = 0;
+       places_to_look < NUM_PLACES_TO_LOOK;
+       places_to_look++)
   {
     if (places_to_look == PLACE_STARTERS_DIR)
     {
       /* Check for coloring-book style 'starter' images first: */
 
-      dirname = strdup("/usr/local/share/tuxpaint/starters");
+      /* FIXME: On Windows, MacOSX, BeOS, etc. -- do it their way! */
+      dirname[places_to_look] = strdup("/usr/local/share/tuxpaint/starters");
     }
     else
     {
       /* Then check for saved-images: */
 
-      dirname = get_fname("saved");
+      dirname[places_to_look] = get_fname("saved");
     }
     
 
     /* Read directory of images and build thumbnails: */
 
-    d = opendir(dirname);
+    d = opendir(dirname[places_to_look]);
     
     if (d != NULL)
     {
       /* Gather list of files (for sorting): */
-      
-#ifdef __BEOS__
-      /* FIXME: I tried to keep this in sync for BeOS, but cannot test! */
-      /* Shard, can you check to see that this works like the other OSes? */
-      /* -bjk 2004.06.01 */
-
-      do
-	{
-	  f = readdir(d);
-	  
-	  if (f && (dot = strstr(f->d_name, FNAME_EXTENSION)) != NULL)
-	    {
-	      if( strstr(f->d_name, "-t") == NULL)
-		{
-		  d_exts[num_files_in_dirs] = strdup(dot);
-		  *dot = 0;
-		  d_names[num_files_in_dirs] = strdup(f->d_name);
-
-
-		  /* Try to load thumbnail first: */
-		  
-		  snprintf(fname, sizeof(fname), "%s/%s-t%s",
-			   dirname, d_names[num_files], FNAME_EXTENSION);
-		  
-		  img = IMG_Load(fname);
-		  if (img != NULL)
-		    {
-		      /* Found the thumbnail - load it! */
-
-		      show_progress_bar();
-		      thumbs[num_files] = SDL_DisplayFormat(img);
-		      SDL_FreeSurface(img);
-		      if (thumbs[num_files] == NULL)
-			{
-			  fprintf(stderr,
-				  "\nError: Couldn't create a thumbnail of "
-				  "saved image!\n"
-				  "%s\n", fname);
-			}
-		    }
-		  else
-		    {
-		      /* No thumbnail - load original: */
-	
-		      snprintf(fname, sizeof(fname), "%s/%s%s",
-			       dirname, d_names[num_files], FNAME_EXTENSION);
-		      img = IMG_Load(fname);
-		      show_progress_bar();
-
-		      if (img != NULL)
-			{
-			  /* Turn it into a thumbnail: */
-
-			  img1 = SDL_DisplayFormat(img);
-			  img2 = thumbnail(img1, THUMB_W - 20, THUMB_H - 20, 0);
-			  SDL_FreeSurface(img1);
-			  show_progress_bar();
-			  thumbs[num_files] = SDL_DisplayFormat(img2);
-			  SDL_FreeSurface(img2);
-			  if (thumbs[num_files] == NULL)
-			    {
-			      fprintf(stderr,
-				      "\nError: Couldn't create a thumbnail of "
-				      "saved image!\n"
-				      "%s\n", fname);
-			    }
-			  SDL_FreeSurface(img);
-			  show_progress_bar();
-
-	      
-			  /* Let's save this thumbnail, so we don't have to create it
-			     again next time 'Open' is called: */
-
-			  if (places_to_look != PLACE_STARTERS_DIR)
-			  {
-			    debug("Saving thumbnail for this one!");
-			    snprintf(fname, sizeof(fname), "%s/%s-t%s",
-				     dirname, d_names[num_files],
-				     FNAME_EXTENSION);
-
-			    fi = fopen(fname, "wb");
-			    if (fi == NULL)
-			    {
-			      fprintf(stderr,
-				      "\nError: Couldn't save thumbnail of "
-				      "saved image!\n"
-				      "%s\n"
-				      "The error that occurred was:\n"
-				      "%s\n\n",
-				      fname, strerror(errno));
-			    }
-			    else
-			    {
-			      do_png_save(fi, fname, thumbs[num_files]);
-	        
-			      /* NOTE: fi is closed there so no need to fclose it here */
-			    }
-			  }
-			  else
-			  {
-			    /* Starters SHOULD come with thunbnails! */
-			    /* We probably can't save there, anyway! */
-			  }
-			}
-		    }
-
-
-		  show_progress_bar();
-		  num_files++;
-
-
-		  *dot = '.';
-		  num_files_in_dirs++;
-
-
-		  if (num_files_in_dirs > things_alloced)
-		    {
-		      things_alloced = things_alloced + 32;
-	    
-		      thumbs = (SDL_Surface * *)
-			realloc(thumbs, sizeof(SDL_Surface *) * things_alloced);
-	    
-		      d_names = (char * *)
-			realloc(d_names, sizeof(char *) * things_alloced);
-
-		      d_exts = (char * *)
-			realloc(d_exts, sizeof(char *) * things_alloced);
-		    }
-		}
-	    }
-	}
-      while (f != NULL && num_files_in_dirs < MAX_FILES);
-
-#else
       
       do
 	{
@@ -9670,42 +9538,48 @@ int do_open(int want_new_tool)
 	  
 	  if (f != NULL)
 	    {
-	      memcpy(&(fs[num_files_in_dirs]), f, sizeof(struct dirent));
+	      memcpy(&(fs[num_files_in_dirs].f), f, sizeof(struct dirent));
+	      fs[num_files_in_dirs].place = places_to_look;
+	      
 	      num_files_in_dirs++;
 	      
 	      if (num_files_in_dirs >= things_alloced)
 		{
 		  things_alloced = things_alloced + 32;
-		  fs = (struct dirent *) realloc(fs, sizeof(struct dirent) * things_alloced);
+		  fs = (struct dirent2 *) realloc(fs,
+				  		  sizeof(struct dirent2) *
+						  things_alloced);
 		}
 	    }
 	}
       while (f != NULL);
       
-#endif
-
       closedir(d);
     }
+  }
 
 
     /* (Re)allocate space for the information about these files: */
 
-    thumbs = (SDL_Surface * *) realloc(thumbs, sizeof(SDL_Surface *) * num_files_in_dirs);
-    d_names = (char * *) realloc(d_names, sizeof(char *) * num_files_in_dirs);
-    d_exts = (char * *) realloc(d_exts, sizeof(char *) * num_files_in_dirs);
-      
-      
+    thumbs = (SDL_Surface * *) malloc(sizeof(SDL_Surface *) *
+		    			num_files_in_dirs);
+    d_places = (int *) malloc(sizeof(int) * num_files_in_dirs);
+    d_names = (char * *) malloc(sizeof(char *) * num_files_in_dirs);
+    d_exts = (char * *) malloc(sizeof(char *) * num_files_in_dirs);
+
+
     /* Sort: */
       
-    qsort(fs, num_files_in_dirs, sizeof(struct dirent),
-	  (int(*)(const void *, const void *))compare_dirents);
+    qsort(fs, num_files_in_dirs, sizeof(struct dirent2),
+	  (int(*)(const void *, const void *))compare_dirent2s);
       
       
     /* Read directory of images and build thumbnails: */
       
     for (j = 0; j < num_files_in_dirs; j++)
     {
-      f = &(fs[j]);
+      f = &(fs[j].f);
+      place = fs[j].place;
 
       show_progress_bar();
       
@@ -9713,7 +9587,8 @@ int do_open(int want_new_tool)
       {
         debug(f->d_name);
 	      
-        if (strstr(f->d_name, "-t") == NULL)
+        if (strstr(f->d_name, "-t.") == NULL &&
+	    strstr(f->d_name, "-front.") == NULL)
 	{
 	  if (strstr(f->d_name, FNAME_EXTENSION) != NULL
 #ifndef SAVE_AS_BMP
@@ -9737,10 +9612,11 @@ int do_open(int want_new_tool)
 	      d_exts[num_files] = strdup(".bmp");
 	    }
 #endif
-		      
+ 
 	    d_names[num_files] = strdup(fname);
-		      
-		  
+	    d_places[num_files] = place;
+
+
 	    /* Is it the 'current' file we just loaded?
 	       We'll make it the current selection! */
 		 
@@ -9748,13 +9624,21 @@ int do_open(int want_new_tool)
 	    {
 	      which = num_files;
 	      cur = (which / 4) * 4;
+
+	      /* Center the cursor (useful for when the last item is
+	         selected first!) */
+
+	      if (cur - 8 >= 0)
+		cur = cur - 8;
+	      else if (cur - 4 >= 0)
+		cur = cur - 4;
 	    }
 		     
-
+    
 	    /* Try to load thumbnail first: */
-		      
+
 	    snprintf(fname, sizeof(fname), "%s/.thumbs/%s-t.png",
-		     dirname, d_names[num_files]);
+		     dirname[d_places[num_files]], d_names[num_files]);
 	    debug(fname);
 	    img = IMG_Load(fname);
 		      
@@ -9762,16 +9646,19 @@ int do_open(int want_new_tool)
 	    {
 	      /* No thumbnail in the new location ("saved/.thumbs"),
 	         try the old locatin ("saved/"): */
-			  
-	      snprintf(fname, sizeof(fname), "%s/%s-t.png", dirname,
+	
+	      snprintf(fname, sizeof(fname), "%s/%s-t.png",
+		       dirname[d_places[num_files]],
 		       d_names[num_files]);
               debug(fname);
 			  
 	      img = IMG_Load(fname);
 	    }
-		      
+	    
 	    if (img != NULL)
 	    {
+	      /* Loaded the thumbnail from one or the other location */
+
 	      show_progress_bar();
 		  
 	      thumbs[num_files] = SDL_DisplayFormat(img);
@@ -9784,11 +9671,10 @@ int do_open(int want_new_tool)
 		        "saved image!\n"
 		        "%s\n", fname);
 	      }
-			  
+
 	      num_files++;
 	    }
-		      
-            if (img == NULL)
+	    else
 	    {
 	      /* No thumbnail - load original: */
 	      /* (Make sure we have a .../saved/.thumbs/ directory:) */
@@ -9807,10 +9693,10 @@ int do_open(int want_new_tool)
 	      }
 			  
 	      free(tmp_fname);
-			  
-			  
+
+
 	      snprintf(fname, sizeof(fname), "%s/%s",
-		       dirname, f->d_name);
+		       dirname[d_places[num_files]], f->d_name);
 			  debug(fname);
 #ifdef SAVE_AS_BMP
 	      img = SDL_LoadBMP(fname);
@@ -9860,30 +9746,33 @@ int do_open(int want_new_tool)
 			      
 		/* Let's save this thumbnail, so we don't have to
 		   create it again next time 'Open' is called: */
-			      
-		debug("Saving thumbnail for this one!");
-			      
-		snprintf(fname, sizeof(fname), "%s/.thumbs/%s-t.png",
-			 dirname, d_names[num_files]);
-			      
-		fi = fopen(fname, "wb");
-		if (fi == NULL)
+		
+		if (d_places[num_files] == PLACE_SAVED_DIR)
 		{
-		  fprintf(stderr,
-			  "\nError: Couldn't save thumbnail of "
-			  "saved image!\n"
-			  "%s\n"
-			  "The error that occurred was:\n"
-			  "%s\n\n",
-			  fname, strerror(errno));
-		}
-		else
-		{
-		  do_png_save(fi, fname, thumbs[num_files]);
-		}
+		  debug("Saving thumbnail for this one!");
+
+		  snprintf(fname, sizeof(fname), "%s/.thumbs/%s-t.png",
+			   dirname[d_places[num_files]], d_names[num_files]);
+			      
+		  fi = fopen(fname, "wb");
+		  if (fi == NULL)
+		  {
+		    fprintf(stderr,
+			    "\nError: Couldn't save thumbnail of "
+			    "saved image!\n"
+			    "%s\n"
+			    "The error that occurred was:\n"
+			    "%s\n\n",
+			    fname, strerror(errno));
+		  }
+		  else
+		  {
+		    do_png_save(fi, fname, thumbs[num_files]);
+		  }
 		 
-		show_progress_bar();
-		 
+		  show_progress_bar();
+		}
+
 		 
 		num_files++;
 	      }
@@ -9892,13 +9781,12 @@ int do_open(int want_new_tool)
 	}
 	else
 	{
-	  /* It was a thumbnail file ("...-t.png") */
+	  /* It was a thumbnail file ("...-t.png") or immutable scene starter's
+	     overlay layer ("...-front.png") */
 	}
       }
     }
       
-    free(dirname);
-  }
       
       
 #ifdef DEBUG
@@ -10023,13 +9911,14 @@ int do_open(int want_new_tool)
 	     
 	      
 	/* "Erase" button: */
-	
-	/* FIXME: Deactivate if an immutable file ("starter") is
-	   selected.  Reactivate when clicking a normal (saved) file. */
 
 	dest.x = WINDOW_WIDTH - 96 - 48 - 48;
 	dest.y = (48 * 7 + 40 + HEIGHTOFFSET) - 48;
-	SDL_BlitSurface(img_erase, NULL, screen, &dest);
+	
+	if (d_places[which] != PLACE_STARTERS_DIR)
+	  SDL_BlitSurface(img_erase, NULL, screen, &dest);
+	else
+	  SDL_BlitSurface(img_btn_off, NULL, screen, &dest);
 	      
 	dest.x = WINDOW_WIDTH - 96 - 48 - 48 + (48 - img_openlabels_erase->w) / 2;
 	dest.y = (48 * 7 + 40 + HEIGHTOFFSET) - img_openlabels_erase->h;
@@ -10139,6 +10028,7 @@ int do_open(int want_new_tool)
 		   (event.key.keysym.mod & KMOD_CTRL ||
 		    event.key.keysym.mod & KMOD_LCTRL ||
 		    event.key.keysym.mod & KMOD_RCTRL) &&
+		   d_places[which] != PLACE_STARTERS_DIR &&
 		   !noshortcuts)
 	    {
 	      /* Delete! */
@@ -10241,7 +10131,8 @@ int do_open(int want_new_tool)
 		  else if (event.button.x >= (WINDOW_WIDTH - 96 - 48 - 48) &&
 			   event.button.x < (WINDOW_WIDTH - 48 - 96) &&
 			   event.button.y >= (48 * 7 + 40 + HEIGHTOFFSET) - 48 &&
-			   event.button.y < (48 * 7 + 40 + HEIGHTOFFSET))
+			   event.button.y < (48 * 7 + 40 + HEIGHTOFFSET) &&
+			   d_places[which] != PLACE_STARTERS_DIR)
 		    {
 		      /* Erase */
 		  
@@ -10275,7 +10166,8 @@ int do_open(int want_new_tool)
 			    (event.button.x >= (WINDOW_WIDTH - 96 - 48) &&
 			     event.button.x < (WINDOW_WIDTH - 96)) ||
 			    (event.button.x >= (WINDOW_WIDTH - 96 - 48 - 48) &&
-			     event.button.x < (WINDOW_WIDTH - 48 - 96))) &&
+			     event.button.x < (WINDOW_WIDTH - 48 - 96) &&
+			     d_places[which] != PLACE_STARTERS_DIR)) &&
 			   event.button.y >= (48 * 7 + 40 + HEIGHTOFFSET) - 48 &&
 			   event.button.y < (48 * 7 + 40 + HEIGHTOFFSET))
 		    {
@@ -10345,6 +10237,7 @@ int do_open(int want_new_tool)
 			      d_names[i] = d_names[i + 1];
 			      d_exts[i] = d_exts[i + 1];
 			      thumbs[i] = thumbs[i + 1];
+			      d_places[i] = d_places[i + 1];
 			    }
 		      
 			  num_files--;
@@ -10411,15 +10304,13 @@ int do_open(int want_new_tool)
 		}
 	   
 
-	      /* BEGIN FIXME: Determine if this was a 'starter' image, and
-	         use a different path if so... */
+	      /* Figure out filename: */
 
-	      snprintf(fname, sizeof(fname), "saved/%s%s",
+	      snprintf(fname, sizeof(fname), "%s/%s%s",
+		       dirname[d_places[which]],
 		       d_names[which], d_exts[which]);
-	  
-	      rfname = get_fname(fname);
 
-	      /* -- END FIXME -- */
+	      rfname = get_fname(fname);
 	  
 
 #ifdef SAVE_AS_BMP
@@ -10458,17 +10349,28 @@ int do_open(int want_new_tool)
 		  oldest_undo = 0;
 		  newest_undo = 0;
 
-		  /* FIXME: Set values so that we don't try to
-		     re-save immutable images */
-	      
-		  been_saved = 1;
+		  if (d_places[which] == PLACE_SAVED_DIR)
+		  {
+		    /* Saved image: */
+			  
+		    been_saved = 1;
+	  
+		    strcpy(file_id, d_names[which]);
+		  }
+		  else
+		  {
+		    /* Immutable image; we'll need to save a new one: */
+
+		    been_saved = 1;
+
+      		    file_id[0] = '\0';
+		  }
+
 		  reset_avail_tools();
 		  tool_avail[TOOL_NEW] = 1;
 	      
 		  tool_avail_bak[TOOL_UNDO] = 0;
 		  tool_avail_bak[TOOL_REDO] = 0;
-	  
-		  strcpy(file_id, d_names[which]);
 
 		  want_new_tool = 1;
 		}
@@ -10493,8 +10395,12 @@ int do_open(int want_new_tool)
 	  free(d_exts[i]);
 	}
 
+      for (i = 0; i < NUM_PLACES_TO_LOOK; i++)
+	free(dirname[i]);
+
       free(d_names);
       free(d_exts);
+      free(d_places);
 
   return(want_new_tool);
 }
