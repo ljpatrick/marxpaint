@@ -6253,10 +6253,9 @@ static void tp_ftw(char *restrict const dir, unsigned dirlen, int rsrc,
 #warning Failed to see DT_UNKNOWN
 #endif
 
-#ifdef _DIRENT_HAVE_D_NAMLEN
+#if defined(_DIRENT_HAVE_D_NAMLEN) || defined(__APPLE__) || defined(__OpenBSD__) || defined(__NetBSD__) || defined(__FreeBSD__)
       int d_namlen = f->d_namlen;
 #else
-#warning Failed to see _DIRENT_HAVE_D_NAMLEN
       int d_namlen = strlen(f->d_name);
 #endif
       int add_rsrc = 0;
