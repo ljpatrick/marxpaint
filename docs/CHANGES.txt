@@ -37,8 +37,15 @@ http://www.newbreedsoftware.com/tuxpaint/
   * Belarusian translation created.
     Eugene Zelenko <greendeath@mail.ru>
 
-  * Support for Croatian
+  * Croatian translation created.
     Nedjeljko Jedvaj <jedvaj.nedeljko@lexunit.com>
+
+  * Traditional Chinese translation created.
+    Song Huang <Song@ossacc.org>
+
+  * Added "--lang simplified-chinese" option (same as "--lang chinese").
+    Simplified also now looks for "zh_cn.ttf" font, not "zh.ttf"
+    (was too ambiguous).
 
   * Welsh translation created.
     Kevin Donnelly <kevin@dotmon.com>

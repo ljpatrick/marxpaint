@@ -7,7 +7,7 @@ bill@newbreedsoftware.com
 http://www.newbreedsoftware.com/tuxpaint/
 
 
-June 17, 2002 - May 16, 2004
+June 17, 2002 - June 5, 2004
 
 
 * Design and Coding:
@@ -94,8 +94,11 @@ June 17, 2002 - May 16, 2004
   * Catalan
     Pere Pujal Carabantes <ppujal@airtel.net>
 
-  * Chinese
+  * Chinese (Simplified)
     Wang Jian <lark@linux.net.cn>
+
+  * Chinese (Traditional)
+    Song Huang <Song@ossacc.org>
 
   * Croatian
     Nedjeljko Jedvaj <jedvaj.nedeljko@lexunit.com>

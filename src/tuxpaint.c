@@ -327,7 +327,8 @@ enum {
   LANG_TR,     /* Turkish */
   LANG_VI,     /* Vietnamese */
   LANG_WA,     /* Walloon */
-  LANG_ZH,     /* Chinese */
+  LANG_ZH_CN,  /* Chinese (Simplified) */
+  LANG_ZH_TW,  /* Chinese (Traditional) */
   NUM_LANGS
 };
 
@@ -373,7 +374,8 @@ const char * lang_prefixes[NUM_LANGS] = {
   "tr",
   "vi",
   "wa",
-  "zh"
+  "zh_cn",
+  "zh_tw"
 };
 
 
@@ -389,7 +391,8 @@ int lang_use_utf8[] = {
   LANG_JA,
   LANG_KO,
   LANG_TA,
-  LANG_ZH,
+  LANG_ZH_CN,
+  LANG_ZH_TW,
   -1
 };
 
@@ -3814,7 +3817,8 @@ void show_lang_usage(FILE * f, char * prg)
 /* br */     "  breton       brezhoneg\n"
 /* en_GB */  "  british      british-english\n"
 /* ca */     "  catalan      catala\n"
-/* zh_CN */  "  chinese\n"
+/* zh_CN */  "  chinese      simplified-chinese\n"
+/* zh_TW */  "               traditional-chinese\n"
 /* hr */     "  croatian     hrvatski\n"
 /* cs */     "  czech        cesky\n"
 /* da */     "  danish       dansk\n"
@@ -3872,7 +3876,8 @@ void show_locale_usage(FILE * f, char * prg)
 	  "  br_FR   (Breton       Brezhoneg)\n"
 	  "  en_GB   (British      British English)\n"
 	  "  ca_ES   (Catalan      Catala)\n"
-	  "  zh_CN   (Chinese)\n"
+	  "  zh_CN   (Chinese-Simplified)\n"
+	  "  zh_TW   (Chinese-Traditional)\n"
 	  "  cs_CZ   (Czech        Cesky)\n"
 	  "  da_DK   (Danish       Dansk)\n"
 	  "  nl_NL   (Dutch)\n"
@@ -4650,10 +4655,16 @@ void setup(int argc, char * argv[])
 	  putenv("LANG=wa_BE@euro");
 	  putenv("LC_ALL=wa_BE@euro");
 	}
-      else if (strcmp(langstr, "chinese") == 0)
+      else if (strcmp(langstr, "chinese") == 0 ||
+               strcmp(langstr, "simplified-chinese") == 0)
 	{
 	  putenv("LANG=zh_CN.UTF-8");
 	  putenv("LC_ALL=zh_CN.UTF-8");
+	}
+      else if (strcmp(langstr, "traditional-chinese") == 0)
+	{
+	  putenv("LANG=zh_TW.UTF-8");
+	  putenv("LC_ALL=zh_TW.UTF-8");
 	}
       else if (strcmp(langstr, "help") == 0 || strcmp(langstr, "list") == 0)
 	{

@@ -6,7 +6,7 @@
 # bill@newbreedsoftware.com
 # http://www.newbreedsoftware.com/tuxpaint/
 
-# June 14, 2002 - June 1, 2004
+# June 14, 2002 - June 5, 2004
 
 
 # Where to install things:
@@ -262,6 +262,7 @@ uninstall:
 	-rm $(LOCALE_PREFIX)vi/LC_MESSAGES/tuxpaint.mo
 	-rm $(LOCALE_PREFIX)wa/LC_MESSAGES/tuxpaint.mo
 	-rm $(LOCALE_PREFIX)zh_CN/LC_MESSAGES/tuxpaint.mo
+	-rm $(LOCALE_PREFIX)zh_TW/LC_MESSAGES/tuxpaint.mo
 	-rm -f -r $(CONFDIR)
 
 
@@ -445,6 +446,11 @@ install-gettext:
 	@install -d $(LOCALE_PREFIX)zh_CN/LC_MESSAGES
 	@cp trans/zh_cn.mo $(LOCALE_PREFIX)zh_CN/LC_MESSAGES/tuxpaint.mo
 	@chmod 644 $(LOCALE_PREFIX)zh_CN/LC_MESSAGES/tuxpaint.mo
+	@#
+	@echo "   zh_TW ...Chinese (Traditional)..."
+	@install -d $(LOCALE_PREFIX)zh_TW/LC_MESSAGES
+	@cp trans/zh_tw.mo $(LOCALE_PREFIX)zh_TW/LC_MESSAGES/tuxpaint.mo
+	@chmod 644 $(LOCALE_PREFIX)zh_TW/LC_MESSAGES/tuxpaint.mo
 	@#
 	@echo "   hr_HR ...Croatian..."
 	@install -d $(LOCALE_PREFIX)hr/LC_MESSAGES
@@ -745,7 +751,8 @@ translations: trans \
 	trans/tr.mo \
 	trans/vi.mo \
 	trans/wa.mo \
-	trans/zh_cn.mo
+	trans/zh_cn.mo \
+	trans/zh_tw.mo
 
 trans:
 	@echo
@@ -915,6 +922,10 @@ trans/wa.mo:	src/messages/wa.po
 trans/zh_cn.mo:	src/messages/zh_cn.po
 	@echo "   zh_CN ...Chinese..."
 	@msgfmt src/messages/zh_cn.po -o trans/zh_cn.mo
+
+trans/zh_tw.mo:	src/messages/zh_tw.po
+	@echo "   zh_TW ...Chinese..."
+	@msgfmt src/messages/zh_tw.po -o trans/zh_tw.mo
 
 
 
