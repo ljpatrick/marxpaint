@@ -6,7 +6,7 @@ Copyright (c) 2004 by Bill Kendrick
 bill@newbreedsoftware.com
 http://www.newbreedsoftware.com/tuxpaint/
 
-April 14, 2004
+May 30, 2004
 
 
 LOW-PRIORITY DOCUMENTATION CHANGES:
@@ -35,6 +35,18 @@ HIGH-PRIORITY IMPLEMENTATION CHANGES:
 
   * Only use "savedir" for saved files, not to look for stamps/brushes.
     Added "datadir" option to override where to look for local stamps/brushes.
+
+  * Coloring book mode -- immutable images stored in Tux Paint's "data"
+    directory, but available via the "Open" dialog.  They would be black
+    outlines of shapes/pictures for kids to color, like a coloring book.
+    The outlines would always remain 'above' the paint.
+
+  * Background mode -- immutable images stored in Tux Paint's "data"
+    directory, but available via the "Open" dialog.  They would be
+    background images (a 'scene'), and possibly foreground elements,
+    as well (think of a photo of a reef, underwater...).  The background
+    would be drawn over, but would come back when the "Eraser" tool is used.
+    (Any foreground element would always appear 'above' the paint.)
 
 
 LOW-PRIORITY IMPLEMENTATION CHANGES:
@@ -157,7 +169,8 @@ POSSIBLE FEATURE IDEAS:
   
   * Support animated brushes (then replace Sparkle magic with one) ??
   
-  * Make a 'rainbow' color (then remove Rainbow magic tool; no longer needed) ??
+  * Make a 'rainbow' color (then remove Rainbow magic tool;
+    no longer needed) ??
   
   * "Gallery"/slideshow mode (available via Open dialog, maybe?)
     (Ben Armstrong's suggestion: 2002.08.26)
