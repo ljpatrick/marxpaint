@@ -7,7 +7,7 @@ bill@newbreedsoftware.com
 http://www.newbreedsoftware.com/tuxpaint/
 
 
-June 17, 2002 - May 9, 2004
+June 17, 2002 - May 16, 2004
 
 
 * Design and Coding:
@@ -82,7 +82,7 @@ June 17, 2002 - May 9, 2004
   * Basque
     Juan Irigoien <juanirigoien@irakasle.net>
 
-  * Belarusian (coming soon)
+  * Belarusian
     Eugene Zelenko <greendeath@mail.ru>
   
   * Breton
@@ -96,6 +96,9 @@ June 17, 2002 - May 9, 2004
 
   * Chinese
     Wang Jian <lark@linux.net.cn>
+
+  * Croatian
+    Nedjeljko Jedvaj <jedvaj.nedeljko@lexunit.com>
   
   * Czech
     Peter Sterba <sterba@sterba.com>

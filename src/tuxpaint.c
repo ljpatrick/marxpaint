@@ -21,12 +21,12 @@
   along with this program; if not, write to the Free Software
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   
-  June 14, 2002 - May 9, 2004
+  June 14, 2002 - May 16, 2004
 */
 
 
 #define VER_VERSION     "0.9.14"
-#define VER_DATE        "2004.05.09"
+#define VER_DATE        "2004.05.16"
 
 
 /* #define DEBUG */
@@ -3804,6 +3804,7 @@ void show_lang_usage(FILE * f, char * prg)
 /* en_GB */  "  british      british-english\n"
 /* ca */     "  catalan      catala\n"
 /* zh_CN */  "  chinese\n"
+/* hr */     "  croatian     hrvatski\n"
 /* cs */     "  czech        cesky\n"
 /* da */     "  danish       dansk\n"
 /* nl */     "  dutch        nederlands\n"
@@ -3869,6 +3870,7 @@ void show_locale_usage(FILE * f, char * prg)
 	  "  de_DE   (German       Deutsch)\n"
 	  "  el_GR   (Greek)\n"
 	  "  he_IL   (Hebrew)\n"
+	  "  hr_HR   (Croatian     Hrvatski)\n"
 	  "  hu_HU   (Hungarian    Magyar)\n"
 	  "  is_IS   (Icelandic    Islenska)\n"
 	  "  id_ID   (Indonesian   Bahasa Indonesia)\n"
@@ -4399,6 +4401,12 @@ void setup(int argc, char * argv[])
 	{
 	  putenv("LANG=C");
 	  putenv("LC_ALL=C");
+	}
+      else if (strcmp(langstr, "croatian") == 0 ||
+	       strcmp(langstr, "hrvatski") == 0)
+	{
+	  putenv("LANG=hr_HR");
+	  putenv("LC_ALL=hr_HR");
 	}
       else if (strcmp(langstr, "catalan") == 0 ||
 	       strcmp(langstr, "catala") == 0)

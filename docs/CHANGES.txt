@@ -7,7 +7,7 @@ bill@newbreedsoftware.com
 http://www.newbreedsoftware.com/tuxpaint/
 
 
-2004.May.13 (0.9.14) [cvs]
+2004.May.16 (0.9.14) [cvs]
   * Fixed "--noprint=yes" not working under Windows and BeOS.
     Thanks to Adam Moore for pointing out this bug!
     Bill Kendrick & Mark K. Kim
@@ -18,8 +18,11 @@ http://www.newbreedsoftware.com/tuxpaint/
   * Fixed crash bug when translated text ends in a space.
     Mark K. Kim & John Popplewell
 
-  * Support for Belarusian.  [Not translated yet]
+  * Belarusian translation created.
     Eugene Zelenko <greendeath@mail.ru>
+
+  * Support for Croatian [not translated yet]
+    Nedjeljko Jedvaj <jedvaj.nedeljko@lexunit.com> [will translate]
 
   * Welsh translation created.
     Kevin Donnelly <kevin@dotmon.com>
