@@ -12,7 +12,7 @@
 
 
 #define VER_VERSION     "0.9.13"
-#define VER_DATE        "2003.09.27"
+#define VER_DATE        "2003.09.28"
 
 
 /* #define DEBUG */
@@ -1595,6 +1595,15 @@ void mainloop(void)
 			    do_draw = 1;
 			  }
 			}
+		      else if (cur_tool == TOOL_STAMP &&
+			       event.button.y >= (48 * ((max / 2) + TOOLOFFSET / 2)) + 40 &&
+			       event.button.y < (48 * ((max / 2) + TOOLOFFSET / 2)) + 40 + 96 &&
+			       !disable_stamp_controls)
+		      {
+			/* Stamp controls! */
+
+			printf("CLICK!\n");
+		      }
 		      
 		      
 		      /* Assign the change(s), if any / redraw, if needed: */
