@@ -8,12 +8,14 @@ msgstr ""
 "Project-Id-Version: tuxpaint 0.9.14\n"
 "Report-Msgid-Bugs-To: tuxpaint-i18n@tux4kids.net\n"
 "POT-Creation-Date: 2004-03-22 11:23-0800\n"
-"PO-Revision-Date: 2004-10-20 20:19+0100\n"
+"PO-Revision-Date: 2004-10-23 10:01+0100\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Last-Translator: Leandro Regueiro <unho@gulo.org>\n"
-"Language-Team: \n"
+"Language-Team: Galician <trasno@ceu.fi.udc.es>\n"
+"X-Poedit-Language: Galician\n"
+"X-Poedit-Country: SPAIN\n"
 
 #: tuxpaint.c:809
 msgid "Do you really want to quit?"
@@ -67,7 +69,7 @@ msgstr "Está ben!"
 
 #: tuxpaint.c:826
 msgid "Never mind!"
-msgstr "Tanto ten!"
+msgstr "Nin pensalo!"
 
 #: tuxpaint.c:828
 msgid "There are no saved files!"
