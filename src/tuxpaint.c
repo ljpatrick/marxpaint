@@ -410,6 +410,7 @@ typedef struct info_type {
   int tintable;
   int mirrorable;
   int flipable;
+  int tintgray;
 } info_type;
 
 
@@ -643,6 +644,7 @@ void wait_for_sfx(void);
 int current_language(void);
 int stamp_colorable(int stamp);
 int stamp_tintable(int stamp);
+int stamp_tintgray(int stamp);
 void rgbtohsv(Uint8 r8, Uint8 g8, Uint8 b8, float *h, float *s, float *v);
 void hsvtorgb(float h, float s, float v, Uint8 *r8, Uint8 *g8, Uint8 *b8);
 void show_progress_bar(void);
@@ -3024,8 +3026,8 @@ void stamp_draw(int x, int y)
 			  &r, &g, &b, &a);
 	
 	      rgbtohsv(r, g, b, &stamp_hue, &stamp_sat, &stamp_val);	
-	
-	      if (stamp_sat > 0.25)
+     
+	      if ( stamp_tintgray(cur_stamp) || stamp_sat > 0.25 )
 		hsvtorgb(col_hue, col_sat, stamp_val, &r, &g, &b);
 	      //	else
 	      //	  hsvtorgb(col_hue, col_sat, stamp_val, &r, &g, &b);
@@ -5331,6 +5333,7 @@ void setup(int argc, char * argv[])
 	      inf_stamps[i]->tintable = 0;
 	      inf_stamps[i]->colorable = 0;
 	      inf_stamps[i]->mirrorable = 1;
+	      inf_stamps[i]->tintgray = 1;
 	      inf_stamps[i]->flipable = 1;
 	    }
       
@@ -8154,6 +8157,7 @@ info_type * loadinfo(char * fname)
   inf.colorable = 0;
   inf.tintable = 0;
   inf.mirrorable = 1;
+  inf.tintgray = 1;
   inf.flipable = 1;
 
 
@@ -8197,6 +8201,8 @@ info_type * loadinfo(char * fname)
 		inf.tintable = 1;
 	      else if (strcmp(buf, "nomirror") == 0)
 		inf.mirrorable = 0;
+	      else if (strcmp(buf, "notintgray") == 0)
+		inf.tintgray = 0;
 	      else if (strcmp(buf, "noflip") == 0)
 		inf.flipable = 0;
 	    }
@@ -11345,6 +11351,21 @@ int stamp_tintable(int stamp)
   if (inf_stamps[stamp] != NULL)
     {
       return inf_stamps[stamp]->tintable;
+    }
+  else
+    {
+      return 0;
+    }
+}
+
+
+/* Returns whether low-saturation ('gray') parts of stamp can be tinted: */
+
+int stamp_tintgray(int stamp)
+{
+  if (inf_stamps[stamp] != NULL)
+    {
+      return inf_stamps[stamp]->tintgray;
     }
   else
     {
