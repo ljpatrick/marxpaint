@@ -94,10 +94,7 @@ LOW-PRIORITY IMPLEMENTATION CHANGES:
 
 HIGH-PRIORITY BUGS:
 -------------------
-  * FreeSans font has too large line spacing ('leading'), so there's not
-    enough space for two lines of text in the bottom panel. Reducing leading
-    for FreeSans font (*not* other fonts, it's only FreeSans that has
-    an unusual large amount of leading).
+  * Scroll-wheel doesn't work in open dialog.
 
   * Deal with clash between Open dialog arrow key controls and
     mouse arrow key (--keyboard) controls.
