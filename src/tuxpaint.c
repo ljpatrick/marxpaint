@@ -7021,7 +7021,7 @@ static void run_font_scanner(void)
   size += 2;  // for 2-byte font count
   char *buf = malloc(size);
   char *walk = buf;
-//  printf("Sending %u bytes with %u families.\n", size, num_font_families);
+  printf("Sending %u bytes with %u families.\n", size, num_font_families);
   *walk++ = num_font_families & 0xffu;
   *walk++ = num_font_families >> 8u;
   i = num_font_families;
@@ -7128,7 +7128,7 @@ static void receive_some_font_info(void)
   unsigned char *walk = buf;
   num_font_families = *walk++;
   num_font_families += *walk++ << 8u;
-//  printf("Got %u bytes with %u families.\n", buf_fill, num_font_families);
+  printf("Got %u bytes with %u families.\n", buf_fill, num_font_families);
   user_font_families = malloc(num_font_families * sizeof *user_font_families);
   family_info *fip = malloc(num_font_families * sizeof **user_font_families);
   unsigned i = num_font_families;
