@@ -5933,7 +5933,7 @@ void draw_colors(int enabled)
       if (i == cur_color && enabled)
 	{
 	  dest.x = (i * ((WINDOW_WIDTH - 96) / NUM_COLORS)) + 96;
-	  dest.y = 40 + ((NUM_TOOLS / 2) * 48) + HEIGHTOFFSET;
+	  dest.y = 44 + ((NUM_TOOLS / 2) * 48) + HEIGHTOFFSET;
 
 	  SDL_BlitSurface(img_paintcan, NULL, screen, &dest);
 	}
