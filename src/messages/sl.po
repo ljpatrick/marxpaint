@@ -65,11 +65,11 @@ msgid "Starting a new picture will erase the current one!"
 msgstr "Če odpreš novo sliko, bo trenutna slika izbrisana!"
 
 #: src/tuxpaint.c:811
-msgid "That's Ok"
+msgid "That's OK!"
 msgstr "To je v redu"
 
 #: src/tuxpaint.c:812
-msgid "Never Mind!"
+msgid "Never mind!"
 msgstr "Ne skrbi!"
 
 #: src/tuxpaint.c:814
@@ -114,8 +114,8 @@ msgid "No, save a new file"
 msgstr "Ne, shrani novi dokument"
 
 #: src/tuxpaint.c:9885
-msgid "Choose the picture you want, then click 'Open'"
-msgstr "Izberi sliko in klikni 'Odpri'"
+msgid "Choose the picture you want, then click 'Open'."
+msgstr "Izberi sliko in klikni 'Odpri'."
 
 #: src/colors.h:62
 msgid "Black!"
@@ -250,28 +250,28 @@ msgid "You can draw in rainbow colors!"
 msgstr "Rišeš lahko z barvami mavrice!"
 
 #: src/magic.h:74
-msgid "Click and move to draw sparkles"
-msgstr "Klikni in premakni za risanje bleščic"
+msgid "Click and move to draw sparkles."
+msgstr "Klikni in premakni za risanje bleščic."
 
 #: src/magic.h:76
-msgid "Click to make a mirror image!"
-msgstr "Klikni, da narediš zrcalno sliko!"
+msgid "Click to make a mirror image."
+msgstr "Klikni, da narediš zrcalno sliko."
 
 #: src/magic.h:77
-msgid "Click to flip the picture upside-down!"
-msgstr "Klikni, da prezrcališ sliko odzgoraj navzdol!"
+msgid "Click to flip the picture upside-down."
+msgstr "Klikni, da prezrcališ sliko odzgoraj navzdol."
 
 #: src/magic.h:79
-msgid "Click and move the mouse around to blur the picture"
-msgstr "Klikni in premikaj miško naokrog da zamegliš sliko"
+msgid "Click and move the mouse around to blur the picture."
+msgstr "Klikni in premikaj miško naokrog da zamegliš sliko."
 
 #: src/magic.h:80
-msgid "Click and move the mouse around to make the picture blocky"
-msgstr "Klikni in premikaj miško naokrog, da narediš sliko blokasto"
+msgid "Click and move the mouse around to make the picture blocky."
+msgstr "Klikni in premikaj miško naokrog, da narediš sliko blokasto."
 
 #: src/magic.h:82
-msgid "Click and move the mouse around to draw a negative"
-msgstr "Klikni in premikaj miško naokrog, da narišeš negativ"
+msgid "Click and move the mouse around to draw a negative."
+msgstr "Klikni in premikaj miško naokrog, da narišeš negativ."
 
 #: src/magic.h:83
 msgid "Click and move to fade the colors."
@@ -282,20 +282,20 @@ msgid "Click and move the mouse around to turn the picture into a chalk drawing.
 msgstr "Klikni in premikaj miško naokrog, da spremenš sliko v risbo, narisano s kredo."
 
 #: src/magic.h:86
-msgid "Click and move the mouse around to make the picture drip!"
-msgstr "Klikni in premikaj miško naokrog, da bo izgledalo, kot da s slike kaplja!"
+msgid "Click and move the mouse around to make the picture drip."
+msgstr "Klikni in premikaj miško naokrog, da bo izgledalo, kot da s slike kaplja."
 
 #: src/magic.h:88
-msgid "Click and move the mouse to thicken the picture"
-msgstr "Klikni in premikaj miško, da se slika odebeli"
+msgid "Click and move the mouse to thicken the picture."
+msgstr "Klikni in premikaj miško, da se slika odebeli."
 
 #: src/magic.h:89
-msgid "Click and move the mouse to thin the picture"
-msgstr "Klikni in premakni miško, da se slika stanjša"
+msgid "Click and move the mouse to thin the picture."
+msgstr "Klikni in premakni miško, da se slika stanjša."
 
 #: src/magic.h:91
-msgid "Click in the picture to fill that area with color"
-msgstr "Klikni na sliko, da napolniš to območje z barvo"
+msgid "Click in the picture to fill that area with color."
+msgstr "Klikni na sliko, da napolniš to območje z barvo."
 
 #: src/shapes.h:141
 #: src/shapes.h:142
@@ -447,15 +447,15 @@ msgid "Pick a picture to stamp around your drawing."
 msgstr "Izberi sliko za delanje odtisov po tvoji risbi."
 
 #: src/tools.h:64
-msgid "Click to start drawing a line.  Let go to complete it."
+msgid "Click to start drawing a line. Let go to complete it."
 msgstr "Klikni za začetek risanja črte. Črto končaš tako, da spustiš gumb."
 
 #: src/tools.h:65
-msgid "Pick a shape. Click to pick the center, drag, then let go when it is the size you want.  Move around to rotate it, and click to draw it."
+msgid "Pick a shape. Click to pick the center, drag, then let go when it is the size you want. Move around to rotate it, and click to draw it."
 msgstr "Izberi obliko.Klikni, da izbereš sredino lika, nato povleci in spusti, ko je željene velikosti. Obrneš ga tako, da vlečeš miško okrog njega in nato klikneš, da ga vstaviš."
 
 #: src/tools.h:66
-msgid "Choose a style of text.  Click on your drawing and you can start typing."
+msgid "Choose a style of text. Click on your drawing and you can start typing."
 msgstr "Izberi slog besedila. Klikni na risbo in začni pisati."
 
 #: src/tools.h:67
