@@ -4063,41 +4063,61 @@ static void blit_magic(int x, int y, int button_down)
 
       if (cur_magic == MAGIC_BLUR)
 	{
-	  /* FIXME: Circular "brush?" */
+	  double state[32][32][3];
+	  unsigned i = 32*32;
 
 	  SDL_LockSurface(canvas);
-	  for (yy = y - 16; yy < y + 16; yy = yy + 2)
+
+	  while (i--)
 	    {
-	      for (xx = x - 16; xx < x + 16; xx = xx + 2)
-		{
-		  SDL_GetRGB(getpixel(canvas, clamp(0, xx, canvas->w - 1),
-				      clamp(0, yy - 1, canvas->h - 1)),
-			     canvas->format,
-			     &r1, &g1, &b1);
-	
-		  SDL_GetRGB(getpixel(canvas, clamp(0, xx - 1, canvas->w - 1),
-				      clamp(0, yy, canvas->h - 1)),
-			     canvas->format,
-			     &r2, &g2, &b2);
-	
-		  SDL_GetRGB(getpixel(canvas, clamp(0, xx + 1, canvas->w - 1),
-				      clamp(0, yy, canvas->h - 1)),
-			     canvas->format,
-			     &r3, &g3, &b3);
-	
-		  SDL_GetRGB(getpixel(canvas, clamp(0, xx, canvas->w - 1),
-				      clamp(0, yy + 1, canvas->h - 1)),
-			     canvas->format,
-			     &r4, &g4, &b4);
-	
+	      int iy = i>>5;
+	      int ix = i&0x1f;
+	      // is it not on the circle of radius sqrt(220) at location 16,16?
+	      if ( (ix-16)*(ix-16) + (iy-16)*(iy-16) > 220)
+	        continue;
+	      // it is on the circle, so grab it
 
-		  r = (r1 + r2 + r3 + r4) >> 2;
-		  g = (g1 + g2 + g3 + g4) >> 2;
-		  b = (b1 + b2 + b3 + b4) >> 2;
+	      SDL_GetRGB(getpixel(canvas, x+ix-16, y+iy-16), last->format, &r, &g, &b);
+	      state[ix][iy][0] = sRGB_to_linear_table[r];
+	      state[ix][iy][1] = sRGB_to_linear_table[g];
+	      state[ix][iy][2] = sRGB_to_linear_table[b];
+	    }
+	  i = 32*32;
+	  while (i--)
+	    {
+	      double lr, lg, lb;  // linear red,green,blue
+	      double weight;
+	      int iy = i>>5;
+	      int ix = i&0x1f;
+	      int r2 = (ix-16)*(ix-16) + (iy-16)*(iy-16); // radius squared
 
-		  putpixel(canvas, xx, yy,
-			   SDL_MapRGB(canvas->format, r, g, b));
-		}
+	      // is it not on the circle of radius sqrt(140) at location 16,16?
+	      if ( r2 > 140)
+	        continue;
+
+	      // It is on the circle, but how strongly will it be affected?
+	      // This is lame; we should use something like a gaussian or cosine
+	      // via a lookup table. (inverted, because this is the center weight)
+	      weight = r2/16.0+3.0;
+
+	      // Sampling more points would be good too, though it'd be slower.
+
+	      lr =                     state[ix][iy-1][0]
+	        + state[ix-1][iy][0] + state[ix][iy  ][0]*weight + state[ix+1][iy][0]
+	                             + state[ix][iy+1][0];
+
+	      lg =                     state[ix][iy-1][1]
+	        + state[ix-1][iy][1] + state[ix][iy  ][1]*weight + state[ix+1][iy][1]
+	                             + state[ix][iy+1][1];
+
+	      lb =                     state[ix][iy-1][2]
+	        + state[ix-1][iy][2] + state[ix][iy  ][2]*weight + state[ix+1][iy][2]
+	                             + state[ix][iy+1][2];
+
+              lr /= weight+4.0;
+              lg /= weight+4.0;
+              lb /= weight+4.0;
+	      putpixel(canvas, x+ix-16, y+iy-16, SDL_MapRGB(canvas->format, linear_to_sRGB(lr), linear_to_sRGB(lg), linear_to_sRGB(lb)));
 	    }
 	  SDL_UnlockSurface(canvas);
 	}

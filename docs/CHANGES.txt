@@ -8,6 +8,10 @@ http://www.newbreedsoftware.com/tuxpaint/
 
 
 2004.December.5 (0.9.15)
+  * Magic blur effect now gamma-aware, circular, and modifying all points
+    within the brush instead of just 25% of them.
+    Albert Cahalan <albert@users.sf.net>
+
   * fixed display corruption in load dialog when saved images are
     from a larger display size
     Albert Cahalan <albert@users.sf.net>
