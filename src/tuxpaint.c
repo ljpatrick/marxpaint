@@ -7484,9 +7484,10 @@ void wordwrap_text(TTF_Font * font, char * str, SDL_Color color,
 				  SDL_BlitSurface(text, NULL, screen, &dest);
       
 				  last_text_height = text->h;
-				  SDL_FreeSurface(text);
 
 				  x = x + text->w;
+
+				  SDL_FreeSurface(text);
 				}
 			    }
 			}
@@ -7517,8 +7518,9 @@ void wordwrap_text(TTF_Font * font, char * str, SDL_Color color,
 		      SDL_BlitSurface(text, NULL, screen, &dest);
 
 		      last_text_height = text->h;
-		      SDL_FreeSurface(text);
 		      x = x + text->w;
+
+		      SDL_FreeSurface(text);
 		    }
         
       

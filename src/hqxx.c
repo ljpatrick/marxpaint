@@ -193,12 +193,12 @@ void InitLUTs(Uint32 * RGBtoYUV)
     }
 }
 
-inline void Interp0(SDL_Surface * dest, int x, int y, Uint16 c, Uint8 alpha)
+void Interp0(SDL_Surface * dest, int x, int y, Uint16 c, Uint8 alpha)
 {
   hqxx_putpixel(dest, x, y, c, alpha);
 }
 
-inline void Interp1(SDL_Surface * dest, int x, int y, Uint16 c1, Uint16 c2, Uint8 alpha)
+void Interp1(SDL_Surface * dest, int x, int y, Uint16 c1, Uint16 c2, Uint8 alpha)
 {
   Uint32 c;
   
@@ -210,7 +210,7 @@ inline void Interp1(SDL_Surface * dest, int x, int y, Uint16 c1, Uint16 c2, Uint
   hqxx_putpixel(dest, x, y, c, alpha);
 }
 
-inline void Interp2(SDL_Surface * dest, int x, int y, Uint16 c1, Uint16 c2, Uint16 c3, Uint8 alpha)
+void Interp2(SDL_Surface * dest, int x, int y, Uint16 c1, Uint16 c2, Uint16 c3, Uint8 alpha)
 {
   Uint32 c;
 
@@ -226,7 +226,7 @@ inline void Interp2(SDL_Surface * dest, int x, int y, Uint16 c1, Uint16 c2, Uint
   hqxx_putpixel(dest, x, y, c, alpha);
 }
 
-inline void Interp3(SDL_Surface * dest, int x, int y, Uint16 c1, Uint16 c2, Uint8 alpha)
+void Interp3(SDL_Surface * dest, int x, int y, Uint16 c1, Uint16 c2, Uint8 alpha)
 {
   Uint32 c;
 
@@ -241,7 +241,7 @@ inline void Interp3(SDL_Surface * dest, int x, int y, Uint16 c1, Uint16 c2, Uint
   hqxx_putpixel(dest, x, y, c, alpha);
 }
 
-inline void Interp4(SDL_Surface * dest, int x, int y, Uint16 c1, Uint16 c2, Uint16 c3, Uint8 alpha)
+void Interp4(SDL_Surface * dest, int x, int y, Uint16 c1, Uint16 c2, Uint16 c3, Uint8 alpha)
 {
   Uint32 c;
 
@@ -264,7 +264,7 @@ inline void Interp4(SDL_Surface * dest, int x, int y, Uint16 c1, Uint16 c2, Uint
   hqxx_putpixel(dest, x, y, c, alpha);
 }
 
-inline void Interp5(SDL_Surface * dest, int x, int y, Uint16 c1, Uint16 c2, Uint8 alpha)
+void Interp5(SDL_Surface * dest, int x, int y, Uint16 c1, Uint16 c2, Uint8 alpha)
 {
   Uint32 c;
 
@@ -276,7 +276,7 @@ inline void Interp5(SDL_Surface * dest, int x, int y, Uint16 c1, Uint16 c2, Uint
   hqxx_putpixel(dest, x, y, c, alpha);
 }
 
-inline void Interp6(SDL_Surface * dest, int x, int y, Uint16 c1, Uint16 c2, Uint16 c3, Uint8 alpha)
+void Interp6(SDL_Surface * dest, int x, int y, Uint16 c1, Uint16 c2, Uint16 c3, Uint8 alpha)
 {
   Uint32 c;
 
@@ -295,7 +295,7 @@ inline void Interp6(SDL_Surface * dest, int x, int y, Uint16 c1, Uint16 c2, Uint
   hqxx_putpixel(dest, x, y, c, alpha);
 }
 
-inline void Interp7(SDL_Surface * dest, int x, int y, Uint16 c1, Uint16 c2, Uint16 c3, Uint8 alpha)
+void Interp7(SDL_Surface * dest, int x, int y, Uint16 c1, Uint16 c2, Uint16 c3, Uint8 alpha)
 {
   Uint32 c;
   
@@ -312,7 +312,7 @@ inline void Interp7(SDL_Surface * dest, int x, int y, Uint16 c1, Uint16 c2, Uint
   hqxx_putpixel(dest, x, y, c, alpha);
 }
 
-inline void Interp8(SDL_Surface * dest, int x, int y, Uint16 c1, Uint16 c2, Uint8 alpha)
+void Interp8(SDL_Surface * dest, int x, int y, Uint16 c1, Uint16 c2, Uint8 alpha)
 {
   Uint32 c;
 
@@ -328,7 +328,7 @@ inline void Interp8(SDL_Surface * dest, int x, int y, Uint16 c1, Uint16 c2, Uint
 }
 
 
-inline int Diff(unsigned int w1, unsigned int w2)
+int Diff(unsigned int w1, unsigned int w2)
 {
   return ((abs((w1 & Ymask) - (w2 & Ymask)) > trY) ||
           (abs((w1 & Umask) - (w2 & Umask)) > trU) ||
