@@ -2069,9 +2069,9 @@ typedef struct stamp_type {
   unsigned max : 5;
 } stamp_type;
 
-#define MAX_STAMPS 512
 static int num_stamps;
-static stamp_type * stamp_data[MAX_STAMPS];
+static int max_stamps;
+static stamp_type **stamp_data;
 
 /* Returns whether a particular stamp can be colored: */
 static int stamp_colorable(int stamp)
@@ -6807,6 +6807,11 @@ static void loadstamp_callback(const char *restrict const dir, unsigned dirlen, 
         {
           char fname[512];
           snprintf(fname, sizeof fname, "%s/%s", dir, files[i].str);
+          if(num_stamps == max_stamps)
+            {
+              max_stamps = max_stamps * 5 / 4 + 3;
+              stamp_data = realloc(stamp_data, max_stamps * sizeof *stamp_data);
+            }
           stamp_data[num_stamps] = calloc(1, sizeof *stamp_data[num_stamps]);
           stamp_data[num_stamps]->stxt = loaddesc(fname);
           loadinfo(fname, stamp_data[num_stamps]);
