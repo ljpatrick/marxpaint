@@ -29,10 +29,10 @@
 #define VER_DATE        "2004-11-23"
 
 
-#define VIDEO_BPP 15 // saves memory
+//#define VIDEO_BPP 15 // saves memory
 //#define VIDEO_BPP 16 // causes discoloration
 //#define VIDEO_BPP 24 // compromise
-//#define VIDEO_BPP 32 // might be fastest, if conversion funcs removed
+#define VIDEO_BPP 32 // might be fastest, if conversion funcs removed
 
 
 /* #define DEBUG */
