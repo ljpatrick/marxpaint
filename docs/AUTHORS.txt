@@ -7,7 +7,7 @@ bill@newbreedsoftware.com
 http://www.newbreedsoftware.com/tuxpaint/
 
 
-June 17, 2002 - October 23, 2004
+June 17, 2002 - December 10, 2004
 
 
 * Design and Coding:
@@ -27,6 +27,10 @@ June 17, 2002 - October 23, 2004
 
   800x600 resolution support patch by:
   TOYAMA Shin-ichi <shin1@wmail.plala.or.jp>
+
+  Arbitrary resolution support, smudge tool and improved stamp
+  tinter by:
+  Albert Cahalan <albert@users.sf.net>
 
   High quality stamp scaler from "hq2x", "hq3x" and "hq4x" demos
   http://www.hiend3d.com/hq3x.html
@@ -163,6 +167,7 @@ June 17, 2002 - October 23, 2004
   * Lithuanian
     Mantas Kriauciunas <monte@mail.lt>
     Rita Verbauskaite <verba@centras.lt>
+    Gintaras Go?tautas <gintaras@nes.lt>
 
   * Malay
     Muhammad Najmi Ahmad Zabidi <mnajem@linuxmail.org>
