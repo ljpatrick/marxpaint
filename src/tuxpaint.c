@@ -21,12 +21,12 @@
   along with this program; if not, write to the Free Software
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   
-  June 14, 2002 - December 23, 2003
+  June 14, 2002 - December 26, 2003
 */
 
 
-#define VER_VERSION     "0.9.13"
-#define VER_DATE        "2003.12.23"
+#define VER_VERSION     "0.9.14"
+#define VER_DATE        "2003.12.26"
 
 
 /* #define DEBUG */

@@ -1,19 +1,17 @@
-# Tux Paint Tamil messages
-# Copyright (C) 2003
-# Mugunth <mugunth@thamizha.com>, 2003.
 msgid ""
 msgstr ""
 "Project-Id-Version: TuxPaint 0.9.13\n"
 "POT-Creation-Date: 2002-10-21 22:42+0200\n"
-"PO-Revision-Date: 2003-09-13 13:44+0800\n"
+"PO-Revision-Date: 2003-12-26 03:26+0800\n"
 "Last-Translator: Mugunth <mugunth@thamizha.com>\n"
+"Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
 #: tuxpaint.c:567
 msgid "Do you really want to quit?"
-msgstr "கண்டிப்பாக வெளியேறிடலாமா?"
+msgstr "¸ñÊôÀ¡¸ ¦ÅÇ¢§ÂÈ¢¼Ä¡Á¡?"
 
 #: tuxpaint.c:568
 #: tuxpaint.c:572
@@ -22,7 +20,7 @@ msgstr "கண்டிப்பாக வெளியேறிடலாமா?"
 #: tuxpaint.c:6274
 #: tuxpaint.c:6915
 msgid "Yes"
-msgstr "ஆம்"
+msgstr "¬õ"
 
 #: tuxpaint.c:569
 #: tuxpaint.c:573
@@ -30,19 +28,19 @@ msgstr "ஆம்"
 #: tuxpaint.c:597
 #: tuxpaint.c:6277
 msgid "No"
-msgstr "வேண்டாம்"
+msgstr "§Åñ¼¡õ"
 
 #: tuxpaint.c:571
 msgid "If you quit, you'll lose your picture! Save it?"
-msgstr "வெளியேறிவிட்டால், நீங்கள் வரைந்த படம் அழிந்துவிடுமே! படத்தை சேமித்துவிடலாமா ?"
+msgstr "¦ÅÇ¢§ÂÈ¢Å¢ð¼¡ø, ¿£í¸û Å¨Ãó¾ À¼õ «Æ¢óÐÅ¢Î§Á! À¼ò¨¾ §ºÁ¢òÐÅ¢¼Ä¡Á¡ ?"
 
 #: tuxpaint.c:575
 msgid "Save your picture first?"
-msgstr "முதலில் உங்கள் படத்தை சேமித்துவிடலாமா?"
+msgstr "Ó¾Ä¢ø ¯í¸û À¼ò¨¾ §ºÁ¢òÐÅ¢¼Ä¡Á¡?"
 
 #: tuxpaint.c:579
 msgid "Can't open that picture!"
-msgstr "அந்த படத்தை திறக்க முடியவில்லை!"
+msgstr "«ó¾ À¼ò¨¾ ¾¢Èì¸ ÓÊÂÅ¢ø¨Ä!"
 
 #: tuxpaint.c:580
 #: tuxpaint.c:587
@@ -50,439 +48,439 @@ msgstr "அந்த படத்தை திறக்க முடியவி
 #: tuxpaint.c:593
 #: tuxpaint.c:7249
 msgid "Okay"
-msgstr "சரி"
+msgstr "ºÃ¢"
 
 #: tuxpaint.c:582
 msgid "Starting a new picture will erase the current one!"
-msgstr "புதிய படத்தை திறந்தால் இப்போது இருக்கும் படம் அழிந்துவிடுமே!"
+msgstr "Ò¾¢Â À¼ò¨¾ ¾¢Èó¾¡ø þô§À¡Ð þÕìÌõ À¼õ «Æ¢óÐÅ¢Î§Á!"
 
 #: tuxpaint.c:583
 msgid "That's Ok"
-msgstr "சரி பரவாயில்லை"
+msgstr "ÀÃÅ¡Â¢ø¨Ä"
 
 #: tuxpaint.c:584
 msgid "Never Mind!"
-msgstr "கண்டுக்கொள்ள வேண்டாம்"
+msgstr "À¡¾¸Á¢ø¨Ä!"
 
 #: tuxpaint.c:586
 msgid "There are no saved files!"
-msgstr "சேமித்த கோப்புகள் எதும் இல்லையே!"
+msgstr "§ºÁ¢ò¾ §¸¡ôÒ¸û ±Ðõ þø¨Ä§Â!"
 
 #: tuxpaint.c:589
 msgid "Your picture has been printed!"
-msgstr "உங்கள் படம் அச்சிடப்படுகிறது!"
+msgstr "¯í¸û À¼õ «îº¢¼ôÀÎ¸¢ÈÐ!"
 
 #: tuxpaint.c:592
 msgid "You can't print yet!"
-msgstr "நீங்கள் அதற்குள் அச்சிட முடியாது!"
+msgstr "¿£í¸û «¾üÌû «îº¢¼ ÓÊÂ¡Ð!"
 
 #: tuxpaint.c:595
 msgid "Erase this picture?"
-msgstr "படத்தை அழித்துவிடலாமா?"
+msgstr "À¼ò¨¾ «Æ¢òÐÅ¢¼Ä¡Á¡?"
 
 #: tools.h:52
 #: tuxpaint.c:4061
 msgid "Open"
-msgstr "திற"
+msgstr "¾¢È"
 
 #: tuxpaint.c:4071
 msgid "Erase"
-msgstr "அழி"
+msgstr "«Æ¢"
 
 #: tuxpaint.c:4081
 msgid "Back"
-msgstr "பின்"
+msgstr "À¢ý"
 
 #: tuxpaint.c:6914
 msgid "Save over the older version of this drawing?"
-msgstr "இந்த படத்தின் பழைய பதிப்பு மேலேயே இதை சேமிக்கலாமா?"
+msgstr "þó¾ À¼ò¾¢ý À¨ÆÂ À¾¢ôÒ §Á§Ä§Â þ¨¾ §ºÁ¢ì¸Ä¡Á¡?"
 
 #: tuxpaint.c:6916
 msgid "No, save a new file"
-msgstr "வேண்டாம், இப்படத்தை புதிய கோப்பாக சேமி"
+msgstr "§Åñ¼¡õ, þôÀ¼ò¨¾ Ò¾¢Â §¸¡ôÀ¡¸ §ºÁ¢"
 
 #: tuxpaint.c:7510
 msgid "Choose the picture you want, then click 'Open'"
-msgstr "தேவையான படத்தை தேர்ந்தெடுத்து, பிறகு 'திற'-ஐத் தட்டவும்"
+msgstr "§¾¨ÅÂ¡É À¼ò¨¾ §¾÷ó¦¾ÎòÐ, À¢ÈÌ '¾¢È'-³ò ¾ð¼×õ"
 
 #: colors.h:56
 msgid "Black"
-msgstr "கருப்பு"
+msgstr "¸ÕôÒ"
 
 #: colors.h:57
 msgid "White"
-msgstr "வெள்ளை"
+msgstr "¦Åû¨Ç"
 
 #: colors.h:58
 msgid "Red"
-msgstr "சிகப்பு"
+msgstr "º¢¸ôÒ"
 
 #: colors.h:59
 msgid "Pink"
-msgstr "பிங்க்"
+msgstr "þÇïº¢ÅôÒ"
 
 #: colors.h:60
 msgid "Orange"
-msgstr "ஆரஞ்சு"
+msgstr "¬ÃïÍ"
 
 #: colors.h:61
 msgid "Yellow"
-msgstr "மஞ்சள்"
+msgstr "Áïºû"
 
 #: colors.h:62
 msgid "Green"
-msgstr "பச்சை"
+msgstr "Àî¨º"
 
 #: colors.h:63
 msgid "Cyan"
-msgstr "சியான்"
+msgstr "´Ç¢÷¿£Äõ"
 
 #: colors.h:64
 msgid "Blue"
-msgstr "ஊதா"
+msgstr "°¾¡"
 
 #: colors.h:65
 msgid "Purple"
-msgstr "கத்தரிப்பூ நிறம்"
+msgstr "°¾¡"
 
 #: colors.h:66
 msgid "Brown"
-msgstr "ப்ரௌன்"
+msgstr "ÀØôÒ"
 
 #: colors.h:67
 msgid "Grey"
-msgstr "பழுப்பு"
+msgstr "ÀØôÒ"
 
 #: great.h:20
 msgid "Great!"
-msgstr "அட்டகாசம்!"
+msgstr "«ð¼¸¡ºõ!"
 
 #: great.h:21
 msgid "Cool!"
-msgstr "அருமை"
+msgstr "«Õ¨Á"
 
 #: great.h:22
 msgid "Keep it up!"
-msgstr "அட்டகாசம்! வாழ்த்துக்கள்!!"
+msgstr "¦¾¡¼ÃðÎõ!!"
 
 #: great.h:23
 msgid "Good job!"
-msgstr "அருமையான செயல்"
+msgstr "«üÒ¾Á¡É À½¢!"
 
 #: magic.h:48
 msgid "Rainbow"
-msgstr "வானவில்"
+msgstr "Å¡ÉÅ¢ø"
 
 #: magic.h:49
 msgid "Sparkles"
-msgstr "மின்னல்தோற்றம்"
+msgstr "´Ç¢÷×"
 
 #: magic.h:51
 msgid "Mirror"
-msgstr "கண்ணாடி பிம்பம்"
+msgstr "¸ñ½¡Ê À¢õÀõ"
 
 #: magic.h:52
 msgid "Flip"
-msgstr "திருப்பு"
+msgstr "ÍñÊÅ¢Î"
 
 #: magic.h:54
 msgid "Blur"
-msgstr "மங்கலாக்கு"
+msgstr "ÁíÌ"
 
 #: magic.h:55
 msgid "Blocks"
-msgstr "கட்டங்கள்"
+msgstr "¸ð¼í¸û"
 
 #: magic.h:57
 msgid "Negative"
-msgstr "நெகட்டிவ்"
+msgstr "±¾¢÷¿¢¨Ä"
 
 #: magic.h:58
 msgid "Fade"
-msgstr "மங்கலாக்கு"
+msgstr "Áí¸Ä¡ìÌ"
 
 #: magic.h:60
 msgid "Chalk"
-msgstr "மாக்கட்டி மாதிரி"
+msgstr "Á¡ì¸ðÊ"
 
 #: magic.h:61
 msgid "Drip"
-msgstr "நழைந்த மாதிரி"
+msgstr "¦º¡ðÎ¾ø"
 
 #: magic.h:63
 msgid "Thick"
-msgstr "தடிமனான"
+msgstr "¾ÊÁÉ¡É"
 
 #: magic.h:64
 msgid "Thin"
-msgstr "மெலிதான"
+msgstr "¦ÁÄ¢¾¡É"
 
 #: magic.h:66
 msgid "Fill"
-msgstr "நிரப்பு"
+msgstr "¿¢ÃôÒ"
 
 #: magic.h:73
 msgid "You can draw in rainbow colors!"
-msgstr "வானவில்லின் நிறங்களில் நீங்கள் வரையலாம்!"
+msgstr "Å¡ÉÅ¢øÄ¢ý ¿¢Èí¸Ç¢ø ¿£í¸û Å¨ÃÂÄ¡õ!"
 
 #: magic.h:74
 msgid "Click and move to draw sparkles"
-msgstr "தட்டி விட்டு நகர்த்தினால் ஒளிரும் படம் வரையலாம். "
+msgstr "¾ðÊÅ¢ðÎ ±Ä¢¨Â ¿¸÷ò¾¢É¡ø ´Ç¢ÕõÀ¼õ Å¨ÃÂÄ¡õ"
 
 #: magic.h:76
 msgid "Click to make a mirror image!"
-msgstr "தட்டினால் படம் கண்ணாடி பிம்பமாக மாறும்!"
+msgstr "¾ðÊÉ¡ø À¼õ ¸ñ½¡Ê À¢õÀÁ¡¸ Á¡Úõ!"
 
 #: magic.h:77
 msgid "Click to flip the picture upside-down!"
-msgstr "தட்டினால் படம் தலைகீழாக மாறும்!"
+msgstr "¾ðÊÉ¡ø À¼õ ¾¨Ä¸£Æ¡¸ Á¡Úõ!"
 
 #: magic.h:79
 msgid "Click and move the mouse around to blur the picture"
-msgstr "தட்டிவிட்டு எலியை நகர்த்தினால் படம் மங்கலாகும்"
+msgstr "¾ðÊÅ¢ðÎ ±Ä¢¨Â ¿¸÷ò¾¢É¡ø À¼õ Áí¸Ä¡Ìõ"
 
 #: magic.h:80
 msgid "Click and move the mouse around to make the picture blocky"
-msgstr "தட்டிவிட்டு எலியை நகர்த்தினால் படம் கட்டங்களாக மாறும்"
+msgstr "¾ðÊÅ¢ðÎ ±Ä¢¨Â ¿¸÷ò¾¢É¡ø À¼õ ¸ð¼í¸Ç¡¸ Á¡Úõ"
 
 #: magic.h:82
 msgid "Click and move the mouse around to draw a negative"
-msgstr "தட்டிவிட்டு எலியை நகர்த்தினால் படம் நெகட்டிவ் படமாக மாறும்"
+msgstr "¾ðÊÅ¢ðÎ ±Ä¢¨Â ¿¸÷ò¾¢É¡ø À¼õ ¦¿¸ðÊù À¼Á¡¸ Á¡Úõ"
 
 #: magic.h:83
 msgid "Click and move to fade the colors."
-msgstr "நிறங்களை மங்கலாக்க தட்டிவிட்டு நகர்த்தவும்"
+msgstr "¿¢Èí¸¨Ç Áí¸Ä¡ì¸ ¾ðÊÅ¢ðÎ ¿¸÷ò¾×õ"
 
 #: magic.h:85
 msgid "Click and move the mouse around to turn the picture into a chalk drawing."
-msgstr "இந்த படத்தை மாக்கட்டியால் வரைந்தது போல் ஆக்க, எலியை சொடுக்கி நகர்த்தவும்"
+msgstr "þó¾ À¼ò¨¾ Á¡ì¸ðÊÂ¡ø Å¨Ãó¾Ð §À¡ø ¬ì¸, ±Ä¢¨Â ¦º¡Îì¸¢ ¿¸÷ò¾×õ"
 
 #: magic.h:86
 msgid "Click and move the mouse around to make the picture drip!"
-msgstr "எலியை சொடுக்கி நகர்த்தினால் இந்த படம் , தண்ணீரில் நனைந்த மாதிரி ஆகும்!"
+msgstr "±Ä¢¨Â ¦º¡Îì¸¢ ¿¸÷ò¾¢É¡ø þó¾ À¼õ , ¾ñ½£Ã¢ø ¿¨Éó¾ Á¡¾¢Ã¢ ¬Ìõ!"
 
 #: magic.h:88
 msgid "Click and move the mouse to thicken the picture"
-msgstr "எலியை சொடுக்கி நகர்த்தினால், இந்த படம் தடிமனாகும்."
+msgstr "±Ä¢¨Â ¦º¡Îì¸¢ ¿¸÷ò¾¢É¡ø, þó¾ À¼õ ¾ÊÁÉ¡Ìõ."
 
 #: magic.h:89
 msgid "Click and move the mouse to thin the picture"
-msgstr "எலியை சொடுக்கி நகர்த்தினால், இந்த படம் மெல்லியதாக மாறும்"
+msgstr "±Ä¢¨Â ¦º¡Îì¸¢ ¿¸÷ò¾¢É¡ø, þó¾ À¼õ ¦ÁøÄ¢Â¾¡¸ Á¡Úõ"
 
 #: magic.h:91
 msgid "Click in the picture to fill that area with color"
-msgstr "படத்தினுள் சொடுக்கினால், அந்த பரப்பு முழுக்க நிறம் மாறும்"
+msgstr "À¼ò¾¢Ûû ¦º¡Îì¸¢É¡ø, «ó¾ ÀÃôÒ ÓØì¸ ¿¢Èõ Á¡Úõ"
 
 #: shapes.h:121
 #: shapes.h:122
 msgid "Square"
-msgstr "சதுரம்"
+msgstr "ºÐÃõ"
 
 #: shapes.h:123
 #: shapes.h:124
 msgid "Rectangle"
-msgstr "செவ்வகம்"
+msgstr "¦ºùÅ¸õ"
 
 #: shapes.h:125
 #: shapes.h:126
 msgid "Circle"
-msgstr "வட்டம்"
+msgstr "Åð¼õ"
 
 #: shapes.h:127
 #: shapes.h:128
 #: shapes.h:147
 #: shapes.h:148
 msgid "Oval"
-msgstr "நீள்வட்டம்"
+msgstr "¿£ûÅð¼õ"
 
 #: shapes.h:129
 #: shapes.h:130
 msgid "Triangle"
-msgstr "முக்கோனம்"
+msgstr "Óì§¸¡Éõ"
 
 #: shapes.h:131
 #: shapes.h:132
 msgid "Pentagon"
-msgstr "பெண்டகன்"
+msgstr "³í§¸¡É"
 
 #: shapes.h:133
 #: shapes.h:134
 msgid "Diamond"
-msgstr "டயமண்ட்"
+msgstr "¨ÅÃÅÊÅõ"
 
 #: shapes.h:141
 #: shapes.h:142
 msgid "A square has four sides, each the same length."
-msgstr "சதுரத்திற்கு நான்கு பக்கங்கள் உண்டு. அனைத்துப்பக்கங்களும் சம அளவு உடையது."
+msgstr "ºÐÃò¾¢üÌ ¿¡ýÌ Àì¸í¸û ¯ñÎ. «¨ÉòÐôÀì¸í¸Ùõ ºÁ «Ç× ¯¨¼ÂÐ."
 
 #: shapes.h:143
 #: shapes.h:144
 msgid "A rectangle has four sides."
-msgstr "செவ்வகத்துக்கு நான்கு பக்கங்கள் உண்டு."
+msgstr "¦ºùÅ¸òÐìÌ ¿¡ýÌ Àì¸í¸û ¯ñÎ."
 
 #: shapes.h:145
 #: shapes.h:146
 msgid "A circle is exactly round."
-msgstr "வட்டம் சரியாக உருண்டை போல் இருக்கும்"
+msgstr "Åð¼õ ºÃ¢Â¡¸ ¯Õñ¨¼ §À¡ø þÕìÌõ"
 
 #: shapes.h:149
 #: shapes.h:150
 msgid "A triangle has three sides."
-msgstr "முக்கோனத்திற்கு மூன்று பக்கங்கள்."
+msgstr "Óì§¸¡Éò¾¢üÌ ãýÚ Àì¸í¸û."
 
 #: shapes.h:151
 #: shapes.h:152
 msgid "A pentagon has five sides."
-msgstr "ஒரு பெண்டகனுக்கு ஐந்து பக்கங்கள் உண்டு."
+msgstr "´Õ  ³í§¸¡Éò¾¢üÌ ³óÐ Àì¸í¸û ¯ñÎ."
 
 #: shapes.h:153
 #: shapes.h:154
 msgid "A diamond is a square, turned around slightly."
-msgstr "டையமண்ட் என்பது, சற்று திரும்ப்பட்ட ஒரு சதுரம்."
+msgstr "¨ÅÃÅÊÅõ ±ýÀÐ, ºüÚ ¾¢ÕõôÀð¼ ´Õ ºÐÃõ."
 
 #: titles.h:37
 msgid "Tools"
-msgstr "கருவிகள்"
+msgstr "¸ÕÅ¢¸û"
 
 #: titles.h:38
 msgid "Colors"
-msgstr "நிறங்கள்"
+msgstr "¿¢Èí¸û"
 
 #: titles.h:39
 msgid "Brushes"
-msgstr "தூரிகைகள்"
+msgstr "àÃ¢¨¸¸û"
 
 #: titles.h:40
 msgid "Stamps"
-msgstr "முத்திரைகள்"
+msgstr "Óò¾¢¨Ã¸û"
 
 #: titles.h:41
 #: tools.h:45
 msgid "Shapes"
-msgstr "வடிவங்கள்"
+msgstr "ÅÊÅí¸û"
 
 #: titles.h:42
 msgid "Letters"
-msgstr "எழுத்துக்கள்"
+msgstr "±ØòÐì¸û"
 
 #: titles.h:43
 #: tools.h:47
 msgid "Magic"
-msgstr "மாயாஜாலம்"
+msgstr "Á¡Â¡ƒ¡Äõ"
 
 #: tools.h:42
 msgid "Paint"
-msgstr "வரை"
+msgstr "Å¨Ã"
 
 #: tools.h:43
 msgid "Stamp"
-msgstr "முத்திரையிடு"
+msgstr "Óò¾¢¨ÃÂ¢Î"
 
 #: tools.h:44
 msgid "Lines"
-msgstr "கோடுகள்"
+msgstr "§¸¡Î¸û"
 
 #: tools.h:46
 msgid "Text"
-msgstr "உரை"
+msgstr "¯¨Ã"
 
 #: tools.h:48
 msgid "Undo"
-msgstr "செயல்மீட்பு"
+msgstr "¦ºÂøÁ£ðÒ"
 
 #: tools.h:49
 msgid "Redo"
-msgstr "மீளச்செய்"
+msgstr "Á£Çî¦ºö"
 
 #: tools.h:50
 msgid "Eraser"
-msgstr "அழிப்பான்"
+msgstr "«Æ¢ôÀ¡ý"
 
 #: tools.h:51
 msgid "New"
-msgstr "புதிய"
+msgstr "Ò¾¢Â"
 
 #: tools.h:53
 msgid "Save"
-msgstr "சேமி"
+msgstr "§ºÁ¢"
 
 #: tools.h:54
 msgid "Print"
-msgstr "அச்சிடு"
+msgstr "«îº¢Î"
 
 #: tools.h:55
 msgid "Quit"
-msgstr "வெளியேறு"
+msgstr "¦ÅÇ¢§ÂÚ"
 
 #: tools.h:62
 msgid "Pick a color and a brush shape to draw with."
-msgstr "வரைவதற்கு ஒரு தூரிகையையும் நிறத்தையும் தேர்ந்தெடுங்கள்."
+msgstr "Å¨ÃÅ¾üÌ ´Õ àÃ¢¨¸¨ÂÔõ ¿¢Èò¨¾Ôõ §¾÷ó¦¾Îí¸û."
 
 #: tools.h:63
 msgid "Pick a picture to stamp around your drawing."
-msgstr "உங்கள் வரைபடத்தினுள் முத்திரையிட ஒரு படத்தை தேர்ந்தெடுங்கள்."
+msgstr "¯í¸û Å¨ÃÀ¼ò¾¢Ûû Óò¾¢¨ÃÂ¢¼ ´Õ À¼ò¨¾ §¾÷ó¦¾Îí¸û."
 
 #: tools.h:64
 msgid "Click to start drawing a line.  Let go to complete it."
-msgstr "ஒரு கோடு வரைய ஆரம்பிக்க சொடுக்கவும். முடிக்க சொடுக்கியதில் இருந்து விடவும்."
+msgstr "´Õ §¸¡Î Å¨ÃÂ ¬ÃõÀ¢ì¸ ¦º¡Îì¸×õ. ÓÊì¸ ¦º¡Îì¸¢Â¾¢ø þÕóÐ Å¢¼×õ."
 
 #: tools.h:65
 msgid "Pick a shape. Click to pick the center, drag, then let go when it is the size you want.  Move around to rotate it, and click to draw it."
-msgstr "ஒரு வடிவத்தை தேர்ந்தெடுக்கவும். மத்தியை தேர்தெடுக்க சொடுக்கவும், பிறகு இழுக்கவும், பிறகு உங்களுக்கு தேவையான அளவு வந்தவுடன் விட்டுவிடுங்கள். சுழற்ற நகர்த்தவும், மற்றும் வரையவதற்கு சொடுக்கவும்."
+msgstr "´Õ ÅÊÅò¨¾ §¾÷ó¦¾Îì¸×õ. Áò¾¢¨Â §¾÷¦¾Îì¸ ¦º¡Îì¸×õ, À¢ÈÌ þØì¸×õ, À¢ÈÌ ¯í¸ÙìÌ §¾¨ÅÂ¡É «Ç× Åó¾×¼ý Å¢ðÎÅ¢Îí¸û. ÍÆüÈ ¿¸÷ò¾×õ, ÁüÚõ Å¨ÃÂÅ¾üÌ ¦º¡Îì¸×õ."
 
 #: tools.h:66
 msgid "Choose a style of text.  Click on your drawing and you can start typing."
-msgstr "உரையின் பாந்தத்தை தேர்தெடுக்கவும். உங்கள் படத்தின் மீது சொடுக்கிவிட்டு தட்டெழுத ஆரம்பிக்கவும்."
+msgstr "¯¨ÃÂ¢ý À¡ó¾ò¨¾ §¾÷¦¾Îì¸×õ. ¯í¸û À¼ò¾¢ý Á£Ð ¦º¡Îì¸¢Å¢ðÎ ¾ð¦¼Ø¾ ¬ÃõÀ¢ì¸×õ."
 
 #: tools.h:67
 msgid "Pick a magical effect to use on your drawing!"
-msgstr "உங்கள் படத்தில் உபயோகிக்க ஒரு மாயாஜால விருப்பத்தைத் தேர்ந்தெடுக்கவும்."
+msgstr "¯í¸û À¼ò¾¢ø ¯À§Â¡¸¢ì¸ ´Õ Á¡Â¡ƒ¡Ä Å¢ÕôÀò¨¾ò §¾÷ó¦¾Îì¸×õ."
 
 #: tools.h:68
 msgid "Undo!"
-msgstr "செயல்மீட்பு!"
+msgstr "¦ºÂøÁ£ðÒ!"
 
 #: tools.h:69
 msgid "Redo!"
-msgstr "மீளச்செய்!"
+msgstr "Á£Çî¦ºö!"
 
 #: tools.h:70
 msgid "Eraser!"
-msgstr "அழிப்பான்!"
+msgstr "«Æ¢ôÀ¡ý!"
 
 #: tools.h:71
 msgid "You now have a blank sheet to draw on!"
-msgstr "இப்போது நீங்கள் வரைய ஒரு வெற்று தாள் கிடைத்துவிட்டது!"
+msgstr "þô§À¡Ð ¿£í¸û Å¨ÃÂ ´Õ ¦ÅüÚ ¾¡û ¸¢¨¼òÐÅ¢ð¼Ð!"
 
 #: tools.h:72
 msgid "Open..."
-msgstr "திற..."
+msgstr "¾¢È..."
 
 #: tools.h:73
 msgid "Your image has been saved!"
-msgstr "உங்கள் படம் சேமிக்கப்பட்டுவிட்டது"
+msgstr "¯í¸û À¼õ §ºÁ¢ì¸ôÀðÎÅ¢ð¼Ð"
 
 #: tools.h:74
 msgid "Printing..."
-msgstr "அச்சிடப்படுகிறது"
+msgstr "«îº¢¼ôÀÎ¸¢ÈÐ"
 
 #: tools.h:75
 msgid "Bye bye!"
-msgstr "வணக்கம்! சென்று வருக!"
+msgstr "Å½ì¸õ! ¦ºýÚ ÅÕ¸!"
 
 #: tools.h:78
 msgid "Let go of the button to complete the line."
-msgstr "கோட்டை முடிக்க பொத்தானை விடுவிக்கவும் "
+msgstr "ÓÊì¸ ¦º¡Îì¸¢Â¾¢ø þÕóÐ Å¢¼×õ."
 
 #: tools.h:79
 msgid "Hold the button to stretch the shape."
-msgstr "வடிவத்தை விரிக்க, பொத்தானை அமுக்கிப் பிடிக்கவும்."
+msgstr "ÅÊÅò¨¾ Å¢Ã¢ì¸, ¦À¡ò¾¡¨É «Óì¸¢ô À¢Êì¸×õ."
 
 #: tools.h:80
 msgid "Move the mouse to rotate the shape. Click to draw it."
-msgstr "வடிவத்தை சுழற்ற, எலியை நகர்த்தவும். அதனை வரைய சொடுக்கவும்."
+msgstr "ÅÊÅò¨¾ ÍÆüÈ, ±Ä¢¨Â ¿¸÷ò¾×õ. «¾¨É Å¨ÃÂ ¦º¡Îì¸×õ."
 
 #: tools.h:81
 msgid "Ok then... Let's keep drawing this one!"
-msgstr "சரி... அப்போ இந்த படத்தை வைத்துக்கொள்ளலாம்!"
+msgstr "ºÃ¢... «ô§À¡ þó¾ À¼ò¨¾ ¨ÅòÐì¦¸¡ûÇÄ¡õ!"
 

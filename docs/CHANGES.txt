@@ -7,6 +7,11 @@ bill@newbreedsoftware.com
 http://www.newbreedsoftware.com/tuxpaint/
 
 
+2003.Dec.26 (0.9.14) [cvs]
+  * Updated/corrected Tamil translation
+    Mugunth <mugunth@thamizha.com>
+
+
 2003.Dec.23 (0.9.13)
   * Translated into Basque (eu_ES)
     Juan Irigoien <juanirigoien@irakasle.net>
