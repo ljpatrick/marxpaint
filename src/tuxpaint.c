@@ -7078,6 +7078,11 @@ static void setup(int argc, char * argv[])
   {
 #ifdef WIN32
     // add Windows font dir here
+#elif defined(__APPLE__)
+    loadfonts("/System/Library/Fonts", 0);
+    loadfonts("/Library/Fonts", 0);
+    loadfonts("/usr/share/fonts", 0);
+    loadfonts("/usr/X11R6/lib/X11/fonts", 0);
 #else
     loadfonts("/usr/share/feh/fonts", 0);
     loadfonts("/usr/share/fonts", 0);
