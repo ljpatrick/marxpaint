@@ -814,6 +814,10 @@ int main(int argc, char * argv[])
 #define PROMPT_OPEN_NOFILES_TXT gettext_noop("There are no saved files!")
 #define PROMPT_OPEN_NOFILES_YES gettext_noop("Okay")
 
+#define PROMPT_PRINT_NOW_TXT gettext_noop("Print your picture now?")
+#define PROMPT_PRINT_NOW_YES gettext_noop("Yes")
+#define PROMPT_PRINT_NOW_NO gettext_noop("No")
+
 #define PROMPT_PRINT_TXT gettext_noop("Your picture has been printed!")
 #define PROMPT_PRINT_YES gettext_noop("Okay")
 
@@ -1408,9 +1412,14 @@ void mainloop(void)
 			  
 			  if (cur_time >= last_print_time + print_delay)
 			    {
-			      do_print();
+		              if (do_prompt(PROMPT_PRINT_NOW_TXT,
+				            PROMPT_PRINT_NOW_YES,
+				            PROMPT_PRINT_NOW_NO))
+			      {
+			        do_print();
 			      
-			      last_print_time = cur_time;
+			        last_print_time = cur_time;
+			      }
 			    }
 			  else
 			    {

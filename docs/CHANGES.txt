@@ -21,6 +21,8 @@ http://www.newbreedsoftware.com/tuxpaint/
   * Added some more brushes.
     Jeremie Zimmermann <txptdv@tofz.org>
 
+  * Now prompts to confirm before printing.
+
   * Updated/corrected Tamil translation
     Mugunth <mugunth@thamizha.com>
 
