@@ -105,6 +105,8 @@ http://www.newbreedsoftware.com/tuxpaint/
 
     * Printer icons on "Print now?" and "You can't print yet" pop-ups.
 
+    * Icons shown in "Save Over?" and "Save [before opening]" pop-ups.
+
     * Improved 'rubber band line' and stamp outline colors ("XOR" code)
       to make such lines easier to see on certain colors.
     

@@ -1425,7 +1425,7 @@ static SDL_Surface * img_btn_up, * img_btn_down, * img_btn_off;
 static SDL_Surface * img_black, * img_grey;
 static SDL_Surface * img_yes, * img_no;
 static SDL_Surface * img_open, * img_erase, * img_back, * img_trash;
-static SDL_Surface * img_printer, * img_printer_wait;
+static SDL_Surface * img_printer, * img_printer_wait, * img_save_over;
 static SDL_Surface * img_cursor_up, * img_cursor_down;
 static SDL_Surface * img_cursor_starter_up, * img_cursor_starter_down;
 static SDL_Surface * img_scroll_up, * img_scroll_down;
@@ -6962,6 +6962,7 @@ static void setup(int argc, char * argv[])
   
   img_printer = loadimage(DATA_PREFIX "images/ui/printer.png");
   img_printer_wait = loadimage(DATA_PREFIX "images/ui/printer_wait.png");
+  img_save_over = loadimage(DATA_PREFIX "images/ui/save_over.png");
 
   img_grow = loadimage(DATA_PREFIX "images/ui/grow.png");
   img_shrink = loadimage(DATA_PREFIX "images/ui/shrink.png");
@@ -11256,6 +11257,7 @@ static void cleanup(void)
 
   free_surface( &img_printer );
   free_surface( &img_printer_wait );
+  free_surface( &img_save_over );
 
   free_surface( &img_btn_up );
   free_surface( &img_btn_down );
@@ -11775,9 +11777,10 @@ static int do_save(void)
 	{
 	  /* We sure we want to do that? */
 
-	  if (do_prompt(PROMPT_SAVE_OVER_TXT,
+	  if (do_prompt_image(PROMPT_SAVE_OVER_TXT,
 			PROMPT_SAVE_OVER_YES,
-			PROMPT_SAVE_OVER_NO) == 0)
+			PROMPT_SAVE_OVER_NO,
+			img_save_over, NULL, NULL) == 0)
 	    {
 	      /* No - Let's save a new picture! */
 
@@ -13110,9 +13113,10 @@ static int do_open(int want_new_tool)
 	  
 	      if (!been_saved && !disable_save)
 		{
-		  if (do_prompt(PROMPT_OPEN_SAVE_TXT,
+		  if (do_prompt_image(PROMPT_OPEN_SAVE_TXT,
 				PROMPT_OPEN_SAVE_YES,
-				PROMPT_OPEN_SAVE_NO))
+				PROMPT_OPEN_SAVE_NO,
+				img_tools[TOOL_SAVE], NULL, NULL))
 		    {
 		      do_save();
 		    }
