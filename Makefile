@@ -340,22 +340,31 @@ install-kde-icons:
 	  install -d $(KDE_ICON_PREFIX)/hicolor/16x16/apps/; \
 	  cp data/images/tuxpaint-icon.svg \
 		$(KDE_ICON_PREFIX)/hicolor/scalable/apps/tuxpaint.svg; \
+          chmod 644 $(KDE_ICON_PREFIX)/hicolor/scalable/apps/tuxpaint.svg; \
 	  cp data/images/icon192x192.png \
 		$(KDE_ICON_PREFIX)/hicolor/192x192/apps/tuxpaint.png; \
+          chmod 644 $(KDE_ICON_PREFIX)/hicolor/192x192/apps/tuxpaint.png; \
 	  cp data/images/icon128x128.png \
 		$(KDE_ICON_PREFIX)/hicolor/128x128/apps/tuxpaint.png; \
+          chmod 644 $(KDE_ICON_PREFIX)/hicolor/128x128/apps/tuxpaint.png; \
 	  cp data/images/icon96x96.png \
 		$(KDE_ICON_PREFIX)/hicolor/96x96/apps/tuxpaint.png; \
+          chmod 644 $(KDE_ICON_PREFIX)/hicolor/96x96/apps/tuxpaint.png; \
 	  cp data/images/icon64x64.png \
 		$(KDE_ICON_PREFIX)/hicolor/64x64/apps/tuxpaint.png; \
+          chmod 644 $(KDE_ICON_PREFIX)/hicolor/64x64/apps/tuxpaint.png; \
 	  cp data/images/icon48x48.png \
 		$(KDE_ICON_PREFIX)/hicolor/48x48/apps/tuxpaint.png; \
+          chmod 644 $(KDE_ICON_PREFIX)/hicolor/48x48/apps/tuxpaint.png; \
 	  cp data/images/icon32x32.png \
 		$(KDE_ICON_PREFIX)/hicolor/32x32/apps/tuxpaint.png; \
+          chmod 644 $(KDE_ICON_PREFIX)/hicolor/32x32/apps/tuxpaint.png; \
 	  cp data/images/icon22x22.png \
 		$(KDE_ICON_PREFIX)/hicolor/22x22/apps/tuxpaint.png; \
+          chmod 644 $(KDE_ICON_PREFIX)/hicolor/22x22/apps/tuxpaint.png; \
 	  cp data/images/icon16x16.png \
 		$(KDE_ICON_PREFIX)/hicolor/16x16/apps/tuxpaint.png; \
+          chmod 644 $(KDE_ICON_PREFIX)/hicolor/16x16/apps/tuxpaint.png; \
 	fi
 
 
