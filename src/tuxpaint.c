@@ -296,8 +296,23 @@ static void win32_perror(const char * const str)
 
 
 #ifndef WIN32
-#define min(a,b) ((a < b) ? a : b)
-#define max(a,b) ((a > b) ? a : b)
+#ifdef __GNUC__
+// This version has strict type checking for safety.
+// See the "unnecessary" pointer comparison. (from Linux)
+#define min(x,y) ({ \
+  typeof(x) _x = (x);     \
+  typeof(y) _y = (y);     \
+  (void) (&_x == &_y);            \
+  _x < _y ? _x : _y; })
+#define max(x,y) ({ \
+  typeof(x) _x = (x);     \
+  typeof(y) _y = (y);     \
+  (void) (&_x == &_y);            \
+  _x > _y ? _x : _y; })
+#else
+#define min(a,b) (((a) < (b)) ? (a) : (b))
+#define max(a,b) (((a) > (b)) ? (a) : (b))
+#endif
 #endif
 
 #define clamp(lo,value,hi)    (min(max(value,lo),hi))
@@ -3711,9 +3726,9 @@ static void blit_magic(int x, int y, int x2, int y2)
 		  SDL_GetRGB(getpixel(last, x + xx, y + yy), last->format,
 			     &r, &g, &b);
 
-		  r = min(r, 255);
-		  g = min(g, 255);
-		  b = min(b, 255);
+		  r = min(r, (Uint8)255);
+		  g = min(g, (Uint8)255);
+		  b = min(b, (Uint8)255);
 	
 		  if ((cur_magic == MAGIC_THIN && (((r + g + b) / 3) > 128)) ||
 		      (cur_magic == MAGIC_THICK && (((r + g + b) / 3) <= 128)))
@@ -3877,7 +3892,7 @@ static void show_version(void)
 static void show_usage(FILE * f, char * prg)
 {
   char * blank;
-  int i;
+  unsigned i;
 
   blank = strdup(prg);
 
@@ -12136,7 +12151,7 @@ static char * uppercase(char * str)
 static unsigned char * textdir(const unsigned char * const str)
 {
   unsigned char * dstr;
-  int i, j;
+  unsigned i, j;
 
 #ifdef DEBUG
   printf("ORIG_DIR: %s\n", str);

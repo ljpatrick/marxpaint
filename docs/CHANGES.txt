@@ -8,6 +8,9 @@ http://www.newbreedsoftware.com/tuxpaint/
 
 
 2004.November.22 (0.9.15)
+  * When using gcc, min() and max() do type checking.
+    Albert Cahalan <albert@users.sf.net>
+
   * Fixed many warnings.
     Albert Cahalan <albert@users.sf.net>
 
