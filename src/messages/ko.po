@@ -1,6 +1,7 @@
 # Tux Paint Korean messages
 # Copyright (C) 2002-2003 Mark K. Kim
-# Translation: Mark K. Kim (김 강현) <markbk@cbreak.org>, 2003.
+# Translation: Mark K. Kim (김강현) <tuxNO_SOLICITATIONpaint-dev@cbreak.org>,
+# 2003-2004.
 #
 # This file is distributed under the same license as the Tux Paint program.
 #
@@ -9,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Tux Paint 0.9.14\n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2004-01-21 14:38-0800\n"
+"PO-Revision-Date: 2004-03-15 11:10-0800\n"
 "Last-Translator: Mark K. Kim <tuxNO_SOLICITATIONpaint-dev@cbreak.org>\n"
 "Language-Team: N/A\n"
 "MIME-Version: 1.0\n"
@@ -51,12 +52,10 @@ msgid "Starting a new picture will erase the current one!"
 msgstr "새 그림을 시작하면 지금있는 그림이 없어져요!"
 
 #: tuxpaint.c:811
-#, fuzzy
 msgid "That's OK!"
-msgstr "괜찮습니다"
+msgstr "괜찮습니다!"
 
 #: tuxpaint.c:812
-#, fuzzy
 msgid "Never mind!"
 msgstr "그러면 취소!"
 
@@ -93,7 +92,6 @@ msgid "Back"
 msgstr "되 돌아가기"
 
 #: tuxpaint.c:9064
-#, fuzzy
 msgid "Save over the older version of this picture?"
 msgstr "전에 있던 그름을 지우고 저장 할까요?"
 
@@ -102,84 +100,68 @@ msgid "No, save a new file"
 msgstr "아니요, 새로운 파일로 저장하죠"
 
 #: tuxpaint.c:9885
-#, fuzzy
 msgid "Choose the picture you want, then click 'Open'."
-msgstr "원하는 그림을 고른후 '열기'버튼을 눌러주세요"
+msgstr "원하는 그림을 고른후 '열기'버튼을 눌러주세요."
 
 #: colors.h:62
-#, fuzzy
 msgid "Black!"
-msgstr "검정색"
+msgstr "검정색!"
 
 #: colors.h:63
-#, fuzzy
 msgid "White!"
-msgstr "흰색"
+msgstr "흰색!"
 
 #: colors.h:64
-#, fuzzy
 msgid "Red!"
 msgstr "다시 상채로!"
 
 #: colors.h:65
-#, fuzzy
 msgid "Pink!"
-msgstr "핑크색"
+msgstr "핑크색!"
 
 #: colors.h:66
-#, fuzzy
 msgid "Orange!"
-msgstr "오렌지색"
+msgstr "오렌지색!"
 
 #: colors.h:67
-#, fuzzy
 msgid "Yellow!"
-msgstr "노란색"
+msgstr "노란색!"
 
 #: colors.h:68
-#, fuzzy
 msgid "Lime!"
-msgstr "라임색"
+msgstr "라임색!"
 
 #: colors.h:69
-#, fuzzy
 msgid "Green!"
-msgstr "녹색"
+msgstr "녹색!"
 
 #: colors.h:70
-#, fuzzy
 msgid "Cyan!"
-msgstr "청록색"
+msgstr "청록색!"
 
 #: colors.h:71
-#, fuzzy
 msgid "Blue!"
-msgstr "파란색"
+msgstr "파란색!"
 
 #: colors.h:72
-#, fuzzy
 msgid "Purple!"
-msgstr "자주색"
+msgstr "자주색!"
 
 #: colors.h:73
-#, fuzzy
 msgid "Fuchsia!"
-msgstr "퓨셔색"
+msgstr "퓨셔색!"
 
 #: colors.h:74
-#, fuzzy
 msgid "Brown!"
-msgstr "갈색"
+msgstr "갈색!"
 
 #: colors.h:75
-#, fuzzy
 msgid "Gray!"
 msgstr "잘한다!"
 
 #: colors.h:76
-#, fuzzy
 msgid "Silver!"
-msgstr "은색"
+msgstr "은색!"
 
 #: great.h:20
 msgid "Great!"
@@ -254,35 +236,29 @@ msgid "You can draw in rainbow colors!"
 msgstr "여러가지의 색으로 그림을 그리세요!"
 
 #: magic.h:74
-#, fuzzy
 msgid "Click and move to draw sparkles."
-msgstr "불꽃으로 그림을 그릴려면 마우스 버튼을 누른 상태로 마우스를 움직이세요"
+msgstr "불꽃으로 그림을 그릴려면 마우스 버튼을 누른 상태로 마우스를 움직이세요."
 
 #: magic.h:76
-#, fuzzy
 msgid "Click to make a mirror image."
-msgstr "그림을 옆으로 뒤집으려면 마우스버튼을 누르세요!"
+msgstr "그림을 옆으로 뒤집으려면 마우스버튼을 누르세요."
 
 #: magic.h:77
-#, fuzzy
 msgid "Click to flip the picture upside-down."
-msgstr "그림을 위로 뒤집으려면 마우스 버튼을 누르세요!"
+msgstr "그림을 위로 뒤집으려면 마우스 버튼을 누르세요."
 
 #: magic.h:79
-#, fuzzy
 msgid "Click and move the mouse around to blur the picture."
-msgstr "그림을 흐리게 하려면 마우스 버튼을 누른 상태로 마우스를 움직이세요"
+msgstr "그림을 흐리게 하려면 마우스 버튼을 누른 상태로 마우스를 움직이세요."
 
 #: magic.h:80
-#, fuzzy
 msgid "Click and move the mouse around to make the picture blocky."
-msgstr "모자이크를 만들려면 마우스 버튼을 누른 상태로 마우스를 움직이세요"
+msgstr "모자이크를 만들려면 마우스 버튼을 누른 상태로 마우스를 움직이세요."
 
 #: magic.h:82
-#, fuzzy
 msgid "Click and move the mouse around to draw a negative."
 msgstr ""
-"그림의 색을 음화로 바꾸려면 마우스 버튼을 누른 상태로 마우스를 움직이세요"
+"그림의 색을 음화로 바꾸려면 마우스 버튼을 누른 상태로 마우스를 움직이세요."
 
 #: magic.h:83
 msgid "Click and move to fade the colors."
@@ -296,24 +272,20 @@ msgstr ""
 "세요."
 
 #: magic.h:86
-#, fuzzy
 msgid "Click and move the mouse around to make the picture drip."
 msgstr ""
 "그림이 밑으로 흐르는 것 같이 만들려면 마우스 버튼을 누른 상태로 마우스를 움직"
-"이세요!"
+"이세요."
 
 #: magic.h:88
-#, fuzzy
 msgid "Click and move the mouse to thicken the picture."
 msgstr "그림을 두껍게 만들려면 마우스 버튼을 누른 상태로 마우스를 움직이세요."
 
 #: magic.h:89
-#, fuzzy
 msgid "Click and move the mouse to thin the picture."
 msgstr "그림을 얇게 만들려면 버튼을 누른 상태로 마우스를 움직이세요."
 
 #: magic.h:91
-#, fuzzy
 msgid "Click in the picture to fill that area with color."
 msgstr ""
 "연결된 부분의 색을 바꾸려면 마우스 버튼을 연결된 부분 아무대나 누르세요."
@@ -451,14 +423,12 @@ msgid "Pick a picture to stamp around your drawing."
 msgstr "도장 그림을 고르세요."
 
 #: tools.h:64
-#, fuzzy
 msgid "Click to start drawing a line. Let go to complete it."
 msgstr ""
 "마우스의 버튼을 누르는 곳이 줄의 시작점 입니다. 버튼을 놓는곳이 종료점 입니"
 "다."
 
 #: tools.h:65
-#, fuzzy
 msgid ""
 "Pick a shape. Click to pick the center, drag, then let go when it is the "
 "size you want. Move around to rotate it, and click to draw it."
@@ -467,13 +437,15 @@ msgstr ""
 "를 잡고 버튼을 놓으세요.  (4) 모양을 돌린후 마우스 버튼을 누르세요."
 
 #: tools.h:66
-#, fuzzy
 msgid "Choose a style of text. Click on your drawing and you can start typing."
 msgstr "(1) 글체를 고르세요.  (2) 그림을 누르고 원하는 글을 키보드로 치세요."
 
 #: tools.h:67
 msgid "Pick a magical effect to use on your drawing!"
 msgstr "어떤 효과를 사용 할까요?"
+# "magical effect" is hard to translate. Korean translation uses
+# a question to make it easier to convey our message lacking the word
+# for "magical effect."
 
 #: tools.h:68
 msgid "Undo!"

@@ -134,7 +134,7 @@ June 17, 2002 - March 4, 2004
     TOYAMA Shin-ichi <shin1@wmail.plala.or.jp>
 
   * Korean
-    Mark Kim <markslist@cbreak.org>
+    Mark K. Kim <tuxNO_SOLICITATIONpaint-dev@cbreak.org>
 
   * Lithuanian
     Mantas Kriauciunas <monte@mail.lt>

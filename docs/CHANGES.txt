@@ -217,7 +217,7 @@ http://www.newbreedsoftware.com/tuxpaint/
   * Right-to-left language support (for Hebrew, for example).
 
   * Updated Korean translations.
-    Mark K. Kim <mark@cbreak.org>
+    Mark K. Kim <tuxNO_SOLICITATIONpaint-dev@cbreak.org>
 
   * UTF-8 support in the Text Tool!
     Robert Glowczynski <robertg@software.com.pl>,
@@ -496,7 +496,7 @@ http://www.newbreedsoftware.com/tuxpaint/
   * UTF-8 support working.
 
   * Korean translation completed!
-    Mark K. Kim <mark@cbreak.org>
+    Mark K. Kim <tuxNO_SOLICITATIONpaint-dev@cbreak.org>
 
   * Fixed errors in 'uninstall' target in Makefile
 
@@ -554,7 +554,7 @@ http://www.newbreedsoftware.com/tuxpaint/
     Török Gábor <gabo@linuxmania.hu>
 
   * Partly translated to Korean.  PO file in an unusable charset, though...
-    Mark K. Kim <mark@cbreak.org>
+    Mark K. Kim <tuxNO_SOLICITATIONpaint-dev@cbreak.org>
 
   * Supports locale-specific fonts for languages that need Unicode.
     e.g., Korean will use "ko.ttf", if found, for translated strings.
