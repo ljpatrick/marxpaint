@@ -6,7 +6,7 @@ Copyright (c) 2003 by Bill Kendrick
 bill@newbreedsoftware.com
 http://www.newbreedsoftware.com/tuxpaint/
 
-September 11, 2003
+September 28, 2003
 
 
 LOW-PRIORITY DOCUMENTATION CHANGES:
@@ -18,6 +18,12 @@ LOW-PRIORITY DOCUMENTATION CHANGES:
 
 LOW-PRIORITY IMPLEMENTATION CHANGES:
 ------------------------------------
+  * Allow disabling of per-stamp flip/mirror disabling.
+    (e.g., allow TOTAL artistic control from the user; right now,
+    some stamps will insist on not being mirrored/flipped; e.g., number
+    stamps)
+    (Ben Armstrong's suggestion.)
+
   * Fix and use scanline fill for filled shapes.
   
   * Fix "update_shape()" function and use it to replace SDL_Flip()'s
