@@ -445,7 +445,7 @@ msgstr "Du har no blanke ark og fargestiftar til!"
 
 #: tools.h:72
 msgid "Open..."
-msgstr "Opna ..."
+msgstr "Opna …"
 
 #: tools.h:73
 msgid "Your image has been saved!"
@@ -453,7 +453,7 @@ msgstr "Teikninga er lagra."
 
 #: tools.h:74
 msgid "Printing..."
-msgstr "Skriv ut ..."
+msgstr "Skriv ut …"
 
 #: tools.h:75
 msgid "Bye bye!"
