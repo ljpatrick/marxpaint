@@ -1,4 +1,4 @@
-                                  [1]Tux Paint
+                                   Tux Paint
                                  version 0.9.14
 
                      A simple drawing program for children
@@ -6,8 +6,8 @@
                         Copyright 2004 by Bill Kendrick
                                New Breed Software
 
-                          [2]bill@newbreedsoftware.com
-                  [3]http://www.newbreedsoftware.com/tuxpaint/
+                           bill@newbreedsoftware.com
+                   http://www.newbreedsoftware.com/tuxpaint/
 
                        June 14, 2002 - September 24, 2004
 
@@ -30,7 +30,7 @@ License:
        behind the program is available. (This allows others to add features,
        fix bugs, and use parts of the program in their own GPL'd software.)
 
-       See [4]COPYING.txt for the full text of the GPL license.
+       See COPYING.txt for the full text of the GPL license.
 
 Objectives:
 
@@ -88,7 +88,7 @@ Loading Tux Paint
 
   Windows Users
 
-                                                                   [5][Icon]  
+                                                                    [Icon]    
                                                                    Tux Paint  
 
          If you installed Tux Paint on your computer using the
@@ -122,7 +122,7 @@ Title Screen
 
        When Tux Paint first loads, a title/credits screen will appear.
 
-                             [6][Title Screenshot]
+                               [Title Screenshot]
 
        Once loading is complete, press a key or click on the mouse to
        continue. (Or, after about 30 seconds, the title screen will go away
@@ -138,15 +138,15 @@ Main Screen
 
                The toolbar contains the drawing and editing controls.
 
- [7][Tools: Paint, Stamp, Lines, Shapes, Text, Magic, Undo, Redo,       Eraser,
-                         New, Open, Save, Print, Quit]
+[Tools: Paint, Stamp, Lines, Shapes, Text, Magic, Undo, Redo,       Eraser, New,
+                            Open, Save, Print, Quit]
 
        Middle: Drawing Canvas
 
                The largest part of the screen, in the center, is the drawing
                canvas. This is, obviously, where you draw!
 
-                                 [8][(Canvas)]
+                                   [(Canvas)]
 
        Right Side: Selector
 
@@ -155,14 +155,14 @@ Main Screen
                the various brushes available. When the Rubber Stamp tool is
                selected, it shows the different shapes you can use.
 
-               [9][Selectors - Brushes, Letters, Shapes, Stamps]
+                 [Selectors - Brushes, Letters, Shapes, Stamps]
 
        Lower: Colors
 
                A palette of available colors are shown near the bottom of the
                screen.
 
-[10][Colors - Black, White, Red, Pink, Orange, Yellow, Green, Cyan,       Blue,
+  [Colors - Black, White, Red, Pink, Orange, Yellow, Green, Cyan,       Blue,
                               Purple, Brown, Grey]
 
        Bottom: Help Area
@@ -170,9 +170,9 @@ Main Screen
                At the very bottom of the screen, Tux, the Linux Penguin,
                provides tips and other information while you draw.
 
-[11](For example: 'Pick a shape. Click to pick the center, drag, then       let
- go when it is the size you want.  Move around to rotate it, and       click to
-                                   draw it.)
+ (For example: 'Pick a shape. Click to pick the center, drag, then       let go
+when it is the size you want.  Move around to rotate it, and       click to draw
+                                      it.)
 
    ---------------------------------------------------------------------------
 
@@ -212,7 +212,7 @@ Available Tools
 
                  (NOTE: If the "nostampcontrols" option is set, Tux Paint
                  won't display the Mirror, Flip, Shrink and Grow controls for
-                 stamps. See the "[12]Options" documentation.)
+                 stamps. See the "Options" documentation.)
 
    ---------------------------------------------------------------------------
 
@@ -436,7 +436,7 @@ Available Tools
 
                  If choose to open a picture, and your current drawing hasn't
                  been saved, you will be prompted as to whether you want to
-                 save it or not. (See "[13]Save," below.)
+                 save it or not. (See "Save," below.)
 
                  Note: You can also press [Control]-[O] on the keyboard to
                  get the 'Open' dialog.
@@ -461,7 +461,7 @@ Available Tools
                  create a new entry (a new file).
 
                  (NOTE: If either the "saveover" or "saveovernew" options are
-                 set, it won't ask before saving over. See the "[14]Options"
+                 set, it won't ask before saving over. See the "Options"
                  documentation.)
 
                  Note: You can also press [Control]-[S] on the keyboard to
@@ -481,7 +481,7 @@ Available Tools
                               command-line), the "Print" button will be
                               disabled.
 
-                              See the "[15]Options" documentation.)
+                              See the "Options" documentation.)
 
                       Restricting Printing
 
@@ -494,7 +494,7 @@ Available Tools
                               For example, with "printdelay=60", you can
                               print only once a minute.
 
-                              See the "[16]Options" documentation.)
+                              See the "Options" documentation.)
 
                       Printing Command
 
@@ -510,7 +510,7 @@ Available Tools
                               "printcommand" value in Tux Paint's
                               configuration file.
 
-                              See the "[17]Options" documentation.)
+                              See the "Options" documentation.)
 
                       Printer Settings
 
@@ -537,7 +537,7 @@ Available Tools
                               "userdata/print.cfg". Any changes will be saved
                               there as well.
 
-                              See the "[18]Options" documentation.)
+                              See the "Options" documentation.)
 
    ---------------------------------------------------------------------------
 
@@ -548,7 +548,7 @@ Available Tools
 
                  (NOTE: The "Quit" button can be disabled (e.g., with the
                  "--noquit" command-line option), but the [Escape] key will
-                 still work. See the "[19]Options" documentation.)
+                 still work. See the "Options" documentation.)
 
                  You will first be prompted as to whether you really want to
                  quit.
@@ -556,7 +556,7 @@ Available Tools
                  If you choose to quit, and you haven't saved the current
                  picture, you will first be asked if wish to save it. If it's
                  not a new image, you will then be asked if you want to save
-                 over the old version, or create a new entry. (See "[20]Save"
+                 over the old version, or create a new entry. (See "Save"
                  above.)
 
                  NOTE: If the image is saved, it will be reloaded
@@ -998,20 +998,20 @@ Fonts
      Other documentation included with Tux Paint (in the "docs"
      folder/directory) include:
 
-       * [21]AUTHORS.txt
+       * AUTHORS.txt
          List of authors and contributors
-       * [22]CHANGES.txt
+       * CHANGES.txt
          Summary of changed between releases
-       * [23]COPYING.txt
+       * COPYING.txt
          Copying license (The GNU General Public License)
-       * [24]INSTALL.txt
+       * INSTALL.txt
          Instructions for compiling/installing, when applicable
-       * [25]OPTIONS.html
+       * OPTIONS.html
          Detailed instructions on command-line and configuration-file
          options, for those who don't want to use Tux Paint Config.
-       * [26]PNG.txt
+       * PNG.txt
          Notes on creating PNG format images for use in Tux Paint
-       * [27]TODO.txt
+       * TODO.txt
          A list of pending features or bugs needing fixed
 
    ---------------------------------------------------------------------------
@@ -1020,34 +1020,9 @@ Fonts
 
      If you need help, feel free to contact New Breed Software:
 
-       [28]http://www.newbreedsoftware.com/
+       http://www.newbreedsoftware.com/
 
      You may also wish to participate in the numerous Tux Paint mailing
      lists:
 
-       [29]http://www.newbreedsoftware.com/tuxpaint/lists/
-
-References
-
-   Visible links
-   2. mailto:bill@newbreedsoftware.com
-   3. http://www.newbreedsoftware.com/tuxpaint/
-   4. file:///home/kendrick/Development/tux/tp/tuxpaint/docs/COPYING.txt
-  12. file:///home/kendrick/Development/tux/tp/tuxpaint/docs/html/OPTIONS.html
-  13. file:///home/kendrick/Development/tux/tp/tuxpaint/docs/html/README.html#save
-  14. file:///home/kendrick/Development/tux/tp/tuxpaint/docs/html/OPTIONS.html
-  15. file:///home/kendrick/Development/tux/tp/tuxpaint/docs/html/OPTIONS.html
-  16. file:///home/kendrick/Development/tux/tp/tuxpaint/docs/html/OPTIONS.html
-  17. file:///home/kendrick/Development/tux/tp/tuxpaint/docs/html/OPTIONS.html
-  18. file:///home/kendrick/Development/tux/tp/tuxpaint/docs/html/OPTIONS.html
-  19. file:///home/kendrick/Development/tux/tp/tuxpaint/docs/html/OPTIONS.html
-  20. file:///home/kendrick/Development/tux/tp/tuxpaint/docs/html/README.html#save
-  21. file:///home/kendrick/Development/tux/tp/tuxpaint/docs/AUTHORS.txt
-  22. file:///home/kendrick/Development/tux/tp/tuxpaint/docs/CHANGES.txt
-  23. file:///home/kendrick/Development/tux/tp/tuxpaint/docs/COPYING.txt
-  24. file:///home/kendrick/Development/tux/tp/tuxpaint/docs/INSTALL.txt
-  25. file:///home/kendrick/Development/tux/tp/tuxpaint/docs/html/OPTIONS.html
-  26. file:///home/kendrick/Development/tux/tp/tuxpaint/docs/PNG.txt
-  27. file:///home/kendrick/Development/tux/tp/tuxpaint/docs/TODO.txt
-  28. http://www.newbreedsoftware.com/
-  29. http://www.newbreedsoftware.com/tuxpaint/lists/
+       http://www.newbreedsoftware.com/tuxpaint/lists/
