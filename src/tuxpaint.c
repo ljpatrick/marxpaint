@@ -621,8 +621,8 @@ static const char * lang_prefixes[NUM_LANGS] = {
 
 // languages which don't use the default font
 static int lang_use_own_font[] = {
-  LANG_EL,
-  LANG_HE,
+//  LANG_EL,
+//  LANG_HE,
   LANG_HI,
   LANG_JA,
   LANG_KO,
