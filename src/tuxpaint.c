@@ -4313,6 +4313,51 @@ static void blit_magic(int x, int y, int button_down)
 	  SDL_UnlockSurface(canvas);
 	  SDL_UnlockSurface(last);
 	}
+      else if (cur_magic == MAGIC_CARTOON)
+	{
+	  float hue, sat, val;
+	  
+	  SDL_LockSurface(last);
+	  SDL_LockSurface(canvas);
+
+	  for (yy = y - 16; yy < y + 16; yy++)
+	    {
+	      for (xx = x - 16; xx < x + 16; xx++)
+		{
+		  /* Get original color: */
+		
+		  SDL_GetRGB(getpixel(last, xx, yy), last->format,
+			     &r, &g, &b);
+
+		  rgbtohsv(r, g, b, &hue, &sat, &val);
+
+		  if (sat <= 0.1)
+		    sat = 0;
+		  else
+		    sat = 1.0;
+		 
+		  val = val - 0.5;
+		  val = val * 4;
+		  val = val + 0.5;
+
+		  if (val < 0)
+		    val = 0;
+		  else if (val > 1.0)
+		    val = 1.0;
+
+		  val = floor(val * 10) / 10;
+
+		  hue = floor(hue * 10) / 10;
+
+		  hsvtorgb(hue, sat, val, &r, &g, &b);
+
+		  putpixel(canvas, xx, yy, SDL_MapRGB(canvas->format, r, g, b));
+		}
+	    }
+
+	  SDL_UnlockSurface(canvas);
+	  SDL_UnlockSurface(last);
+	}
       else if (cur_magic == MAGIC_RAINBOW)
 	{
 	  /* Pick next color: */
