@@ -1406,6 +1406,7 @@ static int cur_undo, oldest_undo, newest_undo;
 
 static SDL_Surface * img_title, * img_progress;
 static SDL_Surface * img_btn_up, * img_btn_down, * img_btn_off;
+static SDL_Surface * img_black, * img_grey;
 static SDL_Surface * img_yes, * img_no;
 static SDL_Surface * img_open, * img_erase, * img_back;
 static SDL_Surface * img_cursor_up, * img_cursor_down;
@@ -6926,6 +6927,24 @@ static void setup(int argc, char * argv[])
   img_btn_down = loadimage(DATA_PREFIX "images/ui/btn_down.png");
   img_btn_off = loadimage(DATA_PREFIX "images/ui/btn_off.png");
 
+  img_black = SDL_CreateRGBSurface(SDL_SRCALPHA|SDL_SWSURFACE,
+					       img_btn_off->w, img_btn_off->h,
+					       img_btn_off->format->BitsPerPixel,
+					       img_btn_off->format->Rmask,
+					       img_btn_off->format->Gmask,
+					       img_btn_off->format->Bmask,
+					       img_btn_off->format->Amask);
+  SDL_FillRect(img_black, NULL, SDL_MapRGBA(screen->format, 0, 0, 0, 255));
+
+  img_grey = SDL_CreateRGBSurface(SDL_SRCALPHA|SDL_SWSURFACE,
+					       img_btn_off->w, img_btn_off->h,
+					       img_btn_off->format->BitsPerPixel,
+					       img_btn_off->format->Rmask,
+					       img_btn_off->format->Gmask,
+					       img_btn_off->format->Bmask,
+					       img_btn_off->format->Amask);
+  SDL_FillRect(img_grey, NULL, SDL_MapRGBA(screen->format, 170, 170, 170, 255));
+
   show_progress_bar();
 
   img_yes = loadimage(DATA_PREFIX "images/ui/yes.png");
@@ -7680,10 +7699,14 @@ static void draw_toolbar(void)
 	  else if (tool_avail[i])
 	    {
 	      SDL_BlitSurface(img_btn_up, NULL, screen, &dest);
+	      SDL_BlitSurface(img_black, NULL, img_tools[i], NULL);
+	      SDL_BlitSurface(img_black, NULL, img_tool_names[i], NULL);
 	    }
 	  else
 	    {
 	      SDL_BlitSurface(img_btn_off, NULL, screen, &dest);	
+	      SDL_BlitSurface(img_grey, NULL, img_tools[i], NULL);
+	      SDL_BlitSurface(img_grey, NULL, img_tool_names[i], NULL);
 	    }
 
 	  dest.x = ((i % 2) * 48) + 4;
