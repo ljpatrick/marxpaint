@@ -21,12 +21,12 @@
   along with this program; if not, write to the Free Software
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   
-  June 14, 2002 - December 10, 2004
+  June 14, 2002 - December 11, 2004
 */
 
 
 #define VER_VERSION     "0.9.15"
-#define VER_DATE        "2004-12-10"
+#define VER_DATE        "2004-12-11"
 
 
 //#define VIDEO_BPP 15 // saves memory
@@ -582,7 +582,7 @@ static int use_sound, fullscreen, disable_quit, simple_shapes, language,
   wheely, no_fancy_cursors, keymouse, mouse_x, mouse_y,
   mousekey_up, mousekey_down, mousekey_left, mousekey_right,
   dont_do_xor, use_print_config, dont_load_stamps, noshortcuts,
-  mirrorstamps, disable_stamp_controls, disable_save;
+  mirrorstamps, disable_stamp_controls, disable_save, ok_to_use_lockfile;
 static int recording, playing;
 static char * playfile;
 static FILE * demofi;
@@ -4790,7 +4790,7 @@ static unsigned compute_default_scale_factor(double ratio)
 
 static void setup(int argc, char * argv[])
 {
-  int i, ok_to_use_sysconfig, ok_to_use_lockfile;
+  int i, ok_to_use_sysconfig;
   char str[128];
   char * upstr;
   SDL_Color black = {0, 0, 0, 0};
@@ -5643,6 +5643,8 @@ static void setup(int argc, char * argv[])
           /* FIXME: Wrap in gettext() */
           printf("\nYou're already running a copy of Tux Paint!\n\n");
 
+	  free(lock_fname);
+
 	  fclose(fi);
           exit(0);
 	}
@@ -5669,6 +5671,8 @@ static void setup(int argc, char * argv[])
 	      "The error that occurred was:\n"
 	      "%s\n\n", lock_fname, strerror(errno));
     }
+
+    free(lock_fname);
   }
 
 
@@ -9400,7 +9404,7 @@ static int SDLCALL NondefectiveBlit(SDL_Surface *src, SDL_Rect *srcrect, SDL_Sur
       srch -= (dsty+srch) - (dst->h-1);
     }
   if(srcw<1 || srch<1)
-    return /* no idea what to return if nothing done */ ;
+    return -1; /* no idea what to return if nothing done */
   while(srch--)
     {
       int i = srcw;
@@ -9409,6 +9413,8 @@ static int SDLCALL NondefectiveBlit(SDL_Surface *src, SDL_Rect *srcrect, SDL_Sur
           putpixel(dst, i+dstx, srch+dsty, getpixel(src, i+srcx, srch+srcy));
         }
     }
+
+  return(0);
 }
 
 
@@ -10231,6 +10237,38 @@ static void cleanup(void)
       fclose(demofi);
     }
 
+
+  /* If we're using a lockfile, we can 'clear' it when we quit
+     (so Tux Paint can be launched again soon, if the user wants to!) */
+
+  if (ok_to_use_lockfile)
+  {
+    char * lock_fname;
+    time_t zero_time;
+    FILE * fi;
+
+    lock_fname = get_fname("lockfile.dat");
+
+    zero_time = (time_t) 0;
+
+    fi = fopen(lock_fname, "w");
+    if (fi != NULL)
+    {
+      /* If we can write to it, do so! */
+
+      fwrite(&zero_time, sizeof(time_t), 1, fi);
+      fclose(fi);
+    }
+    else
+    {
+      fprintf(stderr,
+ 	      "\nWarning: I couldn't create the lockfile (%s)\n"
+	      "The error that occurred was:\n"
+	      "%s\n\n", lock_fname, strerror(errno));
+    }
+
+    free(lock_fname);
+  }
 
   /* Close up! */
 

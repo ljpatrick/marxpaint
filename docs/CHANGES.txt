@@ -7,7 +7,10 @@ bill@newbreedsoftware.com
 http://www.newbreedsoftware.com/tuxpaint/
 
 
-2004.December.10 (0.9.15)
+2004.December.11 (0.9.15)
+  * Lockfile now cleared upon exit, allowing Tux Paint to be re-launched
+    immediately.
+
   * Lithuanian updates.
     Gintaras Go?tautas <gintaras@nes.lt>
 
