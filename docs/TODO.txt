@@ -152,11 +152,13 @@ LOW-PRIORITY TRANSLATION STUFF:
     Uighur, Ukrainian, Urdu, Uzbek, Venda, Volap?k, Wolof, Xhosa, Yiddish,
     Yoruba, Zhuang, Zulu, Klingon, Elvish.
 
-  * Translate splash screen text (e.g., copyright, etc.)
+  * Make splash screen translatable/localizable:
+      'Tux Paint' logo (e.g., "Teikne-Tux" in Norwegian)
+      'present' text
+      'Developed by ...' text
+      Add: 'Translated by ...' (see gettext manual for how to handle this)
   
-  * Translate program name (e.g., "Teikne-Tux" in Norwegian)
-
-  * Update Czech and Slovak translations (so they use accents/etc.!)
+    * Update Czech and Slovak translations (so they use accents/etc.!)
 
   * Update Vietnamese translation (so it uses accents/etc.!)
 
