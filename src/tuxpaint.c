@@ -2385,7 +2385,6 @@ static void show_progress_bar(void)
 {
   SDL_Rect dest, src;
   int x;
-  SDL_Event event;
   static Uint32 oldtime;
   Uint32 newtime;
 
@@ -6953,8 +6952,18 @@ static int load_user_fonts(void *vp)
 #include <fcntl.h>
 #include <sys/poll.h>
 #include <sys/wait.h>
+
 #ifdef _POSIX_PRIORITY_SCHEDULING
 #include <sched.h>
+#else
+#define sched_yield()
+#endif
+
+#ifdef __linux__
+#include <sys/prctl.h>
+#else
+#define prctl(o,a1)
+#define PR_SET_PDEATHSIG 0
 #endif
 
 static void reliable_write(int fd, const void *buf, size_t count)
@@ -7025,14 +7034,14 @@ static void run_font_scanner(void)
       close(sv[1]);
       return;
     }
-  nice(42); // be nice, letting the main thread get the CPU
-#ifdef _POSIX_PRIORITY_SCHEDULING
-  sched_yield();
-#endif
+  nice(42);       // be nice, letting the main thread get the CPU
+  sched_yield();     // try to let the parent run right now
+  prctl(PR_SET_PDEATHSIG, 9);    // get killed if parent exits
   font_socket_fd = sv[1];
   close(sv[0]);
   progress_bar_disabled = 1;
   reliable_read(font_socket_fd, &no_system_fonts, sizeof no_system_fonts);
+  sched_yield();     // try to let the parent run right now
   SDL_Init(SDL_INIT_NOPARACHUTE);
   TTF_Init();
   load_user_fonts(NULL);
