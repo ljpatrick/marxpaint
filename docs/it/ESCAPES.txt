@@ -1,0 +1,216 @@
+ESCAPES.it.txt di Tux Paint
+
+Tux Paint - Un semplice programma di disegno per bambini.
+
+Copyright 2003 by Bill Kendrick
+bill@newbreedsoftware.com
+http://www.newbreedsoftware.com/tuxpaint/
+
+1 Febbraio 2003 - 1 Febbraio, 2003
+
+
+A proposito di sequenze di escape
+---------------------------------
+  Tux Paint permette di usare sequenze di escape HTML nei file di
+  descrizione (".txt")  che vengono usati dallo strumento Timbro.
+  (Si veda README.it.txt per maggiori informazioni sulla creazione
+  di set di timbri personalizzati).
+  
+  Le sequenze di escape permettono di inserire caratteri non ASCII
+  all'interno dei file di testo. Le sequenze supportate da Tux Paint
+  sono le stesse usate nelle pagine web in HTML.
+
+  Una sequenza inizia col carattere "&" (e commerciale) e finisce
+  con ";" (punto e virgola). Ad esempio: "&iuml;".
+
+
+Usare sequenze di escape in Tux Paint
+-------------------------------------
+  Per usare una stringa contenente sequenze di escape nel file di 
+  descrizione di un timbro (il ".txt" corrispondente al timbro ".png")
+  la linea contenente la descrizione tradotta deve cominciare con il
+  "codice locale" della lingua usata, seguito da ".esc=" e dal testo
+  di descrizione.
+
+  Ad esempio, una traduzione spagnola di una stringa in ASCII potrebbe
+  essere questa:
+
+    es=Hola
+
+  Mentre una traduzione che utilizza le sequenze di escape in stile
+  HTML potrebbe essere questa:
+
+    es.esc=&iexcl;Hola ni&ntilde;os!
+  
+
+  In entrambi i casi, il "es" che si trova  all'inizio della riga
+  corrisponde al linguaggio della descrizione: spagnolo.
+  (Si veda README.it.txt per una lista di linguaggi supportati da
+   Tux Paint e del relativo "codice locale")
+
+  Nel secondo esempio, il "&iexcl;" e` una sequenza di escape che
+  corrisponde ad un  punto esclamativo  rovesciato:  "¡",  mentre
+  "&ntilde;"  rappresenta il carattere spagnolo di "n" sormontata
+  da tilde "~": "ñ".
+
+
+  Anche se lo stesso esempio avrebbe potuto essere scritto come
+
+    es=¡Hola niños!
+
+  a seconda dell'editor di testo usato per editare il file potrebbe
+  non essere una cosa semplice.  Nonostante questo,  personalizzare 
+  Tux Paint non dovrebbe mai costituire un problema;  questo  e` il
+  motivo per cui e` nato il supporto per le sequenze di escape.
+
+  
+  NOTA: dato che il carattere "&" e` il delimitatore iniziale di una
+  sequenza di escape, per poterlo inserire in una stringa che contiene
+  sequenze di escape bisogna usare il suo codice: "&amp;".
+
+  Ad esempio, la stringa in ASCII:
+
+    xx=This & that
+
+  Usando le sequenze di escape andrebbe scritta come segue:
+
+    xx.esc=This &amp; that
+
+
+  La riga seguenze e` SBAGLIATA, e il risultato sara` troncato e verra`
+  visualizzato come "This ":
+
+    xx.esc=This & that
+
+
+
+Sequenze di escape supportate:
+------------------------------
+  Sequence   Character   Description
+  --------   ---------   -----------
+  &agrave;       à       minuscola con accento grave
+  &aacute;       á       minuscola con accento acuto
+  &acirc;        â       minuscola con accento circonflesso
+  &atilde;       ã       minuscola con tilde
+  &auml;         ä       minuscola con dieresi
+  &aring;        å       minuscola con tondino
+
+  &Agrave;       À       maiuscola con accento grave
+  &Aacute;       Á       maiuscola con accento acuto
+  &Acirc;        Â       maiuscola con accento circonflesso
+  &Atilde;       Ã       maiuscola con tilde
+  &Auml;         Ä       maiuscola con dieresi
+  &Aring;        Å       maiuscola con tondino
+
+  &aelig;        æ       Legatura ae minuscola
+  &AElig;        Æ       Legatura AE maiuscola
+
+  &ccedil;       ç       C minuscola con cediglia
+  &Ccedil;       Ç       C maiuscola con cediglia
+
+  &eth;          ð       delta minuscola
+  &ETH;          Ð       Delta maiuscola
+
+  &egrave;       è       
+  &eacute;       é       
+  &ecirc;        ê       
+  &euml;         ë       
+
+  &Egrave;       È       
+  &Eacute;       É       
+  &Ecirc;        Ê       
+  &Euml;         Ë       
+
+  &igrave;       ì       
+  &iacute;       í       
+  &icirc;        î       
+  &iuml;         ï       
+
+  &Igrave;       Ì       
+  &Iacute;       Í       
+  &Icirc;        Î       
+  &Iuml;         Ï       
+
+  &ograve;       ò       
+  &oacute;       ó       
+  &ocirc;        ô       
+  &otilde;       õ       
+  &ouml;         ö       
+  &oslash;       ø       
+
+  &Ograve;       Ò       
+  &Oacute;       Ó       
+  &Ocirc;        Ô       
+  &Otilde;       Õ       
+  &Ouml;         Ö       
+  &Oslash;       Ø       
+
+  &ugrave;       ù       
+  &uacute;       ú       
+  &ucirc;        û       
+  &uuml;         ü       
+
+  &Ugrave;       Ù       
+  &Uacute;       Ú       
+  &Ucirc;        Û       
+  &Uuml;         Ü       
+
+  &ntilde;       ñ       
+  &Ntilde;       Ñ       
+
+  &szlig;        ß       beta
+
+  &yacute;       ý       
+  &yuml;         ÿ       
+  &Yacute;       Ý       
+
+  &thorn;        þ       thorn minuscola
+  &THORN;        Þ       Thorn maiuscola
+
+  &iexcl;        ¡       Punto esclamativo inverso
+  &iquest;       ¿       Punto di domanda inverso
+  &laquo;        «       Aperte virgolette
+  &raquo;        »       Chiuse virgolette
+
+  &cent;         ¢       centesimo (simbolo)
+  &pound;        £       Sterlina / Lira (simbolo)
+  &curren;       ¤       Valuta (simbolo)
+  &yen;          ¥       Yen (simbolo)
+
+  &acute;        ´       Accento acuto
+  &cedil;        ¸       Cediglia
+  &uml;          ¨       Dieresi
+
+  &quot;         "       Virgolette
+  &amp;          &       E commerciale
+  &lt;           <       minore
+  &gt;           >       maggiore
+
+  &plusmn;       ±       segno "piu o meno"
+  &times;        ×       segno "per"
+  &divide;       ÷       segno "diviso"
+  &not;          ¬       "non" logico (simbolo)
+  &deg;          °       grado (simbolo)
+  &micro;        µ       micron (simbolo)
+
+  &frac14;       ¼       un quarto (1/4)
+  &frac12;       ½       un mezzo (1/2)
+  &frac34;       ¾       tre quarti (3/4)
+
+  &sup1;         ¹       1 (apice)
+  &sup2;         ²       2 (apice)
+  &sup3;         ³       3 (apice)
+
+  &brvbar;       ¦       sbarra verticale interrotta
+  &sect;         §       sezione (simbolo)
+  &para;         ¶       paragrafo (simbolo)
+  &middot;       *       puntino (simbolo)
+
+  &copy;         ©       Copyright ((C))
+  &reg;          ®       Registered trademark ((R))
+
+  &ordf;         ª       ordinale femminile
+  &ordm;         º       ordinale maschile
+  &shy;          ­       "Soft hyphen"
+  &macr;         ¯       "Spacing macron"
+

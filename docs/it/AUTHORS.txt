@@ -1,1 +1,202 @@
-Veda prego "docs/AUTHORS.txt"
+AUTHORS.it.txt di Tux Paint (2004-03-21: per una versione aggiornata
+di questo file,  si veda l'originale AUTHORS.txt oppure il sito web)
+
+Tux Paint - Un semplice programma di disegno per bambini.
+
+Copyright (c) 2003 by Bill Kendrick
+bill@newbreedsoftware.com
+http://www.newbreedsoftware.com/tuxpaint/
+
+
+17 Giugno, 2002 - 18 Agosto, 2003
+
+
+* Progetto e programmazione:
+
+  Bill Kendrick <bill@newbreedsoftware.com>
+  New Breed Software
+  http://www.newbreedsoftware.com/
+
+  Algoritmo per forme piene basato su una descrizione del libro:
+  "Computer Graphics: C Version," (c) Prentice Hall 1997
+  di Donald Hearn and M. Pauline Baker.
+  [  NOTA: Attualmente non utilizzato. ]
+
+  Codice di riempimento forme basato sull'esempio di Wikipedia:
+  http://www.wikipedia.org/wiki/Flood_fill/C_example
+  di Damian Yerrick - http://www.wikipedia.org/wiki/Damian_Yerrick
+
+  Patch per il supporto per la risoluzione 800x600 di:
+  TOYAMA Shin-ichi <kyone@tky2.3web.ne.jp>
+
+
+* Grafica
+
+  * Bottoni UI - creati usando lo script "AquaPro" in The GIMP
+    Copyright (C) 2001 Denis Bodor <b.bodor@calixo.net>
+
+  * Icone UI - create da Bill Kendrick usando The GIMP
+
+  * Rappresentazione fumettosa di "Tux," il pinguino Linux
+    create da Sam "Criswell" Hart  <criswell@geekcomix.com>
+    Tux disegnato originariamente da Larry Ewing <lewing@isc.tamue.edu>
+    http://www.isc.tamu.edu/~lewing/linux/
+
+  * Pennelli creati usando The GIMP
+    http://www.gimp.org/
+
+
+* Caratteri
+
+  * Dalla "Free Universal Character Set Outline Fonts".
+    http://www.freesoftware.fsf.org/freefont/
+    GPL, Copyright 2002 Primoz Peterlin <primoz.peterlin@biofiz.mf.uni-lj.si>
+    et al
+
+
+* Suoni
+
+  * Molti creati da Bill Kendrick
+    * Blocchi -  Pila di cartucce del Nintendo NES una contro l'altra.
+    * Sfuma   -  Microfono sfregato su mousepad.
+    * Gesso   -  Microfono sfregato su capelli.
+    * Fade    -  Rana canterina.
+    
+  * Molti altri presi da vari posti sul web.
+
+  * Modificati usando SOX
+    http://sox.sourceforge.net/
+
+  * Modificati usando Audacity
+    http://www.audacity.org/
+
+
+* Traduzioni
+
+  * Catalan
+    Pere Pujal Carabantes <ppujal@airtel.net>
+
+  * Chinese
+    Wang Jian <lark@linux.net.cn>
+  
+  * Czech
+    Peter Sterba <sterba@sterba.com>
+    Martin <barin@email.cz>,
+    (Coming soon) Ales <garalda@email.cz>
+
+  * Danish
+    Rasmus Erik Voel Jensen <i18n@solsort.dk> [retired]
+
+  * Dutch
+    Herman Bruyninckx <Herman.Bruyninckx@mech.kuleuven.ac.be>
+    Geert Stams <geert-csg@wanadoo.nl>
+
+  * Finnish
+    Tarmo Toikkanen <tarmo.toikkanen@iki.fi>
+
+  * French
+    Jacques Chion <Jacques.Chion@wanadoo.fr>
+    Charles Vidal <vidalc@club-internet.fr>
+    
+  * German
+    Fabian Franz <FabianFranz@gmx.de>
+
+  * Greek
+    The Greek Linux i18n Team <i18ngr@lists.hellug.gr>
+
+  * Hungarian
+    Török Gábor <gabo@linuxmania.hu>
+
+  * Hebrew
+    Dovix <dovix2003@yahoo.com>
+    Koby <kobybo@hotmail.com>
+    Itai <Itais@newmail.net>
+
+  * Icelandic
+    Pjetur G. Hjaltason <pjetur@pjetur.net>
+
+  * Indonesian
+    Tedi Heriyanto <tedi_h@gmx.net>
+
+  * Italian
+    Marco Milanesi <kpanic@pavia.linux.it>
+    Flavio `Iron Bishop' Pastore <flavio.pastore@zonaitalia.it>
+  
+  * Japanese
+    TOYAMA Shin-ichi <kyone@tky2.3web.ne.jp>
+
+  * Korean
+    Mark Kim <markbk@cbreak.org>
+
+  * Lithuanian
+    Mantas Kriauciunas <monte@mail.lt>
+    Rita Verbauskaite <verba@centras.lt>
+
+  * Malay
+    Muhammad Najmi Ahmad Zabidi <md_najmi@yahoo.com>
+
+  * Norwegian
+    Karl Ove Hufthammer <karl@huftis.org>
+
+  * Polish
+    Arkadiusz Lipiec <A.Lipiec@elka.pw.edu.pl>
+    Robert Glowczynski <robertg@software.com.pl>
+
+  * Portuguese (Brazilian)
+    Daniel José Viana <danjovic@vespanet.com.br>
+    Dedicated to my beloved daughter Scarlet
+ 
+  * Portuguese
+    Ricardo Cruz <rick2@aeiu.pt>,
+    
+  * Romanian
+    Laurentiu Buzdugan <buzdugan@voyager.net>
+
+  * Russian
+    Dmitriy Ivanov <ace22b@myrealbox.com>
+  
+  * Spanish
+    Gabriel Gazzan <ggabriel@internet.com.uy>
+
+  * Slovak
+    Milan Plzik <mmp@golem.gymzv.sk>
+
+  * Swedish
+    Daniel Andersson <daniel@septum.org> [retired]
+
+  * Turkish
+    Doruk Fisek <dfisek@fisek.com.tr>
+
+  * Walloon
+    Pablo Saratxaga <pablo@walon.org>
+    
+
+* Port e Packaging
+
+  * Versioni compilate per Windows 32-bit
+    John Popplewell <john@johnnypops.demon.co.uk>
+
+  * Pacchetti Debian
+    Ben Armstrong <synrg@sanctuary.nslug.ns.ca>
+
+  * Pacchetti NetBSD
+    Thomas Klausner <wiz@danbala.ifoer.tuwien.ac.at>
+
+  * Versioni compilate per Mac OS X
+    Darrell Walisser <walisser@mac.com>
+
+  * Versioni compilate per BeOS
+    Marcin 'Shard' Konicki <shard at beosjournal.org>
+
+  * Pacchetti Slackware
+    Torsten Giebl <wizard@turricane.org>
+
+
+* Supporto / Test
+
+  Tux4Kids.org, Sam Hart  (Tux4Kids project manager)
+  Molti altri nella community!  (Test, correzione bug, commenti)
+
+
+Vedi anche:  CHANGES.txt
+

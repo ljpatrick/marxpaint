@@ -7,7 +7,7 @@ bill@newbreedsoftware.com
 http://www.newbreedsoftware.com/tuxpaint/
 
 
-June 17, 2002 - March 21, 2004
+June 17, 2002 - March 23, 2004
 
 
 * Design and Coding:
@@ -129,6 +129,7 @@ June 17, 2002 - March 21, 2004
 
   * Italian
     Marco Milanesi <kpanic@pavia.linux.it>
+    Flavio Pastor <flavio.pastore@zonaitalia.it>
   
   * Japanese
     TOYAMA Shin-ichi <shin1@wmail.plala.or.jp>
