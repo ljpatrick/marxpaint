@@ -4504,8 +4504,8 @@ void setup(int argc, char * argv[])
 	}
       else if (strcmp(langstr, "hindi") == 0)
 	{
-	  putenv("LANG=hi_IN");
-	  putenv("LC_ALL=hi_IN");
+	  putenv("LANG=hi_IN.UTF8");
+	  putenv("LC_ALL=hi_IN.UTF8");
 	}
       else if (strcmp(langstr, "hungarian") == 0 ||
 	       strcmp(langstr, "magyar") == 0)
