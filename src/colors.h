@@ -8,7 +8,7 @@
   bill@newbreedsoftware.com
   http://www.newbreedsoftware.com/tuxpaint/
 
-  June 14, 2002 - January 19, 2003
+  June 14, 2002 - February 9, 2004
 */
 
 

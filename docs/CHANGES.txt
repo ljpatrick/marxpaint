@@ -7,7 +7,7 @@ bill@newbreedsoftware.com
 http://www.newbreedsoftware.com/tuxpaint/
 
 
-2004.Jan.21 (0.9.14) [cvs]
+2004.Feb.09 (0.9.14) [cvs]
   * Korean language file (ko.po) update.
     Mark K. Kim <tuxNO_SOLICITATIONpaint-dev@cbreak.org>
 
@@ -33,6 +33,13 @@ http://www.newbreedsoftware.com/tuxpaint/
     Mugunth <mugunth@thamizha.com>
 
   * Updated README documentation.
+  
+  * Made some colors more unique, so that they affected stamps better.
+    (e.g., purple and magenta used to look the same when used to tint a stamp)
+    Karl Ove Hufthammer <karl@huftis.org>
+
+  * Updated punctuation in many text strings.
+    Karl Ove Hufthammer <karl@huftis.org>
 
 
 2003.Dec.23 (0.9.13)
