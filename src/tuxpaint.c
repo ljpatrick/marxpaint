@@ -8142,22 +8142,18 @@ static Uint32 getpixel(SDL_Surface * surface, int x, int y)
 
 
   /* get the X/Y values within the bounds of this surface */
-  if (x < 0)
+  if (unlikely(x < 0))
     x = 0;
-  if (x > surface->w - 1)
+  if (unlikely(x > surface->w - 1))
     x = surface->w - 1;
-  if (y > surface->h - 1)
+  if (unlikely(y > surface->h - 1))
     y = surface->h - 1;
-  if (y < 0)
+  if (unlikely(y < 0))
     y = 0;
-
-  /* SDL_LockSurface(surface); */
 
 
   /* Determine bytes-per-pixel for the surface in question: */
-
   bpp = surface->format->BytesPerPixel;
-
 
   /* Set a pointer to the exact location in memory of the pixel
      in question: */
@@ -8170,6 +8166,9 @@ static Uint32 getpixel(SDL_Surface * surface, int x, int y)
   /* Return the correctly-sized piece of data containing the
    * pixel's value (an 8-bit palette value, or a 16-, 24- or 32-bit
    * RGB value) */
+
+  if (likely(bpp == 4))
+    return *(Uint32 *)p;  // 32-bit display
 
   if (bpp == 1)         /* 8-bit display */
     pixel = *p;
@@ -8184,10 +8183,6 @@ static Uint32 getpixel(SDL_Surface * surface, int x, int y)
       else
         pixel = p[0] | p[1] << 8 | p[2] << 16;
     }
-  else if (bpp == 4)    /* 32-bit display */
-    pixel = *(Uint32 *)p;
-
-  /* SDL_UnlockSurface(surface); */
 
   return pixel;
 }
@@ -8203,19 +8198,12 @@ static void putpixel(SDL_Surface * surface, int x, int y, Uint32 pixel)
 
   /* Assuming the X/Y values are within the bounds of this surface... */
 
-  if (x >= 0 && y >= 0 && x < surface->w && y < surface->h)
+  if (likely(likely(x>=0) && likely(y>=0) && likely(x<surface->w) && likely(y<surface->h)))
     {
-      /* SDL_LockSurface(surface); */
-
-
       /* Determine bytes-per-pixel for the surface in question: */
-
       bpp = surface->format->BytesPerPixel;
 
-
-      /* Set a pointer to the exact location in memory of the pixel
-       *          in question: */
-
+      // Set a pointer to the exact location in memory of the pixel
       p = (Uint8 *) (((Uint8 *)surface->pixels) + /* Start: beginning of RAM */
 		     (y * surface->pitch) +  /* Go down Y lines */
                      (x * bpp));             /* Go in X pixels */
@@ -8224,7 +8212,9 @@ static void putpixel(SDL_Surface * surface, int x, int y, Uint32 pixel)
       /* Set the (correctly-sized) piece of data in the surface's RAM
        *          to the pixel value sent in: */
 
-      if (bpp == 1)
+      if (likely(bpp == 4))
+        *(Uint32 *)p = pixel;  // 32-bit display
+      else if (bpp == 1)
         *p = pixel;
       else if (bpp == 2)
         *(Uint16 *)p = pixel;
@@ -8243,12 +8233,6 @@ static void putpixel(SDL_Surface * surface, int x, int y, Uint32 pixel)
               p[2] = (pixel >> 16) & 0xff;
             }
         }
-      else if (bpp == 4)
-        {
-          *(Uint32 *)p = pixel;
-        }
-
-      /* SDL_UnlockSurface(surface); */
     }
 }
 
