@@ -27,6 +27,7 @@ tuxpaint -- A drawing program for young children.
 [\-\-nostampcontrols]
 [\-\-mirrorstamps]
 [\-\-keyboard]
+[\-\-nosysfonts]
 [\-\-savedir \fIDIR\fP]
 [\-\-saveover]
 [\-\-saveovernew]
@@ -52,6 +53,7 @@ tuxpaint -- A drawing program for young children.
 [\-\-stampcontrols]
 [\-\-dontmirrorstamps]
 [\-\-mouse]
+[\-\-sysfonts]
 [\-\-saveoverask]
 [\-\-save]
 
@@ -203,6 +205,13 @@ things right-to-left over left-to-right.
 The \fIkeyboard\fP option lets the mouse pointer in \fITux Paint\fP be
 controlled with the keyboard.  The \fIarrow keys\fP move the pointer.
 \fISpacebar\fP acts as the mouse button.
+
+.TP 8
+.B \-\-nosysfonts \-\-sysfonts
+\fITux Paint\fP normally attempts to search for additional TrueType Fonts
+installed in common places on your system.  If this causes trouble, or you'd
+prefer to only make fonts installed in \fITux Paint\fP's directory available,
+use the \fInosysfonts\fP option to disable this feature.
 
 .TP 8
 .B \-\-savedir \fIDIR\fP
