@@ -13,7 +13,7 @@ msgstr ""
 
 #: tuxpaint.c:801
 msgid "Do you really want to quit?"
-msgstr ""
+msgstr "QUIT? QUIT? QUIT?"
 
 #: tuxpaint.c:802 tuxpaint.c:806 tuxpaint.c:810 tuxpaint.c:824 tuxpaint.c:834
 #: tuxpaint.c:8386 tuxpaint.c:9093

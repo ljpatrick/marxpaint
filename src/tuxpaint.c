@@ -4409,8 +4409,8 @@ void setup(int argc, char * argv[])
       else if (strcmp(langstr, "belarusian") == 0 ||
 	       strcmp(langstr, "bielaruskaja") == 0)
         {
-	  putenv("LANG=be_BY.UTF-8");
-	  putenv("LC_ALL=be_BY.UTF-8");
+	  putenv("LANG=be_BY");
+	  putenv("LC_ALL=be_BY");
         }
       else if (strcmp(langstr, "czech") == 0 ||
 	       strcmp(langstr, "cesky") == 0)
