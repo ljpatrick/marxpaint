@@ -1138,6 +1138,7 @@ static SDL_Surface * img_scroll_up, * img_scroll_down;
 static SDL_Surface * img_scroll_up_off, * img_scroll_down_off;
 static SDL_Surface * img_paintcan;
 static SDL_Surface * img_grow, * img_shrink;
+static SDL_Surface * img_bold, * img_italic;
 
 static SDL_Surface * img_sparkles;
 static SDL_Surface * img_grass;
@@ -6827,6 +6828,9 @@ static void setup(int argc, char * argv[])
   img_grow = loadimage(DATA_PREFIX "images/ui/grow.png");
   img_shrink = loadimage(DATA_PREFIX "images/ui/shrink.png");
   
+  img_bold = loadimage(DATA_PREFIX "images/ui/bold.png");
+  img_italic = loadimage(DATA_PREFIX "images/ui/italic.png");
+
   show_progress_bar();
 
   tmp_imgcurup    = loadimage(DATA_PREFIX "images/ui/cursor_up_large.png");
@@ -8009,11 +8013,11 @@ static void draw_fonts(void)
       else
         SDL_BlitSurface(img_btn_up, NULL, screen, &dest);
     
-      dest.x = WINDOW_WIDTH - 96 + (48 - img_magics[MAGIC_MIRROR]->w) / 2;
+      dest.x = WINDOW_WIDTH - 96 + (48 - img_bold->w) / 2;
       dest.y = (40 + ((5 + TOOLOFFSET / 2) * 48) +
-		(48 - img_magics[MAGIC_MIRROR]->h) / 2);
+		(48 - img_bold->h) / 2);
 
-      SDL_BlitSurface(img_magics[MAGIC_MIRROR], NULL, screen, &dest);
+      SDL_BlitSurface(img_bold, NULL, screen, &dest);
 
     
       /* Show italic button: */
@@ -8026,11 +8030,11 @@ static void draw_fonts(void)
       else
         SDL_BlitSurface(img_btn_up, NULL, screen, &dest);
 
-      dest.x = WINDOW_WIDTH - 48 + (48 - img_magics[MAGIC_FLIP]->w) / 2;
+      dest.x = WINDOW_WIDTH - 48 + (48 - img_italic->w) / 2;
       dest.y = (40 + ((5 + TOOLOFFSET / 2) * 48) +
-		(48 - img_magics[MAGIC_FLIP]->h) / 2);
+		(48 - img_italic->h) / 2);
     
-      SDL_BlitSurface(img_magics[MAGIC_FLIP], NULL, screen, &dest);
+      SDL_BlitSurface(img_italic, NULL, screen, &dest);
 
     
       /* Show shrink button: */
@@ -11039,6 +11043,12 @@ static void cleanup(void)
   free_surface( &img_scroll_down_off );
 
   free_surface( &img_paintcan );
+
+  free_surface( &img_grow );
+  free_surface( &img_shrink );
+
+  free_surface( &img_bold );
+  free_surface( &img_italic );
 
   free_surface( &img_sparkles );
   free_surface( &img_grass );
