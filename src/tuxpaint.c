@@ -1208,7 +1208,8 @@ static void mainloop(void)
 				  stamp_tintable(cur_stamp));
 		    }
 		  else if (cur_tool == TOOL_MAGIC &&
-			   cur_magic == MAGIC_FILL)
+			   (cur_magic == MAGIC_FILL ||
+			    cur_magic == MAGIC_TINT))
 		    {
 		      draw_colors(1);
 		    }
@@ -1537,7 +1538,8 @@ static void mainloop(void)
 					  stamp_tintable(cur_stamp));
 			    }
 		  	  else if (cur_tool == TOOL_MAGIC &&
-				   cur_magic == MAGIC_FILL)
+				   (cur_magic == MAGIC_FILL ||
+				    cur_magic == MAGIC_TINT))
 			    {
 			      draw_colors(1);
 			    }
@@ -1646,7 +1648,8 @@ static void mainloop(void)
 			  rainbow_color = 0;
 			  draw_magic();
 
-			  if (cur_magic == MAGIC_FILL)
+			  if (cur_magic == MAGIC_FILL ||
+			      cur_magic == MAGIC_TINT)
 			    draw_colors(1);
 			  else
 			    draw_colors(0);
@@ -2042,7 +2045,8 @@ static void mainloop(void)
 			{
 			  if (cur_thing != cur_magic)
 			    {
-			      if (cur_thing == MAGIC_FILL)
+			      if (cur_thing == MAGIC_FILL ||
+			          cur_thing == MAGIC_TINT)
 				draw_colors(1);
 			      else
 				draw_colors(0);
@@ -2076,7 +2080,9 @@ static void mainloop(void)
 		       event.button.y <= (48 * (7 + TOOLOFFSET / 2)) + 48 + 48 &&
 		       (cur_tool == TOOL_BRUSH || cur_tool == TOOL_LINES ||
 			cur_tool == TOOL_SHAPES || cur_tool == TOOL_TEXT ||
-			(cur_tool == TOOL_MAGIC && cur_magic == MAGIC_FILL) ||
+			(cur_tool == TOOL_MAGIC &&
+			 (cur_magic == MAGIC_FILL ||
+			  cur_magic == MAGIC_TINT)) ||
 			(cur_tool == TOOL_STAMP &&
 			 (stamp_colorable(cur_stamp) ||
 			  stamp_tintable(cur_stamp)))))
@@ -2476,7 +2482,8 @@ static void mainloop(void)
 		{
 		  if (cur_thing != cur_magic)
 		    {
-		      if (cur_thing == MAGIC_FILL)
+		      if (cur_thing == MAGIC_FILL ||
+			  cur_thing == MAGIC_TINT)
 			draw_colors(1);
 		      else
 			draw_colors(0);
