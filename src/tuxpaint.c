@@ -5526,7 +5526,7 @@ void loadarbitrary(SDL_Surface * surfs[], char * descs[], info_type * infs[],
       d_names[num_files] = strdup(f->d_name);
       num_files++;
 
-      if (num_files > d_names_alloced)
+      if (num_files >= d_names_alloced)
       {
 	d_names_alloced = d_names_alloced + 32;
 
@@ -8503,12 +8503,9 @@ int do_open(int want_new_tool)
   /* Allocate some space: */
 
   things_alloced = 32;
-  thumbs = (SDL_Surface * *) malloc(sizeof(SDL_Surface *) * things_alloced);
 #ifndef __BEOS__
   fs = (struct dirent *) malloc(sizeof(struct dirent) * things_alloced);
 #endif
-  d_names = (char * *) malloc(sizeof(char *) * things_alloced);
-  d_exts = (char * *) malloc(sizeof(char *) * things_alloced);
 
 
   /* Read directory of images and build thumbnails: */
@@ -8622,7 +8619,7 @@ int do_open(int want_new_tool)
   }
 
 #else
-    
+  
     num_files_in_dir = 0;
     do
     {
@@ -8633,10 +8630,23 @@ int do_open(int want_new_tool)
 	memcpy(&(fs[num_files_in_dir]), f, sizeof(struct dirent));
         num_files_in_dir++;
 
-	/* FIXME: realloc() */
+	if (num_files_in_dir >= things_alloced)
+	{
+	  things_alloced = things_alloced + 32;
+          fs = (struct dirent *) realloc(fs, sizeof(struct dirent) * things_alloced);
+	}
       }
     }
     while (f != NULL);
+    
+   
+    printf("num_files_in_dir = %d\n", num_files_in_dir);
+    fflush(stdout);
+
+    thumbs = (SDL_Surface * *) malloc(sizeof(SDL_Surface *) * num_files_in_dir);
+    d_names = (char * *) malloc(sizeof(char *) * num_files_in_dir);
+    d_exts = (char * *) malloc(sizeof(char *) * num_files_in_dir);
+    
 
     
     closedir(d);
