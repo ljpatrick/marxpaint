@@ -541,11 +541,11 @@ install-man:
 
 # Build the program!
 
-tuxpaint:	obj/tuxpaint.o obj/hqxx.o obj/hq3x.o obj/hq4x.o $(ARCH_LIBS)
+tuxpaint:	obj/tuxpaint.o obj/hqxx.o obj/hq4x.o $(ARCH_LIBS)
 	@echo
 	@echo "...Linking Tux Paint..."
 	@$(CC) $(CFLAGS) $(SDL_CFLAGS) $(DEFS) \
-		-o tuxpaint obj/tuxpaint.o obj/hqxx.o obj/hq3x.o obj/hq4x.o \
+		-o tuxpaint obj/tuxpaint.o obj/hqxx.o obj/hq4x.o \
 		$(ARCH_LIBS) $(SDL_LIBS) \
 		-lm $(ARCH_LINKS)
 	@$(RSRC_CMD)
@@ -557,7 +557,7 @@ tuxpaint:	obj/tuxpaint.o obj/hqxx.o obj/hq3x.o obj/hq4x.o $(ARCH_LIBS)
 obj/tuxpaint.o:	src/tuxpaint.c \
 		src/tools.h src/titles.h src/colors.h src/shapes.h \
 		src/magic.h src/sounds.h src/tip_tux.h src/great.h \
-		src/hqxx.h src/hq3x.h src/hq4x.h \
+		src/hqxx.h src/hq4x.h \
 		src/mouse/arrow.xbm src/mouse/arrow-mask.xbm \
 		src/mouse/hand.xbm src/mouse/hand-mask.xbm \
 		src/mouse/insertion.xbm src/mouse/insertion-mask.xbm \
@@ -581,13 +581,6 @@ obj/BeOS_Print.o:	src/BeOS_Print.cpp obj src/BeOS_print.h
 	@echo "...Compiling BeOS print support..."
 	@$(CC) $(CFLAGS) $(SDL_CFLAGS) $(DEFS) \
 		-c src/BeOS_print.cpp -o obj/BeOS_print.o
-
-
-obj/hq3x.o:	src/hq3x.c src/hq3x.h src/hqxx.h
-	@echo
-	@echo "...Compiling high quality 3x scale filter..."
-	@$(CC) $(CFLAGS) $(SDL_CFLAGS) \
-		-c src/hq3x.c -o obj/hq3x.o
 
 
 obj/hq4x.o:	src/hq4x.c src/hq4x.h src/hqxx.h
