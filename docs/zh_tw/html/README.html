@@ -213,96 +213,86 @@ New Breed Software</p>
 
       <h5>Windows 的使用者</h5>
       <blockquote>
-        <p>The file you should create is called
-	"<code><b>tuxpaint.cfg</b></code>" and it
-	should be placed in Tux&nbsp;Paint's folder.</p>
+        <p>這個檔案必須放在 Tux&nbsp;Paint 的目錄中，名為 "<code><b>tuxpaint.cfg</b></code>"。</p>
 	
-	<p>You can use NotePad or WordPad to create this file.
-	Be sure to save it as Plain Text, and make sure the filename
-	doesn't have ".txt" at the end...</p>
+	<p>您可以使用記事本(NotePad)或是 WordPad 來建立這個檔案，儲存時要確定選用純文字格式，
+	還有副檔名要確定不是使用 ".txt" ... </p>
       </blockquote>
 
 
-      <h5>Available Options</h5>
+      <h5>有效的選項</h5>
       <blockquote>
-        <p>The following settings can be set in the configuration file.
-	(Command-line settings will override these.  See below.)</p>
+        <p>以下的設定可以在規劃檔中來作設定。
+	(命令列的參數可以推翻這些設定，請見後面的敘述)</p>
 
 	<dl>
 	<dt><code><b>fullscreen=yes</b></code></dt>
 	<dd>
-	  Run the program in full screen mode, rather than in a window.
+	  使用全螢幕模式。
 	</dd>
 
 	<dt><code><b>800x600=yes</b></code></dt>
 	<dd>
-	  Run the program at 800x600 resolution (EXPERIMENTAL), rather
-	  than the smaller 640x480 resolution.
+	  使用 800x600 螢幕模式(實驗性質)，一般是 640x480 。 
 	</dd>
 
 	<dt><code><b>nosound=yes</b></code></dt>
 	<dd>
-	  Disable sound effects.
+	  關閉音效。
 	</dd>
 
 	<dt><code><b>noquit=yes</b></code></dt>
 	<dd>
-	  Disable the on-screen "Quit" button.
-	  (Pressing the <b>[Escape]</b> key or clicking the window's close
-          button still works.)
+	  關閉螢幕上「離開」的按鍵。
+	  (還是可以用 <b>[Escape]</b> 鍵或視窗右上角的關閉按鈕來離開程式。)
 	</dd>
 	
 	<dt><code><b>noprint=yes</b></code></dt>
 	<dd>
-	  Disable the printing feature.
+	  關閉列印功能。
 	</dd>
 
 	<dt><code><b>printdelay=<i>SECONDS</i></b></code></dt>
 	<dd>
-	  Restrict printing so that printing can occur only once every
-	  <i>SECONDS</i> seconds.
+	  限制列印的間隔時間，每次列印後需間隔 <i>SECONDS</i> 秒後才能再列印。
 	</dd>
 
 	<dt><code><b>printcommand=<i>COMMAND</i></b></code></dt>
 	<dd>
-	  <p><i>(Linux and Unix only)</i></p>
+	  <p><i>(只限於 Linux 和 Unix )</i></p>
 
-	  <p>Use the command <i>COMMAND</i> to print a PNG file.
-	  If not set, the default command is:</p>
+	  <p>使用這個 <i>COMMAND</i> 命令來列印 PNG 檔，如果沒有設定的話，預設的命令是：</p>
 
           <blockquote>
 	    <code>pngtopnm | pnmtops | lpr</code>
 	  </blockquote>
 	  
-	  <p>Which converts the PNG to a NetPBM 'portable&nbsp;anymap',
-	  then converts that to a PostScript file, and finally
-	  sends that to the printer, using the "<code>lpr</code>" command.</p>
+	  <p>這是將 PNG 轉換成 NetPBM (可移植到任何圖像的格式)，再轉換成 PostScript 格式，
+	  然後 "<code>lpr</code>" 命令把他送到印表機去列印。</p>
 	</dd>
 
 	<dt><code><b>printcfg=yes</b></code></dt>
 	<dd>
-	  <p><i>(Windows only)</i></p>
+	  <p><i>(只限於 Windows)</i></p>
 
-	  <p>Tux&nbsp;Paint will use a printer configuration file when printing.
-	  Push the <b>[ALT]</b> key while clicking the 'Print' button in
-	  Tux&nbsp;Paint to cause a Windows print dialog window to appear.</p>
+	  <p>Tux&nbsp;Paint 會在列印時使用印表機的規劃檔。當按下 <b>[ALT]</b> 鍵同時按下「列印」按鈕時，
+	  Tux&nbsp;Paint 會先開啟印表機的設定視窗。</p>
 	  
-	  <p>(Note: This only works when not running Tux&nbsp;Paint in
-	  fullscreen mode.)  Any configuration changes made in this dialog
-	  will be saved to the file "<code>userdata/print.cfg</code>", and
-	  used again, as long as the "printcfg" option is set.</p>
+	  <p>(註：這只能在 Tux&nbsp;Paint 不是使用全螢幕模式時有作用。)
+	  在設定視窗中的任何變動都會儲存在 "<code>userdata/print.cfg</code>" 檔案中，
+	  當 "printcfg" 選項被設定時都會被重複使用。</p>
 	</dd>
 	
 	<dt><code><b>simpleshapes=yes</b></code></dt>
 	<dd>
-	  Disable the rotation step of the 'Shape' tool.
-	  Click, drag and release is all that will be needed to draw a shape.
+	  關閉形狀工具的旋轉步驟。只需要點選中心位置，拖拉至適當大小然後放開滑鼠按鍵，
+	  就可以畫出一個形狀來。
 	</dd>
 	
 	<dt><code><b>uppercase=yes</b></code></dt>
 	<dd>
-	  All text will be rendered only in uppercase (e.g., "Brush" will
-	  be "BRUSH").  Useful for children who can read, but who have only
+	  所有的英文字母都會變成大寫(例如："Brush" 會變成 "BRUSH")。
+	  Useful for children who can read, but who have only
 	  learned uppercase letters so far.
 	</dd>
 
