@@ -22,12 +22,12 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
   
-  June 14, 2002 - January 8, 2005
+  June 14, 2002 - January 9, 2005
 */
 
 
 #define VER_VERSION     "0.9.15"
-#define VER_DATE        "2005-01-08"
+#define VER_DATE        "2005-01-09"
 
 
 //#define VIDEO_BPP 15 // saves memory
@@ -2143,6 +2143,7 @@ static void do_wait(void);
 static void load_current(void);
 static void save_current(void);
 static char * get_fname(const char * const name);
+static int do_prompt_image(const char * const text, const char * const btn_yes, const char * const btn_no, SDL_Surface * img);
 static int do_prompt(const char * const text, const char * const btn_yes, const char * const btn_no);
 static void cleanup(void);
 static void free_cursor(SDL_Cursor ** cursor);
@@ -10876,6 +10877,12 @@ static char * get_fname(const char * const name)
 
 static int do_prompt(const char * const text, const char * const btn_yes, const char * const btn_no)
 {
+  return(do_prompt_image(text, btn_yes, btn_no, NULL));
+}
+
+
+static int do_prompt_image(const char * const text, const char * const btn_yes, const char * const btn_no, SDL_Surface * img)
+{
   SDL_Event event;
   SDL_Rect dest;
   int done, ans, w;
@@ -10971,9 +10978,27 @@ static int do_prompt(const char * const text, const char * const btn_yes, const 
 
   /* Draw the question: */
 
+  int img_w;
+  if (img != NULL)
+    img_w = img->w + 8;
+  else
+    img_w = 0;
+  
   wordwrap_text(text, black,
-		166 + PROMPTOFFSETX, 100 + PROMPTOFFSETY, 475 + PROMPTOFFSETX,
+		166 + PROMPTOFFSETX, 100 + PROMPTOFFSETY,
+		475 + PROMPTOFFSETX - img->w,
 		1);
+
+
+  /* Draw the image (if any): */
+
+  if (img != NULL)
+  {
+    dest.x = 457 + PROMPTOFFSETX - img->w - 4;
+    dest.y = 100 + PROMPTOFFSETY + 4;
+
+    SDL_BlitSurface(img, NULL, screen, &dest);
+  }
 
 
   /* Draw yes button: */
@@ -12906,8 +12931,9 @@ static int do_open(int want_new_tool)
 		{
 		  want_erase = 0;
 	      
-		  if (do_prompt(PROMPT_ERASE_TXT,
-				PROMPT_ERASE_YES, PROMPT_ERASE_NO))
+		  if (do_prompt_image(PROMPT_ERASE_TXT,
+				      PROMPT_ERASE_YES, PROMPT_ERASE_NO,
+				      thumbs[which]))
 		    {
 		      snprintf(fname, sizeof(fname), "saved/%s%s",
 			       d_names[which], d_exts[which]);
@@ -12917,7 +12943,6 @@ static int do_open(int want_new_tool)
 		  
 		      if (unlink(rfname) == 0)
 			{
-			  thumbs[which] = NULL;
 			  update_list = 1;
 
 		      
@@ -12965,6 +12990,8 @@ static int do_open(int want_new_tool)
 			  free(d_names[which]);
 			  free(d_exts[which]);
 			  free_surface(&thumbs[which]);
+			  
+			  thumbs[which] = NULL;
 		      
 			  for (i = which; i < num_files - 1; i++)
 			    {

@@ -100,6 +100,12 @@ http://www.newbreedsoftware.com/tuxpaint/
   
   * Other improvements:
     -------------------
+    * Thumbnail of selected image now shown on "Erase this image?"
+      confirmation pop-up.
+
+    * Improved 'rubber band line' and stamp outline colors ("XOR" code)
+      to make such lines easier to see on certain colors.
+    
     * Added beige and tan colors.  Changed "Lime" to "Neon Green."
       Renamed "Fuschia" to "Magenta."  Tweaked some color values.
       Moved grey/silver next to black/white.
@@ -199,6 +205,9 @@ http://www.newbreedsoftware.com/tuxpaint/
 
     * Spanish documentation.
       Gabriel Gazzán <ggabriel@internet.com.uy>
+
+    * Added "create_pot_file.sh" help script to "src/po/", for easier
+      regeneration of "tuxpaint.pot" (gettext catalog template)
 
 
 2004.September.28 (0.9.14)
