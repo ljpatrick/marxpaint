@@ -6,7 +6,7 @@
 # bill@newbreedsoftware.com
 # http://www.newbreedsoftware.com/tuxpaint/
 
-# June 14, 2002 - January 21, 2004
+# June 14, 2002 - March 3, 2004
 
 
 # Where to install things:
@@ -207,6 +207,7 @@ uninstall:
 	-rm -r $(DATA_PREFIX)
 	-rm -r $(DOC_PREFIX)
 	-rm $(MAN_PREFIX)/man1/tuxpaint.1.gz
+	-rm $(LOCALE_PREFIX)af/LC_MESSAGES/tuxpaint.mo
 	-rm $(LOCALE_PREFIX)ca/LC_MESSAGES/tuxpaint.mo
 	-rm $(LOCALE_PREFIX)cs/LC_MESSAGES/tuxpaint.mo
 	-rm $(LOCALE_PREFIX)da/LC_MESSAGES/tuxpaint.mo
@@ -352,6 +353,11 @@ install-data:
 install-gettext:
 	@echo
 	@echo "...Installing translation files..."
+	@#
+	@echo "   af_ZA ...Afrikaans..."
+	@install -d $(LOCALE_PREFIX)af/LC_MESSAGES
+	@cp trans/af.mo $(LOCALE_PREFIX)af/LC_MESSAGES/tuxpaint.mo
+	@chmod 644 $(LOCALE_PREFIX)af/LC_MESSAGES/tuxpaint.mo
 	@#
 	@echo "   pt_BR ...Brazilian Portuguese..."
 	@install -d $(LOCALE_PREFIX)pt_BR/LC_MESSAGES
@@ -612,6 +618,7 @@ obj/hqxx.o:	src/hqxx.c src/hqxx.h
 # Build the translation files for gettext
 
 translations: trans \
+	trans/af.mo \
 	trans/ca.mo \
 	trans/cs.mo \
 	trans/da.mo \
@@ -650,6 +657,10 @@ trans:
 	@echo
 	@echo "...Preparing translation files..."
 	@mkdir trans
+
+trans/af.mo:	src/messages/af.po
+	@echo "   af_ZA ...Afrikaans..."
+	@msgfmt src/messages/af.po -o trans/af.mo
 
 trans/ca.mo:	src/messages/ca.po
 	@echo "   ca_ES ...Catalan..."

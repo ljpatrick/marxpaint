@@ -21,12 +21,12 @@
   along with this program; if not, write to the Free Software
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   
-  June 14, 2002 - February 9, 2004
+  June 14, 2002 - March 3, 2004
 */
 
 
 #define VER_VERSION     "0.9.14"
-#define VER_DATE        "2004.02.09"
+#define VER_DATE        "2004.03.03"
 
 
 /* #define DEBUG */
@@ -286,6 +286,7 @@ void win32_perror(const char *str)
 /* Possible languages: */
 
 enum {
+  LANG_AF,     /* Afrikaans */
   LANG_CA,     /* Catalan */
   LANG_CS,     /* Czech */
   LANG_DA,     /* Danish */
@@ -324,6 +325,7 @@ enum {
 };
 
 const char * lang_prefixes[NUM_LANGS] = {
+  "af",
   "ca",
   "cs",
   "da",
@@ -3779,6 +3781,7 @@ void show_lang_usage(FILE * f, char * prg)
 	  "\n"
 	  "LANGUAGE may be one of:\n"
 	  "  english      american-english\n"
+	  "  afrikaans\n"
 	  "  basque       euskara\n"
 	  "  bokmal\n"
 	  "  brazilian    brazilian-portuguese   portugues-brazilian\n"
@@ -3829,6 +3832,7 @@ void show_locale_usage(FILE * f, char * prg)
 	  "\n"
 	  "LOCALE may be one of:\n"
 	  "  C       (English      American English)\n"
+	  "  af_ZA   (Afrikaans)\n"
 	  "  eu_ES   (Baque        Euskara)\n"
 	  "  nb_NO   (Bokmal)\n"
 	  "  pt_BR   (Brazilian    Brazilian Portuguese   Portugues Brazilian)\n"
@@ -4456,6 +4460,11 @@ void setup(int argc, char * argv[])
 	{
 	  putenv("LANG=ja_JP.UTF-8");
 	  putenv("LC_ALL=ja_JP.UTF-8");
+	}
+      else if (strcmp(langstr, "afrikaans") == 0)
+	{
+	  putenv("LANG=af_ZA");
+	  putenv("LC_ALL=af_ZA");
 	}
       else if (strcmp(langstr, "bokmal") == 0)
 	{
