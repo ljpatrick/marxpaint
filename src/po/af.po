@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint 0.9.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2004-07-13 18:30+0200\n"
-"PO-Revision-Date: 2004-05-01 13:13+0200\n"
+"POT-Creation-Date: 2004-07-14 19:15+0200\n"
+"PO-Revision-Date: 2004-07-14 13:44+0200\n"
 "Last-Translator: Petri Jooste <rkwjpj@puk.ac.za>\n"
 "Language-Team: Afrikaans <i18n@af.org.za>\n"
 "MIME-Version: 1.0\n"
@@ -16,14 +16,13 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 msgid "A drawing program for children."
-msgstr ""
+msgstr "'n Tekenprogram vir kinders."
 
 msgid "Drawing program"
-msgstr ""
+msgstr "Tekenprogram"
 
-#, fuzzy
 msgid "Tux Paint"
-msgstr "Verf"
+msgstr "Tux Verf"
 
 msgid "Black!"
 msgstr "Swart!"
@@ -31,7 +30,6 @@ msgstr "Swart!"
 msgid "White!"
 msgstr "Wit!"
 
-#  Redo
 msgid "Red!"
 msgstr "Rooi!"
 
@@ -247,7 +245,6 @@ msgstr "Uitveër"
 msgid "New"
 msgstr "Nuwe"
 
-#  'Open' label:
 #. 'Open' label:
 msgid "Open"
 msgstr "Maak oop"
@@ -285,42 +282,34 @@ msgstr "Kies 'n styl vir die teks. Klik op jou prent en begin tik."
 msgid "Pick a magical effect to use on your drawing!"
 msgstr "Kies 'n tower-effek om op jou tekening te gebruik!"
 
-#  Undo
 #. Undo
 msgid "Undo!"
 msgstr "Ontdoen!"
 
-#  Redo
 #. Redo
 msgid "Redo!"
 msgstr "Herdoen!"
 
-#  Eraser
 #. Eraser
 msgid "Eraser!"
 msgstr "Uitveër"
 
-#  New
 #. New
 msgid "You now have a blank sheet to draw on!"
 msgstr "Jy het nou 'n skoon bladsy om op te teken!"
 
-#  Open
 #. Open
 msgid "Open…"
 msgstr "Maak oop..."
 
-#  Save
 #. Save
 msgid "Your image has been saved!"
 msgstr "Jou prent is gestoor!"
 
-#  Print
 #. Print
 msgid "Printing…"
 msgstr "Besig om te druk..."
 
-#  Quit
 #. Quit
 msgid "Bye bye!"
 msgstr "Totsiens!"
@@ -337,12 +326,10 @@ msgstr "Beweeg die muis om die vorm te draai.  Klik om dit te teken."
 msgid "OK then… Let’s keep drawing this one!"
 msgstr "Goed dan... Kom ons teken verder op hierdie een!"
 
-#  FIXME: Move elsewhere!!!
 #. FIXME: Move elsewhere!!!
 msgid "Do you really want to quit?"
 msgstr "Wil jy regtig ophou teken?"
 
-#  FIXME: Move elsewhere! Or not?!
 #. FIXME: Move elsewhere! Or not?!
 msgid "Yes"
 msgstr "Ja"
@@ -386,17 +373,14 @@ msgstr "Jy kan nog nie druk nie!"
 msgid "Erase this picture?"
 msgstr "Vee hierdie prent uit?"
 
-#  'Erase' label:
 #. 'Erase' label:
 msgid "Erase"
 msgstr "Vee uit"
 
-#  'Back' label:
 #. 'Back' label:
 msgid "Back"
 msgstr "Terug"
 
-#  FIXME: Move elsewhere!!!
 #. FIXME: Move elsewhere!!!
 msgid "Save over the older version of this picture?"
 msgstr "Moet dit die ouer weergawe van hierdie prent vervang?"

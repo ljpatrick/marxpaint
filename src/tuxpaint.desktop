@@ -1,6 +1,7 @@
 [Desktop Entry]
 Encoding=UTF-8
 Name=Tux Paint
+Name[af]=Tux Verf
 Name[be]=Малюй разам з Tux!
 Name[en_gb]=Tux Paint
 Name[es]=Tux Paint
@@ -17,6 +18,7 @@ Exec=tuxpaint
 Icon=tuxpaint
 Terminal=false
 GenericName=Drawing program
+GenericName[af]=Tekenprogram
 GenericName[be]=Праграма для маляваньня
 GenericName[br]=Meziant Tresañ
 GenericName[cy]=Rhaglen lunio
@@ -37,6 +39,7 @@ GenericName[sv]=Ritprogram
 GenericName[wa]=Programe di dessinaedje
 GenericName[zh_tw]=畫圖程式
 Comment=A drawing program for children.
+Comment[af]='n Tekenprogram vir kinders.
 Comment[be]=Дзіцячая праграма для маляваньня.
 Comment[br]=Ur meziant tresañ evit ar vugale.
 Comment[ca]=Un programa de dibuix per a nens petits.
