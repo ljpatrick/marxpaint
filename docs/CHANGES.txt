@@ -7,7 +7,7 @@ bill@newbreedsoftware.com
 http://www.newbreedsoftware.com/tuxpaint/
 
 
-2005.January.08 (0.9.15)
+2005.January.09 (0.9.15)
   * Stamp tool improvements:
     ------------------------
     * Greatly improved stamp outlining (to avoid empty rows or columns
@@ -322,6 +322,9 @@ http://www.newbreedsoftware.com/tuxpaint/
 
     * Updated Brazilian Portuguese translation.
       Daniel Jose Viana <danjovic@vespanet.com.br>
+    
+    * Updated Breton translation.
+      Korvigellou An Drouizig (Philippe) <drouizig@drouizig.org>
   
     * Updated British English translation.
       Gareth Owen <gowen72@yahoo.com>

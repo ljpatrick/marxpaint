@@ -6,8 +6,8 @@ msgstr ""
 "Project-Id-Version: TuxPaint 0.0.1pre\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2005-01-06 12:31+0100\n"
-"PO-Revision-Date: 2004-05-30 18:20+0100\n"
-"Last-Translator: KAD <drouizig@drouizig.org>\n"
+"PO-Revision-Date: 2005-01-09 14:49+0100\n"
+"Last-Translator: Gugusse <titi>\n"
 "Language-Team: Breton <drouizig@drouizig.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -17,22 +17,20 @@ msgid "A drawing program for children."
 msgstr "Ur meziant tresañ evit ar vugale."
 
 msgid "Drawing program"
-msgstr "Meziant Tresañ"
+msgstr "Meziant tresañ"
 
-#, fuzzy
 msgid "Tux Paint"
-msgstr "Livañ"
+msgstr "Tux Paint"
 
 msgid "Black!"
 msgstr "Du !"
 
-#, fuzzy
 msgid "Dark Gray!"
-msgstr "Gris !"
+msgstr "Gris mouk !"
 
 #. using both valid spellings
 msgid "Light Grey!"
-msgstr ""
+msgstr "Gris sklaer !"
 
 #. using both valid spellings
 msgid "White!"
@@ -48,13 +46,13 @@ msgid "Yellow!"
 msgstr "Melen !"
 
 msgid "Neon green!"
-msgstr ""
+msgstr "Gwer neoñ !"
 
 msgid "Green!"
 msgstr "Gwer !"
 
 msgid "Sky blue!"
-msgstr ""
+msgstr "Glas oabl !"
 
 msgid "Blue!"
 msgstr "Glas !"
@@ -63,7 +61,7 @@ msgid "Purple!"
 msgstr "Limestra !"
 
 msgid "Magenta!"
-msgstr ""
+msgstr "Ruz roz !"
 
 msgid "Pink!"
 msgstr "Roz !"
@@ -71,12 +69,11 @@ msgstr "Roz !"
 msgid "Brown!"
 msgstr "Kistin !"
 
-#, fuzzy
 msgid "Tan!"
-msgstr "Gwerc'hlas !"
+msgstr "Rous !"
 
 msgid "Beige!"
-msgstr ""
+msgstr "Louet-gell !"
 
 msgid "Great!"
 msgstr "Fiskal !"
@@ -93,11 +90,9 @@ msgstr "Labour mat !"
 msgid "Fill"
 msgstr "Leuniañ"
 
-#, fuzzy
 msgid "Grass"
-msgstr "Diverkañ"
+msgstr "Geot"
 
-#, fuzzy
 msgid "Bricks"
 msgstr "Bloc'hadoù"
 
@@ -111,13 +106,13 @@ msgid "Blur"
 msgstr "Luziañ"
 
 msgid "Smudge"
-msgstr ""
+msgstr "Displanaat"
 
 msgid "Fade"
 msgstr "Goulariñ"
 
 msgid "Darken"
-msgstr ""
+msgstr "Teñvaloc'h"
 
 msgid "Chalk"
 msgstr "Kleiz"
@@ -128,15 +123,14 @@ msgstr "Bloc'hadoù"
 msgid "Negative"
 msgstr "Rakluc'henn"
 
-#, fuzzy
 msgid "Tint"
-msgstr "Finoc'h"
+msgstr "Livaj"
 
 msgid "Drip"
 msgstr "Beradenn"
 
 msgid "Cartoon"
-msgstr ""
+msgstr "Tresadenn-vev"
 
 msgid "Mirror"
 msgstr "Melezour"
@@ -147,17 +141,14 @@ msgstr "Eilpennañ"
 msgid "Click in the picture to fill that area with color."
 msgstr "Klik war ar skeudenn evit leuniañ al leur-se gant ul liv."
 
-#, fuzzy
 msgid "Click and move to draw grass. Don't forget the dirt!"
-msgstr "Klik ha fiñv al logodenn evit tresañ gant fulennoù."
+msgstr "Klik ha fiñv al logodenn evit tresañ geot. Na zisoñj ket ar poultr."
 
-#, fuzzy
 msgid "Click and move to draw large bricks."
-msgstr "Klik ha fiñv al logodenn evit tresañ gant fulennoù."
+msgstr "Klik ha fiñv al logodenn evit tresañ bloc'hadoù bras."
 
-#, fuzzy
 msgid "Click and move to draw small bricks."
-msgstr "Klik ha fiñv al logodenn evit tresañ gant fulennoù."
+msgstr "Klik ha fiñv al logodenn evit tresañ bloc'hadoù bihan."
 
 msgid "You can draw in rainbow colors!"
 msgstr "Gallout a rez tresañ gant livioù ar Garreg-ar-Glav !"
@@ -168,21 +159,17 @@ msgstr "Klik ha fiñv al logodenn evit tresañ gant fulennoù."
 msgid "Click and move the mouse around to blur the picture."
 msgstr "Klik ha fiñv al logodenn evit displanaat ar skeudenn."
 
-#, fuzzy
 msgid "Click and move the mouse around to smudge the picture."
 msgstr "Klik ha fiñv al logodenn evit displanaat ar skeudenn."
 
 msgid "Click and move to fade the colors."
 msgstr "Klik ha fiñv al logodenn evit lakaat al livioù da zislivañ."
 
-#, fuzzy
 msgid "Click and move to darken the colors."
-msgstr "Klik ha fiñv al logodenn evit lakaat al livioù da zislivañ."
+msgstr "Klik ha fiñv al logodenn evit lakaat al livioù da deñvalaat."
 
-msgid ""
-"Click and move the mouse around to turn the picture into a chalk drawing."
-msgstr ""
-"Klik ha fiñv al logodenn evit cheñch ar skeudenn en un dresadenn gleiz."
+msgid "Click and move the mouse around to turn the picture into a chalk drawing."
+msgstr "Klik ha fiñv al logodenn evit cheñch ar skeudenn en un dresadenn gleiz."
 
 msgid "Click and move the mouse around to make the picture blocky."
 msgstr "Klik ha fiñv al logodenn evit kaout bloc'hadoù bihan."
@@ -190,17 +177,14 @@ msgstr "Klik ha fiñv al logodenn evit kaout bloc'hadoù bihan."
 msgid "Click and move the mouse around to draw a negative."
 msgstr "Klik ha fiñv al logodenn evit kaout ar rakluc'henn."
 
-#, fuzzy
 msgid "Click and move the mouse around to change the picture's color."
-msgstr "Klik ha fiñv al logodenn evit kaout bloc'hadoù bihan."
+msgstr "Klik ha fiñv al logodenn evit cheñch liv an dresadenn."
 
 msgid "Click and move the mouse around to make the picture drip."
 msgstr "Klik ha fiñv al logodenn evit lakaat ar skeudenn da c'hlebiañ."
 
-#, fuzzy
 msgid "Click and move the mouse around to turn the picture into a cartoon."
-msgstr ""
-"Klik ha fiñv al logodenn evit cheñch ar skeudenn en un dresadenn gleiz."
+msgstr "Klik ha fiñv al logodenn evit cheñch ar skeudenn en un dresadenn-vev."
 
 msgid "Click to make a mirror image."
 msgstr "Klik evit kaout ar skeudenn en ur melezour."
@@ -256,9 +240,8 @@ msgstr "Livioù"
 msgid "Brushes"
 msgstr "Barroù-livañ"
 
-#, fuzzy
 msgid "Erasers"
-msgstr "Gomenn"
+msgstr "Gomennoù"
 
 msgid "Stamps"
 msgstr "Dielloù"
@@ -318,16 +301,11 @@ msgstr "Dibab ur skeudenn evit ensoc'hañ anezhi e-barzh da dresadenn."
 msgid "Click to start drawing a line. Let go to complete it."
 msgstr "Klik evit kregiñ da dresañ ul linenn."
 
-msgid ""
-"Pick a shape. Click to pick the center, drag, then let go when it is the "
-"size you want. Move around to rotate it, and click to draw it."
-msgstr ""
-"Diuz ur stumm. Klik warnañ, dibab e blas hag e vent. Lak anezhañ da dreiñ en "
-"ur bouezañ, ha klik evit e dresañ a-benn ar fin."
+msgid "Pick a shape. Click to pick the center, drag, then let go when it is the size you want. Move around to rotate it, and click to draw it."
+msgstr "Diuz ur stumm. Klik warnañ, dibab e blas hag e vent. Lak anezhañ da dreiñ en ur bouezañ, ha klik evit e dresañ a-benn ar fin."
 
 msgid "Choose a style of text. Click on your drawing and you can start typing."
-msgstr ""
-"Diuz ur stil testenn. Klik war da skeudenn ha krog da vizskrivañ un destenn."
+msgstr "Diuz ur stil testenn. Klik war da skeudenn ha krog da vizskrivañ un destenn."
 
 msgid "Pick a magical effect to use on your drawing!"
 msgstr "Dibab un efed strobinellus evit kemmañ da dresadenn !"
@@ -371,8 +349,7 @@ msgid "Hold the button to stretch the shape."
 msgstr "Dalc'h da bouezañ war an afell evit astenn ar stumm."
 
 msgid "Move the mouse to rotate the shape. Click to draw it."
-msgstr ""
-"Fiñv al logodenn evit ober un dro gant ar stumm. Klik evit tresañ anezhañ."
+msgstr "Fiñv al logodenn evit ober un dro gant ar stumm. Klik evit tresañ anezhañ."
 
 msgid "OK then… Let’s keep drawing this one!"
 msgstr "Mat ! neuze kendalc'homp gant an dresadenn !"
@@ -431,7 +408,7 @@ msgid "Back"
 msgstr "Distro"
 
 msgid "Aa"
-msgstr ""
+msgstr "As"
 
 #. FIXME: Move elsewhere!!!
 msgid "Save over the older version of this picture?"
@@ -443,20 +420,3 @@ msgstr "Ket, gwarediñ dindan un anv nevez"
 msgid "Choose the picture you want, then click “Open”."
 msgstr "Diuz ur skeudenn ha klik war 'digeriñ' neuze."
 
-#~ msgid "Lime!"
-#~ msgstr "Sitroñs glas !"
-
-#~ msgid "Fuchsia!"
-#~ msgstr "Fuchia !"
-
-#~ msgid "Silver!"
-#~ msgstr "Arc'hant !"
-
-#~ msgid "Thick"
-#~ msgstr "Tevoc'h"
-
-#~ msgid "Click and move the mouse to thicken the picture."
-#~ msgstr "Klik ha fiñv al logodenn evit lakaat an dresadenn tevoc'h."
-
-#~ msgid "Click and move the mouse to thin the picture."
-#~ msgstr "Klik ha fiñv al logodenn evit lakaat an dresadenn finoc'h."
