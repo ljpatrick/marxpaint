@@ -1,0 +1,554 @@
+# TuxPaint <LANGUAGE> translation file
+# Copyright (C) 2004 Free Software Foundation, Inc.
+# This file is distributed under the same license as the TuxPaint package.
+# Steve Murphy <murf@e-tools.com>, 2005.
+# Steve performed initial rough translation from compendium built from translations provided by the following translators:
+# Philibert Ndandali  <ndandali@yahoo.fr>, 2005.
+# Viateur MUGENZI <muvia1@yahoo.fr>, 2005.
+# Noëlla Mupole <s24211045@tuks.co.za>, 2005.
+# Carole Karema <karemacarole@hotmail.com>, 2005.
+# JEAN BAPTISTE NGENDAHAYO <ngenda_denis@yahoo.co.uk>, 2005.
+# Augustin KIBERWA  <akiberwa@yahoo.co.uk>, 2005.
+# Donatien NSENGIYUMVA <ndonatienuk@yahoo.co.uk>, 2005.
+# Antoine Bigirimana <antoine@e-tools.com>, 2005.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: tuxpaint 0.9.14\n"
+"Report-Msgid-Bugs-To: tuxpaint-i18n@tux4kids.net\n"
+"POT-Creation-Date: 2004-03-22 11:23-0800\n"
+"PO-Revision-Date: 2005-04-04 10:55-0700\n"
+"Last-Translator: Steven Michael Murphy <murf@e-tools.com>\n"
+"Language-Team: Kinyarwanda <translation-team-rw@lists.sourceforge.net>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: tuxpaint.c:809
+#, fuzzy
+msgid "Do you really want to quit?"
+msgstr "Kuri Kuvamo"
+
+#: tuxpaint.c:810 tuxpaint.c:814 tuxpaint.c:818 tuxpaint.c:832 tuxpaint.c:842
+#: tuxpaint.c:8442 tuxpaint.c:9149
+msgid "Yes"
+msgstr "Yego"
+
+#: tuxpaint.c:811 tuxpaint.c:815 tuxpaint.c:819 tuxpaint.c:833 tuxpaint.c:843
+#: tuxpaint.c:8445
+msgid "No"
+msgstr "Oya"
+
+#: tuxpaint.c:813
+#, fuzzy
+msgid "If you quit, you’ll lose your picture! Save it?"
+msgstr "Kuvamo() y'Ishusho Kubika"
+
+#: tuxpaint.c:817
+#, fuzzy
+msgid "Save your picture first?"
+msgstr "Kubika() y'Ishusho Itangira"
+
+#: tuxpaint.c:821
+#, fuzzy
+msgid "Can’t open that picture!"
+msgstr "Gufungura() y'Ishusho"
+
+#: tuxpaint.c:822 tuxpaint.c:829 tuxpaint.c:836 tuxpaint.c:839
+msgid "OK"
+msgstr "OKE"
+
+#: tuxpaint.c:824
+#, fuzzy
+msgid "Starting a new picture will erase the current one!"
+msgstr "a Gishya() y'Ishusho i KIGEZWEHO"
+
+#: tuxpaint.c:825
+msgid "That’s OK!"
+msgstr ""
+
+#: tuxpaint.c:826
+msgid "Never mind!"
+msgstr ""
+
+#: tuxpaint.c:828
+#, fuzzy
+msgid "There are no saved files!"
+msgstr "Oya Idosiye"
+
+#: tuxpaint.c:831
+#, fuzzy
+msgid "Print your picture now?"
+msgstr "y'Ishusho NONEAHA"
+
+#: tuxpaint.c:835
+#, fuzzy
+msgid "Your picture has been printed!"
+msgstr "y'Ishusho Byacapwe"
+
+#: tuxpaint.c:838
+#, fuzzy
+msgid "You can’t print yet!"
+msgstr "Gucapa"
+
+#: tuxpaint.c:841
+#, fuzzy
+msgid "Erase this picture?"
+msgstr "iyi() y'Ishusho"
+
+#: tuxpaint.c:5495 tools.h:52
+msgid "Open"
+msgstr "Gufungura"
+
+#: tuxpaint.c:5500
+msgid "Erase"
+msgstr ""
+
+#: tuxpaint.c:5505
+msgid "Back"
+msgstr "Inyuma"
+
+#: tuxpaint.c:9148
+#, fuzzy
+msgid "Save over the older version of this picture?"
+msgstr "Kubika KURI i Verisiyo Bya iyi() y'Ishusho"
+
+#: tuxpaint.c:9150
+#, fuzzy
+msgid "No, save a new file"
+msgstr "Kubika a Gishya IDOSIYE"
+
+#: tuxpaint.c:10007
+#, fuzzy
+msgid "Choose the picture you want, then click “Open”."
+msgstr "i() y'Ishusho Hanyuma Kanda"
+
+# officecfg/registry\schema\org\openoffice\Office\Math.xcs:....FontFormat.Weight..10.text
+#: colors.h:62
+#, fuzzy
+msgid "Black!"
+msgstr "umukara"
+
+#: colors.h:63
+#, fuzzy
+msgid "White!"
+msgstr "Umweru"
+
+# sw/source\ui\utlui\attrdesc.src:STR_CHANNELR.text
+#: colors.h:64
+#, fuzzy
+msgid "Red!"
+msgstr "Umutuku:"
+
+#: colors.h:65
+msgid "Pink!"
+msgstr ""
+
+# #-#-#-#-#  svx.pot (PACKAGE VERSION)  #-#-#-#-#
+# svx/source\dialog\sdstring.src:RID_SVXSTR_ORANGE.text
+# #-#-#-#-#  svx.pot (PACKAGE VERSION)  #-#-#-#-#
+# svx/source\dialog\sdstring.src:RID_SVXSTR_BMP18.text
+#: colors.h:66
+#, fuzzy
+msgid "Orange!"
+msgstr "Oranje"
+
+#: colors.h:67
+#, fuzzy
+msgid "Yellow!"
+msgstr "Umuhondo"
+
+#: colors.h:68
+msgid "Lime!"
+msgstr ""
+
+# sw/source\ui\utlui\attrdesc.src:STR_CHANNELG.text
+#: colors.h:69
+#, fuzzy
+msgid "Green!"
+msgstr "Icyatsi kibisi:"
+
+#: colors.h:70
+#, fuzzy
+msgid "Cyan!"
+msgstr "Ubururu bukeye"
+
+# sw/source\ui\utlui\attrdesc.src:STR_CHANNELB.text
+#: colors.h:71
+#, fuzzy
+msgid "Blue!"
+msgstr "Ubururu"
+
+#: colors.h:72
+msgid "Purple!"
+msgstr ""
+
+#: colors.h:73
+msgid "Fuchsia!"
+msgstr ""
+
+#: colors.h:74
+#, fuzzy
+msgid "Brown!"
+msgstr "Igihogo"
+
+#: colors.h:75
+#, fuzzy
+msgid "Gray!"
+msgstr "Ikigina"
+
+#: colors.h:76
+#, fuzzy
+msgid "Silver!"
+msgstr "Ifeza"
+
+#: great.h:20
+msgid "Great!"
+msgstr ""
+
+#: great.h:21
+#, fuzzy
+msgid "Cool!"
+msgstr "Kumera neza"
+
+#: great.h:22
+#, fuzzy
+msgid "Keep it up!"
+msgstr "Hejuru"
+
+#: great.h:23
+msgid "Good job!"
+msgstr ""
+
+#: magic.h:48
+msgid "Rainbow"
+msgstr ""
+
+#: magic.h:49
+msgid "Sparkles"
+msgstr ""
+
+#: magic.h:51
+msgid "Mirror"
+msgstr ""
+
+#: magic.h:52
+msgid "Flip"
+msgstr "Guhindukiza"
+
+#: magic.h:54
+msgid "Blur"
+msgstr ""
+
+#: magic.h:55
+msgid "Blocks"
+msgstr ""
+
+#: magic.h:57
+msgid "Negative"
+msgstr ""
+
+#: magic.h:58
+msgid "Fade"
+msgstr "Kwijima"
+
+#: magic.h:60
+msgid "Chalk"
+msgstr ""
+
+#: magic.h:61
+msgid "Drip"
+msgstr ""
+
+#: magic.h:63
+msgid "Thick"
+msgstr ""
+
+#: magic.h:64
+msgid "Thin"
+msgstr "Kinanutse"
+
+#: magic.h:66
+msgid "Fill"
+msgstr "Kuzuza"
+
+#: magic.h:73
+#, fuzzy
+msgid "You can draw in rainbow colors!"
+msgstr "Gushushanya in Amabara"
+
+#: magic.h:74
+#, fuzzy
+msgid "Click and move to draw sparkles."
+msgstr "Na Kwimura Kuri Gushushanya"
+
+#: magic.h:76
+#, fuzzy
+msgid "Click to make a mirror image."
+msgstr "Kuri Ubwoko a Ishusho"
+
+#: magic.h:77
+#, fuzzy
+msgid "Click to flip the picture upside-down."
+msgstr "Kuri Guhindukiza i() y'Ishusho Hasi"
+
+#: magic.h:79
+#, fuzzy
+msgid "Click and move the mouse around to blur the picture."
+msgstr "Na Kwimura i Imbeba Kuri i() y'Ishusho"
+
+#: magic.h:80
+#, fuzzy
+msgid "Click and move the mouse around to make the picture blocky."
+msgstr "Na Kwimura i Imbeba Kuri Ubwoko i() y'Ishusho"
+
+#: magic.h:82
+#, fuzzy
+msgid "Click and move the mouse around to draw a negative."
+msgstr "Na Kwimura i Imbeba Kuri Gushushanya a"
+
+#: magic.h:83
+#, fuzzy
+msgid "Click and move to fade the colors."
+msgstr "Na Kwimura Kuri Kwijima i Amabara"
+
+#: magic.h:85
+#, fuzzy
+msgid "Click and move the mouse around to turn the picture into a chalk drawing."
+msgstr "Na Kwimura i Imbeba Kuri i() y'Ishusho a Igishushanyo"
+
+#: magic.h:86
+#, fuzzy
+msgid "Click and move the mouse around to make the picture drip."
+msgstr "Na Kwimura i Imbeba Kuri Ubwoko i() y'Ishusho"
+
+#: magic.h:88
+#, fuzzy
+msgid "Click and move the mouse to thicken the picture."
+msgstr "Na Kwimura i Imbeba Kuri i() y'Ishusho"
+
+#: magic.h:89
+#, fuzzy
+msgid "Click and move the mouse to thin the picture."
+msgstr "Na Kwimura i Imbeba Kuri kinanutse i() y'Ishusho"
+
+#: magic.h:91
+#, fuzzy
+msgid "Click in the picture to fill that area with color."
+msgstr "in i() y'Ishusho Kuri Kuzuza Ubuso Na: Ibara"
+
+#: shapes.h:141 shapes.h:142
+msgid "Square"
+msgstr "kare"
+
+#: shapes.h:143 shapes.h:144
+msgid "Rectangle"
+msgstr "Urukiramende"
+
+#: shapes.h:145 shapes.h:146
+msgid "Circle"
+msgstr "Uruziga"
+
+#: shapes.h:147 shapes.h:148 shapes.h:167 shapes.h:168
+msgid "Oval"
+msgstr "Byihese"
+
+#: shapes.h:149 shapes.h:150
+msgid "Triangle"
+msgstr ""
+
+#: shapes.h:151 shapes.h:152
+msgid "Pentagon"
+msgstr "Ikinyampande5"
+
+#: shapes.h:153 shapes.h:154
+msgid "Diamond"
+msgstr "Umwashi"
+
+#: shapes.h:161 shapes.h:162
+#, fuzzy
+msgid "A square has four sides, each the same length."
+msgstr "A kare i Uburebure"
+
+#: shapes.h:163 shapes.h:164
+#, fuzzy
+msgid "A rectangle has four sides."
+msgstr "A Urukiramende"
+
+#: shapes.h:165 shapes.h:166
+#, fuzzy
+msgid "A circle is exactly round."
+msgstr "A Uruziga ni IBURUNGUSHURA"
+
+#: shapes.h:169 shapes.h:170
+#, fuzzy
+msgid "A triangle has three sides."
+msgstr "A"
+
+#: shapes.h:171 shapes.h:172
+#, fuzzy
+msgid "A pentagon has five sides."
+msgstr "A Ikinyampande5"
+
+#: shapes.h:173 shapes.h:174
+#, fuzzy
+msgid "A diamond is a square, turned around slightly."
+msgstr "A Umwashi ni a kare"
+
+#: titles.h:37
+msgid "Tools"
+msgstr "Ibikoresho"
+
+#: titles.h:38
+msgid "Colors"
+msgstr "Amabara"
+
+#: titles.h:39
+msgid "Brushes"
+msgstr ""
+
+#: titles.h:40
+msgid "Stamps"
+msgstr ""
+
+#: titles.h:41 tools.h:45
+msgid "Shapes"
+msgstr "Imisusire shusho"
+
+#: titles.h:42
+msgid "Letters"
+msgstr ""
+
+#: titles.h:43 tools.h:47
+msgid "Magic"
+msgstr ""
+
+#: tools.h:42
+msgid "Paint"
+msgstr ""
+
+#: tools.h:43
+msgid "Stamp"
+msgstr ""
+
+#: tools.h:44
+msgid "Lines"
+msgstr "Imirongo"
+
+#: tools.h:46
+msgid "Text"
+msgstr "Umwandiko"
+
+#: tools.h:48
+msgid "Undo"
+msgstr "Isubiranyuma"
+
+#: tools.h:49
+msgid "Redo"
+msgstr "Gusubiramo"
+
+#: tools.h:50
+msgid "Eraser"
+msgstr ""
+
+#: tools.h:51
+msgid "New"
+msgstr "Gishya"
+
+#: tools.h:53
+msgid "Save"
+msgstr "Kubika"
+
+#: tools.h:54
+msgid "Print"
+msgstr "Gucapa"
+
+#: tools.h:55
+msgid "Quit"
+msgstr "Kuvamo"
+
+#: tools.h:62
+#, fuzzy
+msgid "Pick a color and a brush shape to draw with."
+msgstr "a Ibara Na a Uburoso Imisusire Kuri Gushushanya Na:"
+
+#: tools.h:63
+#, fuzzy
+msgid "Pick a picture to stamp around your drawing."
+msgstr "a() y'Ishusho Kuri Igishushanyo"
+
+#: tools.h:64
+#, fuzzy
+msgid "Click to start drawing a line. Let go to complete it."
+msgstr "Kuri Gutangira Igishushanyo a Umurongo Gyayo Kuri Byuzuye"
+
+#: tools.h:65
+#, fuzzy
+msgid "Pick a shape. Click to pick the center, drag, then let go when it is the size you want. Move around to rotate it, and click to draw it."
+msgstr "a Imisusire Kuri i hagati Kurura Hanyuma Gyayo Ryari: ni i Ingano Kuri Kuzerutsa Na Kanda Kuri Gushushanya"
+
+#: tools.h:66
+#, fuzzy
+msgid "Choose a style of text. Click on your drawing and you can start typing."
+msgstr "a IMISUSIRE Bya Umwandiko ku Igishushanyo Na Gutangira Kwandika:"
+
+#: tools.h:67
+#, fuzzy
+msgid "Pick a magical effect to use on your drawing!"
+msgstr "a INGARUKA Kuri Gukoresha ku Igishushanyo"
+
+#: tools.h:68
+#, fuzzy
+msgid "Undo!"
+msgstr "Isubiranyuma:"
+
+#: tools.h:69
+#, fuzzy
+msgid "Redo!"
+msgstr "Isubiramo:"
+
+#: tools.h:70
+msgid "Eraser!"
+msgstr ""
+
+#: tools.h:71
+#, fuzzy
+msgid "You now have a blank sheet to draw on!"
+msgstr "NONEAHA a Ahatanditseho URUPAPURO Kuri Gushushanya ku"
+
+#: tools.h:72
+msgid "Open…"
+msgstr ""
+
+#: tools.h:73
+#, fuzzy
+msgid "Your image has been saved!"
+msgstr "Ishusho"
+
+#: tools.h:74
+msgid "Printing…"
+msgstr ""
+
+#: tools.h:75
+msgid "Bye bye!"
+msgstr ""
+
+#: tools.h:78
+#, fuzzy
+msgid "Let go of the button to complete the line."
+msgstr "Gyayo Bya i Akabuto Kuri Byuzuye i Umurongo"
+
+#: tools.h:79
+#, fuzzy
+msgid "Hold the button to stretch the shape."
+msgstr "i Akabuto Kuri Kurambura i Imisusire"
+
+#: tools.h:80
+#, fuzzy
+msgid "Move the mouse to rotate the shape. Click to draw it."
+msgstr "i Imbeba Kuri Kuzerutsa i Imisusire Kuri Gushushanya"
+
+#: tools.h:81
+#, fuzzy
+msgid "OK then… Let’s keep drawing this one!"
+msgstr "Gumana: Igishushanyo iyi"

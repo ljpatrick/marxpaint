@@ -22,12 +22,12 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
   
-  June 14, 2002 - March 24, 2005
+  June 14, 2002 - April 6, 2005
 */
 
 
 #define VER_VERSION     "0.9.15"
-#define VER_DATE        "2005-03-24"
+#define VER_DATE        "2005-04-06"
 
 
 /* Color depth for Tux Paint to run in, and store canvases in: */
@@ -544,6 +544,7 @@ enum {
   LANG_PT_PT,     /* Portuguese (Portugal) */
   LANG_RO,     /* Romanian */
   LANG_RU,     /* Russian */
+  LANG_RW,     /* Kinyarwanda */
   LANG_SK,     /* Slovak */
   LANG_SL,     /* Slovenian */
   LANG_SQ,     /* Albanian */
@@ -600,6 +601,7 @@ static const char * lang_prefixes[NUM_LANGS] = {
   "pt_pt",
   "ro",
   "ru",
+  "rw",
   "sk",
   "sl",
   "sq",
@@ -760,6 +762,7 @@ static void show_lang_usage(FILE * f, const char * const prg)
 /* id */     "  indonesian   bahasa-indonesia\n"
 /* it */     "  italian      italiano\n"
 /* ja */     "  japanese\n"
+/* rw */     "  kinyarwanda\n"
 /* tlh */    "  klingon      tlhIngan\n"
 /* ko */     "  korean\n"
 /* lt */     "  lithuanian   lietuviu\n"
@@ -834,6 +837,7 @@ static void show_locale_usage(FILE * f, const char * const prg)
 	  "  pt_PT   (Portuguese   Portugues)\n"
 	  "  ro_RO   (Romanian)\n"
 	  "  ru_RU   (Russian      Russkiy)\n"
+	  "  rw_RW   (Kinyarwanda)\n"
 	  "  sk_SK   (Slovak)\n"
 	  "  sl_SI   (Slovenian)\n"
 	  "  sq_AL   (Albanian)\n"
@@ -908,6 +912,7 @@ static const language_to_locale_struct language_to_locale_array[] = {
 {"euskara",              "eu_ES.UTF-8"},
 {"georgian",             "ka_GE"},
 {"korean",               "ko_KR.UTF-8"},
+{"kinyarwanda",		 "rw_RW.UTF-8"},
 {"klingon",              "tlh.UTF-8"},
 {"tlhIngan",             "tlh.UTF-8"},
 {"tlhingan",             "tlh.UTF-8"},

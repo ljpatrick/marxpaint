@@ -7,7 +7,7 @@ bill@newbreedsoftware.com
 http://www.newbreedsoftware.com/tuxpaint/
 
 
-June 17, 2002 - March 24, 2005
+June 17, 2002 - April 6, 2005
 
 
 * Design and Coding:
@@ -169,6 +169,18 @@ June 17, 2002 - March 24, 2005
   
   * Japanese
     TOYAMA Shin-ichi <shin1@wmail.plala.or.jp>
+
+  * Kinyarwanda
+    Steve Murphy <murf@e-tools.com>
+    (Based on translations by:
+    Philibert Ndandali <ndandali@yahoo.fr>,
+    Viateur MUGENZI <muvia1@yahoo.fr>,
+    Noëlla Mupole <s24211045@tuks.co.za>,
+    Carole Karema <karemacarole@hotmail.com>,
+    JEAN BAPTISTE NGENDAHAYO <ngenda_denis@yahoo.co.uk>,
+    Augustin KIBERWA <akiberwa@yahoo.co.uk>,
+    Donatien NSENGIYUMVA <ndonatienuk@yahoo.co.uk>, and
+    Antoine Bigirimana <antoine@e-tools.com>.)
 
   * Korean
     Mark K. Kim <tuxNO_SOLICITATIONpaint-dev@cbreak.org>

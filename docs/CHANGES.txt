@@ -7,7 +7,7 @@ bill@newbreedsoftware.com
 http://www.newbreedsoftware.com/tuxpaint/
 
 
-2005.March.24 (0.9.15)
+2005.April.6 (0.9.15)
 
   * uncatagorized and messy:
     -----------------------
@@ -253,6 +253,19 @@ http://www.newbreedsoftware.com/tuxpaint/
 
     * Galician translation created.
       Leandro Regueiro <unho@gulo.org>
+
+    * Kinyarwanda translation created.
+      Steve Murphy <murf@e-tools.com>
+
+      (Initial rough translation based on translations from the following:
+      Philibert Ndandali <ndandali@yahoo.fr>, 2005.
+      Viateur MUGENZI <muvia1@yahoo.fr>, 2005.
+      Noëlla Mupole <s24211045@tuks.co.za>, 2005.
+      Carole Karema <karemacarole@hotmail.com>, 2005.
+      JEAN BAPTISTE NGENDAHAYO <ngenda_denis@yahoo.co.uk>, 2005.
+      Augustin KIBERWA <akiberwa@yahoo.co.uk>, 2005.
+      Donatien NSENGIYUMVA <ndonatienuk@yahoo.co.uk>, 2005.
+      Antoine Bigirimana <antoine@e-tools.com>, 2005.)
 
     * Swahili translation created.
       Martin Benjamin <martin.benjamin@yale.edu>
