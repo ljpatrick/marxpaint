@@ -87,6 +87,9 @@
 #ifdef __BEOS__
 #include "BeOS_print.h"
 #endif
+#ifdef __APPLE__
+#include "maxosx_print.h"
+#endif
 #else
 #include "win32_dirent.h"
 #include "win32_print.h"
@@ -9821,7 +9824,7 @@ void show_progress_bar(void)
 
 void do_print(void)
 {
-#if !defined(WIN32) && !defined(__BEOS__)
+#if !defined(WIN32) && !defined(__BEOS__) && !defined(__APPLE__)
   /* Linux, Unix, etc. */
 
   FILE * pi;
@@ -9847,11 +9850,23 @@ void do_print(void)
 
   snprintf(f, sizeof(f), "%s/%s", savedir, "print.cfg");
   SurfacePrint(canvas, use_print_config?f:NULL, show);
-#else
+#elif defined(__BEOS__)
   /* BeOS */
   
   SurfacePrint(canvas);
+#elif defined(__APPLE__)
+  /* Mac OS X */
+
+  int show = (SDL_GetModState() & KMOD_ALT) && !fullscreen;
+
+  const char* error = SurfacePrint (canvas, show);
+
+  if (error)
+    fprintf (stderr, "Cannot print: %s\n", error);
+  else
+    do_prompt (PROMPT_PRINT_TXT, PROMPT_PRINT_YES, "");
 #endif
+  
 #endif
 }
 
