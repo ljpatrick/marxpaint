@@ -55,6 +55,10 @@ http://www.newbreedsoftware.com/tuxpaint/
   * Added "--noshortcuts" option, to disable keyboard shortcuts
     (e.g., [Ctrl]+[S] for Save, etc.)
 
+  * Added more copies of the GPL: Swedish, Romanian, Polish, Lithuanean,
+    Korean, Japanese, Indonesian, Hebrew, Greek, Danish, Czech, Chinese
+    and Catalan.
+
 
 2003.Aug.18 (0.9.12)
   * Replaced "efont-serif" fonts with those from the 'ttf-freefont' package,
