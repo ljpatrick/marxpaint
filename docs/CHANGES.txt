@@ -8,6 +8,9 @@ http://www.newbreedsoftware.com/tuxpaint/
 
 
 2004.July.15 (0.9.14) [cvs]
+  * Updated Simplified Chinese translation.
+    Wang Jian <lark@linux.net.cn>
+
   * Updated Basque translation.
     Juan Irigoien <juanirigoien@irakasle.net>
 

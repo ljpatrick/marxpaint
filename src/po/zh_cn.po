@@ -4,7 +4,7 @@
 # This file is distributed under the same license as the Tux Paint
 # program.
 #
-# Wang Jian <lark@linux.net.cn>, 2003
+# Wang Jian <lark@linux.net.cn>, 2003, 2004
 #
 # Special note from lark: Because it is for children, the translation
 # should not be cold.
@@ -13,83 +13,68 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint 0.9.11\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2004-07-13 18:30+0200\n"
-"PO-Revision-Date: 2003-07-12 02:21+0800\n"
+"POT-Creation-Date: 2004-07-15 18:09+0200\n"
+"PO-Revision-Date: 2004-07-15 22:47+0800\n"
 "Last-Translator: Wang Jian <lark@linux.net.cn>\n"
-"Language-Team: Chinese (simplified) <i18n-translation@lists.linux.net.cn>\n"
+"Language-Team: zh_CN <i18n-translation@lists.linux.net.cn>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
 msgid "A drawing program for children."
-msgstr ""
+msgstr "孩子的绘图程序。"
 
 msgid "Drawing program"
-msgstr ""
+msgstr "绘图程序"
 
-#, fuzzy
 msgid "Tux Paint"
-msgstr "绘图"
+msgstr "Tux Paint"
 
-#, fuzzy
 msgid "Black!"
-msgstr "黑色"
+msgstr "黑色！"
 
-#, fuzzy
 msgid "White!"
-msgstr "白色"
+msgstr "白色！"
 
-#, fuzzy
 msgid "Red!"
-msgstr "重复！"
+msgstr "红色！"
 
-#, fuzzy
 msgid "Pink!"
-msgstr "粉红色"
+msgstr "粉红色！"
 
-#, fuzzy
 msgid "Orange!"
-msgstr "橙色"
+msgstr "橙色！"
 
-#, fuzzy
 msgid "Yellow!"
-msgstr "黄色"
+msgstr "黄色！"
 
 #, fuzzy
 msgid "Lime!"
 msgstr "线条"
 
-#, fuzzy
 msgid "Green!"
-msgstr "绿色"
+msgstr "绿色！"
 
-#, fuzzy
 msgid "Cyan!"
-msgstr "青色"
+msgstr "青色！"
 
-#, fuzzy
 msgid "Blue!"
 msgstr "蓝色"
 
-#, fuzzy
 msgid "Purple!"
-msgstr "紫色"
+msgstr "紫色！"
 
-#, fuzzy
 msgid "Fuchsia!"
-msgstr "紫红色"
+msgstr "紫红色！"
 
-#, fuzzy
 msgid "Brown!"
-msgstr "棕色"
+msgstr "棕色！"
 
-#, fuzzy
 msgid "Gray!"
-msgstr "真不错！"
+msgstr "灰色！"
 
-#, fuzzy
 msgid "Silver!"
-msgstr "银色"
+msgstr "银色！"
 
 msgid "Great!"
 msgstr "真不错！"
@@ -113,7 +98,7 @@ msgid "Mirror"
 msgstr "镜子"
 
 msgid "Flip"
-msgstr "颠倒"
+msgstr "翻转"
 
 msgid "Blur"
 msgstr "模糊"
@@ -145,29 +130,23 @@ msgstr "填充"
 msgid "You can draw in rainbow colors!"
 msgstr "你可以用彩虹的颜色画图耶！"
 
-#, fuzzy
 msgid "Click and move to draw sparkles."
-msgstr "单击然后移动来画火花"
+msgstr "单击然后移动来画火花。"
 
-#, fuzzy
 msgid "Click to make a mirror image."
-msgstr "单击作出镜子中的效果！"
+msgstr "单击做出镜子中的效果。"
 
-#, fuzzy
 msgid "Click to flip the picture upside-down."
-msgstr "单击将图片上下颠倒！"
+msgstr "单击将图片上下翻转。"
 
-#, fuzzy
 msgid "Click and move the mouse around to blur the picture."
-msgstr "单击然后移动鼠标将图片变模糊"
+msgstr "单击然后移动鼠标，将图片变模糊。"
 
-#, fuzzy
 msgid "Click and move the mouse around to make the picture blocky."
-msgstr "单击然后移动鼠标将图片变成裂片的效果"
+msgstr "单击然后移动鼠标将图片变成驳裂的效果。"
 
-#, fuzzy
 msgid "Click and move the mouse around to draw a negative."
-msgstr "单击然后移动鼠标来绘制相片底片"
+msgstr "单击然后移动鼠标来绘制相片底片。"
 
 msgid "Click and move to fade the colors."
 msgstr "单击然后移动来将使颜色退色。"
@@ -176,21 +155,17 @@ msgid ""
 "Click and move the mouse around to turn the picture into a chalk drawing."
 msgstr "单击然后移动鼠标将图片变成粉笔画。"
 
-#, fuzzy
 msgid "Click and move the mouse around to make the picture drip."
-msgstr "单击然后移动鼠标将图片变成水滴图！"
+msgstr "单击然后移动鼠标将图片变成水滴图。"
 
-#, fuzzy
 msgid "Click and move the mouse to thicken the picture."
-msgstr "单击然后移动鼠标将图片变浓"
+msgstr "单击然后移动鼠标将图片变浓。"
 
-#, fuzzy
 msgid "Click and move the mouse to thin the picture."
-msgstr "单击然后移动鼠标将图片变淡"
+msgstr "单击然后移动鼠标将图片变淡。"
 
-#, fuzzy
 msgid "Click in the picture to fill that area with color."
-msgstr "单击图片用颜色填充区域"
+msgstr "单击图片用颜色填充区域。"
 
 msgid "Square"
 msgstr "正方形"
@@ -295,11 +270,9 @@ msgstr "选择一个颜色和一个形状的画笔。"
 msgid "Pick a picture to stamp around your drawing."
 msgstr "选择印在画周围的图片。"
 
-#, fuzzy
 msgid "Click to start drawing a line. Let go to complete it."
 msgstr "点击开始画线。我们来完成它吧。"
 
-#, fuzzy
 msgid ""
 "Pick a shape. Click to pick the center, drag, then let go when it is the "
 "size you want. Move around to rotate it, and click to draw it."
@@ -307,7 +280,6 @@ msgstr ""
 "选择一个形状。单击选中中心然后拖动，当大小是你所需要的时候就放开。光标移动就"
 "可以旋转它，单击就绘制完成。"
 
-#, fuzzy
 msgid "Choose a style of text. Click on your drawing and you can start typing."
 msgstr "选择文字的样式。在绘制的图片上单击就可以开始输入文字。"
 
@@ -370,7 +342,7 @@ msgid "No"
 msgstr "不要"
 
 msgid "If you quit, you’ll lose your picture! Save it?"
-msgstr "如果你退出了，你会失去你的图片！保存起来吗？"
+msgstr "如果你退出了，你会丢掉你的图片！保存起来吗？"
 
 msgid "Save your picture first?"
 msgstr "先保存你的图片？"
@@ -379,25 +351,22 @@ msgid "Can’t open that picture!"
 msgstr "打不开那个图片啊！"
 
 msgid "OK"
-msgstr ""
+msgstr "好的"
 
 msgid "Starting a new picture will erase the current one!"
 msgstr "新开一个图片会删除现在的图片啊！"
 
-#, fuzzy
 msgid "That’s OK!"
 msgstr "没问题"
 
-#, fuzzy
 msgid "Never mind!"
 msgstr "不用担心！"
 
 msgid "There are no saved files!"
 msgstr "没有保存过的文件啊！"
 
-#, fuzzy
 msgid "Print your picture now?"
-msgstr "先保存你的图片？"
+msgstr "现在打印你的图片吗？"
 
 msgid "Your picture has been printed!"
 msgstr "你的图片被打印出来了！"
@@ -417,22 +386,11 @@ msgid "Back"
 msgstr "退回"
 
 #. FIXME: Move elsewhere!!!
-#, fuzzy
 msgid "Save over the older version of this picture?"
 msgstr "取代这个图的旧版本吗？"
 
 msgid "No, save a new file"
 msgstr "不，保存到新文件"
 
-#, fuzzy
 msgid "Choose the picture you want, then click “Open”."
-msgstr "选择你要打开的图片，然后点击“打开”"
-
-#~ msgid "Red"
-#~ msgstr "红色"
-
-#~ msgid "Grey"
-#~ msgstr "灰色"
-
-#~ msgid "Okay"
-#~ msgstr "好的"
+msgstr "选择你要打开的图片，然后点击“打开”。"
