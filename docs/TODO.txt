@@ -90,6 +90,9 @@ LOW-PRIORITY IMPLEMENTATION CHANGES:
     Distros can take advantage of this.
     (Ben Armstrong's suggestion.)
 
+  * Support Ogg Vorbis for stamp sounds, for *much* higher quality and
+    much smaller file sizes.
+
 
 HIGH-PRIORITY BUGS:
 -------------------
