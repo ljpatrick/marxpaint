@@ -92,7 +92,7 @@ const char * const magic_names[NUM_MAGICS] = {
   gettext_noop("Blur"),
   gettext_noop("Smudge"),
 
-  gettext_noop("Fade"),
+  gettext_noop("Lighten"),
   gettext_noop("Darken"),
 
   gettext_noop("Chalk"),
@@ -113,7 +113,7 @@ const char * const magic_names[NUM_MAGICS] = {
 
 const char * const magic_tips[NUM_MAGICS] = {
   gettext_noop("Click in the picture to fill that area with color."),
-  gettext_noop("Click and move to draw grass. Don't forget the dirt!"),
+  gettext_noop("Click and move to draw grass. Don’t forget the dirt!"),
   
   gettext_noop("Click and move to draw large bricks."),
   gettext_noop("Click and move to draw small bricks."),
@@ -131,7 +131,7 @@ const char * const magic_tips[NUM_MAGICS] = {
   gettext_noop("Click and move the mouse around to make the picture blocky."),
   
   gettext_noop("Click and move the mouse around to draw a negative."),
-  gettext_noop("Click and move the mouse around to change the picture's color."),
+  gettext_noop("Click and move the mouse around to change the picture’s color."),
 
   gettext_noop("Click and move the mouse around to make the picture drip."),
   gettext_noop("Click and move the mouse around to turn the picture into a cartoon."),

@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: nn\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2005-01-06 12:31+0100\n"
-"PO-Revision-Date: 2005-01-12 19:53+0100\n"
+"PO-Revision-Date: 2005-01-12 21:03+0100\n"
 "Last-Translator: Karl Ove Hufthammer <karl@huftis.org>\n"
 "Language-Team: Norwegian Nynorsk <i18n-nn@lister.ping.uio.no>\n"
 "MIME-Version: 1.0\n"
@@ -142,13 +142,13 @@ msgid "Mirror"
 msgstr "Spegel"
 
 msgid "Flip"
-msgstr "Snu"
+msgstr "Opp-ned"
 
 msgid "Click in the picture to fill that area with color."
 msgstr "Trykk på teikninga for å fylla området med fargen frå målingbøtta."
 
 msgid "Click and move to draw grass. Don't forget the dirt!"
-msgstr "Hald inne knappen og flytt rundt for å teikna gras."
+msgstr "Hald inne knappen og flytt rundt for å teikna gras. Ikkje gløym jorda!"
 
 msgid "Click and move to draw large bricks."
 msgstr "Hald inne knappen og flytt rundt for å teikna store mursteinar."
@@ -169,7 +169,7 @@ msgid "Click and move the mouse around to smudge the picture."
 msgstr "Hald inne knappen og flytt rundt for å gni teikninga utover."
 
 msgid "Click and move to fade the colors."
-msgstr "Hald inne knappen og flytt rundt for å bleikna fargane."
+msgstr "Hald inne knappen og flytt rundt for å gjera fargane lysare."
 
 msgid "Click and move to darken the colors."
 msgstr "Hald inne knappen og flytt rundt for å gjera fargane mørkare."
@@ -183,7 +183,7 @@ msgid "Click and move the mouse around to make the picture blocky."
 msgstr "Hald inne knappen og flytt rundt for å gjera teikninga «blokkete»."
 
 msgid "Click and move the mouse around to draw a negative."
-msgstr "Hald inne knappen og flytt rundt for å invertera teikninga."
+msgstr "Hald inne knappen og flytt rundt for å byta om på fargane."
 
 msgid "Click and move the mouse around to change the picture's color."
 msgstr "Hald inne knappen og flytt rundt for å endra fargane på teikninga."
@@ -191,11 +191,8 @@ msgstr "Hald inne knappen og flytt rundt for å endra fargane på teikninga."
 msgid "Click and move the mouse around to make the picture drip."
 msgstr "Hald inne knappen og flytt rundt for å gjera teikninga dryppande."
 
-#, fuzzy
 msgid "Click and move the mouse around to turn the picture into a cartoon."
-msgstr ""
-"Hald inne knappen og flytt rundt for å gjera teikninga om til ei "
-"kritteikning."
+msgstr "Hald inne knappen og flytt rundt for å gjera fargane klarare og strekane tydelegare."
 
 msgid "Click to make a mirror image."
 msgstr "Trykk for å spegelvenda teikninga."
