@@ -1135,35 +1135,6 @@ static grid_dims gd_colors;   // was 17x1
 
 static int WINDOW_WIDTH, WINDOW_HEIGHT;
 
-static void debug_rect(SDL_Rect *r, char *name)
-{
-  printf("%-12s %dx%d @ %d,%d\n", name, r->w, r->h, r->x, r->y);
-}
-#define DR(x) debug_rect(&x, #x)
-
-static void debug_dims(grid_dims *g, char *name)
-{
-  printf("%-12s %dx%d\n", name, g->cols, g->rows);
-}
-#define DD(x) debug_dims(&x, #x)
-
-static void print_layout(void)
-{
-  printf("\n--- layout ---\n");
-  DR(r_canvas);
-  DR(r_tools);
-  DR(r_toolopt);
-  DR(r_colors);
-  DR(r_ttools);
-  DR(r_tcolors);
-  DR(r_ttoolopt);
-  DR(r_tuxarea);
-  DD(gd_tools);
-  DD(gd_toolopt);
-  DD(gd_colors);
-  printf("buttons are %dx%d\n", button_w,button_h);
-  printf("color buttons are %dx%d\n", color_button_w,color_button_h);
-}
 
 static void setup_normal_screen_layout(void)
 {
@@ -1213,8 +1184,6 @@ static void setup_normal_screen_layout(void)
   gd_tools.rows = buttons_tall;
   gd_toolopt.rows = buttons_tall;
 
-printf("\nButtons tall: %d\n",buttons_tall);
-
   r_canvas.h = r_ttoolopt.h + buttons_tall * button_h;
   
   r_colors.y = r_canvas.h + r_canvas.y;
@@ -1237,11 +1206,47 @@ printf("\nButtons tall: %d\n",buttons_tall);
 
 }
 
+#ifdef DEBUG
+static void debug_rect(SDL_Rect *r, char *name)
+{
+  printf("%-12s %dx%d @ %d,%d\n", name, r->w, r->h, r->x, r->y);
+}
+#define DR(x) debug_rect(&x, #x)
+
+static void debug_dims(grid_dims *g, char *name)
+{
+  printf("%-12s %dx%d\n", name, g->cols, g->rows);
+}
+#define DD(x) debug_dims(&x, #x)
+
+static void print_layout(void)
+{
+  printf("\n--- layout ---\n");
+  DR(r_canvas);
+  DR(r_tools);
+  DR(r_toolopt);
+  DR(r_colors);
+  DR(r_ttools);
+  DR(r_tcolors);
+  DR(r_ttoolopt);
+  DR(r_tuxarea);
+  DD(gd_tools);
+  DD(gd_toolopt);
+  DD(gd_colors);
+  printf("buttons are %dx%d\n", button_w,button_h);
+  printf("color buttons are %dx%d\n", color_button_w,color_button_h);
+}
+#undef DD
+#undef DR
+#endif
+
 static void setup_screen_layout(void)
 {
   // can do right-to-left, colors at the top, extra tool option columns, etc.
   setup_normal_screen_layout();
+#ifdef DEBUG
   print_layout();
+#endif
 }
 
 static SDL_Surface * screen;
