@@ -6,7 +6,7 @@
 # bill@newbreedsoftware.com
 # http://www.newbreedsoftware.com/tuxpaint/
 
-# June 14, 2002 - September 14, 2003
+# June 14, 2002 - December 18, 2003
 
 
 # Where to install things:
@@ -691,7 +691,7 @@ trans/nl.mo:	src/messages/nl.po
 	@echo "   nl_NL ...Dutch..."
 	@msgfmt src/messages/nl.po -o trans/nl.mo
 
-trans/nn.mo:	src/messages/nb.po
+trans/nb.mo:	src/messages/nb.po
 	@echo "   nb_NO ...Norwegian Bokmal..."
 	@msgfmt src/messages/nb.po -o trans/nb.mo
 	
