@@ -7340,12 +7340,9 @@ static void putpixel(SDL_Surface * surface, int x, int y, Uint32 pixel)
 
 static void debug(const char * const str)
 {
-  void * kluge;
-
-  kluge = (void *) str;   /* So 'str' param _is_ used when DEBUG is off;
-		             thus avoiding compiler warnings */
-
-#ifdef DEBUG
+#ifndef DEBUG
+  (void)str;
+#else
   fprintf(stderr, "DEBUG: %s\n", str);
   fflush(stderr);
 #endif
