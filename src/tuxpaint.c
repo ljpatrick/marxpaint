@@ -22,12 +22,12 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
   
-  June 14, 2002 - January 14, 2005
+  June 14, 2002 - January 16, 2005
 */
 
 
 #define VER_VERSION     "0.9.15"
-#define VER_DATE        "2005-01-14"
+#define VER_DATE        "2005-01-16"
 
 
 /* Color depth for Tux Paint to run in, and store canvases in: */
@@ -1425,7 +1425,7 @@ static int use_sound, fullscreen, disable_quit, simple_shapes,
   wheely, no_fancy_cursors, keymouse, mouse_x, mouse_y,
   mousekey_up, mousekey_down, mousekey_left, mousekey_right,
   dont_do_xor, use_print_config, dont_load_stamps, noshortcuts,
-  no_system_fonts,
+  no_system_fonts, no_button_distinction,
   mirrorstamps, disable_stamp_controls, disable_save, ok_to_use_lockfile;
 static int starter_mirrored, starter_flipped;
 static int recording, playing;
@@ -2248,6 +2248,7 @@ static void load_starter(char * img_id);
 static SDL_Surface * duplicate_surface(SDL_Surface * orig);
 static void mirror_starter(void);
 static void flip_starter(void);
+int valid_click(Uint8 button);
 
 #ifdef DEBUG
 static char * debug_gettext(const char * str);
@@ -2757,7 +2758,7 @@ static void mainloop(void)
 		}
 	    }
 	  else if (event.type == SDL_MOUSEBUTTONDOWN &&
-		   event.button.button == 1)
+		   valid_click(event.button.button))
 	    {
 	      if (HIT(r_tools))
 		{
@@ -6709,6 +6710,7 @@ static void setup(int argc, char * argv[])
   dont_do_xor = 0;
   keymouse = 0;
   wheely = 1;
+  no_button_distinction = 0;
   grab_input = 0;
   no_fancy_cursors = 0;
   simple_shapes = 0;
@@ -6972,6 +6974,10 @@ static void setup(int argc, char * argv[])
       else if (strcmp(argv[i], "--nosysfonts") == 0)
 	{
 	  no_system_fonts = 1;
+	}
+      else if (strcmp(argv[i], "--nobuttondistinction") == 0)
+	{
+	  no_button_distinction = 1;
 	}
       else if (strcmp(argv[i], "--sysfonts") == 0)
 	{
@@ -10722,7 +10728,7 @@ static void do_wait(void)
 	      done = 1;
 	    }
 	  else if (event.type == SDL_MOUSEBUTTONDOWN &&
-		   event.button.button == 1)
+		   valid_click(event.button.button))
 	    {
 	      done = 1;
 	    }
@@ -11472,7 +11478,7 @@ static int do_prompt_image_flash(const char * const text, const char * const btn
 	      }
 	  }
         else if (event.type == SDL_MOUSEBUTTONDOWN &&
-	       event.button.button == 1)
+	         valid_click(event.button.button))
 	  {
 	    if (event.button.x >= 166 + PROMPTOFFSETX &&
 	        event.button.x < 166 + PROMPTOFFSETX + 48)
@@ -14713,6 +14719,15 @@ static void parse_options(FILE * fi)
 	    {
 	      no_system_fonts = 0;
 	    }
+	  else if (strcmp(str, "nobuttondistinction=yes") == 0)
+	    {
+	      no_button_distinction= 1;
+	    }
+	  else if (strcmp(str, "nobuttondistinction=no") == 0 ||
+		   strcmp(str, "buttondistinction=yes") == 0)
+	    {
+	      no_button_distinction= 0;
+	    }
 	  else if (strcmp(str, "nosound=yes") == 0)
 	    {
 	      use_sound = 0;
@@ -15179,3 +15194,12 @@ static void flip_starter(void)
   }
 }
 
+
+int valid_click(Uint8 button)
+{
+  if (button == 1 ||
+      ((button == 2 || button == 3) && no_button_distinction))
+    return(1);
+  else
+    return(0);
+}

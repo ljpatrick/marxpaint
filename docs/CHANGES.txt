@@ -7,7 +7,7 @@ bill@newbreedsoftware.com
 http://www.newbreedsoftware.com/tuxpaint/
 
 
-2005.January.12 (0.9.15)
+2005.January.16 (0.9.15)
   * Stamp tool improvements:
     ------------------------
     * Greatly improved stamp outlining (to avoid empty rows or columns
@@ -102,6 +102,10 @@ http://www.newbreedsoftware.com/tuxpaint/
     -----------------------
     * Middle and right mouse buttons no longer do anything.
       (No reason to teach kids that all the buttons do the same thing!)
+
+      Note: This can be disabled (resulting in the old-style support for
+      all three buttons meaning the same thing) by setting the
+      "--nobuttondistinction" option.
 
     * If middle or right mouse buttons are clicked too much, a pop-up
       appears explaining to click the left button, and includes a small
