@@ -1,4 +1,4 @@
-import sys, re, os, shutil, fnmatch
+import sys, re, os, fnmatch
 
 def lfcr(file):
     if os.path.isdir(file):
@@ -15,11 +15,9 @@ def lfcr(file):
         f.write(newdata)
         f.close()
 
-
 def makeFolders(path):
     if not os.path.exists(path):
         os.makedirs(path)
-
 
 def po2mo(pfx, input, output):
     output_path = os.path.join(output,pfx,"LC_MESSAGES")
@@ -39,21 +37,23 @@ def add2filelist(fp, destination, source):
         if 'CVS' in dirs: dirs.remove('CVS')  # don't visit CVS directories
         if 'cvs' in dirs: dirs.remove('cvs')
 
+# makes sure the text docs are in CRLF format for notepad users(!)
 docs = "../docs/"
 for doc in os.listdir(docs):
     fullpath = docs+doc
     if os.path.isdir(fullpath): continue
     lfcr(fullpath)
 
+# generates the '.mo' files used by gettext
 pos = "../src/po/"
 mos = "locale"
-
 makeFolders(mos)
 for po in fnmatch.filter(os.listdir(pos), "*.po"):
     fullpath = pos+po
     if os.path.isdir(fullpath): continue
     po2mo(os.path.splitext(po)[0], pos, mos)
 
+# builds 'filelist.inc'. Prevents cvs clutter from being packaged by NSIS
 fp = open("filelist.inc", "w")
 add2filelist(fp, "data", "..\\data")
 add2filelist(fp, "data\\fonts", "..\\fonts")
@@ -62,5 +62,4 @@ add2filelist(fp, "data\\stamps", "..\\stamps")
 add2filelist(fp, "docs", "..\\docs")
 fp.write("\n")
 fp.close()
-
 
