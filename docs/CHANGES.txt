@@ -7,7 +7,10 @@ bill@newbreedsoftware.com
 http://www.newbreedsoftware.com/tuxpaint/
 
 
-2004.April.1 (0.9.14) [cvs]
+2004.April.14 (0.9.14) [cvs]
+  * Updated Makefile for easier install.
+    Mark K. Kim <tuxNO_SOLICITATIONpaint-dev@cbreak.org>
+
   * Afrikaans translation created.
     Petri Jooste <rkwjpj@puk.ac.za>
 

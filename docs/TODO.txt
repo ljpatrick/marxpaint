@@ -6,7 +6,7 @@ Copyright (c) 2004 by Bill Kendrick
 bill@newbreedsoftware.com
 http://www.newbreedsoftware.com/tuxpaint/
 
-March 21, 2004
+April 14, 2004
 
 
 LOW-PRIORITY DOCUMENTATION CHANGES:
@@ -18,6 +18,8 @@ LOW-PRIORITY DOCUMENTATION CHANGES:
   * Mention CONFDIR in INSTALL.txt
 
   * Meniton "--lang help" in README.
+
+  * Add better description of where things get installed in INSTALL.txt
 
   * Automagically make documentation path correct in man page.
     (Turn man page into a template, then process during compile)
@@ -107,9 +109,10 @@ LOW-PRIORITY TRANSLATION STUFF:
     * Thai
     ...
 
-  * Support more language names in their native language
-    (e.g., "suomi" is Finnish for "finnish")
-    
+  * Translate splash screen text (e.g., copyright, etc.)
+  
+  * Translate program name (e.g., "Teikne-Tux" in Norwegian)
+
   * Update Czech and Slovak translations (so they use accents/etc.!)
 
 
