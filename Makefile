@@ -6,7 +6,7 @@
 # bill@newbreedsoftware.com
 # http://www.newbreedsoftware.com/tuxpaint/
 
-# June 14, 2002 - September 28, 2004
+# June 14, 2002 - October 3, 2004
 
 
 # Where to install things:
@@ -88,10 +88,12 @@ SDL_CFLAGS=$(shell sdl-config --cflags)
 
 # The entire set of CFLAGS:
 
-CFLAGS=-O2 -Wall -Isrc/$(MOUSEDIR) -D$(CURSOR_SHAPES)_CURSOR_SHAPES
+CFLAGS=-O2 -Wall
 DEFS=-DDATA_PREFIX=\"$(DATA_PREFIX)\" \
 	-D$(NOSOUNDFLAG) -DDOC_PREFIX=\"$(DOC_PREFIX)\" \
 	-DLOCALEDIR=\"$(LOCALE_PREFIX)\" -DCONFDIR=\"$(CONFDIR)\"
+
+MOUSE_CFLAGS=-Isrc/$(MOUSEDIR) -D$(CURSOR_SHAPES)_CURSOR_SHAPES
 
 
 # "make" with no arguments builds the program and man page from sources:
@@ -728,7 +730,7 @@ obj/tuxpaint.o:	src/tuxpaint.c obj \
 		$(ARCH_HEADERS)
 	@echo
 	@echo "...Compiling Tux Paint from source..."
-	@$(CC) $(CFLAGS) $(SDL_CFLAGS) $(DEFS) \
+	@$(CC) $(CFLAGS) $(SDL_CFLAGS) $(MOUSE_CFLAGS) $(DEFS) \
 		-c src/tuxpaint.c -o obj/tuxpaint.o
 
 
