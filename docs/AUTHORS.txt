@@ -7,7 +7,7 @@ bill@newbreedsoftware.com
 http://www.newbreedsoftware.com/tuxpaint/
 
 
-June 17, 2002 - June 10, 2004
+June 17, 2002 - July 27, 2004
 
 
 * Design and Coding:
@@ -193,6 +193,7 @@ June 17, 2002 - June 10, 2004
   
   * Slovak
     Milan Plzik <mmp@golem.gymzv.sk>
+    Andrej Kacian <andrej@kacian.sk>
 
   * Slovenian
     Urska Colner <urska.colner@agenda.si>
