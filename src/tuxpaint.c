@@ -686,6 +686,20 @@ static SDL_Surface * img_tux[NUM_TIP_TUX];
 static SDL_Surface * img_color_btns[NUM_COLORS];
 #endif
 
+// control the color selector
+#define COLORSEL_DISABLE 0  // disable and draw the (greyed out) colors
+#define COLORSEL_ENABLE  1  // enable and draw the colors
+#define COLORSEL_CLOBBER 2  // colors get scribbled over
+#define COLORSEL_REFRESH 4  // redraw the colors, either on or off
+
+static void draw_colors(int action);
+
+#ifndef LOW_QUALITY_COLOR_SELECTOR
+static Uint8 colorsel_alpha(Uint8 c1, Uint8 c2, Uint8 a);
+#endif
+
+static int colors_are_selectable;
+
 static SDL_Surface * img_cur_brush;
 static int brush_counter, rainbow_color;
 
@@ -696,7 +710,6 @@ static int num_fonts;
 #ifndef NOSOUND
 static Mix_Chunk * sounds[NUM_SOUNDS];
 #endif
-
 
 #define NUM_ERASERS 6 /* How many sizes of erasers (from ERASER_MIN to _MAX) */
 #define ERASER_MIN 13 
@@ -711,7 +724,6 @@ static SDL_Cursor * cursor_hand, * cursor_arrow, * cursor_watch,
 static int cur_tool, cur_color, cur_brush, cur_stamp, cur_shape, cur_magic;
 static int cur_font, cur_eraser;
 static int cursor_left, cursor_x, cursor_y, cursor_textwidth;
-static int colors_are_selectable;
 static int been_saved;
 static char file_id[32];
 static char starter_id[32];
@@ -778,7 +790,6 @@ static SDL_Surface * do_loadimage(const char * const fname, int abort_on_error);
 static SDL_Surface * loadaltimage(const char * const fname);
 static void draw_toolbar(void);
 static void draw_magic(void);
-static void draw_colors(int enabled);
 static void draw_brushes(void);
 static void draw_stamps(void);
 static void draw_shapes(void);
@@ -829,9 +840,6 @@ static void disable_avail_tools(void);
 static void enable_avail_tools(void);
 static void reset_avail_tools(void);
 static void update_screen(int x1, int y1, int x2, int y2);
-#ifndef LOW_QUALITY_COLOR_SELECTOR
-static Uint8 colorsel_alpha(Uint8 c1, Uint8 c2, Uint8 a);
-#endif
 static int compare_strings(char * * s1, char * * s2);
 static int compare_dirent2s(struct dirent2 * f1, struct dirent2 * f2);
 static void draw_tux_text(int which_tux, const char * const str,
@@ -1015,7 +1023,7 @@ int main(int argc, char * argv[])
   SDL_FillRect(screen, NULL, SDL_MapRGB(screen->format, 255, 255, 255));
 
   draw_toolbar();
-  draw_colors(1);
+  draw_colors(COLORSEL_ENABLE);
   draw_brushes();
   update_canvas(0, 0, WINDOW_WIDTH - 96, (48 * 7) + 40 + HEIGHTOFFSET);
 
@@ -1229,7 +1237,7 @@ static void mainloop(void)
 		  tmp_int = tool_avail[TOOL_NEW];
 		  disable_avail_tools();
 		  draw_toolbar();
-		  draw_colors(0);
+		  draw_colors(COLORSEL_DISABLE);
 		  draw_none();
 		  
 		  tmp_int = do_open(tmp_int);
@@ -1247,7 +1255,7 @@ static void mainloop(void)
 		      cur_tool == TOOL_SHAPES ||
 		      cur_tool == TOOL_TEXT)
 		    {
-		      draw_colors(1);
+		      draw_colors(COLORSEL_ENABLE);
 		    }
 		  else if (cur_tool == TOOL_STAMP)
 		    {
@@ -1258,7 +1266,7 @@ static void mainloop(void)
 			   (cur_magic == MAGIC_FILL || cur_magic == MAGIC_GRASS ||
 			    cur_magic == MAGIC_TINT))
 		    {
-		      draw_colors(1);
+		      draw_colors(COLORSEL_ENABLE);
 		    }
 
 		  if (cur_tool == TOOL_BRUSH || cur_tool == TOOL_LINES)
@@ -1472,13 +1480,13 @@ static void mainloop(void)
 			{
 			  cur_thing = cur_brush;
 			  draw_brushes();
-			  draw_colors(1);
+			  draw_colors(COLORSEL_ENABLE);
 			}
 		      else if (cur_tool == TOOL_ERASER)
 		        {
 			  cur_thing = cur_eraser;
 			  draw_erasers();
-			  draw_colors(0);
+			  draw_colors(COLORSEL_DISABLE);
 		        }
 		      else if (cur_tool == TOOL_STAMP)
 			{
@@ -1493,26 +1501,26 @@ static void mainloop(void)
 			{
 			  cur_thing = cur_brush;
 			  draw_brushes();
-			  draw_colors(1);
+			  draw_colors(COLORSEL_ENABLE);
 			}
 		      else if (cur_tool == TOOL_SHAPES)
 			{
 			  cur_thing = cur_shape;
 			  draw_shapes();
-			  draw_colors(1);
+			  draw_colors(COLORSEL_ENABLE);
 			  shape_tool_mode = SHAPE_TOOL_MODE_DONE;
 			}
 		      else if (cur_tool == TOOL_TEXT)
 			{
 			  cur_thing = cur_font;
 			  draw_fonts();
-			  draw_colors(1);
+			  draw_colors(COLORSEL_ENABLE);
 			}
 		      else if (cur_tool == TOOL_ERASER)
 			{
 			  cur_thing = cur_eraser;
 			  draw_erasers();
-			  draw_colors(0);
+			  draw_colors(COLORSEL_DISABLE);
 			}
 		      else if (cur_tool == TOOL_UNDO)
 			{
@@ -1556,7 +1564,7 @@ static void mainloop(void)
 			  tmp_int = tool_avail[TOOL_NEW];
 			  disable_avail_tools();
 			  draw_toolbar();
-		          draw_colors(0);
+		          draw_colors(COLORSEL_DISABLE);
 		          draw_none();
 			  
 			  tmp_int = do_open(tmp_int);
@@ -1577,7 +1585,7 @@ static void mainloop(void)
 			      cur_tool == TOOL_SHAPES ||
 			      cur_tool == TOOL_TEXT)
 			    {
-			      draw_colors(1);
+			      draw_colors(COLORSEL_ENABLE);
 			    }
 			  else if (cur_tool == TOOL_STAMP)
 			    {
@@ -1588,7 +1596,7 @@ static void mainloop(void)
 				   (cur_magic == MAGIC_FILL || cur_magic == MAGIC_GRASS ||
 				    cur_magic == MAGIC_TINT))
 			    {
-			      draw_colors(1);
+			      draw_colors(COLORSEL_ENABLE);
 			    }
 
 			  if (cur_tool == TOOL_BRUSH || cur_tool == TOOL_LINES)
@@ -1697,9 +1705,9 @@ static void mainloop(void)
 
 			  if (cur_magic == MAGIC_FILL || cur_magic == MAGIC_GRASS ||
 			      cur_magic == MAGIC_TINT)
-			    draw_colors(1);
+			    draw_colors(COLORSEL_ENABLE);
 			  else
-			    draw_colors(0);
+			    draw_colors(COLORSEL_DISABLE);
 			}
 		      else if (cur_tool == TOOL_QUIT)
 			{
@@ -2099,9 +2107,9 @@ static void mainloop(void)
 			    {
 			      if (cur_thing == MAGIC_FILL || cur_magic == MAGIC_GRASS ||
 			          cur_thing == MAGIC_TINT)
-				draw_colors(1);
+				draw_colors(COLORSEL_ENABLE);
 			      else
-				draw_colors(0);
+				draw_colors(COLORSEL_DISABLE);
 
 			      SDL_UpdateRect(screen,
 					     0, (48 * 7) + 40 + HEIGHTOFFSET,
@@ -2148,7 +2156,7 @@ static void mainloop(void)
 		    {
 		      cur_color = which;
 		      playsound(1, SND_BUBBLE, 1);
-		      draw_colors(1);
+		      draw_colors(COLORSEL_ENABLE);
 		      SDL_UpdateRect(screen,
 				     0, (48 * 7) + 40 + HEIGHTOFFSET,
 				     WINDOW_WIDTH, 48);
@@ -2528,9 +2536,9 @@ static void mainloop(void)
 		    {
 		      if (cur_thing == MAGIC_FILL || cur_magic == MAGIC_GRASS ||
 			  cur_thing == MAGIC_TINT)
-			draw_colors(1);
+			draw_colors(COLORSEL_ENABLE);
 		      else
-			draw_colors(0);
+			draw_colors(COLORSEL_DISABLE);
 
 		      SDL_UpdateRect(screen,
 				     0, (48 * 7) + 40 + HEIGHTOFFSET,
@@ -7122,7 +7130,9 @@ static void draw_magic(void)
 
 /* Draw color selector: */
 
-static void draw_colors(int enabled)
+static int colors_state = COLORSEL_ENABLE | COLORSEL_CLOBBER;
+
+static void draw_colors(int action)
 {
   int i;
   SDL_Rect dest;
@@ -7130,7 +7140,22 @@ static void draw_colors(int enabled)
   dest.x = 0;
   dest.y = 40 + ((NUM_TOOLS / 2) * 48) + HEIGHTOFFSET;
 
-  if (enabled)
+  int old_colors_state = colors_state;
+  if (action==COLORSEL_CLOBBER)
+    colors_state |= COLORSEL_CLOBBER;
+  if (action==COLORSEL_REFRESH)
+    colors_state &= ~COLORSEL_CLOBBER;;
+  if (action==COLORSEL_DISABLE)
+    colors_state = COLORSEL_DISABLE;
+  if (action==COLORSEL_ENABLE)
+    colors_state = COLORSEL_ENABLE;
+
+  colors_are_selectable = colors_state == COLORSEL_ENABLE;
+
+  if ( (colors_state&COLORSEL_CLOBBER) || (colors_state==old_colors_state))
+    return;
+
+  if (colors_state == COLORSEL_ENABLE)
     {
       SDL_BlitSurface(img_title_large_on, NULL, screen, &dest);
   
@@ -7154,7 +7179,7 @@ static void draw_colors(int enabled)
       dest.x = (i * ((WINDOW_WIDTH - 96) / NUM_COLORS)) + 96;
       dest.y = 40 + ((NUM_TOOLS / 2) * 48) + HEIGHTOFFSET;
 
-      if (enabled)
+      if (colors_state == COLORSEL_ENABLE)
 	SDL_BlitSurface(img_color_btns[i], NULL, screen, &dest);
       else
 	SDL_BlitSurface(img_color_btns[COLOR_WHITE], NULL, screen, &dest);
@@ -7164,7 +7189,7 @@ static void draw_colors(int enabled)
       dest.w = ((WINDOW_WIDTH - 96) / NUM_COLORS);
       dest.h = 48 + HEIGHTOFFSET;
 
-      if (enabled)
+      if (colors_state == COLORSEL_ENABLE)
 	SDL_FillRect(screen, &dest,
 		     SDL_MapRGB(screen->format,
 				color_hexes[i][0],
@@ -7175,7 +7200,7 @@ static void draw_colors(int enabled)
 		     SDL_MapRGB(screen->format, 240, 240, 240));
 #endif
 
-      if (i == cur_color && enabled)
+      if (i==cur_color && colors_state==COLORSEL_ENABLE)
 	{
 	  dest.x = (i * ((WINDOW_WIDTH - 96) / NUM_COLORS)) + 96;
 	  dest.y = 44 + ((NUM_TOOLS / 2) * 48) + HEIGHTOFFSET;
@@ -7183,11 +7208,6 @@ static void draw_colors(int enabled)
 	  SDL_BlitSurface(img_paintcan, NULL, screen, &dest);
 	}
     }
-
-
-  /* Keep track of this globally, so the cursor shape will act right */
-
-  colors_are_selectable = enabled;
 }
 
 
