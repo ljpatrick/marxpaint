@@ -8,7 +8,13 @@ http://www.newbreedsoftware.com/tuxpaint/
 
 
 2004.November.21 (0.9.15)
-  * Update BeOS Makefile.
+  * BeOS code updates.
+    Marcin 'Shard' Konicki <shard at beosjournal.org>
+
+  * Delete thumbnails from ".thumbs" subdirectory.
+    Marcin 'Shard' Konicki <shard at beosjournal.org>
+
+  * Updated BeOS Makefile.
     Marcin 'Shard' Konicki <shard at beosjournal.org>
 
   * Added BeOS resource file (src/tuxpaint.rsrc)

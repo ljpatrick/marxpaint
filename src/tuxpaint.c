@@ -21,12 +21,12 @@
   along with this program; if not, write to the Free Software
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   
-  June 14, 2002 - October 24, 2004
+  June 14, 2002 - November 21, 2004
 */
 
 
 #define VER_VERSION     "0.9.15"
-#define VER_DATE        "2004-10-24"
+#define VER_DATE        "2004-11-21"
 
 
 /* #define DEBUG */
@@ -119,6 +119,16 @@
 #include <dirent.h>
 #ifdef __BEOS__
 #include "BeOS_print.h"
+// workaround dirent handling bug in TuxPaint code
+typedef struct safer_dirent {
+       dev_t                   d_dev;
+       dev_t                   d_pdev;
+       ino_t                   d_ino;
+       ino_t                   d_pino;
+       unsigned short  d_reclen;
+       char                    d_name[NAME_MAX];
+} safer_dirent;
+#define dirent safer_dirent
 #endif
 #ifdef __APPLE__
 #include "macosx_print.h"
@@ -4070,6 +4080,9 @@ void setup(int argc, char * argv[])
   /* if run from gui, like OpenTracker in BeOS or Explorer in Windows,
      find path from which binary was run and change dir to it
      so all files will be local :) */
+  /* UPDATE (2004.10.06): Since SDL 1.2.7 SDL sets that path correctly,
+     so this code wouldn't be needed if SDL was init before anything else,
+     (just basic init, window shouldn't be needed). */
 
   if (argc && argv[0])
     {
@@ -7634,7 +7647,7 @@ void reset_avail_tools(void)
 #endif
 
 #ifdef __BEOS__
-  if(!IsPrinterAvailable()) disallow_print = 1;
+  if(!IsPrinterAvailable()) disallow_print = disable_print = 1;
 #endif
 
 
@@ -10690,7 +10703,34 @@ int do_open(int want_new_tool)
 		      
 			  /* Delete the thumbnail, too: */
 		      
+			  snprintf(fname, sizeof(fname),
+				   "saved/.thumbs/%s-t.png",
+				   d_names[which]);
+		      
+			  free(rfname);
+			  rfname = get_fname(fname);
+			  debug(rfname);
+			  
+			  unlink(rfname);
+
+
+			  /* Try deleting old-style thumbnail, too: */
+		      
+			  unlink(rfname);
 			  snprintf(fname, sizeof(fname), "saved/%s-t.png",
+				   d_names[which]);
+		      
+			  free(rfname);
+			  rfname = get_fname(fname);
+			  debug(rfname);
+		      
+			  unlink(rfname);
+		      
+		      
+			  /* Delete .dat file, if any: */
+		      
+			  unlink(rfname);
+			  snprintf(fname, sizeof(fname), "saved/%s.dat",
 				   d_names[which]);
 		      
 			  free(rfname);
@@ -12858,7 +12898,7 @@ void load_starter(char * img_id)
   /* Determine path to starter files: */
   
   /* FIXME: On Windows, MacOSX, BeOS, etc. -- do it their way! */
-#ifdef WIN32
+#if defined(WIN32) || defined(__BEOS__)
   dirname = strdup(DATA_PREFIX "starters");
 #else
   dirname = strdup("/usr/local/share/tuxpaint/starters");
