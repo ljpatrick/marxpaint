@@ -2386,7 +2386,6 @@ static void eat_startup_events(void)
 #endif
 
 #ifdef __i386__
-// get 6.25 MHz out of a 200 MHz Pentium-MMX
 #define CLOCK_ASM(tbl) asm volatile("rdtsc" : "=A" (tbl))
 #define CLOCK_TYPE unsigned long long
 #ifndef CLOCK_SPEED
