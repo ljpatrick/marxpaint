@@ -2587,7 +2587,7 @@ static void mainloop(void)
 		  tmp_int = tool_avail[TOOL_NEW];
 		  disable_avail_tools();
 		  draw_toolbar();
-		  draw_colors(COLORSEL_DISABLE); // was COLORSEL_CLOBBER; bjk 2005.01.14
+		  draw_colors(COLORSEL_CLOBBER);
 		  draw_none();
 		  
 		  tmp_int = do_open(tmp_int);
