@@ -6,6 +6,20 @@
   Copyright (c) 2003 by Bill Kendrick
   bill@newbreedsoftware.com
   http://www.newbreedsoftware.com/tuxpaint/
+
+  This program is free software; you can redistribute it and/or modify
+  it under the terms of the GNU General Public License as published by
+  the Free Software Foundation; either version 2 of the License, or
+  (at your option) any later version.
+  
+  This program is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  GNU General Public License for more details.
+  
+  You should have received a copy of the GNU General Public License
+  along with this program; if not, write to the Free Software
+  Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   
   June 14, 2002 - December 20, 2003
 */
@@ -22,6 +36,9 @@
 /* #define LOW_QUALITY_FLOOD_FILL */
 /* #define NO_PROMPT_SHADOWS */
 /* #define USE_HWSURFACE */
+
+
+/* #define USE_HQ4X */
 
 
 /* Disable fancy cursors in fullscreen mode, to avoid SDL bug: */
@@ -2990,6 +3007,7 @@ void stamp_draw(int x, int y)
   
   /* Shrink or grow it! */
 
+#ifdef HQ4X
   if (state_stamps[cur_stamp]->size == 400)
     {
       /* Use high quality 4x filter! */
@@ -3024,6 +3042,7 @@ void stamp_draw(int x, int y)
       hq4x_32(tmp_surf, final_surf, RGBtoYUV);
     }
   else
+#endif
     {
       final_surf = thumbnail(tmp_surf,
 			     (tmp_surf->w *

@@ -4,6 +4,6 @@
 #include "SDL.h"
 
 void hq4x_32(SDL_Surface * src, SDL_Surface * dest,
-	     int RGBtoYUV[65536]);
+	     Uint32 RGBtoYUV[65536]);
 
 #endif

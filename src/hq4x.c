@@ -172,12 +172,13 @@
 
 
 void hq4x_32(SDL_Surface * src, SDL_Surface * dest,
-	     int RGBtoYUV[65536])
+	     Uint32 RGBtoYUV[65536])
 {
   int x, y, k;
   int prevline, nextline;
   Uint16 w[10];
   Uint8 a;
+  Uint32 YUV1, YUV2;
   int pattern;
   int flag;
 
