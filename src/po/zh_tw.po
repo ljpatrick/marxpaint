@@ -352,7 +352,7 @@ msgid "Click to start drawing a line. Let go to complete it."
 msgstr "點一下就會開始繪製一條線，讓我們來完成他吧。"
 
 #: tools.h:65
-"Pick a shape. Click to pick the center, drag, then let go when it is the "
+msgid "Pick a shape. Click to pick the center, drag, then let go when it is the "
 "size you want. Move around to rotate it, and click to draw it."
 msgstr ""
 "挑選一個形狀。點一下形狀的中心位置，然後拖拉他到您要的大小。"
