@@ -10,9 +10,9 @@ msgstr ""
 "Project-Id-Version: Tuxpaint 0.9.5\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2005-01-06 12:31+0100\n"
-"PO-Revision-Date: 2004-08-14 13:11+0800\n"
-"Last-Translator: Song Huang <Song@song.idv.tw>\n"
-"Language-Team: Song Huang <song@ossacc.org>\n"
+"PO-Revision-Date: 2005-01-16 11:00+0800\n"
+"Last-Translator: Song Huang <Song@ossacc.org>\n"
+"Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -27,80 +27,76 @@ msgid "Tux Paint"
 msgstr "繪畫"
 
 msgid "Black!"
-msgstr "黑色!"
+msgstr "黑色"
 
-#, fuzzy
 msgid "Dark Gray!"
-msgstr "灰色!"
+msgstr "深灰色"
 
 #. using both valid spellings
 msgid "Light Grey!"
-msgstr ""
+msgstr "淺灰色"
 
 #. using both valid spellings
 msgid "White!"
-msgstr "白色!"
+msgstr "白色"
 
 msgid "Red!"
-msgstr "紅色!"
+msgstr "紅色"
 
 msgid "Orange!"
 msgstr "橙色!"
 
 msgid "Yellow!"
-msgstr "黃色!"
+msgstr "黃色"
 
 msgid "Neon green!"
-msgstr ""
+msgstr "螢光綠"
 
 msgid "Green!"
-msgstr "綠色!"
+msgstr "綠色"
 
 msgid "Sky blue!"
-msgstr ""
+msgstr "天空藍"
 
 msgid "Blue!"
-msgstr "藍色!"
+msgstr "藍色"
 
 msgid "Purple!"
-msgstr "紫色!"
+msgstr "紫色"
 
 msgid "Magenta!"
-msgstr ""
+msgstr "洋紅色"
 
 msgid "Pink!"
-msgstr "粉紅色!"
+msgstr "粉紅色"
 
 msgid "Brown!"
-msgstr "棕色!"
+msgstr "棕色"
 
-#, fuzzy
 msgid "Tan!"
-msgstr "青綠色!"
+msgstr "褐色"
 
 msgid "Beige!"
-msgstr ""
+msgstr "米黃色"
 
 msgid "Great!"
-msgstr "太棒了!"
+msgstr "太棒了"
 
 msgid "Cool!"
-msgstr "酷!"
+msgstr "酷"
 
 msgid "Keep it up!"
-msgstr "繼續下去!"
+msgstr "繼續下去"
 
 msgid "Good job!"
-msgstr "作的好!"
+msgstr "作的好"
 
 msgid "Fill"
 msgstr "填滿"
 
-#, fuzzy
 msgid "Grass"
-msgstr "刪除"
+msgstr "青草"
 
-#, fuzzy
 msgid "Bricks"
 msgstr "馬賽克"
 
@@ -114,13 +110,13 @@ msgid "Blur"
 msgstr "模糊"
 
 msgid "Smudge"
-msgstr ""
+msgstr "煙燻"
 
 msgid "Fade"
 msgstr "褪色"
 
 msgid "Darken"
-msgstr ""
+msgstr "變深"
 
 msgid "Chalk"
 msgstr "粉筆"
@@ -131,15 +127,14 @@ msgstr "馬賽克"
 msgid "Negative"
 msgstr "反相"
 
-#, fuzzy
 msgid "Tint"
-msgstr "變薄"
+msgstr "著色"
 
 msgid "Drip"
 msgstr "水滴"
 
 msgid "Cartoon"
-msgstr ""
+msgstr "卡通"
 
 msgid "Mirror"
 msgstr "左右鏡射"
@@ -150,20 +145,17 @@ msgstr "上下翻轉"
 msgid "Click in the picture to fill that area with color."
 msgstr "點在圖像內來用顏色填滿整個區域。"
 
-#, fuzzy
 msgid "Click and move to draw grass. Don't forget the dirt!"
-msgstr "按著並移動滑鼠來繪製火花。"
+msgstr "按著並移動滑鼠來繪製青草，別忘了泥土囉。"
 
-#, fuzzy
 msgid "Click and move to draw large bricks."
-msgstr "按著並移動滑鼠來繪製火花。"
+msgstr "按著並移動滑鼠來繪製大的磚塊。"
 
-#, fuzzy
 msgid "Click and move to draw small bricks."
-msgstr "按著並移動滑鼠來繪製火花。"
+msgstr "按著並移動滑鼠來繪製小的磚塊。"
 
 msgid "You can draw in rainbow colors!"
-msgstr "您可以畫出彩虹的顏色!"
+msgstr "您可以畫出彩虹的顏色"
 
 msgid "Click and move to draw sparkles."
 msgstr "按著並移動滑鼠來繪製火花。"
@@ -171,19 +163,16 @@ msgstr "按著並移動滑鼠來繪製火花。"
 msgid "Click and move the mouse around to blur the picture."
 msgstr "按著並移動滑鼠來模糊圖像。"
 
-#, fuzzy
 msgid "Click and move the mouse around to smudge the picture."
-msgstr "按著並移動滑鼠來模糊圖像。"
+msgstr "按著並移動滑鼠來燻黑圖像。"
 
 msgid "Click and move to fade the colors."
 msgstr "按著並移動滑鼠來退淡顏色。"
 
-#, fuzzy
 msgid "Click and move to darken the colors."
-msgstr "按著並移動滑鼠來退淡顏色。"
+msgstr "按著並移動滑鼠來加深顏色。"
 
-msgid ""
-"Click and move the mouse around to turn the picture into a chalk drawing."
+msgid "Click and move the mouse around to turn the picture into a chalk drawing."
 msgstr "按著並移動滑鼠來擦出粉筆的痕跡。"
 
 msgid "Click and move the mouse around to make the picture blocky."
@@ -192,16 +181,14 @@ msgstr "按著並移動滑鼠來打上馬賽克。"
 msgid "Click and move the mouse around to draw a negative."
 msgstr "按著並移動滑鼠來畫出反相的顏色。"
 
-#, fuzzy
 msgid "Click and move the mouse around to change the picture's color."
-msgstr "按著並移動滑鼠來打上馬賽克。"
+msgstr "按著並移動滑鼠來更改圖形的顏色。"
 
 msgid "Click and move the mouse around to make the picture drip."
 msgstr "按著並移動滑鼠來作出水滴狀。"
 
-#, fuzzy
 msgid "Click and move the mouse around to turn the picture into a cartoon."
-msgstr "按著並移動滑鼠來擦出粉筆的痕跡。"
+msgstr "按著並移動滑鼠將圖形變成卡通風格。"
 
 msgid "Click to make a mirror image."
 msgstr "按下可以作出左右鏡射的圖像。"
@@ -257,7 +244,6 @@ msgstr "顏色"
 msgid "Brushes"
 msgstr "筆刷"
 
-#, fuzzy
 msgid "Erasers"
 msgstr "橡皮擦"
 
@@ -330,23 +316,23 @@ msgid "Choose a style of text. Click on your drawing and you can start typing."
 msgstr "選擇字母的樣式，在圖上點一下就可以開始輸入。"
 
 msgid "Pick a magical effect to use on your drawing!"
-msgstr "挑選一種魔術的效果來用在您的圖畫上!"
+msgstr "挑選一種魔術的效果來用在您的圖畫上"
 
 #. Undo
 msgid "Undo!"
-msgstr "回復!"
+msgstr "回復"
 
 #. Redo
 msgid "Redo!"
-msgstr "重作!"
+msgstr "重作"
 
 #. Eraser
 msgid "Eraser!"
-msgstr "橡皮擦!"
+msgstr "橡皮擦"
 
 #. New
 msgid "You now have a blank sheet to draw on!"
-msgstr "您現在可以在空白頁上來繪圖!"
+msgstr "您現在可以在空白頁上來繪圖"
 
 #. Open
 msgid "Open…"
@@ -394,7 +380,7 @@ msgid "Save your picture first?"
 msgstr "先儲存您的圖畫嗎？"
 
 msgid "Can’t open that picture!"
-msgstr "無法開啟那張圖畫!"
+msgstr "無法開啟那張圖畫"
 
 msgid "OK"
 msgstr "OK"
@@ -403,22 +389,22 @@ msgid "Starting a new picture will erase the current one!"
 msgstr "開啟一張新的圖紙將會刪除目前這張圖!"
 
 msgid "That’s OK!"
-msgstr "確定!"
+msgstr "確定"
 
 msgid "Never mind!"
-msgstr "取消!"
+msgstr "取消"
 
 msgid "There are no saved files!"
-msgstr "沒有已儲存的檔案!"
+msgstr "沒有已儲存的檔案"
 
 msgid "Print your picture now?"
 msgstr "現在要列印您的圖畫嗎？"
 
 msgid "Your picture has been printed!"
-msgstr "您的圖畫已列印!"
+msgstr "您的圖畫已列印"
 
 msgid "You can’t print yet!"
-msgstr "您還不可以列印!"
+msgstr "您還不可以列印"
 
 msgid "Erase this picture?"
 msgstr "刪除這張圖畫？"
@@ -430,7 +416,7 @@ msgid "Back"
 msgstr "回復"
 
 msgid "Aa"
-msgstr ""
+msgstr "Aa"
 
 #. FIXME: Move elsewhere!!!
 msgid "Save over the older version of this picture?"
