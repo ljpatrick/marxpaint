@@ -6760,6 +6760,14 @@ static void get_stamp_thumb(stamp_type *sd)
     }
 #endif
 
+  if(!sd->no_txt && !sd->stxt)
+    {
+      // damn thing wants a .png extension; give it one
+      memcpy(buf+len, ".png", 5);
+      sd->stxt = loaddesc(buf);
+      sd->no_txt = !sd->stxt;
+    }
+
   // first see if we can re-use an existing thumbnail
   if(sd->thumbnail)
     {
@@ -6927,7 +6935,6 @@ static void loadstamp_callback(const char *restrict const dir, unsigned dirlen, 
           stamp_data[num_stamps]->stampname = malloc(dotpng-files[i].str+1+dirlen+1);
           memcpy(stamp_data[num_stamps]->stampname, fname, dotpng-files[i].str+1+dirlen);
           stamp_data[num_stamps]->stampname[dotpng-files[i].str+1+dirlen] = '\0';
-          stamp_data[num_stamps]->stxt = loaddesc(fname);
           loadinfo(fname, stamp_data[num_stamps]);
 
           if(!mirrorstamps || !disable_stamp_controls || !stamp_data[num_stamps]->mirrorable)
