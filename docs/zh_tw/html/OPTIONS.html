@@ -275,8 +275,18 @@ New Breed Software</p>
       <td>&nbsp;</td>
     </tr>
     <tr>
+      <td><code>南非荷蘭語</code></td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
       <td><code>basque</code></td>
       <td><code>巴斯克文</code></td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td><code>belarusian</code></td>
+      <td><code>白俄羅斯文</code></td>
       <td>&nbsp;</td>
     </tr>
     <tr>
@@ -285,14 +295,24 @@ New Breed Software</p>
       <td>&nbsp;</td>
     </tr>
     <tr>
+      <td><code>brazilian-portuguese</code></td>
+      <td><code>巴西葡萄牙文</code></td>
+      <td><code>巴西</code></td>
+    </tr>
+    <tr>
+      <td><code>breton</code></td>
+      <td><code>布列塔尼文</code></td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
       <td><code>british-english</code></td>
       <td><code>英文 (英國)</code></td>
       <td>&nbsp;</td>
     </tr>
     <tr>
-      <td><code>brazilian-portuguese</code></td>
-      <td><code>巴西葡萄牙文</code></td>
-      <td><code>巴西</code></td>
+      <td><code>bulgarian</code></td>
+      <td><code>保加利亞文</code></td>
+      <td>&nbsp;</td>
     </tr>
     <tr>
       <td><code>catalan</code></td>
@@ -302,6 +322,11 @@ New Breed Software</p>
     <tr>
       <td><code>chinese</code></td>
       <td><code>簡體中文</code></td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td><code>croatian</code></td>
+      <td><code>克羅埃西亞文</code></td>
       <td>&nbsp;</td>
     </tr>
     <tr>
@@ -345,6 +370,11 @@ New Breed Software</p>
       <td>&nbsp;</td>
     </tr>
     <tr>
+      <td><code>hindi</code></td>
+      <td><code>北印度文</code></td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
       <td><code>hungarian</code></td>
       <td><code>匈牙利文</code></td>
       <td>&nbsp;</td>
@@ -367,6 +397,11 @@ New Breed Software</p>
     <tr>
       <td><code>japanese</code></td>
       <td><code>日文</code></td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td><code>klingon</code></td>
+      <td><code>克林貢文</code></td>
       <td>&nbsp;</td>
     </tr>
     <tr>
@@ -410,6 +445,11 @@ New Breed Software</p>
       <td>&nbsp;</td>
     </tr>
     <tr>
+      <td><code>serbian</code></td>
+      <td><code>塞爾維亞文</code></td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
       <td><code>spanish</code></td>
       <td><code>西班牙文</code></td>
       <td>&nbsp;</td>
@@ -417,6 +457,11 @@ New Breed Software</p>
     <tr>
       <td><code>slovak</code></td>
       <td><code>斯洛伐克文</code></td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td><code>slovenian</code></td>
+      <td><code>斯洛維尼亞文</code></td>
       <td>&nbsp;</td>
     </tr>
     <tr>
@@ -432,7 +477,7 @@ New Breed Software</p>
     <tr>
       <td><code>traditional-chinese</code></td>
       <td><code>繁體中文</code></td>
-      <td>(新加入)</td>
+      <td></td>
     </tr>
     <tr>
       <td><code>turkish</code></td>
@@ -440,8 +485,18 @@ New Breed Software</p>
       <td>&nbsp;</td>
     </tr>
     <tr>
+      <td><code>vietnamese</code></td>
+      <td><code>越南文</code></td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
       <td><code>walloon</code></td>
       <td><code>華隆文</code></td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td><code>welsh</code></td>
+      <td><code>威爾斯文</code></td>
       <td>&nbsp;</td>
     </tr>
     </table>
@@ -450,114 +505,137 @@ New Breed Software</p>
   </dl>
 </blockquote>
 
-    <hr size=1 noshade>
+<hr size=1 noshade>
 
-    <h5>使用 <code>.tuxpaintrc</code> 覆蓋系統規劃檔的選項設定</h5>
-    <blockquote>
-      <p>您可以在您自已的 "<code>~/.tuxpaintrc</code>" 檔案中設定覆蓋掉在
-      "<code>/etc/tuxpaint/tuxpaint.config</code>" 系統規劃檔中設定的選項。</p>
+<h1>使用 <code>.tuxpaintrc</code> 覆蓋系統規劃檔的選項設定</h1>
+<blockquote>
+  <p><i>(For Linux and Unix users)</i></p>
+  
+  <p>您可以在您自已的 "<code>~/.tuxpaintrc</code>" 檔案中設定覆蓋掉在
+  "<code>/etc/tuxpaint/tuxpaint.config</code>" 系統規劃檔中設定的選項。</p>
 
-      <p>像 "<code>noprint</code>" 及 "<code>grab</code>" 這類訊問是或否的選項，
-      您可以直接在您的 "<code>~/.tuxpaintrc</code>" 中設定他們為 'no'，像這樣子：</p>
-	
-      <blockquote><code>
-        noprint=no<br>
-        uppercase=no
-      </code></blockquote>
+  <p>像 "<code>noprint</code>" 及 "<code>grab</code>" 這類訊問是或否的選項，
+  您可以直接在您的 "<code>~/.tuxpaintrc</code>" 中設定他們為 'no'，像這樣子：</p>
 
-      <p>您也可以使用稍後會提到的命令列的參數來設定，像這樣子：</p>
+  <blockquote><code>
+    noprint=no<br>
+    uppercase=no
+  </code></blockquote>
 
-      <blockquote><code>
-        print=yes<br>
-        mixedcase=yes
-      </code></blockquote>
-    </blockquote>
-  </blockquote>
-	  
-  <hr size=1 noshade>
+  <p>您也可以使用稍後會提到的命令列的參數來設定，像這樣子：</p>
 
-  <h4>命令列參數</h4>
+  <blockquote><code>
+    print=yes<br>
+    mixedcase=yes
+  </code></blockquote>
+</blockquote>
+ 
+<hr size=1 noshade>
+
+<h1><a name="command_line">命令列參數</a></h1>
+<blockquote>
+  當您啟動 Tux&nbsp;Paint 時可以使用命令列來下達參數。
+  
   <blockquote>
-    當您啟動 Tux&nbsp;Paint 時可以使用命令列來下達參數。
-    
-    <blockquote>
-    <dl>
-      <dt><code><b>
-      --fullscreen<br>
-      --800x600<br>
-      --nosound<br>
-      --noquit<br>
-      --noprint<br>
-      --printdelay=SECONDS<br>
-      --printcfg<br>
-      --simpleshapes<br>
-      --uppercase<br>
-      --grab<br>
-      --noshortcuts<br>
-      --nowheelmouse<br>
-      --nofancycursors<br>
-      --nooutlines<br>
-      --nostamps<br>
-      --nostampcontrols<br>
-      --mirrorstamps<br>
-      --keyboard<br>
-      --savedir&nbsp;DIRECTORY<br>
-      --saveover<br>
-      --saveovernew<br>
-      --lang&nbsp;LANGUAGE<br>
-      </b></code></dt>
-      <dd>
-        以上是開啟或相對應規劃檔的選項。
-      </dd>
+  <dl>
+    <dt><code><b>
+    --fullscreen<br>
+    --800x600<br>
+    --nosound<br>
+    --noquit<br>
+    --noprint<br>
+    --printdelay=SECONDS<br>
+    --printcfg<br>
+    --simpleshapes<br>
+    --uppercase<br>
+    --grab<br>
+    --noshortcuts<br>
+    --nowheelmouse<br>
+    --nofancycursors<br>
+    --nooutlines<br>
+    --nostamps<br>
+    --nostampcontrols<br>
+    --mirrorstamps<br>
+    --keyboard<br>
+    --savedir&nbsp;DIRECTORY<br>
+    --saveover<br>
+    --saveovernew<br>
+    --nosave<br>
+    --lang&nbsp;LANGUAGE<br>
+    </b></code></dt>
+    <dd>
+      以上是開啟或相對應規劃檔的選項。
+      <hr size=1 noshade width=50%>
+    </dd>
 
-      <dt><code><b>
-      --windowed<br>
-      --640x480<br>
-      --sound<br>
-      --quit<br>
-      --print<br>
-      --printdelay=0<br>
-      --noprintcfg<br>
-      --complexshapes<br>
-      --mixedcase<br>
-      --dontgrab<br>
-      --shortcuts<br>
-      --wheelmouse<br>
-      --fancycursors<br>
-      --outlines<br>
-      --stamps<br>
-      --stampcontrols<br>
-      --dontmirrorstamps<br>
-      --mouse<br>
-      --saveoverask<br>
-      </b></code></dt>
-      <dd>
-        這些選項可以用來覆蓋規劃檔中的設定。
-        (如果規劃檔中沒有設定的話，就不需要覆蓋選項。)
-      </dd>
+    <dt><code><b>
+    --windowed<br>
+    --640x480<br>
+    --sound<br>
+    --quit<br>
+    --print<br>
+    --printdelay=0<br>
+    --noprintcfg<br>
+    --complexshapes<br>
+    --mixedcase<br>
+    --dontgrab<br>
+    --shortcuts<br>
+    --wheelmouse<br>
+    --fancycursors<br>
+    --outlines<br>
+    --stamps<br>
+    --stampcontrols<br>
+    --dontmirrorstamps<br>
+    --mouse<br>
+    --saveoverask<br>
+    --save<br>
+    </b></code></dt>
+    <dd>
+      這些選項可以用來覆蓋規劃檔中的設定。
+      (如果規劃檔中沒有設定的話，就不需要覆蓋選項。)
+      <hr size=1 noshade width=50%>
+    </dd>
 
 
-      <dt><code><b>--locale locale</b></code></dt>
-      <dd>
-        <p>執行某一個 Tux&nbsp;Paint 支援的語文版本。locale 字串(如："<code>de_DE@euro</code>" 是德文)
-        請見稍後 "<i>選擇不同的語文</i>" 這一個章節。</p>
-	
-        <p>(如果您的 locale 已經使用系統變數 "<code>$LANG</code>" 來指定，
-        就不需要這個參數了。Tux&nbsp;Paint 已經可以讀取系統的環境變數。)</p>
-      </dd>
+    <dt><code><b><a name="locale">--locale locale</a></b></code></dt>
+    <dd>
+      <p>執行某一個 Tux&nbsp;Paint 支援的語文版本。locale 字串(如："<code>de_DE@euro</code>" 是德文)
+      請見稍後 "<i><a href="#different_language">選擇不同的語文</a></i>" 這一個章節。</p>
 
-      <dt><code><b>--nosysconfig</b></code></dt>
-      <dd>
-        <p>在 Linux 和 Unix 平台，可以取消讀取這個
-        "<code>/etc/tuxpaint/tuxpaint.conf</code>" 系統層級的規劃檔。</p>
+      <p>(如果您的 locale 已經使用系統變數 "<code>$LANG</code>" 來指定，
+      就不需要這個參數了。Tux&nbsp;Paint 已經可以讀取系統的環境變數。)</p>
+    </dd>
 
-        <p>只有當您自已的規劃檔 "<code>~/.tuxpaintrc</code>" 存在時可以這樣作。</p>
-      </dd>
-    </dl>
-    </blockquote>
+    <dt><code><b>--nosysconfig</b></code></dt>
+    <dd>
+      <p>在 Linux 和 Unix 平台，可以取消讀取這個
+      "<code>/etc/tuxpaint/tuxpaint.conf</code>" 系統層級的規劃檔。</p>
+
+      <p>只有當您自已的規劃檔 "<code>~/.tuxpaintrc</code>" 存在時可以這樣作。</p>
+    </dd>
+
+    <dt><code><b>--nolockfile</b></code></dt>
+    <dd>
+      <p>By default, Tux&nbsp;Paint uses what's known as a 'lockfile'
+      to prevent it from being launched more than once in 30&nbsp;seconds.
+      (This is to avoid accidentally running multiple copies; for example,
+      by double-clicking a single-click launcher, or simply
+      impatiently clicking the icon multiple times.)</p>
+
+      <p>To make Tux&nbsp;Paint ignore the lockfile, allowing it to
+      run again, even if it was just launched less than 30&nbsp;seconds
+      ago, run Tux&nbsp;Paint with the '<code>--nolockfile</code>' option
+      on the command-line.</p>
+
+      <p>By default, the lockfile is stored in
+      "<code>~/.tuxpaint/</code>" under Linux and Unix,
+      and "<code>userdata\</code>" under Windows.</p>
+    </dd>
+  </dl>
   </blockquote>
+</blockquote>
 
-  <hr size=1 noshade>
+<hr size=1 noshade>
  
 
   <h4>命令列的訊息參數</h4>
