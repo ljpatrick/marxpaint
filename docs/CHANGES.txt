@@ -11,6 +11,9 @@ http://www.newbreedsoftware.com/tuxpaint/
 
   * uncatagorized and messy:
     -----------------------
+    * "New" always available.
+      (Prepping for when "New" will give options for background colors, etc.)
+
     * Splash screen appears earlier, along with the version info and cursor.
       Albert Cahalan <albert@users.sf.net>
 

@@ -2235,7 +2235,7 @@ static int do_save(void);
 static int do_png_save(FILE * fi, const char * const fname, SDL_Surface * surf);
 static void get_new_file_id(void);
 static int do_quit(void);
-static int do_open(int want_new_tool);
+void do_open(void);
 static void wait_for_sfx(void);
 static void rgbtohsv(Uint8 r8, Uint8 g8, Uint8 b8, float *h, float *s, float *v);
 static void hsvtorgb(float h, float s, float v, Uint8 *r8, Uint8 *g8, Uint8 *b8);
@@ -2745,16 +2745,14 @@ static void mainloop(void)
 		{
 		  /* Ctrl-O - Open */
 		  
-		  tmp_int = tool_avail[TOOL_NEW];
 		  disable_avail_tools();
 		  draw_toolbar();
 		  draw_colors(COLORSEL_CLOBBER);
 		  draw_none();
 		  
-		  tmp_int = do_open(tmp_int);
+		  do_open();
 		  
 		  enable_avail_tools();
-		  tool_avail[TOOL_NEW] = tmp_int;
 		  
 		  draw_toolbar();
 		  update_screen_rect(&r_tools);
@@ -2778,7 +2776,7 @@ static void mainloop(void)
 		  /* FIXME: Make delay configurable: */
 		  control_drawtext_timer(1000, tool_tips[cur_tool]);
 		}
-	      else if ( (key==SDLK_n && (mod & KMOD_CTRL)) && tool_avail[TOOL_NEW] && !noshortcuts)
+	      else if ( (key==SDLK_n && (mod & KMOD_CTRL)) && !noshortcuts)
 		{
 		  /* Ctrl-N - New */
 		  
@@ -3080,16 +3078,14 @@ static void mainloop(void)
 			}
 		      else if (cur_tool == TOOL_OPEN)
 			{
-			  tmp_int = tool_avail[TOOL_NEW];
 			  disable_avail_tools();
 			  draw_toolbar();
 		          draw_colors(COLORSEL_CLOBBER);
 		          draw_none();
 			  
-			  tmp_int = do_open(tmp_int);
+			  do_open();
 			  
 			  enable_avail_tools();
-			  tool_avail[TOOL_NEW] = tmp_int;
 			  
 			  cur_tool = old_tool;
 			  draw_toolbar();
@@ -3760,16 +3756,6 @@ static void mainloop(void)
 		    }
 		  
 		  button_down = 1;
-
-		  /* Make sure these commands are available now: */
-		  
-		  if (tool_avail[TOOL_NEW] == 0)
-		    {
-		      tool_avail[TOOL_NEW] = 1;
-		      
-		      draw_toolbar();
-		      update_screen_rect(&r_tools);
-		    }
 		}
 	    }
 	  else if (event.type == SDL_MOUSEBUTTONDOWN &&
@@ -8654,10 +8640,7 @@ static void draw_toolbar(void)
   SDL_Rect dest;
 
 
-  /* FIXME: A hack to make 'Print' button act just like 'New' button: */
-
-  if (!disable_print)
-    tool_avail[TOOL_PRINT] = tool_avail[TOOL_NEW];
+  /* FIXME: Only allow print if we have something to print! */
 
 
   draw_image_title(TITLE_TOOLS, r_ttools);
@@ -10351,7 +10334,6 @@ static void reset_avail_tools(void)
 
   tool_avail[TOOL_UNDO] = 0;
   tool_avail[TOOL_REDO] = 0;
-  tool_avail[TOOL_NEW] = 0;
 
   if (been_saved)
     tool_avail[TOOL_SAVE] = 0;
@@ -11386,8 +11368,6 @@ static void load_current(void)
 
           if (starter_flipped)
             flip_starter();
-
-	  tool_avail[TOOL_NEW] = 1;
 	}
 
       free(fname);
@@ -12944,7 +12924,7 @@ static int do_quit(void)
 #define NUM_PLACES_TO_LOOK 2
 
 
-static int do_open(int want_new_tool)
+void do_open(void)
 {
   SDL_Surface * img, * img1, * img2;
   int things_alloced;
@@ -13952,12 +13932,9 @@ static int do_open(int want_new_tool)
 		  
 		  
 		  reset_avail_tools();
-		  tool_avail[TOOL_NEW] = 1;
 	      
 		  tool_avail_bak[TOOL_UNDO] = 0;
 		  tool_avail_bak[TOOL_REDO] = 0;
-
-		  want_new_tool = 1;
 		}
 	    }
   
@@ -13984,8 +13961,6 @@ static int do_open(int want_new_tool)
       free(d_names);
       free(d_exts);
       free(d_places);
-
-  return(want_new_tool);
 }
 
 
