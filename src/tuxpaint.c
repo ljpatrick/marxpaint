@@ -283,7 +283,7 @@ extern char* g_win32_getlocale(void);
   The SDL stderr redirection trick doesn't seem to work for perror().
   This does pretty much the same thing.
 */
-void win32_perror(const char *str)
+static void win32_perror(const char *str)
 {
   if ( str && *str )
     fprintf(stderr,"%s : ",str);
@@ -308,7 +308,7 @@ void win32_perror(const char *str)
    TTF_OpenFont() with the filename of a font that doesn't exist. This 
    is an old and well documented bug that is fixed in CVS.
 */
-TTF_Font *BUGFIX_TTF_OpenFont206(const char *file, int ptsize)
+static TTF_Font *BUGFIX_TTF_OpenFont206(const char *file, int ptsize)
 {
     FILE    *fp;
 
@@ -373,7 +373,7 @@ enum {
   NUM_LANGS
 };
 
-const char * lang_prefixes[NUM_LANGS] = {
+static const char * lang_prefixes[NUM_LANGS] = {
   "af",
   "be",
   "bg",
@@ -428,7 +428,7 @@ const char * lang_prefixes[NUM_LANGS] = {
 /* List of languages which doesn't use the default font: */
 
 
-int lang_use_own_font[] = {
+static int lang_use_own_font[] = {
   LANG_EL,
   LANG_HE,
   LANG_HI,
@@ -440,7 +440,7 @@ int lang_use_own_font[] = {
   -1
 };
 
-int lang_use_right_to_left[] = {
+static int lang_use_right_to_left[] = {
   LANG_HE,
   -1
 };
@@ -477,23 +477,23 @@ enum {
 
 /* Globals: */
 
-int use_sound, fullscreen, disable_quit, simple_shapes, language,
+static int use_sound, fullscreen, disable_quit, simple_shapes, language,
   disable_print, print_delay, only_uppercase, promptless_save, grab_input,
   wheely, no_fancy_cursors, keymouse, mouse_x, mouse_y,
   mousekey_up, mousekey_down, mousekey_left, mousekey_right,
   dont_do_xor, use_print_config, dont_load_stamps, noshortcuts,
   mirrorstamps, disable_stamp_controls, disable_save;
-int recording, playing;
-char * playfile;
-FILE * demofi;
-int WINDOW_WIDTH, WINDOW_HEIGHT;
-char * printcommand;
-int prog_bar_ctr;
-SDL_Surface * screen;
+static int recording, playing;
+static char * playfile;
+static FILE * demofi;
+static int WINDOW_WIDTH, WINDOW_HEIGHT;
+static char * printcommand;
+static int prog_bar_ctr;
+static SDL_Surface * screen;
 
-SDL_Surface * canvas;
-SDL_Surface * img_starter, * img_starter_bkgd;
-int starter_mirrored, starter_flipped;
+static SDL_Surface * canvas;
+static SDL_Surface * img_starter, * img_starter_bkgd;
+static int starter_mirrored, starter_flipped;
 
 enum {
   UNDO_STARTER_NONE,
@@ -502,65 +502,65 @@ enum {
 };
 
 #define NUM_UNDO_BUFS 20
-SDL_Surface * undo_bufs[NUM_UNDO_BUFS];
-int undo_starters[NUM_UNDO_BUFS];
-int cur_undo, oldest_undo, newest_undo;
+static SDL_Surface * undo_bufs[NUM_UNDO_BUFS];
+static int undo_starters[NUM_UNDO_BUFS];
+static int cur_undo, oldest_undo, newest_undo;
 
-SDL_Surface * img_title, * img_progress;
-SDL_Surface * img_btn_up, * img_btn_down, * img_btn_off;
-SDL_Surface * img_yes, * img_no;
-SDL_Surface * img_open, * img_erase, * img_back;
-SDL_Surface * img_cursor_up, * img_cursor_down;
-SDL_Surface * img_cursor_starter_up, * img_cursor_starter_down;
-SDL_Surface * img_scroll_up, * img_scroll_down;
-SDL_Surface * img_scroll_up_off, * img_scroll_down_off;
-SDL_Surface * img_paintcan;
-SDL_Surface * img_grow, * img_shrink;
+static SDL_Surface * img_title, * img_progress;
+static SDL_Surface * img_btn_up, * img_btn_down, * img_btn_off;
+static SDL_Surface * img_yes, * img_no;
+static SDL_Surface * img_open, * img_erase, * img_back;
+static SDL_Surface * img_cursor_up, * img_cursor_down;
+static SDL_Surface * img_cursor_starter_up, * img_cursor_starter_down;
+static SDL_Surface * img_scroll_up, * img_scroll_down;
+static SDL_Surface * img_scroll_up_off, * img_scroll_down_off;
+static SDL_Surface * img_paintcan;
+static SDL_Surface * img_grow, * img_shrink;
 
-SDL_Surface * img_sparkles;
+static SDL_Surface * img_sparkles;
 
-SDL_Surface * img_title_on, * img_title_off,
+static SDL_Surface * img_title_on, * img_title_off,
   * img_title_large_on, * img_title_large_off;
-SDL_Surface * img_title_names[NUM_TITLES];
-SDL_Surface * img_tools[NUM_TOOLS], * img_tool_names[NUM_TOOLS];
+static SDL_Surface * img_title_names[NUM_TITLES];
+static SDL_Surface * img_tools[NUM_TOOLS], * img_tool_names[NUM_TOOLS];
 
 #define MAX_STAMPS 512
 #define MAX_BRUSHES 64
 #define MAX_FONTS 64
 
-int num_brushes, num_stamps;
-SDL_Surface * img_brushes[MAX_BRUSHES];
-SDL_Surface * img_stamps[MAX_STAMPS];
-SDL_Surface * img_stamps_premirror[MAX_STAMPS];
-char * txt_stamps[MAX_STAMPS];
-info_type * inf_stamps[MAX_STAMPS];
-state_type * state_stamps[MAX_STAMPS];
+static int num_brushes, num_stamps;
+static SDL_Surface * img_brushes[MAX_BRUSHES];
+static SDL_Surface * img_stamps[MAX_STAMPS];
+static SDL_Surface * img_stamps_premirror[MAX_STAMPS];
+static char * txt_stamps[MAX_STAMPS];
+static info_type * inf_stamps[MAX_STAMPS];
+static state_type * state_stamps[MAX_STAMPS];
 #ifndef NOSOUND
-Mix_Chunk * snd_stamps[MAX_STAMPS];
+static Mix_Chunk * snd_stamps[MAX_STAMPS];
 #endif
-SDL_Surface * img_stamp_thumbs[MAX_STAMPS],
+static SDL_Surface * img_stamp_thumbs[MAX_STAMPS],
   * img_stamp_thumbs_premirror[MAX_STAMPS];
 
-SDL_Surface * img_shapes[NUM_SHAPES], * img_shape_names[NUM_SHAPES];
-SDL_Surface * img_magics[NUM_MAGICS], * img_magic_names[NUM_MAGICS];
-SDL_Surface * img_openlabels_open, * img_openlabels_erase,
+static SDL_Surface * img_shapes[NUM_SHAPES], * img_shape_names[NUM_SHAPES];
+static SDL_Surface * img_magics[NUM_MAGICS], * img_magic_names[NUM_MAGICS];
+static SDL_Surface * img_openlabels_open, * img_openlabels_erase,
   * img_openlabels_back;
 
-SDL_Surface * img_tux[NUM_TIP_TUX];
+static SDL_Surface * img_tux[NUM_TIP_TUX];
 
 #ifndef LOW_QUALITY_COLOR_SELECTOR
-SDL_Surface * img_color_btns[NUM_COLORS];
+static SDL_Surface * img_color_btns[NUM_COLORS];
 #endif
 
-SDL_Surface * img_cur_brush;
-int brush_counter, rainbow_color;
+static SDL_Surface * img_cur_brush;
+static int brush_counter, rainbow_color;
 
-TTF_Font * font, * small_font, * large_font, * locale_font;
-TTF_Font * fonts[MAX_FONTS];
-int num_fonts;
+static TTF_Font * font, * small_font, * large_font, * locale_font;
+static TTF_Font * fonts[MAX_FONTS];
+static int num_fonts;
 
 #ifndef NOSOUND
-Mix_Chunk * sounds[NUM_SOUNDS];
+static Mix_Chunk * sounds[NUM_SOUNDS];
 #endif
 
 
@@ -569,25 +569,25 @@ Mix_Chunk * sounds[NUM_SOUNDS];
 #define ERASER_MAX 128 
 
 
-SDL_Cursor * cursor_hand, * cursor_arrow, * cursor_watch,
+static SDL_Cursor * cursor_hand, * cursor_arrow, * cursor_watch,
   * cursor_up, * cursor_down, * cursor_tiny, * cursor_crosshair,
   * cursor_brush, * cursor_wand, * cursor_insertion, * cursor_rotate;
 
 
-int cur_tool, cur_color, cur_brush, cur_stamp, cur_shape, cur_magic;
-int cur_font, cur_eraser;
-int cursor_left, cursor_x, cursor_y, cursor_textwidth;
-int colors_are_selectable;
-int been_saved;
-char file_id[32];
-char starter_id[32];
-int brush_scroll, stamp_scroll, font_scroll;
-int eraser_sound;
+static int cur_tool, cur_color, cur_brush, cur_stamp, cur_shape, cur_magic;
+static int cur_font, cur_eraser;
+static int cursor_left, cursor_x, cursor_y, cursor_textwidth;
+static int colors_are_selectable;
+static int been_saved;
+static char file_id[32];
+static char starter_id[32];
+static int brush_scroll, stamp_scroll, font_scroll;
+static int eraser_sound;
 
-char texttool_str[256];
-int texttool_len;
+static char texttool_str[256];
+static int texttool_len;
 
-int tool_avail[NUM_TOOLS], tool_avail_bak[NUM_TOOLS];
+static int tool_avail[NUM_TOOLS], tool_avail_bak[NUM_TOOLS];
 
 typedef struct edge_type {
   int y_upper;
@@ -607,12 +607,12 @@ typedef struct fpoint_type {
 typedef enum { Left, Right, Bottom, Top } an_edge;
 #define NUM_EDGES 4
 
-SDL_Event scrolltimer_event;
+static SDL_Event scrolltimer_event;
 
-char * langstr;
-char * savedir;
+static char * langstr;
+static char * savedir;
 
-int RGBtoYUV[65536];
+static int RGBtoYUV[65536];
 
 typedef struct dirent2 {
   struct dirent f;
@@ -622,139 +622,137 @@ typedef struct dirent2 {
 
 /* Local function prototypes: */
 
-void mainloop(void);
-void brush_draw(int x1, int y1, int x2, int y2, int update);
-void blit_brush(int x, int y);
-void magic_draw(int x1, int y1, int x2, int y2);
-void blit_magic(int x, int y, int x2, int y2);
-void stamp_draw(int x, int y);
-void rec_undo_buffer(void);
-void update_canvas(int x1, int y1, int x2, int y2);
-void show_usage(FILE * f, char * prg);
-void show_lang_usage(FILE * f, char * prg);
-void show_locale_usage(FILE * f, char * prg);
-void setup(int argc, char * argv[]);
-SDL_Cursor * get_cursor(char * bits, char * mask_bits,
+static void mainloop(void);
+static void brush_draw(int x1, int y1, int x2, int y2, int update);
+static void blit_brush(int x, int y);
+static void magic_draw(int x1, int y1, int x2, int y2);
+static void blit_magic(int x, int y, int x2, int y2);
+static void stamp_draw(int x, int y);
+static void rec_undo_buffer(void);
+static void update_canvas(int x1, int y1, int x2, int y2);
+static void show_usage(FILE * f, char * prg);
+static void show_lang_usage(FILE * f, char * prg);
+static void show_locale_usage(FILE * f, char * prg);
+static void setup(int argc, char * argv[]);
+static SDL_Cursor * get_cursor(char * bits, char * mask_bits,
 		        int w, int h, int x, int y);
-void seticon(void);
-SDL_Surface * loadimage(char * fname);
-SDL_Surface * do_loadimage(char * fname, int abort_on_error);
-SDL_Surface * loadaltimage(char * fname);
-void draw_toolbar(void);
-void draw_magic(void);
-void draw_colors(int enabled);
-void draw_brushes(void);
-void draw_stamps(void);
-void draw_shapes(void);
-void draw_erasers(void);
-void draw_fonts(void);
-void draw_none(void);
+static void seticon(void);
+static SDL_Surface * loadimage(char * fname);
+static SDL_Surface * do_loadimage(char * fname, int abort_on_error);
+static SDL_Surface * loadaltimage(char * fname);
+static void draw_toolbar(void);
+static void draw_magic(void);
+static void draw_colors(int enabled);
+static void draw_brushes(void);
+static void draw_stamps(void);
+static void draw_shapes(void);
+static void draw_erasers(void);
+static void draw_fonts(void);
+static void draw_none(void);
 #ifndef NOSOUND
-void loadarbitrary(SDL_Surface * surfs[], SDL_Surface * altsurfs[],
+static void loadarbitrary(SDL_Surface * surfs[], SDL_Surface * altsurfs[],
 		   char * descs[], info_type * infs[],
 		   Mix_Chunk * sounds[], int * count, int starting, int max,
 		   char * dir, int fatal, int maxw, int maxh);
 #else
-void loadarbitrary(SDL_Surface * surfs[], SDL_Surface * altsurfs[],
+static void loadarbitrary(SDL_Surface * surfs[], SDL_Surface * altsurfs[],
 		   char * descs[], info_type * infs[],
 		   int * count, int starting, int max,
 		   char * dir, int fatal, int maxw, int maxh);
 #endif
-SDL_Surface * thumbnail(SDL_Surface * src, int max_x, int max_y,
+static SDL_Surface * thumbnail(SDL_Surface * src, int max_x, int max_y,
 			int keep_aspect);
-Uint32 getpixel(SDL_Surface * surface, int x, int y);
-void putpixel(SDL_Surface * surface, int x, int y, Uint32 pixel);
-void debug(char * str);
-void do_undo(void);
-void do_redo(void);
-void render_brush(void);
-void playsound(int chan, int s, int override);
-void line_xor(int x1, int y1, int x2, int y2);
-void clipped_putpixel(SDL_Surface * dest, int x, int y, Uint32 c);
-void rect_xor(int x1, int y1, int x2, int y2);
-void stamp_xor(int x1, int y1);
-void do_eraser(int x, int y);
-void disable_avail_tools(void);
-void enable_avail_tools(void);
-void reset_avail_tools(void);
-void update_screen(int x1, int y1, int x2, int y2);
-Uint8 alpha(Uint8 c1, Uint8 c2, Uint8 a);
-int compare_strings(char * * s1, char * * s2);
-int compare_dirent2s(struct dirent2 * f1, struct dirent2 * f2);
-void draw_tux_text(int which_tux, char * str,
+static Uint32 getpixel(SDL_Surface * surface, int x, int y);
+static void putpixel(SDL_Surface * surface, int x, int y, Uint32 pixel);
+static void debug(char * str);
+static void do_undo(void);
+static void do_redo(void);
+static void render_brush(void);
+static void playsound(int chan, int s, int override);
+static void line_xor(int x1, int y1, int x2, int y2);
+static void clipped_putpixel(SDL_Surface * dest, int x, int y, Uint32 c);
+static void rect_xor(int x1, int y1, int x2, int y2);
+static void stamp_xor(int x1, int y1);
+static void do_eraser(int x, int y);
+static void disable_avail_tools(void);
+static void enable_avail_tools(void);
+static void reset_avail_tools(void);
+static void update_screen(int x1, int y1, int x2, int y2);
+static Uint8 alpha(Uint8 c1, Uint8 c2, Uint8 a);
+static int compare_strings(char * * s1, char * * s2);
+static int compare_dirent2s(struct dirent2 * f1, struct dirent2 * f2);
+static void draw_tux_text(int which_tux, char * str,
 		   int force_locale_font, int want_right_to_left);
-void wordwrap_text(TTF_Font * font, char * str, SDL_Color color,
+static void wordwrap_text(TTF_Font * font, char * str, SDL_Color color,
 		   int left, int top, int right,
 		   int force_locale_font, int want_right_to_left);
-char * loaddesc(char * fname);
-info_type * loadinfo(char * fname);
+static char * loaddesc(char * fname);
+static info_type * loadinfo(char * fname);
 #ifndef NOSOUND
-Mix_Chunk * loadsound(char * fname);
+static Mix_Chunk * loadsound(char * fname);
 #endif
-void do_wait(void);
-void load_current(void);
-void save_current(void);
-char * get_fname(char * name);
-int do_prompt(char * text, char * btn_yes, char * btn_no);
-void cleanup(void);
-void free_cursor(SDL_Cursor ** cursor);
-void free_surface(SDL_Surface **surface_array);
-void free_surface_array(SDL_Surface *surface_array[], int count);
-void update_shape(int cx, int ox1, int ox2, int cy, int oy1, int oy2,
+static void do_wait(void);
+static void load_current(void);
+static void save_current(void);
+static char * get_fname(char * name);
+static int do_prompt(char * text, char * btn_yes, char * btn_no);
+static void cleanup(void);
+static void free_cursor(SDL_Cursor ** cursor);
+static void free_surface(SDL_Surface **surface_array);
+static void free_surface_array(SDL_Surface *surface_array[], int count);
+static void update_shape(int cx, int ox1, int ox2, int cy, int oy1, int oy2,
 		  int fixed);
-void do_shape(int cx, int cy, int ox, int oy, int rotn, int use_brush);
-int rotation(int ctr_x, int ctr_y, int ox, int oy);
-int do_save(void);
-int do_png_save(FILE * fi, char * fname, SDL_Surface * surf);
-void get_new_file_id(void);
-int do_quit(void);
-int do_open(int want_new_tool);
-void scan_fill(int cnt, point_type * pts);
-int clip_polygon(int n, fpoint_type * pin, fpoint_type * pout);
-void wait_for_sfx(void);
-int current_language(void);
-int stamp_colorable(int stamp);
-int stamp_tintable(int stamp);
-int stamp_tintgray(int stamp);
-void rgbtohsv(Uint8 r8, Uint8 g8, Uint8 b8, float *h, float *s, float *v);
-void hsvtorgb(float h, float s, float v, Uint8 *r8, Uint8 *g8, Uint8 *b8);
-void show_progress_bar(void);
-void do_print(void);
-void strip_trailing_whitespace(char * buf);
-void do_render_cur_text(int do_blit);
-void loadfonts(char * dir, int fatal);
-char * uppercase(char * str);
-unsigned char * textdir(unsigned char * str);
-SDL_Surface * do_render_button_label(char * label);
+static void do_shape(int cx, int cy, int ox, int oy, int rotn, int use_brush);
+static int rotation(int ctr_x, int ctr_y, int ox, int oy);
+static int do_save(void);
+static int do_png_save(FILE * fi, char * fname, SDL_Surface * surf);
+static void get_new_file_id(void);
+static int do_quit(void);
+static int do_open(int want_new_tool);
+static void scan_fill(int cnt, point_type * pts);
+static int clip_polygon(int n, fpoint_type * pin, fpoint_type * pout);
+static void wait_for_sfx(void);
+static int current_language(void);
+static int stamp_colorable(int stamp);
+static int stamp_tintable(int stamp);
+static int stamp_tintgray(int stamp);
+static void rgbtohsv(Uint8 r8, Uint8 g8, Uint8 b8, float *h, float *s, float *v);
+static void hsvtorgb(float h, float s, float v, Uint8 *r8, Uint8 *g8, Uint8 *b8);
+static void show_progress_bar(void);
+static void do_print(void);
+static void strip_trailing_whitespace(char * buf);
+static void do_render_cur_text(int do_blit);
+static void loadfonts(char * dir, int fatal);
+static char * uppercase(char * str);
+static unsigned char * textdir(unsigned char * str);
+static SDL_Surface * do_render_button_label(char * label);
 static void create_button_labels(void);
-int colors_close(Uint32 c1, Uint32 c2);
-void do_flood_fill(int x, int y, Uint32 cur_colr, Uint32 old_colr);
+static int colors_close(Uint32 c1, Uint32 c2);
+static void do_flood_fill(int x, int y, Uint32 cur_colr, Uint32 old_colr);
 static Uint32 scrolltimer_callback(Uint32 interval, void *param);
 static Uint32 drawtext_callback(Uint32 interval, void *param);
-void control_drawtext_timer(Uint32 interval, char* text);
-void parse_options(FILE * fi);
-char * debug_gettext(const char * str);
-void do_setcursor(SDL_Cursor * c);
-char * great_str(void);
-int charsize(char c);
-void draw_image_title(int t, int x);
-int need_own_font(int l);
-int want_own_font(int l);
-int need_right_to_left(int l);
-void handle_keymouse(SDLKey key, Uint8 updown);
-void move_keymouse(void);
-void handle_active(SDL_Event * event);
-char * remove_slash(char * path);
-void anti_carriage_return(int left, int right, int cur_top, int new_top,
+static void control_drawtext_timer(Uint32 interval, char* text);
+static void parse_options(FILE * fi);
+static char * debug_gettext(const char * str);
+static void do_setcursor(SDL_Cursor * c);
+static char * great_str(void);
+static int charsize(char c);
+static void draw_image_title(int t, int x);
+static int need_own_font(int l);
+static int need_right_to_left(int l);
+static void handle_keymouse(SDLKey key, Uint8 updown);
+static void handle_active(SDL_Event * event);
+static char * remove_slash(char * path);
+static void anti_carriage_return(int left, int right, int cur_top, int new_top,
 		          int cur_bot, int line_width);
-int mySDL_WaitEvent(SDL_Event *event);
-int mySDL_PollEvent(SDL_Event *event);
-void load_starter_id(char * saved_id);
-void load_starter(char * img_id);
-SDL_Surface * duplicate_surface(SDL_Surface * orig);
-TTF_Font *try_alternate_font(int language);
-void mirror_starter(void);
-void flip_starter(void);
+static int mySDL_WaitEvent(SDL_Event *event);
+static int mySDL_PollEvent(SDL_Event *event);
+static void load_starter_id(char * saved_id);
+static void load_starter(char * img_id);
+static SDL_Surface * duplicate_surface(SDL_Surface * orig);
+static TTF_Font *try_alternate_font(int language);
+static void mirror_starter(void);
+static void flip_starter(void);
 
 
 #define MAX_UTF8_CHAR_LENGTH 6
@@ -930,7 +928,7 @@ enum {
 
 /* --- MAIN LOOP! --- */
 
-void mainloop(void)
+static void mainloop(void)
 {
   int done, off_y, which, button_down, old_x, old_y, new_x, new_y,
     line_start_x, line_start_y, w, h, shape_tool_mode,
@@ -2855,7 +2853,7 @@ void mainloop(void)
 
 /* Draw using the current brush: */
 
-void brush_draw(int x1, int y1, int x2, int y2, int update)
+static void brush_draw(int x1, int y1, int x2, int y2, int update)
 {
   int dx, dy, y;
   int orig_x1, orig_y1, orig_x2, orig_y2, tmp;
@@ -2947,7 +2945,7 @@ void brush_draw(int x1, int y1, int x2, int y2, int update)
 
 /* Draw the current brush in the current color: */
 
-void blit_brush(int x, int y)
+static void blit_brush(int x, int y)
 {
   SDL_Rect dest;
 
@@ -2967,7 +2965,7 @@ void blit_brush(int x, int y)
 
 /* Draw using the current stamp: */
 
-void stamp_draw(int x, int y)
+static void stamp_draw(int x, int y)
 {
   SDL_Rect src, dest;
   SDL_Surface * tmp_surf, * surf_ptr, * final_surf;
@@ -3275,7 +3273,7 @@ void stamp_draw(int x, int y)
 
 /* Draw using the current brush: */
 
-void magic_draw(int x1, int y1, int x2, int y2)
+static void magic_draw(int x1, int y1, int x2, int y2)
 {
   int dx, dy, y;
   int orig_x1, orig_y1, orig_x2, orig_y2, tmp;
@@ -3390,7 +3388,7 @@ void magic_draw(int x1, int y1, int x2, int y2)
 
 /* Draw the current brush in the current color: */
 
-void blit_magic(int x, int y, int x2, int y2)
+static void blit_magic(int x, int y, int x2, int y2)
 {
   int xx, yy, w, h;
   Uint32 colr;
@@ -3759,7 +3757,7 @@ void blit_magic(int x, int y, int x2, int y2)
 
 /* Store canvas into undo buffer: */
 
-void rec_undo_buffer(void)
+static void rec_undo_buffer(void)
 {
   int wanna_update_toolbar;
 
@@ -3806,7 +3804,7 @@ void rec_undo_buffer(void)
 
 /* Update the screen with the new canvas: */
 
-void update_canvas(int x1, int y1, int x2, int y2)
+static void update_canvas(int x1, int y1, int x2, int y2)
 {
   SDL_Rect src, dest;
 
@@ -3837,7 +3835,7 @@ void update_canvas(int x1, int y1, int x2, int y2)
 
 /* Show program version: */
 
-void show_version(void)
+static void show_version(void)
 {
   printf("\nTux Paint\n");
   printf("  Version " VER_VERSION " (" VER_DATE ")\n");
@@ -3876,7 +3874,7 @@ void show_version(void)
 
 /* Show usage display: */
 
-void show_usage(FILE * f, char * prg)
+static void show_usage(FILE * f, char * prg)
 {
   char * blank;
   int i;
@@ -3931,7 +3929,7 @@ void show_usage(FILE * f, char * prg)
 
 /* Show available languages: */
 
-void show_lang_usage(FILE * f, char * prg)
+static void show_lang_usage(FILE * f, char * prg)
 {
   fprintf(f,
 	  "\n"
@@ -3995,7 +3993,7 @@ void show_lang_usage(FILE * f, char * prg)
 
 /* Show available locales: */
 
-void show_locale_usage(FILE * f, char * prg)
+static void show_locale_usage(FILE * f, char * prg)
 {
   fprintf(f,
 	  "\n"
@@ -4054,7 +4052,7 @@ void show_locale_usage(FILE * f, char * prg)
 }
 
 
-const char *getfilename(const char* path)
+static const char *getfilename(const char* path)
 {
   char    *p;
 
@@ -4068,7 +4066,7 @@ const char *getfilename(const char* path)
 
 /* Setup: */
 
-void setup(int argc, char * argv[])
+static void setup(int argc, char * argv[])
 {
   int i, ok_to_use_sysconfig, ok_to_use_lockfile;
   char str[128];
@@ -5729,7 +5727,7 @@ void setup(int argc, char * argv[])
 
 /* Render a button label using the appropriate string/font: */
 
-SDL_Surface * do_render_button_label(char * label)
+static SDL_Surface * do_render_button_label(char * label)
 {
   char * str;
   SDL_Surface * tmp_surf, * surf;
@@ -5783,7 +5781,7 @@ static void create_button_labels(void)
 }
 
 
-void seticon(void)
+static void seticon(void)
 {
   int masklen;
   Uint8 * mask;
@@ -5837,7 +5835,7 @@ void seticon(void)
 
 /* Load a mouse pointer (cursor) shape: */
 
-SDL_Cursor * get_cursor(char * bits, char * mask_bits,
+static SDL_Cursor * get_cursor(char * bits, char * mask_bits,
 		        int width, int height, int x, int y)
 {
   Uint8 b;
@@ -5883,7 +5881,7 @@ SDL_Cursor * get_cursor(char * bits, char * mask_bits,
 
 /* Load an image (with errors): */
 
-SDL_Surface * loadimage(char * fname)
+static SDL_Surface * loadimage(char * fname)
 {
   return(do_loadimage(fname, 1));
 }
@@ -5891,7 +5889,7 @@ SDL_Surface * loadimage(char * fname)
 
 /* Load an image: */
 
-SDL_Surface * do_loadimage(char * fname, int abort_on_error)
+static SDL_Surface * do_loadimage(char * fname, int abort_on_error)
 {
   SDL_Surface * s, * disp_fmt_s;
 
@@ -5953,7 +5951,7 @@ SDL_Surface * do_loadimage(char * fname, int abort_on_error)
 
 /* Draw the toolbar: */
 
-void draw_toolbar(void)
+static void draw_toolbar(void)
 {
   int i;
   SDL_Rect dest;
@@ -6009,7 +6007,7 @@ void draw_toolbar(void)
 
 /* Draw magic controls: */
 
-void draw_magic(void)
+static void draw_magic(void)
 {
   int i;
   SDL_Rect dest;
@@ -6059,7 +6057,7 @@ void draw_magic(void)
 
 /* Draw color selector: */
 
-void draw_colors(int enabled)
+static void draw_colors(int enabled)
 {
   int i;
   SDL_Rect dest;
@@ -6130,7 +6128,7 @@ void draw_colors(int enabled)
 
 /* Draw brushes: */
 
-void draw_brushes(void)
+static void draw_brushes(void)
 {
   int i, off_y, max, brush;
   SDL_Rect dest;
@@ -6222,7 +6220,7 @@ void draw_brushes(void)
 
 /* Draw fonts: */
 
-void draw_fonts(void)
+static void draw_fonts(void)
 {
   int i, off_y, max, font;
   SDL_Rect dest, src;
@@ -6340,7 +6338,7 @@ void draw_fonts(void)
 
 /* Draw stamps: */
 
-void draw_stamps(void)
+static void draw_stamps(void)
 {
   int i, off_y, max, stamp, most;
   int base_x, base_y, xx, yy;
@@ -6628,7 +6626,7 @@ void draw_stamps(void)
 
 /* Draw the shape selector: */
 
-void draw_shapes(void)
+static void draw_shapes(void)
 {
   int i;
   SDL_Rect dest;
@@ -6675,7 +6673,7 @@ void draw_shapes(void)
 
 /* Draw the eraser selector: */
 
-void draw_erasers(void)
+static void draw_erasers(void)
 {
   int i, x, y, sz;
   SDL_Rect dest;
@@ -6748,7 +6746,7 @@ void draw_erasers(void)
 
 /* Draw no selectables: */
 
-void draw_none(void)
+static void draw_none(void)
 {
   int i;
   SDL_Rect dest;
@@ -6770,13 +6768,13 @@ void draw_none(void)
 /* Load an arbitrary set of images into an array (e.g., brushes or stamps) */
 
 #ifndef NOSOUND
-void loadarbitrary(SDL_Surface * surfs[], SDL_Surface * altsurfs[],
+static void loadarbitrary(SDL_Surface * surfs[], SDL_Surface * altsurfs[],
 		   char * descs[], info_type * infs[],
 		   Mix_Chunk * sounds[],
 		   int * count, int starting, int max,
 		   char * dir, int fatal, int maxw, int maxh)
 #else
-     void loadarbitrary(SDL_Surface * surfs[], SDL_Surface * altsurfs[],
+static void loadarbitrary(SDL_Surface * surfs[], SDL_Surface * altsurfs[],
 			char * descs[], info_type * infs[],
 			int * count, int starting, int max,
 			char * dir, int fatal, int maxw, int maxh)
@@ -6967,7 +6965,7 @@ void loadarbitrary(SDL_Surface * surfs[], SDL_Surface * altsurfs[],
 
 /* Create a thumbnail: */
 
-SDL_Surface * thumbnail(SDL_Surface * src, int max_x, int max_y,
+static SDL_Surface * thumbnail(SDL_Surface * src, int max_x, int max_y,
 			int keep_aspect)
 {
   int x, y;
@@ -7103,7 +7101,7 @@ SDL_Surface * thumbnail(SDL_Surface * src, int max_x, int max_y,
 
 /* Get a pixel: */
 
-Uint32 getpixel(SDL_Surface * surface, int x, int y)
+static Uint32 getpixel(SDL_Surface * surface, int x, int y)
 {
   int bpp;
   Uint8 * p;
@@ -7161,7 +7159,7 @@ Uint32 getpixel(SDL_Surface * surface, int x, int y)
 
 /* Draw a single pixel into the surface: */
 
-void putpixel(SDL_Surface * surface, int x, int y, Uint32 pixel)
+static void putpixel(SDL_Surface * surface, int x, int y, Uint32 pixel)
 {
   int bpp;
   Uint8 * p;
@@ -7221,7 +7219,7 @@ void putpixel(SDL_Surface * surface, int x, int y, Uint32 pixel)
 
 /* Show debugging stuff: */
 
-void debug(char * str)
+static void debug(char * str)
 {
 #ifdef DEBUG
   fprintf(stderr, "DEBUG: %s\n", str);
@@ -7232,7 +7230,7 @@ void debug(char * str)
 
 /* Undo! */
 
-void do_undo(void)
+static void do_undo(void)
 {
   int wanna_update_toolbar;
 
@@ -7298,7 +7296,7 @@ void do_undo(void)
 
 /* Redo! */
 
-void do_redo(void)
+static void do_redo(void)
 {
   if (cur_undo != newest_undo)
     {
@@ -7348,7 +7346,7 @@ void do_redo(void)
 
 /* Create the current brush in the current color: */
 
-void render_brush(void)
+static void render_brush(void)
 {
   Uint32 amask;
   int x, y;
@@ -7427,7 +7425,7 @@ void render_brush(void)
 
 /* Play a sound: */
 
-void playsound(int chan, int s, int override)
+static void playsound(int chan, int s, int override)
 {
 #ifndef NOSOUND
   if (use_sound)
@@ -7441,7 +7439,7 @@ void playsound(int chan, int s, int override)
 
 /* Draw a XOR line: */
 
-void line_xor(int x1, int y1, int x2, int y2)
+static void line_xor(int x1, int y1, int x2, int y2)
 {
   int dx, dy, y, num_drawn;
   float m, b;
@@ -7528,7 +7526,7 @@ void line_xor(int x1, int y1, int x2, int y2)
 
 /* Should really clip at the line level, but oh well... */
 
-void clipped_putpixel(SDL_Surface * dest, int x, int y, Uint32 c)
+static void clipped_putpixel(SDL_Surface * dest, int x, int y, Uint32 c)
 {
   if (x >= 96 && x < (WINDOW_WIDTH - 96) &&
       y >= 0 && y < (48 * 7 + 40 + HEIGHTOFFSET))
@@ -7540,7 +7538,7 @@ void clipped_putpixel(SDL_Surface * dest, int x, int y, Uint32 c)
 
 /* Draw a XOR rectangle: */
 
-void rect_xor(int x1, int y1, int x2, int y2)
+static void rect_xor(int x1, int y1, int x2, int y2)
 {
   if (x1 < 0)
     x1 = 0;
@@ -7575,7 +7573,7 @@ void rect_xor(int x1, int y1, int x2, int y2)
 
 /* Erase at the cursor! */
 
-void do_eraser(int x, int y)
+static void do_eraser(int x, int y)
 {
   SDL_Rect dest;
   int sz;
@@ -7621,7 +7619,7 @@ void do_eraser(int x, int y)
 
 /* Reset available tools (for new image / starting out): */
 
-void reset_avail_tools(void)
+static void reset_avail_tools(void)
 {
   int i;
   int disallow_print = disable_print;  /* set to 1 later if printer unavail */
@@ -7678,7 +7676,7 @@ void reset_avail_tools(void)
 
 /* Save and disable available tools (for Open-Dialog) */
 
-void disable_avail_tools(void)
+static void disable_avail_tools(void)
 {
   int i;
 
@@ -7691,7 +7689,7 @@ void disable_avail_tools(void)
 
 /* Restore and enable available tools (for End-Of-Open-Dialog) */
 
-void enable_avail_tools(void)
+static void enable_avail_tools(void)
 {
   int i;
 
@@ -7704,7 +7702,7 @@ void enable_avail_tools(void)
 
 /* Update a rect. based on two x/y coords (not necessarly in order): */
 
-void update_screen(int x1, int y1, int x2, int y2)
+static void update_screen(int x1, int y1, int x2, int y2)
 {
   int tmp;
 
@@ -7752,7 +7750,7 @@ void update_screen(int x1, int y1, int x2, int y2)
 
 /* Build a color based on two colors and an alpha... */
 
-Uint8 alpha(Uint8 c1, Uint8 c2, Uint8 a)
+static Uint8 alpha(Uint8 c1, Uint8 c2, Uint8 a)
 {
   Uint16 c, nc1, nc2, na;
 
@@ -7771,7 +7769,7 @@ Uint8 alpha(Uint8 c1, Uint8 c2, Uint8 a)
 
 /* For qsort() call in loadarbitrary()... */
 
-int compare_strings(char * * s1, char * * s2)
+static int compare_strings(char * * s1, char * * s2)
 {
   return (strcmp(*s1, *s2));
 }
@@ -7779,7 +7777,7 @@ int compare_strings(char * * s1, char * * s2)
 
 /* For qsort() call in do_open()... */
 
-int compare_dirent2s(struct dirent2 * f1, struct dirent2 * f2)
+static int compare_dirent2s(struct dirent2 * f1, struct dirent2 * f2)
 {
 #ifdef DEBUG
   printf("compare_dirents: %s\t%s\n", f1->f.d_name, f2->f.d_name);
@@ -7794,7 +7792,7 @@ int compare_dirent2s(struct dirent2 * f1, struct dirent2 * f2)
 
 /* Draw tux's text on the screen: */
 
-void draw_tux_text(int which_tux, char * str,
+static void draw_tux_text(int which_tux, char * str,
 	 	   int force_locale_font, int want_right_to_left)
 {
   SDL_Rect dest;
@@ -7843,7 +7841,7 @@ void draw_tux_text(int which_tux, char * str,
 }
 
 
-void wordwrap_text(TTF_Font * font, char * str, SDL_Color color,
+static void wordwrap_text(TTF_Font * font, char * str, SDL_Color color,
 		   int left, int top, int right,
 		   int force_locale_font, int want_right_to_left)
 {
@@ -8165,7 +8163,7 @@ void wordwrap_text(TTF_Font * font, char * str, SDL_Color color,
 
 #ifndef NOSOUND
 
-Mix_Chunk * loadsound(char * fname)
+static Mix_Chunk * loadsound(char * fname)
 {
   char * snd_fname;
   char tmp_str[64];
@@ -8234,7 +8232,7 @@ Mix_Chunk * loadsound(char * fname)
 
 /* Strip any trailing spaces: */
 
-void strip_trailing_whitespace( char *buf )
+static void strip_trailing_whitespace( char *buf )
 {
   while (buf[strlen(buf) - 1] == ' ' ||
          buf[strlen(buf) - 1] == '\r' ||
@@ -8247,7 +8245,7 @@ void strip_trailing_whitespace( char *buf )
 
 /* Load a file's description: */
 
-char * loaddesc(char * fname)
+static char * loaddesc(char * fname)
 {
   char * txt_fname;
   char buf[256], def_buf[256];
@@ -8347,7 +8345,7 @@ char * loaddesc(char * fname)
 
 /* Load a file's info: */
 
-info_type * loadinfo(char * fname)
+static info_type * loadinfo(char * fname)
 {
   char * dat_fname;
   char buf[256];
@@ -8434,7 +8432,7 @@ info_type * loadinfo(char * fname)
 
 /* Load a file's alternative image: */
 
-SDL_Surface * loadaltimage(char * fname)
+static SDL_Surface * loadaltimage(char * fname)
 {
   char * alt_fname;
   SDL_Surface * s;
@@ -8466,7 +8464,7 @@ SDL_Surface * loadaltimage(char * fname)
 
 /* Wait for a keypress or mouse click */
 
-void do_wait(void)
+static void do_wait(void)
 {
   SDL_Event event;
   int done, counter;
@@ -8510,7 +8508,7 @@ void do_wait(void)
 
 /* Load current (if any) image: */
 
-void load_current(void)
+static void load_current(void)
 {
   SDL_Surface * tmp;
   char * fname;
@@ -8602,7 +8600,7 @@ void load_current(void)
 
 /* Save the current image to disk: */
 
-void save_current(void)
+static void save_current(void)
 {
   char * fname;
   int res;
@@ -8652,7 +8650,7 @@ void save_current(void)
 
 /* The filename for the current image: */
 
-char * get_fname(char * name)
+static char * get_fname(char * name)
 {
   char f[512];
   const char * tux_settings_dir;
@@ -8741,7 +8739,7 @@ char * get_fname(char * name)
 
 /* Prompt the user with a yes/no question: */
 
-int do_prompt(char * text, char * btn_yes, char * btn_no)
+static int do_prompt(char * text, char * btn_yes, char * btn_no)
 {
   SDL_Event event;
   SDL_Rect dest;
@@ -8990,7 +8988,7 @@ int do_prompt(char * text, char * btn_yes, char * btn_no)
 
 /* Free memory and prepare to quit: */
 
-void cleanup(void)
+static void cleanup(void)
 {
   int i;
 
@@ -9163,7 +9161,7 @@ void cleanup(void)
 }
 
 
-void free_cursor(SDL_Cursor ** cursor)
+static void free_cursor(SDL_Cursor ** cursor)
 {
   if (*cursor)
     {
@@ -9173,7 +9171,7 @@ void free_cursor(SDL_Cursor ** cursor)
 }
 
 
-void free_surface(SDL_Surface **surface_array)
+static void free_surface(SDL_Surface **surface_array)
 {
   if (*surface_array)
     {
@@ -9183,7 +9181,7 @@ void free_surface(SDL_Surface **surface_array)
 }
 
 
-void free_surface_array(SDL_Surface *surface_array[], int count)
+static void free_surface_array(SDL_Surface *surface_array[], int count)
 {
   int i;
 
@@ -9196,7 +9194,8 @@ void free_surface_array(SDL_Surface *surface_array[], int count)
 
 /* Update screen where shape is/was: */
 
-void update_shape(int cx, int ox1, int ox2, int cy, int oy1, int oy2, int fix)
+// FIXME: unused
+static void update_shape(int cx, int ox1, int ox2, int cy, int oy1, int oy2, int fix)
 {
   int rx, ry;
 
@@ -9224,7 +9223,7 @@ void update_shape(int cx, int ox1, int ox2, int cy, int oy1, int oy2, int fix)
 
 /* Draw a shape! */
 
-void do_shape(int cx, int cy, int ox, int oy, int rotn, int use_brush)
+static void do_shape(int cx, int cy, int ox, int oy, int rotn, int use_brush)
 {
   int side, angle_skip, init_ang, rx, ry, rmax, x1, y1, x2, y2, xp, yp,
     old_brush, step;
@@ -9460,7 +9459,7 @@ void do_shape(int cx, int cy, int ox, int oy, int rotn, int use_brush)
 
 /* What angle is the mouse away from the center of a shape? */
 
-int rotation(int ctr_x, int ctr_y, int ox, int oy)
+static int rotation(int ctr_x, int ctr_y, int ox, int oy)
 {
   return(atan2(oy - ctr_y, ox - ctr_x) * 180 / M_PI);
 }
@@ -9475,7 +9474,7 @@ int rotation(int ctr_x, int ctr_y, int ox, int oy)
 
 /* Save the current image: */
 
-int do_save(void)
+static int do_save(void)
 {
   int res;
   char * fname;
@@ -9740,7 +9739,7 @@ int do_save(void)
 
 /* Actually save the PNG data to the file stream: */
 
-int do_png_save(FILE * fi, char * fname, SDL_Surface * surf)
+static int do_png_save(FILE * fi, char * fname, SDL_Surface * surf)
 {
   png_structp png_ptr;
   png_infop info_ptr;
@@ -9863,7 +9862,7 @@ int do_png_save(FILE * fi, char * fname, SDL_Surface * surf)
 
 /* Pick a new file ID: */
 
-void get_new_file_id(void)
+static void get_new_file_id(void)
 {
   time_t t;
 
@@ -9879,7 +9878,7 @@ void get_new_file_id(void)
 
 /* Handle quitting (and prompting to save, if necessary!) */
 
-int do_quit(void)
+static int do_quit(void)
 {
   int done;
 
@@ -9919,7 +9918,7 @@ int do_quit(void)
 #define NUM_PLACES_TO_LOOK 2
 
 
-int do_open(int want_new_tool)
+static int do_open(int want_new_tool)
 {
   SDL_Surface * img, * img1, * img2;
   int things_alloced;
@@ -10966,7 +10965,7 @@ int do_open(int want_new_tool)
 
 #ifdef SCANLINE_POLY_FILL
 
-void insert_edge(edge * list, edge * edg)
+static void insert_edge(edge * list, edge * edg)
 {
   edge * p, * q;
 
@@ -10993,7 +10992,7 @@ void insert_edge(edge * list, edge * edg)
 }
 
 
-int y_next(int k, int cnt, point_type * pts)
+static int y_next(int k, int cnt, point_type * pts)
 {
   int j;
 
@@ -11016,7 +11015,7 @@ int y_next(int k, int cnt, point_type * pts)
 }
 
 
-void make_edge_rec(point_type lower, point_type upper,
+static void make_edge_rec(point_type lower, point_type upper,
 		   int y_comp, edge * edg, edge * edges[])
 {
   debug("make_edge_rec()");
@@ -11033,7 +11032,7 @@ void make_edge_rec(point_type lower, point_type upper,
 }
 
 
-void build_edge_list(int cnt, point_type * pts, edge * edges[])
+static void build_edge_list(int cnt, point_type * pts, edge * edges[])
 {
   edge * edg;
   point_type v1, v2;
@@ -11064,7 +11063,7 @@ void build_edge_list(int cnt, point_type * pts, edge * edges[])
 }
 
 
-void build_active_list(int scan, edge * active, edge * edges[])
+static void build_active_list(int scan, edge * active, edge * edges[])
 {
   edge * p, * q;
 
@@ -11080,7 +11079,7 @@ void build_active_list(int scan, edge * active, edge * edges[])
 }
 
 
-void fill_scan(int scan, edge * active)
+static void fill_scan(int scan, edge * active)
 {
   edge * p1, * p2;
   int i;
@@ -11113,7 +11112,7 @@ void fill_scan(int scan, edge * active)
 }
 
 
-void delete_after(edge * q)
+static void delete_after(edge * q)
 {
   edge * p;
 
@@ -11125,7 +11124,7 @@ void delete_after(edge * q)
 }
 
 
-void update_active_list(int scan, edge * active)
+static void update_active_list(int scan, edge * active)
 {
   edge * q, * p;
 
@@ -11151,7 +11150,7 @@ void update_active_list(int scan, edge * active)
 }
 
 
-void resort_active_list(edge * active)
+static void resort_active_list(edge * active)
 {
   edge * q, * p;
 
@@ -11170,7 +11169,7 @@ void resort_active_list(edge * active)
 }
 
 
-void scan_fill(int cnt, point_type * pts)
+static void scan_fill(int cnt, point_type * pts)
 {
   /*  edge * edges[48 * 7 + 40 + HEIGHTOFFSET + 5], * active; */
   edge * * edges = alloca((48 * 7 + 40 + HEIGHTOFFSET + 5) * sizeof(edge*)),
@@ -11233,7 +11232,7 @@ void scan_fill(int cnt, point_type * pts)
 
 /* ------------- Poly clipping stuff: -------------- */
 
-int inside(fpoint_type p, an_edge b)
+static int inside(fpoint_type p, an_edge b)
 {
   if (b == Left)
     {
@@ -11260,7 +11259,7 @@ int inside(fpoint_type p, an_edge b)
 }
 
 
-int cross(fpoint_type p1, fpoint_type p2, an_edge b)
+static int cross(fpoint_type p1, fpoint_type p2, an_edge b)
 {
   if (inside(p1, b) == inside(p2, b))
     return 0;
@@ -11269,7 +11268,7 @@ int cross(fpoint_type p1, fpoint_type p2, an_edge b)
 }
 
 
-fpoint_type intersect(fpoint_type p1, fpoint_type p2, an_edge b)
+static fpoint_type intersect(fpoint_type p1, fpoint_type p2, an_edge b)
 {
   fpoint_type ipt;
   float m;
@@ -11310,7 +11309,7 @@ fpoint_type intersect(fpoint_type p1, fpoint_type p2, an_edge b)
 }
 
 
-void clip_point(fpoint_type p, an_edge b, fpoint_type * pout, int * cnt,
+static void clip_point(fpoint_type p, an_edge b, fpoint_type * pout, int * cnt,
 		fpoint_type * first[], fpoint_type * s)
 {
   fpoint_type ipt;
@@ -11355,7 +11354,7 @@ void clip_point(fpoint_type p, an_edge b, fpoint_type * pout, int * cnt,
 }
 
 
-void close_clip(fpoint_type * pout, int * cnt, fpoint_type * first[],
+static void close_clip(fpoint_type * pout, int * cnt, fpoint_type * first[],
 		fpoint_type * s)
 {
   fpoint_type i;
@@ -11380,7 +11379,7 @@ void close_clip(fpoint_type * pout, int * cnt, fpoint_type * first[],
 }
 
 
-int clip_polygon(int n, fpoint_type * pin, fpoint_type * pout)
+static int clip_polygon(int n, fpoint_type * pin, fpoint_type * pout)
 {
   fpoint_type * first[NUM_EDGES] = {0, 0, 0, 0};
   fpoint_type s[NUM_EDGES];
@@ -11403,7 +11402,7 @@ int clip_polygon(int n, fpoint_type * pin, fpoint_type * pout)
 
 /* Let sound effects (e.g., "Save" sfx) play out before quitting... */
 
-void wait_for_sfx(void)
+static void wait_for_sfx(void)
 {
 #ifndef NOSOUND
   if (use_sound)
@@ -11417,7 +11416,7 @@ void wait_for_sfx(void)
 
 /* Determine the current language/locale, and set the language string: */
 
-int current_language(void)
+static int current_language(void)
 {
   char * loc;
 #ifdef WIN32
@@ -11486,7 +11485,7 @@ int current_language(void)
 /* XOR-based outline of rubber stamp shapes
    (unused if LOW_QUALITY_STAMP_OUTLINE is #defined) */
 
-void stamp_xor(int x, int y)
+static void stamp_xor(int x, int y)
 {
   int xx, yy, rx, ry, sx, sy;
   Uint8 r, g, b, a, olda, abovea;
@@ -11566,7 +11565,7 @@ void stamp_xor(int x, int y)
 
 /* Returns whether a particular stamp can be colored: */
 
-int stamp_colorable(int stamp)
+static int stamp_colorable(int stamp)
 {
   if (inf_stamps[stamp] != NULL)
     {
@@ -11581,7 +11580,7 @@ int stamp_colorable(int stamp)
 
 /* Returns whether a particular stamp can be tinted: */
 
-int stamp_tintable(int stamp)
+static int stamp_tintable(int stamp)
 {
   if (inf_stamps[stamp] != NULL)
     {
@@ -11596,7 +11595,7 @@ int stamp_tintable(int stamp)
 
 /* Returns whether low-saturation ('gray') parts of stamp can be tinted: */
 
-int stamp_tintgray(int stamp)
+static int stamp_tintgray(int stamp)
 {
   if (inf_stamps[stamp] != NULL)
     {
@@ -11609,7 +11608,7 @@ int stamp_tintgray(int stamp)
 }
 
 
-void rgbtohsv(Uint8 r8, Uint8 g8, Uint8 b8, float *h, float *s, float *v)
+static void rgbtohsv(Uint8 r8, Uint8 g8, Uint8 b8, float *h, float *s, float *v)
 {
   float rgb_min, rgb_max, delta, r, g, b;
   
@@ -11649,7 +11648,7 @@ void rgbtohsv(Uint8 r8, Uint8 g8, Uint8 b8, float *h, float *s, float *v)
 }
 
 
-void hsvtorgb(float h, float s, float v, Uint8 *r8, Uint8 *g8, Uint8 *b8)
+static void hsvtorgb(float h, float s, float v, Uint8 *r8, Uint8 *g8, Uint8 *b8)
 {
   int i;
   float f, p, q, t, r, g, b;
@@ -11716,7 +11715,7 @@ void hsvtorgb(float h, float s, float v, Uint8 *r8, Uint8 *g8, Uint8 *b8)
 }
 
 
-void show_progress_bar(void)
+static void show_progress_bar(void)
 {
   SDL_Rect dest, src;
   int x;
@@ -11741,7 +11740,7 @@ void show_progress_bar(void)
 }
 
 
-void do_print(void)
+static void do_print(void)
 {
 #if !defined(WIN32) && !defined(__BEOS__) && !defined(__APPLE__)
   /* Linux, Unix, etc. */
@@ -11794,7 +11793,7 @@ void do_print(void)
 }
 
 
-void do_render_cur_text(int do_blit)
+static void do_render_cur_text(int do_blit)
 {
   int w, h;
   SDL_Color color = {color_hexes[cur_color][0],
@@ -11935,7 +11934,7 @@ void do_render_cur_text(int do_blit)
 }
 
 
-void loadfonts(char * dir, int fatal)
+static void loadfonts(char * dir, int fatal)
 {
   DIR * d;
   struct dirent * f;
@@ -12068,7 +12067,7 @@ void loadfonts(char * dir, int fatal)
 
 #ifdef OLD_UPPERCASE_CODE
 
-char * uppercase(char * str)
+static char * uppercase(char * str)
 {
   char * ustr;
   int i;
@@ -12091,7 +12090,7 @@ char * uppercase(char * str)
 
 #else
 
-char * uppercase(char * str)
+static char * uppercase(char * str)
 {
   int i, sz;
   wchar_t * dest;
@@ -12134,7 +12133,7 @@ char * uppercase(char * str)
 
 /* Return string in right-to-left mode, if necessary: */
 
-unsigned char * textdir(unsigned char * str)
+static unsigned char * textdir(unsigned char * str)
 {
   unsigned char * dstr;
   int i, j;
@@ -12195,7 +12194,7 @@ unsigned char * textdir(unsigned char * str)
 
 /* For flood fill... */
 
-int colors_close(Uint32 c1, Uint32 c2)
+static int colors_close(Uint32 c1, Uint32 c2)
 {
 #ifdef LOW_QUALITY_FLOOD_FILL
   return (c1 == c2);
@@ -12227,7 +12226,7 @@ int colors_close(Uint32 c1, Uint32 c2)
 
 /* Flood fill! */
 
-void do_flood_fill(int x, int y, Uint32 cur_colr, Uint32 old_colr)
+static void do_flood_fill(int x, int y, Uint32 cur_colr, Uint32 old_colr)
 {
   int fillL, fillR, i, in_line;
   static unsigned char prog_anim;
@@ -12306,7 +12305,7 @@ static Uint32 scrolltimer_callback(Uint32 interval, void *param)
 
 /* Controls the Text-Timer - interval == 0 removes the timer */
 
-void control_drawtext_timer(Uint32 interval, char* text)
+static void control_drawtext_timer(Uint32 interval, char* text)
 {
   static int activated = 0;
   static SDL_TimerID TimerID = 0;
@@ -12347,7 +12346,7 @@ static Uint32 drawtext_callback(Uint32 interval, void *param)
 }
 
 
-void parse_options(FILE * fi)
+static void parse_options(FILE * fi)
 {
   char str[256];
   
@@ -12608,7 +12607,8 @@ void parse_options(FILE * fi)
 }
 
 
-char * debug_gettext(const char * str)
+#ifdef DEBUG
+static char * debug_gettext(const char * str)
 {
   if (strcmp(str, dgettext(NULL, str)) == 0)
     {
@@ -12618,22 +12618,24 @@ char * debug_gettext(const char * str)
 
   return(dgettext(NULL, str));
 }
+#endif
 
 
-void do_setcursor(SDL_Cursor * c)
+static void do_setcursor(SDL_Cursor * c)
 {
   if (!no_fancy_cursors)
     SDL_SetCursor(c);
 }
 
 
-char * great_str(void)
+static char * great_str(void)
 {
   return(great_strs[rand() % (sizeof(great_strs) / sizeof(char *))]);
 }
 
 
-int charsize(char c)
+#ifdef DEBUG
+static int charsize(char c)
 {
   Uint16 str[2];
   int w, h;
@@ -12645,9 +12647,9 @@ int charsize(char c)
 
   return w;
 }
+#endif
 
-
-void draw_image_title(int t, int x)
+static void draw_image_title(int t, int x)
 {
   SDL_Rect dest;
 
@@ -12662,7 +12664,7 @@ void draw_image_title(int t, int x)
 
 
 
-int need_own_font(int l)
+static int need_own_font(int l)
 {
   int i, need;
 
@@ -12680,7 +12682,7 @@ int need_own_font(int l)
 }
 
 
-int need_right_to_left(int l)
+static int need_right_to_left(int l)
 {
   int i, need;
 
@@ -12701,7 +12703,7 @@ int need_right_to_left(int l)
 
 /* Handle keyboard events to control the mouse: */
 
-void handle_keymouse(SDLKey key, Uint8 updown)
+static void handle_keymouse(SDLKey key, Uint8 updown)
 {
   SDL_Event event;
 
@@ -12746,7 +12748,7 @@ void handle_keymouse(SDLKey key, Uint8 updown)
 
 /* Unblank screen in fullscreen mode, if needed: */
 
-void handle_active( SDL_Event *event )
+static void handle_active( SDL_Event *event )
 {
   if (event->active.state & SDL_APPACTIVE)
     {
@@ -12761,7 +12763,7 @@ void handle_active( SDL_Event *event )
 
 /* removes a single '\' or '/' from end of path */
 
-char *remove_slash( char *path )
+static char *remove_slash( char *path )
 {
   int len = strlen(path);
 
@@ -12778,7 +12780,7 @@ char *remove_slash( char *path )
 /* For right-to-left languages, when word-wrapping, we need to
    make sure the text doesn't end up going from bottom-to-top, too! */
 
-void anti_carriage_return(int left, int right, int cur_top, int new_top,
+static void anti_carriage_return(int left, int right, int cur_top, int new_top,
 		          int cur_bot, int line_width)
 {
   SDL_Rect src, dest;
@@ -12808,7 +12810,7 @@ void anti_carriage_return(int left, int right, int cur_top, int new_top,
 }
 
 
-int mySDL_WaitEvent(SDL_Event *event)
+static int mySDL_WaitEvent(SDL_Event *event)
 {
   int ret;
 
@@ -12844,7 +12846,7 @@ int mySDL_WaitEvent(SDL_Event *event)
 }
 
 
-int mySDL_PollEvent(SDL_Event *event)
+static int mySDL_PollEvent(SDL_Event *event)
 {
   int ret;
 
@@ -12879,7 +12881,7 @@ int mySDL_PollEvent(SDL_Event *event)
 }
 
 
-void load_starter_id(char * saved_id)
+static void load_starter_id(char * saved_id)
 {
   char * rname;
   char fname[32];
@@ -12905,7 +12907,7 @@ void load_starter_id(char * saved_id)
   free(rname);
 }
 
-void load_starter(char * img_id)
+static void load_starter(char * img_id)
 {
   char * dirname;
   char fname[256];
@@ -13012,7 +13014,7 @@ void load_starter(char * img_id)
 }
 
 
-TTF_Font *try_alternate_font(int language)
+static TTF_Font *try_alternate_font(int language)
 {
   char  str[128];
   char  prefix[64];
@@ -13031,7 +13033,7 @@ TTF_Font *try_alternate_font(int language)
 }
 
 
-SDL_Surface * duplicate_surface(SDL_Surface * orig)
+static SDL_Surface * duplicate_surface(SDL_Surface * orig)
 {
 /*
   Uint32 amask;
@@ -13052,7 +13054,7 @@ SDL_Surface * duplicate_surface(SDL_Surface * orig)
   return(SDL_DisplayFormatAlpha(orig));
 }
 
-void mirror_starter(void)
+static void mirror_starter(void)
 {
   SDL_Surface * orig;
   int x;
@@ -13119,7 +13121,7 @@ void mirror_starter(void)
 }
 
 
-void flip_starter(void)
+static void flip_starter(void)
 {
   SDL_Surface * orig;
   int y;
