@@ -7,7 +7,7 @@
   bill@newbreedsoftware.com
   http://www.newbreedsoftware.com/tuxpaint/
   
-  June 14, 2002 - September 27, 2003
+  June 14, 2002 - September 28, 2003
 */
 
 
@@ -1602,7 +1602,66 @@ void mainloop(void)
 		      {
 			/* Stamp controls! */
 
-			printf("CLICK!\n");
+			if (event.button.y >= (48 * ((max / 2) + TOOLOFFSET / 2)) + 40 &&
+			    event.button.y < (48 * ((max / 2) + TOOLOFFSET / 2)) + 40 + 48)
+			{
+			  /* One of the top buttons: */
+
+			  if (event.button.x >= WINDOW_WIDTH - 96 &&
+			      event.button.x <= WINDOW_WIDTH - 48)
+			  {
+			    /* Top left button: Mirror: */
+			    
+			    if (inf_stamps[cur_stamp]->mirrorable)
+			    {
+			      state_stamps[cur_stamp]->mirrored =
+				!state_stamps[cur_stamp]->mirrored;
+			      
+			      playsound(0, SND_MIRROR, 0);
+			      draw_stamps();
+			
+			      SDL_UpdateRect(screen,
+					     WINDOW_WIDTH - 96, 0,
+					     96, (48 * 7) + 40 + HEIGHTOFFSET);
+			    }
+			  }
+			  else
+			  {
+			    /* Top right button: Flip: */
+				  
+			    if (inf_stamps[cur_stamp]->flipable)
+			    {
+			      state_stamps[cur_stamp]->flipped =
+				!state_stamps[cur_stamp]->flipped;
+
+			      playsound(0, SND_FLIP, 0);
+			      draw_stamps();
+			
+			      SDL_UpdateRect(screen,
+					     WINDOW_WIDTH - 96, 0,
+					     96, (48 * 7) + 40 + HEIGHTOFFSET);
+			    }
+			  }
+			}
+			else
+			{
+			  /* One of the bottom buttons: */
+
+			  if (event.button.x >= WINDOW_WIDTH - 96 &&
+			      event.button.x <= WINDOW_WIDTH - 48)
+			  {
+
+			    /* Bottom left button: Shrink: */
+				  
+			    printf("SHRINK\n");
+			  }
+			  else
+			  {
+			    /* Bottom right button: Grow: */
+
+			    printf("GROW\n");
+			  }
+			}
 		      }
 		      
 		      
@@ -5588,7 +5647,8 @@ void draw_fonts(void)
 void draw_stamps(void)
 {
   int i, off_y, max, stamp, most;
-  SDL_Rect dest;
+  int base_x, base_y, xx, yy;
+  SDL_Rect src, dest;
   SDL_Surface * img;
 
 
@@ -5673,17 +5733,95 @@ void draw_stamps(void)
 
     if (stamp < num_stamps)
     {
+      /* Draw the stamp itself: */
+
       if (img_stamp_thumbs[stamp] != NULL)
 	img = img_stamp_thumbs[stamp];
       else
 	img = img_stamps[stamp];
 
-      dest.x = ((i % 2) * 48) + (WINDOW_WIDTH - 96) +
-	       ((48 - (img->w)) / 2);
 
-      dest.y = ((i / 2) * 48) + 40 + ((48 - (img->h)) / 2) + off_y;
+      /* Where to put it? */
+      
+      base_x = ((i % 2) * 48) + (WINDOW_WIDTH - 96) +
+	        ((48 - (img->w)) / 2);
 
-      SDL_BlitSurface(img, NULL, screen, &dest);
+      base_y = ((i / 2) * 48) + 40 + ((48 - (img->h)) / 2) + off_y;
+
+
+      if (state_stamps[stamp]->mirrored)
+      {
+	/* It's mirrored!: */
+	      
+	if (state_stamps[stamp]->flipped)
+	{
+	  /* It's flipped, too!  Mirror AND flip! */
+		
+	  for (xx = 0; xx < img->w; xx++)
+	  {
+	    for (yy = 0; yy < img->h; yy++)
+	    {
+	      src.x = xx;
+	      src.y = yy;
+	      src.w = 1;
+	      src.h = 1;
+
+	      dest.x = base_x + img->w - xx - 1;
+	      dest.y = base_y + img->h - xx - 1;
+
+              SDL_BlitSurface(img, &src, screen, &dest);
+	    }
+	  }
+	}
+	else
+	{
+	  /* Not flipped; just simple mirror-image: */
+	  
+	  for (xx = 0; xx < img->w; xx++)
+	  {
+	    src.x = xx;
+	    src.y = 0;
+	    src.w = 1;
+	    src.h = img->h;
+
+	    dest.x = base_x + img->w - xx - 1;
+	    dest.y = base_y;
+
+            SDL_BlitSurface(img, &src, screen, &dest);
+	  }
+	}
+      }
+      else
+      {
+	/* It's not mirrored: */
+
+	if (state_stamps[stamp]->flipped)
+	{
+	  /* Simple flip-image: */
+	  
+	  for (yy = 0; yy < img->h; yy++)
+	  {
+	    src.x = 0;
+	    src.y = yy;
+	    src.w = img->w;
+	    src.h = 1;
+
+	    dest.x = base_x;
+	    dest.y = base_y + img->h - yy - 1;
+
+            SDL_BlitSurface(img, &src, screen, &dest);
+	  }
+	}
+	else
+	{
+	  /* No flip or mirror: just blit! */
+
+	  dest.x = base_x;
+	  dest.y = base_y;
+
+          SDL_BlitSurface(img, NULL, screen, &dest);
+	}
+      }
     }
   }
 
