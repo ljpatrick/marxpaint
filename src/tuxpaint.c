@@ -14140,10 +14140,10 @@ static void loadfonts(const char * const dir, int fatal)
                       char *style = TTF_FontFaceStyleName(font);
                       SDL_Color black = {0, 0, 0, 0};
                       SDL_Surface *tmp_surf_a = TTF_RenderUTF8_Blended(font, "a", black);
-                      SDL_Surface *tmp_surf_A = TTF_RenderUTF8_Blended(font, "A", black);
-                      if(tmp_surf_a && tmp_surf_A)
+                      SDL_Surface *tmp_surf_z = TTF_RenderUTF8_Blended(font, "z", black);
+                      if(tmp_surf_a && tmp_surf_z)
                         {
-                          if(surfcmp(tmp_surf_a,tmp_surf_A))
+                          if(surfcmp(tmp_surf_a,tmp_surf_z))
                             {
                               user_font_styles[num_font_styles] = malloc(sizeof *user_font_styles[num_font_styles]);
                               user_font_styles[num_font_styles]->directory = strdup(dir);
@@ -14155,7 +14155,7 @@ static void loadfonts(const char * const dir, int fatal)
                             }
                           else
                             {
-                              printf("Bad font, 'a' and 'A' match: %s, %s, %s\n", d_names[i], family, style);
+                              printf("Bad font, 'a' and 'z' match: %s, %s, %s\n", d_names[i], family, style);
                             }
                         }
                       else
@@ -14164,8 +14164,8 @@ static void loadfonts(const char * const dir, int fatal)
                         }
                       if(tmp_surf_a)
                         SDL_FreeSurface(tmp_surf_a);
-                      if(tmp_surf_A)
-                        SDL_FreeSurface(tmp_surf_A);
+                      if(tmp_surf_z)
+                        SDL_FreeSurface(tmp_surf_z);
                     }
                   TTF_CloseFont(font);
                 }
