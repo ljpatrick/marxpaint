@@ -160,7 +160,7 @@ win32:
 		CONFDIR=$(PREFIX)/etc/tuxpaint \
 		ARCH_LINKS="-lintl-3 -lpng12 -lwinspool" \
 		ARCH_HEADERS="src/win32_print.h" \
-		ARCH_LIBS="obj/win32_print.o"
+		ARCH_LIBS="obj/win32_print.o obj/resource.o"
 
 # "make install" installs all of the various parts
 # (depending on the *PREFIX variables at the top, you probably need
@@ -235,6 +235,7 @@ install-beos:
 
 # "make install-win32" installs Tux Paint, but using MinGW/MSYS settings
 install-win32:
+	strip -s tuxpaint.exe
 	make install-private-win32 \
 		PREFIX=/usr/local \
 		BIN_PREFIX=$(PREFIX)/bin \
@@ -248,7 +249,7 @@ install-win32:
 		CONFDIR=$(PREFIX)/etc/tuxpaint \
 		ARCH_LINKS="-lintl-3 -lpng12 -lwinspool" \
 		ARCH_HEADERS="src/win32_print.h" \
-		ARCH_LIBS="obj/win32_print.o"
+		ARCH_LIBS="obj/win32_print.o obj/resource.o"
 
 # "make clean" deletes the program, the compiled objects and the
 # built man page (returns to factory archive, pretty much...)
@@ -841,6 +842,11 @@ obj/win32_print.o:	src/win32_print.c obj src/win32_print.h
 	@echo "...Compiling win32 print support..."
 	@$(CC) $(CFLAGS) $(SDL_CFLAGS) $(DEFS) \
 		-c src/win32_print.c -o obj/win32_print.o
+
+obj/resource.o:	visualc/resources.rc obj visualc/resource.h
+	@echo
+	@echo "...Compiling win32 resources..."
+	@windres -i visualc/resources.rc -o obj/resource.o
 
 
 # Build the translation files for gettext
