@@ -7,7 +7,39 @@ bill@newbreedsoftware.com
 http://www.newbreedsoftware.com/tuxpaint/
 
 
-2003.Aug.18 (0.9.12) [cvs]
+2003.Aug.18 (0.9.12)
+  * Replaced "efont-serif" fonts with those from the 'ttf-freefont' package,
+    for better support of ISO8859-13 symbols (e.g., for Lithuanian).
+    Fonts copyright the Free Software Foundation.
+    Thanks to Mantas Kriauciunas <monte@mail.lt> for the tip.
+
+  * Made main event loop ignore motion events if the loop has spun too long.
+    (Fixes problems where shape or stamp tools take forver to 'catch up' with
+    the mouse; especially noticable on slow machines over remote X display.)
+
+  * Walloon translation.
+    Pablo Saratxaga <pablo@walon.org>
+  
+  * Translated to Russian
+    Dmitriy Ivanov <ace22b@myrealbox.com>
+
+  * Translated to Malay
+    Muhammad Najmi Ahmad Zabidi <md_najmi@yahoo.com>
+
+  * French translation update.
+    Jacques Chion <Jacques.Chion@wanadoo.fr>
+
+  * Chinese translation update.
+    Wang Jian <lark@linux.net.cn>
+  
+  * If gnome-config is not found, it doesn't necessarily mean Gnome isn't being
+    used!  Makefile will now fall-back and assume $GNOME_PREFIX should be /usr,
+    so that the launcher icon gets installed into the Gnome menu.
+  
+  * Added some "#error" directives to give verbose output regarding missing
+    library header files.  (Typical cause of this symptom is forgetting to
+    install dev. packages; e.g., installed "SDL.rpm", but not "SDL-dev.rpm")
+
   * Fixed Mac OS X #include typo.
     Darrell Walisser <walisser@mac.com>
 
@@ -15,24 +47,14 @@ http://www.newbreedsoftware.com/tuxpaint/
     right-to-left after the kudos text (e.g., "Great!") goes away.
     Thanks to Itai <Itais@newmail.net>
   
-  * French translation update.
-    Jacques Chion <Jacques.Chion@wanadoo.fr>
-
   * Added call to close iconv when quitting.
     John Popplewell <john@johnnypops.demon.co.uk>
+    Darrell Walisser <walisser@mac.com>
 
-  * Walloon translation.
-    Pablo Saratxaga <pablo@walon.org>
-
-  * Chinese translation update.
-    Wang Jian <lark@linux.net.cn>
+  * Removed static "MAX_FILES" limit; now mallocs space for file info.
+    structures.  (Should fix large stack crash on OS X, which is good.)
 
   * Fixed bug where translated text would revert to English in 'uppercase' mode.
-
-  * Replaced "efont-serif" fonts with those from the 'ttf-freefont' package,
-    for better support of ISO8859-13 symbols (e.g., for Lithuanian).
-    Fonts copyright the Free Software Foundation.
-    Thanks to Mantas Kriauciunas <monte@mail.lt> for the tip.
 
   * Fixed UTF-8 related bug where Lithuanian wouldn't display if using
     'TTF_RenderText...', but Spanish wouldn't display if using
@@ -42,33 +64,9 @@ http://www.newbreedsoftware.com/tuxpaint/
   * Simplified CFLAGS variable in Makefile.
     Ben Armstrong <synrg@sanctuary.nslug.ns.ca>
 
-  * Made main event loop ignore motion events if the loop has spun too long.
-    (Fixes problems where shape or stamp tools take forver to 'catch up' with
-    the mouse; especially noticable on slow machines over remote X display.)
-
-  * Added some "#error" directives to give verbose output regarding missing
-    library header files.  (Typical cause of this symptom is forgetting to
-    install dev. packages; e.g., installed "SDL.rpm", but not "SDL-dev.rpm")
-
-  * Removed static "MAX_FILES" limit; now mallocs space for file info.
-    structures.  (Should fix large stack crash on OS X, which is good.)
-
   * Fixed bug where ".thumbs" dir wouldn't get generated if it wasn't there
     and you went to the 'Open' dialog.
   
-  * iconv_close() was being called even if 'cd' was -1 (not set).  Fixed.
-    Darrell Walisser <walisser@mac.com>
-
-  * If gnome-config is not found, it doesn't necessarily mean Gnome isn't being
-    used!  Makefile will now fall-back and assume $GNOME_PREFIX should be /usr,
-    so that the launcher icon gets installed into the Gnome menu.
-  
-  * Partially translated to Russian
-    Dmitriy Ivanov <ace22b@myrealbox.com>
-
-  * Translated to Malay
-    Muhammad Najmi Ahmad Zabidi <md_najmi@yahoo.com>
-
   * Fixed prompt bug for larger window sizes
     TOYAMA Shin-ichi <kyone@tky2.3web.ne.jp>
 
