@@ -4,8 +4,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint 0.9.14\n"
-"Report-Msgid-Bugs-To: tuxpaint-i18n@tux4kids.net\n"
-"POT-Creation-Date: 2004-03-22 11:23-0800\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2004-07-30 15:11+0200\n"
 "PO-Revision-Date: 2004-07-26 02:40+0200\n"
 "Last-Translator: Andrej Kacian <andrej@kacian.sk>\n"
 "Language-Team: Slovak <sk-i18n@lists.linux.sk>\n"
@@ -13,470 +13,378 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: tuxpaint.c:809
-msgid "Do you really want to quit?"
-msgstr "Naozaj chceš skončiť?"
+msgid "A drawing program for children."
+msgstr ""
 
-#: tuxpaint.c:810 tuxpaint.c:814 tuxpaint.c:818 tuxpaint.c:832 tuxpaint.c:842
-#: tuxpaint.c:8442 tuxpaint.c:9149
-msgid "Yes"
-msgstr "Áno"
+msgid "Drawing program"
+msgstr ""
 
-#: tuxpaint.c:811 tuxpaint.c:815 tuxpaint.c:819 tuxpaint.c:833 tuxpaint.c:843
-#: tuxpaint.c:8445
-msgid "No"
-msgstr "Nie"
+#, fuzzy
+msgid "Tux Paint"
+msgstr "Kresliť"
 
-#: tuxpaint.c:813
-msgid "If you quit, you’ll lose your picture! Save it?"
-msgstr "Ak skončíš, stratíš svoj obrázok. Chceš ho uložiť?"
-
-#: tuxpaint.c:817
-msgid "Save your picture first?"
-msgstr "Chceš najskôr uložiť obrázok?"
-
-#: tuxpaint.c:821
-msgid "Can’t open that picture!"
-msgstr "Nemôžem otvoriť tento obrázok!"
-
-#: tuxpaint.c:822 tuxpaint.c:829 tuxpaint.c:836 tuxpaint.c:839
-msgid "OK"
-msgstr "OK"
-
-#: tuxpaint.c:824
-msgid "Starting a new picture will erase the current one!"
-msgstr "Vytvorením nového obrázku vymažeš tento!"
-
-#: tuxpaint.c:825
-msgid "That’s OK!"
-msgstr "To je v poriadku!"
-
-#: tuxpaint.c:826
-msgid "Never mind!"
-msgstr "Radšej nie!"
-
-#: tuxpaint.c:828
-msgid "There are no saved files!"
-msgstr "Nie sú tu žiadne uložené súbory!"
-
-#: tuxpaint.c:831
-msgid "Print your picture now?"
-msgstr "Chceš vytlačiť svoj obrázok teraz?"
-
-#: tuxpaint.c:835
-msgid "Your picture has been printed!"
-msgstr "Tvoj obrázok je vytlačený!"
-
-#: tuxpaint.c:838
-msgid "You can’t print yet!"
-msgstr "Ešte sa nedá tlačiť!"
-
-#: tuxpaint.c:841
-msgid "Erase this picture?"
-msgstr "Vymazať tento obrázok?"
-
-#: tuxpaint.c:5495 tools.h:52
-msgid "Open"
-msgstr "Otvor"
-
-#: tuxpaint.c:5500
-msgid "Erase"
-msgstr "Guma"
-
-#: tuxpaint.c:5505
-msgid "Back"
-msgstr "Naspäť"
-
-#: tuxpaint.c:9148
-msgid "Save over the older version of this picture?"
-msgstr "Chces prepísať starší obrázok týmto?"
-
-#: tuxpaint.c:9150
-msgid "No, save a new file"
-msgstr "Nie, ulož ho ako nový súbor"
-
-#: tuxpaint.c:10007
-msgid "Choose the picture you want, then click “Open”."
-msgstr "Vyber obrázok, ktorý chceš, a potom klikni na \"Otvor\"."
-
-#: colors.h:62
 msgid "Black!"
 msgstr "Čierna!"
 
-#: colors.h:63
 msgid "White!"
 msgstr "Biela!"
 
-#: colors.h:64
 msgid "Red!"
 msgstr "Červená!"
 
-#: colors.h:65
 msgid "Pink!"
 msgstr "Ružová!"
 
-#: colors.h:66
 msgid "Orange!"
 msgstr "Oranžová!"
 
-#: colors.h:67
 msgid "Yellow!"
 msgstr "Žltá!"
 
-#: colors.h:68
 msgid "Lime!"
 msgstr "Žltozelená!"
 
-#: colors.h:69
 msgid "Green!"
 msgstr "Zelená!"
 
-#: colors.h:70
 msgid "Cyan!"
 msgstr "Svetlomodra!"
 
-#: colors.h:71
 msgid "Blue!"
 msgstr "Modrá!"
 
-#: colors.h:72
 msgid "Purple!"
 msgstr "Fialová!"
 
-#: colors.h:73
 msgid "Fuchsia!"
 msgstr "Svetlofialová!"
 
-#: colors.h:74
 msgid "Brown!"
 msgstr "Hnedá!"
 
-#: colors.h:75
 msgid "Gray!"
 msgstr "Sivá!"
 
-#: colors.h:76
 msgid "Silver!"
 msgstr "Strieborná!"
 
-#: great.h:20
 msgid "Great!"
 msgstr "Vyborne!"
 
-#: great.h:21
 msgid "Cool!"
 msgstr "Pekné!"
 
-#: great.h:22
 msgid "Keep it up!"
 msgstr "Len tak ďalej!"
 
-#: great.h:23
 msgid "Good job!"
 msgstr "Dobrá práca!"
 
-#: magic.h:48
 msgid "Rainbow"
 msgstr "Dúha"
 
-#: magic.h:49
 msgid "Sparkles"
 msgstr "Iskry"
 
-#: magic.h:51
 msgid "Mirror"
 msgstr "Zrkadlo"
 
-#: magic.h:52
 msgid "Flip"
 msgstr "Otočiť hore hlavou"
 
-#: magic.h:54
 msgid "Blur"
 msgstr "Rozmazať"
 
-#: magic.h:55
 msgid "Blocks"
 msgstr "Kocky"
 
-#: magic.h:57
 msgid "Negative"
 msgstr "Negatív"
 
-#: magic.h:58
 msgid "Fade"
 msgstr "Vyblednúť"
 
-#: magic.h:60
 msgid "Chalk"
 msgstr "Krieda"
 
-#: magic.h:61
 msgid "Drip"
 msgstr "Roztiecť"
 
-#: magic.h:63
 msgid "Thick"
 msgstr "Hrubé"
 
-#: magic.h:64
 msgid "Thin"
 msgstr "Úzke"
 
-#: magic.h:66
 msgid "Fill"
 msgstr "Vyplniť"
 
-#: magic.h:73
 msgid "You can draw in rainbow colors!"
 msgstr "Môžeš kresliť v dúhových farbách!"
 
-#: magic.h:74
 msgid "Click and move to draw sparkles."
 msgstr "Klikni a pohybuj myšou a budeš kresliť iskry."
 
-#: magic.h:76
 msgid "Click to make a mirror image."
 msgstr "Klikni pre zrkadlové otočenie obrázku!"
 
-#: magic.h:77
 msgid "Click to flip the picture upside-down."
 msgstr "Klikni pre otočenie obrázku hlavou nadol."
 
-#: magic.h:79
 msgid "Click and move the mouse around to blur the picture."
 msgstr "Klikni a pohybuj myšou pre rozmazanie obrázku."
 
-#: magic.h:80
 msgid "Click and move the mouse around to make the picture blocky."
 msgstr "Klikni a pohybuj myšou pre rozstvorcekovanie obrázku."
 
-#: magic.h:82
 msgid "Click and move the mouse around to draw a negative."
 msgstr "Klikni a pohybuj myšou pre vykreslenie negatívu."
 
-#: magic.h:83
 msgid "Click and move to fade the colors."
 msgstr "Klikni a pohybuj myšou pre vyblednutie farieb."
 
-#: magic.h:85
-msgid "Click and move the mouse around to turn the picture into a chalk drawing."
+msgid ""
+"Click and move the mouse around to turn the picture into a chalk drawing."
 msgstr "Klikni a pohybuj myšou pre prekreslenie obrázku kriedou."
 
-#: magic.h:86
 msgid "Click and move the mouse around to make the picture drip."
 msgstr "Klikni a pohybuj myšou pre roztekanie obrázku."
 
-#: magic.h:88
 msgid "Click and move the mouse to thicken the picture."
 msgstr "Klikni a pohybuj mysou pre zhrubnutie obrázku."
 
-#: magic.h:89
 msgid "Click and move the mouse to thin the picture."
 msgstr "Klikni a pohybuj myšou pre zúženie obrázku."
 
-#: magic.h:91
 msgid "Click in the picture to fill that area with color."
 msgstr "Klikni do obrázku pre vyplnenie oblasti farbou."
 
-#: shapes.h:141 shapes.h:142
 msgid "Square"
 msgstr "Štvorec"
 
-#: shapes.h:143 shapes.h:144
 msgid "Rectangle"
 msgstr "Obdĺžnik"
 
-#: shapes.h:145 shapes.h:146
 msgid "Circle"
 msgstr "Kruh"
 
-#: shapes.h:147 shapes.h:148 shapes.h:167 shapes.h:168
 msgid "Oval"
 msgstr "Ovál"
 
-#: shapes.h:149 shapes.h:150
 msgid "Triangle"
 msgstr "Trojuholník"
 
-#: shapes.h:151 shapes.h:152
 msgid "Pentagon"
 msgstr "Päťuholník"
 
-#: shapes.h:153 shapes.h:154
 msgid "Diamond"
 msgstr "Diamant"
 
-#: shapes.h:161 shapes.h:162
 msgid "A square has four sides, each the same length."
 msgstr "Štvorec má štyri strany, všetky rovnako dlhé."
 
-#: shapes.h:163 shapes.h:164
 msgid "A rectangle has four sides."
 msgstr "Obdĺžnik má štyri strany."
 
-#: shapes.h:165 shapes.h:166
 msgid "A circle is exactly round."
 msgstr "Kruh je presne okrúhly."
 
-#: shapes.h:169 shapes.h:170
 msgid "A triangle has three sides."
 msgstr "Trojuholník má tri strany."
 
-#: shapes.h:171 shapes.h:172
 msgid "A pentagon has five sides."
 msgstr "Päťuholník má päť strán."
 
-#: shapes.h:173 shapes.h:174
 msgid "A diamond is a square, turned around slightly."
 msgstr "Diamant vznikne pootočením štvorca."
 
-#: titles.h:37
 msgid "Tools"
 msgstr "Nástroje"
 
-#: titles.h:38
 msgid "Colors"
 msgstr "Farby"
 
-#: titles.h:39
 msgid "Brushes"
 msgstr "Štetce"
 
-#: titles.h:40
 msgid "Stamps"
 msgstr "Razítka"
 
-#: titles.h:41 tools.h:45
 msgid "Shapes"
 msgstr "Tvary"
 
-#: titles.h:42
 msgid "Letters"
 msgstr "Písmenká"
 
-#: titles.h:43 tools.h:47
 msgid "Magic"
 msgstr "Kúzla"
 
-#: tools.h:42
 msgid "Paint"
 msgstr "Kresliť"
 
-#: tools.h:43
 msgid "Stamp"
 msgstr "Razítko"
 
-#: tools.h:44
 msgid "Lines"
 msgstr "Úsečky"
 
-#: tools.h:46
 msgid "Text"
 msgstr "Text"
 
-#: tools.h:48
 msgid "Undo"
 msgstr "Späť"
 
-#: tools.h:49
 msgid "Redo"
 msgstr "Znovu"
 
-#: tools.h:50
 msgid "Eraser"
 msgstr "Guma"
 
-#: tools.h:51
 msgid "New"
 msgstr "Nový"
 
-#: tools.h:53
+#. 'Open' label:
+msgid "Open"
+msgstr "Otvor"
+
 msgid "Save"
 msgstr "Uložiť"
 
-#: tools.h:54
 msgid "Print"
 msgstr "Tlačiť"
 
-#: tools.h:55
 msgid "Quit"
 msgstr "Skončiť"
 
-#: tools.h:62
 msgid "Pick a color and a brush shape to draw with."
 msgstr "Vyber farbu a tvar štetca s ktorým chceš kresliť."
 
-#: tools.h:63
 msgid "Pick a picture to stamp around your drawing."
 msgstr "Vyber obrázok pre razítko."
 
-#: tools.h:64
 msgid "Click to start drawing a line. Let go to complete it."
 msgstr ""
 "Stlač ľavé tlačítko na myši a pohybuj ňou pre nakreslenie úsečky. Pusti "
 "tlačítko a úsečka sa nakreslí."
 
-#: tools.h:65
-msgid "Pick a shape. Click to pick the center, drag, then let go when it is the "
+msgid ""
+"Pick a shape. Click to pick the center, drag, then let go when it is the "
 "size you want. Move around to rotate it, and click to draw it."
 msgstr ""
 "Vyber si tvar. Kliknutím si vyber stred, potom ťahaj, až kým nemá útvar "
 "správnu veľkosť. Pohybom myši ho môžeš otáčať a ďalším kliknutím nakresliť."
 
-#: tools.h:66
 msgid "Choose a style of text. Click on your drawing and you can start typing."
 msgstr "Vyber štýl textu. Klikni tam, kde chceš písať, a môžeš zadávať text."
 
-#: tools.h:67
 msgid "Pick a magical effect to use on your drawing!"
 msgstr "Vyber kuzelný efekt, ktorý chceš použiť!"
 
-#: tools.h:68
+#. Undo
 msgid "Undo!"
 msgstr "Naspäť!"
 
-#: tools.h:69
+#. Redo
 msgid "Redo!"
 msgstr "Znovu!"
 
-#: tools.h:70
+#. Eraser
 msgid "Eraser!"
 msgstr "Guma!"
 
-#: tools.h:71
+#. New
 msgid "You now have a blank sheet to draw on!"
 msgstr "Máš teraz čistú plochu na kreslenie!"
 
-#: tools.h:72
+#. Open
 msgid "Open…"
 msgstr "Otvoriť..."
 
-#: tools.h:73
+#. Save
 msgid "Your image has been saved!"
 msgstr "Tvoj obrázok bol uložený!"
 
-#: tools.h:74
+#. Print
 msgid "Printing…"
 msgstr "Tlačí sa..."
 
-#: tools.h:75
+#. Quit
 msgid "Bye bye!"
 msgstr "Dovidenia!"
 
-#: tools.h:78
 msgid "Let go of the button to complete the line."
 msgstr "Pusti tlačítko pre dokončenie úsečky."
 
-#: tools.h:79
 msgid "Hold the button to stretch the shape."
 msgstr "Drž tlačítko pre roztiahnutie útvaru."
 
-#: tools.h:80
 msgid "Move the mouse to rotate the shape. Click to draw it."
 msgstr "Pohybuj myšou pre otáčanie útvaru. Klikni pre jeho nakreslenie."
 
-#: tools.h:81
 msgid "OK then… Let’s keep drawing this one!"
 msgstr "Ok, pokračujme v kreslení!"
 
+#. FIXME: Move elsewhere!!!
+msgid "Do you really want to quit?"
+msgstr "Naozaj chceš skončiť?"
+
+#. FIXME: Move elsewhere! Or not?!
+msgid "Yes"
+msgstr "Áno"
+
+msgid "No"
+msgstr "Nie"
+
+msgid "If you quit, you’ll lose your picture! Save it?"
+msgstr "Ak skončíš, stratíš svoj obrázok. Chceš ho uložiť?"
+
+msgid "Save your picture first?"
+msgstr "Chceš najskôr uložiť obrázok?"
+
+msgid "Can’t open that picture!"
+msgstr "Nemôžem otvoriť tento obrázok!"
+
+msgid "OK"
+msgstr "OK"
+
+msgid "Starting a new picture will erase the current one!"
+msgstr "Vytvorením nového obrázku vymažeš tento!"
+
+msgid "That’s OK!"
+msgstr "To je v poriadku!"
+
+msgid "Never mind!"
+msgstr "Radšej nie!"
+
+msgid "There are no saved files!"
+msgstr "Nie sú tu žiadne uložené súbory!"
+
+msgid "Print your picture now?"
+msgstr "Chceš vytlačiť svoj obrázok teraz?"
+
+msgid "Your picture has been printed!"
+msgstr "Tvoj obrázok je vytlačený!"
+
+msgid "You can’t print yet!"
+msgstr "Ešte sa nedá tlačiť!"
+
+msgid "Erase this picture?"
+msgstr "Vymazať tento obrázok?"
+
+#. 'Erase' label:
+msgid "Erase"
+msgstr "Guma"
+
+#. 'Back' label:
+msgid "Back"
+msgstr "Naspäť"
+
+#. FIXME: Move elsewhere!!!
+msgid "Save over the older version of this picture?"
+msgstr "Chces prepísať starší obrázok týmto?"
+
+msgid "No, save a new file"
+msgstr "Nie, ulož ho ako nový súbor"
+
+msgid "Choose the picture you want, then click “Open”."
+msgstr "Vyber obrázok, ktorý chceš, a potom klikni na \"Otvor\"."
