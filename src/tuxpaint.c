@@ -5642,7 +5642,7 @@ void seticon(void)
 #ifndef WIN32
   icon = IMG_Load(DATA_PREFIX "images/icon.png");
 #else
-  icon = IMG_Load(DATA_PREFIX "images/icon-win32.png");
+  icon = IMG_Load(DATA_PREFIX "images/icon32x32.png");
 #endif
 
   if (icon == NULL)
@@ -9781,7 +9781,11 @@ int do_open(int want_new_tool)
       /* Check for coloring-book style 'starter' images first: */
 
       /* FIXME: On Windows, MacOSX, BeOS, etc. -- do it their way! */
+#ifdef WIN32
+      dirname[places_to_look] = strdup(DATA_PREFIX "starters");
+#else
       dirname[places_to_look] = strdup("/usr/local/share/tuxpaint/starters");
+#endif
     }
     else
     {
