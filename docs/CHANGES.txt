@@ -7,7 +7,7 @@ bill@newbreedsoftware.com
 http://www.newbreedsoftware.com/tuxpaint/
 
 
-2004.March.23 (0.9.14) [cvs]
+2004.March.29 (0.9.14) [cvs]
   * Japanese translation updates.
     TOYAMA Shin-ichi <shin1@wmail.plala.or.jp>
 

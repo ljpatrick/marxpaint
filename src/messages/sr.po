@@ -5,531 +5,592 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint 0.9.14\n"
-"POT-Creation-Date: \n"
-"PO-Revision-Date: 2004-03-05 22:35-0500\n"
+"Report-Msgid-Bugs-To: tuxpaint-i18n@tux4kids.net\n"
+"POT-Creation-Date: 2004-03-22 11:23-0800\n"
+"PO-Revision-Date: 2004-03-29 18:58-0500\n"
 "Last-Translator: Aleksandar Jelenak <jelenak@netlinkplus.net>\n"
 "Language-Team: Serbian <gnu@prevod.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+
 #
-# File: tuxpaint.c, line: 795
+#: tuxpaint.c:801
 msgid "Do you really want to quit?"
 msgstr "Стварно желиш да завршиш?"
+
 #
-# File: tuxpaint.c, line: 796
-# File: tuxpaint.c, line: 800
-# File: tuxpaint.c, line: 804
-# File: tuxpaint.c, line: 818
-# File: tuxpaint.c, line: 828
-# File: tuxpaint.c, line: 8360
-# File: tuxpaint.c, line: 9065
+#: tuxpaint.c:802 tuxpaint.c:806 tuxpaint.c:810 tuxpaint.c:824 tuxpaint.c:834
+#: tuxpaint.c:8386 tuxpaint.c:9093
 msgid "Yes"
 msgstr "Да"
+
 #
-# File: tuxpaint.c, line: 797
-# File: tuxpaint.c, line: 801
-# File: tuxpaint.c, line: 805
-# File: tuxpaint.c, line: 819
-# File: tuxpaint.c, line: 829
-# File: tuxpaint.c, line: 8363
+#: tuxpaint.c:803 tuxpaint.c:807 tuxpaint.c:811 tuxpaint.c:825 tuxpaint.c:835
+#: tuxpaint.c:8389
 msgid "No"
 msgstr "Не"
+
 #
-# File: tuxpaint.c, line: 799
+#: tuxpaint.c:805
 msgid "If you quit, you'll lose your picture! Save it?"
 msgstr "Изгубићеш слику ако завршиш! Да се сачува?"
+
 #
-# File: tuxpaint.c, line: 803
+#: tuxpaint.c:809
 msgid "Save your picture first?"
 msgstr "Прво да сачуваш своју слику?"
+
 #
-# File: tuxpaint.c, line: 807
+#: tuxpaint.c:813
 msgid "Can't open that picture!"
 msgstr "Не могу да отворим ту слику!"
+
 #
-# File: tuxpaint.c, line: 808
-# File: tuxpaint.c, line: 815
-# File: tuxpaint.c, line: 822
-# File: tuxpaint.c, line: 825
+#: tuxpaint.c:814 tuxpaint.c:821 tuxpaint.c:828 tuxpaint.c:831
 msgid "OK"
-msgstr ""
+msgstr "У реду"
+
 #
-# File: tuxpaint.c, line: 810
+#: tuxpaint.c:816
 msgid "Starting a new picture will erase the current one!"
 msgstr "Започињање нове слике ће избрисати досадашњу!"
+
 #
-# File: tuxpaint.c, line: 811
-#, fuzzy
+#: tuxpaint.c:817
 msgid "That's OK!"
-msgstr "Добро"
+msgstr "Добро!"
+
 #
-# File: tuxpaint.c, line: 812
-#, fuzzy
+#: tuxpaint.c:818
 msgid "Never mind!"
 msgstr "Нисам хтео!"
+
 #
-# File: tuxpaint.c, line: 814
+#: tuxpaint.c:820
 msgid "There are no saved files!"
 msgstr "Нема сачуваних датотека!"
+
 #
-# File: tuxpaint.c, line: 817
-#, fuzzy
+#: tuxpaint.c:823
 msgid "Print your picture now?"
-msgstr "Прво да сачуваш своју слику?"
+msgstr "Сада штампаш своју слику?"
+
 #
-# File: tuxpaint.c, line: 821
+#: tuxpaint.c:827
 msgid "Your picture has been printed!"
 msgstr "Твоје слика је одштампана!"
+
 #
-# File: tuxpaint.c, line: 824
+#: tuxpaint.c:830
 msgid "You can't print yet!"
 msgstr "Не можеш још да штампаш!"
+
 #
-# File: tuxpaint.c, line: 827
+#: tuxpaint.c:833
 msgid "Erase this picture?"
 msgstr "Обрисати ову слику?"
+
 #
-# File: tuxpaint.c, line: 5416
-# File: tools.h, line: 52
+#: tuxpaint.c:5442 tools.h:52
 msgid "Open"
 msgstr "Отвори"
+
 #
-# File: tuxpaint.c, line: 5421
+#: tuxpaint.c:5447
 msgid "Erase"
 msgstr "Бриши"
+
 #
-# File: tuxpaint.c, line: 5426
+#: tuxpaint.c:5452
 msgid "Back"
 msgstr "Назад"
+
 #
-# File: tuxpaint.c, line: 9064
-#, fuzzy
+#: tuxpaint.c:9092
 msgid "Save over the older version of this picture?"
-msgstr "Преписати преко старије верзије овог цртежа?"
+msgstr "Сачувати преко старије верзије ове слике?"
+
 #
-# File: tuxpaint.c, line: 9066
+#: tuxpaint.c:9094
 msgid "No, save a new file"
 msgstr "Не, сачувај у нову датотеку"
+
 #
-# File: tuxpaint.c, line: 9885
-#, fuzzy
+#: tuxpaint.c:9951
 msgid "Choose the picture you want, then click 'Open'."
-msgstr "Изабери слику коју желиш, затим кликни „Отвори“"
+msgstr "Изабери слику коју желиш, затим кликни „Отвори“."
+
 #
-# File: colors.h, line: 62
-#, fuzzy
+#: colors.h:62
 msgid "Black!"
 msgstr "црна!"
+
 #
-# File: colors.h, line: 63
-#, fuzzy
+#: colors.h:63
 msgid "White!"
 msgstr "бела!"
+
 #
-# File: colors.h, line: 64
+#: colors.h:64
 msgid "Red!"
 msgstr "црвена!"
+
 #
-# File: colors.h, line: 65
+#: colors.h:65
 msgid "Pink!"
 msgstr "ружичаста!"
+
 #
-# File: colors.h, line: 66
+#: colors.h:66
 msgid "Orange!"
 msgstr "наранџаста!"
+
 #
-# File: colors.h, line: 67
+#: colors.h:67
 msgid "Yellow!"
 msgstr "жута!"
+
 #
-# File: colors.h, line: 68
+#: colors.h:68
 msgid "Lime!"
 msgstr "јарко зелена!"
+
 #
-# File: colors.h, line: 69
+#: colors.h:69
 msgid "Green!"
 msgstr "зелена!"
+
 #
-# File: colors.h, line: 70
+#: colors.h:70
 msgid "Cyan!"
 msgstr "цијан!"
+
 #
-# File: colors.h, line: 71
+#: colors.h:71
 msgid "Blue!"
 msgstr "плава!"
+
 #
-# File: colors.h, line: 72
+#: colors.h:72
 msgid "Purple!"
 msgstr "љубичаста!"
+
 #
-# File: colors.h, line: 73
+#: colors.h:73
 msgid "Fuchsia!"
 msgstr "фуксија!"
+
 #
-# File: colors.h, line: 74
+#: colors.h:74
 msgid "Brown!"
 msgstr "браон!"
+
 #
-# File: colors.h, line: 75
-#, fuzzy
+#: colors.h:75
 msgid "Gray!"
 msgstr "сива!"
+
 #
-# File: colors.h, line: 76
+#: colors.h:76
 msgid "Silver!"
 msgstr "сребрна!"
+
 #
-# File: great.h, line: 20
+#: great.h:20
 msgid "Great!"
 msgstr "Одлично!"
+
 #
-# File: great.h, line: 21
+#: great.h:21
 msgid "Cool!"
 msgstr "Супер!"
+
 #
-# File: great.h, line: 22
+#: great.h:22
 msgid "Keep it up!"
 msgstr "Само тако!"
+
 #
-# File: great.h, line: 23
+#: great.h:23
 msgid "Good job!"
 msgstr "Добар потез!"
+
 #
-# File: magic.h, line: 48
+#: magic.h:48
 msgid "Rainbow"
 msgstr "Дуга"
+
 #
-# File: magic.h, line: 49
+#: magic.h:49
 msgid "Sparkles"
 msgstr "Искрице"
+
 #
-# File: magic.h, line: 51
+#: magic.h:51
 msgid "Mirror"
 msgstr "Огледало"
+
 #
-# File: magic.h, line: 52
+#: magic.h:52
 msgid "Flip"
 msgstr "Обрни"
+
 #
-# File: magic.h, line: 54
+#: magic.h:54
 msgid "Blur"
 msgstr "Замагли"
+
 #
-# File: magic.h, line: 55
+#: magic.h:55
 msgid "Blocks"
 msgstr "Грубо"
+
 #
-# File: magic.h, line: 57
+#: magic.h:57
 msgid "Negative"
 msgstr "Негатив"
+
 #
-# File: magic.h, line: 58
+#: magic.h:58
 msgid "Fade"
 msgstr "Избледи"
+
 #
-# File: magic.h, line: 60
+#: magic.h:60
 msgid "Chalk"
 msgstr "Креда"
+
 #
-# File: magic.h, line: 61
+#: magic.h:61
 msgid "Drip"
 msgstr "Цури"
+
 #
-# File: magic.h, line: 63
+#: magic.h:63
 msgid "Thick"
 msgstr "Дебело"
+
 #
-# File: magic.h, line: 64
+#: magic.h:64
 msgid "Thin"
 msgstr "Танко"
+
 #
-# File: magic.h, line: 66
+#: magic.h:66
 msgid "Fill"
 msgstr "Попуна"
+
 #
-# File: magic.h, line: 73
+#: magic.h:73
 msgid "You can draw in rainbow colors!"
 msgstr "Можеш цртати у дугиним бојама!"
+
 #
-# File: magic.h, line: 74
-#, fuzzy
+#: magic.h:74
 msgid "Click and move to draw sparkles."
-msgstr "Кликни и померај да би цртао искрице"
+msgstr "Кликни и померај да би цртао искрице."
+
 #
-# File: magic.h, line: 76
-#, fuzzy
+#: magic.h:76
 msgid "Click to make a mirror image."
-msgstr "Кликни да би направио слику у огледалу"
+msgstr "Кликни да би направио слику у огледалу."
+
 #
-# File: magic.h, line: 77
-#, fuzzy
+#: magic.h:77
 msgid "Click to flip the picture upside-down."
-msgstr "Кликни да би обрнуо слику наопачке!"
+msgstr "Кликни да би обрнуо слику наопачке."
+
 #
-# File: magic.h, line: 79
-#, fuzzy
+#: magic.h:79
 msgid "Click and move the mouse around to blur the picture."
-msgstr "Кликни и шетај миша да би замаглио слику"
+msgstr "Кликни и мрдај мишем да би замаглио слику."
+
 #
-# File: magic.h, line: 80
-#, fuzzy
+#: magic.h:80
 msgid "Click and move the mouse around to make the picture blocky."
-msgstr "Кликни и померај миша да би погрубио слику"
+msgstr "Кликни и померај миша да би огрубео слику."
+
 #
-# File: magic.h, line: 82
-#, fuzzy
+#: magic.h:82
 msgid "Click and move the mouse around to draw a negative."
-msgstr "Кликни и шетај миша да би правио негатив"
+msgstr "Кликни и шетај мишем да би правио негатив."
+
 #
-# File: magic.h, line: 83
+#: magic.h:83
 msgid "Click and move to fade the colors."
 msgstr "Кликни и померај да би изблеђивао боје."
+
 #
-# File: magic.h, line: 85
-msgid ""
-"Click and move the mouse around to turn the picture into a chalk drawing."
+#: magic.h:85
+msgid "Click and move the mouse around to turn the picture into a chalk drawing."
 msgstr "Кликни и шетај миша да би претворио слику у цртеж кредом."
+
 #
-# File: magic.h, line: 86
-#, fuzzy
+#: magic.h:86
 msgid "Click and move the mouse around to make the picture drip."
-msgstr "Кликни и шетај миша да би боје на слици цуриле!"
+msgstr "Кликни и шетај миша да би боје на слици процуриле."
+
 #
-# File: magic.h, line: 88
-#, fuzzy
+#: magic.h:88
 msgid "Click and move the mouse to thicken the picture."
-msgstr "Кликни и померај миша да би подебљао слику"
+msgstr "Кликни и померај миша да би подебљао слику."
+
 #
-# File: magic.h, line: 89
-#, fuzzy
+#: magic.h:89
 msgid "Click and move the mouse to thin the picture."
-msgstr "Кликни и померај миша да би потањио слику"
+msgstr "Кликни и померај миша да би потањио слику."
+
 #
-# File: magic.h, line: 91
-#, fuzzy
+#: magic.h:91
 msgid "Click in the picture to fill that area with color."
-msgstr "Кликни у слику да би попунио ту област бојом"
+msgstr "Кликни у слику да би попунио ту област бојом."
+
 #
-# File: shapes.h, line: 141
-# File: shapes.h, line: 142
+#: shapes.h:141 shapes.h:142
 msgid "Square"
 msgstr "квадрат"
+
 #
-# File: shapes.h, line: 143
-# File: shapes.h, line: 144
+#: shapes.h:143 shapes.h:144
 msgid "Rectangle"
 msgstr "правоугаоник"
+
 #
-# File: shapes.h, line: 145
-# File: shapes.h, line: 146
+#: shapes.h:145 shapes.h:146
 msgid "Circle"
 msgstr "круг"
+
 #
-# File: shapes.h, line: 147
-# File: shapes.h, line: 148
-# File: shapes.h, line: 167
-# File: shapes.h, line: 168
+#: shapes.h:147 shapes.h:148 shapes.h:167 shapes.h:168
 msgid "Oval"
 msgstr "овал"
+
 #
-# File: shapes.h, line: 149
-# File: shapes.h, line: 150
+#: shapes.h:149 shapes.h:150
 msgid "Triangle"
 msgstr "троугао"
+
 #
-# File: shapes.h, line: 151
-# File: shapes.h, line: 152
+#: shapes.h:151 shapes.h:152
 msgid "Pentagon"
 msgstr "петоугао"
+
 #
-# File: shapes.h, line: 153
-# File: shapes.h, line: 154
+#: shapes.h:153 shapes.h:154
 msgid "Diamond"
 msgstr "дијамант"
+
 #
-# File: shapes.h, line: 161
-# File: shapes.h, line: 162
+#: shapes.h:161 shapes.h:162
 msgid "A square has four sides, each the same length."
 msgstr "Квадрат има четири странице подједнаке дужине."
+
 #
-# File: shapes.h, line: 163
-# File: shapes.h, line: 164
+#: shapes.h:163 shapes.h:164
 msgid "A rectangle has four sides."
 msgstr "Правоугаоник има четири странице."
+
 #
-# File: shapes.h, line: 165
-# File: shapes.h, line: 166
+#: shapes.h:165 shapes.h:166
 msgid "A circle is exactly round."
 msgstr "Круг је потпуно заобљен."
+
 #
-# File: shapes.h, line: 169
-# File: shapes.h, line: 170
+#: shapes.h:169 shapes.h:170
 msgid "A triangle has three sides."
 msgstr "Троугао има три странице."
+
 #
-# File: shapes.h, line: 171
-# File: shapes.h, line: 172
+#: shapes.h:171 shapes.h:172
 msgid "A pentagon has five sides."
 msgstr "Петоугао има пет страница."
+
 #
-# File: shapes.h, line: 173
-# File: shapes.h, line: 174
+#: shapes.h:173 shapes.h:174
 msgid "A diamond is a square, turned around slightly."
 msgstr "Дијамант је квадрат, мало заокренут."
+
 #
-# File: titles.h, line: 37
+#: titles.h:37
 msgid "Tools"
 msgstr "Алати"
+
 #
-# File: titles.h, line: 38
+#: titles.h:38
 msgid "Colors"
 msgstr "Боје"
+
 #
-# File: titles.h, line: 39
+#: titles.h:39
 msgid "Brushes"
 msgstr "Четке"
+
 #
-# File: titles.h, line: 40
+#: titles.h:40
 msgid "Stamps"
 msgstr "Печати"
+
 #
-# File: titles.h, line: 41
-# File: tools.h, line: 45
+#: titles.h:41 tools.h:45
 msgid "Shapes"
 msgstr "Облици"
+
 #
-# File: titles.h, line: 42
+#: titles.h:42
 msgid "Letters"
 msgstr "Слова"
+
 #
-# File: titles.h, line: 43
-# File: tools.h, line: 47
+#: titles.h:43 tools.h:47
 msgid "Magic"
 msgstr "Магија"
+
 #
-# File: tools.h, line: 42
+#: tools.h:42
 msgid "Paint"
 msgstr "Бојити"
+
 #
-# File: tools.h, line: 43
+#: tools.h:43
 msgid "Stamp"
 msgstr "Печат"
+
 #
-# File: tools.h, line: 44
+#: tools.h:44
 msgid "Lines"
 msgstr "Линије"
+
 #
-# File: tools.h, line: 46
+#: tools.h:46
 msgid "Text"
 msgstr "Текст"
+
 #
-# File: tools.h, line: 48
+#: tools.h:48
 msgid "Undo"
 msgstr "Опозови"
+
 #
-# File: tools.h, line: 49
+#: tools.h:49
 msgid "Redo"
 msgstr "Понови"
+
 #
-# File: tools.h, line: 50
+#: tools.h:50
 msgid "Eraser"
 msgstr "Брисач"
+
 #
-# File: tools.h, line: 51
+#: tools.h:51
 msgid "New"
 msgstr "Нови"
+
 #
-# File: tools.h, line: 53
+#: tools.h:53
 msgid "Save"
 msgstr "Сачувај"
+
 #
-# File: tools.h, line: 54
+#: tools.h:54
 msgid "Print"
 msgstr "Штампај"
+
 #
-# File: tools.h, line: 55
+#: tools.h:55
 msgid "Quit"
 msgstr "Крај"
+
 #
-# File: tools.h, line: 62
+#: tools.h:62
 msgid "Pick a color and a brush shape to draw with."
 msgstr "Изабери боју и облик четке за цртање."
+
 #
-# File: tools.h, line: 63
+#: tools.h:63
 msgid "Pick a picture to stamp around your drawing."
 msgstr "Изабери слику за печатирање по цртежу."
+
 #
-# File: tools.h, line: 64
-#, fuzzy
+#: tools.h:64
 msgid "Click to start drawing a line. Let go to complete it."
 msgstr "Кликни да би започео линију. Пусти да би је завршио."
+
 #
-# File: tools.h, line: 65
-#, fuzzy
-msgid ""
-"Pick a shape. Click to pick the center, drag, then let go when it is the "
-"size you want. Move around to rotate it, and click to draw it."
-msgstr ""
-"Изабери облик. Кликни за центар, вуци, затим пусти када је жељене величине. "
-"Померај за окретање, те кликни за цртање."
+#: tools.h:65
+msgid "Pick a shape. Click to pick the center, drag, then let go when it is the size you want. Move around to rotate it, and click to draw it."
+msgstr "Изабери облик. Кликни да изабереш центар; вуци, затим пусти када је жељене величине. Померај за окретање, те кликни за цртање."
+
 #
-# File: tools.h, line: 66
-#, fuzzy
+#: tools.h:66
 msgid "Choose a style of text. Click on your drawing and you can start typing."
 msgstr "Изабери изглед текста. Кликни на цртеж и почни да куцаш."
+
 #
-# File: tools.h, line: 67
+#: tools.h:67
 msgid "Pick a magical effect to use on your drawing!"
 msgstr "Изабери магични ефекат за твој цртеж!"
+
 #
-# File: tools.h, line: 68
+#: tools.h:68
 msgid "Undo!"
 msgstr "Опозови!"
+
 #
-# File: tools.h, line: 69
+#: tools.h:69
 msgid "Redo!"
 msgstr "Понови!"
+
 #
-# File: tools.h, line: 70
+#: tools.h:70
 msgid "Eraser!"
 msgstr "Брисач!"
+
 #
-# File: tools.h, line: 71
+#: tools.h:71
 msgid "You now have a blank sheet to draw on!"
 msgstr "Имаш сада чисти папир за цртање!"
+
 #
-# File: tools.h, line: 72
+#: tools.h:72
 msgid "Open..."
 msgstr "Отвори..."
+
 #
-# File: tools.h, line: 73
+#: tools.h:73
 msgid "Your image has been saved!"
 msgstr "Твоја слика је сачувана!"
+
 #
-# File: tools.h, line: 74
+#: tools.h:74
 msgid "Printing..."
 msgstr "Штампа се..."
+
 #
-# File: tools.h, line: 75
+#: tools.h:75
 msgid "Bye bye!"
 msgstr "Ћао!"
+
 #
-# File: tools.h, line: 78
+#: tools.h:78
 msgid "Let go of the button to complete the line."
 msgstr "Пусти дугме да би довршио линију."
+
 #
-# File: tools.h, line: 79
+#: tools.h:79
 msgid "Hold the button to stretch the shape."
 msgstr "Држи дугме да би растезао облик."
+
 #
-# File: tools.h, line: 80
+#: tools.h:80
 msgid "Move the mouse to rotate the shape. Click to draw it."
 msgstr "Мрдај мишем да би окретао облик. Кликни за цртање."
+
 #
-# File: tools.h, line: 81
+#: tools.h:81
 msgid "Ok then... Let's keep drawing this one!"
 msgstr "Добро онда... Хајде да наставимо са цртањем!"
+
 #
 #~ msgid "Okay"
 #~ msgstr "Добро"
