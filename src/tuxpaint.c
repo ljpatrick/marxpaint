@@ -430,7 +430,8 @@ state_type * state_stamps[MAX_STAMPS];
 #ifndef NOSOUND
 Mix_Chunk * snd_stamps[MAX_STAMPS];
 #endif
-SDL_Surface * img_stamp_thumbs[MAX_STAMPS];
+SDL_Surface * img_stamp_thumbs[MAX_STAMPS],
+	    * img_stamp_thumbs_premirror[MAX_STAMPS];
 
 SDL_Surface * img_shapes[NUM_SHAPES], * img_shape_names[NUM_SHAPES];
 SDL_Surface * img_magics[NUM_MAGICS], * img_magic_names[NUM_MAGICS];
@@ -4933,6 +4934,27 @@ void setup(int argc, char * argv[])
         img_stamp_thumbs[i] = NULL;
       }
 
+      
+      if (img_stamps_premirror[i] != NULL && !disable_stamp_controls)
+      {
+	/* Also thumbnail the pre-drawn mirror version, if any: */
+
+        if (img_stamps_premirror[i]->w > 40 ||
+	    img_stamps_premirror[i]->h > 40)
+        {
+          img_stamp_thumbs_premirror[i] =
+	    thumbnail(img_stamps_premirror[i], 40, 40, 1);
+        }
+        else
+        {
+          img_stamp_thumbs_premirror[i] = NULL;
+        }
+      }
+      else
+      {
+	img_stamps_premirror[i] = NULL;
+      }
+
       state_stamps[i] = malloc(sizeof(state_type));
 
       if (inf_stamps[i] == NULL)
@@ -5854,10 +5876,25 @@ void draw_stamps(void)
     {
       /* Draw the stamp itself: */
 
-      if (img_stamp_thumbs[stamp] != NULL)
-	img = img_stamp_thumbs[stamp];
+      if (state_stamps[stamp]->mirrored &&
+ 	  img_stamps_premirror[stamp] != NULL)
+      {
+	/* Use pre-drawn mirrored version! */
+
+	if (img_stamp_thumbs_premirror[stamp] != NULL)
+	  img = img_stamp_thumbs_premirror[stamp];
+	else
+	  img = img_stamps_premirror[stamp];
+      }
       else
-	img = img_stamps[stamp];
+      {
+	/* Use normal version: */
+	      
+        if (img_stamp_thumbs[stamp] != NULL)
+	  img = img_stamp_thumbs[stamp];
+        else
+	  img = img_stamps[stamp];
+      }
 
 
       /* Where to put it? */
@@ -5868,7 +5905,8 @@ void draw_stamps(void)
       base_y = ((i / 2) * 48) + 40 + ((48 - (img->h)) / 2) + off_y;
 
 
-      if (state_stamps[stamp]->mirrored)
+      if (state_stamps[stamp]->mirrored &&
+	  img_stamps_premirror[stamp] == NULL)
       {
 	/* It's mirrored!: */
 	      
