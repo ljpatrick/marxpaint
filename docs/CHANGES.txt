@@ -55,9 +55,15 @@ http://www.newbreedsoftware.com/tuxpaint/
   * Added "--noshortcuts" option, to disable keyboard shortcuts
     (e.g., [Ctrl]+[S] for Save, etc.)
 
+  * Created missing locale-specific documentation directories.
+    (Unfortunately, most are still empty!)
+
   * Added more copies of the GPL: Swedish, Romanian, Polish, Lithuanean,
     Korean, Japanese, Indonesian, Hebrew, Greek, Danish, Czech, Chinese
     and Catalan.
+
+  * Fixed locale typos in source ("cs" not "cz" for Czech, and "sv" not "se"
+    for Swedish).
 
   * Updated default configuration file to include examples of some newer
     options.
