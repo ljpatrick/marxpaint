@@ -7,12 +7,12 @@
   bill@newbreedsoftware.com
   http://www.newbreedsoftware.com/tuxpaint/
   
-  June 14, 2002 - November 14, 2003
+  June 14, 2002 - December 18, 2003
 */
 
 
 #define VER_VERSION     "0.9.13"
-#define VER_DATE        "2003.11.14"
+#define VER_DATE        "2003.12.18"
 
 
 /* #define DEBUG */
@@ -3632,6 +3632,7 @@ void show_lang_usage(FILE * f, char * prg)
     "\n"
     "LANGUAGE may be one of:\n"
     "  english      american-english\n"
+    "  basque       euskara\n"
     "  bokmal\n"
     "  brazilian    brazilian-portuguese   portugues-brazilian\n"
     "  british      british-english\n"
@@ -3681,6 +3682,7 @@ void show_locale_usage(FILE * f, char * prg)
     "\n"
     "LOCALE may be one of:\n"
     "  C       (English      American English)\n"
+    "  bs_BA   (Baque        Euskara)\n"
     "  nb_NO   (Bokmal)\n"
     "  pt_BR   (Brazilian    Brazilian Portuguese   Portugues Brazilian)\n"
     "  en_GN   (British      British English)\n"
@@ -4288,6 +4290,16 @@ void setup(int argc, char * argv[])
       {
 	putenv("LANG=ja_JP.UTF-8");
 	putenv("LC_ALL=ja_JP.UTF-8");
+      }
+    else if (strcmp(langstr, "bokmal") == 0)
+      {
+	putenv("LANG=nb_NN");
+	putenv("LC_ALL=nb_NN");
+      }
+    else if (strcmp(langstr, "basque") == 0 || strcmp(langstr, "euskara") == 0)
+      {
+	putenv("LANG=bs_BA");
+	putenv("LC_ALL=bs_BA");
       }
     else if (strcmp(langstr, "korean") == 0)
       {

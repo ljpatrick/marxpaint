@@ -207,6 +207,7 @@ uninstall:
 	-rm -r $(DATA_PREFIX)
 	-rm -r $(DOC_PREFIX)
 	-rm $(MAN_PREFIX)/man1/tuxpaint.1.gz
+	-rm $(LOCALE_PREFIX)bs/LC_MESSAGES/tuxpaint.mo
 	-rm $(LOCALE_PREFIX)ca/LC_MESSAGES/tuxpaint.mo
 	-rm $(LOCALE_PREFIX)cs/LC_MESSAGES/tuxpaint.mo
 	-rm $(LOCALE_PREFIX)da/LC_MESSAGES/tuxpaint.mo
@@ -343,6 +344,11 @@ install-gettext:
 	@install -d $(LOCALE_PREFIX)pt_BR/LC_MESSAGES
 	@cp trans/pt_br.mo $(LOCALE_PREFIX)pt_BR/LC_MESSAGES/tuxpaint.mo
 	@chmod 644 $(LOCALE_PREFIX)pt_BR/LC_MESSAGES/tuxpaint.mo
+	@#
+	@echo "   bs_BA ...Basque..."
+	@install -d $(LOCALE_PREFIX)bs/LC_MESSAGES
+	@cp trans/bs.mo $(LOCALE_PREFIX)bs/LC_MESSAGES/tuxpaint.mo
+	@chmod 644 $(LOCALE_PREFIX)bs/LC_MESSAGES/tuxpaint.mo
 	@#
 	@echo "   en_GB ...British English..."
 	@install -d $(LOCALE_PREFIX)en_GB/LC_MESSAGES
@@ -578,6 +584,7 @@ obj/BeOS_Print.o:	src/BeOS_Print.cpp obj src/BeOS_print.h
 # Build the translation files for gettext
 
 translations: trans \
+	trans/bs.mo \
 	trans/ca.mo \
 	trans/cs.mo \
 	trans/da.mo \
@@ -597,6 +604,7 @@ translations: trans \
 	trans/lt.mo \
 	trans/ms.mo \
 	trans/nl.mo \
+	trans/nb.mo \
 	trans/nn.mo \
 	trans/pl.mo \
 	trans/pt_br.mo \
@@ -615,6 +623,10 @@ trans:
 	@echo "...Preparing translation files..."
 	@mkdir trans
 
+trans/bs.mo:	src/messages/bs.po
+	@echo "   bs_BA ...Basque..."
+	@msgfmt src/messages/bs.po -o trans/bs.mo
+	
 trans/ca.mo:	src/messages/ca.po
 	@echo "   ca_ES ...Catalan..."
 	@msgfmt src/messages/ca.po -o trans/ca.mo
