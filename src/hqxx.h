@@ -27,21 +27,17 @@
 
 #include "SDL.h"
 
-#define Ymask 0x00FF0000
-#define Umask 0x0000FF00
-#define Vmask 0x000000FF
+#define Ymask 0xF800
+#define Umask 0x07E0
+#define Vmask 0x001F
 
-//#define Ymask 0xF800
-//#define Umask 0x07E0
-//#define Vmask 0x001F
+//trY in 32 = 0x00300000
+//trU in 32 = 0x00000700
+//trV in 32 = 0x00000006
 
-#define trY 0x00300000
-#define trU 0x00000700
-#define trV 0x00000006
-
-//#define trY   0x3000
-//#define trU   0x00C0
-//#define trV   0x0006
+#define trY   0x3000
+#define trU   0x00C0
+#define trV   0x0006
 
 
 Uint16 hqxx_getpixel(SDL_Surface * surface, int x, int y, Uint8 * alpha);

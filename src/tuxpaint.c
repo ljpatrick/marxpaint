@@ -38,7 +38,7 @@
 /* #define USE_HWSURFACE */
 
 
-/* #define USE_HQ4X */
+#define USE_HQ4X
 
 
 /* Disable fancy cursors in fullscreen mode, to avoid SDL bug: */
@@ -3007,7 +3007,7 @@ void stamp_draw(int x, int y)
   
   /* Shrink or grow it! */
 
-#ifdef HQ4X
+#ifdef USE_HQ4X
   if (state_stamps[cur_stamp]->size == 400)
     {
       /* Use high quality 4x filter! */

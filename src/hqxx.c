@@ -181,7 +181,9 @@ void InitLUTs(Uint32 * RGBtoYUV)
 	      Y = (r + g + b) >> 2;
 	      u = 128 + ((r - b) >> 2);
 	      v = 128 + ((-r + 2 * g - b) >> 3);
-	      RGBtoYUV[(i << 11) + (j << 5) + k] = (Y << 16) + (u << 8) + v;
+	      RGBtoYUV[(i << 11) + (j << 5) + k] = (((Y & 0xF8) << 8) |
+						    ((u & 0xFE) << 3) |
+						    (v >> 3));
 	    }
 	}
     }
@@ -208,11 +210,15 @@ inline void Interp2(SDL_Surface * dest, int x, int y, Uint16 c1, Uint16 c2, Uint
 {
   Uint32 c;
 
+  /* FIXME? */
+  
   // c = (c1 * 2 + c2 + c3) >> 2;
 
   c = ((((c1 & 0x07E0) * 2 + (c2 & 0x07E0) + (c3 & 0x07E0)) & (0x07E0 << 2)) +
        (((c1 & 0xF81F) * 2 + (c2 & 0xF81F) + (c3 & 0xF81F)) & (0xF81F << 2)))
 								      >> 2;
+
+
   hqxx_putpixel(dest, x, y, c, alpha);
 }
 
@@ -246,7 +252,7 @@ inline void Interp4(SDL_Surface * dest, int x, int y, Uint16 c1, Uint16 c2, Uint
   
   c = ((((c1 & 0x07E0) * 2 +
 	 ((c2 & 0x07E0) +
-	  (c3 & 0x07E0)) * 7) & 0x07E00) +
+	  (c3 & 0x07E0)) * 7) & 0x7E00) +
        (((c1 & 0xF81F) * 2 +
 	 ((c2 & 0xF81F) +
 	  (c3 & 0xF81F)) * 7) & 0xF81F0)) >> 4;

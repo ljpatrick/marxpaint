@@ -178,9 +178,9 @@ void hq4x_32(SDL_Surface * src, SDL_Surface * dest,
   int prevline, nextline;
   Uint16 w[10];
   Uint8 a;
-  Uint32 YUV1, YUV2;
   int pattern;
   int flag;
+  Uint32 YUV1, YUV2;
 
   
   /*
