@@ -6977,20 +6977,10 @@ static void create_button_labels(void)
   for (i = 0; i < NUM_SHAPES; i++)
     img_shape_names[i] = do_render_button_label(shape_names[i]);
 
-
-  /* 'Open' label: */
-
-  img_openlabels_open = do_render_button_label(textdir(gettext_noop("Open")));
-
-
-  /* 'Erase' label: */
-
-  img_openlabels_erase = do_render_button_label(textdir(gettext_noop("Erase")));
-
-
-  /* 'Back' label: */
-
-  img_openlabels_back = do_render_button_label(textdir(gettext_noop("Back")));
+  // buttons for the file open dialog
+  img_openlabels_open = do_render_button_label(gettext_noop("Open"));
+  img_openlabels_erase = do_render_button_label(gettext_noop("Erase"));
+  img_openlabels_back = do_render_button_label(gettext_noop("Back"));
 }
 
 
