@@ -6809,7 +6809,7 @@ static void loadstamp_callback(const char *restrict const dir, unsigned dirlen, 
           snprintf(fname, sizeof fname, "%s/%s", dir, files[i].str);
           if(num_stamps == max_stamps)
             {
-              max_stamps = max_stamps * 5 / 4 + 3;
+              max_stamps = max_stamps * 5 / 4 + 15;
               stamp_data = realloc(stamp_data, max_stamps * sizeof *stamp_data);
             }
           stamp_data[num_stamps] = calloc(1, sizeof *stamp_data[num_stamps]);
@@ -6829,7 +6829,7 @@ static void loadstamp_callback(const char *restrict const dir, unsigned dirlen, 
               stamp_data[num_stamps]->ssnd = use_sound ? loadsound(fname) : NULL;
 #endif
               loadstamp_finisher(num_stamps);
-              num_stamps++;       // FIXME: no limit and no resizing right now...
+              num_stamps++;
             }
           else
             {
@@ -12058,6 +12058,7 @@ static void cleanup(void)
       free(stamp_data[i]);
       stamp_data[i] = NULL;
     }
+  free(stamp_data);
 
   free_surface_array( img_brushes, num_brushes );
   free_surface_array( img_tools, NUM_TOOLS );
