@@ -4994,6 +4994,11 @@ void setup(int argc, char * argv[])
 #endif
 
 
+  /* Set window icon and caption: */
+
+  seticon();
+  SDL_WM_SetCaption("Tux Paint", "Tux Paint");
+
   /* Open Window: */
 
   if (fullscreen)
@@ -5099,12 +5104,6 @@ void setup(int argc, char * argv[])
 
   do_setcursor(cursor_watch);
   
-
-
-  /* Set window icon and caption: */
-
-  seticon();
-  SDL_WM_SetCaption("Tux Paint", "Tux Paint");
 
 
   /* Create drawing canvas: */
@@ -5716,7 +5715,6 @@ void seticon(void)
   Uint8 * mask;
   SDL_Surface * icon;
 
-
   /* Load icon into a surface: */
 
 #ifndef WIN32
@@ -5735,21 +5733,21 @@ void seticon(void)
     }
 
 
+#ifndef WIN32
   /* Create mask: */
-
   masklen = (((icon -> w) + 7) / 8) * (icon -> h);
   mask = malloc(masklen * sizeof(Uint8));
   memset(mask, 0xFF, masklen);
 
-
   /* Set icon: */
-
   SDL_WM_SetIcon(icon, mask);
 
-
   /* Free icon surface & mask: */
-
   free(mask);
+#else
+  /* Set icon: */
+  SDL_WM_SetIcon(icon, NULL);
+#endif
   SDL_FreeSurface(icon);
 
 
