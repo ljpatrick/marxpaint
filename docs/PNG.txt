@@ -2,11 +2,11 @@ PNG.txt for Tux Paint
 
 Tux Paint - A simple drawing program for children.
 
-Copyright 2002 by Bill Kendrick
+Copyright 2005 by Bill Kendrick
 bill@newbreedsoftware.com
 http://www.newbreedsoftware.com/tuxpaint/
 
-June 27, 2002 - November 7, 2002
+June 27, 2002 - March 9, 2005
 
 
 About PNGs
@@ -112,6 +112,9 @@ How To Make PNGs
     
     Photoshop (Adobe)
       http://www.adobe.com/products/photoshop/main.html
+
+    PIXresizer (Bluefive software)
+      http://bluefive.pair.com/pixresizer.htm
 
 
   Macintosh Users
