@@ -13716,7 +13716,7 @@ static unsigned char * textdir(const unsigned char * const str)
   printf("ORIG_DIR: %s\n", str);
 #endif
 
-  dstr = (unsigned char *) malloc((strlen(str) + 5) * sizeof(unsigned char));
+  dstr = malloc(strlen(str) + 5);
 
   if (need_right_to_left)
     {
