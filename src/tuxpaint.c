@@ -459,6 +459,53 @@ static TTF_Font *BUGFIX_TTF_OpenFont206(const char * const file, int ptsize)
 )
 #endif
 
+typedef struct info_type {
+  double ratio;
+  unsigned tinter;
+  int colorable;
+  int tintable;
+  int mirrorable;
+  int flipable;
+} info_type;
+
+
+typedef struct state_type {
+  int mirrored;
+  int flipped;
+  unsigned min,size,max;
+} state_type;
+
+
+enum {
+  SAVE_OVER_PROMPT,
+  SAVE_OVER_ALWAYS,
+  SAVE_OVER_NO
+};
+
+
+enum {
+  STARTER_OUTLINE,
+  STARTER_SCENE
+};
+
+
+/* Show debugging stuff: */
+
+static void debug(const char * const str)
+{
+#ifndef DEBUG
+  (void)str;
+#else
+  fprintf(stderr, "DEBUG: %s\n", str);
+  fflush(stderr);
+#endif
+}
+
+///////////////////////////////////////////////////////////////////
+// Language stuff
+
+static int language;
+
 /* Possible languages: */
 
 enum {
@@ -588,39 +635,115 @@ static int lang_use_right_to_left[] = {
 };
 
 
-typedef struct info_type {
-  double ratio;
-  unsigned tinter;
-  int colorable;
-  int tintable;
-  int mirrorable;
-  int flipable;
-} info_type;
+static int need_own_font(int l)
+{
+  int i, need;
+
+  need = 0;
+
+  for (i = 0; lang_use_own_font[i] != -1 && need == 0; i++)
+    {
+      if (lang_use_own_font[i] == l)
+	{
+	  need = 1;
+	}
+    }
+
+  return need;
+}
 
 
-typedef struct state_type {
-  int mirrored;
-  int flipped;
-  unsigned min,size,max;
-} state_type;
+static int need_right_to_left(int l)
+{
+  int i, need;
+
+  need = 0;
+
+  for (i = 0; lang_use_right_to_left[i] != -1 && need == 0; i++)
+    {
+      if (lang_use_right_to_left[i] == l)
+	{
+	  need = 1;
+	}
+    }
+
+  return need;
+}
 
 
-enum {
-  SAVE_OVER_PROMPT,
-  SAVE_OVER_ALWAYS,
-  SAVE_OVER_NO
-};
+
+/* Determine the current language/locale, and set the language string: */
+
+static int current_language(void)
+{
+  char * loc;
+#ifdef WIN32
+  char str[128];
+#endif
+  int lang, i, found;
 
 
-enum {
-  STARTER_OUTLINE,
-  STARTER_SCENE
-};
+  /* Default... */
 
+  lang = LANG_EN;
+
+
+#ifndef WIN32
+  loc = setlocale(LC_MESSAGES, NULL);
+  if (loc != NULL)
+    {
+      if (strstr(loc, "LC_MESSAGES") != NULL)
+	loc = getenv("LANG");
+    }
+#else
+  loc = getenv("LANGUAGE");
+  if (!loc)
+    {
+      loc = g_win32_getlocale();
+      if (loc)
+	{
+	  snprintf(str, sizeof(str), "LANGUAGE=%s", loc);
+	  putenv(str);
+	}
+    }
+#endif
+
+  debug(loc);
+
+  if (loc != NULL)
+    {
+      /* Which, if any, of the locales is it? */
+
+      found = 0;
+      
+      for (i = 0; i < NUM_LANGS && found == 0; i++)
+	{
+	  // Case-insensitive (both "pt_BR" and "pt_br" work, etc.)
+      	  if (strncasecmp(loc, lang_prefixes[i], strlen(lang_prefixes[i])) == 0)
+	    {
+	      lang = i;
+	      found = 1;
+	    }
+	}
+    }
+
+#ifdef DEBUG
+  printf("lang=%d\n\n", lang);
+  sleep(10);
+#endif
+
+
+  return lang;
+}
+
+
+
+
+///////////////////////////////////////////////////////////////////
 
 /* Globals: */
 
-static int use_sound, fullscreen, disable_quit, simple_shapes, language,
+static int use_sound, fullscreen, disable_quit, simple_shapes,
   disable_print, print_delay, only_uppercase, promptless_save, grab_input,
   wheely, no_fancy_cursors, keymouse, mouse_x, mouse_y,
   mousekey_up, mousekey_down, mousekey_left, mousekey_right,
@@ -813,7 +936,6 @@ static Uint32 getpixel(SDL_Surface * surface, int x, int y);
 static void putpixel(SDL_Surface * surface, int x, int y, Uint32 pixel);
 static void clipped_putpixel(SDL_Surface * dest, int x, int y, Uint32 c);
 
-static void debug(const char * const str);
 static void do_undo(void);
 static void do_redo(void);
 static void render_brush(void);
@@ -876,7 +998,6 @@ static void scan_fill(int cnt, point_type * pts);
 static int clip_polygon(int n, fpoint_type * pin, fpoint_type * pout);
 #endif
 static void wait_for_sfx(void);
-static int current_language(void);
 static int stamp_colorable(int stamp);
 static int stamp_tintable(int stamp);
 static void rgbtohsv(Uint8 r8, Uint8 g8, Uint8 b8, float *h, float *s, float *v);
@@ -899,8 +1020,6 @@ static void parse_options(FILE * fi);
 static void do_setcursor(SDL_Cursor * c);
 static const char * great_str(void);
 static void draw_image_title(int t, int x);
-static int need_own_font(int l);
-static int need_right_to_left(int l);
 static void handle_keymouse(SDLKey key, Uint8 updown);
 static void handle_active(SDL_Event * event);
 static char * remove_slash(char * path);
@@ -8381,19 +8500,6 @@ static void clipped_putpixel(SDL_Surface * dest, int x, int y, Uint32 c)
 
 
 
-/* Show debugging stuff: */
-
-static void debug(const char * const str)
-{
-#ifndef DEBUG
-  (void)str;
-#else
-  fprintf(stderr, "DEBUG: %s\n", str);
-  fflush(stderr);
-#endif
-}
-
-
 /* Undo! */
 
 static void do_undo(void)
@@ -12872,75 +12978,6 @@ static void wait_for_sfx(void)
 }
 
 
-/* Determine the current language/locale, and set the language string: */
-
-static int current_language(void)
-{
-  char * loc;
-#ifdef WIN32
-  char str[128];
-#endif
-  int lang, i, found;
-
-
-  /* Default... */
-
-  lang = LANG_EN;
-
-
-#ifndef WIN32
-  loc = setlocale(LC_MESSAGES, NULL);
-  if (loc != NULL)
-    {
-      if (strstr(loc, "LC_MESSAGES") != NULL)
-	loc = getenv("LANG");
-    }
-#else
-  loc = getenv("LANGUAGE");
-  if (!loc)
-    {
-      loc = g_win32_getlocale();
-      if (loc)
-	{
-	  snprintf(str, sizeof(str), "LANGUAGE=%s", loc);
-	  putenv(str);
-	}
-    }
-#endif
-
-  debug(loc);
-
-  if (loc != NULL)
-    {
-      /* Which, if any, of the locales is it? */
-
-      found = 0;
-      
-      for (i = 0; i < NUM_LANGS && found == 0; i++)
-	{
-	  /* Case-insensitive */
-	  /* (so that, e.g. "pt_BR" is recognized as "pt_br") */
-      
-	  if (strncasecmp(loc, lang_prefixes[i], strlen(lang_prefixes[i])) == 0)
-	  /* if (strcasecmp(loc, lang_prefixes[i]) == 0) */
-	    {
-	      lang = i;
-	      found = 1;
-	    }
-	}
-    }
-
-#ifdef DEBUG
-  printf("lang=%d\n\n", lang);
-  sleep(10);
-#endif
-
-
-  return lang;
-}
-
-
-
 ////////////////////////////////////////////////////////////
 // stamp outline
 #ifndef LOW_QUALITY_STAMP_OUTLINE
@@ -14217,43 +14254,6 @@ static void draw_image_title(int t, int x)
   dest.x = x + (96 - img_title_names[t]->w) / 2;;
   dest.y = (40 - img_title_names[t]->h) / 2;
   SDL_BlitSurface(img_title_names[t], NULL, screen, &dest);
-}
-
-
-
-static int need_own_font(int l)
-{
-  int i, need;
-
-  need = 0;
-
-  for (i = 0; lang_use_own_font[i] != -1 && need == 0; i++)
-    {
-      if (lang_use_own_font[i] == l)
-	{
-	  need = 1;
-	}
-    }
-
-  return need;
-}
-
-
-static int need_right_to_left(int l)
-{
-  int i, need;
-
-  need = 0;
-
-  for (i = 0; lang_use_right_to_left[i] != -1 && need == 0; i++)
-    {
-      if (lang_use_right_to_left[i] == l)
-	{
-	  need = 1;
-	}
-    }
-
-  return need;
 }
 
 
