@@ -2222,7 +2222,7 @@ static void show_progress_bar(void);
 static void do_print(void);
 static void strip_trailing_whitespace(char * buf);
 static void do_render_cur_text(int do_blit);
-static void loadfonts(const char * const dir, int fatal);
+static void loadfonts(const char * const dir);
 static char * uppercase(char * str);
 static unsigned char * textdir(const unsigned char * const str);
 static SDL_Surface * do_render_button_label(const char * const label);
@@ -2265,25 +2265,15 @@ static int charsize(char c);
 
 int main(int argc, char * argv[])
 {
-  SDL_Surface * tmp_surf;
-  SDL_Color black = {0, 0, 0, 0};
-  SDL_Rect dest;
-  char tmp_str[128];
-
   /* Set up locale support */
-  
   setlocale(LC_ALL, "");
 
-
   /* Set up! */
-
   setup(argc, argv);
 
-
+  // Let the user know we're (nearly) ready now
   do_setcursor(cursor_arrow);
-
   playsound(0, SND_HARP, 1);
-  
   do_wait();
 
 
@@ -6215,7 +6205,7 @@ static int compare_ftw_str(const void *v1, const void *v2)
   return -strcmp(s1, s2);
 }
 
-static int tp_ftw(char *restrict const dir, unsigned dirlen, int rsrc,
+static void tp_ftw(char *restrict const dir, unsigned dirlen, int rsrc,
   void (*fn)(const char *restrict const dir, unsigned dirlen, tp_ftw_str *files, unsigned count)
   )
 {
@@ -6225,7 +6215,7 @@ static int tp_ftw(char *restrict const dir, unsigned dirlen, int rsrc,
   /* Open the directory: */
   DIR *d = opendir(dir);
   if (!d)
-    return errno;
+    return;
 
   unsigned num_file_names = 0;
   unsigned max_file_names = 0;
@@ -6438,7 +6428,7 @@ static void loadfont_callback(const char *restrict const dir, unsigned dirlen, t
 
 
 
-static void loadfonts(const char * const dir, int fatal)
+static void loadfonts(const char * const dir)
 {
   char buf[TP_FTW_PATHSIZE];
   unsigned dirlen = strlen(dir);
@@ -6649,41 +6639,41 @@ static void load_stamps(void)
 static void load_user_fonts(void)
 {
   char * homedirdir;
-  loadfonts(DATA_PREFIX "fonts", 1);
+  loadfonts(DATA_PREFIX "fonts");
 
   if (!no_system_fonts)
   {
 #ifdef WIN32
-    loadfonts("%SystemRoot%\\Fonts", 0);
+    loadfonts("%SystemRoot%\\Fonts");
 #elif defined(__BEOS__)
-    loadfonts("/boot/home/config/font/ttffonts", 0);
-    loadfonts("/usr/share/fonts", 0);
-    loadfonts("/usr/X11R6/lib/X11/fonts", 0);
+    loadfonts("/boot/home/config/font/ttffonts");
+    loadfonts("/usr/share/fonts");
+    loadfonts("/usr/X11R6/lib/X11/fonts");
 #elif defined(__APPLE__)
-    loadfonts("/System/Library/Fonts", 0);
-    loadfonts("/Library/Fonts", 0);
-    loadfonts(macosx.fontsPath, 0);
-    loadfonts("/usr/share/fonts", 0);
-    loadfonts("/usr/X11R6/lib/X11/fonts", 0);
+    loadfonts("/System/Library/Fonts");
+    loadfonts("/Library/Fonts");
+    loadfonts(macosx.fontsPath);
+    loadfonts("/usr/share/fonts");
+    loadfonts("/usr/X11R6/lib/X11/fonts");
 #elif defined(__sun__)
-    loadfonts("/usr/openwin/lib/X11/fonts", 0);
-    loadfonts("/usr/share/fonts", 0);
-    loadfonts("/usr/X11R6/lib/X11/fonts", 0);
+    loadfonts("/usr/openwin/lib/X11/fonts");
+    loadfonts("/usr/share/fonts");
+    loadfonts("/usr/X11R6/lib/X11/fonts");
 #else
-    loadfonts("/usr/share/feh/fonts", 0);
-    loadfonts("/usr/share/fonts", 0);
-    loadfonts("/usr/X11R6/lib/X11/fonts", 0);
-    loadfonts("/usr/share/texmf/fonts", 0);
-    loadfonts("/usr/share/grace/fonts/type1", 0);
-    loadfonts("/usr/share/hatman/fonts", 0);
-    loadfonts("/usr/share/icewm/themes/jim-mac", 0);
-    loadfonts("/usr/share/vlc/skins2/fonts", 0);
-    loadfonts("/usr/share/xplanet/fonts", 0);
+    loadfonts("/usr/share/feh/fonts");
+    loadfonts("/usr/share/fonts");
+    loadfonts("/usr/X11R6/lib/X11/fonts");
+    loadfonts("/usr/share/texmf/fonts");
+    loadfonts("/usr/share/grace/fonts/type1");
+    loadfonts("/usr/share/hatman/fonts");
+    loadfonts("/usr/share/icewm/themes/jim-mac");
+    loadfonts("/usr/share/vlc/skins2/fonts");
+    loadfonts("/usr/share/xplanet/fonts");
 #endif
   }
 
   homedirdir = get_fname("fonts");
-  loadfonts(homedirdir, 0);
+  loadfonts(homedirdir);
   free(homedirdir);
 
   groupfonts();
@@ -7397,7 +7387,7 @@ static void setup(int argc, char * argv[])
     }
 
 
-////////// quickly: title image, version, progress bar, and watch cursor
+  ////////// quickly: title image, version, progress bar, and watch cursor
 
   img_title = loadimage(DATA_PREFIX "images/title.png");
   img_progress = loadimage(DATA_PREFIX "images/ui/progress.png");
@@ -7428,13 +7418,6 @@ static void setup(int argc, char * argv[])
       cleanup();
       exit(1);
     }
-
-  SDL_FillRect(screen, NULL, SDL_MapRGB(screen->format, 255, 255, 255));
-
-  dest.x = (WINDOW_WIDTH - img_title->w) / 2;
-  dest.y = (WINDOW_HEIGHT - img_title->h);
-
-  SDL_BlitSurface(img_title, NULL, screen, &dest);
 
   char tmp_str[128];
   snprintf(tmp_str, sizeof(tmp_str), "%s – %s", VER_VERSION, VER_DATE);
@@ -7467,6 +7450,7 @@ static void setup(int argc, char * argv[])
   scale = 2;
 #endif
 
+  // this one first, because we need it yesterday
   cursor_watch = get_cursor(watch_bits, watch_mask_bits,
 			    watch_width, watch_height,
 			    14 / scale, 14 / scale);
@@ -12496,7 +12480,7 @@ static int do_ps_save(FILE * fi, const char *restrict  const fname, SDL_Surface 
   Uint32 (*getpixel)(SDL_Surface *, int, int) = getpixels[surf->format->BytesPerPixel];
   
   fprintf(fi, "%%!PS-Adobe-3.0 EPSF-3.0\n");  // probably broken, but close enough maybe
-  fprintf(fi, "%%%%Title: (TuxPaint)\n");
+  fprintf(fi, "%%%%Title: (%s)\n", fname);
   time_t t = time(NULL);
   strftime(buf, sizeof buf - 1, "%a %b %e %H:%M:%S %Y", localtime(&t));
   fprintf(fi, "%%%%CreationDate: (%s)\n", buf);
