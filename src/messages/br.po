@@ -1,12 +1,12 @@
 # Tux Paint Breton messages.
-# Copyright (C) 2002.
+# Copyright (C) 2004.
 # Korvigelloù An Drouizig <drouizig@drouizig.org>,
 #: shapes.h:129
 msgid ""
 msgstr ""
 "Project-Id-Version: TuxPaint 0.0.1pre\n"
 "POT-Creation-Date: 2002-07-26 12:34+0200\n"
-"PO-Revision-Date: 2003-01-09 19:17+0100\n"
+"PO-Revision-Date: 2004-04-01 20:27-0800\n"
 "Last-Translator: drouizig <drouizig@drouizig.org>\n"
 "Language-Team: Breton <drouizig@drouizig.org>\n"
 "MIME-Version: 1.0\n"
@@ -45,7 +45,7 @@ msgstr "Mat eo !"
 
 #: tuxpaint.c:427
 msgid "Never mind!"
-msgstr "Ne rez ket bil !"
+msgstr "Nullañ !"
 
 #: tuxpaint.c:429
 msgid "There are no saved files!"
@@ -137,7 +137,7 @@ msgstr "Klik ha fiñv al logodenn evit kaout ar rakluc'henn."
 
 #: magic.h:47
 msgid "You can draw in rainbow colors!"
-msgstr "Gallout a rez tresadennañ gant livioù ar Garreg-c'lav !"
+msgstr "Gallout a rez tresañ gant livioù ar Garreg-c'lav !"
 
 #: magic.h:48
 msgid "Click and move the mouse around to turn the picture into a chalk drawing."
@@ -149,7 +149,7 @@ msgstr "Klik ha fiñv al logodenn evit lakaat ar skeudenn da c'hlebiañ."
 
 #: magic.h:50
 msgid "Click and move to draw sparkles."
-msgstr "Klik ha fiñv al logodenn evit tresadennañ gant fulennoù."
+msgstr "Klik ha fiñv al logodenn evit tresañ gant fulennoù."
 
 #: magic.h:51
 msgid "Click and move to fade the colors."
@@ -181,7 +181,7 @@ msgstr "Ul lozañj zo ur garrezenn, hirstummet un tammig."
 
 #: tools.h:131
 msgid "Pick a color and a brush shape to draw with."
-msgstr "Diuz ul liv hag ur moull-livañ evit tresadennañ"
+msgstr "Diuz ul liv hag ur moull-livañ evit tresañ"
 
 #: tools.h:132
 msgid "Pick a picture to stamp around your drawing."
@@ -189,11 +189,11 @@ msgstr "Diuz ur skeudenn evit ensoc'hañ anezhi e-barzh da dresadenn."
 
 #: tools.h:133
 msgid "Click to start drawing a line. Let go to complete it."
-msgstr "Klik evit kregiñ da dresadennañ ul linenn."
+msgstr "Klik evit kregiñ da dresañ ul linenn."
 
 #: tools.h:134
 msgid "Pick a shape. Click to pick the center, drag, then let go when it is the size you want. Move around to rotate it, and click to draw it."
-msgstr "Diuz ur stumm. Klik warnañ, dibab e blas hag e vent, lak anezhañ da dreiñ en ur bouezañ, ha klik evit tresadennañ anezhañ a benn ar fin."
+msgstr "Diuz ur stumm. Klik warnañ, dibab e blas hag e vent, lak anezhañ da dreiñ en ur bouezañ, ha klik evit tresañ anezhañ a benn ar fin."
 
 #: tools.h:135
 msgid "Choose a style of text. Click on your drawing and you can start typing."
