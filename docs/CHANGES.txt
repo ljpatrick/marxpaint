@@ -9,6 +9,7 @@ http://www.newbreedsoftware.com/tuxpaint/
 
 2004.Jun.23 (0.9.14) [cvs]
   * Fixed tinting of low-saturation stamps.
+    Addded 'notintgray' option.
     Karl Ove Hufthammer <karl@huftis.org>
 
   * Improved Windows icon, based on SVG icon.
