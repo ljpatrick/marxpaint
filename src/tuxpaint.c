@@ -289,6 +289,7 @@ int lang_use_unicode[] = {
 
 int lang_use_utf8[] = {
   LANG_EL,
+  LANG_HE,
   LANG_JA,
   LANG_KO,
   /* LANG_LT, */
