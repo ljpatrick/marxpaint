@@ -9,7 +9,7 @@
                            bill@newbreedsoftware.com
                    http://www.newbreedsoftware.com/tuxpaint/
 
-                       June 14, 2002 - September 14, 2004
+                       June 14, 2002 - September 15, 2004
 
      ----------------------------------------------------------------------
 
@@ -104,13 +104,13 @@ Loading Tux Paint
 
   Linux/Unix Users
 
-         Run the following command at a shell prompt (e.g., "$"):
+         Tux Paint should have placed a laucher icon in your KDE and/or GNOME
+         menus, under 'Graphics.'
+
+         Alternatively, you can run the following command at a shell prompt
+         (e.g., "$"):
 
            $ tuxpaint
-
-         It is also possible to make a launcher button or icon (e.g. in GNOME
-         or KDE under Linux). See your desktop environment's documentation
-         for details...
 
          If any errors occur, they will be displayed on the terminal (to
          "stderr").
@@ -130,12 +130,15 @@ Loading Tux Paint
          "stderr.txt" in the Tux Paint folder.
 
          See "INSTALL.txt" for details on customizing the 'Shortcut' icon to
-         Tux Paint, which lets you easily set program options (via the
+         Tux Paint, which is one way you may set program options (via the
          command-line).
 
          To run Tux Paint and provide command-line options directly, you will
          need to run "tuxpaint.exe" from an MSDOS Prompt window. (See
          "INSTALL.txt" for details.)
+
+         (The easy way to set program options is to do so using the
+         Tux Paint Config. application.)
 
      ----------------------------------------------------------------------
 
@@ -174,6 +177,9 @@ Options
 
              --nosysconfig
 
+           The recommended method for altering Tux Paint's configuration is
+           using the Tux Paint Config. application.
+
     Windows Users
 
            The file you should create is called "tuxpaint.cfg" and it should
@@ -182,6 +188,9 @@ Options
            You can use NotePad or WordPad to create this file. Be sure to
            save it as Plain Text, and make sure the filename doesn't have
            ".txt" at the end...
+
+           The recommended method for altering Tux Paint's configuration is
+           using the Tux Paint Config. application.
 
     Available Options
 
@@ -1130,6 +1139,21 @@ Available Tools
                         right of the list to cancel and return to the picture
                         you were drawing.
 
+                 'Starter' Images
+
+                   Along with pictures you've created, Tux Paint can provided
+                   'Starter' images. Opening them is like creating a new
+                   picture, except that the picture isn't blank. 'Starters'
+                   can be like a page from a coloring book (a black-and-white
+                   outline of a picture, which you can then color in), or
+                   like a 3D photograph, where you draw the bits in between.
+
+                   'Starter' images have a green background in the 'Open'
+                   screen. (Normal images have a blue background.) When you
+                   load a 'Starter,' draw on it, and then click 'Save,' it
+                   creates a new picture (it doesn't overwrite the original
+                   'Starter,' so you can use it again later).
+
                  If choose to open a picture, and your current drawing hasn't
                  been saved, you will be prompted as to whether you want to
                  save it or not. (See "Save," below.)
@@ -1392,8 +1416,8 @@ Where Files Go
 
   Personal Files
 
-         You can also create brushes, stamps and fonts in your own directory
-         for Tux Paint to find.
+         You can also create brushes, stamps, fonts and 'starters' in your
+         own directory for Tux Paint to find.
 
     Linux and Unix
 
@@ -1411,9 +1435,9 @@ Where Files Go
 
              C:\Program Files\TuxPaint\userdata
 
-         To add brushes, stamps and fonts, create subdirectories under your
-         personal Tux Paint directory named "brushes", "stamps" and "fonts",
-         respectively.
+         To add brushes, stamps fonts, and 'starters,' create subdirectories
+         under your personal Tux Paint directory named "brushes", "stamps",
+         "fonts" and "starters" respectively.
 
          (For example, if you created a brush named "flower.png", you would
          put it in "~/.tuxpaint/brushes/" under Linux or Unix.)
@@ -1619,6 +1643,78 @@ Fonts
        Simply place them in the "fonts" directory. Tux Paint will load the
        font and provide four different sizes in the 'Letters' selector when
        using the 'Text' tool.
+
+     ----------------------------------------------------------------------
+
+'Starters'
+
+       'Starter' images appear in the 'Open' dialog, along with pictures
+       you've created. They have a green button background, instead of blue.
+
+       Unlike your saved pictures, however, when you select and open a
+       'starter,' you're actually creating a new drawing. Instead of being
+       blank, though, the new drawing contains the contents of the 'starter.'
+       Additionally, as you edit your new picture, the contents of the
+       original 'starter' affect it.
+
+       Coloring-Book Style
+
+         The most basic kind of 'starter' is similar to a picture in a
+         coloring book. It's an outline of a shape which you can then color
+         in and add details to. In Tux Paint, as you draw, type text, or
+         stamp stamps, the outline remains 'above' what you draw. You can
+         erase the parts of the drawing you made, but you can't erase the
+         outline.
+
+         To create this kind of 'starter' image, simply draw an outlined
+         picture in a paint program, make the rest of the graphic transparent
+         (that will come out as white in Tux Paint), and save it as a PNG
+         format file.
+
+       Scene-Style
+
+         Along with the 'coloring-book' style overlay, you can also provide a
+         separate background image as part of a 'starter' picture. The
+         overlay acts the same: it can't be drawn over, erased, or affected
+         by 'Magic' tools. However, the background can be!
+
+         When the 'Eraser' tool is used on a picture based on this kind of
+         'starter' image, rather than turning the canvas white, it returns
+         that part of the canvas to the original background picture.
+
+         By creating both an overlay and a background, you can create a
+         'starter' which simulates depth. Imagine a background that shows the
+         ocean, and an overlay that's a picture of a reef. You can then draw
+         (or stamp) fish in the picture. They'll appear in the ocean, but
+         never 'in front of' the reef.
+
+         To create this kind of 'starter' picture, simply create an overlay
+         (with alpha transparency) as described above, and save it as a PNG.
+         Then create another image (without transparency), and save it with
+         the same filename, but with "-back" appended to the name. (e.g.,
+         "reef-back.png" would be the background ocean picture that
+         corresponds to the "reef.png" overlay, or foreground.)
+
+       The 'starter' images should be the same size as Tux Paint's canvas. In
+       the default 640x480 mode, that is 448x376 pixels. (If you're using
+       800x600 mode, it should be 608x496.)
+
+       Place them in the "starters" directory. When the 'Open' dialog is
+       accessed in Tux Paint, the 'starter' images will appear at the
+       beginning of the list with a green background.
+
+       Note: 'Starters' can't be saved over from within Tux Paint, since
+       loading a 'starter' is really like creating a new image. (Instead of
+       being blank, though there's already something there to work with.) The
+       'Save' command simply creates a new picture, like it would if the
+       'New' command had been used.
+
+       Note: 'Starters' are 'attached' to saved pictures, via a small text
+       file that has the same name as the saved file, but with ".dat" as the
+       extension. This allows the overlay and background, if any, to continue
+       to affect the drawing even after Tux Paint has been quit, or another
+       picture loaded or started. (In other words, if you base a drawing on a
+       'starter' image, it will always be affected by it.)
 
      ----------------------------------------------------------------------
 

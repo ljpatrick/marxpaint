@@ -147,15 +147,15 @@ New Breed Software</p>
   <blockquote>
     <h3>Linux/Unix Users</h3>
     <blockquote>
-      <p>Run the following command at a shell prompt (e.g., "$"):</p>
+      <p>Tux Paint should have placed a laucher icon in your KDE and/or GNOME
+      menus, under 'Graphics.'</p>
+
+      <p>Alternatively, you can run the following command at a shell prompt
+      (e.g.,&nbsp;"$"):</p>
 
       <blockquote>
         <code>$ tuxpaint</code>
       </blockquote>
-
-      <p>It is also possible to make a launcher button or icon
-      (e.g. in GNOME or KDE under Linux).
-      See your desktop environment's documentation for details...</p>
 
       <p>If any errors occur, they will be displayed on the terminal
       (to "stderr").</p>
@@ -180,12 +180,15 @@ New Breed Software</p>
       "stderr.txt" in the Tux&nbsp;Paint folder.</p>
 
       <p>See "INSTALL.txt" for details on customizing the 'Shortcut' icon to 
-      Tux&nbsp;Paint, which lets you easily set program options (via the
+      Tux&nbsp;Paint, which is one way you may set program options (via the
       command-line).</p>
 
       <p>To run Tux&nbsp;Paint and provide command-line options directly, you
       will need to run "<code>tuxpaint.exe</code>" from an MSDOS Prompt window.
       (See "INSTALL.txt" for details.)</p>
+
+      <p>(The <i>easy</i> way to set program options is to do so using the
+      Tux&nbsp;Paint&nbsp;Config. application.)</p>
 
       <br clear=all>
     </blockquote>
@@ -214,7 +217,8 @@ New Breed Software</p>
 
       <h4>Linux Users</h4>
       <blockquote>
-        <p>The file you should create is called "<code><b>.tuxpaintrc</b></code>"
+        <p>The file you should create is called
+	"<code><b>.tuxpaintrc</b></code>"
 	and it should be placed in your home directory.
 	(a.k.a. "<code>~/.tuxpaintrc</code>" or
 	"<code>$HOME/.tuxpaintrc</code>")</p>
@@ -235,6 +239,9 @@ New Breed Software</p>
         <blockquote>
 	  <code>--nosysconfig</code>
         </blockquote>
+	
+	<p>The recommended method for altering Tux&nbsp;Paint's
+	configuration is using the Tux&nbsp;Paint&nbsp;Config. application.</p>
       </blockquote>
 
 
@@ -247,6 +254,9 @@ New Breed Software</p>
 	<p>You can use NotePad or WordPad to create this file.
 	Be sure to save it as Plain Text, and make sure the filename
 	doesn't have ".txt" at the end...</p>
+
+	<p>The recommended method for altering Tux&nbsp;Paint's
+	configuration is using the Tux&nbsp;Paint&nbsp;Config. application.</p>
       </blockquote>
 
 
@@ -1752,18 +1762,22 @@ New Breed Software</p>
         </ul>
         </blockquote>
 
-	<p>Along with pictures you've created, Tux&nbsp;Paint can provided
-	'Starter' images.  Opening them is like creating a new picture,
-	except that the picture isn't blank.  'Starters' can be like a page
-	from a coloring book (a black-and-white outline of a picture, which
-	you can then color in), or like a 3D photograph, where you draw
-	the bits in between.</p>
+        <b>'Starter' Images</b>
 
-	<p>'Starter' images have a green background in the 'Open' screen.
-	(Normal images have a blue background.)  When you load a 'Starter,'
-	draw on it, and then click 'Save,' it creates a new picture
-	(it doesn't overwrite the original 'Starter,' so you can use it
-	again later).</p>
+	<blockquote>
+	  <p>Along with pictures you've created, Tux&nbsp;Paint can provided
+	  'Starter' images.  Opening them is like creating a new picture,
+	  except that the picture isn't blank.  'Starters' can be like a page
+	  from a coloring book (a black-and-white outline of a picture, which
+	  you can then color in), or like a 3D photograph, where you draw
+	  the bits in between.</p>
+
+	  <p>'Starter' images have a green background in the 'Open' screen.
+	  (Normal images have a blue background.)  When you load a 'Starter,'
+	  draw on it, and then click 'Save,' it creates a new picture
+	  (it doesn't overwrite the original 'Starter,' so you can use it
+	  again later).</p>
+	</blockquote>
 
 	<p>If choose to open a picture, and your current drawing hasn't been
 	saved, you will be prompted as to whether you want to save it or not.
@@ -2402,14 +2416,78 @@ New Breed Software</p>
   <blockquote>
     <img src="images/open_open.png" width=48 height=48 alt="" align=right>
 
-    <p>FIXME: To be written!</p>
+    <p>'Starter' images appear in the 'Open' dialog, along with pictures
+    you've created.  They have a green button background, instead of blue.</p>
+    
+    <p>Unlike your saved pictures, however, when you select and open a
+    'starter,' you're actually creating a new drawing.  Instead of being
+    blank, though, the new drawing contains the contents of the 'starter.'
+    Additionally, as you edit your new picture, the contents of the
+    original 'starter' affect it.</p>
+
+    <b>Coloring-Book Style</b>
+    
+    <blockquote>
+      <p>The most basic kind of 'starter' is similar to a picture in a coloring
+      book.  It's an outline of a shape which you can then color in and
+      add details to.  In Tux&nbsp;Paint, as you draw, type text, or stamp
+      stamps, the outline remains 'above' what you draw.  You can erase the
+      parts of the drawing you made, but you can't erase the outline.</p>
+
+      <p>To create this kind of 'starter' image, simply draw an outlined
+      picture in a paint program, make the rest of the graphic transparent
+      (that will come out as white in Tux&nbsp;Paint), and save it as a
+      PNG format file.</p>
+    </blockquote>
+
+    <b>Scene-Style</b>
+
+    <blockquote>
+      <p>Along with the 'coloring-book' style overlay, you can also provide
+      a separate background image as part of a 'starter' picture.  The
+      overlay acts the same: it can't be drawn over, erased, or affected by
+      'Magic' tools.  However, the background can be!</p>
+
+      <p>When the 'Eraser' tool is used on a picture based on this kind of
+      'starter' image, rather than turning the canvas white, it returns that
+      part of the canvas to the original background picture.</p>
+
+      <p>By creating both an overlay and a background, you can create a
+      'starter' which simulates depth.  Imagine a background that shows
+      the ocean, and an overlay that's a picture of a reef.  You can then
+      draw (or stamp) fish in the picture.  They'll appear in the ocean,
+      but never 'in front of' the reef.</p>
+
+      <p>To create this kind of 'starter' picture, simply create an overlay
+      (with alpha transparency) as described above, and save it as a PNG.
+      Then create another image (without transparency), and save it with
+      the same filename, but with "<code>-back</code>" appended to the
+      name.  (e.g., "<code>reef-back.png</code>" would be the background
+      ocean picture that corresponds to the "<code>reef.png</code>"
+      overlay, or foreground.)</p>
+    </blockquote>
+    
+    <p>The 'starter' images should be the same size as Tux&nbsp;Paint's
+    canvas.  In the default 640x480 mode, that is 448x376 pixels.
+    (If you're using 800x600 mode, it should be 608x496.)</p>
     
     <p>Place them in the "<code><b>starters</b></code>" directory.
     When the 'Open' dialog is accessed in Tux&nbsp;Paint, the 'starter'
-    images will appear at the beginning of the list.  They can't be saved
-    over, since loading a 'starter' is really like creating a new image,
-    but instead of being blank, there's already something there to work
-    with.</p>
+    images will appear at the beginning of the list with a green background.</p>
+    
+    <p><b>Note:</b> 'Starters' can't be saved over from within Tux&nbsp;Paint,
+    since loading a 'starter' is really like creating a new image.
+    (Instead of being blank, though there's already something there to work
+    with.)  The 'Save' command simply creates a new picture, like it would
+    if the 'New' command had been used.</p>
+
+    <p><b>Note:</b> 'Starters' are 'attached' to saved pictures, via a
+    small text file that has the same name as the saved file, but with
+    "<code>.dat</code>" as the extension.  This allows the overlay and
+    background, if any, to continue to affect the drawing even after
+    Tux&nbsp;Paint has been quit, or another picture loaded or started.
+    (In other words, if you base a drawing on a 'starter' image, it will
+    always be affected by it.)</p>
 
     <br clear=all>
   </blockquote>
