@@ -303,7 +303,6 @@ int lang_use_utf8[] = {
 };
 
 int lang_use_right_to_left[] = {
-  LANG_EN,
   LANG_HE,
   -1
 };
