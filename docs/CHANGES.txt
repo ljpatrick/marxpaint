@@ -7,268 +7,262 @@ bill@newbreedsoftware.com
 http://www.newbreedsoftware.com/tuxpaint/
 
 
-2004.September.23 (0.9.14) [cvs]
-  * Visual Studio build system included in CVS and source release
-    ('visualc' folder)
-    John Popplewell <john@johnnypops.demon.co.uk>
+2004.September.24 (0.9.14)
+  * New Features:
+    -------------
+    * Added support for immutable "starter" images, which are installed
+      globally with Tux Paint, and provide a starting canvas for images.
+
+      A PNG file with alpha is continuously drawn over whatever changes are
+      made to the current drawing.  For example, a black outline of a cartoon
+      character could be made, to simulate a coloring book.
+      (See 'jetplane.png')
+
+      A second PNG file can be supplied which will be drawn on the normal
+      part of the canvas (where a new picture would normally be all-white),
+      allowing for simulated depth.  Drawing and magic tools all mutilate the
+      background, as it's part of the normal canvas.  However, when editing
+      a picture based on a 'starter' with a background layer, the eraser will
+      bring back the background image.  In a sense, it's like having a photo
+      on the bottom, a clear sheet to draw on in the middle, and a clear sheet
+      with some more photo (which you can't draw on) on top.
+      (See 'reef.png' and 'reef-back.jpg')
+  
+    * Added lockfile support, to prevent Tux Paint from being launched more
+      than once every 30 seconds.  (Disable with "--nolockfile" command-line
+      argument.)  Thanks to Darci Lindgren for suggestion the feature, and
+      Mark K. Kim for suggesting it be time-based.
     
-  * Multiple sizes of erasers are present.
-    (Compile-time #defines can be used to determine how many sizes are
-    available, and their minimum and (approx.) maximum sizes.)
-    Note: Erasers are still square.  Sorry!
+      (Lockfile is "lockfile.dat" in "~/.tuxpaint/" on Linux/Unix, and
+      "userdata\" on Windows.)
 
-  * Initial work to get proper uppercase support in languages other
-    than English.
+    * Added "--nosave" option (suggested by Adam Moore).
 
-  * Added lockfile support, to prevent Tux Paint from being launched more
-    than once every 30 seconds.  (Disable with "--nolockfile" command-line
-    argument.)  Thanks to Darci Lindgren for suggestion the feature, and
-    Mark K. Kim for suggesting it be time-based.
+  * Updated Features:
+    -----------------
+    * Added some more brushes.
+      Jeremie Zimmermann <txptdv@tofz.org>
+
+    * Multiple sizes of erasers are present.
+      (Compile-time #defines can be used to determine how many sizes are
+      available, and their minimum and (approx.) maximum sizes.)
+      Note: Erasers are still square.  Sorry!
+
+    * Fixed tinting of low-saturation stamps.
+      Addded 'notintgray' option.
+      Karl Ove Hufthammer <karl@huftis.org>
+
+    * Made sure shape tool never made a tiny shape.
+      (Should hint users that they should click-and-drag.)
+
+    * Made some colors more unique, so that they affected stamps better.
+      (e.g., purple and magenta used to look the same when used to tint a stamp)
+      Karl Ove Hufthammer <karl@huftis.org>
+
+    * Made current image the selected image on Open screen, if applicable.
+
+    * Now prompts to confirm before printing.
+
+  * New translations:
+    -----------------
+    * Afrikaans translation created.
+      Petri Jooste <rkwjpj@puk.ac.za>
+
+    * Belarusian translation created.
+      Eugene Zelenko <greendeath@mail.ru>
+
+    * Breton translation created.
+      Korvigellou An Drouizig (Philippe) <drouizig@drouizig.org>
+
+    * Bulgarian translation created.
+      Martin Zhekov <mjekov@bginfo.net>
+
+    * Croatian translation created.
+      Nedjeljko Jedvaj <jedvaj.nedeljko@lexunit.com>
+
+    * Hindi translation created.
+      Ankit Malik <greatestankit@yahoo.co.in>
+
+    * Italian documentation translation.
+      Flavio Pastor <flavio.pastore@zonaitalia.it>
+
+    * Klingon (Romanized) translation started.
+      Bill Kendrick <bill@newbreedsoftware.com>
+
+    * Korean README.txt documentation added, in both EUC-KR and UTF-8 formats.
+      Mark K. Kim <tuxNO_SOLICITATIONpaint-dev@cbreak.org>
+
+    * Serbian translation created.
+      Aleksandar Jelenak <jelenak@netlinkplus.net>
+
+    * Slovenian translation created.
+      Urska Colner <urska.colner@agenda.si>,
+      Ines Kovacevic <ines@agenda.si>
+
+    * Traditional Chinese translation created.
+      Song Huang <Song@ossacc.org>
+
+    * Vietnamese translation created.  (Simple version)
+      Le Quang Phan <lqphan@hn.vnn.vn>
+
+    * Welsh translation created.
+      Kevin Donnelly <kevin@dotmon.com>
+
+  * Updated translations:
+    ---------------------
+    * Updated Basque translation.
+      Juan Irigoien <juanirigoien@irakasle.net>
+
+    * Updated Brazilian Portuguese translation.
+      Daniel Jose Viana <danjovic@vespanet.com.br>
+  
+    * Updated British English translation.
+      Gareth Owen <gowen72@yahoo.com>
+
+    * Updated Catalan translation.
+      Pere Pujal Carabantes <ppujal@airtel.net>
     
-    (Lockfile is "lockfile.dat" in "~/.tuxpaint/" on Linux/Unix, and
-    "userdata\" on Windows.)
+    * Updated Danish translation.
+      Mogens Jæger <mogensjaeger@get2net.dk>
 
-  * Updated Catalan translation.
-    Pere Pujal Carabantes <ppujal@airtel.net>
+    * Updated Dutch translation.
+      Geert Stams <geertstams@wanadoo.nl>
 
-  * Updated Brazilian Portuguese translation.
-    Daniel Jose Viana <danjovic@vespanet.com.br>
+    * Updated Finnish translation.
+      Tarmo Toikkanen <tarmo.toikkanen@iki.fi>
 
-  * Added support for immutable "starter" images, which are installed
-    globally with Tux Paint, and provide a starting canvas for images.
+    * Updated French translation.
+      Jacques Chion <Jacques.Chion@wanadoo.fr>
 
-    A PNG file with alpha is continuously drawn over whatever changes are
-    made to the current drawing.  For example, a black outline of a cartoon
-    character could be made, to simulate a coloring book.  (See 'jetplane.png')
+    * Updated German translation.
+      Roland Illig <roland.illig@gmx.de>
 
-    A second PNG file can be supplied which will be drawn on the normal
-    part of the canvas (where a new picture would normally be all-white),
-    allowing for simulated depth.  Drawing and magic tools all mutilate the
-    background, as it's part of the normal canvas.  However, when editing
-    a picture based on a 'starter' with a background layer, the eraser will
-    bring back the background image.  In a sense, it's like having a photo
-    on the bottom, a clear sheet to draw on in the middle, and a clear sheet
-    with some more photo (which you can't draw on) on top.
-    (See 'reef.png' and 'reef-back.png')
+    * Updated Hungarian translation.
+      Török Gábor <gabo@linuxportal.hu>
 
-  * Updated Malay translation.
-    Muhammad Najmi Ahmad Zabidi <mnajem@linuxmail.org>
+    * Updated Icelandic translation.
+      Pjetur G. Hjaltason <pjetur@pjetur.net>
 
-  * Bulgarian translation.
-    Martin Zhekov <mjekov@bginfo.net>
+    * Updated Indonesian translation.
+      Tedi Heriyanto <tedi_h@gmx.net>
+  
+    * Updated Italian translation.
+      Flavio Pastor <flavio.pastore@zonaitalia.it>
 
-  * Began Klingon translation.
+    * Updated Japanese translation.
+      TOYAMA Shin-ichi <shin1@wmail.plala.or.jp>
 
-  * Updated Danish translation.
-    Mogens Jæger <mogensjaeger@get2net.dk>
+    * Updated Korean translation.
+      Mark K. Kim <tuxNO_SOLICITATIONpaint-dev@cbreak.org>
 
-  * Updated Turkish translation.
-    Doruk Fisek <dfisek@fisek.com.tr>
+    * Updated Malay translation.
+      Muhammad Najmi Ahmad Zabidi <mnajem@linuxmail.org>
 
-  * Updated Slovakian translation.
-    Andrej Kacian <andrej@kacian.sk>
+    * Updated Norwegian Nynorsk translation.
+      Karl Ove Hufthammer <karl@huftis.org>
 
-  * Updated Indonesian translation.
-    Tedi Heriyanto <tedi_h@gmx.net>
+    * Updated Portuguese (Portugal) translation.
+      Ricardo Cruz <rick2@aeiu.pt>
 
-  * Updated Slovenian translation.
-    Urska Colner <urska.colner@agenda.si>
+    * Updated Simplified Chinese translation.
+      Wang Jian <lark@linux.net.cn>
 
-  * Updated Finnish translation.
-    Tarmo Toikkanen <tarmo.toikkanen@iki.fi>
-
-  * Updated Tamil translation.
-    Muguntharaj <mugunth@thamizha.com>
-
-  * Updated Dutch translation.
-    Geert Stams <geertstams@wanadoo.nl>
-
-  * Updated Hungarian translation.
-    Török Gábor <gabo@linuxportal.hu>
-
-  * Updated Simplified Chinese translation.
-    Wang Jian <lark@linux.net.cn>
-
-  * Updated Basque translation.
-    Juan Irigoien <juanirigoien@irakasle.net>
-
-  * Updated Afrikaans translation.
-    Petri Jooste <petrijooste@yahoo.com>
-
-  * Updated Portuguese (Portugal) translation.
-    Ricardo Cruz <rick2@aeiu.pt>
-
-  * Updated French translation.
-    Jacques Chion <Jacques.Chion@wanadoo.fr>
-
-  * Updated Spanish translation.
-    Gabriel Gazzán <ggabriel@internet.com.uy>
-
-  * Removed all non-UTF-8 related character handling code,
-    including HTML character entity reference support.
-    (All stamps are now in UTF-8, with scripts to convert
-    to and from PO files.)
-    Karl Ove Hufthammer <karl@huftis.org>
+    * Updated Slovakian translation.
+      Andrej Kacian <andrej@kacian.sk>
     
-  * Cleaned up translation and font code. 
-    Karl Ove Hufthammer <karl@huftis.org>
+    * Updated Spanish translation.
+      Gabriel Gazzán <ggabriel@internet.com.uy>
 
-  * Fixed tinting of low-saturation stamps.
-    Addded 'notintgray' option.
-    Karl Ove Hufthammer <karl@huftis.org>
+    * Updated Tamil translation.
+      Muguntharaj <mugunth@thamizha.com>
 
-  * Improved Windows icon, based on SVG icon.
-    Karl Ove Hufthammer <karl@huftis.org>
+    * Updated Turkish translation.
+      Doruk Fisek <dfisek@fisek.com.tr>
 
-  * Cleaned up desktop entry file.
-    Karl Ove Hufthammer <karl@huftis.org>
+    * Updated Walloon language translation.
+      Pablo Saratxaga <pablo@walon.org>
 
-  * Cleaned up desktop entry file.
-    Karl Ove Hufthammer <karl@huftis.org>
+  * Localization clean-ups:
+    -----------------------
+    * Removed all non-UTF-8 related character handling code,
+      including HTML character entity reference support.
+      (All stamps are now in UTF-8, with scripts to convert
+      to and from PO files.)
+      Karl Ove Hufthammer <karl@huftis.org>
+    
+    * Updated punctuation in many text strings.
+      Karl Ove Hufthammer <karl@huftis.org>
 
-  * Added "--nosave" option (suggested by Adam Moore).
+    * Added "--lang simplified-chinese" option (same as "--lang chinese").
+      Simplified also now looks for "zh_cn.ttf" font, as "zh.ttf"
+      was too ambiguous.  (For backwards-compatibility, it checks for
+      "zh.ttf" if "zh_cn.ttf" is missing, though.)
+      Bill Kendrick <bill@newbreedsoftware.com>,
+      John Popplewell <john@johnnypops.demon.co.uk>
 
-  * Changed default UI font to "FreeSans.ttf"
+    * Cleaned up translation and font code. 
+      Karl Ove Hufthammer <karl@huftis.org>
+  
+    * Language option now sets "LANGUAGE" environment variable
+      (along with LC_ALL and LANG).
+
+    * Initial work to get proper uppercase support in languages other
+      than English.
+
+    * Added reference to "--lang help" to documentation.
+
+  * Porting and packaging updates:
+    ------------------------------
+    * Visual Studio build system included in CVS and source release
+      ('visualc' folder)
+      John Popplewell <john@johnnypops.demon.co.uk>
+
+    * Updated Makefile for easier install.
+      Mark K. Kim <tuxNO_SOLICITATIONpaint-dev@cbreak.org>
+
+    * Cleaned up desktop entry file.
+      Karl Ove Hufthammer <karl@huftis.org>
+
+    * Made sure KDE icon directories exist before trying to copy files to them.
+  
+  * Application icon updates:
+    -------------------------
+    * SVG (Scalable Vector Graphics) icon created.
+      Karl Ove Hufthammer <karl@huftis.org>
+
+    * Added 22x22, 64x64, 96x96, 128x128 and 192x192 icons, based on SVG icon.
+      Karl Ove Hufthammer <karl@huftis.org>
+
+    * Improved Windows icon, based on SVG icon.
+      Karl Ove Hufthammer <karl@huftis.org>
+
+  * Bug fixes:
+    ----------
+    * Fixed "--noprint=yes" not working under Windows and BeOS.
+      Thanks to Adam Moore for pointing out this bug!
+      Bill Kendrick & Mark K. Kim
+
+    * Fixed crash bug when translated text ends in a space.
+      Mark K. Kim & John Popplewell
+  
+    * Fixed security issue with permissions to Tux Paint docs directory.
+      Mark K. Kim <tuxNO_SOLICITATIONpaint-dev@cbreak.org>
+
+    * Fixed 'savedir' bug.  (Was dropping filenames)
+
+    * Removed redundant '--wheelmouse...' listing from "--usage" output.
+
+    * Fixed crash bug when switching from different tools with scrolling
+      collections, and then scrolling.
+      Thanks to Kevin Jarrett for the report, and John Popplewell for a
+      replicable way of crashing it.
+
+  * Misc. Updates:
+    --------------
+    * Keywords ("Title" and "Software") now written into PNGs.
+
+    * Changed default UI font to "FreeSans.ttf"
  
-  * Language option now sets "LANGUAGE" environment variable
-    (along with LC_ALL and LANG).
-
-  * Added reference to "--lang help" to documentation.
-
-  * Updated Breton translation.
-    Korvigelloù An Drouizig <drouizig@drouizig.org>
-
-  * SVG (Scalable Vector Graphics) icon created.
-    Karl Ove Hufthammer <karl@huftis.org>
-
-  * Added 22x22, 64x64, 96x96, 128x128 and 192x192 icons, based on SVG icon.
-    Karl Ove Hufthammer <karl@huftis.org>
-
-  * Fixed "--noprint=yes" not working under Windows and BeOS.
-    Thanks to Adam Moore for pointing out this bug!
-    Bill Kendrick & Mark K. Kim
-
-  * Updated Makefile for easier install.
-    Mark K. Kim <tuxNO_SOLICITATIONpaint-dev@cbreak.org>
-
-  * Fixed crash bug when translated text ends in a space.
-    Mark K. Kim & John Popplewell
-
-  * Belarusian translation created.
-    Eugene Zelenko <greendeath@mail.ru>
-
-  * Croatian translation created.
-    Nedjeljko Jedvaj <jedvaj.nedeljko@lexunit.com>
-
-  * Traditional Chinese translation created.
-    Song Huang <Song@ossacc.org>
-
-  * Added "--lang simplified-chinese" option (same as "--lang chinese").
-    Simplified also now looks for "zh_cn.ttf" font, not "zh.ttf"
-    (was too ambiguous).
-
-  * Hindi translation created.
-    Ankit Malik <greatestankit@yahoo.co.in>
-
-  * Welsh translation created.
-    Kevin Donnelly <kevin@dotmon.com>
-
-  * Vietnamese translation created.  (Simple version)
-    Le Quang Phan <lqphan@hn.vnn.vn>
-
-  * Afrikaans translation created.
-    Petri Jooste <rkwjpj@puk.ac.za>
-
-  * Serbian translation created.
-    Aleksandar Jelenak <jelenak@netlinkplus.net>
-
-  * Slovenian translation created.
-    Urska Colner <ursacol02@users.sourceforge.net>,
-    Ines Kovacevic <ines@agenda.si>
-
-  * Breton translation created.
-    Korvigellou An Drouizig (Philippe) <drouizig@drouizig.org>
-
-  * German language file (de.po) update.
-    Roland Illig <roland.illig@gmx.de>
-
-  * British english translation updates.
-    Gareth Owen <gowen72@yahoo.com>
-
-  * Japanese translation updates.
-    TOYAMA Shin-ichi <shin1@wmail.plala.or.jp>
-
-  * Dutch translation updates.
-    Geert Stams <geertstams@wanadoo.nl>
-
-  * French translation updates.
-    Jacques Chion <Jacques.Chion@wanadoo.fr>
-
-  * Italian language file (it.po) update.
-    Flavio Pastor <flavio.pastore@zonaitalia.it>
-
-  * Italian documentation translation.
-    Flavio Pastor <flavio.pastore@zonaitalia.it>
-
-  * Icelandic language file (is.po) update.
-    Pjetur G. Hjaltason <pjetur@pjetur.net>
-
-  * Norwegian Nynorsk language file (nn.po) update.
-    Karl Ove Hufthammer <karl@huftis.org>
-
-  * German language file (de.po) update.
-    Roland Illig <roland.illig@gmx.de>
-
-  * Walloon language file (wa.po) update.
-    Pablo Saratxaga <pablo@walon.org>
-
-  * Korean README.txt documentation added in both EUC-KR and UTF-8 formats.
-    Mark K. Kim <tuxNO_SOLICITATIONpaint-dev@cbreak.org>
-
-  * Korean language file (ko.po) update.
-    Mark K. Kim <tuxNO_SOLICITATIONpaint-dev@cbreak.org>
-
-  * Added support for native names for Dutch (nederlands),
-    Slovenian (slovensko) and Walloon (walon) in "--lang" option.
-
-  * Fixed security issue with permissions to Tux Paint docs directory.
-    Mark K. Kim <tuxNO_SOLICITATIONpaint-dev@cbreak.org>
-
-  * Made sure KDE icon directories exist before trying to copy files to them.
-  
-  * Fixed crash bug when switching from different tools with scrolling
-    collections, and then scrolling.
-    Thanks to Kevin Jarrett for the report, and John Popplewell for a
-    replicable way of crashing it.
-
-  * Made sure shape tool never made a tiny shape.
-    (Should hint users that they should click-and-drag.)
-
-  * Added some more brushes.
-    Jeremie Zimmermann <txptdv@tofz.org>
-
-  * Now prompts to confirm before printing.
-
-  * Updated/corrected Tamil translation
-    Mugunth <mugunth@thamizha.com>
-
-  * Updated README documentation.
-  
-  * Made some colors more unique, so that they affected stamps better.
-    (e.g., purple and magenta used to look the same when used to tint a stamp)
-    Karl Ove Hufthammer <karl@huftis.org>
-
-  * Updated punctuation in many text strings.
-    Karl Ove Hufthammer <karl@huftis.org>
-
-  * Keywords ("Title" and "Software") now written into PNGs.
-
-  * Fixed 'savedir' bug.  (Was dropping filenames)
-
-  * Made current image the selected image on Open screen, if applicable.
-
-  * Removed redundant '--wheelmouse...' listing from "--usage" output.
-
 
 2003.Dec.23 (0.9.13)
   * Translated into Basque (eu_ES)
