@@ -87,6 +87,7 @@ static NSString *getApplicationName(void)
 @interface CocoaToSDLBridge : NSObject {}
 - (void)dataPath:(NSString *)directory;
 - (void)preferencesPath;
+- (void)fontsPath;
 @end
 
 @implementation CocoaToSDLBridge
@@ -108,6 +109,14 @@ static NSString *getApplicationName(void)
   
   path = [@"~/Library/Application Support" stringByExpandingTildeInPath];
   [path getCString:(macosx.preferencesPath)];
+}
+
+-(void) fontsPath;
+{
+  NSString *path;
+  
+  path = [@"~/Library/Fonts" stringByExpandingTildeInPath];
+  [path getCString:(macosx.fontsPath)];
 }
 
 @end
@@ -238,6 +247,7 @@ static void CustomApplicationMain (argc, argv)
 
 	NSAutoreleasePool   *pool = [[NSAutoreleasePool alloc] init];
 	SDLMain             *sdlMain;
+    CocoaToSDLBridge    *bridge;
 
     /* Ensure the application object is initialised */
     [SDLApplication sharedApplication];
@@ -257,6 +267,11 @@ static void CustomApplicationMain (argc, argv)
     [NSApp setMainMenu:[[NSMenu alloc] init]];
 	setApplicationMenu();
     setupWindowMenu();
+	
+	/* Pass information to SDL application */
+    bridge = [[CocoaToSDLBridge alloc] init];
+    [bridge autorelease];
+    [bridge fontsPath];
 	
     /* Create SDLMain and make it the app delegate */
     sdlMain = [[SDLMain alloc] init];

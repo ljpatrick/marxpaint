@@ -9,10 +9,12 @@
 			children = (
 				22C0EA9A0735B76F008555A2,
 				22C0EA9B0735B76F008555A2,
+				22C0EAAB0735B851008555A2,
+				22C0EAAC0735B851008555A2,
 				22C0EA9C0735B76F008555A2,
 			);
 			isa = PBXGroup;
-			name = Classes;
+			name = "Mac Sources";
 			refType = 4;
 			sourceTree = "<group>";
 		};
@@ -294,18 +296,18 @@
 			isa = PBXFileReference;
 			lastKnownFileType = sourcecode.c.h;
 			name = macosx_print.h;
-			path = ../src/macosx_print.h;
-			refType = 2;
-			sourceTree = SOURCE_ROOT;
+			path = "/Users/mfuhrer/Projects/TuxPaint/tuxpaint-cvs/tuxpaint/src/macosx_print.h";
+			refType = 0;
+			sourceTree = "<absolute>";
 		};
 		22C0EAAC0735B851008555A2 = {
 			fileEncoding = 30;
 			isa = PBXFileReference;
 			lastKnownFileType = sourcecode.c.objc;
 			name = macosx_print.m;
-			path = ../src/macosx_print.m;
-			refType = 2;
-			sourceTree = SOURCE_ROOT;
+			path = "/Users/mfuhrer/Projects/TuxPaint/tuxpaint-cvs/tuxpaint/src/macosx_print.m";
+			refType = 0;
+			sourceTree = "<absolute>";
 		};
 		22C0EAAD0735B851008555A2 = {
 			fileEncoding = 30;
@@ -565,8 +567,6 @@
 			children = (
 				22C0EAA30735B851008555A2,
 				22C0EAA40735B851008555A2,
-				22C0EAAB0735B851008555A2,
-				22C0EAAC0735B851008555A2,
 				22C0EAAD0735B851008555A2,
 				22C0EAAE0735B851008555A2,
 				22C0EAAF0735B851008555A2,

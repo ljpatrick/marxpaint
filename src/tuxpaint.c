@@ -185,6 +185,8 @@ typedef struct safer_dirent {
 #endif
 #ifdef __APPLE__
 #include "macosx_print.h"
+#include "wrapperdata.h"
+extern WrapperData macosx;
 #endif
 #else
 #include "win32_dirent.h"
@@ -7087,6 +7089,7 @@ static void setup(int argc, char * argv[])
 #elif defined(__APPLE__)
     loadfonts("/System/Library/Fonts", 0);
     loadfonts("/Library/Fonts", 0);
+	loadfonts(macosx.fontsPath, 0);
     loadfonts("/usr/share/fonts", 0);
     loadfonts("/usr/X11R6/lib/X11/fonts", 0);
 #else
