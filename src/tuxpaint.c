@@ -13939,10 +13939,6 @@ static void parse_options(FILE * fi)
 	  debug(str);
       
       
-	  /* Should "lang=" and "locale=" be here as well???
-	     Comments welcome ... bill@newbreedsoftware.com */
-
-
 	  /* FIXME: This should be handled better! */
 	  /* (e.g., complain on illegal lines, support comments, blanks, etc.) */
 
@@ -14125,6 +14121,8 @@ static void parse_options(FILE * fi)
 	    {
 	      simple_shapes = 1;
 	    }
+	  // Should "locale=" be here as well???
+	  // Comments welcome ... bill@newbreedsoftware.com
 	  else if (strstr(str, "lang=") == str)
 	    {
 	      set_langstr(str + 5);
