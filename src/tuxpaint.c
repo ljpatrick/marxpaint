@@ -22,12 +22,12 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
   
-  June 14, 2002 - March 10, 2005
+  June 14, 2002 - March 19, 2005
 */
 
 
 #define VER_VERSION     "0.9.15"
-#define VER_DATE        "2005-03-10"
+#define VER_DATE        "2005-03-19"
 
 
 /* Color depth for Tux Paint to run in, and store canvases in: */
@@ -618,7 +618,7 @@ static int lang_use_own_font[] = {
 //  LANG_EL,
 //  LANG_HE,
   LANG_HI,
-//  LANG_JA,
+  LANG_JA,
   LANG_KO,
   LANG_TA,
   LANG_ZH_CN,
