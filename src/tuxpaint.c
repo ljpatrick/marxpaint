@@ -7529,7 +7529,7 @@ void draw_tux_text(int which_tux, char * str, int want_utf8,
 
   wordwrap_text(font, str, black,
 	        img_tux[which_tux] -> w + 5,
-	        (48 * 7) + 40 + 48 + HEIGHTOFFSET + 5,
+	        (48 * 7) + 40 + 48 + HEIGHTOFFSET,
 	        WINDOW_WIDTH, want_utf8, force_locale_font,
 		want_right_to_left);
 
