@@ -21,12 +21,12 @@
   along with this program; if not, write to the Free Software
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   
-  June 14, 2002 - September 21, 2004
+  June 14, 2002 - September 23, 2004
 */
 
 
 #define VER_VERSION     "0.9.14"
-#define VER_DATE        "2004-09-21"
+#define VER_DATE        "2004-09-23"
 
 
 /* #define DEBUG */
@@ -10079,15 +10079,50 @@ int do_open(int want_new_tool)
 	      free(tmp_fname);
 
 
-	      snprintf(fname, sizeof(fname), "%s/%s",
-		       dirname[d_places[num_files]], f->d_name);
-			  debug(fname);
+	      img = NULL;
+	      
+              if (d_places[num_files] == PLACE_STARTERS_DIR)
+	      {
+		/* Try to load a starter's background image, first!
+		   If it exists, it should give a better idea of what the
+		   starter looks like, compared to the overlay image... */
+
+		/* (Try JPEG first) */
+		snprintf(fname, sizeof(fname), "%s/%s-back.jpg",
+			 dirname[d_places[num_files]],
+		         d_names[num_files]);
+
+		img = IMG_Load(fname);
+
+
+		if (img == NULL)
+		{
+		  /* (Try PNG next) */
+		  snprintf(fname, sizeof(fname), "%s/%s-back.png",
+			   dirname[d_places[num_files]],
+		           d_names[num_files]);
+
+		  img = IMG_Load(fname);
+	        }
+	      }
+
+	      
+	      if (img == NULL)
+	      {
+		/* Didn't load a starter background (or didn't try!),
+		   try loading the actual image... */
+
+	        snprintf(fname, sizeof(fname), "%s/%s",
+		         dirname[d_places[num_files]], f->d_name);
+			 debug(fname);
 #ifdef SAVE_AS_BMP
-	      img = SDL_LoadBMP(fname);
+	        img = SDL_LoadBMP(fname);
 #else
-	      img = IMG_Load(fname);
+	        img = IMG_Load(fname);
 #endif
-		    
+	      }
+
+	      
 	      show_progress_bar();
 			  
 	      if (img == NULL)
