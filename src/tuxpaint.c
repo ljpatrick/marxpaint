@@ -2423,8 +2423,8 @@ static void mainloop(void)
 			      playsound(0, stamp_sound, 0);
 			      draw_stamps();
 			      SDL_UpdateRect(screen, WINDOW_WIDTH - 96, 0, 96, (48 * 7) + 40 + HEIGHTOFFSET);
+			      update_stamp_xor();
 			    }
-			  update_stamp_xor();
 			}
 
 
