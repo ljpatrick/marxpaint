@@ -1,98 +1,85 @@
+# translation of tuxpaint.po to Turkish
 # Tux Paint turkish messages.
 # Copyright (C) 2002.
-# Doruk Fisek <dfisek@fisek.com.tr>, 2002.
+# Doruk Fisek <dfisek@fisek.com.tr>, 2002, 2004.
 msgid ""
 msgstr ""
-"Project-Id-Version: TuxPaint 0.0.1pre\n"
+"Project-Id-Version: tuxpaint\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2004-07-16 21:12+0200\n"
-"PO-Revision-Date: 2002-08-12 01:44Europe/Istanbul\n"
+"POT-Creation-Date: 2004-07-30 15:11+0200\n"
+"PO-Revision-Date: 2004-07-28 17:56+0300\n"
 "Last-Translator: Doruk Fisek <dfisek@fisek.com.tr>\n"
 "Language-Team: Turkish <gnu-tr-u12a@lists.sourceforge.net>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: KBabel 0.9.5\n"
+"X-Generator: KBabel 1.3.1\n"
 
 msgid "A drawing program for children."
-msgstr ""
+msgstr "Çocuklar için bir çizim programı"
 
 msgid "Drawing program"
-msgstr ""
+msgstr "Çizim programı"
 
-#, fuzzy
 msgid "Tux Paint"
-msgstr "Boya"
+msgstr "Tux Boyama"
 
-#, fuzzy
 msgid "Black!"
 msgstr "Siyah!"
 
-#, fuzzy
 msgid "White!"
 msgstr "Beyaz!"
 
-#, fuzzy
 msgid "Red!"
-msgstr "İleri al!"
+msgstr "Kırmızı!"
 
-#, fuzzy
 msgid "Pink!"
 msgstr "Pembe!"
 
-#, fuzzy
 msgid "Orange!"
 msgstr "Turuncu!"
 
-#, fuzzy
 msgid "Yellow!"
 msgstr "Sarı!"
 
-#, fuzzy
 msgid "Lime!"
-msgstr "Doğrular"
+msgstr "Kireç rengi!"
 
-#, fuzzy
 msgid "Green!"
 msgstr "Yeşil!"
 
-#, fuzzy
 msgid "Cyan!"
 msgstr "Turkuaz!"
 
-#, fuzzy
 msgid "Blue!"
 msgstr "Mavi!"
 
-#, fuzzy
 msgid "Purple!"
 msgstr "Mor!"
 
 msgid "Fuchsia!"
-msgstr ""
+msgstr "Parlak Mor!"
 
-#, fuzzy
 msgid "Brown!"
 msgstr "Kahverengi!"
 
-#, fuzzy
 msgid "Gray!"
-msgstr "Harika!"
+msgstr "Gri!"
 
 msgid "Silver!"
-msgstr ""
+msgstr "Gümüş!"
 
 msgid "Great!"
 msgstr "Harika!"
 
 msgid "Cool!"
-msgstr ""
+msgstr "Kıyak!"
 
 msgid "Keep it up!"
-msgstr ""
+msgstr "Devam et!"
 
 msgid "Good job!"
-msgstr ""
+msgstr "İyi iş çıkardın!"
 
 msgid "Rainbow"
 msgstr "Gökkuşağı"
@@ -116,13 +103,13 @@ msgid "Negative"
 msgstr "Negatif"
 
 msgid "Fade"
-msgstr "Sönük"
+msgstr "Soluklaştır"
 
 msgid "Chalk"
 msgstr "Tebeşir"
 
 msgid "Drip"
-msgstr "Akıtmak"
+msgstr "Damla Damla Akıt"
 
 msgid "Thick"
 msgstr "Kalın"
@@ -131,67 +118,55 @@ msgid "Thin"
 msgstr "İnce"
 
 msgid "Fill"
-msgstr ""
+msgstr "Doldur"
 
 msgid "You can draw in rainbow colors!"
-msgstr "Gökkuşağı renklerinde çizebilirsiniz"
+msgstr "Gökkuşağı renklerinde çizebilirsin"
 
-#, fuzzy
 msgid "Click and move to draw sparkles."
-msgstr "Kıvılcımlar çizmek için tıklayın ve hareket ettirin"
+msgstr "Kıvılcımlar çizmek için tıkla ve fareyi hareket ettir"
 
-#, fuzzy
 msgid "Click to make a mirror image."
-msgstr "Bir ayna görüntüsü yapmak için tıklayın"
+msgstr "Bir ayna görüntüsü oluşturmak için tıkla"
 
-#, fuzzy
 msgid "Click to flip the picture upside-down."
-msgstr "Resmi başaşağı çevirmek için tıklayın"
+msgstr "Resmi başaşağı çevirmek için tıkla"
 
-#, fuzzy
 msgid "Click and move the mouse around to blur the picture."
-msgstr ""
-"Resmi bulanık hale getirmek için fareye tıklayın ve onu etrafta gezdirin"
+msgstr "Resmi bulanıklaştırmak için fareye tıkla ve fareyi etrafta gezdir"
 
-#, fuzzy
 msgid "Click and move the mouse around to make the picture blocky."
-msgstr "Resmi damla damla akıtmak için fareye tıklayın ve onu etrafta gezdirin"
+msgstr "Resmi tıknaz hale getirmek için fareye tıkla ve fareyi etrafta gezdir"
 
-#, fuzzy
 msgid "Click and move the mouse around to draw a negative."
-msgstr "Negatif elde etmek için fareye tıklayın ve onu etrafta gezdirin"
+msgstr "Negatif elde etmek için fareye tıkla ve fareyi etrafta gezdir"
 
 msgid "Click and move to fade the colors."
-msgstr "Renkleri sönükleştirmek için tıklayın ve hareket ettirin"
+msgstr "Renklerin solması için tıkla ve fareyi hareket ettir"
 
 msgid ""
 "Click and move the mouse around to turn the picture into a chalk drawing."
 msgstr ""
-"Resmi bir tebeşire çevirmek için fareye tıklayın ve onu etrafta gezdirin"
+"Resmi bir tebeşir çizimine çevirmek için fareye tıkla ve fareyi etrafta "
+"gezdir"
 
-#, fuzzy
 msgid "Click and move the mouse around to make the picture drip."
-msgstr "Resmi damla damla akıtmak için fareye tıklayın ve onu etrafta gezdirin"
+msgstr "Resmi damla damla akıtmak için fareye tıkla ve fareyi etrafta gezdir"
 
-#, fuzzy
 msgid "Click and move the mouse to thicken the picture."
-msgstr ""
-"Resmi bulanık hale getirmek için fareye tıklayın ve onu etrafta gezdirin"
+msgstr "Resmi kalınlaştırmak için fareye tıkla ve fareyi hareket ettir"
 
-#, fuzzy
 msgid "Click and move the mouse to thin the picture."
-msgstr ""
-"Resmi bulanık hale getirmek için fareye tıklayın ve onu etrafta gezdirin"
+msgstr "Resmi inceltmek için fareye tıkla ve fareyi hareket ettir"
 
-#, fuzzy
 msgid "Click in the picture to fill that area with color."
-msgstr "Renkleri sönükleştirmek için tıklayın ve hareket ettirin"
+msgstr "O alanı renkle doldurmak için resmin içine tıkla"
 
 msgid "Square"
 msgstr "Kare"
 
 msgid "Rectangle"
-msgstr ""
+msgstr "Dikdörtgen"
 
 msgid "Circle"
 msgstr "Daire"
@@ -199,9 +174,8 @@ msgstr "Daire"
 msgid "Oval"
 msgstr "Oval"
 
-#, fuzzy
 msgid "Triangle"
-msgstr "Turuncu!"
+msgstr "Üçgen"
 
 msgid "Pentagon"
 msgstr "Beşgen"
@@ -229,23 +203,22 @@ msgstr ""
 "Bir eşkenar dörtgen bir karedir, hafifçe kendi etrafında döndürülmüştür."
 
 msgid "Tools"
-msgstr ""
+msgstr "Araçlar"
 
 msgid "Colors"
-msgstr ""
+msgstr "Renkler"
 
 msgid "Brushes"
-msgstr ""
+msgstr "Fırçalar"
 
-#, fuzzy
 msgid "Stamps"
-msgstr "Damga"
+msgstr "Damgalar"
 
 msgid "Shapes"
 msgstr "Şekiller"
 
 msgid "Letters"
-msgstr ""
+msgstr "Harfler"
 
 msgid "Magic"
 msgstr "Büyü"
@@ -288,30 +261,29 @@ msgid "Quit"
 msgstr "Çıkış"
 
 msgid "Pick a color and a brush shape to draw with."
-msgstr "Çizmek için bir renk ve bir fırça seçin."
+msgstr "Çizmek için bir renk ve bir fırça şekli seç."
 
 msgid "Pick a picture to stamp around your drawing."
-msgstr "Çiziminizi damgalamak için bir resim seçin."
+msgstr "Çiziminin etrafına damga basmak için bir resim seç."
 
-#, fuzzy
 msgid "Click to start drawing a line. Let go to complete it."
 msgstr ""
-"Bir doğru çizmeye başlamak için fareye tıklayın. Tamamlamak için fareyi "
-"bırakın."
+"Bir doğru çizmeye başlamak için tıkla. Tamamlamak için farenin tuşunu bırak."
 
 msgid ""
 "Pick a shape. Click to pick the center, drag, then let go when it is the "
 "size you want. Move around to rotate it, and click to draw it."
 msgstr ""
+"Bir şekil seç. Merkezini belirlemek için tıkla, sürükle, istediğin boyuta "
+"geldiği zaman fareyi bırak. Döndürmek için fareyi şeklin etrafında dolaştır "
+"ve çizmek için tıkla."
 
-#, fuzzy
 msgid "Choose a style of text. Click on your drawing and you can start typing."
 msgstr ""
-"Bir yazı stili seçin. Çiziminizin üzerine tıklayın ve yazmaya "
-"başlayabilirsiniz."
+"Bir yazı stili seç. Çiziminin üzerine tıkla ve yazmaya başlayabilirsin."
 
 msgid "Pick a magical effect to use on your drawing!"
-msgstr "Çiziminiz üzerinde kullanmak için bir büyülü efekt seçin!"
+msgstr "Çiziminde kullanmak için bir büyülü efekt seç!"
 
 #. Undo
 msgid "Undo!"
@@ -327,7 +299,7 @@ msgstr "Silgi!"
 
 #. New
 msgid "You now have a blank sheet to draw on!"
-msgstr "Şimdi çizim yapmak için temiz bir sayfanız var!"
+msgstr "Şimdi çizim yapmak için temiz bir sayfan var!"
 
 #. Open
 msgid "Open…"
@@ -335,32 +307,31 @@ msgstr "Aç..."
 
 #. Save
 msgid "Your image has been saved!"
-msgstr "Resminiz kaydedildi!"
+msgstr "Resmin kaydedildi!"
 
 #. Print
 msgid "Printing…"
 msgstr "Yazdırılıyor..."
 
 #. Quit
-#, fuzzy
 msgid "Bye bye!"
-msgstr "Güle Güle"
+msgstr "Güle Güle!"
 
 msgid "Let go of the button to complete the line."
-msgstr "Doğruyu tamamlamak için tuşu bırakın."
+msgstr "Doğruyu tamamlamak için farenin tuşunu bırak."
 
 msgid "Hold the button to stretch the shape."
-msgstr "Şekli çekip uzatmak için tuşa basılı tutun."
+msgstr "Şekli çekip uzatmak için farenin tuşuna basılı tut."
 
 msgid "Move the mouse to rotate the shape. Click to draw it."
-msgstr "Şekli döndürmek için fareyi hareket ettirin. Onu çizmek icin tıklayın."
+msgstr "Şekli döndürmek için fareyi hareket ettir. Çizmek için tıkla."
 
 msgid "OK then… Let’s keep drawing this one!"
 msgstr "Tamam o zaman... Bunu çizmeye devam edelim!"
 
 #. FIXME: Move elsewhere!!!
 msgid "Do you really want to quit?"
-msgstr "Gerçekten çıkmak istiyor musunuz?"
+msgstr "Gerçekten çıkmak istiyor musun?"
 
 #. FIXME: Move elsewhere! Or not?!
 msgid "Yes"
@@ -370,79 +341,55 @@ msgid "No"
 msgstr "Hayır"
 
 msgid "If you quit, you’ll lose your picture! Save it?"
-msgstr "Eğer çıkarsanız, resmi kaybedeceksiniz! Kaydedelim mi?"
+msgstr "Eğer çıkarsan, resmini kaybedeceksin! Kaydedeyim mi?"
 
 msgid "Save your picture first?"
-msgstr "İlk önce resmi kaydetmek ister misiniz?"
+msgstr "İlk önce resmini kaydetmek ister misin?"
 
-#, fuzzy
 msgid "Can’t open that picture!"
-msgstr "Bu resmi sileyim mi?"
+msgstr "O resmi açamıyorum!"
 
 msgid "OK"
-msgstr ""
+msgstr "Tamam"
 
 msgid "Starting a new picture will erase the current one!"
-msgstr "Yeni bir resme başlamak şu ankini silecektir!"
+msgstr "Yeni bir resme başlamak var olanı silecektir!"
 
-#, fuzzy
 msgid "That’s OK!"
-msgstr "Tamamdır"
+msgstr "Tamamdır!"
 
-#, fuzzy
 msgid "Never mind!"
 msgstr "Boşver!"
 
 msgid "There are no saved files!"
 msgstr "Kaydedilmiş hiç dosya yok!"
 
-#, fuzzy
 msgid "Print your picture now?"
-msgstr "İlk önce resmi kaydetmek ister misiniz?"
+msgstr "Resmini şimdi yazdırayım mı?"
 
-#, fuzzy
 msgid "Your picture has been printed!"
-msgstr "Resminiz kaydedildi!"
+msgstr "Resmin yazdırıldı!"
 
 msgid "You can’t print yet!"
-msgstr ""
+msgstr "Henüz yazdıramazsın!"
 
 msgid "Erase this picture?"
 msgstr "Bu resmi sileyim mi?"
 
 #. 'Erase' label:
-#, fuzzy
 msgid "Erase"
-msgstr "Silgi"
+msgstr "Sil"
 
 #. 'Back' label:
-#, fuzzy
 msgid "Back"
-msgstr "Siyah!"
+msgstr "Geri"
 
 #. FIXME: Move elsewhere!!!
-#, fuzzy
 msgid "Save over the older version of this picture?"
-msgstr "Bu çizimin eski halinin üzerine mi kaydedeyim?"
+msgstr "Bu resmin eski halinin üzerine mi kaydedeyim?"
 
 msgid "No, save a new file"
 msgstr "Hayir, yeni bir dosyaya kaydet"
 
 msgid "Choose the picture you want, then click “Open”."
-msgstr ""
-
-#~ msgid "Okay"
-#~ msgstr "Tamam"
-
-#~ msgid "Red"
-#~ msgstr "Kırmızı!"
-
-#~ msgid "Grey"
-#~ msgstr "Gri!"
-
-#~ msgid ""
-#~ "Pick a shape to draw.  Click once to pick the center of the shape, click "
-#~ "again to draw it."
-#~ msgstr ""
-#~ "Çizmek için bir şekil seçin. Şeklin merkezini seçmek için bir kez "
-#~ "tıklayın, ikinci kez de çizmek için tıklayın."
+msgstr "İstediğin resmi seç, sonra \"Aç\" seçeneğine tıkla"

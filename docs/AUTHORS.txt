@@ -110,6 +110,7 @@ June 17, 2002 - July 27, 2004
 
   * Danish
     Rasmus Erik Voel Jensen <i18n@solsort.dk> [retired]
+    Mogens Jæger <mogensjaeger@get2net.dk> [current maintainer]
 
   * Dutch
     Herman Bruyninckx <Herman.Bruyninckx@mech.kuleuven.ac.be>

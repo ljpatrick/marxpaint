@@ -1,96 +1,84 @@
+# translation of da.po to Dansk
 # Tux Paint Danish messages
+# Mogens Jaeger <mogensjaeger@get2net.dk>, 2004.
 msgid ""
 msgstr ""
-"Project-Id-Version: TuxType\n"
+"Project-Id-Version: da\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2004-07-16 21:12+0200\n"
-"PO-Revision-Date: 2002-09-25 16:26+0100\n"
-"Last-Translator: Rasmus Erik Voel Jensen <i18n@solsort.dk>\n"
-"Language-Team: solsort <i18n@solsort.dk>\n"
+"POT-Creation-Date: 2004-07-30 15:11+0200\n"
+"PO-Revision-Date: 2004-07-30 12:55+0200\n"
+"Last-Translator: Mogens Jaeger <mogensjaeger@get2net.dk>\n"
+"Language-Team: Dansk <da@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.0.2\n"
 
 msgid "A drawing program for children."
-msgstr ""
+msgstr "Et tegneprogram for børn"
 
 msgid "Drawing program"
-msgstr ""
+msgstr "Tegne program"
 
-#, fuzzy
 msgid "Tux Paint"
-msgstr "Maling"
+msgstr "Tux maling"
 
-#, fuzzy
 msgid "Black!"
-msgstr "Sort"
+msgstr "Sort."
 
-#, fuzzy
 msgid "White!"
-msgstr "Hvid"
+msgstr "Hvid."
 
-#, fuzzy
 msgid "Red!"
-msgstr "Gentag!"
+msgstr "Rød."
 
-#, fuzzy
 msgid "Pink!"
-msgstr "Lyserød"
+msgstr "Lyserød."
 
-#, fuzzy
 msgid "Orange!"
-msgstr "Orange"
+msgstr "Orange."
 
-#, fuzzy
 msgid "Yellow!"
-msgstr "Gul"
+msgstr "Gul."
 
-#, fuzzy
 msgid "Lime!"
-msgstr "Linjer"
+msgstr "Lime."
 
-#, fuzzy
 msgid "Green!"
-msgstr "Grøn"
+msgstr "Grøn."
 
-#, fuzzy
 msgid "Cyan!"
-msgstr "Turkis"
+msgstr "Cyan."
 
-#, fuzzy
 msgid "Blue!"
-msgstr "Blå"
+msgstr "Blå."
 
-#, fuzzy
 msgid "Purple!"
-msgstr "Violet"
+msgstr "Violet."
 
 msgid "Fuchsia!"
-msgstr ""
+msgstr "Fuchsia."
 
-#, fuzzy
 msgid "Brown!"
-msgstr "Brun"
+msgstr "Brun."
 
-#, fuzzy
 msgid "Gray!"
-msgstr "Grå"
+msgstr "Grå."
 
 msgid "Silver!"
-msgstr ""
+msgstr "Sølv."
 
-#, fuzzy
 msgid "Great!"
-msgstr "Grå"
+msgstr "Godt."
 
 msgid "Cool!"
-msgstr ""
+msgstr "Fedt."
 
 msgid "Keep it up!"
-msgstr ""
+msgstr "Fortsæt."
 
 msgid "Good job!"
-msgstr ""
+msgstr "Godt gået."
 
 msgid "Rainbow"
 msgstr "Regnbue"
@@ -105,13 +93,13 @@ msgid "Flip"
 msgstr "Vend"
 
 msgid "Blur"
-msgstr "Uskarp"
+msgstr "Sløring"
 
 msgid "Blocks"
-msgstr "Blok"
+msgstr "Tern"
 
 msgid "Negative"
-msgstr "Inverter"
+msgstr "Negativ"
 
 msgid "Fade"
 msgstr "Bleg"
@@ -132,54 +120,45 @@ msgid "Fill"
 msgstr "Fyld"
 
 msgid "You can draw in rainbow colors!"
-msgstr "Du kan tegne i alle regnbuens farver!'"
+msgstr "Du kan tegne med regnbuefarver!"
 
-#, fuzzy
 msgid "Click and move to draw sparkles."
-msgstr "Tegn gnister."
+msgstr "Klik og flyt for at tegne gnister."
 
-#, fuzzy
 msgid "Click to make a mirror image."
-msgstr "Du kan spejlvende billedet ved at klikke."
+msgstr "Klik for at spejlvende billedet."
 
-#, fuzzy
 msgid "Click to flip the picture upside-down."
-msgstr "Vend billedet ved at klikke."
+msgstr "Vend billedet op og ned ved at klikke."
 
-#, fuzzy
 msgid "Click and move the mouse around to blur the picture."
-msgstr "Gør billedet uskarpt med musen."
+msgstr "Klik of flyt musen for at sløre billedet."
 
-#, fuzzy
 msgid "Click and move the mouse around to make the picture blocky."
-msgstr "Lav billedet mere grovkornet med musen."
+msgstr "Klik og flyt muset for at gøre billedet ternet."
 
-#, fuzzy
 msgid "Click and move the mouse around to draw a negative."
-msgstr "Du kan invertere billedet."
+msgstr "Klik og flyt mysen, for at tegne et negativ."
 
 msgid "Click and move to fade the colors."
-msgstr "Gør billedet blegere."
+msgstr "Klik og flyt musen for at gøre billedet blegere."
 
 msgid ""
 "Click and move the mouse around to turn the picture into a chalk drawing."
-msgstr "Brug musen til at få tegningen til at ligne kridt."
+msgstr "Klik og flyt musen for at få billedet til at ligne en kridt tegning."
 
-#, fuzzy
 msgid "Click and move the mouse around to make the picture drip."
-msgstr "Lad farverne løbe på billedet"
+msgstr ""
+"Klik og flyt musen for at få billedet til at få billedet til at dryppe."
 
-#, fuzzy
 msgid "Click and move the mouse to thicken the picture."
-msgstr "Klik og flyt musen for at gøre billedet tykkere"
+msgstr "Klik og flyt musen for at gøre billedet tykkere."
 
-#, fuzzy
 msgid "Click and move the mouse to thin the picture."
 msgstr "Klik og flyt musen for at gøre billedet tyndere."
 
-#, fuzzy
 msgid "Click in the picture to fill that area with color."
-msgstr "Fyld et ensfarvet område med en farve"
+msgstr "Klik på et område for at fylde det med en farve."
 
 msgid "Square"
 msgstr "Kvadrat"
@@ -203,41 +182,41 @@ msgid "Diamond"
 msgstr "Rhombe"
 
 msgid "A square has four sides, each the same length."
-msgstr "Et er et rektangel hvor alle sider er lige lange."
+msgstr "Et kvadrat er en firkant, hvor alle sider er lige lange."
 
 msgid "A rectangle has four sides."
-msgstr "Et rektangel er en firkant hvor alle vinkler er 90 grader."
+msgstr ""
+"Et rektangel er en firkant hvor siderne er lige lange overfor hinanden."
 
 msgid "A circle is exactly round."
-msgstr "Alle cirklens punkter er lige langt fra centrum."
+msgstr "En cirkel er fundstændig rund."
 
 msgid "A triangle has three sides."
-msgstr "Denne trekant er ligebenet."
+msgstr "En trekant har tre sider."
 
 msgid "A pentagon has five sides."
-msgstr "En femkant har ... fem kanter :-)"
+msgstr "En femkant har fem sider."
 
 msgid "A diamond is a square, turned around slightly."
-msgstr "En rhombe er en firkant hvor siderne har samme længde."
+msgstr "En rhombe har samme form som en ruder i et kortspil."
 
 msgid "Tools"
-msgstr ""
+msgstr "Værktøj"
 
 msgid "Colors"
-msgstr ""
+msgstr "Farver"
 
 msgid "Brushes"
-msgstr ""
+msgstr "Pensler"
 
-#, fuzzy
 msgid "Stamps"
-msgstr "Stempel"
+msgstr "Stempler"
 
 msgid "Shapes"
 msgstr "Figurer"
 
 msgid "Letters"
-msgstr ""
+msgstr "Bogstaver"
 
 msgid "Magic"
 msgstr "Magi"
@@ -283,23 +262,26 @@ msgid "Pick a color and a brush shape to draw with."
 msgstr "Vælg farve og pensel."
 
 msgid "Pick a picture to stamp around your drawing."
-msgstr "Hvilket billede vil du tegne med,"
+msgstr "Vælg et billede eller en figur du vil bruge som stempel i din tegning."
 
-#, fuzzy
 msgid "Click to start drawing a line. Let go to complete it."
-msgstr "Klik på tegningen og træk en linje."
+msgstr ""
+"Klik og hold museknappen nede for at tegne en linie. Når du slipper ender "
+"linien."
 
 msgid ""
 "Pick a shape. Click to pick the center, drag, then let go when it is the "
 "size you want. Move around to rotate it, and click to draw it."
 msgstr ""
+"Vælg en figur. Klik for at vælge startsted, træk og slip først når du har "
+"den ønskede størrelse. Flyt for at dreje, og klik når figuren er på plads."
 
-#, fuzzy
 msgid "Choose a style of text. Click on your drawing and you can start typing."
-msgstr "Klik hvor på tegningen du vil skrive."
+msgstr ""
+"Vælg en type af bogstaver. Klik hvor på tegningen du vil skrive - og skriv."
 
 msgid "Pick a magical effect to use on your drawing!"
-msgstr "Vælg en af de sjove effekter."
+msgstr "Vælg en af de magiske effekter, til at ændre billedet."
 
 #. Undo
 msgid "Undo!"
@@ -311,11 +293,11 @@ msgstr "Gentag!"
 
 #. Eraser
 msgid "Eraser!"
-msgstr "Viskelæder"
+msgstr "Viskelæder!"
 
 #. New
 msgid "You now have a blank sheet to draw on!"
-msgstr "Du har nu et friskt papir."
+msgstr "Du har nu et friskt papir til en ny tegning."
 
 #. Open
 msgid "Open…"
@@ -340,14 +322,14 @@ msgid "Hold the button to stretch the shape."
 msgstr "Hold knappen inde for at ændre figurens form."
 
 msgid "Move the mouse to rotate the shape. Click to draw it."
-msgstr "Flyt på musen for at dreje figuren."
+msgstr "Flyt på musen for at dreje figuren. Klik for at tegne den."
 
 msgid "OK then… Let’s keep drawing this one!"
-msgstr "Ok, lad os så beholde denne tegning."
+msgstr "Ok, lad os fortsætte med denne tegning."
 
 #. FIXME: Move elsewhere!!!
 msgid "Do you really want to quit?"
-msgstr "Vil du afslutte nu?"
+msgstr "Vil du virkelig slutte nu?"
 
 #. FIXME: Move elsewhere! Or not?!
 msgid "Yes"
@@ -357,65 +339,58 @@ msgid "No"
 msgstr "Nej"
 
 msgid "If you quit, you’ll lose your picture! Save it?"
-msgstr "Du har ikke gemt billedet. Skal det gemmes før du afslutter?"
+msgstr "Hvis du afslutter nu, mister du billedet. Vil du ikke gemme det først?"
 
 msgid "Save your picture first?"
 msgstr "Vil du gemme billedet først?"
 
 msgid "Can’t open that picture!"
-msgstr "Billedet kan ikke åbnes."
+msgstr "Det billede kan ikke åbnes."
 
 msgid "OK"
-msgstr ""
+msgstr "OK"
 
 msgid "Starting a new picture will erase the current one!"
-msgstr "Når du begynder på et nyt billede forsvinder det gamle."
+msgstr "Hvis du begynder på et nyt billede, sletter du det du er i gang med!"
 
-#, fuzzy
 msgid "That’s OK!"
-msgstr "Det er iorden."
+msgstr "Helt i orden!"
 
-#, fuzzy
 msgid "Never mind!"
-msgstr "Fortryd."
+msgstr "Nej da!"
 
 msgid "There are no saved files!"
-msgstr "Der er ikke nogle gemte billeder."
+msgstr "Der er ikke nogen gemte billeder."
 
-#, fuzzy
 msgid "Print your picture now?"
-msgstr "Vil du gemme billedet først?"
+msgstr "Vil du udskrive billedet nu?"
 
 msgid "Your picture has been printed!"
 msgstr "Billedet er udskrevet."
 
 msgid "You can’t print yet!"
-msgstr "Du kan ikke skrive ud endnu."
+msgstr "Du kan ikke udskrive endnu."
 
 msgid "Erase this picture?"
 msgstr "Skal billedet slettes?"
 
 #. 'Erase' label:
-#, fuzzy
 msgid "Erase"
-msgstr "Viskelæder"
+msgstr "Slet"
 
 #. 'Back' label:
-#, fuzzy
 msgid "Back"
-msgstr "Sort"
+msgstr "Tilbage"
 
 #. FIXME: Move elsewhere!!!
-#, fuzzy
 msgid "Save over the older version of this picture?"
-msgstr "Skal den gamle udgave af billedet overskrives?"
+msgstr "Vil du overskrive den gamle udgave af billedet?"
 
 msgid "No, save a new file"
 msgstr "Nej, gem istedet som et nyt billede."
 
-#, fuzzy
 msgid "Choose the picture you want, then click “Open”."
-msgstr "Vælg et billede og tryk på \"Åbn\"."
+msgstr "Vælg et billede, og tryk på \"Åbn\"."
 
 #~ msgid "Okay"
 #~ msgstr "OK"
