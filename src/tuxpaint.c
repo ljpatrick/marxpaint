@@ -7197,6 +7197,7 @@ static void draw_colors(int action)
 {
   int i;
   SDL_Rect dest;
+  static int old_color = -1;
 
   dest.x = 0;
   dest.y = 40 + ((NUM_TOOLS / 2) * 48) + HEIGHTOFFSET;
@@ -7213,8 +7214,11 @@ static void draw_colors(int action)
 
   colors_are_selectable = colors_state == COLORSEL_ENABLE;
 
-  if ( (colors_state&COLORSEL_CLOBBER) || (colors_state==old_colors_state))
+  if (colors_state&COLORSEL_CLOBBER)
     return;
+  if (cur_color==old_color && colors_state==old_colors_state)
+    return;
+  old_color = cur_color;
 
   if (colors_state == COLORSEL_ENABLE)
     {
