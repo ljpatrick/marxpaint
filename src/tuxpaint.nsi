@@ -1,6 +1,6 @@
 # vim: noai et ts=4 tw=0
 
-!define PKG_VERSION "0.9.6"
+!define PKG_VERSION "0.9.13"
 !define PKG_PREFIX  "tuxpaint"
 
 !define APP_PREFIX  "TuxPaint"
