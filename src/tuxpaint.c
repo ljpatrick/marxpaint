@@ -7,12 +7,12 @@
   bill@newbreedsoftware.com
   http://www.newbreedsoftware.com/tuxpaint/
   
-  June 14, 2002 - July 27, 2003
+  June 14, 2002 - August 2, 2003
 */
 
 
 #define VER_VERSION     "0.9.12"
-#define VER_DATE        "2003.07.27"
+#define VER_DATE        "2003.08.02"
 
 
 /* #define DEBUG */
@@ -285,6 +285,7 @@ enum {
   LANG_PT_BR,  /* Portuguese (Brazilian) */
   LANG_PT,     /* Portuguese */
   LANG_RO,     /* Romanian */
+  LANG_RU,     /* Russian */
   LANG_SE,     /* Swedish */
   LANG_SK,     /* Slovak */
   LANG_TR,     /* Turkish */
@@ -318,6 +319,7 @@ const char * lang_prefixes[NUM_LANGS] = {
   "pt_br",
   "pt",
   "ro",
+  "ru",
   "se",
   "sk",
   "tr",
@@ -339,6 +341,7 @@ int lang_use_utf8[] = {
   LANG_KO,
   /* LANG_LT, */
   /* LANG_PL, */
+  /* LANG_RU, */
   LANG_ZH,
   -1
 };
@@ -3958,6 +3961,11 @@ void setup(int argc, char * argv[])
       {
 	putenv("LANG=ro_RO");
 	putenv("LC_ALL=ro_RO");
+      }
+    else if (strcmp(langstr, "russian") == 0)
+      {
+	putenv("LANG=ru_RU");
+	putenv("LC_ALL=ru_RU");
       }
     else if (strcmp(langstr, "slovak") == 0)
       {

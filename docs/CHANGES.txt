@@ -7,7 +7,7 @@ bill@newbreedsoftware.com
 http://www.newbreedsoftware.com/tuxpaint/
 
 
-2003.Jul.26 (0.9.12) [cvs]
+2003.Aug.02 (0.9.12) [cvs]
   * Fixed Mac OS X #include typo.
     Darrell Walisser <walisser@mac.com>
 
@@ -59,9 +59,12 @@ http://www.newbreedsoftware.com/tuxpaint/
   * iconv_close() was being called even if 'cd' was -1 (not set).  Fixed.
     Darrell Walisser <walisser@mac.com>
 
-  * If gnome-config is not found, it doesn't necessarily mean Gnome isn't being used!
-    Makefile will now fall-back and assume $GNOME_PREFIX should be /usr, so that the
-    launcher icon gets installed into the Gnome menu.
+  * If gnome-config is not found, it doesn't necessarily mean Gnome isn't being
+    used!  Makefile will now fall-back and assume $GNOME_PREFIX should be /usr,
+    so that the launcher icon gets installed into the Gnome menu.
+  
+  * (About to be) translated to Russian
+    Dmitriy Ivanov <ace22b@myrealbox.com>
 
 
 2003.Jun.17 (0.9.11)

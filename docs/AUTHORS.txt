@@ -7,7 +7,7 @@ bill@newbreedsoftware.com
 http://www.newbreedsoftware.com/tuxpaint/
 
 
-June 17, 2002 - July 19, 2003
+June 17, 2002 - August 2, 2003
 
 
 * Design and Coding:
@@ -146,6 +146,9 @@ June 17, 2002 - July 19, 2003
     
   * Romanian
     Laurentiu Buzdugan <buzdugan@voyager.net>
+
+  * Russian
+    Dmitriy Ivanov <ace22b@myrealbox.com>
   
   * Spanish
     Gabriel Gazzan <ggabriel@internet.com.uy>
