@@ -34,6 +34,9 @@ http://www.newbreedsoftware.com/tuxpaint/
     * "Smudge" (pushes the colors around like wet paint)
       Albert Cahalan <albert@users.sf.net>
   
+    * "Grass" (makes grass, the painless way)
+      Albert Cahalan <albert@users.sf.net>
+  
     * "Darken" (opposite of "Fade"),
     * "Tint" (changes colors of parts of the picture), and
     * "Cartoon" (makes parts of the picture look like a cartoon or comic)

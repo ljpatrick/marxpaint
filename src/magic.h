@@ -15,11 +15,11 @@
 /* What tools are available: */
 
 enum {
+  MAGIC_FILL,
+  MAGIC_GRASS,
+  
   MAGIC_RAINBOW,
   MAGIC_SPARKLES,
-
-  MAGIC_MIRROR,
-  MAGIC_FLIP,
   
   MAGIC_BLUR,
   MAGIC_SMUDGE,
@@ -38,8 +38,9 @@ enum {
 
   MAGIC_DRIP,
   MAGIC_CARTOON,
-  
-  MAGIC_FILL,
+
+  MAGIC_MIRROR,
+  MAGIC_FLIP,
 
   NUM_MAGICS
 };
@@ -48,11 +49,11 @@ enum {
 /* Magic tool names: */
 
 const char * const magic_names[NUM_MAGICS] = {
+  gettext_noop("Fill"),
+  gettext_noop("Grass"),
+
   gettext_noop("Rainbow"),
   gettext_noop("Sparkles"),
-
-  gettext_noop("Mirror"),
-  gettext_noop("Flip"),
 
   gettext_noop("Blur"),
   gettext_noop("Smudge"),
@@ -72,18 +73,19 @@ const char * const magic_names[NUM_MAGICS] = {
   gettext_noop("Drip"),
   gettext_noop("Cartoon"),
 
-  gettext_noop("Fill")
+  gettext_noop("Mirror"),
+  gettext_noop("Flip"),
 };
 
 
 /* Some text to write when each tool is selected: */
 
 const char * const magic_tips[NUM_MAGICS] = {
+  gettext_noop("Click in the picture to fill that area with color."),
+  gettext_noop("Click and move to draw grass."),
+  
   gettext_noop("You can draw in rainbow colors!"),
   gettext_noop("Click and move to draw sparkles."),
-  
-  gettext_noop("Click to make a mirror image."),
-  gettext_noop("Click to flip the picture upside-down."),
   
   gettext_noop("Click and move the mouse around to blur the picture."),
   gettext_noop("Click and move the mouse around to smudge the picture."),
@@ -102,19 +104,20 @@ const char * const magic_tips[NUM_MAGICS] = {
 
   gettext_noop("Click and move the mouse around to make the picture drip."),
   gettext_noop("Click and move the mouse around to turn the picture into a cartoon."),
-  
-  gettext_noop("Click in the picture to fill that area with color.")
+
+  gettext_noop("Click to make a mirror image."),
+  gettext_noop("Click to flip the picture upside-down."),
 };
 
 
 /* Tool icon filenames: */
 
 const char * const magic_img_fnames[NUM_MAGICS] = {
+  DATA_PREFIX "images/magic/fill.png",
+  DATA_PREFIX "images/magic/grass.png",
+  
   DATA_PREFIX "images/magic/rainbow.png",
   DATA_PREFIX "images/magic/sparkles.png",
-  
-  DATA_PREFIX "images/magic/mirror.png",
-  DATA_PREFIX "images/magic/flip.png",
   
   DATA_PREFIX "images/magic/blur.png",
   DATA_PREFIX "images/magic/smudge.png",
@@ -134,7 +137,8 @@ const char * const magic_img_fnames[NUM_MAGICS] = {
   DATA_PREFIX "images/magic/drip.png",
   DATA_PREFIX "images/magic/cartoon.png",
 
-  DATA_PREFIX "images/magic/fill.png"
+  DATA_PREFIX "images/magic/mirror.png",
+  DATA_PREFIX "images/magic/flip.png",
 };
 
 

@@ -617,6 +617,7 @@ static SDL_Surface * img_paintcan;
 static SDL_Surface * img_grow, * img_shrink;
 
 static SDL_Surface * img_sparkles;
+static SDL_Surface * img_grass;
 
 static SDL_Surface * img_title_on, * img_title_off,
   * img_title_large_on, * img_title_large_off;
@@ -4064,6 +4065,7 @@ static void magic_draw(int x1, int y1, int x2, int y2, int button_down)
   /* FIXME: Need sounds for:
      Smudge
      Tint
+     Grass (mower?)
      Cartoon */
 
 
@@ -4479,6 +4481,21 @@ static void blit_magic(int x, int y, int button_down)
 	      dest.y = y - 16;
 
 	      SDL_BlitSurface(img_sparkles, &src, canvas, &dest);
+	    }
+	}
+      else if (cur_magic == MAGIC_GRASS)
+	{
+	  if ((rand() % 10) < 2)
+	    {
+	      src.x = 0;
+	      src.y = (rand() % 4) * 32;
+	      src.w = 32;
+	      src.h = 32;
+
+	      dest.x = x - 16;
+	      dest.y = y - 16;
+
+	      SDL_BlitSurface(img_grass, &src, canvas, &dest);
 	    }
 	}
       else if (cur_magic == MAGIC_FLIP)
@@ -6162,6 +6179,7 @@ static void setup(int argc, char * argv[])
   show_progress_bar();
 
   img_sparkles = loadimage(DATA_PREFIX "images/ui/sparkles.png");
+  img_grass    = loadimage(DATA_PREFIX "images/ui/grass.png");
 
 
   /* Load brushes: */
@@ -10317,6 +10335,7 @@ static void cleanup(void)
   free_surface( &img_paintcan );
 
   free_surface( &img_sparkles );
+  free_surface( &img_grass );
 
   free_surface_array( undo_bufs, NUM_UNDO_BUFS );
 #ifndef LOW_QUALITY_COLOR_SELECTOR
