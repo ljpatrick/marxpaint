@@ -7,7 +7,7 @@ bill@newbreedsoftware.com
 http://www.newbreedsoftware.com/tuxpaint/
 
 
-June 17, 2002 - January 12, 2005
+June 17, 2002 - January 14, 2005
 
 
 * Design and Coding:
@@ -15,11 +15,6 @@ June 17, 2002 - January 12, 2005
   Bill Kendrick <bill@newbreedsoftware.com>
   New Breed Software
   http://www.newbreedsoftware.com/
-
-  Filled shapes algorythm based on description from
-  the book "Computer Graphics: C Version," (c) Prentice Hall 1997
-  by Donald Hearn and M. Pauline Baker.
-  [ NOTE: Currently not in use. ]
 
   Flood fill code based on Wikipedia example:
   http://www.wikipedia.org/wiki/Flood_fill/C_example
@@ -31,10 +26,6 @@ June 17, 2002 - January 12, 2005
   Arbitrary resolution support, smudge magic tool, grass magic tool,
   brick magic tools, improved stamp tinter, and other fixes by:
   Albert Cahalan <albert@users.sf.net>
-
-  High quality stamp scaler from "hq2x", "hq3x" and "hq4x" demos
-  http://www.hiend3d.com/hq3x.html
-  by Maxim Stepin <maxim@hiend3d.com>
 
 
 * Graphics
