@@ -8,6 +8,12 @@ http://www.newbreedsoftware.com/tuxpaint/
 
 
 2004.September.04 (0.9.14) [cvs]
+  * Updated Catalan translation.
+    Pere Pujal Carabantes <ppujal@airtel.net>
+
+  * Updated Brazilian Portuguese translation.
+    Daniel Jose Viana <danjovic@vespanet.com.br>
+
   * Added support for immutable "starter" images, which are installed
     globally with Tux Paint, and provide a starting canvas for images.
     Two types may be created: coloring-book-style, in which a black outline
