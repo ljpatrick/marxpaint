@@ -1,6 +1,6 @@
 # translation of fr.po to 
 # Tux Paint french messages.
-# Copyright (C) 2002.
+# Copyright (C) 2004.
 # Jacques Chion <Jacques.Chion@wanadoo.fr>,
 # Charles Vidal <vidalc@club-internet.fr>, 2002.
 # jimmy <jacques.chion@wanadoo.fr>, 2004.
@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: fr\n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2004-02-21 10:26+0100\n"
+"PO-Revision-Date: 2004-05-30 21:20-0700\n"
 "Last-Translator: jimmy <jacques.chion@wanadoo.fr>\n"
 "Language-Team:  <fr@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -44,7 +44,7 @@ msgstr "Effacer cette image?"
 
 #: tuxpaint.c:808 tuxpaint.c:815 tuxpaint.c:822 tuxpaint.c:825
 msgid "OK"
-msgstr ""
+msgstr "D'accord"
 
 #: tuxpaint.c:810
 msgid "Starting a new picture will erase the current one!"
@@ -104,11 +104,11 @@ msgstr "Choisis une image, et clique ensuite sur 'Ouvrir'"
 
 #: colors.h:62
 msgid "Black!"
-msgstr "Noir"
+msgstr "Noir!"
 
 #: colors.h:63
 msgid "White!"
-msgstr "Blanc"
+msgstr "Blanc!"
 
 #: colors.h:64
 msgid "Red!"
@@ -116,35 +116,35 @@ msgstr "Rouge!"
 
 #: colors.h:65
 msgid "Pink!"
-msgstr "Rose"
+msgstr "Rose!"
 
 #: colors.h:66
 msgid "Orange!"
-msgstr "Orange"
+msgstr "Orange!"
 
 #: colors.h:67
 msgid "Yellow!"
-msgstr "Jaune"
+msgstr "Jaune!"
 
 #: colors.h:68
 msgid "Lime!"
-msgstr "Citron vert"
+msgstr "Citron vert!"
 
 #: colors.h:69
 msgid "Green!"
-msgstr "Vert"
+msgstr "Vert!"
 
 #: colors.h:70
 msgid "Cyan!"
-msgstr "Cyan"
+msgstr "Cyan!"
 
 #: colors.h:71
 msgid "Blue!"
-msgstr "Bleu"
+msgstr "Bleu!"
 
 #: colors.h:72
 msgid "Purple!"
-msgstr "Pourpre"
+msgstr "Pourpre!"
 
 #: colors.h:73
 msgid "Fuchsia!"
@@ -152,15 +152,15 @@ msgstr ""
 
 #: colors.h:74
 msgid "Brown!"
-msgstr "Marron"
+msgstr "Marron!"
 
 #: colors.h:75
 msgid "Gray!"
-msgstr "Bravo!"
+msgstr "Gris!"
 
 #: colors.h:76
 msgid "Silver!"
-msgstr "Argent"
+msgstr "Argent!"
 
 #: great.h:20
 msgid "Great!"
@@ -484,11 +484,3 @@ msgstr "Bouge la souris pour faire tourner. Clique pour la dessiner."
 msgid "OK then… Let’s keep drawing this one!"
 msgstr "Bien! alors continuons à dessiner!"
 
-#~ msgid "Okay"
-#~ msgstr "D'accord"
-
-#~ msgid "Red"
-#~ msgstr "Rouge"
-
-#~ msgid "Grey"
-#~ msgstr "Gris"
