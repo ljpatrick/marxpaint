@@ -691,11 +691,8 @@ static SDL_Surface * img_openlabels_open, * img_openlabels_erase,
 static SDL_Surface * img_tux[NUM_TIP_TUX];
 
 #ifndef LOW_QUALITY_COLOR_SELECTOR
-static SDL_Surface * img_color_btns[NUM_COLORS];
-#endif
-
-#ifndef LOW_QUALITY_COLOR_SELECTOR
-static Uint8 colorsel_alpha(Uint8 c1, Uint8 c2, Uint8 a);
+static SDL_Surface * img_color_btns[NUM_COLORS*2];
+static SDL_Surface * img_color_btn_off;
 #endif
 
 static int colors_are_selectable;
@@ -5108,8 +5105,9 @@ static void setup(int argc, char * argv[])
   int scale;
 #ifndef LOW_QUALITY_COLOR_SELECTOR
   int x, y;
-  SDL_Surface * tmp_btn;
-  Uint8 r, g, b, a;
+  SDL_Surface * tmp_btn_up;
+  SDL_Surface * tmp_btn_down;
+  Uint8 r, g, b;
 #endif
   SDL_Surface * tmp_imgcurup, * tmp_imgcurdown;
 
@@ -6708,18 +6706,21 @@ static void setup(int argc, char * argv[])
 #ifndef LOW_QUALITY_COLOR_SELECTOR
 
   /* Create appropriately-shaped buttons: */
-
-  tmp_btn = thumbnail(img_btn_down, (WINDOW_WIDTH - 96) / NUM_COLORS, 48, 0);
-
+  SDL_Surface *img1 = loadimage(DATA_PREFIX "brushes/round_36.png");
+  SDL_Surface *img2 = thumbnail(img1,        (WINDOW_WIDTH - 96) / NUM_COLORS, 48, 0);
+  tmp_btn_up        = thumbnail(img_btn_up,  (WINDOW_WIDTH - 96) / NUM_COLORS, 48, 0);
+  tmp_btn_down      = thumbnail(img_btn_down,(WINDOW_WIDTH - 96) / NUM_COLORS, 48, 0);
+  img_color_btn_off = thumbnail(img_btn_off, (WINDOW_WIDTH - 96) / NUM_COLORS, 48, 0);
+  SDL_FreeSurface(img1);
 
   /* Create surfaces to draw them into: */
 
-  for (i = 0; i < NUM_COLORS; i++)
+  for (i = 0; i < NUM_COLORS*2; i++)
     {
 
       img_color_btns[i] = SDL_CreateRGBSurface(screen->flags,
 					       /* (WINDOW_WIDTH - 96) / NUM_COLORS, 48, */
-					       tmp_btn->w, tmp_btn->h,
+					       tmp_btn_up->w, tmp_btn_up->h,
 					       screen->format->BitsPerPixel,
 					       screen->format->Rmask,
 					       screen->format->Gmask,
@@ -6728,9 +6729,9 @@ static void setup(int argc, char * argv[])
 
       if (img_color_btns[i] == NULL)
 	{
-	  fprintf(stderr, "\nError: Can't build color button! (%d of %d)\n"
+	  fprintf(stderr, "\nError: Can't build color button!\n"
 		  "The Simple DirectMedia Layer error that occurred was:\n"
-		  "%s\n\n", i + 1, NUM_COLORS, SDL_GetError());
+		  "%s\n\n", SDL_GetError());
 
 	  cleanup();
 	  exit(1);
@@ -6742,32 +6743,52 @@ static void setup(int argc, char * argv[])
 
   /* Generate the buttons based on the thumbnails: */
 
-  SDL_LockSurface(tmp_btn);
+  SDL_LockSurface(tmp_btn_down);
+  SDL_LockSurface(tmp_btn_up);
 
-  for (y = 0; y < tmp_btn->h /* 48 */; y++)
+  for (y = 0; y < tmp_btn_up->h /* 48 */; y++)
     {
-      for (x = 0; x < tmp_btn->w /* (WINDOW_WIDTH - 96) / NUM_COLORS */; x++)
+      for (x = 0; x < tmp_btn_up->w /* (WINDOW_WIDTH - 96) / NUM_COLORS */; x++)
 	{
-	  SDL_GetRGB(getpixel(tmp_btn, x, y), tmp_btn->format,
-		     &r, &g, &b);
-	  a = 255 - ((r + g + b) / 3);
+	  SDL_GetRGB(getpixel(tmp_btn_up, x, y), tmp_btn_up->format, &r, &g, &b);
+	  double ru = sRGB_to_linear_table[r];
+	  double gu = sRGB_to_linear_table[g];
+	  double bu = sRGB_to_linear_table[b];
+	  SDL_GetRGB(getpixel(tmp_btn_down, x, y), tmp_btn_down->format, &r, &g, &b);
+	  double rd = sRGB_to_linear_table[r];
+	  double gd = sRGB_to_linear_table[g];
+	  double bd = sRGB_to_linear_table[b];
+	  Uint8 a;
+	  SDL_GetRGBA(getpixel(img2, x, y), img2->format, &r, &g, &b, &a);
+	  double aa = a/255.0;
 
 	  for (i = 0; i < NUM_COLORS; i++)
 	    {
+	      double rh = sRGB_to_linear_table[color_hexes[i][0]];
+	      double gh = sRGB_to_linear_table[color_hexes[i][1]];
+	      double bh = sRGB_to_linear_table[color_hexes[i][2]];
 	      putpixel(img_color_btns[i], x, y,
 		       SDL_MapRGB(img_color_btns[i]->format,
-				  colorsel_alpha(color_hexes[i][0], 255, a),
-				  colorsel_alpha(color_hexes[i][1], 255, a),
-				  colorsel_alpha(color_hexes[i][2], 255, a)));
+				  linear_to_sRGB(rh*aa + ru*(1.0-aa)),
+				  linear_to_sRGB(gh*aa + gu*(1.0-aa)),
+				  linear_to_sRGB(bh*aa + bu*(1.0-aa))));
+	      putpixel(img_color_btns[i+NUM_COLORS], x, y,
+		       SDL_MapRGB(img_color_btns[i+NUM_COLORS]->format,
+				  linear_to_sRGB(rh*aa + rd*(1.0-aa)),
+				  linear_to_sRGB(gh*aa + gd*(1.0-aa)),
+				  linear_to_sRGB(bh*aa + bd*(1.0-aa))));
 	    }
 	}
     }
 
-  for (i = 0; i < NUM_COLORS; i++)
+  for (i = 0; i < NUM_COLORS*2; i++)
     SDL_UnlockSurface(img_color_btns[i]);
 
-  SDL_UnlockSurface(tmp_btn);
-  SDL_FreeSurface(tmp_btn);
+  SDL_UnlockSurface(tmp_btn_up);
+  SDL_UnlockSurface(tmp_btn_down);
+  SDL_FreeSurface(tmp_btn_up);
+  SDL_FreeSurface(tmp_btn_down);
+  SDL_FreeSurface(img2);
 
 #endif
 
@@ -7238,17 +7259,18 @@ static void draw_colors(int action)
 
   for (i = 0; i < NUM_COLORS; i++)
     {
+      dest.x = (i * ((WINDOW_WIDTH - 96) / NUM_COLORS)) + 96;
+      dest.y = 40 + ((NUM_TOOLS / 2) * 48) + HEIGHTOFFSET;
 #ifndef LOW_QUALITY_COLOR_SELECTOR
-      dest.x = (i * ((WINDOW_WIDTH - 96) / NUM_COLORS)) + 96;
-      dest.y = 40 + ((NUM_TOOLS / 2) * 48) + HEIGHTOFFSET;
-
-      if (colors_state == COLORSEL_ENABLE)
-	SDL_BlitSurface(img_color_btns[i], NULL, screen, &dest);
-      else
-	SDL_BlitSurface(img_color_btns[COLOR_WHITE], NULL, screen, &dest);
+      SDL_BlitSurface(
+        (colors_state == COLORSEL_ENABLE)
+          ? img_color_btns[i + (i==cur_color)*NUM_COLORS]
+          : img_color_btn_off,
+        NULL,
+        screen,
+        &dest
+      );
 #else
-      dest.x = (i * ((WINDOW_WIDTH - 96) / NUM_COLORS)) + 96;
-      dest.y = 40 + ((NUM_TOOLS / 2) * 48) + HEIGHTOFFSET;
       dest.w = ((WINDOW_WIDTH - 96) / NUM_COLORS);
       dest.h = 48 + HEIGHTOFFSET;
 
@@ -7261,15 +7283,14 @@ static void draw_colors(int action)
       else
 	SDL_FillRect(screen, &dest,
 		     SDL_MapRGB(screen->format, 240, 240, 240));
-#endif
-
       if (i==cur_color && colors_state==COLORSEL_ENABLE)
 	{
 	  dest.x = (i * ((WINDOW_WIDTH - 96) / NUM_COLORS)) + 96;
 	  dest.y = 44 + ((NUM_TOOLS / 2) * 48) + HEIGHTOFFSET;
-
 	  SDL_BlitSurface(img_paintcan, NULL, screen, &dest);
 	}
+#endif
+
     }
 //    SDL_UpdateRect(screen, 0, 0, screen->w, screen->h);
 }
@@ -8884,26 +8905,6 @@ static void update_screen(int x1, int y1, int x2, int y2)
 }
 
 
-#ifndef LOW_QUALITY_COLOR_SELECTOR
-/* Build a color based on two colors and an alpha... */
-/* WARNING: this is not a true "alpha" color computation */
-static Uint8 colorsel_alpha(Uint8 c1, Uint8 c2, Uint8 a)
-{
-  Uint16 c, nc1, nc2, na;
-
-  na = a;
-  nc1 = c1;
-  nc2 = c2;
-
-  if (nc1 > 200)
-    nc1 = 200;
-
-  c = ((nc1 * na) / 255 + (nc2 * (255 - na)) / 255);
-
-  return (Uint8) c;
-}
-#endif
-
 /* For qsort() call in loadarbitrary()... */
 
 static int compare_strings(char * * s1, char * * s2)
@@ -10492,7 +10493,7 @@ static void cleanup(void)
 
   free_surface_array( undo_bufs, NUM_UNDO_BUFS );
 #ifndef LOW_QUALITY_COLOR_SELECTOR
-  free_surface_array( img_color_btns, NUM_COLORS );
+  free_surface_array( img_color_btns, NUM_COLORS*2 );
 #endif
   free_surface_array( img_stamp_thumbs, MAX_STAMPS );
 
