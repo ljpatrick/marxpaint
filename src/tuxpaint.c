@@ -7,12 +7,12 @@
   bill@newbreedsoftware.com
   http://www.newbreedsoftware.com/tuxpaint/
   
-  June 14, 2002 - July 20, 2003
+  June 14, 2002 - July 26, 2003
 */
 
 
 #define VER_VERSION     "0.9.12"
-#define VER_DATE        "2003.07.20"
+#define VER_DATE        "2003.07.26"
 
 
 /* #define DEBUG */
@@ -32,7 +32,7 @@
 #define PROMPTOFFSETX (WINDOW_WIDTH - 640) / 2
 #define PROMPTOFFSETY (HEIGHTOFFSET / 2)
 
-#define MAX_FILES 2048  /* Max. # of files in a dir. to worry about... */
+// #define MAX_FILES 2048  /* Max. # of files in a dir. to worry about... */
 
 #define REPEAT_SPEED 300  /* Initial repeat speed for scrollbars */
 #define CURSOR_BLINK_SPEED 500  /* Initial repeat speed for cursor */
@@ -5095,7 +5095,7 @@ void draw_brushes(void)
   if (num_brushes > 14 + TOOLOFFSET)
   {
     off_y = 24;
-    max = 12 + TOOLSET;
+    max = 12 + TOOLOFFSET;
 
     dest.x = WINDOW_WIDTH - 96;
     dest.y = 40;
@@ -5469,8 +5469,24 @@ void loadarbitrary(SDL_Surface * surfs[], char * descs[], info_type * infs[],
   struct dirent * f;
   struct stat sbuf;
   char fname[512];
-  char * d_names[MAX_FILES];
+  int d_names_alloced;
+  char * * d_names;
   int num_files, i;
+
+
+  /* Make some space: */
+
+  d_names_alloced = 32;
+  d_names = (char * *) malloc(sizeof(char *) * d_names_alloced);
+  if (d_names == NULL)
+  {
+    fprintf(stderr,
+	    "\nError: I can't allocate memory for directory listing!\n"
+	    "The system error that occurred was: %s\n",
+	    strerror(errno));
+    cleanup();
+    exit(1);
+  }
 
 
   *count = starting;
@@ -5509,9 +5525,25 @@ void loadarbitrary(SDL_Surface * surfs[], char * descs[], info_type * infs[],
     {
       d_names[num_files] = strdup(f->d_name);
       num_files++;
+
+      if (num_files > d_names_alloced)
+      {
+	d_names_alloced = d_names_alloced + 32;
+
+	d_names = (char * *) realloc(d_names, sizeof(char *) * d_names_alloced);
+        if (d_names == NULL)
+        {
+          fprintf(stderr,
+	         "\nError: I can't reallocate memory for directory listing!\n"
+	         "The system error that occurred was: %s\n",
+	         strerror(errno));
+          cleanup();
+          exit(1);
+        }
+      }
     }
   }
-  while (f != NULL && num_files < MAX_FILES);
+  while (f != NULL);
 
   closedir(d);
 
@@ -5592,6 +5624,8 @@ void loadarbitrary(SDL_Surface * surfs[], char * descs[], info_type * infs[],
 
       free(d_names[i]);
     }
+
+  free(d_names);
 
 
   /* Give warning if too many files were found (e.g., some not loaded): */
@@ -8424,14 +8458,15 @@ int do_quit(void)
 int do_open(int want_new_tool)
 {
   SDL_Surface * img, * img1, * img2;
-  SDL_Surface * thumbs[MAX_FILES];
+  int things_alloced;
+  SDL_Surface * * thumbs;
   DIR * d;
   struct dirent * f;
 #ifndef __BEOS__
-  struct dirent fs[MAX_FILES];
+  struct dirent * fs;
 #endif
   char * dirname, * rfname;
-  char * d_names[MAX_FILES], * d_exts[MAX_FILES];
+  char * * d_names, * * d_exts;
   FILE * fi;
   char fname[1024];
   int num_files, i, done, update_list, want_erase, cur, which,
@@ -8465,6 +8500,17 @@ int do_open(int want_new_tool)
   }
 
 
+  /* Allocate some space: */
+
+  things_alloced = 32;
+  thumbs = (SDL_Surface * *) malloc(sizeof(SDL_Surface *) * things_alloced);
+#ifndef __BEOS__
+  fs = (struct dirent *) malloc(sizeof(struct dirent) * things_alloced);
+#endif
+  d_names = (char * *) malloc(sizeof(char *) * things_alloced);
+  d_exts = (char * *) malloc(sizeof(char *) * things_alloced);
+
+
   /* Read directory of images and build thumbnails: */
 
   num_files = 0;
@@ -8479,7 +8525,7 @@ int do_open(int want_new_tool)
     {
       f = readdir(d);
 
-      if ( f && (dot = strstr(f->d_name, FNAME_EXTENSION)) != NULL)
+      if (f && (dot = strstr(f->d_name, FNAME_EXTENSION)) != NULL)
       {
 	if( strstr(f->d_name, "-t") == NULL)
 	{
@@ -8586,9 +8632,11 @@ int do_open(int want_new_tool)
       {
 	memcpy(&(fs[num_files_in_dir]), f, sizeof(struct dirent));
         num_files_in_dir++;
+
+	/* FIXME: realloc() */
       }
     }
-    while (f != NULL && num_files_in_dir < MAX_FILES);
+    while (f != NULL);
 
     
     closedir(d);
@@ -9333,12 +9381,17 @@ int do_open(int want_new_tool)
   /* Clean up: */
   
   free_surface_array(thumbs, num_files);
+
+  free(thumbs);
   
   for (i = 0; i < num_files; i++)
     {
       free(d_names[i]);
       free(d_exts[i]);
     }
+
+  free(d_names);
+  free(d_exts);
 
   return(want_new_tool);
 }
@@ -10259,7 +10312,8 @@ void loadfonts(char * dir, int fatal)
   struct dirent * f;
   struct stat sbuf;
   char fname[512];
-  char * d_names[MAX_FILES];
+  int d_names_alloced;
+  char * * d_names;
   int num_files, i;
 
 
@@ -10284,6 +10338,22 @@ void loadfonts(char * dir, int fatal)
   }
 
 
+  /* Make some space: */
+
+  d_names_alloced = 32;
+  d_names = (char * *) malloc(sizeof(char *) * d_names_alloced);
+  if (d_names == NULL)
+  {
+    fprintf(stderr,
+	    "\nError: I can't allocate memory for directory listing!\n"
+	    "The system error that occurred was: %s\n",
+	    strerror(errno));
+    cleanup();
+    exit(1);
+  }
+
+
+
   /* Read directory for images: */
 
   num_files = 0;
@@ -10295,9 +10365,11 @@ void loadfonts(char * dir, int fatal)
     {
       d_names[num_files] = strdup(f->d_name);
       num_files++;
+
+      /* FIXME: realloc */
     }
   }
-  while (f != NULL && num_files < MAX_FILES);
+  while (f != NULL);
 
   closedir(d);
 
