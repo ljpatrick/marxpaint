@@ -222,8 +222,11 @@ June 17, 2002 - June 5, 2004
   * Windows 32-bit builds
     John Popplewell <john@johnnypops.demon.co.uk>
 
-  * Debian packages
+  * Debian Linux packages
     Ben Armstrong <synrg@sanctuary.nslug.ns.ca>
+
+  * RedHat Linux / Fedora Core packages
+    TOYAMA Shin-ichi <shin1@wmail.plala.or.jp>
 
   * NetBSD packages
     Thomas Klausner <wiz@danbala.ifoer.tuwien.ac.at>
