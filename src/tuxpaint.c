@@ -1679,7 +1679,8 @@ static void parse_font_style(style_info *si)
   else
     si->boldness = 1;
 
-  si->truetype = !!strstr(si->filename,".ttf");
+  // we'll count both TrueType and OpenType
+  si->truetype = !!strstr(si->filename,".ttf") || !!strstr(si->filename,".otf");
 }
 
 static void groupfonts_range(style_info **base, int count)
@@ -14111,9 +14112,10 @@ static void loadfonts(const char * const dir, int fatal)
 	  if (S_ISDIR(sbuf.st_mode))
 	    loadfonts(fname,fatal);
 
-          // Loadable: TrueType (.ttf), Type1 (.pfa and .pfb), and various useless bitmap fonts.
-          // Compressed files (with .gz or .bz2) might also work.
-	  if (strstr(d_names[i], ".ttf") || strstr(d_names[i], ".pfa") || strstr(d_names[i], ".pfb"))
+          // Loadable: TrueType (.ttf), OpenType (.otf), Type1 (.pfa and .pfb),
+          // and various useless bitmap fonts. Compressed files (with .gz or .bz2)
+          // should also work.
+	  if (strstr(d_names[i], ".ttf") || strstr(d_names[i], ".otf") || strstr(d_names[i], ".pfa") || strstr(d_names[i], ".pfb"))
 	    {
 //printf("Loading font: %s/%s\n", dir, d_names[i]);
               TTF_Font *font = TTF_OpenFont(fname, text_sizes[text_size]);
