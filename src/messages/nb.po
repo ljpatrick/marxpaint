@@ -1,161 +1,191 @@
+# translation of nb.po to Norsk (bokmål)
+# translation of nb.po to Norsk (bokmål)
 # translation of nb.po to Norwegian Bokmål
 # Tux Paint Norwegian messages
 # , 2003
 # Dag H. Lorås <dag.loraas@operamail.com>, 2003.
 # Knut Erik Hollund <khollund@responze.net>, 2003.
+# Karl Ove Hufthammer <karl@huftis.org>, 2003.
 msgid ""
 msgstr ""
 "Project-Id-Version: nb\n"
 "POT-Creation-Date: 2003-08-03 00:00+0200\n"
-"PO-Revision-Date: 2003-11-25 23:07+0100\n"
-"Last-Translator: Knut Erik Hollund <khollund@responze.net>\n"
-"Language-Team: Norwegian Bokmål <i18n-nb@lister.ping.uio.no>\n"
+"PO-Revision-Date: 2003-12-23 22:16+0100\n"
+"Last-Translator: Karl Ove Hufthammer <karl@huftis.org>\n"
+"Language-Team: Norsk (bokmål) <i18n-nb@lister.ping.uio.no>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.0.2\n"
 
-#: src/tuxpaint.c:598
+#: src/tuxpaint.c:795
 msgid "Do you really want to quit?"
 msgstr "Vil du virkelig avslutte?"
 
-#: src/tuxpaint.c:599
-#: src/tuxpaint.c:603
-#: src/tuxpaint.c:607
-#: src/tuxpaint.c:627
-#: src/tuxpaint.c:6393
-#: src/tuxpaint.c:7034
+#: src/tuxpaint.c:796
+#: src/tuxpaint.c:800
+#: src/tuxpaint.c:804
+#: src/tuxpaint.c:824
+#: src/tuxpaint.c:8337
+#: src/tuxpaint.c:9033
 msgid "Yes"
-msgstr "Ja"
+msgstr "Ja!"
 
-#: src/tuxpaint.c:600
-#: src/tuxpaint.c:604
-#: src/tuxpaint.c:608
-#: src/tuxpaint.c:628
-#: src/tuxpaint.c:6396
+#: src/tuxpaint.c:797
+#: src/tuxpaint.c:801
+#: src/tuxpaint.c:805
+#: src/tuxpaint.c:825
+#: src/tuxpaint.c:8340
 msgid "No"
-msgstr "Nei"
+msgstr "Nei!"
 
-#: src/tuxpaint.c:602
+#: src/tuxpaint.c:799
 msgid "If you quit, you'll lose your picture! Save it?"
-msgstr "Du vil miste tegningen hvis du avslutter. Vil du lagre den først?"
+msgstr "Du mistre tegningen hvis du avslutter. Vil du lagre den først?"
 
-#: src/tuxpaint.c:606
+#: src/tuxpaint.c:803
 msgid "Save your picture first?"
 msgstr "Vil du lagre tegningen først?"
 
-#: src/tuxpaint.c:610
+#: src/tuxpaint.c:807
 msgid "Can't open that picture!"
-msgstr "Kan ikke åpne tegningen."
+msgstr "Klarte ikke åpne tegningen."
 
-#: src/tuxpaint.c:611
-#: src/tuxpaint.c:618
-#: src/tuxpaint.c:621
-#: src/tuxpaint.c:624
-#: src/tuxpaint.c:7368
+#: src/tuxpaint.c:808
+#: src/tuxpaint.c:815
+#: src/tuxpaint.c:818
+#: src/tuxpaint.c:821
 msgid "Okay"
 msgstr "OK"
 
-#: src/tuxpaint.c:613
+#: src/tuxpaint.c:810
 msgid "Starting a new picture will erase the current one!"
-msgstr "Hvis du starter på en ny tegning så mister du den du har."
+msgstr "Starter du på en ny tegning så mister du den du har."
 
-#: src/tuxpaint.c:614
+#: src/tuxpaint.c:811
 msgid "That's Ok"
 msgstr "OK!"
 
-#: src/tuxpaint.c:615
+#: src/tuxpaint.c:812
 msgid "Never Mind!"
 msgstr "Avbryt!"
 
-#: src/tuxpaint.c:617
+#: src/tuxpaint.c:814
 msgid "There are no saved files!"
 msgstr "Det finnes ingen lagrede tegninger."
 
-#: src/tuxpaint.c:620
+#: src/tuxpaint.c:817
 msgid "Your picture has been printed!"
 msgstr "Tegningen er skrevet ut."
 
-#: src/tuxpaint.c:623
+#: src/tuxpaint.c:820
 msgid "You can't print yet!"
-msgstr "Du kan ikke skrive ut enda!."
+msgstr "Du kan ikke skrive ut enda!"
 
-#: src/tuxpaint.c:626
+#: src/tuxpaint.c:823
 msgid "Erase this picture?"
 msgstr "Vil du virkelig slette tegningen?"
 
+#: src/tuxpaint.c:5401
 #: src/tools.h:52
-#: src/tuxpaint.c:4147
 msgid "Open"
 msgstr "Åpne"
 
-#: src/tuxpaint.c:4152
+#: src/tuxpaint.c:5406
 msgid "Erase"
 msgstr "Slett"
 
-#: src/tuxpaint.c:4157
+#: src/tuxpaint.c:5411
 msgid "Back"
 msgstr "Tilbake"
 
-#: src/tuxpaint.c:7033
+#: src/tuxpaint.c:9032
 msgid "Save over the older version of this drawing?"
 msgstr "Vil du lagre over den gamle versjonen av tegningen?"
 
-#: src/tuxpaint.c:7035
+#: src/tuxpaint.c:9034
 msgid "No, save a new file"
 msgstr "Nei. Lagre som ny tegning."
 
-#: src/tuxpaint.c:7629
+#: src/tuxpaint.c:9853
 msgid "Choose the picture you want, then click 'Open'"
 msgstr "Velg en tegning og trykk «Åpne»."
 
-#: src/colors.h:56
-msgid "Black"
-msgstr "Svart"
-
-#: src/colors.h:57
-msgid "White"
-msgstr "Hvit"
-
-#: src/colors.h:58
-msgid "Red"
-msgstr "Rød"
-
-#: src/colors.h:59
-msgid "Pink"
-msgstr "Rosa"
-
-#: src/colors.h:60
-msgid "Orange"
-msgstr "Oransje"
-
-#: src/colors.h:61
-msgid "Yellow"
-msgstr "Gul"
-
 #: src/colors.h:62
-msgid "Green"
-msgstr "Grønn"
+msgid "Black"
+msgstr "Svart!"
 
 #: src/colors.h:63
-msgid "Cyan"
-msgstr "Turkis"
+msgid "White"
+msgstr "Hvit!"
 
 #: src/colors.h:64
-msgid "Blue"
-msgstr "Blå"
+msgid "Red"
+msgstr "Rød!"
 
 #: src/colors.h:65
-msgid "Purple"
-msgstr "Lilla"
+msgid "Pink"
+msgstr "Rosa!"
 
 #: src/colors.h:66
-msgid "Brown"
-msgstr "Brun"
+msgid "Orange"
+msgstr "Oransje!"
 
 #: src/colors.h:67
+msgid "Yellow"
+msgstr "Gul!"
+
+#: src/colors.h:68
+msgid "Lime"
+msgstr "Lysegrønn!"
+
+#: src/colors.h:69
+msgid "Green"
+msgstr "Grønn!"
+
+#: src/colors.h:70
+msgid "Cyan"
+msgstr "Turkis!"
+
+#: src/colors.h:71
+msgid "Blue"
+msgstr "Blå!"
+
+#: src/colors.h:72
+msgid "Purple"
+msgstr "Fiolett!"
+
+#: src/colors.h:73
+msgid "Fuchsia"
+msgstr "Lys fiolett!"
+
+#: src/colors.h:74
+msgid "Brown"
+msgstr "Brun!"
+
+#: src/colors.h:75
 msgid "Grey"
-msgstr "Grå"
+msgstr "Mørkegrå!"
+
+#: src/colors.h:76
+msgid "Silver"
+msgstr "Lysegrå!"
+
+#: src/great.h:20
+msgid "Great!"
+msgstr "Flott!"
+
+#: src/great.h:21
+msgid "Cool!"
+msgstr "Kult!"
+
+#: src/great.h:22
+msgid "Keep it up!"
+msgstr "Fortsett slik!"
+
+#: src/great.h:23
+msgid "Good job!"
+msgstr "Bra jobba!"
 
 #: src/magic.h:48
 msgid "Rainbow"
@@ -247,7 +277,7 @@ msgstr "Hold inne knappen og flytt rundt for å gjøre tegningen om til en kritt
 
 #: src/magic.h:86
 msgid "Click and move the mouse around to make the picture drip!"
-msgstr "Hold inne knappen og flytt rundt for å gjøre tegningen dryppende!"
+msgstr "Hold inne knappen og flytt rundt for å gjøre tegningen dryppende."
 
 #: src/magic.h:88
 msgid "Click and move the mouse to thicken the picture"
@@ -261,70 +291,70 @@ msgstr "Hold inne knappen og flytt rundt for å gjera tegningen tynnere."
 msgid "Click in the picture to fill that area with color"
 msgstr "Trykk på tegningen for å fylle området med fargen fra malingbøtta."
 
-#: src/shapes.h:121
-#: src/shapes.h:122
+#: src/shapes.h:141
+#: src/shapes.h:142
 msgid "Square"
 msgstr "Kvadrat"
 
-#: src/shapes.h:123
-#: src/shapes.h:124
+#: src/shapes.h:143
+#: src/shapes.h:144
 msgid "Rectangle"
 msgstr "Rektangel"
 
-#: src/shapes.h:125
-#: src/shapes.h:126
+#: src/shapes.h:145
+#: src/shapes.h:146
 msgid "Circle"
 msgstr "Sirkel"
 
-#: src/shapes.h:127
-#: src/shapes.h:128
 #: src/shapes.h:147
 #: src/shapes.h:148
+#: src/shapes.h:167
+#: src/shapes.h:168
 msgid "Oval"
 msgstr "Ellipse"
 
-#: src/shapes.h:129
-#: src/shapes.h:130
+#: src/shapes.h:149
+#: src/shapes.h:150
 msgid "Triangle"
 msgstr "Trekant"
 
-#: src/shapes.h:131
-#: src/shapes.h:132
+#: src/shapes.h:151
+#: src/shapes.h:152
 msgid "Pentagon"
 msgstr "Femkant"
 
-#: src/shapes.h:133
-#: src/shapes.h:134
+#: src/shapes.h:153
+#: src/shapes.h:154
 msgid "Diamond"
 msgstr "Diamant"
 
-#: src/shapes.h:141
-#: src/shapes.h:142
+#: src/shapes.h:161
+#: src/shapes.h:162
 msgid "A square has four sides, each the same length."
-msgstr "En kvadrat har fire like lange sider."
+msgstr "Et kvadrat har fire like lange sider."
 
-#: src/shapes.h:143
-#: src/shapes.h:144
+#: src/shapes.h:163
+#: src/shapes.h:164
 msgid "A rectangle has four sides."
 msgstr "Et rektangel har fire sider."
 
-#: src/shapes.h:145
-#: src/shapes.h:146
+#: src/shapes.h:165
+#: src/shapes.h:166
 msgid "A circle is exactly round."
 msgstr "En sirkel er rund."
 
-#: src/shapes.h:149
-#: src/shapes.h:150
+#: src/shapes.h:169
+#: src/shapes.h:170
 msgid "A triangle has three sides."
 msgstr "En trekant har tre sider."
 
-#: src/shapes.h:151
-#: src/shapes.h:152
+#: src/shapes.h:171
+#: src/shapes.h:172
 msgid "A pentagon has five sides."
 msgstr "En femkant har fem sider."
 
-#: src/shapes.h:153
-#: src/shapes.h:154
+#: src/shapes.h:173
+#: src/shapes.h:174
 msgid "A diamond is a square, turned around slightly."
 msgstr "En diamant er et rotert kvadrat."
 
@@ -412,11 +442,11 @@ msgstr "Velg hva du vil stemple tegningen med."
 
 #: src/tools.h:64
 msgid "Click to start drawing a line.  Let go to complete it."
-msgstr "Trykk for å starta på en linje. Slipp for å fullføre linja."
+msgstr "Trykk for å starta på en linje. Slipp for å fullføre den."
 
 #: src/tools.h:65
 msgid "Pick a shape. Click to pick the center, drag, then let go when it is the size you want.  Move around to rotate it, and click to draw it."
-msgstr "Velg en figur. Trykk og dra så for å velge midten og størrelse på figuren. Flytt rundt for å rotere den, og trykk til slutt for å tegne den."
+msgstr "Velg en figur. Trykk og dra så for å velge midten og størrelsen på figuren. Flytt rundt for å rotere den, og trykk til slutt for å tegne den."
 
 #: src/tools.h:66
 msgid "Choose a style of text.  Click on your drawing and you can start typing."
@@ -472,21 +502,5 @@ msgstr "Flytt på musa for å rotere figuren. Trykk så for å slippe den."
 
 #: src/tools.h:81
 msgid "Ok then... Let's keep drawing this one!"
-msgstr "Greitt! Da fortsetter vi med denne tegningen."
-
-#: src/great.h:20
-msgid "Great!"
-msgstr "Flott!"
-
-#: src/great.h:21
-msgid "Cool!"
-msgstr "Kult!"
-
-#: src/great.h:22
-msgid "Keep it up!"
-msgstr "Fortsett slik!"
-
-#: src/great.h:23
-msgid "Good job!"
-msgstr "Bra jobba!"
+msgstr "Greit! Da fortsetter vi med denne tegningen."
 
