@@ -11,8 +11,11 @@ http://www.newbreedsoftware.com/tuxpaint/
   * simplify strip_trailing_whitespace, now O(n)
     Albert Cahalan <albert@users.sf.net>
 
+  * drawtext_callback prototype forces useless arg. void it
+    Albert Cahalan <albert@users.sf.net>
+
 2004.November.22 (0.9.15)
-  * Enable more compuler warnings, and update code to prevent them.
+  * Enable more compiler warnings, and update code to prevent them.
     Albert Cahalan <albert@users.sf.net>
 
   * Updated Hebrew translation.

@@ -12355,6 +12355,7 @@ static void control_drawtext_timer(Uint32 interval, const char * const text)
 
 static Uint32 drawtext_callback(Uint32 interval, void *param)
 {
+  (void)interval;
   SDL_PushEvent((SDL_Event*)param);
 
   return 0; /* Remove timer */
