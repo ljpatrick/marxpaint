@@ -4028,10 +4028,6 @@ static void magic_draw(int x1, int y1, int x2, int y2, int button_down)
     playsound(0, SND_NEGATIVE, 0);
   else if (cur_magic == MAGIC_BLUR)
     playsound(0, SND_BLUR, 0);
-  else if (cur_magic == MAGIC_THICK)
-    playsound(0, SND_THICK, 0);
-  else if (cur_magic == MAGIC_THIN)
-    playsound(0, SND_THIN, 0);
   else if (cur_magic == MAGIC_BLOCKS && ((rand() % 10) < 5))
     playsound(0, SND_BLOCKS, 0);
   else if (cur_magic == MAGIC_FADE)
@@ -4706,6 +4702,7 @@ static void blit_magic(int x, int y, int button_down)
 	  if (img_starter != NULL)
 	    mirror_starter();
 	}
+#if 0
       else if (cur_magic == MAGIC_THIN || cur_magic == MAGIC_THICK)
 	{
 	  SDL_LockSurface(last);
@@ -4758,6 +4755,7 @@ static void blit_magic(int x, int y, int button_down)
 	  SDL_UnlockSurface(canvas);
 	  SDL_UnlockSurface(last);
 	}
+#endif
     }
 }
 

@@ -33,9 +33,6 @@ enum {
   MAGIC_CHALK,
   MAGIC_BLOCKS,
   
-  MAGIC_THICK,
-  MAGIC_THIN,
-
   MAGIC_NEGATIVE,
   MAGIC_TINT,
 
@@ -57,9 +54,6 @@ const int magic_colors[] = {
 
   COLORSEL_ENABLE, // large bricks
   COLORSEL_ENABLE, // small bricks
-
-  COLORSEL_DISABLE,
-  COLORSEL_DISABLE,
 
   COLORSEL_DISABLE,
   COLORSEL_DISABLE,
@@ -104,9 +98,6 @@ const char * const magic_names[NUM_MAGICS] = {
   gettext_noop("Chalk"),
   gettext_noop("Blocks"),
 
-  gettext_noop("Thick"),
-  gettext_noop("Thin"),
-
   gettext_noop("Negative"),
   gettext_noop("Tint"),
 
@@ -139,9 +130,6 @@ const char * const magic_tips[NUM_MAGICS] = {
   gettext_noop("Click and move the mouse around to turn the picture into a chalk drawing."),
   gettext_noop("Click and move the mouse around to make the picture blocky."),
   
-  gettext_noop("Click and move the mouse to thicken the picture."),
-  gettext_noop("Click and move the mouse to thin the picture."),
-
   gettext_noop("Click and move the mouse around to draw a negative."),
   gettext_noop("Click and move the mouse around to change the picture's color."),
 
@@ -174,9 +162,6 @@ const char * const magic_img_fnames[NUM_MAGICS] = {
   DATA_PREFIX "images/magic/chalk.png",
   DATA_PREFIX "images/magic/blocks.png",
   
-  DATA_PREFIX "images/magic/thick.png",
-  DATA_PREFIX "images/magic/thin.png",
-
   DATA_PREFIX "images/magic/negative.png",
   DATA_PREFIX "images/magic/tint.png",
   
