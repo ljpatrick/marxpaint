@@ -92,6 +92,9 @@ How To Make PNGs
 
   Windows Users
   -------------
+    The Gimp
+      http://www.gimp.org/~tml/gimp/win32/
+
     Canvas (Deneba)
       http://www.deneba.com/products/canvas8/default2.html
 

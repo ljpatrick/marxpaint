@@ -8,6 +8,13 @@ http://www.newbreedsoftware.com/tuxpaint/
 
 
 2003.April.5 (0.9.11) [cvs]
+  * UTF-8 support in the Text Tool!
+    Robert Glowczynski <robertg@software.com.pl>,
+    Mantas Kriauciunas <monte@mail.lt>
+
+  * Added 'The Gimp' to docs/PNG.txt
+    Mantas Kriauciunas <monte@mail.lt>
+
   * Set $OUTPUT_CHARSET for Japanese locale, to fix Win32 issue.
     TOYAMA Shin-ichi <kyone@tky2.3web.ne.jp>
 

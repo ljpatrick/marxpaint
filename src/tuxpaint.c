@@ -46,6 +46,7 @@
 #include <time.h>
 
 #include <locale.h>
+#include <iconv.h>
 
 #ifdef WIN32_OLD
 /* The following are required by libintl.h, so must be defined first: */
@@ -211,11 +212,7 @@ void win32_perror(const char *str)
 #define clamp(lo,value,hi)    (min(max(value,lo),hi))
 
 
-#ifdef WIN32_OLD
 #define RENDER_TEXT TTF_RenderUTF8_Blended
-#else
-#define RENDER_TEXT TTF_RenderText_Blended
-#endif
 
 
 /* Possible languages: */
@@ -293,6 +290,7 @@ int lang_use_utf8[] = {
   LANG_JA,
   LANG_KO,
   /* LANG_LT, */
+  /* LANG_PL, */
   LANG_ZH,
   -1
 };
@@ -539,6 +537,11 @@ void handle_active(SDL_Event * event);
 char * remove_slash(char * path);
 unsigned char * utf8_decode(unsigned char * str);
 unsigned char * unescape(char * str);
+
+void convert_open(const char * from);
+void convert_close();
+char * convert2utf8(char c);
+int converts();
 
 
 #define USEREVENT_TEXT_UPDATE 1
@@ -1000,7 +1003,25 @@ void mainloop(void)
 	  	     key_down, key_unicode, key_unicode);
 #endif
 	  	     
-	        texttool_str[texttool_len++] = key_unicode;
+
+		if (converts())
+		{
+                  char * str = convert2utf8(key_unicode);
+		  int i;
+		  size_t len = strlen(str);
+
+		  for (i = 0; i < len; i++)
+		  {
+		    texttool_str[texttool_len++] = str[i];
+		  }
+
+		  free(str);
+		}
+		else
+		{
+	          texttool_str[texttool_len++] = key_unicode;
+		}
+		
 	        texttool_str[texttool_len] = '\0';
 	        playsound(0, SND_KEYCLICK, 1);
 	        do_render_cur_text(0);
@@ -3668,6 +3689,12 @@ void setup(int argc, char * argv[])
     langstr = strdup("lithuanian");
   }
 
+  if (langstr == NULL && getenv("LANG") != NULL &&
+      strncasecmp(getenv("LANG"), "pl_PL", 5) == 0)
+  {
+    langstr = strdup("polish");
+  }
+
   if (langstr != NULL)
   {
     if (strcmp(langstr, "english") == 0 ||
@@ -3846,11 +3873,18 @@ void setup(int argc, char * argv[])
   language = current_language();
 
   if (language == LANG_JA)
+  {
     putenv("OUTPUT_CHARSET=ja_JP.UTF-8");
+  }
+  else if (language == LANG_PL)
+  {
+    putenv("OUTPUT_CHARSET=pl_PL.UTF-8");
+    convert_open("ISO8859-2");
+  }
   else if (language == LANG_LT)
   {
     putenv("OUTPUT_CHARSET=lt_LT.UTF-8");
-    /* convert_open("ISO8859-13"); */
+    convert_open("ISO8859-13");
   }
 
 
@@ -10849,5 +10883,58 @@ unsigned char * unescape(char * str)
 
 
   return(strdup(outstr));
+}
+
+
+static iconv_t cd = (iconv_t)(-1);
+
+int converts()
+{
+  if ( cd == (iconv_t)(-1) )
+    return 0;
+  else
+    return 1;
+}
+
+void convert_open(const char *from)
+{
+  cd = iconv_open ("UTF-8", from);
+  if (cd == (iconv_t)(-1))
+  {
+    /* FIXME: Error! */
+  }
+}
+
+void convert_close()
+{
+  iconv_close(cd);
+}
+
+char * convert2utf8(char c)
+{
+  char inbuf[1];
+  char outbuf[4];
+
+  char *inptr;
+  char *outptr;
+  size_t inbytes_left, outbytes_left;
+  int count;
+
+  inbuf[0]=c;
+  memset(outbuf, 0, 4);
+  inbytes_left = 1;
+  outbytes_left = 4;
+  inptr = inbuf;
+  outptr = (char *) outbuf;
+
+  count = iconv (cd, &inptr, &inbytes_left, &outptr, &outbytes_left);
+/*
+  if (count < 0)
+  {
+       printf ("Error!\n");
+  }
+*/
+
+  return strdup(outbuf);
 }
 
