@@ -1,5 +1,5 @@
-.\" tuxpaint.1 - 2003.04.25
-.TH TUXPAINT 1 "25 Apr 2003" "0.9.11" "Tux Paint"
+.\" tuxpaint.1 - 2003.06.14
+.TH TUXPAINT 1 "14 Jun 2003" "0.9.11" "Tux Paint"
 .SH NAME
 tuxpaint -- A drawing program for young children.
 
@@ -22,6 +22,7 @@ tuxpaint -- A drawing program for young children.
 [\-\-nowheelmouse]
 [\-\-nofancycursors]
 [\-\-nooutlines]
+[\-\-nostamps]
 [\-\-keyboard]
 [\-\-savedir \fIDIR\fP]
 [\-\-saveover]
@@ -42,6 +43,7 @@ tuxpaint -- A drawing program for young children.
 [\-\-wheelmouse]
 [\-\-mouse]
 [\-\-outlines]
+[\-\-stamps]
 [\-\-fancycursors]
 [\-\-saveoverask]
 
@@ -168,6 +170,12 @@ In \fInooutlines\fP mode, much simpler outlines and 'rubber-band' lines are
 displayed when using the \fILines\fP, \fIShapes\fP, \fIStamps\fP and
 \fIEraser\fP tools. (This can help when \fITux Paint\fP is run on slower
 computers, or displayed on a remote X display.)
+
+.TP 8
+.B \-\-nostamps \-\-stamps
+With \fInostamps\fP set, Rubber Stamp images are not loaded, so the
+\fIStamps\fP tool will not be available.  This option can be used to reduce
+the time Tux Paint takes to load, and reduce the amount of RAM it requires.
 
 .TP 8
 .B \-\-savedir \fIDIR\fP
