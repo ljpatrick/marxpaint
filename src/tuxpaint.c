@@ -22,12 +22,12 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
   
-  June 14, 2002 - February 13, 2005
+  June 14, 2002 - March 10, 2005
 */
 
 
 #define VER_VERSION     "0.9.15"
-#define VER_DATE        "2005-02-13"
+#define VER_DATE        "2005-03-10"
 
 
 /* Color depth for Tux Paint to run in, and store canvases in: */
@@ -7715,6 +7715,7 @@ static void setup(int argc, char * argv[])
   {
     char * lock_fname;
     time_t time_lock, time_now;
+    char * homedirdir;
 
 
     /* Get the current time: */
@@ -7753,6 +7754,12 @@ static void setup(int argc, char * argv[])
 
     /* Okay to run; create/update the lockfile */
 
+    /* (Make sure the directory exists, first!) */
+    homedirdir = get_fname("");
+    mkdir(homedirdir, 0755);
+    free(homedirdir);
+
+  
     fi = fopen(lock_fname, "w");
     if (fi != NULL)
     {
@@ -11464,10 +11471,9 @@ static char * get_fname(const char * const name)
     strcpy(f, savedir);
   else
     snprintf(f, sizeof(f), "%s/%s", savedir, name);
+
 #else
-  /* On Mac, Linux and other Unixes, it's in a place under our home dir.: */
-  
-  
+
 #ifdef __APPLE__
   /* Macintosh: It's under ~/Library/Application Support/TuxPaint */
   

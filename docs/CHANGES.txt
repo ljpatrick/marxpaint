@@ -120,6 +120,9 @@ http://www.newbreedsoftware.com/tuxpaint/
     * Now uses "AUDIO_S16SYS" when initializing audio system
       (on Linux/Mac/BeOS); helps sound under Linux on Mac hardware.
       Albert Cahalan <albert@users.sourceforge.net>
+
+    * Made sure user directory existed before trying to create lockfile
+      (it might not be there the very first time we run Tux Paint).
     
   * Interface improvements:
     -----------------------
