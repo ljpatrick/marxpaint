@@ -1,13 +1,13 @@
 # Tux Paint Russian messages
-# (PO based on the Polish version from August 2003)
-# Copyright (C) 2003
+# Copyright (C) 2003-2004
 # Translators: Dmitriy Ivanov <ace22b@myrealbox.com>
+#              Eugene Zelenko <greendeath@mail.ru>
 msgid ""
 msgstr ""
 "Project-Id-Version: TuxPaint\n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2003-08-03 04:07-0700\n"
-"Last-Translator: Dmitriy Ivanov <ace22b@myrealbox.com>\n"
+"PO-Revision-Date: 2003-05-28 12:00GMT\n"
+"Last-Translator: Eugene Zelenko <greendeath@mail.ru>\n"
 "Language-Team: Dmitriy Ivanov <ace22b@myrealbox.com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -38,38 +38,35 @@ msgstr "Сохранить вашу картинку сначала?"
 
 #: tuxpaint.c:807
 msgid "Can’t open that picture!"
-msgstr "Не могу открыть ту картинку!"
+msgstr "Не могу открыть эту картинку!"
 
 #: tuxpaint.c:808 tuxpaint.c:815 tuxpaint.c:822 tuxpaint.c:825
 msgid "OK"
-msgstr ""
+msgstr "Хорошо"
 
 #: tuxpaint.c:810
 msgid "Starting a new picture will erase the current one!"
 msgstr "Начиная новую картинку вы уничтожите текущую!"
 
 #: tuxpaint.c:811
-#, fuzzy
 msgid "That’s OK!"
-msgstr "Хорошо"
+msgstr "Хорошо!"
 
 #: tuxpaint.c:812
-#, fuzzy
 msgid "Never mind!"
 msgstr "Нет!"
 
 #: tuxpaint.c:814
 msgid "There are no saved files!"
-msgstr "Нет спасённых картинок!"
+msgstr "Нет сохранённых картинок!"
 
 #: tuxpaint.c:817
-#, fuzzy
 msgid "Print your picture now?"
-msgstr "Сохранить вашу картинку сначала?"
+msgstr "Напечатать вашу картинку?"
 
 #: tuxpaint.c:821
 msgid "Your picture has been printed!"
-msgstr "Ваша картинка распечатанна!"
+msgstr "Ваша картинка распечатана!"
 
 #: tuxpaint.c:824
 msgid "You can’t print yet!"
@@ -92,93 +89,76 @@ msgid "Back"
 msgstr "Назад"
 
 #: tuxpaint.c:9064
-#, fuzzy
 msgid "Save over the older version of this picture?"
 msgstr "Сохранить поверх старой версии этой картинки?"
 
 #: tuxpaint.c:9066
 msgid "No, save a new file"
-msgstr "Нет, cохранить в новый файл"
+msgstr "Нет, сохранить в новый файл"
 
 #: tuxpaint.c:9885
-#, fuzzy
 msgid "Choose the picture you want, then click “Open”."
-msgstr "Выберите желаемую картинку, а потом щёлкните 'Открыть'"
+msgstr "Выберите желаемую картинку, а потом щёлкните «Открыть»."
 
 #: colors.h:62
-#, fuzzy
 msgid "Black!"
-msgstr "Чёрный"
+msgstr "Чёрный!"
 
 #: colors.h:63
-#, fuzzy
 msgid "White!"
-msgstr "Белый"
+msgstr "Белый!"
 
 #: colors.h:64
-#, fuzzy
 msgid "Red!"
-msgstr "Переделать!"
+msgstr "Красный!"
 
 #: colors.h:65
-#, fuzzy
 msgid "Pink!"
-msgstr "Розовый"
+msgstr "Розовый!"
 
 #: colors.h:66
-#, fuzzy
 msgid "Orange!"
-msgstr "Оранжевый"
+msgstr "Оранжевый!"
 
 #: colors.h:67
-#, fuzzy
 msgid "Yellow!"
-msgstr "Жёлтый"
+msgstr "Жёлтый!"
 
 #: colors.h:68
-#, fuzzy
 msgid "Lime!"
-msgstr "Известь"
+msgstr "Светло-зеленый!"
 
 #: colors.h:69
-#, fuzzy
 msgid "Green!"
-msgstr "Зелёный"
+msgstr "Зелёный!"
 
 #: colors.h:70
-#, fuzzy
 msgid "Cyan!"
-msgstr "Циан"
+msgstr "Циан!"
 
 #: colors.h:71
-#, fuzzy
 msgid "Blue!"
-msgstr "Голубой"
+msgstr "Голубой!"
 
 #: colors.h:72
-#, fuzzy
 msgid "Purple!"
-msgstr "Пурпурный"
+msgstr "Пурпурный!"
 
 #: colors.h:73
-#, fuzzy
 msgid "Fuchsia!"
-msgstr "Фуксия"
+msgstr "Фуксия!"
 
 #: colors.h:74
-#, fuzzy
 msgid "Brown!"
-msgstr "Коричневый"
+msgstr "Коричневый!"
 
 #: colors.h:75
-#, fuzzy
 msgid "Gray!"
-msgstr "Прекрасно!"
+msgstr "Серый!"
 
 #: colors.h:76
-#, fuzzy
 msgid "Silver!"
-msgstr "Серебряный"
+msgstr "Серебряный!"
 
 #: great.h:20
 msgid "Great!"
@@ -226,7 +206,7 @@ msgstr "Негатив"
 
 #: magic.h:58
 msgid "Fade"
-msgstr "Исчезание"
+msgstr "Исчезновение"
 
 #: magic.h:60
 msgid "Chalk"
@@ -253,63 +233,53 @@ msgid "You can draw in rainbow colors!"
 msgstr "Вы можете рисовать цветами радуги!"
 
 #: magic.h:74
-#, fuzzy
 msgid "Click and move to draw sparkles."
-msgstr "Рисуйте искрами!"
+msgstr "Щёлкните и поводите по картинке, чтобы нарисовать искры."
 
 #: magic.h:76
-#, fuzzy
 msgid "Click to make a mirror image."
-msgstr "Щёлкните на картинку чтобы превратить её в зеркальное отражение!"
+msgstr "Щёлкните на картинку, чтобы превратить её в зеркальное отражение."
 
 #: magic.h:77
-#, fuzzy
 msgid "Click to flip the picture upside-down."
-msgstr "Щёлкните на картинку чтобы перевернуть её вверх тормашками!"
+msgstr "Щёлкните на картинку, чтобы перевернуть её вверх тормашками."
 
 #: magic.h:79
-#, fuzzy
 msgid "Click and move the mouse around to blur the picture."
-msgstr "Размазать картинку!"
+msgstr "Щёлкните и поводите по картинке, чтобы размазать её часть."
 
 #: magic.h:80
-#, fuzzy
 msgid "Click and move the mouse around to make the picture blocky."
-msgstr "Поводите по картинке чтобы превратить её в мозаику!"
+msgstr "Щёлкните и поводите по картинке, чтобы превратить её часть в мозаику."
 
 #: magic.h:82
-#, fuzzy
 msgid "Click and move the mouse around to draw a negative."
-msgstr "Щёлкните на картинку чтобы превратить часть её в негатив!"
+msgstr "Щёлкните и поводите по картинке, чтобы превратить её часть в негатив."
 
 #: magic.h:83
 msgid "Click and move to fade the colors."
-msgstr "Щёлкните на картинку чтобы зделать часть её более светлой!"
+msgstr "Щёлкните и поводите по картинке, чтобы сделать её часть более светлой."
 
 #: magic.h:85
 msgid ""
 "Click and move the mouse around to turn the picture into a chalk drawing."
-msgstr "Щёлкните на картинку чтобы превратить часть её в рисунок мелом!"
+msgstr "Щёлкните и поводите по картинке, чтобы превратить её часть в рисунок мелом."
 
 #: magic.h:86
-#, fuzzy
 msgid "Click and move the mouse around to make the picture drip."
-msgstr "Заставьте картину капать!"
+msgstr "Щёлкните и поводите по картинке, чтобы заставьте её капать."
 
 #: magic.h:88
-#, fuzzy
 msgid "Click and move the mouse to thicken the picture."
-msgstr "Утолстить часть картинки!"
+msgstr "Щёлкните и поводите по картинке, чтобы утолстить её часть."
 
 #: magic.h:89
-#, fuzzy
 msgid "Click and move the mouse to thin the picture."
-msgstr "Утоньшить часть картинки!"
+msgstr "Щёлкните и поводите по картинке, чтобы утоньшить её часть."
 
 #: magic.h:91
-#, fuzzy
 msgid "Click in the picture to fill that area with color."
-msgstr "Заполнить эту область цветом!"
+msgstr "Щёлкните, чтобы заполнить эту область цветом."
 
 #: shapes.h:141 shapes.h:142
 msgid "Square"
@@ -361,7 +331,7 @@ msgstr "А у пятиугольника пять сторон (и углов!)"
 
 #: shapes.h:173 shapes.h:174
 msgid "A diamond is a square, turned around slightly."
-msgstr "Правильный ромб похож на квадрат, но с другими углами."
+msgstr "Ромб похож на квадрат, но с другими углами."
 
 #: titles.h:37
 msgid "Tools"
@@ -437,35 +407,32 @@ msgstr "Выйти"
 
 #: tools.h:62
 msgid "Pick a color and a brush shape to draw with."
-msgstr "Выберите цвет и форму кисточки которой рисовать"
+msgstr "Выберите цвет и форму кисточки, которой вы хотите рисовать."
 
 #: tools.h:63
 msgid "Pick a picture to stamp around your drawing."
 msgstr "Выберите картину, чтобы поставить печать на вашем рисунке."
 
 #: tools.h:64
-#, fuzzy
 msgid "Click to start drawing a line. Let go to complete it."
 msgstr ""
-"Щёлкните, чтобы начать рисовать линию. Отпустите кнопку чтобы закончить."
+"Щёлкните, чтобы начать рисовать линию. Отпустите кнопку, чтобы закончить."
 
 #: tools.h:65
-#, fuzzy
 msgid ""
 "Pick a shape. Click to pick the center, drag, then let go when it is the "
 "size you want. Move around to rotate it, and click to draw it."
 msgstr ""
-"Выберите форму. Щёлкните, растяните, oтпустите. Покрутите форму, затем "
-"щёлкните чтобы нарисовать её"
+"Выберите форму. Щёлкните для выбора центра, растяните до нужного размера, "
+"отпустите. Покрутите форму, затем щёлкните, чтобы нарисовать её."
 
 #: tools.h:66
-#, fuzzy
 msgid "Choose a style of text. Click on your drawing and you can start typing."
 msgstr "Выберите стиль текста. Щёлкните на вашем рисунке, и печатайте."
 
 #: tools.h:67
 msgid "Pick a magical effect to use on your drawing!"
-msgstr "Выберите волшебный эффект, чтобы использовать на вашем рисунке!"
+msgstr "Выберите волшебный эффект, чтобы использовать его на вашем рисунке!"
 
 #: tools.h:68
 msgid "Undo!"
@@ -489,7 +456,7 @@ msgstr "Открыть..."
 
 #: tools.h:73
 msgid "Your image has been saved!"
-msgstr "Ваше картинка спасена!"
+msgstr "Ваше картинка сохранена!"
 
 #: tools.h:74
 msgid "Printing…"
@@ -501,25 +468,16 @@ msgstr "Пока!"
 
 #: tools.h:78
 msgid "Let go of the button to complete the line."
-msgstr "Отпустите кнопку чтобы закончить линию."
+msgstr "Отпустите кнопку, чтобы закончить линию."
 
 #: tools.h:79
 msgid "Hold the button to stretch the shape."
-msgstr "Держите кнопку чтобы растянуть форму. "
+msgstr "Держите кнопку, чтобы растянуть форму."
 
 #: tools.h:80
 msgid "Move the mouse to rotate the shape. Click to draw it."
-msgstr "Покрутите форму, затем щёлкните чтобы нарисовать её."
+msgstr "Покрутите форму, затем щёлкните, чтобы нарисовать её."
 
 #: tools.h:81
 msgid "OK then… Let’s keep drawing this one!"
 msgstr "Хорошо, продолжаем рисовать!"
-
-#~ msgid "Okay"
-#~ msgstr "Хорошо"
-
-#~ msgid "Red"
-#~ msgstr "Красный"
-
-#~ msgid "Grey"
-#~ msgstr "Серый"
