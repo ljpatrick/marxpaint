@@ -8249,11 +8249,11 @@ static Mix_Chunk * loadsound(const char * const fname)
 
 static void strip_trailing_whitespace( char *buf )
 {
-  while (buf[strlen(buf) - 1] == ' ' ||
-         buf[strlen(buf) - 1] == '\r' ||
-         buf[strlen(buf) - 1] == '\n')
+  unsigned i = strlen(buf);
+  while(i--)
     {
-      buf[strlen(buf) - 1] = '\0';
+      if(!isspace(buf[i])) break;
+      buf[i] = '\0';
     }
 }
 
