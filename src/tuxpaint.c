@@ -21,12 +21,12 @@
   along with this program; if not, write to the Free Software
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   
-  June 14, 2002 - April 23, 2004
+  June 14, 2002 - May 9, 2004
 */
 
 
 #define VER_VERSION     "0.9.14"
-#define VER_DATE        "2004.04.23"
+#define VER_DATE        "2004.05.09"
 
 
 /* #define DEBUG */
@@ -287,6 +287,7 @@ void win32_perror(const char *str)
 
 enum {
   LANG_AF,     /* Afrikaans */
+  LANG_BE,     /* Belarusian */
   LANG_BR,     /* Breton */
   LANG_CA,     /* Catalan */
   LANG_CS,     /* Czech */
@@ -331,6 +332,7 @@ enum {
 
 const char * lang_prefixes[NUM_LANGS] = {
   "af",
+  "be",
   "br",
   "ca",
   "cs",
@@ -3795,6 +3797,7 @@ void show_lang_usage(FILE * f, char * prg)
 /* C */	     "  english      american-english\n"
 /* af */     "  afrikaans\n"
 /* eu */     "  basque       euskara\n"
+/* be */     "  belarusian   bielaruskaja\n"
 /* nb */     "  bokmal\n"
 /* pt_BR */  "  brazilian    brazilian-portuguese   portugues-brazilian\n"
 /* br */     "  breton       brezhoneg\n"
@@ -3851,6 +3854,7 @@ void show_locale_usage(FILE * f, char * prg)
 	  "  C       (English      American English)\n"
 	  "  af_ZA   (Afrikaans)\n"
 	  "  eu_ES   (Baque        Euskara)\n"
+	  "  be_BY   (Belarusian   Bielaruskaja)\n"
 	  "  nb_NO   (Bokmal)\n"
 	  "  pt_BR   (Brazilian    Brazilian Portuguese   Portugues Brazilian)\n"
 	  "  br_FR   (Breton       Brezhoneg)\n"
@@ -4402,6 +4406,12 @@ void setup(int argc, char * argv[])
 	  putenv("LANG=ca_ES");
 	  putenv("LC_ALL=ca_ES");
 	}
+      else if (strcmp(langstr, "belarusian") == 0 ||
+	       strcmp(langstr, "bielaruskaja") == 0)
+        {
+	  putenv("LANG=be_BY.UTF-8");
+	  putenv("LC_ALL=be_BY.UTF-8");
+        }
       else if (strcmp(langstr, "czech") == 0 ||
 	       strcmp(langstr, "cesky") == 0)
 	{
