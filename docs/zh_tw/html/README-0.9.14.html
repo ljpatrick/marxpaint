@@ -1140,48 +1140,40 @@ New Breed Software</p>
       讓背景部份是透明的(這在 Tux Paint 中會是白色的)，然後存成 PNG 的格式即可。</p>
     </blockquote>
 
-    <b>Scene-Style</b>
+    <b>佈景形式</b>
 
     <blockquote>
-      <p>Along with the 'coloring-book' style overlay, you can also provide
-      a separate background image as part of a 'starter' picture.  The
-      overlay acts the same: it can't be drawn over, erased, or affected by
-      'Magic' tools.  However, the background can be!</p>
+      <p>和著色簿形式的覆蓋一樣，您也可以提供一種背景分離的起始圖形。
+      覆蓋的動作是相同的：可以畫東西上去，擦掉，或是用「魔術」工具來作處理。
+      但是，背景還是在。</p>
 
-      <p>When the 'Eraser' tool is used on a picture based on this kind of
-      'starter' image, rather than turning the canvas white, it returns that
-      part of the canvas to the original background picture.</p>
+      <p>當「橡皮擦」工具用在這種起始圖形上時，不是將圖紙擦成白色的，
+      而是擦掉畫上去的部份，露出原本的背景圖來。</p>
 
-      <p>By creating both an overlay and a background, you can create a
-      'starter' which simulates depth.  Imagine a background that shows
-      the ocean, and an overlay that's a picture of a reef.  You can then
-      draw (or stamp) fish in the picture.  They'll appear in the ocean,
-      but never 'in front of' the reef.</p>
+      <p>用建立以上二種覆蓋和背景的方式，您可以創造一種具有假景深的起始圖形。
+      想像一個海洋的背景，上面有一片礁石的圖形，您可以畫上一條魚(或用圖章)，
+      他會是在海裡，但不能出現到礁石的前面來。</p>
 
-      <p>To create this kind of 'starter' picture, simply create an overlay
-      (with alpha transparency) as described above, and save it as a PNG.
-      Then create another image (without transparency), and save it with
-      the same filename, but with "<code>-back</code>" appended to the
-      name.  (e.g., "<code>reef-back.png</code>" would be the background
-      ocean picture that corresponds to the "<code>reef.png</code>"
-      overlay, or foreground.)</p>
+      <p>要建立這種起始圖形，只要建立和前面所述一樣的透明背景的圖，
+      並且將他存成 PNG 格式。然後建立另一個圖形(不要使用透明背景)，
+      把他存成相同的檔名後面加上 "<code>-back</code>"。
+      (例如："<code>reef-back.png</code>" 就是背景的海洋圖形，前面覆蓋著
+      "<code>reef.png</code>" 這個礁石的圖形。)</p>
     </blockquote>
     
-    <p>The 'starter' images should be the same size as Tux&nbsp;Paint's
-    canvas.  In the default 640x480 mode, that is 448x376 pixels.
-    (If you're using 800x600 mode, it should be 608x496.)</p>
+    <p>起始圖形必須和 Tux Paint 的圖紙一樣大，那就是 448x376 圖素。
+    (如果是使用 800x600 模式的話，那就是 608x496 。)</p>
     
-    <p>Place them in the "<code><b>starters</b></code>" directory.
-    When the 'Open' dialog is accessed in Tux&nbsp;Paint, the 'starter'
-    images will appear at the beginning of the list with a green background.</p>
+    <p>將他們放到 "<code><b>starters</b></code>" 的目錄裡，當使用 Tux Paint
+    的「開啟」交談框時，這個起始圖形就會用著綠色的背景出現在圖形的開頭處。</p>
     
-    <p><b>Note:</b> 'Starters' can't be saved over from within Tux&nbsp;Paint,
-    since loading a 'starter' is really like creating a new image.
-    (Instead of being blank, though there's already something there to work
-    with.)  The 'Save' command simply creates a new picture, like it would
-    if the 'New' command had been used.</p>
+    <p><b>註：</b>開啟起始圖形就像開一張新圖一樣，不能再回存覆蓋掉起始圖形的。
+    (取代了空白的圖紙，開始畫的時候已經有東西在上面。) 「儲存」的命令會直接建立一張新圖，
+    就像使用「新圖」的命令一樣的情況。</p>
 
-    <p><b>Note:</b> 'Starters' are 'attached' to saved pictures, via a
+    <p><b>註：</b> 起始圖形在儲存時會附加一個小小的和儲存檔名相同的文字檔，
+    不過他的副檔名是 "<code>.dat</code>" 。
+    'Starters' are 'attached' to saved pictures, via a
     small text file that has the same name as the saved file, but with
     "<code>.dat</code>" as the extension.  This allows the overlay and
     background, if any, to continue to affect the drawing even after
