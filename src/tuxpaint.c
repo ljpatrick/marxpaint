@@ -12689,7 +12689,8 @@ void load_starter_id(char * saved_id)
     fgets(starter_id, sizeof(starter_id), fi);
     starter_id[strlen(starter_id) - 1] = '\0';
 
-    fscanf(fi, "%d %d", &starter_mirrored, &starter_flipped);
+    fscanf(fi, "%d", &starter_mirrored);
+    fscanf(fi, "%d", &starter_flipped);
 
     fclose(fi);
   }
@@ -12927,6 +12928,8 @@ void flip_starter(void)
   
   /* Flip overlay: */
 
+  printf("Flipping starter\n");
+
   orig = img_starter;
   img_starter = duplicate_surface(orig);
 
@@ -12979,8 +12982,14 @@ void flip_starter(void)
     }
     else
     {
+      printf("Couldn't duplicate background!\n");
+
       img_starter_bkgd = orig;
     }
+  }
+  else
+  {
+    printf("No background to flip\n");
   }
 }
 
