@@ -20,6 +20,9 @@ http://www.newbreedsoftware.com/tuxpaint/
   * Added larger screen size support: 1024x768, 1280x1024, 1400x1050, 1600x1200
     TOYAMA Shin-ichi <shin1@wmail.plala.or.jp>
 
+  * Fixed to compile on old GLIBC system (such as RedHat-6.2)
+    TOYAMA Shin-ichi <shin1@wmail.plala.or.jp>
+
 
 2004.September.28 (0.9.14)
   * New Features:

@@ -4856,7 +4856,11 @@ void setup(int argc, char * argv[])
     }
  
   bindtextdomain("tuxpaint", LOCALEDIR);
+  
+  /* Old version of glibc does not have bind_textdomain_codeset() */
+#if defined __GLIBC__ && __GLIBC__ == 2 && __GLIBC_MINOR__ >=2 || __GLIBC__ > 2
   bind_textdomain_codeset("tuxpaint", "UTF-8");
+#endif
 
   textdomain("tuxpaint");
 
