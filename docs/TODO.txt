@@ -10,7 +10,7 @@ June 11, 2004
 
 HIGH-PRIORITY DOCUMENTATION CHANGES:
 ------------------------------------
-  * Meniton "--lang help" in README.
+  * Mention "--lang help" in README.
 
   * Convert documentation and man pages into a single source (DocBook?)
 
@@ -31,6 +31,13 @@ LOW-PRIORITY DOCUMENTATION CHANGES:
 
 HIGH-PRIORITY IMPLEMENTATION CHANGES:
 -------------------------------------
+  * Support different default size for stamps than the stamp images size.
+    Explanation: For example, the actual image of an apple could be 500x400
+    pixels, but selecting the apple would display a scaled down 50x40
+    (or 70x56 or whatever) image. Resized (especially scaled up) versions
+    of the stamp would then look much better, without any of the very ugly
+    pixelation and jagged edges that currently occurs.
+
   * Use 'default.ttf' font to display un-translated strings.
     (Hindi 'Shusha' font simply maps A-Z, a-z, etc. to Hindi characters, so
     untranslated strings appear as nonsense!)
@@ -86,6 +93,11 @@ LOW-PRIORITY IMPLEMENTATION CHANGES:
 
 HIGH-PRIORITY BUGS:
 -------------------
+  * FreeSans font has too large line spacing ('leading'), so there's not
+    enough space for two lines of text in the bottom panel. Reducing leading
+    for FreeSans font (*not* other fonts, it's only FreeSans that has
+    an unusual large amount of leading).
+
   * Deal with clash between Open dialog arrow key controls and
     mouse arrow key (--keyboard) controls.
 
@@ -118,10 +130,6 @@ HIGH-PRIORITY TRANSLATION STUFF:
 --------------------------------
   * Make right-to-left strings not wordwrap with the shortest line at
     the top!
-
-  * Use "intltools" to allow translation of "tuxpaint.desktop" contents
-    within a PO file.
-    (Suggested by Pablo Saratxaga)
 
   * Finish current translations.  (Especially documentation!)
 
@@ -177,6 +185,22 @@ FEATURE IDEAS:
 
 POSSIBLE FEATURE IDEAS:
 -----------------------
+  * Pipette / color prober tool. Click on it, then click on image to pick
+    up a color from a single pixel. Display color under mouse pointer in special
+    'custom color' color bucket (see below) when moving pointer. Click and drag
+    a rectangle to select a color which is the arithmetic average of the colors
+    in the selected area.
+
+  * Palette. Click on the left-most (or right-most) color bucket (which must look
+    a bit different than the rest) to pop up a palette (just a rectangular image
+    containing lots of colors in some sort of pattern) above it. Click on the
+    palette to select a color. The palette disappears (on button *release*).
+    Can probably reuse pipette tool code to pick up color (but don't support the
+    'average' method here). The palette should just be an ordinary image file,
+    and easy to replace. I recommend using the one of the left here:
+    http://www.ficml.org/jemimap/style/color/wheel.html
+    It's very easy to select both hues *and* brightness from this colour wheel.
+
   * Round eraser / eraser sizes
     FREQUENTLY REQUESTED
   
