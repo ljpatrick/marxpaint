@@ -262,7 +262,7 @@ void win32_perror(const char *str)
 
 enum {
   LANG_CA,     /* Catalan */
-  LANG_CZ,     /* Czech */
+  LANG_CS,     /* Czech */
   LANG_DA,     /* Danish */
   LANG_DE,     /* German */
   LANG_EL,     /* Greek */
@@ -287,8 +287,8 @@ enum {
   LANG_PT,     /* Portuguese */
   LANG_RO,     /* Romanian */
   LANG_RU,     /* Russian */
-  LANG_SE,     /* Swedish */
   LANG_SK,     /* Slovak */
+  LANG_SV,     /* Swedish */
   LANG_TA,     /* Tamil */
   LANG_TR,     /* Turkish */
   LANG_WA,     /* Walloon */
@@ -298,7 +298,7 @@ enum {
 
 const char * lang_prefixes[NUM_LANGS] = {
   "ca",
-  "cz",
+  "cs",
   "da",
   "de",
   "el",
@@ -323,8 +323,8 @@ const char * lang_prefixes[NUM_LANGS] = {
   "pt",
   "ro",
   "ru",
-  "se",
   "sk",
+  "sv",
   "ta",
   "tr",
   "wa",
@@ -360,7 +360,16 @@ int lang_use_right_to_left[] = {
 typedef struct info_type {
   int colorable;
   int tintable;
+  int mirrorable;
+  int flipable;
 } info_type;
+
+
+typedef struct state_type {
+  int mirrored;
+  int flipped;
+  int size;
+} state_type;
 
 
 enum {
@@ -416,6 +425,7 @@ SDL_Surface * img_brushes[MAX_BRUSHES];
 SDL_Surface * img_stamps[MAX_STAMPS];
 char * txt_stamps[MAX_STAMPS];
 info_type * inf_stamps[MAX_STAMPS];
+state_type * state_stamps[MAX_STAMPS];
 #ifndef NOSOUND
 Mix_Chunk * snd_stamps[MAX_STAMPS];
 #endif
@@ -3395,23 +3405,23 @@ void show_usage(FILE * f, char * prg)
     "\n"
     "Usage: %s {--usage | --help | --version | --copying}\n"
     "\n"
-    "       %s [--windowed | --fullscreen]   [--640x480 | --800x600]\n"
-    "       %s [--sound | --nosound]         [--quit | --noquit]\n"
-    "       %s [--print | --noprint]         [--complexshapes | --simpleshapes]\n"
-    "       %s [--mixedcase | --uppercase]   [--fancycursors | --nofancycursors]\n"
-    "       %s [--mouse | --keyboard]        [--dontgrab | --grab]\n"
-    "       %s [--noshortcuts | --shortcuts] [--wheelmouse | --nowheelmouse]\n"
-    "       %s [--outlines | --nooutlines]   [--stamps | --nostamps]\n"
-    "       %s [--wheelmouse | --nowheelmouse]\n"
-    "       %s [--saveoverask | --saveover | --saveovernew]\n"
-    "       %s [--savedir DIRECTORY]\n"
+    "  %s [--windowed | --fullscreen]   [--640x480 | --800x600]\n"
+    "  %s [--sound | --nosound]         [--quit | --noquit]\n"
+    "  %s [--print | --noprint]         [--complexshapes | --simpleshapes]\n"
+    "  %s [--mixedcase | --uppercase]   [--fancycursors | --nofancycursors]\n"
+    "  %s [--mouse | --keyboard]        [--dontgrab | --grab]\n"
+    "  %s [--noshortcuts | --shortcuts] [--wheelmouse | --nowheelmouse]\n"
+    "  %s [--outlines | --nooutlines]   [--stamps | --nostamps]\n"
+    "  %s [--wheelmouse | --nowheelmouse]\n"
+    "  %s [--saveoverask | --saveover | --saveovernew]\n"
+    "  %s [--savedir DIRECTORY]\n"
 #ifdef WIN32
-    "       %s [--printcfg | --noprintcfg]\n"
+    "  %s [--printcfg | --noprintcfg]\n"
 #endif
-    "       %s [--printdelay=SECONDS]\n"
-    "       %s [--lang LANGUAGE | --locale LOCALE]\n"
-    "       %s [--nosysconfig]\n"
- /* "       %s [--record FILE | --playback FILE]\n" */
+    "  %s [--printdelay=SECONDS]\n"
+    "  %s [--lang LANGUAGE | --locale LOCALE | --lang help]\n"
+    "  %s [--nosysconfig]\n"
+ /* "  %s [--record FILE | --playback FILE]\n" */
     "\n",
     prg, prg,
     blank, blank, blank,
@@ -3955,13 +3965,10 @@ void setup(int argc, char * argv[])
     else if (strcmp(argv[i], "--help") == 0 ||
 	     strcmp(argv[i], "-h") == 0)
     {
-      printf("\n");
       show_version();
-      printf("\n");
       show_usage(stdout, (char *) getfilename(argv[0]));
 
       printf(
-	"\n"
 	"See: " DOC_PREFIX "README.txt\n"
 	"\n");
       exit(0);
@@ -4713,7 +4720,8 @@ void setup(int argc, char * argv[])
     loadarbitrary(img_stamps, txt_stamps, inf_stamps, &num_stamps, num_stamps,
 	          MAX_STAMPS, homedirdir, 0, -1, -1);
 #endif
-  
+
+
 
     if (num_stamps == 0)
     {
@@ -4738,6 +4746,25 @@ void setup(int argc, char * argv[])
       {
         img_stamp_thumbs[i] = NULL;
       }
+
+      state_stamps[i] = malloc(sizeof(state_type));
+
+      if (inf_stamps[i] == NULL)
+      {
+	inf_stamps[i] = malloc(sizeof(info_type));
+	inf_stamps[i]->tintable = 0;
+	inf_stamps[i]->colorable = 0;
+	inf_stamps[i]->mirrorable = 1;
+	inf_stamps[i]->flipable = 1;
+      }
+      
+      if (mirrorstamps && inf_stamps[i]->mirrorable)
+        state_stamps[i]->mirrored = 1;
+      else
+        state_stamps[i]->mirrored = 0;
+
+      state_stamps[i]->flipped = 0;
+      state_stamps[i]->size = 100;
 
       show_progress_bar();
     }
@@ -5529,7 +5556,7 @@ void draw_fonts(void)
 
 void draw_stamps(void)
 {
-  int i, off_y, max, stamp;
+  int i, off_y, max, stamp, most;
   SDL_Rect dest;
   SDL_Surface * img;
 
@@ -5539,12 +5566,19 @@ void draw_stamps(void)
   draw_image_title(TITLE_STAMPS, WINDOW_WIDTH - 96);
 
 
+  /* How many can we show? */
+
+  most = 10;
+  if (disable_stamp_controls)
+    most = 14;
+
+
   /* Do we need scrollbars? */
 
-  if (num_stamps > 14 + TOOLOFFSET)
+  if (num_stamps > most + TOOLOFFSET)
   {
     off_y = 24;
-    max = 12 + TOOLOFFSET;
+    max = (most - 2) + TOOLOFFSET;
 
     dest.x = WINDOW_WIDTH - 96;
     dest.y = 40;
@@ -5558,10 +5592,14 @@ void draw_stamps(void)
       SDL_BlitSurface(img_scroll_up_off, NULL, screen, &dest);
     }
 
+    
     dest.x = WINDOW_WIDTH - 96;
     dest.y = 40 + 24 + ((6 + TOOLOFFSET / 2) * 48);
 
-    if (stamp_scroll < num_stamps - 12 - TOOLOFFSET)
+    if (!disable_stamp_controls)
+      dest.y = dest.y - (48 * 2);
+
+    if (stamp_scroll < num_stamps - (most - 2) - TOOLOFFSET)
     {
       SDL_BlitSurface(img_scroll_down, NULL, screen, &dest);
     }
@@ -5573,7 +5611,7 @@ void draw_stamps(void)
   else
   {
     off_y = 0;
-    max = 14 + TOOLOFFSET;
+    max = most + TOOLOFFSET;
   }
 
 
@@ -5616,6 +5654,107 @@ void draw_stamps(void)
 
       SDL_BlitSurface(img, NULL, screen, &dest);
     }
+  }
+
+
+  /* Draw stamp controls: */
+
+  if (!disable_stamp_controls)
+  {
+    /* Show mirror button: */
+
+    dest.x = WINDOW_WIDTH - 96;
+    dest.y = 40 + ((5 + TOOLOFFSET / 2) * 48);
+
+    if (inf_stamps[cur_stamp]->mirrorable)
+    {
+      if (state_stamps[cur_stamp]->mirrored)
+        SDL_BlitSurface(img_btn_down, NULL, screen, &dest);
+      else
+        SDL_BlitSurface(img_btn_up, NULL, screen, &dest);
+    }
+    else
+    {
+      SDL_BlitSurface(img_btn_off, NULL, screen, &dest);
+    }
+    
+    dest.x = WINDOW_WIDTH - 96 + (48 - img_magics[MAGIC_MIRROR]->w) / 2;
+    dest.y = (40 + ((5 + TOOLOFFSET / 2) * 48) +
+	      (48 - img_magics[MAGIC_MIRROR]->h) / 2);
+
+    SDL_BlitSurface(img_magics[MAGIC_MIRROR], NULL, screen, &dest);
+
+    
+    /* Show flip button: */
+
+    dest.x = WINDOW_WIDTH - 48;
+    dest.y = 40 + ((5 + TOOLOFFSET / 2) * 48);
+
+    if (inf_stamps[cur_stamp]->flipable)
+    {
+      if (state_stamps[cur_stamp]->flipped)
+        SDL_BlitSurface(img_btn_down, NULL, screen, &dest);
+      else
+        SDL_BlitSurface(img_btn_up, NULL, screen, &dest);
+    }
+    else
+    {
+      SDL_BlitSurface(img_btn_off, NULL, screen, &dest);
+    }
+
+    dest.x = WINDOW_WIDTH - 48 + (48 - img_magics[MAGIC_FLIP]->w) / 2;
+    dest.y = (40 + ((5 + TOOLOFFSET / 2) * 48) +
+	      (48 - img_magics[MAGIC_FLIP]->h) / 2);
+    
+    SDL_BlitSurface(img_magics[MAGIC_FLIP], NULL, screen, &dest);
+
+    
+    /* Show shrink button: */
+
+    dest.x = WINDOW_WIDTH - 96;
+    dest.y = 40 + ((6 + TOOLOFFSET / 2) * 48);
+
+    if (1)
+    {
+      if (1)
+        SDL_BlitSurface(img_btn_down, NULL, screen, &dest);
+      else
+        SDL_BlitSurface(img_btn_up, NULL, screen, &dest);
+    }
+    else
+    {
+      SDL_BlitSurface(img_btn_off, NULL, screen, &dest);
+    }
+    
+    //dest.x = WINDOW_WIDTH - 96 + (48 - img_magics[MAGIC_MIRROR]->w) / 2;
+    //dest.y = (40 + ((5 + TOOLOFFSET / 2) * 48) +
+    //	      (48 - img_magics[MAGIC_MIRROR]->h) / 2);
+
+    //SDL_BlitSurface(img_magics[MAGIC_MIRROR], NULL, screen, &dest);
+
+    
+    /* Show grow button: */
+
+    dest.x = WINDOW_WIDTH - 48;
+    dest.y = 40 + ((6 + TOOLOFFSET / 2) * 48);
+
+    if (1)
+    {
+      if (1)
+        SDL_BlitSurface(img_btn_down, NULL, screen, &dest);
+      else
+        SDL_BlitSurface(img_btn_up, NULL, screen, &dest);
+    }
+    else
+    {
+      SDL_BlitSurface(img_btn_off, NULL, screen, &dest);
+    }
+
+    //dest.x = WINDOW_WIDTH - 48 + (48 - img_magics[MAGIC_FLIP]->w) / 2;
+    //dest.y = (40 + ((5 + TOOLOFFSET / 2) * 48) +
+    //	      (48 - img_magics[MAGIC_FLIP]->h) / 2);
+    
+    //SDL_BlitSurface(img_magics[MAGIC_FLIP], NULL, screen, &dest);
   }
 }
 
@@ -7303,6 +7442,8 @@ info_type * loadinfo(char * fname)
 
   inf.colorable = 0;
   inf.tintable = 0;
+  inf.mirrorable = 1;
+  inf.flipable = 1;
 
 
   /* Load info! */
@@ -7343,6 +7484,10 @@ info_type * loadinfo(char * fname)
 	  inf.colorable = 1;
 	else if (strcmp(buf, "tintable") == 0)
 	  inf.tintable = 1;
+	else if (strcmp(buf, "nomirror") == 0)
+	  inf.mirrorable = 0;
+	else if (strcmp(buf, "noflip") == 0)
+	  inf.flipable = 0;
       }
     }
     while (!feof(fi));
@@ -7848,21 +7993,24 @@ void cleanup(void)
 {
   int i;
 
-  for ( i = 0; i < MAX_STAMPS; ++i )
+  for (i = 0; i < MAX_STAMPS; i++)
   {
-    if ( txt_stamps[i] )
+    if (txt_stamps[i])
     {
       free(txt_stamps[i]);
       txt_stamps[i] = NULL;
     }
-  }
 
-  for ( i = 0; i < MAX_STAMPS; ++i )
-  {
-    if ( inf_stamps[i] )
+    if (inf_stamps[i])
     {
       free(inf_stamps[i]);
       inf_stamps[i] = NULL;
+    }
+
+    if (state_stamps[i])
+    {
+      free(state_stamps[i]);
+      state_stamps[i] = NULL;
     }
   }
 
@@ -10283,7 +10431,6 @@ int stamp_tintable(int stamp)
     return 0;
   }
 }
-
 
 
 void rgbtohsv(Uint8 r8, Uint8 g8, Uint8 b8, float *h, float *s, float *v)
