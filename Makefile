@@ -6,7 +6,7 @@
 # bill@newbreedsoftware.com
 # http://www.newbreedsoftware.com/tuxpaint/
 
-# June 14, 2002 - October 23, 2004
+# June 14, 2002 - October 24, 2004
 
 
 # Where to install things:
@@ -14,28 +14,33 @@
 PREFIX=/usr/local
 
 
+# Root directory to place files when creating packages.
+
+PKG_ROOT=
+
+
 # Program:
 
-BIN_PREFIX=$(PREFIX)/bin
+BIN_PREFIX=$(PKG_ROOT)/$(PREFIX)/bin
 
 
 # Data:
 
-DATA_PREFIX=$(PREFIX)/share/tuxpaint/
+DATA_PREFIX=$(PKG_ROOT)/$(PREFIX)/share/tuxpaint/
 
 
 # Docs and man page:
 
-DOC_PREFIX=$(PREFIX)/share/doc/tuxpaint/
-MAN_PREFIX=$(PREFIX)/share/man/
+DOC_PREFIX=$(PKG_ROOT)/$(PREFIX)/share/doc/tuxpaint/
+MAN_PREFIX=$(PKG_ROOT)/$(PREFIX)/share/man/
 
 
 # 'System-wide' Config file:
 
 ifeq ($(PREFIX),/usr)
-  CONFDIR=/etc/tuxpaint
+  CONFDIR=$(PKG_ROOT)/etc/tuxpaint
 else
-  CONFDIR=$(PREFIX)/etc/tuxpaint
+  CONFDIR=$(PKG_ROOT)/$(PREFIX)/etc/tuxpaint
 endif
 
 
@@ -47,8 +52,8 @@ MIMESET_CMD=echo -n
 
 # Icons and launchers:
 
-ICON_PREFIX=$(PREFIX)/share/pixmaps/
-X11_ICON_PREFIX=$(PREFIX)/X11R6/include/X11/pixmaps/
+ICON_PREFIX=$(PKG_ROOT)/$(PREFIX)/share/pixmaps/
+X11_ICON_PREFIX=$(PKG_ROOT)/$(PREFIX)/X11R6/include/X11/pixmaps/
 GNOME_PREFIX=`gnome-config --prefix`
 KDE_PREFIX=`kde-config --install apps --expandvars`
 KDE_ICON_PREFIX=`kde-config --install icon --expandvars`
@@ -56,7 +61,7 @@ KDE_ICON_PREFIX=`kde-config --install icon --expandvars`
 
 # Locale files
 
-LOCALE_PREFIX=$(PREFIX)/share/locale/
+LOCALE_PREFIX=$(PKG_ROOT)/$(PREFIX)/share/locale/
 # LOCALE_PREFIX=/usr/share/locale/
 
 
@@ -322,14 +327,14 @@ install-gnome:
 	@echo
 	@echo "...Installing launcher icon into GNOME..."
 	@if [ "x$(GNOME_PREFIX)" != "x" ]; then \
-	 install -d $(GNOME_PREFIX)/share/pixmaps; \
-	 cp data/images/icon.png $(GNOME_PREFIX)/share/pixmaps/tuxpaint.png; \
-	 chmod 644 $(GNOME_PREFIX)/share/pixmaps/tuxpaint.png; \
-	 install -d $(GNOME_PREFIX)/share/gnome/apps/Graphics; \
-	 cp src/tuxpaint.desktop $(GNOME_PREFIX)/share/gnome/apps/Graphics/; \
-	 chmod 644 $(GNOME_PREFIX)/share/gnome/apps/Graphics/tuxpaint.desktop; \
+	 install -d $(PKG_ROOT)/$(GNOME_PREFIX)/share/pixmaps; \
+	 cp data/images/icon.png $(PKG_ROOT)/$(GNOME_PREFIX)/share/pixmaps/tuxpaint.png; \
+	 chmod 644 $(PKG_ROOT)/$(GNOME_PREFIX)/share/pixmaps/tuxpaint.png; \
+	 install -d $(PKG_ROOT)/$(GNOME_PREFIX)/share/gnome/apps/Graphics; \
+	 cp src/tuxpaint.desktop $(PKG_ROOT)/$(GNOME_PREFIX)/share/gnome/apps/Graphics/; \
+	 chmod 644 $(PKG_ROOT)/$(GNOME_PREFIX)/share/gnome/apps/Graphics/tuxpaint.desktop; \
 	else \
-	 make install-gnome GNOME_PREFIX=/usr; \
+	 make install-gnome GNOME_PREFIX=$(PREFIX); \
 	fi
 
 
@@ -339,56 +344,60 @@ install-kde:
 	@echo
 	@echo "...Installing launcher icon into KDE..."
 	@if [ "x$(KDE_PREFIX)" != "x" ]; then \
-	  install -d $(KDE_PREFIX)/Graphics; \
-	  cp src/tuxpaint.desktop $(KDE_PREFIX)/Graphics/; \
-	  chmod 644 $(KDE_PREFIX)/Graphics/tuxpaint.desktop; \
+	  install -d $(PKG_ROOT)/$(KDE_PREFIX)/Graphics; \
+	  cp src/tuxpaint.desktop $(PKG_ROOT)/$(KDE_PREFIX)/Graphics/; \
+	  chmod 644 $(PKG_ROOT)/$(KDE_PREFIX)/Graphics/tuxpaint.desktop; \
+	else \
+	  make KDE_PREFIX=$(PREFIX)/share/applnk install-kde; \
 	fi
 
 
 install-kde-icons:
 	@echo "...Installing launcher icon graphics into KDE..."
 	@if [ "x$(KDE_ICON_PREFIX)" != "x" ]; then \
-	  install -d $(KDE_ICON_PREFIX)/hicolor/scalable/apps/; \
-	  install -d $(KDE_ICON_PREFIX)/hicolor/192x192/apps/; \
-	  install -d $(KDE_ICON_PREFIX)/hicolor/128x128/apps/; \
-	  install -d $(KDE_ICON_PREFIX)/hicolor/96x96/apps/; \
-	  install -d $(KDE_ICON_PREFIX)/hicolor/64x64/apps/; \
-	  install -d $(KDE_ICON_PREFIX)/hicolor/48x48/apps/; \
-	  install -d $(KDE_ICON_PREFIX)/hicolor/32x32/apps/; \
-	  install -d $(KDE_ICON_PREFIX)/hicolor/22x22/apps/; \
-	  install -d $(KDE_ICON_PREFIX)/hicolor/16x16/apps/; \
+	  install -d $(PKG_ROOT)/$(KDE_ICON_PREFIX)/hicolor/scalable/apps/; \
+	  install -d $(PKG_ROOT)/$(KDE_ICON_PREFIX)/hicolor/192x192/apps/; \
+	  install -d $(PKG_ROOT)/$(KDE_ICON_PREFIX)/hicolor/128x128/apps/; \
+	  install -d $(PKG_ROOT)/$(KDE_ICON_PREFIX)/hicolor/96x96/apps/; \
+	  install -d $(PKG_ROOT)/$(KDE_ICON_PREFIX)/hicolor/64x64/apps/; \
+	  install -d $(PKG_ROOT)/$(KDE_ICON_PREFIX)/hicolor/48x48/apps/; \
+	  install -d $(PKG_ROOT)/$(KDE_ICON_PREFIX)/hicolor/32x32/apps/; \
+	  install -d $(PKG_ROOT)/$(KDE_ICON_PREFIX)/hicolor/22x22/apps/; \
+	  install -d $(PKG_ROOT)/$(KDE_ICON_PREFIX)/hicolor/16x16/apps/; \
 	  cp data/images/tuxpaint-icon.svg \
-		$(KDE_ICON_PREFIX)/hicolor/scalable/apps/tuxpaint.svg; \
-          chmod 644 $(KDE_ICON_PREFIX)/hicolor/scalable/apps/tuxpaint.svg; \
+		$(PKG_ROOT)/$(KDE_ICON_PREFIX)/hicolor/scalable/apps/tuxpaint.svg; \
+          chmod 644 $(PKG_ROOT)/$(KDE_ICON_PREFIX)/hicolor/scalable/apps/tuxpaint.svg; \
 	  cp data/images/icon192x192.png \
-		$(KDE_ICON_PREFIX)/hicolor/192x192/apps/tuxpaint.png; \
-          chmod 644 $(KDE_ICON_PREFIX)/hicolor/192x192/apps/tuxpaint.png; \
+		$(PKG_ROOT)/$(KDE_ICON_PREFIX)/hicolor/192x192/apps/tuxpaint.png; \
+          chmod 644 $(PKG_ROOT)/$(KDE_ICON_PREFIX)/hicolor/192x192/apps/tuxpaint.png; \
 	  cp data/images/icon128x128.png \
-		$(KDE_ICON_PREFIX)/hicolor/128x128/apps/tuxpaint.png; \
-          chmod 644 $(KDE_ICON_PREFIX)/hicolor/128x128/apps/tuxpaint.png; \
+		$(PKG_ROOT)/$(KDE_ICON_PREFIX)/hicolor/128x128/apps/tuxpaint.png; \
+          chmod 644 $(PKG_ROOT)/$(KDE_ICON_PREFIX)/hicolor/128x128/apps/tuxpaint.png; \
 	  cp data/images/icon96x96.png \
-		$(KDE_ICON_PREFIX)/hicolor/96x96/apps/tuxpaint.png; \
-          chmod 644 $(KDE_ICON_PREFIX)/hicolor/96x96/apps/tuxpaint.png; \
+		$(PKG_ROOT)/$(KDE_ICON_PREFIX)/hicolor/96x96/apps/tuxpaint.png; \
+          chmod 644 $(PKG_ROOT)/$(KDE_ICON_PREFIX)/hicolor/96x96/apps/tuxpaint.png; \
 	  cp data/images/icon64x64.png \
-		$(KDE_ICON_PREFIX)/hicolor/64x64/apps/tuxpaint.png; \
-          chmod 644 $(KDE_ICON_PREFIX)/hicolor/64x64/apps/tuxpaint.png; \
+		$(PKG_ROOT)/$(KDE_ICON_PREFIX)/hicolor/64x64/apps/tuxpaint.png; \
+          chmod 644 $(PKG_ROOT)/$(KDE_ICON_PREFIX)/hicolor/64x64/apps/tuxpaint.png; \
 	  cp data/images/icon48x48.png \
-		$(KDE_ICON_PREFIX)/hicolor/48x48/apps/tuxpaint.png; \
-          chmod 644 $(KDE_ICON_PREFIX)/hicolor/48x48/apps/tuxpaint.png; \
+		$(PKG_ROOT)/$(KDE_ICON_PREFIX)/hicolor/48x48/apps/tuxpaint.png; \
+          chmod 644 $(PKG_ROOT)/$(KDE_ICON_PREFIX)/hicolor/48x48/apps/tuxpaint.png; \
 	  cp data/images/icon32x32.png \
-		$(KDE_ICON_PREFIX)/hicolor/32x32/apps/tuxpaint.png; \
-          chmod 644 $(KDE_ICON_PREFIX)/hicolor/32x32/apps/tuxpaint.png; \
+		$(PKG_ROOT)/$(KDE_ICON_PREFIX)/hicolor/32x32/apps/tuxpaint.png; \
+          chmod 644 $(PKG_ROOT)/$(KDE_ICON_PREFIX)/hicolor/32x32/apps/tuxpaint.png; \
 	  cp data/images/icon22x22.png \
-		$(KDE_ICON_PREFIX)/hicolor/22x22/apps/tuxpaint.png; \
-          chmod 644 $(KDE_ICON_PREFIX)/hicolor/22x22/apps/tuxpaint.png; \
+		$(PKG_ROOT)/$(KDE_ICON_PREFIX)/hicolor/22x22/apps/tuxpaint.png; \
+          chmod 644 $(PKG_ROOT)/$(KDE_ICON_PREFIX)/hicolor/22x22/apps/tuxpaint.png; \
 	  cp data/images/icon16x16.png \
-		$(KDE_ICON_PREFIX)/hicolor/16x16/apps/tuxpaint.png; \
-          chmod 644 $(KDE_ICON_PREFIX)/hicolor/16x16/apps/tuxpaint.png; \
+		$(PKG_ROOT)/$(KDE_ICON_PREFIX)/hicolor/16x16/apps/tuxpaint.png; \
+          chmod 644 $(PKG_ROOT)/$(KDE_ICON_PREFIX)/hicolor/16x16/apps/tuxpaint.png; \
 	fi
 
 
 # Install the PNG icon (for GNOME, KDE, etc.)
 # and the 24-color 32x32 XPM (for other Window managers):
+
+# FIXME: Should this also use $(PKG_ROOT)?
 
 install-icon:
 	@echo

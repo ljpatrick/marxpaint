@@ -14,6 +14,10 @@ http://www.newbreedsoftware.com/tuxpaint/
   * Chinese (Traditional) documentation updates.
     Song Huang <Song@ossacc.org>
 
+  * Added "PKG_ROOT" variable to Makefile for Tux Paint RPM building ease.
+    TOYAMA Shin-ichi <shin1@wmail.plala.or.jp>
+
+
 2004.September.28 (0.9.14)
   * New Features:
     -------------
