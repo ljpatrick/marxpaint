@@ -6,12 +6,10 @@ Copyright (c) 2004 by Bill Kendrick
 bill@newbreedsoftware.com
 http://www.newbreedsoftware.com/tuxpaint/
 
-June 19, 2004
+June 20, 2004
 
 HIGH-PRIORITY DOCUMENTATION CHANGES:
 ------------------------------------
-  * Mention "--lang help" in README.
-
   * Convert documentation and man pages into a single source (DocBook?)
 
 

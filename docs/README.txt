@@ -9,7 +9,7 @@
                            bill@newbreedsoftware.com
                    http://www.newbreedsoftware.com/tuxpaint/
 
-                         June 14, 2002 - June 19, 2004
+                         June 14, 2002 - June 20, 2004
 
      ----------------------------------------------------------------------
 
@@ -573,6 +573,9 @@ Options
            --help
                    Display brief help on using Tux Paint.
 
+           --lang help
+                   Display a list of available languages in Tux Paint.
+
      ----------------------------------------------------------------------
 
   Choosing a Different Language
@@ -585,6 +588,9 @@ Options
          Tux Paint also honors your environment's current locale. (You can
          override it on the command-line using the "--locale" option; see
          above.)
+
+         Use the option "--lang help" to list the available language options
+         available.
 
          The following languages are supported:
 

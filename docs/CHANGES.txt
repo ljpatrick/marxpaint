@@ -24,6 +24,8 @@ http://www.newbreedsoftware.com/tuxpaint/
   * Language option now sets "LANGUAGE" environment variable
     (along with LC_ALL and LANG).
 
+  * Added reference to "--lang help" to documentation.
+
   * Updated Breton translation.
     Korvigelloù An Drouizig <drouizig@drouizig.org>
 
