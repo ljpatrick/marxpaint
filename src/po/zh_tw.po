@@ -19,91 +19,75 @@ msgstr ""
 
 #: tuxpaint.desktop.in.h:1
 msgid "A drawing program for children."
-msgstr ""
+msgstr "一個兒童專用的畫圖程式。"
 
 #: tuxpaint.desktop.in.h:2
 msgid "Drawing program"
-msgstr ""
+msgstr "畫圖程式"
 
 #: tuxpaint.desktop.in.h:3
-#, fuzzy
 msgid "Tux Paint"
 msgstr "繪畫"
 
 #: colors.h:62
-#, fuzzy
 msgid "Black!"
-msgstr "黑色"
+msgstr "黑色!"
 
 #: colors.h:63
-#, fuzzy
 msgid "White!"
-msgstr "白色"
+msgstr "白色!"
 
 #: colors.h:64
-#, fuzzy
 msgid "Red!"
-msgstr "重作!"
+msgstr "紅色!"
 
 #: colors.h:65
-#, fuzzy
 msgid "Pink!"
-msgstr "粉紅色"
+msgstr "粉紅色!"
 
 #: colors.h:66
-#, fuzzy
 msgid "Orange!"
-msgstr "橙色"
+msgstr "橙色!"
 
 #: colors.h:67
-#, fuzzy
 msgid "Yellow!"
-msgstr "黃色"
+msgstr "黃色!"
 
 #: colors.h:68
-#, fuzzy
 msgid "Lime!"
-msgstr "淡黃綠色"
+msgstr "淡黃綠色!"
 
 #: colors.h:69
-#, fuzzy
 msgid "Green!"
-msgstr "綠色"
+msgstr "綠色!"
 
 #: colors.h:70
-#, fuzzy
 msgid "Cyan!"
-msgstr "青綠色"
+msgstr "青綠色!"
 
 #: colors.h:71
-#, fuzzy
 msgid "Blue!"
-msgstr "藍色"
+msgstr "藍色!"
 
 #: colors.h:72
-#, fuzzy
 msgid "Purple!"
-msgstr "紫色"
+msgstr "紫色!"
 
 #: colors.h:73
-#, fuzzy
 msgid "Fuchsia!"
-msgstr "淡紫色"
+msgstr "淡紫色!"
 
 #: colors.h:74
-#, fuzzy
 msgid "Brown!"
-msgstr "棕色"
+msgstr "棕色!"
 
 #: colors.h:75
-#, fuzzy
 msgid "Gray!"
-msgstr "太棒了!"
+msgstr "灰色!"
 
 #: colors.h:76
-#, fuzzy
 msgid "Silver!"
-msgstr "銀色"
+msgstr "銀色!"
 
 #: great.h:20
 msgid "Great!"
@@ -178,63 +162,53 @@ msgid "You can draw in rainbow colors!"
 msgstr "您可以畫出彩虹的顏色!"
 
 #: magic.h:74
-#, fuzzy
 msgid "Click and move to draw sparkles."
-msgstr "按著並移動滑鼠來繪製火花"
+msgstr "按著並移動滑鼠來繪製火花。"
 
 #: magic.h:76
-#, fuzzy
 msgid "Click to make a mirror image."
-msgstr "按下可以作出左右鏡射的圖像!"
+msgstr "按下可以作出左右鏡射的圖像。"
 
 #: magic.h:77
-#, fuzzy
 msgid "Click to flip the picture upside-down."
-msgstr "按下可以作出上下顛倒的圖像!"
+msgstr "按下可以作出上下顛倒的圖像。"
 
 #: magic.h:79
-#, fuzzy
 msgid "Click and move the mouse around to blur the picture."
-msgstr "按著並移動滑鼠來模糊圖像"
+msgstr "按著並移動滑鼠來模糊圖像。"
 
 #: magic.h:80
-#, fuzzy
 msgid "Click and move the mouse around to make the picture blocky."
-msgstr "按著並移動滑鼠來打上馬賽克"
+msgstr "按著並移動滑鼠來打上馬賽克。"
 
 #: magic.h:82
-#, fuzzy
 msgid "Click and move the mouse around to draw a negative."
-msgstr "按著並移動滑鼠來畫出反相的顏色"
+msgstr "按著並移動滑鼠來畫出反相的顏色。"
 
 #: magic.h:83
 msgid "Click and move to fade the colors."
-msgstr "按著並移動滑鼠來退淡顏色"
+msgstr "按著並移動滑鼠來退淡顏色。"
 
 #: magic.h:85
 msgid ""
 "Click and move the mouse around to turn the picture into a chalk drawing."
-msgstr "按著並移動滑鼠來作出粉筆的痕跡"
+msgstr "按著並移動滑鼠來擦出粉筆的痕跡。"
 
 #: magic.h:86
-#, fuzzy
 msgid "Click and move the mouse around to make the picture drip."
-msgstr "按著並移動滑鼠來作出水滴狀"
+msgstr "按著並移動滑鼠來作出水滴狀。"
 
 #: magic.h:88
-#, fuzzy
 msgid "Click and move the mouse to thicken the picture."
-msgstr "按著並移動滑鼠來將筆劃加粗"
+msgstr "按著並移動滑鼠來將筆劃加粗。"
 
 #: magic.h:89
-#, fuzzy
 msgid "Click and move the mouse to thin the picture."
-msgstr "按著並移動滑鼠來將筆劃變薄"
+msgstr "按著並移動滑鼠來將筆劃變薄。"
 
 #: magic.h:91
-#, fuzzy
 msgid "Click in the picture to fill that area with color."
-msgstr "點在圖像內來用顏色填滿整個區域"
+msgstr "點在圖像內來用顏色填滿整個區域。"
 
 #: shapes.h:141 shapes.h:142
 msgid "Square"
@@ -374,23 +348,19 @@ msgid "Pick a picture to stamp around your drawing."
 msgstr "挑選一個圖畫用來印在您的畫上。"
 
 #: tools.h:64
-#, fuzzy
 msgid "Click to start drawing a line. Let go to complete it."
 msgstr "點一下就會開始繪製一條線，讓我們來完成他吧。"
 
 #: tools.h:65
-#, fuzzy
-msgid ""
 "Pick a shape. Click to pick the center, drag, then let go when it is the "
 "size you want. Move around to rotate it, and click to draw it."
 msgstr ""
-"挑選一個形狀。點一下形狀的中心位置，然後拖拉他到您要的大小。環繞著移動來旋轉"
-"他，然後點一下把他畫下來。"
+"挑選一個形狀。點一下形狀的中心位置，然後拖拉他到您要的大小。"
+"環繞著移動來旋轉形狀，然後點一下把他畫下來。"
 
 #: tools.h:66
-#, fuzzy
 msgid "Choose a style of text. Click on your drawing and you can start typing."
-msgstr "選擇文字的風格。在圖上點一下就可以開始輸入。"
+msgstr "選擇字母的樣式，在圖上點一下就可以開始輸入。"
 
 #: tools.h:67
 msgid "Pick a magical effect to use on your drawing!"
@@ -418,9 +388,8 @@ msgstr "您現在可以在空白頁上來繪圖!"
 
 #. Open
 #: tools.h:72
-#, fuzzy
 msgid "Open…"
-msgstr "開啟"
+msgstr "開啟..."
 
 #. Save
 #: tools.h:73
@@ -429,7 +398,6 @@ msgstr "您的圖畫已經儲存!"
 
 #. Print
 #: tools.h:74
-#, fuzzy
 msgid "Printing…"
 msgstr "列印中..."
 
@@ -451,7 +419,6 @@ msgid "Move the mouse to rotate the shape. Click to draw it."
 msgstr "移動滑鼠來旋轉這形狀。點一下來繪製他。"
 
 #: tools.h:81
-#, fuzzy
 msgid "OK then… Let’s keep drawing this one!"
 msgstr "好的，那麼讓我們繼續來畫這張圖。"
 
@@ -472,7 +439,6 @@ msgid "No"
 msgstr "不是"
 
 #: tuxpaint.c:821
-#, fuzzy
 msgid "If you quit, you’ll lose your picture! Save it?"
 msgstr "如果離開，您將遺失您的圖畫! 要不要先存檔呢？"
 
@@ -481,9 +447,8 @@ msgid "Save your picture first?"
 msgstr "先儲存您的圖畫嗎？"
 
 #: tuxpaint.c:829
-#, fuzzy
 msgid "Can’t open that picture!"
-msgstr "無法開啟這個圖畫!"
+msgstr "無法開啟那張圖畫!"
 
 #: tuxpaint.c:830 tuxpaint.c:837 tuxpaint.c:844 tuxpaint.c:847
 msgid "OK"
@@ -494,32 +459,28 @@ msgid "Starting a new picture will erase the current one!"
 msgstr "開啟一張新的圖紙將會刪除目前這張圖!"
 
 #: tuxpaint.c:833
-#, fuzzy
 msgid "That’s OK!"
-msgstr "確定"
+msgstr "確定!"
 
 #: tuxpaint.c:834
-#, fuzzy
 msgid "Never mind!"
-msgstr "取消"
+msgstr "取消!"
 
 #: tuxpaint.c:836
 msgid "There are no saved files!"
 msgstr "沒有已儲存的檔案!"
 
 #: tuxpaint.c:839
-#, fuzzy
 msgid "Print your picture now?"
-msgstr "先儲存您的圖畫嗎？"
+msgstr "現在要列印您的圖畫嗎？"
 
 #: tuxpaint.c:843
 msgid "Your picture has been printed!"
 msgstr "您的圖畫已列印!"
 
 #: tuxpaint.c:846
-#, fuzzy
 msgid "You can’t print yet!"
-msgstr "您不可以列印!"
+msgstr "您還不可以列印!"
 
 #: tuxpaint.c:849
 msgid "Erase this picture?"
@@ -537,7 +498,6 @@ msgstr "回復"
 
 #. FIXME: Move elsewhere!!!
 #: tuxpaint.c:9200
-#, fuzzy
 msgid "Save over the older version of this picture?"
 msgstr "儲存這張圖畫覆蓋掉舊的版本？"
 
@@ -546,18 +506,5 @@ msgid "No, save a new file"
 msgstr "不，儲存一個新的檔案"
 
 #: tuxpaint.c:10096
-#, fuzzy
 msgid "Choose the picture you want, then click “Open”."
 msgstr "選擇您想要的圖畫，然後按下「開啟」"
-
-#~ msgid "Okay"
-#~ msgstr "好的"
-
-#~ msgid "Open..."
-#~ msgstr "開啟..."
-
-#~ msgid "Red"
-#~ msgstr "紅色"
-
-#~ msgid "Grey"
-#~ msgstr "灰色"
