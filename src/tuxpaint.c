@@ -12829,11 +12829,13 @@ void load_starter(char * img_id)
 
     img_starter = SDL_CreateRGBSurface(canvas->flags,
 					    canvas->w, canvas->h,
-					    canvas->format->BitsPerPixel,
-			     	            canvas->format->Rmask,
-			      	            canvas->format->Gmask,
-			      	            canvas->format->Bmask,
-					    0);
+					    tmp_surf->format->BitsPerPixel,
+			     	            tmp_surf->format->Rmask,
+			      	            tmp_surf->format->Gmask,
+			      	            tmp_surf->format->Bmask,
+					    tmp_surf->format->Amask);
+
+    SDL_SetAlpha(tmp_surf, 0, 0);
 
     if (img_starter != NULL)
     {
@@ -12877,8 +12879,6 @@ void load_starter(char * img_id)
 			      	            canvas->format->Gmask,
 			      	            canvas->format->Bmask,
 					    0);
-
-    SDL_SetAlpha(img_starter_bkgd, SDL_SRCALPHA, SDL_ALPHA_TRANSPARENT);
 
     if (img_starter_bkgd != NULL)
     {
