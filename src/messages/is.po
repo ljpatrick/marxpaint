@@ -1,14 +1,15 @@
+# translation of is.po to Icelandic
 # translation of isn.po to Icelandic
 # Tux Paint Icelandic messages.
 # Copyright (C) 2002.
 # Pjetur Hjaltason <pjetur@pjetur.net>, 2002.
-# Pjetur G. Hjaltason <pjetur@pjetur.net>, 2003
+# Pjetur G. Hjaltason <pjetur@pjetur.net>, 2003,2004
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: isn\n"
+"Project-Id-Version: is\n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2003-12-22 22:41GMT\n"
+"PO-Revision-Date: 2004-03-15 15:38GMT\n"
 "Last-Translator: Pjetur G. Hjaltason <pjetur@pjetur.net>\n"
 "Language-Team: Icelandic <kde-isl@molar.is>\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -17,7 +18,7 @@ msgstr ""
 
 #: tuxpaint.c:795
 msgid "Do you really want to quit?"
-msgstr "Viltu í alvöru hætta"
+msgstr "Viltu í alvöru hætta?"
 
 #: tuxpaint.c:796 tuxpaint.c:800 tuxpaint.c:804 tuxpaint.c:818 tuxpaint.c:828
 #: tuxpaint.c:8360 tuxpaint.c:9065
@@ -43,19 +44,17 @@ msgstr "Get ekki opnað þessa mynd?"
 
 #: tuxpaint.c:808 tuxpaint.c:815 tuxpaint.c:822 tuxpaint.c:825
 msgid "OK"
-msgstr ""
+msgstr "Í lagi"
 
 #: tuxpaint.c:810
 msgid "Starting a new picture will erase the current one!"
 msgstr "Ef þú byrjar á nýrri mynd, eyðist núverandi mynd!"
 
 #: tuxpaint.c:811
-#, fuzzy
 msgid "That's OK!"
 msgstr "Það er í lagi!"
 
 #: tuxpaint.c:812
-#, fuzzy
 msgid "Never mind!"
 msgstr "Hætta við!"
 
@@ -64,9 +63,8 @@ msgid "There are no saved files!"
 msgstr "Fann engar geymdar myndir!"
 
 #: tuxpaint.c:817
-#, fuzzy
 msgid "Print your picture now?"
-msgstr "Geyma myndina fyrst?"
+msgstr "Prenta myndina núna?"
 
 #: tuxpaint.c:821
 msgid "Your picture has been printed!"
@@ -93,7 +91,6 @@ msgid "Back"
 msgstr "Til baka"
 
 #: tuxpaint.c:9064
-#, fuzzy
 msgid "Save over the older version of this picture?"
 msgstr "Eyða eldri útgáfu af þessarri mynd?"
 
@@ -102,84 +99,68 @@ msgid "No, save a new file"
 msgstr "Nei, geyma nýja mynd!"
 
 #: tuxpaint.c:9885
-#, fuzzy
 msgid "Choose the picture you want, then click 'Open'."
-msgstr "Veldu teikningu, og smelltu svo á «Opna»."
+msgstr "Veldu teikningu, og smelltu svo á 'Opna'."
 
 #: colors.h:62
-#, fuzzy
 msgid "Black!"
-msgstr "Svart"
+msgstr "Svart!"
 
 #: colors.h:63
-#, fuzzy
 msgid "White!"
-msgstr "Hvítt"
+msgstr "Hvítt!"
 
 #: colors.h:64
-#, fuzzy
 msgid "Red!"
-msgstr "Gera aftur!"
+msgstr "Rautt!"
 
 #: colors.h:65
-#, fuzzy
 msgid "Pink!"
-msgstr "Bleikt"
+msgstr "Bleikt!"
 
 #: colors.h:66
-#, fuzzy
 msgid "Orange!"
-msgstr "Appelsínugult"
+msgstr "Appelsínugult!"
 
 #: colors.h:67
-#, fuzzy
 msgid "Yellow!"
-msgstr "Gult"
+msgstr "Gult!"
 
 #: colors.h:68
-#, fuzzy
 msgid "Lime!"
-msgstr "Gulgrænt"
+msgstr "Gulgrænt!"
 
 #: colors.h:69
-#, fuzzy
 msgid "Green!"
-msgstr "Grænt"
+msgstr "Grænt!"
 
 #: colors.h:70
-#, fuzzy
 msgid "Cyan!"
-msgstr "Ljósblátt"
+msgstr "Blágrænn!"
 
 #: colors.h:71
-#, fuzzy
 msgid "Blue!"
-msgstr "Blátt"
+msgstr "Blátt!"
 
 #: colors.h:72
-#, fuzzy
 msgid "Purple!"
-msgstr "Fjólublátt"
+msgstr "Fjólublátt!"
 
 #: colors.h:73
-#, fuzzy
 msgid "Fuchsia!"
-msgstr "Bleikt"
+msgstr "Bleikt!"
 
 #: colors.h:74
-#, fuzzy
 msgid "Brown!"
-msgstr "Brúnt"
+msgstr "Brúnt!"
 
 #: colors.h:75
-#, fuzzy
 msgid "Gray!"
-msgstr "Frábært!"
+msgstr "Grátt!"
 
 #: colors.h:76
-#, fuzzy
 msgid "Silver!"
-msgstr "Silfur"
+msgstr "Silfur!"
 
 #: great.h:20
 msgid "Great!"
@@ -254,63 +235,52 @@ msgid "You can draw in rainbow colors!"
 msgstr "Þú getur teiknað með regnboga-litum!"
 
 #: magic.h:74
-#, fuzzy
 msgid "Click and move to draw sparkles."
-msgstr "Smelltu og hreyfðu músina til að búa til neista!"
+msgstr "Smelltu og hreyfðu músina til að búa til neista."
 
 #: magic.h:76
-#, fuzzy
 msgid "Click to make a mirror image."
-msgstr "Smelltu til að gera spegilmynd!"
+msgstr "Smelltu til að gera spegilmynd."
 
 #: magic.h:77
-#, fuzzy
 msgid "Click to flip the picture upside-down."
-msgstr "Smelltu til að setja myndina á hvolf!"
+msgstr "Smelltu til að setja myndina á hvolf."
 
 #: magic.h:79
-#, fuzzy
 msgid "Click and move the mouse around to blur the picture."
-msgstr "Smelltu og hreyfðu músina til að gera myndina óskýrari!"
+msgstr "Smelltu og hreyfðu músina til að gera myndina óskýrari."
 
 #: magic.h:80
-#, fuzzy
 msgid "Click and move the mouse around to make the picture blocky."
-msgstr "Smelltu og hreyfðu músina til að gera 'Kassa'!"
+msgstr "Smelltu og hreyfðu músina til að gera myndina 'Kassa-lega'."
 
 #: magic.h:82
-#, fuzzy
 msgid "Click and move the mouse around to draw a negative."
-msgstr "Smelltu og hreyfðu músina til að teikna andhverfu!"
+msgstr "Smelltu og hreyfðu músina til að teikna andhverfu-liti."
 
 #: magic.h:83
 msgid "Click and move to fade the colors."
 msgstr "Smelltu og hreyfðu músina til að þynna út litina!"
 
 #: magic.h:85
-msgid ""
-"Click and move the mouse around to turn the picture into a chalk drawing."
+msgid "Click and move the mouse around to turn the picture into a chalk drawing."
 msgstr "Smelltu og hreyfðu músina til að búa til krítarmynd!"
 
 #: magic.h:86
-#, fuzzy
 msgid "Click and move the mouse around to make the picture drip."
-msgstr "Smelltu og hreyfðu músina til að láta myndina leka!"
+msgstr "Smelltu og hreyfðu músina til að láta myndina leka."
 
 #: magic.h:88
-#, fuzzy
 msgid "Click and move the mouse to thicken the picture."
-msgstr "Smelltu og hreyfðu músina til að gera myndina þykkari!"
+msgstr "Smelltu og hreyfðu músina til að gera myndina þykkari."
 
 #: magic.h:89
-#, fuzzy
 msgid "Click and move the mouse to thin the picture."
-msgstr "Smelltu og hreyfðu músina til að gera myndina þynnri!"
+msgstr "Smelltu og hreyfðu músina til að gera myndina þynnri."
 
 #: magic.h:91
-#, fuzzy
 msgid "Click in the picture to fill that area with color."
-msgstr "Smelltu og hreyfðu músina til að fylla svæðið með lit!"
+msgstr "Smelltu og hreyfðu músina til að fylla svæðið með lit."
 
 #: shapes.h:141 shapes.h:142
 msgid "Square"
@@ -445,12 +415,10 @@ msgid "Pick a picture to stamp around your drawing."
 msgstr "Veldu mynd til að nota sem stimpil."
 
 #: tools.h:64
-#, fuzzy
 msgid "Click to start drawing a line. Let go to complete it."
-msgstr "Smelltu til að byrja línu. - Slepptu til að enda línuna."
+msgstr "Smelltu til að byrja línu. Slepptu til að enda línuna."
 
 #: tools.h:65
-#, fuzzy
 msgid ""
 "Pick a shape. Click to pick the center, drag, then let go when it is the "
 "size you want. Move around to rotate it, and click to draw it."
@@ -515,11 +483,3 @@ msgstr "Hreyfðu músina til að snúa forminu. Smelltu til að teikna það."
 msgid "Ok then... Let's keep drawing this one!"
 msgstr "Allt í lagi... Höldum þá áfram með þessa!"
 
-#~ msgid "Okay"
-#~ msgstr "Allt í lagi"
-
-#~ msgid "Red"
-#~ msgstr "Rautt"
-
-#~ msgid "Grey"
-#~ msgstr "Grátt"
