@@ -12807,9 +12807,6 @@ void load_starter(char * img_id)
     }
   }
 
-  starter_mirrored = 0;
-  starter_flipped = 0;
-
   free(dirname);
 }
 
@@ -12860,6 +12857,7 @@ void mirror_starter(void)
   int x, y;
   SDL_Rect src, dest;
 
+  
   /* Mirror overlay: */
 
   orig = img_starter;
@@ -12926,6 +12924,7 @@ void flip_starter(void)
   int x, y;
   SDL_Rect src, dest;
 
+  
   /* Flip overlay: */
 
   orig = img_starter;
@@ -12941,7 +12940,7 @@ void flip_starter(void)
       src.h = 1;
 
       dest.x = 0;
-      dest.y = orig->h - x - 1;
+      dest.y = orig->h - y - 1;
 
       SDL_BlitSurface(orig, &src, img_starter, &dest);
     }
