@@ -58,8 +58,6 @@ rm -rf $RPM_BUILD_ROOT
 /usr/share/tuxpaint/*
 
 %defattr(-, root, root)
-/usr/share/icons/hicolor/*/apps/tuxpaint.png
-/usr/share/icons/hicolor/scalable/apps/tuxpaint.svg
 /usr/share/pixmaps/tuxpaint.png
 /usr/X11R6/include/X11/pixmaps/tuxpaint.xpm
 
@@ -67,9 +65,11 @@ rm -rf $RPM_BUILD_ROOT
 /usr/share/gnome/apps/Graphics/tuxpaint.desktop
 
 %changelog
+* Sun Mar 27 2005  <shin1@wmail.plala.or.jp> -
+- Some hicolor icons not installed were removed from file list
+
 * Fri Jan 14 2005  <bill@newbreedsoftware.com> -
 - Changed Group from Amusements/Games to Multimedia/Graphics
 
 * Tue Sep 21 2004  <shin1@wmail.plala.or.jp> -
 - Initial build for version 0.9.14
-

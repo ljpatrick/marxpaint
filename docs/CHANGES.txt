@@ -222,6 +222,9 @@ http://www.newbreedsoftware.com/tuxpaint/
 
     * Fixed to compile on old GLIBC system (such as RedHat-6.2)
       TOYAMA Shin-ichi <shin1@wmail.plala.or.jp>
+
+    * Fixes to RPM spec file
+      TOYAMA Shin-ichi <shin1@wmail.plala.or.jp>
   
     * Enabled more compiler warnings, and updated code to prevent them.
       Albert Cahalan <albert@users.sf.net>
