@@ -6,7 +6,7 @@
 # bill@newbreedsoftware.com
 # http://www.newbreedsoftware.com/tuxpaint/
 
-# June 14, 2002 - April 23, 2004
+# June 14, 2002 - May 9, 2004
 
 
 # Where to install things:
@@ -208,6 +208,7 @@ uninstall:
 	-rm -r $(DOC_PREFIX)
 	-rm $(MAN_PREFIX)/man1/tuxpaint.1.gz
 	-rm $(LOCALE_PREFIX)af/LC_MESSAGES/tuxpaint.mo
+	-rm $(LOCALE_PREFIX)be/LC_MESSAGES/tuxpaint.mo
 	-rm $(LOCALE_PREFIX)br/LC_MESSAGES/tuxpaint.mo
 	-rm $(LOCALE_PREFIX)ca/LC_MESSAGES/tuxpaint.mo
 	-rm $(LOCALE_PREFIX)cs/LC_MESSAGES/tuxpaint.mo
@@ -365,6 +366,11 @@ install-gettext:
 	@install -d $(LOCALE_PREFIX)af/LC_MESSAGES
 	@cp trans/af.mo $(LOCALE_PREFIX)af/LC_MESSAGES/tuxpaint.mo
 	@chmod 644 $(LOCALE_PREFIX)af/LC_MESSAGES/tuxpaint.mo
+	@#
+	@echo "   be_BY ...Belarusian..."
+	@install -d $(LOCALE_PREFIX)be/LC_MESSAGES
+	@cp trans/be.mo $(LOCALE_PREFIX)be/LC_MESSAGES/tuxpaint.mo
+	@chmod 644 $(LOCALE_PREFIX)be/LC_MESSAGES/tuxpaint.mo
 	@#
 	@echo "   pt_BR ...Brazilian Portuguese..."
 	@install -d $(LOCALE_PREFIX)pt_BR/LC_MESSAGES
@@ -651,6 +657,7 @@ obj/hqxx.o:	src/hqxx.c src/hqxx.h
 
 translations: trans \
 	trans/af.mo \
+	trans/be.mo \
 	trans/br.mo \
 	trans/ca.mo \
 	trans/cs.mo \
@@ -698,6 +705,10 @@ trans:
 trans/af.mo:	src/messages/af.po
 	@echo "   af_ZA ...Afrikaans..."
 	@msgfmt src/messages/af.po -o trans/af.mo
+
+trans/be.mo:	src/messages/be.po
+	@echo "   be_BY ...Belarusian..."
+	@msgfmt src/messages/be.po -o trans/be.mo
 
 trans/br.mo:	src/messages/br.po
 	@echo "   br_FR ...Breton..."
