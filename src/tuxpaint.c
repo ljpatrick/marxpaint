@@ -894,6 +894,7 @@ static const language_to_locale_struct language_to_locale_array[] = {
 {"french",               "fr_FR"},
 {"francais",             "fr_FR"},
 {"gaelic",               "ga_IE"},
+{"gaidhlig",             "ga_IE"},
 {"galician",             "gl_ES"},
 {"galego",               "gl_ES"},
 {"hebrew",               "he_IL"},
