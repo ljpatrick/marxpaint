@@ -7225,6 +7225,7 @@ void do_eraser(int x, int y)
 void reset_avail_tools(void)
 {
   int i;
+  int disallow_print = disable_print;  /* set to 1 later if printer unavail */
 
   for (i = 0; i < NUM_TOOLS; i++)
     {
@@ -7255,17 +7256,17 @@ void reset_avail_tools(void)
 
 
 #ifdef WIN32
-  disable_print = !IsPrinterAvailable();
+  if(!IsPrinterAvailable()) disallow_print = 1;
 #endif
 
 #ifdef __BEOS__
-  disable_print = !IsPrinterAvailable();
+  if(!IsPrinterAvailable()) disallow_print = 1;
 #endif
 
-  
+
   /* Disable print? */
 
-  if (disable_print)
+  if (disallow_print)
     tool_avail[TOOL_PRINT] = 0;
 }
 
