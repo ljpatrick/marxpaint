@@ -7,7 +7,7 @@ bill@newbreedsoftware.com
 http://www.newbreedsoftware.com/tuxpaint/
 
 
-2003.Jul.3 (0.9.12) [cvs]
+2003.Jul.19 (0.9.12) [cvs]
   * Fixed Mac OS X #include typo.
     Darrell Walisser <walisser@mac.com>
 
@@ -20,6 +20,12 @@ http://www.newbreedsoftware.com/tuxpaint/
 
   * Added call to close iconv when quitting.
     John Popplewell <john@johnnypops.demon.co.uk>
+
+  * Walloon translation.
+    Pablo Saratxaga <pablo@walon.org>
+
+  * Chinese translation update.
+    Wang Jian <lark@linux.net.cn>
 
 
 2003.Jun.17 (0.9.11)

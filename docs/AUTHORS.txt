@@ -7,7 +7,7 @@ bill@newbreedsoftware.com
 http://www.newbreedsoftware.com/tuxpaint/
 
 
-June 17, 2002 - June 14, 2003
+June 17, 2002 - July 19, 2003
 
 
 * Design and Coding:
@@ -162,6 +162,9 @@ June 17, 2002 - June 14, 2003
 
   * Turkish
     Doruk Fisek <dfisek@fisek.com.tr>
+
+  * Walloon
+    Pablo Saratxaga <pablo@walon.org>
     
 
 * Ports and Packaging

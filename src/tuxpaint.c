@@ -7,12 +7,12 @@
   bill@newbreedsoftware.com
   http://www.newbreedsoftware.com/tuxpaint/
   
-  June 14, 2002 - July 3, 2003
+  June 14, 2002 - July 19, 2003
 */
 
 
 #define VER_VERSION     "0.9.12"
-#define VER_DATE        "2003.07.03"
+#define VER_DATE        "2003.07.19"
 
 
 /* #define DEBUG */
@@ -249,6 +249,7 @@ enum {
   LANG_SE,     /* Swedish */
   LANG_SK,     /* Slovak */
   LANG_TR,     /* Turkish */
+  LANG_WA,     /* Walloon */
   LANG_ZH,     /* Chinese */
   NUM_LANGS
 };
@@ -281,6 +282,7 @@ const char * lang_prefixes[NUM_LANGS] = {
   "se",
   "sk",
   "tr",
+  "wa",
   "zh"
 };
 
@@ -3921,6 +3923,11 @@ void setup(int argc, char * argv[])
       {
 	putenv("LANG=tr_TR@euro");
 	putenv("LC_ALL=tr_TR@euro");
+      }
+    else if (strcmp(langstr, "walloon") == 0)
+      {
+	putenv("LANG=wa_BE@euro");
+	putenv("LC_ALL=wa_BE@euro");
       }
     else if (strcmp(langstr, "chinese") == 0)
       {

@@ -6,7 +6,7 @@
 # bill@newbreedsoftware.com
 # http://www.newbreedsoftware.com/tuxpaint/
 
-# June 14, 2002 - June 17, 2003
+# June 14, 2002 - July 19, 2003
 
 
 # Where to install things:
@@ -236,6 +236,7 @@ uninstall:
 	-rm $(LOCALE_PREFIX)sk/LC_MESSAGES/tuxpaint.mo
 	-rm $(LOCALE_PREFIX)sv/LC_MESSAGES/tuxpaint.mo
 	-rm $(LOCALE_PREFIX)tr/LC_MESSAGES/tuxpaint.mo
+	-rm $(LOCALE_PREFIX)wa/LC_MESSAGES/tuxpaint.mo
 	-rm $(LOCALE_PREFIX)zh_CN/LC_MESSAGES/tuxpaint.mo
 	-rm -f -r $(CONFDIR)
 
@@ -470,6 +471,11 @@ install-gettext:
 	@install -d $(LOCALE_PREFIX)tr/LC_MESSAGES
 	@cp trans/tr.mo $(LOCALE_PREFIX)tr/LC_MESSAGES/tuxpaint.mo
 	@chmod 644 $(LOCALE_PREFIX)tr/LC_MESSAGES/tuxpaint.mo
+	@#
+	@echo "   wa_BE ...Walloon..."
+	@install -d $(LOCALE_PREFIX)wa/LC_MESSAGES
+	@cp trans/wa.mo $(LOCALE_PREFIX)wa/LC_MESSAGES/tuxpaint.mo
+	@chmod 644 $(LOCALE_PREFIX)wa/LC_MESSAGES/tuxpaint.mo
 
 
 # Install the text documentation:
@@ -573,6 +579,7 @@ translations: trans \
 	trans/sk.mo \
 	trans/sv.mo \
 	trans/tr.mo \
+	trans/wa.mo \
 	trans/zh_cn.mo
 
 trans:
@@ -683,6 +690,10 @@ trans/sv.mo:	src/messages/sv.po
 trans/tr.mo:	src/messages/tr.po
 	@echo "   tr_TR ...Turkish..."
 	@msgfmt src/messages/tr.po -o trans/tr.mo
+
+trans/wa.mo:	src/messages/wa.po
+	@echo "   wa_BE ...Walloon..."
+	@msgfmt src/messages/wa.po -o trans/wa.mo
 
 trans/zh_cn.mo:	src/messages/zh_cn.po
 	@echo "   zh_CN ...Chinese..."
