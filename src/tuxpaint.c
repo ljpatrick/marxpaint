@@ -713,8 +713,8 @@ int main(int argc, char * argv[])
 
   SDL_BlitSurface(img_title, NULL, screen, &dest);
 
-  snprintf(tmp_str, sizeof(tmp_str), "%s - %s", VER_VERSION, VER_DATE);
-  tmp_surf = TTF_RenderText_Blended(font, tmp_str, black);
+  snprintf(tmp_str, sizeof(tmp_str), "%s – %s", VER_VERSION, VER_DATE);
+  tmp_surf = TTF_RenderUTF8_Blended(font, tmp_str, black);
   dest.x = 20 + (WINDOW_WIDTH - img_title->w) / 2;
   dest.y = WINDOW_HEIGHT - 60;
   SDL_BlitSurface(tmp_surf, NULL, screen, &dest);
@@ -4654,7 +4654,7 @@ void setup(int argc, char * argv[])
     }
  
   bindtextdomain("tuxpaint", LOCALEDIR);
-  bind_textdomain_codeset("tuxpaint", "UTF8");
+  bind_textdomain_codeset("tuxpaint", "UTF-8");
 
   textdomain("tuxpaint");
 
