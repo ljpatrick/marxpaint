@@ -624,7 +624,7 @@ static int lang_use_own_font[] = {
 //  LANG_EL,
 //  LANG_HE,
   LANG_HI,
-  LANG_JA,
+//  LANG_JA,
   LANG_KO,
   LANG_TA,
   LANG_ZH_CN,
