@@ -129,9 +129,9 @@ beos:
 # to do this as superuser ("root"))
 
 install:	install-bin install-data install-man install-doc \
-		install-gnome install-kde install-kde-icons \
 		install-icon install-gettext install-importscript \
-		install-default-config install-example-stamps
+		install-default-config install-example-stamps \
+		install-gnome install-kde install-kde-icons
 	@echo
 	@echo "--------------------------------------------------------------"
 	@echo
@@ -329,6 +329,7 @@ install-icon:
 install-bin:
 	@echo
 	@echo "...Installing program itself..."
+	@install -d $(BIN_PREFIX)
 	@cp tuxpaint $(BIN_PREFIX)
 	@chmod a+rx,g-w,o-w $(BIN_PREFIX)/tuxpaint
 
