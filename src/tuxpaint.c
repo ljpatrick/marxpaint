@@ -6561,30 +6561,30 @@ void draw_erasers(void)
 	  dest.x = x;
 	  dest.y = y;
 	  dest.w = sz;
-	  dest.h = 1;
+	  dest.h = 2;
 
 	  SDL_FillRect(screen, &dest,
 		       SDL_MapRGB(screen->format, 0, 0, 0));
 
 	  dest.x = x;
-	  dest.y = y + sz - 1;
+	  dest.y = y + sz - 2;
 	  dest.w = sz;
-	  dest.h = 1;
+	  dest.h = 2;
 
 	  SDL_FillRect(screen, &dest,
 		       SDL_MapRGB(screen->format, 0, 0, 0));
 
 	  dest.x = x;
 	  dest.y = y;
-	  dest.w = 1;
+	  dest.w = 2;
 	  dest.h = sz;
 
 	  SDL_FillRect(screen, &dest,
 		       SDL_MapRGB(screen->format, 0, 0, 0));
 	  
-	  dest.x = x + sz - 1;
+	  dest.x = x + sz - 2;
 	  dest.y = y;
-	  dest.w = 1;
+	  dest.w = 2;
 	  dest.h = sz;
 
 	  SDL_FillRect(screen, &dest,
