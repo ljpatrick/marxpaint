@@ -5,9 +5,9 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: tuxpaint 0.9.11\n"
+"Project-Id-Version: tuxpaint 0.9.14\n"
 "POT-Creation-Date: 2003-06-26 05:23+0200\n"
-"PO-Revision-Date: 2004-03-03 11:12+0200\n"
+"PO-Revision-Date: 2004-03-03 13:44-0800\n"
 "Last-Translator: Petri Jooste <rkwjpj@puk.ac.za>\n"
 "Language-Team: Afrikaans <i18n@af.org.za>\n"
 "MIME-Version: 1.0\n"
@@ -15,64 +15,64 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 #: colors.h:62
-msgid "Black"
-msgstr "Swart"
+msgid "Black!"
+msgstr "Swart!"
 
 #: colors.h:63
-msgid "White"
-msgstr "Wit"
+msgid "White!"
+msgstr "Wit!"
 
 #: colors.h:64
-msgid "Red"
-msgstr "Rooi"
+msgid "Red!"
+msgstr "Rooi!"
 
 #: colors.h:65
-msgid "Pink"
-msgstr "Pienk"
+msgid "Pink!"
+msgstr "Pienk!"
 
 #: colors.h:66
-msgid "Orange"
-msgstr "Oranje"
+msgid "Orange!"
+msgstr "Oranje!"
 
 #: colors.h:67
-msgid "Yellow"
-msgstr "Geel"
+msgid "Yellow!"
+msgstr "Geel!"
 
 #: colors.h:68
-msgid "Lime"
-msgstr "Lemmetjie"
+msgid "Lime!"
+msgstr "Lemmetjie!"
 
 #: colors.h:69
-msgid "Green"
-msgstr "Groen"
+msgid "Green!"
+msgstr "Groen!"
 
 #: colors.h:70
-msgid "Cyan"
+msgid "Cyan!"
 msgstr ""
 
 #: colors.h:71
-msgid "Blue"
-msgstr "Blou"
+msgid "Blue!"
+msgstr "Blou!"
 
 #: colors.h:72
-msgid "Purple"
-msgstr "Pers"
+msgid "Purple!"
+msgstr "Pers!"
 
 #: colors.h:73
-msgid "Fuchsia"
+msgid "Fuchsia!"
 msgstr ""
 
 #: colors.h:74
-msgid "Brown"
-msgstr "Bruin"
+msgid "Brown!"
+msgstr "Bruin!"
 
 #: colors.h:75
-msgid "Grey"
-msgstr "Grys"
+msgid "Grey!"
+msgstr "Grys!"
 
 #: colors.h:76
-msgid "Silver"
-msgstr "Silwer"
+msgid "Silver!"
+msgstr "Silwer!"
 
 #: great.h:20
 msgid "Great!"
