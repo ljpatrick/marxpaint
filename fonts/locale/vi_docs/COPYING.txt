@@ -1,0 +1,16 @@
+COPYING.txt for "tuxpaint-ttf-vietnamese"
+Vietnamese TrueType Font (TTF) for Tux Paint
+
+The "vi.ttf" font file is a copy of a "Vietnamese TCVN" TrueType font,
+(vntimes.ttf).
+
+It was extracted from "fonts-ttf-tcvn2-0.1",
+the "TCVN FONT - Completed Version" collection,
+packaged by Nguyen Hung.Vu <Vu.Hung@techviet.com>,
+and located at: http://www.fedu.uec.ac.jp/~vuhung/linux/font-rpms/
+
+From the description:
+  This Package provides Vietnamese TCVN TrueType fonts
+  (almost all  tcvn true type fonts availble now)
+  Please note that this package is not GPL licensed.
+
