@@ -5,104 +5,109 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Tux Paint\n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2003-12-23 22:09+0100\n"
+"PO-Revision-Date: 2004-01-15 21:34+0100\n"
 "Last-Translator: Karl Ove Hufthammer <karl@huftis.org>\n"
 "Language-Team: Norsk (nynorsk) <i18n-nn@lister.ping.uio.no>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: KBabel 1.0.2\n"
 
-#: src/tuxpaint.c:669
+#: src/tuxpaint.c:795
 msgid "Do you really want to quit?"
 msgstr "Vil du verkeleg avslutta?"
 
-#: src/tuxpaint.c:670
-#: src/tuxpaint.c:674
-#: src/tuxpaint.c:678
-#: src/tuxpaint.c:698
-#: src/tuxpaint.c:6851
-#: src/tuxpaint.c:7530
+#: src/tuxpaint.c:796
+#: src/tuxpaint.c:800
+#: src/tuxpaint.c:804
+#: src/tuxpaint.c:818
+#: src/tuxpaint.c:828
+#: src/tuxpaint.c:8360
+#: src/tuxpaint.c:9065
 msgid "Yes"
 msgstr "Ja!"
 
-#: src/tuxpaint.c:671
-#: src/tuxpaint.c:675
-#: src/tuxpaint.c:679
-#: src/tuxpaint.c:699
-#: src/tuxpaint.c:6854
+#: src/tuxpaint.c:797
+#: src/tuxpaint.c:801
+#: src/tuxpaint.c:805
+#: src/tuxpaint.c:819
+#: src/tuxpaint.c:829
+#: src/tuxpaint.c:8363
 msgid "No"
 msgstr "Nei!"
 
-#: src/tuxpaint.c:673
+#: src/tuxpaint.c:799
 msgid "If you quit, you'll lose your picture! Save it?"
 msgstr "Du mistar teikninga viss du avsluttar. Vil du lagra ho først?"
 
-#: src/tuxpaint.c:677
+#: src/tuxpaint.c:803
 msgid "Save your picture first?"
 msgstr "Vil du lagra teikninga først?"
 
-#: src/tuxpaint.c:681
+#: src/tuxpaint.c:807
 msgid "Can't open that picture!"
 msgstr "Klarte ikkje opna teikninga."
 
-#: src/tuxpaint.c:682
-#: src/tuxpaint.c:689
-#: src/tuxpaint.c:692
-#: src/tuxpaint.c:695
+#: src/tuxpaint.c:808
+#: src/tuxpaint.c:815
+#: src/tuxpaint.c:822
+#: src/tuxpaint.c:825
 msgid "Okay"
 msgstr "OK"
 
-#: src/tuxpaint.c:684
+#: src/tuxpaint.c:810
 msgid "Starting a new picture will erase the current one!"
 msgstr "Startar du på ei ny teikning, forsvinn ho du har."
 
-#: src/tuxpaint.c:685
+#: src/tuxpaint.c:811
 msgid "That's Ok"
 msgstr "OK!"
 
-#: src/tuxpaint.c:686
+#: src/tuxpaint.c:812
 msgid "Never Mind!"
 msgstr "Avbryt!"
 
-#: src/tuxpaint.c:688
+#: src/tuxpaint.c:814
 msgid "There are no saved files!"
 msgstr "Det finst ingen lagra teikningar."
 
-#: src/tuxpaint.c:691
+#: src/tuxpaint.c:817
+msgid "Print your picture now?"
+msgstr "Er du sikker på at du vil skriva ut teikninga?"
+
+#: src/tuxpaint.c:821
 msgid "Your picture has been printed!"
 msgstr "Teikninga er skriven ut."
 
-#: src/tuxpaint.c:694
+#: src/tuxpaint.c:824
 msgid "You can't print yet!"
 msgstr "Du kan ikkje skriva ut enno."
 
-#: src/tuxpaint.c:697
+#: src/tuxpaint.c:827
 msgid "Erase this picture?"
 msgstr "Vil du verkeleg sletta teikninga?"
 
+#: src/tuxpaint.c:5416
 #: src/tools.h:52
-#: src/tuxpaint.c:4453
 msgid "Open"
 msgstr "Opna"
 
-#: src/tuxpaint.c:4458
+#: src/tuxpaint.c:5421
 msgid "Erase"
 msgstr "Slett"
 
-#: src/tuxpaint.c:4463
+#: src/tuxpaint.c:5426
 msgid "Back"
 msgstr "Tilbake"
 
-#: src/tuxpaint.c:7529
+#: src/tuxpaint.c:9064
 msgid "Save over the older version of this drawing?"
 msgstr "Vil du lagra over den gamle versjonen av teikninga?"
 
-#: src/tuxpaint.c:7531
+#: src/tuxpaint.c:9066
 msgid "No, save a new file"
 msgstr "Nei. Lagra som ny teikning."
 
-#: src/tuxpaint.c:8237
+#: src/tuxpaint.c:9885
 msgid "Choose the picture you want, then click 'Open'"
 msgstr "Vel ei teikning og trykk «Opna»."
 
