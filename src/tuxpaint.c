@@ -2459,7 +2459,7 @@ static void mainloop(void)
 			       !disable_stamp_controls)
 			{
 			  /* Text controls! */
-                          int text_sound;
+                          int text_sound = -1;
 			  if (event.button.y >= (48 * ((max / 2) + TOOLOFFSET / 2)) + 40 &&
 			      event.button.y < (48 * ((max / 2) + TOOLOFFSET / 2)) + 40 + 48)
 			    {
@@ -2518,9 +2518,12 @@ static void mainloop(void)
 				    }
 				}
 			    }
-			  playsound(0, text_sound, 0);
-			  draw_fonts();
-			  SDL_UpdateRect(screen, WINDOW_WIDTH - 96, 0, 96, (48 * 7) + 40 + HEIGHTOFFSET);
+			  if (text_sound != -1)
+			    {
+			      playsound(0, text_sound, 0);
+			      draw_fonts();
+			      SDL_UpdateRect(screen, WINDOW_WIDTH - 96, 0, 96, (48 * 7) + 40 + HEIGHTOFFSET);
+			    }
 			}
 
 		      
