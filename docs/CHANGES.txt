@@ -211,6 +211,16 @@ http://www.newbreedsoftware.com/tuxpaint/
 
     * Added reference to "--lang help" to documentation.
 
+  * Documentation updates:
+    ----------------------
+    * README (docs/html/README.html and docs/README.txt) has been pared down
+      and made more friendly.  Mention of other doc. files are now hyperlinked.
+
+    * Documentation regarding configuration file and command-line options
+      have been moved into a separate OPTIONS document (docs/html/OPTIONS.html
+      and docs/OPTIONS.txt), since Tux Paint Config. now exists to simplify
+      changing settings.
+
   * Porting and packaging updates:
     ------------------------------
     * Visual Studio build system included in CVS and source release
