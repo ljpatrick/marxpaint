@@ -37,6 +37,7 @@
 
 
 /* #define DEBUG */
+/* #define DEBUG_MALLOC */
 /* #define LOW_QUALITY_THUMBNAILS */
 /* #define LOW_QUALITY_COLOR_SELECTOR */
 /* #define LOW_QUALITY_STAMP_OUTLINE */
@@ -323,7 +324,9 @@ extern char* g_win32_getlocale(void);
 #include "arrow.xbm"
 #include "arrow-mask.xbm"
 
-
+#ifdef DEBUG_MALLOC
+#include "malloc.c"
+#endif
 
 #ifdef WIN32
 /*
@@ -1668,10 +1671,6 @@ static void parse_font_style(style_info *si)
   si->truetype = !!strstr(si->filename,".ttf");
 }
 
-
-#include <unistd.h>
-
-
 static void groupfonts_range(style_info **base, int count)
 {
   int boldcounts[4] = {0,0,0,0};
@@ -1680,13 +1679,12 @@ static void groupfonts_range(style_info **base, int count)
 
 if(count<1 || count>4)
 {
-printf("::::::: %d %s\n",count, base[0]->family);
+printf("\n::::::: %d styles in %s:\n",count, base[0]->family);
 i = count;
 while(i--)
 {
 printf("               %s\n", base[i]->style);
 }
-//sleep(5);
 }
 
   i = count;
@@ -13968,6 +13966,32 @@ static void do_render_cur_text(int do_blit)
     SDL_FreeSurface(tmp_surf);
 }
 
+// see if two surfaces are the same
+static int surfcmp(SDL_Surface *s1, SDL_Surface *s2)
+{
+  if(s1==s2)
+    return 0;  // they are same
+  if(!s1 || !s2)
+    return 1;  // they are different
+  if(s1->format->BytesPerPixel != s2->format->BytesPerPixel)
+    return 1;
+  if(s1->w != s2->w || s1->h != s2->h)
+    return 1;
+  char *c1 = (char*)s1->pixels;
+  char *c2 = (char*)s2->pixels;
+  int width = s1->format->BytesPerPixel * s1->w;
+  if(width==s1->pitch)
+    return memcmp(c1,c2,width*s1->h);
+  int cmp = 0;
+  int i = s1->h;
+  while(i--)
+    {
+      cmp = memcmp(c1 + i*s1->pitch, c2 + i*s2->pitch, width);
+      if(cmp)
+        break;
+    }
+  return cmp;
+}
 
 static void loadfonts(const char * const dir, int fatal)
 {
@@ -14085,17 +14109,42 @@ printf("Loading font: %s/%s\n", dir, d_names[i]);
               if(font)
                 {
                   const char *family = TTF_FontFaceFamilyName(font);
+// do without the blacklist for now, to verify that bad fonts don't crash Tux Paint
+#if 0
                   if(!(strstr(family, "Webdings") ||
                        strstr(family, "Dingbats") ||
                        strstr(family, "Cursor") ||
                        strstr(family, "Standard Symbols")))
+#endif
                     {
-                      user_font_styles[num_font_styles] = malloc(sizeof *user_font_styles[num_font_styles]);
-                      user_font_styles[num_font_styles]->directory = strdup(dir);
-                      user_font_styles[num_font_styles]->filename = strdup(d_names[i]);
-                      user_font_styles[num_font_styles]->family = strdup(family);
-                      user_font_styles[num_font_styles]->style = strdup(TTF_FontFaceStyleName(font));
-                      num_font_styles++;
+                      char *style = TTF_FontFaceStyleName(font);
+                      SDL_Color black = {0, 0, 0, 0};
+                      SDL_Surface *tmp_surf_a = TTF_RenderUTF8_Blended(font, "a", black);
+                      SDL_Surface *tmp_surf_A = TTF_RenderUTF8_Blended(font, "A", black);
+                      if(tmp_surf_a && tmp_surf_A)
+                        {
+                          if(surfcmp(tmp_surf_a,tmp_surf_A))
+                            {
+                              user_font_styles[num_font_styles] = malloc(sizeof *user_font_styles[num_font_styles]);
+                              user_font_styles[num_font_styles]->directory = strdup(dir);
+                              user_font_styles[num_font_styles]->filename = strdup(d_names[i]);
+                              user_font_styles[num_font_styles]->family = strdup(family);
+                              user_font_styles[num_font_styles]->style = strdup(style);
+                              num_font_styles++;
+                            }
+                          else
+                            {
+                              printf("Bad font, 'a' and 'A' match: %s, %s, %s\n", d_names[i], family, style);
+                            }
+                        }
+                      else
+                        {
+                          printf("could not render %s, %s, %s\n", d_names[i], family, style);
+                        }
+                      if(tmp_surf_a)
+                        free(tmp_surf_a);
+                      if(tmp_surf_A)
+                        free(tmp_surf_A);
                     }
                   TTF_CloseFont(font);
                 }
