@@ -7,12 +7,12 @@
   bill@newbreedsoftware.com
   http://www.newbreedsoftware.com/tuxpaint/
   
-  June 14, 2002 - April 5, 2003
+  June 14, 2002 - April 25, 2003
 */
 
 
 #define VER_VERSION     "0.9.11"
-#define VER_DATE        "2003.04.05"
+#define VER_DATE        "2003.04.25"
 
 
 /* #define DEBUG */
@@ -228,6 +228,7 @@ enum {
   LANG_ES,     /* Spanish */
   LANG_FI,     /* Finnish */
   LANG_FR,     /* French */
+  LANG_HE,     /* Hebrew */
   LANG_HU,     /* Hungarian */
   LANG_ID,     /* Indonesian */
   LANG_IS,     /* Icelandic */
@@ -259,6 +260,7 @@ const char * lang_prefixes[NUM_LANGS] = {
   "es",
   "fi",
   "fr",
+  "he",
   "hu",
   "id",
   "is",
@@ -3267,6 +3269,7 @@ void show_usage(FILE * f, char * prg)
     "  french       francais\n"
     "  german       deutsch\n"
     "  greek\n"
+    "  hebrew\n"
     "  hungarian    magyar\n"
     "  icelandic    islenska\n"
     "  indonesian   bahasa-indonesia\n"
@@ -3764,6 +3767,11 @@ void setup(int argc, char * argv[])
       {
 	putenv("LANG=fr_FR@euro");
 	putenv("LC_ALL=fr_FR@euro");
+      }
+    else if (strcmp(langstr, "hebrew") == 0)
+      {
+	putenv("LANG=he_IL");
+	putenv("LC_ALL=he_IL");
       }
     else if (strcmp(langstr, "hungarian") == 0 ||
 	     strcmp(langstr, "magyar") == 0)
@@ -4336,7 +4344,7 @@ void setup(int argc, char * argv[])
       
       putenv("LANG=C");
       putenv("OUTPUT_CHARSET=C");
-      setlocale(LC_ALL, "");
+      setlocale(LC_ALL, "C");
 
       bindtextdomain("tuxpaint", LOCALEDIR);
       textdomain("tuxpaint");

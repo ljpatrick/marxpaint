@@ -1,0 +1,506 @@
+# translation of tuxpaint_he.po to Hebrew
+# This file is distributed under the GNU GPL License
+# Copyright (C) http://www.linux-kinneret.org
+# koby <kobybo@hotmail.com>, 2003
+# dovix <dovix2003@yahoo.com>, 2003
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: tuxpaint_he\n"
+"POT-Creation-Date: 2003-04-07 10:16+0300\n"
+"PO-Revision-Date: 2003-04-25 03:35+0000\n"
+"Last-Translator: dovix <dovix2003@yahoo.com>\n"
+"Language-Team: Hebrew <en@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.0.1\n"
+
+#: src/tuxpaint.c:664
+msgid "Do you really want to quit?"
+msgstr "האם ברצונך לצאת?"
+
+#: src/tuxpaint.c:665
+#: src/tuxpaint.c:669
+#: src/tuxpaint.c:673
+#: src/tuxpaint.c:693
+#: src/tuxpaint.c:7054
+#: src/tuxpaint.c:7733
+msgid "Yes"
+msgstr "כן"
+
+#: src/tuxpaint.c:666
+#: src/tuxpaint.c:670
+#: src/tuxpaint.c:674
+#: src/tuxpaint.c:694
+#: src/tuxpaint.c:7057
+msgid "No"
+msgstr "לא"
+
+#: src/tuxpaint.c:668
+msgid "If you quit, you'll lose your picture! Save it?"
+msgstr "יציאה ללא שמירה תגרום לאיבוד התמונה שלך! האם לשמור אותה?"
+
+#: src/tuxpaint.c:672
+msgid "Save your picture first?"
+msgstr "האם לשמור את התמונה שלך?"
+
+#: src/tuxpaint.c:676
+msgid "Can't open that picture!"
+msgstr "לא ניתן לפתוח תמונה זו!"
+
+#: src/tuxpaint.c:677
+#: src/tuxpaint.c:684
+#: src/tuxpaint.c:687
+#: src/tuxpaint.c:690
+msgid "Okay"
+msgstr "בסדר"
+
+#: src/tuxpaint.c:679
+msgid "Starting a new picture will erase the current one!"
+msgstr "התחלת תמונה חדשה תמחוק את התמונה הנוכחית!"
+
+#: src/tuxpaint.c:680
+msgid "That's Ok"
+msgstr "זה בסדר"
+
+#: src/tuxpaint.c:681
+msgid "Never Mind!"
+msgstr "לא משנה!"
+
+#: src/tuxpaint.c:683
+msgid "There are no saved files!"
+msgstr "אין קבצים שמורים!"
+
+#: src/tuxpaint.c:686
+msgid "Your picture has been printed!"
+msgstr "התמונה שלך הודפסה!"
+
+#: src/tuxpaint.c:689
+msgid "You can't print yet!"
+msgstr "עדיין אין באפשרותך להדפיס!"
+
+#: src/tuxpaint.c:692
+msgid "Erase this picture?"
+msgstr "האם למחוק תמונה זו?"
+
+#: src/tuxpaint.c:4534
+#: src/tools.h:52
+msgid "Open"
+msgstr "פתיחה"
+
+#: src/tuxpaint.c:4539
+msgid "Erase"
+msgstr "מחק"
+
+#: src/tuxpaint.c:4544
+msgid "Back"
+msgstr "חזרה"
+
+#: src/tuxpaint.c:7732
+msgid "Save over the older version of this drawing?"
+msgstr "האם לשמור במקום הציור הקודם?"
+
+#: src/tuxpaint.c:7734
+msgid "No, save a new file"
+msgstr "לא, שמור בקובץ חדש"
+
+#: src/tuxpaint.c:8440
+msgid "Choose the picture you want, then click 'Open'"
+msgstr "יש לבחור את התמונה הרצויה, ואז ללחוץ על 'פתיחה'"
+
+#: src/colors.h:62
+msgid "Black"
+msgstr "שחור"
+
+#: src/colors.h:63
+msgid "White"
+msgstr "לבן"
+
+#: src/colors.h:64
+msgid "Red"
+msgstr "אדום"
+
+#: src/colors.h:65
+msgid "Pink"
+msgstr "ורוד"
+
+#: src/colors.h:66
+msgid "Orange"
+msgstr "כתום"
+
+#: src/colors.h:67
+msgid "Yellow"
+msgstr "צהוב"
+
+#: src/colors.h:68
+msgid "Lime"
+msgstr "ירוק בהיר"
+
+#: src/colors.h:69
+msgid "Green"
+msgstr "ירוק כהה"
+
+#: src/colors.h:70
+msgid "Cyan"
+msgstr "תכלת"
+
+#: src/colors.h:71
+msgid "Blue"
+msgstr "כחול"
+
+#: src/colors.h:72
+msgid "Purple"
+msgstr "סגול כהה"
+
+#: src/colors.h:73
+msgid "Fuchsia"
+msgstr "סגול בהיר"
+
+#: src/colors.h:74
+msgid "Brown"
+msgstr "חום"
+
+#: src/colors.h:75
+msgid "Grey"
+msgstr "אפור"
+
+#: src/colors.h:76
+msgid "Silver"
+msgstr "כסף"
+
+#: src/great.h:20
+msgid "Great!"
+msgstr "נהדר!"
+
+#: src/great.h:21
+msgid "Cool!"
+msgstr "מגניב!"
+
+#: src/great.h:22
+msgid "Keep it up!"
+msgstr "יפה מאוד!"
+
+#: src/great.h:23
+msgid "Good job!"
+msgstr "עבודה טובה!"
+
+#: src/magic.h:48
+msgid "Rainbow"
+msgstr "קשת בענן"
+
+#: src/magic.h:49
+msgid "Sparkles"
+msgstr "ניצוצות"
+
+#: src/magic.h:51
+msgid "Mirror"
+msgstr "מראה"
+
+#: src/magic.h:52
+msgid "Flip"
+msgstr "היפוך"
+
+#: src/magic.h:54
+msgid "Blur"
+msgstr "טישטוש"
+
+#: src/magic.h:55
+msgid "Blocks"
+msgstr "לבנים"
+
+#: src/magic.h:57
+msgid "Negative"
+msgstr "תשליל"
+
+#: src/magic.h:58
+msgid "Fade"
+msgstr "עימעום"
+
+#: src/magic.h:60
+msgid "Chalk"
+msgstr "גיר"
+
+#: src/magic.h:61
+msgid "Drip"
+msgstr "טפטוף"
+
+#: src/magic.h:63
+msgid "Thick"
+msgstr "עיבוי"
+
+#: src/magic.h:64
+msgid "Thin"
+msgstr "הצרה"
+
+#: src/magic.h:66
+msgid "Fill"
+msgstr "מילוי"
+
+#: src/magic.h:73
+msgid "You can draw in rainbow colors!"
+msgstr "יש באפשרותך לצייר בצבעי הקשת!"
+
+#: src/magic.h:74
+msgid "Click and move to draw sparkles"
+msgstr "יש ללחוץ ולהזיז כדי לצייר ניצוצות"
+
+#: src/magic.h:76
+msgid "Click to make a mirror image!"
+msgstr "יש ללחוץ כדי ליצור תמונת מראה!"
+
+#: src/magic.h:77
+msgid "Click to flip the picture upside-down!"
+msgstr "יש ללחוץכדי להפוך את התמונה מלמעלה למטה!"
+
+#: src/magic.h:79
+msgid "Click and move the mouse around to blur the picture"
+msgstr "יש ללחוץ ולהזיז את העכבר מסביב כדי לטשטש את התמונה"
+
+#: src/magic.h:80
+msgid "Click and move the mouse around to make the picture blocky"
+msgstr "יש ללחוץ ולהזיז את העכבר כדי ליצור לבנים בתמונה שלך"
+
+#: src/magic.h:82
+msgid "Click and move the mouse around to draw a negative"
+msgstr "יש ללחוץ ולהזיז את העכבר מסביב כדי להפוך את הצבעים."
+
+#: src/magic.h:83
+msgid "Click and move to fade the colors."
+msgstr "יש ללחוץ ולהזיז כדי לעמעם את הצבעים."
+
+#: src/magic.h:85
+msgid "Click and move the mouse around to turn the picture into a chalk drawing."
+msgstr "יש ללחוץ ולהזיז את העכבר כדי ליצור אפקט של ציור גיר."
+
+#: src/magic.h:86
+msgid "Click and move the mouse around to make the picture drip!"
+msgstr "יש ללחוץ ולהזיז את העכבר כדי לגרום לתמונה שלך לטפטף!"
+
+#: src/magic.h:88
+msgid "Click and move the mouse to thicken the picture"
+msgstr "יש ללחוץ ולהזיז את העכבר כדי לעבות את הקוים"
+
+#: src/magic.h:89
+msgid "Click and move the mouse to thin the picture"
+msgstr "יש ללחוץ ולהזיז את העכבר כדי להצר את הקוים"
+
+#: src/magic.h:91
+msgid "Click in the picture to fill that area with color"
+msgstr "יש ללחוץ בתוך התמונה כדי למלא את האזור הזה בצבע"
+
+#: src/shapes.h:141
+#: src/shapes.h:142
+msgid "Square"
+msgstr "ריבוע"
+
+#: src/shapes.h:143
+#: src/shapes.h:144
+msgid "Rectangle"
+msgstr "מלבן"
+
+#: src/shapes.h:145
+#: src/shapes.h:146
+msgid "Circle"
+msgstr "עיגול"
+
+#: src/shapes.h:147
+#: src/shapes.h:148
+#: src/shapes.h:167
+#: src/shapes.h:168
+msgid "Oval"
+msgstr "אליפסה"
+
+#: src/shapes.h:149
+#: src/shapes.h:150
+msgid "Triangle"
+msgstr "משולש"
+
+#: src/shapes.h:151
+#: src/shapes.h:152
+msgid "Pentagon"
+msgstr "מחומש"
+
+#: src/shapes.h:153
+#: src/shapes.h:154
+msgid "Diamond"
+msgstr "יהלום"
+
+#: src/shapes.h:161
+#: src/shapes.h:162
+msgid "A square has four sides, each the same length."
+msgstr "לריבוע יש ארבע צלעות, כולן באורך זהה."
+
+#: src/shapes.h:163
+#: src/shapes.h:164
+msgid "A rectangle has four sides."
+msgstr "למלבן יש ארבע צלעות."
+
+#: src/shapes.h:165
+#: src/shapes.h:166
+msgid "A circle is exactly round."
+msgstr "עיגול הוא כדור שטוח."
+
+#: src/shapes.h:169
+#: src/shapes.h:170
+msgid "A triangle has three sides."
+msgstr "למשולש יש שלוש צלעות."
+
+#: src/shapes.h:171
+#: src/shapes.h:172
+msgid "A pentagon has five sides."
+msgstr "למחומש יש חמש צלעות."
+
+#: src/shapes.h:173
+#: src/shapes.h:174
+msgid "A diamond is a square, turned around slightly."
+msgstr "יהלום הוא ריבוע, שהוטה מעט הצידה."
+
+#: src/titles.h:37
+msgid "Tools"
+msgstr "כלים"
+
+#: src/titles.h:38
+msgid "Colors"
+msgstr "צבעים"
+
+#: src/titles.h:39
+msgid "Brushes"
+msgstr "מברשות"
+
+#: src/titles.h:40
+msgid "Stamps"
+msgstr "חותמות"
+
+#: src/titles.h:41
+#: src/tools.h:45
+msgid "Shapes"
+msgstr "צורות"
+
+#: src/titles.h:42
+msgid "Letters"
+msgstr "אותיות"
+
+#: src/titles.h:43
+#: src/tools.h:47
+msgid "Magic"
+msgstr "קסמים"
+
+#: src/tools.h:42
+msgid "Paint"
+msgstr "צבע"
+
+#: src/tools.h:43
+msgid "Stamp"
+msgstr "חותמת"
+
+#: src/tools.h:44
+msgid "Lines"
+msgstr "קווים"
+
+#: src/tools.h:46
+msgid "Text"
+msgstr "טקסט"
+
+#: src/tools.h:48
+msgid "Undo"
+msgstr "ביטול"
+
+#: src/tools.h:49
+msgid "Redo"
+msgstr "שחזור"
+
+#: src/tools.h:50
+msgid "Eraser"
+msgstr "מחק"
+
+#: src/tools.h:51
+msgid "New"
+msgstr "חדש"
+
+#: src/tools.h:53
+msgid "Save"
+msgstr "שמירה"
+
+#: src/tools.h:54
+msgid "Print"
+msgstr "הדפסה"
+
+#: src/tools.h:55
+msgid "Quit"
+msgstr "יציאה"
+
+#: src/tools.h:62
+msgid "Pick a color and a brush shape to draw with."
+msgstr "יש לבחור צבע וצורת מברשת כדי לצייר בעזרתם."
+
+#: src/tools.h:63
+msgid "Pick a picture to stamp around your drawing."
+msgstr "יש לבחור חותמת שתוטבע בציור."
+
+#: src/tools.h:64
+msgid "Click to start drawing a line.  Let go to complete it."
+msgstr "יש ללחוץ על מנת להתחיל לצייר. יש לשחרר כדי להשלים את הציור."
+
+#: src/tools.h:65
+msgid "Pick a shape. Click to pick the center, drag, then let go when it is the size you want.  Move around to rotate it, and click to draw it."
+msgstr ""
+"יש לבחור צורה, ללחוץ כדי לבחור את המרכז, לגרור, ואז לשחרר כאשר הצורה בגודל "
+"הרצוי לך. יש להזיז את העכבר כדי לסובב את הצורה, וללחוץ כדי לקבע אותה."
+
+#: src/tools.h:66
+msgid "Choose a style of text.  Click on your drawing and you can start typing."
+msgstr "יש לבחור סגנון לטקסט. יש ללחוץ על הציור שלך כדי להתחיל לכתוב."
+
+#: src/tools.h:67
+msgid "Pick a magical effect to use on your drawing!"
+msgstr "יש לבחור אפקט קסום שיעשה בו שימוש בציור שלך!"
+
+#: src/tools.h:68
+msgid "Undo!"
+msgstr "ביטול הפעולה האחרונה!"
+
+#: src/tools.h:69
+msgid "Redo!"
+msgstr "ביצוע מחדש של הפעולה האחרונה!"
+
+#: src/tools.h:70
+msgid "Eraser!"
+msgstr "מחיקה!"
+
+#: src/tools.h:71
+msgid "You now have a blank sheet to draw on!"
+msgstr "עכשיו יש לך לוח ריק לצייר עליו!"
+
+#: src/tools.h:72
+msgid "Open..."
+msgstr "פתיחה..."
+
+#: src/tools.h:73
+msgid "Your image has been saved!"
+msgstr "התמונה שלך נשמרה!"
+
+#: src/tools.h:74
+msgid "Printing..."
+msgstr "מדפיס..."
+
+#: src/tools.h:75
+msgid "Bye bye!"
+msgstr "ביי ביי!"
+
+#: src/tools.h:78
+msgid "Let go of the button to complete the line."
+msgstr "יש לשחרר את לחצן העכבר על מנת להשלים את הקו."
+
+#: src/tools.h:79
+msgid "Hold the button to stretch the shape."
+msgstr "יש להחזיק את לחצן העכבר על מנת למתוח את התמונה."
+
+#: src/tools.h:80
+msgid "Move the mouse to rotate the shape. Click to draw it."
+msgstr "יש לסובב את העכבר על מנת לסובב את הצורה, וללחוץ כדי לקבע אותה."
+
+#: src/tools.h:81
+msgid "Ok then... Let's keep drawing this one!"
+msgstr "בסדר... נמשיך לצייר את התמונה הזאת!"
+

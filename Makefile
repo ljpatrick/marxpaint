@@ -220,6 +220,7 @@ uninstall:
 	-rm $(LOCALE_PREFIX)es/LC_MESSAGES/tuxpaint.mo
 	-rm $(LOCALE_PREFIX)fi/LC_MESSAGES/tuxpaint.mo
 	-rm $(LOCALE_PREFIX)fr/LC_MESSAGES/tuxpaint.mo
+	-rm $(LOCALE_PREFIX)he/LC_MESSAGES/tuxpaint.mo
 	-rm $(LOCALE_PREFIX)hu/LC_MESSAGES/tuxpaint.mo
 	-rm $(LOCALE_PREFIX)id/LC_MESSAGES/tuxpaint.mo
 	-rm $(LOCALE_PREFIX)is/LC_MESSAGES/tuxpaint.mo
@@ -390,6 +391,11 @@ install-gettext:
 	@cp trans/el.mo $(LOCALE_PREFIX)el/LC_MESSAGES/tuxpaint.mo
 	@chmod 644 $(LOCALE_PREFIX)el/LC_MESSAGES/tuxpaint.mo
 	@#
+	@echo "   he_IL ...Hebrew..."
+	@install -d $(LOCALE_PREFIX)he/LC_MESSAGES
+	@cp trans/he.mo $(LOCALE_PREFIX)he/LC_MESSAGES/tuxpaint.mo
+	@chmod 644 $(LOCALE_PREFIX)he/LC_MESSAGES/tuxpaint.mo
+	@#
 	@echo "   hu_HU ...Hungarian..."
 	@install -d $(LOCALE_PREFIX)hu/LC_MESSAGES
 	@cp trans/hu.mo $(LOCALE_PREFIX)hu/LC_MESSAGES/tuxpaint.mo
@@ -550,6 +556,7 @@ translations: trans \
 	trans/es.mo \
 	trans/fi.mo \
 	trans/fr.mo \
+	trans/he.mo \
 	trans/hu.mo \
 	trans/id.mo \
 	trans/is.mo \
@@ -608,6 +615,10 @@ trans/fi.mo:	src/messages/fi.po
 trans/fr.mo:	src/messages/fr.po
 	@echo "   fr_FR ...French..."
 	@msgfmt src/messages/fr.po -o trans/fr.mo
+
+trans/he.mo:	src/messages/he.po
+	@echo "   he_IL ...Hebrew..."
+	@msgfmt src/messages/he.po -o trans/he.mo
 
 trans/hu.mo:	src/messages/hu.po
 	@echo "   hu_HU ...Hungarian..."
