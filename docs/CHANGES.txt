@@ -8,6 +8,10 @@ http://www.newbreedsoftware.com/tuxpaint/
 
 
 2004.December.5 (0.9.15)
+  * Magic blocks effect now gamma-aware and using all 16 (not just 4)
+    source pixels.
+    Albert Cahalan <albert@users.sf.net>
+
   * More range for stamp sizes. Can't hang off edge in both dimensions.
     Albert Cahalan <albert@users.sf.net>
 

@@ -4114,24 +4114,39 @@ static void blit_magic(int x, int y)
 	    {
 	      for (xx = x - 8; xx < x + 8; xx = xx + 4)
 		{
-		  /* Get average color around here: */
-		
-		  SDL_GetRGB(getpixel(last, xx, yy), last->format,
-			     &r1, &g1, &b1);
-	
-		  SDL_GetRGB(getpixel(last, xx + 2, yy), last->format,
-			     &r2, &g2, &b2);
-	
-		  SDL_GetRGB(getpixel(last, xx, yy + 2), last->format,
-			     &r3, &g3, &b3);
-	
-		  SDL_GetRGB(getpixel(last, xx + 2, yy + 2), last->format,
-			     &r4, &g4, &b4);
-
-		  r = (r1 + r2 + r3 + r4) / 4;
-		  g = (g1 + g2 + g3 + g4) / 4;
-		  b = (b1 + b2 + b3 + b4) / 4;
-
+		  Uint32 pix[16];
+		  Uint32 p_or = 0;
+		  Uint32 p_and = ~0;
+		  unsigned i = 16;
+		  while(i--)
+		    {
+		      Uint32 p_tmp;
+		      p_tmp = getpixel(last, xx+(i>>2), yy+(i&3));
+		      p_or |= p_tmp;
+		      p_and &= p_tmp;
+		      pix[i] = p_tmp;
+		    }
+		  if(p_or==p_and)  // if all pixels the same already
+		    {
+		      SDL_GetRGB(p_or, last->format, &r, &g, &b);
+		    }
+		  else  // nope, must average them
+		    {
+		      double r_sum = 0.0;
+		      double g_sum = 0.0;
+		      double b_sum = 0.0;
+		      i = 16;
+		      while(i--)
+		        {
+		          SDL_GetRGB(pix[i], last->format, &r, &g, &b);
+		          r_sum += sRGB_to_linear_table[r];
+		          g_sum += sRGB_to_linear_table[g];
+		          b_sum += sRGB_to_linear_table[b];
+		        }
+		      r = linear_to_sRGB(r_sum/16.0);
+		      g = linear_to_sRGB(g_sum/16.0);
+		      b = linear_to_sRGB(b_sum/16.0);
+		    }
 	
 		  /* Draw block: */
 
