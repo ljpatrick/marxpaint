@@ -1544,8 +1544,10 @@ void mainloop(void)
 			  
 			  if (txt_stamps[cur_stamp] != NULL)
 			  {
+#ifdef DEBUG
 			    printf("txt_stamps[cur_stamp] = %s\n",
 			           txt_stamps[cur_stamp]);
+#endif
 
 			    if (txt_stamps[cur_stamp][0] == '=')
 			    {
