@@ -7,12 +7,12 @@
   bill@newbreedsoftware.com
   http://www.newbreedsoftware.com/tuxpaint/
   
-  June 14, 2002 - June 22, 2003
+  June 14, 2002 - July 3, 2003
 */
 
 
 #define VER_VERSION     "0.9.12"
-#define VER_DATE        "2003.06.22"
+#define VER_DATE        "2003.07.03"
 
 
 /* #define DEBUG */
@@ -7668,6 +7668,8 @@ void cleanup(void)
 
   TTF_Quit();
   SDL_Quit();
+
+  convert_close();
 }
 
 
