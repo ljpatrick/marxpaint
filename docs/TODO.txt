@@ -71,7 +71,7 @@ HIGH-PRIORITY TRANSLATION STUFF:
   * Make right-to-left strings not wordwrap with the shortest line at
     the top!
 
-  * Finish current translations.
+  * Finish current translations.  (Especially documentation!)
 
 
 LOW-PRIORITY TRANSLATION STUFF:
