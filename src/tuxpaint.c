@@ -9483,6 +9483,7 @@ static void load_starter(char * img_id)
     SDL_FreeSurface(tmp_surf);
   }
 
+#if 0
   if (img_starter != NULL &&
       (img_starter->w != canvas->w || img_starter->h != canvas->h))
   {
@@ -9496,10 +9497,12 @@ static void load_starter(char * img_id)
 			      	            tmp_surf->format->Bmask,
 					    tmp_surf->format->Amask);
 
-    SDL_SetAlpha(tmp_surf, 0, 0);
+    // 3rd arg ignored for RGBA surfaces
+    SDL_SetAlpha(tmp_surf, SDL_RLEACCEL, SDL_ALPHA_OPAQUE);
     autoscale_copy_smear_free(tmp_surf,img_starter);
+    SDL_SetAlpha(img_starter, SDL_RLEACCEL|SDL_SRCALPHA, SDL_ALPHA_OPAQUE);
   }
-
+#endif
 
   /* Try to load the a background image: */
 
@@ -11942,6 +11945,7 @@ static int do_open(int want_new_tool)
 		    strcpy(starter_id, d_names[which]);
 		    load_starter(starter_id);
 
+		    SDL_FillRect(canvas, NULL, SDL_MapRGB(canvas->format, 255, 255, 255));
 		    SDL_BlitSurface(img_starter_bkgd, NULL, canvas, NULL);
 		    SDL_BlitSurface(img_starter, NULL, canvas, NULL);
 		  }
