@@ -17,7 +17,7 @@
 
 enum {
   COLOR_BLACK,
-  COLOR_DARKGRAY,
+  COLOR_DARKGREY,
   COLOR_LIGHTGREY,
   COLOR_WHITE,
   COLOR_RED,
@@ -41,8 +41,8 @@ enum {
 
 const int color_hexes[NUM_COLORS][3] = {
   {0, 0, 0},       /* Black */
-  {128, 128, 128}, /* Dark Gray */
-  {192, 192, 192}, /* Light Grey */
+  {128, 128, 128}, /* Dark grey */
+  {192, 192, 192}, /* Light grey */
   {255, 255, 255}, /* White */
   {255,   0,   0}, /* Red */
   {255, 128,   0}, /* Orange */
@@ -64,8 +64,8 @@ const int color_hexes[NUM_COLORS][3] = {
 
 const char * const color_names[NUM_COLORS] = {
   gettext_noop("Black!"),
-  gettext_noop("Dark grey! Sometimes, people spell it \"Dark gray\"."),
-  gettext_noop("Light gray! Sometimes, people spell it \"Dark grey\"."),
+  gettext_noop("Dark grey! Some people spell it “dark gray”."),
+  gettext_noop("Light grey! Some people spell it “light gray”."),
   gettext_noop("White!"),
   gettext_noop("Red!"),
   gettext_noop("Orange!"),
