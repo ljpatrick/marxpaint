@@ -250,7 +250,7 @@ uninstall:
 	-rm $(LOCALE_PREFIX)nb/LC_MESSAGES/tuxpaint.mo
 	-rm $(LOCALE_PREFIX)nn/LC_MESSAGES/tuxpaint.mo
 	-rm $(LOCALE_PREFIX)pl/LC_MESSAGES/tuxpaint.mo
-	-rm $(LOCALE_PREFIX)pt/LC_MESSAGES/tuxpaint.mo
+	-rm $(LOCALE_PREFIX)pt_PT/LC_MESSAGES/tuxpaint.mo
 	-rm $(LOCALE_PREFIX)pt_BR/LC_MESSAGES/tuxpaint.mo
 	-rm $(LOCALE_PREFIX)ro/LC_MESSAGES/tuxpaint.mo
 	-rm $(LOCALE_PREFIX)ru/LC_MESSAGES/tuxpaint.mo
@@ -567,10 +567,10 @@ install-gettext:
 	@cp trans/pl.mo $(LOCALE_PREFIX)pl/LC_MESSAGES/tuxpaint.mo
 	@chmod 644 $(LOCALE_PREFIX)pl/LC_MESSAGES/tuxpaint.mo
 	@#
-	@echo "   pt_PT ...Portuguese..."
-	@install -d $(LOCALE_PREFIX)pt/LC_MESSAGES
-	@cp trans/pt.mo $(LOCALE_PREFIX)pt/LC_MESSAGES/tuxpaint.mo
-	@chmod 644 $(LOCALE_PREFIX)pt/LC_MESSAGES/tuxpaint.mo
+	@echo "   pt_PT ...Portuguese (Portugal)..."
+	@install -d $(LOCALE_PREFIX)pt_PT/LC_MESSAGES
+	@cp trans/pt_pt.mo $(LOCALE_PREFIX)pt_PT/LC_MESSAGES/tuxpaint.mo
+	@chmod 644 $(LOCALE_PREFIX)pt_PT/LC_MESSAGES/tuxpaint.mo
 	@#
 	@echo "   ro_RO ...Romanian..."
 	@install -d $(LOCALE_PREFIX)ro/LC_MESSAGES
@@ -756,7 +756,7 @@ translations: trans \
 	trans/nn.mo \
 	trans/pl.mo \
 	trans/pt_br.mo \
-	trans/pt.mo \
+	trans/pt_pt.mo \
 	trans/ro.mo \
 	trans/ru.mo \
 	trans/sk.mo \
@@ -891,9 +891,9 @@ trans/pl.mo:	src/po/pl.po
 	@echo "   pl_PL ...Polish..."
 	@msgfmt src/po/pl.po -o trans/pl.mo
 
-trans/pt.mo:	src/po/pt.po
+trans/pt_pt.mo:	src/po/pt_pt.po
 	@echo "   pt_PT ...Portuguese..."
-	@msgfmt src/po/pt.po -o trans/pt.mo
+	@msgfmt src/po/pt_pt.po -o trans/pt_pt.mo
 
 trans/pt_br.mo:	src/po/pt_br.po
 	@echo "   pt_BR ...Brazilian Portuguese..."
