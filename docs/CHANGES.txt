@@ -13,13 +13,24 @@ http://www.newbreedsoftware.com/tuxpaint/
   * uncatagorized and messy:
     -----------------------
     * Splash screen appears earlier, along with the version info and cursor.
+      Albert Cahalan <albert@users.sf.net>
 
     * Normal start-up time greatly reduced by splitting out font loading
       into a separate process. You only wait if you want the text tool.
+      Albert Cahalan <albert@users.sf.net>
 
     * added eat_startup_events in an attempt to make early escape possible
       (perhaps the user started Tux Paint by mistake, or the system is
-      swapping itself to death) Unfortunately, it seems to do nothing!
+      swapping itself to death) TODO: use do_quit if fully started
+      Albert Cahalan <albert@users.sf.net>
+
+    * Normal start-up time greatly reduced by avoiding most stamp work.
+      Stamp data is loaded as needed. (TODO: add pre-fetch process)
+      Albert Cahalan <albert@users.sf.net>
+
+    * Memory usage down by not keeping stamps in memory. Tux Paint's
+      size dropped by about 100 MB. :-)
+      Albert Cahalan <albert@users.sf.net>
 
   * Stamp tool improvements:
     ------------------------
