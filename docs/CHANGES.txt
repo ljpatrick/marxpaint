@@ -7,7 +7,7 @@ bill@newbreedsoftware.com
 http://www.newbreedsoftware.com/tuxpaint/
 
 
-2005.February.9 (0.9.15)
+2005.February.13 (0.9.15)
 
 
   * uncatagorized and messy:
@@ -230,6 +230,9 @@ http://www.newbreedsoftware.com/tuxpaint/
       Ilir Rugova <ilirrugova@gmx.de>
       Laurent Dhima <laurenti@alblinux.net>
 
+    * Estonian translation created.
+      Henrik Pihl <henrik@saarlane.ee>
+
     * Gaelic translation created.
       Kevin Patrick Scannell <scannell@SLU.EDU>
 
@@ -253,6 +256,9 @@ http://www.newbreedsoftware.com/tuxpaint/
     * Dutch
       Geert Stams <geertstams@wanadoo.nl>
   
+    * Greek
+      The Greek Linux i18n Team <i18ngr@lists.hellug.gr>
+      
     * Hebrew
       Dovix <dovix2003@yahoo.com>
 
