@@ -133,7 +133,10 @@ June 17, 2002 - September 13, 2003
   * Malay
     Muhammad Najmi Ahmad Zabidi <md_najmi@yahoo.com>
 
-  * Norwegian
+  * Norwegian Bokmal
+    Dag H. Loras <dag.loraas@operamail.com>
+
+  * Norwegian Nynorsk
     Karl Ove Hufthammer <karl@huftis.org>
 
   * Polish

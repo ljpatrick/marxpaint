@@ -263,6 +263,7 @@ Using Tux Paint
 	Choices available currently include:
 	
 	  english
+	  bokmal
 	  danish     dansk
 	  dutch
 	  finnish    suomi
@@ -327,6 +328,7 @@ Using Tux Paint
       fr_FR@euro - Francais        / French
       is_IS      - Islenska        / Icelandic
       it_IT@euro - Italiano        / Italian
+      nb_NO      - Norsk (bokmal)  / Norwegian Bokmal
       nn_NO      - Norsk (nynorsk) / Norwegian Nynorsk
       nl_NL@euro -                   Dutch
       sv_SE@euro - Svenska         / Swedish

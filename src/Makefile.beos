@@ -214,8 +214,12 @@ trans/pl.mo:	src/messages/pl.po
 	@echo "   ...Polish..."
 	@msgfmt src/messages/pl.po -o trans/pl.mo
 
+trans/nn.mo:	src/messages/nb.po
+	@echo "   ...Norwegian Bokmal..."
+	@msgfmt src/messages/nb.po -o trans/nb.mo
+
 trans/nn.mo:	src/messages/nn.po
-	@echo "   ...Norwegian..."
+	@echo "   ...Norwegian Nynorsk..."
 	@msgfmt src/messages/nn.po -o trans/nn.mo
 	
 trans/it.mo:	src/messages/it.po

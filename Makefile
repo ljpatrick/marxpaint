@@ -439,6 +439,11 @@ install-gettext:
 	@cp trans/ms.mo $(LOCALE_PREFIX)ms/LC_MESSAGES/tuxpaint.mo
 	@chmod 644 $(LOCALE_PREFIX)ms/LC_MESSAGES/tuxpaint.mo
 	@#
+	@echo "   nb_NO ...Norwegian Bokmal..."
+	@install -d $(LOCALE_PREFIX)nb/LC_MESSAGES
+	@cp trans/nb.mo $(LOCALE_PREFIX)nb/LC_MESSAGES/tuxpaint.mo
+	@chmod 644 $(LOCALE_PREFIX)nb/LC_MESSAGES/tuxpaint.mo
+	@#
 	@echo "   nn_NO ...Norwegian Nynorsk..."
 	@install -d $(LOCALE_PREFIX)nn/LC_MESSAGES
 	@cp trans/nn.mo $(LOCALE_PREFIX)nn/LC_MESSAGES/tuxpaint.mo
@@ -685,9 +690,13 @@ trans/ms.mo:	src/messages/ms.po
 trans/nl.mo:	src/messages/nl.po
 	@echo "   nl_NL ...Dutch..."
 	@msgfmt src/messages/nl.po -o trans/nl.mo
+
+trans/nn.mo:	src/messages/nb.po
+	@echo "   nb_NO ...Norwegian Bokmal..."
+	@msgfmt src/messages/nb.po -o trans/nb.mo
 	
 trans/nn.mo:	src/messages/nn.po
-	@echo "   nn_NO ...Norwegian..."
+	@echo "   nn_NO ...Norwegian Nynorsk..."
 	@msgfmt src/messages/nn.po -o trans/nn.mo
 
 trans/pl.mo:	src/messages/pl.po

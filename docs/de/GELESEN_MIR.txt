@@ -275,6 +275,7 @@ Verwenden Der Tux Paint
 	  Die Wahlen, die umfassen vorhanden sind z.Z.:  
 
           english
+          bokmal
 	  dutch
 	  finnish    suomi
           french     francais
@@ -338,7 +339,8 @@ Verwenden Der Tux Paint
       fr_FR@euro - Francais        / French
       is_IS      - Islenska        / Icelandic
       it_IT@euro - Italiano        / Italian
-      nn_NO      - Norsk (nynorks) / Norwegian Nynorsk
+      nb_NO      - Norsk (bokmal)  / Norwegian Bokmal
+      nn_NO      - Norsk (nynorsk) / Norwegian Nynorsk
       nl_NL@euro -                   Dutch
       sv_SE@euro - Svenska         / Swedish
       tr_TR@euro -                   Turkish

@@ -7,7 +7,10 @@ bill@newbreedsoftware.com
 http://www.newbreedsoftware.com/tuxpaint/
 
 
-2003.Nov.14 (0.9.13) [cvs]
+2003.Nov.28 (0.9.13) [cvs]
+  * Translated into Norwegian Bokmal
+    Dag H. Loras <dag.loraas@operamail.com>
+
   * Translated into Tamil  [buggy]
     Mugunth <mugunth@thamizha.com>
 

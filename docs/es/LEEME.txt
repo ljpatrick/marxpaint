@@ -291,6 +291,8 @@ Opciones
                  |english             |american-english  |         | (ingles de|
                  |                    |                  |         |    ee.uu.)|
                  |--------------------+------------------+---------+-----------|
+                 |bokmal              |                  |         |  (noruego)|
+                 |--------------------+------------------+---------+-----------|
                  |                    |                  |         |(ingles del|
                  |british-english     |british           |         |      reino|
                  |                    |                  |         |     unido)|

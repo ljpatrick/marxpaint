@@ -281,7 +281,8 @@ enum {
   LANG_LT,     /* Lithuanian */
   LANG_MS,     /* Malay */
   LANG_NL,     /* Dutch */
-  LANG_NN,     /* Norwegian */
+  LANG_NB,     /* Norwegian Bokmal */
+  LANG_NN,     /* Norwegian Nynorsk */
   LANG_PL,     /* Polish */
   LANG_PT_BR,  /* Portuguese (Brazilian) */
   LANG_PT,     /* Portuguese */
@@ -3631,6 +3632,7 @@ void show_lang_usage(FILE * f, char * prg)
     "\n"
     "LANGUAGE may be one of:\n"
     "  english      american-english\n"
+    "  bokmal\n"
     "  brazilian    brazilian-portuguese   portugues-brazilian\n"
     "  british      british-english\n"
     "  catalan      catala\n"
@@ -3679,6 +3681,7 @@ void show_locale_usage(FILE * f, char * prg)
     "\n"
     "LOCALE may be one of:\n"
     "  C       (English      American English)\n"
+    "  nb_NO   (Bokmal)\n"
     "  pt_BR   (Brazilian    Brazilian Portuguese   Portugues Brazilian)\n"
     "  en_GN   (British      British English)\n"
     "  ca_ES   (Catalan      Catala)\n"
