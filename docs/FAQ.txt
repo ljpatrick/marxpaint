@@ -6,7 +6,7 @@ Copyright 2005 by Bill Kendrick
 bill@newbreedsoftware.com
 http://www.newbreedsoftware.com/tuxpaint/
 
-September 14, 2002 - January 8, 2005
+September 14, 2002 - January 9, 2005
 
 
 Frequently Asked Questions:
@@ -183,6 +183,26 @@ Frequently Asked Questions:
 
   Printing
   --------
+    Tux Paint won't print, gives an error, or prints garbage (Unix/Linux)
+    ---------------------------------------------------------------------
+      Tux Paint prints by creating a PostScript rendition of the picture
+      and sending it to an external command.  By default, this command is
+      the "lpr" printing tool.
+
+      If that program is not available (for example, you're using CUPS,
+      the Common Unix Printing System, and do not have "cups-lpr" installed),
+      you will need to specify an appropriate command using the
+      "printcommand" option in Tux Paint's configuration file.
+      (See the OPTIONS documentation.)
+
+      Note: Versions of Tux Paint prior to 0.9.15 used a different default
+      command for printing, "pngtopnm | pnmtops | lpr", as Tux Paint output
+      PNG format, rather than PostScript.
+      
+      If you had changed your "printcommand" option prior to Tux Paint 0.9.15,
+      you will need to go back and alter it to accept PostScript.
+
+
     I get the message "You can't print yet!" when I go to print!
     ------------------------------------------------------------
       The "print delay" option is on.  You can only print once every X seconds.
