@@ -8,6 +8,9 @@ http://www.newbreedsoftware.com/tuxpaint/
 
 
 2004.November.23 (0.9.15)
+  * Can now use pretty much any window size, like 1234x666.
+    Albert Cahalan <albert@users.sf.net>
+
   * abstracted stamp scaling (prep for large sizes)
     Per-stamp sane scaling range enforced. (generally bigger)
     Albert Cahalan <albert@users.sf.net>

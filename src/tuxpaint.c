@@ -4301,35 +4301,21 @@ static void setup(int argc, char * argv[])
 	{
 	  noshortcuts = 0;
 	}
-      else if (strcmp(argv[i], "--1600x1200") == 0)
+      else if ( argv[i][0]=='-' && argv[i][1]=='-' && argv[i][2]>='1' && argv[i][2]<='9' )
 	{
-	  WINDOW_WIDTH = 1600;
-	  WINDOW_HEIGHT = 1200;
-	}
-      else if (strcmp(argv[i], "--1400x1050") == 0)
-	{
-	  WINDOW_WIDTH = 1400;
-	  WINDOW_HEIGHT = 1050;
-	}
-      else if (strcmp(argv[i], "--1280x1024") == 0)
-	{
-	  WINDOW_WIDTH = 1280;
-	  WINDOW_HEIGHT = 1024;
-	}
-      else if (strcmp(argv[i], "--1024x768") == 0)
-	{
-	  WINDOW_WIDTH = 1024;
-	  WINDOW_HEIGHT = 768;
-	}
-      else if (strcmp(argv[i], "--800x600") == 0)
-	{
-	  WINDOW_WIDTH = 800;
-	  WINDOW_HEIGHT = 600;
-	}
-      else if (strcmp(argv[i], "--640x480") == 0)
-	{
-	  WINDOW_WIDTH = 640;
-	  WINDOW_HEIGHT = 480;
+	  char *endp1;
+	  char *endp2;
+	  int w,h;
+	  w = strtoul(argv[i]+2, &endp1, 10);
+	  h = strtoul(endp1+1,   &endp2, 10);
+	  // sanity check it
+	  if(argv[i]+2==endp1 || endp1+1==endp2 || *endp1!='x' || *endp2 || w<500 || h<480 || h>w*3 || w>h*4)
+	    {
+	      show_usage(stderr, (char *) getfilename(argv[0]));
+	      exit(1);
+	    }
+	  WINDOW_WIDTH  = w;
+	  WINDOW_HEIGHT = h;
 	}
       else if (strcmp(argv[i], "--nooutlines") == 0)
 	{
@@ -12515,32 +12501,34 @@ static void parse_options(FILE * fi)
 	    {
 	      noshortcuts = 0;
 	    }
-	  else if (strcmp(str, "windowsize=1600x1200") == 0)
+	  else if (!memcmp("windowsize=",str,11))
 	    {
-	      WINDOW_WIDTH = 1600;
-	      WINDOW_HEIGHT = 1200;
+	      char *endp1;
+	      char *endp2;
+	      int w,h;
+	      w = strtoul(str+11,  &endp1, 10);
+	      h = strtoul(endp1+1, &endp2, 10);
+	      // sanity check it
+	      if(str+11==endp1 || endp1+1==endp2 || *endp1!='x' || *endp2 || w<500 || h<480 || h>w*3 || w>h*4)
+		{
+		  // Oddly, config files have no error checking.
+		  //show_usage(stderr, (char *) getfilename(argv[0]));
+		  //exit(1);
+		}
+	      else
+	        {
+		  WINDOW_WIDTH  = w;
+		  WINDOW_HEIGHT = h;
+		}
 	    }
-	  else if (strcmp(str, "windowsize=1400x1050") == 0)
-	    {
-	      WINDOW_WIDTH = 1400;
-	      WINDOW_HEIGHT = 1050;
-	    }
-	  else if (strcmp(str, "windowsize=1280x1024") == 0)
-	    {
-	      WINDOW_WIDTH = 1280;
-	      WINDOW_HEIGHT = 1024;
-	    }
-	  else if (strcmp(str, "windowsize=1024x768") == 0)
-	    {
-	      WINDOW_WIDTH = 1024;
-	      WINDOW_HEIGHT = 768;
-	    }
+	  // to handle old config files
 	  else if (strcmp(str, "800x600=yes") == 0 ||
 		   strcmp(str, "windowsize=800x600") == 0)
 	    {
 	      WINDOW_WIDTH = 800;
 	      WINDOW_HEIGHT = 600;
 	    }
+	  // also for old config files
 	  else if (strcmp(str, "800x600=no") == 0 ||
 		   strcmp(str, "640x480=yes") == 0 ||
 		   strcmp(str, "windowsize=640x480") == 0)
