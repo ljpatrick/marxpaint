@@ -7,7 +7,12 @@ bill@newbreedsoftware.com
 http://www.newbreedsoftware.com/tuxpaint/
 
 
-2004.September.13 (0.9.14) [cvs]
+2004.September.14 (0.9.14) [cvs]
+  * Multiple sizes of erasers are present.
+    (Compile-time #defines can be used to determine how many sizes are
+    available, and their minimum and (approx.) maximum sizes.)
+    Note: Erasers are still square.  Sorry!
+
   * Initial work to get proper uppercase support in languages other
     than English.
 
@@ -27,10 +32,20 @@ http://www.newbreedsoftware.com/tuxpaint/
 
   * Added support for immutable "starter" images, which are installed
     globally with Tux Paint, and provide a starting canvas for images.
-    Two types may be created: coloring-book-style, in which a black outline
-    drawing is kept 'above' the picture the user draws, and scene-style,
-    which is placed 'below' the picture the user draws.  (An optional
-    'front' layer can be made for scene-style images.  See the 'reef' example.)
+
+    A PNG file with alpha is continuously drawn over whatever changes are
+    made to the current drawing.  For example, a black outline of a cartoon
+    character could be made, to simulate a coloring book.  (See 'jetplane.png')
+
+    A second PNG file can be supplied which will be drawn on the normal
+    part of the canvas (where a new picture would normally be all-white),
+    allowing for simulated depth.  Drawing and magic tools all mutilate the
+    background, as it's part of the normal canvas.  However, when editing
+    a picture based on a 'starter' with a background layer, the eraser will
+    bring back the background image.  In a sense, it's like having a photo
+    on the bottom, a clear sheet to draw on in the middle, and a clear sheet
+    with some more photo (which you can't draw on) on top.
+    (See 'reef.png' and 'reef-back.png')
 
   * Updated Malay translation.
     Muhammad Najmi Ahmad Zabidi <mnajem@linuxmail.org>

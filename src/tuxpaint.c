@@ -519,13 +519,19 @@ Mix_Chunk * sounds[NUM_SOUNDS];
 #endif
 
 
+#define NUM_ERASERS 6 /* How many sizes of erasers (from ERASER_MIN to _MAX) */
+#define ERASER_MIN 13 
+#define ERASER_MAX 128 
+
+
 SDL_Cursor * cursor_hand, * cursor_arrow, * cursor_watch,
   * cursor_up, * cursor_down, * cursor_tiny, * cursor_crosshair,
   * cursor_brush, * cursor_wand, * cursor_insertion, * cursor_rotate;
 
 
 int cur_tool, cur_color, cur_brush, cur_stamp, cur_shape, cur_magic;
-int cur_font, cursor_left, cursor_x, cursor_y, cursor_textwidth;
+int cur_font, cur_eraser;
+int cursor_left, cursor_x, cursor_y, cursor_textwidth;
 int colors_are_selectable;
 int been_saved;
 char file_id[32];
@@ -595,6 +601,7 @@ void draw_colors(int enabled);
 void draw_brushes(void);
 void draw_stamps(void);
 void draw_shapes(void);
+void draw_erasers(void);
 void draw_fonts(void);
 void draw_none(void);
 #ifndef NOSOUND
@@ -761,6 +768,7 @@ int main(int argc, char * argv[])
   cur_shape = SHAPE_SQUARE;
   cur_magic = 0;
   cur_font = 0;
+  cur_eraser = 0;
   cursor_left = -1;
   cursor_x = -1;
   cursor_y = -1;
@@ -1055,6 +1063,8 @@ void mainloop(void)
 		    draw_fonts();
 		  else if (cur_tool == TOOL_SHAPES)
 		    draw_shapes();
+		  else if (cur_tool == TOOL_ERASER)
+		    draw_erasers();
 		  
 		  draw_tux_text(TUX_GREAT, tool_tips[cur_tool], 0, 1);
 
@@ -1254,6 +1264,12 @@ void mainloop(void)
 			  draw_brushes();
 			  draw_colors(1);
 			}
+		      else if (cur_tool == TOOL_ERASER)
+		        {
+			  cur_thing = cur_eraser;
+			  draw_erasers();
+			  draw_colors(0);
+		        }
 		      else if (cur_tool == TOOL_STAMP)
 			{
 			  cur_thing = cur_stamp;
@@ -1282,7 +1298,8 @@ void mainloop(void)
 			}
 		      else if (cur_tool == TOOL_ERASER)
 			{
-			  draw_none();
+			  cur_thing = cur_eraser;
+			  draw_erasers();
 			  draw_colors(0);
 			}
 		      else if (cur_tool == TOOL_UNDO)
@@ -1371,6 +1388,8 @@ void mainloop(void)
 			    draw_fonts();
 			  else if (cur_tool == TOOL_SHAPES)
 			    draw_shapes();
+			  else if (cur_tool == TOOL_ERASER)
+			    draw_erasers();
 			}
 		      else if (cur_tool == TOOL_SAVE)
 			{
@@ -1491,7 +1510,8 @@ void mainloop(void)
 		  
 		  if (cur_tool == TOOL_BRUSH || cur_tool == TOOL_STAMP ||
 		      cur_tool == TOOL_SHAPES || cur_tool == TOOL_LINES ||
-		      cur_tool == TOOL_MAGIC || cur_tool == TOOL_TEXT)
+		      cur_tool == TOOL_MAGIC || cur_tool == TOOL_TEXT ||
+		      cur_tool == TOOL_ERASER)
 		    {
 		      /* Note set of things we're dealing with */
 		      /* (stamps, brushes, etc.) */
@@ -1521,6 +1541,11 @@ void mainloop(void)
 			  num_things = NUM_MAGICS;
 			  thing_scroll = 0;
 			}
+		      else if (cur_tool == TOOL_ERASER)
+		        {
+			  num_things = NUM_ERASERS;
+			  thing_scroll = 0;
+		        }
 		      
 		      do_draw = 0;
 
@@ -1778,6 +1803,13 @@ void mainloop(void)
 			  if (do_draw)
 			    draw_brushes();
 			}
+		      else if (cur_tool == TOOL_ERASER)
+		        {
+			  cur_eraser = cur_thing;
+			  
+			  if (do_draw)
+			    draw_erasers();
+		        }
 		      else if (cur_tool == TOOL_TEXT)
 			{
 			  cur_font = cur_thing;
@@ -2202,6 +2234,13 @@ void mainloop(void)
 		  if (do_draw)
 		    draw_brushes();
 		}
+	      else if (cur_tool == TOOL_ERASER)
+	        {
+		  cur_eraser = cur_thing;
+		  
+		  if (do_draw)
+		    draw_erasers();
+	        }
 	      else if (cur_tool == TOOL_TEXT)
 		{
 		  cur_font = cur_thing;
@@ -2636,8 +2675,11 @@ void mainloop(void)
 		    }
 		  else if (cur_tool == TOOL_ERASER)
 		    {
-		      w = 96;
-		      h = 96;
+		      w = (ERASER_MIN +
+			   ((NUM_ERASERS - cur_eraser - 1) *
+			    ((ERASER_MAX - ERASER_MIN) / (NUM_ERASERS - 1))));
+
+		      h = w;
 		    }
 		  
 		  if (old_x >= 0 && old_x < WINDOW_WIDTH - 96 - 96 &&
@@ -6473,6 +6515,77 @@ void draw_shapes(void)
 }
 
 
+/* Draw the eraser selector: */
+
+void draw_erasers(void)
+{
+  int i, x, y, sz;
+  SDL_Rect dest;
+
+
+  draw_image_title(TITLE_ERASERS, WINDOW_WIDTH - 96);
+
+  for (i = 0; i < 14 + TOOLOFFSET; i++)
+    {
+      dest.x = ((i % 2) * 48) + WINDOW_WIDTH - 96;
+      dest.y = ((i / 2) * 48) + 40;
+
+
+      if (i == cur_eraser)
+	{
+	  SDL_BlitSurface(img_btn_down, NULL, screen, &dest);
+	}
+      else if (i < NUM_ERASERS)
+	{
+	  SDL_BlitSurface(img_btn_up, NULL, screen, &dest);
+	}
+      else
+	{
+	  SDL_BlitSurface(img_btn_off, NULL, screen, &dest);
+	}
+
+
+      if (i < NUM_ERASERS)
+	{
+	  sz = (2 + ((NUM_ERASERS - 1 - i) * (38 / (NUM_ERASERS - 1))));
+
+	  x = ((i % 2) * 48) + WINDOW_WIDTH - 96 + 24 - sz / 2;
+	  y = ((i / 2) * 48) + 40 + 24 - sz / 2;
+
+	  dest.x = x;
+	  dest.y = y;
+	  dest.w = sz;
+	  dest.h = 1;
+
+	  SDL_FillRect(screen, &dest,
+		       SDL_MapRGB(screen->format, 0, 0, 0));
+
+	  dest.x = x;
+	  dest.y = y + sz - 1;
+	  dest.w = sz;
+	  dest.h = 1;
+
+	  SDL_FillRect(screen, &dest,
+		       SDL_MapRGB(screen->format, 0, 0, 0));
+
+	  dest.x = x;
+	  dest.y = y;
+	  dest.w = 1;
+	  dest.h = sz;
+
+	  SDL_FillRect(screen, &dest,
+		       SDL_MapRGB(screen->format, 0, 0, 0));
+	  
+	  dest.x = x + sz - 1;
+	  dest.y = y;
+	  dest.w = 1;
+	  dest.h = sz;
+
+	  SDL_FillRect(screen, &dest,
+		       SDL_MapRGB(screen->format, 0, 0, 0));
+	}
+    }
+}
 
 
 /* Draw no selectables: */
@@ -7275,11 +7388,16 @@ void rect_xor(int x1, int y1, int x2, int y2)
 void do_eraser(int x, int y)
 {
   SDL_Rect dest;
+  int sz;
 
-  dest.x = x - 48;
-  dest.y = y - 48;
-  dest.w = 96;
-  dest.h = 96;
+  sz = (ERASER_MIN +
+	((NUM_ERASERS - 1 - cur_eraser) *
+	 ((ERASER_MAX - ERASER_MIN) / (NUM_ERASERS - 1))));
+
+  dest.x = x - (sz / 2);
+  dest.y = y - (sz / 2);
+  dest.w = sz;
+  dest.h = sz;
 
   if (img_starter_bkgd == NULL)
   {
@@ -7304,10 +7422,10 @@ void do_eraser(int x, int y)
     }
 #endif
 
-  update_canvas(x - 48, y - 48, x + 48, y + 48);
+  update_canvas(x - sz / 2, y - sz / 2, x + sz / 2, y + sz / 2);
 
-  rect_xor(x - 48, y - 48,
-           x + 48, y + 48);
+  rect_xor(x - sz / 2, y - sz / 2,
+           x + sz / 2, y + sz / 2);
 }
 
 
@@ -8276,6 +8394,7 @@ void load_current(void)
 
 
 	  load_starter_id(file_id);
+	  load_starter(starter_id);
 
 	  tool_avail[TOOL_NEW] = 1;
 	}
