@@ -40,11 +40,11 @@ msgid "Starting a new picture will erase the current one!"
 msgstr "Kregiñ endro gant ur skeudenn nevez a ziverko ar skeudenn red !"
 
 #: tuxpaint.c:426
-msgid "That's Ok"
+msgid "That's OK!"
 msgstr "Mat eo !"
 
 #: tuxpaint.c:427
-msgid "Never Mind!"
+msgid "Never mind!"
 msgstr "Ne rez ket bil !"
 
 #: tuxpaint.c:429
@@ -68,72 +68,72 @@ msgid "No, save a new file"
 msgstr "Ket, gwarediñ dindan un anv nevez"
 
 #: colors.h:115
-msgid "Black"
+msgid "Black!"
 msgstr "Du"
 
 #: colors.h:116
-msgid "White"
+msgid "White!"
 msgstr "Gwenn"
 
 #: colors.h:117
-msgid "Red"
+msgid "Red!"
 msgstr "Ruz"
 
 #: colors.h:118
-msgid "Pink"
+msgid "Pink!"
 msgstr "Rozenn"
 
 #: colors.h:119
-msgid "Orange"
+msgid "Orange!"
 msgstr "Orañj"
 
 #: colors.h:120
-msgid "Yellow"
+msgid "Yellow!"
 msgstr "Melen"
 
 #: colors.h:121
-msgid "Green"
+msgid "Green!"
 msgstr "Gwer"
 
 #: colors.h:122
-msgid "Cyan"
+msgid "Cyan!"
 msgstr "Gwerc'hlas"
 
 #: colors.h:123
-msgid "Blue"
+msgid "Blue!"
 msgstr "Glas"
 
 #: colors.h:124
-msgid "Purple"
+msgid "Purple!"
 msgstr "Limestra"
 
 #: colors.h:125
-msgid "Brown"
+msgid "Brown!"
 msgstr "Kistin"
 
 #: colors.h:126
-msgid "Grey"
+msgid "Grey!"
 msgstr "Gris"
 
 #: magic.h:41
-msgid "Click to make a mirror image!"
-msgstr "Klik evit kaout ar skeudenn en ur melezour !"
+msgid "Click to make a mirror image."
+msgstr "Klik evit kaout ar skeudenn en ur melezour."
 
 #: magic.h:42
-msgid "Click to flip the picture upside-down!"
-msgstr "Klik evit lakaat ar skeudenn war an tu gin !"
+msgid "Click to flip the picture upside-down."
+msgstr "Klik evit lakaat ar skeudenn war an tu gin."
 
 #: magic.h:43
-msgid "Click and move the mouse around to blur the picture"
-msgstr "Klik ha fiñv al logodenn evit displanaat ar skeudenn"
+msgid "Click and move the mouse around to blur the picture."
+msgstr "Klik ha fiñv al logodenn evit displanaat ar skeudenn."
 
 #: magic.h:45
-msgid "Click and move the mouse around to make the picture blocky"
-msgstr "Klik ha fiñv al logodenn evit kaout bloc'hadoù bihan"
+msgid "Click and move the mouse around to make the picture blocky."
+msgstr "Klik ha fiñv al logodenn evit kaout bloc'hadoù bihan."
 
 #: magic.h:46
-msgid "Click and move the mouse around to draw a negative"
-msgstr "Klik ha fiñv al logodenn evit kaout ar rakluc'henn"
+msgid "Click and move the mouse around to draw a negative."
+msgstr "Klik ha fiñv al logodenn evit kaout ar rakluc'henn."
 
 #: magic.h:47
 msgid "You can draw in rainbow colors!"
@@ -144,11 +144,11 @@ msgid "Click and move the mouse around to turn the picture into a chalk drawing.
 msgstr "Klik ha fiñv al logodenn evit cheñch ar skeudenn en un dresadenn gleiz."
 
 #: magic.h:49
-msgid "Click and move the mouse around to make the picture drip!"
-msgstr "Klik ha fiñv al logodenn evit lakaat ar skeudenn da c'hlebiañ !"
+msgid "Click and move the mouse around to make the picture drip."
+msgstr "Klik ha fiñv al logodenn evit lakaat ar skeudenn da c'hlebiañ."
 
 #: magic.h:50
-msgid "Click and move to draw sparkles"
+msgid "Click and move to draw sparkles."
 msgstr "Klik ha fiñv al logodenn evit tresadennañ gant fulennoù."
 
 #: magic.h:51
@@ -188,15 +188,15 @@ msgid "Pick a picture to stamp around your drawing."
 msgstr "Diuz ur skeudenn evit ensoc'hañ anezhi e-barzh da dresadenn."
 
 #: tools.h:133
-msgid "Click to start drawing a line.  Let go to complete it."
+msgid "Click to start drawing a line. Let go to complete it."
 msgstr "Klik evit kregiñ da dresadennañ ul linenn."
 
 #: tools.h:134
-msgid "Pick a shape. Click to pick the center, drag, then let go when it is the size you want.  Move around to rotate it, and click to draw it."
+msgid "Pick a shape. Click to pick the center, drag, then let go when it is the size you want. Move around to rotate it, and click to draw it."
 msgstr "Diuz ur stumm. Klik warnañ, dibab e blas hag e vent, lak anezhañ da dreiñ en ur bouezañ, ha klik evit tresadennañ anezhañ a benn ar fin."
 
 #: tools.h:135
-msgid "Choose a style of text.  Click on your drawing and you can start typing."
+msgid "Choose a style of text. Click on your drawing and you can start typing."
 msgstr "Diuz ur stil testenn. Klik war da skeudenn ha krog da viziata un destenn."
 
 #: tools.h:136
@@ -232,7 +232,7 @@ msgid "Printing..."
 msgstr "O voullañ..."
 
 #: tools.h:144
-msgid "Bye, Bye"
+msgid "Bye bye!"
 msgstr "Kenavo !"
 
 #: tools.h:147
@@ -386,14 +386,14 @@ msgstr "Diverkañ"
 msgid "Back"
 msgstr "Distro"
 
-msgid "Click and move the mouse to thicken the picture"
-msgstr "Klik ha fiñv al logodenn evit lakaat an dresadenn tevoc'h"
+msgid "Click and move the mouse to thicken the picture."
+msgstr "Klik ha fiñv al logodenn evit lakaat an dresadenn tevoc'h."
 
-msgid "Click and move the mouse to thin the picture"
-msgstr "Klik ha fiñv al logodenn evit lakaat an dresadenn finoc'h"
+msgid "Click and move the mouse to thin the picture."
+msgstr "Klik ha fiñv al logodenn evit lakaat an dresadenn finoc'h."
 
-msgid "Click in the picture to fill that area with color"
-msgstr "Klik war ar skeudenn evit leuniañ al leur-se gant ul liv"
+msgid "Click in the picture to fill that area with color."
+msgstr "Klik war ar skeudenn evit leuniañ al leur-se gant ul liv."
 
 msgid "Tools"
 msgstr "Binviji"
