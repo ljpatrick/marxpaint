@@ -8,13 +8,9 @@ http://www.newbreedsoftware.com/tuxpaint/
 
 
 2004.November.22 (0.9.15)
-  * When using gcc, min() and max() do type checking.
+  * Enable more compuler warnings, and update code to prevent them.
     Albert Cahalan <albert@users.sf.net>
 
-  * Fixed many warnings.
-    Albert Cahalan <albert@users.sf.net>
-
-2004.November.21 (0.9.15)
   * Updated Hebrew translation.
     Dovix <dovix2003@yahoo.com>
 
