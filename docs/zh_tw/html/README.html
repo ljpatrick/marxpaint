@@ -1601,28 +1601,23 @@ New Breed Software</p>
 
   <h3>使用 '<code>tuxpaint-import</code>'</h3>
   <blockquote>
-    <p>Linux 和 Unix 的使用者 can use the "<code><b>tuxpaint-import</b></code>"
-    shell script which gets installed when you install Tux&nbsp;Paint.
-    It uses some NetPBM tools to convert the image ("<code>anytopnm</code>"),
-    resize it so that it will fit in Tux&nbsp;Paint's canvas
-    ("<code>pnmscale</code>"), and convert it to a PNG
-    ("<code>pnmtopng</code>").</p>
+    <p>Linux 和 Unix 的使用者可以使用 "<code><b>tuxpaint-import</b></code>"
+    這支 shell script ，他使用一些 NetPBM 的工具來轉換圖檔格式 ("<code>anytopnm</code>")，
+    改變圖形的大小使其符合 Tux&nbsp;Paint 的圖紙 ("<code>pnmscale</code>")，
+    再將圖檔轉換成 PNG 格式 ("<code>pnmtopng</code>")。</p>
 
-    <p>It also uses the "<code>date</code>" command to get the current time and
-    date, which is the file-naming convention Tux&nbsp;Paint uses for saved
-    files.  (Remember, you are never asked for a 'filename' when you go to
-    Save or Open pictures!)</p>
+    <p>這也會用 "<code>date</code>" 指令來取得目前的時間和日期，
+    作為 Tux&nbsp;Paint 儲存時的檔名之用。(記得嗎，當您在儲存或是開啟圖畫時，
+    都不需要知道圖檔的名稱的。)</p>
 
-    <p>To use '<code>tuxpaint-import</code>', simply run the command from a
-    command-line prompt and provide it the name(s) of the file(s) you wish
-    to convert.</p>
+    <p>使用 '<code>tuxpaint-import</code>' 時只要在命令列打上這個指令，
+    並且給他您想要轉換的檔案的檔名。</p>
 
-    <p>They will be converted and placed in your Tux&nbsp;Paint 'saved'
-    directory. (Note: If you're doing this for a different user - e.g.,
-    your child, you'll need to make sure to run the command under their
-    account.)</p>
+    <p>這樣就會將圖檔轉好並放在 Tux&nbsp;Paint 的儲存目錄中。
+    (註：如果您想要幫其他的使用者轉換圖檔的話，例如您的小孩，
+    那麼在執行指令之前請先確認您是用這個使用者的帳號執行。)</p>
 
-    <p>Example:</p>
+    <p>範例：</p>
 
     <blockquote><code>
       $ <b>tuxpaint-import grandma.jpg</b><br>
@@ -1630,89 +1625,81 @@ New Breed Software</p>
       jpegtopnm: WRITING A PPM FILE
     </code></blockquote>
 
-    <p>The first line ("<code>tuxpaint-import&nbsp;grandma.jpg</code>") is the
-    command to run. The following two lines are output from the program while
-    it's working.</p>
+    <p>範例的第一行 ("<code>tuxpaint-import&nbsp;grandma.jpg</code>") 是執行的指令，
+    接下來的二行是程式執行時的輸出訊息。</p>
     
-    <p>Now you can load Tux&nbsp;Paint, and a version of that original picture
-    will be available under the 'Open' dialog.  Just double-click its icon!</p>
+    <p>現在您可以載入 Tux&nbsp;Paint ，在「開啟」的一堆縮圖中可以看到轉換後的圖形，
+    雙擊這個縮圖就可以開啟。</p>
   </blockquote>
 
 
-  <h3>Doing it Manually</h3>
+  <h3>手工處理</h3>
   <blockquote>
-    <p>Windows users must currently do the conversion manually.</p>
+    <p>Windows 的使用者目前要手動的來轉換。</p>
 
-    <p>Load a graphics program that is capable of both loading your picture
-    and saving a PNG format file.  (See the documentation file "PNG.txt"
-    for a list of suggested software, and other references.)</p>
+    <p>開啟一個可以讀取您要轉換的圖檔格式，及寫入 PNG 格式的圖形處理程式。
+    (請參閱 "PNG.txt" 文件，有一些建議的軟體及參考。)</p>
 
-    <p>Reduce the size of the image to no wider than 448&nbsp;pixels across and
-    no taller than 376&nbsp;pixels tall. (i.e., the maximum size
-    is 448&nbsp;x&nbsp;376 pixels)</p>
+    <p>縮減圖形的尺寸讓他不要寬於 448 像素，不要高於 376 像素。
+    (換句話說，最大的尺寸就是 448x376 像素。)</p>
 
-    <p>Save the picture in PNG format.  It is <b>highly</b> recommended that you
-    name the filename using the current date and time, since that's
-    the convention Tux&nbsp;Paint uses:</p>
+    <p>用 PNG 格式來儲存圖形，強烈的建議您，圖檔的名稱使用目前的日期及時間，
+    Tux&nbsp;Paint 使用的規則是：</p>
 
     <blockquote>
       <code><b>YYYYMMDDhhmmss</b>.png</code>
     </blockquote>
 
     <ul>
-    <li>YYYY = Year
-    <li>MM = Month (01-12)
-    <li>DD = Day (01-31)
-    <li>HH = Hour, in 24-hour format (00-23)
-    <li>mm = Minute (00-59)
-    <li>ss = Second (00-59)
+    <li>YYYY = 西元年份
+    <li>MM = 月 (01-12)
+    <li>DD = 日 (01-31)
+    <li>HH = 二十四小時制 (00-23)
+    <li>mm = 分 (00-59)
+    <li>ss = 秒 (00-59)
     </ul>
 
-    <p>e.g.:</p>
+    <p>範例：</p>
 
     <blockquote>
-      <code>20020921130500</code> - for September 21, 2002, 1:05:00pm
+      <code>20020921130500</code> - 2002 年 9 月 21 日 下午 1:05:00
     </blockquote>
 
-    <p>Place this PNG file in your Tux&nbsp;Paint 'saved' directory.
-    (See above.)</p>
+    <p>將這個 PNG 檔放到您 Tux&nbsp;Paint 的儲存目錄中。
+    (請參閱前面的說明。)</p>
 
-    <p>Under Windows, this is in the "userdata" folder.</p>
+    <p>在 Windows 平台上，這會是 "userdata" 目錄。</p>
   </blockquote>
 </blockquote>
 
 <hr size=2 noshade>
 
 
-<h2>Extending Tux&nbsp;Paint</h2>
+<h2>擴充 Tux&nbsp;Paint</h2>
 <blockquote>
-  <p>If you wish to add or change things like Brushes and Rubber Stamps
-  used by Tux&nbsp;Paint, you can do it fairly easily by simply putting
-  or removing files on your hard disk.</p>
+  <p>如果您想要增加或修改筆刷和橡皮圖章的話，
+  只需要很簡單的在您的硬碟裡放入或是移除檔案而已。</p>
   
-  <p>Note: You'll need to restart Tux&nbsp;Paint for the changes to take
-  effect.</p>
+  <p>註：您會需要重新啟動 Tux&nbsp;Paint 才能看到改變。</p>
 
-  <h3>Where Files Go</h3>
+  <h3>檔案在哪裡</h3>
   <blockquote>
-    <h4>Standard Files</h4>
+    <h4>標準的檔案</h4>
     <blockquote>
-      <p>Tux&nbsp;Paint looks for its various data files in its
-      'data' directory.</p>
+      <p>Tux&nbsp;Paint 會在 'data' 目錄中尋找他的一些資料檔。</p>
 
-      <h5>Linux and Unix</h5>
+      <h5>Linux 和 Unix</h5>
       <blockquote>
-        <p>Where this directory goes depends on what value was set for
-        "<code>DATA_PREFIX</code>" when Tux&nbsp;Paint was built.  See
-	INSTALL.txt for details.</p>
+        <p>這個目錄就是您在編譯時用 "<code>DATA_PREFIX</code>" 參數所指定的。
+        詳細請參閱 INSTALL.txt 文件。</p>
 
-        <p>By default, though, the directory is:</p>
+        <p>預設這個目錄會是：</p>
 
         <blockquote><code>
           /usr/local/share/tuxpaint/
         </code></blockquote>
 	
-	<p>If you installed from a package, it is more likely to be:</p>
+	<p>如果您是用套件來安裝的話，他可能會是：</p>
 
         <blockquote><code>
 	  /usr/share/tuxpaint/
@@ -1723,9 +1710,8 @@ New Breed Software</p>
 
       <h5>Windows</h5>
       <blockquote>
-        <p>Tux&nbsp;Paint looks for a directory called 'data' in the same
-	directory as the executable.  This is the directory that the
-	installer used when installing Tux&nbsp;Paint e.g.:</p>
+        <p>Tux&nbsp;Paint 會在他執行的目錄中尋找 'data' 這個目錄。
+        使用安裝程式來安裝的 Tux&nbsp;Paint 會是：</p>
 
         <blockquote><code>
 	  C:\Program&nbsp;Files\TuxPaint\data
@@ -1736,8 +1722,8 @@ New Breed Software</p>
 
       <h5>Mac OS X</h5>
       <blockquote>
-        <p>Tux&nbsp;Paint stores files in your account's
-	"Libraries" folder, under "Preferences", e.g.:</p>
+        <p>Tux&nbsp;Paint 會將檔案存放在您帳號的 "Libraries" 目錄裡的
+        "Preferences" 子目錄，如：</p>
 
 	<blockquote><code>
 	  /Users/Joe/Library/Preferences/
@@ -1750,29 +1736,25 @@ New Breed Software</p>
     <hr size=1 noshade>
     
 
-    <h4>Personal Files</h4>
+    <h4>個人檔案</h4>
     <blockquote>
-      <p>You can also create brushes, stamps and fonts in your own directory
-      for Tux&nbsp;Paint to find.</p>
+      <p>您也可以在您自已的目錄中建立筆刷、圖章和字型給 Tux&nbsp;Paint
+      來使用。</p>
 
-      <h5>Linux and Unix</h5>
+      <h5>Linux 和 Unix</h5>
       <blockquote>
-        <p>Your personal Tux&nbsp;Paint directory is
-        "<code>~/.tuxpaint/</code>".</p>
+        <p>您的 Tux&nbsp;Paint 私人目錄是 "<code>~/.tuxpaint/</code>" 。</p>
 	
-	<p>That is, if your home directory is "<code>/home/karl</code>", then
-	your Tux&nbsp;Paint directory is
-        "<code>/home/karl/.tuxpaint/</code>".</p>
+	<p>如果您的家目錄是 "<code>/home/karl</code>" 的話，則您私人的 Tux&nbsp;Paint
+	目錄就是 "<code>/home/karl/.tuxpaint/</code>" 。</p>
 	
-	<p>Don't forget the period ("<code>.</code>") before the
-        '<code>tuxpaint</code>'!</p>
+	<p>別忘了有個點("<code>.</code>")在 '<code>tuxpaint</code>' 之前!</p>
       </blockquote>
       
 
       <h5>Windows</h5>
       <blockquote>
-        <p>Your personal Tux&nbsp;Paint directory is named "userdata" and
-	is in the same directory as the executable e.g.:</p>
+        <p>您 Tux&nbsp;Paint 的私人目錄名為 "userdata" ，和執行程式的目錄相同，如：</p>
 	
         <blockquote><code>
 	  C:\Program&nbsp;Files\TuxPaint\userdata
@@ -1781,40 +1763,33 @@ New Breed Software</p>
       </blockquote>
 
     
-      <p>To add brushes, stamps and fonts, create subdirectories under
-      your personal Tux&nbsp;Paint directory named
-      "<code><b>brushes</b></code>", "<code><b>stamps</b></code>" and
-      "<code><b>fonts</b></code>", respectively.</p>
+      <p>要新增筆刷、圖章和字型的話，請在您私人目錄中分別建立子目錄，
+      名為 "<code><b>brushes</b></code>", "<code><b>stamps</b></code>" 和
+      "<code><b>fonts</b></code>" 。</p>
 
-      <p>(For example, if you created a brush named "<code>flower.png</code>",
-      you would put it in "<code>~/.tuxpaint/brushes/</code>" under Linux or
-      Unix.)</p>
+      <p>(例如，假設您要在 Linux 或 Unix 上建立一個名為 "<code>flower.png</code>" 的筆刷，
+      您必須將他放在 "<code>~/.tuxpaint/brushes/</code>" 目錄裡。)</p>
     </blockquote>
   </blockquote>
 
   <hr size=1 noshade>
 
 
-  <h3>Brushes</h3>
+  <h3>筆刷</h3>
   <blockquote>
-    <p>The brushes used for drawing with the 'Brush' and 'Lines' tools in
-    Tux&nbsp;Paint are simply greyscale PNG images.</p>
+    <p>筆刷可以用在 Tux&nbsp;Paint 的「繪圖」和「畫線」工具上，
+    這只是個灰階的 PNG 圖形。</p>
 
     <img src="images/brush_edit.png" width=123 height=147 alt="" align=right>
 
-    <p>The alpha (transparency) of the PNG image is used to determine the shape
-    of the brush, which means that the shape can be 'anti-aliased' and even
-    partially-transparent!</p>
+    <p>筆刷的形狀是由透明背景的 PNG 圖形來決定的，這個形狀可以是平滑和半透明的。</p>
 
-    <p>Brush images should be no wider than 40&nbsp;pixels across and
-    no taller than 40&nbsp;pixels high.  (i.e., the maximum size
-    can be 40&nbsp;x&nbsp;40.)</p>
+    <p>筆刷圖形不可以寬於 40 像素和高於 40 像素 (換句話說就是最大的尺寸是 40&nbsp;x&nbsp;40 像素)。</p>
 
-    <p>Just place them in the "<code><b>brushes</b></code>" directory.</p>
+    <p>然後將圖形放在 "<code><b>brushes</b></code>" 的目錄裡。</p>
 
-    <p>Note: If your new brushes all come out as solid squares or rectangles,
-    it's because you forgot to use alpha transparency!  See the documentation
-    file "PNG.txt" for more information and tips.</p>
+    <p>註：如果您的新筆刷畫起來就像是一個正方形或長方形的方塊，
+    這應該是您忘了設定透明底圖的關係。請參閱 "PNG.txt" 文件，有更多的資訊和提示。</p>
     
     <br clear=all>
   </blockquote>
@@ -1822,212 +1797,170 @@ New Breed Software</p>
   <hr size=1 noshade>
 
 
-  <h3>Stamps</h3>
+  <h3>圖章</h3>
   <blockquote>
-    <p>All stamp-related files go in the "<code><b>stamps</b></code>" directory.
-    It's useful to create subdirectories and sub-subdirectories
-    there to organize the stamps.  (For example, you can have a
-    "<code>holidays</code>" folder with "<code>halloween</code>" and
-    "<code>christmas</code>" sub-folders.)</p>
+    <p>所有圖章的檔案都放在 "<code><b>stamps</b></code>" 目錄裡。
+    他可以用建立子目錄和更下一層子目錄的方式來分類圖章。
+    (舉例來說，您可以建立一個 "<code>holidays</code>" (節日) 的目錄，裡頭再放
+    "<code>halloween</code>" (萬聖節) 和 "<code>christmas</code>" (聖誕節) 的子目錄。)</p>
 
-    <h4>Images</h4>
+    <h4>圖形</h4>
     <blockquote>
-      <p>Rubber Stamps in Tux&nbsp;Paint can be made up of a number of separate
-      files.  The one file that is required is, of course, the picture
-      itself.</p>
+      <p>Tux&nbsp;Paint 的橡皮圖章可以由幾個分別的檔案組成，首先必須的就是圖形的部份。</p>
 
       <img src="images/stamp_edit.png" width=128 height=147 alt="" align=right>
    
-      <p>The Stamps used by Tux&nbsp;Paint are PNG pictures.  They can be
-      full-color or greyscale.  The alpha (transparency) of the PNG is
-      used to determine the actual shape of the picture (otherwise you'll
-      stamp a large rectangle on your drawings).</p>
+      <p>Tux&nbsp;Paint 的圖章使用 PNG 格式，他可以是全彩的或是灰階的顏色。
+      使用透明背景的 PNG 來顯示出圖章的外形 (不然的話您將會在圖上印出一個正方形來)。</p>
 
-      <p>The PNGs can be any size, but in practice, a 100&nbsp;pixels wide by
-      100&nbsp;pixels tall (100&nbsp;x&nbsp;100) is quite large for
-      Tux&nbsp;Paint.</p>
+      <p>PNG 圖的大小沒有限制，不過一個長寬為 100x100 像素的圖形對 Tux&nbsp;Paint
+      來說已經是非常大的了。</p>
 
-      <p>Note: If your new stamps all have solid rectangular-shaped outlines
-      of a solid color (e.g., white or black), it's because you forgot to use
-      alpha transparency!  See the documentation file "PNG.txt" for more
-      information and tips.</p>
+      <p>註：如果您的新圖章用起來就像是一個正方形或長方形的方塊，
+      這應該是您忘了設定透明底圖的關係。請參閱 "PNG.txt" 文件，有更多的資訊和提示。</p>
 
       <br clear=all>
     </blockquote>
 
     <hr size=1 noshade>
 
-    <h4>Description Text</h4>
+    <h4>說明文字</h4>
     <blockquote>
-      <p>Text (".TXT") files with the same name as the PNG.
-      (e.g., "<code>picture.png</code>"'s description is stored in
-      "<code>picture.txt</code>" in the same directory.)</p>
+      <p>文字檔案(".TXT") 的檔名和 PNG 圖形的檔名相同。
+      (例如："<code>picture.png</code>" 圖形的說明文字儲存在同一個目錄裡的
+      "<code>picture.txt</code>" 檔案中。)</p>
       
-      <p>The first line of the text file will be used as the default
-      description of the stamp's image.</p>
+      <p>文字檔案中的第一行是圖章預設的說明。</p>
 
-      <h5>Language Support</h5>
+      <h5>語文支援</h5>
       <blockquote>
-	<p>Additional lines can be added to the text file to provide
-	translations of the description, to be displayed when Tux&nbsp;Paint
-	is running in a different locale (like French or Spanish).</p>
+	<p>文字檔案中可以加上對說明的翻譯文字，當 Tux&nbsp;Paint
+	執行在其他語文版本(如法文或西班牙文)時就會顯示出來。</p>
 
-        <p>There are three ways of placing translated descriptions in
-	a stamp's "<code>.txt</code>" file.  In each case, the beginning
-	of the line should correspond to the locale code of the language
-	in question (e.g., "<code>de</code>" for German,
-	"<code>fr</code>" for French, etc.).</p>
+        <p>在圖章的 "<code>.txt</code>" 檔案中有三種方式來放置說明的翻譯文字，
+        在每一種方式中，一行的開頭必須是語文正確的 locale 代碼 (例如："<code>de</code>" 是德文，
+	"<code>fr</code>" 是法文，等等)。</p>
 
 	<ul>
-	<li><p>Lines beginning with "<code><b>xx</b>=</code>"
-	  (where "<code>xx</code>" is the locale code) will be
-	  considered plain ASCII.  That is, any special characters on the
-	  line will be interpreted literally.</p>
+	<li><p>一行開頭是 "<code><b>xx</b>=</code>" ("<code>xx</code>" 是指 locale 代碼)
+	  表示後面接的是純 ASCII 的文字，任何特殊字元都將會立刻顯示出來。</p>
 	  
-	  <p>For example, "<code>es=&iexcl;Ni&ntilde;os!</code>", will come
-	  out literally as "&iexcl;Ni&ntilde;os!"</p>
+	  <p>例如："<code>es=&iexcl;Ni&ntilde;os!</code>" ，我們就會看到
+	  "&iexcl;Ni&ntilde;os!"</p>
 	
-	<li><p>Lines beginning with "<code><b>xx</b>.esc=</code>" can contain
-	  special 'escape&nbsp;sequences' which allow you to create a
-	  description using special ASCII characters (like "&aacute;" and
-	  "&thorn;") without the need to figure out how to get those
-	  characters in the file with whatever editor you chose to use.</p>
+	<li><p>一行開頭是 "<code><b>xx</b>.esc=</code>" 的話，可以接特殊的跳脫字元 
+	  (像是 "&aacute;" 和 "&thorn;") 不需要去尋找如何在您的文字編輯器上打出這些字來。</p>
 
-	  <p>The escape sequences are identical to those used in HTML
-	  to display ASCII characters 161 through 255.  The sequence begins
-	  with a "<code>&amp;</code>" (ampersand), and ends with a
-	  "<code>;</code>" (semicolon).  See the documentation file
-	  "ESCAPES.txt" for a list of escapable characters.</p>
+	  <p>這些跳脫字元和在 HTML 裡要顯示出 ASCII 的 161 到 255 字碼的使用是一樣的，
+	  跳脫字元的開頭是 "<code>&amp;</code>" (表示 and 的符號)，結尾是 "<code>;</code>" (分號)。
+	  請參閱 "ESCAPES.txt" 有可跳脫字元的清單。</p>
 
-	  <p>For example, "<code>es.esc=&amp;iexcl;Ni&amp;ntilde;os!</code>",
-	  will come out as "&iexcl;Ni&ntilde;os!"</p>
+	  <p>例如： "<code>es.esc=&amp;iexcl;Ni&amp;ntilde;os!</code>"，我們就只會看到
+	  "&iexcl;Ni&ntilde;os!"</p>
 
-	  <p><b>Note:</b> As in HTML, if you want an actual ampersand ("&amp;")
-	  in your description when using the "<code><b>xx</b>.esc</code>"
-	  method ,you'll need to escape it: "<code>&amp;amp;</code>".<p>
+	  <p><b>註：</b> 如同 HTML 一樣，如果您想要在 "<code><b>xx</b>.esc</code>"
+	  跳脫字元的模式下看到真正的 and 符號 ("&amp;") 的話，您就必須要使用跳脫字元：
+	  "<code>&amp;amp;</code>" 。<p>
 	
-	<li><p>Lines beginning with "<code><b>xx</b>.utf8=</code>" can be
-	  used to use UTF-8 encoded text for the description's translation.
-	  You'll need an editor capable of saving UTF-8 encoded files.</p>
+	<li><p>一行開頭是 "<code><b>xx</b>.utf8=</code>" 可以使用 UTF-8 編碼來輸入說明的翻譯文字，
+	  您會需要使用具有儲存 UTF-8 編碼檔案的文字編輯程式。</p>
 	</ul><p>
 
-        <p>If no translation is available for the language Tux&nbsp;Paint
-	is currently running in, the default string (the first line, which
-	is typically in English) is used.</p>
+        <p>如果沒有該語文的翻譯文字的話，預設的說明文字(就是第一行的英文述敘)就會顯示出來。</p>
      </blockquote>
 
-      <h5>Windows Users</h5>
+      <h5>Windows 的使用者</h5>
       <blockquote>
-        <p>Use NotePad or WordPad to edit/create these files.
-	Be sure to save them as Plain Text, and make sure they have
-        "<code>.txt</code>" at the end of the filename...</p>
+        <p>使用小作家或是 WordPad 來編輯/建立這個檔案，要確定儲存成純文字格式，
+        並且確定副檔名是 "<code>.txt</code>" 。</p>
       </blockquote>
     </blockquote>
 
     <hr size=1 noshade>
 
-    <h4>Sound Effects</h4>
+    <h4>音效</h4>
     <blockquote>
-      <p>WAVE (".WAV") files with the same name as the PNG.
-      (e.g., "<code>picture.png</code>"'s sound effect is the sound
-      "<code>picture.wav</code>" in the same directory.)</p>
+      <p>音頻檔案 (".WAV") 和 PNG 圖檔使用相同的檔名。 (如 "<code>picture.png</code>" 
+      的音效檔為相同目錄下的 "<code>picture.wav</code>" 。)</p>
       
-      <h5>Language Support</h5>
+      <h5>語文支援</h5>
       <blockquote>
-        <p>For sounds for different locales (e.g., if the sound is someone
-	saying a word, and you want translated versions of the word said),
-        also create WAV files with the locale's label in the filename, in
-        the form: "<code><b>STAMP_LOCALE</b>.wav</code>"</p>
+        <p>在不同語文下使用不同的聲音 (例如，這個聲音是某個人唸出一個字來，
+        而您希望唸出這個字的翻譯)，只要加上 locale 代碼在音頻檔案的檔名上，
+        就像是： "<code><b>STAMP_LOCALE</b>.wav</code>"</p>
 	
-        <p>"<code>picture.png</code>"'s sound effect, when Tux&nbsp;Paint is run
-        in Spanish mode, would be "<code>picture_es.wav</code>".
-        In French mode, "<code>picture_fr.wav</code>".  And so on...</p>
+        <p>當 Tux&nbsp;Paint 顯示西班牙文時， "<code>picture.png</code>" 的音效會撥放
+        "<code>picture_es.wav</code>" 這個檔案，如果是法文時就是 "<code>picture_fr.wav</code>"，
+        以此類推。</p>
 
-        <p>If no localized sound effect can be loaded, Tux&nbsp;Paint will
-        attempt to load the 'default' sound file.
-        (e.g., "<code>picture.wav</code>")</p>
+        <p>如果沒有語文版本的音效可供載入時，Tux&nbsp;Paint 會使用預設的音效檔。
+        (如 "<code>picture.wav</code>")</p>
       </blockquote>
     </blockquote>
 
     <hr size=1 noshade>
 
-    <h4>Stamp Options</h4>
+    <h4>圖章選項</h4>
     <blockquote>
-      <p>Aside from a graphical shape, a textual description, and a sound
-      effect, stamps can also be given other attributes.  To do this, you need
-      to create a 'data&nbsp;file' for the stamp.</p>
+      <p>一個圖章可以有一段說明文字和一個音效，也可以給予其他的屬性。
+      要這樣作的話，您需要為圖章建立一個資料檔案。</p>
       
-      <p>A stamp data file is simply a text file containing the options.</p>
+      <p>圖章的資料檔案是包含一些選項的文字檔案。</p>
       
-      <p>The file has the same name as the PNG image, but a "<code>.dat</code>"
-      extension.  (e.g., "<code>picture.png</code>"'s data file is the text
-      file "<code>picture.dat</code>" in the same directory.)</p>
+      <p>這個檔案和 PNG 圖檔有相同的檔名，但副檔名是用 "<code>.dat</code>" 。
+      (如 "<code>picture.png</code>" 的資料檔是在相同目錄中的 "<code>picture.dat</code>" 。)</p>
 
-      <h5>Colored Stamps</h5>
+      <h5>有色的圖章</h5>
       <blockquote>
-        <p>Stamps can be made to be either "colorable" or "tintable."</p>
+        <p>圖章可以是「有色的」或「著色的」二種模式之一。</p>
       
-        <h6>Colorable</h6>
+        <h6>有色的</h6>
 	<blockquote>
-          <p>"Colorable" stamps they work much like brushes - you pick the stamp
-          to get the shape, and then pick the color you want it to be.
-          (Symbol stamps, like the mathematical and musical ones, are an
-	  example.)</p>
+          <p>有色的圖章就像筆刷一樣。您先選擇圖章的形狀，然後選擇一個您想要的顏色。
+          (像是數學符號或是音符的圖章就是這種。)</p>
 
-          <p>Nothing about the original image is used except the transparency
-          ("alpha" channel).  The color of the stamp comes out solid.</p>
+          <p>原來的圖形除了透明的部份外，其他的部份都會被顏色所填滿。</p>
 
           <center><img src="images/ex_colorable.png" width=74 height=92
           alt=""></center>
         
-	  <p>Add the word "<code><b>colorable</b></code>" to the stamp's data
-          file.</p>
+	  <p>在圖章的資料檔案中加入 "<code><b>colorable</b></code>" 。</p>
 	</blockquote>
 
-        <h6>Tinted</h6>
+        <h6>著色的</h6>
 	<blockquote>
-          <p>"Tinted" stamps are similar to "colorable" ones, except the
-	  details of the original image are kept.  (To put it technically,
-	  the original image is used, but its hue is changed, based on the
-	  currently-selected color.)</p>
+          <p>著色的圖章和有色的圖章很類似，但會保留原來圖形的內容。
+          (技術上來說，原來的圖形的顏色會以目前選擇的顏色來取代。)</p>
 
           <center><img src="images/ex_tintable.png" width=151 height=78
           alt=""></center>
 
-          <p>Add the word "<code><b>tintable</b></code>" to the stamp's data
-          file.</p>
+          <p>在圖章的資料檔案中加入 "<code><b>tintable</b></code>" 。</p>
 	</blockquote>
       </blockquote>
 
-      <h5>Unalterable Stamps</h5>
+      <h5>不可改變的圖章</h5>
       <blockquote>
-        <p>By default, a stamp can be flipped upside down, shown as a mirror
-	image, or both.  This is done using the control buttons below the
-	stamp selector, at the lower right side of the screen in
-	Tux&nbsp;Paint.</p>
+        <p>圖章預設是可以上下翻轉，也可以左右鏡射的。這些功能可以使用圖章選取列下方的控制鈕來達成，
+        就是在 Tux&nbsp;Paint 螢幕右下方的位置。</p>
 
-	<p>Sometimes, it doesn't make sense for a stamp to be flippable or
-	mirrored; for example, stamps of letters or numbers.
-	Sometimes stamps are symettrical, so letting the user flip or mirror
-	them isn't useful.</p>
+	<p>有時對圖章作翻轉或鏡射是沒有意義的，例如文字或數字的圖章。
+	有些圖章是對稱的，所以對圖章作翻轉鏡射是沒有用的。</p>
 
-	<p>To make a stamp un-flippable, add the option
-	"<code><b>noflip</b></code>" to the stamp's data file.</p>
+	<p>要使圖章不能上下翻轉的話，在圖章的資料檔案中加入 "<code><b>noflip</b></code>" 。</p>
 
-	<p>To keep a stamp from being mirrored, add the option
-	"<code><b>nomirror</b></code>" to the stamp's data file.</p>
+	<p>要使圖章不能左右鏡射的話，在圖章的資料檔案中加入 "<code><b>nomirror</b></code>" 。</p>
       </blockquote>
 
 
-      <h5>Windows Users</h5>
+      <h5>Windows 的使用者</h5>
       <blockquote>
-	<p>You can use NotePad or WordPad to create these file.
-	Be sure to save it as Plain Text, and make sure the filename
-	has "<code>.dat</code>" at the end, and not "<code>.txt</code>"...</p>
+	<p>您可以使用小作家或是 WordPad 來編輯/建立這個檔案，要確定儲存成純文字格式，
+        並且確定副檔名是 "<code>.dat</code>" 而不是 "<code>.txt</code>" 。</p>
       </blockquote>
     </blockquote>
 
-    <h4>Pre-Mirrored Images</h4>
+    <h4>預先鏡射的圖形</h4>
     <blockquote>
       <p>In some cases, you may wish to provide a pre-drawn version of
       a stamp's mirror-image.  For example, imagine a picture of a fire
