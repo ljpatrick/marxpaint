@@ -26,7 +26,7 @@
 
 
 #define VER_VERSION     "0.9.14"
-#define VER_DATE        "2004.06.20"
+#define VER_DATE        "2004-06-20"
 
 
 /* #define DEBUG */
@@ -280,8 +280,6 @@ void win32_perror(const char *str)
 #define clamp(lo,value,hi)    (min(max(value,lo),hi))
 
 
-#define RENDER_TEXT TTF_RenderUTF8_Blended
-
 
 /* Possible languages: */
 
@@ -381,13 +379,10 @@ const char * lang_prefixes[NUM_LANGS] = {
 };
 
 
-/* List of languages where we should use Unicode font rendering: */
+/* List of languages which doesn't use the default font: */
 
-int lang_use_unicode[] = {
-  -1
-};
 
-int lang_use_utf8[] = {
+int lang_use_own_font[] = {
   LANG_EL,
   LANG_HE,
   LANG_HI,
@@ -610,10 +605,10 @@ void update_screen(int x1, int y1, int x2, int y2);
 Uint8 alpha(Uint8 c1, Uint8 c2, Uint8 a);
 int compare_strings(char * * s1, char * * s2);
 int compare_dirents(struct dirent * f1, struct dirent * f2);
-void draw_tux_text(int which_tux, char * str, int want_utf8,
+void draw_tux_text(int which_tux, char * str,
 		   int force_locale_font, int want_right_to_left);
 void wordwrap_text(TTF_Font * font, char * str, SDL_Color color,
-		   int left, int top, int right, int want_utf8,
+		   int left, int top, int right,
 		   int force_locale_font, int want_right_to_left);
 char * loaddesc(char * fname);
 info_type * loadinfo(char * fname);
@@ -667,8 +662,6 @@ void do_setcursor(SDL_Cursor * c);
 char * great_str(void);
 int charsize(char c);
 void draw_image_title(int t, int x);
-int need_unicode(int l);
-int need_utf8(int l);
 int need_own_font(int l);
 int want_own_font(int l);
 int need_right_to_left(int l);
@@ -677,7 +670,6 @@ void move_keymouse(void);
 void handle_active(SDL_Event * event);
 char * remove_slash(char * path);
 unsigned char * utf8_decode(unsigned char * str);
-unsigned char * unescape(char * str);
 
 void convert_open(const char * from);
 void convert_close();
@@ -1045,7 +1037,7 @@ void mainloop(void)
 		  else if (cur_tool == TOOL_SHAPES)
 		    draw_shapes();
 		  
-		  draw_tux_text(TUX_GREAT, tool_tips[cur_tool], 1, 0, 1);
+		  draw_tux_text(TUX_GREAT, tool_tips[cur_tool], 0, 1);
 
 
 		  /* FIXME: Make delay configurable: */
@@ -1085,7 +1077,7 @@ void mainloop(void)
 		  else
 		    {
 		      draw_tux_text(tool_tux[TUX_DEFAULT], TIP_NEW_ABORT,
-				    1, 0, 1);
+				    0, 1);
 		    }
 		  
 		  draw_toolbar();
@@ -1252,7 +1244,7 @@ void mainloop(void)
 		      playsound(1, SND_CLICK, 0);
 		      
 		      draw_tux_text(tool_tux[cur_tool], tool_tips[cur_tool],
-				    1, 0, 1);
+				    0, 1);
 		      
 		      
 		      /* Draw items for this tool: */
@@ -1350,7 +1342,7 @@ void mainloop(void)
 					 0, 0,
 					 96, (48 * (7 + TOOLOFFSET / 2)) + 40);
 			  
-			  draw_tux_text(TUX_GREAT, tool_tips[cur_tool], 1, 0, 1);
+			  draw_tux_text(TUX_GREAT, tool_tips[cur_tool], 0, 1);
 
 			  if (cur_tool == TOOL_BRUSH ||
 			      cur_tool == TOOL_LINES ||
@@ -1423,7 +1415,7 @@ void mainloop(void)
 			  else
 			    {
 			      draw_tux_text(tool_tux[TUX_DEFAULT],
-					    TIP_NEW_ABORT, 1, 0, 1);
+					    TIP_NEW_ABORT, 0, 1);
 			    }
 			  
 			  cur_tool = old_tool;
@@ -1819,21 +1811,11 @@ void mainloop(void)
 				     txt_stamps[cur_stamp]);
 #endif
 
-			      if (txt_stamps[cur_stamp][0] == '=')
-				{
-				  /* FIXME: Stupid. Using '=' to denote UTF8 */
-
-				  draw_tux_text(TUX_GREAT,
-						txt_stamps[cur_stamp] + 1, 1, 0, 1);
-				}
-			      else
-				{
-				  draw_tux_text(TUX_GREAT,
-						txt_stamps[cur_stamp], 0, 1, 0);
-				}
+			      draw_tux_text(TUX_GREAT,
+						txt_stamps[cur_stamp], 0, 1);
 			    }
 			  else
-			    draw_tux_text(TUX_GREAT, "", 0, 0, 0);
+			    draw_tux_text(TUX_GREAT, "", 0, 0);
 			  
 			  
 			  /* Enable or disable color selector: */
@@ -1855,7 +1837,7 @@ void mainloop(void)
 			  cur_shape = cur_thing;
 			  
 			  draw_tux_text(TUX_GREAT, shape_tips[cur_shape],
-					1, 0, 1);
+					0, 1);
 			  
 			  if (do_draw)
 			    draw_shapes();
@@ -1877,7 +1859,7 @@ void mainloop(void)
 			  cur_magic = cur_thing;
 
 			  draw_tux_text(TUX_GREAT, magic_tips[cur_magic],
-					1, 0, 1);
+					0, 1);
 			  
 			  if (do_draw)
 			    draw_magic();
@@ -1917,7 +1899,7 @@ void mainloop(void)
 				     0, (48 * 7) + 40 + HEIGHTOFFSET,
 				     WINDOW_WIDTH, 48);
 		      render_brush();
-		      draw_tux_text(TUX_KISS, color_names[cur_color], 1, 0, 1);
+		      draw_tux_text(TUX_KISS, color_names[cur_color], 0, 1);
 		
 		      if (cur_tool == TOOL_TEXT)
 		        do_render_cur_text(0);
@@ -1978,7 +1960,7 @@ void mainloop(void)
 #endif
 		      playsound(1, SND_STAMP, 1);
 
-		      draw_tux_text(TUX_GREAT, great_str(), 1, 0, 1);
+		      draw_tux_text(TUX_GREAT, great_str(), 0, 1);
 
 		      /* FIXME: Make delay configurable: */
 
@@ -1999,7 +1981,7 @@ void mainloop(void)
 		      brush_draw(old_x, old_y, old_x, old_y, 1);
 		      
 		      playsound(1, SND_LINE_START, 1);
-		      draw_tux_text(TUX_BORED, TIP_LINE_START, 1, 0, 1);
+		      draw_tux_text(TUX_BORED, TIP_LINE_START, 0, 1);
 		    }
 		  else if (cur_tool == TOOL_SHAPES)
 		    {
@@ -2015,7 +1997,7 @@ void mainloop(void)
 			  shape_tool_mode = SHAPE_TOOL_MODE_STRETCH;
 			  
 			  playsound(1, SND_LINE_START, 1);
-			  draw_tux_text(TUX_BORED, TIP_SHAPE_START, 1, 0, 1);
+			  draw_tux_text(TUX_BORED, TIP_SHAPE_START, 0, 1);
 			}
 		      else if (shape_tool_mode == SHAPE_TOOL_MODE_ROTATE)
 			{
@@ -2034,7 +2016,7 @@ void mainloop(void)
 			  
 			  shape_tool_mode = SHAPE_TOOL_MODE_DONE;
 			  draw_tux_text(TUX_GREAT, tool_tips[TOOL_SHAPES],
-					1, 0, 1);
+					0, 1);
 			}
 		    }
 		  else if (cur_tool == TOOL_MAGIC)
@@ -2060,7 +2042,7 @@ void mainloop(void)
 					getpixel(canvas, old_x, old_y));
 
 			  draw_tux_text(TUX_GREAT, magic_tips[MAGIC_FILL],
-					1, 0, 1);
+					0, 1);
 			}
 		      
 		      if (cur_magic == MAGIC_FLIP ||
@@ -2247,21 +2229,11 @@ void mainloop(void)
 
 		  if (txt_stamps[cur_stamp] != NULL)
 		    {
-		      if (txt_stamps[cur_stamp][0] == '=')
-			{
-			  /* FIXME: Stupid. Using '=' to denote UTF8 */
-
-			  draw_tux_text(TUX_GREAT,
-					txt_stamps[cur_stamp] + 1, 1, 0, 1);
-			}
-		      else
-			{
-			  draw_tux_text(TUX_GREAT, txt_stamps[cur_stamp],
-					0, 1, 0);
-			}
+		      draw_tux_text(TUX_GREAT,
+				txt_stamps[cur_stamp], 0, 1);
 		    }
 		  else
-		    draw_tux_text(TUX_GREAT, "", 0, 0, 0);
+		    draw_tux_text(TUX_GREAT, "", 0, 0);
 
 
 		  /* Enable or disable color selector: */
@@ -2283,7 +2255,7 @@ void mainloop(void)
 		  cur_shape = cur_thing;
                        
 		  draw_tux_text(TUX_GREAT, shape_tips[cur_shape],
-				1, 0, 1);
+				0, 1);
 
 		  if (do_draw)
 		    draw_shapes();
@@ -2305,7 +2277,7 @@ void mainloop(void)
 		  cur_magic = cur_thing;
 
 		  draw_tux_text(TUX_GREAT, magic_tips[cur_magic],
-				1, 0, 1);
+				0, 1);
 
 		  if (do_draw)
 		    draw_magic();
@@ -2330,15 +2302,15 @@ void mainloop(void)
 		      if (((unsigned char *) event.user.data1)[0] == '=')
 			{
 			  draw_tux_text(TUX_GREAT, (char *) event.user.data1 + 1,
-					1, 0, 1);
+					0, 1);
 			}
 		      else
 			{
-			  draw_tux_text(TUX_GREAT, (char *) event.user.data1, 0, 1, 0);
+			  draw_tux_text(TUX_GREAT, (char *) event.user.data1, 1, 0);
 			}
 		    }
 		  else
-		    draw_tux_text(TUX_GREAT, "", 0, 0, 1);
+		    draw_tux_text(TUX_GREAT, "", 0, 1);
 		}
 	    }
 	  else if (event.type == SDL_MOUSEBUTTONUP)
@@ -2362,7 +2334,7 @@ void mainloop(void)
 				 event.button.x - 96, event.button.y, 1);
 		      
 		      playsound(1, SND_LINE_END, 1);
-		      draw_tux_text(TUX_GREAT, tool_tips[TOOL_LINES], 1, 0, 1);
+		      draw_tux_text(TUX_GREAT, tool_tips[TOOL_LINES], 0, 1);
 		    }
 		  else if (cur_tool == TOOL_SHAPES)
 		    {
@@ -2395,7 +2367,7 @@ void mainloop(void)
 				       0);
 			      
 			      playsound(1, SND_LINE_START, 1);
-			      draw_tux_text(TUX_BORED, TIP_SHAPE_NEXT, 1, 0, 1);
+			      draw_tux_text(TUX_BORED, TIP_SHAPE_NEXT, 0, 1);
 			      
 			      
 			      /* FIXME: Do something less intensive! */
@@ -2416,7 +2388,7 @@ void mainloop(void)
 			      
 			      shape_tool_mode = SHAPE_TOOL_MODE_DONE;
 			      draw_tux_text(TUX_GREAT,
-					    tool_tips[TOOL_SHAPES], 1, 0, 1);
+					    tool_tips[TOOL_SHAPES], 0, 1);
 			    }
 			}
 		    }
@@ -4431,296 +4403,208 @@ void setup(int argc, char * argv[])
       if (strcmp(langstr, "english") == 0 ||
 	  strcmp(langstr, "american-english") == 0)
 	{
-	  putenv("LANG=C");
-	  putenv("LC_ALL=C");
 	  putenv("LANGUAGE=C");
 	}
       else if (strcmp(langstr, "croatian") == 0 ||
 	       strcmp(langstr, "hrvatski") == 0)
 	{
-	  putenv("LANG=hr_HR");
-	  putenv("LC_ALL=hr_HR");
 	  putenv("LANGUAGE=hr_HR");
 	}
       else if (strcmp(langstr, "catalan") == 0 ||
 	       strcmp(langstr, "catala") == 0)
 	{
-	  putenv("LANG=ca_ES");
-	  putenv("LC_ALL=ca_ES");
 	  putenv("LANGUAGE=ca_ES");
 	}
       else if (strcmp(langstr, "belarusian") == 0 ||
 	       strcmp(langstr, "bielaruskaja") == 0)
         {
-	  putenv("LANG=be_BY");
-	  putenv("LC_ALL=be_BY");
 	  putenv("LANGUAGE=be_BY");
         }
       else if (strcmp(langstr, "czech") == 0 ||
 	       strcmp(langstr, "cesky") == 0)
 	{
-	  putenv("LANG=cs_CZ");
-	  putenv("LC_ALL=cs_CZ");
 	  putenv("LANGUAGE=cs_CZ");
 	}
       else if (strcmp(langstr, "danish") == 0 ||
 	       strcmp(langstr, "dansk") == 0)
 	{
-	  putenv("LANG=da_DK");
-	  putenv("LC_ALL=da_DK");
 	  putenv("LANGUAGE=da_DK");
 	}
       else if (strcmp(langstr, "german") == 0 ||
 	       strcmp(langstr, "deutsch") == 0)
 	{
-	  putenv("LANG=de_DE@euro");
-	  putenv("LC_ALL=de_DE@euro");
 	  putenv("LANGUAGE=de_DE@euro");
 	}
       else if (strcmp(langstr, "greek") == 0)
 	{
-	  putenv("LANG=el_GR.UTF8");
-	  putenv("LC_ALL=el_GR.UTF8");
 	  putenv("LANGUAGE=el_GR.UTF8");
 	}
       else if (strcmp(langstr, "british-english") == 0 ||
 	       strcmp(langstr, "british") == 0)
 	{
-	  putenv("LANG=en_GB");
-	  putenv("LC_ALL=en_GB");
 	  putenv("LANGUAGE=en_GB");
 	}
       else if (strcmp(langstr, "spanish") == 0 ||
 	       strcmp(langstr, "espanol") == 0)
 	{
-	  putenv("LANG=es_ES");
-	  putenv("LC_ALL=es_ES");
 	  putenv("LANGUAGE=es_ES");
 	}
       else if (strcmp(langstr, "finnish") == 0 ||
 	       strcmp(langstr, "suomi") == 0)
 	{
-	  putenv("LANG=fi_FI@euro");
-	  putenv("LC_ALL=fi_FI@euro");
 	  putenv("LANGUAGE=fi_FI@euro");
 	}
       else if (strcmp(langstr, "french") == 0 ||
 	       strcmp(langstr, "francais") == 0)
 	{
-	  putenv("LANG=fr_FR@euro");
-	  putenv("LC_ALL=fr_FR@euro");
 	  putenv("LANGUAGE=fr_FR@euro");
 	}
       else if (strcmp(langstr, "hebrew") == 0)
 	{
-	  putenv("LANG=he_IL");
-	  putenv("LC_ALL=he_IL");
 	  putenv("LANGUAGE=he_IL");
 	}
       else if (strcmp(langstr, "hindi") == 0)
 	{
-	  putenv("LANG=hi_IN.UTF8");
-	  putenv("LC_ALL=hi_IN.UTF8");
 	  putenv("LANGUAGE=hi_IN.UTF8");
 	}
       else if (strcmp(langstr, "hungarian") == 0 ||
 	       strcmp(langstr, "magyar") == 0)
 	{
-	  putenv("LANG=hu_HU");
-	  putenv("LC_ALL=hu_HU");
 	  putenv("LANGUAGE=hu_HU");
 	}
       else if (strcmp(langstr, "indonesian") == 0 ||
 	       strcmp(langstr, "bahasa-indonesia") == 0)
 	{
-	  putenv("LANG=id_ID");
-	  putenv("LC_ALL=id_ID");
 	  putenv("LANGUAGE=id_ID");
 	}
       else if (strcmp(langstr, "icelandic") == 0 ||
 	       strcmp(langstr, "islenska") == 0)
 	{
-	  putenv("LANG=is_IS");
-	  putenv("LC_ALL=is_IS");
 	  putenv("LANGUAGE=is_IS");
 	}
       else if (strcmp(langstr, "italian") == 0 ||
 	       strcmp(langstr, "italiano") == 0)
 	{
-	  putenv("LANG=it_IT@euro");
-	  putenv("LC_ALL=it_IT@euro");
 	  putenv("LANGUAGE=it_IT@euro");
 	}
       else if (strcmp(langstr, "japanese") == 0)
 	{
-	  putenv("LANG=ja_JP.UTF-8");
-	  putenv("LC_ALL=ja_JP.UTF-8");
 	  putenv("LANGUAGE=ja_JP.UTF-8");
 	}
       else if (strcmp(langstr, "vietnamese") == 0)
 	{
-	  putenv("LANG=vi_VN.UTF-8");
-	  putenv("LC_ALL=vi_VN.UTF-8");
 	  putenv("LANGUAGE=vi_VN.UTF-8");
 	}
       else if (strcmp(langstr, "afrikaans") == 0)
 	{
-	  putenv("LANG=af_ZA");
-	  putenv("LC_ALL=af_ZA");
 	  putenv("LANGUAGE=af_ZA");
 	}
       else if (strcmp(langstr, "breton") == 0 ||
 	       strcmp(langstr, "brezhoneg") == 0)
 	{
-	  putenv("LANG=br_FR");
-	  putenv("LC_ALL=br_FR");
 	  putenv("LANGUAGE=br_FR");
 	}
       else if (strcmp(langstr, "welsh") == 0 ||
 	       strcmp(langstr, "cymraeg") == 0)
 	{
-	  putenv("LANG=cy_GB");
-	  putenv("LC_ALL=cy_GB");
 	  putenv("LANGUAGE=cy_GB");
 	}
       else if (strcmp(langstr, "bokmal") == 0)
 	{
-	  putenv("LANG=nb_NN");
-	  putenv("LC_ALL=nb_NN");
-	  putenv("LANGUAGE=nb_NN");
+	  putenv("LANGUAGE=nb_NO");
 	}
       else if (strcmp(langstr, "basque") == 0 ||
 	       strcmp(langstr, "euskara") == 0)
 	{
-	  putenv("LANG=eu_ES");
-	  putenv("LC_ALL=eu_ES");
 	  putenv("LANGUAGE=eu_ES");
 	}
       else if (strcmp(langstr, "korean") == 0)
 	{
-	  putenv("LANG=ko_KR.UTF-8");
-	  putenv("LC_ALL=ko_KR.UTF-8");
 	  putenv("LANGUAGE=ko_KR.UTF-8");
 	}
       else if (strcmp(langstr, "tamil") == 0)
 	{
-	  putenv("LANG=ta_IN.UTF-8");
-	  putenv("LC_ALL=ta_IN.UTF-8");
 	  putenv("LANGUAGE=ta_IN.UTF-8");
 	}
       else if (strcmp(langstr, "lithuanian") == 0 ||
 	       strcmp(langstr, "lietuviu") == 0)
 	{
-	  putenv("LANG=lt_LT");
-	  putenv("LC_ALL=lt_LT");
 	  putenv("LANGUAGE=lt_LT");
 	}
       else if (strcmp(langstr, "malay") == 0)
 	{
-	  putenv("LANG=ms_MY");
-	  putenv("LC_ALL=ms_MY");
 	  putenv("LANGUAGE=ms_MY");
 	}
       else if (strcmp(langstr, "dutch") == 0 ||
 	       strcmp(langstr, "nederlands") == 0)
 	{
-	  putenv("LANG=nl_NL@euro");
-	  putenv("LC_ALL=nl_NL@euro");
 	  putenv("LANGUAGE=nl_NL@euro");
 	}
       else if (strcmp(langstr, "norwegian") == 0 ||
 	       strcmp(langstr, "nynorsk") == 0 ||
 	       strcmp(langstr, "norsk") == 0)
 	{
-	  putenv("LANG=nn_NO");
-	  putenv("LC_ALL=nn_NO");
 	  putenv("LANGUAGE=nn_NO");
 	}
       else if (strcmp(langstr, "polish") == 0 ||
 	       strcmp(langstr, "polski") == 0)
 	{
-	  putenv("LANG=pl_PL");
-	  putenv("LC_ALL=pl_PL");
 	  putenv("LANGUAGE=pl_PL");
 	}
       else if (strcmp(langstr, "brazilian-portuguese") == 0 ||
 	       strcmp(langstr, "portugues-brazilian") == 0 ||
 	       strcmp(langstr, "brazilian") == 0)
 	{
-	  putenv("LANG=pt_BR");
-	  putenv("LC_ALL=pt_BR");
 	  putenv("LANGUAGE=pt_BR");
 	}
       else if (strcmp(langstr, "portuguese") == 0 ||
 	       strcmp(langstr, "portugues") == 0)
 	{
-	  putenv("LANG=pt_PT@euro");
-	  putenv("LC_ALL=pt_PT@euro");
 	  putenv("LANGUAGE=pt_PT@euro");
 	}
       else if (strcmp(langstr, "romanian") == 0)
 	{
-	  putenv("LANG=ro_RO");
-	  putenv("LC_ALL=ro_RO");
 	  putenv("LANGUAGE=ro_RO");
 	}
       else if (strcmp(langstr, "russian") == 0 ||
 	       strcmp(langstr, "russkiy") == 0)
 	{
-	  putenv("LANG=ru_RU.UTF-8");
-	  putenv("LC_ALL=ru_RU.UTF-8");
 	  putenv("LANGUAGE=ru_RU.UTF-8");
 	}
       else if (strcmp(langstr, "slovak") == 0)
 	{
-	  putenv("LANG=sk_SK");
-	  putenv("LC_ALL=sk_SK");
 	  putenv("LANGUAGE=sk_SK");
 	}
       else if (strcmp(langstr, "slovenian") == 0 ||
 	       strcmp(langstr, "slovensko") == 0)
 	{
-	  putenv("LANG=sl_SI");
-	  putenv("LC_ALL=sl_SI");
 	  putenv("LANGUAGE=sl_SI");
 	}
       else if (strcmp(langstr, "serbian") == 0)
 	{
-	  putenv("LANG=sr_YU");
-	  putenv("LC_ALL=sr_YU");
 	  putenv("LANGUAGE=sr_YU");
 	}
       else if (strcmp(langstr, "swedish") == 0 ||
 	       strcmp(langstr, "svenska") == 0)
 	{
-	  putenv("LANG=sv_SE@euro");
-	  putenv("LC_ALL=sv_SE@euro");
 	  putenv("LANGUAGE=sv_SE@euro");
 	}
       else if (strcmp(langstr, "turkish") == 0)
 	{
-	  putenv("LANG=tr_TR@euro");
-	  putenv("LC_ALL=tr_TR@euro");
 	  putenv("LANGUAGE=tr_TR@euro");
 	}
       else if (strcmp(langstr, "walloon") == 0 ||
 	       strcmp(langstr, "walon") == 0)
 	{
-	  putenv("LANG=wa_BE@euro");
-	  putenv("LC_ALL=wa_BE@euro");
 	  putenv("LANGUAGE=wa_BE@euro");
 	}
       else if (strcmp(langstr, "chinese") == 0 ||
                strcmp(langstr, "simplified-chinese") == 0)
 	{
-	  putenv("LANG=zh_CN.UTF-8");
-	  putenv("LC_ALL=zh_CN.UTF-8");
 	  putenv("LANGUAGE=zh_CN.UTF-8");
 	}
       else if (strcmp(langstr, "traditional-chinese") == 0)
 	{
-	  putenv("LANG=zh_TW.UTF-8");
-	  putenv("LC_ALL=zh_TW.UTF-8");
 	  putenv("LANGUAGE=zh_TW.UTF-8");
 	}
       else if (strcmp(langstr, "help") == 0 || strcmp(langstr, "list") == 0)
@@ -5386,17 +5270,7 @@ void setup(int argc, char * argv[])
     {
       if (strlen(title_names[i]) > 0)
 	{
-	  if (need_unicode(language) && locale_font != NULL &&
-	      strcmp(gettext(title_names[i]), title_names[i]) != 0)
-	    {
-	      tmp_surf = TTF_RenderUNICODE_Blended(locale_font,
-						   (Uint16 *) textdir(gettext(title_names[i])),
-						   black);
-	      img_title_names[i] = thumbnail(tmp_surf,
-					     min(84, tmp_surf->w), tmp_surf->h, 0);
-	      SDL_FreeSurface(tmp_surf);
-	    }
-	  else if (need_utf8(language) && locale_font != NULL &&
+	  if (need_own_font(language) && locale_font != NULL &&
 		   strcmp(gettext(title_names[i]), title_names[i]) != 0)
 	    {
 	      tmp_surf = TTF_RenderUTF8_Blended(locale_font,
@@ -5408,7 +5282,7 @@ void setup(int argc, char * argv[])
 	  else
 	    {
 	      upstr = uppercase(textdir(gettext(title_names[i])));
-	      tmp_surf = RENDER_TEXT(large_font, upstr, black);
+	      tmp_surf = TTF_RenderUTF8_Blended(large_font, upstr, black);
 	      img_title_names[i] = thumbnail(tmp_surf,
 					     min(84, tmp_surf->w), tmp_surf->h, 0);
 	      SDL_FreeSurface(tmp_surf);
@@ -5545,14 +5419,7 @@ SDL_Surface * do_render_button_label(char * label)
   SDL_Surface * tmp_surf, * surf;
   SDL_Color black = {0, 0, 0, 0};
 
-  if (need_unicode(language) && locale_font != NULL &&
-      strcmp(gettext(label), label) != 0)
-    {
-      tmp_surf = TTF_RenderUNICODE_Blended(locale_font, (Uint16 *) textdir(gettext(label)),
-					   black);
-      surf = thumbnail(tmp_surf, min(48, tmp_surf->w), tmp_surf->h, 0);
-    }
-  else if (need_utf8(language) && locale_font != NULL &&
+  if (need_own_font(language) && locale_font != NULL &&
 	   strcmp(gettext(label), label) != 0)
     {
       tmp_surf = TTF_RenderUTF8_Blended(locale_font, textdir(gettext(label)), black);
@@ -5561,7 +5428,7 @@ SDL_Surface * do_render_button_label(char * label)
   else
     {
       str = uppercase(textdir(gettext(label)));
-      tmp_surf = RENDER_TEXT(small_font, str, black);
+      tmp_surf = TTF_RenderUTF8_Blended(small_font, str, black);
       surf = thumbnail(tmp_surf, min(48, tmp_surf->w), tmp_surf->h, 0);
       free(str);
       SDL_FreeSurface(tmp_surf);
@@ -6121,7 +5988,7 @@ void draw_fonts(void)
 
       if (font < num_fonts)
 	{
-	  tmp_surf = RENDER_TEXT(fonts[font], "A", black);
+	  tmp_surf = TTF_RenderUTF8_Blended(fonts[font], "A", black);
 
 	  src.x = (tmp_surf->w - 48) / 2;
 	  src.y = (tmp_surf->h - 48) / 2;
@@ -7494,7 +7361,7 @@ int compare_dirents(struct dirent * f1, struct dirent * f2)
 
 /* Draw tux's text on the screen: */
 
-void draw_tux_text(int which_tux, char * str, int want_utf8,
+void draw_tux_text(int which_tux, char * str,
 	 	   int force_locale_font, int want_right_to_left)
 {
   SDL_Rect dest;
@@ -7530,7 +7397,7 @@ void draw_tux_text(int which_tux, char * str, int want_utf8,
   wordwrap_text(font, str, black,
 	        img_tux[which_tux] -> w + 5,
 	        (48 * 7) + 40 + 48 + HEIGHTOFFSET,
-	        WINDOW_WIDTH, want_utf8, force_locale_font,
+	        WINDOW_WIDTH, force_locale_font,
 		want_right_to_left);
 
 
@@ -7544,14 +7411,13 @@ void draw_tux_text(int which_tux, char * str, int want_utf8,
 
 
 void wordwrap_text(TTF_Font * font, char * str, SDL_Color color,
-		   int left, int top, int right, int want_utf8,
+		   int left, int top, int right,
 		   int force_locale_font, int want_right_to_left)
 {
   int x, y, i, j;
   char substr[512];
   unsigned char * locale_str;
   char * tstr;
-  Uint16 unicode_char[2];
   unsigned char utf8_char[5];
   int len;
   SDL_Surface * text;
@@ -7572,11 +7438,9 @@ void wordwrap_text(TTF_Font * font, char * str, SDL_Color color,
   debug(gettext(str));
   debug("...");
 
-  if (strcmp(str, "") != 0 &&
-      (want_utf8 ||
-       (need_utf8(language) && strcmp(gettext(str), str) != 0)))
+  if (strcmp(str, "") != 0)
     {
-      if (want_utf8 || want_right_to_left == 0)
+      if (want_right_to_left == 0)
 	locale_str = strdup(gettext(str));
       else
 	locale_str = strdup(textdir(gettext(str)));
@@ -7759,57 +7623,6 @@ void wordwrap_text(TTF_Font * font, char * str, SDL_Color color,
     
       free(locale_str);
     }
-  else if (need_unicode(language) && locale_font != NULL &&
-	   strcmp(gettext(str), str) != 0 && strcmp(str, "") != 0)
-    {
-      if (want_right_to_left == 0)
-	locale_str = strdup(gettext(str));
-      else
-	locale_str = strdup(textdir(gettext(str)));
-    
-    
-      /* For each pair of bytes... */
-    
-      for (i = 0; i < strlen(locale_str); i = i + 2)
-	{
-	  /* FIXME: Is this endian-safe? */
-	    
-	  unicode_char[0] = (locale_str[i] << 8) + (locale_str[i + 1]);
-	  unicode_char[1] = 0;
-      
-	  text = TTF_RenderUNICODE_Blended(locale_font, unicode_char, color);
-
-
-	  /* Wrap, if needed: */
-      
-	  if (x + text->w > right)
-	    {
-	      if (need_right_to_left(language) && want_right_to_left)
-		anti_carriage_return(left, right, top, top + text->h, y + text->h,
-				     x - left);
-	
-	      x = left;
-	      y = y + text->h;
-	    }
-
-
-	  dest.x = x;
-
-	  if (need_right_to_left(language) && want_right_to_left)
-	    dest.y = top;
-	  else
-	    dest.y = y;
-
-	  SDL_BlitSurface(text, NULL, screen, &dest);
-
-	  x = x + text->w;
-
-	  last_text_height = text->h;
-	  SDL_FreeSurface(text);
-	}
-    
-      free(locale_str);
-    }
   else if (strlen(str) != 0)
     {
       /* Truncate if too big! (sorry!) */
@@ -7842,14 +7655,8 @@ void wordwrap_text(TTF_Font * font, char * str, SDL_Color color,
 
 	  /* Render the word for display... */
 
-	  //if (force_locale_font && locale_font != NULL)
-	  //  text = RENDER_TEXT(locale_font, substr, color);
-	  //else
-	  
-	  if (want_utf8)
-	    text = TTF_RenderUTF8_Blended(font, substr, color);
-	  else
-	    text = TTF_RenderUTF8_Blended(locale_font, substr, color);
+  
+	  text = TTF_RenderUTF8_Blended(locale_font, substr, color);
 
 
 	  /* If it won't fit on this line, move to the next! */
@@ -8011,7 +7818,7 @@ char * loaddesc(char * fname)
 {
   char * txt_fname;
   char buf[256], def_buf[256];
-  int found, got_first, in_utf8, in_html_escape;
+  int found, got_first;
   FILE * fi;
 
 
@@ -8040,8 +7847,6 @@ char * loaddesc(char * fname)
 
       got_first = 0;
       found = 0;
-      in_utf8 = 0;
-      in_html_escape = 0;
 
       strcpy(def_buf, "");
 
@@ -8072,27 +7877,12 @@ char * loaddesc(char * fname)
 		{
 
 		  debug(buf + strlen(lang_prefixes[language]));
-
-		  if (buf[strlen(lang_prefixes[language])] == '=')
-		    {
-		      found = 1;
-		      in_utf8 = 0;
-		    }
-		  else if (strstr(buf + strlen(lang_prefixes[language]), ".utf8=") ==
+		  if (strstr(buf + strlen(lang_prefixes[language]), ".utf8=") ==
 			   buf + strlen(lang_prefixes[language]))
 		    {
 		      found = 1;
-		      in_utf8 = 1;
-
-		      debug("...IS UTF-8!");
-		    }
-		  else if (strstr(buf + strlen(lang_prefixes[language]), ".esc=") ==
-			   buf + strlen(lang_prefixes[language]))
-		    {
-		      found = 1;
-		      in_html_escape = 1;
-
-		      debug("...IS HTML ESCAPED!");
+		      
+		      debug("...FOUND!");
 		    }
 		}
 	    }
@@ -8106,26 +7896,7 @@ char * loaddesc(char * fname)
 
       if (found)
 	{
-	  if (in_utf8 == 1)
-	    {
-	      /* UTF format!  Decode! */
-
-	      /* FIXME: Stupid... Using '=' at beginning to mark as a UTF8 string */
-
-	      return(strdup(buf + (strlen(lang_prefixes[language])) + 5));
-	    }
-	  else if (in_html_escape == 1)
-	    {
-	      /* HTML escape-code style!  Unescape! */
-	      
-	      return(unescape(buf + (strlen(lang_prefixes[language])) + 5));
-	    }
-	  else
-	    {
-	      /* Plain old ASCII... just copy it: */
-
-	      return(strdup(buf + (strlen(lang_prefixes[language])) + 1));
-	    }
+	  return(strdup(buf + (strlen(lang_prefixes[language])) + 6));
 	}
       else
 	{
@@ -8405,7 +8176,7 @@ void save_current(void)
 	      "The error that occurred was:\n"
 	      "%s\n\n", fname, strerror(errno));
 
-      draw_tux_text(TUX_OOPS, strerror(errno), 0, 0, 0);
+      draw_tux_text(TUX_OOPS, strerror(errno), 0, 0);
     }
 
   free(fname);
@@ -8422,7 +8193,7 @@ void save_current(void)
 	      "The error that occurred was:\n"
 	      "%s\n\n", fname, strerror(errno));
 
-      draw_tux_text(TUX_OOPS, strerror(errno), 0, 0, 0);
+      draw_tux_text(TUX_OOPS, strerror(errno), 0, 0);
     }
   else
     {
@@ -8622,7 +8393,7 @@ int do_prompt(char * text, char * btn_yes, char * btn_no)
 
   wordwrap_text(font, text, black,
 		166 + PROMPTOFFSETX, 100 + PROMPTOFFSETY, 475 + PROMPTOFFSETX,
-		1, 0, 1);
+		0, 1);
 
 
   /* Draw yes button: */
@@ -8635,7 +8406,7 @@ int do_prompt(char * text, char * btn_yes, char * btn_no)
   /* (Bound to UTF8 domain, so always ask for UTF8 rendering!) */
 
   wordwrap_text(font, btn_yes, black, 166 + PROMPTOFFSETX + 48 + 4,
-		183 + PROMPTOFFSETY, 475 + PROMPTOFFSETX, 1, 0, 1);
+		183 + PROMPTOFFSETY, 475 + PROMPTOFFSETX, 0, 1);
 
 
   /* Draw no button: */
@@ -8648,13 +8419,13 @@ int do_prompt(char * text, char * btn_yes, char * btn_no)
 
       wordwrap_text(font, btn_no, black,
 		    166 + PROMPTOFFSETX + 48 + 4, 235 + PROMPTOFFSETY,
-		    475 + PROMPTOFFSETX, 1, 0, 1);
+		    475 + PROMPTOFFSETX, 0, 1);
     }
 
 
   /* Draw Tux, waiting... */
 
-  draw_tux_text(TUX_BORED, "", 0, 0, 0);
+  draw_tux_text(TUX_BORED, "", 0, 0);
 
   SDL_Flip(screen);
 
@@ -9329,7 +9100,7 @@ int do_save(void)
       fprintf(stderr,
 	      "Cannot save the any pictures! SORRY!\n\n");
 
-      draw_tux_text(TUX_OOPS, SDL_GetError(), 0, 0, 0);
+      draw_tux_text(TUX_OOPS, SDL_GetError(), 0, 0);
 
       free(fname);
       return 0;
@@ -9356,7 +9127,7 @@ int do_save(void)
       fprintf(stderr,
 	      "Cannot save any pictures! SORRY!\n\n");
 
-      draw_tux_text(TUX_OOPS, SDL_GetError(), 0, 0, 0);
+      draw_tux_text(TUX_OOPS, SDL_GetError(), 0, 0);
 
       free(fname);
       return 0;
@@ -9383,7 +9154,7 @@ int do_save(void)
       fprintf(stderr,
 	      "Cannot save any pictures! SORRY!\n\n");
 
-      draw_tux_text(TUX_OOPS, SDL_GetError(), 0, 0, 0);
+      draw_tux_text(TUX_OOPS, SDL_GetError(), 0, 0);
 
       free(fname);
       return 0;
@@ -9408,7 +9179,7 @@ int do_save(void)
 	      "The Simple DirectMedia Layer error that occurred was:\n"
 	      "%s\n\n", fname, SDL_GetError());
 
-      draw_tux_text(TUX_OOPS, SDL_GetError(), 0, 0, 0);
+      draw_tux_text(TUX_OOPS, SDL_GetError(), 0, 0);
 
       free(fname);
       return 0;
@@ -9418,7 +9189,7 @@ int do_save(void)
       /* Ta-Da! */
 
       playsound(0, SND_SAVE, 1);
-      draw_tux_text(TUX_DEFAULT, tool_tips[TOOL_SAVE], 1, 0, 1);
+      draw_tux_text(TUX_DEFAULT, tool_tips[TOOL_SAVE], 0, 1);
     }
 #else
   fi = fopen(fname, "wb");
@@ -9431,7 +9202,7 @@ int do_save(void)
 	      "%s\n\n",
 	      fname, strerror(errno));
 
-      draw_tux_text(TUX_OOPS, strerror(errno), 0, 0, 0);
+      draw_tux_text(TUX_OOPS, strerror(errno), 0, 0);
     }
   else
     {
@@ -9493,7 +9264,7 @@ int do_save(void)
   /* All happy! */
 
   playsound(0, SND_SAVE, 1);
-  draw_tux_text(TUX_DEFAULT, tool_tips[TOOL_SAVE], 1, 0, 1);
+  draw_tux_text(TUX_DEFAULT, tool_tips[TOOL_SAVE], 0, 1);
   do_setcursor(cursor_arrow);
 
   return 1;
@@ -9519,7 +9290,7 @@ int do_png_save(FILE * fi, char * fname, SDL_Surface * surf)
       png_destroy_write_struct(&png_ptr, (png_infopp) NULL);
 
       fprintf(stderr, "\nError: Couldn't save the image!\n%s\n\n", fname);
-      draw_tux_text(TUX_OOPS, strerror(errno), 0, 0, 0);
+      draw_tux_text(TUX_OOPS, strerror(errno), 0, 0);
     }
   else
     {
@@ -9530,7 +9301,7 @@ int do_png_save(FILE * fi, char * fname, SDL_Surface * surf)
 	  png_destroy_write_struct(&png_ptr, (png_infopp) NULL);
 
 	  fprintf(stderr, "\nError: Couldn't save the image!\n%s\n\n", fname);
-	  draw_tux_text(TUX_OOPS, strerror(errno), 0, 0, 0);
+	  draw_tux_text(TUX_OOPS, strerror(errno), 0, 0);
 	}
       else
 	{
@@ -9540,7 +9311,7 @@ int do_png_save(FILE * fi, char * fname, SDL_Surface * surf)
 	      png_destroy_write_struct(&png_ptr, (png_infopp) NULL);
 
 	      fprintf(stderr, "\nError: Couldn't save the image!\n%s\n\n", fname);
-	      draw_tux_text(TUX_OOPS, strerror(errno), 0, 0, 0);
+	      draw_tux_text(TUX_OOPS, strerror(errno), 0, 0);
   
 	      return 0;
 	    }
@@ -10145,7 +9916,7 @@ int do_open(int want_new_tool)
 
     draw_tux_text(TUX_BORED,
   		textdir(gettext_noop("Choose the picture you want, "
-  				     "then click “Open”.")), 1, 0, 1);
+  				     "then click “Open”.")), 0, 1);
 
     /* NOTE: cur is now set above; if file_id'th file is found, it's
        set to that file's index; otherwise, we default to '0' */
@@ -11587,7 +11358,7 @@ void do_render_cur_text(int do_blit)
     {
       str = uppercase(texttool_str);
     
-      tmp_surf = RENDER_TEXT(fonts[cur_font], str, color);
+      tmp_surf = TTF_RenderUTF8_Blended(fonts[cur_font], str, color);
 
       w = tmp_surf->w;
       h = tmp_surf->h;
@@ -12360,48 +12131,22 @@ void draw_image_title(int t, int x)
 }
 
 
-int need_unicode(int l)
-{
-  int i, need;
-
-  need = 0;
-
-  for (i = 0; lang_use_unicode[i] != -1 && need == 0; i++)
-    {
-      if (lang_use_unicode[i] == l)
-	{
-	  need = 1;
-	}
-    }
-
-  return need;
-}
-
-
-int need_utf8(int l)
-{
-  int i, need;
-
-  need = 0;
-
-  for (i = 0; lang_use_utf8[i] != -1 && need == 0; i++)
-    {
-      if (lang_use_utf8[i] == l)
-	{
-	  need = 1;
-	}
-    }
-
-  return need;
-}
-
 
 int need_own_font(int l)
 {
-  if (need_utf8(l) || need_unicode(l))
-    return 1;
-  else
-    return 0;
+  int i, need;
+
+  need = 0;
+
+  for (i = 0; lang_use_own_font[i] != -1 && need == 0; i++)
+    {
+      if (lang_use_own_font[i] == l)
+	{
+	  need = 1;
+	}
+    }
+
+  return need;
 }
 
 
@@ -12549,239 +12294,6 @@ unsigned char * utf8_decode(unsigned char * str)
     }
 
   return(strdup(utf8_str));
-}
-
-
-/* Escape codes for HTML-style escaping of stamp description strings: */
-
-typedef struct escape_string_type {
-  char * str;
-  unsigned int chr;
-} escape_string_type;
-
-
-/* Thanks to http://bushong.net/dawn/links/htmlCodes.shtml
-   for the list of escape codes */
-
-escape_string_type escape_strings[] = {
-  {"quot",   '\"'},
-  {"amp",    '&'},
-  {"lt",     '<'},
-  {"gt",     '>'},
-  {"iexcl",  161},
-  {"cent",   162},
-  {"pound",  163},
-  {"curren", 164},
-  {"yen",    165},
-  {"brvbar", 166},
-  {"sect",   167},
-  {"uml",    168},
-  {"copy",   169},
-  {"ordf",   170},
-  {"laquo",  171},
-  {"not",    172},
-  {"shy",    173},
-  {"reg",    174},
-  {"macr",   175},
-  {"deg",    176},
-  {"plusmn", 177},
-  {"sup2",   178},
-  {"sup3",   179},
-  {"acute",  180},
-  {"micro",  181},
-  {"para",   182},
-  {"middot", 183},
-  {"cedil",  184},
-  {"sup1",   185},
-  {"ordm",   186},
-  {"raquo",  187},
-  {"frac14", 188},
-  {"frac12", 189},
-  {"frac34", 190},
-  {"iquest", 191},
-  {"Agrave", 192},
-  {"Aacute", 193},
-  {"Acirc",  194},
-  {"Atilde", 195},
-  {"Auml",   196},
-  {"Aring",  197},
-  {"AElig",  198},
-  {"Ccedil", 199},
-  {"Egrave", 200},
-  {"Eacute", 201},
-  {"Ecirc",  202},
-  {"Euml",   203},
-  {"Igrave", 204},
-  {"Iacute", 205},
-  {"Icirc",  206},
-  {"Iuml",   207},
-  {"ETH",    208},
-  {"Ntilde", 209},
-  {"Ograve", 210},
-  {"Oacute", 211},
-  {"Ocirc",  212},
-  {"Otilde", 213},
-  {"Ouml",   214},
-  {"times",  215},
-  {"Oslash", 216},
-  {"Ugrave", 217},
-  {"Uacute", 218},
-  {"Ucirc",  219},
-  {"Uuml",   220},
-  {"Yacute", 221},
-  {"THORN",  222},
-  {"szlig",  223},
-  {"agrave", 224},
-  {"aacute", 225},
-  {"acirc",  226},
-  {"atilde", 227},
-  {"auml",   228},
-  {"aring",  229},
-  {"aelig",  230},
-  {"ccedil", 231},
-  {"egrave", 232},
-  {"eacute", 233},
-  {"ecirc",  234},
-  {"euml",   235},
-  {"igrave", 236},
-  {"iacute", 237},
-  {"icirc",  238},
-  {"iuml",   239},
-  {"eth",    240},
-  {"ntilde", 241},
-  {"ograve", 242},
-  {"oacute", 243},
-  {"ocirc",  244},
-  {"otilde", 245},
-  {"ouml",   246},
-  {"divide", 247},
-  {"oslash", 248},
-  {"ugrave", 249},
-  {"uacute", 250},
-  {"ucirc",  251},
-  {"uuml",   252},
-  {"yacute", 253},
-  {"thorn",  254},
-  {"yuml",   255},
-  {"OElig",  338},
-  {"oelig",  339},
-  {"Scaron", 352},
-  {"scaron", 353},
-  {"Yuml",   376},
-  {"circ",   710},
-  {"tilde",  732},
-  {"ensp",   8194},
-  {"emsp",   8195},
-  {"thinsp", 8201},
-  {"zwnj",   8204},
-  {"zwj",    8205},
-  {"lrm",    8206},
-  {"rlm",    8207},
-  {"ndash",  8211},
-  {"mdash",  8212},
-  {"lsquo",  8216},
-  {"rsquo",  8217},
-  {"sbquo",  8218},
-  {"ldquo",  8220},
-  {"rdquo",  8221},
-  {"bdquo",  8222},
-  {"dagger", 8224},
-  {"Dagger", 8225},
-  {"permil", 8240},
-  {"lsaquo", 8249},
-  {"rsaquo", 8250},
-  {"euro",   8364},
-  {NULL, 0}
-};
-
-
-/* Unescape an HTML-escaped-style string (e.g., convert "&ntilde;" and such) */
-
-unsigned char * unescape(char * str)
-{
-  int i, j, len, esclen, inside_escape;
-
-#ifndef WIN32
-  char outstr[strlen(str + 1)], escapestr[strlen(str + 1)];
-#else
-  char *outstr = alloca( strlen(str + 1) );
-  char *escapestr = alloca( strlen(str + 1) );
-#endif
-
-  inside_escape = 0;
-  len = 0;
-  esclen = 0;
- 
-
-  /* For each character in the input string: */
-
-  for (i = 0; i < strlen(str); i++)
-    {
-      if (str[i] == '&')
-	{
-	  /* Starting an escape character! */
-
-	  inside_escape = 1;
-	  esclen = 0;
-	}
-      else
-	{
-	  if (inside_escape == 0)
-	    {
-	      /* Not within an escaped character... simply append this literally: */
-	
-	      outstr[len++] = str[i];
-	    }
-	  else
-	    {
-	      /* Within an escaped character! */
-	
-	      if (str[i] == ';')
-		{
-		  /* We're ending it! */
-
-		  inside_escape = 0;
-
-		  escapestr[esclen] = '\0';
-
-	  
-		  /* What string was it!? */
-
-		  for (j = 0; escape_strings[j].str != NULL; j++)
-		    {
-		      if (strcmp(escape_strings[j].str, escapestr) == 0)
-			{
-			  if (escape_strings[j].chr <= 255)
-			    {
-			      outstr[len++] = escape_strings[j].chr;
-			    }
-			  else
-			    {
-			      /* Needs to be represented by two bytes: */
-
-			      /* FIXME: How should this be handled!? */
-
-			      outstr[len++] =
-				((((escape_strings[j].chr & 0xFF00) >> 8) & 0x1F) | 0xC0);
-			      outstr[len++] = ((escape_strings[j].chr & 0x00FF) >> 0);
-			    }
-			}
-		    }
-		}
-	      else
-		{
-		  /* Collect the escaped character: */
-
-		  escapestr[esclen++] = str[i];
-		}
-	    }
-	}
-    }
-
-  outstr[len] = '\0';
-
-
-  return(strdup(outstr));
 }
 
 
