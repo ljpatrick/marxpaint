@@ -15,7 +15,7 @@
 #define VER_DATE        "2003.09.28"
 
 
-/* #define DEBUG */
+#define DEBUG
 /* #define LOW_QUALITY_THUMBNAILS */
 /* #define LOW_QUALITY_COLOR_SELECTOR */
 /* #define LOW_QUALITY_STAMP_OUTLINE */
@@ -617,6 +617,7 @@ void draw_image_title(int t, int x);
 int need_unicode(int l);
 int need_utf8(int l);
 int need_own_font(int l);
+int want_own_font(int l);
 int need_right_to_left(int l);
 void handle_keymouse(SDLKey key, Uint8 updown);
 void move_keymouse(void);
@@ -4415,6 +4416,11 @@ void setup(int argc, char * argv[])
   {
     putenv("OUTPUT_CHARSET=lt_LT.UTF-8");
     convert_open("ISO8859-13");
+  }
+  else if (language == LANG_TA)
+  {
+    putenv("OUTPUT_CHARSET=ta_IN.UTF-8");
+    convert_open("ISO8859-1");
   }
 
 
