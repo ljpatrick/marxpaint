@@ -12047,9 +12047,201 @@ static int current_language(void)
 }
 
 
+
+////////////////////////////////////////////////////////////
+// stamp outline
+
 /* XOR-based outline of rubber stamp shapes
    (unused if LOW_QUALITY_STAMP_OUTLINE is #defined) */
 
+#if 1
+#define STIPLE_W 5
+#define STIPLE_H 5
+static char stiple[] =
+"84210"
+"10842"
+"42108"
+"08421"
+"21084"
+;
+#endif
+
+#if 0
+#define STIPLE_W 4
+#define STIPLE_H 4
+static char stiple[] =
+"8000"
+"0800"
+"0008"
+"0080"
+;
+#endif
+
+#if 0
+#define STIPLE_W 12
+#define STIPLE_H 12
+static char stiple[] =
+"808808000000"
+"800000080880"
+"008088080000"
+"808000000808"
+"000080880800"
+"088080000008"
+"000000808808"
+"080880800000"
+"080000008088"
+"000808808000"
+"880800000080"
+"000008088080"
+;
+#endif
+
+static unsigned char *stamp_outline_data;
+static int stamp_outline_w, stamp_outline_h;
+
+static void update_stamp_xor(void)
+{
+  int xx, yy, rx, ry;
+  Uint8 dummy;
+  SDL_Surface * src;
+
+  /* Use pre-mirrored stamp image, if applicable: */
+
+  if (state_stamps[cur_stamp]->mirrored &&
+      img_stamps_premirror[cur_stamp] != NULL)
+    {
+      src = img_stamps_premirror[cur_stamp];
+    }
+  else
+    {
+      src = img_stamps[cur_stamp];
+    }
+
+  // start by scaling
+  src = thumbnail(src, CUR_STAMP_W, CUR_STAMP_H, 0);
+
+  unsigned char *alphabits = calloc(src->w+4, src->h+4);
+
+  SDL_LockSurface(src);
+  for (yy = 0; yy < src->h; yy++)
+    {
+#if 1
+      /* Compensate for flip! */
+      if (state_stamps[cur_stamp]->flipped)
+	ry = src->h - 1 - yy;
+      else
+	ry = yy;
+#else
+	ry = yy;
+#endif
+      for (xx = 0; xx < src->w; xx++)
+	{
+#if 1
+	  /* Compensate for mirror! */
+	  if (state_stamps[cur_stamp]->mirrored &&
+	      img_stamps_premirror[cur_stamp] == NULL)
+	    {
+	      rx = src->w - 1 - xx;
+	    }
+	  else
+	    {
+	      rx = xx;
+	    }
+#else
+	      rx = xx;
+#endif
+
+	  SDL_GetRGBA(getpixel(src, rx, ry),
+		      src->format, &dummy, &dummy, &dummy, alphabits + xx+2 + (yy+2)*(src->w+4));
+	}
+    }
+  SDL_UnlockSurface(src);
+
+  int new_w = src->w+4;
+  int new_h = src->h+4;
+  SDL_FreeSurface(src);
+  unsigned char *outline   = calloc(new_w, new_h);
+
+  for (yy = 1; yy < new_h-1; yy++)
+    {
+      for (xx = 1; xx < new_w-1; xx++)
+	{
+          unsigned char above = 0;
+          unsigned char below = 0xff;
+          unsigned char tmp;
+
+	  tmp = alphabits[(xx-1) + (yy-1)*new_w];
+	  above |= tmp;
+	  below &= tmp;
+	  tmp = alphabits[(xx+1) + (yy-1)*new_w];
+	  above |= tmp;
+	  below &= tmp;
+
+	  tmp = alphabits[(xx+0) + (yy-1)*new_w];
+	  above |= tmp;
+	  below &= tmp;
+	  tmp = alphabits[(xx+0) + (yy+0)*new_w];
+	  above |= tmp;
+	  below &= tmp;
+	  tmp = alphabits[(xx+1) + (yy+0)*new_w];
+	  above |= tmp;
+	  below &= tmp;
+	  tmp = alphabits[(xx-1) + (yy+0)*new_w];
+	  above |= tmp;
+	  below &= tmp;
+	  tmp = alphabits[(xx+0) + (yy+1)*new_w];
+	  above |= tmp;
+	  below &= tmp;
+
+	  tmp = alphabits[(xx-1) + (yy+1)*new_w];
+	  above |= tmp;
+	  below &= tmp;
+	  tmp = alphabits[(xx+1) + (yy+1)*new_w];
+	  above |= tmp;
+	  below &= tmp;
+
+	  outline[xx + yy*new_w] = (above^below)>>7;
+	}
+    }
+
+    char *old_outline_data = stamp_outline_data;
+    SDL_LockSurface(screen); // abuse this lock until I determine the correct need
+    stamp_outline_data = outline;
+    stamp_outline_w = new_w;
+    stamp_outline_h = new_h;
+    SDL_UnlockSurface(screen);
+    if (old_outline_data)
+      free(old_outline_data);
+    free(alphabits);
+}
+
+static void stamp_xor(int x, int y)
+{
+  int xx, yy, sx, sy;
+
+  update_stamp_xor(); // move elsewhere later
+
+  SDL_LockSurface(screen);
+  for (yy = 0; yy < stamp_outline_h; yy++)
+    {
+      for (xx = 0; xx < stamp_outline_w; xx++)
+	{
+          if(!stamp_outline_data[xx + yy*stamp_outline_w])
+            continue;
+          sx = 96 + x + xx - stamp_outline_w/2;
+          sy =      y + yy - stamp_outline_h/2;
+          if (stiple[sx%STIPLE_W + sy%STIPLE_H * STIPLE_W] != '8')
+            continue;
+          clipped_putpixel(screen, sx, sy, 0xFFFFFFFF - getpixel(screen, sx, sy));
+	}
+    }
+  SDL_UnlockSurface(screen);
+}
+
+
+
+
+#if 0
 static void stamp_xor(int x, int y)
 {
   int xx, yy, rx, ry, sx, sy;
@@ -12125,7 +12317,9 @@ static void stamp_xor(int x, int y)
   SDL_UnlockSurface(screen);
   SDL_UnlockSurface(surf_ptr);
 }
+#endif
 
+///////////////////////////////////////////////////
 
 /* Returns whether a particular stamp can be colored: */
 
