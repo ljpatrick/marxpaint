@@ -1075,12 +1075,15 @@ void mainloop(void)
 				PROMPT_NEW_YES,
 				PROMPT_NEW_NO))
 		    {
+		      free_surface(&img_starter);
+		      free_surface(&img_starter_bkgd);
+		      
 		      SDL_FillRect(canvas, NULL,
 				   SDL_MapRGB(canvas->format, 255, 255, 255));
 		      update_canvas(0, 0,
 				    WINDOW_WIDTH - 96,
 				    (48 * 7) + 40 + HEIGHTOFFSET);
-		      
+
 		      cur_undo = 0;
 		      oldest_undo = 0;
 		      newest_undo = 0;
@@ -1389,6 +1392,9 @@ void mainloop(void)
 					PROMPT_NEW_YES,
 					PROMPT_NEW_NO))
 			    {
+		      	      free_surface(&img_starter);
+			      free_surface(&img_starter_bkgd);
+		      
 			      SDL_FillRect(canvas, NULL,
 					   SDL_MapRGB(canvas->format,
 						      255, 255, 255));
@@ -3673,6 +3679,18 @@ void rec_undo_buffer(void)
 void update_canvas(int x1, int y1, int x2, int y2)
 {
   SDL_Rect dest;
+
+  if (img_starter != NULL)
+  {
+    /* If there was a starter, cover this part of the drawing with
+       the corresponding part of the starter's foreground! */
+
+    dest.x = x1;
+    dest.y = y1;
+    dest.w = x2 - x1 + 1;
+    dest.h = y2 - y1 + 1;
+    SDL_BlitSurface(img_starter, &dest, canvas, &dest);
+  }
 
   dest.x = 96;
   dest.y = 0;
@@ -7263,8 +7281,15 @@ void do_eraser(int x, int y)
   dest.w = 96;
   dest.h = 96;
 
-  SDL_FillRect(canvas, &dest,
-	       SDL_MapRGB(canvas->format, 255, 255, 255));
+  if (img_starter_bkgd == NULL)
+  {
+    SDL_FillRect(canvas, &dest,
+	         SDL_MapRGB(canvas->format, 255, 255, 255));
+  }
+  else
+  {
+    SDL_BlitSurface(img_starter_bkgd, &dest, canvas, &dest);
+  }
 
 
 #ifndef NOSOUND
@@ -10444,6 +10469,9 @@ int do_open(int want_new_tool)
 		}
 	      else
 		{
+		  free_surface(&img_starter);
+		  free_surface(&img_starter_bkgd);
+		   
 		  SDL_FillRect(canvas, NULL,
 			       SDL_MapRGB(canvas->format, 255, 255, 255));
 
@@ -10456,6 +10484,7 @@ int do_open(int want_new_tool)
 		  SDL_BlitSurface(img, NULL, canvas, &dest);
 		  SDL_FreeSurface(img);
 	      
+
 		  cur_undo = 0;
 		  oldest_undo = 0;
 		  newest_undo = 0;
@@ -10487,8 +10516,12 @@ int do_open(int want_new_tool)
       		    file_id[0] = '\0';
 		    strcpy(starter_id, d_names[which]);
 		    load_starter(starter_id);
-		  }
 
+		    SDL_BlitSurface(img_starter_bkgd, NULL, canvas, NULL);
+		    SDL_BlitSurface(img_starter, NULL, canvas, NULL);
+		  }
+		  
+		  
 		  reset_avail_tools();
 		  tool_avail[TOOL_NEW] = 1;
 	      
@@ -12458,7 +12491,6 @@ void load_starter(char * img_id)
   /* Load the core image: */
   
   snprintf(fname, sizeof(fname), "%s/%s.png", dirname, img_id);
-
   img_starter = IMG_Load(fname);
 
 
