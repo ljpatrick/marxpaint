@@ -281,8 +281,8 @@ enum {
   LANG_KO,     /* Korean */
   LANG_LT,     /* Lithuanian */
   LANG_MS,     /* Malay */
-  LANG_NL,     /* Dutch */
   LANG_NB,     /* Norwegian Bokmal */
+  LANG_NL,     /* Dutch */
   LANG_NN,     /* Norwegian Nynorsk */
   LANG_PL,     /* Polish */
   LANG_PT_BR,  /* Portuguese (Brazilian) */
@@ -319,6 +319,7 @@ const char * lang_prefixes[NUM_LANGS] = {
   "ko",
   "lt",
   "ms",
+  "nb",
   "nl",
   "nn",
   "pl",
