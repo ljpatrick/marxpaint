@@ -27,6 +27,9 @@ http://www.newbreedsoftware.com/tuxpaint/
     Urska Colner <ursacol02@users.sourceforge.net>,
     Ines Kovacevic <ines@agenda.si>
 
+  * Italian language file (it.po) update.
+    Flavio Pastor <flavio.pastore@zonaitalia.it>
+
   * Italian documentation translation.
     Flavio Pastor <flavio.pastore@zonaitalia.it>
 
