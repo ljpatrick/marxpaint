@@ -7,6 +7,13 @@ bill@newbreedsoftware.com
 http://www.newbreedsoftware.com/tuxpaint/
 
 
+2004.September.28 (0.9.14)
+  * New Features:
+    -------------
+    * Added startup display mode and resolution options to the Windows 
+      installer.
+      John Popplewell <john@johnnypops.demon.co.uk>
+
 2004.September.24 (0.9.14)
   * New Features:
     -------------
