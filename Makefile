@@ -719,7 +719,7 @@ trans/sv.mo:	src/messages/sv.po
 	@msgfmt src/messages/sv.po -o trans/sv.mo
 
 trans/ta.mo:	src/messages/ta.po
-	@echo "   ta_TR ...Tamil..."
+	@echo "   ta_IN ...Tamil..."
 	@msgfmt src/messages/ta.po -o trans/ta.mo
 
 trans/tr.mo:	src/messages/tr.po
