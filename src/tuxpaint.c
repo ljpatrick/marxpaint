@@ -261,6 +261,7 @@ void win32_perror(const char *str)
 /* Possible languages: */
 
 enum {
+  LANG_BS,     /* Basque */
   LANG_CA,     /* Catalan */
   LANG_CS,     /* Czech */
   LANG_DA,     /* Danish */
