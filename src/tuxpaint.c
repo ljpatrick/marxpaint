@@ -3391,7 +3391,7 @@ void show_usage(FILE * f, char * prg)
     "  polish       polski\n"
     "  portuguese   portugues\n"
     "  romanian\n"
-    "  russian\n"
+    "  russian      russkiy\n"
     "  slovak\n"
     "  spanish      espanol\n"
     "  swedish      svenska\n"
@@ -3997,10 +3997,11 @@ void setup(int argc, char * argv[])
 	putenv("LANG=ro_RO");
 	putenv("LC_ALL=ro_RO");
       }
-    else if (strcmp(langstr, "russian") == 0)
+    else if (strcmp(langstr, "russian") == 0 ||
+             strcmp(langstr, "russkiy") == 0)
       {
-	putenv("LANG=ru_RU");
-	putenv("LC_ALL=ru_RU");
+	putenv("LANG=ru_RU.UTF-8");
+	putenv("LC_ALL=ru_RU.UTF-8");
       }
     else if (strcmp(langstr, "slovak") == 0)
       {
@@ -7531,7 +7532,7 @@ int do_prompt(char * text, char * btn_yes, char * btn_no)
   /* Draw the question: */
 
   wordwrap_text(font, text, black,
-		166 + PROMPTOFFSETX, 100 + PROMPTOFFSETY, 475, 0, 0, 1);
+		166 + PROMPTOFFSETX, 100 + PROMPTOFFSETY, 475 + PROMPTOFFSETX, 0, 0, 1);
 
 
   /* Draw yes button: */
@@ -7541,7 +7542,7 @@ int do_prompt(char * text, char * btn_yes, char * btn_no)
   SDL_BlitSurface(img_yes, NULL, screen, &dest);
 
   wordwrap_text(font, btn_yes, black, 166 + PROMPTOFFSETX + 48 + 4,
-		183 + PROMPTOFFSETY, 475, 0, 0, 1);
+		183 + PROMPTOFFSETY, 475 + PROMPTOFFSETX, 0, 0, 1);
 
 
   /* Draw no button: */

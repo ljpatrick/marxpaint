@@ -66,6 +66,9 @@ http://www.newbreedsoftware.com/tuxpaint/
   * (About to be) translated to Russian
     Dmitriy Ivanov <ace22b@myrealbox.com>
 
+  * Fixed prompt bug for larger window sizes
+    TOYAMA Shin-ichi <kyone@tky2.3web.ne.jp>
+
 
 2003.Jun.17 (0.9.11)
   * Windows bugfixes.
