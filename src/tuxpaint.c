@@ -497,12 +497,12 @@ static int lang_use_right_to_left[] = {
 
 
 typedef struct info_type {
+  double ratio;
   int colorable;
   int tintable;
   int mirrorable;
   int flipable;
   int tintgray;
-//  int min, def, max; // TODO: size range
 } info_type;
 
 
@@ -4105,6 +4105,30 @@ static const char *getfilename(const char* path)
 }
 
 
+// The original Tux Paint canvas was 608x472. The canvas can be
+// other sizes now, but many old stamps are sized for the small
+// canvas. So, with larger canvases, we must choose a good scale
+// factor to compensate. As the canvas size grows, the user will
+// want a balance of "more stamps on the screen" and "stamps not
+// getting tiny". This will calculate the needed scale factor.
+static unsigned compute_default_scale_factor(double ratio)
+{
+  double old_diag = sqrt(608*608+472*472);
+  double new_diag = sqrt(canvas->w*canvas->w+canvas->h*canvas->h);
+  double good_def = ratio*sqrt(new_diag/old_diag);
+  double good_log = log(good_def);
+  unsigned defsize = HARD_MAX_STAMP_SIZE;
+  while(defsize>0)
+    {
+      double this_err = good_log - log(scaletable[defsize].numer / (double)scaletable[defsize].denom);
+      double next_err = good_log - log(scaletable[defsize-1].numer / (double)scaletable[defsize-1].denom);
+      if( fabs(next_err) > fabs(this_err) ) break;
+      defsize--;
+    }
+  return defsize;
+}
+
+
 /* Setup: */
 
 static void setup(int argc, char * argv[])
@@ -5526,27 +5550,7 @@ static void setup(int argc, char * argv[])
       free(homedirdir);
 
 
-      // The original Tux Paint canvas was 608x472. The canvas can be
-      // other sizes now, but many old stamps are sized for the small
-      // canvas. So, with larger canvases, we must choose a good scale
-      // factor to compensate. As the canvas size grows, the user will
-      // want a balance of "more stamps on the screen" and "stamps not
-      // getting tiny". This will calculate the needed scale factor.
-      unsigned default_stamp_size;
-      {
-	double old_diag = sqrt(608*608+472*472);
-	double new_diag = sqrt(canvas->w*canvas->w+canvas->h*canvas->h);
-	double good_def = sqrt(new_diag/old_diag);
-	double good_log = log(good_def);
-	unsigned defsize = HARD_MAX_STAMP_SIZE;
-	while(defsize>0){
-	  double this_err = good_log - log(scaletable[defsize].numer / (double)scaletable[defsize].denom);
-	  double next_err = good_log - log(scaletable[defsize-1].numer / (double)scaletable[defsize-1].denom);
-	  if( fabs(next_err) > fabs(this_err) ) break;
-	  defsize--;
-	}
-	default_stamp_size = defsize;
-      }
+      unsigned default_stamp_size = compute_default_scale_factor(1.0);
 
       /* Create stamp thumbnails: */
 
@@ -5595,14 +5599,9 @@ static void setup(int argc, char * argv[])
 	      inf_stamps[i]->mirrorable = 1;
 	      inf_stamps[i]->tintgray = 1;
 	      inf_stamps[i]->flipable = 1;
-//	      inf_stamps[i]->min = 0;
-//	      inf_stamps[i]->def = 0;
-//	      inf_stamps[i]->max = 0;
+	      inf_stamps[i]->ratio = 1.0;
 	    }
 
-//
-// TODO: convert inf_stamps[i]->min and such to usable data
-//
 	  {
 	    unsigned int upper = HARD_MAX_STAMP_SIZE;
 	    unsigned int lower = 0;
@@ -5643,6 +5642,8 @@ static void setup(int argc, char * argv[])
 	    }
 
 	    unsigned mid = default_stamp_size;
+	    if(inf_stamps[i]->ratio != 1.0)
+	       mid = compute_default_scale_factor(inf_stamps[i]->ratio);
 
 	    if(mid > upper)
 	      mid = upper;
@@ -8478,16 +8479,12 @@ static info_type * loadinfo(const char * const fname)
 
   /* Clear info struct first: */
 
+  inf.ratio = 1.0;
   inf.colorable = 0;
   inf.tintable = 0;
   inf.mirrorable = 1;
   inf.tintgray = 1;
   inf.flipable = 1;
-
-//  inf.min = 0; // dummy values
-//  inf.def = 0;
-//  inf.max = 0;
-
 
   /* Load info! */
 
@@ -8527,6 +8524,43 @@ static info_type * loadinfo(const char * const fname)
 		inf.colorable = 1;
 	      else if (strcmp(buf, "tintable") == 0)
 		inf.tintable = 1;
+	      else if (!memcmp(buf, "scale", 5) && (isspace(buf[5]) || buf[5]=='='))
+		{
+		  double tmp, tmp2;
+		  char *cp = buf+6;
+		  while (isspace(*cp) || *cp=='=')
+		    cp++;
+		  if (strchr(cp,'%'))
+		    {
+		      tmp = strtod(cp,NULL) / 100.0;
+		      if (tmp > 0.0001 && tmp < 10000.0)
+		        inf.ratio = tmp;
+		    }
+		  else if (strchr(cp,':'))
+		    {
+		      tmp = strtod(cp,&cp);
+		      while(*cp && !isdigit(*cp))
+		        cp++;
+		      tmp2 = strtod(cp,NULL);
+		      if (tmp>0.0001 && tmp<10000.0 && tmp2>0.0001 && tmp2<10000.0 && tmp/tmp2>0.0001 && tmp/tmp2<10000.0)
+		        inf.ratio = tmp/tmp2;
+		    }
+		  else if (strchr(cp,'/'))
+		    {
+		      tmp = strtod(cp,&cp);
+		      while(*cp && !isdigit(*cp))
+		        cp++;
+		      tmp2 = strtod(cp,NULL);
+		      if (tmp>0.0001 && tmp<10000.0 && tmp2>0.0001 && tmp2<10000.0 && tmp2/tmp>0.0001 && tmp2/tmp<10000.0)
+		        inf.ratio = tmp2/tmp;
+		    }
+		  else
+		    {
+		      tmp = strtod(cp,NULL);
+		      if (tmp > 0.0001 && tmp < 10000.0)
+		        inf.ratio = 1.0 / tmp;
+		    }
+		}
 	      else if (strcmp(buf, "nomirror") == 0)
 		inf.mirrorable = 0;
 	      else if (strcmp(buf, "notintgray") == 0)
