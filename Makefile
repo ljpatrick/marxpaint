@@ -251,7 +251,7 @@ uninstall:
 	-rm $(LOCALE_PREFIX)cy/LC_MESSAGES/tuxpaint.mo
 	-rm $(LOCALE_PREFIX)da/LC_MESSAGES/tuxpaint.mo
 	-rm $(LOCALE_PREFIX)de/LC_MESSAGES/tuxpaint.mo
-	-rm $(LOCALE_PREFIX)ee/LC_MESSAGES/tuxpaint.mo
+	-rm $(LOCALE_PREFIX)et/LC_MESSAGES/tuxpaint.mo
 	-rm $(LOCALE_PREFIX)el/LC_MESSAGES/tuxpaint.mo
 	-rm $(LOCALE_PREFIX)en_GB/LC_MESSAGES/tuxpaint.mo
 	-rm $(LOCALE_PREFIX)es/LC_MESSAGES/tuxpaint.mo
@@ -524,10 +524,10 @@ install-gettext:
 	@cp trans/nl.mo $(LOCALE_PREFIX)nl/LC_MESSAGES/tuxpaint.mo
 	@chmod 644 $(LOCALE_PREFIX)nl/LC_MESSAGES/tuxpaint.mo
 	@#
-	@echo "   ee_EE ...Estonian..."
-	@install -d $(LOCALE_PREFIX)ee/LC_MESSAGES
-	@cp trans/ee.mo $(LOCALE_PREFIX)ee/LC_MESSAGES/tuxpaint.mo
-	@chmod 644 $(LOCALE_PREFIX)ee/LC_MESSAGES/tuxpaint.mo
+	@echo "   et_EE ...Estonian..."
+	@install -d $(LOCALE_PREFIX)et/LC_MESSAGES
+	@cp trans/et.mo $(LOCALE_PREFIX)et/LC_MESSAGES/tuxpaint.mo
+	@chmod 644 $(LOCALE_PREFIX)et/LC_MESSAGES/tuxpaint.mo
 	@#
 	@echo "   fi_FI ...Finnish..."
 	@install -d $(LOCALE_PREFIX)fi/LC_MESSAGES
@@ -792,7 +792,7 @@ translations: trans \
 	trans/cy.mo \
 	trans/da.mo \
 	trans/de.mo \
-	trans/ee.mo \
+	trans/et.mo \
 	trans/el.mo \
 	trans/en_gb.mo \
 	trans/es.mo \
@@ -875,9 +875,9 @@ trans/de.mo:	src/po/de.po
 	@echo "   de_DE ...German..."
 	@msgfmt src/po/de.po -o trans/de.mo
 
-trans/ee.mo:	src/po/ee.po
-	@echo "   ee_ET ...Estonian..."
-	@msgfmt src/po/ee.po -o trans/ee.mo
+trans/et.mo:	src/po/et.po
+	@echo "   et_EE ...Estonian..."
+	@msgfmt src/po/et.po -o trans/et.mo
 
 trans/el.mo:	src/po/el.po
 	@echo "   el_GR ...Greek..."

@@ -860,7 +860,7 @@ static void show_locale_usage(FILE * f, const char * const prg)
 	  "  ga_IE   (Gaelic       Gaidhlig)\n"
 	  "  gl_ES   (Galician     Galego)\n"
 	  "  de_DE   (German       Deutsch)\n"
-	  "  ee_ET   (Estonian)\n"
+	  "  et_EE   (Estonian)\n"
 	  "  el_GR   (Greek)\n"
 	  "  he_IL   (Hebrew)\n"
 	  "  hi_IN   (Hindi)\n"
@@ -915,7 +915,7 @@ static const language_to_locale_struct language_to_locale_array[] = {
 {"dansk",                "da_DK"},
 {"german",               "de_DE"},
 {"deutsch",              "de_DE"},
-{"estonian",             "ee_ET"},
+{"estonian",             "et_EE"},
 {"greek",                "el_GR"},
 {"british-english",      "en_GB"},
 {"british",              "en_GB"},
