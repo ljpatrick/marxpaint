@@ -737,13 +737,14 @@ void mainloop(void)
     shape_ctr_x, shape_ctr_y, shape_outer_x, shape_outer_y;
   int num_things, thing_scroll, cur_thing, old_thing, do_draw, old_tool,
     tmp_int;
-  int cur_time, last_print_time, scrolling;
+  int cur_time, last_print_time, scrolling, ignoring_motion;
   SDL_TimerID scrolltimer;
   SDL_Event event;
   SDLKey key, key_down;
   Uint16 key_unicode;
   SDLMod mod;
-  Uint32 last_cursor_blink, cur_cursor_blink;
+  Uint32 last_cursor_blink, cur_cursor_blink,
+  	 pre_event_time, current_event_time;
 
 
   num_things = 0;
@@ -776,8 +777,19 @@ void mainloop(void)
 
   do
     {
+      ignoring_motion = 0;
+
+      pre_event_time = SDL_GetTicks();
+
+
       while (SDL_PollEvent(&event))
 	{
+	  current_event_time = SDL_GetTicks();
+
+	  if (current_event_time > pre_event_time + 250)
+	    ignoring_motion = 1;
+
+
 	  if (event.type == SDL_QUIT)
 	    {
 	      done = do_quit();
@@ -1703,7 +1715,7 @@ void mainloop(void)
 			       old_y + (img_stamps[cur_stamp]->h / 2));
 #else
 		      stamp_xor(old_x - (img_stamps[cur_stamp]->w / 2),
-				old_y - (img_stamps[cur_stamp]->h / 2));
+			        old_y - (img_stamps[cur_stamp]->h / 2));
 #endif
 		      playsound(1, SND_STAMP, 1);
 
@@ -2145,7 +2157,7 @@ void mainloop(void)
 	      
 	      button_down = 0;
 	    }
-	  else if (event.type == SDL_MOUSEMOTION)
+	  else if (event.type == SDL_MOUSEMOTION && !ignoring_motion)
 	    {
 	      new_x = event.button.x - 96;
 	      new_y = event.button.y;
@@ -2373,10 +2385,10 @@ void mainloop(void)
 			stamp_xor(old_x - w / 2, old_y - h / 2);
 		      else
 			rect_xor(old_x - w / 2, old_y - h / 2,
-				 old_x + w / 2, old_y + h / 2);
+				   old_x + w / 2, old_y + h / 2);
 #else
 		      rect_xor(old_x - w / 2, old_y - h / 2,
-			       old_x + w / 2, old_y + h / 2);
+			         old_x + w / 2, old_y + h / 2);
 #endif
 		      update_screen(old_x - w / 2 + 96, old_y - h / 2,
 				    old_x + w / 2 + 96, old_y + h / 2);
@@ -6004,7 +6016,7 @@ void line_xor(int x1, int y1, int x2, int y2)
 
   /* Kludgey, but it works: */
   
-  SDL_LockSurface(screen);
+  //SDL_LockSurface(screen);
 
   dx = x2 - x1;
   dy = y2 - y1;
@@ -6038,8 +6050,10 @@ void line_xor(int x1, int y1, int x2, int y2)
 	    {
 	      num_drawn++;
 	      if (num_drawn < 10 || dont_do_xor == 0)
+	      {
 	        clipped_putpixel(screen, x1 + 96, y,
 		                 0xFFFFFFFF - getpixel(screen, x1 + 96, y));
+	      }
 	    }
 	
 	  x1 = x1 + dx;
@@ -6075,7 +6089,7 @@ void line_xor(int x1, int y1, int x2, int y2)
         }
     }
 
-  SDL_UnlockSurface(screen);
+  //SDL_UnlockSurface(screen);
 }
 
 
@@ -7736,7 +7750,6 @@ void update_shape(int cx, int ox1, int ox2, int cy, int oy1, int oy2, int fix)
 }
 
 
-
 /* Draw a shape! */
 
 void do_shape(int cx, int cy, int ox, int oy, int rotn, int use_brush)
@@ -7851,7 +7864,7 @@ void do_shape(int cx, int cy, int ox, int oy, int rotn, int use_brush)
     if (!use_brush)
     {
       /* (XOR) */
-	
+
       line_xor(x1, y1, x2, y2);
     }
     else

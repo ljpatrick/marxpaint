@@ -42,6 +42,10 @@ http://www.newbreedsoftware.com/tuxpaint/
   * Simplified CFLAGS variable in Makefile.
     Ben Armstrong <synrg@sanctuary.nslug.ns.ca>
 
+  * Made main event loop ignore motion events if the loop has spun too long.
+    (Fixes problems where shape or stamp tools take forver to 'catch up' with
+    the mouse; especially noticable on slow machines over remote X display.)
+
 
 2003.Jun.17 (0.9.11)
   * Windows bugfixes.
