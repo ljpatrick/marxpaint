@@ -6644,7 +6644,7 @@ static void setup(int argc, char * argv[])
 	  fprintf(stderr,
 		  "\nWarning: I could not initialize audio!\n"
 		  "The Simple DirectMedia Layer error that occurred was:\n"
-		  "%s\n\n", SDL_GetError());
+		  "%s\n\n", olderr);
           free(olderr);
         }
       else
