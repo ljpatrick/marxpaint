@@ -173,7 +173,8 @@ June 17, 2002 - March 17, 2004
     Milan Plzik <mmp@golem.gymzv.sk>
 
   * Slovenian
-    Urska Colner <ursacol02@users.sourceforge.net>
+    Urska Colner <ursacol02@users.sourceforge.net>,
+    Ines Kovacevic <ines@agenda.si>
 
   * Spanish
     Gabriel Gazzan <ggabriel@internet.com.uy>

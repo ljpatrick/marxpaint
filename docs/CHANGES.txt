@@ -15,7 +15,8 @@ http://www.newbreedsoftware.com/tuxpaint/
     Aleksandar Jelenak <jelenak@netlinkplus.net>
 
   * Slovenian translation created.
-    Urska Colner <ursacol02@users.sourceforge.net>
+    Urska Colner <ursacol02@users.sourceforge.net>,
+    Ines Kovacevic <ines@agenda.si>
 
   * Korean language file (ko.po) update.
     Mark K. Kim <tuxNO_SOLICITATIONpaint-dev@cbreak.org>
