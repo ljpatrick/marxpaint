@@ -3351,34 +3351,48 @@ void show_version(void)
 }
 
 
+/* FIXME: Re-order the usage in a sane way! */
+
 /* Show usage display: */
 
 void show_usage(FILE * f, char * prg)
 {
+  char * blank;
+  int i;
+
+  blank = strdup(prg);
+
+  for (i = 0; i < strlen(blank); i++)
+    blank[i] = ' ';
+
   fprintf(f,
     "\n"
     "Usage: %s {--usage | --help | --version | --copying}\n"
-    "       %s [--fullscreen] [--800x600] [--nosound] [--noquit] [--noprint]\n"
-    "          [--simpleshapes] [--uppercase] [--grab] [--nowheelmouse]\n"
-    "          [--nofancycursors] [--keyboard] [--nooutlines] [--nostamps]\n"
-    "          [--savedir DIRECTORY] [--saveover] [--saveovernew]\n"
-    "       %s [--windowed] [--640x480] [--sound] [--quit] [--print]\n"
-    "          [--complexshapes] [--mixedcase] [--dontgrab] [--wheelmouse]\n"
-    "          [--fancycursors] [--mouse] [--outlines] [--stamps]\n"
-    "          [--saveoverask]\n"
+    "\n"
+    "       %s [--windowed | --fullscreen]   [--640x480 | --800x600]\n"
+    "       %s [--sound | --nosound]         [--quit | --noquit]\n"
+    "       %s [--print | --noprint]         [--complexshapes | --simpleshapes]\n"
+    "       %s [--mixedcase | --uppercase]   [--fancycursors | --nofancycursors]\n"
+    "       %s [--mouse | --keyboard]        [--dontgrab | --grab]\n"
+    "       %s [--outlines | --nooutlines]   [--stamps | --nostamps]\n"
+    "       %s [--wheelmouse | --nowheelmouse]\n"
+    "       %s [--saveoverask | --saveover | --saveovernew]\n"
+    "       %s [--savedir DIRECTORY]\n"
 #ifdef WIN32
     "       %s [--printcfg | --noprintcfg]\n"
 #endif
     "       %s [--printdelay=SECONDS]\n"
     "       %s [--lang LANGUAGE | --locale LOCALE]\n"
     "       %s [--nosysconfig]\n"
-    /* "       %s [--record FILE | --playback FILE]\n" */
+ /* "       %s [--record FILE | --playback FILE]\n" */
     "\n",
-    prg, prg, prg,
-#ifdef WIN32
-    prg,
-#endif
-    prg, prg, prg  /* , prg */ );
+    prg, prg,
+    blank, blank, blank,
+    blank, blank, blank,
+    blank, blank, blank,
+    blank, blank);
+
+  free(blank);
 }
 
 
