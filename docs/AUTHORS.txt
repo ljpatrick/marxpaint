@@ -7,7 +7,7 @@ bill@newbreedsoftware.com
 http://www.newbreedsoftware.com/tuxpaint/
 
 
-June 17, 2002 - January 9, 2005
+June 17, 2002 - January 12, 2005
 
 
 * Design and Coding:
@@ -118,7 +118,7 @@ June 17, 2002 - January 9, 2005
   * Czech
     Peter Sterba <sterba@sterba.com>
     Martin <barin@email.cz>,
-    (Coming soon) Ales <garalda@email.cz>
+    "Lucie Burianova" <Lucie.Burianova@global-dtp.com>
 
   * Danish
     Rasmus Erik Voel Jensen <i18n@solsort.dk> [retired]
