@@ -17,11 +17,10 @@
 
 enum {
   COLOR_BLACK,
-  COLOR_GREY,
-  COLOR_SILVER,
+  COLOR_DARKGREY,
+  COLOR_LIGHTGRAY,
   COLOR_WHITE,
   COLOR_RED,
-  COLOR_PINK,
   COLOR_ORANGE,
   COLOR_YELLOW,
   COLOR_NEON,
@@ -30,6 +29,7 @@ enum {
   COLOR_BLUE,
   COLOR_PURPLE,
   COLOR_MAGENTA,
+  COLOR_PINK,
   COLOR_BROWN,
   COLOR_TAN,
   COLOR_BEIGE,
@@ -41,11 +41,10 @@ enum {
 
 const int color_hexes[NUM_COLORS][3] = {
   {0, 0, 0},       /* Black */
-  {128, 128, 128}, /* Gray */
-  {192, 192, 192}, /* Silver */
+  {128, 128, 128}, /* Dark Gray */
+  {192, 192, 192}, /* Light Grey */
   {255, 255, 255}, /* White */
   {255,   0,   0}, /* Red */
-  {255, 165, 211}, /* Pink */
   {255, 128,   0}, /* Orange */
   {255, 255,   0}, /* Yellow */
   {140, 255,   0}, /* Neon */
@@ -54,6 +53,7 @@ const int color_hexes[NUM_COLORS][3] = {
   {  0,   0, 255}, /* Blue */
   {128,   0, 128}, /* Purple */
   {255,   0, 255}, /* Magenta */
+  {255, 165, 211}, /* Pink */
   {128,  96,   0}, /* Brown */
   {226, 189, 166}, /* Tan */
   {247, 228, 219}  /* Beige */
@@ -64,11 +64,10 @@ const int color_hexes[NUM_COLORS][3] = {
 
 const char * const color_names[NUM_COLORS] = {
   gettext_noop("Black!"),
-  gettext_noop("Gray!"),
-  gettext_noop("Silver!"),
+  gettext_noop("Dark Gray!"), // using both valid spellings
+  gettext_noop("Light Grey!"), // using both valid spellings
   gettext_noop("White!"),
   gettext_noop("Red!"),
-  gettext_noop("Pink!"),
   gettext_noop("Orange!"),
   gettext_noop("Yellow!"),
   gettext_noop("Neon green!"),
@@ -77,6 +76,7 @@ const char * const color_names[NUM_COLORS] = {
   gettext_noop("Blue!"),
   gettext_noop("Purple!"),
   gettext_noop("Magenta!"),
+  gettext_noop("Pink!"),
   gettext_noop("Brown!"),
   gettext_noop("Tan!"),
   gettext_noop("Beige!")
