@@ -934,7 +934,6 @@ New Breed Software</p>
 
   <hr size=1 noshade>
 
-
   <h2>圖章</h2>
   <blockquote>
     <p>所有圖章的檔案都放在 "<code><b>stamps</b></code>" 目錄裡。
@@ -962,7 +961,7 @@ New Breed Software</p>
 
     <hr size=1 noshade>
 
-    <h4>說明文字</h4>
+    <h3>說明文字</h3>
     <blockquote>
       <p>文字檔案(".TXT") 的檔名和 PNG 圖形的檔名相同。
       (例如："<code>picture.png</code>" 圖形的說明文字儲存在同一個目錄裡的
@@ -971,7 +970,7 @@ New Breed Software</p>
       <p>文字檔案中的第一行是圖章預設的說明，使用的是美式英文。
       這個檔案的編碼必須使用 UTF-8。</p>
 
-      <h5>語文支援</h5>
+      <h4>語文支援</h4>
       <blockquote>
 	<p>文字檔案中可以加上對說明的翻譯文字，當 Tux&nbsp;Paint
 	執行在其他語文版本(如法文或西班牙文)時就會顯示出來。</p>
@@ -1045,7 +1044,7 @@ New Breed Software</p>
 	  <p>在圖章的資料檔案中加入 "<code><b>colorable</b></code>" 。</p>
 	</blockquote>
 
-        <h6>著色的</h6>
+        <h5>著色的</h5>
 	<blockquote>
           <p>著色的圖章和有色的圖章很類似，但會保留原來圖形的內容。
           (技術上來說，原來的圖形的顏色會以目前選擇的顏色來取代。)</p>
@@ -1054,11 +1053,15 @@ New Breed Software</p>
           alt=""></center>
 
           <p>在圖章的資料檔案中加入 "<code><b>tintable</b></code>" 。</p>
-          <!-- translated here -->
+          
+          <p>有時候您不希望圖章白色或灰色的地方被著上顏色(參考範例是標準圖章套件中的
+          "乾式擦拭器")。您可以加入 "<code><b>notintgray</b></code>" 到圖章的 data 
+          檔中來達成。只有 25% 以上彩色的區域才會被著色。</p>
+
 	</blockquote>
       </blockquote>
 
-      <h5>不可改變的圖章</h5>
+      <h4>不可改變的圖章</h4>
       <blockquote>
         <p>圖章預設是可以上下翻轉，也可以左右鏡射的。這些功能可以使用圖章選取列下方的控制鈕來達成，
         就是在 Tux&nbsp;Paint 螢幕右下方的位置。</p>
@@ -1072,47 +1075,124 @@ New Breed Software</p>
       </blockquote>
 
 
-      <h5>Windows 的使用者</h5>
+      <h4>Windows 的使用者</h4>
       <blockquote>
 	<p>您可以使用小作家或是 WordPad 來編輯/建立這個檔案，要確定儲存成純文字格式，
         並且確定副檔名是 "<code>.dat</code>" 而不是 "<code>.txt</code>" 。</p>
       </blockquote>
     </blockquote>
 
-    <h4>預先鏡射的圖形</h4>
+    <h3>預先鏡射的圖形</h3>
     <blockquote>
-      <p>In some cases, you may wish to provide a pre-drawn version of
-      a stamp's mirror-image.  For example, imagine a picture of a fire
-      truck with the words "<i>Fire&nbsp;Department</i>" written across
-      the side.  You probably do not want that text to appear backwards
-      when the image is flipped!</p>
+      <p>有時候您會想要預先畫好鏡射後的圖形，當圖章按下「左右鏡射」時使用。
+      例如有一台救火車上寫著「消防署」的字樣，您不會希望將救火車鏡射之後，
+      整個字變反的了吧。</p>
 
-      <p>To create a mirrored version of a stamp that you want Tux&nbsp;Paint
-      to use, rather than mirroring one on its own, simply create a second
-      "<code>.png</code>" graphics file with the same name, except with
-      the string "<code><b>_mirror</b></code>" before the filename
-      extension.</p>
+      <p>要建立鏡射後所用的圖章，一樣是作一個 "<code>.png</code>" 的圖檔，
+      在檔名後面要加上 "<code><b>_mirror</b></code>" 的字樣。</p>
       
-      <p>For example, for the stamp "<code><b>truck.png</b></code>" you would
-      create another file named "<code><b>truck_mirror.png</b></code>", which
-      will be used when the stamp is mirrored (rather than using a
-      backwards version of '<code>truck.png</code>').</p>
+      <p>例如有一個圖章是 "<code><b>truck.png</b></code>" ，
+      您要建立他鏡射後所使用的圖樣的話，您就要建立一個檔名為 
+      "<code><b>truck_mirror.png</b></code>" 的圖檔，
+      將您希望 '<code>truck.png</code>' 鏡射後的圖形畫在這裡面。</p>
     </blockquote>
     
   </blockquote>
   
   <hr size=1 noshade>
 
-
-  <h3>Fonts</h3>
+  <h2>Fonts</h2>
   <blockquote>
     <img src="images/fontsizes.png" width=48 height=48 alt="" align=right>
 
-    <p>The fonts used by Tux&nbsp;Paint are TrueType&nbsp;Fonts (TTF).</p>
+    <p>Tux&nbsp;Paint 使用的字型格式是 TrueType&nbsp;Fonts (TTF)。</p>
     
-    <p>Simply place them in the "<code><b>fonts</b></code>" directory.
-    Tux&nbsp;Paint will load the font and provide four different sizes
-    in the 'Letters' selector when using the 'Text' tool.</p>
+    <p>只要將字型檔放在 "<code><b>fonts</b></code>" 目錄中，
+    Tux&nbsp;Paint 就會載入這些字型檔，每種字型會作出四種大小的選擇鈕，
+    當使用「字母」工具時，就可以在右邊的選擇列上看到了。</p>
+
+    <br clear=all>
+  </blockquote>
+
+  <hr size=1 noshade>
+
+
+  <h2>起始圖形</h2>
+  <blockquote>
+    <img src="images/open_open.png" width=48 height=48 alt="" align=right>
+
+    <p>'Starter' images appear in the 'Open' dialog, along with pictures
+    you've created.  They have a green button background, instead of blue.</p>
+    
+    <p>Unlike your saved pictures, however, when you select and open a
+    'starter,' you're actually creating a new drawing.  Instead of being
+    blank, though, the new drawing contains the contents of the 'starter.'
+    Additionally, as you edit your new picture, the contents of the
+    original 'starter' affect it.</p>
+
+    <b>Coloring-Book Style</b>
+    
+    <blockquote>
+      <p>The most basic kind of 'starter' is similar to a picture in a coloring
+      book.  It's an outline of a shape which you can then color in and
+      add details to.  In Tux&nbsp;Paint, as you draw, type text, or stamp
+      stamps, the outline remains 'above' what you draw.  You can erase the
+      parts of the drawing you made, but you can't erase the outline.</p>
+
+      <p>To create this kind of 'starter' image, simply draw an outlined
+      picture in a paint program, make the rest of the graphic transparent
+      (that will come out as white in Tux&nbsp;Paint), and save it as a
+      PNG format file.</p>
+    </blockquote>
+
+    <b>Scene-Style</b>
+
+    <blockquote>
+      <p>Along with the 'coloring-book' style overlay, you can also provide
+      a separate background image as part of a 'starter' picture.  The
+      overlay acts the same: it can't be drawn over, erased, or affected by
+      'Magic' tools.  However, the background can be!</p>
+
+      <p>When the 'Eraser' tool is used on a picture based on this kind of
+      'starter' image, rather than turning the canvas white, it returns that
+      part of the canvas to the original background picture.</p>
+
+      <p>By creating both an overlay and a background, you can create a
+      'starter' which simulates depth.  Imagine a background that shows
+      the ocean, and an overlay that's a picture of a reef.  You can then
+      draw (or stamp) fish in the picture.  They'll appear in the ocean,
+      but never 'in front of' the reef.</p>
+
+      <p>To create this kind of 'starter' picture, simply create an overlay
+      (with alpha transparency) as described above, and save it as a PNG.
+      Then create another image (without transparency), and save it with
+      the same filename, but with "<code>-back</code>" appended to the
+      name.  (e.g., "<code>reef-back.png</code>" would be the background
+      ocean picture that corresponds to the "<code>reef.png</code>"
+      overlay, or foreground.)</p>
+    </blockquote>
+    
+    <p>The 'starter' images should be the same size as Tux&nbsp;Paint's
+    canvas.  In the default 640x480 mode, that is 448x376 pixels.
+    (If you're using 800x600 mode, it should be 608x496.)</p>
+    
+    <p>Place them in the "<code><b>starters</b></code>" directory.
+    When the 'Open' dialog is accessed in Tux&nbsp;Paint, the 'starter'
+    images will appear at the beginning of the list with a green background.</p>
+    
+    <p><b>Note:</b> 'Starters' can't be saved over from within Tux&nbsp;Paint,
+    since loading a 'starter' is really like creating a new image.
+    (Instead of being blank, though there's already something there to work
+    with.)  The 'Save' command simply creates a new picture, like it would
+    if the 'New' command had been used.</p>
+
+    <p><b>Note:</b> 'Starters' are 'attached' to saved pictures, via a
+    small text file that has the same name as the saved file, but with
+    "<code>.dat</code>" as the extension.  This allows the overlay and
+    background, if any, to continue to affect the drawing even after
+    Tux&nbsp;Paint has been quit, or another picture loaded or started.
+    (In other words, if you base a drawing on a 'starter' image, it will
+    always be affected by it.)</p>
 
     <br clear=all>
   </blockquote>
@@ -1120,25 +1200,53 @@ New Breed Software</p>
 
 <hr size=2 noshade>
 
-
-<h2>More Information</h2>
+<h1>Further Reading</h1>
 <blockquote>
-  <p>For more information, see the other documentation files that come
-  with Tux&nbsp;Paint.</p>
+  Other documentation included with Tux&nbsp;Paint (in the "<code>docs</code>"
+  folder/directory) include:
 
-  <p>If you need help, feel free to contact New Breed Software:</p>
+  <ul>
+  <li><a href="../AUTHORS.txt">AUTHORS.txt</a><br>
+    List of authors and contributors
+  
+  <li><a href="../CHANGES.txt">CHANGES.txt</a><br>
+    Summary of changed between releases
+
+  <li><a href="../COPYING.txt">COPYING.txt</a><br>
+    Copying license (The GNU General Public License)
+
+  <li><a href="../INSTALL.txt">INSTALL.txt</a><br>
+    Instructions for compiling/installing, when applicable
+
+  <li><a href="OPTIONS.html">OPTIONS.html</a><br>
+    Detailed instructions on command-line and configuration-file options,
+    for those who don't want to use Tux&nbsp;Paint&nbsp;Config.
+    
+  <li><a href="../PNG.txt">PNG.txt</a><br>
+    Notes on creating PNG format images for use in Tux&nbsp;Paint
+
+  <li><a href="../TODO.txt">TODO.txt</a><br>
+    A list of pending features or bugs needing fixed
+  </ul>
+</blockquote>
+
+<hr size=2 noshade>
+
+<h1>More Information</h1>
+<blockquote>
+  <p>其他的資訊請參閱 Tux&nbsp;Paint 的其他文件。</p>
+
+  <p>如果您需要幫助話，請不用拘束的來聯繫 New Breed Software ：</p>
 
   <blockquote>
     <a href="http://www.newbreedsoftware.com/">http://www.newbreedsoftware.com/</a>
   </blockquote>
 
-  <p>You may also wish to participate in the numerous Tux&nbsp;Paint mailing
-  lists:</p>
+  <p>您或許也想加入幾個 Tux&nbsp;Paint 的郵件論譠：</p>
 
   <blockquote>
     <a href="http://www.newbreedsoftware.com/tuxpaint/lists/">http://www.newbreedsoftware.com/tuxpaint/lists/</a>
   </blockquote>
-  
 </blockquote>
 
 </body></html>
