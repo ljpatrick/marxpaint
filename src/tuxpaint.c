@@ -7,15 +7,15 @@
   bill@newbreedsoftware.com
   http://www.newbreedsoftware.com/tuxpaint/
   
-  June 14, 2002 - October 13, 2003
+  June 14, 2002 - November 14, 2003
 */
 
 
 #define VER_VERSION     "0.9.13"
-#define VER_DATE        "2003.10.13"
+#define VER_DATE        "2003.11.14"
 
 
-#define DEBUG
+/* #define DEBUG */
 /* #define LOW_QUALITY_THUMBNAILS */
 /* #define LOW_QUALITY_COLOR_SELECTOR */
 /* #define LOW_QUALITY_STAMP_OUTLINE */
@@ -2905,9 +2905,11 @@ void stamp_draw(int x, int y)
 	            &r, &g, &b, &a);
 	
 	rgbtohsv(r, g, b, &stamp_hue, &stamp_sat, &stamp_val);	
-
-	hsvtorgb(col_hue, col_sat, stamp_val, &r, &g, &b);
 	
+	if (stamp_sat > 0.25)
+	  hsvtorgb(col_hue, col_sat, stamp_val, &r, &g, &b);
+	//	else
+	//	  hsvtorgb(col_hue, col_sat, stamp_val, &r, &g, &b);
 	
 	putpixel(tmp_surf, xx, yy,
 		 SDL_MapRGBA(tmp_surf->format, r, g, b, a));
@@ -4891,17 +4893,6 @@ void setup(int argc, char * argv[])
 
   if (dont_load_stamps == 0)
   {
-#ifndef NOSOUND
-    loadarbitrary(img_stamps, img_stamps_premirror,
-		  txt_stamps, inf_stamps, snd_stamps, &num_stamps,
-	          0, MAX_STAMPS, DATA_PREFIX "stamps", 0, -1, -1);
-#else
-    loadarbitrary(img_stamps, img_stamps_premirror,
-		  txt_stamps, inf_stamps, &num_stamps,
-	          0, MAX_STAMPS, DATA_PREFIX "stamps", 0, -1, -1);
-#endif
-  
-  
     homedirdir = get_fname("stamps");
 #ifndef NOSOUND
     loadarbitrary(img_stamps, img_stamps_premirror,
@@ -4914,6 +4905,16 @@ void setup(int argc, char * argv[])
 	          MAX_STAMPS, homedirdir, 0, -1, -1);
 #endif
 
+
+#ifndef NOSOUND
+    loadarbitrary(img_stamps, img_stamps_premirror,
+		  txt_stamps, inf_stamps, snd_stamps, &num_stamps,
+	          0, MAX_STAMPS, DATA_PREFIX "stamps", 0, -1, -1);
+#else
+    loadarbitrary(img_stamps, img_stamps_premirror,
+		  txt_stamps, inf_stamps, &num_stamps,
+	          0, MAX_STAMPS, DATA_PREFIX "stamps", 0, -1, -1);
+#endif
 
 
     if (num_stamps == 0)

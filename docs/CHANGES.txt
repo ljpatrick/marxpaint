@@ -7,7 +7,7 @@ bill@newbreedsoftware.com
 http://www.newbreedsoftware.com/tuxpaint/
 
 
-2003.Sep.28 (0.9.13) [cvs]
+2003.Nov.14 (0.9.13) [cvs]
   * Translated into Tamil  [buggy]
     Mugunth <mugunth@thamizha.com>
 
@@ -67,6 +67,10 @@ http://www.newbreedsoftware.com/tuxpaint/
 
   * Updated default configuration file to include examples of some newer
     options.
+
+  * White/grey in tintable stamps don't get tinted now.
+
+  * Stamps in homedir are now loaded before system-wide stamps.
 
 
 2003.Aug.18 (0.9.12)
