@@ -2384,7 +2384,7 @@ enum {
 static void mainloop(void)
 {
   int done, which, button_down, old_x, old_y, new_x, new_y,
-    line_start_x, line_start_y, w, h, shape_tool_mode,
+    line_start_x, line_start_y, shape_tool_mode,
     shape_ctr_x, shape_ctr_y, shape_outer_x, shape_outer_y;
   int num_things;
   int *thing_scroll;
@@ -3983,6 +3983,7 @@ static void mainloop(void)
 	      if (cur_tool == TOOL_STAMP ||
 		  (cur_tool == TOOL_ERASER && !button_down))
 		{
+                  int w, h;
 		  /* Moving: Draw XOR where stamp/eraser will apply: */
 		  
 		  if (cur_tool == TOOL_STAMP)
@@ -3990,7 +3991,7 @@ static void mainloop(void)
 		      w = img_stamps[cur_stamp]->w;
 		      h = img_stamps[cur_stamp]->h;
 		    }
-		  else if (cur_tool == TOOL_ERASER)
+		  else
 		    {
 		      w = (ERASER_MIN +
 			   ((NUM_ERASERS - cur_eraser - 1) *
@@ -6948,7 +6949,7 @@ static void setup(int argc, char * argv[])
 					       img_btn_off->format->Gmask,
 					       img_btn_off->format->Bmask,
 					       img_btn_off->format->Amask);
-  SDL_FillRect(img_grey, NULL, SDL_MapRGBA(screen->format, 170, 170, 170, 255));
+  SDL_FillRect(img_grey, NULL, SDL_MapRGBA(screen->format, 0xe7, 0xe7, 0xe7, 255));
 
   show_progress_bar();
 
@@ -14366,6 +14367,7 @@ static void loadfonts(const char * const dir, int fatal)
 	  int loadable = 0;
 	  /* If it's a directory, recurse down into it: */
 	  snprintf(fname, sizeof(fname), "%s/%s", dir, d_names[i]);
+	  char *filename = strrchr(fname,'/') + 1;
 	  debug(fname);
 	  stat(fname, &sbuf);
 	  if (S_ISDIR(sbuf.st_mode))
@@ -14373,6 +14375,8 @@ static void loadfonts(const char * const dir, int fatal)
 	  else if(sbuf.st_size==0)
 	    {
 	      loadable = 1;  // could be a Mac filesystem with resource fork
+              // Hmmm, my FreeType won't do this automatically.
+              snprintf(fname, sizeof(fname), "%s/%s/rsrc", dir, d_names[i]);
 	    }
 	  else
 	    {
@@ -14399,11 +14403,15 @@ static void loadfonts(const char * const dir, int fatal)
           // file, and may load with some library versions.
 	  if (loadable)
 	    {
-//printf("Loading font: %s/%s\n", dir, d_names[i]);
+//printf("Loading font: %s\n", fname);
               TTF_Font *font = TTF_OpenFont(fname, text_sizes[text_size]);
               if(font)
                 {
-                  const char *family = TTF_FontFaceFamilyName(font);
+                  const char *restrict const family = TTF_FontFaceFamilyName(font);
+                  const char *restrict const style = TTF_FontFaceStyleName(font);
+                  int numfaces = TTF_FontFaces(font);
+                  if (numfaces != 1)
+                    printf("Found %d faces in %s, %s, %s\n", numfaces, filename, family, style);
 // do without the blacklist for now, to verify that bad fonts don't crash Tux Paint
 #if 0
                   if(!(strstr(family, "Webdings") ||
@@ -14412,7 +14420,6 @@ static void loadfonts(const char * const dir, int fatal)
                        strstr(family, "Standard Symbols")))
 #endif
                     {
-                      char *style = TTF_FontFaceStyleName(font);
                       SDL_Color black = {0, 0, 0, 0};
                       SDL_Surface *tmp_surf_a = TTF_RenderUTF8_Blended(font, "a", black);
                       SDL_Surface *tmp_surf_z = TTF_RenderUTF8_Blended(font, "z", black);
@@ -14422,20 +14429,20 @@ static void loadfonts(const char * const dir, int fatal)
                             {
                               user_font_styles[num_font_styles] = malloc(sizeof *user_font_styles[num_font_styles]);
                               user_font_styles[num_font_styles]->directory = strdup(dir);
-                              user_font_styles[num_font_styles]->filename = strdup(d_names[i]);
+                              user_font_styles[num_font_styles]->filename = strdup(filename);
                               user_font_styles[num_font_styles]->family = strdup(family);
                               user_font_styles[num_font_styles]->style = strdup(style);
                               num_font_styles++;
-                              //printf("Accepted: %s, %s, %s\n", d_names[i], family, style);
+                              //printf("Accepted: %s, %s, %s\n", filename, family, style);
                             }
                           else
                             {
-                              printf("Bad font, 'a' and 'z' match: %s, %s, %s\n", d_names[i], family, style);
+                              printf("Bad font, 'a' and 'z' match: %s, %s, %s\n", filename, family, style);
                             }
                         }
                       else
                         {
-                          printf("could not render %s, %s, %s\n", d_names[i], family, style);
+                          printf("could not render %s, %s, %s\n", filename, family, style);
                         }
                       if(tmp_surf_a)
                         SDL_FreeSurface(tmp_surf_a);
@@ -14446,7 +14453,7 @@ static void loadfonts(const char * const dir, int fatal)
                 }
               else
                 {
-                  printf("could not open %s\n", d_names[i]);
+                  printf("could not open %s\n", filename);
                 }
 	      show_progress_bar();
 	    }
