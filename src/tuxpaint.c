@@ -21,12 +21,12 @@
   along with this program; if not, write to the Free Software
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   
-  June 14, 2002 - December 26, 2004
+  June 14, 2002 - December 12, 2004
 */
 
 
 #define VER_VERSION     "0.9.15"
-#define VER_DATE        "2004-12-26"
+#define VER_DATE        "2004-12-12"
 
 
 //#define VIDEO_BPP 15 // saves memory
@@ -135,6 +135,7 @@ static scaleparams scaletable[] = {
 #endif
 
 #include <locale.h>
+#include <iconv.h>
 
 #ifndef OLD_UPPERCASE_CODE
 #include <wctype.h>
@@ -150,6 +151,10 @@ static scaleparams scaletable[] = {
 #define HAVE_DCGETTEXT    1
 #endif
 
+#if    defined(sun) && defined(__svr4__)
+/* Solaris needs locale.h */
+#endif
+
 #include <libintl.h>
 #ifndef gettext_noop
 #define gettext_noop(String) String
@@ -162,7 +167,7 @@ static scaleparams scaletable[] = {
 
 
 #ifndef M_PI
-#define M_PI 3.14159265358979323846
+#define M_PI 3.14159265
 #endif
 
 #include <sys/types.h>
@@ -264,6 +269,8 @@ extern char* g_win32_getlocale(void);
 #error "(e.g., 'libsdl-mixer1.2-devel.rpm')"
 #error "---------------------------------------------------"
 #endif
+typedef Mix_Chunk void;
+#define Mix_PlayChannel(a,b,c)
 #endif
 
 #ifndef SAVE_AS_BMP
@@ -454,63 +461,6 @@ static TTF_Font *BUGFIX_TTF_OpenFont206(const char * const file, int ptsize)
 )
 #endif
 
-typedef struct info_type {
-  double ratio;
-  unsigned tinter;
-  int colorable;
-  int tintable;
-  int mirrorable;
-  int flipable;
-} info_type;
-
-
-typedef struct state_type {
-  int mirrored;
-  int flipped;
-  unsigned min,size,max;
-} state_type;
-
-
-enum {
-  SAVE_OVER_PROMPT,
-  SAVE_OVER_ALWAYS,
-  SAVE_OVER_NO
-};
-
-
-enum {
-  STARTER_OUTLINE,
-  STARTER_SCENE
-};
-
-
-/* Show debugging stuff: */
-
-static void debug(const char * const str)
-{
-#ifndef DEBUG
-  (void)str;
-#else
-  fprintf(stderr, "DEBUG: %s\n", str);
-  fflush(stderr);
-#endif
-}
-
-static const char *getfilename(const char* path)
-{
-  char    *p;
-
-  if ( (p = strrchr( path, '\\' )) != NULL )
-    return p+1;
-  if ( (p = strrchr( path, '/' )) != NULL )
-    return p+1;
-  return path;
-}
-
-
-///////////////////////////////////////////////////////////////////
-// Language stuff
-
 /* Possible languages: */
 
 enum {
@@ -556,7 +506,6 @@ enum {
   LANG_SQ,     /* Albanian */
   LANG_SR,     /* Serbian */
   LANG_SV,     /* Swedish */
-  LANG_SW,     /* Swahili */
   LANG_TA,     /* Tamil */
   LANG_TR,     /* Turkish */
   LANG_VI,     /* Vietnamese */
@@ -609,22 +558,23 @@ static const char * lang_prefixes[NUM_LANGS] = {
   "sq",
   "sr",
   "sv",
-  "sw",
   "ta",
   "tr",
   "vi",
   "wa",
   "zh_cn",
-  "zh_tw",
+  "zh_tw"
 };
 
 
-// languages which don't use the default font
+/* List of languages which doesn't use the default font: */
+
+
 static int lang_use_own_font[] = {
-//  LANG_EL,
-//  LANG_HE,
+  LANG_EL,
+  LANG_HE,
   LANG_HI,
-//  LANG_JA,
+  LANG_JA,
   LANG_KO,
   LANG_TA,
   LANG_ZH_CN,
@@ -638,467 +588,39 @@ static int lang_use_right_to_left[] = {
 };
 
 
-static int search_int_array(int l, int *array)
-{
-  int i;
-
-  for (i = 0; array[i] != -1; i++)
-    {
-      if (array[i] == l)
-        return 1;
-    }
-
-  return 0;
-}
-
-static char * langstr;
-
-static void set_langstr(const char *s)
-{
-  if (langstr)
-    free(langstr);
-  langstr = strdup(s);
-}
-
-static int need_own_font;
-static int need_right_to_left;
-static const char * lang_prefix;
-
-/* Determine the current language/locale, and set the language string: */
-
-static void set_current_language(void)
-{
-  char * loc;
-#ifdef WIN32
-  char str[128];
-#endif
-  int lang, i, found;
-
-  bindtextdomain("tuxpaint", LOCALEDIR);
-  /* Old version of glibc does not have bind_textdomain_codeset() */
-#if defined __GLIBC__ && __GLIBC__ == 2 && __GLIBC_MINOR__ >=2 || __GLIBC__ > 2
-  bind_textdomain_codeset("tuxpaint", "UTF-8");
-#endif
-  textdomain("tuxpaint");
-
-  /* Default... */
-
-  lang = LANG_EN;
+typedef struct info_type {
+  double ratio;
+  unsigned tinter;
+  int colorable;
+  int tintable;
+  int mirrorable;
+  int flipable;
+} info_type;
 
 
-#ifndef WIN32
-  loc = setlocale(LC_MESSAGES, NULL);
-  if (loc != NULL)
-    {
-      if (strstr(loc, "LC_MESSAGES") != NULL)
-	loc = getenv("LANG");
-    }
-#else
-  loc = getenv("LANGUAGE");
-  if (!loc)
-    {
-      loc = g_win32_getlocale();
-      if (loc)
-	{
-	  snprintf(str, sizeof(str), "LANGUAGE=%s", loc);
-	  putenv(strdup(str));
-	}
-    }
-#endif
-
-  debug(loc);
-
-  if (loc != NULL)
-    {
-      /* Which, if any, of the locales is it? */
-
-      found = 0;
-      
-      for (i = 0; i < NUM_LANGS && found == 0; i++)
-	{
-	  // Case-insensitive (both "pt_BR" and "pt_br" work, etc.)
-      	  if (strncasecmp(loc, lang_prefixes[i], strlen(lang_prefixes[i])) == 0)
-	    {
-	      lang = i;
-	      found = 1;
-	    }
-	}
-    }
-
-  lang_prefix = lang_prefixes[lang];
-  need_own_font = search_int_array(lang,lang_use_own_font);
-  need_right_to_left = search_int_array(lang,lang_use_right_to_left);
-
-#ifdef DEBUG
-  printf("DEBUG: Language is %s (%d)\n", lang_prefix, lang);
-#endif
-
-}
-
-/* FIXME: All this should REALLY be array-based!!! */
-/* Show available languages: */
-static void show_lang_usage(FILE * f, const char * const prg)
-{
-  fprintf(f,
-	  "\n"
-	  "Usage: %s [--lang LANGUAGE]\n"
-	  "\n"
-	  "LANGUAGE may be one of:\n"
-/* C */	     "  english      american-english\n"
-/* af */     "  afrikaans\n"
-/* sq */     "  albanian\n"
-/* eu */     "  basque       euskara\n"
-/* be */     "  belarusian   bielaruskaja\n"
-/* nb */     "  bokmal\n"
-/* pt_BR */  "  brazilian    brazilian-portuguese   portugues-brazilian\n"
-/* br */     "  breton       brezhoneg\n"
-/* en_GB */  "  british      british-english\n"
-/* bg_BG */  "  bulgarian\n"
-/* ca */     "  catalan      catala\n"
-/* zh_CN */  "  chinese      simplified-chinese\n"
-/* zh_TW */  "               traditional-chinese\n"
-/* hr */     "  croatian     hrvatski\n"
-/* cs */     "  czech        cesky\n"
-/* da */     "  danish       dansk\n"
-/* nl */     "  dutch        nederlands\n"
-/* fi */     "  finnish      suomi\n"
-/* fr */     "  french       francais\n"
-/* gl */     "  galician     galego\n"
-/* de */     "  german       deutsch\n"
-/* el */     "  greek\n"
-/* he */     "  hebrew\n"
-/* hi */     "  hindi\n"
-/* hu */     "  hungarian    magyar\n"
-/* is */     "  icelandic    islenska\n"
-/* id */     "  indonesian   bahasa-indonesia\n"
-/* it */     "  italian      italiano\n"
-/* ja */     "  japanese\n"
-/* tlh */    "  klingon      tlhIngan\n"
-/* ko */     "  korean\n"
-/* lt */     "  lithuanian   lietuviu\n"
-/* ms */     "  malay\n"
-/* nn */     "  norwegian    nynorsk                norsk\n"
-/* pl */     "  polish       polski\n"
-/* pt_PT */  "  portuguese   portugues\n"
-/* ro */     "  romanian\n"
-/* ru */     "  russian      russkiy\n"
-/* sr */     "  serbian\n"
-/* sk */     "  slovak\n"
-/* sl */     "  slovenian    slovensko\n"
-/* es */     "  spanish      espanol\n"
-/* sw */     "  swahili\n"
-/* sv */     "  swedish      svenska\n"
-/* ta */     "  tamil\n"
-/* tr */     "  turkish\n"
-/* vi */     "  vietnamese\n"
-/* wa */     "  walloon      walon\n"
-/* cy */     "  welsh        cymraeg\n"
-	  "\n",
-	  prg);
-}
+typedef struct state_type {
+  int mirrored;
+  int flipped;
+  unsigned min,size,max;
+} state_type;
 
 
-/* FIXME: Add accented characters to the descriptions */
-/* Show available locales: */
-static void show_locale_usage(FILE * f, const char * const prg)
-{
-  fprintf(f,
-	  "\n"
-	  "Usage: %s [--locale LOCALE]\n"
-	  "\n"
-	  "LOCALE may be one of:\n"
-	  "  C       (English      American English)\n"
-	  "  af_ZA   (Afrikaans)\n"
-	  "  eu_ES   (Baque        Euskara)\n"
-	  "  be_BY   (Belarusian   Bielaruskaja)\n"
-	  "  nb_NO   (Bokmal)\n"
-	  "  pt_BR   (Brazilian    Brazilian Portuguese   Portugues Brazilian)\n"
-	  "  br_FR   (Breton       Brezhoneg)\n"
-	  "  en_GB   (British      British English)\n"
-          "  bg_BG   (Bulgarian)\n"
-	  "  ca_ES   (Catalan      Catala)\n"
-	  "  zh_CN   (Chinese-Simplified)\n"
-	  "  zh_TW   (Chinese-Traditional)\n"
-	  "  cs_CZ   (Czech        Cesky)\n"
-	  "  da_DK   (Danish       Dansk)\n"
-	  "  nl_NL   (Dutch)\n"
-	  "  fi_FI   (Finnish      Suomi)\n"
-	  "  fr_FR   (French       Francais)\n"
-	  "  gl_ES   (Galician     Galego)\n"
-	  "  de_DE   (German       Deutsch)\n"
-	  "  el_GR   (Greek)\n"
-	  "  he_IL   (Hebrew)\n"
-	  "  hi_IN   (Hindi)\n"
-	  "  hr_HR   (Croatian     Hrvatski)\n"
-	  "  hu_HU   (Hungarian    Magyar)\n"
-	  "  tlh     (Klingon      tlhIngan)\n"
-	  "  is_IS   (Icelandic    Islenska)\n"
-	  "  id_ID   (Indonesian   Bahasa Indonesia)\n"
-	  "  it_IT   (Italian      Italiano)\n"
-	  "  ja_JP   (Japanese)\n"
-	  "  ko_KR   (Korean)\n"
-	  "  ms_MY   (Malay)\n"
-	  "  lt_LT   (Lithuanian   Lietuviu)\n"
-	  "  nn_NO   (Norwegian    Nynorsk                Norsk)\n"
-	  "  pl_PL   (Polish       Polski)\n"
-	  "  pt_PT   (Portuguese   Portugues)\n"
-	  "  ro_RO   (Romanian)\n"
-	  "  ru_RU   (Russian      Russkiy)\n"
-	  "  sk_SK   (Slovak)\n"
-	  "  sl_SI   (Slovenian)\n"
-	  "  sq_AL   (Albanian)\n"
-	  "  sr_YU   (Serbian)\n"
-	  "  es_ES   (Spanish      Espanol)\n"
-	  "  sw_TZ   (Swahili)\n"
-	  "  sv_SE   (Swedish      Svenska)\n"
-	  "  tr_TR   (Turkish)\n"
-	  "  vi_VN   (Vietnamese)\n"
-	  "  wa_BE   (Walloon)\n"
-	  "  cy_GB   (Welsh        Cymraeg)\n"
-	  "\n",
-	  prg);
-}
-
-
-typedef struct language_to_locale_struct {
-  const char *language;
-  const char *locale;
-} language_to_locale_struct;
-
-static const language_to_locale_struct language_to_locale_array[] = {
-{"english",              "C"},
-{"american-english",     "C"},
-{"croatian",             "hr_HR"},
-{"hrvatski",             "hr_HR"},
-{"catalan",              "ca_ES"},
-{"catala",               "ca_ES"},
-{"belarusian",           "be_BY"},
-{"bielaruskaja",         "be_BY"},
-{"czech",                "cs_CZ"},
-{"cesky",                "cs_CZ"},
-{"danish",               "da_DK"},
-{"dansk",                "da_DK"},
-{"german",               "de_DE"},
-{"deutsch",              "de_DE"},
-{"greek",                "el_GR"},
-{"british-english",      "en_GB"},
-{"british",              "en_GB"},
-{"spanish",              "es_ES"},
-{"espanol",              "es_ES"},
-{"finnish",              "fi_FI"},
-{"suomi",                "fi_FI"},
-{"french",               "fr_FR"},
-{"francais",             "fr_FR"},
-{"galician",             "gl_ES"},
-{"galego",               "gl_ES"},
-{"hebrew",               "he_IL"},
-{"hindi",                "hi_IN"},
-{"hungarian",            "hu_HU"},
-{"magyar",               "hu_HU"},
-{"indonesian",           "id_ID"},
-{"bahasa-indonesia",     "id_ID"},
-{"icelandic",            "is_IS"},
-{"islenska",             "is_IS"},
-{"italian",              "it_IT"},
-{"italiano",             "it_IT"},
-{"japanese",             "ja_JP"},
-{"vietnamese",           "vi_VN"},
-{"afrikaans",            "af_ZA"},
-{"albanian",             "sq_AL"},
-{"breton",               "br_FR"},
-{"brezhoneg",            "br_FR"},
-{"bulgarian",            "bg_BG"},
-{"welsh",                "cy_GB"},
-{"cymraeg",              "cy_GB"},
-{"bokmal",               "nb_NO"},
-{"basque",               "eu_ES"},
-{"euskara",              "eu_ES"},
-{"korean",               "ko_KR"},
-{"klingon",              "tlh"},
-{"tlhIngan",             "tlh"},
-{"tlhingan",             "tlh"},
-{"tamil",                "ta_IN"},
-{"lithuanian",           "lt_LT"},
-{"lietuviu",             "lt_LT"},
-{"malay",                "ms_MY"},
-{"dutch",                "nl_NL"},
-{"nederlands",           "nl_NL"},
-{"norwegian",            "nn_NO"},
-{"nynorsk",              "nn_NO"},
-{"norsk",                "nn_NO"},
-{"polish",               "pl_PL"},
-{"polski",               "pl_PL"},
-{"brazilian-portuguese", "pt_BR"},
-{"portugues-brazilian",  "pt_BR"},
-{"brazilian",            "pt_BR"},
-{"portuguese",           "pt_PT"},
-{"portugues",            "pt_PT"},
-{"romanian",             "ro_RO"},
-{"russian",              "ru_RU"},
-{"russkiy",              "ru_RU"},
-{"slovak",               "sk_SK"},
-{"slovenian",            "sl_SI"},
-{"slovensko",            "sl_SI"},
-{"serbian",              "sr_YU"},
-{"swedish",              "sv_SE"},
-{"svenska",              "sv_SE"},
-{"swahili",              "sw_TZ"},
-{"turkish",              "tr_TR"},
-{"walloon",              "wa_BE"},
-{"walon",                "wa_BE"},
-{"chinese",              "zh_CN"},
-{"simplified-chinese",   "zh_CN"},
-{"traditional-chinese",  "zh_TW"},
+enum {
+  SAVE_OVER_PROMPT,
+  SAVE_OVER_ALWAYS,
+  SAVE_OVER_NO
 };
 
 
-static void setup_language(const char * const prg)
-{
+enum {
+  STARTER_OUTLINE,
+  STARTER_SCENE
+};
 
-// Justify this or delete it. It seems to make Tux Paint
-// violate the behavior documented by "man 7 locale".
-#if 0
-  if (langstr == NULL && getenv("LANG"))
-    {
-      if(!strncasecmp(getenv("LANG"), "lt_LT", 5))
-        set_langstr("lithuanian");
-      if(!strncasecmp(getenv("LANG"), "pl_PL", 5))
-        set_langstr("polish");
-    }
-#endif
-
-  if (langstr != NULL)
-    {
-      int i = sizeof language_to_locale_array / sizeof language_to_locale_array[0];
-      const char *locale = NULL;
-      while(i--)
-        {
-          if (strcmp(langstr, language_to_locale_array[i].language))
-            continue;
-          locale = language_to_locale_array[i].locale;
-          break;
-        }
-
-      if (!locale)
-        {
-          if (strcmp(langstr, "help") == 0 || strcmp(langstr, "list") == 0)
-            {
-              show_lang_usage(stdout, prg);
-              //free(langstr);  // pointless
-              exit(0);
-            }
-          else
-            {
-              fprintf(stderr, "%s is an invalid language\n", langstr);
-              show_lang_usage(stderr, prg);
-              //free(langstr);  // pointless
-              exit(1);
-            }
-        }
-
-      if (locale[0]=='C' && !locale[1])
-        {
-          putenv((char *) "LANGUAGE=C");
-          putenv((char *) "LC_ALL=C");
-        }
-      else
-        {
-          char *s;
-          ssize_t len;
-          len = strlen("LANGUAGE=.UTF-8")+strlen(locale)+1;
-          s = malloc(len);
-          snprintf(s, len, "LANGUAGE=%s.UTF-8", locale);
-          putenv(s);
-          len = strlen("LC_ALL=.UTF-8")+strlen(locale)+1;
-          s = malloc(len);
-          snprintf(s, len, "LC_ALL=%s.UTF-8", locale);
-          putenv(s);
-        }
-    
-      setlocale(LC_ALL, "");
-      free(langstr);
-    }
- 
-  set_current_language();
-}
-
-
-// handle --locale arg
-static void do_locale_option(const char * const arg)
-{
-  int len = strlen(arg) + 6;
-  char *str = malloc(len);
-  snprintf(str, len, "LANG=%s", arg);
-  putenv(str);
-  // We leak "str" because it can not be freed. It is now part
-  // of the environment. If it were local, the environment would
-  // get corrupted.
-  setlocale(LC_ALL, ""); /* use arg ? */
-}
-
-
-static TTF_Font *try_alternate_font(int size)
-{
-  char  str[128];
-  char  prefix[64];
-  char  *p;
-
-  strcpy(prefix, lang_prefix);
-  if ((p = strrchr(prefix, '_')) != NULL)
-  {
-    *p = 0;
-    snprintf(str, sizeof(str), "%sfonts/locale/%s.ttf",
-             DATA_PREFIX, prefix);
-
-    return TTF_OpenFont(str, size);
-  }
-  return NULL;
-}
-
-
-static TTF_Font *load_locale_font(TTF_Font *fallback, int size)
-{
-  TTF_Font *ret = NULL;
-  if (need_own_font)
-    {
-      char str[128];
-      snprintf(str, sizeof(str), "%sfonts/locale/%s.ttf",
-	       DATA_PREFIX, lang_prefix);
-
-      ret = TTF_OpenFont(str, size);
-
-      if (ret == NULL)
-      {
-          ret = try_alternate_font(size);
-          if (ret == NULL)
-	  {
-	      fprintf(stderr,
-		      "\nWarning: Can't load font for this locale:\n"
-		      "%s\n"
-		      "The Simple DirectMedia Layer error that occurred was:\n"
-		      "%s\n\n"
-		      "Will use default (American English) instead.\n\n",
-		      str, SDL_GetError());
-
-
-	      /* Revert to default: */
-      
-	      putenv((char *) "LANG=C");
-	      putenv((char *) "OUTPUT_CHARSET=C");
-	      setlocale(LC_ALL, "C");
-
-	      set_current_language();
-	  }
-      }
-    }
-  return ret ? ret : fallback;
-}
-
-///////////////////////////////////////////////////////////////////
 
 /* Globals: */
 
-static int use_sound, fullscreen, disable_quit, simple_shapes,
+static int use_sound, fullscreen, disable_quit, simple_shapes, language,
   disable_print, print_delay, only_uppercase, promptless_save, grab_input,
   wheely, no_fancy_cursors, keymouse, mouse_x, mouse_y,
   mousekey_up, mousekey_down, mousekey_left, mousekey_right,
@@ -1232,6 +754,7 @@ typedef enum { Left, Right, Bottom, Top } an_edge;
 
 static SDL_Event scrolltimer_event;
 
+static char * langstr;
 static char * savedir;
 
 #ifdef USE_HQ4X
@@ -1255,6 +778,8 @@ static void stamp_draw(int x, int y);
 static void rec_undo_buffer(void);
 static void update_canvas(int x1, int y1, int x2, int y2);
 static void show_usage(FILE * f, char * prg);
+static void show_lang_usage(FILE * f, char * prg);
+static void show_locale_usage(FILE * f, char * prg);
 static void setup(int argc, char * argv[]);
 static SDL_Cursor * get_cursor(char * bits, char * mask_bits,
 		        int w, int h, int x, int y);
@@ -1270,17 +795,10 @@ static void draw_shapes(void);
 static void draw_erasers(void);
 static void draw_fonts(void);
 static void draw_none(void);
-#ifndef NOSOUND
 static void loadarbitrary(SDL_Surface * surfs[], SDL_Surface * altsurfs[],
 		   char * descs[], info_type * infs[],
 		   Mix_Chunk * sounds[], int * count, int starting, int max,
 		   const char * const dir, int fatal, int maxw, int maxh);
-#else
-static void loadarbitrary(SDL_Surface * surfs[], SDL_Surface * altsurfs[],
-		   char * descs[], info_type * infs[],
-		   int * count, int starting, int max,
-		   const char * const dir, int fatal, int maxw, int maxh);
-#endif
 static SDL_Surface * thumbnail(SDL_Surface * src, int max_x, int max_y,
 			int keep_aspect);
 
@@ -1288,6 +806,7 @@ static Uint32 getpixel(SDL_Surface * surface, int x, int y);
 static void putpixel(SDL_Surface * surface, int x, int y, Uint32 pixel);
 static void clipped_putpixel(SDL_Surface * dest, int x, int y, Uint32 c);
 
+static void debug(const char * const str);
 static void do_undo(void);
 static void do_redo(void);
 static void render_brush(void);
@@ -1322,7 +841,9 @@ static void wordwrap_text(const char * const str, SDL_Color color,
 		   int want_right_to_left);
 static char * loaddesc(const char * const fname);
 static info_type * loadinfo(const char * const fname);
-#ifndef NOSOUND
+#ifdef NOSOUND
+#define loadsound(x)
+#else
 static Mix_Chunk * loadsound(const char * const fname);
 #endif
 static void do_wait(void);
@@ -1350,6 +871,7 @@ static void scan_fill(int cnt, point_type * pts);
 static int clip_polygon(int n, fpoint_type * pin, fpoint_type * pout);
 #endif
 static void wait_for_sfx(void);
+static int current_language(void);
 static int stamp_colorable(int stamp);
 static int stamp_tintable(int stamp);
 static void rgbtohsv(Uint8 r8, Uint8 g8, Uint8 b8, float *h, float *s, float *v);
@@ -1372,6 +894,8 @@ static void parse_options(FILE * fi);
 static void do_setcursor(SDL_Cursor * c);
 static const char * great_str(void);
 static void draw_image_title(int t, int x);
+static int need_own_font(int l);
+static int need_right_to_left(int l);
 static void handle_keymouse(SDLKey key, Uint8 updown);
 static void handle_active(SDL_Event * event);
 static char * remove_slash(char * path);
@@ -1382,6 +906,7 @@ static int mySDL_PollEvent(SDL_Event *event);
 static void load_starter_id(char * saved_id);
 static void load_starter(char * img_id);
 static SDL_Surface * duplicate_surface(SDL_Surface * orig);
+static TTF_Font *try_alternate_font(int language);
 static void mirror_starter(void);
 static void flip_starter(void);
 
@@ -5394,7 +4919,146 @@ static void show_usage(FILE * f, char * prg)
 }
 
 
-// The original Tux Paint canvas was 448x376. The canvas can be
+/* FIXME: All this should REALLY be array-based!!! */
+
+/* Show available languages: */
+
+static void show_lang_usage(FILE * f, char * prg)
+{
+  fprintf(f,
+	  "\n"
+	  "Usage: %s [--lang LANGUAGE]\n"
+	  "\n"
+	  "LANGUAGE may be one of:\n"
+/* C */	     "  english      american-english\n"
+/* af */     "  afrikaans\n"
+/* sq */     "  albanian\n"
+/* eu */     "  basque       euskara\n"
+/* be */     "  belarusian   bielaruskaja\n"
+/* nb */     "  bokmal\n"
+/* pt_BR */  "  brazilian    brazilian-portuguese   portugues-brazilian\n"
+/* br */     "  breton       brezhoneg\n"
+/* en_GB */  "  british      british-english\n"
+/* bg_BG */  "  bulgarian\n"
+/* ca */     "  catalan      catala\n"
+/* zh_CN */  "  chinese      simplified-chinese\n"
+/* zh_TW */  "               traditional-chinese\n"
+/* hr */     "  croatian     hrvatski\n"
+/* cs */     "  czech        cesky\n"
+/* da */     "  danish       dansk\n"
+/* nl */     "  dutch        nederlands\n"
+/* fi */     "  finnish      suomi\n"
+/* fr */     "  french       francais\n"
+/* gl */     "  galician     galego\n"
+/* de */     "  german       deutsch\n"
+/* el */     "  greek\n"
+/* he */     "  hebrew\n"
+/* hi */     "  hindi\n"
+/* hu */     "  hungarian    magyar\n"
+/* is */     "  icelandic    islenska\n"
+/* id */     "  indonesian   bahasa-indonesia\n"
+/* it */     "  italian      italiano\n"
+/* ja */     "  japanese\n"
+/* tlh */    "  klingon      tlhIngan\n"
+/* ko */     "  korean\n"
+/* lt */     "  lithuanian   lietuviu\n"
+/* ms */     "  malay\n"
+/* nn */     "  norwegian    nynorsk                norsk\n"
+/* pl */     "  polish       polski\n"
+/* pt_PT */  "  portuguese   portugues\n"
+/* ro */     "  romanian\n"
+/* ru */     "  russian      russkiy\n"
+/* sr */     "  serbian\n"
+/* sk */     "  slovak\n"
+/* sl */     "  slovenian    slovensko\n"
+/* es */     "  spanish      espanol\n"
+/* sv */     "  swedish      svenska\n"
+/* ta */     "  tamil\n"
+/* tr */     "  turkish\n"
+/* vi */     "  vietnamese\n"
+/* wa */     "  walloon      walon\n"
+/* cy */     "  welsh        cymraeg\n"
+	  "\n",
+	  prg);
+}
+
+
+/* FIXME: Add accented characters to the descriptions */
+
+/* Show available locales: */
+
+static void show_locale_usage(FILE * f, char * prg)
+{
+  fprintf(f,
+	  "\n"
+	  "Usage: %s [--locale LOCALE]\n"
+	  "\n"
+	  "LOCALE may be one of:\n"
+	  "  C       (English      American English)\n"
+	  "  af_ZA   (Afrikaans)\n"
+	  "  eu_ES   (Baque        Euskara)\n"
+	  "  be_BY   (Belarusian   Bielaruskaja)\n"
+	  "  nb_NO   (Bokmal)\n"
+	  "  pt_BR   (Brazilian    Brazilian Portuguese   Portugues Brazilian)\n"
+	  "  br_FR   (Breton       Brezhoneg)\n"
+	  "  en_GB   (British      British English)\n"
+          "  bg_BG   (Bulgarian)\n"
+	  "  ca_ES   (Catalan      Catala)\n"
+	  "  zh_CN   (Chinese-Simplified)\n"
+	  "  zh_TW   (Chinese-Traditional)\n"
+	  "  cs_CZ   (Czech        Cesky)\n"
+	  "  da_DK   (Danish       Dansk)\n"
+	  "  nl_NL   (Dutch)\n"
+	  "  fi_FI   (Finnish      Suomi)\n"
+	  "  fr_FR   (French       Francais)\n"
+	  "  gl_ES   (Galician     Galego)\n"
+	  "  de_DE   (German       Deutsch)\n"
+	  "  el_GR   (Greek)\n"
+	  "  he_IL   (Hebrew)\n"
+	  "  hi_IN   (Hindi)\n"
+	  "  hr_HR   (Croatian     Hrvatski)\n"
+	  "  hu_HU   (Hungarian    Magyar)\n"
+	  "  tlh     (Klingon      tlhIngan)\n"
+	  "  is_IS   (Icelandic    Islenska)\n"
+	  "  id_ID   (Indonesian   Bahasa Indonesia)\n"
+	  "  it_IT   (Italian      Italiano)\n"
+	  "  ja_JP   (Japanese)\n"
+	  "  ko_KR   (Korean)\n"
+	  "  ms_MY   (Malay)\n"
+	  "  lt_LT   (Lithuanian   Lietuviu)\n"
+	  "  nn_NO   (Norwegian    Nynorsk                Norsk)\n"
+	  "  pl_PL   (Polish       Polski)\n"
+	  "  pt_PT   (Portuguese   Portugues)\n"
+	  "  ro_RO   (Romanian)\n"
+	  "  ru_RU   (Russian      Russkiy)\n"
+	  "  sk_SK   (Slovak)\n"
+	  "  sl_SI   (Slovenian)\n"
+	  "  sq_AL   (Albanian)\n"
+	  "  sr_YU   (Serbian)\n"
+	  "  es_ES   (Spanish      Espanol)\n"
+	  "  sv_SE   (Swedish      Svenska)\n"
+	  "  tr_TR   (Turkish)\n"
+	  "  vi_VN   (Vietnamese)\n"
+	  "  wa_BE   (Walloon)\n"
+	  "  cy_GB   (Welsh        Cymraeg)\n"
+	  "\n",
+	  prg);
+}
+
+
+static const char *getfilename(const char* path)
+{
+  char    *p;
+
+  if ( (p = strrchr( path, '\\' )) != NULL )
+    return p+1;
+  if ( (p = strrchr( path, '/' )) != NULL )
+    return p+1;
+  return path;
+}
+
+
+// The original Tux Paint canvas was 608x472. The canvas can be
 // other sizes now, but many old stamps are sized for the small
 // canvas. So, with larger canvases, we must choose a good scale
 // factor to compensate. As the canvas size grows, the user will
@@ -5402,7 +5066,7 @@ static void show_usage(FILE * f, char * prg)
 // getting tiny". This will calculate the needed scale factor.
 static unsigned compute_default_scale_factor(double ratio)
 {
-  double old_diag = sqrt(448*448+376*376);
+  double old_diag = sqrt(608*608+472*472);
   double new_diag = sqrt(canvas->w*canvas->w+canvas->h*canvas->h);
   double good_def = ratio*sqrt(new_diag/old_diag);
   double good_log = log(good_def);
@@ -5477,6 +5141,7 @@ static void setup(int argc, char * argv[])
   dont_load_stamps = 0;
   print_delay = 0;
   printcommand = "pngtopnm | pnmtops | lpr";
+  langstr = NULL;
   use_print_config = 0;
   mirrorstamps = 0;
   disable_stamp_controls = 0;
@@ -5767,7 +5432,11 @@ static void setup(int argc, char * argv[])
 	{
 	  if (i < argc - 1)
 	    {
-	      do_locale_option(argv[++i]);
+	      snprintf(str, sizeof(str), "LANG=%s", argv[i + 1]);
+	      putenv(str);
+	
+	      setlocale(LC_ALL, ""); /* argv[i + 1]) ? */
+	      i++;
 	    }
 	  else
 	    {
@@ -5780,13 +5449,19 @@ static void setup(int argc, char * argv[])
 	}
       else if (strstr(argv[i], "--lang=") == argv[i])
 	{
-	  set_langstr(argv[i] + 7);
+	  if (langstr != NULL)
+	    free(langstr);
+
+	  langstr = strdup(argv[i] + 7);
 	}
       else if (strcmp(argv[i], "--lang") == 0 || strcmp(argv[i], "-l") == 0)
 	{
 	  if (i < argc - 1)
 	    {
-	      set_langstr(argv[i + 1]);
+	      if (langstr != NULL)
+		free(langstr);
+
+	      langstr = strdup(argv[i + 1]);
 	      i++;
 	    }
 	  else
@@ -5905,12 +5580,333 @@ static void setup(int argc, char * argv[])
     }
 
 
-  setup_language(getfilename(argv[0]));
+  /* Set up language: */
 
+  if (langstr == NULL && getenv("LANG") != NULL &&
+      strncasecmp(getenv("LANG"), "lt_LT", 5) == 0)
+    {
+      langstr = strdup("lithuanian");
+    }
+
+  if (langstr == NULL && getenv("LANG") != NULL &&
+      strncasecmp(getenv("LANG"), "pl_PL", 5) == 0)
+    {
+      langstr = strdup("polish");
+    }
+
+  if (langstr != NULL)
+    {
+      if (strcmp(langstr, "english") == 0 ||
+	  strcmp(langstr, "american-english") == 0)
+	{
+	  putenv((char *) "LANGUAGE=C");
+	  putenv((char *) "LC_ALL=C");
+	}
+      else if (strcmp(langstr, "croatian") == 0 ||
+	       strcmp(langstr, "hrvatski") == 0)
+	{
+	  putenv((char *) "LANGUAGE=hr_HR.UTF-8");
+	  putenv((char *) "LC_ALL=hr_HR.UTF-8");
+	}
+      else if (strcmp(langstr, "catalan") == 0 ||
+	       strcmp(langstr, "catala") == 0)
+	{
+	  putenv((char *) "LANGUAGE=ca_ES.UTF-8");
+	  putenv((char *) "LC_ALL=ca_ES.UTF-8");
+	}
+      else if (strcmp(langstr, "belarusian") == 0 ||
+	       strcmp(langstr, "bielaruskaja") == 0)
+        {
+	  putenv((char *) "LANGUAGE=be_BY.UTF-8");
+	  putenv((char *) "LC_ALL=be_BY.UTF-8");
+        }
+      else if (strcmp(langstr, "czech") == 0 ||
+	       strcmp(langstr, "cesky") == 0)
+	{
+	  putenv((char *) "LANGUAGE=cs_CZ.UTF-8");
+	  putenv((char *) "LC_ALL=cs_CZ.UTF-8");
+	}
+      else if (strcmp(langstr, "danish") == 0 ||
+	       strcmp(langstr, "dansk") == 0)
+	{
+	  putenv((char *) "LANGUAGE=da_DK.UTF-8");
+	  putenv((char *) "LC_ALL=da_DK.UTF-8");
+	}
+      else if (strcmp(langstr, "german") == 0 ||
+	       strcmp(langstr, "deutsch") == 0)
+	{
+	  putenv((char *) "LANGUAGE=de_DE.UTF-8");
+	  putenv((char *) "LC_ALL=de_DE.UTF-8");
+	}
+      else if (strcmp(langstr, "greek") == 0)
+	{
+	  putenv((char *) "LANGUAGE=el_GR.UTF-8");
+	  putenv((char *) "LC_ALL=el_GR.UTF-8");
+	}
+      else if (strcmp(langstr, "british-english") == 0 ||
+	       strcmp(langstr, "british") == 0)
+	{
+	  putenv((char *) "LANGUAGE=en_GB.UTF-8");
+	  putenv((char *) "LC_ALL=en_GB.UTF-8");
+	}
+      else if (strcmp(langstr, "spanish") == 0 ||
+	       strcmp(langstr, "espanol") == 0)
+	{
+	  putenv((char *) "LANGUAGE=es_ES.UTF-8");
+	  putenv((char *) "LC_ALL=es_ES.UTF-8");
+	}
+      else if (strcmp(langstr, "finnish") == 0 ||
+	       strcmp(langstr, "suomi") == 0)
+	{
+	  putenv((char *) "LANGUAGE=fi_FI.UTF-8");
+	  putenv((char *) "LC_ALL=fi_FI.UTF-8");
+	}
+      else if (strcmp(langstr, "french") == 0 ||
+	       strcmp(langstr, "francais") == 0)
+	{
+	  putenv((char *) "LANGUAGE=fr_FR.UTF-8");
+	  putenv((char *) "LC_ALL=fr_FR.UTF-8");
+	}
+      else if (strcmp(langstr, "galician") == 0 ||
+	       strcmp(langstr, "galego") == 0)
+	{
+	  putenv((char *) "LANGUAGE=gl_ES.UTF-8");
+	  putenv((char *) "LC_ALL=gl_ES.UTF-8");
+	}
+      else if (strcmp(langstr, "hebrew") == 0)
+	{
+	  putenv((char *) "LANGUAGE=he_IL.UTF-8");
+	  putenv((char *) "LC_ALL=he_IL.UTF-8");
+	}
+      else if (strcmp(langstr, "hindi") == 0)
+	{
+	  putenv((char *) "LANGUAGE=hi_IN.UTF-8");
+	  putenv((char *) "LC_ALL=hi_IN.UTF-8");
+	}
+      else if (strcmp(langstr, "hungarian") == 0 ||
+	       strcmp(langstr, "magyar") == 0)
+	{
+	  putenv((char *) "LANGUAGE=hu_HU.UTF-8");
+	}
+      else if (strcmp(langstr, "indonesian") == 0 ||
+	       strcmp(langstr, "bahasa-indonesia") == 0)
+	{
+	  putenv((char *) "LANGUAGE=id_ID.UTF-8");
+	  putenv((char *) "LC_ALL=id_ID.UTF-8");
+	}
+      else if (strcmp(langstr, "icelandic") == 0 ||
+	       strcmp(langstr, "islenska") == 0)
+	{
+	  putenv((char *) "LANGUAGE=is_IS.UTF-8");
+	  putenv((char *) "LC_ALL=is_IS.UTF-8");
+	}
+      else if (strcmp(langstr, "italian") == 0 ||
+	       strcmp(langstr, "italiano") == 0)
+	{
+	  putenv((char *) "LANGUAGE=it_IT.UTF-8");
+	  putenv((char *) "LC_ALL=it_IT.UTF-8");
+	}
+      else if (strcmp(langstr, "japanese") == 0)
+	{
+	  putenv((char *) "LANGUAGE=ja_JP.UTF-8");
+	  putenv((char *) "LC_ALL=ja_JP.UTF-8");
+	}
+      else if (strcmp(langstr, "vietnamese") == 0)
+	{
+	  putenv((char *) "LANGUAGE=vi_VN.UTF-8");
+	  putenv((char *) "LC_ALL=vi_VN.UTF-8");
+	}
+      else if (strcmp(langstr, "afrikaans") == 0)
+	{
+	  putenv((char *) "LANGUAGE=af_ZA.UTF-8");
+	  putenv((char *) "LC_ALL=af_ZA.UTF-8");
+	}
+      else if (strcmp(langstr, "albanian") == 0)
+	{
+	  putenv((char *) "LANGUAGE=sq_AL.UTF-8");
+	  putenv((char *) "LC_ALL=sq_AL.UTF-8");
+	}
+      else if (strcmp(langstr, "breton") == 0 ||
+	       strcmp(langstr, "brezhoneg") == 0)
+	{
+	  putenv((char *) "LANGUAGE=br_FR.UTF-8");
+	  putenv((char *) "LC_ALL=br_FR.UTF-8");
+	}
+      else if (strcmp(langstr, "bulgarian") == 0)
+	{
+	  putenv((char *) "LANGUAGE=bg_BG.UTF-8");
+	  putenv((char *) "LC_ALL=bg_BG.UTF-8");
+	}
+      else if (strcmp(langstr, "welsh") == 0 ||
+	       strcmp(langstr, "cymraeg") == 0)
+	{
+	  putenv((char *) "LANGUAGE=cy_GB.UTF-8");
+	  putenv((char *) "LC_ALL=cy_GB.UTF-8");
+	}
+      else if (strcmp(langstr, "bokmal") == 0)
+	{
+	  putenv((char *) "LANGUAGE=nb_NO.UTF-8");
+	  putenv((char *) "LC_ALL=nb_NO.UTF-8");
+	}
+      else if (strcmp(langstr, "basque") == 0 ||
+	       strcmp(langstr, "euskara") == 0)
+	{
+	  putenv((char *) "LANGUAGE=eu_ES.UTF-8");
+	  putenv((char *) "LC_ALL=eu_ES.UTF-8");
+	}
+      else if (strcmp(langstr, "korean") == 0)
+	{
+	  putenv((char *) "LANGUAGE=ko_KR.UTF-8");
+	  putenv((char *) "LC_ALL=ko_KR.UTF-8");
+	}
+      else if (strcmp(langstr, "klingon") == 0 ||
+	       strcmp(langstr, "tlhIngan") == 0 ||
+	       strcmp(langstr, "tlhingan") == 0)
+	{
+	  putenv((char *) "LANGUAGE=tlh.UTF-8");
+	  putenv((char *) "LC_ALL=tlh.UTF-8");
+	}
+      else if (strcmp(langstr, "tamil") == 0)
+	{
+	  putenv((char *) "LANGUAGE=ta_IN.UTF-8");
+	  putenv((char *) "LC_ALL=ta_IN.UTF-8");
+	}
+      else if (strcmp(langstr, "lithuanian") == 0 ||
+	       strcmp(langstr, "lietuviu") == 0)
+	{
+	  putenv((char *) "LANGUAGE=lt_LT.UTF-8");
+	  putenv((char *) "LC_ALL=lt_LT.UTF-8");
+	}
+      else if (strcmp(langstr, "malay") == 0)
+	{
+	  putenv((char *) "LANGUAGE=ms_MY.UTF-8");
+	  putenv((char *) "LC_ALL=ms_MY.UTF-8");
+	}
+      else if (strcmp(langstr, "dutch") == 0 ||
+	       strcmp(langstr, "nederlands") == 0)
+	{
+	  putenv((char *) "LANGUAGE=nl_NL.UTF-8");
+	  putenv((char *) "LC_ALL=nl_NL.UTF-8");
+	}
+      else if (strcmp(langstr, "norwegian") == 0 ||
+	       strcmp(langstr, "nynorsk") == 0 ||
+	       strcmp(langstr, "norsk") == 0)
+	{
+	  putenv((char *) "LANGUAGE=nn_NO.UTF-8");
+	  putenv((char *) "LC_ALL=nn_NO.UTF-8");
+	}
+      else if (strcmp(langstr, "polish") == 0 ||
+	       strcmp(langstr, "polski") == 0)
+	{
+	  putenv((char *) "LANGUAGE=pl_PL.UTF-8");
+	  putenv((char *) "LC_ALL=pl_PL.UTF-8");
+	}
+      else if (strcmp(langstr, "brazilian-portuguese") == 0 ||
+	       strcmp(langstr, "portugues-brazilian") == 0 ||
+	       strcmp(langstr, "brazilian") == 0)
+	{
+	  putenv((char *) "LANGUAGE=pt_BR.UTF-8");
+	  putenv((char *) "LC_ALL=pt_BR.UTF-8");
+	}
+      else if (strcmp(langstr, "portuguese") == 0 ||
+	       strcmp(langstr, "portugues") == 0)
+	{
+	  putenv((char *) "LANGUAGE=pt_PT.UTF-8");
+	  putenv((char *) "LC_ALL=pt_PT.UTF-8");
+	}
+      else if (strcmp(langstr, "romanian") == 0)
+	{
+	  putenv((char *) "LANGUAGE=ro_RO.UTF-8");
+	  putenv((char *) "LC_ALL=ro_RO.UTF-8");
+	}
+      else if (strcmp(langstr, "russian") == 0 ||
+	       strcmp(langstr, "russkiy") == 0)
+	{
+	  putenv((char *) "LANGUAGE=ru_RU.UTF-8");
+	  putenv((char *) "LC_ALL=ru_RU.UTF-8");
+	}
+      else if (strcmp(langstr, "slovak") == 0)
+	{
+	  putenv((char *) "LANGUAGE=sk_SK.UTF-8");
+	  putenv((char *) "LC_ALL=sk_SK.UTF-8");
+	}
+      else if (strcmp(langstr, "slovenian") == 0 ||
+	       strcmp(langstr, "slovensko") == 0)
+	{
+	  putenv((char *) "LANGUAGE=sl_SI.UTF-8");
+	  putenv((char *) "LC_ALL=sl_SI.UTF-8");
+	}
+      else if (strcmp(langstr, "serbian") == 0)
+	{
+	  putenv((char *) "LANGUAGE=sr_YU.UTF-8");
+	  putenv((char *) "LC_ALL=sr_YU.UTF-8");
+	}
+      else if (strcmp(langstr, "swedish") == 0 ||
+	       strcmp(langstr, "svenska") == 0)
+	{
+	  putenv((char *) "LANGUAGE=sv_SE.UTF-8");
+	  putenv((char *) "LC_ALL=sv_SE.UTF-8");
+	}
+      else if (strcmp(langstr, "turkish") == 0)
+	{
+	  putenv((char *) "LANGUAGE=tr_TR.UTF-8");
+	  putenv((char *) "LC_ALL=tr_TR.UTF-8");
+	}
+      else if (strcmp(langstr, "walloon") == 0 ||
+	       strcmp(langstr, "walon") == 0)
+	{
+	  putenv((char *) "LANGUAGE=wa_BE.UTF-8");
+	  putenv((char *) "LC_ALL=wa_BE.UTF-8");
+	}
+      else if (strcmp(langstr, "chinese") == 0 ||
+               strcmp(langstr, "simplified-chinese") == 0)
+	{
+	  putenv((char *) "LANGUAGE=zh_CN.UTF-8");
+	  putenv((char *) "LC_ALL=zh_CN.UTF-8");
+	}
+      else if (strcmp(langstr, "traditional-chinese") == 0)
+	{
+	  putenv((char *) "LANGUAGE=zh_TW.UTF-8");
+	  putenv((char *) "LC_ALL=zh_TW.UTF-8");
+	}
+      else if (strcmp(langstr, "help") == 0 || strcmp(langstr, "list") == 0)
+	{
+	  show_lang_usage(stdout, (char *) getfilename(argv[0]));
+	  free(langstr);
+	  exit(0);
+	}
+      else
+	{
+	  fprintf(stderr, "%s is an invalid language\n", langstr);
+	  show_lang_usage(stderr, (char *) getfilename(argv[0]));
+	  free(langstr);
+	  exit(1);
+	}
+    
+      setlocale(LC_ALL, "");
+      free(langstr);
+    }
+ 
+  bindtextdomain("tuxpaint", LOCALEDIR);
+  
+  /* Old version of glibc does not have bind_textdomain_codeset() */
+#if defined __GLIBC__ && __GLIBC__ == 2 && __GLIBC_MINOR__ >=2 || __GLIBC__ > 2
+  bind_textdomain_codeset("tuxpaint", "UTF-8");
+#endif
+
+  textdomain("tuxpaint");
+
+  language = current_language();
+
+
+#ifdef DEBUG
+  printf("DEBUG: Language is %s (%d)\n", lang_prefixes[language], language);
+#endif
 
 #ifndef WIN32
   putenv((char *) "SDL_VIDEO_X11_WMCLASS=TuxPaint.TuxPaint");
 #endif
+  
   
   /* Test for lockfile, if we're using one: */
 
@@ -6334,23 +6330,12 @@ static void setup(int argc, char * argv[])
 
   /* Load brushes: */
 
-#ifndef NOSOUND
   loadarbitrary(img_brushes, NULL, NULL, NULL, NULL, &num_brushes, 0,
 	        MAX_BRUSHES, DATA_PREFIX "brushes", 1, 40, 40);
-#else
-  loadarbitrary(img_brushes, NULL, NULL, NULL, &num_brushes, 0,
-	        MAX_BRUSHES, DATA_PREFIX "brushes", 1, 40, 40);
-#endif
-
 
   homedirdir = get_fname("brushes");
-#ifndef NOSOUND
   loadarbitrary(img_brushes, NULL, NULL, NULL, NULL, &num_brushes, num_brushes,
 	        MAX_BRUSHES, homedirdir, 0, 40, 40);
-#else
-  loadarbitrary(img_brushes, NULL, NULL, NULL, &num_brushes, num_brushes,
-	        MAX_BRUSHES, homedirdir, 0, 40, 40);
-#endif
 
   if (num_brushes == 0)
     {
@@ -6414,7 +6399,44 @@ static void setup(int argc, char * argv[])
     }
 
 
-  locale_font = load_locale_font(font,18);
+  if (need_own_font(language))
+    {
+      snprintf(str, sizeof(str), "%sfonts/locale/%s.ttf",
+	       DATA_PREFIX, lang_prefixes[language]);
+
+      locale_font = TTF_OpenFont(str, 18);
+
+      if (locale_font == NULL)
+      {
+          locale_font = try_alternate_font(language);
+          if (locale_font == NULL)
+	  {
+	      fprintf(stderr,
+		      "\nWarning: Can't load font for this locale:\n"
+		      "%s\n"
+		      "The Simple DirectMedia Layer error that occurred was:\n"
+		      "%s\n\n"
+		      "Will use default (American English) instead.\n\n",
+		      str, SDL_GetError());
+
+
+	      /* Revert to default: */
+      
+	      putenv((char *) "LANG=C");
+	      putenv((char *) "OUTPUT_CHARSET=C");
+	      setlocale(LC_ALL, "C");
+
+	      bindtextdomain("tuxpaint", LOCALEDIR);
+	      textdomain("tuxpaint");
+	      language = current_language();
+	  }
+      }
+    }
+
+
+  if (locale_font == NULL)
+    locale_font = font;
+  
 
   /* Load other available fonts: */
 
@@ -6432,38 +6454,19 @@ static void setup(int argc, char * argv[])
   if (dont_load_stamps == 0)
     {
       homedirdir = get_fname("stamps");
-#ifndef NOSOUND
       loadarbitrary(img_stamps, img_stamps_premirror,
 		    txt_stamps, inf_stamps, snd_stamps,
 		    &num_stamps, 0,
 		    MAX_STAMPS, homedirdir, 0, -1, -1);
-#else
-      loadarbitrary(img_stamps, img_stamps_premirror,
-		    txt_stamps, inf_stamps, &num_stamps, 0,
-		    MAX_STAMPS, homedirdir, 0, -1, -1);
-#endif
 
-
-#ifndef NOSOUND
       loadarbitrary(img_stamps, img_stamps_premirror,
 		    txt_stamps, inf_stamps, snd_stamps, &num_stamps,
 		    num_stamps, MAX_STAMPS, DATA_PREFIX "stamps", 0, -1, -1);
-#else
-      loadarbitrary(img_stamps, img_stamps_premirror,
-		    txt_stamps, inf_stamps, &num_stamps,
-		    num_stamps, MAX_STAMPS, DATA_PREFIX "stamps", 0, -1, -1);
-#endif
 
 #ifdef __APPLE__
-#ifndef NOSOUND
       loadarbitrary(img_stamps, img_stamps_premirror,
 		    txt_stamps, inf_stamps, snd_stamps, &num_stamps,
 		    num_stamps, MAX_STAMPS, "/Library/Application Support/TuxPaint/stamps", 0, -1, -1);
-#else
-      loadarbitrary(img_stamps, img_stamps_premirror,
-		    txt_stamps, inf_stamps, &num_stamps,
-		    num_stamps, MAX_STAMPS, "/Library/Application Support/TuxPaint/stamps", 0, -1, -1);
-#endif
 #endif
 
       if (num_stamps == 0)
@@ -6633,16 +6636,24 @@ static void setup(int argc, char * argv[])
     {
       if (strlen(title_names[i]) > 0)
 	{
-	  TTF_Font * myfont = large_font;
-	  if (need_own_font && strcmp(gettext(title_names[i]), title_names[i]))
-	    myfont = locale_font;
-          char *td_str = textdir(gettext(title_names[i]));
-          upstr = uppercase(td_str);
-          free(td_str);
-          tmp_surf = TTF_RenderUTF8_Blended(myfont, upstr, black);
-          free(upstr);
-	  img_title_names[i] = thumbnail(tmp_surf, min(84, tmp_surf->w), tmp_surf->h, 0);
-	  SDL_FreeSurface(tmp_surf);
+	  if (need_own_font(language) && locale_font != NULL &&
+		   strcmp(gettext(title_names[i]), title_names[i]) != 0)
+	    {
+	      tmp_surf = TTF_RenderUTF8_Blended(locale_font,
+						textdir(gettext(title_names[i])), black);
+	      img_title_names[i] = thumbnail(tmp_surf,
+					     min(84, tmp_surf->w), tmp_surf->h, 0);
+	      SDL_FreeSurface(tmp_surf);
+	    }
+	  else
+	    {
+	      upstr = uppercase(textdir(gettext(title_names[i])));
+	      tmp_surf = TTF_RenderUTF8_Blended(large_font, upstr, black);
+	      img_title_names[i] = thumbnail(tmp_surf,
+					     min(84, tmp_surf->w), tmp_surf->h, 0);
+	      SDL_FreeSurface(tmp_surf);
+	      free(upstr);
+	    }
 	}
       else
 	{
@@ -6790,21 +6801,27 @@ static void setup(int argc, char * argv[])
 
 
 /* Render a button label using the appropriate string/font: */
+
 static SDL_Surface * do_render_button_label(const char * const label)
 {
+  char * str;
   SDL_Surface * tmp_surf, * surf;
   SDL_Color black = {0, 0, 0, 0};
-  TTF_Font * myfont = small_font;
 
-  if (need_own_font && strcmp(gettext(label), label))
-    myfont = locale_font;
-  char *td_str = textdir(gettext(label));
-  char *upstr = uppercase(td_str);
-  free(td_str);
-  tmp_surf = TTF_RenderUTF8_Blended(myfont, upstr, black);
-  free(upstr);
-  surf = thumbnail(tmp_surf, min(48, tmp_surf->w), tmp_surf->h, 0);
-  SDL_FreeSurface(tmp_surf);
+  if (need_own_font(language) && locale_font != NULL &&
+	   strcmp(gettext(label), label) != 0)
+    {
+      tmp_surf = TTF_RenderUTF8_Blended(locale_font, textdir(gettext(label)), black);
+      surf = thumbnail(tmp_surf, min(48, tmp_surf->w), tmp_surf->h, 0);
+    }
+  else
+    {
+      str = uppercase(textdir(gettext(label)));
+      tmp_surf = TTF_RenderUTF8_Blended(small_font, str, black);
+      surf = thumbnail(tmp_surf, min(48, tmp_surf->w), tmp_surf->h, 0);
+      free(str);
+      SDL_FreeSurface(tmp_surf);
+    }
 
   return surf;
 }
@@ -6822,10 +6839,20 @@ static void create_button_labels(void)
   for (i = 0; i < NUM_SHAPES; i++)
     img_shape_names[i] = do_render_button_label(shape_names[i]);
 
-  // buttons for the file open dialog
-  img_openlabels_open = do_render_button_label(gettext_noop("Open"));
-  img_openlabels_erase = do_render_button_label(gettext_noop("Erase"));
-  img_openlabels_back = do_render_button_label(gettext_noop("Back"));
+
+  /* 'Open' label: */
+
+  img_openlabels_open = do_render_button_label(textdir(gettext_noop("Open")));
+
+
+  /* 'Erase' label: */
+
+  img_openlabels_erase = do_render_button_label(textdir(gettext_noop("Erase")));
+
+
+  /* 'Back' label: */
+
+  img_openlabels_back = do_render_button_label(textdir(gettext_noop("Back")));
 }
 
 
@@ -7872,18 +7899,11 @@ static void draw_none(void)
 
 /* Load an arbitrary set of images into an array (e.g., brushes or stamps) */
 
-#ifndef NOSOUND
 static void loadarbitrary(SDL_Surface * surfs[], SDL_Surface * altsurfs[],
 		   char * descs[], info_type * infs[],
 		   Mix_Chunk * sounds[],
 		   int * count, int starting, int max,
 		   const char * const dir, int fatal, int maxw, int maxh)
-#else
-static void loadarbitrary(SDL_Surface * surfs[], SDL_Surface * altsurfs[],
-			char * descs[], info_type * infs[],
-			int * count, int starting, int max,
-			const char * const dir, int fatal, int maxw, int maxh)
-#endif
 {
   DIR * d;
   struct dirent * f;
@@ -7991,15 +8011,9 @@ static void loadarbitrary(SDL_Surface * surfs[], SDL_Surface * altsurfs[],
 	    {
 	      debug("...is a directory");
 
-#ifndef NOSOUND
 	      loadarbitrary(surfs, altsurfs, descs, infs, sounds,
 			    count, *count, max, fname,
 			    fatal, maxw, maxh);
-#else
-	      loadarbitrary(surfs, altsurfs, descs, infs,
-			    count, *count, max, fname,
-			    fatal, maxw, maxh);
-#endif
 	    }
 	  else if (strstr(d_names[i], ".png") != NULL &&
 		   strstr(d_names[i], "_mirror.png") == NULL)
@@ -8310,6 +8324,19 @@ static void clipped_putpixel(SDL_Surface * dest, int x, int y, Uint32 c)
     }
 }
 
+
+
+/* Show debugging stuff: */
+
+static void debug(const char * const str)
+{
+#ifndef DEBUG
+  (void)str;
+#else
+  fprintf(stderr, "DEBUG: %s\n", str);
+  fflush(stderr);
+#endif
+}
 
 
 /* Undo! */
@@ -8928,7 +8955,7 @@ static void wordwrap_text(const char * const str, SDL_Color color,
       if (want_right_to_left == 0)
 	locale_str = strdup(gettext(str));
       else
-	locale_str = textdir(gettext(str));
+	locale_str = strdup(textdir(gettext(str)));
 
 
       /* For each UTF8 character: */
@@ -8959,7 +8986,7 @@ static void wordwrap_text(const char * const str, SDL_Color color,
 
 		      if (x > left)
 			{
-			  if (need_right_to_left && want_right_to_left)
+			  if (need_right_to_left(language) && want_right_to_left)
 			    anti_carriage_return(left, right, top, top + text->h, y + text->h,
 						 x - left);
 
@@ -9018,7 +9045,7 @@ static void wordwrap_text(const char * const str, SDL_Color color,
 				{
 				  if (x + text->w > right)
 				    {
-				      if (need_right_to_left && want_right_to_left)
+				      if (need_right_to_left(language) && want_right_to_left)
 					anti_carriage_return(left, right, top, top + text->h,
 							     y + text->h, x - left);
 	        
@@ -9028,7 +9055,7 @@ static void wordwrap_text(const char * const str, SDL_Color color,
 
 				  dest.x = x;
 
-				  if (need_right_to_left && want_right_to_left)
+				  if (need_right_to_left(language) && want_right_to_left)
 				    dest.y = top;
 				  else
 				    dest.y = y;
@@ -9052,7 +9079,7 @@ static void wordwrap_text(const char * const str, SDL_Color color,
 			{
 			  /* This word needs to move down? */
 
-			  if (need_right_to_left && want_right_to_left)
+			  if (need_right_to_left(language) && want_right_to_left)
 			    anti_carriage_return(left, right, top, top + text->h, y + text->h,
 						 x - left);
           
@@ -9062,7 +9089,7 @@ static void wordwrap_text(const char * const str, SDL_Color color,
 
 		      dest.x = x;
 
-		      if (need_right_to_left && want_right_to_left)
+		      if (need_right_to_left(language) && want_right_to_left)
 			dest.y = top;
 		      else
 			dest.y = y;
@@ -9112,17 +9139,10 @@ static void wordwrap_text(const char * const str, SDL_Color color,
     {
       /* Truncate if too big! (sorry!) */
 
-      {
-        char *s1 = gettext(str);
-        if (want_right_to_left)
-          {
-            char *freeme = s1;
-            s1 = textdir(s1);
-            free(freeme);
-          }
-	tstr = uppercase(s1);
-	free(s1);
-      }
+      if (want_right_to_left == 0)
+	tstr = strdup(uppercase(gettext(str)));
+      else
+	tstr = strdup(uppercase(textdir(gettext(str))));
 
       if (strlen(tstr) > sizeof(substr) - 1)
 	tstr[sizeof(substr) - 1] = '\0';
@@ -9155,7 +9175,7 @@ static void wordwrap_text(const char * const str, SDL_Color color,
 
 	  if (x + text->w > right)  /* Correct? */
 	    {
-	      if (need_right_to_left && want_right_to_left)
+	      if (need_right_to_left(language) && want_right_to_left)
 		anti_carriage_return(left, right, top, top + text->h, y + text->h,
 				     x - left);
         
@@ -9168,7 +9188,7 @@ static void wordwrap_text(const char * const str, SDL_Color color,
 
 	  dest.x = x;
 
-	  if (need_right_to_left && want_right_to_left)
+	  if (need_right_to_left(language) && want_right_to_left)
 	    dest.y = top;
 	  else
 	    dest.y = y;
@@ -9198,7 +9218,7 @@ static void wordwrap_text(const char * const str, SDL_Color color,
 
   /* Right-justify the final line of text, in right-to-left mode: */
   
-  if (need_right_to_left && want_right_to_left && last_text_height > 0)
+  if (need_right_to_left(language) && want_right_to_left && last_text_height > 0)
     {
       src.x = left;
       src.y = top;
@@ -9236,10 +9256,10 @@ static Mix_Chunk * loadsound(const char * const fname)
 
   /* First, check for localized version of sound: */
 
-  snd_fname = malloc(strlen(fname) + strlen(lang_prefix) + 2);
+  snd_fname = malloc(strlen(fname) + strlen(lang_prefixes[language]) + 2);
 
   strcpy(snd_fname, fname);
-  snprintf(tmp_str, sizeof(tmp_str), "_%s.wav", lang_prefix);
+  snprintf(tmp_str, sizeof(tmp_str), "_%s.wav", lang_prefixes[language]);
 
 
   if (strstr(snd_fname, ".png") != NULL)
@@ -9365,12 +9385,12 @@ static char * loaddesc(const char * const fname)
 
 	      /* See if it's the one for this locale... */
 	
-	      if (strstr(buf, lang_prefix) == buf)
+	      if (strstr(buf, lang_prefixes[language]) == buf)
 		{
 
-		  debug(buf + strlen(lang_prefix));
-		  if (strstr(buf + strlen(lang_prefix), ".utf8=") ==
-			   buf + strlen(lang_prefix))
+		  debug(buf + strlen(lang_prefixes[language]));
+		  if (strstr(buf + strlen(lang_prefixes[language]), ".utf8=") ==
+			   buf + strlen(lang_prefixes[language]))
 		    {
 		      found = 1;
 		      
@@ -9388,7 +9408,7 @@ static char * loaddesc(const char * const fname)
 
       if (found)
 	{
-	  return(strdup(buf + (strlen(lang_prefix)) + 6));
+	  return(strdup(buf + (strlen(lang_prefixes[language])) + 6));
 	}
       else
 	{
@@ -10097,7 +10117,7 @@ static int do_prompt(const char * const text, const char * const btn_yes, const 
   SDL_Color black = {0, 0, 0, 0};
   SDLKey key;
   SDLKey key_y, key_n;
-  char *keystr;
+  char keystr[200];
 #ifndef NO_PROMPT_SHADOWS
   int i;
   SDL_Surface * alpha_surf;
@@ -10106,13 +10126,11 @@ static int do_prompt(const char * const text, const char * const btn_yes, const 
 
   /* FIXME: Move elsewhere! Or not?! */
 
-  keystr = textdir(gettext("Yes"));
+  strcpy(keystr, textdir(gettext("Yes")));
   key_y = tolower(keystr[0]);
-  free(keystr);
 
-  keystr = textdir(gettext("No"));
+  strcpy(keystr, textdir(gettext("No")));
   key_n = tolower(keystr[0]);
-  free(keystr);
 
 
   do_setcursor(cursor_arrow);
@@ -11689,11 +11707,9 @@ static int do_open(int want_new_tool)
   {
     /* Let user choose an image: */
 
-    char *freeme = 
+    draw_tux_text(TUX_BORED,
   		textdir(gettext_noop("Choose the picture you want, "
-  				     "then click “Open”."));
-    draw_tux_text(TUX_BORED,freeme, 1);
-    free(freeme);
+  				     "then click “Open”.")), 1);
 
     /* NOTE: cur is now set above; if file_id'th file is found, it's
        set to that file's index; otherwise, we default to '0' */
@@ -12801,6 +12817,75 @@ static void wait_for_sfx(void)
 }
 
 
+/* Determine the current language/locale, and set the language string: */
+
+static int current_language(void)
+{
+  char * loc;
+#ifdef WIN32
+  char str[128];
+#endif
+  int lang, i, found;
+
+
+  /* Default... */
+
+  lang = LANG_EN;
+
+
+#ifndef WIN32
+  loc = setlocale(LC_MESSAGES, NULL);
+  if (loc != NULL)
+    {
+      if (strstr(loc, "LC_MESSAGES") != NULL)
+	loc = getenv("LANG");
+    }
+#else
+  loc = getenv("LANGUAGE");
+  if (!loc)
+    {
+      loc = g_win32_getlocale();
+      if (loc)
+	{
+	  snprintf(str, sizeof(str), "LANGUAGE=%s", loc);
+	  putenv(str);
+	}
+    }
+#endif
+
+  debug(loc);
+
+  if (loc != NULL)
+    {
+      /* Which, if any, of the locales is it? */
+
+      found = 0;
+      
+      for (i = 0; i < NUM_LANGS && found == 0; i++)
+	{
+	  /* Case-insensitive */
+	  /* (so that, e.g. "pt_BR" is recognized as "pt_br") */
+      
+	  if (strncasecmp(loc, lang_prefixes[i], strlen(lang_prefixes[i])) == 0)
+	  /* if (strcasecmp(loc, lang_prefixes[i]) == 0) */
+	    {
+	      lang = i;
+	      found = 1;
+	    }
+	}
+    }
+
+#ifdef DEBUG
+  printf("lang=%d\n\n", lang);
+  sleep(10);
+#endif
+
+
+  return lang;
+}
+
+
+
 ////////////////////////////////////////////////////////////
 // stamp outline
 #ifndef LOW_QUALITY_STAMP_OUTLINE
@@ -13507,8 +13592,7 @@ static char * uppercase(char * str)
     sz = sizeof(wchar_t) * (strlen(str) + 1);
 
     dest = (wchar_t *) malloc(sz);
-    // FIXME: uppercase chars may need extra bytes
-    ustr = malloc(strlen(str) + 1);
+    ustr = (char *) malloc(sizeof(char) * (strlen(str) + 1));
 
     if (dest != NULL)
     {
@@ -13549,9 +13633,9 @@ static unsigned char * textdir(const unsigned char * const str)
   printf("ORIG_DIR: %s\n", str);
 #endif
 
-  dstr = malloc(strlen(str) + 5);
+  dstr = (unsigned char *) malloc((strlen(str) + 5) * sizeof(unsigned char));
 
-  if (need_right_to_left)
+  if (need_right_to_left(language))
     {
       dstr[strlen(str)] = '\0';
 
@@ -13617,23 +13701,15 @@ static int colors_close(Uint32 c1, Uint32 c2)
     }
   else
     {
-      double r, g, b;
       SDL_GetRGB(c1, canvas->format, &r1, &g1, &b1);
       SDL_GetRGB(c2, canvas->format, &r2, &g2, &b2);
 
-      // use distance in linear RGB space
-      r = sRGB_to_linear_table[r1] - sRGB_to_linear_table[r2];
-      r *= r;
-      g = sRGB_to_linear_table[g1] - sRGB_to_linear_table[g2];
-      g *= g;
-      b = sRGB_to_linear_table[b1] - sRGB_to_linear_table[b2];
-      b *= b;
-
-      // easy to confuse:
-      //   dark grey, brown, purple
-      //   light grey, tan
-      //   red, orange
-      return r+g+b < 0.04;
+      if (abs(r1 - r2) <= 64 && 
+	  abs(g1 - g2) <= 64 &&
+	  abs(b1 - b2) <= 64)
+	return 1;
+      else
+	return 0;
     }
 #endif
 }
@@ -13777,6 +13853,10 @@ static void parse_options(FILE * fi)
 	  debug(str);
       
       
+	  /* Should "lang=" and "locale=" be here as well???
+	     Comments welcome ... bill@newbreedsoftware.com */
+
+
 	  /* FIXME: This should be handled better! */
 	  /* (e.g., complain on illegal lines, support comments, blanks, etc.) */
 
@@ -13959,11 +14039,12 @@ static void parse_options(FILE * fi)
 	    {
 	      simple_shapes = 1;
 	    }
-	  // Should "locale=" be here as well???
-	  // Comments welcome ... bill@newbreedsoftware.com
 	  else if (strstr(str, "lang=") == str)
 	    {
-	      set_langstr(str + 5);
+	      langstr = strdup(str + 5);
+#ifdef DEBUG
+	      printf("langstr set to: %s\n", langstr);
+#endif
 	    }
 	  else if (strstr(str, "printdelay=") == str)
 	    {
@@ -14073,6 +14154,43 @@ static void draw_image_title(int t, int x)
   dest.x = x + (96 - img_title_names[t]->w) / 2;;
   dest.y = (40 - img_title_names[t]->h) / 2;
   SDL_BlitSurface(img_title_names[t], NULL, screen, &dest);
+}
+
+
+
+static int need_own_font(int l)
+{
+  int i, need;
+
+  need = 0;
+
+  for (i = 0; lang_use_own_font[i] != -1 && need == 0; i++)
+    {
+      if (lang_use_own_font[i] == l)
+	{
+	  need = 1;
+	}
+    }
+
+  return need;
+}
+
+
+static int need_right_to_left(int l)
+{
+  int i, need;
+
+  need = 0;
+
+  for (i = 0; lang_use_right_to_left[i] != -1 && need == 0; i++)
+    {
+      if (lang_use_right_to_left[i] == l)
+	{
+	  need = 1;
+	}
+    }
+
+  return need;
 }
 
 
@@ -14254,6 +14372,25 @@ static int mySDL_PollEvent(SDL_Event *event)
     }
 
   return ret;
+}
+
+
+static TTF_Font *try_alternate_font(int language)
+{
+  char  str[128];
+  char  prefix[64];
+  char  *p;
+
+  strcpy(prefix, lang_prefixes[language]);
+  if ((p = strrchr(prefix, '_')) != NULL)
+  {
+    *p = 0;
+    snprintf(str, sizeof(str), "%sfonts/locale/%s.ttf",
+             DATA_PREFIX, prefix);
+
+    return TTF_OpenFont(str, 18);
+  }
+  return NULL;
 }
 
 
