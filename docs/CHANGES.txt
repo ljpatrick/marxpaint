@@ -7,7 +7,7 @@ bill@newbreedsoftware.com
 http://www.newbreedsoftware.com/tuxpaint/
 
 
-2005.March.9 (0.9.15)
+2005.March.24 (0.9.15)
 
   * uncatagorized and messy:
     -----------------------
@@ -371,6 +371,9 @@ http://www.newbreedsoftware.com/tuxpaint/
 
     * Croatian translation created.
       Nedjeljko Jedvaj <jedvaj.nedeljko@lexunit.com>
+
+    * Georgian translation created.
+      Gia Shervashidze <giasher@telenet.ge>
 
     * Hindi translation created.
       Ankit Malik <greatestankit@yahoo.co.in>

@@ -7,7 +7,7 @@ bill@newbreedsoftware.com
 http://www.newbreedsoftware.com/tuxpaint/
 
 
-June 17, 2002 - March 9, 2005
+June 17, 2002 - March 24, 2005
 
 
 * Design and Coding:
@@ -134,6 +134,9 @@ June 17, 2002 - March 9, 2005
 
   * Galician
     Leandro Regueiro <unho@gulo.org>
+
+  * Georgian
+    Gia Shervashidze <giasher@telenet.ge>
     
   * German
     Fabian Franz <FabianFranz@gmx.de>

@@ -22,12 +22,12 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
   
-  June 14, 2002 - March 19, 2005
+  June 14, 2002 - March 24, 2005
 */
 
 
 #define VER_VERSION     "0.9.15"
-#define VER_DATE        "2005-03-19"
+#define VER_DATE        "2005-03-24"
 
 
 /* Color depth for Tux Paint to run in, and store canvases in: */
@@ -532,6 +532,7 @@ enum {
   LANG_IS,     /* Icelandic */
   LANG_IT,     /* Italian */
   LANG_JA,     /* Japanese */
+  LANG_KA,     /* Georgian */
   LANG_KO,     /* Korean */
   LANG_LT,     /* Lithuanian */
   LANG_MS,     /* Malay */
@@ -587,6 +588,7 @@ static const char * lang_prefixes[NUM_LANGS] = {
   "is",
   "it",
   "ja",
+  "ka",
   "ko",
   "lt",
   "ms",
@@ -619,6 +621,7 @@ static int lang_use_own_font[] = {
 //  LANG_HE,
   LANG_HI,
   LANG_JA,
+  LANG_KA,
   LANG_KO,
   LANG_TA,
   LANG_ZH_CN,
@@ -747,8 +750,8 @@ static void show_lang_usage(FILE * f, const char * const prg)
 /* fr */     "  french       francais\n"
 /* ga */     "  gaelic       gaidhlig\n"
 /* gl */     "  galician     galego\n"
+/* ka */     "  georgian\n"
 /* de */     "  german       deutsch\n"
-/* et */     "  estonian\n"
 /* el */     "  greek\n"
 /* he */     "  hebrew\n"
 /* hi */     "  hindi\n"
@@ -822,6 +825,7 @@ static void show_locale_usage(FILE * f, const char * const prg)
 	  "  id_ID   (Indonesian   Bahasa Indonesia)\n"
 	  "  it_IT   (Italian      Italiano)\n"
 	  "  ja_JP   (Japanese)\n"
+	  "  ka_GE   (Georgian)\n"
 	  "  ko_KR   (Korean)\n"
 	  "  ms_MY   (Malay)\n"
 	  "  lt_LT   (Lithuanian   Lietuviu)\n"
@@ -854,90 +858,91 @@ typedef struct language_to_locale_struct {
 static const language_to_locale_struct language_to_locale_array[] = {
 {"english",              "C"},
 {"american-english",     "C"},
-{"croatian",             "hr_HR"},
-{"hrvatski",             "hr_HR"},
-{"catalan",              "ca_ES"},
-{"catala",               "ca_ES"},
-{"belarusian",           "be_BY"},
-{"bielaruskaja",         "be_BY"},
-{"czech",                "cs_CZ"},
-{"cesky",                "cs_CZ"},
-{"danish",               "da_DK"},
-{"dansk",                "da_DK"},
-{"german",               "de_DE"},
-{"deutsch",              "de_DE"},
-{"estonian",             "et_EE"},
-{"greek",                "el_GR"},
-{"british-english",      "en_GB"},
-{"british",              "en_GB"},
-{"spanish",              "es_ES"},
-{"espanol",              "es_ES"},
-{"finnish",              "fi_FI"},
-{"suomi",                "fi_FI"},
-{"french",               "fr_FR"},
-{"francais",             "fr_FR"},
-{"gaelic",               "ga_IE"},
-{"gaidhlig",             "ga_IE"},
-{"galician",             "gl_ES"},
-{"galego",               "gl_ES"},
-{"hebrew",               "he_IL"},
-{"hindi",                "hi_IN"},
-{"hungarian",            "hu_HU"},
-{"magyar",               "hu_HU"},
-{"indonesian",           "id_ID"},
-{"bahasa-indonesia",     "id_ID"},
-{"icelandic",            "is_IS"},
-{"islenska",             "is_IS"},
-{"italian",              "it_IT"},
-{"italiano",             "it_IT"},
-{"japanese",             "ja_JP"},
-{"vietnamese",           "vi_VN"},
-{"afrikaans",            "af_ZA"},
-{"albanian",             "sq_AL"},
-{"breton",               "br_FR"},
-{"brezhoneg",            "br_FR"},
-{"bulgarian",            "bg_BG"},
-{"welsh",                "cy_GB"},
-{"cymraeg",              "cy_GB"},
-{"bokmal",               "nb_NO"},
-{"basque",               "eu_ES"},
-{"euskara",              "eu_ES"},
-{"korean",               "ko_KR"},
-{"klingon",              "tlh"},
-{"tlhIngan",             "tlh"},
-{"tlhingan",             "tlh"},
-{"tamil",                "ta_IN"},
-{"lithuanian",           "lt_LT"},
-{"lietuviu",             "lt_LT"},
-{"malay",                "ms_MY"},
-{"dutch",                "nl_NL"},
-{"nederlands",           "nl_NL"},
-{"norwegian",            "nn_NO"},
-{"nynorsk",              "nn_NO"},
-{"norsk",                "nn_NO"},
-{"polish",               "pl_PL"},
-{"polski",               "pl_PL"},
-{"brazilian-portuguese", "pt_BR"},
-{"portugues-brazilian",  "pt_BR"},
-{"brazilian",            "pt_BR"},
-{"portuguese",           "pt_PT"},
-{"portugues",            "pt_PT"},
-{"romanian",             "ro_RO"},
-{"russian",              "ru_RU"},
-{"russkiy",              "ru_RU"},
-{"slovak",               "sk_SK"},
-{"slovenian",            "sl_SI"},
-{"slovensko",            "sl_SI"},
-{"serbian",              "sr_YU"},
-{"swedish",              "sv_SE"},
-{"svenska",              "sv_SE"},
-{"swahili",              "sw_TZ"},
-{"turkish",              "tr_TR"},
-{"walloon",              "wa_BE"},
-{"walon",                "wa_BE"},
-{"chinese",              "zh_CN"},
-{"simplified-chinese",   "zh_CN"},
-{"traditional-chinese",  "zh_TW"},
+{"croatian",             "hr_HR.UTF-8"},
+{"hrvatski",             "hr_HR.UTF-8"},
+{"catalan",              "ca_ES.UTF-8"},
+{"catala",               "ca_ES.UTF-8"},
+{"belarusian",           "be_BY.UTF-8"},
+{"bielaruskaja",         "be_BY.UTF-8"},
+{"czech",                "cs_CZ.UTF-8"},
+{"cesky",                "cs_CZ.UTF-8"},
+{"danish",               "da_DK.UTF-8"},
+{"dansk",                "da_DK.UTF-8"},
+{"german",               "de_DE.UTF-8"},
+{"deutsch",              "de_DE.UTF-8"},
+{"estonian",             "et_EE.UTF-8"},
+{"greek",                "el_GR.UTF-8"},
+{"british-english",      "en_GB.UTF-8"},
+{"british",              "en_GB.UTF-8"},
+{"spanish",              "es_ES.UTF-8"},
+{"espanol",              "es_ES.UTF-8"},
+{"finnish",              "fi_FI.UTF-8"},
+{"suomi",                "fi_FI.UTF-8"},
+{"french",               "fr_FR.UTF-8"},
+{"francais",             "fr_FR.UTF-8"},
+{"gaelic",               "ga_IE.UTF-8"},
+{"gaidhlig",             "ga_IE.UTF-8"},
+{"galician",             "gl_ES.UTF-8"},
+{"galego",               "gl_ES.UTF-8"},
+{"hebrew",               "he_IL.UTF-8"},
+{"hindi",                "hi_IN.UTF-8"},
+{"hungarian",            "hu_HU.UTF-8"},
+{"magyar",               "hu_HU.UTF-8"},
+{"indonesian",           "id_ID.UTF-8"},
+{"bahasa-indonesia",     "id_ID.UTF-8"},
+{"icelandic",            "is_IS.UTF-8"},
+{"islenska",             "is_IS.UTF-8"},
+{"italian",              "it_IT.UTF-8"},
+{"italiano",             "it_IT.UTF-8"},
+{"japanese",             "ja_JP.UTF-8"},
+{"vietnamese",           "vi_VN.UTF-8"},
+{"afrikaans",            "af_ZA.UTF-8"},
+{"albanian",             "sq_AL.UTF-8"},
+{"breton",               "br_FR.UTF-8"},
+{"brezhoneg",            "br_FR.UTF-8"},
+{"bulgarian",            "bg_BG.UTF-8"},
+{"welsh",                "cy_GB.UTF-8"},
+{"cymraeg",              "cy_GB.UTF-8"},
+{"bokmal",               "nb_NO.UTF-8"},
+{"basque",               "eu_ES.UTF-8"},
+{"euskara",              "eu_ES.UTF-8"},
+{"georgian",             "ka_GE"},
+{"korean",               "ko_KR.UTF-8"},
+{"klingon",              "tlh.UTF-8"},
+{"tlhIngan",             "tlh.UTF-8"},
+{"tlhingan",             "tlh.UTF-8"},
+{"tamil",                "ta_IN.UTF-8"},
+{"lithuanian",           "lt_LT.UTF-8"},
+{"lietuviu",             "lt_LT.UTF-8"},
+{"malay",                "ms_MY.UTF-8"},
+{"dutch",                "nl_NL.UTF-8"},
+{"nederlands",           "nl_NL.UTF-8"},
+{"norwegian",            "nn_NO.UTF-8"},
+{"nynorsk",              "nn_NO.UTF-8"},
+{"norsk",                "nn_NO.UTF-8"},
+{"polish",               "pl_PL.UTF-8"},
+{"polski",               "pl_PL.UTF-8"},
+{"brazilian-portuguese", "pt_BR.UTF-8"},
+{"portugues-brazilian",  "pt_BR.UTF-8"},
+{"brazilian",            "pt_BR.UTF-8"},
+{"portuguese",           "pt_PT.UTF-8"},
+{"portugues",            "pt_PT.UTF-8"},
+{"romanian",             "ro_RO.UTF-8"},
+{"russian",              "ru_RU.UTF-8"},
+{"russkiy",              "ru_RU.UTF-8"},
+{"slovak",               "sk_SK.UTF-8"},
+{"slovenian",            "sl_SI.UTF-8"},
+{"slovensko",            "sl_SI.UTF-8"},
+{"serbian",              "sr_YU.UTF-8"},
+{"swedish",              "sv_SE.UTF-8"},
+{"svenska",              "sv_SE.UTF-8"},
+{"swahili",              "sw_TZ.UTF-8"},
+{"turkish",              "tr_TR.UTF-8"},
+{"walloon",              "wa_BE.UTF-8"},
+{"walon",                "wa_BE.UTF-8"},
+{"chinese",              "zh_CN.UTF-8"},
+{"simplified-chinese",   "zh_CN.UTF-8"},
+{"traditional-chinese",  "zh_TW.UTF-8"},
 };
 
 
@@ -960,6 +965,7 @@ static void setup_language(const char * const prg)
     {
       int i = sizeof language_to_locale_array / sizeof language_to_locale_array[0];
       const char *locale = NULL;
+
       while(i--)
         {
           if (strcmp(langstr, language_to_locale_array[i].language))
@@ -985,22 +991,18 @@ static void setup_language(const char * const prg)
             }
         }
 
-      if (locale[0]=='C' && !locale[1])
-        {
-          putenv((char *) "LANGUAGE=C");
-          putenv((char *) "LC_ALL=C");
-        }
-      else
         {
           char *s;
           ssize_t len;
-          len = strlen("LANGUAGE=.UTF-8")+strlen(locale)+1;
+          
+	  len = strlen("LANGUAGE=")+strlen(locale)+1;
           s = malloc(len);
-          snprintf(s, len, "LANGUAGE=%s.UTF-8", locale);
+          snprintf(s, len, "LANGUAGE=%s", locale);
           putenv(s);
-          len = strlen("LC_ALL=.UTF-8")+strlen(locale)+1;
+	  
+          len = strlen("LC_ALL=")+strlen(locale)+1;
           s = malloc(len);
-          snprintf(s, len, "LC_ALL=%s.UTF-8", locale);
+          snprintf(s, len, "LC_ALL=%s", locale);
           putenv(s);
         }
     
