@@ -2,6 +2,8 @@ locale
 debug
 release
 filelist.inc
+stdout.txt
+stderr.txt
 *.dll
 *.DLL
 *.exe
