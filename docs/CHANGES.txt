@@ -7,7 +7,7 @@ bill@newbreedsoftware.com
 http://www.newbreedsoftware.com/tuxpaint/
 
 
-2005.February.13 (0.9.15)
+2005.February.26 (0.9.15)
 
 
   * uncatagorized and messy:
@@ -192,6 +192,10 @@ http://www.newbreedsoftware.com/tuxpaint/
 
     * Delete thumbnails from ".thumbs" subdirectory.
       Marcin 'Shard' Konicki <shard at beosjournal.org>
+
+    * tuxpaint-import.sh now uses single brackets when testing for "--help".
+      (Apparently, the "[[...]]" version didn't work some places.)
+      Jeff Smith <whydoubt@yahoo.com>
 
   * Compiling, porting and packaging updates:
     -----------------------------------------

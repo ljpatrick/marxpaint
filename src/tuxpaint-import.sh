@@ -9,7 +9,7 @@
 # bill@newbreedsoftware.com
 # http://www.newbreedsoftware.com/tuxpaint/
 
-# September 21, 2002 - June 17, 2003
+# September 21, 2002 - February 26, 2005
 
 
 TMPDIR=/tmp
@@ -23,7 +23,7 @@ if [ $# -eq 0 ]; then
   exit
 fi
 
-if [[ $1 == "--help" ]]; then
+if [ $1 = "--help" ]; then
   # --help, show usage:
   echo
   echo "tuxpaint-import"
