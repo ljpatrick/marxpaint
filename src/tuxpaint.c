@@ -133,8 +133,8 @@ static scaleparams scaletable[] = {
 // to scale some offset, in pixels, like the current stamp is scaled
 #define SCALE_LIKE_STAMP(x) ( ((x) * scaletable[stamp_data[cur_stamp]->size].numer + scaletable[stamp_data[cur_stamp]->size].denom-1) / scaletable[stamp_data[cur_stamp]->size].denom )
 // pixel dimensions of the current stamp, as scaled
-#define CUR_STAMP_W SCALE_LIKE_STAMP(stamp_data[cur_stamp]->full_norm->w)
-#define CUR_STAMP_H SCALE_LIKE_STAMP(stamp_data[cur_stamp]->full_norm->h)
+#define CUR_STAMP_W SCALE_LIKE_STAMP(stamp_data[cur_stamp]->w)
+#define CUR_STAMP_H SCALE_LIKE_STAMP(stamp_data[cur_stamp]->h)
 
 ///////////////////////////////////////////////////////////////////////////////
 
@@ -2056,6 +2056,8 @@ typedef struct stamp_type {
   SDL_Surface *full_mirr;
   SDL_Surface *thumb_norm;
   SDL_Surface *thumb_mirr;
+  unsigned short w;
+  unsigned short h;
   unsigned tinter : 3;
   unsigned colorable : 1;
   unsigned tintable : 1;
@@ -4278,8 +4280,8 @@ static void mainloop(void)
 		  
 		  if (cur_tool == TOOL_STAMP)
 		    {
-		      w = stamp_data[cur_stamp]->full_norm->w;
-		      h = stamp_data[cur_stamp]->full_norm->h;
+		      w = stamp_data[cur_stamp]->w;
+		      h = stamp_data[cur_stamp]->h;
 		    }
 		  else
 		    {
@@ -6726,13 +6728,19 @@ static unsigned default_stamp_size;
 
 static void loadstamp_finisher(int i)
 {
-  if (stamp_data[i]->full_norm->w > 40 || stamp_data[i]->full_norm->h > 40)
-    stamp_data[i]->thumb_norm = thumbnail(stamp_data[i]->full_norm, 40, 40, 1);
+  if (stamp_data[i]->full_norm)
+    {
+      stamp_data[i]->w = stamp_data[i]->full_norm->w;
+      stamp_data[i]->h = stamp_data[i]->full_norm->h;
+      if (stamp_data[i]->w > 40 || stamp_data[i]->h > 40)
+        stamp_data[i]->thumb_norm = thumbnail(stamp_data[i]->full_norm, 40, 40, 1);
+    }
 
   if (stamp_data[i]->full_mirr)
     {
-      /* Also thumbnail the pre-drawn mirror version, if any: */
-      if (stamp_data[i]->full_mirr->w > 40 || stamp_data[i]->full_mirr->h > 40)
+      stamp_data[i]->w = stamp_data[i]->full_mirr->w;
+      stamp_data[i]->h = stamp_data[i]->full_mirr->h;
+      if (stamp_data[i]->w > 40 || stamp_data[i]->h > 40)
         stamp_data[i]->thumb_mirr = thumbnail(stamp_data[i]->full_mirr, 40, 40, 1);
     }
 
@@ -6749,8 +6757,8 @@ static void loadstamp_finisher(int i)
     scaleparams *s = &scaletable[upper];
     int pw, ph; // proposed width and height
 
-    pw = (stamp_data[i]->full_norm->w * s->numer + s->denom - 1) / s->denom;
-    ph = (stamp_data[i]->full_norm->h * s->numer + s->denom - 1) / s->denom;
+    pw = (stamp_data[i]->w * s->numer + s->denom - 1) / s->denom;
+    ph = (stamp_data[i]->h * s->numer + s->denom - 1) / s->denom;
 
     // OK to let a stamp stick off the sides in one direction, not two
     if (pw < canvas->w * 2 && ph < canvas->h * 1)
@@ -6765,8 +6773,8 @@ static void loadstamp_finisher(int i)
     scaleparams *s = &scaletable[lower];
     int pw, ph; // proposed width and height
 
-    pw = (stamp_data[i]->full_norm->w * s->numer + s->denom - 1) / s->denom;
-    ph = (stamp_data[i]->full_norm->h * s->numer + s->denom - 1) / s->denom;
+    pw = (stamp_data[i]->w * s->numer + s->denom - 1) / s->denom;
+    ph = (stamp_data[i]->h * s->numer + s->denom - 1) / s->denom;
 
     if (pw*ph > 20)
       break;
