@@ -1,479 +1,488 @@
-# TuxPaint Vietnamese translation file
+# Vietnamese translation for tuxpaint-0.9.14
 # Copyright (C)2004 Bill Kendrick
-# This file is distributed under the same license as the TuxPaint package.
+# Copyright (C) 2005 Free Software Foundation, Inc.
 # Le Quang Phan <lqphan@hn.vnn.vn>, 2004.
+# Clytie Siddall <clytie@riverland.net.au>, 2005.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: TuxPaint 0.9.14\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2005-01-06 12:31+0100\n"
-"PO-Revision-Date: 2004-04-14 13:01-0800\n"
-"Last-Translator: Le Quang Phan <lqphan@hn.vnn.vn>\n"
-"Language-Team: N/A <>\n"
+"Project-Id-Version: tuxpaint 0.9.14\n"
+"Report-Msgid-Bugs-To: tuxpaint-i18n@tux4kids.net\n"
+"POT-Creation-Date: 2004-03-22 11:23-0800\n"
+"PO-Revision-Date: 2005-02-05 20:38+1030\n"
+"Last-Translator: Clytie Siddall <clytie@riverland.net.au>\n"
+"Language-Team: Vietnamese <gnomevi-list@lists.sourceforge.net> \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-msgid "A drawing program for children."
-msgstr ""
-
-msgid "Drawing program"
-msgstr ""
-
-#, fuzzy
-msgid "Tux Paint"
-msgstr "Ve"
-
-msgid "Black!"
-msgstr "Den!"
-
-#, fuzzy
-msgid "Dark Gray!"
-msgstr "Xam!"
-
-#. using both valid spellings
-msgid "Light Grey!"
-msgstr ""
-
-#. using both valid spellings
-msgid "White!"
-msgstr "Trang!"
-
-msgid "Red!"
-msgstr "Do!"
-
-msgid "Orange!"
-msgstr "Da cam!"
-
-msgid "Yellow!"
-msgstr "Vang!"
-
-msgid "Neon green!"
-msgstr ""
-
-msgid "Green!"
-msgstr "Xanh la cay!"
-
-msgid "Sky blue!"
-msgstr ""
-
-msgid "Blue!"
-msgstr "Da troi!"
-
-msgid "Purple!"
-msgstr "Do tia!"
-
-msgid "Magenta!"
-msgstr ""
-
-msgid "Pink!"
-msgstr "Hong!"
-
-msgid "Brown!"
-msgstr "Nau!"
-
-#, fuzzy
-msgid "Tan!"
-msgstr "Tim!"
-
-msgid "Beige!"
-msgstr ""
-
-msgid "Great!"
-msgstr "Tuyet voi!"
-
-msgid "Cool!"
-msgstr "Dat!"
-
-msgid "Keep it up!"
-msgstr "Dua len!"
-
-msgid "Good job!"
-msgstr "Tèt!"
-
-msgid "Fill"
-msgstr "Dien"
-
-#, fuzzy
-msgid "Grass"
-msgstr "Xoa"
-
-#, fuzzy
-msgid "Bricks"
-msgstr "Khoi"
-
-msgid "Rainbow"
-msgstr "CauVong"
-
-msgid "Sparkles"
-msgstr "SaoTuyet"
-
-msgid "Blur"
-msgstr "Mo"
-
-msgid "Smudge"
-msgstr ""
-
-msgid "Fade"
-msgstr "Nhat"
-
-msgid "Darken"
-msgstr ""
-
-#, fuzzy
-msgid "Chalk"
-msgstr "Phan"
-
-msgid "Blocks"
-msgstr "Khoi"
-
-msgid "Negative"
-msgstr "AmTinh"
-
-#, fuzzy
-msgid "Tint"
-msgstr "Manh"
-
-#, fuzzy
-msgid "Drip"
-msgstr "Nho giot"
-
-msgid "Cartoon"
-msgstr ""
-
-msgid "Mirror"
-msgstr "Guong"
-
-msgid "Flip"
-msgstr "DayNhe"
-
-#, fuzzy
-msgid "Click in the picture to fill that area with color."
-msgstr "Kich vao hinh de to mau"
-
-#, fuzzy
-msgid "Click and move to draw grass. Don't forget the dirt!"
-msgstr "Kich va di chuot de lam ruc ro"
-
-#, fuzzy
-msgid "Click and move to draw large bricks."
-msgstr "Kich va di chuot de lam ruc ro"
-
-#, fuzzy
-msgid "Click and move to draw small bricks."
-msgstr "Kich va di chuot de lam ruc ro"
-
-msgid "You can draw in rainbow colors!"
-msgstr "Ban co the ve bang cac mau cau vong!"
-
-msgid "Click and move to draw sparkles."
-msgstr "Kich va di chuot de lam ruc ro"
-
-msgid "Click and move the mouse around to blur the picture."
-msgstr "Kich va di chuot vong quanh de lam mo hinh"
-
-#, fuzzy
-msgid "Click and move the mouse around to smudge the picture."
-msgstr "Kich va di chuot vong quanh de lam mo hinh"
-
-#, fuzzy
-msgid "Click and move to fade the colors."
-msgstr "Kich va di chuot de lam nhat mau"
-
-#, fuzzy
-msgid "Click and move to darken the colors."
-msgstr "Kich va di chuot de lam nhat mau"
-
-#, fuzzy
-msgid ""
-"Click and move the mouse around to turn the picture into a chalk drawing."
-msgstr "Kich va di chuot de lat tranh"
-
-#, fuzzy
-msgid "Click and move the mouse around to make the picture blocky."
-msgstr "Kich va di chuot de tao khoi"
-
-#, fuzzy
-msgid "Click and move the mouse around to draw a negative."
-msgstr "Kich va di chuot de doi nguoc"
-
-#, fuzzy
-msgid "Click and move the mouse around to change the picture's color."
-msgstr "Kich va di chuot de tao khoi"
-
-#, fuzzy
-msgid "Click and move the mouse around to make the picture drip."
-msgstr "Kich va di chuot de tao giot"
-
-#, fuzzy
-msgid "Click and move the mouse around to turn the picture into a cartoon."
-msgstr "Kich va di chuot de lat tranh"
-
-msgid "Click to make a mirror image."
-msgstr "Kich de tao doi xung guong"
-
-msgid "Click to flip the picture upside-down."
-msgstr "Kich de giam kÝch thuuooc cua hinh"
-
-#, fuzzy
-msgid "Square"
-msgstr "Hinh vuong"
-
-msgid "Rectangle"
-msgstr "ChuNhat"
-
-msgid "Circle"
-msgstr "Tron"
-
-msgid "Oval"
-msgstr "BauDuc"
-
-msgid "Triangle"
-msgstr "TamGiac"
-
-msgid "Pentagon"
-msgstr "NguGiac"
-
-msgid "Diamond"
-msgstr "HinhThoi"
-
-msgid "A square has four sides, each the same length."
-msgstr "Hinh vuong co bon canh bang nhau."
-
-msgid "A rectangle has four sides."
-msgstr "Hinh chu nhat co bon canh."
-
-#, fuzzy
-msgid "A circle is exactly round."
-msgstr "Duong tron"
-
-msgid "A triangle has three sides."
-msgstr "Tam giac co ba canh"
-
-msgid "A pentagon has five sides."
-msgstr "Ngu giac co nam canh"
-
-msgid "A diamond is a square, turned around slightly."
-msgstr "Hinh thoi la hinh vuong quay di mot chut"
-
-msgid "Tools"
-msgstr "Congcu"
-
-msgid "Colors"
-msgstr "Mau"
-
-msgid "Brushes"
-msgstr "Choi"
-
-#, fuzzy
-msgid "Erasers"
-msgstr "Xoa"
-
-#, fuzzy
-msgid "Stamps"
-msgstr "Dau"
-
-msgid "Shapes"
-msgstr "Hinh"
-
-#, fuzzy
-msgid "Letters"
-msgstr "Kieuchu"
-
-msgid "Magic"
-msgstr "Thuat"
-
-msgid "Paint"
-msgstr "Ve"
-
-msgid "Stamp"
-msgstr "Dau"
-
-msgid "Lines"
-msgstr "Duong"
-
-#, fuzzy
-msgid "Text"
-msgstr "Chu"
-
-msgid "Undo"
-msgstr "Huy"
-
-msgid "Redo"
-msgstr "Lamlai"
-
-#, fuzzy
-msgid "Eraser"
-msgstr "Xoa"
-
-msgid "New"
-msgstr "Moi"
-
-#. buttons for the file open dialog
-msgid "Open"
-msgstr "Mo"
-
-msgid "Save"
-msgstr "Ghi"
-
-msgid "Print"
-msgstr "In"
-
-msgid "Quit"
-msgstr "Thoat"
-
-msgid "Pick a color and a brush shape to draw with."
-msgstr "Chon mau va kieu choi de ve"
-
-msgid "Pick a picture to stamp around your drawing."
-msgstr "Chon mot hinh de dong dau "
-
-msgid "Click to start drawing a line. Let go to complete it."
-msgstr "Kich chuot de bat dau. Re chuot de ve duong"
-
-msgid ""
-"Pick a shape. Click to pick the center, drag, then let go when it is the "
-"size you want. Move around to rotate it, and click to draw it."
-msgstr ""
-"Chon mot hinh. Kich chuot de dinh tam, re chuot den khi co kich co Ban muon. "
-"Di chuyen chuot de quay hinh, kich chuot lan nua de ket thuc"
-
-msgid "Choose a style of text. Click on your drawing and you can start typing."
-msgstr "Chon kieu chu. Kich vao ban ve va bat dau go chu"
-
-msgid "Pick a magical effect to use on your drawing!"
-msgstr "Chon mot phep thuat de dung!"
-
-#. Undo
-msgid "Undo!"
-msgstr "Huy!"
-
-#. Redo
-msgid "Redo!"
-msgstr "Lamlai!"
-
-#. Eraser
-msgid "Eraser!"
-msgstr "Xoa!"
-
-#. New
-msgid "You now have a blank sheet to draw on!"
-msgstr "Ban co mot to giay trang, bat dau ve!"
-
-#. Open
-msgid "Open…"
-msgstr "Mo..."
-
-#. Save
-msgid "Your image has been saved!"
-msgstr "Buc trang cua Ban da duoc ghi!"
-
-#. Print
-msgid "Printing…"
-msgstr "Dang in..."
-
-#. Quit
-msgid "Bye bye!"
-msgstr "Tam biet!"
-
-msgid "Let go of the button to complete the line."
-msgstr "Di chuyen chuot de ve duong"
-
-msgid "Hold the button to stretch the shape."
-msgstr "An giu phim chuot de noi rong kich co cua hinh"
-
-msgid "Move the mouse to rotate the shape. Click to draw it."
-msgstr "Di chuot de quay hinh. Kich chuot de ket thuc"
-
-msgid "OK then… Let’s keep drawing this one!"
-msgstr "Duoc thoi... Hay tiep tuc ban ve nay!"
-
-#. FIXME: Move elsewhere!!!
+#: tuxpaint.c:809
 msgid "Do you really want to quit?"
-msgstr "Ban co thuc su muon thoat?"
+msgstr "Cháu có thực sư muốn thoát không?"
 
-#. FIXME: Move elsewhere! Or not?!
+#: tuxpaint.c:810 tuxpaint.c:814 tuxpaint.c:818 tuxpaint.c:832 tuxpaint.c:842
+#: tuxpaint.c:8442 tuxpaint.c:9149
 msgid "Yes"
-msgstr "Co"
+msgstr "Có"
 
+#: tuxpaint.c:811 tuxpaint.c:815 tuxpaint.c:819 tuxpaint.c:833 tuxpaint.c:843
+#: tuxpaint.c:8445
 msgid "No"
-msgstr "Khong"
+msgstr "Không"
 
+#: tuxpaint.c:813
 msgid "If you quit, you’ll lose your picture! Save it?"
-msgstr "Neu thoat, buc tranh cua Ban se mat! Co ghi lai?"
+msgstr "Nếu thoát thì ảnh của cháu bị mất! Có lưu không?"
 
+#: tuxpaint.c:817
 msgid "Save your picture first?"
-msgstr "Co ghi buc tranh cua Ban?"
+msgstr "Có lưu ảnh của cháu trước?"
 
+#: tuxpaint.c:821
 msgid "Can’t open that picture!"
-msgstr "Khong the mo duoc buc tranh nay!"
+msgstr "Không mở được ảnh ấy!"
 
-#, fuzzy
+#: tuxpaint.c:822 tuxpaint.c:829 tuxpaint.c:836 tuxpaint.c:839
 msgid "OK"
-msgstr "OK"
+msgstr "Được"
 
+#: tuxpaint.c:824
 msgid "Starting a new picture will erase the current one!"
-msgstr "Neu bat dau ban ve moi, ban ve hien thoi se bi xoa!"
+msgstr "Nếu bắt đầu bản vẽ mới thì bản vẽ hiện thời sẽ bị xóa!"
 
+#: tuxpaint.c:825
 msgid "That’s OK!"
-msgstr "Dong y!"
+msgstr "Dồng ý!"
 
+#: tuxpaint.c:826
 msgid "Never mind!"
-msgstr "Cho, dung xoa!"
+msgstr "Tôi đổi ý kiến!"
 
+#: tuxpaint.c:828
 msgid "There are no saved files!"
-msgstr "Khong co files nao duoc ghi!"
+msgstr "Không có tập tin nào được lưu!"
 
+#: tuxpaint.c:831
 msgid "Print your picture now?"
-msgstr "Co in buc tranh cua Ban khong?"
+msgstr "Có in ảnh của cháu bây giờ?"
 
+#: tuxpaint.c:835
 msgid "Your picture has been printed!"
-msgstr "Buc tranh cua Ban da duoc in!"
+msgstr "Ảnh của cháu đã được in rồi!"
 
+#: tuxpaint.c:838
 msgid "You can’t print yet!"
-msgstr "Luc nay, Ban khong the in duoc!"
+msgstr "Cháu chưa có thể in!"
 
+#: tuxpaint.c:841
 msgid "Erase this picture?"
-msgstr "Co xoa hinh nay khong?"
+msgstr "Có xóa ảnh này không?"
 
+#: tuxpaint.c:5495 tools.h:52
+msgid "Open"
+msgstr "Mở"
+
+#: tuxpaint.c:5500
 msgid "Erase"
-msgstr "Xoa"
+msgstr "Xóa"
 
-#, fuzzy
+#: tuxpaint.c:5505
 msgid "Back"
 msgstr "Quay lui"
 
-msgid "Aa"
-msgstr ""
-
-#. FIXME: Move elsewhere!!!
+#: tuxpaint.c:9148
 msgid "Save over the older version of this picture?"
-msgstr "Ghi de len ban ve cu?"
+msgstr "Ghi đề lên bản vẽ cũ không?"
 
+#: tuxpaint.c:9150
 msgid "No, save a new file"
-msgstr "Khong, ghi vao mot file moi"
+msgstr "Không, lưu vào một tập tin mới"
 
+#: tuxpaint.c:10007
 msgid "Choose the picture you want, then click “Open”."
-msgstr "Chon mot buc tranh Ban muon, kich tiep vao o 'Mo'."
+msgstr "Chọn ảnh mà cháu muốn, rồi nhắp vào nút Mở."
 
-#~ msgid "Lime!"
-#~ msgstr "Xanh la ma!"
+#: colors.h:62
+msgid "Black!"
+msgstr "Đen!"
 
-#~ msgid "Fuchsia!"
-#~ msgstr "Tim hong!"
+#: colors.h:63
+msgid "White!"
+msgstr "Trắng!"
 
-#~ msgid "Silver!"
-#~ msgstr "Bac!"
+#: colors.h:64
+msgid "Red!"
+msgstr "Đỏ!"
 
-#, fuzzy
-#~ msgid "Thick"
-#~ msgstr "Dam"
+#: colors.h:65
+msgid "Pink!"
+msgstr "Hồng!"
 
-#, fuzzy
-#~ msgid "Click and move the mouse to thicken the picture."
-#~ msgstr "Kich va di chuot de lam day hinh len"
+#: colors.h:66
+msgid "Orange!"
+msgstr "Da cam!"
 
-#, fuzzy
-#~ msgid "Click and move the mouse to thin the picture."
-#~ msgstr "Kich va di chuot de lam mong hinh"
+#: colors.h:67
+msgid "Yellow!"
+msgstr "Vàng!"
+
+#: colors.h:68
+msgid "Lime!"
+msgstr "Xanh lá mạ!"
+
+#: colors.h:69
+msgid "Green!"
+msgstr "Xanh lá cây!"
+
+#: colors.h:70
+msgid "Cyan!"
+msgstr "Xanh lông mòng!"
+
+#: colors.h:71
+msgid "Blue!"
+msgstr "Da trời!"
+
+#: colors.h:72
+msgid "Purple!"
+msgstr "Đỏ tía!"
+
+#: colors.h:73
+msgid "Fuchsia!"
+msgstr "Tím hồng!"
+
+#: colors.h:74
+msgid "Brown!"
+msgstr "Nâu!"
+
+#: colors.h:75
+msgid "Gray!"
+msgstr "Xám!"
+
+#: colors.h:76
+msgid "Silver!"
+msgstr "Bạc!"
+
+#: great.h:20
+msgid "Great!"
+msgstr "Tuyệt vời!"
+
+#: great.h:21
+msgid "Cool!"
+msgstr "Đạt!"
+
+#: great.h:22
+msgid "Keep it up!"
+msgstr "Cứ vẽ đẹp!"
+
+#: great.h:23
+msgid "Good job!"
+msgstr "Tốt rồi!"
+
+#: magic.h:48
+msgid "Rainbow"
+msgstr "Cầu vồng"
+
+#: magic.h:49
+msgid "Sparkles"
+msgstr "Lấp lánh"
+
+#: magic.h:51
+msgid "Mirror"
+msgstr "Gương"
+
+#: magic.h:52
+msgid "Flip"
+msgstr "Lật"
+
+#: magic.h:54
+msgid "Blur"
+msgstr "Mờ"
+
+#: magic.h:55
+msgid "Blocks"
+msgstr "Khối"
+
+#: magic.h:57
+msgid "Negative"
+msgstr "Âm"
+
+#: magic.h:58
+msgid "Fade"
+msgstr "Làm mờ dần"
+
+#: magic.h:60
+msgid "Chalk"
+msgstr "Phần"
+
+#: magic.h:61
+msgid "Drip"
+msgstr "Nhỏ giọt"
+
+#: magic.h:63
+msgid "Thick"
+msgstr "Dày"
+
+#: magic.h:64
+msgid "Thin"
+msgstr "Mảnh"
+
+#: magic.h:66
+msgid "Fill"
+msgstr "Điền"
+
+#: magic.h:73
+msgid "You can draw in rainbow colors!"
+msgstr "Cháu có thể vẽ bằng các màu cầu vồng!"
+
+#: magic.h:74
+msgid "Click and move to draw sparkles."
+msgstr "Nhắp và di chuôt để vẽ lấp lánh."
+
+#: magic.h:76
+msgid "Click to make a mirror image."
+msgstr "Nhắp để tạo một hình phản chiếu."
+
+#: magic.h:77
+msgid "Click to flip the picture upside-down."
+msgstr "Nhắp để quay hình lộn ngược."
+
+#: magic.h:79
+msgid "Click and move the mouse around to blur the picture."
+msgstr "Nhắp và di chuột vòng quanh để làm mờ hình."
+
+#: magic.h:80
+msgid "Click and move the mouse around to make the picture blocky."
+msgstr "Nhắp và di chuột vòng quanh để làm hình kiểu khối."
+
+#: magic.h:82
+msgid "Click and move the mouse around to draw a negative."
+msgstr "Nhắp và di chuột để vẽ hình âm (màu ngược lại)."
+
+#: magic.h:83
+msgid "Click and move to fade the colors."
+msgstr "Nhắp và di chuột để làm màu mờ dần."
+
+#: magic.h:85
+msgid "Click and move the mouse around to turn the picture into a chalk drawing."
+msgstr "Nhắp và di chuột để đổi hình này thành bản vẽ phấn."
+
+#: magic.h:86
+msgid "Click and move the mouse around to make the picture drip."
+msgstr "Nhắp và di chuột để làm cho hình này chạy nhỏ giọt."
+
+#: magic.h:88
+msgid "Click and move the mouse to thicken the picture."
+msgstr "Nhắp và di chuột để làm dày hình lên."
+
+#: magic.h:89
+msgid "Click and move the mouse to thin the picture."
+msgstr "Nhắp và di chuột để làm mỏng hình."
+
+#: magic.h:91
+msgid "Click in the picture to fill that area with color."
+msgstr "Nhắp vào phần hình để tô màu đầy đủ."
+
+#: shapes.h:141 shapes.h:142
+msgid "Square"
+msgstr "Hình vuông"
+
+#: shapes.h:143 shapes.h:144
+msgid "Rectangle"
+msgstr "Chữ nhật"
+
+#: shapes.h:145 shapes.h:146
+msgid "Circle"
+msgstr "Tròn"
+
+#: shapes.h:147 shapes.h:148 shapes.h:167 shapes.h:168
+msgid "Oval"
+msgstr "Bầu dục"
+
+#: shapes.h:149 shapes.h:150
+msgid "Triangle"
+msgstr "Tam giác"
+
+#: shapes.h:151 shapes.h:152
+msgid "Pentagon"
+msgstr "Năm cạnh"
+
+#: shapes.h:153 shapes.h:154
+msgid "Diamond"
+msgstr "Hình thoi"
+
+#: shapes.h:161 shapes.h:162
+msgid "A square has four sides, each the same length."
+msgstr "Hình vuô\bng có bốn cạnh bằng nhau."
+
+#: shapes.h:163 shapes.h:164
+msgid "A rectangle has four sides."
+msgstr "Hình chữ nhật có bốn cạnh."
+
+#: shapes.h:165 shapes.h:166
+msgid "A circle is exactly round."
+msgstr "Hình tròn là tròn hoàn toàn."
+
+#: shapes.h:169 shapes.h:170
+msgid "A triangle has three sides."
+msgstr "Tam giác có ba cạnh."
+
+#: shapes.h:171 shapes.h:172
+msgid "A pentagon has five sides."
+msgstr "Hình năm canh có ... năm cạnh. :)"
+
+#: shapes.h:173 shapes.h:174
+msgid "A diamond is a square, turned around slightly."
+msgstr "Hình thoi là hình vuông đã quay môt chút."
+
+#: titles.h:37
+msgid "Tools"
+msgstr "Công cụ"
+
+#: titles.h:38
+msgid "Colors"
+msgstr "Màu"
+
+#: titles.h:39
+msgid "Brushes"
+msgstr "Chổi"
+
+#: titles.h:40
+msgid "Stamps"
+msgstr "Dấu"
+
+#: titles.h:41 tools.h:45
+msgid "Shapes"
+msgstr "Hình"
+
+#: titles.h:42
+msgid "Letters"
+msgstr "Chữ"
+
+#: titles.h:43 tools.h:47
+msgid "Magic"
+msgstr "Thuật"
+
+#: tools.h:42
+msgid "Paint"
+msgstr "Sơn"
+
+#: tools.h:43
+msgid "Stamp"
+msgstr "Dấu"
+
+#: tools.h:44
+msgid "Lines"
+msgstr "Đường"
+
+#: tools.h:46
+msgid "Text"
+msgstr "Văn bản"
+
+#: tools.h:48
+msgid "Undo"
+msgstr "Hoàn tác"
+
+#: tools.h:49
+msgid "Redo"
+msgstr "Làm lại"
+
+#: tools.h:50
+msgid "Eraser"
+msgstr "Xóa"
+
+#: tools.h:51
+msgid "New"
+msgstr "Mới"
+
+#: tools.h:53
+msgid "Save"
+msgstr "Lưu"
+
+#: tools.h:54
+msgid "Print"
+msgstr "In"
+
+#: tools.h:55
+msgid "Quit"
+msgstr "Thoát"
+
+#: tools.h:62
+msgid "Pick a color and a brush shape to draw with."
+msgstr "Chọn màu và kiểu chổi để vễ."
+
+#: tools.h:63
+msgid "Pick a picture to stamp around your drawing."
+msgstr "Chọn một ảnh để dấu vòng quanh hình vẽ của cháu."
+
+#: tools.h:64
+msgid "Click to start drawing a line. Let go to complete it."
+msgstr "Nhắp chuột để bắt đầu vẽ một đường. Nhả nút chuột để vẽ xong."
+
+#: tools.h:65
+msgid "Pick a shape. Click to pick the center, drag, then let go when it is the size you want. Move around to rotate it, and click to draw it."
+msgstr "Chọn một hình. Nhắp chuột để định tâm, kéo, rồi nhả nút chuột đến khi có kích cỡ cháu muốn. Di chuyển chuột để quay hình, nhắp chuột lần nữa để vẽ xong."
+
+#: tools.h:66
+msgid "Choose a style of text. Click on your drawing and you can start typing."
+msgstr "Chọn kiểu văn bản. Nhắp vào bản vẽ và bắt đầu gõ chữ."
+
+#: tools.h:67
+msgid "Pick a magical effect to use on your drawing!"
+msgstr "Chọn một phép thuật để dùng."
+
+#: tools.h:68
+msgid "Undo!"
+msgstr "Hoàn tác!"
+
+#: tools.h:69
+msgid "Redo!"
+msgstr "Làm lại!"
+
+#: tools.h:70
+msgid "Eraser!"
+msgstr "Xóa!"
+
+#: tools.h:71
+msgid "You now have a blank sheet to draw on!"
+msgstr "Cháu có một tớ giấy trắng, bắt đầu vẽ nhé."
+
+#: tools.h:72
+msgid "Open…"
+msgstr "Mở..."
+
+#: tools.h:73
+msgid "Your image has been saved!"
+msgstr "Ảnh của cháu đã được lưu!"
+
+#: tools.h:74
+msgid "Printing…"
+msgstr "Dang in..."
+
+#: tools.h:75
+msgid "Bye bye!"
+msgstr "Tạm biệt!"
+
+#: tools.h:78
+msgid "Let go of the button to complete the line."
+msgstr "Nhả nút chuột để vẽ xong đường."
+
+#: tools.h:79
+msgid "Hold the button to stretch the shape."
+msgstr "Ấn giữ nút chuột để kéo giãn hình ấy."
+
+#: tools.h:80
+msgid "Move the mouse to rotate the shape. Click to draw it."
+msgstr "Di chuột để quay hình. Nhắp để vẽ xong."
+
+#: tools.h:81
+msgid "OK then… Let’s keep drawing this one!"
+msgstr "Được thôi... Hãy tiếp tục bản vẽ này!"
+
+#~ msgid "A drawing program for children."
+#~ msgstr "Một chương trình vẽ cho đứa bé."
+
+#~ msgid "Drawing program"
+#~ msgstr "Trình vẽ"
+
+#~ msgid "Tux Paint"
+#~ msgstr "Tux Sơn"

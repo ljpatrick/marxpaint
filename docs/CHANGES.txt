@@ -7,7 +7,7 @@ bill@newbreedsoftware.com
 http://www.newbreedsoftware.com/tuxpaint/
 
 
-2005.January.16 (0.9.15)
+2005.February.9 (0.9.15)
 
 
   * uncatagorized and messy:
@@ -267,6 +267,9 @@ http://www.newbreedsoftware.com/tuxpaint/
 
     * Spanish and Spanish documentation.
       Gabriel Gazzán <ggabriel@internet.com.uy>
+    
+    * Vietnamese
+      Clytie Siddall <clytie@riverland.net.au>
 
     * Added "create_pot_file.sh" help script to "src/po/", for easier
       regeneration of "tuxpaint.pot" (gettext catalog template)
