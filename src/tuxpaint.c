@@ -7161,6 +7161,10 @@ static void setup(int argc, char * argv[])
     loadfonts(macosx.fontsPath, 0);
     loadfonts("/usr/share/fonts", 0);
     loadfonts("/usr/X11R6/lib/X11/fonts", 0);
+#elif defined(__sun__)
+    loadfonts("/usr/openwin/lib/X11/fonts", 0);
+    loadfonts("/usr/share/fonts", 0);
+    loadfonts("/usr/X11R6/lib/X11/fonts", 0);
 #else
     loadfonts("/usr/share/feh/fonts", 0);
     loadfonts("/usr/share/fonts", 0);
