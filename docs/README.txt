@@ -9,7 +9,7 @@
                            bill@newbreedsoftware.com
                    http://www.newbreedsoftware.com/tuxpaint/
 
-                         June 14, 2002 - April 23, 2004
+                          June 14, 2002 - May 9, 2004
 
      ----------------------------------------------------------------------
 
@@ -368,6 +368,8 @@ Options
                      |--------------------+------------------+---------|
                      |basque              |euskara           |         |
                      |--------------------+------------------+---------|
+                     |belarusian          |bielaruskaja      |         |
+                     |--------------------+------------------+---------|
                      |bokmal              |                  |         |
                      |--------------------+------------------+---------|
                      |brazilian-portuguese|portuges-brazilian|brazilian|
@@ -581,6 +583,8 @@ Options
            |C              |                   |English             |
            |---------------+-------------------+--------------------|
            |af_ZA          |                   |Afrikaans           |
+           |---------------+-------------------+--------------------|
+           |be_BY          |Bielaruskaja       |Belarusian          |
            |---------------+-------------------+--------------------|
            |br_FR          |Brezhoneg          |Breton              |
            |---------------+-------------------+--------------------|
@@ -863,7 +867,7 @@ Available Tools
                  Different stamps can have different sound effects. Some
                  stamps can be colored or tinted.
 
-                 Stamps and be shrunk and expanded, and many stamps can be
+                 Stamps can be shrunk and expanded, and many stamps can be
                  flipped vertically, or displayed as a mirror-image, using
                  controls at the bottom right of the screen.
 
