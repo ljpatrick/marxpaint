@@ -1562,13 +1562,18 @@ static int compar_fontscore(const void *v1, const void *v2)
   return f2->score - f1->score;
 }
 
-
+// Font style names are a mess that we must try to make
+// sense of. For example...
+//
+// Cooper: Light, Medium, Light Bold, Black
+// HoeflerText: (nil), Black
 static void parse_font_style(style_info *si)
 {
   int have_light = 0;
   int have_demi = 0;
   int have_bold = 0;
   int have_medium = 0;
+  int have_black = 0;
 
   si->italic = 0;
 
@@ -1580,6 +1585,12 @@ static void parse_font_style(style_info *si)
       if(*sp==' ')
         {
           sp++;
+          continue;
+        }
+      if(!strncmp(sp,"Black",strlen("Black")))
+        {
+          sp += strlen("Black");
+          have_black = 1;
           continue;
         }
       if(!strncmp(sp,"Bold",strlen("Bold")))
@@ -1661,7 +1672,7 @@ static void parse_font_style(style_info *si)
 
   if (have_demi || have_medium)
     si->boldness = 2;
-  else if (have_bold)
+  else if (have_bold || have_black) // TODO: black should be a level above
     si->boldness = 3;
   else if (have_light)
     si->boldness = 0;
@@ -14104,7 +14115,7 @@ static void loadfonts(const char * const dir, int fatal)
           // Compressed files (with .gz or .bz2) might also work.
 	  if (strstr(d_names[i], ".ttf") || strstr(d_names[i], ".pfa") || strstr(d_names[i], ".pfb"))
 	    {
-printf("Loading font: %s/%s\n", dir, d_names[i]);
+//printf("Loading font: %s/%s\n", dir, d_names[i]);
               TTF_Font *font = TTF_OpenFont(fname, text_sizes[text_size]);
               if(font)
                 {
