@@ -8,6 +8,10 @@ http://www.newbreedsoftware.com/tuxpaint/
 
 
 2004.November.23 (0.9.15)
+  * abstracted stamp scaling (prep for large sizes)
+    Per-stamp sane scaling range enforced. (generally bigger)
+    Albert Cahalan <albert@users.sf.net>
+
   * simplify strip_trailing_whitespace, now O(n)
     Albert Cahalan <albert@users.sf.net>
 

@@ -55,16 +55,51 @@
 #define PROMPTOFFSETX (WINDOW_WIDTH - 640) / 2
 #define PROMPTOFFSETY (HEIGHTOFFSET / 2)
 
+/////////////////////////////////////////////////////////////////////
+// hide all scale-related values here
 
-#define MIN_STAMP_SIZE 25  /* Stamp can only shrink to 25% (1/4) of original */
-#define MAX_STAMP_SIZE 400 /* Stamp can only grow to 400% (4 times) original */
+typedef struct scaleparams {
+  unsigned numer, denom;
+} scaleparams;
+static scaleparams scaletable[] = {
+  {  1, 16}, //  0.0625
+  {  3, 32}, //  0.09375
+  {  1,  8}, //  0.125
+  {  3, 16}, //  0.1875
+  {  1,  4}, //  0.25
+  {  3,  8}, //  0.375
+  {  1,  2}, //  0.5
+  {  3,  4}, //  0.75
+  {  1,  1}, //  1
+  {  3,  2}, //  1.5
+  {  2,  1}, //  2
+  {  3,  1}, //  3
+  {  4,  1}, //  4
+  {  6,  1}, //  6
+  {  8,  1}, //  8
+  { 12,  1}, // 12
+};
+
+#define HARD_MIN_STAMP_SIZE 0  // bottom of scaletable
+#define HARD_MAX_STAMP_SIZE (sizeof scaletable / sizeof scaletable[0] - 1)
+
+#define MIN_STAMP_SIZE (state_stamps[cur_stamp]->min)
+#define MAX_STAMP_SIZE (state_stamps[cur_stamp]->max)
+
+#define CAN_USE_HQ4X (scaletable[state_stamps[cur_stamp]->size] == (scaleparams){4,1})
+// to scale some offset, in pixels, like the current stamp is scaled
+#define SCALE_LIKE_STAMP(x) ( ((x) * scaletable[state_stamps[cur_stamp]->size].numer + scaletable[state_stamps[cur_stamp]->size].denom-1) / scaletable[state_stamps[cur_stamp]->size].denom )
+// pixel dimensions of the current stamp, as scaled
+#define CUR_STAMP_W SCALE_LIKE_STAMP(img_stamps[cur_stamp]->w)
+#define CUR_STAMP_H SCALE_LIKE_STAMP(img_stamps[cur_stamp]->h)
+
+///////////////////////////////////////////////////////////////////////////////
 
 
 // #define MAX_FILES 2048  /* Max. # of files in a dir. to worry about... */
 
 #define REPEAT_SPEED 300  /* Initial repeat speed for scrollbars */
 #define CURSOR_BLINK_SPEED 500  /* Initial repeat speed for cursor */
-
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -467,13 +502,14 @@ typedef struct info_type {
   int mirrorable;
   int flipable;
   int tintgray;
+//  int min, def, max; // TODO: size range
 } info_type;
 
 
 typedef struct state_type {
   int mirrored;
   int flipped;
-  int size;
+  unsigned min,size,max;
 } state_type;
 
 
@@ -1820,11 +1856,7 @@ static void mainloop(void)
 
 				  if (state_stamps[cur_stamp]->size > MIN_STAMP_SIZE)
 				    {
-				      state_stamps[cur_stamp]->size =
-					state_stamps[cur_stamp]->size / 2;
-
-				      if (state_stamps[cur_stamp]->size < MIN_STAMP_SIZE)
-					state_stamps[cur_stamp]->size = MIN_STAMP_SIZE;
+				      state_stamps[cur_stamp]->size--;
 			    
 				      playsound(0, SND_SHRINK, 0);
 				      draw_stamps();
@@ -1840,11 +1872,7 @@ static void mainloop(void)
 
 				  if (state_stamps[cur_stamp]->size < MAX_STAMP_SIZE)
 				    {
-				      state_stamps[cur_stamp]->size =
-					state_stamps[cur_stamp]->size * 2;
-
-				      if (state_stamps[cur_stamp]->size > MAX_STAMP_SIZE)
-					state_stamps[cur_stamp]->size = MAX_STAMP_SIZE;
+				      state_stamps[cur_stamp]->size++;
 			    
 				      playsound(0, SND_GROW, 0);
 				      draw_stamps();
@@ -2051,13 +2079,13 @@ static void mainloop(void)
 		      
 		      stamp_draw(old_x, old_y);
 #ifdef LOW_QUALITY_STAMP_OUTLINE
-		      rect_xor(old_x - ((img_stamps[cur_stamp]->w / 2) * (state_stamps[cur_stamp]->size) / 100),
-			       old_y - ((img_stamps[cur_stamp]->h / 2) * (state_stamps[cur_stamp]->size) / 100),
-			       old_x + ((img_stamps[cur_stamp]->w / 2) * (state_stamps[cur_stamp]->size) / 100),
-			       old_y + ((img_stamps[cur_stamp]->h / 2) * (state_stamps[cur_stamp]->size) / 100));
+		      // the +1 is for rounding, probably needed only one side though
+		      rect_xor(old_x - (CUR_STAMP_W+1)/2,
+			       old_y - (CUR_STAMP_H+1)/2,
+			       old_x + (CUR_STAMP_W+1)/2,
+			       old_y + (CUR_STAMP_H+1)/2);
 #else
-		      stamp_xor(old_x - (img_stamps[cur_stamp]->w / 2),
-			        old_y - (img_stamps[cur_stamp]->h / 2));
+		      stamp_xor(old_x, old_y);
 #endif
 		      playsound(1, SND_STAMP, 1);
 
@@ -2765,18 +2793,18 @@ static void mainloop(void)
 		      if (cur_tool == TOOL_STAMP)
 			{
 #ifndef LOW_QUALITY_STAMP_OUTLINE
-			  stamp_xor(old_x - w / 2, old_y - h / 2);
+			  stamp_xor(old_x, old_y);
 #else
-			  rect_xor(old_x - ((img_stamps[cur_stamp]->w / 2) * (state_stamps[cur_stamp]->size) / 100),
-				   old_y - ((img_stamps[cur_stamp]->h / 2) * (state_stamps[cur_stamp]->size) / 100),
-				   old_x + ((img_stamps[cur_stamp]->w / 2) * (state_stamps[cur_stamp]->size) / 100),
-				   old_y + ((img_stamps[cur_stamp]->h / 2) * (state_stamps[cur_stamp]->size) / 100));
+			  rect_xor(old_x - (CUR_STAMP_W+1)/2,
+				   old_y - (CUR_STAMP_H+1)/2,
+				   old_x + (CUR_STAMP_W+1)/2,
+				   old_y + (CUR_STAMP_H+1)/2);
 #endif
 
-			  update_screen(old_x - ((img_stamps[cur_stamp]->w / 2) * (state_stamps[cur_stamp]->size) / 100) + 96,
-					old_y - ((img_stamps[cur_stamp]->h / 2) * (state_stamps[cur_stamp]->size) / 100),
-					old_x + ((img_stamps[cur_stamp]->w / 2) * (state_stamps[cur_stamp]->size) / 100) + 96,
-					old_y + ((img_stamps[cur_stamp]->h / 2) * (state_stamps[cur_stamp]->size) / 100));
+			  update_screen(old_x - (CUR_STAMP_W+1)/2 + 96,
+					old_y - (CUR_STAMP_H+1)/2,
+					old_x + (CUR_STAMP_W+1)/2 + 96,
+					old_y + (CUR_STAMP_H+1)/2);
 			}
 		      else
 			{
@@ -2794,18 +2822,18 @@ static void mainloop(void)
 		      if (cur_tool == TOOL_STAMP)
 			{
 #ifndef LOW_QUALITY_STAMP_OUTLINE
-			  stamp_xor(new_x - w / 2, new_y - h / 2);
+			  stamp_xor(new_x, new_y);
 #else
-			  rect_xor(new_x - ((img_stamps[cur_stamp]->w / 2) * (state_stamps[cur_stamp]->size) / 100),
-				   new_y - ((img_stamps[cur_stamp]->h / 2) * (state_stamps[cur_stamp]->size) / 100),
-				   new_x + ((img_stamps[cur_stamp]->w / 2) * (state_stamps[cur_stamp]->size) / 100),
-				   new_y + ((img_stamps[cur_stamp]->h / 2) * (state_stamps[cur_stamp]->size) / 100));
+			  rect_xor(old_x - (CUR_STAMP_W+1)/2,
+				   old_y - (CUR_STAMP_H+1)/2,
+				   old_x + (CUR_STAMP_W+1)/2,
+				   old_y + (CUR_STAMP_H+1)/2);
 #endif
 
-			  update_screen(new_x - ((img_stamps[cur_stamp]->w / 2) * (state_stamps[cur_stamp]->size) / 100) + 96,
-					new_y - ((img_stamps[cur_stamp]->h / 2) * (state_stamps[cur_stamp]->size) / 100),
-					new_x + ((img_stamps[cur_stamp]->w / 2) * (state_stamps[cur_stamp]->size) / 100) + 96,
-					new_y + ((img_stamps[cur_stamp]->h / 2) * (state_stamps[cur_stamp]->size) / 100));
+			  update_screen(old_x - (CUR_STAMP_W+1)/2 + 96,
+					old_y - (CUR_STAMP_H+1)/2,
+					old_x + (CUR_STAMP_W+1)/2 + 96,
+					old_y + (CUR_STAMP_H+1)/2);
 			}
 		      else
 			{
@@ -3145,7 +3173,7 @@ static void stamp_draw(int x, int y)
   /* Shrink or grow it! */
 
 #ifdef USE_HQ4X
-  if (state_stamps[cur_stamp]->size == 400)
+  if (CAN_USE_HQ4X)
     {
       /* Use high quality 4x filter! */
       
@@ -3181,19 +3209,14 @@ static void stamp_draw(int x, int y)
   else
 #endif
     {
-      final_surf = thumbnail(tmp_surf,
-			     (tmp_surf->w *
-			      state_stamps[cur_stamp]->size) / 100,
-			     (tmp_surf->h *
-			      state_stamps[cur_stamp]->size) / 100,
-			     0);
+      final_surf = thumbnail(tmp_surf, CUR_STAMP_W, CUR_STAMP_H, 0);
     }
   
   
   /* Where it will go? */
   
-  base_x = x - (((tmp_surf->w * state_stamps[cur_stamp]->size) / 100) / 2);
-  base_y = y - (((tmp_surf->h * state_stamps[cur_stamp]->size) / 100) / 2);
+  base_x = x - (CUR_STAMP_W+1)/2;
+  base_y = y - (CUR_STAMP_H+1)/2;
    
 
   /* And blit it! */
@@ -3272,10 +3295,10 @@ static void stamp_draw(int x, int y)
 	}
     }
 
-  update_canvas(x - (((tmp_surf->w * state_stamps[cur_stamp]->size) / 100) / 2),
-		y - (((tmp_surf->h * state_stamps[cur_stamp]->size) / 100) / 2),
-                x + (((tmp_surf->w * state_stamps[cur_stamp]->size) / 100) / 2),
-		y + (((tmp_surf->h * state_stamps[cur_stamp]->size) / 100) / 2));
+  update_canvas(x - (CUR_STAMP_W+1)/2,
+		y - (CUR_STAMP_H+1)/2,
+                x + (CUR_STAMP_W+1)/2,
+		y + (CUR_STAMP_H+1)/2);
   
   /* Free the temporary surfaces */
 
@@ -5514,6 +5537,28 @@ static void setup(int argc, char * argv[])
       free(homedirdir);
 
 
+      // The original Tux Paint canvas was 608x472. The canvas can be
+      // other sizes now, but many old stamps are sized for the small
+      // canvas. So, with larger canvases, we must choose a good scale
+      // factor to compensate. As the canvas size grows, the user will
+      // want a balance of "more stamps on the screen" and "stamps not
+      // getting tiny". This will calculate the needed scale factor.
+      unsigned default_stamp_size;
+      {
+	double old_diag = sqrt(608*608+472*472);
+	double new_diag = sqrt(canvas->w*canvas->w+canvas->h*canvas->h);
+	double good_def = sqrt(new_diag/old_diag);
+	double good_log = log(good_def);
+	unsigned defsize = HARD_MAX_STAMP_SIZE;
+	while(defsize>0){
+	  double this_err = good_log - log(scaletable[defsize].numer / (double)scaletable[defsize].denom);
+	  double next_err = good_log - log(scaletable[defsize-1].numer / (double)scaletable[defsize-1].denom);
+	  if( fabs(next_err) > fabs(this_err) ) break;
+	  defsize--;
+	}
+	default_stamp_size = defsize;
+      }
+
       /* Create stamp thumbnails: */
 
       for (i = 0; i < num_stamps; i++)
@@ -5561,8 +5606,43 @@ static void setup(int argc, char * argv[])
 	      inf_stamps[i]->mirrorable = 1;
 	      inf_stamps[i]->tintgray = 1;
 	      inf_stamps[i]->flipable = 1;
+//	      inf_stamps[i]->min = 0;
+//	      inf_stamps[i]->def = 0;
+//	      inf_stamps[i]->max = 0;
 	    }
-      
+
+//
+// TODO: convert inf_stamps[i]->min and such to usable data
+//
+	  {
+	    int upper = HARD_MAX_STAMP_SIZE;
+	    int lower = 0;
+	    do{
+	      scaleparams *s = &scaletable[upper];
+	      int pw, ph; // proposed width and height
+	      pw = (img_stamps[i]->w * s->numer + s->denom - 1) / s->denom;
+	      ph = (img_stamps[i]->h * s->numer + s->denom - 1) / s->denom;
+	      if(pw < canvas->w * 2 && ph < canvas->h * 2) break;
+	    }while(--upper);
+	    do{
+	      scaleparams *s = &scaletable[lower];
+	      int pw, ph; // proposed width and height
+	      pw = (img_stamps[i]->w * s->numer + s->denom - 1) / s->denom;
+	      ph = (img_stamps[i]->h * s->numer + s->denom - 1) / s->denom;
+	      if(pw*ph > 20) break;
+	    }while(++lower < HARD_MAX_STAMP_SIZE);
+	    if(upper<lower){
+	      // this, if it ever happens, is very bad
+	      upper = (upper+lower)/2;
+	      lower = upper;
+	    }
+	    unsigned mid = default_stamp_size;
+	    if(mid > upper) mid = upper;
+	    if(mid < lower) mid = lower;
+	    state_stamps[i]->min  = lower;
+	    state_stamps[i]->size = mid;
+	    state_stamps[i]->max  = upper;
+	  }
 
 	  /* If Tux Paint is in mirror-image-by-default mode, mirror, if we can: */
       
@@ -5572,7 +5652,6 @@ static void setup(int argc, char * argv[])
 	    state_stamps[i]->mirrored = 0;
 
 	  state_stamps[i]->flipped = 0;
-	  state_stamps[i]->size = 100;
 
 	  show_progress_bar();
 	}
@@ -8389,6 +8468,10 @@ static info_type * loadinfo(const char * const fname)
   inf.mirrorable = 1;
   inf.tintgray = 1;
   inf.flipable = 1;
+
+//  inf.min = 0; // dummy values
+//  inf.def = 0;
+//  inf.max = 0;
 
 
   /* Load info! */
@@ -11519,7 +11602,6 @@ static void stamp_xor(int x, int y)
   Uint8 r, g, b, a, olda, abovea;
   SDL_Surface * surf_ptr;
 
-
   /* Use pre-mirrored stamp image, if applicable: */
 
   if (state_stamps[cur_stamp]->mirrored &&
@@ -11575,8 +11657,8 @@ static void stamp_xor(int x, int y)
 	      (a < 128 && abovea >= 128) ||
 	      (a >= 128 && abovea < 128))
 	    {
-	      sx = x + 96 + (((xx - (img_stamps[cur_stamp]->w / 2)) * state_stamps[cur_stamp]->size) / 100) + (img_stamps[cur_stamp]->w / 2);
-	      sy = y + (((yy - (img_stamps[cur_stamp]->h / 2)) * state_stamps[cur_stamp]->size) / 100) + (img_stamps[cur_stamp]->h / 2);
+	      sx = x + 96 + SCALE_LIKE_STAMP(xx - img_stamps[cur_stamp]->w / 2);
+	      sy = y +      SCALE_LIKE_STAMP(yy - img_stamps[cur_stamp]->h / 2);
 	
 	      clipped_putpixel(screen, sx, sy,
 			       0xFFFFFFFF - getpixel(screen, sx, sy));
