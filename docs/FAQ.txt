@@ -6,22 +6,13 @@ Copyright 2004 by Bill Kendrick
 bill@newbreedsoftware.com
 http://www.newbreedsoftware.com/tuxpaint/
 
-September 14, 2002 - September 13, 2004
+September 14, 2002 - September 14, 2004
 
 
 Frequently Asked Questions:
 ---------------------------
   Drawing-related
   ---------------
-    Why can't you have different sized erasers, or use the brush shapes?
-    --------------------------------------------------------------------
-      The eraser is meant for quickly erasing large parts of the picture.
-
-      You'll notice it simply turns parts of the picture white.  You can
-      get the result you want (different sizes and/or shapes) by simply using
-      the "Brush" tool and the white paint color! :^)
-
-
     The Magic "Fill" Tool Looks Bad
     -------------------------------
       Tux Paint is probably comparing exact pixel colors when filling.

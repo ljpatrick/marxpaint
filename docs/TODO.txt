@@ -98,10 +98,11 @@ LOW-PRIORITY IMPLEMENTATION CHANGES:
   * Saved images on should be stored in 'My Documents/My Pictures' on
     Windows. The actual directory name is different for each user,
     and is stored in the registry at:
-    HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\User Shell Folders\My Pictures
-    (It also varies with the language Windows is in, e.g. 'Mine dokumenter/Mine bilder'
-    on the Norwegian version of Windows, but the registry key above
-    will always contain the correct name/address.)
+    HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\
+    User Shell Folders\My Pictures
+    (It also varies with the language Windows is in, e.g.
+    'Mine dokumenter/Mine bilder' on the Norwegian version of Windows,
+    but the registry key above will always contain the correct name/address.)
 
 
 HIGH-PRIORITY BUGS:
@@ -230,29 +231,32 @@ FEATURE IDEAS:
 POSSIBLE FEATURE IDEAS:
 -----------------------
   * Pipette / color prober tool. Click on it, then click on image to pick
-    up a color from a single pixel. Display color under mouse pointer in special
-    'custom color' color bucket (see below) when moving pointer. Click and drag
-    a rectangle to select a color which is the arithmetic average of the colors
-    in the selected area.
+    up a color from a single pixel. Display color under mouse pointer in
+    special 'custom color' color bucket (see below) when moving pointer.
+    Click and drag a rectangle to select a color which is the arithmetic
+    average of the colors in the selected area.
 
-  * Palette. Click on the left-most (or right-most) color bucket (which must look
-    a bit different than the rest) to pop up a palette (just a rectangular image
-    containing lots of colors in some sort of pattern) above it. Click on the
-    palette to select a color. The palette disappears (on button *release*).
-    Can probably reuse pipette tool code to pick up color (but don't support the
-    'average' method here). The palette should just be an ordinary image file,
+  * Palette. Click on the left-most (or right-most) color bucket (which
+    must look a bit different than the rest) to pop up a palette
+    (just a rectangular image containing lots of colors in some sort
+    of pattern) above it. Click on the palette to select a color. The
+    palette disappears (on button *release*).  Can probably reuse
+    pipette tool code to pick up color (but don't support the 'average'
+    method here). The palette should just be an ordinary image file,
     and easy to replace. I recommend using the one of the left here:
-    http://www.ficml.org/jemimap/style/color/wheel.html
-    It's very easy to select both hues *and* brightness from this colour wheel.
+    http://www.ficml.org/jemimap/style/color/wheel.html It's very easy
+    to select both hues *and* brightness from this colour wheel.
 
-  * Round eraser / eraser sizes
+  * Round eraser
     FREQUENTLY REQUESTED
   
   * Support animated brushes (then replace Sparkle magic with one) ??
 
-  * Support image/stamp 'hoses' (as implemented in numerous other graphics programs).
+  * Support image/stamp 'hoses' (as implemented in numerous other
+    graphics programs).
   
   * Make a 'rainbow' color (then remove Rainbow magic tool)
   
   * "Gallery"/slideshow mode (available via Open dialog, maybe?)
     (Ben Armstrong's suggestion: 2002.08.26)
+
