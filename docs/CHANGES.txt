@@ -7,7 +7,16 @@ bill@newbreedsoftware.com
 http://www.newbreedsoftware.com/tuxpaint/
 
 
-2004.Jun.23 (0.9.14) [cvs]
+2004.JuL.11 (0.9.14) [cvs]
+  * Removed all non-UTF-8 related character handling code,
+    including HTML character entity reference support.
+    (All stamps are now in UTF-8, with scripts to convert
+    to and from PO files.)
+    Karl Ove Hufthammer <karl@huftis.org>
+    
+  * Cleaned up translation and font code. 
+    Karl Ove Hufthammer <karl@huftis.org>
+
   * Fixed tinting of low-saturation stamps.
     Addded 'notintgray' option.
     Karl Ove Hufthammer <karl@huftis.org>
