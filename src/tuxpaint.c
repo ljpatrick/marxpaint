@@ -11181,13 +11181,13 @@ int current_language(void)
 	loc = getenv("LANG");
     }
 #else
-  loc = getenv("LANG");
+  loc = getenv("LANGUAGE");
   if (!loc)
     {
       loc = g_win32_getlocale();
       if (loc)
 	{
-	  snprintf(str, sizeof(str), "LANG=%s", loc);
+	  snprintf(str, sizeof(str), "LANGUAGE=%s", loc);
 	  putenv(str);
 	}
     }
