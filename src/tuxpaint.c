@@ -6496,6 +6496,89 @@ static void load_brush_dir(const char * const dir)
 }
 
 
+static unsigned default_stamp_size;
+
+static void loadstamp_finisher(int i)
+{
+  state_stamps[i] = malloc(sizeof(state_type));
+
+  if (img_stamps[i]->w > 40 || img_stamps[i]->h > 40)
+    img_stamp_thumbs[i] = thumbnail(img_stamps[i], 40, 40, 1);
+  else
+    img_stamp_thumbs[i] = NULL;
+
+  if (img_stamps_premirror[i])
+    {
+      /* Also thumbnail the pre-drawn mirror version, if any: */
+      if (img_stamps_premirror[i]->w > 40 || img_stamps_premirror[i]->h > 40)
+        img_stamp_thumbs_premirror[i] = thumbnail(img_stamps_premirror[i], 40, 40, 1);
+      else
+        img_stamp_thumbs_premirror[i] = NULL;
+    }
+
+  /* If Tux Paint is in mirror-image-by-default mode, mirror, if we can: */
+
+  if (mirrorstamps && inf_stamps[i]->mirrorable)
+    state_stamps[i]->mirrored = 1;
+  else
+    state_stamps[i]->mirrored = 0;
+
+  state_stamps[i]->flipped = 0;
+
+  unsigned int upper = HARD_MAX_STAMP_SIZE;
+  unsigned int lower = 0;
+
+  do
+  {
+    scaleparams *s = &scaletable[upper];
+    int pw, ph; // proposed width and height
+
+    pw = (img_stamps[i]->w * s->numer + s->denom - 1) / s->denom;
+    ph = (img_stamps[i]->h * s->numer + s->denom - 1) / s->denom;
+
+    // OK to let a stamp stick off the sides in one direction, not two
+    if (pw < canvas->w * 2 && ph < canvas->h * 1)
+      break;
+    if (pw < canvas->w * 1 && ph < canvas->h * 2)
+      break;
+  }
+  while (--upper);
+
+  do
+  {
+    scaleparams *s = &scaletable[lower];
+    int pw, ph; // proposed width and height
+
+    pw = (img_stamps[i]->w * s->numer + s->denom - 1) / s->denom;
+    ph = (img_stamps[i]->h * s->numer + s->denom - 1) / s->denom;
+
+    if (pw*ph > 20)
+      break;
+  }
+  while (++lower < HARD_MAX_STAMP_SIZE);
+
+  if(upper<lower)
+  {
+    // this, if it ever happens, is very bad
+    upper = (upper+lower)/2;
+    lower = upper;
+  }
+
+  unsigned mid = default_stamp_size;
+  if(inf_stamps[i]->ratio != 1.0)
+     mid = compute_default_scale_factor(inf_stamps[i]->ratio);
+
+  if(mid > upper)
+    mid = upper;
+  
+  if(mid < lower)
+    mid = lower;
+
+  state_stamps[i]->min  = lower;
+  state_stamps[i]->size = mid;
+  state_stamps[i]->max  = upper;
+}
+
 
 static void loadstamp_callback(const char *restrict const dir, unsigned dirlen, tp_ftw_str *files, unsigned i)
 {
@@ -6508,16 +6591,35 @@ static void loadstamp_callback(const char *restrict const dir, unsigned dirlen, 
         {
           char fname[512];
           snprintf(fname, sizeof fname, "%s/%s", dir, files[i].str);
-          img_stamps[num_stamps] = loadimage(fname);
           txt_stamps[num_stamps] = loaddesc(fname);
           inf_stamps[num_stamps] = loadinfo(fname);
-          img_stamps_premirror[num_stamps] = loadaltimage(fname);
 
+          img_stamps[num_stamps] = NULL;
+          if(!mirrorstamps || !disable_stamp_controls || !inf_stamps[num_stamps]->mirrorable)
+            img_stamps[num_stamps] = loadimage(fname);
+
+          img_stamps_premirror[num_stamps] = NULL;
+          if((mirrorstamps || !disable_stamp_controls) && inf_stamps[num_stamps]->mirrorable)
+            img_stamps_premirror[num_stamps] = loadaltimage(fname);
+
+          if(img_stamps[num_stamps] || img_stamps_premirror[num_stamps])
+            {
+              // we have a stamp; finalize it
 #ifndef NOSOUND
-          if (use_sound)
-            snd_stamps[num_stamps] = loadsound(fname);
+              if (use_sound)
+                snd_stamps[num_stamps] = loadsound(fname);
 #endif
-          num_stamps++;
+              loadstamp_finisher(num_stamps);
+              num_stamps++;       // FIXME: no limit and no resizing right now...
+            }
+          else
+            {
+              // we have a failure, abort mission
+              free(txt_stamps[num_stamps]);
+              free(inf_stamps[num_stamps]);
+              free(img_stamps[num_stamps]);
+              free(img_stamps_premirror[num_stamps]);
+            }
         }
       free(files[i].str);
     }
@@ -6535,10 +6637,10 @@ static void load_stamp_dir(const char * const dir)
 }
 
 
-
 static void load_stamps(void)
 {
-  int i;
+  default_stamp_size = compute_default_scale_factor(1.0);
+
   char * homedirdir = get_fname("stamps");
 
   load_stamp_dir(homedirdir);
@@ -6555,129 +6657,6 @@ static void load_stamps(void)
     }
 
   free(homedirdir);
-
-
-  unsigned default_stamp_size = compute_default_scale_factor(1.0);
-
-  /* Create stamp thumbnails: */
-
-  for (i = 0; i < num_stamps; i++)
-    {
-      if (img_stamps[i]->w > 40 ||
-          img_stamps[i]->h > 40)
-        {
-          img_stamp_thumbs[i] = thumbnail(img_stamps[i], 40, 40, 1);
-        }
-      else
-        {
-          img_stamp_thumbs[i] = NULL;
-        }
-
-  
-      if (img_stamps_premirror[i] != NULL && !disable_stamp_controls)
-        {
-          /* Also thumbnail the pre-drawn mirror version, if any: */
-
-          if (img_stamps_premirror[i]->w > 40 ||
-              img_stamps_premirror[i]->h > 40)
-            {
-              img_stamp_thumbs_premirror[i] =
-                thumbnail(img_stamps_premirror[i], 40, 40, 1);
-            }
-          else
-            {
-              img_stamp_thumbs_premirror[i] = NULL;
-            }
-        }
-      else
-        {
-          img_stamps_premirror[i] = NULL;
-        }
-
-      state_stamps[i] = malloc(sizeof(state_type));
-
-      if (inf_stamps[i] == NULL)
-        {
-          /* Didn't load one for this stamp, assume defaults: */
-          
-          inf_stamps[i] = malloc(sizeof(info_type));
-          inf_stamps[i]->tintable = 0;
-          inf_stamps[i]->colorable = 0;
-          inf_stamps[i]->mirrorable = 1;
-          inf_stamps[i]->flipable = 1;
-          inf_stamps[i]->ratio = 1.0;
-          inf_stamps[i]->tinter = TINTER_NORMAL;
-        }
-
-      {
-        unsigned int upper = HARD_MAX_STAMP_SIZE;
-        unsigned int lower = 0;
-
-        do
-        {
-          scaleparams *s = &scaletable[upper];
-          int pw, ph; // proposed width and height
-
-          pw = (img_stamps[i]->w * s->numer + s->denom - 1) / s->denom;
-          ph = (img_stamps[i]->h * s->numer + s->denom - 1) / s->denom;
-
-          // OK to let a stamp stick off the sides in one direction, not two
-          if (pw < canvas->w * 2 && ph < canvas->h * 1)
-            break;
-          if (pw < canvas->w * 1 && ph < canvas->h * 2)
-            break;
-        }
-        while (--upper);
-
-
-        do
-        {
-          scaleparams *s = &scaletable[lower];
-          int pw, ph; // proposed width and height
-
-          pw = (img_stamps[i]->w * s->numer + s->denom - 1) / s->denom;
-          ph = (img_stamps[i]->h * s->numer + s->denom - 1) / s->denom;
-
-          if (pw*ph > 20)
-            break;
-        }
-        while (++lower < HARD_MAX_STAMP_SIZE);
-
-
-        if(upper<lower)
-        {
-          // this, if it ever happens, is very bad
-          upper = (upper+lower)/2;
-          lower = upper;
-        }
-
-        unsigned mid = default_stamp_size;
-        if(inf_stamps[i]->ratio != 1.0)
-           mid = compute_default_scale_factor(inf_stamps[i]->ratio);
-
-        if(mid > upper)
-          mid = upper;
-        
-        if(mid < lower)
-          mid = lower;
-
-        state_stamps[i]->min  = lower;
-        state_stamps[i]->size = mid;
-        state_stamps[i]->max  = upper;
-      }
-
-
-      /* If Tux Paint is in mirror-image-by-default mode, mirror, if we can: */
-  
-      if (mirrorstamps && inf_stamps[i]->mirrorable)
-        state_stamps[i]->mirrored = 1;
-      else
-        state_stamps[i]->mirrored = 0;
-
-      state_stamps[i]->flipped = 0;
-
-      show_progress_bar();
-    }
 }
 
 
@@ -10561,155 +10540,129 @@ static char * loaddesc(const char * const fname)
 
 
 /* Load a file's info: */
-
 static info_type * loadinfo(const char * const fname)
 {
   char * dat_fname;
   char buf[256];
-  info_type inf;
-  info_type * inf_ret;
   FILE * fi;
+  info_type *inf = malloc(sizeof(info_type));
 
-
-  /* Clear info struct first: */
-
-  inf.ratio = 1.0;
-  inf.colorable = 0;
-  inf.tintable = 0;
-  inf.mirrorable = 1;
-  inf.flipable = 1;
-  inf.tinter = TINTER_NORMAL;
-
-  /* Load info! */
+  inf->ratio = 1.0;
+  inf->colorable = 0;
+  inf->tintable = 0;
+  inf->mirrorable = 1;
+  inf->flipable = 1;
+  inf->tinter = TINTER_NORMAL;
 
   dat_fname = strdup(fname);
-
-  if (strstr(dat_fname, ".png") != NULL)
+  char *pngptr = strstr(dat_fname, ".png");
+  if (!pngptr)  // TODO: see if this can ever happen
     {
-      strcpy(strstr(dat_fname, ".png"), ".dat");
-
-      fi = fopen(dat_fname, "r");
-
-      if (fi == NULL)
-	{
-	  /*
-	    fprintf(stderr, "\nWarning: Couldn't open an info file:\n");
-	    perror(txt_fname);
-	    fprintf(stderr, "\n");
-	  */
-
-	  free(dat_fname);
-
-	  return NULL;
-	}
-
       free(dat_fname);
-
-
-      do
-	{
-	  fgets(buf, sizeof(buf), fi);
-
-	  if (!feof(fi))
-	    {
-	      strip_trailing_whitespace(buf);
-
-	      if (strcmp(buf, "colorable") == 0)
-		inf.colorable = 1;
-	      else if (strcmp(buf, "tintable") == 0)
-		inf.tintable = 1;
-	      else if (!memcmp(buf, "scale", 5) && (isspace(buf[5]) || buf[5]=='='))
-		{
-		  double tmp, tmp2;
-		  char *cp = buf+6;
-		  while (isspace(*cp) || *cp=='=')
-		    cp++;
-		  if (strchr(cp,'%'))
-		    {
-		      tmp = strtod(cp,NULL) / 100.0;
-		      if (tmp > 0.0001 && tmp < 10000.0)
-		        inf.ratio = tmp;
-		    }
-		  else if (strchr(cp,'/'))
-		    {
-		      tmp = strtod(cp,&cp);
-		      while(*cp && !isdigit(*cp))
-		        cp++;
-		      tmp2 = strtod(cp,NULL);
-		      if (tmp>0.0001 && tmp<10000.0 && tmp2>0.0001 && tmp2<10000.0 && tmp/tmp2>0.0001 && tmp/tmp2<10000.0)
-		        inf.ratio = tmp/tmp2;
-		    }
-		  else if (strchr(cp,':'))
-		    {
-		      tmp = strtod(cp,&cp);
-		      while(*cp && !isdigit(*cp))
-		        cp++;
-		      tmp2 = strtod(cp,NULL);
-		      if (tmp>0.0001 && tmp<10000.0 && tmp2>0.0001 && tmp2<10000.0 && tmp2/tmp>0.0001 && tmp2/tmp<10000.0)
-		        inf.ratio = tmp2/tmp;
-		    }
-		  else
-		    {
-		      tmp = strtod(cp,NULL);
-		      if (tmp > 0.0001 && tmp < 10000.0)
-		        inf.ratio = 1.0 / tmp;
-		    }
-		}
-	      else if (!memcmp(buf, "tinter", 6) && (isspace(buf[6]) || buf[6]=='='))
-		{
-		  char *cp = buf+7;
-		  while (isspace(*cp) || *cp=='=')
-		    cp++;
-		  if (!strcmp(cp,"anyhue"))
-		    {
-		        inf.tinter = TINTER_ANYHUE;
-		    }
-		  else if (!strcmp(cp,"narrow"))
-		    {
-		        inf.tinter = TINTER_NARROW;
-		    }
-		  else if (!strcmp(cp,"normal"))
-		    {
-		        inf.tinter = TINTER_NORMAL;
-		    }
-		  else if (!strcmp(cp,"vector"))
-		    {
-		        inf.tinter = TINTER_VECTOR;
-		    }
-		  else
-		    {
-		        debug(cp);
-		    }
-		}
-	      else if (strcmp(buf, "nomirror") == 0)
-		inf.mirrorable = 0;
-	      else if (strcmp(buf, "noflip") == 0)
-		inf.flipable = 0;
-	    }
-	}
-      while (!feof(fi));
-
-      fclose(fi);
-
-
-      /* Return the info: */
-   
-      inf_ret = malloc(sizeof(info_type));
-      /* FIXME: Check for errors! */
-
-      memcpy(inf_ret, &inf, sizeof(info_type));
-
-      return(inf_ret);
+      return inf;
     }
-  else
+
+  memcpy(pngptr+1, "dat", 3);
+
+  fi = fopen(dat_fname, "r");
+  if (!fi)
     {
-      return NULL;
+      free(dat_fname);
+      return inf;
     }
+
+  free(dat_fname);
+
+  do
+    {
+      fgets(buf, sizeof(buf), fi);
+
+      if (!feof(fi))
+        {
+          strip_trailing_whitespace(buf);
+
+          if (strcmp(buf, "colorable") == 0)
+            inf->colorable = 1;
+          else if (strcmp(buf, "tintable") == 0)
+            inf->tintable = 1;
+          else if (!memcmp(buf, "scale", 5) && (isspace(buf[5]) || buf[5]=='='))
+            {
+              double tmp, tmp2;
+              char *cp = buf+6;
+              while (isspace(*cp) || *cp=='=')
+                cp++;
+              if (strchr(cp,'%'))
+                {
+                  tmp = strtod(cp,NULL) / 100.0;
+                  if (tmp > 0.0001 && tmp < 10000.0)
+                    inf->ratio = tmp;
+                }
+              else if (strchr(cp,'/'))
+                {
+                  tmp = strtod(cp,&cp);
+                  while(*cp && !isdigit(*cp))
+                    cp++;
+                  tmp2 = strtod(cp,NULL);
+                  if (tmp>0.0001 && tmp<10000.0 && tmp2>0.0001 && tmp2<10000.0 && tmp/tmp2>0.0001 && tmp/tmp2<10000.0)
+                    inf->ratio = tmp/tmp2;
+                }
+              else if (strchr(cp,':'))
+                {
+                  tmp = strtod(cp,&cp);
+                  while(*cp && !isdigit(*cp))
+                    cp++;
+                  tmp2 = strtod(cp,NULL);
+                  if (tmp>0.0001 && tmp<10000.0 && tmp2>0.0001 && tmp2<10000.0 && tmp2/tmp>0.0001 && tmp2/tmp<10000.0)
+                    inf->ratio = tmp2/tmp;
+                }
+              else
+                {
+                  tmp = strtod(cp,NULL);
+                  if (tmp > 0.0001 && tmp < 10000.0)
+                    inf->ratio = 1.0 / tmp;
+                }
+            }
+          else if (!memcmp(buf, "tinter", 6) && (isspace(buf[6]) || buf[6]=='='))
+            {
+              char *cp = buf+7;
+              while (isspace(*cp) || *cp=='=')
+                cp++;
+              if (!strcmp(cp,"anyhue"))
+                {
+                    inf->tinter = TINTER_ANYHUE;
+                }
+              else if (!strcmp(cp,"narrow"))
+                {
+                    inf->tinter = TINTER_NARROW;
+                }
+              else if (!strcmp(cp,"normal"))
+                {
+                    inf->tinter = TINTER_NORMAL;
+                }
+              else if (!strcmp(cp,"vector"))
+                {
+                    inf->tinter = TINTER_VECTOR;
+                }
+              else
+                {
+                    debug(cp);
+                }
+            }
+          else if (strcmp(buf, "nomirror") == 0)
+            inf->mirrorable = 0;
+          else if (strcmp(buf, "noflip") == 0)
+            inf->flipable = 0;
+        }
+    }
+  while (!feof(fi));
+
+  fclose(fi);
+
+  return inf;
 }
 
 
 /* Load a file's alternative image: */
-
 static SDL_Surface * loadaltimage(const char * const fname)
 {
   char * alt_fname;
