@@ -86,7 +86,7 @@ http://www.newbreedsoftware.com/tuxpaint/
 
   * Holandés
     Herman Bruyninckx <Herman.Bruyninckx@mech.kuleuven.ac.be>
-    Geert Stams <geert-csg@wanadoo.nl>
+    Geert Stams <geertstams@wanadoo.nl>
 
   * Finlandés
     Tarmo Toikkanen <tarmo.toikkanen@iki.fi>

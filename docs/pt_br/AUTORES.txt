@@ -114,6 +114,7 @@ http://www.newbreedsoftware.com/tuxpaint/
 
   * Holandês
     Herman Bruyninckx <Herman.Bruyninckx@mech.kuleuven.ac.be>
+    Geert Stams <geertstams@wanadoo.nl>
  
   * Islandês
     Pjetur G. Hjaltason <pjetur@pjetur.net>
