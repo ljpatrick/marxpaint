@@ -1,0 +1,388 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2004-07-13 15:20+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "A drawing program for children."
+msgstr ""
+
+msgid "Drawing program"
+msgstr ""
+
+msgid "Tux Paint"
+msgstr ""
+
+msgid "Black!"
+msgstr ""
+
+msgid "White!"
+msgstr ""
+
+msgid "Red!"
+msgstr ""
+
+msgid "Pink!"
+msgstr ""
+
+msgid "Orange!"
+msgstr ""
+
+msgid "Yellow!"
+msgstr ""
+
+msgid "Lime!"
+msgstr ""
+
+msgid "Green!"
+msgstr ""
+
+msgid "Cyan!"
+msgstr ""
+
+msgid "Blue!"
+msgstr ""
+
+msgid "Purple!"
+msgstr ""
+
+msgid "Fuchsia!"
+msgstr ""
+
+msgid "Brown!"
+msgstr ""
+
+msgid "Gray!"
+msgstr ""
+
+msgid "Silver!"
+msgstr ""
+
+msgid "Great!"
+msgstr ""
+
+msgid "Cool!"
+msgstr ""
+
+msgid "Keep it up!"
+msgstr ""
+
+msgid "Good job!"
+msgstr ""
+
+msgid "Rainbow"
+msgstr ""
+
+msgid "Sparkles"
+msgstr ""
+
+msgid "Mirror"
+msgstr ""
+
+msgid "Flip"
+msgstr ""
+
+msgid "Blur"
+msgstr ""
+
+msgid "Blocks"
+msgstr ""
+
+msgid "Negative"
+msgstr ""
+
+msgid "Fade"
+msgstr ""
+
+msgid "Chalk"
+msgstr ""
+
+msgid "Drip"
+msgstr ""
+
+msgid "Thick"
+msgstr ""
+
+msgid "Thin"
+msgstr ""
+
+msgid "Fill"
+msgstr ""
+
+msgid "You can draw in rainbow colors!"
+msgstr ""
+
+msgid "Click and move to draw sparkles."
+msgstr ""
+
+msgid "Click to make a mirror image."
+msgstr ""
+
+msgid "Click to flip the picture upside-down."
+msgstr ""
+
+msgid "Click and move the mouse around to blur the picture."
+msgstr ""
+
+msgid "Click and move the mouse around to make the picture blocky."
+msgstr ""
+
+msgid "Click and move the mouse around to draw a negative."
+msgstr ""
+
+msgid "Click and move to fade the colors."
+msgstr ""
+
+msgid ""
+"Click and move the mouse around to turn the picture into a chalk drawing."
+msgstr ""
+
+msgid "Click and move the mouse around to make the picture drip."
+msgstr ""
+
+msgid "Click and move the mouse to thicken the picture."
+msgstr ""
+
+msgid "Click and move the mouse to thin the picture."
+msgstr ""
+
+msgid "Click in the picture to fill that area with color."
+msgstr ""
+
+msgid "Square"
+msgstr ""
+
+msgid "Rectangle"
+msgstr ""
+
+msgid "Circle"
+msgstr ""
+
+msgid "Oval"
+msgstr ""
+
+msgid "Triangle"
+msgstr ""
+
+msgid "Pentagon"
+msgstr ""
+
+msgid "Diamond"
+msgstr ""
+
+msgid "A square has four sides, each the same length."
+msgstr ""
+
+msgid "A rectangle has four sides."
+msgstr ""
+
+msgid "A circle is exactly round."
+msgstr ""
+
+msgid "A triangle has three sides."
+msgstr ""
+
+msgid "A pentagon has five sides."
+msgstr ""
+
+msgid "A diamond is a square, turned around slightly."
+msgstr ""
+
+msgid "Tools"
+msgstr ""
+
+msgid "Colors"
+msgstr ""
+
+msgid "Brushes"
+msgstr ""
+
+msgid "Stamps"
+msgstr ""
+
+msgid "Shapes"
+msgstr ""
+
+msgid "Letters"
+msgstr ""
+
+msgid "Magic"
+msgstr ""
+
+msgid "Paint"
+msgstr ""
+
+msgid "Stamp"
+msgstr ""
+
+msgid "Lines"
+msgstr ""
+
+msgid "Text"
+msgstr ""
+
+msgid "Undo"
+msgstr ""
+
+msgid "Redo"
+msgstr ""
+
+msgid "Eraser"
+msgstr ""
+
+msgid "New"
+msgstr ""
+
+#. 'Open' label:
+msgid "Open"
+msgstr ""
+
+msgid "Save"
+msgstr ""
+
+msgid "Print"
+msgstr ""
+
+msgid "Quit"
+msgstr ""
+
+msgid "Pick a color and a brush shape to draw with."
+msgstr ""
+
+msgid "Pick a picture to stamp around your drawing."
+msgstr ""
+
+msgid "Click to start drawing a line. Let go to complete it."
+msgstr ""
+
+msgid ""
+"Pick a shape. Click to pick the center, drag, then let go when it is the "
+"size you want. Move around to rotate it, and click to draw it."
+msgstr ""
+
+msgid "Choose a style of text. Click on your drawing and you can start typing."
+msgstr ""
+
+msgid "Pick a magical effect to use on your drawing!"
+msgstr ""
+
+#. Undo
+msgid "Undo!"
+msgstr ""
+
+#. Redo
+msgid "Redo!"
+msgstr ""
+
+#. Eraser
+msgid "Eraser!"
+msgstr ""
+
+#. New
+msgid "You now have a blank sheet to draw on!"
+msgstr ""
+
+#. Open
+msgid "Open…"
+msgstr ""
+
+#. Save
+msgid "Your image has been saved!"
+msgstr ""
+
+#. Print
+msgid "Printing…"
+msgstr ""
+
+#. Quit
+msgid "Bye bye!"
+msgstr ""
+
+msgid "Let go of the button to complete the line."
+msgstr ""
+
+msgid "Hold the button to stretch the shape."
+msgstr ""
+
+msgid "Move the mouse to rotate the shape. Click to draw it."
+msgstr ""
+
+msgid "OK then… Let’s keep drawing this one!"
+msgstr ""
+
+#. FIXME: Move elsewhere!!!
+msgid "Do you really want to quit?"
+msgstr ""
+
+#. FIXME: Move elsewhere! Or not?!
+msgid "Yes"
+msgstr ""
+
+msgid "No"
+msgstr ""
+
+msgid "If you quit, you’ll lose your picture! Save it?"
+msgstr ""
+
+msgid "Save your picture first?"
+msgstr ""
+
+msgid "Can’t open that picture!"
+msgstr ""
+
+msgid "OK"
+msgstr ""
+
+msgid "Starting a new picture will erase the current one!"
+msgstr ""
+
+msgid "That’s OK!"
+msgstr ""
+
+msgid "Never mind!"
+msgstr ""
+
+msgid "There are no saved files!"
+msgstr ""
+
+msgid "Print your picture now?"
+msgstr ""
+
+msgid "Your picture has been printed!"
+msgstr ""
+
+msgid "You can’t print yet!"
+msgstr ""
+
+msgid "Erase this picture?"
+msgstr ""
+
+#. 'Erase' label:
+msgid "Erase"
+msgstr ""
+
+#. 'Back' label:
+msgid "Back"
+msgstr ""
+
+#. FIXME: Move elsewhere!!!
+msgid "Save over the older version of this picture?"
+msgstr ""
+
+msgid "No, save a new file"
+msgstr ""
+
+msgid "Choose the picture you want, then click “Open”."
+msgstr ""
