@@ -6,7 +6,7 @@
 # bill@newbreedsoftware.com
 # http://www.newbreedsoftware.com/tuxpaint/
 
-# June 14, 2002 - March 17, 2004
+# June 14, 2002 - March 23, 2004
 
 
 # Where to install things:
@@ -228,6 +228,7 @@ uninstall:
 	-rm $(LOCALE_PREFIX)lt/LC_MESSAGES/tuxpaint.mo
 	-rm $(LOCALE_PREFIX)ms/LC_MESSAGES/tuxpaint.mo
 	-rm $(LOCALE_PREFIX)nl/LC_MESSAGES/tuxpaint.mo
+	-rm $(LOCALE_PREFIX)nb/LC_LESSAGES/tuxpaint.mo
 	-rm $(LOCALE_PREFIX)nn/LC_MESSAGES/tuxpaint.mo
 	-rm $(LOCALE_PREFIX)pl/LC_MESSAGES/tuxpaint.mo
 	-rm $(LOCALE_PREFIX)pt/LC_MESSAGES/tuxpaint.mo
@@ -235,6 +236,7 @@ uninstall:
 	-rm $(LOCALE_PREFIX)ro/LC_MESSAGES/tuxpaint.mo
 	-rm $(LOCALE_PREFIX)ru/LC_MESSAGES/tuxpaint.mo
 	-rm $(LOCALE_PREFIX)sk/LC_MESSAGES/tuxpaint.mo
+	-rm $(LOCALE_PREFIX)sl/LC_MESSAGES/tuxpaint.mo
 	-rm $(LOCALE_PREFIX)sr/LC_MESSAGES/tuxpaint.mo
 	-rm $(LOCALE_PREFIX)sv/LC_MESSAGES/tuxpaint.mo
 	-rm $(LOCALE_PREFIX)ta/LC_MESSAGES/tuxpaint.mo
