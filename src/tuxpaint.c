@@ -1147,6 +1147,8 @@ static SDL_Surface * img_title_names[NUM_TITLES];
 static SDL_Surface * img_tools[NUM_TOOLS], * img_tool_names[NUM_TOOLS];
 
 
+//////////////////////////////////////////////////////////////////////
+// font stuff
 
 // example from a Debian box with MS fonts:
 // start with 232 files
@@ -1156,7 +1158,6 @@ static SDL_Surface * img_tools[NUM_TOOLS], * img_tool_names[NUM_TOOLS];
 // end up with 34 user choices
 #define MAX_FONTS 256
 
-// 18 24 36 48
 #define MIN_TEXT_SIZE 0
 #define MAX_TEXT_SIZE 3
 static int text_size = 2;
@@ -1168,8 +1169,9 @@ typedef struct style_info {
   char *filename;
   char *directory;
   char *family;    // name like "FooCorp Thunderstruck"
-  char *face;      // junk like "Oblique Demi-Bold"
-  unsigned flags; // see SDL/SDL_ttf.h for bold & italic
+  char *style;     // junk like "Oblique Demi-Bold"
+  int italic;
+  int boldness;
   int truetype; // Is it? (TrueType gets priority)
 } style_info;
 
@@ -1179,15 +1181,19 @@ typedef struct family_info {
   char *family;
   char *filename[4];
   TTF_Font *handle;
+  int score;
 } family_info;
 
 static TTF_Font * medium_font, * small_font, * large_font, * locale_font;
-static family_info * user_fonts[MAX_FONTS];
-static int num_fonts;
+static style_info * user_font_styles[MAX_FONTS];
+static family_info * user_font_families[MAX_FONTS];
+static int num_font_styles;
+static int num_font_families;
+
 
 static TTF_Font *getfonthandle(int desire)
 {
-  family_info *fi = user_fonts[desire];
+  family_info *fi = user_font_families[desire];
   if(fi->handle)
     return fi->handle;
   int missing = 0;
@@ -1216,6 +1222,383 @@ static TTF_Font *getfonthandle(int desire)
   TTF_SetFontStyle(fi->handle,missing);
   return fi->handle;
 }
+
+
+// void qsort(void *base, size_t nmemb, size_t size,
+// int(*compar)(const void *, const void *));
+
+
+// For qsort() and other use, to see if font files are groupable
+static int compar_fontgroup(const void *v1, const void *v2)
+{
+  const style_info *s1 = *(style_info**)v1;
+  const style_info *s2 = *(style_info**)v2;
+  int rc;
+
+  rc = strcmp(s1->directory,s2->directory);
+  if(rc)
+    return rc;
+
+  rc = s1->truetype - s2->truetype;
+  if(rc)
+    return rc;
+
+  return strcmp(s1->family,s2->family);
+}
+
+
+// For qsort() and other use, to see if font files are duplicates
+static int compar_fontkiller(const void *v1, const void *v2)
+{
+  const family_info *f1 = *(family_info**)v1;
+  const family_info *f2 = *(family_info**)v2;
+  int rc;
+
+  rc = strcmp(f1->family,f2->family);
+  if(rc)
+    return rc;
+
+  return f1->score - f2->score;
+}
+
+
+// For qsort() and other use, to order the worst ones last
+static int compar_fontscore(const void *v1, const void *v2)
+{
+  const family_info *f1 = *(family_info**)v1;
+  const family_info *f2 = *(family_info**)v2;
+
+  return f2->score - f1->score;
+}
+
+
+static void parse_font_style(style_info *si)
+{
+  int have_light = 0;
+  int have_demi = 0;
+  int have_bold = 0;
+  int have_medium = 0;
+
+  si->italic = 0;
+
+  int stumped = 0;
+  char *sp = si->style;
+
+  while(*sp)
+    {
+      if(*sp==' ')
+        {
+          sp++;
+          continue;
+        }
+      if(!strncmp(sp,"Bold",strlen("Bold")))
+        {
+          sp += strlen("Bold");
+          have_bold = 1;
+          continue;
+        }
+      if(!strncmp(sp,"Regular",strlen("Regular")))
+        {
+          sp += strlen("Regular");
+          continue;
+        }
+      if(!strncmp(sp,"Italic",strlen("Italic")))
+        {
+          sp += strlen("Italic");
+          si->italic = 1;
+          continue;
+        }
+      if(!strncmp(sp,"Oblique",strlen("Oblique")))
+        {
+          sp += strlen("Oblique");
+          si->italic = 1;
+          continue;
+        }
+      // move " Condensed" from style to family
+      if(!strncmp(sp,"Condensed",strlen("Condensed")))
+        {
+          sp += strlen("Condensed");
+          size_t len = strlen(si->family);
+          char *name = malloc(len + strlen(" Condensed") + 1);
+          memcpy(name,si->family,len);
+          strcpy(name+len," Condensed");
+          free(si->family);
+          si->family = name;
+          continue;
+        }
+      if(!strncmp(sp,"Light",strlen("Light")))
+        {
+          sp += strlen("Light");
+          have_light = 1;
+          continue;
+        }
+      if(!strncmp(sp,"Medium",strlen("Medium")))
+        {
+          sp += strlen("Medium");
+          have_medium = 1;
+          continue;
+        }
+      if(!strncmp(sp,"Demi",strlen("Demi")))
+        {
+          sp += strlen("Demi");
+          have_demi = 1;
+          continue;
+        }
+      if(!strncmp(sp,"Roman",strlen("Roman")))
+        {
+          sp += strlen("Roman");
+          continue;
+        }
+      if(!strncmp(sp,"Book",strlen("Book")))
+        {
+          sp += strlen("Book");
+          continue;
+        }
+      if(!strncmp(sp,"LR",strlen("LR")))
+        {
+          sp += strlen("LR");
+          continue;
+        }
+
+      if(!stumped)
+        {
+          stumped=1;
+          printf("Font style parser stumped by \"%s\".\n", si->style);
+        }
+      sp++; // bad: an unknown character
+    }
+
+  if (have_demi || have_medium)
+    si->boldness = 2;
+  else if (have_bold)
+    si->boldness = 3;
+  else if (have_light)
+    si->boldness = 0;
+  else
+    si->boldness = 1;
+
+  si->truetype = !!strstr(si->filename,".ttf");
+}
+
+
+#include <unistd.h>
+
+
+static void groupfonts_range(style_info **base, int count)
+{
+  int boldcounts[4] = {0,0,0,0};
+  int boldmap[4] = {-1,-1,-1,-1};
+  int i;
+if(count<1 || count>4)
+{
+printf("::::::: %d %s\n",count, base[0]->family);
+i = count;
+while(i--)
+{
+printf("               %s\n", base[i]->style);
+}
+sleep(5);
+}
+  i = count;
+  while(i--)
+    boldcounts[base[i]->boldness]++;
+
+  int boldmax = base[0]->boldness;
+  int boldmin = base[0]->boldness;
+  int bolduse = 0;
+
+  i = 4;
+  while(i--)
+    {
+      if(!boldcounts[i])
+        continue;
+      if(i>boldmax)
+        boldmax = i;
+      if(i<boldmin)
+        boldmin = i;
+      bolduse++;
+    }
+  if(likely(bolduse<=2))
+    {
+      // in case they are same, we want non-bold,
+      // so that setting goes second
+      boldmap[boldmax] = 1;
+      boldmap[boldmin] = 0;
+    }
+  else if(count==3)
+    {
+      boldmap[boldmax] = 1;
+      boldmap[boldmin] = 0;
+      int boldmid = boldcounts[boldmin+1] ? boldmin+1 : boldmin+2;
+      int zmin, zmid, zmax;
+      i = 3;
+      while(i--){
+        if(base[i]->boldness==boldmin)
+          zmin = base[i]->italic;
+        if(base[i]->boldness==boldmid)
+          zmid = base[i]->italic;
+        if(base[i]->boldness==boldmax)
+          zmax = base[i]->italic;
+      }
+      if(zmin!=zmid)
+        boldmap[boldmid] = 0;
+      else if(zmid!=zmax)
+        boldmap[boldmid] = 1;
+      else if(boldmin==0 && boldmid==1)
+        {
+          boldmap[0] = -1;
+          boldmap[1] = 0;
+        }
+    }
+  else
+    {
+      // 3 or 4 boldness levels, 4 or more styles!
+      // This is going to be random hacks and hopes.
+
+      // bold is bold
+      boldmap[3] = 1;
+      int claimed_bold = boldcounts[3];
+
+      // norm is norm
+      boldmap[1] = 0;
+      int claimed_norm = boldcounts[1];
+
+      // classify demi-bold or medium
+      if(claimed_bold<2)
+        {
+          boldmap[2] = 1;
+          claimed_bold += boldcounts[2];
+        }
+      else if(claimed_norm<2)
+        {
+          boldmap[2] = 0;
+          claimed_norm += boldcounts[2];
+        }
+
+      // classify lightface
+      if(claimed_norm<2)
+        {
+          boldmap[0] = 0;
+          //claimed_norm += boldcounts[0];
+        }
+    }
+
+  family_info *fi = calloc(1, sizeof *fi);
+  user_font_families[num_font_families++] = fi;
+  fi->directory = strdup(base[0]->directory);
+  fi->family    = strdup(base[0]->family);
+  fi->score     = base[0]->truetype;
+  i = count;
+  while(i--)
+    {
+      int b = boldmap[base[i]->boldness];
+      if(b==-1)
+        {
+          printf("too many boldness levels, discarding: %s, %s\n", base[i]->family, base[i]->style);
+          continue;
+        }
+      int spot = b ? TTF_STYLE_BOLD : 0;
+      spot += base[i]->italic ? TTF_STYLE_ITALIC : 0;
+      if(fi->filename[spot])
+        {
+          printf("duplicates, discarding: %s, %s\n", base[i]->family, base[i]->style);
+          printf("b %d, spot %d\n", b, spot);
+          printf("occupancy %p %p %p %p\n", fi->filename[0], fi->filename[1], fi->filename[2], fi->filename[3]);
+          continue;
+        }
+      fi->filename[spot] = strdup(base[i]->filename);
+      fi->score += 2;
+    }
+}
+
+
+static void dupe_markdown_range(family_info **base, int count)
+{
+  int bestscore = -999;
+  int bestslot = 0;
+  int i = count;
+  while(i--)
+    {
+      int score = base[i]->score;
+      if(score<=bestscore)
+        continue;
+      bestscore = score;
+      bestslot = i;
+    }
+  i = count;
+  while(i--)
+    {
+      if (i==bestslot)
+        continue;
+      base[i]->score = -999;
+    }
+}
+
+
+static void groupfonts(void)
+{
+  int i = num_font_styles;
+  while(i--)
+    parse_font_style(user_font_styles[i]);
+  qsort(user_font_styles, num_font_styles, sizeof user_font_styles[0], compar_fontgroup);
+  int low  = 0;
+  for(;;)
+    {
+      if(low >= num_font_styles)
+        break;
+      int high = low;
+      for(;;)
+        {
+          if(++high >= num_font_styles)
+            break;
+          if(compar_fontgroup(&user_font_styles[low],&user_font_styles[high]))
+            break;
+        }
+      groupfonts_range(user_font_styles+low,high-low);
+      low = high;
+    }
+  qsort(user_font_families, num_font_families, sizeof user_font_families[0], compar_fontkiller);
+  low = 0;
+  for(;;)
+    {
+      if(low >= num_font_families)
+        break;
+      int high = low;
+      for(;;)
+        {
+          if(++high >= num_font_families)
+            break;
+          if(strcmp(user_font_families[low]->family,user_font_families[high]->family))
+            break;
+        }
+      dupe_markdown_range(user_font_families+low,high-low);
+      low = high;
+    }
+  qsort(user_font_families, num_font_families, sizeof user_font_families[0], compar_fontscore);
+  if(user_font_families[0]->score < 0)
+    printf("sorted the wrong way, or all fonts were crap\n");
+  printf("Trim starting with %d families\n", num_font_families);
+  while(num_font_families>1 && user_font_families[num_font_families-1]->score < 0)
+    {
+      i = --num_font_families;
+      free(user_font_families[i]->directory);
+      free(user_font_families[i]->family);
+      char ** cpp = user_font_families[i]->filename;
+      if(cpp[0])
+        free(cpp[0]);
+      if(cpp[1])
+        free(cpp[1]);
+      if(cpp[2])
+        free(cpp[2]);
+      if(cpp[3])
+        free(cpp[3]);
+      free(user_font_families[i]);
+      user_font_families[i] = NULL;
+    }
+  printf("Trim ending with %d families\n", num_font_families);
+}
+
+////////////////////////////////////////////////////////////////////
 
 #define MAX_STAMPS 512
 #define MAX_BRUSHES 64
@@ -2245,7 +2628,7 @@ static void mainloop(void)
 			}
 		      else if (cur_tool == TOOL_TEXT)
 			{
-			  num_things = num_fonts;
+			  num_things = num_font_families;
 			  thing_scroll = font_scroll;
 			}
 		      else if (cur_tool == TOOL_SHAPES)
@@ -2552,10 +2935,10 @@ static void mainloop(void)
 			      int i;
                               for (i = 0; i < MAX_FONTS; i++)
                                 {
-                                  if (user_fonts[i] && user_fonts[i]->handle)
+                                  if (user_font_families[i] && user_font_families[i]->handle)
                                     {
-                                      TTF_CloseFont(user_fonts[i]->handle);
-                                      user_fonts[i]->handle = NULL;
+                                      TTF_CloseFont(user_font_families[i]->handle);
+                                      user_font_families[i]->handle = NULL;
                                     }
                                 }
 			      draw_fonts();
@@ -2932,7 +3315,7 @@ static void mainloop(void)
 		    }
 		  else if (cur_tool == TOOL_TEXT)
 		    {
-		      num_things = num_fonts;
+		      num_things = num_font_families;
 		      thing_scroll = font_scroll;
 		    }
 		  else if (cur_tool == TOOL_SHAPES)
@@ -3272,7 +3655,7 @@ static void mainloop(void)
 		    }
 		  else if (cur_tool == TOOL_TEXT)
 		    {
-		      num_things = num_fonts;
+		      num_things = num_font_families;
 		      thing_scroll = font_scroll;
 		    }
 		  else if (cur_tool == TOOL_SHAPES)
@@ -6556,8 +6939,6 @@ static void setup(int argc, char * argv[])
 
   /* Load other available fonts: */
 
-  num_fonts = 0;
-  
   loadfonts(DATA_PREFIX "fonts", 1);
 
 #ifdef WIN32
@@ -6578,6 +6959,7 @@ static void setup(int argc, char * argv[])
   loadfonts(homedirdir, 0);
   free(homedirdir);
 
+  groupfonts();
 
   /* Load stamps: */
 
@@ -7497,7 +7879,7 @@ static void draw_fonts(void)
 
   /* Do we need scrollbars? */
 
-  if (num_fonts > most + TOOLOFFSET)
+  if (num_font_families > most + TOOLOFFSET)
     {
       off_y = 24;
       max = most-2 + TOOLOFFSET;
@@ -7520,7 +7902,7 @@ static void draw_fonts(void)
       if (!disable_stamp_controls)
 	dest.y = dest.y - (48 * 2);
 
-      if (font_scroll < num_fonts - (most-2) - TOOLOFFSET)
+      if (font_scroll < num_font_families - (most-2) - TOOLOFFSET)
 	{
 	  SDL_BlitSurface(img_scroll_down, NULL, screen, &dest);
 	}
@@ -7552,7 +7934,7 @@ static void draw_fonts(void)
 	{
 	  SDL_BlitSurface(img_btn_down, NULL, screen, &dest);
 	}
-      else if (font < num_fonts)
+      else if (font < num_font_families)
 	{
 	  SDL_BlitSurface(img_btn_up, NULL, screen, &dest);
 	}
@@ -7562,9 +7944,7 @@ static void draw_fonts(void)
 	}
 
     
-      /* FIXME: We should render the font buttons once, at startup! */
-
-      if (font < num_fonts)
+      if (font < num_font_families)
 	{
 	  tmp_surf = TTF_RenderUTF8_Blended(getfonthandle(font), gettext("ag"), black);
 
@@ -10678,9 +11058,9 @@ static void cleanup(void)
 
   for (i = 0; i < MAX_FONTS; i++)
     {
-      if (user_fonts[i])
+      if (user_font_families[i])
 	{
-	  char ** cpp = user_fonts[i]->filename - 1;
+	  char ** cpp = user_font_families[i]->filename - 1;
 	  if (*++cpp)
 	    free(*cpp);
 	  if (*++cpp)
@@ -10689,12 +11069,12 @@ static void cleanup(void)
 	    free(*cpp);
 	  if (*++cpp)
 	    free(*cpp);
-	  if (user_fonts[i]->handle)
-	    TTF_CloseFont(user_fonts[i]->handle);
-	  free(user_fonts[i]->directory);
-	  free(user_fonts[i]->family);
-	  free(user_fonts[i]);
-	  user_fonts[i] = NULL;
+	  if (user_font_families[i]->handle)
+	    TTF_CloseFont(user_font_families[i]->handle);
+	  free(user_font_families[i]->directory);
+	  free(user_font_families[i]->family);
+	  free(user_font_families[i]);
+	  user_font_families[i] = NULL;
 	}
     }
 
@@ -13672,7 +14052,7 @@ static void loadfonts(const char * const dir, int fatal)
 
   /* Do something with each file (load TTFs): */
 
-  for (i = 0; i < num_files && num_fonts + 3 < MAX_FONTS; i++)
+  for (i = 0; i < num_files && num_font_styles + 3 < MAX_FONTS; i++)
     {
       /* Ignore things starting with "." (e.g., "." and ".." dirs): */
 
@@ -13694,25 +14074,17 @@ static void loadfonts(const char * const dir, int fatal)
               if(font)
                 {
                   const char *family = TTF_FontFaceFamilyName(font);
-                  if (strstr(family, "Webdings") || strstr(family, "Dingbats") || strstr(family, "Cursor") || strstr(family, "Standard Symbols"))
-                    TTF_CloseFont(font);
-                  else
+                  if(!( strstr(family, "Webdings") || strstr(family, "Dingbats") || strstr(family, "Cursor") || strstr(family, "Standard Symbols") ))
                     {
-                      user_fonts[num_fonts] = malloc(sizeof *user_fonts[num_fonts]);
-                      user_fonts[num_fonts]->handle = font;
-                      user_fonts[num_fonts]->directory = strdup(dir);
-                      user_fonts[num_fonts]->filename[0] = strdup(d_names[i]);
-                      user_fonts[num_fonts]->filename[1] = NULL;
-                      user_fonts[num_fonts]->filename[2] = NULL;
-                      user_fonts[num_fonts]->filename[3] = NULL;
-                      user_fonts[num_fonts]->family = strdup(family);
-                      num_fonts++;
+                      user_font_styles[num_font_styles] = malloc(sizeof *user_font_styles[num_font_styles]);
+                      user_font_styles[num_font_styles]->directory = strdup(dir);
+                      user_font_styles[num_font_styles]->filename = strdup(d_names[i]);
+                      user_font_styles[num_font_styles]->family = strdup(family);
+                      user_font_styles[num_font_styles]->style = strdup(TTF_FontFaceStyleName(font));
+                      num_font_styles++;
                     }
+                  TTF_CloseFont(font);
                 }
-//	      user_fonts[num_fonts++] = TTF_OpenFont(fname, 16);
-//	      user_fonts[num_fonts++] = TTF_OpenFont(fname, 24);
-//	      user_fonts[num_fonts++] = TTF_OpenFont(fname, 32);
-//	      user_fonts[num_fonts++] = TTF_OpenFont(fname, 48);
 	      show_progress_bar();
 	    }
 	}
@@ -13723,7 +14095,7 @@ static void loadfonts(const char * const dir, int fatal)
 
   /* Give warning if too many files were found (e.g., some not loaded): */
 
-  if (num_fonts == MAX_FONTS)
+  if (num_font_styles == MAX_FONTS)
     {
       fprintf(stderr,
 	      "\nWarning: Reached maximum fonts (%d) which can be loaded.\n\n",
