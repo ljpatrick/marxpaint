@@ -501,6 +501,18 @@ static void debug(const char * const str)
 #endif
 }
 
+static const char *getfilename(const char* path)
+{
+  char    *p;
+
+  if ( (p = strrchr( path, '\\' )) != NULL )
+    return p+1;
+  if ( (p = strrchr( path, '/' )) != NULL )
+    return p+1;
+  return path;
+}
+
+
 ///////////////////////////////////////////////////////////////////
 // Language stuff
 
@@ -743,7 +755,7 @@ static TTF_Font *try_alternate_font(void)
 
 /* FIXME: All this should REALLY be array-based!!! */
 /* Show available languages: */
-static void show_lang_usage(FILE * f, char * prg)
+static void show_lang_usage(FILE * f, const char * const prg)
 {
   fprintf(f,
 	  "\n"
@@ -806,7 +818,7 @@ static void show_lang_usage(FILE * f, char * prg)
 
 /* FIXME: Add accented characters to the descriptions */
 /* Show available locales: */
-static void show_locale_usage(FILE * f, char * prg)
+static void show_locale_usage(FILE * f, const char * const prg)
 {
   fprintf(f,
 	  "\n"
@@ -865,6 +877,329 @@ static void show_locale_usage(FILE * f, char * prg)
 	  prg);
 }
 
+static void setup_language(const char * const prg)
+{
+  if (langstr == NULL && getenv("LANG") != NULL &&
+      strncasecmp(getenv("LANG"), "lt_LT", 5) == 0)
+    {
+      set_langstr("lithuanian");
+    }
+
+  if (langstr == NULL && getenv("LANG") != NULL &&
+      strncasecmp(getenv("LANG"), "pl_PL", 5) == 0)
+    {
+      set_langstr("polish");
+    }
+
+  if (langstr != NULL)
+    {
+      if (strcmp(langstr, "english") == 0 ||
+	  strcmp(langstr, "american-english") == 0)
+	{
+	  putenv((char *) "LANGUAGE=C");
+	  putenv((char *) "LC_ALL=C");
+	}
+      else if (strcmp(langstr, "croatian") == 0 ||
+	       strcmp(langstr, "hrvatski") == 0)
+	{
+	  putenv((char *) "LANGUAGE=hr_HR.UTF-8");
+	  putenv((char *) "LC_ALL=hr_HR.UTF-8");
+	}
+      else if (strcmp(langstr, "catalan") == 0 ||
+	       strcmp(langstr, "catala") == 0)
+	{
+	  putenv((char *) "LANGUAGE=ca_ES.UTF-8");
+	  putenv((char *) "LC_ALL=ca_ES.UTF-8");
+	}
+      else if (strcmp(langstr, "belarusian") == 0 ||
+	       strcmp(langstr, "bielaruskaja") == 0)
+        {
+	  putenv((char *) "LANGUAGE=be_BY.UTF-8");
+	  putenv((char *) "LC_ALL=be_BY.UTF-8");
+        }
+      else if (strcmp(langstr, "czech") == 0 ||
+	       strcmp(langstr, "cesky") == 0)
+	{
+	  putenv((char *) "LANGUAGE=cs_CZ.UTF-8");
+	  putenv((char *) "LC_ALL=cs_CZ.UTF-8");
+	}
+      else if (strcmp(langstr, "danish") == 0 ||
+	       strcmp(langstr, "dansk") == 0)
+	{
+	  putenv((char *) "LANGUAGE=da_DK.UTF-8");
+	  putenv((char *) "LC_ALL=da_DK.UTF-8");
+	}
+      else if (strcmp(langstr, "german") == 0 ||
+	       strcmp(langstr, "deutsch") == 0)
+	{
+	  putenv((char *) "LANGUAGE=de_DE.UTF-8");
+	  putenv((char *) "LC_ALL=de_DE.UTF-8");
+	}
+      else if (strcmp(langstr, "greek") == 0)
+	{
+	  putenv((char *) "LANGUAGE=el_GR.UTF-8");
+	  putenv((char *) "LC_ALL=el_GR.UTF-8");
+	}
+      else if (strcmp(langstr, "british-english") == 0 ||
+	       strcmp(langstr, "british") == 0)
+	{
+	  putenv((char *) "LANGUAGE=en_GB.UTF-8");
+	  putenv((char *) "LC_ALL=en_GB.UTF-8");
+	}
+      else if (strcmp(langstr, "spanish") == 0 ||
+	       strcmp(langstr, "espanol") == 0)
+	{
+	  putenv((char *) "LANGUAGE=es_ES.UTF-8");
+	  putenv((char *) "LC_ALL=es_ES.UTF-8");
+	}
+      else if (strcmp(langstr, "finnish") == 0 ||
+	       strcmp(langstr, "suomi") == 0)
+	{
+	  putenv((char *) "LANGUAGE=fi_FI.UTF-8");
+	  putenv((char *) "LC_ALL=fi_FI.UTF-8");
+	}
+      else if (strcmp(langstr, "french") == 0 ||
+	       strcmp(langstr, "francais") == 0)
+	{
+	  putenv((char *) "LANGUAGE=fr_FR.UTF-8");
+	  putenv((char *) "LC_ALL=fr_FR.UTF-8");
+	}
+      else if (strcmp(langstr, "galician") == 0 ||
+	       strcmp(langstr, "galego") == 0)
+	{
+	  putenv((char *) "LANGUAGE=gl_ES.UTF-8");
+	  putenv((char *) "LC_ALL=gl_ES.UTF-8");
+	}
+      else if (strcmp(langstr, "hebrew") == 0)
+	{
+	  putenv((char *) "LANGUAGE=he_IL.UTF-8");
+	  putenv((char *) "LC_ALL=he_IL.UTF-8");
+	}
+      else if (strcmp(langstr, "hindi") == 0)
+	{
+	  putenv((char *) "LANGUAGE=hi_IN.UTF-8");
+	  putenv((char *) "LC_ALL=hi_IN.UTF-8");
+	}
+      else if (strcmp(langstr, "hungarian") == 0 ||
+	       strcmp(langstr, "magyar") == 0)
+	{
+	  putenv((char *) "LANGUAGE=hu_HU.UTF-8");
+	}
+      else if (strcmp(langstr, "indonesian") == 0 ||
+	       strcmp(langstr, "bahasa-indonesia") == 0)
+	{
+	  putenv((char *) "LANGUAGE=id_ID.UTF-8");
+	  putenv((char *) "LC_ALL=id_ID.UTF-8");
+	}
+      else if (strcmp(langstr, "icelandic") == 0 ||
+	       strcmp(langstr, "islenska") == 0)
+	{
+	  putenv((char *) "LANGUAGE=is_IS.UTF-8");
+	  putenv((char *) "LC_ALL=is_IS.UTF-8");
+	}
+      else if (strcmp(langstr, "italian") == 0 ||
+	       strcmp(langstr, "italiano") == 0)
+	{
+	  putenv((char *) "LANGUAGE=it_IT.UTF-8");
+	  putenv((char *) "LC_ALL=it_IT.UTF-8");
+	}
+      else if (strcmp(langstr, "japanese") == 0)
+	{
+	  putenv((char *) "LANGUAGE=ja_JP.UTF-8");
+	  putenv((char *) "LC_ALL=ja_JP.UTF-8");
+	}
+      else if (strcmp(langstr, "vietnamese") == 0)
+	{
+	  putenv((char *) "LANGUAGE=vi_VN.UTF-8");
+	  putenv((char *) "LC_ALL=vi_VN.UTF-8");
+	}
+      else if (strcmp(langstr, "afrikaans") == 0)
+	{
+	  putenv((char *) "LANGUAGE=af_ZA.UTF-8");
+	  putenv((char *) "LC_ALL=af_ZA.UTF-8");
+	}
+      else if (strcmp(langstr, "albanian") == 0)
+	{
+	  putenv((char *) "LANGUAGE=sq_AL.UTF-8");
+	  putenv((char *) "LC_ALL=sq_AL.UTF-8");
+	}
+      else if (strcmp(langstr, "breton") == 0 ||
+	       strcmp(langstr, "brezhoneg") == 0)
+	{
+	  putenv((char *) "LANGUAGE=br_FR.UTF-8");
+	  putenv((char *) "LC_ALL=br_FR.UTF-8");
+	}
+      else if (strcmp(langstr, "bulgarian") == 0)
+	{
+	  putenv((char *) "LANGUAGE=bg_BG.UTF-8");
+	  putenv((char *) "LC_ALL=bg_BG.UTF-8");
+	}
+      else if (strcmp(langstr, "welsh") == 0 ||
+	       strcmp(langstr, "cymraeg") == 0)
+	{
+	  putenv((char *) "LANGUAGE=cy_GB.UTF-8");
+	  putenv((char *) "LC_ALL=cy_GB.UTF-8");
+	}
+      else if (strcmp(langstr, "bokmal") == 0)
+	{
+	  putenv((char *) "LANGUAGE=nb_NO.UTF-8");
+	  putenv((char *) "LC_ALL=nb_NO.UTF-8");
+	}
+      else if (strcmp(langstr, "basque") == 0 ||
+	       strcmp(langstr, "euskara") == 0)
+	{
+	  putenv((char *) "LANGUAGE=eu_ES.UTF-8");
+	  putenv((char *) "LC_ALL=eu_ES.UTF-8");
+	}
+      else if (strcmp(langstr, "korean") == 0)
+	{
+	  putenv((char *) "LANGUAGE=ko_KR.UTF-8");
+	  putenv((char *) "LC_ALL=ko_KR.UTF-8");
+	}
+      else if (strcmp(langstr, "klingon") == 0 ||
+	       strcmp(langstr, "tlhIngan") == 0 ||
+	       strcmp(langstr, "tlhingan") == 0)
+	{
+	  putenv((char *) "LANGUAGE=tlh.UTF-8");
+	  putenv((char *) "LC_ALL=tlh.UTF-8");
+	}
+      else if (strcmp(langstr, "tamil") == 0)
+	{
+	  putenv((char *) "LANGUAGE=ta_IN.UTF-8");
+	  putenv((char *) "LC_ALL=ta_IN.UTF-8");
+	}
+      else if (strcmp(langstr, "lithuanian") == 0 ||
+	       strcmp(langstr, "lietuviu") == 0)
+	{
+	  putenv((char *) "LANGUAGE=lt_LT.UTF-8");
+	  putenv((char *) "LC_ALL=lt_LT.UTF-8");
+	}
+      else if (strcmp(langstr, "malay") == 0)
+	{
+	  putenv((char *) "LANGUAGE=ms_MY.UTF-8");
+	  putenv((char *) "LC_ALL=ms_MY.UTF-8");
+	}
+      else if (strcmp(langstr, "dutch") == 0 ||
+	       strcmp(langstr, "nederlands") == 0)
+	{
+	  putenv((char *) "LANGUAGE=nl_NL.UTF-8");
+	  putenv((char *) "LC_ALL=nl_NL.UTF-8");
+	}
+      else if (strcmp(langstr, "norwegian") == 0 ||
+	       strcmp(langstr, "nynorsk") == 0 ||
+	       strcmp(langstr, "norsk") == 0)
+	{
+	  putenv((char *) "LANGUAGE=nn_NO.UTF-8");
+	  putenv((char *) "LC_ALL=nn_NO.UTF-8");
+	}
+      else if (strcmp(langstr, "polish") == 0 ||
+	       strcmp(langstr, "polski") == 0)
+	{
+	  putenv((char *) "LANGUAGE=pl_PL.UTF-8");
+	  putenv((char *) "LC_ALL=pl_PL.UTF-8");
+	}
+      else if (strcmp(langstr, "brazilian-portuguese") == 0 ||
+	       strcmp(langstr, "portugues-brazilian") == 0 ||
+	       strcmp(langstr, "brazilian") == 0)
+	{
+	  putenv((char *) "LANGUAGE=pt_BR.UTF-8");
+	  putenv((char *) "LC_ALL=pt_BR.UTF-8");
+	}
+      else if (strcmp(langstr, "portuguese") == 0 ||
+	       strcmp(langstr, "portugues") == 0)
+	{
+	  putenv((char *) "LANGUAGE=pt_PT.UTF-8");
+	  putenv((char *) "LC_ALL=pt_PT.UTF-8");
+	}
+      else if (strcmp(langstr, "romanian") == 0)
+	{
+	  putenv((char *) "LANGUAGE=ro_RO.UTF-8");
+	  putenv((char *) "LC_ALL=ro_RO.UTF-8");
+	}
+      else if (strcmp(langstr, "russian") == 0 ||
+	       strcmp(langstr, "russkiy") == 0)
+	{
+	  putenv((char *) "LANGUAGE=ru_RU.UTF-8");
+	  putenv((char *) "LC_ALL=ru_RU.UTF-8");
+	}
+      else if (strcmp(langstr, "slovak") == 0)
+	{
+	  putenv((char *) "LANGUAGE=sk_SK.UTF-8");
+	  putenv((char *) "LC_ALL=sk_SK.UTF-8");
+	}
+      else if (strcmp(langstr, "slovenian") == 0 ||
+	       strcmp(langstr, "slovensko") == 0)
+	{
+	  putenv((char *) "LANGUAGE=sl_SI.UTF-8");
+	  putenv((char *) "LC_ALL=sl_SI.UTF-8");
+	}
+      else if (strcmp(langstr, "serbian") == 0)
+	{
+	  putenv((char *) "LANGUAGE=sr_YU.UTF-8");
+	  putenv((char *) "LC_ALL=sr_YU.UTF-8");
+	}
+      else if (strcmp(langstr, "swedish") == 0 ||
+	       strcmp(langstr, "svenska") == 0)
+	{
+	  putenv((char *) "LANGUAGE=sv_SE.UTF-8");
+	  putenv((char *) "LC_ALL=sv_SE.UTF-8");
+	}
+      else if (strcmp(langstr, "swahili") == 0)
+	{
+	  putenv((char *) "LANGUAGE=sw_TZ.UTF-8");
+	  putenv((char *) "LC_ALL=sw_TZ.UTF-8");
+	}
+      else if (strcmp(langstr, "turkish") == 0)
+	{
+	  putenv((char *) "LANGUAGE=tr_TR.UTF-8");
+	  putenv((char *) "LC_ALL=tr_TR.UTF-8");
+	}
+      else if (strcmp(langstr, "walloon") == 0 ||
+	       strcmp(langstr, "walon") == 0)
+	{
+	  putenv((char *) "LANGUAGE=wa_BE.UTF-8");
+	  putenv((char *) "LC_ALL=wa_BE.UTF-8");
+	}
+      else if (strcmp(langstr, "chinese") == 0 ||
+               strcmp(langstr, "simplified-chinese") == 0)
+	{
+	  putenv((char *) "LANGUAGE=zh_CN.UTF-8");
+	  putenv((char *) "LC_ALL=zh_CN.UTF-8");
+	}
+      else if (strcmp(langstr, "traditional-chinese") == 0)
+	{
+	  putenv((char *) "LANGUAGE=zh_TW.UTF-8");
+	  putenv((char *) "LC_ALL=zh_TW.UTF-8");
+	}
+      else if (strcmp(langstr, "help") == 0 || strcmp(langstr, "list") == 0)
+	{
+	  show_lang_usage(stdout, prg);
+	  free(langstr);
+	  exit(0);
+	}
+      else
+	{
+	  fprintf(stderr, "%s is an invalid language\n", langstr);
+	  show_lang_usage(stderr, prg);
+	  free(langstr);
+	  exit(1);
+	}
+    
+      setlocale(LC_ALL, "");
+      free(langstr);
+    }
+ 
+  bindtextdomain("tuxpaint", LOCALEDIR);
+  
+  /* Old version of glibc does not have bind_textdomain_codeset() */
+#if defined __GLIBC__ && __GLIBC__ == 2 && __GLIBC_MINOR__ >=2 || __GLIBC__ > 2
+  bind_textdomain_codeset("tuxpaint", "UTF-8");
+#endif
+
+  textdomain("tuxpaint");
+
+  set_current_language();
+}
 
 ///////////////////////////////////////////////////////////////////
 
@@ -5166,18 +5501,6 @@ static void show_usage(FILE * f, char * prg)
 }
 
 
-static const char *getfilename(const char* path)
-{
-  char    *p;
-
-  if ( (p = strrchr( path, '\\' )) != NULL )
-    return p+1;
-  if ( (p = strrchr( path, '/' )) != NULL )
-    return p+1;
-  return path;
-}
-
-
 // The original Tux Paint canvas was 608x472. The canvas can be
 // other sizes now, but many old stamps are sized for the small
 // canvas. So, with larger canvases, we must choose a good scale
@@ -5693,332 +6016,12 @@ static void setup(int argc, char * argv[])
     }
 
 
-  /* Set up language: */
+  setup_language(getfilename(argv[0]));
 
-  if (langstr == NULL && getenv("LANG") != NULL &&
-      strncasecmp(getenv("LANG"), "lt_LT", 5) == 0)
-    {
-      set_langstr("lithuanian");
-    }
 
-  if (langstr == NULL && getenv("LANG") != NULL &&
-      strncasecmp(getenv("LANG"), "pl_PL", 5) == 0)
-    {
-      set_langstr("polish");
-    }
-
-  if (langstr != NULL)
-    {
-      if (strcmp(langstr, "english") == 0 ||
-	  strcmp(langstr, "american-english") == 0)
-	{
-	  putenv((char *) "LANGUAGE=C");
-	  putenv((char *) "LC_ALL=C");
-	}
-      else if (strcmp(langstr, "croatian") == 0 ||
-	       strcmp(langstr, "hrvatski") == 0)
-	{
-	  putenv((char *) "LANGUAGE=hr_HR.UTF-8");
-	  putenv((char *) "LC_ALL=hr_HR.UTF-8");
-	}
-      else if (strcmp(langstr, "catalan") == 0 ||
-	       strcmp(langstr, "catala") == 0)
-	{
-	  putenv((char *) "LANGUAGE=ca_ES.UTF-8");
-	  putenv((char *) "LC_ALL=ca_ES.UTF-8");
-	}
-      else if (strcmp(langstr, "belarusian") == 0 ||
-	       strcmp(langstr, "bielaruskaja") == 0)
-        {
-	  putenv((char *) "LANGUAGE=be_BY.UTF-8");
-	  putenv((char *) "LC_ALL=be_BY.UTF-8");
-        }
-      else if (strcmp(langstr, "czech") == 0 ||
-	       strcmp(langstr, "cesky") == 0)
-	{
-	  putenv((char *) "LANGUAGE=cs_CZ.UTF-8");
-	  putenv((char *) "LC_ALL=cs_CZ.UTF-8");
-	}
-      else if (strcmp(langstr, "danish") == 0 ||
-	       strcmp(langstr, "dansk") == 0)
-	{
-	  putenv((char *) "LANGUAGE=da_DK.UTF-8");
-	  putenv((char *) "LC_ALL=da_DK.UTF-8");
-	}
-      else if (strcmp(langstr, "german") == 0 ||
-	       strcmp(langstr, "deutsch") == 0)
-	{
-	  putenv((char *) "LANGUAGE=de_DE.UTF-8");
-	  putenv((char *) "LC_ALL=de_DE.UTF-8");
-	}
-      else if (strcmp(langstr, "greek") == 0)
-	{
-	  putenv((char *) "LANGUAGE=el_GR.UTF-8");
-	  putenv((char *) "LC_ALL=el_GR.UTF-8");
-	}
-      else if (strcmp(langstr, "british-english") == 0 ||
-	       strcmp(langstr, "british") == 0)
-	{
-	  putenv((char *) "LANGUAGE=en_GB.UTF-8");
-	  putenv((char *) "LC_ALL=en_GB.UTF-8");
-	}
-      else if (strcmp(langstr, "spanish") == 0 ||
-	       strcmp(langstr, "espanol") == 0)
-	{
-	  putenv((char *) "LANGUAGE=es_ES.UTF-8");
-	  putenv((char *) "LC_ALL=es_ES.UTF-8");
-	}
-      else if (strcmp(langstr, "finnish") == 0 ||
-	       strcmp(langstr, "suomi") == 0)
-	{
-	  putenv((char *) "LANGUAGE=fi_FI.UTF-8");
-	  putenv((char *) "LC_ALL=fi_FI.UTF-8");
-	}
-      else if (strcmp(langstr, "french") == 0 ||
-	       strcmp(langstr, "francais") == 0)
-	{
-	  putenv((char *) "LANGUAGE=fr_FR.UTF-8");
-	  putenv((char *) "LC_ALL=fr_FR.UTF-8");
-	}
-      else if (strcmp(langstr, "galician") == 0 ||
-	       strcmp(langstr, "galego") == 0)
-	{
-	  putenv((char *) "LANGUAGE=gl_ES.UTF-8");
-	  putenv((char *) "LC_ALL=gl_ES.UTF-8");
-	}
-      else if (strcmp(langstr, "hebrew") == 0)
-	{
-	  putenv((char *) "LANGUAGE=he_IL.UTF-8");
-	  putenv((char *) "LC_ALL=he_IL.UTF-8");
-	}
-      else if (strcmp(langstr, "hindi") == 0)
-	{
-	  putenv((char *) "LANGUAGE=hi_IN.UTF-8");
-	  putenv((char *) "LC_ALL=hi_IN.UTF-8");
-	}
-      else if (strcmp(langstr, "hungarian") == 0 ||
-	       strcmp(langstr, "magyar") == 0)
-	{
-	  putenv((char *) "LANGUAGE=hu_HU.UTF-8");
-	}
-      else if (strcmp(langstr, "indonesian") == 0 ||
-	       strcmp(langstr, "bahasa-indonesia") == 0)
-	{
-	  putenv((char *) "LANGUAGE=id_ID.UTF-8");
-	  putenv((char *) "LC_ALL=id_ID.UTF-8");
-	}
-      else if (strcmp(langstr, "icelandic") == 0 ||
-	       strcmp(langstr, "islenska") == 0)
-	{
-	  putenv((char *) "LANGUAGE=is_IS.UTF-8");
-	  putenv((char *) "LC_ALL=is_IS.UTF-8");
-	}
-      else if (strcmp(langstr, "italian") == 0 ||
-	       strcmp(langstr, "italiano") == 0)
-	{
-	  putenv((char *) "LANGUAGE=it_IT.UTF-8");
-	  putenv((char *) "LC_ALL=it_IT.UTF-8");
-	}
-      else if (strcmp(langstr, "japanese") == 0)
-	{
-	  putenv((char *) "LANGUAGE=ja_JP.UTF-8");
-	  putenv((char *) "LC_ALL=ja_JP.UTF-8");
-	}
-      else if (strcmp(langstr, "vietnamese") == 0)
-	{
-	  putenv((char *) "LANGUAGE=vi_VN.UTF-8");
-	  putenv((char *) "LC_ALL=vi_VN.UTF-8");
-	}
-      else if (strcmp(langstr, "afrikaans") == 0)
-	{
-	  putenv((char *) "LANGUAGE=af_ZA.UTF-8");
-	  putenv((char *) "LC_ALL=af_ZA.UTF-8");
-	}
-      else if (strcmp(langstr, "albanian") == 0)
-	{
-	  putenv((char *) "LANGUAGE=sq_AL.UTF-8");
-	  putenv((char *) "LC_ALL=sq_AL.UTF-8");
-	}
-      else if (strcmp(langstr, "breton") == 0 ||
-	       strcmp(langstr, "brezhoneg") == 0)
-	{
-	  putenv((char *) "LANGUAGE=br_FR.UTF-8");
-	  putenv((char *) "LC_ALL=br_FR.UTF-8");
-	}
-      else if (strcmp(langstr, "bulgarian") == 0)
-	{
-	  putenv((char *) "LANGUAGE=bg_BG.UTF-8");
-	  putenv((char *) "LC_ALL=bg_BG.UTF-8");
-	}
-      else if (strcmp(langstr, "welsh") == 0 ||
-	       strcmp(langstr, "cymraeg") == 0)
-	{
-	  putenv((char *) "LANGUAGE=cy_GB.UTF-8");
-	  putenv((char *) "LC_ALL=cy_GB.UTF-8");
-	}
-      else if (strcmp(langstr, "bokmal") == 0)
-	{
-	  putenv((char *) "LANGUAGE=nb_NO.UTF-8");
-	  putenv((char *) "LC_ALL=nb_NO.UTF-8");
-	}
-      else if (strcmp(langstr, "basque") == 0 ||
-	       strcmp(langstr, "euskara") == 0)
-	{
-	  putenv((char *) "LANGUAGE=eu_ES.UTF-8");
-	  putenv((char *) "LC_ALL=eu_ES.UTF-8");
-	}
-      else if (strcmp(langstr, "korean") == 0)
-	{
-	  putenv((char *) "LANGUAGE=ko_KR.UTF-8");
-	  putenv((char *) "LC_ALL=ko_KR.UTF-8");
-	}
-      else if (strcmp(langstr, "klingon") == 0 ||
-	       strcmp(langstr, "tlhIngan") == 0 ||
-	       strcmp(langstr, "tlhingan") == 0)
-	{
-	  putenv((char *) "LANGUAGE=tlh.UTF-8");
-	  putenv((char *) "LC_ALL=tlh.UTF-8");
-	}
-      else if (strcmp(langstr, "tamil") == 0)
-	{
-	  putenv((char *) "LANGUAGE=ta_IN.UTF-8");
-	  putenv((char *) "LC_ALL=ta_IN.UTF-8");
-	}
-      else if (strcmp(langstr, "lithuanian") == 0 ||
-	       strcmp(langstr, "lietuviu") == 0)
-	{
-	  putenv((char *) "LANGUAGE=lt_LT.UTF-8");
-	  putenv((char *) "LC_ALL=lt_LT.UTF-8");
-	}
-      else if (strcmp(langstr, "malay") == 0)
-	{
-	  putenv((char *) "LANGUAGE=ms_MY.UTF-8");
-	  putenv((char *) "LC_ALL=ms_MY.UTF-8");
-	}
-      else if (strcmp(langstr, "dutch") == 0 ||
-	       strcmp(langstr, "nederlands") == 0)
-	{
-	  putenv((char *) "LANGUAGE=nl_NL.UTF-8");
-	  putenv((char *) "LC_ALL=nl_NL.UTF-8");
-	}
-      else if (strcmp(langstr, "norwegian") == 0 ||
-	       strcmp(langstr, "nynorsk") == 0 ||
-	       strcmp(langstr, "norsk") == 0)
-	{
-	  putenv((char *) "LANGUAGE=nn_NO.UTF-8");
-	  putenv((char *) "LC_ALL=nn_NO.UTF-8");
-	}
-      else if (strcmp(langstr, "polish") == 0 ||
-	       strcmp(langstr, "polski") == 0)
-	{
-	  putenv((char *) "LANGUAGE=pl_PL.UTF-8");
-	  putenv((char *) "LC_ALL=pl_PL.UTF-8");
-	}
-      else if (strcmp(langstr, "brazilian-portuguese") == 0 ||
-	       strcmp(langstr, "portugues-brazilian") == 0 ||
-	       strcmp(langstr, "brazilian") == 0)
-	{
-	  putenv((char *) "LANGUAGE=pt_BR.UTF-8");
-	  putenv((char *) "LC_ALL=pt_BR.UTF-8");
-	}
-      else if (strcmp(langstr, "portuguese") == 0 ||
-	       strcmp(langstr, "portugues") == 0)
-	{
-	  putenv((char *) "LANGUAGE=pt_PT.UTF-8");
-	  putenv((char *) "LC_ALL=pt_PT.UTF-8");
-	}
-      else if (strcmp(langstr, "romanian") == 0)
-	{
-	  putenv((char *) "LANGUAGE=ro_RO.UTF-8");
-	  putenv((char *) "LC_ALL=ro_RO.UTF-8");
-	}
-      else if (strcmp(langstr, "russian") == 0 ||
-	       strcmp(langstr, "russkiy") == 0)
-	{
-	  putenv((char *) "LANGUAGE=ru_RU.UTF-8");
-	  putenv((char *) "LC_ALL=ru_RU.UTF-8");
-	}
-      else if (strcmp(langstr, "slovak") == 0)
-	{
-	  putenv((char *) "LANGUAGE=sk_SK.UTF-8");
-	  putenv((char *) "LC_ALL=sk_SK.UTF-8");
-	}
-      else if (strcmp(langstr, "slovenian") == 0 ||
-	       strcmp(langstr, "slovensko") == 0)
-	{
-	  putenv((char *) "LANGUAGE=sl_SI.UTF-8");
-	  putenv((char *) "LC_ALL=sl_SI.UTF-8");
-	}
-      else if (strcmp(langstr, "serbian") == 0)
-	{
-	  putenv((char *) "LANGUAGE=sr_YU.UTF-8");
-	  putenv((char *) "LC_ALL=sr_YU.UTF-8");
-	}
-      else if (strcmp(langstr, "swedish") == 0 ||
-	       strcmp(langstr, "svenska") == 0)
-	{
-	  putenv((char *) "LANGUAGE=sv_SE.UTF-8");
-	  putenv((char *) "LC_ALL=sv_SE.UTF-8");
-	}
-      else if (strcmp(langstr, "swahili") == 0)
-	{
-	  putenv((char *) "LANGUAGE=sw_TZ.UTF-8");
-	  putenv((char *) "LC_ALL=sw_TZ.UTF-8");
-	}
-      else if (strcmp(langstr, "turkish") == 0)
-	{
-	  putenv((char *) "LANGUAGE=tr_TR.UTF-8");
-	  putenv((char *) "LC_ALL=tr_TR.UTF-8");
-	}
-      else if (strcmp(langstr, "walloon") == 0 ||
-	       strcmp(langstr, "walon") == 0)
-	{
-	  putenv((char *) "LANGUAGE=wa_BE.UTF-8");
-	  putenv((char *) "LC_ALL=wa_BE.UTF-8");
-	}
-      else if (strcmp(langstr, "chinese") == 0 ||
-               strcmp(langstr, "simplified-chinese") == 0)
-	{
-	  putenv((char *) "LANGUAGE=zh_CN.UTF-8");
-	  putenv((char *) "LC_ALL=zh_CN.UTF-8");
-	}
-      else if (strcmp(langstr, "traditional-chinese") == 0)
-	{
-	  putenv((char *) "LANGUAGE=zh_TW.UTF-8");
-	  putenv((char *) "LC_ALL=zh_TW.UTF-8");
-	}
-      else if (strcmp(langstr, "help") == 0 || strcmp(langstr, "list") == 0)
-	{
-	  show_lang_usage(stdout, (char *) getfilename(argv[0]));
-	  free(langstr);
-	  exit(0);
-	}
-      else
-	{
-	  fprintf(stderr, "%s is an invalid language\n", langstr);
-	  show_lang_usage(stderr, (char *) getfilename(argv[0]));
-	  free(langstr);
-	  exit(1);
-	}
-    
-      setlocale(LC_ALL, "");
-      free(langstr);
-    }
- 
-  bindtextdomain("tuxpaint", LOCALEDIR);
-  
-  /* Old version of glibc does not have bind_textdomain_codeset() */
-#if defined __GLIBC__ && __GLIBC__ == 2 && __GLIBC_MINOR__ >=2 || __GLIBC__ > 2
-  bind_textdomain_codeset("tuxpaint", "UTF-8");
-#endif
-
-  textdomain("tuxpaint");
-
-  set_current_language();
 #ifndef WIN32
   putenv((char *) "SDL_VIDEO_X11_WMCLASS=TuxPaint.TuxPaint");
 #endif
-  
   
   /* Test for lockfile, if we're using one: */
 
