@@ -82,7 +82,7 @@ const char * const magic_names[NUM_MAGICS] = {
 
 const char * const magic_tips[NUM_MAGICS] = {
   gettext_noop("Click in the picture to fill that area with color."),
-  gettext_noop("Click and move to draw grass."),
+  gettext_noop("Click and move to draw grass. Don't forget the dirt!"),
   
   gettext_noop("You can draw in rainbow colors!"),
   gettext_noop("Click and move to draw sparkles."),
