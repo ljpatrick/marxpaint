@@ -328,7 +328,7 @@ msgstr "Greitt! Då held me heller fram med denne teikninga."
 
 #. FIXME: Move elsewhere!!!
 msgid "Do you really want to quit?"
-msgstr "Vil du verkeleg avslutta?"
+msgstr "Er du sikker på at du vil avslutta?"
 
 #. FIXME: Move elsewhere! Or not?!
 msgid "Yes"
