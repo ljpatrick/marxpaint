@@ -10,13 +10,6 @@ http://www.newbreedsoftware.com/tuxpaint/
 2004.September.28 (0.9.14)
   * New Features:
     -------------
-    * Added startup display mode and resolution options to the Windows 
-      installer.
-      John Popplewell <john@johnnypops.demon.co.uk>
-
-2004.September.24 (0.9.14)
-  * New Features:
-    -------------
     * Added support for immutable "starter" images, which are installed
       globally with Tux Paint, and provide a starting canvas for images.
 
@@ -233,6 +226,10 @@ http://www.newbreedsoftware.com/tuxpaint/
 
   * Porting and packaging updates:
     ------------------------------
+    * Added startup display mode and resolution options to the Windows 
+      installer.
+      John Popplewell <john@johnnypops.demon.co.uk>
+
     * Visual Studio build system included in CVS and source release
       ('visualc' folder)
       John Popplewell <john@johnnypops.demon.co.uk>
