@@ -1464,7 +1464,7 @@ void mainloop(void)
 		      if (cur_tool == TOOL_STAMP && !disable_stamp_controls)
 			max = 10;
 
-		      if (num_things > 14 + TOOLOFFSET)
+		      if (num_things > max + TOOLOFFSET)
 			{
 			  if (event.button.y < 40 + 24)
 			    {
@@ -1519,7 +1519,7 @@ void mainloop(void)
 				   event.button.y <
 				   (48 * ((max - 2) / 2 + TOOLOFFSET / 2)) + 40 + 24 + 24)
 			    {
-			      if (thing_scroll < num_things - 12 - TOOLOFFSET)
+			      if (thing_scroll < num_things - (max - 2) - TOOLOFFSET)
 				{
 				  thing_scroll = thing_scroll + 2;
 				  do_draw = 1;
@@ -10736,11 +10736,27 @@ void stamp_xor(int x, int y)
 {
   int xx, yy, rx, ry;
   Uint8 r, g, b, a, olda, abovea;
+  SDL_Surface * surf_ptr;
 
-  SDL_LockSurface(img_stamps[cur_stamp]);
+
+  /* Use pre-mirrored stamp image, if applicable: */
+
+  if (state_stamps[cur_stamp]->mirrored &&
+      img_stamps_premirror[cur_stamp] != NULL)
+  {
+    surf_ptr = img_stamps_premirror[cur_stamp];
+  }
+  else
+  {
+    surf_ptr = img_stamps[cur_stamp];
+  }
+
+  
+  SDL_LockSurface(surf_ptr);
   SDL_LockSurface(screen);
+  
 
-  for (yy = (y % 2) + 1; yy < img_stamps[cur_stamp]->h; yy = yy + 2)
+  for (yy = (y % 2) + 1; yy < surf_ptr->h; yy = yy + 2)
   {
     olda = 0;
 
@@ -10748,25 +10764,30 @@ void stamp_xor(int x, int y)
     /* Compensate for flip! */
 
     if (state_stamps[cur_stamp]->flipped)
-      ry = img_stamps[cur_stamp]->h - 1 - yy;
+      ry = surf_ptr->h - 1 - yy;
     else
       ry = yy;
 
 
-    for (xx = (x % 2); xx < img_stamps[cur_stamp]->w; xx = xx + 2)
+    for (xx = (x % 2); xx < surf_ptr->w; xx = xx + 2)
     {
       /* Compensate for mirror! */
 
-      if (state_stamps[cur_stamp]->mirrored)
+      if (state_stamps[cur_stamp]->mirrored &&
+	  img_stamps_premirror[cur_stamp] == NULL)
+      {
         rx = img_stamps[cur_stamp]->w - 1 - xx;
+      }
       else
+      {
         rx = xx;
+      }
 
-      SDL_GetRGBA(getpixel(img_stamps[cur_stamp], rx, ry),
-		  img_stamps[cur_stamp]->format, &r, &g, &b, &a);
+      SDL_GetRGBA(getpixel(surf_ptr, rx, ry),
+		  surf_ptr->format, &r, &g, &b, &a);
       
-      SDL_GetRGBA(getpixel(img_stamps[cur_stamp], rx, ry - 1),
-		  img_stamps[cur_stamp]->format, &r, &g, &b, &abovea);
+      SDL_GetRGBA(getpixel(surf_ptr, rx, ry - 1),
+		  surf_ptr->format, &r, &g, &b, &abovea);
 
       if ((a < 128 && olda >= 128) ||
           (a >= 128 && olda < 128) ||
@@ -10782,7 +10803,7 @@ void stamp_xor(int x, int y)
   }
 
   SDL_UnlockSurface(screen);
-  SDL_UnlockSurface(img_stamps[cur_stamp]);
+  SDL_UnlockSurface(surf_ptr);
 }
 
 
