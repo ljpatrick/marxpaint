@@ -7,12 +7,12 @@
   bill@newbreedsoftware.com
   http://www.newbreedsoftware.com/tuxpaint/
   
-  June 14, 2002 - August 3, 2003
+  June 14, 2002 - August 18, 2003
 */
 
 
 #define VER_VERSION     "0.9.12"
-#define VER_DATE        "2003.08.03"
+#define VER_DATE        "2003.08.18"
 
 
 /* #define DEBUG */
@@ -279,6 +279,7 @@ enum {
   LANG_JA,     /* Japanese */
   LANG_KO,     /* Korean */
   LANG_LT,     /* Lithuanian */
+  LANG_MS,     /* Malay */
   LANG_NL,     /* Dutch */
   LANG_NN,     /* Norwegian */
   LANG_PL,     /* Polish */
@@ -313,6 +314,7 @@ const char * lang_prefixes[NUM_LANGS] = {
   "ja",
   "ko",
   "lt",
+  "ms",
   "nl",
   "nn",
   "pl",
@@ -3386,6 +3388,7 @@ void show_usage(FILE * f, char * prg)
     "  italian      italiano\n"
     "  japanese\n"
     "  korean\n"
+    "  malay\n"
     "  lithuanian   lietuviu\n"
     "  norwegian    nynorsk                norsk\n"
     "  polish       polski\n"
@@ -3961,6 +3964,11 @@ void setup(int argc, char * argv[])
 	putenv("LANG=lt_LT");
 	putenv("LC_ALL=lt_LT");
       }
+    else if (strcmp(langstr, "malay") == 0)
+      {
+	putenv("LANG=ms_MY");
+	putenv("LC_ALL=ms_MY");
+      }
     else if (strcmp(langstr, "dutch") == 0)
       {
 	putenv("LANG=nl_NL@euro");
@@ -4040,8 +4048,7 @@ void setup(int argc, char * argv[])
     setlocale(LC_ALL, "");
     free(langstr);
   }
-  
-  
+ 
   bindtextdomain("tuxpaint", LOCALEDIR);
   bind_textdomain_codeset("tuxpaint", "UTF8");
 
@@ -4077,6 +4084,7 @@ void setup(int argc, char * argv[])
 #ifndef WIN32
   putenv("SDL_VIDEO_X11_WMCLASS=TuxPaint.TuxPaint");
 #endif
+  
 
 
   /* Init SDL Video: */
@@ -11010,6 +11018,7 @@ char * debug_gettext(const char * str)
   if (strcmp(str, dgettext(NULL, str)) == 0)
   {
     printf("NOTRANS: %s\n", str);
+    fflush(stdout);
   }
 
   return(dgettext(NULL, str));

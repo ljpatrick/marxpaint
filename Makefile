@@ -6,7 +6,7 @@
 # bill@newbreedsoftware.com
 # http://www.newbreedsoftware.com/tuxpaint/
 
-# June 14, 2002 - August 2, 2003
+# June 14, 2002 - August 18, 2003
 
 
 # Where to install things:
@@ -223,6 +223,8 @@ uninstall:
 	-rm $(LOCALE_PREFIX)it/LC_MESSAGES/tuxpaint.mo
 	-rm $(LOCALE_PREFIX)ja/LC_MESSAGES/tuxpaint.mo
 	-rm $(LOCALE_PREFIX)ko/LC_MESSAGES/tuxpaint.mo
+	-rm $(LOCALE_PREFIX)lt/LC_MESSAGES/tuxpaint.mo
+	-rm $(LOCALE_PREFIX)ms/LC_MESSAGES/tuxpaint.mo
 	-rm $(LOCALE_PREFIX)nl/LC_MESSAGES/tuxpaint.mo
 	-rm $(LOCALE_PREFIX)nn/LC_MESSAGES/tuxpaint.mo
 	-rm $(LOCALE_PREFIX)pl/LC_MESSAGES/tuxpaint.mo
@@ -431,6 +433,11 @@ install-gettext:
 	@cp trans/lt.mo $(LOCALE_PREFIX)lt/LC_MESSAGES/tuxpaint.mo
 	@chmod 644 $(LOCALE_PREFIX)lt/LC_MESSAGES/tuxpaint.mo
 	@#
+	@echo "   ms_MY ...Malay..."
+	@install -d $(LOCALE_PREFIX)ms/LC_MESSAGES
+	@cp trans/ms.mo $(LOCALE_PREFIX)ms/LC_MESSAGES/tuxpaint.mo
+	@chmod 644 $(LOCALE_PREFIX)ms/LC_MESSAGES/tuxpaint.mo
+	@#
 	@echo "   nn_NO ...Norwegian Nynorsk..."
 	@install -d $(LOCALE_PREFIX)nn/LC_MESSAGES
 	@cp trans/nn.mo $(LOCALE_PREFIX)nn/LC_MESSAGES/tuxpaint.mo
@@ -577,11 +584,12 @@ translations: trans \
 	trans/ja.mo \
 	trans/ko.mo \
 	trans/lt.mo \
+	trans/ms.mo \
 	trans/nl.mo \
 	trans/nn.mo \
+	trans/pl.mo \
 	trans/pt_br.mo \
 	trans/pt.mo \
-	trans/pl.mo \
 	trans/ro.mo \
 	trans/ru.mo \
 	trans/sk.mo \
@@ -663,6 +671,10 @@ trans/lt.mo:	src/messages/lt.po
 	@echo "   lt_LT ...Lithuanian..."
 	@msgfmt src/messages/lt.po -o trans/lt.mo
 
+trans/ms.mo:	src/messages/ms.po
+	@echo "   ms_MY ...Malay..."
+	@msgfmt src/messages/ms.po -o trans/ms.mo
+
 trans/nl.mo:	src/messages/nl.po
 	@echo "   nl_NL ...Dutch..."
 	@msgfmt src/messages/nl.po -o trans/nl.mo
@@ -670,7 +682,7 @@ trans/nl.mo:	src/messages/nl.po
 trans/nn.mo:	src/messages/nn.po
 	@echo "   nn_NO ...Norwegian..."
 	@msgfmt src/messages/nn.po -o trans/nn.mo
-	
+
 trans/pl.mo:	src/messages/pl.po
 	@echo "   pl_PL ...Polish..."
 	@msgfmt src/messages/pl.po -o trans/pl.mo

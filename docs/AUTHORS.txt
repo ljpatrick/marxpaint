@@ -7,7 +7,7 @@ bill@newbreedsoftware.com
 http://www.newbreedsoftware.com/tuxpaint/
 
 
-June 17, 2002 - August 2, 2003
+June 17, 2002 - August 18, 2003
 
 
 * Design and Coding:
@@ -129,6 +129,9 @@ June 17, 2002 - August 2, 2003
   * Lithuanian
     Mantas Kriauciunas <monte@mail.lt>
     Rita Verbauskaite <verba@centras.lt>
+
+  * Malay
+    Muhammad Najmi Ahmad Zabidi <md_najmi@yahoo.com>
 
   * Norwegian
     Karl Ove Hufthammer <karl@huftis.org>

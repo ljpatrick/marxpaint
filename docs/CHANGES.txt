@@ -7,7 +7,7 @@ bill@newbreedsoftware.com
 http://www.newbreedsoftware.com/tuxpaint/
 
 
-2003.Aug.02 (0.9.12) [cvs]
+2003.Aug.18 (0.9.12) [cvs]
   * Fixed Mac OS X #include typo.
     Darrell Walisser <walisser@mac.com>
 
@@ -63,8 +63,11 @@ http://www.newbreedsoftware.com/tuxpaint/
     used!  Makefile will now fall-back and assume $GNOME_PREFIX should be /usr,
     so that the launcher icon gets installed into the Gnome menu.
   
-  * (About to be) translated to Russian
+  * Partially translated to Russian
     Dmitriy Ivanov <ace22b@myrealbox.com>
+
+  * Translated to Malay
+    Muhammad Najmi Ahmad Zabidi <md_najmi@yahoo.com>
 
   * Fixed prompt bug for larger window sizes
     TOYAMA Shin-ichi <kyone@tky2.3web.ne.jp>
