@@ -302,6 +302,7 @@ enum {
   LANG_FI,     /* Finnish */
   LANG_FR,     /* French */
   LANG_HE,     /* Hebrew */
+  LANG_HR,     /* Croatian */
   LANG_HU,     /* Hungarian */
   LANG_ID,     /* Indonesian */
   LANG_IS,     /* Icelandic */
@@ -347,6 +348,7 @@ const char * lang_prefixes[NUM_LANGS] = {
   "fi",
   "fr",
   "he",
+  "hr",
   "hu",
   "id",
   "is",
@@ -4672,6 +4674,11 @@ void setup(int argc, char * argv[])
   else if (language == LANG_PL)
     {
       putenv("OUTPUT_CHARSET=pl_PL.UTF-8");
+      convert_open("ISO8859-2");
+    }
+  else if (language == LANG_HR)
+    {
+      putenv("OUTPUT_CHARSET=hr_HR.UTF-8");
       convert_open("ISO8859-2");
     }
   else if (language == LANG_LT)
