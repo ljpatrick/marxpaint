@@ -5076,7 +5076,9 @@ static void setup(int argc, char * argv[])
 
   /* Set window icon and caption: */
 
+#ifndef __APPLE__
   seticon();
+#endif
   SDL_WM_SetCaption("Tux Paint", "Tux Paint");
 
   /* Open Window: */
@@ -5490,6 +5492,17 @@ static void setup(int argc, char * argv[])
 		    num_stamps, MAX_STAMPS, DATA_PREFIX "stamps", 0, -1, -1);
 #endif
 
+#ifdef __APPLE__
+#ifndef NOSOUND
+      loadarbitrary(img_stamps, img_stamps_premirror,
+		    txt_stamps, inf_stamps, snd_stamps, &num_stamps,
+		    num_stamps, MAX_STAMPS, "/Library/Application Support/TuxPaint/stamps", 0, -1, -1);
+#else
+      loadarbitrary(img_stamps, img_stamps_premirror,
+		    txt_stamps, inf_stamps, &num_stamps,
+		    num_stamps, MAX_STAMPS, "/Library/Application Support/TuxPaint/stamps", 0, -1, -1);
+#endif
+#endif
 
       if (num_stamps == 0)
 	{
@@ -8694,9 +8707,9 @@ static char * get_fname(const char * const name)
   
   
 #ifdef __APPLE__
-  /* Macintosh: It's under ~/Library/Preferences/tuxpaint */
+  /* Macintosh: It's under ~/Library/Application Support/TuxPaint */
   
-  tux_settings_dir = "Library/Preferences/tuxpaint";
+  tux_settings_dir = "Library/Application Support/TuxPaint";
 #else
   /* Linux & Unix: It's under ~/.tuxpaint */
   
