@@ -450,9 +450,9 @@ install-gettext:
 	@chmod 644 $(LOCALE_PREFIX)en_GB/LC_MESSAGES/tuxpaint.mo
 	@#
 	@echo "   bg_BG ...Bulgarian..."
-	@install -d $(LOCALE_PREFIX)bg_BG/LC_MESSAGES
-	@cp trans/bg.mo $(LOCALE_PREFIX)bg_BG/LC_MESSAGES/tuxpaint.mo
-	@chmod 644 $(LOCALE_PREFIX)bg_BG/LC_MESSAGES/tuxpaint.mo
+	@install -d $(LOCALE_PREFIX)bg/LC_MESSAGES
+	@cp trans/bg.mo $(LOCALE_PREFIX)bg/LC_MESSAGES/tuxpaint.mo
+	@chmod 644 $(LOCALE_PREFIX)bg/LC_MESSAGES/tuxpaint.mo
 	@#
 	@echo "   ca_ES ...Catalan..."
 	@install -d $(LOCALE_PREFIX)ca/LC_MESSAGES
