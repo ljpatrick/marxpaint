@@ -21,12 +21,12 @@
   along with this program; if not, write to the Free Software
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   
-  June 14, 2002 - December 22, 2003
+  June 14, 2002 - December 23, 2003
 */
 
 
 #define VER_VERSION     "0.9.13"
-#define VER_DATE        "2003.12.22"
+#define VER_DATE        "2003.12.23"
 
 
 /* #define DEBUG */
@@ -4204,6 +4204,13 @@ void setup(int argc, char * argv[])
 	      show_locale_usage(stderr, (char *) getfilename(argv[0]));
 	      exit(1);
 	    }
+	}
+      else if (strstr(argv[i], "--lang=") == argv[i])
+	{
+	  if (langstr != NULL)
+	    free(langstr);
+
+	  langstr = strdup(argv[i] + 7);
 	}
       else if (strcmp(argv[i], "--lang") == 0 || strcmp(argv[i], "-l") == 0)
 	{
@@ -10914,7 +10921,8 @@ int current_language(void)
 	  /* Case-insensitive */
 	  /* (so that, e.g. "pt_BR" is recognized as "pt_br") */
       
-	  if (strncasecmp(loc, lang_prefixes[i], strlen(lang_prefixes[i])) == 0)
+	  /* if (strncasecmp(loc, lang_prefixes[i], strlen(lang_prefixes[i])) == 0) */
+	  if (strcasecmp(loc, lang_prefixes[i]) == 0)
 	    {
 	      lang = i;
 	    }
@@ -10923,7 +10931,9 @@ int current_language(void)
 
 #ifdef DEBUG
   printf("lang=%d\n\n", lang);
+  sleep(10);
 #endif
+
 
   return lang;
 }

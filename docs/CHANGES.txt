@@ -84,6 +84,8 @@ http://www.newbreedsoftware.com/tuxpaint/
   * White/grey in tintable stamps don't get tinted now.
 
   * Stamps in homedir are now loaded before system-wide stamps.
+  
+  * "--lang=XXX" can be used on the command-line, along with "--lang XXX"
 
 
 2003.Aug.18 (0.9.12)

@@ -9,7 +9,7 @@
                            bill@newbreedsoftware.com
                    http://www.newbreedsoftware.com/tuxpaint/
 
-                       June 14, 2002 - December 20, 2003
+                       June 14, 2002 - December 23, 2003
 
      ----------------------------------------------------------------------
 
@@ -57,9 +57,9 @@
 
      Portability
              Tux Paint is portable among various computer platforms: Windows,
-             Linux, etc. The interface looks the same among them all.
-             Tux Paint runs suitably well on older systems (like a Pentium
-             133), and can be built to run better on slow systems.
+             Macintosh, Linux, etc. The interface looks the same among them
+             all. Tux Paint runs suitably well on older systems (like a
+             Pentium 133), and can be built to run better on slow systems.
 
      Simplicity
              There is no direct access to the computer's underlying
@@ -110,7 +110,8 @@ Loading Tux Paint
            $ tuxpaint
 
          It is also possible to make a launcher button or icon (e.g. in GNOME
-         or KDE). See your desktop environment's documentation for details...
+         or KDE under Linux). See your desktop environment's documentation
+         for details...
 
          If any errors occur, they will be displayed on the terminal (to
          "stderr").
