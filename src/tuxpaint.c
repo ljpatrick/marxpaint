@@ -9359,7 +9359,61 @@ static void do_wait(void)
 }
 
 
-static void autoscale_copy_smear_free(SDL_Surface *src, SDL_Surface *dst)
+static int SDLCALL NondefectiveBlit(SDL_Surface *src, SDL_Rect *srcrect, SDL_Surface *dst, SDL_Rect *dstrect)
+{
+  int dstx = 0;
+  int dsty = 0;
+  int srcx = 0;
+  int srcy = 0;
+  int srcw = src->w;
+  int srch = src->h;
+  if(srcrect)
+    {
+      srcx = srcrect->x;
+      srcy = srcrect->y;
+      srcw = srcrect->w;
+      srch = srcrect->h;
+    }
+  if(dstrect)
+    {
+      dstx = dstrect->x;
+      dsty = dstrect->y;
+    }
+  if(dsty<0)
+    {
+      srcy += -dsty;
+      srch -= -dsty;
+      dsty = 0;
+    }
+  if(dstx<0)
+    {
+      srcx += -dstx;
+      srcw -= -dstx;
+      dstx = 0;
+    }
+  if(dstx+srcw > dst->w-1)
+    {
+      srcw -= (dstx+srcw) - (dst->w-1);
+    }
+  if(dsty+srch > dst->h-1)
+    {
+      srch -= (dsty+srch) - (dst->h-1);
+    }
+  if(srcw<1 || srch<1)
+    return /* no idea what to return if nothing done */ ;
+  while(srch--)
+    {
+      int i = srcw;
+      while(i--)
+        {
+          putpixel(dst, i+dstx, srch+dsty, getpixel(src, i+srcx, srch+srcy));
+        }
+    }
+}
+
+
+// For the 3rd arg, pass either NondefectiveBlit or SDL_BlitSurface.
+static void autoscale_copy_smear_free(SDL_Surface *src, SDL_Surface *dst, int SDLCALL (*blit)(SDL_Surface *src, SDL_Rect *srcrect, SDL_Surface *dst, SDL_Rect *dstrect))
 {
   SDL_Surface *src1;
   SDL_Rect dest;
@@ -9379,7 +9433,7 @@ static void autoscale_copy_smear_free(SDL_Surface *src, SDL_Surface *dst)
 
   dest.x = (dst->w - src->w) / 2;
   dest.y = (dst->h - src->h) / 2;
-  SDL_BlitSurface(src, NULL, dst, &dest);
+  blit(src, NULL, dst, &dest);
 
   if(src->w != dst->w)
     {
@@ -9393,14 +9447,14 @@ static void autoscale_copy_smear_free(SDL_Surface *src, SDL_Surface *dst)
       while(i-- > 0)
         {
           dest.x = i;
-          SDL_BlitSurface(src, &sour, dst, &dest);
+          blit(src, &sour, dst, &dest);
         }
       sour.x = src->w - 1;
       i = (dst->w - src->w) / 2 + src->w - 1;
       while(++i < dst->w)
         {
           dest.x = i;
-          SDL_BlitSurface(src, &sour, dst, &dest);
+          blit(src, &sour, dst, &dest);
         }
     }
 
@@ -9416,14 +9470,14 @@ static void autoscale_copy_smear_free(SDL_Surface *src, SDL_Surface *dst)
       while(i-- > 0)
         {
           dest.y = i;
-          SDL_BlitSurface(src, &sour, dst, &dest);
+          blit(src, &sour, dst, &dest);
         }
       sour.y = src->h - 1;
       i = (dst->h - src->h) / 2 + src->h - 1;
       while(++i < dst->h)
         {
           dest.y = i;
-          SDL_BlitSurface(src, &sour, dst, &dest);
+          blit(src, &sour, dst, &dest);
         }
     }
 
@@ -9483,7 +9537,6 @@ static void load_starter(char * img_id)
     SDL_FreeSurface(tmp_surf);
   }
 
-#if 0
   if (img_starter != NULL &&
       (img_starter->w != canvas->w || img_starter->h != canvas->h))
   {
@@ -9499,10 +9552,9 @@ static void load_starter(char * img_id)
 
     // 3rd arg ignored for RGBA surfaces
     SDL_SetAlpha(tmp_surf, SDL_RLEACCEL, SDL_ALPHA_OPAQUE);
-    autoscale_copy_smear_free(tmp_surf,img_starter);
+    autoscale_copy_smear_free(tmp_surf,img_starter,NondefectiveBlit);
     SDL_SetAlpha(img_starter, SDL_RLEACCEL|SDL_SRCALPHA, SDL_ALPHA_OPAQUE);
   }
-#endif
 
   /* Try to load the a background image: */
 
@@ -9536,7 +9588,7 @@ static void load_starter(char * img_id)
 			      	            canvas->format->Bmask,
 					    0);
 
-    autoscale_copy_smear_free(tmp_surf,img_starter_bkgd);
+    autoscale_copy_smear_free(tmp_surf,img_starter_bkgd,SDL_BlitSurface);
   }
 
   free(dirname);
@@ -9607,7 +9659,7 @@ static void load_current(void)
 	}
       else
 	{
-	  autoscale_copy_smear_free(tmp,canvas);
+	  autoscale_copy_smear_free(tmp,canvas,SDL_BlitSurface);
 	  load_starter_id(file_id);
 	  load_starter(starter_id);
 
@@ -11903,7 +11955,7 @@ static int do_open(int want_new_tool)
 		  starter_mirrored = 0;
 		  starter_flipped = 0;
 
-		  autoscale_copy_smear_free(img,canvas);
+		  autoscale_copy_smear_free(img,canvas,SDL_BlitSurface);
 
 		  cur_undo = 0;
 		  oldest_undo = 0;
