@@ -12754,7 +12754,6 @@ void load_starter(char * img_id)
   char fname[256];
   SDL_Surface * tmp_surf;
   SDL_Rect dest;
-  Uint32 amask;
 
 
   /* Determine path to starter files: */
@@ -12789,17 +12788,13 @@ void load_starter(char * img_id)
   {
     tmp_surf = img_starter;
 
-    amask = ~(tmp_surf->format->Rmask |
-	      tmp_surf->format->Gmask |
-	      tmp_surf->format->Bmask);
-
-    img_starter = SDL_CreateRGBSurface(SDL_SWSURFACE | SDL_SRCALPHA, /* tmp_surf->flags, */
-			               canvas->w, canvas->h,
-			               tmp_surf->format->BitsPerPixel,
-			     	       tmp_surf->format->Rmask,
-			      	       tmp_surf->format->Gmask,
-			      	       tmp_surf->format->Bmask,
-				       amask);
+    img_starter = SDL_CreateRGBSurface(canvas->flags,
+					    canvas->w, canvas->h,
+					    canvas->format->BitsPerPixel,
+			     	            canvas->format->Rmask,
+			      	            canvas->format->Gmask,
+			      	            canvas->format->Bmask,
+					    0);
 
     if (img_starter != NULL)
     {
@@ -12836,17 +12831,15 @@ void load_starter(char * img_id)
   {
     tmp_surf = img_starter_bkgd;
 
-    amask = ~(tmp_surf->format->Rmask |
-	      tmp_surf->format->Gmask |
-	      tmp_surf->format->Bmask);
-
-    img_starter_bkgd = SDL_CreateRGBSurface(tmp_surf->flags,
+    img_starter_bkgd = SDL_CreateRGBSurface(SDL_SWSURFACE,
 					    canvas->w, canvas->h,
-					    tmp_surf->format->BitsPerPixel,
-			     	            tmp_surf->format->Rmask,
-			      	            tmp_surf->format->Gmask,
-			      	            tmp_surf->format->Bmask,
-					    amask);
+					    canvas->format->BitsPerPixel,
+			     	            canvas->format->Rmask,
+			      	            canvas->format->Gmask,
+			      	            canvas->format->Bmask,
+					    0);
+
+    SDL_SetAlpha(img_starter_bkgd, SDL_SRCALPHA, SDL_ALPHA_TRANSPARENT);
 
     if (img_starter_bkgd != NULL)
     {
