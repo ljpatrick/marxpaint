@@ -10413,7 +10413,21 @@ void loadfonts(char * dir, int fatal)
       d_names[num_files] = strdup(f->d_name);
       num_files++;
 
-      /* FIXME: realloc */
+      if (num_files >= d_names_alloced)
+      {
+	d_names_alloced = d_names_alloced + 32;
+	d_names = (char * *) realloc(sizeof(char *) * d_names_alloced);
+
+	if (d_names == NULL)
+	{
+          fprintf(stderr,
+	    "\nError: I can't allocate memory for directory listing!\n"
+	    "The system error that occurred was: %s\n",
+	    strerror(errno));
+          cleanup();
+          exit(1);
+	}
+      }
     }
   }
   while (f != NULL);
