@@ -493,6 +493,7 @@ void rec_undo_buffer(void);
 void update_canvas(int x1, int y1, int x2, int y2);
 void show_usage(FILE * f, char * prg);
 void show_lang_usage(FILE * f, char * prg);
+void show_locale_usage(FILE * f, char * prg);
 void setup(int argc, char * argv[]);
 SDL_Cursor * get_cursor(char * bits, char * mask_bits,
 		        int w, int h, int x, int y);
@@ -3381,13 +3382,15 @@ void show_usage(FILE * f, char * prg)
 }
 
 
+/* FIXME: All this should REALLY be array-based!!! */
+
 /* Show available languages: */
 
 void show_lang_usage(FILE * f, char * prg)
 {
   fprintf(f,
     "\n"
-    "Usage: %s [--lang LANGUAGE | --locale LOCALE]\n"
+    "Usage: %s [--lang LANGUAGE]\n"
     "\n"
     "LANGUAGE may be one of:\n"
     "  english      american-english\n"
@@ -3425,6 +3428,52 @@ void show_lang_usage(FILE * f, char * prg)
     prg);
 }
 
+
+/* FIXME: Add accented characters to the descriptions */
+
+/* Show available locales: */
+
+void show_locale_usage(FILE * f, char * prg)
+{
+  fprintf(f,
+    "\n"
+    "Usage: %s [--locale LOCALE]\n"
+    "\n"
+    "LOCALE may be one of:\n"
+    "  C       (English      American English)\n"
+    "  pt_BR   (Brazilian    Brazilian Portuguese   Portugues Brazilian)\n"
+    "  en_GN   (British      British English)\n"
+    "  ca_ES   (Catalan      Catala)\n"
+    "  zh_CN   (Chinese)\n"
+    "  cs_CZ   (Czech        Cesky)\n"
+    "  da_DK   (Danish       Dansk)\n"
+    "          (Dutch)\n"
+    "  fi_FI   (Finnish      Suomi)\n"
+    "  fr_FR   (French       Francais)\n"
+    "  de_DE   (German       Deutsch)\n"
+    "  el_GR   (Greek)\n"
+    "  he_IL   (Hebrew)\n"
+    "  hu_HU   (Hungarian    Magyar)\n"
+    "  is_IS   (Icelandic    Islenska)\n"
+    "  id_ID   (Indonesian   Bahasa Indonesia)\n"
+    "  it_IT   (Italian      Italiano)\n"
+    "  ja_JP   (Japanese)\n"
+    "  ko_KR   (Korean)\n"
+    "  ms_MY   (Malay)\n"
+    "  lt_LT   (Lithuanian   Lietuviu)\n"
+    "  nn_NO   (Norwegian    Nynorsk                Norsk)\n"
+    "  pl_PL   (Polish       Polski)\n"
+    "  pt_PT   (Portuguese   Portugues)\n"
+    "  ro_RO   (Romanian)\n"
+    "  ru_RU   (Russian      Russkiy)\n"
+    "  sk_SK   (Slovak)\n"
+    "  es_ES   (Spanish      Espanol)\n"
+    "  sv_SE   (Swedish      Svenska)\n"
+    "  tr_TR   (Turkish)\n"
+    "  wa_BE   (Walloon)\n"
+    "\n",
+    prg);
+}
 
 
 const char *getfilename(const char* path)
@@ -3735,10 +3784,10 @@ void setup(int argc, char * argv[])
       }
       else
       {
-	/* Forgot to specify the language! */
+	/* Forgot to specify the language (locale)! */
 	
 	fprintf(stderr, "%s takes an argument\n", argv[i]);
-        show_lang_usage(stderr, (char *) getfilename(argv[0]));
+        show_locale_usage(stderr, (char *) getfilename(argv[0]));
         exit(1);
       }
     }
