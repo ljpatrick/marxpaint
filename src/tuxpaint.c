@@ -7,12 +7,12 @@
   bill@newbreedsoftware.com
   http://www.newbreedsoftware.com/tuxpaint/
   
-  June 14, 2002 - April 25, 2003
+  June 14, 2002 - April 26, 2003
 */
 
 
 #define VER_VERSION     "0.9.11"
-#define VER_DATE        "2003.04.25"
+#define VER_DATE        "2003.04.26"
 
 
 /* #define DEBUG */
@@ -3893,6 +3893,11 @@ void setup(int argc, char * argv[])
   if (language == LANG_JA)
   {
     putenv("OUTPUT_CHARSET=ja_JP.UTF-8");
+  }
+  else if (language == LANG_HE)
+  {
+    // putenv("OUTPUT_CHARSET=he_IL");
+    // convert_open("ISO8859-8");
   }
   else if (language == LANG_PL)
   {
