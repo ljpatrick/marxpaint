@@ -25,6 +25,9 @@ http://www.newbreedsoftware.com/tuxpaint/
   * Updated Polish translations.
     Robert Glowczynski <robertg@software.com.pl>
 
+  * Fixed a few typos in the manpage.
+    Robert Glowczynski <robertg@software.com.pl>
+
 
 2003.February.22 (0.9.10)
   * UTF-8 stamp descriptions word-wrap around spaces.
