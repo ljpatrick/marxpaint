@@ -7,8 +7,7 @@ bill@newbreedsoftware.com
 http://www.newbreedsoftware.com/tuxpaint/
 
 
-2005.February.26 (0.9.15)
-
+2005.March.9 (0.9.15)
 
   * uncatagorized and messy:
     -----------------------
@@ -263,6 +262,9 @@ http://www.newbreedsoftware.com/tuxpaint/
     * Dutch
       Geert Stams <geertstams@wanadoo.nl>
   
+    * Updated German translation.
+      Patrick <nc-spechtpa3 [At] netcologne DOT de>
+
     * Greek
       The Greek Linux i18n Team <i18ngr@lists.hellug.gr>
       
