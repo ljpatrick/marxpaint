@@ -140,7 +140,7 @@ HIGH-PRIORITY TRANSLATION STUFF:
 LOW-PRIORITY TRANSLATION STUFF:
 -------------------------------
   * Support more languages!
-    * Indian:
+    * Remaining Indian family:
       * Bengali    (bn)
       * Gujarati   (gu)
       * Kannada    (kn)
@@ -149,9 +149,23 @@ LOW-PRIORITY TRANSLATION STUFF:
       * Oriya      (or)
       * Punjabi
       * Telugu     (te)
-    * Arabic
-    * Thai
-    ...
+
+    Afar, Abkhazian, Albanian, Amharic, Arabic, Armenian, Assamese, Avestan,
+    Aymara, Azerbaijani, Bashkir, Bihari, Bislama, Bosnian, Burmese, Chamorro,
+    Chechen, Church Slavic, Chuvash, Cornish, Corsican, Dzongkha, Esperanto,
+    Estonian, Faroese, Fijian, Frisian, Georgian, Gaelic, Irish, Gallegan,
+    Manx, Guarani, Hausa, Herero, Hiri Motu, Ido, Inuktitut, Interlingue,
+    Interlingua, Inupiaq, Javanese, Kalaallisut, Kashmiri, Kazakh, Khmer,
+    Kikuyu, Kinyarwanda, Kirghiz, Komi, Kurdish, Lao, Latin, Latvian,
+    Limburgan, Lingala, Luxembourgish, Macedonian, Marshallese, Maori,
+    Malagasy, Maltese, Moldavian, Mongolian, Nauru, Northern Sotho, Navajo,
+    Ndebele (South), Ndebele (North), Ndonga, Nepali, Chichewa, Occitan,
+    Oromo, Ossetian, Farsi (Persian), Pali, Pushto, Quechua, Rundi, Sango,
+    Sanskrit, Sinhalese, Northern Sami, Samoan, Shona, Sindhi, Somali,
+    Sotho (Southern) Sardinian, Swati, Sundanese, Swahili, Tahitian, Tatar,
+    Tajik, Thai, Tibetan, Tigrinya, Tonga, Tswana, Tsonga, Turkmen, Twi,
+    Uighur, Ukrainian, Urdu, Uzbek, Venda, Volap?k, Wolof, Xhosa, Yiddish,
+    Yoruba, Zhuang, Zulu, Klingon, Elvish.
 
   * Translate splash screen text (e.g., copyright, etc.)
   
