@@ -522,10 +522,8 @@ msgstr "Klik evit kregiñ da dresañ ul linenn."
  
 #
 # File: tools.h, line: 65
-msgid "Pick a shape. Click to pick the center, drag, then let go when it is the size you want. Move around to 
-rotate it, and click to draw it."
-msgstr "Diuz ur stumm. Klik warnañ, dibab e blas hag e vent. Lak anezhañ da dreiñ en ur bouezañ, ha klik evit e 
-dresañ a-benn ar fin."
+msgid "Pick a shape. Click to pick the center, drag, then let go when it is the size you want. Move around to rotate it, and click to draw it."
+msgstr "Diuz ur stumm. Klik warnañ, dibab e blas hag e vent. Lak anezhañ da dreiñ en ur bouezañ, ha klik evit e dresañ a-benn ar fin."
  
 #
 # File: tools.h, line: 66
