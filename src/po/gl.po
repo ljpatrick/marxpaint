@@ -1,14 +1,14 @@
-# TuxPaint <LANGUAGE> translation file
+# TuxPaint Galician translation file
 # Copyright (C) 2004 Bill Kendrick
 # This file is distributed under the same license as the TuxPaint package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# Leandro Regueiro <unho@gulo.org>, 2005.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint 0.9.14\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2005-01-06 12:31+0100\n"
-"PO-Revision-Date: 2004-10-23 10:01+0100\n"
+"PO-Revision-Date: 2005-01-17 17:50+0100\n"
 "Last-Translator: Leandro Regueiro <unho@gulo.org>\n"
 "Language-Team: Galician <trasno@ceu.fi.udc.es>\n"
 "MIME-Version: 1.0\n"
@@ -18,25 +18,23 @@ msgstr ""
 "X-Poedit-Country: SPAIN\n"
 
 msgid "A drawing program for children."
-msgstr ""
+msgstr "Un programa de debuxo para nenos."
 
 msgid "Drawing program"
-msgstr ""
+msgstr "Programa de debuxo"
 
-#, fuzzy
 msgid "Tux Paint"
-msgstr "Pintar"
+msgstr "Tux Paint"
 
 msgid "Black!"
 msgstr "Negro!"
 
-#, fuzzy
 msgid "Dark Gray!"
-msgstr "Gris!"
+msgstr "Gris Escuro!"
 
 #. using both valid spellings
 msgid "Light Grey!"
-msgstr ""
+msgstr "Gris Claro!"
 
 #. using both valid spellings
 msgid "White!"
@@ -52,13 +50,13 @@ msgid "Yellow!"
 msgstr "Amarelo!"
 
 msgid "Neon green!"
-msgstr ""
+msgstr "Verde Neon!"
 
 msgid "Green!"
 msgstr "Verde!"
 
 msgid "Sky blue!"
-msgstr ""
+msgstr "Azul Cesleste!"
 
 msgid "Blue!"
 msgstr "Azul!"
@@ -67,7 +65,7 @@ msgid "Purple!"
 msgstr "Púrpura!"
 
 msgid "Magenta!"
-msgstr ""
+msgstr "Maxenta!"
 
 msgid "Pink!"
 msgstr "Rosa!"
@@ -75,12 +73,11 @@ msgstr "Rosa!"
 msgid "Brown!"
 msgstr "Marrón!"
 
-#, fuzzy
 msgid "Tan!"
-msgstr "Cian!"
+msgstr "Bronce!"
 
 msgid "Beige!"
-msgstr ""
+msgstr "Beixe!"
 
 msgid "Great!"
 msgstr "Magnífico!"
@@ -97,16 +94,14 @@ msgstr "Bo traballo!"
 msgid "Fill"
 msgstr "Encher"
 
-#, fuzzy
 msgid "Grass"
-msgstr "Gris!"
+msgstr "Herba"
 
-#, fuzzy
 msgid "Bricks"
-msgstr "Bloques"
+msgstr "Ladrillos"
 
 msgid "Rainbow"
-msgstr "Arco da vella"
+msgstr "Arco iris"
 
 msgid "Sparkles"
 msgstr "Escintileos"
@@ -114,36 +109,36 @@ msgstr "Escintileos"
 msgid "Blur"
 msgstr "Desenfocar"
 
+#, fuzzy
 msgid "Smudge"
-msgstr ""
+msgstr "Manchar"
 
 msgid "Fade"
 msgstr "Esvaecer"
 
 msgid "Darken"
-msgstr ""
+msgstr "Escurecer"
 
 msgid "Chalk"
 msgstr "Xiz"
 
 msgid "Blocks"
-msgstr "Bloques"
+msgstr "Cuadrícula"
 
 msgid "Negative"
 msgstr "Negativo"
 
-#, fuzzy
 msgid "Tint"
-msgstr "Estreito"
+msgstr "Tinguir"
 
 msgid "Drip"
 msgstr "Pingar"
 
 msgid "Cartoon"
-msgstr ""
+msgstr "Cómic"
 
 msgid "Mirror"
-msgstr "Espello"
+msgstr "Espellar"
 
 msgid "Flip"
 msgstr "Inverter"
@@ -153,15 +148,13 @@ msgstr "Clica no debuxo para encher unha área con cor."
 
 #, fuzzy
 msgid "Click and move to draw grass. Don't forget the dirt!"
-msgstr "Clica e move para debuxar escintileos."
+msgstr "Clica e move para debuxar a herba. ¡Non esquezas a terra!"
 
-#, fuzzy
 msgid "Click and move to draw large bricks."
-msgstr "Clica e move para debuxar escintileos."
+msgstr "Clica e move para debuxar ladrillos grandes."
 
-#, fuzzy
 msgid "Click and move to draw small bricks."
-msgstr "Clica e move para debuxar escintileos."
+msgstr "Clica e move para debuxar ladrillos pequenos."
 
 msgid "You can draw in rainbow colors!"
 msgstr "Podes pintar cas cores do arco da vella!"
@@ -174,47 +167,37 @@ msgstr "Clica e move o rato para desenfocar o debuxo."
 
 #, fuzzy
 msgid "Click and move the mouse around to smudge the picture."
-msgstr "Clica e move o rato para desenfocar o debuxo."
+msgstr "Clica e move o rato para manchar o debuxo."
 
 msgid "Click and move to fade the colors."
 msgstr "Clica e move o rato para esvaecer as cores."
 
-#, fuzzy
 msgid "Click and move to darken the colors."
-msgstr "Clica e move o rato para esvaecer as cores."
+msgstr "Clica e move para escurecer as cores."
 
-msgid ""
-"Click and move the mouse around to turn the picture into a chalk drawing."
-msgstr ""
-"Clica e move o rato arredor para para converter o debuxo nun debuxo feito "
-"con xiz."
+msgid "Click and move the mouse around to turn the picture into a chalk drawing."
+msgstr "Clica e move o rato para para converter o debuxo nun debuxo feito con xiz."
 
 msgid "Click and move the mouse around to make the picture blocky."
-msgstr "Clica e move o rato arredor para cuadricular o debuxo."
+msgstr "Clica e move o rato para cuadricular o debuxo."
 
 msgid "Click and move the mouse around to draw a negative."
 msgstr "Clica e move o rato para debuxar o negativo do debuxo."
 
-#, fuzzy
 msgid "Click and move the mouse around to change the picture's color."
-msgstr "Clica e move o rato arredor para cuadricular o debuxo."
+msgstr "Clica e move o rato para trocar a cor do debuxo."
 
 msgid "Click and move the mouse around to make the picture drip."
-msgstr "Clica e move o rato arredor para facer que o debuxo pingue."
+msgstr "Clica e move o rato para facer que o debuxo pingue."
 
-#, fuzzy
 msgid "Click and move the mouse around to turn the picture into a cartoon."
-msgstr ""
-"Clica e move o rato arredor para para converter o debuxo nun debuxo feito "
-"con xiz."
+msgstr "Clica e move o rato arredor para para converter o debuxo nun debuxo de cómic."
 
 msgid "Click to make a mirror image."
-msgstr "Clica para facer unha imaxe espello."
+msgstr "Clica para espellar o debuxo."
 
 msgid "Click to flip the picture upside-down."
-msgstr ""
-"Clica para inverter o debuxo. O de enriba pasa para abaixo e o de embaixo "
-"para arriba."
+msgstr "Clica para inverter o debuxo. O de enriba pasa para abaixo e o de embaixo para arriba."
 
 msgid "Square"
 msgstr "Cadrado"
@@ -223,10 +206,10 @@ msgid "Rectangle"
 msgstr "Rectángulo"
 
 msgid "Circle"
-msgstr "Circulo"
+msgstr "Círculo"
 
 msgid "Oval"
-msgstr "Ovalo"
+msgstr "Óvalo"
 
 msgid "Triangle"
 msgstr "Triángulo"
@@ -262,11 +245,10 @@ msgid "Colors"
 msgstr "Cores"
 
 msgid "Brushes"
-msgstr "Pincel"
+msgstr "Pinceis"
 
-#, fuzzy
 msgid "Erasers"
-msgstr "Borrador"
+msgstr "Gomas"
 
 msgid "Stamps"
 msgstr "Estampas"
@@ -278,7 +260,7 @@ msgid "Letters"
 msgstr "Letras"
 
 msgid "Magic"
-msgstr "Máxicos"
+msgstr "Maxia"
 
 msgid "Paint"
 msgstr "Pintar"
@@ -299,7 +281,7 @@ msgid "Redo"
 msgstr "Refacer"
 
 msgid "Eraser"
-msgstr "Borrador"
+msgstr "Goma"
 
 msgid "New"
 msgstr "Novo"
@@ -326,16 +308,11 @@ msgstr "Escolle unha imaxe para estampala no debuxo."
 msgid "Click to start drawing a line. Let go to complete it."
 msgstr "Clica para comezar a debuxar unha liña. Solta o botón para debuxala."
 
-msgid ""
-"Pick a shape. Click to pick the center, drag, then let go when it is the "
-"size you want. Move around to rotate it, and click to draw it."
-msgstr ""
-"Escolle unha figura. Clica para marcar o centro, arrastra e solta cando teña "
-"o tamaño que queiras. Move arredor para virala, e clica para debuxala. "
+msgid "Pick a shape. Click to pick the center, drag, then let go when it is the size you want. Move around to rotate it, and click to draw it."
+msgstr "Escolle unha figura. Clica para marcar o centro, arrastra e solta cando teña o tamaño que queiras. Move arredor para virala, e clica para debuxala. "
 
 msgid "Choose a style of text. Click on your drawing and you can start typing."
-msgstr ""
-"Elixe un estilo de texto. Clica no debuxo e xa podes comezar a escribir."
+msgstr "Elixe un estilo de texto. Clica no debuxo e xa podes comezar a escribir."
 
 msgid "Pick a magical effect to use on your drawing!"
 msgstr "Escolle un efecto máxico para usalo no teu debuxo!"
@@ -350,7 +327,7 @@ msgstr "Refacer!"
 
 #. Eraser
 msgid "Eraser!"
-msgstr "Borrador!"
+msgstr "Goma!"
 
 #. New
 msgid "You now have a blank sheet to draw on!"
@@ -382,7 +359,7 @@ msgid "Move the mouse to rotate the shape. Click to draw it."
 msgstr "Move o rato para virar a forma. Clica para debuxala."
 
 msgid "OK then… Let’s keep drawing this one!"
-msgstr "Ben... Sigamos debuxando este debuxo!"
+msgstr "Ben... Imos seguir debuxando este debuxo!"
 
 #. FIXME: Move elsewhere!!!
 msgid "Do you really want to quit?"
@@ -437,8 +414,9 @@ msgstr "Borrar"
 msgid "Back"
 msgstr "Atrás"
 
+#, fuzzy
 msgid "Aa"
-msgstr ""
+msgstr "Aa"
 
 #. FIXME: Move elsewhere!!!
 msgid "Save over the older version of this picture?"
@@ -448,22 +426,5 @@ msgid "No, save a new file"
 msgstr "Non, gardar coma un novo ficheiro."
 
 msgid "Choose the picture you want, then click “Open”."
-msgstr "Escolle o debuxo que queiras, e despois preme \"Abrir\"."
+msgstr "Escolle o debuxo que queiras, e despois preme en \"Abrir\"."
 
-#~ msgid "Lime!"
-#~ msgstr "Lima!"
-
-#~ msgid "Fuchsia!"
-#~ msgstr "Fucsia!"
-
-#~ msgid "Silver!"
-#~ msgstr "Prata!"
-
-#~ msgid "Thick"
-#~ msgstr "Groso"
-
-#~ msgid "Click and move the mouse to thicken the picture."
-#~ msgstr "Clica e move o rato para facer máis groso o debuxo."
-
-#~ msgid "Click and move the mouse to thin the picture."
-#~ msgstr "Clica e move o rato para estreitar o debuxo."
