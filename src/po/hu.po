@@ -1,387 +1,406 @@
-# TuxPaint <LANGUAGE> translation file
-# Copyright (C) 2004 Bill Kendrick
-# This file is distributed under the same license as the TuxPaint package.
-# Ankit Malik <greatestankit@yahoo.co.in>, 2004.
-#
+# Tux Paint hungarian messages
+# Copyright (C) 2002
+# Török Gábor <gabo@linuxportal.hu>, 2002.
 msgid ""
 msgstr ""
-"Project-Id-Version: tuxpaint 0.9.14\n"
+"Project-Id-Version: TuxPaint 0.0.1pre\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2004-07-13 18:30+0200\n"
-"PO-Revision-Date: 2004-05-26 08:44+0100\n"
-"Last-Translator: Ankit Malik <greatestankit@yahoo.co.in>\n"
-"Language-Team: Hindi\n"
+"POT-Creation-Date: 2004-07-16 13:55+0200\n"
+"PO-Revision-Date: 2004-07-18 10:37+0200\n"
+"Last-Translator: Török Gábor <gabo@linuxportal.hu>\n"
+"Language-Team: Török Gábor <gabo@linuxportal.hu>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
 msgid "A drawing program for children."
-msgstr ""
+msgstr "Kifestő gyermekeknek."
 
 msgid "Drawing program"
-msgstr ""
+msgstr "Kifestő"
 
 msgid "Tux Paint"
-msgstr ""
+msgstr "Tux Paint"
 
 msgid "Black!"
-msgstr "काला"
+msgstr "Fekete!"
 
 msgid "White!"
-msgstr "सफ्ेद"
+msgstr "Fehér!"
 
 msgid "Red!"
-msgstr "लाल"
+msgstr "Piros!"
 
 msgid "Pink!"
-msgstr "गुलाबी"
+msgstr "Rózsaszín!"
 
 msgid "Orange!"
-msgstr "सन्तरा"
+msgstr "Narancs!"
 
 msgid "Yellow!"
-msgstr "पीला"
+msgstr "Sárga!"
 
 msgid "Lime!"
-msgstr "नींबू"
+msgstr "Citrom!"
 
 msgid "Green!"
-msgstr "हरा"
+msgstr "Zöld!"
 
 msgid "Cyan!"
-msgstr "नीला १"
+msgstr "Türkisz!"
 
 msgid "Blue!"
-msgstr "नीला २"
+msgstr "Kék!"
 
 msgid "Purple!"
-msgstr "परपल"
+msgstr "Lila!"
 
 msgid "Fuchsia!"
-msgstr "फ्ुच्सीा"
+msgstr "Bíbor!"
 
 msgid "Brown!"
-msgstr "भूरा"
+msgstr "Barna!"
 
 msgid "Gray!"
-msgstr "ग्रे"
+msgstr "Szürke!"
 
 msgid "Silver!"
-msgstr "चांदी"
+msgstr "Ezüst!"
 
 msgid "Great!"
-msgstr "शाबाश"
+msgstr "Klassz!"
 
 msgid "Cool!"
-msgstr "अच्छा"
+msgstr "Klassz!"
 
 msgid "Keep it up!"
-msgstr "वाह"
+msgstr "Jó lesz!"
 
 msgid "Good job!"
-msgstr "स्वच्छ काम है"
+msgstr "Szép munka!"
 
 msgid "Rainbow"
-msgstr "सतरंगी"
+msgstr "Szívárvány"
 
 msgid "Sparkles"
-msgstr "ग्लिटरस"
+msgstr "Festékszóró"
 
 msgid "Mirror"
-msgstr "शीशा"
+msgstr "Tükör"
 
 msgid "Flip"
-msgstr "ऊल्टा"
+msgstr "Megfordít"
 
 msgid "Blur"
-msgstr "धुंध्ला"
+msgstr "Maszat"
 
 msgid "Blocks"
-msgstr "ब्लाक्स"
+msgstr "Kockák"
 
 msgid "Negative"
-msgstr "उल्टे रंग"
+msgstr "Színcsere"
 
 msgid "Fade"
-msgstr "फ्ेड"
+msgstr "Halvány"
 
 msgid "Chalk"
-msgstr "चाक"
+msgstr "Kréta"
 
 msgid "Drip"
-msgstr "गिरता हुआ"
+msgstr "Csepp"
 
 msgid "Thick"
-msgstr "मोटा"
+msgstr "Vastag"
 
 msgid "Thin"
-msgstr "दुबला"
+msgstr "Vékony"
 
 msgid "Fill"
-msgstr "भरो"
+msgstr "Kitölt"
 
 msgid "You can draw in rainbow colors!"
-msgstr "सतरंगी काम करो"
+msgstr "Szívárványt is rajzolhatsz!"
 
 msgid "Click and move to draw sparkles."
-msgstr "ग्लिटरस करो"
+msgstr "Kattints oda a rajzodon, ahova festeni szeretnél!"
 
 msgid "Click to make a mirror image."
-msgstr "शीशे मे देखो"
+msgstr "Kattints a rajzlapra, hogy tükrözzük a rajzodat!"
 
 msgid "Click to flip the picture upside-down."
-msgstr "उल्टा करो"
+msgstr "Kattints a rajzlapra, hogy fejjel-lefelé fordítsuk a rajzodat!"
 
 msgid "Click and move the mouse around to blur the picture."
-msgstr ""
+msgstr "Kattints oda a rajzodon, ahol maszatolni szeretnél!"
 
 msgid "Click and move the mouse around to make the picture blocky."
-msgstr "ब्लाकस करो।"
+msgstr "Kattins oda a rajzodon, ahova kockákat szeretnél rajzolni!"
 
 msgid "Click and move the mouse around to draw a negative."
-msgstr "रंग उल्टे करो"
+msgstr "Kattints oda a rajzodon, ahol fel szeretnéd cserélni a színeket!"
 
 msgid "Click and move to fade the colors."
-msgstr "फेड करो"
+msgstr "Kattints oda a rajzodon, ahol fakítani szeretnéd a színeket!"
 
 msgid ""
 "Click and move the mouse around to turn the picture into a chalk drawing."
-msgstr "चाक करो।"
+msgstr "Kattints oda a rajzodon, ahol krétával szeretnél rajzolni!"
 
 msgid "Click and move the mouse around to make the picture drip."
-msgstr "ड्रिप करो"
+msgstr "Kattints oda a rajzodon, ahova festéket szeretnél csepegtetni!"
 
 msgid "Click and move the mouse to thicken the picture."
-msgstr "मोटा करो"
+msgstr "Kattints arra a vonalra, amit vastagítani szeretnél!"
 
 msgid "Click and move the mouse to thin the picture."
-msgstr "पतला करो"
+msgstr "Kattints arra a vonalra, amit vékonyítani szeretnél!"
 
 msgid "Click in the picture to fill that area with color."
-msgstr "रंग भरो"
+msgstr "Kattints oda a rajzodon, amit kiszeretnél tölteni festékkel!"
 
 msgid "Square"
-msgstr "चोकार १"
+msgstr "Négyzet"
 
 msgid "Rectangle"
-msgstr "चोकार २"
+msgstr "Téglalap"
 
 msgid "Circle"
-msgstr "गोल १"
+msgstr "Kör"
 
 msgid "Oval"
-msgstr "गोल २"
+msgstr "Ovális"
 
 msgid "Triangle"
-msgstr "त्रिकाोन"
+msgstr "Háromszög"
 
 msgid "Pentagon"
-msgstr "पेंण्टागन"
+msgstr "Ötszög"
 
 msgid "Diamond"
-msgstr "डाएम्ण्ड"
+msgstr "Rombusz"
 
 msgid "A square has four sides, each the same length."
-msgstr "चोकार १ की चार रेखाऍं बराबर होती है ।"
+msgstr "A négyzetnek négy egyenlő hosszú oldala van."
 
 msgid "A rectangle has four sides."
-msgstr "चोकार २ की चार रेखाऍं  होती है ।"
+msgstr "Egy téglalapnak négy oldala van."
 
 msgid "A circle is exactly round."
-msgstr "यह गोला होता है"
+msgstr "A kör kerek."
 
 msgid "A triangle has three sides."
-msgstr "यह त्रिकाोण है"
+msgstr "A háromszögnek három oldala van."
 
 msgid "A pentagon has five sides."
-msgstr "यह पेण्टागण है"
+msgstr "Az ötszögnek öt oldala van."
 
 msgid "A diamond is a square, turned around slightly."
-msgstr "यह डाएम्ण्ड है"
+msgstr "A rombusz egy olyan négyszög, amelynek egyenlő hosszú oldalai vannak."
 
 msgid "Tools"
-msgstr "औजार"
+msgstr "Eszközök"
 
 msgid "Colors"
-msgstr "रंग"
+msgstr "Színek"
 
 msgid "Brushes"
-msgstr "बरश"
+msgstr "Ecsetek"
 
 msgid "Stamps"
-msgstr "स्टॉम्प"
+msgstr "Matricák"
 
 msgid "Shapes"
-msgstr "आकार"
+msgstr "Síkidomok"
 
 msgid "Letters"
-msgstr "अक्शर"
+msgstr "Betűk"
 
 msgid "Magic"
-msgstr "जादू"
+msgstr "Varázs"
 
 msgid "Paint"
-msgstr "रंग"
+msgstr "Festék"
 
 msgid "Stamp"
-msgstr "स्टॉम्प"
+msgstr "Matrica"
 
 msgid "Lines"
-msgstr "रेखाऍं"
+msgstr "Vonalak"
 
 msgid "Text"
-msgstr "लिखना"
+msgstr "Szöveg"
 
 msgid "Undo"
-msgstr "अन्डू"
+msgstr "Vissza"
 
 msgid "Redo"
-msgstr "रीडू"
+msgstr "Előre"
 
 msgid "Eraser"
-msgstr "रबर"
+msgstr "Radír"
 
 msgid "New"
-msgstr "नया काम"
+msgstr "Új"
 
 #. 'Open' label:
 msgid "Open"
-msgstr "खोलो"
+msgstr "Megnyitás"
 
 msgid "Save"
-msgstr "सेव"
+msgstr "Mentés"
 
 msgid "Print"
-msgstr "पिृंट"
+msgstr "Nyomtatás"
 
 msgid "Quit"
-msgstr "बंद करो"
+msgstr "Kilépés"
 
 msgid "Pick a color and a brush shape to draw with."
-msgstr "रंग और ब्रुश उठाओ।"
+msgstr "Válassz ki egy színt és egy ecsetet, amivel rajzolni fogsz!"
 
 msgid "Pick a picture to stamp around your drawing."
-msgstr "स्टाम्प के लिए कला उठाओ"
+msgstr "Válassz ki egy képet, amit ráragasztasz a rajzodra!"
 
 msgid "Click to start drawing a line. Let go to complete it."
-msgstr "रेखा बनाओ"
+msgstr "Kattints oda a rajzodon, ahova a vonalat szeretnéd rajzolni!"
 
 msgid ""
 "Pick a shape. Click to pick the center, drag, then let go when it is the "
 "size you want. Move around to rotate it, and click to draw it."
-msgstr "आकारो के लिए औजार।"
+msgstr ""
+"Válassz ki egy síkidomot, majd helyezd egy el a lapon! Ezt követően állítsd "
+"be a méretét, majd forgasd ugy, ahogy neked tetszik!"
 
 msgid "Choose a style of text. Click on your drawing and you can start typing."
-msgstr "लिखने के लिए ढंग चुनो।"
+msgstr ""
+"Válassz egy betűtípust! Kattints oda a rajzodon, ahol el szeretnéd kezdeni "
+"írni a szöveget!"
 
 msgid "Pick a magical effect to use on your drawing!"
-msgstr "जादू का औजार चुनो"
+msgstr "Válassz egy varázslatot, amit kipróbálsz a rajzodon!"
 
 #. Undo
 msgid "Undo!"
-msgstr "अन्डू"
+msgstr "Vissza!"
 
 #. Redo
 msgid "Redo!"
-msgstr "रीडू"
+msgstr "Előre!"
 
 #. Eraser
 msgid "Eraser!"
-msgstr "रबर"
+msgstr "Radír!"
 
 #. New
 msgid "You now have a blank sheet to draw on!"
-msgstr "आपके पास काम के लिए खाली पृष्ट है"
+msgstr "Kezdhetsz rajzolni!"
 
 #. Open
 msgid "Open…"
-msgstr "खालो"
+msgstr "Megnyitás..."
 
 #. Save
 msgid "Your image has been saved!"
-msgstr "आपका काम सेव हो गया है"
+msgstr "Elmentettük a rajzodat!"
 
 #. Print
 msgid "Printing…"
-msgstr "पृन्टिंग …"
+msgstr "Nyomtatás..."
 
 #. Quit
 msgid "Bye bye!"
-msgstr "अच्छा फिर मिलेंगे"
+msgstr "Szia!"
 
 msgid "Let go of the button to complete the line."
-msgstr "पूरी रेखा बनाने के लिए खीचों"
+msgstr "Engedd fel a gombot a vonal befejezéséhez!."
 
 msgid "Hold the button to stretch the shape."
-msgstr "आकार को बडा करने के लिए खीचों"
+msgstr ""
+"Tartsd nyomva az egér gombját, hogy változtatni tudd az alakzat méretét!"
 
 msgid "Move the mouse to rotate the shape. Click to draw it."
-msgstr "आकार को घुमाने के लिए घुमाओ"
+msgstr "Mozgasd az egeret, hogy forgatni tudd a síkidomot!"
 
 msgid "OK then… Let’s keep drawing this one!"
-msgstr "चलो काम को जाराी रखते हब्क१ै"
+msgstr "Rendben... Akkor folytassuk ezt a rajzot!"
 
 #. FIXME: Move elsewhere!!!
 msgid "Do you really want to quit?"
-msgstr "क्या आप सही मे टक्सपेंट को बंद करना चाहते है ऋ"
+msgstr "Biztos ki szeretnél lépni?"
 
 #. FIXME: Move elsewhere! Or not?!
 msgid "Yes"
-msgstr "हॉं"
+msgstr "Igen"
 
 msgid "No"
-msgstr "नहीं"
+msgstr "Nem"
 
 msgid "If you quit, you’ll lose your picture! Save it?"
-msgstr "आपका काम सेव करे ऋ"
+msgstr "El fog veszni a rajzod, ha kilépsz. Elmentsük?"
 
 msgid "Save your picture first?"
-msgstr "कया पहले काम को सेव करे ऋ"
+msgstr "Elmentsük előbb a rajzod?"
 
 msgid "Can’t open that picture!"
-msgstr "खोलने में असमर्थ !"
+msgstr "Nem tudom megnyitni a képet!"
 
 msgid "OK"
-msgstr "हॉंं"
+msgstr ""
 
 msgid "Starting a new picture will erase the current one!"
-msgstr "नया काम शुृरू करने से पुराना काम नष्ट हो जाएगा"
+msgstr "El fog veszni a régi rajzod, ha újat rajzolsz!"
 
 msgid "That’s OK!"
-msgstr "ठीक है"
+msgstr "Rendben!"
 
 msgid "Never mind!"
-msgstr "जाने दो"
+msgstr "Nem gond!"
 
 msgid "There are no saved files!"
-msgstr "यहॉं तो कुछ भी नहीं है"
+msgstr "Nincs elmentett állomány!"
 
 msgid "Print your picture now?"
-msgstr "प्रिन्ट करू क्या"
+msgstr "Kinyomtassunk a rajzod most?"
 
 msgid "Your picture has been printed!"
-msgstr "प्रिन्ट हो गयी"
+msgstr "Sikeresen kinyomtattuk a rajzodat!"
 
 msgid "You can’t print yet!"
-msgstr "अभी प्रिन्ट नहीं कर सकते"
+msgstr "Még nem nyomtathatsz!"
 
 msgid "Erase this picture?"
-msgstr "नष्ट करू क्या ऋ"
+msgstr "Biztos kitörlöd a rajzodat?"
 
 #. 'Erase' label:
 msgid "Erase"
-msgstr "नष्ट कर"
+msgstr "Radír"
 
 #. 'Back' label:
 msgid "Back"
-msgstr "पीछे"
+msgstr "Vissza"
 
 #. FIXME: Move elsewhere!!!
 msgid "Save over the older version of this picture?"
-msgstr "पुराने काम पर लिखो"
+msgstr "Kicseréled az új rajzodat a régivel?"
 
 msgid "No, save a new file"
-msgstr "नया काम बनाओ"
+msgstr "Nem, inkább mentsük el más néven"
 
 msgid "Choose the picture you want, then click “Open”."
-msgstr "काम को चुन कर ‘खोलो’।"
+msgstr "Válaszd ki a megnyitandó rajzot, majd kattints a ”Megnyitás” gombra!"
+
+#~ msgid "Okay"
+#~ msgstr "Oké"
+
+#~ msgid "Red"
+#~ msgstr "Piros"
+
+#~ msgid "Grey"
+#~ msgstr "Szürke"
+
+#~ msgid ""
+#~ "Pick a shape to draw.  Click once to pick the center of the shape, click "
+#~ "again to draw it."
+#~ msgstr ""
+#~ "Válassz ki egy síkidomot!  Kattints oda a rajzodon, ahova a síkidom "
+#~ "középponját szeretnéd helyezni!"

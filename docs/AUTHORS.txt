@@ -133,7 +133,7 @@ June 17, 2002 - June 10, 2004
     Ankit Malik <greatestankit@yahoo.co.in>
 
   * Hungarian
-    Török Gábor <gabo@linuxmania.hu>  [e-mail bad!?]
+    Török Gábor <gabo@linuxportal.hu>
 
   * Hebrew
     Dovix <dovix2003@yahoo.com>
