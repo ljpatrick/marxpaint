@@ -4232,7 +4232,7 @@ static void blit_magic(int x, int y, int button_down)
 	  SDL_UnlockSurface(canvas);
 	  SDL_UnlockSurface(last);
 	}
-      else if (cur_magic == MAGIC_FADE)
+      else if (cur_magic == MAGIC_FADE || cur_magic == MAGIC_DARKEN)
 	{
 	  SDL_LockSurface(last);
 	  SDL_LockSurface(canvas);
@@ -4245,10 +4245,19 @@ static void blit_magic(int x, int y, int button_down)
 		
 		  SDL_GetRGB(getpixel(last, xx, yy), last->format,
 			     &r, &g, &b);
-	
-		  r = min(r + 48, 255);
-		  g = min(g + 48, 255);
-		  b = min(b + 48, 255);
+
+		  if (cur_magic == MAGIC_FADE)
+		  {
+		    r = min(r + 48, 255);
+		    g = min(g + 48, 255);
+		    b = min(b + 48, 255);
+		  }
+		  else
+		  {
+		    r = max(r - 48, 0);
+		    g = max(g - 48, 0);
+		    b = max(b - 48, 0);
+		  }
 
 		  putpixel(canvas, xx, yy, SDL_MapRGB(canvas->format, r, g, b));
 		}

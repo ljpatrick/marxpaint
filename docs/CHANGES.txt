@@ -8,6 +8,8 @@ http://www.newbreedsoftware.com/tuxpaint/
 
 
 2004.December.11 (0.9.15)
+  * Added "Darken" magic tool.  (Works the opposite of "Fade")
+
   * Lockfile now cleared upon exit, allowing Tux Paint to be re-launched
     immediately.
 
