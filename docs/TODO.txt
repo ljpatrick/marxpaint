@@ -8,6 +8,12 @@ http://www.newbreedsoftware.com/tuxpaint/
 
 May 30, 2004
 
+HIGH-PRIORITY DOCUMENTATION CHANGES:
+------------------------------------
+  * Meniton "--lang help" in README.
+
+  * Convert documentation and man pages into a single source (DocBook?)
+
 
 LOW-PRIORITY DOCUMENTATION CHANGES:
 -----------------------------------
@@ -16,8 +22,6 @@ LOW-PRIORITY DOCUMENTATION CHANGES:
   * Mac OS X compilation in INSTALL.txt
 
   * Mention CONFDIR in INSTALL.txt
-
-  * Meniton "--lang help" in README.
 
   * Add better description of where things get installed in INSTALL.txt
 
@@ -108,7 +112,9 @@ HIGH-PRIORITY TRANSLATION STUFF:
   * Make right-to-left strings not wordwrap with the shortest line at
     the top!
 
-  * Update remaining PO files to use new ('better punctuated') msgstr's
+  * Use "intltools" to allow translation of "tuxpaint.desktop" contents
+    within a PO file.
+    (Suggested by Pablo Saratxaga)
 
   * Finish current translations.  (Especially documentation!)
 
