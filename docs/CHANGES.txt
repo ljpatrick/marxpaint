@@ -103,6 +103,10 @@ http://www.newbreedsoftware.com/tuxpaint/
     * Middle and right mouse buttons no longer do anything.
       (No reason to teach kids that all the buttons do the same thing!)
 
+    * If middle or right mouse buttons are clicked too much, a pop-up
+      appears explaining to click the left button, and includes a small
+      picture of a mouse with the left button being 'clicked.'
+
     * Thumbnail of selected image now shown on "Erase this image?"
       confirmation pop-up.
 

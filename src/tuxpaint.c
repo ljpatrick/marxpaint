@@ -2039,6 +2039,8 @@ static SDL_Surface * img_openlabels_open, * img_openlabels_erase,
 
 static SDL_Surface * img_tux[NUM_TIP_TUX];
 
+static SDL_Surface * img_mouse, * img_mouse_click;
+
 #ifdef LOW_QUALITY_COLOR_SELECTOR
 static SDL_Surface * img_paintcan;
 #else
@@ -2101,6 +2103,9 @@ typedef enum { Left, Right, Bottom, Top } an_edge;
 #define NUM_EDGES 4
 
 static SDL_Event scrolltimer_event;
+
+int non_left_click_count = 0;
+
 
 static char * savedir;
 
@@ -2203,6 +2208,7 @@ static void do_wait(void);
 static void load_current(void);
 static void save_current(void);
 static char * get_fname(const char * const name);
+static int do_prompt_image_flash(const char * const text, const char * const btn_yes, const char * const btn_no, SDL_Surface * img1, SDL_Surface * img2, SDL_Surface * img3, int animate);
 static int do_prompt_image(const char * const text, const char * const btn_yes, const char * const btn_no, SDL_Surface * img1, SDL_Surface * img2, SDL_Surface * img3);
 static int do_prompt(const char * const text, const char * const btn_yes, const char * const btn_no);
 static void cleanup(void);
@@ -2423,6 +2429,9 @@ int main(int argc, char * argv[])
 #define PROMPT_ERASE_TXT gettext_noop("Erase this picture?")
 #define PROMPT_ERASE_YES gettext_noop("Yes")
 #define PROMPT_ERASE_NO gettext_noop("No")
+
+#define PROMPT_TIP_LEFTCLICK_TXT gettext_noop("Remember to use the left mouse button!")
+#define PROMPT_TIP_LEFTCLICK_YES gettext_noop("OK")
 
 
 enum {
@@ -3724,6 +3733,27 @@ static void mainloop(void)
                     update_screen_rect(&r_toolopt);
                 }
             }
+	  else if (event.type == SDL_MOUSEBUTTONDOWN &&
+		   event.button.button >= 2 &&
+		   event.button.button <= 3)
+	    {
+	      /* They're using the middle or right mouse buttons! */
+
+	      non_left_click_count++;
+
+
+	      if (non_left_click_count == 10 ||
+		  non_left_click_count == 20 ||
+		  (non_left_click_count % 50) == 0)
+	      {
+		/* Pop up an informative animation: */
+
+		do_prompt_image_flash(PROMPT_TIP_LEFTCLICK_TXT,
+				      PROMPT_TIP_LEFTCLICK_YES,
+				      "",
+			              img_mouse, img_mouse_click, NULL, 1);
+	      }
+	    }
 	  else if (event.type == SDL_USEREVENT)
 	    {
 	      if (event.user.code == USEREVENT_TEXT_UPDATE)
@@ -7351,6 +7381,10 @@ static void setup(int argc, char * argv[])
       img_tux[i] = loadimage(tux_img_fnames[i]);
       show_progress_bar();
     }
+
+  img_mouse = loadimage(DATA_PREFIX "images/ui/mouse.png");
+  img_mouse_click = loadimage(DATA_PREFIX "images/ui/mouse_click.png");
+  show_progress_bar();
   
   
   /* Create toolbox and selector labels: */
@@ -11054,9 +11088,15 @@ static int do_prompt(const char * const text, const char * const btn_yes, const 
 
 static int do_prompt_image(const char * const text, const char * const btn_yes, const char * const btn_no, SDL_Surface * img1, SDL_Surface * img2, SDL_Surface * img3)
 {
+  return(do_prompt_image_flash(text, btn_yes, btn_no, img1, img2, img3, 0));
+}
+
+
+static int do_prompt_image_flash(const char * const text, const char * const btn_yes, const char * const btn_no, SDL_Surface * img1, SDL_Surface * img2, SDL_Surface * img3, int animate)
+{
   SDL_Event event;
   SDL_Rect dest;
-  int done, ans, w;
+  int done, ans, w, counter;
   SDL_Color black = {0, 0, 0, 0};
   SDLKey key;
   SDLKey key_y, key_n;
@@ -11177,7 +11217,7 @@ static int do_prompt_image(const char * const text, const char * const btn_yes, 
 		1);
 
 
-  /* Draw the images (if any): */
+  /* Draw the images (if any, and if not animated): */
 
   img_x = 457 + PROMPTOFFSETX - offset;
   img_y = 100 + PROMPTOFFSETY + 4;
@@ -11189,27 +11229,31 @@ static int do_prompt_image(const char * const text, const char * const btn_yes, 
 
     SDL_BlitSurface(img1, NULL, screen, &dest);
 
-    img_y = img_y + img1->h + 4;
+    if (!animate)
+      img_y = img_y + img1->h + 4;
   }
 
-  if (img2 != NULL)
+  if (!animate)
   {
-    dest.x = img_x + (max_img_w - img2->w) / 2;
-    dest.y = img_y;
+    if (img2 != NULL)
+    {
+      dest.x = img_x + (max_img_w - img2->w) / 2;
+      dest.y = img_y;
 
-    SDL_BlitSurface(img2, NULL, screen, &dest);
+      SDL_BlitSurface(img2, NULL, screen, &dest);
 
-    img_y = img_y + img2->h + 4;
-  }
+      img_y = img_y + img2->h + 4;
+    }
 
-  if (img3 != NULL)
-  {
-    dest.x = img_x + (max_img_w - img3->w) / 2;
-    dest.y = img_y;
+    if (img3 != NULL)
+    {
+      dest.x = img_x + (max_img_w - img3->w) / 2;
+      dest.y = img_y;
 
-    SDL_BlitSurface(img3, NULL, screen, &dest);
+      SDL_BlitSurface(img3, NULL, screen, &dest);
 
-    img_y = img_y + img3->h + 4;  // unnecessary
+      img_y = img_y + img3->h + 4;  // unnecessary
+    }
   }
 
 
@@ -11247,55 +11291,56 @@ static int do_prompt_image(const char * const text, const char * const btn_yes, 
   SDL_Flip(screen);
 
   done = 0;
+  counter = 0;
   ans = 0;
 
   do
     {
-      mySDL_WaitEvent(&event);
+      while (mySDL_PollEvent(&event))
+      {
+        if (event.type == SDL_QUIT)
+	  {
+	    ans = 0;
+	    done = 1;
+	  }
+        else if (event.type == SDL_ACTIVEEVENT)
+	  {
+	    handle_active(&event);
+	  }
+        else if (event.type == SDL_KEYUP)
+	  {
+	    key = event.key.keysym.sym;
 
-      if (event.type == SDL_QUIT)
-	{
-	  ans = 0;
-	  done = 1;
-	}
-      else if (event.type == SDL_ACTIVEEVENT)
-	{
-	  handle_active(&event);
-	}
-      else if (event.type == SDL_KEYUP)
-	{
-	  key = event.key.keysym.sym;
+	    handle_keymouse(key, SDL_KEYUP);
+	  }
+        else if (event.type == SDL_KEYDOWN)
+	  {
+	    key = event.key.keysym.sym;
 
-	  handle_keymouse(key, SDL_KEYUP);
-	}
-      else if (event.type == SDL_KEYDOWN)
-	{
-	  key = event.key.keysym.sym;
-
-	  handle_keymouse(key, SDL_KEYDOWN);
+	    handle_keymouse(key, SDL_KEYDOWN);
 
 
-	  /* FIXME: Should use SDLK_{c} instead of '{c}'?  How? */
+	    /* FIXME: Should use SDLK_{c} instead of '{c}'?  How? */
 
-	  if (key == key_y || key == SDLK_RETURN)
-	    {
-	      /* Y or ENTER - Yes! */
+	    if (key == key_y || key == SDLK_RETURN)
+	      {
+	        /* Y or ENTER - Yes! */
 	
-	      ans = 1;
-	      done = 1;
-	    }
-	  else if (key == key_n || key == SDLK_ESCAPE)
-	    {
-	      /* N or ESCAPE - No! */
+	        ans = 1;
+	        done = 1;
+	      }
+	    else if (key == key_n || key == SDLK_ESCAPE)
+	      {
+	        /* N or ESCAPE - No! */
 
-	      if (strlen(btn_no) != 0)
-		{
-		  ans = 0;
-		  done = 1;
-		}
-	      else
-		{
-		  if (key == SDLK_ESCAPE)
+	        if (strlen(btn_no) != 0)
+		  {
+		    ans = 0;
+		    done = 1;
+		  }
+	        else
+		  {
+		    if (key == SDLK_ESCAPE)
 		    {
 		      /* ESCAPE also simply dismisses if there's no Yes/No
 		         choice: */
@@ -11303,46 +11348,87 @@ static int do_prompt_image(const char * const text, const char * const btn_yes, 
 		      ans = 1;
 		      done = 1;
 		    }
-		}
-	    }
-	}
-      else if (event.type == SDL_MOUSEBUTTONDOWN &&
+		  }
+	      }
+	  }
+        else if (event.type == SDL_MOUSEBUTTONDOWN &&
 	       event.button.button == 1)
+	  {
+	    if (event.button.x >= 166 + PROMPTOFFSETX &&
+	        event.button.x < 166 + PROMPTOFFSETX + 48)
+	      {
+	        if (event.button.y >= 178 + PROMPTOFFSETY &&
+		    event.button.y < 178 + PROMPTOFFSETY + 48)
+		  {
+		    ans = 1;
+		    done = 1;
+		  }
+	        else if (strlen(btn_no) != 0 &&
+		         event.button.y >= 230 + PROMPTOFFSETY &&
+		         event.button.y < 230 + PROMPTOFFSETY + 48)
+		  {
+		    ans = 0;
+		    done = 1;
+		  }
+	      }
+	  }
+        else if (event.type == SDL_MOUSEMOTION)
+	  { 
+	    if (event.button.x >= 166 + PROMPTOFFSETX &&
+	        event.button.x < 166 + 48 + PROMPTOFFSETX &&
+	        ((event.button.y >= 178 + PROMPTOFFSETY &&
+		  event.button.y < 178 + 48 + PROMPTOFFSETY) ||
+	         (strlen(btn_no) != 0 &&
+		  event.button.y >= 230 && event.button.y < 230 + 48)))
+	      {
+	        do_setcursor(cursor_hand);
+	      }
+	    else
+	      {
+	        do_setcursor(cursor_arrow);
+	      }
+	  }
+      }
+
+      SDL_Delay(100);
+
+      if (animate)
+      {
+        counter++;
+
+	if (counter == 5)
 	{
-	  if (event.button.x >= 166 + PROMPTOFFSETX &&
-	      event.button.x < 166 + PROMPTOFFSETX + 48)
-	    {
-	      if (event.button.y >= 178 + PROMPTOFFSETY &&
-		  event.button.y < 178 + PROMPTOFFSETY + 48)
-		{
-		  ans = 1;
-		  done = 1;
-		}
-	      else if (strlen(btn_no) != 0 &&
-		       event.button.y >= 230 + PROMPTOFFSETY &&
-		       event.button.y < 230 + PROMPTOFFSETY + 48)
-		{
-		  ans = 0;
-		  done = 1;
-		}
-	    }
+          dest.x = img_x + (max_img_w - img2->w) / 2;
+          dest.y = img_y;
+
+          SDL_BlitSurface(img2, NULL, screen, &dest);
+	  SDL_Flip(screen);
 	}
-      else if (event.type == SDL_MOUSEMOTION)
-	{ 
-	  if (event.button.x >= 166 + PROMPTOFFSETX &&
-	      event.button.x < 166 + 48 + PROMPTOFFSETX &&
-	      ((event.button.y >= 178 + PROMPTOFFSETY &&
-		event.button.y < 178 + 48 + PROMPTOFFSETY) ||
-	       (strlen(btn_no) != 0 &&
-		event.button.y >= 230 && event.button.y < 230 + 48)))
-	    {
-	      do_setcursor(cursor_hand);
-	    }
+	else if (counter == 10)
+	{
+	  if (img3 != NULL)
+	  {
+            dest.x = img_x + (max_img_w - img3->w) / 2;
+            dest.y = img_y;
+
+            SDL_BlitSurface(img3, NULL, screen, &dest);
+	    SDL_Flip(screen);
+	  }
 	  else
-	    {
-	      do_setcursor(cursor_arrow);
-	    }
+	    counter = 15;
 	}
+
+	if (counter == 15)
+	{
+          dest.x = img_x + (max_img_w - img1->w) / 2;
+          dest.y = img_y;
+
+          SDL_BlitSurface(img1, NULL, screen, &dest);
+	  SDL_Flip(screen);
+
+	  counter = 0;
+	}
+      }
     }
   while (!done);
 
