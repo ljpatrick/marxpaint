@@ -7,7 +7,7 @@ bill@newbreedsoftware.com
 http://www.newbreedsoftware.com/tuxpaint/
 
 
-June 17, 2002 - December 10, 2004
+June 17, 2002 - December 12, 2004
 
 
 * Design and Coding:
@@ -68,6 +68,10 @@ June 17, 2002 - December 10, 2004
     * Blur - Microphone against mousepad.
     * Chalk - Microphone against head of hair.
     * Fade - Squeaky frog.
+    * Smudge - Squishy mouth noise.
+  
+  * Cartoon
+    * "cartoon6.wav" from http://www.grsites.com/
     
   * Many others taken from various sources on the web.
 

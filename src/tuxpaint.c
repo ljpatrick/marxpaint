@@ -4059,12 +4059,19 @@ static void magic_draw(int x1, int y1, int x2, int y2, int button_down)
     playsound(0, SND_BLOCKS, 0);
   else if (cur_magic == MAGIC_FADE)
     playsound(0, SND_FADE, 0);
+  else if (cur_magic == MAGIC_DARKEN)
+    playsound(0, SND_DARKEN, 0);
   else if (cur_magic == MAGIC_RAINBOW)
     playsound(0, SND_RAINBOW, 0);
+  else if (cur_magic == MAGIC_SMUDGE)
+    playsound(0, SND_SMUDGE, 0);
+  else if (cur_magic == MAGIC_CARTOON)
+    playsound(0, SND_CARTOON, 0);
+  else if (cur_magic == MAGIC_TINT)
+    playsound(0, SND_TINT, 0);
 
   /* FIXME: Need sounds for:
      Smudge
-     Darken
      Tint
      Cartoon */
 
