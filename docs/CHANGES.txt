@@ -7,6 +7,10 @@ bill@newbreedsoftware.com
 http://www.newbreedsoftware.com/tuxpaint/
 
 
+2004.November.22 (0.9.15)
+  * Fixed many warnings.
+    Albert Cahalan <albert@users.sf.net>
+
 2004.November.21 (0.9.15)
   * Updated Hebrew translation.
     Dovix <dovix2003@yahoo.com>

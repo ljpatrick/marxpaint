@@ -55,7 +55,7 @@ enum {
 
 /* Sound file filenames: */
 
-char * sound_fnames[NUM_SOUNDS] = {
+const char * const sound_fnames[NUM_SOUNDS] = {
   DATA_PREFIX "sounds/harp.wav",
   DATA_PREFIX "sounds/click.wav",
   DATA_PREFIX "sounds/bleep.wav",

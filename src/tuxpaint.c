@@ -283,7 +283,7 @@ extern char* g_win32_getlocale(void);
   The SDL stderr redirection trick doesn't seem to work for perror().
   This does pretty much the same thing.
 */
-static void win32_perror(const char *str)
+static void win32_perror(const char * const str)
 {
   if ( str && *str )
     fprintf(stderr,"%s : ",str);
@@ -308,7 +308,7 @@ static void win32_perror(const char *str)
    TTF_OpenFont() with the filename of a font that doesn't exist. This 
    is an old and well documented bug that is fixed in CVS.
 */
-static TTF_Font *BUGFIX_TTF_OpenFont206(const char *file, int ptsize)
+static TTF_Font *BUGFIX_TTF_OpenFont206(const char * const file, int ptsize)
 {
     FILE    *fp;
 
@@ -487,7 +487,7 @@ static int recording, playing;
 static char * playfile;
 static FILE * demofi;
 static int WINDOW_WIDTH, WINDOW_HEIGHT;
-static char * printcommand;
+static const char * printcommand;
 static int prog_bar_ctr;
 static SDL_Surface * screen;
 
@@ -637,9 +637,9 @@ static void setup(int argc, char * argv[]);
 static SDL_Cursor * get_cursor(char * bits, char * mask_bits,
 		        int w, int h, int x, int y);
 static void seticon(void);
-static SDL_Surface * loadimage(char * fname);
-static SDL_Surface * do_loadimage(char * fname, int abort_on_error);
-static SDL_Surface * loadaltimage(char * fname);
+static SDL_Surface * loadimage(const char * const fname);
+static SDL_Surface * do_loadimage(const char * const fname, int abort_on_error);
+static SDL_Surface * loadaltimage(const char * const fname);
 static void draw_toolbar(void);
 static void draw_magic(void);
 static void draw_colors(int enabled);
@@ -653,18 +653,18 @@ static void draw_none(void);
 static void loadarbitrary(SDL_Surface * surfs[], SDL_Surface * altsurfs[],
 		   char * descs[], info_type * infs[],
 		   Mix_Chunk * sounds[], int * count, int starting, int max,
-		   char * dir, int fatal, int maxw, int maxh);
+		   const char * const dir, int fatal, int maxw, int maxh);
 #else
 static void loadarbitrary(SDL_Surface * surfs[], SDL_Surface * altsurfs[],
 		   char * descs[], info_type * infs[],
 		   int * count, int starting, int max,
-		   char * dir, int fatal, int maxw, int maxh);
+		   const char * const dir, int fatal, int maxw, int maxh);
 #endif
 static SDL_Surface * thumbnail(SDL_Surface * src, int max_x, int max_y,
 			int keep_aspect);
 static Uint32 getpixel(SDL_Surface * surface, int x, int y);
 static void putpixel(SDL_Surface * surface, int x, int y, Uint32 pixel);
-static void debug(char * str);
+static void debug(const char * const str);
 static void do_undo(void);
 static void do_redo(void);
 static void render_brush(void);
@@ -681,21 +681,21 @@ static void update_screen(int x1, int y1, int x2, int y2);
 static Uint8 alpha(Uint8 c1, Uint8 c2, Uint8 a);
 static int compare_strings(char * * s1, char * * s2);
 static int compare_dirent2s(struct dirent2 * f1, struct dirent2 * f2);
-static void draw_tux_text(int which_tux, char * str,
+static void draw_tux_text(int which_tux, const char * const str,
 		   int force_locale_font, int want_right_to_left);
-static void wordwrap_text(TTF_Font * font, char * str, SDL_Color color,
+static void wordwrap_text(TTF_Font * font, const char * const str, SDL_Color color,
 		   int left, int top, int right,
 		   int force_locale_font, int want_right_to_left);
-static char * loaddesc(char * fname);
-static info_type * loadinfo(char * fname);
+static char * loaddesc(const char * const fname);
+static info_type * loadinfo(const char * const fname);
 #ifndef NOSOUND
-static Mix_Chunk * loadsound(char * fname);
+static Mix_Chunk * loadsound(const char * const fname);
 #endif
 static void do_wait(void);
 static void load_current(void);
 static void save_current(void);
-static char * get_fname(char * name);
-static int do_prompt(char * text, char * btn_yes, char * btn_no);
+static char * get_fname(const char * const name);
+static int do_prompt(const char * const text, const char * const btn_yes, const char * const btn_no);
 static void cleanup(void);
 static void free_cursor(SDL_Cursor ** cursor);
 static void free_surface(SDL_Surface **surface_array);
@@ -705,7 +705,7 @@ static void update_shape(int cx, int ox1, int ox2, int cy, int oy1, int oy2,
 static void do_shape(int cx, int cy, int ox, int oy, int rotn, int use_brush);
 static int rotation(int ctr_x, int ctr_y, int ox, int oy);
 static int do_save(void);
-static int do_png_save(FILE * fi, char * fname, SDL_Surface * surf);
+static int do_png_save(FILE * fi, const char * const fname, SDL_Surface * surf);
 static void get_new_file_id(void);
 static int do_quit(void);
 static int do_open(int want_new_tool);
@@ -722,20 +722,20 @@ static void show_progress_bar(void);
 static void do_print(void);
 static void strip_trailing_whitespace(char * buf);
 static void do_render_cur_text(int do_blit);
-static void loadfonts(char * dir, int fatal);
+static void loadfonts(const char * const dir, int fatal);
 static char * uppercase(char * str);
-static unsigned char * textdir(unsigned char * str);
-static SDL_Surface * do_render_button_label(char * label);
+static unsigned char * textdir(const unsigned char * const str);
+static SDL_Surface * do_render_button_label(const char * const label);
 static void create_button_labels(void);
 static int colors_close(Uint32 c1, Uint32 c2);
 static void do_flood_fill(int x, int y, Uint32 cur_colr, Uint32 old_colr);
 static Uint32 scrolltimer_callback(Uint32 interval, void *param);
 static Uint32 drawtext_callback(Uint32 interval, void *param);
-static void control_drawtext_timer(Uint32 interval, char* text);
+static void control_drawtext_timer(Uint32 interval, const char * const text);
 static void parse_options(FILE * fi);
 static char * debug_gettext(const char * str);
 static void do_setcursor(SDL_Cursor * c);
-static char * great_str(void);
+static const char * great_str(void);
 static int charsize(char c);
 static void draw_image_title(int t, int x);
 static int need_own_font(int l);
@@ -5727,7 +5727,7 @@ static void setup(int argc, char * argv[])
 
 /* Render a button label using the appropriate string/font: */
 
-static SDL_Surface * do_render_button_label(char * label)
+static SDL_Surface * do_render_button_label(const char * const label)
 {
   char * str;
   SDL_Surface * tmp_surf, * surf;
@@ -5881,7 +5881,7 @@ static SDL_Cursor * get_cursor(char * bits, char * mask_bits,
 
 /* Load an image (with errors): */
 
-static SDL_Surface * loadimage(char * fname)
+static SDL_Surface * loadimage(const char * const fname)
 {
   return(do_loadimage(fname, 1));
 }
@@ -5889,7 +5889,7 @@ static SDL_Surface * loadimage(char * fname)
 
 /* Load an image: */
 
-static SDL_Surface * do_loadimage(char * fname, int abort_on_error)
+static SDL_Surface * do_loadimage(const char * const fname, int abort_on_error)
 {
   SDL_Surface * s, * disp_fmt_s;
 
@@ -6772,12 +6772,12 @@ static void loadarbitrary(SDL_Surface * surfs[], SDL_Surface * altsurfs[],
 		   char * descs[], info_type * infs[],
 		   Mix_Chunk * sounds[],
 		   int * count, int starting, int max,
-		   char * dir, int fatal, int maxw, int maxh)
+		   const char * const dir, int fatal, int maxw, int maxh)
 #else
 static void loadarbitrary(SDL_Surface * surfs[], SDL_Surface * altsurfs[],
 			char * descs[], info_type * infs[],
 			int * count, int starting, int max,
-			char * dir, int fatal, int maxw, int maxh)
+			const char * const dir, int fatal, int maxw, int maxh)
 #endif
 {
   DIR * d;
@@ -7219,7 +7219,7 @@ static void putpixel(SDL_Surface * surface, int x, int y, Uint32 pixel)
 
 /* Show debugging stuff: */
 
-static void debug(char * str)
+static void debug(const char * const str)
 {
 #ifdef DEBUG
   fprintf(stderr, "DEBUG: %s\n", str);
@@ -7792,7 +7792,7 @@ static int compare_dirent2s(struct dirent2 * f1, struct dirent2 * f2)
 
 /* Draw tux's text on the screen: */
 
-static void draw_tux_text(int which_tux, char * str,
+static void draw_tux_text(int which_tux, const char * const str,
 	 	   int force_locale_font, int want_right_to_left)
 {
   SDL_Rect dest;
@@ -7841,7 +7841,7 @@ static void draw_tux_text(int which_tux, char * str,
 }
 
 
-static void wordwrap_text(TTF_Font * font, char * str, SDL_Color color,
+static void wordwrap_text(TTF_Font * font, const char * const str, SDL_Color color,
 		   int left, int top, int right,
 		   int force_locale_font, int want_right_to_left)
 {
@@ -8163,7 +8163,7 @@ static void wordwrap_text(TTF_Font * font, char * str, SDL_Color color,
 
 #ifndef NOSOUND
 
-static Mix_Chunk * loadsound(char * fname)
+static Mix_Chunk * loadsound(const char * const fname)
 {
   char * snd_fname;
   char tmp_str[64];
@@ -8245,7 +8245,7 @@ static void strip_trailing_whitespace( char *buf )
 
 /* Load a file's description: */
 
-static char * loaddesc(char * fname)
+static char * loaddesc(const char * const fname)
 {
   char * txt_fname;
   char buf[256], def_buf[256];
@@ -8345,7 +8345,7 @@ static char * loaddesc(char * fname)
 
 /* Load a file's info: */
 
-static info_type * loadinfo(char * fname)
+static info_type * loadinfo(const char * const fname)
 {
   char * dat_fname;
   char buf[256];
@@ -8432,7 +8432,7 @@ static info_type * loadinfo(char * fname)
 
 /* Load a file's alternative image: */
 
-static SDL_Surface * loadaltimage(char * fname)
+static SDL_Surface * loadaltimage(const char * const fname)
 {
   char * alt_fname;
   SDL_Surface * s;
@@ -8650,7 +8650,7 @@ static void save_current(void)
 
 /* The filename for the current image: */
 
-static char * get_fname(char * name)
+static char * get_fname(const char * const name)
 {
   char f[512];
   const char * tux_settings_dir;
@@ -8739,7 +8739,7 @@ static char * get_fname(char * name)
 
 /* Prompt the user with a yes/no question: */
 
-static int do_prompt(char * text, char * btn_yes, char * btn_no)
+static int do_prompt(const char * const text, const char * const btn_yes, const char * const btn_no)
 {
   SDL_Event event;
   SDL_Rect dest;
@@ -9739,7 +9739,7 @@ static int do_save(void)
 
 /* Actually save the PNG data to the file stream: */
 
-static int do_png_save(FILE * fi, char * fname, SDL_Surface * surf)
+static int do_png_save(FILE * fi, const char * const fname, SDL_Surface * surf)
 {
   png_structp png_ptr;
   png_infop info_ptr;
@@ -11934,7 +11934,7 @@ static void do_render_cur_text(int do_blit)
 }
 
 
-static void loadfonts(char * dir, int fatal)
+static void loadfonts(const char * const dir, int fatal)
 {
   DIR * d;
   struct dirent * f;
@@ -12133,7 +12133,7 @@ static char * uppercase(char * str)
 
 /* Return string in right-to-left mode, if necessary: */
 
-static unsigned char * textdir(unsigned char * str)
+static unsigned char * textdir(const unsigned char * const str)
 {
   unsigned char * dstr;
   int i, j;
@@ -12305,7 +12305,7 @@ static Uint32 scrolltimer_callback(Uint32 interval, void *param)
 
 /* Controls the Text-Timer - interval == 0 removes the timer */
 
-static void control_drawtext_timer(Uint32 interval, char* text)
+static void control_drawtext_timer(Uint32 interval, const char * const text)
 {
   static int activated = 0;
   static SDL_TimerID TimerID = 0;
@@ -12628,7 +12628,7 @@ static void do_setcursor(SDL_Cursor * c)
 }
 
 
-static char * great_str(void)
+static const char * great_str(void)
 {
   return(great_strs[rand() % (sizeof(great_strs) / sizeof(char *))]);
 }

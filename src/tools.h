@@ -38,7 +38,7 @@ enum {
 
 /* Tool names: */
 
-char * tool_names[NUM_TOOLS] = {
+const char * const tool_names[NUM_TOOLS] = {
   gettext_noop("Paint"),
   gettext_noop("Stamp"),
   gettext_noop("Lines"),
@@ -58,7 +58,7 @@ char * tool_names[NUM_TOOLS] = {
 
 /* Some text to write when each tool is selected: */
 
-char * tool_tips[NUM_TOOLS] = {
+const char * const tool_tips[NUM_TOOLS] = {
   gettext_noop("Pick a color and a brush shape to draw with."),
   gettext_noop("Pick a picture to stamp around your drawing."),
   gettext_noop("Click to start drawing a line. Let go to complete it."),
@@ -83,7 +83,7 @@ char * tool_tips[NUM_TOOLS] = {
 
 /* Tool icon filenames: */
 
-char * tool_img_fnames[NUM_TOOLS] = {
+const char * const tool_img_fnames[NUM_TOOLS] = {
   DATA_PREFIX "images/tools/brush.png",
   DATA_PREFIX "images/tools/stamp.png",
   DATA_PREFIX "images/tools/lines.png",
@@ -103,7 +103,7 @@ char * tool_img_fnames[NUM_TOOLS] = {
 
 /* Tux icons to use: */
 
-int tool_tux[NUM_TOOLS] = {
+const int tool_tux[NUM_TOOLS] = {
   TUX_DEFAULT,
   TUX_DEFAULT,
   TUX_DEFAULT,

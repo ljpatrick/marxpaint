@@ -39,7 +39,7 @@ enum {
 
 /* Hex codes: */
 
-int color_hexes[NUM_COLORS][3] = {
+const int color_hexes[NUM_COLORS][3] = {
   {0, 0, 0},       /* Black */
   {128, 128, 128}, /* Gray */
   {192, 192, 192}, /* Silver */
@@ -62,7 +62,7 @@ int color_hexes[NUM_COLORS][3] = {
 
 /* Color names: */
 
-char * color_names[NUM_COLORS] = {
+const char * const color_names[NUM_COLORS] = {
   gettext_noop("Black!"),
   gettext_noop("Gray!"),
   gettext_noop("Silver!"),

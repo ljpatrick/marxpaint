@@ -32,7 +32,7 @@ enum {
 
 /* Title names: */
 
-char * title_names[NUM_TITLES] = {
+const char * const title_names[NUM_TITLES] = {
   "",
   "",
   gettext_noop("Tools"),

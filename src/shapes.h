@@ -36,7 +36,7 @@ enum {
 
 /* How many sides do they have? */
 
-int shape_sides[NUM_SHAPES] = {
+const int shape_sides[NUM_SHAPES] = {
   4,   /* Square */
   4,   /* Square */
   4,   /* Rectangle */
@@ -56,7 +56,7 @@ int shape_sides[NUM_SHAPES] = {
 
 /* Which shapes are 1:1 aspect? */
 
-int shape_locked[NUM_SHAPES] = {
+const int shape_locked[NUM_SHAPES] = {
   1,   /* Square */
   1,   /* Square */
   0,   /* Rectangle */
@@ -76,7 +76,7 @@ int shape_locked[NUM_SHAPES] = {
 
 /* Which shapes are filled? */
 
-int shape_filled[NUM_SHAPES] = {
+const int shape_filled[NUM_SHAPES] = {
   0,   /* Square */
   1,   /* Square */
   0,   /* Rectangle */
@@ -97,7 +97,7 @@ int shape_filled[NUM_SHAPES] = {
 
 /* Initial angles for shapes: */
 
-int shape_init_ang[NUM_SHAPES] = {
+const int shape_init_ang[NUM_SHAPES] = {
   45,  /* Square */
   45,  /* Square */
   45,  /* Rectangle */
@@ -117,7 +117,7 @@ int shape_init_ang[NUM_SHAPES] = {
 
 /* Shapes that don't make sense rotating (e.g., circles): */
 
-int shape_no_rotate[NUM_SHAPES] = {
+const int shape_no_rotate[NUM_SHAPES] = {
   0,  /* Square */
   0,  /* Square */
   0,  /* Rectangle */
@@ -137,7 +137,7 @@ int shape_no_rotate[NUM_SHAPES] = {
 
 /* Shape names: */
 
-char * shape_names[NUM_SHAPES] = {
+const char * const shape_names[NUM_SHAPES] = {
   gettext_noop("Square"),
   gettext_noop("Square"),
   gettext_noop("Rectangle"),
@@ -157,7 +157,7 @@ char * shape_names[NUM_SHAPES] = {
 
 /* Some text to write when each shape is selected: */
 
-char * shape_tips[NUM_SHAPES] = {
+const char * const shape_tips[NUM_SHAPES] = {
   gettext_noop("A square has four sides, each the same length."),
   gettext_noop("A square has four sides, each the same length."),
   gettext_noop("A rectangle has four sides."),
@@ -177,7 +177,7 @@ char * shape_tips[NUM_SHAPES] = {
 
 /* Shape icon filenames: */
 
-char * shape_img_fnames[NUM_SHAPES] = {
+const char * const shape_img_fnames[NUM_SHAPES] = {
   DATA_PREFIX "images/shapes/square.png",
   DATA_PREFIX "images/shapes/square_f.png",
   DATA_PREFIX "images/shapes/rectangle.png",

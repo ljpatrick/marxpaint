@@ -16,7 +16,7 @@
 #define GREAT_H
 
 
-char * great_strs[] = {
+const char * const great_strs[] = {
   gettext_noop("Great!"),
   gettext_noop("Cool!"),
   gettext_noop("Keep it up!"),

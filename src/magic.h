@@ -44,7 +44,7 @@ enum {
 
 /* Magic tool names: */
 
-char * magic_names[NUM_MAGICS] = {
+const char * const magic_names[NUM_MAGICS] = {
   gettext_noop("Rainbow"),
   gettext_noop("Sparkles"),
 
@@ -69,7 +69,7 @@ char * magic_names[NUM_MAGICS] = {
 
 /* Some text to write when each tool is selected: */
 
-char * magic_tips[NUM_MAGICS] = {
+const char * const magic_tips[NUM_MAGICS] = {
   gettext_noop("You can draw in rainbow colors!"),
   gettext_noop("Click and move to draw sparkles."),
   
@@ -94,7 +94,7 @@ char * magic_tips[NUM_MAGICS] = {
 
 /* Tool icon filenames: */
 
-char * magic_img_fnames[NUM_TOOLS] = {
+const char * const magic_img_fnames[NUM_TOOLS] = {
   DATA_PREFIX "images/magic/rainbow.png",
   DATA_PREFIX "images/magic/sparkles.png",
   
@@ -125,7 +125,7 @@ char * magic_img_fnames[NUM_TOOLS] = {
 
 #define NUM_RAINBOW_COLORS 23
 
-int rainbow_hexes[NUM_RAINBOW_COLORS][3] = {
+const int rainbow_hexes[NUM_RAINBOW_COLORS][3] = {
   {255, 0, 0},
   {255, 64, 0},
   {255, 128, 0},
