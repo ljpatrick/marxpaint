@@ -4,11 +4,11 @@
   For Tux Paint
   List of available tools.
 
-  Copyright (c) 2002 by Bill Kendrick
+  Copyright (c) 2004 by Bill Kendrick
   bill@newbreedsoftware.com
   http://www.newbreedsoftware.com/tuxpaint/
 
-  June 29, 2002 - August 4, 2002
+  June 29, 2002 - December 6, 2004
 */
 
 
@@ -117,7 +117,7 @@ const char * const magic_img_fnames[NUM_TOOLS] = {
   DATA_PREFIX "images/magic/thin.png",
 
   DATA_PREFIX "images/magic/fill.png",
-  DATA_PREFIX "images/magic/blur.png",  // FIXME: this is the smudge tool
+  DATA_PREFIX "images/magic/smudge.png"
 };
 
 
