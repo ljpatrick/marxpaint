@@ -1122,7 +1122,7 @@ static int color_button_h;  // was 48
 // These are the maximum slots -- some may be unused.
 static grid_dims gd_tools;   // was 2x7
 static grid_dims gd_toolopt; // was 2x7
-static grid_dims gd_open;    // was 4x4
+//static grid_dims gd_open;    // was 4x4
 static grid_dims gd_colors;   // was 17x1
 
 #define HEIGHTOFFSET (((WINDOW_HEIGHT - 480) / 48) * 48)
@@ -1134,6 +1134,36 @@ static grid_dims gd_colors;   // was 17x1
 #define THUMB_H (((48 * 7 + 40 + HEIGHTOFFSET) - 72) / 4)
 
 static int WINDOW_WIDTH, WINDOW_HEIGHT;
+
+static void debug_rect(SDL_Rect *r, char *name)
+{
+  printf("%-12s %dx%d @ %d,%d\n", name, r->w, r->h, r->x, r->y);
+}
+#define DR(x) debug_rect(&x, #x)
+
+static void debug_dims(grid_dims *g, char *name)
+{
+  printf("%-12s %dx%d\n", name, g->cols, g->rows);
+}
+#define DD(x) debug_dims(&x, #x)
+
+static void print_layout(void)
+{
+  printf("\n--- layout ---\n");
+  DR(r_canvas);
+  DR(r_tools);
+  DR(r_toolopt);
+  DR(r_colors);
+  DR(r_ttools);
+  DR(r_tcolors);
+  DR(r_ttoolopt);
+  DR(r_tuxarea);
+  DD(gd_tools);
+  DD(gd_toolopt);
+  DD(gd_colors);
+  printf("buttons are %dx%d\n", button_w,button_h);
+  printf("color buttons are %dx%d\n", color_button_w,color_button_h);
+}
 
 static void setup_normal_screen_layout(void)
 {
@@ -1156,6 +1186,7 @@ static void setup_normal_screen_layout(void)
   gd_colors.rows = 1;
   gd_colors.cols = NUM_COLORS;
 
+  color_button_h = 48;
   r_colors.h = color_button_h * gd_colors.rows;
   r_tcolors.h = r_colors.h;
 
@@ -1164,11 +1195,15 @@ static void setup_normal_screen_layout(void)
   r_colors.x = r_tcolors.w;
   r_colors.w = WINDOW_WIDTH - r_tcolors.w;
 
-  color_button_w = (r_colors.w / gd_colors.cols) * gd_colors.cols;
+  color_button_w = r_colors.w / gd_colors.cols;
+
+  // This would make it contain _just_ the color spots,
+  // without any leftover bit on the end. Hmmm...
+  // r_colors.w = color_button_w * gd_colors.cols;
 
   r_canvas.x = gd_tools.cols * button_w;
   r_canvas.y = 0;
-  r_canvas.w = (gd_tools.cols+gd_toolopt.cols) * button_w;
+  r_canvas.w = WINDOW_WIDTH - (gd_tools.cols+gd_toolopt.cols) * button_w;
 
   r_tuxarea.x = 0;
   r_tuxarea.w = WINDOW_WIDTH;
@@ -1178,6 +1213,8 @@ static void setup_normal_screen_layout(void)
   gd_tools.rows = buttons_tall;
   gd_toolopt.rows = buttons_tall;
 
+printf("\nButtons tall: %d\n",buttons_tall);
+
   r_canvas.h = r_ttoolopt.h + buttons_tall * button_h;
   
   r_colors.y = r_canvas.h + r_canvas.y;
@@ -1185,6 +1222,16 @@ static void setup_normal_screen_layout(void)
 
   r_tuxarea.y = r_colors.y + r_colors.h;
   r_tuxarea.h = WINDOW_HEIGHT - r_tuxarea.y;
+
+  r_tools.x = 0;
+  r_tools.y = r_ttools.h + r_ttools.y;
+  r_tools.w = gd_tools.cols * button_w;
+  r_tools.h = gd_tools.rows * button_h;
+
+  r_toolopt.w = gd_toolopt.cols * button_w;
+  r_toolopt.h = gd_toolopt.rows * button_h;
+  r_toolopt.x = WINDOW_WIDTH - r_ttoolopt.w;
+  r_toolopt.y = r_ttoolopt.h + r_ttoolopt.y;
 
   // TODO: dialog boxes
 
@@ -1194,6 +1241,7 @@ static void setup_screen_layout(void)
 {
   // can do right-to-left, colors at the top, extra tool option columns, etc.
   setup_normal_screen_layout();
+  print_layout();
 }
 
 static SDL_Surface * screen;
@@ -1252,6 +1300,13 @@ static void update_screen_rect(SDL_Rect *r)
   SDL_UpdateRect(screen, r->x, r->y, r->w, r->h);
 }
 
+static int hit_test(const SDL_Rect * const r, unsigned x, unsigned y)
+{
+  // note the use of unsigned math: no need to check for negative
+  return   x - r->x < r->w   &&   y - r->y < r->h  ;
+}
+
+#define HIT(r) hit_test(&(r), event.button.x, event.button.y)
 
 /* Update the screen with the new canvas: */
 static void update_canvas(int x1, int y1, int x2, int y2)
@@ -2503,10 +2558,7 @@ static void mainloop(void)
 		    event.button.button >= 1 &&
 		    event.button.button <= 3))
 	    {
-	      if (/* event.button.x >= 0 && */
-		  event.button.x < 96 &&
-		  event.button.y >= 40 &&
-		  event.button.y < (48 * 7) + 40) /* FIXME: FIX ME? */
+	      if (HIT(r_tools))
 		{
 		  /* A tool on the left has been pressed! */
 		  
@@ -2761,10 +2813,7 @@ static void mainloop(void)
 		      update_screen_rect(&r_tcolors);
 		    }
 		}
-	      else if (event.button.x >= WINDOW_WIDTH - 96 &&
-		       event.button.x < WINDOW_WIDTH &&
-		       event.button.y >= 40 &&
-		       event.button.y < (48 * (7 + TOOLOFFSET / 2)) + 40)
+	      else if (HIT(r_toolopt))
 		{
 		  /* Options on the right have been pressed! */
 		  
@@ -3228,12 +3277,7 @@ static void mainloop(void)
 		        update_screen_rect(&r_toolopt);
 		    }
 		}
-	      else if (event.button.x > 96 &&
-		       /* FIXME: Need exact number here! */
-		       event.button.x < WINDOW_WIDTH &&
-		       event.button.y > (48 * (7 + TOOLOFFSET / 2)) + 40 &&
-		       event.button.y <= (48 * (7 + TOOLOFFSET / 2)) + 48 + 48 &&
-		       colors_are_selectable)
+	      else if (HIT(r_colors) && colors_are_selectable)
 		{
 		  /* Color! */
 		  
@@ -3252,10 +3296,7 @@ static void mainloop(void)
 		        do_render_cur_text(0);
 		    }
 		}
-	      else if (event.button.x > 96 &&
-		       event.button.x < WINDOW_WIDTH - 96 &&
-		       /* event.button.y >= 0 && */
-		       event.button.y < (48 * 7) + 40 + HEIGHTOFFSET)
+	      else if (HIT(r_canvas))
 		{
 		  /* Draw something! */
 		  
@@ -3345,8 +3386,8 @@ static void mainloop(void)
 			  do_shape(shape_ctr_x, shape_ctr_y,
 				   shape_outer_x, shape_outer_y,
 				   rotation(shape_ctr_x, shape_ctr_y,
-					    event.button.x - 96,
-					    event.button.y),
+					    event.button.x - r_canvas.x,
+					    event.button.y - r_canvas.y),
 				   1);
 			  
 			  shape_tool_mode = SHAPE_TOOL_MODE_DONE;
@@ -3678,9 +3719,9 @@ static void mainloop(void)
 		      brush_counter = 999;
 		      
 		      brush_draw(line_start_x, line_start_y,
-				 event.button.x - 96, event.button.y, 1);
-		      brush_draw(event.button.x - 96, event.button.y,
-				 event.button.x - 96, event.button.y, 1);
+				 event.button.x-r_canvas.x, event.button.y-r_canvas.y, 1);
+		      brush_draw(event.button.x-r_canvas.x, event.button.y-r_canvas.y,
+				 event.button.x-r_canvas.x, event.button.y-r_canvas.y, 1);
 		      
 		      playsound(1, SND_LINE_END, 1);
 		      draw_tux_text(TUX_GREAT, tool_tips[TOOL_LINES], 1);
@@ -3691,8 +3732,8 @@ static void mainloop(void)
 			{
 			  /* Now we can rotate the shape... */
 			  
-			  shape_outer_x = event.button.x - 96;
-			  shape_outer_y = event.button.y;
+			  shape_outer_x = event.button.x-r_canvas.x;
+			  shape_outer_y = event.button.y-r_canvas.y;
 			  
 			  if (!simple_shapes && !shape_no_rotate[cur_shape])
 			    {
@@ -3747,20 +3788,19 @@ static void mainloop(void)
 	    }
 	  else if (event.type == SDL_MOUSEMOTION && !ignoring_motion)
 	    {
-	      new_x = event.button.x - 96;
-	      new_y = event.button.y;
+	      new_x = event.button.x-r_canvas.x;
+	      new_y = event.button.y-r_canvas.y;
 	      
 	      
 	      /* FIXME: Is doing this every event too intensive? */
 	      /* Should I check current cursor first? */
 	      
-	      if (event.button.x < 96 && event.button.y < (48 * 7) + 40 &&
-		  event.button.y > 40)
+	      if (HIT(r_tools))
 		{
 		  /* Tools: */
 		  
-		  if (tool_avail[(event.button.x / 48) +
-				 ((event.button.y - 40) / 48) * 2])
+		  if (tool_avail[((event.button.x - r_tools.x) / button_w) +
+				 ((event.button.y - r_tools.y) / button_h) * gd_tools.cols])
 		    {
 		      do_setcursor(cursor_hand);
 		    }
@@ -3769,9 +3809,7 @@ static void mainloop(void)
 		      do_setcursor(cursor_arrow);
 		    }
 		}
-	      else if (event.button.x > 96 &&
-		       event.button.y >= (48 * 7) + 40 + HEIGHTOFFSET &&
-		       event.button.y <= (48 * 7) + 40 + 48 + HEIGHTOFFSET)
+	      else if (HIT(r_colors))
 		{
 		  /* Color picker: */
 		 
@@ -3780,9 +3818,7 @@ static void mainloop(void)
 		  else
 		    do_setcursor(cursor_arrow);
 		}
-	      else if (event.button.x >= WINDOW_WIDTH - 96 &&
-		       event.button.y > 40 &&
-		       event.button.y <= (48 * (7 + TOOLOFFSET / 2)) + 40)
+	      else if (HIT(r_toolopt))
 		{
 		  /* Selector: */
 		  
@@ -3872,9 +3908,7 @@ static void mainloop(void)
 			do_setcursor(cursor_arrow);
 		    }
 		}
-	      else if (event.button.x > 96 &&
-		       event.button.x < WINDOW_WIDTH - 96 &&
-		       event.button.y < (48 * 7) + 40 + HEIGHTOFFSET)
+	      else if (HIT(r_canvas))
 		{
 		  /* Canvas: */
 		  
@@ -3923,10 +3957,10 @@ static void mainloop(void)
 		      
 		      line_xor(line_start_x, line_start_y, new_x, new_y);
 		      
-		      update_screen(line_start_x + 96, line_start_y,
-				    old_x + 96, old_y);
-		      update_screen(line_start_x + 96, line_start_y,
-				    new_x + 96, new_y);
+		      update_screen(line_start_x + r_canvas.x, line_start_y + r_canvas.y,
+				    old_x + r_canvas.x, old_y + r_canvas.y);
+		      update_screen(line_start_x + r_canvas.x, line_start_y + r_canvas.y,
+				    new_x + r_canvas.x, new_y + r_canvas.y);
 		    }
 		  else if (cur_tool == TOOL_SHAPES)
 		    {
@@ -3991,47 +4025,47 @@ static void mainloop(void)
 		      h = w;
 		    }
 		  
-		  if (old_x >= 0 && old_x < WINDOW_WIDTH - 96 - 96 &&
-		      old_y >= 0 && old_y < (48 * 7) + 40 + HEIGHTOFFSET)
+		  if (old_x >= 0 && old_x < r_canvas.w &&
+		      old_y >= 0 && old_y < r_canvas.h)
 		    {
 		      if (cur_tool == TOOL_STAMP)
 			{
 			  stamp_xor(old_x, old_y);
 
-			  update_screen(old_x - (CUR_STAMP_W+1)/2 + 96,
-					old_y - (CUR_STAMP_H+1)/2,
-					old_x + (CUR_STAMP_W+1)/2 + 96,
-					old_y + (CUR_STAMP_H+1)/2);
+			  update_screen(old_x - (CUR_STAMP_W+1)/2 + r_canvas.x,
+					old_y - (CUR_STAMP_H+1)/2 + r_canvas.y,
+					old_x + (CUR_STAMP_W+1)/2 + r_canvas.x,
+					old_y + (CUR_STAMP_H+1)/2 + r_canvas.y);
 			}
 		      else
 			{
 			  rect_xor(old_x - w / 2, old_y - h / 2,
 				   old_x + w / 2, old_y + h / 2);
 
-			  update_screen(old_x - w / 2 + 96, old_y - h / 2,
-					old_x + w / 2 + 96, old_y + h / 2);
+			  update_screen(old_x - w / 2 + r_canvas.x, old_y - h / 2 + r_canvas.y,
+					old_x + w / 2 + r_canvas.x, old_y + h / 2 + r_canvas.y);
 			}
 		    }
 		  
-		  if (new_x >= 0 && new_x < WINDOW_WIDTH - 96 - 96 &&
-		      new_y >= 0 && new_y < (48 * 7) + 40 + HEIGHTOFFSET)
+		  if (new_x >= 0 && new_x < r_canvas.w &&
+		      new_y >= 0 && new_y < r_canvas.h)
 		    {
 		      if (cur_tool == TOOL_STAMP)
 			{
 			  stamp_xor(new_x, new_y);
 
-			  update_screen(old_x - (CUR_STAMP_W+1)/2 + 96,
-					old_y - (CUR_STAMP_H+1)/2,
-					old_x + (CUR_STAMP_W+1)/2 + 96,
-					old_y + (CUR_STAMP_H+1)/2);
+			  update_screen(old_x - (CUR_STAMP_W+1)/2 + r_canvas.x,
+					old_y - (CUR_STAMP_H+1)/2 + r_canvas.y,
+					old_x + (CUR_STAMP_W+1)/2 + r_canvas.x,
+					old_y + (CUR_STAMP_H+1)/2 + r_canvas.y);
 			}
 		      else
 			{
 			  rect_xor(new_x - w / 2, new_y - h / 2,
 				   new_x + w / 2, new_y + h / 2);
 
-			  update_screen(new_x - w / 2 + 96, new_y - h / 2,
-					new_x + w / 2 + 96, new_y + h / 2);
+			  update_screen(new_x - w / 2 + r_canvas.x, new_y - h / 2 + r_canvas.y,
+					new_x + w / 2 + r_canvas.x, new_y + h / 2 + r_canvas.y);
 			}
 		    }
 		}
@@ -4051,7 +4085,6 @@ static void mainloop(void)
 		  
 		  
 		  /* FIXME: Do something less intensive! */
-		  
 		  SDL_Flip(screen);
 		}
 	      
@@ -4075,9 +4108,10 @@ static void mainloop(void)
 	           cursor_x + cursor_textwidth,
 		   cursor_y + TTF_FontHeight(getfonthandle(cur_font)));
 
-          update_screen(cursor_x + 96 + cursor_textwidth, cursor_y,
-			cursor_x + 96 + cursor_textwidth,
-			cursor_y + TTF_FontHeight(getfonthandle(cur_font)));
+          update_screen(cursor_x + r_canvas.x + cursor_textwidth,
+                        cursor_y + r_canvas.y,
+			cursor_x + r_canvas.x + cursor_textwidth,
+			cursor_y + r_canvas.y + TTF_FontHeight(getfonthandle(cur_font)));
 	}
     }
   while (!done);
@@ -11021,7 +11055,7 @@ static int do_prompt(const char * const text, const char * const btn_yes, const 
 
   /* Erase question prompt: */
 
-  update_canvas(0, 0, WINDOW_WIDTH - 96 - 96, 48 * 7 + 40 + HEIGHTOFFSET);
+  update_canvas(0, 0, canvas->w, canvas->h);
 
   return ans;
 }
