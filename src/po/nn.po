@@ -348,14 +348,14 @@ msgstr "Vel kva du vil stempla teikninga med."
 
 #: tools.h:64
 msgid "Click to start drawing a line. Let go to complete it."
-msgstr "Trykk for å starta på ei linje. Slepp for å fullføra ho."
+msgstr "Trykk for å starta på ei linje, og slepp for å fullføra ho."
 
 #: tools.h:65
 msgid ""
 "Pick a shape. Click to pick the center, drag, then let go when it is the "
 "size you want. Move around to rotate it, and click to draw it."
 msgstr ""
-"Vel ein figur. Trykk og drag så for velja midten og storleiken på figuren. "
+"Vel ein figur. Trykk og drag så for å velja midten og storleiken på figuren. "
 "Flytt rundt for å rotera han, og trykk til slutt for å teikna han."
 
 #: tools.h:66
@@ -416,7 +416,7 @@ msgstr "Hald inne museknappen for å strekkja figuren."
 
 #: tools.h:80
 msgid "Move the mouse to rotate the shape. Click to draw it."
-msgstr "Flytt på musa for å rotera figuren. Trykk så for å sleppa han."
+msgstr "Flytt på musa for å rotera figuren, og trykk så for å teikna han."
 
 #: tools.h:81
 msgid "OK then… Let’s keep drawing this one!"
