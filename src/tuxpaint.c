@@ -4076,6 +4076,21 @@ static void magic_draw(int x1, int y1, int x2, int y2, int button_down)
 }
 
 
+// this one rounds down
+static int log2int(int x)
+{
+  int y = 0;
+  if(x<=1)
+    return 0;
+  x >>= 1;
+  while(x)
+    {
+      x >>= 1;
+      y++;
+    }
+  return y;
+}
+
 /* Draw the current brush in the current color: */
 
 static void blit_magic(int x, int y, int button_down)
@@ -4492,7 +4507,7 @@ static void blit_magic(int x, int y, int button_down)
 	  bucket += (3.5+(rand()/(double)RAND_MAX)) * 7.0;
 	  while (bucket >= 0)
 	    {
-	      int rank = ((double)y/canvas->h) * (0.99+(rand()/(double)RAND_MAX)) * 4;
+	      int rank = log2int( ((double)y/canvas->h) * (0.99+(rand()/(double)RAND_MAX)) * 64 );
 	      int ah = 1<<rank;
 	      bucket -= ah;
 	      src.x = (rand() % 4) * 64;
