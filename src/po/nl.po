@@ -3,19 +3,20 @@
 # Copyright (C) 2002.
 # Herman Bruyninckx <herman.bruyninckx@mech.kuleuven.ac.be>, 2002.
 # Geer Stams <geertstams@wanadoo.nl>, 2004.
-#
+# Geert Stams <geertstams@wanadoo.nl>, 2004.
+# 
 msgid ""
 msgstr ""
-"Project-Id-Version: tuxpaint-nl 0.9.14\n"
+"Project-Id-Version: nl\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2004-07-13 18:30+0200\n"
-"PO-Revision-Date: 2004-03-21 12:43+0100\n"
-"Last-Translator: Geer Stams <geertstams@wanadoo.nl>\n"
-"Language-Team: Nederlands <en@li.org>\n"
+"POT-Creation-Date: 2004-07-16 21:12+0200\n"
+"PO-Revision-Date: 2004-07-14 06:41-0400\n"
+"Last-Translator: Geert Stams <geertstams@wanadoo.nl>\n"
+"Language-Team: Nederlands <nl@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: KBabel 1.0.2\n"
+"X-Generator: KBabel 1.3.1\n"
 
 msgid "A drawing program for children."
 msgstr "Een tekenprogramma voor kinderen."
@@ -23,9 +24,8 @@ msgstr "Een tekenprogramma voor kinderen."
 msgid "Drawing program"
 msgstr "Tekenprogramma"
 
-#, fuzzy
 msgid "Tux Paint"
-msgstr "Schilderen"
+msgstr "TuxPaint"
 
 msgid "Black!"
 msgstr "Zwart!"
@@ -46,7 +46,7 @@ msgid "Yellow!"
 msgstr "Geel!"
 
 msgid "Lime!"
-msgstr "Limoen"
+msgstr "Limoen!"
 
 msgid "Green!"
 msgstr "Groen!"
@@ -392,19 +392,3 @@ msgstr "Nee, bewaar op een nieuwe plaats"
 
 msgid "Choose the picture you want, then click “Open”."
 msgstr "Kies een tekening en klik op 'Open'"
-
-#~ msgid "Okay"
-#~ msgstr "Ok"
-
-#~ msgid "Red"
-#~ msgstr "Rood!"
-
-#~ msgid "Grey"
-#~ msgstr "Grijs!"
-
-#~ msgid ""
-#~ "Pick a shape to draw.  Click once to pick the center of the shape, click "
-#~ "again to draw it."
-#~ msgstr ""
-#~ "Kies een vorm om te tekenen. Klik een eerste keer om het midden van de "
-#~ "vorm te plaatsen. Klik nog een keer om de vorm te tekenen."
