@@ -169,8 +169,9 @@ June 17, 2002 - October 23, 2004
 
   * Norwegian Bokmal
     Knut Erik Hollund <khollund@responze.net>
-    Karl Ove Hufthammer <karl@huftis.org>
     Dag H. Loras <dag.loraas@operamail.com>
+    Klaus Ade Johnstad <klaus@skolelinux.no>
+    Karl Ove Hufthammer <karl@huftis.org>
 
   * Norwegian Nynorsk
     Karl Ove Hufthammer <karl@huftis.org>
