@@ -39,7 +39,7 @@ SRCS=  \
 #	specify the resource files to use
 #	full path or a relative path to the resource file can be used.
 RSRCS=  \
-	tuxpaint.rsrc
+	src/tuxpaint.rsrc
 
 # @<-src@ 
 #%}
@@ -79,7 +79,8 @@ LIBPATHS= /boot/home/config/lib/
 #	thes use the form: #include <header>
 #	source file directories are NOT auto-included here
 SYSTEM_INCLUDE_PATHS = \
-	/boot/develop/tools/gnupro/include/SDL/
+	/boot/home/config/include \
+	/boot/home/config/include/SDL
 
 #	additional paths to look for local headers
 #	thes use the form: #include "header"
@@ -97,7 +98,7 @@ OPTIMIZE= SOME
 #	to use.  For example, setting DEFINES to "DEBUG=1" will cause the
 #	compiler option "-DDEBUG=1" to be used.  Setting DEFINES to "DEBUG"
 #	would pass "-DDEBUG" on the compiler's command line.
-DEFINES= CONFDIR="\".\"" DOC_PREFIX="\"./docs/\"" DATA_PREFIX="\"./data/\"" LOCALEDIR="\"/boot/home/config/share/locale/\""
+DEFINES= CONFDIR="\".\"" DOC_PREFIX="\"./docs/\"" DATA_PREFIX="\"./data/\"" LOCALEDIR="\"./data/locale/\"" LARGE_MOUSE_SHAPES OLD_UPPERCASE_CODE
 
 #	specify special warning levels
 #	if unspecified default warnings will be used
@@ -137,107 +138,15 @@ DRIVER_PATH =
 include $(BUILDHOME)/etc/makefile-engine
 
 clean-trans:
-	@rm -rf trans
+	@rm -rf data/locale
 
-translations:	trans trans/fr.mo trans/de.mo trans/en_gb.mo trans/es.mo \
-		trans/fi.mo trans/tr.mo trans/nn.mo trans/it.mo trans/nl.mo \
-		trans/sv.mo trans/is.mo trans/da.mo trans/pt_br.mo \
-		trans/cz.mo trans/hu.mo trans/ko.mo trans/ca.mo trans/zh_cn.mo \
-		trans/id.mo trans/ro.mo trans/el.mo trans/pl.mo
+# Build the translation files for gettext
 
-trans:
-	@echo
-	@echo "...Preparing translation files..."
-	@mkdir trans
-
-trans/fr.mo:	src/po/fr.po
-	@echo "   ...French..."
-	@msgfmt src/po/fr.po -o trans/fr.mo
-
-trans/ro.mo:	src/po/ro.po
-	@echo "   ...Romanian..."
-	@msgfmt src/po/ro.po -o trans/ro.mo
-
-trans/de.mo:	src/po/de.po
-	@echo "   ...German..."
-	@msgfmt src/po/de.po -o trans/de.mo
-
-trans/en_gb.mo:	src/po/en_gb.po
-	@echo "   ...British English..."
-	@msgfmt src/po/en_gb.po -o trans/en_gb.mo
-
-trans/zh_cn.mo:	src/po/zh_cn.po
-	@echo "   ...Chinese..."
-	@msgfmt src/po/zh_cn.po -o trans/zh_cn.mo
-
-trans/id.mo:	src/po/id.po
-	@echo "   ...Indonesian..."
-	@msgfmt src/po/id.po -o trans/id.mo
-
-trans/el.mo:	src/po/el.po
-	@echo "   ...Greek..."
-	@msgfmt src/po/el.po -o trans/el.mo
-
-trans/ca.mo:	src/po/ca.po
-	@echo "   ...Catalan..."
-	@msgfmt src/po/ca.po -o trans/ca.mo
-
-trans/da.mo:	src/po/da.po
-	@echo "   ...Danish..."
-	@msgfmt src/po/da.po -o trans/da.mo
-
-trans/ko.mo:	src/po/ko.po
-	@echo "   ...Korean..."
-	@msgfmt src/po/ko.po -o trans/ko.mo
-
-trans/es.mo:	src/po/es.po
-	@echo "   ...Spanish..."
-	@msgfmt src/po/es.po -o trans/es.mo
-
-trans/fi.mo:	src/po/fi.po
-	@echo "   ...Finnish..."
-	@msgfmt src/po/fi.po -o trans/fi.mo
-	
-trans/tr.mo:	src/po/tr.po
-	@echo "   ...Turkish..."
-	@msgfmt src/po/tr.po -o trans/tr.mo
-
-trans/sv.mo:	src/po/sv.po
-	@echo "   ...Swedish..."
-	@msgfmt src/po/sv.po -o trans/sv.mo
-
-trans/pt_br.mo:	src/po/pt_br.po
-	@echo "   ...Brazilian Portuguese..."
-	@msgfmt src/po/pt_br.po -o trans/pt_br.mo
-
-trans/pl.mo:	src/po/pl.po
-	@echo "   ...Polish..."
-	@msgfmt src/po/pl.po -o trans/pl.mo
-
-trans/nn.mo:	src/po/nb.po
-	@echo "   ...Norwegian Bokmal..."
-	@msgfmt src/po/nb.po -o trans/nb.mo
-
-trans/nn.mo:	src/po/nn.po
-	@echo "   ...Norwegian Nynorsk..."
-	@msgfmt src/po/nn.po -o trans/nn.mo
-	
-trans/it.mo:	src/po/it.po
-	@echo "   ...Italian..."
-	@msgfmt src/po/it.po -o trans/it.mo
-	
-trans/nl.mo:	src/po/nl.po
-	@echo "   ...Dutch..."
-	@msgfmt src/po/nl.po -o trans/nl.mo
-	
-trans/is.mo:	src/po/is.po
-	@echo "   ...Icelandic..."
-	@msgfmt src/po/is.po -o trans/is.mo
-
-trans/hu.mo:	src/po/hu.po
-	@echo "   ...Hungarian..."
-	@msgfmt src/po/hu.po -o trans/hu.mo
-
-trans/cz.mo:	src/po/cz.po
-	@echo "   ...Czech..."
-	@msgfmt src/po/cz.po -o trans/cz.mo
+translations:
+	@echo "creating translations";
+	@install -d data/locale;
+	@for a in `ls src/po/ -I*.in -I*.sh -I*.pot -ICVS` ; do \
+		echo $${a%.po}; \
+		install -d data/locale/$${a%.po}/LC_MESSAGES; \
+		msgfmt src/po/$$a -o data/locale/$${a%.po}/LC_MESSAGES/tuxpaint.mo; \
+	done;
