@@ -234,6 +234,7 @@ extern char* g_win32_getlocale(void);
 #endif
 
 #include "SDL_image.h"
+#ifndef _SDL_IMAGE_H
 #ifndef _IMG_h
 #error "---------------------------------------------------"
 #error "If you installed SDL_image from a package, be sure"
@@ -241,14 +242,17 @@ extern char* g_win32_getlocale(void);
 #error "(e.g., 'libsdl-image1.2-devel.rpm')"
 #error "---------------------------------------------------"
 #endif
+#endif
 
 #include "SDL_ttf.h"
+#ifndef _SDL_TTF_h
 #ifndef _SDLttf_h
 #error "---------------------------------------------------"
 #error "If you installed SDL_ttf from a package, be sure"
 #error "to get the development package, as well!"
 #error "(e.g., 'libsdl-ttf1.2-devel.rpm')"
 #error "---------------------------------------------------"
+#endif
 #endif
 
 #ifndef NOSOUND
