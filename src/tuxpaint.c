@@ -7690,24 +7690,26 @@ static void draw_toolbar(void)
 
       if (i < NUM_TOOLS)
 	{
+	  SDL_Surface *button_color;
+	  SDL_Surface *button_body;
 	  if (i == cur_tool)
 	    {
-	      SDL_BlitSurface(img_btn_down, NULL, screen, &dest);
-	      SDL_BlitSurface(img_black, NULL, img_tools[i], NULL);
-	      SDL_BlitSurface(img_black, NULL, img_tool_names[i], NULL);
+	      button_body  = img_btn_down;
+	      button_color = img_black;
 	    }
 	  else if (tool_avail[i])
 	    {
-	      SDL_BlitSurface(img_btn_up, NULL, screen, &dest);
-	      SDL_BlitSurface(img_black, NULL, img_tools[i], NULL);
-	      SDL_BlitSurface(img_black, NULL, img_tool_names[i], NULL);
+	      button_body  = img_btn_up;
+	      button_color = img_black;
 	    }
 	  else
 	    {
-	      SDL_BlitSurface(img_btn_off, NULL, screen, &dest);	
-	      SDL_BlitSurface(img_grey, NULL, img_tools[i], NULL);
-	      SDL_BlitSurface(img_grey, NULL, img_tool_names[i], NULL);
+	      button_body  = img_btn_off;
+	      button_color = img_grey;
 	    }
+          SDL_BlitSurface(button_body,  NULL, screen, &dest);
+          SDL_BlitSurface(button_color, NULL, img_tools[i], NULL);
+          SDL_BlitSurface(button_color, NULL, img_tool_names[i], NULL);
 
 	  dest.x = ((i % 2) * 48) + 4;
 	  dest.y = ((i / 2) * 48) + 40 + 4;
