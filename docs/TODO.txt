@@ -6,7 +6,7 @@ Copyright (c) 2004 by Bill Kendrick
 bill@newbreedsoftware.com
 http://www.newbreedsoftware.com/tuxpaint/
 
-February 9, 2004
+March 21, 2004
 
 
 LOW-PRIORITY DOCUMENTATION CHANGES:
@@ -94,6 +94,8 @@ HIGH-PRIORITY TRANSLATION STUFF:
   * Make right-to-left strings not wordwrap with the shortest line at
     the top!
 
+  * Update remaining PO files to use new ('better punctuated') msgstr's
+
   * Finish current translations.  (Especially documentation!)
 
 
@@ -105,6 +107,9 @@ LOW-PRIORITY TRANSLATION STUFF:
     * Thai
     ...
 
+  * Support more language names in their native language
+    (e.g., "suomi" is Finnish for "finnish")
+    
   * Update Czech and Slovak translations (so they use accents/etc.!)
 
 
