@@ -30,7 +30,7 @@ New Breed Software</p>
 
 <h2>簡介</h2>
 <blockquote>
-  <p>"Tux&nbsp;Paint" 是專為年幼的兒童設計的繪圖程式，他提供容易使用的介面和固定尺寸的畫布，
+  <p>"Tux&nbsp;Paint" 是專為年幼的兒童設計的繪圖程式，他提供容易使用的介面和固定尺寸的圖紙，
   以及可以使用縮圖瀏覽的方式來存取儲存的圖畫(註：不需直接讀取檔案系統)。</p>
 
   <p>他只提供非常有限工具組，不像一般的繪圖程式如「GIMP」。總之，他提供非常容易使用的介面，
@@ -418,7 +418,7 @@ New Breed Software</p>
 	  </tr>
 	  <tr>
 	    <td><code>bokmal</code></td>
-	    <td>挪威文 (巴克摩)</td>
+	    <td><code>挪威文 (巴克摩)</code></td>
 	    <td>&nbsp;</td>
 	  </tr>
 	  <tr>
@@ -438,7 +438,7 @@ New Breed Software</p>
 	  </tr>
 	  <tr>
 	    <td><code>chinese</code></td>
-	    <td>簡體中文</td>
+	    <td><code>簡體中文</code></td>
 	    <td>&nbsp;</td>
 	  </tr>
 	  <tr>
@@ -453,7 +453,7 @@ New Breed Software</p>
 	  </tr>
 	  <tr>
 	    <td><code>dutch</code></td>
-	    <td>荷蘭文</td>
+	    <td><code>荷蘭文</code></td>
 	    <td>&nbsp;</td>
 	  </tr>
 	  <tr>
@@ -473,12 +473,12 @@ New Breed Software</p>
 	  </tr>
 	  <tr>
 	    <td><code>greek</code></td>
-	    <td>希臘文</td>
+	    <td><code>希臘文</code></td>
 	    <td>&nbsp;</td>
 	  </tr>
 	  <tr>
 	    <td><code>hebrew</code></td>
-	    <td>希伯來文</td>
+	    <td><code>希伯來文</code></td>
 	    <td>&nbsp;</td>
 	  </tr>
 	  <tr>
@@ -503,12 +503,12 @@ New Breed Software</p>
 	  </tr>
 	  <tr>
 	    <td><code>japanese</code></td>
-	    <td>日文</td>
+	    <td><code>日文</code></td>
 	    <td>&nbsp;</td>
 	  </tr>
 	  <tr>
 	    <td><code>korean</code></td>
-	    <td>韓文</td>
+	    <td><code>韓文</code></td>
 	    <td>&nbsp;</td>
 	  </tr>
 	  <tr>
@@ -518,7 +518,7 @@ New Breed Software</p>
 	  </tr>
 	  <tr>
 	    <td><code>malay</code></td>
-	    <td>馬來文</td>
+	    <td><code>馬來文</code></td>
 	    <td>&nbsp;</td>
 	  </tr>
 	  <tr>
@@ -538,12 +538,12 @@ New Breed Software</p>
 	  </tr>
 	  <tr>
 	    <td><code>romanian</code></td>
-	    <td>羅馬尼亞文</td>
+	    <td><code>羅馬尼亞文</code></td>
 	    <td>&nbsp;</td>
 	  </tr>
 	  <tr>
 	    <td><code>russian</code></td>
-	    <td>俄文</td>
+	    <td><code>俄文</code></td>
 	    <td>&nbsp;</td>
 	  </tr>
 	  <tr>
@@ -553,7 +553,7 @@ New Breed Software</p>
 	  </tr>
 	  <tr>
 	    <td><code>slovak</code></td>
-	    <td>斯洛伐克文</td>
+	    <td><code>斯洛伐克文</code></td>
 	    <td>&nbsp;</td>
 	  </tr>
 	  <tr>
@@ -563,22 +563,22 @@ New Breed Software</p>
 	  </tr>
 	  <tr>
 	    <td><code>tamil</code></td>
-	    <td>坦米爾文</td>
+	    <td><code>坦米爾文</code></td>
 	    <td>&nbsp;</td>
 	  </tr>
 	  <tr>
 	    <td><code>traditional-chinese</code></td>
-	    <td>繁體中文</td>
+	    <td><code>繁體中文</code></td>
 	    <td>(新加入)</td>
 	  </tr>
 	  <tr>
 	    <td><code>turkish</code></td>
-	    <td>土耳其文</td>
+	    <td><code>土耳其文</code></td>
 	    <td>&nbsp;</td>
 	  </tr>
 	  <tr>
 	    <td><code>walloon</code></td>
-	    <td>華隆文</td>
+	    <td><code>華隆文</code></td>
 	    <td>&nbsp;</td>
 	  </tr>
 	  </table>
@@ -937,137 +937,113 @@ New Breed Software</p>
       <blockquote>
         <p>改變您的 locale 設定會對您的環境影響非常的大。</p>
       
-        <p>As stated above, along with letting you choose the language at
-        runtime using command-line options ("<code>--lang</code>" and
-        "<code>--locale</code>"),
-        Tux&nbsp;Paint honors the global locale setting in your environment.</p>
+        <p>您可以使用命令列參數 ("<code>--lang</code>" 和 "<code>--locale</code>")
+        來選擇語文版本，Tux&nbsp;Paint 也會依循您系統環境對 locale 的設定。</p>
 
-        <p>If you haven't already set your environment's locale, the following
-        will briefly explain how:</p>
+        <p>如果您尚未設定您系統環境的 locale 的話，以下是一個簡短的說明：</p>
       
-        <h6>Linux/Unix Users</h6>
+        <h6>Linux/Unix 的使用者</h6>
 	<blockquote>
-          <p>First, be sure the locale you want to use is enabled by
-	  editing the file "<code>/etc/locale.gen</code>" on your system and
-	  then running the program "<code>locale-gen</code>" as root.</p>
+          <p>首先確定您要使用的 locale 已經寫入 "<code>/etc/locale.gen</code>" 
+          之中，並使用 root 身份執行過 "<code>locale-gen</code>" 。</p>
 	
-	  <p><i>Note: Debian users may be able to simply run the command
-	  "<code>dpkg-reconfigure&nbsp;locales</code>".</i></p>
+	  <p><i>註：Debian 的使用者可以輕易的用 "<code>dpkg-reconfigure&nbsp;locales</code>"
+	  來完成。</i></p>
 	
-          <p>Then, before running Tux&nbsp;Paint, set your "<code>$LANG</code>"
-          environment variable to one of the locales listed above.  (If you
-          want all programs that can be translated to be, you may wish to place
-	  the following in your login script; e.g. <code>~/.profile</code>,
-	  <code>~/.bashrc</code>, <code>~/.cshrc</code>, etc.)</p>
+          <p>接下來在啟動 Tux&nbsp;Paint 之前先設定 "<code>$LANG</code>"
+          環境變數成您的 locale 。(如果您希望所有可以轉換語文的程式都能發生作用，
+          您應該將這個動作寫入到您登入時會使用到的命令檔，如 <code>~/.profile</code>,
+	  <code>~/.bashrc</code>, <code>~/.cshrc</code>, 等等。)</p>
 
 
-          <p>For example, in a Bourne Shell (like BASH):</p>
+          <p>例如在 Bourne Shell (BASH) 中：</p>
 
           <blockquote><code>
-            export&nbsp;LANG=es_ES@euro&nbsp;;&nbsp;\<br>
+            export&nbsp;LANG=zh_TW.Big5&nbsp;;&nbsp;\<br>
             tuxpaint
 	  </code></blockquote>
 
 
-          <p>And in a C Shell (like TCSH):</p>
+          <p>在 C Shell (TCSH) 中：</p>
 
           <blockquote><code>
-	    setenv&nbsp;LANG&nbsp;es_ES@euro&nbsp;;&nbsp;\<br>
+	    setenv&nbsp;LANG&nbsp;zh_TW.Big5&nbsp;;&nbsp;\<br>
             tuxpaint
 	  </code></blockquote>
         </blockquote>
 
         <hr size=1 noshade>
 
-        <h6>Windows Users</h6>
+        <h6>Windows 的使用者</h6>
 	<blockquote>
-          <p>Tux&nbsp;Paint will recognize the current locale and use the
-          appropriate files by default. So this section is only for people
-          trying different languages.</p>
+          <p>Tux&nbsp;Paint 可以辨識出目前的 locale 並選用適當的檔案。
+          所以這個章節是給想要測試不同語文版本的人。</p>
 
-	  <p>The simplest thing to do is to use the '<code>--lang</code>'
-          switch in the shortcut (see "INSTALL.txt").  However, by using
-          an MSDOS&nbsp;Prompt window, it is also possible to issue a command
-          like this:</p>
+	  <p>最簡單的方式是在捷徑中使用 '<code>--lang</code>' 來切換 (請見 "INSTALL.txt")。
+	  也可以開啟一個 MSDOS 視窗，使用這樣的命令來指定 locale ：</p>
 
 	  <blockquote><code>
-	    set LANG=es_ES@euro
+	    set LANG=zh_TW
 	  </code></blockquote>
 
-	  <p>...which will set the language for the lifetime of that DOS
-          window.</p>
+	  <p>這樣會設定這個 DOS 視窗的語文，直到視窗被關掉。</p>
 
-	  <p>For something more permanent, try editing your computer's
-	  '<code>autoexec.bat</code>' file using Windows' "<b>sysedit</b>"
-          tool:</p>
+	  <p>一勞永逸的方式是使用 "<b>sysedit</b>" 編輯您電腦的 '<code>autoexec.bat</code>' 檔案：</p>
 
           <h6>Windows 95/98</h6>
 	  <ol>
-	  <li>Click on the 'Start' button, and select 'Run...'.
-	  <li>Type "sysedit" into the 'Open:' box (with or without quotes).
-	  <li>Click 'OK'.
-	  <li>Locate the AUTOEXEC.BAT window in the System Configuration
-	    Editor.
-	  <li>Add the following at the bottom of the file:
+	  <li>點擊「開始」功能表，選擇「執行...」。
+	  <li>輸入 "sysedit" 到 '開啟:' 欄位中(有沒有加上雙引號都沒關係).
+	  <li>點擊「確定」。
+	  <li>在系統設定編輯器中選定 AUTOEXEC.BAT 視窗。
+	  <li>加入以下的設定到檔案的最後面：
 
 	    <blockquote><code>	    
-	      set LANG=es_ES@euro
+	      set LANG=zh_TW
 	    </code></blockquote>
 	      
-	  <li>Close the System Configuration Editor, answering yes to save
-	     the changes.
-	  <li>Restart your machine.
+	  <li>關閉系統設定編輯器，回答要儲存目前的變更。
+	  <li>重新啟動您的電腦。
 	  </ol>
 
           <blockquote>
-            To affect the <b>entire machine</b>, and <b>all applications</b>,
-            it is possible to use the "Regional Settings" control panel:
+            要對<b>整部電腦</b>和<b>所有程式</b>都有效的話，
+            也可以使用控制台裡的「地區選項」來設定：
           </blockquote>
 
           <ol>
-	  <li>Click on the 'Start' button, and select
-            'Settings&nbsp;|&nbsp;Control&nbsp;Panel'.
-	  <li>Double click on the "Regional&nbsp;Settings" globe.
-	  <li>Select a language/region from the drop down list.
-	  <li>Click 'OK'.
-	  <li>Restart your machine when prompted.
+	  <li>點擊「開始」功能表，選擇「設定」->「控制台」。
+	  <li>雙擊「區域設定」或「地區選項」的球形圖示。
+	  <li>由下拉表單中選擇一個「語言(地區)」的選項。
+	  <li>點擊「確定」按鈕。
+	  <li>重新啟動您的電腦。
           </ol>
 
 	</blockquote>
       </blockquote>
 
-      <h5>Special Fonts</h5>
+      <h5>特殊字型</h5>
       <blockquote>
-        Some languages require special fonts be installed.  These font
-	files (which are in TrueType format (TTF)), are much too large to
-	include with the Tux&nbsp;Paint download, and are available
-	separately.  (See the table above, under the
-	"Choosing a Different Language" section.)<p>
+        某些語文需要安裝特殊字型檔。這些非常大的字型檔(TrueType format, TTF)可以在 Tux&nbsp;Paint
+        網站下載，他們是獨立的檔案。(請見前面「選擇不同的語文」一節中的表格。)<p>
 
-	When running Tux&nbsp;Paint in a language that requires its own font,
-	Tux&nbsp;Paint will try to load the font file from its system-wide
-	"<code><b>fonts</b></code>" directory (under a
-	"<code><b>locale</b></code>" subdirectory).  The name of the file
-	corresponds to the first two letters in the 'locale' code of the
-	language (e.g., "ko" for Korean, "ja" for Japanese,
-	"zh" for Chinese).<p>
+	當執行需要特殊字型的語文版本時，Tux&nbsp;Paint 會試著由系統的 "<code><b>fonts</b></code>"
+	目錄中載入字型 ("<code><b>locale</b></code>" 的子目錄)。字型檔的名稱相對於 'locale'
+	代碼的前二個字母(例如："ko" 是韓文，"ja" 是日文，"zh" 是中文)。<p>
 	
-	For example, under Linux or Unix, when Tux&nbsp;Paint is run in Korean
-	(e.g., with the option "<code>--lang&nbsp;korean</code>"),
-	Tux&nbsp;Paint will attempt to load the following font file:<p>
+	舉例來說，在 Linux 或 Unix 上，當 Tux&nbsp;Paint 要顯示韓文的訊息
+	(如：使用參數 "<code>--lang&nbsp;korean</code>")，Tux&nbsp;Paint 將會載入這個字型檔：<p>
 
 	<blockquote>
 	  <code>/usr/share/tuxpaint/fonts/locale/<b>ko.ttf</b></code>
 	</blockquote><p>
 
-	You can download fonts for supported languages from Tux&nbsp;Paint's
-	website,
+	您可以由 Tux&nbsp;Paint 的網站下載支援語文的字型檔，
 	<a href="http://www.newbreedsoftware.com/tuxpaint/">
 	http://www.newbreedsoftware.com/tuxpaint/</a>.
-	(Look in the 'Fonts' section under 'Download.')<p>
+	(請見「下載」連結中最後的「字型檔」這一個部份。)<p>
 
-	Under Unix and Linux, you can use the <code>Makefile</code> that comes
-	with the font to install the font in the appropriate location.<p>
+	在 Linux 和 Unix 上您可以使用 <code>Makefile</code> 來將字型檔安裝到適當的路徑去。<p>
       </blockquote>
       
     </blockquote>
@@ -1076,77 +1052,68 @@ New Breed Software</p>
   <hr size=1 noshade>
 
 
-  <h3>Title Screen</h3>
+  <h3>啟始畫面</h3>
   <blockquote>
-    <p>When Tux&nbsp;Paint first loads, a title/credits screen will appear.</p>
+    <p>當一開始啟動 Tux&nbsp;Paint 時會出現一個啟始畫面。</p>
 
     <center><img src="images/tuxpaint-title.jpg" width=324 height=254
-    alt="[Title Screenshot]"></center>
+    alt="[啟始畫面]"></center>
 
-    <p>Once loading is complete, press a key or click on the mouse to continue.
-    (Or, after about 30&nbsp;seconds, the title screen will go away
-    automatically.)</p>
+    <p>當啟動完成後按下任一鍵或滑鼠鍵就可以繼續。
+    (或者等 30 秒後這個啟始畫面也會自動關閉。)</p>
   </blockquote>
  
   <hr size=1 noshade>
 
 
-  <h3>Main Screen</h3>
+  <h3>主畫面</h3>
   <blockquote>
-    The main screen is divided into the following sections:
+    主畫面可以分成以下幾個部份：
 
     <dl>
-    <dt>Left Side: Toolbar</dt>
+    <dt>左邊：工具列</dt>
     <dd>
-      <p>The toolbar contains the drawing and editing controls.</p>
+      <p>工具列中包含了繪圖及編輯的工具。</p>
 
       <center><img src="images/tools.jpg" width=324 height=254
-      alt="[Tools: Paint, Stamp, Lines, Shapes, Text, Magic, Undo, Redo,
-      Eraser, New, Open, Save, Print, Quit]"></center>
+      alt="[工具：繪圖，圖章，線，形狀，字母，魔術，回復，重作，橡皮擦，新圖，開啟，儲存，列印，離開]"></center>
     </dd>
 
-    <dt>Middle: Drawing Canvas</dt>
+    <dt>中間：圖紙</dt>
     <dd>
-      <p>The largest part of the screen, in the center, is the drawing
-      canvas.  This is, obviously, where you draw!</p>
+      <p>這個在螢幕中間最大範圍的就是圖紙，這就是您畫圖的地方了。</p>
 
       <center><img src="images/canvas.jpg" width=324 height=254
-      alt="[(Canvas)]"></center>
+      alt="[(圖紙)]"></center>
     </dd>
 
 
-    <dt>Right Side: Selector</dt>
+    <dt>右邊：選項</dt>
     <dd>
-      <p>Depending on the current tool, the selector shows different
-      things.  e.g., when the Paint&nbsp;Brush tool is selected, it shows
-      the various brushes available.  When the Rubber&nbsp;Stamp tool
-      is selected, it shows the different shapes you can use.</p>
+      <p>依照目前的工具會顯示出不同的選項。例如當左邊選「繪圖」工具時，
+      右邊就會出現好幾種不同的筆刷。當左邊選「圖章」工具時，
+      右邊就會出現可以使用的圖樣來。</p>
 
       <center><img src="images/selector.jpg" width=324 height=254
-      alt="[Selectors - Brushes, Letters, Shapes, Stamps]"></center>
+      alt="[選項 - 筆刷，字母，形狀，圖章]"></center>
     </dd>
 
 
-    <dt>Lower: Colors</dt>
+    <dt>下邊：顏色</dt>
     <dd>
-      <p>A palette of available colors are shown near the bottom of the
-      screen.</p>
+      <p>一個十五種顏色的調色板在接近螢幕底部的地方。</p>
 
       <center><img src="images/colors.jpg" width=324 height=254
-      alt="[Colors - Black, White, Red, Pink, Orange, Yellow, Green, Cyan,
-      Blue, Purple, Brown, Grey]"></center>
+      alt="[顏色 - 黑，白，紅，粉紅，橙，黃，淡黃綠，綠，青綠，藍，紫，淡紫，棕，灰，銀]"></center>
     </dd>
 
 
-    <dt>Bottom: Help Area</dt>
+    <dt>底部：說明區域</dt>
     <dd>
-      <p>At the very bottom of the screen, Tux, the Linux Penguin,
-      provides tips and other information while you draw.</p>
+      <p>當您在畫畫時，在螢幕的最底部，Linux 的企鵝 - Tux 會提供提示和訊息。</p>
 
       <center><img src="images/tips.jpg" width=324 height=254
-      alt="(For example: 'Pick a shape. Click to pick the center, drag, then
-      let go when it is the size you want.  Move around to rotate it, and
-      click to draw it.)"></center>
+      alt="(如： '挑選一個形狀。點一下形狀的中心位置，然後拖拉他到您要的大小。環繞著移動來旋轉他，然後點一下把他畫下來。')"></center>
     </dd>
     </dl>
   </blockquote>
@@ -1154,24 +1121,21 @@ New Breed Software</p>
   <hr size=1 noshade>
 
 
-  <h3>Available Tools</h3>
+  <h3>可用的工具</h3>
   <blockquote>
-    <h4>Drawing Tools</h4>
+    <h4>繪圖工具</h4>
     <blockquote>
       <dl>
-      <dt><b>Paint (Brush)</b></dt>
+      <dt><b>繪圖(刷子)</b></dt>
       <dd>
         <img src="images/tool_paint.png" width=48 height=48 alt="" align=right>
 
-	<p>The Paint&nbsp;Brush tool lets you draw freehand, using various
-        brushes (chosen in the Selector on the right) and colors
-        (chosen in the Color palette towards the bottom).</p>
+	<p>這個刷子繪圖工具讓您畫徒手畫，可以使用不同的筆刷(在右邊選項部份選擇)
+	和顏色(在底下的調色板來選擇顏色)。</p>
 
-        <p>If you hold the mouse button down, and move the mouse, it will
-        draw as you move.</p>
+        <p>如果您持續按住滑鼠按鍵，然後移動滑鼠，就會畫在移動的路徑上。</p>
 
-        <p>As you draw, a sound is played.  The bigger the brush, the
-        lower the pitch.</p>
+        <p>當您在畫的同時會有聲音出來，愈大的筆刷聲音愈低沉。</p>
 
         <br clear=all>
 
@@ -1182,28 +1146,21 @@ New Breed Software</p>
       </dd>
 
 
-      <dt><b>Stamp (Rubber Stamp)</b></dt>
+      <dt><b>圖章 (橡皮圖章)</b></dt>
       <dd>
         <img src="images/tool_stamp.png" width=48 height=48 alt="" align=right>
 
-        <p>The Stamp tool is like a rubber stamp, or stickers.  It lets you
-        paste pre-drawn or photographic images (like a picture of a horse,
-	or a tree, or the moon) in your picture.</p>
+        <p>圖章工具就像是橡皮圖章，或是貼海報，可以讓您印上預先畫好的圖形，
+        或是現實的照片在圖紙上。(像是一張馬的圖形，或是一顆樹，或是月亮。)</p>
 
-        <p>As you move the mouse around, an outline follows the
-        mouse, showing where the stamp will be placed.</p>
+        <p>當您移動滑鼠時會看到有一個框線跟著滑鼠移動，顯示出圖章會印在什麼地方。</p>
 
-        <p>Different stamps can have different sound effects.
-	Some stamps can be colored or tinted.</p>
+        <p>不同的圖章可以有不同的音效，有些圖章還可以著色。</p>
 	
-	<p>Stamps and be shrunk and expanded, and many stamps can be
-	flipped vertically, or displayed as a mirror-image, using
-	controls at the bottom right of the screen.</p>
+	<p>圖章可以放大縮小，很多圖章還可以上下左右翻轉，都在右下方來控制。</p>
 	
-	<p>(NOTE: If the "<code>nostampcontrols</code>" option is set,
-	Tux&nbsp;Paint won't display the Mirror, Flip, Shrink and Grow
-	controls for stamps.  See the "Options" section of this document,
-	above.)</p>
+	<p>(註：如果設定了 "<code>nostampcontrols</code>" 選項的話，Tux&nbsp;Paint
+	就不會顯示出左右鏡射，上下翻轉，放大和縮小的控制鈕。請見本文前面「選項」一節的說明。)</p>
 
         <br clear=all>
 
@@ -1214,12 +1171,11 @@ New Breed Software</p>
       </dd>
 
 
-      <dt><b>Lines</b></dt>
+      <dt><b>畫線</b></dt>
       <dd>
         <img src="images/tool_lines.png" width=48 height=48 alt="" align=right>
 
-        <p>This tool lets you draw straight lines using the various
-        brushes and colors you normally use with the Paint Brush.</p>
+        <p>這個工具可以使用不同的筆刷和顏色來幫助您畫出真正的直線。</p>
 
         <p>Click the mouse and hold it to choose the starting point of the
         line.  As you move the mouse around, a thin 'rubber-band' line
