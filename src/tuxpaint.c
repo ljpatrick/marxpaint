@@ -9346,8 +9346,10 @@ static void line_xor(int x1, int y1, int x2, int y2)
 	      num_drawn++;
 	      if (num_drawn < 10 || dont_do_xor == 0)
 		{
+		  // must show up on black, white, 0x7f grey, and 0x80 grey
+		  // must be exactly 100% perfect reversable
 		  clipped_putpixel(screen, x1 + 96, y,
-				   0xFFFFFFFF - getpixel(screen, x1 + 96, y));
+				   0x80808080 ^ getpixel(screen, x1 + 96, y));
 		}
 	    }
 	
@@ -9364,8 +9366,10 @@ static void line_xor(int x1, int y1, int x2, int y2)
 	  
 	      if (num_drawn < 10 || dont_do_xor == 0)
 		{
+		  // must show up on black, white, 0x7f grey, and 0x80 grey
+		  // must be exactly 100% perfect reversable
 		  clipped_putpixel(screen, x1 + 96, y,
-				   0xFFFFFFFF - getpixel(screen, x1 + 96, y));
+				   0x80808080 ^ getpixel(screen, x1 + 96, y));
 		}
 	    }
 	}
@@ -9377,8 +9381,10 @@ static void line_xor(int x1, int y1, int x2, int y2)
 	  
 	      if (num_drawn < 10 || dont_do_xor == 0)
 		{
+		  // must show up on black, white, 0x7f grey, and 0x80 grey
+		  // must be exactly 100% perfect reversable
 		  clipped_putpixel(screen, x1 + 96, y,
-				   0xFFFFFFFF - getpixel(screen, x1 + 96, y));
+				   0x80808080 ^ getpixel(screen, x1 + 96, y));
 		}
 	    }
         }
@@ -13711,7 +13717,9 @@ static void stamp_xor(int x, int y)
           sy =      y + yy - stamp_outline_h/2;
           if (stiple[sx%STIPLE_W + sy%STIPLE_H * STIPLE_W] != '8')
             continue;
-          clipped_putpixel(screen, sx, sy, 0xFFFFFFFF - getpixel(screen, sx, sy));
+	  // must show up on black, white, 0x7f grey, and 0x80 grey
+	  // must be exactly 100% perfect reversable
+          clipped_putpixel(screen, sx, sy, 0x80808080 ^ getpixel(screen, sx, sy));
 	}
     }
   SDL_UnlockSurface(screen);
