@@ -4485,15 +4485,17 @@ static void blit_magic(int x, int y, int button_down)
 	}
       else if (cur_magic == MAGIC_GRASS)
 	{
-	  if ((rand() % 10) < 2)
+	  int rank = ((double)y/canvas->h) * (0.99+(rand()/(double)RAND_MAX)) * 4;
+	  int ah = 1<<rank;
+	  if ((rand() % 256) > ah && ((rand() % 10) < 2))
 	    {
-	      src.x = 0;
-	      src.y = (rand() % 4) * 32;
-	      src.w = 32;
-	      src.h = 32;
+	      src.x = (rand() % 4) * 64;
+	      src.y = ah;
+	      src.w = 64;
+	      src.h = ah;
 
-	      dest.x = x - 16;
-	      dest.y = y - 16;
+	      dest.x = x - 32;
+	      dest.y = y;
 
 	      SDL_BlitSurface(img_grass, &src, canvas, &dest);
 	    }
