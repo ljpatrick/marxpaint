@@ -21,12 +21,12 @@
   along with this program; if not, write to the Free Software
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   
-  June 14, 2002 - December 11, 2004
+  June 14, 2002 - December 12, 2004
 */
 
 
 #define VER_VERSION     "0.9.15"
-#define VER_DATE        "2004-12-11"
+#define VER_DATE        "2004-12-12"
 
 
 //#define VIDEO_BPP 15 // saves memory
@@ -1996,10 +1996,14 @@ static void mainloop(void)
 #endif
 		  
 
-			  cur_stamp = cur_thing;
+			  if (cur_thing != cur_stamp)
+			  {
+			    cur_stamp = cur_thing;
+			    update_stamp_xor();
+			  }
+
 			  stamp_scroll = thing_scroll;
 			  
-			  update_stamp_xor();
 
 			  if (do_draw)
 			    draw_stamps();
