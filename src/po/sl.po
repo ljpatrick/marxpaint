@@ -1,0 +1,636 @@
+# translation of tuxpaint_sl_SI_popr.po to Slovenščina
+# translation of tuxpaint_sl_SI.po to Slovenščina
+# translation of tuxpaint_sl_SI.po to slovenscina
+# Tux Paint British English messages
+# Copyright (C) 2002
+# Bill Kendrick <bill@newbreedsoftware.com>, 2002.
+# Ines Kovacevic <ines@agenda.si>, 2004.
+# Urska Colner <urska.colner@agenda.si>, 2004.
+msgid ""
+msgstr ""
+"Project-Id-Version: tuxpaint_sl_SI_popr\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2004-06-14 16:30+0200\n"
+"PO-Revision-Date: 2004-03-17 06:12-0800\n"
+"Last-Translator: Urska Colner <urska.colner@agenda.si>\n"
+"Language-Team: Slovenščina <users@sl.openoffice.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.0.2\n"
+
+#: tuxpaint.desktop.in.h:1
+msgid "Drawing program"
+msgstr ""
+
+#
+#: tuxpaint.desktop.in.h:2
+#, fuzzy
+msgid "Tux Paint"
+msgstr "Risanje"
+
+#
+#: colors.h:62
+msgid "Black!"
+msgstr "Črna!"
+
+#
+#: colors.h:63
+msgid "White!"
+msgstr "Bela!"
+
+#
+#: colors.h:64
+msgid "Red!"
+msgstr "Rdeča!"
+
+#
+#: colors.h:65
+msgid "Pink!"
+msgstr "Roza!"
+
+#
+#: colors.h:66
+msgid "Orange!"
+msgstr "Oranžna!"
+
+#
+#: colors.h:67
+msgid "Yellow!"
+msgstr "Rumena!"
+
+#
+#: colors.h:68
+msgid "Lime!"
+msgstr "Rumeno zelena!"
+
+#
+#: colors.h:69
+msgid "Green!"
+msgstr "Zelena!"
+
+#
+#: colors.h:70
+msgid "Cyan!"
+msgstr "Cijan!"
+
+#
+#: colors.h:71
+msgid "Blue!"
+msgstr "Modra!"
+
+#
+#: colors.h:72
+msgid "Purple!"
+msgstr "Vijoličasta!"
+
+#
+#: colors.h:73
+msgid "Fuchsia!"
+msgstr "Rožnata!"
+
+#
+#: colors.h:74
+msgid "Brown!"
+msgstr "Rjava!"
+
+#
+#: colors.h:75
+#, fuzzy
+msgid "Gray!"
+msgstr "Siva!"
+
+#
+#: colors.h:76
+msgid "Silver!"
+msgstr "Srebrna!"
+
+#
+#: great.h:20
+msgid "Great!"
+msgstr "Izvrstno!"
+
+#
+#: great.h:21
+msgid "Cool!"
+msgstr "Kul!"
+
+#
+#: great.h:22
+msgid "Keep it up!"
+msgstr "Samo tako naprej!"
+
+#
+#: great.h:23
+msgid "Good job!"
+msgstr "Dobro opravljeno!"
+
+#
+#: magic.h:48
+msgid "Rainbow"
+msgstr "Mavrica"
+
+#
+#: magic.h:49
+msgid "Sparkles"
+msgstr "Bleščice"
+
+#
+#: magic.h:51
+msgid "Mirror"
+msgstr "Ogledalo"
+
+#
+#: magic.h:52
+msgid "Flip"
+msgstr "Zrcali"
+
+#
+#: magic.h:54
+msgid "Blur"
+msgstr "Zamegljeno"
+
+#
+#: magic.h:55
+msgid "Blocks"
+msgstr "Bloki"
+
+#
+#: magic.h:57
+msgid "Negative"
+msgstr "Negativ"
+
+#
+#: magic.h:58
+msgid "Fade"
+msgstr "Pojemanje"
+
+#
+#: magic.h:60
+msgid "Chalk"
+msgstr "Kreda"
+
+#
+#: magic.h:61
+msgid "Drip"
+msgstr "Kapljice"
+
+#
+#: magic.h:63
+msgid "Thick"
+msgstr "Debelo"
+
+#
+#: magic.h:64
+msgid "Thin"
+msgstr "Tanko"
+
+#
+#: magic.h:66
+msgid "Fill"
+msgstr "Napolni"
+
+#
+#: magic.h:73
+msgid "You can draw in rainbow colors!"
+msgstr "Rišeš lahko z barvami mavrice!"
+
+#
+#: magic.h:74
+msgid "Click and move to draw sparkles."
+msgstr "Klikni in premakni za risanje bleščic."
+
+#
+#: magic.h:76
+msgid "Click to make a mirror image."
+msgstr "Klikni, da narediš zrcalno sliko."
+
+#
+#: magic.h:77
+msgid "Click to flip the picture upside-down."
+msgstr "Klikni, da prezrcališ sliko odzgoraj navzdol."
+
+#
+#: magic.h:79
+msgid "Click and move the mouse around to blur the picture."
+msgstr "Klikni in premikaj miško naokrog da zamegliš sliko."
+
+#
+#: magic.h:80
+msgid "Click and move the mouse around to make the picture blocky."
+msgstr "Klikni in premikaj miško naokrog, da narediš sliko blokasto."
+
+#
+#: magic.h:82
+msgid "Click and move the mouse around to draw a negative."
+msgstr "Klikni in premikaj miško naokrog, da narišeš negativ."
+
+#
+#: magic.h:83
+msgid "Click and move to fade the colors."
+msgstr "Klikni in premikaj, da bi barve pojemale."
+
+#
+#: magic.h:85
+msgid ""
+"Click and move the mouse around to turn the picture into a chalk drawing."
+msgstr ""
+"Klikni in premikaj miško naokrog, da spremenš sliko v risbo, narisano s "
+"kredo."
+
+#
+#: magic.h:86
+msgid "Click and move the mouse around to make the picture drip."
+msgstr ""
+"Klikni in premikaj miško naokrog, da bo izgledalo, kot da s slike kaplja."
+
+#
+#: magic.h:88
+msgid "Click and move the mouse to thicken the picture."
+msgstr "Klikni in premikaj miško, da se slika odebeli."
+
+#
+#: magic.h:89
+msgid "Click and move the mouse to thin the picture."
+msgstr "Klikni in premakni miško, da se slika stanjša."
+
+#
+#: magic.h:91
+msgid "Click in the picture to fill that area with color."
+msgstr "Klikni na sliko, da napolniš to območje z barvo."
+
+#
+#: shapes.h:141 shapes.h:142
+msgid "Square"
+msgstr "Kvadrat"
+
+#
+#: shapes.h:143 shapes.h:144
+msgid "Rectangle"
+msgstr "Pravokotnik"
+
+#
+#: shapes.h:145 shapes.h:146
+msgid "Circle"
+msgstr "Krog"
+
+#
+#: shapes.h:147 shapes.h:148 shapes.h:167 shapes.h:168
+msgid "Oval"
+msgstr "Oval"
+
+#
+#: shapes.h:149 shapes.h:150
+msgid "Triangle"
+msgstr "Trikotnik"
+
+#
+#: shapes.h:151 shapes.h:152
+msgid "Pentagon"
+msgstr "Petkotnik"
+
+#
+#: shapes.h:153 shapes.h:154
+msgid "Diamond"
+msgstr "Romb"
+
+#
+#: shapes.h:161 shapes.h:162
+msgid "A square has four sides, each the same length."
+msgstr "Kvadrat ima štiri stranice, vse so enako dolge."
+
+#
+#: shapes.h:163 shapes.h:164
+msgid "A rectangle has four sides."
+msgstr "Pravokotnik ima štiri stranice."
+
+#
+#: shapes.h:165 shapes.h:166
+msgid "A circle is exactly round."
+msgstr "Krog je popolnoma okrogel."
+
+#
+#: shapes.h:169 shapes.h:170
+msgid "A triangle has three sides."
+msgstr "Trikotnik ima tri stranice."
+
+#
+#: shapes.h:171 shapes.h:172
+msgid "A pentagon has five sides."
+msgstr "Petkotnik ima pet stranic."
+
+#
+#: shapes.h:173 shapes.h:174
+msgid "A diamond is a square, turned around slightly."
+msgstr "Romb je rahlo obrnjen kvadrat."
+
+#
+#: titles.h:37
+msgid "Tools"
+msgstr "Orodja"
+
+#
+#: titles.h:38
+msgid "Colors"
+msgstr "Barve"
+
+#
+#: titles.h:39
+msgid "Brushes"
+msgstr "Čopiči"
+
+#
+#: titles.h:40
+msgid "Stamps"
+msgstr "Znamke"
+
+#
+#: titles.h:41 tools.h:45
+msgid "Shapes"
+msgstr "Oblike"
+
+#
+#: titles.h:42
+msgid "Letters"
+msgstr "Črke"
+
+#
+#: titles.h:43 tools.h:47
+msgid "Magic"
+msgstr "Čarovnija"
+
+#
+#: tools.h:42
+msgid "Paint"
+msgstr "Risanje"
+
+#
+#: tools.h:43
+msgid "Stamp"
+msgstr "Znamka"
+
+#
+#: tools.h:44
+msgid "Lines"
+msgstr "Črte"
+
+#
+#: tools.h:46
+msgid "Text"
+msgstr "Besedilo"
+
+#
+#: tools.h:48
+msgid "Undo"
+msgstr "Razveljavi"
+
+#
+#: tools.h:49
+msgid "Redo"
+msgstr "Ponovi"
+
+#
+#: tools.h:50
+msgid "Eraser"
+msgstr "Radirka"
+
+#
+#: tools.h:51
+msgid "New"
+msgstr "Novo"
+
+#
+#. 'Open' label:
+#: tools.h:52 tuxpaint.c:5541
+msgid "Open"
+msgstr "Odpri"
+
+#
+#: tools.h:53
+msgid "Save"
+msgstr "Shrani"
+
+#
+#: tools.h:54
+msgid "Print"
+msgstr "Natisni"
+
+#
+#: tools.h:55
+msgid "Quit"
+msgstr "Končaj"
+
+#
+#: tools.h:62
+msgid "Pick a color and a brush shape to draw with."
+msgstr "Izberi barvo in obliko čopiča za risanje."
+
+#
+#: tools.h:63
+msgid "Pick a picture to stamp around your drawing."
+msgstr "Izberi sliko za delanje odtisov po tvoji risbi."
+
+#
+#: tools.h:64
+msgid "Click to start drawing a line. Let go to complete it."
+msgstr "Klikni za začetek risanja črte. Črto končaš tako, da spustiš gumb."
+
+#
+#: tools.h:65
+msgid ""
+"Pick a shape. Click to pick the center, drag, then let go when it is the "
+"size you want. Move around to rotate it, and click to draw it."
+msgstr ""
+"Izberi obliko.Klikni, da izbereš sredino lika, nato povleci in spusti, ko je "
+"željene velikosti. Obrneš ga tako, da vlečeš miško okrog njega in nato "
+"klikneš, da ga vstaviš."
+
+#
+#: tools.h:66
+msgid "Choose a style of text. Click on your drawing and you can start typing."
+msgstr "Izberi slog besedila. Klikni na risbo in začni pisati."
+
+#
+#: tools.h:67
+msgid "Pick a magical effect to use on your drawing!"
+msgstr "Izberi čarobni učinek, ki ga želiš uporabiti na svoji risbi!"
+
+#
+#. Undo
+#: tools.h:68
+msgid "Undo!"
+msgstr "Razveljavi!"
+
+#
+#. Redo
+#: tools.h:69
+msgid "Redo!"
+msgstr "Ponovi!"
+
+#
+#. Eraser
+#: tools.h:70
+msgid "Eraser!"
+msgstr "Radirka!"
+
+#
+#. New
+#: tools.h:71
+msgid "You now have a blank sheet to draw on!"
+msgstr "Sedaj imaš prazen papir za risanje!"
+
+#
+#. Open
+#: tools.h:72
+msgid "Open…"
+msgstr "Odpri..."
+
+#
+#. Save
+#: tools.h:73
+msgid "Your image has been saved!"
+msgstr "Tvoja slika je shranjena!"
+
+#
+#. Print
+#: tools.h:74
+msgid "Printing…"
+msgstr "Tiskanje..."
+
+#
+#. Quit
+#: tools.h:75
+msgid "Bye bye!"
+msgstr "Adijo!"
+
+#
+#: tools.h:78
+msgid "Let go of the button to complete the line."
+msgstr "Spusti gumb, da končaš črto."
+
+#
+#: tools.h:79
+msgid "Hold the button to stretch the shape."
+msgstr "Drži gumb, da raztegneš obliko."
+
+#
+#: tools.h:80
+msgid "Move the mouse to rotate the shape. Click to draw it."
+msgstr "Premakni miško, da zasukaš obliko. Klikni, da jo shraniš."
+
+#
+#: tools.h:81
+msgid "OK then… Let’s keep drawing this one!"
+msgstr "Dobro. Potem pa nadaljujmo z risanjem!"
+
+#
+#. FIXME: Move elsewhere!!!
+#: tuxpaint.c:817
+msgid "Do you really want to quit?"
+msgstr "Ali res želiš zapustiti program?"
+
+#
+#. FIXME: Move elsewhere! Or not?!
+#: tuxpaint.c:818 tuxpaint.c:822 tuxpaint.c:826 tuxpaint.c:840 tuxpaint.c:850
+#: tuxpaint.c:8494 tuxpaint.c:9201
+msgid "Yes"
+msgstr "Da"
+
+#
+#: tuxpaint.c:819 tuxpaint.c:823 tuxpaint.c:827 tuxpaint.c:841 tuxpaint.c:851
+#: tuxpaint.c:8497
+msgid "No"
+msgstr "Ne"
+
+#
+#: tuxpaint.c:821
+msgid "If you quit, you’ll lose your picture! Save it?"
+msgstr "Če zapustiš program, se ti bo izbrisala slika! Jo želiš shraniti?"
+
+#
+#: tuxpaint.c:825
+msgid "Save your picture first?"
+msgstr "Ali želiš najprej shraniti sliko?"
+
+#
+#: tuxpaint.c:829
+msgid "Can’t open that picture!"
+msgstr "Te slike ni mogoče odpreti!"
+
+#
+#: tuxpaint.c:830 tuxpaint.c:837 tuxpaint.c:844 tuxpaint.c:847
+msgid "OK"
+msgstr ""
+
+#
+#: tuxpaint.c:832
+msgid "Starting a new picture will erase the current one!"
+msgstr "Če odpreš novo sliko, bo trenutna slika izbrisana!"
+
+#
+#: tuxpaint.c:833
+msgid "That’s OK!"
+msgstr "To je v redu"
+
+#
+#: tuxpaint.c:834
+msgid "Never mind!"
+msgstr "Ne skrbi!"
+
+#
+#: tuxpaint.c:836
+msgid "There are no saved files!"
+msgstr "Ni shranjenih dokumentov"
+
+#
+#: tuxpaint.c:839
+msgid "Print your picture now?"
+msgstr "Ali želiš sedaj natisniti sliko?"
+
+#
+#: tuxpaint.c:843
+msgid "Your picture has been printed!"
+msgstr "Tvoja slika je natisnjena"
+
+#
+#: tuxpaint.c:846
+msgid "You can’t print yet!"
+msgstr "Tiskanje še ni mogoče!"
+
+#
+#: tuxpaint.c:849
+msgid "Erase this picture?"
+msgstr "Ali želiš izbrisati to sliko?"
+
+#
+#. 'Erase' label:
+#: tuxpaint.c:5546
+msgid "Erase"
+msgstr "Izbriši"
+
+#
+#. 'Back' label:
+#: tuxpaint.c:5551
+msgid "Back"
+msgstr "Nazaj"
+
+#
+#. FIXME: Move elsewhere!!!
+#: tuxpaint.c:9200
+#, fuzzy
+msgid "Save over the older version of this picture?"
+msgstr "Ali želiš zamenjati staro različico te risbe?"
+
+#
+#: tuxpaint.c:9202
+msgid "No, save a new file"
+msgstr "Ne, shrani novi dokument"
+
+#
+#: tuxpaint.c:10096
+msgid "Choose the picture you want, then click “Open”."
+msgstr "Izberi sliko in klikni 'Odpri'."
+
+#
+#~ msgid "Okay"
+#~ msgstr "V redu"

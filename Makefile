@@ -775,177 +775,177 @@ trans:
 	@echo "...Preparing translation files..."
 	@mkdir trans
 
-trans/af.mo:	src/messages/af.po
+trans/af.mo:	src/po/af.po
 	@echo "   af_ZA ...Afrikaans..."
-	@msgfmt src/messages/af.po -o trans/af.mo
+	@msgfmt src/po/af.po -o trans/af.mo
 
-trans/be.mo:	src/messages/be.po
+trans/be.mo:	src/po/be.po
 	@echo "   be_BY ...Belarusian..."
-	@msgfmt src/messages/be.po -o trans/be.mo
+	@msgfmt src/po/be.po -o trans/be.mo
 
-trans/br.mo:	src/messages/br.po
+trans/br.mo:	src/po/br.po
 	@echo "   br_FR ...Breton..."
-	@msgfmt src/messages/br.po -o trans/br.mo
+	@msgfmt src/po/br.po -o trans/br.mo
 
-trans/ca.mo:	src/messages/ca.po
+trans/ca.mo:	src/po/ca.po
 	@echo "   ca_ES ...Catalan..."
-	@msgfmt src/messages/ca.po -o trans/ca.mo
+	@msgfmt src/po/ca.po -o trans/ca.mo
 
-trans/cy.mo:	src/messages/cy.po
+trans/cy.mo:	src/po/cy.po
 	@echo "   cy_GB ...Welsh..."
-	@msgfmt src/messages/cy.po -o trans/cy.mo
+	@msgfmt src/po/cy.po -o trans/cy.mo
 
-trans/cs.mo:	src/messages/cs.po
+trans/cs.mo:	src/po/cs.po
 	@echo "   cs_CZ ...Czech..."
-	@msgfmt src/messages/cs.po -o trans/cs.mo
+	@msgfmt src/po/cs.po -o trans/cs.mo
 
-trans/da.mo:	src/messages/da.po
+trans/da.mo:	src/po/da.po
 	@echo "   da_DK ...Danish..."
-	@msgfmt src/messages/da.po -o trans/da.mo
+	@msgfmt src/po/da.po -o trans/da.mo
 
-trans/de.mo:	src/messages/de.po
+trans/de.mo:	src/po/de.po
 	@echo "   de_DE ...German..."
-	@msgfmt src/messages/de.po -o trans/de.mo
+	@msgfmt src/po/de.po -o trans/de.mo
 
-trans/el.mo:	src/messages/el.po
+trans/el.mo:	src/po/el.po
 	@echo "   el_GR ...Greek..."
-	@msgfmt src/messages/el.po -o trans/el.mo
+	@msgfmt src/po/el.po -o trans/el.mo
 
-trans/en_gb.mo:	src/messages/en_gb.po
+trans/en_gb.mo:	src/po/en_gb.po
 	@echo "   en_GB ...British English..."
-	@msgfmt src/messages/en_gb.po -o trans/en_gb.mo
+	@msgfmt src/po/en_gb.po -o trans/en_gb.mo
 
-trans/es.mo:	src/messages/es.po
+trans/es.mo:	src/po/es.po
 	@echo "   es_ES ...Spanish..."
-	@msgfmt src/messages/es.po -o trans/es.mo
+	@msgfmt src/po/es.po -o trans/es.mo
 
-trans/eu.mo:	src/messages/eu.po
+trans/eu.mo:	src/po/eu.po
 	@echo "   eu_ES ...Basque..."
-	@msgfmt src/messages/eu.po -o trans/eu.mo
+	@msgfmt src/po/eu.po -o trans/eu.mo
 
-trans/fi.mo:	src/messages/fi.po
+trans/fi.mo:	src/po/fi.po
 	@echo "   fi_FI ...Finnish..."
-	@msgfmt src/messages/fi.po -o trans/fi.mo
+	@msgfmt src/po/fi.po -o trans/fi.mo
 
-trans/fr.mo:	src/messages/fr.po
+trans/fr.mo:	src/po/fr.po
 	@echo "   fr_FR ...French..."
-	@msgfmt src/messages/fr.po -o trans/fr.mo
+	@msgfmt src/po/fr.po -o trans/fr.mo
 
-trans/he.mo:	src/messages/he.po
+trans/he.mo:	src/po/he.po
 	@echo "   he_IL ...Hebrew..."
-	@msgfmt src/messages/he.po -o trans/he.mo
+	@msgfmt src/po/he.po -o trans/he.mo
 
-trans/hi.mo:	src/messages/hi.po
+trans/hi.mo:	src/po/hi.po
 	@echo "   hi_IN ...Hindi..."
-	@msgfmt src/messages/hi.po -o trans/hi.mo
+	@msgfmt src/po/hi.po -o trans/hi.mo
 
-trans/hr.mo:	src/messages/hr.po
+trans/hr.mo:	src/po/hr.po
 	@echo "   hr_HR ...Croatian..."
-	@msgfmt src/messages/hr.po -o trans/hr.mo
+	@msgfmt src/po/hr.po -o trans/hr.mo
 
-trans/hu.mo:	src/messages/hu.po
+trans/hu.mo:	src/po/hu.po
 	@echo "   hu_HU ...Hungarian..."
-	@msgfmt src/messages/hu.po -o trans/hu.mo
+	@msgfmt src/po/hu.po -o trans/hu.mo
 
-trans/id.mo:	src/messages/id.po
+trans/id.mo:	src/po/id.po
 	@echo "   id_ID ...Indonesian..."
-	@msgfmt src/messages/id.po -o trans/id.mo
+	@msgfmt src/po/id.po -o trans/id.mo
 
-trans/is.mo:	src/messages/is.po
+trans/is.mo:	src/po/is.po
 	@echo "   is_IS ...Icelandic..."
-	@msgfmt src/messages/is.po -o trans/is.mo
+	@msgfmt src/po/is.po -o trans/is.mo
 
-trans/it.mo:	src/messages/it.po
+trans/it.mo:	src/po/it.po
 	@echo "   it_IT ...Italian..."
-	@msgfmt src/messages/it.po -o trans/it.mo
+	@msgfmt src/po/it.po -o trans/it.mo
 
-trans/ja.mo:	src/messages/ja.po
+trans/ja.mo:	src/po/ja.po
 	@echo "   ja_JP ...Japanese..."
-	@msgfmt src/messages/ja.po -o trans/ja.mo
+	@msgfmt src/po/ja.po -o trans/ja.mo
 
-trans/ko.mo:	src/messages/ko.po
+trans/ko.mo:	src/po/ko.po
 	@echo "   ko_KR ...Korean..."
-	@msgfmt src/messages/ko.po -o trans/ko.mo
+	@msgfmt src/po/ko.po -o trans/ko.mo
 
-trans/lt.mo:	src/messages/lt.po
+trans/lt.mo:	src/po/lt.po
 	@echo "   lt_LT ...Lithuanian..."
-	@msgfmt src/messages/lt.po -o trans/lt.mo
+	@msgfmt src/po/lt.po -o trans/lt.mo
 
-trans/ms.mo:	src/messages/ms.po
+trans/ms.mo:	src/po/ms.po
 	@echo "   ms_MY ...Malay..."
-	@msgfmt src/messages/ms.po -o trans/ms.mo
+	@msgfmt src/po/ms.po -o trans/ms.mo
 
-trans/nl.mo:	src/messages/nl.po
+trans/nl.mo:	src/po/nl.po
 	@echo "   nl_NL ...Dutch..."
-	@msgfmt src/messages/nl.po -o trans/nl.mo
+	@msgfmt src/po/nl.po -o trans/nl.mo
 
-trans/nb.mo:	src/messages/nb.po
+trans/nb.mo:	src/po/nb.po
 	@echo "   nb_NO ...Norwegian Bokmal..."
-	@msgfmt src/messages/nb.po -o trans/nb.mo
+	@msgfmt src/po/nb.po -o trans/nb.mo
 
-trans/nn.mo:	src/messages/nn.po
+trans/nn.mo:	src/po/nn.po
 	@echo "   nn_NO ...Norwegian Nynorsk..."
-	@msgfmt src/messages/nn.po -o trans/nn.mo
+	@msgfmt src/po/nn.po -o trans/nn.mo
 
-trans/pl.mo:	src/messages/pl.po
+trans/pl.mo:	src/po/pl.po
 	@echo "   pl_PL ...Polish..."
-	@msgfmt src/messages/pl.po -o trans/pl.mo
+	@msgfmt src/po/pl.po -o trans/pl.mo
 
-trans/pt.mo:	src/messages/pt.po
+trans/pt.mo:	src/po/pt.po
 	@echo "   pt_PT ...Portuguese..."
-	@msgfmt src/messages/pt.po -o trans/pt.mo
+	@msgfmt src/po/pt.po -o trans/pt.mo
 
-trans/pt_br.mo:	src/messages/pt_br.po
+trans/pt_br.mo:	src/po/pt_br.po
 	@echo "   pt_BR ...Brazilian Portuguese..."
-	@msgfmt src/messages/pt_br.po -o trans/pt_br.mo
+	@msgfmt src/po/pt_br.po -o trans/pt_br.mo
 
-trans/ro.mo:	src/messages/ro.po
+trans/ro.mo:	src/po/ro.po
 	@echo "   ro_RO ...Romanian..."
-	@msgfmt src/messages/ro.po -o trans/ro.mo
+	@msgfmt src/po/ro.po -o trans/ro.mo
 
-trans/ru.mo:	src/messages/ru.po
+trans/ru.mo:	src/po/ru.po
 	@echo "   ru_RU ...Russian..."
-	@msgfmt src/messages/ru.po -o trans/ru.mo
+	@msgfmt src/po/ru.po -o trans/ru.mo
 
-trans/sk.mo:	src/messages/sk.po
+trans/sk.mo:	src/po/sk.po
 	@echo "   sk_SK ...Slovak..."
-	@msgfmt src/messages/sk.po -o trans/sk.mo
+	@msgfmt src/po/sk.po -o trans/sk.mo
 
-trans/sl.mo:	src/messages/sl.po
+trans/sl.mo:	src/po/sl.po
 	@echo "   sl_SI ...Slovenian..."
-	@msgfmt src/messages/sl.po -o trans/sl.mo
+	@msgfmt src/po/sl.po -o trans/sl.mo
 
-trans/sr.mo:	src/messages/sr.po
+trans/sr.mo:	src/po/sr.po
 	@echo "   sr_YU ...Serbian..."
-	@msgfmt src/messages/sr.po -o trans/sr.mo
+	@msgfmt src/po/sr.po -o trans/sr.mo
 
-trans/sv.mo:	src/messages/sv.po
+trans/sv.mo:	src/po/sv.po
 	@echo "   sv_SE ...Swedish..."
-	@msgfmt src/messages/sv.po -o trans/sv.mo
+	@msgfmt src/po/sv.po -o trans/sv.mo
 
-trans/ta.mo:	src/messages/ta.po
+trans/ta.mo:	src/po/ta.po
 	@echo "   ta_IN ...Tamil..."
-	@msgfmt src/messages/ta.po -o trans/ta.mo
+	@msgfmt src/po/ta.po -o trans/ta.mo
 
-trans/tr.mo:	src/messages/tr.po
+trans/tr.mo:	src/po/tr.po
 	@echo "   tr_TR ...Turkish..."
-	@msgfmt src/messages/tr.po -o trans/tr.mo
+	@msgfmt src/po/tr.po -o trans/tr.mo
 
-trans/vi.mo:	src/messages/vi.po
+trans/vi.mo:	src/po/vi.po
 	@echo "   vi_VN ...Vietnamese..."
-	@msgfmt src/messages/vi.po -o trans/vi.mo
+	@msgfmt src/po/vi.po -o trans/vi.mo
 
-trans/wa.mo:	src/messages/wa.po
+trans/wa.mo:	src/po/wa.po
 	@echo "   wa_BE ...Walloon..."
-	@msgfmt src/messages/wa.po -o trans/wa.mo
+	@msgfmt src/po/wa.po -o trans/wa.mo
 
-trans/zh_cn.mo:	src/messages/zh_cn.po
+trans/zh_cn.mo:	src/po/zh_cn.po
 	@echo "   zh_CN ...Chinese..."
-	@msgfmt src/messages/zh_cn.po -o trans/zh_cn.mo
+	@msgfmt src/po/zh_cn.po -o trans/zh_cn.mo
 
-trans/zh_tw.mo:	src/messages/zh_tw.po
+trans/zh_tw.mo:	src/po/zh_tw.po
 	@echo "   zh_TW ...Chinese..."
-	@msgfmt src/messages/zh_tw.po -o trans/zh_tw.mo
+	@msgfmt src/po/zh_tw.po -o trans/zh_tw.mo
 
 
 

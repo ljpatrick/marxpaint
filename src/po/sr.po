@@ -1,0 +1,625 @@
+# Serbian translation of `tuxpaint'.
+# Copyright (C) 2004 Free Software Foundation, Inc.
+# This file is distributed under the same license as the `tuxpaint' package.
+# Aleksandar Jelenak <jelenak@netlinkplus.net>, 2004.
+msgid ""
+msgstr ""
+"Project-Id-Version: tuxpaint 0.9.14\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2004-06-14 16:30+0200\n"
+"PO-Revision-Date: 2004-03-29 18:58-0500\n"
+"Last-Translator: Aleksandar Jelenak <jelenak@netlinkplus.net>\n"
+"Language-Team: Serbian <gnu@prevod.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: tuxpaint.desktop.in.h:1
+msgid "Drawing program"
+msgstr ""
+
+#
+#: tuxpaint.desktop.in.h:2
+#, fuzzy
+msgid "Tux Paint"
+msgstr "Бојити"
+
+#
+#: colors.h:62
+msgid "Black!"
+msgstr "црна!"
+
+#
+#: colors.h:63
+msgid "White!"
+msgstr "бела!"
+
+#
+#: colors.h:64
+msgid "Red!"
+msgstr "црвена!"
+
+#
+#: colors.h:65
+msgid "Pink!"
+msgstr "ружичаста!"
+
+#
+#: colors.h:66
+msgid "Orange!"
+msgstr "наранџаста!"
+
+#
+#: colors.h:67
+msgid "Yellow!"
+msgstr "жута!"
+
+#
+#: colors.h:68
+msgid "Lime!"
+msgstr "јарко зелена!"
+
+#
+#: colors.h:69
+msgid "Green!"
+msgstr "зелена!"
+
+#
+#: colors.h:70
+msgid "Cyan!"
+msgstr "цијан!"
+
+#
+#: colors.h:71
+msgid "Blue!"
+msgstr "плава!"
+
+#
+#: colors.h:72
+msgid "Purple!"
+msgstr "љубичаста!"
+
+#
+#: colors.h:73
+msgid "Fuchsia!"
+msgstr "фуксија!"
+
+#
+#: colors.h:74
+msgid "Brown!"
+msgstr "браон!"
+
+#
+#: colors.h:75
+msgid "Gray!"
+msgstr "сива!"
+
+#
+#: colors.h:76
+msgid "Silver!"
+msgstr "сребрна!"
+
+#
+#: great.h:20
+msgid "Great!"
+msgstr "Одлично!"
+
+#
+#: great.h:21
+msgid "Cool!"
+msgstr "Супер!"
+
+#
+#: great.h:22
+msgid "Keep it up!"
+msgstr "Само тако!"
+
+#
+#: great.h:23
+msgid "Good job!"
+msgstr "Добар потез!"
+
+#
+#: magic.h:48
+msgid "Rainbow"
+msgstr "Дуга"
+
+#
+#: magic.h:49
+msgid "Sparkles"
+msgstr "Искрице"
+
+#
+#: magic.h:51
+msgid "Mirror"
+msgstr "Огледало"
+
+#
+#: magic.h:52
+msgid "Flip"
+msgstr "Обрни"
+
+#
+#: magic.h:54
+msgid "Blur"
+msgstr "Замагли"
+
+#
+#: magic.h:55
+msgid "Blocks"
+msgstr "Грубо"
+
+#
+#: magic.h:57
+msgid "Negative"
+msgstr "Негатив"
+
+#
+#: magic.h:58
+msgid "Fade"
+msgstr "Избледи"
+
+#
+#: magic.h:60
+msgid "Chalk"
+msgstr "Креда"
+
+#
+#: magic.h:61
+msgid "Drip"
+msgstr "Цури"
+
+#
+#: magic.h:63
+msgid "Thick"
+msgstr "Дебело"
+
+#
+#: magic.h:64
+msgid "Thin"
+msgstr "Танко"
+
+#
+#: magic.h:66
+msgid "Fill"
+msgstr "Попуна"
+
+#
+#: magic.h:73
+msgid "You can draw in rainbow colors!"
+msgstr "Можеш цртати у дугиним бојама!"
+
+#
+#: magic.h:74
+msgid "Click and move to draw sparkles."
+msgstr "Кликни и померај да би цртао искрице."
+
+#
+#: magic.h:76
+msgid "Click to make a mirror image."
+msgstr "Кликни да би направио слику у огледалу."
+
+#
+#: magic.h:77
+msgid "Click to flip the picture upside-down."
+msgstr "Кликни да би обрнуо слику наопачке."
+
+#
+#: magic.h:79
+msgid "Click and move the mouse around to blur the picture."
+msgstr "Кликни и мрдај мишем да би замаглио слику."
+
+#
+#: magic.h:80
+msgid "Click and move the mouse around to make the picture blocky."
+msgstr "Кликни и померај миша да би огрубео слику."
+
+#
+#: magic.h:82
+msgid "Click and move the mouse around to draw a negative."
+msgstr "Кликни и шетај мишем да би правио негатив."
+
+#
+#: magic.h:83
+msgid "Click and move to fade the colors."
+msgstr "Кликни и померај да би изблеђивао боје."
+
+#
+#: magic.h:85
+msgid ""
+"Click and move the mouse around to turn the picture into a chalk drawing."
+msgstr "Кликни и шетај миша да би претворио слику у цртеж кредом."
+
+#
+#: magic.h:86
+msgid "Click and move the mouse around to make the picture drip."
+msgstr "Кликни и шетај миша да би боје на слици процуриле."
+
+#
+#: magic.h:88
+msgid "Click and move the mouse to thicken the picture."
+msgstr "Кликни и померај миша да би подебљао слику."
+
+#
+#: magic.h:89
+msgid "Click and move the mouse to thin the picture."
+msgstr "Кликни и померај миша да би потањио слику."
+
+#
+#: magic.h:91
+msgid "Click in the picture to fill that area with color."
+msgstr "Кликни у слику да би попунио ту област бојом."
+
+#
+#: shapes.h:141 shapes.h:142
+msgid "Square"
+msgstr "квадрат"
+
+#
+#: shapes.h:143 shapes.h:144
+msgid "Rectangle"
+msgstr "правоугаоник"
+
+#
+#: shapes.h:145 shapes.h:146
+msgid "Circle"
+msgstr "круг"
+
+#
+#: shapes.h:147 shapes.h:148 shapes.h:167 shapes.h:168
+msgid "Oval"
+msgstr "овал"
+
+#
+#: shapes.h:149 shapes.h:150
+msgid "Triangle"
+msgstr "троугао"
+
+#
+#: shapes.h:151 shapes.h:152
+msgid "Pentagon"
+msgstr "петоугао"
+
+#
+#: shapes.h:153 shapes.h:154
+msgid "Diamond"
+msgstr "дијамант"
+
+#
+#: shapes.h:161 shapes.h:162
+msgid "A square has four sides, each the same length."
+msgstr "Квадрат има четири странице подједнаке дужине."
+
+#
+#: shapes.h:163 shapes.h:164
+msgid "A rectangle has four sides."
+msgstr "Правоугаоник има четири странице."
+
+#
+#: shapes.h:165 shapes.h:166
+msgid "A circle is exactly round."
+msgstr "Круг је потпуно заобљен."
+
+#
+#: shapes.h:169 shapes.h:170
+msgid "A triangle has three sides."
+msgstr "Троугао има три странице."
+
+#
+#: shapes.h:171 shapes.h:172
+msgid "A pentagon has five sides."
+msgstr "Петоугао има пет страница."
+
+#
+#: shapes.h:173 shapes.h:174
+msgid "A diamond is a square, turned around slightly."
+msgstr "Дијамант је квадрат, мало заокренут."
+
+#
+#: titles.h:37
+msgid "Tools"
+msgstr "Алати"
+
+#
+#: titles.h:38
+msgid "Colors"
+msgstr "Боје"
+
+#
+#: titles.h:39
+msgid "Brushes"
+msgstr "Четке"
+
+#
+#: titles.h:40
+msgid "Stamps"
+msgstr "Печати"
+
+#
+#: titles.h:41 tools.h:45
+msgid "Shapes"
+msgstr "Облици"
+
+#
+#: titles.h:42
+msgid "Letters"
+msgstr "Слова"
+
+#
+#: titles.h:43 tools.h:47
+msgid "Magic"
+msgstr "Магија"
+
+#
+#: tools.h:42
+msgid "Paint"
+msgstr "Бојити"
+
+#
+#: tools.h:43
+msgid "Stamp"
+msgstr "Печат"
+
+#
+#: tools.h:44
+msgid "Lines"
+msgstr "Линије"
+
+#
+#: tools.h:46
+msgid "Text"
+msgstr "Текст"
+
+#
+#: tools.h:48
+msgid "Undo"
+msgstr "Опозови"
+
+#
+#: tools.h:49
+msgid "Redo"
+msgstr "Понови"
+
+#
+#: tools.h:50
+msgid "Eraser"
+msgstr "Брисач"
+
+#
+#: tools.h:51
+msgid "New"
+msgstr "Нови"
+
+#
+#. 'Open' label:
+#: tools.h:52 tuxpaint.c:5541
+msgid "Open"
+msgstr "Отвори"
+
+#
+#: tools.h:53
+msgid "Save"
+msgstr "Сачувај"
+
+#
+#: tools.h:54
+msgid "Print"
+msgstr "Штампај"
+
+#
+#: tools.h:55
+msgid "Quit"
+msgstr "Крај"
+
+#
+#: tools.h:62
+msgid "Pick a color and a brush shape to draw with."
+msgstr "Изабери боју и облик четке за цртање."
+
+#
+#: tools.h:63
+msgid "Pick a picture to stamp around your drawing."
+msgstr "Изабери слику за печатирање по цртежу."
+
+#
+#: tools.h:64
+msgid "Click to start drawing a line. Let go to complete it."
+msgstr "Кликни да би започео линију. Пусти да би је завршио."
+
+#
+#: tools.h:65
+msgid ""
+"Pick a shape. Click to pick the center, drag, then let go when it is the "
+"size you want. Move around to rotate it, and click to draw it."
+msgstr ""
+"Изабери облик. Кликни да изабереш центар; вуци, затим пусти када је жељене "
+"величине. Померај за окретање, те кликни за цртање."
+
+#
+#: tools.h:66
+msgid "Choose a style of text. Click on your drawing and you can start typing."
+msgstr "Изабери изглед текста. Кликни на цртеж и почни да куцаш."
+
+#
+#: tools.h:67
+msgid "Pick a magical effect to use on your drawing!"
+msgstr "Изабери магични ефекат за твој цртеж!"
+
+#
+#. Undo
+#: tools.h:68
+msgid "Undo!"
+msgstr "Опозови!"
+
+#
+#. Redo
+#: tools.h:69
+msgid "Redo!"
+msgstr "Понови!"
+
+#
+#. Eraser
+#: tools.h:70
+msgid "Eraser!"
+msgstr "Брисач!"
+
+#
+#. New
+#: tools.h:71
+msgid "You now have a blank sheet to draw on!"
+msgstr "Имаш сада чисти папир за цртање!"
+
+#
+#. Open
+#: tools.h:72
+msgid "Open…"
+msgstr "Отвори..."
+
+#
+#. Save
+#: tools.h:73
+msgid "Your image has been saved!"
+msgstr "Твоја слика је сачувана!"
+
+#
+#. Print
+#: tools.h:74
+msgid "Printing…"
+msgstr "Штампа се..."
+
+#
+#. Quit
+#: tools.h:75
+msgid "Bye bye!"
+msgstr "Ћао!"
+
+#
+#: tools.h:78
+msgid "Let go of the button to complete the line."
+msgstr "Пусти дугме да би довршио линију."
+
+#
+#: tools.h:79
+msgid "Hold the button to stretch the shape."
+msgstr "Држи дугме да би растезао облик."
+
+#
+#: tools.h:80
+msgid "Move the mouse to rotate the shape. Click to draw it."
+msgstr "Мрдај мишем да би окретао облик. Кликни за цртање."
+
+#
+#: tools.h:81
+msgid "OK then… Let’s keep drawing this one!"
+msgstr "Добро онда... Хајде да наставимо са цртањем!"
+
+#
+#. FIXME: Move elsewhere!!!
+#: tuxpaint.c:817
+msgid "Do you really want to quit?"
+msgstr "Стварно желиш да завршиш?"
+
+#
+#. FIXME: Move elsewhere! Or not?!
+#: tuxpaint.c:818 tuxpaint.c:822 tuxpaint.c:826 tuxpaint.c:840 tuxpaint.c:850
+#: tuxpaint.c:8494 tuxpaint.c:9201
+msgid "Yes"
+msgstr "Да"
+
+#
+#: tuxpaint.c:819 tuxpaint.c:823 tuxpaint.c:827 tuxpaint.c:841 tuxpaint.c:851
+#: tuxpaint.c:8497
+msgid "No"
+msgstr "Не"
+
+#
+#: tuxpaint.c:821
+msgid "If you quit, you’ll lose your picture! Save it?"
+msgstr "Изгубићеш слику ако завршиш! Да се сачува?"
+
+#
+#: tuxpaint.c:825
+msgid "Save your picture first?"
+msgstr "Прво да сачуваш своју слику?"
+
+#
+#: tuxpaint.c:829
+msgid "Can’t open that picture!"
+msgstr "Не могу да отворим ту слику!"
+
+#
+#: tuxpaint.c:830 tuxpaint.c:837 tuxpaint.c:844 tuxpaint.c:847
+msgid "OK"
+msgstr "У реду"
+
+#
+#: tuxpaint.c:832
+msgid "Starting a new picture will erase the current one!"
+msgstr "Започињање нове слике ће избрисати досадашњу!"
+
+#
+#: tuxpaint.c:833
+msgid "That’s OK!"
+msgstr "Добро!"
+
+#
+#: tuxpaint.c:834
+msgid "Never mind!"
+msgstr "Нисам хтео!"
+
+#
+#: tuxpaint.c:836
+msgid "There are no saved files!"
+msgstr "Нема сачуваних датотека!"
+
+#
+#: tuxpaint.c:839
+msgid "Print your picture now?"
+msgstr "Сада штампаш своју слику?"
+
+#
+#: tuxpaint.c:843
+msgid "Your picture has been printed!"
+msgstr "Твоје слика је одштампана!"
+
+#
+#: tuxpaint.c:846
+msgid "You can’t print yet!"
+msgstr "Не можеш још да штампаш!"
+
+#
+#: tuxpaint.c:849
+msgid "Erase this picture?"
+msgstr "Обрисати ову слику?"
+
+#
+#. 'Erase' label:
+#: tuxpaint.c:5546
+msgid "Erase"
+msgstr "Бриши"
+
+#
+#. 'Back' label:
+#: tuxpaint.c:5551
+msgid "Back"
+msgstr "Назад"
+
+#
+#. FIXME: Move elsewhere!!!
+#: tuxpaint.c:9200
+msgid "Save over the older version of this picture?"
+msgstr "Сачувати преко старије верзије ове слике?"
+
+#
+#: tuxpaint.c:9202
+msgid "No, save a new file"
+msgstr "Не, сачувај у нову датотеку"
+
+#
+#: tuxpaint.c:10096
+msgid "Choose the picture you want, then click “Open”."
+msgstr "Изабери слику коју желиш, затим кликни „Отвори“."
+
+#
+#~ msgid "Okay"
+#~ msgstr "Добро"

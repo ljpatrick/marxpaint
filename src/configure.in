@@ -1,0 +1,5 @@
+# fake file, so that intltools work
+
+AM_INIT_AUTOMAKE(tuxpaint, 0.9.14)
+AM_PROG_XML_I18N_TOOLS
+

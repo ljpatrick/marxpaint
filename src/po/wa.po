@@ -1,0 +1,519 @@
+# Translation of tuxpaint into the walloon language.
+# Copyright (C) 2003 THE PACKAGE'S COPYRIGHT HOLDER
+# Pablo Saratxaga <pablo@walon.org>, 2003, 2004.
+msgid ""
+msgstr ""
+"Project-Id-Version: tuxpaint 0.9.14\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2004-06-14 16:30+0200\n"
+"PO-Revision-Date: 2004-03-30 17:24+0200\n"
+"Last-Translator: Pablo Saratxaga <pablo@walon.org>\n"
+"Language-Team: Walloon <linux-wa@walon.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.0.2\n"
+
+#: tuxpaint.desktop.in.h:1
+msgid "Drawing program"
+msgstr "Programe di dessinaedje po ls efants"
+
+#: tuxpaint.desktop.in.h:2
+msgid "Tux Paint"
+msgstr "Tux Paint"
+
+#: colors.h:62
+msgid "Black!"
+msgstr "Noer!"
+
+#: colors.h:63
+msgid "White!"
+msgstr "Blanc!"
+
+#: colors.h:64
+msgid "Red!"
+msgstr "Rodje!"
+
+#: colors.h:65
+msgid "Pink!"
+msgstr "Rôze!"
+
+#: colors.h:66
+msgid "Orange!"
+msgstr "Orandje!"
+
+#: colors.h:67
+msgid "Yellow!"
+msgstr "Djaene!"
+
+#: colors.h:68
+msgid "Lime!"
+msgstr "Djaene-vert!"
+
+#: colors.h:69
+msgid "Green!"
+msgstr "Vert!"
+
+#: colors.h:70
+msgid "Cyan!"
+msgstr "Cian!"
+
+#: colors.h:71
+msgid "Blue!"
+msgstr "Bleu!"
+
+#: colors.h:72
+msgid "Purple!"
+msgstr "Poûrpe!"
+
+#: colors.h:73
+msgid "Fuchsia!"
+msgstr "Fuchia!"
+
+#: colors.h:74
+msgid "Brown!"
+msgstr "Brun!"
+
+#: colors.h:75
+msgid "Gray!"
+msgstr "Gris!"
+
+#: colors.h:76
+msgid "Silver!"
+msgstr "Årdjint!"
+
+#: great.h:20
+msgid "Great!"
+msgstr "Clapant!"
+
+#: great.h:21
+msgid "Cool!"
+msgstr "Oufti k' c' est bea!"
+
+#: great.h:22
+msgid "Keep it up!"
+msgstr "Continouwez insi!"
+
+#: great.h:23
+msgid "Good job!"
+msgstr "Bravo nosse pitit!"
+
+#: magic.h:48
+msgid "Rainbow"
+msgstr "Airdiè"
+
+#: magic.h:49
+msgid "Sparkles"
+msgstr "Sipites"
+
+#: magic.h:51
+msgid "Mirror"
+msgstr "Muroe"
+
+#: magic.h:52
+msgid "Flip"
+msgstr "Cou dzeu"
+
+#: magic.h:54
+msgid "Blur"
+msgstr "Adoûci"
+
+#: magic.h:55
+msgid "Blocks"
+msgstr "Cwårés"
+
+#: magic.h:57
+msgid "Negative"
+msgstr "Negatif"
+
+#: magic.h:58
+msgid "Fade"
+msgstr "Blanki"
+
+#: magic.h:60
+msgid "Chalk"
+msgstr "Croye"
+
+#: magic.h:61
+msgid "Drip"
+msgstr "Gotes"
+
+#: magic.h:63
+msgid "Thick"
+msgstr "Sipès"
+
+#: magic.h:64
+msgid "Thin"
+msgstr "Fén"
+
+#: magic.h:66
+msgid "Fill"
+msgstr "Rimpli"
+
+#: magic.h:73
+msgid "You can draw in rainbow colors!"
+msgstr "Vos ploz dessiner avou les coleurs di l' airdiè!"
+
+#: magic.h:74
+msgid "Click and move to draw sparkles."
+msgstr "Clitchîz et s' bodjîz l' sori po dessiner des spitaedjes."
+
+#: magic.h:76
+msgid "Click to make a mirror image."
+msgstr "Clitchîz po mete l' imådje come dins on muroe."
+
+#: magic.h:77
+msgid "Click to flip the picture upside-down."
+msgstr "Clitchîz po rtourner l' imådje cou å hôt."
+
+#: magic.h:79
+msgid "Click and move the mouse around to blur the picture."
+msgstr "Clitchîz et s' bodjîz l' sori po-z adoûci des bokets d' l' imådje."
+
+#: magic.h:80
+msgid "Click and move the mouse around to make the picture blocky."
+msgstr ""
+"Clitchîz et s' bodjîz l' sori po mete des bokets d' l' imådje e ptits cwårés."
+
+#: magic.h:82
+msgid "Click and move the mouse around to draw a negative."
+msgstr ""
+"Clitchîz et s' bodjîz l' sori po mete des bokets d' l' imådje e negatif."
+
+#: magic.h:83
+msgid "Click and move to fade the colors."
+msgstr "Clitchîz et s' bodjîz l' sori po blanki des bokets d' l' imådje."
+
+#: magic.h:85
+msgid ""
+"Click and move the mouse around to turn the picture into a chalk drawing."
+msgstr ""
+"Clitchîz et s' bodjîz l' sori po mete des bokets d' l' imådje come dessinés "
+"al croye"
+
+#: magic.h:86
+msgid "Click and move the mouse around to make the picture drip."
+msgstr ""
+"Clitchîz et s' bodjîz l' sori po mete des bokets d' l' imådje come moyîs "
+"avou des gotes d' aiwe."
+
+#: magic.h:88
+msgid "Click and move the mouse to thicken the picture."
+msgstr ""
+"Clitchîz et s' bodjîz l' sori po mete des bokets d' l' imådje pus spès."
+
+#: magic.h:89
+msgid "Click and move the mouse to thin the picture."
+msgstr ""
+"Clitchîz et s' bodjîz l' sori po mete des bokets d' l' imådje pus féns."
+
+#: magic.h:91
+msgid "Click in the picture to fill that area with color."
+msgstr "Clitchîz so l' imådje pol rimpli avou l' coleur tchoezeye."
+
+#: shapes.h:141 shapes.h:142
+msgid "Square"
+msgstr "Cwåré"
+
+#: shapes.h:143 shapes.h:144
+msgid "Rectangle"
+msgstr "Rectangue"
+
+#: shapes.h:145 shapes.h:146
+msgid "Circle"
+msgstr "Ceke"
+
+#: shapes.h:147 shapes.h:148 shapes.h:167 shapes.h:168
+msgid "Oval"
+msgstr "Ovale"
+
+#: shapes.h:149 shapes.h:150
+msgid "Triangle"
+msgstr "Triyangue"
+
+#: shapes.h:151 shapes.h:152
+msgid "Pentagon"
+msgstr "Pentagone"
+
+#: shapes.h:153 shapes.h:154
+msgid "Diamond"
+msgstr "Lozindje"
+
+#: shapes.h:161 shapes.h:162
+msgid "A square has four sides, each the same length."
+msgstr "On cwåré a cwate costés, tos del minme grandeu."
+
+#: shapes.h:163 shapes.h:164
+msgid "A rectangle has four sides."
+msgstr "On rectangue a cwate costés"
+
+#: shapes.h:165 shapes.h:166
+msgid "A circle is exactly round."
+msgstr "On ceke est ttafwaitmint rond."
+
+#: shapes.h:169 shapes.h:170
+msgid "A triangle has three sides."
+msgstr "On triyangue a troes costés."
+
+#: shapes.h:171 shapes.h:172
+msgid "A pentagon has five sides."
+msgstr "On pentagone a cénk costés."
+
+#: shapes.h:173 shapes.h:174
+msgid "A diamond is a square, turned around slightly."
+msgstr "On lozindje rishonne ene miete a on cwåré metou sol costé."
+
+#: titles.h:37
+msgid "Tools"
+msgstr "Usteyes"
+
+#: titles.h:38
+msgid "Colors"
+msgstr "Coleurs"
+
+#: titles.h:39
+msgid "Brushes"
+msgstr "Pinceas"
+
+#: titles.h:40
+msgid "Stamps"
+msgstr "Tampons"
+
+#: titles.h:41 tools.h:45
+msgid "Shapes"
+msgstr "Foûmes"
+
+#: titles.h:42
+msgid "Letters"
+msgstr "Letes"
+
+#: titles.h:43 tools.h:47
+msgid "Magic"
+msgstr "Madjike"
+
+#: tools.h:42
+msgid "Paint"
+msgstr "Ponde"
+
+#: tools.h:43
+msgid "Stamp"
+msgstr "Tampon"
+
+#: tools.h:44
+msgid "Lines"
+msgstr "Royes"
+
+#: tools.h:46
+msgid "Text"
+msgstr "Tecse"
+
+#: tools.h:48
+msgid "Undo"
+msgstr "Disfé"
+
+#: tools.h:49
+msgid "Redo"
+msgstr "Rifé"
+
+#: tools.h:50
+msgid "Eraser"
+msgstr "Gome"
+
+#: tools.h:51
+msgid "New"
+msgstr "Novea"
+
+#. 'Open' label:
+#: tools.h:52 tuxpaint.c:5541
+msgid "Open"
+msgstr "Drovi"
+
+#: tools.h:53
+msgid "Save"
+msgstr "Schaper"
+
+#: tools.h:54
+msgid "Print"
+msgstr "Imprimer"
+
+#: tools.h:55
+msgid "Quit"
+msgstr "Cwiter"
+
+#: tools.h:62
+msgid "Pick a color and a brush shape to draw with."
+msgstr "Tchoezixhoz ene coleur ey on pincea et s' kimincîz a dessiner avou."
+
+#: tools.h:63
+msgid "Pick a picture to stamp around your drawing."
+msgstr "Tchoezixhoz ene imådje po-z eployî come tampon."
+
+#: tools.h:64
+msgid "Click to start drawing a line. Let go to complete it."
+msgstr ""
+"Clitchîz po cmincî a fé ene roye. Wårdez l' boton tchôkî, alez la ki l' roye "
+"doet fini, et s' låtchîz l' boton."
+
+#: tools.h:65
+msgid ""
+"Pick a shape. Click to pick the center, drag, then let go when it is the "
+"size you want. Move around to rotate it, and click to draw it."
+msgstr ""
+"Tchoezixhoz ene foûme. Clitchîz on côp pol cinte, et s' saetchîz po l' mete "
+"al grandeu ki vos vloz. Po fini, fijhoz l' tourner avou l' sori."
+
+#: tools.h:66
+msgid "Choose a style of text. Click on your drawing and you can start typing."
+msgstr ""
+"Tchoezixhoz ene sôre di letes pol tecse. Clitchîz sol dessin et vos ploz "
+"cmincî a taper."
+
+#: tools.h:67
+msgid "Pick a magical effect to use on your drawing!"
+msgstr "Tchoezixhoz èn efet madjike a-z apliker å dessin da vosse!"
+
+#. Undo
+#: tools.h:68
+msgid "Undo!"
+msgstr "Disfé!"
+
+#. Redo
+#: tools.h:69
+msgid "Redo!"
+msgstr "Rifé!"
+
+#. Eraser
+#: tools.h:70
+msgid "Eraser!"
+msgstr "Disfacer!"
+
+#. New
+#: tools.h:71
+msgid "You now have a blank sheet to draw on!"
+msgstr "Asteure vos avoz ene blanke foye po dessiner dzeu!"
+
+#. Open
+#: tools.h:72
+msgid "Open…"
+msgstr "Drovi..."
+
+#. Save
+#: tools.h:73
+msgid "Your image has been saved!"
+msgstr "Voste imådje a stî schapêye!"
+
+#. Print
+#: tools.h:74
+msgid "Printing…"
+msgstr "Dj' imprime..."
+
+#. Quit
+#: tools.h:75
+msgid "Bye bye!"
+msgstr "A rvey!"
+
+#: tools.h:78
+msgid "Let go of the button to complete the line."
+msgstr ""
+"Wårdez l' boton tchôkî, alez la ki l' roye doet fini, et s' låtchîz l' boton "
+"po fini l' roye."
+
+#: tools.h:79
+msgid "Hold the button to stretch the shape."
+msgstr "Wårdez l' boton tchôkî po candjî l' grandeu."
+
+#: tools.h:80
+msgid "Move the mouse to rotate the shape. Click to draw it."
+msgstr ""
+"Bodjîz l' sori po fé tourner l' foûme. Clitchîz pol dessiner po do bon."
+
+#: tools.h:81
+msgid "OK then… Let’s keep drawing this one!"
+msgstr "D' acoird... continouwans a dessiner dabôrd!"
+
+#. FIXME: Move elsewhere!!!
+#: tuxpaint.c:817
+msgid "Do you really want to quit?"
+msgstr "Voloz vs moussî foû po do bon?"
+
+#. FIXME: Move elsewhere! Or not?!
+#: tuxpaint.c:818 tuxpaint.c:822 tuxpaint.c:826 tuxpaint.c:840 tuxpaint.c:850
+#: tuxpaint.c:8494 tuxpaint.c:9201
+msgid "Yes"
+msgstr "Oyi"
+
+#: tuxpaint.c:819 tuxpaint.c:823 tuxpaint.c:827 tuxpaint.c:841 tuxpaint.c:851
+#: tuxpaint.c:8497
+msgid "No"
+msgstr "Neni"
+
+#: tuxpaint.c:821
+msgid "If you quit, you’ll lose your picture! Save it?"
+msgstr "Si vos cwitez l' programe vos piedroz l' imådje! El schaper?"
+
+#: tuxpaint.c:825
+msgid "Save your picture first?"
+msgstr "Schaper d' aprume voste imådje?"
+
+#: tuxpaint.c:829
+msgid "Can’t open that picture!"
+msgstr "Dji n' sai drovi ciste imådje la!"
+
+#: tuxpaint.c:830 tuxpaint.c:837 tuxpaint.c:844 tuxpaint.c:847
+msgid "OK"
+msgstr "'l est bon"
+
+#: tuxpaint.c:832
+msgid "Starting a new picture will erase the current one!"
+msgstr "Enonder ene nouve imådje va spotchî l' cisse d' asteure!"
+
+#: tuxpaint.c:833
+msgid "That’s OK!"
+msgstr "Dji vou bén!"
+
+#: tuxpaint.c:834
+msgid "Never mind!"
+msgstr "Rinoncî!"
+
+#: tuxpaint.c:836
+msgid "There are no saved files!"
+msgstr "I gn a nou fitchî di schapé!"
+
+#: tuxpaint.c:839
+msgid "Print your picture now?"
+msgstr "Imprimer voste imådje?"
+
+#: tuxpaint.c:843
+msgid "Your picture has been printed!"
+msgstr "Voste imådje a stî imprimêye!"
+
+#: tuxpaint.c:846
+msgid "You can’t print yet!"
+msgstr "Vos n' poloz nén co imprimer!"
+
+#: tuxpaint.c:849
+msgid "Erase this picture?"
+msgstr "Disfacer ciste imådje chal?"
+
+#. 'Erase' label:
+#: tuxpaint.c:5546
+msgid "Erase"
+msgstr "Disfacer"
+
+#. 'Back' label:
+#: tuxpaint.c:5551
+msgid "Back"
+msgstr "En erî"
+
+#. FIXME: Move elsewhere!!!
+#: tuxpaint.c:9200
+msgid "Save over the older version of this picture?"
+msgstr "Schaper tot spotchant l' viye modêye do dessin?"
+
+#: tuxpaint.c:9202
+msgid "No, save a new file"
+msgstr "Neni, schaper en on novea fitchî"
+
+#: tuxpaint.c:10096
+msgid "Choose the picture you want, then click “Open”."
+msgstr "Tchoezixhoz l' imådje ki vos vloz, poy clitchîz so «Drovi»."

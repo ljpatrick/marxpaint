@@ -490,7 +490,7 @@ http://www.newbreedsoftware.com/tuxpaint/
     Append ".utf8" to the locale code (e.g., "fr.utf8=...")
 
   * Removed stamp descriptions from Japanese translation file
-    (src/messages/ja.po).  (Will be placed as UTF-8 encoded text in next
+    (src/po/ja.po).  (Will be placed as UTF-8 encoded text in next
     Tux Paint stamps package release.)
 
 
@@ -1438,7 +1438,7 @@ http://www.newbreedsoftware.com/tuxpaint/
     Gabriel Gazzan <ggabriel@internet.com.uy>
 
   * Switched from using #define'd strings for translations to using "gettext"
-    and ".po" files (see src/messages/)
+    and ".po" files (see src/po/)
     Fabian Franz <FabianFranz@gmx.de>
     (Thanks to Andreas Best <a_best@web.de> for help getting locales working)
 

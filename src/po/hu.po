@@ -1,0 +1,554 @@
+# Tux Paint hungarian messages
+# Copyright (C) 2002
+# Török Gábor <gabo@linuxmania.hu>, 2002.
+msgid ""
+msgstr ""
+"Project-Id-Version: TuxPaint 0.0.1pre\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2004-06-14 16:30+0200\n"
+"PO-Revision-Date: 2002-10-28 10:37+0200\n"
+"Last-Translator: Török Gábor <gabo@linuxmania.hu>\n"
+"Language-Team: Coders <coders@freemail.hu>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: tuxpaint.desktop.in.h:1
+msgid "Drawing program"
+msgstr ""
+
+#: tuxpaint.desktop.in.h:2
+#, fuzzy
+msgid "Tux Paint"
+msgstr "Festék"
+
+#: colors.h:62
+#, fuzzy
+msgid "Black!"
+msgstr "Fekete"
+
+#: colors.h:63
+#, fuzzy
+msgid "White!"
+msgstr "Fehér"
+
+#: colors.h:64
+#, fuzzy
+msgid "Red!"
+msgstr "Előre!"
+
+#: colors.h:65
+#, fuzzy
+msgid "Pink!"
+msgstr "Rózsaszín"
+
+#: colors.h:66
+#, fuzzy
+msgid "Orange!"
+msgstr "Narancssárga"
+
+#: colors.h:67
+#, fuzzy
+msgid "Yellow!"
+msgstr "Sárga"
+
+#: colors.h:68
+#, fuzzy
+msgid "Lime!"
+msgstr "Vonalak"
+
+#: colors.h:69
+#, fuzzy
+msgid "Green!"
+msgstr "Zöld"
+
+#: colors.h:70
+#, fuzzy
+msgid "Cyan!"
+msgstr "Türkisz"
+
+#: colors.h:71
+#, fuzzy
+msgid "Blue!"
+msgstr "Kék"
+
+#: colors.h:72
+#, fuzzy
+msgid "Purple!"
+msgstr "Lila"
+
+#: colors.h:73
+msgid "Fuchsia!"
+msgstr ""
+
+#: colors.h:74
+#, fuzzy
+msgid "Brown!"
+msgstr "Barna"
+
+#: colors.h:75
+#, fuzzy
+msgid "Gray!"
+msgstr "Klassz!"
+
+#: colors.h:76
+msgid "Silver!"
+msgstr ""
+
+#: great.h:20
+msgid "Great!"
+msgstr "Klassz!"
+
+#: great.h:21
+msgid "Cool!"
+msgstr ""
+
+#: great.h:22
+msgid "Keep it up!"
+msgstr ""
+
+#: great.h:23
+msgid "Good job!"
+msgstr ""
+
+#: magic.h:48
+msgid "Rainbow"
+msgstr "Szívárvány"
+
+#: magic.h:49
+msgid "Sparkles"
+msgstr "Festékszóró"
+
+#: magic.h:51
+msgid "Mirror"
+msgstr "Tükör"
+
+#: magic.h:52
+msgid "Flip"
+msgstr "Megfordít"
+
+#: magic.h:54
+msgid "Blur"
+msgstr "Maszat"
+
+#: magic.h:55
+msgid "Blocks"
+msgstr "Kockák"
+
+#: magic.h:57
+msgid "Negative"
+msgstr "Színcsere"
+
+#: magic.h:58
+msgid "Fade"
+msgstr "Halvány"
+
+#: magic.h:60
+msgid "Chalk"
+msgstr "Kréta"
+
+#: magic.h:61
+msgid "Drip"
+msgstr "Csepp"
+
+#: magic.h:63
+msgid "Thick"
+msgstr "Vastag"
+
+#: magic.h:64
+msgid "Thin"
+msgstr "Vékony"
+
+#: magic.h:66
+msgid "Fill"
+msgstr ""
+
+#: magic.h:73
+msgid "You can draw in rainbow colors!"
+msgstr "Szívárványt is rajzolhatsz!"
+
+#: magic.h:74
+#, fuzzy
+msgid "Click and move to draw sparkles."
+msgstr "Kattints oda a rajzodon, ahova festeni szeretnél!"
+
+#: magic.h:76
+#, fuzzy
+msgid "Click to make a mirror image."
+msgstr "Kattints a rajzlapra, hogy tükrözzük a rajzodat!"
+
+#: magic.h:77
+#, fuzzy
+msgid "Click to flip the picture upside-down."
+msgstr "Kattints a rajzlapra, hogy fejjel-lefelé fordítsuk a rajzodat!"
+
+#: magic.h:79
+#, fuzzy
+msgid "Click and move the mouse around to blur the picture."
+msgstr "Kattints oda a rajzodon, ahol maszatolni szeretnél!"
+
+#: magic.h:80
+#, fuzzy
+msgid "Click and move the mouse around to make the picture blocky."
+msgstr "Kattins oda a rajzodon, ahova kockákat szeretnél rajzolni!"
+
+#: magic.h:82
+#, fuzzy
+msgid "Click and move the mouse around to draw a negative."
+msgstr "Kattints oda a rajzodon, ahol fel szeretnéd cserélni a színeket!"
+
+#: magic.h:83
+msgid "Click and move to fade the colors."
+msgstr "Kattints oda a rajzodon, ahol fakítani szeretnéd a színeket!"
+
+#: magic.h:85
+msgid ""
+"Click and move the mouse around to turn the picture into a chalk drawing."
+msgstr "Kattints oda a rajzodon, ahol krétával szeretnél rajzolni!"
+
+#: magic.h:86
+#, fuzzy
+msgid "Click and move the mouse around to make the picture drip."
+msgstr "Kattints oda a rajzodon, ahova festéket szeretnél csepegtetni!"
+
+#: magic.h:88
+#, fuzzy
+msgid "Click and move the mouse to thicken the picture."
+msgstr "Kattints arra a vonalra, amit vastagítani szeretnél!"
+
+#: magic.h:89
+#, fuzzy
+msgid "Click and move the mouse to thin the picture."
+msgstr "Kattints arra a vonalra, amit vékonyítani szeretnél!"
+
+#: magic.h:91
+#, fuzzy
+msgid "Click in the picture to fill that area with color."
+msgstr "Kattints oda a rajzodon, ahol fakítani szeretnéd a színeket!"
+
+#: shapes.h:141 shapes.h:142
+msgid "Square"
+msgstr "Négyzet"
+
+#: shapes.h:143 shapes.h:144
+msgid "Rectangle"
+msgstr "Téglalap"
+
+#: shapes.h:145 shapes.h:146
+msgid "Circle"
+msgstr "Kör"
+
+#: shapes.h:147 shapes.h:148 shapes.h:167 shapes.h:168
+msgid "Oval"
+msgstr "Ovális"
+
+#: shapes.h:149 shapes.h:150
+msgid "Triangle"
+msgstr "Háromszög"
+
+#: shapes.h:151 shapes.h:152
+msgid "Pentagon"
+msgstr "Ötszög"
+
+#: shapes.h:153 shapes.h:154
+msgid "Diamond"
+msgstr "Rombusz"
+
+#: shapes.h:161 shapes.h:162
+msgid "A square has four sides, each the same length."
+msgstr "A négyzetnek négy egyenlő hosszú oldala van."
+
+#: shapes.h:163 shapes.h:164
+msgid "A rectangle has four sides."
+msgstr "Egy téglalapnak négy oldala van."
+
+#: shapes.h:165 shapes.h:166
+msgid "A circle is exactly round."
+msgstr "A kör kerek."
+
+#: shapes.h:169 shapes.h:170
+msgid "A triangle has three sides."
+msgstr "A háromszögnek három oldala van."
+
+#: shapes.h:171 shapes.h:172
+msgid "A pentagon has five sides."
+msgstr "Az ötszögnek öt oldala van."
+
+#: shapes.h:173 shapes.h:174
+msgid "A diamond is a square, turned around slightly."
+msgstr "A rombusz egy olyan négyszög, amelynek egyenlő hosszú oldalai vannak."
+
+#: titles.h:37
+msgid "Tools"
+msgstr ""
+
+#: titles.h:38
+msgid "Colors"
+msgstr ""
+
+#: titles.h:39
+msgid "Brushes"
+msgstr ""
+
+#: titles.h:40
+#, fuzzy
+msgid "Stamps"
+msgstr "Matrica"
+
+#: titles.h:41 tools.h:45
+msgid "Shapes"
+msgstr "Síkidomok"
+
+#: titles.h:42
+msgid "Letters"
+msgstr ""
+
+#: titles.h:43 tools.h:47
+msgid "Magic"
+msgstr "Varázs"
+
+#: tools.h:42
+msgid "Paint"
+msgstr "Festék"
+
+#: tools.h:43
+msgid "Stamp"
+msgstr "Matrica"
+
+#: tools.h:44
+msgid "Lines"
+msgstr "Vonalak"
+
+#: tools.h:46
+msgid "Text"
+msgstr "Szöveg"
+
+#: tools.h:48
+msgid "Undo"
+msgstr "Vissza"
+
+#: tools.h:49
+msgid "Redo"
+msgstr "Előre"
+
+#: tools.h:50
+msgid "Eraser"
+msgstr "Radír"
+
+#: tools.h:51
+msgid "New"
+msgstr "Új"
+
+#. 'Open' label:
+#: tools.h:52 tuxpaint.c:5541
+msgid "Open"
+msgstr "Megnyitás"
+
+#: tools.h:53
+msgid "Save"
+msgstr "Mentés"
+
+#: tools.h:54
+msgid "Print"
+msgstr "Nyomtatás"
+
+#: tools.h:55
+msgid "Quit"
+msgstr "Kilépés"
+
+#: tools.h:62
+msgid "Pick a color and a brush shape to draw with."
+msgstr "Válassz ki egy színt és egy ecsetet, amivel rajzolni fogsz!"
+
+#: tools.h:63
+msgid "Pick a picture to stamp around your drawing."
+msgstr "Válassz ki egy képet, amit ráragasztasz a rajzodra!"
+
+#: tools.h:64
+#, fuzzy
+msgid "Click to start drawing a line. Let go to complete it."
+msgstr "Kattints oda a rajzodon, ahova a vonalat szeretnéd rajzolni!"
+
+#: tools.h:65
+msgid ""
+"Pick a shape. Click to pick the center, drag, then let go when it is the "
+"size you want. Move around to rotate it, and click to draw it."
+msgstr ""
+
+#: tools.h:66
+msgid "Choose a style of text. Click on your drawing and you can start typing."
+msgstr ""
+"Válassz egy betűtípust! Kattints oda a rajzodon, ahol el szeretnéd kezdeni "
+"írni a szöveget!"
+
+#: tools.h:67
+msgid "Pick a magical effect to use on your drawing!"
+msgstr "Válassz egy varázslatot, amit kipróbálsz a rajzodon!"
+
+#. Undo
+#: tools.h:68
+msgid "Undo!"
+msgstr "Vissza!"
+
+#. Redo
+#: tools.h:69
+msgid "Redo!"
+msgstr "Előre!"
+
+#. Eraser
+#: tools.h:70
+msgid "Eraser!"
+msgstr "Radír!"
+
+#. New
+#: tools.h:71
+msgid "You now have a blank sheet to draw on!"
+msgstr "Kezdhetsz rajzolni!"
+
+#. Open
+#: tools.h:72
+msgid "Open…"
+msgstr "Megnyitás..."
+
+#. Save
+#: tools.h:73
+msgid "Your image has been saved!"
+msgstr "Elmentettük a rajzodat!"
+
+#. Print
+#: tools.h:74
+msgid "Printing…"
+msgstr "Nyomtatás..."
+
+#. Quit
+#: tools.h:75
+msgid "Bye bye!"
+msgstr "Szia!"
+
+#: tools.h:78
+msgid "Let go of the button to complete the line."
+msgstr "Engedd fel a gombot a vonal befejezéséhez!."
+
+#: tools.h:79
+msgid "Hold the button to stretch the shape."
+msgstr ""
+"Tartsd nyomva az egér gombját, hogy változtatni tudd az alakzat méretét!"
+
+#: tools.h:80
+msgid "Move the mouse to rotate the shape. Click to draw it."
+msgstr "Mozgasd az egeret, hogy forgatni tudd a síkidomot!"
+
+#: tools.h:81
+msgid "OK then… Let’s keep drawing this one!"
+msgstr "Rendben... Akkor folytassuk ezt a rajzot!"
+
+#. FIXME: Move elsewhere!!!
+#: tuxpaint.c:817
+msgid "Do you really want to quit?"
+msgstr "Biztos ki szeretnél lépni?"
+
+#. FIXME: Move elsewhere! Or not?!
+#: tuxpaint.c:818 tuxpaint.c:822 tuxpaint.c:826 tuxpaint.c:840 tuxpaint.c:850
+#: tuxpaint.c:8494 tuxpaint.c:9201
+msgid "Yes"
+msgstr "Igen"
+
+#: tuxpaint.c:819 tuxpaint.c:823 tuxpaint.c:827 tuxpaint.c:841 tuxpaint.c:851
+#: tuxpaint.c:8497
+msgid "No"
+msgstr "Nem"
+
+#: tuxpaint.c:821
+msgid "If you quit, you’ll lose your picture! Save it?"
+msgstr "El fog veszni a rajzod, ha kilépsz. Elmentsük?"
+
+#: tuxpaint.c:825
+msgid "Save your picture first?"
+msgstr "Elmentsük előbb a rajzod?"
+
+#: tuxpaint.c:829
+#, fuzzy
+msgid "Can’t open that picture!"
+msgstr "Biztos kitörlöd a rajzodat?"
+
+#: tuxpaint.c:830 tuxpaint.c:837 tuxpaint.c:844 tuxpaint.c:847
+msgid "OK"
+msgstr ""
+
+#: tuxpaint.c:832
+msgid "Starting a new picture will erase the current one!"
+msgstr "El fog veszni a régi rajzod, ha újat rajzolsz!"
+
+#: tuxpaint.c:833
+#, fuzzy
+msgid "That’s OK!"
+msgstr "Rendben"
+
+#: tuxpaint.c:834
+#, fuzzy
+msgid "Never mind!"
+msgstr "Mégsem"
+
+#: tuxpaint.c:836
+msgid "There are no saved files!"
+msgstr "Nincs elmentett állomány!"
+
+#: tuxpaint.c:839
+#, fuzzy
+msgid "Print your picture now?"
+msgstr "Elmentsük előbb a rajzod?"
+
+#: tuxpaint.c:843
+#, fuzzy
+msgid "Your picture has been printed!"
+msgstr "Elmentettük a rajzodat!"
+
+#: tuxpaint.c:846
+msgid "You can’t print yet!"
+msgstr ""
+
+#: tuxpaint.c:849
+msgid "Erase this picture?"
+msgstr "Biztos kitörlöd a rajzodat?"
+
+#. 'Erase' label:
+#: tuxpaint.c:5546
+#, fuzzy
+msgid "Erase"
+msgstr "Radír"
+
+#. 'Back' label:
+#: tuxpaint.c:5551
+#, fuzzy
+msgid "Back"
+msgstr "Fekete"
+
+#. FIXME: Move elsewhere!!!
+#: tuxpaint.c:9200
+#, fuzzy
+msgid "Save over the older version of this picture?"
+msgstr "Kicseréled az új rajzodat a régivel?"
+
+#: tuxpaint.c:9202
+msgid "No, save a new file"
+msgstr "Nem, inkább mentsük el más néven"
+
+#: tuxpaint.c:10096
+msgid "Choose the picture you want, then click “Open”."
+msgstr ""
+
+#~ msgid "Okay"
+#~ msgstr "Oké"
+
+#~ msgid "Red"
+#~ msgstr "Piros"
+
+#~ msgid "Grey"
+#~ msgstr "Szürke"
+
+#~ msgid ""
+#~ "Pick a shape to draw.  Click once to pick the center of the shape, click "
+#~ "again to draw it."
+#~ msgstr ""
+#~ "Válassz ki egy síkidomot!  Kattints oda a rajzodon, ahova a síkidom "
+#~ "középponját szeretnéd helyezni!"

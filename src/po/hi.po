@@ -1,0 +1,506 @@
+# TuxPaint <LANGUAGE> translation file
+# Copyright (C) 2004 Bill Kendrick
+# This file is distributed under the same license as the TuxPaint package.
+# Ankit Malik <greatestankit@yahoo.co.in>, 2004.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: tuxpaint 0.9.14\n"
+"Report-Msgid-Bugs-To: \n"
+"Last-Translator: Ankit Malik <greatestankit@yahoo.co.in>\n"
+"Language-Team: Hindi\n"
+"POT-Creation-Date: 2004-06-14 16:30+0200\n"
+"PO-Revision-Date: 2004-05-26 08:44+0100\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: tuxpaint.desktop.in.h:1
+msgid "Drawing program"
+msgstr ""
+
+#: tuxpaint.desktop.in.h:2
+#, fuzzy
+msgid "Tux Paint"
+msgstr "rMga"
+
+#: colors.h:62
+msgid "Black!"
+msgstr "kalaa"
+
+#: colors.h:63
+msgid "White!"
+msgstr "saFod"
+
+#: colors.h:64
+msgid "Red!"
+msgstr "laala"
+
+#: colors.h:65
+msgid "Pink!"
+msgstr "gaulaabaI"
+
+#: colors.h:66
+msgid "Orange!"
+msgstr "santra"
+
+#: colors.h:67
+msgid "Yellow!"
+msgstr "PaIlaa"
+
+#: colors.h:68
+msgid "Lime!"
+msgstr "naIMbaU"
+
+#: colors.h:69
+msgid "Green!"
+msgstr "hra"
+
+#: colors.h:70
+msgid "Cyan!"
+msgstr "naIlaa 1"
+
+#: colors.h:71
+msgid "Blue!"
+msgstr "naIlaa 2"
+
+#: colors.h:72
+msgid "Purple!"
+msgstr "prpla"
+
+#: colors.h:73
+msgid "Fuchsia!"
+msgstr "FucsaIa"
+
+#: colors.h:74
+msgid "Brown!"
+msgstr "BaUra"
+
+#: colors.h:75
+msgid "Gray!"
+msgstr "gro"
+
+#: colors.h:76
+msgid "Silver!"
+msgstr "caaMdI"
+
+#: great.h:20
+msgid "Great!"
+msgstr "SaabaaSa"
+
+#: great.h:21
+msgid "Cool!"
+msgstr "AcCa"
+
+#: great.h:22
+msgid "Keep it up!"
+msgstr "vaah"
+
+#: great.h:23
+msgid "Good job!"
+msgstr "svacC kama hO"
+
+#: magic.h:48
+msgid "Rainbow"
+msgstr "satrMgaI"
+
+#: magic.h:49
+msgid "Sparkles"
+msgstr "iglaTrsa"
+
+#: magic.h:51
+msgid "Mirror"
+msgstr "SaISaa"
+
+#: magic.h:52
+msgid "Flip"
+msgstr "}lTa"
+
+#: magic.h:54
+msgid "Blur"
+msgstr "QauMQlaa"
+
+#: magic.h:55
+msgid "Blocks"
+msgstr "blaa@sa"
+
+#: magic.h:57
+msgid "Negative"
+msgstr "]lTo rMga"
+
+#: magic.h:58
+msgid "Fade"
+msgstr "FoD"
+
+#: magic.h:60
+msgid "Chalk"
+msgstr "caak"
+
+#: magic.h:61
+msgid "Drip"
+msgstr "igarta huAa"
+
+#: magic.h:63
+msgid "Thick"
+msgstr "maaoTa"
+
+#: magic.h:64
+msgid "Thin"
+msgstr "dubalaa"
+
+#: magic.h:66
+msgid "Fill"
+msgstr "Barao"
+
+#: magic.h:73
+msgid "You can draw in rainbow colors!"
+msgstr "satrMgaI kama krao"
+
+#: magic.h:74
+msgid "Click and move to draw sparkles."
+msgstr "iglaTrsa krao"
+
+#: magic.h:76
+msgid "Click to make a mirror image."
+msgstr "SaISao mao doKao"
+
+#: magic.h:77
+msgid "Click to flip the picture upside-down."
+msgstr "]lTa krao"
+
+#: magic.h:79
+msgid "Click and move the mouse around to blur the picture."
+msgstr ""
+
+#: magic.h:80
+msgid "Click and move the mouse around to make the picture blocky."
+msgstr "blaaksa krao."
+
+#: magic.h:82
+msgid "Click and move the mouse around to draw a negative."
+msgstr "rMga ]lTo krao"
+
+#: magic.h:83
+msgid "Click and move to fade the colors."
+msgstr "foD krao"
+
+#: magic.h:85
+msgid ""
+"Click and move the mouse around to turn the picture into a chalk drawing."
+msgstr "caak krao."
+
+#: magic.h:86
+msgid "Click and move the mouse around to make the picture drip."
+msgstr "iD/p krao"
+
+#: magic.h:88
+msgid "Click and move the mouse to thicken the picture."
+msgstr "maaoTa krao"
+
+#: magic.h:89
+msgid "Click and move the mouse to thin the picture."
+msgstr "ptlaa krao"
+
+#: magic.h:91
+msgid "Click in the picture to fill that area with color."
+msgstr "rMga Barao"
+
+#: shapes.h:141 shapes.h:142
+msgid "Square"
+msgstr "caaokar 1"
+
+#: shapes.h:143 shapes.h:144
+msgid "Rectangle"
+msgstr "caaokar 2"
+
+#: shapes.h:145 shapes.h:146
+msgid "Circle"
+msgstr "gaaola 1"
+
+#: shapes.h:147 shapes.h:148 shapes.h:167 shapes.h:168
+msgid "Oval"
+msgstr "gaaola 2"
+
+#: shapes.h:149 shapes.h:150
+msgid "Triangle"
+msgstr "i~kaaona"
+
+#: shapes.h:151 shapes.h:152
+msgid "Pentagon"
+msgstr "poMNTagana"
+
+#: shapes.h:153 shapes.h:154
+msgid "Diamond"
+msgstr "DaemND"
+
+#: shapes.h:161 shapes.h:162
+msgid "A square has four sides, each the same length."
+msgstr "caaokar 1 kI caar roKae^M barabar haotI hO ."
+
+#: shapes.h:163 shapes.h:164
+msgid "A rectangle has four sides."
+msgstr "caaokar 2 kI caar roKae^M  haotI hO ."
+
+#: shapes.h:165 shapes.h:166
+msgid "A circle is exactly round."
+msgstr "yah gaaolaa haota hO"
+
+#: shapes.h:169 shapes.h:170
+msgid "A triangle has three sides."
+msgstr "yah i~kaaoNa hO"
+
+#: shapes.h:171 shapes.h:172
+msgid "A pentagon has five sides."
+msgstr "yah poNTagaNa hO"
+
+#: shapes.h:173 shapes.h:174
+msgid "A diamond is a square, turned around slightly."
+msgstr "yah DaemND hO"
+
+#: titles.h:37
+msgid "Tools"
+msgstr "AaOjaar"
+
+#: titles.h:38
+msgid "Colors"
+msgstr "rMga"
+
+#: titles.h:39
+msgid "Brushes"
+msgstr "barSa"
+
+#: titles.h:40
+msgid "Stamps"
+msgstr "sTa^mp"
+
+#: titles.h:41 tools.h:45
+msgid "Shapes"
+msgstr "Aakar"
+
+#: titles.h:42
+msgid "Letters"
+msgstr "A@Sar"
+
+#: titles.h:43 tools.h:47
+msgid "Magic"
+msgstr "jaadU"
+
+#: tools.h:42
+msgid "Paint"
+msgstr "rMga"
+
+#: tools.h:43
+msgid "Stamp"
+msgstr "sTa^mp"
+
+#: tools.h:44
+msgid "Lines"
+msgstr "roKae^M"
+
+#: tools.h:46
+msgid "Text"
+msgstr "ilaKnaa"
+
+#: tools.h:48
+msgid "Undo"
+msgstr "AnDU"
+
+#: tools.h:49
+msgid "Redo"
+msgstr "rIDU"
+
+#: tools.h:50
+msgid "Eraser"
+msgstr "rbar"
+
+#: tools.h:51
+msgid "New"
+msgstr "nayaa kama"
+
+#. 'Open' label:
+#: tools.h:52 tuxpaint.c:5541
+msgid "Open"
+msgstr "Kaolaao"
+
+#: tools.h:53
+msgid "Save"
+msgstr "saova"
+
+#: tools.h:54
+msgid "Print"
+msgstr "ipRMT"
+
+#: tools.h:55
+msgid "Quit"
+msgstr "baMd krao"
+
+#: tools.h:62
+msgid "Pick a color and a brush shape to draw with."
+msgstr "rMga AaOr bruSa ]zaAao."
+
+#: tools.h:63
+msgid "Pick a picture to stamp around your drawing."
+msgstr "sTamp ko ilae klaa ]zaAao"
+
+#: tools.h:64
+msgid "Click to start drawing a line. Let go to complete it."
+msgstr "roKa banaaAao"
+
+#: tools.h:65
+msgid ""
+"Pick a shape. Click to pick the center, drag, then let go when it is the "
+"size you want. Move around to rotate it, and click to draw it."
+msgstr "Aakarao ko ilae AaOjaar."
+
+#: tools.h:66
+msgid "Choose a style of text. Click on your drawing and you can start typing."
+msgstr "ilaKnao ko ilae ZMga caunaao."
+
+#: tools.h:67
+msgid "Pick a magical effect to use on your drawing!"
+msgstr "jaadU ka AaOjaar caunaao"
+
+#. Undo
+#: tools.h:68
+msgid "Undo!"
+msgstr "AnDU"
+
+#. Redo
+#: tools.h:69
+msgid "Redo!"
+msgstr "rIDU"
+
+#. Eraser
+#: tools.h:70
+msgid "Eraser!"
+msgstr "rbar"
+
+#. New
+#: tools.h:71
+msgid "You now have a blank sheet to draw on!"
+msgstr "Aapko pasa kama ko ilae KalaI pRYT hO"
+
+#. Open
+#: tools.h:72
+msgid "Open…"
+msgstr "Kalaao"
+
+#. Save
+#: tools.h:73
+msgid "Your image has been saved!"
+msgstr "Aapka kama saova hao gayaa hO"
+
+#. Print
+#: tools.h:74
+msgid "Printing…"
+msgstr "PaRinTMga …"
+
+#. Quit
+#: tools.h:75
+msgid "Bye bye!"
+msgstr "AcCa ifr imalaoMgao"
+
+#: tools.h:78
+msgid "Let go of the button to complete the line."
+msgstr "pUrI roKa banaanao ko ilae KIcaaoM"
+
+#: tools.h:79
+msgid "Hold the button to stretch the shape."
+msgstr "Aakar kao baDa krnao ko ilae KIcaaoM"
+
+#: tools.h:80
+msgid "Move the mouse to rotate the shape. Click to draw it."
+msgstr "Aakar kao Gaumaanao ko ilae GaumaaAao"
+
+#: tools.h:81
+msgid "OK then… Let’s keep drawing this one!"
+msgstr "calaao kama kao jaaraI rKto hbk1O"
+
+#. FIXME: Move elsewhere!!!
+#: tuxpaint.c:817
+msgid "Do you really want to quit?"
+msgstr "@yaa Aap sahI mao T@sapoMT kao baMd krnaa caahto hO ?"
+
+#. FIXME: Move elsewhere! Or not?!
+#: tuxpaint.c:818 tuxpaint.c:822 tuxpaint.c:826 tuxpaint.c:840 tuxpaint.c:850
+#: tuxpaint.c:8494 tuxpaint.c:9201
+msgid "Yes"
+msgstr "ha^M"
+
+#: tuxpaint.c:819 tuxpaint.c:823 tuxpaint.c:827 tuxpaint.c:841 tuxpaint.c:851
+#: tuxpaint.c:8497
+msgid "No"
+msgstr "nahIM"
+
+#: tuxpaint.c:821
+msgid "If you quit, you’ll lose your picture! Save it?"
+msgstr ""
+"Agar Aap jaa rho tao Aapka kama naYT hao jaaegaa, @yaa Aap caahto hO ik hma "
+"Aapka kama saova kro ?"
+
+#: tuxpaint.c:825
+msgid "Save your picture first?"
+msgstr "kyaa phlao kama kao saova kro ?"
+
+#: tuxpaint.c:829
+msgid "Can’t open that picture!"
+msgstr "Kaolanao maoM Asamaqa- !"
+
+#: tuxpaint.c:830 tuxpaint.c:837 tuxpaint.c:844 tuxpaint.c:847
+msgid "OK"
+msgstr "ha^MM"
+
+#: tuxpaint.c:832
+msgid "Starting a new picture will erase the current one!"
+msgstr "nayaa kama SauRrU krnao sao puranaa kama naYT hao jaaegaa"
+
+#: tuxpaint.c:833
+msgid "That’s OK!"
+msgstr "zIk hO"
+
+#: tuxpaint.c:834
+msgid "Never mind!"
+msgstr "jaanao dao"
+
+#: tuxpaint.c:836
+msgid "There are no saved files!"
+msgstr "yaha^M tao kuC BaI nahIM hO"
+
+#: tuxpaint.c:839
+msgid "Print your picture now?"
+msgstr "iPrnT krU @yaa"
+
+#: tuxpaint.c:843
+msgid "Your picture has been printed!"
+msgstr "iPrnT hao gayaI"
+
+#: tuxpaint.c:846
+msgid "You can’t print yet!"
+msgstr "ABaI iPrnT nahIM kr sakto"
+
+#: tuxpaint.c:849
+msgid "Erase this picture?"
+msgstr "naYT k$ @yaa ?"
+
+#. 'Erase' label:
+#: tuxpaint.c:5546
+msgid "Erase"
+msgstr "naYT kr"
+
+#. 'Back' label:
+#: tuxpaint.c:5551
+msgid "Back"
+msgstr "pICo"
+
+#. FIXME: Move elsewhere!!!
+#: tuxpaint.c:9200
+msgid "Save over the older version of this picture?"
+msgstr "puranao kama pr ilaKao"
+
+#: tuxpaint.c:9202
+msgid "No, save a new file"
+msgstr "nayaa kama banaaAao"
+
+#: tuxpaint.c:10096
+msgid "Choose the picture you want, then click “Open”."
+msgstr "kama kao cauna kr 'Kaolaao'."
