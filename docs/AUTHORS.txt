@@ -7,7 +7,7 @@ bill@newbreedsoftware.com
 http://www.newbreedsoftware.com/tuxpaint/
 
 
-June 17, 2002 - April 19, 2004
+June 17, 2002 - April 23, 2004
 
 
 * Design and Coding:
@@ -198,6 +198,9 @@ June 17, 2002 - April 19, 2004
 
   * Walloon
     Pablo Saratxaga <pablo@walon.org>
+
+  * Welsh
+    Kevin Donnelly <kevin@dotmon.com>
     
 
 * Ports and Packaging

@@ -21,12 +21,12 @@
   along with this program; if not, write to the Free Software
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   
-  June 14, 2002 - April 17, 2004
+  June 14, 2002 - April 23, 2004
 */
 
 
 #define VER_VERSION     "0.9.14"
-#define VER_DATE        "2004.04.17"
+#define VER_DATE        "2004.04.23"
 
 
 /* #define DEBUG */
@@ -290,6 +290,7 @@ enum {
   LANG_BR,     /* Breton */
   LANG_CA,     /* Catalan */
   LANG_CS,     /* Czech */
+  LANG_CY,     /* Welsh */
   LANG_DA,     /* Danish */
   LANG_DE,     /* German */
   LANG_EL,     /* Greek */
@@ -333,6 +334,7 @@ const char * lang_prefixes[NUM_LANGS] = {
   "br",
   "ca",
   "cs",
+  "cy",
   "da",
   "de",
   "el",
@@ -3829,6 +3831,7 @@ void show_lang_usage(FILE * f, char * prg)
 /* tr */     "  turkish\n"
 /* vi */     "  vietnamese\n"
 /* wa */     "  walloon      walon\n"
+/* cy */     "  welsh        cymraeg\n"
 	  "\n",
 	  prg);
 }
@@ -3851,12 +3854,12 @@ void show_locale_usage(FILE * f, char * prg)
 	  "  nb_NO   (Bokmal)\n"
 	  "  pt_BR   (Brazilian    Brazilian Portuguese   Portugues Brazilian)\n"
 	  "  br_FR   (Breton       Brezhoneg)\n"
-	  "  en_GN   (British      British English)\n"
+	  "  en_GB   (British      British English)\n"
 	  "  ca_ES   (Catalan      Catala)\n"
 	  "  zh_CN   (Chinese)\n"
 	  "  cs_CZ   (Czech        Cesky)\n"
 	  "  da_DK   (Danish       Dansk)\n"
-	  "          (Dutch)\n"
+	  "  nl_NL   (Dutch)\n"
 	  "  fi_FI   (Finnish      Suomi)\n"
 	  "  fr_FR   (French       Francais)\n"
 	  "  de_DE   (German       Deutsch)\n"
@@ -3883,6 +3886,7 @@ void show_locale_usage(FILE * f, char * prg)
 	  "  tr_TR   (Turkish)\n"
 	  "  vi_VN   (Vietnamese)\n"
 	  "  wa_BE   (Walloon)\n"
+	  "  cy_GB   (Welsh        Cymraeg)\n"
 	  "\n",
 	  prg);
 }
@@ -4494,6 +4498,12 @@ void setup(int argc, char * argv[])
 	{
 	  putenv("LANG=br_FR");
 	  putenv("LC_ALL=br_FR");
+	}
+      else if (strcmp(langstr, "welsh") == 0 ||
+	       strcmp(langstr, "cymraeg") == 0)
+	{
+	  putenv("LANG=cy_GB");
+	  putenv("LC_ALL=cy_GB");
 	}
       else if (strcmp(langstr, "bokmal") == 0)
 	{

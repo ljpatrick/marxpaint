@@ -1,0 +1,483 @@
+# translation of tuxpaint-0.9.14.po to Cymraeg
+# TuxPaint <LANGUAGE> translation file
+# Copyright (C)2004 Bill Kendrick
+# This file is distributed under the same license as the TuxPaint package.
+# KD at KGyfieithu <kyfieithu@dotmon.com>, 2004.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: tuxpaint-0.9.14\n"
+"Report-Msgid-Bugs-To: tuxpaint-i18n@tux4kids.net\n"
+"POT-Creation-Date: 2004-03-22 11:23-0800\n"
+"PO-Revision-Date: 2004-04-22 11:52+0100\n"
+"Last-Translator: KD at KGyfieithu <kyfieithu@dotmon.com>\n"
+"Language-Team: Cymraeg <cy@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.2\n"
+
+#: tuxpaint.c:801
+msgid "Do you really want to quit?"
+msgstr "Wyt ti wir eisiau terfynu?"
+
+#: tuxpaint.c:802 tuxpaint.c:806 tuxpaint.c:810 tuxpaint.c:824 tuxpaint.c:834
+#: tuxpaint.c:8386 tuxpaint.c:9093
+msgid "Yes"
+msgstr "Ydw"
+
+#: tuxpaint.c:803 tuxpaint.c:807 tuxpaint.c:811 tuxpaint.c:825 tuxpaint.c:835
+#: tuxpaint.c:8389
+msgid "No"
+msgstr "Nac ydw"
+
+#: tuxpaint.c:805
+msgid "If you quit, you'll lose your picture! Save it?"
+msgstr "Os wyt am derfynu, mi fyddi di'n colli dy lun!  Wyt eisiau ei gadw?"
+
+#: tuxpaint.c:809
+msgid "Save your picture first?"
+msgstr "Cadw dy lun yn gyntaf?"
+
+#: tuxpaint.c:813
+msgid "Can't open that picture!"
+msgstr "Methu agor y llun yna!"
+
+#: tuxpaint.c:814 tuxpaint.c:821 tuxpaint.c:828 tuxpaint.c:831
+msgid "OK"
+msgstr "Iawn"
+
+#: tuxpaint.c:816
+msgid "Starting a new picture will erase the current one!"
+msgstr "Bydd dechrau llun newydd yn dileu'r un cyfredol!"
+
+#: tuxpaint.c:817
+msgid "That's OK!"
+msgstr "Dyna iawn!"
+
+#: tuxpaint.c:818
+msgid "Never mind!"
+msgstr "Dim bwys!"
+
+#: tuxpaint.c:820
+msgid "There are no saved files!"
+msgstr "Nid oes ffeiliau wedi'u cadw!"
+
+#: tuxpaint.c:823
+msgid "Print your picture now?"
+msgstr "Argraffu dy lun rwan?"
+
+#: tuxpaint.c:827
+msgid "Your picture has been printed!"
+msgstr "Mae dy lun wedi cael ei argraffu!"
+
+#: tuxpaint.c:830
+msgid "You can't print yet!"
+msgstr "Rwyt yn methu argraffu eto!"
+
+#: tuxpaint.c:833
+msgid "Erase this picture?"
+msgstr "Dileu'r llun yma?"
+
+#: tuxpaint.c:5442 tools.h:52
+msgid "Open"
+msgstr "Agor"
+
+#: tuxpaint.c:5447
+msgid "Erase"
+msgstr "Dileu"
+
+#: tuxpaint.c:5452
+msgid "Back"
+msgstr "Yn ôl"
+
+#: tuxpaint.c:9092
+msgid "Save over the older version of this picture?"
+msgstr "Cadw dros y fersiwn hynaf o'r llun yma?"
+
+#: tuxpaint.c:9094
+msgid "No, save a new file"
+msgstr "Nage, cadw ffeil newydd"
+
+#: tuxpaint.c:9951
+msgid "Choose the picture you want, then click 'Open'."
+msgstr "Dewis y llun yr wyt eisiau, ac wedyn clicia 'Agor'."
+
+#: colors.h:62
+msgid "Black!"
+msgstr "Du!"
+
+#: colors.h:63
+msgid "White!"
+msgstr "Gwyn!"
+
+#: colors.h:64
+msgid "Red!"
+msgstr "Coch!"
+
+#: colors.h:65
+msgid "Pink!"
+msgstr "Pinc!"
+
+#: colors.h:66
+msgid "Orange!"
+msgstr "Oren!"
+
+#: colors.h:67
+msgid "Yellow!"
+msgstr "Melyn!"
+
+#: colors.h:68
+msgid "Lime!"
+msgstr "Melynwyrdd!"
+
+#: colors.h:69
+msgid "Green!"
+msgstr "Gwyrdd!"
+
+#: colors.h:70
+msgid "Cyan!"
+msgstr "Gwyrddlas!"
+
+#: colors.h:71
+msgid "Blue!"
+msgstr "Glas!"
+
+#: colors.h:72
+msgid "Purple!"
+msgstr "Piws!"
+
+#: colors.h:73
+msgid "Fuchsia!"
+msgstr "Piwsgoch!"
+
+#: colors.h:74
+msgid "Brown!"
+msgstr "Brown!"
+
+#: colors.h:75
+msgid "Gray!"
+msgstr "Llwyd!"
+
+#: colors.h:76
+msgid "Silver!"
+msgstr "Arian!"
+
+#: great.h:20
+msgid "Great!"
+msgstr "Gwych!"
+
+#: great.h:21
+msgid "Cool!"
+msgstr "Cŵl!"
+
+#: great.h:22
+msgid "Keep it up!"
+msgstr "Dal ati!"
+
+#: great.h:23
+msgid "Good job!"
+msgstr "Ardderchog!"
+
+#: magic.h:48
+msgid "Rainbow"
+msgstr "Enfys!"
+
+#: magic.h:49
+msgid "Sparkles"
+msgstr "Gwreichion"
+
+#: magic.h:51
+msgid "Mirror"
+msgstr "Drych"
+
+#: magic.h:52
+msgid "Flip"
+msgstr "Gwrthdroi"
+
+#: magic.h:54
+msgid "Blur"
+msgstr "Pylu"
+
+#: magic.h:55
+msgid "Blocks"
+msgstr "Blociau"
+
+#: magic.h:57
+msgid "Negative"
+msgstr "Gwrthliw"
+
+#: magic.h:58
+msgid "Fade"
+msgstr "Afliwio"
+
+#: magic.h:60
+msgid "Chalk"
+msgstr "Sialc"
+
+#: magic.h:61
+msgid "Drip"
+msgstr "Diferu"
+
+#: magic.h:63
+msgid "Thick"
+msgstr "Tew"
+
+#: magic.h:64
+msgid "Thin"
+msgstr "Tenau"
+
+#: magic.h:66
+msgid "Fill"
+msgstr "Llenwi"
+
+#: magic.h:73
+msgid "You can draw in rainbow colors!"
+msgstr "Mi alli di dynnu llun yn lliwiau'r enfys!"
+
+#: magic.h:74
+msgid "Click and move to draw sparkles."
+msgstr "Clicia a symuda i dynnu gwreichion."
+
+#: magic.h:76
+msgid "Click to make a mirror image."
+msgstr "Clicia i greu adlewyrchiad."
+
+#: magic.h:77
+msgid "Click to flip the picture upside-down."
+msgstr "Clicia i droi'r llun pen-i-lawr."
+
+#: magic.h:79
+msgid "Click and move the mouse around to blur the picture."
+msgstr "Clicia a symuda'r llygoden o gwmpas i bylu'r llun."
+
+#: magic.h:80
+msgid "Click and move the mouse around to make the picture blocky."
+msgstr "Clicia a symuda'r llygoden o gwmpas i wneud blociau ar y llun."
+
+#: magic.h:82
+msgid "Click and move the mouse around to draw a negative."
+msgstr "Clicia a symuda'r llygoden o gwmpas i dynnu gwrthliwiau."
+
+#: magic.h:83
+msgid "Click and move to fade the colors."
+msgstr "Clicia a symuda i afliwio'r lliwiau."
+
+#: magic.h:85
+msgid "Click and move the mouse around to turn the picture into a chalk drawing."
+msgstr "Clicia a symuda'r llygoden o gwmpas i dro'i llun i mewn i ddarlun sialc."
+
+#: magic.h:86
+msgid "Click and move the mouse around to make the picture drip."
+msgstr "Clicia a symuda'r llygoden o gwmpas i wneud i'r llun ddiferu."
+
+#: magic.h:88
+msgid "Click and move the mouse to thicken the picture."
+msgstr "Clicia a symuda'r llygoden i dewi'r llun."
+
+#: magic.h:89
+msgid "Click and move the mouse to thin the picture."
+msgstr "Clicia a symuda'r llygoden i deneuo'r llun."
+
+#: magic.h:91
+msgid "Click in the picture to fill that area with color."
+msgstr "Clicia yn y llun i lenwi'r ardal yna efo lliw."
+
+#: shapes.h:141 shapes.h:142
+msgid "Square"
+msgstr "Sgwâr"
+
+#: shapes.h:143 shapes.h:144
+msgid "Rectangle"
+msgstr "Petryal"
+
+#: shapes.h:145 shapes.h:146
+msgid "Circle"
+msgstr "Cylch"
+
+#: shapes.h:147 shapes.h:148 shapes.h:167 shapes.h:168
+msgid "Oval"
+msgstr "Hirgrwn"
+
+#: shapes.h:149 shapes.h:150
+msgid "Triangle"
+msgstr "Triongl"
+
+#: shapes.h:151 shapes.h:152
+msgid "Pentagon"
+msgstr "Pentagon"
+
+#: shapes.h:153 shapes.h:154
+msgid "Diamond"
+msgstr "Diamwnt"
+
+#: shapes.h:161 shapes.h:162
+msgid "A square has four sides, each the same length."
+msgstr "Mae gan sgwâr bedwar ochr, bob un o'r un un hyd."
+
+#: shapes.h:163 shapes.h:164
+msgid "A rectangle has four sides."
+msgstr "Mae gan betryal pedwar ochr."
+
+#: shapes.h:165 shapes.h:166
+msgid "A circle is exactly round."
+msgstr "Mae cylch yn hollol grwn."
+
+#: shapes.h:169 shapes.h:170
+msgid "A triangle has three sides."
+msgstr "Mae gan driongl dri ochr."
+
+#: shapes.h:171 shapes.h:172
+msgid "A pentagon has five sides."
+msgstr "Mae gan bentagon bump ochr."
+
+#: shapes.h:173 shapes.h:174
+msgid "A diamond is a square, turned around slightly."
+msgstr "Sgwâr yw diamwnt, wedi'i droi o gwmpas tipyn."
+
+#: titles.h:37
+msgid "Tools"
+msgstr "Offer"
+
+#: titles.h:38
+msgid "Colors"
+msgstr "Lliwiau"
+
+#: titles.h:39
+msgid "Brushes"
+msgstr "Brwsiau"
+
+#: titles.h:40
+msgid "Stamps"
+msgstr "Stampiau"
+
+#: titles.h:41 tools.h:45
+msgid "Shapes"
+msgstr "Siapau"
+
+#: titles.h:42
+msgid "Letters"
+msgstr "Llythrennau"
+
+#: titles.h:43 tools.h:47
+msgid "Magic"
+msgstr "Hud"
+
+#: tools.h:42
+msgid "Paint"
+msgstr "Paent"
+
+#: tools.h:43
+msgid "Stamp"
+msgstr "Stamp"
+
+#: tools.h:44
+msgid "Lines"
+msgstr "Llinellau"
+
+#: tools.h:46
+msgid "Text"
+msgstr "Testun"
+
+#: tools.h:48
+msgid "Undo"
+msgstr "Dadwneud"
+
+#: tools.h:49
+msgid "Redo"
+msgstr "Ailwneud"
+
+#: tools.h:50
+msgid "Eraser"
+msgstr "Rwbiwr"
+
+#: tools.h:51
+msgid "New"
+msgstr "Newydd"
+
+#: tools.h:53
+msgid "Save"
+msgstr "Cadw"
+
+#: tools.h:54
+msgid "Print"
+msgstr "Argraffu"
+
+#: tools.h:55
+msgid "Quit"
+msgstr "Terfynu"
+
+#: tools.h:62
+msgid "Pick a color and a brush shape to draw with."
+msgstr "Dewisa liw a siap brws i dynnu efo fo."
+
+#: tools.h:63
+msgid "Pick a picture to stamp around your drawing."
+msgstr "Dewisa lun i stampio o gwmpas eich llun."
+
+#: tools.h:64
+msgid "Click to start drawing a line. Let go to complete it."
+msgstr "Clicia i ddechrau dynnu linell.  Gad fynd i'w orffen."
+
+#: tools.h:65
+msgid ""
+"Pick a shape. Click to pick the center, drag, then let go when it is the "
+"size you want. Move around to rotate it, and click to draw it."
+msgstr "Dewisa siâp.  Clicia i ddewis y canol, llusga, ac wedyn gad fynd pan mae tua'r faint rwyt eisiau.  Symuda o gwmpas i'w gylchdroi, a clicia i'w dynnu."
+
+#: tools.h:66
+msgid "Choose a style of text. Click on your drawing and you can start typing."
+msgstr "Dewisa arddull testun.  Clicia ar dy lun a gei di ddechrau teipio."
+
+#: tools.h:67
+msgid "Pick a magical effect to use on your drawing!"
+msgstr "Dewisa effaith hud i ddefnyddio ar dy lun!"
+
+#: tools.h:68
+msgid "Undo!"
+msgstr "Dadwneud!"
+
+#: tools.h:69
+msgid "Redo!"
+msgstr "Ailwneud!"
+
+#: tools.h:70
+msgid "Eraser!"
+msgstr "Rwbiwr!"
+
+#: tools.h:71
+msgid "You now have a blank sheet to draw on!"
+msgstr "Mae gen ti dalen wag i dynnu llun arni!"
+
+#: tools.h:72
+msgid "Open..."
+msgstr "Agor..."
+
+#: tools.h:73
+msgid "Your image has been saved!"
+msgstr "Dwi wedi cadw dy lun!"
+
+#: tools.h:74
+msgid "Printing..."
+msgstr "Argraffu..."
+
+#: tools.h:75
+msgid "Bye bye!"
+msgstr "Hwyl!"
+
+#: tools.h:78
+msgid "Let go of the button to complete the line."
+msgstr "Gad fynd o'r botwm i orffen y llinell."
+
+#: tools.h:79
+msgid "Hold the button to stretch the shape."
+msgstr "Cadwa'r botwm i lawr i estyn y siâp. "
+
+#: tools.h:80
+msgid "Move the mouse to rotate the shape. Click to draw it."
+msgstr "Symuda'r llygoden i gylchdroi'r siâp.  Clicia i'w dynnu."
+
+#: tools.h:81
+msgid "Ok then... Let's keep drawing this one!"
+msgstr "Iawn... Gawn ni ddal i dynnu'r un yma!"
+

@@ -7,12 +7,15 @@ bill@newbreedsoftware.com
 http://www.newbreedsoftware.com/tuxpaint/
 
 
-2004.April.19 (0.9.14) [cvs]
+2004.April.23 (0.9.14) [cvs]
   * Updated Makefile for easier install.
     Mark K. Kim <tuxNO_SOLICITATIONpaint-dev@cbreak.org>
 
   * Fixed crash bug when translated text ends in a space.
     Mark K. Kim & John Popplewell
+
+  * Welsh translation created.
+    Kevin Donnelly <kevin@dotmon.com>
 
   * Vietnamese translation created.  (Simple version)
     Le Quang Phan <lqphan@hn.vnn.vn>

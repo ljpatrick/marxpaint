@@ -6,7 +6,7 @@
 # bill@newbreedsoftware.com
 # http://www.newbreedsoftware.com/tuxpaint/
 
-# June 14, 2002 - April 14, 2004
+# June 14, 2002 - April 23, 2004
 
 
 # Where to install things:
@@ -211,6 +211,7 @@ uninstall:
 	-rm $(LOCALE_PREFIX)br/LC_MESSAGES/tuxpaint.mo
 	-rm $(LOCALE_PREFIX)ca/LC_MESSAGES/tuxpaint.mo
 	-rm $(LOCALE_PREFIX)cs/LC_MESSAGES/tuxpaint.mo
+	-rm $(LOCALE_PREFIX)cy/LC_MESSAGES/tuxpaint.mo
 	-rm $(LOCALE_PREFIX)da/LC_MESSAGES/tuxpaint.mo
 	-rm $(LOCALE_PREFIX)de/LC_MESSAGES/tuxpaint.mo
 	-rm $(LOCALE_PREFIX)el/LC_MESSAGES/tuxpaint.mo
@@ -549,6 +550,11 @@ install-gettext:
 	@install -d $(LOCALE_PREFIX)wa/LC_MESSAGES
 	@cp trans/wa.mo $(LOCALE_PREFIX)wa/LC_MESSAGES/tuxpaint.mo
 	@chmod 644 $(LOCALE_PREFIX)wa/LC_MESSAGES/tuxpaint.mo
+	@#
+	@echo "   cy_GB ...Welsh..."
+	@install -d $(LOCALE_PREFIX)cy/LC_MESSAGES
+	@cp trans/cy.mo $(LOCALE_PREFIX)cy/LC_MESSAGES/tuxpaint.mo
+	@chmod 644 $(LOCALE_PREFIX)cy/LC_MESSAGES/tuxpaint.mo
 
 
 # Install the text documentation:
@@ -648,6 +654,7 @@ translations: trans \
 	trans/br.mo \
 	trans/ca.mo \
 	trans/cs.mo \
+	trans/cy.mo \
 	trans/da.mo \
 	trans/de.mo \
 	trans/el.mo \
@@ -699,6 +706,10 @@ trans/br.mo:	src/messages/br.po
 trans/ca.mo:	src/messages/ca.po
 	@echo "   ca_ES ...Catalan..."
 	@msgfmt src/messages/ca.po -o trans/ca.mo
+
+trans/cy.mo:	src/messages/cy.po
+	@echo "   cy_GB ...Welsh..."
+	@msgfmt src/messages/cy.po -o trans/cy.mo
 
 trans/cs.mo:	src/messages/cs.po
 	@echo "   cs_CZ ...Czech..."
