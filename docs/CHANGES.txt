@@ -279,6 +279,9 @@ http://www.newbreedsoftware.com/tuxpaint/
       
     * Hebrew
       Dovix <dovix2003@yahoo.com>
+      
+    * Japanese
+      TOYAMA Shin-ichi <shin1@wmail.plala.or.jp>
 
     * Lithuanian
       Gintaras Go?tautas <gintaras@nes.lt>

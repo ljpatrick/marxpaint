@@ -1,16 +1,16 @@
 # Tuxpaint japanese translation.
 # tuxpaint の 日本語訳
-# Copyright (C) 2004
+# Copyright (C) 2005
 # This file is distributed under the same license as the Tuxpaint package.
 # このファイルは Tuxpaint のパッケージと同じ使用許諾に基づいて配布されます。
-# TOYAMA Shin-ichi <shin1@wmail.plala.or.jp>, 2004.
+# TOYAMA Shin-ichi <shin1@wmail.plala.or.jp>, 2005.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: Tuxpaint 0.9.14\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2005-01-06 12:31+0100\n"
-"PO-Revision-Date: 2004-03-21 22:00+0900\n"
+"PO-Revision-Date: 2005-03-27 11:32+0900\n"
 "Last-Translator: TOYAMA Shin-ichi <shin1@wmail.plala.or.jp>\n"
 "Language-Team: TOYAMA Shin-ichi <shin1@wmail.plala.or.jp>\n"
 "MIME-Version: 1.0\n"
@@ -23,22 +23,18 @@ msgstr "子供向けお絵描きプログラム"
 msgid "Drawing program"
 msgstr "お絵かきプログラム"
 
-#, fuzzy
 msgid "Tux Paint"
-msgstr "ふで"
+msgstr "タックスペイント"
 
 msgid "Black!"
 msgstr "くろ！"
 
-#, fuzzy
-msgid "Dark Gray!"
-msgstr "はいいろ！"
+msgid "Dark grey! Some people spell it “dark gray”."
+msgstr "くらい はいいろ！"
 
-#. using both valid spellings
-msgid "Light Grey!"
-msgstr ""
+msgid "Light grey! Some people spell it “light gray”."
+msgstr "あかるい はいいろ！"
 
-#. using both valid spellings
 msgid "White!"
 msgstr "しろ！"
 
@@ -51,23 +47,23 @@ msgstr "オレンジ！"
 msgid "Yellow!"
 msgstr "きいろ！"
 
-msgid "Neon green!"
-msgstr ""
+msgid "Light green!"
+msgstr "きみどり！"
 
-msgid "Green!"
-msgstr "みどり！"
+msgid "Dark green!"
+msgstr "ふかみどり！"
 
 msgid "Sky blue!"
-msgstr ""
+msgstr "そらいろ！"
 
 msgid "Blue!"
 msgstr "あお！"
 
+msgid "Lavender!"
+msgstr "うすむらさき！"
+
 msgid "Purple!"
 msgstr "むらさき！"
-
-msgid "Magenta!"
-msgstr ""
 
 msgid "Pink!"
 msgstr "ピンク！"
@@ -75,12 +71,11 @@ msgstr "ピンク！"
 msgid "Brown!"
 msgstr "ちゃいろ！"
 
-#, fuzzy
 msgid "Tan!"
-msgstr "みずいろ！"
+msgstr "はだいろ！"
 
 msgid "Beige!"
-msgstr ""
+msgstr "ベージュ！"
 
 msgid "Great!"
 msgstr "すごい！"
@@ -97,13 +92,11 @@ msgstr "じょうでき！"
 msgid "Fill"
 msgstr "ぬる"
 
-#, fuzzy
 msgid "Grass"
-msgstr "けす"
+msgstr "くさ"
 
-#, fuzzy
 msgid "Bricks"
-msgstr "モザイク"
+msgstr "レンガ"
 
 msgid "Rainbow"
 msgstr "にじ"
@@ -112,16 +105,16 @@ msgid "Sparkles"
 msgstr "ひばな"
 
 msgid "Blur"
-msgstr "ぼかし"
+msgstr "ぼかす"
 
 msgid "Smudge"
-msgstr ""
+msgstr "よごす"
 
-msgid "Fade"
-msgstr "うすく"
+msgid "Lighten"
+msgstr "あかるく"
 
 msgid "Darken"
-msgstr ""
+msgstr "くらく"
 
 msgid "Chalk"
 msgstr "チョーク"
@@ -132,15 +125,14 @@ msgstr "モザイク"
 msgid "Negative"
 msgstr "ネガ"
 
-#, fuzzy
 msgid "Tint"
-msgstr "ほそく"
+msgstr "そめる"
 
 msgid "Drip"
 msgstr "ぬらす"
 
 msgid "Cartoon"
-msgstr ""
+msgstr "まんが"
 
 msgid "Mirror"
 msgstr "はんてん"
@@ -149,19 +141,16 @@ msgid "Flip"
 msgstr "さかさま"
 
 msgid "Click in the picture to fill that area with color."
-msgstr "ぬりつぶしたいところを クリックしてね"
+msgstr "いろで ぬりつぶしたいところを クリックしてね"
 
-#, fuzzy
-msgid "Click and move to draw grass. Don't forget the dirt!"
-msgstr "ひばなを かこう"
+msgid "Click and move to draw grass. Don’t forget the dirt!"
+msgstr "くさを かこう。つちもわすれずにね。"
 
-#, fuzzy
 msgid "Click and move to draw large bricks."
-msgstr "ひばなを かこう"
+msgstr "おおきな レンガを かこう"
 
-#, fuzzy
 msgid "Click and move to draw small bricks."
-msgstr "ひばなを かこう"
+msgstr "ちいさな レンガを かこう"
 
 msgid "You can draw in rainbow colors!"
 msgstr "にじいろで かこう！"
@@ -170,45 +159,40 @@ msgid "Click and move to draw sparkles."
 msgstr "ひばなを かこう"
 
 msgid "Click and move the mouse around to blur the picture."
-msgstr "クリックしたまま マウスをうごかして えを ぼかしましょう"
+msgstr "クリックしたまま マウスをうごかして えを ぼかそう"
 
-#, fuzzy
 msgid "Click and move the mouse around to smudge the picture."
-msgstr "クリックしたまま マウスをうごかして えを ぼかしましょう"
+msgstr "クリックしたまま マウスをうごかして えを よごそう"
 
 msgid "Click and move to fade the colors."
-msgstr "クリックしたまま マウスをうごかすと いろが うすくなるよ."
+msgstr "クリックしたまま マウスをうごかして いろを あかるく しよう"
 
-#, fuzzy
 msgid "Click and move to darken the colors."
-msgstr "クリックしたまま マウスをうごかすと いろが うすくなるよ."
+msgstr "クリックしたまま マウスをうごかして いろを くらく しよう．"
 
-msgid ""
-"Click and move the mouse around to turn the picture into a chalk drawing."
-msgstr "クリックしたままマウスをうごかすと チョークでかいたみたいに なるよ"
+msgid "Click and move the mouse around to turn the picture into a chalk drawing."
+msgstr "クリックしたままマウスをうごかして チョークでかいたみたいに しよう"
 
 msgid "Click and move the mouse around to make the picture blocky."
-msgstr "クリックしたまま マウスをうごかすと そこがモザイクになるよ"
+msgstr "クリックしたまま マウスをうごかして モザイクにしよう"
 
 msgid "Click and move the mouse around to draw a negative."
 msgstr "クリックしたまま マウスをうごかして ネガポジにしよう"
 
-#, fuzzy
-msgid "Click and move the mouse around to change the picture's color."
-msgstr "クリックしたまま マウスをうごかすと そこがモザイクになるよ"
+msgid "Click and move the mouse around to change the picture’s color."
+msgstr "クリックしたまま マウスをうごかして えのいろを かえよう．"
 
 msgid "Click and move the mouse around to make the picture drip."
-msgstr "クリックしたまま マウスをうごかすと ぬらしたように なるよ！"
+msgstr "クリックしたまま マウスをうごかして えを ぬらしたように しよう"
 
-#, fuzzy
 msgid "Click and move the mouse around to turn the picture into a cartoon."
-msgstr "クリックしたままマウスをうごかすと チョークでかいたみたいに なるよ"
+msgstr "クリックしたままマウスをうごかして まんがみたいな えに しよう．"
 
 msgid "Click to make a mirror image."
-msgstr "クリックすると さゆうにひっくりかえるよ！"
+msgstr "クリックして えを さゆうにひっくりかえそう"
 
 msgid "Click to flip the picture upside-down."
-msgstr "クリックすると えが さかさまになるよ！"
+msgstr "クリックして えを さかさまにしよう"
 
 msgid "Square"
 msgstr "ましかく"
@@ -219,26 +203,29 @@ msgstr "ながしかく"
 msgid "Circle"
 msgstr "えん"
 
-msgid "Oval"
+msgid "Ellipse"
 msgstr "だえん"
 
 msgid "Triangle"
-msgstr "さんかっけい"
+msgstr "さんかく"
 
 msgid "Pentagon"
 msgstr "ごかっけい"
 
-msgid "Diamond"
-msgstr "ダイヤ"
+msgid "Rhombus"
+msgstr "ひしがた"
 
-msgid "A square has four sides, each the same length."
-msgstr "ましかくは ４つのへんが ぜんぶ おんなじ ながさだよ。"
+msgid "A square is a rectangle with four equal sides."
+msgstr "ましかくは ４つのへんが ぜんぶ おんなじ ながさの ながしかくだ"
 
-msgid "A rectangle has four sides."
-msgstr "ながしかくには ４つのへんが あるんだ"
+msgid "A rectangle has four sides and four right angles."
+msgstr "ながしかくには ４つの「へん」と ４つの「ちょっかく」があるんだ"
 
-msgid "A circle is exactly round."
-msgstr "えんは まんまるのこと"
+msgid "A circle is a curve where all points have the same distance from the centre."
+msgstr "まんなかから おんなじだけ はなして せんをひくと えん"
+
+msgid "An ellipse is a stretched circle."
+msgstr "えんを ひきのばしたら だえんになるよ"
 
 msgid "A triangle has three sides."
 msgstr "さんかっけいには ３つのへんが あるんだ"
@@ -246,8 +233,8 @@ msgstr "さんかっけいには ３つのへんが あるんだ"
 msgid "A pentagon has five sides."
 msgstr "ごかっけいには ５つのへんが あるんだ"
 
-msgid "A diamond is a square, turned around slightly."
-msgstr "ダイヤは ましかくを すこしまわしたかたちだね"
+msgid "A rhombus has four equal sides, and opposite sides are parallel."
+msgstr "ひしがたには ４つの おなじながさの 「へん」が あって むかいあった「へん」が へいこうなんだ"
 
 msgid "Tools"
 msgstr "どうぐ"
@@ -258,7 +245,6 @@ msgstr "いろ"
 msgid "Brushes"
 msgstr "ふで"
 
-#, fuzzy
 msgid "Erasers"
 msgstr "けしゴム"
 
@@ -298,7 +284,6 @@ msgstr "けしゴム"
 msgid "New"
 msgstr "さいしょから"
 
-#. buttons for the file open dialog
 msgid "Open"
 msgstr "ひらく"
 
@@ -320,12 +305,8 @@ msgstr "はんこをえらぼう"
 msgid "Click to start drawing a line. Let go to complete it."
 msgstr "クリックして せんを ひこう"
 
-msgid ""
-"Pick a shape. Click to pick the center, drag, then let go when it is the "
-"size you want. Move around to rotate it, and click to draw it."
-msgstr ""
-"ずけいをえらんでクリックしたら、ドラッグして すきなおおきさにしよう。まわし"
-"て、クリックしたら できあがり"
+msgid "Pick a shape. Click to pick the center, drag, then let go when it is the size you want. Move around to rotate it, and click to draw it."
+msgstr "ずけいをえらんでクリックしたら、ドラッグして すきなおおきさにしよう。まわして、クリックしたら できあがり"
 
 msgid "Choose a style of text. Click on your drawing and you can start typing."
 msgstr "じのかたちをえらんで、クリックしたあと キーをおして じをかこう"
@@ -333,35 +314,27 @@ msgstr "じのかたちをえらんで、クリックしたあと キーをお�
 msgid "Pick a magical effect to use on your drawing!"
 msgstr "つかいたい まほうのこうかを えらぼう！"
 
-#. Undo
 msgid "Undo!"
 msgstr "いまの なし！"
 
-#. Redo
 msgid "Redo!"
 msgstr "やっぱり やりなおし！"
 
-#. Eraser
 msgid "Eraser!"
 msgstr "けしゴム！"
 
-#. New
 msgid "You now have a blank sheet to draw on!"
 msgstr "あたらしいかみだよ。さあかこう！"
 
-#. Open
 msgid "Open…"
-msgstr "ひらく..."
+msgstr "ひらく…"
 
-#. Save
 msgid "Your image has been saved!"
 msgstr "えをセーブしました！"
 
-#. Print
 msgid "Printing…"
 msgstr "いんさつちゅう..."
 
-#. Quit
 msgid "Bye bye!"
 msgstr "バイバーイ！"
 
@@ -377,11 +350,9 @@ msgstr "マウスをうごかして ずけいをまわそう。クリックし�
 msgid "OK then… Let’s keep drawing this one!"
 msgstr "オッケー。 じゃあ このままつづけよう！"
 
-#. FIXME: Move elsewhere!!!
 msgid "Do you really want to quit?"
 msgstr "ほんとうにやめる？"
 
-#. FIXME: Move elsewhere! Or not?!
 msgid "Yes"
 msgstr "はい"
 
@@ -431,9 +402,8 @@ msgid "Back"
 msgstr "もどる"
 
 msgid "Aa"
-msgstr ""
+msgstr "Aa"
 
-#. FIXME: Move elsewhere!!!
 msgid "Save over the older version of this picture?"
 msgstr "まえの えを うわがきしますか？"
 
@@ -443,20 +413,3 @@ msgstr "いいえ、べつのファイルに セーブします"
 msgid "Choose the picture you want, then click “Open”."
 msgstr "えをえらんでから 「ひらく」をクリックしてね"
 
-#~ msgid "Lime!"
-#~ msgstr "ライム！"
-
-#~ msgid "Fuchsia!"
-#~ msgstr "ホクシャ！"
-
-#~ msgid "Silver!"
-#~ msgstr "ぎんいろ！"
-
-#~ msgid "Thick"
-#~ msgstr "ふとく"
-
-#~ msgid "Click and move the mouse to thicken the picture."
-#~ msgstr "クリックしたまま マウスをうごかすと そこが ふとくなるよ！"
-
-#~ msgid "Click and move the mouse to thin the picture."
-#~ msgstr "クリックしたまま マウスをうごかすと そこが ほそくなるよ！"
