@@ -8,6 +8,11 @@ http://www.newbreedsoftware.com/tuxpaint/
 
 
 2004.November.24 (0.9.15)
+  * Let's try the new tinter code. Be sure to get the new *.dat files
+    to ensure that greyscale stamps (ugh) get tinted, and that a few
+    wide-hue stamps (marigold, truck) get fully tinted.
+    Albert Cahalan <albert@users.sf.net>
+
   * Moved tinter code into own function.
     Albert Cahalan <albert@users.sf.net>
 
