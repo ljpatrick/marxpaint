@@ -1413,7 +1413,6 @@ static SDL_Surface * img_cursor_up, * img_cursor_down;
 static SDL_Surface * img_cursor_starter_up, * img_cursor_starter_down;
 static SDL_Surface * img_scroll_up, * img_scroll_down;
 static SDL_Surface * img_scroll_up_off, * img_scroll_down_off;
-static SDL_Surface * img_paintcan;
 static SDL_Surface * img_grow, * img_shrink;
 static SDL_Surface * img_bold, * img_italic;
 
@@ -1920,7 +1919,9 @@ static SDL_Surface * img_openlabels_open, * img_openlabels_erase,
 
 static SDL_Surface * img_tux[NUM_TIP_TUX];
 
-#ifndef LOW_QUALITY_COLOR_SELECTOR
+#ifdef LOW_QUALITY_COLOR_SELECTOR
+static SDL_Surface * img_paintcan;
+#else
 static SDL_Surface * img_color_btns[NUM_COLORS*2];
 static SDL_Surface * img_color_btn_off;
 #endif
@@ -6980,7 +6981,9 @@ static void setup(int argc, char * argv[])
   img_scroll_up_off = loadimage(DATA_PREFIX "images/ui/scroll_up_off.png");
   img_scroll_down_off = loadimage(DATA_PREFIX "images/ui/scroll_down_off.png");
 
+#ifdef LOW_QUALITY_COLOR_SELECTOR
   img_paintcan = loadimage(DATA_PREFIX "images/ui/paintcan.png");
+#endif
 
   show_progress_bar();
 
@@ -11123,8 +11126,6 @@ static void cleanup(void)
   free_surface( &img_scroll_up_off );
   free_surface( &img_scroll_down_off );
 
-  free_surface( &img_paintcan );
-
   free_surface( &img_grow );
   free_surface( &img_shrink );
 
@@ -11135,9 +11136,13 @@ static void cleanup(void)
   free_surface( &img_grass );
 
   free_surface_array( undo_bufs, NUM_UNDO_BUFS );
-#ifndef LOW_QUALITY_COLOR_SELECTOR
+
+#ifdef LOW_QUALITY_COLOR_SELECTOR
+  free_surface( &img_paintcan );
+#else
   free_surface_array( img_color_btns, NUM_COLORS*2 );
 #endif
+
   free_surface_array( img_stamp_thumbs, MAX_STAMPS );
 
   free_surface( &screen );
