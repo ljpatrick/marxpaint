@@ -701,7 +701,7 @@ static void set_current_language(void)
       if (loc)
 	{
 	  snprintf(str, sizeof(str), "LANGUAGE=%s", loc);
-	  putenv(str);
+	  putenv(strdup(str));
 	}
     }
 #endif
