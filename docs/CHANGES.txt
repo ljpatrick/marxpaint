@@ -22,6 +22,9 @@ http://www.newbreedsoftware.com/tuxpaint/
     (docs/html/README-nl.html; docs/nl/README.txt)
     Geert Stams <geert-csg@wanadoo.nl>
 
+  * Updated Polish translations.
+    Robert Glowczynski <robertg@software.com.pl>
+
 
 2003.February.22 (0.9.10)
   * UTF-8 stamp descriptions word-wrap around spaces.

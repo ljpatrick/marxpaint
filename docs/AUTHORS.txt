@@ -7,7 +7,7 @@ bill@newbreedsoftware.com
 http://www.newbreedsoftware.com/tuxpaint/
 
 
-June 17, 2002 - February 18, 2003
+June 17, 2002 - March 10, 2003
 
 
 * Design and Coding:
@@ -130,6 +130,7 @@ June 17, 2002 - February 18, 2003
 
   * Polish
     Arkadiusz Lipiec <A.Lipiec@elka.pw.edu.pl>
+    Robert Glowczynski <robertg@software.com.pl>
 
   * Portuguese (Brazilian)
     Daniel José Viana <danjovic@vespanet.com.br>
