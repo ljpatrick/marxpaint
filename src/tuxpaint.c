@@ -21,12 +21,12 @@
   along with this program; if not, write to the Free Software
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   
-  June 14, 2002 - May 30, 2004
+  June 14, 2002 - June 1, 2004
 */
 
 
 #define VER_VERSION     "0.9.14"
-#define VER_DATE        "2004.05.30"
+#define VER_DATE        "2004.06.01"
 
 
 /* #define DEBUG */
@@ -9604,6 +9604,9 @@ int do_quit(void)
 
 /* Open a saved image: */
 
+#define PLACE_STARTERS_DIR 0
+#define PLACE_SAVED_DIR 1
+
 int do_open(int want_new_tool)
 {
   SDL_Surface * img, * img1, * img2;
@@ -9651,13 +9654,17 @@ int do_open(int want_new_tool)
   cur = 0;
   which = 0;
   num_files_in_dirs = 0;
+  
+  thumbs = (SDL_Surface * *) malloc(sizeof(SDL_Surface *) * 1);
+  d_names = (char * *) malloc(sizeof(char *) * 1);
+  d_exts = (char * *) malloc(sizeof(char *) * 1);
 
 
   /* Open directories of images: */
 
   for (places_to_look = 0; places_to_look < 2; places_to_look++)
   {
-    if (places_to_look == 0)
+    if (places_to_look == PLACE_STARTERS_DIR)
     {
       /* Check for coloring-book style 'starter' images first: */
 
@@ -9675,19 +9682,15 @@ int do_open(int want_new_tool)
 
     d = opendir(dirname);
     
-    if (d == NULL)
-    {
-      fprintf(stderr,
-	      "\nWarning: There's no directory of saved images\n"
-	      "%s\n"
-	      "The system error that occurred was: %s\n",
-	      dirname, strerror(errno));
-    }
-    else
+    if (d != NULL)
     {
       /* Gather list of files (for sorting): */
       
 #ifdef __BEOS__
+      /* FIXME: I tried to keep this in sync for BeOS, but cannot test! */
+      /* Shard, can you check to see that this works like the other OSes? */
+      /* -bjk 2004.06.01 */
+
       do
 	{
 	  f = readdir(d);
@@ -9709,6 +9712,8 @@ int do_open(int want_new_tool)
 		  img = IMG_Load(fname);
 		  if (img != NULL)
 		    {
+		      /* Found the thumbnail - load it! */
+
 		      show_progress_bar();
 		      thumbs[num_files] = SDL_DisplayFormat(img);
 		      SDL_FreeSurface(img);
@@ -9719,7 +9724,6 @@ int do_open(int want_new_tool)
 				  "saved image!\n"
 				  "%s\n", fname);
 			}
-		      num_files++;
 		    }
 		  else
 		    {
@@ -9729,9 +9733,11 @@ int do_open(int want_new_tool)
 			       dirname, d_names[num_files], FNAME_EXTENSION);
 		      img = IMG_Load(fname);
 		      show_progress_bar();
+
 		      if (img != NULL)
 			{
 			  /* Turn it into a thumbnail: */
+
 			  img1 = SDL_DisplayFormat(img);
 			  img2 = thumbnail(img1, THUMB_W - 20, THUMB_H - 20, 0);
 			  SDL_FreeSurface(img1);
@@ -9751,12 +9757,16 @@ int do_open(int want_new_tool)
 	      
 			  /* Let's save this thumbnail, so we don't have to create it
 			     again next time 'Open' is called: */
-	      
-			  debug("Saving thumbnail for this one!");
-			  snprintf(fname, sizeof(fname), "%s/%s-t%s",
-				   dirname, d_names[num_files], FNAME_EXTENSION);
-			  fi = fopen(fname, "wb");
-			  if (fi == NULL)
+
+			  if (places_to_look != PLACE_STARTERS_DIR)
+			  {
+			    debug("Saving thumbnail for this one!");
+			    snprintf(fname, sizeof(fname), "%s/%s-t%s",
+				     dirname, d_names[num_files],
+				     FNAME_EXTENSION);
+
+			    fi = fopen(fname, "wb");
+			    if (fi == NULL)
 			    {
 			      fprintf(stderr,
 				      "\nError: Couldn't save thumbnail of "
@@ -9766,17 +9776,25 @@ int do_open(int want_new_tool)
 				      "%s\n\n",
 				      fname, strerror(errno));
 			    }
-			  else
+			    else
 			    {
 			      do_png_save(fi, fname, thumbs[num_files]);
 	        
 			      /* NOTE: fi is closed there so no need to fclose it here */
 			    }
-
-			  show_progress_bar();
-			  num_files++;
+			  }
+			  else
+			  {
+			    /* Starters SHOULD come with thunbnails! */
+			    /* We probably can't save there, anyway! */
+			  }
 			}
 		    }
+
+
+		  show_progress_bar();
+		  num_files++;
+
 
 		  *dot = '.';
 		  num_files_in_dirs++;
@@ -9820,17 +9838,16 @@ int do_open(int want_new_tool)
 	}
       while (f != NULL);
       
-      
-      thumbs = (SDL_Surface * *) malloc(sizeof(SDL_Surface *) * num_files_in_dirs);
-      d_names = (char * *) malloc(sizeof(char *) * num_files_in_dirs);
-      d_exts = (char * *) malloc(sizeof(char *) * num_files_in_dirs);
-      
-      
-      
 #endif
 
       closedir(d);
     }
+
+
+    thumbs = (SDL_Surface * *) realloc(thumbs, sizeof(SDL_Surface *) * num_files_in_dirs);
+    d_names = (char * *) realloc(d_names, sizeof(char *) * num_files_in_dirs);
+    d_exts = (char * *) realloc(d_exts, sizeof(char *) * num_files_in_dirs);
+      
       
       
       /* Sort: */
