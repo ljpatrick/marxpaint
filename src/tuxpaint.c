@@ -645,6 +645,14 @@ static int search_int_array(int l, int *array)
 }
 
 static char * langstr;
+
+static void set_langstr(const char *s)
+{
+  if (langstr)
+    free(langstr);
+  langstr = strdup(s);
+}
+
 static int need_own_font;
 static int need_right_to_left;
 static const char * lang_prefix;
@@ -5258,7 +5266,6 @@ static void setup(int argc, char * argv[])
   dont_load_stamps = 0;
   print_delay = 0;
   printcommand = "pngtopnm | pnmtops | lpr";
-  langstr = NULL;
   use_print_config = 0;
   mirrorstamps = 0;
   disable_stamp_controls = 0;
@@ -5566,19 +5573,13 @@ static void setup(int argc, char * argv[])
 	}
       else if (strstr(argv[i], "--lang=") == argv[i])
 	{
-	  if (langstr != NULL)
-	    free(langstr);
-
-	  langstr = strdup(argv[i] + 7);
+	  set_langstr(argv[i] + 7);
 	}
       else if (strcmp(argv[i], "--lang") == 0 || strcmp(argv[i], "-l") == 0)
 	{
 	  if (i < argc - 1)
 	    {
-	      if (langstr != NULL)
-		free(langstr);
-
-	      langstr = strdup(argv[i + 1]);
+	      set_langstr(argv[i + 1]);
 	      i++;
 	    }
 	  else
@@ -5702,13 +5703,13 @@ static void setup(int argc, char * argv[])
   if (langstr == NULL && getenv("LANG") != NULL &&
       strncasecmp(getenv("LANG"), "lt_LT", 5) == 0)
     {
-      langstr = strdup("lithuanian");
+      set_langstr("lithuanian");
     }
 
   if (langstr == NULL && getenv("LANG") != NULL &&
       strncasecmp(getenv("LANG"), "pl_PL", 5) == 0)
     {
-      langstr = strdup("polish");
+      set_langstr("polish");
     }
 
   if (langstr != NULL)
@@ -14114,10 +14115,7 @@ static void parse_options(FILE * fi)
 	    }
 	  else if (strstr(str, "lang=") == str)
 	    {
-	      langstr = strdup(str + 5);
-#ifdef DEBUG
-	      printf("langstr set to: %s\n", langstr);
-#endif
+	      set_langstr(str + 5);
 	    }
 	  else if (strstr(str, "printdelay=") == str)
 	    {
