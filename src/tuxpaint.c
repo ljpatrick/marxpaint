@@ -413,6 +413,7 @@ SDL_Surface * img_cursor_up, * img_cursor_down;
 SDL_Surface * img_scroll_up, * img_scroll_down;
 SDL_Surface * img_scroll_up_off, * img_scroll_down_off;
 SDL_Surface * img_paintcan;
+SDL_Surface * img_grow, * img_shrink;
 
 SDL_Surface * img_sparkles;
 
@@ -4766,6 +4767,9 @@ void setup(int argc, char * argv[])
   img_erase = loadimage(DATA_PREFIX "images/ui/erase.png");
   img_back = loadimage(DATA_PREFIX "images/ui/back.png");
 
+  img_grow = loadimage(DATA_PREFIX "images/ui/grow.png");
+  img_shrink = loadimage(DATA_PREFIX "images/ui/shrink.png");
+  
   show_progress_bar();
 
 
@@ -6084,16 +6088,12 @@ void draw_stamps(void)
       else
         SDL_BlitSurface(img_btn_up, NULL, screen, &dest);
     }
-    else
-    {
-      SDL_BlitSurface(img_btn_off, NULL, screen, &dest);
-    }
     
-    //dest.x = WINDOW_WIDTH - 96 + (48 - img_magics[MAGIC_MIRROR]->w) / 2;
-    //dest.y = (40 + ((5 + TOOLOFFSET / 2) * 48) +
-    //	      (48 - img_magics[MAGIC_MIRROR]->h) / 2);
+    dest.x = WINDOW_WIDTH - 96 + (48 - img_shrink->w) / 2;
+    dest.y = (40 + ((6 + TOOLOFFSET / 2) * 48) +
+    	      (48 - img_shrink->h) / 2);
 
-    //SDL_BlitSurface(img_magics[MAGIC_MIRROR], NULL, screen, &dest);
+    SDL_BlitSurface(img_shrink, NULL, screen, &dest);
 
     
     /* Show grow button: */
@@ -6113,11 +6113,11 @@ void draw_stamps(void)
       SDL_BlitSurface(img_btn_off, NULL, screen, &dest);
     }
 
-    //dest.x = WINDOW_WIDTH - 48 + (48 - img_magics[MAGIC_FLIP]->w) / 2;
-    //dest.y = (40 + ((5 + TOOLOFFSET / 2) * 48) +
-    //	      (48 - img_magics[MAGIC_FLIP]->h) / 2);
+    dest.x = WINDOW_WIDTH - 48 + (48 - img_grow->w) / 2;
+    dest.y = (40 + ((6 + TOOLOFFSET / 2) * 48) +
+    	      (48 - img_grow->h) / 2);
     
-    //SDL_BlitSurface(img_magics[MAGIC_FLIP], NULL, screen, &dest);
+    SDL_BlitSurface(img_grow, NULL, screen, &dest);
   }
 }
 
