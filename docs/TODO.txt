@@ -6,7 +6,22 @@ Copyright (c) 2004 by Bill Kendrick
 bill@newbreedsoftware.com
 http://www.newbreedsoftware.com/tuxpaint/
 
-September 14, 2004
+September 18, 2004
+
+
+BUGS!
+-----
+  * Get Starters to work properly in 800x600 mode.
+
+  * When loading an image based on a Starter (either via Open or if it was
+    loaded automatically at startup), if the Starter has a bkgd. and the
+    image had been flipped at any point, the Starter background doesn't get
+    flipped (so Eraser doesn't work right).
+
+  * Keep track of Mirror and Flip actions in Undo history, so that
+    Starters can be un/re-flipped and un/re-mirrored, and "starter_mirrored"
+    and "starter_flipped" flags can be toggled.
+
 
 HIGH-PRIORITY DOCUMENTATION CHANGES:
 ------------------------------------
