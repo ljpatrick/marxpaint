@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Tuxpaint 0.9.5\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2004-06-14 22:41+0200\n"
+"POT-Creation-Date: 2004-07-13 13:47+0200\n"
 "PO-Revision-Date: 2004-06-04 15:27+0800\n"
 "Last-Translator: Song Huang <song@ossacc.org>\n"
 "Language-Team: Song Huang <song@ossacc.org>\n"
@@ -323,7 +323,7 @@ msgid "New"
 msgstr "新圖"
 
 #. 'Open' label:
-#: tools.h:52 tuxpaint.c:5541
+#: tools.h:52 tuxpaint.c:5499
 msgid "Open"
 msgstr "開啟"
 
@@ -352,11 +352,12 @@ msgid "Click to start drawing a line. Let go to complete it."
 msgstr "點一下就會開始繪製一條線，讓我們來完成他吧。"
 
 #: tools.h:65
-msgid "Pick a shape. Click to pick the center, drag, then let go when it is the "
+msgid ""
+"Pick a shape. Click to pick the center, drag, then let go when it is the "
 "size you want. Move around to rotate it, and click to draw it."
 msgstr ""
-"挑選一個形狀。點一下形狀的中心位置，然後拖拉他到您要的大小。"
-"環繞著移動來旋轉形狀，然後點一下把他畫下來。"
+"挑選一個形狀。點一下形狀的中心位置，然後拖拉他到您要的大小。環繞著移動來旋轉"
+"形狀，然後點一下把他畫下來。"
 
 #: tools.h:66
 msgid "Choose a style of text. Click on your drawing and you can start typing."
@@ -423,88 +424,88 @@ msgid "OK then… Let’s keep drawing this one!"
 msgstr "好的，那麼讓我們繼續來畫這張圖。"
 
 #. FIXME: Move elsewhere!!!
-#: tuxpaint.c:817
+#: tuxpaint.c:811
 msgid "Do you really want to quit?"
 msgstr "您確定要離開嗎？"
 
 #. FIXME: Move elsewhere! Or not?!
-#: tuxpaint.c:818 tuxpaint.c:822 tuxpaint.c:826 tuxpaint.c:840 tuxpaint.c:850
-#: tuxpaint.c:8494 tuxpaint.c:9201
+#: tuxpaint.c:812 tuxpaint.c:816 tuxpaint.c:820 tuxpaint.c:834 tuxpaint.c:844
+#: tuxpaint.c:8359 tuxpaint.c:9066
 msgid "Yes"
 msgstr "是的"
 
-#: tuxpaint.c:819 tuxpaint.c:823 tuxpaint.c:827 tuxpaint.c:841 tuxpaint.c:851
-#: tuxpaint.c:8497
+#: tuxpaint.c:813 tuxpaint.c:817 tuxpaint.c:821 tuxpaint.c:835 tuxpaint.c:845
+#: tuxpaint.c:8362
 msgid "No"
 msgstr "不是"
 
-#: tuxpaint.c:821
+#: tuxpaint.c:815
 msgid "If you quit, you’ll lose your picture! Save it?"
 msgstr "如果離開，您將遺失您的圖畫! 要不要先存檔呢？"
 
-#: tuxpaint.c:825
+#: tuxpaint.c:819
 msgid "Save your picture first?"
 msgstr "先儲存您的圖畫嗎？"
 
-#: tuxpaint.c:829
+#: tuxpaint.c:823
 msgid "Can’t open that picture!"
 msgstr "無法開啟那張圖畫!"
 
-#: tuxpaint.c:830 tuxpaint.c:837 tuxpaint.c:844 tuxpaint.c:847
+#: tuxpaint.c:824 tuxpaint.c:831 tuxpaint.c:838 tuxpaint.c:841
 msgid "OK"
 msgstr ""
 
-#: tuxpaint.c:832
+#: tuxpaint.c:826
 msgid "Starting a new picture will erase the current one!"
 msgstr "開啟一張新的圖紙將會刪除目前這張圖!"
 
-#: tuxpaint.c:833
+#: tuxpaint.c:827
 msgid "That’s OK!"
 msgstr "確定!"
 
-#: tuxpaint.c:834
+#: tuxpaint.c:828
 msgid "Never mind!"
 msgstr "取消!"
 
-#: tuxpaint.c:836
+#: tuxpaint.c:830
 msgid "There are no saved files!"
 msgstr "沒有已儲存的檔案!"
 
-#: tuxpaint.c:839
+#: tuxpaint.c:833
 msgid "Print your picture now?"
 msgstr "現在要列印您的圖畫嗎？"
 
-#: tuxpaint.c:843
+#: tuxpaint.c:837
 msgid "Your picture has been printed!"
 msgstr "您的圖畫已列印!"
 
-#: tuxpaint.c:846
+#: tuxpaint.c:840
 msgid "You can’t print yet!"
 msgstr "您還不可以列印!"
 
-#: tuxpaint.c:849
+#: tuxpaint.c:843
 msgid "Erase this picture?"
 msgstr "刪除這張圖畫？"
 
 #. 'Erase' label:
-#: tuxpaint.c:5546
+#: tuxpaint.c:5504
 msgid "Erase"
 msgstr "刪除"
 
 #. 'Back' label:
-#: tuxpaint.c:5551
+#: tuxpaint.c:5509
 msgid "Back"
 msgstr "回復"
 
 #. FIXME: Move elsewhere!!!
-#: tuxpaint.c:9200
+#: tuxpaint.c:9065
 msgid "Save over the older version of this picture?"
 msgstr "儲存這張圖畫覆蓋掉舊的版本？"
 
-#: tuxpaint.c:9202
+#: tuxpaint.c:9067
 msgid "No, save a new file"
 msgstr "不，儲存一個新的檔案"
 
-#: tuxpaint.c:10096
+#: tuxpaint.c:9961
 msgid "Choose the picture you want, then click “Open”."
 msgstr "選擇您想要的圖畫，然後按下「開啟」"

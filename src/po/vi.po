@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TuxPaint 0.9.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2004-06-14 22:41+0200\n"
+"POT-Creation-Date: 2004-07-13 13:47+0200\n"
 "PO-Revision-Date: 2004-04-14 13:01-0800\n"
 "Last-Translator: Le Quang Phan <lqphan@hn.vnn.vn>\n"
 "Language-Team: N/A <>\n"
@@ -340,7 +340,7 @@ msgid "New"
 msgstr "Moi"
 
 #. 'Open' label:
-#: tools.h:52 tuxpaint.c:5541
+#: tools.h:52 tuxpaint.c:5499
 msgid "Open"
 msgstr "Mo"
 
@@ -441,90 +441,90 @@ msgid "OK then… Let’s keep drawing this one!"
 msgstr "Duoc thoi... Hay tiep tuc ban ve nay!"
 
 #. FIXME: Move elsewhere!!!
-#: tuxpaint.c:817
+#: tuxpaint.c:811
 msgid "Do you really want to quit?"
 msgstr "Ban co thuc su muon thoat?"
 
 #. FIXME: Move elsewhere! Or not?!
-#: tuxpaint.c:818 tuxpaint.c:822 tuxpaint.c:826 tuxpaint.c:840 tuxpaint.c:850
-#: tuxpaint.c:8494 tuxpaint.c:9201
+#: tuxpaint.c:812 tuxpaint.c:816 tuxpaint.c:820 tuxpaint.c:834 tuxpaint.c:844
+#: tuxpaint.c:8359 tuxpaint.c:9066
 msgid "Yes"
 msgstr "Co"
 
-#: tuxpaint.c:819 tuxpaint.c:823 tuxpaint.c:827 tuxpaint.c:841 tuxpaint.c:851
-#: tuxpaint.c:8497
+#: tuxpaint.c:813 tuxpaint.c:817 tuxpaint.c:821 tuxpaint.c:835 tuxpaint.c:845
+#: tuxpaint.c:8362
 msgid "No"
 msgstr "Khong"
 
-#: tuxpaint.c:821
+#: tuxpaint.c:815
 msgid "If you quit, you’ll lose your picture! Save it?"
 msgstr "Neu thoat, buc tranh cua Ban se mat! Co ghi lai?"
 
-#: tuxpaint.c:825
+#: tuxpaint.c:819
 msgid "Save your picture first?"
 msgstr "Co ghi buc tranh cua Ban?"
 
-#: tuxpaint.c:829
+#: tuxpaint.c:823
 msgid "Can’t open that picture!"
 msgstr "Khong the mo duoc buc tranh nay!"
 
-#: tuxpaint.c:830 tuxpaint.c:837 tuxpaint.c:844 tuxpaint.c:847
+#: tuxpaint.c:824 tuxpaint.c:831 tuxpaint.c:838 tuxpaint.c:841
 #, fuzzy
 msgid "OK"
 msgstr "OK"
 
-#: tuxpaint.c:832
+#: tuxpaint.c:826
 msgid "Starting a new picture will erase the current one!"
 msgstr "Neu bat dau ban ve moi, ban ve hien thoi se bi xoa!"
 
-#: tuxpaint.c:833
+#: tuxpaint.c:827
 msgid "That’s OK!"
 msgstr "Dong y!"
 
-#: tuxpaint.c:834
+#: tuxpaint.c:828
 msgid "Never mind!"
 msgstr "Cho, dung xoa!"
 
-#: tuxpaint.c:836
+#: tuxpaint.c:830
 msgid "There are no saved files!"
 msgstr "Khong co files nao duoc ghi!"
 
-#: tuxpaint.c:839
+#: tuxpaint.c:833
 msgid "Print your picture now?"
 msgstr "Co in buc tranh cua Ban khong?"
 
-#: tuxpaint.c:843
+#: tuxpaint.c:837
 msgid "Your picture has been printed!"
 msgstr "Buc tranh cua Ban da duoc in!"
 
-#: tuxpaint.c:846
+#: tuxpaint.c:840
 msgid "You can’t print yet!"
 msgstr "Luc nay, Ban khong the in duoc!"
 
-#: tuxpaint.c:849
+#: tuxpaint.c:843
 msgid "Erase this picture?"
 msgstr "Co xoa hinh nay khong?"
 
 #. 'Erase' label:
-#: tuxpaint.c:5546
+#: tuxpaint.c:5504
 msgid "Erase"
 msgstr "Xoa"
 
 #. 'Back' label:
-#: tuxpaint.c:5551
+#: tuxpaint.c:5509
 #, fuzzy
 msgid "Back"
 msgstr "Quay lui"
 
 #. FIXME: Move elsewhere!!!
-#: tuxpaint.c:9200
+#: tuxpaint.c:9065
 msgid "Save over the older version of this picture?"
 msgstr "Ghi de len ban ve cu?"
 
-#: tuxpaint.c:9202
+#: tuxpaint.c:9067
 msgid "No, save a new file"
 msgstr "Khong, ghi vao mot file moi"
 
-#: tuxpaint.c:10096
+#: tuxpaint.c:9961
 msgid "Choose the picture you want, then click “Open”."
 msgstr "Chon mot buc tranh Ban muon, kich tiep vao o 'Mo'."

@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TuxPaint 0.0.1pre\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2004-06-14 22:41+0200\n"
+"POT-Creation-Date: 2004-07-13 13:47+0200\n"
 "PO-Revision-Date: 2002-08-12 01:44Europe/Istanbul\n"
 "Last-Translator: Doruk Fisek <dfisek@fisek.com.tr>\n"
 "Language-Team: Turkish <gnu-tr-u12a@lists.sourceforge.net>\n"
@@ -351,7 +351,7 @@ msgid "New"
 msgstr "Yeni"
 
 #. 'Open' label:
-#: tools.h:52 tuxpaint.c:5541
+#: tools.h:52 tuxpaint.c:5499
 msgid "Open"
 msgstr "Aç"
 
@@ -457,97 +457,97 @@ msgid "OK then… Let’s keep drawing this one!"
 msgstr "Tamam o zaman... Bunu çizmeye devam edelim!"
 
 #. FIXME: Move elsewhere!!!
-#: tuxpaint.c:817
+#: tuxpaint.c:811
 msgid "Do you really want to quit?"
 msgstr "Gerçekten çıkmak istiyor musunuz?"
 
 #. FIXME: Move elsewhere! Or not?!
-#: tuxpaint.c:818 tuxpaint.c:822 tuxpaint.c:826 tuxpaint.c:840 tuxpaint.c:850
-#: tuxpaint.c:8494 tuxpaint.c:9201
+#: tuxpaint.c:812 tuxpaint.c:816 tuxpaint.c:820 tuxpaint.c:834 tuxpaint.c:844
+#: tuxpaint.c:8359 tuxpaint.c:9066
 msgid "Yes"
 msgstr "Evet"
 
-#: tuxpaint.c:819 tuxpaint.c:823 tuxpaint.c:827 tuxpaint.c:841 tuxpaint.c:851
-#: tuxpaint.c:8497
+#: tuxpaint.c:813 tuxpaint.c:817 tuxpaint.c:821 tuxpaint.c:835 tuxpaint.c:845
+#: tuxpaint.c:8362
 msgid "No"
 msgstr "Hayır"
 
-#: tuxpaint.c:821
+#: tuxpaint.c:815
 msgid "If you quit, you’ll lose your picture! Save it?"
 msgstr "Eğer çıkarsanız, resmi kaybedeceksiniz! Kaydedelim mi?"
 
-#: tuxpaint.c:825
+#: tuxpaint.c:819
 msgid "Save your picture first?"
 msgstr "İlk önce resmi kaydetmek ister misiniz?"
 
-#: tuxpaint.c:829
+#: tuxpaint.c:823
 #, fuzzy
 msgid "Can’t open that picture!"
 msgstr "Bu resmi sileyim mi?"
 
-#: tuxpaint.c:830 tuxpaint.c:837 tuxpaint.c:844 tuxpaint.c:847
+#: tuxpaint.c:824 tuxpaint.c:831 tuxpaint.c:838 tuxpaint.c:841
 msgid "OK"
 msgstr ""
 
-#: tuxpaint.c:832
+#: tuxpaint.c:826
 msgid "Starting a new picture will erase the current one!"
 msgstr "Yeni bir resme başlamak şu ankini silecektir!"
 
-#: tuxpaint.c:833
+#: tuxpaint.c:827
 #, fuzzy
 msgid "That’s OK!"
 msgstr "Tamamdır"
 
-#: tuxpaint.c:834
+#: tuxpaint.c:828
 #, fuzzy
 msgid "Never mind!"
 msgstr "Boşver!"
 
-#: tuxpaint.c:836
+#: tuxpaint.c:830
 msgid "There are no saved files!"
 msgstr "Kaydedilmiş hiç dosya yok!"
 
-#: tuxpaint.c:839
+#: tuxpaint.c:833
 #, fuzzy
 msgid "Print your picture now?"
 msgstr "İlk önce resmi kaydetmek ister misiniz?"
 
-#: tuxpaint.c:843
+#: tuxpaint.c:837
 #, fuzzy
 msgid "Your picture has been printed!"
 msgstr "Resminiz kaydedildi!"
 
-#: tuxpaint.c:846
+#: tuxpaint.c:840
 msgid "You can’t print yet!"
 msgstr ""
 
-#: tuxpaint.c:849
+#: tuxpaint.c:843
 msgid "Erase this picture?"
 msgstr "Bu resmi sileyim mi?"
 
 #. 'Erase' label:
-#: tuxpaint.c:5546
+#: tuxpaint.c:5504
 #, fuzzy
 msgid "Erase"
 msgstr "Silgi"
 
 #. 'Back' label:
-#: tuxpaint.c:5551
+#: tuxpaint.c:5509
 #, fuzzy
 msgid "Back"
 msgstr "Siyah!"
 
 #. FIXME: Move elsewhere!!!
-#: tuxpaint.c:9200
+#: tuxpaint.c:9065
 #, fuzzy
 msgid "Save over the older version of this picture?"
 msgstr "Bu çizimin eski halinin üzerine mi kaydedeyim?"
 
-#: tuxpaint.c:9202
+#: tuxpaint.c:9067
 msgid "No, save a new file"
 msgstr "Hayir, yeni bir dosyaya kaydet"
 
-#: tuxpaint.c:10096
+#: tuxpaint.c:9961
 msgid "Choose the picture you want, then click “Open”."
 msgstr ""
 

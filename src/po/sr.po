@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint 0.9.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2004-06-14 22:41+0200\n"
+"POT-Creation-Date: 2004-07-13 13:47+0200\n"
 "PO-Revision-Date: 2004-03-29 18:58-0500\n"
 "Last-Translator: Aleksandar Jelenak <jelenak@netlinkplus.net>\n"
 "Language-Team: Serbian <gnu@prevod.org>\n"
@@ -396,7 +396,7 @@ msgstr "Нови"
 
 #
 #. 'Open' label:
-#: tools.h:52 tuxpaint.c:5541
+#: tools.h:52 tuxpaint.c:5499
 msgid "Open"
 msgstr "Отвори"
 
@@ -519,108 +519,108 @@ msgstr "Добро онда... Хајде да наставимо са црта�
 
 #
 #. FIXME: Move elsewhere!!!
-#: tuxpaint.c:817
+#: tuxpaint.c:811
 msgid "Do you really want to quit?"
 msgstr "Стварно желиш да завршиш?"
 
 #
 #. FIXME: Move elsewhere! Or not?!
-#: tuxpaint.c:818 tuxpaint.c:822 tuxpaint.c:826 tuxpaint.c:840 tuxpaint.c:850
-#: tuxpaint.c:8494 tuxpaint.c:9201
+#: tuxpaint.c:812 tuxpaint.c:816 tuxpaint.c:820 tuxpaint.c:834 tuxpaint.c:844
+#: tuxpaint.c:8359 tuxpaint.c:9066
 msgid "Yes"
 msgstr "Да"
 
 #
-#: tuxpaint.c:819 tuxpaint.c:823 tuxpaint.c:827 tuxpaint.c:841 tuxpaint.c:851
-#: tuxpaint.c:8497
+#: tuxpaint.c:813 tuxpaint.c:817 tuxpaint.c:821 tuxpaint.c:835 tuxpaint.c:845
+#: tuxpaint.c:8362
 msgid "No"
 msgstr "Не"
 
 #
-#: tuxpaint.c:821
+#: tuxpaint.c:815
 msgid "If you quit, you’ll lose your picture! Save it?"
 msgstr "Изгубићеш слику ако завршиш! Да се сачува?"
 
 #
-#: tuxpaint.c:825
+#: tuxpaint.c:819
 msgid "Save your picture first?"
 msgstr "Прво да сачуваш своју слику?"
 
 #
-#: tuxpaint.c:829
+#: tuxpaint.c:823
 msgid "Can’t open that picture!"
 msgstr "Не могу да отворим ту слику!"
 
 #
-#: tuxpaint.c:830 tuxpaint.c:837 tuxpaint.c:844 tuxpaint.c:847
+#: tuxpaint.c:824 tuxpaint.c:831 tuxpaint.c:838 tuxpaint.c:841
 msgid "OK"
 msgstr "У реду"
 
 #
-#: tuxpaint.c:832
+#: tuxpaint.c:826
 msgid "Starting a new picture will erase the current one!"
 msgstr "Започињање нове слике ће избрисати досадашњу!"
 
 #
-#: tuxpaint.c:833
+#: tuxpaint.c:827
 msgid "That’s OK!"
 msgstr "Добро!"
 
 #
-#: tuxpaint.c:834
+#: tuxpaint.c:828
 msgid "Never mind!"
 msgstr "Нисам хтео!"
 
 #
-#: tuxpaint.c:836
+#: tuxpaint.c:830
 msgid "There are no saved files!"
 msgstr "Нема сачуваних датотека!"
 
 #
-#: tuxpaint.c:839
+#: tuxpaint.c:833
 msgid "Print your picture now?"
 msgstr "Сада штампаш своју слику?"
 
 #
-#: tuxpaint.c:843
+#: tuxpaint.c:837
 msgid "Your picture has been printed!"
 msgstr "Твоје слика је одштампана!"
 
 #
-#: tuxpaint.c:846
+#: tuxpaint.c:840
 msgid "You can’t print yet!"
 msgstr "Не можеш још да штампаш!"
 
 #
-#: tuxpaint.c:849
+#: tuxpaint.c:843
 msgid "Erase this picture?"
 msgstr "Обрисати ову слику?"
 
 #
 #. 'Erase' label:
-#: tuxpaint.c:5546
+#: tuxpaint.c:5504
 msgid "Erase"
 msgstr "Бриши"
 
 #
 #. 'Back' label:
-#: tuxpaint.c:5551
+#: tuxpaint.c:5509
 msgid "Back"
 msgstr "Назад"
 
 #
 #. FIXME: Move elsewhere!!!
-#: tuxpaint.c:9200
+#: tuxpaint.c:9065
 msgid "Save over the older version of this picture?"
 msgstr "Сачувати преко старије верзије ове слике?"
 
 #
-#: tuxpaint.c:9202
+#: tuxpaint.c:9067
 msgid "No, save a new file"
 msgstr "Не, сачувај у нову датотеку"
 
 #
-#: tuxpaint.c:10096
+#: tuxpaint.c:9961
 msgid "Choose the picture you want, then click “Open”."
 msgstr "Изабери слику коју желиш, затим кликни „Отвори“."
 

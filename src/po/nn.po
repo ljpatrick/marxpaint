@@ -1,17 +1,20 @@
+# translation of nn.po to Norwegian Nynorsk
 # Omsetjing av Tux Paint til nynorsk.
 # Copyright © 2004 Karl Ove Hufthammer.
 # Karl Ove Hufthammer <karl@huftis.org>, 2003-2004.
 msgid ""
 msgstr ""
-"Project-Id-Version: tuxpaint 0.9.14\n"
+"Project-Id-Version: nn\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2004-06-14 22:41+0200\n"
-"PO-Revision-Date: 2004-02-06 22:44+0100\n"
+"POT-Creation-Date: 2004-07-13 13:47+0200\n"
+"PO-Revision-Date: 2004-07-13 13:48+0200\n"
 "Last-Translator: Karl Ove Hufthammer <karl@huftis.org>\n"
 "Language-Team: Norwegian Nynorsk <i18n-nn@lister.ping.uio.no>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.3\n"
+"Plural-Forms:  nplurals=2; plural=(n != 1);\n"
 
 #: tuxpaint.desktop.in.h:1
 msgid "A drawing program for children."
@@ -22,9 +25,8 @@ msgid "Drawing program"
 msgstr "Teikneprogram"
 
 #: tuxpaint.desktop.in.h:3
-#, fuzzy
 msgid "Tux Paint"
-msgstr "Måling"
+msgstr "Tux Paint"
 
 #: colors.h:62
 msgid "Black!"
@@ -187,8 +189,7 @@ msgid "Click and move to fade the colors."
 msgstr "Hald inne knappen og flytt rundt for å bleikna fargane."
 
 #: magic.h:85
-msgid ""
-"Click and move the mouse around to turn the picture into a chalk drawing."
+msgid "Click and move the mouse around to turn the picture into a chalk drawing."
 msgstr ""
 "Hald inne knappen og flytt rundt for å gjera teikninga om til ei "
 "kritteikning."
@@ -322,7 +323,7 @@ msgid "New"
 msgstr "Ny"
 
 #. 'Open' label:
-#: tools.h:52 tuxpaint.c:5541
+#: tools.h:52 tuxpaint.c:5499
 msgid "Open"
 msgstr "Opna"
 
@@ -423,88 +424,89 @@ msgid "OK then… Let’s keep drawing this one!"
 msgstr "Greitt! Då held me heller fram med denne teikninga."
 
 #. FIXME: Move elsewhere!!!
-#: tuxpaint.c:817
+#: tuxpaint.c:811
 msgid "Do you really want to quit?"
 msgstr "Vil du verkeleg avslutta?"
 
 #. FIXME: Move elsewhere! Or not?!
-#: tuxpaint.c:818 tuxpaint.c:822 tuxpaint.c:826 tuxpaint.c:840 tuxpaint.c:850
-#: tuxpaint.c:8494 tuxpaint.c:9201
+#: tuxpaint.c:812 tuxpaint.c:816 tuxpaint.c:820 tuxpaint.c:834 tuxpaint.c:844
+#: tuxpaint.c:8359 tuxpaint.c:9066
 msgid "Yes"
 msgstr "Ja!"
 
-#: tuxpaint.c:819 tuxpaint.c:823 tuxpaint.c:827 tuxpaint.c:841 tuxpaint.c:851
-#: tuxpaint.c:8497
+#: tuxpaint.c:813 tuxpaint.c:817 tuxpaint.c:821 tuxpaint.c:835 tuxpaint.c:845
+#: tuxpaint.c:8362
 msgid "No"
 msgstr "Nei!"
 
-#: tuxpaint.c:821
+#: tuxpaint.c:815
 msgid "If you quit, you’ll lose your picture! Save it?"
 msgstr "Du mistar teikninga viss du avsluttar. Vil du lagra ho først?"
 
-#: tuxpaint.c:825
+#: tuxpaint.c:819
 msgid "Save your picture first?"
 msgstr "Vil du lagra teikninga først?"
 
-#: tuxpaint.c:829
+#: tuxpaint.c:823
 msgid "Can’t open that picture!"
 msgstr "Klarte ikkje opna teikninga."
 
-#: tuxpaint.c:830 tuxpaint.c:837 tuxpaint.c:844 tuxpaint.c:847
+#: tuxpaint.c:824 tuxpaint.c:831 tuxpaint.c:838 tuxpaint.c:841
 msgid "OK"
 msgstr "OK"
 
-#: tuxpaint.c:832
+#: tuxpaint.c:826
 msgid "Starting a new picture will erase the current one!"
 msgstr "Startar du på ei ny teikning, forsvinn ho du har."
 
-#: tuxpaint.c:833
+#: tuxpaint.c:827
 msgid "That’s OK!"
 msgstr "OK!"
 
-#: tuxpaint.c:834
+#: tuxpaint.c:828
 msgid "Never mind!"
 msgstr "Avbryt!"
 
-#: tuxpaint.c:836
+#: tuxpaint.c:830
 msgid "There are no saved files!"
 msgstr "Det finst ingen lagra teikningar."
 
-#: tuxpaint.c:839
+#: tuxpaint.c:833
 msgid "Print your picture now?"
 msgstr "Er du sikker på at du vil skriva ut teikninga?"
 
-#: tuxpaint.c:843
+#: tuxpaint.c:837
 msgid "Your picture has been printed!"
 msgstr "Teikninga er skriven ut."
 
-#: tuxpaint.c:846
+#: tuxpaint.c:840
 msgid "You can’t print yet!"
 msgstr "Du kan ikkje skriva ut enno."
 
-#: tuxpaint.c:849
+#: tuxpaint.c:843
 msgid "Erase this picture?"
 msgstr "Vil du verkeleg sletta teikninga?"
 
 #. 'Erase' label:
-#: tuxpaint.c:5546
+#: tuxpaint.c:5504
 msgid "Erase"
 msgstr "Slett"
 
 #. 'Back' label:
-#: tuxpaint.c:5551
+#: tuxpaint.c:5509
 msgid "Back"
 msgstr "Tilbake"
 
 #. FIXME: Move elsewhere!!!
-#: tuxpaint.c:9200
+#: tuxpaint.c:9065
 msgid "Save over the older version of this picture?"
 msgstr "Vil du lagra over den gamle versjonen av teikninga?"
 
-#: tuxpaint.c:9202
+#: tuxpaint.c:9067
 msgid "No, save a new file"
 msgstr "Nei. Lagra som ny teikning."
 
-#: tuxpaint.c:10096
+#: tuxpaint.c:9961
 msgid "Choose the picture you want, then click “Open”."
 msgstr "Vel ei teikning og trykk «Opna»."
+

@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TuxType\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2004-06-14 22:41+0200\n"
+"POT-Creation-Date: 2004-07-13 13:47+0200\n"
 "PO-Revision-Date: 2002-09-25 16:26+0100\n"
 "Last-Translator: Rasmus Erik Voel Jensen <i18n@solsort.dk>\n"
 "Language-Team: solsort <i18n@solsort.dk>\n"
@@ -343,7 +343,7 @@ msgid "New"
 msgstr "Ny"
 
 #. 'Open' label:
-#: tools.h:52 tuxpaint.c:5541
+#: tools.h:52 tuxpaint.c:5499
 msgid "Open"
 msgstr "Åbn"
 
@@ -444,95 +444,95 @@ msgid "OK then… Let’s keep drawing this one!"
 msgstr "Ok, lad os så beholde denne tegning."
 
 #. FIXME: Move elsewhere!!!
-#: tuxpaint.c:817
+#: tuxpaint.c:811
 msgid "Do you really want to quit?"
 msgstr "Vil du afslutte nu?"
 
 #. FIXME: Move elsewhere! Or not?!
-#: tuxpaint.c:818 tuxpaint.c:822 tuxpaint.c:826 tuxpaint.c:840 tuxpaint.c:850
-#: tuxpaint.c:8494 tuxpaint.c:9201
+#: tuxpaint.c:812 tuxpaint.c:816 tuxpaint.c:820 tuxpaint.c:834 tuxpaint.c:844
+#: tuxpaint.c:8359 tuxpaint.c:9066
 msgid "Yes"
 msgstr "Ja"
 
-#: tuxpaint.c:819 tuxpaint.c:823 tuxpaint.c:827 tuxpaint.c:841 tuxpaint.c:851
-#: tuxpaint.c:8497
+#: tuxpaint.c:813 tuxpaint.c:817 tuxpaint.c:821 tuxpaint.c:835 tuxpaint.c:845
+#: tuxpaint.c:8362
 msgid "No"
 msgstr "Nej"
 
-#: tuxpaint.c:821
+#: tuxpaint.c:815
 msgid "If you quit, you’ll lose your picture! Save it?"
 msgstr "Du har ikke gemt billedet. Skal det gemmes før du afslutter?"
 
-#: tuxpaint.c:825
+#: tuxpaint.c:819
 msgid "Save your picture first?"
 msgstr "Vil du gemme billedet først?"
 
-#: tuxpaint.c:829
+#: tuxpaint.c:823
 msgid "Can’t open that picture!"
 msgstr "Billedet kan ikke åbnes."
 
-#: tuxpaint.c:830 tuxpaint.c:837 tuxpaint.c:844 tuxpaint.c:847
+#: tuxpaint.c:824 tuxpaint.c:831 tuxpaint.c:838 tuxpaint.c:841
 msgid "OK"
 msgstr ""
 
-#: tuxpaint.c:832
+#: tuxpaint.c:826
 msgid "Starting a new picture will erase the current one!"
 msgstr "Når du begynder på et nyt billede forsvinder det gamle."
 
-#: tuxpaint.c:833
+#: tuxpaint.c:827
 #, fuzzy
 msgid "That’s OK!"
 msgstr "Det er iorden."
 
-#: tuxpaint.c:834
+#: tuxpaint.c:828
 #, fuzzy
 msgid "Never mind!"
 msgstr "Fortryd."
 
-#: tuxpaint.c:836
+#: tuxpaint.c:830
 msgid "There are no saved files!"
 msgstr "Der er ikke nogle gemte billeder."
 
-#: tuxpaint.c:839
+#: tuxpaint.c:833
 #, fuzzy
 msgid "Print your picture now?"
 msgstr "Vil du gemme billedet først?"
 
-#: tuxpaint.c:843
+#: tuxpaint.c:837
 msgid "Your picture has been printed!"
 msgstr "Billedet er udskrevet."
 
-#: tuxpaint.c:846
+#: tuxpaint.c:840
 msgid "You can’t print yet!"
 msgstr "Du kan ikke skrive ud endnu."
 
-#: tuxpaint.c:849
+#: tuxpaint.c:843
 msgid "Erase this picture?"
 msgstr "Skal billedet slettes?"
 
 #. 'Erase' label:
-#: tuxpaint.c:5546
+#: tuxpaint.c:5504
 #, fuzzy
 msgid "Erase"
 msgstr "Viskelæder"
 
 #. 'Back' label:
-#: tuxpaint.c:5551
+#: tuxpaint.c:5509
 #, fuzzy
 msgid "Back"
 msgstr "Sort"
 
 #. FIXME: Move elsewhere!!!
-#: tuxpaint.c:9200
+#: tuxpaint.c:9065
 #, fuzzy
 msgid "Save over the older version of this picture?"
 msgstr "Skal den gamle udgave af billedet overskrives?"
 
-#: tuxpaint.c:9202
+#: tuxpaint.c:9067
 msgid "No, save a new file"
 msgstr "Nej, gem istedet som et nyt billede."
 
-#: tuxpaint.c:10096
+#: tuxpaint.c:9961
 #, fuzzy
 msgid "Choose the picture you want, then click “Open”."
 msgstr "Vælg et billede og tryk på \"Åbn\"."
