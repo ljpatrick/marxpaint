@@ -2,11 +2,11 @@ FAQ.txt for Tux Paint
 
 Tux Paint - A simple drawing program for children.
 
-Copyright 2003 by Bill Kendrick
+Copyright 2004 by Bill Kendrick
 bill@newbreedsoftware.com
 http://www.newbreedsoftware.com/tuxpaint/
 
-September 14, 2002 - June 14, 2003
+September 14, 2002 - September 13, 2004
 
 
 Frequently Asked Questions:
@@ -204,8 +204,9 @@ Frequently Asked Questions:
       a command-line argument.
 
       If a "--printdelay=..." option isn't being sent on the command line,
-      check Tux Paint's configuration file ("~/.tuxpaintrc" under Linux and Unix,
-      "tuxpaint.cfg" under Windows) for a line reading:  "printdelay=...".
+      check Tux Paint's configuration file ("~/.tuxpaintrc" under Linux and
+      Unix, "tuxpaint.cfg" under Windows) for a line reading:
+      "printdelay=...".
 
       Either remove that line, set the delay value to 0 (no delay), or
       decrease the delay to a value you prefer.  (See README.txt).
@@ -383,6 +384,29 @@ Frequently Asked Questions:
 
   Other Probelms
   --------------
+    Tux Paint won't run
+    -------------------
+      If Tux Paint aborts with the message:
+      "You're already running a copy of Tux Paint!",
+      this means it has been launched in the last 30 seconds.
+
+      A lockfile ("~/.tuxpaint/lockfile.dat" on Linux and Unix,
+      "userdata\lockfile.dat" on Windows) is used to make sure Tux Paint
+      isn't run too many times at once (e.g., due to a child impatiently
+      clicking its icon more than once).
+
+      Even if the lockfile exists, it contains the 'time' Tux Paint was last
+      run.  If it's been more than 30 seconds, Tux Paint should run fine,
+      and simply update the lockfile with the current time.
+
+      If multiple users are sharing the directory where this file is stored
+      (e.g., on a shared network drive), then you'll need to disable this
+      feature.
+
+      To disable the lockfile, add the "--nolockfile" argument to Tux Paint's
+      command-line.
+
+      
     Tux Paint keeps writing weird messages to the screen / to a text file
     ---------------------------------------------------------------------
       A few messages are normal, but if Tux Paint is being extremely verbose
