@@ -8985,7 +8985,6 @@ static SDL_Surface * thumbnail(SDL_Surface * src, int max_x, int max_y,
 
 
 /* Get a pixel: */
-
 static Uint32 getpixel(SDL_Surface * surface, int x, int y)
 {
   Uint8 * p;
@@ -9034,7 +9033,6 @@ static Uint32 getpixel(SDL_Surface * surface, int x, int y)
 
 
 /* Draw a single pixel into the surface: */
-
 static void putpixel(SDL_Surface * surface, int x, int y, Uint32 pixel)
 {
   Uint8 * p;
@@ -9042,7 +9040,6 @@ static void putpixel(SDL_Surface * surface, int x, int y, Uint32 pixel)
   int BytesPerPixel = surface->format->BytesPerPixel;
 
   /* Assuming the X/Y values are within the bounds of this surface... */
-
   if (likely( likely((unsigned)x<(unsigned)surface->w) && likely((unsigned)y<(unsigned)surface->h) ))
     {
       // Set a pointer to the exact location in memory of the pixel
@@ -9079,8 +9076,43 @@ static void putpixel(SDL_Surface * surface, int x, int y, Uint32 pixel)
 }
 
 
-/* Should really clip at the line level, but oh well... */
+// XOR must show up on black, white, 0x7f grey, and 0x80 grey.
+// XOR must be exactly 100% perfectly reversable.
+static void xorpixel(int x, int y)
+{
+  // if outside the canvas, return
+  if( (unsigned)x >= (unsigned)canvas->w || (unsigned)y >= (unsigned)canvas->h)
+    return;
+  // now switch to screen coordinates
+  x += r_canvas.x;
+  y += r_canvas.y;
 
+  Uint8 * p;
+  // Always 4, except 3 when loading a saved image.
+  int BytesPerPixel = screen->format->BytesPerPixel;
+
+  // Set a pointer to the exact location in memory of the pixel
+  p = (Uint8 *) (((Uint8 *)screen->pixels) + /* Start: beginning of RAM */
+                 (y * screen->pitch) +  /* Go down Y lines */
+                 (x * BytesPerPixel));             /* Go in X pixels */
+
+  // XOR the (correctly-sized) piece of data in the screen's RAM
+  if (likely(BytesPerPixel == 4))
+    *(Uint32 *)p ^= 0x80808080u;  // 32-bit display
+  else if (BytesPerPixel == 1)
+    *p ^= 0x80;
+  else if (BytesPerPixel == 2)
+    *(Uint16 *)p ^= 0xd6d6;
+  else if (BytesPerPixel == 3)
+    {
+      p[0] ^= 0x80;
+      p[1] ^= 0x80;
+      p[2] ^= 0x80;
+    }
+}
+
+
+/* Should really clip at the line level, but oh well... */
 static void clipped_putpixel(SDL_Surface * dest, int x, int y, Uint32 c)
 {
   if (x >= 96 && x < (WINDOW_WIDTH - 96) &&
@@ -9345,12 +9377,7 @@ static void line_xor(int x1, int y1, int x2, int y2)
 	    {
 	      num_drawn++;
 	      if (num_drawn < 10 || dont_do_xor == 0)
-		{
-		  // must show up on black, white, 0x7f grey, and 0x80 grey
-		  // must be exactly 100% perfect reversable
-		  clipped_putpixel(screen, x1 + 96, y,
-				   0x80808080 ^ getpixel(screen, x1 + 96, y));
-		}
+	        xorpixel(x1,y);
 	    }
 	
 	  x1 = x1 + dx;
@@ -9365,12 +9392,7 @@ static void line_xor(int x1, int y1, int x2, int y2)
 	      num_drawn++;
 	  
 	      if (num_drawn < 10 || dont_do_xor == 0)
-		{
-		  // must show up on black, white, 0x7f grey, and 0x80 grey
-		  // must be exactly 100% perfect reversable
-		  clipped_putpixel(screen, x1 + 96, y,
-				   0x80808080 ^ getpixel(screen, x1 + 96, y));
-		}
+	        xorpixel(x1,y);
 	    }
 	}
       else
@@ -9380,12 +9402,7 @@ static void line_xor(int x1, int y1, int x2, int y2)
 	      num_drawn++;
 	  
 	      if (num_drawn < 10 || dont_do_xor == 0)
-		{
-		  // must show up on black, white, 0x7f grey, and 0x80 grey
-		  // must be exactly 100% perfect reversable
-		  clipped_putpixel(screen, x1 + 96, y,
-				   0x80808080 ^ getpixel(screen, x1 + 96, y));
-		}
+	        xorpixel(x1,y);
 	    }
         }
     }
@@ -13713,13 +13730,11 @@ static void stamp_xor(int x, int y)
 	{
           if(!stamp_outline_data[xx + yy*stamp_outline_w])
             continue;
-          sx = 96 + x + xx - stamp_outline_w/2;
-          sy =      y + yy - stamp_outline_h/2;
+          sx = x + xx - stamp_outline_w/2;
+          sy = y + yy - stamp_outline_h/2;
           if (stiple[sx%STIPLE_W + sy%STIPLE_H * STIPLE_W] != '8')
             continue;
-	  // must show up on black, white, 0x7f grey, and 0x80 grey
-	  // must be exactly 100% perfect reversable
-          clipped_putpixel(screen, sx, sy, 0x80808080 ^ getpixel(screen, sx, sy));
+          xorpixel(sx, sy);
 	}
     }
   SDL_UnlockSurface(screen);
