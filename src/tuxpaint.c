@@ -1629,6 +1629,7 @@ static void parse_font_style(style_info *si)
   int have_bold = 0;
   int have_medium = 0;
   int have_black = 0;
+  int have_heavy = 0;
 
   si->italic = 0;
 
@@ -1642,37 +1643,31 @@ static void parse_font_style(style_info *si)
           sp++;
           continue;
         }
-      if(!strncmp(sp,"Black",strlen("Black")))
-        {
-          sp += strlen("Black");
-          have_black = 1;
-          continue;
-        }
-      if(!strncmp(sp,"Bold",strlen("Bold")))
+      if(!strncasecmp(sp,"Bold",strlen("Bold")))
         {
           sp += strlen("Bold");
           have_bold = 1;
           continue;
         }
-      if(!strncmp(sp,"Regular",strlen("Regular")))
+      if(!strncasecmp(sp,"Regular",strlen("Regular")))
         {
           sp += strlen("Regular");
           continue;
         }
-      if(!strncmp(sp,"Italic",strlen("Italic")))
+      if(!strncasecmp(sp,"Italic",strlen("Italic")))
         {
           sp += strlen("Italic");
           si->italic = 1;
           continue;
         }
-      if(!strncmp(sp,"Oblique",strlen("Oblique")))
+      if(!strncasecmp(sp,"Oblique",strlen("Oblique")))
         {
           sp += strlen("Oblique");
           si->italic = 1;
           continue;
         }
       // move " Condensed" from style to family
-      if(!strncmp(sp,"Condensed",strlen("Condensed")))
+      if(!strncasecmp(sp,"Condensed",strlen("Condensed")))
         {
           sp += strlen("Condensed");
           size_t len = strlen(si->family);
@@ -1683,32 +1678,61 @@ static void parse_font_style(style_info *si)
           si->family = name;
           continue;
         }
-      if(!strncmp(sp,"Light",strlen("Light")))
+      if(!strncasecmp(sp,"Light",strlen("Light")))
         {
           sp += strlen("Light");
           have_light = 1;
           continue;
         }
-      if(!strncmp(sp,"Medium",strlen("Medium")))
+      if(!strncasecmp(sp,"Medium",strlen("Medium")))
         {
           sp += strlen("Medium");
           have_medium = 1;
           continue;
         }
-      if(!strncmp(sp,"Demi",strlen("Demi")))
+      if(!strncasecmp(sp,"Demi",strlen("Demi")))
         {
           sp += strlen("Demi");
           have_demi = 1;
           continue;
         }
-      if(!strncmp(sp,"Roman",strlen("Roman")))
+      if(!strncasecmp(sp,"Heavy",strlen("Heavy")))
+        {
+          sp += strlen("Heavy");
+          have_heavy = 1;
+          continue;
+        }
+      if(!strncasecmp(sp,"Normal",strlen("Normal")))
+        {
+          sp += strlen("Normal");
+          continue;
+        }
+      if(!strncasecmp(sp,"Black",strlen("Black")))
+        {
+          sp += strlen("Black");
+          have_black = 1;
+          continue;
+        }
+      if(!strncasecmp(sp,"Roman",strlen("Roman")))
         {
           sp += strlen("Roman");
           continue;
         }
-      if(!strncmp(sp,"Book",strlen("Book")))
+      if(!strncasecmp(sp,"Book",strlen("Book")))
         {
           sp += strlen("Book");
+          continue;
+        }
+      if(!strncasecmp(sp,"Chancery",strlen("Chancery")))
+        {
+          sp += strlen("Chancery");
+          si->italic = 1;
+          continue;
+        }
+      if(!strncasecmp(sp,"Thin",strlen("Thin")))
+        {
+          sp += strlen("Thin");
+          have_light = 1;
           continue;
         }
       if(!strncmp(sp,"LR",strlen("LR")))
@@ -1727,7 +1751,7 @@ static void parse_font_style(style_info *si)
 
   if (have_demi || have_medium)
     si->boldness = 2;
-  else if (have_bold || have_black) // TODO: black should be a level above
+  else if (have_bold || have_black || have_heavy) // TODO: split these
     si->boldness = 3;
   else if (have_light)
     si->boldness = 0;
@@ -14764,7 +14788,9 @@ static void loadfonts(const char * const dir, int fatal)
                       user_font_styles[num_font_styles]->family = strdup(family);
                       user_font_styles[num_font_styles]->style = strdup(style);
                       user_font_styles[num_font_styles]->score  = charset_works(font, gettext("oO"));
-                      user_font_styles[num_font_styles]->score += charset_works(font, gettext("@$~#{}<>^&*"));
+                      user_font_styles[num_font_styles]->score += charset_works(font, gettext("`\%_@$~#{}<>^&*"));
+                      user_font_styles[num_font_styles]->score += charset_works(font, gettext(",.?!"));
+                      user_font_styles[num_font_styles]->score += charset_works(font, gettext("017"));
                       user_font_styles[num_font_styles]->score += charset_works(font, gettext("O0"));
                       user_font_styles[num_font_styles]->score += charset_works(font, gettext("1Il|"));
                       num_font_styles++;
