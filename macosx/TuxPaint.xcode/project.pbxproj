@@ -85,7 +85,7 @@
 //194
 		19C28FACFE9D520D11CA2CBB = {
 			children = (
-				8D1107320486CEB800E47090,
+				22AB8EB4076FDF270009BF7C,
 			);
 			isa = PBXGroup;
 			name = Products;
@@ -102,6 +102,30 @@
 //222
 //223
 //224
+		2203A688076FDC0800CC41A7 = {
+			fileRef = 2258162D074EB1A6005F774F;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		2203A689076FDC0800CC41A7 = {
+			fileRef = 2258162E074EB1A6005F774F;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		2203A68A076FDC0800CC41A7 = {
+			fileRef = 2258162F074EB1A6005F774F;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		2203A68B076FDC0800CC41A7 = {
+			fileRef = 22581630074EB1A6005F774F;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
 		2258162D074EB1A6005F774F = {
 			isa = PBXFileReference;
 			lastKnownFileType = wrapper.framework;
@@ -195,6 +219,14 @@
 			isa = PBXBuildFile;
 			settings = {
 			};
+		};
+		22AB8EB4076FDF270009BF7C = {
+			explicitFileType = wrapper.application;
+			includeInIndex = 0;
+			isa = PBXFileReference;
+			path = "Tux Paint.app";
+			refType = 3;
+			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 		22C005D30736650D008555A2 = {
 			isa = PBXFileReference;
@@ -481,6 +513,10 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				2203A688076FDC0800CC41A7,
+				2203A689076FDC0800CC41A7,
+				2203A68A076FDC0800CC41A7,
+				2203A68B076FDC0800CC41A7,
 			);
 			isa = PBXCopyFilesBuildPhase;
 			runOnlyForDeploymentPostprocessing = 0;
@@ -629,7 +665,7 @@
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "";
-				GCC_PREPROCESSOR_DEFINITIONS = "DATA_PREFIX=\\\"TuxPaint.app/Contents/Resources/\\\" DOC_PREFIX=\\\"./share/doc/tuxpaint/\\\" CONFDIR=\\\"$(HOME)/Library/Application\\ Support/TuxPaint/\\\" LOCALEDIR=\\\"TuxPaint.app/Contents/Resources/locale/\\\" CURSOR_SHAPES=SMALL __APPLE__";
+				GCC_PREPROCESSOR_DEFINITIONS = "DATA_PREFIX=\\\"Tux\\ Paint.app/Contents/Resources/\\\" DOC_PREFIX=\\\"./share/doc/tuxpaint/\\\" CONFDIR=\\\"$(HOME)/Library/Application\\ Support/Tux\\ Paint/\\\" LOCALEDIR=\\\"Tux\\ Paint.app/Contents/Resources/locale/\\\" CURSOR_SHAPES=SMALL SMALL_CURSOR_SHAPES __APPLE__";
 				HEADER_SEARCH_PATHS = "/sw/include/SDL /sw/include ../src/mouse/16x16/";
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "$(HOME)/Applications";
@@ -638,16 +674,16 @@
 				OTHER_CFLAGS = "";
 				OTHER_CPLUSPLUSFLAGS = "";
 				OTHER_LDFLAGS = "/sw/lib/libpng.a /sw/lib/libintl.a -lz -liconv";
-				PRODUCT_NAME = TuxPaint;
+				PRODUCT_NAME = "Tux Paint";
 				WRAPPER_EXTENSION = app;
 			};
 			dependencies = (
 			);
 			isa = PBXNativeTarget;
-			name = TuxPaint;
+			name = "Tux Paint";
 			productInstallPath = "$(HOME)/Applications";
 			productName = TuxPaint;
-			productReference = 8D1107320486CEB800E47090;
+			productReference = 22AB8EB4076FDF270009BF7C;
 			productType = "com.apple.product-type.application";
 		};
 		8D1107290486CEB800E47090 = {
@@ -711,14 +747,6 @@
 			path = Info.plist;
 			refType = 4;
 			sourceTree = "<group>";
-		};
-		8D1107320486CEB800E47090 = {
-			explicitFileType = wrapper.application;
-			includeInIndex = 0;
-			isa = PBXFileReference;
-			path = TuxPaint.app;
-			refType = 3;
-			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 	};
 	rootObject = 29B97313FDCFA39411CA2CEA;

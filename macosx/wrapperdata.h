@@ -1,6 +1,6 @@
 /*
  *  wrapperdata.h
- *  SuperTux
+ *  TuxPaint
  *
  *  Created by Martin Fuhrer on Wed May 12 2004.
  *  Copyright (c) 2004 __MyCompanyName__. All rights reserved.
