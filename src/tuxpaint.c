@@ -8547,7 +8547,7 @@ static info_type * loadinfo(const char * const fname)
 		      if (tmp > 0.0001 && tmp < 10000.0)
 		        inf.ratio = tmp;
 		    }
-		  else if (strchr(cp,':'))
+		  else if (strchr(cp,'/'))
 		    {
 		      tmp = strtod(cp,&cp);
 		      while(*cp && !isdigit(*cp))
@@ -8556,7 +8556,7 @@ static info_type * loadinfo(const char * const fname)
 		      if (tmp>0.0001 && tmp<10000.0 && tmp2>0.0001 && tmp2<10000.0 && tmp/tmp2>0.0001 && tmp/tmp2<10000.0)
 		        inf.ratio = tmp/tmp2;
 		    }
-		  else if (strchr(cp,'/'))
+		  else if (strchr(cp,':'))
 		    {
 		      tmp = strtod(cp,&cp);
 		      while(*cp && !isdigit(*cp))

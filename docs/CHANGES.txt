@@ -12,6 +12,7 @@ http://www.newbreedsoftware.com/tuxpaint/
     Albert Cahalan <albert@users.sf.net>
 
   * Added "scale" keyword (*.dat files) for high-resolution stamp images.
+    Fixed it later; had ":" and "/" flipped around. Documented it.
     Albert Cahalan <albert@users.sf.net>
 
   * Can now use pretty much any window size, like 1234x666.
