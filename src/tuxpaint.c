@@ -3163,7 +3163,7 @@ static void mainloop(void)
                                   playsound(0, control_sound, 0);
 
 
-				  if (cur_tool == TOOL_TEXT)
+				  if (cur_tool == TOOL_TEXT) // Huh? It had better be!
 				  {
                                     // need to invalidate all the cached user fonts, causing reload on demand
                                     int i;
