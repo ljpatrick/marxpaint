@@ -3158,6 +3158,24 @@ void blit_magic(int x, int y, int x2, int y2)
 		       SDL_MapRGB(canvas->format, r, g, b));
 	      putpixel(canvas, x + xx + 0, y + yy + 1,
 		       SDL_MapRGB(canvas->format, r, g, b));
+	      
+	      putpixel(canvas, x + xx - 1, y + yy - 1,
+		       SDL_MapRGB(canvas->format, r, g, b));
+	      putpixel(canvas, x + xx - 1, y + yy + 1,
+		       SDL_MapRGB(canvas->format, r, g, b));
+	      putpixel(canvas, x + xx + 1, y + yy - 1,
+		       SDL_MapRGB(canvas->format, r, g, b));
+	      putpixel(canvas, x + xx + 1, y + yy + 1,
+		       SDL_MapRGB(canvas->format, r, g, b));
+	      
+	      putpixel(canvas, x + xx + 0, y + yy - 2,
+		       SDL_MapRGB(canvas->format, r, g, b));
+	      putpixel(canvas, x + xx - 2, y + yy + 0,
+		       SDL_MapRGB(canvas->format, r, g, b));
+	      putpixel(canvas, x + xx + 2, y + yy + 0,
+		       SDL_MapRGB(canvas->format, r, g, b));
+	      putpixel(canvas, x + xx + 0, y + yy + 2,
+		       SDL_MapRGB(canvas->format, r, g, b));
 	    }
 	  }
 	}

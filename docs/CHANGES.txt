@@ -83,6 +83,8 @@ http://www.newbreedsoftware.com/tuxpaint/
 
   * Moved "tuxpaint-import.1" from src/ to src/manpage/.
 
+  * "Thick" and "Thin" Magic Tools made 'stronger.'
+
 
 2003.February.22 (0.9.10)
   * UTF-8 stamp descriptions word-wrap around spaces.
