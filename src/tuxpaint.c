@@ -764,15 +764,18 @@ static void loadarbitrary(SDL_Surface * surfs[], SDL_Surface * altsurfs[],
 #endif
 static SDL_Surface * thumbnail(SDL_Surface * src, int max_x, int max_y,
 			int keep_aspect);
+
 static Uint32 getpixel(SDL_Surface * surface, int x, int y);
 static void putpixel(SDL_Surface * surface, int x, int y, Uint32 pixel);
+static Uint32 clipped_getpixel(SDL_Surface * surface, int x, int y);
+static void clipped_putpixel(SDL_Surface * dest, int x, int y, Uint32 c);
+
 static void debug(const char * const str);
 static void do_undo(void);
 static void do_redo(void);
 static void render_brush(void);
 static void playsound(int chan, int s, int override);
 static void line_xor(int x1, int y1, int x2, int y2);
-static void clipped_putpixel(SDL_Surface * dest, int x, int y, Uint32 c);
 static void rect_xor(int x1, int y1, int x2, int y2);
 static void update_stamp_xor(void);
 static void stamp_xor(int x1, int y1);
@@ -4167,7 +4170,6 @@ static void blit_magic(int x, int y, int button_down)
 	  unsigned i = 32*32;
 	  double rate = button_down ? 0.5 : 0.0;
 
-	  SDL_LockSurface(last);
 	  SDL_LockSurface(canvas);
 
 	  while (i--)
@@ -4179,17 +4181,15 @@ static void blit_magic(int x, int y, int button_down)
 	        continue;
 	      // it is on the circle, so grab it
 
-	      //SDL_GetRGB(getpixel(last, x+ix-16, y+iy-16), last->format, &r, &g, &b);
-	      SDL_GetRGB(getpixel(canvas, x+ix-16, y+iy-16), last->format, &r, &g, &b);
+	      SDL_GetRGB(clipped_getpixel(canvas, x+ix-16, y+iy-16), last->format, &r, &g, &b);
 	      state[ix][iy][0] = rate*state[ix][iy][0] + (1.0-rate)*sRGB_to_linear_table[r];
 	      state[ix][iy][1] = rate*state[ix][iy][1] + (1.0-rate)*sRGB_to_linear_table[g];
 	      state[ix][iy][2] = rate*state[ix][iy][2] + (1.0-rate)*sRGB_to_linear_table[b];
 
 	      // opacity 100% --> new data not blended w/ existing data
-	      putpixel(canvas, x+ix-16, y+iy-16, SDL_MapRGB(canvas->format, linear_to_sRGB(state[ix][iy][0]), linear_to_sRGB(state[ix][iy][1]), linear_to_sRGB(state[ix][iy][2])));
+	      clipped_putpixel(canvas, x+ix-16, y+iy-16, SDL_MapRGB(canvas->format, linear_to_sRGB(state[ix][iy][0]), linear_to_sRGB(state[ix][iy][1]), linear_to_sRGB(state[ix][iy][2])));
 	    }
 	  SDL_UnlockSurface(canvas);
-	  SDL_UnlockSurface(last);
 	}
       else if (cur_magic == MAGIC_NEGATIVE)
 	{
@@ -7923,6 +7923,20 @@ static Uint32 getpixel(SDL_Surface * surface, int x, int y)
 }
 
 
+static Uint32 clipped_getpixel(SDL_Surface * src, int x, int y)
+{
+  if (x < 96)
+    x = 96;
+  if (x >= WINDOW_WIDTH - 96)
+    x = WINDOW_WIDTH - 96 - 1;
+  if (y < 0)
+    y = 0;
+  if (y >= 48 * 7 + 40 + HEIGHTOFFSET)
+    y = 48 * 7 + 40 + HEIGHTOFFSET - 1;
+  return getpixel(src, x, y);
+}
+
+
 /* Draw a single pixel into the surface: */
 
 static void putpixel(SDL_Surface * surface, int x, int y, Uint32 pixel)
@@ -7981,6 +7995,18 @@ static void putpixel(SDL_Surface * surface, int x, int y, Uint32 pixel)
       /* SDL_UnlockSurface(surface); */
     }
 }
+
+/* Should really clip at the line level, but oh well... */
+
+static void clipped_putpixel(SDL_Surface * dest, int x, int y, Uint32 c)
+{
+  if (x >= 96 && x < (WINDOW_WIDTH - 96) &&
+      y >= 0 && y < (48 * 7 + 40 + HEIGHTOFFSET))
+    {
+      putpixel(dest, x, y, c);
+    }
+}
+
 
 
 /* Show debugging stuff: */
@@ -8289,18 +8315,6 @@ static void line_xor(int x1, int y1, int x2, int y2)
     }
 
   //SDL_UnlockSurface(screen);
-}
-
-
-/* Should really clip at the line level, but oh well... */
-
-static void clipped_putpixel(SDL_Surface * dest, int x, int y, Uint32 c)
-{
-  if (x >= 96 && x < (WINDOW_WIDTH - 96) &&
-      y >= 0 && y < (48 * 7 + 40 + HEIGHTOFFSET))
-    {
-      putpixel(dest, x, y, c);
-    }
 }
 
 
