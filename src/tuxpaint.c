@@ -6547,7 +6547,7 @@ static void loadfont_callback(const char *restrict const dir, unsigned dirlen, t
               int numfaces = TTF_FontFaces(font);
               if (numfaces != 1)
                 printf("Found %d faces in %s, %s, %s\n", numfaces, files[i].str, family, style);
-              if(charset_works(font, gettext("jq")) && charset_works(font, gettext("JQ")))
+              if(strcmp("Zapfino",family) && strcmp("Elvish Ring NFI",family) && charset_works(font, gettext("jq")) && charset_works(font, gettext("JQ")))
                 {
                   if (num_font_styles==num_font_styles_max)
                     {
@@ -6573,7 +6573,7 @@ static void loadfont_callback(const char *restrict const dir, unsigned dirlen, t
                 {
 #if 0
 // THREADED_FONTS
-                  printf("Font missing critical chars: %s, %s, %s\n", files[i].str, family, style);
+                  printf("Font is too defective: %s, %s, %s\n", files[i].str, family, style);
 #endif
                 }
               TTF_CloseFont(font);
@@ -7050,7 +7050,7 @@ static void run_font_scanner(void)
     {
       // parent (or error -- but we're screwed in that case)
       font_socket_fd = sv[0];
-//      close(sv[1]);
+      close(sv[1]);
       return;
     }
   nice(42);       // be nice, letting the main thread get the CPU
