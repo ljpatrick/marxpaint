@@ -92,6 +92,14 @@ LOW-PRIORITY IMPLEMENTATION CHANGES:
   * Support Ogg Vorbis for stamp sounds, for *much* higher quality and
     much smaller file sizes.
 
+  * Saved images on should be stored in 'My Documents/My Pictures' on
+    Windows. The actual directory name is different for each user,
+    and is stored in the registry at:
+    HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\User Shell Folders\My Pictures
+    (It also varies with the language Windows is in, e.g. 'Mine dokumenter/Mine bilder'
+    on the Norwegian version of Windows, but the registry key above
+    will always contain the correct name/address.)
+
 
 HIGH-PRIORITY BUGS:
 -------------------
@@ -117,8 +125,8 @@ PLATFORM-SPECIFIC BUGS:
     FREQUENTLY REQUESTED
 
 
-HIGH-PRIORITY TRANSLATION STUFF:
---------------------------------
+HIGH-PRIORITY I18n STUFF:
+-------------------------
   * Non-ASCII characters (in translations) aren't uppercased when using
     '--uppercase'. Example: In the Norwegian Nynorsk ('nn') translation
     the top left icon is shown as 'MåLING' instead of 'MÅLING'.
@@ -135,6 +143,10 @@ HIGH-PRIORITY TRANSLATION STUFF:
   * Writing non-ASCII characters with the text tool doesn't work.
 
   * Finish current translations.  (Especially documentation!)
+
+  * The UI should be 'mirrored' for all right-to-left languages, i.e.
+    the toolbar should be on the right, and Tux should be mirrored
+    to look towards the left.
 
 
 LOW-PRIORITY TRANSLATION STUFF:
