@@ -8,6 +8,9 @@ http://www.newbreedsoftware.com/tuxpaint/
 
 
 2004.November.21 (0.9.15)
+  * Updated Hebrew translation.
+    Dovix <dovix2003@yahoo.com>
+
   * Increased maximum number of stamps that can be loaded at once from
     256 to 512.
     Albert Cahalan <albert@users.sourceforge.net>
