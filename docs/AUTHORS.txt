@@ -162,7 +162,7 @@ June 17, 2002 - July 27, 2004
     Rita Verbauskaite <verba@centras.lt>
 
   * Malay
-    Muhammad Najmi Ahmad Zabidi <md_najmi@yahoo.com>
+    Muhammad Najmi Ahmad Zabidi <mnajem@linuxmail.org>
 
   * Norwegian Bokmal
     Knut Erik Hollund <khollund@responze.net>

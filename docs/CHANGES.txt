@@ -7,7 +7,10 @@ bill@newbreedsoftware.com
 http://www.newbreedsoftware.com/tuxpaint/
 
 
-2004.August.19 (0.9.14) [cvs]
+2004.August.23 (0.9.14) [cvs]
+  * Updated Malay translation.
+    Muhammad Najmi Ahmad Zabidi <mnajem@linuxmail.org>
+
   * Bulgarian translation.
     Martin Zhekov <mjekov@bginfo.net>
 
