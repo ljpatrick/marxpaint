@@ -11,6 +11,9 @@ http://www.newbreedsoftware.com/tuxpaint/
   * Update BeOS Makefile.
     Marcin 'Shard' Konicki <shard at beosjournal.org>
 
+  * Added BeOS resource file (src/tuxpaint.rsrc)
+    Marcin 'Shard' Konicki <shard at beosjournal.org>
+
   * Removed TODO.txt file and moved all bugs
     and feature requests to the SourceForge
     tracker: http://sourceforge.net/tracker/?group_id=66938
