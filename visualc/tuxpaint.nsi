@@ -1,7 +1,7 @@
 # vim: noai et ts=4 tw=0
 # with a few tiny modifications by Phil Harper(philh@theopencd.org)
 
-!define PKG_VERSION "0.9.14-rc4"
+!define PKG_VERSION "0.9.14"
 !define PKG_PREFIX  "tuxpaint"
 
 !define APP_PREFIX  "TuxPaint"
@@ -92,8 +92,8 @@ Section "Start Menu Shortcuts"
   SetOutPath $INSTDIR
   CreateDirectory "$SMPROGRAMS\${APP_NAME}"
   CreateShortCut  "$SMPROGRAMS\${APP_NAME}\${APP_NAME} Configuration.lnk" "$INSTDIR\${APP_CFG_EXE}" "" "$INSTDIR\${APP_CFG_EXE}" 0 "" "" "Configure ${APP_NAME}"
-  CreateShortCut  "$SMPROGRAMS\${APP_NAME}\${APP_NAME} (Full Screen).lnk" "$INSTDIR\${APP_EXE}" "-f" "$INSTDIR\${APP_EXE}" 0 "" "" "Start ${APP_NAME} in Fullscreen mode"
-  CreateShortCut  "$SMPROGRAMS\${APP_NAME}\${APP_NAME} (Windowed).lnk" "$INSTDIR\${APP_EXE}" "" "$INSTDIR\${APP_EXE}" 0 "" "" "Start ${APP_NAME} in a Window"
+  CreateShortCut  "$SMPROGRAMS\${APP_NAME}\${APP_NAME} (Full Screen).lnk" "$INSTDIR\${APP_EXE}" "--fullscreen" "$INSTDIR\${APP_EXE}" 0 "" "" "Start ${APP_NAME} in Fullscreen mode"
+  CreateShortCut  "$SMPROGRAMS\${APP_NAME}\${APP_NAME} (Windowed).lnk" "$INSTDIR\${APP_EXE}" "--windowed" "$INSTDIR\${APP_EXE}" 0 "" "" "Start ${APP_NAME} in a Window"
   CreateShortCut  "$SMPROGRAMS\${APP_NAME}\Readme.lnk" "$INSTDIR\docs\html\README.html" "" "$INSTDIR\docs\html\README.html" 0 "" "" "View ReadMe"
   CreateShortCut  "$SMPROGRAMS\${APP_NAME}\Licence.lnk" "$INSTDIR\docs\copying.txt" "" "$INSTDIR\docs\copying.txt" 0 "" "" "Read License"
   CreateShortCut  "$SMPROGRAMS\${APP_NAME}\Uninstall.lnk" "$INSTDIR\uninstall.exe" "" "$INSTDIR\uninstall.exe" 0 "" "" "Remove ${APP_NAME}"
