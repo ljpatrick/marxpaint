@@ -1498,6 +1498,7 @@ typedef struct style_info {
   char *style;     // junk like "Oblique Demi-Bold"
   int italic;
   int boldness;
+  int score;
   int truetype; // Is it? (TrueType gets priority)
 } style_info;
 
@@ -1847,7 +1848,7 @@ printf("               %s\n", base[i]->style);
   user_font_families[num_font_families++] = fi;
   fi->directory = strdup(base[0]->directory);
   fi->family    = strdup(base[0]->family);
-  fi->score     = base[0]->truetype;
+  fi->score     = base[0]->truetype + base[0]->score;
   i = count;
   while(i--)
     {
@@ -3292,7 +3293,7 @@ static void mainloop(void)
                           
                           char font_tux_text[512];
                           snprintf(font_tux_text, sizeof font_tux_text, "%s (%s).", TTF_FontFaceFamilyName(getfonthandle(cur_font)), TTF_FontFaceStyleName(getfonthandle(cur_font)));
-                          printf("font change:%s\n", font_tux_text);
+//                          printf("font change:%s\n", font_tux_text);
                           draw_tux_text(TUX_GREAT, font_tux_text, 1);
                           
                           if (do_draw)
@@ -14520,19 +14521,38 @@ static void do_render_cur_text(int do_blit)
     SDL_FreeSurface(tmp_surf);
 }
 
-// see if two surfaces are the same
-static int surfcmp(SDL_Surface *s1, SDL_Surface *s2)
+// backdoor into qsort operations, so we don't have to do work again
+static int was_bad_font;
+
+// see if two font surfaces are the same
+static int do_surfcmp(const SDL_Surface *const *const v1, const SDL_Surface *const *const v2)
 {
+  const SDL_Surface *const s1 = *v1;
+  const SDL_Surface *const s2 = *v2;
   if(s1==s2)
-    return 0;  // they are same
-  if(!s1 || !s2)
-    return 1;  // they are different
+    {
+      printf("WTF?\n");
+      return 0;
+    }
+  if(!s1 || !s2 || !s1->w || !s2->w || !s1->h || !s2->h || !s1->format || !s2->format)
+    {
+      was_bad_font = 1;
+      return 0;
+    }
   if(s1->format->BytesPerPixel != s2->format->BytesPerPixel)
-    return 1;
-  if(s1->w != s2->w || s1->h != s2->h)
-    return 1;
-  char *c1 = (char*)s1->pixels;
-  char *c2 = (char*)s2->pixels;
+    {
+      // something really strange and bad happened
+      was_bad_font = 1;
+      return s1->format->BytesPerPixel - s2->format->BytesPerPixel;
+    }
+
+  if(s1->w != s2->w)
+    return s1->w - s2->w;
+  if(s1->h != s2->h)
+    return s1->h - s2->h;
+
+  const char *const c1 = (const char *const)s1->pixels;
+  const char *const c2 = (const char *const)s2->pixels;
   int width = s1->format->BytesPerPixel * s1->w;
   if(width==s1->pitch)
     return memcmp(c1,c2,width*s1->h);
@@ -14545,6 +14565,47 @@ static int surfcmp(SDL_Surface *s1, SDL_Surface *s2)
         break;
     }
   return cmp;
+}
+
+// see if two font surfaces are the same
+static int surfcmp(const void *s1, const void *s2)
+{
+  int diff = do_surfcmp(s1, s2);
+  if(!diff)
+    was_bad_font = 1;
+  return diff;
+}
+
+// check if the characters will render distinctly
+static int charset_works(TTF_Font *font, const char *s)
+{
+  SDL_Color black = {0, 0, 0, 0};
+  SDL_Surface **surfs = malloc(strlen(s) * sizeof surfs[0]);
+  unsigned count = 0;
+  int ret = 0;
+  while(*s)
+    {
+      char c[8];
+      unsigned offset = 0;
+      do
+        c[offset++] = *s++;
+        while(offset<5 && (*s & 0xc0u) == 0x80u); // assume safe input
+      c[offset++] = '\0';
+      SDL_Surface *tmp_surf = TTF_RenderUTF8_Blended(font, c, black);
+      if(!tmp_surf)
+        {
+          printf("could not render \"%s\" font\n", TTF_FontFaceFamilyName(font));
+          goto out;
+        }
+      surfs[count++] = tmp_surf;
+    }
+  was_bad_font = 0;
+  qsort(surfs, count, sizeof surfs[0], surfcmp);
+  ret = !was_bad_font;
+out:
+  while(count--)
+    SDL_FreeSurface(surfs[count]);
+  return ret;
 }
 
 static void loadfonts(const char * const dir, int fatal)
@@ -14695,42 +14756,23 @@ static void loadfonts(const char * const dir, int fatal)
                   int numfaces = TTF_FontFaces(font);
                   if (numfaces != 1)
                     printf("Found %d faces in %s, %s, %s\n", numfaces, filename, family, style);
-// do without the blacklist for now, to verify that bad fonts don't crash Tux Paint
-#if 0
-                  if(!(strstr(family, "Webdings") ||
-                       strstr(family, "Dingbats") ||
-                       strstr(family, "Cursor") ||
-                       strstr(family, "Standard Symbols")))
-#endif
+                  if(charset_works(font, "jq") && charset_works(font, "JQ"))
                     {
-                      SDL_Color black = {0, 0, 0, 0};
-                      SDL_Surface *tmp_surf_a = TTF_RenderUTF8_Blended(font, "a", black);
-                      SDL_Surface *tmp_surf_z = TTF_RenderUTF8_Blended(font, "z", black);
-                      if(tmp_surf_a && tmp_surf_z)
-                        {
-                          if(surfcmp(tmp_surf_a,tmp_surf_z))
-                            {
-                              user_font_styles[num_font_styles] = malloc(sizeof *user_font_styles[num_font_styles]);
-                              user_font_styles[num_font_styles]->directory = strdup(dir);
-                              user_font_styles[num_font_styles]->filename = strdup(filename);
-                              user_font_styles[num_font_styles]->family = strdup(family);
-                              user_font_styles[num_font_styles]->style = strdup(style);
-                              num_font_styles++;
-                              //printf("Accepted: %s, %s, %s\n", filename, family, style);
-                            }
-                          else
-                            {
-                              printf("Bad font, 'a' and 'z' match: %s, %s, %s\n", filename, family, style);
-                            }
-                        }
-                      else
-                        {
-                          printf("could not render %s, %s, %s\n", filename, family, style);
-                        }
-                      if(tmp_surf_a)
-                        SDL_FreeSurface(tmp_surf_a);
-                      if(tmp_surf_z)
-                        SDL_FreeSurface(tmp_surf_z);
+                      user_font_styles[num_font_styles] = malloc(sizeof *user_font_styles[num_font_styles]);
+                      user_font_styles[num_font_styles]->directory = strdup(dir);
+                      user_font_styles[num_font_styles]->filename = strdup(filename);
+                      user_font_styles[num_font_styles]->family = strdup(family);
+                      user_font_styles[num_font_styles]->style = strdup(style);
+                      user_font_styles[num_font_styles]->score = charset_works(font, "oO");
+                      user_font_styles[num_font_styles]->score += charset_works(font, "@$~#{}<>^&*");
+                      user_font_styles[num_font_styles]->score += charset_works(font, "O0");
+                      user_font_styles[num_font_styles]->score += charset_works(font, "1Il|");
+                      num_font_styles++;
+//                      printf("Accepted: %s, %s, %s\n", filename, family, style);
+                    }
+                  else
+                    {
+                      printf("Font missing critical chars: %s, %s, %s\n", filename, family, style);
                     }
                   TTF_CloseFont(font);
                 }
