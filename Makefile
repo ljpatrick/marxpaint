@@ -6,7 +6,7 @@
 # bill@newbreedsoftware.com
 # http://www.newbreedsoftware.com/tuxpaint/
 
-# June 14, 2002 - March 4, 2004
+# June 14, 2002 - March 17, 2004
 
 
 # Where to install things:
@@ -505,6 +505,11 @@ install-gettext:
 	@cp trans/sk.mo $(LOCALE_PREFIX)sk/LC_MESSAGES/tuxpaint.mo
 	@chmod 644 $(LOCALE_PREFIX)sk/LC_MESSAGES/tuxpaint.mo
 	@#
+	@echo "   sl_SI ...Slovenian..."
+	@install -d $(LOCALE_PREFIX)sl/LC_MESSAGES
+	@cp trans/sl.mo $(LOCALE_PREFIX)sl/LC_MESSAGES/tuxpaint.mo
+	@chmod 644 $(LOCALE_PREFIX)sl/LC_MESSAGES/tuxpaint.mo
+	@#
 	@echo "   es_ES ...Spanish..."
 	@install -d $(LOCALE_PREFIX)es/LC_MESSAGES
 	@cp trans/es.mo $(LOCALE_PREFIX)es/LC_MESSAGES/tuxpaint.mo
@@ -653,6 +658,7 @@ translations: trans \
 	trans/ro.mo \
 	trans/ru.mo \
 	trans/sk.mo \
+	trans/sl.mo \
 	trans/sr.mo \
 	trans/sv.mo \
 	trans/ta.mo \
@@ -780,6 +786,10 @@ trans/ru.mo:	src/messages/ru.po
 trans/sk.mo:	src/messages/sk.po
 	@echo "   sk_SK ...Slovak..."
 	@msgfmt src/messages/sk.po -o trans/sk.mo
+
+trans/sl.mo:	src/messages/sl.po
+	@echo "   sl_SI ...Slovenian..."
+	@msgfmt src/messages/sl.po -o trans/sl.mo
 
 trans/sr.mo:	src/messages/sr.po
 	@echo "   sr_YU ...Serbian..."

@@ -1,0 +1,14 @@
+# Dummy PO
+msgid ""
+msgstr ""
+"POT-Creation-Date: \n"
+"PO-Revision-Date: 2004-03-17 00:00+0100\n"
+"Last-Translator: na <na@na.na>\n"
+"Language-Team: na <na@na.na>\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: tuxpaint.c:795
+msgid "Do you really want to quit?"
+msgstr "REALLY?"
+

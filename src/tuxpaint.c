@@ -26,7 +26,7 @@
 
 
 #define VER_VERSION     "0.9.14"
-#define VER_DATE        "2004.03.04"
+#define VER_DATE        "2004.03.17"
 
 
 /* #define DEBUG */
@@ -316,6 +316,7 @@ enum {
   LANG_RO,     /* Romanian */
   LANG_RU,     /* Russian */
   LANG_SK,     /* Slovak */
+  LANG_SL,     /* Slovenian */
   LANG_SR,     /* Serbian */
   LANG_SV,     /* Swedish */
   LANG_TA,     /* Tamil */
@@ -356,6 +357,7 @@ const char * lang_prefixes[NUM_LANGS] = {
   "ro",
   "ru",
   "sk",
+  "sl",
   "sr",
   "sv",
   "ta",
@@ -3812,6 +3814,7 @@ void show_lang_usage(FILE * f, char * prg)
 	  "  romanian\n"
 	  "  russian      russkiy\n"
 	  "  slovak\n"
+	  "  slovenian\n"
 	  "  spanish      espanol\n"
 	  "  swedish      svenska\n"
 	  "  tamil\n"
@@ -3863,6 +3866,7 @@ void show_locale_usage(FILE * f, char * prg)
 	  "  ro_RO   (Romanian)\n"
 	  "  ru_RU   (Russian      Russkiy)\n"
 	  "  sk_SK   (Slovak)\n"
+	  "  sl_SI   (Slovenian)\n"
 	  "  sr_YU   (Serbian)\n"
 	  "  es_ES   (Spanish      Espanol)\n"
 	  "  sv_SE   (Swedish      Svenska)\n"
@@ -4546,6 +4550,11 @@ void setup(int argc, char * argv[])
 	{
 	  putenv("LANG=sk_SK");
 	  putenv("LC_ALL=sk_SK");
+	}
+      else if (strcmp(langstr, "slovenian") == 0)
+	{
+	  putenv("LANG=sl_SI");
+	  putenv("LC_ALL=sl_SI");
 	}
       else if (strcmp(langstr, "serbian") == 0)
 	{

@@ -7,7 +7,7 @@ bill@newbreedsoftware.com
 http://www.newbreedsoftware.com/tuxpaint/
 
 
-June 17, 2002 - March 4, 2004
+June 17, 2002 - March 17, 2004
 
 
 * Design and Coding:
@@ -169,11 +169,14 @@ June 17, 2002 - March 4, 2004
   * Serbian
     Aleksandar Jelenak <jelenak@netlinkplus.net>
   
-  * Spanish
-    Gabriel Gazzan <ggabriel@internet.com.uy>
-
   * Slovak
     Milan Plzik <mmp@golem.gymzv.sk>
+
+  * Slovenian
+    Urska Colner <ursacol02@users.sourceforge.net>
+
+  * Spanish
+    Gabriel Gazzan <ggabriel@internet.com.uy>
 
   * Swedish
     Daniel Andersson <daniel@septum.org> [retired]
