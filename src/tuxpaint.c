@@ -292,7 +292,7 @@ int lang_use_utf8[] = {
   LANG_EL,
   LANG_JA,
   LANG_KO,
-  LANG_LT,
+  /* LANG_LT, */
   LANG_ZH,
   -1
 };
@@ -3759,8 +3759,13 @@ void setup(int argc, char * argv[])
         else if (strcmp(langstr, "lithuanian") == 0 ||
                  strcmp(langstr, "lietuviu") == 0)
 	{
-	  putenv("LANG=lt_LT.UTF-8");
-	  putenv("LC_ALL=lt_LT.UTF-8");
+	  /*
+	    putenv("LANG=lt_LT.UTF-8");
+	    putenv("LC_ALL=lt_LT.UTF-8");
+	  */
+
+	  putenv("LANG=lt_LT");
+	  putenv("LC_ALL=lt_LT");
 	}
         else if (strcmp(langstr, "chinese") == 0)
 	{
@@ -6531,7 +6536,7 @@ Mix_Chunk * loadsound(char * fname)
   snd_fname = malloc(strlen(fname) + strlen(lang_prefixes[language]) + 2);
 
   strcpy(snd_fname, fname);
-  snprintf(tmp_str, strlen(tmp_str), "_%s.wav", lang_prefixes[language]);
+  snprintf(tmp_str, sizeof(tmp_str), "_%s.wav", lang_prefixes[language]);
 
 
   if (strstr(snd_fname, ".png") != NULL)

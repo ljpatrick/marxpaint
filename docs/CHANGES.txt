@@ -7,9 +7,16 @@ bill@newbreedsoftware.com
 http://www.newbreedsoftware.com/tuxpaint/
 
 
-2003.February.26 (0.9.11)
+2003.February.28 (0.9.11)
   * Set $OUTPUT_CHARSET for Japanese locale, to fix Win32 issue.
     TOYAMA Shin-ichi <kyone@tky2.3web.ne.jp>
+
+  * Lithuanian translation.
+    Mantas Kriauciunas <monte@mail.lt>
+    Rita Verbauskait? <verba@centras.lt>,
+
+  * Fixed bug that would cause some translated stamp sounds to not load.
+    John Popplewell <john@johnnypops.demon.co.uk>
 
 
 2003.February.22 (0.9.10)
