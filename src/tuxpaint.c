@@ -7396,6 +7396,59 @@ static void setup(int argc, char * argv[])
     }
 
 
+
+  /* Load and display title image: */
+
+  img_title = loadimage(DATA_PREFIX "images/title.png");
+  img_progress = loadimage(DATA_PREFIX "images/ui/progress.png");
+
+  SDL_FillRect(screen, NULL, SDL_MapRGB(screen->format, 255, 255, 255));
+
+  dest.x = (WINDOW_WIDTH - img_title->w) / 2;
+  dest.y = (WINDOW_HEIGHT - img_title->h);
+
+  SDL_BlitSurface(img_title, NULL, screen, &dest);
+
+  prog_bar_ctr = 0;
+  show_progress_bar();
+
+  SDL_Flip(screen);
+
+
+  medium_font = TTF_OpenFont(DATA_PREFIX "fonts/default_font.ttf",
+		      18 - (only_uppercase * 3));
+
+  if (medium_font == NULL)
+    {
+      fprintf(stderr,
+	      "\nError: Can't load font file: "
+	      DATA_PREFIX "fonts/default_font.ttf\n"
+	      "The Simple DirectMedia Layer error that occurred was:\n"
+	      "%s\n\n", SDL_GetError());
+
+      cleanup();
+      exit(1);
+    }
+
+
+  SDL_FillRect(screen, NULL, SDL_MapRGB(screen->format, 255, 255, 255));
+
+  dest.x = (WINDOW_WIDTH - img_title->w) / 2;
+  dest.y = (WINDOW_HEIGHT - img_title->h);
+
+  SDL_BlitSurface(img_title, NULL, screen, &dest);
+
+  char tmp_str[128];
+  snprintf(tmp_str, sizeof(tmp_str), "%s – %s", VER_VERSION, VER_DATE);
+  tmp_surf = render_text(medium_font, tmp_str, black);
+  dest.x = 20 + (WINDOW_WIDTH - img_title->w) / 2;
+  dest.y = WINDOW_HEIGHT - 60;
+  SDL_BlitSurface(tmp_surf, NULL, screen, &dest);
+  SDL_FreeSurface(tmp_surf);
+  SDL_Flip(screen);
+  playsound(0, SND_HARP, 1);
+  SDL_FreeSurface(img_title);
+
 #if defined(WIN32) && defined(LARGE_CURSOR_FULLSCREEN_BUG)
   if (fullscreen && no_fancy_cursors == 0)
     {
@@ -7519,59 +7572,6 @@ static void setup(int argc, char * argv[])
 
       undo_starters[i] = UNDO_STARTER_NONE;
     }
-
-
-  /* Load and display title image: */
-
-  img_title = loadimage(DATA_PREFIX "images/title.png");
-  img_progress = loadimage(DATA_PREFIX "images/ui/progress.png");
-
-  SDL_FillRect(screen, NULL, SDL_MapRGB(screen->format, 255, 255, 255));
-
-  dest.x = (WINDOW_WIDTH - img_title->w) / 2;
-  dest.y = (WINDOW_HEIGHT - img_title->h);
-
-  SDL_BlitSurface(img_title, NULL, screen, &dest);
-
-  prog_bar_ctr = 0;
-  show_progress_bar();
-
-  SDL_Flip(screen);
-
-
-  medium_font = TTF_OpenFont(DATA_PREFIX "fonts/default_font.ttf",
-		      18 - (only_uppercase * 3));
-
-  if (medium_font == NULL)
-    {
-      fprintf(stderr,
-	      "\nError: Can't load font file: "
-	      DATA_PREFIX "fonts/default_font.ttf\n"
-	      "The Simple DirectMedia Layer error that occurred was:\n"
-	      "%s\n\n", SDL_GetError());
-
-      cleanup();
-      exit(1);
-    }
-
-
-  SDL_FillRect(screen, NULL, SDL_MapRGB(screen->format, 255, 255, 255));
-
-  dest.x = (WINDOW_WIDTH - img_title->w) / 2;
-  dest.y = (WINDOW_HEIGHT - img_title->h);
-
-  SDL_BlitSurface(img_title, NULL, screen, &dest);
-
-  char tmp_str[128];
-  snprintf(tmp_str, sizeof(tmp_str), "%s – %s", VER_VERSION, VER_DATE);
-  tmp_surf = render_text(medium_font, tmp_str, black);
-  dest.x = 20 + (WINDOW_WIDTH - img_title->w) / 2;
-  dest.y = WINDOW_HEIGHT - 60;
-  SDL_BlitSurface(tmp_surf, NULL, screen, &dest);
-  SDL_FreeSurface(tmp_surf);
-  SDL_Flip(screen);
-  playsound(0, SND_HARP, 1);
-  SDL_FreeSurface(img_title);
 
 
  
