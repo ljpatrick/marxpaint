@@ -3547,30 +3547,35 @@ trysat:;
 }
 
 
-static multichan *find_most_saturated(double initial_hue, multichan *work, unsigned i, double *hue_range_ptr)
+static multichan *find_most_saturated(double initial_hue, multichan * work,
+				      unsigned i, double * hue_range_ptr)
 {
   // find the most saturated pixel near the initial hue guess
   multichan *key_color_ptr = NULL;
   double hue_range;
+  
   switch (inf_stamps[cur_stamp]->tinter)
-    {
-  default:
-  case TINTER_NORMAL:
+  {
+    default:
+    case TINTER_NORMAL:
       hue_range = 18*M_PI/180.0; // plus or minus 18 degrees search, 27 replace
       break;
-  case TINTER_NARROW:
+    case TINTER_NARROW:
       hue_range = 6*M_PI/180.0;  // plus or minus 6 degrees search, 9 replace
       break;
-  case TINTER_ANYHUE:
+    case TINTER_ANYHUE:
       hue_range = M_PI;          // plus or minus 180 degrees
       break;
-    }
+  }
+
 hue_range_retry:;
   double max_sat = 0;
   double lower_hue_1 = initial_hue - hue_range;
   double upper_hue_1 = initial_hue + hue_range;
   double lower_hue_2;
   double upper_hue_2;
+  multichan * mc;
+  
   if (lower_hue_1 < -M_PI)
     {
       lower_hue_2 = lower_hue_1 + 2 * M_PI;
@@ -3581,24 +3586,36 @@ hue_range_retry:;
       lower_hue_2 = lower_hue_1 - 2 * M_PI;
       upper_hue_2 = upper_hue_1 - 2 * M_PI;
     }
-  while (i--)
+  
+  while (i > 0)
     {
-      multichan *mc = work+i;
+      mc = work + i;
+
+      i--;
+      
       // if not in the first range, and not in the second range, skip this one
-      if( (mc->hue<lower_hue_1 || mc->hue>upper_hue_1) && (mc->hue<lower_hue_2 || mc->hue>upper_hue_2) )
+      // 
+      if ((mc->hue<lower_hue_1 || mc->hue>upper_hue_1) &&
+	  (mc->hue<lower_hue_2 || mc->hue>upper_hue_2))
 	continue;
-      if(mc->sat > max_sat) {
+      
+      if(mc->sat > max_sat)
+      {
 	max_sat = mc->sat;
 	key_color_ptr = mc;
       }
     }
+  
   if (!key_color_ptr)
     {
       hue_range *= 1.5;
+      
       if (hue_range < M_PI)
 	goto hue_range_retry;
     }
+  
   *hue_range_ptr = hue_range;
+  
   return key_color_ptr;
 }
 
@@ -3635,28 +3652,41 @@ static void tint_surface(SDL_Surface * tmp_surf, SDL_Surface * surf_ptr)
 {
   unsigned width = surf_ptr->w;
   unsigned height = surf_ptr->h;
-
-  multichan *work = malloc(sizeof *work * width * height);
-	  
-  double initial_hue = tint_part_1(work, surf_ptr);
-
+  multichan * work;
+  multichan * key_color_ptr;
+  double initial_hue;
   double hue_range;
-  multichan *key_color_ptr = find_most_saturated(initial_hue, work, width*height, &hue_range);
+  
+ 
+  work = malloc(sizeof(multichan) * width * height);
 
-  if (key_color_ptr)
+  if (work)
+  {
+    initial_hue = tint_part_1(work, surf_ptr);
+
+    key_color_ptr = find_most_saturated(initial_hue, work,
+		    			width * height, &hue_range);
+
+    if (key_color_ptr)
     {
       // wider for processing than for searching
       hue_range *= 1.5;
-
+      
       change_colors(tmp_surf, work, hue_range, key_color_ptr);
+    
+      free(work);
+      return;
     }
-  else
-    {
-      fprintf(stderr, "fallback to tinter=vector, this should be in the *.dat file\n");
-      vector_tint_surface(tmp_surf, surf_ptr);
-    }
+  
+    free(work);
+  }
 
-  free(work);
+  /* Failed!  Fall back: */
+
+  //fprintf(stderr, "Falling back to tinter=vector, "
+  //		    "this should be in the *.dat file\n");
+  
+  vector_tint_surface(tmp_surf, surf_ptr);
 }
 
 
@@ -3744,10 +3774,8 @@ static void stamp_draw(int x, int y)
       /* Render the stamp in the chosen color: */
 
       /* FIXME: It sucks to render this EVERY TIME.  Why not just when
-	 they pick the color, or pick the stamp, like with brushes?
-	 (Why? Because I'm LAZY! :^) ) */
+	 they pick the color, or pick the stamp, like with brushes? */
 
-	  
       /* Render the stamp: */
 
       SDL_LockSurface(surf_ptr);
