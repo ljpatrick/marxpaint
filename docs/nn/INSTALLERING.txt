@@ -101,7 +101,7 @@ Kompilering og installering
 
     Installering
     ------------
-      Kjør installasjonsfila («.exe»-fila) og følg instruksjonane.
+      Køyr installasjonsfila («.exe»-fila) og følg instruksjonane.
 
       Først må du godta lisensen. (Det er «GNU General Public License» (GPL),
       som òg er tilgjengeleg i «COPYING.txt».)
@@ -127,7 +127,7 @@ Kompilering og installering
       Du kan no leggja til kommandolinjeval som blir tatt i
       bruk når du brukar ikonet.
 
-      Eksempel: Viss du vil kjøra programmet i fullskjerm, med enkle
+      Eksempel: Viss du vil køyra programmet i fullskjerm, med enkle
       figurar (utan rotasjon) og på nynorsk, legg du til vala for dette
       etter «TuxPaint.exe»:
 
@@ -158,7 +158,7 @@ Kompilering og installering
     Kompilering
     -----------
       Merk: Tux Paint støttar ikkje autoconf/automake, så det finst
-      ingen «./configure»-skript du kan kjøra. Men kompileringa skal
+      ingen «./configure»-skript du kan køyra. Men kompileringa skal
       uansett gå lett, så lenge alle dei nødvendige tilleggsbiblioteka
       er installerte.
 
@@ -169,7 +169,7 @@ Kompilering og installering
     Slå av lydstøtta ved kompilering
     --------------------------------
       Viss du ikkje har noko lydkort, eller føretrekkjer å bruka programmet
-      utan lyd (og utan SDL-mixer-biblioteket), kan du kjøra «make» med
+      utan lyd (og utan SDL-mixer-biblioteket), kan du køyra «make» med
       målet «nosound»:
 
         $ make nosound
@@ -203,7 +203,7 @@ Kompilering og installering
         # exit
 
 
-      Merk: Som standard blir kjørefila «tuxpaint» lagt i katalogen
+      Merk: Som standard blir køyrefila «tuxpaint» lagt i katalogen
       «/usr/local/bin/». Datafilene (bilete, lydeffektar og liknande)
       blir lagt i katalogen «/usr/local/share/tuxpaint/».
 
@@ -217,7 +217,7 @@ Kompilering og installering
         Andre variablar
         ---------------
           BIN_PREFIX
-            Katalogen til kjørefila «tuxpaint».
+            Katalogen til køyrefila «tuxpaint».
             (Standard: «$(PREFIX)/bin», altså «/usr/local/bin»)
 
           DATA_PREFIX
