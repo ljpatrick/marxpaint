@@ -51,11 +51,6 @@
 /* Disable fancy cursors in fullscreen mode, to avoid SDL bug: */
 #define LARGE_CURSOR_FULLSCREEN_BUG
 
-#define HEIGHTOFFSET (((WINDOW_HEIGHT - 480) / 48) * 48)
-#define TOOLOFFSET (HEIGHTOFFSET / 48 * 2)
-#define PROMPTOFFSETX (WINDOW_WIDTH - 640) / 2
-#define PROMPTOFFSETY (HEIGHTOFFSET / 2)
-
 // control the color selector
 #define COLORSEL_DISABLE 0  // disable and draw the (greyed out) colors
 #define COLORSEL_ENABLE  1  // enable and draw the colors
@@ -280,9 +275,6 @@ extern char* g_win32_getlocale(void);
 #else
 #define FNAME_EXTENSION ".bmp"
 #endif
-
-#define THUMB_W ((WINDOW_WIDTH - 96 - 96) / 4)
-#define THUMB_H (((48 * 7 + 40 + HEIGHTOFFSET) - 72) / 4)
 
 #include "tools.h"
 #include "titles.h"
@@ -1096,6 +1088,194 @@ static TTF_Font *load_locale_font(TTF_Font *fallback, int size)
 }
 
 ///////////////////////////////////////////////////////////////////
+// sizing
+
+// The old Tux Paint:
+// 640x480 screen
+// 448x376 canvas
+//  40x96  titles near the top
+//  48x48  button tiles
+//  ??x56  tux area
+//  room for 2x7 button tile grids
+
+typedef struct {
+  Uint8 rows, cols;
+} grid_dims;
+
+//static SDL_Rect r_screen; // was 640x480 @ 0,0  -- but this isn't so useful
+static SDL_Rect r_canvas; // was 448x376 @ 96,0
+static SDL_Rect r_tools; // was 96x336 @ 0,40
+static SDL_Rect r_toolopt; // was 96x336 @ 544,40
+static SDL_Rect r_colors; // was 544x48 @ 96,376
+static SDL_Rect r_ttools; // was 96x40 @ 0,0  (title for tools, "Tools")
+static SDL_Rect r_tcolors; // was 96x48 @ 0,376 (title for colors, "Colors")
+static SDL_Rect r_ttoolopt; // was 96x40 @ 544,0 (title for tool options)
+static SDL_Rect r_tuxarea; // was 640x56, though Tux can slop above
+
+static int button_w;  // was 48
+static int button_h;  // was 48
+
+static int color_button_w;  // was 32
+static int color_button_h;  // was 48
+
+// Define button grid dimensions. (in button units)
+// These are the maximum slots -- some may be unused.
+static grid_dims gd_tools;   // was 2x7
+static grid_dims gd_toolopt; // was 2x7
+static grid_dims gd_open;    // was 4x4
+static grid_dims gd_colors;   // was 17x1
+
+#define HEIGHTOFFSET (((WINDOW_HEIGHT - 480) / 48) * 48)
+#define TOOLOFFSET (HEIGHTOFFSET / 48 * 2)
+#define PROMPTOFFSETX (WINDOW_WIDTH - 640) / 2
+#define PROMPTOFFSETY (HEIGHTOFFSET / 2)
+
+#define THUMB_W ((WINDOW_WIDTH - 96 - 96) / 4)
+#define THUMB_H (((48 * 7 + 40 + HEIGHTOFFSET) - 72) / 4)
+
+static int WINDOW_WIDTH, WINDOW_HEIGHT;
+
+static void setup_normal_screen_layout(void)
+{
+  button_w = 48;
+  button_h = 48;
+
+  gd_toolopt.cols = 2;
+  gd_tools.cols = 2;
+
+  r_ttools.x = 0;
+  r_ttools.y = 0;
+  r_ttools.w = gd_tools.cols * button_w;
+  r_ttools.h = 40;
+
+  r_ttoolopt.w = gd_toolopt.cols * button_w;
+  r_ttoolopt.h = 40;
+  r_ttoolopt.x = WINDOW_WIDTH - r_ttoolopt.w;
+  r_ttoolopt.y = 0;
+
+  gd_colors.rows = 1;
+  gd_colors.cols = NUM_COLORS;
+
+  r_colors.h = color_button_h * gd_colors.rows;
+  r_tcolors.h = r_colors.h;
+
+  r_tcolors.x = 0;
+  r_tcolors.w = gd_tools.cols * button_w;;
+  r_colors.x = r_tcolors.w;
+  r_colors.w = WINDOW_WIDTH - r_tcolors.w;
+
+  color_button_w = (r_colors.w / gd_colors.cols) * gd_colors.cols;
+
+  r_canvas.x = gd_tools.cols * button_w;
+  r_canvas.y = 0;
+  r_canvas.w = (gd_tools.cols+gd_toolopt.cols) * button_w;
+
+  r_tuxarea.x = 0;
+  r_tuxarea.w = WINDOW_WIDTH;
+
+  // need 56 minimum for the Tux area
+  int buttons_tall = (WINDOW_HEIGHT -  r_ttoolopt.h - 56 - r_colors.h) / button_h;
+  gd_tools.rows = buttons_tall;
+  gd_toolopt.rows = buttons_tall;
+
+  r_canvas.h = r_ttoolopt.h + buttons_tall * button_h;
+  
+  r_colors.y = r_canvas.h + r_canvas.y;
+  r_tcolors.y = r_canvas.h + r_canvas.y;
+
+  r_tuxarea.y = r_colors.y + r_colors.h;
+  r_tuxarea.h = WINDOW_HEIGHT - r_tuxarea.y;
+
+  // TODO: dialog boxes
+
+}
+
+static void setup_screen_layout(void)
+{
+  // can do right-to-left, colors at the top, extra tool option columns, etc.
+  setup_normal_screen_layout();
+}
+
+static SDL_Surface * screen;
+static SDL_Surface * canvas;
+static SDL_Surface * img_starter, * img_starter_bkgd;
+
+/* Update a rect. based on two x/y coords (not necessarly in order): */
+static void update_screen(int x1, int y1, int x2, int y2)
+{
+  int tmp;
+
+  if (x1 > x2)
+    {
+      tmp = x1;
+      x1 = x2;
+      x2 = tmp;
+    }
+
+  if (y1 > y2)
+    {
+      tmp = y1;
+      y1 = y2;
+      y2 = tmp;
+    }
+
+  x1 = x1 - 1;
+  x2 = x2 + 1;
+  y1 = y1 - 1;
+  y2 = y2 + 1;
+
+
+  if (x1 < 0)
+    x1 = 0;
+  if (x2 < 0)
+    x2 = 0;
+  if (y1 < 0)
+    y1 = 0;
+  if (y2 < 0)
+    y2 = 0;
+
+  if (x1 >= WINDOW_WIDTH)
+    x1 = WINDOW_WIDTH - 1;
+  if (x2 >= WINDOW_WIDTH)
+    x2 = WINDOW_WIDTH - 1;
+  if (y1 >= WINDOW_HEIGHT)
+    y1 = WINDOW_HEIGHT - 1;
+  if (y2 >= WINDOW_HEIGHT)
+    y2 = WINDOW_HEIGHT - 1;
+
+  SDL_UpdateRect(screen, x1, y1, x2 - x1 + 1, y2 - y1 + 1);
+}
+
+
+/* Update the screen with the new canvas: */
+static void update_canvas(int x1, int y1, int x2, int y2)
+{
+  SDL_Rect src, dest;
+
+  if (img_starter != NULL)
+  {
+    /* If there was a starter, cover this part of the drawing with
+       the corresponding part of the starter's foreground! */
+
+    src.x = x1;
+    src.y = y1;
+    src.w = x2 - x1 + 1;
+    src.h = y2 - y1 + 1;
+
+    dest.x = x1;
+    dest.y = y1;
+    dest.w = src.w;
+    dest.h = src.h;
+
+    SDL_BlitSurface(img_starter, &dest, canvas, &dest);
+  }
+
+  SDL_BlitSurface(canvas, NULL, screen, &r_canvas);
+  update_screen(x1 + 96, y1, x2 + 96, y2);
+}
+
+
+///////////////////////////////////////////////////////////////////
 
 /* Globals: */
 
@@ -1105,17 +1285,12 @@ static int use_sound, fullscreen, disable_quit, simple_shapes,
   mousekey_up, mousekey_down, mousekey_left, mousekey_right,
   dont_do_xor, use_print_config, dont_load_stamps, noshortcuts,
   mirrorstamps, disable_stamp_controls, disable_save, ok_to_use_lockfile;
+static int starter_mirrored, starter_flipped;
 static int recording, playing;
 static char * playfile;
 static FILE * demofi;
-static int WINDOW_WIDTH, WINDOW_HEIGHT;
 static const char * printcommand;
 static int prog_bar_ctr;
-static SDL_Surface * screen;
-
-static SDL_Surface * canvas;
-static SDL_Surface * img_starter, * img_starter_bkgd;
-static int starter_mirrored, starter_flipped;
 
 enum {
   UNDO_STARTER_NONE,
@@ -1707,7 +1882,6 @@ static void magic_draw(int x1, int y1, int x2, int y2, int button_down);
 static void blit_magic(int x, int y, int button_down);
 static void stamp_draw(int x, int y);
 static void rec_undo_buffer(void);
-static void update_canvas(int x1, int y1, int x2, int y2);
 static void show_usage(FILE * f, char * prg);
 static void setup(int argc, char * argv[]);
 static SDL_Cursor * get_cursor(char * bits, char * mask_bits,
@@ -1766,7 +1940,6 @@ static void do_eraser(int x, int y);
 static void disable_avail_tools(void);
 static void enable_avail_tools(void);
 static void reset_avail_tools(void);
-static void update_screen(int x1, int y1, int x2, int y2);
 static int compare_strings(char * * s1, char * * s2);
 static int compare_dirent2s(struct dirent2 * f1, struct dirent2 * f2);
 static void draw_tux_text(int which_tux, const char * const str,
@@ -5797,39 +5970,7 @@ static void rec_undo_buffer(void)
 }
 
 
-/* Update the screen with the new canvas: */
-
-static void update_canvas(int x1, int y1, int x2, int y2)
-{
-  SDL_Rect src, dest;
-
-  if (img_starter != NULL)
-  {
-    /* If there was a starter, cover this part of the drawing with
-       the corresponding part of the starter's foreground! */
-
-    src.x = x1;
-    src.y = y1;
-    src.w = x2 - x1 + 1;
-    src.h = y2 - y1 + 1;
-
-    dest.x = x1;
-    dest.y = y1;
-    dest.w = src.w;
-    dest.h = src.h;
-
-    SDL_BlitSurface(img_starter, &dest, canvas, &dest);
-  }
-
-  dest.x = 96;
-  dest.y = 0;
-  SDL_BlitSurface(canvas, NULL, screen, &dest);
-  update_screen(x1 + 96, y1, x2 + 96, y2);
-}
-
-
 /* Show program version: */
-
 static void show_version(void)
 {
   printf("\nTux Paint\n");
@@ -6597,6 +6738,8 @@ static void setup(int argc, char * argv[])
     }
 #endif
 
+
+  setup_screen_layout();
 
   /* Set window icon and caption: */
 
@@ -9401,54 +9544,6 @@ static void enable_avail_tools(void)
     {
       tool_avail[i] = tool_avail_bak[i];
     }
-}
-
-
-/* Update a rect. based on two x/y coords (not necessarly in order): */
-
-static void update_screen(int x1, int y1, int x2, int y2)
-{
-  int tmp;
-
-  if (x1 > x2)
-    {
-      tmp = x1;
-      x1 = x2;
-      x2 = tmp;
-    }
-
-  if (y1 > y2)
-    {
-      tmp = y1;
-      y1 = y2;
-      y2 = tmp;
-    }
-
-  x1 = x1 - 1;
-  x2 = x2 + 1;
-  y1 = y1 - 1;
-  y2 = y2 + 1;
-
-
-  if (x1 < 0)
-    x1 = 0;
-  if (x2 < 0)
-    x2 = 0;
-  if (y1 < 0)
-    y1 = 0;
-  if (y2 < 0)
-    y2 = 0;
-
-  if (x1 >= WINDOW_WIDTH)
-    x1 = WINDOW_WIDTH - 1;
-  if (x2 >= WINDOW_WIDTH)
-    x2 = WINDOW_WIDTH - 1;
-  if (y1 >= WINDOW_HEIGHT)
-    y1 = WINDOW_HEIGHT - 1;
-  if (y2 >= WINDOW_HEIGHT)
-    y2 = WINDOW_HEIGHT - 1;
-
-  SDL_UpdateRect(screen, x1, y1, x2 - x1 + 1, y2 - y1 + 1);
 }
 
 
