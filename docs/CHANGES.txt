@@ -7,7 +7,7 @@ bill@newbreedsoftware.com
 http://www.newbreedsoftware.com/tuxpaint/
 
 
-2005.January.06 (0.9.15)
+2005.January.07 (0.9.15)
   * Stamp tool improvements:
     ------------------------
     * Greatly improved stamp outlining (to avoid empty rows or columns
@@ -57,6 +57,13 @@ http://www.newbreedsoftware.com/tuxpaint/
     * Italic, bold and sizes are now controlled with separate buttons
       (similar to flip, mirror and sizes for Stamps).
       Albert Cahalan <albert@users.sf.net>
+
+    * [Tab] key can be used to begin a new text entry to the right of the
+      current one (e.g., for writing a sentence with each word in a different
+      color).
+
+    * A typewriter-style bell rings when the text gets close to the edge of
+      the canvas.
 
   * Improved support for varying image sizes:
     -----------------------------------------
