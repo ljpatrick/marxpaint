@@ -2871,7 +2871,6 @@ static void mainloop(void)
 			{
 			  num_things = num_brushes;
 			  thing_scroll = brush_scroll;
-			  gd_controls.rows = (num_things+1)/2;
 			}
 		      else if (cur_tool == TOOL_STAMP)
 			{
@@ -2906,7 +2905,6 @@ static void mainloop(void)
 		      // number of whole or partial rows that will be needed
 		      // (can make this per-tool if variable columns needed)
 	              int num_rows_needed = (num_things+gd_items.cols-1)/gd_items.cols;
-	              gd_items.rows = num_rows_needed;
 
 		      do_draw = 0;
 
@@ -2923,14 +2921,14 @@ static void mainloop(void)
 		      r_notcontrols.y = r_toolopt.y;
 		      
 		      SDL_Rect r_items = r_notcontrols;
-		      if(gd_items.rows * button_h > r_items.h)
+		      if(num_rows_needed * button_h > r_items.h)
 		        {
 		          // too many; we'll need scroll buttons
 		          r_items.h -= button_h;
 		          r_items.y += button_h/2;
-		          gd_items.rows = r_items.h / button_h;
 		        }
-		      
+	              gd_items.rows = r_items.h / button_h;
+
 		      if(HIT(r_items))
 		        {
 		          which = GRIDHIT_GD(r_items,gd_items) + thing_scroll;
