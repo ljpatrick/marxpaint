@@ -7693,6 +7693,8 @@ static void draw_toolbar(void)
 	  if (i == cur_tool)
 	    {
 	      SDL_BlitSurface(img_btn_down, NULL, screen, &dest);
+	      SDL_BlitSurface(img_black, NULL, img_tools[i], NULL);
+	      SDL_BlitSurface(img_black, NULL, img_tool_names[i], NULL);
 	    }
 	  else if (tool_avail[i])
 	    {
