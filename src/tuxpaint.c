@@ -504,7 +504,7 @@ static void debug(const char * const str)
 ///////////////////////////////////////////////////////////////////
 // Language stuff
 
-static int language;
+static int language_enum;
 
 /* Possible languages: */
 
@@ -560,6 +560,8 @@ enum {
   LANG_ZH_TW,  /* Chinese (Traditional) */
   NUM_LANGS
 };
+
+static const char * lang_prefix;
 
 static const char * lang_prefixes[NUM_LANGS] = {
   "af",
@@ -674,7 +676,7 @@ static int need_right_to_left(int l)
 
 /* Determine the current language/locale, and set the language string: */
 
-static int current_language(void)
+static void set_current_language(void)
 {
   char * loc;
 #ifdef WIN32
@@ -732,8 +734,14 @@ static int current_language(void)
   sleep(10);
 #endif
 
+  language_enum = lang;
+  lang_prefix = lang_prefixes[lang];
 
-  return lang;
+
+#ifdef DEBUG
+  printf("DEBUG: Language is %s (%d)\n", lang_prefix, language_enum);
+#endif
+
 }
 
 
@@ -6027,13 +6035,7 @@ static void setup(int argc, char * argv[])
 
   textdomain("tuxpaint");
 
-  language = current_language();
-
-
-#ifdef DEBUG
-  printf("DEBUG: Language is %s (%d)\n", lang_prefixes[language], language);
-#endif
-
+  set_current_language();
 #ifndef WIN32
   putenv((char *) "SDL_VIDEO_X11_WMCLASS=TuxPaint.TuxPaint");
 #endif
@@ -6541,16 +6543,16 @@ static void setup(int argc, char * argv[])
     }
 
 
-  if (need_own_font(language))
+  if (need_own_font(language_enum))
     {
       snprintf(str, sizeof(str), "%sfonts/locale/%s.ttf",
-	       DATA_PREFIX, lang_prefixes[language]);
+	       DATA_PREFIX, lang_prefix);
 
       locale_font = TTF_OpenFont(str, 18);
 
       if (locale_font == NULL)
       {
-          locale_font = try_alternate_font(language);
+          locale_font = try_alternate_font(language_enum);
           if (locale_font == NULL)
 	  {
 	      fprintf(stderr,
@@ -6570,7 +6572,7 @@ static void setup(int argc, char * argv[])
 
 	      bindtextdomain("tuxpaint", LOCALEDIR);
 	      textdomain("tuxpaint");
-	      language = current_language();
+	      set_current_language();
 	  }
       }
     }
@@ -6797,7 +6799,7 @@ static void setup(int argc, char * argv[])
     {
       if (strlen(title_names[i]) > 0)
 	{
-	  if (need_own_font(language) && locale_font != NULL &&
+	  if (need_own_font(language_enum) && locale_font != NULL &&
 		   strcmp(gettext(title_names[i]), title_names[i]) != 0)
 	    {
 	      tmp_surf = TTF_RenderUTF8_Blended(locale_font,
@@ -6969,7 +6971,7 @@ static SDL_Surface * do_render_button_label(const char * const label)
   SDL_Surface * tmp_surf, * surf;
   SDL_Color black = {0, 0, 0, 0};
 
-  if (need_own_font(language) && locale_font != NULL &&
+  if (need_own_font(language_enum) && locale_font != NULL &&
 	   strcmp(gettext(label), label) != 0)
     {
       tmp_surf = TTF_RenderUTF8_Blended(locale_font, textdir(gettext(label)), black);
@@ -9147,7 +9149,7 @@ static void wordwrap_text(const char * const str, SDL_Color color,
 
 		      if (x > left)
 			{
-			  if (need_right_to_left(language) && want_right_to_left)
+			  if (need_right_to_left(language_enum) && want_right_to_left)
 			    anti_carriage_return(left, right, top, top + text->h, y + text->h,
 						 x - left);
 
@@ -9206,7 +9208,7 @@ static void wordwrap_text(const char * const str, SDL_Color color,
 				{
 				  if (x + text->w > right)
 				    {
-				      if (need_right_to_left(language) && want_right_to_left)
+				      if (need_right_to_left(language_enum) && want_right_to_left)
 					anti_carriage_return(left, right, top, top + text->h,
 							     y + text->h, x - left);
 	        
@@ -9216,7 +9218,7 @@ static void wordwrap_text(const char * const str, SDL_Color color,
 
 				  dest.x = x;
 
-				  if (need_right_to_left(language) && want_right_to_left)
+				  if (need_right_to_left(language_enum) && want_right_to_left)
 				    dest.y = top;
 				  else
 				    dest.y = y;
@@ -9240,7 +9242,7 @@ static void wordwrap_text(const char * const str, SDL_Color color,
 			{
 			  /* This word needs to move down? */
 
-			  if (need_right_to_left(language) && want_right_to_left)
+			  if (need_right_to_left(language_enum) && want_right_to_left)
 			    anti_carriage_return(left, right, top, top + text->h, y + text->h,
 						 x - left);
           
@@ -9250,7 +9252,7 @@ static void wordwrap_text(const char * const str, SDL_Color color,
 
 		      dest.x = x;
 
-		      if (need_right_to_left(language) && want_right_to_left)
+		      if (need_right_to_left(language_enum) && want_right_to_left)
 			dest.y = top;
 		      else
 			dest.y = y;
@@ -9336,7 +9338,7 @@ static void wordwrap_text(const char * const str, SDL_Color color,
 
 	  if (x + text->w > right)  /* Correct? */
 	    {
-	      if (need_right_to_left(language) && want_right_to_left)
+	      if (need_right_to_left(language_enum) && want_right_to_left)
 		anti_carriage_return(left, right, top, top + text->h, y + text->h,
 				     x - left);
         
@@ -9349,7 +9351,7 @@ static void wordwrap_text(const char * const str, SDL_Color color,
 
 	  dest.x = x;
 
-	  if (need_right_to_left(language) && want_right_to_left)
+	  if (need_right_to_left(language_enum) && want_right_to_left)
 	    dest.y = top;
 	  else
 	    dest.y = y;
@@ -9379,7 +9381,7 @@ static void wordwrap_text(const char * const str, SDL_Color color,
 
   /* Right-justify the final line of text, in right-to-left mode: */
   
-  if (need_right_to_left(language) && want_right_to_left && last_text_height > 0)
+  if (need_right_to_left(language_enum) && want_right_to_left && last_text_height > 0)
     {
       src.x = left;
       src.y = top;
@@ -9417,10 +9419,10 @@ static Mix_Chunk * loadsound(const char * const fname)
 
   /* First, check for localized version of sound: */
 
-  snd_fname = malloc(strlen(fname) + strlen(lang_prefixes[language]) + 2);
+  snd_fname = malloc(strlen(fname) + strlen(lang_prefix) + 2);
 
   strcpy(snd_fname, fname);
-  snprintf(tmp_str, sizeof(tmp_str), "_%s.wav", lang_prefixes[language]);
+  snprintf(tmp_str, sizeof(tmp_str), "_%s.wav", lang_prefix);
 
 
   if (strstr(snd_fname, ".png") != NULL)
@@ -9546,12 +9548,12 @@ static char * loaddesc(const char * const fname)
 
 	      /* See if it's the one for this locale... */
 	
-	      if (strstr(buf, lang_prefixes[language]) == buf)
+	      if (strstr(buf, lang_prefix) == buf)
 		{
 
-		  debug(buf + strlen(lang_prefixes[language]));
-		  if (strstr(buf + strlen(lang_prefixes[language]), ".utf8=") ==
-			   buf + strlen(lang_prefixes[language]))
+		  debug(buf + strlen(lang_prefix));
+		  if (strstr(buf + strlen(lang_prefix), ".utf8=") ==
+			   buf + strlen(lang_prefix))
 		    {
 		      found = 1;
 		      
@@ -9569,7 +9571,7 @@ static char * loaddesc(const char * const fname)
 
       if (found)
 	{
-	  return(strdup(buf + (strlen(lang_prefixes[language])) + 6));
+	  return(strdup(buf + (strlen(lang_prefix)) + 6));
 	}
       else
 	{
@@ -13727,7 +13729,7 @@ static unsigned char * textdir(const unsigned char * const str)
 
   dstr = (unsigned char *) malloc((strlen(str) + 5) * sizeof(unsigned char));
 
-  if (need_right_to_left(language))
+  if (need_right_to_left(language_enum))
     {
       dstr[strlen(str)] = '\0';
 
