@@ -7,7 +7,7 @@ bill@newbreedsoftware.com
 http://www.newbreedsoftware.com/tuxpaint/
 
 
-2004.Jun.12 (0.9.14) [cvs]
+2004.Jun.20 (0.9.14) [cvs]
   * Improved Windows icon, based on SVG icon.
     Karl Ove Hufthammer <karl@huftis.org>
 
@@ -20,6 +20,9 @@ http://www.newbreedsoftware.com/tuxpaint/
   * Added "--nosave" option (suggested by Adam Moore).
 
   * Changed default UI font to "FreeSans.ttf"
+ 
+  * Language option now sets "LANGUAGE" environment variable
+    (along with LC_ALL and LANG).
 
   * Updated Breton translation.
     Korvigelloù An Drouizig <drouizig@drouizig.org>
