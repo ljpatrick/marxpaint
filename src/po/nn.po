@@ -273,7 +273,7 @@ msgid ""
 "Pick a shape. Click to pick the center, drag, then let go when it is the "
 "size you want. Move around to rotate it, and click to draw it."
 msgstr ""
-"Vel ein figur. Trykk og drag så for å velja midten og storleiken på figuren. "
+"Vel ein figur. Trykk og dra så for å velja midten og storleiken på figuren. "
 "Flytt rundt for å rotera han, og trykk til slutt for å teikna han."
 
 msgid "Choose a style of text. Click on your drawing and you can start typing."
