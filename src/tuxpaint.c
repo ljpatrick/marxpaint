@@ -644,6 +644,7 @@ static int search_int_array(int l, int *array)
   return 0;
 }
 
+static char * langstr;
 static int need_own_font;
 static int need_right_to_left;
 static const char * lang_prefix;
@@ -734,6 +735,131 @@ static TTF_Font *try_alternate_font(void)
     return TTF_OpenFont(str, 18);
   }
   return NULL;
+}
+
+
+/* FIXME: All this should REALLY be array-based!!! */
+/* Show available languages: */
+static void show_lang_usage(FILE * f, char * prg)
+{
+  fprintf(f,
+	  "\n"
+	  "Usage: %s [--lang LANGUAGE]\n"
+	  "\n"
+	  "LANGUAGE may be one of:\n"
+/* C */	     "  english      american-english\n"
+/* af */     "  afrikaans\n"
+/* sq */     "  albanian\n"
+/* eu */     "  basque       euskara\n"
+/* be */     "  belarusian   bielaruskaja\n"
+/* nb */     "  bokmal\n"
+/* pt_BR */  "  brazilian    brazilian-portuguese   portugues-brazilian\n"
+/* br */     "  breton       brezhoneg\n"
+/* en_GB */  "  british      british-english\n"
+/* bg_BG */  "  bulgarian\n"
+/* ca */     "  catalan      catala\n"
+/* zh_CN */  "  chinese      simplified-chinese\n"
+/* zh_TW */  "               traditional-chinese\n"
+/* hr */     "  croatian     hrvatski\n"
+/* cs */     "  czech        cesky\n"
+/* da */     "  danish       dansk\n"
+/* nl */     "  dutch        nederlands\n"
+/* fi */     "  finnish      suomi\n"
+/* fr */     "  french       francais\n"
+/* gl */     "  galician     galego\n"
+/* de */     "  german       deutsch\n"
+/* el */     "  greek\n"
+/* he */     "  hebrew\n"
+/* hi */     "  hindi\n"
+/* hu */     "  hungarian    magyar\n"
+/* is */     "  icelandic    islenska\n"
+/* id */     "  indonesian   bahasa-indonesia\n"
+/* it */     "  italian      italiano\n"
+/* ja */     "  japanese\n"
+/* tlh */    "  klingon      tlhIngan\n"
+/* ko */     "  korean\n"
+/* lt */     "  lithuanian   lietuviu\n"
+/* ms */     "  malay\n"
+/* nn */     "  norwegian    nynorsk                norsk\n"
+/* pl */     "  polish       polski\n"
+/* pt_PT */  "  portuguese   portugues\n"
+/* ro */     "  romanian\n"
+/* ru */     "  russian      russkiy\n"
+/* sr */     "  serbian\n"
+/* sk */     "  slovak\n"
+/* sl */     "  slovenian    slovensko\n"
+/* es */     "  spanish      espanol\n"
+/* sw */     "  swahili\n"
+/* sv */     "  swedish      svenska\n"
+/* ta */     "  tamil\n"
+/* tr */     "  turkish\n"
+/* vi */     "  vietnamese\n"
+/* wa */     "  walloon      walon\n"
+/* cy */     "  welsh        cymraeg\n"
+	  "\n",
+	  prg);
+}
+
+
+/* FIXME: Add accented characters to the descriptions */
+/* Show available locales: */
+static void show_locale_usage(FILE * f, char * prg)
+{
+  fprintf(f,
+	  "\n"
+	  "Usage: %s [--locale LOCALE]\n"
+	  "\n"
+	  "LOCALE may be one of:\n"
+	  "  C       (English      American English)\n"
+	  "  af_ZA   (Afrikaans)\n"
+	  "  eu_ES   (Baque        Euskara)\n"
+	  "  be_BY   (Belarusian   Bielaruskaja)\n"
+	  "  nb_NO   (Bokmal)\n"
+	  "  pt_BR   (Brazilian    Brazilian Portuguese   Portugues Brazilian)\n"
+	  "  br_FR   (Breton       Brezhoneg)\n"
+	  "  en_GB   (British      British English)\n"
+          "  bg_BG   (Bulgarian)\n"
+	  "  ca_ES   (Catalan      Catala)\n"
+	  "  zh_CN   (Chinese-Simplified)\n"
+	  "  zh_TW   (Chinese-Traditional)\n"
+	  "  cs_CZ   (Czech        Cesky)\n"
+	  "  da_DK   (Danish       Dansk)\n"
+	  "  nl_NL   (Dutch)\n"
+	  "  fi_FI   (Finnish      Suomi)\n"
+	  "  fr_FR   (French       Francais)\n"
+	  "  gl_ES   (Galician     Galego)\n"
+	  "  de_DE   (German       Deutsch)\n"
+	  "  el_GR   (Greek)\n"
+	  "  he_IL   (Hebrew)\n"
+	  "  hi_IN   (Hindi)\n"
+	  "  hr_HR   (Croatian     Hrvatski)\n"
+	  "  hu_HU   (Hungarian    Magyar)\n"
+	  "  tlh     (Klingon      tlhIngan)\n"
+	  "  is_IS   (Icelandic    Islenska)\n"
+	  "  id_ID   (Indonesian   Bahasa Indonesia)\n"
+	  "  it_IT   (Italian      Italiano)\n"
+	  "  ja_JP   (Japanese)\n"
+	  "  ko_KR   (Korean)\n"
+	  "  ms_MY   (Malay)\n"
+	  "  lt_LT   (Lithuanian   Lietuviu)\n"
+	  "  nn_NO   (Norwegian    Nynorsk                Norsk)\n"
+	  "  pl_PL   (Polish       Polski)\n"
+	  "  pt_PT   (Portuguese   Portugues)\n"
+	  "  ro_RO   (Romanian)\n"
+	  "  ru_RU   (Russian      Russkiy)\n"
+	  "  sk_SK   (Slovak)\n"
+	  "  sl_SI   (Slovenian)\n"
+	  "  sq_AL   (Albanian)\n"
+	  "  sr_YU   (Serbian)\n"
+	  "  es_ES   (Spanish      Espanol)\n"
+	  "  sw_TZ   (Swahili)\n"
+	  "  sv_SE   (Swedish      Svenska)\n"
+	  "  tr_TR   (Turkish)\n"
+	  "  vi_VN   (Vietnamese)\n"
+	  "  wa_BE   (Walloon)\n"
+	  "  cy_GB   (Welsh        Cymraeg)\n"
+	  "\n",
+	  prg);
 }
 
 
@@ -875,7 +1001,6 @@ typedef enum { Left, Right, Bottom, Top } an_edge;
 
 static SDL_Event scrolltimer_event;
 
-static char * langstr;
 static char * savedir;
 
 #ifdef USE_HQ4X
@@ -899,8 +1024,6 @@ static void stamp_draw(int x, int y);
 static void rec_undo_buffer(void);
 static void update_canvas(int x1, int y1, int x2, int y2);
 static void show_usage(FILE * f, char * prg);
-static void show_lang_usage(FILE * f, char * prg);
-static void show_locale_usage(FILE * f, char * prg);
 static void setup(int argc, char * argv[]);
 static SDL_Cursor * get_cursor(char * bits, char * mask_bits,
 		        int w, int h, int x, int y);
@@ -5037,135 +5160,6 @@ static void show_usage(FILE * f, char * prg)
 	  blank);
 
   free(blank);
-}
-
-
-/* FIXME: All this should REALLY be array-based!!! */
-
-/* Show available languages: */
-
-static void show_lang_usage(FILE * f, char * prg)
-{
-  fprintf(f,
-	  "\n"
-	  "Usage: %s [--lang LANGUAGE]\n"
-	  "\n"
-	  "LANGUAGE may be one of:\n"
-/* C */	     "  english      american-english\n"
-/* af */     "  afrikaans\n"
-/* sq */     "  albanian\n"
-/* eu */     "  basque       euskara\n"
-/* be */     "  belarusian   bielaruskaja\n"
-/* nb */     "  bokmal\n"
-/* pt_BR */  "  brazilian    brazilian-portuguese   portugues-brazilian\n"
-/* br */     "  breton       brezhoneg\n"
-/* en_GB */  "  british      british-english\n"
-/* bg_BG */  "  bulgarian\n"
-/* ca */     "  catalan      catala\n"
-/* zh_CN */  "  chinese      simplified-chinese\n"
-/* zh_TW */  "               traditional-chinese\n"
-/* hr */     "  croatian     hrvatski\n"
-/* cs */     "  czech        cesky\n"
-/* da */     "  danish       dansk\n"
-/* nl */     "  dutch        nederlands\n"
-/* fi */     "  finnish      suomi\n"
-/* fr */     "  french       francais\n"
-/* gl */     "  galician     galego\n"
-/* de */     "  german       deutsch\n"
-/* el */     "  greek\n"
-/* he */     "  hebrew\n"
-/* hi */     "  hindi\n"
-/* hu */     "  hungarian    magyar\n"
-/* is */     "  icelandic    islenska\n"
-/* id */     "  indonesian   bahasa-indonesia\n"
-/* it */     "  italian      italiano\n"
-/* ja */     "  japanese\n"
-/* tlh */    "  klingon      tlhIngan\n"
-/* ko */     "  korean\n"
-/* lt */     "  lithuanian   lietuviu\n"
-/* ms */     "  malay\n"
-/* nn */     "  norwegian    nynorsk                norsk\n"
-/* pl */     "  polish       polski\n"
-/* pt_PT */  "  portuguese   portugues\n"
-/* ro */     "  romanian\n"
-/* ru */     "  russian      russkiy\n"
-/* sr */     "  serbian\n"
-/* sk */     "  slovak\n"
-/* sl */     "  slovenian    slovensko\n"
-/* es */     "  spanish      espanol\n"
-/* sw */     "  swahili\n"
-/* sv */     "  swedish      svenska\n"
-/* ta */     "  tamil\n"
-/* tr */     "  turkish\n"
-/* vi */     "  vietnamese\n"
-/* wa */     "  walloon      walon\n"
-/* cy */     "  welsh        cymraeg\n"
-	  "\n",
-	  prg);
-}
-
-
-/* FIXME: Add accented characters to the descriptions */
-
-/* Show available locales: */
-
-static void show_locale_usage(FILE * f, char * prg)
-{
-  fprintf(f,
-	  "\n"
-	  "Usage: %s [--locale LOCALE]\n"
-	  "\n"
-	  "LOCALE may be one of:\n"
-	  "  C       (English      American English)\n"
-	  "  af_ZA   (Afrikaans)\n"
-	  "  eu_ES   (Baque        Euskara)\n"
-	  "  be_BY   (Belarusian   Bielaruskaja)\n"
-	  "  nb_NO   (Bokmal)\n"
-	  "  pt_BR   (Brazilian    Brazilian Portuguese   Portugues Brazilian)\n"
-	  "  br_FR   (Breton       Brezhoneg)\n"
-	  "  en_GB   (British      British English)\n"
-          "  bg_BG   (Bulgarian)\n"
-	  "  ca_ES   (Catalan      Catala)\n"
-	  "  zh_CN   (Chinese-Simplified)\n"
-	  "  zh_TW   (Chinese-Traditional)\n"
-	  "  cs_CZ   (Czech        Cesky)\n"
-	  "  da_DK   (Danish       Dansk)\n"
-	  "  nl_NL   (Dutch)\n"
-	  "  fi_FI   (Finnish      Suomi)\n"
-	  "  fr_FR   (French       Francais)\n"
-	  "  gl_ES   (Galician     Galego)\n"
-	  "  de_DE   (German       Deutsch)\n"
-	  "  el_GR   (Greek)\n"
-	  "  he_IL   (Hebrew)\n"
-	  "  hi_IN   (Hindi)\n"
-	  "  hr_HR   (Croatian     Hrvatski)\n"
-	  "  hu_HU   (Hungarian    Magyar)\n"
-	  "  tlh     (Klingon      tlhIngan)\n"
-	  "  is_IS   (Icelandic    Islenska)\n"
-	  "  id_ID   (Indonesian   Bahasa Indonesia)\n"
-	  "  it_IT   (Italian      Italiano)\n"
-	  "  ja_JP   (Japanese)\n"
-	  "  ko_KR   (Korean)\n"
-	  "  ms_MY   (Malay)\n"
-	  "  lt_LT   (Lithuanian   Lietuviu)\n"
-	  "  nn_NO   (Norwegian    Nynorsk                Norsk)\n"
-	  "  pl_PL   (Polish       Polski)\n"
-	  "  pt_PT   (Portuguese   Portugues)\n"
-	  "  ro_RO   (Romanian)\n"
-	  "  ru_RU   (Russian      Russkiy)\n"
-	  "  sk_SK   (Slovak)\n"
-	  "  sl_SI   (Slovenian)\n"
-	  "  sq_AL   (Albanian)\n"
-	  "  sr_YU   (Serbian)\n"
-	  "  es_ES   (Spanish      Espanol)\n"
-	  "  sw_TZ   (Swahili)\n"
-	  "  sv_SE   (Swedish      Svenska)\n"
-	  "  tr_TR   (Turkish)\n"
-	  "  vi_VN   (Vietnamese)\n"
-	  "  wa_BE   (Walloon)\n"
-	  "  cy_GB   (Welsh        Cymraeg)\n"
-	  "\n",
-	  prg);
 }
 
 
