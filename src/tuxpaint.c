@@ -1313,6 +1313,41 @@ static int hit_test(const SDL_Rect * const r, unsigned x, unsigned y)
 
 #define HIT(r) hit_test(&(r), event.button.x, event.button.y)
 
+// x,y are pixel-wise screen-relative (mouse location), not grid-wise
+// w,h are the size of a grid item
+// Return the grid box.
+// NOTE: grid items must fill full SDL_Rect width exactly
+static int grid_hit_wh(const SDL_Rect * const r, unsigned x, unsigned y, unsigned w, unsigned h)
+{
+  return   (x - r->x) / w  +  (y - r->y) / h * (r->w/w) ;
+}
+
+// test an SDL_Rect r containing an array of WxH items for a grid location
+#define GRIDHIT_WH(r,W,H) grid_hit_wh(&(r), event.button.x, event.button.y, W,H)
+
+// test an SDL_Rect r containing an array of SDL_Surface surf for a grid location
+#define GRIDHIT_SURF(r,surf) grid_hit_wh(&(r), event.button.x, event.button.y, (surf)->w, (surf)->h)
+
+// x,y are pixel-wise screen-relative (mouse location), not grid-wise
+// Return the grid box.
+// NOTE: returns -1 if hit is below or to the right of the grid
+static int grid_hit_gd(const SDL_Rect * const r, unsigned x, unsigned y, grid_dims *gd)
+{
+  unsigned item_w = r->w / gd->cols;
+  unsigned item_h = r->h / gd->rows;
+  unsigned col = (x - r->x) / item_w;
+  unsigned row = (y - r->y) / item_h;
+#ifdef DEBUG
+  printf("%d,%d resolves to %d,%d in a %dx%d grid, index is %d\n", x,y, col,row, gd->cols,gd->rows, col+row*gd->cols);
+#endif
+  if (col >= gd->cols || row >= gd->rows)
+    return -1;
+  return col + row * gd->cols;
+}
+
+// test an SDL_Rect r for a grid location, based on a grid_dims gd
+#define GRIDHIT_GD(r,gd) grid_hit_gd(&(r), event.button.x, event.button.y, &(gd))
+
 /* Update the screen with the new canvas: */
 static void update_canvas(int x1, int y1, int x2, int y2)
 {
@@ -2566,9 +2601,7 @@ static void mainloop(void)
 	      if (HIT(r_tools))
 		{
 		  /* A tool on the left has been pressed! */
-		  
-		  which = ((event.button.y - 40) / 48) * 2 +
-		    (event.button.x / 48);
+		  which = GRIDHIT_GD(r_tools,gd_tools);
 		  
 		  if (which < NUM_TOOLS && tool_avail[which])
 		    {
@@ -2827,6 +2860,9 @@ static void mainloop(void)
 		      cur_tool == TOOL_MAGIC || cur_tool == TOOL_TEXT ||
 		      cur_tool == TOOL_ERASER)
 		    {
+		      grid_dims gd_controls = {0,0}; // might become 2-by-2
+		      grid_dims gd_items = {2,2}; // generally becoming 2-by-whatever
+
 		      /* Note set of things we're dealing with */
 		      /* (stamps, brushes, etc.) */
 		      
@@ -2834,16 +2870,21 @@ static void mainloop(void)
 			{
 			  num_things = num_brushes;
 			  thing_scroll = brush_scroll;
+			  gd_controls.rows = (num_things+1)/2;
 			}
 		      else if (cur_tool == TOOL_STAMP)
 			{
 			  num_things = num_stamps;
 			  thing_scroll = stamp_scroll;
+			  if(!disable_stamp_controls)
+			    gd_controls = (grid_dims){2,2};
 			}
 		      else if (cur_tool == TOOL_TEXT)
 			{
 			  num_things = num_font_families;
 			  thing_scroll = font_scroll;
+			  if(!disable_stamp_controls)
+			    gd_controls = (grid_dims){2,2};
 			}
 		      else if (cur_tool == TOOL_SHAPES)
 			{
@@ -2860,428 +2901,347 @@ static void mainloop(void)
 			  num_things = NUM_ERASERS;
 			  thing_scroll = 0;
 		        }
-		      
+
+		      // number of whole or partial rows that will be needed
+		      // (can make this per-tool if variable columns needed)
+	              int num_rows_needed = (num_things+gd_items.cols-1)/gd_items.cols;
+	              gd_items.rows = num_rows_needed;
+
 		      do_draw = 0;
 
+		      SDL_Rect r_controls;
+		      r_controls.w = r_toolopt.w;
+		      r_controls.h = gd_controls.rows * button_h;
+		      r_controls.x = r_toolopt.x;
+		      r_controls.y = r_toolopt.y + r_toolopt.h - r_controls.h;
 		      
-		      /* Deal with scroll buttons: */
+		      SDL_Rect r_notcontrols;
+		      r_notcontrols.w = r_toolopt.w;
+		      r_notcontrols.h = r_toolopt.h - r_controls.h;
+		      r_notcontrols.x = r_toolopt.x;
+		      r_notcontrols.y = r_toolopt.y;
 		      
-		      max = 14;
-
-		      if (cur_tool == TOOL_STAMP && !disable_stamp_controls)
-			max = 10;
-
-		      if (cur_tool == TOOL_TEXT && !disable_stamp_controls)
-			max = 10;
-
-		      if (num_things > max + TOOLOFFSET)
-			{
-			  if (event.button.y < 40 + 24)
-			    {
-			      if (thing_scroll > 0)
-				{
-				  thing_scroll = thing_scroll - 2;
-				  do_draw = 1;
-				  
-				  playsound(1, SND_SCROLL, 1);
-
-				  if (scrolling == 0)
-				    {
-				      memcpy(&scrolltimer_event,
-					     &event,
-					     sizeof(SDL_Event));
-
-				    
-				      /* FIXME: Make delay value changable: */
-
-				      scrolltimer =
-					SDL_AddTimer(REPEAT_SPEED,
-						     scrolltimer_callback,
-						     (void*) &scrolltimer_event);
-
-				      scrolling = 1;
-				    }
-				  else
-				    {
-				      SDL_RemoveTimer(scrolltimer);
-				    
-				      scrolltimer =
-					SDL_AddTimer(REPEAT_SPEED / 3,
-						     scrolltimer_callback,
-						     (void*) &scrolltimer_event);
-				    }
-				  
-				  
-				  if (thing_scroll == 0)
-				    {
-				      do_setcursor(cursor_arrow);
-
-				      if (scrolling == 1)
-					{
-					  SDL_RemoveTimer(scrolltimer);
-					  scrolling = 0;
-					}
-				    }
-				}
-			    }
-			  else if (event.button.y >=
-				   (48 * ((max - 2) / 2 + TOOLOFFSET / 2)) + 40 + 24 &&
-				   event.button.y <
-				   (48 * ((max - 2) / 2 + TOOLOFFSET / 2)) + 40 + 24 + 24)
-			    {
-			      if (thing_scroll < num_things - (max - 2) - TOOLOFFSET)
-				{
-				  thing_scroll = thing_scroll + 2;
-				  do_draw = 1;
-				  
-				  playsound(1, SND_SCROLL, 1);
-				  
-				  if (scrolling == 0)
-				    {
-				      memcpy(&scrolltimer_event,
-					     &event,
-					     sizeof(SDL_Event));
-
-				      /* FIXME: Make delay value changable: */
-
-				      scrolltimer =
-					SDL_AddTimer(REPEAT_SPEED,
-						     scrolltimer_callback,
-						     (void*) &scrolltimer_event);
-
-				      scrolling = 1;
-				    }
-				  else
-				    {
-				      SDL_RemoveTimer(scrolltimer);
-				    
-				      scrolltimer =
-					SDL_AddTimer(REPEAT_SPEED / 3,
-						     scrolltimer_callback,
-						     (void*) &scrolltimer_event);
-				    }
-				  
-				  if (thing_scroll == 0)
-				    {
-				      do_setcursor(cursor_arrow);
-
-				      if (scrolling == 1)
-					{
-					  SDL_RemoveTimer(scrolltimer);
-					  scrolling = 0;
-					}
-				    }
-				}
-			    }
-			  
-			  off_y = 24;
-			}
-		      else
-			{
-			  off_y = 0;
-			}
-
-
+		      SDL_Rect r_items = r_notcontrols;
+		      if(gd_items.rows * button_h > r_items.h)
+		        {
+		          // too many; we'll need scroll buttons
+		          r_items.h -= button_h;
+		          r_items.y += button_h/2;
+		          gd_items.rows = r_items.h / button_h;
+		        }
 		      
-		      if (event.button.y > 40 + off_y &&
-			  event.button.y <
-			  (48 * ((max / 2) + TOOLOFFSET / 2)) + 40 - off_y)
-			{
-			  which = ((event.button.y - 40 - off_y) / 48) * 2 +
-			    ((event.button.x - (WINDOW_WIDTH - 96)) / 48) +
-			    thing_scroll;
-			  
-			  if (which < num_things)
-			    {
+		      if(HIT(r_items))
+		        {
+		          which = GRIDHIT_GD(r_items,gd_items) + thing_scroll;
+                          
+                          if (which < num_things)
+                            {
 #ifndef NOSOUND
-			      if (cur_tool != TOOL_STAMP ||
-				  snd_stamps[which] == NULL)
-				{ 
-				  playsound(1, SND_BLEEP, 0);
-				}
+                              if (cur_tool != TOOL_STAMP || snd_stamps[which] == NULL)
+                                { 
+                                  playsound(1, SND_BLEEP, 0);
+                                }
 #endif
-			      
-			      old_thing = cur_thing;
-			      cur_thing = which;
-			      do_draw = 1;
-			    }
-			  else
-			    {
-			      cur_thing = num_things - 1;
-			      do_draw = 1;
-			    }
-			}
-		      else if (cur_tool == TOOL_STAMP &&
-			       event.button.y >= (48 * ((max / 2) + TOOLOFFSET / 2)) + 40 &&
-			       event.button.y < (48 * ((max / 2) + TOOLOFFSET / 2)) + 40 + 96 &&
-			       !disable_stamp_controls)
-			{
-			  /* Stamp controls! */
-                          int control_sound = -1;
-			  if (event.button.y >= (48 * ((max / 2) + TOOLOFFSET / 2)) + 40 &&
-			      event.button.y < (48 * ((max / 2) + TOOLOFFSET / 2)) + 40 + 48)
-			    {
-			      /* One of the top buttons: */
-			      if (event.button.x >= WINDOW_WIDTH - 96 &&
-				  event.button.x <= WINDOW_WIDTH - 48)
-				{
-				  /* Top left button: Mirror: */
-				  if (inf_stamps[cur_stamp]->mirrorable)
-				    {
-				      state_stamps[cur_stamp]->mirrored =
-					!state_stamps[cur_stamp]->mirrored;
-				      control_sound = SND_MIRROR;
-				    }
-				}
-			      else
-				{
-				  /* Top right button: Flip: */
-				  if (inf_stamps[cur_stamp]->flipable)
-				    {
-				      state_stamps[cur_stamp]->flipped =
-					!state_stamps[cur_stamp]->flipped;
-				      control_sound = SND_FLIP;
-				    }
-				}
-			    }
-			  else
-			    {
-			      /* One of the bottom buttons: */
-			      if (event.button.x >= WINDOW_WIDTH - 96 &&
-				  event.button.x <= WINDOW_WIDTH - 48)
-				{
-				  /* Bottom left button: Shrink: */
-				  if (state_stamps[cur_stamp]->size > MIN_STAMP_SIZE)
-				    {
-				      state_stamps[cur_stamp]->size--;
-				      control_sound = SND_SHRINK;
-				    }
-				}
-			      else
-				{
-				  /* Bottom right button: Grow: */
-				  if (state_stamps[cur_stamp]->size < MAX_STAMP_SIZE)
-				    {
-				      state_stamps[cur_stamp]->size++;
-				      control_sound = SND_GROW;
-				    }
-				}
-			    }
-			  if (control_sound != -1)
-			    {
-			      playsound(0, control_sound, 0);
-			      draw_stamps();
-			      update_screen_rect(&r_toolopt);
-			      update_stamp_xor();
-			    }
-			}
-
-
-		      else if (cur_tool == TOOL_TEXT &&
-			       event.button.y >= (48 * ((max / 2) + TOOLOFFSET / 2)) + 40 &&
-			       event.button.y < (48 * ((max / 2) + TOOLOFFSET / 2)) + 40 + 96 &&
-			       !disable_stamp_controls)
-			{
-			  /* Text controls! */
-                          int control_sound = -1;
-			  if (event.button.y >= (48 * ((max / 2) + TOOLOFFSET / 2)) + 40 &&
-			      event.button.y < (48 * ((max / 2) + TOOLOFFSET / 2)) + 40 + 48)
-			    {
-			      /* One of the top buttons: */
-
-			      if (event.button.x >= WINDOW_WIDTH - 96 &&
-				  event.button.x <= WINDOW_WIDTH - 48)
-				{
-				  /* Top left button: Bold: */
-				  if (text_state & TTF_STYLE_BOLD)
-				    {
-				      text_state &= ~TTF_STYLE_BOLD;
-				      control_sound = SND_THIN;
-				    }
-				  else
-				    {
-				      text_state |= TTF_STYLE_BOLD;
-				      control_sound = SND_THICK;
-				    }
-				}
-			      else
-				{
-				  /* Top right button: Italic: */
-				  if (text_state & TTF_STYLE_ITALIC)
-				    {
-				      text_state &= ~TTF_STYLE_ITALIC;
-				      control_sound = SND_CHALK;
-				    }
-				  else
-				    {
-				      text_state |= TTF_STYLE_ITALIC;
-				      control_sound = SND_SMUDGE;
-				    }
-				}
-			    }
-			  else
-			    {
-			      /* One of the bottom buttons: */
-			      if (event.button.x >= WINDOW_WIDTH - 96 &&
-				  event.button.x <= WINDOW_WIDTH - 48)
-				{
-				  /* Bottom left button: Shrink: */
-				  if (text_size > MIN_TEXT_SIZE)
-				    {
-				      text_size--;
-				      control_sound = SND_SHRINK;
-				    }
-				}
-			      else
-				{
-				  /* Bottom right button: Grow: */
-				  if (text_size < MAX_TEXT_SIZE)
-				    {
-				      text_size++;
-				      control_sound = SND_GROW;
-				    }
-				}
-			    }
-			  if (control_sound != -1)
-			    {
-			      playsound(0, control_sound, 0);
-			      // need to invalidate all the cached user fonts, causing reload on demand
-			      int i;
-                              for (i = 0; i < MAX_FONTS; i++)
+                              old_thing = cur_thing;
+                              cur_thing = which;
+                              do_draw = 1;
+                            }
+		        }
+		      else if(HIT(r_controls))
+		        {
+		          which = GRIDHIT_GD(r_controls,gd_controls);
+		          if (cur_tool == TOOL_STAMP)
+		            {
+                              /* Stamp controls! */
+                              int control_sound = -1;
+                              if (which&2)
                                 {
-                                  if (user_font_families[i] && user_font_families[i]->handle)
+                                  /* One of the bottom buttons: */
+                                  if (which&1)
                                     {
-                                      TTF_CloseFont(user_font_families[i]->handle);
-                                      user_font_families[i]->handle = NULL;
+                                      /* Bottom right button: Grow: */
+                                      if (state_stamps[cur_stamp]->size < MAX_STAMP_SIZE)
+                                        {
+                                          state_stamps[cur_stamp]->size++;
+                                          control_sound = SND_GROW;
+                                        }
+                                    }
+                                  else
+                                    {
+                                      /* Bottom left button: Shrink: */
+                                      if (state_stamps[cur_stamp]->size > MIN_STAMP_SIZE)
+                                        {
+                                          state_stamps[cur_stamp]->size--;
+                                          control_sound = SND_SHRINK;
+                                        }
                                     }
                                 }
-			      draw_fonts();
-			      update_screen_rect(&r_toolopt);
-			    }
-			}
-
-		      
-		      
-		      /* Assign the change(s), if any / redraw, if needed: */
-		      
-		      if (cur_tool == TOOL_BRUSH || cur_tool == TOOL_LINES)
-			{
-			  cur_brush = cur_thing;
-			  brush_scroll = thing_scroll;
-			  render_brush();
-			  
-			  if (do_draw)
-			    draw_brushes();
-			}
-		      else if (cur_tool == TOOL_ERASER)
-		        {
-			  cur_eraser = cur_thing;
-			  
-			  if (do_draw)
-			    draw_erasers();
+                              else
+                                {
+                                  /* One of the top buttons: */
+                                  if (which&1)
+                                    {
+                                      /* Top right button: Flip: */
+                                      if (inf_stamps[cur_stamp]->flipable)
+                                        {
+                                          state_stamps[cur_stamp]->flipped =
+                                            !state_stamps[cur_stamp]->flipped;
+                                          control_sound = SND_FLIP;
+                                        }
+                                    }
+                                  else
+                                    {
+                                      /* Top left button: Mirror: */
+                                      if (inf_stamps[cur_stamp]->mirrorable)
+                                        {
+                                          state_stamps[cur_stamp]->mirrored =
+                                            !state_stamps[cur_stamp]->mirrored;
+                                          control_sound = SND_MIRROR;
+                                        }
+                                    }
+                                }
+                              if (control_sound != -1)
+                                {
+                                  playsound(0, control_sound, 0);
+                                  draw_stamps();
+                                  update_screen_rect(&r_toolopt);
+                                  update_stamp_xor();
+                                }
+		            }
+		          else  // not TOOL_STAMP, so must be TOOL_TEXT
+		            {
+                              /* Text controls! */
+                              int control_sound = -1;
+                              if (which&2)
+                                {
+                                  /* One of the bottom buttons: */
+                                  if (which&1)
+                                    {
+                                      /* Bottom right button: Grow: */
+                                      if (text_size < MAX_TEXT_SIZE)
+                                        {
+                                          text_size++;
+                                          control_sound = SND_GROW;
+                                        }
+                                    }
+                                  else
+                                    {
+                                      /* Bottom left button: Shrink: */
+                                      if (text_size > MIN_TEXT_SIZE)
+                                        {
+                                          text_size--;
+                                          control_sound = SND_SHRINK;
+                                        }
+                                    }
+                                }
+                              else
+                                {
+                                  /* One of the top buttons: */
+                                  if (which&1)
+                                    {
+                                      /* Top right button: Italic: */
+                                      if (text_state & TTF_STYLE_ITALIC)
+                                        {
+                                          text_state &= ~TTF_STYLE_ITALIC;
+                                          control_sound = SND_CHALK;
+                                        }
+                                      else
+                                        {
+                                          text_state |= TTF_STYLE_ITALIC;
+                                          control_sound = SND_SMUDGE;
+                                        }
+                                    }
+                                  else
+                                    {
+                                      /* Top left button: Bold: */
+                                      if (text_state & TTF_STYLE_BOLD)
+                                        {
+                                          text_state &= ~TTF_STYLE_BOLD;
+                                          control_sound = SND_THIN;
+                                        }
+                                      else
+                                        {
+                                          text_state |= TTF_STYLE_BOLD;
+                                          control_sound = SND_THICK;
+                                        }
+                                    }
+                                }
+                              if (control_sound != -1)
+                                {
+                                  playsound(0, control_sound, 0);
+                                  // need to invalidate all the cached user fonts, causing reload on demand
+                                  int i;
+                                  for (i = 0; i < MAX_FONTS; i++)
+                                    {
+                                      if (user_font_families[i] && user_font_families[i]->handle)
+                                        {
+                                          TTF_CloseFont(user_font_families[i]->handle);
+                                          user_font_families[i]->handle = NULL;
+                                        }
+                                    }
+                                  // FIXME: is setting do_draw enough?
+                                  draw_fonts();
+                                  update_screen_rect(&r_toolopt);
+                                }
+                            }
 		        }
-		      else if (cur_tool == TOOL_TEXT)
-			{
-			  cur_font = cur_thing;
-			  font_scroll = thing_scroll;
-			  
-			  char font_tux_text[512];
-			  snprintf(font_tux_text, sizeof font_tux_text, "%s, %s", TTF_FontFaceFamilyName(getfonthandle(cur_font)), TTF_FontFaceStyleName(getfonthandle(cur_font)));
-			  draw_tux_text(TUX_GREAT, font_tux_text, 1);
-			  
-			  if (do_draw)
-			    draw_fonts();
-			  
-			  do_render_cur_text(0);
-			}
-		      else if (cur_tool == TOOL_STAMP)
-			{
+		      else
+		        {
+		          // scroll button
+		          int is_upper = event.button.y < r_toolopt.y + button_h/2;
+                          if (
+                               (is_upper && thing_scroll > 0)  // upper arrow
+                               ||
+                               (!is_upper && thing_scroll/gd_items.cols < num_rows_needed-gd_items.rows) // lower arrow
+                             )
+                            {
+                              thing_scroll += is_upper ? -gd_items.cols : gd_items.cols;
+                              do_draw = 1;
+                              playsound(1, SND_SCROLL, 1);
+                              if (!scrolling)
+                                {
+                                  memcpy(&scrolltimer_event, &event, sizeof(SDL_Event));
+                                  /* FIXME: Make delay value changable: */
+                                  scrolltimer = SDL_AddTimer(REPEAT_SPEED, scrolltimer_callback, (void*) &scrolltimer_event);
+                                  scrolling = 1;
+                                }
+                              else
+                                {
+                                  SDL_RemoveTimer(scrolltimer);
+                                  scrolltimer = SDL_AddTimer(REPEAT_SPEED / 3, scrolltimer_callback, (void*) &scrolltimer_event);
+                                }
+                              if (thing_scroll == 0)
+                                {
+                                  do_setcursor(cursor_arrow);
+                                  if (scrolling)
+                                    {
+                                      SDL_RemoveTimer(scrolltimer);
+                                      scrolling = 0;
+                                    }
+                                }
+                            }
+		        }
+                      
+                      
+                      /* Assign the change(s), if any / redraw, if needed: */
+                      
+                      if (cur_tool == TOOL_BRUSH || cur_tool == TOOL_LINES)
+                        {
+                          cur_brush = cur_thing;
+                          brush_scroll = thing_scroll;
+                          render_brush();
+                          
+                          if (do_draw)
+                            draw_brushes();
+                        }
+                      else if (cur_tool == TOOL_ERASER)
+                        {
+                          cur_eraser = cur_thing;
+                          
+                          if (do_draw)
+                            draw_erasers();
+                        }
+                      else if (cur_tool == TOOL_TEXT)
+                        {
+                          cur_font = cur_thing;
+                          font_scroll = thing_scroll;
+                          
+                          char font_tux_text[512];
+                          snprintf(font_tux_text, sizeof font_tux_text, "%s, %s", TTF_FontFaceFamilyName(getfonthandle(cur_font)), TTF_FontFaceStyleName(getfonthandle(cur_font)));
+                          draw_tux_text(TUX_GREAT, font_tux_text, 1);
+                          
+                          if (do_draw)
+                            draw_fonts();
+                          
+                          do_render_cur_text(0);
+                        }
+                      else if (cur_tool == TOOL_STAMP)
+                        {
 #ifndef NOSOUND
-			  if (cur_stamp != cur_thing ||
-			      stamp_scroll == thing_scroll)
-			    {
-			      /* Only play when picking a different stamp, not
-				 simply scrolling */
-			      
-			      if (snd_stamps[cur_thing] != NULL)
-				Mix_PlayChannel(2, snd_stamps[cur_thing], 0);
-			    }
+                          if (cur_stamp != cur_thing ||
+                              stamp_scroll == thing_scroll)
+                            {
+                              /* Only play when picking a different stamp, not
+                                 simply scrolling */
+                              
+                              if (snd_stamps[cur_thing] != NULL)
+                                Mix_PlayChannel(2, snd_stamps[cur_thing], 0);
+                            }
 #endif
-		  
+                  
 
-			  if (cur_thing != cur_stamp)
-			  {
-			    cur_stamp = cur_thing;
-			    update_stamp_xor();
-			  }
+                          if (cur_thing != cur_stamp)
+                          {
+                            cur_stamp = cur_thing;
+                            update_stamp_xor();
+                          }
 
-			  stamp_scroll = thing_scroll;
-			  
+                          stamp_scroll = thing_scroll;
+                          
 
-			  if (do_draw)
-			    draw_stamps();
-			  
-			  if (txt_stamps[cur_stamp] != NULL)
-			    {
+                          if (do_draw)
+                            draw_stamps();
+                          
+                          if (txt_stamps[cur_stamp] != NULL)
+                            {
 #ifdef DEBUG
-			      printf("txt_stamps[cur_stamp] = %s\n",
-				     txt_stamps[cur_stamp]);
+                              printf("txt_stamps[cur_stamp] = %s\n",
+                                     txt_stamps[cur_stamp]);
 #endif
 
-			      draw_tux_text(TUX_GREAT,
-						txt_stamps[cur_stamp], 1);
-			    }
-			  else
-			    draw_tux_text(TUX_GREAT, "", 0);
-			  
-			  
-			  /* Enable or disable color selector: */
-			  
-			  if ((stamp_colorable(cur_stamp) ||
-			       stamp_tintable(cur_stamp)) !=
-			      (stamp_colorable(old_thing) ||
-			       stamp_tintable(old_thing)))
-			    {
-			      draw_colors(stamp_colorable(cur_stamp) ||
-					  stamp_tintable(cur_stamp));
-			      update_screen_rect(&r_colors);
-			      update_screen_rect(&r_tcolors);
-			    }
-			}
-		      else if (cur_tool == TOOL_SHAPES)
-			{
-			  cur_shape = cur_thing;
-			  
-			  draw_tux_text(TUX_GREAT, shape_tips[cur_shape], 1);
-			  
-			  if (do_draw)
-			    draw_shapes();
-			}
-		      else if (cur_tool == TOOL_MAGIC)
-			{
-			  if (cur_thing != cur_magic)
-			    {
-			      cur_magic = cur_thing;
-			      draw_colors(magic_colors[cur_magic]);
+                              draw_tux_text(TUX_GREAT,
+                                                txt_stamps[cur_stamp], 1);
+                            }
+                          else
+                            draw_tux_text(TUX_GREAT, "", 0);
+                          
+                          
+                          /* Enable or disable color selector: */
+                          
+                          if ((stamp_colorable(cur_stamp) ||
+                               stamp_tintable(cur_stamp)) !=
+                              (stamp_colorable(old_thing) ||
+                               stamp_tintable(old_thing)))
+                            {
+                              draw_colors(stamp_colorable(cur_stamp) ||
+                                          stamp_tintable(cur_stamp));
+                              update_screen_rect(&r_colors);
+                              update_screen_rect(&r_tcolors);
+                            }
+                        }
+                      else if (cur_tool == TOOL_SHAPES)
+                        {
+                          cur_shape = cur_thing;
+                          
+                          draw_tux_text(TUX_GREAT, shape_tips[cur_shape], 1);
+                          
+                          if (do_draw)
+                            draw_shapes();
+                        }
+                      else if (cur_tool == TOOL_MAGIC)
+                        {
+                          if (cur_thing != cur_magic)
+                            {
+                              cur_magic = cur_thing;
+                              draw_colors(magic_colors[cur_magic]);
 
-			      update_screen_rect(&r_colors);
-			      update_screen_rect(&r_tcolors);
-			    }
-			  
-			  magic_scroll = thing_scroll;
+                              update_screen_rect(&r_colors);
+                              update_screen_rect(&r_tcolors);
+                            }
+                          
+                          magic_scroll = thing_scroll;
 
-			  draw_tux_text(TUX_GREAT, magic_tips[cur_magic], 1);
-			  
-			  if (do_draw)
-			    draw_magic();
-			}
-		      
-		      /* Update the screen: */
-		      
-		      if (do_draw)
-		        update_screen_rect(&r_toolopt);
-		    }
-		}
+                          draw_tux_text(TUX_GREAT, magic_tips[cur_magic], 1);
+                          
+                          if (do_draw)
+                            draw_magic();
+                        }
+                      
+                      /* Update the screen: */
+                      if (do_draw)
+                        update_screen_rect(&r_toolopt);
+                    }
+                }
 	      else if (HIT(r_colors) && colors_are_selectable)
 		{
 		  /* Color! */
