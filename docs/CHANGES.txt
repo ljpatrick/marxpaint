@@ -7,7 +7,7 @@ bill@newbreedsoftware.com
 http://www.newbreedsoftware.com/tuxpaint/
 
 
-2004.April.14 (0.9.14) [cvs]
+2004.April.19 (0.9.14) [cvs]
   * Updated Makefile for easier install.
     Mark K. Kim <tuxNO_SOLICITATIONpaint-dev@cbreak.org>
 
@@ -28,7 +28,7 @@ http://www.newbreedsoftware.com/tuxpaint/
     Ines Kovacevic <ines@agenda.si>
 
   * Breton translation created.
-    Korvigellou An Drouizig <drouizig@drouizig.org>
+    Korvigellou An Drouizig (Philippe) <drouizig@drouizig.org>
 
   * Japanese translation updates.
     TOYAMA Shin-ichi <shin1@wmail.plala.or.jp>

@@ -7,7 +7,7 @@ bill@newbreedsoftware.com
 http://www.newbreedsoftware.com/tuxpaint/
 
 
-June 17, 2002 - April 14, 2004
+June 17, 2002 - April 19, 2004
 
 
 * Design and Coding:
@@ -83,7 +83,7 @@ June 17, 2002 - April 14, 2004
     Juan Irigoien <juanirigoien@irakasle.net>
   
   * Breton
-    Korvigelloù An Drouizi <drouizig@drouizig.org>
+    Korvigelloù An Drouizi (Philippe) <drouizig@drouizig.org>
 
   * Catalan
     Pere Pujal Carabantes <ppujal@airtel.net>

@@ -507,11 +507,11 @@ msgstr "Kenavo !"
 #
 # File: tools.h, line: 78
 msgid "Let go of the button to complete the line."
-msgstr "Dalc'h da boueza� war an afell evit peurleuniañ al linenn."
+msgstr "Dalc'h da bouezañ war an afell evit peurleuniañ al linenn."
 #
 # File: tools.h, line: 79
 msgid "Hold the button to stretch the shape."
-msgstr "Dalc'h da boueza� war an afell evit astenn ar stumm."
+msgstr "Dalc'h da bouezañ war an afell evit astenn ar stumm."
 #
 # File: tools.h, line: 80
 msgid "Move the mouse to rotate the shape. Click to draw it."
