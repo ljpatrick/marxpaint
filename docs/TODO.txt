@@ -204,6 +204,9 @@ LOW-PRIORITY TRANSLATION STUFF:
 
 FEATURE IDEAS:
 --------------
+  * Allow naming (titling) of images when saving. (As an option)
+    (Thanks to Jerry W. Todd for the idea.)
+
   * "Cartoonify" magic tool.  Kind of like posterize, but different?
 
   * Create symbolic link "~/TuxPaintPictures" that points to
