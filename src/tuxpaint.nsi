@@ -1,6 +1,7 @@
 # vim: noai et ts=4 tw=0
+# with a few tiny modifications by Phil Harper(philh@theopencd.org)
 
-!define PKG_VERSION "0.9.13"
+!define PKG_VERSION "0.9.14-cvs"
 !define PKG_PREFIX  "tuxpaint"
 
 !define APP_PREFIX  "TuxPaint"
@@ -32,7 +33,7 @@ LicenseText "You must agree to this license before installing ${APP_NAME}"
 LicenseData "docs/copying.txt"
 
 # Directory browsing
-DirShow             show
+# DirShow           show
 ComponentText       "This will install ${APP_NAME} on your computer. Select which optional things you want installed."
 DirText             "Choose a directory to install ${APP_NAME} in to:"
 AllowRootDirInstall false
@@ -65,16 +66,17 @@ SectionEnd
 Section "Start Menu Shortcuts"
   SetOutPath $INSTDIR
   CreateDirectory "$SMPROGRAMS\${APP_NAME}"
-  CreateShortCut  "$SMPROGRAMS\${APP_NAME}\${APP_NAME}.lnk" "$INSTDIR\${APP_EXE}" "" "$INSTDIR\${APP_EXE}" 0
-  CreateShortCut  "$SMPROGRAMS\${APP_NAME}\Readme.lnk" "$INSTDIR\docs\html\README.html" "" "$INSTDIR\docs\html\README.html" 0
-  CreateShortCut  "$SMPROGRAMS\${APP_NAME}\Licence.lnk" "$INSTDIR\docs\copying.txt" "" "$INSTDIR\docs\copying.txt" 0
-  CreateShortCut  "$SMPROGRAMS\${APP_NAME}\Uninstall.lnk" "$INSTDIR\uninstall.exe" "" "$INSTDIR\uninstall.exe" 0
+  CreateShortCut  "$SMPROGRAMS\${APP_NAME}\${APP_NAME} (Full Screen).lnk" "$INSTDIR\${APP_EXE}" "-f" "$INSTDIR\${APP_EXE}" 0 "" "" "Start TuxPaint in Fullscreen mode"
+  CreateShortCut  "$SMPROGRAMS\${APP_NAME}\${APP_NAME} (Windowed).lnk" "$INSTDIR\${APP_EXE}" "" "$INSTDIR\${APP_EXE}" 0 "" "" "Start TuxPaint in a Window"
+  CreateShortCut  "$SMPROGRAMS\${APP_NAME}\Readme.lnk" "$INSTDIR\docs\html\README.html" "" "$INSTDIR\docs\html\README.html" 0 "" "" "View ReadMe"
+  CreateShortCut  "$SMPROGRAMS\${APP_NAME}\Licence.lnk" "$INSTDIR\docs\copying.txt" "" "$INSTDIR\docs\copying.txt" 0 "" "" "Read License"
+  CreateShortCut  "$SMPROGRAMS\${APP_NAME}\Uninstall.lnk" "$INSTDIR\uninstall.exe" "" "$INSTDIR\uninstall.exe" 0 "" "" "Remove TuxPaint"
 SectionEnd
 
 
 Section "Desktop Shortcut"
   SetOutPath $INSTDIR
-  CreateShortCut "$DESKTOP\${APP_NAME}.lnk" "$INSTDIR\${APP_EXE}" "" "$INSTDIR\${APP_EXE}" 0
+  CreateShortCut "$DESKTOP\${APP_NAME}.lnk" "$INSTDIR\${APP_EXE}" "" "$INSTDIR\${APP_EXE}" 0  "" "" "Create a picture with TuxPaint"
 SectionEnd
 
 Section "View README"
