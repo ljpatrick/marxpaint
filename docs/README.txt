@@ -1,5 +1,5 @@
                                    Tux Paint
-                                 version 0.9.13
+                                 version 0.9.14
 
   A simple drawing program for children
 
@@ -9,7 +9,7 @@
                            bill@newbreedsoftware.com
                    http://www.newbreedsoftware.com/tuxpaint/
 
-                       June 14, 2002 - December 23, 2003
+                       June 14, 2002 - December 26, 2003
 
      ----------------------------------------------------------------------
 
@@ -140,6 +140,12 @@ Loading Tux Paint
 
      ----------------------------------------------------------------------
 
+  Mac OS X Users
+
+         Simply double-click the "Tux Paint" icon.
+
+     ----------------------------------------------------------------------
+
 Options
 
   Configuration File
@@ -181,7 +187,8 @@ Options
     Available Options
 
            The following settings can be set in the configuration file.
-           (Command-line settings will override these. See below.)
+           (Command-line settings will override these. See the "Command-Line
+           Options" section, below.)
 
            fullscreen=yes
                    Run the program in full screen mode, rather than in a
@@ -550,8 +557,8 @@ Options
          "lang=" setting in the configuration file (e.g., "lang=spanish").
 
          Tux Paint also honors your environment's current locale. (You can
-         override it on the command-line using the "--locale" option (see
-         above).)
+         override it on the command-line using the "--locale" option; see
+         above.)
 
          The following languages are supported:
 
@@ -629,8 +636,8 @@ Options
            +--------------------------------------------------------+
 
            (*) - These languages require their own fonts, since they are not
-           represented using a Latin character set, like the others. See
-           Special Fonts, below.
+           represented using a Latin character set, like the others. See the
+           "Special Fonts" section, below.
 
     Setting Your Environment's Locale
 
@@ -1185,7 +1192,7 @@ Available Tools
      To do so, you simply need to convert the picture into a PNG (Portable
      Network Graphic) image file, and place it in Tux Paint's "saved"
      directory. ("~/.tuxpaint/saved/" under Linux and Unix, "userdata\saved\"
-     under Windows.)
+     under Windows, "Library/Preferences/tuxpaint/saved/" under Mac OS X.)
 
 Using 'tuxpaint-import'
 
@@ -1221,7 +1228,8 @@ Using 'tuxpaint-import'
 
 Doing it Manually
 
-       Windows users must currently do the conversion manually.
+       Windows, Mac OS X and BeOS users must currently do the conversion
+       manually.
 
        Load a graphics program that is capable of both loading your picture
        and saving a PNG format file. (See the documentation file "PNG.txt"
@@ -1250,7 +1258,8 @@ Doing it Manually
 
        Place this PNG file in your Tux Paint 'saved' directory. (See above.)
 
-       Under Windows, this is in the "userdata" folder.
+       Under Windows, this is in the "userdata" folder. Under Mac OS X, this
+       is in "Library/Preferences/tuxpaint/" in your home directory.
 
      ----------------------------------------------------------------------
 

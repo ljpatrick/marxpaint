@@ -12,7 +12,7 @@ alt="Tux&nbsp;Paint"><br>
 
 version
 
-0.9.13
+0.9.14
 
 </h1>
 <h3>A simple drawing program for children</h3>
@@ -23,7 +23,7 @@ New Breed Software</p>
 <p><a href="mailto:bill@newbreedsoftware.com">bill@newbreedsoftware.com</a><br>
 <a href="http://www.newbreedsoftware.com/tuxpaint/">http://www.newbreedsoftware.com/tuxpaint/</a></p>
 
-<p>June 14, 2002 - December 23, 2003</p>
+<p>June 14, 2002 - December 26, 2003</p>
 </center>
 
 <hr size=2 noshade>
@@ -190,19 +190,19 @@ New Breed Software</p>
       <br clear=all>
     </blockquote>
       
-    <!--hr size=1 noshade--><!--p-->
+    <hr size=1 noshade>
 
-    <!--h3--><!--Macintosh Users--><!--/h3-->
-    <!--blockquote-->
-      <!--Simply double-click the "Tux&nbsp;Paint" icon in the Tux&nbsp;Paint
-      folder.--><!--p-->
-    <!--/blockquote-->
+
+    <h3>Mac OS X Users</h3>
+    <blockquote>
+      Simply double-click the "Tux&nbsp;Paint" icon.<p>
+    </blockquote>
   </blockquote>
 
   <hr size=1 noshade>
 
 
-  <h2>Options</h2>
+  <h2><a name="options">Options</a></h2>
   <blockquote>
     <h3>Configuration File</h3>
     <blockquote>
@@ -253,7 +253,9 @@ New Breed Software</p>
       <h4>Available Options</h4>
       <blockquote>
         <p>The following settings can be set in the configuration file.
-	(Command-line settings will override these.  See below.)</p>
+	(Command-line settings will override these.
+	See the "<a href="#command_line"><i>Command-Line Options</i></a>"
+	section, below.)</p>
 
 	<dl>
 	<dt><code><b>fullscreen=yes</b></code></dt>
@@ -667,7 +669,7 @@ New Breed Software</p>
 	  
     <hr size=1 noshade>
 
-    <h3>Command-Line Options</h3>
+    <h3><a name="command_line">Command-Line Options</a></h3>
     <blockquote>
       Options can also be issued on the command-line when you start
       Tux&nbsp;Paint.
@@ -731,10 +733,11 @@ New Breed Software</p>
 	</dd>
 
 
-        <dt><code><b>--locale locale</b></code></dt>
+        <dt><code><b><a name="locale">--locale locale</a></b></code></dt>
 	<dd>
           <p>Run Tux&nbsp;Paint in one of the support languages.
-	  See the "<i>Choosing a Different Language</i>" section below for the
+	  See the "<i><a href="#different_language">Choosing a Different
+	  Language</a></i>" section below for the
 	  locale strings (e.g., "<code>de_DE@euro</code>" for German) to
           use.</p>
 	
@@ -794,7 +797,7 @@ New Breed Software</p>
     <hr size=1 noshade>
  
 
-    <h3>Choosing a Different Language</h3>
+    <h3><a name="different_language">Choosing a Different Language</a></h3>
     <blockquote>
       <p>Tux&nbsp;Paint has been translated into a number of languages.
       To access the translations, you can use the "<code>--lang</code>"
@@ -805,7 +808,7 @@ New Breed Software</p>
 
       <p>Tux&nbsp;Paint also honors your environment's current locale.
       (You can override it on the command-line using the
-      "<code>--locale</code>" option (see above).)</p>
+      "<code>--locale</code>" option; see <a href="#locale">above</a>.)</p>
     
       <p>The following languages are supported:</p>
 
@@ -992,7 +995,8 @@ New Breed Software</p>
 
       <b>(*)</b> - These languages require their own fonts, since they
       are not represented using a Latin character set, like the others.
-      See <b>Special&nbsp;Fonts</b>, below.<p>
+      See the "<a href="#special_fonts"><i>Special&nbsp;Fonts</i></a>"
+      section, below.<p>
   
       </blockquote>
   
@@ -1099,13 +1103,14 @@ New Breed Software</p>
 	</blockquote>
       </blockquote>
 
-      <h4>Special Fonts</h4>
+      <h4><a name="special_fonts">Special Fonts</a></h4>
       <blockquote>
         Some languages require special fonts be installed.  These font
 	files (which are in TrueType format (TTF)), are much too large to
 	include with the Tux&nbsp;Paint download, and are available
 	separately.  (See the table above, under the
-	"Choosing a Different Language" section.)<p>
+	"<a href="#different_language"><i>Choosing a Different Language</i></a>"
+	section.)<p>
 
 	When running Tux&nbsp;Paint in a language that requires its own font,
 	Tux&nbsp;Paint will try to load the font file from its system-wide
@@ -1265,8 +1270,8 @@ New Breed Software</p>
 	
 	<p>(NOTE: If the "<code>nostampcontrols</code>" option is set,
 	Tux&nbsp;Paint won't display the Mirror, Flip, Shrink and Grow
-	controls for stamps.  See the "Options" section of this document,
-	above.)</p>
+	controls for stamps.  See the "<a href="#options"><i>Options</i></a>"
+	section of this document, above.)</p>
 
         <br clear=all>
 
@@ -1589,7 +1594,7 @@ New Breed Software</p>
 
 	<p>If choose to open a picture, and your current drawing hasn't been
 	saved, you will be prompted as to whether you want to save it or not.
-	(See "Save," below.)</p>
+	(See "<a href="#save">Save</a>," below.)</p>
 	
 	<p>Note: You can also press <b>[Control]-[O]</b> on the keyboard to get
         the 'Open' dialog.</p>
@@ -1600,7 +1605,7 @@ New Breed Software</p>
       </dd>
 
 
-      <dt><b>Save</b></dt>
+      <dt><b><a name="save">Save</a></b></dt>
       <dd>
         <img src="images/tool_save.png" width=48 height=48 alt="" align=right>
 
@@ -1623,7 +1628,8 @@ New Breed Software</p>
 
 	<p>(NOTE: If either the "<code>saveover</code>" or
         "<code>saveovernew</code>" options are set, it won't ask before saving
-        over.  See the "Options" section of this document, above.)</p>
+        over.  See the "<a href="#options"><i>Options</i></a>"
+	section of this document, above.)</p>
 	
 	<p>Note: You can also press <b>[Control]-[S]</b> on the keyboard to
 	save.</p>
@@ -1648,7 +1654,8 @@ New Breed Software</p>
           or using "<code>--noprint</code>" on the
 	  command-line), the "Print" button will be disabled.</p>
 
-	  <p>See the "Options" section of this document, above.</p>
+	  <p>See the "<a href="#options"><i>Options</i></a>"
+	  section of this document, above.</p>
 	</dd>
 	  
         
@@ -1663,7 +1670,8 @@ New Breed Software</p>
 	  <p>For example, with "<code>printdelay=60</code>", you can print only
           once a minute.</p>
 
-	  <p>See the "Options" section of this document, above.</p>
+	  <p>See the "<a href="#options"><i>Options</i></a>"
+	  section of this document, above.</p>
 	</dd>
 
 	
@@ -1681,7 +1689,8 @@ New Breed Software</p>
 	  <p>This command can be changed by setting the "printcommand" value
 	  in Tux&nbsp;Paint's configuration file.</p>
 
-	  <p>See the "Options" section of this document, above.</p>
+	  <p>See the "<a href="#options"><i>Options</i></a>"
+	  section of this document, above.</p>
 	</dd>
 
 
@@ -1708,7 +1717,8 @@ New Breed Software</p>
 	  be loaded from the file "<code>userdata/print.cfg</code>".
 	  Any changes will be saved there as well.</p>
 	  
-	  <p>See the "Options" section of this document, above.</p>
+	  <p>See the "<a href="#options"><i>Options</i></a>"
+	  section of this document, above.</p>
 	</dd>
 	
 	</dl>
@@ -1727,15 +1737,15 @@ New Breed Software</p>
 
 	<p>(NOTE: The "Quit" button can be disabled (e.g., with the
         "<code>--noquit</code>" command-line option), but the <b>[Escape]</b>
-        key will still work.  See the "Options" section of this document,
-        above.)</p>
+        key will still work.  See the "<a href="#options"><i>Options</i></a>"
+	section of this document, above.)</p>
 	
         <p>You will first be prompted as to whether you really want to quit.</p>
 
         <p>If you choose to quit, and you haven't saved the current picture,
 	you will first be asked if wish to save it.  If it's not a new image,
 	you will then be asked if you want to save over the old version,
-	or create a new entry.	(See "Save" above.)</p>
+	or create a new entry.	(See "<a href="#save">Save</a>" above.)</p>
         
 	<p>NOTE: If the image is saved, it will be reloaded automatically
 	the next time you run Tux&nbsp;Paint!</p>
@@ -1752,14 +1762,16 @@ New Breed Software</p>
 
 <h1>Loading Other Pictures into Tux&nbsp;Paint</h1>
 <blockquote>
-  <p>Since Tux&nbsp;Paint's 'Open' dialog only displays pictures you created with
-  Tux&nbsp;Paint, what if you want to load some other picture or photograph
-  into Tux&nbsp;Paint to edit?</p>
+  <p>Since Tux&nbsp;Paint's 'Open' dialog only displays pictures you created
+  with Tux&nbsp;Paint, what if you want to load some other picture or
+  photograph into Tux&nbsp;Paint to edit?</p>
 
   <p>To do so, you simply need to convert the picture into
   a PNG (Portable Network Graphic) image file, and place it in Tux&nbsp;Paint's
   "saved" directory.  ("<code>~/.tuxpaint/saved/</code>" under Linux and Unix,
-  "<code>userdata\saved\</code>" under Windows.)</p>
+  "<code>userdata\saved\</code>" under Windows,
+  "<code>Library/Preferences/tuxpaint/saved/</code>" under Mac&nbsp;OS&nbsp;X.)
+  </p>
   
 
   <h2>Using '<code>tuxpaint-import</code>'</h2>
@@ -1804,7 +1816,8 @@ New Breed Software</p>
 
   <h2>Doing it Manually</h2>
   <blockquote>
-    <p>Windows users must currently do the conversion manually.</p>
+    <p>Windows, Mac OS X and BeOS users must currently do the conversion
+    manually.</p>
 
     <p>Load a graphics program that is capable of both loading your picture
     and saving a PNG format file.  (See the documentation file "PNG.txt"
@@ -1837,10 +1850,12 @@ New Breed Software</p>
       <code>20020921130500</code> - for September 21, 2002, 1:05:00pm
     </blockquote>
 
-    <p>Place this PNG file in your Tux&nbsp;Paint 'saved' directory.
-    (See above.)</p>
+    <p>Place this PNG file in your Tux&nbsp;Paint '<code>saved</code>'
+    directory.  (See above.)</p>
 
-    <p>Under Windows, this is in the "userdata" folder.</p>
+    <p>Under Windows, this is in the "<code>userdata</code>" folder.
+    Under Mac OS X, this is in "<code>Library/Preferences/tuxpaint/</code>"
+    in your home directory.</p>
   </blockquote>
 </blockquote>
 

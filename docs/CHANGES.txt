@@ -11,6 +11,8 @@ http://www.newbreedsoftware.com/tuxpaint/
   * Updated/corrected Tamil translation
     Mugunth <mugunth@thamizha.com>
 
+  * Updated README documentation.
+
 
 2003.Dec.23 (0.9.13)
   * Translated into Basque (eu_ES)
