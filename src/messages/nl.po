@@ -54,7 +54,6 @@ msgid "That's OK!"
 msgstr "OK!"
 
 #: tuxpaint.c:812
-#, fuzzy
 msgid "Never mind!"
 msgstr "Dat geeft niet!"
 
@@ -67,7 +66,6 @@ msgid "Print your picture now?"
 msgstr "Wil je je huidige tekening afdrukken?"
 
 #: tuxpaint.c:821
-#, fuzzy
 msgid "Your picture has been printed!"
 msgstr "Je tekening is bewaard!"
 
@@ -116,12 +114,10 @@ msgid "Red!"
 msgstr "Rood!"
 
 #: colors.h:65
-#, fuzzy
 msgid "Pink!"
 msgstr "Rose!"
 
 #: colors.h:66
-#, fuzzy
 msgid "Orange!"
 msgstr "Oranje!"
 
@@ -138,7 +134,6 @@ msgid "Green!"
 msgstr "Groen!"
 
 #: colors.h:70
-#, fuzzy
 msgid "Cyan!"
 msgstr "Turkoois!"
 
@@ -175,7 +170,6 @@ msgid "Cool!"
 msgstr "Geweldig!"
 
 #: great.h:22
-#, fuzzy
 msgid "Keep it up!"
 msgstr "Ga door!"
 
@@ -240,61 +234,52 @@ msgid "You can draw in rainbow colors!"
 msgstr "Je kan in regenboog-kleuren tekenen!"
 
 #: magic.h:74
-#, fuzzy
 msgid "Click and move to draw sparkles."
-msgstr "Klik en beweeg de muis om spikkels te tekenen!"
+msgstr "Klik en beweeg de muis om spikkels te tekenen."
 
 #: magic.h:76
 msgid "Click to make a mirror image."
-msgstr "Klik om er een spiegelbeeld van te maken!"
+msgstr "Klik om er een spiegelbeeld van te maken."
 
 #: magic.h:77
-#, fuzzy
 msgid "Click to flip the picture upside-down."
-msgstr "Klik om beeld ondersteboven te zetten!"
+msgstr "Klik om beeld ondersteboven te zetten."
 
 #: magic.h:79
-#, fuzzy
 msgid "Click and move the mouse around to blur the picture."
-msgstr "Klik en beweeg de muis om de tekening te vervagen!"
+msgstr "Klik en beweeg de muis om de tekening te vervagen."
 
 #: magic.h:80
-#, fuzzy
 msgid "Click and move the mouse around to make the picture blocky."
-msgstr "Klik en beweeg de muis om de tekening blokkerig te maken!"
+msgstr "Klik en beweeg de muis om de tekening blokkerig te maken."
 
 #: magic.h:82
-#, fuzzy
 msgid "Click and move the mouse around to draw a negative."
-msgstr "Klik en beweeg de muis om de tekening negatief te maken!"
+msgstr "Klik en beweeg de muis om de tekening negatief te maken."
 
 #: magic.h:83
 msgid "Click and move to fade the colors."
-msgstr "Klik en beweeg de muis om de kleuren te vervagen!"
+msgstr "Klik en beweeg de muis om de kleuren te vervagen."
 
 #: magic.h:85
 msgid "Click and move the mouse around to turn the picture into a chalk drawing."
-msgstr "Klik en beweeg de muis om de tekening te veranderen in een krijt-tekening!"
+msgstr "Klik en beweeg de muis om de tekening te veranderen in een krijt-tekening."
 
 #: magic.h:86
-#, fuzzy
 msgid "Click and move the mouse around to make the picture drip."
-msgstr "Klik en beweeg de muis om de tekening te laten druppen!"
+msgstr "Klik en beweeg de muis om de tekening te laten druppen."
 
 #: magic.h:88
-#, fuzzy
 msgid "Click and move the mouse to thicken the picture."
-msgstr "Klik en beweeg de muis om de tekening dikker te maken!"
+msgstr "Klik en beweeg de muis om de tekening dikker te maken."
 
 #: magic.h:89
-#, fuzzy
 msgid "Click and move the mouse to thin the picture."
-msgstr "Klik en beweeg de muis om de tekening dunner te maken!"
+msgstr "Klik en beweeg de muis om de tekening dunner te maken."
 
 #: magic.h:91
-#, fuzzy
 msgid "Click in the picture to fill that area with color."
-msgstr "Klik en beweeg de muis om de kleuren te vervagen!"
+msgstr "Klik en beweeg de muis om de kleuren te vervagen."
 
 #: shapes.h:141 shapes.h:142
 msgid "Square"
@@ -361,7 +346,6 @@ msgid "Brushes"
 msgstr "Kwasten"
 
 #: titles.h:40
-#, fuzzy
 msgid "Stamps"
 msgstr "Stempel"
 
@@ -430,7 +414,6 @@ msgid "Pick a picture to stamp around your drawing."
 msgstr "Kies een vorm om mee te stempelen."
 
 #: tools.h:64
-#, fuzzy
 msgid "Click to start drawing a line. Let go to complete it."
 msgstr "Klik om een lijn te beginnen.Laat pas los op het einde van de lijn."
 
@@ -443,7 +426,6 @@ msgstr ""
 "Beweeg om het te laten draaien en klik als je  klaar bent."
 
 #: tools.h:66
-#, fuzzy
 msgid "Choose a style of text. Click on your drawing and you can start typing."
 msgstr "Kies een stijl voor je letters. Klik op je tekening en begin te schrijven."
 
