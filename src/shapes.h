@@ -28,8 +28,8 @@ enum {
   SHAPE_TRIANGLE_FILL,
   SHAPE_PENTAGON,
   SHAPE_PENTAGON_FILL,
-  SHAPE_DIAMOND,
-  SHAPE_DIAMOND_FILL,
+  SHAPE_RHOMBUS,
+  SHAPE_RHOMBUS_FILL,
   NUM_SHAPES
 };
 
@@ -49,8 +49,8 @@ const int shape_sides[NUM_SHAPES] = {
   3,   /* Triangle */
   5,   /* Pentagon */
   5,   /* Pentagon */
-  4,   /* Diamond */
-  4    /* Diamond */
+  4,   /* Rhombus */
+  4    /* Rhombus */
 };
 
 
@@ -69,8 +69,8 @@ const int shape_locked[NUM_SHAPES] = {
   0,   /* Triangle */
   0,   /* Pentagon */
   0,   /* Pentagon */
-  0,   /* Diamond */
-  0    /* Diamond */
+  0,   /* Rhombus */
+  0    /* Rhombus */
 };
 
 
@@ -89,8 +89,8 @@ const int shape_filled[NUM_SHAPES] = {
   1,   /* Triangle */
   0,   /* Pentagon */
   1,   /* Pentagon */
-  0,   /* Diamond */
-  1    /* Diamond */
+  0,   /* Rhombus */
+  1    /* Rhombus */
 };
 
 
@@ -110,8 +110,8 @@ const int shape_init_ang[NUM_SHAPES] = {
   210, /* Triangle */
   162, /* Pentagon */
   162, /* Pentagon */
-  0,   /* Diamond */
-  0    /* Diamond */
+  0,   /* Rhombus */
+  0    /* Rhombus */
 };
 
 
@@ -130,8 +130,8 @@ const int shape_no_rotate[NUM_SHAPES] = {
   0,  /* Triangle */
   0,  /* Pentagon */
   0,  /* Pentagon */
-  0,  /* Diamond */
-  0   /* Diamond */
+  0,  /* Rhombus */
+  0   /* Rhombus */
 };
 
 
@@ -150,18 +150,18 @@ const char * const shape_names[NUM_SHAPES] = {
   gettext_noop("Triangle"),
   gettext_noop("Pentagon"),
   gettext_noop("Pentagon"),
-  gettext_noop("Diamond"),
-  gettext_noop("Diamond")
+  gettext_noop("Rhombus"),
+  gettext_noop("Rhombus")
 };
 
 
 /* Some text to write when each shape is selected: */
 
 const char * const shape_tips[NUM_SHAPES] = {
-  gettext_noop("A square has four sides, each the same length."),
-  gettext_noop("A square has four sides, each the same length."),
-  gettext_noop("A rectangle has four sides."),
-  gettext_noop("A rectangle has four sides."),
+  gettext_noop("A square has four equal sides and L-shaped corners."),
+  gettext_noop("A square has four equal sides and L-shaped corners."),
+  gettext_noop("A rectangle has four sides and L-shaped corners."),
+  gettext_noop("A rectangle has four sides and L-shaped corners."),
   gettext_noop("A circle is exactly round."),
   gettext_noop("A circle is exactly round."),
   gettext_noop("Oval"),
@@ -170,8 +170,8 @@ const char * const shape_tips[NUM_SHAPES] = {
   gettext_noop("A triangle has three sides."),
   gettext_noop("A pentagon has five sides."),
   gettext_noop("A pentagon has five sides."),
-  gettext_noop("A diamond is a square, turned around slightly."),
-  gettext_noop("A diamond is a square, turned around slightly.")
+  gettext_noop("A rhombus has four equal sides."),
+  gettext_noop("A rhombus has four equal sides.")
 };
 
 
