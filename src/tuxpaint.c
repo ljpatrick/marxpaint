@@ -6975,7 +6975,8 @@ static void setup(int argc, char * argv[])
 					       img_btn_off->format->Gmask,
 					       img_btn_off->format->Bmask,
 					       img_btn_off->format->Amask);
-  SDL_FillRect(img_grey, NULL, SDL_MapRGBA(screen->format, 0xe7, 0xe7, 0xe7, 255));
+  // SDL_FillRect(img_grey, NULL, SDL_MapRGBA(screen->format, 0xe7, 0xe7, 0xe7, 255)); // WAY too light!
+  SDL_FillRect(img_grey, NULL, SDL_MapRGBA(screen->format, 0x88, 0x88, 0x88, 255)); // Easier to see
 
   show_progress_bar();
 
