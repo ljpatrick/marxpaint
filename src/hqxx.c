@@ -28,7 +28,7 @@
 #include "hqxx.h"
 
 
-Uint16 hqxx_getpixel(SDL_Surface * surface, int x, int y)
+Uint16 hqxx_getpixel(SDL_Surface * surface, int x, int y, Uint8 * alpha)
 {
   int bpp;
   Uint8 * p;
@@ -83,20 +83,35 @@ Uint16 hqxx_getpixel(SDL_Surface * surface, int x, int y)
       /* SDL_UnlockSurface(surface); */
     }
   
-  SDL_GetRGB(pixel, surface->format, &r, &g, &b);
+  if (alpha == NULL)
+    SDL_GetRGB(pixel, surface->format, &r, &g, &b);
+  else
+    SDL_GetRGBA(pixel, surface->format, &r, &g, &b, alpha);
+
   
-  pixel16 = ((r & 0xF8) << 8) | ((g & 0xFC) << 3) | ((b & 0xF8) >> 3);
-  
+  pixel16 = ((r >> 3) << 11) | ((g >> 2) << 5) | (b >> 3);
+
   return pixel16;
 }
 
 
-void hqxx_putpixel(SDL_Surface * surface, int x, int y, Uint32 pixel)
+void hqxx_putpixel(SDL_Surface * surface, int x, int y, Uint16 pixel, Uint8 alpha)
 {
   int bpp;
   Uint8 * p;
+  Uint8 r, g, b;
+  Uint32 sdlpixel;
+  
+  
+  /* Convert the 16bpp RGB-565 to the current surface's format: */
+  
+  r = (pixel & 0xF800) >> 8;
+  g = ((pixel & 0x07E0) >> 5) << 2;
+  b = (pixel & 0x001F) << 3;
 
-
+  sdlpixel = SDL_MapRGBA(surface->format, r, g, b, alpha);
+  
+  
   /* Assuming the X/Y values are within the bounds of this surface... */
 
   if (x >= 0 && y >= 0 && x < surface->w && y < surface->h)
@@ -121,27 +136,27 @@ void hqxx_putpixel(SDL_Surface * surface, int x, int y, Uint32 pixel)
        *          to the pixel value sent in: */
 
       if (bpp == 1)
-        *p = pixel;
+        *p = sdlpixel;
       else if (bpp == 2)
-        *(Uint16 *)p = pixel;
+        *(Uint16 *)p = sdlpixel;
       else if (bpp == 3)
         {
           if (SDL_BYTEORDER == SDL_BIG_ENDIAN)
             {
-              p[0] = (pixel >> 16) & 0xff;
-              p[1] = (pixel >> 8) & 0xff;
-              p[2] = pixel & 0xff;
+              p[0] = (sdlpixel >> 16) & 0xff;
+              p[1] = (sdlpixel >> 8) & 0xff;
+              p[2] = sdlpixel & 0xff;
             }
           else
             {
-              p[0] = pixel & 0xff;
-              p[1] = (pixel >> 8) & 0xff;
-              p[2] = (pixel >> 16) & 0xff;
+              p[0] = sdlpixel & 0xff;
+              p[1] = (sdlpixel >> 8) & 0xff;
+              p[2] = (sdlpixel >> 16) & 0xff;
             }
         }
       else if (bpp == 4)
         {
-          *(Uint32 *)p = pixel;
+          *(Uint32 *)p = sdlpixel;
         }
 
       /* SDL_UnlockSurface(surface); */
@@ -150,18 +165,11 @@ void hqxx_putpixel(SDL_Surface * surface, int x, int y, Uint32 pixel)
 
 
 
-void InitLUTs(int * LUT16to32, int * RGBtoYUV)
+void InitLUTs(int * RGBtoYUV)
 {
   int i, j, k, r, g, b, Y, u, v;
 
-  for (i = 0; i < 65536; i++)
-    {
-      LUT16to32[i] = (((i & 0xF800) << 8) +
-		      ((i & 0x07E0) << 5) +
-		      ((i & 0x001F) << 3));
-    }
-
-  for (i=0; i<32; i++)
+  for (i = 0; i < 32; i++)
     {
       for (j = 0; j < 64; j++)
 	{
@@ -173,163 +181,152 @@ void InitLUTs(int * LUT16to32, int * RGBtoYUV)
 	      Y = (r + g + b) >> 2;
 	      u = 128 + ((r - b) >> 2);
 	      v = 128 + ((-r + 2 * g - b) >> 3);
-	      RGBtoYUV[(i << 11) + (j << 5) + k] = (Y<<16) + (u<<8) + v;
+	      RGBtoYUV[(i << 11) + (j << 5) + k] = (((Y & 0xF8) << 8) |
+						    ((u & 0xFE) << 3) |
+						    (v >> 3));
 	    }
 	}
     }
 }
 
-inline void Interp0(SDL_Surface * dest, int x, int y, int c)
+inline void Interp0(SDL_Surface * dest, int x, int y, Uint16 c, Uint8 alpha)
 {
-  Uint8 r, g, b;
-  
-  r = (c >> 11) & 0xFF;
-  g = (c >> 5) & 0xFF;
-  b = (c >> 0)  & 0xFF;
-  
-  hqxx_putpixel(dest, x, y, SDL_MapRGB(dest->format, r, g, b));
+  hqxx_putpixel(dest, x, y, c, alpha);
 }
 
-inline void Interp1(SDL_Surface * dest, int x, int y, int c1, int c2)
+inline void Interp1(SDL_Surface * dest, int x, int y, Uint16 c1, Uint16 c2, Uint8 alpha)
 {
-  Uint8 r, g, b;
-  Uint16 c;
+  Uint32 c;
   
-  c = (c1 * 3 + c2) >> 2;
+  // c = (c1 * 3 + c2) >> 2;
+
+  c = ((((c1 & 0x07E0) * 3 + (c2 & 0x07E0)) & (0x07E0 << 2)) +
+       (((c1 & 0xF81F) * 3 + (c2 & 0xF81F)) & (0xF81F << 2))) >> 2;
   
-  r = (c >> 11) & 0xFF;
-  g = (c >> 5) & 0xFF;
-  b = (c >> 0)  & 0xFF;
-  
-  hqxx_putpixel(dest, x, y, SDL_MapRGB(dest->format, r, g, b));
+  hqxx_putpixel(dest, x, y, c, alpha);
 }
 
-inline void Interp2(SDL_Surface * dest, int x, int y, int c1, int c2, int c3)
+inline void Interp2(SDL_Surface * dest, int x, int y, Uint16 c1, Uint16 c2, Uint16 c3, Uint8 alpha)
 {
-  Uint8 r, g, b;
-  Uint16 c;
+  Uint32 c;
 
-  c = (c1 * 2 + c2 + c3) >> 2;
-
-  r = (c >> 11) & 0xFF;
-  g = (c >> 5) & 0xFF;
-  b = (c >> 0)  & 0xFF;
+  /* FIXME? */
   
-  hqxx_putpixel(dest, x, y, SDL_MapRGB(dest->format, r, g, b));
+  // c = (c1 * 2 + c2 + c3) >> 2;
+
+  c = ((((c1 & 0x07E0) * 2 + (c2 & 0x07E0) + (c3 & 0x07E0)) & (0x07E0 << 2)) +
+       (((c1 & 0xF81F) * 2 + (c2 & 0xF81F) + (c3 & 0xF81F)) & (0xF81F << 2)))
+								      >> 2;
+
+
+  hqxx_putpixel(dest, x, y, c, alpha);
 }
 
-inline void Interp3(SDL_Surface * dest, int x, int y, int c1, int c2)
+inline void Interp3(SDL_Surface * dest, int x, int y, Uint16 c1, Uint16 c2, Uint8 alpha)
 {
-  Uint8 r, g, b;
-  Uint16 c;
+  Uint32 c;
 
-  //c = (c1*7+c2)/8;
+  //c = (c1 * 7 + c2) / 8;
 
-  c = ((((c1 & 0x00FF00) * 7 + (c2 & 0x00FF00)) & 0x0007F800) +
-       (((c1 & 0xFF00FF) * 7 + (c2 & 0xFF00FF)) & 0x07F807F8)) >> 3;
-
-  r = (c >> 11) & 0xFF;
-  g = (c >> 5) & 0xFF;
-  b = (c >> 0)  & 0xFF;
+  //c = ((((c1 & 0x00FF00) * 7 + (c2 & 0x00FF00)) & 0x0007F800) +
+  //     (((c1 & 0xFF00FF) * 7 + (c2 & 0xFF00FF)) & 0x07F807F8)) >> 3;
   
-  hqxx_putpixel(dest, x, y, SDL_MapRGB(dest->format, r, g, b));
+  c = ((((c1 & 0x07E0) * 7 + (c2 & 0x07E0)) & (0x07E0 << 3)) +
+       (((c1 & 0xF81F) * 7 + (c2 & 0xF81F)) & (0xF81F << 3))) >> 3;
+
+  hqxx_putpixel(dest, x, y, c, alpha);
 }
 
-inline void Interp4(SDL_Surface * dest, int x, int y, int c1, int c2, int c3)
+inline void Interp4(SDL_Surface * dest, int x, int y, Uint16 c1, Uint16 c2, Uint16 c3, Uint8 alpha)
 {
-  Uint8 r, g, b;
-  Uint16 c;
+  Uint32 c;
 
-  //c = (c1*2+(c2+c3)*7)/16;
+  //c = (c1 * 2 + (c2 + c3) * 7) / 16;
 
-  c = ((((c1 & 0x00FF00) * 2 +
-	 ((c2 & 0x00FF00) +
-	  (c3 & 0x00FF00)) * 7) & 0x000FF000) +
-       (((c1 & 0xFF00FF) * 2 +
-	 ((c2 & 0xFF00FF) +
-	  (c3 & 0xFF00FF)) * 7) & 0x0FF00FF0)) >> 4;
-
-  r = (c >> 11) & 0xFF;
-  g = (c >> 5) & 0xFF;
-  b = (c >> 0)  & 0xFF;
+  //c = ((((c1 & 0x00FF00) * 2 +
+  // ((c2 & 0x00FF00) +
+  //  (c3 & 0x00FF00)) * 7) & 0x000FF000) +
+  //   (((c1 & 0xFF00FF) * 2 +
+  // ((c2 & 0xFF00FF) +
+  //  (c3 & 0xFF00FF)) * 7) & 0x0FF00FF0)) >> 4;
   
-  hqxx_putpixel(dest, x, y, SDL_MapRGB(dest->format, r, g, b));
+  c = ((((c1 & 0x07E0) * 2 +
+	 ((c2 & 0x07E0) +
+	  (c3 & 0x07E0)) * 7) & 0x7E00) +
+       (((c1 & 0xF81F) * 2 +
+	 ((c2 & 0xF81F) +
+	  (c3 & 0xF81F)) * 7) & 0xF81F0)) >> 4;
+
+  hqxx_putpixel(dest, x, y, c, alpha);
 }
 
-inline void Interp5(SDL_Surface * dest, int x, int y, int c1, int c2)
+inline void Interp5(SDL_Surface * dest, int x, int y, Uint16 c1, Uint16 c2, Uint8 alpha)
 {
-  Uint8 r, g, b;
-  Uint16 c;
+  Uint32 c;
 
-  c = (c1+c2) >> 1;
+  // c = (c1 + c2) >> 1;
 
-  r = (c >> 11) & 0xFF;
-  g = (c >> 5) & 0xFF;
-  b = (c >> 0)  & 0xFF;
-  
-  hqxx_putpixel(dest, x, y, SDL_MapRGB(dest->format, r, g, b));
+  c = ((((c1 & 0x07E0) + (c2 & 0x07E0)) & (0x07E0 << 1)) +
+       (((c1 & 0xF81F) + (c2 & 0xF81F)) & (0xF81F << 1))) >> 1;
+
+  hqxx_putpixel(dest, x, y, c, alpha);
 }
 
-inline void Interp6(SDL_Surface * dest, int x, int y, int c1, int c2, int c3)
+inline void Interp6(SDL_Surface * dest, int x, int y, Uint16 c1, Uint16 c2, Uint16 c3, Uint8 alpha)
 {
-  Uint8 r, g, b;
-  Uint16 c;
+  Uint32 c;
 
-  //c = (c1*5+c2*2+c3)/8;
+  // c = (c1 * 5 + c2 * 2 + c3) / 8;
 
-  c = ((((c1 & 0x00FF00) * 5 +
-	 (c2 & 0x00FF00) * 2 + (c3 & 0x00FF00)) & 0x0007F800) +
-       (((c1 & 0xFF00FF) * 5 +
-	 (c2 & 0xFF00FF) * 2 + (c3 & 0xFF00FF)) & 0x07F807F8)) >> 3;
+  //  c = ((((c1 & 0x00FF00) * 5 +
+  // (c2 & 0x00FF00) * 2 + (c3 & 0x00FF00)) & 0x0007F800) +
+  //   (((c1 & 0xFF00FF) * 5 +
+  // (c2 & 0xFF00FF) * 2 + (c3 & 0xFF00FF)) & 0x07F807F8)) >> 3;
 
-  r = (c >> 11) & 0xFF;
-  g = (c >> 5) & 0xFF;
-  b = (c >> 0)  & 0xFF;
-  
-  hqxx_putpixel(dest, x, y, SDL_MapRGB(dest->format, r, g, b));
+  c = ((((c1 & 0x07E0) * 5 +
+	 (c2 & 0x07E0) * 2 + (c3 & 0x07E0)) & (0x07E0 << 3)) +
+       (((c1 & 0xF81F) * 5 +
+	 (c2 & 0xF81F) * 2 + (c3 & 0xF81F)) & (0xF81F << 3))) >> 3;
+
+  hqxx_putpixel(dest, x, y, c, alpha);
 }
 
-inline void Interp7(SDL_Surface * dest, int x, int y, int c1, int c2, int c3)
+inline void Interp7(SDL_Surface * dest, int x, int y, Uint16 c1, Uint16 c2, Uint16 c3, Uint8 alpha)
 {
-  Uint8 r, g, b;
-  Uint16 c;
+  Uint32 c;
+  
+  //c = (c1 * 6 + c2 + c3) / 8;
 
-  //c = (c1*6+c2+c3)/8;
-
-  c = ((((c1 & 0x00FF00)*6 + (c2 & 0x00FF00) + (c3 & 0x00FF00)) & 0x0007F800) +
-       (((c1 & 0xFF00FF)*6 + (c2 & 0xFF00FF) + (c3 & 0xFF00FF)) & 0x07F807F8))
+  //c = ((((c1 & 0x00FF00)*6 + (c2 & 0x00FF00) + (c3 & 0x00FF00)) & 0x0007F800) +
+  //     (((c1 & 0xFF00FF)*6 + (c2 & 0xFF00FF) + (c3 & 0xFF00FF)) & 0x07F807F8))
+  // >> 3;
+  
+  c = ((((c1 & 0x07E0)*6 + (c2 & 0x07E0) + (c3 & 0x07E0)) & (0x07E0 << 3)) +
+       (((c1 & 0xF81F)*6 + (c2 & 0xF81F) + (c3 & 0xF81F)) & (0xF81F << 3)))
 	 >> 3;
 
-  r = (c >> 11) & 0xFF;
-  g = (c >> 5) & 0xFF;
-  b = (c >> 0)  & 0xFF;
-  
-  hqxx_putpixel(dest, x, y, SDL_MapRGB(dest->format, r, g, b));
+  hqxx_putpixel(dest, x, y, c, alpha);
 }
 
-inline void Interp8(SDL_Surface * dest, int x, int y, int c1, int c2)
+inline void Interp8(SDL_Surface * dest, int x, int y, Uint16 c1, Uint16 c2, Uint8 alpha)
 {
-  Uint8 r, g, b;
-  Uint16 c;
+  Uint32 c;
 
-  //c = (c1*5+c2*3)/8;
-
-  c = ((((c1 & 0x00FF00) * 5 + (c2 & 0x00FF00) * 3) & 0x0007F800) +
-       (((c1 & 0xFF00FF) * 5 + (c2 & 0xFF00FF) * 3) & 0x07F807F8)) >> 3;
-
-  r = (c >> 11) & 0xFF;
-  g = (c >> 5) & 0xFF;
-  b = (c >> 0)  & 0xFF;
+  //c = (c1 * 5 + c2 * 3) / 8;
   
-  hqxx_putpixel(dest, x, y, SDL_MapRGB(dest->format, r, g, b));
+  //c = ((((c1 & 0x00FF00) * 5 + (c2 & 0x00FF00) * 3) & 0x0007F800) +
+  //   (((c1 & 0xFF00FF) * 5 + (c2 & 0xFF00FF) * 3) & 0x07F807F8)) >> 3;
+
+  c = ((((c1 & 0x07E0) * 5 + (c2 & 0x07E0) * 3) & (0x07E0 << 3)) +
+       (((c1 & 0xF81F) * 5 + (c2 & 0xF81F) * 3) & (0xF81F << 3))) >> 3;
+
+  hqxx_putpixel(dest, x, y, c, alpha);
 }
 
 
 inline int Diff(unsigned int w1, unsigned int w2)
 {
-  YUV1 = w1; /* RGBtoYUV[w1]; */
-  YUV2 = w2; /* RGBtoYUV[w2]; */
-  return ((abs((YUV1 & Ymask) - (YUV2 & Ymask)) > trY) ||
-          (abs((YUV1 & Umask) - (YUV2 & Umask)) > trU) ||
-          (abs((YUV1 & Vmask) - (YUV2 & Vmask)) > trV));
+  return ((abs((w1 & Ymask) - (w2 & Ymask)) > trY) ||
+          (abs((w1 & Umask) - (w2 & Umask)) > trU) ||
+          (abs((w1 & Vmask) - (w2 & Vmask)) > trV));
 }

@@ -510,7 +510,7 @@ SDL_Event scrolltimer_event;
 char * langstr;
 char * savedir;
 
-int LUT16to32[65536], RGBtoYUV[65536];
+int RGBtoYUV[65536];
 
 
 /* Local function prototypes: */
@@ -3021,8 +3021,7 @@ void stamp_draw(int x, int y)
 	}
       
       
-      hq4x_32(img_stamps[cur_stamp], final_surf,
-	      LUT16to32, RGBtoYUV);
+      hq4x_32(tmp_surf, final_surf, RGBtoYUV);
     }
   else
     {
@@ -4859,7 +4858,7 @@ void setup(int argc, char * argv[])
   
   /* Init high quality scaling stuff: */
   
-  InitLUTs(LUT16to32, RGBtoYUV);
+  InitLUTs(RGBtoYUV);
 
 
   /* Load other images: */

@@ -28,168 +28,166 @@
 #include "hqxx.h"
 
 
-#define PIXEL00_0     Interp0(dest, x * 4 + 0, y * 4 + 0, c[5])
-#define PIXEL00_11    Interp1(dest, x * 4 + 0, y * 4 + 0, c[5], c[4])
-#define PIXEL00_12    Interp1(dest, x * 4 + 0, y * 4 + 0, c[5], c[2])
-#define PIXEL00_20    Interp2(dest, x * 4 + 0, y * 4 + 0, c[5], c[2], c[4])
-#define PIXEL00_50    Interp5(dest, x * 4 + 0, y * 4 + 0, c[2], c[4])
-#define PIXEL00_80    Interp8(dest, x * 4 + 0, y * 4 + 0, c[5], c[1])
-#define PIXEL00_81    Interp8(dest, x * 4 + 0, y * 4 + 0, c[5], c[4])
-#define PIXEL00_82    Interp8(dest, x * 4 + 0, y * 4 + 0, c[5], c[2])
-#define PIXEL01_0     Interp0(dest, x * 4 + 0, y * 4 + 0, c[5])
-#define PIXEL01_10    Interp1(dest, x * 4 + 1, y * 4 + 0, c[5], c[1])
-#define PIXEL01_12    Interp1(dest, x * 4 + 1, y * 4 + 0, c[5], c[2])
-#define PIXEL01_14    Interp1(dest, x * 4 + 1, y * 4 + 0, c[2], c[5])
-#define PIXEL01_21    Interp2(dest, x * 4 + 1, y * 4 + 0, c[2], c[5], c[4])
-#define PIXEL01_31    Interp3(dest, x * 4 + 1, y * 4 + 0, c[5], c[4])
-#define PIXEL01_50    Interp5(dest, x * 4 + 1, y * 4 + 0, c[2], c[5])
-#define PIXEL01_60    Interp6(dest, x * 4 + 1, y * 4 + 0, c[5], c[2], c[4])
-#define PIXEL01_61    Interp6(dest, x * 4 + 1, y * 4 + 0, c[5], c[2], c[1])
-#define PIXEL01_82    Interp8(dest, x * 4 + 1, y * 4 + 0, c[5], c[2])
-#define PIXEL01_83    Interp8(dest, x * 4 + 1, y * 4 + 0, c[2], c[4])
-#define PIXEL02_0     Interp0(dest, x * 4 + 2, y * 4 + 0, c[5])
-#define PIXEL02_10    Interp1(dest, x * 4 + 2, y * 4 + 0, c[5], c[3])
-#define PIXEL02_11    Interp1(dest, x * 4 + 2, y * 4 + 0, c[5], c[2])
-#define PIXEL02_13    Interp1(dest, x * 4 + 2, y * 4 + 0, c[2], c[5])
-#define PIXEL02_21    Interp2(dest, x * 4 + 2, y * 4 + 0, c[2], c[5], c[6])
-#define PIXEL02_32    Interp3(dest, x * 4 + 2, y * 4 + 0, c[5], c[6])
-#define PIXEL02_50    Interp5(dest, x * 4 + 2, y * 4 + 0, c[2], c[5])
-#define PIXEL02_60    Interp6(dest, x * 4 + 2, y * 4 + 0, c[5], c[2], c[6])
-#define PIXEL02_61    Interp6(dest, x * 4 + 2, y * 4 + 0, c[5], c[2], c[3])
-#define PIXEL02_81    Interp8(dest, x * 4 + 2, y * 4 + 0, c[5], c[2])
-#define PIXEL02_83    Interp8(dest, x * 4 + 2, y * 4 + 0, c[2], c[6])
-#define PIXEL03_0     Interp0(dest, x * 4 + 3, y * 4 + 0, c[5])
-#define PIXEL03_11    Interp1(dest, x * 4 + 3, y * 4 + 0, c[5], c[2])
-#define PIXEL03_12    Interp1(dest, x * 4 + 3, y * 4 + 0, c[5], c[6])
-#define PIXEL03_20    Interp2(dest, x * 4 + 3, y * 4 + 0, c[5], c[2], c[6])
-#define PIXEL03_50    Interp5(dest, x * 4 + 3, y * 4 + 0, c[2], c[6])
-#define PIXEL03_80    Interp8(dest, x * 4 + 3, y * 4 + 0, c[5], c[3])
-#define PIXEL03_81    Interp8(dest, x * 4 + 3, y * 4 + 0, c[5], c[2])
-#define PIXEL03_82    Interp8(dest, x * 4 + 3, y * 4 + 0, c[5], c[6])
-#define PIXEL10_0     Interp0(dest, x * 4 + 0, y * 4 + 1, c[5])
-#define PIXEL10_10    Interp1(dest, x * 4 + 0, y * 4 + 1, c[5], c[1])
-#define PIXEL10_11    Interp1(dest, x * 4 + 0, y * 4 + 1, c[5], c[4])
-#define PIXEL10_13    Interp1(dest, x * 4 + 0, y * 4 + 1, c[4], c[5])
-#define PIXEL10_21    Interp2(dest, x * 4 + 0, y * 4 + 1, c[4], c[5], c[2])
-#define PIXEL10_32    Interp3(dest, x * 4 + 0, y * 4 + 1, c[5], c[2])
-#define PIXEL10_50    Interp5(dest, x * 4 + 0, y * 4 + 1, c[4], c[5])
-#define PIXEL10_60    Interp6(dest, x * 4 + 0, y * 4 + 1, c[5], c[4], c[2])
-#define PIXEL10_61    Interp6(dest, x * 4 + 0, y * 4 + 1, c[5], c[4], c[1])
-#define PIXEL10_81    Interp8(dest, x * 4 + 0, y * 4 + 1, c[5], c[4])
-#define PIXEL10_83    Interp8(dest, x * 4 + 0, y * 4 + 1, c[4], c[2])
-#define PIXEL11_0     Interp0(dest, x * 4 + 1, y * 4 + 1, c[5])
-#define PIXEL11_30    Interp3(dest, x * 4 + 1, y * 4 + 1, c[5], c[1])
-#define PIXEL11_31    Interp3(dest, x * 4 + 1, y * 4 + 1, c[5], c[4])
-#define PIXEL11_32    Interp3(dest, x * 4 + 1, y * 4 + 1, c[5], c[2])
-#define PIXEL11_70    Interp7(dest, x * 4 + 1, y * 4 + 1, c[5], c[4], c[2])
-#define PIXEL12_0     Interp0(dest, x * 4 + 2, y * 4 + 1, c[5])
-#define PIXEL12_30    Interp3(dest, x * 4 + 2, y * 4 + 1, c[5], c[3])
-#define PIXEL12_31    Interp3(dest, x * 4 + 2, y * 4 + 1, c[5], c[2])
-#define PIXEL12_32    Interp3(dest, x * 4 + 2, y * 4 + 1, c[5], c[6])
-#define PIXEL12_70    Interp7(dest, x * 4 + 2, y * 4 + 1, c[5], c[6], c[2])
-#define PIXEL13_0     Interp0(dest, x * 4 + 3, y * 4 + 1, c[5])
-#define PIXEL13_10    Interp1(dest, x * 4 + 3, y * 4 + 1, c[5], c[3])
-#define PIXEL13_12    Interp1(dest, x * 4 + 3, y * 4 + 1, c[5], c[6])
-#define PIXEL13_14    Interp1(dest, x * 4 + 3, y * 4 + 1, c[6], c[5])
-#define PIXEL13_21    Interp2(dest, x * 4 + 3, y * 4 + 1, c[6], c[5], c[2])
-#define PIXEL13_31    Interp3(dest, x * 4 + 3, y * 4 + 1, c[5], c[2])
-#define PIXEL13_50    Interp5(dest, x * 4 + 3, y * 4 + 1, c[6], c[5])
-#define PIXEL13_60    Interp6(dest, x * 4 + 3, y * 4 + 1, c[5], c[6], c[2])
-#define PIXEL13_61    Interp6(dest, x * 4 + 3, y * 4 + 1, c[5], c[6], c[3])
-#define PIXEL13_82    Interp8(dest, x * 4 + 3, y * 4 + 1, c[5], c[6])
-#define PIXEL13_83    Interp8(dest, x * 4 + 3, y * 4 + 1, c[6], c[2])
-#define PIXEL20_0     Interp0(dest, x * 4 + 0, y * 4 + 2, c[5])
-#define PIXEL20_10    Interp1(dest, x * 4 + 0, y * 4 + 2, c[5], c[7])
-#define PIXEL20_12    Interp1(dest, x * 4 + 0, y * 4 + 2, c[5], c[4])
-#define PIXEL20_14    Interp1(dest, x * 4 + 0, y * 4 + 2, c[4], c[5])
-#define PIXEL20_21    Interp2(dest, x * 4 + 0, y * 4 + 2, c[4], c[5], c[8])
-#define PIXEL20_31    Interp3(dest, x * 4 + 0, y * 4 + 2, c[5], c[8])
-#define PIXEL20_50    Interp5(dest, x * 4 + 0, y * 4 + 2, c[4], c[5])
-#define PIXEL20_60    Interp6(dest, x * 4 + 0, y * 4 + 2, c[5], c[4], c[8])
-#define PIXEL20_61    Interp6(dest, x * 4 + 0, y * 4 + 2, c[5], c[4], c[7])
-#define PIXEL20_82    Interp8(dest, x * 4 + 0, y * 4 + 2, c[5], c[4])
-#define PIXEL20_83    Interp8(dest, x * 4 + 0, y * 4 + 2, c[4], c[8])
-#define PIXEL21_0     Interp0(dest, x * 4 + 1, y * 4 + 2, c[5])
-#define PIXEL21_30    Interp3(dest, x * 4 + 1, y * 4 + 2, c[5], c[7])
-#define PIXEL21_31    Interp3(dest, x * 4 + 1, y * 4 + 2, c[5], c[8])
-#define PIXEL21_32    Interp3(dest, x * 4 + 1, y * 4 + 2, c[5], c[4])
-#define PIXEL21_70    Interp7(dest, x * 4 + 1, y * 4 + 2, c[5], c[4], c[8])
-#define PIXEL22_0     Interp0(dest, x * 4 + 2, y * 4 + 2, c[5])
-#define PIXEL22_30    Interp3(dest, x * 4 + 2, y * 4 + 2, c[5], c[9])
-#define PIXEL22_31    Interp3(dest, x * 4 + 2, y * 4 + 2, c[5], c[6])
-#define PIXEL22_32    Interp3(dest, x * 4 + 2, y * 4 + 2, c[5], c[8])
-#define PIXEL22_70    Interp7(dest, x * 4 + 2, y * 4 + 2, c[5], c[6], c[8])
-#define PIXEL23_0     Interp0(dest, x * 4 + 3, y * 4 + 2, c[5])
-#define PIXEL23_10    Interp1(dest, x * 4 + 3, y * 4 + 2, c[5], c[9])
-#define PIXEL23_11    Interp1(dest, x * 4 + 3, y * 4 + 2, c[5], c[6])
-#define PIXEL23_13    Interp1(dest, x * 4 + 3, y * 4 + 2, c[6], c[5])
-#define PIXEL23_21    Interp2(dest, x * 4 + 3, y * 4 + 2, c[6], c[5], c[8])
-#define PIXEL23_32    Interp3(dest, x * 4 + 3, y * 4 + 2, c[5], c[8])
-#define PIXEL23_50    Interp5(dest, x * 4 + 3, y * 4 + 2, c[6], c[5])
-#define PIXEL23_60    Interp6(dest, x * 4 + 3, y * 4 + 2, c[5], c[6], c[8])
-#define PIXEL23_61    Interp6(dest, x * 4 + 3, y * 4 + 2, c[5], c[6], c[9])
-#define PIXEL23_81    Interp8(dest, x * 4 + 3, y * 4 + 2, c[5], c[6])
-#define PIXEL23_83    Interp8(dest, x * 4 + 3, y * 4 + 2, c[6], c[8])
-#define PIXEL30_0     Interp0(dest, x * 4 + 0, y * 4 + 3, c[5])
-#define PIXEL30_11    Interp1(dest, x * 4 + 0, y * 4 + 3, c[5], c[8])
-#define PIXEL30_12    Interp1(dest, x * 4 + 0, y * 4 + 3, c[5], c[4])
-#define PIXEL30_20    Interp2(dest, x * 4 + 0, y * 4 + 3, c[5], c[8], c[4])
-#define PIXEL30_50    Interp5(dest, x * 4 + 0, y * 4 + 3, c[8], c[4])
-#define PIXEL30_80    Interp8(dest, x * 4 + 0, y * 4 + 3, c[5], c[7])
-#define PIXEL30_81    Interp8(dest, x * 4 + 0, y * 4 + 3, c[5], c[8])
-#define PIXEL30_82    Interp8(dest, x * 4 + 0, y * 4 + 3, c[5], c[4])
-#define PIXEL31_0     Interp0(dest, x * 4 + 1, y * 4 + 3, c[5])
-#define PIXEL31_10    Interp1(dest, x * 4 + 1, y * 4 + 3, c[5], c[7])
-#define PIXEL31_11    Interp1(dest, x * 4 + 1, y * 4 + 3, c[5], c[8])
-#define PIXEL31_13    Interp1(dest, x * 4 + 1, y * 4 + 3, c[8], c[5])
-#define PIXEL31_21    Interp2(dest, x * 4 + 1, y * 4 + 3, c[8], c[5], c[4])
-#define PIXEL31_32    Interp3(dest, x * 4 + 1, y * 4 + 3, c[5], c[4])
-#define PIXEL31_50    Interp5(dest, x * 4 + 1, y * 4 + 3, c[8], c[5])
-#define PIXEL31_60    Interp6(dest, x * 4 + 1, y * 4 + 3, c[5], c[8], c[4])
-#define PIXEL31_61    Interp6(dest, x * 4 + 1, y * 4 + 3, c[5], c[8], c[7])
-#define PIXEL31_81    Interp8(dest, x * 4 + 1, y * 4 + 3, c[5], c[8])
-#define PIXEL31_83    Interp8(dest, x * 4 + 1, y * 4 + 3, c[8], c[4])
-#define PIXEL32_0     Interp0(dest, x * 4 + 2, y * 4 + 3, c[5])
-#define PIXEL32_10    Interp1(dest, x * 4 + 2, y * 4 + 3, c[5], c[9])
-#define PIXEL32_12    Interp1(dest, x * 4 + 2, y * 4 + 3, c[5], c[8])
-#define PIXEL32_14    Interp1(dest, x * 4 + 2, y * 4 + 3, c[8], c[5])
-#define PIXEL32_21    Interp2(dest, x * 4 + 2, y * 4 + 3, c[8], c[5], c[6])
-#define PIXEL32_31    Interp3(dest, x * 4 + 2, y * 4 + 3, c[5], c[6])
-#define PIXEL32_50    Interp5(dest, x * 4 + 2, y * 4 + 3, c[8], c[5])
-#define PIXEL32_60    Interp6(dest, x * 4 + 2, y * 4 + 3, c[5], c[8], c[6])
-#define PIXEL32_61    Interp6(dest, x * 4 + 2, y * 4 + 3, c[5], c[8], c[9])
-#define PIXEL32_82    Interp8(dest, x * 4 + 2, y * 4 + 3, c[5], c[8])
-#define PIXEL32_83    Interp8(dest, x * 4 + 2, y * 4 + 3, c[8], c[6])
-#define PIXEL33_0     Interp0(dest, x * 4 + 3, y * 4 + 3, c[5])
-#define PIXEL33_11    Interp1(dest, x * 4 + 3, y * 4 + 3, c[5], c[6])
-#define PIXEL33_12    Interp1(dest, x * 4 + 3, y * 4 + 3, c[5], c[8])
-#define PIXEL33_20    Interp2(dest, x * 4 + 3, y * 4 + 3, c[5], c[8], c[6])
-#define PIXEL33_50    Interp5(dest, x * 4 + 3, y * 4 + 3, c[8], c[6])
-#define PIXEL33_80    Interp8(dest, x * 4 + 3, y * 4 + 3, c[5], c[9])
-#define PIXEL33_81    Interp8(dest, x * 4 + 3, y * 4 + 3, c[5], c[6])
-#define PIXEL33_82    Interp8(dest, x * 4 + 3, y * 4 + 3, c[5], c[8])
+#define PIXEL00_0     Interp0(dest, x * 4 + 0, y * 4 + 0, w[5], a)
+#define PIXEL00_11    Interp1(dest, x * 4 + 0, y * 4 + 0, w[5], w[4], a)
+#define PIXEL00_12    Interp1(dest, x * 4 + 0, y * 4 + 0, w[5], w[2], a)
+#define PIXEL00_20    Interp2(dest, x * 4 + 0, y * 4 + 0, w[5], w[2], w[4], a)
+#define PIXEL00_50    Interp5(dest, x * 4 + 0, y * 4 + 0, w[2], w[4], a)
+#define PIXEL00_80    Interp8(dest, x * 4 + 0, y * 4 + 0, w[5], w[1], a)
+#define PIXEL00_81    Interp8(dest, x * 4 + 0, y * 4 + 0, w[5], w[4], a)
+#define PIXEL00_82    Interp8(dest, x * 4 + 0, y * 4 + 0, w[5], w[2], a)
+#define PIXEL01_0     Interp0(dest, x * 4 + 0, y * 4 + 0, w[5], a)
+#define PIXEL01_10    Interp1(dest, x * 4 + 1, y * 4 + 0, w[5], w[1], a)
+#define PIXEL01_12    Interp1(dest, x * 4 + 1, y * 4 + 0, w[5], w[2], a)
+#define PIXEL01_14    Interp1(dest, x * 4 + 1, y * 4 + 0, w[2], w[5], a)
+#define PIXEL01_21    Interp2(dest, x * 4 + 1, y * 4 + 0, w[2], w[5], w[4], a)
+#define PIXEL01_31    Interp3(dest, x * 4 + 1, y * 4 + 0, w[5], w[4], a)
+#define PIXEL01_50    Interp5(dest, x * 4 + 1, y * 4 + 0, w[2], w[5], a)
+#define PIXEL01_60    Interp6(dest, x * 4 + 1, y * 4 + 0, w[5], w[2], w[4], a)
+#define PIXEL01_61    Interp6(dest, x * 4 + 1, y * 4 + 0, w[5], w[2], w[1], a)
+#define PIXEL01_82    Interp8(dest, x * 4 + 1, y * 4 + 0, w[5], w[2], a)
+#define PIXEL01_83    Interp8(dest, x * 4 + 1, y * 4 + 0, w[2], w[4], a)
+#define PIXEL02_0     Interp0(dest, x * 4 + 2, y * 4 + 0, w[5], a)
+#define PIXEL02_10    Interp1(dest, x * 4 + 2, y * 4 + 0, w[5], w[3], a)
+#define PIXEL02_11    Interp1(dest, x * 4 + 2, y * 4 + 0, w[5], w[2], a)
+#define PIXEL02_13    Interp1(dest, x * 4 + 2, y * 4 + 0, w[2], w[5], a)
+#define PIXEL02_21    Interp2(dest, x * 4 + 2, y * 4 + 0, w[2], w[5], w[6], a)
+#define PIXEL02_32    Interp3(dest, x * 4 + 2, y * 4 + 0, w[5], w[6], a)
+#define PIXEL02_50    Interp5(dest, x * 4 + 2, y * 4 + 0, w[2], w[5], a)
+#define PIXEL02_60    Interp6(dest, x * 4 + 2, y * 4 + 0, w[5], w[2], w[6], a)
+#define PIXEL02_61    Interp6(dest, x * 4 + 2, y * 4 + 0, w[5], w[2], w[3], a)
+#define PIXEL02_81    Interp8(dest, x * 4 + 2, y * 4 + 0, w[5], w[2], a)
+#define PIXEL02_83    Interp8(dest, x * 4 + 2, y * 4 + 0, w[2], w[6], a)
+#define PIXEL03_0     Interp0(dest, x * 4 + 3, y * 4 + 0, w[5], a)
+#define PIXEL03_11    Interp1(dest, x * 4 + 3, y * 4 + 0, w[5], w[2], a)
+#define PIXEL03_12    Interp1(dest, x * 4 + 3, y * 4 + 0, w[5], w[6], a)
+#define PIXEL03_20    Interp2(dest, x * 4 + 3, y * 4 + 0, w[5], w[2], w[6], a)
+#define PIXEL03_50    Interp5(dest, x * 4 + 3, y * 4 + 0, w[2], w[6], a)
+#define PIXEL03_80    Interp8(dest, x * 4 + 3, y * 4 + 0, w[5], w[3], a)
+#define PIXEL03_81    Interp8(dest, x * 4 + 3, y * 4 + 0, w[5], w[2], a)
+#define PIXEL03_82    Interp8(dest, x * 4 + 3, y * 4 + 0, w[5], w[6], a)
+#define PIXEL10_0     Interp0(dest, x * 4 + 0, y * 4 + 1, w[5], a)
+#define PIXEL10_10    Interp1(dest, x * 4 + 0, y * 4 + 1, w[5], w[1], a)
+#define PIXEL10_11    Interp1(dest, x * 4 + 0, y * 4 + 1, w[5], w[4], a)
+#define PIXEL10_13    Interp1(dest, x * 4 + 0, y * 4 + 1, w[4], w[5], a)
+#define PIXEL10_21    Interp2(dest, x * 4 + 0, y * 4 + 1, w[4], w[5], w[2], a)
+#define PIXEL10_32    Interp3(dest, x * 4 + 0, y * 4 + 1, w[5], w[2], a)
+#define PIXEL10_50    Interp5(dest, x * 4 + 0, y * 4 + 1, w[4], w[5], a)
+#define PIXEL10_60    Interp6(dest, x * 4 + 0, y * 4 + 1, w[5], w[4], w[2], a)
+#define PIXEL10_61    Interp6(dest, x * 4 + 0, y * 4 + 1, w[5], w[4], w[1], a)
+#define PIXEL10_81    Interp8(dest, x * 4 + 0, y * 4 + 1, w[5], w[4], a)
+#define PIXEL10_83    Interp8(dest, x * 4 + 0, y * 4 + 1, w[4], w[2], a)
+#define PIXEL11_0     Interp0(dest, x * 4 + 1, y * 4 + 1, w[5], a)
+#define PIXEL11_30    Interp3(dest, x * 4 + 1, y * 4 + 1, w[5], w[1], a)
+#define PIXEL11_31    Interp3(dest, x * 4 + 1, y * 4 + 1, w[5], w[4], a)
+#define PIXEL11_32    Interp3(dest, x * 4 + 1, y * 4 + 1, w[5], w[2], a)
+#define PIXEL11_70    Interp7(dest, x * 4 + 1, y * 4 + 1, w[5], w[4], w[2], a)
+#define PIXEL12_0     Interp0(dest, x * 4 + 2, y * 4 + 1, w[5], a)
+#define PIXEL12_30    Interp3(dest, x * 4 + 2, y * 4 + 1, w[5], w[3], a)
+#define PIXEL12_31    Interp3(dest, x * 4 + 2, y * 4 + 1, w[5], w[2], a)
+#define PIXEL12_32    Interp3(dest, x * 4 + 2, y * 4 + 1, w[5], w[6], a)
+#define PIXEL12_70    Interp7(dest, x * 4 + 2, y * 4 + 1, w[5], w[6], w[2], a)
+#define PIXEL13_0     Interp0(dest, x * 4 + 3, y * 4 + 1, w[5], a)
+#define PIXEL13_10    Interp1(dest, x * 4 + 3, y * 4 + 1, w[5], w[3], a)
+#define PIXEL13_12    Interp1(dest, x * 4 + 3, y * 4 + 1, w[5], w[6], a)
+#define PIXEL13_14    Interp1(dest, x * 4 + 3, y * 4 + 1, w[6], w[5], a)
+#define PIXEL13_21    Interp2(dest, x * 4 + 3, y * 4 + 1, w[6], w[5], w[2], a)
+#define PIXEL13_31    Interp3(dest, x * 4 + 3, y * 4 + 1, w[5], w[2], a)
+#define PIXEL13_50    Interp5(dest, x * 4 + 3, y * 4 + 1, w[6], w[5], a)
+#define PIXEL13_60    Interp6(dest, x * 4 + 3, y * 4 + 1, w[5], w[6], w[2], a)
+#define PIXEL13_61    Interp6(dest, x * 4 + 3, y * 4 + 1, w[5], w[6], w[3], a)
+#define PIXEL13_82    Interp8(dest, x * 4 + 3, y * 4 + 1, w[5], w[6], a)
+#define PIXEL13_83    Interp8(dest, x * 4 + 3, y * 4 + 1, w[6], w[2], a)
+#define PIXEL20_0     Interp0(dest, x * 4 + 0, y * 4 + 2, w[5], a)
+#define PIXEL20_10    Interp1(dest, x * 4 + 0, y * 4 + 2, w[5], w[7], a)
+#define PIXEL20_12    Interp1(dest, x * 4 + 0, y * 4 + 2, w[5], w[4], a)
+#define PIXEL20_14    Interp1(dest, x * 4 + 0, y * 4 + 2, w[4], w[5], a)
+#define PIXEL20_21    Interp2(dest, x * 4 + 0, y * 4 + 2, w[4], w[5], w[8], a)
+#define PIXEL20_31    Interp3(dest, x * 4 + 0, y * 4 + 2, w[5], w[8], a)
+#define PIXEL20_50    Interp5(dest, x * 4 + 0, y * 4 + 2, w[4], w[5], a)
+#define PIXEL20_60    Interp6(dest, x * 4 + 0, y * 4 + 2, w[5], w[4], w[8], a)
+#define PIXEL20_61    Interp6(dest, x * 4 + 0, y * 4 + 2, w[5], w[4], w[7], a)
+#define PIXEL20_82    Interp8(dest, x * 4 + 0, y * 4 + 2, w[5], w[4], a)
+#define PIXEL20_83    Interp8(dest, x * 4 + 0, y * 4 + 2, w[4], w[8], a)
+#define PIXEL21_0     Interp0(dest, x * 4 + 1, y * 4 + 2, w[5], a)
+#define PIXEL21_30    Interp3(dest, x * 4 + 1, y * 4 + 2, w[5], w[7], a)
+#define PIXEL21_31    Interp3(dest, x * 4 + 1, y * 4 + 2, w[5], w[8], a)
+#define PIXEL21_32    Interp3(dest, x * 4 + 1, y * 4 + 2, w[5], w[4], a)
+#define PIXEL21_70    Interp7(dest, x * 4 + 1, y * 4 + 2, w[5], w[4], w[8], a)
+#define PIXEL22_0     Interp0(dest, x * 4 + 2, y * 4 + 2, w[5], a)
+#define PIXEL22_30    Interp3(dest, x * 4 + 2, y * 4 + 2, w[5], w[9], a)
+#define PIXEL22_31    Interp3(dest, x * 4 + 2, y * 4 + 2, w[5], w[6], a)
+#define PIXEL22_32    Interp3(dest, x * 4 + 2, y * 4 + 2, w[5], w[8], a)
+#define PIXEL22_70    Interp7(dest, x * 4 + 2, y * 4 + 2, w[5], w[6], w[8], a)
+#define PIXEL23_0     Interp0(dest, x * 4 + 3, y * 4 + 2, w[5], a)
+#define PIXEL23_10    Interp1(dest, x * 4 + 3, y * 4 + 2, w[5], w[9], a)
+#define PIXEL23_11    Interp1(dest, x * 4 + 3, y * 4 + 2, w[5], w[6], a)
+#define PIXEL23_13    Interp1(dest, x * 4 + 3, y * 4 + 2, w[6], w[5], a)
+#define PIXEL23_21    Interp2(dest, x * 4 + 3, y * 4 + 2, w[6], w[5], w[8], a)
+#define PIXEL23_32    Interp3(dest, x * 4 + 3, y * 4 + 2, w[5], w[8], a)
+#define PIXEL23_50    Interp5(dest, x * 4 + 3, y * 4 + 2, w[6], w[5], a)
+#define PIXEL23_60    Interp6(dest, x * 4 + 3, y * 4 + 2, w[5], w[6], w[8], a)
+#define PIXEL23_61    Interp6(dest, x * 4 + 3, y * 4 + 2, w[5], w[6], w[9], a)
+#define PIXEL23_81    Interp8(dest, x * 4 + 3, y * 4 + 2, w[5], w[6], a)
+#define PIXEL23_83    Interp8(dest, x * 4 + 3, y * 4 + 2, w[6], w[8], a)
+#define PIXEL30_0     Interp0(dest, x * 4 + 0, y * 4 + 3, w[5], a)
+#define PIXEL30_11    Interp1(dest, x * 4 + 0, y * 4 + 3, w[5], w[8], a)
+#define PIXEL30_12    Interp1(dest, x * 4 + 0, y * 4 + 3, w[5], w[4], a)
+#define PIXEL30_20    Interp2(dest, x * 4 + 0, y * 4 + 3, w[5], w[8], w[4], a)
+#define PIXEL30_50    Interp5(dest, x * 4 + 0, y * 4 + 3, w[8], w[4], a)
+#define PIXEL30_80    Interp8(dest, x * 4 + 0, y * 4 + 3, w[5], w[7], a)
+#define PIXEL30_81    Interp8(dest, x * 4 + 0, y * 4 + 3, w[5], w[8], a)
+#define PIXEL30_82    Interp8(dest, x * 4 + 0, y * 4 + 3, w[5], w[4], a)
+#define PIXEL31_0     Interp0(dest, x * 4 + 1, y * 4 + 3, w[5], a)
+#define PIXEL31_10    Interp1(dest, x * 4 + 1, y * 4 + 3, w[5], w[7], a)
+#define PIXEL31_11    Interp1(dest, x * 4 + 1, y * 4 + 3, w[5], w[8], a)
+#define PIXEL31_13    Interp1(dest, x * 4 + 1, y * 4 + 3, w[8], w[5], a)
+#define PIXEL31_21    Interp2(dest, x * 4 + 1, y * 4 + 3, w[8], w[5], w[4], a)
+#define PIXEL31_32    Interp3(dest, x * 4 + 1, y * 4 + 3, w[5], w[4], a)
+#define PIXEL31_50    Interp5(dest, x * 4 + 1, y * 4 + 3, w[8], w[5], a)
+#define PIXEL31_60    Interp6(dest, x * 4 + 1, y * 4 + 3, w[5], w[8], w[4], a)
+#define PIXEL31_61    Interp6(dest, x * 4 + 1, y * 4 + 3, w[5], w[8], w[7], a)
+#define PIXEL31_81    Interp8(dest, x * 4 + 1, y * 4 + 3, w[5], w[8], a)
+#define PIXEL31_83    Interp8(dest, x * 4 + 1, y * 4 + 3, w[8], w[4], a)
+#define PIXEL32_0     Interp0(dest, x * 4 + 2, y * 4 + 3, w[5], a)
+#define PIXEL32_10    Interp1(dest, x * 4 + 2, y * 4 + 3, w[5], w[9], a)
+#define PIXEL32_12    Interp1(dest, x * 4 + 2, y * 4 + 3, w[5], w[8], a)
+#define PIXEL32_14    Interp1(dest, x * 4 + 2, y * 4 + 3, w[8], w[5], a)
+#define PIXEL32_21    Interp2(dest, x * 4 + 2, y * 4 + 3, w[8], w[5], w[6], a)
+#define PIXEL32_31    Interp3(dest, x * 4 + 2, y * 4 + 3, w[5], w[6], a)
+#define PIXEL32_50    Interp5(dest, x * 4 + 2, y * 4 + 3, w[8], w[5], a)
+#define PIXEL32_60    Interp6(dest, x * 4 + 2, y * 4 + 3, w[5], w[8], w[6], a)
+#define PIXEL32_61    Interp6(dest, x * 4 + 2, y * 4 + 3, w[5], w[8], w[9], a)
+#define PIXEL32_82    Interp8(dest, x * 4 + 2, y * 4 + 3, w[5], w[8], a)
+#define PIXEL32_83    Interp8(dest, x * 4 + 2, y * 4 + 3, w[8], w[6], a)
+#define PIXEL33_0     Interp0(dest, x * 4 + 3, y * 4 + 3, w[5], a)
+#define PIXEL33_11    Interp1(dest, x * 4 + 3, y * 4 + 3, w[5], w[6], a)
+#define PIXEL33_12    Interp1(dest, x * 4 + 3, y * 4 + 3, w[5], w[8], a)
+#define PIXEL33_20    Interp2(dest, x * 4 + 3, y * 4 + 3, w[5], w[8], w[6], a)
+#define PIXEL33_50    Interp5(dest, x * 4 + 3, y * 4 + 3, w[8], w[6], a)
+#define PIXEL33_80    Interp8(dest, x * 4 + 3, y * 4 + 3, w[5], w[9], a)
+#define PIXEL33_81    Interp8(dest, x * 4 + 3, y * 4 + 3, w[5], w[6], a)
+#define PIXEL33_82    Interp8(dest, x * 4 + 3, y * 4 + 3, w[5], w[8], a)
 
 
 
 void hq4x_32(SDL_Surface * src, SDL_Surface * dest,
-	     int LUT16to32[65536], int RGBtoYUV[65536])
+	     int RGBtoYUV[65536])
 {
   int x, y, k;
   int prevline, nextline;
-  Uint32 w[10];
-  Uint32 c[10];
+  Uint16 w[10];
+  Uint8 a;
   int pattern;
   int flag;
+
   
   /*
     +----+----+----+
-    |    |    |    |
     | w1 | w2 | w3 |
     +----+----+----+
-    |    |    |    |
     | w4 | w5 | w6 |
     +----+----+----+
-    |    |    |    |
     | w7 | w8 | w9 |
     +----+----+----+
   */
@@ -218,15 +216,15 @@ void hq4x_32(SDL_Surface * src, SDL_Surface * dest,
 	{
 	  /* Gather input pixels: */
 	  
-	  w[2] = hqxx_getpixel(src, x, y + prevline);
-	  w[5] = hqxx_getpixel(src, x, y);
-	  w[8] = hqxx_getpixel(src, x, y + nextline);
+	  w[2] = hqxx_getpixel(src, x, y + prevline, NULL);
+	  w[5] = hqxx_getpixel(src, x, y, &a);
+	  w[8] = hqxx_getpixel(src, x, y + nextline, NULL);
 
 	  if (x > 0)
 	    {
-	      w[1] = hqxx_getpixel(src, x - 1, y + prevline);
-	      w[4] = hqxx_getpixel(src, x - 1, y);
-	      w[7] = hqxx_getpixel(src, x - 1, y + nextline);
+	      w[1] = hqxx_getpixel(src, x - 1, y + prevline, NULL);
+	      w[4] = hqxx_getpixel(src, x - 1, y, NULL);
+	      w[7] = hqxx_getpixel(src, x - 1, y + nextline, NULL);
 	    }
 	  else
 	    {
@@ -237,9 +235,9 @@ void hq4x_32(SDL_Surface * src, SDL_Surface * dest,
 	  
 	  if (x < (src->w) - 1)
 	    {
-	      w[3] = hqxx_getpixel(src, x + 1, y + prevline);
-	      w[6] = hqxx_getpixel(src, x + 1, y);
-	      w[9] = hqxx_getpixel(src, x + 1, y + nextline);
+	      w[3] = hqxx_getpixel(src, x + 1, y + prevline, NULL);
+	      w[6] = hqxx_getpixel(src, x + 1, y, NULL);
+	      w[9] = hqxx_getpixel(src, x + 1, y + nextline, NULL);
 	    }
 	  else
 	    {
@@ -287,12 +285,6 @@ void hq4x_32(SDL_Surface * src, SDL_Surface * dest,
 		  flag <<= 1;
 		}
 	    }
-	  
-	  
-	  /* Convert the cluster from 16bit to 32bit: */
-	  
-	  for (k = 1; k <= 9; k++)
-	    c[k] = w[k]; //LUT16to32[w[k]];
 	  
 	  
 	  /* Depending on the pattern, set various destination pixels: */

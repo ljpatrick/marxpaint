@@ -29,26 +29,30 @@
 
 static int   YUV1, YUV2;
 
-#define Ymask 0x00FF0000
-#define Umask 0x0000FF00
-#define Vmask 0x000000FF
+#define Ymask 0xF800
+#define Umask 0x07E0
+#define Vmask 0x001F
 
-#define trY   0x00300000
-#define trU   0x00000700
-#define trV   0x00000006
+//trY in 32 = 0x00300000
+//trU in 32 = 0x00000700
+//trV in 32 = 0x00000006
+
+#define trY   0x3000
+#define trU   0x00C0
+#define trV   0x0006
 
 
-Uint16 hqxx_getpixel(SDL_Surface * surface, int x, int y);
-void InitLUTs(int * LUT16to32, int * RGBtoYUV);
-inline void Interp0(SDL_Surface * dest, int x, int y, int c);
-inline void Interp1(SDL_Surface * dest, int x, int y, int c1, int c2);
-inline void Interp2(SDL_Surface * dest, int x, int y, int c1, int c2, int c3);
-inline void Interp3(SDL_Surface * dest, int x, int y, int c1, int c2);
-inline void Interp4(SDL_Surface * dest, int x, int y, int c1, int c2, int c3);
-inline void Interp5(SDL_Surface * dest, int x, int y, int c1, int c2);
-inline void Interp6(SDL_Surface * dest, int x, int y, int c1, int c2, int c3);
-inline void Interp7(SDL_Surface * dest, int x, int y, int c1, int c2, int c3);
-inline void Interp8(SDL_Surface * dest, int x, int y, int c1, int c2);
+Uint16 hqxx_getpixel(SDL_Surface * surface, int x, int y, Uint8 * alpha);
+void InitLUTs(int * RGBtoYUV);
+inline void Interp0(SDL_Surface * dest, int x, int y, Uint16 c, Uint8 alpha);
+inline void Interp1(SDL_Surface * dest, int x, int y, Uint16 c1, Uint16 c2, Uint8 alpha);
+inline void Interp2(SDL_Surface * dest, int x, int y, Uint16 c1, Uint16 c2, Uint16 c3, Uint8 alpha);
+inline void Interp3(SDL_Surface * dest, int x, int y, Uint16 c1, Uint16 c2, Uint8 alpha);
+inline void Interp4(SDL_Surface * dest, int x, int y, Uint16 c1, Uint16 c2, Uint16 c3, Uint8 alpha);
+inline void Interp5(SDL_Surface * dest, int x, int y, Uint16 c1, Uint16 c2, Uint8 alpha);
+inline void Interp6(SDL_Surface * dest, int x, int y, Uint16 c1, Uint16 c2, Uint16 c3, Uint8 alpha);
+inline void Interp7(SDL_Surface * dest, int x, int y, Uint16 c1, Uint16 c2, Uint16 c3, Uint8 alpha);
+inline void Interp8(SDL_Surface * dest, int x, int y, Uint16 c1, Uint16 c2, Uint8 alpha);
 inline int Diff(unsigned int w1, unsigned int w2);
 
 #endif
