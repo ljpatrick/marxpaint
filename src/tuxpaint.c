@@ -6945,27 +6945,21 @@ static void setup(int argc, char * argv[])
 
 
 /* Render a button label using the appropriate string/font: */
-
 static SDL_Surface * do_render_button_label(const char * const label)
 {
-  char * str;
   SDL_Surface * tmp_surf, * surf;
   SDL_Color black = {0, 0, 0, 0};
+  TTF_Font * myfont = small_font;
 
-  if (need_own_font && locale_font != NULL &&
-	   strcmp(gettext(label), label) != 0)
-    {
-      tmp_surf = TTF_RenderUTF8_Blended(locale_font, textdir(gettext(label)), black);
-      surf = thumbnail(tmp_surf, min(48, tmp_surf->w), tmp_surf->h, 0);
-    }
-  else
-    {
-      str = uppercase(textdir(gettext(label)));
-      tmp_surf = TTF_RenderUTF8_Blended(small_font, str, black);
-      surf = thumbnail(tmp_surf, min(48, tmp_surf->w), tmp_surf->h, 0);
-      free(str);
-      SDL_FreeSurface(tmp_surf);
-    }
+  if (need_own_font && strcmp(gettext(label), label))
+    myfont = locale_font;
+  char *td_str = textdir(gettext(label));
+  char *upstr = uppercase(td_str);
+  free(td_str);
+  tmp_surf = TTF_RenderUTF8_Blended(myfont, upstr, black);
+  free(upstr);
+  surf = thumbnail(tmp_surf, min(48, tmp_surf->w), tmp_surf->h, 0);
+  SDL_FreeSurface(tmp_surf);
 
   return surf;
 }
