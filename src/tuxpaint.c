@@ -427,6 +427,12 @@ enum {
 };
 
 
+enum {
+  STARTER_OUTLINE,
+  STARTER_SCENE
+};
+
+
 /* Globals: */
 
 int use_sound, fullscreen, disable_quit, simple_shapes, language,
@@ -444,6 +450,7 @@ int prog_bar_ctr;
 SDL_Surface * screen;
 
 SDL_Surface * canvas;
+SDL_Surface * img_starter, * img_starter_bkgd;
 
 #define NUM_UNDO_BUFS 20
 SDL_Surface * undo_bufs[NUM_UNDO_BUFS];
@@ -515,6 +522,7 @@ int cur_font, cursor_left, cursor_x, cursor_y, cursor_textwidth;
 int colors_are_selectable;
 int been_saved;
 char file_id[32];
+char starter_id[32];
 int brush_scroll, stamp_scroll, font_scroll;
 int eraser_sound;
 
@@ -682,6 +690,8 @@ void anti_carriage_return(int left, int right, int cur_top, int new_top,
 		          int cur_bot, int line_width);
 int mySDL_WaitEvent(SDL_Event *event);
 int mySDL_PollEvent(SDL_Event *event);
+void load_starter_id(char * saved_id);
+void load_starter(char * img_id);
 
 
 #define MAX_UTF8_CHAR_LENGTH 6
@@ -1073,6 +1083,7 @@ void mainloop(void)
 		      reset_avail_tools();
 		      
 		      file_id[0] = '\0';
+		      starter_id[0] = '\0';
 		      
 		      playsound(1, SND_HARP, 1);
 		    }
@@ -1387,6 +1398,7 @@ void mainloop(void)
 			      reset_avail_tools();
 			      
 			      file_id[0] = '\0';
+			      starter_id[0] = '\0';
 			      
 			      playsound(1, SND_HARP, 1);
 			    }
@@ -4899,6 +4911,8 @@ void setup(int argc, char * argv[])
 				screen->format->Bmask,
 				0);
 
+  img_starter = NULL;
+  img_starter_bkgd = NULL;
 
   if (canvas == NULL)
     {
@@ -8109,6 +8123,7 @@ void load_current(void)
 	      "The system error that occurred was:\n"
 	      "%s\n\n", fname, strerror(errno));
       file_id[0] = '\0';
+      starter_id[0] = '\0';
     }
   else
     {
@@ -8146,6 +8161,7 @@ void load_current(void)
 		  "%s\n\n", fname, SDL_GetError());
 
 	  file_id[0] = '\0';
+	  starter_id[0] = '\0';
 	}
       else
 	{
@@ -8156,6 +8172,9 @@ void load_current(void)
 	  SDL_BlitSurface(tmp, NULL, canvas, &dest);
 
 	  SDL_FreeSurface(tmp);
+
+
+	  load_starter_id(file_id);
 
 	  tool_avail[TOOL_NEW] = 1;
 	}
@@ -8633,6 +8652,8 @@ void cleanup(void)
   free_surface_array( img_stamp_thumbs, MAX_STAMPS );
 
   free_surface( &screen );
+  free_surface( &img_starter );
+  free_surface( &img_starter_bkgd );
   free_surface( &canvas );
   free_surface( &img_cur_brush );
 
@@ -9268,6 +9289,23 @@ int do_save(void)
   SDL_FreeSurface(thm);
   
   free(fname);
+
+
+  /* Write 'starter' info, if any: */
+
+  if (starter_id[0] != '\0')
+  {
+    snprintf(tmp, sizeof(tmp), "saved/%s.dat", file_id);
+    fname = get_fname(tmp);
+    fi = fopen(fname, "w");
+    if (fi != NULL)
+    {
+      fprintf(fi, "%s\n", starter_id);
+      fclose(fi);
+    }
+
+    free(fname);
+  }
   
 
   /* All happy! */
@@ -9588,7 +9626,7 @@ int do_open(int want_new_tool)
         debug(f->d_name);
 	      
         if (strstr(f->d_name, "-t.") == NULL &&
-	    strstr(f->d_name, "-front.") == NULL)
+	    strstr(f->d_name, "-back.") == NULL)
 	{
 	  if (strstr(f->d_name, FNAME_EXTENSION) != NULL
 #ifndef SAVE_AS_BMP
@@ -10310,13 +10348,10 @@ int do_open(int want_new_tool)
 		       dirname[d_places[which]],
 		       d_names[which], d_exts[which]);
 
-	      rfname = get_fname(fname);
-	  
-
 #ifdef SAVE_AS_BMP
-	      img = SDL_LoadBMP(rfname);
+	      img = SDL_LoadBMP(fname);
 #else
-	      img = IMG_Load(rfname);
+	      img = IMG_Load(fname);
 #endif
 	  
 	      if (img == NULL)
@@ -10356,14 +10391,26 @@ int do_open(int want_new_tool)
 		    been_saved = 1;
 	  
 		    strcpy(file_id, d_names[which]);
+		    starter_id[0] = '\0';
+
+		    
+		    /* See if this saved image was based on a 'starter' */
+
+		    load_starter_id(d_names[which]);
+
+		    if (starter_id[0] != '\0')
+		      load_starter(starter_id);
 		  }
 		  else
 		  {
-		    /* Immutable image; we'll need to save a new one: */
+		    /* Immutable 'starter' image;
+		       we'll need to save a new image when saving...: */
 
 		    been_saved = 1;
 
       		    file_id[0] = '\0';
+		    strcpy(starter_id, d_names[which]);
+		    load_starter(starter_id);
 		  }
 
 		  reset_avail_tools();
@@ -10374,8 +10421,6 @@ int do_open(int want_new_tool)
 
 		  want_new_tool = 1;
 		}
-      
-	      free(rfname);
 	    }
   
   
@@ -12253,5 +12298,55 @@ int mySDL_PollEvent(SDL_Event *event)
     }
 
   return ret;
+}
+
+
+void load_starter_id(char * saved_id)
+{
+  char * rname;
+  char fname[32];
+  FILE * fi;
+  
+  snprintf(fname, sizeof(fname), "saved/%s.dat", saved_id);
+  rname = get_fname(fname);
+
+  starter_id[0] = '\0';
+
+  fi = fopen(rname, "r");
+  if (fi != NULL)
+  {
+    fgets(starter_id, sizeof(starter_id), fi);
+    starter_id[strlen(starter_id) - 1] = '\0';
+
+    fclose(fi);
+  }
+
+  free(rname);
+}
+
+void load_starter(char * img_id)
+{
+  char * dirname;
+  char fname[256];
+
+  /* Determine path to starter files: */
+  
+  /* FIXME: On Windows, MacOSX, BeOS, etc. -- do it their way! */
+  dirname = strdup("/usr/local/share/tuxpaint/starters");
+
+
+  /* Load the core image: */
+  
+  snprintf(fname, sizeof(fname), "%s/%s.png", dirname, img_id);
+
+  img_starter = IMG_Load(fname);
+
+
+  /* Try to load the a background image: */
+
+  snprintf(fname, sizeof(fname), "%s/%s-back.png", dirname, img_id);
+  img_starter_bkgd = IMG_Load(fname);
+
+  free(dirname);
 }
 
