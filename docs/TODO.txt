@@ -6,7 +6,7 @@ Copyright (c) 2003 by Bill Kendrick
 bill@newbreedsoftware.com
 http://www.newbreedsoftware.com/tuxpaint/
 
-June 17, 2003
+July 19, 2003
 
 
 LOW-PRIORITY DOCUMENTATION CHANGES:
@@ -97,6 +97,9 @@ LOW-PRIORITY TRANSLATION STUFF:
 FEATURE IDEAS:
 --------------
   * Sym-link "~/TuxPaintPictures" to "~/.tuxpaint/saved/"???
+
+  * Add "click to start, click to end" functionality in Brush, Eraser, etc.
+    (Pablo Saratxaga's suggestion; 2003.07.19)
     
   * Show shape instructions after _temporarily_ describing the shape???
     (Herman Bruyninckx's suggestion; 2002.08.25)
