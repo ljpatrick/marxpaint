@@ -14204,17 +14204,40 @@ static void loadfonts(const char * const dir, int fatal)
       /* Ignore things starting with "." (e.g., "." and ".." dirs): */
       if (d_names[i][0]!='.')
 	{
+	  int loadable = 0;
 	  /* If it's a directory, recurse down into it: */
 	  snprintf(fname, sizeof(fname), "%s/%s", dir, d_names[i]);
 	  debug(fname);
 	  stat(fname, &sbuf);
 	  if (S_ISDIR(sbuf.st_mode))
 	    loadfonts(fname,fatal);
-
+	  else if(sbuf.st_size==0)
+	    {
+	      loadable = 1;  // could be a Mac filesystem with resource fork
+	    }
+	  else
+	    {
+	      const char *restrict const cp = strchr(d_names[i], '.');
+	      if(cp)
+	        {
+                  const char *restrict const suffixes[] = {"ttf", "otf", "pfa", "pfb", "dfont", "ttc",};
+                  int j = sizeof suffixes / sizeof suffixes[0];
+                  while(j--)
+                    {
+                      // only check part, because of potential .gz or .bz2 suffix
+                      if(!strncasecmp(cp+1,suffixes[j],strlen(suffixes[j])))
+                        {
+                          loadable = 1;
+                          break;
+                        }
+                    }
+	        }
+	    }
           // Loadable: TrueType (.ttf), OpenType (.otf), Type1 (.pfa and .pfb),
           // and various useless bitmap fonts. Compressed files (with .gz or .bz2)
-          // should also work.
-	  if (strstr(d_names[i], ".ttf") || strstr(d_names[i], ".otf") || strstr(d_names[i], ".pfa") || strstr(d_names[i], ".pfb"))
+          // should also work. A *.dfont is pretty much a Mac resource fork in a normal
+          // file, and may load with some library versions.
+	  if (loadable)
 	    {
 //printf("Loading font: %s/%s\n", dir, d_names[i]);
               TTF_Font *font = TTF_OpenFont(fname, text_sizes[text_size]);
