@@ -3896,8 +3896,8 @@ void setup(int argc, char * argv[])
   }
   else if (language == LANG_HE)
   {
-    // putenv("OUTPUT_CHARSET=he_IL");
-    // convert_open("ISO8859-8");
+    putenv("OUTPUT_CHARSET=he_IL");
+    convert_open("ISO8859-8");
   }
   else if (language == LANG_PL)
   {
