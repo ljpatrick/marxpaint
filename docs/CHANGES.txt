@@ -7,7 +7,7 @@ bill@newbreedsoftware.com
 http://www.newbreedsoftware.com/tuxpaint/
 
 
-2003.May.23 (0.9.11) [cvs]
+2003.Jun.14 (0.9.11) [cvs]
   * Windows bugfixes.
     John Popplewell <john@johnnypops.demon.co.uk>
 
@@ -62,6 +62,7 @@ http://www.newbreedsoftware.com/tuxpaint/
   * When a locale requiring its own font can't be used because the font
     is missing, Tux Paint STILL didn't work right.  Fixed.  (Set $LC_ALL=C)
 
+  * Added a set of square brushes (similar to the various round ones).
 
 
 2003.February.22 (0.9.10)

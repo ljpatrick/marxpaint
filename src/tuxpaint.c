@@ -6370,7 +6370,7 @@ void wordwrap_text(TTF_Font * font, char * str, SDL_Color color,
        (need_utf8(language) && strcmp(gettext(str), str) != 0)))
   {
     if (want_utf8 || want_right_to_left == 0)
-      locale_str = strdup(str);
+      locale_str = strdup(gettext(str));
     else
       locale_str = strdup(textdir(gettext(str)));
 
@@ -6552,7 +6552,7 @@ void wordwrap_text(TTF_Font * font, char * str, SDL_Color color,
 	   strcmp(gettext(str), str) != 0 && strcmp(str, "") != 0)
   {
     if (want_right_to_left == 0)
-      locale_str = strdup(str);
+      locale_str = strdup(gettext(str));
     else
       locale_str = strdup(textdir(gettext(str)));
     
@@ -10233,6 +10233,10 @@ unsigned char * textdir(unsigned char * str)
   unsigned char * dstr;
   int i, j;
 
+#ifdef DEBUG
+  printf("ORIG_DIR: %s\n", str);
+#endif
+
   dstr = (unsigned char *) malloc((strlen(str) + 5) * sizeof(unsigned char));
 
   if (need_right_to_left(language))
@@ -10270,6 +10274,14 @@ unsigned char * textdir(unsigned char * str)
       }
     }
   }
+  else
+  {
+    strcpy(dstr, str);
+  }
+
+#ifdef DEBUG
+  printf("L2R_DIR: %s\n", dstr);
+#endif
 
   return (dstr);
 }
