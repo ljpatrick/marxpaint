@@ -7,7 +7,7 @@ bill@newbreedsoftware.com
 http://www.newbreedsoftware.com/tuxpaint/
 
 
-June 17, 2002 - March 14, 2003
+June 17, 2002 - April 25, 2003
 
 
 * Design and Coding:
@@ -109,6 +109,10 @@ June 17, 2002 - March 14, 2003
 
   * Hungarian
     Török Gábor <gabo@linuxmania.hu>
+
+  * Hebrew
+    Dovix <dovix2003@yahoo.com>
+    Koby <kobybo@hotmail.com>
 
   * Icelandic
     Pjetur G. Hjaltason <pjetur@pjetur.net>

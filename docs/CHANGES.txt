@@ -7,7 +7,11 @@ bill@newbreedsoftware.com
 http://www.newbreedsoftware.com/tuxpaint/
 
 
-2003.April.11 (0.9.11) [cvs]
+2003.April.25 (0.9.11) [cvs]
+  * Hebrew translation!
+    Dovix <dovix2003@yahoo.com>
+    Koby <kobybo@hotmail.com>
+
   * Updated Korean translations.
     Mark K. Kim <mark@cbreak.org>
 
@@ -45,6 +49,10 @@ http://www.newbreedsoftware.com/tuxpaint/
 
   * Fixed UTF-8 word-wrapping bug when there were no spaces
     (e.g., in some Japanese strings)
+  
+  * When a locale requiring its own font can't be used because the font
+    is missing, Tux Paint STILL didn't work right.  Fixed.  (Set $LC_ALL=C)
+
 
 
 2003.February.22 (0.9.10)
