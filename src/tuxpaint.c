@@ -14224,7 +14224,8 @@ static void loadfonts(const char * const dir, int fatal)
 	      const char *restrict const cp = strchr(d_names[i], '.');
 	      if(cp)
 	        {
-                  const char *restrict const suffixes[] = {"ttf", "otf", "pfa", "pfb", "dfont", "ttc",};
+	          // need gcc 3.4 for the restrict in this location
+                  const char * /*restrict*/ const suffixes[] = {"ttc", "dfont", "pfa", "pfb", "otf", "ttf",};
                   int j = sizeof suffixes / sizeof suffixes[0];
                   while(j--)
                     {
