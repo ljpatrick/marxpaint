@@ -10179,7 +10179,10 @@ int do_open(int want_new_tool)
 	     
 	      
 	/* "Erase" button: */
-	      
+	
+	/* FIXME: Deactivate if an immutable file ("starter") is
+	   selected.  Reactivate when clicking a normal (saved) file. */
+
 	dest.x = WINDOW_WIDTH - 96 - 48 - 48;
 	dest.y = (48 * 7 + 40 + HEIGHTOFFSET) - 48;
 	SDL_BlitSurface(img_erase, NULL, screen, &dest);
@@ -10398,10 +10401,10 @@ int do_open(int want_new_tool)
 		    {
 		      /* Erase */
 		  
-		      want_erase = 1;
-		    }
-		}
-	      else if (event.type == SDL_MOUSEMOTION)
+             want_erase = 1;
+           }
+       }
+     else if (event.type == SDL_MOUSEMOTION)
 		{
 		  /* Deal with mouse pointer shape! */
 
@@ -10562,12 +10565,19 @@ int do_open(int want_new_tool)
 		      do_save();
 		    }
 		}
-	    
+	   
+
+	      /* BEGIN FIXME: Determine if this was a 'starter' image, and
+	         use a different path if so... */
+
 	      snprintf(fname, sizeof(fname), "saved/%s%s",
 		       d_names[which], d_exts[which]);
 	  
 	      rfname = get_fname(fname);
+
+	      /* -- END FIXME -- */
 	  
+
 #ifdef SAVE_AS_BMP
 	      img = SDL_LoadBMP(rfname);
 #else
@@ -10603,6 +10613,9 @@ int do_open(int want_new_tool)
 		  cur_undo = 0;
 		  oldest_undo = 0;
 		  newest_undo = 0;
+
+		  /* FIXME: Set values so that we don't try to
+		     re-save immutable images */
 	      
 		  been_saved = 1;
 		  reset_avail_tools();

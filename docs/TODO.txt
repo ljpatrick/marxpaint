@@ -6,7 +6,7 @@ Copyright (c) 2004 by Bill Kendrick
 bill@newbreedsoftware.com
 http://www.newbreedsoftware.com/tuxpaint/
 
-May 30, 2004
+June 1, 2004
 
 HIGH-PRIORITY DOCUMENTATION CHANGES:
 ------------------------------------
@@ -44,6 +44,9 @@ HIGH-PRIORITY IMPLEMENTATION CHANGES:
     directory, but available via the "Open" dialog.  They would be black
     outlines of shapes/pictures for kids to color, like a coloring book.
     The outlines would always remain 'above' the paint.
+
+    FIXME: "Erase" icon on Open screen should disable when you click
+    an immutable image.  Re-enable when clicking a saved image.
 
   * Background mode -- immutable images stored in Tux Paint's "data"
     directory, but available via the "Open" dialog.  They would be
