@@ -4030,6 +4030,12 @@ static void magic_draw(int x1, int y1, int x2, int y2, int button_down)
   else if (cur_magic == MAGIC_RAINBOW)
     playsound(0, SND_RAINBOW, 0);
 
+  /* FIXME: Need sounds for:
+     Smudge
+     Darken
+     Tint
+     Cartoon */
+
 
   /* FIXME: Arbitrary? */
 
@@ -4248,7 +4254,7 @@ static void blit_magic(int x, int y, int button_down)
 	    {
 	      for (xx = x - 16; xx < x + 16; xx++)
 		{
-		  /* Get average color around here: */
+		  /* Get original color: */
 		
 		  SDL_GetRGB(getpixel(last, xx, yy), last->format,
 			     &r, &g, &b);
@@ -4267,6 +4273,40 @@ static void blit_magic(int x, int y, int button_down)
 		  }
 
 		  putpixel(canvas, xx, yy, SDL_MapRGB(canvas->format, r, g, b));
+		}
+	    }
+
+	  SDL_UnlockSurface(canvas);
+	  SDL_UnlockSurface(last);
+	}
+      else if (cur_magic == MAGIC_TINT)
+	{
+	  double rd = sRGB_to_linear_table[color_hexes[cur_color][0]];
+	  double gd = sRGB_to_linear_table[color_hexes[cur_color][1]];
+	  double bd = sRGB_to_linear_table[color_hexes[cur_color][2]];
+	  double old;
+
+	  SDL_LockSurface(last);
+	  SDL_LockSurface(canvas);
+
+	  for (yy = y - 16; yy < y + 16; yy++)
+	    {
+	      for (xx = x - 16; xx < x + 16; xx++)
+		{
+		  /* Get original pixel: */
+		
+		  SDL_GetRGB(getpixel(last, xx, yy), last->format,
+			     &r, &g, &b);
+  
+                  old = sRGB_to_linear_table[r] * 0.2126 +
+			sRGB_to_linear_table[g] * 0.7152 +
+			sRGB_to_linear_table[b] * 0.0722;
+
+		  putpixel(canvas, xx, yy,
+			   SDL_MapRGB(canvas->format,
+			              linear_to_sRGB(rd * old),
+				      linear_to_sRGB(gd * old),
+				      linear_to_sRGB(bd * old)));
 		}
 	    }
 
