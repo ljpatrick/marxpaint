@@ -6,12 +6,12 @@ Copyright (c) 2004 by Bill Kendrick
 bill@newbreedsoftware.com
 http://www.newbreedsoftware.com/tuxpaint/
 
-September 21, 2004
+October 24, 2004
 
 
 BUGS!
 -----
-  * Get Starters to work properly in 800x600 mode.
+  * Scale down larger images when loading in lower resolution!!!
 
 
 HIGH-PRIORITY DOCUMENTATION CHANGES:

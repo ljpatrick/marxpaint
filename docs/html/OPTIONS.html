@@ -22,7 +22,7 @@ New Breed Software</p>
 <p><a href="mailto:bill@newbreedsoftware.com">bill@newbreedsoftware.com</a><br>
 <a href="http://www.newbreedsoftware.com/tuxpaint/">http://www.newbreedsoftware.com/tuxpaint/</a></p>
 
-<p>October 23, 2004</p>
+<p>October 24, 2004</p>
 </center>
 
 <hr size=2 noshade>
@@ -102,10 +102,18 @@ New Breed Software</p>
     Run the program in full screen mode, rather than in a window.
   </dd>
 
-  <dt><code><b>800x600=yes</b></code></dt>
+  <dt><code><b>windowsize=<i>SIZE</i></b></code></dt>
   <dd>
-    Run the program at 800x600 resolution (EXPERIMENTAL), rather
-    than the smaller 640x480 resolution.
+    Run the program at a higher resolution, rather than the default of 640x480.
+    The <i>SIZE</i> value may be one of:
+    <ul>
+    <li>640x480
+    <li>800x600
+    <li>1024x768
+    <li>1280x1024
+    <li>1400x1050
+    <li>1600x1200
+    </ul>
   </dd>
 
   <dt><code><b>nosound=yes</b></code></dt>
@@ -591,6 +599,10 @@ New Breed Software</p>
     <dt><code><b>
     --fullscreen<br>
     --800x600<br>
+    --1024x768<br>
+    --1280x1204<br>
+    --1400x1050<br>
+    --1600x1200<br>
     --nosound<br>
     --noquit<br>
     --noprint<br>

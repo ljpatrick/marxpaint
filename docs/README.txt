@@ -1,17 +1,17 @@
-                                   Tux Paint
+                                  [1]Tux Paint
                                  version 0.9.15
 
-  A simple drawing program for children
+                     A simple drawing program for children
 
                         Copyright 2004 by Bill Kendrick
                                New Breed Software
 
-                           bill@newbreedsoftware.com
-                   http://www.newbreedsoftware.com/tuxpaint/
+                          [2]bill@newbreedsoftware.com
+                  [3]http://www.newbreedsoftware.com/tuxpaint/
 
-                        June 14, 2002 - October 23, 2004
+                        June 14, 2002 - October 24, 2004
 
-     ----------------------------------------------------------------------
+   ---------------------------------------------------------------------------
 
                                      About
 
@@ -30,7 +30,7 @@ License:
        behind the program is available. (This allows others to add features,
        fix bugs, and use parts of the program in their own GPL'd software.)
 
-       See COPYING.txt for the full text of the GPL license.
+       See [4]COPYING.txt for the full text of the GPL license.
 
 Objectives:
 
@@ -65,7 +65,7 @@ Objectives:
                is done by selecting it from a collection of thumbnails.
                Access to other files on the computer is restricted.
 
-     ----------------------------------------------------------------------
+   ---------------------------------------------------------------------------
 
                                 Using Tux Paint
 
@@ -84,11 +84,11 @@ Loading Tux Paint
          If any errors occur, they will be displayed on the terminal (to
          "stderr").
 
-     ----------------------------------------------------------------------
+   ---------------------------------------------------------------------------
 
   Windows Users
 
-                                                                    [Icon]    
+                                                                   [5][Icon]  
                                                                    Tux Paint  
 
          If you installed Tux Paint on your computer using the
@@ -110,25 +110,25 @@ Loading Tux Paint
          If you used the 'ZIP-file' download, Tux Paint's folder will be
          wherever you put it when you unzipped the ZIP file.
 
-     ----------------------------------------------------------------------
+   ---------------------------------------------------------------------------
 
   Mac OS X Users
 
          Simply double-click the "Tux Paint" icon.
 
-     ----------------------------------------------------------------------
+   ---------------------------------------------------------------------------
 
 Title Screen
 
        When Tux Paint first loads, a title/credits screen will appear.
 
-                               [Title Screenshot]
+                             [6][Title Screenshot]
 
        Once loading is complete, press a key or click on the mouse to
        continue. (Or, after about 30 seconds, the title screen will go away
        automatically.)
 
-     ----------------------------------------------------------------------
+   ---------------------------------------------------------------------------
 
 Main Screen
 
@@ -138,15 +138,15 @@ Main Screen
 
                The toolbar contains the drawing and editing controls.
 
-[Tools: Paint, Stamp, Lines, Shapes, Text, Magic, Undo, Redo,       Eraser, New,
-                            Open, Save, Print, Quit]
+ [7][Tools: Paint, Stamp, Lines, Shapes, Text, Magic, Undo, Redo,       Eraser,
+                         New, Open, Save, Print, Quit]
 
        Middle: Drawing Canvas
 
                The largest part of the screen, in the center, is the drawing
                canvas. This is, obviously, where you draw!
 
-                                   [(Canvas)]
+                                 [8][(Canvas)]
 
        Right Side: Selector
 
@@ -155,14 +155,14 @@ Main Screen
                the various brushes available. When the Rubber Stamp tool is
                selected, it shows the different shapes you can use.
 
-                 [Selectors - Brushes, Letters, Shapes, Stamps]
+               [9][Selectors - Brushes, Letters, Shapes, Stamps]
 
        Lower: Colors
 
                A palette of available colors are shown near the bottom of the
                screen.
 
-  [Colors - Black, White, Red, Pink, Orange, Yellow, Green, Cyan,       Blue,
+[10][Colors - Black, White, Red, Pink, Orange, Yellow, Green, Cyan,       Blue,
                               Purple, Brown, Grey]
 
        Bottom: Help Area
@@ -170,11 +170,11 @@ Main Screen
                At the very bottom of the screen, Tux, the Linux Penguin,
                provides tips and other information while you draw.
 
- (For example: 'Pick a shape. Click to pick the center, drag, then       let go
-when it is the size you want.  Move around to rotate it, and       click to draw
-                                      it.)
+[11](For example: 'Pick a shape. Click to pick the center, drag, then       let
+ go when it is the size you want.  Move around to rotate it, and       click to
+                                   draw it.)
 
-     ----------------------------------------------------------------------
+   ---------------------------------------------------------------------------
 
 Available Tools
 
@@ -192,7 +192,7 @@ Available Tools
                  As you draw, a sound is played. The bigger the brush, the
                  lower the pitch.
 
-     ----------------------------------------------------------------------
+   ---------------------------------------------------------------------------
 
          Stamp (Rubber Stamp)
 
@@ -212,9 +212,9 @@ Available Tools
 
                  (NOTE: If the "nostampcontrols" option is set, Tux Paint
                  won't display the Mirror, Flip, Shrink and Grow controls for
-                 stamps. See the "Options" documentation.)
+                 stamps. See the "[12]Options" documentation.)
 
-     ----------------------------------------------------------------------
+   ---------------------------------------------------------------------------
 
          Lines
 
@@ -228,7 +228,7 @@ Available Tools
                  Let go of the mouse to complete the line. A "sproing!" sound
                  will play.
 
-     ----------------------------------------------------------------------
+   ---------------------------------------------------------------------------
 
          Shapes
 
@@ -259,7 +259,7 @@ Available Tools
                               drawn on the canvas when you let go of the
                               mouse button. (There's no rotation step.)
 
-     ----------------------------------------------------------------------
+   ---------------------------------------------------------------------------
 
          Text
 
@@ -274,7 +274,7 @@ Available Tools
                  Click elsewhere in the picture and the current line of text
                  will move there, where you can continue editing.
 
-     ----------------------------------------------------------------------
+   ---------------------------------------------------------------------------
 
          Magic (Special Effects)
 
@@ -341,7 +341,7 @@ Available Tools
                               you quickly fill parts of the picture, as if it
                               were a coloring book.
 
-     ----------------------------------------------------------------------
+   ---------------------------------------------------------------------------
 
          Eraser
 
@@ -359,7 +359,7 @@ Available Tools
                  As you erase, a "squeaky clean" eraser/wiping sound is
                  played.
 
-     ----------------------------------------------------------------------
+   ---------------------------------------------------------------------------
 
   Other Controls
 
@@ -371,7 +371,7 @@ Available Tools
                  Note: You can also press [Control]-[Z] on the keyboard to
                  undo.
 
-     ----------------------------------------------------------------------
+   ---------------------------------------------------------------------------
 
          Redo
 
@@ -384,7 +384,7 @@ Available Tools
                  Note: You can also press [Control]-[R] on the keyboard to
                  redo.
 
-     ----------------------------------------------------------------------
+   ---------------------------------------------------------------------------
 
          New
 
@@ -394,7 +394,7 @@ Available Tools
                  Note: You can also press [Control]-[N] on the keyboard to
                  start a new drawing.
 
-     ----------------------------------------------------------------------
+   ---------------------------------------------------------------------------
 
          Open
 
@@ -436,12 +436,12 @@ Available Tools
 
                  If choose to open a picture, and your current drawing hasn't
                  been saved, you will be prompted as to whether you want to
-                 save it or not. (See "Save," below.)
+                 save it or not. (See "[13]Save," below.)
 
                  Note: You can also press [Control]-[O] on the keyboard to
                  get the 'Open' dialog.
 
-     ----------------------------------------------------------------------
+   ---------------------------------------------------------------------------
 
          Save
 
@@ -461,13 +461,13 @@ Available Tools
                  create a new entry (a new file).
 
                  (NOTE: If either the "saveover" or "saveovernew" options are
-                 set, it won't ask before saving over. See the "Options"
+                 set, it won't ask before saving over. See the "[14]Options"
                  documentation.)
 
                  Note: You can also press [Control]-[S] on the keyboard to
                  save.
 
-     ----------------------------------------------------------------------
+   ---------------------------------------------------------------------------
 
          Print
 
@@ -481,7 +481,7 @@ Available Tools
                               command-line), the "Print" button will be
                               disabled.
 
-                              See the "Options" documentation.)
+                              See the "[15]Options" documentation.)
 
                       Restricting Printing
 
@@ -494,7 +494,7 @@ Available Tools
                               For example, with "printdelay=60", you can
                               print only once a minute.
 
-                              See the "Options" documentation.)
+                              See the "[16]Options" documentation.)
 
                       Printing Command
 
@@ -510,7 +510,7 @@ Available Tools
                               "printcommand" value in Tux Paint's
                               configuration file.
 
-                              See the "Options" documentation.)
+                              See the "[17]Options" documentation.)
 
                       Printer Settings
 
@@ -537,9 +537,9 @@ Available Tools
                               "userdata/print.cfg". Any changes will be saved
                               there as well.
 
-                              See the "Options" documentation.)
+                              See the "[18]Options" documentation.)
 
-     ----------------------------------------------------------------------
+   ---------------------------------------------------------------------------
 
          Quit
 
@@ -548,7 +548,7 @@ Available Tools
 
                  (NOTE: The "Quit" button can be disabled (e.g., with the
                  "--noquit" command-line option), but the [Escape] key will
-                 still work. See the "Options" documentation.)
+                 still work. See the "[19]Options" documentation.)
 
                  You will first be prompted as to whether you really want to
                  quit.
@@ -556,13 +556,13 @@ Available Tools
                  If you choose to quit, and you haven't saved the current
                  picture, you will first be asked if wish to save it. If it's
                  not a new image, you will then be asked if you want to save
-                 over the old version, or create a new entry. (See "Save"
+                 over the old version, or create a new entry. (See "[20]Save"
                  above.)
 
                  NOTE: If the image is saved, it will be reloaded
                  automatically the next time you run Tux Paint!
 
-     ----------------------------------------------------------------------
+   ---------------------------------------------------------------------------
 
                      Loading Other Pictures into Tux Paint
 
@@ -642,7 +642,7 @@ Doing it Manually
        Under Windows, this is in the "userdata" folder. Under Mac OS X, this
        is in "Library/Preferences/tuxpaint/" in your home directory.
 
-     ----------------------------------------------------------------------
+   ---------------------------------------------------------------------------
 
                               Extending Tux Paint
 
@@ -687,7 +687,7 @@ Where Files Go
 
              /Users/Joe/Library/Preferences/
 
-     ----------------------------------------------------------------------
+   ---------------------------------------------------------------------------
 
   Personal Files
 
@@ -717,7 +717,7 @@ Where Files Go
          (For example, if you created a brush named "flower.png", you would
          put it in "~/.tuxpaint/brushes/" under Linux or Unix.)
 
-     ----------------------------------------------------------------------
+   ---------------------------------------------------------------------------
 
 Brushes
 
@@ -737,7 +737,7 @@ Brushes
        it's because you forgot to use alpha transparency! See the
        documentation file "PNG.txt" for more information and tips.
 
-     ----------------------------------------------------------------------
+   ---------------------------------------------------------------------------
 
 Stamps
 
@@ -765,7 +765,7 @@ Stamps
          use alpha transparency! See the documentation file "PNG.txt" for
          more information and tips.
 
-     ----------------------------------------------------------------------
+   ---------------------------------------------------------------------------
 
   Description Text
 
@@ -801,7 +801,7 @@ Stamps
            them as Plain Text, and make sure they have ".txt" at the end of
            the filename...
 
-     ----------------------------------------------------------------------
+   ---------------------------------------------------------------------------
 
   Sound Effects
 
@@ -823,7 +823,7 @@ Stamps
            If no localized sound effect can be loaded, Tux Paint will attempt
            to load the 'default' sound file. (e.g., "picture.wav")
 
-     ----------------------------------------------------------------------
+   ---------------------------------------------------------------------------
 
   Stamp Options
 
@@ -909,7 +909,7 @@ Stamps
          named "truck_mirror.png", which will be used when the stamp is
          mirrored (rather than using a backwards version of 'truck.png').
 
-     ----------------------------------------------------------------------
+   ---------------------------------------------------------------------------
 
 Fonts
 
@@ -919,7 +919,7 @@ Fonts
        font and provide four different sizes in the 'Letters' selector when
        using the 'Text' tool.
 
-     ----------------------------------------------------------------------
+   ---------------------------------------------------------------------------
 
 'Starters'
 
@@ -971,8 +971,9 @@ Fonts
          corresponds to the "reef.png" overlay, or foreground.)
 
        The 'starter' images should be the same size as Tux Paint's canvas. In
-       the default 640x480 mode, that is 448x376 pixels. (If you're using
-       800x600 mode, it should be 608x496.)
+       the default 640x480 mode, that is 448x376 pixels. If you're using
+       800x600 mode, it should be 608x496. (It should be 192 pixels less
+       wide, and 104 pixels less tall than the resolution.)
 
        Place them in the "starters" directory. When the 'Open' dialog is
        accessed in Tux Paint, the 'starter' images will appear at the
@@ -991,37 +992,63 @@ Fonts
        picture loaded or started. (In other words, if you base a drawing on a
        'starter' image, it will always be affected by it.)
 
-     ----------------------------------------------------------------------
+   ---------------------------------------------------------------------------
 
                                 Further Reading
 
      Other documentation included with Tux Paint (in the "docs"
      folder/directory) include:
-       * AUTHORS.txt
+
+       * [21]AUTHORS.txt
          List of authors and contributors
-       * CHANGES.txt
+       * [22]CHANGES.txt
          Summary of changed between releases
-       * COPYING.txt
+       * [23]COPYING.txt
          Copying license (The GNU General Public License)
-       * INSTALL.txt
+       * [24]INSTALL.txt
          Instructions for compiling/installing, when applicable
-       * OPTIONS.html
+       * [25]OPTIONS.html
          Detailed instructions on command-line and configuration-file
          options, for those who don't want to use Tux Paint Config.
-       * PNG.txt
+       * [26]PNG.txt
          Notes on creating PNG format images for use in Tux Paint
-       * TODO.txt
+       * [27]TODO.txt
          A list of pending features or bugs needing fixed
 
-     ----------------------------------------------------------------------
+   ---------------------------------------------------------------------------
 
                                 How to Get Help
 
      If you need help, feel free to contact New Breed Software:
 
-       http://www.newbreedsoftware.com/
+       [28]http://www.newbreedsoftware.com/
 
      You may also wish to participate in the numerous Tux Paint mailing
      lists:
 
-       http://www.newbreedsoftware.com/tuxpaint/lists/
+       [29]http://www.newbreedsoftware.com/tuxpaint/lists/
+
+References
+
+   Visible links
+   2. mailto:bill@newbreedsoftware.com
+   3. http://www.newbreedsoftware.com/tuxpaint/
+   4. file:///home/kendrick/Development/tux/tp/tuxpaint/docs/COPYING.txt
+  12. file:///home/kendrick/Development/tux/tp/tuxpaint/docs/html/OPTIONS.html
+  13. file:///home/kendrick/Development/tux/tp/tuxpaint/docs/html/README.html#save
+  14. file:///home/kendrick/Development/tux/tp/tuxpaint/docs/html/OPTIONS.html
+  15. file:///home/kendrick/Development/tux/tp/tuxpaint/docs/html/OPTIONS.html
+  16. file:///home/kendrick/Development/tux/tp/tuxpaint/docs/html/OPTIONS.html
+  17. file:///home/kendrick/Development/tux/tp/tuxpaint/docs/html/OPTIONS.html
+  18. file:///home/kendrick/Development/tux/tp/tuxpaint/docs/html/OPTIONS.html
+  19. file:///home/kendrick/Development/tux/tp/tuxpaint/docs/html/OPTIONS.html
+  20. file:///home/kendrick/Development/tux/tp/tuxpaint/docs/html/README.html#save
+  21. file:///home/kendrick/Development/tux/tp/tuxpaint/docs/AUTHORS.txt
+  22. file:///home/kendrick/Development/tux/tp/tuxpaint/docs/CHANGES.txt
+  23. file:///home/kendrick/Development/tux/tp/tuxpaint/docs/COPYING.txt
+  24. file:///home/kendrick/Development/tux/tp/tuxpaint/docs/INSTALL.txt
+  25. file:///home/kendrick/Development/tux/tp/tuxpaint/docs/html/OPTIONS.html
+  26. file:///home/kendrick/Development/tux/tp/tuxpaint/docs/PNG.txt
+  27. file:///home/kendrick/Development/tux/tp/tuxpaint/docs/TODO.txt
+  28. http://www.newbreedsoftware.com/
+  29. http://www.newbreedsoftware.com/tuxpaint/lists/

@@ -1,5 +1,5 @@
-.\" tuxpaint.1 - 2004.09.13
-.TH TUXPAINT 1 "13 Sep 2004" "0.9.14" "Tux Paint"
+.\" tuxpaint.1 - 2004.10.24
+.TH TUXPAINT 1 "24 Oct 2004" "0.9.15" "Tux Paint"
 .SH NAME
 tuxpaint -- A drawing program for young children.
 
@@ -10,7 +10,7 @@ tuxpaint -- A drawing program for young children.
 .TP 9
 .B tuxpaint
 [\-\-fullscreen]
-[\-\-800x600]
+[\-\-800x600 | \-\-1024x768 | \-\-1280x1024 | \-\-1400x1050 | \-\-1600x1200]
 [\-\-nosound]
 [\-\-noquit]
 [\-\-noprint]
@@ -102,9 +102,8 @@ configuration files. (See below.)
 Run \fITux Paint\fP in full-screen mode, or in a window (default).
 
 .TP 8
-.B \-\-800x600 \-\-640x480
-Run \fITux Paint\fP at 800x600 resolution (EXPERIMENTAL), or
-640x480 resolution (default).
+.B \-\-800x600 \-\-1024x768 \-\- 1280x1024 \-\-1400x1050 \-\-1600x1200 \-\-640x480
+Run \fITux Paint\fP at higher resolution, or 640x480 resolution (default).
 
 .TP 8
 .B \-\-nosound \-\-sound

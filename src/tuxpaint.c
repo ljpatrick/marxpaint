@@ -21,12 +21,12 @@
   along with this program; if not, write to the Free Software
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   
-  June 14, 2002 - October 23, 2004
+  June 14, 2002 - October 24, 2004
 */
 
 
 #define VER_VERSION     "0.9.15"
-#define VER_DATE        "2004-10-23"
+#define VER_DATE        "2004-10-24"
 
 
 /* #define DEBUG */
@@ -3871,7 +3871,9 @@ void show_usage(FILE * f, char * prg)
 	  "\n"
 	  "Usage: %s {--usage | --help | --version | --copying}\n"
 	  "\n"
-	  "  %s [--windowed | --fullscreen]   [--640x480 | --800x600]\n"
+	  "  %s [--windowed | --fullscreen]\n"
+	  "  %s [--640x480   | --800x600   | --1024x768 |\n"
+	  "  %s  --1280x1024 | --1400x1050 | --1600x1200]\n"
 	  "  %s [--sound | --nosound]         [--quit | --noquit]\n"
 	  "  %s [--print | --noprint]         [--complexshapes | --simpleshapes]\n"
 	  "  %s [--mixedcase | --uppercase]   [--fancycursors | --nofancycursors]\n"
@@ -3896,7 +3898,7 @@ void show_usage(FILE * f, char * prg)
 	  blank, blank, blank,
 	  blank, blank, blank,
 	  blank, blank, blank,
-	  blank,
+	  blank, blank, blank,
 #ifdef WIN32
 	  blank,
 #endif
@@ -4061,6 +4063,7 @@ void setup(int argc, char * argv[])
   SDL_Surface * tmp_btn;
   Uint8 r, g, b, a;
 #endif
+  SDL_Surface * tmp_imgcurup, * tmp_imgcurdown;
 
 
 #ifdef __BEOS__
@@ -4237,6 +4240,26 @@ void setup(int argc, char * argv[])
       else if (strcmp(argv[i], "--shortcuts") == 0)
 	{
 	  noshortcuts = 0;
+	}
+      else if (strcmp(argv[i], "--1600x1200") == 0)
+	{
+	  WINDOW_WIDTH = 1600;
+	  WINDOW_HEIGHT = 1200;
+	}
+      else if (strcmp(argv[i], "--1400x1050") == 0)
+	{
+	  WINDOW_WIDTH = 1400;
+	  WINDOW_HEIGHT = 1050;
+	}
+      else if (strcmp(argv[i], "--1280x1024") == 0)
+	{
+	  WINDOW_WIDTH = 1280;
+	  WINDOW_HEIGHT = 1024;
+	}
+      else if (strcmp(argv[i], "--1024x768") == 0)
+	{
+	  WINDOW_WIDTH = 1024;
+	  WINDOW_HEIGHT = 768;
 	}
       else if (strcmp(argv[i], "--800x600") == 0)
 	{
@@ -5233,20 +5256,19 @@ void setup(int argc, char * argv[])
   
   show_progress_bar();
 
+  tmp_imgcurup    = loadimage(DATA_PREFIX "images/ui/cursor_up_large.png");
+  tmp_imgcurdown  = loadimage(DATA_PREFIX "images/ui/cursor_down_large.png");
+  img_cursor_up   = thumbnail(tmp_imgcurup,   THUMB_W, THUMB_H, 0);
+  img_cursor_down = thumbnail(tmp_imgcurdown, THUMB_W, THUMB_H, 0);
 
-  /* FIXME: Hmm... how should we REALLY deal with this? */
-#ifdef SVGA
-  img_cursor_up = loadimage(DATA_PREFIX "images/ui/cursor_up_large.png");
-  img_cursor_down = loadimage(DATA_PREFIX "images/ui/cursor_down_large.png");
-#else
-  img_cursor_up = loadimage(DATA_PREFIX "images/ui/cursor_up.png");
-  img_cursor_down = loadimage(DATA_PREFIX "images/ui/cursor_down.png");
-#endif
-  
-  img_cursor_starter_up = loadimage(DATA_PREFIX
-		  		    "images/ui/cursor_starter_up.png");
-  img_cursor_starter_down = loadimage(DATA_PREFIX
-		  		      "images/ui/cursor_starter_down.png");
+  tmp_imgcurup    = loadimage(DATA_PREFIX "images/ui/cursor_starter_up.png");
+  tmp_imgcurdown  = loadimage(DATA_PREFIX "images/ui/cursor_starter_down.png");
+  img_cursor_starter_up   = thumbnail(tmp_imgcurup,   THUMB_W, THUMB_H, 0);
+  img_cursor_starter_down = thumbnail(tmp_imgcurdown, THUMB_W, THUMB_H, 0);
+  SDL_FreeSurface(tmp_imgcurup);
+  SDL_FreeSurface(tmp_imgcurdown);
+
+  show_progress_bar();
 
   img_scroll_up = loadimage(DATA_PREFIX "images/ui/scroll_up.png");
   img_scroll_down = loadimage(DATA_PREFIX "images/ui/scroll_down.png");
@@ -9914,12 +9936,7 @@ int do_open(int want_new_tool)
     {
       /* Check for coloring-book style 'starter' images first: */
 
-      /* FIXME: On Windows, MacOSX, BeOS, etc. -- do it their way! */
-#ifdef WIN32
       dirname[places_to_look] = strdup(DATA_PREFIX "starters");
-#else
-      dirname[places_to_look] = strdup("/usr/local/share/tuxpaint/starters");
-#endif
     }
     else
     {
@@ -10792,7 +10809,7 @@ int do_open(int want_new_tool)
 			       SDL_MapRGB(canvas->format, 255, 255, 255));
 
 		  /* FIXME: What to do when in 640x480 mode, and loading an
-		     800x600 image!? */
+		     800x600 (or larger) image!? */
 
 		  dest.x = (canvas->w - img->w) / 2;
 		  dest.y = (canvas->h - img->h) / 2;
@@ -12326,13 +12343,35 @@ void parse_options(FILE * fi)
 	    {
 	      noshortcuts = 0;
 	    }
-	  else if (strcmp(str, "800x600=yes") == 0)
+	  else if (strcmp(str, "windowsize=1600x1200") == 0)
+	    {
+	      WINDOW_WIDTH = 1600;
+	      WINDOW_HEIGHT = 1200;
+	    }
+	  else if (strcmp(str, "windowsize=1400x1050") == 0)
+	    {
+	      WINDOW_WIDTH = 1400;
+	      WINDOW_HEIGHT = 1050;
+	    }
+	  else if (strcmp(str, "windowsize=1280x1024") == 0)
+	    {
+	      WINDOW_WIDTH = 1280;
+	      WINDOW_HEIGHT = 1024;
+	    }
+	  else if (strcmp(str, "windowsize=1024x768") == 0)
+	    {
+	      WINDOW_WIDTH = 1024;
+	      WINDOW_HEIGHT = 768;
+	    }
+	  else if (strcmp(str, "800x600=yes") == 0 ||
+		   strcmp(str, "windowsize=800x600") == 0)
 	    {
 	      WINDOW_WIDTH = 800;
 	      WINDOW_HEIGHT = 600;
 	    }
 	  else if (strcmp(str, "800x600=no") == 0 ||
-		   strcmp(str, "640x480=yes") == 0)
+		   strcmp(str, "640x480=yes") == 0 ||
+		   strcmp(str, "windowsize=640x480") == 0)
 	    {
 	      WINDOW_WIDTH = 640;
 	      WINDOW_HEIGHT = 480;
