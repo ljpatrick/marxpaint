@@ -7,7 +7,7 @@ bill@newbreedsoftware.com
 http://www.newbreedsoftware.com/tuxpaint/
 
 
-2005.January.09 (0.9.15)
+2005.January.11 (0.9.15)
   * Stamp tool improvements:
     ------------------------
     * Greatly improved stamp outlining (to avoid empty rows or columns
@@ -132,6 +132,10 @@ http://www.newbreedsoftware.com/tuxpaint/
     * getpixel function now considers edges as extending to infinity
       (to improve Magic tools like 'Blur')
       Albert Cahalan <albert@users.sf.net>
+
+    * getpixel and putpixel functions split into four, one for each
+      color depth (1, 2, 3 or 4 bytes per pixel), to reduce BPP tests
+      when reading or drawing pixels.
 
     * drawtext_callback() prototype forces useless arg.; voided it
       Albert Cahalan <albert@users.sf.net>

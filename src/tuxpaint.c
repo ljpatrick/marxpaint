@@ -22,12 +22,12 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
   
-  June 14, 2002 - January 9, 2005
+  June 14, 2002 - January 10, 2005
 */
 
 
 #define VER_VERSION     "0.9.15"
-#define VER_DATE        "2005-01-09"
+#define VER_DATE        "2005-01-10"
 
 
 //#define VIDEO_BPP 15 // saves memory
@@ -2126,8 +2126,21 @@ static void loadarbitrary(SDL_Surface * surfs[], SDL_Surface * altsurfs[],
 		   const char * const dir, int fatal, int maxw, int maxh);
 #endif
 
-static Uint32 getpixel(SDL_Surface * surface, int x, int y);
-static void putpixel(SDL_Surface * surface, int x, int y, Uint32 pixel);
+static void putpixel8(SDL_Surface * surface, int x, int y, Uint32 pixel);
+static void putpixel16(SDL_Surface * surface, int x, int y, Uint32 pixel);
+static void putpixel24(SDL_Surface * surface, int x, int y, Uint32 pixel);
+static void putpixel32(SDL_Surface * surface, int x, int y, Uint32 pixel);
+
+static void (*putpixels[])(SDL_Surface *, int, int, Uint32) = {
+  putpixel8, putpixel8, putpixel16, putpixel24, putpixel32 };
+
+static Uint32 getpixel8(SDL_Surface * surface, int x, int y);
+static Uint32 getpixel16(SDL_Surface * surface, int x, int y);
+static Uint32 getpixel24(SDL_Surface * surface, int x, int y);
+static Uint32 getpixel32(SDL_Surface * surface, int x, int y);
+
+static Uint32 (*getpixels[])(SDL_Surface *, int, int) = {
+  getpixel8, getpixel8, getpixel16, getpixel24, getpixel32 };
 
 static void do_undo(void);
 static void do_redo(void);
@@ -3500,7 +3513,7 @@ static void mainloop(void)
 						   color_hexes[cur_color][0],
 						   color_hexes[cur_color][1],
 						   color_hexes[cur_color][2]),
-					getpixel(canvas, old_x, old_y));
+					getpixels[canvas->format->BytesPerPixel](canvas, old_x, old_y));
 
 			  draw_tux_text(TUX_GREAT, magic_tips[MAGIC_FILL], 1);
 			}
@@ -4577,6 +4590,8 @@ static double tint_part_1(multichan *work, SDL_Surface *in)
   int xx,yy;
   double u_total = 0;
   double v_total = 0;
+  Uint32 (*getpixel)(SDL_Surface *, int, int) = getpixels[in->format->BytesPerPixel];
+  
 
   SDL_LockSurface(in);
   for (yy = 0; yy < in->h; yy++)
@@ -4631,6 +4646,7 @@ static void change_colors(SDL_Surface *out, multichan *work, double hue_range, m
   fill_multichan(&dst,NULL,NULL);
   double satratio = dst.sat / key_color.sat;
   double slope = (dst.L-key_color.L)/dst.sat;
+  void (*putpixel)(SDL_Surface *, int, int, Uint32) = putpixels[out->format->BytesPerPixel];
 
   SDL_LockSurface(out);
   for (yy = 0; yy < out->h; yy++)
@@ -4770,6 +4786,8 @@ hue_range_retry:;
 static void vector_tint_surface(SDL_Surface * out, SDL_Surface * in)
 {
   int xx,yy;
+  Uint32 (*getpixel)(SDL_Surface *, int, int) = getpixels[in->format->BytesPerPixel];
+  void (*putpixel)(SDL_Surface *, int, int, Uint32) = putpixels[out->format->BytesPerPixel];
 
   double r = sRGB_to_linear_table[color_hexes[cur_color][0]];
   double g = sRGB_to_linear_table[color_hexes[cur_color][1]];
@@ -4848,6 +4866,8 @@ static void stamp_draw(int x, int y)
   Uint32 amask;
   Uint8 r, g, b, a;
   int xx, yy, dont_free_tmp_surf, base_x, base_y;
+  Uint32 (*getpixel)(SDL_Surface *, int, int);
+  void (*putpixel)(SDL_Surface *, int, int, Uint32);
   
 
   /* Use a pre-mirrored version, if there is one? */
@@ -4873,6 +4893,8 @@ static void stamp_draw(int x, int y)
 
       surf_ptr = img_stamps[cur_stamp];
     }
+  
+  getpixel = getpixels[surf_ptr->format->BytesPerPixel];
 
 
   /* Create a temp surface to play with: */
@@ -4913,10 +4935,15 @@ static void stamp_draw(int x, int y)
       dont_free_tmp_surf = 1;
     }
 
+  if (tmp_surf != NULL)
+    putpixel = putpixels[tmp_surf->format->BytesPerPixel];
+  else
+    putpixel = NULL;
+
 
   /* Alter the stamp's color, if needed: */
 
-  if (stamp_colorable(cur_stamp))
+  if (stamp_colorable(cur_stamp) && tmp_surf != NULL)
     {
       /* Render the stamp in the chosen color: */
 
@@ -5281,6 +5308,8 @@ static void blit_magic(int x, int y, int button_down)
   SDL_Surface * last;
   SDL_Rect src, dest;
   int undo_ctr;
+  Uint32 (*getpixel_canvas)(SDL_Surface *, int, int) = getpixels[canvas->format->BytesPerPixel];
+  void (*putpixel)(SDL_Surface *, int, int, Uint32) = putpixels[canvas->format->BytesPerPixel];
 
 
   /* In case we need to use the current canvas (just saved to undo buf)... */
@@ -5291,6 +5320,7 @@ static void blit_magic(int x, int y, int button_down)
     undo_ctr = NUM_UNDO_BUFS - 1;
 
   last = undo_bufs[undo_ctr];
+  Uint32 (*getpixel_last)(SDL_Surface *, int, int) = getpixels[last->format->BytesPerPixel];
 
 
   brush_counter++;
@@ -5316,7 +5346,7 @@ static void blit_magic(int x, int y, int button_down)
 	        continue;
 	      // it is on the circle, so grab it
 
-	      SDL_GetRGB(getpixel(canvas, x+ix-16, y+iy-16), last->format, &r, &g, &b);
+	      SDL_GetRGB(getpixel_canvas(canvas, x+ix-16, y+iy-16), last->format, &r, &g, &b);
 	      state[ix][iy][0] = sRGB_to_linear_table[r];
 	      state[ix][iy][1] = sRGB_to_linear_table[g];
 	      state[ix][iy][2] = sRGB_to_linear_table[b];
@@ -5381,7 +5411,7 @@ static void blit_magic(int x, int y, int button_down)
 		  while(i--)
 		    {
 		      Uint32 p_tmp;
-		      p_tmp = getpixel(last, xx+(i>>2), yy+(i&3));
+		      p_tmp = getpixel_last(last, xx+(i>>2), yy+(i&3));
 		      p_or |= p_tmp;
 		      p_and &= p_tmp;
 		      pix[i] = p_tmp;
@@ -5525,7 +5555,7 @@ static void blit_magic(int x, int y, int button_down)
 	        continue;
 	      // it is on the circle, so grab it
 
-	      SDL_GetRGB(getpixel(canvas, x+ix-16, y+iy-16), last->format, &r, &g, &b);
+	      SDL_GetRGB(getpixel_canvas(canvas, x+ix-16, y+iy-16), last->format, &r, &g, &b);
 	      state[ix][iy][0] = rate*state[ix][iy][0] + (1.0-rate)*sRGB_to_linear_table[r];
 	      state[ix][iy][1] = rate*state[ix][iy][1] + (1.0-rate)*sRGB_to_linear_table[g];
 	      state[ix][iy][2] = rate*state[ix][iy][2] + (1.0-rate)*sRGB_to_linear_table[b];
@@ -5544,7 +5574,7 @@ static void blit_magic(int x, int y, int button_down)
 	    {
 	      for (xx = x - 16; xx < x + 16; xx++)
 		{
-		  SDL_GetRGB(getpixel(last, xx, yy), last->format,
+		  SDL_GetRGB(getpixel_last(last, xx, yy), last->format,
 			     &r, &g, &b);
 	
 		  r = 0xFF - r;
@@ -5569,7 +5599,7 @@ static void blit_magic(int x, int y, int button_down)
 		{
 		  /* Get original color: */
 		
-		  SDL_GetRGB(getpixel(last, xx, yy), last->format,
+		  SDL_GetRGB(getpixel_last(last, xx, yy), last->format,
 			     &r, &g, &b);
 
 		  if (cur_magic == MAGIC_FADE)
@@ -5608,7 +5638,7 @@ static void blit_magic(int x, int y, int button_down)
 		{
 		  /* Get original pixel: */
 		
-		  SDL_GetRGB(getpixel(last, xx, yy), last->format,
+		  SDL_GetRGB(getpixel_last(last, xx, yy), last->format,
 			     &r, &g, &b);
   
                   old = sRGB_to_linear_table[r] * 0.2126 +
@@ -5639,7 +5669,7 @@ static void blit_magic(int x, int y, int button_down)
 		{
 		  /* Get original color: */
 		
-		  SDL_GetRGB(getpixel(last, xx, yy), last->format,
+		  SDL_GetRGB(getpixel_last(last, xx, yy), last->format,
 			     &r, &g, &b);
 
 		  rgbtohsv(r, g, b, &hue, &sat, &val);
@@ -5721,7 +5751,7 @@ static void blit_magic(int x, int y, int button_down)
 		  dest.w = (rand() % 4) + 2;
 		  dest.h = (rand() % 4) + 2;
 	
-		  colr = getpixel(last, clamp(0, xx, canvas->w-1),
+		  colr = getpixel_last(last, clamp(0, xx, canvas->w-1),
 				  clamp(0, yy, canvas->h-1));
 		  SDL_FillRect(canvas, &dest, colr);
 		}
@@ -5789,11 +5819,14 @@ static void blit_magic(int x, int y, int button_down)
               double tmp_red   = sRGB_to_linear_table[color_hexes[cur_color][0]]*2.0 + (rand()/(double)RAND_MAX);
               double tmp_green = sRGB_to_linear_table[color_hexes[cur_color][1]]*2.0 + (rand()/(double)RAND_MAX);
               double tmp_blue  = sRGB_to_linear_table[color_hexes[cur_color][2]]*2.0 + sRGB_to_linear_table[17];
+
+	      Uint32 (*getpixel_grass)(SDL_Surface *, int, int) = getpixels[img_grass->format->BytesPerPixel];
+	      
 	      for (yy = 0; yy < ah; yy++)
 	        {
 	          for (xx = 0; xx < 64; xx++)
 		    {
-		      SDL_GetRGBA(getpixel(img_grass, xx+src.x, yy+src.y), img_grass->format,
+		      SDL_GetRGBA(getpixel_grass(img_grass, xx+src.x, yy+src.y), img_grass->format,
 			         &r, &g, &b, &a);
 
                       double rd = sRGB_to_linear_table[r]*8.0 + tmp_red;
@@ -5803,7 +5836,7 @@ static void blit_magic(int x, int y, int button_down)
                       double bd = sRGB_to_linear_table[b]*8.0 + tmp_blue;
                       bd = bd * (a/255.0) / 11.0;
 
-		      SDL_GetRGB(getpixel(canvas, xx+dest.x, yy+dest.y), canvas->format,
+		      SDL_GetRGB(getpixel_canvas(canvas, xx+dest.x, yy+dest.y), canvas->format,
 			         &r, &g, &b);
 	
 		      r = linear_to_sRGB(sRGB_to_linear_table[r]*(1.0-a/255.0) + rd);
@@ -7417,20 +7450,25 @@ static void setup(int argc, char * argv[])
   SDL_LockSurface(tmp_btn_down);
   SDL_LockSurface(tmp_btn_up);
 
+  Uint32 (*getpixel_tmp_btn_up)(SDL_Surface *, int, int) = getpixels[tmp_btn_up->format->BytesPerPixel];
+  Uint32 (*getpixel_tmp_btn_down)(SDL_Surface *, int, int) = getpixels[tmp_btn_down->format->BytesPerPixel];
+  Uint32 (*getpixel_img2)(SDL_Surface *, int, int) = getpixels[img2->format->BytesPerPixel];
+  
+
   for (y = 0; y < tmp_btn_up->h /* 48 */; y++)
     {
       for (x = 0; x < tmp_btn_up->w /* (WINDOW_WIDTH - 96) / NUM_COLORS */; x++)
 	{
-	  SDL_GetRGB(getpixel(tmp_btn_up, x, y), tmp_btn_up->format, &r, &g, &b);
+	  SDL_GetRGB(getpixel_tmp_btn_up(tmp_btn_up, x, y), tmp_btn_up->format, &r, &g, &b);
 	  double ru = sRGB_to_linear_table[r];
 	  double gu = sRGB_to_linear_table[g];
 	  double bu = sRGB_to_linear_table[b];
-	  SDL_GetRGB(getpixel(tmp_btn_down, x, y), tmp_btn_down->format, &r, &g, &b);
+	  SDL_GetRGB(getpixel_tmp_btn_down(tmp_btn_down, x, y), tmp_btn_down->format, &r, &g, &b);
 	  double rd = sRGB_to_linear_table[r];
 	  double gd = sRGB_to_linear_table[g];
 	  double bd = sRGB_to_linear_table[b];
 	  Uint8 a;
-	  SDL_GetRGBA(getpixel(img2, x, y), img2->format, &r, &g, &b, &a);
+	  SDL_GetRGBA(getpixel_img2(img2, x, y), img2->format, &r, &g, &b, &a);
 	  double aa = a/255.0;
 
 	  for (i = 0; i < NUM_COLORS; i++)
@@ -7438,12 +7476,14 @@ static void setup(int argc, char * argv[])
 	      double rh = sRGB_to_linear_table[color_hexes[i][0]];
 	      double gh = sRGB_to_linear_table[color_hexes[i][1]];
 	      double bh = sRGB_to_linear_table[color_hexes[i][2]];
-	      putpixel(img_color_btns[i], x, y,
+	      putpixels[img_color_btns[i]->format->BytesPerPixel]
+		       (img_color_btns[i], x, y,
 		       SDL_MapRGB(img_color_btns[i]->format,
 				  linear_to_sRGB(rh*aa + ru*(1.0-aa)),
 				  linear_to_sRGB(gh*aa + gu*(1.0-aa)),
 				  linear_to_sRGB(bh*aa + bu*(1.0-aa))));
-	      putpixel(img_color_btns[i+NUM_COLORS], x, y,
+	      putpixels[img_color_btns[i]->format->BytesPerPixel]
+	               (img_color_btns[i+NUM_COLORS], x, y,
 		       SDL_MapRGB(img_color_btns[i+NUM_COLORS]->format,
 				  linear_to_sRGB(rh*aa + rd*(1.0-aa)),
 				  linear_to_sRGB(gh*aa + gd*(1.0-aa)),
@@ -8952,6 +8992,7 @@ static SDL_Surface * thumbnail(SDL_Surface * src, int max_x, int max_y,
   Uint8 r, g, b, a;
   float xscale, yscale;
   int tmp;
+  Uint32 (*getpixel)(SDL_Surface *, int, int) = getpixels[src->format->BytesPerPixel];
 
 
   /* Determine scale and centering offsets: */
@@ -9010,6 +9051,7 @@ static SDL_Surface * thumbnail(SDL_Surface * src, int max_x, int max_y,
       exit(1);
     }
 
+  void (*putpixel)(SDL_Surface *, int, int, Uint32) = putpixels[s->format->BytesPerPixel];
 
   /* Create thumbnail itself: */
 
@@ -9077,13 +9119,9 @@ static SDL_Surface * thumbnail(SDL_Surface * src, int max_x, int max_y,
 
 
 /* Get a pixel: */
-static Uint32 getpixel(SDL_Surface * surface, int x, int y)
+static Uint32 getpixel8(SDL_Surface * surface, int x, int y)
 {
   Uint8 * p;
-  Uint32 pixel;
-
-  // Always 4, except 3 when loading a saved image.
-  int BytesPerPixel = surface->format->BytesPerPixel;
 
   /* get the X/Y values within the bounds of this surface */
   if (unlikely( (unsigned)x > (unsigned)surface->w - 1u ))
@@ -9096,40 +9134,108 @@ static Uint32 getpixel(SDL_Surface * surface, int x, int y)
 
   p = (Uint8 *) (((Uint8 *)surface->pixels) +  /* Start at top of RAM */
     (y * surface->pitch) +  /* Go down Y lines */
-    (x * BytesPerPixel));             /* Go in X pixels */
+    x);             /* Go in X pixels */
 
 
   /* Return the correctly-sized piece of data containing the
    * pixel's value (an 8-bit palette value, or a 16-, 24- or 32-bit
    * RGB value) */
 
-  if (likely(BytesPerPixel == 4))
-    return *(Uint32 *)p;  // 32-bit display
+  return(*p);
+}
 
-  if (BytesPerPixel == 1)         /* 8-bit display */
-    pixel = *p;
-  else if (BytesPerPixel == 2)    /* 16-bit display */
-    pixel = *(Uint16 *)p;
-  else /* if (BytesPerPixel == 3) */   /* 24-bit display */
-    {
-      /* Depending on the byte-order, it could be stored RGB or BGR! */
 
-      if (SDL_BYTEORDER == SDL_BIG_ENDIAN)
-        pixel = p[0] << 16 | p[1] << 8 | p[2];
-      else
-        pixel = p[0] | p[1] << 8 | p[2] << 16;
-    }
+/* Get a pixel: */
+static Uint32 getpixel16(SDL_Surface * surface, int x, int y)
+{
+  Uint8 * p;
+
+  /* get the X/Y values within the bounds of this surface */
+  if (unlikely( (unsigned)x > (unsigned)surface->w - 1u ))
+    x = (x<0) ? 0 : surface->w - 1;
+  if (unlikely( (unsigned)y > (unsigned)surface->h - 1u ))
+    y = (y<0) ? 0 : surface->h - 1;
+
+  /* Set a pointer to the exact location in memory of the pixel
+     in question: */
+
+  p = (Uint8 *) (((Uint8 *)surface->pixels) +  /* Start at top of RAM */
+    (y * surface->pitch) +  /* Go down Y lines */
+    (x * 2));             /* Go in X pixels */
+
+
+  /* Return the correctly-sized piece of data containing the
+   * pixel's value (an 8-bit palette value, or a 16-, 24- or 32-bit
+   * RGB value) */
+
+  return(*(Uint16 *)p);
+}
+
+/* Get a pixel: */
+static Uint32 getpixel24(SDL_Surface * surface, int x, int y)
+{
+  Uint8 * p;
+  Uint32 pixel;
+
+  /* get the X/Y values within the bounds of this surface */
+  if (unlikely( (unsigned)x > (unsigned)surface->w - 1u ))
+    x = (x<0) ? 0 : surface->w - 1;
+  if (unlikely( (unsigned)y > (unsigned)surface->h - 1u ))
+    y = (y<0) ? 0 : surface->h - 1;
+
+  /* Set a pointer to the exact location in memory of the pixel
+     in question: */
+
+  p = (Uint8 *) (((Uint8 *)surface->pixels) +  /* Start at top of RAM */
+    (y * surface->pitch) +  /* Go down Y lines */
+    (x * 3));             /* Go in X pixels */
+
+
+  /* Return the correctly-sized piece of data containing the
+   * pixel's value (an 8-bit palette value, or a 16-, 24- or 32-bit
+   * RGB value) */
+
+  /* Depending on the byte-order, it could be stored RGB or BGR! */
+
+  if (SDL_BYTEORDER == SDL_BIG_ENDIAN)
+    pixel = p[0] << 16 | p[1] << 8 | p[2];
+  else
+    pixel = p[0] | p[1] << 8 | p[2] << 16;
 
   return pixel;
 }
 
-
-/* Draw a single pixel into the surface: */
-static void putpixel(SDL_Surface * surface, int x, int y, Uint32 pixel)
+/* Get a pixel: */
+static Uint32 getpixel32(SDL_Surface * surface, int x, int y)
 {
   Uint8 * p;
-  // Always 4, except 3 when loading a saved image.
-  int BytesPerPixel = surface->format->BytesPerPixel;
+
+  /* get the X/Y values within the bounds of this surface */
+  if (unlikely( (unsigned)x > (unsigned)surface->w - 1u ))
+    x = (x<0) ? 0 : surface->w - 1;
+  if (unlikely( (unsigned)y > (unsigned)surface->h - 1u ))
+    y = (y<0) ? 0 : surface->h - 1;
+
+  /* Set a pointer to the exact location in memory of the pixel
+     in question: */
+
+  p = (Uint8 *) (((Uint8 *)surface->pixels) +  /* Start at top of RAM */
+    (y * surface->pitch) +  /* Go down Y lines */
+    (x * 4));             /* Go in X pixels */
+
+
+  /* Return the correctly-sized piece of data containing the
+   * pixel's value (an 8-bit palette value, or a 16-, 24- or 32-bit
+   * RGB value) */
+
+  return *(Uint32 *)p;  // 32-bit display
+}
+
+
+/* Draw a single pixel into the surface: */
+static void putpixel8(SDL_Surface * surface, int x, int y, Uint32 pixel)
+{
+  Uint8 * p;
 
   /* Assuming the X/Y values are within the bounds of this surface... */
   if (likely( likely((unsigned)x<(unsigned)surface->w) && likely((unsigned)y<(unsigned)surface->h) ))
@@ -9137,33 +9243,88 @@ static void putpixel(SDL_Surface * surface, int x, int y, Uint32 pixel)
       // Set a pointer to the exact location in memory of the pixel
       p = (Uint8 *) (((Uint8 *)surface->pixels) + /* Start: beginning of RAM */
 		     (y * surface->pitch) +  /* Go down Y lines */
-                     (x * BytesPerPixel));             /* Go in X pixels */
+                     x);             /* Go in X pixels */
 
 
       /* Set the (correctly-sized) piece of data in the surface's RAM
        *          to the pixel value sent in: */
 
-      if (likely(BytesPerPixel == 4))
-        *(Uint32 *)p = pixel;  // 32-bit display
-      else if (BytesPerPixel == 1)
-        *p = pixel;
-      else if (BytesPerPixel == 2)
-        *(Uint16 *)p = pixel;
-      else if (BytesPerPixel == 3)
+      *p = pixel;
+    }
+}
+
+/* Draw a single pixel into the surface: */
+static void putpixel16(SDL_Surface * surface, int x, int y, Uint32 pixel)
+{
+  Uint8 * p;
+
+  /* Assuming the X/Y values are within the bounds of this surface... */
+  if (likely( likely((unsigned)x<(unsigned)surface->w) && likely((unsigned)y<(unsigned)surface->h) ))
+    {
+      // Set a pointer to the exact location in memory of the pixel
+      p = (Uint8 *) (((Uint8 *)surface->pixels) + /* Start: beginning of RAM */
+		     (y * surface->pitch) +  /* Go down Y lines */
+                     (x * 2));             /* Go in X pixels */
+
+
+      /* Set the (correctly-sized) piece of data in the surface's RAM
+       *          to the pixel value sent in: */
+
+      *(Uint16 *)p = pixel;
+    }
+}
+
+/* Draw a single pixel into the surface: */
+static void putpixel24(SDL_Surface * surface, int x, int y, Uint32 pixel)
+{
+  Uint8 * p;
+
+  /* Assuming the X/Y values are within the bounds of this surface... */
+  if (likely( likely((unsigned)x<(unsigned)surface->w) && likely((unsigned)y<(unsigned)surface->h) ))
+    {
+      // Set a pointer to the exact location in memory of the pixel
+      p = (Uint8 *) (((Uint8 *)surface->pixels) + /* Start: beginning of RAM */
+		     (y * surface->pitch) +  /* Go down Y lines */
+                     (x * 3));             /* Go in X pixels */
+
+
+      /* Set the (correctly-sized) piece of data in the surface's RAM
+       *          to the pixel value sent in: */
+
+      if (SDL_BYTEORDER == SDL_BIG_ENDIAN)
         {
-          if (SDL_BYTEORDER == SDL_BIG_ENDIAN)
-            {
-              p[0] = (pixel >> 16) & 0xff;
-              p[1] = (pixel >> 8) & 0xff;
-              p[2] = pixel & 0xff;
-            }
-          else
-            {
-              p[0] = pixel & 0xff;
-              p[1] = (pixel >> 8) & 0xff;
-              p[2] = (pixel >> 16) & 0xff;
-            }
+          p[0] = (pixel >> 16) & 0xff;
+          p[1] = (pixel >> 8) & 0xff;
+          p[2] = pixel & 0xff;
         }
+      else
+        {
+          p[0] = pixel & 0xff;
+          p[1] = (pixel >> 8) & 0xff;
+          p[2] = (pixel >> 16) & 0xff;
+        }
+      
+    }
+}
+
+/* Draw a single pixel into the surface: */
+static void putpixel32(SDL_Surface * surface, int x, int y, Uint32 pixel)
+{
+  Uint8 * p;
+
+  /* Assuming the X/Y values are within the bounds of this surface... */
+  if (likely( likely((unsigned)x<(unsigned)surface->w) && likely((unsigned)y<(unsigned)surface->h) ))
+    {
+      // Set a pointer to the exact location in memory of the pixel
+      p = (Uint8 *) (((Uint8 *)surface->pixels) + /* Start: beginning of RAM */
+		     (y * surface->pitch) +  /* Go down Y lines */
+                     (x * 4));             /* Go in X pixels */
+
+
+      /* Set the (correctly-sized) piece of data in the surface's RAM
+       *          to the pixel value sent in: */
+
+      *(Uint32 *)p = pixel;  // 32-bit display
     }
 }
 
@@ -9327,6 +9488,8 @@ static void render_brush(void)
   Uint32 amask;
   int x, y;
   Uint8 r, g, b, a;
+  Uint32 (*getpixel_brush)(SDL_Surface *, int, int) = getpixels[img_brushes[cur_brush]->format->BytesPerPixel];
+  void (*putpixel_brush)(SDL_Surface *, int, int, Uint32) = putpixels[img_brushes[cur_brush]->format->BytesPerPixel];
 
 
   /* Kludge; not sure why cur_brush would become greater! */
@@ -9379,11 +9542,11 @@ static void render_brush(void)
     {
       for (x = 0; x < img_brushes[cur_brush]->w; x++)
 	{
-	  SDL_GetRGBA(getpixel(img_brushes[cur_brush], x, y),
+	  SDL_GetRGBA(getpixel_brush(img_brushes[cur_brush], x, y),
 		      img_brushes[cur_brush]->format,
 		      &r, &g, &b, &a);
 	
-	  putpixel(img_cur_brush, x, y,
+	  putpixel_brush(img_cur_brush, x, y,
 		   SDL_MapRGBA(img_cur_brush->format,
 			       color_hexes[cur_color][0],
 			       color_hexes[cur_color][1],
@@ -10454,6 +10617,10 @@ static int SDLCALL NondefectiveBlit(SDL_Surface *src, SDL_Rect *srcrect, SDL_Sur
   int srcy = 0;
   int srcw = src->w;
   int srch = src->h;
+  Uint32 (*getpixel)(SDL_Surface *, int, int) = getpixels[src->format->BytesPerPixel];
+  void (*putpixel)(SDL_Surface *, int, int, Uint32) = putpixels[dst->format->BytesPerPixel];
+
+  
   if(srcrect)
     {
       srcx = srcrect->x;
@@ -12043,8 +12210,9 @@ static int do_png_save(FILE * fi, const char * const fname, SDL_Surface * surf)
   unsigned char ** png_rows;
   Uint8 r, g, b;
   int x, y, count;
-  
-  
+  Uint32 (*getpixel)(SDL_Surface *, int, int) = getpixels[surf->format->BytesPerPixel];
+ 
+
   png_ptr = png_create_write_struct(PNG_LIBPNG_VER_STRING, NULL, NULL, NULL);
   if (png_ptr == NULL)
     {
@@ -12185,6 +12353,7 @@ static int do_ps_save(FILE * fi, const char *restrict  const fname, SDL_Surface 
   unsigned char *restrict const ps_row = malloc(surf->w * 3);
   int x, y;
   char buf[256];
+  Uint32 (*getpixel)(SDL_Surface *, int, int) = getpixels[surf->format->BytesPerPixel];
   
   fprintf(fi, "%%!PS-Adobe-3.0 EPSF-3.0\n");
   fprintf(fi, "%%%%Title: (TuxPaint)\n");
@@ -13462,6 +13631,7 @@ static void fill_scan(int scan, edge * active)
   edge * p1, * p2;
   int i;
   Uint32 color;
+  void (*putpixel)(SDL_Surface *, int, int, Uint32) = putpixels[canvas->format->BytesPerPixel];
 
 
   debug("fill_scan()");
@@ -13864,6 +14034,7 @@ static void update_stamp_xor(void)
   // start by scaling
   src = thumbnail(src, CUR_STAMP_W, CUR_STAMP_H, 0);
 
+  Uint32 (*getpixel)(SDL_Surface *, int, int) = getpixels[src->format->BytesPerPixel];
   unsigned char *alphabits = calloc(src->w+4, src->h+4);
 
   SDL_LockSurface(src);
@@ -14747,6 +14918,8 @@ static void do_flood_fill(int x, int y, Uint32 cur_colr, Uint32 old_colr)
 {
   int fillL, fillR, i, in_line;
   static unsigned char prog_anim;
+  Uint32 (*getpixel)(SDL_Surface *, int, int) = getpixels[canvas->format->BytesPerPixel];
+  void (*putpixel)(SDL_Surface *, int, int, Uint32) = putpixels[canvas->format->BytesPerPixel];
 
 
   if (cur_colr == old_colr ||
