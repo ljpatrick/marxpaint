@@ -52,7 +52,7 @@ const int color_hexes[NUM_COLORS][3] = {
   { 33, 148,  33}, /* Green */
   {138, 168, 205}, /* Sky blue */
   {  0,   0, 255}, /* Blue */
-  { 96,   0, 128}, /* Purple */
+  {128,   0, 128}, /* Purple */
   {255,   0, 255}, /* Magenta */
   {128,  96,   0}, /* Brown */
   {226, 189, 166}, /* Tan */

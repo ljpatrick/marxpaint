@@ -498,6 +498,7 @@ static int lang_use_right_to_left[] = {
 
 typedef struct info_type {
   double ratio;
+  unsigned tinter;
   int colorable;
   int tintable;
   int mirrorable;
@@ -3009,57 +3010,417 @@ static void blit_brush(int x, int y)
 }
 
 
+//////////////////////////////////////////////////////////////////////////
+// stamp tinter
+
+#define TINTER_ANYHUE 0 // like normal, but remaps all hues in the stamp
+#define TINTER_NARROW 1 // like normal, but narrow hue angle
+#define TINTER_NORMAL 2 // normal
+#define TINTER_VECTOR 3 // map black->white to black->destination
+
 typedef struct multichan {
   double r,g,b; // linear
   double L,u,v; // L,a,b would be better -- 2-way formula unknown
   double hue,sat;
-  unsigned char or,og,ob,oa; // old 8-bit sRGB values
-  unsigned char nr,ng,nb,na; // new 8-bit sRGB values
+  unsigned char or,og,ob; // old 8-bit sRGB values
+  unsigned char nr,ng,nb; // new 8-bit sRGB values
+  unsigned char alpha;    // 8-bit alpha value
 } multichan;
+
+#define X0 ((double)0.9505)
+#define Y0 ((double)1.0000)
+#define Z0 ((double)1.0890)
+#define u0_prime ( (4.0 * X0) / (X0 + 15.0*Y0 + 3.0*Z0) )
+#define v0_prime ( (9.0 * Y0) / (X0 + 15.0*Y0 + 3.0*Z0) )
+
+static void fill_multichan(multichan *mc)
+{
+  double tmp,X,Y,Z;
+  double u_prime, v_prime; /* temp, part of official formula */
+  double Y_norm, fract; /* severely temp */
+
+  // from 8-bit sRGB to linear RGB
+  tmp = mc->or / 255.0;
+  mc->r = (tmp<=0.03928) ? tmp/12.92 : pow((tmp+0.055)/1.055,2.4);
+  tmp = mc->og / 255.0;
+  mc->g = (tmp<=0.03928) ? tmp/12.92 : pow((tmp+0.055)/1.055,2.4);
+  tmp = mc->ob / 255.0;
+  mc->b = (tmp<=0.03928) ? tmp/12.92 : pow((tmp+0.055)/1.055,2.4);
+
+  // coordinate change, RGB --> XYZ
+  X = 0.4124*mc->r + 0.3576*mc->g + 0.1805*mc->b;
+  Y = 0.2126*mc->r + 0.7152*mc->g + 0.0722*mc->b;
+  Z = 0.0193*mc->r + 0.1192*mc->g + 0.9505*mc->b;
+  
+  // XYZ --> Luv
+  Y_norm = Y/Y0;
+  fract = 1.0 / (X + 15.0*Y + 3.0*Z);
+  u_prime = 4.0*X*fract;
+  v_prime = 9.0*Y*fract;
+  mc->L = (Y_norm>0.008856) ? 116.0*pow(Y_norm,1.0/3.0)-16.0 : 903.3*Y_norm;
+  mc->u = 13.0*mc->L*(u_prime - u0_prime);
+  mc->v = 13.0*mc->L*(v_prime - v0_prime);
+
+  mc->sat = sqrt(mc->u*mc->u + mc->v*mc->v);
+  mc->hue = atan2(mc->u,mc->v);
+}
 
 static void tint_surface(SDL_Surface * tmp_surf, SDL_Surface * surf_ptr)
 {
+  unsigned i;
+  int xx, yy;
 
-  float col_hue, col_sat, col_val,
-    stamp_hue, stamp_sat, stamp_val;
+  unsigned width = surf_ptr->w;
+  unsigned height = surf_ptr->h;
 
-  Uint8 r, g, b, a;
-    int xx, yy;
+  multichan *work = malloc(sizeof *work * width * height);
 	  
-      rgbtohsv(color_hexes[cur_color][0],
-	       color_hexes[cur_color][1],
-	       color_hexes[cur_color][2],
-	       &col_hue, &col_sat, &col_val);
-        
+  // put pixels into a more tolerable form
+  SDL_LockSurface(surf_ptr);
+  for (yy = 0; yy < surf_ptr->h; yy++)
+    {
+      for (xx = 0; xx < surf_ptr->w; xx++)
+        {
+          multichan *mc = work+yy*width+xx;
+          SDL_GetRGBA(getpixel(surf_ptr, xx, yy),
+                      surf_ptr->format,
+                      &mc->or, &mc->og, &mc->ob, &mc->alpha);
+        }
+    }
+  SDL_UnlockSurface(surf_ptr);
 
-      /* Render the stamp: */
+  i = width * height;
+  while (i--)
+    {
+      multichan *mc = work+i;
+      fill_multichan(mc);
+    }
 
-      SDL_LockSurface(surf_ptr);
-      SDL_LockSurface(tmp_surf);
+  // initial hue guess
+  double alpha_total = 0;
+  double u_total = 0;
+  double v_total = 0;
+  i = width * height;
+  while (i--)
+    {
+      multichan *mc = work+i;
+      alpha_total += mc->alpha;
+      // more weight to opaque high-saturation pixels
+      u_total += mc->alpha * mc->u * mc->sat;
+      v_total += mc->alpha * mc->v * mc->sat;
+    }
+  double initial_hue = atan2(u_total,v_total);
 
-      for (yy = 0; yy < surf_ptr->h; yy++)
-	{
-	  for (xx = 0; xx < surf_ptr->w; xx++)
-	    {
-	      SDL_GetRGBA(getpixel(surf_ptr, xx, yy),
-			  surf_ptr->format,
-			  &r, &g, &b, &a);
-	
-	      rgbtohsv(r, g, b, &stamp_hue, &stamp_sat, &stamp_val);	
-     
-	      if ( stamp_tintgray(cur_stamp) || stamp_sat > 0.25 )
-		hsvtorgb(col_hue, col_sat, stamp_val, &r, &g, &b);
-	      //	else
-	      //	  hsvtorgb(col_hue, col_sat, stamp_val, &r, &g, &b);
-	
-	      putpixel(tmp_surf, xx, yy,
-		       SDL_MapRGBA(tmp_surf->format, r, g, b, a));
-	    }
+  // find the most saturated pixel near the initial hue guess
+  multichan *key_color_ptr = NULL;
+  double hue_range;
+  switch (inf_stamps[cur_stamp]->tinter)
+    {
+  default:
+  case TINTER_NORMAL:
+      hue_range = 18*M_PI/180.0; // plus or minus 18 degrees search, 27 replace
+      break;
+  case TINTER_NARROW:
+      hue_range = 6*M_PI/180.0;  // plus or minus 6 degrees search, 9 replace
+      break;
+  case TINTER_ANYHUE:
+      hue_range = M_PI;          // plus or minus 180 degrees
+      break;
+    }
+hue_range_retry:;
+  double max_sat = 0;
+  double lower_hue_1 = initial_hue - hue_range;
+  double upper_hue_1 = initial_hue + hue_range;
+  double lower_hue_2;
+  double upper_hue_2;
+  if (lower_hue_1 < -M_PI)
+    {
+      lower_hue_2 = lower_hue_1 + 2 * M_PI;
+      upper_hue_2 = upper_hue_1 + 2 * M_PI;
+    }
+  else
+    {
+      lower_hue_2 = lower_hue_1 - 2 * M_PI;
+      upper_hue_2 = upper_hue_1 - 2 * M_PI;
+    }
+  i = width * height;
+  while (i--)
+    {
+      multichan *mc = work+i;
+      // if not in the first range, and not in the second range, skip this one
+      if( (mc->hue<lower_hue_1 || mc->hue>upper_hue_1) && (mc->hue<lower_hue_2 || mc->hue>upper_hue_2) )
+	continue;
+      if(mc->sat > max_sat) {
+	max_sat = mc->sat;
+	key_color_ptr = mc;
+      }
+    }
+  if (!key_color_ptr)
+    {
+      hue_range *= 1.5;
+      if (hue_range < M_PI)
+	goto hue_range_retry;
+      goto give_up;
+    }
+
+  // wider for processing than for searching
+  hue_range *= 1.5;
+
+  // prepare source and destination color info
+  // should reset hue_range or not? won't bother for now
+  multichan key_color = *key_color_ptr; // want to work from a copy, for safety
+  lower_hue_1 = key_color.hue - hue_range;
+  upper_hue_1 = key_color.hue + hue_range;
+  if (lower_hue_1 < -M_PI)
+    {
+      lower_hue_2 = lower_hue_1 + 2 * M_PI;
+      upper_hue_2 = upper_hue_1 + 2 * M_PI;
+    }
+  else
+    {
+      lower_hue_2 = lower_hue_1 - 2 * M_PI;
+      upper_hue_2 = upper_hue_1 - 2 * M_PI;
+    }
+
+  // get the destination color set up
+  multichan dst;
+  dst.or = color_hexes[cur_color][0];
+  dst.og = color_hexes[cur_color][1];
+  dst.ob = color_hexes[cur_color][2];
+  fill_multichan(&dst);
+  double satratio = dst.sat / key_color.sat;
+  double slope = (dst.L-key_color.L)/dst.sat;
+
+  // change the colors!
+  i = width * height;
+  while (i--)
+    {
+      multichan *mc = work+i;
+      // if not in the first range, and not in the second range, skip this one
+      // (really should alpha-blend as a function of hue angle difference)
+      if( (mc->hue<lower_hue_1 || mc->hue>upper_hue_1) && (mc->hue<lower_hue_2 || mc->hue>upper_hue_2) )
+	continue;
+      // this one will now be modified
+      double old_sat = mc->sat;
+      mc->hue = dst.hue;
+      mc->sat = mc->sat * satratio;
+      if(dst.sat>0)
+	mc->L  += mc->sat * slope; // not greyscale destination
+      else
+	mc->L  += old_sat*(dst.L-key_color.L)/key_color.sat;
+    }
+
+give_up:
+
+  i = width * height;
+  while (i--)
+    {
+      multichan *mc = work+i;
+      double X,Y,Z;
+      double u_prime, v_prime; /* temp, part of official formula */
+      int r,g,b;
+      unsigned tries = 3;
+      double sat = mc->sat;
+trysat:;
+      double u = sat * sin(mc->hue);
+      double v = sat * cos(mc->hue);
+      double L = mc->L;
+
+      // Luv to XYZ
+      u_prime = u/(13.0*L)+u0_prime;
+      v_prime = v/(13.0*L)+v0_prime;
+      Y = (L>7.99959199307) ? Y0*pow((L+16.0)/116.0,3.0) : Y0*L/903.3;
+      X = 2.25*Y*u_prime/v_prime;
+      Z = (3.0*Y - 0.75*Y*u_prime)/v_prime - 5.0*Y;
+      
+      // coordinate change: XYZ to RGB
+      mc->r =  3.2410*X + -1.5374*Y + -0.4986*Z;
+      mc->g = -0.9692*X +  1.8760*Y +  0.0416*Z;
+      mc->b =  0.0556*X + -0.2040*Y +  1.0570*Z;
+      
+      // gamma: linear to sRGB
+      r = ( (mc->r<=0.00304) ? 12.92*mc->r : 1.055*pow(mc->r,1.0/2.4)-0.055 ) * 255.9999;
+      g = ( (mc->g<=0.00304) ? 12.92*mc->g : 1.055*pow(mc->g,1.0/2.4)-0.055 ) * 255.9999;
+      b = ( (mc->b<=0.00304) ? 12.92*mc->b : 1.055*pow(mc->b,1.0/2.4)-0.055 ) * 255.9999;
+      
+      if((r|g|b)>>8){
+	static int cnt = 42;
+	if(cnt){
+	  cnt--;
+//                 printf("%d %d %d\n",r,g,b);
 	}
+	sat *= 0.8;
+	if(tries--)
+	  goto trysat;  // maybe it'll work if we de-saturate a bit
+	else
+	  {             // bummer, this is out of gamut and fighting
+	    if (r>255)
+	      r = 255;
+	    if (g>255)
+	      g = 255;
+	    if (b>255)
+	      b = 255;
+	    if (r<0)
+	      r = 0;
+	    if (g<0)
+	      g = 0;
+	    if (b<0)
+	      b = 0;
+	  }
+      }
+      
+      mc->nr = r;
+      mc->ng = g;
+      mc->nb = b;
+    }
 
-      SDL_UnlockSurface(tmp_surf);
-      SDL_UnlockSurface(surf_ptr);
+  // put data back into SDL form
+  SDL_LockSurface(tmp_surf);
+  for (yy = 0; yy < tmp_surf->h; yy++)
+    {
+      for (xx = 0; xx < tmp_surf->w; xx++)
+	{
+	  multichan *mc = work+yy*width+xx;
+	  putpixel(tmp_surf, xx, yy,
+		   SDL_MapRGBA(tmp_surf->format, mc->nr, mc->ng, mc->nb, mc->alpha));
+	}
+    }
+  SDL_UnlockSurface(tmp_surf);
 }
+
+// This tints a greyscale stamp. Hopefully such stamps remain rare.
+// If they were common, a more efficient way to do this is to simply
+// scale the linear RGB values of the destination color by the linear
+// brightness of the stamp colors.
+static void vector_tint_surface(SDL_Surface * tmp_surf, SDL_Surface * surf_ptr)
+{
+  unsigned i;
+  int xx, yy;
+
+  unsigned width = surf_ptr->w;
+  unsigned height = surf_ptr->h;
+
+  multichan *work = malloc(sizeof *work * width * height);
+	  
+  // put pixels into a more tolerable form
+  SDL_LockSurface(surf_ptr);
+  for (yy = 0; yy < surf_ptr->h; yy++)
+    {
+      for (xx = 0; xx < surf_ptr->w; xx++)
+        {
+          multichan *mc = work+yy*width+xx;
+          SDL_GetRGBA(getpixel(surf_ptr, xx, yy),
+                      surf_ptr->format,
+                      &mc->or, &mc->og, &mc->ob, &mc->alpha);
+        }
+    }
+  SDL_UnlockSurface(surf_ptr);
+
+  i = width * height;
+  while (i--)
+    {
+      multichan *mc = work+i;
+      fill_multichan(mc);
+    }
+
+  // get the destination color set up
+  multichan dst;
+  dst.or = color_hexes[cur_color][0];
+  dst.og = color_hexes[cur_color][1];
+  dst.ob = color_hexes[cur_color][2];
+  fill_multichan(&dst);
+
+  if (dst.L > 0.0) // if not black (else this is a SLOW memcpy!)
+    {
+    // change the colors!
+    i = width * height;
+    while (i--)
+      {
+        multichan *mc = work+i;
+        // this one will now be modified
+        mc->hue = dst.hue;
+        mc->sat = dst.sat * mc->L / 100.0;
+        mc->L   = mc->L * mc->L / 100.0;
+      }
+    }
+
+  i = width * height;
+  while (i--)
+    {
+      multichan *mc = work+i;
+      double X,Y,Z;
+      double u_prime, v_prime; /* temp, part of official formula */
+      int r,g,b;
+      unsigned tries = 3;
+      double sat = mc->sat;
+trysat:;
+      double u = sat * sin(mc->hue);
+      double v = sat * cos(mc->hue);
+      double L = mc->L;
+
+      // Luv to XYZ
+      u_prime = u/(13.0*L)+u0_prime;
+      v_prime = v/(13.0*L)+v0_prime;
+      Y = (L>7.99959199307) ? Y0*pow((L+16.0)/116.0,3.0) : Y0*L/903.3;
+      X = 2.25*Y*u_prime/v_prime;
+      Z = (3.0*Y - 0.75*Y*u_prime)/v_prime - 5.0*Y;
+      
+      // coordinate change: XYZ to RGB
+      mc->r =  3.2410*X + -1.5374*Y + -0.4986*Z;
+      mc->g = -0.9692*X +  1.8760*Y +  0.0416*Z;
+      mc->b =  0.0556*X + -0.2040*Y +  1.0570*Z;
+      
+      // gamma: linear to sRGB
+      r = ( (mc->r<=0.00304) ? 12.92*mc->r : 1.055*pow(mc->r,1.0/2.4)-0.055 ) * 255.9999;
+      g = ( (mc->g<=0.00304) ? 12.92*mc->g : 1.055*pow(mc->g,1.0/2.4)-0.055 ) * 255.9999;
+      b = ( (mc->b<=0.00304) ? 12.92*mc->b : 1.055*pow(mc->b,1.0/2.4)-0.055 ) * 255.9999;
+      
+      if((r|g|b)>>8){
+	static int cnt = 42;
+	if(cnt){
+	  cnt--;
+//                 printf("%d %d %d\n",r,g,b);
+	}
+	sat *= 0.8;
+	if(tries--)
+	  goto trysat;  // maybe it'll work if we de-saturate a bit
+	else
+	  {             // bummer, this is out of gamut and fighting
+	    if (r>255)
+	      r = 255;
+	    if (g>255)
+	      g = 255;
+	    if (b>255)
+	      b = 255;
+	    if (r<0)
+	      r = 0;
+	    if (g<0)
+	      g = 0;
+	    if (b<0)
+	      b = 0;
+	  }
+      }
+      
+      mc->nr = r;
+      mc->ng = g;
+      mc->nb = b;
+    }
+
+  // put data back into SDL form
+  SDL_LockSurface(tmp_surf);
+  for (yy = 0; yy < tmp_surf->h; yy++)
+    {
+      for (xx = 0; xx < tmp_surf->w; xx++)
+	{
+	  multichan *mc = work+yy*width+xx;
+	  putpixel(tmp_surf, xx, yy,
+		   SDL_MapRGBA(tmp_surf->format, mc->nr, mc->ng, mc->nb, mc->alpha));
+	}
+    }
+  SDL_UnlockSurface(tmp_surf);
+}
+
+//////////////////////////////////////////////////////////////////////
 
 /* Draw using the current stamp: */
 
@@ -3174,7 +3535,10 @@ static void stamp_draw(int x, int y)
     }
   else if (stamp_tintable(cur_stamp))
     {
-      tint_surface(tmp_surf, surf_ptr);
+      if (inf_stamps[cur_stamp]->tinter == TINTER_VECTOR)
+        vector_tint_surface(tmp_surf, surf_ptr);
+      else
+        tint_surface(tmp_surf, surf_ptr);
     }
   else
     {
@@ -5611,6 +5975,7 @@ static void setup(int argc, char * argv[])
 	      inf_stamps[i]->tintgray = 1;
 	      inf_stamps[i]->flipable = 1;
 	      inf_stamps[i]->ratio = 1.0;
+	      inf_stamps[i]->tinter = TINTER_NORMAL;
 	    }
 
 	  {
@@ -8496,6 +8861,7 @@ static info_type * loadinfo(const char * const fname)
   inf.mirrorable = 1;
   inf.tintgray = 1;
   inf.flipable = 1;
+  inf.tinter = TINTER_NORMAL;
 
   /* Load info! */
 
@@ -8570,6 +8936,32 @@ static info_type * loadinfo(const char * const fname)
 		      tmp = strtod(cp,NULL);
 		      if (tmp > 0.0001 && tmp < 10000.0)
 		        inf.ratio = 1.0 / tmp;
+		    }
+		}
+	      else if (!memcmp(buf, "tinter", 6) && (isspace(buf[6]) || buf[6]=='='))
+		{
+		  char *cp = buf+7;
+		  while (isspace(*cp) || *cp=='=')
+		    cp++;
+		  if (!strcmp(cp,"anyhue"))
+		    {
+		        inf.tinter = TINTER_ANYHUE;
+		    }
+		  else if (!strcmp(cp,"narrow"))
+		    {
+		        inf.tinter = TINTER_NARROW;
+		    }
+		  else if (!strcmp(cp,"normal"))
+		    {
+		        inf.tinter = TINTER_NORMAL;
+		    }
+		  else if (!strcmp(cp,"vector"))
+		    {
+		        inf.tinter = TINTER_VECTOR;
+		    }
+		  else
+		    {
+		        debug(cp);
 		    }
 		}
 	      else if (strcmp(buf, "nomirror") == 0)
