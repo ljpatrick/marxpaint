@@ -5606,32 +5606,55 @@ static void setup(int argc, char * argv[])
 	  {
 	    int upper = HARD_MAX_STAMP_SIZE;
 	    int lower = 0;
-	    do{
+
+	    do
+	    {
 	      scaleparams *s = &scaletable[upper];
 	      int pw, ph; // proposed width and height
+
 	      pw = (img_stamps[i]->w * s->numer + s->denom - 1) / s->denom;
 	      ph = (img_stamps[i]->h * s->numer + s->denom - 1) / s->denom;
-	      if(pw < canvas->w * 2 && ph < canvas->h * 2) break;
-	    }while(--upper);
-	    do{
+
+	      if (pw < canvas->w * 2 && ph < canvas->h * 2)
+		break;
+	    }
+	    while (--upper);
+
+
+	    do
+	    {
 	      scaleparams *s = &scaletable[lower];
 	      int pw, ph; // proposed width and height
+
 	      pw = (img_stamps[i]->w * s->numer + s->denom - 1) / s->denom;
 	      ph = (img_stamps[i]->h * s->numer + s->denom - 1) / s->denom;
-	      if(pw*ph > 20) break;
-	    }while(++lower < HARD_MAX_STAMP_SIZE);
-	    if(upper<lower){
+
+	      if (pw*ph > 20)
+		break;
+	    }
+	    while (++lower < HARD_MAX_STAMP_SIZE);
+
+
+	    if(upper<lower)
+	    {
 	      // this, if it ever happens, is very bad
 	      upper = (upper+lower)/2;
 	      lower = upper;
 	    }
+
 	    unsigned mid = default_stamp_size;
-	    if(mid > upper) mid = upper;
-	    if(mid < lower) mid = lower;
+
+	    if(mid > upper)
+	      mid = upper;
+	    
+	    if(mid < lower)
+	      mid = lower;
+
 	    state_stamps[i]->min  = lower;
 	    state_stamps[i]->size = mid;
 	    state_stamps[i]->max  = upper;
 	  }
+
 
 	  /* If Tux Paint is in mirror-image-by-default mode, mirror, if we can: */
       
