@@ -6661,6 +6661,49 @@ static void load_stamps(void)
 
 
 
+static void load_user_fonts(void)
+{
+  char * homedirdir;
+  loadfonts(DATA_PREFIX "fonts", 1);
+
+  if (!no_system_fonts)
+  {
+#ifdef WIN32
+    loadfonts("%SystemRoot%\\Fonts", 0);
+#elif defined(__BEOS__)
+    loadfonts("/boot/home/config/font/ttffonts", 0);
+    loadfonts("/usr/share/fonts", 0);
+    loadfonts("/usr/X11R6/lib/X11/fonts", 0);
+#elif defined(__APPLE__)
+    loadfonts("/System/Library/Fonts", 0);
+    loadfonts("/Library/Fonts", 0);
+    loadfonts(macosx.fontsPath, 0);
+    loadfonts("/usr/share/fonts", 0);
+    loadfonts("/usr/X11R6/lib/X11/fonts", 0);
+#elif defined(__sun__)
+    loadfonts("/usr/openwin/lib/X11/fonts", 0);
+    loadfonts("/usr/share/fonts", 0);
+    loadfonts("/usr/X11R6/lib/X11/fonts", 0);
+#else
+    loadfonts("/usr/share/feh/fonts", 0);
+    loadfonts("/usr/share/fonts", 0);
+    loadfonts("/usr/X11R6/lib/X11/fonts", 0);
+    loadfonts("/usr/share/texmf/fonts", 0);
+    loadfonts("/usr/share/grace/fonts/type1", 0);
+    loadfonts("/usr/share/hatman/fonts", 0);
+    loadfonts("/usr/share/icewm/themes/jim-mac", 0);
+    loadfonts("/usr/share/vlc/skins2/fonts", 0);
+    loadfonts("/usr/share/xplanet/fonts", 0);
+#endif
+  }
+
+  homedirdir = get_fname("fonts");
+  loadfonts(homedirdir, 0);
+  free(homedirdir);
+
+  groupfonts();
+}
+
 ////////////////////////////////////////////////////////////////////////////////
 /* Setup: */
 
@@ -7668,46 +7711,9 @@ static void setup(int argc, char * argv[])
 
   locale_font = load_locale_font(medium_font,18);
 
-  /* Load other available fonts: */
+  /* Load user fonts, for the text tool */
+  load_user_fonts();
 
-  loadfonts(DATA_PREFIX "fonts", 1);
-
-  if (!no_system_fonts)
-  {
-#ifdef WIN32
-    loadfonts("%SystemRoot%\\Fonts", 0);
-#elif defined(__BEOS__)
-    loadfonts("/boot/home/config/font/ttffonts", 0);
-    loadfonts("/usr/share/fonts", 0);
-    loadfonts("/usr/X11R6/lib/X11/fonts", 0);
-#elif defined(__APPLE__)
-    loadfonts("/System/Library/Fonts", 0);
-    loadfonts("/Library/Fonts", 0);
-    loadfonts(macosx.fontsPath, 0);
-    loadfonts("/usr/share/fonts", 0);
-    loadfonts("/usr/X11R6/lib/X11/fonts", 0);
-#elif defined(__sun__)
-    loadfonts("/usr/openwin/lib/X11/fonts", 0);
-    loadfonts("/usr/share/fonts", 0);
-    loadfonts("/usr/X11R6/lib/X11/fonts", 0);
-#else
-    loadfonts("/usr/share/feh/fonts", 0);
-    loadfonts("/usr/share/fonts", 0);
-    loadfonts("/usr/X11R6/lib/X11/fonts", 0);
-    loadfonts("/usr/share/texmf/fonts", 0);
-    loadfonts("/usr/share/grace/fonts/type1", 0);
-    loadfonts("/usr/share/hatman/fonts", 0);
-    loadfonts("/usr/share/icewm/themes/jim-mac", 0);
-    loadfonts("/usr/share/vlc/skins2/fonts", 0);
-    loadfonts("/usr/share/xplanet/fonts", 0);
-#endif
-  }
-
-  homedirdir = get_fname("fonts");
-  loadfonts(homedirdir, 0);
-  free(homedirdir);
-
-  groupfonts();
 
   if (!dont_load_stamps)
     load_stamps();
