@@ -7,12 +7,12 @@
   bill@newbreedsoftware.com
   http://www.newbreedsoftware.com/tuxpaint/
   
-  June 14, 2002 - September 5, 2003
+  June 14, 2002 - September 11, 2003
 */
 
 
 #define VER_VERSION     "0.9.13"
-#define VER_DATE        "2003.09.05"
+#define VER_DATE        "2003.09.11"
 
 
 /* #define DEBUG */
@@ -373,7 +373,7 @@ int use_sound, fullscreen, disable_quit, simple_shapes, language,
   disable_print, print_delay, only_uppercase, promptless_save, grab_input,
   wheely, no_fancy_cursors, keymouse, mouse_x, mouse_y,
   mousekey_up, mousekey_down, mousekey_left, mousekey_right,
-  dont_do_xor, use_print_config, dont_load_stamps;
+  dont_do_xor, use_print_config, dont_load_stamps, noshortcuts;
 int recording, playing;
 char * playfile;
 FILE * demofi;
@@ -447,6 +447,7 @@ SDL_Cursor * cursor_hand, * cursor_arrow, * cursor_watch,
 
 int cur_tool, cur_color, cur_brush, cur_stamp, cur_shape, cur_magic;
 int cur_font, cursor_left, cursor_x, cursor_y, cursor_textwidth;
+int colors_are_selectable;
 int been_saved;
 char file_id[32];
 int brush_scroll, stamp_scroll, font_scroll;
@@ -669,6 +670,7 @@ int main(int argc, char * argv[])
 
   cur_tool = TOOL_BRUSH;
   cur_color = COLOR_BLACK;
+  colors_are_selectable = 1;
   cur_brush = 0;
   cur_stamp = 0;
   cur_shape = SHAPE_SQUARE;
@@ -876,7 +878,8 @@ void mainloop(void)
 	      else if (key == SDLK_z &&
 		       (mod & KMOD_CTRL ||
 			mod & KMOD_LCTRL ||
-			mod & KMOD_RCTRL))
+			mod & KMOD_RCTRL) &&
+		       !noshortcuts)
 		{
 		  /* Ctrl-Z - Undo */
 		  
@@ -897,7 +900,8 @@ void mainloop(void)
 	      else if (key == SDLK_r &&
 		       (mod & KMOD_CTRL ||
 			mod & KMOD_LCTRL ||
-			mod & KMOD_RCTRL))
+			mod & KMOD_RCTRL) &&
+		       !noshortcuts)
 		{
 		  /* Ctrl-R - Redo */
 		  
@@ -913,7 +917,8 @@ void mainloop(void)
 	      else if (key == SDLK_o &&
 		       (mod & KMOD_CTRL ||
 			mod & KMOD_LCTRL ||
-			mod & KMOD_RCTRL))
+			mod & KMOD_RCTRL) &&
+		       !noshortcuts)
 		{
 		  /* Ctrl-O - Open */
 		  
@@ -972,7 +977,8 @@ void mainloop(void)
 	      else if ((key == SDLK_n &&
 			((mod & KMOD_CTRL ||
 			  mod & KMOD_LCTRL ||
-			  mod & KMOD_RCTRL))) && tool_avail[TOOL_NEW])
+			  mod & KMOD_RCTRL))) && tool_avail[TOOL_NEW] &&
+		       !noshortcuts)
 		{
 		  /* Ctrl-N - New */
 		  
@@ -1011,7 +1017,8 @@ void mainloop(void)
 	      else if (key == SDLK_s &&
 		       (mod & KMOD_CTRL ||
 			mod & KMOD_LCTRL ||
-			mod & KMOD_RCTRL))
+			mod & KMOD_RCTRL) &&
+		       !noshortcuts)
 		{
 		  /* Ctrl-S - Save */
 		  
@@ -2238,8 +2245,11 @@ void mainloop(void)
 		       event.button.y <= (48 * 7) + 40 + 48 + HEIGHTOFFSET)
 		{
 		  /* Color picker: */
-		  
-		  do_setcursor(cursor_hand);
+		 
+	  	  if (colors_are_selectable)
+		    do_setcursor(cursor_hand);
+		  else
+		    do_setcursor(cursor_arrow);
 		}
 	      else if (event.button.x >= WINDOW_WIDTH - 96 &&
 		       event.button.y > 40 &&
@@ -2302,15 +2312,27 @@ void mainloop(void)
 		      else
 			{
 			  /* One of the selectors: */
-			  
-			  do_setcursor(cursor_hand);
+			 
+			  which = ((event.button.y - 40 - 24) / 48) * 2 +
+				   (event.button.x - (WINDOW_WIDTH - 96)) / 48;
+
+			  if (which < num_things)
+			    do_setcursor(cursor_hand);
+			  else
+			    do_setcursor(cursor_arrow);
 			}
 		    }
 		  else
 		    {
 		      /* No scroll buttons - must be a selector: */
 		      
-		      do_setcursor(cursor_hand);
+		      which = ((event.button.y - 40) / 48) * 2 +
+			      (event.button.x - (WINDOW_WIDTH - 96)) / 48;
+
+		      if (which < num_things)
+			do_setcursor(cursor_hand);
+		      else
+			do_setcursor(cursor_arrow);
 		    }
 		}
 	      else if (event.button.x > 96 &&
@@ -3374,6 +3396,7 @@ void show_usage(FILE * f, char * prg)
     "       %s [--print | --noprint]         [--complexshapes | --simpleshapes]\n"
     "       %s [--mixedcase | --uppercase]   [--fancycursors | --nofancycursors]\n"
     "       %s [--mouse | --keyboard]        [--dontgrab | --grab]\n"
+    "       %s [--noshortcuts | --shortcuts] [--wheelmouse | --nowheelmouse]\n"
     "       %s [--outlines | --nooutlines]   [--stamps | --nostamps]\n"
     "       %s [--wheelmouse | --nowheelmouse]\n"
     "       %s [--saveoverask | --saveover | --saveovernew]\n"
@@ -3390,7 +3413,7 @@ void show_usage(FILE * f, char * prg)
     blank, blank, blank,
     blank, blank, blank,
     blank, blank, blank,
-    blank, blank);
+    blank, blank, blank);
 
   free(blank);
 }
@@ -3540,6 +3563,7 @@ void setup(int argc, char * argv[])
 
   use_sound = 1;
   fullscreen = 0;
+  noshortcuts = 0;
   dont_do_xor = 0;
   keymouse = 0;
   wheely = 1;
@@ -3653,6 +3677,14 @@ void setup(int argc, char * argv[])
     else if (strcmp(argv[i], "--windowed") == 0 || strcmp(argv[i], "-w") == 0)
     {
       fullscreen = 0;
+    }
+    else if (strcmp(argv[i], "--noshortcuts") == 0)
+    {
+      noshortcuts = 1;
+    }
+    else if (strcmp(argv[i], "--shortcuts") == 0)
+    {
+      noshortcuts = 0;
     }
     else if (strcmp(argv[i], "--800x600") == 0)
     {
@@ -5247,6 +5279,11 @@ void draw_colors(int enabled)
       SDL_BlitSurface(img_paintcan, NULL, screen, &dest);
     }
   }
+
+
+  /* Keep track of this globally, so the cursor shape will act right */
+
+  colors_are_selectable = enabled;
 }
 
 
@@ -9282,7 +9319,8 @@ int do_open(int want_new_tool)
 	      else if (key == SDLK_d &&
 		       (event.key.keysym.mod & KMOD_CTRL ||
 			event.key.keysym.mod & KMOD_LCTRL ||
-			event.key.keysym.mod & KMOD_RCTRL))
+			event.key.keysym.mod & KMOD_RCTRL) &&
+		       !noshortcuts)
 		{
 		  /* Delete! */
 		  
@@ -10941,6 +10979,15 @@ void parse_options(FILE * fi)
 	{
 	  fullscreen = 0;
 	}
+      else if (strcmp(str, "noshortcuts=yes") == 0)
+        {
+	  noshortcuts = 1;
+        }
+      else if (strcmp(str, "noshortcuts=no") == 0 ||
+	       strcmp(str, "shortcuts=yes") == 0)
+        {
+	  noshortcuts = 0;
+        }
       else if (strcmp(str, "800x600=yes") == 0)
         {
 	  WINDOW_WIDTH = 800;

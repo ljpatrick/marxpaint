@@ -7,7 +7,7 @@ bill@newbreedsoftware.com
 http://www.newbreedsoftware.com/tuxpaint/
 
 
-2003.Sep.05 (0.9.13) [cvs]
+2003.Sep.11 (0.9.13) [cvs]
   * Fixed incorrect tag in HTML documentation.  (Bad results in IE)
 
   * Fixed typo regarding "savedir" in README.
@@ -24,6 +24,19 @@ http://www.newbreedsoftware.com/tuxpaint/
   * If the top-left-most file is deleted in the Open screen, it now
     scrolls up one line (so that the cursor isn't off the top of the
     screen!)
+
+  * Cleaned up font aliasing blurriness and JPEG noise in title image.
+
+  * Updated copyright date in title image.
+ 
+  * Cursor doesn't change to 'hand' shape over color buttons when colors
+    aren't available (e.g., Magic tool, most Stamps, etc.)
+
+  * Cursor doesn't change to 'hand' shape over selector buttons when
+    they aren't available.
+
+  * Added "--noshortcuts" option, to disable keyboard shortcuts
+    (e.g., [Ctrl]+[S] for Save, etc.)
 
 
 2003.Aug.18 (0.9.12)

@@ -6,7 +6,7 @@ Copyright (c) 2003 by Bill Kendrick
 bill@newbreedsoftware.com
 http://www.newbreedsoftware.com/tuxpaint/
 
-July 19, 2003
+September 11, 2003
 
 
 LOW-PRIORITY DOCUMENTATION CHANGES:
@@ -31,9 +31,6 @@ LOW-PRIORITY IMPLEMENTATION CHANGES:
 
   * Clean up 800x600 support code
 
-  * Make mouse pointer change from hand to arrow when over unselectable
-    Selector or Color.
-
   * Allow locale font files to be specified in conf file
     (so instead of using /usr/local/share/tuxpaint/fonts/locale/ja.ttf,
     it can use /usr/local/share/ttf/kochi-mincho.ttf).
@@ -43,9 +40,6 @@ LOW-PRIORITY IMPLEMENTATION CHANGES:
 
 HIGH-PRIORITY BUGS:
 -------------------
-  * Figure out why Tux Paint crashes when displaying Euro symbol (under Linux)
-    2003.02.22
-
   * Figure out why fonts don't appear on PPC.
     (Thomas Klausner reported: 2002.09.30)
   
@@ -62,13 +56,14 @@ LOW-PRIORITY BUGS:
 
 PLATFORM-SPECIFIC BUGS:
 -----------------------
-  * Create a 'tuxpaint-import' type program for Windows.
+  * Support Apple-key buttons ([H]ide, [?]help, [M]inimize, [Q]uit)
+    (Is this "META" modifier in SDL_keysyms.h???)
+
+  * Create a 'tuxpaint-import' type program for Windows, Mac OS X and BeOS.
 
   * Translated sound effects not working under XP for some reason.
     (Works okay under Win98 and Win2K. - Gabriel G., 2002.09.13;
     still a problem as of 0.9.7, 2003.01.27)
-
-  * Crashing when printing on OS X?  (Reported in v.0.9.2 for OS X)
 
 
 HIGH-PRIORITY TRANSLATION STUFF:
@@ -77,10 +72,6 @@ HIGH-PRIORITY TRANSLATION STUFF:
     the top!
 
   * Finish current translations.
-
-  * Fix Romanian!
-
-  * Tip text (except stamps) aren't translated in --uppercase mode.
 
 
 LOW-PRIORITY TRANSLATION STUFF:

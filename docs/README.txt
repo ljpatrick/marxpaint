@@ -9,7 +9,7 @@
                            bill@newbreedsoftware.com
                    http://www.newbreedsoftware.com/tuxpaint/
 
-                       June 14, 2002 - September 3, 2003
+                       June 14, 2002 - September 11, 2003
 
      ----------------------------------------------------------------------
 
@@ -252,6 +252,15 @@ Options
                    cycling, [Ctrl]-[Escape], etc. This is especially useful
                    in fullscreen mode.
 
+           noshortcuts=yes
+
+                   This disable keyboard shortcuts (e.g., [Ctrl]-[S] for
+                   save, [Ctrl]-[N] for a new image, etc.)
+
+                   This is useful to prevent unwanted commands from being
+                   activated by children who aren't experienced with
+                   keyboards.
+
            nowheelmouse=yes
                    This disables support for the wheel on mice that have it.
                    (Normally, the wheel will scroll the selector menu on the
@@ -423,6 +432,7 @@ Options
            --printcfg
            --simpleshapes
            --uppercase
+           --noshortcuts
            --grab
            --keyboard
            --nooutlines
@@ -443,6 +453,7 @@ Options
            --noprintcfg
            --complexshapes
            --mixedcase
+           --shortcuts
            --dontgrab
            --mouse
            --outlines

@@ -1,5 +1,5 @@
-.\" tuxpaint.1 - 2003.08.18
-.TH TUXPAINT 1 "18 Aug 2003" "0.9.12" "Tux Paint"
+.\" tuxpaint.1 - 2003.09.11
+.TH TUXPAINT 1 "11 Sep 2003" "0.9.13" "Tux Paint"
 .SH NAME
 tuxpaint -- A drawing program for young children.
 
@@ -19,6 +19,7 @@ tuxpaint -- A drawing program for young children.
 [\-\-simpleshapes]
 [\-\-uppercase]
 [\-\-grab]
+[\-\-noshortcuts]
 [\-\-nowheelmouse]
 [\-\-nofancycursors]
 [\-\-nooutlines]
@@ -40,6 +41,7 @@ tuxpaint -- A drawing program for young children.
 [\-\-complexshapes]
 [\-\-mixedcase]
 [\-\-dontgrab]
+[\-\-shortcuts]
 [\-\-wheelmouse]
 [\-\-mouse]
 [\-\-outlines]
@@ -143,6 +145,11 @@ yet comfortable with the lowercase characterset.  Default mode is
 .B \-\-grab \-\-nograb
 Grab the mouse and keyboard input (if possible), so that the mouse is
 confined to the \fITux Paint\fP window.  Default is to not grab.
+
+.TP 8
+.B \-\-noshortcuts \-\-shortcuts
+If \fInoshortcuts\fP mode, keyboard shortcuts (e.g., Ctrl+S for Save)
+will be disabled.  Default mode is \fIshortcuts enabled\fP.
 
 .TP 8
 .B \-\-nowheelmouse \-\-wheelmouse
