@@ -14146,6 +14146,7 @@ static void loadfonts(const char * const dir, int fatal)
                               user_font_styles[num_font_styles]->family = strdup(family);
                               user_font_styles[num_font_styles]->style = strdup(style);
                               num_font_styles++;
+                              //printf("Accepted: %s, %s, %s\n", d_names[i], family, style);
                             }
                           else
                             {
@@ -14162,6 +14163,10 @@ static void loadfonts(const char * const dir, int fatal)
                         SDL_FreeSurface(tmp_surf_A);
                     }
                   TTF_CloseFont(font);
+                }
+              else
+                {
+                  printf("could not open %s\n", d_names[i]);
                 }
 	      show_progress_bar();
 	    }
