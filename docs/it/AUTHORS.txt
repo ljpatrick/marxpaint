@@ -1,5 +1,4 @@
-AUTHORS.it.txt di Tux Paint (2004-03-21: per una versione aggiornata
-di questo file,  si veda l'originale AUTHORS.txt oppure il sito web)
+AUTHORS.it.txt di Tux Paint
 
 Tux Paint - Un semplice programma di disegno per bambini.
 

@@ -6,7 +6,7 @@
 # bill@newbreedsoftware.com
 # http://www.newbreedsoftware.com/tuxpaint/
 
-# June 14, 2002 - May 29, 2004
+# June 14, 2002 - May 30, 2004
 
 
 # Where to install things:
@@ -203,12 +203,12 @@ uninstall:
 	-rm $(ICON_PREFIX)tuxpaint.png
 	-rm $(X11_ICON_PREFIX)tuxpaint.xpm
 	-if [ "x$(KDE_ICON_PREFIX)" != "x" ]; then \
-	  rm $(KDE_ICON_PREFIX)/default.kde/scalable/apps/tuxpaint.svg; \
-	  rm $(KDE_ICON_PREFIX)/default.kde/128x128/apps/tuxpaint.png; \
-	  rm $(KDE_ICON_PREFIX)/default.kde/64x64/apps/tuxpaint.png; \
-	  rm $(KDE_ICON_PREFIX)/default.kde/48x48/apps/tuxpaint.png; \
-	  rm $(KDE_ICON_PREFIX)/default.kde/32x32/apps/tuxpaint.png; \
-	  rm $(KDE_ICON_PREFIX)/default.kde/16x16/apps/tuxpaint.png; \
+	  rm $(KDE_ICON_PREFIX)/hicolor/scalable/apps/tuxpaint.svg; \
+	  rm $(KDE_ICON_PREFIX)/hicolor/128x128/apps/tuxpaint.png; \
+	  rm $(KDE_ICON_PREFIX)/hicolor/64x64/apps/tuxpaint.png; \
+	  rm $(KDE_ICON_PREFIX)/hicolor/48x48/apps/tuxpaint.png; \
+	  rm $(KDE_ICON_PREFIX)/hicolor/32x32/apps/tuxpaint.png; \
+	  rm $(KDE_ICON_PREFIX)/hicolor/16x16/apps/tuxpaint.png; \
 	fi
 	-rm $(BIN_PREFIX)/tuxpaint
 	-rm $(BIN_PREFIX)/tuxpaint-import
@@ -312,24 +312,24 @@ install-kde:
 install-kde-icons:
 	@echo "...Installing launcher icon graphics into KDE..."
 	@if [ "x$(KDE_ICON_PREFIX)" != "x" ]; then \
-	  install -d $(KDE_ICON_PREFIX)/default.kde/scalable/apps/; \
-	  install -d $(KDE_ICON_PREFIX)/default.kde/128x128/apps/; \
-	  install -d $(KDE_ICON_PREFIX)/default.kde/64x64/apps/; \
-	  install -d $(KDE_ICON_PREFIX)/default.kde/48x48/apps/; \
-	  install -d $(KDE_ICON_PREFIX)/default.kde/32x32/apps/; \
-	  install -d $(KDE_ICON_PREFIX)/default.kde/16x16/apps/; \
+	  install -d $(KDE_ICON_PREFIX)/hicolor/scalable/apps/; \
+	  install -d $(KDE_ICON_PREFIX)/hicolor/128x128/apps/; \
+	  install -d $(KDE_ICON_PREFIX)/hicolor/64x64/apps/; \
+	  install -d $(KDE_ICON_PREFIX)/hicolor/48x48/apps/; \
+	  install -d $(KDE_ICON_PREFIX)/hicolor/32x32/apps/; \
+	  install -d $(KDE_ICON_PREFIX)/hicolor/16x16/apps/; \
 	  cp data/images/tuxpaint-icon.svg \
-		$(KDE_ICON_PREFIX)/default.kde/scalable/apps/tuxpaint.svg; \
+		$(KDE_ICON_PREFIX)/hicolor/scalable/apps/tuxpaint.svg; \
 	  cp data/images/icon128x128.png \
-		$(KDE_ICON_PREFIX)/default.kde/128x128/apps/tuxpaint.png; \
+		$(KDE_ICON_PREFIX)/hicolor/128x128/apps/tuxpaint.png; \
 	  cp data/images/icon64x64.png \
-		$(KDE_ICON_PREFIX)/default.kde/64x64/apps/tuxpaint.png; \
+		$(KDE_ICON_PREFIX)/hicolor/64x64/apps/tuxpaint.png; \
 	  cp data/images/icon48x48.png \
-		$(KDE_ICON_PREFIX)/default.kde/48x48/apps/tuxpaint.png; \
+		$(KDE_ICON_PREFIX)/hicolor/48x48/apps/tuxpaint.png; \
 	  cp data/images/icon32x32.png \
-		$(KDE_ICON_PREFIX)/default.kde/32x32/apps/tuxpaint.png; \
+		$(KDE_ICON_PREFIX)/hicolor/32x32/apps/tuxpaint.png; \
 	  cp data/images/icon16x16.png \
-		$(KDE_ICON_PREFIX)/default.kde/16x16/apps/tuxpaint.png; \
+		$(KDE_ICON_PREFIX)/hicolor/16x16/apps/tuxpaint.png; \
 	fi
 
 
