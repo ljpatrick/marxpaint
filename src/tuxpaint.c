@@ -13663,7 +13663,7 @@ static char * uppercase(char * str)
 
     dest = (wchar_t *) malloc(sz);
     // FIXME: uppercase chars may need extra bytes
-    ustr = (char *) malloc(sizeof(char) * (strlen(str) + 1));
+    ustr = malloc(strlen(str) + 1);
 
     if (dest != NULL)
     {
