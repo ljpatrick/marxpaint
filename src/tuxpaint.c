@@ -6431,6 +6431,7 @@ static void setup(int argc, char * argv[])
 #else
   loadfonts("/usr/share/feh/fonts", 0);
   loadfonts("/usr/share/fonts", 0);
+  loadfonts("/usr/X11R6/lib/X11/fonts", 0);
   loadfonts("/usr/share/texmf/fonts", 0);
   loadfonts("/usr/share/grace/fonts/type1", 0);
   loadfonts("/usr/share/hatman/fonts", 0);
@@ -13467,7 +13468,7 @@ static void loadfonts(const char * const dir, int fatal)
               if(font)
                 {
                   const char *family = TTF_FontFaceFamilyName(font);
-                  if (strstr(family, "Webdings") || strstr(family, "Dingbats") || strstr(family, "Standard Symbols"))
+                  if (strstr(family, "Webdings") || strstr(family, "Dingbats") || strstr(family, "Cursor") || strstr(family, "Standard Symbols"))
                     TTF_CloseFont(font);
                   else
                     user_fonts[num_fonts++] = font;
