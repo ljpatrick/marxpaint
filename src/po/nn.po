@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: nn\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2005-01-06 12:31+0100\n"
-"PO-Revision-Date: 2005-01-12 21:03+0100\n"
+"POT-Creation-Date: 2005-01-12 21:39+0100\n"
+"PO-Revision-Date: 2005-01-12 21:45+0100\n"
 "Last-Translator: Karl Ove Hufthammer <karl@huftis.org>\n"
 "Language-Team: Norwegian Nynorsk <i18n-nn@lister.ping.uio.no>\n"
 "MIME-Version: 1.0\n"
@@ -29,14 +29,9 @@ msgstr "Tux Paint"
 msgid "Black!"
 msgstr "Svart!"
 
-msgid "Dark Gray!"
-msgstr "Mørkegrå!"
+msgid "Gray!"
+msgstr "Grå!"
 
-#. using both valid spellings
-msgid "Light Grey!"
-msgstr "Lysegrå!"
-
-#. using both valid spellings
 msgid "White!"
 msgstr "Kvit!"
 
@@ -49,22 +44,22 @@ msgstr "Oransje!"
 msgid "Yellow!"
 msgstr "Gul!"
 
-msgid "Neon green!"
-msgstr "Neongrøn!"
+msgid "Light green!"
+msgstr "Lysegrøn!"
 
-msgid "Green!"
+msgid "Dark green!"
 msgstr "Mørkegrøn!"
 
-msgid "Sky blue!"
-msgstr "Himmelblå!"
+msgid "Light blue!"
+msgstr "Lyseblå!"
 
 msgid "Blue!"
 msgstr "Blå!"
 
-msgid "Purple!"
-msgstr "Mørkelilla!"
+msgid "Violet!"
+msgstr "Fiolett!"
 
-msgid "Magenta!"
+msgid "Purple!"
 msgstr "Lilla!"
 
 msgid "Pink!"
@@ -73,12 +68,11 @@ msgstr "Rosa!"
 msgid "Brown!"
 msgstr "Brun!"
 
-#, fuzzy
 msgid "Tan!"
-msgstr "Turkis!"
+msgstr "Lysebrun!"
 
 msgid "Beige!"
-msgstr ""
+msgstr "Beige!"
 
 msgid "Great!"
 msgstr "Flott!"
@@ -113,8 +107,8 @@ msgstr "Uskarp"
 msgid "Smudge"
 msgstr "Gni ut"
 
-msgid "Fade"
-msgstr "Bleikna"
+msgid "Lighten"
+msgstr "Lysare!"
 
 msgid "Darken"
 msgstr "Mørkare"
@@ -147,7 +141,7 @@ msgstr "Opp-ned"
 msgid "Click in the picture to fill that area with color."
 msgstr "Trykk på teikninga for å fylla området med fargen frå målingbøtta."
 
-msgid "Click and move to draw grass. Don't forget the dirt!"
+msgid "Click and move to draw grass. Don’t forget the dirt!"
 msgstr "Hald inne knappen og flytt rundt for å teikna gras. Ikkje gløym jorda!"
 
 msgid "Click and move to draw large bricks."
@@ -185,14 +179,16 @@ msgstr "Hald inne knappen og flytt rundt for å gjera teikninga «blokkete»."
 msgid "Click and move the mouse around to draw a negative."
 msgstr "Hald inne knappen og flytt rundt for å byta om på fargane."
 
-msgid "Click and move the mouse around to change the picture's color."
+msgid "Click and move the mouse around to change the picture’s color."
 msgstr "Hald inne knappen og flytt rundt for å endra fargane på teikninga."
 
 msgid "Click and move the mouse around to make the picture drip."
 msgstr "Hald inne knappen og flytt rundt for å gjera teikninga dryppande."
 
 msgid "Click and move the mouse around to turn the picture into a cartoon."
-msgstr "Hald inne knappen og flytt rundt for å gjera fargane klarare og strekane tydelegare."
+msgstr ""
+"Hald inne knappen og flytt rundt for å gjera fargane klarare og strekane "
+"tydelegare."
 
 msgid "Click to make a mirror image."
 msgstr "Trykk for å spegelvenda teikninga."
@@ -209,7 +205,7 @@ msgstr "Rektangel"
 msgid "Circle"
 msgstr "Sirkel"
 
-msgid "Oval"
+msgid "Ellipse"
 msgstr "Ellipse"
 
 msgid "Triangle"
@@ -218,17 +214,20 @@ msgstr "Trekant"
 msgid "Pentagon"
 msgstr "Femkant"
 
-msgid "Diamond"
-msgstr "Diamant"
+msgid "Rhombus"
+msgstr "Rombe"
 
-msgid "A square has four sides, each the same length."
-msgstr "Eit kvadrat har fire like lange sider."
+msgid "A square is a rectangle with four equal sides."
+msgstr "Eit kvadrat er eit rektangel med fire like sider."
 
-msgid "A rectangle has four sides."
-msgstr "Eit rektangel har fire sider."
+msgid "A rectangle has four sides and four right angles."
+msgstr "Eit rektangel har fire sider og fire rette vinklar."
 
-msgid "A circle is exactly round."
-msgstr "Ein sirkel er rund."
+msgid "A circle is a curve where all points have the same distance from the centre."
+msgstr "Ein sirkel er ei kurve der alle punkta er like langt frå sentrum."
+
+msgid "An ellipse is a stretched circle."
+msgstr "Ein ellipse er ein avlang sirkel."
 
 msgid "A triangle has three sides."
 msgstr "Ein trekant har tre sider."
@@ -236,8 +235,8 @@ msgstr "Ein trekant har tre sider."
 msgid "A pentagon has five sides."
 msgstr "Ein femkant har fem sider."
 
-msgid "A diamond is a square, turned around slightly."
-msgstr "Ein diamant er eit rotert kvadrat."
+msgid "A rhombus has four equal sides, and opposite sides are parallel."
+msgstr "Ein rombe har fire sider og motståande sider er parallelle."
 
 msgid "Tools"
 msgstr "Verktøy"
