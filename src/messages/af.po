@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint 0.9.14\n"
 "POT-Creation-Date: 2003-06-26 05:23+0200\n"
-"PO-Revision-Date: 2004-03-03 13:44-0800\n"
+"PO-Revision-Date: 2004-03-03 14:18-0800\n"
 "Last-Translator: Petri Jooste <rkwjpj@puk.ac.za>\n"
 "Language-Team: Afrikaans <i18n@af.org.za>\n"
 "MIME-Version: 1.0\n"
@@ -453,7 +453,7 @@ msgid "That's Ok"
 msgstr ""
 
 #: tuxpaint.c:706
-msgid "Never Mind!"
+msgid "Never mind!"
 msgstr "Toemaar!"
 
 #: tuxpaint.c:708
