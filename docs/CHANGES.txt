@@ -8,6 +8,9 @@ http://www.newbreedsoftware.com/tuxpaint/
 
 
 2004.November.24 (0.9.15)
+  * Moved tinter code into own function.
+    Albert Cahalan <albert@users.sf.net>
+
   * Added "scale" keyword (*.dat files) for high-resolution stamp images.
     Albert Cahalan <albert@users.sf.net>
 

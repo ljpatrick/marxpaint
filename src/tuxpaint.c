@@ -3009,6 +3009,58 @@ static void blit_brush(int x, int y)
 }
 
 
+typedef struct multichan {
+  double r,g,b; // linear
+  double L,u,v; // L,a,b would be better -- 2-way formula unknown
+  double hue,sat;
+  unsigned char or,og,ob,oa; // old 8-bit sRGB values
+  unsigned char nr,ng,nb,na; // new 8-bit sRGB values
+} multichan;
+
+static void tint_surface(SDL_Surface * tmp_surf, SDL_Surface * surf_ptr)
+{
+
+  float col_hue, col_sat, col_val,
+    stamp_hue, stamp_sat, stamp_val;
+
+  Uint8 r, g, b, a;
+    int xx, yy;
+	  
+      rgbtohsv(color_hexes[cur_color][0],
+	       color_hexes[cur_color][1],
+	       color_hexes[cur_color][2],
+	       &col_hue, &col_sat, &col_val);
+        
+
+      /* Render the stamp: */
+
+      SDL_LockSurface(surf_ptr);
+      SDL_LockSurface(tmp_surf);
+
+      for (yy = 0; yy < surf_ptr->h; yy++)
+	{
+	  for (xx = 0; xx < surf_ptr->w; xx++)
+	    {
+	      SDL_GetRGBA(getpixel(surf_ptr, xx, yy),
+			  surf_ptr->format,
+			  &r, &g, &b, &a);
+	
+	      rgbtohsv(r, g, b, &stamp_hue, &stamp_sat, &stamp_val);	
+     
+	      if ( stamp_tintgray(cur_stamp) || stamp_sat > 0.25 )
+		hsvtorgb(col_hue, col_sat, stamp_val, &r, &g, &b);
+	      //	else
+	      //	  hsvtorgb(col_hue, col_sat, stamp_val, &r, &g, &b);
+	
+	      putpixel(tmp_surf, xx, yy,
+		       SDL_MapRGBA(tmp_surf->format, r, g, b, a));
+	    }
+	}
+
+      SDL_UnlockSurface(tmp_surf);
+      SDL_UnlockSurface(surf_ptr);
+}
+
 /* Draw using the current stamp: */
 
 static void stamp_draw(int x, int y)
@@ -3018,8 +3070,6 @@ static void stamp_draw(int x, int y)
   Uint32 amask;
   Uint8 r, g, b, a;
   int xx, yy, dont_free_tmp_surf, base_x, base_y;
-  float col_hue, col_sat, col_val,
-    stamp_hue, stamp_sat, stamp_val;
   
 
   /* Use a pre-mirrored version, if there is one? */
@@ -3124,46 +3174,7 @@ static void stamp_draw(int x, int y)
     }
   else if (stamp_tintable(cur_stamp))
     {
-      /* Render the stamp in the chosen color: */
-
-      /* FIXME: It sucks to render this EVERY TIME.  Why not just when
-	 they pick the color, or pick the stamp, like with brushes?
-	 (Why? Because I'm LAZY! :^) ) */
-
-	  
-      rgbtohsv(color_hexes[cur_color][0],
-	       color_hexes[cur_color][1],
-	       color_hexes[cur_color][2],
-	       &col_hue, &col_sat, &col_val);
-        
-
-      /* Render the stamp: */
-
-      SDL_LockSurface(surf_ptr);
-      SDL_LockSurface(tmp_surf);
-
-      for (yy = 0; yy < surf_ptr->h; yy++)
-	{
-	  for (xx = 0; xx < surf_ptr->w; xx++)
-	    {
-	      SDL_GetRGBA(getpixel(surf_ptr, xx, yy),
-			  surf_ptr->format,
-			  &r, &g, &b, &a);
-	
-	      rgbtohsv(r, g, b, &stamp_hue, &stamp_sat, &stamp_val);	
-     
-	      if ( stamp_tintgray(cur_stamp) || stamp_sat > 0.25 )
-		hsvtorgb(col_hue, col_sat, stamp_val, &r, &g, &b);
-	      //	else
-	      //	  hsvtorgb(col_hue, col_sat, stamp_val, &r, &g, &b);
-	
-	      putpixel(tmp_surf, xx, yy,
-		       SDL_MapRGBA(tmp_surf->format, r, g, b, a));
-	    }
-	}
-
-      SDL_UnlockSurface(tmp_surf);
-      SDL_UnlockSurface(surf_ptr);
+      tint_surface(tmp_surf, surf_ptr);
     }
   else
     {
