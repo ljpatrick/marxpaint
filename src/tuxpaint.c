@@ -1148,7 +1148,7 @@ static SDL_Surface * img_tools[NUM_TOOLS], * img_tool_names[NUM_TOOLS];
 
 #define MAX_STAMPS 512
 #define MAX_BRUSHES 64
-#define MAX_FONTS 64
+#define MAX_FONTS 256
 
 static int num_brushes, num_stamps;
 static SDL_Surface * img_brushes[MAX_BRUSHES];
@@ -2458,6 +2458,10 @@ static void mainloop(void)
 			{
 			  cur_font = cur_thing;
 			  font_scroll = thing_scroll;
+			  
+			  char font_tux_text[512];
+			  snprintf(font_tux_text, sizeof font_tux_text, "%s, %s", TTF_FontFaceFamilyName(user_fonts[cur_font]), TTF_FontFaceStyleName(user_fonts[cur_font]));
+			  draw_tux_text(TUX_GREAT, font_tux_text, 1);
 			  
 			  if (do_draw)
 			    draw_fonts();
@@ -6422,6 +6426,19 @@ static void setup(int argc, char * argv[])
   
   loadfonts(DATA_PREFIX "fonts", 1);
 
+#ifdef WIN32
+  // add Windows font dir here
+#else
+  loadfonts("/usr/share/feh/fonts", 0);
+  loadfonts("/usr/share/fonts", 0);
+  loadfonts("/usr/share/texmf/fonts", 0);
+  loadfonts("/usr/share/grace/fonts/type1", 0);
+  loadfonts("/usr/share/hatman/fonts", 0);
+  loadfonts("/usr/share/icewm/themes/jim-mac", 0);
+  loadfonts("/usr/share/vlc/skins2/fonts", 0);
+  loadfonts("/usr/share/xplanet/fonts", 0);
+#endif
+
   homedirdir = get_fname("fonts");
   loadfonts(homedirdir, 0);
   free(homedirdir);
@@ -7406,7 +7423,7 @@ static void draw_fonts(void)
 
       if (font < num_fonts)
 	{
-	  tmp_surf = TTF_RenderUTF8_Blended(user_fonts[font], "A", black);
+	  tmp_surf = TTF_RenderUTF8_Blended(user_fonts[font], gettext("ag"), black);
 
 	  src.x = (tmp_surf->w - 48) / 2;
 	  src.y = (tmp_surf->h - 48) / 2;
@@ -13402,8 +13419,8 @@ static void loadfonts(const char * const dir, int fatal)
 
 	  if (num_files >= d_names_alloced)
 	    {
-	      d_names_alloced = d_names_alloced + 32;
-	      d_names = (char * *) realloc(d_names, sizeof(char *) * d_names_alloced);
+	      d_names_alloced += 32;
+	      d_names = realloc(d_names, sizeof(char *) * d_names_alloced);
 
 	      if (d_names == NULL)
 		{
@@ -13441,15 +13458,24 @@ static void loadfonts(const char * const dir, int fatal)
 	
 	  stat(fname, &sbuf);
 	
-	  if (strstr(d_names[i], ".ttf") != NULL)
+	  if (S_ISDIR(sbuf.st_mode))
+	    loadfonts(fname,fatal);
+	  if (strstr(d_names[i], ".ttf") || strstr(d_names[i], ".pfa") || strstr(d_names[i], ".pfb"))
 	    {
-	      /* If it has ".ttf" in the filename, assume we can try to load it: */
-	
-	      user_fonts[num_fonts++] = TTF_OpenFont(fname, 16);
-	      user_fonts[num_fonts++] = TTF_OpenFont(fname, 24);
-	      user_fonts[num_fonts++] = TTF_OpenFont(fname, 32);
-	      user_fonts[num_fonts++] = TTF_OpenFont(fname, 48);
-	  
+//printf("Loading font: %s/%s\n", dir, d_names[i]);
+              TTF_Font *font = TTF_OpenFont(fname, 36);
+              if(font)
+                {
+                  const char *family = TTF_FontFaceFamilyName(font);
+                  if (strstr(family, "Webdings") || strstr(family, "Dingbats") || strstr(family, "Standard Symbols"))
+                    TTF_CloseFont(font);
+                  else
+                    user_fonts[num_fonts++] = font;
+                }
+//	      user_fonts[num_fonts++] = TTF_OpenFont(fname, 16);
+//	      user_fonts[num_fonts++] = TTF_OpenFont(fname, 24);
+//	      user_fonts[num_fonts++] = TTF_OpenFont(fname, 32);
+//	      user_fonts[num_fonts++] = TTF_OpenFont(fname, 48);
 	      show_progress_bar();
 	    }
 	}
