@@ -53,6 +53,8 @@ Section
 !include "filelist.inc"
   SetOutPath $INSTDIR\locale
   File /r "locale\*.*"
+  SetOutPath $INSTDIR\userdata
+  File "userdata\current_id.txt"
 
   WriteRegStr HKLM SOFTWARE\${APP_PREFIX} "Install_Dir" "$INSTDIR"
   WriteRegStr HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\${APP_PREFIX}" "DisplayName" "${APP_NAME} (remove only)"

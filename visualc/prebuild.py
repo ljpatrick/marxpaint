@@ -60,7 +60,6 @@ add2filelist(fp, "data\\fonts", "..\\fonts")
 add2filelist(fp, "data\\starters", "..\\starters")
 add2filelist(fp, "data\\stamps", "..\\stamps")
 add2filelist(fp, "docs", "..\\docs")
-add2filelist(fp, "userdata", "userdata")
 fp.write("\n")
 fp.close()
 
