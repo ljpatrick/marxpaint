@@ -712,11 +712,6 @@ static void set_current_language(void)
 	}
     }
 
-#ifdef DEBUG
-  printf("lang=%d\n\n", lang);
-  sleep(10);
-#endif
-
   lang_prefix = lang_prefixes[lang];
   need_own_font = search_int_array(lang,lang_use_own_font);
   need_right_to_left = search_int_array(lang,lang_use_right_to_left);
