@@ -2102,7 +2102,6 @@ static void loadarbitrary(SDL_Surface * surfs[], SDL_Surface * altsurfs[],
 
 static Uint32 getpixel(SDL_Surface * surface, int x, int y);
 static void putpixel(SDL_Surface * surface, int x, int y, Uint32 pixel);
-static void clipped_putpixel(SDL_Surface * dest, int x, int y, Uint32 c);
 
 static void do_undo(void);
 static void do_redo(void);
@@ -7756,6 +7755,9 @@ static void draw_magic(void)
   int magic, i, max, off_y;
   SDL_Rect dest;
 
+  // restore these to black (stamp and text controls borrow them)
+  SDL_BlitSurface(img_black, NULL, img_magics[MAGIC_FLIP], NULL);
+  SDL_BlitSurface(img_black, NULL, img_magics[MAGIC_MIRROR], NULL);
 
   /* FIXME: Should we worry about more than 14 magic effects? :^/ */
 
@@ -8152,6 +8154,9 @@ static void draw_fonts(void)
 
   if (!disable_stamp_controls)
     {
+      SDL_Surface *button_color;
+      SDL_Surface *button_body;
+
       /* Show bold button: */
 
       dest.x = WINDOW_WIDTH - 96;
@@ -8192,31 +8197,47 @@ static void draw_fonts(void)
       dest.y = 40 + ((6 + TOOLOFFSET / 2) * 48);
 
       if (text_size > MIN_TEXT_SIZE)
-	SDL_BlitSurface(img_btn_up, NULL, screen, &dest);
+        {
+          button_color = img_black;
+          button_body  = img_btn_up;
+	}
       else
-	SDL_BlitSurface(img_btn_off, NULL, screen, &dest);
+        {
+          button_color = img_grey;
+          button_body  = img_btn_off;
+        }
+      SDL_BlitSurface(button_body, NULL, screen, &dest);
     
       dest.x = WINDOW_WIDTH - 96 + (48 - img_shrink->w) / 2;
       dest.y = (40 + ((6 + TOOLOFFSET / 2) * 48) +
 		(48 - img_shrink->h) / 2);
 
+      SDL_BlitSurface(button_color, NULL, img_shrink, NULL);
       SDL_BlitSurface(img_shrink, NULL, screen, &dest);
 
-    
+
       /* Show grow button: */
 
       dest.x = WINDOW_WIDTH - 48;
       dest.y = 40 + ((6 + TOOLOFFSET / 2) * 48);
 
       if (text_size < MAX_TEXT_SIZE)
-	SDL_BlitSurface(img_btn_up, NULL, screen, &dest);
+        {
+          button_color = img_black;
+          button_body  = img_btn_up;
+	}
       else
-	SDL_BlitSurface(img_btn_off, NULL, screen, &dest);
+        {
+          button_color = img_grey;
+          button_body  = img_btn_off;
+        }
+      SDL_BlitSurface(button_body, NULL, screen, &dest);
 
       dest.x = WINDOW_WIDTH - 48 + (48 - img_grow->w) / 2;
       dest.y = (40 + ((6 + TOOLOFFSET / 2) * 48) +
 		(48 - img_grow->h) / 2);
     
+      SDL_BlitSurface(button_color, NULL, img_grow, NULL);
       SDL_BlitSurface(img_grow, NULL, screen, &dest);
     }
 }
@@ -8425,6 +8446,9 @@ static void draw_stamps(void)
 
   if (!disable_stamp_controls)
     {
+      SDL_Surface *button_color;
+      SDL_Surface *button_body;
+
       /* Show mirror button: */
 
       dest.x = WINDOW_WIDTH - 96;
@@ -8433,19 +8457,28 @@ static void draw_stamps(void)
       if (inf_stamps[cur_stamp]->mirrorable)
 	{
 	  if (state_stamps[cur_stamp]->mirrored)
-	    SDL_BlitSurface(img_btn_down, NULL, screen, &dest);
+	    {
+	      button_color = img_black;
+	      button_body  = img_btn_down;
+	    }
 	  else
-	    SDL_BlitSurface(img_btn_up, NULL, screen, &dest);
+	    {
+	      button_color = img_black;
+	      button_body  = img_btn_up;
+	    }
 	}
       else
 	{
-	  SDL_BlitSurface(img_btn_off, NULL, screen, &dest);
+	  button_color = img_grey;
+	  button_body  = img_btn_off;
 	}
+      SDL_BlitSurface(button_body, NULL, screen, &dest);
     
       dest.x = WINDOW_WIDTH - 96 + (48 - img_magics[MAGIC_MIRROR]->w) / 2;
       dest.y = (40 + ((5 + TOOLOFFSET / 2) * 48) +
 		(48 - img_magics[MAGIC_MIRROR]->h) / 2);
 
+      SDL_BlitSurface(button_color, NULL, img_magics[MAGIC_MIRROR], NULL);
       SDL_BlitSurface(img_magics[MAGIC_MIRROR], NULL, screen, &dest);
 
     
@@ -8457,19 +8490,28 @@ static void draw_stamps(void)
       if (inf_stamps[cur_stamp]->flipable)
 	{
 	  if (state_stamps[cur_stamp]->flipped)
-	    SDL_BlitSurface(img_btn_down, NULL, screen, &dest);
+	    {
+	      button_color = img_black;
+	      button_body  = img_btn_down;
+	    }
 	  else
-	    SDL_BlitSurface(img_btn_up, NULL, screen, &dest);
+	    {
+	      button_color = img_black;
+	      button_body  = img_btn_up;
+	    }
 	}
       else
 	{
-	  SDL_BlitSurface(img_btn_off, NULL, screen, &dest);
+	  button_color = img_grey;
+	  button_body  = img_btn_off;
 	}
+      SDL_BlitSurface(button_body, NULL, screen, &dest);
 
       dest.x = WINDOW_WIDTH - 48 + (48 - img_magics[MAGIC_FLIP]->w) / 2;
       dest.y = (40 + ((5 + TOOLOFFSET / 2) * 48) +
 		(48 - img_magics[MAGIC_FLIP]->h) / 2);
-    
+
+      SDL_BlitSurface(button_color, NULL, img_magics[MAGIC_FLIP], NULL);
       SDL_BlitSurface(img_magics[MAGIC_FLIP], NULL, screen, &dest);
 
     
@@ -8479,14 +8521,22 @@ static void draw_stamps(void)
       dest.y = 40 + ((6 + TOOLOFFSET / 2) * 48);
 
       if (state_stamps[cur_stamp]->size > MIN_STAMP_SIZE)
-	SDL_BlitSurface(img_btn_up, NULL, screen, &dest);
+        {
+          button_color = img_black;
+          button_body  = img_btn_up;
+	}
       else
-	SDL_BlitSurface(img_btn_off, NULL, screen, &dest);
+        {
+          button_color = img_grey;
+          button_body  = img_btn_off;
+        }
+      SDL_BlitSurface(button_body, NULL, screen, &dest);
     
       dest.x = WINDOW_WIDTH - 96 + (48 - img_shrink->w) / 2;
       dest.y = (40 + ((6 + TOOLOFFSET / 2) * 48) +
 		(48 - img_shrink->h) / 2);
 
+      SDL_BlitSurface(button_color, NULL, img_shrink, NULL);
       SDL_BlitSurface(img_shrink, NULL, screen, &dest);
 
     
@@ -8496,15 +8546,24 @@ static void draw_stamps(void)
       dest.y = 40 + ((6 + TOOLOFFSET / 2) * 48);
 
       if (state_stamps[cur_stamp]->size < MAX_STAMP_SIZE)
-	SDL_BlitSurface(img_btn_up, NULL, screen, &dest);
+        {
+          button_color = img_black;
+          button_body  = img_btn_up;
+	}
       else
-	SDL_BlitSurface(img_btn_off, NULL, screen, &dest);
-
+        {
+          button_color = img_grey;
+          button_body  = img_btn_off;
+        }
+      SDL_BlitSurface(button_body, NULL, screen, &dest);
+    
       dest.x = WINDOW_WIDTH - 48 + (48 - img_grow->w) / 2;
       dest.y = (40 + ((6 + TOOLOFFSET / 2) * 48) +
 		(48 - img_grow->h) / 2);
-    
+
+      SDL_BlitSurface(button_color, NULL, img_grow, NULL);
       SDL_BlitSurface(img_grow, NULL, screen, &dest);
+
     }
 }
 
@@ -9110,18 +9169,6 @@ static void xorpixel(int x, int y)
       p[2] ^= 0x80;
     }
 }
-
-
-/* Should really clip at the line level, but oh well... */
-static void clipped_putpixel(SDL_Surface * dest, int x, int y, Uint32 c)
-{
-  if (x >= 96 && x < (WINDOW_WIDTH - 96) &&
-      y >= 0 && y < (48 * 7 + 40 + HEIGHTOFFSET))
-    {
-      putpixel(dest, x, y, c);
-    }
-}
-
 
 
 /* Undo! */
