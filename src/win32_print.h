@@ -14,9 +14,9 @@
 #endif
 
 /* if printcfg is NULL, uses the default printer */
-extern int SurfacePrint( SDL_Surface *surf, 
-			 const char *printcfg, 
-			 int showdialog );
+extern const char *SurfacePrint( SDL_Surface *surf, 
+			                     const char *printcfg, 
+			                     int showdialog );
 extern int IsPrinterAvailable( void );
 
 #endif

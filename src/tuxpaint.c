@@ -11123,14 +11123,18 @@ void do_print(void)
   }
 #else
 #ifdef WIN32
-  /* Win32 */
-  
-  char f[512];
+    /* Win32 */
 
-  int show = (SDL_GetModState() & KMOD_ALT) && !fullscreen;
+    char  f[512];
+    int   show = (SDL_GetModState() & KMOD_ALT) && !fullscreen;
 
-  snprintf(f, sizeof(f), "%s/%s", savedir, "print.cfg");
-  SurfacePrint(canvas, use_print_config?f:NULL, show);
+    snprintf(f, sizeof(f), "%s/%s", savedir, "print.cfg");
+
+    {
+      const char   *error = SurfacePrint(canvas, use_print_config?f:NULL, show);
+
+      if ( error ) fprintf(stderr, "%s\n", error);
+    }
 #elif defined(__BEOS__)
   /* BeOS */
   

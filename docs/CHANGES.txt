@@ -7,7 +7,7 @@ bill@newbreedsoftware.com
 http://www.newbreedsoftware.com/tuxpaint/
 
 
-2003.Dec.19 (0.9.13) [cvs]
+2003.Dec.19 (0.9.13)
   * Translated into Basque (eu_ES)
     Juan Irigoien <juanirigoien@irakasle.net>
 
@@ -22,7 +22,7 @@ http://www.newbreedsoftware.com/tuxpaint/
 
   * Added stamp controls to mirror, flip and resize stamps before placing
     them.  Some stamps can be set to not be mirror-, flip- or resize-able.
-    (Place "noflip", "nomirror" and/or "noresize" in the stamps' ".dat"
+    (Place "noflip" and/or "nomirror" in the stamps' ".dat"
     option files.)  Stamps can have alternative mirror-images (e.g., to
     show a shape the opposite direction, but not have backwards text on it).
     Create "filename_mirror.png" image files.  [PENDING]

@@ -1,10 +1,11 @@
 /* win32_print.c */
-
 /* printing support for Tux Paint */
+
 /* John Popplewell <john@johnnypops.demon.co.uk> */
 
 /* Sept. 30, 2002 - Oct. 17, 2002 */
-
+/* Oct.  07, 2003 - added banding support */
+/*                - prints using 24-bit (not 32-bit) bitmap */
 
 #include "SDL_syswm.h"
 #include "win32_print.h"
@@ -13,11 +14,8 @@
 
 #define NOREF(x)        ((x)=(x))
 #define GETHINST(hWnd)	((HINSTANCE)GetWindowLong( hWnd, GWL_HINSTANCE )) 
-#define MIR( id )	(MAKEINTRESOURCE( id ))
+#define MIR( id )	    (MAKEINTRESOURCE( id ))
 
-
-static int	bPrint = FALSE;
-static HWND	hDlgCancel = NULL;
 
 static PRINTDLG	global_pd = {
   sizeof(PRINTDLG),
@@ -31,50 +29,11 @@ static PRINTDLG	global_pd = {
   NULL,
 };
 
-//static DEVMODE	*devmode = NULL;
 
-BOOL CALLBACK AbortProc( HDC hDC, int nCode )
-{
-  MSG msg;
-
-  NOREF(nCode);
-  NOREF(hDC);
-  while ( PeekMessage( (LPMSG)&msg, (HWND)NULL, 0, 0, PM_REMOVE) )
-  { 
-    if ( !IsDialogMessage( hDlgCancel, (LPMSG)&msg ) )
-    {
-      TranslateMessage( (LPMSG)&msg );
-      DispatchMessage( (LPMSG)&msg );
-    }
-  }
-
-  return bPrint;
-}
-
-
-LRESULT CALLBACK AbortPrintJob( HWND hDlg, UINT message, WPARAM wParam, LPARAM lParam )
-{
-  NOREF(hDlg);
-  NOREF(lParam);
-  NOREF(wParam);
-  NOREF(message);
-  switch ( message )
-  { 
-      case WM_INITDIALOG  :
-	return TRUE;
-      case WM_COMMAND	    :
-	bPrint = FALSE;
-	return TRUE;
-      default		    :
-	return FALSE;
-  }
-}
-
-
-static SDL_Surface *make32bitDIB( SDL_Surface *surf )
+static SDL_Surface *make24bitDIB( SDL_Surface *surf )
 {
   SDL_PixelFormat     pixfmt;
-  SDL_Surface         *surf32;
+  SDL_Surface         *surf24;
   SDL_Surface         *surfDIB;
   Uint8               *src,*dst;
   Uint32              linesize;
@@ -82,16 +41,16 @@ static SDL_Surface *make32bitDIB( SDL_Surface *surf )
 
   memset( &pixfmt, 0, sizeof(pixfmt) );
   pixfmt.palette      = NULL;
-  pixfmt.BitsPerPixel = 32;
-  pixfmt.BytesPerPixel= 4;
+  pixfmt.BitsPerPixel = 24;
+  pixfmt.BytesPerPixel= 3;
   pixfmt.Rmask        = 0x00FF0000;
   pixfmt.Gmask        = 0x0000FF00;
   pixfmt.Bmask        = 0x000000FF;
-  pixfmt.Amask        = 0xFF000000;
+  pixfmt.Amask        = 0;
   pixfmt.Rshift       = 16;
   pixfmt.Gshift       = 8;
   pixfmt.Bshift       = 0;
-  pixfmt.Ashift       = 24;
+  pixfmt.Ashift       = 0;
   pixfmt.Rloss        = 0;
   pixfmt.Gloss        = 0;
   pixfmt.Bloss        = 0;
@@ -99,21 +58,21 @@ static SDL_Surface *make32bitDIB( SDL_Surface *surf )
   pixfmt.colorkey     = 0;
   pixfmt.alpha        = 0;
 
-  surf32 = SDL_ConvertSurface( surf, &pixfmt, SDL_SWSURFACE );
-  surfDIB = SDL_CreateRGBSurface( SDL_SWSURFACE, surf32->w, surf32->h, 32, 
+  surf24 = SDL_ConvertSurface( surf, &pixfmt, SDL_SWSURFACE );
+  surfDIB = SDL_CreateRGBSurface( SDL_SWSURFACE, surf24->w, surf24->h, 24, 
                     pixfmt.Rmask, pixfmt.Gmask, pixfmt.Bmask, pixfmt.Amask );
 
-  linesize = surf32->w*sizeof(Uint32);    /* Flip top2bottom */
+  linesize = surf24->w * 3;    // Flip top2bottom
   dst = surfDIB->pixels;
-  src = ((Uint8*)surf32->pixels)+((surf32->h-1)*surf32->pitch);
-  for ( i = 0; i < surf32->h; ++i )
+  src = ((Uint8*)surf24->pixels)+((surf24->h-1)*surf24->pitch);
+  for ( i = 0; i < surf24->h; ++i )
   {
       memcpy( dst, src, linesize );
-      src -= surf32->pitch;
+      src -= surf24->pitch;
       dst += surfDIB->pitch;
   }
 
-  SDL_FreeSurface( surf32 );              /* Free temp surface */
+  SDL_FreeSurface( surf24 );   // Free temp surface
 
   return surfDIB;
 }
@@ -142,21 +101,10 @@ static int GetDefaultPrinterStrings( char *device, char *driver, char *output )
     if ( output ) strcpy( output, out );
     return 1;
   }
-
   return 0;
 }
 
-
-static HDC GetDefaultPrinterDC( void )
-{
-  char	device[MAX_PATH],driver[MAX_PATH],output[MAX_PATH];
-
-  if ( GetDefaultPrinterStrings( device, driver, output ) )
-    return CreateDC( driver, device, output, NULL );
-
-  return NULL;
-}
-
+#define dmDeviceNameSize    32
 
 static HANDLE LoadCustomPrinterHDEVMODE( HWND hWnd, const char *filepath )
 {
@@ -167,9 +115,14 @@ static HANDLE LoadCustomPrinterHDEVMODE( HWND hWnd, const char *filepath )
   DEVMODE *devmode = NULL;
   int	  res;
   FILE	  *fp = NULL;
+  int	  block_size;
+  int	  block_read;
 
-  if ( !GetDefaultPrinterStrings( device, NULL, NULL ) )
+  if ( (fp = fopen( filepath, "rb" )) == NULL )
     return NULL;
+
+  if ( fread( device, 1, dmDeviceNameSize, fp ) != dmDeviceNameSize )
+    goto err_exit;
 
   if (!OpenPrinter( device, &hPrinter, NULL ))
     return NULL;
@@ -193,15 +146,11 @@ static HANDLE LoadCustomPrinterHDEVMODE( HWND hWnd, const char *filepath )
   if ( res != IDOK )
     goto err_exit;
 
-  if ( (fp = fopen( filepath, "rb" )) != NULL )
-  {
-    int	  block_size = devmode->dmSize + devmode->dmDriverExtra;
-    int	  block_read = fread( devmode, 1, block_size, fp );
-
-    fclose( fp );
-    if ( block_size != block_read )
-      goto err_exit;
-  }
+  block_size = devmode->dmSize + devmode->dmDriverExtra;
+  block_read = fread( devmode, 1, block_size, fp );
+  if ( block_size != block_read )
+    goto err_exit;
+  fclose(fp);
 
   res = DocumentProperties( hWnd, hPrinter, device, devmode, devmode, 
 			    DM_IN_BUFFER|DM_OUT_BUFFER);
@@ -213,6 +162,7 @@ static HANDLE LoadCustomPrinterHDEVMODE( HWND hWnd, const char *filepath )
   return hDevMode;
 
 err_exit:
+  if ( fp ) fclose( fp );
   if ( devmode ) GlobalUnlock( hDevMode );
   if ( hDevMode ) GlobalFree( hDevMode );
   if ( hPrinter ) ClosePrinter( hPrinter );
@@ -229,11 +179,15 @@ static int SaveCustomPrinterHDEVMODE( HWND hWnd, const char *filepath, HANDLE hD
   {
     DEVMODE *devmode = (DEVMODE*)GlobalLock( hDevMode );
     int	     block_size = devmode->dmSize + devmode->dmDriverExtra;
-    int	     block_writ = fwrite( devmode, 1, block_size, fp );
+    int	     block_written;
+    char     devname[dmDeviceNameSize];
 
+    strcpy( devname, (const char*)devmode->dmDeviceName );
+    fwrite( devname, 1, sizeof(devname), fp );
+    block_written = fwrite( devmode, 1, block_size, fp );
     GlobalUnlock( hDevMode );
     fclose( fp );
-    return block_size == block_writ;
+    return block_size == block_written;
   }
   return 0;
 }
@@ -270,49 +224,71 @@ static HDC GetCustomPrinterDC( HWND hWnd, const char *printcfg, int show )
 }
 
 
+static HDC GetDefaultPrinterDC( void )
+{
+  char	device[MAX_PATH],driver[MAX_PATH],output[MAX_PATH];
+
+  if ( GetDefaultPrinterStrings( device, driver, output ) )
+    return CreateDC( driver, device, output, NULL );
+
+  return NULL;
+}
+
+
+static HDC GetPrinterDC( HWND hWnd, const char *printcfg, int show )
+{
+  if ( !printcfg ) return GetDefaultPrinterDC();
+  return GetCustomPrinterDC( hWnd, printcfg, show );
+}
+
+
+static int IsBandingRequired( HDC hPrinter )
+{
+  OSVERSIONINFO osvi;
+  int           indata = NEXTBAND;
+
+  osvi.dwOSVersionInfoSize = sizeof(OSVERSIONINFO);
+  if ( GetVersionEx( &osvi ) && (osvi.dwPlatformId != VER_PLATFORM_WIN32_NT) )
+    return Escape( hPrinter, QUERYESCSUPPORT, sizeof(int), (LPCSTR)&indata, NULL );
+  return 0;
+}
+
+
 int IsPrinterAvailable( void )
 {
   return (GetDefaultPrinterStrings( NULL, NULL, NULL ) != 0);
 }
 
 
-int SurfacePrint( SDL_Surface *surf, const char *printcfg, int showdialog )
+const char *SurfacePrint( SDL_Surface *surf, const char *printcfg, int showdialog )
 {
-  int                 res = 0;
+  char                *res = NULL;
   HWND                hWnd;
-  DOCINFO	      di;
-  int		      nError;
+  DOCINFO             di;
+  int                 nError;
   SDL_SysWMinfo       wminfo;
   HDC                 hDCwindow;
   HDC                 hDCprinter;
   BITMAPINFOHEADER    bmih;
-  SDL_Surface         *surf32 = NULL;
+  SDL_Surface         *surf24 = NULL;
   RECT                rc;
   float               fLogPelsX1, fLogPelsY1, fLogPelsX2, fLogPelsY2;
   float               fScaleX, fScaleY;
   int                 cWidthPels, xLeft, yTop;
   float               subscaler,subscalerx,subscalery;
   int                 hDCCaps;
-  HANDLE              hOldObject = NULL;
   HBITMAP             hbm = NULL;
   HDC                 hdcMem = NULL;
 
   SDL_VERSION(&wminfo.version);
   if ( !SDL_GetWMInfo( &wminfo ) )
-    return -1;
+    return "win32_print: SDL_GetWMInfo() failed.";
+
   hWnd = wminfo.window;
-
-  if ( !printcfg )
-    hDCprinter = GetDefaultPrinterDC();
-  else
-    hDCprinter = GetCustomPrinterDC( hWnd, printcfg, showdialog );
-
+  hDCprinter = GetPrinterDC( hWnd, printcfg, showdialog );
   if ( !hDCprinter )
-    return -1;
+    return "win32_print: GetPrinterDC() failed.";
 
-  bPrint = TRUE;
-  SetAbortProc( hDCprinter, AbortProc );
-  hDlgCancel = CreateDialog( GETHINST(hWnd), MIR(IDD_ABORTDLG), hWnd, (DLGPROC)AbortPrintJob );
   EnableWindow( hWnd, FALSE );
 
   di.cbSize = sizeof(DOCINFO);
@@ -324,23 +300,23 @@ int SurfacePrint( SDL_Surface *surf, const char *printcfg, int showdialog )
   nError = StartDoc( hDCprinter, &di );
   if ( nError == SP_ERROR )
   {
-    res = -2;
+    res = "win32_print: StartDoc() failed.";
     goto error;
   }
 
-  nError = StartPage(hDCprinter);
+  nError = StartPage( hDCprinter );
   if (nError <= 0)
   {
-    res = -3;
+    res = "win32_print: StartPage() failed.";
     goto error;
   }
 
 //////////////////////////////////////////////////////////////////////////////////////
 
-  surf32 = make32bitDIB( surf );
-  if ( !surf32 )
+  surf24 = make24bitDIB( surf );
+  if ( !surf24 )
   {
-    res = -4;
+    res = "win32_print: make24bitDIB() failed.";
     goto error;
   }
 
@@ -348,21 +324,27 @@ int SurfacePrint( SDL_Surface *surf, const char *printcfg, int showdialog )
   bmih.biSize         = sizeof(bmih);
   bmih.biPlanes       = 1;
   bmih.biCompression  = BI_RGB;
-  bmih.biBitCount     = 32;
-  bmih.biWidth        = surf32->w;
-  bmih.biHeight       = surf32->h;
+  bmih.biBitCount     = 24;
+  bmih.biWidth        = surf24->w;
+  bmih.biHeight       = surf24->h;
 
   GetClientRect( hWnd, &rc );
-  subscalerx = (float)rc.right/surf32->w;
-  subscalery = (float)rc.bottom/surf32->h;
+  subscalerx = (float)rc.right/surf24->w;
+  subscalery = (float)rc.bottom/surf24->h;
   subscaler = subscalery;
   if ( subscalerx < subscalery )
     subscaler = subscalerx;
 
   hDCwindow = GetDC( hWnd );
+  if ( !hDCwindow )
+  {
+    res = "win32_print: failed to get window DC.";
+    goto error;
+  }
   fLogPelsX1 = (float)GetDeviceCaps(hDCwindow, LOGPIXELSX);
   fLogPelsY1 = (float)GetDeviceCaps(hDCwindow, LOGPIXELSY);
   ReleaseDC( hWnd, hDCwindow );
+
   fLogPelsX2 = (float)GetDeviceCaps(hDCprinter, LOGPIXELSX);
   fLogPelsY2 = (float)GetDeviceCaps(hDCprinter, LOGPIXELSY);
 
@@ -386,41 +368,69 @@ int SurfacePrint( SDL_Surface *surf, const char *printcfg, int showdialog )
 
   hDCCaps = GetDeviceCaps(hDCprinter, RASTERCAPS);
 
-  if ( hDCCaps & RC_STRETCHDIB )
+  if (hDCCaps & RC_PALETTE)
   {
-    StretchDIBits(hDCprinter, xLeft, yTop,
-                  (int)(fScaleX*bmih.biWidth),
-                  (int)(fScaleY*bmih.biHeight),
-                  0, 0, bmih.biWidth, bmih.biHeight,
-                  surf32->pixels, (BITMAPINFO*)&bmih,
-                  DIB_RGB_COLORS, SRCCOPY);
+	  res = "win32_print: printer context requires palette.";
+	  goto error;
   }
-  else
-  if ( hDCCaps & RC_STRETCHBLT )
+
+  if ( IsBandingRequired( hDCprinter ) )
   {
-    hbm = CreateDIBitmap(hDCprinter, &bmih, CBM_INIT, 
-                         surf32->pixels, (const BITMAPINFO*)&bmih, 0);
-    if ( hbm )
+    RECT  rcBand = { 0 };
+    RECT  rcPrinter;
+    RECT  rcImage;
+
+    SetRect( &rcPrinter, xLeft, yTop, (int)(fScaleX*bmih.biWidth), (int)(fScaleY*bmih.biHeight) );
+    SetRect( &rcImage, 0, 0, bmih.biWidth, bmih.biHeight );
+
+    while ( Escape(hDCprinter, NEXTBAND, 0, NULL, &rcBand) )
     {
-      hdcMem = CreateCompatibleDC( hDCprinter );
-      if ( hdcMem )
+      if ( IsRectEmpty( &rcBand) ) break;
+      if ( IntersectRect( &rcBand, &rcBand, &rcPrinter ) )
       {
-        hOldObject = SelectObject(hdcMem, hbm);
-        if ( hOldObject ) 
+        rcImage.top = (int)(0.5f+(float)rcBand.top/fScaleX);
+        rcImage.bottom = (int)(0.5f+(float)rcBand.bottom/fScaleX);
+
+        SetStretchBltMode( hDCprinter, COLORONCOLOR );
+        nError = StretchDIBits(hDCprinter, rcBand.left, rcBand.top,
+                      rcBand.right - rcBand.left,
+                      rcBand.bottom - rcBand.top,
+                      rcImage.left, rcImage.top,
+                      rcImage.right - rcImage.left,
+                      rcImage.bottom - rcImage.top,
+                      surf24->pixels, (BITMAPINFO*)&bmih,
+                      DIB_RGB_COLORS, SRCCOPY);
+        if ( nError == GDI_ERROR )
         {
-          StretchBlt(hDCprinter, xLeft, yTop,
-                     (int)(fScaleX*bmih.biWidth),
-                     (int)(fScaleY*bmih.biHeight),
-                     hdcMem, 0, 0, bmih.biWidth, bmih.biHeight, SRCCOPY);
-          SelectObject(hdcMem, hOldObject);
+	        res = "win32_print: StretchDIBits() failed.";
+	        goto error;
         }
       }
     }
   }
   else
   {
-    res = -10;
-    goto error;
+    if ( hDCCaps & RC_STRETCHDIB )
+    {
+      SetStretchBltMode(hDCprinter, COLORONCOLOR);
+
+      nError = StretchDIBits(hDCprinter, xLeft, yTop,
+                    (int)(fScaleX*bmih.biWidth),
+                    (int)(fScaleY*bmih.biHeight),
+                    0, 0, bmih.biWidth, bmih.biHeight,
+                    surf24->pixels, (BITMAPINFO*)&bmih,
+                    DIB_RGB_COLORS, SRCCOPY);
+      if ( nError == GDI_ERROR )
+      {
+	      res = "win32_print: StretchDIBits() failed.";
+	      goto error;
+      }
+    }
+    else
+    {
+      res = "win32_print: StretchDIBits() not available.";
+      goto error;
+    }
   }
 
 //////////////////////////////////////////////////////////////////////////////////////
@@ -428,7 +438,7 @@ int SurfacePrint( SDL_Surface *surf, const char *printcfg, int showdialog )
   nError = EndPage( hDCprinter );
   if ( nError <= 0 )
   {
-    res = -9;
+    res = "win32_print: EndPage() failed.";
     goto error;
   }
 
@@ -437,13 +447,10 @@ int SurfacePrint( SDL_Surface *surf, const char *printcfg, int showdialog )
 error: 
   if ( hdcMem ) DeleteDC( hdcMem );
   if ( hbm ) DeleteObject( hbm );
-  if ( surf32 ) SDL_FreeSurface( surf32 );
+  if ( surf24 ) SDL_FreeSurface( surf24 );
 
   EnableWindow( hWnd, TRUE );
-  DestroyWindow( hDlgCancel );
   DeleteDC( hDCprinter );
 
   return res;
 }
-
-
