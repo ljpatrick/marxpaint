@@ -21,12 +21,12 @@
   along with this program; if not, write to the Free Software
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   
-  June 14, 2002 - November 23, 2004
+  June 14, 2002 - November 26, 2004
 */
 
 
 #define VER_VERSION     "0.9.15"
-#define VER_DATE        "2004-11-23"
+#define VER_DATE        "2004-11-26"
 
 
 //#define VIDEO_BPP 15 // saves memory
@@ -726,6 +726,7 @@ static void playsound(int chan, int s, int override);
 static void line_xor(int x1, int y1, int x2, int y2);
 static void clipped_putpixel(SDL_Surface * dest, int x, int y, Uint32 c);
 static void rect_xor(int x1, int y1, int x2, int y2);
+static void update_stamp_xor(void);
 static void stamp_xor(int x1, int y1);
 static void do_eraser(int x, int y);
 static void disable_avail_tools(void);
@@ -1386,6 +1387,8 @@ static void mainloop(void)
 			  draw_stamps();
 			  draw_colors(stamp_colorable(cur_stamp) ||
 				      stamp_tintable(cur_stamp));
+
+			  update_stamp_xor();
 			}
 		      else if (cur_tool == TOOL_LINES)
 			{
@@ -1937,9 +1940,13 @@ static void mainloop(void)
 				Mix_PlayChannel(2, snd_stamps[cur_thing], 0);
 			    }
 #endif
+		  
+
 			  cur_stamp = cur_thing;
 			  stamp_scroll = thing_scroll;
 			  
+			  update_stamp_xor();
+
 			  if (do_draw)
 			    draw_stamps();
 			  
@@ -2374,8 +2381,11 @@ static void mainloop(void)
 			Mix_PlayChannel(2, snd_stamps[cur_thing], 0);
 		    }
 #endif
+  
 		  cur_stamp = cur_thing;
 		  stamp_scroll = thing_scroll;
+
+		  update_stamp_xor();
 
 		  if (do_draw)
 		    draw_stamps();
@@ -12210,8 +12220,6 @@ static void update_stamp_xor(void)
 static void stamp_xor(int x, int y)
 {
   int xx, yy, sx, sy;
-
-  update_stamp_xor(); // move elsewhere later
 
   SDL_LockSurface(screen);
   for (yy = 0; yy < stamp_outline_h; yy++)
