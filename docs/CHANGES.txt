@@ -39,6 +39,9 @@ http://www.newbreedsoftware.com/tuxpaint/
   * Korean language file (ko.po) update.
     Mark K. Kim <tuxNO_SOLICITATIONpaint-dev@cbreak.org>
 
+  * Added support for native names for Dutch (nederlands),
+    Slovenian (slovensko) and Walloon (walon) in "--lang" option.
+
   * Fixed security issue with permissions to Tux Paint docs directory.
     Mark K. Kim <tuxNO_SOLICITATIONpaint-dev@cbreak.org>
 

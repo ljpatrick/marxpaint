@@ -3794,7 +3794,7 @@ void show_lang_usage(FILE * f, char * prg)
 /* zh_CN */  "  chinese\n"
 /* cs */     "  czech        cesky\n"
 /* da */     "  danish       dansk\n"
-/* nl */     "  dutch\n"
+/* nl */     "  dutch        nederlands\n"
 /* fi */     "  finnish      suomi\n"
 /* fr */     "  french       francais\n"
 /* de */     "  german       deutsch\n"
@@ -3815,12 +3815,12 @@ void show_lang_usage(FILE * f, char * prg)
 /* ru */     "  russian      russkiy\n"
 /* sr */     "  serbian\n"
 /* sk */     "  slovak\n"
-/* sl */     "  slovenian\n"
+/* sl */     "  slovenian    slovensko\n"
 /* es */     "  spanish      espanol\n"
 /* sv */     "  swedish      svenska\n"
 /* ta */     "  tamil\n"
 /* tr */     "  turkish\n"
-/* zh */     "  walloon\n"
+/* wa */     "  walloon      walon\n"
 	  "\n",
 	  prg);
 }
@@ -4505,7 +4505,8 @@ void setup(int argc, char * argv[])
 	  putenv("LANG=ms_MY");
 	  putenv("LC_ALL=ms_MY");
 	}
-      else if (strcmp(langstr, "dutch") == 0)
+      else if (strcmp(langstr, "dutch") == 0 ||
+	       strcmp(langstr, "nederlands") == 0)
 	{
 	  putenv("LANG=nl_NL@euro");
 	  putenv("LC_ALL=nl_NL@euro");
@@ -4552,7 +4553,8 @@ void setup(int argc, char * argv[])
 	  putenv("LANG=sk_SK");
 	  putenv("LC_ALL=sk_SK");
 	}
-      else if (strcmp(langstr, "slovenian") == 0)
+      else if (strcmp(langstr, "slovenian") == 0 ||
+	       strcmp(langstr, "slovensko") == 0)
 	{
 	  putenv("LANG=sl_SI");
 	  putenv("LC_ALL=sl_SI");
@@ -4573,7 +4575,8 @@ void setup(int argc, char * argv[])
 	  putenv("LANG=tr_TR@euro");
 	  putenv("LC_ALL=tr_TR@euro");
 	}
-      else if (strcmp(langstr, "walloon") == 0)
+      else if (strcmp(langstr, "walloon") == 0 ||
+	       strcmp(langstr, "walon") == 0)
 	{
 	  putenv("LANG=wa_BE@euro");
 	  putenv("LC_ALL=wa_BE@euro");
