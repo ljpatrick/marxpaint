@@ -59,7 +59,7 @@ msgstr "好的"
 
 #: src/tuxpaint.c:582
 msgid "Starting a new picture will erase the current one!"
-msgstr "開始一張新的圖畫將會刪除目前這張圖!"
+msgstr "開啟一張新的圖紙將會刪除目前這張圖!"
 
 #: src/tuxpaint.c:583
 msgid "That's Ok"
@@ -120,7 +120,7 @@ msgstr "圖章"
 
 #: src/tools.h:44
 msgid "Lines"
-msgstr "線"
+msgstr "畫線"
 
 #: src/tools.h:45
 #: src/titles.h:41
