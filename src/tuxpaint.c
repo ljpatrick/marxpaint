@@ -6701,7 +6701,7 @@ static void setup(int argc, char * argv[])
 #ifndef LOW_QUALITY_COLOR_SELECTOR
 
   /* Create appropriately-shaped buttons: */
-  SDL_Surface *img1 = loadimage(DATA_PREFIX "brushes/round_36.png");
+  SDL_Surface *img1 = loadimage(DATA_PREFIX "images/ui/paintwell.png");
   SDL_Surface *img2 = thumbnail(img1,        (WINDOW_WIDTH - 96) / NUM_COLORS, 48, 0);
   tmp_btn_up        = thumbnail(img_btn_up,  (WINDOW_WIDTH - 96) / NUM_COLORS, 48, 0);
   tmp_btn_down      = thumbnail(img_btn_down,(WINDOW_WIDTH - 96) / NUM_COLORS, 48, 0);
