@@ -1159,18 +1159,19 @@ static SDL_Surface * img_tools[NUM_TOOLS], * img_tool_names[NUM_TOOLS];
 // 18 24 36 48
 #define MIN_TEXT_SIZE 0
 #define MAX_TEXT_SIZE 3
-static int text_size;
+static int text_size = 2;
 static int text_state;
+static int text_sizes[] = {18, 24, 36, 48};
 
 // for sorting through the font files at startup
-typedef struct face_info {
+typedef struct style_info {
   char *filename;
   char *directory;
   char *family;    // name like "FooCorp Thunderstruck"
   char *face;      // junk like "Oblique Demi-Bold"
   unsigned flags; // see SDL/SDL_ttf.h for bold & italic
   int truetype; // Is it? (TrueType gets priority)
-} face_info;
+} style_info;
 
 // user's notion of a font
 typedef struct family_info {
@@ -1184,7 +1185,37 @@ static TTF_Font * medium_font, * small_font, * large_font, * locale_font;
 static family_info * user_fonts[MAX_FONTS];
 static int num_fonts;
 
+static TTF_Font *getfonthandle(int desire)
+{
+  family_info *fi = user_fonts[desire];
+  if(fi->handle)
+    return fi->handle;
+  int missing = 0;
 
+  char *name = fi->filename[text_state];
+  if(!name)
+    {
+      name = fi->filename[text_state ^ TTF_STYLE_BOLD];
+      missing = text_state & TTF_STYLE_BOLD;
+    }
+  if(!name)
+    {
+      name = fi->filename[text_state ^ TTF_STYLE_ITALIC];
+      missing = text_state & TTF_STYLE_ITALIC;
+    }
+  if(!name)
+    {
+      name = fi->filename[text_state ^ (TTF_STYLE_ITALIC|TTF_STYLE_BOLD)];
+      missing = text_state & (TTF_STYLE_ITALIC|TTF_STYLE_BOLD);
+    }
+  char *pathname = alloca(strlen(fi->directory) + 1 + strlen(name) + 1);
+  sprintf(pathname, "%s/%s", fi->directory, name);
+  
+  fi->handle = TTF_OpenFont(pathname,text_sizes[text_size]);
+  // if the font doesn't load, we die -- it did load OK before though
+  TTF_SetFontStyle(fi->handle,missing);
+  return fi->handle;
+}
 
 #define MAX_STAMPS 512
 #define MAX_BRUSHES 64
@@ -1880,13 +1911,13 @@ static void mainloop(void)
 			    }
 
 			  cursor_x = cursor_left;
-			  cursor_y = cursor_y + TTF_FontHeight(user_fonts[cur_font]->handle);
+			  cursor_y = cursor_y + TTF_FontHeight(getfonthandle(cur_font));
 
 			  if (cursor_y > ((48 * 7 + 40 + HEIGHTOFFSET) -
-					  TTF_FontHeight(user_fonts[cur_font]->handle)))
+					  TTF_FontHeight(getfonthandle(cur_font))))
 			    {
 			      cursor_y = ((48 * 7 + 40 + HEIGHTOFFSET) -
-					  TTF_FontHeight(user_fonts[cur_font]->handle));
+					  TTF_FontHeight(getfonthandle(cur_font)));
 			    }
 	    
 			  playsound(0, SND_RETURN, 1);
@@ -2517,6 +2548,16 @@ static void mainloop(void)
 			  if (control_sound != -1)
 			    {
 			      playsound(0, control_sound, 0);
+			      // need to invalidate all the cached user fonts, causing reload on demand
+			      int i;
+                              for (i = 0; i < MAX_FONTS; i++)
+                                {
+                                  if (user_fonts[i] && user_fonts[i]->handle)
+                                    {
+                                      TTF_CloseFont(user_fonts[i]->handle);
+                                      user_fonts[i]->handle = NULL;
+                                    }
+                                }
 			      draw_fonts();
 			      SDL_UpdateRect(screen, WINDOW_WIDTH - 96, 0, 96, (48 * 7) + 40 + HEIGHTOFFSET);
 			    }
@@ -2548,7 +2589,7 @@ static void mainloop(void)
 			  font_scroll = thing_scroll;
 			  
 			  char font_tux_text[512];
-			  snprintf(font_tux_text, sizeof font_tux_text, "%s, %s", TTF_FontFaceFamilyName(user_fonts[cur_font]->handle), TTF_FontFaceStyleName(user_fonts[cur_font]->handle));
+			  snprintf(font_tux_text, sizeof font_tux_text, "%s, %s", TTF_FontFaceFamilyName(getfonthandle(cur_font)), TTF_FontFaceStyleName(getfonthandle(cur_font)));
 			  draw_tux_text(TUX_GREAT, font_tux_text, 1);
 			  
 			  if (do_draw)
@@ -3503,11 +3544,11 @@ static void mainloop(void)
 	  
 	  line_xor(cursor_x + cursor_textwidth, cursor_y,
 	           cursor_x + cursor_textwidth,
-		   cursor_y + TTF_FontHeight(user_fonts[cur_font]->handle));
+		   cursor_y + TTF_FontHeight(getfonthandle(cur_font)));
 
           update_screen(cursor_x + 96 + cursor_textwidth, cursor_y,
 			cursor_x + 96 + cursor_textwidth,
-			cursor_y + TTF_FontHeight(user_fonts[cur_font]->handle));
+			cursor_y + TTF_FontHeight(getfonthandle(cur_font)));
 	}
     }
   while (!done);
@@ -7525,7 +7566,7 @@ static void draw_fonts(void)
 
       if (font < num_fonts)
 	{
-	  tmp_surf = TTF_RenderUTF8_Blended(user_fonts[font]->handle, gettext("ag"), black);
+	  tmp_surf = TTF_RenderUTF8_Blended(getfonthandle(font), gettext("ag"), black);
 
 	  src.x = (tmp_surf->w - 48) / 2;
 	  src.y = (tmp_surf->h - 48) / 2;
@@ -13417,10 +13458,10 @@ static void do_render_cur_text(int do_blit)
   /* Keep cursor on the screen! */
 
   if (cursor_y > ((48 * 7 + 40 + HEIGHTOFFSET) -
-		  TTF_FontHeight(user_fonts[cur_font]->handle)))
+		  TTF_FontHeight(getfonthandle(cur_font))))
     {
       cursor_y = ((48 * 7 + 40 + HEIGHTOFFSET) -
-		  TTF_FontHeight(user_fonts[cur_font]->handle));
+		  TTF_FontHeight(getfonthandle(cur_font)));
     }
   
   
@@ -13430,7 +13471,7 @@ static void do_render_cur_text(int do_blit)
     {
       str = uppercase(texttool_str);
     
-      tmp_surf = TTF_RenderUTF8_Blended(user_fonts[cur_font]->handle, str, color);
+      tmp_surf = TTF_RenderUTF8_Blended(getfonthandle(cur_font), str, color);
 
       w = tmp_surf->w;
       h = tmp_surf->h;
@@ -13649,7 +13690,7 @@ static void loadfonts(const char * const dir, int fatal)
 	  if (strstr(d_names[i], ".ttf") || strstr(d_names[i], ".pfa") || strstr(d_names[i], ".pfb"))
 	    {
 //printf("Loading font: %s/%s\n", dir, d_names[i]);
-              TTF_Font *font = TTF_OpenFont(fname, 36);
+              TTF_Font *font = TTF_OpenFont(fname, text_sizes[text_size]);
               if(font)
                 {
                   const char *family = TTF_FontFaceFamilyName(font);
