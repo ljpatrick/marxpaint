@@ -776,8 +776,20 @@ static void render_brush(void);
 static void playsound(int chan, int s, int override);
 static void line_xor(int x1, int y1, int x2, int y2);
 static void rect_xor(int x1, int y1, int x2, int y2);
-static void update_stamp_xor(void);
+
+#ifdef LOW_QUALITY_STAMP_OUTLINE
+#define stamp_xor(x,y) rect_xor( \
+  (x) - (CUR_STAMP_W+1)/2, \
+  (y) - (CUR_STAMP_H+1)/2, \
+  (x) + (CUR_STAMP_W+1)/2, \
+  (y) + (CUR_STAMP_H+1)/2 \
+)
+#define update_stamp_xor()
+#else
 static void stamp_xor(int x1, int y1);
+static void update_stamp_xor(void);
+#endif
+
 static void do_eraser(int x, int y);
 static void disable_avail_tools(void);
 static void enable_avail_tools(void);
@@ -1950,6 +1962,7 @@ static void mainloop(void)
 				    }
 				}
 			    }
+			  update_stamp_xor();
 			}
 		      
 		      
@@ -2153,15 +2166,7 @@ static void mainloop(void)
 		      rec_undo_buffer();
 		      
 		      stamp_draw(old_x, old_y);
-#ifdef LOW_QUALITY_STAMP_OUTLINE
-		      // the +1 is for rounding, probably needed only one side though
-		      rect_xor(old_x - (CUR_STAMP_W+1)/2,
-			       old_y - (CUR_STAMP_H+1)/2,
-			       old_x + (CUR_STAMP_W+1)/2,
-			       old_y + (CUR_STAMP_H+1)/2);
-#else
 		      stamp_xor(old_x, old_y);
-#endif
 		      playsound(1, SND_STAMP, 1);
 
 		      draw_tux_text(TUX_GREAT, great_str(), 1);
@@ -2869,14 +2874,7 @@ static void mainloop(void)
 		    {
 		      if (cur_tool == TOOL_STAMP)
 			{
-#ifndef LOW_QUALITY_STAMP_OUTLINE
 			  stamp_xor(old_x, old_y);
-#else
-			  rect_xor(old_x - (CUR_STAMP_W+1)/2,
-				   old_y - (CUR_STAMP_H+1)/2,
-				   old_x + (CUR_STAMP_W+1)/2,
-				   old_y + (CUR_STAMP_H+1)/2);
-#endif
 
 			  update_screen(old_x - (CUR_STAMP_W+1)/2 + 96,
 					old_y - (CUR_STAMP_H+1)/2,
@@ -2898,14 +2896,7 @@ static void mainloop(void)
 		    {
 		      if (cur_tool == TOOL_STAMP)
 			{
-#ifndef LOW_QUALITY_STAMP_OUTLINE
 			  stamp_xor(new_x, new_y);
-#else
-			  rect_xor(old_x - (CUR_STAMP_W+1)/2,
-				   old_y - (CUR_STAMP_H+1)/2,
-				   old_x + (CUR_STAMP_W+1)/2,
-				   old_y + (CUR_STAMP_H+1)/2);
-#endif
 
 			  update_screen(old_x - (CUR_STAMP_W+1)/2 + 96,
 					old_y - (CUR_STAMP_H+1)/2,
@@ -12783,7 +12774,7 @@ static int current_language(void)
 
 ////////////////////////////////////////////////////////////
 // stamp outline
-
+#ifndef LOW_QUALITY_STAMP_OUTLINE
 /* XOR-based outline of rubber stamp shapes
    (unused if LOW_QUALITY_STAMP_OUTLINE is #defined) */
 
@@ -12961,7 +12952,7 @@ static void stamp_xor(int x, int y)
   SDL_UnlockSurface(screen);
 }
 
-
+#endif
 ///////////////////////////////////////////////////
 
 /* Returns whether a particular stamp can be colored: */
