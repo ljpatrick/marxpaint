@@ -8275,11 +8275,9 @@ static Uint32 getpixel(SDL_Surface * surface, int x, int y)
 {
   Uint8 * p;
   Uint32 pixel;
-#if VIDEO_BPP!=32
+
+  // Always 4, except 3 when loading a saved image.
   int BytesPerPixel = surface->format->BytesPerPixel;
-#else
-#define BytesPerPixel 4
-#endif
 
   /* get the X/Y values within the bounds of this surface */
   if (unlikely( (unsigned)x > (unsigned)surface->w - 1u ))
@@ -8318,7 +8316,6 @@ static Uint32 getpixel(SDL_Surface * surface, int x, int y)
 
   return pixel;
 }
-#undef BytesPerPixel
 
 
 /* Draw a single pixel into the surface: */
@@ -8326,11 +8323,8 @@ static Uint32 getpixel(SDL_Surface * surface, int x, int y)
 static void putpixel(SDL_Surface * surface, int x, int y, Uint32 pixel)
 {
   Uint8 * p;
-#if VIDEO_BPP!=32
+  // Always 4, except 3 when loading a saved image.
   int BytesPerPixel = surface->format->BytesPerPixel;
-#else
-#define BytesPerPixel 4
-#endif
 
   /* Assuming the X/Y values are within the bounds of this surface... */
 
@@ -8368,7 +8362,6 @@ static void putpixel(SDL_Surface * surface, int x, int y, Uint32 pixel)
         }
     }
 }
-#undef BytesPerPixel
 
 
 /* Should really clip at the line level, but oh well... */
