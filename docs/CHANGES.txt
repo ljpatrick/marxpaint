@@ -7,6 +7,11 @@ bill@newbreedsoftware.com
 http://www.newbreedsoftware.com/tuxpaint/
 
 
+2004.Jan.21 [cvs]
+  * Korean language file (ko.po) update.
+    Mark K. Kim <tuxNO_SOLICITATIONpaint-dev@cbreak.org>
+
+
 2004.Jan.14 (0.9.14) [cvs]
   * Made sure KDE icon directories exist before trying to copy files to them.
   

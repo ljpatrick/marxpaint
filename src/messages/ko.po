@@ -8,94 +8,96 @@
 
 msgid ""
 msgstr ""
-"Project-Id-Version: Tux Paint 0.9.9\n"
-"POT-Creation-Date: 2003-02-10 16:10+0900\n"
-"PO-Revision-Date: 2003-02-10 16:10+0900\n"
-"Last-Translator: Mark K. Kim <markbk@cbreak.org>\n"
+"Project-Id-Version: Tux Paint 0.9.14\n"
+"POT-Creation-Date: 2004-01-21 14:38-0800\n"
+"PO-Revision-Date: 2004-01-21 14:38-0800\n"
+"Last-Translator: Mark K. Kim <tuxNO_SOLICITATIONpaint-dev@cbreak.org>\n"
 "Language-Team: N/A\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: src/tuxpaint.c:657
+#: src/tuxpaint.c:795
 msgid "Do you really want to quit?"
 msgstr "프로그램을 끝 마칠까요?"
 
-#: src/tuxpaint.c:658 src/tuxpaint.c:662 src/tuxpaint.c:666 src/tuxpaint.c:686
-#: src/tuxpaint.c:6892 src/tuxpaint.c:7571
+#: src/tuxpaint.c:796
+#: src/tuxpaint.c:800 src/tuxpaint.c:804 src/tuxpaint.c:818 src/tuxpaint.c:828
+#: src/tuxpaint.c:8360 src/tuxpaint.c:9065
 msgid "Yes"
 msgstr "네"
 
-#: src/tuxpaint.c:659 src/tuxpaint.c:663 src/tuxpaint.c:667 src/tuxpaint.c:687
-#: src/tuxpaint.c:6895
+#: src/tuxpaint.c:797 src/tuxpaint.c:801
+#: src/tuxpaint.c:805 src/tuxpaint.c:819 src/tuxpaint.c:829
+#: src/tuxpaint.c:8363
 msgid "No"
 msgstr "아니요"
 
-#: src/tuxpaint.c:661
+#: src/tuxpaint.c:799
 msgid "If you quit, you'll lose your picture! Save it?"
 msgstr "그림을 저장않하고 종료 하면 그림이 없어져요! 저장할까요?"
 
-#: src/tuxpaint.c:665
+#: src/tuxpaint.c:803
 msgid "Save your picture first?"
-msgstr "그전에 그림을 먼저 저장할까요?"
+msgstr "먼저 그림을 저장할까요?"
 
-#: src/tuxpaint.c:669
+#: src/tuxpaint.c:807
 msgid "Can't open that picture!"
 msgstr "그 그림은 열지 못합니다!"
 
-#: src/tuxpaint.c:670 src/tuxpaint.c:677 src/tuxpaint.c:680 src/tuxpaint.c:683
+#: src/tuxpaint.c:808 src/tuxpaint.c:815 src/tuxpaint.c:822 src/tuxpaint.c:825
 msgid "Okay"
 msgstr "네"
 
-#: src/tuxpaint.c:672
+#: src/tuxpaint.c:810
 msgid "Starting a new picture will erase the current one!"
-msgstr "새 그림을 시작하면 지금있는 그림을 잃어버려요!"
+msgstr "새 그림을 시작하면 지금있는 그림이 없어져요!"
 
-#: src/tuxpaint.c:673
+#: src/tuxpaint.c:811
 msgid "That's Ok"
 msgstr "괜찮습니다"
 
-#: src/tuxpaint.c:674
+#: src/tuxpaint.c:812
 msgid "Never Mind!"
 msgstr "그러면 취소!"
 
-#: src/tuxpaint.c:676
+#: src/tuxpaint.c:814
 msgid "There are no saved files!"
 msgstr "저장된 파일이 없네요!"
 
-#: src/tuxpaint.c:679
+#: src/tuxpaint.c:821
 msgid "Your picture has been printed!"
-msgstr "그림을 인쇄 했습니다!"
+msgstr "그림을 프린트 했습니다!"
 
-#: src/tuxpaint.c:682
+#: src/tuxpaint.c:824
 msgid "You can't print yet!"
 msgstr "아직 프린트 하지 못합니다!"
 
-#: src/tuxpaint.c:685
+#: src/tuxpaint.c:827
 msgid "Erase this picture?"
 msgstr "이 그림을 지울까요?"
 
-#: src/tools.h:52 src/tuxpaint.c:4470
+#: src/tuxpaint.c:5416
 msgid "Open"
 msgstr "열기"
 
-#: src/tuxpaint.c:4475
+#: src/tuxpaint.c:5421
 msgid "Erase"
 msgstr "지우기"
 
-#: src/tuxpaint.c:4480
+#: src/tuxpaint.c:5426
 msgid "Back"
 msgstr "되 돌아가기"
 
-#: src/tuxpaint.c:7570
+#: src/tuxpaint.c:9064
 msgid "Save over the older version of this drawing?"
 msgstr "전에 있던 그름을 지우고 저장 할까요?"
 
-#: src/tuxpaint.c:7572
+#: src/tuxpaint.c:9066
 msgid "No, save a new file"
 msgstr "아니요, 새로운 파일로 저장하죠"
 
-#: src/tuxpaint.c:8278
+#: src/tuxpaint.c:9885
 msgid "Choose the picture you want, then click 'Open'"
 msgstr "원하는 그림을 고른후 '열기'버튼을 눌러주세요"
 
@@ -233,15 +235,15 @@ msgstr "여러가지의 색으로 그림을 그리세요!"
 
 #: src/magic.h:74
 msgid "Click and move to draw sparkles"
-msgstr "불꽃으로 그림을 그릴려면 마우스 버튼을 누르고 움직이세요"
+msgstr "불꽃으로 그림을 그릴려면 마우스 버튼을 누른 상태로 마우스를 움직이세요"
 
 #: src/magic.h:76
 msgid "Click to make a mirror image!"
-msgstr "그림을 가로로 뒤집으려면 마우스버튼을 누르세요!"
+msgstr "그림을 옆으로 뒤집으려면 마우스버튼을 누르세요!"
 
 #: src/magic.h:77
 msgid "Click to flip the picture upside-down!"
-msgstr "그림을 세로로 뒤집으려면 마우스 버튼을 누르세요!"
+msgstr "그림을 위로 뒤집으려면 마우스 버튼을 누르세요!"
 
 #: src/magic.h:79
 msgid "Click and move the mouse around to blur the picture"
@@ -249,33 +251,32 @@ msgstr "그림을 흐리게 하려면 마우스 버튼을 누른 상태로 마�
 
 #: src/magic.h:80
 msgid "Click and move the mouse around to make the picture blocky"
-msgstr "모자이크를 만들려면 마우스 버튼을 누르고 움직이세요"
+msgstr "모자이크를 만들려면 마우스 버튼을 누른 상태로 마우스를 움직이세요"
 
 #: src/magic.h:82
 msgid "Click and move the mouse around to draw a negative"
-msgstr "그림의 색을 음화로 바꾸려면 마우스 버튼을 누르고 움직이세요"
+msgstr "그림의 색을 음화로 바꾸려면 마우스 버튼을 누른 상태로 마우스를 움직이세요"
 
 #: src/magic.h:83
 msgid "Click and move to fade the colors."
-msgstr "색을 사라지게 하려면 마우스 버튼을 누르고 움직이세요."
+msgstr "색을 희미하게 하려면 마우스 버튼을 누르고 움직이세요."
 
 #: src/magic.h:85
 msgid ""
 "Click and move the mouse around to turn the picture into a chalk drawing."
-msgstr ""
-"그림을 분필로 그린 것 같이 만들려면 마우스 버튼을 누르고 움직이세요."
+msgstr "그림을 분필로 그린 것 같이 만들려면 마우스 버튼을 누른 상태로 마우스를 움직이세요."
 
 #: src/magic.h:86
 msgid "Click and move the mouse around to make the picture drip!"
-msgstr "그림이 밑으로 흐르는 것 같이 만들려면 마우스 버튼을 누르고 움직이세요!"
+msgstr "그림이 밑으로 흐르는 것 같이 만들려면 마우스 버튼을 누른 상태로 마우스를 움직이세요!"
 
 #: src/magic.h:88
 msgid "Click and move the mouse to thicken the picture"
-msgstr "그림을 두껍게 만들려면 마우스 버튼을 누르고 움직이세요."
+msgstr "그림을 두껍게 만들려면 마우스 버튼을 누른 상태로 마우스를 움직이세요."
 
 #: src/magic.h:89
 msgid "Click and move the mouse to thin the picture"
-msgstr "그림을 얇게 만들려면 버튼을 누르고 움직이세요."
+msgstr "그림을 얇게 만들려면 버튼을 누른 상태로 마우스를 움직이세요."
 
 #: src/magic.h:91
 msgid "Click in the picture to fill that area with color"
@@ -422,14 +423,13 @@ msgid ""
 "Pick a shape. Click to pick the center, drag, then let go when it is the "
 "size you want.  Move around to rotate it, and click to draw it."
 msgstr ""
-"(1) 모양을 고르세요.  (2) 중심지를 정하고 마우스 버튼을 누르세요.  "
-"(3) 크기를 잡고 버튼을 놓으세요.  (4) 모양을 돌린후 마우스 버튼을 누르세요."
+"(1) 모양을 고르세요.  (2) 중심지를 정하고 마우스 버튼을 누르세요.  (3) 크기"
+"를 잡고 버튼을 놓으세요.  (4) 모양을 돌린후 마우스 버튼을 누르세요."
 
 #: src/tools.h:66
 msgid ""
 "Choose a style of text.  Click on your drawing and you can start typing."
-msgstr ""
-"(1) 글체를 고르세요.  (2) 그림을 누르고 원하는 글을 키보드로 치세요."
+msgstr "(1) 글체를 고르세요.  (2) 그림을 누르고 원하는 글을 키보드로 치세요."
 
 #: src/tools.h:67
 msgid "Pick a magical effect to use on your drawing!"
@@ -461,7 +461,7 @@ msgstr "그림을 저장 했습니다!"
 
 #: src/tools.h:74
 msgid "Printing..."
-msgstr "인쇄 중..."
+msgstr "프린트 중..."
 
 #: src/tools.h:75
 msgid "Bye bye!"
@@ -484,5 +484,8 @@ msgstr ""
 msgid "Ok then... Let's keep drawing this one!"
 msgstr "그럼, 계속 그림을 그리세요!"
 
-# vim:encoding=utf-8
+#: src/tuxpaint.c:817
+msgid "Print your picture now?"
+msgstr "그림을 프린트 할까요?"
 
+# vim:encoding=utf-8
