@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TuxType\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2004-06-14 16:30+0200\n"
+"POT-Creation-Date: 2004-06-14 22:41+0200\n"
 "PO-Revision-Date: 2002-09-25 16:26+0100\n"
 "Last-Translator: Rasmus Erik Voel Jensen <i18n@solsort.dk>\n"
 "Language-Team: solsort <i18n@solsort.dk>\n"
@@ -12,10 +12,14 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 #: tuxpaint.desktop.in.h:1
-msgid "Drawing program"
+msgid "A drawing program for children."
 msgstr ""
 
 #: tuxpaint.desktop.in.h:2
+msgid "Drawing program"
+msgstr ""
+
+#: tuxpaint.desktop.in.h:3
 #, fuzzy
 msgid "Tux Paint"
 msgstr "Maling"

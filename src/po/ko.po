@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Tux Paint 0.9.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2004-06-14 16:30+0200\n"
+"POT-Creation-Date: 2004-06-14 22:41+0200\n"
 "PO-Revision-Date: 2004-03-22 02:26-0800\n"
 "Last-Translator: Mark K. Kim <tuxNO_SOLICITATIONpaint-dev@cbreak.org>\n"
 "Language-Team: N/A\n"
@@ -19,10 +19,14 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 #: tuxpaint.desktop.in.h:1
+msgid "A drawing program for children."
+msgstr "어린이를 위한 그림 프로그램"
+
+#: tuxpaint.desktop.in.h:2
 msgid "Drawing program"
 msgstr "그림 프로그램"
 
-#: tuxpaint.desktop.in.h:2
+#: tuxpaint.desktop.in.h:3
 #, fuzzy
 msgid "Tux Paint"
 msgstr "물감"

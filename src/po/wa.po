@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint 0.9.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2004-06-14 16:30+0200\n"
+"POT-Creation-Date: 2004-06-14 22:41+0200\n"
 "PO-Revision-Date: 2004-03-30 17:24+0200\n"
 "Last-Translator: Pablo Saratxaga <pablo@walon.org>\n"
 "Language-Team: Walloon <linux-wa@walon.org>\n"
@@ -15,10 +15,14 @@ msgstr ""
 "X-Generator: KBabel 1.0.2\n"
 
 #: tuxpaint.desktop.in.h:1
-msgid "Drawing program"
+msgid "A drawing program for children."
 msgstr "Programe di dessinaedje po ls efants"
 
 #: tuxpaint.desktop.in.h:2
+msgid "Drawing program"
+msgstr "Programe di dessinaedje"
+
+#: tuxpaint.desktop.in.h:3
 msgid "Tux Paint"
 msgstr "Tux Paint"
 

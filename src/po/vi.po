@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TuxPaint 0.9.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2004-06-14 16:30+0200\n"
+"POT-Creation-Date: 2004-06-14 22:41+0200\n"
 "PO-Revision-Date: 2004-04-14 13:01-0800\n"
 "Last-Translator: Le Quang Phan <lqphan@hn.vnn.vn>\n"
 "Language-Team: N/A <>\n"
@@ -16,10 +16,14 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 #: tuxpaint.desktop.in.h:1
-msgid "Drawing program"
+msgid "A drawing program for children."
 msgstr ""
 
 #: tuxpaint.desktop.in.h:2
+msgid "Drawing program"
+msgstr ""
+
+#: tuxpaint.desktop.in.h:3
 #, fuzzy
 msgid "Tux Paint"
 msgstr "Ve"

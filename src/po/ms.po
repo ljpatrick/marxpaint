@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint 0.9.11\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2004-06-14 16:30+0200\n"
+"POT-Creation-Date: 2004-06-14 22:41+0200\n"
 "PO-Revision-Date: 2003-08-13 09:30+0000\n"
 "Last-Translator: Muhammad Najmi Ahmad Zabidi <md_najmi@yahoo.com>\n"
 "Language-Team: Malay <translation-team-ms@lists.sourceforge.net>\n"
@@ -17,10 +17,14 @@ msgstr ""
 "X-Generator: KBabel 0.9.6\n"
 
 #: tuxpaint.desktop.in.h:1
-msgid "Drawing program"
+msgid "A drawing program for children."
 msgstr ""
 
 #: tuxpaint.desktop.in.h:2
+msgid "Drawing program"
+msgstr ""
+
+#: tuxpaint.desktop.in.h:3
 #, fuzzy
 msgid "Tux Paint"
 msgstr "Cat"

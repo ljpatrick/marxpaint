@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint 0.9.14.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2004-06-14 16:30+0200\n"
+"POT-Creation-Date: 2004-06-14 22:41+0200\n"
 "PO-Revision-Date: 2004-05-27 22:17+0100\n"
 "Last-Translator: Roland Illig <roland.illig@gmx.de>\n"
 "Language-Team: German <de@li.org>\n"
@@ -16,10 +16,14 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 #: tuxpaint.desktop.in.h:1
+msgid "A drawing program for children."
+msgstr "Ein Malprogramm für (kleine) Kinder."
+
+#: tuxpaint.desktop.in.h:2
 msgid "Drawing program"
 msgstr "Malprogramm"
 
-#: tuxpaint.desktop.in.h:2
+#: tuxpaint.desktop.in.h:3
 #, fuzzy
 msgid "Tux Paint"
 msgstr "Malen"

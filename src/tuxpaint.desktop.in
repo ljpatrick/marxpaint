@@ -6,3 +6,4 @@ Exec=tuxpaint
 Icon=tuxpaint
 Terminal=false
 _GenericName=Drawing program
+_Comment=A drawing program for children.
