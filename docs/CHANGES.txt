@@ -158,6 +158,9 @@ http://www.newbreedsoftware.com/tuxpaint/
     * Updated Malay translation.
       Muhammad Najmi Ahmad Zabidi <mnajem@linuxmail.org>
 
+    * Updated Norwegian Bokmal translation.
+      Karl Ove Hufthammer <karl@huftis.org>
+
     * Updated Norwegian Nynorsk translation.
       Karl Ove Hufthammer <karl@huftis.org>
 
