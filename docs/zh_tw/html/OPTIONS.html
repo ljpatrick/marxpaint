@@ -275,8 +275,8 @@ New Breed Software</p>
       <td>&nbsp;</td>
     </tr>
     <tr>
+      <td><code>Afrikaans</code></td>
       <td><code>南非荷蘭語</code></td>
-      <td>&nbsp;</td>
       <td>&nbsp;</td>
     </tr>
     <tr>
@@ -616,29 +616,22 @@ New Breed Software</p>
 
     <dt><code><b>--nolockfile</b></code></dt>
     <dd>
-      <p>By default, Tux&nbsp;Paint uses what's known as a 'lockfile'
-      to prevent it from being launched more than once in 30&nbsp;seconds.
-      (This is to avoid accidentally running multiple copies; for example,
-      by double-clicking a single-click launcher, or simply
-      impatiently clicking the icon multiple times.)</p>
+      <p>Tux Paint 預設會使用一個鎖定檔來限制在 30 秒只能啟動一次。
+      (這是要預防意外的重複啟動，例如滑鼠雙擊了一個單擊的啟動捷徑，
+      或只是單純的多按了好幾次。)</p>
 
-      <p>To make Tux&nbsp;Paint ignore the lockfile, allowing it to
-      run again, even if it was just launched less than 30&nbsp;seconds
-      ago, run Tux&nbsp;Paint with the '<code>--nolockfile</code>' option
-      on the command-line.</p>
+      <p>要讓 Tux Paint 忽略這個鎖定檔，允許重複執行，即使是在 30 秒之內，
+      在命令列啟動 Tux Paint 時，使用 '<code>--nolockfile</code>' 的參數。</p>
 
-      <p>By default, the lockfile is stored in
-      "<code>~/.tuxpaint/</code>" under Linux and Unix,
-      and "<code>userdata\</code>" under Windows.</p>
+      <p>這個鎖定檔預設的儲存位置，在 Linux 和 Unix 上是在 "<code>~/.tuxpaint/</code>" ，
+      在 Windows 上是在 "<code>userdata\</code>" 。</p>
     </dd>
   </dl>
   </blockquote>
-</blockquote>
 
-<hr size=1 noshade>
+  <hr size=1 noshade>
  
-
-  <h4>命令列的訊息參數</h4>
+  <h2>命令列的訊息參數</h2>
   <blockquote>
     <p>以下的參數會顯示一些訊息到螢幕上。當您使用這些參數後
     Tux&nbsp;Paint 並不會真的啟動。</p>
@@ -666,330 +659,391 @@ New Breed Software</p>
 	<dd>
         顯示出簡短的 Tux&nbsp;Paint 使用說明。
 	</dd>
+
+      <dt><code><b>--lang help</b></code></dt>
+      <dd>
+        顯示出 Tux Paint 有效的語文版本的清單。
+      </dd>
     </dl>
     </blockquote>
   </blockquote>
-  
-  <hr size=1 noshade>
+</blockquote>
+
+<hr size=1 noshade>
  
 
-  <h4>選擇不同的語文</h4>
+<h1><a name="different_language">選擇不同的語文</a></h1>
+<blockquote>
+  <p>Tux&nbsp;Paint 已經翻譯成許多種的語文，您可以在命令列使用 "<code>--lang</code>" 
+  參數來要設定使用語文譯本 (如： "<code>--lang&nbsp;spanish</code>")。或是在規劃檔中設定
+  "<code>lang=</code>" 的選項 (如： "<code>lang=spanish</code>")。</p>
+
+  <p>Tux&nbsp;Paint 也可以知道您系統目前的 locale 設定
+  (您可以用命令列參數 "<code>--locale</code>" 來覆蓋過系統的設定。)</p>
+
+  <h2>已經支援的語文</h2>
+
+  <blockquote><table border=1 cellspacing=0 cellpadding=2
+  summary="Locale 的設定值和語文的描述。">
+  <tr>
+    <th>Locale 代碼</th>
+    <th>語文<br>
+        (名稱)</th>
+    <th>語文<br>
+        (英文名稱)</th>
+  </tr>
+  <tr>
+    <td><code>C</code></td>
+    <td>英文</td>
+    <td>English</td>
+  </tr>
+  <tr>
+    <td><code>af_ZA</code></td>
+    <td>南非荷蘭語</td>
+    <td>Afrikaans</td>
+  </tr>
+  <tr>
+    <td><code>be_BY</code></td>
+    <td>白俄羅斯文</td>
+    <td>Belarusian</td>
+  </tr>
+  <tr>
+    <td><code>bg_BG</code></td>
+    <td>保加利亞文</td>
+    <td>Bulgarian</td>
+  </tr>
+  <tr>
+    <td><code>br_FR</code></td>
+    <td>布列塔尼文</td>
+    <td>Breton</td>
+  </tr>
+  <tr>
+    <td><code>ca_ES</code></td>
+    <td>加泰隆尼亞文</td>
+    <td>Catalan</td>
+  </tr>
+  <tr>
+    <td><code>cs_CZ</code></td>
+    <td>捷克文</td>
+    <td>Czech</td>
+  </tr>
+  <tr>
+    <td><code>cy_GB</code></td>
+    <td>威爾斯文</td>
+    <td>Welsh</td>
+  </tr>
+  <tr>
+    <td><code>da_DK</code></td>
+    <td>丹麥文</td>
+    <td>Danish</td>
+  </tr>
+  <tr>
+td><code>de_DE@euro</code></td>
+    <td>德文</td>
+    <td>German</td>
+  </tr>
+  <tr>
+    <td><code>el_GR.UTF8</code> (*)</td>
+    <td>希臘文</td>
+    <td>Greek</td>
+  </tr>
+  <tr>
+    <td><code>en_GB</code></td>
+    <td>英文 (英國)</td>
+    <td>British English</td>
+  </tr>
+  <tr>
+    <td><code>es_ES@euro</code></td>
+    <td>西班牙文</td>
+    <td>Spanish</td>
+  </tr>
+  <tr>
+    <td><code>eu_ES</code></td>
+    <td>巴斯克文</td>
+    <td>Basque</td>
+  </tr>
+  <tr>
+    <td><code>fi_FI@euro</code></td>
+    <td>芬蘭文</td>
+    <td>Finnish</td>
+  </tr>
+  <tr>
+    <td><code>fr_FR@euro</code></td>
+    <td>法文</td>
+    <td>French</td>
+  </tr>
+  <tr>
+    <td><code>he_IL</code> (*)</td>
+    <td>希伯來文</td>
+    <td>Hebrew</td>
+  </tr>
+  <tr>
+    <td><code>hi_IN</code> (*)</td>
+    <td>北印度文</td>
+    <td>Hindi</td>
+  </tr>
+  <tr>
+    <td><code>hu_HU</code></td>
+    <td>匈牙利文</td>
+    <td>Hungarian</td>
+  </tr>
+  <tr>
+    <td><code>hu_HU</code></td>
+    <td>匈牙利文</td>
+    <td>Hungarian</td>
+  </tr>
+  <tr>
+    <td><code>id_ID</code></td>
+    <td>印尼文</td>
+    <td>Indonesian</td>
+  </tr>
+  <tr>
+    <td><code>is_IS</code></td>
+    <td>冰島文</td>
+    <td>Icelandic</td>
+  </tr>
+  <tr>
+    <td><code>it_IT@euro</code></td>
+    <td>義大利文</td>
+    <td>Italian</td>
+  </tr>
+  <tr>
+    <td><code>ja_JP.UTF-8</code> (*)</td>
+    <td>日文</td>
+    <td>Japanese</td>
+  </tr>
+  <tr>
+    <td><code>ko_KR.UTF-8</code> (*)</td>
+    <td>韓文</td>
+    <td>Korean</td>
+  </tr>
+  <tr>
+    <td><code>lt_LT.UTF-8</code></td>
+    <td>立陶宛文</td>
+    <td>Lithuanian</td>
+  </tr>
+  <tr>
+    <td><code>ms_MY</code></td>
+    <td>馬來文</td>
+    <td>Malay</td>
+  </tr>
+  <tr>
+    <td><code>nb_NO</code></td>
+    <td>挪威文 (巴克摩)</td>
+    <td>Norwegian Bokm&aring;l</td>
+  </tr>
+  <tr>
+    <td><code>nn_NO</code></td>
+    <td>挪威文 (耐諾斯克)</td>
+    <td>Norwegian Nynorsk</td>
+  </tr>
+  <tr>
+    <td><code>nl_NL@euro</code></td>
+    <td>荷蘭文</td>
+    <td>Dutch</td>
+  </tr>
+  <tr>
+    <td><code>pl_PL</code></td>
+    <td>波蘭文</td>
+    <td>Polish</td>
+  </tr>
+  <tr>
+    <td><code>pt_BR</code></td>
+    <td>巴西葡萄牙文</td>
+    <td>Brazilian Portuguese</td>
+  </tr>
+  <tr>
+    <td><code>pt_PT</code></td>
+    <td>葡萄牙文</td>
+    <td>Portuguese</td>
+  </tr>
+  <tr>
+    <td><code>ro_RO</code></td>
+    <td>羅馬尼亞文</td>
+    <td>Romanian</td>
+  </tr>
+  <tr>
+    <td><code>ru_RU</code></td>
+    <td>俄文</td>
+    <td>Russian</td>
+  </tr>
+  <tr>
+    <td><code>sk_SK</code></td>
+    <td>斯洛伐克文</td>
+    <td>Slovak</td>
+  </tr>
+  <tr>
+    <td><code>sl_SI</code></td>
+    <td>斯洛維尼亞文</td>
+    <td>Slovenian</td>
+  </tr>
+  <tr>
+    <td><code>sr_YU</code></td>
+    <td>塞爾維亞文</td>
+    <td>Serbian</td>
+  </tr>
+  <tr>
+    <td><code>sv_SE@euro</code></td>
+    <td>瑞典文</td>
+    <td>Swedish</td>
+  </tr>
+  <tr>
+    <td><code>ta_IN</code> (*)</td>
+    <td>坦米爾文</td>
+    <td>Tamil</td>
+  </tr>
+  <tr>
+    <td><code>tlh</code> (*)</td>
+    <td>克林貢文</td>
+    <td>Klingon</td>
+  </tr>
+  <tr>
+    <td><code>tr_TR@euro</code></td>
+    <td>土耳其文</td>
+    <td>Turkish</td>
+  </tr>
+  <tr>
+    <td><code>vi_VN</code></td>
+    <td>越南文</td>
+    <td>Vietnamese</td>
+  </tr>
+  <tr>
+    <td><code>wa_BE@euro</code></td>
+    <td>華隆文</td>
+    <td>Walloon</td>
+  </tr>
+  <tr>
+    <td><code>zh_CN</code> (*)</td>
+    <td>簡體中文</td>
+    <td>Chinese (Simplified)</td>
+  </tr>
+  <tr>
+    <td><code>zh_TW</code> (*)</td>
+    <td>繁體中文</td>
+    <td>Chinese (Traditional)</td>
+  </tr>
+  </table>
+
+  <b>(*)</b> - 表示這些語文不是使用拉丁字集，需要安裝自已的字型檔。
+  請參閱稍後 <a href="#special_fonts"><b>特殊字型</b></a> 的章節。<p>
+
+  </blockquote>
+
+  <h2>設定您系統的 Locale</h2>
   <blockquote>
-    <p>Tux&nbsp;Paint 已經翻譯成許多種的語文，您可以在命令列使用 "<code>--lang</code>" 
-    參數來要設定使用語文譯本 (如： "<code>--lang&nbsp;spanish</code>")。或是在規劃檔中設定
-    "<code>lang=</code>" 的選項 (如： "<code>lang=spanish</code>")。</p>
-
-    <p>Tux&nbsp;Paint 也可以知道您系統目前的 locale 設定
-    (您可以用命令列參數 "<code>--locale</code>" 來覆蓋過系統的設定。)</p>
+    <p>改變您的 locale 設定會對您的環境影響非常的大。</p>
   
-    <p>已經支援的語文有：</p>
+    <p>您可以使用命令列參數 ("<code>--lang</code>" 和 "<code>--locale</code>")
+    來選擇語文版本，Tux&nbsp;Paint 也會依循您系統環境對 locale 的設定。</p>
 
-    <blockquote><table border=1 cellspacing=0 cellpadding=2
-    summary="Locale 的設定值和語文的描述。">
-    <tr>
-      <th>Locale 代碼</th>
-      <th>語文</th>
-      <th>語文<br>
-          (英文)</th>
-    </tr>
-    <tr>
-      <td><code>C</code></td>
-      <td>英文</td>
-      <td>English</td>
-    </tr>
-    <tr>
-      <td><code>ca_ES</code></td>
-      <td>加泰隆尼亞文</td>
-      <td>Catal&agrave;</td>
-    </tr>
-    <tr>
-      <td><code>cs_CZ</code></td>
-      <td>捷克文</td>
-      <td>Czech</td>
-    </tr>
-    <tr>
-      <td><code>da_DK</code></td>
-      <td>丹麥文</td>
-      <td>Danish</td>
-    </tr>
-    <tr>
-	<td><code>de_DE@euro</code></td>
-      <td>德文</td>
-      <td>German</td>
-    </tr>
-    <tr>
-      <td><code>el_GR.UTF8</code> (*)</td>
-      <td>希臘文</td>
-      <td>Greek</td>
-    </tr>
-    <tr>
-      <td><code>en_GB</code></td>
-      <td>英文 (英國)</td>
-      <td>British English</td>
-    </tr>
-    <tr>
-      <td><code>es_ES@euro</code></td>
-      <td>西班牙文</td>
-      <td>Spanish</td>
-    </tr>
-    <tr>
-      <td><code>eu_ES</code></td>
-      <td>巴斯克文</td>
-      <td>Basque</td>
-    </tr>
-    <tr>
-      <td><code>fi_FI@euro</code></td>
-      <td>芬蘭文</td>
-      <td>Finnish</td>
-    </tr>
-    <tr>
-      <td><code>fr_FR@euro</code></td>
-      <td>法文</td>
-      <td>French</td>
-    </tr>
-    <tr>
-      <td><code>he_IL</code> (*)</td>
-      <td>希伯來文</td>
-      <td>Hebrew</td>
-    </tr>
-    <tr>
-      <td><code>hu_HU</code></td>
-      <td>匈牙利文</td>
-      <td>Hungarian</td>
-    </tr>
-    <tr>
-      <td><code>id_ID</code></td>
-      <td>印尼文</td>
-      <td>Indonesian</td>
-    </tr>
-    <tr>
-      <td><code>is_IS</code></td>
-      <td>冰島文</td>
-      <td>Icelandic</td>
-    </tr>
-    <tr>
-      <td><code>it_IT@euro</code></td>
-      <td>義大利文</td>
-      <td>Italian</td>
-    </tr>
-    <tr>
-      <td><code>ja_JP.UTF-8</code> (*)</td>
-      <td>日文</td>
-      <td>Japanese</td>
-    </tr>
-    <tr>
-      <td><code>ko_KR.UTF-8</code> (*)</td>
-      <td>韓文</td>
-      <td>Korean</td>
-    </tr>
-    <tr>
-      <td><code>lt_LT.UTF-8</code></td>
-      <td>立陶宛文</td>
-      <td>Lithuanian</td>
-    </tr>
-    <tr>
-      <td><code>ms_MY</code></td>
-      <td>馬來文</td>
-      <td>Malay</td>
-    </tr>
-    <tr>
-      <td><code>nb_NO</code></td>
-      <td>挪威文 (巴克摩)</td>
-      <td>Norwegian Bokm&aring;l</td>
-    </tr>
-    <tr>
-      <td><code>nn_NO</code></td>
-      <td>挪威文 (耐諾斯克)</td>
-      <td>Norwegian Nynorsk</td>
-    </tr>
-    <tr>
-      <td><code>nl_NL@euro</code></td>
-      <td>荷蘭文</td>
-      <td>Dutch</td>
-    </tr>
-    <tr>
-      <td><code>pl_PL</code></td>
-      <td>波蘭文</td>
-      <td>Polish</td>
-    </tr>
-    <tr>
-      <td><code>pt_BR</code></td>
-      <td>巴西葡萄牙文</td>
-      <td>Brazilian Portuguese</td>
-    </tr>
-    <tr>
-      <td><code>pt_PT</code></td>
-      <td>葡萄牙文</td>
-      <td>Portuguese</td>
-    </tr>
-    <tr>
-      <td><code>ro_RO</code></td>
-      <td>羅馬尼亞文</td>
-      <td>Romanian</td>
-    </tr>
-    <tr>
-      <td><code>ru_RU</code></td>
-      <td>俄文</td>
-      <td>Russian</td>
-    </tr>
-    <tr>
-      <td><code>sk_SK</code></td>
-      <td>斯洛伐克文</td>
-      <td>Slovak</td>
-    </tr>
-    <tr>
-      <td><code>sv_SE@euro</code></td>
-      <td>瑞典文</td>
-      <td>Swedish</td>
-    </tr>
-    <tr>
-      <td><code>ta_IN</code> (*)</td>
-      <td>坦米爾文</td>
-      <td>Tamil</td>
-    </tr>
-    <tr>
-      <td><code>tr_TR@euro</code></td>
-      <td>土耳其文</td>
-      <td>Turkish</td>
-    </tr>
-    <tr>
-      <td><code>wa_BE@euro</code></td>
-      <td>華隆文</td>
-      <td>Walloon</td>
-    </tr>
-    <tr>
-      <td><code>zh_CN</code> (*)</td>
-      <td>簡體中文</td>
-      <td>Chinese (Simplified)</td>
-    </tr>
-    <tr>
-      <td><code>zh_TW</code> (*)</td>
-      <td>繁體中文</td>
-      <td>Chinese (Traditional)</td>
-    </tr>
-    </table>
-
-    <b>(*)</b> - 表示這些語文不是使用拉丁字集而需要安裝自已的字型檔。
-    請參閱稍後 <b>特殊字型</b> 的章節。<p>
+    <p>如果您尚未設定您系統環境的 locale 的話，以下是一個簡短的說明：</p>
   
-    </blockquote>
-  
-    <h5>設定您系統的 Locale</h5>
+    <h6>Linux/Unix 的使用者</h6>
     <blockquote>
-      <p>改變您的 locale 設定會對您的環境影響非常的大。</p>
+      <p>首先確定您要使用的 locale 已經寫入 "<code>/etc/locale.gen</code>" 
+      之中，並使用 root 身份執行過 "<code>locale-gen</code>" 。</p>
+
+     <p><i>註：Debian 的使用者可以輕易的用 "<code>dpkg-reconfigure&nbsp;locales</code>"
+     來完成。</i></p>
+
+     <p>接下來在啟動 Tux&nbsp;Paint 之前先設定 "<code>$LANG</code>"
+     環境變數成您的 locale 。(如果您希望所有可以轉換語文的程式都能發生作用，
+     您應該將這個動作寫入到您登入時會使用到的命令檔，如 <code>~/.profile</code>,
+     <code>~/.bashrc</code>, <code>~/.cshrc</code>, 等等。)</p>
+
+
+      <p>例如在 Bourne Shell (BASH) 中：</p>
     
-      <p>您可以使用命令列參數 ("<code>--lang</code>" 和 "<code>--locale</code>")
-      來選擇語文版本，Tux&nbsp;Paint 也會依循您系統環境對 locale 的設定。</p>
-
-      <p>如果您尚未設定您系統環境的 locale 的話，以下是一個簡短的說明：</p>
+      <blockquote><code>
+        export&nbsp;LANG=zh_TW.Big5&nbsp;;&nbsp;\<br>
+        tuxpaint
+      </code></blockquote>
     
-      <h6>Linux/Unix 的使用者</h6>
-      <blockquote>
-        <p>首先確定您要使用的 locale 已經寫入 "<code>/etc/locale.gen</code>" 
-        之中，並使用 root 身份執行過 "<code>locale-gen</code>" 。</p>
-	
-       <p><i>註：Debian 的使用者可以輕易的用 "<code>dpkg-reconfigure&nbsp;locales</code>"
-       來完成。</i></p>
-	
-       <p>接下來在啟動 Tux&nbsp;Paint 之前先設定 "<code>$LANG</code>"
-       環境變數成您的 locale 。(如果您希望所有可以轉換語文的程式都能發生作用，
-       您應該將這個動作寫入到您登入時會使用到的命令檔，如 <code>~/.profile</code>,
-       <code>~/.bashrc</code>, <code>~/.cshrc</code>, 等等。)</p>
-
-
-        <p>例如在 Bourne Shell (BASH) 中：</p>
-      
-        <blockquote><code>
-          export&nbsp;LANG=zh_TW.Big5&nbsp;;&nbsp;\<br>
-          tuxpaint
-        </code></blockquote>
-      
-      
-        <p>在 C Shell (TCSH) 中：</p>
-      
-        <blockquote><code>
-          setenv&nbsp;LANG&nbsp;zh_TW.Big5&nbsp;;&nbsp;\<br>
-          tuxpaint
-        </code></blockquote>
-      </blockquote>
-      
-      <hr size=1 noshade>
-      
-      <h6>Windows 的使用者</h6>
-      <blockquote>
-        <p>Tux&nbsp;Paint 可以辨識出目前的 locale 並選用適當的檔案。
-        所以這個章節是給想要測試不同語文版本的人。</p>
-      
-        <p>最簡單的方式是在捷徑中使用 '<code>--lang</code>' 來切換 (請見 "INSTALL.txt")。
-        也可以開啟一個 MSDOS 視窗，使用這樣的命令來指定 locale ：</p>
-      
-        <blockquote><code>
+    
+      <p>在 C Shell (TCSH) 中：</p>
+    
+      <blockquote><code>
+        setenv&nbsp;LANG&nbsp;zh_TW.Big5&nbsp;;&nbsp;\<br>
+        tuxpaint
+      </code></blockquote>
+    </blockquote>
+    
+    <hr size=1 noshade>
+    
+    <h3>Windows 的使用者</h3>
+    <blockquote>
+      <p>Tux&nbsp;Paint 可以辨識出目前的 locale 並選用適當的檔案。
+      所以這個章節是給想要測試不同語文版本的人。</p>
+    
+      <p>最簡單的方式是在捷徑中使用 '<code>--lang</code>' 來切換 (請見 "INSTALL.txt")。
+      也可以開啟一個 MSDOS 視窗，使用這樣的命令來指定 locale ：</p>
+    
+      <blockquote><code>
+        set LANG=zh_TW
+      </code></blockquote>
+    
+      <p>這樣會設定這個 DOS 視窗的語文，直到視窗被關掉。</p>
+    
+      <p>一勞永逸的方式是使用 "<b>sysedit</b>" 編輯您電腦的 '<code>autoexec.bat</code>' 檔案：</p>
+    
+      <h6>Windows 95/98</h6>
+      <ol>
+      <li>點擊「開始」功能表，選擇「執行...」。
+      <li>輸入 "sysedit" 到 '開啟:' 欄位中(有沒有加上雙引號都沒關係).
+      <li>點擊「確定」。
+      <li>在系統設定編輯器中選定 AUTOEXEC.BAT 視窗。
+      <li>加入以下的設定到檔案的最後面：
+    
+        <blockquote><code>	    
           set LANG=zh_TW
         </code></blockquote>
-      
-        <p>這樣會設定這個 DOS 視窗的語文，直到視窗被關掉。</p>
-      
-        <p>一勞永逸的方式是使用 "<b>sysedit</b>" 編輯您電腦的 '<code>autoexec.bat</code>' 檔案：</p>
-      
-               <h6>Windows 95/98</h6>
-        <ol>
-        <li>點擊「開始」功能表，選擇「執行...」。
-        <li>輸入 "sysedit" 到 '開啟:' 欄位中(有沒有加上雙引號都沒關係).
-        <li>點擊「確定」。
-        <li>在系統設定編輯器中選定 AUTOEXEC.BAT 視窗。
-        <li>加入以下的設定到檔案的最後面：
-      
-          <blockquote><code>	    
-            set LANG=zh_TW
-          </code></blockquote>
-            
-        <li>關閉系統設定編輯器，回答要儲存目前的變更。
-        <li>重新啟動您的電腦。
-        </ol>
-      
-               <blockquote>
-                 要對<b>整部電腦</b>和<b>所有程式</b>都有效的話，
-                 也可以使用控制台裡的「地區選項」來設定：
-               </blockquote>
-      
-               <ol>
-        <li>點擊「開始」功能表，選擇「設定」->「控制台」。
-        <li>雙擊「區域設定」或「地區選項」的球形圖示。
-        <li>由下拉表單中選擇一個「語言(地區)」的選項。
-        <li>點擊「確定」按鈕。
-        <li>重新啟動您的電腦。
-               </ol>
-      
+          
+      <li>關閉系統設定編輯器，回答要儲存目前的變更。
+      <li>重新啟動您的電腦。
+      </ol>
+    
+      <blockquote>
+        要對<b>整部電腦</b>和<b>所有程式</b>都有效的話，
+        也可以使用控制台裡的「地區選項」來設定：
       </blockquote>
-   </blockquote>
+    
+      <ol>
+      <li>點擊「開始」功能表，選擇「設定」->「控制台」。
+      <li>雙擊「區域設定」或「地區選項」的球形圖示。
+      <li>由下拉表單中選擇一個「語言(地區)」的選項。
+      <li>點擊「確定」按鈕。
+      <li>重新啟動您的電腦。
+      </ol>
+    
+    </blockquote>
+  </blockquote>
+ 
+  <h3><a name="special_fonts">特殊字型</a></h3>
+  <blockquote>
+    某些語文需要安裝特殊字型檔。這些非常大的字型檔(TrueType format, TTF)可以在 Tux&nbsp;Paint
+    網站下載，他們是獨立的檔案。(請見前面「<a href="#different_language">選擇不同的語文</a>」一節中的表格。)<p>
+ 
+    當執行需要特殊字型的語文版本時，Tux&nbsp;Paint 會試著由系統的 "<code><b>fonts</b></code>"
+    目錄中載入字型 ("<code><b>locale</b></code>" 的子目錄)。字型檔的名稱相對於 'locale'
+    代碼的前二個字母(例如："ko" 是韓文，"ja" 是日文，"zh_tw" 是繁體中文)。<p>
+    
+    舉例來說，在 Linux 或 Unix 上，當 Tux&nbsp;Paint 要顯示韓文的訊息
+    (如：使用參數 "<code>--lang&nbsp;korean</code>")，Tux&nbsp;Paint 將會載入這個字型檔：<p>
+    
+    <blockquote>
+      <code>/usr/share/tuxpaint/fonts/locale/<b>ko.ttf</b></code>
+    </blockquote><p>
+    
+    您可以由 Tux&nbsp;Paint 的網站下載支援語文的字型檔，
+    <a href="http://www.newbreedsoftware.com/tuxpaint/">
+    http://www.newbreedsoftware.com/tuxpaint/</a>.
+    (請見「下載」連結中最後的「字型檔」這一個部份。)<p>
+    
+    在 Linux 和 Unix 上您可以使用 <code>Makefile</code> 來將字型檔安裝到適當的路徑去。<p>
+  </blockquote>
+  
+</blockquote>
 
-   <h5>特殊字型</h5>
-   <blockquote>
-     某些語文需要安裝特殊字型檔。這些非常大的字型檔(TrueType format, TTF)可以在 Tux&nbsp;Paint
-     網站下載，他們是獨立的檔案。(請見前面「選擇不同的語文」一節中的表格。)<p>
-
-     當執行需要特殊字型的語文版本時，Tux&nbsp;Paint 會試著由系統的 "<code><b>fonts</b></code>"
-     目錄中載入字型 ("<code><b>locale</b></code>" 的子目錄)。字型檔的名稱相對於 'locale'
-     代碼的前二個字母(例如："ko" 是韓文，"ja" 是日文，"zh" 是中文)。<p>
-     
-     舉例來說，在 Linux 或 Unix 上，當 Tux&nbsp;Paint 要顯示韓文的訊息
-     (如：使用參數 "<code>--lang&nbsp;korean</code>")，Tux&nbsp;Paint 將會載入這個字型檔：<p>
-     
-     <blockquote>
-       <code>/usr/share/tuxpaint/fonts/locale/<b>ko.ttf</b></code>
-     </blockquote><p>
-     
-     您可以由 Tux&nbsp;Paint 的網站下載支援語文的字型檔，
-     <a href="http://www.newbreedsoftware.com/tuxpaint/">
-     http://www.newbreedsoftware.com/tuxpaint/</a>.
-     (請見「下載」連結中最後的「字型檔」這一個部份。)<p>
-     
-     在 Linux 和 Unix 上您可以使用 <code>Makefile</code> 來將字型檔安裝到適當的路徑去。<p>
-   </blockquote>
-   
-   </blockquote>
- </blockquote>
-
-  <hr size=1 noshade>
+</body></html>
 
 
