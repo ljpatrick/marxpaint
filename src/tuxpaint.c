@@ -3,7 +3,7 @@
   
   Tux Paint - A simple drawing program for children.
   
-  Copyright (c) 2004 by Bill Kendrick and others; see AUTHORS.txt
+  Copyright (c) 2005 by Bill Kendrick and others; see AUTHORS.txt
   bill@newbreedsoftware.com
   http://www.newbreedsoftware.com/tuxpaint/
 
@@ -22,12 +22,12 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
   
-  June 14, 2002 - December 31, 2004
+  June 14, 2002 - January 3, 2005
 */
 
 
 #define VER_VERSION     "0.9.15"
-#define VER_DATE        "2004-12-31"
+#define VER_DATE        "2005-01-03"
 
 
 //#define VIDEO_BPP 15 // saves memory
@@ -13749,6 +13749,7 @@ static void show_progress_bar(void)
 {
   SDL_Rect dest, src;
   int x;
+  SDL_Event event;
 
 
   for (x = 0; x < WINDOW_WIDTH; x = x + 65)
@@ -13767,6 +13768,11 @@ static void show_progress_bar(void)
   prog_bar_ctr++;
 
   SDL_UpdateRect(screen, 0, WINDOW_HEIGHT - 24, WINDOW_WIDTH, 24);
+
+
+  /* Eat any events: */
+
+  while (SDL_PollEvent(&event));
 }
 
 
@@ -13976,6 +13982,8 @@ static void loadfonts(const char * const dir, int fatal)
 
 
   /* Open the directory: */
+
+  show_progress_bar();
 
   d = opendir(dir);
   if (d == NULL)
