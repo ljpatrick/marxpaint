@@ -7,7 +7,7 @@ bill@newbreedsoftware.com
 http://www.newbreedsoftware.com/tuxpaint/
 
 
-June 17, 2002 - August 18, 2003
+June 17, 2002 - September 13, 2003
 
 
 * Design and Coding:
@@ -161,6 +161,9 @@ June 17, 2002 - August 18, 2003
 
   * Swedish
     Daniel Andersson <daniel@septum.org> [retired]
+
+  * Tamil
+    Mugunth <mugunth@thamizha.com>
 
   * Turkish
     Doruk Fisek <dfisek@fisek.com.tr>

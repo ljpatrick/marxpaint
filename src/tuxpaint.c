@@ -7,12 +7,12 @@
   bill@newbreedsoftware.com
   http://www.newbreedsoftware.com/tuxpaint/
   
-  June 14, 2002 - September 11, 2003
+  June 14, 2002 - September 14, 2003
 */
 
 
 #define VER_VERSION     "0.9.13"
-#define VER_DATE        "2003.09.11"
+#define VER_DATE        "2003.09.14"
 
 
 /* #define DEBUG */
@@ -289,6 +289,7 @@ enum {
   LANG_RU,     /* Russian */
   LANG_SE,     /* Swedish */
   LANG_SK,     /* Slovak */
+  LANG_TA,     /* Tamil */
   LANG_TR,     /* Turkish */
   LANG_WA,     /* Walloon */
   LANG_ZH,     /* Chinese */
@@ -324,6 +325,7 @@ const char * lang_prefixes[NUM_LANGS] = {
   "ru",
   "se",
   "sk",
+  "ta",
   "tr",
   "wa",
   "zh"
@@ -344,6 +346,7 @@ int lang_use_utf8[] = {
   /* LANG_LT, */
   /* LANG_PL, */
   /* LANG_RU, */
+  LANG_TA,
   LANG_ZH,
   -1
 };
@@ -3459,6 +3462,7 @@ void show_lang_usage(FILE * f, char * prg)
     "  slovak\n"
     "  spanish      espanol\n"
     "  swedish      svenska\n"
+    "  tamil\n"
     "  turkish\n"
     "  walloon\n"
     "\n",
@@ -4074,6 +4078,11 @@ void setup(int argc, char * argv[])
       {
 	putenv("LANG=ko_KR.UTF-8");
 	putenv("LC_ALL=ko_KR.UTF-8");
+      }
+    else if (strcmp(langstr, "tamil") == 0)
+      {
+	putenv("LANG=ta_IN.UTF-8");
+	putenv("LC_ALL=ta_IN.UTF-8");
       }
     else if (strcmp(langstr, "lithuanian") == 0 ||
 	     strcmp(langstr, "lietuviu") == 0)

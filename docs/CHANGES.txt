@@ -7,7 +7,10 @@ bill@newbreedsoftware.com
 http://www.newbreedsoftware.com/tuxpaint/
 
 
-2003.Sep.11 (0.9.13) [cvs]
+2003.Sep.13 (0.9.13) [cvs]
+  * Translated into Tamil  [soon]
+    Mugunth <mugunth@thamizha.com>
+
   * Fixed incorrect tag in HTML documentation.  (Bad results in IE)
 
   * Fixed typo regarding "savedir" in README.
