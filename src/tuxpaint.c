@@ -287,6 +287,21 @@ void win32_perror(const char *str)
 #define clamp(lo,value,hi)    (min(max(value,lo),hi))
 
 
+/* Unfortunately, there is a bug in SDL_ttf-2.0.6, the current version
+   that causes a segmentation fault if an attempt is made to call 
+   TTF_OpenFont() with the filename of a font that doesn't exist. This 
+   is an old and well documented bug that is fixed in CVS.
+*/
+TTF_Font *BUGFIX_TTF_OpenFont206(const char *file, int ptsize)
+{
+    FILE    *fp;
+
+    if ((fp = fopen(file, "rb")) == NULL) return NULL;
+    fclose(fp);
+    return TTF_OpenFont(file, ptsize);
+}
+#define TTF_OpenFont    BUGFIX_TTF_OpenFont206
+
 
 /* Possible languages: */
 
@@ -707,6 +722,8 @@ int mySDL_WaitEvent(SDL_Event *event);
 int mySDL_PollEvent(SDL_Event *event);
 void load_starter_id(char * saved_id);
 void load_starter(char * img_id);
+
+TTF_Font *try_alternate_font(int language);
 
 
 #define MAX_UTF8_CHAR_LENGTH 6
@@ -5259,26 +5276,30 @@ void setup(int argc, char * argv[])
       locale_font = TTF_OpenFont(str, 18);
 
       if (locale_font == NULL)
-	{
-	  fprintf(stderr,
-		  "\nWarning: Can't load font for this locale:\n"
-		  "%s\n"
-		  "The Simple DirectMedia Layer error that occurred was:\n"
-		  "%s\n\n"
-		  "Will use default (American English) instead.\n\n",
-		  str, SDL_GetError());
+      {
+          locale_font = try_alternate_font(language);
+          if (locale_font == NULL)
+	  {
+	      fprintf(stderr,
+		      "\nWarning: Can't load font for this locale:\n"
+		      "%s\n"
+		      "The Simple DirectMedia Layer error that occurred was:\n"
+		      "%s\n\n"
+		      "Will use default (American English) instead.\n\n",
+		      str, SDL_GetError());
 
 
-	  /* Revert to default: */
+	      /* Revert to default: */
       
-	  putenv("LANG=C");
-	  putenv("OUTPUT_CHARSET=C");
-	  setlocale(LC_ALL, "C");
+	      putenv("LANG=C");
+	      putenv("OUTPUT_CHARSET=C");
+	      setlocale(LC_ALL, "C");
 
-	  bindtextdomain("tuxpaint", LOCALEDIR);
-	  textdomain("tuxpaint");
-	  language = current_language();
-	}
+	      bindtextdomain("tuxpaint", LOCALEDIR);
+	      textdomain("tuxpaint");
+	      language = current_language();
+	  }
+      }
     }
 
 
@@ -12647,3 +12668,21 @@ void load_starter(char * img_id)
   free(dirname);
 }
 
+
+TTF_Font *try_alternate_font(int language)
+{
+  char  str[128];
+  char  prefix[64];
+  char  *p;
+
+  strcpy(prefix, lang_prefixes[language]);
+  if ((p = strrchr(prefix, '_')) != NULL)
+  {
+    *p = 0;
+    snprintf(str, sizeof(str), "%sfonts/locale/%s.ttf",
+             DATA_PREFIX, prefix);
+
+    return TTF_OpenFont(str, 18);
+  }
+  return NULL;
+}
