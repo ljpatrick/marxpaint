@@ -2282,6 +2282,7 @@ int main(int argc, char * argv[])
 
   do_setcursor(cursor_arrow);
 
+  playsound(0, SND_HARP, 1);
   
   do_wait();
 
@@ -7443,7 +7444,6 @@ static void setup(int argc, char * argv[])
   SDL_BlitSurface(tmp_surf, NULL, screen, &dest);
   SDL_FreeSurface(tmp_surf);
   SDL_Flip(screen);
-  playsound(0, SND_HARP, 1);
   SDL_FreeSurface(img_title);
 
 
