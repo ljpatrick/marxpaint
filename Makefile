@@ -6,7 +6,7 @@
 # bill@newbreedsoftware.com
 # http://www.newbreedsoftware.com/tuxpaint/
 
-# June 14, 2002 - December 20, 2003
+# June 14, 2002 - December 21, 2003
 
 
 # Where to install things:
@@ -554,7 +554,7 @@ tuxpaint:	obj/tuxpaint.o obj/hqxx.o obj/hq4x.o $(ARCH_LIBS)
 
 # Build the object for the program!
 
-obj/tuxpaint.o:	src/tuxpaint.c \
+obj/tuxpaint.o:	src/tuxpaint.c obj \
 		src/tools.h src/titles.h src/colors.h src/shapes.h \
 		src/magic.h src/sounds.h src/tip_tux.h src/great.h \
 		src/hqxx.h src/hq4x.h \
@@ -696,7 +696,7 @@ trans/is.mo:	src/messages/is.po
 
 trans/it.mo:	src/messages/it.po
 	@echo "   it_IT ...Italian..."
-	@msgfmt src/messages/it.po -o trans/it.m
+	@msgfmt src/messages/it.po -o trans/it.mo
 
 trans/ja.mo:	src/messages/ja.po
 	@echo "   ja_JP ...Japanese..."
