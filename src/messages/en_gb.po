@@ -1,102 +1,103 @@
 # Tux Paint British English messages
-# Copyright (C) 2002
+# Copyright (C) 2002, 2004 Free Software Foundation, Inc.
 # Bill Kendrick <bill@newbreedsoftware.com>, 2002.
 msgid ""
 msgstr ""
-"Project-Id-Version: TuxPaint 0.0.1pre\n"
-"POT-Creation-Date: \n"
-"PO-Revision-Date: 2004-02-06 22:44+0100\n"
-"Last-Translator: Karl Ove Hufthammer <karl@huftis.org>\n"
-"Language-Team: N/A <bill@newbreedsoftware.com>\n"
+"Project-Id-Version: tuxpaint 0.9.14\n"
+"Report-Msgid-Bugs-To: tuxpaint-i18n@tux4kids.net\n"
+"POT-Creation-Date: 2004-03-22 11:23-0800\n"
+"PO-Revision-Date: 2004-04-26 11:20-0400\n"
+"Last-Translator: Gareth Owen <gowen72@yahoo.com>\n"
+"Language-Team: English (British) <en_gb@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: tuxpaint.c:795
+#: tuxpaint.c:801
 msgid "Do you really want to quit?"
 msgstr "Do you really want to quit?"
 
-#: tuxpaint.c:796 tuxpaint.c:800 tuxpaint.c:804 tuxpaint.c:818 tuxpaint.c:828
-#: tuxpaint.c:8360 tuxpaint.c:9065
+#: tuxpaint.c:802 tuxpaint.c:806 tuxpaint.c:810 tuxpaint.c:824 tuxpaint.c:834
+#: tuxpaint.c:8386 tuxpaint.c:9093
 msgid "Yes"
 msgstr "Yes"
 
-#: tuxpaint.c:797 tuxpaint.c:801 tuxpaint.c:805 tuxpaint.c:819 tuxpaint.c:829
-#: tuxpaint.c:8363
+#: tuxpaint.c:803 tuxpaint.c:807 tuxpaint.c:811 tuxpaint.c:825 tuxpaint.c:835
+#: tuxpaint.c:8389
 msgid "No"
 msgstr "No"
 
-#: tuxpaint.c:799
+#: tuxpaint.c:805
 msgid "If you quit, you'll lose your picture! Save it?"
-msgstr "If you quit, you’ll lose your picture! Save it?"
+msgstr "If you quit, you'll lose your picture! Save it?"
 
-#: tuxpaint.c:803
+#: tuxpaint.c:809
 msgid "Save your picture first?"
 msgstr "Save your picture first?"
 
-#: tuxpaint.c:807
+#: tuxpaint.c:813
 msgid "Can't open that picture!"
-msgstr "Can’t open that picture!"
+msgstr "Can't open that picture!"
 
-#: tuxpaint.c:808 tuxpaint.c:815 tuxpaint.c:822 tuxpaint.c:825
+#: tuxpaint.c:814 tuxpaint.c:821 tuxpaint.c:828 tuxpaint.c:831
 msgid "OK"
 msgstr "OK"
 
-#: tuxpaint.c:810
+#: tuxpaint.c:816
 msgid "Starting a new picture will erase the current one!"
 msgstr "Starting a new picture will erase the current one!"
 
-#: tuxpaint.c:811
+#: tuxpaint.c:817
 msgid "That's OK!"
-msgstr "That’s OK!"
+msgstr "That's OK!"
 
-#: tuxpaint.c:812
+#: tuxpaint.c:818
 msgid "Never mind!"
 msgstr "Never mind!"
 
-#: tuxpaint.c:814
+#: tuxpaint.c:820
 msgid "There are no saved files!"
 msgstr "There are no saved files!"
 
-#: tuxpaint.c:817
+#: tuxpaint.c:823
 msgid "Print your picture now?"
 msgstr "Print your picture now?"
 
-#: tuxpaint.c:821
+#: tuxpaint.c:827
 msgid "Your picture has been printed!"
 msgstr "Your picture has been printed!"
 
-#: tuxpaint.c:824
+#: tuxpaint.c:830
 msgid "You can't print yet!"
-msgstr "You can’t print yet!"
+msgstr "You can't print yet!"
 
-#: tuxpaint.c:827
+#: tuxpaint.c:833
 msgid "Erase this picture?"
 msgstr "Erase this picture?"
 
-#: tuxpaint.c:5416 tools.h:52
+#: tuxpaint.c:5442 tools.h:52
 msgid "Open"
 msgstr "Open"
 
-#: tuxpaint.c:5421
+#: tuxpaint.c:5447
 msgid "Erase"
 msgstr "Erase"
 
-#: tuxpaint.c:5426
+#: tuxpaint.c:5452
 msgid "Back"
 msgstr "Back"
 
-#: tuxpaint.c:9064
+#: tuxpaint.c:9092
 msgid "Save over the older version of this picture?"
 msgstr "Save over the older version of this picture?"
 
-#: tuxpaint.c:9066
+#: tuxpaint.c:9094
 msgid "No, save a new file"
 msgstr "No, save a new file"
 
-#: tuxpaint.c:9885
+#: tuxpaint.c:9951
 msgid "Choose the picture you want, then click 'Open'."
-msgstr "Choose the picture you want, then click ‘Open’."
+msgstr "Choose the picture you want, then click 'Open'."
 
 #: colors.h:62
 msgid "Black!"
@@ -259,10 +260,8 @@ msgid "Click and move to fade the colors."
 msgstr "Click and move to fade the colours."
 
 #: magic.h:85
-msgid ""
-"Click and move the mouse around to turn the picture into a chalk drawing."
-msgstr ""
-"Click and move the mouse around to turn the picture into a chalk drawing."
+msgid "Click and move the mouse around to turn the picture into a chalk drawing."
+msgstr "Click and move the mouse around to turn the picture into a chalk drawing."
 
 #: magic.h:86
 msgid "Click and move the mouse around to make the picture drip."
@@ -417,17 +416,12 @@ msgid "Click to start drawing a line. Let go to complete it."
 msgstr "Click to start drawing a line. Let go to complete it."
 
 #: tools.h:65
-msgid ""
-"Pick a shape. Click to pick the center, drag, then let go when it is the "
-"size you want. Move around to rotate it, and click to draw it."
-msgstr ""
-"Pick a shape. Click to pick the center, drag, then let go when it is the "
-"size you want. Move around to rotate it, and click to draw it."
+msgid "Pick a shape. Click to pick the center, drag, then let go when it is the size you want. Move around to rotate it, and click to draw it."
+msgstr "Pick a shape. Click to pick the center, drag, then let go when it is the size you want. Move around to rotate it, and click to draw it."
 
 #: tools.h:66
 msgid "Choose a style of text. Click on your drawing and you can start typing."
-msgstr ""
-"Choose a style of text. Click on your drawing and you can start typing."
+msgstr "Choose a style of text. Click on your drawing and you can start typing."
 
 #: tools.h:67
 msgid "Pick a magical effect to use on your drawing!"
@@ -479,4 +473,4 @@ msgstr "Move the mouse to rotate the shape. Click to draw it."
 
 #: tools.h:81
 msgid "Ok then... Let's keep drawing this one!"
-msgstr "Ok then... Let’s keep drawing this one!"
+msgstr "Ok then... Let's keep drawing this one!"

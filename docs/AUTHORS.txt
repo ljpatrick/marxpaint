@@ -7,7 +7,7 @@ bill@newbreedsoftware.com
 http://www.newbreedsoftware.com/tuxpaint/
 
 
-June 17, 2002 - April 23, 2004
+June 17, 2002 - April 28, 2004
 
 
 * Design and Coding:
@@ -84,6 +84,9 @@ June 17, 2002 - April 23, 2004
   
   * Breton
     Korvigelloù An Drouizi (Philippe) <drouizig@drouizig.org>
+
+  * British English
+    Gareth Owen <gowen72@yahoo.com>
 
   * Catalan
     Pere Pujal Carabantes <ppujal@airtel.net>

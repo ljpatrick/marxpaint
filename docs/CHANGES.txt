@@ -33,6 +33,9 @@ http://www.newbreedsoftware.com/tuxpaint/
   * Breton translation created.
     Korvigellou An Drouizig (Philippe) <drouizig@drouizig.org>
 
+  * British english translation updates.
+    Gareth Owen <gowen72@yahoo.com>
+
   * Japanese translation updates.
     TOYAMA Shin-ichi <shin1@wmail.plala.or.jp>
 
