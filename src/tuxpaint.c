@@ -7,12 +7,12 @@
   bill@newbreedsoftware.com
   http://www.newbreedsoftware.com/tuxpaint/
   
-  June 14, 2002 - May 23, 2003
+  June 14, 2002 - June 14, 2003
 */
 
 
 #define VER_VERSION     "0.9.11"
-#define VER_DATE        "2003.05.23"
+#define VER_DATE        "2003.06.14"
 
 
 /* #define DEBUG */
@@ -6684,7 +6684,7 @@ void wordwrap_text(TTF_Font * font, char * str, SDL_Color color,
     dest.w = (right - left - src.w);
     dest.h = last_text_height;
 
-    SDL_FillRect(screen, &dest, SDL_MapRGB(screen->format, 192, 192, 192));
+    SDL_FillRect(screen, &dest, SDL_MapRGB(screen->format, 255, 255, 255));
   }
 }
 
