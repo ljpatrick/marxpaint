@@ -5767,7 +5767,7 @@ void draw_stamps(void)
 	      src.h = 1;
 
 	      dest.x = base_x + img->w - xx - 1;
-	      dest.y = base_y + img->h - xx - 1;
+	      dest.y = base_y + img->h - yy - 1;
 
               SDL_BlitSurface(img, &src, screen, &dest);
 	    }
