@@ -64,8 +64,8 @@ const int color_hexes[NUM_COLORS][3] = {
 
 const char * const color_names[NUM_COLORS] = {
   gettext_noop("Black!"),
-  gettext_noop("Dark gray!"), // yes, this is a valid spelling
-  gettext_noop("Light grey!"), // this is a valid spelling too
+  gettext_noop("Dark grey!"),
+  gettext_noop("Light grey!"),
   gettext_noop("White!"),
   gettext_noop("Red!"),
   gettext_noop("Orange!"),
