@@ -3,7 +3,7 @@
   
   Tux Paint - A simple drawing program for children.
   
-  Copyright (c) 2004 by Bill Kendrick
+  Copyright (c) 2004 by Bill Kendrick and others; see AUTHORS.txt
   bill@newbreedsoftware.com
   http://www.newbreedsoftware.com/tuxpaint/
 
@@ -20,13 +20,14 @@
   You should have received a copy of the GNU General Public License
   along with this program; if not, write to the Free Software
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+  (See COPYING.txt)
   
-  June 14, 2002 - December 26, 2004
+  June 14, 2002 - December 31, 2004
 */
 
 
 #define VER_VERSION     "0.9.15"
-#define VER_DATE        "2004-12-26"
+#define VER_DATE        "2004-12-31"
 
 
 //#define VIDEO_BPP 15 // saves memory
@@ -1159,10 +1160,13 @@ static SDL_Surface * img_tools[NUM_TOOLS], * img_tool_names[NUM_TOOLS];
 #define MAX_FONTS 256
 
 #define MIN_TEXT_SIZE 0
-#define MAX_TEXT_SIZE 3
-static int text_size = 2;
+#define MAX_TEXT_SIZE 8
+#define MAX_TEXT_PREVIEW_SIZE 3 // max text size to preview in selector buttons
+static int text_size = 2;   // initial text size
 static int text_state;
-static int text_sizes[] = {18, 24, 36, 48};
+static int text_sizes[] = {18, 24, 36, 48,
+	                   56, 64, 96, 112, 128, 160};  // point sizes
+
 
 // for sorting through the font files at startup
 typedef struct style_info {
@@ -7946,7 +7950,18 @@ static void draw_fonts(void)
     
       if (font < num_font_families)
 	{
-	  tmp_surf = TTF_RenderUTF8_Blended(getfonthandle(font), gettext("ag"), black);
+	  SDL_Surface * tmp_surf_1;
+	  
+	  tmp_surf_1 = TTF_RenderUTF8_Blended(getfonthandle(font),
+                                            gettext("Aa"), black);
+
+	  if (tmp_surf_1->w > 48 || tmp_surf_1->h > 48)
+	  {
+	    tmp_surf = thumbnail(tmp_surf_1, 48, 48, 1);
+	    SDL_FreeSurface(tmp_surf_1);
+	  }
+	  else
+	    tmp_surf = tmp_surf_1;
 
 	  src.x = (tmp_surf->w - 48) / 2;
 	  src.y = (tmp_surf->h - 48) / 2;
@@ -7978,6 +7993,8 @@ static void draw_fonts(void)
 	  SDL_FreeSurface(tmp_surf);
 	}
     }
+
+
   /* Draw text controls: */
 
   if (!disable_stamp_controls)
