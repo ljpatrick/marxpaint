@@ -22,12 +22,12 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
   
-  June 14, 2002 - January 7, 2005
+  June 14, 2002 - January 8, 2005
 */
 
 
 #define VER_VERSION     "0.9.15"
-#define VER_DATE        "2005-01-07"
+#define VER_DATE        "2005-01-08"
 
 
 //#define VIDEO_BPP 15 // saves memory
@@ -5177,10 +5177,7 @@ static void magic_draw(int x1, int y1, int x2, int y2, int button_down)
     playsound(0, SND_TINT, 0);
 
   /* FIXME: Need sounds for:
-     Smudge
-     Tint
-     Grass (mower?)
-     Cartoon */
+     Grass (mower?) */
 
 
   /* FIXME: Arbitrary? */
@@ -5230,6 +5227,11 @@ static void do_brick(int x, int y, int w, int h)
 
 // This is better for debugging brick layout:
 //  SDL_FillRect(canvas, &dest, SDL_MapRGB(canvas->format, rand()&255, rand()&255, rand()&255));
+  
+  
+  /* Note: We only play the brick sound when we actually DRAW a brick: */
+
+  playsound(0, SND_BRICK, 1);
 }
 
 /* Draw the current brush in the current color: */

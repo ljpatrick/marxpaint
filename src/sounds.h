@@ -8,7 +8,7 @@
   bill@newbreedsoftware.com
   http://www.newbreedsoftware.com/tuxpaint/
 
-  June 15, 2002 - January 7, 2005
+  June 15, 2002 - January 8, 2005
 */
 
 
@@ -49,6 +49,7 @@ enum {
   SND_SMUDGE,        /* Magic smudge */
   SND_TINT,          /* Magic tint */
   SND_CARTOON,       /* Magic cartoon */
+  SND_BRICK,         /* Magic brick */
   SND_KEYCLICK,      /* Text tool keyboard click feedback */
   SND_KEYCLICKRING,  /* Text tool keyboard click feedback with bell ring */
   SND_RETURN,        /* Text tool carriage return sound */
@@ -96,6 +97,7 @@ const char * const sound_fnames[NUM_SOUNDS] = {
   DATA_PREFIX "sounds/smudge.wav",
   DATA_PREFIX "sounds/tint.wav",
   DATA_PREFIX "sounds/cartoon.wav",
+  DATA_PREFIX "sounds/brick.wav",
   DATA_PREFIX "sounds/keyclick.wav",
   DATA_PREFIX "sounds/typewriterbell.wav",
   DATA_PREFIX "sounds/return.wav",
