@@ -7,7 +7,7 @@ bill@newbreedsoftware.com
 http://www.newbreedsoftware.com/tuxpaint/
 
 
-June 17, 2002 - January 6, 2005
+June 17, 2002 - January 9, 2005
 
 
 * Design and Coding:
@@ -56,7 +56,7 @@ June 17, 2002 - January 6, 2005
 * Fonts
 
   * From the Free Universal Character Set Outline Fonts.
-    http://www.freesoftware.fsf.org/freefont/
+    http://www.nongnu.org/freefont/
     GPL'd, Copyright 2002 Primoz Peterlin <primoz.peterlin@biofiz.mf.uni-lj.si>
     et al
 

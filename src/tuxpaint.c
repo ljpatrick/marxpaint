@@ -2143,7 +2143,7 @@ static void do_wait(void);
 static void load_current(void);
 static void save_current(void);
 static char * get_fname(const char * const name);
-static int do_prompt_image(const char * const text, const char * const btn_yes, const char * const btn_no, SDL_Surface * img);
+static int do_prompt_image(const char * const text, const char * const btn_yes, const char * const btn_no, SDL_Surface * img1, SDL_Surface * img2, SDL_Surface * img3);
 static int do_prompt(const char * const text, const char * const btn_yes, const char * const btn_no);
 static void cleanup(void);
 static void free_cursor(SDL_Cursor ** cursor);
@@ -10877,11 +10877,11 @@ static char * get_fname(const char * const name)
 
 static int do_prompt(const char * const text, const char * const btn_yes, const char * const btn_no)
 {
-  return(do_prompt_image(text, btn_yes, btn_no, NULL));
+  return(do_prompt_image(text, btn_yes, btn_no, NULL, NULL, NULL));
 }
 
 
-static int do_prompt_image(const char * const text, const char * const btn_yes, const char * const btn_no, SDL_Surface * img)
+static int do_prompt_image(const char * const text, const char * const btn_yes, const char * const btn_no, SDL_Surface * img1, SDL_Surface * img2, SDL_Surface * img3)
 {
   SDL_Event event;
   SDL_Rect dest;
@@ -10976,28 +10976,69 @@ static int do_prompt_image(const char * const text, const char * const btn_yes, 
   SDL_FillRect(screen, &dest, SDL_MapRGB(screen->format, 255, 255, 255));
 
 
+  /* If we're showing any images on the right, determine the widest width
+     for them: */
+
+  /* FIXME: This needs to be fixed for right-to-left interfaces! */
+
+  int img1_w, img2_w, img3_w, max_img_w, img_x, img_y, offset;
+
+  offset = img1_w = img2_w = img3_w = 0;
+  
+  if (img1 != NULL)
+    img1_w = img1->w;
+  if (img2 != NULL)
+    img2_w = img2->w;
+  if (img3 != NULL)
+    img3_w = img3->w;
+
+  max_img_w = max(img1_w, max(img2_w, img3_w));
+
+  if (max_img_w > 0)
+    offset = max_img_w + 8;
+  
+  
   /* Draw the question: */
 
-  int img_w;
-  if (img != NULL)
-    img_w = img->w + 8;
-  else
-    img_w = 0;
-  
   wordwrap_text(text, black,
 		166 + PROMPTOFFSETX, 100 + PROMPTOFFSETY,
-		475 + PROMPTOFFSETX - img->w,
+		475 + PROMPTOFFSETX - offset,
 		1);
 
 
-  /* Draw the image (if any): */
+  /* Draw the images (if any): */
 
-  if (img != NULL)
+  img_x = 457 + PROMPTOFFSETX - offset;
+  img_y = 100 + PROMPTOFFSETY + 4;
+
+  if (img1 != NULL)
   {
-    dest.x = 457 + PROMPTOFFSETX - img->w - 4;
-    dest.y = 100 + PROMPTOFFSETY + 4;
+    dest.x = img_x + (max_img_w - img1->w) / 2;
+    dest.y = img_y;
 
-    SDL_BlitSurface(img, NULL, screen, &dest);
+    SDL_BlitSurface(img1, NULL, screen, &dest);
+
+    img_y = img_y + img1->h + 4;
+  }
+
+  if (img2 != NULL)
+  {
+    dest.x = img_x + (max_img_w - img2->w) / 2;
+    dest.y = img_y;
+
+    SDL_BlitSurface(img2, NULL, screen, &dest);
+
+    img_y = img_y + img2->h + 4;
+  }
+
+  if (img1 != NULL)
+  {
+    dest.x = img_x + (max_img_w - img3->w) / 2;
+    dest.y = img_y;
+
+    SDL_BlitSurface(img3, NULL, screen, &dest);
+
+    img_y = img_y + img3->h + 4;  // unnecessary
   }
 
 
@@ -12933,6 +12974,8 @@ static int do_open(int want_new_tool)
 	      
 		  if (do_prompt_image(PROMPT_ERASE_TXT,
 				      PROMPT_ERASE_YES, PROMPT_ERASE_NO,
+				      thumbs[which],
+				      NULL,
 				      thumbs[which]))
 		    {
 		      snprintf(fname, sizeof(fname), "saved/%s%s",
