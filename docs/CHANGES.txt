@@ -7,7 +7,7 @@ bill@newbreedsoftware.com
 http://www.newbreedsoftware.com/tuxpaint/
 
 
-2004.September.14 (0.9.14) [cvs]
+2004.September.19 (0.9.14) [cvs]
   * Multiple sizes of erasers are present.
     (Compile-time #defines can be used to determine how many sizes are
     available, and their minimum and (approx.) maximum sizes.)

@@ -21,12 +21,12 @@
   along with this program; if not, write to the Free Software
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   
-  June 14, 2002 - September 14, 2004
+  June 14, 2002 - September 19, 2004
 */
 
 
 #define VER_VERSION     "0.9.14"
-#define VER_DATE        "2004-09-14"
+#define VER_DATE        "2004-09-19"
 
 
 /* #define DEBUG */
@@ -473,6 +473,7 @@ SDL_Surface * screen;
 
 SDL_Surface * canvas;
 SDL_Surface * img_starter, * img_starter_bkgd;
+int starter_mirrored, starter_flipped;
 
 #define NUM_UNDO_BUFS 20
 SDL_Surface * undo_bufs[NUM_UNDO_BUFS];
@@ -722,8 +723,10 @@ int mySDL_WaitEvent(SDL_Event *event);
 int mySDL_PollEvent(SDL_Event *event);
 void load_starter_id(char * saved_id);
 void load_starter(char * img_id);
-
+SDL_Surface * duplicate_surface(SDL_Surface * orig);
 TTF_Font *try_alternate_font(int language);
+void mirror_starter(void);
+void flip_starter(void);
 
 
 #define MAX_UTF8_CHAR_LENGTH 6
@@ -1105,6 +1108,8 @@ void mainloop(void)
 		    {
 		      free_surface(&img_starter);
 		      free_surface(&img_starter_bkgd);
+		      starter_mirrored = 0;
+		      starter_flipped = 0;
 		      
 		      SDL_FillRect(canvas, NULL,
 				   SDL_MapRGB(canvas->format, 255, 255, 255));
@@ -1431,6 +1436,8 @@ void mainloop(void)
 			    {
 		      	      free_surface(&img_starter);
 			      free_surface(&img_starter_bkgd);
+			      starter_mirrored = 0;
+			      starter_flipped = 0;
 		      
 			      SDL_FillRect(canvas, NULL,
 					   SDL_MapRGB(canvas->format,
@@ -3604,6 +3611,8 @@ void blit_magic(int x, int y, int x2, int y2)
 	}
       else if (cur_magic == MAGIC_FLIP)
 	{
+	  /* Flip the canvas: */
+
 	  for (yy = 0; yy < canvas->h; yy++)
 	    {
 	      src.x = 0;
@@ -3616,9 +3625,19 @@ void blit_magic(int x, int y, int x2, int y2)
 	
 	      SDL_BlitSurface(last, &src, canvas, &dest);
 	    }
+	  
+	  
+	  /* Flip starter, too! */
+
+	  starter_flipped = !starter_flipped;
+
+	  if (img_starter != NULL)
+	    flip_starter();
 	}
       else if (cur_magic == MAGIC_MIRROR)
 	{
+	  /* Mirror-image the canvas: */
+
 	  for (xx = 0; xx < canvas->w; xx++)
 	    {
 	      src.x = xx;
@@ -3631,6 +3650,14 @@ void blit_magic(int x, int y, int x2, int y2)
 	
 	      SDL_BlitSurface(last, &src, canvas, &dest);
 	    }
+
+
+	  /* Mirror starter, too! */
+
+	  starter_mirrored = !starter_mirrored;
+
+	  if (img_starter != NULL)
+	    mirror_starter();
 	}
       else if (cur_magic == MAGIC_THIN || cur_magic == MAGIC_THICK)
 	{
@@ -3738,17 +3765,23 @@ void rec_undo_buffer(void)
 
 void update_canvas(int x1, int y1, int x2, int y2)
 {
-  SDL_Rect dest;
+  SDL_Rect src, dest;
 
   if (img_starter != NULL)
   {
     /* If there was a starter, cover this part of the drawing with
        the corresponding part of the starter's foreground! */
 
+    src.x = x1;
+    src.y = y1;
+    src.w = x2 - x1 + 1;
+    src.h = y2 - y1 + 1;
+
     dest.x = x1;
     dest.y = y1;
-    dest.w = x2 - x1 + 1;
-    dest.h = y2 - y1 + 1;
+    dest.w = src.w;
+    dest.h = src.h;
+
     SDL_BlitSurface(img_starter, &dest, canvas, &dest);
   }
 
@@ -5065,6 +5098,8 @@ void setup(int argc, char * argv[])
 
   img_starter = NULL;
   img_starter_bkgd = NULL;
+  starter_mirrored = 0;
+  starter_flipped = 0;
 
   if (canvas == NULL)
     {
@@ -6885,13 +6920,13 @@ SDL_Surface * thumbnail(SDL_Surface * src, int max_x, int max_y,
             src->format->Gmask |
             src->format->Bmask);
   
-  s = SDL_CreateRGBSurface(SDL_SWSURFACE,
+  s = SDL_CreateRGBSurface(src->flags, /* SDL_SWSURFACE, */
 		           max_x, max_y,
 			   src->format->BitsPerPixel,
 			   src->format->Rmask,
 			   src->format->Gmask,
 			   src->format->Bmask,
-			   amask);
+			   src->format->Amask); /* amask); */
 
 
   if (s == NULL)
@@ -8423,6 +8458,12 @@ void load_current(void)
 	  load_starter_id(file_id);
 	  load_starter(starter_id);
 
+          if (starter_mirrored)
+            mirror_starter();
+
+          if (starter_flipped)
+            flip_starter();
+
 	  tool_avail[TOOL_NEW] = 1;
 	}
 
@@ -9551,6 +9592,7 @@ int do_save(void)
     if (fi != NULL)
     {
       fprintf(fi, "%s\n", starter_id);
+      fprintf(fi, "%d %d\n", starter_mirrored, starter_flipped);
       fclose(fi);
     }
 
@@ -10637,6 +10679,8 @@ int do_open(int want_new_tool)
 		{
 		  free_surface(&img_starter);
 		  free_surface(&img_starter_bkgd);
+		  starter_mirrored = 0;
+		  starter_flipped = 0;
 		   
 		  SDL_FillRect(canvas, NULL,
 			       SDL_MapRGB(canvas->format, 255, 255, 255));
@@ -10670,7 +10714,15 @@ int do_open(int want_new_tool)
 		    load_starter_id(d_names[which]);
 
 		    if (starter_id[0] != '\0')
+		    {
 		      load_starter(starter_id);
+		      
+                      if (starter_mirrored)
+                        mirror_starter();
+         
+		      if (starter_flipped)
+			flip_starter();
+		    }
 		  }
 		  else
 		  {
@@ -12637,6 +12689,8 @@ void load_starter_id(char * saved_id)
     fgets(starter_id, sizeof(starter_id), fi);
     starter_id[strlen(starter_id) - 1] = '\0';
 
+    fscanf(fi, "%d %d", &starter_mirrored, &starter_flipped);
+
     fclose(fi);
   }
 
@@ -12647,6 +12701,10 @@ void load_starter(char * img_id)
 {
   char * dirname;
   char fname[256];
+  SDL_Surface * tmp_surf;
+  SDL_Rect dest;
+  Uint32 amask;
+
 
   /* Determine path to starter files: */
   
@@ -12662,11 +12720,76 @@ void load_starter(char * img_id)
   snprintf(fname, sizeof(fname), "%s/%s.png", dirname, img_id);
   img_starter = IMG_Load(fname);
 
+  if (img_starter != NULL &&
+      (img_starter->w != canvas->w || img_starter->h != canvas->h))
+  {
+    tmp_surf = img_starter;
+
+    amask = ~(tmp_surf->format->Rmask |
+	      tmp_surf->format->Gmask |
+	      tmp_surf->format->Bmask);
+
+    img_starter = SDL_CreateRGBSurface(SDL_SWSURFACE | SDL_SRCALPHA, /* tmp_surf->flags, */
+			               canvas->w, canvas->h,
+			               tmp_surf->format->BitsPerPixel,
+			     	       tmp_surf->format->Rmask,
+			      	       tmp_surf->format->Gmask,
+			      	       tmp_surf->format->Bmask,
+				       amask);
+
+    if (img_starter != NULL)
+    {
+      dest.x = (canvas->w - tmp_surf->w) / 2;
+      dest.y = (canvas->h - tmp_surf->h) / 2;
+
+      SDL_BlitSurface(tmp_surf, NULL, img_starter, &dest);
+      SDL_FreeSurface(tmp_surf);
+    }
+  }
+
 
   /* Try to load the a background image: */
 
-  snprintf(fname, sizeof(fname), "%s/%s-back.png", dirname, img_id);
+  /* (JPEG first) */
+  snprintf(fname, sizeof(fname), "%s/%s-back.jpg", dirname, img_id);
   img_starter_bkgd = IMG_Load(fname);
+ 
+  /* (Failed? Try PNG next) */
+  if (img_starter_bkgd == NULL)
+  {
+    snprintf(fname, sizeof(fname), "%s/%s-back.png", dirname, img_id);
+    img_starter_bkgd = IMG_Load(fname);
+  }
+
+  if (img_starter_bkgd != NULL &&
+      (img_starter_bkgd->w != canvas->w || img_starter_bkgd->h != canvas->h))
+  {
+    tmp_surf = img_starter_bkgd;
+
+    amask = ~(tmp_surf->format->Rmask |
+	      tmp_surf->format->Gmask |
+	      tmp_surf->format->Bmask);
+
+    img_starter_bkgd = SDL_CreateRGBSurface(tmp_surf->flags,
+					    canvas->w, canvas->h,
+					    tmp_surf->format->BitsPerPixel,
+			     	            tmp_surf->format->Rmask,
+			      	            tmp_surf->format->Gmask,
+			      	            tmp_surf->format->Bmask,
+					    amask);
+
+    if (img_starter_bkgd != NULL)
+    {
+      dest.x = (canvas->w - tmp_surf->w) / 2;
+      dest.y = (canvas->h - tmp_surf->h) / 2;
+
+      SDL_BlitSurface(tmp_surf, NULL, img_starter_bkgd, &dest);
+      SDL_FreeSurface(tmp_surf);
+    }
+  }
+
+  starter_mirrored = 0;
+  starter_flipped = 0;
 
   free(dirname);
 }
@@ -12689,3 +12812,54 @@ TTF_Font *try_alternate_font(int language)
   }
   return NULL;
 }
+
+
+SDL_Surface * duplicate_surface(SDL_Surface * orig)
+{
+  return(SDL_CreateRGBSurface(orig->flags,
+			      orig->w, orig->h,
+			      orig->format->BitsPerPixel,
+			      orig->format->Rmask,
+			      orig->format->Gmask,
+			      orig->format->Bmask,
+			      orig->format->Amask));
+}
+
+void mirror_starter(void)
+{
+  SDL_Surface * orig;
+  int x, y;
+  SDL_Rect src, dest;
+
+  /* Mirror overlay: */
+
+  orig = img_starter;
+  img_starter = duplicate_surface(orig);
+
+  if (img_starter != NULL)
+  {
+    for (x = 0; x < orig->w; x++)
+    {
+      src.x = x;
+      src.y = 0;
+      src.w = 1;
+      src.h = orig->h;
+
+      dest.x = orig->w - x - 1;
+      dest.y = 0;
+
+      SDL_BlitSurface(orig, &src, img_starter, &dest);
+    }
+
+    SDL_FreeSurface(orig);
+  }
+  else
+  {
+    img_starter = orig;
+  }
+}
+
+void flip_starter(void)
+{
+}
+
