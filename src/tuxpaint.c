@@ -1183,6 +1183,17 @@ static void setup_language(const char * const prg)
 }
 
 
+// handle --locale arg
+static void do_locale_option(const char * const arg)
+{
+  int len = strlen(arg) + 6;
+  char *str = malloc(len);
+  snprintf(str, len, "LANG=%s", arg);
+  putenv(str);
+  setlocale(LC_ALL, ""); /* use arg ? */
+}
+
+
 static TTF_Font *try_alternate_font(void)
 {
   char  str[128];
@@ -5915,11 +5926,7 @@ static void setup(int argc, char * argv[])
 	{
 	  if (i < argc - 1)
 	    {
-	      snprintf(str, sizeof(str), "LANG=%s", argv[i + 1]);
-	      putenv(str);
-	
-	      setlocale(LC_ALL, ""); /* argv[i + 1]) ? */
-	      i++;
+	      do_locale_option(argv[++i]);
 	    }
 	  else
 	    {
