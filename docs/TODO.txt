@@ -13,10 +13,6 @@ BUGS!
 -----
   * Get Starters to work properly in 800x600 mode.
 
-  * Keep track of Mirror and Flip actions in Undo history, so that
-    Starters can be un/re-flipped and un/re-mirrored, and "starter_mirrored"
-    and "starter_flipped" flags can be toggled.
-
 
 HIGH-PRIORITY DOCUMENTATION CHANGES:
 ------------------------------------

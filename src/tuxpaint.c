@@ -21,12 +21,12 @@
   along with this program; if not, write to the Free Software
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   
-  June 14, 2002 - September 19, 2004
+  June 14, 2002 - September 21, 2004
 */
 
 
 #define VER_VERSION     "0.9.14"
-#define VER_DATE        "2004-09-19"
+#define VER_DATE        "2004-09-21"
 
 
 /* #define DEBUG */
@@ -475,8 +475,15 @@ SDL_Surface * canvas;
 SDL_Surface * img_starter, * img_starter_bkgd;
 int starter_mirrored, starter_flipped;
 
+enum {
+  UNDO_STARTER_NONE,
+  UNDO_STARTER_MIRRORED,
+  UNDO_STARTER_FLIPPED
+};
+
 #define NUM_UNDO_BUFS 20
 SDL_Surface * undo_bufs[NUM_UNDO_BUFS];
+int undo_starters[NUM_UNDO_BUFS];
 int cur_undo, oldest_undo, newest_undo;
 
 SDL_Surface * img_title, * img_progress;
@@ -2082,8 +2089,19 @@ void mainloop(void)
 		  else if (cur_tool == TOOL_MAGIC)
 		    {
 		      /* Start doing magic! */
-		      
+		     
+		      tmp_int = cur_undo;
 		      rec_undo_buffer();
+
+
+		      /* Mirror or flip, make a note so we record it for
+		         the starters, too! */
+
+		      if (cur_magic == MAGIC_MIRROR)
+			undo_starters[tmp_int] = UNDO_STARTER_MIRRORED;
+		      else if (cur_magic == MAGIC_FLIP)
+			undo_starters[tmp_int] = UNDO_STARTER_FLIPPED;
+
 		      
 		      /* (Arbitrarily large, so we draw once now) */
 		      brush_counter = 999;
@@ -3362,14 +3380,17 @@ void blit_magic(int x, int y, int x2, int y2)
     r4, g4, b4;
   SDL_Surface * last;
   SDL_Rect src, dest;
+  int undo_ctr;
 
 
   /* In case we need to use the current canvas (just saved to undo buf)... */
 
   if (cur_undo > 0)
-    last = undo_bufs[cur_undo - 1];
+    undo_ctr = cur_undo - 1;
   else
-    last = undo_bufs[NUM_UNDO_BUFS - 1];
+    undo_ctr = NUM_UNDO_BUFS - 1;
+
+  last = undo_bufs[undo_ctr];
 
 
   brush_counter++;
@@ -3725,6 +3746,7 @@ void rec_undo_buffer(void)
 
 
   SDL_BlitSurface(canvas, NULL, undo_bufs[cur_undo], NULL);
+  undo_starters[cur_undo] = UNDO_STARTER_NONE;
 
   cur_undo = (cur_undo + 1) % NUM_UNDO_BUFS;
 
@@ -5137,6 +5159,8 @@ void setup(int argc, char * argv[])
 	  cleanup();
 	  exit(1);
 	}
+
+      undo_starters[i] = UNDO_STARTER_NONE;
     }
 
 
@@ -7153,7 +7177,21 @@ void do_undo(void)
       printf("BLITTING: %d\n", cur_undo);
 #endif
       SDL_BlitSurface(undo_bufs[cur_undo], NULL, canvas, NULL);
+
+
+      if (undo_starters[cur_undo] == UNDO_STARTER_MIRRORED)
+      {
+	starter_mirrored = !starter_mirrored;
+	mirror_starter();
+      }
+      else if (undo_starters[cur_undo] == UNDO_STARTER_FLIPPED)
+      {
+	starter_flipped = !starter_flipped;
+	flip_starter();
+      }
+
       update_canvas(0, 0, (WINDOW_WIDTH - 96), (48 * 7) + 40 + HEIGHTOFFSET);
+
 
       if (cur_undo == oldest_undo)
 	{
@@ -7189,12 +7227,24 @@ void do_redo(void)
 {
   if (cur_undo != newest_undo)
     {
+      if (undo_starters[cur_undo] == UNDO_STARTER_MIRRORED)
+      {
+	starter_mirrored = !starter_mirrored;
+	mirror_starter();
+      }
+      else if (undo_starters[cur_undo] == UNDO_STARTER_FLIPPED)
+      {
+	starter_flipped = !starter_flipped;
+	flip_starter();
+      }
+      
       cur_undo = (cur_undo + 1) % NUM_UNDO_BUFS;
 
 #ifdef DEBUG
       printf("BLITTING: %d\n", cur_undo);
 #endif
       SDL_BlitSurface(undo_bufs[cur_undo], NULL, canvas, NULL);
+
       update_canvas(0, 0, (WINDOW_WIDTH - 96), (48 * 7) + 40 + HEIGHTOFFSET);
 
       been_saved = 0;
@@ -12855,7 +12905,7 @@ SDL_Surface * duplicate_surface(SDL_Surface * orig)
 void mirror_starter(void)
 {
   SDL_Surface * orig;
-  int x, y;
+  int x;
   SDL_Rect src, dest;
 
   
@@ -12922,13 +12972,11 @@ void mirror_starter(void)
 void flip_starter(void)
 {
   SDL_Surface * orig;
-  int x, y;
+  int y;
   SDL_Rect src, dest;
 
   
   /* Flip overlay: */
-
-  printf("Flipping starter\n");
 
   orig = img_starter;
   img_starter = duplicate_surface(orig);
@@ -12982,14 +13030,8 @@ void flip_starter(void)
     }
     else
     {
-      printf("Couldn't duplicate background!\n");
-
       img_starter_bkgd = orig;
     }
-  }
-  else
-  {
-    printf("No background to flip\n");
   }
 }
 
