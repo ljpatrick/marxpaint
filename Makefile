@@ -6,7 +6,7 @@
 # bill@newbreedsoftware.com
 # http://www.newbreedsoftware.com/tuxpaint/
 
-# June 14, 2002 - January 6, 2005
+# June 14, 2002 - January 14, 2005
 
 
 # Where to install things:
@@ -77,11 +77,6 @@ CURSOR_SHAPES=LARGE
 
 # MOUSEDIR=mouse/16x16
 # CURSOR_SHAPES=SMALL
-
-
-# Don't build with hqxx code yet...
-# HQXX_O = obj/hqxx.o obj/hq4x.o
-# HQXX_H = src/hqxx.h src/hq4x.h
 
 
 # Libraries, paths, and flags:
@@ -777,19 +772,6 @@ obj/BeOS_Print.o:	src/BeOS_Print.cpp obj src/BeOS_print.h
 	@echo "...Compiling BeOS print support..."
 	@$(CC) $(CFLAGS) $(SDL_CFLAGS) $(DEFS) \
 		-c src/BeOS_print.cpp -o obj/BeOS_print.o
-
-
-obj/hq4x.o:	src/hq4x.c src/hq4x.h src/hqxx.h
-	@echo
-	@echo "...Compiling high quality 4x scale filter..."
-	@$(CC) $(CFLAGS) $(SDL_CFLAGS) \
-		-c src/hq4x.c -o obj/hq4x.o
-
-obj/hqxx.o:	src/hqxx.c src/hqxx.h
-	@echo
-	@echo "...Compiling high quality scale filter helpers..."
-	@$(CC) $(CFLAGS) $(SDL_CFLAGS) \
-		-c src/hqxx.c -o obj/hqxx.o
 
 
 # Build the translation files for gettext

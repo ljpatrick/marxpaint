@@ -22,13 +22,15 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
   
-  June 14, 2002 - January 12, 2005
+  June 14, 2002 - January 14, 2005
 */
 
 
 #define VER_VERSION     "0.9.15"
-#define VER_DATE        "2005-01-12"
+#define VER_DATE        "2005-01-14"
 
+
+/* Color depth for Tux Paint to run in, and store canvases in: */
 
 //#define VIDEO_BPP 15 // saves memory
 //#define VIDEO_BPP 16 // causes discoloration
@@ -36,9 +38,14 @@
 #define VIDEO_BPP 32 // might be fastest, if conversion funcs removed
 
 
-#define PRINTMETHOD_PS
-//#define PRINTMETHOD_PNM_PS
-//#define PRINTMETHOD_PNG_PNM_PS
+/* Method for printing images: */
+
+#define PRINTMETHOD_PS             /* Direct to PostScript */
+//#define PRINTMETHOD_PNM_PS       /* Output PNM, assuming it gets printed */
+//#define PRINTMETHOD_PNG_PNM_PS   /* Output PNG, assuming it gets printed */
+
+
+/* Default print command, depending on the print method: */
 
 #ifdef PRINTMETHOD_PNG_PNM_PS
 #define PRINTCOMMAND "pngtopnm | pnmtops | lpr"
@@ -50,6 +57,9 @@
 #error No print method defined!
 #endif
 
+
+/* Compile-time options: */
+
 /* #define DEBUG */
 /* #define DEBUG_MALLOC */
 /* #define LOW_QUALITY_THUMBNAILS */
@@ -58,10 +68,6 @@
 /* #define LOW_QUALITY_FLOOD_FILL */
 /* #define NO_PROMPT_SHADOWS */
 /* #define USE_HWSURFACE */
-
-/* Use high quality 4x filter when scaling stamps up: */
-/* #define USE_HQ4X */
-
 
 /* Disable fancy cursors in fullscreen mode, to avoid SDL bug: */
 #define LARGE_CURSOR_FULLSCREEN_BUG
@@ -111,13 +117,15 @@ static scaleparams scaletable[] = {
   { 48,  1}, // 48
 };
 
+
+/* Macros: */
+
 #define HARD_MIN_STAMP_SIZE 0  // bottom of scaletable
 #define HARD_MAX_STAMP_SIZE (sizeof scaletable / sizeof scaletable[0] - 1)
 
 #define MIN_STAMP_SIZE (state_stamps[cur_stamp]->min)
 #define MAX_STAMP_SIZE (state_stamps[cur_stamp]->max)
 
-#define CAN_USE_HQ4X (scaletable[state_stamps[cur_stamp]->size] == (scaleparams){4,1})
 // to scale some offset, in pixels, like the current stamp is scaled
 #define SCALE_LIKE_STAMP(x) ( ((x) * scaletable[state_stamps[cur_stamp]->size].numer + scaletable[state_stamps[cur_stamp]->size].denom-1) / scaletable[state_stamps[cur_stamp]->size].denom )
 // pixel dimensions of the current stamp, as scaled
@@ -126,8 +134,6 @@ static scaleparams scaletable[] = {
 
 ///////////////////////////////////////////////////////////////////////////////
 
-
-// #define MAX_FILES 2048  /* Max. # of files in a dir. to worry about... */
 
 #define REPEAT_SPEED 300  /* Initial repeat speed for scrollbars */
 #define CURSOR_BLINK_SPEED 500  /* Initial repeat speed for cursor */
@@ -142,12 +148,6 @@ static scaleparams scaletable[] = {
 #define y1 evil_y1
 #include <math.h>
 #undef y1
-
-#ifdef USE_HQ4X
-#include "hqxx.h"
-#include "hq3x.h"
-#include "hq4x.h"
-#endif
 
 #include <locale.h>
 
@@ -2103,10 +2103,6 @@ typedef enum { Left, Right, Bottom, Top } an_edge;
 static SDL_Event scrolltimer_event;
 
 static char * savedir;
-
-#ifdef USE_HQ4X
-static int RGBtoYUV[65536];
-#endif
 
 typedef struct dirent2 {
   struct dirent f;
@@ -5017,45 +5013,7 @@ static void stamp_draw(int x, int y)
   
   /* Shrink or grow it! */
 
-#ifdef USE_HQ4X
-  if (CAN_USE_HQ4X)
-    {
-      /* Use high quality 4x filter! */
-      
-      
-      /* Make the new surface for the scaled image: */
-      
-      amask = ~(img_stamps[cur_stamp]->format->Rmask |
-		img_stamps[cur_stamp]->format->Gmask |
-		img_stamps[cur_stamp]->format->Bmask);
-      
-      final_surf = SDL_CreateRGBSurface(SDL_SWSURFACE,
-					img_stamps[cur_stamp]->w * 4,
-					img_stamps[cur_stamp]->h * 4,
-					img_stamps[cur_stamp]->format->BitsPerPixel,
-					img_stamps[cur_stamp]->format->Rmask,
-					img_stamps[cur_stamp]->format->Gmask,
-					img_stamps[cur_stamp]->format->Bmask,
-					amask);
-      
-      if (final_surf == NULL)
-	{
-	  fprintf(stderr, "\nError: Can't build stamp thumbnails\n"
-		  "The Simple DirectMedia Layer error that occurred was:\n"
-		  "%s\n\n", SDL_GetError());
-	  
-	  cleanup();
-	  exit(1);
-	}
-      
-      
-      hq4x_32(tmp_surf, final_surf, RGBtoYUV);
-    }
-  else
-#endif
-    {
-      final_surf = thumbnail(tmp_surf, CUR_STAMP_W, CUR_STAMP_H, 0);
-    }
+  final_surf = thumbnail(tmp_surf, CUR_STAMP_W, CUR_STAMP_H, 0);
   
   
   /* Where it will go? */
@@ -6993,13 +6951,6 @@ static void setup(int argc, char * argv[])
   SDL_Flip(screen);
   
  
-#ifdef USE_HQ4X
-  /* Init high quality scaling stuff: */
-  
-  InitLUTs(RGBtoYUV);
-#endif
-
-
   /* Load other images: */
 
   for (i = 0; i < NUM_TOOLS; i++)
