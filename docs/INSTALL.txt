@@ -6,7 +6,7 @@ Copyright 2005 by Bill Kendrick
 bill@newbreedsoftware.com
 http://www.newbreedsoftware.com/tuxpaint/
 
-June 27, 2002 - February 25, 2005
+June 27, 2002 - February 26, 2005
 
 
 Requirements:
@@ -109,8 +109,6 @@ Compiling and Installation:
 	make win32
 	make install-win32
 	tuxpaint
-
-      [Eventually, we'll describe how to generate the installer EXE, too.]
 
     Installer:
     ----------

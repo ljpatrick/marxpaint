@@ -199,6 +199,9 @@ http://www.newbreedsoftware.com/tuxpaint/
 
   * Compiling, porting and packaging updates:
     -----------------------------------------
+    * Added 'win32' target to Makefile, for use on Windows with MinGW/MSYS.
+      John Popplewell <john@johnnypops.demon.co.uk>
+    
     * BeOS code updates.
       Marcin 'Shard' Konicki <shard at beosjournal.org>
 
