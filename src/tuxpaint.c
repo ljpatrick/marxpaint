@@ -6788,24 +6788,16 @@ static void setup(int argc, char * argv[])
     {
       if (strlen(title_names[i]) > 0)
 	{
-	  if (need_own_font && locale_font != NULL &&
-		   strcmp(gettext(title_names[i]), title_names[i]) != 0)
-	    {
-	      tmp_surf = TTF_RenderUTF8_Blended(locale_font,
-						textdir(gettext(title_names[i])), black);
-	      img_title_names[i] = thumbnail(tmp_surf,
-					     min(84, tmp_surf->w), tmp_surf->h, 0);
-	      SDL_FreeSurface(tmp_surf);
-	    }
-	  else
-	    {
-	      upstr = uppercase(textdir(gettext(title_names[i])));
-	      tmp_surf = TTF_RenderUTF8_Blended(large_font, upstr, black);
-	      img_title_names[i] = thumbnail(tmp_surf,
-					     min(84, tmp_surf->w), tmp_surf->h, 0);
-	      SDL_FreeSurface(tmp_surf);
-	      free(upstr);
-	    }
+	  TTF_Font * myfont = large_font;
+	  if (need_own_font && strcmp(gettext(title_names[i]), title_names[i]))
+	    myfont = locale_font;
+          char *td_str = textdir(gettext(title_names[i]));
+          upstr = uppercase(td_str);
+          free(td_str);
+          tmp_surf = TTF_RenderUTF8_Blended(myfont, upstr, black);
+          free(upstr);
+	  img_title_names[i] = thumbnail(tmp_surf, min(84, tmp_surf->w), tmp_surf->h, 0);
+	  SDL_FreeSurface(tmp_surf);
 	}
       else
 	{
