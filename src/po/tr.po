@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TuxPaint 0.0.1pre\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2004-07-13 13:47+0200\n"
+"POT-Creation-Date: 2004-07-13 15:20+0200\n"
 "PO-Revision-Date: 2002-08-12 01:44Europe/Istanbul\n"
 "Last-Translator: Doruk Fisek <dfisek@fisek.com.tr>\n"
 "Language-Team: Turkish <gnu-tr-u12a@lists.sourceforge.net>\n"
@@ -14,540 +14,420 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 0.9.5\n"
 
-#: tuxpaint.desktop.in.h:1
 msgid "A drawing program for children."
 msgstr ""
 
-#: tuxpaint.desktop.in.h:2
 msgid "Drawing program"
 msgstr ""
 
-#: tuxpaint.desktop.in.h:3
 #, fuzzy
 msgid "Tux Paint"
 msgstr "Boya"
 
-#: colors.h:62
 #, fuzzy
 msgid "Black!"
 msgstr "Siyah!"
 
-#: colors.h:63
 #, fuzzy
 msgid "White!"
 msgstr "Beyaz!"
 
-#: colors.h:64
 #, fuzzy
 msgid "Red!"
 msgstr "İleri al!"
 
-#: colors.h:65
 #, fuzzy
 msgid "Pink!"
 msgstr "Pembe!"
 
-#: colors.h:66
 #, fuzzy
 msgid "Orange!"
 msgstr "Turuncu!"
 
-#: colors.h:67
 #, fuzzy
 msgid "Yellow!"
 msgstr "Sarı!"
 
-#: colors.h:68
 #, fuzzy
 msgid "Lime!"
 msgstr "Doğrular"
 
-#: colors.h:69
 #, fuzzy
 msgid "Green!"
 msgstr "Yeşil!"
 
-#: colors.h:70
 #, fuzzy
 msgid "Cyan!"
 msgstr "Turkuaz!"
 
-#: colors.h:71
 #, fuzzy
 msgid "Blue!"
 msgstr "Mavi!"
 
-#: colors.h:72
 #, fuzzy
 msgid "Purple!"
 msgstr "Mor!"
 
-#: colors.h:73
 msgid "Fuchsia!"
 msgstr ""
 
-#: colors.h:74
 #, fuzzy
 msgid "Brown!"
 msgstr "Kahverengi!"
 
-#: colors.h:75
 #, fuzzy
 msgid "Gray!"
 msgstr "Harika!"
 
-#: colors.h:76
 msgid "Silver!"
 msgstr ""
 
-#: great.h:20
 msgid "Great!"
 msgstr "Harika!"
 
-#: great.h:21
 msgid "Cool!"
 msgstr ""
 
-#: great.h:22
 msgid "Keep it up!"
 msgstr ""
 
-#: great.h:23
 msgid "Good job!"
 msgstr ""
 
-#: magic.h:48
 msgid "Rainbow"
 msgstr "Gökkuşağı"
 
-#: magic.h:49
 msgid "Sparkles"
 msgstr "Kıvılcımlar"
 
-#: magic.h:51
 msgid "Mirror"
 msgstr "Ayna"
 
-#: magic.h:52
 msgid "Flip"
 msgstr "Takla attır"
 
-#: magic.h:54
 msgid "Blur"
 msgstr "Bulanıklaştır"
 
-#: magic.h:55
 msgid "Blocks"
 msgstr "Bloklar"
 
-#: magic.h:57
 msgid "Negative"
 msgstr "Negatif"
 
-#: magic.h:58
 msgid "Fade"
 msgstr "Sönük"
 
-#: magic.h:60
 msgid "Chalk"
 msgstr "Tebeşir"
 
-#: magic.h:61
 msgid "Drip"
 msgstr "Akıtmak"
 
-#: magic.h:63
 msgid "Thick"
 msgstr "Kalın"
 
-#: magic.h:64
 msgid "Thin"
 msgstr "İnce"
 
-#: magic.h:66
 msgid "Fill"
 msgstr ""
 
-#: magic.h:73
 msgid "You can draw in rainbow colors!"
 msgstr "Gökkuşağı renklerinde çizebilirsiniz"
 
-#: magic.h:74
 #, fuzzy
 msgid "Click and move to draw sparkles."
 msgstr "Kıvılcımlar çizmek için tıklayın ve hareket ettirin"
 
-#: magic.h:76
 #, fuzzy
 msgid "Click to make a mirror image."
 msgstr "Bir ayna görüntüsü yapmak için tıklayın"
 
-#: magic.h:77
 #, fuzzy
 msgid "Click to flip the picture upside-down."
 msgstr "Resmi başaşağı çevirmek için tıklayın"
 
-#: magic.h:79
 #, fuzzy
 msgid "Click and move the mouse around to blur the picture."
 msgstr ""
 "Resmi bulanık hale getirmek için fareye tıklayın ve onu etrafta gezdirin"
 
-#: magic.h:80
 #, fuzzy
 msgid "Click and move the mouse around to make the picture blocky."
 msgstr "Resmi damla damla akıtmak için fareye tıklayın ve onu etrafta gezdirin"
 
-#: magic.h:82
 #, fuzzy
 msgid "Click and move the mouse around to draw a negative."
 msgstr "Negatif elde etmek için fareye tıklayın ve onu etrafta gezdirin"
 
-#: magic.h:83
 msgid "Click and move to fade the colors."
 msgstr "Renkleri sönükleştirmek için tıklayın ve hareket ettirin"
 
-#: magic.h:85
 msgid ""
 "Click and move the mouse around to turn the picture into a chalk drawing."
 msgstr ""
 "Resmi bir tebeşire çevirmek için fareye tıklayın ve onu etrafta gezdirin"
 
-#: magic.h:86
 #, fuzzy
 msgid "Click and move the mouse around to make the picture drip."
 msgstr "Resmi damla damla akıtmak için fareye tıklayın ve onu etrafta gezdirin"
 
-#: magic.h:88
 #, fuzzy
 msgid "Click and move the mouse to thicken the picture."
 msgstr ""
 "Resmi bulanık hale getirmek için fareye tıklayın ve onu etrafta gezdirin"
 
-#: magic.h:89
 #, fuzzy
 msgid "Click and move the mouse to thin the picture."
 msgstr ""
 "Resmi bulanık hale getirmek için fareye tıklayın ve onu etrafta gezdirin"
 
-#: magic.h:91
 #, fuzzy
 msgid "Click in the picture to fill that area with color."
 msgstr "Renkleri sönükleştirmek için tıklayın ve hareket ettirin"
 
-#: shapes.h:141 shapes.h:142
 msgid "Square"
 msgstr "Kare"
 
-#: shapes.h:143 shapes.h:144
 msgid "Rectangle"
 msgstr ""
 
-#: shapes.h:145 shapes.h:146
 msgid "Circle"
 msgstr "Daire"
 
-#: shapes.h:147 shapes.h:148 shapes.h:167 shapes.h:168
 msgid "Oval"
 msgstr "Oval"
 
-#: shapes.h:149 shapes.h:150
 #, fuzzy
 msgid "Triangle"
 msgstr "Turuncu!"
 
-#: shapes.h:151 shapes.h:152
 msgid "Pentagon"
 msgstr "Beşgen"
 
-#: shapes.h:153 shapes.h:154
 msgid "Diamond"
 msgstr "Eşkenar dörtgen"
 
-#: shapes.h:161 shapes.h:162
 msgid "A square has four sides, each the same length."
 msgstr "Bir karenin dört kenarı vardır, her kenarı aynı uzunluktadır."
 
-#: shapes.h:163 shapes.h:164
 msgid "A rectangle has four sides."
 msgstr "Bir dikdörtgenin dört kenarı vardır."
 
-#: shapes.h:165 shapes.h:166
 msgid "A circle is exactly round."
 msgstr "Bir daire tam olarak yuvarlaktır."
 
-#: shapes.h:169 shapes.h:170
 msgid "A triangle has three sides."
 msgstr "Bir üçgenin üç kenarı vardır."
 
-#: shapes.h:171 shapes.h:172
 msgid "A pentagon has five sides."
 msgstr "Bir beşgenin beş kenarı vardır."
 
-#: shapes.h:173 shapes.h:174
 msgid "A diamond is a square, turned around slightly."
 msgstr ""
 "Bir eşkenar dörtgen bir karedir, hafifçe kendi etrafında döndürülmüştür."
 
-#: titles.h:37
 msgid "Tools"
 msgstr ""
 
-#: titles.h:38
 msgid "Colors"
 msgstr ""
 
-#: titles.h:39
 msgid "Brushes"
 msgstr ""
 
-#: titles.h:40
 #, fuzzy
 msgid "Stamps"
 msgstr "Damga"
 
-#: titles.h:41 tools.h:45
 msgid "Shapes"
 msgstr "Şekiller"
 
-#: titles.h:42
 msgid "Letters"
 msgstr ""
 
-#: titles.h:43 tools.h:47
 msgid "Magic"
 msgstr "Büyü"
 
-#: tools.h:42
 msgid "Paint"
 msgstr "Boya"
 
-#: tools.h:43
 msgid "Stamp"
 msgstr "Damga"
 
-#: tools.h:44
 msgid "Lines"
 msgstr "Doğrular"
 
-#: tools.h:46
 msgid "Text"
 msgstr "Yazı"
 
-#: tools.h:48
 msgid "Undo"
 msgstr "Geri al"
 
-#: tools.h:49
 msgid "Redo"
 msgstr "İleri al"
 
-#: tools.h:50
 msgid "Eraser"
 msgstr "Silgi"
 
-#: tools.h:51
 msgid "New"
 msgstr "Yeni"
 
 #. 'Open' label:
-#: tools.h:52 tuxpaint.c:5499
 msgid "Open"
 msgstr "Aç"
 
-#: tools.h:53
 msgid "Save"
 msgstr "Kaydet"
 
-#: tools.h:54
 msgid "Print"
 msgstr "Yazdır"
 
-#: tools.h:55
 msgid "Quit"
 msgstr "Çıkış"
 
-#: tools.h:62
 msgid "Pick a color and a brush shape to draw with."
 msgstr "Çizmek için bir renk ve bir fırça seçin."
 
-#: tools.h:63
 msgid "Pick a picture to stamp around your drawing."
 msgstr "Çiziminizi damgalamak için bir resim seçin."
 
-#: tools.h:64
 #, fuzzy
 msgid "Click to start drawing a line. Let go to complete it."
 msgstr ""
 "Bir doğru çizmeye başlamak için fareye tıklayın. Tamamlamak için fareyi "
 "bırakın."
 
-#: tools.h:65
 msgid ""
 "Pick a shape. Click to pick the center, drag, then let go when it is the "
 "size you want. Move around to rotate it, and click to draw it."
 msgstr ""
 
-#: tools.h:66
 #, fuzzy
 msgid "Choose a style of text. Click on your drawing and you can start typing."
 msgstr ""
 "Bir yazı stili seçin. Çiziminizin üzerine tıklayın ve yazmaya "
 "başlayabilirsiniz."
 
-#: tools.h:67
 msgid "Pick a magical effect to use on your drawing!"
 msgstr "Çiziminiz üzerinde kullanmak için bir büyülü efekt seçin!"
 
 #. Undo
-#: tools.h:68
 msgid "Undo!"
 msgstr "Geri al!"
 
 #. Redo
-#: tools.h:69
 msgid "Redo!"
 msgstr "İleri al!"
 
 #. Eraser
-#: tools.h:70
 msgid "Eraser!"
 msgstr "Silgi!"
 
 #. New
-#: tools.h:71
 msgid "You now have a blank sheet to draw on!"
 msgstr "Şimdi çizim yapmak için temiz bir sayfanız var!"
 
 #. Open
-#: tools.h:72
 msgid "Open…"
 msgstr "Aç..."
 
 #. Save
-#: tools.h:73
 msgid "Your image has been saved!"
 msgstr "Resminiz kaydedildi!"
 
 #. Print
-#: tools.h:74
 msgid "Printing…"
 msgstr "Yazdırılıyor..."
 
 #. Quit
-#: tools.h:75
 #, fuzzy
 msgid "Bye bye!"
 msgstr "Güle Güle"
 
-#: tools.h:78
 msgid "Let go of the button to complete the line."
 msgstr "Doğruyu tamamlamak için tuşu bırakın."
 
-#: tools.h:79
 msgid "Hold the button to stretch the shape."
 msgstr "Şekli çekip uzatmak için tuşa basılı tutun."
 
-#: tools.h:80
 msgid "Move the mouse to rotate the shape. Click to draw it."
 msgstr "Şekli döndürmek için fareyi hareket ettirin. Onu çizmek icin tıklayın."
 
-#: tools.h:81
 msgid "OK then… Let’s keep drawing this one!"
 msgstr "Tamam o zaman... Bunu çizmeye devam edelim!"
 
 #. FIXME: Move elsewhere!!!
-#: tuxpaint.c:811
 msgid "Do you really want to quit?"
 msgstr "Gerçekten çıkmak istiyor musunuz?"
 
 #. FIXME: Move elsewhere! Or not?!
-#: tuxpaint.c:812 tuxpaint.c:816 tuxpaint.c:820 tuxpaint.c:834 tuxpaint.c:844
-#: tuxpaint.c:8359 tuxpaint.c:9066
 msgid "Yes"
 msgstr "Evet"
 
-#: tuxpaint.c:813 tuxpaint.c:817 tuxpaint.c:821 tuxpaint.c:835 tuxpaint.c:845
-#: tuxpaint.c:8362
 msgid "No"
 msgstr "Hayır"
 
-#: tuxpaint.c:815
 msgid "If you quit, you’ll lose your picture! Save it?"
 msgstr "Eğer çıkarsanız, resmi kaybedeceksiniz! Kaydedelim mi?"
 
-#: tuxpaint.c:819
 msgid "Save your picture first?"
 msgstr "İlk önce resmi kaydetmek ister misiniz?"
 
-#: tuxpaint.c:823
 #, fuzzy
 msgid "Can’t open that picture!"
 msgstr "Bu resmi sileyim mi?"
 
-#: tuxpaint.c:824 tuxpaint.c:831 tuxpaint.c:838 tuxpaint.c:841
 msgid "OK"
 msgstr ""
 
-#: tuxpaint.c:826
 msgid "Starting a new picture will erase the current one!"
 msgstr "Yeni bir resme başlamak şu ankini silecektir!"
 
-#: tuxpaint.c:827
 #, fuzzy
 msgid "That’s OK!"
 msgstr "Tamamdır"
 
-#: tuxpaint.c:828
 #, fuzzy
 msgid "Never mind!"
 msgstr "Boşver!"
 
-#: tuxpaint.c:830
 msgid "There are no saved files!"
 msgstr "Kaydedilmiş hiç dosya yok!"
 
-#: tuxpaint.c:833
 #, fuzzy
 msgid "Print your picture now?"
 msgstr "İlk önce resmi kaydetmek ister misiniz?"
 
-#: tuxpaint.c:837
 #, fuzzy
 msgid "Your picture has been printed!"
 msgstr "Resminiz kaydedildi!"
 
-#: tuxpaint.c:840
 msgid "You can’t print yet!"
 msgstr ""
 
-#: tuxpaint.c:843
 msgid "Erase this picture?"
 msgstr "Bu resmi sileyim mi?"
 
 #. 'Erase' label:
-#: tuxpaint.c:5504
 #, fuzzy
 msgid "Erase"
 msgstr "Silgi"
 
 #. 'Back' label:
-#: tuxpaint.c:5509
 #, fuzzy
 msgid "Back"
 msgstr "Siyah!"
 
 #. FIXME: Move elsewhere!!!
-#: tuxpaint.c:9065
 #, fuzzy
 msgid "Save over the older version of this picture?"
 msgstr "Bu çizimin eski halinin üzerine mi kaydedeyim?"
 
-#: tuxpaint.c:9067
 msgid "No, save a new file"
 msgstr "Hayir, yeni bir dosyaya kaydet"
 
-#: tuxpaint.c:9961
 msgid "Choose the picture you want, then click “Open”."
 msgstr ""
 

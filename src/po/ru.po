@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TuxPaint\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2004-07-13 13:47+0200\n"
+"POT-Creation-Date: 2004-07-13 15:20+0200\n"
 "PO-Revision-Date: 2003-07-06 12:00GMT\n"
 "Last-Translator: Eugene Zelenko <greendeath@mail.ru>\n"
 "Language-Team: Dmitriy Ivanov <ace22b@myrealbox.com>\n"
@@ -15,343 +15,259 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.3.1\n"
 
-#: tuxpaint.desktop.in.h:1
 msgid "A drawing program for children."
 msgstr "Детская программа для рисования."
 
-#: tuxpaint.desktop.in.h:2
 msgid "Drawing program"
 msgstr "Программа для рисования"
 
-#: tuxpaint.desktop.in.h:3
 msgid "Tux Paint"
 msgstr "Рисуй вместе с Tux!"
 
-#: colors.h:62
 msgid "Black!"
 msgstr "Чёрный!"
 
-#: colors.h:63
 msgid "White!"
 msgstr "Белый!"
 
-#: colors.h:64
 msgid "Red!"
 msgstr "Красный!"
 
-#: colors.h:65
 msgid "Pink!"
 msgstr "Розовый!"
 
-#: colors.h:66
 msgid "Orange!"
 msgstr "Оранжевый!"
 
-#: colors.h:67
 msgid "Yellow!"
 msgstr "Жёлтый!"
 
-#: colors.h:68
 msgid "Lime!"
 msgstr "Светло-зеленый!"
 
-#: colors.h:69
 msgid "Green!"
 msgstr "Зелёный!"
 
-#: colors.h:70
 msgid "Cyan!"
 msgstr "Циан!"
 
-#: colors.h:71
 msgid "Blue!"
 msgstr "Голубой!"
 
-#: colors.h:72
 msgid "Purple!"
 msgstr "Пурпурный!"
 
-#: colors.h:73
 msgid "Fuchsia!"
 msgstr "Фуксия!"
 
-#: colors.h:74
 msgid "Brown!"
 msgstr "Коричневый!"
 
-#: colors.h:75
 msgid "Gray!"
 msgstr "Серый!"
 
-#: colors.h:76
 msgid "Silver!"
 msgstr "Серебряный!"
 
-#: great.h:20
 msgid "Great!"
 msgstr "Прекрасно!"
 
-#: great.h:21
 msgid "Cool!"
 msgstr "Здорово!"
 
-#: great.h:22
 msgid "Keep it up!"
 msgstr "Так и продолжай!"
 
-#: great.h:23
 msgid "Good job!"
 msgstr "Хорошая работа!"
 
-#: magic.h:48
 msgid "Rainbow"
 msgstr "Радуга"
 
-#: magic.h:49
 msgid "Sparkles"
 msgstr "Искры"
 
-#: magic.h:51
 msgid "Mirror"
 msgstr "Зеркало"
 
-#: magic.h:52
 msgid "Flip"
 msgstr "Переворот"
 
-#: magic.h:54
 msgid "Blur"
 msgstr "Размывание"
 
-#: magic.h:55
 msgid "Blocks"
 msgstr "Мозаика"
 
-#: magic.h:57
 msgid "Negative"
 msgstr "Негатив"
 
-#: magic.h:58
 msgid "Fade"
 msgstr "Исчезновение"
 
-#: magic.h:60
 msgid "Chalk"
 msgstr "Мел"
 
-#: magic.h:61
 msgid "Drip"
 msgstr "Капанье"
 
-#: magic.h:63
 msgid "Thick"
 msgstr "Утолщение"
 
-#: magic.h:64
 msgid "Thin"
 msgstr "Утоньшение"
 
-#: magic.h:66
 msgid "Fill"
 msgstr "Заполнить"
 
-#: magic.h:73
 msgid "You can draw in rainbow colors!"
 msgstr "Вы можете рисовать цветами радуги!"
 
-#: magic.h:74
 msgid "Click and move to draw sparkles."
 msgstr "Щёлкните и поводите по картинке, чтобы нарисовать искры."
 
-#: magic.h:76
 msgid "Click to make a mirror image."
 msgstr "Щёлкните на картинку, чтобы превратить её в зеркальное отражение."
 
-#: magic.h:77
 msgid "Click to flip the picture upside-down."
 msgstr "Щёлкните на картинку, чтобы перевернуть её вверх тормашками."
 
-#: magic.h:79
 msgid "Click and move the mouse around to blur the picture."
 msgstr "Щёлкните и поводите по картинке, чтобы размазать её часть."
 
-#: magic.h:80
 msgid "Click and move the mouse around to make the picture blocky."
 msgstr "Щёлкните и поводите по картинке, чтобы превратить её часть в мозаику."
 
-#: magic.h:82
 msgid "Click and move the mouse around to draw a negative."
 msgstr "Щёлкните и поводите по картинке, чтобы превратить её часть в негатив."
 
-#: magic.h:83
 msgid "Click and move to fade the colors."
 msgstr "Щёлкните и поводите по картинке, чтобы сделать её часть более светлой."
 
-#: magic.h:85
 msgid ""
 "Click and move the mouse around to turn the picture into a chalk drawing."
 msgstr ""
 "Щёлкните и поводите по картинке, чтобы превратить её часть в рисунок мелом."
 
-#: magic.h:86
 msgid "Click and move the mouse around to make the picture drip."
 msgstr "Щёлкните и поводите по картинке, чтобы заставьте её капать."
 
-#: magic.h:88
 msgid "Click and move the mouse to thicken the picture."
 msgstr "Щёлкните и поводите по картинке, чтобы утолстить её часть."
 
-#: magic.h:89
 msgid "Click and move the mouse to thin the picture."
 msgstr "Щёлкните и поводите по картинке, чтобы утоньшить её часть."
 
-#: magic.h:91
 msgid "Click in the picture to fill that area with color."
 msgstr "Щёлкните, чтобы заполнить эту область цветом."
 
-#: shapes.h:141 shapes.h:142
 msgid "Square"
 msgstr "Квадрат"
 
-#: shapes.h:143 shapes.h:144
 msgid "Rectangle"
 msgstr "Прямоугольник"
 
-#: shapes.h:145 shapes.h:146
 msgid "Circle"
 msgstr "Круг"
 
-#: shapes.h:147 shapes.h:148 shapes.h:167 shapes.h:168
 msgid "Oval"
 msgstr "Овал"
 
-#: shapes.h:149 shapes.h:150
 msgid "Triangle"
 msgstr "Треугольник"
 
-#: shapes.h:151 shapes.h:152
 msgid "Pentagon"
 msgstr "Пятиугольник"
 
-#: shapes.h:153 shapes.h:154
 msgid "Diamond"
 msgstr "Ромб"
 
-#: shapes.h:161 shapes.h:162
 msgid "A square has four sides, each the same length."
 msgstr "У квадрата четыре стороны, все одной длины."
 
-#: shapes.h:163 shapes.h:164
 msgid "A rectangle has four sides."
 msgstr "У прямоугольника четыре стороны."
 
-#: shapes.h:165 shapes.h:166
 msgid "A circle is exactly round."
 msgstr "А круг совершенно круглый :)"
 
-#: shapes.h:169 shapes.h:170
 msgid "A triangle has three sides."
 msgstr "У треугольника три стороны (и угла!)"
 
-#: shapes.h:171 shapes.h:172
 msgid "A pentagon has five sides."
 msgstr "А у пятиугольника пять сторон (и углов!)"
 
-#: shapes.h:173 shapes.h:174
 msgid "A diamond is a square, turned around slightly."
 msgstr "Ромб похож на квадрат, но с другими углами."
 
-#: titles.h:37
 msgid "Tools"
 msgstr "Инструменты"
 
-#: titles.h:38
 msgid "Colors"
 msgstr "Цвета"
 
-#: titles.h:39
 msgid "Brushes"
 msgstr "Кисти"
 
-#: titles.h:40
 msgid "Stamps"
 msgstr "Штампы"
 
-#: titles.h:41 tools.h:45
 msgid "Shapes"
 msgstr "Формы"
 
-#: titles.h:42
 msgid "Letters"
 msgstr "Буквы"
 
-#: titles.h:43 tools.h:47
 msgid "Magic"
 msgstr "Магия"
 
-#: tools.h:42
 msgid "Paint"
 msgstr "Краска"
 
-#: tools.h:43
 msgid "Stamp"
 msgstr "Штамп"
 
-#: tools.h:44
 msgid "Lines"
 msgstr "Линии"
 
-#: tools.h:46
 msgid "Text"
 msgstr "Текст"
 
-#: tools.h:48
 msgid "Undo"
 msgstr "Откат"
 
-#: tools.h:49
 msgid "Redo"
 msgstr "Возврат"
 
-#: tools.h:50
 msgid "Eraser"
 msgstr "Ластик"
 
-#: tools.h:51
 msgid "New"
 msgstr "Новая"
 
 #. 'Open' label:
-#: tools.h:52 tuxpaint.c:5499
 msgid "Open"
 msgstr "Открыть"
 
-#: tools.h:53
 msgid "Save"
 msgstr "Сохранить"
 
-#: tools.h:54
 msgid "Print"
 msgstr "Печать"
 
-#: tools.h:55
 msgid "Quit"
 msgstr "Выйти"
 
-#: tools.h:62
 msgid "Pick a color and a brush shape to draw with."
 msgstr "Выберите цвет и форму кисточки, которой вы хотите рисовать."
 
-#: tools.h:63
 msgid "Pick a picture to stamp around your drawing."
 msgstr "Выберите картину, чтобы поставить печать на вашем рисунке."
 
-#: tools.h:64
 msgid "Click to start drawing a line. Let go to complete it."
 msgstr ""
 "Щёлкните, чтобы начать рисовать линию. Отпустите кнопку, чтобы закончить."
 
-#: tools.h:65
 msgid ""
 "Pick a shape. Click to pick the center, drag, then let go when it is the "
 "size you want. Move around to rotate it, and click to draw it."
@@ -359,153 +275,117 @@ msgstr ""
 "Выберите форму. Щёлкните для выбора центра, растяните до нужного размера, "
 "отпустите. Покрутите форму, затем щёлкните, чтобы нарисовать её."
 
-#: tools.h:66
 msgid "Choose a style of text. Click on your drawing and you can start typing."
 msgstr "Выберите стиль текста. Щёлкните на вашем рисунке, и печатайте."
 
-#: tools.h:67
 msgid "Pick a magical effect to use on your drawing!"
 msgstr "Выберите волшебный эффект, чтобы использовать его на вашем рисунке!"
 
 #. Undo
-#: tools.h:68
 msgid "Undo!"
 msgstr "Откат!"
 
 #. Redo
-#: tools.h:69
 msgid "Redo!"
 msgstr "Переделать!"
 
 #. Eraser
-#: tools.h:70
 msgid "Eraser!"
 msgstr "Стереть!"
 
 #. New
-#: tools.h:71
 msgid "You now have a blank sheet to draw on!"
 msgstr "Теперь у вас есть чистый лист!"
 
 #. Open
-#: tools.h:72
 msgid "Open…"
 msgstr "Открыть…"
 
 #. Save
-#: tools.h:73
 msgid "Your image has been saved!"
 msgstr "Ваше картинка сохранена!"
 
 #. Print
-#: tools.h:74
 msgid "Printing…"
 msgstr "Печатаю…"
 
 #. Quit
-#: tools.h:75
 msgid "Bye bye!"
 msgstr "Пока!"
 
-#: tools.h:78
 msgid "Let go of the button to complete the line."
 msgstr "Отпустите кнопку, чтобы закончить линию."
 
-#: tools.h:79
 msgid "Hold the button to stretch the shape."
 msgstr "Держите кнопку, чтобы растянуть форму."
 
-#: tools.h:80
 msgid "Move the mouse to rotate the shape. Click to draw it."
 msgstr "Покрутите форму, затем щёлкните, чтобы нарисовать её."
 
-#: tools.h:81
 msgid "OK then… Let’s keep drawing this one!"
 msgstr "Хорошо, продолжаем рисовать!"
 
 #. FIXME: Move elsewhere!!!
-#: tuxpaint.c:811
 msgid "Do you really want to quit?"
 msgstr "Вы действительно хотите выйти?"
 
 #. FIXME: Move elsewhere! Or not?!
-#: tuxpaint.c:812 tuxpaint.c:816 tuxpaint.c:820 tuxpaint.c:834 tuxpaint.c:844
-#: tuxpaint.c:8359 tuxpaint.c:9066
 msgid "Yes"
 msgstr "Да"
 
-#: tuxpaint.c:813 tuxpaint.c:817 tuxpaint.c:821 tuxpaint.c:835 tuxpaint.c:845
-#: tuxpaint.c:8362
 msgid "No"
 msgstr "Нет"
 
-#: tuxpaint.c:815
 msgid "If you quit, you’ll lose your picture! Save it?"
 msgstr "Если вы выйдите, вы потеряете вашу картинку! Сохранить?"
 
-#: tuxpaint.c:819
 msgid "Save your picture first?"
 msgstr "Сохранить вашу картинку сначала?"
 
-#: tuxpaint.c:823
 msgid "Can’t open that picture!"
 msgstr "Не могу открыть эту картинку!"
 
-#: tuxpaint.c:824 tuxpaint.c:831 tuxpaint.c:838 tuxpaint.c:841
 msgid "OK"
 msgstr "Хорошо"
 
-#: tuxpaint.c:826
 msgid "Starting a new picture will erase the current one!"
 msgstr "Начиная новую картинку вы уничтожите текущую!"
 
-#: tuxpaint.c:827
 msgid "That’s OK!"
 msgstr "Хорошо!"
 
-#: tuxpaint.c:828
 msgid "Never mind!"
 msgstr "Нет!"
 
-#: tuxpaint.c:830
 msgid "There are no saved files!"
 msgstr "Нет сохранённых картинок!"
 
-#: tuxpaint.c:833
 msgid "Print your picture now?"
 msgstr "Напечатать вашу картинку?"
 
-#: tuxpaint.c:837
 msgid "Your picture has been printed!"
 msgstr "Ваша картинка распечатана!"
 
-#: tuxpaint.c:840
 msgid "You can’t print yet!"
 msgstr "Вы пока не можете печатать!"
 
-#: tuxpaint.c:843
 msgid "Erase this picture?"
 msgstr "Удалить эту картинку?"
 
 #. 'Erase' label:
-#: tuxpaint.c:5504
 msgid "Erase"
 msgstr "Удалить"
 
 #. 'Back' label:
-#: tuxpaint.c:5509
 msgid "Back"
 msgstr "Назад"
 
 #. FIXME: Move elsewhere!!!
-#: tuxpaint.c:9065
 msgid "Save over the older version of this picture?"
 msgstr "Сохранить поверх старой версии этой картинки?"
 
-#: tuxpaint.c:9067
 msgid "No, save a new file"
 msgstr "Нет, сохранить в новый файл"
 
-#: tuxpaint.c:9961
 msgid "Choose the picture you want, then click “Open”."
 msgstr "Выберите желаемую картинку, а потом щёлкните «Открыть»."

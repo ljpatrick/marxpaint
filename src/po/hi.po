@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint 0.9.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2004-07-13 13:47+0200\n"
+"POT-Creation-Date: 2004-07-13 15:20+0200\n"
 "PO-Revision-Date: 2004-05-26 08:44+0100\n"
 "Last-Translator: Ankit Malik <greatestankit@yahoo.co.in>\n"
 "Language-Team: Hindi\n"
@@ -15,493 +15,373 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: tuxpaint.desktop.in.h:1
 msgid "A drawing program for children."
 msgstr ""
 
-#: tuxpaint.desktop.in.h:2
 msgid "Drawing program"
 msgstr ""
 
-#: tuxpaint.desktop.in.h:3
 msgid "Tux Paint"
 msgstr ""
 
-#: colors.h:62
 msgid "Black!"
 msgstr "काला"
 
-#: colors.h:63
 msgid "White!"
 msgstr "सफ्ेद"
 
-#: colors.h:64
 msgid "Red!"
 msgstr "लाल"
 
-#: colors.h:65
 msgid "Pink!"
 msgstr "गुलाबी"
 
-#: colors.h:66
 msgid "Orange!"
 msgstr "सन्तरा"
 
-#: colors.h:67
 msgid "Yellow!"
 msgstr "पीला"
 
-#: colors.h:68
 msgid "Lime!"
 msgstr "नींबू"
 
-#: colors.h:69
 msgid "Green!"
 msgstr "हरा"
 
-#: colors.h:70
 msgid "Cyan!"
 msgstr "नीला १"
 
-#: colors.h:71
 msgid "Blue!"
 msgstr "नीला २"
 
-#: colors.h:72
 msgid "Purple!"
 msgstr "परपल"
 
-#: colors.h:73
 msgid "Fuchsia!"
 msgstr "फ्ुच्सीा"
 
-#: colors.h:74
 msgid "Brown!"
 msgstr "भूरा"
 
-#: colors.h:75
 msgid "Gray!"
 msgstr "ग्रे"
 
-#: colors.h:76
 msgid "Silver!"
 msgstr "चांदी"
 
-#: great.h:20
 msgid "Great!"
 msgstr "शाबाश"
 
-#: great.h:21
 msgid "Cool!"
 msgstr "अच्छा"
 
-#: great.h:22
 msgid "Keep it up!"
 msgstr "वाह"
 
-#: great.h:23
 msgid "Good job!"
 msgstr "स्वच्छ काम है"
 
-#: magic.h:48
 msgid "Rainbow"
 msgstr "सतरंगी"
 
-#: magic.h:49
 msgid "Sparkles"
 msgstr "ग्लिटरस"
 
-#: magic.h:51
 msgid "Mirror"
 msgstr "शीशा"
 
-#: magic.h:52
 msgid "Flip"
 msgstr "ऊल्टा"
 
-#: magic.h:54
 msgid "Blur"
 msgstr "धुंध्ला"
 
-#: magic.h:55
 msgid "Blocks"
 msgstr "ब्लाक्स"
 
-#: magic.h:57
 msgid "Negative"
 msgstr "उल्टे रंग"
 
-#: magic.h:58
 msgid "Fade"
 msgstr "फ्ेड"
 
-#: magic.h:60
 msgid "Chalk"
 msgstr "चाक"
 
-#: magic.h:61
 msgid "Drip"
 msgstr "गिरता हुआ"
 
-#: magic.h:63
 msgid "Thick"
 msgstr "मोटा"
 
-#: magic.h:64
 msgid "Thin"
 msgstr "दुबला"
 
-#: magic.h:66
 msgid "Fill"
 msgstr "भरो"
 
-#: magic.h:73
 msgid "You can draw in rainbow colors!"
 msgstr "सतरंगी काम करो"
 
-#: magic.h:74
 msgid "Click and move to draw sparkles."
 msgstr "ग्लिटरस करो"
 
-#: magic.h:76
 msgid "Click to make a mirror image."
 msgstr "शीशे मे देखो"
 
-#: magic.h:77
 msgid "Click to flip the picture upside-down."
 msgstr "उल्टा करो"
 
-#: magic.h:79
 msgid "Click and move the mouse around to blur the picture."
 msgstr ""
 
-#: magic.h:80
 msgid "Click and move the mouse around to make the picture blocky."
 msgstr "ब्लाकस करो।"
 
-#: magic.h:82
 msgid "Click and move the mouse around to draw a negative."
 msgstr "रंग उल्टे करो"
 
-#: magic.h:83
 msgid "Click and move to fade the colors."
 msgstr "फेड करो"
 
-#: magic.h:85
 msgid ""
 "Click and move the mouse around to turn the picture into a chalk drawing."
 msgstr "चाक करो।"
 
-#: magic.h:86
 msgid "Click and move the mouse around to make the picture drip."
 msgstr "ड्रिप करो"
 
-#: magic.h:88
 msgid "Click and move the mouse to thicken the picture."
 msgstr "मोटा करो"
 
-#: magic.h:89
 msgid "Click and move the mouse to thin the picture."
 msgstr "पतला करो"
 
-#: magic.h:91
 msgid "Click in the picture to fill that area with color."
 msgstr "रंग भरो"
 
-#: shapes.h:141 shapes.h:142
 msgid "Square"
 msgstr "चोकार १"
 
-#: shapes.h:143 shapes.h:144
 msgid "Rectangle"
 msgstr "चोकार २"
 
-#: shapes.h:145 shapes.h:146
 msgid "Circle"
 msgstr "गोल १"
 
-#: shapes.h:147 shapes.h:148 shapes.h:167 shapes.h:168
 msgid "Oval"
 msgstr "गोल २"
 
-#: shapes.h:149 shapes.h:150
 msgid "Triangle"
 msgstr "त्रिकाोन"
 
-#: shapes.h:151 shapes.h:152
 msgid "Pentagon"
 msgstr "पेंण्टागन"
 
-#: shapes.h:153 shapes.h:154
 msgid "Diamond"
 msgstr "डाएम्ण्ड"
 
-#: shapes.h:161 shapes.h:162
 msgid "A square has four sides, each the same length."
 msgstr "चोकार १ की चार रेखाऍं बराबर होती है ।"
 
-#: shapes.h:163 shapes.h:164
 msgid "A rectangle has four sides."
 msgstr "चोकार २ की चार रेखाऍं  होती है ।"
 
-#: shapes.h:165 shapes.h:166
 msgid "A circle is exactly round."
 msgstr "यह गोला होता है"
 
-#: shapes.h:169 shapes.h:170
 msgid "A triangle has three sides."
 msgstr "यह त्रिकाोण है"
 
-#: shapes.h:171 shapes.h:172
 msgid "A pentagon has five sides."
 msgstr "यह पेण्टागण है"
 
-#: shapes.h:173 shapes.h:174
 msgid "A diamond is a square, turned around slightly."
 msgstr "यह डाएम्ण्ड है"
 
-#: titles.h:37
 msgid "Tools"
 msgstr "औजार"
 
-#: titles.h:38
 msgid "Colors"
 msgstr "रंग"
 
-#: titles.h:39
 msgid "Brushes"
 msgstr "बरश"
 
-#: titles.h:40
 msgid "Stamps"
 msgstr "स्टॉम्प"
 
-#: titles.h:41 tools.h:45
 msgid "Shapes"
 msgstr "आकार"
 
-#: titles.h:42
 msgid "Letters"
 msgstr "अक्शर"
 
-#: titles.h:43 tools.h:47
 msgid "Magic"
 msgstr "जादू"
 
-#: tools.h:42
 msgid "Paint"
 msgstr "रंग"
 
-#: tools.h:43
 msgid "Stamp"
 msgstr "स्टॉम्प"
 
-#: tools.h:44
 msgid "Lines"
 msgstr "रेखाऍं"
 
-#: tools.h:46
 msgid "Text"
 msgstr "लिखना"
 
-#: tools.h:48
 msgid "Undo"
 msgstr "अन्डू"
 
-#: tools.h:49
 msgid "Redo"
 msgstr "रीडू"
 
-#: tools.h:50
 msgid "Eraser"
 msgstr "रबर"
 
-#: tools.h:51
 msgid "New"
 msgstr "नया काम"
 
 #. 'Open' label:
-#: tools.h:52 tuxpaint.c:5499
 msgid "Open"
 msgstr "खोलो"
 
-#: tools.h:53
 msgid "Save"
 msgstr "सेव"
 
-#: tools.h:54
 msgid "Print"
 msgstr "पिृंट"
 
-#: tools.h:55
 msgid "Quit"
 msgstr "बंद करो"
 
-#: tools.h:62
 msgid "Pick a color and a brush shape to draw with."
 msgstr "रंग और ब्रुश उठाओ।"
 
-#: tools.h:63
 msgid "Pick a picture to stamp around your drawing."
 msgstr "स्टाम्प के लिए कला उठाओ"
 
-#: tools.h:64
 msgid "Click to start drawing a line. Let go to complete it."
 msgstr "रेखा बनाओ"
 
-#: tools.h:65
 msgid ""
 "Pick a shape. Click to pick the center, drag, then let go when it is the "
 "size you want. Move around to rotate it, and click to draw it."
 msgstr "आकारो के लिए औजार।"
 
-#: tools.h:66
 msgid "Choose a style of text. Click on your drawing and you can start typing."
 msgstr "लिखने के लिए ढंग चुनो।"
 
-#: tools.h:67
 msgid "Pick a magical effect to use on your drawing!"
 msgstr "जादू का औजार चुनो"
 
 #. Undo
-#: tools.h:68
 msgid "Undo!"
 msgstr "अन्डू"
 
 #. Redo
-#: tools.h:69
 msgid "Redo!"
 msgstr "रीडू"
 
 #. Eraser
-#: tools.h:70
 msgid "Eraser!"
 msgstr "रबर"
 
 #. New
-#: tools.h:71
 msgid "You now have a blank sheet to draw on!"
 msgstr "आपके पास काम के लिए खाली पृष्ट है"
 
 #. Open
-#: tools.h:72
 msgid "Open…"
 msgstr "खालो"
 
 #. Save
-#: tools.h:73
 msgid "Your image has been saved!"
 msgstr "आपका काम सेव हो गया है"
 
 #. Print
-#: tools.h:74
 msgid "Printing…"
 msgstr "पृन्टिंग …"
 
 #. Quit
-#: tools.h:75
 msgid "Bye bye!"
 msgstr "अच्छा फिर मिलेंगे"
 
-#: tools.h:78
 msgid "Let go of the button to complete the line."
 msgstr "पूरी रेखा बनाने के लिए खीचों"
 
-#: tools.h:79
 msgid "Hold the button to stretch the shape."
 msgstr "आकार को बडा करने के लिए खीचों"
 
-#: tools.h:80
 msgid "Move the mouse to rotate the shape. Click to draw it."
 msgstr "आकार को घुमाने के लिए घुमाओ"
 
-#: tools.h:81
 msgid "OK then… Let’s keep drawing this one!"
 msgstr "चलो काम को जाराी रखते हब्क१ै"
 
 #. FIXME: Move elsewhere!!!
-#: tuxpaint.c:811
 msgid "Do you really want to quit?"
 msgstr "क्या आप सही मे टक्सपेंट को बंद करना चाहते है ऋ"
 
 #. FIXME: Move elsewhere! Or not?!
-#: tuxpaint.c:812 tuxpaint.c:816 tuxpaint.c:820 tuxpaint.c:834 tuxpaint.c:844
-#: tuxpaint.c:8359 tuxpaint.c:9066
 msgid "Yes"
 msgstr "हॉं"
 
-#: tuxpaint.c:813 tuxpaint.c:817 tuxpaint.c:821 tuxpaint.c:835 tuxpaint.c:845
-#: tuxpaint.c:8362
 msgid "No"
 msgstr "नहीं"
 
-#: tuxpaint.c:815
 msgid "If you quit, you’ll lose your picture! Save it?"
 msgstr "आपका काम सेव करे ऋ"
 
-#: tuxpaint.c:819
 msgid "Save your picture first?"
 msgstr "कया पहले काम को सेव करे ऋ"
 
-#: tuxpaint.c:823
 msgid "Can’t open that picture!"
 msgstr "खोलने में असमर्थ !"
 
-#: tuxpaint.c:824 tuxpaint.c:831 tuxpaint.c:838 tuxpaint.c:841
 msgid "OK"
 msgstr "हॉंं"
 
-#: tuxpaint.c:826
 msgid "Starting a new picture will erase the current one!"
 msgstr "नया काम शुृरू करने से पुराना काम नष्ट हो जाएगा"
 
-#: tuxpaint.c:827
 msgid "That’s OK!"
 msgstr "ठीक है"
 
-#: tuxpaint.c:828
 msgid "Never mind!"
 msgstr "जाने दो"
 
-#: tuxpaint.c:830
 msgid "There are no saved files!"
 msgstr "यहॉं तो कुछ भी नहीं है"
 
-#: tuxpaint.c:833
 msgid "Print your picture now?"
 msgstr "प्रिन्ट करू क्या"
 
-#: tuxpaint.c:837
 msgid "Your picture has been printed!"
 msgstr "प्रिन्ट हो गयी"
 
-#: tuxpaint.c:840
 msgid "You can’t print yet!"
 msgstr "अभी प्रिन्ट नहीं कर सकते"
 
-#: tuxpaint.c:843
 msgid "Erase this picture?"
 msgstr "नष्ट करू क्या ऋ"
 
 #. 'Erase' label:
-#: tuxpaint.c:5504
 msgid "Erase"
 msgstr "नष्ट कर"
 
 #. 'Back' label:
-#: tuxpaint.c:5509
 msgid "Back"
 msgstr "पीछे"
 
 #. FIXME: Move elsewhere!!!
-#: tuxpaint.c:9065
 msgid "Save over the older version of this picture?"
 msgstr "पुराने काम पर लिखो"
 
-#: tuxpaint.c:9067
 msgid "No, save a new file"
 msgstr "नया काम बनाओ"
 
-#: tuxpaint.c:9961
 msgid "Choose the picture you want, then click “Open”."
 msgstr "काम को चुन कर ‘खोलो’।"

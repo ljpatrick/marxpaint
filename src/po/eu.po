@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TuxPaint \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2004-07-13 13:47+0200\n"
+"POT-Creation-Date: 2004-07-13 15:20+0200\n"
 "PO-Revision-Date: 2002-12-28 16:30+0200\n"
 "Last-Translator: Juan Irigoien <juanirigoien@irakasle.net>\n"
 "Language-Team: basque <juanirigoien@irakasle.net>\n"
@@ -14,367 +14,283 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: tuxpaint.desktop.in.h:1
 msgid "A drawing program for children."
 msgstr ""
 
-#: tuxpaint.desktop.in.h:2
 msgid "Drawing program"
 msgstr ""
 
-#: tuxpaint.desktop.in.h:3
 #, fuzzy
 msgid "Tux Paint"
 msgstr "Marraztu"
 
-#: colors.h:62
 #, fuzzy
 msgid "Black!"
 msgstr "Beltza"
 
-#: colors.h:63
 #, fuzzy
 msgid "White!"
 msgstr "Zuria"
 
-#: colors.h:64
 #, fuzzy
 msgid "Red!"
 msgstr "Berregin!"
 
-#: colors.h:65
 #, fuzzy
 msgid "Pink!"
 msgstr "Larrosa"
 
-#: colors.h:66
 #, fuzzy
 msgid "Orange!"
 msgstr "Laranja"
 
-#: colors.h:67
 #, fuzzy
 msgid "Yellow!"
 msgstr "Horia"
 
-#: colors.h:68
 #, fuzzy
 msgid "Lime!"
 msgstr "Lerroak"
 
-#: colors.h:69
 #, fuzzy
 msgid "Green!"
 msgstr "Berdea"
 
-#: colors.h:70
 #, fuzzy
 msgid "Cyan!"
 msgstr "Zyan"
 
-#: colors.h:71
 #, fuzzy
 msgid "Blue!"
 msgstr "Urdina"
 
-#: colors.h:72
 #, fuzzy
 msgid "Purple!"
 msgstr "Purpura"
 
-#: colors.h:73
 msgid "Fuchsia!"
 msgstr ""
 
-#: colors.h:74
 #, fuzzy
 msgid "Brown!"
 msgstr "Marroia"
 
-#: colors.h:75
 #, fuzzy
 msgid "Gray!"
 msgstr "Itzela!"
 
-#: colors.h:76
 msgid "Silver!"
 msgstr ""
 
-#: great.h:20
 msgid "Great!"
 msgstr "Itzela!"
 
-#: great.h:21
 msgid "Cool!"
 msgstr "Oso Ondo!"
 
-#: great.h:22
 msgid "Keep it up!"
 msgstr "Ekin horrela!"
 
-#: great.h:23
 msgid "Good job!"
 msgstr "Zein lan ona!"
 
-#: magic.h:48
 msgid "Rainbow"
 msgstr "Ostadarra"
 
-#: magic.h:49
 msgid "Sparkles"
 msgstr "Txinpartak"
 
-#: magic.h:51
 msgid "Mirror"
 msgstr "Ispilu eran"
 
-#: magic.h:52
 msgid "Flip"
 msgstr "Inbertitu"
 
-#: magic.h:54
 msgid "Blur"
 msgstr "Desenfokatu"
 
-#: magic.h:55
 msgid "Blocks"
 msgstr "Blokeak"
 
-#: magic.h:57
 msgid "Negative"
 msgstr "Negatiboa"
 
-#: magic.h:58
 msgid "Fade"
 msgstr "Desagertuz"
 
-#: magic.h:60
 msgid "Chalk"
 msgstr "Klariona"
 
-#: magic.h:61
 msgid "Drip"
 msgstr "TTanttaka"
 
-#: magic.h:63
 msgid "Thick"
 msgstr "Lodia"
 
-#: magic.h:64
 msgid "Thin"
 msgstr "Mehea"
 
-#: magic.h:66
 msgid "Fill"
 msgstr "Bete"
 
-#: magic.h:73
 msgid "You can draw in rainbow colors!"
 msgstr "Nahi al duzu ostadarraren koloreekin marraztu?"
 
-#: magic.h:74
 #, fuzzy
 msgid "Click and move to draw sparkles."
 msgstr "Egin klik eta mugi ezazu sagua txinpartak egiteko."
 
-#: magic.h:76
 #, fuzzy
 msgid "Click to make a mirror image."
 msgstr "Egin klik irudia ispiluaren aurrean balego bezala ipintzeko!"
 
-#: magic.h:77
 #, fuzzy
 msgid "Click to flip the picture upside-down."
 msgstr "Klik egin eta irudia buruz behera ipiniko da!"
 
-#: magic.h:79
 #, fuzzy
 msgid "Click and move the mouse around to blur the picture."
 msgstr "Klik egin eta mugi ezazu sagua irudia desenfokatzeko."
 
-#: magic.h:80
 #, fuzzy
 msgid "Click and move the mouse around to make the picture blocky."
 msgstr "Klik egin eta mugi ezazu sagua irudia laukitan ipintzeko."
 
-#: magic.h:82
 #, fuzzy
 msgid "Click and move the mouse around to draw a negative."
 msgstr "Klik egin eta mugi ezazu sagua irudiaren negatiboa egiteko."
 
-#: magic.h:83
 msgid "Click and move to fade the colors."
 msgstr "Klik egin eta mugi ezazu sagua irudiak desagertarazteko."
 
-#: magic.h:85
 msgid ""
 "Click and move the mouse around to turn the picture into a chalk drawing."
 msgstr ""
 "Klik egin eta mugi ezazu sagua klarionaz egindako irudi itxura emateko."
 
-#: magic.h:86
 #, fuzzy
 msgid "Click and move the mouse around to make the picture drip."
 msgstr "Klik egin eta mugi ezazu sagua irudiak ttanttak egin ditzan !"
 
-#: magic.h:88
 #, fuzzy
 msgid "Click and move the mouse to thicken the picture."
 msgstr "Klik egin eta mugi ezazu sagua irudia loditzeko"
 
-#: magic.h:89
 #, fuzzy
 msgid "Click and move the mouse to thin the picture."
 msgstr "Klik egin eta mugi ezazu sagua irudia mehetzeko"
 
-#: magic.h:91
 #, fuzzy
 msgid "Click in the picture to fill that area with color."
 msgstr "Klik egin irudian atal bat kolorez betetzeko"
 
-#: shapes.h:141 shapes.h:142
 msgid "Square"
 msgstr "Laukia"
 
-#: shapes.h:143 shapes.h:144
 msgid "Rectangle"
 msgstr "Lauki Zuzena"
 
-#: shapes.h:145 shapes.h:146
 msgid "Circle"
 msgstr "Biribila"
 
-#: shapes.h:147 shapes.h:148 shapes.h:167 shapes.h:168
 msgid "Oval"
 msgstr "Obalatua"
 
-#: shapes.h:149 shapes.h:150
 msgid "Triangle"
 msgstr "Hirukia"
 
-#: shapes.h:151 shapes.h:152
 msgid "Pentagon"
 msgstr "Pentagonoa"
 
-#: shapes.h:153 shapes.h:154
 msgid "Diamond"
 msgstr "Erronboa"
 
-#: shapes.h:161 shapes.h:162
 msgid "A square has four sides, each the same length."
 msgstr "Laukiak lau alde ditu, denak luzera berekoak."
 
-#: shapes.h:163 shapes.h:164
 msgid "A rectangle has four sides."
 msgstr "Lauki zuzenak lau alderdi ditu."
 
-#: shapes.h:165 shapes.h:166
 msgid "A circle is exactly round."
 msgstr "Zirkulua biribil-biribila da"
 
-#: shapes.h:169 shapes.h:170
 msgid "A triangle has three sides."
 msgstr "Hirukiak hiru alderdi ditu."
 
-#: shapes.h:171 shapes.h:172
 msgid "A pentagon has five sides."
 msgstr "Pentagonoak bost alderdi ditu."
 
-#: shapes.h:173 shapes.h:174
 msgid "A diamond is a square, turned around slightly."
 msgstr "Erronboa zapaldutako laukia da"
 
-#: titles.h:37
 msgid "Tools"
 msgstr "Tresnak"
 
-#: titles.h:38
 msgid "Colors"
 msgstr "Koloreak"
 
-#: titles.h:39
 msgid "Brushes"
 msgstr "Pintzelak"
 
-#: titles.h:40
 msgid "Stamps"
 msgstr "Zigiluak"
 
-#: titles.h:41 tools.h:45
 msgid "Shapes"
 msgstr "Irudiak"
 
-#: titles.h:42
 msgid "Letters"
 msgstr "Letrak"
 
-#: titles.h:43 tools.h:47
 msgid "Magic"
 msgstr "Magikoak"
 
-#: tools.h:42
 msgid "Paint"
 msgstr "Marraztu"
 
-#: tools.h:43
 msgid "Stamp"
 msgstr "Zigiluak"
 
-#: tools.h:44
 msgid "Lines"
 msgstr "Lerroak"
 
-#: tools.h:46
 msgid "Text"
 msgstr "Testua"
 
-#: tools.h:48
 msgid "Undo"
 msgstr "Desegin"
 
-#: tools.h:49
 msgid "Redo"
 msgstr "Berregin"
 
-#: tools.h:50
 msgid "Eraser"
 msgstr "Goma"
 
-#: tools.h:51
 msgid "New"
 msgstr "Berria"
 
 #. 'Open' label:
-#: tools.h:52 tuxpaint.c:5499
 msgid "Open"
 msgstr "Ireki"
 
-#: tools.h:53
 msgid "Save"
 msgstr "Gorde"
 
-#: tools.h:54
 msgid "Print"
 msgstr "Inpramitu"
 
-#: tools.h:55
 msgid "Quit"
 msgstr "Irten"
 
-#: tools.h:62
 msgid "Pick a color and a brush shape to draw with."
 msgstr "Aukera itzazu kolorea eta pintzelaren forma marrazkiak egiteko."
 
-#: tools.h:63
 msgid "Pick a picture to stamp around your drawing."
 msgstr "Aukera ezazu zigilua zure irudian ipintzeko."
 
-#: tools.h:64
 #, fuzzy
 msgid "Click to start drawing a line. Let go to complete it."
 msgstr "Egin ezazu klik lerroa marrazteko. Solta ezazu botoia amaitzeko."
 
-#: tools.h:65
 #, fuzzy
 msgid ""
 "Pick a shape. Click to pick the center, drag, then let go when it is the "
@@ -383,160 +299,124 @@ msgstr ""
 "Aukeratu irudia. Egin klik erdia markatzeko, mugitu, eta askatu nahi duzun "
 "tamainua duenean. Mugitu inguruan biratzeko eta klikatu marrazteko."
 
-#: tools.h:66
 #, fuzzy
 msgid "Choose a style of text. Click on your drawing and you can start typing."
 msgstr ""
 "Aukera ezazu testu estilo bat. Egin klik zure irudian eta has zaitez idazten."
 
-#: tools.h:67
 msgid "Pick a magical effect to use on your drawing!"
 msgstr "Aukera ezazu efektu magikoa zure irudian erabiltzeko!"
 
 #. Undo
-#: tools.h:68
 msgid "Undo!"
 msgstr "Desegin!"
 
 #. Redo
-#: tools.h:69
 msgid "Redo!"
 msgstr "Berregin!"
 
 #. Eraser
-#: tools.h:70
 msgid "Eraser!"
 msgstr "Ezabatzeko goma!"
 
 #. New
-#: tools.h:71
 msgid "You now have a blank sheet to draw on!"
 msgstr "Hona hemen orri zuria marrazteko!"
 
 #. Open
-#: tools.h:72
 msgid "Open…"
 msgstr "Ireki..."
 
 #. Save
-#: tools.h:73
 msgid "Your image has been saved!"
 msgstr "Zure irudia gordeta dago!"
 
 #. Print
-#: tools.h:74
 msgid "Printing…"
 msgstr "Inprimatzen..."
 
 #. Quit
-#: tools.h:75
 msgid "Bye bye!"
 msgstr "Gero arte!"
 
-#: tools.h:78
 msgid "Let go of the button to complete the line."
 msgstr "Aska ezazu botoia marra amaitzeko."
 
-#: tools.h:79
 msgid "Hold the button to stretch the shape."
 msgstr "Sakatu botoiari irudia luzatzeko."
 
-#: tools.h:80
 msgid "Move the mouse to rotate the shape. Click to draw it."
 msgstr "Mugi ezazu sagua irudia biratzeko. Egin klik marrazteko."
 
-#: tools.h:81
 msgid "OK then… Let’s keep drawing this one!"
 msgstr "Ondo... jarrai dezagun honekin!"
 
 #. FIXME: Move elsewhere!!!
-#: tuxpaint.c:811
 msgid "Do you really want to quit?"
 msgstr "Irten nahi al duzu, benetan?"
 
 #. FIXME: Move elsewhere! Or not?!
-#: tuxpaint.c:812 tuxpaint.c:816 tuxpaint.c:820 tuxpaint.c:834 tuxpaint.c:844
-#: tuxpaint.c:8359 tuxpaint.c:9066
 msgid "Yes"
 msgstr "Bai"
 
-#: tuxpaint.c:813 tuxpaint.c:817 tuxpaint.c:821 tuxpaint.c:835 tuxpaint.c:845
-#: tuxpaint.c:8362
 msgid "No"
 msgstr "Ez"
 
-#: tuxpaint.c:815
 msgid "If you quit, you’ll lose your picture! Save it?"
 msgstr "Irtenez gero, galdu egingo duzu irudia! Gorde nahi al duzu?"
 
-#: tuxpaint.c:819
 msgid "Save your picture first?"
 msgstr "Gorde nahi al duzu irudia lehenbizi?"
 
-#: tuxpaint.c:823
 msgid "Can’t open that picture!"
 msgstr "Ez dago irudia irekitzerik!"
 
-#: tuxpaint.c:824 tuxpaint.c:831 tuxpaint.c:838 tuxpaint.c:841
 msgid "OK"
 msgstr ""
 
-#: tuxpaint.c:826
 msgid "Starting a new picture will erase the current one!"
 msgstr "Irudi berria hasiz gero, ezabatu egingo da oraingoa!"
 
-#: tuxpaint.c:827
 #, fuzzy
 msgid "That’s OK!"
 msgstr "Ondo dago"
 
-#: tuxpaint.c:828
 #, fuzzy
 msgid "Never mind!"
 msgstr "Ezta zoratuta ere!"
 
-#: tuxpaint.c:830
 msgid "There are no saved files!"
 msgstr "Ez dago gordetako artxiborik!"
 
-#: tuxpaint.c:833
 #, fuzzy
 msgid "Print your picture now?"
 msgstr "Gorde nahi al duzu irudia lehenbizi?"
 
-#: tuxpaint.c:837
 msgid "Your picture has been printed!"
 msgstr "Zure irudia inprimatua izan da!"
 
-#: tuxpaint.c:840
 msgid "You can’t print yet!"
 msgstr "Ezin duzu oraindik inprimitu!"
 
-#: tuxpaint.c:843
 msgid "Erase this picture?"
 msgstr "Irudi hau ezabatu?"
 
 #. 'Erase' label:
-#: tuxpaint.c:5504
 msgid "Erase"
 msgstr "Ezabatu"
 
 #. 'Back' label:
-#: tuxpaint.c:5509
 msgid "Back"
 msgstr "Atzera"
 
 #. FIXME: Move elsewhere!!!
-#: tuxpaint.c:9065
 #, fuzzy
 msgid "Save over the older version of this picture?"
 msgstr "Irudi honen lehenagoko bertsioaren gainean gorde?"
 
-#: tuxpaint.c:9067
 msgid "No, save a new file"
 msgstr "Ez, artxibo berria gorde"
 
-#: tuxpaint.c:9961
 #, fuzzy
 msgid "Choose the picture you want, then click “Open”."
 msgstr "Aukera ezazu nahi duzun irudia. Ondoren klik egin 'Ireki'n"

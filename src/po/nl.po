@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint-nl 0.9.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2004-07-13 13:47+0200\n"
+"POT-Creation-Date: 2004-07-13 15:20+0200\n"
 "PO-Revision-Date: 2004-03-21 12:43+0100\n"
 "Last-Translator: Geer Stams <geertstams@wanadoo.nl>\n"
 "Language-Team: Nederlands <en@li.org>\n"
@@ -17,343 +17,259 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.0.2\n"
 
-#: tuxpaint.desktop.in.h:1
 msgid "A drawing program for children."
 msgstr "Een tekenprogramma voor kinderen."
 
-#: tuxpaint.desktop.in.h:2
 msgid "Drawing program"
 msgstr "Tekenprogramma"
 
-#: tuxpaint.desktop.in.h:3
 #, fuzzy
 msgid "Tux Paint"
 msgstr "Schilderen"
 
-#: colors.h:62
 msgid "Black!"
 msgstr "Zwart!"
 
-#: colors.h:63
 msgid "White!"
 msgstr "Wit!"
 
-#: colors.h:64
 msgid "Red!"
 msgstr "Rood!"
 
-#: colors.h:65
 msgid "Pink!"
 msgstr "Rose!"
 
-#: colors.h:66
 msgid "Orange!"
 msgstr "Oranje!"
 
-#: colors.h:67
 msgid "Yellow!"
 msgstr "Geel!"
 
-#: colors.h:68
 msgid "Lime!"
 msgstr "Limoen"
 
-#: colors.h:69
 msgid "Green!"
 msgstr "Groen!"
 
-#: colors.h:70
 msgid "Cyan!"
 msgstr "Turkoois!"
 
-#: colors.h:71
 msgid "Blue!"
 msgstr "Blauw!"
 
-#: colors.h:72
 msgid "Purple!"
 msgstr "Paars!"
 
-#: colors.h:73
 msgid "Fuchsia!"
 msgstr "Fuchsia!"
 
-#: colors.h:74
 msgid "Brown!"
 msgstr "Bruin!"
 
-#: colors.h:75
 msgid "Gray!"
 msgstr "Grijs!"
 
-#: colors.h:76
 msgid "Silver!"
 msgstr "Zilver!"
 
-#: great.h:20
 msgid "Great!"
 msgstr "Prachtig!"
 
-#: great.h:21
 msgid "Cool!"
 msgstr "Geweldig!"
 
-#: great.h:22
 msgid "Keep it up!"
 msgstr "Ga door!"
 
-#: great.h:23
 msgid "Good job!"
 msgstr "Prima!"
 
-#: magic.h:48
 msgid "Rainbow"
 msgstr "Regenboog"
 
-#: magic.h:49
 msgid "Sparkles"
 msgstr "Spikkels"
 
-#: magic.h:51
 msgid "Mirror"
 msgstr "Spiegel"
 
-#: magic.h:52
 msgid "Flip"
 msgstr "Omkeren"
 
-#: magic.h:54
 msgid "Blur"
 msgstr "Uitsmeren"
 
-#: magic.h:55
 msgid "Blocks"
 msgstr "Blokken"
 
-#: magic.h:57
 msgid "Negative"
 msgstr "Negatief"
 
-#: magic.h:58
 msgid "Fade"
 msgstr "Vervagen"
 
-#: magic.h:60
 msgid "Chalk"
 msgstr "Krijt"
 
-#: magic.h:61
 msgid "Drip"
 msgstr "Druppen"
 
-#: magic.h:63
 msgid "Thick"
 msgstr "Dik"
 
-#: magic.h:64
 msgid "Thin"
 msgstr "Dun"
 
-#: magic.h:66
 msgid "Fill"
 msgstr "Vullen"
 
-#: magic.h:73
 msgid "You can draw in rainbow colors!"
 msgstr "Je kan in regenboog-kleuren tekenen!"
 
-#: magic.h:74
 msgid "Click and move to draw sparkles."
 msgstr "Klik en beweeg de muis om spikkels te tekenen."
 
-#: magic.h:76
 msgid "Click to make a mirror image."
 msgstr "Klik om er een spiegelbeeld van te maken."
 
-#: magic.h:77
 msgid "Click to flip the picture upside-down."
 msgstr "Klik om beeld ondersteboven te zetten."
 
-#: magic.h:79
 msgid "Click and move the mouse around to blur the picture."
 msgstr "Klik en beweeg de muis om de tekening te vervagen."
 
-#: magic.h:80
 msgid "Click and move the mouse around to make the picture blocky."
 msgstr "Klik en beweeg de muis om de tekening blokkerig te maken."
 
-#: magic.h:82
 msgid "Click and move the mouse around to draw a negative."
 msgstr "Klik en beweeg de muis om de tekening negatief te maken."
 
-#: magic.h:83
 msgid "Click and move to fade the colors."
 msgstr "Klik en beweeg de muis om de kleuren te vervagen."
 
-#: magic.h:85
 msgid ""
 "Click and move the mouse around to turn the picture into a chalk drawing."
 msgstr ""
 "Klik en beweeg de muis om de tekening te veranderen in een krijt-tekening."
 
-#: magic.h:86
 msgid "Click and move the mouse around to make the picture drip."
 msgstr "Klik en beweeg de muis om de tekening te laten druppen."
 
-#: magic.h:88
 msgid "Click and move the mouse to thicken the picture."
 msgstr "Klik en beweeg de muis om de tekening dikker te maken."
 
-#: magic.h:89
 msgid "Click and move the mouse to thin the picture."
 msgstr "Klik en beweeg de muis om de tekening dunner te maken."
 
-#: magic.h:91
 msgid "Click in the picture to fill that area with color."
 msgstr "Klik en beweeg de muis om de kleuren te vervagen."
 
-#: shapes.h:141 shapes.h:142
 msgid "Square"
 msgstr "Vierkant"
 
-#: shapes.h:143 shapes.h:144
 msgid "Rectangle"
 msgstr "Rechthoek"
 
-#: shapes.h:145 shapes.h:146
 msgid "Circle"
 msgstr "Cirkel"
 
-#: shapes.h:147 shapes.h:148 shapes.h:167 shapes.h:168
 msgid "Oval"
 msgstr "Ovaal"
 
-#: shapes.h:149 shapes.h:150
 msgid "Triangle"
 msgstr "Driehoek"
 
-#: shapes.h:151 shapes.h:152
 msgid "Pentagon"
 msgstr "Vijfhoek"
 
-#: shapes.h:153 shapes.h:154
 msgid "Diamond"
 msgstr "Ruit"
 
-#: shapes.h:161 shapes.h:162
 msgid "A square has four sides, each the same length."
 msgstr "Een vierkant heeft vier zijden, allemaal even lang."
 
-#: shapes.h:163 shapes.h:164
 msgid "A rectangle has four sides."
 msgstr "Een rechthoek heeft vier zijden."
 
-#: shapes.h:165 shapes.h:166
 msgid "A circle is exactly round."
 msgstr "Een cirkel is precies rond."
 
-#: shapes.h:169 shapes.h:170
 msgid "A triangle has three sides."
 msgstr "Een driehoek heeft drie zijden."
 
-#: shapes.h:171 shapes.h:172
 msgid "A pentagon has five sides."
 msgstr "Een vijfhoek heeft vijf zijden."
 
-#: shapes.h:173 shapes.h:174
 msgid "A diamond is a square, turned around slightly."
 msgstr "Een ruit is zoals een vierkant op zijn zij."
 
-#: titles.h:37
 msgid "Tools"
 msgstr "Gereedschappen"
 
-#: titles.h:38
 msgid "Colors"
 msgstr "Kleuren"
 
-#: titles.h:39
 msgid "Brushes"
 msgstr "Kwasten"
 
-#: titles.h:40
 msgid "Stamps"
 msgstr "Stempel"
 
-#: titles.h:41 tools.h:45
 msgid "Shapes"
 msgstr "Vormen"
 
-#: titles.h:42
 msgid "Letters"
 msgstr "Letters"
 
-#: titles.h:43 tools.h:47
 msgid "Magic"
 msgstr "Toverij"
 
-#: tools.h:42
 msgid "Paint"
 msgstr "Schilderen"
 
-#: tools.h:43
 msgid "Stamp"
 msgstr "Stempel"
 
-#: tools.h:44
 msgid "Lines"
 msgstr "Lijnen"
 
-#: tools.h:46
 msgid "Text"
 msgstr "Letters"
 
-#: tools.h:48
 msgid "Undo"
 msgstr "Wegdoen"
 
-#: tools.h:49
 msgid "Redo"
 msgstr "Terugdoen"
 
-#: tools.h:50
 msgid "Eraser"
 msgstr "Uitgommen"
 
-#: tools.h:51
 msgid "New"
 msgstr "Nieuw"
 
 #. 'Open' label:
-#: tools.h:52 tuxpaint.c:5499
 msgid "Open"
 msgstr "Openen"
 
-#: tools.h:53
 msgid "Save"
 msgstr "Bewaren"
 
-#: tools.h:54
 msgid "Print"
 msgstr "Afdrukken"
 
-#: tools.h:55
 msgid "Quit"
 msgstr "Stoppen"
 
-#: tools.h:62
 msgid "Pick a color and a brush shape to draw with."
 msgstr "Kies een kleur en een borstel om mee te tekenen."
 
-#: tools.h:63
 msgid "Pick a picture to stamp around your drawing."
 msgstr "Kies een vorm om mee te stempelen."
 
-#: tools.h:64
 msgid "Click to start drawing a line. Let go to complete it."
 msgstr "Klik om een lijn te beginnen.Laat pas los op het einde van de lijn."
 
-#: tools.h:65
 msgid ""
 "Pick a shape. Click to pick the center, drag, then let go when it is the "
 "size you want. Move around to rotate it, and click to draw it."
@@ -361,155 +277,119 @@ msgstr ""
 "Kies een vorm. Klik om het midden te kiezen en sleep tot het de grootte "
 "heeft die je wil. Beweeg om het te laten draaien en klik als je  klaar bent."
 
-#: tools.h:66
 msgid "Choose a style of text. Click on your drawing and you can start typing."
 msgstr ""
 "Kies een stijl voor je letters. Klik op je tekening en begin te schrijven."
 
-#: tools.h:67
 msgid "Pick a magical effect to use on your drawing!"
 msgstr "Kies een tover-effect om je tekening te veranderen!"
 
 #. Undo
-#: tools.h:68
 msgid "Undo!"
 msgstr "Wegdoen!"
 
 #. Redo
-#: tools.h:69
 msgid "Redo!"
 msgstr "Terugdoen!"
 
 #. Eraser
-#: tools.h:70
 msgid "Eraser!"
 msgstr "Gom!"
 
 #. New
-#: tools.h:71
 msgid "You now have a blank sheet to draw on!"
 msgstr "Nu heb je een leeg blad om op te tekenen!"
 
 #. Open
-#: tools.h:72
 msgid "Open…"
 msgstr "Openen..."
 
 #. Save
-#: tools.h:73
 msgid "Your image has been saved!"
 msgstr "Je tekening is bewaard!"
 
 #. Print
-#: tools.h:74
 msgid "Printing…"
 msgstr "Aan het afdrukken..."
 
 #. Quit
-#: tools.h:75
 msgid "Bye bye!"
 msgstr "Daaag!"
 
-#: tools.h:78
 msgid "Let go of the button to complete the line."
 msgstr "Laat de muisknop los om de lijn af te sluiten."
 
-#: tools.h:79
 msgid "Hold the button to stretch the shape."
 msgstr "Druk de muisknop in en beweeg om de vorm uit te rekken."
 
-#: tools.h:80
 msgid "Move the mouse to rotate the shape. Click to draw it."
 msgstr "Beweeg de muis om de vorm te draaien. Klik als je tevreden bent."
 
-#: tools.h:81
 msgid "OK then… Let’s keep drawing this one!"
 msgstr "Ok, dan doen we verder met deze!"
 
 #. FIXME: Move elsewhere!!!
-#: tuxpaint.c:811
 msgid "Do you really want to quit?"
 msgstr "Wil je echt stoppen?"
 
 #. FIXME: Move elsewhere! Or not?!
-#: tuxpaint.c:812 tuxpaint.c:816 tuxpaint.c:820 tuxpaint.c:834 tuxpaint.c:844
-#: tuxpaint.c:8359 tuxpaint.c:9066
 msgid "Yes"
 msgstr "Ja"
 
-#: tuxpaint.c:813 tuxpaint.c:817 tuxpaint.c:821 tuxpaint.c:835 tuxpaint.c:845
-#: tuxpaint.c:8362
 msgid "No"
 msgstr "Nee"
 
-#: tuxpaint.c:815
 msgid "If you quit, you’ll lose your picture! Save it?"
 msgstr "Als je stopt ben je je tekening kwijt! Moet ik ze bewaren?"
 
-#: tuxpaint.c:819
 msgid "Save your picture first?"
 msgstr "Wil je je huidige tekening eerst nog bewaren?"
 
-#: tuxpaint.c:823
 msgid "Can’t open that picture!"
 msgstr "Ik kan die tekening niet openen!"
 
-#: tuxpaint.c:824 tuxpaint.c:831 tuxpaint.c:838 tuxpaint.c:841
 msgid "OK"
 msgstr "OK"
 
-#: tuxpaint.c:826
 msgid "Starting a new picture will erase the current one!"
 msgstr "Mag ik de huidige tekening wegdoen om met een nieuwe te beginnen?"
 
-#: tuxpaint.c:827
 msgid "That’s OK!"
 msgstr "OK!"
 
-#: tuxpaint.c:828
 msgid "Never mind!"
 msgstr "Dat geeft niet!"
 
-#: tuxpaint.c:830
 msgid "There are no saved files!"
 msgstr "Er zijn geen bewaarde tekeningen!"
 
-#: tuxpaint.c:833
 msgid "Print your picture now?"
 msgstr "Wil je je huidige tekening afdrukken?"
 
-#: tuxpaint.c:837
 msgid "Your picture has been printed!"
 msgstr "Je tekening is bewaard!"
 
-#: tuxpaint.c:840
 msgid "You can’t print yet!"
 msgstr "Je kunt nog niet afdrukken!"
 
-#: tuxpaint.c:843
 msgid "Erase this picture?"
 msgstr "Mag ik de gekozen tekening uitvegen?"
 
 #. 'Erase' label:
-#: tuxpaint.c:5504
 msgid "Erase"
 msgstr "Uitgommen"
 
 #. 'Back' label:
-#: tuxpaint.c:5509
 msgid "Back"
 msgstr "Terug"
 
 #. FIXME: Move elsewhere!!!
-#: tuxpaint.c:9065
 msgid "Save over the older version of this picture?"
 msgstr "Mag ik de vorige versie van deze tekening overschrijven?"
 
-#: tuxpaint.c:9067
 msgid "No, save a new file"
 msgstr "Nee, bewaar op een nieuwe plaats"
 
-#: tuxpaint.c:9961
 msgid "Choose the picture you want, then click “Open”."
 msgstr "Kies een tekening en klik op 'Open'"
 

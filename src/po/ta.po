@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TuxPaint 0.9.13\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2004-07-13 13:47+0200\n"
+"POT-Creation-Date: 2004-07-13 15:20+0200\n"
 "PO-Revision-Date: 2003-12-26 03:26+0800\n"
 "Last-Translator: Mugunth <mugunth@thamizha.com>\n"
 "Language-Team: \n"
@@ -10,366 +10,282 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: tuxpaint.desktop.in.h:1
 msgid "A drawing program for children."
 msgstr ""
 
-#: tuxpaint.desktop.in.h:2
 msgid "Drawing program"
 msgstr ""
 
-#: tuxpaint.desktop.in.h:3
 #, fuzzy
 msgid "Tux Paint"
 msgstr "Å¨Ã"
 
-#: colors.h:62
 #, fuzzy
 msgid "Black!"
 msgstr "¸ÕôÒ"
 
-#: colors.h:63
 #, fuzzy
 msgid "White!"
 msgstr "¦Åû¨Ç"
 
-#: colors.h:64
 #, fuzzy
 msgid "Red!"
 msgstr "Á£Çî¦ºö!"
 
-#: colors.h:65
 #, fuzzy
 msgid "Pink!"
 msgstr "þÇïº¢ÅôÒ"
 
-#: colors.h:66
 #, fuzzy
 msgid "Orange!"
 msgstr "¬ÃïÍ"
 
-#: colors.h:67
 #, fuzzy
 msgid "Yellow!"
 msgstr "Áïºû"
 
-#: colors.h:68
 #, fuzzy
 msgid "Lime!"
 msgstr "§¸¡Î¸û"
 
-#: colors.h:69
 #, fuzzy
 msgid "Green!"
 msgstr "Àî¨º"
 
-#: colors.h:70
 #, fuzzy
 msgid "Cyan!"
 msgstr "´Ç¢÷¿£Äõ"
 
-#: colors.h:71
 #, fuzzy
 msgid "Blue!"
 msgstr "°¾¡"
 
-#: colors.h:72
 #, fuzzy
 msgid "Purple!"
 msgstr "°¾¡"
 
-#: colors.h:73
 msgid "Fuchsia!"
 msgstr ""
 
-#: colors.h:74
 #, fuzzy
 msgid "Brown!"
 msgstr "ÀØôÒ"
 
-#: colors.h:75
 #, fuzzy
 msgid "Gray!"
 msgstr "«ð¼¸¡ºõ!"
 
-#: colors.h:76
 msgid "Silver!"
 msgstr ""
 
-#: great.h:20
 msgid "Great!"
 msgstr "«ð¼¸¡ºõ!"
 
-#: great.h:21
 msgid "Cool!"
 msgstr "«Õ¨Á"
 
-#: great.h:22
 msgid "Keep it up!"
 msgstr "¦¾¡¼ÃðÎõ!!"
 
-#: great.h:23
 msgid "Good job!"
 msgstr "«üÒ¾Á¡É À½¢!"
 
-#: magic.h:48
 msgid "Rainbow"
 msgstr "Å¡ÉÅ¢ø"
 
-#: magic.h:49
 msgid "Sparkles"
 msgstr "´Ç¢÷×"
 
-#: magic.h:51
 msgid "Mirror"
 msgstr "¸ñ½¡Ê À¢õÀõ"
 
-#: magic.h:52
 msgid "Flip"
 msgstr "ÍñÊÅ¢Î"
 
-#: magic.h:54
 msgid "Blur"
 msgstr "ÁíÌ"
 
-#: magic.h:55
 msgid "Blocks"
 msgstr "¸ð¼í¸û"
 
-#: magic.h:57
 msgid "Negative"
 msgstr "±¾¢÷¿¢¨Ä"
 
-#: magic.h:58
 msgid "Fade"
 msgstr "Áí¸Ä¡ìÌ"
 
-#: magic.h:60
 msgid "Chalk"
 msgstr "Á¡ì¸ðÊ"
 
-#: magic.h:61
 msgid "Drip"
 msgstr "¦º¡ðÎ¾ø"
 
-#: magic.h:63
 msgid "Thick"
 msgstr "¾ÊÁÉ¡É"
 
-#: magic.h:64
 msgid "Thin"
 msgstr "¦ÁÄ¢¾¡É"
 
-#: magic.h:66
 msgid "Fill"
 msgstr "¿¢ÃôÒ"
 
-#: magic.h:73
 msgid "You can draw in rainbow colors!"
 msgstr "Å¡ÉÅ¢øÄ¢ý ¿¢Èí¸Ç¢ø ¿£í¸û Å¨ÃÂÄ¡õ!"
 
-#: magic.h:74
 #, fuzzy
 msgid "Click and move to draw sparkles."
 msgstr "¾ðÊÅ¢ðÎ ±Ä¢¨Â ¿¸÷ò¾¢É¡ø ´Ç¢ÕõÀ¼õ Å¨ÃÂÄ¡õ"
 
-#: magic.h:76
 #, fuzzy
 msgid "Click to make a mirror image."
 msgstr "¾ðÊÉ¡ø À¼õ ¸ñ½¡Ê À¢õÀÁ¡¸ Á¡Úõ!"
 
-#: magic.h:77
 #, fuzzy
 msgid "Click to flip the picture upside-down."
 msgstr "¾ðÊÉ¡ø À¼õ ¾¨Ä¸£Æ¡¸ Á¡Úõ!"
 
-#: magic.h:79
 #, fuzzy
 msgid "Click and move the mouse around to blur the picture."
 msgstr "¾ðÊÅ¢ðÎ ±Ä¢¨Â ¿¸÷ò¾¢É¡ø À¼õ Áí¸Ä¡Ìõ"
 
-#: magic.h:80
 #, fuzzy
 msgid "Click and move the mouse around to make the picture blocky."
 msgstr "¾ðÊÅ¢ðÎ ±Ä¢¨Â ¿¸÷ò¾¢É¡ø À¼õ ¸ð¼í¸Ç¡¸ Á¡Úõ"
 
-#: magic.h:82
 #, fuzzy
 msgid "Click and move the mouse around to draw a negative."
 msgstr "¾ðÊÅ¢ðÎ ±Ä¢¨Â ¿¸÷ò¾¢É¡ø À¼õ ¦¿¸ðÊù À¼Á¡¸ Á¡Úõ"
 
-#: magic.h:83
 msgid "Click and move to fade the colors."
 msgstr "¿¢Èí¸¨Ç Áí¸Ä¡ì¸ ¾ðÊÅ¢ðÎ ¿¸÷ò¾×õ"
 
-#: magic.h:85
 msgid ""
 "Click and move the mouse around to turn the picture into a chalk drawing."
 msgstr "þó¾ À¼ò¨¾ Á¡ì¸ðÊÂ¡ø Å¨Ãó¾Ð §À¡ø ¬ì¸, ±Ä¢¨Â ¦º¡Îì¸¢ ¿¸÷ò¾×õ"
 
-#: magic.h:86
 #, fuzzy
 msgid "Click and move the mouse around to make the picture drip."
 msgstr "±Ä¢¨Â ¦º¡Îì¸¢ ¿¸÷ò¾¢É¡ø þó¾ À¼õ , ¾ñ½£Ã¢ø ¿¨Éó¾ Á¡¾¢Ã¢ ¬Ìõ!"
 
-#: magic.h:88
 #, fuzzy
 msgid "Click and move the mouse to thicken the picture."
 msgstr "±Ä¢¨Â ¦º¡Îì¸¢ ¿¸÷ò¾¢É¡ø, þó¾ À¼õ ¾ÊÁÉ¡Ìõ."
 
-#: magic.h:89
 #, fuzzy
 msgid "Click and move the mouse to thin the picture."
 msgstr "±Ä¢¨Â ¦º¡Îì¸¢ ¿¸÷ò¾¢É¡ø, þó¾ À¼õ ¦ÁøÄ¢Â¾¡¸ Á¡Úõ"
 
-#: magic.h:91
 #, fuzzy
 msgid "Click in the picture to fill that area with color."
 msgstr "À¼ò¾¢Ûû ¦º¡Îì¸¢É¡ø, «ó¾ ÀÃôÒ ÓØì¸ ¿¢Èõ Á¡Úõ"
 
-#: shapes.h:141 shapes.h:142
 msgid "Square"
 msgstr "ºÐÃõ"
 
-#: shapes.h:143 shapes.h:144
 msgid "Rectangle"
 msgstr "¦ºùÅ¸õ"
 
-#: shapes.h:145 shapes.h:146
 msgid "Circle"
 msgstr "Åð¼õ"
 
-#: shapes.h:147 shapes.h:148 shapes.h:167 shapes.h:168
 msgid "Oval"
 msgstr "¿£ûÅð¼õ"
 
-#: shapes.h:149 shapes.h:150
 msgid "Triangle"
 msgstr "Óì§¸¡Éõ"
 
-#: shapes.h:151 shapes.h:152
 msgid "Pentagon"
 msgstr "³í§¸¡É"
 
-#: shapes.h:153 shapes.h:154
 msgid "Diamond"
 msgstr "¨ÅÃÅÊÅõ"
 
-#: shapes.h:161 shapes.h:162
 msgid "A square has four sides, each the same length."
 msgstr "ºÐÃò¾¢üÌ ¿¡ýÌ Àì¸í¸û ¯ñÎ. «¨ÉòÐôÀì¸í¸Ùõ ºÁ «Ç× ¯¨¼ÂÐ."
 
-#: shapes.h:163 shapes.h:164
 msgid "A rectangle has four sides."
 msgstr "¦ºùÅ¸òÐìÌ ¿¡ýÌ Àì¸í¸û ¯ñÎ."
 
-#: shapes.h:165 shapes.h:166
 msgid "A circle is exactly round."
 msgstr "Åð¼õ ºÃ¢Â¡¸ ¯Õñ¨¼ §À¡ø þÕìÌõ"
 
-#: shapes.h:169 shapes.h:170
 msgid "A triangle has three sides."
 msgstr "Óì§¸¡Éò¾¢üÌ ãýÚ Àì¸í¸û."
 
-#: shapes.h:171 shapes.h:172
 msgid "A pentagon has five sides."
 msgstr "´Õ ³í§¸¡Éò¾¢üÌ ³óÐ Àì¸í¸û ¯ñÎ."
 
-#: shapes.h:173 shapes.h:174
 msgid "A diamond is a square, turned around slightly."
 msgstr "¨ÅÃÅÊÅõ ±ýÀÐ, ºüÚ ¾¢ÕõôÀð¼ ´Õ ºÐÃõ."
 
-#: titles.h:37
 msgid "Tools"
 msgstr "¸ÕÅ¢¸û"
 
-#: titles.h:38
 msgid "Colors"
 msgstr "¿¢Èí¸û"
 
-#: titles.h:39
 msgid "Brushes"
 msgstr "àÃ¢¨¸¸û"
 
-#: titles.h:40
 msgid "Stamps"
 msgstr "Óò¾¢¨Ã¸û"
 
-#: titles.h:41 tools.h:45
 msgid "Shapes"
 msgstr "ÅÊÅí¸û"
 
-#: titles.h:42
 msgid "Letters"
 msgstr "±ØòÐì¸û"
 
-#: titles.h:43 tools.h:47
 msgid "Magic"
 msgstr "Á¡Â¡ƒ¡Äõ"
 
-#: tools.h:42
 msgid "Paint"
 msgstr "Å¨Ã"
 
-#: tools.h:43
 msgid "Stamp"
 msgstr "Óò¾¢¨ÃÂ¢Î"
 
-#: tools.h:44
 msgid "Lines"
 msgstr "§¸¡Î¸û"
 
-#: tools.h:46
 msgid "Text"
 msgstr "¯¨Ã"
 
-#: tools.h:48
 msgid "Undo"
 msgstr "¦ºÂøÁ£ðÒ"
 
-#: tools.h:49
 msgid "Redo"
 msgstr "Á£Çî¦ºö"
 
-#: tools.h:50
 msgid "Eraser"
 msgstr "«Æ¢ôÀ¡ý"
 
-#: tools.h:51
 msgid "New"
 msgstr "Ò¾¢Â"
 
 #. 'Open' label:
-#: tools.h:52 tuxpaint.c:5499
 msgid "Open"
 msgstr "¾¢È"
 
-#: tools.h:53
 msgid "Save"
 msgstr "§ºÁ¢"
 
-#: tools.h:54
 msgid "Print"
 msgstr "«îº¢Î"
 
-#: tools.h:55
 msgid "Quit"
 msgstr "¦ÅÇ¢§ÂÚ"
 
-#: tools.h:62
 msgid "Pick a color and a brush shape to draw with."
 msgstr "Å¨ÃÅ¾üÌ ´Õ àÃ¢¨¸¨ÂÔõ ¿¢Èò¨¾Ôõ §¾÷ó¦¾Îí¸û."
 
-#: tools.h:63
 msgid "Pick a picture to stamp around your drawing."
 msgstr "¯í¸û Å¨ÃÀ¼ò¾¢Ûû Óò¾¢¨ÃÂ¢¼ ´Õ À¼ò¨¾ §¾÷ó¦¾Îí¸û."
 
-#: tools.h:64
 #, fuzzy
 msgid "Click to start drawing a line. Let go to complete it."
 msgstr "´Õ §¸¡Î Å¨ÃÂ ¬ÃõÀ¢ì¸ ¦º¡Îì¸×õ. ÓÊì¸ ¦º¡Îì¸¢Â¾¢ø þÕóÐ Å¢¼×õ."
 
-#: tools.h:65
 #, fuzzy
 msgid ""
 "Pick a shape. Click to pick the center, drag, then let go when it is the "
@@ -378,160 +294,124 @@ msgstr ""
 "´Õ ÅÊÅò¨¾ §¾÷ó¦¾Îì¸×õ. Áò¾¢¨Â §¾÷¦¾Îì¸ ¦º¡Îì¸×õ, À¢ÈÌ þØì¸×õ, À¢ÈÌ ¯í¸ÙìÌ "
 "§¾¨ÅÂ¡É «Ç× Åó¾×¼ý Å¢ðÎÅ¢Îí¸û. ÍÆüÈ ¿¸÷ò¾×õ, ÁüÚõ Å¨ÃÂÅ¾üÌ ¦º¡Îì¸×õ."
 
-#: tools.h:66
 #, fuzzy
 msgid "Choose a style of text. Click on your drawing and you can start typing."
 msgstr ""
 "¯¨ÃÂ¢ý À¡ó¾ò¨¾ §¾÷¦¾Îì¸×õ. ¯í¸û À¼ò¾¢ý Á£Ð ¦º¡Îì¸¢Å¢ðÎ ¾ð¦¼Ø¾ ¬ÃõÀ¢ì¸×õ."
 
-#: tools.h:67
 msgid "Pick a magical effect to use on your drawing!"
 msgstr "¯í¸û À¼ò¾¢ø ¯À§Â¡¸¢ì¸ ´Õ Á¡Â¡ƒ¡Ä Å¢ÕôÀò¨¾ò §¾÷ó¦¾Îì¸×õ."
 
 #. Undo
-#: tools.h:68
 msgid "Undo!"
 msgstr "¦ºÂøÁ£ðÒ!"
 
 #. Redo
-#: tools.h:69
 msgid "Redo!"
 msgstr "Á£Çî¦ºö!"
 
 #. Eraser
-#: tools.h:70
 msgid "Eraser!"
 msgstr "«Æ¢ôÀ¡ý!"
 
 #. New
-#: tools.h:71
 msgid "You now have a blank sheet to draw on!"
 msgstr "þô§À¡Ð ¿£í¸û Å¨ÃÂ ´Õ ¦ÅüÚ ¾¡û ¸¢¨¼òÐÅ¢ð¼Ð!"
 
 #. Open
-#: tools.h:72
 msgid "Open…"
 msgstr "¾¢È..."
 
 #. Save
-#: tools.h:73
 msgid "Your image has been saved!"
 msgstr "¯í¸û À¼õ §ºÁ¢ì¸ôÀðÎÅ¢ð¼Ð"
 
 #. Print
-#: tools.h:74
 msgid "Printing…"
 msgstr "«îº¢¼ôÀÎ¸¢ÈÐ"
 
 #. Quit
-#: tools.h:75
 msgid "Bye bye!"
 msgstr "Å½ì¸õ! ¦ºýÚ ÅÕ¸!"
 
-#: tools.h:78
 msgid "Let go of the button to complete the line."
 msgstr "ÓÊì¸ ¦º¡Îì¸¢Â¾¢ø þÕóÐ Å¢¼×õ."
 
-#: tools.h:79
 msgid "Hold the button to stretch the shape."
 msgstr "ÅÊÅò¨¾ Å¢Ã¢ì¸, ¦À¡ò¾¡¨É «Óì¸¢ô À¢Êì¸×õ."
 
-#: tools.h:80
 msgid "Move the mouse to rotate the shape. Click to draw it."
 msgstr "ÅÊÅò¨¾ ÍÆüÈ, ±Ä¢¨Â ¿¸÷ò¾×õ. «¾¨É Å¨ÃÂ ¦º¡Îì¸×õ."
 
-#: tools.h:81
 msgid "OK then… Let’s keep drawing this one!"
 msgstr "ºÃ¢... «ô§À¡ þó¾ À¼ò¨¾ ¨ÅòÐì¦¸¡ûÇÄ¡õ!"
 
 #. FIXME: Move elsewhere!!!
-#: tuxpaint.c:811
 msgid "Do you really want to quit?"
 msgstr "¸ñÊôÀ¡¸ ¦ÅÇ¢§ÂÈ¢¼Ä¡Á¡?"
 
 #. FIXME: Move elsewhere! Or not?!
-#: tuxpaint.c:812 tuxpaint.c:816 tuxpaint.c:820 tuxpaint.c:834 tuxpaint.c:844
-#: tuxpaint.c:8359 tuxpaint.c:9066
 msgid "Yes"
 msgstr "¬õ"
 
-#: tuxpaint.c:813 tuxpaint.c:817 tuxpaint.c:821 tuxpaint.c:835 tuxpaint.c:845
-#: tuxpaint.c:8362
 msgid "No"
 msgstr "§Åñ¼¡õ"
 
-#: tuxpaint.c:815
 msgid "If you quit, you’ll lose your picture! Save it?"
 msgstr "¦ÅÇ¢§ÂÈ¢Å¢ð¼¡ø, ¿£í¸û Å¨Ãó¾ À¼õ «Æ¢óÐÅ¢Î§Á! À¼ò¨¾ §ºÁ¢òÐÅ¢¼Ä¡Á¡ ?"
 
-#: tuxpaint.c:819
 msgid "Save your picture first?"
 msgstr "Ó¾Ä¢ø ¯í¸û À¼ò¨¾ §ºÁ¢òÐÅ¢¼Ä¡Á¡?"
 
-#: tuxpaint.c:823
 msgid "Can’t open that picture!"
 msgstr "«ó¾ À¼ò¨¾ ¾¢Èì¸ ÓÊÂÅ¢ø¨Ä!"
 
-#: tuxpaint.c:824 tuxpaint.c:831 tuxpaint.c:838 tuxpaint.c:841
 msgid "OK"
 msgstr ""
 
-#: tuxpaint.c:826
 msgid "Starting a new picture will erase the current one!"
 msgstr "Ò¾¢Â À¼ò¨¾ ¾¢Èó¾¡ø þô§À¡Ð þÕìÌõ À¼õ «Æ¢óÐÅ¢Î§Á!"
 
-#: tuxpaint.c:827
 #, fuzzy
 msgid "That’s OK!"
 msgstr "ÀÃÅ¡Â¢ø¨Ä"
 
-#: tuxpaint.c:828
 #, fuzzy
 msgid "Never mind!"
 msgstr "À¡¾¸Á¢ø¨Ä!"
 
-#: tuxpaint.c:830
 msgid "There are no saved files!"
 msgstr "§ºÁ¢ò¾ §¸¡ôÒ¸û ±Ðõ þø¨Ä§Â!"
 
-#: tuxpaint.c:833
 #, fuzzy
 msgid "Print your picture now?"
 msgstr "Ó¾Ä¢ø ¯í¸û À¼ò¨¾ §ºÁ¢òÐÅ¢¼Ä¡Á¡?"
 
-#: tuxpaint.c:837
 msgid "Your picture has been printed!"
 msgstr "¯í¸û À¼õ «îº¢¼ôÀÎ¸¢ÈÐ!"
 
-#: tuxpaint.c:840
 msgid "You can’t print yet!"
 msgstr "¿£í¸û «¾üÌû «îº¢¼ ÓÊÂ¡Ð!"
 
-#: tuxpaint.c:843
 msgid "Erase this picture?"
 msgstr "À¼ò¨¾ «Æ¢òÐÅ¢¼Ä¡Á¡?"
 
 #. 'Erase' label:
-#: tuxpaint.c:5504
 msgid "Erase"
 msgstr "«Æ¢"
 
 #. 'Back' label:
-#: tuxpaint.c:5509
 msgid "Back"
 msgstr "À¢ý"
 
 #. FIXME: Move elsewhere!!!
-#: tuxpaint.c:9065
 #, fuzzy
 msgid "Save over the older version of this picture?"
 msgstr "þó¾ À¼ò¾¢ý À¨ÆÂ À¾¢ôÒ §Á§Ä§Â þ¨¾ §ºÁ¢ì¸Ä¡Á¡?"
 
-#: tuxpaint.c:9067
 msgid "No, save a new file"
 msgstr "§Åñ¼¡õ, þôÀ¼ò¨¾ Ò¾¢Â §¸¡ôÀ¡¸ §ºÁ¢"
 
-#: tuxpaint.c:9961
 #, fuzzy
 msgid "Choose the picture you want, then click “Open”."
 msgstr "§¾¨ÅÂ¡É À¼ò¨¾ §¾÷ó¦¾ÎòÐ, À¢ÈÌ '¾¢È'-³ò ¾ð¼×õ"
