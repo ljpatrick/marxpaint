@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: tuxpaint-0.9.14\n"
 "Report-Msgid-Bugs-To: tuxpaint-i18n@tux4kids.net\n"
 "POT-Creation-Date: 2004-03-22 11:23-0800\n"
-"PO-Revision-Date: 2004-04-22 11:52+0100\n"
+"PO-Revision-Date: 2004-04-25 10:27+0100\n"
 "Last-Translator: KD at KGyfieithu <kyfieithu@dotmon.com>\n"
 "Language-Team: Cymraeg <cy@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -49,11 +49,11 @@ msgstr "Iawn"
 
 #: tuxpaint.c:816
 msgid "Starting a new picture will erase the current one!"
-msgstr "Bydd dechrau llun newydd yn dileu'r un cyfredol!"
+msgstr "Bydd dechrau llun newydd yn colli'r un yma!"
 
 #: tuxpaint.c:817
 msgid "That's OK!"
-msgstr "Dyna iawn!"
+msgstr "Iawn!"
 
 #: tuxpaint.c:818
 msgid "Never mind!"
@@ -101,7 +101,7 @@ msgstr "Nage, cadw ffeil newydd"
 
 #: tuxpaint.c:9951
 msgid "Choose the picture you want, then click 'Open'."
-msgstr "Dewis y llun yr wyt eisiau, ac wedyn clicia 'Agor'."
+msgstr "Dewisa'r llun yr wyt eisiau, ac wedyn clicia 'Agor'."
 
 #: colors.h:62
 msgid "Black!"
@@ -237,11 +237,11 @@ msgstr "Mi alli di dynnu llun yn lliwiau'r enfys!"
 
 #: magic.h:74
 msgid "Click and move to draw sparkles."
-msgstr "Clicia a symuda i dynnu gwreichion."
+msgstr "Clicia a symuda i lunio gwreichion."
 
 #: magic.h:76
 msgid "Click to make a mirror image."
-msgstr "Clicia i greu adlewyrchiad."
+msgstr "Clicia i adlewyrchu'r llun."
 
 #: magic.h:77
 msgid "Click to flip the picture upside-down."
@@ -253,7 +253,7 @@ msgstr "Clicia a symuda'r llygoden o gwmpas i bylu'r llun."
 
 #: magic.h:80
 msgid "Click and move the mouse around to make the picture blocky."
-msgstr "Clicia a symuda'r llygoden o gwmpas i wneud blociau ar y llun."
+msgstr "Clicia a symuda'r llygoden o gwmpas i wneud blociau ar liwiau'r llun."
 
 #: magic.h:82
 msgid "Click and move the mouse around to draw a negative."
@@ -273,7 +273,7 @@ msgstr "Clicia a symuda'r llygoden o gwmpas i wneud i'r llun ddiferu."
 
 #: magic.h:88
 msgid "Click and move the mouse to thicken the picture."
-msgstr "Clicia a symuda'r llygoden i dewi'r llun."
+msgstr "Clicia a symuda'r llygoden i dewhau'r llun."
 
 #: magic.h:89
 msgid "Click and move the mouse to thin the picture."
@@ -281,7 +281,7 @@ msgstr "Clicia a symuda'r llygoden i deneuo'r llun."
 
 #: magic.h:91
 msgid "Click in the picture to fill that area with color."
-msgstr "Clicia yn y llun i lenwi'r ardal yna efo lliw."
+msgstr "Clicia yn y llun i lenwi'r ardal yno efo lliw."
 
 #: shapes.h:141 shapes.h:142
 msgid "Square"
@@ -409,7 +409,7 @@ msgstr "Terfynu"
 
 #: tools.h:62
 msgid "Pick a color and a brush shape to draw with."
-msgstr "Dewisa liw a siap brws i dynnu efo fo."
+msgstr "Dewisa liw, siâp a maint brws i dynnu llun efo fo."
 
 #: tools.h:63
 msgid "Pick a picture to stamp around your drawing."
@@ -417,17 +417,17 @@ msgstr "Dewisa lun i stampio o gwmpas eich llun."
 
 #: tools.h:64
 msgid "Click to start drawing a line. Let go to complete it."
-msgstr "Clicia i ddechrau dynnu linell.  Gad fynd i'w orffen."
+msgstr "Clicia i ddechrau tynnu llinell.  Gad fynd i'w orffen."
 
 #: tools.h:65
 msgid ""
 "Pick a shape. Click to pick the center, drag, then let go when it is the "
 "size you want. Move around to rotate it, and click to draw it."
-msgstr "Dewisa siâp.  Clicia i ddewis y canol, llusga, ac wedyn gad fynd pan mae tua'r faint rwyt eisiau.  Symuda o gwmpas i'w gylchdroi, a clicia i'w dynnu."
+msgstr "Dewisa siâp.  Clicia i ddewis y canol, llusga, ac wedyn gad fynd pan mae'r siâp y maint rwyt eisiau.  Symuda o gwmpas i'w gylchdroi, a clicia i'w osod."
 
 #: tools.h:66
 msgid "Choose a style of text. Click on your drawing and you can start typing."
-msgstr "Dewisa arddull testun.  Clicia ar dy lun a gei di ddechrau teipio."
+msgstr "Dewisa'r math o lythyren.  Clicia ar dy lun a gei di ddechrau teipio."
 
 #: tools.h:67
 msgid "Pick a magical effect to use on your drawing!"
@@ -475,7 +475,7 @@ msgstr "Cadwa'r botwm i lawr i estyn y siâp. "
 
 #: tools.h:80
 msgid "Move the mouse to rotate the shape. Click to draw it."
-msgstr "Symuda'r llygoden i gylchdroi'r siâp.  Clicia i'w dynnu."
+msgstr "Symuda'r llygoden i gylchdroi'r siâp.  Clicia i'w osod."
 
 #: tools.h:81
 msgid "Ok then... Let's keep drawing this one!"
