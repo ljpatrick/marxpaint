@@ -1,7 +1,7 @@
                                    Tux Paint
                                  version 0.9.15
 
-Options Documentation
+                             Options Documentation
 
                         Copyright 2004 by Bill Kendrick
                                New Breed Software
@@ -9,9 +9,9 @@ Options Documentation
                            bill@newbreedsoftware.com
                    http://www.newbreedsoftware.com/tuxpaint/
 
-                               November 21, 2004
+                               December 26, 2004
 
-     ----------------------------------------------------------------------
+   ---------------------------------------------------------------------------
 
                                Tux Paint Config.
 
@@ -20,7 +20,7 @@ Options Documentation
      install and use this tool, or want a better understanding of the
      available options, please continue reading.
 
-     ----------------------------------------------------------------------
+   ---------------------------------------------------------------------------
 
                                Configuration File
 
@@ -60,7 +60,7 @@ Windows Users
        as Plain Text, and make sure the filename doesn't have ".txt" at the
        end...
 
-     ----------------------------------------------------------------------
+   ---------------------------------------------------------------------------
 
                                Available Options
 
@@ -74,6 +74,7 @@ Windows Users
      windowsize=SIZE
              Run the program at a higher resolution, rather than the default
              of 640x480. The SIZE value may be one of:
+
                 * 640x480
                 * 800x600
                 * 1024x768
@@ -327,6 +328,8 @@ Windows Users
                |--------------------+------------------+---------|
                |slovenian           |slovensko         |         |
                |--------------------+------------------+---------|
+               |swahili             |                  |         |
+               |--------------------+------------------+---------|
                |swedish             |svenska           |         |
                |--------------------+------------------+---------|
                |tamil               |                  |         |
@@ -342,7 +345,7 @@ Windows Users
                |welsh               |cymraeg           |         |
                +-------------------------------------------------+
 
-     ----------------------------------------------------------------------
+   ---------------------------------------------------------------------------
 
               Overriding System Config. Options using .tuxpaintrc
 
@@ -363,7 +366,7 @@ Windows Users
        print=yes
        mixedcase=yes
 
-     ----------------------------------------------------------------------
+   ---------------------------------------------------------------------------
 
                               Command-Line Options
 
@@ -462,7 +465,7 @@ Windows Users
                By default, the lockfile is stored in "~/.tuxpaint/" under
                Linux and Unix, and "userdata\" under Windows.
 
-     ----------------------------------------------------------------------
+   ---------------------------------------------------------------------------
 
 Command-Line Informational Options
 
@@ -486,7 +489,7 @@ Command-Line Informational Options
          --lang help
                  Display a list of available languages in Tux Paint.
 
-     ----------------------------------------------------------------------
+   ---------------------------------------------------------------------------
 
                          Choosing a Different Language
 
@@ -589,6 +592,8 @@ Available Languages
        |---------------+-------------------+---------------------|
        |sv_SE          |Svenska            |Swedish              |
        |---------------+-------------------+---------------------|
+       |sw_TZ          |                   |Swahili              |
+       |---------------+-------------------+---------------------|
        |ta_IN (*)      |                   |Tamil                |
        |---------------+-------------------+---------------------|
        |tlh (*)        |tlhIngan           |Klingon              |
@@ -644,7 +649,7 @@ Setting Your Environment's Locale
            setenv LANG es_ES ; \
            tuxpaint
 
-     ----------------------------------------------------------------------
+   ---------------------------------------------------------------------------
 
   Windows Users
 
