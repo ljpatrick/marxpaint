@@ -213,7 +213,7 @@ http://www.newbreedsoftware.com/tuxpaint/
     * Russian
       Eugene Zelenko <greendeath@mail.ru>
 
-    * Spanish documentation.
+    * Spanish and Spanish documentation.
       Gabriel Gazzán <ggabriel@internet.com.uy>
 
     * Added "create_pot_file.sh" help script to "src/po/", for easier
