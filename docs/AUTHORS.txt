@@ -104,10 +104,10 @@ June 17, 2002 - December 18, 2003
     Fabian Franz <FabianFranz@gmx.de>
 
   * Greek
-    The Greek Linux i18n Team <i18ngr@lists.hellug.gr>
+    The Greek Linux i18n Team <i18ngr@lists.hellug.gr>  [NOTE: mailing list]
 
   * Hungarian
-    Török Gábor <gabo@linuxmania.hu>
+    Török Gábor <gabo@linuxmania.hu>  [e-mail bad!?]
 
   * Hebrew
     Dovix <dovix2003@yahoo.com>
@@ -151,7 +151,7 @@ June 17, 2002 - December 18, 2003
     Dedicated to my beloved daughter Scarlet
  
   * Portuguese
-    Ricardo Cruz <rick2@aeiu.pt>,
+    Ricardo Cruz <rick2@aeiu.pt>  [e-mail bad!?]
     
   * Romanian
     Laurentiu Buzdugan <buzdugan@voyager.net>
