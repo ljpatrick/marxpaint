@@ -12125,18 +12125,13 @@ static void update_stamp_xor(void)
   SDL_LockSurface(src);
   for (yy = 0; yy < src->h; yy++)
     {
-#if 1
       /* Compensate for flip! */
       if (state_stamps[cur_stamp]->flipped)
 	ry = src->h - 1 - yy;
       else
 	ry = yy;
-#else
-	ry = yy;
-#endif
       for (xx = 0; xx < src->w; xx++)
 	{
-#if 1
 	  /* Compensate for mirror! */
 	  if (state_stamps[cur_stamp]->mirrored &&
 	      img_stamps_premirror[cur_stamp] == NULL)
@@ -12147,9 +12142,6 @@ static void update_stamp_xor(void)
 	    {
 	      rx = xx;
 	    }
-#else
-	      rx = xx;
-#endif
 
 	  SDL_GetRGBA(getpixel(src, rx, ry),
 		      src->format, &dummy, &dummy, &dummy, alphabits + xx+2 + (yy+2)*(src->w+4));
@@ -12238,86 +12230,6 @@ static void stamp_xor(int x, int y)
   SDL_UnlockSurface(screen);
 }
 
-
-
-
-#if 0
-static void stamp_xor(int x, int y)
-{
-  int xx, yy, rx, ry, sx, sy;
-  Uint8 r, g, b, a, olda, abovea;
-  SDL_Surface * surf_ptr;
-
-  /* Use pre-mirrored stamp image, if applicable: */
-
-  if (state_stamps[cur_stamp]->mirrored &&
-      img_stamps_premirror[cur_stamp] != NULL)
-    {
-      surf_ptr = img_stamps_premirror[cur_stamp];
-    }
-  else
-    {
-      surf_ptr = img_stamps[cur_stamp];
-    }
-
-  
-  SDL_LockSurface(surf_ptr);
-  SDL_LockSurface(screen);
-  
-
-  for (yy = (y % 2) + 1; yy < surf_ptr->h; yy = yy + 2)
-    {
-      olda = 0;
-
-
-      /* Compensate for flip! */
-
-      if (state_stamps[cur_stamp]->flipped)
-	ry = surf_ptr->h - 1 - yy;
-      else
-	ry = yy;
-
-
-      for (xx = (x % 2); xx < surf_ptr->w; xx = xx + 2)
-	{
-	  /* Compensate for mirror! */
-
-	  if (state_stamps[cur_stamp]->mirrored &&
-	      img_stamps_premirror[cur_stamp] == NULL)
-	    {
-	      rx = img_stamps[cur_stamp]->w - 1 - xx;
-	    }
-	  else
-	    {
-	      rx = xx;
-	    }
-
-	  SDL_GetRGBA(getpixel(surf_ptr, rx, ry),
-		      surf_ptr->format, &r, &g, &b, &a);
-      
-	  SDL_GetRGBA(getpixel(surf_ptr, rx, ry - 1),
-		      surf_ptr->format, &r, &g, &b, &abovea);
-
-	  if ((a < 128 && olda >= 128) ||
-	      (a >= 128 && olda < 128) ||
-	      (a < 128 && abovea >= 128) ||
-	      (a >= 128 && abovea < 128))
-	    {
-	      sx = x + 96 + SCALE_LIKE_STAMP(xx - img_stamps[cur_stamp]->w / 2);
-	      sy = y +      SCALE_LIKE_STAMP(yy - img_stamps[cur_stamp]->h / 2);
-	
-	      clipped_putpixel(screen, sx, sy,
-			       0xFFFFFFFF - getpixel(screen, sx, sy));
-	    }
-
-	  olda = a;
-	}
-    }
-
-  SDL_UnlockSurface(screen);
-  SDL_UnlockSurface(surf_ptr);
-}
-#endif
 
 ///////////////////////////////////////////////////
 
