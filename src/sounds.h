@@ -4,11 +4,11 @@
   For Tux Paint
   List of sound effects.
 
-  Copyright (c) 2002 by Bill Kendrick
+  Copyright (c) 2005 by Bill Kendrick
   bill@newbreedsoftware.com
   http://www.newbreedsoftware.com/tuxpaint/
 
-  June 15, 2002 - December 12, 2004
+  June 15, 2002 - January 7, 2005
 */
 
 
@@ -50,9 +50,12 @@ enum {
   SND_TINT,          /* Magic tint */
   SND_CARTOON,       /* Magic cartoon */
   SND_KEYCLICK,      /* Text tool keyboard click feedback */
+  SND_KEYCLICKRING,  /* Text tool keyboard click feedback with bell ring */
   SND_RETURN,        /* Text tool carriage return sound */
   SND_SHRINK,        /* Stamp shrink */
   SND_GROW,          /* Stamp grow */
+  SND_ITALIC_ON,     /* Italic on */
+  SND_ITALIC_OFF,    /* Italic off */
   NUM_SOUNDS
 };
 
@@ -94,8 +97,11 @@ const char * const sound_fnames[NUM_SOUNDS] = {
   DATA_PREFIX "sounds/tint.wav",
   DATA_PREFIX "sounds/cartoon.wav",
   DATA_PREFIX "sounds/keyclick.wav",
+  DATA_PREFIX "sounds/typewriterbell.wav",
   DATA_PREFIX "sounds/return.wav",
   DATA_PREFIX "sounds/shrink.wav",
-  DATA_PREFIX "sounds/grow.wav"
+  DATA_PREFIX "sounds/grow.wav",
+  DATA_PREFIX "sounds/italic_on.wav",
+  DATA_PREFIX "sounds/italic_off.wav"
 };
 

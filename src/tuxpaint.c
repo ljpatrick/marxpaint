@@ -22,12 +22,12 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
   
-  June 14, 2002 - January 6, 2005
+  June 14, 2002 - January 7, 2005
 */
 
 
 #define VER_VERSION     "0.9.15"
-#define VER_DATE        "2005-01-06"
+#define VER_DATE        "2005-01-07"
 
 
 //#define VIDEO_BPP 15 // saves memory
@@ -2632,7 +2632,7 @@ static void mainloop(void)
 			    {
 			      texttool_len--;
 			      texttool_str[texttool_len] = '\0';
-			      playsound(0, SND_KEYCLICK, 1);
+			      playsound(0, SND_KEYCLICK, 0);
 	        
 			      do_render_cur_text(0);
 			    }
@@ -2653,10 +2653,23 @@ static void mainloop(void)
 	    
 			  playsound(0, SND_RETURN, 1);
 			}
+		      else if (key_down == SDLK_TAB)
+		        {
+			  if (texttool_len > 0)
+			    {
+			      rec_undo_buffer();
+			      do_render_cur_text(1);
+			      cursor_x = min(cursor_x + cursor_textwidth,
+					     canvas->w);
+			      texttool_len = 0;
+			      cursor_textwidth = 0;
+			    }
+		        }
 		      else if (isprint(key_unicode))
 			{
 			  if (texttool_len < sizeof(texttool_str) - MAX_UTF8_CHAR_LENGTH)
 			    {
+			      int old_cursor_textwidth = cursor_textwidth;
 #ifdef DEBUG
 			      printf("    key = %c\n"
 				     "unicode = %c (%d)\n\n",
@@ -2666,8 +2679,18 @@ static void mainloop(void)
 			        texttool_str[texttool_len++] = key_unicode;
 		
 			      texttool_str[texttool_len] = '\0';
-			      playsound(0, SND_KEYCLICK, 1);
 			      do_render_cur_text(0);
+
+
+			      if (cursor_x + old_cursor_textwidth <= canvas->w - 50 &&
+				  cursor_x + cursor_textwidth > canvas->w - 50)
+			      {
+				playsound(0, SND_KEYCLICKRING, 1);
+			      }
+			      else
+			      {
+				playsound(0, SND_KEYCLICK, 0);
+			      }
 			    }
 			}
 		    }
@@ -3107,12 +3130,12 @@ static void mainloop(void)
                                       if (text_state & TTF_STYLE_ITALIC)
                                         {
                                           text_state &= ~TTF_STYLE_ITALIC;
-                                          control_sound = SND_CHALK;
+                                          control_sound = SND_ITALIC_ON;
                                         }
                                       else
                                         {
                                           text_state |= TTF_STYLE_ITALIC;
-                                          control_sound = SND_SMUDGE;
+                                          control_sound = SND_ITALIC_OFF;
                                         }
                                     }
                                   else
@@ -3133,19 +3156,24 @@ static void mainloop(void)
                               if (control_sound != -1)
                                 {
                                   playsound(0, control_sound, 0);
-                                  // need to invalidate all the cached user fonts, causing reload on demand
-                                  int i;
-                                  for (i = 0; i < num_font_families; i++)
-                                    {
-                                      if (user_font_families[i] && user_font_families[i]->handle)
-                                        {
-                                          TTF_CloseFont(user_font_families[i]->handle);
-                                          user_font_families[i]->handle = NULL;
-                                        }
-                                    }
-                                  // FIXME: is setting do_draw enough?
-                                  draw_fonts();
-                                  update_screen_rect(&r_toolopt);
+
+
+				  if (cur_tool == TOOL_TEXT)
+				  {
+                                    // need to invalidate all the cached user fonts, causing reload on demand
+                                    int i;
+                                    for (i = 0; i < num_font_families; i++)
+                                      {
+                                        if (user_font_families[i] && user_font_families[i]->handle)
+                                          {
+                                            TTF_CloseFont(user_font_families[i]->handle);
+                                            user_font_families[i]->handle = NULL;
+                                          }
+                                      }
+                                    // FIXME: is setting do_draw enough?
+                                    draw_fonts();
+                                    update_screen_rect(&r_toolopt);
+				  }
                                 }
                             }
 		        }
@@ -7968,6 +7996,8 @@ static void draw_fonts(void)
   SDL_Surface * tmp_surf;
   SDL_Color black = {0, 0, 0, 0};
 
+
+  printf("Redrawing fonts\n");
 
   /* Draw the title: */
   draw_image_title(TITLE_LETTERS, r_ttoolopt);
