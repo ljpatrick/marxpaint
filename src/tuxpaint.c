@@ -6625,38 +6625,73 @@ static void setup(int argc, char * argv[])
   }
 
 
-  /* Init SDL Video: */
+  Uint32 init_flags = SDL_INIT_VIDEO|SDL_INIT_TIMER;
+  if(use_sound)
+    init_flags |= SDL_INIT_AUDIO;
+  if(!fullscreen)
+    init_flags |= SDL_INIT_NOPARACHUTE;  // allow debugger to catch crash
 
-  if (SDL_Init(SDL_INIT_VIDEO) < 0)
+  /* Init SDL */
+  if (SDL_Init(init_flags) < 0)
+    {
+#ifndef NOSOUND
+      use_sound = 0;
+      init_flags &= ~SDL_INIT_AUDIO;
+      char *olderr = strdup(SDL_GetError());
+      if (SDL_Init(init_flags) >= 0)
+        {
+          // worked, w/o sound
+	  fprintf(stderr,
+		  "\nWarning: I could not initialize audio!\n"
+		  "The Simple DirectMedia Layer error that occurred was:\n"
+		  "%s\n\n", SDL_GetError());
+          free(olderr);
+        }
+      else
+#endif
+        {
+          fprintf(stderr,
+	          "\nError: I could not initialize video and/or the timer!\n"
+	          "The Simple DirectMedia Layer error that occurred was:\n"
+	          "%s\n\n", SDL_GetError());
+          exit(1);
+        }
+    }
+
+#ifndef NOSOUND
+  // need Mix_OpenAudio(44100, AUDIO_S16, 2, 2048) for WIN32 ?
+  if (use_sound && Mix_OpenAudio(44100, AUDIO_S16SYS, 2, 1024) < 0)
     {
       fprintf(stderr,
-	      "\nError: I could not initialize video!\n"
-	      "The Simple DirectMedia Layer error that occurred was:\n"
-	      "%s\n\n", SDL_GetError());
-      exit(1);
+	"\nWarning: I could not set up audio for 44100 Hz "
+	"16-bit stereo.\n"
+	"The Simple DirectMedia Layer error that occurred was:\n"
+	"%s\n\n", SDL_GetError());
+      use_sound = 0;
     }
+
+  i = NUM_SOUNDS;
+  while(use_sound && i--)
+    {
+      sounds[i] = Mix_LoadWAV(sound_fnames[i]);
+
+      if (sounds[i] == NULL)
+        {
+          fprintf(stderr,
+                  "\nWarning: I couldn't open a sound file:\n%s\n"
+                  "The Simple DirectMedia Layer error that occurred was:\n"
+                  "%s\n\n", sound_fnames[i], SDL_GetError());
+          use_sound = 0;
+        }
+    }
+#endif
 
 
   /* Set-up Key-Repeat: */
-
   SDL_EnableKeyRepeat(SDL_DEFAULT_REPEAT_DELAY,
 		      SDL_DEFAULT_REPEAT_INTERVAL);
  
-
-  /* Init SDL Timer: */
-
-  if (SDL_Init(SDL_INIT_TIMER) < 0)
-    {
-      fprintf(stderr,
-	      "\nError: I could not initialize timer!\n"
-	      "The Simple DirectMedia Layer error that occurred was:\n"
-	      "%s\n\n", SDL_GetError());
-      exit(1);
-    }
-
-
   /* Init TTF stuff: */
-
   if (TTF_Init() < 0)
     {
       fprintf(stderr,
@@ -6668,56 +6703,6 @@ static void setup(int argc, char * argv[])
       exit(1);
     }
 
-
-  /* Init SDL Audio and set-up Mixer: */
-
-#ifndef NOSOUND
-  if (use_sound)
-    {
-      if (SDL_Init(SDL_INIT_AUDIO) < 0)
-	{
-	  fprintf(stderr,
-		  "\nWarning: I could not initialize audio!\n"
-		  "The Simple DirectMedia Layer error that occurred was:\n"
-		  "%s\n\n", SDL_GetError());
-	  use_sound = 0;
-	}
-      else
-	{
-#ifndef WIN32
-	  if (Mix_OpenAudio(44100, AUDIO_S16SYS, 2, 1024) < 0)
-#else
-	    if (Mix_OpenAudio(44100, AUDIO_S16, 2, 2048) < 0)
-#endif
-	      {
-		fprintf(stderr,
-			"\nWarning: I could not set up audio for 44100 Hz "
-			"16-bit stereo.\n"
-			"The Simple DirectMedia Layer error that occurred was:\n"
-			"%s\n\n", SDL_GetError());
-		use_sound = 0;
-	      }
-	    else
-	      {
-		/* Load sounds: */
-
-		for (i = 0; i < NUM_SOUNDS; i++)
-		  {
-		    sounds[i] = Mix_LoadWAV(sound_fnames[i]);
-	
-		    if (sounds[i] == NULL)
-		      {
-			fprintf(stderr,
-				"\nWarning: I couldn't open a sound file:\n%s\n"
-				"The Simple DirectMedia Layer error that occurred was:\n"
-				"%s\n\n", sound_fnames[i], SDL_GetError());
-			use_sound = 0;
-		      }
-		  }
-	      }
-	}
-    }
-#endif
 
 
   setup_screen_layout();
