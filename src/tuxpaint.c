@@ -21,12 +21,12 @@
   along with this program; if not, write to the Free Software
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   
-  June 14, 2002 - July 21, 2004
+  June 14, 2002 - August 16, 2004
 */
 
 
 #define VER_VERSION     "0.9.14"
-#define VER_DATE        "2004-07-21"
+#define VER_DATE        "2004-08-16"
 
 
 /* #define DEBUG */
@@ -303,6 +303,7 @@ enum {
   LANG_HI,     /* Hindi */
   LANG_HR,     /* Croatian */
   LANG_HU,     /* Hungarian */
+  LANG_I_KLINGON_ROMANIZED,     /* Klingon (Romanized) */
   LANG_ID,     /* Indonesian */
   LANG_IS,     /* Icelandic */
   LANG_IT,     /* Italian */
@@ -351,6 +352,7 @@ const char * lang_prefixes[NUM_LANGS] = {
   "hi",
   "hr",
   "hu",
+  "tlh",
   "id",
   "is",
   "it",
@@ -3811,6 +3813,7 @@ void show_lang_usage(FILE * f, char * prg)
 /* id */     "  indonesian   bahasa-indonesia\n"
 /* it */     "  italian      italiano\n"
 /* ja */     "  japanese\n"
+/* tlh */    "  klingon      tlhIngan\n"
 /* ko */     "  korean\n"
 /* lt */     "  lithuanian   lietuviu\n"
 /* ms */     "  malay\n"
@@ -3867,6 +3870,7 @@ void show_locale_usage(FILE * f, char * prg)
 	  "  hi_IN   (Hindi)\n"
 	  "  hr_HR   (Croatian     Hrvatski)\n"
 	  "  hu_HU   (Hungarian    Magyar)\n"
+	  "  tlh     (Klingon      tlhIngan)\n"
 	  "  is_IS   (Icelandic    Islenska)\n"
 	  "  id_ID   (Indonesian   Bahasa Indonesia)\n"
 	  "  it_IT   (Italian      Italiano)\n"
@@ -4546,6 +4550,13 @@ void setup(int argc, char * argv[])
 	{
 	  putenv("LANGUAGE=ko_KR.UTF-8");
 	  putenv("LC_ALL=ko_KR.UTF-8");
+	}
+      else if (strcmp(langstr, "klingon") == 0 ||
+	       strcmp(langstr, "tlhIngan") == 0 ||
+	       strcmp(langstr, "tlhingan") == 0)
+	{
+	  putenv("LANGUAGE=tlh.UTF-8");
+	  putenv("LC_ALL=tlh.UTF-8");
 	}
       else if (strcmp(langstr, "tamil") == 0)
 	{

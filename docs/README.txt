@@ -1,17 +1,17 @@
-                                   Tux Paint
+                                  [1]Tux Paint
                                  version 0.9.14
 
-  A simple drawing program for children
+                     A simple drawing program for children
 
                         Copyright 2004 by Bill Kendrick
                                New Breed Software
 
-                           bill@newbreedsoftware.com
-                   http://www.newbreedsoftware.com/tuxpaint/
+                          [2]bill@newbreedsoftware.com
+                  [3]http://www.newbreedsoftware.com/tuxpaint/
 
                          June 14, 2002 - June 20, 2004
 
-     ----------------------------------------------------------------------
+   ---------------------------------------------------------------------------
 
                                      About
 
@@ -24,7 +24,7 @@
      tool-set. However, it provides a much simpler interface, and has
      entertaining, child-oriented additions such as sound effects.
 
-     ----------------------------------------------------------------------
+   ---------------------------------------------------------------------------
 
                                     License:
 
@@ -35,7 +35,7 @@
 
      See COPYING.txt for the full text of the GPL license.
 
-     ----------------------------------------------------------------------
+   ---------------------------------------------------------------------------
 
                                   Objectives:
 
@@ -69,7 +69,7 @@
              is done by selecting it from a collection of thumbnails. Access
              to other files on the computer is restricted.
 
-     ----------------------------------------------------------------------
+   ---------------------------------------------------------------------------
 
                               Other Documentation
 
@@ -91,7 +91,7 @@
        * TODO.txt
          A list of pending features or bugs needing fixed
 
-     ----------------------------------------------------------------------
+   ---------------------------------------------------------------------------
 
                                 Using Tux Paint
 
@@ -99,7 +99,7 @@ Building Tux Paint
 
        To compile Tux Paint from source, please refer to INSTALL.txt.
 
-     ----------------------------------------------------------------------
+   ---------------------------------------------------------------------------
 
 Loading Tux Paint
 
@@ -116,11 +116,11 @@ Loading Tux Paint
          If any errors occur, they will be displayed on the terminal (to
          "stderr").
 
-     ----------------------------------------------------------------------
+   ---------------------------------------------------------------------------
 
   Windows Users
 
-                                                                    [Icon]    
+                                                                   [4][Icon]  
                                                                    Tux Paint  
 
          Simply double-click the "Tux Paint" icon on the desktop (which was
@@ -138,13 +138,13 @@ Loading Tux Paint
          need to run "tuxpaint.exe" from an MSDOS Prompt window. (See
          "INSTALL.txt" for details.)
 
-     ----------------------------------------------------------------------
+   ---------------------------------------------------------------------------
 
   Mac OS X Users
 
          Simply double-click the "Tux Paint" icon.
 
-     ----------------------------------------------------------------------
+   ---------------------------------------------------------------------------
 
 Options
 
@@ -187,8 +187,8 @@ Options
     Available Options
 
            The following settings can be set in the configuration file.
-           (Command-line settings will override these. See the "Command-Line
-           Options" section, below.)
+           (Command-line settings will override these. See the
+           "[5]Command-Line Options" section, below.)
 
            fullscreen=yes
                    Run the program in full screen mode, rather than in a
@@ -367,95 +367,97 @@ Options
                    Run Tux Paint in one of the supported languages. Possible
                    choice for LANGUAGE currently include:
 
-                     +-------------------------------------------------+
-                     |english             |american-english  |         |
-                     |--------------------+------------------+---------|
-                     |afrikaans           |                  |         |
-                     |--------------------+------------------+---------|
-                     |basque              |euskara           |         |
-                     |--------------------+------------------+---------|
-                     |belarusian          |bielaruskaja      |         |
-                     |--------------------+------------------+---------|
-                     |bokmal              |                  |         |
-                     |--------------------+------------------+---------|
-                     |brazilian-portuguese|portuges-brazilian|brazilian|
-                     |--------------------+------------------+---------|
-                     |breton              |brezhoneg         |         |
-                     |--------------------+------------------+---------|
-                     |british-english     |british           |         |
-                     |--------------------+------------------+---------|
-                     |catalan             |catala            |         |
-                     |--------------------+------------------+---------|
-                     |chinese             |simplified-chinese|         |
-                     |--------------------+------------------+---------|
-                     |croatian            |hrvatski          |         |
-                     |--------------------+------------------+---------|
-                     |czech               |cesky             |         |
-                     |--------------------+------------------+---------|
-                     |danish              |dansk             |         |
-                     |--------------------+------------------+---------|
-                     |dutch               |nederlands        |         |
-                     |--------------------+------------------+---------|
-                     |finnish             |suomi             |         |
-                     |--------------------+------------------+---------|
-                     |french              |francais          |         |
-                     |--------------------+------------------+---------|
-                     |german              |deutsch           |         |
-                     |--------------------+------------------+---------|
-                     |greek               |                  |         |
-                     |--------------------+------------------+---------|
-                     |hebrew              |                  |         |
-                     |--------------------+------------------+---------|
-                     |hungarian           |magyar            |         |
-                     |--------------------+------------------+---------|
-                     |icelandic           |islenska          |         |
-                     |--------------------+------------------+---------|
-                     |indonesian          |bahasa-indonesia  |         |
-                     |--------------------+------------------+---------|
-                     |italian             |italiano          |         |
-                     |--------------------+------------------+---------|
-                     |japanese            |                  |         |
-                     |--------------------+------------------+---------|
-                     |korean              |                  |         |
-                     |--------------------+------------------+---------|
-                     |lithuanian          |lietuviu          |         |
-                     |--------------------+------------------+---------|
-                     |malay               |                  |         |
-                     |--------------------+------------------+---------|
-                     |norwegian           |nynorsk           |         |
-                     |--------------------+------------------+---------|
-                     |polish              |polski            |         |
-                     |--------------------+------------------+---------|
-                     |portuguese          |portugues         |         |
-                     |--------------------+------------------+---------|
-                     |romanian            |                  |         |
-                     |--------------------+------------------+---------|
-                     |russian             |                  |         |
-                     |--------------------+------------------+---------|
-                     |serbian             |                  |         |
-                     |--------------------+------------------+---------|
-                     |spanish             |espanol           |         |
-                     |--------------------+------------------+---------|
-                     |slovak              |                  |         |
-                     |--------------------+------------------+---------|
-                     |slovenian           |slovensko         |         |
-                     |--------------------+------------------+---------|
-                     |swedish             |svenska           |         |
-                     |--------------------+------------------+---------|
-                     |tamil               |                  |         |
-                     |--------------------+------------------+---------|
-                     |traditional-chinese |                  |         |
-                     |--------------------+------------------+---------|
-                     |turkish             |                  |         |
-                     |--------------------+------------------+---------|
-                     |vietnamese          |                  |         |
-                     |--------------------+------------------+---------|
-                     |walloon             |walon             |         |
-                     |--------------------+------------------+---------|
-                     |welsh               |cymraeg           |         |
-                     +-------------------------------------------------+
+                     +-------------------------------------------------------+
+                     |english               |american-english    |           |
+                     |----------------------+--------------------+-----------|
+                     |afrikaans             |                    |           |
+                     |----------------------+--------------------+-----------|
+                     |basque                |euskara             |           |
+                     |----------------------+--------------------+-----------|
+                     |belarusian            |bielaruskaja        |           |
+                     |----------------------+--------------------+-----------|
+                     |bokmal                |                    |           |
+                     |----------------------+--------------------+-----------|
+                     |brazilian-portuguese  |portuges-brazilian  |brazilian  |
+                     |----------------------+--------------------+-----------|
+                     |breton                |brezhoneg           |           |
+                     |----------------------+--------------------+-----------|
+                     |british-english       |british             |           |
+                     |----------------------+--------------------+-----------|
+                     |catalan               |catala              |           |
+                     |----------------------+--------------------+-----------|
+                     |chinese               |simplified-chinese  |           |
+                     |----------------------+--------------------+-----------|
+                     |croatian              |hrvatski            |           |
+                     |----------------------+--------------------+-----------|
+                     |czech                 |cesky               |           |
+                     |----------------------+--------------------+-----------|
+                     |danish                |dansk               |           |
+                     |----------------------+--------------------+-----------|
+                     |dutch                 |nederlands          |           |
+                     |----------------------+--------------------+-----------|
+                     |finnish               |suomi               |           |
+                     |----------------------+--------------------+-----------|
+                     |french                |francais            |           |
+                     |----------------------+--------------------+-----------|
+                     |german                |deutsch             |           |
+                     |----------------------+--------------------+-----------|
+                     |greek                 |                    |           |
+                     |----------------------+--------------------+-----------|
+                     |hebrew                |                    |           |
+                     |----------------------+--------------------+-----------|
+                     |hungarian             |magyar              |           |
+                     |----------------------+--------------------+-----------|
+                     |icelandic             |islenska            |           |
+                     |----------------------+--------------------+-----------|
+                     |indonesian            |bahasa-indonesia    |           |
+                     |----------------------+--------------------+-----------|
+                     |italian               |italiano            |           |
+                     |----------------------+--------------------+-----------|
+                     |japanese              |                    |           |
+                     |----------------------+--------------------+-----------|
+                     |klingon               |tlhIngan            |           |
+                     |----------------------+--------------------+-----------|
+                     |korean                |                    |           |
+                     |----------------------+--------------------+-----------|
+                     |lithuanian            |lietuviu            |           |
+                     |----------------------+--------------------+-----------|
+                     |malay                 |                    |           |
+                     |----------------------+--------------------+-----------|
+                     |norwegian             |nynorsk             |           |
+                     |----------------------+--------------------+-----------|
+                     |polish                |polski              |           |
+                     |----------------------+--------------------+-----------|
+                     |portuguese            |portugues           |           |
+                     |----------------------+--------------------+-----------|
+                     |romanian              |                    |           |
+                     |----------------------+--------------------+-----------|
+                     |russian               |                    |           |
+                     |----------------------+--------------------+-----------|
+                     |serbian               |                    |           |
+                     |----------------------+--------------------+-----------|
+                     |spanish               |espanol             |           |
+                     |----------------------+--------------------+-----------|
+                     |slovak                |                    |           |
+                     |----------------------+--------------------+-----------|
+                     |slovenian             |slovensko           |           |
+                     |----------------------+--------------------+-----------|
+                     |swedish               |svenska             |           |
+                     |----------------------+--------------------+-----------|
+                     |tamil                 |                    |           |
+                     |----------------------+--------------------+-----------|
+                     |traditional-chinese   |                    |           |
+                     |----------------------+--------------------+-----------|
+                     |turkish               |                    |           |
+                     |----------------------+--------------------+-----------|
+                     |vietnamese            |                    |           |
+                     |----------------------+--------------------+-----------|
+                     |walloon               |walon               |           |
+                     |----------------------+--------------------+-----------|
+                     |welsh                 |cymraeg             |           |
+                     +-------------------------------------------------------+
 
-     ----------------------------------------------------------------------
+   ---------------------------------------------------------------------------
 
     Overriding System Config. Options using .tuxpaintrc
 
@@ -475,7 +477,7 @@ Options
              print=yes
              mixedcase=yes
 
-     ----------------------------------------------------------------------
+   ---------------------------------------------------------------------------
 
   Command-Line Options
 
@@ -535,7 +537,7 @@ Options
            --locale locale
 
                    Run Tux Paint in one of the support languages. See the
-                   "Choosing a Different Language" section below for the
+                   "[6]Choosing a Different Language" section below for the
                    locale strings (e.g., "de_DE@euro" for German) to use.
 
                    (If your locale is already set, e.g. with the "$LANG"
@@ -551,7 +553,7 @@ Options
                    Only your own configuration file, "~/.tuxpaintrc", if it
                    exists, will be used.
 
-     ----------------------------------------------------------------------
+   ---------------------------------------------------------------------------
 
   Command-Line Informational Options
 
@@ -576,7 +578,7 @@ Options
            --lang help
                    Display a list of available languages in Tux Paint.
 
-     ----------------------------------------------------------------------
+   ---------------------------------------------------------------------------
 
   Choosing a Different Language
 
@@ -587,7 +589,7 @@ Options
 
          Tux Paint also honors your environment's current locale. (You can
          override it on the command-line using the "--locale" option; see
-         above.)
+         [7]above.)
 
          Use the option "--lang help" to list the available language options
          available.
@@ -674,6 +676,8 @@ Options
            |---------------+-------------------+---------------------|
            |ta_IN (*)      |                   |Tamil                |
            |---------------+-------------------+---------------------|
+           |tlh (*)        |tlhIngan           |Klingon              |
+           |---------------+-------------------+---------------------|
            |tr_TR@euro     |                   |Turkish              |
            |---------------+-------------------+---------------------|
            |vi_VN          |                   |Vietnamese           |
@@ -687,7 +691,7 @@ Options
 
            (*) - These languages require their own fonts, since they are not
            represented using a Latin character set, like the others. See the
-           "Special Fonts" section, below.
+           "[8]Special Fonts" section, below.
 
     Setting Your Environment's Locale
 
@@ -725,7 +729,7 @@ Options
                setenv LANG es_ES@euro ; \
                tuxpaint
 
-     ----------------------------------------------------------------------
+   ---------------------------------------------------------------------------
 
       Windows Users
 
@@ -776,7 +780,7 @@ Options
            Some languages require special fonts be installed. These font
            files (which are in TrueType format (TTF)), are much too large to
            include with the Tux Paint download, and are available separately.
-           (See the table above, under the "Choosing a Different Language"
+           (See the table above, under the "[9]Choosing a Different Language"
            section.)
 
            When running Tux Paint in a language that requires its own font,
@@ -793,25 +797,25 @@ Options
              /usr/share/tuxpaint/fonts/locale/ko.ttf
 
            You can download fonts for supported languages from Tux Paint's
-           website, http://www.newbreedsoftware.com/tuxpaint/. (Look in the
-           'Fonts' section under 'Download.')
+           website, [10]http://www.newbreedsoftware.com/tuxpaint/. (Look in
+           the 'Fonts' section under 'Download.')
 
            Under Unix and Linux, you can use the Makefile that comes with the
            font to install the font in the appropriate location.
 
-     ----------------------------------------------------------------------
+   ---------------------------------------------------------------------------
 
 Title Screen
 
        When Tux Paint first loads, a title/credits screen will appear.
 
-                               [Title Screenshot]
+                             [11][Title Screenshot]
 
        Once loading is complete, press a key or click on the mouse to
        continue. (Or, after about 30 seconds, the title screen will go away
        automatically.)
 
-     ----------------------------------------------------------------------
+   ---------------------------------------------------------------------------
 
 Main Screen
 
@@ -821,15 +825,15 @@ Main Screen
 
                The toolbar contains the drawing and editing controls.
 
-[Tools: Paint, Stamp, Lines, Shapes, Text, Magic, Undo, Redo,      Eraser, New,
-                            Open, Save, Print, Quit]
+[12][Tools: Paint, Stamp, Lines, Shapes, Text, Magic, Undo, Redo,       Eraser,
+                         New, Open, Save, Print, Quit]
 
        Middle: Drawing Canvas
 
                The largest part of the screen, in the center, is the drawing
                canvas. This is, obviously, where you draw!
 
-                                   [(Canvas)]
+                                 [13][(Canvas)]
 
        Right Side: Selector
 
@@ -838,14 +842,14 @@ Main Screen
                the various brushes available. When the Rubber Stamp tool is
                selected, it shows the different shapes you can use.
 
-                 [Selectors - Brushes, Letters, Shapes, Stamps]
+               [14][Selectors - Brushes, Letters, Shapes, Stamps]
 
        Lower: Colors
 
                A palette of available colors are shown near the bottom of the
                screen.
 
-   [Colors - Black, White, Red, Pink, Orange, Yellow, Green, Cyan,      Blue,
+[15][Colors - Black, White, Red, Pink, Orange, Yellow, Green, Cyan,       Blue,
                               Purple, Brown, Grey]
 
        Bottom: Help Area
@@ -853,11 +857,11 @@ Main Screen
                At the very bottom of the screen, Tux, the Linux Penguin,
                provides tips and other information while you draw.
 
- (For example: 'Pick a shape. Click to pick the center, drag, then      let go
-when it is the size you want.  Move around to rotate it, and      click to draw
-                                      it.)
+[16](For example: 'Pick a shape. Click to pick the center, drag, then       let
+ go when it is the size you want.  Move around to rotate it, and       click to
+                                   draw it.)
 
-     ----------------------------------------------------------------------
+   ---------------------------------------------------------------------------
 
 Available Tools
 
@@ -875,7 +879,7 @@ Available Tools
                  As you draw, a sound is played. The bigger the brush, the
                  lower the pitch.
 
-     ----------------------------------------------------------------------
+   ---------------------------------------------------------------------------
 
          Stamp (Rubber Stamp)
 
@@ -895,9 +899,10 @@ Available Tools
 
                  (NOTE: If the "nostampcontrols" option is set, Tux Paint
                  won't display the Mirror, Flip, Shrink and Grow controls for
-                 stamps. See the "Options" section of this document, above.)
+                 stamps. See the "[17]Options" section of this document,
+                 above.)
 
-     ----------------------------------------------------------------------
+   ---------------------------------------------------------------------------
 
          Lines
 
@@ -911,7 +916,7 @@ Available Tools
                  Let go of the mouse to complete the line. A "sproing!" sound
                  will play.
 
-     ----------------------------------------------------------------------
+   ---------------------------------------------------------------------------
 
          Shapes
 
@@ -942,7 +947,7 @@ Available Tools
                               drawn on the canvas when you let go of the
                               mouse button. (There's no rotation step.)
 
-     ----------------------------------------------------------------------
+   ---------------------------------------------------------------------------
 
          Text
 
@@ -957,7 +962,7 @@ Available Tools
                  Click elsewhere in the picture and the current line of text
                  will move there, where you can continue editing.
 
-     ----------------------------------------------------------------------
+   ---------------------------------------------------------------------------
 
          Magic (Special Effects)
 
@@ -1024,7 +1029,7 @@ Available Tools
                               you quickly fill parts of the picture, as if it
                               were a coloring book.
 
-     ----------------------------------------------------------------------
+   ---------------------------------------------------------------------------
 
          Eraser
 
@@ -1038,7 +1043,7 @@ Available Tools
                  As you erase, a "squeaky clean" eraser/wiping sound is
                  played.
 
-     ----------------------------------------------------------------------
+   ---------------------------------------------------------------------------
 
   Other Controls
 
@@ -1050,7 +1055,7 @@ Available Tools
                  Note: You can also press [Control]-[Z] on the keyboard to
                  undo.
 
-     ----------------------------------------------------------------------
+   ---------------------------------------------------------------------------
 
          Redo
 
@@ -1063,7 +1068,7 @@ Available Tools
                  Note: You can also press [Control]-[R] on the keyboard to
                  redo.
 
-     ----------------------------------------------------------------------
+   ---------------------------------------------------------------------------
 
          New
 
@@ -1073,7 +1078,7 @@ Available Tools
                  Note: You can also press [Control]-[N] on the keyboard to
                  start a new drawing.
 
-     ----------------------------------------------------------------------
+   ---------------------------------------------------------------------------
 
          Open
 
@@ -1100,12 +1105,12 @@ Available Tools
 
                  If choose to open a picture, and your current drawing hasn't
                  been saved, you will be prompted as to whether you want to
-                 save it or not. (See "Save," below.)
+                 save it or not. (See "[18]Save," below.)
 
                  Note: You can also press [Control]-[O] on the keyboard to
                  get the 'Open' dialog.
 
-     ----------------------------------------------------------------------
+   ---------------------------------------------------------------------------
 
          Save
 
@@ -1125,13 +1130,13 @@ Available Tools
                  create a new entry (a new file).
 
                  (NOTE: If either the "saveover" or "saveovernew" options are
-                 set, it won't ask before saving over. See the "Options"
+                 set, it won't ask before saving over. See the "[19]Options"
                  section of this document, above.)
 
                  Note: You can also press [Control]-[S] on the keyboard to
                  save.
 
-     ----------------------------------------------------------------------
+   ---------------------------------------------------------------------------
 
          Print
 
@@ -1145,7 +1150,7 @@ Available Tools
                               command-line), the "Print" button will be
                               disabled.
 
-                              See the "Options" section of this document,
+                              See the "[20]Options" section of this document,
                               above.
 
                       Restricting Printing
@@ -1159,7 +1164,7 @@ Available Tools
                               For example, with "printdelay=60", you can
                               print only once a minute.
 
-                              See the "Options" section of this document,
+                              See the "[21]Options" section of this document,
                               above.
 
                       Printing Command
@@ -1176,7 +1181,7 @@ Available Tools
                               "printcommand" value in Tux Paint's
                               configuration file.
 
-                              See the "Options" section of this document,
+                              See the "[22]Options" section of this document,
                               above.
 
                       Printer Settings
@@ -1204,10 +1209,10 @@ Available Tools
                               "userdata/print.cfg". Any changes will be saved
                               there as well.
 
-                              See the "Options" section of this document,
+                              See the "[23]Options" section of this document,
                               above.
 
-     ----------------------------------------------------------------------
+   ---------------------------------------------------------------------------
 
          Quit
 
@@ -1216,7 +1221,7 @@ Available Tools
 
                  (NOTE: The "Quit" button can be disabled (e.g., with the
                  "--noquit" command-line option), but the [Escape] key will
-                 still work. See the "Options" section of this document,
+                 still work. See the "[24]Options" section of this document,
                  above.)
 
                  You will first be prompted as to whether you really want to
@@ -1225,13 +1230,13 @@ Available Tools
                  If you choose to quit, and you haven't saved the current
                  picture, you will first be asked if wish to save it. If it's
                  not a new image, you will then be asked if you want to save
-                 over the old version, or create a new entry. (See "Save"
+                 over the old version, or create a new entry. (See "[25]Save"
                  above.)
 
                  NOTE: If the image is saved, it will be reloaded
                  automatically the next time you run Tux Paint!
 
-     ----------------------------------------------------------------------
+   ---------------------------------------------------------------------------
 
                      Loading Other Pictures into Tux Paint
 
@@ -1311,7 +1316,7 @@ Doing it Manually
        Under Windows, this is in the "userdata" folder. Under Mac OS X, this
        is in "Library/Preferences/tuxpaint/" in your home directory.
 
-     ----------------------------------------------------------------------
+   ---------------------------------------------------------------------------
 
                               Extending Tux Paint
 
@@ -1356,7 +1361,7 @@ Where Files Go
 
              /Users/Joe/Library/Preferences/
 
-     ----------------------------------------------------------------------
+   ---------------------------------------------------------------------------
 
   Personal Files
 
@@ -1386,7 +1391,7 @@ Where Files Go
          (For example, if you created a brush named "flower.png", you would
          put it in "~/.tuxpaint/brushes/" under Linux or Unix.)
 
-     ----------------------------------------------------------------------
+   ---------------------------------------------------------------------------
 
 Brushes
 
@@ -1406,7 +1411,7 @@ Brushes
        it's because you forgot to use alpha transparency! See the
        documentation file "PNG.txt" for more information and tips.
 
-     ----------------------------------------------------------------------
+   ---------------------------------------------------------------------------
 
 Stamps
 
@@ -1434,7 +1439,7 @@ Stamps
          use alpha transparency! See the documentation file "PNG.txt" for
          more information and tips.
 
-     ----------------------------------------------------------------------
+   ---------------------------------------------------------------------------
 
   Description Text
 
@@ -1442,8 +1447,8 @@ Stamps
          "picture.png"'s description is stored in "picture.txt" in the same
          directory.)
 
-         The first line of the text file will be used as the default
-         description of the stamp's image.
+         The first line of the text file will be used as the US English
+         description of the stamp's image. It must be encoded in UTF-8.
 
     Language Support
 
@@ -1451,44 +1456,18 @@ Stamps
            translations of the description, to be displayed when Tux Paint is
            running in a different locale (like French or Spanish).
 
-           There are three ways of placing translated descriptions in a
-           stamp's ".txt" file. In each case, the beginning of the line
-           should correspond to the locale code of the language in question
-           (e.g., "de" for German, "fr" for French, etc.).
+           The beginning of the line should correspond to the language code
+           of the language in question (e.g., "fr" for French, and "zh_tw"
+           for Traditional Chinese), followed by ".utf8=" and the translated
+           description (encoded in UTF-8).
 
-             * Lines beginning with "xx=" (where "xx" is the locale code)
-               will be considered plain ASCII. That is, any special
-               characters on the line will be interpreted literally.
-
-               For example, "es=!Ninos!", will come out literally as
-               "!Ninos!"
-
-             * Lines beginning with "xx.esc=" can contain special
-               'escape sequences' which allow you to create a description
-               using special ASCII characters (like "a" and "th") without the
-               need to figure out how to get those characters in the file
-               with whatever editor you chose to use.
-
-               The escape sequences are identical to those used in HTML to
-               display ASCII characters 161 through 255. The sequence begins
-               with a "&" (ampersand), and ends with a ";" (semicolon). See
-               the documentation file "ESCAPES.txt" for a list of escapable
-               characters.
-
-               For example, "es.esc=&iexcl;Ni&ntilde;os!", will come out as
-               "!Ninos!"
-
-               Note: As in HTML, if you want an actual ampersand ("&") in
-               your description when using the "xx.esc" method ,you'll need
-               to escape it: "&amp;".
-
-             * Lines beginning with "xx.utf8=" can be used to use UTF-8
-               encoded text for the description's translation. You'll need an
-               editor capable of saving UTF-8 encoded files.
+           There are scripts in the "po" directory for converting the text
+           files to PO format (and back) for easy translation to different
+           languages. Therefore you should never add or change translations
+           in the .txt files directly.
 
            If no translation is available for the language Tux Paint is
-           currently running in, the default string (the first line, which is
-           typically in English) is used.
+           currently running in, the US English text is used.
 
     Windows Users
 
@@ -1496,7 +1475,7 @@ Stamps
            them as Plain Text, and make sure they have ".txt" at the end of
            the filename...
 
-     ----------------------------------------------------------------------
+   ---------------------------------------------------------------------------
 
   Sound Effects
 
@@ -1518,7 +1497,7 @@ Stamps
            If no localized sound effect can be loaded, Tux Paint will attempt
            to load the 'default' sound file. (e.g., "picture.wav")
 
-     ----------------------------------------------------------------------
+   ---------------------------------------------------------------------------
 
   Stamp Options
 
@@ -1556,6 +1535,12 @@ Stamps
              currently-selected color.)
 
              Add the word "tintable" to the stamp's data file.
+
+             Sometimes you don't want the white or gray parts of an image
+             tinted (see for example the dry erase marker stamp in the
+             default stamp package). You can add the word "notintgray" to the
+             stamp's data file to accomplish this. Only areas with saturation
+             over 25 % are then tinted.
 
     Unalterable Stamps
 
@@ -1598,7 +1583,7 @@ Stamps
          named "truck_mirror.png", which will be used when the stamp is
          mirrored (rather than using a backwards version of 'truck.png').
 
-     ----------------------------------------------------------------------
+   ---------------------------------------------------------------------------
 
 Fonts
 
@@ -1608,7 +1593,7 @@ Fonts
        font and provide four different sizes in the 'Letters' selector when
        using the 'Text' tool.
 
-     ----------------------------------------------------------------------
+   ---------------------------------------------------------------------------
 
                                 More Information
 
@@ -1617,9 +1602,32 @@ Fonts
 
      If you need help, feel free to contact New Breed Software:
 
-       http://www.newbreedsoftware.com/
+       [26]http://www.newbreedsoftware.com/
 
      You may also wish to participate in the numerous Tux Paint mailing
      lists:
 
-       http://www.newbreedsoftware.com/tuxpaint/lists/
+       [27]http://www.newbreedsoftware.com/tuxpaint/lists/
+
+References
+
+   Visible links
+   2. mailto:bill@newbreedsoftware.com
+   3. http://www.newbreedsoftware.com/tuxpaint/
+   5. file:///home/kendrick/Development/tux/tp/tuxpaint/docs/html/README.html#command_line
+   6. file:///home/kendrick/Development/tux/tp/tuxpaint/docs/html/README.html#different_language
+   7. file:///home/kendrick/Development/tux/tp/tuxpaint/docs/html/README.html#locale
+   8. file:///home/kendrick/Development/tux/tp/tuxpaint/docs/html/README.html#special_fonts
+   9. file:///home/kendrick/Development/tux/tp/tuxpaint/docs/html/README.html#different_language
+  10. http://www.newbreedsoftware.com/tuxpaint/
+  17. file:///home/kendrick/Development/tux/tp/tuxpaint/docs/html/README.html#options
+  18. file:///home/kendrick/Development/tux/tp/tuxpaint/docs/html/README.html#save
+  19. file:///home/kendrick/Development/tux/tp/tuxpaint/docs/html/README.html#options
+  20. file:///home/kendrick/Development/tux/tp/tuxpaint/docs/html/README.html#options
+  21. file:///home/kendrick/Development/tux/tp/tuxpaint/docs/html/README.html#options
+  22. file:///home/kendrick/Development/tux/tp/tuxpaint/docs/html/README.html#options
+  23. file:///home/kendrick/Development/tux/tp/tuxpaint/docs/html/README.html#options
+  24. file:///home/kendrick/Development/tux/tp/tuxpaint/docs/html/README.html#options
+  25. file:///home/kendrick/Development/tux/tp/tuxpaint/docs/html/README.html#save
+  26. http://www.newbreedsoftware.com/
+  27. http://www.newbreedsoftware.com/tuxpaint/lists/
