@@ -2368,7 +2368,7 @@ static void mainloop(void)
 			       !disable_stamp_controls)
 			{
 			  /* Stamp controls! */
-                          int stamp_sound = -1;
+                          int control_sound = -1;
 			  if (event.button.y >= (48 * ((max / 2) + TOOLOFFSET / 2)) + 40 &&
 			      event.button.y < (48 * ((max / 2) + TOOLOFFSET / 2)) + 40 + 48)
 			    {
@@ -2381,7 +2381,7 @@ static void mainloop(void)
 				    {
 				      state_stamps[cur_stamp]->mirrored =
 					!state_stamps[cur_stamp]->mirrored;
-				      stamp_sound = SND_MIRROR;
+				      control_sound = SND_MIRROR;
 				    }
 				}
 			      else
@@ -2391,7 +2391,7 @@ static void mainloop(void)
 				    {
 				      state_stamps[cur_stamp]->flipped =
 					!state_stamps[cur_stamp]->flipped;
-				      stamp_sound = SND_FLIP;
+				      control_sound = SND_FLIP;
 				    }
 				}
 			    }
@@ -2405,7 +2405,7 @@ static void mainloop(void)
 				  if (state_stamps[cur_stamp]->size > MIN_STAMP_SIZE)
 				    {
 				      state_stamps[cur_stamp]->size--;
-				      stamp_sound = SND_SHRINK;
+				      control_sound = SND_SHRINK;
 				    }
 				}
 			      else
@@ -2414,13 +2414,13 @@ static void mainloop(void)
 				  if (state_stamps[cur_stamp]->size < MAX_STAMP_SIZE)
 				    {
 				      state_stamps[cur_stamp]->size++;
-				      stamp_sound = SND_GROW;
+				      control_sound = SND_GROW;
 				    }
 				}
 			    }
-			  if (stamp_sound != -1)
+			  if (control_sound != -1)
 			    {
-			      playsound(0, stamp_sound, 0);
+			      playsound(0, control_sound, 0);
 			      draw_stamps();
 			      SDL_UpdateRect(screen, WINDOW_WIDTH - 96, 0, 96, (48 * 7) + 40 + HEIGHTOFFSET);
 			      update_stamp_xor();
@@ -2434,7 +2434,7 @@ static void mainloop(void)
 			       !disable_stamp_controls)
 			{
 			  /* Text controls! */
-                          int text_sound = -1;
+                          int control_sound = -1;
 			  if (event.button.y >= (48 * ((max / 2) + TOOLOFFSET / 2)) + 40 &&
 			      event.button.y < (48 * ((max / 2) + TOOLOFFSET / 2)) + 40 + 48)
 			    {
@@ -2447,12 +2447,12 @@ static void mainloop(void)
 				  if (text_state & TTF_STYLE_BOLD)
 				    {
 				      text_state &= ~TTF_STYLE_BOLD;
-				      text_sound = SND_THIN;
+				      control_sound = SND_THIN;
 				    }
 				  else
 				    {
 				      text_state |= TTF_STYLE_BOLD;
-				      text_sound = SND_THICK;
+				      control_sound = SND_THICK;
 				    }
 				}
 			      else
@@ -2461,12 +2461,12 @@ static void mainloop(void)
 				  if (text_state & TTF_STYLE_ITALIC)
 				    {
 				      text_state &= ~TTF_STYLE_ITALIC;
-				      text_sound = SND_CHALK;
+				      control_sound = SND_CHALK;
 				    }
 				  else
 				    {
 				      text_state |= TTF_STYLE_ITALIC;
-				      text_sound = SND_SMUDGE;
+				      control_sound = SND_SMUDGE;
 				    }
 				}
 			    }
@@ -2480,7 +2480,7 @@ static void mainloop(void)
 				  if (text_size > MIN_TEXT_SIZE)
 				    {
 				      text_size--;
-				      text_sound = SND_SHRINK;
+				      control_sound = SND_SHRINK;
 				    }
 				}
 			      else
@@ -2489,13 +2489,13 @@ static void mainloop(void)
 				  if (text_size < MAX_TEXT_SIZE)
 				    {
 				      text_size++;
-				      text_sound = SND_GROW;
+				      control_sound = SND_GROW;
 				    }
 				}
 			    }
-			  if (text_sound != -1)
+			  if (control_sound != -1)
 			    {
-			      playsound(0, text_sound, 0);
+			      playsound(0, control_sound, 0);
 			      draw_fonts();
 			      SDL_UpdateRect(screen, WINDOW_WIDTH - 96, 0, 96, (48 * 7) + 40 + HEIGHTOFFSET);
 			    }
