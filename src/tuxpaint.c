@@ -1328,6 +1328,11 @@ static int hit_test(const SDL_Rect * const r, unsigned x, unsigned y)
 
 #define HIT(r) hit_test(&(r), event.button.x, event.button.y)
 
+
+/* "#if"ing out, since unused; bjk 2005.01.09 */
+
+#if 0
+
 // x,y are pixel-wise screen-relative (mouse location), not grid-wise
 // w,h are the size of a grid item
 // Return the grid box.
@@ -1339,6 +1344,8 @@ static int grid_hit_wh(const SDL_Rect * const r, unsigned x, unsigned y, unsigne
 
 // test an SDL_Rect r containing an array of WxH items for a grid location
 #define GRIDHIT_WH(r,W,H) grid_hit_wh(&(r), event.button.x, event.button.y, W,H)
+
+#endif
 
 // test an SDL_Rect r containing an array of SDL_Surface surf for a grid location
 #define GRIDHIT_SURF(r,surf) grid_hit_wh(&(r), event.button.x, event.button.y, (surf)->w, (surf)->h)
@@ -1759,7 +1766,7 @@ printf("               %s\n", base[i]->style);
       boldmap[boldmax] = 1;
       boldmap[boldmin] = 0;
       int boldmid = boldcounts[boldmin+1] ? boldmin+1 : boldmin+2;
-      int zmin, zmid, zmax;
+      int zmin = 0, zmid = 0, zmax = 0;
       i = 3;
       while(i--){
         if(base[i]->boldness==boldmin)
