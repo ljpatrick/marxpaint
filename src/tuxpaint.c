@@ -2368,7 +2368,7 @@ static void eat_sdl_events(void)
       else if (event.type == SDL_KEYDOWN)
         {
           SDLKey key  = event.key.keysym.sym;
-          SDLMod ctrl = event.key.keysym.mod & (KMOD_CTRL|KMOD_LCTRL|KMOD_RCTRL);  
+          SDLMod ctrl = event.key.keysym.mod & KMOD_CTRL;
           SDLMod alt  = event.key.keysym.mod & KMOD_ALT;
           if (key==SDLK_ESCAPE || (key==SDLK_c && ctrl) || (key==SDLK_F4 && alt))
             exit(0);
@@ -2734,11 +2734,7 @@ static void mainloop(void)
 		  done = do_quit();
 	        }
 #endif
-	      else if (key == SDLK_z &&
-		       (mod & KMOD_CTRL ||
-			mod & KMOD_LCTRL ||
-			mod & KMOD_RCTRL) &&
-		       !noshortcuts)
+	      else if (key==SDLK_z && (mod & KMOD_CTRL) && !noshortcuts)
 		{
 		  /* Ctrl-Z - Undo */
 		  
@@ -2754,11 +2750,7 @@ static void mainloop(void)
 		      shape_tool_mode = SHAPE_TOOL_MODE_DONE;
 		    }
 		}
-	      else if (key == SDLK_r &&
-		       (mod & KMOD_CTRL ||
-			mod & KMOD_LCTRL ||
-			mod & KMOD_RCTRL) &&
-		       !noshortcuts)
+	      else if (key==SDLK_r && (mod & KMOD_CTRL) && !noshortcuts)
 		{
 		  /* Ctrl-R - Redo */
 		  
@@ -2769,11 +2761,7 @@ static void mainloop(void)
 		      shape_tool_mode = SHAPE_TOOL_MODE_DONE;
 		    }
 		}
-	      else if (key == SDLK_o &&
-		       (mod & KMOD_CTRL ||
-			mod & KMOD_LCTRL ||
-			mod & KMOD_RCTRL) &&
-		       !noshortcuts)
+	      else if (key==SDLK_o && (mod & KMOD_CTRL) && !noshortcuts)
 		{
 		  /* Ctrl-O - Open */
 		  
@@ -2810,11 +2798,7 @@ static void mainloop(void)
 		  /* FIXME: Make delay configurable: */
 		  control_drawtext_timer(1000, tool_tips[cur_tool]);
 		}
-	      else if ((key == SDLK_n &&
-			((mod & KMOD_CTRL ||
-			  mod & KMOD_LCTRL ||
-			  mod & KMOD_RCTRL))) && tool_avail[TOOL_NEW] &&
-		       !noshortcuts)
+	      else if ( (key==SDLK_n && (mod & KMOD_CTRL)) && tool_avail[TOOL_NEW] && !noshortcuts)
 		{
 		  /* Ctrl-N - New */
 		  
@@ -2855,11 +2839,7 @@ static void mainloop(void)
 		  draw_toolbar();
 		  update_screen_rect(&r_tools);
 		}
-	      else if (key == SDLK_s &&
-		       (mod & KMOD_CTRL ||
-			mod & KMOD_LCTRL ||
-			mod & KMOD_RCTRL) &&
-		       !noshortcuts)
+	      else if (key==SDLK_s && (mod & KMOD_CTRL) && !noshortcuts)
 		{
 		  /* Ctrl-S - Save */
 		  
@@ -13732,9 +13712,7 @@ static int do_open(int want_new_tool)
 	    playsound(1, SND_CLICK, 1);
 	  }
 	  else if (key == SDLK_d &&
-		   (event.key.keysym.mod & KMOD_CTRL ||
-		    event.key.keysym.mod & KMOD_LCTRL ||
-		    event.key.keysym.mod & KMOD_RCTRL) &&
+		   (event.key.keysym.mod & KMOD_CTRL) &&
 		   d_places[which] != PLACE_STARTERS_DIR &&
 		   !noshortcuts)
 	    {
