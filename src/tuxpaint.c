@@ -2047,6 +2047,7 @@ static void groupfonts(void)
 
 typedef struct stamp_type {
   double ratio;
+  char *stxt;
   unsigned tinter : 3;
   unsigned colorable : 1;
   unsigned tintable : 1;
@@ -2064,7 +2065,6 @@ typedef struct stamp_type {
 static int num_stamps;
 static SDL_Surface * img_stamps[MAX_STAMPS];
 static SDL_Surface * img_stamps_premirror[MAX_STAMPS];
-static char * txt_stamps[MAX_STAMPS];
 static stamp_type * stamp_data[MAX_STAMPS];
 #ifndef NOSOUND
 static Mix_Chunk * snd_stamps[MAX_STAMPS];
@@ -3553,15 +3553,15 @@ static void mainloop(void)
                           if (do_draw)
                             draw_stamps();
                           
-                          if (txt_stamps[cur_stamp] != NULL)
+                          if (stamp_data[cur_stamp]->stxt != NULL)
                             {
 #ifdef DEBUG
-                              printf("txt_stamps[cur_stamp] = %s\n",
-                                     txt_stamps[cur_stamp]);
+                              printf("stamp_data[cur_stamp]->stxt = %s\n",
+                                     stamp_data[cur_stamp]->stxt);
 #endif
 
                               draw_tux_text(TUX_GREAT,
-                                                txt_stamps[cur_stamp], 1);
+                                                stamp_data[cur_stamp]->stxt, 1);
                             }
                           else
                             draw_tux_text(TUX_GREAT, "", 0);
@@ -3658,7 +3658,7 @@ static void mainloop(void)
 
 		      /* FIXME: Make delay configurable: */
 
-		      control_drawtext_timer(1000, txt_stamps[cur_stamp]);
+		      control_drawtext_timer(1000, stamp_data[cur_stamp]->stxt);
 		    }
 		  else if (cur_tool == TOOL_LINES)
 		    {
@@ -6814,8 +6814,8 @@ static void loadstamp_callback(const char *restrict const dir, unsigned dirlen, 
         {
           char fname[512];
           snprintf(fname, sizeof fname, "%s/%s", dir, files[i].str);
-          txt_stamps[num_stamps] = loaddesc(fname);
           stamp_data[num_stamps] = malloc(sizeof *stamp_data[num_stamps]);
+          stamp_data[num_stamps]->stxt = loaddesc(fname);
           loadinfo(fname, stamp_data[num_stamps]);
 
           img_stamps[num_stamps] = NULL;
@@ -6839,10 +6839,10 @@ static void loadstamp_callback(const char *restrict const dir, unsigned dirlen, 
           else
             {
               // we have a failure, abort mission
-              free(txt_stamps[num_stamps]);
-              free(stamp_data[num_stamps]);
               free(img_stamps[num_stamps]);
               free(img_stamps_premirror[num_stamps]);
+              free(stamp_data[num_stamps]->stxt);
+              free(stamp_data[num_stamps]);
             }
         }
       free(files[i].str);
@@ -10976,26 +10976,16 @@ static char * loaddesc(const char * const fname)
 
   txt_fname = strdup(fname);
 
-  if (strstr(txt_fname, ".png") != NULL)
+  if (strstr(txt_fname, ".png") != NULL)   // FIXME: isn't this always OK?
     {
       strcpy(strstr(txt_fname, ".png"), ".txt");
 
       fi = fopen(txt_fname, "r");
-
-      if (fi == NULL)
-	{
-	  /*
-	    fprintf(stderr, "\nWarning: Couldn't open a description file:\n");
-	    perror(txt_fname);
-	    fprintf(stderr, "\n");
-	  */
-
-	  free(txt_fname);
-
-	  return NULL;
-	}
-
       free(txt_fname);
+
+      if (!fi)
+	return NULL;
+
 
       got_first = 0;
       found = 0;
@@ -12053,17 +12043,13 @@ static void cleanup(void)
 
   for (i = 0; i < num_stamps; i++)
     {
-      if (txt_stamps[i])
+      if (stamp_data[i]->stxt)
 	{
-	  free(txt_stamps[i]);
-	  txt_stamps[i] = NULL;
+	  free(stamp_data[i]->stxt);
+	  stamp_data[i]->stxt = NULL;
 	}
-
-      if (stamp_data[i])
-	{
-	  free(stamp_data[i]);
-	  stamp_data[i] = NULL;
-	}
+      free(stamp_data[i]);
+      stamp_data[i] = NULL;
     }
   free_surface_array( img_stamps, num_stamps );
   free_surface_array( img_stamps_premirror, num_stamps );
