@@ -8,6 +8,9 @@ http://www.newbreedsoftware.com/tuxpaint/
 
 
 2004.November.26 (0.9.15)
+  * Sorry about that leak. Many MB per stamp and nobody complained???
+    Albert Cahalan <albert@users.sf.net>
+
   * Greatly improved stamp outlining (to avoid empty rows or columns
     and other artifacts) by using a thick stippled pattern.
     Albert Cahalan <albert@users.sf.net>

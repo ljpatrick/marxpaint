@@ -3296,6 +3296,7 @@ trysat:;
 	}
     }
   SDL_UnlockSurface(tmp_surf);
+  free(work);
 }
 
 // This tints a greyscale stamp. Hopefully such stamps remain rare.
@@ -3428,6 +3429,7 @@ trysat:;
 	}
     }
   SDL_UnlockSurface(tmp_surf);
+  free(work);
 }
 
 //////////////////////////////////////////////////////////////////////
