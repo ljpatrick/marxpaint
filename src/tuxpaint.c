@@ -10039,12 +10039,12 @@ int do_open(int want_new_tool)
 	}
       
       free(dirname);
+  }
       
       
 #ifdef DEBUG
       printf("%d saved files were found!\n", num_files);
 #endif
-  }
 
 
   
@@ -10623,7 +10623,6 @@ int do_open(int want_new_tool)
 
       free(d_names);
       free(d_exts);
-    }
 
   return(want_new_tool);
 }
