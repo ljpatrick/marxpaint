@@ -26,7 +26,7 @@
 
 
 #define VER_VERSION     "0.9.14"
-#define VER_DATE        "2004-08-19"
+#define VER_DATE        "2004-08-23"
 
 
 /* #define DEBUG */
@@ -673,13 +673,6 @@ void handle_keymouse(SDLKey key, Uint8 updown);
 void move_keymouse(void);
 void handle_active(SDL_Event * event);
 char * remove_slash(char * path);
-unsigned char * utf8_decode(unsigned char * str);
-
-void convert_open(const char * from);
-void convert_close();
-char * convert2utf8(char c);
-int converts();
-int delete_utf8_char(char * utf8_str, int len);
 void anti_carriage_return(int left, int right, int cur_top, int new_top,
 		          int cur_bot, int line_width);
 int mySDL_WaitEvent(SDL_Event *event);
@@ -1131,16 +1124,9 @@ void mainloop(void)
 
 			  if (texttool_len > 0)
 			    {
-			      if (converts())
-				{
-				  texttool_len = delete_utf8_char(texttool_str, texttool_len);
-				}
-			      else
-				{
-				  texttool_len--;
-				  texttool_str[texttool_len] = '\0';
-				  playsound(0, SND_KEYCLICK, 1);
-				}
+			      texttool_len--;
+			      texttool_str[texttool_len] = '\0';
+			      playsound(0, SND_KEYCLICK, 1);
 	        
 			      do_render_cur_text(0);
 			    }
@@ -1177,24 +1163,7 @@ void mainloop(void)
 				     key_down, key_unicode, key_unicode);
 #endif
 	  	     
-
-			      if (converts())
-				{
-				  char * str = convert2utf8(key_unicode);
-				  int i;
-				  size_t len = strlen(str);
-
-				  for (i = 0; i < len; i++)
-				    {
-				      texttool_str[texttool_len++] = str[i];
-				    }
-
-				  free(str);
-				}
-			      else
-				{
-				  texttool_str[texttool_len++] = key_unicode;
-				}
+			        texttool_str[texttool_len++] = key_unicode;
 		
 			      texttool_str[texttool_len] = '\0';
 			      playsound(0, SND_KEYCLICK, 1);
@@ -4694,36 +4663,6 @@ void setup(int argc, char * argv[])
   textdomain("tuxpaint");
 
   language = current_language();
-
-  if (language == LANG_JA)
-    {
-      putenv("OUTPUT_CHARSET=ja_JP.UTF-8");
-    }
-  else if (language == LANG_HE)
-    {
-      putenv("OUTPUT_CHARSET=he_IL");
-      convert_open("ISO8859-8");
-    }
-  else if (language == LANG_PL)
-    {
-      putenv("OUTPUT_CHARSET=pl_PL.UTF-8");
-      convert_open("ISO8859-2");
-    }
-  else if (language == LANG_HR)
-    {
-      putenv("OUTPUT_CHARSET=hr_HR.UTF-8");
-      convert_open("ISO8859-2");
-    }
-  else if (language == LANG_LT)
-    {
-      putenv("OUTPUT_CHARSET=lt_LT.UTF-8");
-      convert_open("ISO8859-13");
-    }
-  else if (language == LANG_TA)
-    {
-      putenv("OUTPUT_CHARSET=ta_IN.UTF-8");
-      convert_open("ISO8859-1");
-    }
 
 
 #ifdef DEBUG
@@ -8773,7 +8712,6 @@ void cleanup(void)
   TTF_Quit();
   SDL_Quit();
 
-  convert_close();
 }
 
 
@@ -12305,149 +12243,6 @@ char *remove_slash( char *path )
     path[len-1] = 0;
 
   return path;
-}
-
-
-/* Decode a UTF8 string */
-
-unsigned char * utf8_decode(unsigned char * str)
-{
-  int i;
-  unsigned char utf8_char[4];
-  unsigned char utf8_str[1024];
-  
-
-  utf8_str[0] = '\0';
-  
-  for (i = 0; i < strlen(str); i++)
-    {
-      /* How many bytes does this character need? */
-
-      if (str[i] < 128)  /* 0xxx xxxx - 1 byte */
-	{
-	  utf8_char[0] = str[i];
-	  utf8_char[1] = '\0';
-	}
-      else if ((str[i] & 0xE0) == 0xC0)  /* 110x xxxx - 2 bytes */
-	{
-	  utf8_char[0] = str[i];
-	  utf8_char[1] = str[i + 1];
-	  utf8_char[2] = '\0';
-	  i = i + 1;
-	}
-      else if ((str[i] & 0xF0) == 0xE0)  /* 1110 xxxx - 3 bytes */
-	{
-	  utf8_char[0] = str[i];
-	  utf8_char[1] = str[i + 1];
-	  utf8_char[2] = str[i + 2];
-	  utf8_char[3] = '\0';
-	  i = i + 2;
-	}
-      else  /* 1111 0xxx - 4 bytes */
-	{
-	  utf8_char[0] = str[i];
-	  utf8_char[1] = str[i + 1];
-	  utf8_char[2] = str[i + 2];
-	  utf8_char[3] = str[i + 3];
-	  utf8_char[4] = '\0';
-	  i = i + 3;
-	}
-
-      strcat(utf8_str, utf8_char);
-    }
-
-  return(strdup(utf8_str));
-}
-
-
-static iconv_t cd = (iconv_t)(-1);
-
-int converts()
-{
-  if ( cd == (iconv_t)(-1) )
-    return 0;
-  else
-    return 1;
-}
-
-void convert_open(const char *from)
-{
-  cd = iconv_open ("UTF-8", from);
-  if (cd == (iconv_t)(-1))
-    {
-      /* FIXME: Error! */
-    }
-}
-
-void convert_close()
-{
-  if (cd != (iconv_t)(-1))
-    iconv_close(cd);
-}
-
-char * convert2utf8(char c)
-{
-  char inbuf[1];
-  char outbuf[4];
-
-  char *inptr;
-  char *outptr;
-  size_t inbytes_left, outbytes_left;
-  int count;
-
-  inbuf[0]=c;
-  memset(outbuf, 0, 4);
-  inbytes_left = 1;
-  outbytes_left = 4;
-  inptr = inbuf;
-  outptr = (char *) outbuf;
-
-  count = iconv (cd, &inptr, &inbytes_left, &outptr, &outbytes_left);
-  /*
-    if (count < 0)
-    {
-    printf ("Error!\n");
-    }
-  */
-
-  return strdup(outbuf);
-}
-
-
-/* in:
-   char *utf8_str - buffer containing a well-formed utf8 string
-   int len        - length of the above string in bytes; len >= 1
-   out:
-   int result     - length of the above string in bytes after removing
-   last utf8 char
-*/
-
-int delete_utf8_char(char *utf8_str, int len)
-{
-  /* from man utf-8:
-     The first byte of a multi-byte sequence which represents a single
-     non-ASCII UCS character is always in the range 0xc0 to 0xfd and indi-
-     cates how long this multi-byte sequence is.  All further bytes in a
-     multi-byte sequence are in the range 0x80 to 0xbf.
-  */
-     
-  unsigned char *current_char_ptr = utf8_str + len - 1;
-  unsigned char current_char = *current_char_ptr;
-
-  while ( (current_char >= 0x80) && (current_char <= 0xbf) )
-    {
-      /* part of the utf8 multibyte char but not the first byte */
-
-      len--;
-      current_char_ptr--;
-      current_char = *current_char_ptr;
-    }
-
-  /* we have 1 char to remove */
-  *current_char_ptr = '\0';
-  len--;
-
-  return len;
 }
 
 
