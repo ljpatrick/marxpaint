@@ -1,5 +1,5 @@
 # Tux Paint Korean messages
-# Copyright (C) 2002-2003 Mark K. Kim
+# Copyright (C) 2002-2004 Mark K. Kim
 # Translation: Mark K. Kim (김강현) <tuxNO_SOLICITATIONpaint-dev@cbreak.org>,
 # 2003-2004.
 #
@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: Tux Paint 0.9.14\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2004-06-14 22:41+0200\n"
-"PO-Revision-Date: 2004-03-22 02:26-0800\n"
+"PO-Revision-Date: 2004-07-07 01:25-0700\n"
 "Last-Translator: Mark K. Kim <tuxNO_SOLICITATIONpaint-dev@cbreak.org>\n"
 "Language-Team: N/A\n"
 "MIME-Version: 1.0\n"
@@ -27,9 +27,8 @@ msgid "Drawing program"
 msgstr "그림 프로그램"
 
 #: tuxpaint.desktop.in.h:3
-#, fuzzy
 msgid "Tux Paint"
-msgstr "물감"
+msgstr "턱스페인트"
 
 #: colors.h:62
 msgid "Black!"
