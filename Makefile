@@ -193,6 +193,9 @@ uninstall:
 	-if [ "x$(GNOME_PREFIX)" != "x" ]; then \
 	  rm $(GNOME_PREFIX)/share/gnome/apps/Graphics/tuxpaint.desktop; \
 	  rm $(GNOME_PREFIX)/share/pixmaps/tuxpaint.png; \
+	else \
+	  rm /usr/share/gnome/apps/Graphics/tuxpaint.desktop; \
+	  rm /usr/share/pixmaps/tuxpaint.png; \
 	fi
 	-if [ "x$(KDE_PREFIX)" != "x" ]; then \
 	  rm $(KDE_PREFIX)/Graphics/tuxpaint.desktop; \
@@ -256,6 +259,8 @@ install-gnome:
 	 install -d $(GNOME_PREFIX)/share/gnome/apps/Graphics; \
 	 cp src/tuxpaint.desktop $(GNOME_PREFIX)/share/gnome/apps/Graphics/; \
 	 chmod 644 $(GNOME_PREFIX)/share/gnome/apps/Graphics/tuxpaint.desktop; \
+	else \
+	 make install-gnome GNOME_PREFIX=/usr; \
 	fi
 
 
