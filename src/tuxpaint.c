@@ -21,12 +21,12 @@
   along with this program; if not, write to the Free Software
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   
-  June 14, 2002 - April 14, 2004
+  June 14, 2002 - April 17, 2004
 */
 
 
 #define VER_VERSION     "0.9.14"
-#define VER_DATE        "2004.04.14"
+#define VER_DATE        "2004.04.17"
 
 
 /* #define DEBUG */
@@ -3770,6 +3770,9 @@ void show_usage(FILE * f, char * prg)
 	  blank, blank, blank,
 	  blank, blank, blank,
 	  blank, blank, blank,
+#ifdef WIN32
+	  blank,
+#endif
 	  blank);
 
   free(blank);
@@ -7468,6 +7471,8 @@ void wordwrap_text(TTF_Font * font, char * str, SDL_Color color,
 	      if (locale_str[i] == ' ' || locale_str[i] == '\0')
 		{
 		  text = TTF_RenderUTF8_Blended(locale_font, utf8_str, color);
+
+		  if (!text) continue;  /* Didn't render anything... */
 
 		  /* ----------- */
 		  if (text->w > right - left)

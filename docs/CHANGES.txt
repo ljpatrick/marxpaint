@@ -11,6 +11,9 @@ http://www.newbreedsoftware.com/tuxpaint/
   * Updated Makefile for easier install.
     Mark K. Kim <tuxNO_SOLICITATIONpaint-dev@cbreak.org>
 
+  * Fixed crash bug when translated text ends in a space.
+    Mark K. Kim & John Popplewell
+
   * Vietnamese translation created.  (Simple version)
     Le Quang Phan <lqphan@hn.vnn.vn>
 
