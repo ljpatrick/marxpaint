@@ -23,7 +23,7 @@ New Breed Software</p>
 <p><a href="mailto:bill@newbreedsoftware.com">bill@newbreedsoftware.com</a><br>
 <a href="http://www.newbreedsoftware.com/tuxpaint/">http://www.newbreedsoftware.com/tuxpaint/</a></p>
 
-<p>June 14, 2002 - August 19, 2004</p>
+<p>June 14, 2002 - September 13, 2004</p>
 </center>
 
 <hr size=2 noshade>
@@ -819,6 +819,24 @@ New Breed Software</p>
 
 	  <p>Only your own configuration file, "<code>~/.tuxpaintrc</code>",
           if it exists, will be used.</p>
+	</dd>
+
+        <dt><code><b>--nolockfile</b></code></dt>
+        <dd>
+	  <p>By default, Tux&nbsp;Paint uses what's known as a 'lockfile'
+	  to prevent it from being launched more than once in 30&nbsp;seconds.
+	  (This is to avoid accidentally running multiple copies; for example,
+	  by double-clicking a single-click launcher, or simply
+	  impatiently clicking the icon multiple times.)</p>
+
+	  <p>To make Tux&nbsp;Paint ignore the lockfile, allowing it to
+	  run again, even if it was just launched less than 30&nbsp;seconds
+	  ago, run Tux&nbsp;Paint with the '<code>--nolockfile</code>' option
+	  on the command-line.</p>
+
+	  <p>By default, the lockfile is stored in
+	  "<code>~/.tuxpaint/</code>" under Linux and Unix,
+	  and "<code>userdata\</code>" under Windows.</p>
 	</dd>
       </dl>
       </blockquote>

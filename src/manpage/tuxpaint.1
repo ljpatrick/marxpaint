@@ -1,5 +1,5 @@
-.\" tuxpaint.1 - 2004.08.19
-.TH TUXPAINT 1 "19 Aug 2004" "0.9.14" "Tux Paint"
+.\" tuxpaint.1 - 2004.09.13
+.TH TUXPAINT 1 "13 Sep 2004" "0.9.14" "Tux Paint"
 .SH NAME
 tuxpaint -- A drawing program for young children.
 
@@ -65,7 +65,7 @@ tuxpaint -- A drawing program for young children.
 
 .TP 9
 .B tuxpaint
-[\-\-nosysconfig]
+[\-\-nosysconfig] [\-\-nolockfile]
 
 .SH DESCRIPTION
 .PP
@@ -403,6 +403,14 @@ Display a lists of all supported languages.
 With this option, \fITux Paint\fP will not attempt to read the
 system-wide configuration file (typically \fI/etc/tuxpaint/tuxpaint.conf\fP).
 
+.TP 8
+.B \-\-nolockfile
+By default, \fITux Paint\fP uses a lockfile (stored in the user's
+local Tux Paint directory) which prevents it from being launched more than
+once in 30 seconds. (Sometimes children get too eager, or user interfaces
+only require one click, but users think they need to double-click.)
+This option makes \fITux Paint\fP ignore the current lockfile.
+
 .SH ENVIRONMENT
 .l
 While \fITux Paint\fP may refer to a number of environment variables indirectly
@@ -435,7 +443,8 @@ User's configuration file.  It can be used to set default options
 override any settings in the system-wide configuration file.
 .RS
 .PP
-(Not created or edited automatically; must be created manually.)
+(Not created or edited automatically; must be created manually.
+You can do this by hand, or use '\fITux Paint Config.\fP.')
 .RE
 .TP 8
 .B $HOME/.tuxpaint/saved/
@@ -454,6 +463,16 @@ is re-run.)
 .RS
 .PP
 (Created when \fITux Paint\fP is \fIQuit\fP.)
+.RE
+.TP 8
+.B $HOME/.tuxpaint/lockfile.dat
+A lockfile that prevents \fITux Paint\fP from being launched more than once
+every 30 seconds.  Disable checking the lockfile by using the
+'\-\-nolockfile' command-line argument.
+.RS
+.PP
+(There's no reason to delete the lockfile, as it contains a timestamp
+inside which causes it to expire after 30 seconds.)
 .RE
 
 .SH COPYRIGHT

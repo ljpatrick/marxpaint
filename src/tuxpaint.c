@@ -21,12 +21,12 @@
   along with this program; if not, write to the Free Software
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   
-  June 14, 2002 - September 4, 2004
+  June 14, 2002 - September 13, 2004
 */
 
 
 #define VER_VERSION     "0.9.14"
-#define VER_DATE        "2004-09-04"
+#define VER_DATE        "2004-09-13"
 
 
 /* #define DEBUG */
@@ -3746,7 +3746,7 @@ void show_usage(FILE * f, char * prg)
 #endif
 	  "  %s [--printdelay=SECONDS]\n"
 	  "  %s [--lang LANGUAGE | --locale LOCALE | --lang help]\n"
-	  "  %s [--nosysconfig]\n"
+	  "  %s [--nosysconfig] [--nolockfile]\n"
 	  /* "  %s [--record FILE | --playback FILE]\n" */
 	  "\n",
 	  prg, prg,
@@ -3903,7 +3903,7 @@ const char *getfilename(const char* path)
 
 void setup(int argc, char * argv[])
 {
-  int i, ok_to_use_sysconfig;
+  int i, ok_to_use_sysconfig, ok_to_use_lockfile;
   char str[128];
   char * upstr;
   SDL_Color black = {0, 0, 0, 0};
@@ -3961,6 +3961,7 @@ void setup(int argc, char * argv[])
   playfile = NULL;
   recording = 0;
   playing = 0;
+  ok_to_use_lockfile = 1;
   
 
 #ifdef __BEOS__
@@ -3977,6 +3978,7 @@ void setup(int argc, char * argv[])
 #else
   savedir = NULL;
 #endif
+
 
 
   /* Load options from global config file: */
@@ -4370,6 +4372,11 @@ void setup(int argc, char * argv[])
 	{
 	  debug("Not using system config.");   
 	}
+      else if (strcmp(argv[i], "--nolockfile") == 0)
+        {
+	  debug("Not using lockfile");   
+          ok_to_use_lockfile = 0;
+        }
       else
 	{
 	  show_usage(stderr, (char *) getfilename(argv[0]));
@@ -4690,6 +4697,66 @@ void setup(int argc, char * argv[])
   putenv("SDL_VIDEO_X11_WMCLASS=TuxPaint.TuxPaint");
 #endif
   
+  
+  /* Test for lockfile, if we're using one: */
+
+  if (ok_to_use_lockfile)
+  {
+    char * lock_fname;
+    FILE * fi;
+    time_t time_lock, time_now;
+
+
+    /* Get the current time: */
+    
+    time_now = time(NULL);
+    
+
+    /* Look for the lockfile... */
+
+    lock_fname = get_fname("lockfile.dat");
+
+    fi = fopen(lock_fname, "r");
+    if (fi != NULL)
+    {
+      /* If it exists, read its contents: */
+
+      if (fread(&time_lock, sizeof(time_t), 1, fi) > 0)
+      {
+	/* Has it not been 30 seconds yet? */
+
+	if (time_now < time_lock + 30)
+	{
+          /* FIXME: Wrap in gettext() */
+          printf("\nYou're already running a copy of Tux Paint!\n\n");
+
+	  fclose(fi);
+          exit(0);
+	}
+      }
+
+      fclose(fi);
+    }
+
+
+    /* Okay to run; create/update the lockfile */
+
+    fi = fopen(lock_fname, "w");
+    if (fi != NULL)
+    {
+      /* If we can write to it, do so! */
+
+      fwrite(&time_now, sizeof(time_t), 1, fi);
+      fclose(fi);
+    }
+    else
+    {
+      fprintf(stderr,
+ 	      "\nWarning: I couldn't create the lockfile (%s)\n"
+	      "The error that occurred was:\n"
+	      "%s\n\n", lock_fname, strerror(errno));
+    }
+  }
 
 
   /* Init SDL Video: */

@@ -9,7 +9,7 @@
                           [2]bill@newbreedsoftware.com
                   [3]http://www.newbreedsoftware.com/tuxpaint/
 
-                         June 14, 2002 - June 20, 2004
+                       June 14, 2002 - September 13, 2004
 
    ---------------------------------------------------------------------------
 
@@ -384,6 +384,8 @@ Options
                      |----------------------+--------------------+-----------|
                      |british-english       |british             |           |
                      |----------------------+--------------------+-----------|
+                     |bulgarian             |                    |           |
+                     |----------------------+--------------------+-----------|
                      |catalan               |catala              |           |
                      |----------------------+--------------------+-----------|
                      |chinese               |simplified-chinese  |           |
@@ -553,6 +555,23 @@ Options
                    Only your own configuration file, "~/.tuxpaintrc", if it
                    exists, will be used.
 
+           --nolockfile
+
+                   By default, Tux Paint uses what's known as a 'lockfile' to
+                   prevent it from being launched more than once in
+                   30 seconds. (This is to avoid accidentally running
+                   multiple copies; for example, by double-clicking a
+                   single-click launcher, or simply impatiently clicking the
+                   icon multiple times.)
+
+                   To make Tux Paint ignore the lockfile, allowing it to run
+                   again, even if it was just launched less than 30 seconds
+                   ago, run Tux Paint with the '--nolockfile' option on the
+                   command-line.
+
+                   By default, the lockfile is stored in "~/.tuxpaint/" under
+                   Linux and Unix, and "userdata\" under Windows.
+
    ---------------------------------------------------------------------------
 
   Command-Line Informational Options
@@ -605,6 +624,8 @@ Options
            |af_ZA          |                   |Afrikaans            |
            |---------------+-------------------+---------------------|
            |be_BY          |Bielaruskaja       |Belarusian           |
+           |---------------+-------------------+---------------------|
+           |bg_BG          |                   |Bulgarian            |
            |---------------+-------------------+---------------------|
            |br_FR          |Brezhoneg          |Breton               |
            |---------------+-------------------+---------------------|
