@@ -2,11 +2,11 @@ TODO.txt for Tux Paint
 
 Tux Paint - A simple drawing program for children.
 
-Copyright (c) 2003 by Bill Kendrick
+Copyright (c) 2004 by Bill Kendrick
 bill@newbreedsoftware.com
 http://www.newbreedsoftware.com/tuxpaint/
 
-December 23, 2003
+January 14, 2004
 
 
 LOW-PRIORITY DOCUMENTATION CHANGES:

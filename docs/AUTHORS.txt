@@ -2,12 +2,12 @@ AUTHORS.txt for Tux Paint
 
 Tux Paint - A simple drawing program for children.
 
-Copyright (c) 2003 by Bill Kendrick
+Copyright (c) 2004 by Bill Kendrick
 bill@newbreedsoftware.com
 http://www.newbreedsoftware.com/tuxpaint/
 
 
-June 17, 2002 - December 20, 2003
+June 17, 2002 - January 14, 2004
 
 
 * Design and Coding:

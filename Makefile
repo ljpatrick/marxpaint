@@ -2,11 +2,11 @@
 
 # Tux Paint - A simple drawing program for children.
 
-# Copyright (c) 2003 by Bill Kendrick
+# Copyright (c) 2004 by Bill Kendrick
 # bill@newbreedsoftware.com
 # http://www.newbreedsoftware.com/tuxpaint/
 
-# June 14, 2002 - December 23, 2003
+# June 14, 2002 - January 14, 2004
 
 
 # Where to install things:
@@ -293,6 +293,9 @@ install-kde:
 install-kde-icons:
 	@echo "...Installing launcher icon graphics into KDE..."
 	@if [ "x$(KDE_ICON_PREFIX)" != "x" ]; then \
+	  install -d $(KDE_ICON_PREFIX)/hicolor/48x48/apps/; \
+	  install -d $(KDE_ICON_PREFIX)/hicolor/32x32/apps/; \
+	  install -d $(KDE_ICON_PREFIX)/hicolor/16x16/apps/; \
 	  cp data/images/icon48x48.png \
 		$(KDE_ICON_PREFIX)/hicolor/48x48/apps/tuxpaint.png; \
 	  cp data/images/icon32x32.png \

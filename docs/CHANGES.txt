@@ -2,12 +2,14 @@ CHANGES.txt for Tux Paint
 
 Tux Paint - A simple drawing program for children.
 
-Copyright (c) 2003 by Bill Kendrick
+Copyright (c) 2004 by Bill Kendrick
 bill@newbreedsoftware.com
 http://www.newbreedsoftware.com/tuxpaint/
 
 
-2003.Dec.26 (0.9.14) [cvs]
+2004.Jan.14 (0.9.14) [cvs]
+  * Made sure KDE icon directories exist before trying to copy files to them.
+
   * Updated/corrected Tamil translation
     Mugunth <mugunth@thamizha.com>
 
