@@ -227,38 +227,38 @@ extern char* g_win32_getlocale(void);
 #include "great.h"
 
 
-#include "mouse/watch.xbm"
-#include "mouse/watch-mask.xbm"
+#include "watch.xbm"
+#include "watch-mask.xbm"
 
-#include "mouse/hand.xbm"
-#include "mouse/hand-mask.xbm"
+#include "hand.xbm"
+#include "hand-mask.xbm"
 
-#include "mouse/wand.xbm"
-#include "mouse/wand-mask.xbm"
+#include "wand.xbm"
+#include "wand-mask.xbm"
 
-#include "mouse/insertion.xbm"
-#include "mouse/insertion-mask.xbm"
+#include "insertion.xbm"
+#include "insertion-mask.xbm"
 
-#include "mouse/brush.xbm"
-#include "mouse/brush-mask.xbm"
+#include "brush.xbm"
+#include "brush-mask.xbm"
 
-#include "mouse/crosshair.xbm"
-#include "mouse/crosshair-mask.xbm"
+#include "crosshair.xbm"
+#include "crosshair-mask.xbm"
 
-#include "mouse/rotate.xbm"
-#include "mouse/rotate-mask.xbm"
+#include "rotate.xbm"
+#include "rotate-mask.xbm"
 
-#include "mouse/up.xbm"
-#include "mouse/up-mask.xbm"
+#include "up.xbm"
+#include "up-mask.xbm"
 
-#include "mouse/down.xbm"
-#include "mouse/down-mask.xbm"
+#include "down.xbm"
+#include "down-mask.xbm"
 
-#include "mouse/tiny.xbm"
-#include "mouse/tiny-mask.xbm"
+#include "tiny.xbm"
+#include "tiny-mask.xbm"
 
-#include "mouse/arrow.xbm"
-#include "mouse/arrow-mask.xbm"
+#include "arrow.xbm"
+#include "arrow-mask.xbm"
 
 
 
@@ -4051,6 +4051,7 @@ void setup(int argc, char * argv[])
   FILE * fi;
   SDL_Surface * tmp_surf;
   SDL_Rect dest;
+  int scale;
 #ifndef LOW_QUALITY_COLOR_SELECTOR
   int x, y;
   SDL_Surface * tmp_btn;
@@ -5058,33 +5059,39 @@ void setup(int argc, char * argv[])
 
   /* Create cursors: */
 
+  scale = 1;
+
+#ifdef SMALL_CURSOR_SHAPES
+  scale = 2;
+#endif
+
   cursor_hand = get_cursor(hand_bits, hand_mask_bits,
 			   hand_width, hand_height,
-			   12, 1);
+			   12 / scale, 1 / scale);
   
   cursor_wand = get_cursor(wand_bits, wand_mask_bits,
 		           wand_width, wand_height,
-		           4, 4);
+		           4 / scale, 4 / scale);
   
   cursor_insertion = get_cursor(insertion_bits, insertion_mask_bits,
 		                insertion_width, insertion_height,
-		                7, 4);
+		                7 / scale, 4 / scale);
   
   cursor_brush = get_cursor(brush_bits, brush_mask_bits,
 			    brush_width, brush_height,
-			    4, 28);
+			    4 / scale, 28 / scale);
   
   cursor_crosshair = get_cursor(crosshair_bits, crosshair_mask_bits,
 				crosshair_width, crosshair_height,
-				15, 15);
+				15 / scale, 15 / scale);
   
   cursor_rotate = get_cursor(rotate_bits, rotate_mask_bits,
 		             rotate_width, rotate_height,
-		             15, 15);
+		             15 / scale, 15 / scale);
   
   cursor_watch = get_cursor(watch_bits, watch_mask_bits,
 			    watch_width, watch_height,
-			    14, 14);
+			    14 / scale, 14 / scale);
   
   cursor_arrow = get_cursor(arrow_bits, arrow_mask_bits,
 			    arrow_width, arrow_height,
@@ -5092,15 +5099,15 @@ void setup(int argc, char * argv[])
 
   cursor_up = get_cursor(up_bits, up_mask_bits,
 			 up_width, up_height,
-			 15, 1);
+			 15 / scale, 1 / scale);
 
   cursor_down = get_cursor(down_bits, down_mask_bits,
 			   down_width, down_height,
-			   15, 30);
+			   15 / scale, 30 / scale);
 
   cursor_tiny = get_cursor(tiny_bits, tiny_mask_bits,
 			   tiny_width, tiny_height,
-			   3, 3);
+			   3 / scale, 3 / scale);
 
   do_setcursor(cursor_watch);
   

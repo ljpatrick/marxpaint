@@ -6,7 +6,7 @@
 # bill@newbreedsoftware.com
 # http://www.newbreedsoftware.com/tuxpaint/
 
-# June 14, 2002 - September 14, 2004
+# June 14, 2002 - September 28, 2004
 
 
 # Where to install things:
@@ -65,6 +65,15 @@ LOCALE_PREFIX=$(PREFIX)/share/locale/
 NOSOUNDFLAG=__SOUND
 
 
+# Where to find cursor shape XBMs
+
+MOUSEDIR=mouse
+CURSOR_SHAPES=LARGE
+
+# MOUSEDIR=mouse/16x16
+# CURSOR_SHAPES=SMALL
+
+
 # Don't build with hqxx code yet...
 # HQXX_O = obj/hqxx.o obj/hq4x.o
 # HQXX_H = src/hqxx.h src/hq4x.h
@@ -79,7 +88,7 @@ SDL_CFLAGS=$(shell sdl-config --cflags)
 
 # The entire set of CFLAGS:
 
-CFLAGS=-O2 -Wall
+CFLAGS=-O2 -Wall -Isrc/$(MOUSEDIR) -D$(CURSOR_SHAPES)_CURSOR_SHAPES
 DEFS=-DDATA_PREFIX=\"$(DATA_PREFIX)\" \
 	-D$(NOSOUNDFLAG) -DDOC_PREFIX=\"$(DOC_PREFIX)\" \
 	-DLOCALEDIR=\"$(LOCALE_PREFIX)\" -DCONFDIR=\"$(CONFDIR)\"
@@ -703,17 +712,19 @@ obj/tuxpaint.o:	src/tuxpaint.c obj \
 		src/tools.h src/titles.h src/colors.h src/shapes.h \
 		src/magic.h src/sounds.h src/tip_tux.h src/great.h \
 		$(HQXX_H) \
-		src/mouse/arrow.xbm src/mouse/arrow-mask.xbm \
-		src/mouse/hand.xbm src/mouse/hand-mask.xbm \
-		src/mouse/insertion.xbm src/mouse/insertion-mask.xbm \
-		src/mouse/wand.xbm src/mouse/wand-mask.xbm \
-		src/mouse/brush.xbm src/mouse/brush-mask.xbm \
-		src/mouse/crosshair.xbm src/mouse/crosshair-mask.xbm \
-		src/mouse/rotate.xbm src/mouse/rotate-mask.xbm \
-		src/mouse/tiny.xbm src/mouse/tiny-mask.xbm \
-		src/mouse/watch.xbm src/mouse/watch-mask.xbm \
-		src/mouse/up.xbm src/mouse/up-mask.xbm \
-		src/mouse/down.xbm src/mouse/down-mask.xbm \
+		src/$(MOUSEDIR)/arrow.xbm src/$(MOUSEDIR)/arrow-mask.xbm \
+		src/$(MOUSEDIR)/hand.xbm src/$(MOUSEDIR)/hand-mask.xbm \
+		src/$(MOUSEDIR)/insertion.xbm \
+		src/$(MOUSEDIR)/insertion-mask.xbm \
+		src/$(MOUSEDIR)/wand.xbm src/$(MOUSEDIR)/wand-mask.xbm \
+		src/$(MOUSEDIR)/brush.xbm src/$(MOUSEDIR)/brush-mask.xbm \
+		src/$(MOUSEDIR)/crosshair.xbm \
+		src/$(MOUSEDIR)/crosshair-mask.xbm \
+		src/$(MOUSEDIR)/rotate.xbm src/$(MOUSEDIR)/rotate-mask.xbm \
+		src/$(MOUSEDIR)/tiny.xbm src/$(MOUSEDIR)/tiny-mask.xbm \
+		src/$(MOUSEDIR)/watch.xbm src/$(MOUSEDIR)/watch-mask.xbm \
+		src/$(MOUSEDIR)/up.xbm src/$(MOUSEDIR)/up-mask.xbm \
+		src/$(MOUSEDIR)/down.xbm src/$(MOUSEDIR)/down-mask.xbm \
 		$(ARCH_HEADERS)
 	@echo
 	@echo "...Compiling Tux Paint from source..."

@@ -241,6 +241,10 @@ http://www.newbreedsoftware.com/tuxpaint/
       Karl Ove Hufthammer <karl@huftis.org>
 
     * Made sure KDE icon directories exist before trying to copy files to them.
+
+    * Created 16x16 mouse pointer shapes; use "MOUSEDIR" and "CURSOR_SHAPES"
+      Makefile variables to use them.
+
   
   * Application icon updates:
     -------------------------
