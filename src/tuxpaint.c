@@ -1148,7 +1148,21 @@ static SDL_Surface * img_tools[NUM_TOOLS], * img_tool_names[NUM_TOOLS];
 
 #define MAX_STAMPS 512
 #define MAX_BRUSHES 64
+
+// example from a Debian box with MS fonts:
+// start with 232 files
+// remove "Cursor", "Webdings", "Dingbats", "Standard Symbols L"
+// split "Condensed" faces out into own family
+// group by family
+// end up with 34 user choices
 #define MAX_FONTS 256
+
+// 18 24 36 48
+#define MIN_TEXT_SIZE 0
+#define MAX_TEXT_SIZE 3
+static int text_size;
+static int text_state;
+
 
 static int num_brushes, num_stamps;
 static SDL_Surface * img_brushes[MAX_BRUSHES];
@@ -2208,6 +2222,9 @@ static void mainloop(void)
 		      if (cur_tool == TOOL_STAMP && !disable_stamp_controls)
 			max = 10;
 
+		      if (cur_tool == TOOL_TEXT && !disable_stamp_controls)
+			max = 10;
+
 		      if (num_things > max + TOOLOFFSET)
 			{
 			  if (event.button.y < 40 + 24)
@@ -2434,6 +2451,78 @@ static void mainloop(void)
 			    }
 			  update_stamp_xor();
 			}
+
+
+		      else if (cur_tool == TOOL_TEXT &&
+			       event.button.y >= (48 * ((max / 2) + TOOLOFFSET / 2)) + 40 &&
+			       event.button.y < (48 * ((max / 2) + TOOLOFFSET / 2)) + 40 + 96 &&
+			       !disable_stamp_controls)
+			{
+			  /* Text controls! */
+                          int text_sound;
+			  if (event.button.y >= (48 * ((max / 2) + TOOLOFFSET / 2)) + 40 &&
+			      event.button.y < (48 * ((max / 2) + TOOLOFFSET / 2)) + 40 + 48)
+			    {
+			      /* One of the top buttons: */
+
+			      if (event.button.x >= WINDOW_WIDTH - 96 &&
+				  event.button.x <= WINDOW_WIDTH - 48)
+				{
+				  /* Top left button: Bold: */
+				  if (text_state & TTF_STYLE_BOLD)
+				    {
+				      text_state &= ~TTF_STYLE_BOLD;
+				      text_sound = SND_THIN;
+				    }
+				  else
+				    {
+				      text_state |= TTF_STYLE_BOLD;
+				      text_sound = SND_THICK;
+				    }
+				}
+			      else
+				{
+				  /* Top right button: Italic: */
+				  if (text_state & TTF_STYLE_ITALIC)
+				    {
+				      text_state &= ~TTF_STYLE_ITALIC;
+				      text_sound = SND_CHALK;
+				    }
+				  else
+				    {
+				      text_state |= TTF_STYLE_ITALIC;
+				      text_sound = SND_SMUDGE;
+				    }
+				}
+			    }
+			  else
+			    {
+			      /* One of the bottom buttons: */
+			      if (event.button.x >= WINDOW_WIDTH - 96 &&
+				  event.button.x <= WINDOW_WIDTH - 48)
+				{
+				  /* Bottom left button: Shrink: */
+				  if (text_size > MIN_TEXT_SIZE)
+				    {
+				      text_size--;
+				      text_sound = SND_SHRINK;
+				    }
+				}
+			      else
+				{
+				  /* Bottom right button: Grow: */
+				  if (text_size < MAX_TEXT_SIZE)
+				    {
+				      text_size++;
+				      text_sound = SND_GROW;
+				    }
+				}
+			    }
+			  playsound(0, text_sound, 0);
+			  draw_fonts();
+			  SDL_UpdateRect(screen, WINDOW_WIDTH - 96, 0, 96, (48 * 7) + 40 + HEIGHTOFFSET);
+			}
+
 		      
 		      
 		      /* Assign the change(s), if any / redraw, if needed: */
@@ -2828,6 +2917,9 @@ static void mainloop(void)
 		  if (cur_tool == TOOL_STAMP && !disable_stamp_controls)
 		    max = 10;
 
+		  if (cur_tool == TOOL_TEXT && !disable_stamp_controls)
+		    max = 10;
+
 		  if (num_things > max + TOOLOFFSET)
 		    {
 		      if (event.button.button == 4)
@@ -3157,6 +3249,8 @@ static void mainloop(void)
 
 		  max = 14;
 		  if (cur_tool == TOOL_STAMP && !disable_stamp_controls)
+		    max = 10;
+		  if (cur_tool == TOOL_TEXT && !disable_stamp_controls)
 		    max = 10;
 		  
 		  
@@ -7342,7 +7436,6 @@ static void draw_brushes(void)
 
 
 /* Draw fonts: */
-
 static void draw_fonts(void)
 {
   int i, off_y, max, font;
@@ -7356,12 +7449,18 @@ static void draw_fonts(void)
   draw_image_title(TITLE_LETTERS, WINDOW_WIDTH - 96);
 
 
+  /* How many can we show? */
+
+  int most = 10;
+  if (disable_stamp_controls)
+    most = 14;
+
   /* Do we need scrollbars? */
 
-  if (num_fonts > 14 + TOOLOFFSET)
+  if (num_fonts > most + TOOLOFFSET)
     {
       off_y = 24;
-      max = 12 + TOOLOFFSET;
+      max = most-2 + TOOLOFFSET;
 
       dest.x = WINDOW_WIDTH - 96;
       dest.y = 40;
@@ -7378,7 +7477,10 @@ static void draw_fonts(void)
       dest.x = WINDOW_WIDTH - 96;
       dest.y = 40 + 24 + ((6 + TOOLOFFSET / 2) * 48);
 
-      if (font_scroll < num_fonts - 12 - TOOLOFFSET)
+      if (!disable_stamp_controls)
+	dest.y = dest.y - (48 * 2);
+
+      if (font_scroll < num_fonts - (most-2) - TOOLOFFSET)
 	{
 	  SDL_BlitSurface(img_scroll_down, NULL, screen, &dest);
 	}
@@ -7390,7 +7492,7 @@ static void draw_fonts(void)
   else
     {
       off_y = 0;
-      max = 14 + TOOLOFFSET;
+      max = most + TOOLOFFSET;
     }
 
 
@@ -7455,6 +7557,77 @@ static void draw_fonts(void)
       
 	  SDL_FreeSurface(tmp_surf);
 	}
+    }
+  /* Draw text controls: */
+
+  if (!disable_stamp_controls)
+    {
+      /* Show bold button: */
+
+      dest.x = WINDOW_WIDTH - 96;
+      dest.y = 40 + ((5 + TOOLOFFSET / 2) * 48);
+
+      if (text_state & TTF_STYLE_BOLD)
+        SDL_BlitSurface(img_btn_down, NULL, screen, &dest);
+      else
+        SDL_BlitSurface(img_btn_up, NULL, screen, &dest);
+    
+      dest.x = WINDOW_WIDTH - 96 + (48 - img_magics[MAGIC_MIRROR]->w) / 2;
+      dest.y = (40 + ((5 + TOOLOFFSET / 2) * 48) +
+		(48 - img_magics[MAGIC_MIRROR]->h) / 2);
+
+      SDL_BlitSurface(img_magics[MAGIC_MIRROR], NULL, screen, &dest);
+
+    
+      /* Show italic button: */
+
+      dest.x = WINDOW_WIDTH - 48;
+      dest.y = 40 + ((5 + TOOLOFFSET / 2) * 48);
+
+      if (text_state & TTF_STYLE_ITALIC)
+        SDL_BlitSurface(img_btn_down, NULL, screen, &dest);
+      else
+        SDL_BlitSurface(img_btn_up, NULL, screen, &dest);
+
+      dest.x = WINDOW_WIDTH - 48 + (48 - img_magics[MAGIC_FLIP]->w) / 2;
+      dest.y = (40 + ((5 + TOOLOFFSET / 2) * 48) +
+		(48 - img_magics[MAGIC_FLIP]->h) / 2);
+    
+      SDL_BlitSurface(img_magics[MAGIC_FLIP], NULL, screen, &dest);
+
+    
+      /* Show shrink button: */
+
+      dest.x = WINDOW_WIDTH - 96;
+      dest.y = 40 + ((6 + TOOLOFFSET / 2) * 48);
+
+      if (text_size > MIN_TEXT_SIZE)
+	SDL_BlitSurface(img_btn_up, NULL, screen, &dest);
+      else
+	SDL_BlitSurface(img_btn_off, NULL, screen, &dest);
+    
+      dest.x = WINDOW_WIDTH - 96 + (48 - img_shrink->w) / 2;
+      dest.y = (40 + ((6 + TOOLOFFSET / 2) * 48) +
+		(48 - img_shrink->h) / 2);
+
+      SDL_BlitSurface(img_shrink, NULL, screen, &dest);
+
+    
+      /* Show grow button: */
+
+      dest.x = WINDOW_WIDTH - 48;
+      dest.y = 40 + ((6 + TOOLOFFSET / 2) * 48);
+
+      if (text_size < MAX_TEXT_SIZE)
+	SDL_BlitSurface(img_btn_up, NULL, screen, &dest);
+      else
+	SDL_BlitSurface(img_btn_off, NULL, screen, &dest);
+
+      dest.x = WINDOW_WIDTH - 48 + (48 - img_grow->w) / 2;
+      dest.y = (40 + ((6 + TOOLOFFSET / 2) * 48) +
+		(48 - img_grow->h) / 2);
+    
+      SDL_BlitSurface(img_grow, NULL, screen, &dest);
     }
 }
 
