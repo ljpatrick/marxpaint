@@ -2246,9 +2246,9 @@ int main(int argc, char * argv[])
 
   SDL_Flip(screen);
 
+  draw_tux_text(tool_tux[cur_tool], tool_tips[cur_tool], 1);
 
   /* Main loop! */
-
   mainloop();
 
 
