@@ -2018,10 +2018,11 @@ static void groupfonts(void)
 ////////////////////////////////////////////////////////////////////
 
 #define MAX_STAMPS 512
-#define MAX_BRUSHES 64
 
-static int num_brushes, num_stamps;
-static SDL_Surface * img_brushes[MAX_BRUSHES];
+static int num_brushes, num_brushes_max;
+static SDL_Surface **img_brushes;
+
+static int num_stamps;
 static SDL_Surface * img_stamps[MAX_STAMPS];
 static SDL_Surface * img_stamps_premirror[MAX_STAMPS];
 static char * txt_stamps[MAX_STAMPS];
@@ -2141,17 +2142,6 @@ static void draw_shapes(void);
 static void draw_erasers(void);
 static void draw_fonts(void);
 static void draw_none(void);
-#ifndef NOSOUND
-static void loadarbitrary(SDL_Surface * surfs[], SDL_Surface * altsurfs[],
-		   char * descs[], info_type * infs[],
-		   Mix_Chunk * mysounds[], int * count, int starting, int max,
-		   const char * const dir, int fatal, int maxw, int maxh);
-#else
-static void loadarbitrary(SDL_Surface * surfs[], SDL_Surface * altsurfs[],
-		   char * descs[], info_type * infs[],
-		   int * count, int starting, int max,
-		   const char * const dir, int fatal, int maxw, int maxh);
-#endif
 
 static void putpixel8(SDL_Surface * surface, int x, int y, Uint32 pixel);
 static void putpixel16(SDL_Surface * surface, int x, int y, Uint32 pixel);
@@ -2193,7 +2183,6 @@ static void do_eraser(int x, int y);
 static void disable_avail_tools(void);
 static void enable_avail_tools(void);
 static void reset_avail_tools(void);
-static int compare_strings(char * * s1, char * * s2);
 static int compare_dirent2s(struct dirent2 * f1, struct dirent2 * f2);
 static void draw_tux_text(int which_tux, const char * const str,
 		          int want_right_to_left);
@@ -6130,42 +6119,432 @@ static unsigned compute_default_scale_factor(double ratio)
 }
 
 
+// backdoor into qsort operations, so we don't have to do work again
+static int was_bad_font;
+
+// see if two font surfaces are the same
+static int do_surfcmp(const SDL_Surface *const *const v1, const SDL_Surface *const *const v2)
+{
+  const SDL_Surface *const s1 = *v1;
+  const SDL_Surface *const s2 = *v2;
+  if(s1==s2)
+    {
+      printf("WTF?\n");
+      return 0;
+    }
+  if(!s1 || !s2 || !s1->w || !s2->w || !s1->h || !s2->h || !s1->format || !s2->format)
+    {
+      was_bad_font = 1;
+      return 0;
+    }
+  if(s1->format->BytesPerPixel != s2->format->BytesPerPixel)
+    {
+      // something really strange and bad happened
+      was_bad_font = 1;
+      return s1->format->BytesPerPixel - s2->format->BytesPerPixel;
+    }
+
+  if(s1->w != s2->w)
+    return s1->w - s2->w;
+  if(s1->h != s2->h)
+    return s1->h - s2->h;
+
+  const char *const c1 = (const char *const)s1->pixels;
+  const char *const c2 = (const char *const)s2->pixels;
+  int width = s1->format->BytesPerPixel * s1->w;
+  if(width==s1->pitch)
+    return memcmp(c1,c2,width*s1->h);
+  int cmp = 0;
+  int i = s1->h;
+  while(i--)
+    {
+      cmp = memcmp(c1 + i*s1->pitch, c2 + i*s2->pitch, width);
+      if(cmp)
+        break;
+    }
+  return cmp;
+}
+
+// see if two font surfaces are the same
+static int surfcmp(const void *s1, const void *s2)
+{
+  int diff = do_surfcmp(s1, s2);
+  if(!diff)
+    was_bad_font = 1;
+  return diff;
+}
+
+// check if the characters will render distinctly
+static int charset_works(TTF_Font *font, const char *s)
+{
+  SDL_Color black = {0, 0, 0, 0};
+  SDL_Surface **surfs = malloc(strlen(s) * sizeof surfs[0]);
+  unsigned count = 0;
+  int ret = 0;
+  while(*s)
+    {
+      char c[8];
+      unsigned offset = 0;
+      do
+        c[offset++] = *s++;
+        while((*s & 0xc0u) == 0x80u); // assume safe input
+      c[offset++] = '\0';
+      SDL_Surface *tmp_surf = TTF_RenderUTF8_Blended(font, c, black);
+      if(!tmp_surf)
+        {
+          printf("could not render \"%s\" font\n", TTF_FontFaceFamilyName(font));
+          goto out;
+        }
+      surfs[count++] = tmp_surf;
+    }
+  was_bad_font = 0;
+  qsort(surfs, count, sizeof surfs[0], surfcmp);
+  ret = !was_bad_font;
+out:
+  while(count--)
+    SDL_FreeSurface(surfs[count]);
+  free(surfs);
+  return ret;
+}
+
+
+/////////////////////////////// directory tree walking /////////////////////
+
+#define TP_FTW_UNKNOWN 1
+#define TP_FTW_DIRECTORY 2
+#define TP_FTW_NORMAL 0
+
+#define TP_FTW_PATHSIZE 400
+
+typedef struct tp_ftw_str {
+  char *str;
+  unsigned char len;
+//  unsigned char is_rsrc;
+} tp_ftw_str;
+
+// For qsort()
+static int compare_ftw_str(const void *v1, const void *v2)
+{
+  const char *restrict const s1 = ((tp_ftw_str*)v1)->str;
+  const char *restrict const s2 = ((tp_ftw_str*)v2)->str;
+  return -strcmp(s1, s2);
+}
+
+static int tp_ftw(char *restrict const dir, unsigned dirlen, int rsrc,
+  void (*fn)(const char *restrict const dir, unsigned dirlen, tp_ftw_str *files, unsigned count)
+  )
+{
+  dir[dirlen++] = '/';
+  dir[dirlen] = '\0';
+//printf("processing directory %s %d\n", dir, dirlen);
+  /* Open the directory: */
+  DIR *d = opendir(dir);
+  if (!d)
+    return errno;
+
+  unsigned num_file_names = 0;
+  unsigned max_file_names = 0;
+  tp_ftw_str *file_names = NULL;
+  unsigned num_dir_names = 0;
+  unsigned max_dir_names = 0;
+  tp_ftw_str *dir_names = NULL;
+
+  for(;;)
+    {
+      struct dirent * f = readdir(d);
+      if(!f)
+        break;
+      if(f->d_name[0]=='.')
+        continue;
+      int filetype = TP_FTW_UNKNOWN;
+// Linux and BSD can often provide file type info w/o the stat() call
+#ifdef DT_UNKNOWN
+      switch(f->d_type)
+        {
+          default:
+            continue;
+          case DT_REG:
+            if(!rsrc)  // if maybe opening resource files, need st_size
+              filetype = TP_FTW_NORMAL;
+            break;
+          case DT_DIR:
+            filetype = TP_FTW_DIRECTORY;
+            break;
+          case DT_UNKNOWN:
+          case DT_LNK:
+            ;
+        }
+#else
+#warning Failed to see DT_UNKNOWN
+#endif
+
+#ifdef _DIRENT_HAVE_D_NAMLEN
+      int d_namlen = f->d_namlen;
+#else
+#warning Failed to see _DIRENT_HAVE_D_NAMLEN
+      int d_namlen = strlen(f->d_name);
+#endif
+      int add_rsrc = 0;
+
+      if(filetype == TP_FTW_UNKNOWN)
+        {
+          struct stat sbuf;
+          memcpy(dir+dirlen, f->d_name, d_namlen+1);
+          if(stat(dir, &sbuf))
+            continue;  // oh well... try the next one
+          if(S_ISDIR(sbuf.st_mode))
+            filetype = TP_FTW_DIRECTORY;
+          else if(S_ISREG(sbuf.st_mode))
+            {
+              filetype = TP_FTW_NORMAL;
+              if(rsrc && !sbuf.st_size)
+                add_rsrc = 5;  // 5 is length of "/rsrc"
+            }
+          else
+            continue;  // was a device file or somesuch
+        }
+      if(filetype==TP_FTW_NORMAL)
+        {
+          if(num_file_names==max_file_names)
+            {
+              max_file_names = max_file_names * 5 / 4 + 30;
+              file_names = realloc(file_names, max_file_names * sizeof *file_names);
+            }
+          char *cp = malloc(d_namlen + add_rsrc + 1);
+          memcpy(cp, f->d_name, d_namlen);
+          if(add_rsrc)
+            memcpy(cp+d_namlen, "/rsrc", 6);
+          else
+            cp[d_namlen] = '\0';
+          file_names[num_file_names].str = cp;
+          file_names[num_file_names].len = d_namlen;
+          num_file_names++;
+        }
+      if(filetype==TP_FTW_DIRECTORY)
+        {
+          if(num_dir_names==max_dir_names)
+            {
+              max_dir_names = max_dir_names * 5 / 4 + 3;
+              dir_names = realloc(dir_names, max_dir_names * sizeof *dir_names);
+            }
+          char *cp = malloc(d_namlen + 1);
+          memcpy(cp, f->d_name, d_namlen + 1);
+          dir_names[num_dir_names].str = cp;
+          dir_names[num_dir_names].len = d_namlen;
+          num_dir_names++;
+        }
+    }
+
+  closedir(d);
+  show_progress_bar();
+  dir[dirlen] = '\0';   // repair it (clobbered for stat() call above)
+
+  if(file_names)
+    {
+// let callee sort and keep the string
+#if 0
+      qsort(file_names, num_file_names, sizeof *file_names, compare_ftw_str);
+      while(num_file_names--)
+        {
+          free(file_names[num_file_names].str);
+        }
+      free(file_names);
+#else
+      fn(dir, dirlen, file_names, num_file_names);
+#endif
+    }
+
+  if(dir_names)
+    {
+      while(num_dir_names--)
+        {
+          memcpy(dir+dirlen, dir_names[num_dir_names].str, dir_names[num_dir_names].len+1);
+          tp_ftw(dir, dirlen+dir_names[num_dir_names].len, rsrc, fn);
+          free(dir_names[num_dir_names].str);
+        }
+      free(dir_names);
+    }
+}
+
+
+///////////////// directory walking callers and callbacks //////////////////
+
+static void loadfont_callback(const char *restrict const dir, unsigned dirlen, tp_ftw_str *files, unsigned i)
+{
+  while(i--)
+    {
+      show_progress_bar();
+      int loadable = 0;
+      const char *restrict const cp = strchr(files[i].str, '.');
+      if(cp)
+        {
+          // need gcc 3.4 for the restrict in this location
+          const char * /*restrict*/ const suffixes[] = {"ttc", "dfont", "pfa", "pfb", "otf", "ttf",};
+          int j = sizeof suffixes / sizeof suffixes[0];
+          while(j--)
+            {
+              // only check part, because of potential .gz or .bz2 suffix
+              if(!strncasecmp(cp+1,suffixes[j],strlen(suffixes[j])))
+                {
+                  loadable = 1;
+                  break;
+                }
+            }
+        }
+      if(!loadable)
+        {
+          if(strstr(files[i].str, "/rsrc"))
+            loadable = 1;
+        }
+      // Loadable: TrueType (.ttf), OpenType (.otf), Type1 (.pfa and .pfb),
+      // and various useless bitmap fonts. Compressed files (with .gz or .bz2)
+      // should also work. A *.dfont is pretty much a Mac resource fork in a normal
+      // file, and may load with some library versions.
+      if (loadable)
+        {
+          char fname[512];
+          snprintf(fname, sizeof fname, "%s/%s", dir, files[i].str);
+//printf("Loading font: %s\n", fname);
+          TTF_Font *font = TTF_OpenFont(fname, text_sizes[text_size]);
+          if(font)
+            {
+              const char *restrict const family = TTF_FontFaceFamilyName(font);
+              const char *restrict const style = TTF_FontFaceStyleName(font);
+              int numfaces = TTF_FontFaces(font);
+              if (numfaces != 1)
+                printf("Found %d faces in %s, %s, %s\n", numfaces, files[i].str, family, style);
+              if(charset_works(font, gettext("jq")) && charset_works(font, gettext("JQ")))
+                {
+                  if (num_font_styles==num_font_styles_max)
+                    {
+                      num_font_styles_max = num_font_styles_max * 5 / 4 + 30;
+                      user_font_styles = realloc(user_font_styles, num_font_styles_max * sizeof *user_font_styles);
+                    }
+                  user_font_styles[num_font_styles] = malloc(sizeof *user_font_styles[num_font_styles]);
+                  user_font_styles[num_font_styles]->directory = strdup(dir);
+                  user_font_styles[num_font_styles]->filename = files[i].str; // steal it (mark NULL below)
+                  user_font_styles[num_font_styles]->family = strdup(family);
+                  user_font_styles[num_font_styles]->style = strdup(style);
+                  user_font_styles[num_font_styles]->score  = charset_works(font, gettext("oO"));
+                  user_font_styles[num_font_styles]->score += charset_works(font, gettext("`\%_@$~#{}<>^&*"));
+                  user_font_styles[num_font_styles]->score += charset_works(font, gettext(",.?!"));
+                  user_font_styles[num_font_styles]->score += charset_works(font, gettext("017"));
+                  user_font_styles[num_font_styles]->score += charset_works(font, gettext("O0"));
+                  user_font_styles[num_font_styles]->score += charset_works(font, gettext("1Il|"));
+                  num_font_styles++;
+//printf("Accepted: %s, %s, %s\n", files[i].str, family, style);
+                  files[i].str = NULL;  // so free() won't crash -- we stole the memory
+                }
+              else
+                {
+                  printf("Font missing critical chars: %s, %s, %s\n", files[i].str, family, style);
+                }
+              TTF_CloseFont(font);
+            }
+          else
+            {
+              printf("could not open %s\n", files[i].str);
+            }
+        }
+      free(files[i].str);
+    }
+  free(files);
+}
+
+
+
+static void loadfonts(const char * const dir, int fatal)
+{
+  char buf[TP_FTW_PATHSIZE];
+  unsigned dirlen = strlen(dir);
+  memcpy(buf,dir,dirlen);
+  tp_ftw(buf, dirlen, 1, loadfont_callback);
+}  
+
+
+static void loadbrush_callback(const char *restrict const dir, unsigned dirlen, tp_ftw_str *files, unsigned i)
+{
+  qsort(files, i, sizeof *files, compare_ftw_str);
+  while(i--)
+    {
+      show_progress_bar();
+      if (strstr(files[i].str, ".png"))
+        {
+          char fname[512];
+          snprintf(fname, sizeof fname, "%s/%s", dir, files[i].str);
+          if (num_brushes==num_brushes_max)
+            {
+              num_brushes_max = num_brushes_max * 5 / 4 + 4;
+              img_brushes = realloc(img_brushes, num_brushes_max * sizeof *img_brushes);
+            }
+          img_brushes[num_brushes] = loadimage(fname);
+          num_brushes++;
+        }
+      free(files[i].str);
+    }
+  free(files);
+}
+
+
+
+static void load_brush_dir(const char * const dir)
+{
+  char buf[TP_FTW_PATHSIZE];
+  unsigned dirlen = strlen(dir);
+  memcpy(buf,dir,dirlen);
+  tp_ftw(buf, dirlen, 0, loadbrush_callback);
+}
+
+
+
+static void loadstamp_callback(const char *restrict const dir, unsigned dirlen, tp_ftw_str *files, unsigned i)
+{
+  qsort(files, i, sizeof *files, compare_ftw_str);
+  while(i--)
+    {
+      show_progress_bar();
+
+      if (strstr(files[i].str, ".png") && !strstr(files[i].str, "_mirror.png"))
+        {
+          char fname[512];
+          snprintf(fname, sizeof fname, "%s/%s", dir, files[i].str);
+          img_stamps[num_stamps] = loadimage(fname);
+          txt_stamps[num_stamps] = loaddesc(fname);
+          inf_stamps[num_stamps] = loadinfo(fname);
+          img_stamps_premirror[num_stamps] = loadaltimage(fname);
+
+#ifndef NOSOUND
+          if (use_sound)
+            snd_stamps[num_stamps] = loadsound(fname);
+#endif
+          num_stamps++;
+        }
+      free(files[i].str);
+    }
+  free(files);
+}
+
+
+
+static void load_stamp_dir(const char * const dir)
+{
+  char buf[TP_FTW_PATHSIZE];
+  unsigned dirlen = strlen(dir);
+  memcpy(buf,dir,dirlen);
+  tp_ftw(buf, dirlen, 0, loadstamp_callback);
+}
+
+
+
 static void load_stamps(void)
 {
   int i;
   char * homedirdir = get_fname("stamps");
-#ifndef NOSOUND
-  loadarbitrary(img_stamps, img_stamps_premirror,
-                txt_stamps, inf_stamps, snd_stamps,
-                &num_stamps, 0,
-                MAX_STAMPS, homedirdir, 0, -1, -1);
-#else
-  loadarbitrary(img_stamps, img_stamps_premirror,
-                txt_stamps, inf_stamps, &num_stamps, 0,
-                MAX_STAMPS, homedirdir, 0, -1, -1);
-#endif
 
-
-#ifndef NOSOUND
-  loadarbitrary(img_stamps, img_stamps_premirror,
-                txt_stamps, inf_stamps, snd_stamps, &num_stamps,
-                num_stamps, MAX_STAMPS, DATA_PREFIX "stamps", 0, -1, -1);
-#else
-  loadarbitrary(img_stamps, img_stamps_premirror,
-                txt_stamps, inf_stamps, &num_stamps,
-                num_stamps, MAX_STAMPS, DATA_PREFIX "stamps", 0, -1, -1);
-#endif
-
+  load_stamp_dir(homedirdir);
+  load_stamp_dir(DATA_PREFIX "stamps");
 #ifdef __APPLE__
-#ifndef NOSOUND
-  loadarbitrary(img_stamps, img_stamps_premirror,
-                txt_stamps, inf_stamps, snd_stamps, &num_stamps,
-                num_stamps, MAX_STAMPS, "/Library/Application Support/TuxPaint/stamps", 0, -1, -1);
-#else
-  loadarbitrary(img_stamps, img_stamps_premirror,
-                txt_stamps, inf_stamps, &num_stamps,
-                num_stamps, MAX_STAMPS, "/Library/Application Support/TuxPaint/stamps", 0, -1, -1);
-#endif
+  load_stamp_dir("/Library/Application Support/TuxPaint/stamps");
 #endif
 
   if (num_stamps == 0)
@@ -6303,7 +6682,7 @@ static void load_stamps(void)
 
 
 
-
+////////////////////////////////////////////////////////////////////////////////
 /* Setup: */
 
 static void setup(int argc, char * argv[])
@@ -7237,24 +7616,9 @@ static void setup(int argc, char * argv[])
 
 
   /* Load brushes: */
-
-#ifndef NOSOUND
-  loadarbitrary(img_brushes, NULL, NULL, NULL, NULL, &num_brushes, 0,
-	        MAX_BRUSHES, DATA_PREFIX "brushes", 1, 40, 40);
-#else
-  loadarbitrary(img_brushes, NULL, NULL, NULL, &num_brushes, 0,
-	        MAX_BRUSHES, DATA_PREFIX "brushes", 1, 40, 40);
-#endif
-
-
+  load_brush_dir(DATA_PREFIX "brushes");
   homedirdir = get_fname("brushes");
-#ifndef NOSOUND
-  loadarbitrary(img_brushes, NULL, NULL, NULL, NULL, &num_brushes, num_brushes,
-	        MAX_BRUSHES, homedirdir, 0, 40, 40);
-#else
-  loadarbitrary(img_brushes, NULL, NULL, NULL, &num_brushes, num_brushes,
-	        MAX_BRUSHES, homedirdir, 0, 40, 40);
-#endif
+  load_brush_dir(homedirdir);
 
   if (num_brushes == 0)
     {
@@ -8798,203 +9162,6 @@ static void draw_none(void)
 }
 
 
-/* Load an arbitrary set of images into an array (e.g., brushes or stamps) */
-
-#ifndef NOSOUND
-static void loadarbitrary(SDL_Surface * surfs[], SDL_Surface * altsurfs[],
-		   char * descs[], info_type * infs[],
-		   Mix_Chunk * mysounds[],
-		   int * count, int starting, int max,
-		   const char * const dir, int fatal, int maxw, int maxh)
-#else
-static void loadarbitrary(SDL_Surface * surfs[], SDL_Surface * altsurfs[],
-			char * descs[], info_type * infs[],
-			int * count, int starting, int max,
-			const char * const dir, int fatal, int maxw, int maxh)
-#endif
-{
-  DIR * d;
-  struct dirent * f;
-  struct stat sbuf;
-  char fname[512];
-  int d_names_alloced;
-  char * * d_names;
-  int num_files, i;
-
-
-  /* Make some space: */
-
-  d_names_alloced = 32;
-  d_names = (char * *) malloc(sizeof(char *) * d_names_alloced);
-  if (d_names == NULL)
-    {
-      fprintf(stderr,
-	      "\nError: I can't allocate memory for directory listing!\n"
-	      "The system error that occurred was: %s\n",
-	      strerror(errno));
-      cleanup();
-      exit(1);
-    }
-
-
-  *count = starting;
-
-  /* Open the directory: */
-
-  d = opendir(dir);
-  if (d == NULL)
-    {
-      if (fatal)
-	{
-	  fprintf(stderr,
-		  "\nError: I can't find a directory of images\n"
-		  "%s\n"
-		  "The system error that occurred was: %s\n",
-		  dir, strerror(errno));
-
-	  cleanup();
-	  exit(1);
-	}
-      else
-	{
-	  return;
-	}
-    }
-
-
-  /* Read directory for images: */
-
-  num_files = 0;
-  do
-    {
-      f = readdir(d);
-
-      if (f != NULL)
-	{
-	  d_names[num_files] = strdup(f->d_name);
-	  num_files++;
-
-	  if (num_files >= d_names_alloced)
-	    {
-	      d_names_alloced = d_names_alloced + 32;
-
-	      d_names = (char * *) realloc(d_names, sizeof(char *) * d_names_alloced);
-	      if (d_names == NULL)
-		{
-		  fprintf(stderr,
-			  "\nError: I can't reallocate memory for directory listing!\n"
-			  "The system error that occurred was: %s\n",
-			  strerror(errno));
-		  cleanup();
-		  exit(1);
-		}
-	    }
-	}
-    }
-  while (f != NULL);
-
-  closedir(d);
-
-
-  qsort(d_names, num_files, sizeof(char *),
-	(int(*)(const void *, const void *))compare_strings);
-
-
-  /* Do something with each file (load if PNG, recurse if directory): */
-
-  for (i = 0; i < num_files && *count < max; i++)
-    {
-      /* Ignore things starting with "." (e.g., "." and ".." dirs): */
-
-      if (strstr(d_names[i], ".") != d_names[i])
-	{
-	  /* If it's a directory, recurse down into it: */
-
-	  snprintf(fname, sizeof(fname), "%s/%s", dir, d_names[i]);
-	  debug(fname);
-	
-	  stat(fname, &sbuf);
-	
-	  if (S_ISDIR(sbuf.st_mode))
-	    {
-	      debug("...is a directory");
-
-#ifndef NOSOUND
-	      loadarbitrary(surfs, altsurfs, descs, infs, mysounds,
-			    count, *count, max, fname,
-			    fatal, maxw, maxh);
-#else
-	      loadarbitrary(surfs, altsurfs, descs, infs,
-			    count, *count, max, fname,
-			    fatal, maxw, maxh);
-#endif
-	    }
-	  else if (strstr(d_names[i], ".png") != NULL &&
-		   strstr(d_names[i], "_mirror.png") == NULL)
-	    {
-	      /* If it has ".png" in the filename, assume we can try to load it: */
-	
-	      surfs[*count] = loadimage(fname);
-
-	      if ((surfs[*count]->w <= maxw &&
-		   surfs[*count]->h <= maxh) ||
-		  (maxw == -1 || maxh == -1))
-		{
-		  /* Check for a companion ".txt" file! */
-
-		  if (descs != NULL)
-		    descs[*count] = loaddesc(fname);
-
-		  if (infs != NULL)
-		    infs[*count] = loadinfo(fname);
-
-		  if (altsurfs != NULL)
-		    altsurfs[*count] = loadaltimage(fname);
-
-
-#ifndef NOSOUND
-		  if (use_sound)
-		    {
-		      if (mysounds != NULL)
-			mysounds[*count] = loadsound(fname);
-		    }
-#endif
-
-
-		  *count = *count + 1;
-		}
-	      else
-		{
-		  fprintf(stderr,
-			  "\nWarning: Image too large (%d x %d - max: %d x %d)\n"
-			  "%s\n\n",
-			  surfs[*count]->w, surfs[*count]->h, maxw, maxh,
-			  fname);
-		}
-
-	      show_progress_bar();
-	    }
-	}
-
-      free(d_names[i]);
-    }
-
-  free(d_names);
-
-
-  /* Give warning if too many files were found (e.g., some not loaded): */
-
-  if (*count == max)
-    {
-      fprintf(stderr,
-	      "\nWarning: Reached maximum images (%d) which can be stored in:\n"
-	      "%s\n\n",
-	      max, dir);
-    }
-
-  debug("loadarbitrary() ends...");
-}
-
 
 /* Create a thumbnail: */
 
@@ -9831,14 +9998,6 @@ static void enable_avail_tools(void)
     {
       tool_avail[i] = tool_avail_bak[i];
     }
-}
-
-
-/* For qsort() call in loadarbitrary()... */
-
-static int compare_strings(char * * s1, char * * s2)
-{
-  return (strcmp(*s1, *s2));
 }
 
 
@@ -11480,10 +11639,10 @@ static void cleanup(void)
 	  state_stamps[i] = NULL;
 	}
     }
-
-  free_surface_array( img_brushes, MAX_BRUSHES );
   free_surface_array( img_stamps, MAX_STAMPS );
   free_surface_array( img_stamps_premirror, MAX_STAMPS );
+
+  free_surface_array( img_brushes, num_brushes );
   free_surface_array( img_tools, NUM_TOOLS );
   free_surface_array( img_tool_names, NUM_TOOLS );
   free_surface_array( img_title_names, NUM_TITLES );
@@ -14116,275 +14275,6 @@ static void do_render_cur_text(int do_blit)
 
   if (tmp_surf != NULL)
     SDL_FreeSurface(tmp_surf);
-}
-
-// backdoor into qsort operations, so we don't have to do work again
-static int was_bad_font;
-
-// see if two font surfaces are the same
-static int do_surfcmp(const SDL_Surface *const *const v1, const SDL_Surface *const *const v2)
-{
-  const SDL_Surface *const s1 = *v1;
-  const SDL_Surface *const s2 = *v2;
-  if(s1==s2)
-    {
-      printf("WTF?\n");
-      return 0;
-    }
-  if(!s1 || !s2 || !s1->w || !s2->w || !s1->h || !s2->h || !s1->format || !s2->format)
-    {
-      was_bad_font = 1;
-      return 0;
-    }
-  if(s1->format->BytesPerPixel != s2->format->BytesPerPixel)
-    {
-      // something really strange and bad happened
-      was_bad_font = 1;
-      return s1->format->BytesPerPixel - s2->format->BytesPerPixel;
-    }
-
-  if(s1->w != s2->w)
-    return s1->w - s2->w;
-  if(s1->h != s2->h)
-    return s1->h - s2->h;
-
-  const char *const c1 = (const char *const)s1->pixels;
-  const char *const c2 = (const char *const)s2->pixels;
-  int width = s1->format->BytesPerPixel * s1->w;
-  if(width==s1->pitch)
-    return memcmp(c1,c2,width*s1->h);
-  int cmp = 0;
-  int i = s1->h;
-  while(i--)
-    {
-      cmp = memcmp(c1 + i*s1->pitch, c2 + i*s2->pitch, width);
-      if(cmp)
-        break;
-    }
-  return cmp;
-}
-
-// see if two font surfaces are the same
-static int surfcmp(const void *s1, const void *s2)
-{
-  int diff = do_surfcmp(s1, s2);
-  if(!diff)
-    was_bad_font = 1;
-  return diff;
-}
-
-// check if the characters will render distinctly
-static int charset_works(TTF_Font *font, const char *s)
-{
-  SDL_Color black = {0, 0, 0, 0};
-  SDL_Surface **surfs = malloc(strlen(s) * sizeof surfs[0]);
-  unsigned count = 0;
-  int ret = 0;
-  while(*s)
-    {
-      char c[8];
-      unsigned offset = 0;
-      do
-        c[offset++] = *s++;
-        while((*s & 0xc0u) == 0x80u); // assume safe input
-      c[offset++] = '\0';
-      SDL_Surface *tmp_surf = TTF_RenderUTF8_Blended(font, c, black);
-      if(!tmp_surf)
-        {
-          printf("could not render \"%s\" font\n", TTF_FontFaceFamilyName(font));
-          goto out;
-        }
-      surfs[count++] = tmp_surf;
-    }
-  was_bad_font = 0;
-  qsort(surfs, count, sizeof surfs[0], surfcmp);
-  ret = !was_bad_font;
-out:
-  while(count--)
-    SDL_FreeSurface(surfs[count]);
-  free(surfs);
-  return ret;
-}
-
-static void loadfonts(const char * const dir, int fatal)
-{
-  DIR * d;
-  struct dirent * f;
-  struct stat sbuf;
-  char fname[512];
-  int d_names_alloced;
-  char * * d_names;
-  int num_files, i;
-
-
-  /* Open the directory: */
-
-  show_progress_bar();
-
-  d = opendir(dir);
-  if (d == NULL)
-    {
-      if (fatal)
-	{
-	  fprintf(stderr,
-		  "\nError: I can't find a directory of fonts\n"
-		  "%s\n"
-		  "The system error that occurred was: %s\n",
-		  dir, strerror(errno));
-
-	  cleanup();
-	  exit(1);
-	}
-      else
-	return;
-    }
-
-
-  /* Make some space: */
-
-  d_names_alloced = 32;
-  d_names = (char * *) malloc(sizeof(char *) * d_names_alloced);
-  if (d_names == NULL)
-    {
-      fprintf(stderr,
-	      "\nError: I can't allocate memory for directory listing!\n"
-	      "The system error that occurred was: %s\n",
-	      strerror(errno));
-      cleanup();
-      exit(1);
-    }
-
-
-
-  /* Read directory for fonts: */
-
-  num_files = 0;
-  do
-    {
-      f = readdir(d);
-
-      if (f != NULL)
-	{
-	  d_names[num_files] = strdup(f->d_name);
-	  num_files++;
-
-	  if (num_files >= d_names_alloced)
-	    {
-	      d_names_alloced += 32;
-	      d_names = realloc(d_names, sizeof(char *) * d_names_alloced);
-
-	      if (d_names == NULL)
-		{
-		  fprintf(stderr,
-			  "\nError: I can't allocate memory for directory listing!\n"
-			  "The system error that occurred was: %s\n",
-			  strerror(errno));
-		  cleanup();
-		  exit(1);
-		}
-	    }
-	}
-    }
-  while (f != NULL);
-
-  closedir(d);
-
-
-  qsort(d_names, num_files, sizeof(char *),
-	(int(*)(const void *, const void *))compare_strings);
-
-
-  /* Do something with each file (load TTFs): */
-
-  for (i = 0; i < num_files; i++)
-    {
-      if (num_font_styles==num_font_styles_max)
-        {
-          num_font_styles_max = num_font_styles_max * 5 / 4 + 30;
-          user_font_styles = realloc(user_font_styles, num_font_styles_max * sizeof *user_font_styles);
-        }
-      /* Ignore things starting with "." (e.g., "." and ".." dirs): */
-      if (d_names[i][0]!='.')
-	{
-	  int loadable = 0;
-	  /* If it's a directory, recurse down into it: */
-	  snprintf(fname, sizeof(fname), "%s/%s", dir, d_names[i]);
-	  char *filename = strrchr(fname,'/') + 1;
-	  debug(fname);
-	  stat(fname, &sbuf);
-	  if (S_ISDIR(sbuf.st_mode))
-	    loadfonts(fname,fatal);
-	  else if(sbuf.st_size==0)
-	    {
-	      loadable = 1;  // could be a Mac filesystem with resource fork
-              // Hmmm, my FreeType won't do this automatically.
-              snprintf(fname, sizeof(fname), "%s/%s/rsrc", dir, d_names[i]);
-	    }
-	  else
-	    {
-	      const char *restrict const cp = strchr(d_names[i], '.');
-	      if(cp)
-	        {
-	          // need gcc 3.4 for the restrict in this location
-                  const char * /*restrict*/ const suffixes[] = {"ttc", "dfont", "pfa", "pfb", "otf", "ttf",};
-                  int j = sizeof suffixes / sizeof suffixes[0];
-                  while(j--)
-                    {
-                      // only check part, because of potential .gz or .bz2 suffix
-                      if(!strncasecmp(cp+1,suffixes[j],strlen(suffixes[j])))
-                        {
-                          loadable = 1;
-                          break;
-                        }
-                    }
-	        }
-	    }
-          // Loadable: TrueType (.ttf), OpenType (.otf), Type1 (.pfa and .pfb),
-          // and various useless bitmap fonts. Compressed files (with .gz or .bz2)
-          // should also work. A *.dfont is pretty much a Mac resource fork in a normal
-          // file, and may load with some library versions.
-	  if (loadable)
-	    {
-//printf("Loading font: %s\n", fname);
-              TTF_Font *font = TTF_OpenFont(fname, text_sizes[text_size]);
-              if(font)
-                {
-                  const char *restrict const family = TTF_FontFaceFamilyName(font);
-                  const char *restrict const style = TTF_FontFaceStyleName(font);
-                  int numfaces = TTF_FontFaces(font);
-                  if (numfaces != 1)
-                    printf("Found %d faces in %s, %s, %s\n", numfaces, filename, family, style);
-                  if(charset_works(font, gettext("jq")) && charset_works(font, gettext("JQ")))
-                    {
-                      user_font_styles[num_font_styles] = malloc(sizeof *user_font_styles[num_font_styles]);
-                      user_font_styles[num_font_styles]->directory = strdup(dir);
-                      user_font_styles[num_font_styles]->filename = strdup(filename);
-                      user_font_styles[num_font_styles]->family = strdup(family);
-                      user_font_styles[num_font_styles]->style = strdup(style);
-                      user_font_styles[num_font_styles]->score  = charset_works(font, gettext("oO"));
-                      user_font_styles[num_font_styles]->score += charset_works(font, gettext("`\%_@$~#{}<>^&*"));
-                      user_font_styles[num_font_styles]->score += charset_works(font, gettext(",.?!"));
-                      user_font_styles[num_font_styles]->score += charset_works(font, gettext("017"));
-                      user_font_styles[num_font_styles]->score += charset_works(font, gettext("O0"));
-                      user_font_styles[num_font_styles]->score += charset_works(font, gettext("1Il|"));
-                      num_font_styles++;
-//                      printf("Accepted: %s, %s, %s\n", filename, family, style);
-                    }
-                  else
-                    {
-                      printf("Font missing critical chars: %s, %s, %s\n", filename, family, style);
-                    }
-                  TTF_CloseFont(font);
-                }
-              else
-                {
-                  printf("could not open %s\n", filename);
-                }
-	      show_progress_bar();
-	    }
-	}
-      free(d_names[i]);
-    }
 }
 
 
