@@ -18,6 +18,10 @@ http://www.newbreedsoftware.com/tuxpaint/
       loading into a separate thread. You only wait if you want the text tool.
       (450 MHz Mac G4, 7200 RPM ATA disk, about 200 font files)
 
+    * added eat_startup_events in an attempt to make early escape possible
+      (perhaps the user started Tux Paint by mistake, or the system is
+      swapping itself to death) Unfortunately, it seems to do nothing!
+
   * Stamp tool improvements:
     ------------------------
     * Greatly improved stamp outlining (to avoid empty rows or columns

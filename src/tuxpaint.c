@@ -2300,7 +2300,78 @@ static int charsize(char c);
 
 #define USEREVENT_TEXT_UPDATE 1
 
+static int bypass_splash_wait;
 
+// Wait for a keypress or mouse click
+// counter is in 1/10 second units
+static void do_wait(int counter)
+{
+  SDL_Event event;
+  int done;
+
+  if(bypass_splash_wait)
+    return;
+
+  done = 0;
+
+  do
+    {
+      while (mySDL_PollEvent(&event))
+	{
+	  if (event.type == SDL_QUIT)
+	    {
+	      done = 1;
+
+	      /* FIXME: Handle SDL_Quit better */
+	    }
+	  else if (event.type == SDL_ACTIVEEVENT)
+	    {
+	      handle_active(&event);
+	    }
+	  else if (event.type == SDL_KEYDOWN)
+	    {
+	      done = 1;
+	    }
+	  else if (event.type == SDL_MOUSEBUTTONDOWN &&
+		   valid_click(event.button.button))
+	    {
+	      done = 1;
+	    }
+	}
+
+      counter--;
+      SDL_Delay(100);
+    }
+  while (!done && counter > 0);
+}
+
+
+// This lets us exit quickly; perhaps the system is swapping to death
+// or the user started Tux Paint by accident. It also lets the user
+// more easily bypass the splash screen wait.
+static void eat_startup_events(void)
+{
+  SDL_Event event;
+  while (SDL_PollEvent(&event))
+    {
+      if (event.type == SDL_QUIT)
+        exit(0);
+      else if (event.type == SDL_ACTIVEEVENT)
+        handle_active(&event);
+      else if (event.type == SDL_KEYDOWN)
+        {
+          SDLKey key  = event.key.keysym.sym;
+          SDLMod ctrl = event.key.keysym.mod & (KMOD_CTRL|KMOD_LCTRL|KMOD_RCTRL);  
+          SDLMod alt  = event.key.keysym.mod & KMOD_ALT;
+          if (key==SDLK_ESCAPE || (key==SDLK_c && ctrl) || (key==SDLK_F4 && alt))
+            exit(0);
+          else                                                              
+            bypass_splash_wait = 1;
+        }
+      else if (event.type == SDL_MOUSEBUTTONDOWN)
+        bypass_splash_wait = 1;
+    }
+}
 
 
 #ifdef __powerpc__
@@ -6446,6 +6517,7 @@ static void tp_ftw(char *restrict const dir, unsigned dirlen, int rsrc,
 #if 1
 #ifndef THREADED_FONTS
   show_progress_bar();
+  eat_startup_events();
 #endif
 #endif
   dir[dirlen] = '\0';   // repair it (clobbered for stat() call above)
@@ -6487,6 +6559,7 @@ static void loadfont_callback(const char *restrict const dir, unsigned dirlen, t
 #if 1
 #ifndef THREADED_FONTS
       show_progress_bar();
+      eat_startup_events();
 #endif
 #endif
       int loadable = 0;
@@ -6589,6 +6662,7 @@ static void loadbrush_callback(const char *restrict const dir, unsigned dirlen, 
   while(i--)
     {
       show_progress_bar();
+      eat_startup_events();
       if (strstr(files[i].str, ".png"))
         {
           char fname[512];
@@ -6707,6 +6781,7 @@ static void loadstamp_callback(const char *restrict const dir, unsigned dirlen, 
   while(i--)
     {
       show_progress_bar();
+      eat_startup_events();
 
       if (strstr(files[i].str, ".png") && !strstr(files[i].str, "_mirror.png"))
         {
@@ -7606,6 +7681,7 @@ static void setup(int argc, char * argv[])
 			    14 / scale, 14 / scale);
 
   do_setcursor(cursor_watch);
+  eat_startup_events();
 
   font_thread = SDL_CreateThread(load_user_fonts, NULL);
 
@@ -7744,6 +7820,7 @@ static void setup(int argc, char * argv[])
   SDL_FillRect(img_grey, NULL, SDL_MapRGBA(screen->format, 0x88, 0x88, 0x88, 255));
 
   show_progress_bar();
+  eat_startup_events();
 
   img_yes = loadimage(DATA_PREFIX "images/ui/yes.png");
   img_no = loadimage(DATA_PREFIX "images/ui/no.png");
@@ -7767,6 +7844,7 @@ static void setup(int argc, char * argv[])
   img_italic = loadimage(DATA_PREFIX "images/ui/italic.png");
 
   show_progress_bar();
+  eat_startup_events();
 
   tmp_imgcurup    = loadimage(DATA_PREFIX "images/ui/cursor_up_large.png");
   tmp_imgcurdown  = loadimage(DATA_PREFIX "images/ui/cursor_down_large.png");
@@ -7781,6 +7859,7 @@ static void setup(int argc, char * argv[])
   SDL_FreeSurface(tmp_imgcurdown);
 
   show_progress_bar();
+  eat_startup_events();
 
   img_scroll_up = loadimage(DATA_PREFIX "images/ui/scroll_up.png");
   img_scroll_down = loadimage(DATA_PREFIX "images/ui/scroll_down.png");
@@ -7793,6 +7872,7 @@ static void setup(int argc, char * argv[])
 #endif
 
   show_progress_bar();
+  eat_startup_events();
 
   img_sparkles = loadimage(DATA_PREFIX "images/ui/sparkles.png");
   img_grass    = loadimage(DATA_PREFIX "images/ui/grass.png");
@@ -7862,35 +7942,31 @@ static void setup(int argc, char * argv[])
 
 
   /* Load magic icons: */
-
   for (i = 0; i < NUM_MAGICS; i++)
-    {
-      img_magics[i] = loadimage(magic_img_fnames[i]);
-      show_progress_bar();
-    }
+    img_magics[i] = loadimage(magic_img_fnames[i]);
 
+  show_progress_bar();
+  eat_startup_events();
 
   /* Load shape icons: */
-
   for (i = 0; i < NUM_SHAPES; i++)
-    {
-      img_shapes[i] = loadimage(shape_img_fnames[i]);
-      show_progress_bar();
-    }
+    img_shapes[i] = loadimage(shape_img_fnames[i]);
 
+  show_progress_bar();
+  eat_startup_events();
 
   /* Load tip tux images: */
-
   for (i = 0; i < NUM_TIP_TUX; i++)
-    {
-      img_tux[i] = loadimage(tux_img_fnames[i]);
-      show_progress_bar();
-    }
+    img_tux[i] = loadimage(tux_img_fnames[i]);
+
+  show_progress_bar();
+  eat_startup_events();
 
   img_mouse = loadimage(DATA_PREFIX "images/ui/mouse.png");
   img_mouse_click = loadimage(DATA_PREFIX "images/ui/mouse_click.png");
+
   show_progress_bar();
-  
+  eat_startup_events();
   
   /* Create toolbox and selector labels: */
 
@@ -10843,47 +10919,6 @@ static SDL_Surface * loadaltimage(const char * const fname)
     }
 
   return s;
-}
-
-
-// Wait for a keypress or mouse click
-// counter is in 1/10 second units
-static void do_wait(int counter)
-{
-  SDL_Event event;
-  int done;
-
-  done = 0;
-
-  do
-    {
-      while (mySDL_PollEvent(&event))
-	{
-	  if (event.type == SDL_QUIT)
-	    {
-	      done = 1;
-
-	      /* FIXME: Handle SDL_Quit better */
-	    }
-	  else if (event.type == SDL_ACTIVEEVENT)
-	    {
-	      handle_active(&event);
-	    }
-	  else if (event.type == SDL_KEYDOWN)
-	    {
-	      done = 1;
-	    }
-	  else if (event.type == SDL_MOUSEBUTTONDOWN &&
-		   valid_click(event.button.button))
-	    {
-	      done = 1;
-	    }
-	}
-
-      counter--;
-      SDL_Delay(100);
-    }
-  while (!done && counter > 0);
 }
 
 
