@@ -14613,7 +14613,7 @@ static int charset_works(TTF_Font *font, const char *s)
       unsigned offset = 0;
       do
         c[offset++] = *s++;
-        while(offset<5 && (*s & 0xc0u) == 0x80u); // assume safe input
+        while((*s & 0xc0u) == 0x80u); // assume safe input
       c[offset++] = '\0';
       SDL_Surface *tmp_surf = TTF_RenderUTF8_Blended(font, c, black);
       if(!tmp_surf)
@@ -14629,6 +14629,7 @@ static int charset_works(TTF_Font *font, const char *s)
 out:
   while(count--)
     SDL_FreeSurface(surfs[count]);
+  free(surfs);
   return ret;
 }
 
