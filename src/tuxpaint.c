@@ -3291,7 +3291,7 @@ static void mainloop(void)
                           cur_font = cur_thing;
                           
                           char font_tux_text[512];
-                          snprintf(font_tux_text, sizeof font_tux_text, "%s, %s", TTF_FontFaceFamilyName(getfonthandle(cur_font)), TTF_FontFaceStyleName(getfonthandle(cur_font)));
+                          snprintf(font_tux_text, sizeof font_tux_text, "%s (%s).", TTF_FontFaceFamilyName(getfonthandle(cur_font)), TTF_FontFaceStyleName(getfonthandle(cur_font)));
                           printf("font change:%s\n", font_tux_text);
                           draw_tux_text(TUX_GREAT, font_tux_text, 1);
                           
