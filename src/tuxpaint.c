@@ -1451,6 +1451,7 @@ static SDL_Surface * img_black, * img_grey;
 static SDL_Surface * img_yes, * img_no;
 static SDL_Surface * img_open, * img_erase, * img_back, * img_trash;
 static SDL_Surface * img_printer, * img_printer_wait, * img_save_over;
+static SDL_Surface * img_popup_arrow;
 static SDL_Surface * img_cursor_up, * img_cursor_down;
 static SDL_Surface * img_cursor_starter_up, * img_cursor_starter_down;
 static SDL_Surface * img_scroll_up, * img_scroll_down;
@@ -7016,8 +7017,11 @@ static void setup(int argc, char * argv[])
   img_back = loadimage(DATA_PREFIX "images/ui/back.png");
   img_trash = loadimage(DATA_PREFIX "images/ui/trash.png");
   
+  img_popup_arrow = loadimage(DATA_PREFIX "images/ui/popup_arrow.png");
+  
   img_printer = loadimage(DATA_PREFIX "images/ui/printer.png");
   img_printer_wait = loadimage(DATA_PREFIX "images/ui/printer_wait.png");
+
   img_save_over = loadimage(DATA_PREFIX "images/ui/save_over.png");
 
   img_grow = loadimage(DATA_PREFIX "images/ui/grow.png");
@@ -13304,7 +13308,7 @@ static int do_open(int want_new_tool)
 		  if (do_prompt_image(PROMPT_ERASE_TXT,
 				      PROMPT_ERASE_YES, PROMPT_ERASE_NO,
 				      thumbs[which],
-				      img_shrink,
+				      img_popup_arrow,
 				      img_trash))
 		    {
 		      snprintf(fname, sizeof(fname), "saved/%s%s",
