@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint 0.9.14\n"
 "POT-Creation-Date: 2003-06-26 05:23+0200\n"
-"PO-Revision-Date: 2004-03-04 02:58-0800\n"
+"PO-Revision-Date: 2004-03-05 22:35-0500\n"
 "Last-Translator: Aleksandar Jelenak <jelenak@netlinkplus.net>\n"
 "Language-Team: Serbian <gnu@prevod.org>\n"
 "MIME-Version: 1.0\n"
@@ -15,63 +15,63 @@ msgstr ""
 
 #: colors.h:62
 msgid "Black"
-msgstr "црна"
+msgstr "црна!"
 
 #: colors.h:63
 msgid "White"
-msgstr "бела"
+msgstr "бела!"
 
 #: colors.h:64
 msgid "Red!"
-msgstr "црвена"
+msgstr "црвена!"
 
 #: colors.h:65
 msgid "Pink!"
-msgstr "ружичаста"
+msgstr "ружичаста!"
 
 #: colors.h:66
 msgid "Orange!"
-msgstr "наранџаста"
+msgstr "наранџаста!"
 
 #: colors.h:67
 msgid "Yellow!"
-msgstr "жута"
+msgstr "жута!"
 
 #: colors.h:68
 msgid "Lime!"
-msgstr "јарко зелена"
+msgstr "јарко зелена!"
 
 #: colors.h:69
 msgid "Green!"
-msgstr "зелена"
+msgstr "зелена!"
 
 #: colors.h:70
 msgid "Cyan!"
-msgstr "цијан"
+msgstr "цијан!"
 
 #: colors.h:71
 msgid "Blue!"
-msgstr "плава"
+msgstr "плава!"
 
 #: colors.h:72
 msgid "Purple!"
-msgstr "љубичаста"
+msgstr "љубичаста!"
 
 #: colors.h:73
 msgid "Fuchsia!"
-msgstr "фуксија"
+msgstr "фуксија!"
 
 #: colors.h:74
 msgid "Brown!"
-msgstr "браон"
+msgstr "браон!"
 
 #: colors.h:75
 msgid "Grey!"
-msgstr "сива"
+msgstr "сива!"
 
 #: colors.h:76
 msgid "Silver!"
-msgstr "сребрна"
+msgstr "сребрна!"
 
 #: great.h:20
 msgid "Great!"
@@ -91,55 +91,55 @@ msgstr "Добар потез!"
 
 #: magic.h:48
 msgid "Rainbow"
-msgstr "дуга"
+msgstr "Дуга"
 
 #: magic.h:49
 msgid "Sparkles"
-msgstr "искрице"
+msgstr "Искрице"
 
 #: magic.h:51
 msgid "Mirror"
-msgstr "огледало"
+msgstr "Огледало"
 
 #: magic.h:52
 msgid "Flip"
-msgstr "обрни"
+msgstr "Обрни"
 
 #: magic.h:54
 msgid "Blur"
-msgstr "замагли"
+msgstr "Замагли"
 
 #: magic.h:55
 msgid "Blocks"
-msgstr "грубо"
+msgstr "Грубо"
 
 #: magic.h:57
 msgid "Negative"
-msgstr "негатив"
+msgstr "Негатив"
 
 #: magic.h:58
 msgid "Fade"
-msgstr "избледи"
+msgstr "Избледи"
 
 #: magic.h:60
 msgid "Chalk"
-msgstr "креда"
+msgstr "Креда"
 
 #: magic.h:61
 msgid "Drip"
-msgstr "цури"
+msgstr "Цури"
 
 #: magic.h:63
 msgid "Thick"
-msgstr "дебело"
+msgstr "Дебело"
 
 #: magic.h:64
 msgid "Thin"
-msgstr "танко"
+msgstr "Танко"
 
 #: magic.h:66
 msgid "Fill"
-msgstr "попуна"
+msgstr "Попуна"
 
 #: magic.h:73
 msgid "You can draw in rainbow colors!"
@@ -167,11 +167,11 @@ msgstr "Кликни и померај миша да би погрубио сл�
 
 #: magic.h:82
 msgid "Click and move the mouse around to draw a negative"
-msgstr "Кликни и шетај миша да би добијао негатив"
+msgstr "Кликни и шетај миша да би правио негатив"
 
 #: magic.h:83
 msgid "Click and move to fade the colors."
-msgstr "Кликни и померај да би избледео боје."
+msgstr "Кликни и померај да би изблеђивао боје."
 
 #: magic.h:85
 msgid "Click and move the mouse around to turn the picture into a chalk drawing."
