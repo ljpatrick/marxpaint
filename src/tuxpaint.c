@@ -38,6 +38,7 @@
 
 /* #define DEBUG */
 /* #define DEBUG_MALLOC */
+#define DEBUG_FONTS
 /* #define LOW_QUALITY_THUMBNAILS */
 /* #define LOW_QUALITY_COLOR_SELECTOR */
 /* #define LOW_QUALITY_STAMP_OUTLINE */
@@ -1705,7 +1706,9 @@ static void parse_font_style(style_info *si)
       if(!stumped)
         {
           stumped=1;
+#ifdef DEBUG_FONTS
           printf("Font style parser stumped by \"%s\".\n", si->style);
+#endif
         }
       sp++; // bad: an unknown character
     }
@@ -1729,6 +1732,7 @@ static void groupfonts_range(style_info **base, int count)
   int boldmap[4] = {-1,-1,-1,-1};
   int i;
 
+#ifdef DEBUG_FONTS
 if(count<1 || count>4)
 {
 printf("\n::::::: %d styles in %s:\n",count, base[0]->family);
@@ -1738,6 +1742,7 @@ while(i--)
 printf("               %s\n", base[i]->style);
 }
 }
+#endif
 
   i = count;
   while(i--)
@@ -1840,16 +1845,20 @@ printf("               %s\n", base[i]->style);
       int b = boldmap[base[i]->boldness];
       if(b==-1)
         {
+#ifdef DEBUG_FONTS
           printf("too many boldness levels, discarding: %s, %s\n", base[i]->family, base[i]->style);
+#endif
           continue;
         }
       int spot = b ? TTF_STYLE_BOLD : 0;
       spot += base[i]->italic ? TTF_STYLE_ITALIC : 0;
       if(fi->filename[spot])
         {
+#ifdef DEBUG_FONTS
           printf("duplicates, discarding: %s, %s\n", base[i]->family, base[i]->style);
           printf("b %d, spot %d\n", b, spot);
           printf("occupancy %p %p %p %p\n", fi->filename[0], fi->filename[1], fi->filename[2], fi->filename[3]);
+#endif
           continue;
         }
       fi->filename[spot] = strdup(base[i]->filename);
@@ -1952,9 +1961,13 @@ static void groupfonts(void)
       low = high;
     }
   qsort(user_font_families, num_font_families, sizeof user_font_families[0], compar_fontscore);
+
+#ifdef DEBUG_FONTS
   if(user_font_families[0]->score < 0)
     printf("sorted the wrong way, or all fonts were crap\n");
   printf("Trim starting with %d families\n", num_font_families);
+#endif
+
   while(num_font_families>1 && user_font_families[num_font_families-1]->score < 0)
     {
       i = --num_font_families;
@@ -1972,7 +1985,10 @@ static void groupfonts(void)
       free(user_font_families[i]);
       user_font_families[i] = NULL;
     }
+
+#ifdef DEBUG_FONTS
   printf("Trim ending with %d families\n", num_font_families);
+#endif
 }
 
 ////////////////////////////////////////////////////////////////////
@@ -14447,12 +14463,16 @@ static void loadfonts(const char * const dir, int fatal)
                             }
                           else
                             {
+#ifdef DEBUG_FONTS
                               printf("Bad font, 'a' and 'z' match: %s, %s, %s\n", filename, family, style);
+#endif
                             }
                         }
                       else
                         {
+#ifdef DEBUG_FONTS
                           printf("could not render %s, %s, %s\n", filename, family, style);
+#endif
                         }
                       if(tmp_surf_a)
                         SDL_FreeSurface(tmp_surf_a);
@@ -14463,7 +14483,9 @@ static void loadfonts(const char * const dir, int fatal)
                 }
               else
                 {
+#ifdef DEBUG_FONTS
                   printf("could not open %s\n", filename);
+#endif
                 }
 	      show_progress_bar();
 	    }
