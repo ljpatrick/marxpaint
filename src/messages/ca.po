@@ -39,7 +39,7 @@ msgid "No"
 msgstr "No"
 
 #: tuxpaint.c:799
-msgid "If you quit, you'll lose your picture! Save it?"
+msgid "If you quit, you’ll lose your picture! Save it?"
 msgstr "Si sortiu perdreu el vostre dibuix! El voleu desar?"
 
 #: tuxpaint.c:803
@@ -47,7 +47,7 @@ msgid "Save your picture first?"
 msgstr "Deso el vostre dibuix abans?"
 
 #: tuxpaint.c:807
-msgid "Can't open that picture!"
+msgid "Can’t open that picture!"
 msgstr "No puc obrir aquest dibuix!"
 
 #: tuxpaint.c:808 tuxpaint.c:815 tuxpaint.c:822 tuxpaint.c:825
@@ -59,7 +59,7 @@ msgid "Starting a new picture will erase the current one!"
 msgstr "Començar un nou dibuix esborrarà l'actual!"
 
 #: tuxpaint.c:811
-msgid "That's OK!"
+msgid "That’s OK!"
 msgstr "D'acord!"
 
 #: tuxpaint.c:812
@@ -80,7 +80,7 @@ msgid "Your picture has been printed!"
 msgstr "El vostre fitxer s'ha imprés!"
 
 #: tuxpaint.c:824
-msgid "You can't print yet!"
+msgid "You can’t print yet!"
 msgstr "Encara no podeu imprimir!"
 
 #: tuxpaint.c:827
@@ -108,7 +108,7 @@ msgid "No, save a new file"
 msgstr "No, desa en un fitxer nou"
 
 #: tuxpaint.c:9885
-msgid "Choose the picture you want, then click 'Open'."
+msgid "Choose the picture you want, then click “Open”."
 msgstr "Trieu el dibuix que voleu, llavors feu clic en Obre."
 
 #: colors.h:62
@@ -467,7 +467,7 @@ msgid "You now have a blank sheet to draw on!"
 msgstr "Ara teniu una fulla en blanc per dibuixar-hi!"
 
 #: tools.h:72
-msgid "Open..."
+msgid "Open…"
 msgstr "Obrir..."
 
 #: tools.h:73
@@ -475,7 +475,7 @@ msgid "Your image has been saved!"
 msgstr "El vostre dibuix s'ha desat!"
 
 #: tools.h:74
-msgid "Printing..."
+msgid "Printing…"
 msgstr "S'està imprimint..."
 
 #: tools.h:75
@@ -495,7 +495,7 @@ msgid "Move the mouse to rotate the shape. Click to draw it."
 msgstr "Moveu el ratolí per girar la figura. Feu clic per dibuixar-lo."
 
 #: tools.h:81
-msgid "Ok then... Let's keep drawing this one!"
+msgid "OK then… Let’s keep drawing this one!"
 msgstr "D'acord, llavors... Seguirem dibuixant en aquest!"
 
 #~ msgid "Okay"

@@ -32,7 +32,7 @@ msgid "No"
 msgstr "아니요"
 
 #: tuxpaint.c:799
-msgid "If you quit, you'll lose your picture! Save it?"
+msgid "If you quit, you’ll lose your picture! Save it?"
 msgstr "그림을 저장않하고 종료 하면 그림이 없어져요! 저장할까요?"
 
 #: tuxpaint.c:803
@@ -40,7 +40,7 @@ msgid "Save your picture first?"
 msgstr "먼저 그림을 저장할까요?"
 
 #: tuxpaint.c:807
-msgid "Can't open that picture!"
+msgid "Can’t open that picture!"
 msgstr "그 그림은 열지 못합니다!"
 
 #: tuxpaint.c:814 tuxpaint.c:821 tuxpaint.c:828 tuxpaint.c:831
@@ -52,7 +52,7 @@ msgid "Starting a new picture will erase the current one!"
 msgstr "새 그림을 시작하면 지금있는 그림이 없어져요!"
 
 #: tuxpaint.c:811
-msgid "That's OK!"
+msgid "That’s OK!"
 msgstr "괜찮습니다!"
 
 #: tuxpaint.c:812
@@ -72,7 +72,7 @@ msgid "Your picture has been printed!"
 msgstr "그림을 인쇄 했습니다!"
 
 #: tuxpaint.c:824
-msgid "You can't print yet!"
+msgid "You can’t print yet!"
 msgstr "아직 인쇄 하지 못합니다!"
 
 #: tuxpaint.c:827
@@ -100,7 +100,7 @@ msgid "No, save a new file"
 msgstr "아니요, 새로운 파일로 저장하죠"
 
 #: tuxpaint.c:9885
-msgid "Choose the picture you want, then click 'Open'."
+msgid "Choose the picture you want, then click “Open”."
 msgstr "원하는 그림을 고른후 '열기'버튼을 눌러주세요."
 
 #: colors.h:62
@@ -465,7 +465,7 @@ msgid "You now have a blank sheet to draw on!"
 msgstr "그림 다 지워졌습니다.  새 그림을 시작하세요!"
 
 #: tools.h:72
-msgid "Open..."
+msgid "Open…"
 msgstr "그림 열기..."
 
 #: tools.h:73
@@ -473,7 +473,7 @@ msgid "Your image has been saved!"
 msgstr "그림을 저장 했습니다!"
 
 #: tools.h:74
-msgid "Printing..."
+msgid "Printing…"
 msgstr "인쇄 중..."
 
 #: tools.h:75
@@ -494,5 +494,5 @@ msgstr ""
 "(1) 마우스를 움직여 모양을 돌리세요.  (2) 마우스 버튼을 눌러 완성 시키세요."
 
 #: tools.h:81
-msgid "Ok then... Let's keep drawing this one!"
+msgid "OK then… Let’s keep drawing this one!"
 msgstr "그럼, 계속 그림을 그리세요!"

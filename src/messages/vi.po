@@ -38,7 +38,7 @@ msgid "No"
 msgstr "Khong"
 
 #: tuxpaint.c:805
-msgid "If you quit, you'll lose your picture! Save it?"
+msgid "If you quit, you’ll lose your picture! Save it?"
 msgstr "Neu thoat, buc tranh cua Ban se mat! Co ghi lai?"
 
 #: tuxpaint.c:809
@@ -46,7 +46,7 @@ msgid "Save your picture first?"
 msgstr "Co ghi buc tranh cua Ban?"
 
 #: tuxpaint.c:813
-msgid "Can't open that picture!"
+msgid "Can’t open that picture!"
 msgstr "Khong the mo duoc buc tranh nay!"
 
 #: tuxpaint.c:814
@@ -62,7 +62,7 @@ msgid "Starting a new picture will erase the current one!"
 msgstr "Neu bat dau ban ve moi, ban ve hien thoi se bi xoa!"
 
 #: tuxpaint.c:817
-msgid "That's OK!"
+msgid "That’s OK!"
 msgstr "Dong y!"
 
 #: tuxpaint.c:818
@@ -82,7 +82,7 @@ msgid "Your picture has been printed!"
 msgstr "Buc tranh cua Ban da duoc in!"
 
 #: tuxpaint.c:830
-msgid "You can't print yet!"
+msgid "You can’t print yet!"
 msgstr "Luc nay, Ban khong the in duoc!"
 
 #: tuxpaint.c:833
@@ -112,7 +112,7 @@ msgid "No, save a new file"
 msgstr "Khong, ghi vao mot file moi"
 
 #: tuxpaint.c:9951
-msgid "Choose the picture you want, then click 'Open'."
+msgid "Choose the picture you want, then click “Open”."
 msgstr "Chon mot buc tranh Ban muon, kich tiep vao o 'Mo'."
 
 #: colors.h:62
@@ -495,7 +495,7 @@ msgid "You now have a blank sheet to draw on!"
 msgstr "Ban co mot to giay trang, bat dau ve!"
 
 #: tools.h:72
-msgid "Open..."
+msgid "Open…"
 msgstr "Mo..."
 
 #: tools.h:73
@@ -503,7 +503,7 @@ msgid "Your image has been saved!"
 msgstr "Buc trang cua Ban da duoc ghi!"
 
 #: tools.h:74
-msgid "Printing..."
+msgid "Printing…"
 msgstr "Dang in..."
 
 #: tools.h:75
@@ -523,6 +523,6 @@ msgid "Move the mouse to rotate the shape. Click to draw it."
 msgstr "Di chuot de quay hinh. Kich chuot de ket thuc"
 
 #: tools.h:81
-msgid "Ok then... Let's keep drawing this one!"
+msgid "OK then… Let’s keep drawing this one!"
 msgstr "Duoc thoi... Hay tiep tuc ban ve nay!"
 

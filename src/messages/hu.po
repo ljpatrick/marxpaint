@@ -27,7 +27,7 @@ msgid "No"
 msgstr "Nem"
 
 #: tuxpaint.c:799
-msgid "If you quit, you'll lose your picture! Save it?"
+msgid "If you quit, you’ll lose your picture! Save it?"
 msgstr "El fog veszni a rajzod, ha kilépsz. Elmentsük?"
 
 #: tuxpaint.c:803
@@ -36,7 +36,7 @@ msgstr "Elmentsük előbb a rajzod?"
 
 #: tuxpaint.c:807
 #, fuzzy
-msgid "Can't open that picture!"
+msgid "Can’t open that picture!"
 msgstr "Biztos kitörlöd a rajzodat?"
 
 #: tuxpaint.c:808 tuxpaint.c:815 tuxpaint.c:822 tuxpaint.c:825
@@ -49,7 +49,7 @@ msgstr "El fog veszni a régi rajzod, ha újat rajzolsz!"
 
 #: tuxpaint.c:811
 #, fuzzy
-msgid "That's OK!"
+msgid "That’s OK!"
 msgstr "Rendben"
 
 #: tuxpaint.c:812
@@ -72,7 +72,7 @@ msgid "Your picture has been printed!"
 msgstr "Elmentettük a rajzodat!"
 
 #: tuxpaint.c:824
-msgid "You can't print yet!"
+msgid "You can’t print yet!"
 msgstr ""
 
 #: tuxpaint.c:827
@@ -103,7 +103,7 @@ msgid "No, save a new file"
 msgstr "Nem, inkább mentsük el más néven"
 
 #: tuxpaint.c:9885
-msgid "Choose the picture you want, then click 'Open'."
+msgid "Choose the picture you want, then click “Open”."
 msgstr ""
 
 #: colors.h:62
@@ -481,7 +481,7 @@ msgid "You now have a blank sheet to draw on!"
 msgstr "Kezdhetsz rajzolni!"
 
 #: tools.h:72
-msgid "Open..."
+msgid "Open…"
 msgstr "Megnyitás..."
 
 #: tools.h:73
@@ -489,7 +489,7 @@ msgid "Your image has been saved!"
 msgstr "Elmentettük a rajzodat!"
 
 #: tools.h:74
-msgid "Printing..."
+msgid "Printing…"
 msgstr "Nyomtatás..."
 
 #: tools.h:75
@@ -510,7 +510,7 @@ msgid "Move the mouse to rotate the shape. Click to draw it."
 msgstr "Mozgasd az egeret, hogy forgatni tudd a síkidomot!"
 
 #: tools.h:81
-msgid "Ok then... Let's keep drawing this one!"
+msgid "OK then… Let’s keep drawing this one!"
 msgstr "Rendben... Akkor folytassuk ezt a rajzot!"
 
 #~ msgid "Okay"

@@ -69,16 +69,16 @@ char * tool_tips[NUM_TOOLS] = {
   /* Redo */ gettext_noop("Redo!"),
   /* Eraser */ gettext_noop("Eraser!"),
   /* New */ gettext_noop("You now have a blank sheet to draw on!"),
-  /* Open */ gettext_noop("Open..."),
+  /* Open */ gettext_noop("Open…"),
   /* Save */ gettext_noop("Your image has been saved!"),
-  /* Print */ gettext_noop("Printing..."),
+  /* Print */ gettext_noop("Printing…"),
   /* Quit */ gettext_noop("Bye bye!")
 };
 
 #define TIP_LINE_START gettext_noop("Let go of the button to complete the line.")
 #define TIP_SHAPE_START gettext_noop("Hold the button to stretch the shape.")
 #define TIP_SHAPE_NEXT gettext_noop("Move the mouse to rotate the shape. Click to draw it.")
-#define TIP_NEW_ABORT gettext_noop("Ok then... Let's keep drawing this one!")
+#define TIP_NEW_ABORT gettext_noop("OK then… Let’s keep drawing this one!")
 
 
 /* Tool icon filenames: */

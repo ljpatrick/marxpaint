@@ -33,7 +33,7 @@ msgid "No"
 msgstr "いいえ"
 
 #: tuxpaint.c:799
-msgid "If you quit, you'll lose your picture! Save it?"
+msgid "If you quit, you’ll lose your picture! Save it?"
 msgstr "やめると えがきえちゃうよ！ セーブする？"
 
 #: tuxpaint.c:803
@@ -41,7 +41,7 @@ msgid "Save your picture first?"
 msgstr "そのまえに いまのえを セーブする？"
 
 #: tuxpaint.c:807
-msgid "Can't open that picture!"
+msgid "Can’t open that picture!"
 msgstr "そのえはひらけませんでした！"
 
 #: tuxpaint.c:808 tuxpaint.c:815 tuxpaint.c:822 tuxpaint.c:825
@@ -53,7 +53,7 @@ msgid "Starting a new picture will erase the current one!"
 msgstr "さいしょからやりなおすと、いまのえがきえるよ！"
 
 #: tuxpaint.c:811
-msgid "That's OK!"
+msgid "That’s OK!"
 msgstr "いいよ！"
 
 #: tuxpaint.c:812
@@ -73,7 +73,7 @@ msgid "Your picture has been printed!"
 msgstr "えを いんさつしました！"
 
 #: tuxpaint.c:824
-msgid "You can't print yet!"
+msgid "You can’t print yet!"
 msgstr "まだ いんさつは できません！"
 
 #: tuxpaint.c:827
@@ -101,7 +101,7 @@ msgid "No, save a new file"
 msgstr "いいえ、べつのファイルに セーブします"
 
 #: tuxpaint.c:9885
-msgid "Choose the picture you want, then click 'Open'."
+msgid "Choose the picture you want, then click “Open”."
 msgstr "えをえらんでから 「ひらく」をクリックしてね"
 
 #: colors.h:62
@@ -449,7 +449,7 @@ msgid "You now have a blank sheet to draw on!"
 msgstr "あたらしいかみだよ。さあかこう！"
 
 #: tools.h:72
-msgid "Open..."
+msgid "Open…"
 msgstr "ひらく..."
 
 #: tools.h:73
@@ -457,7 +457,7 @@ msgid "Your image has been saved!"
 msgstr "えをセーブしました！"
 
 #: tools.h:74
-msgid "Printing..."
+msgid "Printing…"
 msgstr "いんさつちゅう..."
 
 #: tools.h:75
@@ -477,5 +477,5 @@ msgid "Move the mouse to rotate the shape. Click to draw it."
 msgstr "マウスをうごかして ずけいをまわそう。クリックしたら できあがり"
 
 #: tools.h:81
-msgid "Ok then... Let's keep drawing this one!"
+msgid "OK then… Let’s keep drawing this one!"
 msgstr "オッケー。 じゃあ このままつづけよう！"

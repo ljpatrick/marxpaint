@@ -37,7 +37,7 @@ msgid "No"
 msgstr "Ne"
 
 #: tuxpaint.c:799
-msgid "If you quit, you'll lose your picture! Save it?"
+msgid "If you quit, you’ll lose your picture! Save it?"
 msgstr "Da li želiš pohraniti tvoj crtež?"
 
 #: tuxpaint.c:803
@@ -45,7 +45,7 @@ msgid "Save your picture first?"
 msgstr "Treba li prvo pohrniti tvoj crtež?"
 
 #: tuxpaint.c:807
-msgid "Can't open that picture!"
+msgid "Can’t open that picture!"
 msgstr "Ne mogu otvoriti crtež!"
 
 #: tuxpaint.c:808
@@ -60,7 +60,7 @@ msgid "Starting a new picture will erase the current one!"
 msgstr "Ako otvoriš novi crtež, ovaj će se izbrisati!"
 
 #: tuxpaint.c:811
-msgid "That's OK!"
+msgid "That’s OK!"
 msgstr "U redu!"
 
 #: tuxpaint.c:812
@@ -80,7 +80,7 @@ msgid "Your picture has been printed!"
 msgstr "Tvoj crtež je ispisan na pisaču!"
 
 #: tuxpaint.c:824
-msgid "You can't print yet!"
+msgid "You can’t print yet!"
 msgstr "Ne možeš još ispisati!"
 
 #: tuxpaint.c:827
@@ -109,7 +109,7 @@ msgid "No, save a new file"
 msgstr "Ne. Pohrani u novu datoteku."
 
 #: tuxpaint.c:9885
-msgid "Choose the picture you want, then click 'Open'."
+msgid "Choose the picture you want, then click “Open”."
 msgstr "Izaberi crtež, a zatim klikni 'Otvori'."
 
 #: colors.h:62
@@ -474,7 +474,7 @@ msgid "You now have a blank sheet to draw on!"
 msgstr "Pred tobom je prazno mjesto za crtanje!"
 
 #: tools.h:72
-msgid "Open..."
+msgid "Open…"
 msgstr "Otvori..."
 
 #: tools.h:73
@@ -482,7 +482,7 @@ msgid "Your image has been saved!"
 msgstr "Tvoj crtež je pohranjen!"
 
 #: tools.h:74
-msgid "Printing..."
+msgid "Printing…"
 msgstr "Ispisujem na pisač..."
 
 #: tools.h:75
@@ -502,6 +502,6 @@ msgid "Move the mouse to rotate the shape. Click to draw it."
 msgstr "Pomakni miša i zaokreni oblik.Klikni i on je nacrtan."
 
 #: tools.h:81
-msgid "Ok then... Let's keep drawing this one!"
+msgid "OK then… Let’s keep drawing this one!"
 msgstr "U redu. Zadržat ćemo ovaj crtež!"
 

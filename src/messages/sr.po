@@ -33,7 +33,7 @@ msgstr "Не"
 
 #
 #: tuxpaint.c:805
-msgid "If you quit, you'll lose your picture! Save it?"
+msgid "If you quit, you’ll lose your picture! Save it?"
 msgstr "Изгубићеш слику ако завршиш! Да се сачува?"
 
 #
@@ -43,7 +43,7 @@ msgstr "Прво да сачуваш своју слику?"
 
 #
 #: tuxpaint.c:813
-msgid "Can't open that picture!"
+msgid "Can’t open that picture!"
 msgstr "Не могу да отворим ту слику!"
 
 #
@@ -58,7 +58,7 @@ msgstr "Започињање нове слике ће избрисати дос�
 
 #
 #: tuxpaint.c:817
-msgid "That's OK!"
+msgid "That’s OK!"
 msgstr "Добро!"
 
 #
@@ -83,7 +83,7 @@ msgstr "Твоје слика је одштампана!"
 
 #
 #: tuxpaint.c:830
-msgid "You can't print yet!"
+msgid "You can’t print yet!"
 msgstr "Не можеш још да штампаш!"
 
 #
@@ -118,7 +118,7 @@ msgstr "Не, сачувај у нову датотеку"
 
 #
 #: tuxpaint.c:9951
-msgid "Choose the picture you want, then click 'Open'."
+msgid "Choose the picture you want, then click “Open”."
 msgstr "Изабери слику коју желиш, затим кликни „Отвори“."
 
 #
@@ -553,7 +553,7 @@ msgstr "Имаш сада чисти папир за цртање!"
 
 #
 #: tools.h:72
-msgid "Open..."
+msgid "Open…"
 msgstr "Отвори..."
 
 #
@@ -563,7 +563,7 @@ msgstr "Твоја слика је сачувана!"
 
 #
 #: tools.h:74
-msgid "Printing..."
+msgid "Printing…"
 msgstr "Штампа се..."
 
 #
@@ -588,7 +588,7 @@ msgstr "Мрдај мишем да би окретао облик. Кликни 
 
 #
 #: tools.h:81
-msgid "Ok then... Let's keep drawing this one!"
+msgid "OK then… Let’s keep drawing this one!"
 msgstr "Добро онда... Хајде да наставимо са цртањем!"
 
 #

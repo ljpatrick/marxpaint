@@ -24,7 +24,7 @@ msgid "No"
 msgstr "§Åñ¼¡õ"
 
 #: tuxpaint.c:799
-msgid "If you quit, you'll lose your picture! Save it?"
+msgid "If you quit, you’ll lose your picture! Save it?"
 msgstr "¦ÅÇ¢§ÂÈ¢Å¢ð¼¡ø, ¿£í¸û Å¨Ãó¾ À¼õ «Æ¢óÐÅ¢Î§Á! À¼ò¨¾ §ºÁ¢òÐÅ¢¼Ä¡Á¡ ?"
 
 #: tuxpaint.c:803
@@ -32,7 +32,7 @@ msgid "Save your picture first?"
 msgstr "Ó¾Ä¢ø ¯í¸û À¼ò¨¾ §ºÁ¢òÐÅ¢¼Ä¡Á¡?"
 
 #: tuxpaint.c:807
-msgid "Can't open that picture!"
+msgid "Can’t open that picture!"
 msgstr "«ó¾ À¼ò¨¾ ¾¢Èì¸ ÓÊÂÅ¢ø¨Ä!"
 
 #: tuxpaint.c:808 tuxpaint.c:815 tuxpaint.c:822 tuxpaint.c:825
@@ -45,7 +45,7 @@ msgstr "Ò¾¢Â À¼ò¨¾ ¾¢Èó¾¡ø þô§À¡Ð þÕìÌõ À¼õ «Æ¢
 
 #: tuxpaint.c:811
 #, fuzzy
-msgid "That's OK!"
+msgid "That’s OK!"
 msgstr "ÀÃÅ¡Â¢ø¨Ä"
 
 #: tuxpaint.c:812
@@ -67,7 +67,7 @@ msgid "Your picture has been printed!"
 msgstr "¯í¸û À¼õ «îº¢¼ôÀÎ¸¢ÈÐ!"
 
 #: tuxpaint.c:824
-msgid "You can't print yet!"
+msgid "You can’t print yet!"
 msgstr "¿£í¸û «¾üÌû «îº¢¼ ÓÊÂ¡Ð!"
 
 #: tuxpaint.c:827
@@ -97,7 +97,7 @@ msgstr "§Åñ¼¡õ, þôÀ¼ò¨¾ Ò¾¢Â §¸¡ôÀ¡¸ §ºÁ¢"
 
 #: tuxpaint.c:9885
 #, fuzzy
-msgid "Choose the picture you want, then click 'Open'."
+msgid "Choose the picture you want, then click “Open”."
 msgstr "§¾¨ÅÂ¡É À¼ò¨¾ §¾÷ó¦¾ÎòÐ, À¢ÈÌ '¾¢È'-³ò ¾ð¼×õ"
 
 #: colors.h:62
@@ -477,7 +477,7 @@ msgid "You now have a blank sheet to draw on!"
 msgstr "þô§À¡Ð ¿£í¸û Å¨ÃÂ ´Õ ¦ÅüÚ ¾¡û ¸¢¨¼òÐÅ¢ð¼Ð!"
 
 #: tools.h:72
-msgid "Open..."
+msgid "Open…"
 msgstr "¾¢È..."
 
 #: tools.h:73
@@ -485,7 +485,7 @@ msgid "Your image has been saved!"
 msgstr "¯í¸û À¼õ §ºÁ¢ì¸ôÀðÎÅ¢ð¼Ð"
 
 #: tools.h:74
-msgid "Printing..."
+msgid "Printing…"
 msgstr "«îº¢¼ôÀÎ¸¢ÈÐ"
 
 #: tools.h:75
@@ -505,7 +505,7 @@ msgid "Move the mouse to rotate the shape. Click to draw it."
 msgstr "ÅÊÅò¨¾ ÍÆüÈ, ±Ä¢¨Â ¿¸÷ò¾×õ. «¾¨É Å¨ÃÂ ¦º¡Îì¸×õ."
 
 #: tools.h:81
-msgid "Ok then... Let's keep drawing this one!"
+msgid "OK then… Let’s keep drawing this one!"
 msgstr "ºÃ¢... «ô§À¡ þó¾ À¼ò¨¾ ¨ÅòÐì¦¸¡ûÇÄ¡õ!"
 
 #~ msgid "Okay"

@@ -28,7 +28,7 @@ msgid "No"
 msgstr "Ez"
 
 #: tuxpaint.c:799
-msgid "If you quit, you'll lose your picture! Save it?"
+msgid "If you quit, you’ll lose your picture! Save it?"
 msgstr "Irtenez gero, galdu egingo duzu irudia! Gorde nahi al duzu?"
 
 #: tuxpaint.c:803
@@ -36,7 +36,7 @@ msgid "Save your picture first?"
 msgstr "Gorde nahi al duzu irudia lehenbizi?"
 
 #: tuxpaint.c:807
-msgid "Can't open that picture!"
+msgid "Can’t open that picture!"
 msgstr "Ez dago irudia irekitzerik!"
 
 #: tuxpaint.c:808 tuxpaint.c:815 tuxpaint.c:822 tuxpaint.c:825
@@ -49,7 +49,7 @@ msgstr "Irudi berria hasiz gero, ezabatu egingo da oraingoa!"
 
 #: tuxpaint.c:811
 #, fuzzy
-msgid "That's OK!"
+msgid "That’s OK!"
 msgstr "Ondo dago"
 
 #: tuxpaint.c:812
@@ -71,7 +71,7 @@ msgid "Your picture has been printed!"
 msgstr "Zure irudia inprimatua izan da!"
 
 #: tuxpaint.c:824
-msgid "You can't print yet!"
+msgid "You can’t print yet!"
 msgstr "Ezin duzu oraindik inprimitu!"
 
 #: tuxpaint.c:827
@@ -101,7 +101,7 @@ msgstr "Ez, artxibo berria gorde"
 
 #: tuxpaint.c:9885
 #, fuzzy
-msgid "Choose the picture you want, then click 'Open'."
+msgid "Choose the picture you want, then click “Open”."
 msgstr "Aukera ezazu nahi duzun irudia. Ondoren klik egin 'Ireki'n"
 
 #: colors.h:62
@@ -482,7 +482,7 @@ msgid "You now have a blank sheet to draw on!"
 msgstr "Hona hemen orri zuria marrazteko!"
 
 #: tools.h:72
-msgid "Open..."
+msgid "Open…"
 msgstr "Ireki..."
 
 #: tools.h:73
@@ -490,7 +490,7 @@ msgid "Your image has been saved!"
 msgstr "Zure irudia gordeta dago!"
 
 #: tools.h:74
-msgid "Printing..."
+msgid "Printing…"
 msgstr "Inprimatzen..."
 
 #: tools.h:75
@@ -510,7 +510,7 @@ msgid "Move the mouse to rotate the shape. Click to draw it."
 msgstr "Mugi ezazu sagua irudia biratzeko. Egin klik marrazteko."
 
 #: tools.h:81
-msgid "Ok then... Let's keep drawing this one!"
+msgid "OK then… Let’s keep drawing this one!"
 msgstr "Ondo... jarrai dezagun honekin!"
 
 #~ msgid "Okay"

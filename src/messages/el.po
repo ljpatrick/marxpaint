@@ -30,7 +30,7 @@ msgid "No"
 msgstr "Όχι"
 
 #: tuxpaint.c:799
-msgid "If you quit, you'll lose your picture! Save it?"
+msgid "If you quit, you’ll lose your picture! Save it?"
 msgstr "Αν βγεις από το πρόγραμμα, θα χαθεί η εικόνα σου! Να σωθεί;"
 
 #: tuxpaint.c:803
@@ -38,7 +38,7 @@ msgid "Save your picture first?"
 msgstr "Να σωθεί η εικόνα σου πρώτα;"
 
 #: tuxpaint.c:807
-msgid "Can't open that picture!"
+msgid "Can’t open that picture!"
 msgstr "Αδυναμία ανοίγματος αυτής της εικόνας!"
 
 #: tuxpaint.c:808 tuxpaint.c:815 tuxpaint.c:822 tuxpaint.c:825
@@ -51,7 +51,7 @@ msgstr "Αρχίζοντας μια νέα εικόνα θα σβηστεί η �
 
 #: tuxpaint.c:811
 #, fuzzy
-msgid "That's OK!"
+msgid "That’s OK!"
 msgstr "Είναι εντάξει"
 
 #: tuxpaint.c:812
@@ -73,7 +73,7 @@ msgid "Your picture has been printed!"
 msgstr "Η εικόνα σου εκτυπώθηκε!"
 
 #: tuxpaint.c:824
-msgid "You can't print yet!"
+msgid "You can’t print yet!"
 msgstr "Δεν μπορείς να τυπώσεις ακόμη!"
 
 #: tuxpaint.c:827
@@ -103,7 +103,7 @@ msgstr "Όχι, αποθήκευση σε νέο αρχείο"
 
 #: tuxpaint.c:9885
 #, fuzzy
-msgid "Choose the picture you want, then click 'Open'."
+msgid "Choose the picture you want, then click “Open”."
 msgstr "Επέλεξε την εικόνα που θέλεις, και μετά πάτησε 'Άνοιγμα'"
 
 #: colors.h:62
@@ -487,7 +487,7 @@ msgid "You now have a blank sheet to draw on!"
 msgstr "Τώρα έχεις ένα λευκό φύλλο για να σχεδιάσεις!"
 
 #: tools.h:72
-msgid "Open..."
+msgid "Open…"
 msgstr "Άνοιγμα..."
 
 #: tools.h:73
@@ -495,7 +495,7 @@ msgid "Your image has been saved!"
 msgstr "Η εικόνα σου αποθηκεύθηκε!"
 
 #: tools.h:74
-msgid "Printing..."
+msgid "Printing…"
 msgstr "Εκτύπωση..."
 
 #: tools.h:75
@@ -516,7 +516,7 @@ msgstr ""
 "Κίνησε το ποντίκι για να περιστραφεί το σχήμα. Κάνε κλικ για να σχεδιαστεί."
 
 #: tools.h:81
-msgid "Ok then... Let's keep drawing this one!"
+msgid "OK then… Let’s keep drawing this one!"
 msgstr "Εντάξει λοιπόν... Ας συνεχίσουμε τη σχεδίαση του ίδιου!"
 
 #~ msgid "Okay"

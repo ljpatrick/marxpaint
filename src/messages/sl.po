@@ -43,7 +43,7 @@ msgid "No"
 msgstr "Ne"
 #
 # File: tuxpaint.c, line: 799
-msgid "If you quit, you'll lose your picture! Save it?"
+msgid "If you quit, you’ll lose your picture! Save it?"
 msgstr "Če zapustiš program, se ti bo izbrisala slika! Jo želiš shraniti?"
 #
 # File: tuxpaint.c, line: 803
@@ -51,7 +51,7 @@ msgid "Save your picture first?"
 msgstr "Ali želiš najprej shraniti sliko?"
 #
 # File: tuxpaint.c, line: 807
-msgid "Can't open that picture!"
+msgid "Can’t open that picture!"
 msgstr "Te slike ni mogoče odpreti!"
 #
 # File: tuxpaint.c, line: 808
@@ -66,7 +66,7 @@ msgid "Starting a new picture will erase the current one!"
 msgstr "Če odpreš novo sliko, bo trenutna slika izbrisana!"
 #
 # File: tuxpaint.c, line: 811
-msgid "That's OK!"
+msgid "That’s OK!"
 msgstr "To je v redu"
 #
 # File: tuxpaint.c, line: 812
@@ -86,7 +86,7 @@ msgid "Your picture has been printed!"
 msgstr "Tvoja slika je natisnjena"
 #
 # File: tuxpaint.c, line: 824
-msgid "You can't print yet!"
+msgid "You can’t print yet!"
 msgstr "Tiskanje še ni mogoče!"
 #
 # File: tuxpaint.c, line: 827
@@ -116,7 +116,7 @@ msgid "No, save a new file"
 msgstr "Ne, shrani novi dokument"
 #
 # File: tuxpaint.c, line: 9885
-msgid "Choose the picture you want, then click 'Open'."
+msgid "Choose the picture you want, then click “Open”."
 msgstr "Izberi sliko in klikni 'Odpri'."
 #
 # File: colors.h, line: 62
@@ -491,7 +491,7 @@ msgid "You now have a blank sheet to draw on!"
 msgstr "Sedaj imaš prazen papir za risanje!"
 #
 # File: tools.h, line: 72
-msgid "Open..."
+msgid "Open…"
 msgstr "Odpri..."
 #
 # File: tools.h, line: 73
@@ -499,7 +499,7 @@ msgid "Your image has been saved!"
 msgstr "Tvoja slika je shranjena!"
 #
 # File: tools.h, line: 74
-msgid "Printing..."
+msgid "Printing…"
 msgstr "Tiskanje..."
 #
 # File: tools.h, line: 75
@@ -519,7 +519,7 @@ msgid "Move the mouse to rotate the shape. Click to draw it."
 msgstr "Premakni miško, da zasukaš obliko. Klikni, da jo shraniš."
 #
 # File: tools.h, line: 81
-msgid "Ok then... Let's keep drawing this one!"
+msgid "OK then… Let’s keep drawing this one!"
 msgstr "Dobro. Potem pa nadaljujmo z risanjem!"
 #
 #~ msgid "Okay"

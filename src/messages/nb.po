@@ -29,7 +29,7 @@ msgid "No"
 msgstr "Nei!"
 
 #: tuxpaint.c:799
-msgid "If you quit, you'll lose your picture! Save it?"
+msgid "If you quit, you’ll lose your picture! Save it?"
 msgstr "Du mistre tegningen hvis du avslutter. Vil du lagre den først?"
 
 #: tuxpaint.c:803
@@ -37,7 +37,7 @@ msgid "Save your picture first?"
 msgstr "Vil du lagre tegningen først?"
 
 #: tuxpaint.c:807
-msgid "Can't open that picture!"
+msgid "Can’t open that picture!"
 msgstr "Klarte ikke åpne tegningen."
 
 #: tuxpaint.c:808 tuxpaint.c:815 tuxpaint.c:822 tuxpaint.c:825
@@ -49,7 +49,7 @@ msgid "Starting a new picture will erase the current one!"
 msgstr "Starter du på en ny tegning så mister du den du har."
 
 #: tuxpaint.c:811
-msgid "That's OK!"
+msgid "That’s OK!"
 msgstr "OK!"
 
 #: tuxpaint.c:812
@@ -69,7 +69,7 @@ msgid "Your picture has been printed!"
 msgstr "Tegningen er skrevet ut."
 
 #: tuxpaint.c:824
-msgid "You can't print yet!"
+msgid "You can’t print yet!"
 msgstr "Du kan ikke skrive ut enda!"
 
 #: tuxpaint.c:827
@@ -97,7 +97,7 @@ msgid "No, save a new file"
 msgstr "Nei. Lagre som ny tegning."
 
 #: tuxpaint.c:9885
-msgid "Choose the picture you want, then click 'Open'."
+msgid "Choose the picture you want, then click “Open”."
 msgstr "Velg en tegning og trykk «Åpne»."
 
 #: colors.h:62
@@ -451,7 +451,7 @@ msgid "You now have a blank sheet to draw on!"
 msgstr "Du har nå blanke ark og fargestifter til!"
 
 #: tools.h:72
-msgid "Open..."
+msgid "Open…"
 msgstr "Åpne ’"
 
 #: tools.h:73
@@ -459,7 +459,7 @@ msgid "Your image has been saved!"
 msgstr "Tegningen er lagret."
 
 #: tools.h:74
-msgid "Printing..."
+msgid "Printing…"
 msgstr "Skriver ut ’"
 
 #: tools.h:75
@@ -479,5 +479,5 @@ msgid "Move the mouse to rotate the shape. Click to draw it."
 msgstr "Flytt på musa for å rotere figuren. Trykk så for å slippe den."
 
 #: tools.h:81
-msgid "Ok then... Let's keep drawing this one!"
+msgid "OK then… Let’s keep drawing this one!"
 msgstr "Greit! Da fortsetter vi med denne tegningen."

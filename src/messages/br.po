@@ -38,7 +38,7 @@ msgid "No"
 msgstr "Ne ra ket"
 #
 # File: tuxpaint.c, line: 805
-msgid "If you quit, you'll lose your picture! Save it?"
+msgid "If you quit, you’ll lose your picture! Save it?"
 msgstr "Kollet e vo da skeudenn mar kuitez ! Gwarediñ a rez ?"
 #
 # File: tuxpaint.c, line: 809
@@ -47,7 +47,7 @@ msgstr "Gwarediñ ar skeudenn e gentañ ?"
 #
 # File: tuxpaint.c, line: 813
 #, fuzzy
-msgid "Can't open that picture!"
+msgid "Can’t open that picture!"
 msgstr "Diverkañ an dresadenn-se ?"
 #
 # File: tuxpaint.c, line: 814
@@ -62,7 +62,7 @@ msgid "Starting a new picture will erase the current one!"
 msgstr "Kregiñ en-dro gant ur skeudenn nevez a ziverko ar skeudenn red !"
 #
 # File: tuxpaint.c, line: 817
-msgid "That's OK!"
+msgid "That’s OK!"
 msgstr "Mat eo !"
 #
 # File: tuxpaint.c, line: 818
@@ -84,7 +84,7 @@ msgid "Your picture has been printed!"
 msgstr "Gwaredet eo da skeudenn !"
 #
 # File: tuxpaint.c, line: 830
-msgid "You can't print yet!"
+msgid "You can’t print yet!"
 msgstr ""
 #
 # File: tuxpaint.c, line: 833
@@ -115,7 +115,7 @@ msgstr "Ket, gwarediñ dindan un anv nevez"
 #
 # File: tuxpaint.c, line: 9951
 #, fuzzy
-msgid "Choose the picture you want, then click 'Open'."
+msgid "Choose the picture you want, then click “Open”."
 msgstr "Diuz ur skeudenn ha klik war 'digeriñ' neuze."
 #
 # File: colors.h, line: 62
@@ -490,7 +490,7 @@ msgid "You now have a blank sheet to draw on!"
 msgstr "Setu ur folennad wenn evidout a-benn tresañ !"
 #
 # File: tools.h, line: 72
-msgid "Open..."
+msgid "Open…"
 msgstr "Digeriñ ..."
 #
 # File: tools.h, line: 73
@@ -498,7 +498,7 @@ msgid "Your image has been saved!"
 msgstr "Gwaredet eo da skeudenn !"
 #
 # File: tools.h, line: 74
-msgid "Printing..."
+msgid "Printing…"
 msgstr "O voullañ..."
 #
 # File: tools.h, line: 75
@@ -519,5 +519,5 @@ msgstr ""
 "Fiñv al logodenn evit ober un dro gant ar stumm. Klik evit tresañ anezhañ."
 #
 # File: tools.h, line: 81
-msgid "Ok then... Let's keep drawing this one!"
+msgid "OK then… Let’s keep drawing this one!"
 msgstr "Mat ! neuze kendalc'homp gant an dresadenn !"

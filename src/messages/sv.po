@@ -27,7 +27,7 @@ msgid "No"
 msgstr "Nej"
 
 #: tuxpaint.c:799
-msgid "If you quit, you'll lose your picture! Save it?"
+msgid "If you quit, you’ll lose your picture! Save it?"
 msgstr "Om du avslutar, så kommer du att förlora bilden!Vill du spara den?"
 
 #: tuxpaint.c:803
@@ -36,7 +36,7 @@ msgstr "Spara bilden först?"
 
 #: tuxpaint.c:807
 #, fuzzy
-msgid "Can't open that picture!"
+msgid "Can’t open that picture!"
 msgstr "Radera den här bilden?"
 
 #: tuxpaint.c:808 tuxpaint.c:815 tuxpaint.c:822 tuxpaint.c:825
@@ -49,7 +49,7 @@ msgstr "Att påbörja en ny bild kommer att radera den nuvarande bilden!"
 
 #: tuxpaint.c:811
 #, fuzzy
-msgid "That's OK!"
+msgid "That’s OK!"
 msgstr "Det är okej!"
 
 #: tuxpaint.c:812
@@ -72,7 +72,7 @@ msgid "Your picture has been printed!"
 msgstr "Din bild har sparats!"
 
 #: tuxpaint.c:824
-msgid "You can't print yet!"
+msgid "You can’t print yet!"
 msgstr ""
 
 #: tuxpaint.c:827
@@ -103,7 +103,7 @@ msgid "No, save a new file"
 msgstr "Nej, spara i en ny fil!"
 
 #: tuxpaint.c:9885
-msgid "Choose the picture you want, then click 'Open'."
+msgid "Choose the picture you want, then click “Open”."
 msgstr ""
 
 #: colors.h:62
@@ -480,7 +480,7 @@ msgid "You now have a blank sheet to draw on!"
 msgstr "Du har nu en tom bild att rita på!"
 
 #: tools.h:72
-msgid "Open..."
+msgid "Open…"
 msgstr "Öppna..."
 
 #: tools.h:73
@@ -488,7 +488,7 @@ msgid "Your image has been saved!"
 msgstr "Din bild har sparats!"
 
 #: tools.h:74
-msgid "Printing..."
+msgid "Printing…"
 msgstr "Skriver ut..."
 
 #: tools.h:75
@@ -508,7 +508,7 @@ msgid "Move the mouse to rotate the shape. Click to draw it."
 msgstr "Flytta musen för att rotera formen. Klicka för att rita den."
 
 #: tools.h:81
-msgid "Ok then... Let's keep drawing this one!"
+msgid "OK then… Let’s keep drawing this one!"
 msgstr "Okej.. Låt oss fortsätta rita den här!"
 
 #~ msgid "Okay"

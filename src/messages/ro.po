@@ -31,7 +31,7 @@ msgid "No"
 msgstr "Nu"
 
 #: tuxpaint.c:799
-msgid "If you quit, you'll lose your picture! Save it?"
+msgid "If you quit, you’ll lose your picture! Save it?"
 msgstr "Dacã ieºiþi veþi pierde imaginea voastrã! Doreºti sã o salvezi?"
 
 #: tuxpaint.c:803
@@ -39,7 +39,7 @@ msgid "Save your picture first?"
 msgstr "Salvezi imaginea mai întâi?"
 
 #: tuxpaint.c:807
-msgid "Can't open that picture!"
+msgid "Can’t open that picture!"
 msgstr "Nu pot deschide acea imagine!"
 
 #: tuxpaint.c:808 tuxpaint.c:815 tuxpaint.c:822 tuxpaint.c:825
@@ -52,7 +52,7 @@ msgstr "Dacã începi o nouã imagine cea curentã va fi distrusã!"
 
 #: tuxpaint.c:811
 #, fuzzy
-msgid "That's OK!"
+msgid "That’s OK!"
 msgstr "E în regulã"
 
 #: tuxpaint.c:812
@@ -74,7 +74,7 @@ msgid "Your picture has been printed!"
 msgstr "Imaginea ta a fost tipãritã!"
 
 #: tuxpaint.c:824
-msgid "You can't print yet!"
+msgid "You can’t print yet!"
 msgstr "Nu poþi încã tipãri!"
 
 #: tuxpaint.c:827
@@ -104,7 +104,7 @@ msgstr "Nu, salveazã un nou fiºier"
 
 #: tuxpaint.c:9885
 #, fuzzy
-msgid "Choose the picture you want, then click 'Open'."
+msgid "Choose the picture you want, then click “Open”."
 msgstr "Alege imaginea doritã, apoi fã clic pe 'Deschide'"
 
 #: colors.h:62
@@ -486,7 +486,7 @@ msgid "You now have a blank sheet to draw on!"
 msgstr "Acum ai o foaie albã pe care sã desenezi!"
 
 #: tools.h:72
-msgid "Open..."
+msgid "Open…"
 msgstr "Deschide..."
 
 #: tools.h:73
@@ -494,7 +494,7 @@ msgid "Your image has been saved!"
 msgstr "Imaginea ta a fost salvatã!"
 
 #: tools.h:74
-msgid "Printing..."
+msgid "Printing…"
 msgstr "Tipãreºte..."
 
 #: tools.h:75
@@ -514,7 +514,7 @@ msgid "Move the mouse to rotate the shape. Click to draw it."
 msgstr "Mutã mausul pentru a roti forma. Click pentru a o desena."
 
 #: tools.h:81
-msgid "Ok then... Let's keep drawing this one!"
+msgid "OK then… Let’s keep drawing this one!"
 msgstr "Bine atunci... Sã continuãm sã-l desenãm pe acesta!"
 
 #~ msgid "Okay"

@@ -30,7 +30,7 @@ msgid "No"
 msgstr "Tidak"
 
 #: tuxpaint.c:799
-msgid "If you quit, you'll lose your picture! Save it?"
+msgid "If you quit, you’ll lose your picture! Save it?"
 msgstr "Jika anda keluar, anda akan kehilangan hasil kerja anda! Simpan?"
 
 #: tuxpaint.c:803
@@ -38,7 +38,7 @@ msgid "Save your picture first?"
 msgstr "Simpan hasil kerja dahulu?"
 
 #: tuxpaint.c:807
-msgid "Can't open that picture!"
+msgid "Can’t open that picture!"
 msgstr "Tidak boleh membuka gambar!"
 
 #: tuxpaint.c:808 tuxpaint.c:815 tuxpaint.c:822 tuxpaint.c:825
@@ -51,7 +51,7 @@ msgstr "Mula dengan gambar yang baru akan memadamkan apa yang ada!"
 
 #: tuxpaint.c:811
 #, fuzzy
-msgid "That's OK!"
+msgid "That’s OK!"
 msgstr "OK"
 
 #: tuxpaint.c:812
@@ -73,7 +73,7 @@ msgid "Your picture has been printed!"
 msgstr "Hasil kerja anda sudah dicetak!"
 
 #: tuxpaint.c:824
-msgid "You can't print yet!"
+msgid "You can’t print yet!"
 msgstr "Anda tidak boleh cetak lagi!"
 
 #: tuxpaint.c:827
@@ -103,7 +103,7 @@ msgstr "Tidak, simpan kepada fail baru"
 
 #: tuxpaint.c:9885
 #, fuzzy
-msgid "Choose the picture you want, then click 'Open'."
+msgid "Choose the picture you want, then click “Open”."
 msgstr "Pilih gambar yang anda mahu, dan klik 'Buka'"
 
 #: colors.h:62
@@ -485,7 +485,7 @@ msgid "You now have a blank sheet to draw on!"
 msgstr "Sekarang anda ada sehelai laman kosong untuk mula melukis!"
 
 #: tools.h:72
-msgid "Open..."
+msgid "Open…"
 msgstr "Buka ..."
 
 #: tools.h:73
@@ -493,7 +493,7 @@ msgid "Your image has been saved!"
 msgstr "Imej telah disimpan!"
 
 #: tools.h:74
-msgid "Printing..."
+msgid "Printing…"
 msgstr "Mencetak..."
 
 #: tools.h:75
@@ -513,7 +513,7 @@ msgid "Move the mouse to rotate the shape. Click to draw it."
 msgstr "Pindahkan tetikus untuk memutarkan bentuk. Klik untuk lukis."
 
 #: tools.h:81
-msgid "Ok then... Let's keep drawing this one!"
+msgid "OK then… Let’s keep drawing this one!"
 msgstr "Baiklah... Mari teruskan melukis yang ini!"
 
 #~ msgid "Red"

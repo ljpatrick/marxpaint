@@ -32,7 +32,7 @@ msgid "No"
 msgstr "Nac ydw"
 
 #: tuxpaint.c:805
-msgid "If you quit, you'll lose your picture! Save it?"
+msgid "If you quit, you’ll lose your picture! Save it?"
 msgstr "Os wyt am derfynu, mi fyddi di'n colli dy lun!  Wyt eisiau ei gadw?"
 
 #: tuxpaint.c:809
@@ -40,7 +40,7 @@ msgid "Save your picture first?"
 msgstr "Cadw dy lun yn gyntaf?"
 
 #: tuxpaint.c:813
-msgid "Can't open that picture!"
+msgid "Can’t open that picture!"
 msgstr "Methu agor y llun yna!"
 
 #: tuxpaint.c:814 tuxpaint.c:821 tuxpaint.c:828 tuxpaint.c:831
@@ -52,7 +52,7 @@ msgid "Starting a new picture will erase the current one!"
 msgstr "Bydd dechrau llun newydd yn colli'r un yma!"
 
 #: tuxpaint.c:817
-msgid "That's OK!"
+msgid "That’s OK!"
 msgstr "Iawn!"
 
 #: tuxpaint.c:818
@@ -72,7 +72,7 @@ msgid "Your picture has been printed!"
 msgstr "Mae dy lun wedi cael ei argraffu!"
 
 #: tuxpaint.c:830
-msgid "You can't print yet!"
+msgid "You can’t print yet!"
 msgstr "Rwyt yn methu argraffu eto!"
 
 #: tuxpaint.c:833
@@ -100,7 +100,7 @@ msgid "No, save a new file"
 msgstr "Nage, cadw ffeil newydd"
 
 #: tuxpaint.c:9951
-msgid "Choose the picture you want, then click 'Open'."
+msgid "Choose the picture you want, then click “Open”."
 msgstr "Dewisa'r llun yr wyt eisiau, ac wedyn clicia 'Agor'."
 
 #: colors.h:62
@@ -450,7 +450,7 @@ msgid "You now have a blank sheet to draw on!"
 msgstr "Mae gen ti dalen wag i dynnu llun arni!"
 
 #: tools.h:72
-msgid "Open..."
+msgid "Open…"
 msgstr "Agor..."
 
 #: tools.h:73
@@ -458,7 +458,7 @@ msgid "Your image has been saved!"
 msgstr "Dwi wedi cadw dy lun!"
 
 #: tools.h:74
-msgid "Printing..."
+msgid "Printing…"
 msgstr "Argraffu..."
 
 #: tools.h:75
@@ -478,6 +478,6 @@ msgid "Move the mouse to rotate the shape. Click to draw it."
 msgstr "Symuda'r llygoden i gylchdroi'r siâp.  Clicia i'w osod."
 
 #: tools.h:81
-msgid "Ok then... Let's keep drawing this one!"
+msgid "OK then… Let’s keep drawing this one!"
 msgstr "Iawn... Gawn ni ddal i dynnu'r un yma!"
 

@@ -24,7 +24,7 @@ msgid "No"
 msgstr "Ne"
 
 #: tuxpaint.c:799
-msgid "If you quit, you'll lose your picture! Save it?"
+msgid "If you quit, you’ll lose your picture! Save it?"
 msgstr "Pokud skoncis, ztratis svuj obrazek! Chces ho ulozit?"
 
 #: tuxpaint.c:803
@@ -33,7 +33,7 @@ msgstr "Chces nejdriv ulozit svuj obrazek?"
 
 #: tuxpaint.c:807
 #, fuzzy
-msgid "Can't open that picture!"
+msgid "Can’t open that picture!"
 msgstr "Vymazat tento obrazek?"
 
 #: tuxpaint.c:808 tuxpaint.c:815 tuxpaint.c:822 tuxpaint.c:825
@@ -45,7 +45,7 @@ msgid "Starting a new picture will erase the current one!"
 msgstr "S otevrenim noveho obrazku bude vymazan prave aktualni!"
 
 #: tuxpaint.c:811
-msgid "That's OK!"
+msgid "That’s OK!"
 msgstr "OK, Pokracuj!"
 
 #: tuxpaint.c:812
@@ -66,7 +66,7 @@ msgid "Your picture has been printed!"
 msgstr "Obrazek byl ulozen!"
 
 #: tuxpaint.c:824
-msgid "You can't print yet!"
+msgid "You can’t print yet!"
 msgstr ""
 
 #: tuxpaint.c:827
@@ -97,7 +97,7 @@ msgid "No, save a new file"
 msgstr "Ne, uloz jako novy soubor"
 
 #: tuxpaint.c:9885
-msgid "Choose the picture you want, then click 'Open'."
+msgid "Choose the picture you want, then click “Open”."
 msgstr ""
 
 #: colors.h:62
@@ -465,7 +465,7 @@ msgid "You now have a blank sheet to draw on!"
 msgstr "Mas ted prazdnou plochu pro kresleni!"
 
 #: tools.h:72
-msgid "Open..."
+msgid "Open…"
 msgstr "Otevri..."
 
 #: tools.h:73
@@ -473,7 +473,7 @@ msgid "Your image has been saved!"
 msgstr "Obrazek byl ulozen!"
 
 #: tools.h:74
-msgid "Printing..."
+msgid "Printing…"
 msgstr "Tiskne se..."
 
 #: tools.h:75
@@ -493,7 +493,7 @@ msgid "Move the mouse to rotate the shape. Click to draw it."
 msgstr "Posun mysi pro rotaci tvaru. Klikni pro jeho vykresleni."
 
 #: tools.h:81
-msgid "Ok then... Let's keep drawing this one!"
+msgid "OK then… Let’s keep drawing this one!"
 msgstr "Ok, nezapomen si ulozit tento obrazek!"
 
 #~ msgid "Okay"

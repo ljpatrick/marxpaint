@@ -30,7 +30,7 @@ msgid "No"
 msgstr "Nee"
 
 #: tuxpaint.c:799
-msgid "If you quit, you'll lose your picture! Save it?"
+msgid "If you quit, you’ll lose your picture! Save it?"
 msgstr "Als je stopt ben je je tekening kwijt! Moet ik ze bewaren?"
 
 #: tuxpaint.c:803
@@ -38,7 +38,7 @@ msgid "Save your picture first?"
 msgstr "Wil je je huidige tekening eerst nog bewaren?"
 
 #: tuxpaint.c:807
-msgid "Can't open that picture!"
+msgid "Can’t open that picture!"
 msgstr "Ik kan die tekening niet openen!"
 
 #: tuxpaint.c:808 tuxpaint.c:815 tuxpaint.c:822 tuxpaint.c:825
@@ -50,7 +50,7 @@ msgid "Starting a new picture will erase the current one!"
 msgstr "Mag ik de huidige tekening wegdoen om met een nieuwe te beginnen?"
 
 #: tuxpaint.c:811
-msgid "That's OK!"
+msgid "That’s OK!"
 msgstr "OK!"
 
 #: tuxpaint.c:812
@@ -70,7 +70,7 @@ msgid "Your picture has been printed!"
 msgstr "Je tekening is bewaard!"
 
 #: tuxpaint.c:824
-msgid "You can't print yet!"
+msgid "You can’t print yet!"
 msgstr "Je kunt nog niet afdrukken!"
 
 #: tuxpaint.c:827
@@ -98,7 +98,7 @@ msgid "No, save a new file"
 msgstr "Nee, bewaar op een nieuwe plaats"
 
 #: tuxpaint.c:9885
-msgid "Choose the picture you want, then click 'Open'."
+msgid "Choose the picture you want, then click “Open”."
 msgstr "Kies een tekening en klik op 'Open'"
 
 #: colors.h:62
@@ -450,7 +450,7 @@ msgid "You now have a blank sheet to draw on!"
 msgstr "Nu heb je een leeg blad om op te tekenen!"
 
 #: tools.h:72
-msgid "Open..."
+msgid "Open…"
 msgstr "Openen..."
 
 #: tools.h:73
@@ -458,7 +458,7 @@ msgid "Your image has been saved!"
 msgstr "Je tekening is bewaard!"
 
 #: tools.h:74
-msgid "Printing..."
+msgid "Printing…"
 msgstr "Aan het afdrukken..."
 
 #: tools.h:75
@@ -478,7 +478,7 @@ msgid "Move the mouse to rotate the shape. Click to draw it."
 msgstr "Beweeg de muis om de vorm te draaien. Klik als je tevreden bent."
 
 #: tools.h:81
-msgid "Ok then... Let's keep drawing this one!"
+msgid "OK then… Let’s keep drawing this one!"
 msgstr "Ok, dan doen we verder met deze!"
 
 #~ msgid "Okay"

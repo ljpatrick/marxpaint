@@ -810,7 +810,7 @@ int main(int argc, char * argv[])
 #define PROMPT_QUIT_YES gettext_noop("Yes")
 #define PROMPT_QUIT_NO  gettext_noop("No")
 
-#define PROMPT_QUIT_SAVE_TXT gettext_noop("If you quit, you'll lose your picture! Save it?")
+#define PROMPT_QUIT_SAVE_TXT gettext_noop("If you quit, you’ll lose your picture! Save it?")
 #define PROMPT_QUIT_SAVE_YES gettext_noop("Yes")
 #define PROMPT_QUIT_SAVE_NO gettext_noop("No")
 
@@ -818,11 +818,11 @@ int main(int argc, char * argv[])
 #define PROMPT_OPEN_SAVE_YES gettext_noop("Yes")
 #define PROMPT_OPEN_SAVE_NO gettext_noop("No")
 
-#define PROMPT_OPEN_UNOPENABLE_TXT gettext_noop("Can't open that picture!")
+#define PROMPT_OPEN_UNOPENABLE_TXT gettext_noop("Can’t open that picture!")
 #define PROMPT_OPEN_UNOPENABLE_YES gettext_noop("OK")
 
 #define PROMPT_NEW_TXT gettext_noop("Starting a new picture will erase the current one!")
-#define PROMPT_NEW_YES gettext_noop("That's OK!")
+#define PROMPT_NEW_YES gettext_noop("That’s OK!")
 #define PROMPT_NEW_NO gettext_noop("Never mind!")
 
 #define PROMPT_OPEN_NOFILES_TXT gettext_noop("There are no saved files!")
@@ -835,7 +835,7 @@ int main(int argc, char * argv[])
 #define PROMPT_PRINT_TXT gettext_noop("Your picture has been printed!")
 #define PROMPT_PRINT_YES gettext_noop("OK")
 
-#define PROMPT_PRINT_TOO_SOON_TXT gettext_noop("You can't print yet!")
+#define PROMPT_PRINT_TOO_SOON_TXT gettext_noop("You can’t print yet!")
 #define PROMPT_PRINT_TOO_SOON_YES gettext_noop("OK")
 
 #define PROMPT_ERASE_TXT gettext_noop("Erase this picture?")
@@ -10005,7 +10005,7 @@ int do_open(int want_new_tool)
       
 	  draw_tux_text(TUX_BORED,
 			textdir(gettext_noop("Choose the picture you want, "
-					     "then click 'Open'.")), 1, 0, 1);
+					     "then click “Open”.")), 1, 0, 1);
      
 	  /* NOTE: cur is now set above; if file_id'th file is found, it's
 	     set to that file's index; otherwise, we default to '0' */

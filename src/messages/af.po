@@ -32,7 +32,7 @@ msgid "No"
 msgstr "Nee"
 
 #: tuxpaint.c:805
-msgid "If you quit, you'll lose your picture! Save it?"
+msgid "If you quit, you’ll lose your picture! Save it?"
 msgstr "As jy ophou sal jy jou prent verloor! Wil jy dit eers bêre?"
 
 #: tuxpaint.c:809
@@ -40,7 +40,7 @@ msgid "Save your picture first?"
 msgstr "Wil jy eers die prent stoor?"
 
 #: tuxpaint.c:813
-msgid "Can't open that picture!"
+msgid "Can’t open that picture!"
 msgstr "Kan nie daardie prent oopmaak nie!"
 
 #: tuxpaint.c:814 tuxpaint.c:821 tuxpaint.c:828 tuxpaint.c:831
@@ -52,7 +52,7 @@ msgid "Starting a new picture will erase the current one!"
 msgstr "As jy 'n nuwe prent begin word hierdie een uitgevee!"
 
 #: tuxpaint.c:817
-msgid "That's OK!"
+msgid "That’s OK!"
 msgstr "Dis goed so."
 
 #: tuxpaint.c:818
@@ -72,7 +72,7 @@ msgid "Your picture has been printed!"
 msgstr "Jou prent is gedruk!"
 
 #: tuxpaint.c:830
-msgid "You can't print yet!"
+msgid "You can’t print yet!"
 msgstr "Jy kan nog nie druk nie!"
 
 #: tuxpaint.c:833
@@ -104,7 +104,7 @@ msgid "No, save a new file"
 msgstr "Nee, stoor 'n nuwe lêer"
 
 #: tuxpaint.c:9951
-msgid "Choose the picture you want, then click 'Open'."
+msgid "Choose the picture you want, then click “Open”."
 msgstr "Kies die prent wat jy wil hê en klik 'Maak oop'."
 
 #: colors.h:62
@@ -458,7 +458,7 @@ msgstr "Jy het nou 'n skoon bladsy om op te teken!"
 
 #  Open
 #: tools.h:72
-msgid "Open..."
+msgid "Open…"
 msgstr "Maak oop..."
 
 #  Save
@@ -468,7 +468,7 @@ msgstr "Jou prent is gestoor!"
 
 #  Print
 #: tools.h:74
-msgid "Printing..."
+msgid "Printing…"
 msgstr "Besig om te druk..."
 
 #  Quit
@@ -489,5 +489,5 @@ msgid "Move the mouse to rotate the shape. Click to draw it."
 msgstr "Beweeg die muis om die vorm te draai.  Klik om dit te teken."
 
 #: tools.h:81
-msgid "Ok then... Let's keep drawing this one!"
+msgid "OK then… Let’s keep drawing this one!"
 msgstr "Goed dan... Kom ons teken verder op hierdie een!"

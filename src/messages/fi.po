@@ -28,7 +28,7 @@ msgid "No"
 msgstr "Ei"
 
 #: tuxpaint.c:799
-msgid "If you quit, you'll lose your picture! Save it?"
+msgid "If you quit, you’ll lose your picture! Save it?"
 msgstr "Menetät kuvan jos lopetat. Tallennetaanko se?"
 
 #: tuxpaint.c:803
@@ -36,7 +36,7 @@ msgid "Save your picture first?"
 msgstr "Tallennetaanko kuvasi ensin?"
 
 #: tuxpaint.c:807
-msgid "Can't open that picture!"
+msgid "Can’t open that picture!"
 msgstr "Kuvan avaaminen ei onnistu!"
 
 #: tuxpaint.c:808 tuxpaint.c:815 tuxpaint.c:822 tuxpaint.c:825
@@ -49,7 +49,7 @@ msgstr "Uuden kuvan aloittaminen pyyhkii nykyisen pois!"
 
 #: tuxpaint.c:811
 #, fuzzy
-msgid "That's OK!"
+msgid "That’s OK!"
 msgstr "Se sopii"
 
 #: tuxpaint.c:812
@@ -71,7 +71,7 @@ msgid "Your picture has been printed!"
 msgstr "Kuvasi on tulostettu!"
 
 #: tuxpaint.c:824
-msgid "You can't print yet!"
+msgid "You can’t print yet!"
 msgstr "Et voi vielä tulostaa!"
 
 #: tuxpaint.c:827
@@ -101,7 +101,7 @@ msgstr "Ei, tallennetaan uuteen tiedostoon"
 
 #: tuxpaint.c:9885
 #, fuzzy
-msgid "Choose the picture you want, then click 'Open'."
+msgid "Choose the picture you want, then click “Open”."
 msgstr "Valitse haluamasi kuva ja valitse 'Avaa'"
 
 #: colors.h:62
@@ -483,7 +483,7 @@ msgid "You now have a blank sheet to draw on!"
 msgstr "Sinulla on nyt tyhjä piirtoalue!"
 
 #: tools.h:72
-msgid "Open..."
+msgid "Open…"
 msgstr "Avaa... "
 
 #: tools.h:73
@@ -491,7 +491,7 @@ msgid "Your image has been saved!"
 msgstr "Kuvasi on tallennettu!"
 
 #: tools.h:74
-msgid "Printing..."
+msgid "Printing…"
 msgstr "Tulostetaan..."
 
 #: tools.h:75
@@ -511,7 +511,7 @@ msgid "Move the mouse to rotate the shape. Click to draw it."
 msgstr "Pyöritä kuviota liikuttamalla hiirtä. Piirrä napsauttamalla."
 
 #: tools.h:81
-msgid "Ok then... Let's keep drawing this one!"
+msgid "OK then… Let’s keep drawing this one!"
 msgstr "Hyvä on... Jatketaan tämän piirtämistä!"
 
 #~ msgid "Okay"

@@ -35,7 +35,7 @@ msgid "No"
 msgstr "不要"
 
 #: tuxpaint.c:799
-msgid "If you quit, you'll lose your picture! Save it?"
+msgid "If you quit, you’ll lose your picture! Save it?"
 msgstr "如果你退出了，你会失去你的图片！保存起来吗？"
 
 #: tuxpaint.c:803
@@ -43,7 +43,7 @@ msgid "Save your picture first?"
 msgstr "先保存你的图片？"
 
 #: tuxpaint.c:807
-msgid "Can't open that picture!"
+msgid "Can’t open that picture!"
 msgstr "打不开那个图片啊！"
 
 #: tuxpaint.c:808 tuxpaint.c:815 tuxpaint.c:822 tuxpaint.c:825
@@ -56,7 +56,7 @@ msgstr "新开一个图片会删除现在的图片啊！"
 
 #: tuxpaint.c:811
 #, fuzzy
-msgid "That's OK!"
+msgid "That’s OK!"
 msgstr "没问题"
 
 #: tuxpaint.c:812
@@ -78,7 +78,7 @@ msgid "Your picture has been printed!"
 msgstr "你的图片被打印出来了！"
 
 #: tuxpaint.c:824
-msgid "You can't print yet!"
+msgid "You can’t print yet!"
 msgstr "你还不能打印耶！"
 
 #: tuxpaint.c:827
@@ -108,7 +108,7 @@ msgstr "不，保存到新文件"
 
 #: tuxpaint.c:9885
 #, fuzzy
-msgid "Choose the picture you want, then click 'Open'."
+msgid "Choose the picture you want, then click “Open”."
 msgstr "选择你要打开的图片，然后点击“打开”"
 
 #: colors.h:62
@@ -489,7 +489,7 @@ msgid "You now have a blank sheet to draw on!"
 msgstr "你现在可以从空白开始画了！"
 
 #: tools.h:72
-msgid "Open..."
+msgid "Open…"
 msgstr "打开..."
 
 #: tools.h:73
@@ -497,7 +497,7 @@ msgid "Your image has been saved!"
 msgstr "你的图片被保存了！"
 
 #: tools.h:74
-msgid "Printing..."
+msgid "Printing…"
 msgstr "正在打印哦..."
 
 #: tools.h:75
@@ -517,7 +517,7 @@ msgid "Move the mouse to rotate the shape. Click to draw it."
 msgstr "移动鼠标来旋转形状。单击就可以画出它。"
 
 #: tools.h:81
-msgid "Ok then... Let's keep drawing this one!"
+msgid "OK then… Let’s keep drawing this one!"
 msgstr "好了... 我们继续画这个！"
 
 #~ msgid "Red"

@@ -28,16 +28,16 @@ msgid "No"
 msgstr "No"
 
 #: tuxpaint.c:805
-msgid "If you quit, you'll lose your picture! Save it?"
-msgstr "If you quit, you'll lose your picture! Save it?"
+msgid "If you quit, you’ll lose your picture! Save it?"
+msgstr "If you quit, you’ll lose your picture! Save it?"
 
 #: tuxpaint.c:809
 msgid "Save your picture first?"
 msgstr "Save your picture first?"
 
 #: tuxpaint.c:813
-msgid "Can't open that picture!"
-msgstr "Can't open that picture!"
+msgid "Can’t open that picture!"
+msgstr "Can’t open that picture!"
 
 #: tuxpaint.c:814 tuxpaint.c:821 tuxpaint.c:828 tuxpaint.c:831
 msgid "OK"
@@ -48,8 +48,8 @@ msgid "Starting a new picture will erase the current one!"
 msgstr "Starting a new picture will erase the current one!"
 
 #: tuxpaint.c:817
-msgid "That's OK!"
-msgstr "That's OK!"
+msgid "That’s OK!"
+msgstr "That’s OK!"
 
 #: tuxpaint.c:818
 msgid "Never mind!"
@@ -68,8 +68,8 @@ msgid "Your picture has been printed!"
 msgstr "Your picture has been printed!"
 
 #: tuxpaint.c:830
-msgid "You can't print yet!"
-msgstr "You can't print yet!"
+msgid "You can’t print yet!"
+msgstr "You can’t print yet!"
 
 #: tuxpaint.c:833
 msgid "Erase this picture?"
@@ -96,8 +96,8 @@ msgid "No, save a new file"
 msgstr "No, save a new file"
 
 #: tuxpaint.c:9951
-msgid "Choose the picture you want, then click 'Open'."
-msgstr "Choose the picture you want, then click 'Open'."
+msgid "Choose the picture you want, then click “Open”."
+msgstr "Choose the picture you want, then click ‘Open’."
 
 #: colors.h:62
 msgid "Black!"
@@ -444,16 +444,16 @@ msgid "You now have a blank sheet to draw on!"
 msgstr "You now have a blank sheet to draw on!"
 
 #: tools.h:72
-msgid "Open..."
-msgstr "Open..."
+msgid "Open…"
+msgstr "Open…"
 
 #: tools.h:73
 msgid "Your image has been saved!"
 msgstr "Your image has been saved!"
 
 #: tools.h:74
-msgid "Printing..."
-msgstr "Printing..."
+msgid "Printing…"
+msgstr "Printing…"
 
 #: tools.h:75
 msgid "Bye bye!"
@@ -472,5 +472,5 @@ msgid "Move the mouse to rotate the shape. Click to draw it."
 msgstr "Move the mouse to rotate the shape. Click to draw it."
 
 #: tools.h:81
-msgid "Ok then... Let's keep drawing this one!"
-msgstr "Ok then... Let's keep drawing this one!"
+msgid "OK then… Let’s keep drawing this one!"
+msgstr "OK then… Let’s keep drawing this one!"

@@ -30,7 +30,7 @@ msgid "No"
 msgstr "לא"
 
 #: tuxpaint.c:799
-msgid "If you quit, you'll lose your picture! Save it?"
+msgid "If you quit, you’ll lose your picture! Save it?"
 msgstr "יציאה ללא שמירה תגרום לאיבוד התמונה שלך! האם לשמור אותה?"
 
 #: tuxpaint.c:803
@@ -38,7 +38,7 @@ msgid "Save your picture first?"
 msgstr "האם לשמור את התמונה שלך?"
 
 #: tuxpaint.c:807
-msgid "Can't open that picture!"
+msgid "Can’t open that picture!"
 msgstr "לא ניתן לפתוח תמונה זו!"
 
 #: tuxpaint.c:808 tuxpaint.c:815 tuxpaint.c:822 tuxpaint.c:825
@@ -51,7 +51,7 @@ msgstr "התחלת תמונה חדשה תמחוק את התמונה הנוכחי
 
 #: tuxpaint.c:811
 #, fuzzy
-msgid "That's OK!"
+msgid "That’s OK!"
 msgstr "זה בסדר"
 
 #: tuxpaint.c:812
@@ -73,7 +73,7 @@ msgid "Your picture has been printed!"
 msgstr "התמונה שלך הודפסה!"
 
 #: tuxpaint.c:824
-msgid "You can't print yet!"
+msgid "You can’t print yet!"
 msgstr "עדיין אין באפשרותך להדפיס!"
 
 #: tuxpaint.c:827
@@ -103,7 +103,7 @@ msgstr "לא, שמור בקובץ חדש"
 
 #: tuxpaint.c:9885
 #, fuzzy
-msgid "Choose the picture you want, then click 'Open'."
+msgid "Choose the picture you want, then click “Open”."
 msgstr "יש לבחור את התמונה הרצויה, ואז ללחוץ על 'פתיחה'"
 
 #: colors.h:62
@@ -484,7 +484,7 @@ msgid "You now have a blank sheet to draw on!"
 msgstr "עכשיו יש לך לוח ריק לצייר עליו!"
 
 #: tools.h:72
-msgid "Open..."
+msgid "Open…"
 msgstr "פתיחה..."
 
 #: tools.h:73
@@ -492,7 +492,7 @@ msgid "Your image has been saved!"
 msgstr "התמונה שלך נשמרה!"
 
 #: tools.h:74
-msgid "Printing..."
+msgid "Printing…"
 msgstr "מדפיס..."
 
 #: tools.h:75
@@ -512,7 +512,7 @@ msgid "Move the mouse to rotate the shape. Click to draw it."
 msgstr "יש לסובב את העכבר על מנת לסובב את הצורה, וללחוץ כדי לקבע אותה."
 
 #: tools.h:81
-msgid "Ok then... Let's keep drawing this one!"
+msgid "OK then… Let’s keep drawing this one!"
 msgstr "בסדר... נמשיך לצייר את התמונה הזאת!"
 
 #~ msgid "Okay"

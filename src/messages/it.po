@@ -38,7 +38,7 @@ msgid "No"
 msgstr "No"
 
 #: tuxpaint.c:805
-msgid "If you quit, you'll lose your picture! Save it?"
+msgid "If you quit, you’ll lose your picture! Save it?"
 msgstr "Uscendo adesso, il disegno verrà cancellato! Vuoi salvarlo?"
 
 #: tuxpaint.c:809
@@ -46,7 +46,7 @@ msgid "Save your picture first?"
 msgstr "Salvare il disegno, prima?"
 
 #: tuxpaint.c:813
-msgid "Can't open that picture!"
+msgid "Can’t open that picture!"
 msgstr "Non è possibile aprire quel disegno!"
 
 #: tuxpaint.c:814
@@ -61,7 +61,7 @@ msgid "Starting a new picture will erase the current one!"
 msgstr "Iniziare un nuovo disegno cancellerà quello corrente!"
 
 #: tuxpaint.c:817
-msgid "That's OK!"
+msgid "That’s OK!"
 msgstr "Sì, va bene!"
 
 #: tuxpaint.c:818
@@ -81,7 +81,7 @@ msgid "Your picture has been printed!"
 msgstr "Il tuo disegno è stato stampato!"
 
 #: tuxpaint.c:830
-msgid "You can't print yet!"
+msgid "You can’t print yet!"
 msgstr "Non è ancora possibile stampare!"
 
 #: tuxpaint.c:833
@@ -110,7 +110,7 @@ msgid "No, save a new file"
 msgstr "No, usa un nuovo file"
 
 #: tuxpaint.c:9951
-msgid "Choose the picture you want, then click 'Open'."
+msgid "Choose the picture you want, then click “Open”."
 msgstr "Scegliere il disegno desiderato, quindi fare clic su 'Apri'."
 
 #: colors.h:62
@@ -475,7 +475,7 @@ msgid "You now have a blank sheet to draw on!"
 msgstr "Adesso hai un foglio bianco su cui disegnare!"
 
 #: tools.h:72
-msgid "Open..."
+msgid "Open…"
 msgstr "Apri..."
 
 #: tools.h:73
@@ -483,7 +483,7 @@ msgid "Your image has been saved!"
 msgstr "Il tuo disegno è stato salvato!"
 
 #: tools.h:74
-msgid "Printing..."
+msgid "Printing…"
 msgstr "Sto stampando..."
 
 #: tools.h:75
@@ -503,6 +503,6 @@ msgid "Move the mouse to rotate the shape. Click to draw it."
 msgstr "Muovi il mouse per ruotare la forma. Fai click per disegnarla."
 
 #: tools.h:81
-msgid "Ok then... Let's keep drawing this one!"
+msgid "OK then… Let’s keep drawing this one!"
 msgstr "Allora ok... continuiamo a disegnare questo!"
 
