@@ -1,7 +1,7 @@
                                    Tux Paint
-                                 version 0.9.14
+                                 version 0.9.15
 
-                             Options Documentation
+Options Documentation
 
                         Copyright 2004 by Bill Kendrick
                                New Breed Software
@@ -9,9 +9,9 @@
                            bill@newbreedsoftware.com
                    http://www.newbreedsoftware.com/tuxpaint/
 
-                               September 24, 2004
+                                October 23, 2004
 
-   ---------------------------------------------------------------------------
+     ----------------------------------------------------------------------
 
                                Tux Paint Config.
 
@@ -20,7 +20,7 @@
      install and use this tool, or want a better understanding of the
      available options, please continue reading.
 
-   ---------------------------------------------------------------------------
+     ----------------------------------------------------------------------
 
                                Configuration File
 
@@ -60,7 +60,7 @@ Windows Users
        as Plain Text, and make sure the filename doesn't have ".txt" at the
        end...
 
-   ---------------------------------------------------------------------------
+     ----------------------------------------------------------------------
 
                                Available Options
 
@@ -273,6 +273,8 @@ Windows Users
                |--------------------+------------------+---------|
                |french              |francais          |         |
                |--------------------+------------------+---------|
+               |galician            |galego            |         |
+               |--------------------+------------------+---------|
                |german              |deutsch           |         |
                |--------------------+------------------+---------|
                |greek               |                  |         |
@@ -332,7 +334,7 @@ Windows Users
                |welsh               |cymraeg           |         |
                +-------------------------------------------------+
 
-   ---------------------------------------------------------------------------
+     ----------------------------------------------------------------------
 
               Overriding System Config. Options using .tuxpaintrc
 
@@ -353,7 +355,7 @@ Windows Users
        print=yes
        mixedcase=yes
 
-   ---------------------------------------------------------------------------
+     ----------------------------------------------------------------------
 
                               Command-Line Options
 
@@ -417,7 +419,7 @@ Windows Users
 
                Run Tux Paint in one of the support languages. See the
                "Choosing a Different Language" section below for the locale
-               strings (e.g., "de_DE@euro" for German) to use.
+               strings (e.g., "de_DE" for German) to use.
 
                (If your locale is already set, e.g. with the "$LANG"
                environment variable, this option is not necessary, since
@@ -448,7 +450,7 @@ Windows Users
                By default, the lockfile is stored in "~/.tuxpaint/" under
                Linux and Unix, and "userdata\" under Windows.
 
-   ---------------------------------------------------------------------------
+     ----------------------------------------------------------------------
 
 Command-Line Informational Options
 
@@ -472,7 +474,7 @@ Command-Line Informational Options
          --lang help
                  Display a list of available languages in Tux Paint.
 
-   ---------------------------------------------------------------------------
+     ----------------------------------------------------------------------
 
                          Choosing a Different Language
 
@@ -511,19 +513,21 @@ Available Languages
        |---------------+-------------------+---------------------|
        |da_DK          |Dansk              |Danish               |
        |---------------+-------------------+---------------------|
-       |de_DE@euro     |Deutsch            |German               |
+       |de_DE          |Deutsch            |German               |
        |---------------+-------------------+---------------------|
        |el_GR.UTF8 (*) |                   |Greek                |
        |---------------+-------------------+---------------------|
        |en_GB          |                   |British English      |
        |---------------+-------------------+---------------------|
-       |es_ES@euro     |Espanol            |Spanish              |
+       |es_ES          |Espanol            |Spanish              |
        |---------------+-------------------+---------------------|
        |eu_ES          |Euskara            |Basque               |
        |---------------+-------------------+---------------------|
-       |fi_FI@euro     |Suomi              |Finnish              |
+       |fi_FI          |Suomi              |Finnish              |
        |---------------+-------------------+---------------------|
-       |fr_FR@euro     |Franc,ais          |French               |
+       |fr_FR          |Franc,ais          |French               |
+       |---------------+-------------------+---------------------|
+       |gl_ES          |Galego             |Galician             |
        |---------------+-------------------+---------------------|
        |he_IL (*)      |                   |Hebrew               |
        |---------------+-------------------+---------------------|
@@ -537,7 +541,7 @@ Available Languages
        |---------------+-------------------+---------------------|
        |is_IS          |Islenska           |Icelandic            |
        |---------------+-------------------+---------------------|
-       |it_IT@euro     |Italiano           |Italian              |
+       |it_IT          |Italiano           |Italian              |
        |---------------+-------------------+---------------------|
        |ja_JP.UTF-8 (*)|                   |Japanese             |
        |---------------+-------------------+---------------------|
@@ -551,7 +555,7 @@ Available Languages
        |---------------+-------------------+---------------------|
        |nn_NO          |Norsk (nynorsk)    |Norwegian Nynorsk    |
        |---------------+-------------------+---------------------|
-       |nl_NL@euro     |                   |Dutch                |
+       |nl_NL          |                   |Dutch                |
        |---------------+-------------------+---------------------|
        |pl_PL          |Polski             |Polish               |
        |---------------+-------------------+---------------------|
@@ -569,17 +573,17 @@ Available Languages
        |---------------+-------------------+---------------------|
        |sr_YU          |                   |Serbian              |
        |---------------+-------------------+---------------------|
-       |sv_SE@euro     |Svenska            |Swedish              |
+       |sv_SE          |Svenska            |Swedish              |
        |---------------+-------------------+---------------------|
        |ta_IN (*)      |                   |Tamil                |
        |---------------+-------------------+---------------------|
        |tlh (*)        |tlhIngan           |Klingon              |
        |---------------+-------------------+---------------------|
-       |tr_TR@euro     |                   |Turkish              |
+       |tr_TR          |                   |Turkish              |
        |---------------+-------------------+---------------------|
        |vi_VN          |                   |Vietnamese           |
        |---------------+-------------------+---------------------|
-       |wa_BE@euro     |                   |Walloon              |
+       |wa_BE          |                   |Walloon              |
        |---------------+-------------------+---------------------|
        |zh_CN (*)      |                   |Chinese (Simplified) |
        |---------------+-------------------+---------------------|
@@ -618,15 +622,15 @@ Setting Your Environment's Locale
 
          For example, in a Bourne Shell (like BASH):
 
-           export LANG=es_ES@euro ; \
+           export LANG=es_ES ; \
            tuxpaint
 
          And in a C Shell (like TCSH):
 
-           setenv LANG es_ES@euro ; \
+           setenv LANG es_ES ; \
            tuxpaint
 
-   ---------------------------------------------------------------------------
+     ----------------------------------------------------------------------
 
   Windows Users
 
@@ -638,7 +642,7 @@ Setting Your Environment's Locale
          shortcut (see "INSTALL.txt"). However, by using an MSDOS Prompt
          window, it is also possible to issue a command like this:
 
-           set LANG=es_ES@euro
+           set LANG=es_ES
 
          ...which will set the language for the lifetime of that DOS window.
 
@@ -654,7 +658,7 @@ Setting Your Environment's Locale
              Editor.
           5. Add the following at the bottom of the file:
 
-               set LANG=es_ES@euro
+               set LANG=es_ES
 
           6. Close the System Configuration Editor, answering yes to save the
              changes.
@@ -681,7 +685,8 @@ Setting Your Environment's Locale
        Tux Paint will try to load the font file from its system-wide "fonts"
        directory (under a "locale" subdirectory). The name of the file
        corresponds to the first two letters in the 'locale' code of the
-       language (e.g., "ko" for Korean, "ja" for Japanese, "zh" for Chinese).
+       language (e.g., "ko" for Korean, "ja" for Japanese, "zh_tw" for
+       Traditional Chinese).
 
        For example, under Linux or Unix, when Tux Paint is run in Korean
        (e.g., with the option "--lang korean"), Tux Paint will attempt to

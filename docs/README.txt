@@ -1,7 +1,7 @@
                                    Tux Paint
-                                 version 0.9.14
+                                 version 0.9.15
 
-                     A simple drawing program for children
+  A simple drawing program for children
 
                         Copyright 2004 by Bill Kendrick
                                New Breed Software
@@ -9,9 +9,9 @@
                            bill@newbreedsoftware.com
                    http://www.newbreedsoftware.com/tuxpaint/
 
-                       June 14, 2002 - September 24, 2004
+                        June 14, 2002 - October 23, 2004
 
-   ---------------------------------------------------------------------------
+     ----------------------------------------------------------------------
 
                                      About
 
@@ -65,7 +65,7 @@ Objectives:
                is done by selecting it from a collection of thumbnails.
                Access to other files on the computer is restricted.
 
-   ---------------------------------------------------------------------------
+     ----------------------------------------------------------------------
 
                                 Using Tux Paint
 
@@ -84,7 +84,7 @@ Loading Tux Paint
          If any errors occur, they will be displayed on the terminal (to
          "stderr").
 
-   ---------------------------------------------------------------------------
+     ----------------------------------------------------------------------
 
   Windows Users
 
@@ -110,13 +110,13 @@ Loading Tux Paint
          If you used the 'ZIP-file' download, Tux Paint's folder will be
          wherever you put it when you unzipped the ZIP file.
 
-   ---------------------------------------------------------------------------
+     ----------------------------------------------------------------------
 
   Mac OS X Users
 
          Simply double-click the "Tux Paint" icon.
 
-   ---------------------------------------------------------------------------
+     ----------------------------------------------------------------------
 
 Title Screen
 
@@ -128,7 +128,7 @@ Title Screen
        continue. (Or, after about 30 seconds, the title screen will go away
        automatically.)
 
-   ---------------------------------------------------------------------------
+     ----------------------------------------------------------------------
 
 Main Screen
 
@@ -174,7 +174,7 @@ Main Screen
 when it is the size you want.  Move around to rotate it, and       click to draw
                                       it.)
 
-   ---------------------------------------------------------------------------
+     ----------------------------------------------------------------------
 
 Available Tools
 
@@ -192,7 +192,7 @@ Available Tools
                  As you draw, a sound is played. The bigger the brush, the
                  lower the pitch.
 
-   ---------------------------------------------------------------------------
+     ----------------------------------------------------------------------
 
          Stamp (Rubber Stamp)
 
@@ -214,7 +214,7 @@ Available Tools
                  won't display the Mirror, Flip, Shrink and Grow controls for
                  stamps. See the "Options" documentation.)
 
-   ---------------------------------------------------------------------------
+     ----------------------------------------------------------------------
 
          Lines
 
@@ -228,7 +228,7 @@ Available Tools
                  Let go of the mouse to complete the line. A "sproing!" sound
                  will play.
 
-   ---------------------------------------------------------------------------
+     ----------------------------------------------------------------------
 
          Shapes
 
@@ -259,7 +259,7 @@ Available Tools
                               drawn on the canvas when you let go of the
                               mouse button. (There's no rotation step.)
 
-   ---------------------------------------------------------------------------
+     ----------------------------------------------------------------------
 
          Text
 
@@ -274,7 +274,7 @@ Available Tools
                  Click elsewhere in the picture and the current line of text
                  will move there, where you can continue editing.
 
-   ---------------------------------------------------------------------------
+     ----------------------------------------------------------------------
 
          Magic (Special Effects)
 
@@ -341,7 +341,7 @@ Available Tools
                               you quickly fill parts of the picture, as if it
                               were a coloring book.
 
-   ---------------------------------------------------------------------------
+     ----------------------------------------------------------------------
 
          Eraser
 
@@ -359,7 +359,7 @@ Available Tools
                  As you erase, a "squeaky clean" eraser/wiping sound is
                  played.
 
-   ---------------------------------------------------------------------------
+     ----------------------------------------------------------------------
 
   Other Controls
 
@@ -371,7 +371,7 @@ Available Tools
                  Note: You can also press [Control]-[Z] on the keyboard to
                  undo.
 
-   ---------------------------------------------------------------------------
+     ----------------------------------------------------------------------
 
          Redo
 
@@ -384,7 +384,7 @@ Available Tools
                  Note: You can also press [Control]-[R] on the keyboard to
                  redo.
 
-   ---------------------------------------------------------------------------
+     ----------------------------------------------------------------------
 
          New
 
@@ -394,7 +394,7 @@ Available Tools
                  Note: You can also press [Control]-[N] on the keyboard to
                  start a new drawing.
 
-   ---------------------------------------------------------------------------
+     ----------------------------------------------------------------------
 
          Open
 
@@ -441,7 +441,7 @@ Available Tools
                  Note: You can also press [Control]-[O] on the keyboard to
                  get the 'Open' dialog.
 
-   ---------------------------------------------------------------------------
+     ----------------------------------------------------------------------
 
          Save
 
@@ -467,7 +467,7 @@ Available Tools
                  Note: You can also press [Control]-[S] on the keyboard to
                  save.
 
-   ---------------------------------------------------------------------------
+     ----------------------------------------------------------------------
 
          Print
 
@@ -539,7 +539,7 @@ Available Tools
 
                               See the "Options" documentation.)
 
-   ---------------------------------------------------------------------------
+     ----------------------------------------------------------------------
 
          Quit
 
@@ -562,7 +562,7 @@ Available Tools
                  NOTE: If the image is saved, it will be reloaded
                  automatically the next time you run Tux Paint!
 
-   ---------------------------------------------------------------------------
+     ----------------------------------------------------------------------
 
                      Loading Other Pictures into Tux Paint
 
@@ -642,7 +642,7 @@ Doing it Manually
        Under Windows, this is in the "userdata" folder. Under Mac OS X, this
        is in "Library/Preferences/tuxpaint/" in your home directory.
 
-   ---------------------------------------------------------------------------
+     ----------------------------------------------------------------------
 
                               Extending Tux Paint
 
@@ -687,7 +687,7 @@ Where Files Go
 
              /Users/Joe/Library/Preferences/
 
-   ---------------------------------------------------------------------------
+     ----------------------------------------------------------------------
 
   Personal Files
 
@@ -717,7 +717,7 @@ Where Files Go
          (For example, if you created a brush named "flower.png", you would
          put it in "~/.tuxpaint/brushes/" under Linux or Unix.)
 
-   ---------------------------------------------------------------------------
+     ----------------------------------------------------------------------
 
 Brushes
 
@@ -737,7 +737,7 @@ Brushes
        it's because you forgot to use alpha transparency! See the
        documentation file "PNG.txt" for more information and tips.
 
-   ---------------------------------------------------------------------------
+     ----------------------------------------------------------------------
 
 Stamps
 
@@ -765,7 +765,7 @@ Stamps
          use alpha transparency! See the documentation file "PNG.txt" for
          more information and tips.
 
-   ---------------------------------------------------------------------------
+     ----------------------------------------------------------------------
 
   Description Text
 
@@ -801,7 +801,7 @@ Stamps
            them as Plain Text, and make sure they have ".txt" at the end of
            the filename...
 
-   ---------------------------------------------------------------------------
+     ----------------------------------------------------------------------
 
   Sound Effects
 
@@ -823,7 +823,7 @@ Stamps
            If no localized sound effect can be loaded, Tux Paint will attempt
            to load the 'default' sound file. (e.g., "picture.wav")
 
-   ---------------------------------------------------------------------------
+     ----------------------------------------------------------------------
 
   Stamp Options
 
@@ -909,7 +909,7 @@ Stamps
          named "truck_mirror.png", which will be used when the stamp is
          mirrored (rather than using a backwards version of 'truck.png').
 
-   ---------------------------------------------------------------------------
+     ----------------------------------------------------------------------
 
 Fonts
 
@@ -919,7 +919,7 @@ Fonts
        font and provide four different sizes in the 'Letters' selector when
        using the 'Text' tool.
 
-   ---------------------------------------------------------------------------
+     ----------------------------------------------------------------------
 
 'Starters'
 
@@ -991,13 +991,12 @@ Fonts
        picture loaded or started. (In other words, if you base a drawing on a
        'starter' image, it will always be affected by it.)
 
-   ---------------------------------------------------------------------------
+     ----------------------------------------------------------------------
 
                                 Further Reading
 
      Other documentation included with Tux Paint (in the "docs"
      folder/directory) include:
-
        * AUTHORS.txt
          List of authors and contributors
        * CHANGES.txt
@@ -1014,7 +1013,7 @@ Fonts
        * TODO.txt
          A list of pending features or bugs needing fixed
 
-   ---------------------------------------------------------------------------
+     ----------------------------------------------------------------------
 
                                 How to Get Help
 

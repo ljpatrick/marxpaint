@@ -21,12 +21,12 @@
   along with this program; if not, write to the Free Software
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   
-  June 14, 2002 - September 28, 2004
+  June 14, 2002 - October 23, 2004
 */
 
 
-#define VER_VERSION     "0.9.14"
-#define VER_DATE        "2004-09-28"
+#define VER_VERSION     "0.9.15"
+#define VER_DATE        "2004-10-23"
 
 
 /* #define DEBUG */
@@ -322,6 +322,7 @@ enum {
   LANG_EU,     /* Basque */
   LANG_FI,     /* Finnish */
   LANG_FR,     /* French */
+  LANG_GL,     /* Galician */
   LANG_HE,     /* Hebrew */
   LANG_HI,     /* Hindi */
   LANG_HR,     /* Croatian */
@@ -372,6 +373,7 @@ const char * lang_prefixes[NUM_LANGS] = {
   "eu",
   "fi",
   "fr",
+  "gl",
   "he",
   "hi",
   "hr",
@@ -3933,6 +3935,7 @@ void show_lang_usage(FILE * f, char * prg)
 /* nl */     "  dutch        nederlands\n"
 /* fi */     "  finnish      suomi\n"
 /* fr */     "  french       francais\n"
+/* gl */     "  galician     galego\n"
 /* de */     "  german       deutsch\n"
 /* el */     "  greek\n"
 /* he */     "  hebrew\n"
@@ -3994,6 +3997,7 @@ void show_locale_usage(FILE * f, char * prg)
 	  "  nl_NL   (Dutch)\n"
 	  "  fi_FI   (Finnish      Suomi)\n"
 	  "  fr_FR   (French       Francais)\n"
+	  "  gl_ES   (Galician     Galego)\n"
 	  "  de_DE   (German       Deutsch)\n"
 	  "  el_GR   (Greek)\n"
 	  "  he_IL   (Hebrew)\n"
@@ -4612,6 +4616,12 @@ void setup(int argc, char * argv[])
 	{
 	  putenv("LANGUAGE=fr_FR.UTF-8");
 	  putenv("LC_ALL=fr_FR.UTF-8");
+	}
+      else if (strcmp(langstr, "galician") == 0 ||
+	       strcmp(langstr, "galego") == 0)
+	{
+	  putenv("LANGUAGE=gl_ES.UTF-8");
+	  putenv("LC_ALL=gl_ES.UTF-8");
 	}
       else if (strcmp(langstr, "hebrew") == 0)
 	{

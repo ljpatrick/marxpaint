@@ -7,7 +7,7 @@ bill@newbreedsoftware.com
 http://www.newbreedsoftware.com/tuxpaint/
 
 
-June 17, 2002 - July 27, 2004
+June 17, 2002 - October 23, 2004
 
 
 * Design and Coding:
@@ -122,6 +122,9 @@ June 17, 2002 - July 27, 2004
   * French
     Jacques Chion <Jacques.Chion@wanadoo.fr>
     Charles Vidal <vidalc@club-internet.fr>
+
+  * Galician
+    Leandro Regueiro <unho@gulo.org>
     
   * German
     Fabian Franz <FabianFranz@gmx.de>

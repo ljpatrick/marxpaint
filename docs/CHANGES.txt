@@ -7,6 +7,13 @@ bill@newbreedsoftware.com
 http://www.newbreedsoftware.com/tuxpaint/
 
 
+2004.October.23 (0.9.15)
+  * Galician translation created.
+    Leandro Regueiro <unho@gulo.org>
+
+  * Chinese (Traditional) documentation updates.
+    Song Huang <Song@ossacc.org>
+
 2004.September.28 (0.9.14)
   * New Features:
     -------------

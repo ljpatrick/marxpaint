@@ -11,7 +11,7 @@ alink="#FF00FF">
 
 version
 
-0.9.14
+0.9.15
 
 </h1>
 <h2>Options Documentation</h2>
@@ -22,7 +22,7 @@ New Breed Software</p>
 <p><a href="mailto:bill@newbreedsoftware.com">bill@newbreedsoftware.com</a><br>
 <a href="http://www.newbreedsoftware.com/tuxpaint/">http://www.newbreedsoftware.com/tuxpaint/</a></p>
 
-<p>September 24, 2004</p>
+<p>October 23, 2004</p>
 </center>
 
 <hr size=2 noshade>
@@ -396,6 +396,11 @@ New Breed Software</p>
       <td>&nbsp;</td>
     </tr>
     <tr>
+      <td><code>galician</code></td>
+      <td><code>galego</code></td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
       <td><code>german</code></td>
       <td><code>deutsch</code></td>
       <td>&nbsp;</td>
@@ -649,7 +654,7 @@ New Breed Software</p>
       <p>Run Tux&nbsp;Paint in one of the support languages.
       See the "<i><a href="#different_language">Choosing a Different
       Language</a></i>" section below for the
-      locale strings (e.g., "<code>de_DE@euro</code>" for German) to
+      locale strings (e.g., "<code>de_DE</code>" for German) to
       use.</p>
     
       <p>(If your locale is already set, e.g. with the "<code>$LANG</code>"
@@ -803,7 +808,7 @@ New Breed Software</p>
     <td>Danish</td>
   </tr>
   <tr>
-    <td><code>de_DE@euro</code></td>
+    <td><code>de_DE</code></td>
     <td>Deutsch</td>
     <td>German</td>
   </tr>
@@ -818,7 +823,7 @@ New Breed Software</p>
     <td>British English</td>
   </tr>
   <tr>
-    <td><code>es_ES@euro</code></td>
+    <td><code>es_ES</code></td>
     <td>Espa&ntilde;ol</td>
     <td>Spanish</td>
   </tr>
@@ -828,14 +833,19 @@ New Breed Software</p>
     <td>Basque</td>
   </tr>
   <tr>
-    <td><code>fi_FI@euro</code></td>
+    <td><code>fi_FI</code></td>
     <td>Suomi</td>
     <td>Finnish</td>
   </tr>
   <tr>
-    <td><code>fr_FR@euro</code></td>
+    <td><code>fr_FR</code></td>
     <td>Fran&ccedil;ais</td>
     <td>French</td>
+  </tr>
+  <tr>
+    <td><code>gl_ES</code></td>
+    <td>Galego</td>
+    <td>Galician</td>
   </tr>
   <tr>
     <td><code>he_IL</code> (*)</td>
@@ -868,7 +878,7 @@ New Breed Software</p>
     <td>Icelandic</td>
   </tr>
   <tr>
-    <td><code>it_IT@euro</code></td>
+    <td><code>it_IT</code></td>
     <td>Italiano</td>
     <td>Italian</td>
   </tr>
@@ -903,7 +913,7 @@ New Breed Software</p>
     <td>Norwegian Nynorsk</td>
   </tr>
   <tr>
-    <td><code>nl_NL@euro</code></td>
+    <td><code>nl_NL</code></td>
     <td>&nbsp;</td>
     <td>Dutch</td>
   </tr>
@@ -948,7 +958,7 @@ New Breed Software</p>
     <td>Serbian</td>
   </tr>
   <tr>
-    <td><code>sv_SE@euro</code></td>
+    <td><code>sv_SE</code></td>
     <td>Svenska</td>
     <td>Swedish</td>
   </tr>
@@ -963,7 +973,7 @@ New Breed Software</p>
     <td>Klingon</td>
   </tr>
   <tr>
-    <td><code>tr_TR@euro</code></td>
+    <td><code>tr_TR</code></td>
     <td>&nbsp;</td>
     <td>Turkish</td>
   </tr>
@@ -973,7 +983,7 @@ New Breed Software</p>
     <td>Vietnamese</td>
   </tr>
   <tr>
-    <td><code>wa_BE@euro</code></td>
+    <td><code>wa_BE</code></td>
     <td>&nbsp;</td>
     <td>Walloon</td>
   </tr>
@@ -1027,7 +1037,7 @@ New Breed Software</p>
       <p>For example, in a Bourne Shell (like BASH):</p>
 
       <blockquote><code>
-        export&nbsp;LANG=es_ES@euro&nbsp;;&nbsp;\<br>
+        export&nbsp;LANG=es_ES&nbsp;;&nbsp;\<br>
         tuxpaint
       </code></blockquote>
 
@@ -1035,7 +1045,7 @@ New Breed Software</p>
       <p>And in a C Shell (like TCSH):</p>
 
       <blockquote><code>
-        setenv&nbsp;LANG&nbsp;es_ES@euro&nbsp;;&nbsp;\<br>
+        setenv&nbsp;LANG&nbsp;es_ES&nbsp;;&nbsp;\<br>
         tuxpaint
       </code></blockquote>
     </blockquote>
@@ -1054,7 +1064,7 @@ New Breed Software</p>
       like this:</p>
 
       <blockquote><code>
-        set LANG=es_ES@euro
+        set LANG=es_ES
       </code></blockquote>
 
       <p>...which will set the language for the lifetime of that DOS
@@ -1074,7 +1084,7 @@ New Breed Software</p>
       <li>Add the following at the bottom of the file:
 
         <blockquote><code>	    
-          set LANG=es_ES@euro
+          set LANG=es_ES
         </code></blockquote>
           
       <li>Close the System Configuration Editor, answering yes to save
