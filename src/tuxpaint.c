@@ -7,12 +7,12 @@
   bill@newbreedsoftware.com
   http://www.newbreedsoftware.com/tuxpaint/
   
-  June 14, 2002 - May 22, 2003
+  June 14, 2002 - May 23, 2003
 */
 
 
 #define VER_VERSION     "0.9.11"
-#define VER_DATE        "2003.05.22"
+#define VER_DATE        "2003.05.23"
 
 
 /* #define DEBUG */
@@ -557,8 +557,11 @@ void convert_close();
 char * convert2utf8(char c);
 int converts();
 int delete_utf8_char(char * utf8_str, int len);
-#define MAX_UTF8_CHAR_LENGTH 6
+void anti_carriage_return(int left, int right, int cur_top, int new_top,
+		          int cur_bot, int line_width);
 
+
+#define MAX_UTF8_CHAR_LENGTH 6
 
 #define USEREVENT_TEXT_UPDATE 1
 
@@ -6333,9 +6336,9 @@ void wordwrap_text(TTF_Font * font, char * str, SDL_Color color,
   unsigned char utf8_char[5];
   int len;
   SDL_Surface * text;
-  SDL_Rect dest;
+  SDL_Rect dest, src;
 
-  int utf8_str_len;
+  int utf8_str_len, last_text_height;
   unsigned char utf8_str[512];
 
 
@@ -6343,6 +6346,8 @@ void wordwrap_text(TTF_Font * font, char * str, SDL_Color color,
   
   x = left;
   y = top;
+      
+  last_text_height = 0;
 
   debug(str);
   debug(gettext(str));
@@ -6384,6 +6389,10 @@ void wordwrap_text(TTF_Font * font, char * str, SDL_Color color,
 
 	if (x > left)
 	{
+	  if (need_right_to_left(language))
+	    anti_carriage_return(left, right, top, top + text->h, y + text->h,
+			         x - left);
+
 	  x = left;
 	  y = y + text->h;
 	}
@@ -6391,6 +6400,7 @@ void wordwrap_text(TTF_Font * font, char * str, SDL_Color color,
 
 	/* Junk the blitted word; it's too long! */
 
+        last_text_height = text->h;
 	SDL_FreeSurface(text);
 
 	
@@ -6439,18 +6449,24 @@ void wordwrap_text(TTF_Font * font, char * str, SDL_Color color,
 	    {
               if (x + text->w > right)
               {
-	        x = left;
+		if (need_right_to_left(language))
+	          anti_carriage_return(left, right, top, top + text->h,
+				       y + text->h, x - left);
+	        
+		x = left;
 	        y = y + text->h;
               }
 
-	      //if (need_right_to_left(language) == 0)
-                dest.x = x;
-	      //else
-	      //  dest.x = right - (x - left) - text->w;
+              dest.x = x;
 
-              dest.y = y;
+              if (need_right_to_left(language))
+	        dest.y = top;
+              else
+                dest.y = y;
 
               SDL_BlitSurface(text, NULL, screen, &dest);
+      
+	      last_text_height = text->h;
 	      SDL_FreeSurface(text);
 
               x = x + text->w;
@@ -6466,18 +6482,24 @@ void wordwrap_text(TTF_Font * font, char * str, SDL_Color color,
         {
 	  /* This word needs to move down? */
 
-          x = left;
+	  if (need_right_to_left(language))
+	    anti_carriage_return(left, right, top, top + text->h, y + text->h,
+		 	         x - left);
+          
+	  x = left;
           y = y + text->h;
         }
 
-	//if (need_right_to_left(language) == 0)
-          dest.x = x;
-	//else
-	//  dest.x = right - (x - left) - text->w;
+        dest.x = x;
 
-        dest.y = y;
+        if (need_right_to_left(language))
+	  dest.y = top;
+        else
+          dest.y = y;
 
         SDL_BlitSurface(text, NULL, screen, &dest);
+
+        last_text_height = text->h;
         SDL_FreeSurface(text);
         x = x + text->w;
 	}
@@ -6537,22 +6559,27 @@ void wordwrap_text(TTF_Font * font, char * str, SDL_Color color,
       
       if (x + text->w > right)
       {
+	if (need_right_to_left(language))
+	  anti_carriage_return(left, right, top, top + text->h, y + text->h,
+		 	       x - left);
+	
 	x = left;
 	y = y + text->h;
       }
 
 
-      //if (need_right_to_left(language) == 0)
         dest.x = x;
-      //else
-      //  dest.x = right - (x - left) - text->w;
 
-      dest.y = y;
+      if (need_right_to_left(language))
+	dest.y = top;
+      else
+        dest.y = y;
 
       SDL_BlitSurface(text, NULL, screen, &dest);
 
       x = x + text->w;
 
+      last_text_height = text->h;
       SDL_FreeSurface(text);
     }
     
@@ -6597,19 +6624,23 @@ void wordwrap_text(TTF_Font * font, char * str, SDL_Color color,
 
       if (x + text->w > right)  /* Correct? */
       {
-        x = left;
+	if (need_right_to_left(language))
+	  anti_carriage_return(left, right, top, top + text->h, y + text->h,
+		 	       x - left);
+        
+	x = left;
         y = y + text->h;
       }
 
 
       /* Draw the word: */
 
-      //if (need_right_to_left(language) == 0)
-        dest.x = x;
-      //else
-      //  dest.x = right - (x - left) - text->w;
+      dest.x = x;
 
-      dest.y = y;
+      if (need_right_to_left(language))
+	dest.y = top;
+      else
+        dest.y = y;
 
       SDL_BlitSurface(text, NULL, screen, &dest);
 
@@ -6621,6 +6652,7 @@ void wordwrap_text(TTF_Font * font, char * str, SDL_Color color,
 
       /* Free the temp. surface: */
 
+      last_text_height = text->h;
       SDL_FreeSurface(text);
 
 
@@ -6630,6 +6662,29 @@ void wordwrap_text(TTF_Font * font, char * str, SDL_Color color,
     }
 
     free(tstr);
+  }
+
+
+  /* Right-justify the final line of text, in right-to-left mode: */
+  
+  if (need_right_to_left(language) && last_text_height > 0)
+  {
+    src.x = left;
+    src.y = top;
+    src.w = x - left;
+    src.h = last_text_height;
+
+    dest.x = right - src.w;
+    dest.y = top;
+
+    SDL_BlitSurface(screen, &src, screen, &dest);
+
+    dest.x = left;
+    dest.y = top;
+    dest.w = (right - left - src.w);
+    dest.h = last_text_height;
+
+    SDL_FillRect(screen, &dest, SDL_MapRGB(screen->format, 192, 192, 192));
   }
 }
 
@@ -7262,7 +7317,7 @@ int do_prompt(char * text, char * btn_yes, char * btn_no)
   /* Draw the question: */
 
   wordwrap_text(font, text, black,
-		166 + PROMPTOFFSETX, 100 + PROMPTOFFSETY, 482, 0, 0);
+		166 + PROMPTOFFSETX, 100 + PROMPTOFFSETY, 475, 0, 0);
 
 
   /* Draw yes button: */
@@ -7272,7 +7327,7 @@ int do_prompt(char * text, char * btn_yes, char * btn_no)
   SDL_BlitSurface(img_yes, NULL, screen, &dest);
 
   wordwrap_text(font, btn_yes, black, 166 + PROMPTOFFSETX + 48 + 4,
-		183 + PROMPTOFFSETY, 482, 0, 0);
+		183 + PROMPTOFFSETY, 475, 0, 0);
 
 
   /* Draw no button: */
@@ -7284,7 +7339,7 @@ int do_prompt(char * text, char * btn_yes, char * btn_no)
     SDL_BlitSurface(img_no, NULL, screen, &dest);
 
     wordwrap_text(font, btn_no, black,
-		  166 + PROMPTOFFSETX + 48 + 4, 235 + PROMPTOFFSETY, 482, 0, 0);
+		  166 + PROMPTOFFSETX + 48 + 4, 235 + PROMPTOFFSETY, 475, 0, 0);
   }
 
 
@@ -11116,4 +11171,36 @@ int delete_utf8_char(char *utf8_str, int len)
   return len;
 }
 
+
+/* For right-to-left languages, when word-wrapping, we need to
+   make sure the text doesn't end up going from bottom-to-top, too! */
+
+void anti_carriage_return(int left, int right, int cur_top, int new_top,
+		          int cur_bot, int line_width)
+{
+  SDL_Rect src, dest;
+
+
+  /* Move current set of text down one line (and right-justify it!): */
   
+  src.x = left;
+  src.y = cur_top;
+  src.w = line_width;
+  src.h = cur_bot - cur_top;
+
+  dest.x = right - line_width;
+  dest.y = new_top;
+
+  SDL_BlitSurface(screen, &src, screen, &dest);
+
+
+  /* Clear the top line for new text: */
+
+  dest.x = left;
+  dest.y = cur_top;
+  dest.w = right - left;
+  dest.h = new_top - cur_top;
+  
+  SDL_FillRect(screen, &dest, SDL_MapRGB(screen->format, 255, 255, 255));
+}
+
