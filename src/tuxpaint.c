@@ -2758,9 +2758,8 @@ static void mainloop(void)
 		    }
 		}
 	    }
-	  else if ((event.type == SDL_MOUSEBUTTONDOWN &&
-		    event.button.button >= 1 &&
-		    event.button.button <= 3))
+	  else if (event.type == SDL_MOUSEBUTTONDOWN &&
+		   event.button.button == 1)
 	    {
 	      if (HIT(r_tools))
 		{
@@ -10569,8 +10568,7 @@ static void do_wait(void)
 	      done = 1;
 	    }
 	  else if (event.type == SDL_MOUSEBUTTONDOWN &&
-		   event.button.button >= 1 &&
-		   event.button.button <= 3)
+		   event.button.button == 1)
 	    {
 	      done = 1;
 	    }
@@ -11309,8 +11307,7 @@ static int do_prompt_image(const char * const text, const char * const btn_yes, 
 	    }
 	}
       else if (event.type == SDL_MOUSEBUTTONDOWN &&
-	       event.button.button >= 1 &&
-	       event.button.button <= 3)
+	       event.button.button == 1)
 	{
 	  if (event.button.x >= 166 + PROMPTOFFSETX &&
 	      event.button.x < 166 + PROMPTOFFSETX + 48)
@@ -13057,8 +13054,7 @@ static int do_open(int want_new_tool)
 	    }
 	}
      else if (event.type == SDL_MOUSEBUTTONDOWN &&
-              event.button.button >= 1 &&
-              event.button.button <= 3)
+              event.button.button >= 1)
        {
 		  if (event.button.x >= 96 && event.button.x < WINDOW_WIDTH - 96 &&
 		      event.button.y >= 24 &&

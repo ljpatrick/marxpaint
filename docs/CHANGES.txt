@@ -100,6 +100,9 @@ http://www.newbreedsoftware.com/tuxpaint/
     
   * Interface improvements:
     -----------------------
+    * Middle and right mouse buttons no longer do anything.
+      (No reason to teach kids that all the buttons do the same thing!)
+
     * Thumbnail of selected image now shown on "Erase this image?"
       confirmation pop-up.
 
