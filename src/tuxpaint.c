@@ -12973,7 +12973,7 @@ void flip_starter(void)
         src.h = 1;
 
         dest.x = 0;
-        dest.y = orig->h - x - 1;
+        dest.y = orig->h - y - 1;
 
         SDL_BlitSurface(orig, &src, img_starter_bkgd, &dest);
       }
