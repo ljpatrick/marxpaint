@@ -12356,20 +12356,6 @@ static int do_png_save(FILE * fi, const char * const fname, SDL_Surface * surf)
 ///////////////////////////////////// PostScript printing ///////////
 #ifdef PRINTMETHOD_PS
 
-// [Doug Zongker quoting Albert Cahalan]
-//
-// > First of all, would you mind if Tux Paint used some
-// > version of the imgtops code?
-//
-// Yes, please do whatever you'd like with it.
-//
-// > I'd like
-// > some clarification of what you interpret the license to
-// > mean when it says "substantial portions of the Software".
-//
-// My intent was to let anyone do anything they wanted with the source as
-// long as some attribution was given.
-
 /* Actually save the PostScript data to the file stream: */
 static int do_ps_save(FILE * fi, const char *restrict  const fname, SDL_Surface * surf)
 {
