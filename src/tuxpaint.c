@@ -2368,86 +2368,61 @@ static void mainloop(void)
 			       !disable_stamp_controls)
 			{
 			  /* Stamp controls! */
-
+                          int stamp_sound = -1;
 			  if (event.button.y >= (48 * ((max / 2) + TOOLOFFSET / 2)) + 40 &&
 			      event.button.y < (48 * ((max / 2) + TOOLOFFSET / 2)) + 40 + 48)
 			    {
 			      /* One of the top buttons: */
-
 			      if (event.button.x >= WINDOW_WIDTH - 96 &&
 				  event.button.x <= WINDOW_WIDTH - 48)
 				{
 				  /* Top left button: Mirror: */
-			    
 				  if (inf_stamps[cur_stamp]->mirrorable)
 				    {
 				      state_stamps[cur_stamp]->mirrored =
 					!state_stamps[cur_stamp]->mirrored;
-			      
-				      playsound(0, SND_MIRROR, 0);
-				      draw_stamps();
-			
-				      SDL_UpdateRect(screen,
-						     WINDOW_WIDTH - 96, 0,
-						     96, (48 * 7) + 40 + HEIGHTOFFSET);
+				      stamp_sound = SND_MIRROR;
 				    }
 				}
 			      else
 				{
 				  /* Top right button: Flip: */
-				  
 				  if (inf_stamps[cur_stamp]->flipable)
 				    {
 				      state_stamps[cur_stamp]->flipped =
 					!state_stamps[cur_stamp]->flipped;
-
-				      playsound(0, SND_FLIP, 0);
-				      draw_stamps();
-			
-				      SDL_UpdateRect(screen,
-						     WINDOW_WIDTH - 96, 0,
-						     96, (48 * 7) + 40 + HEIGHTOFFSET);
+				      stamp_sound = SND_FLIP;
 				    }
 				}
 			    }
 			  else
 			    {
 			      /* One of the bottom buttons: */
-
 			      if (event.button.x >= WINDOW_WIDTH - 96 &&
 				  event.button.x <= WINDOW_WIDTH - 48)
 				{
-
 				  /* Bottom left button: Shrink: */
-
 				  if (state_stamps[cur_stamp]->size > MIN_STAMP_SIZE)
 				    {
 				      state_stamps[cur_stamp]->size--;
-			    
-				      playsound(0, SND_SHRINK, 0);
-				      draw_stamps();
-			
-				      SDL_UpdateRect(screen,
-						     WINDOW_WIDTH - 96, 0,
-						     96, (48 * 7) + 40 + HEIGHTOFFSET);
+				      stamp_sound = SND_SHRINK;
 				    }
 				}
 			      else
 				{
 				  /* Bottom right button: Grow: */
-
 				  if (state_stamps[cur_stamp]->size < MAX_STAMP_SIZE)
 				    {
 				      state_stamps[cur_stamp]->size++;
-			    
-				      playsound(0, SND_GROW, 0);
-				      draw_stamps();
-			
-				      SDL_UpdateRect(screen,
-						     WINDOW_WIDTH - 96, 0,
-						     96, (48 * 7) + 40 + HEIGHTOFFSET);
+				      stamp_sound = SND_GROW;
 				    }
 				}
+			    }
+			  if (stamp_sound != -1)
+			    {
+			      playsound(0, stamp_sound, 0);
+			      draw_stamps();
+			      SDL_UpdateRect(screen, WINDOW_WIDTH - 96, 0, 96, (48 * 7) + 40 + HEIGHTOFFSET);
 			    }
 			  update_stamp_xor();
 			}
