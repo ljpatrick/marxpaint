@@ -3109,6 +3109,7 @@ static void mainloop(void)
                                         {
                                           text_size++;
                                           control_sound = SND_GROW;
+				          toolopt_changed = 1;
                                         }
                                     }
                                   else
@@ -3118,6 +3119,7 @@ static void mainloop(void)
                                         {
                                           text_size--;
                                           control_sound = SND_SHRINK;
+				          toolopt_changed = 1;
                                         }
                                     }
                                 }
@@ -3152,7 +3154,10 @@ static void mainloop(void)
                                           control_sound = SND_THICK;
                                         }
                                     }
+				  toolopt_changed = 1;
                                 }
+
+
                               if (control_sound != -1)
                                 {
                                   playsound(0, control_sound, 0);
@@ -3244,7 +3249,10 @@ static void mainloop(void)
                           if (do_draw)
                             draw_fonts();
                           
-                          do_render_cur_text(0);
+			  
+			  // Only rerender when picking a different font
+			  if (toolopt_changed)
+                            do_render_cur_text(0);
                         }
                       else if (cur_tool == TOOL_STAMP)
                         {
