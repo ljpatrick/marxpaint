@@ -7,12 +7,12 @@
   bill@newbreedsoftware.com
   http://www.newbreedsoftware.com/tuxpaint/
   
-  June 14, 2002 - August 2, 2003
+  June 14, 2002 - August 3, 2003
 */
 
 
 #define VER_VERSION     "0.9.12"
-#define VER_DATE        "2003.08.02"
+#define VER_DATE        "2003.08.03"
 
 
 /* #define DEBUG */
@@ -372,6 +372,9 @@ int use_sound, fullscreen, disable_quit, simple_shapes, language,
   wheely, no_fancy_cursors, keymouse, mouse_x, mouse_y,
   mousekey_up, mousekey_down, mousekey_left, mousekey_right,
   dont_do_xor, use_print_config, dont_load_stamps;
+int recording, playing;
+char * playfile;
+FILE * demofi;
 int WINDOW_WIDTH, WINDOW_HEIGHT;
 char * printcommand;
 int prog_bar_ctr;
@@ -603,6 +606,8 @@ int converts();
 int delete_utf8_char(char * utf8_str, int len);
 void anti_carriage_return(int left, int right, int cur_top, int new_top,
 		          int cur_bot, int line_width);
+int mySDL_WaitEvent(SDL_Event *event);
+int mySDL_PollEvent(SDL_Event *event);
 
 
 #define MAX_UTF8_CHAR_LENGTH 6
@@ -824,7 +829,7 @@ void mainloop(void)
       pre_event_time = SDL_GetTicks();
 
 
-      while (SDL_PollEvent(&event))
+      while (mySDL_PollEvent(&event))
 	{
 	  current_event_time = SDL_GetTicks();
 
@@ -3359,6 +3364,7 @@ void show_usage(FILE * f, char * prg)
     "       %s [--printdelay=SECONDS]\n"
     "          [--lang LANGUAGE | --locale LOCALE]\n"
     "       %s [--nosysconfig]\n"
+    /* "       %s [--record FILE | --playback FILE]\n" */
     "\n"
     "LANGUAGE may be one of:\n"
     "  english      american-english\n"
@@ -3385,11 +3391,14 @@ void show_usage(FILE * f, char * prg)
     "  polish       polski\n"
     "  portuguese   portugues\n"
     "  romanian\n"
+    "  russian\n"
     "  slovak\n"
     "  spanish      espanol\n"
     "  swedish      svenska\n"
-    "  turkish\n\n",
-    prg, prg, prg, prg, prg, prg);
+    "  turkish\n"
+    "  walloon\n"
+    "\n",
+    prg, prg, prg, prg, prg, prg  /* , prg */ );
 }
 
 
@@ -3460,7 +3469,10 @@ void setup(int argc, char * argv[])
   use_print_config = 0;
   WINDOW_WIDTH = 640;
   WINDOW_HEIGHT = 480;
-
+  playfile = NULL;
+  recording = 0;
+  playing = 0;
+  
 
 #ifdef __BEOS__
   /* Fancy cursors on BeOS are buggy in SDL */
@@ -3724,7 +3736,7 @@ void setup(int argc, char * argv[])
         exit(1);
       }
     }
-    else if (strstr(argv[i], "--savedir") == argv[i])
+    else if (strcmp(argv[i], "--savedir") == 0)
     {
       if (i < argc - 1)
       {
@@ -3738,6 +3750,29 @@ void setup(int argc, char * argv[])
       else
       {
 	/* Forgot to specify the directory name! */
+
+	fprintf(stderr, "%s takes an argument\n", argv[i]);
+	show_usage(stderr, (char *) getfilename(argv[0]));
+	exit(1);
+      }
+    }
+    else if (strcmp(argv[i], "--record") == 0 ||
+	     strcmp(argv[i], "--playback") == 0)
+    {
+      if (i < argc - 1)
+      {
+	playfile = strdup(argv[i + 1]);
+
+	if (strcmp(argv[i], "--record") == 0)
+	  recording = 1;
+	else if (strcmp(argv[i], "--playback") == 0)
+	  playing = 1;
+	
+	i++;
+      }
+      else
+      {
+	/* Forgot to specify the filename! */
 
 	fprintf(stderr, "%s takes an argument\n", argv[i]);
 	show_usage(stderr, (char *) getfilename(argv[0]));
@@ -4696,12 +4731,41 @@ void setup(int argc, char * argv[])
   srand(SDL_GetTicks());
 
 
+  /* Enable Unicode support in SDL: */
+  
   SDL_EnableUNICODE(1);
 
 
-  /* Seed random-number generator: */
-	  
-  srand(SDL_GetTicks());
+  /* Open demo recording or playback file: */
+
+  if (recording)
+  {
+    demofi = fopen(playfile, "w");
+
+    if (demofi == NULL)
+    {
+      fprintf(stderr, "Error: Cannot create recording file: %s\n"
+		      "%s\n\n",
+		      playfile, strerror(errno));
+      exit(1);
+    }
+  }
+  else if (playing)
+  {
+    demofi = fopen(playfile, "r");
+    
+    if (demofi == NULL)
+    {
+      fprintf(stderr, "Error: Cannot open playback file: %s\n"
+		      "%s\n\n",
+		      playfile, strerror(errno));
+      exit(1);
+    }
+  }
+  else
+  {
+    demofi = NULL;
+  }
 }
 
 
@@ -7150,7 +7214,7 @@ void do_wait(void)
 
   do
   {
-    while (SDL_PollEvent(&event))
+    while (mySDL_PollEvent(&event))
     {
       if (event.type == SDL_QUIT)
       {
@@ -7505,7 +7569,7 @@ int do_prompt(char * text, char * btn_yes, char * btn_no)
 
   do
   {
-    SDL_WaitEvent(&event);
+    mySDL_WaitEvent(&event);
 
     if (event.type == SDL_QUIT)
     {
@@ -7761,6 +7825,14 @@ void cleanup(void)
   /* (Just in case...) */
   
   SDL_WM_GrabInput(SDL_GRAB_OFF);
+
+
+  /* Close recording or playback file: */
+
+  if (demofi != NULL)
+  {
+    fclose(demofi);
+  }
 
 
   /* Close up! */
@@ -9014,7 +9086,7 @@ int do_open(int want_new_tool)
 	    }
 	  
 	  
-	  SDL_WaitEvent(&event);
+	  mySDL_WaitEvent(&event);
 	  
 	  if (event.type == SDL_QUIT)
 	    {
@@ -11530,5 +11602,76 @@ void anti_carriage_return(int left, int right, int cur_top, int new_top,
   dest.h = new_top - cur_top;
   
   SDL_FillRect(screen, &dest, SDL_MapRGB(screen->format, 255, 255, 255));
+}
+
+
+int mySDL_WaitEvent(SDL_Event *event)
+{
+  int ret;
+
+  
+  if (playing)
+  {
+    if (!feof(demofi))
+    {
+      ret = 1;
+      fread(event, sizeof(SDL_Event), 1, demofi);
+    }
+    else
+    {
+      /* All done!  Back to normal! */
+
+      printf("(Done playing playback file '%s')\n", playfile);
+
+      ret = 0;
+      playing = 0;
+    }
+  }
+  else
+  {
+    ret = SDL_WaitEvent(event);
+
+    if (recording)
+    {
+      fwrite(event, sizeof(SDL_Event), 1, demofi);
+    }
+  }
+
+  return ret;
+}
+
+
+int mySDL_PollEvent(SDL_Event *event)
+{
+  int ret;
+
+  if (playing)
+  {
+    if (!feof(demofi))
+    {
+      ret = 1;
+      fread(event, sizeof(SDL_Event), 1, demofi);
+    }
+    else
+    {
+      /* All done!  Back to normal! */
+
+      printf("(Done playing playback file '%s')\n", playfile);
+
+      ret = 0;
+      playing = 0;
+    }
+  }
+  else
+  {
+    ret = SDL_PollEvent(event);
+
+    if (recording && ret > 0)
+    {
+      fwrite(event, sizeof(SDL_Event), 1, demofi);
+    }
+  }
+
+  return ret;
 }
 
