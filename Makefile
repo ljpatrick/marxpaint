@@ -6,7 +6,7 @@
 # bill@newbreedsoftware.com
 # http://www.newbreedsoftware.com/tuxpaint/
 
-# June 14, 2002 - February 28, 2003
+# June 14, 2002 - April 5, 2003
 
 
 # Where to install things:

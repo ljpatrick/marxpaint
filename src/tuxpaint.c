@@ -391,7 +391,7 @@ char file_id[32];
 int brush_scroll, stamp_scroll, font_scroll;
 int eraser_sound;
 
-char texttool_str[128];
+char texttool_str[256];
 int texttool_len;
 
 int tool_avail[NUM_TOOLS], tool_avail_bak[NUM_TOOLS];
@@ -542,6 +542,8 @@ void convert_open(const char * from);
 void convert_close();
 char * convert2utf8(char c);
 int converts();
+int delete_utf8_char(char * utf8_str, int len);
+#define MAX_UTF8_CHAR_LENGTH 6
 
 
 #define USEREVENT_TEXT_UPDATE 1
@@ -964,9 +966,16 @@ void mainloop(void)
 
 	    if (texttool_len > 0)
 	      {
-	        texttool_len--;
-	        texttool_str[texttool_len] = '\0';
-	        playsound(0, SND_KEYCLICK, 1);
+		if (converts())
+		{
+		  texttool_len = delete_utf8_char(texttool_str, texttool_len);
+		}
+		else
+		{
+	          texttool_len--;
+	          texttool_str[texttool_len] = '\0';
+	          playsound(0, SND_KEYCLICK, 1);
+		}
 	        
 	        do_render_cur_text(0);
 	      }
@@ -995,7 +1004,7 @@ void mainloop(void)
 	  }
 	else if (isprint(key_unicode))
 	  {
-	    if (texttool_len < sizeof(texttool_str) - 1)
+	    if (texttool_len < sizeof(texttool_str) - MAX_UTF8_CHAR_LENGTH)
 	      {
 #ifdef DEBUG
 	        printf("    key = %c\n"
@@ -10938,3 +10947,41 @@ char * convert2utf8(char c)
   return strdup(outbuf);
 }
 
+
+/* in:
+     char *utf8_str - buffer containing a well-formed utf8 string
+     int len        - length of the above string in bytes; len >= 1
+   out:
+     int result     - length of the above string in bytes after removing
+                      last utf8 char
+*/
+
+int delete_utf8_char(char *utf8_str, int len)
+{
+  /* from man utf-8:
+     The first byte of a multi-byte sequence which represents a single
+     non-ASCII UCS character is always in the range 0xc0 to 0xfd and indi-
+     cates how long this multi-byte sequence is.  All further bytes in a
+     multi-byte sequence are in the range 0x80 to 0xbf.
+   */
+     
+  unsigned char *current_char_ptr = utf8_str + len - 1;
+  unsigned char current_char = *current_char_ptr;
+
+  while ( (current_char >= 0x80) && (current_char <= 0xbf) )
+  {
+    /* part of the utf8 multibyte char but not the first byte */
+
+    len--;
+    current_char_ptr--;
+    current_char = *current_char_ptr;
+  }
+
+  /* we have 1 char to remove */
+  *current_char_ptr = '\0';
+  len--;
+
+  return len;
+}
+
+  
