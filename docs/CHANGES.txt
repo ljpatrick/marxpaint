@@ -7,14 +7,15 @@ bill@newbreedsoftware.com
 http://www.newbreedsoftware.com/tuxpaint/
 
 
-2004.October.23 (0.9.15)
+2004.October.24 (0.9.15)
   * Galician translation created.
     Leandro Regueiro <unho@gulo.org>
 
   * Chinese (Traditional) documentation updates.
     Song Huang <Song@ossacc.org>
 
-  * Added "PKG_ROOT" variable to Makefile for Tux Paint RPM building ease.
+  * Added "PKG_ROOT" variable to Makefile, and "tuxpaint.spec" file,
+    for Tux Paint RPM building ease.
     TOYAMA Shin-ichi <shin1@wmail.plala.or.jp>
 
   * Added larger screen size support: 1024x768, 1280x1024, 1400x1050, 1600x1200
