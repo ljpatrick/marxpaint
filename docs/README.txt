@@ -9,7 +9,7 @@
                            bill@newbreedsoftware.com
                    http://www.newbreedsoftware.com/tuxpaint/
 
-                       June 14, 2002 - September 27, 2003
+                       June 14, 2002 - September 29, 2003
 
      ----------------------------------------------------------------------
 
@@ -820,7 +820,9 @@ Available Tools
                  As you move the mouse around, an outline follows the mouse,
                  showing where the stamp will be placed.
 
-                 Different stamps can have different sound effects.
+                 Different stamps can have different sound effects. Some
+                 stamps can be colored or tinted. Many stamps can be flipped
+                 vertically, or displayed as a mirror-image.
 
      ----------------------------------------------------------------------
 
@@ -1260,7 +1262,7 @@ Where Files Go
 
              /usr/local/share/tuxpaint/
 
-           If you installed from a package, it is more likely:
+           If you installed from a package, it is more likely to be:
 
              /usr/share/tuxpaint/
 
@@ -1271,6 +1273,13 @@ Where Files Go
            installer used when installing Tux Paint e.g.:
 
              C:\Program Files\TuxPaint\data
+
+    Mac OS X
+
+           Tux Paint stores files in your account's "Libraries" folder, under
+           "Preferences", e.g.:
+
+             /Users/Joe/Library/Preferences/
 
      ----------------------------------------------------------------------
 
@@ -1395,7 +1404,7 @@ Stamps
                "!Ninos!"
 
                Note: As in HTML, if you want an actual ampersand ("&") in
-               your description when using the "xx.esc" method, you'll need
+               your description when using the "xx.esc" method ,you'll need
                to escape it: "&amp;".
 
              * Lines beginning with "xx.utf8=" can be used to use UTF-8
@@ -1473,11 +1482,46 @@ Stamps
 
              Add the word "tintable" to the stamp's data file.
 
+    Unalterable Stamps
+
+           By default, a stamp can be flipped upside down, shown as a mirror
+           image, or both. This is done using the control buttons below the
+           stamp selector, at the lower right side of the screen in
+           Tux Paint.
+
+           Sometimes, it doesn't make sense for a stamp to be flippable or
+           mirrored; for example, stamps of letters or numbers. Sometimes
+           stamps are symettrical, so letting the user flip or mirror them
+           isn't useful.
+
+           To make a stamp un-flippable, add the option "noflip" to the
+           stamp's data file.
+
+           To keep a stamp from being mirrored, add the option "nomirror" to
+           the stamp's data file.
+
     Windows Users
 
            You can use NotePad or WordPad to create these file. Be sure to
            save it as Plain Text, and make sure the filename has ".dat" at
            the end, and not ".txt"...
+
+  Pre-Mirrored Images
+
+         In some cases, you may wish to provide a pre-drawn version of a
+         stamp's mirror-image. For example, imagine a picture of a fire truck
+         with the words "Fire Department" written across the side. You
+         probably do not want that text to appear backwards when the image is
+         flipped!
+
+         To create a mirrored version of a stamp that you want Tux Paint to
+         use, rather than mirroring one on its own, simply create a second
+         ".png" graphics file with the same name, except with the string
+         "_mirror" before the filename extension.
+
+         For example, for the stamp "truck.png" you would create another file
+         named "truck_mirror.png", which will be used when the stamp is
+         mirrored (rather than using a backwards version of 'truck.png').
 
      ----------------------------------------------------------------------
 

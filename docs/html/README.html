@@ -23,7 +23,7 @@ New Breed Software</p>
 <p><a href="mailto:bill@newbreedsoftware.com">bill@newbreedsoftware.com</a><br>
 <a href="http://www.newbreedsoftware.com/tuxpaint/">http://www.newbreedsoftware.com/tuxpaint/</a></p>
 
-<p>June 14, 2002 - September 27, 2003</p>
+<p>June 14, 2002 - September 29, 2003</p>
 </center>
 
 <hr size=2 noshade>
@@ -1236,7 +1236,9 @@ New Breed Software</p>
         <p>As you move the mouse around, an outline follows the
         mouse, showing where the stamp will be placed.</p>
 
-        <p>Different stamps can have different sound effects.</p>
+        <p>Different stamps can have different sound effects.
+	Some stamps can be colored or tinted.  Many stamps can be
+	flipped vertically, or displayed as a mirror-image.</p>
 
         <br clear=all>
 
@@ -1348,78 +1350,78 @@ New Breed Software</p>
         <br clear=all>
 
         <dl>
-	<dt>Rainbow</dt>
+	<dt><b>Rainbow</b></dt>
 	<dd>
 	  This is similar to the paint brush, but as you move the mouse
 	  around, it goes through all of the colors in the rainbow.
 	</dd>
 
-	<dt>Sparkles</dt>
+	<dt><b>Sparkles</b></dt>
 	<dd>
 	  This draws glowing yellow sparkles on the picture.
 	</dd>
 
-	<dt>Mirror</dt>
+	<dt><b>Mirror</b></dt>
 	<dd>
 	  When you click the mouse in your picture with the "Mirror"
 	  magic effect selected, the entire image will be reversed,
 	  turning it into a mirror image.
 	</dd>
 	  
-	<dt>Flip</dt>
+	<dt><b>Flip</b></dt>
 	<dd>
 	  Similar to "Mirror."  Click and the entire image will be turned
 	  upside-down.
 	</dd>
 	  
-	<dt>Blur</dt>
+	<dt><b>Blur</b></dt>
 	<dd>
 	  This makes the picture fuzzy wherever you drag the mouse.
 	</dd>
 
-	<dt>Blocks</dt>
+	<dt><b>Blocks</b></dt>
 	<dd>
 	  This makes the picture blocky looking ("pixelated") wherever
 	  you drag the mouse.
 	</dd>
 
-	<dt>Negative</dt>
+	<dt><b>Negative</b></dt>
 	<dd>
 	  This inverts the colors wherever you drag the mouse.
 	  (e.g., white becomes black, and vice versa.)
 	</dd>
 
-	<dt>Fade</dt>
+	<dt><b>Fade</b></dt>
 	<dd>
 	  This fades the colors wherever you drag the mouse.
 	  (Do it to the same spot many times, and it will eventually become
 	  white.)
 	</dd>
 	
-	<dt>Chalk</dt>
+	<dt><b>Chalk</b></dt>
 	<dd>
 	  This makes parts of the picture (where you move the mouse)
 	  look like a chalk drawing.
 	</dd>
 	
-	<dt>Drip</dt>
+	<dt><b>Drip</b></dt>
 	<dd>
 	  This makes the paint "drip" wherever you move the mouse.
 	</dd>
 	 
-        <dt>Thick</dt>
+        <dt><b>Thick</b></dt>
 	<dd>
 	  This makes the darker colors in the picture become thicker
 	  wherever you drag the mouse.
 	</dd>
 
-	<dt>Thin</dt>
+	<dt><b>Thin</b></dt>
 	<dd>
 	  Similar to "Thick," except dark colors become thinner
 	  (light colors become thicker).
 	</dd>
 	
-	<dt>Fill</dt>
+	<dt><b>Fill</b></dt>
 	<dd>
 	  This floods the picture with a color.  It lets you quickly
 	  fill parts of the picture, as if it were a coloring book.
@@ -1845,7 +1847,7 @@ New Breed Software</p>
           /usr/local/share/tuxpaint/
         </code></blockquote>
 	
-	<p>If you installed from a package, it is more likely:</p>
+	<p>If you installed from a package, it is more likely to be:</p>
 
         <blockquote><code>
 	  /usr/share/tuxpaint/
@@ -1865,6 +1867,19 @@ New Breed Software</p>
         </code></blockquote>
 	
       </blockquote>
+
+
+      <h4>Mac OS X</h4>
+      <blockquote>
+        <p>Tux&nbsp;Paint stores files in your account's
+	"Libraries" folder, under "Preferences", e.g.:</p>
+
+	<blockquote><code>
+	  /Users/Joe/Library/Preferences/
+	</code></blockquote>
+
+      </blockquote>
+      
     </blockquote>
 
     <hr size=1 noshade>
@@ -2023,8 +2038,8 @@ New Breed Software</p>
 	  will come out as "&iexcl;Ni&ntilde;os!"</p>
 
 	  <p><b>Note:</b> As in HTML, if you want an actual ampersand ("&amp;")
-	  in your description when using the "<code><b>xx</b>.esc</code>" method,
-	  you'll need to escape it: "<code>&amp;amp;</code>".<p>
+	  in your description when using the "<code><b>xx</b>.esc</code>"
+	  method ,you'll need to escape it: "<code>&amp;amp;</code>".<p>
 	
 	<li><p>Lines beginning with "<code><b>xx</b>.utf8=</code>" can be
 	  used to use UTF-8 encoded text for the description's translation.
@@ -2054,8 +2069,8 @@ New Breed Software</p>
       
       <h4>Language Support</h4>
       <blockquote>
-        <p>For sounds for different locales (e.g., if the sound is someone saying
-        a word, and you want translated versions of the word said),
+        <p>For sounds for different locales (e.g., if the sound is someone
+	saying a word, and you want translated versions of the word said),
         also create WAV files with the locale's label in the filename, in
         the form: "<code><b>STAMP_LOCALE</b>.wav</code>"</p>
 	
@@ -2073,8 +2088,8 @@ New Breed Software</p>
 
     <h3>Stamp Options</h3>
     <blockquote>
-      <p>Aside from a graphical shape, a textual description, and a sound effect,
-      stamps can also be given other attributes.  To do this, you need
+      <p>Aside from a graphical shape, a textual description, and a sound
+      effect, stamps can also be given other attributes.  To do this, you need
       to create a 'data&nbsp;file' for the stamp.</p>
       
       <p>A stamp data file is simply a text file containing the options.</p>
@@ -2119,6 +2134,26 @@ New Breed Software</p>
 	</blockquote>
       </blockquote>
 
+      <h4>Unalterable Stamps</h4>
+      <blockquote>
+        <p>By default, a stamp can be flipped upside down, shown as a mirror
+	image, or both.  This is done using the control buttons below the
+	stamp selector, at the lower right side of the screen in
+	Tux&nbsp;Paint.</p>
+
+	<p>Sometimes, it doesn't make sense for a stamp to be flippable or
+	mirrored; for example, stamps of letters or numbers.
+	Sometimes stamps are symettrical, so letting the user flip or mirror
+	them isn't useful.</p>
+
+	<p>To make a stamp un-flippable, add the option
+	"<code><b>noflip</b></code>" to the stamp's data file.</p>
+
+	<p>To keep a stamp from being mirrored, add the option
+	"<code><b>nomirror</b></code>" to the stamp's data file.</p>
+      </blockquote>
+
+
       <h4>Windows Users</h4>
       <blockquote>
 	<p>You can use NotePad or WordPad to create these file.
@@ -2126,6 +2161,27 @@ New Breed Software</p>
 	has "<code>.dat</code>" at the end, and not "<code>.txt</code>"...</p>
       </blockquote>
     </blockquote>
+
+    <h3>Pre-Mirrored Images</h3>
+    <blockquote>
+      <p>In some cases, you may wish to provide a pre-drawn version of
+      a stamp's mirror-image.  For example, imagine a picture of a fire
+      truck with the words "<i>Fire&nbsp;Department</i>" written across
+      the side.  You probably do not want that text to appear backwards
+      when the image is flipped!</p>
+
+      <p>To create a mirrored version of a stamp that you want Tux&nbsp;Paint
+      to use, rather than mirroring one on its own, simply create a second
+      "<code>.png</code>" graphics file with the same name, except with
+      the string "<code><b>_mirror</b></code>" before the filename
+      extension.</p>
+      
+      <p>For example, for the stamp "<code><b>truck.png</b></code>" you would
+      create another file named "<code><b>truck_mirror.png</b></code>", which
+      will be used when the stamp is mirrored (rather than using a
+      backwards version of '<code>truck.png</code>').</p>
+    </blockquote>
+    
   </blockquote>
   
   <hr size=1 noshade>
