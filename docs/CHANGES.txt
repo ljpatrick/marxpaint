@@ -7,7 +7,10 @@ bill@newbreedsoftware.com
 http://www.newbreedsoftware.com/tuxpaint/
 
 
-2004.December.5 (0.9.15)
+2004.December.10 (0.9.15)
+  * Hotspot for 'tiny' crosshair mouse pointer shape is now
+    correct in 16x16 size.
+
   * Somewhat better treatment of wrong-sized images when loading them.
     It works well for typical kid drawings, as long as objects don't
     touch the edge of the screen. (the earth and sky -- and anything

@@ -21,12 +21,12 @@
   along with this program; if not, write to the Free Software
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   
-  June 14, 2002 - November 26, 2004
+  June 14, 2002 - December 10, 2004
 */
 
 
 #define VER_VERSION     "0.9.15"
-#define VER_DATE        "2004-11-26"
+#define VER_DATE        "2004-12-10"
 
 
 //#define VIDEO_BPP 15 // saves memory
@@ -5883,7 +5883,7 @@ static void setup(int argc, char * argv[])
 
   cursor_tiny = get_cursor(tiny_bits, tiny_mask_bits,
 			   tiny_width, tiny_height,
-			   3 / scale, 3 / scale);
+			   3, 3);   /* Exactly the same in SMALL (16x16) size! */
 
   do_setcursor(cursor_watch);
   
