@@ -47,11 +47,7 @@ June 17, 2002 - July 19, 2003
 
 * Fonts
 
-  * "efont-serif.ttf" by Electronic Font Open Laboratory 
-    http://openlab.ring.gr.jp/efont/serif/
-    GPL'd, Copyright 2000-2001 Kazuhiko <kazuhiko@ring.gr.jp>
-
-  * "default_font.ttf" is "FreeSans.ttf" from the Free UCS Outline Fonts.
+  * From the Free Universal Character Set Outline Fonts.
     http://www.freesoftware.fsf.org/freefont/
     GPL'd, Copyright 2002 Primoz Peterlin <primoz.peterlin@biofiz.mf.uni-lj.si>
     et al
