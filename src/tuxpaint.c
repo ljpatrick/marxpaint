@@ -12715,10 +12715,23 @@ void load_starter(char * img_id)
   dirname = strdup("/usr/local/share/tuxpaint/starters");
 #endif
 
+
+  /* Clear them to NULL first: */
+
+  img_starter = NULL;
+  img_starter_bkgd = NULL;
+
+
   /* Load the core image: */
   
   snprintf(fname, sizeof(fname), "%s/%s.png", dirname, img_id);
-  img_starter = IMG_Load(fname);
+  tmp_surf = IMG_Load(fname);
+
+  if (tmp_surf != NULL)
+  {
+    img_starter = SDL_DisplayFormatAlpha(tmp_surf);
+    SDL_FreeSurface(tmp_surf);
+  }
 
   if (img_starter != NULL &&
       (img_starter->w != canvas->w || img_starter->h != canvas->h))
@@ -12752,13 +12765,19 @@ void load_starter(char * img_id)
 
   /* (JPEG first) */
   snprintf(fname, sizeof(fname), "%s/%s-back.jpg", dirname, img_id);
-  img_starter_bkgd = IMG_Load(fname);
+  tmp_surf = IMG_Load(fname);
  
   /* (Failed? Try PNG next) */
-  if (img_starter_bkgd == NULL)
+  if (tmp_surf == NULL)
   {
     snprintf(fname, sizeof(fname), "%s/%s-back.png", dirname, img_id);
-    img_starter_bkgd = IMG_Load(fname);
+    tmp_surf = IMG_Load(fname);
+  }
+  
+  if (tmp_surf != NULL)
+  {
+    img_starter_bkgd = SDL_DisplayFormat(tmp_surf);
+    SDL_FreeSurface(tmp_surf);
   }
 
   if (img_starter_bkgd != NULL &&
@@ -12816,13 +12835,23 @@ TTF_Font *try_alternate_font(int language)
 
 SDL_Surface * duplicate_surface(SDL_Surface * orig)
 {
-  return(SDL_CreateRGBSurface(orig->flags,
+/*
+  Uint32 amask;
+
+  amask = ~(orig->format->Rmask |
+	    orig->format->Gmask |
+	    orig->format->Bmask);
+  
+  return(SDL_CreateRGBSurface(SDL_SWSURFACE,
 			      orig->w, orig->h,
 			      orig->format->BitsPerPixel,
 			      orig->format->Rmask,
 			      orig->format->Gmask,
 			      orig->format->Bmask,
-			      orig->format->Amask));
+			      amask));
+*/
+
+  return(SDL_DisplayFormatAlpha(orig));
 }
 
 void mirror_starter(void)
@@ -12857,9 +12886,102 @@ void mirror_starter(void)
   {
     img_starter = orig;
   }
+
+
+  /* Mirror background: */
+
+  if (img_starter_bkgd != NULL)
+  {
+    orig = img_starter_bkgd;
+    img_starter_bkgd = duplicate_surface(orig);
+
+    if (img_starter_bkgd != NULL)
+    {
+      for (x = 0; x < orig->w; x++)
+      {
+        src.x = x;
+        src.y = 0;
+        src.w = 1;
+        src.h = orig->h;
+
+        dest.x = orig->w - x - 1;
+        dest.y = 0;
+
+        SDL_BlitSurface(orig, &src, img_starter_bkgd, &dest);
+      }
+
+      SDL_FreeSurface(orig);
+    }
+    else
+    {
+      img_starter_bkgd = orig;
+    }
+  }
 }
+
 
 void flip_starter(void)
 {
+  SDL_Surface * orig;
+  int x, y;
+  SDL_Rect src, dest;
+
+  /* Flip overlay: */
+
+  orig = img_starter;
+  img_starter = duplicate_surface(orig);
+
+  if (img_starter != NULL)
+  {
+    for (y = 0; y < orig->h; y++)
+    {
+      src.x = 0;
+      src.y = y;
+      src.w = orig->w;
+      src.h = 1;
+
+      dest.x = 0;
+      dest.y = orig->h - x - 1;
+
+      SDL_BlitSurface(orig, &src, img_starter, &dest);
+    }
+
+    SDL_FreeSurface(orig);
+  }
+  else
+  {
+    img_starter = orig;
+  }
+
+
+  /* Flip background: */
+
+  if (img_starter_bkgd != NULL)
+  {
+    orig = img_starter_bkgd;
+    img_starter_bkgd = duplicate_surface(orig);
+
+    if (img_starter_bkgd != NULL)
+    {
+      for (y = 0; y < orig->h; y++)
+      {
+        src.x = 0;
+        src.y = y;
+        src.w = orig->w;
+        src.h = 1;
+
+        dest.x = 0;
+        dest.y = orig->h - x - 1;
+
+        SDL_BlitSurface(orig, &src, img_starter_bkgd, &dest);
+      }
+
+      SDL_FreeSurface(orig);
+    }
+    else
+    {
+      img_starter_bkgd = orig;
+    }
+  }
 }
 
