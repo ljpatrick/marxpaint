@@ -1,12 +1,12 @@
-# translation of da.po to Dansk
+# translation of Tux Paint to Danish
 # Tux Paint Danish messages
 # Mogens Jaeger <mogensjaeger@get2net.dk>, 2004.
 msgid ""
 msgstr ""
 "Project-Id-Version: da\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2004-07-30 15:11+0200\n"
-"PO-Revision-Date: 2004-07-30 12:55+0200\n"
+"POT-Creation-Date: 2004-08-18 19:42+0200\n"
+"PO-Revision-Date: 2004-07-31 04:39+0200\n"
 "Last-Translator: Mogens Jaeger <mogensjaeger@get2net.dk>\n"
 "Language-Team: Dansk <da@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -18,7 +18,7 @@ msgid "A drawing program for children."
 msgstr "Et tegneprogram for børn"
 
 msgid "Drawing program"
-msgstr "Tegne program"
+msgstr "Tegneprogram"
 
 msgid "Tux Paint"
 msgstr "Tux maling"
@@ -278,7 +278,8 @@ msgstr ""
 
 msgid "Choose a style of text. Click on your drawing and you can start typing."
 msgstr ""
-"Vælg en type af bogstaver. Klik hvor på tegningen du vil skrive - og skriv."
+"Vælg en type af bogstaver. Klik hvor på tegningen du vil skrive – og skriv. "
+"Tryk ENTER for at afslutte."
 
 msgid "Pick a magical effect to use on your drawing!"
 msgstr "Vælg en af de magiske effekter, til at ændre billedet."
@@ -301,7 +302,7 @@ msgstr "Du har nu et friskt papir til en ny tegning."
 
 #. Open
 msgid "Open…"
-msgstr "Åbn ..."
+msgstr "Åbn …"
 
 #. Save
 msgid "Your image has been saved!"
@@ -309,7 +310,7 @@ msgstr "Billedet er gemt."
 
 #. Print
 msgid "Printing…"
-msgstr "Skriver ud ..."
+msgstr "Skriver ud …"
 
 #. Quit
 msgid "Bye bye!"
@@ -390,7 +391,7 @@ msgid "No, save a new file"
 msgstr "Nej, gem istedet som et nyt billede."
 
 msgid "Choose the picture you want, then click “Open”."
-msgstr "Vælg et billede, og tryk på \"Åbn\"."
+msgstr "Vælg et billede, og tryk på »Åbn«."
 
 #~ msgid "Okay"
 #~ msgstr "OK"
