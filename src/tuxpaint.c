@@ -1190,6 +1190,9 @@ static void do_locale_option(const char * const arg)
   char *str = malloc(len);
   snprintf(str, len, "LANG=%s", arg);
   putenv(str);
+  // We leak "str" because it can not be freed. It is now part
+  // of the environment. If it were local, the environment would
+  // get corrupted.
   setlocale(LC_ALL, ""); /* use arg ? */
 }
 
