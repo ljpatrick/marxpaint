@@ -2,81 +2,67 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TuxPaint 0.9.13\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2004-07-16 21:12+0200\n"
-"PO-Revision-Date: 2003-12-26 03:26+0800\n"
-"Last-Translator: Mugunth <mugunth@thamizha.com>\n"
+"POT-Creation-Date: 2004-07-18 19:29+0200\n"
+"PO-Revision-Date: 2004-07-15 00:25+0800\n"
+"Last-Translator: Muguntharaj <mugunth@thamizha.com>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
 msgid "A drawing program for children."
-msgstr ""
+msgstr "ÌÆó¨¾¸Ùì¸¡É ´Õ Å¨ÃÔõ ¦ºÂÄ¢"
 
 msgid "Drawing program"
-msgstr ""
+msgstr "Å¨ÃÔõ ¦ºÂÄ¢"
 
-#, fuzzy
 msgid "Tux Paint"
-msgstr "Å¨Ã"
+msgstr "¼ìŠ ¦ÀÂ¢ýð"
 
-#, fuzzy
 msgid "Black!"
-msgstr "¸ÕôÒ"
+msgstr "¸ÕôÒ!"
 
-#, fuzzy
 msgid "White!"
-msgstr "¦Åû¨Ç"
+msgstr "¦Åû¨Ç!"
 
-#, fuzzy
 msgid "Red!"
-msgstr "Á£Çî¦ºö!"
+msgstr "º¢¸ôÒ!"
 
-#, fuzzy
 msgid "Pink!"
-msgstr "þÇïº¢ÅôÒ"
+msgstr "þÇïº¢ÅôÒ!"
 
-#, fuzzy
 msgid "Orange!"
-msgstr "¬ÃïÍ"
+msgstr "¬ÃïÍ!"
 
-#, fuzzy
 msgid "Yellow!"
-msgstr "Áïºû"
+msgstr "Áïºû!"
 
-#, fuzzy
 msgid "Lime!"
-msgstr "§¸¡Î¸û"
+msgstr "þÇõÀî¨º!"
 
-#, fuzzy
 msgid "Green!"
-msgstr "Àî¨º"
+msgstr "Àî¨º!"
 
-#, fuzzy
 msgid "Cyan!"
-msgstr "´Ç¢÷¿£Äõ"
+msgstr "´Ç¢÷¿£Äõ!"
 
-#, fuzzy
 msgid "Blue!"
-msgstr "°¾¡"
+msgstr "¿£Äõ!"
 
-#, fuzzy
 msgid "Purple!"
-msgstr "°¾¡"
+msgstr "°¾¡!"
 
 msgid "Fuchsia!"
 msgstr ""
 
-#, fuzzy
 msgid "Brown!"
-msgstr "ÀØôÒ"
+msgstr "ÀØôÒ!"
 
-#, fuzzy
 msgid "Gray!"
-msgstr "«ð¼¸¡ºõ!"
+msgstr "º¡õÀø¿¢Èõ!"
 
 msgid "Silver!"
-msgstr ""
+msgstr "¦ÅûÇ¢!"
 
 msgid "Great!"
 msgstr "«ð¼¸¡ºõ!"
@@ -132,29 +118,23 @@ msgstr "¿¢ÃôÒ"
 msgid "You can draw in rainbow colors!"
 msgstr "Å¡ÉÅ¢øÄ¢ý ¿¢Èí¸Ç¢ø ¿£í¸û Å¨ÃÂÄ¡õ!"
 
-#, fuzzy
 msgid "Click and move to draw sparkles."
-msgstr "¾ðÊÅ¢ðÎ ±Ä¢¨Â ¿¸÷ò¾¢É¡ø ´Ç¢ÕõÀ¼õ Å¨ÃÂÄ¡õ"
+msgstr "¾ðÊÅ¢ðÎ ±Ä¢¨Â ¿¸÷ò¾¢É¡ø ´Ç¢ÕõÀ¼õ Å¨ÃÂÄ¡õ."
 
-#, fuzzy
 msgid "Click to make a mirror image."
-msgstr "¾ðÊÉ¡ø À¼õ ¸ñ½¡Ê À¢õÀÁ¡¸ Á¡Úõ!"
+msgstr "¾ðÊÉ¡ø À¼õ ¸ñ½¡Ê À¢õÀÁ¡¸ Á¡Úõ."
 
-#, fuzzy
 msgid "Click to flip the picture upside-down."
-msgstr "¾ðÊÉ¡ø À¼õ ¾¨Ä¸£Æ¡¸ Á¡Úõ!"
+msgstr "¾ðÊÉ¡ø À¼õ ¾¨Ä¸£Æ¡¸ Á¡Úõ."
 
-#, fuzzy
 msgid "Click and move the mouse around to blur the picture."
-msgstr "¾ðÊÅ¢ðÎ ±Ä¢¨Â ¿¸÷ò¾¢É¡ø À¼õ Áí¸Ä¡Ìõ"
+msgstr "¾ðÊÅ¢ðÎ ±Ä¢¨Â ¿¸÷ò¾¢É¡ø À¼õ Áí¸Ä¡Ìõ."
 
-#, fuzzy
 msgid "Click and move the mouse around to make the picture blocky."
-msgstr "¾ðÊÅ¢ðÎ ±Ä¢¨Â ¿¸÷ò¾¢É¡ø À¼õ ¸ð¼í¸Ç¡¸ Á¡Úõ"
+msgstr "¾ðÊÅ¢ðÎ ±Ä¢¨Â ¿¸÷ò¾¢É¡ø À¼õ ¸ð¼í¸Ç¡¸ Á¡Úõ."
 
-#, fuzzy
 msgid "Click and move the mouse around to draw a negative."
-msgstr "¾ðÊÅ¢ðÎ ±Ä¢¨Â ¿¸÷ò¾¢É¡ø À¼õ ¦¿¸ðÊù À¼Á¡¸ Á¡Úõ"
+msgstr "¾ðÊÅ¢ðÎ ±Ä¢¨Â ¿¸÷ò¾¢É¡ø À¼õ ¦¿¸ðÊù À¼Á¡¸ Á¡Úõ."
 
 msgid "Click and move to fade the colors."
 msgstr "¿¢Èí¸¨Ç Áí¸Ä¡ì¸ ¾ðÊÅ¢ðÎ ¿¸÷ò¾×õ"
@@ -163,13 +143,11 @@ msgid ""
 "Click and move the mouse around to turn the picture into a chalk drawing."
 msgstr "þó¾ À¼ò¨¾ Á¡ì¸ðÊÂ¡ø Å¨Ãó¾Ð §À¡ø ¬ì¸, ±Ä¢¨Â ¦º¡Îì¸¢ ¿¸÷ò¾×õ"
 
-#, fuzzy
 msgid "Click and move the mouse around to make the picture drip."
-msgstr "±Ä¢¨Â ¦º¡Îì¸¢ ¿¸÷ò¾¢É¡ø þó¾ À¼õ , ¾ñ½£Ã¢ø ¿¨Éó¾ Á¡¾¢Ã¢ ¬Ìõ!"
+msgstr "±Ä¢¨Â ¦º¡Îì¸¢ ¿¸÷ò¾¢É¡ø þó¾ À¼õ , ¾ñ½£Ã¢ø ¿¨Éó¾ Á¡¾¢Ã¢ ¬Ìõ."
 
-#, fuzzy
 msgid "Click and move the mouse to thicken the picture."
-msgstr "±Ä¢¨Â ¦º¡Îì¸¢ ¿¸÷ò¾¢É¡ø, þó¾ À¼õ ¾ÊÁÉ¡Ìõ."
+msgstr "±Ä¢¨Â ¦º¡Îì¸¢ ¿¸÷ò¾¢É¡ø,þó¾ À¼õ ¾ÊÁÉ¡Ìõ."
 
 #, fuzzy
 msgid "Click and move the mouse to thin the picture."
@@ -367,14 +345,13 @@ msgid "Can’t open that picture!"
 msgstr "«ó¾ À¼ò¨¾ ¾¢Èì¸ ÓÊÂÅ¢ø¨Ä!"
 
 msgid "OK"
-msgstr ""
+msgstr "ºÃ¢"
 
 msgid "Starting a new picture will erase the current one!"
 msgstr "Ò¾¢Â À¼ò¨¾ ¾¢Èó¾¡ø þô§À¡Ð þÕìÌõ À¼õ «Æ¢óÐÅ¢Î§Á!"
 
-#, fuzzy
 msgid "That’s OK!"
-msgstr "ÀÃÅ¡Â¢ø¨Ä"
+msgstr "ÀÃÅ¡Â¢ø¨Ä!"
 
 #, fuzzy
 msgid "Never mind!"
@@ -383,9 +360,8 @@ msgstr "À¡¾¸Á¢ø¨Ä!"
 msgid "There are no saved files!"
 msgstr "§ºÁ¢ò¾ §¸¡ôÒ¸û ±Ðõ þø¨Ä§Â!"
 
-#, fuzzy
 msgid "Print your picture now?"
-msgstr "Ó¾Ä¢ø ¯í¸û À¼ò¨¾ §ºÁ¢òÐÅ¢¼Ä¡Á¡?"
+msgstr "Ó¾Ä¢ø ¯í¸û À¼ò¨¾ «îº¢¼Ä¡Á¡?"
 
 msgid "Your picture has been printed!"
 msgstr "¯í¸û À¼õ «îº¢¼ôÀÎ¸¢ÈÐ!"
@@ -396,14 +372,17 @@ msgstr "¿£í¸û «¾üÌû «îº¢¼ ÓÊÂ¡Ð!"
 msgid "Erase this picture?"
 msgstr "À¼ò¨¾ «Æ¢òÐÅ¢¼Ä¡Á¡?"
 
+#  'Erase' label:
 #. 'Erase' label:
 msgid "Erase"
 msgstr "«Æ¢"
 
+#  'Back' label:
 #. 'Back' label:
 msgid "Back"
 msgstr "À¢ý"
 
+#  FIXME: Move elsewhere!!!
 #. FIXME: Move elsewhere!!!
 #, fuzzy
 msgid "Save over the older version of this picture?"
@@ -412,15 +391,5 @@ msgstr "þó¾ À¼ò¾¢ý À¨ÆÂ À¾¢ôÒ §Á§Ä§Â þ¨¾ §ºÁ¢ì¸
 msgid "No, save a new file"
 msgstr "§Åñ¼¡õ, þôÀ¼ò¨¾ Ò¾¢Â §¸¡ôÀ¡¸ §ºÁ¢"
 
-#, fuzzy
 msgid "Choose the picture you want, then click “Open”."
-msgstr "§¾¨ÅÂ¡É À¼ò¨¾ §¾÷ó¦¾ÎòÐ, À¢ÈÌ '¾¢È'-³ò ¾ð¼×õ"
-
-#~ msgid "Okay"
-#~ msgstr "ºÃ¢"
-
-#~ msgid "Red"
-#~ msgstr "º¢¸ôÒ"
-
-#~ msgid "Grey"
-#~ msgstr "ÀØôÒ"
+msgstr "§¾¨ÅÂ¡É À¼ò¨¾ §¾÷ó¦¾ÎòÐ, À¢ÈÌ '¾¢È'-³ò ¾ð¼×õ."
