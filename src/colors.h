@@ -25,7 +25,7 @@ enum {
   COLOR_YELLOW,
   COLOR_LIGHTGREEN,
   COLOR_DARKGREEN,
-  COLOR_LIGHTBLUE,
+  COLOR_SKYBLUE,
   COLOR_BLUE,
   COLOR_LAVENDER,
   COLOR_PURPLE,
@@ -49,7 +49,7 @@ const int color_hexes[NUM_COLORS][3] = {
   {255, 255,   0}, /* Yellow */
   {160, 228, 128}, /* Light green */
   { 33, 148,  70}, /* Dark green */
-  {156, 200, 245}, /* Light blue */
+  {138, 168, 205}, /* Sky blue */
   { 50, 100, 255}, /* Blue */
   {186, 157, 255}, /* Lavender */
   {128,   0, 128}, /* Purple */
@@ -72,7 +72,7 @@ const char * const color_names[NUM_COLORS] = {
   gettext_noop("Yellow!"),
   gettext_noop("Light green!"),
   gettext_noop("Dark green!"),
-  gettext_noop("Light blue!"),
+  gettext_noop("Sky blue!"),
   gettext_noop("Blue!"),
   gettext_noop("Lavender!"),
   gettext_noop("Purple!"),
