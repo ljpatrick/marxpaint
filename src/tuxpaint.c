@@ -1037,7 +1037,7 @@ static void do_locale_option(const char * const arg)
 }
 
 
-static TTF_Font *try_alternate_font(void)
+static TTF_Font *try_alternate_font(int size)
 {
   char  str[128];
   char  prefix[64];
@@ -1050,13 +1050,13 @@ static TTF_Font *try_alternate_font(void)
     snprintf(str, sizeof(str), "%sfonts/locale/%s.ttf",
              DATA_PREFIX, prefix);
 
-    return TTF_OpenFont(str, 18);
+    return TTF_OpenFont(str, size);
   }
   return NULL;
 }
 
 
-static TTF_Font *load_locale_font(TTF_Font *fallback)
+static TTF_Font *load_locale_font(TTF_Font *fallback, int size)
 {
   TTF_Font *ret = NULL;
   if (need_own_font)
@@ -1065,11 +1065,11 @@ static TTF_Font *load_locale_font(TTF_Font *fallback)
       snprintf(str, sizeof(str), "%sfonts/locale/%s.ttf",
 	       DATA_PREFIX, lang_prefix);
 
-      ret = TTF_OpenFont(str, 18);
+      ret = TTF_OpenFont(str, size);
 
       if (ret == NULL)
       {
-          ret = try_alternate_font();
+          ret = try_alternate_font(size);
           if (ret == NULL)
 	  {
 	      fprintf(stderr,
@@ -6414,7 +6414,7 @@ static void setup(int argc, char * argv[])
     }
 
 
-  locale_font = load_locale_font(font);
+  locale_font = load_locale_font(font,18);
 
   /* Load other available fonts: */
 
