@@ -7849,7 +7849,7 @@ void wordwrap_text(TTF_Font * font, char * str, SDL_Color color,
 	  if (want_utf8)
 	    text = TTF_RenderUTF8_Blended(font, substr, color);
 	  else
-	    text = TTF_RenderText_Blended(locale_font, substr, color);
+	    text = TTF_RenderUTF8_Blended(locale_font, substr, color);
 
 
 	  /* If it won't fit on this line, move to the next! */
