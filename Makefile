@@ -484,9 +484,15 @@ install-man:
 	@# man1 directory...
 	@install -d $(MAN_PREFIX)/man1/
 	@# tuxpaint.1
-	@cp src/tuxpaint.1 $(MAN_PREFIX)/man1/
+	@cp src/manpage/tuxpaint.1 $(MAN_PREFIX)/man1/
 	@gzip -f $(MAN_PREFIX)/man1/tuxpaint.1
 	@chmod a+rx,g-w,o-w $(MAN_PREFIX)/man1/tuxpaint.1.gz
+	@# pl/man1 directory...
+	@install -d $(MAN_PREFIX)/pl/man1/
+	@# tuxpaint-pl.1
+	@cp src/manpage/tuxpaint-pl.1 $(MAN_PREFIX)/pl/man1/tuxpaint.1
+	@gzip -f $(MAN_PREFIX)/pl/man1/tuxpaint.1
+	@chmod a+rx,g-w,o-w $(MAN_PREFIX)/pl/man1/tuxpaint.1.gz
 	@# tuxpaint-import.1
 	@cp src/tuxpaint-import.1 $(MAN_PREFIX)/man1/
 	@gzip -f $(MAN_PREFIX)/man1/tuxpaint-import.1

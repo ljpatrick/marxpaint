@@ -12,8 +12,8 @@ http://www.newbreedsoftware.com/tuxpaint/
     TOYAMA Shin-ichi <kyone@tky2.3web.ne.jp>
 
   * Lithuanian translation.
-    Mantas Kriauciunas <monte@mail.lt>
-    Rita Verbauskaite <verba@centras.lt>,
+    Mantas Kriauciunas <monte@mail.lt>,
+    Rita Verbauskaite <verba@centras.lt>
 
   * Fixed bug that would cause some translated stamp sounds to not load.
     John Popplewell <john@johnnypops.demon.co.uk>
@@ -24,6 +24,11 @@ http://www.newbreedsoftware.com/tuxpaint/
 
   * Updated Polish translations.
     Robert Glowczynski <robertg@software.com.pl>
+
+  * Added Polish version of manpage.
+    Robert Glowczynski <robertg@software.com.pl>
+
+  * Restructured manpage sources (created "src/manpage/")
 
   * Fixed a few typos in the manpage.
     Robert Glowczynski <robertg@software.com.pl>
