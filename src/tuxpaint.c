@@ -12370,13 +12370,6 @@ static int do_png_save(FILE * fi, const char * const fname, SDL_Surface * surf)
 // My intent was to let anyone do anything they wanted with the source as
 // long as some attribution was given.
 
-static const char ps_footer[] =
-  "%%%%EndData\n"
-  "grestore\n"
-  "showpage\n"
-  "%%%%EOF\n"
-;
-
 /* Actually save the PostScript data to the file stream: */
 static int do_ps_save(FILE * fi, const char *restrict  const fname, SDL_Surface * surf)
 {
@@ -12448,7 +12441,12 @@ static int do_ps_save(FILE * fi, const char *restrict  const fname, SDL_Surface 
     }
   free(ps_row);
 
-  fwrite(ps_footer,1,strlen(ps_footer),fi);
+  fprintf(fi, "\n");
+  fprintf(fi, "%%%%EndData\n");
+  fprintf(fi, "grestore\n");
+  fprintf(fi, "showpage\n");
+  fprintf(fi, "%%%%EOF\n");
+
   fclose(fi);
   return 1;
 }
