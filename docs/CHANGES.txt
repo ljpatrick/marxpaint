@@ -8,7 +8,7 @@ http://www.newbreedsoftware.com/tuxpaint/
 
 
 2004.December.5 (0.9.15)
-  * New clipped_getpixel function. It works on 3 sides so far. :-(
+  * getpixel function now considers edges as extending to infinity
     Albert Cahalan <albert@users.sf.net>
 
   * New smudge tool!

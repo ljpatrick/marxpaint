@@ -767,7 +767,6 @@ static SDL_Surface * thumbnail(SDL_Surface * src, int max_x, int max_y,
 
 static Uint32 getpixel(SDL_Surface * surface, int x, int y);
 static void putpixel(SDL_Surface * surface, int x, int y, Uint32 pixel);
-static Uint32 clipped_getpixel(SDL_Surface * surface, int x, int y);
 static void clipped_putpixel(SDL_Surface * dest, int x, int y, Uint32 c);
 
 static void debug(const char * const str);
@@ -4181,13 +4180,13 @@ static void blit_magic(int x, int y, int button_down)
 	        continue;
 	      // it is on the circle, so grab it
 
-	      SDL_GetRGB(clipped_getpixel(canvas, x+ix-16, y+iy-16), last->format, &r, &g, &b);
+	      SDL_GetRGB(getpixel(canvas, x+ix-16, y+iy-16), last->format, &r, &g, &b);
 	      state[ix][iy][0] = rate*state[ix][iy][0] + (1.0-rate)*sRGB_to_linear_table[r];
 	      state[ix][iy][1] = rate*state[ix][iy][1] + (1.0-rate)*sRGB_to_linear_table[g];
 	      state[ix][iy][2] = rate*state[ix][iy][2] + (1.0-rate)*sRGB_to_linear_table[b];
 
 	      // opacity 100% --> new data not blended w/ existing data
-	      clipped_putpixel(canvas, x+ix-16, y+iy-16, SDL_MapRGB(canvas->format, linear_to_sRGB(state[ix][iy][0]), linear_to_sRGB(state[ix][iy][1]), linear_to_sRGB(state[ix][iy][2])));
+	      putpixel(canvas, x+ix-16, y+iy-16, SDL_MapRGB(canvas->format, linear_to_sRGB(state[ix][iy][0]), linear_to_sRGB(state[ix][iy][1]), linear_to_sRGB(state[ix][iy][2])));
 	    }
 	  SDL_UnlockSurface(canvas);
 	}
@@ -7876,64 +7875,55 @@ static Uint32 getpixel(SDL_Surface * surface, int x, int y)
   pixel = 0;
 
 
-  /* Assuming the X/Y values are within the bounds of this surface... */
-
-  if (x >= 0 && y >= 0 && x < surface -> w && y < surface -> h)
-    {
-      /* SDL_LockSurface(surface); */
-
-
-      /* Determine bytes-per-pixel for the surface in question: */
-
-      bpp = surface->format->BytesPerPixel;
-
-
-      /* Set a pointer to the exact location in memory of the pixel
-         in question: */
-
-      p = (Uint8 *) (((Uint8 *)surface->pixels) +  /* Start at top of RAM */
-		     (y * surface->pitch) +  /* Go down Y lines */
-		     (x * bpp));             /* Go in X pixels */
-
-
-      /* Return the correctly-sized piece of data containing the
-       * pixel's value (an 8-bit palette value, or a 16-, 24- or 32-bit
-       * RGB value) */
-
-      if (bpp == 1)         /* 8-bit display */
-        pixel = *p;
-      else if (bpp == 2)    /* 16-bit display */
-        pixel = *(Uint16 *)p;
-      else if (bpp == 3)    /* 24-bit display */
-        {
-          /* Depending on the byte-order, it could be stored RGB or BGR! */
-
-          if (SDL_BYTEORDER == SDL_BIG_ENDIAN)
-            pixel = p[0] << 16 | p[1] << 8 | p[2];
-          else
-            pixel = p[0] | p[1] << 8 | p[2] << 16;
-        }
-      else if (bpp == 4)    /* 32-bit display */
-        pixel = *(Uint32 *)p;
-
-      /* SDL_UnlockSurface(surface); */
-    }
-
-  return pixel;
-}
-
-
-static Uint32 clipped_getpixel(SDL_Surface * src, int x, int y)
-{
-  if (x < 96)
-    x = 96;
-  if (x >= WINDOW_WIDTH - 96)
-    x = WINDOW_WIDTH - 96 - 1;
+  /* get the X/Y values within the bounds of this surface */
+  if (x < 0)
+    x = 0;
+  if (x > surface->w - 1)
+    x = surface->w - 1;
+  if (y > surface->h - 1)
+    y = surface->h - 1;
   if (y < 0)
     y = 0;
-  if (y >= 48 * 7 + 40 + HEIGHTOFFSET)
-    y = 48 * 7 + 40 + HEIGHTOFFSET - 1;
-  return getpixel(src, x, y);
+
+  /* SDL_LockSurface(surface); */
+
+
+  /* Determine bytes-per-pixel for the surface in question: */
+
+  bpp = surface->format->BytesPerPixel;
+
+
+  /* Set a pointer to the exact location in memory of the pixel
+     in question: */
+
+  p = (Uint8 *) (((Uint8 *)surface->pixels) +  /* Start at top of RAM */
+    (y * surface->pitch) +  /* Go down Y lines */
+    (x * bpp));             /* Go in X pixels */
+
+
+  /* Return the correctly-sized piece of data containing the
+   * pixel's value (an 8-bit palette value, or a 16-, 24- or 32-bit
+   * RGB value) */
+
+  if (bpp == 1)         /* 8-bit display */
+    pixel = *p;
+  else if (bpp == 2)    /* 16-bit display */
+    pixel = *(Uint16 *)p;
+  else if (bpp == 3)    /* 24-bit display */
+    {
+      /* Depending on the byte-order, it could be stored RGB or BGR! */
+
+      if (SDL_BYTEORDER == SDL_BIG_ENDIAN)
+        pixel = p[0] << 16 | p[1] << 8 | p[2];
+      else
+        pixel = p[0] | p[1] << 8 | p[2] << 16;
+    }
+  else if (bpp == 4)    /* 32-bit display */
+    pixel = *(Uint32 *)p;
+
+  /* SDL_UnlockSurface(surface); */
+
+  return pixel;
 }
 
 
