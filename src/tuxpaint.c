@@ -860,17 +860,18 @@ static void show_locale_usage(FILE * f, const char * const prg)
 
 static void setup_language(const char * const prg)
 {
-  if (langstr == NULL && getenv("LANG") != NULL &&
-      strncasecmp(getenv("LANG"), "lt_LT", 5) == 0)
-    {
-      set_langstr("lithuanian");
-    }
 
-  if (langstr == NULL && getenv("LANG") != NULL &&
-      strncasecmp(getenv("LANG"), "pl_PL", 5) == 0)
+// Justify this or delete it. It seems to make Tux Paint
+// violate the behavior documented by "man 7 locale".
+#if 0
+  if (langstr == NULL && getenv("LANG"))
     {
-      set_langstr("polish");
+      if(!strncasecmp(getenv("LANG"), "lt_LT", 5))
+        set_langstr("lithuanian");
+      if(!strncasecmp(getenv("LANG"), "pl_PL", 5))
+        set_langstr("polish");
     }
+#endif
 
   if (langstr != NULL)
     {
