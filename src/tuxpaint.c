@@ -510,6 +510,8 @@ SDL_Event scrolltimer_event;
 char * langstr;
 char * savedir;
 
+int LUT16to32[65536], RGBtoYUV[65536];
+
 
 /* Local function prototypes: */
 
@@ -2988,11 +2990,50 @@ void stamp_draw(int x, int y)
   
   /* Shrink or grow it! */
 
-  final_surf = thumbnail(tmp_surf,
-		         (tmp_surf->w * state_stamps[cur_stamp]->size) / 100,
-		         (tmp_surf->h * state_stamps[cur_stamp]->size) / 100,
-			 0);
-
+  if (state_stamps[cur_stamp]->size == 400)
+    {
+      /* Use high quality 4x filter! */
+      
+      
+      /* Make the new surface for the scaled image: */
+      
+      amask = ~(img_stamps[cur_stamp]->format->Rmask |
+		img_stamps[cur_stamp]->format->Gmask |
+		img_stamps[cur_stamp]->format->Bmask);
+      
+      final_surf = SDL_CreateRGBSurface(SDL_SWSURFACE,
+					img_stamps[cur_stamp]->w * 4,
+					img_stamps[cur_stamp]->h * 4,
+					16,
+					img_stamps[cur_stamp]->format->Rmask,
+					img_stamps[cur_stamp]->format->Gmask,
+					img_stamps[cur_stamp]->format->Bmask,
+					amask);
+      
+      if (final_surf == NULL)
+	{
+	  fprintf(stderr, "\nError: Can't build stamp thumbnails\n"
+		  "The Simple DirectMedia Layer error that occurred was:\n"
+		  "%s\n\n", SDL_GetError());
+	  
+	  cleanup();
+	  exit(1);
+	}
+      
+      
+      hq4x_32(img_stamps[cur_stamp], final_surf,
+	      LUT16to32, RGBtoYUV);
+    }
+  else
+    {
+      final_surf = thumbnail(tmp_surf,
+			     (tmp_surf->w *
+			      state_stamps[cur_stamp]->size) / 100,
+			     (tmp_surf->h *
+			      state_stamps[cur_stamp]->size) / 100,
+			     0);
+    }
+  
   
   /* Where it will go? */
   
@@ -4814,6 +4855,11 @@ void setup(int argc, char * argv[])
   show_progress_bar();
 
   SDL_Flip(screen);
+  
+  
+  /* Init high quality scaling stuff: */
+  
+  InitLUTs(LUT16to32, RGBtoYUV);
 
 
   /* Load other images: */

@@ -1,5 +1,5 @@
 /*
-  hqNx filter look-up table init
+  hqNx filter look-up table init and helper functions
 
   Copyright (C) 2003 MaxSt ( maxst@hiend3d.com )
   Library-ified by Bill Kendrick <bill@newbreedsoftware.com>
@@ -25,6 +25,8 @@
 #ifndef HQINIT_H
 #define HQINIT_H
 
+#include "SDL.h"
+
 static int   YUV1, YUV2;
 extern const  int   Ymask;
 extern const  int   Umask;
@@ -34,14 +36,14 @@ extern const  int   trU;
 extern const  int   trV;
 
 void InitLUTs(int * LUT16to32, int * RGBtoYUV);
-inline void Interp1(unsigned char * pc, int c1, int c2);
-inline void Interp2(unsigned char * pc, int c1, int c2, int c3);
-inline void Interp3(unsigned char * pc, int c1, int c2);
-inline void Interp4(unsigned char * pc, int c1, int c2, int c3);
-inline void Interp5(unsigned char * pc, int c1, int c2);
-inline void Interp6(unsigned char * pc, int c1, int c2, int c3);
-inline void Interp7(unsigned char * pc, int c1, int c2, int c3);
-inline void Interp8(unsigned char * pc, int c1, int c2);
+inline void Interp1(Uint8 * pc, int c1, int c2);
+inline void Interp2(Uint8 * pc, int c1, int c2, int c3);
+inline void Interp3(Uint8 * pc, int c1, int c2);
+inline void Interp4(Uint8 * pc, int c1, int c2, int c3);
+inline void Interp5(Uint8 * pc, int c1, int c2);
+inline void Interp6(Uint8 * pc, int c1, int c2, int c3);
+inline void Interp7(Uint8 * pc, int c1, int c2, int c3);
+inline void Interp8(Uint8 * pc, int c1, int c2);
 inline int Diff(unsigned int w1, unsigned int w2);
 
 #endif

@@ -586,20 +586,20 @@ obj/BeOS_Print.o:	src/BeOS_Print.cpp obj src/BeOS_print.h
 obj/hq3x.o:	src/hq3x.c src/hq3x.h src/hqxx.h
 	@echo
 	@echo "...Compiling high quality 3x scale filter..."
-	@$(CC) $(CFLAGS) \
+	@$(CC) $(CFLAGS) $(SDL_CFLAGS) \
 		-c src/hq3x.c -o obj/hq3x.o
 
 
 obj/hq4x.o:	src/hq4x.c src/hq4x.h src/hqxx.h
 	@echo
 	@echo "...Compiling high quality 4x scale filter..."
-	@$(CC) $(CFLAGS) \
+	@$(CC) $(CFLAGS) $(SDL_CFLAGS) \
 		-c src/hq4x.c -o obj/hq4x.o
 
 obj/hqxx.o:	src/hqxx.c src/hqxx.h
 	@echo
 	@echo "...Compiling high quality scale filter helpers..."
-	@$(CC) $(CFLAGS) \
+	@$(CC) $(CFLAGS) $(SDL_CFLAGS) \
 		-c src/hqxx.c -o obj/hqxx.o
 
 

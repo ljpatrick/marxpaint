@@ -1,5 +1,5 @@
 /*
-  hqNx filter look-up table init
+  hqNx filter look-up table init and helper functions
 
   Copyright (C) 2003 MaxSt ( maxst@hiend3d.com )
   Library-ified by Bill Kendrick <bill@newbreedsoftware.com>
@@ -24,6 +24,7 @@
 */
 
 
+#include "SDL.h"
 #include "hqxx.h"
 
 
@@ -56,17 +57,17 @@ void InitLUTs(int * LUT16to32, int * RGBtoYUV)
   }
 }
 
-inline void Interp1(unsigned char * pc, int c1, int c2)
+inline void Interp1(Uint8 * pc, int c1, int c2)
 {
   *((int*)pc) = (c1*3+c2) >> 2;
 }
 
-inline void Interp2(unsigned char * pc, int c1, int c2, int c3)
+inline void Interp2(Uint8 * pc, int c1, int c2, int c3)
 {
   *((int*)pc) = (c1*2+c2+c3) >> 2;
 }
 
-inline void Interp3(unsigned char * pc, int c1, int c2)
+inline void Interp3(Uint8 * pc, int c1, int c2)
 {
   //*((int*)pc) = (c1*7+c2)/8;
 
@@ -74,7 +75,7 @@ inline void Interp3(unsigned char * pc, int c1, int c2)
                  (((c1 & 0xFF00FF)*7 + (c2 & 0xFF00FF) ) & 0x07F807F8)) >> 3;
 }
 
-inline void Interp4(unsigned char * pc, int c1, int c2, int c3)
+inline void Interp4(Uint8 * pc, int c1, int c2, int c3)
 {
   //*((int*)pc) = (c1*2+(c2+c3)*7)/16;
 
@@ -82,12 +83,12 @@ inline void Interp4(unsigned char * pc, int c1, int c2, int c3)
                  (((c1 & 0xFF00FF)*2 + ((c2 & 0xFF00FF) + (c3 & 0xFF00FF))*7 ) & 0x0FF00FF0)) >> 4;
 }
 
-inline void Interp5(unsigned char * pc, int c1, int c2)
+inline void Interp5(Uint8 * pc, int c1, int c2)
 {
   *((int*)pc) = (c1+c2) >> 1;
 }
 
-inline void Interp6(unsigned char * pc, int c1, int c2, int c3)
+inline void Interp6(Uint8 * pc, int c1, int c2, int c3)
 {
   //*((int*)pc) = (c1*5+c2*2+c3)/8;
 
@@ -95,7 +96,7 @@ inline void Interp6(unsigned char * pc, int c1, int c2, int c3)
                  (((c1 & 0xFF00FF)*5 + (c2 & 0xFF00FF)*2 + (c3 & 0xFF00FF) ) & 0x07F807F8)) >> 3;
 }
 
-inline void Interp7(unsigned char * pc, int c1, int c2, int c3)
+inline void Interp7(Uint8 * pc, int c1, int c2, int c3)
 {
   //*((int*)pc) = (c1*6+c2+c3)/8;
 
@@ -103,7 +104,7 @@ inline void Interp7(unsigned char * pc, int c1, int c2, int c3)
                  (((c1 & 0xFF00FF)*6 + (c2 & 0xFF00FF) + (c3 & 0xFF00FF) ) & 0x07F807F8)) >> 3;
 }
 
-inline void Interp8(unsigned char * pc, int c1, int c2)
+inline void Interp8(Uint8 * pc, int c1, int c2)
 {
   //*((int*)pc) = (c1*5+c2*3)/8;
 
