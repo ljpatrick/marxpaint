@@ -57,7 +57,7 @@
 #define COLORSEL_CLOBBER 2  // colors get scribbled over
 #define COLORSEL_REFRESH 4  // redraw the colors, either on or off
 
-static void draw_colors(int action);
+static unsigned draw_colors(unsigned action);
 
 /////////////////////////////////////////////////////////////////////
 // hide all scale-related values here
@@ -1945,7 +1945,8 @@ static SDL_Cursor * cursor_hand, * cursor_arrow, * cursor_watch,
   * cursor_brush, * cursor_wand, * cursor_insertion, * cursor_rotate;
 
 
-static int cur_tool, cur_color, cur_brush, cur_stamp, cur_shape, cur_magic;
+static unsigned cur_color;
+static int cur_tool, cur_brush, cur_stamp, cur_shape, cur_magic;
 static int cur_font, cur_eraser;
 static int cursor_left, cursor_x, cursor_y, cursor_textwidth; // canvas-relative
 static int been_saved;
@@ -2319,7 +2320,7 @@ static void mainloop(void)
     shape_ctr_x, shape_ctr_y, shape_outer_x, shape_outer_y;
   int num_things;
   int *thing_scroll;
-  int cur_thing, old_thing, do_draw, old_tool,
+  int cur_thing, do_draw, old_tool,
     tmp_int, max;
   int cur_time, last_print_time, scrolling, ignoring_motion;
   SDL_TimerID scrolltimer;
@@ -2334,7 +2335,6 @@ static void mainloop(void)
   num_things = num_brushes;
   thing_scroll = &brush_scroll;
   cur_thing = 0;
-  old_thing = 0;
   do_draw = 0;
   old_x = 0;
   old_y = 0;
@@ -2869,8 +2869,6 @@ static void mainloop(void)
 			}
 		      update_screen_rect(&r_toolopt);
 		      update_screen_rect(&r_ttoolopt);
-		      update_screen_rect(&r_colors);
-		      update_screen_rect(&r_tcolors);
 		    }
 		}
 	      else if (HIT(r_toolopt))
@@ -2884,6 +2882,7 @@ static void mainloop(void)
 		      cur_tool == TOOL_MAGIC || cur_tool == TOOL_TEXT ||
 		      cur_tool == TOOL_ERASER)
 		    {
+		      int old_thing;
 		      grid_dims gd_controls = {0,0}; // might become 2-by-2
 		      grid_dims gd_items = {2,2}; // generally becoming 2-by-whatever
 
@@ -3187,19 +3186,8 @@ static void mainloop(void)
                           else
                             draw_tux_text(TUX_GREAT, "", 0);
                           
-                          
                           /* Enable or disable color selector: */
-                          
-                          if ((stamp_colorable(cur_stamp) ||
-                               stamp_tintable(cur_stamp)) !=
-                              (stamp_colorable(old_thing) ||
-                               stamp_tintable(old_thing)))
-                            {
-                              draw_colors(stamp_colorable(cur_stamp) ||
-                                          stamp_tintable(cur_stamp));
-                              update_screen_rect(&r_colors);
-                              update_screen_rect(&r_tcolors);
-                            }
+                          draw_colors(stamp_colorable(cur_stamp) || stamp_tintable(cur_stamp));
                         }
                       else if (cur_tool == TOOL_SHAPES)
                         {
@@ -3216,9 +3204,6 @@ static void mainloop(void)
                             {
                               cur_magic = cur_thing;
                               draw_colors(magic_colors[cur_magic]);
-
-                              update_screen_rect(&r_colors);
-                              update_screen_rect(&r_tcolors);
                             }
                           
                           draw_tux_text(TUX_GREAT, magic_tips[cur_magic], 1);
@@ -3242,7 +3227,6 @@ static void mainloop(void)
 		      cur_color = which;
 		      playsound(1, SND_BUBBLE, 1);
 		      draw_colors(COLORSEL_REFRESH);
-		      update_screen_rect(&r_colors);
 		      render_brush();
 		      draw_tux_text(TUX_KISS, color_names[cur_color], 1);
 		
@@ -7723,18 +7707,15 @@ static void draw_magic(void)
 
 /* Draw color selector: */
 
-static int colors_state = COLORSEL_ENABLE | COLORSEL_CLOBBER;
+static unsigned colors_state = COLORSEL_ENABLE | COLORSEL_CLOBBER;
 
-static void draw_colors(int action)
+static unsigned draw_colors(unsigned action)
 {
-  int i;
+  unsigned i;
   SDL_Rect dest;
-  static int old_color = -1;
+  static unsigned old_color;
 
-  dest.x = 0;
-  dest.y = 40 + ((NUM_TOOLS / 2) * 48) + HEIGHTOFFSET;
-
-  int old_colors_state = colors_state;
+  unsigned old_colors_state = colors_state;
   if (action==COLORSEL_CLOBBER)
     colors_state |= COLORSEL_CLOBBER;
   if (action==COLORSEL_REFRESH)
@@ -7747,33 +7728,15 @@ static void draw_colors(int action)
   colors_are_selectable = colors_state == COLORSEL_ENABLE;
 
   if (colors_state&COLORSEL_CLOBBER)
-    return;
+    return old_colors_state;
   if (cur_color==old_color && colors_state==old_colors_state)
-    return;
+    return old_colors_state;
   old_color = cur_color;
-
-  if (colors_state == COLORSEL_ENABLE)
-    {
-      SDL_BlitSurface(img_title_large_on, NULL, screen, &dest);
-  
-      dest.x = 0;
-      dest.y = 40 + ((NUM_TOOLS / 2) * 48) + HEIGHTOFFSET;
-      SDL_BlitSurface(img_title_large_on, NULL, screen, &dest);
-    
-      dest.x = (96 - img_title_names[TITLE_COLORS]->w) / 2;
-      dest.y = (40 + ((NUM_TOOLS / 2) * 48) + HEIGHTOFFSET + 
-		(48 - img_title_names[TITLE_COLORS]->h) / 2);
-      SDL_BlitSurface(img_title_names[TITLE_COLORS], NULL, screen, &dest);
-    }
-  else
-    {
-      SDL_BlitSurface(img_title_large_off, NULL, screen, &dest);
-    }
 
   for (i = 0; i < NUM_COLORS; i++)
     {
-      dest.x = (i * ((WINDOW_WIDTH - 96) / NUM_COLORS)) + 96;
-      dest.y = 40 + ((NUM_TOOLS / 2) * 48) + HEIGHTOFFSET;
+      dest.x = r_colors.x + i%gd_colors.cols*color_button_w;
+      dest.y = r_colors.y + i/gd_colors.cols*color_button_h;
 #ifndef LOW_QUALITY_COLOR_SELECTOR
       SDL_BlitSurface(
         (colors_state == COLORSEL_ENABLE)
@@ -7784,8 +7747,8 @@ static void draw_colors(int action)
         &dest
       );
 #else
-      dest.w = ((WINDOW_WIDTH - 96) / NUM_COLORS);
-      dest.h = 48 + HEIGHTOFFSET;
+      dest.w = color_button_w;
+      dest.h = color_button_h;
 
       if (colors_state == COLORSEL_ENABLE)
 	SDL_FillRect(screen, &dest,
@@ -7798,14 +7761,33 @@ static void draw_colors(int action)
 		     SDL_MapRGB(screen->format, 240, 240, 240));
       if (i==cur_color && colors_state==COLORSEL_ENABLE)
 	{
-	  dest.x = (i * ((WINDOW_WIDTH - 96) / NUM_COLORS)) + 96;
-	  dest.y = 44 + ((NUM_TOOLS / 2) * 48) + HEIGHTOFFSET;
+	  dest.y += 4;
 	  SDL_BlitSurface(img_paintcan, NULL, screen, &dest);
 	}
 #endif
 
     }
-//    SDL_UpdateRect(screen, 0, 0, screen->w, screen->h);
+  update_screen_rect(&r_colors);
+
+  // if only the color changed, no need to draw the title
+  if (colors_state==old_colors_state)
+    return old_colors_state;
+
+  if (colors_state == COLORSEL_ENABLE)
+    {
+      SDL_BlitSurface(img_title_large_on, NULL, screen, &r_tcolors);
+    
+      dest.x = r_tcolors.x + (r_tcolors.w - img_title_names[TITLE_COLORS]->w) / 2;
+      dest.y = r_tcolors.y + (r_tcolors.h - img_title_names[TITLE_COLORS]->h) / 2;
+      SDL_BlitSurface(img_title_names[TITLE_COLORS], NULL, screen, &dest);
+    }
+  else
+    {
+      SDL_BlitSurface(img_title_large_off, NULL, screen, &r_tcolors);
+    }
+
+  update_screen_rect(&r_tcolors);
+  return old_colors_state;
 }
 
 
