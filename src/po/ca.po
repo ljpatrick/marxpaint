@@ -17,8 +17,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Tuxpaint 0.0.1pre\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2004-07-16 21:12+0200\n"
-"PO-Revision-Date: 2002-11-07 22:54+0100\n"
+"POT-Creation-Date: 2004-07-13 18:30+0200\n"
+"PO-Revision-Date: 2004-07-15 22:48+0200\n"
 "Last-Translator: Pere Pujal i Carabantes <ppujal@airtel.net>\n"
 "Language-Team: Català <linux-ca@chanae.alphanet.ch>\n"
 "MIME-Version: 1.0\n"
@@ -29,11 +29,10 @@ msgid "A drawing program for children."
 msgstr "Un programa de dibuix per a nens petits."
 
 msgid "Drawing program"
-msgstr ""
+msgstr "Programa de dibuix"
 
-#, fuzzy
 msgid "Tux Paint"
-msgstr "Pinta"
+msgstr "Tux Paint"
 
 msgid "Black!"
 msgstr "Negre"
@@ -42,7 +41,7 @@ msgid "White!"
 msgstr "Blanc!"
 
 msgid "Red!"
-msgstr "Refés!"
+msgstr "Vermell!"
 
 msgid "Pink!"
 msgstr "Rosa!"
@@ -54,7 +53,7 @@ msgid "Yellow!"
 msgstr "Groc!"
 
 msgid "Lime!"
-msgstr "Línies!"
+msgstr "Llima!"
 
 msgid "Green!"
 msgstr "Vert!"
@@ -69,16 +68,16 @@ msgid "Purple!"
 msgstr "Porpra!"
 
 msgid "Fuchsia!"
-msgstr ""
+msgstr "Fúcsia!"
 
 msgid "Brown!"
 msgstr "Marró!"
 
 msgid "Gray!"
-msgstr ""
+msgstr "Gris!"
 
 msgid "Silver!"
-msgstr ""
+msgstr "Platejat!"
 
 msgid "Great!"
 msgstr "Excel·lent!"
@@ -182,7 +181,7 @@ msgid "Circle"
 msgstr "Cercle"
 
 msgid "Oval"
-msgstr "Oval"
+msgstr "Óval"
 
 msgid "Triangle"
 msgstr "Triangle"
@@ -329,7 +328,7 @@ msgid "Bye bye!"
 msgstr "Adéu!"
 
 msgid "Let go of the button to complete the line."
-msgstr "Deixue anar el botó per acabar la línia."
+msgstr "Deixeu anar el botó per acabar la línia."
 
 msgid "Hold the button to stretch the shape."
 msgstr "Manteniu el botó premut per estirar la figura."
@@ -361,7 +360,7 @@ msgid "Can’t open that picture!"
 msgstr "No puc obrir aquest dibuix!"
 
 msgid "OK"
-msgstr ""
+msgstr "D'acord"
 
 msgid "Starting a new picture will erase the current one!"
 msgstr "Començar un nou dibuix esborrarà l'actual!"
@@ -369,7 +368,6 @@ msgstr "Començar un nou dibuix esborrarà l'actual!"
 msgid "That’s OK!"
 msgstr "D'acord!"
 
-#, fuzzy
 msgid "Never mind!"
 msgstr "Ni pensar-hi!"
 
@@ -377,7 +375,7 @@ msgid "There are no saved files!"
 msgstr "No hi ha fitxers desats!"
 
 msgid "Print your picture now?"
-msgstr "Deso el vostre dibuix abans?"
+msgstr "Imprimeixo ara el vostre dibuix?"
 
 msgid "Your picture has been printed!"
 msgstr "El vostre fitxer s'ha imprés!"
