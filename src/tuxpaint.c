@@ -5095,7 +5095,7 @@ void draw_brushes(void)
   if (num_brushes > 14 + TOOLOFFSET)
   {
     off_y = 24;
-    max = 12;
+    max = 12 + TOOLSET;
 
     dest.x = WINDOW_WIDTH - 96;
     dest.y = 40;
