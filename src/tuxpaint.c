@@ -1180,8 +1180,8 @@ static int colors_are_selectable;
 static SDL_Surface * img_cur_brush;
 static int brush_counter, rainbow_color;
 
-static TTF_Font * font, * small_font, * large_font, * locale_font;
-static TTF_Font * fonts[MAX_FONTS];
+static TTF_Font * medium_font, * small_font, * large_font, * locale_font;
+static TTF_Font * user_fonts[MAX_FONTS];
 static int num_fonts;
 
 #ifndef NOSOUND
@@ -1425,7 +1425,7 @@ int main(int argc, char * argv[])
   SDL_BlitSurface(img_title, NULL, screen, &dest);
 
   snprintf(tmp_str, sizeof(tmp_str), "%s – %s", VER_VERSION, VER_DATE);
-  tmp_surf = TTF_RenderUTF8_Blended(font, tmp_str, black);
+  tmp_surf = TTF_RenderUTF8_Blended(medium_font, tmp_str, black);
   dest.x = 20 + (WINDOW_WIDTH - img_title->w) / 2;
   dest.y = WINDOW_HEIGHT - 60;
   SDL_BlitSurface(tmp_surf, NULL, screen, &dest);
@@ -1845,13 +1845,13 @@ static void mainloop(void)
 			    }
 
 			  cursor_x = cursor_left;
-			  cursor_y = cursor_y + TTF_FontHeight(fonts[cur_font]);
+			  cursor_y = cursor_y + TTF_FontHeight(user_fonts[cur_font]);
 
 			  if (cursor_y > ((48 * 7 + 40 + HEIGHTOFFSET) -
-					  TTF_FontHeight(fonts[cur_font])))
+					  TTF_FontHeight(user_fonts[cur_font])))
 			    {
 			      cursor_y = ((48 * 7 + 40 + HEIGHTOFFSET) -
-					  TTF_FontHeight(fonts[cur_font]));
+					  TTF_FontHeight(user_fonts[cur_font]));
 			    }
 	    
 			  playsound(0, SND_RETURN, 1);
@@ -3406,11 +3406,11 @@ static void mainloop(void)
 	  
 	  line_xor(cursor_x + cursor_textwidth, cursor_y,
 	           cursor_x + cursor_textwidth,
-		   cursor_y + TTF_FontHeight(fonts[cur_font]));
+		   cursor_y + TTF_FontHeight(user_fonts[cur_font]));
 
           update_screen(cursor_x + 96 + cursor_textwidth, cursor_y,
 			cursor_x + 96 + cursor_textwidth,
-			cursor_y + TTF_FontHeight(fonts[cur_font]));
+			cursor_y + TTF_FontHeight(user_fonts[cur_font]));
 	}
     }
   while (!done);
@@ -6366,10 +6366,10 @@ static void setup(int argc, char * argv[])
 
   /* Load system fonts: */
 
-  font = TTF_OpenFont(DATA_PREFIX "fonts/default_font.ttf",
+  medium_font = TTF_OpenFont(DATA_PREFIX "fonts/default_font.ttf",
 		      18 - (only_uppercase * 3));
 
-  if (font == NULL)
+  if (medium_font == NULL)
     {
       fprintf(stderr,
 	      "\nError: Can't load font file: "
@@ -6414,7 +6414,7 @@ static void setup(int argc, char * argv[])
     }
 
 
-  locale_font = load_locale_font(font,18);
+  locale_font = load_locale_font(medium_font,18);
 
   /* Load other available fonts: */
 
@@ -7406,7 +7406,7 @@ static void draw_fonts(void)
 
       if (font < num_fonts)
 	{
-	  tmp_surf = TTF_RenderUTF8_Blended(fonts[font], "A", black);
+	  tmp_surf = TTF_RenderUTF8_Blended(user_fonts[font], "A", black);
 
 	  src.x = (tmp_surf->w - 48) / 2;
 	  src.y = (tmp_surf->h - 48) / 2;
@@ -10427,10 +10427,10 @@ static void cleanup(void)
   free_surface( &canvas );
   free_surface( &img_cur_brush );
 
-  if (font != NULL)
+  if (medium_font != NULL)
     {
-      TTF_CloseFont(font);
-      font = NULL;
+      TTF_CloseFont(medium_font);
+      medium_font = NULL;
     }
 
   if (small_font != NULL)
@@ -10447,10 +10447,10 @@ static void cleanup(void)
 
   for (i = 0; i < MAX_FONTS; i++)
     {
-      if (fonts[i])
+      if (user_fonts[i])
 	{
-	  TTF_CloseFont(fonts[i]);
-	  fonts[i] = NULL;
+	  TTF_CloseFont(user_fonts[i]);
+	  user_fonts[i] = NULL;
 	}
     }
 
@@ -13214,10 +13214,10 @@ static void do_render_cur_text(int do_blit)
   /* Keep cursor on the screen! */
 
   if (cursor_y > ((48 * 7 + 40 + HEIGHTOFFSET) -
-		  TTF_FontHeight(fonts[cur_font])))
+		  TTF_FontHeight(user_fonts[cur_font])))
     {
       cursor_y = ((48 * 7 + 40 + HEIGHTOFFSET) -
-		  TTF_FontHeight(fonts[cur_font]));
+		  TTF_FontHeight(user_fonts[cur_font]));
     }
   
   
@@ -13227,7 +13227,7 @@ static void do_render_cur_text(int do_blit)
     {
       str = uppercase(texttool_str);
     
-      tmp_surf = TTF_RenderUTF8_Blended(fonts[cur_font], str, color);
+      tmp_surf = TTF_RenderUTF8_Blended(user_fonts[cur_font], str, color);
 
       w = tmp_surf->w;
       h = tmp_surf->h;
@@ -13445,10 +13445,10 @@ static void loadfonts(const char * const dir, int fatal)
 	    {
 	      /* If it has ".ttf" in the filename, assume we can try to load it: */
 	
-	      fonts[num_fonts++] = TTF_OpenFont(fname, 16);
-	      fonts[num_fonts++] = TTF_OpenFont(fname, 24);
-	      fonts[num_fonts++] = TTF_OpenFont(fname, 32);
-	      fonts[num_fonts++] = TTF_OpenFont(fname, 48);
+	      user_fonts[num_fonts++] = TTF_OpenFont(fname, 16);
+	      user_fonts[num_fonts++] = TTF_OpenFont(fname, 24);
+	      user_fonts[num_fonts++] = TTF_OpenFont(fname, 32);
+	      user_fonts[num_fonts++] = TTF_OpenFont(fname, 48);
 	  
 	      show_progress_bar();
 	    }
