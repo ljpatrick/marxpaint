@@ -32,6 +32,11 @@
 #define PROMPTOFFSETX (WINDOW_WIDTH - 640) / 2
 #define PROMPTOFFSETY (HEIGHTOFFSET / 2)
 
+
+#define MIN_STAMP_SIZE 25  /* Stamp can only shrink to 25% (1/4) of original */
+#define MAX_STAMP_SIZE 400 /* Stamp can only grow to 400% (4 times) original */
+
+
 // #define MAX_FILES 2048  /* Max. # of files in a dir. to worry about... */
 
 #define REPEAT_SPEED 300  /* Initial repeat speed for scrollbars */
@@ -1664,14 +1669,42 @@ void mainloop(void)
 			  {
 
 			    /* Bottom left button: Shrink: */
-				  
-			    printf("SHRINK\n");
+
+			    if (state_stamps[cur_stamp]->size > MIN_STAMP_SIZE)
+			    {
+			      state_stamps[cur_stamp]->size =
+			        state_stamps[cur_stamp]->size / 2;
+
+			      if (state_stamps[cur_stamp]->size < MIN_STAMP_SIZE)
+			        state_stamps[cur_stamp]->size = MIN_STAMP_SIZE;
+			    
+			      playsound(0, SND_SHRINK, 0);
+			      draw_stamps();
+			
+			      SDL_UpdateRect(screen,
+					     WINDOW_WIDTH - 96, 0,
+					     96, (48 * 7) + 40 + HEIGHTOFFSET);
+			    }
 			  }
 			  else
 			  {
 			    /* Bottom right button: Grow: */
 
-			    printf("GROW\n");
+			    if (state_stamps[cur_stamp]->size < MAX_STAMP_SIZE)
+			    {
+			      state_stamps[cur_stamp]->size =
+			        state_stamps[cur_stamp]->size * 2;
+
+			      if (state_stamps[cur_stamp]->size > MAX_STAMP_SIZE)
+			        state_stamps[cur_stamp]->size = MAX_STAMP_SIZE;
+			    
+			      playsound(0, SND_GROW, 0);
+			      draw_stamps();
+			
+			      SDL_UpdateRect(screen,
+					     WINDOW_WIDTH - 96, 0,
+					     96, (48 * 7) + 40 + HEIGHTOFFSET);
+			    }
 			  }
 			}
 		      }
@@ -2767,19 +2800,13 @@ void blit_brush(int x, int y)
 void stamp_draw(int x, int y)
 {
   SDL_Rect src, dest;
-  SDL_Surface * tmp_surf, * surf_ptr;
+  SDL_Surface * tmp_surf, * surf_ptr, * final_surf;
   Uint32 amask;
   Uint8 r, g, b, a;
   int xx, yy, dont_free_tmp_surf, base_x, base_y;
   float col_hue, col_sat, col_val,
     stamp_hue, stamp_sat, stamp_val;
   
-
-  /* Where it will go: */
-  
-  base_x = x - (img_stamps[cur_stamp]->w / 2);
-  base_y = y - (img_stamps[cur_stamp]->h / 2);
-
 
   /* Use a pre-mirrored version, if there is one? */
   
@@ -2930,6 +2957,23 @@ void stamp_draw(int x, int y)
 
     tmp_surf = surf_ptr;
   }
+
+  
+  /* Shrink or grow it! */
+
+  final_surf = thumbnail(tmp_surf,
+		         (tmp_surf->w * state_stamps[cur_stamp]->size) / 100,
+		         (tmp_surf->h * state_stamps[cur_stamp]->size) / 100,
+			 1);
+
+  if (!dont_free_tmp_surf)
+    SDL_FreeSurface(tmp_surf);
+
+  
+  /* Where it will go? */
+  
+  base_x = x - (final_surf->w / 2);
+  base_y = y - (final_surf->h / 2);
    
 
   /* And blit it! */
@@ -2943,19 +2987,19 @@ void stamp_draw(int x, int y)
     {
       /* Mirrored, too! */
 
-      for (yy = 0; yy < tmp_surf->h; yy++)
+      for (yy = 0; yy < final_surf->h; yy++)
       {
-	for (xx = 0; xx < tmp_surf->w; xx++)
+	for (xx = 0; xx < final_surf->w; xx++)
 	{
-	  src.x = tmp_surf->w - 1 - xx;
-	  src.y = tmp_surf->h - 1 - yy;
+	  src.x = final_surf->w - 1 - xx;
+	  src.y = final_surf->h - 1 - yy;
 	  src.w = 1;
 	  src.h = 1;
 
 	  dest.x = base_x + xx;
 	  dest.y = base_y + yy;
 
-	  SDL_BlitSurface(tmp_surf, &src, canvas, &dest);
+	  SDL_BlitSurface(final_surf, &src, canvas, &dest);
 	}
       }
     }
@@ -2963,17 +3007,17 @@ void stamp_draw(int x, int y)
     {
       /* (Only flipped) */
       
-      for (yy = 0; yy < tmp_surf->h; yy++)
+      for (yy = 0; yy < final_surf->h; yy++)
       {
 	src.x = 0;
-	src.y = tmp_surf->h - 1 - yy;
-	src.w = tmp_surf->w;
+	src.y = final_surf->h - 1 - yy;
+	src.w = final_surf->w;
 	src.h = 1;
 
 	dest.x = base_x;
 	dest.y = base_y + yy;
 
-	SDL_BlitSurface(tmp_surf, &src, canvas, &dest);
+	SDL_BlitSurface(final_surf, &src, canvas, &dest);
       }
     }
   }
@@ -2984,17 +3028,17 @@ void stamp_draw(int x, int y)
     {
       /* Mirrored! */
 
-      for (xx = 0; xx < tmp_surf->w; xx++)
+      for (xx = 0; xx < final_surf->w; xx++)
       {
-	src.x = tmp_surf->w - 1 - xx;
+	src.x = final_surf->w - 1 - xx;
 	src.y = 0;
 	src.w = 1;
-	src.h = tmp_surf->h;
+	src.h = final_surf->h;
 
 	dest.x = base_x + xx;
 	dest.y = base_y;
 
-	SDL_BlitSurface(tmp_surf, &src, canvas, &dest);
+	SDL_BlitSurface(final_surf, &src, canvas, &dest);
       }
     }
     else
@@ -3004,17 +3048,16 @@ void stamp_draw(int x, int y)
       dest.x = base_x;
       dest.y = base_y;
       
-      SDL_BlitSurface(tmp_surf, NULL, canvas, &dest);
+      SDL_BlitSurface(final_surf, NULL, canvas, &dest);
     }
   }
 
-  update_canvas(x - (tmp_surf->w / 2),
-		y - (tmp_surf->h / 2),
-		x + (tmp_surf->w / 2),
-		y + (tmp_surf->h / 2));
+  update_canvas(x - (final_surf->w / 2),
+		y - (final_surf->h / 2),
+		x + (final_surf->w / 2),
+		y + (final_surf->h / 2));
 
-  if (!dont_free_tmp_surf)
-    SDL_FreeSurface(tmp_surf);
+  SDL_FreeSurface(final_surf);
 }
 
 
@@ -5000,12 +5043,17 @@ void setup(int argc, char * argv[])
 
       if (inf_stamps[i] == NULL)
       {
+	/* Didn't load one for this stamp, assume defaults: */
+	      
 	inf_stamps[i] = malloc(sizeof(info_type));
 	inf_stamps[i]->tintable = 0;
 	inf_stamps[i]->colorable = 0;
 	inf_stamps[i]->mirrorable = 1;
 	inf_stamps[i]->flipable = 1;
       }
+      
+
+      /* If Tux Paint is in mirror-image-by-default mode, mirror, if we can: */
       
       if (mirrorstamps && inf_stamps[i]->mirrorable)
         state_stamps[i]->mirrored = 1;
@@ -6081,13 +6129,10 @@ void draw_stamps(void)
     dest.x = WINDOW_WIDTH - 96;
     dest.y = 40 + ((6 + TOOLOFFSET / 2) * 48);
 
-    if (1)
-    {
-      if (1)
-        SDL_BlitSurface(img_btn_down, NULL, screen, &dest);
-      else
-        SDL_BlitSurface(img_btn_up, NULL, screen, &dest);
-    }
+    if (state_stamps[cur_stamp]->size > MIN_STAMP_SIZE)
+      SDL_BlitSurface(img_btn_up, NULL, screen, &dest);
+    else
+      SDL_BlitSurface(img_btn_off, NULL, screen, &dest);
     
     dest.x = WINDOW_WIDTH - 96 + (48 - img_shrink->w) / 2;
     dest.y = (40 + ((6 + TOOLOFFSET / 2) * 48) +
@@ -6101,17 +6146,10 @@ void draw_stamps(void)
     dest.x = WINDOW_WIDTH - 48;
     dest.y = 40 + ((6 + TOOLOFFSET / 2) * 48);
 
-    if (1)
-    {
-      if (1)
-        SDL_BlitSurface(img_btn_down, NULL, screen, &dest);
-      else
-        SDL_BlitSurface(img_btn_up, NULL, screen, &dest);
-    }
+    if (state_stamps[cur_stamp]->size < MAX_STAMP_SIZE)
+      SDL_BlitSurface(img_btn_up, NULL, screen, &dest);
     else
-    {
       SDL_BlitSurface(img_btn_off, NULL, screen, &dest);
-    }
 
     dest.x = WINDOW_WIDTH - 48 + (48 - img_grow->w) / 2;
     dest.y = (40 + ((6 + TOOLOFFSET / 2) * 48) +

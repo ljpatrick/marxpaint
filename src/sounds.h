@@ -8,7 +8,7 @@
   bill@newbreedsoftware.com
   http://www.newbreedsoftware.com/tuxpaint/
 
-  June 15, 2002 - September 19, 2002
+  June 15, 2002 - December 19, 2002
 */
 
 
@@ -46,7 +46,9 @@ enum {
   SND_FADE,          /* Magic fade */
   SND_RAINBOW,       /* Magic rainbow */
   SND_KEYCLICK,      /* Text tool keyboard click feedback */
-  SND_RETURN,
+  SND_RETURN,        /* Text tool carriage return sound */
+  SND_SHRINK,        /* Stamp shrink */
+  SND_GROW,          /* Stamp grow */
   NUM_SOUNDS
 };
 
@@ -84,6 +86,8 @@ char * sound_fnames[NUM_SOUNDS] = {
   DATA_PREFIX "sounds/fade.wav",
   DATA_PREFIX "sounds/rainbow.wav",
   DATA_PREFIX "sounds/keyclick.wav",
-  DATA_PREFIX "sounds/return.wav"
+  DATA_PREFIX "sounds/return.wav",
+  DATA_PREFIX "sounds/shrink.wav",
+  DATA_PREFIX "sounds/grow.wav"
 };
 
