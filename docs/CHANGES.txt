@@ -8,6 +8,10 @@ http://www.newbreedsoftware.com/tuxpaint/
 
 
 2004.November.21 (0.9.15)
+  * Albanian translation created.
+    Ilir Rugova <ilirrugova@gmx.de>
+    Laurent Dhima <laurenti@alblinux.net>
+
   * Updated Spanish documentation.
     Gabriel Gazzán <ggabriel@internet.com.uy>
 

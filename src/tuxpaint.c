@@ -355,6 +355,7 @@ enum {
   LANG_RU,     /* Russian */
   LANG_SK,     /* Slovak */
   LANG_SL,     /* Slovenian */
+  LANG_SQ,     /* Albanian */
   LANG_SR,     /* Serbian */
   LANG_SV,     /* Swedish */
   LANG_TA,     /* Tamil */
@@ -406,6 +407,7 @@ const char * lang_prefixes[NUM_LANGS] = {
   "ru",
   "sk",
   "sl",
+  "sq",
   "sr",
   "sv",
   "ta",
@@ -3931,6 +3933,7 @@ void show_lang_usage(FILE * f, char * prg)
 	  "LANGUAGE may be one of:\n"
 /* C */	     "  english      american-english\n"
 /* af */     "  afrikaans\n"
+/* sq */     "  albanian\n"
 /* eu */     "  basque       euskara\n"
 /* be */     "  belarusian   bielaruskaja\n"
 /* nb */     "  bokmal\n"
@@ -4031,6 +4034,7 @@ void show_locale_usage(FILE * f, char * prg)
 	  "  ru_RU   (Russian      Russkiy)\n"
 	  "  sk_SK   (Slovak)\n"
 	  "  sl_SI   (Slovenian)\n"
+	  "  sq_AL   (Albanian)\n"
 	  "  sr_YU   (Serbian)\n"
 	  "  es_ES   (Spanish      Espanol)\n"
 	  "  sv_SE   (Swedish      Svenska)\n"
@@ -4706,6 +4710,11 @@ void setup(int argc, char * argv[])
 	{
 	  putenv("LANGUAGE=af_ZA.UTF-8");
 	  putenv("LC_ALL=af_ZA.UTF-8");
+	}
+      else if (strcmp(langstr, "albanian") == 0)
+	{
+	  putenv("LANGUAGE=sq_AL.UTF-8");
+	  putenv("LC_ALL=sq_AL.UTF-8");
 	}
       else if (strcmp(langstr, "breton") == 0 ||
 	       strcmp(langstr, "brezhoneg") == 0)
