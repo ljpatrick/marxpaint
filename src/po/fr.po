@@ -1,13 +1,13 @@
 # translation of fr.po to 
 # Tux Paint french messages.
 # Copyright (C) 2004.
-# Jacques Chion <Jacques.Chion@wanadoo.fr>,2004
+# Jacques Chion <Jacques.Chion@wanadoo.fr>,2005
 # Charles Vidal <vidalc@club-internet.fr>, 2002.
 msgid ""
 msgstr ""
 "Project-Id-Version: fr\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2005-01-06 12:31+0100\n"
+"POT-Creation-Date: 2005-03-05 16:40+0100\n"
 "PO-Revision-Date: 2004-05-30 21:20-0700\n"
 "Last-Translator: jimmy <jacques.chion@wanadoo.fr>\n"
 "Language-Team:  <fr@li.org>\n"
@@ -28,15 +28,12 @@ msgstr "Tux Paint"
 msgid "Black!"
 msgstr "Noir !"
 
-#, fuzzy
-msgid "Dark Gray!"
-msgstr "Gris !"
+msgid "Dark grey! Some people spell it “dark gray”."
+msgstr "Gris foncé !"
 
-#. using both valid spellings
-msgid "Light Grey!"
-msgstr ""
+msgid "Light grey! Some people spell it “light gray”."
+msgstr "Gris clair !"
 
-#. using both valid spellings
 msgid "White!"
 msgstr "Blanc !"
 
@@ -49,23 +46,23 @@ msgstr "Orange !"
 msgid "Yellow!"
 msgstr "Jaune !"
 
-msgid "Neon green!"
-msgstr ""
+msgid "Light green!"
+msgstr "Vert clair !"
 
-msgid "Green!"
-msgstr "Vert !"
+msgid "Dark green!"
+msgstr "Vert foncé !"
 
 msgid "Sky blue!"
-msgstr ""
+msgstr "Bleu ciel !"
 
 msgid "Blue!"
 msgstr "Bleu !"
 
+msgid "Lavender!"
+msgstr "Lavande !"
+
 msgid "Purple!"
 msgstr "Pourpre !"
-
-msgid "Magenta!"
-msgstr ""
 
 msgid "Pink!"
 msgstr "Rose !"
@@ -73,12 +70,11 @@ msgstr "Rose !"
 msgid "Brown!"
 msgstr "Marron !"
 
-#, fuzzy
 msgid "Tan!"
-msgstr "Cyan !"
+msgstr "Tanné !"
 
 msgid "Beige!"
-msgstr ""
+msgstr "Beige !"
 
 msgid "Great!"
 msgstr "Bravo !"
@@ -95,31 +91,29 @@ msgstr "Bon travail !"
 msgid "Fill"
 msgstr "Remplir"
 
-#, fuzzy
 msgid "Grass"
-msgstr "Effacer"
+msgstr "Herbe"
 
-#, fuzzy
 msgid "Bricks"
-msgstr "Blocs"
+msgstr "Briques"
 
 msgid "Rainbow"
 msgstr "Arc-en-ciel"
 
 msgid "Sparkles"
-msgstr "Etincelles"
+msgstr "Étincelles"
 
 msgid "Blur"
 msgstr "Brouiller"
 
 msgid "Smudge"
-msgstr ""
+msgstr "Barbouiller"
 
-msgid "Fade"
-msgstr "Affadir"
+msgid "Lighten"
+msgstr "Éclaircir"
 
 msgid "Darken"
-msgstr ""
+msgstr "Assombrir"
 
 msgid "Chalk"
 msgstr "Craie"
@@ -130,15 +124,14 @@ msgstr "Blocs"
 msgid "Negative"
 msgstr "Négatif"
 
-#, fuzzy
 msgid "Tint"
-msgstr "Amincir"
+msgstr "Colorier"
 
 msgid "Drip"
 msgstr "Goutte"
 
 msgid "Cartoon"
-msgstr ""
+msgstr "Carton"
 
 msgid "Mirror"
 msgstr "Miroir"
@@ -147,68 +140,64 @@ msgid "Flip"
 msgstr "Renverser"
 
 msgid "Click in the picture to fill that area with color."
-msgstr "Clique sur l’image pour remplir cette surface avec une couleur."
+msgstr "Clique sur l'image pour remplir cette surface avec une couleur."
 
-#, fuzzy
-msgid "Click and move to draw grass. Don't forget the dirt!"
-msgstr "Clique et déplace la souris pour dessiner des étincelles."
+msgid "Click and move to draw grass. Don’t forget the dirt!"
+msgstr ""
+"Clique et déplace la souris pour dessiner de l'herbe. N'oublie pas la "
+"poussière !"
 
-#, fuzzy
 msgid "Click and move to draw large bricks."
-msgstr "Clique et déplace la souris pour dessiner des étincelles."
+msgstr "Clique et déplace la souris pour dessiner des grandes briques."
 
-#, fuzzy
 msgid "Click and move to draw small bricks."
-msgstr "Clique et déplace la souris pour dessiner des étincelles."
+msgstr "Clique et déplace la souris pour dessiner des petites briques."
 
 msgid "You can draw in rainbow colors!"
-msgstr "Tu peux dessiner avec les couleurs de l’arc-en-ciel !"
+msgstr "Tu peux dessiner avec les couleurs de l'arc-en-ciel !"
 
 msgid "Click and move to draw sparkles."
 msgstr "Clique et déplace la souris pour dessiner des étincelles."
 
 msgid "Click and move the mouse around to blur the picture."
-msgstr "Clique et déplace la souris pour rendre l’image floue."
+msgstr "Clique et déplace la souris pour rendre l'image floue."
 
-#, fuzzy
 msgid "Click and move the mouse around to smudge the picture."
-msgstr "Clique et déplace la souris pour rendre l’image floue."
+msgstr "Clique et déplace la souris pour brouiller l'image."
 
 msgid "Click and move to fade the colors."
 msgstr "Clique et déplace la souris pour faire pâlir les couleurs."
 
-#, fuzzy
 msgid "Click and move to darken the colors."
-msgstr "Clique et déplace la souris pour faire pâlir les couleurs."
+msgstr "Clique et déplace la souris pour assombrir les couleurs."
 
 msgid ""
 "Click and move the mouse around to turn the picture into a chalk drawing."
 msgstr ""
-"Clique et déplace la souris pour transformer l’image en dessin à la craie."
+"Clique et déplace la souris pour transformer l'image en dessin à la craie."
 
 msgid "Click and move the mouse around to make the picture blocky."
-msgstr "Clique et déplace la souris pour transformer l’image en petits blocs."
+msgstr ""
+"Clique et déplace la souris pour transformer l'image en un ensemble de "
+"petits blocs."
 
 msgid "Click and move the mouse around to draw a negative."
-msgstr "Clique et déplace la souris pour obtenir l’image en négatif."
+msgstr "Clique et déplace la souris pour obtenir l'image en négatif."
 
-#, fuzzy
-msgid "Click and move the mouse around to change the picture's color."
-msgstr "Clique et déplace la souris pour transformer l’image en petits blocs."
+msgid "Click and move the mouse around to change the picture’s color."
+msgstr "Clique et déplace la souris pour changer les couleurs de l'image."
 
 msgid "Click and move the mouse around to make the picture drip."
-msgstr "Clique et déplace la souris pour rendre l’image dégoulinante."
+msgstr "Clique et déplace la souris pour rendre l'image dégoulinante."
 
-#, fuzzy
 msgid "Click and move the mouse around to turn the picture into a cartoon."
-msgstr ""
-"Clique et déplace la souris pour transformer l’image en dessin à la craie."
+msgstr "Clique et déplace la souris pour transformer l'image en carton."
 
 msgid "Click to make a mirror image."
-msgstr "Clique pour voir l’image dans un miroir."
+msgstr "Clique pour voir l'image dans un miroir."
 
 msgid "Click to flip the picture upside-down."
-msgstr "Clique pour faire basculer l’image de haut en bas."
+msgstr "Clique pour faire basculer l'image de haut en bas."
 
 msgid "Square"
 msgstr "Carré"
@@ -219,8 +208,8 @@ msgstr "Rectangle"
 msgid "Circle"
 msgstr "Cercle"
 
-msgid "Oval"
-msgstr "Ovale"
+msgid "Ellipse"
+msgstr "Ellipse"
 
 msgid "Triangle"
 msgstr "Triangle"
@@ -228,17 +217,23 @@ msgstr "Triangle"
 msgid "Pentagon"
 msgstr "Pentagone"
 
-msgid "Diamond"
+msgid "Rhombus"
 msgstr "Losange"
 
-msgid "A square has four sides, each the same length."
-msgstr "Un carré a quatre côtés de même longueur."
+msgid "A square is a rectangle with four equal sides."
+msgstr "Un carré est un rectangle ayant quatre côtés égaux"
 
-msgid "A rectangle has four sides."
-msgstr "Un rectangle a quatre côtés."
+msgid "A rectangle has four sides and four right angles."
+msgstr "Un rectangle a quatre côtés et quatre angles droits"
 
-msgid "A circle is exactly round."
-msgstr "Un cercle est un beau rond."
+msgid ""
+"A circle is a curve where all points have the same distance from the centre."
+msgstr ""
+"Un cercle est une courbe dont tous les points sont à la même distance du "
+"centre"
+
+msgid "An ellipse is a stretched circle."
+msgstr "Une ellipse est un cercle étiré."
 
 msgid "A triangle has three sides."
 msgstr "Un triangle a trois côtés."
@@ -246,8 +241,8 @@ msgstr "Un triangle a trois côtés."
 msgid "A pentagon has five sides."
 msgstr "Un pentagone a cinq côtés."
 
-msgid "A diamond is a square, turned around slightly."
-msgstr "Un losange est un carré légèrement déformé."
+msgid "A rhombus has four equal sides, and opposite sides are parallel."
+msgstr "Un losange a quatre côtés égaux, et les côtés opposés sont parallèles."
 
 msgid "Tools"
 msgstr "Outils"
@@ -258,9 +253,8 @@ msgstr "Couleurs"
 msgid "Brushes"
 msgstr "Pinceaux"
 
-#, fuzzy
 msgid "Erasers"
-msgstr "Gomme"
+msgstr "Gommes"
 
 msgid "Stamps"
 msgstr "Tampons"
@@ -312,20 +306,21 @@ msgid "Quit"
 msgstr "Quitter"
 
 msgid "Pick a color and a brush shape to draw with."
-msgstr "Choisis une couleur et un pochoir pour dessiner."
+msgstr "Choisis une couleur et un pinceau pour dessiner avec."
 
 msgid "Pick a picture to stamp around your drawing."
-msgstr "Choisis une image pour l’insérer dans ton dessin."
+msgstr "Choisis une image pour l'insérer dans ton dessin."
 
 msgid "Click to start drawing a line. Let go to complete it."
-msgstr "Clique pour commencer à dessiner une ligne."
+msgstr ""
+"Clique pour commencer à dessiner une ligne. Continue pour la compléter."
 
 msgid ""
 "Pick a shape. Click to pick the center, drag, then let go when it is the "
 "size you want. Move around to rotate it, and click to draw it."
 msgstr ""
-"Choisis une forme. Clique dessus, choisis sa place et sa taille tout en "
-"appuyant, fais-la tourner, et clique enfin pour la dessiner."
+"Choisis une forme. Clique en son centre, choisis sa place et sa taille tout "
+"en appuyant, fais-la tourner, et clique enfin pour la dessiner."
 
 msgid "Choose a style of text. Click on your drawing and you can start typing."
 msgstr ""
@@ -353,7 +348,7 @@ msgstr "Tu as maintenant une feuille blanche pour dessiner !"
 
 #. Open
 msgid "Open…"
-msgstr "Ouvrir..."
+msgstr "Ouvrir.."
 
 #. Save
 msgid "Your image has been saved!"
@@ -361,7 +356,7 @@ msgstr "Ton image est sauvegardée !"
 
 #. Print
 msgid "Printing…"
-msgstr "Impression..."
+msgstr "Impression.."
 
 #. Quit
 msgid "Bye bye!"
@@ -371,13 +366,14 @@ msgid "Let go of the button to complete the line."
 msgstr "Maintiens le bouton pour compléter la ligne."
 
 msgid "Hold the button to stretch the shape."
-msgstr "Maintiens le bouton pour étirer."
+msgstr "Maintiens le bouton pour étirer cette forme."
 
 msgid "Move the mouse to rotate the shape. Click to draw it."
-msgstr "Bouge la souris pour faire tourner. Clique pour la dessiner."
+msgstr ""
+"Bouge la souris pour faire tourner cette forme. Clique pour la dessiner."
 
 msgid "OK then… Let’s keep drawing this one!"
-msgstr "Bien! alors continuons le dessin !"
+msgstr "Bien! alors continuons ce dessin !"
 
 #. FIXME: Move elsewhere!!!
 msgid "Do you really want to quit?"
@@ -394,28 +390,28 @@ msgid "If you quit, you’ll lose your picture! Save it?"
 msgstr "Si tu quittes, ton image sera perdue ! Tu sauvegardes ?"
 
 msgid "Save your picture first?"
-msgstr "D’abord sauvegarder l’image ?"
+msgstr "Sauvegarder d'abord ton image ?"
 
 msgid "Can’t open that picture!"
-msgstr "Je ne peux pas charger cette image !"
+msgstr "Je ne peux pas ouvrir cette image !"
 
 msgid "OK"
-msgstr "D’accord"
+msgstr "D'accord"
 
 msgid "Starting a new picture will erase the current one!"
 msgstr "Commencer une nouvelle image effacera celle qui est en cours !"
 
 msgid "That’s OK!"
-msgstr "C’est d’accord !"
+msgstr "C'est d'accord !"
 
 msgid "Never mind!"
-msgstr "On ne fait rien !"
+msgstr "Ne t'en fais pas !"
 
 msgid "There are no saved files!"
-msgstr "Il n’y a pas de fichiers sauvegardés !"
+msgstr "Il n'y a pas de fichiers sauvegardés !"
 
 msgid "Print your picture now?"
-msgstr "Imprimer l’image maintenant ?"
+msgstr "Imprimer l'image ?"
 
 msgid "Your picture has been printed!"
 msgstr "Ton image a été imprimée !"
@@ -426,42 +422,49 @@ msgstr "Tu ne peux pas imprimer maintenant !"
 msgid "Erase this picture?"
 msgstr "Effacer cette image ?"
 
+msgid "Remember to use the left mouse button!"
+msgstr "N'oublie pas d'utiliser le bouton gauche de la souris !"
+
+msgid "jq"
+msgstr "jq"
+
+msgid "JQ"
+msgstr "JQ"
+
+msgid "oO"
+msgstr "oO"
+
+msgid "`\\%_@$~#{}<>^&*"
+msgstr "\\%_@$~#{}<>^&*"
+
+msgid ",.?!"
+msgstr ",.?!"
+
+msgid "017"
+msgstr "017"
+
+msgid "O0"
+msgstr "O0"
+
+msgid "1Il|"
+msgstr "1Il|"
+
 msgid "Erase"
 msgstr "Effacer"
 
 msgid "Back"
-msgstr "Retour"
+msgstr "En arrière"
 
 msgid "Aa"
-msgstr ""
+msgstr "Aa"
 
 #. FIXME: Move elsewhere!!!
 msgid "Save over the older version of this picture?"
-msgstr "Écraser l’ancienne version de ce dessin ?"
+msgstr "Écraser l'ancienne version de ce dessin ?"
 
 msgid "No, save a new file"
 msgstr "Non, sous un autre nom"
 
 msgid "Choose the picture you want, then click “Open”."
-msgstr "Choisis une image, et clique ensuite sur ‘Ouvrir’"
+msgstr "Choisis une image, et clique ensuite sur “Ouvrir”"
 
-#~ msgid "Lime!"
-#~ msgstr "Citron vert !"
-
-#~ msgid "Fuchsia!"
-#~ msgstr "Fuchsia !"
-
-#~ msgid "Silver!"
-#~ msgstr "Argent !"
-
-#~ msgid "Thick"
-#~ msgstr "Epaissir"
-
-#~ msgid "Click and move the mouse to thicken the picture."
-#~ msgstr "Clique et bouge la souris pour rendre le dessin plus épais."
-
-#~ msgid "Click and move the mouse to thin the picture."
-#~ msgstr "Clique et bouge la souris pour rendre le dessin plus fin."
-
-#~ msgid "Orange"
-#~ msgstr "Orange"

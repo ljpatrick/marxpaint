@@ -261,8 +261,11 @@ http://www.newbreedsoftware.com/tuxpaint/
 
     * Dutch
       Geert Stams <geertstams@wanadoo.nl>
+    
+    * French
+      Jacques Chion <Jacques.Chion@wanadoo.fr>
   
-    * Updated German translation.
+    * German
       Patrick <nc-spechtpa3 [At] netcologne DOT de>
 
     * Greek
