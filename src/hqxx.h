@@ -39,6 +39,9 @@
 #define trU   ((0x07 & 0x7E) << 3)
 #define trV   ((0x06 & 0x1F))
 
+#ifdef WIN32
+#define inline
+#endif
 
 Uint16 hqxx_getpixel(SDL_Surface * surface, int x, int y, Uint8 * alpha);
 void InitLUTs(Uint32 * RGBtoYUV);
@@ -52,6 +55,10 @@ inline void Interp6(SDL_Surface * dest, int x, int y, Uint16 c1, Uint16 c2, Uint
 inline void Interp7(SDL_Surface * dest, int x, int y, Uint16 c1, Uint16 c2, Uint16 c3, Uint8 alpha);
 inline void Interp8(SDL_Surface * dest, int x, int y, Uint16 c1, Uint16 c2, Uint8 alpha);
 inline int Diff(unsigned int w1, unsigned int w2);
+
+#ifdef WIN32
+#undef inline
+#endif
 
 #endif
 
