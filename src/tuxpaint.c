@@ -637,42 +637,21 @@ static int lang_use_right_to_left[] = {
 };
 
 
-static int need_own_font(int l)
+static int search_int_array(int l, int *array)
 {
-  int i, need;
+  int i;
 
-  need = 0;
-
-  for (i = 0; lang_use_own_font[i] != -1 && need == 0; i++)
+  for (i = 0; array[i] != -1; i++)
     {
-      if (lang_use_own_font[i] == l)
-	{
-	  need = 1;
-	}
+      if (array[i] == l)
+        return 1;
     }
 
-  return need;
+  return 0;
 }
 
-
-static int need_right_to_left(int l)
-{
-  int i, need;
-
-  need = 0;
-
-  for (i = 0; lang_use_right_to_left[i] != -1 && need == 0; i++)
-    {
-      if (lang_use_right_to_left[i] == l)
-	{
-	  need = 1;
-	}
-    }
-
-  return need;
-}
-
-
+static int need_own_font;
+static int need_right_to_left;
 
 /* Determine the current language/locale, and set the language string: */
 
@@ -736,7 +715,8 @@ static void set_current_language(void)
 
   language_enum = lang;
   lang_prefix = lang_prefixes[lang];
-
+  need_own_font = search_int_array(lang,lang_use_own_font);
+  need_right_to_left = search_int_array(lang,lang_use_right_to_left);
 
 #ifdef DEBUG
   printf("DEBUG: Language is %s (%d)\n", lang_prefix, language_enum);
@@ -6543,7 +6523,7 @@ static void setup(int argc, char * argv[])
     }
 
 
-  if (need_own_font(language_enum))
+  if (need_own_font)
     {
       snprintf(str, sizeof(str), "%sfonts/locale/%s.ttf",
 	       DATA_PREFIX, lang_prefix);
@@ -6799,7 +6779,7 @@ static void setup(int argc, char * argv[])
     {
       if (strlen(title_names[i]) > 0)
 	{
-	  if (need_own_font(language_enum) && locale_font != NULL &&
+	  if (need_own_font && locale_font != NULL &&
 		   strcmp(gettext(title_names[i]), title_names[i]) != 0)
 	    {
 	      tmp_surf = TTF_RenderUTF8_Blended(locale_font,
@@ -6971,7 +6951,7 @@ static SDL_Surface * do_render_button_label(const char * const label)
   SDL_Surface * tmp_surf, * surf;
   SDL_Color black = {0, 0, 0, 0};
 
-  if (need_own_font(language_enum) && locale_font != NULL &&
+  if (need_own_font && locale_font != NULL &&
 	   strcmp(gettext(label), label) != 0)
     {
       tmp_surf = TTF_RenderUTF8_Blended(locale_font, textdir(gettext(label)), black);
@@ -9149,7 +9129,7 @@ static void wordwrap_text(const char * const str, SDL_Color color,
 
 		      if (x > left)
 			{
-			  if (need_right_to_left(language_enum) && want_right_to_left)
+			  if (need_right_to_left && want_right_to_left)
 			    anti_carriage_return(left, right, top, top + text->h, y + text->h,
 						 x - left);
 
@@ -9208,7 +9188,7 @@ static void wordwrap_text(const char * const str, SDL_Color color,
 				{
 				  if (x + text->w > right)
 				    {
-				      if (need_right_to_left(language_enum) && want_right_to_left)
+				      if (need_right_to_left && want_right_to_left)
 					anti_carriage_return(left, right, top, top + text->h,
 							     y + text->h, x - left);
 	        
@@ -9218,7 +9198,7 @@ static void wordwrap_text(const char * const str, SDL_Color color,
 
 				  dest.x = x;
 
-				  if (need_right_to_left(language_enum) && want_right_to_left)
+				  if (need_right_to_left && want_right_to_left)
 				    dest.y = top;
 				  else
 				    dest.y = y;
@@ -9242,7 +9222,7 @@ static void wordwrap_text(const char * const str, SDL_Color color,
 			{
 			  /* This word needs to move down? */
 
-			  if (need_right_to_left(language_enum) && want_right_to_left)
+			  if (need_right_to_left && want_right_to_left)
 			    anti_carriage_return(left, right, top, top + text->h, y + text->h,
 						 x - left);
           
@@ -9252,7 +9232,7 @@ static void wordwrap_text(const char * const str, SDL_Color color,
 
 		      dest.x = x;
 
-		      if (need_right_to_left(language_enum) && want_right_to_left)
+		      if (need_right_to_left && want_right_to_left)
 			dest.y = top;
 		      else
 			dest.y = y;
@@ -9338,7 +9318,7 @@ static void wordwrap_text(const char * const str, SDL_Color color,
 
 	  if (x + text->w > right)  /* Correct? */
 	    {
-	      if (need_right_to_left(language_enum) && want_right_to_left)
+	      if (need_right_to_left && want_right_to_left)
 		anti_carriage_return(left, right, top, top + text->h, y + text->h,
 				     x - left);
         
@@ -9351,7 +9331,7 @@ static void wordwrap_text(const char * const str, SDL_Color color,
 
 	  dest.x = x;
 
-	  if (need_right_to_left(language_enum) && want_right_to_left)
+	  if (need_right_to_left && want_right_to_left)
 	    dest.y = top;
 	  else
 	    dest.y = y;
@@ -9381,7 +9361,7 @@ static void wordwrap_text(const char * const str, SDL_Color color,
 
   /* Right-justify the final line of text, in right-to-left mode: */
   
-  if (need_right_to_left(language_enum) && want_right_to_left && last_text_height > 0)
+  if (need_right_to_left && want_right_to_left && last_text_height > 0)
     {
       src.x = left;
       src.y = top;
@@ -13729,7 +13709,7 @@ static unsigned char * textdir(const unsigned char * const str)
 
   dstr = (unsigned char *) malloc((strlen(str) + 5) * sizeof(unsigned char));
 
-  if (need_right_to_left(language_enum))
+  if (need_right_to_left)
     {
       dstr[strlen(str)] = '\0';
 
