@@ -2017,11 +2017,10 @@ static void groupfonts(void)
 
 ////////////////////////////////////////////////////////////////////
 
-#define MAX_STAMPS 512
-
 static int num_brushes, num_brushes_max;
 static SDL_Surface **img_brushes;
 
+#define MAX_STAMPS 512
 static int num_stamps;
 static SDL_Surface * img_stamps[MAX_STAMPS];
 static SDL_Surface * img_stamps_premirror[MAX_STAMPS];
@@ -11572,7 +11571,7 @@ static void cleanup(void)
 {
   int i;
 
-  for (i = 0; i < MAX_STAMPS; i++)
+  for (i = 0; i < num_stamps; i++)
     {
       if (txt_stamps[i])
 	{
@@ -11592,8 +11591,8 @@ static void cleanup(void)
 	  state_stamps[i] = NULL;
 	}
     }
-  free_surface_array( img_stamps, MAX_STAMPS );
-  free_surface_array( img_stamps_premirror, MAX_STAMPS );
+  free_surface_array( img_stamps, num_stamps );
+  free_surface_array( img_stamps_premirror, num_stamps );
 
   free_surface_array( img_brushes, num_brushes );
   free_surface_array( img_tools, NUM_TOOLS );
@@ -11660,7 +11659,7 @@ static void cleanup(void)
   free_surface_array( img_color_btns, NUM_COLORS*2 );
 #endif
 
-  free_surface_array( img_stamp_thumbs, MAX_STAMPS );
+  free_surface_array( img_stamp_thumbs, num_stamps );
 
   free_surface( &screen );
   free_surface( &img_starter );
