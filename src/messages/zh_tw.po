@@ -129,7 +129,7 @@ msgstr "形狀"
 
 #: src/tools.h:46
 msgid "Text"
-msgstr "文字"
+msgstr "字母"
 
 #: src/tools.h:47
 #: src/titles.h:43
@@ -146,7 +146,7 @@ msgstr "重作"
 
 #: src/tools.h:50
 msgid "Eraser"
-msgstr "刪除"
+msgstr "橡皮擦"
 
 #: src/tools.h:51
 msgid "New"
@@ -198,7 +198,7 @@ msgstr "重作!"
 
 #: src/tools.h:70
 msgid "Eraser!"
-msgstr "刪除!"
+msgstr "橡皮擦!"
 
 #: src/tools.h:71
 msgid "You now have a blank sheet to draw on!"
@@ -226,7 +226,7 @@ msgstr "放開按鍵來完成這條線。"
 
 #: src/tools.h:79
 msgid "Hold the button to stretch the shape."
-msgstr "按住按鍵來伸開這形狀。"
+msgstr "按住按鍵來展開這形狀。"
 
 #: src/tools.h:80
 msgid "Move the mouse to rotate the shape. Click to draw it."
@@ -254,7 +254,7 @@ msgstr "圖章"
 
 #: src/titles.h:42
 msgid "Letters"
-msgstr "文字"
+msgstr "字母"
 
 #: src/colors.h:56
 msgid "Black"
@@ -363,7 +363,7 @@ msgstr "長方形有四個邊。"
 #: src/shapes.h:145
 #: src/shapes.h:146
 msgid "A circle is exactly round."
-msgstr "圓形是精確的圓。"
+msgstr "圓形是精準的圓。"
 
 #: src/shapes.h:149
 #: src/shapes.h:150
@@ -410,7 +410,7 @@ msgstr "反相"
 
 #: src/magic.h:58
 msgid "Fade"
-msgstr "退色"
+msgstr "褪色"
 
 #: src/magic.h:60
 msgid "Chalk"
