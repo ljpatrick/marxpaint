@@ -5604,8 +5604,8 @@ static void setup(int argc, char * argv[])
 // TODO: convert inf_stamps[i]->min and such to usable data
 //
 	  {
-	    int upper = HARD_MAX_STAMP_SIZE;
-	    int lower = 0;
+	    unsigned int upper = HARD_MAX_STAMP_SIZE;
+	    unsigned int lower = 0;
 
 	    do
 	    {
