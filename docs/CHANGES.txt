@@ -55,6 +55,9 @@ http://www.newbreedsoftware.com/tuxpaint/
 
   * Fixed bug where ".thumbs" dir wouldn't get generated if it wasn't there
     and you went to the 'Open' dialog.
+  
+  * iconv_close() was being called even if 'cd' was -1 (not set).  Fixed.
+    Darrell Walisser <walisser@mac.com>
 
 
 2003.Jun.17 (0.9.11)

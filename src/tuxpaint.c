@@ -7,12 +7,12 @@
   bill@newbreedsoftware.com
   http://www.newbreedsoftware.com/tuxpaint/
   
-  June 14, 2002 - July 26, 2003
+  June 14, 2002 - July 27, 2003
 */
 
 
 #define VER_VERSION     "0.9.12"
-#define VER_DATE        "2003.07.26"
+#define VER_DATE        "2003.07.27"
 
 
 /* #define DEBUG */
@@ -10416,7 +10416,7 @@ void loadfonts(char * dir, int fatal)
       if (num_files >= d_names_alloced)
       {
 	d_names_alloced = d_names_alloced + 32;
-	d_names = (char * *) realloc(sizeof(char *) * d_names_alloced);
+	d_names = (char * *) realloc(d_names, sizeof(char *) * d_names_alloced);
 
 	if (d_names == NULL)
 	{
@@ -11422,7 +11422,8 @@ void convert_open(const char *from)
 
 void convert_close()
 {
-  iconv_close(cd);
+  if (cd != (iconv_t)(-1))
+    iconv_close(cd);
 }
 
 char * convert2utf8(char c)
