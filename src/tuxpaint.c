@@ -299,6 +299,7 @@ enum {
 };
 
 const char * lang_prefixes[NUM_LANGS] = {
+  "bs",
   "ca",
   "cs",
   "da",
