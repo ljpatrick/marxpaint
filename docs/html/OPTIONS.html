@@ -22,7 +22,7 @@ New Breed Software</p>
 <p><a href="mailto:bill@newbreedsoftware.com">bill@newbreedsoftware.com</a><br>
 <a href="http://www.newbreedsoftware.com/tuxpaint/">http://www.newbreedsoftware.com/tuxpaint/</a></p>
 
-<p>January 8, 2005</p>
+<p>January 9, 2005</p>
 </center>
 
 <hr size=2 noshade>
@@ -149,16 +149,19 @@ New Breed Software</p>
   <dd>
     <p><i>(Linux and Unix only)</i></p>
 
-    <p>Use the command <i>COMMAND</i> to print a PNG file.
+    <p>Use the command <i>COMMAND</i> to print a PostScript format file.
     If not set, the default command is:</p>
 
     <blockquote>
-      <code>pngtopnm | pnmtops | lpr</code>
+      <code>lpr</code>
     </blockquote>
     
-    <p>Which converts the PNG to a NetPBM 'portable&nbsp;anymap',
-    then converts that to a PostScript file, and finally
-    sends that to the printer, using the "<code>lpr</code>" command.</p>
+    <p><b>Note:</b> Versions of <i>Tux&nbsp;Paint</i> prior to 0.9.15
+    sent PNG format data to the print command (which defaulted to
+    "<code>pngtopnm&nbsp;|&nbsp;pnmtops&nbsp;|&nbsp;lpr</code>").</p>
+    
+    <p>If you set an alternative <code><b>printcommand</b></code> in the
+    configuration file prior to version 0.9.15, you will need to change it.</p>
   </dd>
 
   <dt><code><b>printcfg=yes</b></code></dt>

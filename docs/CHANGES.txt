@@ -97,9 +97,9 @@ http://www.newbreedsoftware.com/tuxpaint/
     * Now uses "AUDIO_S16SYS" when initializing audio system
       (on Linux/Mac/BeOS); helps sound under Linux on Mac hardware.
       Albert Cahalan <albert@users.sourceforge.net>
-  
-  * Other improvements:
-    -------------------
+    
+  * Interface improvements:
+    -----------------------
     * Thumbnail of selected image now shown on "Erase this image?"
       confirmation pop-up.
 
@@ -109,6 +109,20 @@ http://www.newbreedsoftware.com/tuxpaint/
 
     * Improved 'rubber band line' and stamp outline colors ("XOR" code)
       to make such lines easier to see on certain colors.
+    
+    * The "noquit" option now prevents the [Escape] key from quitting
+      Tux Paint.  ([Alt]+[F4] and the window close button still work.)
+
+    * Tux Paint can now be quit with [Shift]+[Control]+[Escape], as well.
+      (Useful for when "noquit" and "fullscreen" are set, and the
+      [Alt]+[F4] combination is not possible.)
+      
+  * Other improvements:
+    -------------------
+    * Now printing directly via Postscript.
+      (So print command can change from "pngtopnm | pnmtops | lpr" to
+      simply "lpr").
+      Albert Cahalan <albert@users.sf.net>
     
     * Added beige and tan colors.  Changed "Lime" to "Neon Green."
       Renamed "Fuschia" to "Magenta."  Tweaked some color values.
@@ -129,13 +143,6 @@ http://www.newbreedsoftware.com/tuxpaint/
       256 to 512.
       Albert Cahalan <albert@users.sourceforge.net>
 
-    * The "noquit" option now prevents the [Escape] key from quitting
-      Tux Paint.  ([Alt]+[F4] and the window close button still work.)
-
-    * Tux Paint can now be quit with [Shift]+[Control]+[Escape], as well.
-      (Useful for when "noquit" and "fullscreen" are set, and the
-      [Alt]+[F4] combination is not possible.)
-  
   * Bug fixes:
     -------------------
     * Lockfile now cleared upon exit, allowing Tux Paint to be re-launched

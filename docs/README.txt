@@ -551,11 +551,12 @@ Available Tools
 
                               (Linux and Unix only)
 
-                              The command used to print is actually a set of
-                              commands that convert a PNG to a PostScript and
-                              send it to the printer:
+                              Tux Paint prints by generating a PostScript
+                              representation of the drawing and sending it to
+                              an external program. By default, the program
+                              is:
 
-                                pngtopnm | pnmtops | lpr
+                                lpr
 
                               This command can be changed by setting the
                               "printcommand" value in Tux Paint's

@@ -747,11 +747,12 @@ New Breed Software</p>
 	<dd>
 	  <p><i>(Linux and Unix only)</i></p>
 
-	  <p>The command used to print is actually a set of commands that
-	  convert a PNG to a PostScript and send it to the printer:</p>
+	  <p><i>Tux&nbsp;Paint</i> prints by generating a PostScript
+	  representation of the drawing and sending it to an external
+	  program.  By default, the program is:</p>
 
           <blockquote><code>
-	    pngtopnm | pnmtops | lpr
+	    lpr
 	  </code></blockquote>
 
 	  <p>This command can be changed by setting the "printcommand" value

@@ -9,7 +9,7 @@
                            bill@newbreedsoftware.com
                    http://www.newbreedsoftware.com/tuxpaint/
 
-                                January 8, 2005
+                                January 9, 2005
 
    ---------------------------------------------------------------------------
 
@@ -108,14 +108,17 @@ Windows Users
 
              (Linux and Unix only)
 
-             Use the command COMMAND to print a PNG file. If not set, the
-             default command is:
+             Use the command COMMAND to print a PostScript format file. If
+             not set, the default command is:
 
-               pngtopnm | pnmtops | lpr
+               lpr
 
-             Which converts the PNG to a NetPBM 'portable anymap', then
-             converts that to a PostScript file, and finally sends that to
-             the printer, using the "lpr" command.
+             Note: Versions of Tux Paint prior to 0.9.15 sent PNG format data
+             to the print command (which defaulted to
+             "pngtopnm | pnmtops | lpr").
+
+             If you set an alternative printcommand in the configuration file
+             prior to version 0.9.15, you will need to change it.
 
      printcfg=yes
 
