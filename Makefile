@@ -421,9 +421,9 @@ install-gettext:
 	@chmod 644 $(LOCALE_PREFIX)ko/LC_MESSAGES/tuxpaint.mo
 	@#
 	@echo "   lt_LT ...Lithuanian..."
-	@install -d $(LOCAL_PREFIX)lt/LC_MESSAGES
-	@cp trans/lt.mo $(LOCAL_PREFIX)lt/LC_MESSAGES/tuxpaint.mo
-	@chmod 644 $(LOCAL_PREFIX)lt/LC_MESSAGES/tuxpaint.mo
+	@install -d $(LOCALE_PREFIX)lt/LC_MESSAGES
+	@cp trans/lt.mo $(LOCALE_PREFIX)lt/LC_MESSAGES/tuxpaint.mo
+	@chmod 644 $(LOCALE_PREFIX)lt/LC_MESSAGES/tuxpaint.mo
 	@#
 	@echo "   nn_NO ...Norwegian Nynorsk..."
 	@install -d $(LOCALE_PREFIX)nn/LC_MESSAGES
