@@ -7,7 +7,7 @@ bill@newbreedsoftware.com
 http://www.newbreedsoftware.com/tuxpaint/
 
 
-2003.March.10 (0.9.14)
+2003.March.14 (0.9.11) [cvs]
   * Set $OUTPUT_CHARSET for Japanese locale, to fix Win32 issue.
     TOYAMA Shin-ichi <kyone@tky2.3web.ne.jp>
 
