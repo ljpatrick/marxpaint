@@ -73,6 +73,16 @@ http://www.newbreedsoftware.com/tuxpaint/
     saved were unable to load the newest images!  (Hopefully 1024 saved
     files is sufficient.)
 
+  * Thumbnails now saved to a ".thumbs" subdirectory under "saved".
+    (Old thumbnails will still be loaded, if found.  Currently, the old
+    thumbnails will still be saved in the old location, not under .thumbs)
+    Ben Armstrong's suggestion.
+
+  * Updated tuxpaint-import to create .thumbs subdirectory, and put new
+    thumbnails there.
+
+  * Moved "tuxpaint-import.1" from src/ to src/manpage/.
+
 
 2003.February.22 (0.9.10)
   * UTF-8 stamp descriptions word-wrap around spaces.

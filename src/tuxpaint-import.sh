@@ -9,7 +9,7 @@
 # bill@newbreedsoftware.com
 # http://www.newbreedsoftware.com/tuxpaint/
 
-# September 21, 2002 - January 16, 2003
+# September 21, 2002 - June 17, 2003
 
 
 TMPDIR=/tmp
@@ -45,6 +45,12 @@ if [ ! -d $SAVEDIR ]; then
   mkdir -p $SAVEDIR
 fi
 
+# Make sure savedir thumbs directory exists!
+if [ ! -d $SAVEDIR/.thumbs ]; then
+  echo "Creating $SAVEDIR/.thumbs"
+  mkdir -p $SAVEDIR/.thumbs
+fi
+
 
 # For each picture list...
 for i in $*
@@ -68,7 +74,7 @@ do
 
     # Create thumbnail for 'Open' dialog:
     pngtopnm $SAVEDIR/$NEWFILENAME.png | pnmscale -xysize 92 56 \
-    | pnmtopng > $SAVEDIR/$NEWFILENAME-t.png
+    | pnmtopng > $SAVEDIR/.thumbs/$NEWFILENAME-t.png
     
   else
     # File wasn't there!

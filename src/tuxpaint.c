@@ -8050,7 +8050,34 @@ int do_save(void)
 	    "%s\n\n", fname, strerror(errno));
 
     fprintf(stderr,
-            "Cannot save the any pictures! SORRY!\n\n");
+            "Cannot save any pictures! SORRY!\n\n");
+
+    draw_tux_text(TUX_OOPS, SDL_GetError(), 0, 0, 0);
+
+    free(fname);
+    return 0;
+  }
+  free(fname);
+
+  show_progress_bar();
+
+
+  /* Make sure we have a ~/.tuxpaint/saved/.thumbs/ directory: */
+
+  fname = get_fname("saved/.thumbs");
+
+  res = mkdir(fname, 0755);
+
+  if (res != 0 && errno != EEXIST)
+  {
+    fprintf(stderr,
+            "\nError: Can't create user data thumbnail directory:\n"
+	    "%s\n"
+	    "The error that occurred was:\n"
+	    "%s\n\n", fname, strerror(errno));
+
+    fprintf(stderr,
+            "Cannot save any pictures! SORRY!\n\n");
 
     draw_tux_text(TUX_OOPS, SDL_GetError(), 0, 0, 0);
 
@@ -8116,11 +8143,27 @@ int do_save(void)
   
   show_progress_bar();
   
-
+  
   /* Save thumbnail, too: */
 
+  /* (Was thumbnail in old directory, rather than under .thumbs?) */
+  
   snprintf(tmp, sizeof(tmp), "saved/%s-t%s", file_id, FNAME_EXTENSION);
   fname = get_fname(tmp);
+  fi = fopen(fname, "r");
+  if (fi != NULL)
+  {
+    fclose(fi);
+  }
+  else
+  {
+    /* No old thumbnail!  Save this image's thumbnail in the new place,
+       under ".thumbs" */
+
+    snprintf(tmp, sizeof(tmp), "saved/.thumbs/%s-t%s", file_id, FNAME_EXTENSION);
+    fname = get_fname(tmp);
+  }
+  
   debug(fname);
 
   thm = thumbnail(canvas, THUMB_W - 20, THUMB_H - 20, 0);
@@ -8524,10 +8567,22 @@ int do_open(int want_new_tool)
 		
 		/* Try to load thumbnail first: */
 		
-		snprintf(fname, sizeof(fname), "%s/%s-t.png", dirname,
-			 d_names[num_files]);
+		snprintf(fname, sizeof(fname), "%s/.thumbs/%s-t.png",
+		         dirname, d_names[num_files]);
 		debug(fname);
 		img = IMG_Load(fname);
+	 	
+		if (img == NULL)
+		  {
+		    /* No thumbnail in the new location ("saved/.thumbs"),
+		       try the old locatin ("saved/"): */
+		
+		    snprintf(fname, sizeof(fname), "%s/%s-t.png", dirname,
+			     d_names[num_files]);
+		    debug(fname);
+
+		    img = IMG_Load(fname);
+		  }
 		
 		if (img != NULL)
 		  {
@@ -8546,7 +8601,8 @@ int do_open(int want_new_tool)
 		    
 		    num_files++;
 		  }
-		else
+	
+		if (img == NULL)
 		  {
 		    /* No thumbnail - load original: */
 		    
@@ -8605,8 +8661,8 @@ int do_open(int want_new_tool)
 			
 			debug("Saving thumbnail for this one!");
 			
-			snprintf(fname, sizeof(fname), "%s/%s-t.png", dirname,
-				 d_names[num_files]);
+			snprintf(fname, sizeof(fname), "%s/.thumbs/%s-t.png",
+				 dirname, d_names[num_files]);
 			
 			fi = fopen(fname, "wb");
 			if (fi == NULL)

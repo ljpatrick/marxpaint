@@ -6,7 +6,7 @@
 # bill@newbreedsoftware.com
 # http://www.newbreedsoftware.com/tuxpaint/
 
-# June 14, 2002 - April 5, 2003
+# June 14, 2002 - June 17, 2003
 
 
 # Where to install things:
@@ -500,7 +500,7 @@ install-man:
 	@gzip -f $(MAN_PREFIX)/pl/man1/tuxpaint.1
 	@chmod a+rx,g-w,o-w $(MAN_PREFIX)/pl/man1/tuxpaint.1.gz
 	@# tuxpaint-import.1
-	@cp src/tuxpaint-import.1 $(MAN_PREFIX)/man1/
+	@cp src/manpage/tuxpaint-import.1 $(MAN_PREFIX)/man1/
 	@gzip -f $(MAN_PREFIX)/man1/tuxpaint-import.1
 	@chmod a+rx,g-w,o-w $(MAN_PREFIX)/man1/tuxpaint-import.1.gz
 

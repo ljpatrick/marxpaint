@@ -6,7 +6,7 @@ Copyright (c) 2003 by Bill Kendrick
 bill@newbreedsoftware.com
 http://www.newbreedsoftware.com/tuxpaint/
 
-May 23, 2003
+June 17, 2003
 
 
 LOW-PRIORITY DOCUMENTATION CHANGES:
@@ -14,12 +14,6 @@ LOW-PRIORITY DOCUMENTATION CHANGES:
   * Windows compilation in INSTALL.txt
 
   * Mention CONFDIR in INSTALL.txt
-
-
-HIGH-PRIORITY IMPLEMENTATION CHANGES:
--------------------------------------
-  * Move thumbnails into a ".thumbnails" subdirectory under ".tuxpaint/saved"
-    (Ben Armstrong's suggestion)
 
 
 LOW-PRIORITY IMPLEMENTATION CHANGES:
@@ -79,8 +73,6 @@ PLATFORM-SPECIFIC BUGS:
 
 HIGH-PRIORITY TRANSLATION STUFF:
 --------------------------------
-  * Right-justify right-to-left strings.
-
   * Make right-to-left strings not wordwrap with the shortest line at
     the top!
 
