@@ -1444,13 +1444,15 @@ static SDL_Surface * img_tools[NUM_TOOLS], * img_tool_names[NUM_TOOLS];
 // end up with 34 user choices
 #define MAX_FONTS 256
 
-#define MIN_TEXT_SIZE 0
-#define MAX_TEXT_SIZE 8
-#define MAX_TEXT_PREVIEW_SIZE 3 // max text size to preview in selector buttons
-static int text_size = 2;   // initial text size
 static int text_state;
-static int text_sizes[] = {18, 24, 36, 48,
+// nice progression (alternating 33% and 25%) 9 12 18 24 36 48 72 96 144 192
+// commonly hinted sizes seem to be: 9, 10, 12, 14, 18, 20 (less so), 24
+// reasonable: 9,12,18... and 10,14,18...
+static int text_sizes[] = {9, 12, 18, 24, 36, 48,
 	                   56, 64, 96, 112, 128, 160};  // point sizes
+#define MIN_TEXT_SIZE 0
+#define MAX_TEXT_SIZE (sizeof text_sizes / sizeof text_sizes[0])
+static int text_size = 4;   // initial text size
 
 
 // for sorting through the font files at startup
