@@ -2149,8 +2149,8 @@ New Breed Software</p>
       (e.g., "<code>picture.png</code>"'s description is stored in
       "<code>picture.txt</code>" in the same directory.)</p>
       
-      <p>The first line of the text file will be used as the default
-      description of the stamp's image.</p>
+      <p>The first line of the text file will be used as the US English
+      description of the stamp's image. It must be encoded in UTF-8.</p>
 
       <h4>Language Support</h4>
       <blockquote>
@@ -2158,48 +2158,19 @@ New Breed Software</p>
 	translations of the description, to be displayed when Tux&nbsp;Paint
 	is running in a different locale (like French or Spanish).</p>
 
-        <p>There are three ways of placing translated descriptions in
-	a stamp's "<code>.txt</code>" file.  In each case, the beginning
-	of the line should correspond to the locale code of the language
-	in question (e.g., "<code>de</code>" for German,
-	"<code>fr</code>" for French, etc.).</p>
-
-	<ul>
-	<li><p>Lines beginning with "<code><b>xx</b>=</code>"
-	  (where "<code>xx</code>" is the locale code) will be
-	  considered plain ASCII.  That is, any special characters on the
-	  line will be interpreted literally.</p>
-	  
-	  <p>For example, "<code>es=&iexcl;Ni&ntilde;os!</code>", will come
-	  out literally as "&iexcl;Ni&ntilde;os!"</p>
+        <p>The beginning of the line should correspond to the language code
+	of the language	in question (e.g., "<code>fr</code>" for French, and
+	"<code>zh_tw</code>" for Traditional Chinese), followed by
+	"<code>.utf8=</code>" and the translated description (encoded
+	in UTF-8).</p>
 	
-	<li><p>Lines beginning with "<code><b>xx</b>.esc=</code>" can contain
-	  special 'escape&nbsp;sequences' which allow you to create a
-	  description using special ASCII characters (like "&aacute;" and
-	  "&thorn;") without the need to figure out how to get those
-	  characters in the file with whatever editor you chose to use.</p>
-
-	  <p>The escape sequences are identical to those used in HTML
-	  to display ASCII characters 161 through 255.  The sequence begins
-	  with a "<code>&amp;</code>" (ampersand), and ends with a
-	  "<code>;</code>" (semicolon).  See the documentation file
-	  "ESCAPES.txt" for a list of escapable characters.</p>
-
-	  <p>For example, "<code>es.esc=&amp;iexcl;Ni&amp;ntilde;os!</code>",
-	  will come out as "&iexcl;Ni&ntilde;os!"</p>
-
-	  <p><b>Note:</b> As in HTML, if you want an actual ampersand ("&amp;")
-	  in your description when using the "<code><b>xx</b>.esc</code>"
-	  method ,you'll need to escape it: "<code>&amp;amp;</code>".<p>
-	
-	<li><p>Lines beginning with "<code><b>xx</b>.utf8=</code>" can be
-	  used to use UTF-8 encoded text for the description's translation.
-	  You'll need an editor capable of saving UTF-8 encoded files.</p>
-	</ul><p>
+	<p>There are scripts in the "<code>po</code>" directory for converting
+	the text files to PO format (and back) for easy translation to
+	different languages. Therefore you should never add or change translations
+	in the .txt files directly.</p>
 
         <p>If no translation is available for the language Tux&nbsp;Paint
-	is currently running in, the default string (the first line, which
-	is typically in English) is used.</p>
+	is currently running in, the US English text is used.</p>
      </blockquote>
 
       <h4>Windows Users</h4>
