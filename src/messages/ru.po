@@ -6,228 +6,227 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TuxPaint\n"
 "POT-Creation-Date: 2003-03-09 13:13+0100\n"
-"PO-Revision-Date: 2003-08-02 02:51+0700\n"
+"PO-Revision-Date: 2003-08-03 04:07-0700\n"
 "Last-Translator: Dmitriy Ivanov <ace22b@myrealbox.com>\n"
-"Language-Team: Dmitriy Ivanov <ace22b@myrealbox.com>\n"
+"Language-Team:  Dmitriy Ivanov <ace22b@myrealbox.com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.0.1\n"
 
 #: ../tuxpaint.c:674
 msgid "Do you really want to quit?"
-msgstr ""
+msgstr "Вы действительно хотите выйти?"
 
 #: ../tuxpaint.c:675 ../tuxpaint.c:679 ../tuxpaint.c:683 ../tuxpaint.c:703
 #: ../tuxpaint.c:7099 ../tuxpaint.c:7778
 msgid "Yes"
-msgstr "XYZ"
+msgstr "Да"
 
 #: ../tuxpaint.c:676 ../tuxpaint.c:680 ../tuxpaint.c:684 ../tuxpaint.c:704
 #: ../tuxpaint.c:7102
 msgid "No"
-msgstr "xyz"
+msgstr "Нет"
 
 #: ../tuxpaint.c:678
 msgid "If you quit, you'll lose your picture! Save it?"
-msgstr ""
+msgstr "Если вы выйдите, вы потеряете вашу картинку! Сохранить?"
 
 #: ../tuxpaint.c:682
 msgid "Save your picture first?"
-msgstr ""
+msgstr "Сохранить вашу картинку сначала?"
 
 #: ../tuxpaint.c:686
 msgid "Can't open that picture!"
-msgstr ""
+msgstr "Не могу открыть ту картинку!"
 
 #: ../tuxpaint.c:687 ../tuxpaint.c:694 ../tuxpaint.c:697 ../tuxpaint.c:700
 msgid "Okay"
-msgstr ""
+msgstr "Хорошо"
 
 #: ../tuxpaint.c:689
 msgid "Starting a new picture will erase the current one!"
-msgstr ""
+msgstr "Начиная новую картинку вы уничтожите текущую!"
 
 #: ../tuxpaint.c:690
 msgid "That's Ok"
-msgstr ""
+msgstr "Хорошо"
 
 #: ../tuxpaint.c:691
 msgid "Never Mind!"
-msgstr ""
+msgstr "Нет!"
 
 #: ../tuxpaint.c:693
 msgid "There are no saved files!"
-msgstr ""
+msgstr "Нет спасённых картинок!"
 
 #: ../tuxpaint.c:696
 msgid "Your picture has been printed!"
-msgstr ""
+msgstr "Ваша картинка распечатанна!"
 
 #: ../tuxpaint.c:699
 msgid "You can't print yet!"
-msgstr ""
+msgstr "Вы пока не можете печатать!"
 
 #: ../tuxpaint.c:702
 msgid "Erase this picture?"
-msgstr ""
+msgstr "Удалить эту картинку?"
 
 #: ../tuxpaint.c:4579 ../tools.h:52
 msgid "Open"
-msgstr ""
+msgstr "Открыть"
 
 #: ../tuxpaint.c:4584
-# As in "Erase the selected picture"
 msgid "Erase"
-msgstr ""
+msgstr "Удалить"
 
 #: ../tuxpaint.c:4589
-# As in "Go back to the previous screen"
 msgid "Back"
-msgstr ""
+msgstr "Назад"
 
 #: ../tuxpaint.c:7777
 msgid "Save over the older version of this drawing?"
-msgstr ""
+msgstr "Сохранить поверх старой версии этой картинки?"
 
 #: ../tuxpaint.c:7779
 msgid "No, save a new file"
-msgstr ""
+msgstr "Нет, cохранить в новый файл"
 
 #: ../tuxpaint.c:8485
 msgid "Choose the picture you want, then click 'Open'"
-msgstr ""
+msgstr "Выберите желаемую картинку, а потом кликните 'Открыть'"
 
 #: ../colors.h:62
 msgid "Black"
-msgstr ""
+msgstr "Чёрный"
 
 #: ../colors.h:63
 msgid "White"
-msgstr ""
+msgstr "Белый"
 
 #: ../colors.h:64
 msgid "Red"
-msgstr ""
+msgstr "Красный"
 
 #: ../colors.h:65
 msgid "Pink"
-msgstr ""
+msgstr "Розовый"
 
 #: ../colors.h:66
 msgid "Orange"
-msgstr ""
+msgstr "Оранжевый"
 
 #: ../colors.h:67
 msgid "Yellow"
-msgstr ""
+msgstr "Жёлтый"
 
 #: ../colors.h:68
 msgid "Lime"
-msgstr ""
+msgstr "Известь"
 
 #: ../colors.h:69
 msgid "Green"
-msgstr ""
+msgstr "Зелёный"
 
 #: ../colors.h:70
 msgid "Cyan"
-msgstr ""
+msgstr "Циан"
 
 #: ../colors.h:71
 msgid "Blue"
-msgstr ""
+msgstr "Голубой"
 
 #: ../colors.h:72
 msgid "Purple"
-msgstr ""
+msgstr "Пурпурный"
 
 #: ../colors.h:73
 msgid "Fuchsia"
-msgstr ""
+msgstr "Фуксия"
 
 #: ../colors.h:74
 msgid "Brown"
-msgstr ""
+msgstr "Коричневый"
 
 #: ../colors.h:75
 msgid "Grey"
-msgstr ""
+msgstr "Серый"
 
 #: ../colors.h:76
 msgid "Silver"
-msgstr ""
+msgstr "Серебряный"
 
 #: ../great.h:20
 msgid "Great!"
-msgstr ""
+msgstr "Прекрасно!"
 
 #: ../great.h:21
 msgid "Cool!"
-msgstr ""
+msgstr "Здорово!"
 
 #: ../great.h:22
 msgid "Keep it up!"
-msgstr ""
+msgstr "Так и продолжай!"
 
 #: ../great.h:23
 msgid "Good job!"
-msgstr ""
+msgstr "Хорошая работа!"
 
 #: ../magic.h:48
 msgid "Rainbow"
-msgstr ""
+msgstr "Радуга"
 
 #: ../magic.h:49
 msgid "Sparkles"
-msgstr ""
+msgstr "Искры"
 
 #: ../magic.h:51
 msgid "Mirror"
-msgstr ""
+msgstr "Зеркало"
 
 #: ../magic.h:52
 msgid "Flip"
-msgstr ""
+msgstr "Переворот"
 
 #: ../magic.h:54
 msgid "Blur"
-msgstr ""
+msgstr "Затуманить"
 
 #: ../magic.h:55
 msgid "Blocks"
-msgstr ""
+msgstr "Квадратики"
 
 #: ../magic.h:57
 msgid "Negative"
-msgstr ""
+msgstr "Негатив"
 
 #: ../magic.h:58
 msgid "Fade"
-msgstr ""
+msgstr "Блёкнуть"
 
 #: ../magic.h:60
 msgid "Chalk"
-msgstr ""
+msgstr "Мел"
 
 #: ../magic.h:61
 msgid "Drip"
-msgstr ""
+msgstr "Капанье"
 
 #: ../magic.h:63
 msgid "Thick"
-msgstr ""
+msgstr "Толще"
 
 #: ../magic.h:64
 msgid "Thin"
-msgstr ""
+msgstr "Тоньше"
 
 #: ../magic.h:66
 msgid "Fill"
-msgstr ""
+msgstr "Заполнить"
 
 #: ../magic.h:73
 msgid "You can draw in rainbow colors!"
-msgstr ""
+msgstr "Вы можете рисовать цветами радуги!"
 
 #: ../magic.h:74
 msgid "Click and move to draw sparkles"
@@ -277,33 +276,33 @@ msgstr ""
 msgid "Click in the picture to fill that area with color"
 msgstr ""
 
-#: ../shapes.h:141 ../shapes.h:142
+#: ../shpes.h:141 ../shapes.h:142
 msgid "Square"
-msgstr ""
+msgstr "Квадрат"
 
 #: ../shapes.h:143 ../shapes.h:144
 msgid "Rectangle"
-msgstr ""
+msgstr "Прямоугольник"
 
 #: ../shapes.h:145 ../shapes.h:146
 msgid "Circle"
-msgstr ""
+msgstr "Круг"
 
 #: ../shapes.h:147 ../shapes.h:148 ../shapes.h:167 ../shapes.h:168
 msgid "Oval"
-msgstr ""
+msgstr "Овал"
 
 #: ../shapes.h:149 ../shapes.h:150
 msgid "Triangle"
-msgstr ""
+msgstr "Треугольник"
 
 #: ../shapes.h:151 ../shapes.h:152
 msgid "Pentagon"
-msgstr ""
+msgstr "Пятиугольник"
 
 #: ../shapes.h:153 ../shapes.h:154
 msgid "Diamond"
-msgstr ""
+msgstr "Ромб"
 
 #: ../shapes.h:161 ../shapes.h:162
 msgid "A square has four sides, each the same length."
@@ -331,77 +330,75 @@ msgstr ""
 
 #: ../titles.h:37
 msgid "Tools"
-msgstr ""
+msgstr "Инструменты"
 
 #: ../titles.h:38
 msgid "Colors"
-msgstr ""
+msgstr "Цвета"
 
 #: ../titles.h:39
 msgid "Brushes"
-msgstr ""
+msgstr "Кисти"
 
 #: ../titles.h:40
 msgid "Stamps"
-msgstr ""
+msgstr "Штампы"
 
 #: ../titles.h:41 ../tools.h:45
 msgid "Shapes"
-msgstr ""
+msgstr "Формы"
 
 #: ../titles.h:42
 msgid "Letters"
-msgstr ""
+msgstr "Буквы"
 
 #: ../titles.h:43 ../tools.h:47
 msgid "Magic"
-msgstr ""
+msgstr "Магия"
 
 #: ../tools.h:42
 msgid "Paint"
-msgstr ""
+msgstr "Краска"
 
 #: ../tools.h:43
 msgid "Stamp"
-msgstr ""
+msgstr "Штамп"
 
 #: ../tools.h:44
 msgid "Lines"
-msgstr ""
+msgstr "Линии"
 
 #: ../tools.h:46
 msgid "Text"
-msgstr ""
+msgstr "Текст"
 
 #: ../tools.h:48
 msgid "Undo"
-msgstr ""
+msgstr "Откат"
 
 #: ../tools.h:49
 msgid "Redo"
-msgstr ""
+msgstr "Переделать"
 
 #: ../tools.h:50
 msgid "Eraser"
-msgstr ""
+msgstr "Ластик"
 
 #: ../tools.h:51
-# As in "Make a new file"
 msgid "New"
-msgstr ""
+msgstr "Новая"
 
 #: ../tools.h:53
-# As in "Save the current file"
 msgid "Save"
-msgstr ""
+msgstr "Сохранить"
 
 #: ../tools.h:54
 msgid "Print"
-msgstr ""
+msgstr "Печать"
 
 #: ../tools.h:55
 msgid "Quit"
-msgstr ""
+msgstr "Выйти"
 
 #: ../tools.h:62
 msgid "Pick a color and a brush shape to draw with."
@@ -447,7 +444,7 @@ msgstr ""
 
 #: ../tools.h:72
 msgid "Open..."
-msgstr ""
+msgstr "Открыть..."
 
 #: ../tools.h:73
 msgid "Your image has been saved!"
@@ -455,11 +452,11 @@ msgstr ""
 
 #: ../tools.h:74
 msgid "Printing..."
-msgstr ""
+msgstr "Печатаю..."
 
 #: ../tools.h:75
 msgid "Bye bye!"
-msgstr ""
+msgstr "Пока!"
 
 #: ../tools.h:78
 msgid "Let go of the button to complete the line."
