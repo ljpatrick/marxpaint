@@ -12651,8 +12651,11 @@ void load_starter(char * img_id)
   /* Determine path to starter files: */
   
   /* FIXME: On Windows, MacOSX, BeOS, etc. -- do it their way! */
+#ifdef WIN32
+  dirname = strdup(DATA_PREFIX "starters");
+#else
   dirname = strdup("/usr/local/share/tuxpaint/starters");
-
+#endif
 
   /* Load the core image: */
   
