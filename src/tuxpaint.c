@@ -2233,7 +2233,7 @@ static info_type * loadinfo(const char * const fname);
 #ifndef NOSOUND
 static Mix_Chunk * loadsound(const char * const fname);
 #endif
-static void do_wait(void);
+static void do_wait(int counter);
 static void load_current(void);
 static void save_current(void);
 static char * get_fname(const char * const name);
@@ -2363,9 +2363,29 @@ int main(int argc, char * argv[])
   printf("Start-up time: %.3f\n", (double)(time2-time1)/CLOCK_SPEED);
 
   // Let the user know we're (nearly) ready now
+
+  SDL_Rect dest;
+  SDL_Rect src;
+  dest.x = 0;
+  dest.y = WINDOW_HEIGHT - img_progress->h;
+  dest.h = img_progress->h;
+  dest.w = WINDOW_WIDTH;
+  SDL_FillRect(screen, &dest, SDL_MapRGB(screen->format, 255, 255, 255));
+  src.h = img_progress->h;
+  src.w = img_title->w;
+  src.x = 0;
+  src.y = img_title->h - img_progress->h;
+  dest.x = (WINDOW_WIDTH - img_title->w) / 2;
+  SDL_BlitSurface(img_title, &src, screen, &dest);
+  SDL_FreeSurface(img_title);
+
+  dest.x = 0;
+  dest.w = WINDOW_WIDTH;  // SDL mangles this! So, do repairs.
+  update_screen_rect(&dest);
+
   do_setcursor(cursor_arrow);
   playsound(0, SND_HARP, 1);
-  do_wait();
+  do_wait(50);  // about 5 seconds
 
 
   /* Set defaults! */
@@ -7558,7 +7578,6 @@ static void setup(int argc, char * argv[])
   SDL_BlitSurface(tmp_surf, NULL, screen, &dest);
   SDL_FreeSurface(tmp_surf);
   SDL_Flip(screen);
-  SDL_FreeSurface(img_title);
 
 
 #if defined(WIN32) && defined(LARGE_CURSOR_FULLSCREEN_BUG)
@@ -10827,16 +10846,14 @@ static SDL_Surface * loadaltimage(const char * const fname)
 }
 
 
-/* Wait for a keypress or mouse click */
-
-static void do_wait(void)
+// Wait for a keypress or mouse click
+// counter is in 1/10 second units
+static void do_wait(int counter)
 {
   SDL_Event event;
-  int done, counter;
+  int done;
 
   done = 0;
-
-  counter = 50;  /* About 5 seconds */
 
   do
     {
