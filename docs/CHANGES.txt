@@ -7,7 +7,7 @@ bill@newbreedsoftware.com
 http://www.newbreedsoftware.com/tuxpaint/
 
 
-2003.Sep.04 (0.9.13) [cvs]
+2003.Sep.05 (0.9.13) [cvs]
   * Fixed incorrect tag in HTML documentation.  (Bad results in IE)
 
   * Fixed typo regarding "savedir" in README.
@@ -20,6 +20,10 @@ http://www.newbreedsoftware.com/tuxpaint/
 
   * Reorganized usage display
     (Suggested by Ben Armstrong)
+
+  * If the top-left-most file is deleted in the Open screen, it now
+    scrolls up one line (so that the cursor isn't off the top of the
+    screen!)
 
 
 2003.Aug.18 (0.9.12)

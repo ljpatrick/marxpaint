@@ -7,12 +7,12 @@
   bill@newbreedsoftware.com
   http://www.newbreedsoftware.com/tuxpaint/
   
-  June 14, 2002 - September 4, 2003
+  June 14, 2002 - September 5, 2003
 */
 
 
 #define VER_VERSION     "0.9.13"
-#define VER_DATE        "2003.09.04"
+#define VER_DATE        "2003.09.05"
 
 
 /* #define DEBUG */
@@ -9497,6 +9497,15 @@ int do_open(int want_new_tool)
 		      
 		      if (which >= num_files)
 			which = num_files - 1;
+
+
+		      /* Scroll up if the cursor goes off top of screen! */
+
+		      if (which < cur && cur >= 4)
+			{
+			  cur = cur - 4;
+			  update_list = 1;
+			}
 		      
 		      
 		      /* No files to open now? */
