@@ -122,8 +122,12 @@ static scaleparams scaletable[] = {
 #include <stdlib.h>
 #include <string.h>
 #include <ctype.h>
-#include <math.h>
 #include <time.h>
+
+// math.h makes y1 an obscure function!
+#define y1 evil_y1
+#include <math.h>
+#undef y1
 
 #ifdef USE_HQ4X
 #include "hqxx.h"
@@ -2099,7 +2103,7 @@ static void draw_none(void);
 #ifndef NOSOUND
 static void loadarbitrary(SDL_Surface * surfs[], SDL_Surface * altsurfs[],
 		   char * descs[], info_type * infs[],
-		   Mix_Chunk * sounds[], int * count, int starting, int max,
+		   Mix_Chunk * mysounds[], int * count, int starting, int max,
 		   const char * const dir, int fatal, int maxw, int maxh);
 #else
 static void loadarbitrary(SDL_Surface * surfs[], SDL_Surface * altsurfs[],
@@ -5231,11 +5235,11 @@ static void do_brick(int x, int y, int w, int h)
   dest.h = h;
 
   // brick color: 127,76,73
-  double rand_r = rand()/(double)RAND_MAX;
-  double rand_g = rand()/(double)RAND_MAX;
-  double base_r = sRGB_to_linear_table[color_hexes[cur_color][0]]*1.5 + sRGB_to_linear_table[127]*5.0 + rand_r;
-  double base_g = sRGB_to_linear_table[color_hexes[cur_color][1]]*1.5 + sRGB_to_linear_table[76] *5.0 + rand_g;
-  double base_b = sRGB_to_linear_table[color_hexes[cur_color][2]]*1.5 + sRGB_to_linear_table[73] *5.0 + (rand_r+rand_g*2.0)/3.0;
+  double ran_r = rand()/(double)RAND_MAX;
+  double ran_g = rand()/(double)RAND_MAX;
+  double base_r = sRGB_to_linear_table[color_hexes[cur_color][0]]*1.5 + sRGB_to_linear_table[127]*5.0 + ran_r;
+  double base_g = sRGB_to_linear_table[color_hexes[cur_color][1]]*1.5 + sRGB_to_linear_table[76] *5.0 + ran_g;
+  double base_b = sRGB_to_linear_table[color_hexes[cur_color][2]]*1.5 + sRGB_to_linear_table[73] *5.0 + (ran_r+ran_g*2.0)/3.0;
 
   Uint8 r = linear_to_sRGB(base_r/7.5);
   Uint8 g = linear_to_sRGB(base_g/7.5);
@@ -6580,7 +6584,6 @@ static void setup(int argc, char * argv[])
   if (ok_to_use_lockfile)
   {
     char * lock_fname;
-    FILE * fi;
     time_t time_lock, time_now;
 
 
@@ -8731,7 +8734,7 @@ static void draw_none(void)
 #ifndef NOSOUND
 static void loadarbitrary(SDL_Surface * surfs[], SDL_Surface * altsurfs[],
 		   char * descs[], info_type * infs[],
-		   Mix_Chunk * sounds[],
+		   Mix_Chunk * mysounds[],
 		   int * count, int starting, int max,
 		   const char * const dir, int fatal, int maxw, int maxh)
 #else
@@ -8848,7 +8851,7 @@ static void loadarbitrary(SDL_Surface * surfs[], SDL_Surface * altsurfs[],
 	      debug("...is a directory");
 
 #ifndef NOSOUND
-	      loadarbitrary(surfs, altsurfs, descs, infs, sounds,
+	      loadarbitrary(surfs, altsurfs, descs, infs, mysounds,
 			    count, *count, max, fname,
 			    fatal, maxw, maxh);
 #else
@@ -8883,8 +8886,8 @@ static void loadarbitrary(SDL_Surface * surfs[], SDL_Surface * altsurfs[],
 #ifndef NOSOUND
 		  if (use_sound)
 		    {
-		      if (sounds != NULL)
-			sounds[*count] = loadsound(fname);
+		      if (mysounds != NULL)
+			mysounds[*count] = loadsound(fname);
 		    }
 #endif
 
