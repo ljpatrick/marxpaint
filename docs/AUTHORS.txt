@@ -80,7 +80,7 @@ June 17, 2002 - October 23, 2004
     Petri Jooste <rkwjpj@puk.ac.za>
 
   * Basque
-    Juan Irigoien <juanirigoien@irakasle.net>
+    Juan Irigoien <juanirigoien@yahoo.es>
 
   * Belarusian
     Eugene Zelenko <greendeath@mail.ru>

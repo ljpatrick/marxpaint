@@ -1,7 +1,7 @@
 # Tux Paint basque messages
 # Tux Painten mezuak, euskarara itzuliak
 # Copyright (C) 2002
-# Juan Irigoien <juanirigoien@irakasle.net>, 2003.
+# Juan Irigoien <juanirigoien@yahoo.es>, 2003.
 msgid ""
 msgstr ""
 "Project-Id-Version: TuxPaint \n"
