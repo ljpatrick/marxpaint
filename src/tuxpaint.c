@@ -498,22 +498,6 @@ static TTF_Font *BUGFIX_TTF_OpenFont206(const char * const file, int ptsize)
 )
 #endif
 
-typedef struct info_type {
-  double ratio;
-  unsigned tinter;
-  int colorable;
-  int tintable;
-  int mirrorable;
-  int flipable;
-} info_type;
-
-
-typedef struct state_type {
-  int mirrored;
-  int flipped;
-  unsigned min,size,max;
-} state_type;
-
 
 enum {
   SAVE_OVER_PROMPT,
@@ -2063,6 +2047,24 @@ static void groupfonts(void)
 
 static int num_brushes, num_brushes_max;
 static SDL_Surface **img_brushes;
+
+typedef struct info_type {
+  double ratio;
+  unsigned tinter : 3;
+  unsigned colorable : 1;
+  unsigned tintable : 1;
+  unsigned mirrorable : 1;
+  unsigned flipable : 1;
+} info_type;
+
+
+typedef struct state_type {
+  unsigned mirrored : 1;
+  unsigned flipped : 1;
+  unsigned min : 5;
+  unsigned size : 5;
+  unsigned max : 5;
+} state_type;
 
 #define MAX_STAMPS 512
 static int num_stamps;
