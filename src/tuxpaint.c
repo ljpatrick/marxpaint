@@ -14756,17 +14756,17 @@ static void loadfonts(const char * const dir, int fatal)
                   int numfaces = TTF_FontFaces(font);
                   if (numfaces != 1)
                     printf("Found %d faces in %s, %s, %s\n", numfaces, filename, family, style);
-                  if(charset_works(font, "jq") && charset_works(font, "JQ"))
+                  if(charset_works(font, gettext("jq")) && charset_works(font, gettext("JQ")))
                     {
                       user_font_styles[num_font_styles] = malloc(sizeof *user_font_styles[num_font_styles]);
                       user_font_styles[num_font_styles]->directory = strdup(dir);
                       user_font_styles[num_font_styles]->filename = strdup(filename);
                       user_font_styles[num_font_styles]->family = strdup(family);
                       user_font_styles[num_font_styles]->style = strdup(style);
-                      user_font_styles[num_font_styles]->score = charset_works(font, "oO");
-                      user_font_styles[num_font_styles]->score += charset_works(font, "@$~#{}<>^&*");
-                      user_font_styles[num_font_styles]->score += charset_works(font, "O0");
-                      user_font_styles[num_font_styles]->score += charset_works(font, "1Il|");
+                      user_font_styles[num_font_styles]->score  = charset_works(font, gettext("oO"));
+                      user_font_styles[num_font_styles]->score += charset_works(font, gettext("@$~#{}<>^&*"));
+                      user_font_styles[num_font_styles]->score += charset_works(font, gettext("O0"));
+                      user_font_styles[num_font_styles]->score += charset_works(font, gettext("1Il|"));
                       num_font_styles++;
 //                      printf("Accepted: %s, %s, %s\n", filename, family, style);
                     }
