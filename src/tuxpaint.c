@@ -21,7 +21,7 @@
   along with this program; if not, write to the Free Software
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   
-  June 14, 2002 - September 13, 2004
+  June 14, 2002 - September 14, 2004
 */
 
 
@@ -11621,6 +11621,8 @@ void loadfonts(char * dir, int fatal)
 
 /* Return string as uppercase if that option is set: */
 
+#ifdef OLD_UPPERCASE_CODE
+
 char * uppercase(char * str)
 {
   char * ustr;
@@ -11633,7 +11635,7 @@ char * uppercase(char * str)
       for (i = 0; i < strlen(ustr); i++)
 	ustr[i] = toupper(ustr[i]);
     }
-
+  
 #ifdef DEBUG
   printf(" ORIGINAL: %s\n"
          "UPPERCASE: %s\n\n", str, ustr);
@@ -11641,6 +11643,48 @@ char * uppercase(char * str)
 
   return (ustr);
 }
+
+#else
+
+char * uppercase(char * str)
+{
+  int i, sz;
+  wchar_t * dest;
+  char * ustr;
+
+  if (only_uppercase)
+  {
+    sz = sizeof(wchar_t) * (strlen(str) + 1);
+
+    dest = (wchar_t *) malloc(sz);
+    ustr = (char *) malloc(sizeof(char) * (strlen(str) + 1));
+
+    if (dest != NULL)
+    {
+      mbstowcs(dest, str, sz);
+
+      for (i = 0; i < strlen(str); i++)
+      {
+	dest[i] = towupper(dest[i]);
+      }
+
+      wcstombs(ustr, dest, sizeof(char) * (strlen(str) + 1));
+      
+      free(dest);
+    }
+  
+    printf(" ORIGINAL: %s\n"
+           "UPPERCASE: %s\n\n", str, ustr);
+  }
+  else
+  {
+    ustr = strdup(str);
+  }
+
+  return(ustr);
+}
+
+#endif
 
 
 /* Return string in right-to-left mode, if necessary: */
