@@ -21,9 +21,9 @@ http://www.newbreedsoftware.com/tuxpaint/
   * drawtext_callback prototype forces useless arg. void it
     Albert Cahalan <albert@users.sf.net>
 
-2004.November.22 (0.9.15)
-  * Enable more compiler warnings, and update code to prevent them.
+  * Enabled more compiler warnings, and updated code to prevent them.
     Albert Cahalan <albert@users.sf.net>
+    Bill Kendrick <bill@newbreedsoftware.com>
 
   * Updated Hebrew translation.
     Dovix <dovix2003@yahoo.com>

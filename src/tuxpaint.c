@@ -21,12 +21,12 @@
   along with this program; if not, write to the Free Software
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   
-  June 14, 2002 - November 21, 2004
+  June 14, 2002 - November 23, 2004
 */
 
 
 #define VER_VERSION     "0.9.15"
-#define VER_DATE        "2004-11-21"
+#define VER_DATE        "2004-11-23"
 
 
 #define VIDEO_BPP 15 // saves memory
@@ -636,7 +636,7 @@ static int brush_scroll, stamp_scroll, font_scroll;
 static int eraser_sound;
 
 static char texttool_str[256];
-static int texttool_len;
+static unsigned int texttool_len;
 
 static int tool_avail[NUM_TOOLS], tool_avail_bak[NUM_TOOLS];
 
@@ -663,7 +663,9 @@ static SDL_Event scrolltimer_event;
 static char * langstr;
 static char * savedir;
 
+#ifdef USE_HQ4X
 static int RGBtoYUV[65536];
+#endif
 
 typedef struct dirent2 {
   struct dirent f;
@@ -677,7 +679,7 @@ static void mainloop(void);
 static void brush_draw(int x1, int y1, int x2, int y2, int update);
 static void blit_brush(int x, int y);
 static void magic_draw(int x1, int y1, int x2, int y2);
-static void blit_magic(int x, int y, int x2, int y2);
+static void blit_magic(int x, int y);
 static void stamp_draw(int x, int y);
 static void rec_undo_buffer(void);
 static void update_canvas(int x1, int y1, int x2, int y2);
@@ -733,10 +735,10 @@ static Uint8 alpha(Uint8 c1, Uint8 c2, Uint8 a);
 static int compare_strings(char * * s1, char * * s2);
 static int compare_dirent2s(struct dirent2 * f1, struct dirent2 * f2);
 static void draw_tux_text(int which_tux, const char * const str,
-		   int force_locale_font, int want_right_to_left);
-static void wordwrap_text(TTF_Font * font, const char * const str, SDL_Color color,
+		          int want_right_to_left);
+static void wordwrap_text(const char * const str, SDL_Color color,
 		   int left, int top, int right,
-		   int force_locale_font, int want_right_to_left);
+		   int want_right_to_left);
 static char * loaddesc(const char * const fname);
 static info_type * loadinfo(const char * const fname);
 #ifndef NOSOUND
@@ -751,8 +753,8 @@ static void cleanup(void);
 static void free_cursor(SDL_Cursor ** cursor);
 static void free_surface(SDL_Surface **surface_array);
 static void free_surface_array(SDL_Surface *surface_array[], int count);
-static void update_shape(int cx, int ox1, int ox2, int cy, int oy1, int oy2,
-		  int fixed);
+//static void update_shape(int cx, int ox1, int ox2, int cy, int oy1, int oy2,
+//		  int fixed);
 static void do_shape(int cx, int cy, int ox, int oy, int rotn, int use_brush);
 static int rotation(int ctr_x, int ctr_y, int ox, int oy);
 static int do_save(void);
@@ -760,8 +762,12 @@ static int do_png_save(FILE * fi, const char * const fname, SDL_Surface * surf);
 static void get_new_file_id(void);
 static int do_quit(void);
 static int do_open(int want_new_tool);
+#ifdef SCAN_FILL
 static void scan_fill(int cnt, point_type * pts);
+#endif
+#ifdef SCANLINE_POLY_FILL
 static int clip_polygon(int n, fpoint_type * pin, fpoint_type * pout);
+#endif
 static void wait_for_sfx(void);
 static int current_language(void);
 static int stamp_colorable(int stamp);
@@ -784,10 +790,8 @@ static Uint32 scrolltimer_callback(Uint32 interval, void *param);
 static Uint32 drawtext_callback(Uint32 interval, void *param);
 static void control_drawtext_timer(Uint32 interval, const char * const text);
 static void parse_options(FILE * fi);
-static char * debug_gettext(const char * str);
 static void do_setcursor(SDL_Cursor * c);
 static const char * great_str(void);
-static int charsize(char c);
 static void draw_image_title(int t, int x);
 static int need_own_font(int l);
 static int need_right_to_left(int l);
@@ -805,6 +809,11 @@ static TTF_Font *try_alternate_font(int language);
 static void mirror_starter(void);
 static void flip_starter(void);
 
+#ifdef DEBUG
+static char * debug_gettext(const char * str);
+static int charsize(char c);
+#endif
+
 
 #define MAX_UTF8_CHAR_LENGTH 6
 
@@ -816,7 +825,7 @@ static void flip_starter(void);
 int main(int argc, char * argv[])
 {
   SDL_Surface * tmp_surf;
-  SDL_Color black = {0, 0, 0};
+  SDL_Color black = {0, 0, 0, 0};
   SDL_Rect dest;
   char tmp_str[128];
 
@@ -1164,7 +1173,7 @@ static void mainloop(void)
 		  else if (cur_tool == TOOL_ERASER)
 		    draw_erasers();
 		  
-		  draw_tux_text(TUX_GREAT, tool_tips[cur_tool], 0, 1);
+		  draw_tux_text(TUX_GREAT, tool_tips[cur_tool], 1);
 
 
 		  /* FIXME: Make delay configurable: */
@@ -1210,7 +1219,7 @@ static void mainloop(void)
 		  else
 		    {
 		      draw_tux_text(tool_tux[TUX_DEFAULT], TIP_NEW_ABORT,
-				    0, 1);
+				    1);
 		    }
 		  
 		  draw_toolbar();
@@ -1353,7 +1362,7 @@ static void mainloop(void)
 		      playsound(1, SND_CLICK, 0);
 		      
 		      draw_tux_text(tool_tux[cur_tool], tool_tips[cur_tool],
-				    0, 1);
+				    1);
 		      
 		      
 		      /* Draw items for this tool: */
@@ -1458,7 +1467,7 @@ static void mainloop(void)
 					 0, 0,
 					 96, (48 * (7 + TOOLOFFSET / 2)) + 40);
 			  
-			  draw_tux_text(TUX_GREAT, tool_tips[cur_tool], 0, 1);
+			  draw_tux_text(TUX_GREAT, tool_tips[cur_tool], 1);
 
 			  if (cur_tool == TOOL_BRUSH ||
 			      cur_tool == TOOL_LINES ||
@@ -1539,7 +1548,7 @@ static void mainloop(void)
 			  else
 			    {
 			      draw_tux_text(tool_tux[TUX_DEFAULT],
-					    TIP_NEW_ABORT, 0, 1);
+					    TIP_NEW_ABORT, 1);
 			    }
 			  
 			  cur_tool = old_tool;
@@ -1941,10 +1950,10 @@ static void mainloop(void)
 #endif
 
 			      draw_tux_text(TUX_GREAT,
-						txt_stamps[cur_stamp], 0, 1);
+						txt_stamps[cur_stamp], 1);
 			    }
 			  else
-			    draw_tux_text(TUX_GREAT, "", 0, 0);
+			    draw_tux_text(TUX_GREAT, "", 0);
 			  
 			  
 			  /* Enable or disable color selector: */
@@ -1965,8 +1974,7 @@ static void mainloop(void)
 			{
 			  cur_shape = cur_thing;
 			  
-			  draw_tux_text(TUX_GREAT, shape_tips[cur_shape],
-					0, 1);
+			  draw_tux_text(TUX_GREAT, shape_tips[cur_shape], 1);
 			  
 			  if (do_draw)
 			    draw_shapes();
@@ -1987,8 +1995,7 @@ static void mainloop(void)
 			  
 			  cur_magic = cur_thing;
 
-			  draw_tux_text(TUX_GREAT, magic_tips[cur_magic],
-					0, 1);
+			  draw_tux_text(TUX_GREAT, magic_tips[cur_magic], 1);
 			  
 			  if (do_draw)
 			    draw_magic();
@@ -2028,7 +2035,7 @@ static void mainloop(void)
 				     0, (48 * 7) + 40 + HEIGHTOFFSET,
 				     WINDOW_WIDTH, 48);
 		      render_brush();
-		      draw_tux_text(TUX_KISS, color_names[cur_color], 0, 1);
+		      draw_tux_text(TUX_KISS, color_names[cur_color], 1);
 		
 		      if (cur_tool == TOOL_TEXT)
 		        do_render_cur_text(0);
@@ -2089,7 +2096,7 @@ static void mainloop(void)
 #endif
 		      playsound(1, SND_STAMP, 1);
 
-		      draw_tux_text(TUX_GREAT, great_str(), 0, 1);
+		      draw_tux_text(TUX_GREAT, great_str(), 1);
 
 		      /* FIXME: Make delay configurable: */
 
@@ -2110,7 +2117,7 @@ static void mainloop(void)
 		      brush_draw(old_x, old_y, old_x, old_y, 1);
 		      
 		      playsound(1, SND_LINE_START, 1);
-		      draw_tux_text(TUX_BORED, TIP_LINE_START, 0, 1);
+		      draw_tux_text(TUX_BORED, TIP_LINE_START, 1);
 		    }
 		  else if (cur_tool == TOOL_SHAPES)
 		    {
@@ -2126,7 +2133,7 @@ static void mainloop(void)
 			  shape_tool_mode = SHAPE_TOOL_MODE_STRETCH;
 			  
 			  playsound(1, SND_LINE_START, 1);
-			  draw_tux_text(TUX_BORED, TIP_SHAPE_START, 0, 1);
+			  draw_tux_text(TUX_BORED, TIP_SHAPE_START, 1);
 			}
 		      else if (shape_tool_mode == SHAPE_TOOL_MODE_ROTATE)
 			{
@@ -2144,8 +2151,7 @@ static void mainloop(void)
 				   1);
 			  
 			  shape_tool_mode = SHAPE_TOOL_MODE_DONE;
-			  draw_tux_text(TUX_GREAT, tool_tips[TOOL_SHAPES],
-					0, 1);
+			  draw_tux_text(TUX_GREAT, tool_tips[TOOL_SHAPES], 1);
 			}
 		    }
 		  else if (cur_tool == TOOL_MAGIC)
@@ -2181,8 +2187,7 @@ static void mainloop(void)
 						   color_hexes[cur_color][2]),
 					getpixel(canvas, old_x, old_y));
 
-			  draw_tux_text(TUX_GREAT, magic_tips[MAGIC_FILL],
-					0, 1);
+			  draw_tux_text(TUX_GREAT, magic_tips[MAGIC_FILL], 1);
 			}
 		      
 		      if (cur_magic == MAGIC_FLIP ||
@@ -2376,11 +2381,10 @@ static void mainloop(void)
 
 		  if (txt_stamps[cur_stamp] != NULL)
 		    {
-		      draw_tux_text(TUX_GREAT,
-				txt_stamps[cur_stamp], 0, 1);
+		      draw_tux_text(TUX_GREAT, txt_stamps[cur_stamp], 1);
 		    }
 		  else
-		    draw_tux_text(TUX_GREAT, "", 0, 0);
+		    draw_tux_text(TUX_GREAT, "", 0);
 
 
 		  /* Enable or disable color selector: */
@@ -2401,8 +2405,7 @@ static void mainloop(void)
 		{
 		  cur_shape = cur_thing;
                        
-		  draw_tux_text(TUX_GREAT, shape_tips[cur_shape],
-				0, 1);
+		  draw_tux_text(TUX_GREAT, shape_tips[cur_shape], 1);
 
 		  if (do_draw)
 		    draw_shapes();
@@ -2423,8 +2426,7 @@ static void mainloop(void)
 
 		  cur_magic = cur_thing;
 
-		  draw_tux_text(TUX_GREAT, magic_tips[cur_magic],
-				0, 1);
+		  draw_tux_text(TUX_GREAT, magic_tips[cur_magic], 1);
 
 		  if (do_draw)
 		    draw_magic();
@@ -2448,16 +2450,17 @@ static void mainloop(void)
 		    {
 		      if (((unsigned char *) event.user.data1)[0] == '=')
 			{
-			  draw_tux_text(TUX_GREAT, (char *) event.user.data1 + 1,
-					0, 1);
+			  draw_tux_text(TUX_GREAT,
+					(char *) event.user.data1 + 1, 1);
 			}
 		      else
 			{
-			  draw_tux_text(TUX_GREAT, (char *) event.user.data1, 1, 0);
+			  draw_tux_text(TUX_GREAT,
+					(char *) event.user.data1, 0);
 			}
 		    }
 		  else
-		    draw_tux_text(TUX_GREAT, "", 0, 1);
+		    draw_tux_text(TUX_GREAT, "", 1);
 		}
 	    }
 	  else if (event.type == SDL_MOUSEBUTTONUP)
@@ -2481,7 +2484,7 @@ static void mainloop(void)
 				 event.button.x - 96, event.button.y, 1);
 		      
 		      playsound(1, SND_LINE_END, 1);
-		      draw_tux_text(TUX_GREAT, tool_tips[TOOL_LINES], 0, 1);
+		      draw_tux_text(TUX_GREAT, tool_tips[TOOL_LINES], 1);
 		    }
 		  else if (cur_tool == TOOL_SHAPES)
 		    {
@@ -2514,7 +2517,7 @@ static void mainloop(void)
 				       0);
 			      
 			      playsound(1, SND_LINE_START, 1);
-			      draw_tux_text(TUX_BORED, TIP_SHAPE_NEXT, 0, 1);
+			      draw_tux_text(TUX_BORED, TIP_SHAPE_NEXT, 1);
 			      
 			      
 			      /* FIXME: Do something less intensive! */
@@ -2535,7 +2538,7 @@ static void mainloop(void)
 			      
 			      shape_tool_mode = SHAPE_TOOL_MODE_DONE;
 			      draw_tux_text(TUX_GREAT,
-					    tool_tips[TOOL_SHAPES], 0, 1);
+					    tool_tips[TOOL_SHAPES], 1);
 			    }
 			}
 		    }
@@ -3349,12 +3352,12 @@ static void magic_draw(int x1, int y1, int x2, int y2)
           if (y1 > y2)
 	    {
 	      for (y = y1; y >= y2; y--)
-		blit_magic(x1, y, x1, y - 1);
+		blit_magic(x1, y);
 	    }
           else
 	    {
 	      for (y = y1; y <= y2; y++)
-		blit_magic(x1, y, x1 + dx, y + 1);
+		blit_magic(x1, y);
 	    }
 	
 	  x1 = x1 + dx;
@@ -3365,12 +3368,12 @@ static void magic_draw(int x1, int y1, int x2, int y2)
       if (y1 > y2)
 	{
 	  for (y = y1; y >= y2; y--)
-	    blit_magic(x1, y, x1, y - 1);
+	    blit_magic(x1, y);
 	}
       else
 	{
 	  for (y = y1; y <= y2; y++)
-	    blit_magic(x1, y, x1, y + 1);
+	    blit_magic(x1, y);
 	}
     }
 
@@ -3426,7 +3429,7 @@ static void magic_draw(int x1, int y1, int x2, int y2)
 
 /* Draw the current brush in the current color: */
 
-static void blit_magic(int x, int y, int x2, int y2)
+static void blit_magic(int x, int y)
 {
   int xx, yy, w, h;
   Uint32 colr;
@@ -7314,6 +7317,11 @@ static void putpixel(SDL_Surface * surface, int x, int y, Uint32 pixel)
 
 static void debug(const char * const str)
 {
+  void * kluge;
+
+  kluge = (void *) str;   /* So 'str' param _is_ used when DEBUG is off;
+		             thus avoiding compiler warnings */
+
 #ifdef DEBUG
   fprintf(stderr, "DEBUG: %s\n", str);
   fflush(stderr);
@@ -7886,7 +7894,7 @@ static int compare_dirent2s(struct dirent2 * f1, struct dirent2 * f2)
 /* Draw tux's text on the screen: */
 
 static void draw_tux_text(int which_tux, const char * const str,
-	 	   int force_locale_font, int want_right_to_left)
+	 	          int want_right_to_left)
 {
   SDL_Rect dest;
   SDL_Color black = {0, 0, 0, 0};
@@ -7918,10 +7926,10 @@ static void draw_tux_text(int which_tux, const char * const str,
   SDL_BlitSurface(img_tux[which_tux], NULL, screen, &dest);
 
 
-  wordwrap_text(font, str, black,
+  wordwrap_text(str, black,
 	        img_tux[which_tux] -> w + 5,
 	        (48 * 7) + 40 + 48 + HEIGHTOFFSET,
-	        WINDOW_WIDTH, force_locale_font,
+	        WINDOW_WIDTH,
 		want_right_to_left);
 
 
@@ -7934,11 +7942,12 @@ static void draw_tux_text(int which_tux, const char * const str,
 }
 
 
-static void wordwrap_text(TTF_Font * font, const char * const str, SDL_Color color,
+static void wordwrap_text(const char * const str, SDL_Color color,
 		   int left, int top, int right,
-		   int force_locale_font, int want_right_to_left)
+		   int want_right_to_left)
 {
-  int x, y, i, j;
+  int x, y, j;
+  unsigned int i;
   char substr[512];
   unsigned char * locale_str;
   char * tstr;
@@ -8716,7 +8725,7 @@ static void save_current(void)
 	      "The error that occurred was:\n"
 	      "%s\n\n", fname, strerror(errno));
 
-      draw_tux_text(TUX_OOPS, strerror(errno), 0, 0);
+      draw_tux_text(TUX_OOPS, strerror(errno), 0);
     }
 
   free(fname);
@@ -8733,7 +8742,7 @@ static void save_current(void)
 	      "The error that occurred was:\n"
 	      "%s\n\n", fname, strerror(errno));
 
-      draw_tux_text(TUX_OOPS, strerror(errno), 0, 0);
+      draw_tux_text(TUX_OOPS, strerror(errno), 0);
     }
   else
     {
@@ -8931,9 +8940,9 @@ static int do_prompt(const char * const text, const char * const btn_yes, const 
 
   /* Draw the question: */
 
-  wordwrap_text(font, text, black,
+  wordwrap_text(text, black,
 		166 + PROMPTOFFSETX, 100 + PROMPTOFFSETY, 475 + PROMPTOFFSETX,
-		0, 1);
+		1);
 
 
   /* Draw yes button: */
@@ -8945,8 +8954,8 @@ static int do_prompt(const char * const text, const char * const btn_yes, const 
 
   /* (Bound to UTF8 domain, so always ask for UTF8 rendering!) */
 
-  wordwrap_text(font, btn_yes, black, 166 + PROMPTOFFSETX + 48 + 4,
-		183 + PROMPTOFFSETY, 475 + PROMPTOFFSETX, 0, 1);
+  wordwrap_text(btn_yes, black, 166 + PROMPTOFFSETX + 48 + 4,
+		183 + PROMPTOFFSETY, 475 + PROMPTOFFSETX, 1);
 
 
   /* Draw no button: */
@@ -8957,15 +8966,15 @@ static int do_prompt(const char * const text, const char * const btn_yes, const 
       dest.y = 230 + PROMPTOFFSETY;
       SDL_BlitSurface(img_no, NULL, screen, &dest);
 
-      wordwrap_text(font, btn_no, black,
+      wordwrap_text(btn_no, black,
 		    166 + PROMPTOFFSETX + 48 + 4, 235 + PROMPTOFFSETY,
-		    475 + PROMPTOFFSETX, 0, 1);
+		    475 + PROMPTOFFSETX, 1);
     }
 
 
   /* Draw Tux, waiting... */
 
-  draw_tux_text(TUX_BORED, "", 0, 0);
+  draw_tux_text(TUX_BORED, "", 0);
 
   SDL_Flip(screen);
 
@@ -9292,6 +9301,7 @@ static void free_surface_array(SDL_Surface *surface_array[], int count)
 /* Update screen where shape is/was: */
 
 // FIXME: unused
+/*
 static void update_shape(int cx, int ox1, int ox2, int cy, int oy1, int oy2, int fix)
 {
   int rx, ry;
@@ -9316,6 +9326,7 @@ static void update_shape(int cx, int ox1, int ox2, int cy, int oy1, int oy2, int
 		 min((cx + rx) + 96, screen->w),
 		 min(cy + ry, screen->h));
 }
+*/
 
 
 /* Draw a shape! */
@@ -9645,7 +9656,7 @@ static int do_save(void)
       fprintf(stderr,
 	      "Cannot save the any pictures! SORRY!\n\n");
 
-      draw_tux_text(TUX_OOPS, SDL_GetError(), 0, 0);
+      draw_tux_text(TUX_OOPS, SDL_GetError(), 0);
 
       free(fname);
       return 0;
@@ -9672,7 +9683,7 @@ static int do_save(void)
       fprintf(stderr,
 	      "Cannot save any pictures! SORRY!\n\n");
 
-      draw_tux_text(TUX_OOPS, SDL_GetError(), 0, 0);
+      draw_tux_text(TUX_OOPS, SDL_GetError(), 0);
 
       free(fname);
       return 0;
@@ -9699,7 +9710,7 @@ static int do_save(void)
       fprintf(stderr,
 	      "Cannot save any pictures! SORRY!\n\n");
 
-      draw_tux_text(TUX_OOPS, SDL_GetError(), 0, 0);
+      draw_tux_text(TUX_OOPS, SDL_GetError(), 0);
 
       free(fname);
       return 0;
@@ -9724,7 +9735,7 @@ static int do_save(void)
 	      "The Simple DirectMedia Layer error that occurred was:\n"
 	      "%s\n\n", fname, SDL_GetError());
 
-      draw_tux_text(TUX_OOPS, SDL_GetError(), 0, 0);
+      draw_tux_text(TUX_OOPS, SDL_GetError(), 0);
 
       free(fname);
       return 0;
@@ -9734,7 +9745,7 @@ static int do_save(void)
       /* Ta-Da! */
 
       playsound(0, SND_SAVE, 1);
-      draw_tux_text(TUX_DEFAULT, tool_tips[TOOL_SAVE], 0, 1);
+      draw_tux_text(TUX_DEFAULT, tool_tips[TOOL_SAVE], 1);
     }
 #else
   fi = fopen(fname, "wb");
@@ -9747,7 +9758,7 @@ static int do_save(void)
 	      "%s\n\n",
 	      fname, strerror(errno));
 
-      draw_tux_text(TUX_OOPS, strerror(errno), 0, 0);
+      draw_tux_text(TUX_OOPS, strerror(errno), 0);
     }
   else
     {
@@ -9827,7 +9838,7 @@ static int do_save(void)
   /* All happy! */
 
   playsound(0, SND_SAVE, 1);
-  draw_tux_text(TUX_DEFAULT, tool_tips[TOOL_SAVE], 0, 1);
+  draw_tux_text(TUX_DEFAULT, tool_tips[TOOL_SAVE], 1);
   do_setcursor(cursor_arrow);
 
   return 1;
@@ -9853,7 +9864,7 @@ static int do_png_save(FILE * fi, const char * const fname, SDL_Surface * surf)
       png_destroy_write_struct(&png_ptr, (png_infopp) NULL);
 
       fprintf(stderr, "\nError: Couldn't save the image!\n%s\n\n", fname);
-      draw_tux_text(TUX_OOPS, strerror(errno), 0, 0);
+      draw_tux_text(TUX_OOPS, strerror(errno), 0);
     }
   else
     {
@@ -9864,7 +9875,7 @@ static int do_png_save(FILE * fi, const char * const fname, SDL_Surface * surf)
 	  png_destroy_write_struct(&png_ptr, (png_infopp) NULL);
 
 	  fprintf(stderr, "\nError: Couldn't save the image!\n%s\n\n", fname);
-	  draw_tux_text(TUX_OOPS, strerror(errno), 0, 0);
+	  draw_tux_text(TUX_OOPS, strerror(errno), 0);
 	}
       else
 	{
@@ -9874,7 +9885,7 @@ static int do_png_save(FILE * fi, const char * const fname, SDL_Surface * surf)
 	      png_destroy_write_struct(&png_ptr, (png_infopp) NULL);
 
 	      fprintf(stderr, "\nError: Couldn't save the image!\n%s\n\n", fname);
-	      draw_tux_text(TUX_OOPS, strerror(errno), 0, 0);
+	      draw_tux_text(TUX_OOPS, strerror(errno), 0);
   
 	      return 0;
 	    }
@@ -9904,9 +9915,9 @@ static int do_png_save(FILE * fi, const char * const fname, SDL_Surface * surf)
 	      }
 	      */
 
-	      text_ptr[count].key = "Software";
+	      text_ptr[count].key = (png_charp) "Software";
 	      text_ptr[count].text =
-	        "Tux Paint " VER_VERSION " (" VER_DATE ")";
+	        (png_charp) "Tux Paint " VER_VERSION " (" VER_DATE ")";
 	      text_ptr[count].compression = PNG_TEXT_COMPRESSION_NONE;
 	      count++;
 
@@ -10393,7 +10404,7 @@ static int do_open(int want_new_tool)
 
     draw_tux_text(TUX_BORED,
   		textdir(gettext_noop("Choose the picture you want, "
-  				     "then click “Open”.")), 0, 1);
+  				     "then click “Open”.")), 1);
 
     /* NOTE: cur is now set above; if file_id'th file is found, it's
        set to that file's index; otherwise, we default to '0' */
@@ -12188,7 +12199,7 @@ static char * uppercase(char * str)
 
 static char * uppercase(char * str)
 {
-  int i, sz;
+  unsigned int i, sz;
   wchar_t * dest;
   char * ustr;
 
