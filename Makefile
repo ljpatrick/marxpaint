@@ -6,7 +6,7 @@
 # bill@newbreedsoftware.com
 # http://www.newbreedsoftware.com/tuxpaint/
 
-# June 14, 2002 - May 30, 2004
+# June 14, 2002 - June 1, 2004
 
 
 # Where to install things:
@@ -131,6 +131,7 @@ beos:
 install:	install-bin install-data install-man install-doc \
 		install-icon install-gettext install-importscript \
 		install-default-config install-example-stamps \
+		install-example-starters \
 		install-gnome install-kde install-kde-icons
 	@echo
 	@echo "--------------------------------------------------------------"
@@ -282,6 +283,16 @@ install-example-stamps:
 	@install -d $(DATA_PREFIX)stamps
 	@cp -R stamps/* $(DATA_PREFIX)stamps
 	@chmod -R a+rX,g-w,o-w $(DATA_PREFIX)stamps
+
+
+# Install example starters
+
+install-example-starters:
+	@echo
+	@echo "...Installing example starter images..."
+	@install -d $(DATA_PREFIX)starters
+	@cp -R starters/* $(DATA_PREFIX)starters
+	@chmod -R a+rX,g-w,o-w $(DATA_PREFIX)starters
 
 
 # Install a launcher icon in the Gnome menu, under "Graphics"
