@@ -29,7 +29,8 @@ msgstr "Non"
 
 #: tuxpaint.c:417
 msgid "If you quit, you'll lose your picture! Save it?"
-msgstr "Si tu quittes, tu perdras ton image! Tu sauvegardes?"
+msgstr "Si tu quittes, ton image sera perdue! Tu sauvegardes?"
+
 
 #: tuxpaint.c:421
 msgid "Save your picture first?"
@@ -125,7 +126,7 @@ msgstr "Clique pour faire basculer l'image de haut en bas!"
 
 #: magic.h:43
 msgid "Click and move the mouse around to blur the picture"
-msgstr "Clique et déplaces la souris pour rendre l'image floue"
+msgstr "Clique et déplace la souris pour rendre l'image floue"
 
 #: magic.h:45
 msgid "Click and move the mouse around to make the picture blocky"
@@ -245,7 +246,7 @@ msgstr "Maintiens le bouton pour étirer."
 
 #: tools.h:149
 msgid "Move the mouse to rotate the shape. Click to draw it."
-msgstr "Bouge la souris pour faire tourner. Cliques pour la dessiner."
+msgstr "Bouge la souris pour faire tourner. Clique pour la dessiner."
 
 #: tools.h:150
 msgid "Great!"
@@ -261,7 +262,7 @@ msgid "Good job!"
 msgstr "Bon travail!"
 
 msgid "Choose the picture you want, then click 'Open'"
-msgstr "Choisis une image, et cliques ensuite sur 'Ouvrir'"
+msgstr "Choisis une image, et clique ensuite sur 'Ouvrir'"
 
 #: tools.h:151
 msgid "Ok then... Let's keep drawing this one!"
@@ -384,3 +385,24 @@ msgstr "Clique et bouge la souris pour rendre le dessin plus fin"
 
 msgid "Click in the picture to fill that area with color"
 msgstr "Clique sur l'image pour remplir cette surface avec une couleur"
+
+msgid "Tools"
+msgstr "Outils"
+
+msgid "Colors"
+msgstr "Couleurs"
+
+msgid "Brushes"
+msgstr "Pinceaux"
+
+msgid "Stamps"
+msgstr "Tampons"
+
+msgid "Letters"
+msgstr "Lettres"
+
+msgid "Silver"
+msgstr "Argent"
+
+msgid "Lime"
+msgstr "Citron vert"

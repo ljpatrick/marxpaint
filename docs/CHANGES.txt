@@ -7,13 +7,16 @@ bill@newbreedsoftware.com
 http://www.newbreedsoftware.com/tuxpaint/
 
 
-2003.Jun.22 (0.9.12) [cvs]
+2003.Jun.29 (0.9.12) [cvs]
   * Fixed Mac OS X #include typo.
     Darrell Walisser <walisser@mac.com>
 
   * Fixed bug where non-translated stamp description text would get drawn
     right-to-left after the kudos text (e.g., "Great!") goes away.
     Thanks to Itai <Itais@newmail.net>
+  
+  * French translation update.
+    Jacques Chion <Jacques.Chion@wanadoo.fr>
 
 
 2003.Jun.17 (0.9.11)
