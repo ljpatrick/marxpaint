@@ -794,7 +794,9 @@ static void disable_avail_tools(void);
 static void enable_avail_tools(void);
 static void reset_avail_tools(void);
 static void update_screen(int x1, int y1, int x2, int y2);
-static Uint8 alpha(Uint8 c1, Uint8 c2, Uint8 a);
+#ifndef LOW_QUALITY_COLOR_SELECTOR
+static Uint8 colorsel_alpha(Uint8 c1, Uint8 c2, Uint8 a);
+#endif
 static int compare_strings(char * * s1, char * * s2);
 static int compare_dirent2s(struct dirent2 * f1, struct dirent2 * f2);
 static void draw_tux_text(int which_tux, const char * const str,
@@ -6578,9 +6580,9 @@ static void setup(int argc, char * argv[])
 	    {
 	      putpixel(img_color_btns[i], x, y,
 		       SDL_MapRGB(img_color_btns[i]->format,
-				  alpha(color_hexes[i][0], 255, a),
-				  alpha(color_hexes[i][1], 255, a),
-				  alpha(color_hexes[i][2], 255, a)));
+				  colorsel_alpha(color_hexes[i][0], 255, a),
+				  colorsel_alpha(color_hexes[i][1], 255, a),
+				  colorsel_alpha(color_hexes[i][2], 255, a)));
 	    }
 	}
     }
@@ -8709,9 +8711,10 @@ static void update_screen(int x1, int y1, int x2, int y2)
 }
 
 
+#ifndef LOW_QUALITY_COLOR_SELECTOR
 /* Build a color based on two colors and an alpha... */
-
-static Uint8 alpha(Uint8 c1, Uint8 c2, Uint8 a)
+/* WARNING: this is not a true "alpha" color computation */
+static Uint8 colorsel_alpha(Uint8 c1, Uint8 c2, Uint8 a)
 {
   Uint16 c, nc1, nc2, na;
 
@@ -8726,7 +8729,7 @@ static Uint8 alpha(Uint8 c1, Uint8 c2, Uint8 a)
 
   return (Uint8) c;
 }
-
+#endif
 
 /* For qsort() call in loadarbitrary()... */
 
