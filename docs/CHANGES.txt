@@ -7,7 +7,12 @@ bill@newbreedsoftware.com
 http://www.newbreedsoftware.com/tuxpaint/
 
 
-2003.Jun.17 (0.9.11) [cvs]
+2003.Jun.20 (0.9.12) [cvs]
+  * Fixed Mac OS X #include typo.
+    Darrell Walisser <walisser@mac.com>
+
+
+2003.Jun.17 (0.9.11)
   * Windows bugfixes.
     John Popplewell <john@johnnypops.demon.co.uk>
 

@@ -7,12 +7,12 @@
   bill@newbreedsoftware.com
   http://www.newbreedsoftware.com/tuxpaint/
   
-  June 14, 2002 - June 17, 2003
+  June 14, 2002 - June 20, 2003
 */
 
 
-#define VER_VERSION     "0.9.11"
-#define VER_DATE        "2003.06.17"
+#define VER_VERSION     "0.9.12"
+#define VER_DATE        "2003.06.20"
 
 
 /* #define DEBUG */
@@ -88,7 +88,7 @@
 #include "BeOS_print.h"
 #endif
 #ifdef __APPLE__
-#include "maxosx_print.h"
+#include "macosx_print.h"
 #endif
 #else
 #include "win32_dirent.h"
