@@ -1,5 +1,5 @@
                                    Tux Paint
-                                     0.9.13
+                                 version 0.9.13
 
   A simple drawing program for children
 
@@ -9,7 +9,7 @@
                            bill@newbreedsoftware.com
                    http://www.newbreedsoftware.com/tuxpaint/
 
-                        June 14, 2002 - August 28, 2003
+                       June 14, 2002 - September 3, 2003
 
      ----------------------------------------------------------------------
 
@@ -283,7 +283,7 @@ Options
                    reduce memory usage while it's running. Of course, no
                    stamps will be available at all.
 
-           savedir DIRECTORY
+           savedir=DIRECTORY
 
                    Use this option to change where Tux Paint saves pictures.
                    By default, this is "~/.tuxpaint/saved/" under Linux and
@@ -296,6 +296,8 @@ Options
 
                    Note: When specifying a Windows drive (e.g., "H:\"), you
                    must also specify a subdirectory.
+
+                   Example: savedir=Z:\tuxpaint\
 
            saveover=yes
                    This disables the "Save over the old version...?" prompt
