@@ -2754,34 +2754,30 @@ void blit_brush(int x, int y)
 
 void stamp_draw(int x, int y)
 {
-  SDL_Rect dest;
+  SDL_Rect src, dest;
   SDL_Surface * tmp_surf;
   Uint32 amask;
   Uint8 r, g, b, a;
-  int xx, yy;
+  int xx, yy, dont_free_tmp_surf, base_x, base_y;
   float col_hue, col_sat, col_val,
     stamp_hue, stamp_sat, stamp_val;
   
 
-  dest.x = x - (img_stamps[cur_stamp]->w / 2);
-  dest.y = y - (img_stamps[cur_stamp]->h / 2);
+  base_x = x - (img_stamps[cur_stamp]->w / 2);
+  base_y = y - (img_stamps[cur_stamp]->h / 2);
 
-  if (stamp_colorable(cur_stamp))
+
+  /* Create a temp surface to play with: */
+  
+  if (stamp_colorable(cur_stamp) || stamp_tintable(cur_stamp))
   {
-    /* Render the stamp in the chosen color: */
-
-    /* FIXME: It sucks to render this EVERY TIME.  Why not just when
-       they pick the color, or pick the stamp, like with brushes?
-       (Why? Because I'm LAZY! :^) ) */
-
-	  
     amask = ~(img_stamps[cur_stamp]->format->Rmask |
 	      img_stamps[cur_stamp]->format->Gmask |
 	      img_stamps[cur_stamp]->format->Bmask);
 
     tmp_surf =
       SDL_CreateRGBSurface(SDL_SWSURFACE,
-			   img_stamps[cur_stamp]->w,
+	  		   img_stamps[cur_stamp]->w,
 			   img_stamps[cur_stamp]->h,
 			   img_stamps[cur_stamp]->format->BitsPerPixel,
 			   img_stamps[cur_stamp]->format->Rmask,
@@ -2799,7 +2795,28 @@ void stamp_draw(int x, int y)
       exit(1);
     }
 
+    dont_free_tmp_surf = 0;
+  }
+  else
+  {
+    /* Not altering color; no need to create temp surf if we don't use it! */
 
+    tmp_surf = NULL;
+    dont_free_tmp_surf = 1;
+  }
+
+
+  /* Alter the stamp's color, if needed: */
+
+  if (stamp_colorable(cur_stamp))
+  {
+    /* Render the stamp in the chosen color: */
+
+    /* FIXME: It sucks to render this EVERY TIME.  Why not just when
+       they pick the color, or pick the stamp, like with brushes?
+       (Why? Because I'm LAZY! :^) ) */
+
+	  
     /* Render the stamp: */
 
     SDL_LockSurface(img_stamps[cur_stamp]);
@@ -2824,12 +2841,6 @@ void stamp_draw(int x, int y)
 
     SDL_UnlockSurface(tmp_surf);
     SDL_UnlockSurface(img_stamps[cur_stamp]);
-    
-    
-    /* And blit it! */
-    
-    SDL_BlitSurface(tmp_surf, NULL, canvas, &dest);
-    SDL_FreeSurface(tmp_surf);
   }
   else if (stamp_tintable(cur_stamp))
   {
@@ -2840,31 +2851,6 @@ void stamp_draw(int x, int y)
        (Why? Because I'm LAZY! :^) ) */
 
 	  
-    amask = ~(img_stamps[cur_stamp]->format->Rmask |
-	      img_stamps[cur_stamp]->format->Gmask |
-	      img_stamps[cur_stamp]->format->Bmask);
-
-    tmp_surf =
-      SDL_CreateRGBSurface(SDL_SWSURFACE,
-			   img_stamps[cur_stamp]->w,
-			   img_stamps[cur_stamp]->h,
-			   img_stamps[cur_stamp]->format->BitsPerPixel,
-			   img_stamps[cur_stamp]->format->Rmask,
-			   img_stamps[cur_stamp]->format->Gmask,
-			   img_stamps[cur_stamp]->format->Bmask,
-			   amask);
-
-    if (tmp_surf == NULL)
-    {
-      fprintf(stderr, "\nError: Can't render the colored stamp!\n"
-		      "The Simple DirectMedia Layer error that occurred was:\n"
-		      "%s\n\n", SDL_GetError());
-
-      cleanup();
-      exit(1);
-    }
-
-    
     rgbtohsv(color_hexes[cur_color][0],
 	     color_hexes[cur_color][1],
 	     color_hexes[cur_color][2],
@@ -2896,25 +2882,96 @@ void stamp_draw(int x, int y)
 
     SDL_UnlockSurface(tmp_surf);
     SDL_UnlockSurface(img_stamps[cur_stamp]);
-    
-    
-    /* And blit it! */
-    
-    SDL_BlitSurface(tmp_surf, NULL, canvas, &dest);
-    SDL_FreeSurface(tmp_surf);
   }
   else
   {
-    /* Not a colorized stamp.  Just draw it! */
+    /* No color change, just use it! */
+
+    tmp_surf = img_stamps[cur_stamp];
+  }
+   
+
+  /* And blit it! */
+  
+  if (state_stamps[cur_stamp]->flipped)
+  {
+    /* Flipped! */
 	  
-    SDL_BlitSurface(img_stamps[cur_stamp], NULL,
-		    canvas, &dest);
+    if (state_stamps[cur_stamp]->mirrored)
+    {
+      /* Mirrored, too! */
+
+      for (yy = 0; yy < tmp_surf->h; yy++)
+      {
+	for (xx = 0; xx < tmp_surf->w; xx++)
+	{
+	  src.x = tmp_surf->w - 1 - xx;
+	  src.y = tmp_surf->h - 1 - yy;
+	  src.w = 1;
+	  src.h = 1;
+
+	  dest.x = base_x + xx;
+	  dest.y = base_y + yy;
+
+	  SDL_BlitSurface(tmp_surf, &src, canvas, &dest);
+	}
+      }
+    }
+    else
+    {
+      /* (Only flipped) */
+      
+      for (yy = 0; yy < tmp_surf->h; yy++)
+      {
+	src.x = 0;
+	src.y = tmp_surf->h - 1 - yy;
+	src.w = tmp_surf->w;
+	src.h = 1;
+
+	dest.x = base_x;
+	dest.y = base_y + yy;
+
+	SDL_BlitSurface(tmp_surf, &src, canvas, &dest);
+      }
+    }
+  }
+  else
+  {
+    if (state_stamps[cur_stamp]->mirrored)
+    {
+      /* Mirrored! */
+
+      for (xx = 0; xx < tmp_surf->w; xx++)
+      {
+	src.x = tmp_surf->w - 1 - xx;
+	src.y = 0;
+	src.w = 1;
+	src.h = tmp_surf->h;
+
+	dest.x = base_x + xx;
+	dest.y = base_y;
+
+	SDL_BlitSurface(tmp_surf, &src, canvas, &dest);
+      }
+    }
+    else
+    {
+      /* Not altered at all */
+
+      dest.x = base_x;
+      dest.y = base_y;
+      
+      SDL_BlitSurface(tmp_surf, NULL, canvas, &dest);
+    }
   }
 
-  update_canvas(x - (img_stamps[cur_stamp]->w / 2),
-		y - (img_stamps[cur_stamp]->h / 2),
-		x + (img_stamps[cur_stamp]->w / 2),
-		y + (img_stamps[cur_stamp]->h / 2));
+  update_canvas(x - (tmp_surf->w / 2),
+		y - (tmp_surf->h / 2),
+		x + (tmp_surf->w / 2),
+		y + (tmp_surf->h / 2));
+
+  if (!dont_free_tmp_surf)
+    SDL_FreeSurface(tmp_surf);
 }
 
 
@@ -3477,8 +3534,6 @@ void show_version(void)
 }
 
 
-/* FIXME: Re-order the usage in a sane way! */
-
 /* Show usage display: */
 
 void show_usage(FILE * f, char * prg)
@@ -3502,6 +3557,8 @@ void show_usage(FILE * f, char * prg)
     "  %s [--mouse | --keyboard]        [--dontgrab | --grab]\n"
     "  %s [--noshortcuts | --shortcuts] [--wheelmouse | --nowheelmouse]\n"
     "  %s [--outlines | --nooutlines]   [--stamps | --nostamps]\n"
+    "  %s [--nostampcontrols | --stampcontrols]\n"
+    "  %s [--mirrorstamps | --dontmirrorstamps]\n"
     "  %s [--wheelmouse | --nowheelmouse]\n"
     "  %s [--saveoverask | --saveover | --saveovernew]\n"
     "  %s [--savedir DIRECTORY]\n"
@@ -3517,7 +3574,8 @@ void show_usage(FILE * f, char * prg)
     blank, blank, blank,
     blank, blank, blank,
     blank, blank, blank,
-    blank, blank, blank);
+    blank, blank, blank,
+    blank, blank);
 
   free(blank);
 }
@@ -10536,7 +10594,7 @@ int current_language(void)
 
 void stamp_xor(int x, int y)
 {
-  int xx, yy;
+  int xx, yy, rx, ry;
   Uint8 r, g, b, a, olda, abovea;
 
   SDL_LockSurface(img_stamps[cur_stamp]);
@@ -10546,12 +10604,28 @@ void stamp_xor(int x, int y)
   {
     olda = 0;
 
+
+    /* Compensate for flip! */
+
+    if (state_stamps[cur_stamp]->flipped)
+      ry = img_stamps[cur_stamp]->h - 1 - yy;
+    else
+      ry = yy;
+
+
     for (xx = (x % 2); xx < img_stamps[cur_stamp]->w; xx = xx + 2)
     {
-      SDL_GetRGBA(getpixel(img_stamps[cur_stamp], xx, yy),
+      /* Compensate for mirror! */
+
+      if (state_stamps[cur_stamp]->mirrored)
+        rx = img_stamps[cur_stamp]->w - 1 - xx;
+      else
+        rx = xx;
+
+      SDL_GetRGBA(getpixel(img_stamps[cur_stamp], rx, ry),
 		  img_stamps[cur_stamp]->format, &r, &g, &b, &a);
       
-      SDL_GetRGBA(getpixel(img_stamps[cur_stamp], xx, yy - 1),
+      SDL_GetRGBA(getpixel(img_stamps[cur_stamp], rx, ry - 1),
 		  img_stamps[cur_stamp]->format, &r, &g, &b, &abovea);
 
       if ((a < 128 && olda >= 128) ||
