@@ -7,12 +7,12 @@
   bill@newbreedsoftware.com
   http://www.newbreedsoftware.com/tuxpaint/
   
-  June 14, 2002 - June 20, 2003
+  June 14, 2002 - June 22, 2003
 */
 
 
 #define VER_VERSION     "0.9.12"
-#define VER_DATE        "2003.06.20"
+#define VER_DATE        "2003.06.22"
 
 
 /* #define DEBUG */
@@ -2053,7 +2053,7 @@ void mainloop(void)
 		}
 		else
 		{
-		  draw_tux_text(TUX_GREAT, event.user.data1, 0, 1, 1);
+		  draw_tux_text(TUX_GREAT, event.user.data1, 0, 1, 0);
 		}
 	      }
 	      else
