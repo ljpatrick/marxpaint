@@ -66,9 +66,12 @@
 #include <ctype.h>
 #include <math.h>
 #include <time.h>
+
+#ifdef USE_HQ4X
 #include "hqxx.h"
 #include "hq3x.h"
 #include "hq4x.h"
+#endif
 
 #include <locale.h>
 #include <iconv.h>
@@ -5041,10 +5044,12 @@ void setup(int argc, char * argv[])
 
   SDL_Flip(screen);
   
-  
+ 
+#ifdef USE_HQ4X
   /* Init high quality scaling stuff: */
   
   InitLUTs(RGBtoYUV);
+#endif
 
 
   /* Load other images: */

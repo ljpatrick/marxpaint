@@ -6,7 +6,7 @@
 # bill@newbreedsoftware.com
 # http://www.newbreedsoftware.com/tuxpaint/
 
-# June 14, 2002 - August 19, 2004
+# June 14, 2002 - September 14, 2004
 
 
 # Where to install things:
@@ -63,6 +63,11 @@ LOCALE_PREFIX=$(PREFIX)/share/locale/
 # Built with sound by default  (override with "make nosound")
 
 NOSOUNDFLAG=__SOUND
+
+
+# Don't build with hqxx code yet...
+# HQXX_O = obj/hqxx.o obj/hq4x.o
+# HQXX_H = src/hqxx.h src/hq4x.h
 
 
 # Libraries, paths, and flags:
@@ -678,13 +683,14 @@ install-man:
 	@chmod a+rx,g-w,o-w $(MAN_PREFIX)/man1/tuxpaint-import.1.gz
 
 
+
 # Build the program!
 
-tuxpaint:	obj/tuxpaint.o obj/hqxx.o obj/hq4x.o $(ARCH_LIBS)
+tuxpaint:	obj/tuxpaint.o $(HQXX_O) $(ARCH_LIBS)
 	@echo
 	@echo "...Linking Tux Paint..."
 	@$(CC) $(CFLAGS) $(SDL_CFLAGS) $(DEFS) \
-		-o tuxpaint obj/tuxpaint.o obj/hqxx.o obj/hq4x.o \
+		-o tuxpaint obj/tuxpaint.o $(HQXX_O) \
 		$(ARCH_LIBS) $(SDL_LIBS) \
 		-lm $(ARCH_LINKS)
 	@$(RSRC_CMD)
@@ -696,7 +702,7 @@ tuxpaint:	obj/tuxpaint.o obj/hqxx.o obj/hq4x.o $(ARCH_LIBS)
 obj/tuxpaint.o:	src/tuxpaint.c obj \
 		src/tools.h src/titles.h src/colors.h src/shapes.h \
 		src/magic.h src/sounds.h src/tip_tux.h src/great.h \
-		src/hqxx.h src/hq4x.h \
+		$(HQXX_H) \
 		src/mouse/arrow.xbm src/mouse/arrow-mask.xbm \
 		src/mouse/hand.xbm src/mouse/hand-mask.xbm \
 		src/mouse/insertion.xbm src/mouse/insertion-mask.xbm \
