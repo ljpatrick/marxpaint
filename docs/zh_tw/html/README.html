@@ -292,306 +292,293 @@ New Breed Software</p>
 	<dt><code><b>uppercase=yes</b></code></dt>
 	<dd>
 	  所有的英文字母都會變成大寫(例如："Brush" 會變成 "BRUSH")。
-	  Useful for children who can read, but who have only
-	  learned uppercase letters so far.
+	  (這只適用在英文的訊息上。)
 	</dd>
 
 	<dt><code><b>grab=yes</b></code></dt>
 	<dd>
-	  <p>Tux&nbsp;Paint will attempt to 'grab' the mouse and keyboard, so
-	  that the mouse is confined to Tux&nbsp;Paint's window, and nearly all
-          keyboard input is passed directly to it.</p>
+	  <p>Tux&nbsp;Paint 會試著佔住滑鼠及鍵盤，所以滑鼠游標會被鎖在
+	  Tux&nbsp;Paint 的視窗中，大部份的鍵盤輸入也都直接導向他。</p>
 
-          <p>This is useful to disable operating system actions that could get
-          the user out of Tux&nbsp;Paint <b>[Alt]-[Tab]</b> window cycling,
-          <b>[Ctrl]-[Escape]</b>, etc.  This is especially useful in
-          fullscreen mode.</p>
+          <p>這可以用在使 <b>[Alt]-[Tab]</b> 視窗切換的系統動作失效，
+          和使 <b>[Ctrl]-[Escape]</b> 失效等。特別是在全螢幕模式時非常有幫助。</p>
 	</dd>
 
 	<dt><code><b>noshortcuts=yes</b></code></dt>
 	<dd>
-	  <p>This disable keyboard shortcuts (e.g., <b>[Ctrl]-[S]</b> for save,
-	  <b>[Ctrl]-[N]</b> for a new image, etc.)</p>
+	  <p>這會使鍵盤的快捷鍵失效 (例如：<b>[Ctrl]-[S]</b> 存檔，
+	  <b>[Ctrl]-[N]</b> 開新圖，等等。)。</p>
 
-	  <p>This is useful to prevent unwanted commands from being activated
-	  by children who aren't experienced with keyboards.</p>
+	  <p>這可以減少不是那麼熟悉鍵盤操作的小朋友，輸入了不是預期中的命令。</p>
 	</dd>
 	
 	<dt><code><b>nowheelmouse=yes</b></code></dt>
 	<dd>
-	  This disables support for the wheel on mice that have it.
-	  (Normally, the wheel will scroll the selector menu on the right.)
+	  這可以取消滑鼠上滾輪的功能。
+	  (正常來講滾輪可以捲動右邊的選擇目錄。)
 	</dd>
 
 	<dt><code><b>nofancycursors=yes</b></code></dt>
 	<dd>
-	  <p>This disables the fancy mouse pointer shapes in Tux&nbsp;Paint,
-	  and uses your environment's normal mouse pointer.</p>
+	  <p>這會使 Tux&nbsp;Paint 花俏的滑鼠游標失效，而使用系統正常的游標。</p>
 
-	  <p>In some enviornments, the fancy cursors cause problems.
-	  Use this option to avoid them.</p>
+	  <p>在某些環境中花俏的游標會有些問題，可以用這個選項來避開這個問題。</p>
 	</dd>
 	
 	<dt><code><b>nooutlines=yes</b></code></dt>
 	<dd>
-	  <p>In this mode, much simpler outlines and 'rubber-band' lines are
-	  displayed when using the <b>Lines</b>, <b>Shapes</b>,
-	  <b>Stamps</b> and <b>Eraser</b> tools.</p>
+	  <p>這個模式可以簡化<b>劃線</b>，<b>形狀</b>，<b>圖章</b>和<b>橡皮擦</b>
+	  工具的外框線及彈性線。</p>
 
-	  <p>This can help when Tux&nbsp;Paint is run on very slow computers,
-	  or displayed on a remote X-Window display.</p>
+	  <p>這對於在很慢的電腦上執行 Tux&nbsp;Paint 或是在遠端的 X-Window
+	  顯示上很有幫助。</p>
 	</dd>
 
 	<dt><code><b>nostamps=yes</b></code></dt>
 	<dd>
-	  <p>This option tells Tux&nbsp;Paint to not load any rubber stamp
-	  images, which in turn ends up disabling the <b>Stamps</b> tool.</p>
+	  <p>這個選項是告訴 Tux&nbsp;Paint 不要載入任何的圖章圖樣，
+	  用來關閉<b>橡皮圖章</b>工具用的。</p>
 
-	  <p>This can speed up Tux&nbsp;Paint when it first loads up,
-	  and reduce memory usage while it's running.  Of course, no stamps
-	  will be available at all.</p>
+	  <p>這可以加快 Tux&nbsp;Paint 第一次載入時的速度，也可以減少記憶體的使用量，
+	  當然這也會造成沒有圖章可以使用的情況。</p>
 	</dd>
 
         <dt><code><b>nostampcontrols=yes</b></code></dt>
 	<dd>
-	  Some images in the <b>Stamps</b> tool can be mirrored, flipped,
-	  and/or have their size changed.  This option disables the controls,
-	  and only provides the basic stamps.
+	  有些圖章圖樣可以上下左右翻轉，或可改變大小。這個選項會關閉這些控制，
+	  而且只會提供基本的圖章。
 	</dd>
 
         <dt><code><b>mirrorstamps=yes</b></code></dt>
 	<dd>
-	  <p>For stamps that can be mirrored, this option sets them to their
-	  mirrored shape by default.</p>
+	  <p>有些圖章是可以左右相反的，這個選項會讓這些圖章預設就是相反的。</p>
 
-	  <p>This can be useful for people who prefer things right-to-left,
-	  rather than left-to-right.</p>
+	  <p>這可以幫助喜歡「由右至左」更甚於「由左至右」的人。</p>
 	</dd>
 
 	<dt><code><b>keyboard=yes</b></code></dt>
 	<dd>
-	  <p>This allows the keyboard arrow keys to be used
-	  to control the mouse pointer.  (e.g., for mouseless environments.)</p>
+	  <p>這會允許使用鍵盤的方向鍵來控制滑鼠的游標。
+	  (例如：用在沒有滑鼠的環境中。)</p>
 	  
-	  <p>The <b>[Arrow]</b> keys move the mouse pointer.
-	  <b>[Space]</b> acts as the mouse button.</p>
+	  <p>方向鍵可以移動滑鼠的游標，空格鍵就像是滑鼠的按鍵。</p>
 	</dd>
 	
 	<dt><code><b>savedir=<i>DIRECTORY</i></b></code></dt>
 	<dd>
-	  <p>Use this option to change where Tux&nbsp;Paint saves pictures.
-	  By default, this is "<code>~/.tuxpaint/saved/</code>" under Linux
-	  and Unix, and "<code>userdata\</code>" under Windows.</p>
+	  <p>這可以改變 Tux&nbsp;Paint 儲存圖形時的預設路徑。在 Linux 和 Unix
+	  上的預設路徑是 "<code>~/.tuxpaint/saved/</code>" ，在 Windows 上則是
+	  "<code>userdata\</code>"。</p>
 
-	  <p>This can be useful in a Windows lab, where Tux&nbsp;Paint is
-	  installed on a server, and children run it from workstations.
-	  You can set <code>savedir</code> to be a folder in their home
-	  directory.  (e.g., "<code>H:\tuxpaint\</code>")</p>
+	  <p>這很適合用在當 Tux&nbsp;Paint 是安裝在主機上，而小朋友是在工作站上來使用的
+	  Windows 的教室裡。您可以設定 <code>savedir</code> 到他們的家目錄中。
+	  (例如："<code>H:\tuxpaint\</code>")</p>
 
-	  <p><b>Note:</b> When specifying a Windows drive (e.g.,
-	  "<code>H:\</code>"), you must also specify a subdirectory.</p>
+	  <p><b>註：</b> 當指定一個 Windows 的磁碟裝置時 (如："<code>H:\</code>")，
+	  您也必須指定一個子目錄。</p>
 
-	  <p><b>Example:</b> <code>savedir=Z:\tuxpaint\</code></p>
+	  <p><b>例如：</b> <code>savedir=Z:\tuxpaint\</code></p>
 	</dd>
 	
 	<dt><code><b>saveover=yes</b></code></dt>
 	<dd>
-	  This disables the "<i>Save over the old version...?</i>" prompt when
-	  saving an existing file.  With this option, the older version
-	  will always be replaced by the new version, automatically.
+	  這會關閉在儲存時出現「 <i>儲存這張圖畫覆蓋掉舊的版本？</i> 」的提示。
+	  使用這個選項，舊的版本會自動的被新的版本所覆蓋。
 	</dd>
 	
 	<dt><code><b>saveover=new</b></code></dt>
 	<dd>
-	  This also disables the "<i>Save over the old version...?</i>" prompt
-	  when saving an existing file.  This option, however, will always
-	  save a new file, rather than overwrite the older version.
+	  這也會關閉在儲存時出現「 <i>儲存這張圖畫覆蓋掉舊的版本？</i> 」的提示。
+	  使用這個選項，永遠會另存一張新圖，而不會覆蓋掉舊的版本。
 	</dd>
 	
 	<dt><code><b>saveover=ask</b></code></dt>
 	<dd>
-	  <p><i>(This option is redundant, since this is the default.)</i></p>
-
-	  When saving an existing drawing, you will be first asked whether
-	  to save over the older version or not.
+	  <p><i>(這個選項已經是多餘的了，因為這已經是預設值了。)</i></p>
+	  當要儲存一張已經存過檔的圖畫時，您會先被訊問是否要覆蓋掉舊的版本。
 	</dd>
 	
 	<dt><code><b>lang=<i>LANGUAGE</i></b></code></dt>
 	<dd>
-          <p>Run Tux&nbsp;Paint in one of the supported languages.
-	  Possible choice for <i>LANGUAGE</i> currently include:</p>
+          <p>可以選擇一個已經支援的語文版本來啟動 Tux&nbsp;Paint，
+          目前包括有：</p>
 
  	  <blockquote>
 	  <table border=1 cellspacing=0 cellpadding=4
 	  summary="Possible values for 'lang' language setting">
 	  <tr>
 	    <td><code>english</code></td>
-	    <td><code>american-english</code></td>
+	    <td><code>美式英文</code></td>
 	    <td>&nbsp;</td>
 	  </tr>
 	  <tr>
 	    <td><code>basque</code></td>
-	    <td><code>euskara</code></td>
+	    <td><code>巴斯克文</code></td>
 	    <td>&nbsp;</td>
 	  </tr>
 	  <tr>
 	    <td><code>bokmal</code></td>
-	    <td>&nbsp;</td>
+	    <td>挪威文 (巴克摩)</td>
 	    <td>&nbsp;</td>
 	  </tr>
 	  <tr>
 	    <td><code>british-english</code></td>
-	    <td><code>british</code></td>
+	    <td><code>英文 (英國)</code></td>
 	    <td>&nbsp;</td>
 	  </tr>
 	  <tr>
 	    <td><code>brazilian-portuguese</code></td>
-	    <td><code>portuges-brazilian</code></td>
-	    <td><code>brazilian</code></td>
+	    <td><code>巴西葡萄牙文</code></td>
+	    <td><code>巴西</code></td>
 	  </tr>
 	  <tr>
 	    <td><code>catalan</code></td>
-	    <td><code>catala</code></td>
-	    <td>&nbsp;</td>
+	    <td><code>加泰隆尼亞文</code></td>
+	    <td>西班牙</td>
 	  </tr>
 	  <tr>
 	    <td><code>chinese</code></td>
-	    <td>&nbsp;</td>
+	    <td>簡體中文</td>
 	    <td>&nbsp;</td>
 	  </tr>
 	  <tr>
 	    <td><code>czech</code></td>
-	    <td><code>cesky</code></td>
+	    <td><code>捷克文</code></td>
 	    <td>&nbsp;</td>
 	  </tr>
 	  <tr>
 	    <td><code>danish</code></td>
-	    <td><code>dansk</code></td>
+	    <td><code>丹麥文</code></td>
 	    <td>&nbsp;</td>
 	  </tr>
 	  <tr>
 	    <td><code>dutch</code></td>
-	    <td>&nbsp;</td>
+	    <td>荷蘭文</td>
 	    <td>&nbsp;</td>
 	  </tr>
 	  <tr>
 	    <td><code>finnish</code></td>
-	    <td><code>suomi</code></td>
+	    <td><code>芬蘭文</code></td>
 	    <td>&nbsp;</td>
 	  </tr>
 	  <tr>
 	    <td><code>french</code></td>
-	    <td><code>francais</code></td>
+	    <td><code>法文</code></td>
 	    <td>&nbsp;</td>
 	  </tr>
 	  <tr>
 	    <td><code>german</code></td>
-	    <td><code>deutsch</code></td>
+	    <td><code>德文</code></td>
 	    <td>&nbsp;</td>
 	  </tr>
 	  <tr>
 	    <td><code>greek</code></td>
-	    <td>&nbsp;</td>
+	    <td>希臘文</td>
 	    <td>&nbsp;</td>
 	  </tr>
 	  <tr>
 	    <td><code>hebrew</code></td>
-	    <td>&nbsp;</td>
+	    <td>希伯來文</td>
 	    <td>&nbsp;</td>
 	  </tr>
 	  <tr>
 	    <td><code>hungarian</code></td>
-	    <td><code>magyar</code></td>
+	    <td><code>匈牙利文</code></td>
 	    <td>&nbsp;</td>
 	  </tr>
 	  <tr>
 	    <td><code>icelandic</code></td>
-	    <td><code>islenska</code></td>
+	    <td><code>冰島文</code></td>
 	    <td>&nbsp;</td>
 	  </tr>
 	  <tr>
 	    <td><code>indonesian</code></td>
-	    <td><code>bahasa-indonesia</code></td>
+	    <td><code>印尼文</code></td>
 	    <td>&nbsp;</td>
 	  </tr>
 	  <tr>
 	    <td><code>italian</code></td>
-	    <td><code>italiano</code></td>
+	    <td><code>義大利文</code></td>
 	    <td>&nbsp;</td>
 	  </tr>
 	  <tr>
 	    <td><code>japanese</code></td>
-	    <td>&nbsp;</td>
+	    <td>日文</td>
 	    <td>&nbsp;</td>
 	  </tr>
 	  <tr>
 	    <td><code>korean</code></td>
-	    <td>&nbsp;</td>
+	    <td>韓文</td>
 	    <td>&nbsp;</td>
 	  </tr>
 	  <tr>
 	    <td><code>lithuanian</code></td>
-	    <td><code>lietuviu</code></td>
+	    <td><code>立陶宛文</code></td>
 	    <td>&nbsp;</td>
 	  </tr>
 	  <tr>
 	    <td><code>malay</code></td>
-	    <td>&nbsp;</td>
+	    <td>馬來文</td>
 	    <td>&nbsp;</td>
 	  </tr>
 	  <tr>
 	    <td><code>norwegian</code></td>
-	    <td><code>nynorsk</code></td>
+	    <td><code>挪威文 (耐諾斯克)</code></td>
 	    <td>&nbsp;</td>
 	  </tr>
 	  <tr>
 	    <td><code>polish</code></td>
-	    <td><code>polski</code></td>
+	    <td><code>波蘭文</code></td>
 	    <td>&nbsp;</td>
 	  </tr>
 	  <tr>
 	    <td><code>portuguese</code></td>
-	    <td><code>portugues</code></td>
+	    <td><code>葡萄牙文</code></td>
 	    <td>&nbsp;</td>
 	  </tr>
 	  <tr>
 	    <td><code>romanian</code></td>
-	    <td>&nbsp;</td>
+	    <td>羅馬尼亞文</td>
 	    <td>&nbsp;</td>
 	  </tr>
 	  <tr>
 	    <td><code>russian</code></td>
-	    <td>&nbsp;</td>
+	    <td>俄文</td>
 	    <td>&nbsp;</td>
 	  </tr>
 	  <tr>
 	    <td><code>spanish</code></td>
-	    <td><code>espanol</code></td>
+	    <td><code>西班牙文</code></td>
 	    <td>&nbsp;</td>
 	  </tr>
 	  <tr>
 	    <td><code>slovak</code></td>
-	    <td>&nbsp;</td>
+	    <td>斯洛伐克文</td>
 	    <td>&nbsp;</td>
 	  </tr>
 	  <tr>
 	    <td><code>swedish</code></td>
-	    <td><code>svenska</code></td>
+	    <td><code>瑞典文</code></td>
 	    <td>&nbsp;</td>
 	  </tr>
 	  <tr>
 	    <td><code>tamil</code></td>
-	    <td>&nbsp;</td>
+	    <td>坦米爾文</td>
 	    <td>&nbsp;</td>
 	  </tr>
 	  <tr>
+	    <td><code>traditional-chinese</code></td>
+	    <td>繁體中文</td>
+	    <td>(新加入)</td>
+	  </tr>
+	  <tr>
 	    <td><code>turkish</code></td>
-	    <td>&nbsp;</td>
+	    <td>土耳其文</td>
 	    <td>&nbsp;</td>
 	  </tr>
 	  <tr>
 	    <td><code>walloon</code></td>
-	    <td>&nbsp;</td>
+	    <td>華隆文</td>
 	    <td>&nbsp;</td>
 	  </tr>
 	  </table>
@@ -602,24 +589,20 @@ New Breed Software</p>
 
       <hr size=1 noshade>
 
-      <h5>Overriding System Config. Options using <code>.tuxpaintrc</code></h5>
+      <h5>使用 <code>.tuxpaintrc</code> 覆蓋系統規劃檔的選項設定</h5>
       <blockquote>
-        <p>If any of the above options are set in
-        "<code>/etc/tuxpaint/tuxpaint.config</code>",
-	you can override them in your own
-        "<code>~/.tuxpaintrc</code>" file.</p>
+        <p>您可以在您自已的 "<code>~/.tuxpaintrc</code>" 檔案中設定覆蓋掉在
+        "<code>/etc/tuxpaint/tuxpaint.config</code>" 系統規劃檔中設定的選項。</p>
 
-	<p>For true/false options, like "<code>noprint</code>" and
-        "<code>grab</code>", you can simply say they equal 'no' in
-        your "<code>~/.tuxpaintrc</code>" file:</p>
+	<p>像 "<code>noprint</code>" 及 "<code>grab</code>" 這類訊問是或否的選項，
+	您可以直接在您的 "<code>~/.tuxpaintrc</code>" 中設定他們為 'no'，像這樣子：</p>
 	
         <blockquote><code>
 	  noprint=no<br>
 	  uppercase=no
 	</code></blockquote>
 	
-	<p>Or, you can use options similar to the command-line override
-	options described below.  For example:</p>
+	<p>您也可以使用稍後會提到的命令列的參數來設定，像這樣子：</p>
 
         <blockquote><code>
 	  print=yes<br>
@@ -630,11 +613,10 @@ New Breed Software</p>
 	  
     <hr size=1 noshade>
 
-    <h4>Command-Line Options</h4>
+    <h4>命令列參數</h4>
     <blockquote>
-      Options can also be issued on the command-line when you start
-      Tux&nbsp;Paint.
-
+      當您啟動 Tux&nbsp;Paint 時可以使用命令列來下達參數。
+      
       <blockquote>
       <dl>
         <dt><code><b>
@@ -662,8 +644,7 @@ New Breed Software</p>
         --lang&nbsp;LANGUAGE<br>
         </b></code></dt>
         <dd>
-          These enable or correspond to the configuration file options
-	  described above.
+          以上是開啟或相對應規劃檔的選項。
 	</dd>
 
         <dt><code><b>
@@ -688,32 +669,26 @@ New Breed Software</p>
         --saveoverask<br>
 	</b></code></dt>
 	<dd>
-          These options can be used to override any settings made in
-	  the configuration file.  (If the option isn't set in the
-	  configuration file(s), no overriding option is necessary.)
+          這些選項可以用來覆蓋規劃檔中的設定。
+          (如果規劃檔中沒有設定的話，就不需要覆蓋選項。)
 	</dd>
 
 
         <dt><code><b>--locale locale</b></code></dt>
 	<dd>
-          <p>Run Tux&nbsp;Paint in one of the support languages.
-	  See the "<i>Choosing a Different Language</i>" section below for the
-	  locale strings (e.g., "<code>de_DE@euro</code>" for German) to
-          use.</p>
+          <p>執行某一個 Tux&nbsp;Paint 支援的語文版本。locale 字串(如："<code>de_DE@euro</code>" 是德文)
+          請見稍後 "<i>選擇不同的語文</i>" 這一個章節。</p>
 	
-	  <p>(If your locale is already set, e.g. with the "<code>$LANG</code>"
-          environment variable, this option is not necessary,
-	  since Tux&nbsp;Paint honors your environment's setting,
-          if possible.)</p>
+	  <p>(如果您的 locale 已經使用系統變數 "<code>$LANG</code>" 來指定，
+	  就不需要這個參數了。Tux&nbsp;Paint 已經可以讀取系統的環境變數。)</p>
 	</dd>
 
         <dt><code><b>--nosysconfig</b></code></dt>
         <dd>
-	  <p>Under Linux and Unix, this prevents the system-wide configuration
-	  file, "<code>/etc/tuxpaint/tuxpaint.conf</code>", from being read.</p>
+	  <p>在 Linux 和 Unix 平台，可以取消讀取這個
+	  "<code>/etc/tuxpaint/tuxpaint.conf</code>" 系統層級的規劃檔。</p>
 
-	  <p>Only your own configuration file, "<code>~/.tuxpaintrc</code>",
-          if it exists, will be used.</p>
+	  <p>只有當您自已的規劃檔 "<code>~/.tuxpaintrc</code>" 存在時可以這樣作。</p>
 	</dd>
       </dl>
       </blockquote>
@@ -722,33 +697,33 @@ New Breed Software</p>
     <hr size=1 noshade>
  
 
-    <h4>Command-Line Informational Options</h4>
+    <h4>命令列的訊息參數</h4>
     <blockquote>
-      <p>The following options display some informative text on the screen.
-      Tux&nbsp;Paint doesn't actually start up and run afterwards, however.</p>
+      <p>以下的參數會顯示一些訊息到螢幕上。當您使用這些參數後
+      Tux&nbsp;Paint 並不會真的啟動。</p>
 
       <blockquote>
       <dl>
         <dt><code><b>--version</b></code></dt>
 	<dd>
-          Display the version number and date of the copy of Tux&nbsp;Paint
-	  you are running.  It also lists what, if any, compile-time
-	  options were set.  (See INSTALL.txt and FAQ.txt).
+          顯示您所執行的 Tux&nbsp;Paint 版本編號及日期。
+          這也會顯示出您在編譯時所指定的任何相關的參數
+          (請參閱 INSTALL.txt 和 FAQ.txt)。
 	</dd>
 	  
         <dt><code><b>--copying</b></code></dt>
 	<dd>
-          Show brief license information about copying Tux&nbsp;Paint.
+          顯示出關於複製 Tux&nbsp;Paint 的簡短授權訊息。
 	</dd>
 
         <dt><code><b>--usage</b></code></dt>
         <dd>
-	  Display the list of available command-line options.
+	  顯示出有效的命令列參數清單。
 	</dd>
 
         <dt><code><b>--help</b></code></dt>
 	<dd>
-          Display brief help on using Tux&nbsp;Paint.
+          顯示出簡短的 Tux&nbsp;Paint 使用說明。
 	</dd>
       </dl>
       </blockquote>
@@ -757,211 +732,210 @@ New Breed Software</p>
     <hr size=1 noshade>
  
 
-    <h4>Choosing a Different Language</h4>
+    <h4>選擇不同的語文</h4>
     <blockquote>
-      <p>Tux&nbsp;Paint has been translated into a number of languages.
-      To access the translations, you can use the "<code>--lang</code>"
-      option on the command-line to set the language (e.g.
-      "<code>--lang&nbsp;spanish</code>")
-      or use the "<code>lang=</code>" setting in the configuration file
-      (e.g., "<code>lang=spanish</code>").</p>
+      <p>Tux&nbsp;Paint 已經翻譯成許多種的語文，您可以在命令列使用 "<code>--lang</code>" 
+      參數來要設定使用語文譯本 (如： "<code>--lang&nbsp;spanish</code>")。或是在規劃檔中設定
+      "<code>lang=</code>" 的選項 (如： "<code>lang=spanish</code>")。</p>
 
-      <p>Tux&nbsp;Paint also honors your environment's current locale.
-      (You can override it on the command-line using the
-      "<code>--locale</code>" option (see above).)</p>
+      <p>Tux&nbsp;Paint 也可以知道您系統目前的 locale 設定
+      (您可以用命令列參數 "<code>--locale</code>" 來覆蓋過系統的設定。)</p>
     
-      <p>The following languages are supported:</p>
+      <p>已經支援的語文有：</p>
 
       <blockquote><table border=1 cellspacing=0 cellpadding=2
-      summary="Locale values and the languages they represent.">
+      summary="Locale 的設定值和語文的描述。">
       <tr>
-        <th>Locale Code</th>
-	<th>Language<br>
-            (native name)</th>
-	<th>Language<br>
-            (English name)</th>
+        <th>Locale 代碼</th>
+	<th>語文</th>
+	<th>語文<br>
+            (英文)</th>
       </tr>
       <tr>
         <td><code>C</code></td>
-	<td>&nbsp;</td>
+	<td>英文</td>
 	<td>English</td>
       </tr>
       <tr>
         <td><code>ca_ES</code></td>
-	<td>Catalan</td>
+	<td>加泰隆尼亞文</td>
 	<td>Catal&agrave;</td>
       </tr>
       <tr>
         <td><code>cs_CZ</code></td>
-	<td>Cesky</td>
+	<td>捷克文</td>
 	<td>Czech</td>
       </tr>
       <tr>
         <td><code>da_DK</code></td>
-	<td>Dansk</td>
+	<td>丹麥文</td>
 	<td>Danish</td>
       </tr>
       <tr>
 	<td><code>de_DE@euro</code></td>
-	<td>Deutsch</td>
+	<td>德文</td>
 	<td>German</td>
       </tr>
       <tr>
         <td><code>el_GR.UTF8</code> (*)</td>
-	<td>&nbsp;</td>
+	<td>希臘文</td>
 	<td>Greek</td>
       </tr>
       <tr>
         <td><code>en_GB</code></td>
-	<td>&nbsp;</td>
+	<td>英文 (英國)</td>
 	<td>British English</td>
       </tr>
       <tr>
         <td><code>es_ES@euro</code></td>
-	<td>Espa&ntilde;ol</td>
+	<td>西班牙文</td>
 	<td>Spanish</td>
       </tr>
       <tr>
         <td><code>eu_ES</code></td>
+	<td>巴斯克文</td>
 	<td>Basque</td>
-	<td>Euskara</td>
       </tr>
       <tr>
         <td><code>fi_FI@euro</code></td>
-	<td>Suomi</td>
+	<td>芬蘭文</td>
 	<td>Finnish</td>
       </tr>
       <tr>
         <td><code>fr_FR@euro</code></td>
-	<td>Fran&ccedil;ais</td>
+	<td>法文</td>
 	<td>French</td>
       </tr>
       <tr>
         <td><code>he_IL</code> (*)</td>
-	<td>&nbsp;</td>
+	<td>希伯來文</td>
 	<td>Hebrew</td>
       </tr>
       <tr>
         <td><code>hu_HU</code></td>
-	<td>Magyar</td>
+	<td>匈牙利文</td>
 	<td>Hungarian</td>
       </tr>
       <tr>
         <td><code>id_ID</code></td>
-	<td>Bahasa Indonesia</td>
+	<td>印尼文</td>
 	<td>Indonesian</td>
       </tr>
       <tr>
         <td><code>is_IS</code></td>
-	<td>&Iacute;slenska</td>
+	<td>冰島文</td>
 	<td>Icelandic</td>
       </tr>
       <tr>
         <td><code>it_IT@euro</code></td>
-	<td>Italiano</td>
+	<td>義大利文</td>
 	<td>Italian</td>
       </tr>
       <tr>
         <td><code>ja_JP.UTF-8</code> (*)</td>
-	<td>&nbsp;</td>
+	<td>日文</td>
 	<td>Japanese</td>
       </tr>
       <tr>
         <td><code>ko_KR.UTF-8</code> (*)</td>
-	<td>&nbsp;</td>
+	<td>韓文</td>
 	<td>Korean</td>
       </tr>
       <tr>
         <td><code>lt_LT.UTF-8</code></td>
-	<td>Lietuviu</td>
+	<td>立陶宛文</td>
 	<td>Lithuanian</td>
       </tr>
       <tr>
         <td><code>ms_MY</code></td>
-	<td>&nbsp;</td>
+	<td>馬來文</td>
 	<td>Malay</td>
       </tr>
       <tr>
         <td><code>nb_NO</code></td>
-	<td>Norsk (bokm&aring;l)</td>
+	<td>挪威文 (巴克摩)</td>
 	<td>Norwegian Bokm&aring;l</td>
       </tr>
       <tr>
         <td><code>nn_NO</code></td>
-	<td>Norsk (nynorsk)</td>
+	<td>挪威文 (耐諾斯克)</td>
 	<td>Norwegian Nynorsk</td>
       </tr>
       <tr>
         <td><code>nl_NL@euro</code></td>
-	<td>&nbsp;</td>
+	<td>荷蘭文</td>
 	<td>Dutch</td>
       </tr>
       <tr>
         <td><code>pl_PL</code></td>
-	<td>Polski</td>
+	<td>波蘭文</td>
 	<td>Polish</td>
       </tr>
       <tr>
         <td><code>pt_BR</code></td>
-	<td>Portug&ecirc;s Brazileiro</td>
+	<td>巴西葡萄牙文</td>
 	<td>Brazilian Portuguese</td>
       </tr>
       <tr>
         <td><code>pt_PT</code></td>
-	<td>Portug&ecirc;s</td>
+	<td>葡萄牙文</td>
 	<td>Portuguese</td>
       </tr>
       <tr>
         <td><code>ro_RO</code></td>
-	<td>&nbsp;</td>
+	<td>羅馬尼亞文</td>
 	<td>Romanian</td>
       </tr>
       <tr>
         <td><code>ru_RU</code></td>
-	<td>&nbsp;</td>
+	<td>俄文</td>
 	<td>Russian</td>
       </tr>
       <tr>
         <td><code>sk_SK</code></td>
+	<td>斯洛伐克文</td>
 	<td>Slovak</td>
-	<td>&nbsp;</td>
       </tr>
       <tr>
         <td><code>sv_SE@euro</code></td>
-	<td>Svenska</td>
+	<td>瑞典文</td>
 	<td>Swedish</td>
       </tr>
       <tr>
         <td><code>ta_IN</code> (*)</td>
-	<td>&nbsp;</td>
+	<td>坦米爾文</td>
 	<td>Tamil</td>
       </tr>
       <tr>
         <td><code>tr_TR@euro</code></td>
-	<td>&nbsp;</td>
+	<td>土耳其文</td>
 	<td>Turkish</td>
       </tr>
       <tr>
         <td><code>wa_BE@euro</code></td>
-	<td>&nbsp;</td>
+	<td>華隆文</td>
 	<td>Walloon</td>
       </tr>
       <tr>
         <td><code>zh_CN</code> (*)</td>
-	<td>&nbsp;</td>
+	<td>簡體中文</td>
 	<td>Chinese (Simplified)</td>
+      </tr>
+      <tr>
+        <td><code>zh_TW</code> (*)</td>
+	<td>繁體中文</td>
+	<td>Chinese (Traditional)</td>
       </tr>
       </table>
 
-      <b>(*)</b> - These languages require their own fonts, since they
-      are not represented using a Latin character set, like the others.
-      See <b>Special&nbsp;Fonts</b>, below.<p>
+      <b>(*)</b> - 表示這些語文不是使用拉丁字集而需要安裝自已的字型檔。
+      請參閱稍後 <b>特殊字型</b> 的章節。<p>
   
       </blockquote>
   
-      <h5>Setting Your Environment's Locale</h5>
+      <h5>設定您系統的 Locale</h5>
       <blockquote>
-        <p>Changing your locale will affect much of your environment.</p>
+        <p>改變您的 locale 設定會對您的環境影響非常的大。</p>
       
         <p>As stated above, along with letting you choose the language at
         runtime using command-line options ("<code>--lang</code>" and
