@@ -2,11 +2,11 @@ INSTALL.txt for Tux Paint
 
 Tux Paint - A simple drawing program for children.
 
-Copyright 2002 by Bill Kendrick
+Copyright 2005 by Bill Kendrick
 bill@newbreedsoftware.com
 http://www.newbreedsoftware.com/tuxpaint/
 
-June 27, 2002 - November 5, 2002
+June 27, 2002 - February 25, 2005
 
 
 Requirements:
@@ -96,8 +96,21 @@ Compiling and Installation:
     Compiling:
     ----------
       Tux Paint comes pre-compiled for Windows, so no compilation is
-      necessary.  [Eventually, information on rebuilding for Windows
-      will be placed here.  In the meantime, you're on your own.  Sorry!]
+      necessary.
+      
+      As of February 2005 (starting with Tux Paint 0.9.15), the Makefile
+      included support for building on a Windows system using MinGW/MSYS.
+      
+      After building and installing all the dependencies, use these commands,
+      in MSYS, to build, install and run:
+      
+        export set CPATH=/usr/local/include
+	export set LIBRARY_PATH=/usr/local/bin:/usr/local/lib
+	make win32
+	make install-win32
+	tuxpaint
+
+      [Eventually, we'll describe how to generate the installer EXE, too.]
 
     Installer:
     ----------
