@@ -21,12 +21,12 @@
   along with this program; if not, write to the Free Software
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   
-  June 14, 2002 - September 23, 2004
+  June 14, 2002 - September 28, 2004
 */
 
 
 #define VER_VERSION     "0.9.14"
-#define VER_DATE        "2004-09-23"
+#define VER_DATE        "2004-09-28"
 
 
 /* #define DEBUG */
@@ -7177,15 +7177,18 @@ void do_undo(void)
       SDL_BlitSurface(undo_bufs[cur_undo], NULL, canvas, NULL);
 
 
-      if (undo_starters[cur_undo] == UNDO_STARTER_MIRRORED)
+      if (img_starter != NULL)
       {
-	starter_mirrored = !starter_mirrored;
-	mirror_starter();
-      }
-      else if (undo_starters[cur_undo] == UNDO_STARTER_FLIPPED)
-      {
-	starter_flipped = !starter_flipped;
-	flip_starter();
+        if (undo_starters[cur_undo] == UNDO_STARTER_MIRRORED)
+        {
+	  starter_mirrored = !starter_mirrored;
+	  mirror_starter();
+        }
+        else if (undo_starters[cur_undo] == UNDO_STARTER_FLIPPED)
+        {
+	  starter_flipped = !starter_flipped;
+	  flip_starter();
+        }
       }
 
       update_canvas(0, 0, (WINDOW_WIDTH - 96), (48 * 7) + 40 + HEIGHTOFFSET);
@@ -7225,17 +7228,20 @@ void do_redo(void)
 {
   if (cur_undo != newest_undo)
     {
-      if (undo_starters[cur_undo] == UNDO_STARTER_MIRRORED)
+      if (img_starter != NULL)
       {
-	starter_mirrored = !starter_mirrored;
-	mirror_starter();
+        if (undo_starters[cur_undo] == UNDO_STARTER_MIRRORED)
+        {
+	  starter_mirrored = !starter_mirrored;
+	  mirror_starter();
+        }
+        else if (undo_starters[cur_undo] == UNDO_STARTER_FLIPPED)
+        {
+	  starter_flipped = !starter_flipped;
+	  flip_starter();
+        }
       }
-      else if (undo_starters[cur_undo] == UNDO_STARTER_FLIPPED)
-      {
-	starter_flipped = !starter_flipped;
-	flip_starter();
-      }
-      
+
       cur_undo = (cur_undo + 1) % NUM_UNDO_BUFS;
 
 #ifdef DEBUG
