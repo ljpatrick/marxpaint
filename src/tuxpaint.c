@@ -62,6 +62,14 @@ typedef struct scaleparams {
   unsigned numer, denom;
 } scaleparams;
 static scaleparams scaletable[] = {
+  {  1,256}, //  0.00390625
+  {  3,512}, //  0.005859375
+  {  1,128}, //  0.0078125
+  {  3,256}, //  0.01171875
+  {  1, 64}, //  0.015625
+  {  3,128}, //  0.0234375
+  {  1, 32}, //  0.03125
+  {  3, 64}, //  0.046875
   {  1, 16}, //  0.0625
   {  3, 32}, //  0.09375
   {  1,  8}, //  0.125
@@ -78,6 +86,10 @@ static scaleparams scaletable[] = {
   {  6,  1}, //  6
   {  8,  1}, //  8
   { 12,  1}, // 12
+  { 16,  1}, // 16
+  { 24,  1}, // 24
+  { 32,  1}, // 32
+  { 48,  1}, // 48
 };
 
 #define HARD_MIN_STAMP_SIZE 0  // bottom of scaletable
@@ -6203,7 +6215,10 @@ static void setup(int argc, char * argv[])
 	      pw = (img_stamps[i]->w * s->numer + s->denom - 1) / s->denom;
 	      ph = (img_stamps[i]->h * s->numer + s->denom - 1) / s->denom;
 
-	      if (pw < canvas->w * 2 && ph < canvas->h * 2)
+	      // OK to let a stamp stick off the sides in one direction, not two
+	      if (pw < canvas->w * 2 && ph < canvas->h * 1)
+		break;
+	      if (pw < canvas->w * 1 && ph < canvas->h * 2)
 		break;
 	    }
 	    while (--upper);
