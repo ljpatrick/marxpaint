@@ -5,28 +5,502 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TuxPaint 0.0.1pre\n"
 "POT-Creation-Date: 2002-10-20 21:54-0800\n"
-"PO-Revision-Date: 2002-10-20 21:54-0800\n"
-"Last-Translator: Bill Kendrick <bill@newbreedsoftware.com>\n"
+"PO-Revision-Date: 2004-01-15 21:35+0100\n"
+"Last-Translator: Karl Ove Hufthammer <karl@huftis.org>\n"
 "Language-Team: N/A <bill@newbreedsoftware.com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: magic.h:73
+#: src/tuxpaint.c:795
+msgid "Do you really want to quit?"
+msgstr "Do you really want to quit?"
+
+#: src/tuxpaint.c:796
+#: src/tuxpaint.c:800
+#: src/tuxpaint.c:804
+#: src/tuxpaint.c:818
+#: src/tuxpaint.c:828
+#: src/tuxpaint.c:8360
+#: src/tuxpaint.c:9065
+msgid "Yes"
+msgstr "Yes"
+
+#: src/tuxpaint.c:797
+#: src/tuxpaint.c:801
+#: src/tuxpaint.c:805
+#: src/tuxpaint.c:819
+#: src/tuxpaint.c:829
+#: src/tuxpaint.c:8363
+msgid "No"
+msgstr "No"
+
+#: src/tuxpaint.c:799
+msgid "If you quit, you'll lose your picture! Save it?"
+msgstr "If you quit, you’ll lose your picture! Save it?"
+
+#: src/tuxpaint.c:803
+msgid "Save your picture first?"
+msgstr "Save your picture first?"
+
+#: src/tuxpaint.c:807
+msgid "Can't open that picture!"
+msgstr "Can’t open that picture!"
+
+#: src/tuxpaint.c:808
+#: src/tuxpaint.c:815
+#: src/tuxpaint.c:822
+#: src/tuxpaint.c:825
+msgid "Okay"
+msgstr "Okay"
+
+#: src/tuxpaint.c:810
+msgid "Starting a new picture will erase the current one!"
+msgstr "Starting a new picture will erase the current one!"
+
+#: src/tuxpaint.c:811
+msgid "That's Ok"
+msgstr "That’s OK"
+
+#: src/tuxpaint.c:812
+msgid "Never Mind!"
+msgstr "Never Mind!"
+
+#: src/tuxpaint.c:814
+msgid "There are no saved files!"
+msgstr "There are no saved files!"
+
+#: src/tuxpaint.c:817
+msgid "Print your picture now?"
+msgstr "Print your picture now?"
+
+#: src/tuxpaint.c:821
+msgid "Your picture has been printed!"
+msgstr "Your picture has been printed!"
+
+#: src/tuxpaint.c:824
+msgid "You can't print yet!"
+msgstr "You can’t print yet!"
+
+#: src/tuxpaint.c:827
+msgid "Erase this picture?"
+msgstr "Erase this picture?"
+
+#: src/tuxpaint.c:5416
+#: src/tools.h:52
+msgid "Open"
+msgstr "Open"
+
+#: src/tuxpaint.c:5421
+msgid "Erase"
+msgstr "Erase"
+
+#: src/tuxpaint.c:5426
+msgid "Back"
+msgstr "Back"
+
+#: src/tuxpaint.c:9064
+msgid "Save over the older version of this drawing?"
+msgstr "Save over the older version of this drawing?"
+
+#: src/tuxpaint.c:9066
+msgid "No, save a new file"
+msgstr "No, save a new file"
+
+#: src/tuxpaint.c:9885
+msgid "Choose the picture you want, then click 'Open'"
+msgstr "Choose the picture you want, then click ‘Open’"
+
+#: src/colors.h:62
+msgid "Black"
+msgstr "Black"
+
+#: src/colors.h:63
+msgid "White"
+msgstr "White"
+
+#: src/colors.h:64
+msgid "Red"
+msgstr "Red"
+
+#: src/colors.h:65
+msgid "Pink"
+msgstr "Pink"
+
+#: src/colors.h:66
+msgid "Orange"
+msgstr "Orange"
+
+#: src/colors.h:67
+msgid "Yellow"
+msgstr "Yellow"
+
+#: src/colors.h:68
+msgid "Lime"
+msgstr "Lime"
+
+#: src/colors.h:69
+msgid "Green"
+msgstr "Green"
+
+#: src/colors.h:70
+msgid "Cyan"
+msgstr "Cyan"
+
+#: src/colors.h:71
+msgid "Blue"
+msgstr "Blue"
+
+#: src/colors.h:72
+msgid "Purple"
+msgstr "Purple"
+
+#: src/colors.h:73
+msgid "Fuchsia"
+msgstr "Fuchsia"
+
+#: src/colors.h:74
+msgid "Brown"
+msgstr "Brown"
+
+#: src/colors.h:75
+msgid "Grey"
+msgstr "Grey"
+
+#: src/colors.h:76
+msgid "Silver"
+msgstr "Silver"
+
+#: src/great.h:20
+msgid "Great!"
+msgstr "Great!"
+
+#: src/great.h:21
+msgid "Cool!"
+msgstr "Cool!"
+
+#: src/great.h:22
+msgid "Keep it up!"
+msgstr "Keep it up!"
+
+#: src/great.h:23
+msgid "Good job!"
+msgstr "Good job!"
+
+#: src/magic.h:48
+msgid "Rainbow"
+msgstr "Rainbow"
+
+#: src/magic.h:49
+msgid "Sparkles"
+msgstr "Sparkles"
+
+#: src/magic.h:51
+msgid "Mirror"
+msgstr "Mirror"
+
+#: src/magic.h:52
+msgid "Flip"
+msgstr "Flip"
+
+#: src/magic.h:54
+msgid "Blur"
+msgstr "Blur"
+
+#: src/magic.h:55
+msgid "Blocks"
+msgstr "Blocks"
+
+#: src/magic.h:57
+msgid "Negative"
+msgstr "Negative"
+
+#: src/magic.h:58
+msgid "Fade"
+msgstr "Fade"
+
+#: src/magic.h:60
+msgid "Chalk"
+msgstr "Chalk"
+
+#: src/magic.h:61
+msgid "Drip"
+msgstr "Drip"
+
+#: src/magic.h:63
+msgid "Thick"
+msgstr "Thick"
+
+#: src/magic.h:64
+msgid "Thin"
+msgstr "Thin"
+
+#: src/magic.h:66
+msgid "Fill"
+msgstr "Fill"
+
+#: src/magic.h:73
 msgid "You can draw in rainbow colors!"
 msgstr "You can draw in rainbow colours!"
 
-#: magic.h:83
+#: src/magic.h:74
+msgid "Click and move to draw sparkles"
+msgstr "Click and move to draw sparkles"
+
+#: src/magic.h:76
+msgid "Click to make a mirror image!"
+msgstr "Click to make a mirror image!"
+
+#: src/magic.h:77
+msgid "Click to flip the picture upside-down!"
+msgstr "Click to flip the picture upside-down!"
+
+#: src/magic.h:79
+msgid "Click and move the mouse around to blur the picture"
+msgstr "Click and move the mouse around to blur the picture"
+
+#: src/magic.h:80
+msgid "Click and move the mouse around to make the picture blocky"
+msgstr "Click and move the mouse around to make the picture blocky"
+
+#: src/magic.h:82
+msgid "Click and move the mouse around to draw a negative"
+msgstr "Click and move the mouse around to draw a negative"
+
+#: src/magic.h:83
 msgid "Click and move to fade the colors."
 msgstr "Click and move to fade the colours."
 
-#: magic.h:91
+#: src/magic.h:85
+msgid "Click and move the mouse around to turn the picture into a chalk drawing."
+msgstr "Click and move the mouse around to turn the picture into a chalk drawing."
+
+#: src/magic.h:86
+msgid "Click and move the mouse around to make the picture drip!"
+msgstr "Click and move the mouse around to make the picture drip!"
+
+#: src/magic.h:88
+msgid "Click and move the mouse to thicken the picture"
+msgstr "Click and move the mouse to thicken the picture"
+
+#: src/magic.h:89
+msgid "Click and move the mouse to thin the picture"
+msgstr "Click and move the mouse to thin the picture"
+
+#: src/magic.h:91
 msgid "Click in the picture to fill that area with color"
 msgstr "Click in the picture to fill that area with colour"
 
-#: tools.h:62
+#: src/shapes.h:141
+#: src/shapes.h:142
+msgid "Square"
+msgstr "Square"
+
+#: src/shapes.h:143
+#: src/shapes.h:144
+msgid "Rectangle"
+msgstr "Rectangle"
+
+#: src/shapes.h:145
+#: src/shapes.h:146
+msgid "Circle"
+msgstr "Circle"
+
+#: src/shapes.h:147
+#: src/shapes.h:148
+#: src/shapes.h:167
+#: src/shapes.h:168
+msgid "Oval"
+msgstr "Oval"
+
+#: src/shapes.h:149
+#: src/shapes.h:150
+msgid "Triangle"
+msgstr "Triangle"
+
+#: src/shapes.h:151
+#: src/shapes.h:152
+msgid "Pentagon"
+msgstr "Pentagon"
+
+#: src/shapes.h:153
+#: src/shapes.h:154
+msgid "Diamond"
+msgstr "Diamond"
+
+#: src/shapes.h:161
+#: src/shapes.h:162
+msgid "A square has four sides, each the same length."
+msgstr "A square has four sides, each the same length."
+
+#: src/shapes.h:163
+#: src/shapes.h:164
+msgid "A rectangle has four sides."
+msgstr "A rectangle has four sides."
+
+#: src/shapes.h:165
+#: src/shapes.h:166
+msgid "A circle is exactly round."
+msgstr "A circle is exactly round."
+
+#: src/shapes.h:169
+#: src/shapes.h:170
+msgid "A triangle has three sides."
+msgstr "A triangle has three sides."
+
+#: src/shapes.h:171
+#: src/shapes.h:172
+msgid "A pentagon has five sides."
+msgstr "A pentagon has five sides."
+
+#: src/shapes.h:173
+#: src/shapes.h:174
+msgid "A diamond is a square, turned around slightly."
+msgstr "A diamond is a square, turned around slightly."
+
+#: src/titles.h:37
+msgid "Tools"
+msgstr "Tools"
+
+#: src/titles.h:38
+msgid "Colors"
+msgstr "Colours"
+
+#: src/titles.h:39
+msgid "Brushes"
+msgstr "Brushes"
+
+#: src/titles.h:40
+msgid "Stamps"
+msgstr "Stamps"
+
+#: src/titles.h:41
+#: src/tools.h:45
+msgid "Shapes"
+msgstr "Shapes"
+
+#: src/titles.h:42
+msgid "Letters"
+msgstr "Letters"
+
+#: src/titles.h:43
+#: src/tools.h:47
+msgid "Magic"
+msgstr "Magic"
+
+#: src/tools.h:42
+msgid "Paint"
+msgstr "Paint"
+
+#: src/tools.h:43
+msgid "Stamp"
+msgstr "Stamp"
+
+#: src/tools.h:44
+msgid "Lines"
+msgstr "Lines"
+
+#: src/tools.h:46
+msgid "Text"
+msgstr "Text"
+
+#: src/tools.h:48
+msgid "Undo"
+msgstr "Undo"
+
+#: src/tools.h:49
+msgid "Redo"
+msgstr "Redo"
+
+#: src/tools.h:50
+msgid "Eraser"
+msgstr "Eraser"
+
+#: src/tools.h:51
+msgid "New"
+msgstr "New"
+
+#: src/tools.h:53
+msgid "Save"
+msgstr "Save"
+
+#: src/tools.h:54
+msgid "Print"
+msgstr "Print"
+
+#: src/tools.h:55
+msgid "Quit"
+msgstr "Quit"
+
+#: src/tools.h:62
 msgid "Pick a color and a brush shape to draw with."
 msgstr "Pick a colour and a brush shape to draw with."
 
-msgid "Colors"
-msgstr "Colours"
+#: src/tools.h:63
+msgid "Pick a picture to stamp around your drawing."
+msgstr "Pick a picture to stamp around your drawing."
+
+#: src/tools.h:64
+msgid "Click to start drawing a line.  Let go to complete it."
+msgstr "Click to start drawing a line. Let go to complete it."
+
+#: src/tools.h:65
+msgid "Pick a shape. Click to pick the center, drag, then let go when it is the size you want.  Move around to rotate it, and click to draw it."
+msgstr "Pick a shape. Click to pick the center, drag, then let go when it is the size you want.  Move around to rotate it, and click to draw it."
+
+#: src/tools.h:66
+msgid "Choose a style of text.  Click on your drawing and you can start typing."
+msgstr "Choose a style of text.  Click on your drawing and you can start typing."
+
+#: src/tools.h:67
+msgid "Pick a magical effect to use on your drawing!"
+msgstr "Pick a magical effect to use on your drawing!"
+
+#: src/tools.h:68
+msgid "Undo!"
+msgstr "Undo!"
+
+#: src/tools.h:69
+msgid "Redo!"
+msgstr "Redo!"
+
+#: src/tools.h:70
+msgid "Eraser!"
+msgstr "Eraser!"
+
+#: src/tools.h:71
+msgid "You now have a blank sheet to draw on!"
+msgstr "You now have a blank sheet to draw on!"
+
+#: src/tools.h:72
+msgid "Open..."
+msgstr "Open..."
+
+#: src/tools.h:73
+msgid "Your image has been saved!"
+msgstr "Your image has been saved!"
+
+#: src/tools.h:74
+msgid "Printing..."
+msgstr "Printing..."
+
+#: src/tools.h:75
+msgid "Bye bye!"
+msgstr "Bye bye!"
+
+#: src/tools.h:78
+msgid "Let go of the button to complete the line."
+msgstr "Let go of the button to complete the line."
+
+#: src/tools.h:79
+msgid "Hold the button to stretch the shape."
+msgstr "Hold the button to stretch the shape."
+
+#: src/tools.h:80
+msgid "Move the mouse to rotate the shape. Click to draw it."
+msgstr "Move the mouse to rotate the shape. Click to draw it."
+
+#: src/tools.h:81
+msgid "Ok then... Let's keep drawing this one!"
+msgstr "Ok then... Let’s keep drawing this one!"
+
