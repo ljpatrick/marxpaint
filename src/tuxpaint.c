@@ -1952,6 +1952,8 @@ static int been_saved;
 static char file_id[32];
 static char starter_id[32];
 static int brush_scroll, stamp_scroll, font_scroll, magic_scroll;
+static int eraser_scroll, shape_scroll; // dummy variables for now
+
 static int eraser_sound;
 
 static char texttool_str[256];
@@ -2315,7 +2317,9 @@ static void mainloop(void)
   int done, off_y, which, button_down, old_x, old_y, new_x, new_y,
     line_start_x, line_start_y, w, h, shape_tool_mode,
     shape_ctr_x, shape_ctr_y, shape_outer_x, shape_outer_y;
-  int num_things, thing_scroll, cur_thing, old_thing, do_draw, old_tool,
+  int num_things;
+  int *thing_scroll;
+  int cur_thing, old_thing, do_draw, old_tool,
     tmp_int, max;
   int cur_time, last_print_time, scrolling, ignoring_motion;
   SDL_TimerID scrolltimer;
@@ -2327,8 +2331,8 @@ static void mainloop(void)
     pre_event_time, current_event_time;
 
 
-  num_things = 0;
-  thing_scroll = 0;
+  num_things = num_brushes;
+  thing_scroll = &brush_scroll;
   cur_thing = 0;
   old_thing = 0;
   do_draw = 0;
@@ -2649,33 +2653,34 @@ static void mainloop(void)
 		      if (cur_tool == TOOL_BRUSH)
 			{
 			  cur_thing = cur_brush;
+			  num_things = num_brushes;
+			  thing_scroll = &brush_scroll;
 			  draw_brushes();
 			  draw_colors(COLORSEL_ENABLE);
 			}
-		      else if (cur_tool == TOOL_ERASER)
-		        {
-			  cur_thing = cur_eraser;
-			  draw_erasers();
-			  draw_colors(COLORSEL_DISABLE);
-		        }
 		      else if (cur_tool == TOOL_STAMP)
 			{
 			  cur_thing = cur_stamp;
+			  num_things = num_stamps;
+			  thing_scroll = &stamp_scroll;
 			  draw_stamps();
 			  draw_colors(stamp_colorable(cur_stamp) ||
 				      stamp_tintable(cur_stamp));
-
 			  update_stamp_xor();
 			}
 		      else if (cur_tool == TOOL_LINES)
 			{
 			  cur_thing = cur_brush;
+			  num_things = num_brushes;
+			  thing_scroll = &brush_scroll;
 			  draw_brushes();
 			  draw_colors(COLORSEL_ENABLE);
 			}
 		      else if (cur_tool == TOOL_SHAPES)
 			{
 			  cur_thing = cur_shape;
+			  num_things = NUM_SHAPES;
+			  thing_scroll = &shape_scroll;
 			  draw_shapes();
 			  draw_colors(COLORSEL_ENABLE);
 			  shape_tool_mode = SHAPE_TOOL_MODE_DONE;
@@ -2683,12 +2688,25 @@ static void mainloop(void)
 		      else if (cur_tool == TOOL_TEXT)
 			{
 			  cur_thing = cur_font;
+			  num_things = num_font_families;
+			  thing_scroll = &font_scroll;
 			  draw_fonts();
 			  draw_colors(COLORSEL_ENABLE);
+			}
+		      else if (cur_tool == TOOL_MAGIC)
+			{
+			  cur_thing = cur_magic;
+			  num_things = NUM_MAGICS;
+			  thing_scroll = &magic_scroll;
+			  rainbow_color = 0;
+			  draw_magic();
+			  draw_colors(magic_colors[cur_magic]);
 			}
 		      else if (cur_tool == TOOL_ERASER)
 			{
 			  cur_thing = cur_eraser;
+			  num_things = NUM_ERASERS;
+			  thing_scroll = &eraser_scroll;
 			  draw_erasers();
 			  draw_colors(COLORSEL_DISABLE);
 			}
@@ -2842,13 +2860,6 @@ static void mainloop(void)
 			  draw_toolbar();
 			  update_screen_rect(&r_tools);
 			}
-		      else if (cur_tool == TOOL_MAGIC)
-			{
-			  cur_thing = cur_magic;
-			  rainbow_color = 0;
-			  draw_magic();
-			  draw_colors(magic_colors[cur_magic]);
-			}
 		      else if (cur_tool == TOOL_QUIT)
 			{
 			  done = do_quit();
@@ -2879,40 +2890,16 @@ static void mainloop(void)
 		      /* Note set of things we're dealing with */
 		      /* (stamps, brushes, etc.) */
 		      
-		      if (cur_tool == TOOL_BRUSH || cur_tool == TOOL_LINES)
+		      if (cur_tool == TOOL_STAMP)
 			{
-			  num_things = num_brushes;
-			  thing_scroll = brush_scroll;
-			}
-		      else if (cur_tool == TOOL_STAMP)
-			{
-			  num_things = num_stamps;
-			  thing_scroll = stamp_scroll;
 			  if(!disable_stamp_controls)
 			    gd_controls = (grid_dims){2,2};
 			}
 		      else if (cur_tool == TOOL_TEXT)
 			{
-			  num_things = num_font_families;
-			  thing_scroll = font_scroll;
 			  if(!disable_stamp_controls)
 			    gd_controls = (grid_dims){2,2};
 			}
-		      else if (cur_tool == TOOL_SHAPES)
-			{
-			  num_things = NUM_SHAPES;
-			  thing_scroll = 0;
-			}
-		      else if (cur_tool == TOOL_MAGIC)
-			{
-			  num_things = NUM_MAGICS;
-			  thing_scroll = magic_scroll;
-			}
-		      else if (cur_tool == TOOL_ERASER)
-		        {
-			  num_things = NUM_ERASERS;
-			  thing_scroll = 0;
-		        }
 
 		      // number of whole or partial rows that will be needed
 		      // (can make this per-tool if variable columns needed)
@@ -2941,12 +2928,15 @@ static void mainloop(void)
 		        }
 	              gd_items.rows = r_items.h / button_h;
 
+	              int toolopt_changed = 0;
+
 		      if(HIT(r_items))
 		        {
-		          which = GRIDHIT_GD(r_items,gd_items) + thing_scroll;
+		          which = GRIDHIT_GD(r_items,gd_items) + *thing_scroll;
                           
                           if (which < num_things)
                             {
+                              toolopt_changed = 1;
 #ifndef NOSOUND
                               if (cur_tool != TOOL_STAMP || snd_stamps[which] == NULL)
                                 { 
@@ -3101,12 +3091,12 @@ static void mainloop(void)
 		          // scroll button
 		          int is_upper = event.button.y < r_toolopt.y + button_h/2;
                           if (
-                               (is_upper && thing_scroll > 0)  // upper arrow
+                               (is_upper && *thing_scroll > 0)  // upper arrow
                                ||
-                               (!is_upper && thing_scroll/gd_items.cols < num_rows_needed-gd_items.rows) // lower arrow
+                               (!is_upper && *thing_scroll/gd_items.cols < num_rows_needed-gd_items.rows) // lower arrow
                              )
                             {
-                              thing_scroll += is_upper ? -gd_items.cols : gd_items.cols;
+                              *thing_scroll += is_upper ? -gd_items.cols : gd_items.cols;
                               do_draw = 1;
                               playsound(1, SND_SCROLL, 1);
                               if (!scrolling)
@@ -3121,7 +3111,7 @@ static void mainloop(void)
                                   SDL_RemoveTimer(scrolltimer);
                                   scrolltimer = SDL_AddTimer(REPEAT_SPEED / 3, scrolltimer_callback, (void*) &scrolltimer_event);
                                 }
-                              if (thing_scroll == 0)
+                              if (*thing_scroll == 0)
                                 {
                                   do_setcursor(cursor_arrow);
                                   if (scrolling)
@@ -3139,7 +3129,6 @@ static void mainloop(void)
                       if (cur_tool == TOOL_BRUSH || cur_tool == TOOL_LINES)
                         {
                           cur_brush = cur_thing;
-                          brush_scroll = thing_scroll;
                           render_brush();
                           
                           if (do_draw)
@@ -3155,7 +3144,6 @@ static void mainloop(void)
                       else if (cur_tool == TOOL_TEXT)
                         {
                           cur_font = cur_thing;
-                          font_scroll = thing_scroll;
                           
                           char font_tux_text[512];
                           snprintf(font_tux_text, sizeof font_tux_text, "%s, %s", TTF_FontFaceFamilyName(getfonthandle(cur_font)), TTF_FontFaceStyleName(getfonthandle(cur_font)));
@@ -3169,26 +3157,19 @@ static void mainloop(void)
                       else if (cur_tool == TOOL_STAMP)
                         {
 #ifndef NOSOUND
-                          if (cur_stamp != cur_thing ||
-                              stamp_scroll == thing_scroll)
+                          if (toolopt_changed)
                             {
-                              /* Only play when picking a different stamp, not
-                                 simply scrolling */
-                              
+                              // Only play when picking a different stamp
                               if (snd_stamps[cur_thing] != NULL)
                                 Mix_PlayChannel(2, snd_stamps[cur_thing], 0);
                             }
 #endif
-                  
 
                           if (cur_thing != cur_stamp)
                           {
                             cur_stamp = cur_thing;
                             update_stamp_xor();
                           }
-
-                          stamp_scroll = thing_scroll;
-                          
 
                           if (do_draw)
                             draw_stamps();
@@ -3240,8 +3221,6 @@ static void mainloop(void)
                               update_screen_rect(&r_tcolors);
                             }
                           
-                          magic_scroll = thing_scroll;
-
                           draw_tux_text(TUX_GREAT, magic_tips[cur_magic], 1);
                           
                           if (do_draw)
@@ -3476,39 +3455,15 @@ static void mainloop(void)
                   /* Note set of things we're dealing with */
                   /* (stamps, brushes, etc.) */
                   
-                  if (cur_tool == TOOL_BRUSH || cur_tool == TOOL_LINES)
+                  if (cur_tool == TOOL_STAMP)
                     {
-                      num_things = num_brushes;
-                      thing_scroll = brush_scroll;
-                    }
-                  else if (cur_tool == TOOL_STAMP)
-                    {
-                      num_things = num_stamps;
-                      thing_scroll = stamp_scroll;
                       if(!disable_stamp_controls)
                         gd_controls = (grid_dims){2,2};
                     }
                   else if (cur_tool == TOOL_TEXT)
                     {
-                      num_things = num_font_families;
-                      thing_scroll = font_scroll;
                       if(!disable_stamp_controls)
                         gd_controls = (grid_dims){2,2};
-                    }
-                  else if (cur_tool == TOOL_SHAPES)
-                    {
-                      num_things = NUM_SHAPES;
-                      thing_scroll = 0;
-                    }
-                  else if (cur_tool == TOOL_MAGIC)
-                    {
-                      num_things = NUM_MAGICS;
-                      thing_scroll = magic_scroll;
-                    }
-                  else if (cur_tool == TOOL_ERASER)
-                    {
-                      num_things = NUM_ERASERS;
-                      thing_scroll = 0;
                     }
 
                   // number of whole or partial rows that will be needed
@@ -3546,12 +3501,12 @@ static void mainloop(void)
                       // scroll button
                       int is_upper = (event.button.button == 4);
                       if (
-                           (is_upper && thing_scroll > 0)  // upper arrow
+                           (is_upper && *thing_scroll > 0)  // upper arrow
                            ||
-                           (!is_upper && thing_scroll/gd_items.cols < num_rows_needed-gd_items.rows) // lower arrow
+                           (!is_upper && *thing_scroll/gd_items.cols < num_rows_needed-gd_items.rows) // lower arrow
                          )
                         {
-                          thing_scroll += is_upper ? -gd_items.cols : gd_items.cols;
+                          *thing_scroll += is_upper ? -gd_items.cols : gd_items.cols;
                           do_draw = 1;
                           playsound(1, SND_SCROLL, 1);
 #if 0
@@ -3568,7 +3523,7 @@ static void mainloop(void)
                               scrolltimer = SDL_AddTimer(REPEAT_SPEED / 3, scrolltimer_callback, (void*) &scrolltimer_event);
                             }
 #endif
-                          if (thing_scroll == 0)
+                          if (*thing_scroll == 0)
                             {
                               do_setcursor(cursor_arrow);
 #if 0
@@ -3587,8 +3542,6 @@ static void mainloop(void)
                   
                   if (cur_tool == TOOL_BRUSH || cur_tool == TOOL_LINES)
                     {
-                      brush_scroll = thing_scroll;
-                      
                       if (do_draw)
                         draw_brushes();
                     }
@@ -3599,16 +3552,11 @@ static void mainloop(void)
                     }
                   else if (cur_tool == TOOL_TEXT)
                     {
-                      font_scroll = thing_scroll;
-                      
                       if (do_draw)
                         draw_fonts();
                     }
                   else if (cur_tool == TOOL_STAMP)
                     {
-                      stamp_scroll = thing_scroll;
-                      
-
                       if (do_draw)
                         draw_stamps();
                     }
@@ -3619,8 +3567,6 @@ static void mainloop(void)
                     }
                   else if (cur_tool == TOOL_MAGIC)
                     {
-                      magic_scroll = thing_scroll;
-                      
                       if (do_draw)
                         draw_magic();
                     }
@@ -3777,32 +3723,12 @@ static void mainloop(void)
 		  /* Note set of things we're dealing with */
 		  /* (stamps, brushes, etc.) */
 		  
-		  if (cur_tool == TOOL_BRUSH || cur_tool == TOOL_LINES)
+		  if (cur_tool == TOOL_STAMP)
 		    {
-		      num_things = num_brushes;
-		      thing_scroll = brush_scroll;
-		    }
-		  else if (cur_tool == TOOL_STAMP)
-		    {
-		      num_things = num_stamps;
-		      thing_scroll = stamp_scroll;
 		    }
 		  else if (cur_tool == TOOL_TEXT)
 		    {
-		      num_things = num_font_families;
-		      thing_scroll = font_scroll;
 		    }
-		  else if (cur_tool == TOOL_SHAPES)
-		    {
-		      num_things = NUM_SHAPES;
-		      thing_scroll = 0;
-		    }
-		  else if (cur_tool == TOOL_MAGIC)
-		    {
-		      num_things = NUM_MAGICS;
-		      thing_scroll = magic_scroll;
-		    }
-
 
 		  max = 14;
 		  if (cur_tool == TOOL_STAMP && !disable_stamp_controls)
@@ -3819,7 +3745,7 @@ static void mainloop(void)
 			{
 			  /* Up button; is it available? */
 			  
-			  if (thing_scroll > 0)
+			  if (*thing_scroll > 0)
 			    do_setcursor(cursor_up);
 			  else
 			    do_setcursor(cursor_arrow);
@@ -3829,7 +3755,7 @@ static void mainloop(void)
 			{
 			  /* Down button; is it available? */
 			  
-			  if (thing_scroll < num_things - (max - 2))
+			  if (*thing_scroll < num_things - (max - 2))
 			    do_setcursor(cursor_down);
 			  else
 			    do_setcursor(cursor_arrow);
