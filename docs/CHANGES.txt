@@ -8,6 +8,13 @@ http://www.newbreedsoftware.com/tuxpaint/
 
 
 2005.January.16 (0.9.15)
+
+
+  * uncatagorized and messy:
+    -----------------------
+    * Splash screen appears earlier, along with the version info and cursor.
+
+
   * Stamp tool improvements:
     ------------------------
     * Greatly improved stamp outlining (to avoid empty rows or columns

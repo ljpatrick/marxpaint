@@ -7396,8 +7396,7 @@ static void setup(int argc, char * argv[])
     }
 
 
-
-  /* Load and display title image: */
+////////// quickly: title image, version, progress bar, and watch cursor
 
   img_title = loadimage(DATA_PREFIX "images/title.png");
   img_progress = loadimage(DATA_PREFIX "images/ui/progress.png");
@@ -7414,7 +7413,6 @@ static void setup(int argc, char * argv[])
 
   SDL_Flip(screen);
 
-
   medium_font = TTF_OpenFont(DATA_PREFIX "fonts/default_font.ttf",
 		      18 - (only_uppercase * 3));
 
@@ -7429,7 +7427,6 @@ static void setup(int argc, char * argv[])
       cleanup();
       exit(1);
     }
-
 
   SDL_FillRect(screen, NULL, SDL_MapRGB(screen->format, 255, 255, 255));
 
@@ -7448,6 +7445,7 @@ static void setup(int argc, char * argv[])
   SDL_Flip(screen);
   playsound(0, SND_HARP, 1);
   SDL_FreeSurface(img_title);
+
 
 #if defined(WIN32) && defined(LARGE_CURSOR_FULLSCREEN_BUG)
   if (fullscreen && no_fancy_cursors == 0)
@@ -7468,6 +7466,13 @@ static void setup(int argc, char * argv[])
 #ifdef SMALL_CURSOR_SHAPES
   scale = 2;
 #endif
+
+  cursor_watch = get_cursor(watch_bits, watch_mask_bits,
+			    watch_width, watch_height,
+			    14 / scale, 14 / scale);
+
+  do_setcursor(cursor_watch);
+
 
   cursor_hand = get_cursor(hand_bits, hand_mask_bits,
 			   hand_width, hand_height,
@@ -7493,10 +7498,6 @@ static void setup(int argc, char * argv[])
 		             rotate_width, rotate_height,
 		             15 / scale, 15 / scale);
   
-  cursor_watch = get_cursor(watch_bits, watch_mask_bits,
-			    watch_width, watch_height,
-			    14 / scale, 14 / scale);
-  
   cursor_arrow = get_cursor(arrow_bits, arrow_mask_bits,
 			    arrow_width, arrow_height,
 			    0, 0);
@@ -7513,8 +7514,6 @@ static void setup(int argc, char * argv[])
 			   tiny_width, tiny_height,
 			   3, 3);   /* Exactly the same in SMALL (16x16) size! */
 
-  do_setcursor(cursor_watch);
-  
 
 
   /* Create drawing canvas: */
