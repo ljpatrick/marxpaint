@@ -29,6 +29,12 @@
 #define VER_DATE        "2004-11-21"
 
 
+#define VIDEO_BPP 15 // saves memory
+//#define VIDEO_BPP 16 // causes discoloration
+//#define VIDEO_BPP 24 // compromise
+//#define VIDEO_BPP 32 // might be fastest, if conversion funcs removed
+
+
 /* #define DEBUG */
 /* #define LOW_QUALITY_THUMBNAILS */
 /* #define LOW_QUALITY_COLOR_SELECTOR */
@@ -518,9 +524,10 @@ SDL_Surface * img_title_on, * img_title_off,
 SDL_Surface * img_title_names[NUM_TITLES];
 SDL_Surface * img_tools[NUM_TOOLS], * img_tool_names[NUM_TOOLS];
 
-#define MAX_STAMPS 256
+#define MAX_STAMPS 512
 #define MAX_BRUSHES 64
 #define MAX_FONTS 64
+
 int num_brushes, num_stamps;
 SDL_Surface * img_brushes[MAX_BRUSHES];
 SDL_Surface * img_stamps[MAX_STAMPS];
@@ -5019,7 +5026,7 @@ void setup(int argc, char * argv[])
       else
 	{
 #ifndef WIN32
-	  if (Mix_OpenAudio(44100, AUDIO_S16, 2, 1024) < 0)
+	  if (Mix_OpenAudio(44100, AUDIO_S16SYS, 2, 1024) < 0)
 #else
 	    if (Mix_OpenAudio(44100, AUDIO_S16, 2, 2048) < 0)
 #endif
@@ -5065,10 +5072,10 @@ void setup(int argc, char * argv[])
     {
 #ifdef USE_HWSURFACE
       screen = SDL_SetVideoMode(WINDOW_WIDTH, WINDOW_HEIGHT,
-				16, SDL_FULLSCREEN | SDL_HWSURFACE);
+				VIDEO_BPP, SDL_FULLSCREEN | SDL_HWSURFACE);
 #else
       screen = SDL_SetVideoMode(WINDOW_WIDTH, WINDOW_HEIGHT,
-				16, SDL_FULLSCREEN | SDL_SWSURFACE);
+				VIDEO_BPP, SDL_FULLSCREEN | SDL_SWSURFACE);
 #endif
 
       if (screen == NULL)
@@ -5086,9 +5093,11 @@ void setup(int argc, char * argv[])
   if (!fullscreen)
     {
 #ifdef USE_HWSURFACE
-      screen = SDL_SetVideoMode(WINDOW_WIDTH, WINDOW_HEIGHT, 16, SDL_HWSURFACE);
+      screen = SDL_SetVideoMode(WINDOW_WIDTH, WINDOW_HEIGHT,
+		      		VIDEO_BPP, SDL_HWSURFACE);
 #else
-      screen = SDL_SetVideoMode(WINDOW_WIDTH, WINDOW_HEIGHT, 16, SDL_SWSURFACE);
+      screen = SDL_SetVideoMode(WINDOW_WIDTH, WINDOW_HEIGHT,
+		      		VIDEO_BPP, SDL_SWSURFACE);
 #endif
     }
 
