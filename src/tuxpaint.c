@@ -1467,11 +1467,13 @@ typedef struct family_info {
 } family_info;
 
 static TTF_Font * medium_font, * small_font, * large_font, * locale_font;
-static style_info * user_font_styles[MAX_FONTS];
+
 static family_info * user_font_families[MAX_FONTS];
-static int num_font_styles;
 static int num_font_families;
 
+static style_info **user_font_styles;
+static int num_font_styles;
+static int num_font_styles_max;
 
 static TTF_Font *getfonthandle(int desire)
 {
@@ -1833,12 +1835,25 @@ static void groupfonts(void)
         {
           if(++high >= num_font_styles)
             break;
-          if(compar_fontgroup(&user_font_styles[low],&user_font_styles[high]))
+          if(compar_fontgroup(user_font_styles+low, user_font_styles+high))
             break;
         }
-      groupfonts_range(user_font_styles+low,high-low);
+      groupfonts_range(user_font_styles+low, high-low);
       low = high;
     }
+
+  i = num_font_styles;
+  while(i--)
+    {
+      free(user_font_styles[i]->filename);
+      free(user_font_styles[i]->directory);
+      free(user_font_styles[i]->family);
+      free(user_font_styles[i]->style);
+      free(user_font_styles[i]);
+    }
+  free(user_font_styles);
+  user_font_styles = NULL; // just to catch bugs
+
   qsort(user_font_families, num_font_families, sizeof user_font_families[0], compar_fontkiller);
   low = 0;
   for(;;)
@@ -14120,7 +14135,7 @@ static void loadfonts(const char * const dir, int fatal)
 
 
 
-  /* Read directory for images: */
+  /* Read directory for fonts: */
 
   num_files = 0;
   do
@@ -14160,21 +14175,25 @@ static void loadfonts(const char * const dir, int fatal)
 
   /* Do something with each file (load TTFs): */
 
-  for (i = 0; i < num_files && num_font_styles + 3 < MAX_FONTS; i++)
+  for (i = 0; i < num_files /* && num_font_styles + 3 < MAX_FONTS */; i++)
     {
+      if (num_font_styles==num_font_styles_max)
+        {
+          num_font_styles_max = num_font_styles_max * 5 / 4 + 30;
+          user_font_styles = realloc(user_font_styles, num_font_styles_max * sizeof *user_font_styles);
+        }
       /* Ignore things starting with "." (e.g., "." and ".." dirs): */
-
-      if (strstr(d_names[i], ".") != d_names[i])
+      if (d_names[i][0]!='.')
 	{
 	  /* If it's a directory, recurse down into it: */
-
 	  snprintf(fname, sizeof(fname), "%s/%s", dir, d_names[i]);
 	  debug(fname);
-	
 	  stat(fname, &sbuf);
-	
 	  if (S_ISDIR(sbuf.st_mode))
 	    loadfonts(fname,fatal);
+
+          // Loadable: TrueType (.ttf), Type1 (.pfa and .pfb), and various useless bitmap fonts.
+          // Compressed files (with .gz or .bz2) might also work.
 	  if (strstr(d_names[i], ".ttf") || strstr(d_names[i], ".pfa") || strstr(d_names[i], ".pfb"))
 	    {
 //printf("Loading font: %s/%s\n", dir, d_names[i]);
@@ -14200,15 +14219,15 @@ static void loadfonts(const char * const dir, int fatal)
       free(d_names[i]);
     }
 
-
+#if 0
   /* Give warning if too many files were found (e.g., some not loaded): */
-
   if (num_font_styles == MAX_FONTS)
     {
       fprintf(stderr,
 	      "\nWarning: Reached maximum fonts (%d) which can be loaded.\n\n",
 	      MAX_FONTS);
     }
+#endif
 }
 
 
