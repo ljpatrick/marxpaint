@@ -681,7 +681,7 @@ static int colors_are_selectable;
 static int been_saved;
 static char file_id[32];
 static char starter_id[32];
-static int brush_scroll, stamp_scroll, font_scroll;
+static int brush_scroll, stamp_scroll, font_scroll, magic_scroll;
 static int eraser_sound;
 
 static char texttool_str[256];
@@ -950,6 +950,7 @@ int main(int argc, char * argv[])
   brush_scroll = 0;
   stamp_scroll = 0;
   font_scroll = 0;
+  magic_scroll = 0;
 
 
   reset_avail_tools();
@@ -1704,7 +1705,7 @@ static void mainloop(void)
 		      else if (cur_tool == TOOL_MAGIC)
 			{
 			  num_things = NUM_MAGICS;
-			  thing_scroll = 0;
+			  thing_scroll = magic_scroll;
 			}
 		      else if (cur_tool == TOOL_ERASER)
 		        {
@@ -2052,6 +2053,7 @@ static void mainloop(void)
 			    }
 			  
 			  cur_magic = cur_thing;
+			  magic_scroll = thing_scroll;
 
 			  draw_tux_text(TUX_GREAT, magic_tips[cur_magic], 1);
 			  
@@ -2334,7 +2336,7 @@ static void mainloop(void)
 		  else if (cur_tool == TOOL_MAGIC)
 		    {
 		      num_things = NUM_MAGICS;
-		      thing_scroll = 0;
+		      thing_scroll = magic_scroll;
 		    }
 
 		  do_draw = 0;
@@ -2485,6 +2487,7 @@ static void mainloop(void)
 		    }
 
 		  cur_magic = cur_thing;
+		  magic_scroll = thing_scroll;
 
 		  draw_tux_text(TUX_GREAT, magic_tips[cur_magic], 1);
 
@@ -2673,7 +2676,7 @@ static void mainloop(void)
 		  else if (cur_tool == TOOL_MAGIC)
 		    {
 		      num_things = NUM_MAGICS;
-		      thing_scroll = 0;
+		      thing_scroll = magic_scroll;
 		    }
 
 
@@ -6794,7 +6797,7 @@ static void draw_toolbar(void)
 
 static void draw_magic(void)
 {
-  int i;
+  int magic, i, max, off_y;
   SDL_Rect dest;
 
 
@@ -6803,15 +6806,54 @@ static void draw_magic(void)
 
   draw_image_title(TITLE_MAGIC, WINDOW_WIDTH - 96);
 
-  for (i = 0; i < 14 + TOOLOFFSET; i++)
+  if (NUM_MAGICS > 14 + TOOLOFFSET)
     {
-      dest.x = WINDOW_WIDTH - 96 + ((i % 2) * 48);
-      dest.y = ((i / 2) * 48) + 40;
+      off_y = 24;
+      max = 12 + TOOLOFFSET;
 
+      dest.x = WINDOW_WIDTH - 96;
+      dest.y = 40;
 
-      if (i < NUM_MAGICS)
+      if (magic_scroll > 0)
 	{
-	  if (i == cur_magic)
+	  SDL_BlitSurface(img_scroll_up, NULL, screen, &dest);
+	}
+      else
+	{
+	  SDL_BlitSurface(img_scroll_up_off, NULL, screen, &dest);
+	}
+
+      dest.x = WINDOW_WIDTH - 96;
+      dest.y = 40 + 24 + ((6 + TOOLOFFSET / 2) * 48);
+
+      if (magic_scroll < NUM_MAGICS - 12 - TOOLOFFSET)
+	{
+	  SDL_BlitSurface(img_scroll_down, NULL, screen, &dest);
+	}
+      else
+	{
+	  SDL_BlitSurface(img_scroll_down_off, NULL, screen, &dest);
+	}
+    }
+  else
+    {
+      off_y = 0;
+      max = 14 + TOOLOFFSET;
+    }
+
+  
+  for (magic = magic_scroll;
+       magic < magic_scroll + max;
+       magic++)
+    {
+      i = magic - magic_scroll;
+      
+      dest.x = ((i % 2) * 48) + (WINDOW_WIDTH - 96);
+      dest.y = ((i / 2) * 48) + 40 + off_y;
+
+      if (magic < NUM_MAGICS)
+	{
+	  if (magic == cur_magic)
 	    {
 	      SDL_BlitSurface(img_btn_down, NULL, screen, &dest);
 	    }
@@ -6821,16 +6863,17 @@ static void draw_magic(void)
 	    }
 	
 	  dest.x = WINDOW_WIDTH - 96 + ((i % 2) * 48) + 4;
-	  dest.y = ((i / 2) * 48) + 40 + 4;
+	  dest.y = ((i / 2) * 48) + 40 + 4 + off_y;
 
-	  SDL_BlitSurface(img_magics[i], NULL, screen, &dest);
+	  SDL_BlitSurface(img_magics[magic], NULL, screen, &dest);
 
 	
 	  dest.x = WINDOW_WIDTH - 96 + ((i % 2) * 48) + 4 +
-	    (40 - img_magic_names[i]->w) / 2;
-	  dest.y = ((i / 2) * 48) + 40 + 4 + (44 - img_magic_names[i]->h);
+	    (40 - img_magic_names[magic]->w) / 2;
+	  dest.y = (((i / 2) * 48) + 40 + 4 +
+		    (44 - img_magic_names[magic]->h) + off_y);
 
-	  SDL_BlitSurface(img_magic_names[i], NULL, screen, &dest);
+	  SDL_BlitSurface(img_magic_names[magic], NULL, screen, &dest);
 	}
       else
 	{

@@ -8,11 +8,8 @@
   bill@newbreedsoftware.com
   http://www.newbreedsoftware.com/tuxpaint/
 
-  June 29, 2002 - December 6, 2004
+  June 29, 2002 - December 11, 2004
 */
-
-
-#include "tip_tux.h"
 
 
 /* What tools are available: */
@@ -25,20 +22,25 @@ enum {
   MAGIC_FLIP,
   
   MAGIC_BLUR,
-  MAGIC_BLOCKS,
+  MAGIC_SMUDGE,
   
-  MAGIC_NEGATIVE,
   MAGIC_FADE,
+  MAGIC_DARKEN,
   
   MAGIC_CHALK,
-  MAGIC_DRIP,
+  MAGIC_BLOCKS,
   
   MAGIC_THICK,
   MAGIC_THIN,
 
-  MAGIC_FILL,
-  MAGIC_SMUDGE,
+  MAGIC_NEGATIVE,
+  MAGIC_TINT,
+
+  MAGIC_DRIP,
+  MAGIC_CARTOON,
   
+  MAGIC_FILL,
+
   NUM_MAGICS
 };
 
@@ -53,19 +55,24 @@ const char * const magic_names[NUM_MAGICS] = {
   gettext_noop("Flip"),
 
   gettext_noop("Blur"),
-  gettext_noop("Blocks"),
+  gettext_noop("Smudge"),
 
-  gettext_noop("Negative"),
   gettext_noop("Fade"),
+  gettext_noop("Darken"),
 
   gettext_noop("Chalk"),
-  gettext_noop("Drip"),
+  gettext_noop("Blocks"),
 
   gettext_noop("Thick"),
   gettext_noop("Thin"),
 
-  gettext_noop("Fill"),
-  gettext_noop("Smudge"),
+  gettext_noop("Negative"),
+  gettext_noop("Tint"),
+
+  gettext_noop("Drip"),
+  gettext_noop("Cartoon"),
+
+  gettext_noop("Fill")
 };
 
 
@@ -79,25 +86,30 @@ const char * const magic_tips[NUM_MAGICS] = {
   gettext_noop("Click to flip the picture upside-down."),
   
   gettext_noop("Click and move the mouse around to blur the picture."),
-  gettext_noop("Click and move the mouse around to make the picture blocky."),
-  
-  gettext_noop("Click and move the mouse around to draw a negative."),
+  gettext_noop("Click and move the mouse around to smudge the picture."),
+
   gettext_noop("Click and move to fade the colors."),
-  
+  gettext_noop("Click and move to darken the colors."),
+
   gettext_noop("Click and move the mouse around to turn the picture into a chalk drawing."),
-  gettext_noop("Click and move the mouse around to make the picture drip."),
+  gettext_noop("Click and move the mouse around to make the picture blocky."),
   
   gettext_noop("Click and move the mouse to thicken the picture."),
   gettext_noop("Click and move the mouse to thin the picture."),
 
-  gettext_noop("Click in the picture to fill that area with color."),
-  gettext_noop("Click and move the mouse around to smudge the picture."),
+  gettext_noop("Click and move the mouse around to draw a negative."),
+  gettext_noop("Click and move the mouse around to change the picture's color."),
+
+  gettext_noop("Click and move the mouse around to make the picture drip."),
+  gettext_noop("Click and move the mouse around to turn the picture into a cartoon."),
+  
+  gettext_noop("Click in the picture to fill that area with color.")
 };
 
 
 /* Tool icon filenames: */
 
-const char * const magic_img_fnames[NUM_TOOLS] = {
+const char * const magic_img_fnames[NUM_MAGICS] = {
   DATA_PREFIX "images/magic/rainbow.png",
   DATA_PREFIX "images/magic/sparkles.png",
   
@@ -105,23 +117,28 @@ const char * const magic_img_fnames[NUM_TOOLS] = {
   DATA_PREFIX "images/magic/flip.png",
   
   DATA_PREFIX "images/magic/blur.png",
-  DATA_PREFIX "images/magic/blocks.png",
-  
-  DATA_PREFIX "images/magic/negative.png",
+  DATA_PREFIX "images/magic/smudge.png",
+
   DATA_PREFIX "images/magic/fade.png",
-  
+  DATA_PREFIX "images/magic/darken.png",
+
   DATA_PREFIX "images/magic/chalk.png",
-  DATA_PREFIX "images/magic/drip.png",
+  DATA_PREFIX "images/magic/blocks.png",
   
   DATA_PREFIX "images/magic/thick.png",
   DATA_PREFIX "images/magic/thin.png",
 
-  DATA_PREFIX "images/magic/fill.png",
-  DATA_PREFIX "images/magic/smudge.png"
+  DATA_PREFIX "images/magic/negative.png",
+  DATA_PREFIX "images/magic/tint.png",
+  
+  DATA_PREFIX "images/magic/drip.png",
+  DATA_PREFIX "images/magic/cartoon.png",
+
+  DATA_PREFIX "images/magic/fill.png"
 };
 
 
-/* FIXME: Should we should different Tux icons depending on magic,
+/* FIXME: Should we show different Tux icons depending on magic,
    like tools? */
 
 
