@@ -45,13 +45,13 @@ int color_hexes[NUM_COLORS][3] = {
   {255, 128,   0}, /* Orange */
   {255, 255,   0}, /* Yellow */
   {  0, 255,   0}, /* Lime */
-  {  0, 128,   0}, /* Green */
+  {  0, 132,  64}, /* Green */
   {  0, 255, 255}, /* Cyan */
   {  0,   0, 255}, /* Blue */
-  {128,   0, 128}, /* Purple */
+  { 96,   0, 128}, /* Purple */
   {255,   0, 255}, /* Fuchsia */
   {128,  96,   0}, /* Brown */
-  {128, 128, 128}, /* Grey */
+  {128, 128, 128}, /* Gray */
   {192, 192, 192}  /* Silver */
 };
 
@@ -59,19 +59,19 @@ int color_hexes[NUM_COLORS][3] = {
 /* Color names: */
 
 char * color_names[NUM_COLORS] = {
-  gettext_noop("Black"),
-  gettext_noop("White"),
-  gettext_noop("Red"),
-  gettext_noop("Pink"),
-  gettext_noop("Orange"),
-  gettext_noop("Yellow"),
-  gettext_noop("Lime"),
-  gettext_noop("Green"),
-  gettext_noop("Cyan"),
-  gettext_noop("Blue"),
-  gettext_noop("Purple"),
-  gettext_noop("Fuchsia"),
-  gettext_noop("Brown"),
-  gettext_noop("Grey"),
-  gettext_noop("Silver")
+  gettext_noop("Black!"),
+  gettext_noop("White!"),
+  gettext_noop("Red!"),
+  gettext_noop("Pink!"),
+  gettext_noop("Orange!"),
+  gettext_noop("Yellow!"),
+  gettext_noop("Lime!"),
+  gettext_noop("Green!"),
+  gettext_noop("Cyan!"),
+  gettext_noop("Blue!"),
+  gettext_noop("Purple!"),
+  gettext_noop("Fuchsia!"),
+  gettext_noop("Brown!"),
+  gettext_noop("Gray!"),
+  gettext_noop("Silver!")
 };
