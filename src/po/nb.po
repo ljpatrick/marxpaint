@@ -30,7 +30,7 @@ msgid "White!"
 msgstr "Hvit!"
 
 msgid "Red!"
-msgstr "Gjør om!"
+msgstr "Rød!"
 
 msgid "Pink!"
 msgstr "Rosa!"
