@@ -1,88 +1,74 @@
+# translation of pt_pt.po to 
 # Tux Paint portuguese (european) messages
 # Copyright (C) 2003
-# Ricardo Cruz <rick2@aeiu.pt>, 2003
+# Ricardo Cruz <rick2@aeiu.pt>, 2003.
+# Ricardo Cruz <rick2@aeiou.pt>, 2004.
 msgid ""
 msgstr ""
-"Project-Id-Version: TuxPaint 0.9.9\n"
+"Project-Id-Version: pt_pt\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2004-07-13 15:20+0200\n"
-"PO-Revision-Date: 2003-02-02 20:52+0000\n"
+"POT-Creation-Date: 2004-07-13 18:30+0200\n"
+"PO-Revision-Date: 2004-07-13 11:48+0100\n"
 "Last-Translator: Ricardo Cruz <rick2@aeiou.pt>\n"
-"Language-Team: Portuguese\n"
+"Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: KBabel 0.9.6\n"
+"X-Generator: KBabel 1.3\n"
 
 msgid "A drawing program for children."
 msgstr "Um programa de desenho para crianças."
 
 msgid "Drawing program"
-msgstr ""
+msgstr "Programa de desenho"
 
-#, fuzzy
 msgid "Tux Paint"
-msgstr "Pintar"
+msgstr "Tux Paint"
 
-#, fuzzy
 msgid "Black!"
 msgstr "Preto!"
 
-#, fuzzy
 msgid "White!"
 msgstr "Branco!"
 
-#, fuzzy
 msgid "Red!"
-msgstr "Refazer!"
+msgstr "Vermelho!"
 
-#, fuzzy
 msgid "Pink!"
-msgstr "Cor-de-rosa!"
+msgstr "Cor de Rosa!"
 
-#, fuzzy
 msgid "Orange!"
-msgstr "Cor-de-Laranja!"
+msgstr "Cor de Laranja!"
 
-#, fuzzy
 msgid "Yellow!"
 msgstr "Amarelo!"
 
-#, fuzzy
 msgid "Lime!"
-msgstr "Cor-de-Lima!"
+msgstr "Cor de Lima!"
 
-#, fuzzy
 msgid "Green!"
 msgstr "Verde!"
 
-#, fuzzy
 msgid "Cyan!"
 msgstr "Ciano!"
 
-#, fuzzy
 msgid "Blue!"
 msgstr "Azul!"
 
-#, fuzzy
 msgid "Purple!"
 msgstr "Violeta!"
 
-#, fuzzy
 msgid "Fuchsia!"
-msgstr "Lilás!"
+msgstr "Cor de flor brincos-de-princesa!"
 
-#, fuzzy
 msgid "Brown!"
 msgstr "Castanho!"
 
-#, fuzzy
 msgid "Gray!"
-msgstr "Boa!"
+msgstr "Cinzento!"
 
-#, fuzzy
 msgid "Silver!"
-msgstr "Prateado!"
+msgstr "Prata!"
 
 msgid "Great!"
 msgstr "Boa!"
@@ -138,29 +124,23 @@ msgstr "Preencher"
 msgid "You can draw in rainbow colors!"
 msgstr "Podes desenhar com as cores do arco-íris!"
 
-#, fuzzy
 msgid "Click and move to draw sparkles."
-msgstr "Clica e move o rato para desenhares fagulhas"
+msgstr "Clica e move o rato para desenhares fagulhas."
 
-#, fuzzy
 msgid "Click to make a mirror image."
-msgstr "Clica para espelhares o desenho!"
+msgstr "Clica para espelhares o desenho."
 
-#, fuzzy
 msgid "Click to flip the picture upside-down."
-msgstr "Clica para girares o desenho de cabeça para baixo!"
+msgstr "Clica para girares o desenho de cabeça para baixo."
 
-#, fuzzy
 msgid "Click and move the mouse around to blur the picture."
-msgstr "Clica e move o rato para borrares o desenho"
+msgstr "Clica e move o rato para borrares o desenho."
 
-#, fuzzy
 msgid "Click and move the mouse around to make the picture blocky."
-msgstr "Clica e move o rato para transformares o desenho em blocos"
+msgstr "Clica e move o rato para transformares o desenho em blocos."
 
-#, fuzzy
 msgid "Click and move the mouse around to draw a negative."
-msgstr "Clica e move o rato para inverteres as cores do desenho"
+msgstr "Clica e move o rato para inverteres as cores do desenho."
 
 msgid "Click and move to fade the colors."
 msgstr "Clica e move o rato para desbotares as cores."
@@ -169,21 +149,17 @@ msgid ""
 "Click and move the mouse around to turn the picture into a chalk drawing."
 msgstr "Clica e move o rato para transformares o desenho num desenho de giz."
 
-#, fuzzy
 msgid "Click and move the mouse around to make the picture drip."
-msgstr "Clica e move o rato para transformares o desenho numa respingada!"
+msgstr "Clica e move o rato para transformares o desenho numa respingada."
 
-#, fuzzy
 msgid "Click and move the mouse to thicken the picture."
-msgstr "Clica e move o rato para engordares o desenho"
+msgstr "Clica e move o rato para engordares o desenho."
 
-#, fuzzy
 msgid "Click and move the mouse to thin the picture."
-msgstr "Clica e move o rato para emagreceres o desenho"
+msgstr "Clica e move o rato para emagreceres o desenho."
 
-#, fuzzy
 msgid "Click in the picture to fill that area with color."
-msgstr "Clica no desenho para preencheres essa área com uma cor"
+msgstr "Clica no desenho para preencheres essa área com uma cor."
 
 msgid "Square"
 msgstr "Quadrado"
@@ -288,7 +264,6 @@ msgstr "Escolhe uma cor e uma forma de pincel para desenhares."
 msgid "Pick a picture to stamp around your drawing."
 msgstr "Escolhe uma imagem para carimbares no teu desenho."
 
-#, fuzzy
 msgid "Click to start drawing a line. Let go to complete it."
 msgstr ""
 "Clica para começares a desenhar uma linha. Solta o rato para terminá-la."
@@ -296,15 +271,13 @@ msgstr ""
 # #: tools.h:65
 # msgid "Pick a shape to draw.  Click once to pick the center of the shape, #click again to draw it."
 # msgstr "Escolha uma forma para desenhar. Clique uma vez para definir o centro da imagem. Clique de novo para desenhá-la."
-#, fuzzy
 msgid ""
 "Pick a shape. Click to pick the center, drag, then let go when it is the "
 "size you want. Move around to rotate it, and click to draw it."
 msgstr ""
-"Escolhe uma forma. Clica para pôres o centro e arrasta o rato para o "
-"tamanho. Move o rato para a rodares e é só clicar."
+"Escolhe uma forma. Clica para pôres o centro e arrasta o rato para o tamanho "
+"que queres. Move o rato para a rodares e é só clicar."
 
-#, fuzzy
 msgid "Choose a style of text. Click on your drawing and you can start typing."
 msgstr ""
 "Escolhe um tipo de letra para o texto. Clica no desenho para começares a "
@@ -378,25 +351,22 @@ msgid "Can’t open that picture!"
 msgstr "Não consigo abrir esse desenho!"
 
 msgid "OK"
-msgstr ""
+msgstr "OK"
 
 msgid "Starting a new picture will erase the current one!"
 msgstr "Se iniciares outro desenho, irás apagar o desenho actual!"
 
-#, fuzzy
 msgid "That’s OK!"
-msgstr "Está bem"
+msgstr "Está bem!"
 
-#, fuzzy
 msgid "Never mind!"
-msgstr "Nem Pensar!"
+msgstr "Nem pensar!"
 
 msgid "There are no saved files!"
 msgstr "Não há desenhos gravados!"
 
-#, fuzzy
 msgid "Print your picture now?"
-msgstr "Queres gravar primeiro o teu desenho?"
+msgstr "Imprimir o desenho agora?"
 
 msgid "Your picture has been printed!"
 msgstr "O teu desenho foi imprimido!"
@@ -416,22 +386,11 @@ msgid "Back"
 msgstr "Recuar"
 
 #. FIXME: Move elsewhere!!!
-#, fuzzy
 msgid "Save over the older version of this picture?"
 msgstr "Gravar por cima do teu desenho anterior?"
 
 msgid "No, save a new file"
 msgstr "Não, gravar como um novo desenho"
 
-#, fuzzy
 msgid "Choose the picture you want, then click “Open”."
-msgstr "Escolhe o desenho que queres e depois clica no 'Abrir'"
-
-#~ msgid "Okay"
-#~ msgstr "Tudo bem!"
-
-#~ msgid "Red"
-#~ msgstr "Vermelho!"
-
-#~ msgid "Grey"
-#~ msgstr "Cinza!"
+msgstr "Escolhe o desenho que queres e depois clica no \"Abrir\"."

@@ -7,7 +7,10 @@ bill@newbreedsoftware.com
 http://www.newbreedsoftware.com/tuxpaint/
 
 
-2004.Jul.13 (0.9.14) [cvs]
+2004.July.13 (0.9.14) [cvs]
+  * Updated Portuguese (Portugal) translation.
+    Ricardo Cruz <rick2@aeiu.pt>
+
   * Updated French translation.
     Jacques Chion <Jacques.Chion@wanadoo.fr>
 

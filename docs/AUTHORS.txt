@@ -179,7 +179,7 @@ June 17, 2002 - June 10, 2004
     Daniel José Viana <danjovic@vespanet.com.br>
     Dedicated to my beloved daughter Scarlet
  
-  * Portuguese
+  * Portuguese (Portugal)
     Ricardo Cruz <rick2@aeiou.pt>
     
   * Romanian
