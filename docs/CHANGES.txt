@@ -8,6 +8,9 @@ http://www.newbreedsoftware.com/tuxpaint/
 
 
 2004.September.13 (0.9.14) [cvs]
+  * Initial work to get proper uppercase support in languages other
+    than English.
+
   * Added lockfile support, to prevent Tux Paint from being launched more
     than once every 30 seconds.  (Disable with "--nolockfile" command-line
     argument.)  Thanks to Darci Lindgren for suggestion the feature, and

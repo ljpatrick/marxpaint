@@ -6,7 +6,7 @@ Copyright (c) 2004 by Bill Kendrick
 bill@newbreedsoftware.com
 http://www.newbreedsoftware.com/tuxpaint/
 
-September 7, 2004
+September 14, 2004
 
 HIGH-PRIORITY DOCUMENTATION CHANGES:
 ------------------------------------
@@ -130,15 +130,17 @@ PLATFORM-SPECIFIC BUGS:
 
 HIGH-PRIORITY I18n STUFF:
 -------------------------
-  * Non-ASCII characters (in translations) aren't uppercased when using
-    '--uppercase'. Example: In the Norwegian Nynorsk ('nn') translation
-    the top left icon is shown as 'MåLING' instead of 'MÅLING'.
-    To fix: Convert to wide chars, use 'towupper' instead of 'toupper',
-    and convert back to UTF-8. 'mbstowcs' and 'wcstombs' unfortunately
-    depend on on LC_CTYPE, so the encoding they use is locale dependent
-    (and *not* necessarily UTF-8, which our strings are in). On the other
-    hand, 'towupper' must be locale-aware for correct conversion (e.g. a
-    Turkish uppercase 'i' is *not* an 'I').
+  * Make sure characters are properly converted when using
+    '--uppercase' in locales that have uppercase letters.
+    Currently using 'mbstowcs' and 'wcstombs' to convert between
+    UFT-8 and wide chars, and using 'towupper' (instead of 'toupper') to
+    convert from lowercase to uppercase.
+
+    Karl says: "'mbstowcs' and 'wcstombs' unfortunately depend on on LC_CTYPE,
+    so the encoding they use is locale dependent (and *not* necessarily UTF-8,
+    which our strings are in). On the other hand, 'towupper' must be
+    locale-aware for correct conversion (e.g. a Turkish uppercase 'i' is *not*
+    an 'I')."
 
   * Make right-to-left strings not wordwrap with the shortest line at
     the top!
