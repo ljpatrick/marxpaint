@@ -6,7 +6,7 @@ Copyright (c) 2004 by Bill Kendrick
 bill@newbreedsoftware.com
 http://www.newbreedsoftware.com/tuxpaint/
 
-June 11, 2004
+June 19, 2004
 
 HIGH-PRIORITY DOCUMENTATION CHANGES:
 ------------------------------------
@@ -140,7 +140,15 @@ HIGH-PRIORITY TRANSLATION STUFF:
 LOW-PRIORITY TRANSLATION STUFF:
 -------------------------------
   * Support more languages!
-    * Hindi
+    * Indian:
+      * Bengali    (bn)
+      * Gujarati   (gu)
+      * Kannada    (kn)
+      * Malayalam  (ml)
+      * Marathi    (mr)
+      * Oriya      (or)
+      * Punjabi
+      * Telugu     (te)
     * Arabic
     * Thai
     ...

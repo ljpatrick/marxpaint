@@ -9,7 +9,7 @@
                            bill@newbreedsoftware.com
                    http://www.newbreedsoftware.com/tuxpaint/
 
-                          June 14, 2002 - June 5, 2004
+                         June 14, 2002 - June 19, 2004
 
      ----------------------------------------------------------------------
 
@@ -1560,7 +1560,7 @@ Stamps
 
            Sometimes, it doesn't make sense for a stamp to be flippable or
            mirrored; for example, stamps of letters or numbers. Sometimes
-           stamps are symettrical, so letting the user flip or mirror them
+           stamps are symmetrical, so letting the user flip or mirror them
            isn't useful.
 
            To make a stamp un-flippable, add the option "noflip" to the
