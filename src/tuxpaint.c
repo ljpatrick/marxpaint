@@ -1243,7 +1243,13 @@ static void update_screen(int x1, int y1, int x2, int y2)
   if (y2 >= WINDOW_HEIGHT)
     y2 = WINDOW_HEIGHT - 1;
 
-  SDL_UpdateRect(screen, x1, y1, x2 - x1 + 1, y2 - y1 + 1);
+  SDL_UpdateRect(screen, x1, y1, x2-x1+1, y2-y1+1);
+}
+
+
+static void update_screen_rect(SDL_Rect *r)
+{
+  SDL_UpdateRect(screen, r->x, r->y, r->w, r->h);
 }
 
 
@@ -2299,9 +2305,7 @@ static void mainloop(void)
 			  do_undo();
 			}
 		      do_undo();
-		      SDL_UpdateRect(screen,
-				     0, 0,
-				     96, (48 * (7 + TOOLOFFSET / 2)) + 40);
+		      update_screen_rect(&r_tools);
 		      shape_tool_mode = SHAPE_TOOL_MODE_DONE;
 		    }
 		}
@@ -2316,9 +2320,7 @@ static void mainloop(void)
 		  if (tool_avail[TOOL_REDO])
 		    {
 		      do_redo();
-		      SDL_UpdateRect(screen,
-				     0, 0,
-				     96, (48 * (7 + TOOLOFFSET / 2)) + 40);
+		      update_screen_rect(&r_tools);
 		      shape_tool_mode = SHAPE_TOOL_MODE_DONE;
 		    }
 		}
@@ -2342,9 +2344,7 @@ static void mainloop(void)
 		  tool_avail[TOOL_NEW] = tmp_int;
 		  
 		  draw_toolbar();
-		  SDL_UpdateRect(screen,
-				 0, 0,
-				 96, (48 * (7 + TOOLOFFSET / 2)) + 40);
+		  update_screen_rect(&r_tools);
 		  draw_colors(COLORSEL_REFRESH);
 
 		  if (cur_tool == TOOL_BRUSH || cur_tool == TOOL_LINES)
@@ -2408,8 +2408,7 @@ static void mainloop(void)
 		    }
 		  
 		  draw_toolbar();
-		  SDL_UpdateRect(screen, 0, 0,
-				 96, (48 * (7 + TOOLOFFSET / 2)) + 40);
+		  update_screen_rect(&r_tools);
 		}
 	      else if (key == SDLK_s &&
 		       (mod & KMOD_CTRL ||
@@ -2429,10 +2428,7 @@ static void mainloop(void)
 
 		  /* cur_tool = old_tool; */
 		  draw_toolbar();
-		  
-		  SDL_UpdateRect(screen,
-				 0, 0,
-				 96, (48 * (7 + TOOLOFFSET / 2)) + 40);
+		  update_screen_rect(&r_tools);
 		}
 	      else
 		{
@@ -2540,14 +2536,11 @@ static void mainloop(void)
 		      old_tool = cur_tool;
 		      cur_tool = which;
 		      draw_toolbar();
-		      SDL_UpdateRect(screen,
-				     0, 0,
-				     96, (48 * (7 + TOOLOFFSET / 2)) + 40);
+		      update_screen_rect(&r_tools);
 		      
 		      playsound(1, SND_CLICK, 0);
 		      
-		      draw_tux_text(tool_tux[cur_tool], tool_tips[cur_tool],
-				    1);
+		      draw_tux_text(tool_tux[cur_tool], tool_tips[cur_tool], 1);
 		      
 		      
 		      /* Draw items for this tool: */
@@ -2614,9 +2607,7 @@ static void mainloop(void)
 			  
 			  cur_tool = old_tool;
 			  draw_toolbar();
-			  SDL_UpdateRect(screen,
-					 0, 0,
-					 96, (48 * (7 + TOOLOFFSET / 2)) + 40);
+			  update_screen_rect(&r_tools);
 			  shape_tool_mode = SHAPE_TOOL_MODE_DONE;
 			}
 		      else if (cur_tool == TOOL_REDO)
@@ -2630,9 +2621,7 @@ static void mainloop(void)
 			  
 			  cur_tool = old_tool;
 			  draw_toolbar();
-			  SDL_UpdateRect(screen,
-					 0, 0,
-					 96, (48 * (7 + TOOLOFFSET / 2)) + 40);
+			  update_screen_rect(&r_tools);
 			  shape_tool_mode = SHAPE_TOOL_MODE_DONE;
 			}
 		      else if (cur_tool == TOOL_OPEN)
@@ -2650,9 +2639,7 @@ static void mainloop(void)
 			  
 			  cur_tool = old_tool;
 			  draw_toolbar();
-			  SDL_UpdateRect(screen,
-					 0, 0,
-					 96, (48 * (7 + TOOLOFFSET / 2)) + 40);
+			  update_screen_rect(&r_tools);
 			  
 			  draw_tux_text(TUX_GREAT, tool_tips[cur_tool], 1);
 
@@ -2681,9 +2668,7 @@ static void mainloop(void)
 			  
 			  cur_tool = old_tool;
 			  draw_toolbar();
-			  SDL_UpdateRect(screen,
-					 0, 0,
-					 96, (48 * (7 + TOOLOFFSET / 2)) + 40);
+			  update_screen_rect(&r_tools);
 			}
 		      else if (cur_tool == TOOL_NEW)
 			{
@@ -2724,7 +2709,7 @@ static void mainloop(void)
 			  
 			  cur_tool = old_tool;
 			  draw_toolbar();
-			  SDL_UpdateRect(screen, 0, 0, 96, (48 * (7 + TOOLOFFSET / 2)) + 40);
+			  update_screen_rect(&r_tools);
 			}
 		      else if (cur_tool == TOOL_PRINT)
 			{
@@ -2754,7 +2739,7 @@ static void mainloop(void)
 			  
 			  cur_tool = old_tool;
 			  draw_toolbar();
-			  SDL_UpdateRect(screen, 0, 0, 96, (48 * (7 + TOOLOFFSET / 2)) + 40);
+			  update_screen_rect(&r_tools);
 			}
 		      else if (cur_tool == TOOL_MAGIC)
 			{
@@ -2768,15 +2753,12 @@ static void mainloop(void)
 			  done = do_quit();
 			  cur_tool = old_tool;
 			  draw_toolbar();
-			  SDL_UpdateRect(screen, 0, 0, 96, (48 * (7 + TOOLOFFSET / 2)) + 40);
+			  update_screen_rect(&r_tools);
 			}
-		      
-		      SDL_UpdateRect(screen,
-				     WINDOW_WIDTH - 96, 0,
-				     96, (48 * 7) + 40 + HEIGHTOFFSET);
-		      SDL_UpdateRect(screen,
-				     0, (48 * 7) + 40 + HEIGHTOFFSET,
-				     WINDOW_WIDTH, 48);
+		      update_screen_rect(&r_toolopt);
+		      update_screen_rect(&r_ttoolopt);
+		      update_screen_rect(&r_colors);
+		      update_screen_rect(&r_tcolors);
 		    }
 		}
 	      else if (event.button.x >= WINDOW_WIDTH - 96 &&
@@ -3035,7 +3017,7 @@ static void mainloop(void)
 			    {
 			      playsound(0, control_sound, 0);
 			      draw_stamps();
-			      SDL_UpdateRect(screen, WINDOW_WIDTH - 96, 0, 96, (48 * 7) + 40 + HEIGHTOFFSET);
+			      update_screen_rect(&r_toolopt);
 			      update_stamp_xor();
 			    }
 			}
@@ -3120,7 +3102,7 @@ static void mainloop(void)
                                     }
                                 }
 			      draw_fonts();
-			      SDL_UpdateRect(screen, WINDOW_WIDTH - 96, 0, 96, (48 * 7) + 40 + HEIGHTOFFSET);
+			      update_screen_rect(&r_toolopt);
 			    }
 			}
 
@@ -3208,9 +3190,8 @@ static void mainloop(void)
 			    {
 			      draw_colors(stamp_colorable(cur_stamp) ||
 					  stamp_tintable(cur_stamp));
-			      SDL_UpdateRect(screen,
-					     0, (48 * 7) + 40 + HEIGHTOFFSET,
-					     WINDOW_WIDTH, 48);
+			      update_screen_rect(&r_colors);
+			      update_screen_rect(&r_tcolors);
 			    }
 			}
 		      else if (cur_tool == TOOL_SHAPES)
@@ -3229,9 +3210,8 @@ static void mainloop(void)
 			      cur_magic = cur_thing;
 			      draw_colors(magic_colors[cur_magic]);
 
-			      SDL_UpdateRect(screen,
-					     0, (48 * 7) + 40 + HEIGHTOFFSET,
-					     WINDOW_WIDTH, 48);
+			      update_screen_rect(&r_colors);
+			      update_screen_rect(&r_tcolors);
 			    }
 			  
 			  magic_scroll = thing_scroll;
@@ -3245,9 +3225,7 @@ static void mainloop(void)
 		      /* Update the screen: */
 		      
 		      if (do_draw)
-			SDL_UpdateRect(screen,
-				       WINDOW_WIDTH - 96, 0,
-				       96, (48 * 7) + 40 + HEIGHTOFFSET);
+		        update_screen_rect(&r_toolopt);
 		    }
 		}
 	      else if (event.button.x > 96 &&
@@ -3259,17 +3237,14 @@ static void mainloop(void)
 		{
 		  /* Color! */
 		  
-		  which = ((event.button.x - 96) /
-			   ((WINDOW_WIDTH - 96) / NUM_COLORS));
+		  which = (event.button.x-r_colors.x)/color_button_w + (event.button.y-r_colors.y)/color_button_h*gd_colors.cols;
 		  
 		  if (which < NUM_COLORS)
 		    {
 		      cur_color = which;
 		      playsound(1, SND_BUBBLE, 1);
 		      draw_colors(COLORSEL_REFRESH);
-		      SDL_UpdateRect(screen,
-				     0, (48 * 7) + 40 + HEIGHTOFFSET,
-				     WINDOW_WIDTH, 48);
+		      update_screen_rect(&r_colors);
 		      render_brush();
 		      draw_tux_text(TUX_KISS, color_names[cur_color], 1);
 		
@@ -3284,8 +3259,8 @@ static void mainloop(void)
 		{
 		  /* Draw something! */
 		  
-		  old_x = event.button.x - 96;
-		  old_y = event.button.y;
+		  old_x = event.button.x - r_canvas.x;
+		  old_y = event.button.y - r_canvas.y;
 		  
 		  if (been_saved)
 		    {
@@ -3295,9 +3270,7 @@ static void mainloop(void)
 		        tool_avail[TOOL_SAVE] = 1;
 
 		      draw_toolbar();
-		      SDL_UpdateRect(screen,
-				     0, 0,
-				     96, (48 * (7 + TOOLOFFSET / 2)) + 40);
+		      update_screen_rect(&r_tools);
 		    }
 		  
 		  if (cur_tool == TOOL_BRUSH)
@@ -3463,9 +3436,7 @@ static void mainloop(void)
 		      tool_avail[TOOL_NEW] = 1;
 		      
 		      draw_toolbar();
-		      SDL_UpdateRect(screen,
-				     0, 0,
-				     96, (48 * (7 + TOOLOFFSET / 2)) + 40);
+		      update_screen_rect(&r_tools);
 		    }
 		}
 	    }
@@ -3629,9 +3600,8 @@ static void mainloop(void)
 		    {
 		      draw_colors(stamp_colorable(cur_stamp) ||
 				  stamp_tintable(cur_stamp));
-		      SDL_UpdateRect(screen,
-				     0, (48 * 7) + 40 + HEIGHTOFFSET,
-				     WINDOW_WIDTH, 48);
+		      update_screen_rect(&r_colors);
+		      update_screen_rect(&r_tcolors);
 		    }
 		}
 	      else if (cur_tool == TOOL_SHAPES)
@@ -3648,10 +3618,7 @@ static void mainloop(void)
 		  if (cur_thing != cur_magic)
 		    {
 		      draw_colors(magic_colors[cur_magic]);
-
-		      SDL_UpdateRect(screen,
-				     0, (48 * 7) + 40 + HEIGHTOFFSET,
-				     WINDOW_WIDTH, 48);
+		      update_screen_rect(&r_tcolors);
 		    }
 
 		  cur_magic = cur_thing;
@@ -3667,9 +3634,10 @@ static void mainloop(void)
 	      /* Update the screen: */
 
 	      if (do_draw)
-		SDL_UpdateRect(screen,
-			       WINDOW_WIDTH - 96, 0,
-			       96, (48 * 7) + 40 + HEIGHTOFFSET);
+	        {
+	          update_screen_rect(&r_toolopt);
+	          update_screen_rect(&r_ttoolopt); // need this?
+	        }
 	    }
 	  else if (event.type == SDL_USEREVENT)
 	    {
@@ -5965,7 +5933,7 @@ static void rec_undo_buffer(void)
   if (wanna_update_toolbar)
     {
       draw_toolbar();
-      SDL_UpdateRect(screen, 0, 0, 96, (48 * (7 + TOOLOFFSET / 2)) + 40);
+      update_screen_rect(&r_tools);
     }
 }
 
@@ -9140,7 +9108,7 @@ static void do_undo(void)
       if (wanna_update_toolbar)
 	{
 	  draw_toolbar();
-	  SDL_UpdateRect(screen, 0, 0, 96, (48 * (7 + TOOLOFFSET / 2)) + 40);
+	  update_screen_rect(&r_tools);
 	}
 
       been_saved = 0;
@@ -9199,7 +9167,7 @@ static void do_redo(void)
   tool_avail[TOOL_UNDO] = 1;
 
   draw_toolbar();
-  SDL_UpdateRect(screen, 0, 0, 96, (48 * (7 + TOOLOFFSET / 2)) + 40);
+  update_screen_rect(&r_tools);
 }
 
 
@@ -9611,13 +9579,7 @@ static void draw_tux_text(int which_tux, const char * const str,
 	        WINDOW_WIDTH,
 		want_right_to_left);
 
-
-  /* Update the display: */
-
-  SDL_UpdateRect(screen,
-		 0, (48 * 7) + 40 + 48 + HEIGHTOFFSET,
-		 WINDOW_WIDTH,
-		 WINDOW_HEIGHT - ((48 * 7) + 40 + 48 + HEIGHTOFFSET));
+  update_screen_rect(&r_tuxarea);
 }
 
 
