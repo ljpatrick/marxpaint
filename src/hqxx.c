@@ -89,6 +89,9 @@ Uint16 hqxx_getpixel(SDL_Surface * surface, int x, int y, Uint8 * alpha)
     SDL_GetRGBA(pixel, surface->format, &r, &g, &b, alpha);
 
   
+  /* (Perhaps reducing the number of colors by chopping off the bottoms of
+     R, G and B will help?) */
+  
   pixel16 = ((r >> 3) << 11) | ((g >> 2) << 5) | (b >> 3);
 
   return pixel16;

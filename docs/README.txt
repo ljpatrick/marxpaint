@@ -9,7 +9,7 @@
                            bill@newbreedsoftware.com
                    http://www.newbreedsoftware.com/tuxpaint/
 
-                       June 14, 2002 - December 19, 2003
+                       June 14, 2002 - December 20, 2003
 
      ----------------------------------------------------------------------
 
@@ -829,8 +829,15 @@ Available Tools
                  showing where the stamp will be placed.
 
                  Different stamps can have different sound effects. Some
-                 stamps can be colored or tinted. Many stamps can be flipped
-                 vertically, or displayed as a mirror-image.
+                 stamps can be colored or tinted.
+
+                 Stamps and be shrunk and expanded, and many stamps can be
+                 flipped vertically, or displayed as a mirror-image, using
+                 controls at the bottom right of the screen.
+
+                 (NOTE: If the "nostampcontrols" option is set, Tux Paint
+                 won't display the Mirror, Flip, Shrink and Grow controls for
+                 stamps. See the "Options" section of this document, above.)
 
      ----------------------------------------------------------------------
 

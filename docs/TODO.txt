@@ -6,7 +6,7 @@ Copyright (c) 2003 by Bill Kendrick
 bill@newbreedsoftware.com
 http://www.newbreedsoftware.com/tuxpaint/
 
-December 18, 2003
+December 20, 2003
 
 
 LOW-PRIORITY DOCUMENTATION CHANGES:
@@ -96,6 +96,8 @@ LOW-PRIORITY TRANSLATION STUFF:
 
 FEATURE IDEAS:
 --------------
+  * "Cartoonify" magic tool.  Kind of like posterize, but different?
+
   * Create symbolic link "~/TuxPaintPictures" that points to
     "~/.tuxpaint/saved/"???
     FREQUENTLY REQUESTED

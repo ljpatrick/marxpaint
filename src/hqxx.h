@@ -35,9 +35,9 @@
 //trU in 32 = 0x00000700
 //trV in 32 = 0x00000006
 
-#define trY   0x3000
-#define trU   0x00C0
-#define trV   0x0006
+#define trY   ((0x30 & 0xF8) << 8)
+#define trU   ((0x07 & 0x7E) << 3)
+#define trV   ((0x06 & 0x1F))
 
 
 Uint16 hqxx_getpixel(SDL_Surface * surface, int x, int y, Uint8 * alpha);

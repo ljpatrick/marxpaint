@@ -36,7 +36,7 @@
 #define PIXEL00_80    Interp8(dest, x * 4 + 0, y * 4 + 0, w[5], w[1], a)
 #define PIXEL00_81    Interp8(dest, x * 4 + 0, y * 4 + 0, w[5], w[4], a)
 #define PIXEL00_82    Interp8(dest, x * 4 + 0, y * 4 + 0, w[5], w[2], a)
-#define PIXEL01_0     Interp0(dest, x * 4 + 0, y * 4 + 0, w[5], a)
+#define PIXEL01_0     Interp0(dest, x * 4 + 1, y * 4 + 0, w[5], a)
 #define PIXEL01_10    Interp1(dest, x * 4 + 1, y * 4 + 0, w[5], w[1], a)
 #define PIXEL01_12    Interp1(dest, x * 4 + 1, y * 4 + 0, w[5], w[2], a)
 #define PIXEL01_14    Interp1(dest, x * 4 + 1, y * 4 + 0, w[2], w[5], a)
