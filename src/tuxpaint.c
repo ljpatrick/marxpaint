@@ -7,12 +7,12 @@
   bill@newbreedsoftware.com
   http://www.newbreedsoftware.com/tuxpaint/
   
-  June 14, 2002 - August 18, 2003
+  June 14, 2002 - September 4, 2003
 */
 
 
-#define VER_VERSION     "0.9.12"
-#define VER_DATE        "2003.08.18"
+#define VER_VERSION     "0.9.13"
+#define VER_DATE        "2003.09.04"
 
 
 /* #define DEBUG */
@@ -491,6 +491,8 @@ void blit_magic(int x, int y, int x2, int y2);
 void stamp_draw(int x, int y);
 void rec_undo_buffer(void);
 void update_canvas(int x1, int y1, int x2, int y2);
+void show_usage(FILE * f, char * prg);
+void show_lang_usage(FILE * f, char * prg);
 void setup(int argc, char * argv[]);
 SDL_Cursor * get_cursor(char * bits, char * mask_bits,
 		        int w, int h, int x, int y);
@@ -3353,6 +3355,7 @@ void show_version(void)
 void show_usage(FILE * f, char * prg)
 {
   fprintf(f,
+    "\n"
     "Usage: %s {--usage | --help | --version | --copying}\n"
     "       %s [--fullscreen] [--800x600] [--nosound] [--noquit] [--noprint]\n"
     "          [--simpleshapes] [--uppercase] [--grab] [--nowheelmouse]\n"
@@ -3362,11 +3365,29 @@ void show_usage(FILE * f, char * prg)
     "          [--complexshapes] [--mixedcase] [--dontgrab] [--wheelmouse]\n"
     "          [--fancycursors] [--mouse] [--outlines] [--stamps]\n"
     "          [--saveoverask]\n"
-    "       %s [--printcfg | --noprintcfg]  (Windows only)\n"
+#ifdef WIN32
+    "       %s [--printcfg | --noprintcfg]\n"
+#endif
     "       %s [--printdelay=SECONDS]\n"
-    "          [--lang LANGUAGE | --locale LOCALE]\n"
+    "       %s [--lang LANGUAGE | --locale LOCALE]\n"
     "       %s [--nosysconfig]\n"
     /* "       %s [--record FILE | --playback FILE]\n" */
+    "\n",
+    prg, prg, prg,
+#ifdef WIN32
+    prg,
+#endif
+    prg, prg, prg  /* , prg */ );
+}
+
+
+/* Show available languages: */
+
+void show_lang_usage(FILE * f, char * prg)
+{
+  fprintf(f,
+    "\n"
+    "Usage: %s [--lang LANGUAGE | --locale LOCALE]\n"
     "\n"
     "LANGUAGE may be one of:\n"
     "  english      american-english\n"
@@ -3401,8 +3422,9 @@ void show_usage(FILE * f, char * prg)
     "  turkish\n"
     "  walloon\n"
     "\n",
-    prg, prg, prg, prg, prg, prg  /* , prg */ );
+    prg);
 }
+
 
 
 const char *getfilename(const char* path)
@@ -3716,7 +3738,7 @@ void setup(int argc, char * argv[])
 	/* Forgot to specify the language! */
 	
 	fprintf(stderr, "%s takes an argument\n", argv[i]);
-        show_usage(stderr, (char *) getfilename(argv[0]));
+        show_lang_usage(stderr, (char *) getfilename(argv[0]));
         exit(1);
       }
     }
@@ -3735,7 +3757,7 @@ void setup(int argc, char * argv[])
 	/* Forgot to specify the language! */
 	
 	fprintf(stderr, "%s takes an argument\n", argv[i]);
-        show_usage(stderr, (char *) getfilename(argv[0]));
+        show_lang_usage(stderr, (char *) getfilename(argv[0]));
         exit(1);
       }
     }
@@ -4037,10 +4059,16 @@ void setup(int argc, char * argv[])
 	putenv("LANG=zh_CN.UTF-8");
 	putenv("LC_ALL=zh_CN.UTF-8");
       }
+    else if (strcmp(langstr, "help") == 0 || strcmp(langstr, "list") == 0)
+      {
+	show_lang_usage(stdout, (char *) getfilename(argv[0]));
+	free(langstr);
+	exit(0);
+      }
     else
       {
 	fprintf(stderr, "%s is an invalid language\n", langstr);
-	show_usage(stderr, (char *) getfilename(argv[0]));
+	show_lang_usage(stderr, (char *) getfilename(argv[0]));
 	free(langstr);
 	exit(1);
       }

@@ -7,10 +7,16 @@ bill@newbreedsoftware.com
 http://www.newbreedsoftware.com/tuxpaint/
 
 
-2003.Sep.03 (0.9.13) [cvs]
+2003.Sep.04 (0.9.13) [cvs]
   * Fixed incorrect tag in HTML documentation.  (Bad results in IE)
 
   * Fixed typo regarding "savedir" in README.
+
+  * 'printcfg' options not displayed in usage, except on Win32.
+
+  * Moved available language listing to its own usage, shown when
+    "--lang" called incorrectly, or as "--lang list" or "--lang help".
+    (Suggested by Ben Armstrong)
 
 
 2003.Aug.18 (0.9.12)
