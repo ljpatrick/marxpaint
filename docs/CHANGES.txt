@@ -103,6 +103,8 @@ http://www.newbreedsoftware.com/tuxpaint/
     * Thumbnail of selected image now shown on "Erase this image?"
       confirmation pop-up.
 
+    * Printer icons on "Print now?" and "You can't print yet" pop-ups.
+
     * Improved 'rubber band line' and stamp outline colors ("XOR" code)
       to make such lines easier to see on certain colors.
     

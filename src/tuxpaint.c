@@ -1424,7 +1424,8 @@ static SDL_Surface * img_title, * img_progress;
 static SDL_Surface * img_btn_up, * img_btn_down, * img_btn_off;
 static SDL_Surface * img_black, * img_grey;
 static SDL_Surface * img_yes, * img_no;
-static SDL_Surface * img_open, * img_erase, * img_back;
+static SDL_Surface * img_open, * img_erase, * img_back, * img_trash;
+static SDL_Surface * img_printer, * img_printer_wait;
 static SDL_Surface * img_cursor_up, * img_cursor_down;
 static SDL_Surface * img_cursor_starter_up, * img_cursor_starter_down;
 static SDL_Surface * img_scroll_up, * img_scroll_down;
@@ -2935,9 +2936,10 @@ static void mainloop(void)
 			  
 			  if (cur_time >= last_print_time + print_delay)
 			    {
-		              if (do_prompt(PROMPT_PRINT_NOW_TXT,
+		              if (do_prompt_image(PROMPT_PRINT_NOW_TXT,
 				            PROMPT_PRINT_NOW_YES,
-				            PROMPT_PRINT_NOW_NO))
+				            PROMPT_PRINT_NOW_NO,
+					    img_printer, NULL, NULL))
 			      {
 			        do_print();
 			      
@@ -2946,9 +2948,10 @@ static void mainloop(void)
 			    }
 			  else
 			    {
-			      do_prompt(PROMPT_PRINT_TOO_SOON_TXT,
+			      do_prompt_image(PROMPT_PRINT_TOO_SOON_TXT,
 					PROMPT_PRINT_TOO_SOON_YES,
-					"");
+					"",
+					img_printer_wait, NULL, NULL);
 			    }
 			  
 			  cur_tool = old_tool;
@@ -6955,6 +6958,10 @@ static void setup(int argc, char * argv[])
   img_open = loadimage(DATA_PREFIX "images/ui/open.png");
   img_erase = loadimage(DATA_PREFIX "images/ui/erase.png");
   img_back = loadimage(DATA_PREFIX "images/ui/back.png");
+  img_trash = loadimage(DATA_PREFIX "images/ui/trash.png");
+  
+  img_printer = loadimage(DATA_PREFIX "images/ui/printer.png");
+  img_printer_wait = loadimage(DATA_PREFIX "images/ui/printer_wait.png");
 
   img_grow = loadimage(DATA_PREFIX "images/ui/grow.png");
   img_shrink = loadimage(DATA_PREFIX "images/ui/shrink.png");
@@ -11245,6 +11252,10 @@ static void cleanup(void)
   free_surface( &img_open );
   free_surface( &img_erase );
   free_surface( &img_back );
+  free_surface( &img_trash );
+
+  free_surface( &img_printer );
+  free_surface( &img_printer_wait );
 
   free_surface( &img_btn_up );
   free_surface( &img_btn_down );
@@ -12975,8 +12986,8 @@ static int do_open(int want_new_tool)
 		  if (do_prompt_image(PROMPT_ERASE_TXT,
 				      PROMPT_ERASE_YES, PROMPT_ERASE_NO,
 				      thumbs[which],
-				      NULL,
-				      thumbs[which]))
+				      img_shrink,
+				      img_trash))
 		    {
 		      snprintf(fname, sizeof(fname), "saved/%s%s",
 			       d_names[which], d_exts[which]);
