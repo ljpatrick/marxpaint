@@ -417,6 +417,40 @@ static TTF_Font *BUGFIX_TTF_OpenFont206(const char * const file, int ptsize)
 #define TTF_OpenFont    BUGFIX_TTF_OpenFont206
 
 
+#if VIDEO_BPP==32
+#ifdef __GNUC__
+#define SDL_GetRGBA(p,f,rp,gp,bp,ap) ({ \
+  unsigned u_p = p;                     \
+  *(ap) = (u_p >> 24) & 0xff;           \
+  *(rp) = (u_p >> 16) & 0xff;           \
+  *(gp) = (u_p >>  8) & 0xff;           \
+  *(bp) = (u_p >>  0) & 0xff;           \
+})
+#define SDL_GetRGB(p,f,rp,gp,bp) ({ \
+  unsigned u_p = p;                     \
+  *(rp) = (u_p >> 16) & 0xff;           \
+  *(gp) = (u_p >>  8) & 0xff;           \
+  *(bp) = (u_p >>  0) & 0xff;           \
+})
+#endif
+#define SDL_MapRGBA(f,r,g,b,a) ( \
+  (((a) & 0xffu) << 24)          \
+  |                              \
+  (((r) & 0xffu) << 16)          \
+  |                              \
+  (((g) & 0xffu) <<  8)          \
+  |                              \
+  (((b) & 0xffu) <<  0)          \
+)
+#define SDL_MapRGB(f,r,g,b) (   \
+  (((r) & 0xffu) << 16)          \
+  |                              \
+  (((g) & 0xffu) <<  8)          \
+  |                              \
+  (((b) & 0xffu) <<  0)          \
+)
+#endif
+
 /* Possible languages: */
 
 enum {
