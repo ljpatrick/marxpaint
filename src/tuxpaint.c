@@ -8245,8 +8245,8 @@ int do_open(int want_new_tool)
 	  
 	  /* Try to load thumbnail first: */
 	  
-	  sprintf(fname, "%s/%s-t%s", dirname, d_names[num_files],
-		  FNAME_EXTENSION);
+	  snprintf(fname, sizeof(fname), "%s/%s-t%s",
+		  dirname, d_names[num_files], FNAME_EXTENSION);
 
 	  img = IMG_Load(fname);
 	  if (img != NULL)
@@ -8267,8 +8267,8 @@ int do_open(int want_new_tool)
 	  {
 	    /* No thumbnail - load original: */
 	
-	    sprintf(fname, "%s/%s%s", dirname, d_names[num_files],
-		    FNAME_EXTENSION);
+	    snprintf(fname, sizeof(fname), "%s/%s%s",
+		     dirname, d_names[num_files], FNAME_EXTENSION);
 	    img = IMG_Load(fname);
 	    show_progress_bar();
 	    if (img != NULL)
@@ -8295,8 +8295,8 @@ int do_open(int want_new_tool)
 	         again next time 'Open' is called: */
 	      
 	      debug("Saving thumbnail for this one!");
-	      sprintf(fname, "%s/%s-t%s", dirname, d_names[num_files],
-		      FNAME_EXTENSION);
+	      snprintf(fname, sizeof(fname), "%s/%s-t%s",
+		       dirname, d_names[num_files], FNAME_EXTENSION);
 	      fi = fopen(fname, "wb");
 	      if (fi == NULL)
 	      {
@@ -9088,6 +9088,8 @@ int do_open(int want_new_tool)
 
 /* -------------- Poly Fill Stuff -------------- */
 
+#ifdef SCANLINE_POLY_FILL
+
 void insert_edge(edge * list, edge * edg)
 {
   edge * p, * q;
@@ -9294,7 +9296,9 @@ void resort_active_list(edge * active)
 
 void scan_fill(int cnt, point_type * pts)
 {
-  edge * edges[48 * 7 + 40 + HEIGHTOFFSET + 5], * active;
+/*  edge * edges[48 * 7 + 40 + HEIGHTOFFSET + 5], * active; */
+  edge * * edges = alloca((48 * 7 + 40 + HEIGHTOFFSET + 5) * sizeof(edge*)),
+       * active;
   int i, scan;
 
   debug("scan_fill()");
@@ -9517,6 +9521,8 @@ int clip_polygon(int n, fpoint_type * pin, fpoint_type * pout)
 
   return(cnt);
 }
+
+#endif
 
 
 /* Let sound effects (e.g., "Save" sfx) play out before quitting... */
@@ -9825,7 +9831,7 @@ void do_print(void)
 
   int show = (SDL_GetModState() & KMOD_ALT) && !fullscreen;
 
-  sprintf(f, sizeof(f), "%s/%s", savedir, "print.cfg");
+  snprintf(f, sizeof(f), "%s/%s", savedir, "print.cfg");
   SurfacePrint(canvas, use_print_config?f:NULL, show);
 #else
   /* BeOS */
