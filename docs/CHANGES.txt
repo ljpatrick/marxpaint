@@ -87,6 +87,9 @@ http://www.newbreedsoftware.com/tuxpaint/
   
   * "--lang=XXX" can be used on the command-line, along with "--lang XXX"
 
+  * Moved Tux penguin stamps from Stamps package to core Tux Paint package,
+    so that Stamp tool works out-of-the-box.
+
 
 2003.Aug.18 (0.9.12)
   * Replaced "efont-serif" fonts with those from the 'ttf-freefont' package,
