@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Tux Paint 0.9.14\n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2004-03-15 11:10-0800\n"
+"PO-Revision-Date: 2004-03-22 02:26-0800\n"
 "Last-Translator: Mark K. Kim <tuxNO_SOLICITATIONpaint-dev@cbreak.org>\n"
 "Language-Team: N/A\n"
 "MIME-Version: 1.0\n"
@@ -43,9 +43,9 @@ msgstr "먼저 그림을 저장할까요?"
 msgid "Can't open that picture!"
 msgstr "그 그림은 열지 못합니다!"
 
-#: tuxpaint.c:808 tuxpaint.c:815 tuxpaint.c:822 tuxpaint.c:825
+#: tuxpaint.c:814 tuxpaint.c:821 tuxpaint.c:828 tuxpaint.c:831
 msgid "OK"
-msgstr ""
+msgstr "네"
 
 #: tuxpaint.c:810
 msgid "Starting a new picture will erase the current one!"
@@ -65,15 +65,15 @@ msgstr "저장된 파일이 없네요!"
 
 #: tuxpaint.c:817
 msgid "Print your picture now?"
-msgstr "그림을 프린트 할까요?"
+msgstr "그림을 인쇄 할까요?"
 
 #: tuxpaint.c:821
 msgid "Your picture has been printed!"
-msgstr "그림을 프린트 했습니다!"
+msgstr "그림을 인쇄 했습니다!"
 
 #: tuxpaint.c:824
 msgid "You can't print yet!"
-msgstr "아직 프린트 하지 못합니다!"
+msgstr "아직 인쇄 하지 못합니다!"
 
 #: tuxpaint.c:827
 msgid "Erase this picture?"
@@ -113,7 +113,7 @@ msgstr "흰색!"
 
 #: colors.h:64
 msgid "Red!"
-msgstr "다시 상채로!"
+msgstr "빨간색"
 
 #: colors.h:65
 msgid "Pink!"
@@ -157,7 +157,7 @@ msgstr "갈색!"
 
 #: colors.h:75
 msgid "Gray!"
-msgstr "잘한다!"
+msgstr "회색!"
 
 #: colors.h:76
 msgid "Silver!"
@@ -244,6 +244,9 @@ msgid "Click to make a mirror image."
 msgstr "그림을 옆으로 뒤집으려면 마우스버튼을 누르세요."
 
 #: magic.h:77
+# "magical effect" is hard to translate. Korean translation uses
+# a question to make it easier to convey our message lacking the word
+# for "magical effect."
 msgid "Click to flip the picture upside-down."
 msgstr "그림을 위로 뒤집으려면 마우스 버튼을 누르세요."
 
@@ -443,9 +446,7 @@ msgstr "(1) 글체를 고르세요.  (2) 그림을 누르고 원하는 글을 �
 #: tools.h:67
 msgid "Pick a magical effect to use on your drawing!"
 msgstr "어떤 효과를 사용 할까요?"
-# "magical effect" is hard to translate. Korean translation uses
-# a question to make it easier to convey our message lacking the word
-# for "magical effect."
+
 
 #: tools.h:68
 msgid "Undo!"
@@ -473,7 +474,7 @@ msgstr "그림을 저장 했습니다!"
 
 #: tools.h:74
 msgid "Printing..."
-msgstr "프린트 중..."
+msgstr "인쇄 중..."
 
 #: tools.h:75
 msgid "Bye bye!"
@@ -495,12 +496,3 @@ msgstr ""
 #: tools.h:81
 msgid "Ok then... Let's keep drawing this one!"
 msgstr "그럼, 계속 그림을 그리세요!"
-
-#~ msgid "Okay"
-#~ msgstr "네"
-
-#~ msgid "Red"
-#~ msgstr "빨간색"
-
-#~ msgid "Grey"
-#~ msgstr "회색"
