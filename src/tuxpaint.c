@@ -14157,9 +14157,9 @@ static void loadfonts(const char * const dir, int fatal)
                           printf("could not render %s, %s, %s\n", d_names[i], family, style);
                         }
                       if(tmp_surf_a)
-                        free(tmp_surf_a);
+                        SDL_FreeSurface(tmp_surf_a);
                       if(tmp_surf_A)
-                        free(tmp_surf_A);
+                        SDL_FreeSurface(tmp_surf_A);
                     }
                   TTF_CloseFont(font);
                 }
