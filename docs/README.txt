@@ -212,8 +212,7 @@ Available Tools
 
                  (NOTE: If the "nostampcontrols" option is set, Tux Paint
                  won't display the Mirror, Flip, Shrink and Grow controls for
-                 stamps. See the "[12]Options" section of this document,
-                 above.)
+                 stamps. See the "[12]Options" documentation.)
 
    ---------------------------------------------------------------------------
 
@@ -463,7 +462,7 @@ Available Tools
 
                  (NOTE: If either the "saveover" or "saveovernew" options are
                  set, it won't ask before saving over. See the "[14]Options"
-                 section of this document, above.)
+                 documentation.)
 
                  Note: You can also press [Control]-[S] on the keyboard to
                  save.
@@ -482,8 +481,7 @@ Available Tools
                               command-line), the "Print" button will be
                               disabled.
 
-                              See the "[15]Options" section of this document,
-                              above.
+                              See the "[15]Options" documentation.)
 
                       Restricting Printing
 
@@ -496,8 +494,7 @@ Available Tools
                               For example, with "printdelay=60", you can
                               print only once a minute.
 
-                              See the "[16]Options" section of this document,
-                              above.
+                              See the "[16]Options" documentation.)
 
                       Printing Command
 
@@ -513,8 +510,7 @@ Available Tools
                               "printcommand" value in Tux Paint's
                               configuration file.
 
-                              See the "[17]Options" section of this document,
-                              above.
+                              See the "[17]Options" documentation.)
 
                       Printer Settings
 
@@ -541,8 +537,7 @@ Available Tools
                               "userdata/print.cfg". Any changes will be saved
                               there as well.
 
-                              See the "[18]Options" section of this document,
-                              above.
+                              See the "[18]Options" documentation.)
 
    ---------------------------------------------------------------------------
 
@@ -553,8 +548,7 @@ Available Tools
 
                  (NOTE: The "Quit" button can be disabled (e.g., with the
                  "--noquit" command-line option), but the [Escape] key will
-                 still work. See the "[19]Options" section of this document,
-                 above.)
+                 still work. See the "[19]Options" documentation.)
 
                  You will first be prompted as to whether you really want to
                  quit.
@@ -1039,14 +1033,14 @@ References
    2. mailto:bill@newbreedsoftware.com
    3. http://www.newbreedsoftware.com/tuxpaint/
    4. file:///home/kendrick/Development/tux/tp/tuxpaint/docs/COPYING.txt
-  12. file:///home/kendrick/Development/tux/tp/tuxpaint/docs/html/README.html#options
+  12. file:///home/kendrick/Development/tux/tp/tuxpaint/docs/html/OPTIONS.html
   13. file:///home/kendrick/Development/tux/tp/tuxpaint/docs/html/README.html#save
-  14. file:///home/kendrick/Development/tux/tp/tuxpaint/docs/html/README.html#options
-  15. file:///home/kendrick/Development/tux/tp/tuxpaint/docs/html/README.html#options
-  16. file:///home/kendrick/Development/tux/tp/tuxpaint/docs/html/README.html#options
-  17. file:///home/kendrick/Development/tux/tp/tuxpaint/docs/html/README.html#options
-  18. file:///home/kendrick/Development/tux/tp/tuxpaint/docs/html/README.html#options
-  19. file:///home/kendrick/Development/tux/tp/tuxpaint/docs/html/README.html#options
+  14. file:///home/kendrick/Development/tux/tp/tuxpaint/docs/html/OPTIONS.html
+  15. file:///home/kendrick/Development/tux/tp/tuxpaint/docs/html/OPTIONS.html
+  16. file:///home/kendrick/Development/tux/tp/tuxpaint/docs/html/OPTIONS.html
+  17. file:///home/kendrick/Development/tux/tp/tuxpaint/docs/html/OPTIONS.html
+  18. file:///home/kendrick/Development/tux/tp/tuxpaint/docs/html/OPTIONS.html
+  19. file:///home/kendrick/Development/tux/tp/tuxpaint/docs/html/OPTIONS.html
   20. file:///home/kendrick/Development/tux/tp/tuxpaint/docs/html/README.html#save
   21. file:///home/kendrick/Development/tux/tp/tuxpaint/docs/AUTHORS.txt
   22. file:///home/kendrick/Development/tux/tp/tuxpaint/docs/CHANGES.txt
