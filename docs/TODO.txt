@@ -208,6 +208,8 @@ POSSIBLE FEATURE IDEAS:
     FREQUENTLY REQUESTED
   
   * Support animated brushes (then replace Sparkle magic with one) ??
+
+  * Support image/stamp 'hoses' (as implemented in numerous other graphics programs).
   
   * Make a 'rainbow' color (then remove Rainbow magic tool;
     no longer needed) ??
