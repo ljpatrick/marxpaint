@@ -6,7 +6,7 @@ Copyright 2003 by Bill Kendrick
 bill@newbreedsoftware.com
 http://www.newbreedsoftware.com/tuxpaint/
 
-September 14, 2002 - January 5, 2003
+September 14, 2002 - June 14, 2003
 
 
 Frequently Asked Questions:
@@ -35,7 +35,8 @@ Frequently Asked Questions:
         #define LOW_QUALITY_FLOOD_FILL
 
       in the "tuxpaint.c" file in the "src" directory.
-  
+
+
     Stamp outlines are always rectangles
     ------------------------------------
       Tux Paint was built with low-quality (but faster) stamp outlines.
@@ -46,6 +47,31 @@ Frequently Asked Questions:
         #define LOW_QUALITY_STAMP_OUTLINE
 
       in the "tuxpaint.c" file in the "src" directory.
+
+
+    The Rubber Stamp tool is greyed out!
+    ------------------------------------
+      This means that Tux Paint either couldn't find any stamp images,
+      or was asked not to load them.
+
+      If you installed Tux Paint, but did not install the separate,
+      optional "Stamps" collection, quit Tux Paint and install it now.
+      It should be available from the same place you got the main
+      Tux Paint program.
+
+      If you don't want to install the default collection of stamps,
+      you can just create your own.  See the README documentation for
+      more on creating PNG image files, TXT text description files,
+      WAV sound files, and DAT text data files that make up stamps.
+
+      Finally, if you install the stamps, and think they should be loading,
+      check to see that the "nostamps" option isn't being set.
+      (Either via a "--nostamps" option to Tux Paint's command line, or
+      "nostamps=yes" in the configuration file.)
+
+      If so, either change/remove the "nostamps" option, or you can
+      override it with "--stamps" on the command line or
+      "nostamps=no" or "stamps=yes" in a configuration file.
 
 
   Interface Problems

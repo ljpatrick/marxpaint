@@ -274,6 +274,15 @@ Options
                    This can help when Tux Paint is run on very slow
                    computers, or displayed on a remote X-Window display.
 
+           nostamps=yes
+
+                   This option tells Tux Paint to not load any rubber stamp
+                   images, which in turn ends up disabling the Stamps tool.
+
+                   This can speed up Tux Paint when it first loads up, and
+                   reduce memory usage while it's running. Of course, no
+                   stamps will be available at all.
+
            savedir DIRECTORY
 
                    Use this option to change where Tux Paint saves pictures.

@@ -64,6 +64,11 @@ http://www.newbreedsoftware.com/tuxpaint/
 
   * Added a set of square brushes (similar to the various round ones).
 
+  * Added "--nostamps" option to disable stamp tool.
+    (When it's not needed, they just take time to load, and RAM to store.)
+
+  * Added missing "--nosysconfig" to "--help" usage output.
+
 
 2003.February.22 (0.9.10)
   * UTF-8 stamp descriptions word-wrap around spaces.

@@ -327,7 +327,7 @@ int use_sound, fullscreen, disable_quit, simple_shapes, language,
   disable_print, print_delay, only_uppercase, promptless_save, grab_input,
   wheely, no_fancy_cursors, keymouse, mouse_x, mouse_y,
   mousekey_up, mousekey_down, mousekey_left, mousekey_right,
-  dont_do_xor, use_print_config;
+  dont_do_xor, use_print_config, dont_load_stamps;
 int WINDOW_WIDTH, WINDOW_HEIGHT;
 char * printcommand;
 int prog_bar_ctr;
@@ -3275,15 +3275,17 @@ void show_usage(FILE * f, char * prg)
     "Usage: %s {--usage | --help | --version | --copying}\n"
     "       %s [--fullscreen] [--800x600] [--nosound] [--noquit] [--noprint]\n"
     "          [--simpleshapes] [--uppercase] [--grab] [--nowheelmouse]\n"
-    "          [--nofancycursors] [--keyboard] [--nooutlines]\n"
+    "          [--nofancycursors] [--keyboard] [--nooutlines] [--nostamps]\n"
     "          [--savedir DIRECTORY] [--saveover] [--saveovernew]\n"
     "       %s [--windowed] [--640x480] [--sound] [--quit] [--print]\n"
     "          [--complexshapes] [--mixedcase] [--dontgrab] [--wheelmouse]\n"
-    "          [--fancycursors] [--mouse] [--outlines]\n"
+    "          [--fancycursors] [--mouse] [--outlines] [--stamps]\n"
     "          [--saveoverask]\n"
     "       %s [--printcfg | --noprintcfg]  (Windows only)\n"
     "       %s [--printdelay=SECONDS]\n"
-    "          [--lang LANGUAGE | --locale LOCALE]\n\n"
+    "          [--lang LANGUAGE | --locale LOCALE]\n"
+    "       %s [--nosysconfig]\n"
+    "\n"
     "LANGUAGE may be one of:\n"
     "  english      american-english\n"
     "  brazilian    brazilian-portuguese   portugues-brazilian\n"
@@ -3313,7 +3315,7 @@ void show_usage(FILE * f, char * prg)
     "  spanish      espanol\n"
     "  swedish      svenska\n"
     "  turkish\n\n",
-    prg, prg, prg, prg, prg);
+    prg, prg, prg, prg, prg, prg);
 }
 
 
@@ -3377,6 +3379,7 @@ void setup(int argc, char * argv[])
   promptless_save = SAVE_OVER_PROMPT;
   disable_quit = 0;
   disable_print = 0;
+  dont_load_stamps = 0;
   print_delay = 0;
   printcommand = "pngtopnm | pnmtops | lpr";
   langstr = NULL;
@@ -3563,6 +3566,14 @@ void setup(int argc, char * argv[])
     else if (strcmp(argv[i], "--quit") == 0)
     {
       disable_quit = 0;
+    }
+    else if (strcmp(argv[i], "--nostamps") == 0)
+    {
+      dont_load_stamps = 1;
+    }
+    else if (strcmp(argv[i], "--stamps") == 0)
+    {
+      dont_load_stamps = 0;
     }
     else if (strcmp(argv[i], "--noprint") == 0 || strcmp(argv[i], "-p") == 0)
     {
@@ -4402,51 +4413,54 @@ void setup(int argc, char * argv[])
 
   /* Load stamps: */
 
+  if (dont_load_stamps == 0)
+  {
 #ifndef NOSOUND
-  loadarbitrary(img_stamps, txt_stamps, inf_stamps, snd_stamps, &num_stamps, 0,
-	        MAX_STAMPS, DATA_PREFIX "stamps", 0, -1, -1);
+    loadarbitrary(img_stamps, txt_stamps, inf_stamps, snd_stamps, &num_stamps,
+	          0, MAX_STAMPS, DATA_PREFIX "stamps", 0, -1, -1);
 #else
-  loadarbitrary(img_stamps, txt_stamps, inf_stamps, &num_stamps, 0,
-	        MAX_STAMPS, DATA_PREFIX "stamps", 0, -1, -1);
+    loadarbitrary(img_stamps, txt_stamps, inf_stamps, &num_stamps,
+	          0, MAX_STAMPS, DATA_PREFIX "stamps", 0, -1, -1);
 #endif
   
   
-  homedirdir = get_fname("stamps");
+    homedirdir = get_fname("stamps");
 #ifndef NOSOUND
-  loadarbitrary(img_stamps, txt_stamps, inf_stamps, snd_stamps,
-		&num_stamps, num_stamps,
-	        MAX_STAMPS, homedirdir, 0, -1, -1);
+    loadarbitrary(img_stamps, txt_stamps, inf_stamps, snd_stamps,
+		  &num_stamps, num_stamps,
+	          MAX_STAMPS, homedirdir, 0, -1, -1);
 #else
-  loadarbitrary(img_stamps, txt_stamps, inf_stamps, &num_stamps, num_stamps,
-	        MAX_STAMPS, homedirdir, 0, -1, -1);
+    loadarbitrary(img_stamps, txt_stamps, inf_stamps, &num_stamps, num_stamps,
+	          MAX_STAMPS, homedirdir, 0, -1, -1);
 #endif
   
 
-  if (num_stamps == 0)
-  {
-    fprintf(stderr,
-            "\nWarning: No stamps found in " DATA_PREFIX "stamps/\n"
-	    "or %s\n\n", homedirdir);
-  }
-
-  free(homedirdir);
-
-
-  /* Create stamp thumbnails: */
-
-  for (i = 0; i < num_stamps; i++)
-  {
-    if (img_stamps[i]->w > 40 ||
-	img_stamps[i]->h > 40)
+    if (num_stamps == 0)
     {
-      img_stamp_thumbs[i] = thumbnail(img_stamps[i], 40, 40, 1);
-    }
-    else
-    {
-      img_stamp_thumbs[i] = NULL;
+      fprintf(stderr,
+              "\nWarning: No stamps found in " DATA_PREFIX "stamps/\n"
+	      "or %s\n\n", homedirdir);
     }
 
-    show_progress_bar();
+    free(homedirdir);
+
+
+    /* Create stamp thumbnails: */
+
+    for (i = 0; i < num_stamps; i++)
+    {
+      if (img_stamps[i]->w > 40 ||
+	  img_stamps[i]->h > 40)
+      {
+        img_stamp_thumbs[i] = thumbnail(img_stamps[i], 40, 40, 1);
+      }
+      else
+      {
+        img_stamp_thumbs[i] = NULL;
+      }
+
+      show_progress_bar();
+    }
   }
 
 
@@ -10556,6 +10570,15 @@ void parse_options(FILE * fi)
                strcmp(str, "print=yes") == 0)
 	{
 	  disable_print = 0;
+	}
+      else if (strcmp(str, "nostamps=yes") == 0)
+        {
+	  dont_load_stamps = 1;
+	}
+      else if (strcmp(str, "nostamps=no") == 0 ||
+               strcmp(str, "stamps=yes") == 0)
+        {
+	  dont_load_stamps = 0;
 	}
       else if (strcmp(str, "nosound=yes") == 0)
 	{
