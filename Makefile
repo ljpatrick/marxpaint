@@ -2,11 +2,11 @@
 
 # Tux Paint - A simple drawing program for children.
 
-# Copyright (c) 2004 by Bill Kendrick
+# Copyright (c) 2005 by Bill Kendrick
 # bill@newbreedsoftware.com
 # http://www.newbreedsoftware.com/tuxpaint/
 
-# June 14, 2002 - December 26, 2004
+# June 14, 2002 - January 6, 2005
 
 
 # Where to install things:
@@ -262,6 +262,7 @@ uninstall:
 	-rm $(LOCALE_PREFIX)eu/LC_MESSAGES/tuxpaint.mo
 	-rm $(LOCALE_PREFIX)fi/LC_MESSAGES/tuxpaint.mo
 	-rm $(LOCALE_PREFIX)fr/LC_MESSAGES/tuxpaint.mo
+	-rm $(LOCALE_PREFIX)ga/LC_MESSAGES/tuxpaint.mo
 	-rm $(LOCALE_PREFIX)gl/LC_MESSAGES/tuxpaint.mo
 	-rm $(LOCALE_PREFIX)he/LC_MESSAGES/tuxpaint.mo
 	-rm $(LOCALE_PREFIX)hi/LC_MESSAGES/tuxpaint.mo
@@ -537,6 +538,11 @@ install-gettext:
 	@cp trans/fr.mo $(LOCALE_PREFIX)fr/LC_MESSAGES/tuxpaint.mo
 	@chmod 644 $(LOCALE_PREFIX)fr/LC_MESSAGES/tuxpaint.mo
 	@#
+	@echo "   ga_IE ...Gaelic..."
+	@install -d $(LOCALE_PREFIX)ga/LC_MESSAGES
+	@cp trans/ga.mo $(LOCALE_PREFIX)ga/LC_MESSAGES/tuxpaint.mo
+	@chmod 644 $(LOCALE_PREFIX)ga/LC_MESSAGES/tuxpaint.mo
+	@#
 	@echo "   gl_ES ...Galician..."
 	@install -d $(LOCALE_PREFIX)gl/LC_MESSAGES
 	@cp trans/gl.mo $(LOCALE_PREFIX)gl/LC_MESSAGES/tuxpaint.mo
@@ -804,6 +810,7 @@ translations: trans \
 	trans/eu.mo \
 	trans/fi.mo \
 	trans/fr.mo \
+	trans/ga.mo \
 	trans/gl.mo \
 	trans/he.mo \
 	trans/hi.mo \
@@ -902,6 +909,10 @@ trans/fi.mo:	src/po/fi.po
 trans/fr.mo:	src/po/fr.po
 	@echo "   fr_FR ...French..."
 	@msgfmt src/po/fr.po -o trans/fr.mo
+
+trans/ga.mo:	src/po/ga.po
+	@echo "   ga_IE ...Gaelic..."
+	@msgfmt src/po/ga.po -o trans/ga.mo
 
 trans/gl.mo:	src/po/gl.po
 	@echo "   gl_ES ...Galician..."

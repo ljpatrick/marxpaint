@@ -22,12 +22,12 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
   
-  June 14, 2002 - January 3, 2005
+  June 14, 2002 - January 6, 2005
 */
 
 
 #define VER_VERSION     "0.9.15"
-#define VER_DATE        "2005-01-03"
+#define VER_DATE        "2005-01-06"
 
 
 //#define VIDEO_BPP 15 // saves memory
@@ -530,6 +530,7 @@ enum {
   LANG_EU,     /* Basque */
   LANG_FI,     /* Finnish */
   LANG_FR,     /* French */
+  LANG_GA,     /* Gaelic */
   LANG_GL,     /* Galician */
   LANG_HE,     /* Hebrew */
   LANG_HI,     /* Hindi */
@@ -583,6 +584,7 @@ static const char * lang_prefixes[NUM_LANGS] = {
   "eu",
   "fi",
   "fr",
+  "ga",
   "gl",
   "he",
   "hi",
@@ -763,6 +765,7 @@ static void show_lang_usage(FILE * f, const char * const prg)
 /* nl */     "  dutch        nederlands\n"
 /* fi */     "  finnish      suomi\n"
 /* fr */     "  french       francais\n"
+/* ga */     "  gaelic       gaidhlig\n"
 /* gl */     "  galician     galego\n"
 /* de */     "  german       deutsch\n"
 /* el */     "  greek\n"
@@ -824,6 +827,7 @@ static void show_locale_usage(FILE * f, const char * const prg)
 	  "  nl_NL   (Dutch)\n"
 	  "  fi_FI   (Finnish      Suomi)\n"
 	  "  fr_FR   (French       Francais)\n"
+	  "  ga_IE   (Gaelic       Gaidhlig)\n"
 	  "  gl_ES   (Galician     Galego)\n"
 	  "  de_DE   (German       Deutsch)\n"
 	  "  el_GR   (Greek)\n"
@@ -889,6 +893,7 @@ static const language_to_locale_struct language_to_locale_array[] = {
 {"suomi",                "fi_FI"},
 {"french",               "fr_FR"},
 {"francais",             "fr_FR"},
+{"gaelic",               "ga_IE"},
 {"galician",             "gl_ES"},
 {"galego",               "gl_ES"},
 {"hebrew",               "he_IL"},

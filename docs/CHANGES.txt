@@ -2,12 +2,12 @@ CHANGES.txt for Tux Paint
 
 Tux Paint - A simple drawing program for children.
 
-Copyright (c) 2004 by Bill Kendrick
+Copyright (c) 2005 by Bill Kendrick
 bill@newbreedsoftware.com
 http://www.newbreedsoftware.com/tuxpaint/
 
 
-2004.December.26 (0.9.15)
+2005.January.06 (0.9.15)
   * Stamp tool improvements:
     ------------------------
     * Greatly improved stamp outlining (to avoid empty rows or columns
@@ -156,6 +156,9 @@ http://www.newbreedsoftware.com/tuxpaint/
     * Albanian translation created.
       Ilir Rugova <ilirrugova@gmx.de>
       Laurent Dhima <laurenti@alblinux.net>
+
+    * Gaelic translation created.
+      Kevin Patrick Scannell <scannell@SLU.EDU>
 
     * Galician translation created.
       Leandro Regueiro <unho@gulo.org>
