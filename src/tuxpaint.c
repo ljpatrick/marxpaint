@@ -486,10 +486,10 @@ Uint8 alpha(Uint8 c1, Uint8 c2, Uint8 a);
 int compare_strings(char * * s1, char * * s2);
 int compare_dirents(struct dirent * f1, struct dirent * f2);
 void draw_tux_text(int which_tux, char * str, int want_utf8,
-		   int force_locale_font);
+		   int force_locale_font, int want_right_to_left);
 void wordwrap_text(TTF_Font * font, char * str, SDL_Color color,
 		   int left, int top, int right, int want_utf8,
-		   int force_locale_font);
+		   int force_locale_font, int want_right_to_left);
 char * loaddesc(char * fname);
 info_type * loadinfo(char * fname);
 #ifndef NOSOUND
@@ -896,7 +896,7 @@ void mainloop(void)
 		  else if (cur_tool == TOOL_SHAPES)
 		    draw_shapes();
 		  
-		  draw_tux_text(TUX_GREAT, tool_tips[cur_tool], 0, 0);
+		  draw_tux_text(TUX_GREAT, tool_tips[cur_tool], 0, 0, 1);
 
 
 		  /* FIXME: Make delay configurable: */
@@ -934,7 +934,8 @@ void mainloop(void)
 		    }
 		  else
 		    {
-		      draw_tux_text(tool_tux[TUX_DEFAULT], TIP_NEW_ABORT, 0, 0);
+		      draw_tux_text(tool_tux[TUX_DEFAULT], TIP_NEW_ABORT,
+				    0, 0, 1);
 		    }
 		  
 		  draw_toolbar();
@@ -1100,7 +1101,7 @@ void mainloop(void)
 		      playsound(1, SND_CLICK, 0);
 		      
 		      draw_tux_text(tool_tux[cur_tool], tool_tips[cur_tool],
-				    0, 0);
+				    0, 0, 1);
 		      
 		      
 		      /* Draw items for this tool: */
@@ -1189,7 +1190,7 @@ void mainloop(void)
 					 0, 0,
 					 96, (48 * (7 + TOOLOFFSET / 2)) + 40);
 			  
-			  draw_tux_text(TUX_GREAT, tool_tips[cur_tool], 0, 0);
+			  draw_tux_text(TUX_GREAT, tool_tips[cur_tool], 0, 0, 1);
 
 			  if (cur_tool == TOOL_BRUSH ||
 			      cur_tool == TOOL_LINES ||
@@ -1262,7 +1263,7 @@ void mainloop(void)
 			  else
 			    {
 			      draw_tux_text(tool_tux[TUX_DEFAULT],
-					    TIP_NEW_ABORT, 0, 0);
+					    TIP_NEW_ABORT, 0, 0, 1);
 			    }
 			  
 			  cur_tool = old_tool;
@@ -1543,21 +1544,24 @@ void mainloop(void)
 			  
 			  if (txt_stamps[cur_stamp] != NULL)
 			  {
+			    printf("txt_stamps[cur_stamp] = %s\n",
+			           txt_stamps[cur_stamp]);
+
 			    if (txt_stamps[cur_stamp][0] == '=')
 			    {
 			      /* FIXME: Stupid. Using '=' to denote UTF8 */
 
 			      draw_tux_text(TUX_GREAT,
-					    txt_stamps[cur_stamp] + 1, 1, 0);
+					    txt_stamps[cur_stamp] + 1, 1, 0, 1);
 			    }
 			    else
 			    {
 			      draw_tux_text(TUX_GREAT,
-					    txt_stamps[cur_stamp], 0, 1);
+					    txt_stamps[cur_stamp], 0, 1, 0);
 			    }
 			  }
 			  else
-			    draw_tux_text(TUX_GREAT, "", 0, 0);
+			    draw_tux_text(TUX_GREAT, "", 0, 0, 0);
 			  
 			  
 			  /* Enable or disable color selector: */
@@ -1578,7 +1582,8 @@ void mainloop(void)
 			{
 			  cur_shape = cur_thing;
 			  
-			  draw_tux_text(TUX_GREAT, shape_tips[cur_shape], 0, 0);
+			  draw_tux_text(TUX_GREAT, shape_tips[cur_shape],
+					0, 0, 1);
 			  
 			  if (do_draw)
 			    draw_shapes();
@@ -1599,7 +1604,8 @@ void mainloop(void)
 			  
 			  cur_magic = cur_thing;
 
-			  draw_tux_text(TUX_GREAT, magic_tips[cur_magic], 0, 0);
+			  draw_tux_text(TUX_GREAT, magic_tips[cur_magic],
+					0, 0, 1);
 			  
 			  if (do_draw)
 			    draw_magic();
@@ -1639,7 +1645,7 @@ void mainloop(void)
 				     0, (48 * 7) + 40 + HEIGHTOFFSET,
 				     WINDOW_WIDTH, 48);
 		      render_brush();
-		      draw_tux_text(TUX_KISS, color_names[cur_color], 0, 0);
+		      draw_tux_text(TUX_KISS, color_names[cur_color], 0, 0, 1);
 		
 		      if (cur_tool == TOOL_TEXT)
 		        do_render_cur_text(0);
@@ -1697,7 +1703,7 @@ void mainloop(void)
 #endif
 		      playsound(1, SND_STAMP, 1);
 
-		      draw_tux_text(TUX_GREAT, great_str(), 0, 0);
+		      draw_tux_text(TUX_GREAT, great_str(), 0, 0, 1);
 
 		      /* FIXME: Make delay configurable: */
 
@@ -1718,7 +1724,7 @@ void mainloop(void)
 		      brush_draw(old_x, old_y, old_x, old_y, 1);
 		      
 		      playsound(1, SND_LINE_START, 1);
-		      draw_tux_text(TUX_BORED, TIP_LINE_START, 0, 0);
+		      draw_tux_text(TUX_BORED, TIP_LINE_START, 0, 0, 1);
 		    }
 		  else if (cur_tool == TOOL_SHAPES)
 		    {
@@ -1734,7 +1740,7 @@ void mainloop(void)
 			  shape_tool_mode = SHAPE_TOOL_MODE_STRETCH;
 			  
 			  playsound(1, SND_LINE_START, 1);
-			  draw_tux_text(TUX_BORED, TIP_SHAPE_START, 0, 0);
+			  draw_tux_text(TUX_BORED, TIP_SHAPE_START, 0, 0, 1);
 			}
 		      else if (shape_tool_mode == SHAPE_TOOL_MODE_ROTATE)
 			{
@@ -1752,7 +1758,8 @@ void mainloop(void)
 				   1);
 			  
 			  shape_tool_mode = SHAPE_TOOL_MODE_DONE;
-			  draw_tux_text(TUX_GREAT, tool_tips[TOOL_SHAPES], 0, 0);
+			  draw_tux_text(TUX_GREAT, tool_tips[TOOL_SHAPES],
+					0, 0, 1);
 			}
 		    }
 		  else if (cur_tool == TOOL_MAGIC)
@@ -1777,7 +1784,8 @@ void mainloop(void)
 					         color_hexes[cur_color][2]),
 				      getpixel(canvas, old_x, old_y));
 
-			draw_tux_text(TUX_GREAT, magic_tips[MAGIC_FILL], 0, 0);
+			draw_tux_text(TUX_GREAT, magic_tips[MAGIC_FILL],
+				      0, 0, 1);
 		      }
 		      
 		      if (cur_magic == MAGIC_FLIP ||
@@ -1961,16 +1969,16 @@ void mainloop(void)
 			     /* FIXME: Stupid. Using '=' to denote UTF8 */
 
 			     draw_tux_text(TUX_GREAT,
-					   txt_stamps[cur_stamp] + 1, 1, 0);
+					   txt_stamps[cur_stamp] + 1, 1, 0, 1);
 			   }
 			   else
 			   {
                              draw_tux_text(TUX_GREAT, txt_stamps[cur_stamp],
-					   0, 1);
+					   0, 1, 0);
 			   }
 			 }
                          else
-                           draw_tux_text(TUX_GREAT, "", 0, 0);
+                           draw_tux_text(TUX_GREAT, "", 0, 0, 0);
 
 
                          /* Enable or disable color selector: */
@@ -1991,7 +1999,8 @@ void mainloop(void)
                        {
                          cur_shape = cur_thing;
                        
-                         draw_tux_text(TUX_GREAT, shape_tips[cur_shape], 0, 0);
+                         draw_tux_text(TUX_GREAT, shape_tips[cur_shape],
+				       0, 0, 1);
 
                          if (do_draw)
                            draw_shapes();
@@ -2012,7 +2021,8 @@ void mainloop(void)
 
                          cur_magic = cur_thing;
 
-                         draw_tux_text(TUX_GREAT, magic_tips[cur_magic], 0, 0);
+                         draw_tux_text(TUX_GREAT, magic_tips[cur_magic],
+				       0, 0, 1);
 
                          if (do_draw)
                            draw_magic();
@@ -2036,15 +2046,16 @@ void mainloop(void)
 	      {
 		if (((unsigned char *) event.user.data1)[0] == '=')
 		{
-		  draw_tux_text(TUX_GREAT, (char *) event.user.data1 + 1, 1, 0);
+		  draw_tux_text(TUX_GREAT, (char *) event.user.data1 + 1,
+				1, 0, 1);
 		}
 		else
 		{
-		  draw_tux_text(TUX_GREAT, event.user.data1, 0, 1);
+		  draw_tux_text(TUX_GREAT, event.user.data1, 0, 1, 1);
 		}
 	      }
 	      else
-		draw_tux_text(TUX_GREAT, "", 0, 0);
+		draw_tux_text(TUX_GREAT, "", 0, 0, 1);
 	    }
 	  }
 	  else if (event.type == SDL_MOUSEBUTTONUP)
@@ -2068,7 +2079,7 @@ void mainloop(void)
 				 event.button.x - 96, event.button.y, 1);
 		      
 		      playsound(1, SND_LINE_END, 1);
-		      draw_tux_text(TUX_GREAT, tool_tips[TOOL_LINES], 0, 0);
+		      draw_tux_text(TUX_GREAT, tool_tips[TOOL_LINES], 0, 0, 1);
 		    }
 		  else if (cur_tool == TOOL_SHAPES)
 		    {
@@ -2101,7 +2112,7 @@ void mainloop(void)
 				       0);
 			      
 			      playsound(1, SND_LINE_START, 1);
-			      draw_tux_text(TUX_BORED, TIP_SHAPE_NEXT, 0, 0);
+			      draw_tux_text(TUX_BORED, TIP_SHAPE_NEXT, 0, 0, 1);
 			      
 			      
 			      /* FIXME: Do something less intensive! */
@@ -2122,7 +2133,7 @@ void mainloop(void)
 			      
 			      shape_tool_mode = SHAPE_TOOL_MODE_DONE;
 			      draw_tux_text(TUX_GREAT,
-					    tool_tips[TOOL_SHAPES], 0, 0);
+					    tool_tips[TOOL_SHAPES], 0, 0, 1);
 			    }
 			}
 		    }
@@ -6273,7 +6284,7 @@ int compare_dirents(struct dirent * f1, struct dirent * f2)
 /* Draw tux's text on the screen: */
 
 void draw_tux_text(int which_tux, char * str, int want_utf8,
-	 	   int force_locale_font)
+	 	   int force_locale_font, int want_right_to_left)
 {
   SDL_Rect dest;
   SDL_Color black = {0, 0, 0, 0};
@@ -6310,7 +6321,8 @@ void draw_tux_text(int which_tux, char * str, int want_utf8,
   wordwrap_text(font, upper_str, black,
 	        img_tux[which_tux] -> w + 5,
 	        (48 * 7) + 40 + 48 + HEIGHTOFFSET + 5,
-	        WINDOW_WIDTH, want_utf8, force_locale_font);
+	        WINDOW_WIDTH, want_utf8, force_locale_font,
+		want_right_to_left);
 
   free(upper_str);
 
@@ -6326,7 +6338,7 @@ void draw_tux_text(int which_tux, char * str, int want_utf8,
 
 void wordwrap_text(TTF_Font * font, char * str, SDL_Color color,
 		   int left, int top, int right, int want_utf8,
-		   int force_locale_font)
+		   int force_locale_font, int want_right_to_left)
 {
   int x, y, i, j;
   char substr[512];
@@ -6357,7 +6369,7 @@ void wordwrap_text(TTF_Font * font, char * str, SDL_Color color,
       (want_utf8 ||
        (need_utf8(language) && strcmp(gettext(str), str) != 0)))
   {
-    if (want_utf8)
+    if (want_utf8 || want_right_to_left == 0)
       locale_str = strdup(str);
     else
       locale_str = strdup(textdir(gettext(str)));
@@ -6389,7 +6401,7 @@ void wordwrap_text(TTF_Font * font, char * str, SDL_Color color,
 
 	if (x > left)
 	{
-	  if (need_right_to_left(language))
+	  if (need_right_to_left(language) && want_right_to_left)
 	    anti_carriage_return(left, right, top, top + text->h, y + text->h,
 			         x - left);
 
@@ -6440,7 +6452,6 @@ void wordwrap_text(TTF_Font * font, char * str, SDL_Color color,
 	    j = j + 3;
           }
     
-	  printf("-- J is now: %d\n", j); fflush(stdout);
 
 	  if (utf8_char[0] != '\0')
 	  {
@@ -6449,7 +6460,7 @@ void wordwrap_text(TTF_Font * font, char * str, SDL_Color color,
 	    {
               if (x + text->w > right)
               {
-		if (need_right_to_left(language))
+		if (need_right_to_left(language) && want_right_to_left)
 	          anti_carriage_return(left, right, top, top + text->h,
 				       y + text->h, x - left);
 	        
@@ -6459,7 +6470,7 @@ void wordwrap_text(TTF_Font * font, char * str, SDL_Color color,
 
               dest.x = x;
 
-              if (need_right_to_left(language))
+              if (need_right_to_left(language) && want_right_to_left)
 	        dest.y = top;
               else
                 dest.y = y;
@@ -6482,7 +6493,7 @@ void wordwrap_text(TTF_Font * font, char * str, SDL_Color color,
         {
 	  /* This word needs to move down? */
 
-	  if (need_right_to_left(language))
+	  if (need_right_to_left(language) && want_right_to_left)
 	    anti_carriage_return(left, right, top, top + text->h, y + text->h,
 		 	         x - left);
           
@@ -6492,7 +6503,7 @@ void wordwrap_text(TTF_Font * font, char * str, SDL_Color color,
 
         dest.x = x;
 
-        if (need_right_to_left(language))
+        if (need_right_to_left(language) && want_right_to_left)
 	  dest.y = top;
         else
           dest.y = y;
@@ -6540,7 +6551,10 @@ void wordwrap_text(TTF_Font * font, char * str, SDL_Color color,
   else if (need_unicode(language) && locale_font != NULL &&
 	   strcmp(gettext(str), str) != 0 && strcmp(str, "") != 0)
   {
-    locale_str = strdup(textdir(gettext(str)));
+    if (want_right_to_left == 0)
+      locale_str = strdup(str);
+    else
+      locale_str = strdup(textdir(gettext(str)));
     
     
     /* For each pair of bytes... */
@@ -6559,7 +6573,7 @@ void wordwrap_text(TTF_Font * font, char * str, SDL_Color color,
       
       if (x + text->w > right)
       {
-	if (need_right_to_left(language))
+	if (need_right_to_left(language) && want_right_to_left)
 	  anti_carriage_return(left, right, top, top + text->h, y + text->h,
 		 	       x - left);
 	
@@ -6570,7 +6584,7 @@ void wordwrap_text(TTF_Font * font, char * str, SDL_Color color,
 
         dest.x = x;
 
-      if (need_right_to_left(language))
+      if (need_right_to_left(language) && want_right_to_left)
 	dest.y = top;
       else
         dest.y = y;
@@ -6589,7 +6603,10 @@ void wordwrap_text(TTF_Font * font, char * str, SDL_Color color,
   {
     /* Truncate if too big! (sorry!) */
 
-    tstr = strdup(uppercase(textdir(gettext(str))));
+    if (want_right_to_left == 0)
+      tstr = strdup(uppercase(gettext(str)));
+    else
+      tstr = strdup(uppercase(textdir(gettext(str))));
 
     if (strlen(tstr) > sizeof(substr) - 1)
       tstr[sizeof(substr) - 1] = '\0';
@@ -6624,7 +6641,7 @@ void wordwrap_text(TTF_Font * font, char * str, SDL_Color color,
 
       if (x + text->w > right)  /* Correct? */
       {
-	if (need_right_to_left(language))
+	if (need_right_to_left(language) && want_right_to_left)
 	  anti_carriage_return(left, right, top, top + text->h, y + text->h,
 		 	       x - left);
         
@@ -6637,7 +6654,7 @@ void wordwrap_text(TTF_Font * font, char * str, SDL_Color color,
 
       dest.x = x;
 
-      if (need_right_to_left(language))
+      if (need_right_to_left(language) && want_right_to_left)
 	dest.y = top;
       else
         dest.y = y;
@@ -6667,7 +6684,7 @@ void wordwrap_text(TTF_Font * font, char * str, SDL_Color color,
 
   /* Right-justify the final line of text, in right-to-left mode: */
   
-  if (need_right_to_left(language) && last_text_height > 0)
+  if (need_right_to_left(language) && want_right_to_left && last_text_height > 0)
   {
     src.x = left;
     src.y = top;
@@ -7132,7 +7149,7 @@ void save_current(void)
 	    "The error that occurred was:\n"
 	    "%s\n\n", fname, strerror(errno));
 
-    draw_tux_text(TUX_OOPS, strerror(errno), 0, 0);
+    draw_tux_text(TUX_OOPS, strerror(errno), 0, 0, 0);
   }
 
   free(fname);
@@ -7149,7 +7166,7 @@ void save_current(void)
 	    "The error that occred was:\n"
 	    "%s\n\n", fname, strerror(errno));
 
-    draw_tux_text(TUX_OOPS, strerror(errno), 0, 0);
+    draw_tux_text(TUX_OOPS, strerror(errno), 0, 0, 0);
   }
   else
   {
@@ -7317,7 +7334,7 @@ int do_prompt(char * text, char * btn_yes, char * btn_no)
   /* Draw the question: */
 
   wordwrap_text(font, text, black,
-		166 + PROMPTOFFSETX, 100 + PROMPTOFFSETY, 475, 0, 0);
+		166 + PROMPTOFFSETX, 100 + PROMPTOFFSETY, 475, 0, 0, 1);
 
 
   /* Draw yes button: */
@@ -7327,7 +7344,7 @@ int do_prompt(char * text, char * btn_yes, char * btn_no)
   SDL_BlitSurface(img_yes, NULL, screen, &dest);
 
   wordwrap_text(font, btn_yes, black, 166 + PROMPTOFFSETX + 48 + 4,
-		183 + PROMPTOFFSETY, 475, 0, 0);
+		183 + PROMPTOFFSETY, 475, 0, 0, 1);
 
 
   /* Draw no button: */
@@ -7339,13 +7356,14 @@ int do_prompt(char * text, char * btn_yes, char * btn_no)
     SDL_BlitSurface(img_no, NULL, screen, &dest);
 
     wordwrap_text(font, btn_no, black,
-		  166 + PROMPTOFFSETX + 48 + 4, 235 + PROMPTOFFSETY, 475, 0, 0);
+		  166 + PROMPTOFFSETX + 48 + 4, 235 + PROMPTOFFSETY, 475,
+		  0, 0, 1);
   }
 
 
   /* Draw Tux, waiting... */
 
-  draw_tux_text(TUX_BORED, "", 0, 0);
+  draw_tux_text(TUX_BORED, "", 0, 0, 0);
 
   SDL_Flip(screen);
 
@@ -7991,7 +8009,7 @@ int do_save(void)
     fprintf(stderr,
             "Cannot save the any pictures! SORRY!\n\n");
 
-    draw_tux_text(TUX_OOPS, SDL_GetError(), 0, 0);
+    draw_tux_text(TUX_OOPS, SDL_GetError(), 0, 0, 0);
 
     free(fname);
     return 0;
@@ -8018,7 +8036,7 @@ int do_save(void)
     fprintf(stderr,
             "Cannot save the any pictures! SORRY!\n\n");
 
-    draw_tux_text(TUX_OOPS, SDL_GetError(), 0, 0);
+    draw_tux_text(TUX_OOPS, SDL_GetError(), 0, 0, 0);
 
     free(fname);
     return 0;
@@ -8043,7 +8061,7 @@ int do_save(void)
 	    "The Simple DirectMedia Layer error that occurred was:\n"
 	    "%s\n\n", fname, SDL_GetError());
 
-    draw_tux_text(TUX_OOPS, SDL_GetError(), 0, 0);
+    draw_tux_text(TUX_OOPS, SDL_GetError(), 0, 0, 0);
 
     free(fname);
     return 0;
@@ -8053,7 +8071,7 @@ int do_save(void)
     /* Ta-Da! */
 
     playsound(0, SND_SAVE, 1);
-    draw_tux_text(TUX_DEFAULT, tool_tips[TOOL_SAVE], 0, 0);
+    draw_tux_text(TUX_DEFAULT, tool_tips[TOOL_SAVE], 0, 0, 1);
   }
 #else
   fi = fopen(fname, "wb");
@@ -8066,7 +8084,7 @@ int do_save(void)
 	    "%s\n\n",
 	    fname, strerror(errno));
 
-    draw_tux_text(TUX_OOPS, strerror(errno), 0, 0);
+    draw_tux_text(TUX_OOPS, strerror(errno), 0, 0, 0);
   }
   else
   {
@@ -8112,7 +8130,7 @@ int do_save(void)
   /* All happy! */
 
   playsound(0, SND_SAVE, 1);
-  draw_tux_text(TUX_DEFAULT, tool_tips[TOOL_SAVE], 0, 0);
+  draw_tux_text(TUX_DEFAULT, tool_tips[TOOL_SAVE], 0, 0, 1);
   do_setcursor(cursor_arrow);
 
   return 1;
@@ -8137,7 +8155,7 @@ int do_png_save(FILE * fi, char * fname, SDL_Surface * surf)
     png_destroy_write_struct(&png_ptr, (png_infopp) NULL);
 
     fprintf(stderr, "\nError: Couldn't save the image!\n%s\n\n", fname);
-    draw_tux_text(TUX_OOPS, strerror(errno), 0, 0);
+    draw_tux_text(TUX_OOPS, strerror(errno), 0, 0, 0);
   }
   else
   {
@@ -8148,7 +8166,7 @@ int do_png_save(FILE * fi, char * fname, SDL_Surface * surf)
       png_destroy_write_struct(&png_ptr, (png_infopp) NULL);
 
       fprintf(stderr, "\nError: Couldn't save the image!\n%s\n\n", fname);
-      draw_tux_text(TUX_OOPS, strerror(errno), 0, 0);
+      draw_tux_text(TUX_OOPS, strerror(errno), 0, 0, 0);
     }
     else
     {
@@ -8158,7 +8176,7 @@ int do_png_save(FILE * fi, char * fname, SDL_Surface * surf)
         png_destroy_write_struct(&png_ptr, (png_infopp) NULL);
 
         fprintf(stderr, "\nError: Couldn't save the image!\n%s\n\n", fname);
-        draw_tux_text(TUX_OOPS, strerror(errno), 0, 0);
+        draw_tux_text(TUX_OOPS, strerror(errno), 0, 0, 0);
   
         return 0;
       }
@@ -8625,7 +8643,7 @@ int do_open(int want_new_tool)
       
       draw_tux_text(TUX_BORED,
 		    textdir(gettext_noop("Choose the picture you want, "
-			                 "then click 'Open'")), 0, 0);
+			                 "then click 'Open'")), 0, 0, 1);
       
       cur = 0;
       update_list = 1;
