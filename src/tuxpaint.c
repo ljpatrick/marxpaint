@@ -29,7 +29,7 @@
 #define VER_DATE        "2003.12.22"
 
 
-#define DEBUG
+/* #define DEBUG */
 /* #define LOW_QUALITY_THUMBNAILS */
 /* #define LOW_QUALITY_COLOR_SELECTOR */
 /* #define LOW_QUALITY_STAMP_OUTLINE */
