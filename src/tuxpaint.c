@@ -21,12 +21,12 @@
   along with this program; if not, write to the Free Software
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   
-  June 14, 2002 - March 3, 2004
+  June 14, 2002 - March 4, 2004
 */
 
 
 #define VER_VERSION     "0.9.14"
-#define VER_DATE        "2004.03.03"
+#define VER_DATE        "2004.03.04"
 
 
 /* #define DEBUG */
@@ -316,6 +316,7 @@ enum {
   LANG_RO,     /* Romanian */
   LANG_RU,     /* Russian */
   LANG_SK,     /* Slovak */
+  LANG_SR,     /* Serbian */
   LANG_SV,     /* Swedish */
   LANG_TA,     /* Tamil */
   LANG_TR,     /* Turkish */
@@ -355,6 +356,7 @@ const char * lang_prefixes[NUM_LANGS] = {
   "ro",
   "ru",
   "sk",
+  "sr",
   "sv",
   "ta",
   "tr",
@@ -3861,6 +3863,7 @@ void show_locale_usage(FILE * f, char * prg)
 	  "  ro_RO   (Romanian)\n"
 	  "  ru_RU   (Russian      Russkiy)\n"
 	  "  sk_SK   (Slovak)\n"
+	  "  sr_YU   (Serbian)\n"
 	  "  es_ES   (Spanish      Espanol)\n"
 	  "  sv_SE   (Swedish      Svenska)\n"
 	  "  tr_TR   (Turkish)\n"
@@ -4543,6 +4546,11 @@ void setup(int argc, char * argv[])
 	{
 	  putenv("LANG=sk_SK");
 	  putenv("LC_ALL=sk_SK");
+	}
+      else if (strcmp(langstr, "serbian") == 0)
+	{
+	  putenv("LANG=sr_YU");
+	  putenv("LC_ALL=sr_YU");
 	}
       else if (strcmp(langstr, "swedish") == 0 ||
 	       strcmp(langstr, "svenska") == 0)

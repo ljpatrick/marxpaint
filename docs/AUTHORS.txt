@@ -7,7 +7,7 @@ bill@newbreedsoftware.com
 http://www.newbreedsoftware.com/tuxpaint/
 
 
-June 17, 2002 - March 3, 2004
+June 17, 2002 - March 4, 2004
 
 
 * Design and Coding:
@@ -165,6 +165,9 @@ June 17, 2002 - March 3, 2004
 
   * Russian
     Dmitriy Ivanov <ace22b@myrealbox.com>
+
+  * Serbian
+    Aleksandar Jelenak <jelenak@netlinkplus.net>
   
   * Spanish
     Gabriel Gazzan <ggabriel@internet.com.uy>
