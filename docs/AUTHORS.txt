@@ -7,7 +7,7 @@ bill@newbreedsoftware.com
 http://www.newbreedsoftware.com/tuxpaint/
 
 
-June 17, 2002 - March 10, 2003
+June 17, 2002 - March 14, 2003
 
 
 * Design and Coding:
@@ -124,6 +124,10 @@ June 17, 2002 - March 10, 2003
 
   * Korean
     Mark Kim <markbk@cbreak.org>
+
+  * Lithuanian
+    Mantas Kriauciunas <monte@mail.lt>
+    Rita Verbauskaite <verba@centras.lt>
 
   * Norwegian
     Karl Ove Hufthammer <karl@huftis.org>
