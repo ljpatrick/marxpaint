@@ -698,7 +698,7 @@ int main(int argc, char * argv[])
 
   /* Set up locale support */
   
-  setlocale(LC_ALL, NULL);
+  setlocale(LC_ALL, "");
 
 
   /* Set up! */
