@@ -6,7 +6,7 @@ msgstr ""
 "Project-Id-Version: TuxPaint 0.0.1pre\n"
 "Report-Msgid-Bugs-To: tuxpaint-i18n@tux4kids.net\n"
 "POT-Creation-Date: 2004-03-22 11:23-0800\n"
-"PO-Revision-Date: 2004-04-01 20:27-0800\n"
+"PO-Revision-Date: 2004-04-19 03:27-0800\n"
 "Last-Translator: drouizig <drouizig@drouizig.org>\n"
 "Language-Team: Breton <drouizig@drouizig.org>\n"
 "MIME-Version: 1.0\n"
@@ -35,7 +35,7 @@ msgstr "Ya"
 # File: tuxpaint.c, line: 835
 # File: tuxpaint.c, line: 8389
 msgid "No"
-msgstr "Ne ran ket"
+msgstr "Ne ra ket"
 #
 # File: tuxpaint.c, line: 805
 msgid "If you quit, you'll lose your picture! Save it?"
@@ -43,7 +43,7 @@ msgstr "Kollet e vo da skeudenn mar kuitez ! Gwarediñ a rez ?"
 #
 # File: tuxpaint.c, line: 809
 msgid "Save your picture first?"
-msgstr "Gwarediñ ar skeudenn e penn-kentañ ?"
+msgstr "Gwarediñ ar skeudenn e gentañ ?"
 #
 # File: tuxpaint.c, line: 813
 #, fuzzy
@@ -55,11 +55,11 @@ msgstr "Diverkañ an dresadenn-se ?"
 # File: tuxpaint.c, line: 828
 # File: tuxpaint.c, line: 831
 msgid "OK"
-msgstr ""
+msgstr "Mat eo!"
 #
 # File: tuxpaint.c, line: 816
 msgid "Starting a new picture will erase the current one!"
-msgstr "Kregiñ endro gant ur skeudenn nevez a ziverko ar skeudenn red !"
+msgstr "Kregiñ en-dro gant ur skeudenn nevez a ziverko ar skeudenn red !"
 #
 # File: tuxpaint.c, line: 817
 msgid "That's OK!"
@@ -116,52 +116,52 @@ msgstr "Ket, gwarediñ dindan un anv nevez"
 # File: tuxpaint.c, line: 9951
 #, fuzzy
 msgid "Choose the picture you want, then click 'Open'."
-msgstr "Diuz ur skeudenn ha klik war 'digeriñ' neuze"
+msgstr "Diuz ur skeudenn ha klik war 'digeriñ' neuze."
 #
 # File: colors.h, line: 62
 msgid "Black!"
-msgstr "Du"
+msgstr "Du !"
 #
 # File: colors.h, line: 63
 msgid "White!"
-msgstr "Gwenn"
+msgstr "Gwenn !"
 #
 # File: colors.h, line: 64
 msgid "Red!"
-msgstr "Ruz"
+msgstr "Ruz !"
 #
 # File: colors.h, line: 65
 msgid "Pink!"
-msgstr "Rozenn"
+msgstr "Roz !"
 #
 # File: colors.h, line: 66
 msgid "Orange!"
-msgstr "Orañj"
+msgstr "Orañjez !"
 #
 # File: colors.h, line: 67
 msgid "Yellow!"
-msgstr "Melen"
+msgstr "Melen !"
 #
 # File: colors.h, line: 68
 #, fuzzy
 msgid "Lime!"
-msgstr "Sitroñs glas"
+msgstr "Sitroñs glas !"
 #
 # File: colors.h, line: 69
 msgid "Green!"
-msgstr "Gwer"
+msgstr "Gwer !"
 #
 # File: colors.h, line: 70
 msgid "Cyan!"
-msgstr "Gwerc'hlas"
+msgstr "Gwerc'hlas !"
 #
 # File: colors.h, line: 71
 msgid "Blue!"
-msgstr "Glas"
+msgstr "Glas !"
 #
 # File: colors.h, line: 72
 msgid "Purple!"
-msgstr "Limestra"
+msgstr "Limestra !"
 #
 # File: colors.h, line: 73
 msgid "Fuchsia!"
@@ -169,17 +169,17 @@ msgstr ""
 #
 # File: colors.h, line: 74
 msgid "Brown!"
-msgstr "Kistin"
+msgstr "Kistin !"
 #
 # File: colors.h, line: 75
 #, fuzzy
 msgid "Gray!"
-msgstr "Gris"
+msgstr "Gris !"
 #
 # File: colors.h, line: 76
 #, fuzzy
 msgid "Silver!"
-msgstr "Arc'hant"
+msgstr "Arc'hant !"
 #
 # File: great.h, line: 20
 msgid "Great!"
@@ -199,7 +199,7 @@ msgstr "Labour mat !"
 #
 # File: magic.h, line: 48
 msgid "Rainbow"
-msgstr "Gwareg-c'hlav"
+msgstr "Gwareg ar Glav"
 #
 # File: magic.h, line: 49
 msgid "Sparkles"
@@ -251,7 +251,7 @@ msgstr "Leuniañ"
 #
 # File: magic.h, line: 73
 msgid "You can draw in rainbow colors!"
-msgstr "Gallout a rez tresañ gant livioù ar Garreg-c'lav !"
+msgstr "Gallout a rez tresañ gant livioù ar Garreg-ar-Glav !"
 #
 # File: magic.h, line: 74
 msgid "Click and move to draw sparkles."
@@ -328,17 +328,17 @@ msgstr "Hirgelc'h"
 # File: shapes.h, line: 149
 # File: shapes.h, line: 150
 msgid "Triangle"
-msgstr "Tric'horneg"
+msgstr "Tric'horn"
 #
 # File: shapes.h, line: 151
 # File: shapes.h, line: 152
 msgid "Pentagon"
-msgstr "Pempkorneg"
+msgstr "Pempkorn"
 #
 # File: shapes.h, line: 153
 # File: shapes.h, line: 154
 msgid "Diamond"
-msgstr "Lozañj"
+msgstr "Romb"
 #
 # File: shapes.h, line: 161
 # File: shapes.h, line: 162
@@ -372,7 +372,7 @@ msgstr "Ul lozañj zo ur garrezenn, hirstummet un tammig."
 #
 # File: titles.h, line: 37
 msgid "Tools"
-msgstr "Binviji"
+msgstr "Binvioù"
 #
 # File: titles.h, line: 38
 msgid "Colors"
@@ -450,7 +450,7 @@ msgstr "Diuz ul liv hag ur moull-livañ evit tresañ"
 #
 # File: tools.h, line: 63
 msgid "Pick a picture to stamp around your drawing."
-msgstr "Diuz ur skeudenn evit ensoc'hañ anezhi e-barzh da dresadenn."
+msgstr "Dibab ur skeudenn evit ensoc'hañ anezhi e-barzh da dresadenn."
 #
 # File: tools.h, line: 64
 msgid "Click to start drawing a line. Let go to complete it."
@@ -461,17 +461,17 @@ msgid ""
 "Pick a shape. Click to pick the center, drag, then let go when it is the "
 "size you want. Move around to rotate it, and click to draw it."
 msgstr ""
-"Diuz ur stumm. Klik warnañ, dibab e blas hag e vent, lak anezhañ da dreiñ en "
-"ur bouezañ, ha klik evit tresañ anezhañ a benn ar fin."
+"Diuz ur stumm. Klik warnañ, dibab e blas hag e vent. Lak anezhañ da dreiñ en "
+"ur bouezañ, ha klik evit e dresañ a-benn ar fin."
 #
 # File: tools.h, line: 66
 msgid "Choose a style of text. Click on your drawing and you can start typing."
 msgstr ""
-"Diuz ur stil testenn. Klik war da skeudenn ha krog da viziata un destenn."
+"Diuz ur stil testenn. Klik war da skeudenn ha krog da vizskrivañ un destenn."
 #
 # File: tools.h, line: 67
 msgid "Pick a magical effect to use on your drawing!"
-msgstr "Diuz un efed strobinelus evit kemmañ da dresadenn !"
+msgstr "Dibab un efed strobinellus evit kemmañ da dresadenn !"
 #
 # File: tools.h, line: 68
 msgid "Undo!"
@@ -487,7 +487,7 @@ msgstr "Diverkañ !"
 #
 # File: tools.h, line: 71
 msgid "You now have a blank sheet to draw on!"
-msgstr "Setu ur folennad wenn evidout a-benn tresadennañ !"
+msgstr "Setu ur folennad wenn evidout a-benn tresañ !"
 #
 # File: tools.h, line: 72
 msgid "Open..."
@@ -507,20 +507,17 @@ msgstr "Kenavo !"
 #
 # File: tools.h, line: 78
 msgid "Let go of the button to complete the line."
-msgstr "Laosk an afell pouezet evit peuleuniañ al linenn."
+msgstr "Dalc'h da boueza� war an afell evit peurleuniañ al linenn."
 #
 # File: tools.h, line: 79
 msgid "Hold the button to stretch the shape."
-msgstr "Laosk an afell pouezet evit astennañ ar stumm"
+msgstr "Dalc'h da boueza� war an afell evit astenn ar stumm."
 #
 # File: tools.h, line: 80
 msgid "Move the mouse to rotate the shape. Click to draw it."
 msgstr ""
-"Fiñv al logodenn evit ober un dro gant ar stumm. Klik evit tresañ anezhañ"
+"Fiñv al logodenn evit ober un dro gant ar stumm. Klik evit tresañ anezhañ."
 #
 # File: tools.h, line: 81
 msgid "Ok then... Let's keep drawing this one!"
 msgstr "Mat ! neuze kendalc'homp gant an dresadenn !"
-#
-#~ msgid "Okay"
-#~ msgstr "Mat eo!"
