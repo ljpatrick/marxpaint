@@ -1,0 +1,72 @@
+Summary: A drawing program for young children
+Name: tuxpaint
+Version: 0.9.15
+Release: 1
+License: GPL
+Group: Amusements/Games
+URL: http://www.newbreedsoftware.com/tuxpaint/
+Source0: %{name}-%{version}.tar.gz
+BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-root
+Requires: SDL >= 1.2.4 SDL_image SDL_mixer SDL_ttf libpng zlib
+BuildRequires: SDL-devel >= 1.2.4 SDL_image-devel SDL_mixer-devel SDL_ttf-devel
+BuildRequires: libpng-devel zlib-devel gettext
+
+%description
+"Tux Paint" is a drawing program for young children.
+It provides a simple interface and fixed canvas size,
+and provides access to previous images using a thumbnail
+browser (e.g., no access to the underlying file-system).
+
+Unlike popular drawing programs like "The GIMP," it has a
+very limited tool-set. However, it provides a much simpler
+interface, and has entertaining, child-oriented additions
+such as sound effects.
+
+%prep
+%setup -q
+for dir in `find . -name "CVS"`; do
+  rm -rf $dir
+done
+
+%build
+make PREFIX=/usr
+
+%install
+rm -rf $RPM_BUILD_ROOT
+make PREFIX=/usr PKG_ROOT=$RPM_BUILD_ROOT install
+
+rm -rf $RPM_BUILD_ROOT/%{_datadir}/doc/tuxpaint
+
+%clean
+rm -rf $RPM_BUILD_ROOT
+
+%files
+%defattr(-,root,root,-)
+%doc docs/*
+
+%defattr(0755, root, root)
+/usr/bin/*
+
+%defattr(0644, root, root)
+/usr/share/locale/*/LC_MESSAGES/tuxpaint.mo
+/usr/share/man/man1/*
+/usr/share/man/*/man1/tuxpaint.1.gz
+
+%config(noreplace) %{_sysconfdir}/tuxpaint/tuxpaint.conf
+
+%defattr(-, root, root)
+/usr/share/tuxpaint/*
+
+%defattr(-, root, root)
+/usr/share/icons/hicolor/*/apps/tuxpaint.png
+/usr/share/icons/hicolor/scalable/apps/tuxpaint.svg
+/usr/share/pixmaps/tuxpaint.png
+/usr/X11R6/include/X11/pixmaps/tuxpaint.xpm
+
+/usr/share/applnk/Graphics/tuxpaint.desktop
+/usr/share/gnome/apps/Graphics/tuxpaint.desktop
+
+%changelog
+* Tue Sep 21 2004  <shin1@wmail.plala.or.jp> -
+- Initial build for version 0.9.14
+
