@@ -4897,11 +4897,11 @@ void setup(int argc, char * argv[])
 #ifndef NOSOUND
     loadarbitrary(img_stamps, img_stamps_premirror,
 		  txt_stamps, inf_stamps, snd_stamps,
-		  &num_stamps, num_stamps,
+		  &num_stamps, 0,
 	          MAX_STAMPS, homedirdir, 0, -1, -1);
 #else
     loadarbitrary(img_stamps, img_stamps_premirror,
-		  txt_stamps, inf_stamps, &num_stamps, num_stamps,
+		  txt_stamps, inf_stamps, &num_stamps, 0,
 	          MAX_STAMPS, homedirdir, 0, -1, -1);
 #endif
 
@@ -4909,11 +4909,11 @@ void setup(int argc, char * argv[])
 #ifndef NOSOUND
     loadarbitrary(img_stamps, img_stamps_premirror,
 		  txt_stamps, inf_stamps, snd_stamps, &num_stamps,
-	          0, MAX_STAMPS, DATA_PREFIX "stamps", 0, -1, -1);
+	          num_stamps, MAX_STAMPS, DATA_PREFIX "stamps", 0, -1, -1);
 #else
     loadarbitrary(img_stamps, img_stamps_premirror,
 		  txt_stamps, inf_stamps, &num_stamps,
-	          0, MAX_STAMPS, DATA_PREFIX "stamps", 0, -1, -1);
+	          num_stamps, MAX_STAMPS, DATA_PREFIX "stamps", 0, -1, -1);
 #endif
 
 
