@@ -1437,6 +1437,8 @@ static SDL_Surface * img_title_on, * img_title_off,
 static SDL_Surface * img_title_names[NUM_TITLES];
 static SDL_Surface * img_tools[NUM_TOOLS], * img_tool_names[NUM_TOOLS];
 
+static SDL_Surface * thumbnail(SDL_Surface * src, int max_x, int max_y,
+			int keep_aspect);
 
 //////////////////////////////////////////////////////////////////////
 // font stuff
@@ -1519,6 +1521,22 @@ static TTF_Font *getfonthandle(int desire)
   // if the font doesn't load, we die -- it did load OK before though
   TTF_SetFontStyle(fi->handle,missing);
   return fi->handle;
+}
+
+
+static SDL_Surface *render_text(TTF_Font *restrict font, const char *restrict str, SDL_Color color)
+{
+  SDL_Surface *ret;
+  ret = TTF_RenderUTF8_Blended(font, str, color);
+  if(ret)
+    return ret;
+  // Sometimes a font will be missing a character we need. Sometimes the library
+  // will substitute a rectangle without telling us. Sometimes it returns NULL.
+  // Probably we should use FreeType directly. For now though...
+  int height = TTF_FontHeight(font);
+  if(height<2)
+    height = 2;
+  return thumbnail(img_title_large_off, height*strlen(str)/2, height, 0);
 }
 
 
@@ -2078,8 +2096,6 @@ static void loadarbitrary(SDL_Surface * surfs[], SDL_Surface * altsurfs[],
 		   int * count, int starting, int max,
 		   const char * const dir, int fatal, int maxw, int maxh);
 #endif
-static SDL_Surface * thumbnail(SDL_Surface * src, int max_x, int max_y,
-			int keep_aspect);
 
 static Uint32 getpixel(SDL_Surface * surface, int x, int y);
 static void putpixel(SDL_Surface * surface, int x, int y, Uint32 pixel);
@@ -2221,7 +2237,7 @@ int main(int argc, char * argv[])
   SDL_BlitSurface(img_title, NULL, screen, &dest);
 
   snprintf(tmp_str, sizeof(tmp_str), "%s – %s", VER_VERSION, VER_DATE);
-  tmp_surf = TTF_RenderUTF8_Blended(medium_font, tmp_str, black);
+  tmp_surf = render_text(medium_font, tmp_str, black);
   dest.x = 20 + (WINDOW_WIDTH - img_title->w) / 2;
   dest.y = WINDOW_HEIGHT - 60;
   SDL_BlitSurface(tmp_surf, NULL, screen, &dest);
@@ -7254,7 +7270,7 @@ static void setup(int argc, char * argv[])
           char *td_str = textdir(gettext(title_names[i]));
           upstr = uppercase(td_str);
           free(td_str);
-          tmp_surf = TTF_RenderUTF8_Blended(myfont, upstr, black);
+          tmp_surf = render_text(myfont, upstr, black);
           free(upstr);
 	  img_title_names[i] = thumbnail(tmp_surf, min(84, tmp_surf->w), tmp_surf->h, 0);
 	  SDL_FreeSurface(tmp_surf);
@@ -7416,7 +7432,7 @@ static SDL_Surface * do_render_button_label(const char * const label)
   char *td_str = textdir(gettext(label));
   char *upstr = uppercase(td_str);
   free(td_str);
-  tmp_surf = TTF_RenderUTF8_Blended(myfont, upstr, black);
+  tmp_surf = render_text(myfont, upstr, black);
   free(upstr);
   surf = thumbnail(tmp_surf, min(48, tmp_surf->w), tmp_surf->h, 0);
   SDL_FreeSurface(tmp_surf);
@@ -8033,7 +8049,7 @@ static void draw_fonts(void)
 	{
 	  SDL_Surface * tmp_surf_1;
 	  
-	  tmp_surf_1 = TTF_RenderUTF8_Blended(getfonthandle(font),
+	  tmp_surf_1 = render_text(getfonthandle(font),
                                             gettext("Aa"), black);
 
 	  if (tmp_surf_1->w > 48 || tmp_surf_1->h > 48)
@@ -9591,7 +9607,7 @@ static void wordwrap_text(const char * const str, SDL_Color color,
 
 	      if (locale_str[i] == ' ' || locale_str[i] == '\0')
 		{
-		  text = TTF_RenderUTF8_Blended(locale_font, utf8_str, color);
+		  text = render_text(locale_font, utf8_str, color);
 
 		  if (!text) continue;  /* Didn't render anything... */
 
@@ -9656,7 +9672,7 @@ static void wordwrap_text(const char * const str, SDL_Color color,
 
 			  if (utf8_char[0] != '\0')
 			    {
-			      text = TTF_RenderUTF8_Blended(locale_font, utf8_char, color);
+			      text = render_text(locale_font, utf8_char, color);
 			      if (text != NULL)
 				{
 				  if (x + text->w > right)
@@ -9791,7 +9807,7 @@ static void wordwrap_text(const char * const str, SDL_Color color,
 	  /* Render the word for display... */
 
   
-	  text = TTF_RenderUTF8_Blended(locale_font, substr, color);
+	  text = render_text(locale_font, substr, color);
 
 
 	  /* If it won't fit on this line, move to the next! */
@@ -13897,7 +13913,7 @@ static void do_render_cur_text(int do_blit)
     {
       str = uppercase(texttool_str);
     
-      tmp_surf = TTF_RenderUTF8_Blended(getfonthandle(cur_font), str, color);
+      tmp_surf = render_text(getfonthandle(cur_font), str, color);
 
       w = tmp_surf->w;
       h = tmp_surf->h;
