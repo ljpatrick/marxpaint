@@ -10882,7 +10882,7 @@ int current_language(void)
 #ifdef WIN32
   char str[128];
 #endif
-  int lang, i;
+  int lang, i, found;
 
 
   /* Default... */
@@ -10916,15 +10916,18 @@ int current_language(void)
     {
       /* Which, if any, of the locales is it? */
 
-      for (i = 0; i < NUM_LANGS; i++)
+      found = 0;
+      
+      for (i = 0; i < NUM_LANGS && found == 0; i++)
 	{
 	  /* Case-insensitive */
 	  /* (so that, e.g. "pt_BR" is recognized as "pt_br") */
       
-	  /* if (strncasecmp(loc, lang_prefixes[i], strlen(lang_prefixes[i])) == 0) */
-	  if (strcasecmp(loc, lang_prefixes[i]) == 0)
+	  if (strncasecmp(loc, lang_prefixes[i], strlen(lang_prefixes[i])) == 0)
+	  /* if (strcasecmp(loc, lang_prefixes[i]) == 0) */
 	    {
 	      lang = i;
+	      found = 1;
 	    }
 	}
     }
