@@ -3,7 +3,7 @@ Name: tuxpaint
 Version: 0.9.15
 Release: 1
 License: GPL
-Group: Amusements/Games
+Group: Multimedia/Graphics
 URL: http://www.newbreedsoftware.com/tuxpaint/
 Source0: %{name}-%{version}.tar.gz
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-root
@@ -67,6 +67,9 @@ rm -rf $RPM_BUILD_ROOT
 /usr/share/gnome/apps/Graphics/tuxpaint.desktop
 
 %changelog
+* Fri Jan 14 2005  <bill@newbreedsoftware.com> -
+- Changed Group from Amusements/Games to Multimedia/Graphics
+
 * Tue Sep 21 2004  <shin1@wmail.plala.or.jp> -
 - Initial build for version 0.9.14
 
