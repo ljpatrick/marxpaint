@@ -8,6 +8,9 @@ http://www.newbreedsoftware.com/tuxpaint/
 
 
 2004.March.21 (0.9.14) [cvs]
+  * Japanese translation updates.
+    TOYAMA Shin-ichi <shin1@wmail.plala.or.jp>
+
   * Dutch translation updates.
     Geert Stams <geertstams@wanadoo.nl>
 
@@ -212,7 +215,7 @@ http://www.newbreedsoftware.com/tuxpaint/
     and you went to the 'Open' dialog.
   
   * Fixed prompt bug for larger window sizes
-    TOYAMA Shin-ichi <kyone@tky2.3web.ne.jp>
+    TOYAMA Shin-ichi <shin1@wmail.plala.or.jp>
 
 
 2003.Jun.17 (0.9.11)
@@ -240,7 +243,7 @@ http://www.newbreedsoftware.com/tuxpaint/
     Mantas Kriauciunas <monte@mail.lt>
 
   * Set $OUTPUT_CHARSET for Japanese locale, to fix Win32 issue.
-    TOYAMA Shin-ichi <kyone@tky2.3web.ne.jp>
+    TOYAMA Shin-ichi <shin1@wmail.plala.or.jp>
 
   * Lithuanian translation.
     Mantas Kriauciunas <monte@mail.lt>,
@@ -338,7 +341,7 @@ http://www.newbreedsoftware.com/tuxpaint/
     Karl Ove Hufthammer <karl@huftis.org>
 
   * Added Japanese translation to Tux Paint icon (tuxpaint.desktop)
-    TOYAMA Shin-ichi <kyone@tky2.3web.ne.jp>
+    TOYAMA Shin-ichi <shin1@wmail.plala.or.jp>
 
   * Moved Makefile.beos into src/, to keep root directory less cluttered.
 
@@ -359,7 +362,7 @@ http://www.newbreedsoftware.com/tuxpaint/
   * Removed some debugging output that shouldn't have been kept in.
 
   * Locale-detection code made more robust.  (Check LC_MESSAGES, not LC_ALL)
-    TOYAMA Shin-ichi <kyone@tky2.3web.ne.jp>
+    TOYAMA Shin-ichi <shin1@wmail.plala.or.jp>
 
   * Added support for some useful HTML escape sequences in stamp descriptions
     (e.g., "&acute;" for "á" ("a" with "'" over it))
@@ -395,7 +398,7 @@ http://www.newbreedsoftware.com/tuxpaint/
     selector on the right.
 
   * Fixed Japanese locale detection.
-    TOYAMA Shin-ichi <kyone@tky2.3web.ne.jp>
+    TOYAMA Shin-ichi <shin1@wmail.plala.or.jp>
 
   * Stamp description translations can be encoded using UTF-8.
     Append ".utf8" to the locale code (e.g., "fr.utf8=...")
@@ -407,7 +410,7 @@ http://www.newbreedsoftware.com/tuxpaint/
 
 2003.January.26 (0.9.7)
   * Translated to Japanese!
-    TOYAMA Shin-ichi <kyone@tky2.3web.ne.jp>
+    TOYAMA Shin-ichi <shin1@wmail.plala.or.jp>
 
   * Fixed translation bugs with some save-related prompts.
 
@@ -431,10 +434,10 @@ http://www.newbreedsoftware.com/tuxpaint/
     if it doesn't exist
 
   * Initial support for arbitrary window sizes.  (#define SVGA for 800x600)
-    TOYAMA Shin-ichi <kyone@tky2.3web.ne.jp>
+    TOYAMA Shin-ichi <shin1@wmail.plala.or.jp>
 
   * Added a few new colors, renamed some old ones.
-    TOYAMA Shin-ichi <kyone@tky2.3web.ne.jp>
+    TOYAMA Shin-ichi <shin1@wmail.plala.or.jp>
 
   * Fixed text tool bug when hitting [Enter]/[Return] past bottom of canvas
 

@@ -1,19 +1,19 @@
 # Tuxpaint japanese translation.
 # tuxpaint の 日本語訳
-# Copyright (C) 2003
+# Copyright (C) 2004
 # This file is distributed under the same license as the Tuxpaint package.
 # このファイルは Tuxpaint のパッケージと同じ使用許諾に基づいて配布されます。
-# TOYAMA Shin-ichi <kyone@tky2.3web.ne.jp>, 2003.
+# TOYAMA Shin-ichi <shin1@wmail.plala.or.jp>, 2004.
 #
 # Nota per futures traduccions/actualitzacions:
 # 
 msgid ""
 msgstr ""
-"Project-Id-Version: Tuxpaint 0.9.5\n"
+"Project-Id-Version: Tuxpaint 0.9.14\n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2003-01-27 14:36-0800\n"
-"Last-Translator: TOYAMA Shin-ichi <kyone@tky2.3web.ne.jp>\n"
-"Language-Team: TOYAMA Shin-ichi <kyone@tky2.3web.ne.jp>\n"
+"PO-Revision-Date: 2004-03-21 22:00+0900\n"
+"Last-Translator: TOYAMA Shin-ichi <shin1@wmail.plala.or.jp>\n"
+"Language-Team: TOYAMA Shin-ichi <shin1@wmail.plala.or.jp>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -46,19 +46,17 @@ msgstr "そのえはひらけませんでした！"
 
 #: tuxpaint.c:808 tuxpaint.c:815 tuxpaint.c:822 tuxpaint.c:825
 msgid "OK"
-msgstr ""
+msgstr "オッケー"
 
 #: tuxpaint.c:810
 msgid "Starting a new picture will erase the current one!"
 msgstr "さいしょからやりなおすと、いまのえがきえるよ！"
 
 #: tuxpaint.c:811
-#, fuzzy
 msgid "That's OK!"
-msgstr "いいよ"
+msgstr "いいよ！"
 
 #: tuxpaint.c:812
-#, fuzzy
 msgid "Never mind!"
 msgstr "やめた！"
 
@@ -67,9 +65,8 @@ msgid "There are no saved files!"
 msgstr "セーブされた えは ありません！"
 
 #: tuxpaint.c:817
-#, fuzzy
 msgid "Print your picture now?"
-msgstr "そのまえに いまのえを セーブする？"
+msgstr "いんさつしますか？"
 
 #: tuxpaint.c:821
 msgid "Your picture has been printed!"
@@ -96,7 +93,6 @@ msgid "Back"
 msgstr "もどる"
 
 #: tuxpaint.c:9064
-#, fuzzy
 msgid "Save over the older version of this picture?"
 msgstr "まえの えを うわがきしますか？"
 
@@ -105,84 +101,68 @@ msgid "No, save a new file"
 msgstr "いいえ、べつのファイルに セーブします"
 
 #: tuxpaint.c:9885
-#, fuzzy
 msgid "Choose the picture you want, then click 'Open'."
 msgstr "えをえらんでから 「ひらく」をクリックしてね"
 
 #: colors.h:62
-#, fuzzy
 msgid "Black!"
-msgstr "くろ"
+msgstr "くろ！"
 
 #: colors.h:63
-#, fuzzy
 msgid "White!"
-msgstr "しろ"
+msgstr "しろ！"
 
 #: colors.h:64
-#, fuzzy
 msgid "Red!"
-msgstr "やっぱり やりなおし！"
+msgstr "あか！"
 
 #: colors.h:65
-#, fuzzy
 msgid "Pink!"
-msgstr "ピンク"
+msgstr "ピンク！"
 
 #: colors.h:66
-#, fuzzy
 msgid "Orange!"
-msgstr "オレンジ"
+msgstr "オレンジ！"
 
 #: colors.h:67
-#, fuzzy
 msgid "Yellow!"
-msgstr "きいろ"
+msgstr "きいろ！"
 
 #: colors.h:68
-#, fuzzy
 msgid "Lime!"
-msgstr "ライム"
+msgstr "ライム！"
 
 #: colors.h:69
-#, fuzzy
 msgid "Green!"
-msgstr "みどり"
+msgstr "みどり！"
 
 #: colors.h:70
-#, fuzzy
 msgid "Cyan!"
-msgstr "みずいろ"
+msgstr "みずいろ！"
 
 #: colors.h:71
-#, fuzzy
 msgid "Blue!"
-msgstr "あお"
+msgstr "あお！"
 
 #: colors.h:72
-#, fuzzy
 msgid "Purple!"
-msgstr "むらさき"
+msgstr "むらさき！"
 
 #: colors.h:73
-#, fuzzy
 msgid "Fuchsia!"
-msgstr "ホクシャ"
+msgstr "ホクシャ！"
 
 #: colors.h:74
-#, fuzzy
 msgid "Brown!"
-msgstr "ちゃいろ"
+msgstr "ちゃいろ！"
 
 #: colors.h:75
-#, fuzzy
 msgid "Gray!"
-msgstr "すごい！"
+msgstr "はいいろ！"
 
 #: colors.h:76
-#, fuzzy
 msgid "Silver!"
-msgstr "ぎんいろ"
+msgstr "ぎんいろ！"
 
 #: great.h:20
 msgid "Great!"
@@ -257,32 +237,26 @@ msgid "You can draw in rainbow colors!"
 msgstr "にじいろで かこう！"
 
 #: magic.h:74
-#, fuzzy
 msgid "Click and move to draw sparkles."
 msgstr "ひばなを かこう"
 
 #: magic.h:76
-#, fuzzy
 msgid "Click to make a mirror image."
 msgstr "クリックすると さゆうにひっくりかえるよ！"
 
 #: magic.h:77
-#, fuzzy
 msgid "Click to flip the picture upside-down."
 msgstr "クリックすると えが さかさまになるよ！"
 
 #: magic.h:79
-#, fuzzy
 msgid "Click and move the mouse around to blur the picture."
 msgstr "クリックしたまま マウスをうごかして えを ぼかしましょう"
 
 #: magic.h:80
-#, fuzzy
 msgid "Click and move the mouse around to make the picture blocky."
 msgstr "クリックしたまま マウスをうごかすと そこがモザイクになるよ"
 
 #: magic.h:82
-#, fuzzy
 msgid "Click and move the mouse around to draw a negative."
 msgstr "クリックしたまま マウスをうごかして ネガポジにしよう"
 
@@ -291,27 +265,22 @@ msgid "Click and move to fade the colors."
 msgstr "クリックしたまま マウスをうごかすと いろが うすくなるよ."
 
 #: magic.h:85
-msgid ""
-"Click and move the mouse around to turn the picture into a chalk drawing."
+msgid "Click and move the mouse around to turn the picture into a chalk drawing."
 msgstr "クリックしたままマウスをうごかすと チョークでかいたみたいに なるよ"
 
 #: magic.h:86
-#, fuzzy
 msgid "Click and move the mouse around to make the picture drip."
 msgstr "クリックしたまま マウスをうごかすと ぬらしたように なるよ！"
 
 #: magic.h:88
-#, fuzzy
 msgid "Click and move the mouse to thicken the picture."
 msgstr "クリックしたまま マウスをうごかすと そこが ふとくなるよ！"
 
 #: magic.h:89
-#, fuzzy
 msgid "Click and move the mouse to thin the picture."
 msgstr "クリックしたまま マウスをうごかすと そこが ほそくなるよ！"
 
 #: magic.h:91
-#, fuzzy
 msgid "Click in the picture to fill that area with color."
 msgstr "ぬりつぶしたいところを クリックしてね"
 
@@ -448,21 +417,14 @@ msgid "Pick a picture to stamp around your drawing."
 msgstr "はんこをえらぼう"
 
 #: tools.h:64
-#, fuzzy
 msgid "Click to start drawing a line. Let go to complete it."
 msgstr "クリックして せんを ひこう"
 
 #: tools.h:65
-#, fuzzy
-msgid ""
-"Pick a shape. Click to pick the center, drag, then let go when it is the "
-"size you want. Move around to rotate it, and click to draw it."
-msgstr ""
-"ずけいをえらんでクリックしたら、ドラッグして すきなおおきさにしよう。まわし"
-"て、クリックしたら できあがり"
+msgid "Pick a shape. Click to pick the center, drag, then let go when it is the size you want. Move around to rotate it, and click to draw it."
+msgstr "ずけいをえらんでクリックしたら、ドラッグして すきなおおきさにしよう。まわして、クリックしたら できあがり"
 
 #: tools.h:66
-#, fuzzy
 msgid "Choose a style of text. Click on your drawing and you can start typing."
 msgstr "じのかたちをえらんで、クリックしたあと キーをおして じをかこう"
 
@@ -517,12 +479,3 @@ msgstr "マウスをうごかして ずけいをまわそう。クリックし�
 #: tools.h:81
 msgid "Ok then... Let's keep drawing this one!"
 msgstr "オッケー。 じゃあ このままつづけよう！"
-
-#~ msgid "Okay"
-#~ msgstr "おっけー"
-
-#~ msgid "Red"
-#~ msgstr "あか"
-
-#~ msgid "Grey"
-#~ msgstr "はいいろ"
