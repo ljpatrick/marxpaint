@@ -2864,7 +2864,9 @@ static void mainloop(void)
 		}
 	      else if (HIT(r_toolopt))
 		{
-		  /* Options on the right have been pressed! */
+		  // Options on the right
+                  // WARNING: this must be kept in sync with the mouse-move
+                  // code (for cursor changes) and mouse-scroll code.
 		  
 		  if (cur_tool == TOOL_BRUSH || cur_tool == TOOL_STAMP ||
 		      cur_tool == TOOL_SHAPES || cur_tool == TOOL_LINES ||
@@ -3254,8 +3256,7 @@ static void mainloop(void)
 	      else if (HIT(r_colors) && colors_are_selectable)
 		{
 		  /* Color! */
-		  
-		  which = (event.button.x-r_colors.x)/color_button_w + (event.button.y-r_colors.y)/color_button_h*gd_colors.cols;
+		  which = GRIDHIT_GD(r_colors,gd_colors);
 		  
 		  if (which < NUM_COLORS)
 		    {
@@ -3459,201 +3460,176 @@ static void mainloop(void)
 		   wheely &&
 		   event.button.button >= 4 &&
 		   event.button.button <= 5)
-	    {
-	      if (cur_tool == TOOL_BRUSH || cur_tool == TOOL_STAMP ||
-		  cur_tool == TOOL_SHAPES || cur_tool == TOOL_LINES ||
-		  cur_tool == TOOL_MAGIC || cur_tool == TOOL_TEXT)
-		{
-		  /* Note set of things we're dealing with */
-		  /* (stamps, brushes, etc.) */
+            {
+              // Scroll wheel code.
+              // WARNING: this must be kept in sync with the mouse-move
+              // code (for cursor changes) and mouse-click code.
 
-		  if (cur_tool == TOOL_BRUSH || cur_tool == TOOL_LINES)
-		    {
-		      num_things = num_brushes;
-		      thing_scroll = brush_scroll;
-		    }
-		  else if (cur_tool == TOOL_STAMP)
-		    {
-		      num_things = num_stamps;
-		      thing_scroll = stamp_scroll;
-		    }
-		  else if (cur_tool == TOOL_TEXT)
-		    {
-		      num_things = num_font_families;
-		      thing_scroll = font_scroll;
-		    }
-		  else if (cur_tool == TOOL_SHAPES)
-		    {
-		      num_things = NUM_SHAPES;
-		      thing_scroll = 0;
-		    }
-		  else if (cur_tool == TOOL_MAGIC)
-		    {
-		      num_things = NUM_MAGICS;
-		      thing_scroll = magic_scroll;
-		    }
+              if (cur_tool == TOOL_BRUSH || cur_tool == TOOL_STAMP ||
+                  cur_tool == TOOL_SHAPES || cur_tool == TOOL_LINES ||
+                  cur_tool == TOOL_MAGIC || cur_tool == TOOL_TEXT ||
+                  cur_tool == TOOL_ERASER)
+                {
+                  grid_dims gd_controls = {0,0}; // might become 2-by-2
+                  grid_dims gd_items = {2,2}; // generally becoming 2-by-whatever
 
-		  do_draw = 0;
+                  /* Note set of things we're dealing with */
+                  /* (stamps, brushes, etc.) */
+                  
+                  if (cur_tool == TOOL_BRUSH || cur_tool == TOOL_LINES)
+                    {
+                      num_things = num_brushes;
+                      thing_scroll = brush_scroll;
+                    }
+                  else if (cur_tool == TOOL_STAMP)
+                    {
+                      num_things = num_stamps;
+                      thing_scroll = stamp_scroll;
+                      if(!disable_stamp_controls)
+                        gd_controls = (grid_dims){2,2};
+                    }
+                  else if (cur_tool == TOOL_TEXT)
+                    {
+                      num_things = num_font_families;
+                      thing_scroll = font_scroll;
+                      if(!disable_stamp_controls)
+                        gd_controls = (grid_dims){2,2};
+                    }
+                  else if (cur_tool == TOOL_SHAPES)
+                    {
+                      num_things = NUM_SHAPES;
+                      thing_scroll = 0;
+                    }
+                  else if (cur_tool == TOOL_MAGIC)
+                    {
+                      num_things = NUM_MAGICS;
+                      thing_scroll = magic_scroll;
+                    }
+                  else if (cur_tool == TOOL_ERASER)
+                    {
+                      num_things = NUM_ERASERS;
+                      thing_scroll = 0;
+                    }
 
+                  // number of whole or partial rows that will be needed
+                  // (can make this per-tool if variable columns needed)
+                  int num_rows_needed = (num_things+gd_items.cols-1)/gd_items.cols;
 
+                  do_draw = 0;
 
-		  /* Deal with scroll wheels: */
+                  SDL_Rect r_controls;
+                  r_controls.w = r_toolopt.w;
+                  r_controls.h = gd_controls.rows * button_h;
+                  r_controls.x = r_toolopt.x;
+                  r_controls.y = r_toolopt.y + r_toolopt.h - r_controls.h;
+                  
+                  SDL_Rect r_notcontrols;
+                  r_notcontrols.w = r_toolopt.w;
+                  r_notcontrols.h = r_toolopt.h - r_controls.h;
+                  r_notcontrols.x = r_toolopt.x;
+                  r_notcontrols.y = r_toolopt.y;
+                  
+                  SDL_Rect r_items = r_notcontrols;
+                  if(num_rows_needed * button_h > r_items.h)
+                    {
+                      // too many; we'll need scroll buttons
+                      r_items.h -= button_h;
+                      r_items.y += button_h/2;
+                    }
+                  gd_items.rows = r_items.h / button_h;
 
-		  max = 14;
-
-		  if (cur_tool == TOOL_STAMP && !disable_stamp_controls)
-		    max = 10;
-
-		  if (cur_tool == TOOL_TEXT && !disable_stamp_controls)
-		    max = 10;
-
-		  if (num_things > max + TOOLOFFSET)
-		    {
-		      if (event.button.button == 4)
-			{
-			  /* Wheelmouse - UP "button" */
-			       
-			  if (thing_scroll > 0)
-			    {
-			      thing_scroll = thing_scroll - 2;
-			      do_draw = 1;
-
-			      playsound(1, SND_SCROLL, 1);
-
-			      if (thing_scroll == 0)
-				do_setcursor(cursor_arrow);
-			    }
-			}
-		      else if (event.button.button == 5)
-			{
-			  /* Wheelmouse - DOWN "button" */
-				   
-			  if (thing_scroll < num_things - (max - 2))
-			    {
-			      thing_scroll = thing_scroll + 2;
-			      do_draw = 1;
-
-			      playsound(1, SND_SCROLL, 1);
-
-			      if (thing_scroll == 0)
-				do_setcursor(cursor_arrow);
-			    }
-			}
-
-		      off_y = 24;
-		    }
-		  else
-		    {
-		      off_y = 0;
-		    }
-		}
-
-		 
-	      /* Assign the change(s), if any / redraw, if needed: */
-
-	      if (cur_tool == TOOL_BRUSH || cur_tool == TOOL_LINES)
-		{
-		  cur_brush = cur_thing;
-		  brush_scroll = thing_scroll;
-		  render_brush();
-
-		  if (do_draw)
-		    draw_brushes();
-		}
-	      else if (cur_tool == TOOL_ERASER)
-	        {
-		  cur_eraser = cur_thing;
-		  
-		  if (do_draw)
-		    draw_erasers();
-	        }
-	      else if (cur_tool == TOOL_TEXT)
-		{
-		  cur_font = cur_thing;
-		  font_scroll = thing_scroll;
-
-		  if (do_draw)
-		    draw_fonts();
-
-		  do_render_cur_text(0);
-		}
-	      else if (cur_tool == TOOL_STAMP)
-		{
-#ifndef NOSOUND
-		  if (cur_stamp != cur_thing)
-		    {
-		      /* Only play when picking a different stamp, not
-			 simply scrolling */
-
-		      if (snd_stamps[cur_thing] != NULL)
-			Mix_PlayChannel(2, snd_stamps[cur_thing], 0);
-		    }
+                  if(0)
+                    {
+                    }
+                  else
+                    {
+                      // scroll button
+                      int is_upper = (event.button.button == 4);
+                      if (
+                           (is_upper && thing_scroll > 0)  // upper arrow
+                           ||
+                           (!is_upper && thing_scroll/gd_items.cols < num_rows_needed-gd_items.rows) // lower arrow
+                         )
+                        {
+                          thing_scroll += is_upper ? -gd_items.cols : gd_items.cols;
+                          do_draw = 1;
+                          playsound(1, SND_SCROLL, 1);
+#if 0
+                          if (!scrolling)
+                            {
+                              memcpy(&scrolltimer_event, &event, sizeof(SDL_Event));
+                              /* FIXME: Make delay value changable: */
+                              scrolltimer = SDL_AddTimer(REPEAT_SPEED, scrolltimer_callback, (void*) &scrolltimer_event);
+                              scrolling = 1;
+                            }
+                          else
+                            {
+                              SDL_RemoveTimer(scrolltimer);
+                              scrolltimer = SDL_AddTimer(REPEAT_SPEED / 3, scrolltimer_callback, (void*) &scrolltimer_event);
+                            }
 #endif
-  
-		  cur_stamp = cur_thing;
-		  stamp_scroll = thing_scroll;
+                          if (thing_scroll == 0)
+                            {
+                              do_setcursor(cursor_arrow);
+#if 0
+                              if (scrolling)
+                                {
+                                  SDL_RemoveTimer(scrolltimer);
+                                  scrolling = 0;
+                                }
+#endif
+                            }
+                        }
+                    }
+                  
+                  
+                  /* Assign the change(s), if any / redraw, if needed: */
+                  
+                  if (cur_tool == TOOL_BRUSH || cur_tool == TOOL_LINES)
+                    {
+                      brush_scroll = thing_scroll;
+                      
+                      if (do_draw)
+                        draw_brushes();
+                    }
+                  else if (cur_tool == TOOL_ERASER)
+                    {
+                      if (do_draw)
+                        draw_erasers();
+                    }
+                  else if (cur_tool == TOOL_TEXT)
+                    {
+                      font_scroll = thing_scroll;
+                      
+                      if (do_draw)
+                        draw_fonts();
+                    }
+                  else if (cur_tool == TOOL_STAMP)
+                    {
+                      stamp_scroll = thing_scroll;
+                      
 
-		  update_stamp_xor();
-
-		  if (do_draw)
-		    draw_stamps();
-
-		  if (txt_stamps[cur_stamp] != NULL)
-		    {
-		      draw_tux_text(TUX_GREAT, txt_stamps[cur_stamp], 1);
-		    }
-		  else
-		    draw_tux_text(TUX_GREAT, "", 0);
-
-
-		  /* Enable or disable color selector: */
-
-		  if ((stamp_colorable(cur_stamp) ||
-		       stamp_tintable(cur_stamp)) !=
-		      (stamp_colorable(old_thing) ||
-		       stamp_tintable(old_thing)))
-		    {
-		      draw_colors(stamp_colorable(cur_stamp) ||
-				  stamp_tintable(cur_stamp));
-		      update_screen_rect(&r_colors);
-		      update_screen_rect(&r_tcolors);
-		    }
-		}
-	      else if (cur_tool == TOOL_SHAPES)
-		{
-		  cur_shape = cur_thing;
-                       
-		  draw_tux_text(TUX_GREAT, shape_tips[cur_shape], 1);
-
-		  if (do_draw)
-		    draw_shapes();
-		}
-	      else if (cur_tool == TOOL_MAGIC)
-		{
-		  if (cur_thing != cur_magic)
-		    {
-		      draw_colors(magic_colors[cur_magic]);
-		      update_screen_rect(&r_tcolors);
-		    }
-
-		  cur_magic = cur_thing;
-		  magic_scroll = thing_scroll;
-
-		  draw_tux_text(TUX_GREAT, magic_tips[cur_magic], 1);
-
-		  if (do_draw)
-		    draw_magic();
-		}
-
-                           
-	      /* Update the screen: */
-
-	      if (do_draw)
-	        {
-	          update_screen_rect(&r_toolopt);
-	          update_screen_rect(&r_ttoolopt); // need this?
-	        }
-	    }
+                      if (do_draw)
+                        draw_stamps();
+                    }
+                  else if (cur_tool == TOOL_SHAPES)
+                    {
+                      if (do_draw)
+                        draw_shapes();
+                    }
+                  else if (cur_tool == TOOL_MAGIC)
+                    {
+                      magic_scroll = thing_scroll;
+                      
+                      if (do_draw)
+                        draw_magic();
+                    }
+                  
+                  /* Update the screen: */
+                  if (do_draw)
+                    update_screen_rect(&r_toolopt);
+                }
+            }
 	  else if (event.type == SDL_USEREVENT)
 	    {
 	      if (event.user.code == USEREVENT_TEXT_UPDATE)
@@ -3794,7 +3770,9 @@ static void mainloop(void)
 		}
 	      else if (HIT(r_toolopt))
 		{
-		  /* Selector: */
+		  // mouse cursor code
+                  // WARNING: this must be kept in sync with the mouse-click
+                  // and mouse-click code. (it isn't, currently!)
 		  
 		  /* Note set of things we're dealing with */
 		  /* (stamps, brushes, etc.) */
