@@ -5,101 +5,101 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: tuxpaint 0.9.14\n"
+"Project-Id-Version: tuxpaint 0.9.14.1\n"
 "Report-Msgid-Bugs-To: tuxpaint-i18n@tux4kids.net\n"
 "POT-Creation-Date: 2004-03-22 11:23-0800\n"
-"PO-Revision-Date: 2004-03-30 00:28+0100\n"
+"PO-Revision-Date: 2004-05-27 22:17+0100\n"
 "Last-Translator: Roland Illig <roland.illig@gmx.de>\n"
 "Language-Team: German <de@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: tuxpaint.c:801
+#: tuxpaint.c:809
 msgid "Do you really want to quit?"
 msgstr "Möchtest du wirklich aufhören?"
 
-#: tuxpaint.c:802 tuxpaint.c:806 tuxpaint.c:810 tuxpaint.c:824 tuxpaint.c:834
-#: tuxpaint.c:8386 tuxpaint.c:9093
+#: tuxpaint.c:810 tuxpaint.c:814 tuxpaint.c:818 tuxpaint.c:832 tuxpaint.c:842
+#: tuxpaint.c:8442 tuxpaint.c:9149
 msgid "Yes"
 msgstr "Ja"
 
-#: tuxpaint.c:803 tuxpaint.c:807 tuxpaint.c:811 tuxpaint.c:825 tuxpaint.c:835
-#: tuxpaint.c:8389
+#: tuxpaint.c:811 tuxpaint.c:815 tuxpaint.c:819 tuxpaint.c:833 tuxpaint.c:843
+#: tuxpaint.c:8445
 msgid "No"
 msgstr "Nein"
 
-#: tuxpaint.c:805
+#: tuxpaint.c:813
 msgid "If you quit, you’ll lose your picture! Save it?"
 msgstr "Wenn du aufhörst, geht dein Bild verloren! Willst du es vorher noch speichern?"
 
-#: tuxpaint.c:809
+#: tuxpaint.c:817
 msgid "Save your picture first?"
 msgstr "Willst du dein Bild, vor dem Öffnen eines anderen, speichern?"
 
-#: tuxpaint.c:813
+#: tuxpaint.c:821
 msgid "Can’t open that picture!"
 msgstr "Kann dieses Bild nicht öffnen!"
 
-#: tuxpaint.c:814 tuxpaint.c:821 tuxpaint.c:828 tuxpaint.c:831
+#: tuxpaint.c:822 tuxpaint.c:829 tuxpaint.c:836 tuxpaint.c:839
 msgid "OK"
 msgstr "OK"
 
-#: tuxpaint.c:816
+#: tuxpaint.c:824
 msgid "Starting a new picture will erase the current one!"
 msgstr "Wenn du ein neues Bild öffnest, geht dein derzeitiges verloren!"
 
-#: tuxpaint.c:817
+#: tuxpaint.c:825
 msgid "That’s OK!"
 msgstr "Das ist OK!"
 
-#: tuxpaint.c:818
+#: tuxpaint.c:826
 msgid "Never mind!"
 msgstr "Lieber doch nicht!"
 
-#: tuxpaint.c:820
+#: tuxpaint.c:828
 msgid "There are no saved files!"
 msgstr "Es gibt noch keine gespeicherten Bilder!"
 
-#: tuxpaint.c:823
+#: tuxpaint.c:831
 msgid "Print your picture now?"
 msgstr "Willst du dein Bild jetzt ausdrucken?"
 
-#: tuxpaint.c:827
+#: tuxpaint.c:835
 msgid "Your picture has been printed!"
 msgstr "Dein Bild wurde gedruckt!"
 
-#: tuxpaint.c:830
+#: tuxpaint.c:838
 msgid "You can’t print yet!"
 msgstr "Du kannst noch nicht drucken!"
 
-#: tuxpaint.c:833
+#: tuxpaint.c:841
 msgid "Erase this picture?"
 msgstr "Möchtest du dieses Bild löschen?"
 
-#: tuxpaint.c:5442 tools.h:52
+#: tuxpaint.c:5495 tools.h:52
 msgid "Open"
 msgstr "Öffnen"
 
-#: tuxpaint.c:5447
+#: tuxpaint.c:5500
 msgid "Erase"
 msgstr "Löschen"
 
-#: tuxpaint.c:5452
+#: tuxpaint.c:5505
 msgid "Back"
 msgstr "Zurück"
 
-#: tuxpaint.c:9092
+#: tuxpaint.c:9148
 msgid "Save over the older version of this picture?"
 msgstr "Soll die alte Version dieses Bildes überschrieben werden?"
 
-#: tuxpaint.c:9094
+#: tuxpaint.c:9150
 msgid "No, save a new file"
 msgstr "Nein, in eine neue Datei!"
 
-#: tuxpaint.c:9951
+#: tuxpaint.c:10007
 msgid "Choose the picture you want, then click “Open”."
-msgstr "Wähle ein Bild, dass du Öffnen willst und klick auf 'Öffnen'"
+msgstr "Wähle ein Bild, dass du öffnen willst und klick auf 'Öffnen'"
 
 #: colors.h:62
 msgid "Black!"
@@ -447,7 +447,7 @@ msgstr "Du hast jetzt ein neues leeres Bild um darauf zu malen!"
 
 #: tools.h:72
 msgid "Open…"
-msgstr "Öffnen..."
+msgstr "Öffnen"
 
 #: tools.h:73
 msgid "Your image has been saved!"
@@ -455,7 +455,7 @@ msgstr "Dein Bild wurde gespeichert!"
 
 #: tools.h:74
 msgid "Printing…"
-msgstr "Drucken..."
+msgstr "Drucke ..."
 
 #: tools.h:75
 msgid "Bye bye!"
@@ -475,4 +475,4 @@ msgstr "Bewege die Maus um die Form zu drehen. Klicke, wenn du zufrieden bist."
 
 #: tools.h:81
 msgid "OK then… Let’s keep drawing this one!"
-msgstr "Ok, dann lass uns weiter mit diesem malen!"
+msgstr "Ok, dann lass uns dieses weitermalen!"
