@@ -21,12 +21,12 @@
   along with this program; if not, write to the Free Software
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   
-  June 14, 2002 - August 16, 2004
+  June 14, 2002 - August 19, 2004
 */
 
 
 #define VER_VERSION     "0.9.14"
-#define VER_DATE        "2004-08-16"
+#define VER_DATE        "2004-08-19"
 
 
 /* #define DEBUG */
@@ -286,6 +286,7 @@ void win32_perror(const char *str)
 enum {
   LANG_AF,     /* Afrikaans */
   LANG_BE,     /* Belarusian */
+  LANG_BG,     /* Bulgarian */
   LANG_BR,     /* Breton */
   LANG_CA,     /* Catalan */
   LANG_CS,     /* Czech */
@@ -335,6 +336,7 @@ enum {
 const char * lang_prefixes[NUM_LANGS] = {
   "af",
   "be",
+  "bg",
   "br",
   "ca",
   "cs",
@@ -3795,6 +3797,7 @@ void show_lang_usage(FILE * f, char * prg)
 /* pt_BR */  "  brazilian    brazilian-portuguese   portugues-brazilian\n"
 /* br */     "  breton       brezhoneg\n"
 /* en_GB */  "  british      british-english\n"
+/* bg_BG */  "  bulgarian\n"
 /* ca */     "  catalan      catala\n"
 /* zh_CN */  "  chinese      simplified-chinese\n"
 /* zh_TW */  "               traditional-chinese\n"
@@ -3819,7 +3822,7 @@ void show_lang_usage(FILE * f, char * prg)
 /* ms */     "  malay\n"
 /* nn */     "  norwegian    nynorsk                norsk\n"
 /* pl */     "  polish       polski\n"
-/* pt_pt */     "  portuguese   portugues\n"
+/* pt_PT */  "  portuguese   portugues\n"
 /* ro */     "  romanian\n"
 /* ru */     "  russian      russkiy\n"
 /* sr */     "  serbian\n"
@@ -3856,6 +3859,7 @@ void show_locale_usage(FILE * f, char * prg)
 	  "  pt_BR   (Brazilian    Brazilian Portuguese   Portugues Brazilian)\n"
 	  "  br_FR   (Breton       Brezhoneg)\n"
 	  "  en_GB   (British      British English)\n"
+          "  bg_BG   (Bulgarian)\n"
 	  "  ca_ES   (Catalan      Catala)\n"
 	  "  zh_CN   (Chinese-Simplified)\n"
 	  "  zh_TW   (Chinese-Traditional)\n"
@@ -4528,6 +4532,11 @@ void setup(int argc, char * argv[])
 	{
 	  putenv("LANGUAGE=br_FR.UTF-8");
 	  putenv("LC_ALL=br_FR.UTF-8");
+	}
+      else if (strcmp(langstr, "bulgarian") == 0)
+	{
+	  putenv("LANGUAGE=bg_BG.UTF-8");
+	  putenv("LC_ALL=bg_BG.UTF-8");
 	}
       else if (strcmp(langstr, "welsh") == 0 ||
 	       strcmp(langstr, "cymraeg") == 0)

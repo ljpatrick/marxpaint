@@ -6,7 +6,7 @@
 # bill@newbreedsoftware.com
 # http://www.newbreedsoftware.com/tuxpaint/
 
-# June 14, 2002 - August 16, 2004
+# June 14, 2002 - August 19, 2004
 
 
 # Where to install things:
@@ -223,6 +223,7 @@ uninstall:
 	-rm $(MAN_PREFIX)/man1/tuxpaint-import.1.gz
 	-rm $(LOCALE_PREFIX)af/LC_MESSAGES/tuxpaint.mo
 	-rm $(LOCALE_PREFIX)be/LC_MESSAGES/tuxpaint.mo
+	-rm $(LOCALE_PREFIX)bg/LC_MESSAGES/tuxpaint.mo
 	-rm $(LOCALE_PREFIX)br/LC_MESSAGES/tuxpaint.mo
 	-rm $(LOCALE_PREFIX)ca/LC_MESSAGES/tuxpaint.mo
 	-rm $(LOCALE_PREFIX)cs/LC_MESSAGES/tuxpaint.mo
@@ -447,6 +448,11 @@ install-gettext:
 	@install -d $(LOCALE_PREFIX)en_GB/LC_MESSAGES
 	@cp trans/en_gb.mo $(LOCALE_PREFIX)en_GB/LC_MESSAGES/tuxpaint.mo
 	@chmod 644 $(LOCALE_PREFIX)en_GB/LC_MESSAGES/tuxpaint.mo
+	@#
+	@echo "   bg_BG ...Bulgarian..."
+	@install -d $(LOCALE_PREFIX)bg_BG/LC_MESSAGES
+	@cp trans/bg.mo $(LOCALE_PREFIX)bg_BG/LC_MESSAGES/tuxpaint.mo
+	@chmod 644 $(LOCALE_PREFIX)bg_BG/LC_MESSAGES/tuxpaint.mo
 	@#
 	@echo "   ca_ES ...Catalan..."
 	@install -d $(LOCALE_PREFIX)ca/LC_MESSAGES
@@ -734,6 +740,7 @@ obj/hqxx.o:	src/hqxx.c src/hqxx.h
 translations: trans \
 	trans/af.mo \
 	trans/be.mo \
+	trans/bg.mo \
 	trans/br.mo \
 	trans/ca.mo \
 	trans/cs.mo \
@@ -789,6 +796,10 @@ trans/af.mo:	src/po/af.po
 trans/be.mo:	src/po/be.po
 	@echo "   be_BY ...Belarusian..."
 	@msgfmt src/po/be.po -o trans/be.mo
+
+trans/bg.mo:	src/po/bg.po
+	@echo "   bg_BG ...Bulgarian..."
+	@msgfmt src/po/bg.po -o trans/bg.mo
 
 trans/br.mo:	src/po/br.po
 	@echo "   br_FR ...Breton..."
