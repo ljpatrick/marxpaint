@@ -158,6 +158,8 @@ June 17, 2002 - May 16, 2004
     Muhammad Najmi Ahmad Zabidi <md_najmi@yahoo.com>
 
   * Norwegian Bokmal
+    Knut Erik Hollund <khollund@responze.net>
+    Karl Ove Hufthammer <karl@huftis.org>
     Dag H. Loras <dag.loraas@operamail.com>
 
   * Norwegian Nynorsk
