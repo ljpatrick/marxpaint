@@ -3759,11 +3759,6 @@ void setup(int argc, char * argv[])
         else if (strcmp(langstr, "lithuanian") == 0 ||
                  strcmp(langstr, "lietuviu") == 0)
 	{
-	  /*
-	    putenv("LANG=lt_LT.UTF-8");
-	    putenv("LC_ALL=lt_LT.UTF-8");
-	  */
-
 	  putenv("LANG=lt_LT");
 	  putenv("LC_ALL=lt_LT");
 	}
@@ -3826,6 +3821,11 @@ void setup(int argc, char * argv[])
 
   if (language == LANG_JA)
     putenv("OUTPUT_CHARSET=ja_JP.UTF-8");
+  else if (language == LANG_LT)
+  {
+    putenv("OUTPUT_CHARSET=lt_LT.UTF-8");
+    /* convert_open("ISO8859-13"); */
+  }
 
 
 #ifdef DEBUG
@@ -6237,7 +6237,9 @@ void wordwrap_text(TTF_Font * font, char * str, SDL_Color color,
   unsigned char * locale_str;
   char * tstr;
   Uint16 unicode_char[2];
+#ifdef OLD_UTF8_WRAP
   char utf8_char[5];
+#endif
   int len;
   SDL_Surface * text;
   SDL_Rect dest;
