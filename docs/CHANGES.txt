@@ -197,6 +197,9 @@ http://www.newbreedsoftware.com/tuxpaint/
     --------------------
     * Chinese (Traditional) documentation
       Song Huang <Song@ossacc.org>
+
+    * Dutch
+      Geert Stams <geertstams@wanadoo.nl>
   
     * Hebrew
       Dovix <dovix2003@yahoo.com>
@@ -206,6 +209,9 @@ http://www.newbreedsoftware.com/tuxpaint/
 
     * Norwegian Bokmal
       Klaus Ade Johnstad <klaus@skolelinux.no>
+
+    * Russian
+      Eugene Zelenko <greendeath@mail.ru>
 
     * Spanish documentation.
       Gabriel Gazzán <ggabriel@internet.com.uy>
