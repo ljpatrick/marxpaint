@@ -2460,7 +2460,12 @@ static void mainloop(void)
 	      
 	      handle_keymouse(key, SDL_KEYDOWN);
 
-	      if (key == SDLK_ESCAPE)
+	      if (key == SDLK_ESCAPE && !disable_quit)
+		{
+		  done = do_quit();
+		}
+	      else if (key == SDLK_ESCAPE &&
+		       (mod & KMOD_SHIFT) && (mod & KMOD_CTRL))
 		{
 		  done = do_quit();
 		}

@@ -2,11 +2,11 @@ FAQ.txt for Tux Paint
 
 Tux Paint - A simple drawing program for children.
 
-Copyright 2004 by Bill Kendrick
+Copyright 2005 by Bill Kendrick
 bill@newbreedsoftware.com
 http://www.newbreedsoftware.com/tuxpaint/
 
-September 14, 2002 - September 14, 2004
+September 14, 2002 - January 8, 2005
 
 
 Frequently Asked Questions:
@@ -178,7 +178,7 @@ Frequently Asked Questions:
 	The appropriate fonts for such locales can be downloaded from the
 	Tux Paint website:
 
-	  http://www.newbreedsoftware.com/tuxpaint/download/fonts.php3
+	  http://www.newbreedsoftware.com/tuxpaint/download/fonts/
 
 
   Printing
@@ -397,7 +397,42 @@ Frequently Asked Questions:
       To disable the lockfile, add the "--nolockfile" argument to Tux Paint's
       command-line.
 
-      
+
+    I can't quit Tux Paint
+    ----------------------
+      The "noquit" option is set.  This disables the "Quit" button in
+      Tux Paint's toolbar (greying it out), and prevents Tux Paint from
+      being quit using the [Escape] key.
+
+      If Tux Paint is not in fullscreen mode, simply click the
+      window close button on Tux Paint's title bar.
+      (i.e., the "(x) at the upper right.)
+
+      If Tux Paint is in fullscreen mode, you will need to use the
+      [Shift] + [Control] + [Escape] sequence on the keyboard to
+      quit Tux Paint.
+
+      (Note: with or without "noquit" set, you can always use the
+      [Alt] + [F4] combination on your keyboard to quit Tux Paint.)
+
+
+    I don't want "noquit" mode enabled!
+    -----------------------------------
+      If you're running Tux Paint from a command-line, make sure you're
+      not giving it a "--noquit" option.
+
+      If you're running Tux Paint by double-clicking an icon, check the
+      properties of the icon to see if "--noquit" is listed as an argument.
+
+      If "--noquit" isn't on the command-line, check Tux Paint's
+      configuration file ("~/.tuxpaintrc" under Linux and Unix, 
+      "tuxpaint.cfg" under Windows) for a line reading:  "noquit=yes".
+
+      Either remove that line, or simply run Tux Paint with the command-line
+      argument: "--quit", which will override the configuration file's
+      setting.
+
+
     Tux Paint keeps writing weird messages to the screen / to a text file
     ---------------------------------------------------------------------
       A few messages are normal, but if Tux Paint is being extremely verbose

@@ -9,7 +9,7 @@
                            bill@newbreedsoftware.com
                    http://www.newbreedsoftware.com/tuxpaint/
 
-                                January 6, 2005
+                                January 8, 2005
 
    ---------------------------------------------------------------------------
 
@@ -86,8 +86,16 @@ Windows Users
              Disable sound effects.
 
      noquit=yes
-             Disable the on-screen "Quit" button. (Pressing the [Escape] key
-             or clicking the window's close button still works.)
+
+             Disable the on-screen "Quit" button and prevent the [Escape] key
+             from quitting Tux Paint.
+
+             Using the [Alt] + [F4] keyboard combination or clicking the
+             window's close button (assuming you're not in fullscreen mode)
+             still works to quit Tux Paint.
+
+             You can also use the following keyboard combination to quit:
+             [Shift] + [Control] + [Escape].
 
      noprint=yes
              Disable the printing feature.

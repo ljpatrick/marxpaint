@@ -7,7 +7,7 @@ bill@newbreedsoftware.com
 http://www.newbreedsoftware.com/tuxpaint/
 
 
-2005.January.07 (0.9.15)
+2005.January.08 (0.9.15)
   * Stamp tool improvements:
     ------------------------
     * Greatly improved stamp outlining (to avoid empty rows or columns
@@ -118,6 +118,13 @@ http://www.newbreedsoftware.com/tuxpaint/
     * Increased maximum number of stamps that can be loaded at once from
       256 to 512.
       Albert Cahalan <albert@users.sourceforge.net>
+
+    * The "noquit" option now prevents the [Escape] key from quitting
+      Tux Paint.  ([Alt]+[F4] and the window close button still work.)
+
+    * Tux Paint can now be quit with [Shift]+[Control]+[Escape], as well.
+      (Useful for when "noquit" and "fullscreen" are set, and the
+      [Alt]+[F4] combination is not possible.)
   
   * Bug fixes:
     -------------------

@@ -3,13 +3,13 @@
 
                      A simple drawing program for children
 
-                        Copyright 2004 by Bill Kendrick
+                        Copyright 2005 by Bill Kendrick
                                New Breed Software
 
                            bill@newbreedsoftware.com
                    http://www.newbreedsoftware.com/tuxpaint/
 
-                       June 14, 2002 - December 11, 2004
+                        June 14, 2002 - January 8, 2005
 
    ---------------------------------------------------------------------------
 
@@ -596,11 +596,7 @@ Available Tools
                  [IMG]
 
                  Clicking the "Quit" button, closing the Tux Paint window, or
-                 pushing the "Escape" key will quit Tux Paint.
-
-                 (NOTE: The "Quit" button can be disabled (e.g., with the
-                 "--noquit" command-line option), but the [Escape] key will
-                 still work. See the "Options" documentation.)
+                 pushing the [Escape] key will quit Tux Paint.
 
                  You will first be prompted as to whether you really want to
                  quit.
@@ -613,6 +609,19 @@ Available Tools
 
                  NOTE: If the image is saved, it will be reloaded
                  automatically the next time you run Tux Paint!
+
+                 NOTE: The "Quit" button and [Escape] key can be disabled
+                 (e.g., by selecting "Disable 'Quit' Button" in
+                 Tux Paint Config. or running Tux Paint with the "--noquit"
+                 command-line option).
+
+                 In that case, the "window close" button on Tux Paint's title
+                 bar (if not in fullscreen mode) or the [Alt] + [F4] key
+                 sequence may be used to quit.
+
+                 If neither of those are possible, the key sequence of
+                 [Shift] + [Control] + [Escape] may be used to quit. (See the
+                 "Options" documentation.)
 
    ---------------------------------------------------------------------------
 
