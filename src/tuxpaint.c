@@ -10088,7 +10088,7 @@ int do_open(int want_new_tool)
 		   starter looks like, compared to the overlay image... */
 
 		/* (Try JPEG first) */
-		snprintf(fname, sizeof(fname), "%s/%s-back.jpg",
+		snprintf(fname, sizeof(fname), "%s/%s-back.jpeg",
 			 dirname[d_places[num_files]],
 		         d_names[num_files]);
 
@@ -12845,7 +12845,7 @@ void load_starter(char * img_id)
   /* Try to load the a background image: */
 
   /* (JPEG first) */
-  snprintf(fname, sizeof(fname), "%s/%s-back.jpg", dirname, img_id);
+  snprintf(fname, sizeof(fname), "%s/%s-back.jpeg", dirname, img_id);
   tmp_surf = IMG_Load(fname);
  
   /* (Failed? Try PNG next) */
