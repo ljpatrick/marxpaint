@@ -1903,10 +1903,10 @@ void mainloop(void)
 		      
 		      stamp_draw(old_x, old_y);
 #ifdef LOW_QUALITY_STAMP_OUTLINE
-		      rect_xor(old_x - (img_stamps[cur_stamp]->w / 2),
-			       old_y - (img_stamps[cur_stamp]->h / 2),
-			       old_x + (img_stamps[cur_stamp]->w / 2),
-			       old_y + (img_stamps[cur_stamp]->h / 2));
+		      rect_xor(old_x - ((img_stamps[cur_stamp]->w / 2) * (state_stamps[cur_stamp]->size) / 100),
+			       old_y - ((img_stamps[cur_stamp]->h / 2) * (state_stamps[cur_stamp]->size) / 100),
+			       old_x + ((img_stamps[cur_stamp]->w / 2) * (state_stamps[cur_stamp]->size) / 100),
+			       old_y + ((img_stamps[cur_stamp]->h / 2) * (state_stamps[cur_stamp]->size) / 100));
 #else
 		      stamp_xor(old_x - (img_stamps[cur_stamp]->w / 2),
 			        old_y - (img_stamps[cur_stamp]->h / 2));
@@ -2603,35 +2603,59 @@ void mainloop(void)
 		  if (old_x >= 0 && old_x < WINDOW_WIDTH - 96 - 96 &&
 		      old_y >= 0 && old_y < (48 * 7) + 40 + HEIGHTOFFSET)
 		    {
-#ifndef LOW_QUALITY_STAMP_OUTLINE
 		      if (cur_tool == TOOL_STAMP)
+		      {
+#ifndef LOW_QUALITY_STAMP_OUTLINE
 			stamp_xor(old_x - w / 2, old_y - h / 2);
+#else
+		        rect_xor(old_x - ((img_stamps[cur_stamp]->w / 2) * (state_stamps[cur_stamp]->size) / 100),
+			         old_y - ((img_stamps[cur_stamp]->h / 2) * (state_stamps[cur_stamp]->size) / 100),
+			         old_x + ((img_stamps[cur_stamp]->w / 2) * (state_stamps[cur_stamp]->size) / 100),
+			         old_y + ((img_stamps[cur_stamp]->h / 2) * (state_stamps[cur_stamp]->size) / 100));
+#endif
+
+		        update_screen(old_x - ((img_stamps[cur_stamp]->w / 2) * (state_stamps[cur_stamp]->size) / 100) + 96,
+			         old_y - ((img_stamps[cur_stamp]->h / 2) * (state_stamps[cur_stamp]->size) / 100),
+			         old_x + ((img_stamps[cur_stamp]->w / 2) * (state_stamps[cur_stamp]->size) / 100) + 96,
+			         old_y + ((img_stamps[cur_stamp]->h / 2) * (state_stamps[cur_stamp]->size) / 100));
+		      }
 		      else
+		      {
 			rect_xor(old_x - w / 2, old_y - h / 2,
 				   old_x + w / 2, old_y + h / 2);
-#else
-		      rect_xor(old_x - w / 2, old_y - h / 2,
-			         old_x + w / 2, old_y + h / 2);
-#endif
-		      update_screen(old_x - w / 2 + 96, old_y - h / 2,
-				    old_x + w / 2 + 96, old_y + h / 2);
+
+		        update_screen(old_x - w / 2 + 96, old_y - h / 2,
+				      old_x + w / 2 + 96, old_y + h / 2);
+		      }
 		    }
 		  
 		  if (new_x >= 0 && new_x < WINDOW_WIDTH - 96 - 96 &&
 		      new_y >= 0 && new_y < (48 * 7) + 40 + HEIGHTOFFSET)
 		    {
-#ifndef LOW_QUALITY_STAMP_OUTLINE
 		      if (cur_tool == TOOL_STAMP)
+		      {
+#ifndef LOW_QUALITY_STAMP_OUTLINE
 			stamp_xor(new_x - w / 2, new_y - h / 2);
+#else
+		        rect_xor(new_x - ((img_stamps[cur_stamp]->w / 2) * (state_stamps[cur_stamp]->size) / 100),
+			         new_y - ((img_stamps[cur_stamp]->h / 2) * (state_stamps[cur_stamp]->size) / 100),
+			         new_x + ((img_stamps[cur_stamp]->w / 2) * (state_stamps[cur_stamp]->size) / 100),
+			         new_y + ((img_stamps[cur_stamp]->h / 2) * (state_stamps[cur_stamp]->size) / 100));
+#endif
+
+		        update_screen(new_x - ((img_stamps[cur_stamp]->w / 2) * (state_stamps[cur_stamp]->size) / 100) + 96,
+				      new_y - ((img_stamps[cur_stamp]->h / 2) * (state_stamps[cur_stamp]->size) / 100),
+			              new_x + ((img_stamps[cur_stamp]->w / 2) * (state_stamps[cur_stamp]->size) / 100) + 96,
+			              new_y + ((img_stamps[cur_stamp]->h / 2) * (state_stamps[cur_stamp]->size) / 100));
+		      }
 		      else
+		      {
 			rect_xor(new_x - w / 2, new_y - h / 2,
 				 new_x + w / 2, new_y + h / 2);
-#else
-		      rect_xor(new_x - w / 2, new_y - h / 2,
-			       new_x + w / 2, new_y + h / 2);
-#endif
-		      update_screen(new_x - w / 2 + 96, new_y - h / 2,
-				    new_x + w / 2 + 96, new_y + h / 2);
+
+			update_screen(new_x - w / 2 + 96, new_y - h / 2,
+				      new_x + w / 2 + 96, new_y + h / 2);
+		      }
 		    }
 		}
 	      else if (cur_tool == TOOL_SHAPES &&
@@ -10840,7 +10864,7 @@ int current_language(void)
 
 void stamp_xor(int x, int y)
 {
-  int xx, yy, rx, ry;
+  int xx, yy, rx, ry, sx, sy;
   Uint8 r, g, b, a, olda, abovea;
   SDL_Surface * surf_ptr;
 
@@ -10900,8 +10924,11 @@ void stamp_xor(int x, int y)
 	  (a < 128 && abovea >= 128) ||
 	  (a >= 128 && abovea < 128))
       {
-        clipped_putpixel(screen, x + 96 + xx, y + yy,
-			 0xFFFFFFFF - getpixel(screen, x + 96 + xx, y + yy));
+	sx = x + 96 + (((xx - (img_stamps[cur_stamp]->w / 2)) * state_stamps[cur_stamp]->size) / 100) + (img_stamps[cur_stamp]->w / 2);
+	sy = y + (((yy - (img_stamps[cur_stamp]->h / 2)) * state_stamps[cur_stamp]->size) / 100) + (img_stamps[cur_stamp]->h / 2);
+	
+        clipped_putpixel(screen, sx, sy,
+			 0xFFFFFFFF - getpixel(screen, sx, sy));
       }
 
       olda = a;
