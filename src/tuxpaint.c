@@ -8024,9 +8024,6 @@ static void draw_fonts(void)
   SDL_Surface * tmp_surf;
   SDL_Color black = {0, 0, 0, 0};
 
-
-  printf("Redrawing fonts\n");
-
   /* Draw the title: */
   draw_image_title(TITLE_LETTERS, r_ttoolopt);
 
