@@ -7050,7 +7050,7 @@ static void run_font_scanner(void)
     {
       // parent (or error -- but we're screwed in that case)
       font_socket_fd = sv[0];
-      close(sv[1]);
+//      close(sv[1]);
       return;
     }
   nice(42);       // be nice, letting the main thread get the CPU
