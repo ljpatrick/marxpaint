@@ -2467,7 +2467,10 @@ static void show_progress_bar(void)
 #define CLOCK_SPEED 1000000000.0
 #endif
 
-
+#ifdef NO_ASM
+#undef CLOCK_ASM
+#define CLOCK_ASM(x) x=42
+#endif
 
 /* --- MAIN --- */
 
@@ -7189,6 +7192,15 @@ static void receive_some_font_info(void)
         break;
     }
   close(font_socket_fd);
+
+  int status;
+  waitpid(font_scanner_pid,&status,0);
+  if(WIFSIGNALED(status))
+    {
+      printf("child killed by signal %u\n", WTERMSIG(status));
+      exit(42);
+    }
+
   show_progress_bar();
   unsigned char *walk = buf;
   num_font_families = *walk++;
@@ -7230,7 +7242,6 @@ static void receive_some_font_info(void)
       
       // score left uninitialized
     }
-  waitpid(font_scanner_pid,NULL,0);
   font_thread_done = 1;
 }
 #endif
