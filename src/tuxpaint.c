@@ -133,8 +133,8 @@ static scaleparams scaletable[] = {
 // to scale some offset, in pixels, like the current stamp is scaled
 #define SCALE_LIKE_STAMP(x) ( ((x) * scaletable[stamp_data[cur_stamp]->size].numer + scaletable[stamp_data[cur_stamp]->size].denom-1) / scaletable[stamp_data[cur_stamp]->size].denom )
 // pixel dimensions of the current stamp, as scaled
-#define CUR_STAMP_W SCALE_LIKE_STAMP(stamp_data[cur_stamp]->w)
-#define CUR_STAMP_H SCALE_LIKE_STAMP(stamp_data[cur_stamp]->h)
+#define CUR_STAMP_W SCALE_LIKE_STAMP(active_stamp->w)
+#define CUR_STAMP_H SCALE_LIKE_STAMP(active_stamp->h)
 
 ///////////////////////////////////////////////////////////////////////////////
 
@@ -2047,24 +2047,22 @@ static void groupfonts(void)
 ////////////////////////////////////////////////////////////////////
 
 typedef struct stamp_type {
-  double ratio;
+  char *stampname;
   char *stxt;
 #ifndef NOSOUND
   Mix_Chunk *ssnd;
 #endif
-  char *stampname;
-  SDL_Surface *full_norm;
-  SDL_Surface *full_mirr;
 
   SDL_Surface *thumbnail;
   unsigned thumb_mirrored : 1;
   unsigned thumb_flipped : 1;
   unsigned no_premirror : 1;
 
+  unsigned processed : 1;  // got *.dat, computed size limits, etc.
+
   unsigned no_sound : 1;
   unsigned no_txt : 1;
-  unsigned no_dat : 1;
-  unsigned no_local_sound : 1;
+//  unsigned no_local_sound : 1;  // to remember, if code written to discard sound
 
   unsigned tinter : 3;
   unsigned colorable : 1;
@@ -2077,14 +2075,13 @@ typedef struct stamp_type {
   unsigned min : 5;
   unsigned size : 5;
   unsigned max : 5;
-
-  unsigned short w;
-  unsigned short h;
 } stamp_type;
 
 static int num_stamps;
 static int max_stamps;
 static stamp_type **stamp_data;
+
+static SDL_Surface *active_stamp;
 
 /* Returns whether a particular stamp can be colored: */
 static int stamp_colorable(int stamp)
@@ -2202,7 +2199,6 @@ static SDL_Cursor * get_cursor(char * bits, char * mask_bits,
 static void seticon(void);
 static SDL_Surface * loadimage(const char * const fname);
 static SDL_Surface * do_loadimage(const char * const fname, int abort_on_error);
-static SDL_Surface * loadaltimage(const char * const fname);
 static void draw_toolbar(void);
 static void draw_magic(void);
 static void draw_brushes(void);
@@ -2248,6 +2244,8 @@ static void stamp_xor(int x1, int y1);
 static void update_stamp_xor(void);
 #endif
 
+static void set_active_stamp(void);
+
 static void do_eraser(int x, int y);
 static void disable_avail_tools(void);
 static void enable_avail_tools(void);
@@ -2259,7 +2257,7 @@ static void wordwrap_text(const char * const str, SDL_Color color,
 		   int left, int top, int right,
 		   int want_right_to_left);
 static char * loaddesc(const char * const fname);
-static void loadinfo(const char * const fname, stamp_type *inf);
+static double loadinfo(const char * const fname, stamp_type *inf);
 #ifndef NOSOUND
 static Mix_Chunk * loadsound(const char * const fname);
 #endif
@@ -3022,6 +3020,7 @@ static void mainloop(void)
 			  draw_stamps();
 			  draw_colors(stamp_colorable(cur_stamp) ||
 				      stamp_tintable(cur_stamp));
+		          set_active_stamp();
 			  update_stamp_xor();
 			}
 		      else if (cur_tool == TOOL_LINES)
@@ -3385,6 +3384,7 @@ static void mainloop(void)
                                   playsound(0, control_sound, 0);
                                   draw_stamps();
                                   update_screen_rect(&r_toolopt);
+                                  set_active_stamp();
                                   update_stamp_xor();
                                 }
 		            }
@@ -3561,6 +3561,7 @@ static void mainloop(void)
                           if (cur_thing != cur_stamp)
                           {
                             cur_stamp = cur_thing;
+                            set_active_stamp();
                             update_stamp_xor();
                           }
 
@@ -4291,8 +4292,8 @@ static void mainloop(void)
 		  
 		  if (cur_tool == TOOL_STAMP)
 		    {
-		      w = stamp_data[cur_stamp]->w;
-		      h = stamp_data[cur_stamp]->h;
+		      w = active_stamp->w;
+		      h = active_stamp->h;
 		    }
 		  else
 		    {
@@ -5126,7 +5127,7 @@ static void tint_surface(SDL_Surface * tmp_surf, SDL_Surface * surf_ptr)
 
 static void stamp_draw(int x, int y)
 {
-  SDL_Rect src, dest;
+  SDL_Rect dest;
   SDL_Surface * tmp_surf, * surf_ptr, * final_surf;
   Uint32 amask;
   Uint8 r, g, b, a;
@@ -5134,30 +5135,7 @@ static void stamp_draw(int x, int y)
   Uint32 (*getpixel)(SDL_Surface *, int, int);
   void (*putpixel)(SDL_Surface *, int, int, Uint32);
   
-
-  /* Use a pre-mirrored version, if there is one? */
-  
-  if (stamp_data[cur_stamp]->mirrored)
-    {
-      if (stamp_data[cur_stamp]->full_mirr != NULL)
-	{
-	  /* Use pre-mirrored one! */
-            
-	  surf_ptr = stamp_data[cur_stamp]->full_mirr;
-	}
-      else
-	{
-	  /* Use normal (only) one, and mirror it ourselves: */
-            
-	  surf_ptr = stamp_data[cur_stamp]->full_norm;
-	}
-    }
-  else
-    {
-      /* Not mirrored: */
-
-      surf_ptr = stamp_data[cur_stamp]->full_norm;
-    }
+  surf_ptr = active_stamp;
   
   getpixel = getpixels[surf_ptr->format->BytesPerPixel];
 
@@ -5250,97 +5228,20 @@ static void stamp_draw(int x, int y)
   else
     {
       /* No color change, just use it! */
-
       tmp_surf = surf_ptr;
     }
 
-  
   /* Shrink or grow it! */
-
   final_surf = thumbnail(tmp_surf, CUR_STAMP_W, CUR_STAMP_H, 0);
   
-  
   /* Where it will go? */
-  
   base_x = x - (CUR_STAMP_W+1)/2;
   base_y = y - (CUR_STAMP_H+1)/2;
-   
 
   /* And blit it! */
-  
-  if (stamp_data[cur_stamp]->flipped)
-    {
-      /* Flipped! */
-	  
-      if (stamp_data[cur_stamp]->mirrored &&
-	  stamp_data[cur_stamp]->full_mirr == NULL)
-	{
-	  /* Mirrored, too! */
-
-	  for (yy = 0; yy < final_surf->h; yy++)
-	    {
-	      for (xx = 0; xx < final_surf->w; xx++)
-		{
-		  src.x = final_surf->w - 1 - xx;
-		  src.y = final_surf->h - 1 - yy;
-		  src.w = 1;
-		  src.h = 1;
-
-		  dest.x = base_x + xx;
-		  dest.y = base_y + yy;
-
-		  SDL_BlitSurface(final_surf, &src, canvas, &dest);
-		}
-	    }
-	}
-      else
-	{
-	  /* (Only flipped) */
-      
-	  for (yy = 0; yy < final_surf->h; yy++)
-	    {
-	      src.x = 0;
-	      src.y = final_surf->h - 1 - yy;
-	      src.w = final_surf->w;
-	      src.h = 1;
-
-	      dest.x = base_x;
-	      dest.y = base_y + yy;
-
-	      SDL_BlitSurface(final_surf, &src, canvas, &dest);
-	    }
-	}
-    }
-  else
-    {
-      if (stamp_data[cur_stamp]->mirrored &&
-	  stamp_data[cur_stamp]->full_mirr == NULL)
-	{
-	  /* Mirrored! */
-
-	  for (xx = 0; xx < final_surf->w; xx++)
-	    {
-	      src.x = final_surf->w - 1 - xx;
-	      src.y = 0;
-	      src.w = 1;
-	      src.h = final_surf->h;
-
-	      dest.x = base_x + xx;
-	      dest.y = base_y;
-
-	      SDL_BlitSurface(final_surf, &src, canvas, &dest);
-	    }
-	}
-      else
-	{
-	  /* Not altered at all */
-
-	  dest.x = base_x;
-	  dest.y = base_y;
-      
-	  SDL_BlitSurface(final_surf, NULL, canvas, &dest);
-	}
-    }
+  dest.x = base_x;
+  dest.y = base_y;
+  SDL_BlitSurface(final_surf, NULL, canvas, &dest);
 
   update_canvas(x - (CUR_STAMP_W+1)/2,
 		y - (CUR_STAMP_H+1)/2,
@@ -6740,6 +6641,101 @@ static void mirror_surface(SDL_Surface *s){
 static void flip_surface(SDL_Surface *s){
 }
 
+static unsigned default_stamp_size;
+
+static void loadstamp_finisher(stamp_type *sd, unsigned w, unsigned h, double ratio)
+{
+  /* If Tux Paint is in mirror-image-by-default mode, mirror, if we can: */
+  if (mirrorstamps && sd->mirrorable)
+    sd->mirrored = 1;
+
+  unsigned int upper = HARD_MAX_STAMP_SIZE;
+  unsigned int lower = 0;
+
+  do
+  {
+    scaleparams *s = &scaletable[upper];
+    int pw, ph; // proposed width and height
+
+    pw = (w * s->numer + s->denom - 1) / s->denom;
+    ph = (h * s->numer + s->denom - 1) / s->denom;
+
+    // OK to let a stamp stick off the sides in one direction, not two
+    if (pw < canvas->w * 2 && ph < canvas->h * 1)
+      break;
+    if (pw < canvas->w * 1 && ph < canvas->h * 2)
+      break;
+  }
+  while (--upper);
+
+  do
+  {
+    scaleparams *s = &scaletable[lower];
+    int pw, ph; // proposed width and height
+
+    pw = (w * s->numer + s->denom - 1) / s->denom;
+    ph = (h * s->numer + s->denom - 1) / s->denom;
+
+    if (pw*ph > 20)
+      break;
+  }
+  while (++lower < HARD_MAX_STAMP_SIZE);
+
+  if(upper<lower)
+  {
+    // this, if it ever happens, is very bad
+    upper = (upper+lower)/2;
+    lower = upper;
+  }
+
+  unsigned mid = default_stamp_size;
+  if(ratio != 1.0)
+     mid = compute_default_scale_factor(ratio);
+
+  if(mid > upper)
+    mid = upper;
+  
+  if(mid < lower)
+    mid = lower;
+
+  sd->min  = lower;
+  sd->size = mid;
+  sd->max  = upper;
+}
+
+
+// Note: must have read the *.dat file before calling this
+static void set_active_stamp(void)
+{
+  stamp_type *sd = stamp_data[cur_stamp];
+
+  if(active_stamp)
+    SDL_FreeSurface(active_stamp);
+  active_stamp = NULL;
+  
+  unsigned len = strlen(sd->stampname);
+  char *buf = alloca(len + strlen("_mirror.png") + 1);
+  memcpy(buf, sd->stampname, len);
+
+  if(sd->mirrored && !sd->no_premirror)
+    {
+      memcpy(buf+len, "_mirror.png", 12);
+      active_stamp = do_loadimage(buf, 0);
+    }
+  if(!active_stamp)
+    {
+      memcpy(buf+len, ".png", 5);
+      active_stamp = do_loadimage(buf, 0);
+      if(!active_stamp)
+        active_stamp = thumbnail(img_dead40x40, 40, 40, 1);  // copy it
+      if(sd->mirrored)
+        mirror_surface(active_stamp);
+    }
+
+  if(sd->flipped)
+    flip_surface(active_stamp);
+}
+
 static void get_stamp_thumb(stamp_type *sd)
 {
   SDL_Surface *bigimg = NULL;
@@ -6748,6 +6744,13 @@ static void get_stamp_thumb(stamp_type *sd)
   memcpy(buf, sd->stampname, len);
   SDL_Surface *wrongmirror = NULL;
   int need_mirror = 0;
+  double ratio;
+
+  if(!sd->processed)
+    {
+      memcpy(buf+len, ".dat", 5);
+      ratio = loadinfo(buf, sd);
+    }
 
 #ifndef NOSOUND
   // good time to load the sound
@@ -6815,6 +6818,14 @@ static void get_stamp_thumb(stamp_type *sd)
         need_mirror = 1;  // want to mirror after scaling
     }
 
+  unsigned w = 40;
+  unsigned h = 40;
+  if(bigimg)
+    {
+      w = bigimg->w;
+      h = bigimg->h;
+    }
+
   if(!bigimg)
     sd->thumbnail = thumbnail(img_dead40x40, 40, 40, 1); // copy
   else if (bigimg->w > 40 || bigimg->h > 40)
@@ -6833,83 +6844,10 @@ static void get_stamp_thumb(stamp_type *sd)
     flip_surface(sd->thumbnail);
   sd->thumb_flipped = sd->flipped;
 
-  return;
-}
-
-
-static unsigned default_stamp_size;
-
-static void loadstamp_finisher(int i)
-{
-  if (stamp_data[i]->full_norm)
-    {
-      stamp_data[i]->w = stamp_data[i]->full_norm->w;
-      stamp_data[i]->h = stamp_data[i]->full_norm->h;
-    }
-
-  if (stamp_data[i]->full_mirr)
-    {
-      stamp_data[i]->w = stamp_data[i]->full_mirr->w;
-      stamp_data[i]->h = stamp_data[i]->full_mirr->h;
-    }
-
-  /* If Tux Paint is in mirror-image-by-default mode, mirror, if we can: */
-
-  if (mirrorstamps && stamp_data[i]->mirrorable)
-    stamp_data[i]->mirrored = 1;
-
-  unsigned int upper = HARD_MAX_STAMP_SIZE;
-  unsigned int lower = 0;
-
-  do
-  {
-    scaleparams *s = &scaletable[upper];
-    int pw, ph; // proposed width and height
-
-    pw = (stamp_data[i]->w * s->numer + s->denom - 1) / s->denom;
-    ph = (stamp_data[i]->h * s->numer + s->denom - 1) / s->denom;
-
-    // OK to let a stamp stick off the sides in one direction, not two
-    if (pw < canvas->w * 2 && ph < canvas->h * 1)
-      break;
-    if (pw < canvas->w * 1 && ph < canvas->h * 2)
-      break;
-  }
-  while (--upper);
-
-  do
-  {
-    scaleparams *s = &scaletable[lower];
-    int pw, ph; // proposed width and height
-
-    pw = (stamp_data[i]->w * s->numer + s->denom - 1) / s->denom;
-    ph = (stamp_data[i]->h * s->numer + s->denom - 1) / s->denom;
-
-    if (pw*ph > 20)
-      break;
-  }
-  while (++lower < HARD_MAX_STAMP_SIZE);
-
-  if(upper<lower)
-  {
-    // this, if it ever happens, is very bad
-    upper = (upper+lower)/2;
-    lower = upper;
-  }
-
-  unsigned mid = default_stamp_size;
-  if(stamp_data[i]->ratio != 1.0)
-     mid = compute_default_scale_factor(stamp_data[i]->ratio);
-
-  if(mid > upper)
-    mid = upper;
-  
-  if(mid < lower)
-    mid = lower;
-
-  stamp_data[i]->min  = lower;
-  stamp_data[i]->size = mid;
-  stamp_data[i]->max  = upper;
+  if(sd->processed)
+    return;
+  sd->processed = 1; // not really, but on the next line...
+  loadstamp_finisher(sd, w, h, ratio);
 }
 
 
@@ -6935,28 +6873,7 @@ static void loadstamp_callback(const char *restrict const dir, unsigned dirlen, 
           stamp_data[num_stamps]->stampname = malloc(dotpng-files[i].str+1+dirlen+1);
           memcpy(stamp_data[num_stamps]->stampname, fname, dotpng-files[i].str+1+dirlen);
           stamp_data[num_stamps]->stampname[dotpng-files[i].str+1+dirlen] = '\0';
-          loadinfo(fname, stamp_data[num_stamps]);
-
-          if(!mirrorstamps || !disable_stamp_controls || !stamp_data[num_stamps]->mirrorable)
-            stamp_data[num_stamps]->full_norm = loadimage(fname);
-
-          if((mirrorstamps || !disable_stamp_controls) && stamp_data[num_stamps]->mirrorable)
-            stamp_data[num_stamps]->full_mirr = loadaltimage(fname);
-
-          if(stamp_data[num_stamps]->full_norm || stamp_data[num_stamps]->full_mirr)
-            {
-              // we have a stamp; finalize it
-              loadstamp_finisher(num_stamps);
-              num_stamps++;
-            }
-          else
-            {
-              // we have a failure, abort mission
-              free(stamp_data[num_stamps]->full_norm);
-              free(stamp_data[num_stamps]->full_mirr);
-              free(stamp_data[num_stamps]->stxt);
-              free(stamp_data[num_stamps]);
-            }
+          num_stamps++;
         }
       free(files[i].str);
     }
@@ -9320,8 +9237,8 @@ static void draw_fonts(void)
 static void draw_stamps(void)
 {
   int i, off_y, max, stamp, most;
-  int base_x, base_y, xx, yy;
-  SDL_Rect src, dest;
+  int base_x, base_y;
+  SDL_Rect dest;
   SDL_Surface * img;
 
 
@@ -11076,42 +10993,26 @@ static char * loaddesc(const char * const fname)
 }
 
 
-/* Load a file's info: */
-static void loadinfo(const char * const fname, stamp_type *inf)
+/* Load a *.dat file */
+static double loadinfo(const char * const fname, stamp_type *inf)
 {
-  char * dat_fname;
   char buf[256];
   FILE * fi;
+  double ratio = 1.0;
 
-  inf->ratio = 1.0;
   inf->colorable = 0;
   inf->tintable = 0;
   inf->mirrorable = 1;
   inf->flipable = 1;
   inf->tinter = TINTER_NORMAL;
 
-  dat_fname = strdup(fname);
-  char *pngptr = strstr(dat_fname, ".png");
-  if (!pngptr)  // TODO: see if this can ever happen
-    {
-      free(dat_fname);
-      return;
-    }
-
-  memcpy(pngptr+1, "dat", 3);
-
-  fi = fopen(dat_fname, "r");
+  fi = fopen(fname, "r");
   if (!fi)
-    {
-      free(dat_fname);
-      return;
-    }
-
-  free(dat_fname);
+    return ratio;
 
   do
     {
-      fgets(buf, sizeof(buf), fi);
+      fgets(buf, sizeof buf, fi);
 
       if (!feof(fi))
         {
@@ -11131,7 +11032,7 @@ static void loadinfo(const char * const fname, stamp_type *inf)
                 {
                   tmp = strtod(cp,NULL) / 100.0;
                   if (tmp > 0.0001 && tmp < 10000.0)
-                    inf->ratio = tmp;
+                    ratio = tmp;
                 }
               else if (strchr(cp,'/'))
                 {
@@ -11140,7 +11041,7 @@ static void loadinfo(const char * const fname, stamp_type *inf)
                     cp++;
                   tmp2 = strtod(cp,NULL);
                   if (tmp>0.0001 && tmp<10000.0 && tmp2>0.0001 && tmp2<10000.0 && tmp/tmp2>0.0001 && tmp/tmp2<10000.0)
-                    inf->ratio = tmp/tmp2;
+                    ratio = tmp/tmp2;
                 }
               else if (strchr(cp,':'))
                 {
@@ -11149,13 +11050,13 @@ static void loadinfo(const char * const fname, stamp_type *inf)
                     cp++;
                   tmp2 = strtod(cp,NULL);
                   if (tmp>0.0001 && tmp<10000.0 && tmp2>0.0001 && tmp2<10000.0 && tmp2/tmp>0.0001 && tmp2/tmp<10000.0)
-                    inf->ratio = tmp2/tmp;
+                    ratio = tmp2/tmp;
                 }
               else
                 {
                   tmp = strtod(cp,NULL);
                   if (tmp > 0.0001 && tmp < 10000.0)
-                    inf->ratio = 1.0 / tmp;
+                    ratio = 1.0 / tmp;
                 }
             }
           else if (!memcmp(buf, "tinter", 6) && (isspace(buf[6]) || buf[6]=='='))
@@ -11193,37 +11094,7 @@ static void loadinfo(const char * const fname, stamp_type *inf)
   while (!feof(fi));
 
   fclose(fi);
-}
-
-
-/* Load a file's alternative image: */
-static SDL_Surface * loadaltimage(const char * const fname)
-{
-  char * alt_fname;
-  SDL_Surface * s;
-  
-
-  s = NULL;
-
-
-  alt_fname = (char *) malloc(sizeof(char) *
-		              (strlen(fname) + strlen("_mirror") + 1));
-  if (alt_fname != NULL)
-    {
-      strcpy(alt_fname, fname);
-
-      if (strstr(alt_fname, ".png") != NULL)
-	{
-	  strcpy(strstr(alt_fname, ".png"), "_mirror.png");
-
-	  s = do_loadimage(alt_fname, 0);
-	}
-
-
-      free(alt_fname);
-    }
-
-  return s;
+  return ratio;
 }
 
 
@@ -12077,8 +11948,6 @@ static void cleanup(void)
 	  free(stamp_data[i]->stxt);
 	  stamp_data[i]->stxt = NULL;
 	}
-      free_surface( &stamp_data[i]->full_norm );
-      free_surface( &stamp_data[i]->full_mirr );
       free_surface( &stamp_data[i]->thumbnail );
         
       free(stamp_data[i]->stampname);
@@ -12086,6 +11955,7 @@ static void cleanup(void)
       stamp_data[i] = NULL;
     }
   free(stamp_data);
+  free_surface( &active_stamp );
 
   free_surface_array( img_brushes, num_brushes );
   free_surface_array( img_tools, NUM_TOOLS );
@@ -14218,17 +14088,7 @@ static void update_stamp_xor(void)
   Uint8 dummy;
   SDL_Surface * src;
 
-  /* Use pre-mirrored stamp image, if applicable: */
-
-  if (stamp_data[cur_stamp]->mirrored &&
-      stamp_data[cur_stamp]->full_mirr != NULL)
-    {
-      src = stamp_data[cur_stamp]->full_mirr;
-    }
-  else
-    {
-      src = stamp_data[cur_stamp]->full_norm;
-    }
+  src = active_stamp;
 
   // start by scaling
   src = thumbnail(src, CUR_STAMP_W, CUR_STAMP_H, 0);
@@ -14239,24 +14099,10 @@ static void update_stamp_xor(void)
   SDL_LockSurface(src);
   for (yy = 0; yy < src->h; yy++)
     {
-      /* Compensate for flip! */
-      if (stamp_data[cur_stamp]->flipped)
-	ry = src->h - 1 - yy;
-      else
-	ry = yy;
+      ry = yy;
       for (xx = 0; xx < src->w; xx++)
 	{
-	  /* Compensate for mirror! */
-	  if (stamp_data[cur_stamp]->mirrored &&
-	      stamp_data[cur_stamp]->full_mirr == NULL)
-	    {
-	      rx = src->w - 1 - xx;
-	    }
-	  else
-	    {
-	      rx = xx;
-	    }
-
+	  rx = xx;
 	  SDL_GetRGBA(getpixel(src, rx, ry),
 		      src->format, &dummy, &dummy, &dummy, alphabits + xx+2 + (yy+2)*(src->w+4));
 	}
@@ -14311,11 +14157,9 @@ static void update_stamp_xor(void)
     }
 
     char *old_outline_data = stamp_outline_data;
-    SDL_LockSurface(screen); // abuse this lock until I determine the correct need
     stamp_outline_data = outline;
     stamp_outline_w = new_w;
     stamp_outline_h = new_h;
-    SDL_UnlockSurface(screen);
     if (old_outline_data)
       free(old_outline_data);
     free(alphabits);
