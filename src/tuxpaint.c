@@ -734,25 +734,6 @@ static void set_current_language(void)
 
 }
 
-static TTF_Font *try_alternate_font(void)
-{
-  char  str[128];
-  char  prefix[64];
-  char  *p;
-
-  strcpy(prefix, lang_prefix);
-  if ((p = strrchr(prefix, '_')) != NULL)
-  {
-    *p = 0;
-    snprintf(str, sizeof(str), "%sfonts/locale/%s.ttf",
-             DATA_PREFIX, prefix);
-
-    return TTF_OpenFont(str, 18);
-  }
-  return NULL;
-}
-
-
 /* FIXME: All this should REALLY be array-based!!! */
 /* Show available languages: */
 static void show_lang_usage(FILE * f, const char * const prg)
@@ -1199,6 +1180,66 @@ static void setup_language(const char * const prg)
   textdomain("tuxpaint");
 
   set_current_language();
+}
+
+
+static TTF_Font *try_alternate_font(void)
+{
+  char  str[128];
+  char  prefix[64];
+  char  *p;
+
+  strcpy(prefix, lang_prefix);
+  if ((p = strrchr(prefix, '_')) != NULL)
+  {
+    *p = 0;
+    snprintf(str, sizeof(str), "%sfonts/locale/%s.ttf",
+             DATA_PREFIX, prefix);
+
+    return TTF_OpenFont(str, 18);
+  }
+  return NULL;
+}
+
+
+static TTF_Font *load_locale_font(TTF_Font *fallback)
+{
+  TTF_Font *ret = NULL;
+  if (need_own_font)
+    {
+      char str[128];
+      snprintf(str, sizeof(str), "%sfonts/locale/%s.ttf",
+	       DATA_PREFIX, lang_prefix);
+
+      ret = TTF_OpenFont(str, 18);
+
+      if (ret == NULL)
+      {
+          ret = try_alternate_font();
+          if (ret == NULL)
+	  {
+	      fprintf(stderr,
+		      "\nWarning: Can't load font for this locale:\n"
+		      "%s\n"
+		      "The Simple DirectMedia Layer error that occurred was:\n"
+		      "%s\n\n"
+		      "Will use default (American English) instead.\n\n",
+		      str, SDL_GetError());
+
+
+	      /* Revert to default: */
+      
+	      putenv((char *) "LANG=C");
+	      putenv((char *) "OUTPUT_CHARSET=C");
+	      setlocale(LC_ALL, "C");
+
+	      bindtextdomain("tuxpaint", LOCALEDIR);
+	      textdomain("tuxpaint");
+	      set_current_language();
+	  }
+      }
+    }
+  return ret ? ret : fallback;
 }
 
 ///////////////////////////////////////////////////////////////////
@@ -6525,44 +6566,7 @@ static void setup(int argc, char * argv[])
     }
 
 
-  if (need_own_font)
-    {
-      snprintf(str, sizeof(str), "%sfonts/locale/%s.ttf",
-	       DATA_PREFIX, lang_prefix);
-
-      locale_font = TTF_OpenFont(str, 18);
-
-      if (locale_font == NULL)
-      {
-          locale_font = try_alternate_font();
-          if (locale_font == NULL)
-	  {
-	      fprintf(stderr,
-		      "\nWarning: Can't load font for this locale:\n"
-		      "%s\n"
-		      "The Simple DirectMedia Layer error that occurred was:\n"
-		      "%s\n\n"
-		      "Will use default (American English) instead.\n\n",
-		      str, SDL_GetError());
-
-
-	      /* Revert to default: */
-      
-	      putenv((char *) "LANG=C");
-	      putenv((char *) "OUTPUT_CHARSET=C");
-	      setlocale(LC_ALL, "C");
-
-	      bindtextdomain("tuxpaint", LOCALEDIR);
-	      textdomain("tuxpaint");
-	      set_current_language();
-	  }
-      }
-    }
-
-
-  if (locale_font == NULL)
-    locale_font = font;
-  
+  locale_font = load_locale_font(font);
 
   /* Load other available fonts: */
 
