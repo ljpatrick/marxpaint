@@ -7,12 +7,12 @@
   bill@newbreedsoftware.com
   http://www.newbreedsoftware.com/tuxpaint/
   
-  June 14, 2002 - April 26, 2003
+  June 14, 2002 - May 11, 2003
 */
 
 
 #define VER_VERSION     "0.9.11"
-#define VER_DATE        "2003.04.26"
+#define VER_DATE        "2003.05.11"
 
 
 /* #define DEBUG */
@@ -122,6 +122,7 @@ extern char* g_win32_getlocale(void);
 #define strncasecmp           strnicmp
 #define snprintf              _snprintf
 #define S_ISDIR(i)            ((i&_S_IFDIR)!=0)
+#define alloca                _alloca
 
 #endif /* WIN32 */
 
@@ -215,7 +216,7 @@ void win32_perror(const char *str)
 #define clamp(lo,value,hi)    (min(max(value,lo),hi))
 
 
-#define RENDER_TEXT TTF_RenderUTF8_Blended
+#define RENDER_TEXT TTF_RenderText_Blended
 
 
 /* Possible languages: */
@@ -2025,7 +2026,7 @@ void mainloop(void)
 	      {
 		if (((unsigned char *) event.user.data1)[0] == '=')
 		{
-		  draw_tux_text(TUX_GREAT, event.user.data1 + 1, 1, 0);
+		  draw_tux_text(TUX_GREAT, (char *) event.user.data1 + 1, 1, 0);
 		}
 		else
 		{
@@ -3560,7 +3561,7 @@ void setup(int argc, char * argv[])
 #ifndef WIN32
       fprintf(stderr, "Note: printcfg option only applies to Windows!\n");
 #endif
-      use_print_config = 0;
+      use_print_config = 1;
     }
     else if (strstr(argv[i], "--printdelay=") == argv[i])
     {
@@ -4070,7 +4071,6 @@ void setup(int argc, char * argv[])
 		    "trails in fullscreen mode.  Disabling fancy cursors.\n"
 		    "(You can do this yourself with 'nofancycursors' option,\n"
 		    "to avoid this warning in the future.)\n");
-  }
     no_fancy_cursors = 1;
   }
 #endif
@@ -10851,7 +10851,13 @@ escape_string_type escape_strings[] = {
 unsigned char * unescape(char * str)
 {
   int i, j, len, esclen, inside_escape;
+
+#ifndef WIN32
   char outstr[strlen(str + 1)], escapestr[strlen(str + 1)];
+#else
+  char *outstr = alloca( strlen(str + 1) );
+  char *escapestr = alloca( strlen(str + 1) );
+#endif
 
   inside_escape = 0;
   len = 0;

@@ -7,7 +7,10 @@ bill@newbreedsoftware.com
 http://www.newbreedsoftware.com/tuxpaint/
 
 
-2003.May.8 (0.9.11) [cvs]
+2003.May.11 (0.9.11) [cvs]
+  * Windows bugfixes.
+    John Popplewell <john@johnnypops.demon.co.uk>
+
   * Mac OS X print update.  Get to a print dialog by holding Alt/Option when
     clicking "Print."  (Similar to how Windows handles it.)
     Darrell Walisser <walisser@mac.com>
