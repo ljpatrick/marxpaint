@@ -2051,7 +2051,7 @@ typedef struct stamp_type {
 #ifndef NOSOUND
   Mix_Chunk *ssnd;
 #endif
-  char *stampfile;
+  char *stampname;
   SDL_Surface *full_norm;
   SDL_Surface *full_mirr;
   SDL_Surface *thumb_norm;
@@ -6809,11 +6809,13 @@ static void loadstamp_callback(const char *restrict const dir, unsigned dirlen, 
   qsort(files, i, sizeof *files, compare_ftw_str);
   while(i--)
     {
+      char fname[512];
       show_progress_bar();
 
-      if (strstr(files[i].str, ".png") && !strstr(files[i].str, "_mirror.png"))
+      char *dotpng = strstr(files[i].str, ".png");
+
+      if (dotpng>files[i].str && !strcmp(dotpng,".png") && (dotpng-files[i].str+1+dirlen < sizeof fname) && !strstr(files[i].str, "_mirror.png"))
         {
-          char fname[512];
           snprintf(fname, sizeof fname, "%s/%s", dir, files[i].str);
           if(num_stamps == max_stamps)
             {
@@ -6821,6 +6823,9 @@ static void loadstamp_callback(const char *restrict const dir, unsigned dirlen, 
               stamp_data = realloc(stamp_data, max_stamps * sizeof *stamp_data);
             }
           stamp_data[num_stamps] = calloc(1, sizeof *stamp_data[num_stamps]);
+          stamp_data[num_stamps]->stampname = malloc(dotpng-files[i].str+1+dirlen+1);
+          memcpy(stamp_data[num_stamps]->stampname, fname, dotpng-files[i].str+1+dirlen);
+          stamp_data[num_stamps]->stampname[dotpng-files[i].str+1+dirlen] = '\0';
           stamp_data[num_stamps]->stxt = loaddesc(fname);
           loadinfo(fname, stamp_data[num_stamps]);
 
@@ -12063,6 +12068,7 @@ static void cleanup(void)
       free_surface( &stamp_data[i]->thumb_norm );
       free_surface( &stamp_data[i]->thumb_mirr );
         
+      free(stamp_data[i]->stampname);
       free(stamp_data[i]);
       stamp_data[i] = NULL;
     }
