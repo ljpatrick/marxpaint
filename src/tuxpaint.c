@@ -13747,15 +13747,23 @@ static int colors_close(Uint32 c1, Uint32 c2)
     }
   else
     {
+      double r, g, b;
       SDL_GetRGB(c1, canvas->format, &r1, &g1, &b1);
       SDL_GetRGB(c2, canvas->format, &r2, &g2, &b2);
 
-      if (abs(r1 - r2) <= 64 && 
-	  abs(g1 - g2) <= 64 &&
-	  abs(b1 - b2) <= 64)
-	return 1;
-      else
-	return 0;
+      // use distance in linear RGB space
+      r = sRGB_to_linear_table[r1] - sRGB_to_linear_table[r2];
+      r *= r;
+      g = sRGB_to_linear_table[g1] - sRGB_to_linear_table[g2];
+      g *= g;
+      b = sRGB_to_linear_table[b1] - sRGB_to_linear_table[b2];
+      b *= b;
+
+      // easy to confuse:
+      //   dark grey, brown, purple
+      //   light grey, tan
+      //   red, orange
+      return r+g+b < 0.04;
     }
 #endif
 }
