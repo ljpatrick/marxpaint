@@ -46,6 +46,10 @@ http://www.newbreedsoftware.com/tuxpaint/
     (Fixes problems where shape or stamp tools take forver to 'catch up' with
     the mouse; especially noticable on slow machines over remote X display.)
 
+  * Added some "#error" directives to give verbose output regarding missing
+    library header files.  (Typical cause of this symptom is forgetting to
+    install dev. packages; e.g., installed "SDL.rpm", but not "SDL-dev.rpm")
+
 
 2003.Jun.17 (0.9.11)
   * Windows bugfixes.

@@ -7,12 +7,12 @@
   bill@newbreedsoftware.com
   http://www.newbreedsoftware.com/tuxpaint/
   
-  June 14, 2002 - July 19, 2003
+  June 14, 2002 - July 20, 2003
 */
 
 
 #define VER_VERSION     "0.9.12"
-#define VER_DATE        "2003.07.19"
+#define VER_DATE        "2003.07.20"
 
 
 /* #define DEBUG */
@@ -130,15 +130,53 @@ extern char* g_win32_getlocale(void);
 #include <sys/stat.h>
 
 #include "SDL.h"
+#ifndef _SDL_H
+#error "---------------------------------------------------"
+#error "If you installed SDL from a package, be sure to get"
+#error "the development package, as well!"
+#error "(e.g., 'libsdl1.2-devel.rpm')"
+#error "---------------------------------------------------"
+#endif
+
 #include "SDL_image.h"
+#ifndef _IMG_h
+#error "---------------------------------------------------"
+#error "If you installed SDL_image from a package, be sure"
+#error "to get the development package, as well!"
+#error "(e.g., 'libsdl-image1.2-devel.rpm')"
+#error "---------------------------------------------------"
+#endif
+
 #include "SDL_ttf.h"
+#ifndef _SDLttf_h
+#error "---------------------------------------------------"
+#error "If you installed SDL_ttf from a package, be sure"
+#error "to get the development package, as well!"
+#error "(e.g., 'libsdl-ttf1.2-devel.rpm')"
+#error "---------------------------------------------------"
+#endif
+
 #ifndef NOSOUND
 #include "SDL_mixer.h"
+#ifndef _MIXER_H_
+#error "---------------------------------------------------"
+#error "If you installed SDL_mixer from a package, be sure"
+#error "to get the development package, as well!"
+#error "(e.g., 'libsdl-mixer1.2-devel.rpm')"
+#error "---------------------------------------------------"
+#endif
 #endif
 
 #ifndef SAVE_AS_BMP
 #include <png.h>
 #define FNAME_EXTENSION ".png"
+#ifndef PNG_H
+#error "---------------------------------------------------"
+#error "If you installed the PNG libraries from a package,"
+#error "be sure to get the development package, as well!"
+#error "(e.g., 'libpng2-devel.rpm')"
+#error "---------------------------------------------------"
+#endif
 #else
 #define FNAME_EXTENSION ".bmp"
 #endif
