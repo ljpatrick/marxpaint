@@ -1,88 +1,73 @@
+# translation of ms.po to Malay
 # tuxpaint Bahasa Melayu (Malay) (ms).
 # Copyright (C) 2003 Muhammad Najmi Ahmad Zabidi
 # This file is distributed under the same license as the tuxpaint package.
-# Muhammad Najmi Ahmad Zabidi <mnajem@yahoo.com>, 2003.
+# Muhammad Najmi bin Ahmad Zabidi <md_najmi@yahoo.com>, 2004.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: tuxpaint 0.9.11\n"
+"Project-Id-Version: ms\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2004-07-16 21:12+0200\n"
-"PO-Revision-Date: 2003-08-13 09:30+0000\n"
-"Last-Translator: Muhammad Najmi Ahmad Zabidi <md_najmi@yahoo.com>\n"
-"Language-Team: Malay <translation-team-ms@lists.sourceforge.net>\n"
+"POT-Creation-Date: 2004-08-23 19:36+0200\n"
+"PO-Revision-Date: 2004-08-23 16:06+0800\n"
+"Last-Translator: Muhammad Najmi bin Ahmad Zabidi <md_najmi@yahoo.com>\n"
+"Language-Team: Malay <kedidiemas@yahoogroups.com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: KBabel 0.9.6\n"
+"X-Generator: KBabel 1.3.1\n"
 
 msgid "A drawing program for children."
-msgstr ""
+msgstr "Program melukis untuk kanak-kanak"
 
 msgid "Drawing program"
-msgstr ""
+msgstr "Program melukis"
 
-#, fuzzy
 msgid "Tux Paint"
-msgstr "Cat"
+msgstr "Tux Paint"
 
-#, fuzzy
 msgid "Black!"
 msgstr "Hitam!"
 
-#, fuzzy
 msgid "White!"
 msgstr "Putih!"
 
-#, fuzzy
 msgid "Red!"
-msgstr "Ulangcara!"
+msgstr "Merah!"
 
-#, fuzzy
 msgid "Pink!"
 msgstr "Merah Jambu!"
 
-#, fuzzy
 msgid "Orange!"
 msgstr "Oren!"
 
-#, fuzzy
 msgid "Yellow!"
 msgstr "Kuning!"
 
-#, fuzzy
 msgid "Lime!"
 msgstr "Lemon!"
 
-#, fuzzy
 msgid "Green!"
 msgstr "Hijau!"
 
-#, fuzzy
 msgid "Cyan!"
 msgstr "Cyan!"
 
-#, fuzzy
 msgid "Blue!"
 msgstr "Biru!"
 
-#, fuzzy
 msgid "Purple!"
 msgstr "Ungu!"
 
-#, fuzzy
 msgid "Fuchsia!"
 msgstr "Fuchsia!"
 
-#, fuzzy
 msgid "Brown!"
 msgstr "Coklat!"
 
-#, fuzzy
 msgid "Gray!"
-msgstr "Hebat!"
+msgstr "Kelabu!"
 
-#, fuzzy
 msgid "Silver!"
 msgstr "Perak!"
 
@@ -140,29 +125,24 @@ msgstr "Isi"
 msgid "You can draw in rainbow colors!"
 msgstr "Anda boleh menulis di dalam warna pelangi!"
 
-#, fuzzy
 msgid "Click and move to draw sparkles."
-msgstr "Klik dan alihkan untuk melukis percikan"
+msgstr "Klik dan alihkan untuk melukis percikan."
 
-#, fuzzy
 msgid "Click to make a mirror image."
 msgstr "Klik untuk membuat imej cermin!"
 
-#, fuzzy
 msgid "Click to flip the picture upside-down."
 msgstr "Klik untuk melipat gambar ke atas dan ke bawah!"
 
-#, fuzzy
 msgid "Click and move the mouse around to blur the picture."
-msgstr "Klik untuk alihkan tetikus di sekeliling untuk mengaburkan gambar"
+msgstr "Klik dan gerakkan tetikus di sekeliling untuk mengaburkan gambar."
 
-#, fuzzy
 msgid "Click and move the mouse around to make the picture blocky."
-msgstr "Klik dan alihkan tetikus di sekeliling untuk membuat gambar blok"
+msgstr ""
+"Klik dan gerakkan tetikus di sekeliling untuk menjadikan gambar berblok."
 
-#, fuzzy
 msgid "Click and move the mouse around to draw a negative."
-msgstr "Klik dan alihkan tetikus di sekeliling untuk membuat negatif"
+msgstr "Klik dan gerakkan tetikus di sekeliling untuk menegatifkan gambar."
 
 msgid "Click and move to fade the colors."
 msgstr "Klik dan alihkan untuk lunturkan warna"
@@ -171,21 +151,21 @@ msgid ""
 "Click and move the mouse around to turn the picture into a chalk drawing."
 msgstr "Klik dan alihkan tetikus di sekeliling untuk membuat lukisan kapur."
 
-#, fuzzy
 msgid "Click and move the mouse around to make the picture drip."
-msgstr "Klik dan alihkan tetikus di sekeliling untuk membuat gambar menitik!"
+msgstr ""
+"Klik dan gerakkan tetikus di sekeliling untuk menjadikan gambar berbentuk "
+"titisan."
 
-#, fuzzy
 msgid "Click and move the mouse to thicken the picture."
-msgstr "Klik dan alihkan tetikus untuk menebalkan gambar"
+msgstr "Klik dan gerakkan tetikus di sekeliling untuk menebalkan gambar."
 
-#, fuzzy
 msgid "Click and move the mouse to thin the picture."
-msgstr "Klik dan alihkan tetikus untuk menipiskan gambar"
+msgstr "Klik dan gerakkan tetikus di sekeliling untuk menipiskan gambar."
 
-#, fuzzy
 msgid "Click in the picture to fill that area with color."
-msgstr "Klik di dalam gambar untuk mengisi kawasan dengan warna"
+msgstr ""
+"Klik dan gerakkan tetikus di sekeliling untuk memenuhkan kawasan dengan "
+"warna."
 
 msgid "Square"
 msgstr "Segiempat Sama"
@@ -290,22 +270,18 @@ msgstr "Ambil warna dan bentuk berus untuk melukis."
 msgid "Pick a picture to stamp around your drawing."
 msgstr "Ambil gambar untuk mengecop di sekeliling lukisan anda."
 
-#, fuzzy
 msgid "Click to start drawing a line. Let go to complete it."
 msgstr "Klik untuk memulakan melukis garisan. Lepaskan untuk melengkapkan."
 
-#, fuzzy
 msgid ""
 "Pick a shape. Click to pick the center, drag, then let go when it is the "
 "size you want. Move around to rotate it, and click to draw it."
 msgstr ""
-"Pilih satu bentuk. Klik untuk memilih titik tengah, tarik, dan lepaskan "
-"apabila mencapai saiz yang anda inginkan. Gerakkan untuk putar, dan klik "
-"untuk lukis."
+"Pilih bentuk. Klik untuk pilih pusat, tarik, dan lepaskan apabila dapat saiz "
+"yang dikehendaki. Gerakkan di sekeliling untuk putar, dan klik untuk lukis."
 
-#, fuzzy
 msgid "Choose a style of text. Click on your drawing and you can start typing."
-msgstr "Pilih gaya teks. Klik atas lukisan anda dan anda boleh mula menaip."
+msgstr "Pilih gaya tulisan. Klik pada lukisan anda anda mula menaip."
 
 msgid "Pick a magical effect to use on your drawing!"
 msgstr "Pilih kesan ajaib untuk digunakan pada lukisan anda!"
@@ -375,25 +351,22 @@ msgid "Can’t open that picture!"
 msgstr "Tidak boleh membuka gambar!"
 
 msgid "OK"
-msgstr ""
+msgstr "OK"
 
 msgid "Starting a new picture will erase the current one!"
 msgstr "Mula dengan gambar yang baru akan memadamkan apa yang ada!"
 
-#, fuzzy
 msgid "That’s OK!"
-msgstr "OK"
+msgstr "OK!"
 
-#, fuzzy
 msgid "Never mind!"
-msgstr "Tidak Mengapa!"
+msgstr "Tidak sekali!"
 
 msgid "There are no saved files!"
 msgstr "Tiada fail yang disimpan!"
 
-#, fuzzy
 msgid "Print your picture now?"
-msgstr "Simpan hasil kerja dahulu?"
+msgstr "Cetak?"
 
 msgid "Your picture has been printed!"
 msgstr "Hasil kerja anda sudah dicetak!"
@@ -413,22 +386,11 @@ msgid "Back"
 msgstr "Undur"
 
 #. FIXME: Move elsewhere!!!
-#, fuzzy
 msgid "Save over the older version of this picture?"
-msgstr "Simpan dengan tindih versi lama lukisan ini?"
+msgstr "Simpan versi?"
 
 msgid "No, save a new file"
 msgstr "Tidak, simpan kepada fail baru"
 
-#, fuzzy
 msgid "Choose the picture you want, then click “Open”."
 msgstr "Pilih gambar yang anda mahu, dan klik 'Buka'"
-
-#~ msgid "Red"
-#~ msgstr "Merah!"
-
-#~ msgid "Grey"
-#~ msgstr "Kelabu!"
-
-#~ msgid "Okay"
-#~ msgstr "Baiklah"
