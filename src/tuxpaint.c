@@ -2988,16 +2988,13 @@ void stamp_draw(int x, int y)
   final_surf = thumbnail(tmp_surf,
 		         (tmp_surf->w * state_stamps[cur_stamp]->size) / 100,
 		         (tmp_surf->h * state_stamps[cur_stamp]->size) / 100,
-			 1);
-
-  if (!dont_free_tmp_surf)
-    SDL_FreeSurface(tmp_surf);
+			 0);
 
   
   /* Where it will go? */
   
-  base_x = x - (final_surf->w / 2);
-  base_y = y - (final_surf->h / 2);
+  base_x = x - (((tmp_surf->w * state_stamps[cur_stamp]->size) / 100) / 2);
+  base_y = y - (((tmp_surf->h * state_stamps[cur_stamp]->size) / 100) / 2);
    
 
   /* And blit it! */
@@ -3076,11 +3073,16 @@ void stamp_draw(int x, int y)
     }
   }
 
-  update_canvas(x - (final_surf->w / 2),
-		y - (final_surf->h / 2),
-		x + (final_surf->w / 2),
-		y + (final_surf->h / 2));
+  update_canvas(x - (((tmp_surf->w * state_stamps[cur_stamp]->size) / 100) / 2),
+		y - (((tmp_surf->h * state_stamps[cur_stamp]->size) / 100) / 2),
+                x + (((tmp_surf->w * state_stamps[cur_stamp]->size) / 100) / 2),
+		y + (((tmp_surf->h * state_stamps[cur_stamp]->size) / 100) / 2));
+  
+  /* Free the temporary surfaces */
 
+  if (!dont_free_tmp_surf)
+    SDL_FreeSurface(tmp_surf);
+  
   SDL_FreeSurface(final_surf);
 }
 
@@ -5201,7 +5203,6 @@ void setup(int argc, char * argv[])
 
   /* Generate the buttons based on the thumbnails: */
 
-
   SDL_LockSurface(tmp_btn);
 
   for (y = 0; y < tmp_btn->h /* 48 */; y++)
@@ -6457,7 +6458,8 @@ void loadarbitrary(SDL_Surface * surfs[], SDL_Surface * altsurfs[],
 SDL_Surface * thumbnail(SDL_Surface * src, int max_x, int max_y,
 			int keep_aspect)
 {
-  int x, y, src_x, src_y, off_x, off_y;
+  int x, y;
+  float src_x, src_y, off_x, off_y;
   SDL_Surface * s;
   Uint32 amask, tr, tg, tb, ta;
   Uint8 r, g, b, a;
@@ -6472,9 +6474,6 @@ SDL_Surface * thumbnail(SDL_Surface * src, int max_x, int max_y,
       yscale = (float) ((float) src->h / (float) max_y);
       xscale = (float) ((float) src->w / (float) max_x);
 
-      // off_x = ((src->h / yscale) - (src->w / xscale)) / 2;
-      // off_y = ((src->w / xscale) - (src->h / yscale)) / 2;
-
       off_x = 0;
       off_y = 0;
     }
@@ -6484,6 +6483,7 @@ SDL_Surface * thumbnail(SDL_Surface * src, int max_x, int max_y,
 	{
 	  yscale = (float) ((float) src->h / (float) max_y);
 	  xscale = yscale;
+
 	  off_x = ((src->h - src->w) / xscale) / 2;
 	  off_y = 0;
 	}
@@ -6491,6 +6491,7 @@ SDL_Surface * thumbnail(SDL_Surface * src, int max_x, int max_y,
 	{
 	  xscale = (float) ((float) src->w / (float) max_x);
 	  yscale = xscale;
+
 	  off_x = 0;
 	  off_y = ((src->w - src->h) / xscale) / 2;
 	}
