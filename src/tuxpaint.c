@@ -4034,11 +4034,7 @@ static void blit_magic(int x, int y, int button_down)
 {
   int xx, yy, w, h;
   Uint32 colr;
-  Uint8 r, g, b,
-    r1, g1, b1,
-    r2, g2, b2,
-    r3, g3, b3,
-    r4, g4, b4;
+  Uint8 r, g, b;
   SDL_Surface * last;
   SDL_Rect src, dest;
   int undo_ctr;
