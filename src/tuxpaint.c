@@ -9620,12 +9620,13 @@ int do_open(int want_new_tool)
   char fname[1024];
   char * tmp_fname;
   int num_files, i, done, update_list, want_erase, cur, which,
-    num_files_in_dir, j, res;
+    num_files_in_dirs, j, res;
   SDL_Rect dest;
   SDL_Event event;
   SDLKey key;
   Uint32 last_click_time;
   int last_click_which, last_click_button;
+  int places_to_look;
 #ifdef __BEOS__
   char * dot = NULL;
 #endif
@@ -9633,23 +9634,8 @@ int do_open(int want_new_tool)
 
 
   do_setcursor(cursor_watch);
-
-
-  /* Open directory of images: */
-
-  dirname = get_fname("saved");
-
-  d = opendir(dirname);
-  if (d == NULL)
-    {
-      fprintf(stderr,
-	      "\nWarning: There's no directory of saved images\n"
-	      "%s\n"
-	      "The system error that occurred was: %s\n",
-	      dirname, strerror(errno));
-    }
-
-
+  
+  
   /* Allocate some space: */
 
   things_alloced = 32;
@@ -9660,20 +9646,48 @@ int do_open(int want_new_tool)
   d_names = (char * *) malloc(sizeof(char *) * things_alloced);
   d_exts = (char * *) malloc(sizeof(char *) * things_alloced);
 #endif
-
-
-  /* Read directory of images and build thumbnails: */
-
+  
   num_files = 0;
   cur = 0;
   which = 0;
-  
-  if (d != NULL)
+  num_files_in_dirs = 0;
+
+
+  /* Open directories of images: */
+
+  for (places_to_look = 0; places_to_look < 2; places_to_look++)
+  {
+    if (places_to_look == 0)
+    {
+      /* Check for coloring-book style 'starter' images first: */
+
+      dirname = strdup("/usr/local/share/tuxpaint/starters");
+    }
+    else
+    {
+      /* Then check for saved-images: */
+
+      dirname = get_fname("saved");
+    }
+    
+
+    /* Read directory of images and build thumbnails: */
+
+    d = opendir(dirname);
+    
+    if (d == NULL)
+    {
+      fprintf(stderr,
+	      "\nWarning: There's no directory of saved images\n"
+	      "%s\n"
+	      "The system error that occurred was: %s\n",
+	      dirname, strerror(errno));
+    }
+    else
     {
       /* Gather list of files (for sorting): */
-
+      
 #ifdef __BEOS__
-      num_files_in_dir = 0;
       do
 	{
 	  f = readdir(d);
@@ -9682,9 +9696,9 @@ int do_open(int want_new_tool)
 	    {
 	      if( strstr(f->d_name, "-t") == NULL)
 		{
-		  d_exts[num_files_in_dir] = strdup(dot);
+		  d_exts[num_files_in_dirs] = strdup(dot);
 		  *dot = 0;
-		  d_names[num_files_in_dir] = strdup(f->d_name);
+		  d_names[num_files_in_dirs] = strdup(f->d_name);
 
 
 		  /* Try to load thumbnail first: */
@@ -9765,10 +9779,10 @@ int do_open(int want_new_tool)
 		    }
 
 		  *dot = '.';
-		  num_files_in_dir++;
+		  num_files_in_dirs++;
 
 
-		  if (num_files_in_dir > things_alloced)
+		  if (num_files_in_dirs > things_alloced)
 		    {
 		      things_alloced = things_alloced + 32;
 	    
@@ -9784,23 +9798,20 @@ int do_open(int want_new_tool)
 		}
 	    }
 	}
-      while (f != NULL && num_files_in_dir < MAX_FILES);
+      while (f != NULL && num_files_in_dirs < MAX_FILES);
 
-      closedir(d);
-  
 #else
       
-      num_files_in_dir = 0;
       do
 	{
 	  f = readdir(d);
 	  
 	  if (f != NULL)
 	    {
-	      memcpy(&(fs[num_files_in_dir]), f, sizeof(struct dirent));
-	      num_files_in_dir++;
+	      memcpy(&(fs[num_files_in_dirs]), f, sizeof(struct dirent));
+	      num_files_in_dirs++;
 	      
-	      if (num_files_in_dir >= things_alloced)
+	      if (num_files_in_dirs >= things_alloced)
 		{
 		  things_alloced = things_alloced + 32;
 		  fs = (struct dirent *) realloc(fs, sizeof(struct dirent) * things_alloced);
@@ -9810,25 +9821,27 @@ int do_open(int want_new_tool)
       while (f != NULL);
       
       
-      thumbs = (SDL_Surface * *) malloc(sizeof(SDL_Surface *) * num_files_in_dir);
-      d_names = (char * *) malloc(sizeof(char *) * num_files_in_dir);
-      d_exts = (char * *) malloc(sizeof(char *) * num_files_in_dir);
+      thumbs = (SDL_Surface * *) malloc(sizeof(SDL_Surface *) * num_files_in_dirs);
+      d_names = (char * *) malloc(sizeof(char *) * num_files_in_dirs);
+      d_exts = (char * *) malloc(sizeof(char *) * num_files_in_dirs);
       
       
       
-      closedir(d);
 #endif
+
+      closedir(d);
+    }
       
       
       /* Sort: */
       
-      qsort(fs, num_files_in_dir, sizeof(struct dirent),
+      qsort(fs, num_files_in_dirs, sizeof(struct dirent),
 	    (int(*)(const void *, const void *))compare_dirents);
       
       
       /* Read directory of images and build thumbnails: */
       
-      for (j = 0; j < num_files_in_dir; j++)
+      for (j = 0; j < num_files_in_dirs; j++)
 	{
 	  f = &(fs[j]);
 
@@ -10031,6 +10044,9 @@ int do_open(int want_new_tool)
 #ifdef DEBUG
       printf("%d saved files were found!\n", num_files);
 #endif
+  }
+
+
   
       if (num_files == 0)
 	{
@@ -10611,7 +10627,6 @@ int do_open(int want_new_tool)
 
   return(want_new_tool);
 }
-
 
 /* -------------- Poly Fill Stuff -------------- */
 
