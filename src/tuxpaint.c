@@ -551,11 +551,11 @@ enum {
   LANG_CY,     /* Welsh */
   LANG_DA,     /* Danish */
   LANG_DE,     /* German */
-  LANG_EE,     /* Estonian */
   LANG_EL,     /* Greek */
   LANG_EN,     /* English (American) (DEFAULT) */
   LANG_EN_GB,  /* English (British) */
   LANG_ES,     /* Spanish */
+  LANG_ET,     /* Estonian */
   LANG_EU,     /* Basque */
   LANG_FI,     /* Finnish */
   LANG_FR,     /* French */
@@ -610,6 +610,7 @@ static const char * lang_prefixes[NUM_LANGS] = {
   "en",
   "en_gb",
   "es",
+  "et",
   "eu",
   "fi",
   "fr",
@@ -792,12 +793,13 @@ static void show_lang_usage(FILE * f, const char * const prg)
 /* cs */     "  czech        cesky\n"
 /* da */     "  danish       dansk\n"
 /* nl */     "  dutch        nederlands\n"
+/* et */     "  estonian\n"
 /* fi */     "  finnish      suomi\n"
 /* fr */     "  french       francais\n"
 /* ga */     "  gaelic       gaidhlig\n"
 /* gl */     "  galician     galego\n"
 /* de */     "  german       deutsch\n"
-/* ee */     "  estonian\n"
+/* et */     "  estonian\n"
 /* el */     "  greek\n"
 /* he */     "  hebrew\n"
 /* hi */     "  hindi\n"
