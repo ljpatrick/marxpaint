@@ -1450,9 +1450,9 @@ static int text_state;
 // reasonable: 9,12,18... and 10,14,18...
 static int text_sizes[] = {9, 12, 18, 24, 36, 48,
 	                   56, 64, 96, 112, 128, 160};  // point sizes
-#define MIN_TEXT_SIZE 0
+#define MIN_TEXT_SIZE 0u
 #define MAX_TEXT_SIZE (sizeof text_sizes / sizeof text_sizes[0])
-static int text_size = 4;   // initial text size
+static unsigned text_size = 4;   // initial text size
 
 
 // for sorting through the font files at startup
@@ -2334,7 +2334,7 @@ enum {
 
 static void mainloop(void)
 {
-  int done, off_y, which, button_down, old_x, old_y, new_x, new_y,
+  int done, which, button_down, old_x, old_y, new_x, new_y,
     line_start_x, line_start_y, w, h, shape_tool_mode,
     shape_ctr_x, shape_ctr_y, shape_outer_x, shape_outer_y;
   int num_things;
