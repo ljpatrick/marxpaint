@@ -8,6 +8,13 @@ http://www.newbreedsoftware.com/tuxpaint/
 
 
 2004.November.21 (0.9.15)
+  * Improved compiler warnings (CLFAGS in Makefile)
+    Albert Cahalan <albert@users.sourceforge.net>
+
+  * Added beige and tan colors.  Changed "Lime" to "Neon Green."
+    Tweaked some color values.  Moved grey/silver next to black/white.
+    Albert Cahalan <albert@users.sourceforge.net>
+
   * Albanian translation created.
     Ilir Rugova <ilirrugova@gmx.de>
     Laurent Dhima <laurenti@alblinux.net>
