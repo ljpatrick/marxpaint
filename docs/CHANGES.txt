@@ -180,7 +180,8 @@ http://www.newbreedsoftware.com/tuxpaint/
       Albert Cahalan <albert@users.sf.net>
       Bill Kendrick <bill@newbreedsoftware.com>
 
-    * Gave up on 'HQ4X' scaler, for the time being. (Removed unused code.)
+    * Gave up on 'HQ4X' scaler and scanline polygon filling, for the
+      time being.  (i.e., removed unused code.)
 
   * Documentation updates:
     ----------------------
