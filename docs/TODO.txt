@@ -6,7 +6,7 @@ Copyright (c) 2004 by Bill Kendrick
 bill@newbreedsoftware.com
 http://www.newbreedsoftware.com/tuxpaint/
 
-June 20, 2004
+September 2, 2004
 
 HIGH-PRIORITY DOCUMENTATION CHANGES:
 ------------------------------------
@@ -65,6 +65,9 @@ HIGH-PRIORITY IMPLEMENTATION CHANGES:
 
 LOW-PRIORITY IMPLEMENTATION CHANGES:
 ------------------------------------
+  * Add "include={filename}" option to .tuxpaintrc config file,
+    to allow centralized config files.
+
   * Allow keyboard buttons to alter shapes (+/- for size, e.g.)
 
   * Fix and use scanline fill for filled shapes.
