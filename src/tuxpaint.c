@@ -6130,6 +6130,180 @@ static unsigned compute_default_scale_factor(double ratio)
 }
 
 
+static void load_stamps(void)
+{
+  int i;
+  char * homedirdir = get_fname("stamps");
+#ifndef NOSOUND
+  loadarbitrary(img_stamps, img_stamps_premirror,
+                txt_stamps, inf_stamps, snd_stamps,
+                &num_stamps, 0,
+                MAX_STAMPS, homedirdir, 0, -1, -1);
+#else
+  loadarbitrary(img_stamps, img_stamps_premirror,
+                txt_stamps, inf_stamps, &num_stamps, 0,
+                MAX_STAMPS, homedirdir, 0, -1, -1);
+#endif
+
+
+#ifndef NOSOUND
+  loadarbitrary(img_stamps, img_stamps_premirror,
+                txt_stamps, inf_stamps, snd_stamps, &num_stamps,
+                num_stamps, MAX_STAMPS, DATA_PREFIX "stamps", 0, -1, -1);
+#else
+  loadarbitrary(img_stamps, img_stamps_premirror,
+                txt_stamps, inf_stamps, &num_stamps,
+                num_stamps, MAX_STAMPS, DATA_PREFIX "stamps", 0, -1, -1);
+#endif
+
+#ifdef __APPLE__
+#ifndef NOSOUND
+  loadarbitrary(img_stamps, img_stamps_premirror,
+                txt_stamps, inf_stamps, snd_stamps, &num_stamps,
+                num_stamps, MAX_STAMPS, "/Library/Application Support/TuxPaint/stamps", 0, -1, -1);
+#else
+  loadarbitrary(img_stamps, img_stamps_premirror,
+                txt_stamps, inf_stamps, &num_stamps,
+                num_stamps, MAX_STAMPS, "/Library/Application Support/TuxPaint/stamps", 0, -1, -1);
+#endif
+#endif
+
+  if (num_stamps == 0)
+    {
+      fprintf(stderr,
+              "\nWarning: No stamps found in " DATA_PREFIX "stamps/\n"
+              "or %s\n\n", homedirdir);
+    }
+
+  free(homedirdir);
+
+
+  unsigned default_stamp_size = compute_default_scale_factor(1.0);
+
+  /* Create stamp thumbnails: */
+
+  for (i = 0; i < num_stamps; i++)
+    {
+      if (img_stamps[i]->w > 40 ||
+          img_stamps[i]->h > 40)
+        {
+          img_stamp_thumbs[i] = thumbnail(img_stamps[i], 40, 40, 1);
+        }
+      else
+        {
+          img_stamp_thumbs[i] = NULL;
+        }
+
+  
+      if (img_stamps_premirror[i] != NULL && !disable_stamp_controls)
+        {
+          /* Also thumbnail the pre-drawn mirror version, if any: */
+
+          if (img_stamps_premirror[i]->w > 40 ||
+              img_stamps_premirror[i]->h > 40)
+            {
+              img_stamp_thumbs_premirror[i] =
+                thumbnail(img_stamps_premirror[i], 40, 40, 1);
+            }
+          else
+            {
+              img_stamp_thumbs_premirror[i] = NULL;
+            }
+        }
+      else
+        {
+          img_stamps_premirror[i] = NULL;
+        }
+
+      state_stamps[i] = malloc(sizeof(state_type));
+
+      if (inf_stamps[i] == NULL)
+        {
+          /* Didn't load one for this stamp, assume defaults: */
+          
+          inf_stamps[i] = malloc(sizeof(info_type));
+          inf_stamps[i]->tintable = 0;
+          inf_stamps[i]->colorable = 0;
+          inf_stamps[i]->mirrorable = 1;
+          inf_stamps[i]->flipable = 1;
+          inf_stamps[i]->ratio = 1.0;
+          inf_stamps[i]->tinter = TINTER_NORMAL;
+        }
+
+      {
+        unsigned int upper = HARD_MAX_STAMP_SIZE;
+        unsigned int lower = 0;
+
+        do
+        {
+          scaleparams *s = &scaletable[upper];
+          int pw, ph; // proposed width and height
+
+          pw = (img_stamps[i]->w * s->numer + s->denom - 1) / s->denom;
+          ph = (img_stamps[i]->h * s->numer + s->denom - 1) / s->denom;
+
+          // OK to let a stamp stick off the sides in one direction, not two
+          if (pw < canvas->w * 2 && ph < canvas->h * 1)
+            break;
+          if (pw < canvas->w * 1 && ph < canvas->h * 2)
+            break;
+        }
+        while (--upper);
+
+
+        do
+        {
+          scaleparams *s = &scaletable[lower];
+          int pw, ph; // proposed width and height
+
+          pw = (img_stamps[i]->w * s->numer + s->denom - 1) / s->denom;
+          ph = (img_stamps[i]->h * s->numer + s->denom - 1) / s->denom;
+
+          if (pw*ph > 20)
+            break;
+        }
+        while (++lower < HARD_MAX_STAMP_SIZE);
+
+
+        if(upper<lower)
+        {
+          // this, if it ever happens, is very bad
+          upper = (upper+lower)/2;
+          lower = upper;
+        }
+
+        unsigned mid = default_stamp_size;
+        if(inf_stamps[i]->ratio != 1.0)
+           mid = compute_default_scale_factor(inf_stamps[i]->ratio);
+
+        if(mid > upper)
+          mid = upper;
+        
+        if(mid < lower)
+          mid = lower;
+
+        state_stamps[i]->min  = lower;
+        state_stamps[i]->size = mid;
+        state_stamps[i]->max  = upper;
+      }
+
+
+      /* If Tux Paint is in mirror-image-by-default mode, mirror, if we can: */
+  
+      if (mirrorstamps && inf_stamps[i]->mirrorable)
+        state_stamps[i]->mirrored = 1;
+      else
+        state_stamps[i]->mirrored = 0;
+
+      state_stamps[i]->flipped = 0;
+
+      show_progress_bar();
+    }
+}
+
+
+
+
 /* Setup: */
 
 static void setup(int argc, char * argv[])
@@ -7187,177 +7361,8 @@ static void setup(int argc, char * argv[])
 
   groupfonts();
 
-  /* Load stamps: */
-
-  if (dont_load_stamps == 0)
-    {
-      homedirdir = get_fname("stamps");
-#ifndef NOSOUND
-      loadarbitrary(img_stamps, img_stamps_premirror,
-		    txt_stamps, inf_stamps, snd_stamps,
-		    &num_stamps, 0,
-		    MAX_STAMPS, homedirdir, 0, -1, -1);
-#else
-      loadarbitrary(img_stamps, img_stamps_premirror,
-		    txt_stamps, inf_stamps, &num_stamps, 0,
-		    MAX_STAMPS, homedirdir, 0, -1, -1);
-#endif
-
-
-#ifndef NOSOUND
-      loadarbitrary(img_stamps, img_stamps_premirror,
-		    txt_stamps, inf_stamps, snd_stamps, &num_stamps,
-		    num_stamps, MAX_STAMPS, DATA_PREFIX "stamps", 0, -1, -1);
-#else
-      loadarbitrary(img_stamps, img_stamps_premirror,
-		    txt_stamps, inf_stamps, &num_stamps,
-		    num_stamps, MAX_STAMPS, DATA_PREFIX "stamps", 0, -1, -1);
-#endif
-
-#ifdef __APPLE__
-#ifndef NOSOUND
-      loadarbitrary(img_stamps, img_stamps_premirror,
-		    txt_stamps, inf_stamps, snd_stamps, &num_stamps,
-		    num_stamps, MAX_STAMPS, "/Library/Application Support/TuxPaint/stamps", 0, -1, -1);
-#else
-      loadarbitrary(img_stamps, img_stamps_premirror,
-		    txt_stamps, inf_stamps, &num_stamps,
-		    num_stamps, MAX_STAMPS, "/Library/Application Support/TuxPaint/stamps", 0, -1, -1);
-#endif
-#endif
-
-      if (num_stamps == 0)
-	{
-	  fprintf(stderr,
-		  "\nWarning: No stamps found in " DATA_PREFIX "stamps/\n"
-		  "or %s\n\n", homedirdir);
-	}
-
-      free(homedirdir);
-
-
-      unsigned default_stamp_size = compute_default_scale_factor(1.0);
-
-      /* Create stamp thumbnails: */
-
-      for (i = 0; i < num_stamps; i++)
-	{
-	  if (img_stamps[i]->w > 40 ||
-	      img_stamps[i]->h > 40)
-	    {
-	      img_stamp_thumbs[i] = thumbnail(img_stamps[i], 40, 40, 1);
-	    }
-	  else
-	    {
-	      img_stamp_thumbs[i] = NULL;
-	    }
-
-      
-	  if (img_stamps_premirror[i] != NULL && !disable_stamp_controls)
-	    {
-	      /* Also thumbnail the pre-drawn mirror version, if any: */
-
-	      if (img_stamps_premirror[i]->w > 40 ||
-		  img_stamps_premirror[i]->h > 40)
-		{
-		  img_stamp_thumbs_premirror[i] =
-		    thumbnail(img_stamps_premirror[i], 40, 40, 1);
-		}
-	      else
-		{
-		  img_stamp_thumbs_premirror[i] = NULL;
-		}
-	    }
-	  else
-	    {
-	      img_stamps_premirror[i] = NULL;
-	    }
-
-	  state_stamps[i] = malloc(sizeof(state_type));
-
-	  if (inf_stamps[i] == NULL)
-	    {
-	      /* Didn't load one for this stamp, assume defaults: */
-	      
-	      inf_stamps[i] = malloc(sizeof(info_type));
-	      inf_stamps[i]->tintable = 0;
-	      inf_stamps[i]->colorable = 0;
-	      inf_stamps[i]->mirrorable = 1;
-	      inf_stamps[i]->flipable = 1;
-	      inf_stamps[i]->ratio = 1.0;
-	      inf_stamps[i]->tinter = TINTER_NORMAL;
-	    }
-
-	  {
-	    unsigned int upper = HARD_MAX_STAMP_SIZE;
-	    unsigned int lower = 0;
-
-	    do
-	    {
-	      scaleparams *s = &scaletable[upper];
-	      int pw, ph; // proposed width and height
-
-	      pw = (img_stamps[i]->w * s->numer + s->denom - 1) / s->denom;
-	      ph = (img_stamps[i]->h * s->numer + s->denom - 1) / s->denom;
-
-	      // OK to let a stamp stick off the sides in one direction, not two
-	      if (pw < canvas->w * 2 && ph < canvas->h * 1)
-		break;
-	      if (pw < canvas->w * 1 && ph < canvas->h * 2)
-		break;
-	    }
-	    while (--upper);
-
-
-	    do
-	    {
-	      scaleparams *s = &scaletable[lower];
-	      int pw, ph; // proposed width and height
-
-	      pw = (img_stamps[i]->w * s->numer + s->denom - 1) / s->denom;
-	      ph = (img_stamps[i]->h * s->numer + s->denom - 1) / s->denom;
-
-	      if (pw*ph > 20)
-		break;
-	    }
-	    while (++lower < HARD_MAX_STAMP_SIZE);
-
-
-	    if(upper<lower)
-	    {
-	      // this, if it ever happens, is very bad
-	      upper = (upper+lower)/2;
-	      lower = upper;
-	    }
-
-	    unsigned mid = default_stamp_size;
-	    if(inf_stamps[i]->ratio != 1.0)
-	       mid = compute_default_scale_factor(inf_stamps[i]->ratio);
-
-	    if(mid > upper)
-	      mid = upper;
-	    
-	    if(mid < lower)
-	      mid = lower;
-
-	    state_stamps[i]->min  = lower;
-	    state_stamps[i]->size = mid;
-	    state_stamps[i]->max  = upper;
-	  }
-
-
-	  /* If Tux Paint is in mirror-image-by-default mode, mirror, if we can: */
-      
-	  if (mirrorstamps && inf_stamps[i]->mirrorable)
-	    state_stamps[i]->mirrored = 1;
-	  else
-	    state_stamps[i]->mirrored = 0;
-
-	  state_stamps[i]->flipped = 0;
-
-	  show_progress_bar();
-	}
-    }
+  if (!dont_load_stamps)
+    load_stamps();
 
 
   /* Load magic icons: */
