@@ -7,7 +7,7 @@ bill@newbreedsoftware.com
 http://www.newbreedsoftware.com/tuxpaint/
 
 
-June 17, 2002 - June 5, 2004
+June 17, 2002 - June 10, 2004
 
 
 * Design and Coding:
@@ -128,6 +128,9 @@ June 17, 2002 - June 5, 2004
 
   * Greek
     The Greek Linux i18n Team <i18ngr@lists.hellug.gr>  [NOTE: mailing list]
+
+  * Hindi
+    Ankit Malik <greatestankit@yahoo.co.in>
 
   * Hungarian
     Török Gábor <gabo@linuxmania.hu>  [e-mail bad!?]

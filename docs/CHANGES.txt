@@ -7,7 +7,7 @@ bill@newbreedsoftware.com
 http://www.newbreedsoftware.com/tuxpaint/
 
 
-2004.May.30 (0.9.14) [cvs]
+2004.Jun.11 (0.9.14) [cvs]
   * Cleaned up desktop entry file.
     Karl Ove Hufthammer <karl@huftis.org>
 
@@ -46,6 +46,9 @@ http://www.newbreedsoftware.com/tuxpaint/
   * Added "--lang simplified-chinese" option (same as "--lang chinese").
     Simplified also now looks for "zh_cn.ttf" font, not "zh.ttf"
     (was too ambiguous).
+
+  * Hindi translation created.
+    Ankit Malik <greatestankit@yahoo.co.in>
 
   * Welsh translation created.
     Kevin Donnelly <kevin@dotmon.com>

@@ -21,12 +21,12 @@
   along with this program; if not, write to the Free Software
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   
-  June 14, 2002 - June 1, 2004
+  June 14, 2002 - June 11, 2004
 */
 
 
 #define VER_VERSION     "0.9.14"
-#define VER_DATE        "2004.06.01"
+#define VER_DATE        "2004.06.11"
 
 
 /* #define DEBUG */
@@ -302,6 +302,7 @@ enum {
   LANG_FI,     /* Finnish */
   LANG_FR,     /* French */
   LANG_HE,     /* Hebrew */
+  LANG_HI,     /* Hindi */
   LANG_HR,     /* Croatian */
   LANG_HU,     /* Hungarian */
   LANG_ID,     /* Indonesian */
@@ -349,6 +350,7 @@ const char * lang_prefixes[NUM_LANGS] = {
   "fi",
   "fr",
   "he",
+  "hi",
   "hr",
   "hu",
   "id",
@@ -388,6 +390,7 @@ int lang_use_unicode[] = {
 int lang_use_utf8[] = {
   LANG_EL,
   LANG_HE,
+  LANG_HI,
   LANG_JA,
   LANG_KO,
   LANG_TA,
@@ -3828,6 +3831,7 @@ void show_lang_usage(FILE * f, char * prg)
 /* de */     "  german       deutsch\n"
 /* el */     "  greek\n"
 /* he */     "  hebrew\n"
+/* hi */     "  hindi\n"
 /* hu */     "  hungarian    magyar\n"
 /* is */     "  icelandic    islenska\n"
 /* id */     "  indonesian   bahasa-indonesia\n"
@@ -3886,6 +3890,7 @@ void show_locale_usage(FILE * f, char * prg)
 	  "  de_DE   (German       Deutsch)\n"
 	  "  el_GR   (Greek)\n"
 	  "  he_IL   (Hebrew)\n"
+	  "  hi_IN   (Hindi)\n"
 	  "  hr_HR   (Croatian     Hrvatski)\n"
 	  "  hu_HU   (Hungarian    Magyar)\n"
 	  "  is_IS   (Icelandic    Islenska)\n"
@@ -4496,6 +4501,11 @@ void setup(int argc, char * argv[])
 	{
 	  putenv("LANG=he_IL");
 	  putenv("LC_ALL=he_IL");
+	}
+      else if (strcmp(langstr, "hindi") == 0)
+	{
+	  putenv("LANG=hi_IN");
+	  putenv("LC_ALL=hi_IN");
 	}
       else if (strcmp(langstr, "hungarian") == 0 ||
 	       strcmp(langstr, "magyar") == 0)
