@@ -7,12 +7,12 @@
   bill@newbreedsoftware.com
   http://www.newbreedsoftware.com/tuxpaint/
   
-  June 14, 2002 - February 28, 2003
+  June 14, 2002 - March 14, 2003
 */
 
 
 #define VER_VERSION     "0.9.11"
-#define VER_DATE        "2003.02.28"
+#define VER_DATE        "2003.03.14"
 
 
 /* #define DEBUG */
@@ -3671,147 +3671,173 @@ void setup(int argc, char * argv[])
   if (langstr != NULL)
   {
     if (strcmp(langstr, "english") == 0 ||
-        strcmp(langstr, "american-english") == 0)
-  	{
-	  putenv("LANG=C");
-	}
-	else if (strcmp(langstr, "spanish") == 0 ||
-	    strcmp(langstr, "espanol") == 0)
-  	{
-	  putenv("LANG=es_ES@euro");
-	}
-	else if (strcmp(langstr, "french") == 0 ||
-	    strcmp(langstr, "francais") == 0)
-  	{
-	  putenv("LANG=fr_FR@euro");
-	}
-	else if (strcmp(langstr, "icelandic") == 0 ||
-	    strcmp(langstr, "islenska") == 0)
-  	{
-	  putenv("LANG=is_IS");
-	}
-	else if (strcmp(langstr, "german") == 0 ||
-	    strcmp(langstr, "deutsch") == 0)
-  	{
-	  putenv("LANG=de_DE@euro");
-	}
-	else if (strcmp(langstr, "finnish") == 0 ||
-		 strcmp(langstr, "suomi") == 0)
-  	{
-	  putenv("LANG=fi_FI@euro");
-	}
-	else if (strcmp(langstr, "turkish") == 0)
-	{
-	  putenv("LANG=tr_TR@euro");
-	}
-	else if (strcmp(langstr, "norwegian") == 0 ||
-		 strcmp(langstr, "nynorsk") == 0 ||
-		 strcmp(langstr, "norsk") == 0)
-  	{
-	  putenv("LANG=nn_NO");
-	}
-	else if (strcmp(langstr, "italian") == 0 ||
-		 strcmp(langstr, "italiano") == 0)
-  	{
-	  putenv("LANG=it_IT@euro");
-	}
-	else if (strcmp(langstr, "dutch") == 0)
-  	{
-	  putenv("LANG=nl_NL@euro");
-	}
-	else if (strcmp(langstr, "czech") == 0 ||
-	         strcmp(langstr, "cesky") == 0)
-  	{
-	  putenv("LANG=cs_CZ");
-	}
-	else if (strcmp(langstr, "danish") == 0 ||
-		 strcmp(langstr, "dansk") == 0)
-  	{
-	  putenv("LANG=da_DK");
-	}
-	else if (strcmp(langstr, "swedish") == 0 ||
-	         strcmp(langstr, "svenska") == 0)
-  	{
-	  putenv("LANG=sv_SE@euro");
-	}
-        else if (strcmp(langstr, "slovak") == 0)
-	{
-	  putenv("LANG=sk_SK");
-	}
-	else if (strcmp(langstr, "british-english") == 0 ||
-	         strcmp(langstr, "british") == 0)
-  	{
-	  putenv("LANG=en_GB");
-	}
-	else if (strcmp(langstr, "hungarian") == 0 ||
-		 strcmp(langstr, "magyar") == 0)
-  	{
-	  putenv("LANG=hu_HU");
-	}
-        else if (strcmp(langstr, "japanese") == 0)
-	{
-	  putenv("LANG=ja_JP.UTF-8");
-	}
-        else if (strcmp(langstr, "korean") == 0)
-	{
-	  putenv("LANG=ko_KR.UTF-8");
-	}
-        else if (strcmp(langstr, "lithuanian") == 0 ||
-                 strcmp(langstr, "lietuviu") == 0)
-	{
-	  putenv("LANG=lt_LT");
-	  putenv("LC_ALL=lt_LT");
-	}
-        else if (strcmp(langstr, "chinese") == 0)
-	{
-	  putenv("LANG=zh_CN.UTF-8");
-	}
-        else if (strcmp(langstr, "indonesian") == 0 ||
-		 strcmp(langstr, "bahasa-indonesia") == 0)
-	{
-	  putenv("LANG=id_ID");
-	}
-        else if (strcmp(langstr, "polish") == 0 ||
-		 strcmp(langstr, "polski") == 0)
-	{
-	  putenv("LANG=pl_PL");
-	}
-        else if (strcmp(langstr, "greek") == 0)
-	{
-	  putenv("LANG=el_GR.UTF8");
-	}
-        else if (strcmp(langstr, "romanian") == 0)
-	{
-	  putenv("LANG=ro_RO");
-	}
-	else if (strcmp(langstr, "catalan") == 0 ||
-		 strcmp(langstr, "catala") == 0)
-	{
-	  putenv("LANG=ca_ES");
-	}
-	else if (strcmp(langstr, "portuguese") == 0 ||
+	strcmp(langstr, "american-english") == 0)
+      {
+	putenv("LANG=C");
+	putenv("LC_ALL=C");
+      }
+    else if (strcmp(langstr, "catalan") == 0 ||
+	     strcmp(langstr, "catala") == 0)
+      {
+	putenv("LANG=ca_ES");
+	putenv("LC_ALL=ca_ES");
+      }
+    else if (strcmp(langstr, "czech") == 0 ||
+	     strcmp(langstr, "cesky") == 0)
+      {
+	putenv("LANG=cs_CZ");
+	putenv("LC_ALL=cs_CZ");
+      }
+    else if (strcmp(langstr, "danish") == 0 ||
+	     strcmp(langstr, "dansk") == 0)
+      {
+	putenv("LANG=da_DK");
+	putenv("LC_ALL=da_DK");
+      }
+    else if (strcmp(langstr, "german") == 0 ||
+	     strcmp(langstr, "deutsch") == 0)
+      {
+	putenv("LANG=de_DE@euro");
+	putenv("LC_ALL=de_DE@euro");
+      }
+    else if (strcmp(langstr, "greek") == 0)
+      {
+	putenv("LANG=el_GR.UTF8");
+	putenv("LC_ALL=el_GR.UTF8");
+      }
+    else if (strcmp(langstr, "british-english") == 0 ||
+	     strcmp(langstr, "british") == 0)
+      {
+	putenv("LANG=en_GB");
+	putenv("LC_ALL=en_GB");
+      }
+    else if (strcmp(langstr, "spanish") == 0 ||
+	     strcmp(langstr, "espanol") == 0)
+      {
+	putenv("LANG=es_ES@euro");
+	putenv("LC_ALL=es_ES@euro");
+      }
+    else if (strcmp(langstr, "finnish") == 0 ||
+	     strcmp(langstr, "suomi") == 0)
+      {
+	putenv("LANG=fi_FI@euro");
+	putenv("LC_ALL=fi_FI@euro");
+      }
+    else if (strcmp(langstr, "french") == 0 ||
+	     strcmp(langstr, "francais") == 0)
+      {
+	putenv("LANG=fr_FR@euro");
+	putenv("LC_ALL=fr_FR@euro");
+      }
+    else if (strcmp(langstr, "hungarian") == 0 ||
+	     strcmp(langstr, "magyar") == 0)
+      {
+	putenv("LANG=hu_HU");
+	putenv("LC_ALL=hu_HU");
+      }
+    else if (strcmp(langstr, "indonesian") == 0 ||
+	     strcmp(langstr, "bahasa-indonesia") == 0)
+      {
+	putenv("LANG=id_ID");
+	putenv("LC_ALL=id_ID");
+      }
+    else if (strcmp(langstr, "icelandic") == 0 ||
+	     strcmp(langstr, "islenska") == 0)
+      {
+	putenv("LANG=is_IS");
+	putenv("LC_ALL=is_IS");
+      }
+    else if (strcmp(langstr, "italian") == 0 ||
+	     strcmp(langstr, "italiano") == 0)
+      {
+	putenv("LANG=it_IT@euro");
+	putenv("LC_ALL=it_IT@euro");
+      }
+    else if (strcmp(langstr, "japanese") == 0)
+      {
+	putenv("LANG=ja_JP.UTF-8");
+	putenv("LC_ALL=ja_JP.UTF-8");
+      }
+    else if (strcmp(langstr, "korean") == 0)
+      {
+	putenv("LANG=ko_KR.UTF-8");
+	putenv("LC_ALL=ko_KR.UTF-8");
+      }
+    else if (strcmp(langstr, "lithuanian") == 0 ||
+	     strcmp(langstr, "lietuviu") == 0)
+      {
+	putenv("LANG=lt_LT");
+	putenv("LC_ALL=lt_LT");
+      }
+    else if (strcmp(langstr, "dutch") == 0)
+      {
+	putenv("LANG=nl_NL@euro");
+	putenv("LC_ALL=nl_NL@euro");
+      }
+    else if (strcmp(langstr, "norwegian") == 0 ||
+	     strcmp(langstr, "nynorsk") == 0 ||
+	     strcmp(langstr, "norsk") == 0)
+      {
+	putenv("LANG=nn_NO");
+	putenv("LC_ALL=nn_NO");
+      }
+    else if (strcmp(langstr, "polish") == 0 ||
+	     strcmp(langstr, "polski") == 0)
+      {
+	putenv("LANG=pl_PL");
+	putenv("LC_ALL=pl_PL");
+      }
+    else if (strcmp(langstr, "brazilian-portuguese") == 0 ||
+	     strcmp(langstr, "portugues-brazilian") == 0 ||
+	     strcmp(langstr, "brazilian") == 0)
+      {
+	putenv("LANG=pt_BR");
+	putenv("LC_ALL=pt_BR");
+      }
+    else if (strcmp(langstr, "portuguese") == 0 ||
 		 strcmp(langstr, "portugues") == 0)
-	{
-	  putenv("LANG=pt_PT@euro");
-	}
-	else if (strcmp(langstr, "brazilian-portuguese") == 0 ||
-	         strcmp(langstr, "portugues-brazilian") == 0 ||
-		 strcmp(langstr, "brazilian") == 0)
-  	{
-	  putenv("LANG=pt_BR");
-	}
-	else
-	{
-	  fprintf(stderr, "%s is an invalid language\n", langstr);
-          show_usage(stderr, (char *) getfilename(argv[0]));
-	  free(langstr);
-          exit(1);
-	}
-	
-	setlocale(LC_ALL, "");
+      {
+	putenv("LANG=pt_PT@euro");
+	putenv("LC_ALL=pt_PT@euro");
+      }
+    else if (strcmp(langstr, "romanian") == 0)
+      {
+	putenv("LANG=ro_RO");
+	putenv("LC_ALL=ro_RO");
+      }
+    else if (strcmp(langstr, "slovak") == 0)
+      {
+	putenv("LANG=sk_SK");
+	putenv("LC_ALL=sk_SK");
+      }
+    else if (strcmp(langstr, "swedish") == 0 ||
+	     strcmp(langstr, "svenska") == 0)
+      {
+	putenv("LANG=sv_SE@euro");
+	putenv("LC_ALL=sv_SE@euro");
+      }
+    else if (strcmp(langstr, "turkish") == 0)
+      {
+	putenv("LANG=tr_TR@euro");
+	putenv("LC_ALL=tr_TR@euro");
+      }
+    else if (strcmp(langstr, "chinese") == 0)
+      {
+	putenv("LANG=zh_CN.UTF-8");
+	putenv("LC_ALL=zh_CN.UTF-8");
+      }
+    else
+      {
+	fprintf(stderr, "%s is an invalid language\n", langstr);
+	show_usage(stderr, (char *) getfilename(argv[0]));
 	free(langstr);
-     }
-
+	exit(1);
+      }
+    
+    setlocale(LC_ALL, "");
+    free(langstr);
+  }
+  
   
   bindtextdomain("tuxpaint", LOCALEDIR);
 
