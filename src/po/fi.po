@@ -1,13 +1,13 @@
 # Tux Paint messages in Finnish
-# Copyright (C) 2002
+# Copyright (C) 2002-2004
 # Tarmo Toikkanen <tarmo.toikkanen@iki.fi>
 # 
 msgid ""
 msgstr ""
-"Project-Id-Version: TuxPaint 0.0.1pre\n"
+"Project-Id-Version: TuxPaint\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2004-07-16 21:12+0200\n"
-"PO-Revision-Date: 2002-10-01 11:57+0300\n"
+"POT-Creation-Date: 2004-07-18 22:37+0200\n"
+"PO-Revision-Date: 2004-07-18 16:09+0200\n"
 "Last-Translator: Tarmo Toikkanen <tarmo@iki.fi>\n"
 "Language-Team: Finnish <fi@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -15,72 +15,58 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 msgid "A drawing program for children."
-msgstr "On piirto-ohjelma pienille lapsille."
+msgstr "Piirto-ohjelma pienille lapsille."
 
 msgid "Drawing program"
-msgstr ""
+msgstr "Piirto-ohjelma"
 
-#, fuzzy
 msgid "Tux Paint"
-msgstr "Maalaa"
+msgstr "Tux Paint"
 
-#, fuzzy
 msgid "Black!"
-msgstr "Musta"
+msgstr "Musta!"
 
-#, fuzzy
 msgid "White!"
-msgstr "Valkoinen"
+msgstr "Valkoinen!"
 
-#, fuzzy
 msgid "Red!"
-msgstr "Palauta!"
+msgstr "Punainen!"
 
-#, fuzzy
 msgid "Pink!"
-msgstr "Vaaleanpunainen"
+msgstr "Vaaleanpunainen!"
 
-#, fuzzy
 msgid "Orange!"
-msgstr "Oranssi"
+msgstr "Oranssi!"
 
-#, fuzzy
 msgid "Yellow!"
-msgstr "Keltainen"
+msgstr "Keltainen!"
 
-#, fuzzy
 msgid "Lime!"
-msgstr "Viivat"
+msgstr "Lime!"
 
-#, fuzzy
 msgid "Green!"
-msgstr "Vihreä"
+msgstr "Vihreä!"
 
-#, fuzzy
 msgid "Cyan!"
-msgstr "Turkoosi"
+msgstr "Turkoosi!"
 
-#, fuzzy
 msgid "Blue!"
-msgstr "Sininen"
+msgstr "Sininen!"
 
-#, fuzzy
 msgid "Purple!"
-msgstr "Violetti"
+msgstr "Violetti!"
 
 msgid "Fuchsia!"
-msgstr ""
+msgstr "Fuksia!"
 
-#, fuzzy
 msgid "Brown!"
-msgstr "Ruskea"
+msgstr "Ruskea!"
 
-#, fuzzy
 msgid "Gray!"
-msgstr "Hienoa!"
+msgstr "Harmaa!"
 
 msgid "Silver!"
-msgstr ""
+msgstr "Hopea!"
 
 msgid "Great!"
 msgstr "Hienoa!"
@@ -136,27 +122,21 @@ msgstr "Täytä"
 msgid "You can draw in rainbow colors!"
 msgstr "Voit piirtää sateenkaaren väreissä!"
 
-#, fuzzy
 msgid "Click and move to draw sparkles."
 msgstr "Piirrä kipinöitä liikuttamalla hiirtä nappi pohjassa."
 
-#, fuzzy
 msgid "Click to make a mirror image."
-msgstr "Tee kuvasta peilikuva napsauttamalla hiirtä!"
+msgstr "Tee kuvasta peilikuva napsauttamalla hiirtä."
 
-#, fuzzy
 msgid "Click to flip the picture upside-down."
-msgstr "Käännä kuva ylösalaisin napsauttamalla hiirtä!"
+msgstr "Käännä kuva ylösalaisin napsauttamalla hiirtä."
 
-#, fuzzy
 msgid "Click and move the mouse around to blur the picture."
 msgstr "Voit sumentaa kuvaa liikuttamalla hiirtä nappi pohjassa."
 
-#, fuzzy
 msgid "Click and move the mouse around to make the picture blocky."
 msgstr "Voit rakeistaa kuvaa liikuttamalla hiirtä nappi pohjassa."
 
-#, fuzzy
 msgid "Click and move the mouse around to draw a negative."
 msgstr "Vaihda värit vastakkaisiksi liikuttamalla hiirtä nappi pohjassa."
 
@@ -167,19 +147,15 @@ msgid ""
 "Click and move the mouse around to turn the picture into a chalk drawing."
 msgstr "Muuta kuva hiilipiirrokseksi liikuttamalla hiirtä nappi pohjassa."
 
-#, fuzzy
 msgid "Click and move the mouse around to make the picture drip."
 msgstr "Valuta kuvaa liikuttamalla hiirtä nappi pohjassa."
 
-#, fuzzy
 msgid "Click and move the mouse to thicken the picture."
-msgstr "Voit sumentaa kuvaa liikuttamalla hiirtä nappi pohjassa."
+msgstr "Voit vahvistaa kuvaa liikuttamalla hiirtä nappi pohjassa."
 
-#, fuzzy
 msgid "Click and move the mouse to thin the picture."
-msgstr "Voit sumentaa kuvaa liikuttamalla hiirtä nappi pohjassa."
+msgstr "Voit ohentaa kuvaa liikuttamalla hiirtä nappi pohjassa."
 
-#, fuzzy
 msgid "Click in the picture to fill that area with color."
 msgstr "Napsauta kuvasta aluetta, jonka haluat värittää"
 
@@ -222,25 +198,23 @@ msgstr "Viisikulmiossa on viisi sivua."
 msgid "A diamond is a square, turned around slightly."
 msgstr "Vinoneliö on neliö, joka on käännetty vinoon."
 
-#, fuzzy
 msgid "Tools"
-msgstr "Hienoa!"
+msgstr "Työkalut"
 
 msgid "Colors"
-msgstr ""
+msgstr "Värit"
 
 msgid "Brushes"
-msgstr ""
+msgstr "Pensselit"
 
-#, fuzzy
 msgid "Stamps"
-msgstr "Leimaa"
+msgstr "Leimat"
 
 msgid "Shapes"
 msgstr "Muodot"
 
 msgid "Letters"
-msgstr ""
+msgstr "Kirjaimet"
 
 msgid "Magic"
 msgstr "Taiat"
@@ -288,18 +262,18 @@ msgstr "Valitse väri ja siveltimen muoto, joilla haluat piirtää."
 msgid "Pick a picture to stamp around your drawing."
 msgstr "Valitse kuva, jonka haluat leimata piirustukseesi."
 
-#, fuzzy
 msgid "Click to start drawing a line. Let go to complete it."
 msgstr ""
-"Paina hiiren nappi alas aloittaaksesi viivan piirto ja päästä irti "
-"lopettaaksesi."
+"Paina hiiren nappi alas aloittaaksesi viivan piirto ja päästä irti kun olet "
+"valmis."
 
 msgid ""
 "Pick a shape. Click to pick the center, drag, then let go when it is the "
 "size you want. Move around to rotate it, and click to draw it."
 msgstr ""
+"Valitse muoto. Napsauta keskikohta, raahaa ja päästä irti, kun koko on "
+"haluamasi. Pyöritä liikuttamalla hiirtä ja napsauta piirtääksesi kuvio."
 
-#, fuzzy
 msgid "Choose a style of text. Click on your drawing and you can start typing."
 msgstr ""
 "Valitse tekstityyli. Napsauta piirrokseesi, niin voit aloittaa "
@@ -373,25 +347,22 @@ msgid "Can’t open that picture!"
 msgstr "Kuvan avaaminen ei onnistu!"
 
 msgid "OK"
-msgstr ""
+msgstr "OK"
 
 msgid "Starting a new picture will erase the current one!"
 msgstr "Uuden kuvan aloittaminen pyyhkii nykyisen pois!"
 
-#, fuzzy
 msgid "That’s OK!"
-msgstr "Se sopii"
+msgstr "Se sopii!"
 
-#, fuzzy
 msgid "Never mind!"
 msgstr "Ei sitten!"
 
 msgid "There are no saved files!"
 msgstr "Ei löytynyt yhtään tallennettuja kuvia!"
 
-#, fuzzy
 msgid "Print your picture now?"
-msgstr "Tallennetaanko kuvasi ensin?"
+msgstr "Haluatko tulostaa kuvasi nyt?"
 
 msgid "Your picture has been printed!"
 msgstr "Kuvasi on tulostettu!"
@@ -411,29 +382,11 @@ msgid "Back"
 msgstr "Takaisin"
 
 #. FIXME: Move elsewhere!!!
-#, fuzzy
 msgid "Save over the older version of this picture?"
 msgstr "Tämän niminen kuva on jo olemassa. Tallennetaanko sen päälle?"
 
 msgid "No, save a new file"
 msgstr "Ei, tallennetaan uuteen tiedostoon"
 
-#, fuzzy
 msgid "Choose the picture you want, then click “Open”."
 msgstr "Valitse haluamasi kuva ja valitse 'Avaa'"
-
-#~ msgid "Okay"
-#~ msgstr "Selvä"
-
-#~ msgid "Red"
-#~ msgstr "Punainen"
-
-#~ msgid "Grey"
-#~ msgstr "Harmaa"
-
-#~ msgid ""
-#~ "Pick a shape to draw.  Click once to pick the center of the shape, click "
-#~ "again to draw it."
-#~ msgstr ""
-#~ "Valitse piirrettävä kuvio.  Valitse keskikohta napsauttamalla ja piirrä "
-#~ "kuvio napsauttamalla uudelleen."

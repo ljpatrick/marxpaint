@@ -7,7 +7,10 @@ bill@newbreedsoftware.com
 http://www.newbreedsoftware.com/tuxpaint/
 
 
-2004.July.16 (0.9.14) [cvs]
+2004.July.18 (0.9.14) [cvs]
+  * Updated Finnish translation.
+    Tarmo Toikkanen <tarmo.toikkanen@iki.fi>
+
   * Updated Tamil translation.
     Muguntharaj <mugunth@thamizha.com>
 
