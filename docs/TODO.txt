@@ -128,6 +128,8 @@ HIGH-PRIORITY TRANSLATION STUFF:
 
   * Make right-to-left strings not wordwrap with the shortest line at
     the top!
+    
+  * Writing non-ASCII characters with the text tool doesn't work.
 
   * Finish current translations.  (Especially documentation!)
 
