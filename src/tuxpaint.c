@@ -38,6 +38,11 @@
 #define VIDEO_BPP 32 // might be fastest, if conversion funcs removed
 
 
+// plan to rip this out as soon as it is considered stable
+#ifndef NO_THREADS
+#define THREADED_FONTS
+#endif
+
 /* Method for printing images: */
 
 #define PRINTMETHOD_PS             /* Direct to PostScript */
@@ -300,6 +305,23 @@ extern char* g_win32_getlocale(void);
 #else
 #define FNAME_EXTENSION ".bmp"
 #endif
+
+#if defined(THREADED_FONTS) || defined(THREADED_STAMPS)
+#include "SDL_thread.h"
+#include "SDL_mutex.h"
+#else
+#define SDL_CreateThread(fn,vp) (void*)(long)(fn(vp))
+#define SDL_WaitThread(tid,rcp) do{(void)tid;(void)rcp;}while(0)
+#define SDL_Thread int
+#define SDL_mutex int
+#define SDL_CreateMutex() 0  // creates in released state
+#define SDL_DestroyMutex(lock)
+#define SDL_mutexP(lock)  // take lock
+#define SDL_mutexV(lock)  // release lock
+#endif
+
+static SDL_Thread *font_thread;
+static volatile long font_thread_done;
 
 #include "tools.h"
 #include "titles.h"
@@ -1745,7 +1767,10 @@ static void parse_font_style(style_info *si)
       if(!stumped)
         {
           stumped=1;
+#if 0
+// THREADED_FONTS
           printf("Font style parser stumped by \"%s\".\n", si->style);
+#endif
         }
       sp++; // bad: an unknown character
     }
@@ -1769,6 +1794,8 @@ static void groupfonts_range(style_info **base, int count)
   int boldmap[4] = {-1,-1,-1,-1};
   int i;
 
+#if 0
+// THREADED_FONTS
 if(count<1 || count>4)
 {
 printf("\n::::::: %d styles in %s:\n",count, base[0]->family);
@@ -1778,6 +1805,7 @@ while(i--)
 printf("               %s\n", base[i]->style);
 }
 }
+#endif
 
   i = count;
   while(i--)
@@ -1880,16 +1908,22 @@ printf("               %s\n", base[i]->style);
       int b = boldmap[base[i]->boldness];
       if(b==-1)
         {
+#if 0
+// THREADED_FONTS
           printf("too many boldness levels, discarding: %s, %s\n", base[i]->family, base[i]->style);
+#endif
           continue;
         }
       int spot = b ? TTF_STYLE_BOLD : 0;
       spot += base[i]->italic ? TTF_STYLE_ITALIC : 0;
       if(fi->filename[spot])
         {
+#if 0
+// THREADED_FONTS
           printf("duplicates, discarding: %s, %s\n", base[i]->family, base[i]->style);
           printf("b %d, spot %d\n", b, spot);
           printf("occupancy %p %p %p %p\n", fi->filename[0], fi->filename[1], fi->filename[2], fi->filename[3]);
+#endif
           continue;
         }
       fi->filename[spot] = strdup(base[i]->filename);
@@ -1994,7 +2028,10 @@ static void groupfonts(void)
   qsort(user_font_families, num_font_families, sizeof user_font_families[0], compar_fontscore);
   if(user_font_families[0]->score < 0)
     printf("sorted the wrong way, or all fonts were crap\n");
+#if 0
+// THREADED_FONTS
   printf("Trim starting with %d families\n", num_font_families);
+#endif
   while(num_font_families>1 && user_font_families[num_font_families-1]->score < 0)
     {
       i = --num_font_families;
@@ -2012,7 +2049,10 @@ static void groupfonts(void)
       free(user_font_families[i]);
       user_font_families[i] = NULL;
     }
+#if 0
+// THREADED_FONTS
   printf("Trim ending with %d families\n", num_font_families);
+#endif
 }
 
 ////////////////////////////////////////////////////////////////////
@@ -2261,6 +2301,38 @@ static int charsize(char c);
 #define USEREVENT_TEXT_UPDATE 1
 
 
+
+
+#ifdef __powerpc__
+// Ticks at 1/4  the memory bus clock (24.907667 MHz on Albert's Mac Cube)
+// This is good for 80-second diff or 160-second total.
+#define CLOCK_ASM(tbl) asm volatile("mftb %0" : "=r" (tbl))
+#define CLOCK_TYPE unsigned long
+#ifndef CLOCK_SPEED
+#warning Benchmark times are based on a 99.63 MHz memory bus.
+#define CLOCK_SPEED 24907667.0
+#endif
+#endif
+
+#ifdef __i386__
+// get 6.25 MHz out of a 200 MHz Pentium-MMX
+#define CLOCK_ASM(tbl) asm volatile("rdtsc" : "=A" (tbl))
+#define CLOCK_TYPE unsigned long long
+#ifndef
+#warning Benchmark times are based on a 450 MHz CPU.
+#define CLOCK_SPEED 450000000.0
+#endif
+#endif
+
+#ifndef CLOCK_ASM
+#warning No idea how to read CPU cycles for you, sorry.
+#define CLOCK_ASM(tbl)
+#define CLOCK_TYPE unsigned long
+#define CLOCK_SPEED 1000000000.0
+#endif
+
+
+
 /* --- MAIN --- */
 
 int main(int argc, char * argv[])
@@ -2268,8 +2340,27 @@ int main(int argc, char * argv[])
   /* Set up locale support */
   setlocale(LC_ALL, "");
 
+  CLOCK_TYPE time1;
+  CLOCK_ASM(time1);
+
   /* Set up! */
   setup(argc, argv);
+
+#if 0
+  while(!font_thread_done)
+    {
+      // FIXME: should respond to quit events
+      // FIXME: should have a read-depends memory barrier around here
+      show_progress_bar();
+      SDL_Delay(20);
+    }
+  SDL_WaitThread(font_thread, NULL);
+#endif
+
+  CLOCK_TYPE time2;
+  CLOCK_ASM(time2);
+
+  printf("Start-up time: %.3f\n", (double)(time2-time1)/CLOCK_SPEED);
 
   // Let the user know we're (nearly) ready now
   do_setcursor(cursor_arrow);
@@ -2766,9 +2857,10 @@ static void mainloop(void)
 		      update_screen_rect(&r_tools);
 		      
 		      playsound(1, SND_CLICK, 0);
-		      
-		      draw_tux_text(tool_tux[cur_tool], tool_tips[cur_tool], 1);
-		      
+
+                      // FIXME: this "if" is just plain gross
+		      if(cur_tool != TOOL_TEXT)
+		        draw_tux_text(tool_tux[cur_tool], tool_tips[cur_tool], 1);
 		      
 		      /* Draw items for this tool: */
 		      
@@ -2809,6 +2901,24 @@ static void mainloop(void)
 			}
 		      else if (cur_tool == TOOL_TEXT)
 			{
+			  if(!font_thread_done)
+			    {
+                              draw_colors(COLORSEL_DISABLE);
+                              draw_none();
+                              update_screen_rect(&r_toolopt);
+                              update_screen_rect(&r_ttoolopt);
+                              draw_tux_text(TUX_WAIT, "This is a slow computer with lots of fonts...", 1);
+                              while(!font_thread_done)
+                                {
+                                  // FIXME: should respond to quit events
+                                  // FIXME: should have a read-depends memory barrier around here
+                                  show_progress_bar();
+                                  SDL_Delay(20);
+                                }
+                              // FIXME: should kill this in any case
+                              SDL_WaitThread(font_thread, NULL);
+                            }
+		          draw_tux_text(tool_tux[cur_tool], tool_tips[cur_tool], 1);
 			  cur_thing = cur_font;
 			  num_things = num_font_families;
 			  thing_scroll = &font_scroll;
@@ -6167,7 +6277,10 @@ static int charset_works(TTF_Font *font, const char *s)
       SDL_Surface *tmp_surf = TTF_RenderUTF8_Blended(font, c, black);
       if(!tmp_surf)
         {
+#if 0
+// THREADED_FONTS
           printf("could not render \"%s\" font\n", TTF_FontFaceFamilyName(font));
+#endif
           goto out;
         }
       surfs[count++] = tmp_surf;
@@ -6310,7 +6423,11 @@ static void tp_ftw(char *restrict const dir, unsigned dirlen, int rsrc,
     }
 
   closedir(d);
+#if 1
+#ifndef THREADED_FONTS
   show_progress_bar();
+#endif
+#endif
   dir[dirlen] = '\0';   // repair it (clobbered for stat() call above)
 
   if(file_names)
@@ -6347,7 +6464,11 @@ static void loadfont_callback(const char *restrict const dir, unsigned dirlen, t
 {
   while(i--)
     {
+#if 1
+#ifndef THREADED_FONTS
       show_progress_bar();
+#endif
+#endif
       int loadable = 0;
       const char *restrict const cp = strchr(files[i].str, '.');
       if(cp)
@@ -6411,13 +6532,19 @@ static void loadfont_callback(const char *restrict const dir, unsigned dirlen, t
                 }
               else
                 {
+#if 0
+// THREADED_FONTS
                   printf("Font missing critical chars: %s, %s, %s\n", files[i].str, family, style);
+#endif
                 }
               TTF_CloseFont(font);
             }
           else
             {
+#if 0
+// THREADED_FONTS
               printf("could not open %s\n", files[i].str);
+#endif
             }
         }
       free(files[i].str);
@@ -6635,9 +6762,10 @@ static void load_stamps(void)
 
 
 
-static void load_user_fonts(void)
+static int load_user_fonts(void *vp)
 {
-  char * homedirdir;
+  (void)vp; // junk passed by threading library
+
   loadfonts(DATA_PREFIX "fonts");
 
   if (!no_system_fonts)
@@ -6671,11 +6799,15 @@ static void load_user_fonts(void)
 #endif
   }
 
-  homedirdir = get_fname("fonts");
+  char *homedirdir = get_fname("fonts");
   loadfonts(homedirdir);
   free(homedirdir);
 
   groupfonts();
+
+  font_thread_done = 1;
+  // FIXME: need a memory barrier here
+  return 0; // useless, wanted by threading library
 }
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -7456,6 +7588,9 @@ static void setup(int argc, char * argv[])
 
   do_setcursor(cursor_watch);
 
+  font_thread = SDL_CreateThread(load_user_fonts, NULL);
+
+  // continuing on with the rest of the cursors...
 
   cursor_hand = get_cursor(hand_bits, hand_mask_bits,
 			   hand_width, hand_height,
@@ -7697,9 +7832,11 @@ static void setup(int argc, char * argv[])
 
   locale_font = load_locale_font(medium_font,18);
 
+#if 0
+  // put elsewhere for THREADED_FONTS
   /* Load user fonts, for the text tool */
   load_user_fonts();
-
+#endif
 
   if (!dont_load_stamps)
     load_stamps();

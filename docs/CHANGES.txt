@@ -14,6 +14,9 @@ http://www.newbreedsoftware.com/tuxpaint/
     -----------------------
     * Splash screen appears earlier, along with the version info and cursor.
 
+    * Normal start-up time reduced by 11.4 seconds by splitting out font
+      loading into a separate thread. You only wait if you want the text tool.
+      (450 MHz Mac G4, 7200 RPM ATA disk, about 200 font files)
 
   * Stamp tool improvements:
     ------------------------
