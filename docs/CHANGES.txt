@@ -34,6 +34,11 @@ http://www.newbreedsoftware.com/tuxpaint/
     Fonts copyright the Free Software Foundation.
     Thanks to Mantas Kriauciunas <monte@mail.lt> for the tip.
 
+  * Fixed UTF-8 related bug where Lithuanian wouldn't display if using
+    'TTF_RenderText...', but Spanish wouldn't display if using
+    'TTF_RenderUTF8...'.  Thanks to Mantas Kriauciunas, Robert Glowczynski,
+    John Popplewell and Karl Ove Hufthammer.
+
 
 2003.Jun.17 (0.9.11)
   * Windows bugfixes.

@@ -216,7 +216,7 @@ void win32_perror(const char *str)
 #define clamp(lo,value,hi)    (min(max(value,lo),hi))
 
 
-#define RENDER_TEXT TTF_RenderText_Blended
+#define RENDER_TEXT TTF_RenderUTF8_Blended
 
 
 /* Possible languages: */
@@ -3948,6 +3948,7 @@ void setup(int argc, char * argv[])
   
   
   bindtextdomain("tuxpaint", LOCALEDIR);
+  bind_textdomain_codeset("tuxpaint", "UTF8");
 
   textdomain("tuxpaint");
 
