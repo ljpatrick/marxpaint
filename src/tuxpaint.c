@@ -7085,11 +7085,15 @@ static void setup(int argc, char * argv[])
   if (!no_system_fonts)
   {
 #ifdef WIN32
-    // add Windows font dir here
+    loadfonts("%SystemRoot%\\Fonts", 0);
+#elif defined(__BEOS__)
+    loadfonts("/boot/home/config/font/ttffonts", 0);
+    loadfonts("/usr/share/fonts", 0);
+    loadfonts("/usr/X11R6/lib/X11/fonts", 0);
 #elif defined(__APPLE__)
     loadfonts("/System/Library/Fonts", 0);
     loadfonts("/Library/Fonts", 0);
-	loadfonts(macosx.fontsPath, 0);
+    loadfonts(macosx.fontsPath, 0);
     loadfonts("/usr/share/fonts", 0);
     loadfonts("/usr/X11R6/lib/X11/fonts", 0);
 #else
