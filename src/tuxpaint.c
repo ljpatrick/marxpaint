@@ -133,8 +133,8 @@ static scaleparams scaletable[] = {
 // to scale some offset, in pixels, like the current stamp is scaled
 #define SCALE_LIKE_STAMP(x) ( ((x) * scaletable[stamp_data[cur_stamp]->size].numer + scaletable[stamp_data[cur_stamp]->size].denom-1) / scaletable[stamp_data[cur_stamp]->size].denom )
 // pixel dimensions of the current stamp, as scaled
-#define CUR_STAMP_W SCALE_LIKE_STAMP(img_stamps[cur_stamp]->w)
-#define CUR_STAMP_H SCALE_LIKE_STAMP(img_stamps[cur_stamp]->h)
+#define CUR_STAMP_W SCALE_LIKE_STAMP(stamp_data[cur_stamp]->full_norm->w)
+#define CUR_STAMP_H SCALE_LIKE_STAMP(stamp_data[cur_stamp]->full_norm->h)
 
 ///////////////////////////////////////////////////////////////////////////////
 
@@ -2051,6 +2051,11 @@ typedef struct stamp_type {
 #ifndef NOSOUND
   Mix_Chunk *ssnd;
 #endif
+  char *stampfile;
+  SDL_Surface *full_norm;
+  SDL_Surface *full_mirr;
+  SDL_Surface *thumb_norm;
+  SDL_Surface *thumb_mirr;
   unsigned tinter : 3;
   unsigned colorable : 1;
   unsigned tintable : 1;
@@ -2066,11 +2071,7 @@ typedef struct stamp_type {
 
 #define MAX_STAMPS 512
 static int num_stamps;
-static SDL_Surface * img_stamps[MAX_STAMPS];
-static SDL_Surface * img_stamps_premirror[MAX_STAMPS];
 static stamp_type * stamp_data[MAX_STAMPS];
-static SDL_Surface * img_stamp_thumbs[MAX_STAMPS],
-  * img_stamp_thumbs_premirror[MAX_STAMPS];
 
 /* Returns whether a particular stamp can be colored: */
 static int stamp_colorable(int stamp)
@@ -4277,8 +4278,8 @@ static void mainloop(void)
 		  
 		  if (cur_tool == TOOL_STAMP)
 		    {
-		      w = img_stamps[cur_stamp]->w;
-		      h = img_stamps[cur_stamp]->h;
+		      w = stamp_data[cur_stamp]->full_norm->w;
+		      h = stamp_data[cur_stamp]->full_norm->h;
 		    }
 		  else
 		    {
@@ -5125,24 +5126,24 @@ static void stamp_draw(int x, int y)
   
   if (stamp_data[cur_stamp]->mirrored)
     {
-      if (img_stamps_premirror[cur_stamp] != NULL)
+      if (stamp_data[cur_stamp]->full_mirr != NULL)
 	{
 	  /* Use pre-mirrored one! */
             
-	  surf_ptr = img_stamps_premirror[cur_stamp];
+	  surf_ptr = stamp_data[cur_stamp]->full_mirr;
 	}
       else
 	{
 	  /* Use normal (only) one, and mirror it ourselves: */
             
-	  surf_ptr = img_stamps[cur_stamp];
+	  surf_ptr = stamp_data[cur_stamp]->full_norm;
 	}
     }
   else
     {
       /* Not mirrored: */
 
-      surf_ptr = img_stamps[cur_stamp];
+      surf_ptr = stamp_data[cur_stamp]->full_norm;
     }
   
   getpixel = getpixels[surf_ptr->format->BytesPerPixel];
@@ -5259,7 +5260,7 @@ static void stamp_draw(int x, int y)
       /* Flipped! */
 	  
       if (stamp_data[cur_stamp]->mirrored &&
-	  img_stamps_premirror[cur_stamp] == NULL)
+	  stamp_data[cur_stamp]->full_mirr == NULL)
 	{
 	  /* Mirrored, too! */
 
@@ -5300,7 +5301,7 @@ static void stamp_draw(int x, int y)
   else
     {
       if (stamp_data[cur_stamp]->mirrored &&
-	  img_stamps_premirror[cur_stamp] == NULL)
+	  stamp_data[cur_stamp]->full_mirr == NULL)
 	{
 	  /* Mirrored! */
 
@@ -6725,28 +6726,20 @@ static unsigned default_stamp_size;
 
 static void loadstamp_finisher(int i)
 {
-  if (img_stamps[i]->w > 40 || img_stamps[i]->h > 40)
-    img_stamp_thumbs[i] = thumbnail(img_stamps[i], 40, 40, 1);
-  else
-    img_stamp_thumbs[i] = NULL;
+  if (stamp_data[i]->full_norm->w > 40 || stamp_data[i]->full_norm->h > 40)
+    stamp_data[i]->thumb_norm = thumbnail(stamp_data[i]->full_norm, 40, 40, 1);
 
-  if (img_stamps_premirror[i])
+  if (stamp_data[i]->full_mirr)
     {
       /* Also thumbnail the pre-drawn mirror version, if any: */
-      if (img_stamps_premirror[i]->w > 40 || img_stamps_premirror[i]->h > 40)
-        img_stamp_thumbs_premirror[i] = thumbnail(img_stamps_premirror[i], 40, 40, 1);
-      else
-        img_stamp_thumbs_premirror[i] = NULL;
+      if (stamp_data[i]->full_mirr->w > 40 || stamp_data[i]->full_mirr->h > 40)
+        stamp_data[i]->thumb_mirr = thumbnail(stamp_data[i]->full_mirr, 40, 40, 1);
     }
 
   /* If Tux Paint is in mirror-image-by-default mode, mirror, if we can: */
 
   if (mirrorstamps && stamp_data[i]->mirrorable)
     stamp_data[i]->mirrored = 1;
-  else
-    stamp_data[i]->mirrored = 0;
-
-  stamp_data[i]->flipped = 0;
 
   unsigned int upper = HARD_MAX_STAMP_SIZE;
   unsigned int lower = 0;
@@ -6756,8 +6749,8 @@ static void loadstamp_finisher(int i)
     scaleparams *s = &scaletable[upper];
     int pw, ph; // proposed width and height
 
-    pw = (img_stamps[i]->w * s->numer + s->denom - 1) / s->denom;
-    ph = (img_stamps[i]->h * s->numer + s->denom - 1) / s->denom;
+    pw = (stamp_data[i]->full_norm->w * s->numer + s->denom - 1) / s->denom;
+    ph = (stamp_data[i]->full_norm->h * s->numer + s->denom - 1) / s->denom;
 
     // OK to let a stamp stick off the sides in one direction, not two
     if (pw < canvas->w * 2 && ph < canvas->h * 1)
@@ -6772,8 +6765,8 @@ static void loadstamp_finisher(int i)
     scaleparams *s = &scaletable[lower];
     int pw, ph; // proposed width and height
 
-    pw = (img_stamps[i]->w * s->numer + s->denom - 1) / s->denom;
-    ph = (img_stamps[i]->h * s->numer + s->denom - 1) / s->denom;
+    pw = (stamp_data[i]->full_norm->w * s->numer + s->denom - 1) / s->denom;
+    ph = (stamp_data[i]->full_norm->h * s->numer + s->denom - 1) / s->denom;
 
     if (pw*ph > 20)
       break;
@@ -6814,24 +6807,21 @@ static void loadstamp_callback(const char *restrict const dir, unsigned dirlen, 
         {
           char fname[512];
           snprintf(fname, sizeof fname, "%s/%s", dir, files[i].str);
-          stamp_data[num_stamps] = malloc(sizeof *stamp_data[num_stamps]);
+          stamp_data[num_stamps] = calloc(1, sizeof *stamp_data[num_stamps]);
           stamp_data[num_stamps]->stxt = loaddesc(fname);
           loadinfo(fname, stamp_data[num_stamps]);
 
-          img_stamps[num_stamps] = NULL;
           if(!mirrorstamps || !disable_stamp_controls || !stamp_data[num_stamps]->mirrorable)
-            img_stamps[num_stamps] = loadimage(fname);
+            stamp_data[num_stamps]->full_norm = loadimage(fname);
 
-          img_stamps_premirror[num_stamps] = NULL;
           if((mirrorstamps || !disable_stamp_controls) && stamp_data[num_stamps]->mirrorable)
-            img_stamps_premirror[num_stamps] = loadaltimage(fname);
+            stamp_data[num_stamps]->full_mirr = loadaltimage(fname);
 
-          if(img_stamps[num_stamps] || img_stamps_premirror[num_stamps])
+          if(stamp_data[num_stamps]->full_norm || stamp_data[num_stamps]->full_mirr)
             {
               // we have a stamp; finalize it
 #ifndef NOSOUND
-              if (use_sound)
-                stamp_data[num_stamps]->ssnd = loadsound(fname);
+              stamp_data[num_stamps]->ssnd = use_sound ? loadsound(fname) : NULL;
 #endif
               loadstamp_finisher(num_stamps);
               num_stamps++;       // FIXME: no limit and no resizing right now...
@@ -6839,8 +6829,8 @@ static void loadstamp_callback(const char *restrict const dir, unsigned dirlen, 
           else
             {
               // we have a failure, abort mission
-              free(img_stamps[num_stamps]);
-              free(img_stamps_premirror[num_stamps]);
+              free(stamp_data[num_stamps]->full_norm);
+              free(stamp_data[num_stamps]->full_mirr);
               free(stamp_data[num_stamps]->stxt);
               free(stamp_data[num_stamps]);
             }
@@ -9293,23 +9283,23 @@ static void draw_stamps(void)
 	  /* Draw the stamp itself: */
 
 	  if (stamp_data[stamp]->mirrored &&
-	      img_stamps_premirror[stamp] != NULL)
+	      stamp_data[stamp]->full_mirr != NULL)
 	    {
 	      /* Use pre-drawn mirrored version! */
 
-	      if (img_stamp_thumbs_premirror[stamp] != NULL)
-		img = img_stamp_thumbs_premirror[stamp];
+	      if (stamp_data[stamp]->thumb_mirr != NULL)
+		img = stamp_data[stamp]->thumb_mirr;
 	      else
-		img = img_stamps_premirror[stamp];
+		img = stamp_data[stamp]->full_mirr;
 	    }
 	  else
 	    {
 	      /* Use normal version: */
 	      
-	      if (img_stamp_thumbs[stamp] != NULL)
-		img = img_stamp_thumbs[stamp];
+	      if (stamp_data[stamp]->thumb_norm != NULL)
+		img = stamp_data[stamp]->thumb_norm;
 	      else
-		img = img_stamps[stamp];
+		img = stamp_data[stamp]->full_norm;
 	    }
 
 
@@ -9322,7 +9312,7 @@ static void draw_stamps(void)
 
 
 	  if (stamp_data[stamp]->mirrored &&
-	      img_stamps_premirror[stamp] == NULL)
+	      stamp_data[stamp]->full_mirr == NULL)
 	    {
 	      /* It's mirrored!: */
 	      
@@ -12055,11 +12045,14 @@ static void cleanup(void)
 	  free(stamp_data[i]->stxt);
 	  stamp_data[i]->stxt = NULL;
 	}
+      free_surface( &stamp_data[i]->full_norm );
+      free_surface( &stamp_data[i]->full_mirr );
+      free_surface( &stamp_data[i]->thumb_norm );
+      free_surface( &stamp_data[i]->thumb_mirr );
+        
       free(stamp_data[i]);
       stamp_data[i] = NULL;
     }
-  free_surface_array( img_stamps, num_stamps );
-  free_surface_array( img_stamps_premirror, num_stamps );
 
   free_surface_array( img_brushes, num_brushes );
   free_surface_array( img_tools, NUM_TOOLS );
@@ -12125,8 +12118,6 @@ static void cleanup(void)
 #else
   free_surface_array( img_color_btns, NUM_COLORS*2 );
 #endif
-
-  free_surface_array( img_stamp_thumbs, num_stamps );
 
   free_surface( &screen );
   free_surface( &img_starter );
@@ -14195,13 +14186,13 @@ static void update_stamp_xor(void)
   /* Use pre-mirrored stamp image, if applicable: */
 
   if (stamp_data[cur_stamp]->mirrored &&
-      img_stamps_premirror[cur_stamp] != NULL)
+      stamp_data[cur_stamp]->full_mirr != NULL)
     {
-      src = img_stamps_premirror[cur_stamp];
+      src = stamp_data[cur_stamp]->full_mirr;
     }
   else
     {
-      src = img_stamps[cur_stamp];
+      src = stamp_data[cur_stamp]->full_norm;
     }
 
   // start by scaling
@@ -14222,7 +14213,7 @@ static void update_stamp_xor(void)
 	{
 	  /* Compensate for mirror! */
 	  if (stamp_data[cur_stamp]->mirrored &&
-	      img_stamps_premirror[cur_stamp] == NULL)
+	      stamp_data[cur_stamp]->full_mirr == NULL)
 	    {
 	      rx = src->w - 1 - xx;
 	    }
