@@ -11038,7 +11038,7 @@ static int do_prompt_image(const char * const text, const char * const btn_yes, 
     img_y = img_y + img2->h + 4;
   }
 
-  if (img1 != NULL)
+  if (img3 != NULL)
   {
     dest.x = img_x + (max_img_w - img3->w) / 2;
     dest.y = img_y;
