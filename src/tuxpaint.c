@@ -7,12 +7,12 @@
   bill@newbreedsoftware.com
   http://www.newbreedsoftware.com/tuxpaint/
   
-  June 14, 2002 - May 11, 2003
+  June 14, 2002 - May 22, 2003
 */
 
 
 #define VER_VERSION     "0.9.11"
-#define VER_DATE        "2003.05.11"
+#define VER_DATE        "2003.05.22"
 
 
 /* #define DEBUG */
@@ -302,6 +302,12 @@ int lang_use_utf8[] = {
   -1
 };
 
+int lang_use_right_to_left[] = {
+  LANG_EN,
+  LANG_HE,
+  -1
+};
+
 
 typedef struct info_type {
   int colorable;
@@ -522,6 +528,7 @@ void strip_trailing_whitespace(char * buf);
 void do_render_cur_text(int do_blit);
 void loadfonts(char * dir, int fatal);
 char * uppercase(char * str);
+unsigned char * textdir(unsigned char * str);
 SDL_Surface * do_render_button_label(char * label);
 static void create_button_labels(void);
 int colors_close(Uint32 c1, Uint32 c2);
@@ -538,6 +545,7 @@ void draw_image_title(int t, int x);
 int need_unicode(int l);
 int need_utf8(int l);
 int need_own_font(int l);
+int need_right_to_left(int l);
 void handle_keymouse(SDLKey key, Uint8 updown);
 void move_keymouse(void);
 void handle_active(SDL_Event * event);
@@ -4464,7 +4472,7 @@ void setup(int argc, char * argv[])
           strcmp(gettext(title_names[i]), title_names[i]) != 0)
       {
 	tmp_surf = TTF_RenderUNICODE_Blended(locale_font,
-			                     (Uint16 *) gettext(title_names[i]),
+			                     (Uint16 *) textdir(gettext(title_names[i])),
 					     black);
         img_title_names[i] = thumbnail(tmp_surf,
 		                       min(84, tmp_surf->w), tmp_surf->h, 0);
@@ -4474,14 +4482,14 @@ void setup(int argc, char * argv[])
 	       strcmp(gettext(title_names[i]), title_names[i]) != 0)
       {
 	tmp_surf = TTF_RenderUTF8_Blended(locale_font,
-			                  gettext(title_names[i]), black);
+			                  textdir(gettext(title_names[i])), black);
 	img_title_names[i] = thumbnail(tmp_surf,
 			               min(84, tmp_surf->w), tmp_surf->h, 0);
 	SDL_FreeSurface(tmp_surf);
       }
       else
       {
-        upstr = uppercase(gettext(title_names[i]));
+        upstr = uppercase(textdir(gettext(title_names[i])));
         tmp_surf = RENDER_TEXT(large_font, upstr, black);
         img_title_names[i] = thumbnail(tmp_surf,
 		                       min(84, tmp_surf->w), tmp_surf->h, 0);
@@ -4594,19 +4602,19 @@ SDL_Surface * do_render_button_label(char * label)
   if (need_unicode(language) && locale_font != NULL &&
       strcmp(gettext(label), label) != 0)
   {
-    tmp_surf = TTF_RenderUNICODE_Blended(locale_font, (Uint16 *) gettext(label),
+    tmp_surf = TTF_RenderUNICODE_Blended(locale_font, (Uint16 *) textdir(gettext(label)),
 		                         black);
     surf = thumbnail(tmp_surf, min(48, tmp_surf->w), tmp_surf->h, 0);
   }
   else if (need_utf8(language) && locale_font != NULL &&
 	   strcmp(gettext(label), label) != 0)
   {
-    tmp_surf = TTF_RenderUTF8_Blended(locale_font, gettext(label), black);
+    tmp_surf = TTF_RenderUTF8_Blended(locale_font, textdir(gettext(label)), black);
     surf = thumbnail(tmp_surf, min(48, tmp_surf->w), tmp_surf->h, 0);
   }
   else
   {
-    str = uppercase(gettext(label));
+    str = uppercase(textdir(gettext(label)));
     tmp_surf = RENDER_TEXT(small_font, str, black);
     surf = thumbnail(tmp_surf, min(48, tmp_surf->w), tmp_surf->h, 0);
     free(str);
@@ -4632,17 +4640,17 @@ static void create_button_labels(void)
 
   /* 'Open' label: */
 
-  img_openlabels_open = do_render_button_label(gettext_noop("Open"));
+  img_openlabels_open = do_render_button_label(textdir(gettext_noop("Open")));
 
 
   /* 'Erase' label: */
 
-  img_openlabels_erase = do_render_button_label(gettext_noop("Erase"));
+  img_openlabels_erase = do_render_button_label(textdir(gettext_noop("Erase")));
 
 
   /* 'Back' label: */
 
-  img_openlabels_back = do_render_button_label(gettext_noop("Back"));
+  img_openlabels_back = do_render_button_label(textdir(gettext_noop("Back")));
 }
 
 
@@ -6348,7 +6356,7 @@ void wordwrap_text(TTF_Font * font, char * str, SDL_Color color,
     if (want_utf8)
       locale_str = strdup(str);
     else
-      locale_str = strdup(gettext(str));
+      locale_str = strdup(textdir(gettext(str)));
 
 
     /* For each UTF8 character: */
@@ -6391,8 +6399,6 @@ void wordwrap_text(TTF_Font * font, char * str, SDL_Color color,
 
         for (j = 0; j < utf8_str_len; j++)
         {
-	  printf("%d of %d\n", j, utf8_str_len); fflush(stdout);
-
           /* How many bytes does this character need? */
 
           if (utf8_str[j] < 128)  /* 0xxx xxxx - 1 byte */
@@ -6438,7 +6444,11 @@ void wordwrap_text(TTF_Font * font, char * str, SDL_Color color,
 	        y = y + text->h;
               }
 
-              dest.x = x;
+	      //if (need_right_to_left(language) == 0)
+                dest.x = x;
+	      //else
+	      //  dest.x = right - (x - left) - text->w;
+
               dest.y = y;
 
               SDL_BlitSurface(text, NULL, screen, &dest);
@@ -6461,7 +6471,11 @@ void wordwrap_text(TTF_Font * font, char * str, SDL_Color color,
           y = y + text->h;
         }
 
-        dest.x = x;
+	//if (need_right_to_left(language) == 0)
+          dest.x = x;
+	//else
+	//  dest.x = right - (x - left) - text->w;
+
         dest.y = y;
 
         SDL_BlitSurface(text, NULL, screen, &dest);
@@ -6505,7 +6519,7 @@ void wordwrap_text(TTF_Font * font, char * str, SDL_Color color,
   else if (need_unicode(language) && locale_font != NULL &&
 	   strcmp(gettext(str), str) != 0 && strcmp(str, "") != 0)
   {
-    locale_str = strdup(gettext(str));
+    locale_str = strdup(textdir(gettext(str)));
     
     
     /* For each pair of bytes... */
@@ -6529,7 +6543,11 @@ void wordwrap_text(TTF_Font * font, char * str, SDL_Color color,
       }
 
 
-      dest.x = x;
+      //if (need_right_to_left(language) == 0)
+        dest.x = x;
+      //else
+      //  dest.x = right - (x - left) - text->w;
+
       dest.y = y;
 
       SDL_BlitSurface(text, NULL, screen, &dest);
@@ -6545,7 +6563,7 @@ void wordwrap_text(TTF_Font * font, char * str, SDL_Color color,
   {
     /* Truncate if too big! (sorry!) */
 
-    tstr = strdup(uppercase(gettext(str)));
+    tstr = strdup(uppercase(textdir(gettext(str))));
 
     if (strlen(tstr) > sizeof(substr) - 1)
       tstr[sizeof(substr) - 1] = '\0';
@@ -6587,7 +6605,11 @@ void wordwrap_text(TTF_Font * font, char * str, SDL_Color color,
 
       /* Draw the word: */
 
-      dest.x = x;
+      //if (need_right_to_left(language) == 0)
+        dest.x = x;
+      //else
+      //  dest.x = right - (x - left) - text->w;
+
       dest.y = y;
 
       SDL_BlitSurface(text, NULL, screen, &dest);
@@ -7162,10 +7184,10 @@ int do_prompt(char * text, char * btn_yes, char * btn_no)
 
   /* FIXME: Move elsewhere! Or not?! */
 
-  strcpy(keystr, gettext("Yes"));
+  strcpy(keystr, textdir(gettext("Yes")));
   key_y = tolower(keystr[0]);
 
-  strcpy(keystr, gettext("No"));
+  strcpy(keystr, textdir(gettext("No")));
   key_n = tolower(keystr[0]);
 
 
@@ -8548,8 +8570,8 @@ int do_open(int want_new_tool)
       /* Let user choose an image: */
       
       draw_tux_text(TUX_BORED,
-		    gettext_noop("Choose the picture you want, "
-			         "then click 'Open'"), 0, 0);
+		    textdir(gettext_noop("Choose the picture you want, "
+			                 "then click 'Open'")), 0, 0);
       
       cur = 0;
       update_list = 1;
@@ -10108,6 +10130,8 @@ void loadfonts(char * dir, int fatal)
 }
 
 
+/* Return string as uppercase if that option is set: */
+
 char * uppercase(char * str)
 {
   char * ustr;
@@ -10127,6 +10151,55 @@ char * uppercase(char * str)
 #endif
 
   return (ustr);
+}
+
+
+/* Return string in right-to-left mode, if necessary: */
+
+unsigned char * textdir(unsigned char * str)
+{
+  unsigned char * dstr;
+  int i, j;
+
+  dstr = (unsigned char *) malloc((strlen(str) + 5) * sizeof(unsigned char));
+
+  if (need_right_to_left(language))
+  {
+    dstr[strlen(str)] = '\0';
+
+    for (i = 0; i < strlen(str); i++)
+    {
+      j = (strlen(str) - i - 1);
+      
+      if (str[i] < 128)  /* 0xxx xxxx - 1 byte */
+      {
+	dstr[j] = str[i];
+      }
+      else if ((str[i] & 0xE0) == 0xC0)  /* 110x xxxx - 2 bytes */
+      {
+	dstr[j - 1] = str[i + 0];
+	dstr[j - 0] = str[i + 1];
+	i = i + 1;
+      }
+      else if ((str[i] & 0xF0) == 0xE0)  /* 1110 xxxx - 3 bytes */
+      {
+	dstr[j - 2] = str[i + 0];
+	dstr[j - 1] = str[i + 1];
+	dstr[j - 0] = str[i + 2];
+	i = i + 2;
+      }
+      else  /* 1111 0xxx - 4 bytes */
+      {
+	dstr[j - 3] = str[i + 0];
+	dstr[j - 2] = str[i + 1];
+	dstr[j - 1] = str[i + 2];
+	dstr[j - 0] = str[i + 3];
+	i = i + 3;
+      }
+    }
+  }
+
+  return (dstr);
 }
 
 
@@ -10562,7 +10635,7 @@ int need_utf8(int l)
     }
   }
 
-return need;
+  return need;
 }
 
 
@@ -10573,6 +10646,25 @@ int need_own_font(int l)
   else
     return 0;
 }
+
+
+int need_right_to_left(int l)
+{
+  int i, need;
+
+  need = 0;
+
+  for (i = 0; lang_use_right_to_left[i] != -1 && need == 0; i++)
+  {
+    if (lang_use_right_to_left[i] == l)
+    {
+      need = 1;
+    }
+  }
+
+  return need;
+}
+
 
 
 /* Handle keyboard events to control the mouse: */

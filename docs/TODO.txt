@@ -6,7 +6,7 @@ Copyright (c) 2003 by Bill Kendrick
 bill@newbreedsoftware.com
 http://www.newbreedsoftware.com/tuxpaint/
 
-May 20, 2003
+May 22, 2003
 
 
 LOW-PRIORITY DOCUMENTATION CHANGES:
@@ -79,6 +79,8 @@ PLATFORM-SPECIFIC BUGS:
 
 HIGH-PRIORITY TRANSLATION STUFF:
 --------------------------------
+  * Right-justify right-to-left strings.
+
   * Finish current translations.
 
   * Fix Romanian!
@@ -90,7 +92,9 @@ LOW-PRIORITY TRANSLATION STUFF:
 -------------------------------
   * Support more languages!
     * Hindi
-    * ...
+    * Arabic
+    * Thai
+    ...
 
   * Update Czech and Slovak translations (so they use accents/etc.!)
 

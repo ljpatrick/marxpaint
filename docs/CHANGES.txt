@@ -7,7 +7,7 @@ bill@newbreedsoftware.com
 http://www.newbreedsoftware.com/tuxpaint/
 
 
-2003.May.11 (0.9.11) [cvs]
+2003.May.22 (0.9.11) [cvs]
   * Windows bugfixes.
     John Popplewell <john@johnnypops.demon.co.uk>
 
