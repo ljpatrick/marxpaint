@@ -2262,7 +2262,10 @@ static int stamp_colorable(int stamp);
 static int stamp_tintable(int stamp);
 static void rgbtohsv(Uint8 r8, Uint8 g8, Uint8 b8, float *h, float *s, float *v);
 static void hsvtorgb(float h, float s, float v, Uint8 *r8, Uint8 *g8, Uint8 *b8);
+
 static void show_progress_bar(void);
+static int progress_bar_disabled;
+
 static void do_print(void);
 static void strip_trailing_whitespace(char * buf);
 static void do_render_cur_text(int do_blit);
@@ -2353,13 +2356,13 @@ static void do_wait(int counter)
 // This lets us exit quickly; perhaps the system is swapping to death
 // or the user started Tux Paint by accident. It also lets the user
 // more easily bypass the splash screen wait.
-static void eat_startup_events(void)
+static void eat_sdl_events(void)
 {
   SDL_Event event;
   while (SDL_PollEvent(&event))
     {
       if (event.type == SDL_QUIT)
-        exit(0);
+        exit(0);  // can't safely use do_quit during start-up
       else if (event.type == SDL_ACTIVEEVENT)
         handle_active(&event);
       else if (event.type == SDL_KEYDOWN)
@@ -2376,6 +2379,44 @@ static void eat_startup_events(void)
         bypass_splash_wait = 1;
     }
 }
+
+
+static void show_progress_bar(void)
+{
+  SDL_Rect dest, src;
+  int x;
+  SDL_Event event;
+  static Uint32 oldtime;
+  Uint32 newtime;
+
+  if(progress_bar_disabled)
+    return;
+
+  newtime = SDL_GetTicks();
+  if(newtime > oldtime+15)  // trying not to eat some serious CPU time!
+    {
+      for (x = 0; x < WINDOW_WIDTH; x = x + 65)
+        {
+          src.x = 65 - (prog_bar_ctr % 65);
+          src.y = 0;
+          src.w = 65;
+          src.h = 24;
+
+          dest.x = x;
+          dest.y = WINDOW_HEIGHT - 24;
+      
+          SDL_BlitSurface(img_progress, &src, screen, &dest);
+        }
+
+      prog_bar_ctr++;
+
+      SDL_UpdateRect(screen, 0, WINDOW_HEIGHT - 24, WINDOW_WIDTH, 24);
+    }
+  oldtime = newtime;
+
+  eat_sdl_events();
+}
+
 
 
 #ifdef __powerpc__
@@ -6525,12 +6566,7 @@ static void tp_ftw(char *restrict const dir, unsigned dirlen, int rsrc,
     }
 
   closedir(d);
-#if 0
-#ifndef THREADED_FONTS
   show_progress_bar();
-  eat_startup_events();
-#endif
-#endif
   dir[dirlen] = '\0';   // repair it (clobbered for stat() call above)
 
   if(file_names)
@@ -6567,12 +6603,7 @@ static void loadfont_callback(const char *restrict const dir, unsigned dirlen, t
 {
   while(i--)
     {
-#if 0
-#ifndef THREADED_FONTS
       show_progress_bar();
-      eat_startup_events();
-#endif
-#endif
       int loadable = 0;
       const char *restrict const cp = strchr(files[i].str, '.');
       if(cp)
@@ -6673,7 +6704,6 @@ static void loadbrush_callback(const char *restrict const dir, unsigned dirlen, 
   while(i--)
     {
       show_progress_bar();
-      eat_startup_events();
       if (strstr(files[i].str, ".png"))
         {
           char fname[512];
@@ -6792,7 +6822,6 @@ static void loadstamp_callback(const char *restrict const dir, unsigned dirlen, 
   while(i--)
     {
       show_progress_bar();
-      eat_startup_events();
 
       if (strstr(files[i].str, ".png") && !strstr(files[i].str, "_mirror.png"))
         {
@@ -6924,6 +6953,9 @@ static int load_user_fonts(void *vp)
 #include <fcntl.h>
 #include <sys/poll.h>
 #include <sys/wait.h>
+#ifdef _POSIX_PRIORITY_SCHEDULING
+#include <sched.h>
+#endif
 
 static void reliable_write(int fd, const void *buf, size_t count)
 {
@@ -6993,8 +7025,13 @@ static void run_font_scanner(void)
       close(sv[1]);
       return;
     }
+  nice(42); // be nice, letting the main thread get the CPU
+#ifdef _POSIX_PRIORITY_SCHEDULING
+  sched_yield();
+#endif
   font_socket_fd = sv[1];
   close(sv[0]);
+  progress_bar_disabled = 1;
   reliable_read(font_socket_fd, &no_system_fonts, sizeof no_system_fonts);
   SDL_Init(SDL_INIT_NOPARACHUTE);
   TTF_Init();
@@ -7946,7 +7983,7 @@ static void setup(int argc, char * argv[])
 			    14 / scale, 14 / scale);
 
   do_setcursor(cursor_watch);
-  eat_startup_events();
+  show_progress_bar();
 
 #ifdef FORKED_FONTS
   reliable_write(font_socket_fd, &no_system_fonts, sizeof no_system_fonts);
@@ -8089,7 +8126,6 @@ static void setup(int argc, char * argv[])
   SDL_FillRect(img_grey, NULL, SDL_MapRGBA(screen->format, 0x88, 0x88, 0x88, 255));
 
   show_progress_bar();
-  eat_startup_events();
 
   img_yes = loadimage(DATA_PREFIX "images/ui/yes.png");
   img_no = loadimage(DATA_PREFIX "images/ui/no.png");
@@ -8113,7 +8149,6 @@ static void setup(int argc, char * argv[])
   img_italic = loadimage(DATA_PREFIX "images/ui/italic.png");
 
   show_progress_bar();
-  eat_startup_events();
 
   tmp_imgcurup    = loadimage(DATA_PREFIX "images/ui/cursor_up_large.png");
   tmp_imgcurdown  = loadimage(DATA_PREFIX "images/ui/cursor_down_large.png");
@@ -8128,7 +8163,6 @@ static void setup(int argc, char * argv[])
   SDL_FreeSurface(tmp_imgcurdown);
 
   show_progress_bar();
-  eat_startup_events();
 
   img_scroll_up = loadimage(DATA_PREFIX "images/ui/scroll_up.png");
   img_scroll_down = loadimage(DATA_PREFIX "images/ui/scroll_down.png");
@@ -8141,7 +8175,6 @@ static void setup(int argc, char * argv[])
 #endif
 
   show_progress_bar();
-  eat_startup_events();
 
   img_sparkles = loadimage(DATA_PREFIX "images/ui/sparkles.png");
   img_grass    = loadimage(DATA_PREFIX "images/ui/grass.png");
@@ -8215,27 +8248,23 @@ static void setup(int argc, char * argv[])
     img_magics[i] = loadimage(magic_img_fnames[i]);
 
   show_progress_bar();
-  eat_startup_events();
 
   /* Load shape icons: */
   for (i = 0; i < NUM_SHAPES; i++)
     img_shapes[i] = loadimage(shape_img_fnames[i]);
 
   show_progress_bar();
-  eat_startup_events();
 
   /* Load tip tux images: */
   for (i = 0; i < NUM_TIP_TUX; i++)
     img_tux[i] = loadimage(tux_img_fnames[i]);
 
   show_progress_bar();
-  eat_startup_events();
 
   img_mouse = loadimage(DATA_PREFIX "images/ui/mouse.png");
   img_mouse_click = loadimage(DATA_PREFIX "images/ui/mouse_click.png");
 
   show_progress_bar();
-  eat_startup_events();
   
   /* Create toolbox and selector labels: */
 
@@ -14453,37 +14482,6 @@ static void hsvtorgb(float h, float s, float v, Uint8 *r8, Uint8 *g8, Uint8 *b8)
   *r8 = (Uint8) (r * 255);
   *g8 = (Uint8) (g * 255);
   *b8 = (Uint8) (b * 255);
-}
-
-
-static void show_progress_bar(void)
-{
-  SDL_Rect dest, src;
-  int x;
-  SDL_Event event;
-
-
-  for (x = 0; x < WINDOW_WIDTH; x = x + 65)
-    {
-      src.x = 65 - (prog_bar_ctr % 65);
-      src.y = 0;
-      src.w = 65;
-      src.h = 24;
-
-      dest.x = x;
-      dest.y = WINDOW_HEIGHT - 24;
-  
-      SDL_BlitSurface(img_progress, &src, screen, &dest);
-    }
-
-  prog_bar_ctr++;
-
-  SDL_UpdateRect(screen, 0, WINDOW_HEIGHT - 24, WINDOW_WIDTH, 24);
-
-
-  /* Eat any events: */
-
-  while (SDL_PollEvent(&event));
 }
 
 
