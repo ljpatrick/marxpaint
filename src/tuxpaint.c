@@ -6749,6 +6749,17 @@ static void get_stamp_thumb(stamp_type *sd)
   SDL_Surface *wrongmirror = NULL;
   int need_mirror = 0;
 
+#ifndef NOSOUND
+  // good time to load the sound
+  if(!sd->no_sound && !sd->ssnd && use_sound)
+    {
+      // damn thing wants a .png extension; give it one
+      memcpy(buf+len, ".png", 5);
+      sd->ssnd = loadsound(buf);
+      sd->no_sound = !sd->ssnd;
+    }
+#endif
+
   // first see if we can re-use an existing thumbnail
   if(sd->thumbnail)
     {
@@ -6928,9 +6939,6 @@ static void loadstamp_callback(const char *restrict const dir, unsigned dirlen, 
           if(stamp_data[num_stamps]->full_norm || stamp_data[num_stamps]->full_mirr)
             {
               // we have a stamp; finalize it
-#ifndef NOSOUND
-              stamp_data[num_stamps]->ssnd = use_sound ? loadsound(fname) : NULL;
-#endif
               loadstamp_finisher(num_stamps);
               num_stamps++;
             }
