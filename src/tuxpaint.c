@@ -2092,14 +2092,7 @@ static void mainloop(void)
 		       event.button.x < WINDOW_WIDTH &&
 		       event.button.y > (48 * (7 + TOOLOFFSET / 2)) + 40 &&
 		       event.button.y <= (48 * (7 + TOOLOFFSET / 2)) + 48 + 48 &&
-		       (cur_tool == TOOL_BRUSH || cur_tool == TOOL_LINES ||
-			cur_tool == TOOL_SHAPES || cur_tool == TOOL_TEXT ||
-			(cur_tool == TOOL_MAGIC &&
-			 (cur_magic == MAGIC_FILL || cur_magic == MAGIC_GRASS ||
-			  cur_magic == MAGIC_TINT)) ||
-			(cur_tool == TOOL_STAMP &&
-			 (stamp_colorable(cur_stamp) ||
-			  stamp_tintable(cur_stamp)))))
+		       colors_are_selectable)
 		{
 		  /* Color! */
 		  
@@ -4083,6 +4076,33 @@ static int log2int(int x)
   return y;
 }
 
+static void do_brick(int x, int y, int w, int h)
+{
+  SDL_Rect dest;
+
+  dest.x = x;
+  dest.y = y;
+  dest.w = w;
+  dest.h = h;
+
+  // brick color: 127,76,73
+  double rand_r = rand()/(double)RAND_MAX;
+  double rand_g = rand()/(double)RAND_MAX;
+  double base_r = sRGB_to_linear_table[color_hexes[cur_color][0]]*1.5 + sRGB_to_linear_table[127]*5.0 + rand_r;
+  double base_g = sRGB_to_linear_table[color_hexes[cur_color][1]]*1.5 + sRGB_to_linear_table[76] *5.0 + rand_g;
+  double base_b = sRGB_to_linear_table[color_hexes[cur_color][2]]*1.5 + sRGB_to_linear_table[73] *5.0 + (rand_r+rand_g*2.0)/3.0;
+
+  Uint8 r = linear_to_sRGB(base_r/7.5);
+  Uint8 g = linear_to_sRGB(base_g/7.5);
+  Uint8 b = linear_to_sRGB(base_b/7.5);
+
+
+  SDL_FillRect(canvas, &dest, SDL_MapRGB(canvas->format, r, g, b));
+
+// This is better for debugging brick layout:
+//  SDL_FillRect(canvas, &dest, SDL_MapRGB(canvas->format, rand()&255, rand()&255, rand()&255));
+}
+
 /* Draw the current brush in the current color: */
 
 static void blit_magic(int x, int y, int button_down)
@@ -4233,6 +4253,97 @@ static void blit_magic(int x, int y, int button_down)
 	
 	  SDL_UnlockSurface(canvas);
 	  SDL_UnlockSurface(last);
+	}
+      else if (cur_magic == MAGIC_LARGEBRICK || cur_magic == MAGIC_SMALLBRICK)
+	{
+	  // "specified" means the brick itself, w/o morter
+	  // "nominal" means brick-to-brick (includes morter)
+	  int specified_width, specified_height, specified_length;
+	  int brick_x, brick_y;
+
+	  int vertical_joint   = 2; // between a brick and the one above/below
+	  int horizontal_joint = 2; // between a brick and the one to the side
+	  int nominal_width    = 18;
+	  int nominal_height   = 12; // 11 to 14, for joints of 2
+	  int nominal_length   = 36; // 3x the above, 2x the width
+
+#if 0
+	  if (cur_magic == MAGIC_SMALLBRICK)
+	    {
+	      vertical_joint   = 1; // between a brick and the one above/below
+	      horizontal_joint = 1; // between a brick and the one to the side
+	      nominal_width    = 9;
+	      nominal_height   = 6; // 11 to 14, for joints of 2
+	      nominal_length   = 18; // 3x the above, 2x the width
+	    }
+#endif
+#if 0
+	  if (cur_magic == MAGIC_LARGEBRICK)
+	    {
+	      vertical_joint   = 3; // between a brick and the one above/below
+	      horizontal_joint = 3; // between a brick and the one to the side
+	      nominal_width    = 27;
+	      nominal_height   = 18; // 11 to 14, for joints of 2
+	      nominal_length   = 54; // 3x the above, 2x the width
+	    }
+#endif
+#if 1
+	  if (cur_magic == MAGIC_LARGEBRICK)
+	    {
+	      vertical_joint   = 4; // between a brick and the one above/below
+	      horizontal_joint = 4; // between a brick and the one to the side
+	      nominal_width    = 36;
+	      nominal_height   = 24; // 11 to 14, for joints of 2
+	      nominal_length   = 72; // 3x the above, 2x the width
+	    }
+#endif
+
+	  specified_width  = nominal_width - horizontal_joint;
+	  specified_height = nominal_height - vertical_joint;
+	  specified_length = nominal_length - horizontal_joint;
+	  static unsigned char *map;
+	  static int x_count;
+	  static int y_count;
+          if (!button_down)
+            {
+              if (map)
+                free(map);
+              // the "+ 3" allows for both ends and misalignment
+              x_count = (canvas->w + nominal_width  - 1) / nominal_width + 3;
+              y_count = (canvas->h + nominal_height - 1) / nominal_height + 3;
+              map = calloc(x_count,y_count);
+            }
+
+	  brick_x = x / nominal_width;
+	  brick_y = y / nominal_height;
+
+          unsigned char *mybrick = map + brick_x+1 + (brick_y+1)*x_count;
+
+          if ( (unsigned)x < (unsigned)canvas->w && (unsigned)y < (unsigned)canvas->h )
+            {
+              if(!*mybrick)
+                {
+                  int my_x = brick_x*nominal_width;
+                  int my_w = specified_width;
+                  *mybrick = 1;
+                  SDL_LockSurface(canvas);
+                  if((brick_y^brick_x)&1)
+                    {
+                      if(mybrick[1])
+                        my_w = specified_length;
+                    }
+                  else
+                    if(mybrick[-1])
+                      {
+                        my_x -= nominal_width;
+                        my_w = specified_length;
+                      }
+                  do_brick(my_x, brick_y*nominal_height, my_w,  specified_height);
+                  SDL_UnlockSurface(canvas);
+                  //            upper left corner        and     lower right corner
+                  update_canvas(brick_x*nominal_width-nominal_width, brick_y*nominal_height-vertical_joint, brick_x*nominal_width+specified_length,  (brick_y+1)*nominal_height);
+                }
+            }
 	}
       else if (cur_magic == MAGIC_SMUDGE)
 	{

@@ -18,6 +18,9 @@ enum {
   MAGIC_FILL,
   MAGIC_GRASS,
   
+  MAGIC_LARGEBRICK,
+  MAGIC_SMALLBRICK,
+  
   MAGIC_RAINBOW,
   MAGIC_SPARKLES,
   
@@ -52,6 +55,9 @@ const int magic_colors[] = {
   COLORSEL_ENABLE, // fill
   COLORSEL_ENABLE, // grass
 
+  COLORSEL_ENABLE, // large bricks
+  COLORSEL_ENABLE, // small bricks
+
   COLORSEL_DISABLE,
   COLORSEL_DISABLE,
 
@@ -82,6 +88,9 @@ const int magic_colors[] = {
 const char * const magic_names[NUM_MAGICS] = {
   gettext_noop("Fill"),
   gettext_noop("Grass"),
+
+  gettext_noop("Bricks"),
+  gettext_noop("Bricks"),
 
   gettext_noop("Rainbow"),
   gettext_noop("Sparkles"),
@@ -115,6 +124,9 @@ const char * const magic_tips[NUM_MAGICS] = {
   gettext_noop("Click in the picture to fill that area with color."),
   gettext_noop("Click and move to draw grass. Don't forget the dirt!"),
   
+  gettext_noop("Click and move to draw large bricks."),
+  gettext_noop("Click and move to draw small bricks."),
+  
   gettext_noop("You can draw in rainbow colors!"),
   gettext_noop("Click and move to draw sparkles."),
   
@@ -146,6 +158,9 @@ const char * const magic_tips[NUM_MAGICS] = {
 const char * const magic_img_fnames[NUM_MAGICS] = {
   DATA_PREFIX "images/magic/fill.png",
   DATA_PREFIX "images/magic/grass.png",
+  
+  DATA_PREFIX "images/magic/largebrick.png",
+  DATA_PREFIX "images/magic/smallbrick.png",
   
   DATA_PREFIX "images/magic/rainbow.png",
   DATA_PREFIX "images/magic/sparkles.png",

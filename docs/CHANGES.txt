@@ -19,9 +19,6 @@ http://www.newbreedsoftware.com/tuxpaint/
       describing how the contents of the stamp should be tinted. (See README)
       Albert Cahalan <albert@users.sf.net>
 
-    * Tinter now 2x to 4x faster.
-      Albert Cahalan <albert@users.sf.net>
-
     * Added "scale" keyword (in stamp ".dat" files) for high-resolution stamp
       images.  (Allows stamps to be made larger without losing quality.)
       Albert Cahalan <albert@users.sf.net>
@@ -32,9 +29,8 @@ http://www.newbreedsoftware.com/tuxpaint/
   * New Magic tools:
     ----------------
     * "Smudge" (pushes the colors around like wet paint)
-      Albert Cahalan <albert@users.sf.net>
-  
     * "Grass" (makes grass, the painless way)
+    * "Bricks" (makes bricks, the painless way)
       Albert Cahalan <albert@users.sf.net>
   
     * "Darken" (opposite of "Fade"),
