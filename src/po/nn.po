@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: nn\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2005-01-12 21:39+0100\n"
-"PO-Revision-Date: 2005-01-12 21:45+0100\n"
+"POT-Creation-Date: 2005-02-19 23:58+0100\n"
+"PO-Revision-Date: 2005-02-20 00:08+0100\n"
 "Last-Translator: Karl Ove Hufthammer <karl@huftis.org>\n"
 "Language-Team: Norwegian Nynorsk <i18n-nn@lister.ping.uio.no>\n"
 "MIME-Version: 1.0\n"
@@ -29,8 +29,11 @@ msgstr "Tux Paint"
 msgid "Black!"
 msgstr "Svart!"
 
-msgid "Gray!"
-msgstr "Grå!"
+msgid "Dark grey! Some people spell it “dark gray”."
+msgstr "Mørkegrå!"
+
+msgid "Light grey! Some people spell it “light gray”."
+msgstr "Lysegrå!"
 
 msgid "White!"
 msgstr "Kvit!"
@@ -50,14 +53,14 @@ msgstr "Lysegrøn!"
 msgid "Dark green!"
 msgstr "Mørkegrøn!"
 
-msgid "Light blue!"
+msgid "Sky blue!"
 msgstr "Lyseblå!"
 
 msgid "Blue!"
 msgstr "Blå!"
 
-msgid "Violet!"
-msgstr "Fiolett!"
+msgid "Lavender!"
+msgstr "Lavendel!"
 
 msgid "Purple!"
 msgstr "Lilla!"
@@ -108,7 +111,7 @@ msgid "Smudge"
 msgstr "Gni ut"
 
 msgid "Lighten"
-msgstr "Lysare!"
+msgstr "Lysare"
 
 msgid "Darken"
 msgstr "Mørkare"
@@ -128,9 +131,8 @@ msgstr "Fargelegg"
 msgid "Drip"
 msgstr "Drypping"
 
-#, fuzzy
 msgid "Cartoon"
-msgstr "Teikn av"
+msgstr "Unyanser"
 
 msgid "Mirror"
 msgstr "Spegel"
@@ -236,7 +238,7 @@ msgid "A pentagon has five sides."
 msgstr "Ein femkant har fem sider."
 
 msgid "A rhombus has four equal sides, and opposite sides are parallel."
-msgstr "Ein rombe har fire sider og motståande sider er parallelle."
+msgstr "Ein rombe har fire like lange sider og motståande sider er parallelle."
 
 msgid "Tools"
 msgstr "Verktøy"
@@ -411,6 +413,33 @@ msgstr "Du kan ikkje skriva ut enno."
 
 msgid "Erase this picture?"
 msgstr "Vil du verkeleg sletta teikninga?"
+
+msgid "Remember to use the left mouse button!"
+msgstr "Hugs å bruka venstre museknapp!"
+
+msgid "jq"
+msgstr "æÆ"
+
+msgid "JQ"
+msgstr "øØ"
+
+msgid "oO"
+msgstr "oO"
+
+msgid "`\\%_@$~#{}<>^&*"
+msgstr "`\\%_@$~#{}<>^&*"
+
+msgid ",.?!"
+msgstr ",.?!"
+
+msgid "017"
+msgstr "017"
+
+msgid "O0"
+msgstr "O0"
+
+msgid "1Il|"
+msgstr "1Il|"
 
 msgid "Erase"
 msgstr "Slett"

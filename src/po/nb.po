@@ -1,21 +1,22 @@
-# translation of nb.po to 
+# Translation of nb to Norwegian Nynorsk
+# translation of nb.po to
 # Omsetjing av Tux Paint til bokmål.
 # Dag H. Lorås <dag.loraas@operamail.com>, 2003.
 # Knut Erik Hollund <khollund@responze.net>, 2003.
-# Karl Ove Hufthammer <karl@huftis.org>, 2003.
+# Karl Ove Hufthammer <karl@huftis.org>, 2003, 2005.
 # Klaus Ade Johnstad <klaus@skolelinux.no>, 2004.
 msgid ""
 msgstr ""
 "Project-Id-Version: nb\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2005-01-06 12:31+0100\n"
-"PO-Revision-Date: 2004-11-15 21:11+0100\n"
-"Last-Translator: Klaus Ade Johnstad <klaus@skolelinux.no>\n"
-"Language-Team: Norwegian Bokmål <i18n-nb@lister.ping.uio.no>\n"
+"POT-Creation-Date: 2005-02-19 23:58+0100\n"
+"PO-Revision-Date: 2005-02-20 00:13+0100\n"
+"Last-Translator: Karl Ove Hufthammer <karl@huftis.org>\n"
+"Language-Team: Norwegian Nynorsk <i18n-nn@lister.ping.uio.no>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: KBabel 1.3.1\n"
+"X-Generator: KBabel 1.9.1\n"
 
 msgid "A drawing program for children."
 msgstr "Et tegneprogram for de yngste."
@@ -29,15 +30,12 @@ msgstr "Tux Paint"
 msgid "Black!"
 msgstr "Svart!"
 
-#, fuzzy
-msgid "Dark Gray!"
+msgid "Dark grey! Some people spell it “dark gray”."
 msgstr "Mørkegrå!"
 
-#. using both valid spellings
-msgid "Light Grey!"
-msgstr ""
+msgid "Light grey! Some people spell it “light gray”."
+msgstr "Lysegrå!"
 
-#. using both valid spellings
 msgid "White!"
 msgstr "Hvit!"
 
@@ -50,23 +48,23 @@ msgstr "Oransje!"
 msgid "Yellow!"
 msgstr "Gul!"
 
-msgid "Neon green!"
-msgstr ""
+msgid "Light green!"
+msgstr "Lysegrønn!"
 
-msgid "Green!"
-msgstr "Grønn!"
+msgid "Dark green!"
+msgstr "Mørkegrønn!"
 
 msgid "Sky blue!"
-msgstr ""
+msgstr "Lyseblå!"
 
 msgid "Blue!"
 msgstr "Blå!"
 
+msgid "Lavender!"
+msgstr "Lavendel!"
+
 msgid "Purple!"
 msgstr "Fiolett!"
-
-msgid "Magenta!"
-msgstr ""
 
 msgid "Pink!"
 msgstr "Rosa!"
@@ -74,12 +72,11 @@ msgstr "Rosa!"
 msgid "Brown!"
 msgstr "Brun!"
 
-#, fuzzy
 msgid "Tan!"
-msgstr "Turkis!"
+msgstr "Lysebrun!"
 
 msgid "Beige!"
-msgstr ""
+msgstr "Beige!"
 
 msgid "Great!"
 msgstr "Flott!"
@@ -96,13 +93,11 @@ msgstr "Bra jobba!"
 msgid "Fill"
 msgstr "Bøtte"
 
-#, fuzzy
 msgid "Grass"
-msgstr "Slett"
+msgstr "Gress"
 
-#, fuzzy
 msgid "Bricks"
-msgstr "Blokk"
+msgstr "Murstein"
 
 msgid "Rainbow"
 msgstr "Regnbue"
@@ -114,13 +109,13 @@ msgid "Blur"
 msgstr "Uklar"
 
 msgid "Smudge"
-msgstr ""
+msgstr "Gni ut"
 
-msgid "Fade"
-msgstr "Blekne"
+msgid "Lighten"
+msgstr "Lysere"
 
 msgid "Darken"
-msgstr ""
+msgstr "Mørkere"
 
 msgid "Chalk"
 msgstr "Kritt"
@@ -131,15 +126,14 @@ msgstr "Blokk"
 msgid "Negative"
 msgstr "Negativ"
 
-#, fuzzy
 msgid "Tint"
-msgstr "Tynn"
+msgstr "Fargelegg"
 
 msgid "Drip"
 msgstr "Drypping"
 
 msgid "Cartoon"
-msgstr ""
+msgstr "Unyanser"
 
 msgid "Mirror"
 msgstr "Speil"
@@ -150,17 +144,14 @@ msgstr "Snu"
 msgid "Click in the picture to fill that area with color."
 msgstr "Trykk på tegningen for å fylle området med fargen fra malingbøtta."
 
-#, fuzzy
-msgid "Click and move to draw grass. Don't forget the dirt!"
-msgstr "Hold inne knappen og flytt rundt for å tegne gnister."
+msgid "Click and move to draw grass. Don’t forget the dirt!"
+msgstr "Hold inne knappen og flytt rundt for å tegne gress. Ikke glem jorden!"
 
-#, fuzzy
 msgid "Click and move to draw large bricks."
-msgstr "Hold inne knappen og flytt rundt for å tegne gnister."
+msgstr "Hold inne knappen og flytt rundt for å tegne store mursteiner."
 
-#, fuzzy
 msgid "Click and move to draw small bricks."
-msgstr "Hold inne knappen og flytt rundt for å tegne gnister."
+msgstr "Hold inne knappen og flytt rundt for å tegne små mursteiner."
 
 msgid "You can draw in rainbow colors!"
 msgstr "Du kan tegne i alle regnbuens farger!"
@@ -171,21 +162,17 @@ msgstr "Hold inne knappen og flytt rundt for å tegne gnister."
 msgid "Click and move the mouse around to blur the picture."
 msgstr "Hold inne knappen og flytt rundt for å gjøre tegningen uskarp."
 
-#, fuzzy
 msgid "Click and move the mouse around to smudge the picture."
-msgstr "Hold inne knappen og flytt rundt for å gjøre tegningen uskarp."
+msgstr "Hold inne knappen og flytt rundt for å gni tegningen utover."
 
 msgid "Click and move to fade the colors."
 msgstr "Hold inne knappen og flytt rundt for å bleke fargene."
 
-#, fuzzy
 msgid "Click and move to darken the colors."
-msgstr "Hold inne knappen og flytt rundt for å bleke fargene."
+msgstr "Hold inne knappen og flytt rundt for å gjøre fargene mørkere."
 
-msgid ""
-"Click and move the mouse around to turn the picture into a chalk drawing."
-msgstr ""
-"Hold inne knappen og flytt rundt for å gjøre tegningen om til en krittegning."
+msgid "Click and move the mouse around to turn the picture into a chalk drawing."
+msgstr "Hold inne knappen og flytt rundt for å gjøre tegningen om til en krittegning."
 
 msgid "Click and move the mouse around to make the picture blocky."
 msgstr "Hold inne knappen og flytt rundt for å gjøre tegningen «blokkete»."
@@ -193,17 +180,14 @@ msgstr "Hold inne knappen og flytt rundt for å gjøre tegningen «blokkete»."
 msgid "Click and move the mouse around to draw a negative."
 msgstr "Hold inne knappen og flytt rundt for å invertere tegningen."
 
-#, fuzzy
-msgid "Click and move the mouse around to change the picture's color."
-msgstr "Hold inne knappen og flytt rundt for å gjøre tegningen «blokkete»."
+msgid "Click and move the mouse around to change the picture’s color."
+msgstr "Hold inne knappen og flytt rundt for å forandre fargene på tegningen."
 
 msgid "Click and move the mouse around to make the picture drip."
 msgstr "Hold inne knappen og flytt rundt for å gjøre tegningen dryppende."
 
-#, fuzzy
 msgid "Click and move the mouse around to turn the picture into a cartoon."
-msgstr ""
-"Hold inne knappen og flytt rundt for å gjøre tegningen om til en krittegning."
+msgstr "Hold inne knappen og flytt rundt for å gjøre fargene klarere og strekene tydeligere."
 
 msgid "Click to make a mirror image."
 msgstr "Trykk for å speilvende tegningen!"
@@ -220,7 +204,7 @@ msgstr "Rektangel"
 msgid "Circle"
 msgstr "Sirkel"
 
-msgid "Oval"
+msgid "Ellipse"
 msgstr "Ellipse"
 
 msgid "Triangle"
@@ -229,17 +213,20 @@ msgstr "Trekant"
 msgid "Pentagon"
 msgstr "Femkant"
 
-msgid "Diamond"
-msgstr "Diamant"
+msgid "Rhombus"
+msgstr "Rhombus"
 
-msgid "A square has four sides, each the same length."
-msgstr "Et kvadrat har fire like lange sider."
+msgid "A square is a rectangle with four equal sides."
+msgstr "Et kvadrat er et rektangel med fire like sider."
 
-msgid "A rectangle has four sides."
-msgstr "Et rektangel har fire sider."
+msgid "A rectangle has four sides and four right angles."
+msgstr "Et rektangel har fire sider og fire rette vinkler."
 
-msgid "A circle is exactly round."
-msgstr "En sirkel er rund."
+msgid "A circle is a curve where all points have the same distance from the centre."
+msgstr "En sirkel er en kurve der alle punktene er like langt fra sentrum."
+
+msgid "An ellipse is a stretched circle."
+msgstr "En ellipse er en avlang sirkel."
 
 msgid "A triangle has three sides."
 msgstr "En trekant har tre sider."
@@ -247,8 +234,8 @@ msgstr "En trekant har tre sider."
 msgid "A pentagon has five sides."
 msgstr "En femkant har fem sider."
 
-msgid "A diamond is a square, turned around slightly."
-msgstr "En diamant er et rotert kvadrat."
+msgid "A rhombus has four equal sides, and opposite sides are parallel."
+msgstr "En rombe har fire like lange sider og motstående sider er parallelle."
 
 msgid "Tools"
 msgstr "Verktøy"
@@ -259,7 +246,6 @@ msgstr "Farger"
 msgid "Brushes"
 msgstr "Pensler"
 
-#, fuzzy
 msgid "Erasers"
 msgstr "Viskelær"
 
@@ -425,6 +411,33 @@ msgstr "Du kan ikke skrive ut enda!"
 msgid "Erase this picture?"
 msgstr "Vil du virkelig slette tegningen?"
 
+msgid "Remember to use the left mouse button!"
+msgstr "Husk å bruke venstre museknapp!"
+
+msgid "jq"
+msgstr "æÆ"
+
+msgid "JQ"
+msgstr "øØ"
+
+msgid "oO"
+msgstr "oO"
+
+msgid "`\\%_@$~#{}<>^&*"
+msgstr "`\\%_@$~#{}<>^&*"
+
+msgid ",.?!"
+msgstr ",.?!"
+
+msgid "017"
+msgstr "017"
+
+msgid "O0"
+msgstr "O0"
+
+msgid "1Il|"
+msgstr "1Il|"
+
 msgid "Erase"
 msgstr "Slett"
 
@@ -432,7 +445,7 @@ msgid "Back"
 msgstr "Tilbake"
 
 msgid "Aa"
-msgstr ""
+msgstr "Aa"
 
 #. FIXME: Move elsewhere!!!
 msgid "Save over the older version of this picture?"
@@ -444,20 +457,3 @@ msgstr "Nei. Lagre som ny tegning."
 msgid "Choose the picture you want, then click “Open”."
 msgstr "Velg en tegning og trykk «Åpne»."
 
-#~ msgid "Lime!"
-#~ msgstr "Lysegrønn!"
-
-#~ msgid "Fuchsia!"
-#~ msgstr "Lys fiolett!"
-
-#~ msgid "Silver!"
-#~ msgstr "Lysegrå!"
-
-#~ msgid "Thick"
-#~ msgstr "Tykk"
-
-#~ msgid "Click and move the mouse to thicken the picture."
-#~ msgstr "Hold inne knappen og flytt rundt for å gjøre tegningen tykkere."
-
-#~ msgid "Click and move the mouse to thin the picture."
-#~ msgstr "Hold inne knappen og flytt rundt for å gjøre tegningen tynnere."
