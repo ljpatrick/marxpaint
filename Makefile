@@ -204,16 +204,19 @@ uninstall:
 	-rm $(X11_ICON_PREFIX)tuxpaint.xpm
 	-if [ "x$(KDE_ICON_PREFIX)" != "x" ]; then \
 	  rm $(KDE_ICON_PREFIX)/hicolor/scalable/apps/tuxpaint.svg; \
+	  rm $(KDE_ICON_PREFIX)/hicolor/192x192/apps/tuxpaint.png; \
 	  rm $(KDE_ICON_PREFIX)/hicolor/128x128/apps/tuxpaint.png; \
+	  rm $(KDE_ICON_PREFIX)/hicolor/96x96/apps/tuxpaint.png; \
 	  rm $(KDE_ICON_PREFIX)/hicolor/64x64/apps/tuxpaint.png; \
 	  rm $(KDE_ICON_PREFIX)/hicolor/48x48/apps/tuxpaint.png; \
 	  rm $(KDE_ICON_PREFIX)/hicolor/32x32/apps/tuxpaint.png; \
+	  rm $(KDE_ICON_PREFIX)/hicolor/22x22/apps/tuxpaint.png; \
 	  rm $(KDE_ICON_PREFIX)/hicolor/16x16/apps/tuxpaint.png; \
 	fi
 	-rm $(BIN_PREFIX)/tuxpaint
 	-rm $(BIN_PREFIX)/tuxpaint-import
 	-rm -r $(DATA_PREFIX)
-	-rm -r $(DOC_PREFIX)
+	-rm -r $(DOC_PREFIX)32
 	-rm $(MAN_PREFIX)/man1/tuxpaint.1.gz
 	-rm $(MAN_PREFIX)/pl/man1/tuxpaint.1.gz
 	-rm $(MAN_PREFIX)/man1/tuxpaint-import.1.gz
@@ -313,21 +316,30 @@ install-kde-icons:
 	@echo "...Installing launcher icon graphics into KDE..."
 	@if [ "x$(KDE_ICON_PREFIX)" != "x" ]; then \
 	  install -d $(KDE_ICON_PREFIX)/hicolor/scalable/apps/; \
+	  install -d $(KDE_ICON_PREFIX)/hicolor/192x192/apps/; \
 	  install -d $(KDE_ICON_PREFIX)/hicolor/128x128/apps/; \
+	  install -d $(KDE_ICON_PREFIX)/hicolor/96x96/apps/; \
 	  install -d $(KDE_ICON_PREFIX)/hicolor/64x64/apps/; \
 	  install -d $(KDE_ICON_PREFIX)/hicolor/48x48/apps/; \
 	  install -d $(KDE_ICON_PREFIX)/hicolor/32x32/apps/; \
+	  install -d $(KDE_ICON_PREFIX)/hicolor/22x22/apps/; \
 	  install -d $(KDE_ICON_PREFIX)/hicolor/16x16/apps/; \
 	  cp data/images/tuxpaint-icon.svg \
 		$(KDE_ICON_PREFIX)/hicolor/scalable/apps/tuxpaint.svg; \
+	  cp data/images/icon192x192.png \
+		$(KDE_ICON_PREFIX)/hicolor/192x192/apps/tuxpaint.png; \
 	  cp data/images/icon128x128.png \
 		$(KDE_ICON_PREFIX)/hicolor/128x128/apps/tuxpaint.png; \
+	  cp data/images/icon96x96.png \
+		$(KDE_ICON_PREFIX)/hicolor/96x96/apps/tuxpaint.png; \
 	  cp data/images/icon64x64.png \
 		$(KDE_ICON_PREFIX)/hicolor/64x64/apps/tuxpaint.png; \
 	  cp data/images/icon48x48.png \
 		$(KDE_ICON_PREFIX)/hicolor/48x48/apps/tuxpaint.png; \
 	  cp data/images/icon32x32.png \
 		$(KDE_ICON_PREFIX)/hicolor/32x32/apps/tuxpaint.png; \
+	  cp data/images/icon22x22.png \
+		$(KDE_ICON_PREFIX)/hicolor/22x22/apps/tuxpaint.png; \
 	  cp data/images/icon16x16.png \
 		$(KDE_ICON_PREFIX)/hicolor/16x16/apps/tuxpaint.png; \
 	fi

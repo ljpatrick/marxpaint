@@ -21,7 +21,7 @@ http://www.newbreedsoftware.com/tuxpaint/
   * SVG (Scalable Vector Graphics) icon created.
     Karl Ove Hufthammer <karl@huftis.org>
 
-  * Added 64x64 and 128x128 icons, based on SVG icon.
+  * Added 22x22, 64x64, 96x96, 128x128 and 192x192 icons, based on SVG icon.
     Karl Ove Hufthammer <karl@huftis.org>
 
   * Fixed "--noprint=yes" not working under Windows and BeOS.
