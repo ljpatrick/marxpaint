@@ -2,7 +2,7 @@
 Name=Tux Paint
 Type=Application
 Exec=tuxpaint
-Icon=tuxpaint.png
+Icon=tuxpaint
 Terminal=0
 Comment=Tux Paint: a drawing program for children.
 Comment[ca]=Tux Paint: un programa de dibuix per a nens petits.

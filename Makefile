@@ -302,9 +302,15 @@ install-kde:
 install-kde-icons:
 	@echo "...Installing launcher icon graphics into KDE..."
 	@if [ "x$(KDE_ICON_PREFIX)" != "x" ]; then \
+	  install -d $(KDE_ICON_PREFIX)/hicolor/128x128/apps/; \
+	  install -d $(KDE_ICON_PREFIX)/hicolor/64x64/apps/; \
 	  install -d $(KDE_ICON_PREFIX)/hicolor/48x48/apps/; \
 	  install -d $(KDE_ICON_PREFIX)/hicolor/32x32/apps/; \
 	  install -d $(KDE_ICON_PREFIX)/hicolor/16x16/apps/; \
+	  cp data/images/icon128x128.png \
+		$(KDE_ICON_PREFIX)/hicolor/128x128/apps/tuxpaint.png; \
+	  cp data/images/icon64x64.png \
+		$(KDE_ICON_PREFIX)/hicolor/64x64/apps/tuxpaint.png; \
 	  cp data/images/icon48x48.png \
 		$(KDE_ICON_PREFIX)/hicolor/48x48/apps/tuxpaint.png; \
 	  cp data/images/icon32x32.png \
