@@ -679,6 +679,12 @@ static void set_current_language(void)
 #endif
   int lang, i, found;
 
+  bindtextdomain("tuxpaint", LOCALEDIR);
+  /* Old version of glibc does not have bind_textdomain_codeset() */
+#if defined __GLIBC__ && __GLIBC__ == 2 && __GLIBC_MINOR__ >=2 || __GLIBC__ > 2
+  bind_textdomain_codeset("tuxpaint", "UTF-8");
+#endif
+  textdomain("tuxpaint");
 
   /* Default... */
 
@@ -1171,15 +1177,6 @@ static void setup_language(const char * const prg)
       free(langstr);
     }
  
-  bindtextdomain("tuxpaint", LOCALEDIR);
-  
-  /* Old version of glibc does not have bind_textdomain_codeset() */
-#if defined __GLIBC__ && __GLIBC__ == 2 && __GLIBC_MINOR__ >=2 || __GLIBC__ > 2
-  bind_textdomain_codeset("tuxpaint", "UTF-8");
-#endif
-
-  textdomain("tuxpaint");
-
   set_current_language();
 }
 
@@ -1248,8 +1245,6 @@ static TTF_Font *load_locale_font(TTF_Font *fallback)
 	      putenv((char *) "OUTPUT_CHARSET=C");
 	      setlocale(LC_ALL, "C");
 
-	      bindtextdomain("tuxpaint", LOCALEDIR);
-	      textdomain("tuxpaint");
 	      set_current_language();
 	  }
       }
