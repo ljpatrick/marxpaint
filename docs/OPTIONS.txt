@@ -6,8 +6,8 @@
                         Copyright 2004 by Bill Kendrick
                                New Breed Software
 
-                          [1]bill@newbreedsoftware.com
-                  [2]http://www.newbreedsoftware.com/tuxpaint/
+                           bill@newbreedsoftware.com
+                   http://www.newbreedsoftware.com/tuxpaint/
 
                                September 24, 2004
 
@@ -65,7 +65,7 @@ Windows Users
                                Available Options
 
      The following settings can be set in the configuration file.
-     (Command-line settings will override these. See the "[3]Command-Line
+     (Command-line settings will override these. See the "Command-Line
      Options" section, below.)
 
      fullscreen=yes
@@ -416,8 +416,8 @@ Windows Users
        --locale locale
 
                Run Tux Paint in one of the support languages. See the
-               "[4]Choosing a Different Language" section below for the
-               locale strings (e.g., "de_DE@euro" for German) to use.
+               "Choosing a Different Language" section below for the locale
+               strings (e.g., "de_DE@euro" for German) to use.
 
                (If your locale is already set, e.g. with the "$LANG"
                environment variable, this option is not necessary, since
@@ -482,8 +482,7 @@ Command-Line Informational Options
      configuration file (e.g., "lang=spanish").
 
      Tux Paint also honors your environment's current locale. (You can
-     override it on the command-line using the "--locale" option; see
-     [5]above.)
+     override it on the command-line using the "--locale" option; see above.)
 
      Use the option "--lang help" to list the available language options
      available.
@@ -589,7 +588,7 @@ Available Languages
 
        (*) - These languages require their own fonts, since they are not
        represented using a Latin character set, like the others. See the
-       "[6]Special Fonts" section, below.
+       "Special Fonts" section, below.
 
 Setting Your Environment's Locale
 
@@ -676,7 +675,7 @@ Setting Your Environment's Locale
        Some languages require special fonts be installed. These font files
        (which are in TrueType format (TTF)), are much too large to include
        with the Tux Paint download, and are available separately. (See the
-       table above, under the "[7]Choosing a Different Language" section.)
+       table above, under the "Choosing a Different Language" section.)
 
        When running Tux Paint in a language that requires its own font,
        Tux Paint will try to load the font file from its system-wide "fonts"
@@ -691,20 +690,8 @@ Setting Your Environment's Locale
          /usr/share/tuxpaint/fonts/locale/ko.ttf
 
        You can download fonts for supported languages from Tux Paint's
-       website, [8]http://www.newbreedsoftware.com/tuxpaint/. (Look in the
+       website, http://www.newbreedsoftware.com/tuxpaint/. (Look in the
        'Fonts' section under 'Download.')
 
        Under Unix and Linux, you can use the Makefile that comes with the
        font to install the font in the appropriate location.
-
-References
-
-   Visible links
-   1. mailto:bill@newbreedsoftware.com
-   2. http://www.newbreedsoftware.com/tuxpaint/
-   3. file:///home/kendrick/Development/tux/tp/tuxpaint/docs/html/OPTIONS.html#command_line
-   4. file:///home/kendrick/Development/tux/tp/tuxpaint/docs/html/OPTIONS.html#different_language
-   5. file:///home/kendrick/Development/tux/tp/tuxpaint/docs/html/OPTIONS.html#locale
-   6. file:///home/kendrick/Development/tux/tp/tuxpaint/docs/html/OPTIONS.html#special_fonts
-   7. file:///home/kendrick/Development/tux/tp/tuxpaint/docs/html/OPTIONS.html#different_language
-   8. http://www.newbreedsoftware.com/tuxpaint/
