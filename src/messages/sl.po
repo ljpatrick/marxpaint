@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint_sl_SI_popr\n"
 "POT-Creation-Date: 2002-10-20 21:54-0800\n"
-"PO-Revision-Date: 2004-03-03 12:27+0100\n"
+"PO-Revision-Date: 2004-03-17 06:12-0800\n"
 "Last-Translator: Urska Colner <urska.colner@agenda.si>\n"
 "Language-Team: Slovenščina <users@sl.openoffice.org>\n"
 "MIME-Version: 1.0\n"
@@ -118,64 +118,64 @@ msgid "Choose the picture you want, then click 'Open'"
 msgstr "Izberi sliko in klikni 'Odpri'"
 
 #: src/colors.h:62
-msgid "Black"
-msgstr "Črna"
+msgid "Black!"
+msgstr "Črna!"
 
 #: src/colors.h:63
-msgid "White"
-msgstr "Bela"
+msgid "White!"
+msgstr "Bela!"
 
 #: src/colors.h:64
-msgid "Red"
-msgstr "Rdeča"
+msgid "Red!"
+msgstr "Rdeča!"
 
 #: src/colors.h:65
-msgid "Pink"
-msgstr "Roza"
+msgid "Pink!"
+msgstr "Roza!"
 
 #: src/colors.h:66
-msgid "Orange"
-msgstr "Oranžna"
+msgid "Orange!"
+msgstr "Oranžna!"
 
 #: src/colors.h:67
-msgid "Yellow"
-msgstr "Rumena"
+msgid "Yellow!"
+msgstr "Rumena!"
 
 #: src/colors.h:68
-msgid "Lime"
-msgstr "Rumeno zelena"
+msgid "Lime!"
+msgstr "Rumeno zelena!"
 
 #: src/colors.h:69
-msgid "Green"
-msgstr "Zelena"
+msgid "Green!"
+msgstr "Zelena!"
 
 #: src/colors.h:70
-msgid "Cyan"
-msgstr "Cijan"
+msgid "Cyan!"
+msgstr "Cijan!"
 
 #: src/colors.h:71
-msgid "Blue"
-msgstr "Modra"
+msgid "Blue!"
+msgstr "Modra!"
 
 #: src/colors.h:72
-msgid "Purple"
-msgstr "Vijoličasta"
+msgid "Purple!"
+msgstr "Vijoličasta!"
 
 #: src/colors.h:73
-msgid "Fuchsia"
-msgstr "Rožnata"
+msgid "Fuchsia!"
+msgstr "Rožnata!"
 
 #: src/colors.h:74
-msgid "Brown"
-msgstr "Rjava"
+msgid "Brown!"
+msgstr "Rjava!"
 
 #: src/colors.h:75
-msgid "Grey"
-msgstr "Siva"
+msgid "Grey!"
+msgstr "Siva!"
 
 #: src/colors.h:76
-msgid "Silver"
-msgstr "Srebrna"
+msgid "Silver!"
+msgstr "Srebrna!"
 
 #: src/great.h:20
 msgid "Great!"
