@@ -1221,7 +1221,7 @@ static void mainloop(void)
 				  stamp_tintable(cur_stamp));
 		    }
 		  else if (cur_tool == TOOL_MAGIC &&
-			   (cur_magic == MAGIC_FILL ||
+			   (cur_magic == MAGIC_FILL || cur_magic == MAGIC_GRASS ||
 			    cur_magic == MAGIC_TINT))
 		    {
 		      draw_colors(1);
@@ -1551,7 +1551,7 @@ static void mainloop(void)
 					  stamp_tintable(cur_stamp));
 			    }
 		  	  else if (cur_tool == TOOL_MAGIC &&
-				   (cur_magic == MAGIC_FILL ||
+				   (cur_magic == MAGIC_FILL || cur_magic == MAGIC_GRASS ||
 				    cur_magic == MAGIC_TINT))
 			    {
 			      draw_colors(1);
@@ -1661,7 +1661,7 @@ static void mainloop(void)
 			  rainbow_color = 0;
 			  draw_magic();
 
-			  if (cur_magic == MAGIC_FILL ||
+			  if (cur_magic == MAGIC_FILL || cur_magic == MAGIC_GRASS ||
 			      cur_magic == MAGIC_TINT)
 			    draw_colors(1);
 			  else
@@ -2063,7 +2063,7 @@ static void mainloop(void)
 			{
 			  if (cur_thing != cur_magic)
 			    {
-			      if (cur_thing == MAGIC_FILL ||
+			      if (cur_thing == MAGIC_FILL || cur_magic == MAGIC_GRASS ||
 			          cur_thing == MAGIC_TINT)
 				draw_colors(1);
 			      else
@@ -2099,7 +2099,7 @@ static void mainloop(void)
 		       (cur_tool == TOOL_BRUSH || cur_tool == TOOL_LINES ||
 			cur_tool == TOOL_SHAPES || cur_tool == TOOL_TEXT ||
 			(cur_tool == TOOL_MAGIC &&
-			 (cur_magic == MAGIC_FILL ||
+			 (cur_magic == MAGIC_FILL || cur_magic == MAGIC_GRASS ||
 			  cur_magic == MAGIC_TINT)) ||
 			(cur_tool == TOOL_STAMP &&
 			 (stamp_colorable(cur_stamp) ||
@@ -2492,7 +2492,7 @@ static void mainloop(void)
 		{
 		  if (cur_thing != cur_magic)
 		    {
-		      if (cur_thing == MAGIC_FILL ||
+		      if (cur_thing == MAGIC_FILL || cur_magic == MAGIC_GRASS ||
 			  cur_thing == MAGIC_TINT)
 			draw_colors(1);
 		      else
@@ -4082,7 +4082,7 @@ static void blit_magic(int x, int y, int button_down)
 {
   int xx, yy, w, h;
   Uint32 colr;
-  Uint8 r, g, b;
+  Uint8 r, g, b, a;
   SDL_Surface * last;
   SDL_Rect src, dest;
   int undo_ctr;
@@ -4485,19 +4485,57 @@ static void blit_magic(int x, int y, int button_down)
 	}
       else if (cur_magic == MAGIC_GRASS)
 	{
-	  int rank = ((double)y/canvas->h) * (0.99+(rand()/(double)RAND_MAX)) * 4;
-	  int ah = 1<<rank;
-	  if ((rand() % 256) > ah && ((rand() % 10) < 2))
+	  // grass color: 82,180,17
+	  static int bucket;
+	  if (!button_down)
+	    bucket = 0;
+	  bucket += (3.5+(rand()/(double)RAND_MAX)) * 7.0;
+	  while (bucket >= 0)
 	    {
+	      int rank = ((double)y/canvas->h) * (0.99+(rand()/(double)RAND_MAX)) * 4;
+	      int ah = 1<<rank;
+	      bucket -= ah;
 	      src.x = (rand() % 4) * 64;
 	      src.y = ah;
 	      src.w = 64;
 	      src.h = ah;
 
 	      dest.x = x - 32;
-	      dest.y = y;
+	      dest.y = y - 30 + (int)((rand()/(double)RAND_MAX)*30);
 
+#if 1
+              // grass color: 82,180,17
+              double tmp_red   = sRGB_to_linear_table[color_hexes[cur_color][0]]*2.0 + (rand()/(double)RAND_MAX);
+              double tmp_green = sRGB_to_linear_table[color_hexes[cur_color][1]]*2.0 + (rand()/(double)RAND_MAX);
+              double tmp_blue  = sRGB_to_linear_table[color_hexes[cur_color][2]]*2.0 + sRGB_to_linear_table[17];
+	      for (yy = 0; yy < ah; yy++)
+	        {
+	          for (xx = 0; xx < 64; xx++)
+		    {
+		      SDL_GetRGBA(getpixel(img_grass, xx+src.x, yy+src.y), img_grass->format,
+			         &r, &g, &b, &a);
+
+                      double rd = sRGB_to_linear_table[r]*8.0 + tmp_red;
+                      rd = rd * (a/255.0) / 11.0;
+                      double gd = sRGB_to_linear_table[g]*8.0 + tmp_green;
+                      gd = gd * (a/255.0) / 11.0;
+                      double bd = sRGB_to_linear_table[b]*8.0 + tmp_blue;
+                      bd = bd * (a/255.0) / 11.0;
+
+		      SDL_GetRGB(getpixel(canvas, xx+dest.x, yy+dest.y), canvas->format,
+			         &r, &g, &b);
+	
+		      r = linear_to_sRGB(sRGB_to_linear_table[r]*(1.0-a/255.0) + rd);
+		      g = linear_to_sRGB(sRGB_to_linear_table[g]*(1.0-a/255.0) + gd);
+		      b = linear_to_sRGB(sRGB_to_linear_table[b]*(1.0-a/255.0) + bd);
+
+		      putpixel(canvas, xx+dest.x, yy+dest.y, SDL_MapRGB(canvas->format, r, g, b));
+		    }
+	        }
+#else
+              // untinted
 	      SDL_BlitSurface(img_grass, &src, canvas, &dest);
+#endif
 	    }
 	}
       else if (cur_magic == MAGIC_FLIP)
