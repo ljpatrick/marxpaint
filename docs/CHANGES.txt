@@ -7,7 +7,7 @@ bill@newbreedsoftware.com
 http://www.newbreedsoftware.com/tuxpaint/
 
 
-2003.Dec.20 (0.9.13)
+2003.Dec.23 (0.9.13)
   * Translated into Basque (eu_ES)
     Juan Irigoien <juanirigoien@irakasle.net>
 
@@ -16,6 +16,9 @@ http://www.newbreedsoftware.com/tuxpaint/
 
   * Translated into Tamil (ta_IN)  [buggy]
     Mugunth <mugunth@thamizha.com>
+
+  * Updated Icelandic translation.
+    Pjetur G. Hjaltason <pjetur@pjetur.net>
 
   * Made sure options were in the same order in various places in man page
     and documentation.  Made sure all options and languages were listed.

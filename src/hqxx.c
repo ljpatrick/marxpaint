@@ -6,7 +6,7 @@
   Based on "hq3x_src_c.zip" dated August 5, 2003
   from: http://www.hiend3d.com/hq3x.html
 
-  December 20, 2003 - December 20, 2003
+  December 20, 2003 - December 23, 2003
 
   This program is free software; you can redistribute it and/or
   modify it under the terms of the GNU Lesser General Public
@@ -24,6 +24,7 @@
 */
 
 
+#include <stdlib.h>
 #include "SDL.h"
 #include "hqxx.h"
 
