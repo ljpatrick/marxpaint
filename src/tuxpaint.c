@@ -12283,8 +12283,9 @@ static int do_png_save(FILE * fi, const char * const fname, SDL_Surface * surf)
 	      info_ptr->bit_depth = 8;
 	      info_ptr->color_type = PNG_COLOR_TYPE_RGB;
 	      info_ptr->interlace_type = 1;
-	      info_ptr->valid = 0;
+	      info_ptr->valid = 0;  // will be updated by various png_set_FOO() functions
 
+              png_set_sRGB_gAMA_and_cHRM(png_ptr, info_ptr, PNG_sRGB_INTENT_PERCEPTUAL);
 
 	      /* Set headers */
 
