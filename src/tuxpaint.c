@@ -4252,13 +4252,13 @@ static void blit_magic(int x, int y, int button_down)
 	  // "specified" means the brick itself, w/o morter
 	  // "nominal" means brick-to-brick (includes morter)
 	  int specified_width, specified_height, specified_length;
+	  int nominal_length;
 	  int brick_x, brick_y;
 
 	  int vertical_joint   = 2; // between a brick and the one above/below
 	  int horizontal_joint = 2; // between a brick and the one to the side
 	  int nominal_width    = 18;
 	  int nominal_height   = 12; // 11 to 14, for joints of 2
-	  int nominal_length   = 36; // 3x the above, 2x the width
 
 #if 0
 	  if (cur_magic == MAGIC_SMALLBRICK)
@@ -4267,7 +4267,6 @@ static void blit_magic(int x, int y, int button_down)
 	      horizontal_joint = 1; // between a brick and the one to the side
 	      nominal_width    = 9;
 	      nominal_height   = 6; // 11 to 14, for joints of 2
-	      nominal_length   = 18; // 3x the above, 2x the width
 	    }
 #endif
 #if 0
@@ -4277,7 +4276,6 @@ static void blit_magic(int x, int y, int button_down)
 	      horizontal_joint = 3; // between a brick and the one to the side
 	      nominal_width    = 27;
 	      nominal_height   = 18; // 11 to 14, for joints of 2
-	      nominal_length   = 54; // 3x the above, 2x the width
 	    }
 #endif
 #if 1
@@ -4287,10 +4285,10 @@ static void blit_magic(int x, int y, int button_down)
 	      horizontal_joint = 4; // between a brick and the one to the side
 	      nominal_width    = 36;
 	      nominal_height   = 24; // 11 to 14, for joints of 2
-	      nominal_length   = 72; // 3x the above, 2x the width
 	    }
 #endif
 
+          nominal_length   = 2 * nominal_width;
 	  specified_width  = nominal_width - horizontal_joint;
 	  specified_height = nominal_height - vertical_joint;
 	  specified_length = nominal_length - horizontal_joint;
@@ -4312,30 +4310,27 @@ static void blit_magic(int x, int y, int button_down)
 
           unsigned char *mybrick = map + brick_x+1 + (brick_y+1)*x_count;
 
-          if ( (unsigned)x < (unsigned)canvas->w && (unsigned)y < (unsigned)canvas->h )
+          if ( (unsigned)x < (unsigned)canvas->w && (unsigned)y < (unsigned)canvas->h && !*mybrick)
             {
-              if(!*mybrick)
+              int my_x = brick_x*nominal_width;
+              int my_w = specified_width;
+              *mybrick = 1;
+              SDL_LockSurface(canvas);
+              if((brick_y^brick_x)&1)
                 {
-                  int my_x = brick_x*nominal_width;
-                  int my_w = specified_width;
-                  *mybrick = 1;
-                  SDL_LockSurface(canvas);
-                  if((brick_y^brick_x)&1)
-                    {
-                      if(mybrick[1])
-                        my_w = specified_length;
-                    }
-                  else
-                    if(mybrick[-1])
-                      {
-                        my_x -= nominal_width;
-                        my_w = specified_length;
-                      }
-                  do_brick(my_x, brick_y*nominal_height, my_w,  specified_height);
-                  SDL_UnlockSurface(canvas);
-                  //            upper left corner        and     lower right corner
-                  update_canvas(brick_x*nominal_width-nominal_width, brick_y*nominal_height-vertical_joint, brick_x*nominal_width+specified_length,  (brick_y+1)*nominal_height);
+                  if(mybrick[1])
+                    my_w = specified_length;
                 }
+              else
+                if(mybrick[-1])
+                  {
+                    my_x -= nominal_width;
+                    my_w = specified_length;
+                  }
+              do_brick(my_x, brick_y*nominal_height, my_w,  specified_height);
+              SDL_UnlockSurface(canvas);
+              //            upper left corner        and     lower right corner
+              update_canvas(brick_x*nominal_width-nominal_width, brick_y*nominal_height-vertical_joint, brick_x*nominal_width+specified_length,  (brick_y+1)*nominal_height);
             }
 	}
       else if (cur_magic == MAGIC_SMUDGE)
