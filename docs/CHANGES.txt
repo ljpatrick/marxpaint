@@ -7,7 +7,7 @@ bill@newbreedsoftware.com
 http://www.newbreedsoftware.com/tuxpaint/
 
 
-2004.March.29 (0.9.14) [cvs]
+2004.March.30 (0.9.14) [cvs]
   * Japanese translation updates.
     TOYAMA Shin-ichi <shin1@wmail.plala.or.jp>
 
@@ -35,6 +35,15 @@ http://www.newbreedsoftware.com/tuxpaint/
 
   * Icelandic language file (is.po) update.
     Pjetur G. Hjaltason <pjetur@pjetur.net>
+
+  * Norwegian Nynorsk language file (nn.po) update.
+    Karl Ove Hufthammer <karl@huftis.org>
+
+  * German language file (de.po) update.
+    Roland Illig <roland.illig@gmx.de>
+
+  * Walloon language file (wa.po) update.
+    Pablo Saratxaga <pablo@walon.org>
 
   * Korean README.txt documentation added in both EUC-KR and UTF-8 formats.
     Mark K. Kim <tuxNO_SOLICITATIONpaint-dev@cbreak.org>

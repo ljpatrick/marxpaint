@@ -1,182 +1,165 @@
 # Tux Paint german messages.
-# Copyright (C) 2002.
+# Copyright (C) 2002 Free Software Foundation, Inc.
 # Fabian Franz <FabianFranz@gmx.de>, 2002.
+# Roland Illig <roland.illig@gmx.de>, 2004.
 #
 msgid ""
 msgstr ""
-"POT-Creation-Date: \n"
-"PO-Revision-Date: 2002-10-21 22:48+0200\n"
-"Last-Translator: Fabian Franz <translation@fabian-franz.de>\n"
-"Language-Team: Deutsch\n"
+"Project-Id-Version: tuxpaint 0.9.14\n"
+"Report-Msgid-Bugs-To: tuxpaint-i18n@tux4kids.net\n"
+"POT-Creation-Date: 2004-03-22 11:23-0800\n"
+"PO-Revision-Date: 2004-03-30 00:28+0100\n"
+"Last-Translator: Roland Illig <roland.illig@gmx.de>\n"
+"Language-Team: German <de@li.org>\n"
+"MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: KBabel 0.9.6\n"
 
-#: tuxpaint.c:795
+#: tuxpaint.c:801
 msgid "Do you really want to quit?"
 msgstr "Möchtest du wirklich aufhören?"
 
-#: tuxpaint.c:796 tuxpaint.c:800 tuxpaint.c:804 tuxpaint.c:818 tuxpaint.c:828
-#: tuxpaint.c:8360 tuxpaint.c:9065
+#: tuxpaint.c:802 tuxpaint.c:806 tuxpaint.c:810 tuxpaint.c:824 tuxpaint.c:834
+#: tuxpaint.c:8386 tuxpaint.c:9093
 msgid "Yes"
 msgstr "Ja"
 
-#: tuxpaint.c:797 tuxpaint.c:801 tuxpaint.c:805 tuxpaint.c:819 tuxpaint.c:829
-#: tuxpaint.c:8363
+#: tuxpaint.c:803 tuxpaint.c:807 tuxpaint.c:811 tuxpaint.c:825 tuxpaint.c:835
+#: tuxpaint.c:8389
 msgid "No"
 msgstr "Nein"
 
-#: tuxpaint.c:799
+#: tuxpaint.c:805
 msgid "If you quit, you'll lose your picture! Save it?"
-msgstr ""
-"Wenn du aufhörst, geht dein Bild verloren! Willst du es vorher noch "
-"speichern?"
+msgstr "Wenn du aufhörst, geht dein Bild verloren! Willst du es vorher noch speichern?"
 
-#: tuxpaint.c:803
+#: tuxpaint.c:809
 msgid "Save your picture first?"
 msgstr "Willst du dein Bild, vor dem Öffnen eines anderen, speichern?"
 
-#: tuxpaint.c:807
+#: tuxpaint.c:813
 msgid "Can't open that picture!"
 msgstr "Kann dieses Bild nicht öffnen!"
 
-#: tuxpaint.c:808 tuxpaint.c:815 tuxpaint.c:822 tuxpaint.c:825
+#: tuxpaint.c:814 tuxpaint.c:821 tuxpaint.c:828 tuxpaint.c:831
 msgid "OK"
-msgstr ""
+msgstr "OK"
 
-#: tuxpaint.c:810
+#: tuxpaint.c:816
 msgid "Starting a new picture will erase the current one!"
 msgstr "Wenn du ein neues Bild öffnest, geht dein derzeitiges verloren!"
 
-#: tuxpaint.c:811
-#, fuzzy
+#: tuxpaint.c:817
 msgid "That's OK!"
 msgstr "Das ist OK!"
 
-#: tuxpaint.c:812
-#, fuzzy
+#: tuxpaint.c:818
 msgid "Never mind!"
 msgstr "Lieber doch nicht!"
 
-#: tuxpaint.c:814
+#: tuxpaint.c:820
 msgid "There are no saved files!"
 msgstr "Es gibt noch keine gespeicherten Bilder!"
 
-#: tuxpaint.c:817
-#, fuzzy
+#: tuxpaint.c:823
 msgid "Print your picture now?"
-msgstr "Willst du dein Bild, vor dem Öffnen eines anderen, speichern?"
+msgstr "Willst du dein Bild jetzt ausdrucken?"
 
-#: tuxpaint.c:821
+#: tuxpaint.c:827
 msgid "Your picture has been printed!"
 msgstr "Dein Bild wurde gedruckt!"
 
-#: tuxpaint.c:824
+#: tuxpaint.c:830
 msgid "You can't print yet!"
 msgstr "Du kannst noch nicht drucken!"
 
-#: tuxpaint.c:827
+#: tuxpaint.c:833
 msgid "Erase this picture?"
 msgstr "Möchtest du dieses Bild löschen?"
 
-#: tuxpaint.c:5416 tools.h:52
+#: tuxpaint.c:5442 tools.h:52
 msgid "Open"
 msgstr "Öffnen"
 
-#: tuxpaint.c:5421
+#: tuxpaint.c:5447
 msgid "Erase"
 msgstr "Löschen"
 
-#: tuxpaint.c:5426
+#: tuxpaint.c:5452
 msgid "Back"
 msgstr "Zurück"
 
-#: tuxpaint.c:9064
-#, fuzzy
+#: tuxpaint.c:9092
 msgid "Save over the older version of this picture?"
 msgstr "Soll die alte Version dieses Bildes überschrieben werden?"
 
-#: tuxpaint.c:9066
+#: tuxpaint.c:9094
 msgid "No, save a new file"
 msgstr "Nein, in eine neue Datei!"
 
-#: tuxpaint.c:9885
-#, fuzzy
+#: tuxpaint.c:9951
 msgid "Choose the picture you want, then click 'Open'."
 msgstr "Wähle ein Bild, dass du Öffnen willst und klick auf 'Öffnen'"
 
 #: colors.h:62
-#, fuzzy
 msgid "Black!"
-msgstr "Schwarz"
+msgstr "Schwarz!"
 
 #: colors.h:63
-#, fuzzy
 msgid "White!"
-msgstr "Weiß"
+msgstr "Weiß!"
 
 #: colors.h:64
-#, fuzzy
 msgid "Red!"
-msgstr "Wiederholen!"
+msgstr "Rot!"
 
 #: colors.h:65
-#, fuzzy
 msgid "Pink!"
-msgstr "Hautfarben/Rosa"
+msgstr "Rosa/Hautfarben!"
 
 #: colors.h:66
-#, fuzzy
 msgid "Orange!"
-msgstr "Orange"
+msgstr "Orange!"
 
 #: colors.h:67
-#, fuzzy
 msgid "Yellow!"
-msgstr "Gelb"
+msgstr "Gelb!"
 
 #: colors.h:68
-#, fuzzy
 msgid "Lime!"
-msgstr "Linie"
+msgstr "Hellgrün!"
 
 #: colors.h:69
-#, fuzzy
 msgid "Green!"
-msgstr "Grün"
+msgstr "Grün!"
 
 #: colors.h:70
-#, fuzzy
 msgid "Cyan!"
-msgstr "Türkis"
+msgstr "Türkis!"
 
 #: colors.h:71
-#, fuzzy
 msgid "Blue!"
-msgstr "Blau"
+msgstr "Blau!"
 
 #: colors.h:72
-#, fuzzy
 msgid "Purple!"
-msgstr "Lila"
+msgstr "Lila!"
 
 #: colors.h:73
 msgid "Fuchsia!"
-msgstr ""
+msgstr "Flieder!"
 
 #: colors.h:74
-#, fuzzy
 msgid "Brown!"
-msgstr "Braun"
+msgstr "Braun!"
 
 #: colors.h:75
-#, fuzzy
 msgid "Gray!"
-msgstr "Super! Cool ;-)"
+msgstr "Grau!"
 
 #: colors.h:76
 msgid "Silver!"
-msgstr ""
+msgstr "Silber!"
 
 #: great.h:20
 msgid "Great!"
@@ -251,63 +234,52 @@ msgid "You can draw in rainbow colors!"
 msgstr "Du kannst in Regenbogenfarben malen!"
 
 #: magic.h:74
-#, fuzzy
 msgid "Click and move to draw sparkles."
-msgstr "Klick und beweg die Maus um es funkeln zu lassen!"
+msgstr "Klicke und bewege die Maus, um es funkeln zu lassen."
 
 #: magic.h:76
-#, fuzzy
 msgid "Click to make a mirror image."
-msgstr "Klick um das Bild zu spiegeln!"
+msgstr "Klicke, um das Bild zu spiegeln."
 
 #: magic.h:77
-#, fuzzy
 msgid "Click to flip the picture upside-down."
-msgstr "Klick um das Bild auf den Kopf zu stellen!"
+msgstr "Klicke, um das Bild auf den Kopf zu stellen."
 
 #: magic.h:79
-#, fuzzy
 msgid "Click and move the mouse around to blur the picture."
-msgstr "Klick und beweg die Maus um das Bild unscharf zu machen!"
+msgstr "Klicke und bewege die Maus, um das Bild unscharf zu machen."
 
 #: magic.h:80
-#, fuzzy
 msgid "Click and move the mouse around to make the picture blocky."
-msgstr "Klick und beweg die Maus um das Bild pixelig zu machen!"
+msgstr "Klicke und bewege die Maus, um das Bild pixelig zu machen."
 
 #: magic.h:82
-#, fuzzy
 msgid "Click and move the mouse around to draw a negative."
-msgstr "Klick und beweg die Maus um ein Negativ zu erstellen!"
+msgstr "Klicke und bewege die Maus, um ein Negativ zu machen."
 
 #: magic.h:83
 msgid "Click and move to fade the colors."
 msgstr "Klick und beweg die Maus um die Farben auszublenden!"
 
 #: magic.h:85
-msgid ""
-"Click and move the mouse around to turn the picture into a chalk drawing."
+msgid "Click and move the mouse around to turn the picture into a chalk drawing."
 msgstr "Klick und beweg die Maus um dein Bild in ein Kreidebild zu verwandeln!"
 
 #: magic.h:86
-#, fuzzy
 msgid "Click and move the mouse around to make the picture drip."
-msgstr "Klick und beweg die Maus um das Bild verlaufen zu lassen!"
+msgstr "Klicke und bewege die Maus, um das Bild verlaufen zu lassen."
 
 #: magic.h:88
-#, fuzzy
 msgid "Click and move the mouse to thicken the picture."
-msgstr "Klick und beweg die Maus um das Bild dicker zu machen!"
+msgstr "Klicke und bewege die Maus, um das Bild dicker zu machen."
 
 #: magic.h:89
-#, fuzzy
 msgid "Click and move the mouse to thin the picture."
-msgstr "Klick und beweg die Maus um das Bild dünner zu machen!"
+msgstr "Klicke und bewege die Maus, um das Bild dünner zu machen."
 
 #: magic.h:91
-#, fuzzy
 msgid "Click in the picture to fill that area with color."
-msgstr "Klick auf dein Bild um einen Bereich mit Farbe auszufüllen"
+msgstr "Klicke in das Bild, um einen Bereich mit Farbe auszufüllen."
 
 #: shapes.h:141 shapes.h:142
 msgid "Square"
@@ -442,24 +414,16 @@ msgid "Pick a picture to stamp around your drawing."
 msgstr "Wähle ein Bild zum Stempeln."
 
 #: tools.h:64
-#, fuzzy
 msgid "Click to start drawing a line. Let go to complete it."
-msgstr "Klicke und halte die Maustaste gedrückt um eine Linie zu malen."
+msgstr "Klicke und halte die Maustaste gedrückt, um eine Linie zu malen."
 
 #: tools.h:65
-msgid ""
-"Pick a shape. Click to pick the center, drag, then let go when it is the "
-"size you want. Move around to rotate it, and click to draw it."
-msgstr ""
-"Wähle eine Form. Klick um die Mitte zu wählen, ziehe, dann lass los, wenn es "
-"die Größe hat, die du willst. Beweg die Maus um es zu rotieren und klick um "
-"es zu zeichnen."
+msgid "Pick a shape. Click to pick the center, drag, then let go when it is the size you want. Move around to rotate it, and click to draw it."
+msgstr "Wähle eine Form. Klicke, um die Mitte zu wählen, ziehe, dann lass los, wenn es die richtige Größe hat. Bewege die Maus, um es zu rotieren und klicke, um es zu zeichnen."
 
 #: tools.h:66
 msgid "Choose a style of text. Click on your drawing and you can start typing."
-msgstr ""
-"Wähle einen Schrifttyp. Klick auf deine Zeichnung und du kannst anfangen zu "
-"schreiben."
+msgstr "Wähle einen Schrifttyp. Klicke auf deine Zeichnung, und du kannst anfangen zu schreiben."
 
 #: tools.h:67
 msgid "Pick a magical effect to use on your drawing!"
@@ -512,19 +476,3 @@ msgstr "Bewege die Maus um die Form zu drehen. Klicke, wenn du zufrieden bist."
 #: tools.h:81
 msgid "Ok then... Let's keep drawing this one!"
 msgstr "Ok, dann lass uns weiter mit diesem malen!"
-
-#~ msgid "Okay"
-#~ msgstr "Ok"
-
-#~ msgid "Red"
-#~ msgstr "Rot"
-
-#~ msgid "Grey"
-#~ msgstr "Grau"
-
-#~ msgid ""
-#~ "Pick a shape to draw.  Click once to pick the center of the shape, click "
-#~ "again to draw it."
-#~ msgstr ""
-#~ "Wähle eine Form zum Malen. Klicke und halte die Maustaste gedrückt um die "
-#~ "Mitte der Form auszuwählen."

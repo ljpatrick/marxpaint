@@ -13,89 +13,89 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: tuxpaint.c:795
+#: tuxpaint.c:801
 msgid "Do you really want to quit?"
 msgstr "Vil du verkeleg avslutta?"
 
-#: tuxpaint.c:796 tuxpaint.c:800 tuxpaint.c:804 tuxpaint.c:818 tuxpaint.c:828
-#: tuxpaint.c:8360 tuxpaint.c:9065
+#: tuxpaint.c:802 tuxpaint.c:806 tuxpaint.c:810 tuxpaint.c:824 tuxpaint.c:834
+#: tuxpaint.c:8386 tuxpaint.c:9093
 msgid "Yes"
 msgstr "Ja!"
 
-#: tuxpaint.c:797 tuxpaint.c:801 tuxpaint.c:805 tuxpaint.c:819 tuxpaint.c:829
-#: tuxpaint.c:8363
+#: tuxpaint.c:803 tuxpaint.c:807 tuxpaint.c:811 tuxpaint.c:825 tuxpaint.c:835
+#: tuxpaint.c:8389
 msgid "No"
 msgstr "Nei!"
 
-#: tuxpaint.c:799
+#: tuxpaint.c:805
 msgid "If you quit, you'll lose your picture! Save it?"
 msgstr "Du mistar teikninga viss du avsluttar. Vil du lagra ho først?"
 
-#: tuxpaint.c:803
+#: tuxpaint.c:809
 msgid "Save your picture first?"
 msgstr "Vil du lagra teikninga først?"
 
-#: tuxpaint.c:807
+#: tuxpaint.c:813
 msgid "Can't open that picture!"
 msgstr "Klarte ikkje opna teikninga."
 
-#: tuxpaint.c:808 tuxpaint.c:815 tuxpaint.c:822 tuxpaint.c:825
+#: tuxpaint.c:814 tuxpaint.c:821 tuxpaint.c:828 tuxpaint.c:831
 msgid "OK"
 msgstr "OK"
 
-#: tuxpaint.c:810
+#: tuxpaint.c:816
 msgid "Starting a new picture will erase the current one!"
 msgstr "Startar du på ei ny teikning, forsvinn ho du har."
 
-#: tuxpaint.c:811
+#: tuxpaint.c:817
 msgid "That's OK!"
 msgstr "OK!"
 
-#: tuxpaint.c:812
+#: tuxpaint.c:818
 msgid "Never mind!"
 msgstr "Avbryt!"
 
-#: tuxpaint.c:814
+#: tuxpaint.c:820
 msgid "There are no saved files!"
 msgstr "Det finst ingen lagra teikningar."
 
-#: tuxpaint.c:817
+#: tuxpaint.c:823
 msgid "Print your picture now?"
 msgstr "Er du sikker på at du vil skriva ut teikninga?"
 
-#: tuxpaint.c:821
+#: tuxpaint.c:827
 msgid "Your picture has been printed!"
 msgstr "Teikninga er skriven ut."
 
-#: tuxpaint.c:824
+#: tuxpaint.c:830
 msgid "You can't print yet!"
 msgstr "Du kan ikkje skriva ut enno."
 
-#: tuxpaint.c:827
+#: tuxpaint.c:833
 msgid "Erase this picture?"
 msgstr "Vil du verkeleg sletta teikninga?"
 
-#: tuxpaint.c:5416 tools.h:52
+#: tuxpaint.c:5442 tools.h:52
 msgid "Open"
 msgstr "Opna"
 
-#: tuxpaint.c:5421
+#: tuxpaint.c:5447
 msgid "Erase"
 msgstr "Slett"
 
-#: tuxpaint.c:5426
+#: tuxpaint.c:5452
 msgid "Back"
 msgstr "Tilbake"
 
-#: tuxpaint.c:9064
+#: tuxpaint.c:9092
 msgid "Save over the older version of this picture?"
 msgstr "Vil du lagra over den gamle versjonen av teikninga?"
 
-#: tuxpaint.c:9066
+#: tuxpaint.c:9094
 msgid "No, save a new file"
 msgstr "Nei. Lagra som ny teikning."
 
-#: tuxpaint.c:9885
+#: tuxpaint.c:9951
 msgid "Choose the picture you want, then click 'Open'."
 msgstr "Vel ei teikning og trykk «Opna»."
 
@@ -260,11 +260,8 @@ msgid "Click and move to fade the colors."
 msgstr "Hald inne knappen og flytt rundt for å bleikna fargane."
 
 #: magic.h:85
-msgid ""
-"Click and move the mouse around to turn the picture into a chalk drawing."
-msgstr ""
-"Hald inne knappen og flytt rundt for å gjera teikninga om til ei "
-"kritteikning."
+msgid "Click and move the mouse around to turn the picture into a chalk drawing."
+msgstr "Hald inne knappen og flytt rundt for å gjera teikninga om til ei kritteikning."
 
 #: magic.h:86
 msgid "Click and move the mouse around to make the picture drip."
@@ -419,12 +416,8 @@ msgid "Click to start drawing a line. Let go to complete it."
 msgstr "Trykk for å starta på ei linje. Slepp for å fullføra ho."
 
 #: tools.h:65
-msgid ""
-"Pick a shape. Click to pick the center, drag, then let go when it is the "
-"size you want. Move around to rotate it, and click to draw it."
-msgstr ""
-"Vel ein figur. Trykk og drag så for velja midten og storleiken på figuren. "
-"Flytt rundt for å rotera han, og trykk til slutt for å teikna han."
+msgid "Pick a shape. Click to pick the center, drag, then let go when it is the size you want. Move around to rotate it, and click to draw it."
+msgstr "Vel ein figur. Trykk og drag så for velja midten og storleiken på figuren. Flytt rundt for å rotera han, og trykk til slutt for å teikna han."
 
 #: tools.h:66
 msgid "Choose a style of text. Click on your drawing and you can start typing."
