@@ -9,28 +9,37 @@ msgstr ""
 "POT-Creation-Date: 2004-03-22 11:23-0800\n"
 "PO-Revision-Date: 2004-03-27 22:30 GMT+1\n"
 "Last-Translator: Flavio 'Iron Bishop' Pastore <flavio.pastore@zonaitalia.it>\n"
-"Language-Team: Italian <LL@li.org>\n"
+"Language-Team: Italian <it@li.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=ISO-8859-1\n"
+"Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
 #: tuxpaint.c:801
 msgid "Do you really want to quit?"
 msgstr "Vuoi veramente uscire?"
 
-#: tuxpaint.c:802 tuxpaint.c:806 tuxpaint.c:810 tuxpaint.c:824 tuxpaint.c:834
-#: tuxpaint.c:8386 tuxpaint.c:9093
+#: tuxpaint.c:802
+#: tuxpaint.c:806
+#: tuxpaint.c:810
+#: tuxpaint.c:824
+#: tuxpaint.c:834
+#: tuxpaint.c:8386
+#: tuxpaint.c:9093
 msgid "Yes"
-msgstr "SÏ"
+msgstr "S√¨"
 
-#: tuxpaint.c:803 tuxpaint.c:807 tuxpaint.c:811 tuxpaint.c:825 tuxpaint.c:835
+#: tuxpaint.c:803
+#: tuxpaint.c:807
+#: tuxpaint.c:811
+#: tuxpaint.c:825
+#: tuxpaint.c:835
 #: tuxpaint.c:8389
 msgid "No"
 msgstr "No"
 
 #: tuxpaint.c:805
 msgid "If you quit, you'll lose your picture! Save it?"
-msgstr "Uscendo adesso, il disegno verr‡ cancellato! Vuoi salvarlo?"
+msgstr "Uscendo adesso, il disegno verr√† cancellato! Vuoi salvarlo?"
 
 #: tuxpaint.c:809
 msgid "Save your picture first?"
@@ -38,19 +47,22 @@ msgstr "Salvare il disegno, prima?"
 
 #: tuxpaint.c:813
 msgid "Can't open that picture!"
-msgstr "Non Ë possibile aprire quel disegno!"
+msgstr "Non √® possibile aprire quel disegno!"
 
-#: tuxpaint.c:814 tuxpaint.c:821 tuxpaint.c:828 tuxpaint.c:831
+#: tuxpaint.c:814
+#: tuxpaint.c:821
+#: tuxpaint.c:828
+#: tuxpaint.c:831
 msgid "OK"
 msgstr "OK"
 
 #: tuxpaint.c:816
 msgid "Starting a new picture will erase the current one!"
-msgstr "Iniziare un nuovo disegno canceller‡ quello corrente!"
+msgstr "Iniziare un nuovo disegno canceller√† quello corrente!"
 
 #: tuxpaint.c:817
 msgid "That's OK!"
-msgstr "SÏ, va bene!"
+msgstr "S√¨, va bene!"
 
 #: tuxpaint.c:818
 msgid "Never mind!"
@@ -66,17 +78,18 @@ msgstr "Stampare il disegno adesso?"
 
 #: tuxpaint.c:827
 msgid "Your picture has been printed!"
-msgstr "Il tuo disegno Ë stato stampato!"
+msgstr "Il tuo disegno √® stato stampato!"
 
 #: tuxpaint.c:830
 msgid "You can't print yet!"
-msgstr "Non Ë ancora possibile stampare!"
+msgstr "Non √® ancora possibile stampare!"
 
 #: tuxpaint.c:833
 msgid "Erase this picture?"
 msgstr "Vuoi cancellare il disegno?"
 
-#: tuxpaint.c:5442 tools.h:52
+#: tuxpaint.c:5442
+#: tools.h:52
 msgid "Open"
 msgstr "Apri"
 
@@ -170,7 +183,7 @@ msgstr "Bello!"
 
 #: great.h:22
 msgid "Keep it up!"
-msgstr "Continua cosÏ!"
+msgstr "Continua cos√¨!"
 
 #: great.h:23
 msgid "Good job!"
@@ -261,8 +274,7 @@ msgid "Click and move to fade the colors."
 msgstr "Fai clic e muovi il mouse per scolorare il disegno."
 
 #: magic.h:85
-msgid ""
-"Click and move the mouse around to turn the picture into a chalk drawing."
+msgid "Click and move the mouse around to turn the picture into a chalk drawing."
 msgstr "Fai clic e muovi il mouse per ottenere un disegno stile gesso."
 
 #: magic.h:86
@@ -281,57 +293,72 @@ msgstr "Fai clic e muovi il mouse per alleggerire il disegno."
 msgid "Click in the picture to fill that area with color."
 msgstr "Fai clic per riempire l'area di colore."
 
-#: shapes.h:141 shapes.h:142
+#: shapes.h:141
+#: shapes.h:142
 msgid "Square"
 msgstr "Quadrato"
 
-#: shapes.h:143 shapes.h:144
+#: shapes.h:143
+#: shapes.h:144
 msgid "Rectangle"
 msgstr "Rettangolo"
 
-#: shapes.h:145 shapes.h:146
+#: shapes.h:145
+#: shapes.h:146
 msgid "Circle"
 msgstr "Cerchio"
 
-#: shapes.h:147 shapes.h:148 shapes.h:167 shapes.h:168
+#: shapes.h:147
+#: shapes.h:148
+#: shapes.h:167
+#: shapes.h:168
 msgid "Oval"
 msgstr "Ovale"
 
-#: shapes.h:149 shapes.h:150
+#: shapes.h:149
+#: shapes.h:150
 msgid "Triangle"
 msgstr "Triangolo"
 
-#: shapes.h:151 shapes.h:152
+#: shapes.h:151
+#: shapes.h:152
 msgid "Pentagon"
 msgstr "Pentagono"
 
-#: shapes.h:153 shapes.h:154
+#: shapes.h:153
+#: shapes.h:154
 msgid "Diamond"
 msgstr "Rombo"
 
-#: shapes.h:161 shapes.h:162
+#: shapes.h:161
+#: shapes.h:162
 msgid "A square has four sides, each the same length."
 msgstr "Un quadrato ha quattro lati, ognuno della stessa lunghezza."
 
-#: shapes.h:163 shapes.h:164
+#: shapes.h:163
+#: shapes.h:164
 msgid "A rectangle has four sides."
 msgstr "Un rettangolo ha quattro lati."
 
-#: shapes.h:165 shapes.h:166
+#: shapes.h:165
+#: shapes.h:166
 msgid "A circle is exactly round."
-msgstr "Un cerchio Ë esattamente rotondo."
+msgstr "Un cerchio √® esattamente rotondo."
 
-#: shapes.h:169 shapes.h:170
+#: shapes.h:169
+#: shapes.h:170
 msgid "A triangle has three sides."
 msgstr "Un triangolo ha tre lati."
 
-#: shapes.h:171 shapes.h:172
+#: shapes.h:171
+#: shapes.h:172
 msgid "A pentagon has five sides."
 msgstr "Un pentagono ha cinque lati."
 
-#: shapes.h:173 shapes.h:174
+#: shapes.h:173
+#: shapes.h:174
 msgid "A diamond is a square, turned around slightly."
-msgstr "Un rombo Ë un quadrato ruotato."
+msgstr "Un rombo √® un quadrato ruotato."
 
 #: titles.h:37
 msgid "Tools"
@@ -349,7 +376,8 @@ msgstr "Pennelli"
 msgid "Stamps"
 msgstr "Timbri"
 
-#: titles.h:41 tools.h:45
+#: titles.h:41
+#: tools.h:45
 msgid "Shapes"
 msgstr "Forme"
 
@@ -357,7 +385,8 @@ msgstr "Forme"
 msgid "Letters"
 msgstr "Lettere"
 
-#: titles.h:43 tools.h:47
+#: titles.h:43
+#: tools.h:47
 msgid "Magic"
 msgstr "Magie"
 
@@ -418,12 +447,8 @@ msgid "Click to start drawing a line. Let go to complete it."
 msgstr "Fai clic per iniziare una linea. Lascia andare il tasto per completarla."
 
 #: tools.h:65
-msgid ""
-"Pick a shape. Click to pick the center, drag, then let go when it is the "
-"size you want. Move around to rotate it, and click to draw it."
-msgstr ""
-"Scegli una forma. Fai click per il centro, trascina, poi lascia andare il"
-"tasto per la grandezza. Muovi per ruotare, fai click per disegnare."
+msgid "Pick a shape. Click to pick the center, drag, then let go when it is the size you want. Move around to rotate it, and click to draw it."
+msgstr "Scegli una forma. Fai click per il centro, trascina, poi lascia andare iltasto per la grandezza. Muovi per ruotare, fai click per disegnare."
 
 #: tools.h:66
 msgid "Choose a style of text. Click on your drawing and you can start typing."
@@ -455,7 +480,7 @@ msgstr "Apri..."
 
 #: tools.h:73
 msgid "Your image has been saved!"
-msgstr "Il tuo disegno Ë stato salvato!"
+msgstr "Il tuo disegno √® stato salvato!"
 
 #: tools.h:74
 msgid "Printing..."
@@ -480,3 +505,4 @@ msgstr "Muovi il mouse per ruotare la forma. Fai click per disegnarla."
 #: tools.h:81
 msgid "Ok then... Let's keep drawing this one!"
 msgstr "Allora ok... continuiamo a disegnare questo!"
+
