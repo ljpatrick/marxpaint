@@ -22,6 +22,7 @@ PKG_ROOT=
 # Program:
 
 BIN_PREFIX=$(PKG_ROOT)/$(PREFIX)/bin
+EXE_EXT=
 
 
 # Data:
@@ -144,6 +145,22 @@ beos:
 		ARCH_HEADERS="src/BeOS_Print.h" \
 		ARCH_LIBS="obj/BeOS_print.o"
 
+# "make win32" builds the program for Windows using MinGW/MSYS
+win32:
+	make \
+		PREFIX=/usr/local \
+		BIN_PREFIX=$(PREFIX)/bin \
+		EXE_EXT=.exe \
+		DATA_PREFIX=$(PREFIX)/share/tuxpaint/ \
+		DOC_PREFIX=$(PREFIX)/share/doc/tuxpaint/ \
+		MAN_PREFIX=$(PREFIX)/share/man/ \
+		ICON_PREFIX=./ \
+		X11_ICON_PREFIX=./ \
+		LOCALE_PREFIX=$(PREFIX)/share/locale/ \
+		CONFDIR=$(PREFIX)/etc/tuxpaint \
+		ARCH_LINKS="-lintl-3 -lpng12 -lwinspool" \
+		ARCH_HEADERS="src/win32_print.h" \
+		ARCH_LIBS="obj/win32_print.o"
 
 # "make install" installs all of the various parts
 # (depending on the *PREFIX variables at the top, you probably need
@@ -172,6 +189,30 @@ install:	install-bin install-data install-man install-doc \
 	@echo
 
 
+# "make private-win32" installs all of the various parts for MinGW
+
+install-private-win32:	install-bin install-data install-man install-doc \
+		install-icon install-gettext install-importscript \
+		install-default-config install-example-stamps \
+		install-example-starters
+	@echo
+	@echo "--------------------------------------------------------------"
+	@echo
+	@echo "All done!"
+	@echo "Now you can type the command 'tuxpaint' to run the program!!!"
+	@echo
+	@echo "For more information, see the 'tuxpaint' man page,"
+	@echo "run 'tuxpaint --usage' or see $(DOC_PREFIX)README.txt"
+	@echo
+	@echo "Visit Tux Paint's home page for more information, updates"
+	@echo "and to learn how you can help out!"
+	@echo
+	@echo "  http://www.newbreedsoftware.com/tuxpaint/"
+	@echo
+	@echo "Enjoy!"
+	@echo
+
+
 # "make install-beos" installs Tux Paint, but using BeOS settings
 
 install-beos:
@@ -182,7 +223,7 @@ install-beos:
 		DOC_PREFIX=./docs/ \
 		MAN_PREFIX=./src/ \
 		CONFDIR=./src/ \
-		ICON_PREFIX=./
+		ICON_PREFIX=./ \
 		X11_ICON_PREFIX=./ \
 		LOCALE_PREFIX=/boot/home/config/share/locale/ \
 		CFLAGS="-O1 -funroll-loops -fomit-frame-pointer -pipe -Wall" \
@@ -192,6 +233,22 @@ install-beos:
 		ARCH_HEADERS="src/BeOS_Print.h" \
 		ARCH_LIBS="obj/BeOS_print.o"
 
+# "make install-win32" installs Tux Paint, but using MinGW/MSYS settings
+install-win32:
+	make install-private-win32 \
+		PREFIX=/usr/local \
+		BIN_PREFIX=$(PREFIX)/bin \
+		EXE_EXT=.exe \
+		DATA_PREFIX=$(PREFIX)/share/tuxpaint/ \
+		DOC_PREFIX=$(PREFIX)/share/doc/tuxpaint/ \
+		MAN_PREFIX=$(PREFIX)/share/man/ \
+		ICON_PREFIX=./ \
+		X11_ICON_PREFIX=./ \
+		LOCALE_PREFIX=$(PREFIX)/share/locale/ \
+		CONFDIR=$(PREFIX)/etc/tuxpaint \
+		ARCH_LINKS="-lintl-3 -lpng12 -lwinspool" \
+		ARCH_HEADERS="src/win32_print.h" \
+		ARCH_LIBS="obj/win32_print.o"
 
 # "make clean" deletes the program, the compiled objects and the
 # built man page (returns to factory archive, pretty much...)
@@ -421,7 +478,7 @@ install-bin:
 	@echo "...Installing program itself..."
 	@install -d $(BIN_PREFIX)
 	@cp tuxpaint $(BIN_PREFIX)
-	@chmod a+rx,g-w,o-w $(BIN_PREFIX)/tuxpaint
+	@chmod a+rx,g-w,o-w $(BIN_PREFIX)/tuxpaint$(EXE_EXT)
 
 
 # Install the import script:
@@ -779,6 +836,12 @@ obj/BeOS_Print.o:	src/BeOS_Print.cpp obj src/BeOS_print.h
 	@$(CC) $(CFLAGS) $(SDL_CFLAGS) $(DEFS) \
 		-c src/BeOS_print.cpp -o obj/BeOS_print.o
 
+obj/win32_print.o:	src/win32_print.c obj src/win32_print.h
+	@echo
+	@echo "...Compiling win32 print support..."
+	@$(CC) $(CFLAGS) $(SDL_CFLAGS) $(DEFS) \
+		-c src/win32_print.c -o obj/win32_print.o
+
 
 # Build the translation files for gettext
 
@@ -841,203 +904,203 @@ trans:
 
 trans/af.mo:	src/po/af.po
 	@echo "   af_ZA ...Afrikaans..."
-	@msgfmt src/po/af.po -o trans/af.mo
+	@msgfmt -o trans/af.mo src/po/af.po
 
 trans/be.mo:	src/po/be.po
 	@echo "   be_BY ...Belarusian..."
-	@msgfmt src/po/be.po -o trans/be.mo
+	@msgfmt -o trans/be.mo src/po/be.po
 
 trans/bg.mo:	src/po/bg.po
 	@echo "   bg_BG ...Bulgarian..."
-	@msgfmt src/po/bg.po -o trans/bg.mo
+	@msgfmt -o trans/bg.mo src/po/bg.po
 
 trans/br.mo:	src/po/br.po
 	@echo "   br_FR ...Breton..."
-	@msgfmt src/po/br.po -o trans/br.mo
+	@msgfmt -o trans/br.mo src/po/br.po
 
 trans/ca.mo:	src/po/ca.po
 	@echo "   ca_ES ...Catalan..."
-	@msgfmt src/po/ca.po -o trans/ca.mo
+	@msgfmt -o trans/ca.mo src/po/ca.po
 
 trans/cy.mo:	src/po/cy.po
 	@echo "   cy_GB ...Welsh..."
-	@msgfmt src/po/cy.po -o trans/cy.mo
+	@msgfmt -o trans/cy.mo src/po/cy.po
 
 trans/cs.mo:	src/po/cs.po
 	@echo "   cs_CZ ...Czech..."
-	@msgfmt src/po/cs.po -o trans/cs.mo
+	@msgfmt -o trans/cs.mo src/po/cs.po
 
 trans/da.mo:	src/po/da.po
 	@echo "   da_DK ...Danish..."
-	@msgfmt src/po/da.po -o trans/da.mo
+	@msgfmt -o trans/da.mo src/po/da.po
 
 trans/de.mo:	src/po/de.po
 	@echo "   de_DE ...German..."
-	@msgfmt src/po/de.po -o trans/de.mo
+	@msgfmt -o trans/de.mo src/po/de.po
 
 trans/et.mo:	src/po/et.po
 	@echo "   et_EE ...Estonian..."
-	@msgfmt src/po/et.po -o trans/et.mo
+	@msgfmt -o trans/et.mo src/po/et.po
 
 trans/el.mo:	src/po/el.po
 	@echo "   el_GR ...Greek..."
-	@msgfmt src/po/el.po -o trans/el.mo
+	@msgfmt -o trans/el.mo src/po/el.po
 
 trans/en_gb.mo:	src/po/en_gb.po
 	@echo "   en_GB ...British English..."
-	@msgfmt src/po/en_gb.po -o trans/en_gb.mo
+	@msgfmt -o trans/en_gb.mo src/po/en_gb.po
 
 trans/es.mo:	src/po/es.po
 	@echo "   es_ES ...Spanish..."
-	@msgfmt src/po/es.po -o trans/es.mo
+	@msgfmt -o trans/es.mo src/po/es.po
 
 trans/eu.mo:	src/po/eu.po
 	@echo "   eu_ES ...Basque..."
-	@msgfmt src/po/eu.po -o trans/eu.mo
+	@msgfmt -o trans/eu.mo src/po/eu.po
 
 trans/fi.mo:	src/po/fi.po
 	@echo "   fi_FI ...Finnish..."
-	@msgfmt src/po/fi.po -o trans/fi.mo
+	@msgfmt -o trans/fi.mo src/po/fi.po
 
 trans/fr.mo:	src/po/fr.po
 	@echo "   fr_FR ...French..."
-	@msgfmt src/po/fr.po -o trans/fr.mo
+	@msgfmt -o trans/fr.mo src/po/fr.po
 
 trans/ga.mo:	src/po/ga.po
 	@echo "   ga_IE ...Gaelic..."
-	@msgfmt src/po/ga.po -o trans/ga.mo
+	@msgfmt -o trans/ga.mo src/po/ga.po
 
 trans/gl.mo:	src/po/gl.po
 	@echo "   gl_ES ...Galician..."
-	@msgfmt src/po/gl.po -o trans/gl.mo
+	@msgfmt -o trans/gl.mo src/po/gl.po
 
 trans/he.mo:	src/po/he.po
 	@echo "   he_IL ...Hebrew..."
-	@msgfmt src/po/he.po -o trans/he.mo
+	@msgfmt -o trans/he.mo src/po/he.po
 
 trans/hi.mo:	src/po/hi.po
 	@echo "   hi_IN ...Hindi..."
-	@msgfmt src/po/hi.po -o trans/hi.mo
+	@msgfmt -o trans/hi.mo src/po/hi.po
 
 trans/hr.mo:	src/po/hr.po
 	@echo "   hr_HR ...Croatian..."
-	@msgfmt src/po/hr.po -o trans/hr.mo
+	@msgfmt -o trans/hr.mo src/po/hr.po
 
 trans/hu.mo:	src/po/hu.po
 	@echo "   hu_HU ...Hungarian..."
-	@msgfmt src/po/hu.po -o trans/hu.mo
+	@msgfmt -o trans/hu.mo src/po/hu.po
 
 trans/tlh.mo:	src/po/tlh.po
 	@echo "   tlh   ...Klingon (Romanized)..."
-	@msgfmt src/po/tlh.po -o trans/tlh.mo
+	@msgfmt -o trans/tlh.mo src/po/tlh.po
 
 trans/id.mo:	src/po/id.po
 	@echo "   id_ID ...Indonesian..."
-	@msgfmt src/po/id.po -o trans/id.mo
+	@msgfmt -o trans/id.mo src/po/id.po
 
 trans/is.mo:	src/po/is.po
 	@echo "   is_IS ...Icelandic..."
-	@msgfmt src/po/is.po -o trans/is.mo
+	@msgfmt -o trans/is.mo src/po/is.po
 
 trans/it.mo:	src/po/it.po
 	@echo "   it_IT ...Italian..."
-	@msgfmt src/po/it.po -o trans/it.mo
+	@msgfmt -o trans/it.mo src/po/it.po
 
 trans/ja.mo:	src/po/ja.po
 	@echo "   ja_JP ...Japanese..."
-	@msgfmt src/po/ja.po -o trans/ja.mo
+	@msgfmt -o trans/ja.mo src/po/ja.po
 
 trans/ko.mo:	src/po/ko.po
 	@echo "   ko_KR ...Korean..."
-	@msgfmt src/po/ko.po -o trans/ko.mo
+	@msgfmt -o trans/ko.mo src/po/ko.po
 
 trans/lt.mo:	src/po/lt.po
 	@echo "   lt_LT ...Lithuanian..."
-	@msgfmt src/po/lt.po -o trans/lt.mo
+	@msgfmt -o trans/lt.mo src/po/lt.po
 
 trans/ms.mo:	src/po/ms.po
 	@echo "   ms_MY ...Malay..."
-	@msgfmt src/po/ms.po -o trans/ms.mo
+	@msgfmt -o trans/ms.mo src/po/ms.po
 
 trans/nl.mo:	src/po/nl.po
 	@echo "   nl_NL ...Dutch..."
-	@msgfmt src/po/nl.po -o trans/nl.mo
+	@msgfmt -o trans/nl.mo src/po/nl.po
 
 trans/nb.mo:	src/po/nb.po
 	@echo "   nb_NO ...Norwegian Bokmal..."
-	@msgfmt src/po/nb.po -o trans/nb.mo
+	@msgfmt -o trans/nb.mo src/po/nb.po
 
 trans/nn.mo:	src/po/nn.po
 	@echo "   nn_NO ...Norwegian Nynorsk..."
-	@msgfmt src/po/nn.po -o trans/nn.mo
+	@msgfmt -o trans/nn.mo src/po/nn.po
 
 trans/pl.mo:	src/po/pl.po
 	@echo "   pl_PL ...Polish..."
-	@msgfmt src/po/pl.po -o trans/pl.mo
+	@msgfmt -o trans/pl.mo src/po/pl.po
 
 trans/pt_pt.mo:	src/po/pt_pt.po
 	@echo "   pt_PT ...Portuguese..."
-	@msgfmt src/po/pt_pt.po -o trans/pt_pt.mo
+	@msgfmt -o trans/pt_pt.mo src/po/pt_pt.po
 
 trans/pt_br.mo:	src/po/pt_br.po
 	@echo "   pt_BR ...Brazilian Portuguese..."
-	@msgfmt src/po/pt_br.po -o trans/pt_br.mo
+	@msgfmt -o trans/pt_br.mo src/po/pt_br.po
 
 trans/ro.mo:	src/po/ro.po
 	@echo "   ro_RO ...Romanian..."
-	@msgfmt src/po/ro.po -o trans/ro.mo
+	@msgfmt -o trans/ro.mo src/po/ro.po
 
 trans/ru.mo:	src/po/ru.po
 	@echo "   ru_RU ...Russian..."
-	@msgfmt src/po/ru.po -o trans/ru.mo
+	@msgfmt -o trans/ru.mo src/po/ru.po
 
 trans/sk.mo:	src/po/sk.po
 	@echo "   sk_SK ...Slovak..."
-	@msgfmt src/po/sk.po -o trans/sk.mo
+	@msgfmt -o trans/sk.mo src/po/sk.po
 
 trans/sl.mo:	src/po/sl.po
 	@echo "   sl_SI ...Slovenian..."
-	@msgfmt src/po/sl.po -o trans/sl.mo
+	@msgfmt -o trans/sl.mo src/po/sl.po
 
 trans/sq.mo:	src/po/sq.po
 	@echo "   sq_AL ...Albanian..."
-	@msgfmt src/po/sq.po -o trans/sq.mo
+	@msgfmt -o trans/sq.mo src/po/sq.po
 
 trans/sr.mo:	src/po/sr.po
 	@echo "   sr_YU ...Serbian..."
-	@msgfmt src/po/sr.po -o trans/sr.mo
+	@msgfmt -o trans/sr.mo src/po/sr.po
 
 trans/sv.mo:	src/po/sv.po
 	@echo "   sv_SE ...Swedish..."
-	@msgfmt src/po/sv.po -o trans/sv.mo
+	@msgfmt -o trans/sv.mo src/po/sv.po
 
 trans/sw.mo:	src/po/sw.po
 	@echo "   sw_TZ ...Swahili..."
-	@msgfmt src/po/sw.po -o trans/sw.mo
+	@msgfmt -o trans/sw.mo src/po/sw.po
 
 trans/ta.mo:	src/po/ta.po
 	@echo "   ta_IN ...Tamil..."
-	@msgfmt src/po/ta.po -o trans/ta.mo
+	@msgfmt -o trans/ta.mo src/po/ta.po
 
 trans/tr.mo:	src/po/tr.po
 	@echo "   tr_TR ...Turkish..."
-	@msgfmt src/po/tr.po -o trans/tr.mo
+	@msgfmt -o trans/tr.mo src/po/tr.po
 
 trans/vi.mo:	src/po/vi.po
 	@echo "   vi_VN ...Vietnamese..."
-	@msgfmt src/po/vi.po -o trans/vi.mo
+	@msgfmt -o trans/vi.mo src/po/vi.po
 
 trans/wa.mo:	src/po/wa.po
 	@echo "   wa_BE ...Walloon..."
-	@msgfmt src/po/wa.po -o trans/wa.mo
+	@msgfmt -o trans/wa.mo src/po/wa.po
 
 trans/zh_cn.mo:	src/po/zh_cn.po
 	@echo "   zh_CN ...Chinese..."
-	@msgfmt src/po/zh_cn.po -o trans/zh_cn.mo
+	@msgfmt -o trans/zh_cn.mo src/po/zh_cn.po
 
 trans/zh_tw.mo:	src/po/zh_tw.po
 	@echo "   zh_TW ...Chinese..."
-	@msgfmt src/po/zh_tw.po -o trans/zh_tw.mo
+	@msgfmt -o trans/zh_tw.mo src/po/zh_tw.po
 
 
 

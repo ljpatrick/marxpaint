@@ -41,6 +41,9 @@
 // plan to rip this out as soon as it is considered stable
 //#define THREADED_FONTS
 #define FORKED_FONTS
+#ifdef WIN32
+#undef FORKED_FONTS
+#endif
 
 /* Method for printing images: */
 
@@ -159,16 +162,6 @@ static scaleparams scaletable[] = {
 #include <wctype.h>
 #endif
 
-#ifdef WIN32_OLD
-/* The following are required by libintl.h, so must be defined first: */
-#define LC_MESSAGES       1729
-#define HAVE_LC_MESSAGES  1
-#define ENABLE_NLS        1
-#define HAVE_LOCALE_H     1
-#define HAVE_GETTEXT      1
-#define HAVE_DCGETTEXT    1
-#endif
-
 #include <libintl.h>
 #ifndef gettext_noop
 #define gettext_noop(String) String
@@ -186,8 +179,6 @@ static scaleparams scaletable[] = {
 
 #include <sys/types.h>
 #include <sys/stat.h>
-
-
 
 #ifndef WIN32
 #include <unistd.h>
@@ -211,38 +202,15 @@ typedef struct safer_dirent {
 extern WrapperData macosx;
 #endif
 #else
-#include "win32_dirent.h"
+
+#include <unistd.h>
+#include <dirent.h>
+#include <malloc.h>
 #include "win32_print.h"
 #include <io.h>
 #include <direct.h>
 
-
-/* Enables win32 apps to get a GNU compatible locale string */
-extern char* g_win32_getlocale(void);
-
-/* Set this to 0 during developement and testing in Visual-Studio
-   Set this to 1 to make the final executable   */
-
-#if 1
-
-#define DOC_PREFIX "docs/"
-#define DATA_PREFIX "data/"
-#define LOCALEDIR "locale"
-
-#else
-
-#define DOC_PREFIX  "../../docs/"
-#define DATA_PREFIX "../../data/"
-#define LOCALEDIR   "../../locale"
-
-#endif /* 1/0 */
-
 #define mkdir(path,access)    _mkdir(path)
-#define strcasecmp            stricmp
-#define strncasecmp           strnicmp
-#define snprintf              _snprintf
-#define S_ISDIR(i)            ((i&_S_IFDIR)!=0)
-#define alloca                _alloca
 
 #endif /* WIN32 */
 
@@ -250,7 +218,7 @@ extern char* g_win32_getlocale(void);
 #include <sys/stat.h>
 
 #include "SDL.h"
-#ifndef _SDL_H
+#if !defined(_SDL_H)
 #error "---------------------------------------------------"
 #error "If you installed SDL from a package, be sure to get"
 #error "the development package, as well!"
@@ -259,30 +227,26 @@ extern char* g_win32_getlocale(void);
 #endif
 
 #include "SDL_image.h"
-#ifndef _SDL_IMAGE_H
-#ifndef _IMG_h
+#if !defined(_SDL_IMAGE_H) && !defined(_IMG_h)
 #error "---------------------------------------------------"
 #error "If you installed SDL_image from a package, be sure"
 #error "to get the development package, as well!"
 #error "(e.g., 'libsdl-image1.2-devel.rpm')"
 #error "---------------------------------------------------"
 #endif
-#endif
 
 #include "SDL_ttf.h"
-#ifndef _SDL_TTF_h
-#ifndef _SDLttf_h
+#if !defined(_SDL_TTF_H) && !defined(_SDLttf_h)
 #error "---------------------------------------------------"
 #error "If you installed SDL_ttf from a package, be sure"
 #error "to get the development package, as well!"
 #error "(e.g., 'libsdl-ttf1.2-devel.rpm')"
 #error "---------------------------------------------------"
 #endif
-#endif
 
 #ifndef NOSOUND
 #include "SDL_mixer.h"
-#ifndef _MIXER_H_
+#if !defined(_SDL_MIXER_H) && !defined(_MIXER_H_)
 #error "---------------------------------------------------"
 #error "If you installed SDL_mixer from a package, be sure"
 #error "to get the development package, as well!"
@@ -389,7 +353,6 @@ static void win32_perror(const char * const str)
 #endif
 
 
-#ifndef WIN32
 #ifdef __GNUC__
 // This version has strict type checking for safety.
 // See the "unnecessary" pointer comparison. (from Linux)
@@ -406,7 +369,6 @@ static void win32_perror(const char * const str)
 #else
 #define min(a,b) (((a) < (b)) ? (a) : (b))
 #define max(a,b) (((a) > (b)) ? (a) : (b))
-#endif
 #endif
 
 #define clamp(lo,value,hi)    (min(max(value,lo),hi))
@@ -718,25 +680,12 @@ static void set_current_language(void)
   lang = LANG_EN;
 
 
-#ifndef WIN32
   loc = setlocale(LC_MESSAGES, NULL);
   if (loc != NULL)
     {
       if (strstr(loc, "LC_MESSAGES") != NULL)
 	loc = getenv("LANG");
     }
-#else
-  loc = getenv("LANGUAGE");
-  if (!loc)
-    {
-      loc = g_win32_getlocale();
-      if (loc)
-	{
-	  snprintf(str, sizeof(str), "LANGUAGE=%s", loc);
-	  putenv(strdup(str));
-	}
-    }
-#endif
 
   debug(loc);
 
@@ -15123,7 +15072,7 @@ static int charsize(char c)
   str[0] = c;
   str[1] = '\0';
 
-  TTF_SizeUNICODE(fonts[cur_font], str, &w, &h);
+  TTF_SizeUNICODE(getfonthandle(cur_font), str, &w, &h);
 
   return w;
 }
