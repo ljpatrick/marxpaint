@@ -23,7 +23,7 @@ New Breed Software</p>
 <p><a href="mailto:bill@newbreedsoftware.com">bill@newbreedsoftware.com</a><br>
 <a href="http://www.newbreedsoftware.com/tuxpaint/">http://www.newbreedsoftware.com/tuxpaint/</a></p>
 
-<p>June 14, 2002 - September 11, 2003</p>
+<p>June 14, 2002 - September 27, 2003</p>
 </center>
 
 <hr size=2 noshade>
@@ -359,14 +359,14 @@ New Breed Software</p>
 	  This disables support for the wheel on mice that have it.
 	  (Normally, the wheel will scroll the selector menu on the right.)
 	</dd>
-	
-	<dt><code><b>keyboard=yes</b></code></dt>
+
+	<dt><code><b>nofancycursors=yes</b></code></dt>
 	<dd>
-	  <p>This allows the keyboard arrow keys to be used
-	  to control the mouse pointer.  (e.g., for mouseless environments.)</p>
-	  
-	  <p>The <b>[Arrow]</b> keys move the mouse pointer.
-	  <b>[Space]</b> acts as the mouse button.</p>
+	  <p>This disables the fancy mouse pointer shapes in Tux&nbsp;Paint,
+	  and uses your environment's normal mouse pointer.</p>
+
+	  <p>In some enviornments, the fancy cursors cause problems.
+	  Use this option to avoid them.</p>
 	</dd>
 	
 	<dt><code><b>nooutlines=yes</b></code></dt>
@@ -389,6 +389,31 @@ New Breed Software</p>
 	  will be available at all.</p>
 	</dd>
 
+        <dt><code><b>nostampcontrols=yes</b></code></dt>
+	<dd>
+	  Some images in the <b>Stamps</b> tool can be mirrored, flipped,
+	  and/or have their size changed.  This option disables the controls,
+	  and only provides the basic stamps.
+	</dd>
+
+        <dt><code><b>mirrorstamps=yes</b></code></dt>
+	<dd>
+	  <p>For stamps that can be mirrored, this option sets them to their
+	  mirrored shape by default.</p>
+
+	  <p>This can be useful for people who prefer things right-to-left,
+	  rather than left-to-right.</p>
+	</dd>
+
+	<dt><code><b>keyboard=yes</b></code></dt>
+	<dd>
+	  <p>This allows the keyboard arrow keys to be used
+	  to control the mouse pointer.  (e.g., for mouseless environments.)</p>
+	  
+	  <p>The <b>[Arrow]</b> keys move the mouse pointer.
+	  <b>[Space]</b> acts as the mouse button.</p>
+	</dd>
+	
 	<dt><code><b>savedir=<i>DIRECTORY</i></b></code></dt>
 	<dd>
 	  <p>Use this option to change where Tux&nbsp;Paint saves pictures.
@@ -582,6 +607,11 @@ New Breed Software</p>
 	    <td>&nbsp;</td>
 	  </tr>
 	  <tr>
+	    <td><code>tamil</code></td>
+	    <td>&nbsp;</td>
+	    <td>&nbsp;</td>
+	  </tr>
+	  <tr>
 	    <td><code>turkish</code></td>
 	    <td>&nbsp;</td>
 	    <td>&nbsp;</td>
@@ -644,11 +674,15 @@ New Breed Software</p>
 	--printcfg<br>
         --simpleshapes<br>
         --uppercase<br>
-	--noshortcuts<br>
         --grab<br>
-	--keyboard<br>
-	--nooutlines<br>
+	--noshortcuts<br>
         --nowheelmouse<br>
+	--nofancycursors<br>
+	--nooutlines<br>
+	--nostamps<br>
+	--nostampcontrols<br>
+	--mirrorstamps<br>
+	--keyboard<br>
 	--savedir&nbsp;DIRECTORY<br>
         --saveover<br>
         --saveovernew<br>
@@ -669,11 +703,15 @@ New Breed Software</p>
 	--noprintcfg<br>
         --complexshapes<br>
         --mixedcase<br>
-	--shortcuts<br>
         --dontgrab<br>
-	--mouse<br>
-	--outlines<br>
+	--shortcuts<br>
         --wheelmouse<br>
+	--fancycursors<br>
+	--outlines<br>
+	--stamps<br>
+	--stampcontrols<br>
+	--dontmirrorstamps<br>
+	--mouse<br>
         --saveoverask<br>
 	</b></code></dt>
 	<dd>
@@ -909,6 +947,11 @@ New Breed Software</p>
         <td><code>sv_SE@euro</code></td>
 	<td>Svenska</td>
 	<td>Swedish</td>
+      </tr>
+      <tr>
+        <td><code>ta_IN</code> (*)</td>
+	<td>&nbsp;</td>
+	<td>Tamil</td>
       </tr>
       <tr>
         <td><code>tr_TR@euro</code></td>

@@ -9,7 +9,7 @@
                            bill@newbreedsoftware.com
                    http://www.newbreedsoftware.com/tuxpaint/
 
-                       June 14, 2002 - September 11, 2003
+                       June 14, 2002 - September 27, 2003
 
      ----------------------------------------------------------------------
 
@@ -266,13 +266,13 @@ Options
                    (Normally, the wheel will scroll the selector menu on the
                    right.)
 
-           keyboard=yes
+           nofancycursors=yes
 
-                   This allows the keyboard arrow keys to be used to control
-                   the mouse pointer. (e.g., for mouseless environments.)
+                   This disables the fancy mouse pointer shapes in Tux Paint,
+                   and uses your environment's normal mouse pointer.
 
-                   The [Arrow] keys move the mouse pointer. [Space] acts as
-                   the mouse button.
+                   In some enviornments, the fancy cursors cause problems.
+                   Use this option to avoid them.
 
            nooutlines=yes
 
@@ -291,6 +291,27 @@ Options
                    This can speed up Tux Paint when it first loads up, and
                    reduce memory usage while it's running. Of course, no
                    stamps will be available at all.
+
+           nostampcontrols=yes
+                   Some images in the Stamps tool can be mirrored, flipped,
+                   and/or have their size changed. This option disables the
+                   controls, and only provides the basic stamps.
+
+           mirrorstamps=yes
+
+                   For stamps that can be mirrored, this option sets them to
+                   their mirrored shape by default.
+
+                   This can be useful for people who prefer things
+                   right-to-left, rather than left-to-right.
+
+           keyboard=yes
+
+                   This allows the keyboard arrow keys to be used to control
+                   the mouse pointer. (e.g., for mouseless environments.)
+
+                   The [Arrow] keys move the mouse pointer. [Space] acts as
+                   the mouse button.
 
            savedir=DIRECTORY
 
@@ -391,6 +412,8 @@ Options
                      |--------------------+------------------+---------|
                      |swedish             |svenska           |         |
                      |--------------------+------------------+---------|
+                     |tamil               |                  |         |
+                     |--------------------+------------------+---------|
                      |turkish             |                  |         |
                      |--------------------+------------------+---------|
                      |walloon             |                  |         |
@@ -432,11 +455,15 @@ Options
            --printcfg
            --simpleshapes
            --uppercase
-           --noshortcuts
            --grab
-           --keyboard
-           --nooutlines
+           --noshortcuts
            --nowheelmouse
+           --nofancycursors
+           --nooutlines
+           --nostamps
+           --nostampcontrols
+           --mirrorstamps
+           --keyboard
            --savedir DIRECTORY
            --saveover
            --saveovernew
@@ -453,11 +480,15 @@ Options
            --noprintcfg
            --complexshapes
            --mixedcase
-           --shortcuts
            --dontgrab
-           --mouse
-           --outlines
+           --shortcuts
            --wheelmouse
+           --fancycursors
+           --outlines
+           --stamps
+           --stampcontrols
+           --dontmirrorstamps
+           --mouse
            --saveoverask
                    These options can be used to override any settings made in
                    the configuration file. (If the option isn't set in the
@@ -578,6 +609,8 @@ Options
            |sk_SK          |Slovak             |                    |
            |---------------+-------------------+--------------------|
            |sv_SE@euro     |Svenska            |Swedish             |
+           |---------------+-------------------+--------------------|
+           |ta_IN (*)      |                   |Tamil               |
            |---------------+-------------------+--------------------|
            |tr_TR@euro     |                   |Turkish             |
            |---------------+-------------------+--------------------|
