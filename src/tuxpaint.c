@@ -135,7 +135,6 @@ static scaleparams scaletable[] = {
 #endif
 
 #include <locale.h>
-#include <iconv.h>
 
 #ifndef OLD_UPPERCASE_CODE
 #include <wctype.h>
@@ -151,10 +150,6 @@ static scaleparams scaletable[] = {
 #define HAVE_DCGETTEXT    1
 #endif
 
-#if    defined(sun) && defined(__svr4__)
-/* Solaris needs locale.h */
-#endif
-
 #include <libintl.h>
 #ifndef gettext_noop
 #define gettext_noop(String) String
@@ -167,7 +162,7 @@ static scaleparams scaletable[] = {
 
 
 #ifndef M_PI
-#define M_PI 3.14159265
+#define M_PI 3.14159265358979323846
 #endif
 
 #include <sys/types.h>
