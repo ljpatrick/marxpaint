@@ -21,15 +21,15 @@
   along with this program; if not, write to the Free Software
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   
-  June 14, 2002 - December 20, 2003
+  June 14, 2002 - December 22, 2003
 */
 
 
 #define VER_VERSION     "0.9.13"
-#define VER_DATE        "2003.12.20"
+#define VER_DATE        "2003.12.22"
 
 
-/* #define DEBUG */
+#define DEBUG
 /* #define LOW_QUALITY_THUMBNAILS */
 /* #define LOW_QUALITY_COLOR_SELECTOR */
 /* #define LOW_QUALITY_STAMP_OUTLINE */
@@ -37,8 +37,8 @@
 /* #define NO_PROMPT_SHADOWS */
 /* #define USE_HWSURFACE */
 
-
-#define USE_HQ4X
+/* Use high quality 4x filter when scaling stamps up: */
+/* #define USE_HQ4X */
 
 
 /* Disable fancy cursors in fullscreen mode, to avoid SDL bug: */
@@ -372,9 +372,6 @@ int lang_use_utf8[] = {
   LANG_HE,
   LANG_JA,
   LANG_KO,
-  /* LANG_LT, */
-  /* LANG_PL, */
-  /* LANG_RU, */
   LANG_TA,
   LANG_ZH,
   -1
@@ -1020,7 +1017,7 @@ void mainloop(void)
 		  else if (cur_tool == TOOL_SHAPES)
 		    draw_shapes();
 		  
-		  draw_tux_text(TUX_GREAT, tool_tips[cur_tool], 0, 0, 1);
+		  draw_tux_text(TUX_GREAT, tool_tips[cur_tool], 1, 0, 1);
 
 
 		  /* FIXME: Make delay configurable: */
@@ -1060,7 +1057,7 @@ void mainloop(void)
 		  else
 		    {
 		      draw_tux_text(tool_tux[TUX_DEFAULT], TIP_NEW_ABORT,
-				    0, 0, 1);
+				    1, 0, 1);
 		    }
 		  
 		  draw_toolbar();
@@ -1227,7 +1224,7 @@ void mainloop(void)
 		      playsound(1, SND_CLICK, 0);
 		      
 		      draw_tux_text(tool_tux[cur_tool], tool_tips[cur_tool],
-				    0, 0, 1);
+				    1, 0, 1);
 		      
 		      
 		      /* Draw items for this tool: */
@@ -1316,7 +1313,7 @@ void mainloop(void)
 					 0, 0,
 					 96, (48 * (7 + TOOLOFFSET / 2)) + 40);
 			  
-			  draw_tux_text(TUX_GREAT, tool_tips[cur_tool], 0, 0, 1);
+			  draw_tux_text(TUX_GREAT, tool_tips[cur_tool], 1, 0, 1);
 
 			  if (cur_tool == TOOL_BRUSH ||
 			      cur_tool == TOOL_LINES ||
@@ -1389,7 +1386,7 @@ void mainloop(void)
 			  else
 			    {
 			      draw_tux_text(tool_tux[TUX_DEFAULT],
-					    TIP_NEW_ABORT, 0, 0, 1);
+					    TIP_NEW_ABORT, 1, 0, 1);
 			    }
 			  
 			  cur_tool = old_tool;
@@ -1815,7 +1812,7 @@ void mainloop(void)
 			  cur_shape = cur_thing;
 			  
 			  draw_tux_text(TUX_GREAT, shape_tips[cur_shape],
-					0, 0, 1);
+					1, 0, 1);
 			  
 			  if (do_draw)
 			    draw_shapes();
@@ -1837,7 +1834,7 @@ void mainloop(void)
 			  cur_magic = cur_thing;
 
 			  draw_tux_text(TUX_GREAT, magic_tips[cur_magic],
-					0, 0, 1);
+					1, 0, 1);
 			  
 			  if (do_draw)
 			    draw_magic();
@@ -1877,7 +1874,7 @@ void mainloop(void)
 				     0, (48 * 7) + 40 + HEIGHTOFFSET,
 				     WINDOW_WIDTH, 48);
 		      render_brush();
-		      draw_tux_text(TUX_KISS, color_names[cur_color], 0, 0, 1);
+		      draw_tux_text(TUX_KISS, color_names[cur_color], 1, 0, 1);
 		
 		      if (cur_tool == TOOL_TEXT)
 		        do_render_cur_text(0);
@@ -1935,7 +1932,7 @@ void mainloop(void)
 #endif
 		      playsound(1, SND_STAMP, 1);
 
-		      draw_tux_text(TUX_GREAT, great_str(), 0, 0, 1);
+		      draw_tux_text(TUX_GREAT, great_str(), 1, 0, 1);
 
 		      /* FIXME: Make delay configurable: */
 
@@ -1956,7 +1953,7 @@ void mainloop(void)
 		      brush_draw(old_x, old_y, old_x, old_y, 1);
 		      
 		      playsound(1, SND_LINE_START, 1);
-		      draw_tux_text(TUX_BORED, TIP_LINE_START, 0, 0, 1);
+		      draw_tux_text(TUX_BORED, TIP_LINE_START, 1, 0, 1);
 		    }
 		  else if (cur_tool == TOOL_SHAPES)
 		    {
@@ -1972,7 +1969,7 @@ void mainloop(void)
 			  shape_tool_mode = SHAPE_TOOL_MODE_STRETCH;
 			  
 			  playsound(1, SND_LINE_START, 1);
-			  draw_tux_text(TUX_BORED, TIP_SHAPE_START, 0, 0, 1);
+			  draw_tux_text(TUX_BORED, TIP_SHAPE_START, 1, 0, 1);
 			}
 		      else if (shape_tool_mode == SHAPE_TOOL_MODE_ROTATE)
 			{
@@ -1991,7 +1988,7 @@ void mainloop(void)
 			  
 			  shape_tool_mode = SHAPE_TOOL_MODE_DONE;
 			  draw_tux_text(TUX_GREAT, tool_tips[TOOL_SHAPES],
-					0, 0, 1);
+					1, 0, 1);
 			}
 		    }
 		  else if (cur_tool == TOOL_MAGIC)
@@ -2017,7 +2014,7 @@ void mainloop(void)
 					getpixel(canvas, old_x, old_y));
 
 			  draw_tux_text(TUX_GREAT, magic_tips[MAGIC_FILL],
-					0, 0, 1);
+					1, 0, 1);
 			}
 		      
 		      if (cur_magic == MAGIC_FLIP ||
@@ -2240,7 +2237,7 @@ void mainloop(void)
 		  cur_shape = cur_thing;
                        
 		  draw_tux_text(TUX_GREAT, shape_tips[cur_shape],
-				0, 0, 1);
+				1, 0, 1);
 
 		  if (do_draw)
 		    draw_shapes();
@@ -2262,7 +2259,7 @@ void mainloop(void)
 		  cur_magic = cur_thing;
 
 		  draw_tux_text(TUX_GREAT, magic_tips[cur_magic],
-				0, 0, 1);
+				1, 0, 1);
 
 		  if (do_draw)
 		    draw_magic();
@@ -2319,7 +2316,7 @@ void mainloop(void)
 				 event.button.x - 96, event.button.y, 1);
 		      
 		      playsound(1, SND_LINE_END, 1);
-		      draw_tux_text(TUX_GREAT, tool_tips[TOOL_LINES], 0, 0, 1);
+		      draw_tux_text(TUX_GREAT, tool_tips[TOOL_LINES], 1, 0, 1);
 		    }
 		  else if (cur_tool == TOOL_SHAPES)
 		    {
@@ -2352,7 +2349,7 @@ void mainloop(void)
 				       0);
 			      
 			      playsound(1, SND_LINE_START, 1);
-			      draw_tux_text(TUX_BORED, TIP_SHAPE_NEXT, 0, 0, 1);
+			      draw_tux_text(TUX_BORED, TIP_SHAPE_NEXT, 1, 0, 1);
 			      
 			      
 			      /* FIXME: Do something less intensive! */
@@ -2373,7 +2370,7 @@ void mainloop(void)
 			      
 			      shape_tool_mode = SHAPE_TOOL_MODE_DONE;
 			      draw_tux_text(TUX_GREAT,
-					    tool_tips[TOOL_SHAPES], 0, 0, 1);
+					    tool_tips[TOOL_SHAPES], 1, 0, 1);
 			    }
 			}
 		    }
@@ -4389,8 +4386,8 @@ void setup(int argc, char * argv[])
       else if (strcmp(langstr, "spanish") == 0 ||
 	       strcmp(langstr, "espanol") == 0)
 	{
-	  putenv("LANG=es_ES@euro");
-	  putenv("LC_ALL=es_ES@euro");
+	  putenv("LANG=es_ES");
+	  putenv("LC_ALL=es_ES");
 	}
       else if (strcmp(langstr, "finnish") == 0 ||
 	       strcmp(langstr, "suomi") == 0)
@@ -7636,7 +7633,11 @@ void wordwrap_text(TTF_Font * font, char * str, SDL_Color color,
 	  //if (force_locale_font && locale_font != NULL)
 	  //  text = RENDER_TEXT(locale_font, substr, color);
 	  //else
-	  text = RENDER_TEXT(font, substr, color);
+	  
+	  if (want_utf8)
+	    text = TTF_RenderUTF8_Blended(font, substr, color);
+	  else
+	    text = TTF_RenderText_Blended(locale_font, substr, color);
 
 
 	  /* If it won't fit on this line, move to the next! */
@@ -8405,7 +8406,7 @@ int do_prompt(char * text, char * btn_yes, char * btn_no)
   /* Draw the question: */
 
   wordwrap_text(font, text, black,
-		166 + PROMPTOFFSETX, 100 + PROMPTOFFSETY, 475 + PROMPTOFFSETX, 0, 0, 1);
+		166 + PROMPTOFFSETX, 100 + PROMPTOFFSETY, 475 + PROMPTOFFSETX, 1, 0, 1);
 
 
   /* Draw yes button: */
@@ -8414,8 +8415,11 @@ int do_prompt(char * text, char * btn_yes, char * btn_no)
   dest.y = 178 + PROMPTOFFSETY;
   SDL_BlitSurface(img_yes, NULL, screen, &dest);
 
+
+  /* (Bound to UTF8 domain, so always ask for UTF8 rendering!) */
+
   wordwrap_text(font, btn_yes, black, 166 + PROMPTOFFSETX + 48 + 4,
-		183 + PROMPTOFFSETY, 475 + PROMPTOFFSETX, 0, 0, 1);
+		183 + PROMPTOFFSETY, 475 + PROMPTOFFSETX, 1, 0, 1);
 
 
   /* Draw no button: */
@@ -8428,7 +8432,7 @@ int do_prompt(char * text, char * btn_yes, char * btn_no)
 
       wordwrap_text(font, btn_no, black,
 		    166 + PROMPTOFFSETX + 48 + 4, 235 + PROMPTOFFSETY,
-		    475 + PROMPTOFFSETX, 0, 0, 1);
+		    475 + PROMPTOFFSETX, 1, 0, 1);
     }
 
 
@@ -9182,7 +9186,7 @@ int do_save(void)
       /* Ta-Da! */
 
       playsound(0, SND_SAVE, 1);
-      draw_tux_text(TUX_DEFAULT, tool_tips[TOOL_SAVE], 0, 0, 1);
+      draw_tux_text(TUX_DEFAULT, tool_tips[TOOL_SAVE], 1, 0, 1);
     }
 #else
   fi = fopen(fname, "wb");
@@ -9257,7 +9261,7 @@ int do_save(void)
   /* All happy! */
 
   playsound(0, SND_SAVE, 1);
-  draw_tux_text(TUX_DEFAULT, tool_tips[TOOL_SAVE], 0, 0, 1);
+  draw_tux_text(TUX_DEFAULT, tool_tips[TOOL_SAVE], 1, 0, 1);
   do_setcursor(cursor_arrow);
 
   return 1;
@@ -9840,7 +9844,7 @@ int do_open(int want_new_tool)
       
 	  draw_tux_text(TUX_BORED,
 			textdir(gettext_noop("Choose the picture you want, "
-					     "then click 'Open'")), 0, 0, 1);
+					     "then click 'Open'")), 1, 0, 1);
       
 	  cur = 0;
 	  update_list = 1;
