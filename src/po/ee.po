@@ -1,0 +1,388 @@
+# translation of ee_et.po to Estonian
+# translation of Tux Paint to Estonian
+# Tux Paint Estonian messages
+# Copyright (C) 2005 Free Software Foundation, Inc.
+# Henrik Pihl <henrik@saarlane.ee>, 2005.
+msgid ""
+msgstr ""
+"Project-Id-Version: ee_et\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2004-07-16 21:12+0200\n"
+"PO-Revision-Date: 2005-02-13 13:42+0200\n"
+"Last-Translator: Henrik Pihl <henrik@saarlane.ee>\n"
+"Language-Team: Estonian <et@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.9.1\n"
+
+msgid "A drawing program for children."
+msgstr "Joonistusprogramm lastele."
+
+msgid "Drawing program"
+msgstr "Joonistusprogramm"
+
+msgid "Tux Paint"
+msgstr "Joonistame koos Tuksiga!"
+
+msgid "Black!"
+msgstr "Must!"
+
+msgid "White!"
+msgstr "Valge!"
+
+msgid "Red!"
+msgstr "Punane!"
+
+msgid "Pink!"
+msgstr "Roosa!"
+
+msgid "Orange!"
+msgstr "Oranž!"
+
+msgid "Yellow!"
+msgstr "Kollane!"
+
+msgid "Lime!"
+msgstr "Heleroheline!"
+
+msgid "Green!"
+msgstr "Roheline!"
+
+msgid "Cyan!"
+msgstr "Türkiissinine!"
+
+msgid "Blue!"
+msgstr "Sinine!"
+
+msgid "Purple!"
+msgstr "Lilla!"
+
+msgid "Fuchsia!"
+msgstr "Helelilla!"
+
+msgid "Brown!"
+msgstr "Pruun!"
+
+msgid "Gray!"
+msgstr "Hall!"
+
+msgid "Silver!"
+msgstr "Hõbedane!"
+
+msgid "Great!"
+msgstr "Suurepärane!"
+
+msgid "Cool!"
+msgstr "Vahva!"
+
+msgid "Keep it up!"
+msgstr "Jätka samas vaimus!"
+
+msgid "Good job!"
+msgstr "Hästi tehtud!"
+
+msgid "Rainbow"
+msgstr "Vikerkaar"
+
+msgid "Sparkles"
+msgstr "Sädelus"
+
+msgid "Mirror"
+msgstr "Peegelpilt"
+
+msgid "Flip"
+msgstr "Pahupidi"
+
+msgid "Blur"
+msgstr "Ähmasus"
+
+msgid "Blocks"
+msgstr "Plokid"
+
+msgid "Negative"
+msgstr "Negatiiv"
+
+msgid "Fade"
+msgstr "Pleegitus"
+
+msgid "Chalk"
+msgstr "Kriit"
+
+msgid "Drip"
+msgstr "Tilgad"
+
+msgid "Thick"
+msgstr "Paks"
+
+msgid "Thin"
+msgstr "Peenike"
+
+msgid "Fill"
+msgstr "Täitmine"
+
+msgid "You can draw in rainbow colors!"
+msgstr "Sa saad joonistada vikerkaarevärvidega!"
+
+msgid "Click and move to draw sparkles."
+msgstr "Tee klõps ja liiguta hiirt, tekitada sädemeid."
+
+msgid "Click to make a mirror image."
+msgstr "Tee klõps, et tekitada peegelpilt."
+
+msgid "Click to flip the picture upside-down."
+msgstr "Tee klõps, et pöörata pilt pahupidi."
+
+msgid "Click and move the mouse around to blur the picture."
+msgstr "Tee klõps ja liiguta hiirt, et teha pilt ähmasemaks."
+
+msgid "Click and move the mouse around to make the picture blocky."
+msgstr "Tee klõps ja liiguta hiirt, et pilt muutuks ruudulisemaks."
+
+msgid "Click and move the mouse around to draw a negative."
+msgstr "Tee klõps ja liiguta hiirt, et tekitada negatiiv."
+
+msgid "Click and move to fade the colors."
+msgstr "Tee klõps ja liiguta hiirt, et pleegitada värve."
+
+msgid "Click and move the mouse around to turn the picture into a chalk drawing."
+msgstr "Tee klõps ja liiguta hiirt, et muuta pilt kriidijoonistuse sarnaseks."
+
+msgid "Click and move the mouse around to make the picture drip."
+msgstr "Tee klõps ja liiguta hiirt, et panna pilt tilkuma."
+
+msgid "Click and move the mouse to thicken the picture."
+msgstr "Tee klõps ja liiguta hiirt, et teha pilt paksemaks."
+
+msgid "Click and move the mouse to thin the picture."
+msgstr "Tee klõps ja liiguta hiirt, et teha pilt õhemaks."
+
+msgid "Click in the picture to fill that area with color."
+msgstr "Klõpsa pildil, et täita see ala värviga."
+
+msgid "Square"
+msgstr "Ruut"
+
+msgid "Rectangle"
+msgstr "Ristkülik"
+
+msgid "Circle"
+msgstr "Ring"
+
+msgid "Oval"
+msgstr "Ovaal"
+
+msgid "Triangle"
+msgstr "Kolmnurk"
+
+msgid "Pentagon"
+msgstr "Viisnurk"
+
+msgid "Diamond"
+msgstr "Romb"
+
+msgid "A square has four sides, each the same length."
+msgstr "Ruudul on neli külge, igal küljel on sama pikkus."
+
+msgid "A rectangle has four sides."
+msgstr "Ristkülikul on neli külge."
+
+msgid "A circle is exactly round."
+msgstr "Ring on täiesti ümmargune."
+
+msgid "A triangle has three sides."
+msgstr "Kolmnurgal on kolm külge."
+
+msgid "A pentagon has five sides."
+msgstr "Viisnurgal on viis külge."
+
+msgid "A diamond is a square, turned around slightly."
+msgstr "Romb on ruut, mis on pööratud natuke viltu."
+
+msgid "Tools"
+msgstr "Tööriistad"
+
+msgid "Colors"
+msgstr "Värvid"
+
+msgid "Brushes"
+msgstr "Pintslid"
+
+msgid "Stamps"
+msgstr "Templid"
+
+msgid "Shapes"
+msgstr "Kujundid"
+
+msgid "Letters"
+msgstr "Tähed"
+
+msgid "Magic"
+msgstr "Maagia"
+
+msgid "Paint"
+msgstr "Värv"
+
+msgid "Stamp"
+msgstr "Tempel"
+
+msgid "Lines"
+msgstr "Jooned"
+
+msgid "Text"
+msgstr "Tekst"
+
+msgid "Undo"
+msgstr "Tagasi"
+
+msgid "Redo"
+msgstr "Uuesti"
+
+msgid "Eraser"
+msgstr "Kustukumm"
+
+msgid "New"
+msgstr "Uus"
+
+#. 'Open' label:
+msgid "Open"
+msgstr "Ava"
+
+msgid "Save"
+msgstr "Salvesta"
+
+msgid "Print"
+msgstr "Trüki"
+
+msgid "Quit"
+msgstr "Välju"
+
+msgid "Pick a color and a brush shape to draw with."
+msgstr "Vali värv ja pintsli kuju, millega värvida."
+
+msgid "Pick a picture to stamp around your drawing."
+msgstr "Vali pilt, mida asetada pildile templina."
+
+msgid "Click to start drawing a line. Let go to complete it."
+msgstr "Klõpsa pildil joone joonistamiseks. Lõpetamiseks vabasta hiire nupp."
+
+msgid ""
+"Pick a shape. Click to pick the center, drag, then let go when it is the "
+"size you want. Move around to rotate it, and click to draw it."
+msgstr "Vali kujund. Klõpsa, et valida keskkoht, lohista, siis lase paraja suuruse juures nupp lahti. Liiguta hiirt ringi, et kujundit pöörata ümber ning siis klõpsa uuesti lõpetamiseks."
+
+msgid "Choose a style of text. Click on your drawing and you can start typing."
+msgstr "Vali teksti stiil. Klõpsa joonistusele ja sa saad hakata kirjutama."
+
+msgid "Pick a magical effect to use on your drawing!"
+msgstr "Vali maagiline efekt, mida tahad oma joonistusel kasutada."
+
+#. Undo
+msgid "Undo!"
+msgstr "Võta tagasi!"
+
+#. Redo
+msgid "Redo!"
+msgstr "Tee uuesti!"
+
+#. Eraser
+msgid "Eraser!"
+msgstr "Kustukumm!"
+
+#. New
+msgid "You now have a blank sheet to draw on!"
+msgstr "Sul on nüüd tühi leht oma joonistuse jaoks!"
+
+#. Open
+msgid "Open…"
+msgstr "Avamine…"
+
+#. Save
+msgid "Your image has been saved!"
+msgstr "Sinu pilt on salvestatud!"
+
+#. Print
+msgid "Printing…"
+msgstr "Trükkimine…"
+
+#. Quit
+msgid "Bye bye!"
+msgstr "Head aega!"
+
+msgid "Let go of the button to complete the line."
+msgstr "Joone lõpetamiseks lase nupust lahti."
+
+msgid "Hold the button to stretch the shape."
+msgstr "Hoia nuppu all kujundi venitamiseks."
+
+msgid "Move the mouse to rotate the shape. Click to draw it."
+msgstr "Liiguta hiirt kujundi pööramiseks. Klõpsa pildil lõpetamiseks."
+
+msgid "OK then… Let’s keep drawing this one!"
+msgstr "Olgu nii, joonistame seda pilti edasi!"
+
+#. FIXME: Move elsewhere!!!
+msgid "Do you really want to quit?"
+msgstr "Kas sa tõesti tahad väljuda?"
+
+#. FIXME: Move elsewhere! Or not?!
+msgid "Yes"
+msgstr "Jah"
+
+msgid "No"
+msgstr "Ei"
+
+msgid "If you quit, you’ll lose your picture! Save it?"
+msgstr "Kui sa praegu väljud, kaotad sa oma pildi ära! Kas salvestame?"
+
+msgid "Save your picture first?"
+msgstr "Salvestame selle pildi enne ära?"
+
+msgid "Can’t open that picture!"
+msgstr "Selle pildi avamine ei ole võimalik!"
+
+msgid "OK"
+msgstr "OK"
+
+msgid "Starting a new picture will erase the current one!"
+msgstr "Uue pildi alustamine kustutab praeguse ära!"
+
+msgid "That’s OK!"
+msgstr "Sobib."
+
+msgid "Never mind!"
+msgstr "Ei sobi."
+
+msgid "There are no saved files!"
+msgstr "Salvestatud pilte ei ole!"
+
+msgid "Print your picture now?"
+msgstr "Kas trükkida sinu pilt välja?"
+
+msgid "Your picture has been printed!"
+msgstr "Sinu pilt on välja trükitud!"
+
+msgid "You can’t print yet!"
+msgstr "Ei saa veel välja trükkida!"
+
+msgid "Erase this picture?"
+msgstr "Kas kustutame selle pildi?"
+
+#. 'Erase' label:
+msgid "Erase"
+msgstr "Kustuta"
+
+#. 'Back' label:
+msgid "Back"
+msgstr "Tagasi"
+
+#. FIXME: Move elsewhere!!!
+msgid "Save over the older version of this picture?"
+msgstr "Kas kirjutame pildi üle?"
+
+msgid "No, save a new file"
+msgstr "Ei, salvestame uude faili"
+
+msgid "Choose the picture you want, then click “Open”."
+msgstr "Vali pilt ja klõpsa nupul  \"Avamine\"."
+

@@ -22,12 +22,12 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
   
-  June 14, 2002 - January 16, 2005
+  June 14, 2002 - February 13, 2005
 */
 
 
 #define VER_VERSION     "0.9.15"
-#define VER_DATE        "2005-01-16"
+#define VER_DATE        "2005-02-13"
 
 
 /* Color depth for Tux Paint to run in, and store canvases in: */
@@ -551,6 +551,7 @@ enum {
   LANG_CY,     /* Welsh */
   LANG_DA,     /* Danish */
   LANG_DE,     /* German */
+  LANG_EE,     /* Estonian */
   LANG_EL,     /* Greek */
   LANG_EN,     /* English (American) (DEFAULT) */
   LANG_EN_GB,  /* English (British) */
@@ -796,6 +797,7 @@ static void show_lang_usage(FILE * f, const char * const prg)
 /* ga */     "  gaelic       gaidhlig\n"
 /* gl */     "  galician     galego\n"
 /* de */     "  german       deutsch\n"
+/* ee */     "  estonian\n"
 /* el */     "  greek\n"
 /* he */     "  hebrew\n"
 /* hi */     "  hindi\n"
@@ -858,6 +860,7 @@ static void show_locale_usage(FILE * f, const char * const prg)
 	  "  ga_IE   (Gaelic       Gaidhlig)\n"
 	  "  gl_ES   (Galician     Galego)\n"
 	  "  de_DE   (German       Deutsch)\n"
+	  "  ee_ET   (Estonian)\n"
 	  "  el_GR   (Greek)\n"
 	  "  he_IL   (Hebrew)\n"
 	  "  hi_IN   (Hindi)\n"
@@ -912,6 +915,7 @@ static const language_to_locale_struct language_to_locale_array[] = {
 {"dansk",                "da_DK"},
 {"german",               "de_DE"},
 {"deutsch",              "de_DE"},
+{"estonian",             "ee_ET"},
 {"greek",                "el_GR"},
 {"british-english",      "en_GB"},
 {"british",              "en_GB"},
