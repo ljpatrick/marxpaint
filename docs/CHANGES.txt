@@ -7,7 +7,10 @@ bill@newbreedsoftware.com
 http://www.newbreedsoftware.com/tuxpaint/
 
 
-2004.November.26 (0.9.15)
+2004.December.5 (0.9.15)
+  * Tinter now 2x to 4x faster.
+    Albert Cahalan <albert@users.sf.net>
+
   * Sorry about that leak. Many MB per stamp and nobody complained???
     Albert Cahalan <albert@users.sf.net>
 
