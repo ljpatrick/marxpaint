@@ -12385,12 +12385,13 @@ static int do_ps_save(FILE * fi, const char *restrict  const fname, SDL_Surface 
   fprintf(fi, "%%%%CreationDate: (%s)\n", buf);
   fprintf(fi, "%%%%Creator: (Tux Paint " VER_VERSION ", " VER_DATE ")\n");
   fprintf(fi, "%%%%LanguageLevel: 2\n");
-//  fprintf(fi, "%%%%BoundingBox: 72 214 540 578\n");
+//  fprintf(fi, "%%%%BoundingBox: 72 214 540 578\n");  // doubt we have the needed info
   fprintf(fi, "%%%%DocumentData: Binary\n");
   fprintf(fi, "%%%%EndComments\n");
   fprintf(fi, "\n");
   fprintf(fi, "gsave\n");
   fprintf(fi, "\n");
+//  fprintf(fi, "90 rotate\n");  // landscape mode
   fprintf(fi, "%% First, grab the page size.\n");
   fprintf(fi, "gsave\n");
   fprintf(fi, "  clippath\n");
@@ -12412,7 +12413,6 @@ static int do_ps_save(FILE * fi, const char *restrict  const fname, SDL_Surface 
   fprintf(fi, "%% now do a 'min' operation\n");
   fprintf(fi, "2 copy gt { exch } if pop\n");
   fprintf(fi, "\n");
-//  fprintf(fi, "90 rotate 0 %f translate\n", ???);  // landscape mode
   fprintf(fi, "dup scale\n");
   fprintf(fi, "/DeviceRGB setcolorspace\n");
   fprintf(fi, "<<\n");
