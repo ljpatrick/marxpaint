@@ -7,14 +7,14 @@ bill@newbreedsoftware.com
 http://www.newbreedsoftware.com/tuxpaint/
 
 
-2003.Dec.18 (0.9.13) [cvs]
-  * Translated into Basque
+2003.Dec.19 (0.9.13) [cvs]
+  * Translated into Basque (eu_ES)
     Juan Irigoien <juanirigoien@irakasle.net>
 
-  * Translated into Norwegian Bokmal
+  * Translated into Norwegian Bokmal (nb_NO)
     Dag H. Loras <dag.loraas@operamail.com>
 
-  * Translated into Tamil  [buggy]
+  * Translated into Tamil (ta_IN)  [buggy]
     Mugunth <mugunth@thamizha.com>
 
   * Made sure options were in the same order in various places in man page

@@ -7,12 +7,12 @@
   bill@newbreedsoftware.com
   http://www.newbreedsoftware.com/tuxpaint/
   
-  June 14, 2002 - December 18, 2003
+  June 14, 2002 - December 19, 2003
 */
 
 
 #define VER_VERSION     "0.9.13"
-#define VER_DATE        "2003.12.18"
+#define VER_DATE        "2003.12.19"
 
 
 /* #define DEBUG */
@@ -261,7 +261,6 @@ void win32_perror(const char *str)
 /* Possible languages: */
 
 enum {
-  LANG_BS,     /* Basque */
   LANG_CA,     /* Catalan */
   LANG_CS,     /* Czech */
   LANG_DA,     /* Danish */
@@ -270,6 +269,7 @@ enum {
   LANG_EN,     /* English (American) (DEFAULT) */
   LANG_EN_GB,  /* English (British) */
   LANG_ES,     /* Spanish */
+  LANG_EU,     /* Basque */
   LANG_FI,     /* Finnish */
   LANG_FR,     /* French */
   LANG_HE,     /* Hebrew */
@@ -299,7 +299,6 @@ enum {
 };
 
 const char * lang_prefixes[NUM_LANGS] = {
-  "bs",
   "ca",
   "cs",
   "da",
@@ -308,6 +307,7 @@ const char * lang_prefixes[NUM_LANGS] = {
   "en",
   "en_gb",
   "es",
+  "eu",
   "fi",
   "fr",
   "he",
@@ -3685,7 +3685,7 @@ void show_locale_usage(FILE * f, char * prg)
     "\n"
     "LOCALE may be one of:\n"
     "  C       (English      American English)\n"
-    "  bs_BA   (Baque        Euskara)\n"
+    "  eu_ES   (Baque        Euskara)\n"
     "  nb_NO   (Bokmal)\n"
     "  pt_BR   (Brazilian    Brazilian Portuguese   Portugues Brazilian)\n"
     "  en_GN   (British      British English)\n"
@@ -4313,8 +4313,8 @@ void setup(int argc, char * argv[])
       }
     else if (strcmp(langstr, "basque") == 0 || strcmp(langstr, "euskara") == 0)
       {
-	putenv("LANG=bs_BA");
-	putenv("LC_ALL=bs_BA");
+	putenv("LANG=eu_ES");
+	putenv("LC_ALL=eu_ES");
       }
     else if (strcmp(langstr, "korean") == 0)
       {
