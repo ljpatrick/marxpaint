@@ -423,6 +423,7 @@ SDL_Surface * img_tools[NUM_TOOLS], * img_tool_names[NUM_TOOLS];
 int num_brushes, num_stamps;
 SDL_Surface * img_brushes[MAX_BRUSHES];
 SDL_Surface * img_stamps[MAX_STAMPS];
+SDL_Surface * img_stamps_premirror[MAX_STAMPS];
 char * txt_stamps[MAX_STAMPS];
 info_type * inf_stamps[MAX_STAMPS];
 state_type * state_stamps[MAX_STAMPS];
@@ -514,6 +515,8 @@ SDL_Cursor * get_cursor(char * bits, char * mask_bits,
 		        int w, int h, int x, int y);
 void seticon(void);
 SDL_Surface * loadimage(char * fname);
+SDL_Surface * do_loadimage(char * fname, int abort_on_error);
+SDL_Surface * loadaltimage(char * fname);
 void draw_toolbar(void);
 void draw_magic(void);
 void draw_colors(int enabled);
@@ -523,11 +526,13 @@ void draw_shapes(void);
 void draw_fonts(void);
 void draw_none(void);
 #ifndef NOSOUND
-void loadarbitrary(SDL_Surface * surfs[], char * descs[], info_type * infs[],
+void loadarbitrary(SDL_Surface * surfs[], SDL_Surface * altsurfs[],
+		   char * descs[], info_type * infs[],
 		   Mix_Chunk * sounds[], int * count, int starting, int max,
 		   char * dir, int fatal, int maxw, int maxh);
 #else
-void loadarbitrary(SDL_Surface * surfs[], char * descs[], info_type * infs[],
+void loadarbitrary(SDL_Surface * surfs[], SDL_Surface * altsurfs[],
+		   char * descs[], info_type * infs[],
 		   int * count, int starting, int max,
 		   char * dir, int fatal, int maxw, int maxh);
 #endif
@@ -2755,7 +2760,7 @@ void blit_brush(int x, int y)
 void stamp_draw(int x, int y)
 {
   SDL_Rect src, dest;
-  SDL_Surface * tmp_surf;
+  SDL_Surface * tmp_surf, * surf_ptr;
   Uint32 amask;
   Uint8 r, g, b, a;
   int xx, yy, dont_free_tmp_surf, base_x, base_y;
@@ -2763,26 +2768,53 @@ void stamp_draw(int x, int y)
     stamp_hue, stamp_sat, stamp_val;
   
 
+  /* Where it will go: */
+  
   base_x = x - (img_stamps[cur_stamp]->w / 2);
   base_y = y - (img_stamps[cur_stamp]->h / 2);
+
+
+  /* Use a pre-mirrored version, if there is one? */
+  
+  if (state_stamps[cur_stamp]->mirrored)
+  {
+    if (img_stamps_premirror[cur_stamp] != NULL)
+    {
+      /* Use pre-mirrored one! */
+            
+      surf_ptr = img_stamps_premirror[cur_stamp];
+    }
+    else
+    {
+      /* Use normal (only) one, and mirror it ourselves: */
+            
+      surf_ptr = img_stamps[cur_stamp];
+    }
+  }
+  else
+  {
+    /* Not mirrored: */
+
+    surf_ptr = img_stamps[cur_stamp];
+  }
 
 
   /* Create a temp surface to play with: */
   
   if (stamp_colorable(cur_stamp) || stamp_tintable(cur_stamp))
   {
-    amask = ~(img_stamps[cur_stamp]->format->Rmask |
-	      img_stamps[cur_stamp]->format->Gmask |
-	      img_stamps[cur_stamp]->format->Bmask);
+    amask = ~(surf_ptr->format->Rmask |
+	      surf_ptr->format->Gmask |
+	      surf_ptr->format->Bmask);
 
     tmp_surf =
       SDL_CreateRGBSurface(SDL_SWSURFACE,
-	  		   img_stamps[cur_stamp]->w,
-			   img_stamps[cur_stamp]->h,
-			   img_stamps[cur_stamp]->format->BitsPerPixel,
-			   img_stamps[cur_stamp]->format->Rmask,
-			   img_stamps[cur_stamp]->format->Gmask,
-			   img_stamps[cur_stamp]->format->Bmask,
+	  		   surf_ptr->w,
+			   surf_ptr->h,
+			   surf_ptr->format->BitsPerPixel,
+			   surf_ptr->format->Rmask,
+			   surf_ptr->format->Gmask,
+			   surf_ptr->format->Bmask,
 			   amask);
 
     if (tmp_surf == NULL)
@@ -2819,15 +2851,15 @@ void stamp_draw(int x, int y)
 	  
     /* Render the stamp: */
 
-    SDL_LockSurface(img_stamps[cur_stamp]);
+    SDL_LockSurface(surf_ptr);
     SDL_LockSurface(tmp_surf);
 
-    for (yy = 0; yy < img_stamps[cur_stamp]->h; yy++)
+    for (yy = 0; yy < surf_ptr->h; yy++)
     {
-      for (xx = 0; xx < img_stamps[cur_stamp]->w; xx++)
+      for (xx = 0; xx < surf_ptr->w; xx++)
       {
-	SDL_GetRGBA(getpixel(img_stamps[cur_stamp], xx, yy),
-		    img_stamps[cur_stamp]->format,
+	SDL_GetRGBA(getpixel(surf_ptr, xx, yy),
+		    surf_ptr->format,
 	            &r, &g, &b, &a);
 	
 	putpixel(tmp_surf, xx, yy,
@@ -2840,7 +2872,7 @@ void stamp_draw(int x, int y)
     }
 
     SDL_UnlockSurface(tmp_surf);
-    SDL_UnlockSurface(img_stamps[cur_stamp]);
+    SDL_UnlockSurface(surf_ptr);
   }
   else if (stamp_tintable(cur_stamp))
   {
@@ -2859,15 +2891,15 @@ void stamp_draw(int x, int y)
 
     /* Render the stamp: */
 
-    SDL_LockSurface(img_stamps[cur_stamp]);
+    SDL_LockSurface(surf_ptr);
     SDL_LockSurface(tmp_surf);
 
-    for (yy = 0; yy < img_stamps[cur_stamp]->h; yy++)
+    for (yy = 0; yy < surf_ptr->h; yy++)
     {
-      for (xx = 0; xx < img_stamps[cur_stamp]->w; xx++)
+      for (xx = 0; xx < surf_ptr->w; xx++)
       {
-	SDL_GetRGBA(getpixel(img_stamps[cur_stamp], xx, yy),
-		    img_stamps[cur_stamp]->format,
+	SDL_GetRGBA(getpixel(surf_ptr, xx, yy),
+		    surf_ptr->format,
 	            &r, &g, &b, &a);
 	
 	rgbtohsv(r, g, b, &stamp_hue, &stamp_sat, &stamp_val);	
@@ -2881,13 +2913,13 @@ void stamp_draw(int x, int y)
     }
 
     SDL_UnlockSurface(tmp_surf);
-    SDL_UnlockSurface(img_stamps[cur_stamp]);
+    SDL_UnlockSurface(surf_ptr);
   }
   else
   {
     /* No color change, just use it! */
 
-    tmp_surf = img_stamps[cur_stamp];
+    tmp_surf = surf_ptr;
   }
    
 
@@ -2897,7 +2929,8 @@ void stamp_draw(int x, int y)
   {
     /* Flipped! */
 	  
-    if (state_stamps[cur_stamp]->mirrored)
+    if (state_stamps[cur_stamp]->mirrored &&
+	img_stamps_premirror[cur_stamp] == NULL)
     {
       /* Mirrored, too! */
 
@@ -2937,7 +2970,8 @@ void stamp_draw(int x, int y)
   }
   else
   {
-    if (state_stamps[cur_stamp]->mirrored)
+    if (state_stamps[cur_stamp]->mirrored &&
+	img_stamps_premirror[cur_stamp] == NULL)
     {
       /* Mirrored! */
 
@@ -4721,20 +4755,20 @@ void setup(int argc, char * argv[])
   /* Load brushes: */
 
 #ifndef NOSOUND
-  loadarbitrary(img_brushes, NULL, NULL, NULL, &num_brushes, 0,
+  loadarbitrary(img_brushes, NULL, NULL, NULL, NULL, &num_brushes, 0,
 	        MAX_BRUSHES, DATA_PREFIX "brushes", 1, 40, 40);
 #else
-  loadarbitrary(img_brushes, NULL, NULL, &num_brushes, 0,
+  loadarbitrary(img_brushes, NULL, NULL, NULL, &num_brushes, 0,
 	        MAX_BRUSHES, DATA_PREFIX "brushes", 1, 40, 40);
 #endif
 
 
   homedirdir = get_fname("brushes");
 #ifndef NOSOUND
-  loadarbitrary(img_brushes, NULL, NULL, NULL, &num_brushes, num_brushes,
+  loadarbitrary(img_brushes, NULL, NULL, NULL, NULL, &num_brushes, num_brushes,
 	        MAX_BRUSHES, homedirdir, 0, 40, 40);
 #else
-  loadarbitrary(img_brushes, NULL, NULL, &num_brushes, num_brushes,
+  loadarbitrary(img_brushes, NULL, NULL, NULL, &num_brushes, num_brushes,
 	        MAX_BRUSHES, homedirdir, 0, 40, 40);
 #endif
 
@@ -4851,21 +4885,25 @@ void setup(int argc, char * argv[])
   if (dont_load_stamps == 0)
   {
 #ifndef NOSOUND
-    loadarbitrary(img_stamps, txt_stamps, inf_stamps, snd_stamps, &num_stamps,
+    loadarbitrary(img_stamps, img_stamps_premirror,
+		  txt_stamps, inf_stamps, snd_stamps, &num_stamps,
 	          0, MAX_STAMPS, DATA_PREFIX "stamps", 0, -1, -1);
 #else
-    loadarbitrary(img_stamps, txt_stamps, inf_stamps, &num_stamps,
+    loadarbitrary(img_stamps, img_stamps_premirror,
+		  txt_stamps, inf_stamps, &num_stamps,
 	          0, MAX_STAMPS, DATA_PREFIX "stamps", 0, -1, -1);
 #endif
   
   
     homedirdir = get_fname("stamps");
 #ifndef NOSOUND
-    loadarbitrary(img_stamps, txt_stamps, inf_stamps, snd_stamps,
+    loadarbitrary(img_stamps, img_stamps_premirror,
+		  txt_stamps, inf_stamps, snd_stamps,
 		  &num_stamps, num_stamps,
 	          MAX_STAMPS, homedirdir, 0, -1, -1);
 #else
-    loadarbitrary(img_stamps, txt_stamps, inf_stamps, &num_stamps, num_stamps,
+    loadarbitrary(img_stamps, img_stamps_premirror,
+		  txt_stamps, inf_stamps, &num_stamps, num_stamps,
 	          MAX_STAMPS, homedirdir, 0, -1, -1);
 #endif
 
@@ -5266,9 +5304,17 @@ SDL_Cursor * get_cursor(char * bits, char * mask_bits,
 }
 
 
-/* Load an image: */
+/* Load an image (with errors): */
 
 SDL_Surface * loadimage(char * fname)
+{
+  return(do_loadimage(fname, 1));
+}
+
+
+/* Load an image: */
+
+SDL_Surface * do_loadimage(char * fname, int abort_on_error)
 {
   SDL_Surface * s, * disp_fmt_s;
 
@@ -5278,14 +5324,21 @@ SDL_Surface * loadimage(char * fname)
   s = IMG_Load(fname);
   if (s == NULL)
     {
-      fprintf(stderr,
-	      "\nError: I couldn't load a graphics file:\n"
-	      "%s\n"
-	      "The Simple DirectMedia Layer error that occurred was:\n"
-	      "%s\n\n", fname, SDL_GetError());
+      if (abort_on_error)
+      {
+        fprintf(stderr,
+	        "\nError: I couldn't load a graphics file:\n"
+	        "%s\n"
+	        "The Simple DirectMedia Layer error that occurred was:\n"
+	        "%s\n\n", fname, SDL_GetError());
 
-      cleanup();
-      exit(1);
+        cleanup();
+        exit(1);
+      }
+      else
+      {
+	return(NULL);
+      }
     }
 
 
@@ -5294,14 +5347,22 @@ SDL_Surface * loadimage(char * fname)
   disp_fmt_s = SDL_DisplayFormatAlpha(s);
   if (disp_fmt_s == NULL)
     {
-      fprintf(stderr,
-	      "\nError: I couldn't convert a graphics file:\n"
-	      "%s\n"
-	      "The Simple DirectMedia Layer error that occurred was:\n"
-	      "%s\n\n", fname, SDL_GetError());
+      if (abort_on_error)
+      {
+        fprintf(stderr,
+	        "\nError: I couldn't convert a graphics file:\n"
+	        "%s\n"
+	        "The Simple DirectMedia Layer error that occurred was:\n"
+	        "%s\n\n", fname, SDL_GetError());
 
-      cleanup();
-      exit(1);
+        cleanup();
+        exit(1);
+      }
+      else
+      {
+	SDL_FreeSurface(s);
+	return(NULL);
+      }
     }
 
 
@@ -6059,12 +6120,14 @@ void draw_none(void)
 /* Load an arbitrary set of images into an array (e.g., brushes or stamps) */
 
 #ifndef NOSOUND
-void loadarbitrary(SDL_Surface * surfs[], char * descs[], info_type * infs[],
+void loadarbitrary(SDL_Surface * surfs[], SDL_Surface * altsurfs[],
+		   char * descs[], info_type * infs[],
 		   Mix_Chunk * sounds[],
 		   int * count, int starting, int max,
 		   char * dir, int fatal, int maxw, int maxh)
 #else
-void loadarbitrary(SDL_Surface * surfs[], char * descs[], info_type * infs[],
+void loadarbitrary(SDL_Surface * surfs[], SDL_Surface * altsurfs[],
+		   char * descs[], info_type * infs[],
 		   int * count, int starting, int max,
 		   char * dir, int fatal, int maxw, int maxh)
 #endif
@@ -6176,14 +6239,17 @@ void loadarbitrary(SDL_Surface * surfs[], char * descs[], info_type * infs[],
           debug("...is a directory");
 
 #ifndef NOSOUND
-	  loadarbitrary(surfs, descs, infs, sounds, count, *count, max, fname,
+	  loadarbitrary(surfs, altsurfs, descs, infs, sounds,
+			count, *count, max, fname,
 			fatal, maxw, maxh);
 #else
-	  loadarbitrary(surfs, descs, infs, count, *count, max, fname,
+	  loadarbitrary(surfs, altsurfs, descs, infs,
+			count, *count, max, fname,
 			fatal, maxw, maxh);
 #endif
 	}
-        else if (strstr(d_names[i], ".png") != NULL)
+        else if (strstr(d_names[i], ".png") != NULL &&
+		 strstr(d_names[i], "_mirror.png") == NULL)
         {
           /* If it has ".png" in the filename, assume we can try to load it: */
 	
@@ -6200,6 +6266,9 @@ void loadarbitrary(SDL_Surface * surfs[], char * descs[], info_type * infs[],
 
 	    if (infs != NULL)
 	      infs[*count] = loadinfo(fname);
+
+	    if (altsurfs != NULL)
+	      altsurfs[*count] = loadaltimage(fname);
 
 
 #ifndef NOSOUND
@@ -7738,6 +7807,38 @@ info_type * loadinfo(char * fname)
 }
 
 
+/* Load a file's alternative image: */
+
+SDL_Surface * loadaltimage(char * fname)
+{
+  char * alt_fname;
+  SDL_Surface * s;
+  
+
+  s = NULL;
+
+
+  alt_fname = (char *) malloc(sizeof(char) *
+		              (strlen(fname) + strlen("_mirror") + 1));
+  if (alt_fname != NULL)
+  {
+    strcpy(alt_fname, fname);
+
+    if (strstr(alt_fname, ".png") != NULL)
+    {
+      strcpy(strstr(alt_fname, ".png"), "_mirror.png");
+
+      s = do_loadimage(alt_fname, 0);
+    }
+
+
+    free(alt_fname);
+  }
+
+  return s;
+}
+
+
 /* Wait for a keypress or mouse click */
 
 void do_wait(void)
@@ -8243,6 +8344,7 @@ void cleanup(void)
 
   free_surface_array( img_brushes, MAX_BRUSHES );
   free_surface_array( img_stamps, MAX_STAMPS );
+  free_surface_array( img_stamps_premirror, MAX_STAMPS );
   free_surface_array( img_tools, NUM_TOOLS );
   free_surface_array( img_tool_names, NUM_TOOLS );
   free_surface_array( img_title_names, NUM_TITLES );
