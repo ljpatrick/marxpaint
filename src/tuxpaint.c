@@ -2119,7 +2119,7 @@ static void control_drawtext_timer(Uint32 interval, const char * const text);
 static void parse_options(FILE * fi);
 static void do_setcursor(SDL_Cursor * c);
 static const char * great_str(void);
-static void draw_image_title(int t, int x);
+static void draw_image_title(int t, SDL_Rect dest);
 static void handle_keymouse(SDLKey key, Uint8 updown);
 static void handle_active(SDL_Event * event);
 static char * remove_slash(char * path);
@@ -7565,7 +7565,7 @@ static void draw_toolbar(void)
     tool_avail[TOOL_PRINT] = tool_avail[TOOL_NEW];
 
 
-  draw_image_title(TITLE_TOOLS, 0);
+  draw_image_title(TITLE_TOOLS, r_ttools);
 
   for (i = 0; i < NUM_TOOLS + TOOLOFFSET; i++)
     {
@@ -7626,7 +7626,7 @@ static void draw_magic(void)
   /* FIXME: Should we worry about more than 14 magic effects? :^/ */
 
 
-  draw_image_title(TITLE_MAGIC, WINDOW_WIDTH - 96);
+  draw_image_title(TITLE_MAGIC, r_ttoolopt);
 
   if (NUM_MAGICS > 14 + TOOLOFFSET)
     {
@@ -7800,8 +7800,7 @@ static void draw_brushes(void)
 
 
   /* Draw the title: */
-
-  draw_image_title(TITLE_BRUSHES, WINDOW_WIDTH - 96);
+  draw_image_title(TITLE_BRUSHES, r_ttoolopt);
 
 
   /* Do we need scrollbars? */
@@ -7893,8 +7892,7 @@ static void draw_fonts(void)
 
 
   /* Draw the title: */
-
-  draw_image_title(TITLE_LETTERS, WINDOW_WIDTH - 96);
+  draw_image_title(TITLE_LETTERS, r_ttoolopt);
 
 
   /* How many can we show? */
@@ -8102,8 +8100,7 @@ static void draw_stamps(void)
 
 
   /* Draw the title: */
-
-  draw_image_title(TITLE_STAMPS, WINDOW_WIDTH - 96);
+  draw_image_title(TITLE_STAMPS, r_ttoolopt);
 
 
   /* How many can we show? */
@@ -8387,7 +8384,7 @@ static void draw_shapes(void)
   SDL_Rect dest;
 
 
-  draw_image_title(TITLE_SHAPES, WINDOW_WIDTH - 96);
+  draw_image_title(TITLE_SHAPES, r_ttoolopt);
 
   for (i = 0; i < 14 + TOOLOFFSET; i++)
     {
@@ -8434,7 +8431,7 @@ static void draw_erasers(void)
   SDL_Rect dest;
 
 
-  draw_image_title(TITLE_ERASERS, WINDOW_WIDTH - 96);
+  draw_image_title(TITLE_ERASERS, r_ttoolopt);
 
   for (i = 0; i < 14 + TOOLOFFSET; i++)
     {
@@ -14691,16 +14688,12 @@ static int charsize(char c)
 }
 #endif
 
-static void draw_image_title(int t, int x)
+static void draw_image_title(int t, SDL_Rect dest)
 {
-  SDL_Rect dest;
-
-  dest.x = x;
-  dest.y = 0;
   SDL_BlitSurface(img_title_on, NULL, screen, &dest);
   
-  dest.x = x + (96 - img_title_names[t]->w) / 2;;
-  dest.y = (40 - img_title_names[t]->h) / 2;
+  dest.x += (dest.w - img_title_names[t]->w) / 2;
+  dest.y += (dest.h - img_title_names[t]->h) / 2;
   SDL_BlitSurface(img_title_names[t], NULL, screen, &dest);
 }
 
