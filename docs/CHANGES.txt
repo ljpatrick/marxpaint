@@ -48,6 +48,15 @@ http://www.newbreedsoftware.com/tuxpaint/
       source pixels.
       Albert Cahalan <albert@users.sf.net>
 
+  * Text tool improvements:
+    -----------------------
+    * Attempts to pick up the system's fonts, too!
+      Albert Cahalan <albert@users.sf.net>
+
+    * Italic, bold and sizes are now controlled with separate buttons
+      (similar to flip, mirror and sizes for Stamps).
+      Albert Cahalan <albert@users.sf.net>
+
   * Improved support for varying image sizes:
     -----------------------------------------
     * Somewhat better treatment of wrong-sized images when loading them.
