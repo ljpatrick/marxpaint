@@ -8134,47 +8134,40 @@ static SDL_Surface * thumbnail(SDL_Surface * src, int max_x, int max_y,
 
 static Uint32 getpixel(SDL_Surface * surface, int x, int y)
 {
-  int bpp;
   Uint8 * p;
   Uint32 pixel;
-
-  pixel = 0;
-
+#if VIDEO_BPP!=32
+  int BytesPerPixel = surface->format->BytesPerPixel;
+#else
+#define BytesPerPixel 4
+#endif
 
   /* get the X/Y values within the bounds of this surface */
-  if (unlikely(x < 0))
-    x = 0;
-  if (unlikely(x > surface->w - 1))
-    x = surface->w - 1;
-  if (unlikely(y > surface->h - 1))
-    y = surface->h - 1;
-  if (unlikely(y < 0))
-    y = 0;
-
-
-  /* Determine bytes-per-pixel for the surface in question: */
-  bpp = surface->format->BytesPerPixel;
+  if (unlikely( (unsigned)x > (unsigned)surface->w - 1u ))
+    x = (x<0) ? 0 : surface->w - 1;
+  if (unlikely( (unsigned)y > (unsigned)surface->h - 1u ))
+    y = (y<0) ? 0 : surface->h - 1;
 
   /* Set a pointer to the exact location in memory of the pixel
      in question: */
 
   p = (Uint8 *) (((Uint8 *)surface->pixels) +  /* Start at top of RAM */
     (y * surface->pitch) +  /* Go down Y lines */
-    (x * bpp));             /* Go in X pixels */
+    (x * BytesPerPixel));             /* Go in X pixels */
 
 
   /* Return the correctly-sized piece of data containing the
    * pixel's value (an 8-bit palette value, or a 16-, 24- or 32-bit
    * RGB value) */
 
-  if (likely(bpp == 4))
+  if (likely(BytesPerPixel == 4))
     return *(Uint32 *)p;  // 32-bit display
 
-  if (bpp == 1)         /* 8-bit display */
+  if (BytesPerPixel == 1)         /* 8-bit display */
     pixel = *p;
-  else if (bpp == 2)    /* 16-bit display */
+  else if (BytesPerPixel == 2)    /* 16-bit display */
     pixel = *(Uint16 *)p;
-  else if (bpp == 3)    /* 24-bit display */
+  else /* if (BytesPerPixel == 3) */   /* 24-bit display */
     {
       /* Depending on the byte-order, it could be stored RGB or BGR! */
 
@@ -8186,39 +8179,40 @@ static Uint32 getpixel(SDL_Surface * surface, int x, int y)
 
   return pixel;
 }
+#undef BytesPerPixel
 
 
 /* Draw a single pixel into the surface: */
 
 static void putpixel(SDL_Surface * surface, int x, int y, Uint32 pixel)
 {
-  int bpp;
   Uint8 * p;
-
+#if VIDEO_BPP!=32
+  int BytesPerPixel = surface->format->BytesPerPixel;
+#else
+#define BytesPerPixel 4
+#endif
 
   /* Assuming the X/Y values are within the bounds of this surface... */
 
-  if (likely(likely(x>=0) && likely(y>=0) && likely(x<surface->w) && likely(y<surface->h)))
+  if (likely( likely((unsigned)x<(unsigned)surface->w) && likely((unsigned)y<(unsigned)surface->h) ))
     {
-      /* Determine bytes-per-pixel for the surface in question: */
-      bpp = surface->format->BytesPerPixel;
-
       // Set a pointer to the exact location in memory of the pixel
       p = (Uint8 *) (((Uint8 *)surface->pixels) + /* Start: beginning of RAM */
 		     (y * surface->pitch) +  /* Go down Y lines */
-                     (x * bpp));             /* Go in X pixels */
+                     (x * BytesPerPixel));             /* Go in X pixels */
 
 
       /* Set the (correctly-sized) piece of data in the surface's RAM
        *          to the pixel value sent in: */
 
-      if (likely(bpp == 4))
+      if (likely(BytesPerPixel == 4))
         *(Uint32 *)p = pixel;  // 32-bit display
-      else if (bpp == 1)
+      else if (BytesPerPixel == 1)
         *p = pixel;
-      else if (bpp == 2)
+      else if (BytesPerPixel == 2)
         *(Uint16 *)p = pixel;
-      else if (bpp == 3)
+      else if (BytesPerPixel == 3)
         {
           if (SDL_BYTEORDER == SDL_BIG_ENDIAN)
             {
@@ -8235,6 +8229,8 @@ static void putpixel(SDL_Surface * surface, int x, int y, Uint32 pixel)
         }
     }
 }
+#undef BytesPerPixel
+
 
 /* Should really clip at the line level, but oh well... */
 
