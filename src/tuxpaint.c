@@ -7,12 +7,12 @@
   bill@newbreedsoftware.com
   http://www.newbreedsoftware.com/tuxpaint/
   
-  June 14, 2002 - September 14, 2003
+  June 14, 2002 - September 27, 2003
 */
 
 
 #define VER_VERSION     "0.9.13"
-#define VER_DATE        "2003.09.14"
+#define VER_DATE        "2003.09.27"
 
 
 /* #define DEBUG */
@@ -376,7 +376,8 @@ int use_sound, fullscreen, disable_quit, simple_shapes, language,
   disable_print, print_delay, only_uppercase, promptless_save, grab_input,
   wheely, no_fancy_cursors, keymouse, mouse_x, mouse_y,
   mousekey_up, mousekey_down, mousekey_left, mousekey_right,
-  dont_do_xor, use_print_config, dont_load_stamps, noshortcuts;
+  dont_do_xor, use_print_config, dont_load_stamps, noshortcuts,
+  mirrorstamps, disable_stamp_controls;
 int recording, playing;
 char * playfile;
 FILE * demofi;
@@ -3583,6 +3584,8 @@ void setup(int argc, char * argv[])
   printcommand = "pngtopnm | pnmtops | lpr";
   langstr = NULL;
   use_print_config = 0;
+  mirrorstamps = 0;
+  disable_stamp_controls = 0;
   WINDOW_WIDTH = 640;
   WINDOW_HEIGHT = 480;
   playfile = NULL;
@@ -3681,6 +3684,22 @@ void setup(int argc, char * argv[])
     else if (strcmp(argv[i], "--windowed") == 0 || strcmp(argv[i], "-w") == 0)
     {
       fullscreen = 0;
+    }
+    else if (strcmp(argv[i], "--mirrorstamps") == 0)
+    {
+      mirrorstamps = 1;
+    }
+    else if (strcmp(argv[i], "--dontmirrorstamps") == 0)
+    {
+      mirrorstamps = 0;
+    }
+    else if (strcmp(argv[i], "--nostampcontrols") == 0)
+    {
+      disable_stamp_controls = 1;
+    }
+    else if (strcmp(argv[i], "--stampcontrols") == 0)
+    {
+      disable_stamp_controls = 0;
     }
     else if (strcmp(argv[i], "--noshortcuts") == 0)
     {
@@ -10987,6 +11006,24 @@ void parse_options(FILE * fi)
 	       strcmp(str, "windowed=yes") == 0)
 	{
 	  fullscreen = 0;
+	}
+      else if (strcmp(str, "nostampcontrols=yes") == 0)
+	{
+	  disable_stamp_controls = 1;
+	}
+      else if (strcmp(str, "nostampcontrols=no") == 0 ||
+	       strcmp(str, "stampcontrols=yes") == 0)
+	{
+	  disable_stamp_controls = 0;
+	}
+      else if (strcmp(str, "mirrorstamps=yes") == 0)
+	{
+	  mirrorstamps = 1;
+	}
+      else if (strcmp(str, "mirrorstamps=no") == 0 ||
+	       strcmp(str, "dontmirrorstamps=yes") == 0)
+	{
+	  mirrorstamps = 0;
 	}
       else if (strcmp(str, "noshortcuts=yes") == 0)
         {

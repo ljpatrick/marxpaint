@@ -1,5 +1,5 @@
-.\" tuxpaint.1 - 2003.09.14
-.TH TUXPAINT 1 "14 Sep 2003" "0.9.13" "Tux Paint"
+.\" tuxpaint.1 - 2003.09.27
+.TH TUXPAINT 1 "27 Sep 2003" "0.9.13" "Tux Paint"
 .SH NAME
 tuxpaint -- A drawing program for young children.
 
@@ -24,6 +24,8 @@ tuxpaint -- A drawing program for young children.
 [\-\-nofancycursors]
 [\-\-nooutlines]
 [\-\-nostamps]
+[\-\-nostampcontrols]
+[\-\-mirrorstamps]
 [\-\-keyboard]
 [\-\-savedir \fIDIR\fP]
 [\-\-saveover]
@@ -43,10 +45,12 @@ tuxpaint -- A drawing program for young children.
 [\-\-dontgrab]
 [\-\-shortcuts]
 [\-\-wheelmouse]
-[\-\-mouse]
+[\-\-fancycursors]
 [\-\-outlines]
 [\-\-stamps]
-[\-\-fancycursors]
+[\-\-stampcontrols]
+[\-\-dontmirrorstamps]
+[\-\-mouse]
 [\-\-saveoverask]
 
 .TP 9
@@ -166,12 +170,6 @@ While the shapes are larger, and context sensitive, some environments have
 trouble displaying the mouse pointer, and/or leave 'trails' on the screen.
 
 .TP 8
-.B \-\-keyboard \-\-mouse
-The \fIkeyboard\fP option lets the mouse pointer in \fITux Paint\fP be
-controlled with the keyboard.  The \fIarrow keys\fP move the pointer.
-\fISpacebar\fP acts as the mouse button.
-
-.TP 8
 .B \-\-nooutlines \-\-outlines
 In \fInooutlines\fP mode, much simpler outlines and 'rubber-band' lines are
 displayed when using the \fILines\fP, \fIShapes\fP, \fIStamps\fP and
@@ -183,6 +181,24 @@ computers, or displayed on a remote X display.)
 With \fInostamps\fP set, Rubber Stamp images are not loaded, so the
 \fIStamps\fP tool will not be available.  This option can be used to reduce
 the time Tux Paint takes to load, and reduce the amount of RAM it requires.
+
+.TP 8
+.B \-\-nostampcontrols \-\-stampcontrols
+Disable or enable (default) buttons to control stamps.  Controls include
+mirror, flip, shrink and grow.  (Note: Not all stamps will be controllable
+in all ways.)
+
+.TP 8
+.B \-\-mirrorstamps \-\-dontmirrorstamps
+With \fImirrorstamps\fP set, stamps which can be mirrored will appear
+mirrored by default.  This can be useful when used by people who prefer
+things right-to-left over left-to-right.
+
+.TP 8
+.B \-\-keyboard \-\-mouse
+The \fIkeyboard\fP option lets the mouse pointer in \fITux Paint\fP be
+controlled with the keyboard.  The \fIarrow keys\fP move the pointer.
+\fISpacebar\fP acts as the mouse button.
 
 .TP 8
 .B \-\-savedir \fIDIR\fP
@@ -315,6 +331,9 @@ spanish | espanol
 .TP 2
 -
 swedish | svenska
+.TP 2
+-
+tamil
 .TP 2
 -
 turkish
