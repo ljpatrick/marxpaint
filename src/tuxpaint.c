@@ -7,12 +7,12 @@
   bill@newbreedsoftware.com
   http://www.newbreedsoftware.com/tuxpaint/
   
-  June 14, 2002 - March 14, 2003
+  June 14, 2002 - April 5, 2003
 */
 
 
 #define VER_VERSION     "0.9.11"
-#define VER_DATE        "2003.03.14"
+#define VER_DATE        "2003.04.05"
 
 
 /* #define DEBUG */
@@ -6263,15 +6263,13 @@ void wordwrap_text(TTF_Font * font, char * str, SDL_Color color,
   unsigned char * locale_str;
   char * tstr;
   Uint16 unicode_char[2];
-#ifdef OLD_UTF8_WRAP
-  char utf8_char[5];
-#endif
+  unsigned char utf8_char[5];
   int len;
   SDL_Surface * text;
   SDL_Rect dest;
 
   int utf8_str_len;
-  char utf8_str[512];
+  unsigned char utf8_str[512];
 
 
   /* Cursor starting position: */
@@ -6293,69 +6291,12 @@ void wordwrap_text(TTF_Font * font, char * str, SDL_Color color,
       locale_str = strdup(gettext(str));
 
 
-#ifdef OLD_UTF8_WRAP
-
-    /* For each UTF8 character: */
-    
-    for (i = 0; i < strlen(locale_str); i++)
-    {
-      /* How many bytes does this character need? */
-
-      if (locale_str[i] < 128)  /* 0xxx xxxx - 1 byte */
-      {
-	utf8_char[0] = locale_str[i];
-	utf8_char[1] = '\0';
-      }
-      else if ((locale_str[i] & 0xE0) == 0xC0)  /* 110x xxxx - 2 bytes */
-      {
-	utf8_char[0] = locale_str[i];
-	utf8_char[1] = locale_str[i + 1];
-	utf8_char[2] = '\0';
-	i = i + 1;
-      }
-      else if ((locale_str[i] & 0xF0) == 0xE0)  /* 1110 xxxx - 3 bytes */
-      {
-	utf8_char[0] = locale_str[i];
-	utf8_char[1] = locale_str[i + 1];
-	utf8_char[2] = locale_str[i + 2];
-	utf8_char[3] = '\0';
-	i = i + 2;
-      }
-      else  /* 1111 0xxx - 4 bytes */
-      {
-	utf8_char[0] = locale_str[i];
-	utf8_char[1] = locale_str[i + 1];
-	utf8_char[2] = locale_str[i + 2];
-	utf8_char[3] = locale_str[i + 3];
-	utf8_char[4] = '\0';
-	i = i + 3;
-      }
-      
-      text = TTF_RenderUTF8_Blended(locale_font, utf8_char, color);
-
-      if (x + text->w > right)
-      {
-	x = left;
-	y = y + text->h;
-      }
-
-      dest.x = x;
-      dest.y = y;
-
-      SDL_BlitSurface(text, NULL, screen, &dest);
-
-      x = x + text->w;
-      
-      SDL_FreeSurface(text);
-    }
-
-#else
     /* For each UTF8 character: */
 
     utf8_str_len = 0;
     utf8_str[0] = '\0';
 
-    for (i = 0; i < strlen(locale_str); i++)
+    for (i = 0; i <= strlen(locale_str); i++)
     {
       if (locale_str[i] < 128)
       {
@@ -6365,25 +6306,110 @@ void wordwrap_text(TTF_Font * font, char * str, SDL_Color color,
 
 	/* Space?  Blit the word! (Word-wrap if necessary) */
 
-        if (locale_str[i] == ' ')
+        if (locale_str[i] == ' ' || locale_str[i] == '\0')
 	{
 	  text = TTF_RenderUTF8_Blended(locale_font, utf8_str, color);
 
-          if (x + text->w > right)
+	  /* ----------- */
+      if (text->w > right - left)
+      {
+	/* Move left and down (if not already at left!) */
+
+	if (x > left)
+	{
+	  x = left;
+	  y = y + text->h;
+	}
+
+
+	/* Junk the blitted word; it's too long! */
+
+	SDL_FreeSurface(text);
+
+	
+        /* For each UTF8 character: */
+
+        for (j = 0; j < utf8_str_len; j++)
+        {
+	  printf("%d of %d\n", j, utf8_str_len); fflush(stdout);
+
+          /* How many bytes does this character need? */
+
+          if (utf8_str[j] < 128)  /* 0xxx xxxx - 1 byte */
           {
-	    x = left;
-	    y = y + text->h;
+	    utf8_char[0] = utf8_str[j];
+	    utf8_char[1] = '\0';
           }
+          else if ((utf8_str[j] & 0xE0) == 0xC0)  /* 110x xxxx - 2 bytes */
+          {
+	    utf8_char[0] = utf8_str[j];
+	    utf8_char[1] = utf8_str[j + 1];
+	    utf8_char[2] = '\0';
+	    j = j + 1;
+          }
+          else if ((utf8_str[j] & 0xF0) == 0xE0)  /* 1110 xxxx - 3 bytes */
+          {
+	    utf8_char[0] = utf8_str[j];
+	    utf8_char[1] = utf8_str[j + 1];
+	    utf8_char[2] = utf8_str[j + 2];
+	    utf8_char[3] = '\0';
+	    j = j + 2;
+          }
+          else  /* 1111 0xxx - 4 bytes */
+          {
+	    utf8_char[0] = utf8_str[j];
+	    utf8_char[1] = utf8_str[j + 1];
+	    utf8_char[2] = utf8_str[j + 2];
+	    utf8_char[3] = utf8_str[j + 3];
+	    utf8_char[4] = '\0';
+	    j = j + 3;
+          }
+    
+	  printf("-- J is now: %d\n", j); fflush(stdout);
 
-          dest.x = x;
-          dest.y = y;
+	  if (utf8_char[0] != '\0')
+	  {
+            text = TTF_RenderUTF8_Blended(locale_font, utf8_char, color);
+	    if (text != NULL)
+	    {
+              if (x + text->w > right)
+              {
+	        x = left;
+	        y = y + text->h;
+              }
 
-          SDL_BlitSurface(text, NULL, screen, &dest);
+              dest.x = x;
+              dest.y = y;
 
-          x = x + text->w;
+              SDL_BlitSurface(text, NULL, screen, &dest);
+	      SDL_FreeSurface(text);
+
+              x = x + text->w;
+	    }
+	  }
+        }
+      }
+      else
+      {
+	/* Not too wide for one line... */
+	      
+        if (x + text->w > right)
+        {
+	  /* This word needs to move down? */
+
+          x = left;
+          y = y + text->h;
+        }
+
+        dest.x = x;
+        dest.y = y;
+
+        SDL_BlitSurface(text, NULL, screen, &dest);
+        SDL_FreeSurface(text);
+        x = x + text->w;
+	}
+        
       
-          SDL_FreeSurface(text);
-
 	  utf8_str_len = 0;
 	  utf8_str[0] = '\0';
 	}
@@ -6413,24 +6439,6 @@ void wordwrap_text(TTF_Font * font, char * str, SDL_Color color,
         i = i + 3;
       }
     }
-
-    if (utf8_str_len > 0)
-    {
-      text = TTF_RenderUTF8_Blended(locale_font, utf8_str, color);
-
-      if (x + text->w > right)
-      {
-        x = left;
-        y = y + text->h;
-      }
-
-      dest.x = x;
-      dest.y = y;
-
-      SDL_BlitSurface(text, NULL, screen, &dest);
-      SDL_FreeSurface(text);
-    }
-#endif
     
     free(locale_str);
   }

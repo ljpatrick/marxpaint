@@ -7,7 +7,7 @@ bill@newbreedsoftware.com
 http://www.newbreedsoftware.com/tuxpaint/
 
 
-2003.March.14 (0.9.11) [cvs]
+2003.April.5 (0.9.11) [cvs]
   * Set $OUTPUT_CHARSET for Japanese locale, to fix Win32 issue.
     TOYAMA Shin-ichi <kyone@tky2.3web.ne.jp>
 
@@ -32,6 +32,9 @@ http://www.newbreedsoftware.com/tuxpaint/
 
   * Fixed a few typos in the manpage.
     Robert Glowczynski <robertg@software.com.pl>
+
+  * Fixed UTF-8 word-wrapping bug when there were no spaces
+    (e.g., in some Japanese strings)
 
 
 2003.February.22 (0.9.10)
