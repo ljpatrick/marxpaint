@@ -81,6 +81,7 @@
 #include <sys/stat.h>
 
 
+
 #ifndef WIN32
 #include <unistd.h>
 #include <dirent.h>
@@ -8268,7 +8269,7 @@ int do_save(void)
   {
     /* No old thumbnail!  Save this image's thumbnail in the new place,
        under ".thumbs" */
-
+  
     snprintf(tmp, sizeof(tmp), "saved/.thumbs/%s-t%s", file_id, FNAME_EXTENSION);
     fname = get_fname(tmp);
   }
@@ -8459,18 +8460,19 @@ int do_open(int want_new_tool)
 {
   SDL_Surface * img, * img1, * img2;
   int things_alloced;
-  SDL_Surface * * thumbs;
+  SDL_Surface * * thumbs = NULL;
   DIR * d;
   struct dirent * f;
 #ifndef __BEOS__
   struct dirent * fs;
 #endif
   char * dirname, * rfname;
-  char * * d_names, * * d_exts;
+  char * * d_names = NULL, * * d_exts = NULL;
   FILE * fi;
   char fname[1024];
+  char * tmp_fname;
   int num_files, i, done, update_list, want_erase, cur, which,
-    num_files_in_dir, j;
+    num_files_in_dir, j, res;
   SDL_Rect dest;
   SDL_Event event;
   SDLKey key;
@@ -8505,6 +8507,10 @@ int do_open(int want_new_tool)
   things_alloced = 32;
 #ifndef __BEOS__
   fs = (struct dirent *) malloc(sizeof(struct dirent) * things_alloced);
+#else
+  thumbs = (SDL_Surface * *) malloc(sizeof(SDL_Surface *) * things_alloced);
+  d_names = (char * *) malloc(sizeof(char *) * things_alloced);
+  d_exts = (char * *) malloc(sizeof(char *) * things_alloced);
 #endif
 
 
@@ -8610,6 +8616,21 @@ int do_open(int want_new_tool)
 
 	  *dot = '.';
 	  num_files_in_dir++;
+
+
+	  if (num_files_in_dir > things_alloced)
+	  {
+	    things_alloced = things_alloced + 32;
+	    
+            thumbs = (SDL_Surface * *)
+		     realloc(thumbs, sizeof(SDL_Surface *) * things_alloced);
+	    
+	    d_names = (char * *)
+		      realloc(d_names, sizeof(char *) * things_alloced);
+
+	    d_exts = (char * *)
+		     realloc(d_exts, sizeof(char *) * things_alloced);
+	  }
 	}
       }
     }
@@ -8640,9 +8661,6 @@ int do_open(int want_new_tool)
     while (f != NULL);
     
    
-    printf("num_files_in_dir = %d\n", num_files_in_dir);
-    fflush(stdout);
-
     thumbs = (SDL_Surface * *) malloc(sizeof(SDL_Surface *) * num_files_in_dir);
     d_names = (char * *) malloc(sizeof(char *) * num_files_in_dir);
     d_exts = (char * *) malloc(sizeof(char *) * num_files_in_dir);
@@ -8738,6 +8756,25 @@ int do_open(int want_new_tool)
 		if (img == NULL)
 		  {
 		    /* No thumbnail - load original: */
+    
+	            /* (Make sure we have a .../saved/.thumbs/ directory:) */
+
+                    tmp_fname = get_fname("saved/.thumbs");
+
+                    res = mkdir(tmp_fname, 0755);
+
+                    if (res != 0 && errno != EEXIST)
+                    {
+                      fprintf(stderr,
+                        "\nError: Can't create user data thumbnail directory:\n"
+                        "%s\n"
+	                "The error that occurred was:\n"
+	                "%s\n\n", tmp_fname, strerror(errno));
+                    }
+
+                    free(tmp_fname);
+
+
 		    
 		    snprintf(fname, sizeof(fname), "%s/%s",
 			     dirname, f->d_name);

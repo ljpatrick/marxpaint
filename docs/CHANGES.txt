@@ -53,6 +53,9 @@ http://www.newbreedsoftware.com/tuxpaint/
   * Removed static "MAX_FILES" limit; now mallocs space for file info.
     structures.  (Should fix large stack crash on OS X, which is good.)
 
+  * Fixed bug where ".thumbs" dir wouldn't get generated if it wasn't there
+    and you went to the 'Open' dialog.
+
 
 2003.Jun.17 (0.9.11)
   * Windows bugfixes.
