@@ -26,7 +26,7 @@
 
 
 #define VER_VERSION     "0.9.14"
-#define VER_DATE        "2004.03.31"
+#define VER_DATE        "2004.04.01"
 
 
 /* #define DEBUG */
@@ -3753,7 +3753,6 @@ void show_usage(FILE * f, char * prg)
 	  "  %s [--outlines | --nooutlines]   [--stamps | --nostamps]\n"
 	  "  %s [--nostampcontrols | --stampcontrols]\n"
 	  "  %s [--mirrorstamps | --dontmirrorstamps]\n"
-	  "  %s [--wheelmouse | --nowheelmouse]\n"
 	  "  %s [--saveoverask | --saveover | --saveovernew]\n"
 	  "  %s [--savedir DIRECTORY]\n"
 #ifdef WIN32
@@ -3769,7 +3768,7 @@ void show_usage(FILE * f, char * prg)
 	  blank, blank, blank,
 	  blank, blank, blank,
 	  blank, blank, blank,
-	  blank, blank);
+	  blank);
 
   free(blank);
 }

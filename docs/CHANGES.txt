@@ -7,7 +7,7 @@ bill@newbreedsoftware.com
 http://www.newbreedsoftware.com/tuxpaint/
 
 
-2004.March.31 (0.9.14) [cvs]
+2004.April.1 (0.9.14) [cvs]
   * Afrikaans translation created.
     Petri Jooste <rkwjpj@puk.ac.za>
 
@@ -92,6 +92,8 @@ http://www.newbreedsoftware.com/tuxpaint/
   * Fixed 'savedir' bug.  (Was dropping filenames)
 
   * Made current image the selected image on Open screen, if applicable.
+
+  * Removed redundant '--wheelmouse...' listing from "--usage" output.
 
 
 2003.Dec.23 (0.9.13)
