@@ -6,7 +6,7 @@ Copyright (c) 2003 by Bill Kendrick
 bill@newbreedsoftware.com
 http://www.newbreedsoftware.com/tuxpaint/
 
-December 22, 2003
+December 23, 2003
 
 
 LOW-PRIORITY DOCUMENTATION CHANGES:
@@ -16,6 +16,11 @@ LOW-PRIORITY DOCUMENTATION CHANGES:
   * Mac OS X compilation in INSTALL.txt
 
   * Mention CONFDIR in INSTALL.txt
+
+  * Meniton "--lang help" in README.
+
+  * Automagically make documentation path correct in man page.
+    (Turn man page into a template, then process during compile)
 
 
 HIGH-PRIORITY IMPLEMENTATION CHANGES:
