@@ -61,9 +61,9 @@ char * tool_names[NUM_TOOLS] = {
 char * tool_tips[NUM_TOOLS] = {
   gettext_noop("Pick a color and a brush shape to draw with."),
   gettext_noop("Pick a picture to stamp around your drawing."),
-  gettext_noop("Click to start drawing a line.  Let go to complete it."),
-  gettext_noop("Pick a shape. Click to pick the center, drag, then let go when it is the size you want.  Move around to rotate it, and click to draw it."),
-  gettext_noop("Choose a style of text.  Click on your drawing and you can start typing."),
+  gettext_noop("Click to start drawing a line. Let go to complete it."),
+  gettext_noop("Pick a shape. Click to pick the center, drag, then let go when it is the size you want. Move around to rotate it, and click to draw it."),
+  gettext_noop("Choose a style of text. Click on your drawing and you can start typing."),
   gettext_noop("Pick a magical effect to use on your drawing!"),
   /* Undo */ gettext_noop("Undo!"),
   /* Redo */ gettext_noop("Redo!"),

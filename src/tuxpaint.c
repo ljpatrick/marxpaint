@@ -805,24 +805,24 @@ int main(int argc, char * argv[])
 #define PROMPT_OPEN_SAVE_NO gettext_noop("No")
 
 #define PROMPT_OPEN_UNOPENABLE_TXT gettext_noop("Can't open that picture!")
-#define PROMPT_OPEN_UNOPENABLE_YES gettext_noop("Okay")
+#define PROMPT_OPEN_UNOPENABLE_YES gettext_noop("OK")
 
 #define PROMPT_NEW_TXT gettext_noop("Starting a new picture will erase the current one!")
-#define PROMPT_NEW_YES gettext_noop("That's Ok")
-#define PROMPT_NEW_NO gettext_noop("Never Mind!")
+#define PROMPT_NEW_YES gettext_noop("That's OK!")
+#define PROMPT_NEW_NO gettext_noop("Never mind!")
 
 #define PROMPT_OPEN_NOFILES_TXT gettext_noop("There are no saved files!")
-#define PROMPT_OPEN_NOFILES_YES gettext_noop("Okay")
+#define PROMPT_OPEN_NOFILES_YES gettext_noop("OK")
 
 #define PROMPT_PRINT_NOW_TXT gettext_noop("Print your picture now?")
 #define PROMPT_PRINT_NOW_YES gettext_noop("Yes")
 #define PROMPT_PRINT_NOW_NO gettext_noop("No")
 
 #define PROMPT_PRINT_TXT gettext_noop("Your picture has been printed!")
-#define PROMPT_PRINT_YES gettext_noop("Okay")
+#define PROMPT_PRINT_YES gettext_noop("OK")
 
 #define PROMPT_PRINT_TOO_SOON_TXT gettext_noop("You can't print yet!")
-#define PROMPT_PRINT_TOO_SOON_YES gettext_noop("Okay")
+#define PROMPT_PRINT_TOO_SOON_YES gettext_noop("OK")
 
 #define PROMPT_ERASE_TXT gettext_noop("Erase this picture?")
 #define PROMPT_ERASE_YES gettext_noop("Yes")
@@ -9061,7 +9061,7 @@ int rotation(int ctr_x, int ctr_y, int ox, int oy)
 
 /* FIXME: Move elsewhere!!! */
 
-#define PROMPT_SAVE_OVER_TXT gettext_noop("Save over the older version of this drawing?")
+#define PROMPT_SAVE_OVER_TXT gettext_noop("Save over the older version of this picture?")
 #define PROMPT_SAVE_OVER_YES gettext_noop("Yes")
 #define PROMPT_SAVE_OVER_NO  gettext_noop("No, save a new file")
 
@@ -9439,7 +9439,7 @@ int do_quit(void)
 	  if (do_save())
 	    {
 	      do_prompt(tool_tips[TOOL_SAVE],
-			"Okay",
+			"OK",
 			"");
 	    }
 	  else
@@ -9883,7 +9883,7 @@ int do_open(int want_new_tool)
       
 	  draw_tux_text(TUX_BORED,
 			textdir(gettext_noop("Choose the picture you want, "
-					     "then click 'Open'")), 1, 0, 1);
+					     "then click 'Open'.")), 1, 0, 1);
       
 	  cur = 0;
 	  update_list = 1;

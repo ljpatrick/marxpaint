@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: TuxPaint 0.0.1pre\n"
-"POT-Creation-Date: 2002-09-30 19:26+0200\n"
+"POT-Creation-Date: \n"
 "PO-Revision-Date: 2002-10-01 11:57+0300\n"
 "Last-Translator: Tarmo Toikkanen <tarmo@iki.fi>\n"
 "Language-Team: Finnish <fi@li.org>\n"
@@ -13,134 +13,169 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: tuxpaint.c:561
+#: tuxpaint.c:795
 msgid "Do you really want to quit?"
 msgstr "Haluatko varmasti lopettaa?"
 
-#: tuxpaint.c:562 tuxpaint.c:566 tuxpaint.c:570 tuxpaint.c:590 tuxpaint.c:6224
-#: tuxpaint.c:6854
+#: tuxpaint.c:796 tuxpaint.c:800 tuxpaint.c:804 tuxpaint.c:818 tuxpaint.c:828
+#: tuxpaint.c:8360 tuxpaint.c:9065
 msgid "Yes"
 msgstr "Kyllä"
 
-#: tuxpaint.c:563 tuxpaint.c:567 tuxpaint.c:571 tuxpaint.c:591 tuxpaint.c:6227
+#: tuxpaint.c:797 tuxpaint.c:801 tuxpaint.c:805 tuxpaint.c:819 tuxpaint.c:829
+#: tuxpaint.c:8363
 msgid "No"
 msgstr "Ei"
 
-#: tuxpaint.c:565
+#: tuxpaint.c:799
 msgid "If you quit, you'll lose your picture! Save it?"
 msgstr "Menetät kuvan jos lopetat. Tallennetaanko se?"
 
-#: tuxpaint.c:569
+#: tuxpaint.c:803
 msgid "Save your picture first?"
 msgstr "Tallennetaanko kuvasi ensin?"
 
-#: tuxpaint.c:573
+#: tuxpaint.c:807
 msgid "Can't open that picture!"
 msgstr "Kuvan avaaminen ei onnistu!"
 
-#: tuxpaint.c:574 tuxpaint.c:581 tuxpaint.c:584 tuxpaint.c:587 tuxpaint.c:7188
-msgid "Okay"
-msgstr "Selvä"
+#: tuxpaint.c:808 tuxpaint.c:815 tuxpaint.c:822 tuxpaint.c:825
+msgid "OK"
+msgstr ""
 
-#: tuxpaint.c:576
+#: tuxpaint.c:810
 msgid "Starting a new picture will erase the current one!"
 msgstr "Uuden kuvan aloittaminen pyyhkii nykyisen pois!"
 
-#: tuxpaint.c:577
-msgid "That's Ok"
+#: tuxpaint.c:811
+#, fuzzy
+msgid "That's OK!"
 msgstr "Se sopii"
 
-#: tuxpaint.c:578
-msgid "Never Mind!"
+#: tuxpaint.c:812
+#, fuzzy
+msgid "Never mind!"
 msgstr "Ei sitten!"
 
-#: tuxpaint.c:580
+#: tuxpaint.c:814
 msgid "There are no saved files!"
 msgstr "Ei löytynyt yhtään tallennettuja kuvia!"
 
-#: tuxpaint.c:583
+#: tuxpaint.c:817
+#, fuzzy
+msgid "Print your picture now?"
+msgstr "Tallennetaanko kuvasi ensin?"
+
+#: tuxpaint.c:821
 msgid "Your picture has been printed!"
 msgstr "Kuvasi on tulostettu!"
 
-#: tuxpaint.c:586
+#: tuxpaint.c:824
 msgid "You can't print yet!"
 msgstr "Et voi vielä tulostaa!"
 
-#: tuxpaint.c:589
+#: tuxpaint.c:827
 msgid "Erase this picture?"
 msgstr "Pyyhitäänkö tämä kuva?"
 
-#: tools.h:52 tuxpaint.c:4006
+#: tuxpaint.c:5416 tools.h:52
 msgid "Open"
 msgstr "Avaa"
 
-#: tuxpaint.c:4016
+#: tuxpaint.c:5421
 msgid "Erase"
 msgstr "Pyyhi"
 
-#: tuxpaint.c:4026
+#: tuxpaint.c:5426
 msgid "Back"
 msgstr "Takaisin"
 
-#: tuxpaint.c:6853
-msgid "Save over the older version of this drawing?"
+#: tuxpaint.c:9064
+#, fuzzy
+msgid "Save over the older version of this picture?"
 msgstr "Tämän niminen kuva on jo olemassa. Tallennetaanko sen päälle?"
 
-#: tuxpaint.c:6855
+#: tuxpaint.c:9066
 msgid "No, save a new file"
 msgstr "Ei, tallennetaan uuteen tiedostoon"
 
-#: tuxpaint.c:7449
-msgid "Choose the picture you want, then click 'Open'"
+#: tuxpaint.c:9885
+#, fuzzy
+msgid "Choose the picture you want, then click 'Open'."
 msgstr "Valitse haluamasi kuva ja valitse 'Avaa'"
 
-#: colors.h:56
-msgid "Black"
+#: colors.h:62
+#, fuzzy
+msgid "Black!"
 msgstr "Musta"
 
-#: colors.h:57
-msgid "White"
+#: colors.h:63
+#, fuzzy
+msgid "White!"
 msgstr "Valkoinen"
 
-#: colors.h:58
-msgid "Red"
-msgstr "Punainen"
-
-#: colors.h:59
-msgid "Pink"
-msgstr "Vaaleanpunainen"
-
-#: colors.h:60
-msgid "Orange"
-msgstr "Oranssi"
-
-#: colors.h:61
-msgid "Yellow"
-msgstr "Keltainen"
-
-#: colors.h:62
-msgid "Green"
-msgstr "Vihreä"
-
-#: colors.h:63
-msgid "Cyan"
-msgstr "Turkoosi"
-
 #: colors.h:64
-msgid "Blue"
-msgstr "Sininen"
+#, fuzzy
+msgid "Red!"
+msgstr "Palauta!"
 
 #: colors.h:65
-msgid "Purple"
-msgstr "Violetti"
+#, fuzzy
+msgid "Pink!"
+msgstr "Vaaleanpunainen"
 
 #: colors.h:66
-msgid "Brown"
-msgstr "Ruskea"
+#, fuzzy
+msgid "Orange!"
+msgstr "Oranssi"
 
 #: colors.h:67
-msgid "Grey"
-msgstr "Harmaa"
+#, fuzzy
+msgid "Yellow!"
+msgstr "Keltainen"
+
+#: colors.h:68
+#, fuzzy
+msgid "Lime!"
+msgstr "Viivat"
+
+#: colors.h:69
+#, fuzzy
+msgid "Green!"
+msgstr "Vihreä"
+
+#: colors.h:70
+#, fuzzy
+msgid "Cyan!"
+msgstr "Turkoosi"
+
+#: colors.h:71
+#, fuzzy
+msgid "Blue!"
+msgstr "Sininen"
+
+#: colors.h:72
+#, fuzzy
+msgid "Purple!"
+msgstr "Violetti"
+
+#: colors.h:73
+msgid "Fuchsia!"
+msgstr ""
+
+#: colors.h:74
+#, fuzzy
+msgid "Brown!"
+msgstr "Ruskea"
+
+#: colors.h:75
+#, fuzzy
+msgid "Gray!"
+msgstr "Hienoa!"
+
+#: colors.h:76
+msgid "Silver!"
+msgstr ""
 
 #: great.h:20
 msgid "Great!"
@@ -215,27 +250,33 @@ msgid "You can draw in rainbow colors!"
 msgstr "Voit piirtää sateenkaaren väreissä!"
 
 #: magic.h:74
-msgid "Click and move to draw sparkles"
+#, fuzzy
+msgid "Click and move to draw sparkles."
 msgstr "Piirrä kipinöitä liikuttamalla hiirtä nappi pohjassa."
 
 #: magic.h:76
-msgid "Click to make a mirror image!"
+#, fuzzy
+msgid "Click to make a mirror image."
 msgstr "Tee kuvasta peilikuva napsauttamalla hiirtä!"
 
 #: magic.h:77
-msgid "Click to flip the picture upside-down!"
+#, fuzzy
+msgid "Click to flip the picture upside-down."
 msgstr "Käännä kuva ylösalaisin napsauttamalla hiirtä!"
 
 #: magic.h:79
-msgid "Click and move the mouse around to blur the picture"
+#, fuzzy
+msgid "Click and move the mouse around to blur the picture."
 msgstr "Voit sumentaa kuvaa liikuttamalla hiirtä nappi pohjassa."
 
 #: magic.h:80
-msgid "Click and move the mouse around to make the picture blocky"
+#, fuzzy
+msgid "Click and move the mouse around to make the picture blocky."
 msgstr "Voit rakeistaa kuvaa liikuttamalla hiirtä nappi pohjassa."
 
 #: magic.h:82
-msgid "Click and move the mouse around to draw a negative"
+#, fuzzy
+msgid "Click and move the mouse around to draw a negative."
 msgstr "Vaihda värit vastakkaisiksi liikuttamalla hiirtä nappi pohjassa."
 
 #: magic.h:83
@@ -248,72 +289,106 @@ msgid ""
 msgstr "Muuta kuva hiilipiirrokseksi liikuttamalla hiirtä nappi pohjassa."
 
 #: magic.h:86
-msgid "Click and move the mouse around to make the picture drip!"
+#, fuzzy
+msgid "Click and move the mouse around to make the picture drip."
 msgstr "Valuta kuvaa liikuttamalla hiirtä nappi pohjassa."
 
 #: magic.h:88
-msgid "Click and move the mouse to thicken the picture"
+#, fuzzy
+msgid "Click and move the mouse to thicken the picture."
 msgstr "Voit sumentaa kuvaa liikuttamalla hiirtä nappi pohjassa."
 
 #: magic.h:89
-msgid "Click and move the mouse to thin the picture"
+#, fuzzy
+msgid "Click and move the mouse to thin the picture."
 msgstr "Voit sumentaa kuvaa liikuttamalla hiirtä nappi pohjassa."
 
 #: magic.h:91
-msgid "Click in the picture to fill that area with color"
+#, fuzzy
+msgid "Click in the picture to fill that area with color."
 msgstr "Napsauta kuvasta aluetta, jonka haluat värittää"
 
-#: shapes.h:121 shapes.h:122
+#: shapes.h:141 shapes.h:142
 msgid "Square"
 msgstr "Neliö"
 
-#: shapes.h:123 shapes.h:124
+#: shapes.h:143 shapes.h:144
 msgid "Rectangle"
 msgstr "Nelikulmio"
 
-#: shapes.h:125 shapes.h:126
+#: shapes.h:145 shapes.h:146
 msgid "Circle"
 msgstr "Ympyrä"
 
-#: shapes.h:127 shapes.h:128 shapes.h:147 shapes.h:148
+#: shapes.h:147 shapes.h:148 shapes.h:167 shapes.h:168
 msgid "Oval"
 msgstr "Soikio"
 
-#: shapes.h:129 shapes.h:130
+#: shapes.h:149 shapes.h:150
 msgid "Triangle"
 msgstr "Kolmio"
 
-#: shapes.h:131 shapes.h:132
+#: shapes.h:151 shapes.h:152
 msgid "Pentagon"
 msgstr "Viisikulmio"
 
-#: shapes.h:133 shapes.h:134
+#: shapes.h:153 shapes.h:154
 msgid "Diamond"
 msgstr "Vinoneliö"
 
-#: shapes.h:141 shapes.h:142
+#: shapes.h:161 shapes.h:162
 msgid "A square has four sides, each the same length."
 msgstr "Neliössä on neljä sivua, jotka kaikki ovat saman pituisia."
 
-#: shapes.h:143 shapes.h:144
+#: shapes.h:163 shapes.h:164
 msgid "A rectangle has four sides."
 msgstr "Suorakaiteessa on neljä sivua."
 
-#: shapes.h:145 shapes.h:146
+#: shapes.h:165 shapes.h:166
 msgid "A circle is exactly round."
 msgstr "Ympyrä on täysin pyöreä."
 
-#: shapes.h:149 shapes.h:150
+#: shapes.h:169 shapes.h:170
 msgid "A triangle has three sides."
 msgstr "Kolmiossa on kolme sivua."
 
-#: shapes.h:151 shapes.h:152
+#: shapes.h:171 shapes.h:172
 msgid "A pentagon has five sides."
 msgstr "Viisikulmiossa on viisi sivua."
 
-#: shapes.h:153 shapes.h:154
+#: shapes.h:173 shapes.h:174
 msgid "A diamond is a square, turned around slightly."
 msgstr "Vinoneliö on neliö, joka on käännetty vinoon."
+
+#: titles.h:37
+#, fuzzy
+msgid "Tools"
+msgstr "Hienoa!"
+
+#: titles.h:38
+msgid "Colors"
+msgstr ""
+
+#: titles.h:39
+msgid "Brushes"
+msgstr ""
+
+#: titles.h:40
+#, fuzzy
+msgid "Stamps"
+msgstr "Leimaa"
+
+#: titles.h:41 tools.h:45
+msgid "Shapes"
+msgstr "Muodot"
+
+#: titles.h:42
+msgid "Letters"
+msgstr ""
+
+#: titles.h:43 tools.h:47
+msgid "Magic"
+msgstr "Taiat"
 
 #: tools.h:42
 msgid "Paint"
@@ -327,17 +402,9 @@ msgstr "Leimaa"
 msgid "Lines"
 msgstr "Viivat"
 
-#: tools.h:45
-msgid "Shapes"
-msgstr "Muodot"
-
 #: tools.h:46
 msgid "Text"
 msgstr "Teksti"
-
-#: tools.h:47
-msgid "Magic"
-msgstr "Taiat"
 
 #: tools.h:48
 msgid "Undo"
@@ -376,24 +443,23 @@ msgid "Pick a picture to stamp around your drawing."
 msgstr "Valitse kuva, jonka haluat leimata piirustukseesi."
 
 #: tools.h:64
-msgid "Click to start drawing a line.  Let go to complete it."
+#, fuzzy
+msgid "Click to start drawing a line. Let go to complete it."
 msgstr ""
 "Paina hiiren nappi alas aloittaaksesi viivan piirto ja päästä irti "
 "lopettaaksesi."
 
 #: tools.h:65
 msgid ""
-"Pick a shape to draw.  Click once to pick the center of the shape, click "
-"again to draw it."
+"Pick a shape. Click to pick the center, drag, then let go when it is the "
+"size you want. Move around to rotate it, and click to draw it."
 msgstr ""
-"Valitse piirrettävä kuvio.  Valitse keskikohta napsauttamalla ja piirrä "
-"kuvio napsauttamalla uudelleen."
 
 #: tools.h:66
-msgid ""
-"Choose a style of text.  Click on your drawing and you can start typing."
+#, fuzzy
+msgid "Choose a style of text. Click on your drawing and you can start typing."
 msgstr ""
-"Valitse tekstityyli.  Napsauta piirrokseesi, niin voit aloittaa "
+"Valitse tekstityyli. Napsauta piirrokseesi, niin voit aloittaa "
 "kirjoittamisen."
 
 #: tools.h:67
@@ -448,3 +514,18 @@ msgstr "Pyöritä kuviota liikuttamalla hiirtä. Piirrä napsauttamalla."
 msgid "Ok then... Let's keep drawing this one!"
 msgstr "Hyvä on... Jatketaan tämän piirtämistä!"
 
+#~ msgid "Okay"
+#~ msgstr "Selvä"
+
+#~ msgid "Red"
+#~ msgstr "Punainen"
+
+#~ msgid "Grey"
+#~ msgstr "Harmaa"
+
+#~ msgid ""
+#~ "Pick a shape to draw.  Click once to pick the center of the shape, click "
+#~ "again to draw it."
+#~ msgstr ""
+#~ "Valitse piirrettävä kuvio.  Valitse keskikohta napsauttamalla ja piirrä "
+#~ "kuvio napsauttamalla uudelleen."

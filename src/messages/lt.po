@@ -7,495 +7,521 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Tuxpaint 0.9.9\n"
-"POT-Creation-Date: 2003-01-20 07:20+0900\n"
+"POT-Creation-Date: \n"
 "PO-Revision-Date: 2003-02-15 20:22+0200\n"
 "Last-Translator: Mantas Kriaučiūnas <mantas@akl.lt>\n"
 "Language-Team: Lithuanian <komp_lt@konf.lt>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: src/tuxpaint.c:567
+#: tuxpaint.c:795
 msgid "Do you really want to quit?"
 msgstr "Ar tikrai norite išeiti?"
 
-#: src/tuxpaint.c:568
-#: src/tuxpaint.c:572
-#: src/tuxpaint.c:576
-#: src/tuxpaint.c:596
-#: src/tuxpaint.c:6280
-#: src/tuxpaint.c:6921
+#: tuxpaint.c:796 tuxpaint.c:800 tuxpaint.c:804 tuxpaint.c:818 tuxpaint.c:828
+#: tuxpaint.c:8360 tuxpaint.c:9065
 msgid "Yes"
 msgstr "Taip"
 
-#: src/tuxpaint.c:569
-#: src/tuxpaint.c:573
-#: src/tuxpaint.c:577
-#: src/tuxpaint.c:597
-#: src/tuxpaint.c:6283
+#: tuxpaint.c:797 tuxpaint.c:801 tuxpaint.c:805 tuxpaint.c:819 tuxpaint.c:829
+#: tuxpaint.c:8363
 msgid "No"
 msgstr "Ne"
 
-#: src/tuxpaint.c:571
+#: tuxpaint.c:799
 msgid "If you quit, you'll lose your picture! Save it?"
 msgstr "Jeigu išeisite, prarasite savo piešinį! Ar išsaugoti jį?"
 
-#: src/tuxpaint.c:575
+#: tuxpaint.c:803
 msgid "Save your picture first?"
 msgstr "Ar prieš tai išsaugoti jūsų piešinį?"
 
-#: src/tuxpaint.c:579
+#: tuxpaint.c:807
 msgid "Can't open that picture!"
 msgstr "Negalima atidaryti šio piešinio!"
 
-#: src/tuxpaint.c:580
-#: src/tuxpaint.c:587
-#: src/tuxpaint.c:590
-#: src/tuxpaint.c:593
-#: src/tuxpaint.c:7255
-msgid "Okay"
-msgstr "Gerai"
+#: tuxpaint.c:808 tuxpaint.c:815 tuxpaint.c:822 tuxpaint.c:825
+msgid "OK"
+msgstr ""
 
-#: src/tuxpaint.c:582
+#: tuxpaint.c:810
 msgid "Starting a new picture will erase the current one!"
 msgstr "Kurdamas naują piešinį, ištrinsi esamą !"
 
-#: src/tuxpaint.c:583
-msgid "That's Ok"
+#: tuxpaint.c:811
+#, fuzzy
+msgid "That's OK!"
 msgstr "Tai gerai"
 
-#: src/tuxpaint.c:584
-msgid "Never Mind!"
+#: tuxpaint.c:812
+#, fuzzy
+msgid "Never mind!"
 msgstr "Nereikia!"
 
-#: src/tuxpaint.c:586
+#: tuxpaint.c:814
 msgid "There are no saved files!"
 msgstr "Nėra išsaugotų bylų!"
 
-#: src/tuxpaint.c:589
+#: tuxpaint.c:817
+#, fuzzy
+msgid "Print your picture now?"
+msgstr "Ar prieš tai išsaugoti jūsų piešinį?"
+
+#: tuxpaint.c:821
 msgid "Your picture has been printed!"
 msgstr "Jūsų piešinys buvo atspausdintas!"
 
-#: src/tuxpaint.c:592
+#: tuxpaint.c:824
 msgid "You can't print yet!"
 msgstr "Jūs dar negalite spausdinti!"
 
-#: src/tuxpaint.c:595
+#: tuxpaint.c:827
 msgid "Erase this picture?"
 msgstr "Ar ištrinti šį piešinį?"
 
-#: src/tuxpaint.c:4067
-#: src/tools.h:52
+#: tuxpaint.c:5416 tools.h:52
 msgid "Open"
 msgstr "Atidaryti"
 
-#: src/tuxpaint.c:4077
+#: tuxpaint.c:5421
 msgid "Erase"
 msgstr "Ištrinti"
 
-#: src/tuxpaint.c:4087
+#: tuxpaint.c:5426
 msgid "Back"
 msgstr "Grįžti atgal"
 
-#: src/tuxpaint.c:6920
-msgid "Save over the older version of this drawing?"
+#: tuxpaint.c:9064
+#, fuzzy
+msgid "Save over the older version of this picture?"
 msgstr "Ar išsaugoti šį piešinį į ankstesnės jo versijos vietą?"
 
-#: src/tuxpaint.c:6922
+#: tuxpaint.c:9066
 msgid "No, save a new file"
 msgstr "Ne, išsaugoti į naują bylą"
 
-#: src/tuxpaint.c:7516
-msgid "Choose the picture you want, then click 'Open'"
+#: tuxpaint.c:9885
+#, fuzzy
+msgid "Choose the picture you want, then click 'Open'."
 msgstr "Išsirinkite norimą piešinį, po to Spustelėkite 'Open'"
 
-#: src/tools.h:42
-msgid "Paint"
-msgstr "Tapyti"
-
-#: src/tools.h:43
-msgid "Stamp"
-msgstr "Štampas"
-
-#: src/tools.h:44
-msgid "Lines"
-msgstr "Linijos"
-
-#: src/tools.h:45
-#: src/titles.h:41
-msgid "Shapes"
-msgstr "Formos"
-
-#: src/tools.h:46
-msgid "Text"
-msgstr "Tekstas"
-
-#: src/tools.h:47
-#: src/titles.h:43
-msgid "Magic"
-msgstr "Stebuklai"
-
-#: src/tools.h:48
-msgid "Undo"
-msgstr "Atšaukti"
-
-#: src/tools.h:49
-msgid "Redo"
-msgstr "Grąžinti"
-
-#: src/tools.h:50
-msgid "Eraser"
-msgstr "Trintukas"
-
-#: src/tools.h:51
-msgid "New"
-msgstr "Naujas"
-
-#: src/tools.h:53
-msgid "Save"
-msgstr "Išsaugoti"
-
-#: src/tools.h:54
-msgid "Print"
-msgstr "Spausdinti"
-
-#: src/tools.h:55
-msgid "Quit"
-msgstr "Išeiti"
-
-#: src/tools.h:62
-msgid "Pick a color and a brush shape to draw with."
-msgstr "Pasirinkite spalvą ir teptuko formą, kuriomis tapysite."
-
-#: src/tools.h:63
-msgid "Pick a picture to stamp around your drawing."
-msgstr "Pasirinkite piešinėlį, kuriuo antspausduosite savo piešinyje."
-
-#: src/tools.h:64
-msgid "Click to start drawing a line.  Let go to complete it."
-msgstr "Spustelėkite pradėdamas piešti liniją. Tęskite, kol užbaigsite."
-
-#: src/tools.h:65
-msgid "Pick a shape. Click to pick the center, drag, then let go when it is the size you want.  Move around to rotate it, and click to draw it."
-msgstr "Pasirinkite formą. Spustelėkite į pasirinktą centrą, patraukite iki norimo dydžio. Pasukite ją ir pasirinkite nupiešti."
-
-#: src/tools.h:66
-msgid "Choose a style of text.  Click on your drawing and you can start typing."
-msgstr "Pasirinkite teksto stilių. Spustelėkite savo piešinį  ir galėsite pradėti rašyti."
-
-#: src/tools.h:67
-msgid "Pick a magical effect to use on your drawing!"
-msgstr "Pasirinkite panaudoti savo piešinyje stebuklingą efektą!"
-
-#: src/tools.h:68
-msgid "Undo!"
-msgstr "Atšaukti paskutinį veiksmą!"
-
-#: src/tools.h:69
-msgid "Redo!"
-msgstr "Sugrąžinti prieš tai atšauktą veiksmą!"
-
-#: src/tools.h:70
-msgid "Eraser!"
-msgstr "Trintukas!"
-
-#: src/tools.h:71
-msgid "You now have a blank sheet to draw on!"
-msgstr "Dabar jūs turite tuščią lapą piešimui!"
-
-#: src/tools.h:72
-msgid "Open..."
-msgstr "Atidaryti..."
-
-#: src/tools.h:73
-msgid "Your image has been saved!"
-msgstr "Jūsų paveikslas išsaugotas!"
-
-#: src/tools.h:74
-msgid "Printing..."
-msgstr "Spausdinti..."
-
-#: src/tools.h:75
-msgid "Bye bye!"
-msgstr "Ate, ate!"
-
-#: src/tools.h:78
-msgid "Let go of the button to complete the line."
-msgstr "Atleiskite klavišą užbaigdamas liniją."
-
-#: src/tools.h:79
-msgid "Hold the button to stretch the shape."
-msgstr "Laikykite paspaudęs klavišą ištempdamas formą."
-
-#: src/tools.h:80
-msgid "Move the mouse to rotate the shape. Click to draw it."
-msgstr "Judinkite pelę, kad pasukti formą. Spustelėkite, kad nupiešti ją."
-
-#: src/tools.h:81
-msgid "Ok then... Let's keep drawing this one!"
-msgstr "Gerai tuomet...Piešk toliau šitą!"
-
-#: src/titles.h:37
-msgid "Tools"
-msgstr "Įrankiai"
-
-#: src/titles.h:38
-msgid "Colors"
-msgstr "Spalvos"
-
-#: src/titles.h:39
-msgid "Brushes"
-msgstr "Teptukai"
-
-#: src/titles.h:40
-msgid "Stamps"
-msgstr "Štampai"
-
-#: src/titles.h:42
-msgid "Letters"
-msgstr "Raidės"
-
-#: src/colors.h:56
-msgid "Black"
+#: colors.h:62
+#, fuzzy
+msgid "Black!"
 msgstr "Juoda"
 
-#: src/colors.h:57
-msgid "White"
+#: colors.h:63
+#, fuzzy
+msgid "White!"
 msgstr "Balta"
 
-#: src/colors.h:58
-msgid "Red"
-msgstr "Raudona"
+#: colors.h:64
+#, fuzzy
+msgid "Red!"
+msgstr "Sugrąžinti prieš tai atšauktą veiksmą!"
 
-#: src/colors.h:59
-msgid "Pink"
+#: colors.h:65
+#, fuzzy
+msgid "Pink!"
 msgstr "Rožinė"
 
-#: src/colors.h:60
-msgid "Orange"
+#: colors.h:66
+#, fuzzy
+msgid "Orange!"
 msgstr "Oranžinė"
 
-#: src/colors.h:61
-msgid "Yellow"
+#: colors.h:67
+#, fuzzy
+msgid "Yellow!"
 msgstr "Geltona"
 
-#: src/colors.h:62
-msgid "Lime"
+#: colors.h:68
+#, fuzzy
+msgid "Lime!"
 msgstr "Salotinė"
 
-msgid "Green"
+#: colors.h:69
+#, fuzzy
+msgid "Green!"
 msgstr "Žalia"
 
-#: src/colors.h:63
-msgid "Cyan"
+#: colors.h:70
+#, fuzzy
+msgid "Cyan!"
 msgstr "Žydra"
 
-#: src/colors.h:64
-msgid "Blue"
+#: colors.h:71
+#, fuzzy
+msgid "Blue!"
 msgstr "Mėlyna"
 
-#: src/colors.h:65
-msgid "Purple"
+#: colors.h:72
+#, fuzzy
+msgid "Purple!"
 msgstr "Violetinė"
 
-msgid "Fuchsia"
+#: colors.h:73
+#, fuzzy
+msgid "Fuchsia!"
 msgstr "Purpurinė"
 
-#: src/colors.h:66
-msgid "Brown"
+#: colors.h:74
+#, fuzzy
+msgid "Brown!"
 msgstr "Ruda"
 
-#: src/colors.h:67
-msgid "Grey"
-msgstr "Pilka"
+#: colors.h:75
+#, fuzzy
+msgid "Gray!"
+msgstr "Puiku!"
 
-msgid "Silver"
+#: colors.h:76
+#, fuzzy
+msgid "Silver!"
 msgstr "Sidabrinė"
 
-#: src/shapes.h:121
-#: src/shapes.h:122
-msgid "Square"
-msgstr "Kvadratas"
-
-#: src/shapes.h:123
-#: src/shapes.h:124
-msgid "Rectangle"
-msgstr "Stačiakampis"
-
-#: src/shapes.h:125
-#: src/shapes.h:126
-msgid "Circle"
-msgstr "Apskritimas"
-
-#: src/shapes.h:127
-#: src/shapes.h:128
-#: src/shapes.h:147
-#: src/shapes.h:148
-msgid "Oval"
-msgstr "Ovalas"
-
-#: src/shapes.h:129
-#: src/shapes.h:130
-msgid "Triangle"
-msgstr "Trikampis"
-
-#: src/shapes.h:131
-#: src/shapes.h:132
-msgid "Pentagon"
-msgstr "Penkiakampis"
-
-#: src/shapes.h:133
-#: src/shapes.h:134
-msgid "Diamond"
-msgstr "Rombas"
-
-#: src/shapes.h:141
-#: src/shapes.h:142
-msgid "A square has four sides, each the same length."
-msgstr "Kvadratas turi keturias kraštines, kurių ilgiai - vienodi."
-
-#: src/shapes.h:143
-#: src/shapes.h:144
-msgid "A rectangle has four sides."
-msgstr "Stačiakampis turi keturias kraštines."
-
-#: src/shapes.h:145
-#: src/shapes.h:146
-msgid "A circle is exactly round."
-msgstr "Apskritimas yra tiksliai apvalus."
-
-#: src/shapes.h:149
-#: src/shapes.h:150
-msgid "A triangle has three sides."
-msgstr "Trikampis turi tris kraštines."
-
-#: src/shapes.h:151
-#: src/shapes.h:152
-msgid "A pentagon has five sides."
-msgstr "Penkiakampis turi penkias kraštines."
-
-#: src/shapes.h:153
-#: src/shapes.h:154
-msgid "A diamond is a square, turned around slightly."
-msgstr "Rombas yra truputį pasuktas kvadratas."
-
-#: src/magic.h:48
-msgid "Rainbow"
-msgstr "Vaivorykštė"
-
-#: src/magic.h:49
-msgid "Sparkles"
-msgstr "Žybsniai"
-
-#: src/magic.h:51
-msgid "Mirror"
-msgstr "Veidrodis"
-
-#: src/magic.h:52
-msgid "Flip"
-msgstr "Apversti"
-
-#: src/magic.h:54
-msgid "Blur"
-msgstr "Suliejimas"
-
-#: src/magic.h:55
-msgid "Blocks"
-msgstr "Kaladėlės"
-
-#: src/magic.h:57
-msgid "Negative"
-msgstr "Negatyvas"
-
-#: src/magic.h:58
-msgid "Fade"
-msgstr "Blukinimas"
-
-#: src/magic.h:60
-msgid "Chalk"
-msgstr "Kreida"
-
-#: src/magic.h:61
-msgid "Drip"
-msgstr "Varveklis"
-
-#: src/magic.h:63
-msgid "Thick"
-msgstr "Storinimas"
-
-#: src/magic.h:64
-msgid "Thin"
-msgstr "Ploninimas"
-
-#: src/magic.h:66
-msgid "Fill"
-msgstr "Užpildymas"
-
-#: src/magic.h:73
-msgid "You can draw in rainbow colors!"
-msgstr "Jūs galite piešti vaivorykštės spalvomis!"
-
-#: src/magic.h:74
-msgid "Click and move to draw sparkles"
-msgstr "Spustelėkite ir pieškite žybsnius"
-
-#: src/magic.h:76
-msgid "Click to make a mirror image!"
-msgstr "Spustelėkite ir gausite veidrodinį atspindį!"
-
-#: src/magic.h:77
-msgid "Click to flip the picture upside-down!"
-msgstr "Spustelėkite, kad apversti piešinį aukštyn kojom!"
-
-#: src/magic.h:79
-msgid "Click and move the mouse around to blur the picture"
-msgstr "Spustelėkite ir judindami pelę suliesite piešinį"
-
-#: src/magic.h:80
-msgid "Click and move the mouse around to make the picture blocky"
-msgstr "Spustelėkite ir judindami pelę išskaidysite piešinį kvadratėliais"
-
-#: src/magic.h:82
-msgid "Click and move the mouse around to draw a negative"
-msgstr "Spustelėkite ir judindami pelę invertuosite paveikslėlio spalvas"
-
-#: src/magic.h:83
-msgid "Click and move to fade the colors."
-msgstr "Spustelėkite ir judindami pelę išblukinkite piešinio spalvas."
-
-#: src/magic.h:85
-msgid "Click and move the mouse around to turn the picture into a chalk drawing."
-msgstr "Spustelėkite ir judinkite pelę ir piešinys taps panašus į kreida"
-
-#: src/magic.h:86
-msgid "Click and move the mouse around to make the picture drip!"
-msgstr "Spustelėkite ir pele žymėkite aplink, kad piešinys nuvarvėtų!"
-
-#: src/magic.h:88
-msgid "Click and move the mouse to thicken the picture"
-msgstr "Spustelėkite ir pele pastorinsite piešinį"
-
-#: src/magic.h:89
-msgid "Click and move the mouse to thin the picture"
-msgstr "Spustelėkite ir pele paploninsite piešinį"
-
-#: src/magic.h:91
-msgid "Click in the picture to fill that area with color"
-msgstr "Spustelėkite piešinyje, kad tą plotą nuspalvintumėte"
-
-#: src/great.h:20
+#: great.h:20
 msgid "Great!"
 msgstr "Puiku!"
 
-#: src/great.h:21
+#: great.h:21
 msgid "Cool!"
 msgstr "Nuostabu!"
 
-#: src/great.h:22
+#: great.h:22
 msgid "Keep it up!"
 msgstr "Tęsk taip ir toliau!"
 
-#: src/great.h:23
+#: great.h:23
 msgid "Good job!"
 msgstr "Šauniai padirbėta!"
 
+#: magic.h:48
+msgid "Rainbow"
+msgstr "Vaivorykštė"
+
+#: magic.h:49
+msgid "Sparkles"
+msgstr "Žybsniai"
+
+#: magic.h:51
+msgid "Mirror"
+msgstr "Veidrodis"
+
+#: magic.h:52
+msgid "Flip"
+msgstr "Apversti"
+
+#: magic.h:54
+msgid "Blur"
+msgstr "Suliejimas"
+
+#: magic.h:55
+msgid "Blocks"
+msgstr "Kaladėlės"
+
+#: magic.h:57
+msgid "Negative"
+msgstr "Negatyvas"
+
+#: magic.h:58
+msgid "Fade"
+msgstr "Blukinimas"
+
+#: magic.h:60
+msgid "Chalk"
+msgstr "Kreida"
+
+#: magic.h:61
+msgid "Drip"
+msgstr "Varveklis"
+
+#: magic.h:63
+msgid "Thick"
+msgstr "Storinimas"
+
+#: magic.h:64
+msgid "Thin"
+msgstr "Ploninimas"
+
+#: magic.h:66
+msgid "Fill"
+msgstr "Užpildymas"
+
+#: magic.h:73
+msgid "You can draw in rainbow colors!"
+msgstr "Jūs galite piešti vaivorykštės spalvomis!"
+
+#: magic.h:74
+#, fuzzy
+msgid "Click and move to draw sparkles."
+msgstr "Spustelėkite ir pieškite žybsnius"
+
+#: magic.h:76
+#, fuzzy
+msgid "Click to make a mirror image."
+msgstr "Spustelėkite ir gausite veidrodinį atspindį!"
+
+#: magic.h:77
+#, fuzzy
+msgid "Click to flip the picture upside-down."
+msgstr "Spustelėkite, kad apversti piešinį aukštyn kojom!"
+
+#: magic.h:79
+#, fuzzy
+msgid "Click and move the mouse around to blur the picture."
+msgstr "Spustelėkite ir judindami pelę suliesite piešinį"
+
+#: magic.h:80
+#, fuzzy
+msgid "Click and move the mouse around to make the picture blocky."
+msgstr "Spustelėkite ir judindami pelę išskaidysite piešinį kvadratėliais"
+
+#: magic.h:82
+#, fuzzy
+msgid "Click and move the mouse around to draw a negative."
+msgstr "Spustelėkite ir judindami pelę invertuosite paveikslėlio spalvas"
+
+#: magic.h:83
+msgid "Click and move to fade the colors."
+msgstr "Spustelėkite ir judindami pelę išblukinkite piešinio spalvas."
+
+#: magic.h:85
+msgid ""
+"Click and move the mouse around to turn the picture into a chalk drawing."
+msgstr "Spustelėkite ir judinkite pelę ir piešinys taps panašus į kreida"
+
+#: magic.h:86
+#, fuzzy
+msgid "Click and move the mouse around to make the picture drip."
+msgstr "Spustelėkite ir pele žymėkite aplink, kad piešinys nuvarvėtų!"
+
+#: magic.h:88
+#, fuzzy
+msgid "Click and move the mouse to thicken the picture."
+msgstr "Spustelėkite ir pele pastorinsite piešinį"
+
+#: magic.h:89
+#, fuzzy
+msgid "Click and move the mouse to thin the picture."
+msgstr "Spustelėkite ir pele paploninsite piešinį"
+
+#: magic.h:91
+#, fuzzy
+msgid "Click in the picture to fill that area with color."
+msgstr "Spustelėkite piešinyje, kad tą plotą nuspalvintumėte"
+
+#: shapes.h:141 shapes.h:142
+msgid "Square"
+msgstr "Kvadratas"
+
+#: shapes.h:143 shapes.h:144
+msgid "Rectangle"
+msgstr "Stačiakampis"
+
+#: shapes.h:145 shapes.h:146
+msgid "Circle"
+msgstr "Apskritimas"
+
+#: shapes.h:147 shapes.h:148 shapes.h:167 shapes.h:168
+msgid "Oval"
+msgstr "Ovalas"
+
+#: shapes.h:149 shapes.h:150
+msgid "Triangle"
+msgstr "Trikampis"
+
+#: shapes.h:151 shapes.h:152
+msgid "Pentagon"
+msgstr "Penkiakampis"
+
+#: shapes.h:153 shapes.h:154
+msgid "Diamond"
+msgstr "Rombas"
+
+#: shapes.h:161 shapes.h:162
+msgid "A square has four sides, each the same length."
+msgstr "Kvadratas turi keturias kraštines, kurių ilgiai - vienodi."
+
+#: shapes.h:163 shapes.h:164
+msgid "A rectangle has four sides."
+msgstr "Stačiakampis turi keturias kraštines."
+
+#: shapes.h:165 shapes.h:166
+msgid "A circle is exactly round."
+msgstr "Apskritimas yra tiksliai apvalus."
+
+#: shapes.h:169 shapes.h:170
+msgid "A triangle has three sides."
+msgstr "Trikampis turi tris kraštines."
+
+#: shapes.h:171 shapes.h:172
+msgid "A pentagon has five sides."
+msgstr "Penkiakampis turi penkias kraštines."
+
+#: shapes.h:173 shapes.h:174
+msgid "A diamond is a square, turned around slightly."
+msgstr "Rombas yra truputį pasuktas kvadratas."
+
+#: titles.h:37
+msgid "Tools"
+msgstr "Įrankiai"
+
+#: titles.h:38
+msgid "Colors"
+msgstr "Spalvos"
+
+#: titles.h:39
+msgid "Brushes"
+msgstr "Teptukai"
+
+#: titles.h:40
+msgid "Stamps"
+msgstr "Štampai"
+
+#: titles.h:41 tools.h:45
+msgid "Shapes"
+msgstr "Formos"
+
+#: titles.h:42
+msgid "Letters"
+msgstr "Raidės"
+
+#: titles.h:43 tools.h:47
+msgid "Magic"
+msgstr "Stebuklai"
+
+#: tools.h:42
+msgid "Paint"
+msgstr "Tapyti"
+
+#: tools.h:43
+msgid "Stamp"
+msgstr "Štampas"
+
+#: tools.h:44
+msgid "Lines"
+msgstr "Linijos"
+
+#: tools.h:46
+msgid "Text"
+msgstr "Tekstas"
+
+#: tools.h:48
+msgid "Undo"
+msgstr "Atšaukti"
+
+#: tools.h:49
+msgid "Redo"
+msgstr "Grąžinti"
+
+#: tools.h:50
+msgid "Eraser"
+msgstr "Trintukas"
+
+#: tools.h:51
+msgid "New"
+msgstr "Naujas"
+
+#: tools.h:53
+msgid "Save"
+msgstr "Išsaugoti"
+
+#: tools.h:54
+msgid "Print"
+msgstr "Spausdinti"
+
+#: tools.h:55
+msgid "Quit"
+msgstr "Išeiti"
+
+#: tools.h:62
+msgid "Pick a color and a brush shape to draw with."
+msgstr "Pasirinkite spalvą ir teptuko formą, kuriomis tapysite."
+
+#: tools.h:63
+msgid "Pick a picture to stamp around your drawing."
+msgstr "Pasirinkite piešinėlį, kuriuo antspausduosite savo piešinyje."
+
+#: tools.h:64
+#, fuzzy
+msgid "Click to start drawing a line. Let go to complete it."
+msgstr "Spustelėkite pradėdamas piešti liniją. Tęskite, kol užbaigsite."
+
+#: tools.h:65
+#, fuzzy
+msgid ""
+"Pick a shape. Click to pick the center, drag, then let go when it is the "
+"size you want. Move around to rotate it, and click to draw it."
+msgstr ""
+"Pasirinkite formą. Spustelėkite į pasirinktą centrą, patraukite iki norimo "
+"dydžio. Pasukite ją ir pasirinkite nupiešti."
+
+#: tools.h:66
+#, fuzzy
+msgid "Choose a style of text. Click on your drawing and you can start typing."
+msgstr ""
+"Pasirinkite teksto stilių. Spustelėkite savo piešinį ir galėsite pradėti "
+"rašyti."
+
+#: tools.h:67
+msgid "Pick a magical effect to use on your drawing!"
+msgstr "Pasirinkite panaudoti savo piešinyje stebuklingą efektą!"
+
+#: tools.h:68
+msgid "Undo!"
+msgstr "Atšaukti paskutinį veiksmą!"
+
+#: tools.h:69
+msgid "Redo!"
+msgstr "Sugrąžinti prieš tai atšauktą veiksmą!"
+
+#: tools.h:70
+msgid "Eraser!"
+msgstr "Trintukas!"
+
+#: tools.h:71
+msgid "You now have a blank sheet to draw on!"
+msgstr "Dabar jūs turite tuščią lapą piešimui!"
+
+#: tools.h:72
+msgid "Open..."
+msgstr "Atidaryti..."
+
+#: tools.h:73
+msgid "Your image has been saved!"
+msgstr "Jūsų paveikslas išsaugotas!"
+
+#: tools.h:74
+msgid "Printing..."
+msgstr "Spausdinti..."
+
+#: tools.h:75
+msgid "Bye bye!"
+msgstr "Ate, ate!"
+
+#: tools.h:78
+msgid "Let go of the button to complete the line."
+msgstr "Atleiskite klavišą užbaigdamas liniją."
+
+#: tools.h:79
+msgid "Hold the button to stretch the shape."
+msgstr "Laikykite paspaudęs klavišą ištempdamas formą."
+
+#: tools.h:80
+msgid "Move the mouse to rotate the shape. Click to draw it."
+msgstr "Judinkite pelę, kad pasukti formą. Spustelėkite, kad nupiešti ją."
+
+#: tools.h:81
+msgid "Ok then... Let's keep drawing this one!"
+msgstr "Gerai tuomet...Piešk toliau šitą!"
+
+#~ msgid "Okay"
+#~ msgstr "Gerai"
+
+#~ msgid "Red"
+#~ msgstr "Raudona"
+
+#~ msgid "Grey"
+#~ msgstr "Pilka"

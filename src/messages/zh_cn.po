@@ -12,7 +12,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint 0.9.11\n"
-"POT-Creation-Date: 2003-06-26 05:23+0200\n"
+"POT-Creation-Date: \n"
 "PO-Revision-Date: 2003-07-12 02:21+0800\n"
 "Last-Translator: Wang Jian <lark@linux.net.cn>\n"
 "Language-Team: Chinese (simplified) <i18n-translation@lists.linux.net.cn>\n"
@@ -20,65 +20,170 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
+#: tuxpaint.c:795
+msgid "Do you really want to quit?"
+msgstr "你真的要退出吗？"
+
+#: tuxpaint.c:796 tuxpaint.c:800 tuxpaint.c:804 tuxpaint.c:818 tuxpaint.c:828
+#: tuxpaint.c:8360 tuxpaint.c:9065
+msgid "Yes"
+msgstr "是的"
+
+#: tuxpaint.c:797 tuxpaint.c:801 tuxpaint.c:805 tuxpaint.c:819 tuxpaint.c:829
+#: tuxpaint.c:8363
+msgid "No"
+msgstr "不要"
+
+#: tuxpaint.c:799
+msgid "If you quit, you'll lose your picture! Save it?"
+msgstr "如果你退出了，你会失去你的图片！保存起来吗？"
+
+#: tuxpaint.c:803
+msgid "Save your picture first?"
+msgstr "先保存你的图片？"
+
+#: tuxpaint.c:807
+msgid "Can't open that picture!"
+msgstr "打不开那个图片啊！"
+
+#: tuxpaint.c:808 tuxpaint.c:815 tuxpaint.c:822 tuxpaint.c:825
+msgid "OK"
+msgstr ""
+
+#: tuxpaint.c:810
+msgid "Starting a new picture will erase the current one!"
+msgstr "新开一个图片会删除现在的图片啊！"
+
+#: tuxpaint.c:811
+#, fuzzy
+msgid "That's OK!"
+msgstr "没问题"
+
+#: tuxpaint.c:812
+#, fuzzy
+msgid "Never mind!"
+msgstr "不用担心！"
+
+#: tuxpaint.c:814
+msgid "There are no saved files!"
+msgstr "没有保存过的文件啊！"
+
+#: tuxpaint.c:817
+#, fuzzy
+msgid "Print your picture now?"
+msgstr "先保存你的图片？"
+
+#: tuxpaint.c:821
+msgid "Your picture has been printed!"
+msgstr "你的图片被打印出来了！"
+
+#: tuxpaint.c:824
+msgid "You can't print yet!"
+msgstr "你还不能打印耶！"
+
+#: tuxpaint.c:827
+msgid "Erase this picture?"
+msgstr "删除这个图片吗？"
+
+#: tuxpaint.c:5416 tools.h:52
+msgid "Open"
+msgstr "打开"
+
+#: tuxpaint.c:5421
+msgid "Erase"
+msgstr "删除"
+
+#: tuxpaint.c:5426
+msgid "Back"
+msgstr "退回"
+
+#: tuxpaint.c:9064
+#, fuzzy
+msgid "Save over the older version of this picture?"
+msgstr "取代这个图的旧版本吗？"
+
+#: tuxpaint.c:9066
+msgid "No, save a new file"
+msgstr "不，保存到新文件"
+
+#: tuxpaint.c:9885
+#, fuzzy
+msgid "Choose the picture you want, then click 'Open'."
+msgstr "选择你要打开的图片，然后点击“打开”"
+
 #: colors.h:62
-msgid "Black"
+#, fuzzy
+msgid "Black!"
 msgstr "黑色"
 
 #: colors.h:63
-msgid "White"
+#, fuzzy
+msgid "White!"
 msgstr "白色"
 
 #: colors.h:64
-msgid "Red"
-msgstr "红色"
+#, fuzzy
+msgid "Red!"
+msgstr "重复！"
 
 #: colors.h:65
-msgid "Pink"
+#, fuzzy
+msgid "Pink!"
 msgstr "粉红色"
 
 #: colors.h:66
-msgid "Orange"
+#, fuzzy
+msgid "Orange!"
 msgstr "橙色"
 
 #: colors.h:67
-msgid "Yellow"
+#, fuzzy
+msgid "Yellow!"
 msgstr "黄色"
 
 #: colors.h:68
 #, fuzzy
-msgid "Lime"
+msgid "Lime!"
 msgstr "线条"
 
 #: colors.h:69
-msgid "Green"
+#, fuzzy
+msgid "Green!"
 msgstr "绿色"
 
 #: colors.h:70
-msgid "Cyan"
+#, fuzzy
+msgid "Cyan!"
 msgstr "青色"
 
 #: colors.h:71
-msgid "Blue"
+#, fuzzy
+msgid "Blue!"
 msgstr "蓝色"
 
 #: colors.h:72
-msgid "Purple"
+#, fuzzy
+msgid "Purple!"
 msgstr "紫色"
 
 #: colors.h:73
-msgid "Fuchsia"
+#, fuzzy
+msgid "Fuchsia!"
 msgstr "紫红色"
 
 #: colors.h:74
-msgid "Brown"
+#, fuzzy
+msgid "Brown!"
 msgstr "棕色"
 
 #: colors.h:75
-msgid "Grey"
-msgstr "灰色"
+#, fuzzy
+msgid "Gray!"
+msgstr "真不错！"
 
 #: colors.h:76
-msgid "Silver"
+#, fuzzy
+msgid "Silver!"
 msgstr "银色"
 
 #: great.h:20
@@ -154,27 +259,33 @@ msgid "You can draw in rainbow colors!"
 msgstr "你可以用彩虹的颜色画图耶！"
 
 #: magic.h:74
-msgid "Click and move to draw sparkles"
+#, fuzzy
+msgid "Click and move to draw sparkles."
 msgstr "单击然后移动来画火花"
 
 #: magic.h:76
-msgid "Click to make a mirror image!"
+#, fuzzy
+msgid "Click to make a mirror image."
 msgstr "单击作出镜子中的效果！"
 
 #: magic.h:77
-msgid "Click to flip the picture upside-down!"
+#, fuzzy
+msgid "Click to flip the picture upside-down."
 msgstr "单击将图片上下颠倒！"
 
 #: magic.h:79
-msgid "Click and move the mouse around to blur the picture"
+#, fuzzy
+msgid "Click and move the mouse around to blur the picture."
 msgstr "单击然后移动鼠标将图片变模糊"
 
 #: magic.h:80
-msgid "Click and move the mouse around to make the picture blocky"
+#, fuzzy
+msgid "Click and move the mouse around to make the picture blocky."
 msgstr "单击然后移动鼠标将图片变成裂片的效果"
 
 #: magic.h:82
-msgid "Click and move the mouse around to draw a negative"
+#, fuzzy
+msgid "Click and move the mouse around to draw a negative."
 msgstr "单击然后移动鼠标来绘制相片底片"
 
 #: magic.h:83
@@ -182,23 +293,28 @@ msgid "Click and move to fade the colors."
 msgstr "单击然后移动来将使颜色退色。"
 
 #: magic.h:85
-msgid "Click and move the mouse around to turn the picture into a chalk drawing."
+msgid ""
+"Click and move the mouse around to turn the picture into a chalk drawing."
 msgstr "单击然后移动鼠标将图片变成粉笔画。"
 
 #: magic.h:86
-msgid "Click and move the mouse around to make the picture drip!"
+#, fuzzy
+msgid "Click and move the mouse around to make the picture drip."
 msgstr "单击然后移动鼠标将图片变成水滴图！"
 
 #: magic.h:88
-msgid "Click and move the mouse to thicken the picture"
+#, fuzzy
+msgid "Click and move the mouse to thicken the picture."
 msgstr "单击然后移动鼠标将图片变浓"
 
 #: magic.h:89
-msgid "Click and move the mouse to thin the picture"
+#, fuzzy
+msgid "Click and move the mouse to thin the picture."
 msgstr "单击然后移动鼠标将图片变淡"
 
 #: magic.h:91
-msgid "Click in the picture to fill that area with color"
+#, fuzzy
+msgid "Click in the picture to fill that area with color."
 msgstr "单击图片用颜色填充区域"
 
 #: shapes.h:141 shapes.h:142
@@ -313,11 +429,6 @@ msgstr "橡皮擦"
 msgid "New"
 msgstr "新建"
 
-#. 'Open' label:
-#: tools.h:52 tuxpaint.c:4690
-msgid "Open"
-msgstr "打开"
-
 #: tools.h:53
 msgid "Save"
 msgstr "保存"
@@ -339,57 +450,56 @@ msgid "Pick a picture to stamp around your drawing."
 msgstr "选择印在画周围的图片。"
 
 #: tools.h:64
-msgid "Click to start drawing a line.  Let go to complete it."
+#, fuzzy
+msgid "Click to start drawing a line. Let go to complete it."
 msgstr "点击开始画线。我们来完成它吧。"
 
 #: tools.h:65
-msgid "Pick a shape. Click to pick the center, drag, then let go when it is the size you want.  Move around to rotate it, and click to draw it."
-msgstr "选择一个形状。单击选中中心然后拖动，当大小是你所需要的时候就放开。光标移动就可以旋转它，单击就绘制完成。"
+#, fuzzy
+msgid ""
+"Pick a shape. Click to pick the center, drag, then let go when it is the "
+"size you want. Move around to rotate it, and click to draw it."
+msgstr ""
+"选择一个形状。单击选中中心然后拖动，当大小是你所需要的时候就放开。光标移动就"
+"可以旋转它，单击就绘制完成。"
 
 #: tools.h:66
-msgid "Choose a style of text.  Click on your drawing and you can start typing."
+#, fuzzy
+msgid "Choose a style of text. Click on your drawing and you can start typing."
 msgstr "选择文字的样式。在绘制的图片上单击就可以开始输入文字。"
 
 #: tools.h:67
 msgid "Pick a magical effect to use on your drawing!"
 msgstr "选择一个可以用在你的图片上的魔术效果吧！"
 
-#. Undo
 #: tools.h:68
 msgid "Undo!"
 msgstr "取消！"
 
-#. Redo
 #: tools.h:69
 msgid "Redo!"
 msgstr "重复！"
 
-#. Eraser
 #: tools.h:70
 msgid "Eraser!"
 msgstr "橡皮擦！"
 
-#. New
 #: tools.h:71
 msgid "You now have a blank sheet to draw on!"
 msgstr "你现在可以从空白开始画了！"
 
-#. Open
 #: tools.h:72
 msgid "Open..."
 msgstr "打开..."
 
-#. Save
 #: tools.h:73
 msgid "Your image has been saved!"
 msgstr "你的图片被保存了！"
 
-#. Print
 #: tools.h:74
 msgid "Printing..."
 msgstr "正在打印哦..."
 
-#. Quit
 #: tools.h:75
 msgid "Bye bye!"
 msgstr "再见了！"
@@ -410,84 +520,11 @@ msgstr "移动鼠标来旋转形状。单击就可以画出它。"
 msgid "Ok then... Let's keep drawing this one!"
 msgstr "好了... 我们继续画这个！"
 
-#. FIXME: Move elsewhere!!!
-#: tuxpaint.c:689
-msgid "Do you really want to quit?"
-msgstr "你真的要退出吗？"
+#~ msgid "Red"
+#~ msgstr "红色"
 
-#. FIXME: Move elsewhere! Or not?!
-#: tuxpaint.c:690 tuxpaint.c:694 tuxpaint.c:698 tuxpaint.c:718 tuxpaint.c:7292
-#: tuxpaint.c:7972
-msgid "Yes"
-msgstr "是的"
+#~ msgid "Grey"
+#~ msgstr "灰色"
 
-#: tuxpaint.c:691 tuxpaint.c:695 tuxpaint.c:699 tuxpaint.c:719 tuxpaint.c:7295
-msgid "No"
-msgstr "不要"
-
-#: tuxpaint.c:693
-msgid "If you quit, you'll lose your picture! Save it?"
-msgstr "如果你退出了，你会失去你的图片！保存起来吗？"
-
-#: tuxpaint.c:697
-msgid "Save your picture first?"
-msgstr "先保存你的图片？"
-
-#: tuxpaint.c:701
-msgid "Can't open that picture!"
-msgstr "打不开那个图片啊！"
-
-#: tuxpaint.c:702 tuxpaint.c:709 tuxpaint.c:712 tuxpaint.c:715
-msgid "Okay"
-msgstr "好的"
-
-#: tuxpaint.c:704
-msgid "Starting a new picture will erase the current one!"
-msgstr "新开一个图片会删除现在的图片啊！"
-
-#: tuxpaint.c:705
-msgid "That's Ok"
-msgstr "没问题"
-
-#: tuxpaint.c:706
-msgid "Never Mind!"
-msgstr "不用担心！"
-
-#: tuxpaint.c:708
-msgid "There are no saved files!"
-msgstr "没有保存过的文件啊！"
-
-#: tuxpaint.c:711
-msgid "Your picture has been printed!"
-msgstr "你的图片被打印出来了！"
-
-#: tuxpaint.c:714
-msgid "You can't print yet!"
-msgstr "你还不能打印耶！"
-
-#: tuxpaint.c:717
-msgid "Erase this picture?"
-msgstr "删除这个图片吗？"
-
-#. 'Erase' label:
-#: tuxpaint.c:4695
-msgid "Erase"
-msgstr "删除"
-
-#. 'Back' label:
-#: tuxpaint.c:4700
-msgid "Back"
-msgstr "退回"
-
-#. FIXME: Move elsewhere!!!
-#: tuxpaint.c:7971
-msgid "Save over the older version of this drawing?"
-msgstr "取代这个图的旧版本吗？"
-
-#: tuxpaint.c:7973
-msgid "No, save a new file"
-msgstr "不，保存到新文件"
-
-#: tuxpaint.c:8735
-msgid "Choose the picture you want, then click 'Open'"
-msgstr "选择你要打开的图片，然后点击“打开”"
+#~ msgid "Okay"
+#~ msgstr "好的"

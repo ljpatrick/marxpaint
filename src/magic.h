@@ -71,24 +71,24 @@ char * magic_names[NUM_MAGICS] = {
 
 char * magic_tips[NUM_MAGICS] = {
   gettext_noop("You can draw in rainbow colors!"),
-  gettext_noop("Click and move to draw sparkles"),
+  gettext_noop("Click and move to draw sparkles."),
   
-  gettext_noop("Click to make a mirror image!"),
-  gettext_noop("Click to flip the picture upside-down!"),
+  gettext_noop("Click to make a mirror image."),
+  gettext_noop("Click to flip the picture upside-down."),
   
-  gettext_noop("Click and move the mouse around to blur the picture"),
-  gettext_noop("Click and move the mouse around to make the picture blocky"),
+  gettext_noop("Click and move the mouse around to blur the picture."),
+  gettext_noop("Click and move the mouse around to make the picture blocky."),
   
-  gettext_noop("Click and move the mouse around to draw a negative"),
+  gettext_noop("Click and move the mouse around to draw a negative."),
   gettext_noop("Click and move to fade the colors."),
   
   gettext_noop("Click and move the mouse around to turn the picture into a chalk drawing."),
-  gettext_noop("Click and move the mouse around to make the picture drip!"),
+  gettext_noop("Click and move the mouse around to make the picture drip."),
   
-  gettext_noop("Click and move the mouse to thicken the picture"),
-  gettext_noop("Click and move the mouse to thin the picture"),
+  gettext_noop("Click and move the mouse to thicken the picture."),
+  gettext_noop("Click and move the mouse to thin the picture."),
 
-  gettext_noop("Click in the picture to fill that area with color")
+  gettext_noop("Click in the picture to fill that area with color.")
 };
 
 

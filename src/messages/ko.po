@@ -5,11 +5,10 @@
 # This file is distributed under the same license as the Tux Paint program.
 #
 # 이 파일의 라이센스는 Tux Paint의 라이센스와 같습니다.
-
 msgid ""
 msgstr ""
 "Project-Id-Version: Tux Paint 0.9.14\n"
-"POT-Creation-Date: 2004-01-21 14:38-0800\n"
+"POT-Creation-Date: \n"
 "PO-Revision-Date: 2004-01-21 14:38-0800\n"
 "Last-Translator: Mark K. Kim <tuxNO_SOLICITATIONpaint-dev@cbreak.org>\n"
 "Language-Team: N/A\n"
@@ -17,475 +16,519 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: src/tuxpaint.c:795
+#: tuxpaint.c:795
 msgid "Do you really want to quit?"
 msgstr "프로그램을 끝 마칠까요?"
 
-#: src/tuxpaint.c:796
-#: src/tuxpaint.c:800 src/tuxpaint.c:804 src/tuxpaint.c:818 src/tuxpaint.c:828
-#: src/tuxpaint.c:8360 src/tuxpaint.c:9065
+#: tuxpaint.c:796 tuxpaint.c:800 tuxpaint.c:804 tuxpaint.c:818 tuxpaint.c:828
+#: tuxpaint.c:8360 tuxpaint.c:9065
 msgid "Yes"
 msgstr "네"
 
-#: src/tuxpaint.c:797 src/tuxpaint.c:801
-#: src/tuxpaint.c:805 src/tuxpaint.c:819 src/tuxpaint.c:829
-#: src/tuxpaint.c:8363
+#: tuxpaint.c:797 tuxpaint.c:801 tuxpaint.c:805 tuxpaint.c:819 tuxpaint.c:829
+#: tuxpaint.c:8363
 msgid "No"
 msgstr "아니요"
 
-#: src/tuxpaint.c:799
+#: tuxpaint.c:799
 msgid "If you quit, you'll lose your picture! Save it?"
 msgstr "그림을 저장않하고 종료 하면 그림이 없어져요! 저장할까요?"
 
-#: src/tuxpaint.c:803
+#: tuxpaint.c:803
 msgid "Save your picture first?"
 msgstr "먼저 그림을 저장할까요?"
 
-#: src/tuxpaint.c:807
+#: tuxpaint.c:807
 msgid "Can't open that picture!"
 msgstr "그 그림은 열지 못합니다!"
 
-#: src/tuxpaint.c:808 src/tuxpaint.c:815 src/tuxpaint.c:822 src/tuxpaint.c:825
-msgid "Okay"
-msgstr "네"
+#: tuxpaint.c:808 tuxpaint.c:815 tuxpaint.c:822 tuxpaint.c:825
+msgid "OK"
+msgstr ""
 
-#: src/tuxpaint.c:810
+#: tuxpaint.c:810
 msgid "Starting a new picture will erase the current one!"
 msgstr "새 그림을 시작하면 지금있는 그림이 없어져요!"
 
-#: src/tuxpaint.c:811
-msgid "That's Ok"
+#: tuxpaint.c:811
+#, fuzzy
+msgid "That's OK!"
 msgstr "괜찮습니다"
 
-#: src/tuxpaint.c:812
-msgid "Never Mind!"
+#: tuxpaint.c:812
+#, fuzzy
+msgid "Never mind!"
 msgstr "그러면 취소!"
 
-#: src/tuxpaint.c:814
+#: tuxpaint.c:814
 msgid "There are no saved files!"
 msgstr "저장된 파일이 없네요!"
 
-#: src/tuxpaint.c:821
+#: tuxpaint.c:817
+msgid "Print your picture now?"
+msgstr "그림을 프린트 할까요?"
+
+#: tuxpaint.c:821
 msgid "Your picture has been printed!"
 msgstr "그림을 프린트 했습니다!"
 
-#: src/tuxpaint.c:824
+#: tuxpaint.c:824
 msgid "You can't print yet!"
 msgstr "아직 프린트 하지 못합니다!"
 
-#: src/tuxpaint.c:827
+#: tuxpaint.c:827
 msgid "Erase this picture?"
 msgstr "이 그림을 지울까요?"
 
-#: src/tuxpaint.c:5416
+#: tuxpaint.c:5416 tools.h:52
 msgid "Open"
 msgstr "열기"
 
-#: src/tuxpaint.c:5421
+#: tuxpaint.c:5421
 msgid "Erase"
 msgstr "지우기"
 
-#: src/tuxpaint.c:5426
+#: tuxpaint.c:5426
 msgid "Back"
 msgstr "되 돌아가기"
 
-#: src/tuxpaint.c:9064
-msgid "Save over the older version of this drawing?"
+#: tuxpaint.c:9064
+#, fuzzy
+msgid "Save over the older version of this picture?"
 msgstr "전에 있던 그름을 지우고 저장 할까요?"
 
-#: src/tuxpaint.c:9066
+#: tuxpaint.c:9066
 msgid "No, save a new file"
 msgstr "아니요, 새로운 파일로 저장하죠"
 
-#: src/tuxpaint.c:9885
-msgid "Choose the picture you want, then click 'Open'"
+#: tuxpaint.c:9885
+#, fuzzy
+msgid "Choose the picture you want, then click 'Open'."
 msgstr "원하는 그림을 고른후 '열기'버튼을 눌러주세요"
 
-#: src/colors.h:62
-msgid "Black"
+#: colors.h:62
+#, fuzzy
+msgid "Black!"
 msgstr "검정색"
 
-#: src/colors.h:63
-msgid "White"
+#: colors.h:63
+#, fuzzy
+msgid "White!"
 msgstr "흰색"
 
-#: src/colors.h:64
-msgid "Red"
-msgstr "빨간색"
+#: colors.h:64
+#, fuzzy
+msgid "Red!"
+msgstr "다시 상채로!"
 
-#: src/colors.h:65
-msgid "Pink"
+#: colors.h:65
+#, fuzzy
+msgid "Pink!"
 msgstr "핑크색"
 
-#: src/colors.h:66
-msgid "Orange"
+#: colors.h:66
+#, fuzzy
+msgid "Orange!"
 msgstr "오렌지색"
 
-#: src/colors.h:67
-msgid "Yellow"
+#: colors.h:67
+#, fuzzy
+msgid "Yellow!"
 msgstr "노란색"
 
-#: src/colors.h:68
-msgid "Lime"
+#: colors.h:68
+#, fuzzy
+msgid "Lime!"
 msgstr "라임색"
 
-#: src/colors.h:69
-msgid "Green"
+#: colors.h:69
+#, fuzzy
+msgid "Green!"
 msgstr "녹색"
 
-#: src/colors.h:70
-msgid "Cyan"
+#: colors.h:70
+#, fuzzy
+msgid "Cyan!"
 msgstr "청록색"
 
-#: src/colors.h:71
-msgid "Blue"
+#: colors.h:71
+#, fuzzy
+msgid "Blue!"
 msgstr "파란색"
 
-#: src/colors.h:72
-msgid "Purple"
+#: colors.h:72
+#, fuzzy
+msgid "Purple!"
 msgstr "자주색"
 
-#: src/colors.h:73
-msgid "Fuchsia"
+#: colors.h:73
+#, fuzzy
+msgid "Fuchsia!"
 msgstr "퓨셔색"
 
-#: src/colors.h:74
-msgid "Brown"
+#: colors.h:74
+#, fuzzy
+msgid "Brown!"
 msgstr "갈색"
 
-#: src/colors.h:75
-msgid "Grey"
-msgstr "회색"
+#: colors.h:75
+#, fuzzy
+msgid "Gray!"
+msgstr "잘한다!"
 
-#: src/colors.h:76
-msgid "Silver"
+#: colors.h:76
+#, fuzzy
+msgid "Silver!"
 msgstr "은색"
 
-#: src/great.h:20
+#: great.h:20
 msgid "Great!"
 msgstr "잘한다!"
 
-#: src/great.h:21
+#: great.h:21
 msgid "Cool!"
 msgstr "와~!"
 
-#: src/great.h:22
+#: great.h:22
 msgid "Keep it up!"
 msgstr "계속 잘 해보세요!"
 
-#: src/great.h:23
+#: great.h:23
 msgid "Good job!"
 msgstr "잘했어요!"
 
-#: src/magic.h:48
+#: magic.h:48
 msgid "Rainbow"
 msgstr "무지개"
 
-#: src/magic.h:49
+#: magic.h:49
 msgid "Sparkles"
 msgstr "불꽃"
 
-#: src/magic.h:51
+#: magic.h:51
 msgid "Mirror"
 msgstr "거울"
 
-#: src/magic.h:52
+#: magic.h:52
 msgid "Flip"
 msgstr "뒤집기"
 
-#: src/magic.h:54
+#: magic.h:54
 msgid "Blur"
 msgstr "흐리게"
 
-#: src/magic.h:55
+#: magic.h:55
 msgid "Blocks"
 msgstr "모자이크"
 
-#: src/magic.h:57
+#: magic.h:57
 msgid "Negative"
 msgstr "음화"
 
-#: src/magic.h:58
+#: magic.h:58
 msgid "Fade"
 msgstr "사라지기"
 
-#: src/magic.h:60
+#: magic.h:60
 msgid "Chalk"
 msgstr "분필"
 
-#: src/magic.h:61
+#: magic.h:61
 msgid "Drip"
 msgstr "흘리기"
 
-#: src/magic.h:63
+#: magic.h:63
 msgid "Thick"
 msgstr "두껍게"
 
-#: src/magic.h:64
+#: magic.h:64
 msgid "Thin"
 msgstr "얇게"
 
-#: src/magic.h:66
+#: magic.h:66
 msgid "Fill"
 msgstr "물통"
 
-#: src/magic.h:73
+#: magic.h:73
 msgid "You can draw in rainbow colors!"
 msgstr "여러가지의 색으로 그림을 그리세요!"
 
-#: src/magic.h:74
-msgid "Click and move to draw sparkles"
+#: magic.h:74
+#, fuzzy
+msgid "Click and move to draw sparkles."
 msgstr "불꽃으로 그림을 그릴려면 마우스 버튼을 누른 상태로 마우스를 움직이세요"
 
-#: src/magic.h:76
-msgid "Click to make a mirror image!"
+#: magic.h:76
+#, fuzzy
+msgid "Click to make a mirror image."
 msgstr "그림을 옆으로 뒤집으려면 마우스버튼을 누르세요!"
 
-#: src/magic.h:77
-msgid "Click to flip the picture upside-down!"
+#: magic.h:77
+#, fuzzy
+msgid "Click to flip the picture upside-down."
 msgstr "그림을 위로 뒤집으려면 마우스 버튼을 누르세요!"
 
-#: src/magic.h:79
-msgid "Click and move the mouse around to blur the picture"
+#: magic.h:79
+#, fuzzy
+msgid "Click and move the mouse around to blur the picture."
 msgstr "그림을 흐리게 하려면 마우스 버튼을 누른 상태로 마우스를 움직이세요"
 
-#: src/magic.h:80
-msgid "Click and move the mouse around to make the picture blocky"
+#: magic.h:80
+#, fuzzy
+msgid "Click and move the mouse around to make the picture blocky."
 msgstr "모자이크를 만들려면 마우스 버튼을 누른 상태로 마우스를 움직이세요"
 
-#: src/magic.h:82
-msgid "Click and move the mouse around to draw a negative"
-msgstr "그림의 색을 음화로 바꾸려면 마우스 버튼을 누른 상태로 마우스를 움직이세요"
+#: magic.h:82
+#, fuzzy
+msgid "Click and move the mouse around to draw a negative."
+msgstr ""
+"그림의 색을 음화로 바꾸려면 마우스 버튼을 누른 상태로 마우스를 움직이세요"
 
-#: src/magic.h:83
+#: magic.h:83
 msgid "Click and move to fade the colors."
 msgstr "색을 희미하게 하려면 마우스 버튼을 누르고 움직이세요."
 
-#: src/magic.h:85
+#: magic.h:85
 msgid ""
 "Click and move the mouse around to turn the picture into a chalk drawing."
-msgstr "그림을 분필로 그린 것 같이 만들려면 마우스 버튼을 누른 상태로 마우스를 움직이세요."
+msgstr ""
+"그림을 분필로 그린 것 같이 만들려면 마우스 버튼을 누른 상태로 마우스를 움직이"
+"세요."
 
-#: src/magic.h:86
-msgid "Click and move the mouse around to make the picture drip!"
-msgstr "그림이 밑으로 흐르는 것 같이 만들려면 마우스 버튼을 누른 상태로 마우스를 움직이세요!"
+#: magic.h:86
+#, fuzzy
+msgid "Click and move the mouse around to make the picture drip."
+msgstr ""
+"그림이 밑으로 흐르는 것 같이 만들려면 마우스 버튼을 누른 상태로 마우스를 움직"
+"이세요!"
 
-#: src/magic.h:88
-msgid "Click and move the mouse to thicken the picture"
+#: magic.h:88
+#, fuzzy
+msgid "Click and move the mouse to thicken the picture."
 msgstr "그림을 두껍게 만들려면 마우스 버튼을 누른 상태로 마우스를 움직이세요."
 
-#: src/magic.h:89
-msgid "Click and move the mouse to thin the picture"
+#: magic.h:89
+#, fuzzy
+msgid "Click and move the mouse to thin the picture."
 msgstr "그림을 얇게 만들려면 버튼을 누른 상태로 마우스를 움직이세요."
 
-#: src/magic.h:91
-msgid "Click in the picture to fill that area with color"
-msgstr "연결된 부분의 색을 바꾸려면 마우스 버튼을 연결된 부분 아무대나 누르세요."
+#: magic.h:91
+#, fuzzy
+msgid "Click in the picture to fill that area with color."
+msgstr ""
+"연결된 부분의 색을 바꾸려면 마우스 버튼을 연결된 부분 아무대나 누르세요."
 
-#: src/shapes.h:141 src/shapes.h:142
+#: shapes.h:141 shapes.h:142
 msgid "Square"
 msgstr "정사각형"
 
-#: src/shapes.h:143 src/shapes.h:144
+#: shapes.h:143 shapes.h:144
 msgid "Rectangle"
 msgstr "사각형"
 
-#: src/shapes.h:145 src/shapes.h:146
+#: shapes.h:145 shapes.h:146
 msgid "Circle"
 msgstr "원"
 
-#: src/shapes.h:147 src/shapes.h:148 src/shapes.h:167 src/shapes.h:168
+#: shapes.h:147 shapes.h:148 shapes.h:167 shapes.h:168
 msgid "Oval"
 msgstr "달걀형"
 
-#: src/shapes.h:149 src/shapes.h:150
+#: shapes.h:149 shapes.h:150
 msgid "Triangle"
 msgstr "삼각형"
 
-#: src/shapes.h:151 src/shapes.h:152
+#: shapes.h:151 shapes.h:152
 msgid "Pentagon"
 msgstr "5각형"
 
-#: src/shapes.h:153 src/shapes.h:154
+#: shapes.h:153 shapes.h:154
 msgid "Diamond"
 msgstr "다이아형"
 
-#: src/shapes.h:161 src/shapes.h:162
+#: shapes.h:161 shapes.h:162
 msgid "A square has four sides, each the same length."
 msgstr "4개의 면이 다 똑같은 길이의 모양이 '정사각형' 입니다."
 
-#: src/shapes.h:163 src/shapes.h:164
+#: shapes.h:163 shapes.h:164
 msgid "A rectangle has four sides."
 msgstr "4개의 면이 있는 모양이 '사각형' 입니다."
 
-#: src/shapes.h:165 src/shapes.h:166
+#: shapes.h:165 shapes.h:166
 msgid "A circle is exactly round."
 msgstr "해나 달같이 둥그런 모양이 '동그라미' 입니다."
 
-#: src/shapes.h:169 src/shapes.h:170
+#: shapes.h:169 shapes.h:170
 msgid "A triangle has three sides."
 msgstr "3개의 면이 있는 모양이 '삼각형' 입니다."
 
-#: src/shapes.h:171 src/shapes.h:172
+#: shapes.h:171 shapes.h:172
 msgid "A pentagon has five sides."
 msgstr "5개의 면이 있는 모양이 '5각형' 입니다."
 
-#: src/shapes.h:173 src/shapes.h:174
+#: shapes.h:173 shapes.h:174
 msgid "A diamond is a square, turned around slightly."
 msgstr "다이아몬드형은 정사각형을 약간 옆으로 돌려놓은 모양 입니다."
 
-#: src/titles.h:37
+#: titles.h:37
 msgid "Tools"
 msgstr "도구"
 
-#: src/titles.h:38
+#: titles.h:38
 msgid "Colors"
 msgstr "색"
 
-#: src/titles.h:39
+#: titles.h:39
 msgid "Brushes"
 msgstr "붓"
 
-#: src/titles.h:40
+#: titles.h:40
 msgid "Stamps"
 msgstr "도장"
 
-#: src/titles.h:41 src/tools.h:45
+#: titles.h:41 tools.h:45
 msgid "Shapes"
 msgstr "모양"
 
-#: src/titles.h:42
+#: titles.h:42
 msgid "Letters"
 msgstr "글"
 
-#: src/titles.h:43 src/tools.h:47
+#: titles.h:43 tools.h:47
 msgid "Magic"
 msgstr "효과"
 
-#: src/tools.h:42
+#: tools.h:42
 msgid "Paint"
 msgstr "물감"
 
-#: src/tools.h:43
+#: tools.h:43
 msgid "Stamp"
 msgstr "도장"
 
-#: src/tools.h:44
+#: tools.h:44
 msgid "Lines"
 msgstr "줄"
 
-#: src/tools.h:46
+#: tools.h:46
 msgid "Text"
 msgstr "글"
 
-#: src/tools.h:48
+#: tools.h:48
 msgid "Undo"
 msgstr "전으로"
 
-#: src/tools.h:49
+#: tools.h:49
 msgid "Redo"
 msgstr "다시"
 
-#: src/tools.h:50
+#: tools.h:50
 msgid "Eraser"
 msgstr "지우개"
 
-#: src/tools.h:51
+#: tools.h:51
 msgid "New"
 msgstr "새 그림"
 
-#: src/tools.h:53
+#: tools.h:53
 msgid "Save"
 msgstr "저장"
 
-#: src/tools.h:54
+#: tools.h:54
 msgid "Print"
 msgstr "인쇄"
 
-#: src/tools.h:55
+#: tools.h:55
 msgid "Quit"
 msgstr "끝"
 
-#: src/tools.h:62
+#: tools.h:62
 msgid "Pick a color and a brush shape to draw with."
 msgstr "그림 그릴 색과 붓의 모양을 고르세요."
 
-#: src/tools.h:63
+#: tools.h:63
 msgid "Pick a picture to stamp around your drawing."
 msgstr "도장 그림을 고르세요."
 
-#: src/tools.h:64
-msgid "Click to start drawing a line.  Let go to complete it."
-msgstr "마우스의 버튼을 누르는 곳이 줄의 시작점 입니다. 버튼을 놓는곳이 종료점 입니다."
+#: tools.h:64
+#, fuzzy
+msgid "Click to start drawing a line. Let go to complete it."
+msgstr ""
+"마우스의 버튼을 누르는 곳이 줄의 시작점 입니다. 버튼을 놓는곳이 종료점 입니"
+"다."
 
-#: src/tools.h:65
+#: tools.h:65
+#, fuzzy
 msgid ""
 "Pick a shape. Click to pick the center, drag, then let go when it is the "
-"size you want.  Move around to rotate it, and click to draw it."
+"size you want. Move around to rotate it, and click to draw it."
 msgstr ""
 "(1) 모양을 고르세요.  (2) 중심지를 정하고 마우스 버튼을 누르세요.  (3) 크기"
 "를 잡고 버튼을 놓으세요.  (4) 모양을 돌린후 마우스 버튼을 누르세요."
 
-#: src/tools.h:66
-msgid ""
-"Choose a style of text.  Click on your drawing and you can start typing."
+#: tools.h:66
+#, fuzzy
+msgid "Choose a style of text. Click on your drawing and you can start typing."
 msgstr "(1) 글체를 고르세요.  (2) 그림을 누르고 원하는 글을 키보드로 치세요."
 
-#: src/tools.h:67
+#: tools.h:67
 msgid "Pick a magical effect to use on your drawing!"
 msgstr "어떤 효과를 사용 할까요?"
 
-#: src/tools.h:68
+#: tools.h:68
 msgid "Undo!"
 msgstr "전 상태로!"
 
-#: src/tools.h:69
+#: tools.h:69
 msgid "Redo!"
 msgstr "다시 상채로!"
 
-#: src/tools.h:70
+#: tools.h:70
 msgid "Eraser!"
 msgstr "지우개!"
 
-#: src/tools.h:71
+#: tools.h:71
 msgid "You now have a blank sheet to draw on!"
 msgstr "그림 다 지워졌습니다.  새 그림을 시작하세요!"
 
-#: src/tools.h:72
+#: tools.h:72
 msgid "Open..."
 msgstr "그림 열기..."
 
-#: src/tools.h:73
+#: tools.h:73
 msgid "Your image has been saved!"
 msgstr "그림을 저장 했습니다!"
 
-#: src/tools.h:74
+#: tools.h:74
 msgid "Printing..."
 msgstr "프린트 중..."
 
-#: src/tools.h:75
+#: tools.h:75
 msgid "Bye bye!"
 msgstr "안녕!"
 
-#: src/tools.h:78
+#: tools.h:78
 msgid "Let go of the button to complete the line."
 msgstr "줄을 완성하려면 마우스의 버튼을 놓으세요."
 
-#: src/tools.h:79
+#: tools.h:79
 msgid "Hold the button to stretch the shape."
 msgstr "모양을 늘리려면 마우스를 버튼을 누른 상태로 움직이세요."
 
-#: src/tools.h:80
+#: tools.h:80
 msgid "Move the mouse to rotate the shape. Click to draw it."
 msgstr ""
 "(1) 마우스를 움직여 모양을 돌리세요.  (2) 마우스 버튼을 눌러 완성 시키세요."
 
-#: src/tools.h:81
+#: tools.h:81
 msgid "Ok then... Let's keep drawing this one!"
 msgstr "그럼, 계속 그림을 그리세요!"
 
-#: src/tuxpaint.c:817
-msgid "Print your picture now?"
-msgstr "그림을 프린트 할까요?"
+#~ msgid "Okay"
+#~ msgstr "네"
 
-# vim:encoding=utf-8
+#~ msgid "Red"
+#~ msgstr "빨간색"
+
+#~ msgid "Grey"
+#~ msgstr "회색"

@@ -4,260 +4,392 @@
 #
 msgid ""
 msgstr ""
-"POT-Creation-Date: 2002-08-23 11:09+0200\n"
+"POT-Creation-Date: \n"
 "PO-Revision-Date: 2002-08-23 11:43+0200\n"
 "Last-Translator: Herman Bruyninckx <herman.bruyninckx@mech.kuleuven.ac.be>\n"
 "Language-Team: Nederlands\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: tuxpaint.c:368
+#: tuxpaint.c:795
 msgid "Do you really want to quit?"
 msgstr "Wil je echt stoppen?"
 
-#: tuxpaint.c:369 tuxpaint.c:373 tuxpaint.c:377 tuxpaint.c:388 tuxpaint.c:4592
+#: tuxpaint.c:796 tuxpaint.c:800 tuxpaint.c:804 tuxpaint.c:818 tuxpaint.c:828
+#: tuxpaint.c:8360 tuxpaint.c:9065
 msgid "Yes"
 msgstr "Ja"
 
-#: tuxpaint.c:370 tuxpaint.c:374 tuxpaint.c:378 tuxpaint.c:389
+#: tuxpaint.c:797 tuxpaint.c:801 tuxpaint.c:805 tuxpaint.c:819 tuxpaint.c:829
+#: tuxpaint.c:8363
 msgid "No"
 msgstr "Nee"
 
-#: tuxpaint.c:372
+#: tuxpaint.c:799
 msgid "If you quit, you'll lose your picture! Save it?"
 msgstr "Als je stopt ben je je tekening kwijt! Moet ik ze bijhouden?"
 
-#: tuxpaint.c:376
+#: tuxpaint.c:803
 msgid "Save your picture first?"
 msgstr "Wil je je huidige tekening eerst nog bewaren?"
 
-#: tuxpaint.c:380
+#: tuxpaint.c:807
+#, fuzzy
+msgid "Can't open that picture!"
+msgstr "Mag ik de gekozen tekening uitvegen?"
+
+#: tuxpaint.c:808 tuxpaint.c:815 tuxpaint.c:822 tuxpaint.c:825
+msgid "OK"
+msgstr ""
+
+#: tuxpaint.c:810
 msgid "Starting a new picture will erase the current one!"
 msgstr "Mag ik de huidige tekening wegdoen om met een nieuwe te beginnen?"
 
-#: tuxpaint.c:381
-msgid "That's Ok"
+#: tuxpaint.c:811
+#, fuzzy
+msgid "That's OK!"
 msgstr "OK!"
 
-#: tuxpaint.c:382
-msgid "Never Mind!"
+#: tuxpaint.c:812
+#, fuzzy
+msgid "Never mind!"
 msgstr "Neen, liever niet!"
 
-#: tuxpaint.c:384
+#: tuxpaint.c:814
 msgid "There are no saved files!"
 msgstr "Er zijn geen bewaarde tekeningen!"
 
-#: tuxpaint.c:385
-msgid "Okay"
-msgstr "Ok"
+#: tuxpaint.c:817
+#, fuzzy
+msgid "Print your picture now?"
+msgstr "Wil je je huidige tekening eerst nog bewaren?"
 
-#: tuxpaint.c:387
+#: tuxpaint.c:821
+#, fuzzy
+msgid "Your picture has been printed!"
+msgstr "Je tekening is bewaard!"
+
+#: tuxpaint.c:824
+msgid "You can't print yet!"
+msgstr ""
+
+#: tuxpaint.c:827
 msgid "Erase this picture?"
 msgstr "Mag ik de gekozen tekening uitvegen?"
 
-#: tuxpaint.c:4591
-msgid "Save over the older version of this drawing?"
+#: tuxpaint.c:5416 tools.h:52
+msgid "Open"
+msgstr "Openen"
+
+#: tuxpaint.c:5421
+#, fuzzy
+msgid "Erase"
+msgstr "Uitgommen"
+
+#: tuxpaint.c:5426
+#, fuzzy
+msgid "Back"
+msgstr "Zwart!"
+
+#: tuxpaint.c:9064
+#, fuzzy
+msgid "Save over the older version of this picture?"
 msgstr "Mag ik de vorige versie van deze tekening overschrijven?"
 
-#: tuxpaint.c:4593
+#: tuxpaint.c:9066
 msgid "No, save a new file"
 msgstr "Nee, bewaar op een nieuwe plaats"
 
-#: colors.h:56
-msgid "Black"
-msgstr "Zwart"
-
-#: colors.h:57
-msgid "White"
-msgstr "Wit"
-
-#: colors.h:58
-msgid "Red"
-msgstr "Rood"
-
-#: colors.h:59
-msgid "Pink"
-msgstr "Rose"
-
-#: colors.h:60
-msgid "Orange"
-msgstr "Oranje"
-
-#: colors.h:61
-msgid "Yellow"
-msgstr "Geel"
+#: tuxpaint.c:9885
+msgid "Choose the picture you want, then click 'Open'."
+msgstr ""
 
 #: colors.h:62
-msgid "Green"
-msgstr "Groen"
+#, fuzzy
+msgid "Black!"
+msgstr "Zwart!"
 
 #: colors.h:63
-msgid "Cyan"
-msgstr "Turkoois"
+#, fuzzy
+msgid "White!"
+msgstr "Wit!"
 
 #: colors.h:64
-msgid "Blue"
-msgstr "Blauw"
+#, fuzzy
+msgid "Red!"
+msgstr "Terugdoen!"
 
 #: colors.h:65
-msgid "Purple"
-msgstr "Purper"
+#, fuzzy
+msgid "Pink!"
+msgstr "Rose!"
 
 #: colors.h:66
-msgid "Brown"
-msgstr "Bruin"
+#, fuzzy
+msgid "Orange!"
+msgstr "Oranje!"
 
 #: colors.h:67
-msgid "Grey"
-msgstr "Grijs"
+#, fuzzy
+msgid "Yellow!"
+msgstr "Geel!"
 
-#: magic.h:46
-msgid "Mirror"
-msgstr "Spiegel"
+#: colors.h:68
+#, fuzzy
+msgid "Lime!"
+msgstr "Lijnen"
 
-#: magic.h:47
-msgid "Flip"
-msgstr "Omkeren"
+#: colors.h:69
+#, fuzzy
+msgid "Green!"
+msgstr "Groen!"
 
-#: magic.h:49
-msgid "Blur"
-msgstr "Uitsmeren"
+#: colors.h:70
+#, fuzzy
+msgid "Cyan!"
+msgstr "Turkoois!"
 
-#: magic.h:50
-msgid "Blocks"
-msgstr "Blokken"
+#: colors.h:71
+#, fuzzy
+msgid "Blue!"
+msgstr "Blauw!"
 
-#: magic.h:52
-msgid "Negative"
-msgstr "Negatief"
+#: colors.h:72
+#, fuzzy
+msgid "Purple!"
+msgstr "Purper!"
 
-#: magic.h:53
-msgid "Fade"
-msgstr "Vervagen"
+#: colors.h:73
+msgid "Fuchsia!"
+msgstr ""
 
-#: magic.h:55
+#: colors.h:74
+#, fuzzy
+msgid "Brown!"
+msgstr "Bruin!"
+
+#: colors.h:75
+#, fuzzy
+msgid "Gray!"
+msgstr "Prachtig!"
+
+#: colors.h:76
+msgid "Silver!"
+msgstr ""
+
+#: great.h:20
+msgid "Great!"
+msgstr "Prachtig!"
+
+#: great.h:21
+msgid "Cool!"
+msgstr ""
+
+#: great.h:22
+msgid "Keep it up!"
+msgstr ""
+
+#: great.h:23
+msgid "Good job!"
+msgstr ""
+
+#: magic.h:48
 msgid "Rainbow"
 msgstr "Regenboog"
 
-#: magic.h:56
+#: magic.h:49
 msgid "Sparkles"
 msgstr "Spikkels"
 
+#: magic.h:51
+msgid "Mirror"
+msgstr "Spiegel"
+
+#: magic.h:52
+msgid "Flip"
+msgstr "Omkeren"
+
+#: magic.h:54
+msgid "Blur"
+msgstr "Uitsmeren"
+
+#: magic.h:55
+msgid "Blocks"
+msgstr "Blokken"
+
+#: magic.h:57
+msgid "Negative"
+msgstr "Negatief"
+
 #: magic.h:58
+msgid "Fade"
+msgstr "Vervagen"
+
+#: magic.h:60
 msgid "Chalk"
 msgstr "Krijt"
 
-#: magic.h:59
+#: magic.h:61
 msgid "Drip"
 msgstr "Druppen"
 
-#: magic.h:61
+#: magic.h:63
 msgid "Thick"
 msgstr "Dik"
 
-#: magic.h:62
+#: magic.h:64
 msgid "Thin"
 msgstr "Dun"
 
-#: magic.h:69
-msgid "Click to make a mirror image!"
-msgstr "Klik om spiegelbeeld te maken!"
-
-#: magic.h:70
-msgid "Click to flip the picture upside-down!"
-msgstr "Klik om beeld ondersteboven te zetten!"
-
-#: magic.h:72
-msgid "Click and move the mouse around to blur the picture"
-msgstr "Klik en beweeg de muis om de tekening te vervagen!"
+#: magic.h:66
+msgid "Fill"
+msgstr ""
 
 #: magic.h:73
-msgid "Click and move the mouse around to make the picture blocky"
-msgstr "Klik en beweeg de muis om de tekening blokkerig te maken!"
-
-#: magic.h:75
-msgid "Click and move the mouse around to draw a negative"
-msgstr "Klik en beweeg de muis om de tekening negatief te maken!"
-
-#: magic.h:76
-msgid "Click and move to fade the colors."
-msgstr "Klik en beweeg de muis om de kleuren te vervagen!"
-
-#: magic.h:78
 msgid "You can draw in rainbow colors!"
 msgstr "Je kan in regenboog-kleuren tekenen!"
 
-#: magic.h:79
-msgid "Click and move to draw sparkles"
+#: magic.h:74
+#, fuzzy
+msgid "Click and move to draw sparkles."
 msgstr "Klik en beweeg de muis om spikkels te tekenen!"
 
-#: magic.h:81
-msgid "Click and move the mouse around to turn the picture into a chalk drawing."
-msgstr "Klik en beweeg de muis om de tekening te veranderen in een krijt-tekening!"
+#: magic.h:76
+#, fuzzy
+msgid "Click to make a mirror image."
+msgstr "Klik om spiegelbeeld te maken!"
+
+#: magic.h:77
+#, fuzzy
+msgid "Click to flip the picture upside-down."
+msgstr "Klik om beeld ondersteboven te zetten!"
+
+#: magic.h:79
+#, fuzzy
+msgid "Click and move the mouse around to blur the picture."
+msgstr "Klik en beweeg de muis om de tekening te vervagen!"
+
+#: magic.h:80
+#, fuzzy
+msgid "Click and move the mouse around to make the picture blocky."
+msgstr "Klik en beweeg de muis om de tekening blokkerig te maken!"
 
 #: magic.h:82
-msgid "Click and move the mouse around to make the picture drip!"
-msgstr "Klik en beweeg de muis om de tekening te laten druppen!"
+#, fuzzy
+msgid "Click and move the mouse around to draw a negative."
+msgstr "Klik en beweeg de muis om de tekening negatief te maken!"
 
-#: magic.h:84
-msgid "Click and move the mouse to thicken the picture"
-msgstr "Klik en beweeg de muis om de tekening dikker te maken!"
+#: magic.h:83
+msgid "Click and move to fade the colors."
+msgstr "Klik en beweeg de muis om de kleuren te vervagen!"
 
 #: magic.h:85
-msgid "Click and move the mouse to thin the picture"
+msgid ""
+"Click and move the mouse around to turn the picture into a chalk drawing."
+msgstr ""
+"Klik en beweeg de muis om de tekening te veranderen in een krijt-tekening!"
+
+#: magic.h:86
+#, fuzzy
+msgid "Click and move the mouse around to make the picture drip."
+msgstr "Klik en beweeg de muis om de tekening te laten druppen!"
+
+#: magic.h:88
+#, fuzzy
+msgid "Click and move the mouse to thicken the picture."
+msgstr "Klik en beweeg de muis om de tekening dikker te maken!"
+
+#: magic.h:89
+#, fuzzy
+msgid "Click and move the mouse to thin the picture."
 msgstr "Klik en beweeg de muis om de tekening dunner te maken!"
 
-#: shapes.h:121 shapes.h:122
+#: magic.h:91
+#, fuzzy
+msgid "Click in the picture to fill that area with color."
+msgstr "Klik en beweeg de muis om de kleuren te vervagen!"
+
+#: shapes.h:141 shapes.h:142
 msgid "Square"
 msgstr "Vierkant"
 
-#: shapes.h:123 shapes.h:124
+#: shapes.h:143 shapes.h:144
 msgid "Rectangle"
 msgstr "Rechthoek"
 
-#: shapes.h:125 shapes.h:126
+#: shapes.h:145 shapes.h:146
 msgid "Circle"
 msgstr "Cirkel"
 
-#: shapes.h:127 shapes.h:128 shapes.h:147 shapes.h:148
+#: shapes.h:147 shapes.h:148 shapes.h:167 shapes.h:168
 msgid "Oval"
 msgstr "Ovaal"
 
-#: shapes.h:129 shapes.h:130
+#: shapes.h:149 shapes.h:150
 msgid "Triangle"
 msgstr "Driehoek"
 
-#: shapes.h:131 shapes.h:132
+#: shapes.h:151 shapes.h:152
 msgid "Pentagon"
 msgstr "Vijfhoek"
 
-#: shapes.h:133 shapes.h:134
+#: shapes.h:153 shapes.h:154
 msgid "Diamond"
 msgstr "Ruit"
 
-#: shapes.h:141 shapes.h:142
+#: shapes.h:161 shapes.h:162
 msgid "A square has four sides, each the same length."
 msgstr "Een vierkant heeft vier zijden, allemaal even lang."
 
-#: shapes.h:143 shapes.h:144
+#: shapes.h:163 shapes.h:164
 msgid "A rectangle has four sides."
 msgstr "Een rechthoek heeft vier zijden."
 
-#: shapes.h:145 shapes.h:146
+#: shapes.h:165 shapes.h:166
 msgid "A circle is exactly round."
 msgstr "Een cirkel is precies rond."
 
-#: shapes.h:149 shapes.h:150
+#: shapes.h:169 shapes.h:170
 msgid "A triangle has three sides."
 msgstr "Een driehoek heeft drie zijden."
 
-#: shapes.h:151 shapes.h:152
+#: shapes.h:171 shapes.h:172
 msgid "A pentagon has five sides."
 msgstr "Een vijfhoek heeft vijf zijden."
 
-#: shapes.h:153 shapes.h:154
+#: shapes.h:173 shapes.h:174
 msgid "A diamond is a square, turned around slightly."
 msgstr "Een ruit is zoals een vierkant op zijn zij."
+
+#: titles.h:37
+msgid "Tools"
+msgstr ""
+
+#: titles.h:38
+msgid "Colors"
+msgstr ""
+
+#: titles.h:39
+msgid "Brushes"
+msgstr ""
+
+#: titles.h:40
+#, fuzzy
+msgid "Stamps"
+msgstr "Stempel"
+
+#: titles.h:41 tools.h:45
+msgid "Shapes"
+msgstr "Vormen"
+
+#: titles.h:42
+msgid "Letters"
+msgstr ""
+
+#: titles.h:43 tools.h:47
+msgid "Magic"
+msgstr "Toverij"
 
 #: tools.h:42
 msgid "Paint"
@@ -271,17 +403,9 @@ msgstr "Stempel"
 msgid "Lines"
 msgstr "Lijnen"
 
-#: tools.h:45
-msgid "Shapes"
-msgstr "Vormen"
-
 #: tools.h:46
 msgid "Text"
 msgstr "Letters"
-
-#: tools.h:47
-msgid "Magic"
-msgstr "Toverij"
 
 #: tools.h:48
 msgid "Undo"
@@ -298,10 +422,6 @@ msgstr "Uitgommen"
 #: tools.h:51
 msgid "New"
 msgstr "Nieuw"
-
-#: tools.h:52
-msgid "Open"
-msgstr "Openen"
 
 #: tools.h:53
 msgid "Save"
@@ -324,21 +444,21 @@ msgid "Pick a picture to stamp around your drawing."
 msgstr "Kies een vorm om mee te stempelen."
 
 #: tools.h:64
-msgid "Click to start drawing a line.  Let go to complete it."
-msgstr "Klik om een lijn te beginnen."
- "Laat pas los op het einde van de lijn."
+#, fuzzy
+msgid "Click to start drawing a line. Let go to complete it."
+msgstr "Klik om een lijn te beginnen.Laat pas los op het einde van de lijn."
 
 #: tools.h:65
 msgid ""
-"Pick a shape to draw.  Click once to pick the center of the shape, click "
-"again to draw it."
+"Pick a shape. Click to pick the center, drag, then let go when it is the "
+"size you want. Move around to rotate it, and click to draw it."
 msgstr ""
-"Kies een vorm om te tekenen. Klik een eerste keer om het midden van de "
-"vorm te plaatsen. Klik nog een keer om de vorm te tekenen."
 
 #: tools.h:66
-msgid "Choose a style of text.  Click on your drawing and you can start typing."
-msgstr "Kies een stijl voor je letters. Klik op je tekening en begin te schrijven."
+#, fuzzy
+msgid "Choose a style of text. Click on your drawing and you can start typing."
+msgstr ""
+"Kies een stijl voor je letters. Klik op je tekening en begin te schrijven."
 
 #: tools.h:67
 msgid "Pick a magical effect to use on your drawing!"
@@ -389,10 +509,21 @@ msgid "Move the mouse to rotate the shape. Click to draw it."
 msgstr "Beweeg de muis om de vorm te draaien. Klik als je tevreden bent."
 
 #: tools.h:81
-msgid "Great!"
-msgstr "Prachtig!"
-
-#: tools.h:82
 msgid "Ok then... Let's keep drawing this one!"
 msgstr "Ok, dan doen we verder met deze!"
 
+#~ msgid "Okay"
+#~ msgstr "Ok"
+
+#~ msgid "Red"
+#~ msgstr "Rood!"
+
+#~ msgid "Grey"
+#~ msgstr "Grijs!"
+
+#~ msgid ""
+#~ "Pick a shape to draw.  Click once to pick the center of the shape, click "
+#~ "again to draw it."
+#~ msgstr ""
+#~ "Kies een vorm om te tekenen. Klik een eerste keer om het midden van de "
+#~ "vorm te plaatsen. Klik nog een keer om de vorm te tekenen."
