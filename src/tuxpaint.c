@@ -315,7 +315,7 @@ enum {
   LANG_NN,     /* Norwegian Nynorsk */
   LANG_PL,     /* Polish */
   LANG_PT_BR,  /* Portuguese (Brazilian) */
-  LANG_PT,     /* Portuguese */
+  LANG_PT_PT,     /* Portuguese (Portugal) */
   LANG_RO,     /* Romanian */
   LANG_RU,     /* Russian */
   LANG_SK,     /* Slovak */
@@ -363,7 +363,7 @@ const char * lang_prefixes[NUM_LANGS] = {
   "nn",
   "pl",
   "pt_br",
-  "pt",
+  "pt_pt",
   "ro",
   "ru",
   "sk",
@@ -3816,7 +3816,7 @@ void show_lang_usage(FILE * f, char * prg)
 /* ms */     "  malay\n"
 /* nn */     "  norwegian    nynorsk                norsk\n"
 /* pl */     "  polish       polski\n"
-/* pt */     "  portuguese   portugues\n"
+/* pt_pt */     "  portuguese   portugues\n"
 /* ro */     "  romanian\n"
 /* ru */     "  russian      russkiy\n"
 /* sr */     "  serbian\n"
