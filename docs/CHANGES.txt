@@ -7,7 +7,14 @@ bill@newbreedsoftware.com
 http://www.newbreedsoftware.com/tuxpaint/
 
 
-2004.August.23 (0.9.14) [cvs]
+2004.September.04 (0.9.14) [cvs]
+  * Added support for immutable "starter" images, which are installed
+    globally with Tux Paint, and provide a starting canvas for images.
+    Two types may be created: coloring-book-style, in which a black outline
+    drawing is kept 'above' the picture the user draws, and scene-style,
+    which is placed 'below' the picture the user draws.  (An optional
+    'front' layer can be made for scene-style images.  See the 'reef' example.)
+
   * Updated Malay translation.
     Muhammad Najmi Ahmad Zabidi <mnajem@linuxmail.org>
 
