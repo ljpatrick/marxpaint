@@ -3,7 +3,7 @@
   
   Tux Paint - A simple drawing program for children.
   
-  Copyright (c) 2003 by Bill Kendrick
+  Copyright (c) 2004 by Bill Kendrick
   bill@newbreedsoftware.com
   http://www.newbreedsoftware.com/tuxpaint/
 
@@ -21,12 +21,12 @@
   along with this program; if not, write to the Free Software
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   
-  June 14, 2002 - December 26, 2003
+  June 14, 2002 - January 14, 2004
 */
 
 
 #define VER_VERSION     "0.9.14"
-#define VER_DATE        "2003.12.26"
+#define VER_DATE        "2004.01.14"
 
 
 /* #define DEBUG */
@@ -1231,28 +1231,33 @@ void mainloop(void)
 		      
 		      if (cur_tool == TOOL_BRUSH)
 			{
+			  cur_thing = cur_brush;
 			  draw_brushes();
 			  draw_colors(1);
 			}
 		      else if (cur_tool == TOOL_STAMP)
 			{
+			  cur_thing = cur_stamp;
 			  draw_stamps();
 			  draw_colors(stamp_colorable(cur_stamp) ||
 				      stamp_tintable(cur_stamp));
 			}
 		      else if (cur_tool == TOOL_LINES)
 			{
+			  cur_thing = cur_brush;
 			  draw_brushes();
 			  draw_colors(1);
 			}
 		      else if (cur_tool == TOOL_SHAPES)
 			{
+			  cur_thing = cur_shape;
 			  draw_shapes();
 			  draw_colors(1);
 			  shape_tool_mode = SHAPE_TOOL_MODE_DONE;
 			}
 		      else if (cur_tool == TOOL_TEXT)
 			{
+			  cur_thing = cur_font;
 			  draw_fonts();
 			  draw_colors(1);
 			}
@@ -1420,6 +1425,7 @@ void mainloop(void)
 			}
 		      else if (cur_tool == TOOL_MAGIC)
 			{
+			  cur_thing = cur_magic;
 			  rainbow_color = 0;
 			  draw_magic();
 
@@ -6882,6 +6888,12 @@ void render_brush(void)
   Uint8 r, g, b, a;
 
 
+  /* Kludge; not sure why cur_brush would become greater! */
+
+  if (cur_brush >= num_brushes)
+    cur_brush = 0;
+  
+
   /* Free the old rendered brush (if any): */
 
   if (img_cur_brush != NULL)
@@ -8827,6 +8839,15 @@ void do_shape(int cx, int cy, int ox, int oy, int rotn, int use_brush)
       else
 	rx = ry;
     }
+
+
+  /* Is the shape tiny?  Make it SOME size, first! */
+
+  if (rx < 15 && ry < 15)
+  {
+    rx = 15;
+    ry = 15;
+  }
 
 
   /* Render a default brush: */

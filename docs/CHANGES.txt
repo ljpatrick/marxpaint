@@ -9,6 +9,14 @@ http://www.newbreedsoftware.com/tuxpaint/
 
 2004.Jan.14 (0.9.14) [cvs]
   * Made sure KDE icon directories exist before trying to copy files to them.
+  
+  * Fixed crash bug when switching from different tools with scrolling
+    collections, and then scrolling.
+    Thanks to Kevin Jarrett for the report, and John Popplewell for a
+    replicable way of crashing it.
+
+  * Made sure shape tool never made a tiny shape.
+    (Should hint users that they should click-and-drag.)
 
   * Updated/corrected Tamil translation
     Mugunth <mugunth@thamizha.com>
