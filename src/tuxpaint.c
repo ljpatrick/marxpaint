@@ -5394,7 +5394,7 @@ static void show_usage(FILE * f, char * prg)
 }
 
 
-// The original Tux Paint canvas was 608x472. The canvas can be
+// The original Tux Paint canvas was 448x376. The canvas can be
 // other sizes now, but many old stamps are sized for the small
 // canvas. So, with larger canvases, we must choose a good scale
 // factor to compensate. As the canvas size grows, the user will
@@ -5402,7 +5402,7 @@ static void show_usage(FILE * f, char * prg)
 // getting tiny". This will calculate the needed scale factor.
 static unsigned compute_default_scale_factor(double ratio)
 {
-  double old_diag = sqrt(608*608+472*472);
+  double old_diag = sqrt(448*448+376*376);
   double new_diag = sqrt(canvas->w*canvas->w+canvas->h*canvas->h);
   double good_def = ratio*sqrt(new_diag/old_diag);
   double good_log = log(good_def);
