@@ -312,7 +312,7 @@ msgstr "Hình thoi"
 
 #: shapes.h:161 shapes.h:162
 msgid "A square has four sides, each the same length."
-msgstr "Hình vuô\bng có bốn cạnh bằng nhau."
+msgstr "Hình vuôbng có bốn cạnh bằng nhau."
 
 #: shapes.h:163 shapes.h:164
 msgid "A rectangle has four sides."
