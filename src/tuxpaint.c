@@ -21,12 +21,12 @@
   along with this program; if not, write to the Free Software
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   
-  June 14, 2002 - March 31, 2004
+  June 14, 2002 - April 14, 2004
 */
 
 
 #define VER_VERSION     "0.9.14"
-#define VER_DATE        "2004.04.01"
+#define VER_DATE        "2004.04.14"
 
 
 /* #define DEBUG */
@@ -322,6 +322,7 @@ enum {
   LANG_SV,     /* Swedish */
   LANG_TA,     /* Tamil */
   LANG_TR,     /* Turkish */
+  LANG_VI,     /* Vietnamese */
   LANG_WA,     /* Walloon */
   LANG_ZH,     /* Chinese */
   NUM_LANGS
@@ -364,6 +365,7 @@ const char * lang_prefixes[NUM_LANGS] = {
   "sv",
   "ta",
   "tr",
+  "vi",
   "wa",
   "zh"
 };
@@ -3822,6 +3824,7 @@ void show_lang_usage(FILE * f, char * prg)
 /* sv */     "  swedish      svenska\n"
 /* ta */     "  tamil\n"
 /* tr */     "  turkish\n"
+/* vi */     "  vietnamese\n"
 /* wa */     "  walloon      walon\n"
 	  "\n",
 	  prg);
@@ -3875,6 +3878,7 @@ void show_locale_usage(FILE * f, char * prg)
 	  "  es_ES   (Spanish      Espanol)\n"
 	  "  sv_SE   (Swedish      Svenska)\n"
 	  "  tr_TR   (Turkish)\n"
+	  "  vi_VN   (Vietnamese)\n"
 	  "  wa_BE   (Walloon)\n"
 	  "\n",
 	  prg);
@@ -4471,6 +4475,11 @@ void setup(int argc, char * argv[])
 	{
 	  putenv("LANG=ja_JP.UTF-8");
 	  putenv("LC_ALL=ja_JP.UTF-8");
+	}
+      else if (strcmp(langstr, "vietnamese") == 0)
+	{
+	  putenv("LANG=vi_VN.UTF-8");
+	  putenv("LC_ALL=vi_VN.UTF-8");
 	}
       else if (strcmp(langstr, "afrikaans") == 0)
 	{

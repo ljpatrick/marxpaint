@@ -115,6 +115,8 @@ LOW-PRIORITY TRANSLATION STUFF:
 
   * Update Czech and Slovak translations (so they use accents/etc.!)
 
+  * Update Vietnamese translation (so it uses accents/etc.!)
+
 
 FEATURE IDEAS:
 --------------
