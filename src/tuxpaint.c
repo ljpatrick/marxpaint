@@ -7,12 +7,12 @@
   bill@newbreedsoftware.com
   http://www.newbreedsoftware.com/tuxpaint/
   
-  June 14, 2002 - September 28, 2003
+  June 14, 2002 - October 13, 2003
 */
 
 
 #define VER_VERSION     "0.9.13"
-#define VER_DATE        "2003.09.28"
+#define VER_DATE        "2003.10.13"
 
 
 #define DEBUG
@@ -8235,8 +8235,8 @@ int do_prompt(char * text, char * btn_yes, char * btn_no)
     SDL_BlitSurface(img_no, NULL, screen, &dest);
 
     wordwrap_text(font, btn_no, black,
-		  166 + PROMPTOFFSETX + 48 + 4, 235 + PROMPTOFFSETY, 475,
-		  0, 0, 1);
+		  166 + PROMPTOFFSETX + 48 + 4, 235 + PROMPTOFFSETY,
+		  475 + PROMPTOFFSETX, 0, 0, 1);
   }
 
 
