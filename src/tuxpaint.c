@@ -3587,12 +3587,10 @@ hue_range_retry:;
       upper_hue_2 = upper_hue_1 - 2 * M_PI;
     }
   
-  while (i > 0)
+  while (i--)
     {
       mc = work + i;
 
-      i--;
-      
       // if not in the first range, and not in the second range, skip this one
       // 
       if ((mc->hue<lower_hue_1 || mc->hue>upper_hue_1) &&
