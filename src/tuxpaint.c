@@ -7,12 +7,12 @@
   bill@newbreedsoftware.com
   http://www.newbreedsoftware.com/tuxpaint/
   
-  June 14, 2002 - December 19, 2003
+  June 14, 2002 - December 20, 2003
 */
 
 
 #define VER_VERSION     "0.9.13"
-#define VER_DATE        "2003.12.19"
+#define VER_DATE        "2003.12.20"
 
 
 /* #define DEBUG */
@@ -49,6 +49,9 @@
 #include <ctype.h>
 #include <math.h>
 #include <time.h>
+#include "hqxx.h"
+#include "hq3x.h"
+#include "hq4x.h"
 
 #include <locale.h>
 #include <iconv.h>

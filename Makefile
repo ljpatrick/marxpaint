@@ -6,7 +6,7 @@
 # bill@newbreedsoftware.com
 # http://www.newbreedsoftware.com/tuxpaint/
 
-# June 14, 2002 - December 19, 2003
+# June 14, 2002 - December 20, 2003
 
 
 # Where to install things:
@@ -541,11 +541,12 @@ install-man:
 
 # Build the program!
 
-tuxpaint:	obj/tuxpaint.o $(ARCH_LIBS)
+tuxpaint:	obj/tuxpaint.o obj/hqxx.o obj/hq3x.o obj/hq4x.o $(ARCH_LIBS)
 	@echo
 	@echo "...Linking Tux Paint..."
 	@$(CC) $(CFLAGS) $(SDL_CFLAGS) $(DEFS) \
-		-o tuxpaint obj/tuxpaint.o $(ARCH_LIBS) $(SDL_LIBS) \
+		-o tuxpaint obj/tuxpaint.o obj/hqxx.o obj/hq3x.o obj/hq4x.o \
+		$(ARCH_LIBS) $(SDL_LIBS) \
 		-lm $(ARCH_LINKS)
 	@$(RSRC_CMD)
 	@$(MIMESET_CMD)
@@ -553,9 +554,10 @@ tuxpaint:	obj/tuxpaint.o $(ARCH_LIBS)
 
 # Build the object for the program!
 
-obj/tuxpaint.o:	src/tuxpaint.c obj \
+obj/tuxpaint.o:	src/tuxpaint.c \
 		src/tools.h src/titles.h src/colors.h src/shapes.h \
 		src/magic.h src/sounds.h src/tip_tux.h src/great.h \
+		src/hqxx.h src/hq3x.h src/hq4x.h \
 		src/mouse/arrow.xbm src/mouse/arrow-mask.xbm \
 		src/mouse/hand.xbm src/mouse/hand-mask.xbm \
 		src/mouse/insertion.xbm src/mouse/insertion-mask.xbm \
@@ -579,6 +581,26 @@ obj/BeOS_Print.o:	src/BeOS_Print.cpp obj src/BeOS_print.h
 	@echo "...Compiling BeOS print support..."
 	@$(CC) $(CFLAGS) $(SDL_CFLAGS) $(DEFS) \
 		-c src/BeOS_print.cpp -o obj/BeOS_print.o
+
+
+obj/hq3x.o:	src/hq3x.c src/hq3x.h src/hqxx.h
+	@echo
+	@echo "...Compiling high quality 3x scale filter..."
+	@$(CC) $(CFLAGS) \
+		-c src/hq3x.c -o obj/hq3x.o
+
+
+obj/hq4x.o:	src/hq4x.c src/hq4x.h src/hqxx.h
+	@echo
+	@echo "...Compiling high quality 4x scale filter..."
+	@$(CC) $(CFLAGS) \
+		-c src/hq4x.c -o obj/hq4x.o
+
+obj/hqxx.o:	src/hqxx.c src/hqxx.h
+	@echo
+	@echo "...Compiling high quality scale filter helpers..."
+	@$(CC) $(CFLAGS) \
+		-c src/hqxx.c -o obj/hqxx.o
 
 
 # Build the translation files for gettext
@@ -654,11 +676,11 @@ trans/es.mo:	src/messages/es.po
 trans/eu.mo:	src/messages/eu.po
 	@echo "   eu_ES ...Basque..."
 	@msgfmt src/messages/eu.po -o trans/eu.mo
-	
+
 trans/fi.mo:	src/messages/fi.po
 	@echo "   fi_FI ...Finnish..."
 	@msgfmt src/messages/fi.po -o trans/fi.mo
-	
+
 trans/fr.mo:	src/messages/fr.po
 	@echo "   fr_FR ...French..."
 	@msgfmt src/messages/fr.po -o trans/fr.mo
@@ -681,8 +703,8 @@ trans/is.mo:	src/messages/is.po
 
 trans/it.mo:	src/messages/it.po
 	@echo "   it_IT ...Italian..."
-	@msgfmt src/messages/it.po -o trans/it.mo
-	
+	@msgfmt src/messages/it.po -o trans/it.m
+
 trans/ja.mo:	src/messages/ja.po
 	@echo "   ja_JP ...Japanese..."
 	@msgfmt src/messages/ja.po -o trans/ja.mo
@@ -706,7 +728,7 @@ trans/nl.mo:	src/messages/nl.po
 trans/nb.mo:	src/messages/nb.po
 	@echo "   nb_NO ...Norwegian Bokmal..."
 	@msgfmt src/messages/nb.po -o trans/nb.mo
-	
+
 trans/nn.mo:	src/messages/nn.po
 	@echo "   nn_NO ...Norwegian Nynorsk..."
 	@msgfmt src/messages/nn.po -o trans/nn.mo

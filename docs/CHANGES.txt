@@ -7,7 +7,7 @@ bill@newbreedsoftware.com
 http://www.newbreedsoftware.com/tuxpaint/
 
 
-2003.Dec.19 (0.9.13)
+2003.Dec.20 (0.9.13)
   * Translated into Basque (eu_ES)
     Juan Irigoien <juanirigoien@irakasle.net>
 
@@ -25,7 +25,11 @@ http://www.newbreedsoftware.com/tuxpaint/
     (Place "noflip" and/or "nomirror" in the stamps' ".dat"
     option files.)  Stamps can have alternative mirror-images (e.g., to
     show a shape the opposite direction, but not have backwards text on it).
-    Create "filename_mirror.png" image files.  [PENDING]
+    Create "filename_mirror.png" image files.
+
+  * Incorproated high quality filtering code from HiEnd3D,
+    http://www.hiend3d.com/hq3x.html
+    by Maxim Stepin <maxim@hiend3d.com>
 
   * Added "--nostampcontrols", "--mirrorstamps" and their opposite options,
     to disable stamp controls, and default to mirrored stamp shapes,

@@ -7,7 +7,7 @@ bill@newbreedsoftware.com
 http://www.newbreedsoftware.com/tuxpaint/
 
 
-June 17, 2002 - December 18, 2003
+June 17, 2002 - December 20, 2003
 
 
 * Design and Coding:
@@ -26,7 +26,11 @@ June 17, 2002 - December 18, 2003
   by Damian Yerrick - http://www.wikipedia.org/wiki/Damian_Yerrick
 
   800x600 resolution support patch by:
-  TOYAMA Shin-ichi <kyone@tky2.3web.ne.jp>
+  TOYAMA Shin-ichi <shin1@wmail.plala.or.jp>
+
+  High quality stamp scaler from "hq2x", "hq3x" and "hq4x" demos
+  http://www.hiend3d.com/hq3x.html
+  by Maxim Stepin <maxim@hiend3d.com>
 
 
 * Graphics
