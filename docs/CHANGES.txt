@@ -51,6 +51,7 @@ http://www.newbreedsoftware.com/tuxpaint/
   * Text tool improvements:
     -----------------------
     * Attempts to pick up the system's fonts, too!
+      (Disable loading system fonts with "--nosysfonts" or "nosysfonts=yes".)
       Albert Cahalan <albert@users.sf.net>
 
     * Italic, bold and sizes are now controlled with separate buttons

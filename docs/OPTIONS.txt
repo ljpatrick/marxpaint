@@ -3,13 +3,13 @@
 
                              Options Documentation
 
-                        Copyright 2004 by Bill Kendrick
+                        Copyright 2005 by Bill Kendrick
                                New Breed Software
 
                            bill@newbreedsoftware.com
                    http://www.newbreedsoftware.com/tuxpaint/
 
-                               December 26, 2004
+                                January 3, 2005
 
    ---------------------------------------------------------------------------
 
@@ -170,6 +170,12 @@ Windows Users
 
              This can help when Tux Paint is run on very slow computers, or
              displayed on a remote X-Window display.
+
+     nosysfonts=yes
+
+             This option prevents Tux Paint from attempting to load fonts
+             (for use in the Text tool) from your operating system. It will
+             only load the ones that come with Tux Paint.
 
      nostamps=yes
 
@@ -392,6 +398,7 @@ Windows Users
        --nooutlines
        --nostamps
        --nostampcontrols
+       --nosysfonts
        --mirrorstamps
        --keyboard
        --savedir DIRECTORY
@@ -420,6 +427,7 @@ Windows Users
        --outlines
        --stamps
        --stampcontrols
+       --sysfonts
        --dontmirrorstamps
        --mouse
        --saveoverask

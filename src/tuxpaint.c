@@ -1389,6 +1389,7 @@ static int use_sound, fullscreen, disable_quit, simple_shapes,
   wheely, no_fancy_cursors, keymouse, mouse_x, mouse_y,
   mousekey_up, mousekey_down, mousekey_left, mousekey_right,
   dont_do_xor, use_print_config, dont_load_stamps, noshortcuts,
+  no_system_fonts,
   mirrorstamps, disable_stamp_controls, disable_save, ok_to_use_lockfile;
 static int starter_mirrored, starter_flipped;
 static int recording, playing;
@@ -1676,6 +1677,7 @@ static void groupfonts_range(style_info **base, int count)
   int boldcounts[4] = {0,0,0,0};
   int boldmap[4] = {-1,-1,-1,-1};
   int i;
+
 if(count<1 || count>4)
 {
 printf("::::::: %d %s\n",count, base[0]->family);
@@ -1684,8 +1686,9 @@ while(i--)
 {
 printf("               %s\n", base[i]->style);
 }
-sleep(5);
+//sleep(5);
 }
+
   i = count;
   while(i--)
     boldcounts[base[i]->boldness]++;
@@ -5901,6 +5904,7 @@ static void show_usage(FILE * f, char * prg)
 	  "  %s [--mouse | --keyboard]        [--dontgrab | --grab]\n"
 	  "  %s [--noshortcuts | --shortcuts] [--wheelmouse | --nowheelmouse]\n"
 	  "  %s [--outlines | --nooutlines]   [--stamps | --nostamps]\n"
+	  "  %s [--nosysfonts | --sysfonts]\n"
 	  "  %s [--nostampcontrols | --stampcontrols]\n"
 	  "  %s [--mirrorstamps | --dontmirrorstamps]\n"
 	  "  %s [--saveoverask | --saveover | --saveovernew]\n"
@@ -5923,7 +5927,7 @@ static void show_usage(FILE * f, char * prg)
 #ifdef WIN32
 	  blank,
 #endif
-	  blank);
+	  blank, blank);
 
   free(blank);
 }
@@ -6010,6 +6014,7 @@ static void setup(int argc, char * argv[])
   disable_save = 0;
   disable_print = 0;
   dont_load_stamps = 0;
+  no_system_fonts = 0;
   print_delay = 0;
   printcommand = "pngtopnm | pnmtops | lpr";
   use_print_config = 0;
@@ -6260,6 +6265,14 @@ static void setup(int argc, char * argv[])
       else if (strcmp(argv[i], "--stamps") == 0)
 	{
 	  dont_load_stamps = 0;
+	}
+      else if (strcmp(argv[i], "--nosysfonts") == 0)
+	{
+	  no_system_fonts = 1;
+	}
+      else if (strcmp(argv[i], "--sysfonts") == 0)
+	{
+	  no_system_fonts = 0;
 	}
       else if (strcmp(argv[i], "--noprint") == 0 || strcmp(argv[i], "-p") == 0)
 	{
@@ -6965,19 +6978,22 @@ static void setup(int argc, char * argv[])
 
   loadfonts(DATA_PREFIX "fonts", 1);
 
+  if (!no_system_fonts)
+  {
 #ifdef WIN32
-  // add Windows font dir here
+    // add Windows font dir here
 #else
-  loadfonts("/usr/share/feh/fonts", 0);
-  loadfonts("/usr/share/fonts", 0);
-  loadfonts("/usr/X11R6/lib/X11/fonts", 0);
-  loadfonts("/usr/share/texmf/fonts", 0);
-  loadfonts("/usr/share/grace/fonts/type1", 0);
-  loadfonts("/usr/share/hatman/fonts", 0);
-  loadfonts("/usr/share/icewm/themes/jim-mac", 0);
-  loadfonts("/usr/share/vlc/skins2/fonts", 0);
-  loadfonts("/usr/share/xplanet/fonts", 0);
+    loadfonts("/usr/share/feh/fonts", 0);
+    loadfonts("/usr/share/fonts", 0);
+    loadfonts("/usr/X11R6/lib/X11/fonts", 0);
+    loadfonts("/usr/share/texmf/fonts", 0);
+    loadfonts("/usr/share/grace/fonts/type1", 0);
+    loadfonts("/usr/share/hatman/fonts", 0);
+    loadfonts("/usr/share/icewm/themes/jim-mac", 0);
+    loadfonts("/usr/share/vlc/skins2/fonts", 0);
+    loadfonts("/usr/share/xplanet/fonts", 0);
 #endif
+  }
 
   homedirdir = get_fname("fonts");
   loadfonts(homedirdir, 0);
@@ -14064,12 +14080,15 @@ static void loadfonts(const char * const dir, int fatal)
           // Compressed files (with .gz or .bz2) might also work.
 	  if (strstr(d_names[i], ".ttf") || strstr(d_names[i], ".pfa") || strstr(d_names[i], ".pfb"))
 	    {
-//printf("Loading font: %s/%s\n", dir, d_names[i]);
+printf("Loading font: %s/%s\n", dir, d_names[i]);
               TTF_Font *font = TTF_OpenFont(fname, text_sizes[text_size]);
               if(font)
                 {
                   const char *family = TTF_FontFaceFamilyName(font);
-                  if(!( strstr(family, "Webdings") || strstr(family, "Dingbats") || strstr(family, "Cursor") || strstr(family, "Standard Symbols") ))
+                  if(!(strstr(family, "Webdings") ||
+                       strstr(family, "Dingbats") ||
+                       strstr(family, "Cursor") ||
+                       strstr(family, "Standard Symbols")))
                     {
                       user_font_styles[num_font_styles] = malloc(sizeof *user_font_styles[num_font_styles]);
                       user_font_styles[num_font_styles]->directory = strdup(dir);
@@ -14570,6 +14589,15 @@ static void parse_options(FILE * fi)
 		   strcmp(str, "stamps=yes") == 0)
 	    {
 	      dont_load_stamps = 0;
+	    }
+	  else if (strcmp(str, "nosysfonts=yes") == 0)
+	    {
+	      no_system_fonts = 1;
+	    }
+	  else if (strcmp(str, "nosysfonts=no") == 0 ||
+		   strcmp(str, "sysfonts=yes") == 0)
+	    {
+	      no_system_fonts = 0;
 	    }
 	  else if (strcmp(str, "nosound=yes") == 0)
 	    {
