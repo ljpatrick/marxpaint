@@ -2389,7 +2389,7 @@ static void eat_startup_events(void)
 // get 6.25 MHz out of a 200 MHz Pentium-MMX
 #define CLOCK_ASM(tbl) asm volatile("rdtsc" : "=A" (tbl))
 #define CLOCK_TYPE unsigned long long
-#ifndef
+#ifndef CLOCK_SPEED
 #warning Benchmark times are based on a 450 MHz CPU.
 #define CLOCK_SPEED 450000000.0
 #endif
