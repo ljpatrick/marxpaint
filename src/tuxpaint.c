@@ -2055,7 +2055,7 @@ void mainloop(void)
 		}
 		else
 		{
-		  draw_tux_text(TUX_GREAT, event.user.data1, 0, 1, 0);
+		  draw_tux_text(TUX_GREAT, (char *) event.user.data1, 0, 1, 0);
 		}
 	      }
 	      else
@@ -6329,7 +6329,6 @@ void draw_tux_text(int which_tux, char * str, int want_utf8,
 {
   SDL_Rect dest;
   SDL_Color black = {0, 0, 0, 0};
-  char * upper_str;
 
 
   /* Remove any text-changing timer if one is running: */
@@ -6358,14 +6357,11 @@ void draw_tux_text(int which_tux, char * str, int want_utf8,
   SDL_BlitSurface(img_tux[which_tux], NULL, screen, &dest);
 
 
-  upper_str = uppercase(str);
-  wordwrap_text(font, upper_str, black,
+  wordwrap_text(font, str, black,
 	        img_tux[which_tux] -> w + 5,
 	        (48 * 7) + 40 + 48 + HEIGHTOFFSET + 5,
 	        WINDOW_WIDTH, want_utf8, force_locale_font,
 		want_right_to_left);
-
-  free(upper_str);
 
 
   /* Update the display: */

@@ -27,6 +27,8 @@ http://www.newbreedsoftware.com/tuxpaint/
   * Chinese translation update.
     Wang Jian <lark@linux.net.cn>
 
+  * Fixed bug where translated text would revert to English in 'uppercase' mode.
+
 
 2003.Jun.17 (0.9.11)
   * Windows bugfixes.
