@@ -10953,11 +10953,21 @@ static int do_open(int want_new_tool)
 	    if (img != NULL)
 	    {
 	      /* Loaded the thumbnail from one or the other location */
-
 	      show_progress_bar();
-		  
-	      thumbs[num_files] = SDL_DisplayFormat(img);
+
+	      img1 = SDL_DisplayFormat(img);
 	      SDL_FreeSurface(img);
+
+	      // if too big, or too small in both dimensions, rescale it
+	      // ( for now: using old thumbnail as source for high speed, low quality)
+	      if (img1->w > THUMB_W-20 || img1->h > THUMB_H-20 || (img1->w < THUMB_W-20 && img1->h < THUMB_H-20) )
+	        {
+	          img2 = thumbnail(img1, THUMB_W - 20, THUMB_H - 20, 0);
+	          SDL_FreeSurface(img1);
+	          img1 = img2;
+	        }
+
+	      thumbs[num_files] = img1;
 		      
 	      if (thumbs[num_files] == NULL)
 	      {
