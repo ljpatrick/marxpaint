@@ -21,12 +21,12 @@
   along with this program; if not, write to the Free Software
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   
-  June 14, 2002 - December 12, 2004
+  June 14, 2002 - December 26, 2004
 */
 
 
 #define VER_VERSION     "0.9.15"
-#define VER_DATE        "2004-12-12"
+#define VER_DATE        "2004-12-26"
 
 
 //#define VIDEO_BPP 15 // saves memory
@@ -504,6 +504,7 @@ enum {
   LANG_SQ,     /* Albanian */
   LANG_SR,     /* Serbian */
   LANG_SV,     /* Swedish */
+  LANG_SW,     /* Swahili */
   LANG_TA,     /* Tamil */
   LANG_TR,     /* Turkish */
   LANG_VI,     /* Vietnamese */
@@ -556,6 +557,7 @@ static const char * lang_prefixes[NUM_LANGS] = {
   "sq",
   "sr",
   "sv",
+  "sw",
   "ta",
   "tr",
   "vi",
@@ -4975,6 +4977,7 @@ static void show_lang_usage(FILE * f, char * prg)
 /* sk */     "  slovak\n"
 /* sl */     "  slovenian    slovensko\n"
 /* es */     "  spanish      espanol\n"
+/* sw */     "  swahili\n"
 /* sv */     "  swedish      svenska\n"
 /* ta */     "  tamil\n"
 /* tr */     "  turkish\n"
@@ -5039,6 +5042,7 @@ static void show_locale_usage(FILE * f, char * prg)
 	  "  sq_AL   (Albanian)\n"
 	  "  sr_YU   (Serbian)\n"
 	  "  es_ES   (Spanish      Espanol)\n"
+	  "  sw_TZ   (Swahili)\n"
 	  "  sv_SE   (Swedish      Svenska)\n"
 	  "  tr_TR   (Turkish)\n"
 	  "  vi_VN   (Vietnamese)\n"
@@ -5849,6 +5853,11 @@ static void setup(int argc, char * argv[])
 	{
 	  putenv((char *) "LANGUAGE=sv_SE.UTF-8");
 	  putenv((char *) "LC_ALL=sv_SE.UTF-8");
+	}
+      else if (strcmp(langstr, "swahili") == 0)
+	{
+	  putenv((char *) "LANGUAGE=sw_TZ.UTF-8");
+	  putenv((char *) "LC_ALL=sw_TZ.UTF-8");
 	}
       else if (strcmp(langstr, "turkish") == 0)
 	{

@@ -7,7 +7,7 @@ bill@newbreedsoftware.com
 http://www.newbreedsoftware.com/tuxpaint/
 
 
-2004.December.11 (0.9.15)
+2004.December.26 (0.9.15)
   * Stamp tool improvements:
     ------------------------
     * Greatly improved stamp outlining (to avoid empty rows or columns
@@ -149,6 +149,12 @@ http://www.newbreedsoftware.com/tuxpaint/
 
     * Galician translation created.
       Leandro Regueiro <unho@gulo.org>
+
+    * Swahili translation created.
+      Martin Benjamin <martin.benjamin@yale.edu>
+      Alberto Escudero-Pascual <aep@it46.se>
+      Kamusi Project at Yale University
+      Open Swahili Localization Project at the University of Dar es Salaam
 
   * Translation updates:
     --------------------

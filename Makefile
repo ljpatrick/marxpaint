@@ -6,7 +6,7 @@
 # bill@newbreedsoftware.com
 # http://www.newbreedsoftware.com/tuxpaint/
 
-# June 14, 2002 - November 21, 2004
+# June 14, 2002 - December 26, 2004
 
 
 # Where to install things:
@@ -139,7 +139,7 @@ beos:
 		DOC_PREFIX=./docs/ \
 		MAN_PREFIX=./src/ \
 		CONFDIR=./src/ \
-		ICON_PREFIX=./
+		ICON_PREFIX=./ \
 		X11_ICON_PREFIX=./ \
 		LOCALE_PREFIX=/boot/home/config/share/locale/ \
 		CFLAGS="-O1 -funroll-loops -fomit-frame-pointer -pipe -Wall" \
@@ -288,6 +288,7 @@ uninstall:
 	-rm $(LOCALE_PREFIX)sq/LC_MESSAGES/tuxpaint.mo
 	-rm $(LOCALE_PREFIX)sr/LC_MESSAGES/tuxpaint.mo
 	-rm $(LOCALE_PREFIX)sv/LC_MESSAGES/tuxpaint.mo
+	-rm $(LOCALE_PREFIX)sw/LC_MESSAGES/tuxpaint.mo
 	-rm $(LOCALE_PREFIX)ta/LC_MESSAGES/tuxpaint.mo
 	-rm $(LOCALE_PREFIX)tr/LC_MESSAGES/tuxpaint.mo
 	-rm $(LOCALE_PREFIX)vi/LC_MESSAGES/tuxpaint.mo
@@ -656,6 +657,11 @@ install-gettext:
 	@cp trans/es.mo $(LOCALE_PREFIX)es/LC_MESSAGES/tuxpaint.mo
 	@chmod 644 $(LOCALE_PREFIX)es/LC_MESSAGES/tuxpaint.mo
 	@#
+	@echo "   sw_TZ ...Swahili..."
+	@install -d $(LOCALE_PREFIX)sw/LC_MESSAGES
+	@cp trans/sw.mo $(LOCALE_PREFIX)sw/LC_MESSAGES/tuxpaint.mo
+	@chmod 644 $(LOCALE_PREFIX)sw/LC_MESSAGES/tuxpaint.mo
+	@#
 	@echo "   sv_SE ...Swedish..."
 	@install -d $(LOCALE_PREFIX)sv/LC_MESSAGES
 	@cp trans/sv.mo $(LOCALE_PREFIX)sv/LC_MESSAGES/tuxpaint.mo
@@ -823,6 +829,7 @@ translations: trans \
 	trans/sq.mo \
 	trans/sr.mo \
 	trans/sv.mo \
+	trans/sw.mo \
 	trans/ta.mo \
 	trans/tlh.mo \
 	trans/tr.mo \
@@ -999,6 +1006,10 @@ trans/sr.mo:	src/po/sr.po
 trans/sv.mo:	src/po/sv.po
 	@echo "   sv_SE ...Swedish..."
 	@msgfmt src/po/sv.po -o trans/sv.mo
+
+trans/sw.mo:	src/po/sw.po
+	@echo "   sw_TZ ...Swahili..."
+	@msgfmt src/po/sw.po -o trans/sw.mo
 
 trans/ta.mo:	src/po/ta.po
 	@echo "   ta_IN ...Tamil..."

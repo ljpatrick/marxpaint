@@ -7,7 +7,7 @@ bill@newbreedsoftware.com
 http://www.newbreedsoftware.com/tuxpaint/
 
 
-June 17, 2002 - December 12, 2004
+June 17, 2002 - December 26, 2004
 
 
 * Design and Coding:
@@ -28,8 +28,8 @@ June 17, 2002 - December 12, 2004
   800x600 resolution support patch by:
   TOYAMA Shin-ichi <shin1@wmail.plala.or.jp>
 
-  Arbitrary resolution support, smudge tool and improved stamp
-  tinter by:
+  Arbitrary resolution support, smudge magic tool, grass magic tool,
+  brick magic tools, improved stamp tinter, and other fixes by:
   Albert Cahalan <albert@users.sf.net>
 
   High quality stamp scaler from "hq2x", "hq3x" and "hq4x" demos
@@ -86,6 +86,10 @@ June 17, 2002 - December 12, 2004
 
   * Afrikaans
     Petri Jooste <rkwjpj@puk.ac.za>
+
+  * Albanian
+    Ilir Rugova <ilirrugova@gmx.de>
+    Laurent Dhima <laurenti@alblinux.net>
 
   * Basque
     Juan Irigoien <juanirigoien@yahoo.es>
@@ -215,6 +219,10 @@ June 17, 2002 - December 12, 2004
 
   * Spanish
     Gabriel Gazzan <ggabriel@internet.com.uy>
+
+  * Swahili
+    Martin Benjamin <martin.benjamin@yale.edu>
+    Alberto Escudero-Pascual <aep@it46.se>
 
   * Swedish
     Daniel Andersson <daniel@septum.org> [retired]
