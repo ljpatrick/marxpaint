@@ -1,0 +1,131 @@
+TODO.txt for Tux Paint
+
+Tux Paint - A simple drawing program for children.
+
+Copyright (c) 2003 by Bill Kendrick
+bill@newbreedsoftware.com
+http://www.newbreedsoftware.com/tuxpaint/
+
+February 22, 2003
+
+
+LOW-PRIORITY DOCUMENTATION CHANGES:
+-----------------------------------
+  * Windows compilation in INSTALL.txt
+
+  * Mention CONFDIR in INSTALL.txt
+
+
+HIGH-PRIORITY IMPLEMENTATION CHANGES:
+-------------------------------------
+
+
+LOW-PRIORITY IMPLEMENTATION CHANGES:
+------------------------------------
+  * Fix and use scanline fill for filled shapes.
+  
+  * Fix "update_shape()" function and use it to replace SDL_Flip()'s
+
+  * Show different text tip for shape tool when in --simpleshapes mode.
+  
+  * Update Makefile and source so that "*_PREFIX"-like Makefile vars.
+    don't require an ending slash!
+
+  * Allow runtime alteration of mouse control keys (in --keyboard mode).
+
+  * Clean up 800x600 support code
+
+  * Make mouse pointer change from hand to arrow when over unselectable
+    Selector or Color.
+
+  * Allow locale font files to be specified in conf file
+    (so instead of using /usr/local/share/tuxpaint/fonts/locale/ja.ttf,
+    it can use /usr/local/share/ttf/kochi-mincho.ttf).
+    Distros can take advantage of this.
+    (Ben Armstrong's suggestion.)
+
+
+HIGH-PRIORITY BUGS:
+-------------------
+  * Figure out why Tux Paint crashes when displaying Euro symbol (under Linux)
+    2003.02.22
+
+  * Figure out why fonts don't appear on PPC.
+    (Thomas Klausner reported: 2002.09.30)
+  
+  * Deal with clash between Open dialog arrow key controls and
+    mouse arrow key (--keyboard) controls.
+
+
+LOW-PRIORITY BUGS:
+------------------
+  * Fix XOR bug with blinking text cursor.
+  
+  * Fix XOR bug when you 'abort' the shape tool.
+
+
+PLATFORM-SPECIFIC BUGS:
+-----------------------
+  * Create a 'tuxpaint-import' type program for Windows.
+
+  * Translated sound effects not working under XP for some reason.
+    (Works okay under Win98 and Win2K. - Gabriel G., 2002.09.13;
+    still a problem as of 0.9.7, 2003.01.27)
+
+  * Crashing when printing on OS X?  (Reported in v.0.9.2 for OS X)
+
+
+HIGH-PRIORITY TRANSLATION STUFF:
+--------------------------------
+  * Finish current translations.
+
+  * Fix Romanian!
+
+  * Tip text (except stamps) aren't translated in --uppercase mode.
+
+
+LOW-PRIORITY TRANSLATION STUFF:
+-------------------------------
+  * Support more languages!
+    * Hindi
+    * ...
+
+  * Update Czech and Slovak translations (so they use accents/etc.!)
+
+
+FEATURE IDEAS:
+--------------
+  * Sym-link "~/TuxPaintPictures" to "~/.tuxpaint/saved/"???
+    
+  * Show shape instructions after _temporarily_ describing the shape???
+    (Herman Bruyninckx's suggestion; 2002.08.25)
+
+  * Special command-line options that enable groups of other options
+    all at once.  (e.g., "--fullscreen --noquit --printdelay=60 --grab")
+    ...and/or pre-written configuration files.
+    
+    That way a parent/guardian/teacher can very easily set up Tux Paint for
+    certain age groups, for example.
+  
+  * Allow compile-time option (or system config?) that disables
+    parsing of ~/.tuxpaintrc and/or command-line options.
+
+  * Allow command-line option to disable parsing of ~/.tuxpaintrc
+
+  * Show only one category of stamps at a time?
+    (Provide category selection dialog) !?!?!?
+
+  * Show configuration options (e.g., from ~/.tuxpaintrc) in --version info.
+
+
+POSSIBLE FEATURE IDEAS:
+-----------------------
+  * Round eraser
+    
+  * Support animated brushes (then replace Sparkle magic with one) ??
+  
+  * Make a 'rainbow' color (then remove Rainbow magic tool; no longer needed) ??
+  
+  * "Gallery"/slideshow mode (available via Open dialog, maybe?)
+    (Ben Armstrong's suggestion: 2002.08.26)
+

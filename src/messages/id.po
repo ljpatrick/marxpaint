@@ -1,0 +1,471 @@
+# Tuxpaint 0.9.2 (Indonesian)
+#
+# Copyright (c) 2002
+# This file is distributed under the same license as the Tux Paint
+# program.
+#
+# Tedi Heriyanto <tedi_h@gmx.net>, 2003
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Tuxpaint 0.9.2pre\n"
+"POT-Creation-Date: 2003-01-03 14:29-0800\n"
+"PO-Revision-Date: 2003-01-06 14:20GMT+0700\n"
+"Last-Translator: Tedi Heriyanto <tedi_h@gmx.net>\n"
+"Language-Team: Indonesian <translation-team-id@lists.sourceforge.net>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 0.9.6\n"
+
+#: src/tuxpaint.c:567
+msgid "Do you really want to quit?"
+msgstr "Kamu benar-benar ingin keluar?"
+
+#: src/tuxpaint.c:568 src/tuxpaint.c:572 src/tuxpaint.c:576 src/tuxpaint.c:596
+#: src/tuxpaint.c:6280 src/tuxpaint.c:6921
+msgid "Yes"
+msgstr "Ya"
+
+#: src/tuxpaint.c:569 src/tuxpaint.c:573 src/tuxpaint.c:577 src/tuxpaint.c:597
+#: src/tuxpaint.c:6283
+msgid "No"
+msgstr "Tidak"
+
+#: src/tuxpaint.c:571
+msgid "If you quit, you'll lose your picture! Save it?"
+msgstr "Jika kamu keluar, kamu akan kehilangan gambar! Simpan?"
+
+#: src/tuxpaint.c:575
+msgid "Save your picture first?"
+msgstr "Simpan gambarmu dulu?"
+
+#: src/tuxpaint.c:579
+msgid "Can't open that picture!"
+msgstr "Tidak dapat membuka gambar itu!"
+
+#: src/tuxpaint.c:580 src/tuxpaint.c:587 src/tuxpaint.c:590 src/tuxpaint.c:593
+#: src/tuxpaint.c:7255
+msgid "Okay"
+msgstr "Oke"
+
+#: src/tuxpaint.c:582
+msgid "Starting a new picture will erase the current one!"
+msgstr "Memulai gambar baru akan menghapus gambar sekarang!"
+
+#: src/tuxpaint.c:583
+msgid "That's Ok"
+msgstr "OK"
+
+#: src/tuxpaint.c:584
+msgid "Never Mind!"
+msgstr "Lupakan Saja!"
+
+#: src/tuxpaint.c:586
+msgid "There are no saved files!"
+msgstr "Tidak ada file tersimpan!"
+
+#: src/tuxpaint.c:589
+msgid "Your picture has been printed!"
+msgstr "Gambarmu telah dicetak!"
+
+#: src/tuxpaint.c:592
+msgid "You can't print yet!"
+msgstr "Kamu belum dapat mencetak!"
+
+#: src/tuxpaint.c:595
+msgid "Erase this picture?"
+msgstr "Hapus gambar ini?"
+
+#: src/tuxpaint.c:4067 src/tools.h:52
+msgid "Open"
+msgstr "Buka"
+
+#: src/tuxpaint.c:4077
+msgid "Erase"
+msgstr "Hapus"
+
+#: src/tuxpaint.c:4087
+msgid "Back"
+msgstr "Kembali"
+
+#: src/tuxpaint.c:6920
+msgid "Save over the older version of this drawing?"
+msgstr "Simpan gambar ini ke versi yang lebih tua?"
+
+#: src/tuxpaint.c:6922
+msgid "No, save a new file"
+msgstr "Tidak, simpan gambar baru"
+
+#: src/tuxpaint.c:7516
+msgid "Choose the picture you want, then click 'Open'"
+msgstr "Pilih gambar yang kamu inginkan, lalu klik 'Open'"
+
+#: src/tools.h:42
+msgid "Paint"
+msgstr "Gambar"
+
+#: src/tools.h:43
+msgid "Stamp"
+msgstr "Stempel"
+
+#: src/tools.h:44
+msgid "Lines"
+msgstr "Garis"
+
+#: src/tools.h:45 src/titles.h:41
+msgid "Shapes"
+msgstr "Bentuk"
+
+#: src/tools.h:46
+msgid "Text"
+msgstr "Teks"
+
+#: src/tools.h:47 src/titles.h:43
+msgid "Magic"
+msgstr "Magic"
+
+#: src/tools.h:48
+msgid "Undo"
+msgstr "Undo"
+
+#: src/tools.h:49
+msgid "Redo"
+msgstr "Redo"
+
+#: src/tools.h:50
+msgid "Eraser"
+msgstr "Penghapus"
+
+#: src/tools.h:51
+msgid "New"
+msgstr "Baru"
+
+#: src/tools.h:53
+msgid "Save"
+msgstr "Simpan"
+
+#: src/tools.h:54
+msgid "Print"
+msgstr "Cetak"
+
+#: src/tools.h:55
+msgid "Quit"
+msgstr "Keluar"
+
+#: src/tools.h:62
+msgid "Pick a color and a brush shape to draw with."
+msgstr "Pilih sebuah warna dan bentuk kuas untuk menggambar"
+
+#: src/tools.h:63
+msgid "Pick a picture to stamp around your drawing."
+msgstr "Pilih sebuah gambar untuk stempel gambarmu"
+
+#: src/tools.h:64
+msgid "Click to start drawing a line.  Let go to complete it."
+msgstr "Klik untuk mulai menggambar garis.  Lepaskan untuk menyelesaikannya."
+
+#: src/tools.h:65
+msgid ""
+"Pick a shape. Click to pick the center, drag, then let go when it is the "
+"size you want.  Move around to rotate it, and click to draw it."
+msgstr ""
+"Pilih sebuah bentuk. Klik untuk memilih pusat, tarik, lalu lepaskan saat ukurannya "
+"telah sesuai keinginan kamu  Pindahkan untuk memutarnya, dan klik untuk menggambar."
+
+#: src/tools.h:66
+msgid "Choose a style of text.  Click on your drawing and you can start typing."
+msgstr "Pilih gaya teks.  Klik pada gambar kamu dan kamu dapat langsung mengetik."
+
+#: src/tools.h:67
+msgid "Pick a magical effect to use on your drawing!"
+msgstr "Pilih efek magis untuk gambar kamu!"
+
+#: src/tools.h:68
+msgid "Undo!"
+msgstr "Undo!"
+
+#: src/tools.h:69
+msgid "Redo!"
+msgstr "Redo!"
+
+#: src/tools.h:70
+msgid "Eraser!"
+msgstr "Penghapus!"
+
+#: src/tools.h:71
+msgid "You now have a blank sheet to draw on!"
+msgstr "Kamu kini memiliki kertas kosong untuk menggambar!"
+
+#: src/tools.h:72
+msgid "Open..."
+msgstr "Buka..."
+
+#: src/tools.h:73
+msgid "Your image has been saved!"
+msgstr "Gambar kamu telah disimpan!"
+
+#: src/tools.h:74
+msgid "Printing..."
+msgstr "Mencetak..."
+
+#: src/tools.h:75
+msgid "Bye bye!"
+msgstr "Selamat tinggal!"
+
+#: src/tools.h:78
+msgid "Let go of the button to complete the line."
+msgstr "Lepaskan tombol untuk menyelesaikan garis."
+
+#: src/tools.h:79
+msgid "Hold the button to stretch the shape."
+msgstr "Tahan tombol untuk memperbesar bentuk."
+
+#: src/tools.h:80
+msgid "Move the mouse to rotate the shape. Click to draw it."
+msgstr "Pindahkan mouse untuk merotasi bentuk. Klik untuk menggambarnya."
+
+#: src/tools.h:81
+msgid "Ok then... Let's keep drawing this one!"
+msgstr "OK...Mari terus menggambar yang ini!"
+
+#: src/titles.h:37
+msgid "Tools"
+msgstr "Tool"
+
+#: src/titles.h:38
+msgid "Colors"
+msgstr "Warna"
+
+#: src/titles.h:39
+msgid "Brushes"
+msgstr "Kuas"
+
+#: src/titles.h:40
+msgid "Stamps"
+msgstr "Stempel"
+
+#: src/titles.h:42
+msgid "Letters"
+msgstr "Surat"
+
+#: src/colors.h:56
+msgid "Black"
+msgstr "Hitam"
+
+#: src/colors.h:57
+msgid "White"
+msgstr "Putih"
+
+#: src/colors.h:58
+msgid "Red"
+msgstr "Merah"
+
+#: src/colors.h:59
+msgid "Pink"
+msgstr "Merah muda"
+
+#: src/colors.h:60
+msgid "Orange"
+msgstr "Oranye"
+
+#: src/colors.h:61
+msgid "Yellow"
+msgstr "Kuning"
+
+#: src/colors.h:62
+msgid "Green"
+msgstr "Hijau"
+
+#: src/colors.h:63
+msgid "Cyan"
+msgstr "Sian"
+
+#: src/colors.h:64
+msgid "Blue"
+msgstr "Biru"
+
+#: src/colors.h:65
+msgid "Purple"
+msgstr "Ungu"
+
+#: src/colors.h:66
+msgid "Brown"
+msgstr "Coklat"
+
+#: src/colors.h:67
+msgid "Grey"
+msgstr "Abu-abu"
+
+#: src/shapes.h:121 src/shapes.h:122
+msgid "Square"
+msgstr "Persegi"
+
+#: src/shapes.h:123 src/shapes.h:124
+msgid "Rectangle"
+msgstr "Kotak"
+
+#: src/shapes.h:125 src/shapes.h:126
+msgid "Circle"
+msgstr "Lingkaran"
+
+#: src/shapes.h:127 src/shapes.h:128 src/shapes.h:147 src/shapes.h:148
+msgid "Oval"
+msgstr "Oval"
+
+#: src/shapes.h:129 src/shapes.h:130
+msgid "Triangle"
+msgstr "Segitiga"
+
+#: src/shapes.h:131 src/shapes.h:132
+msgid "Pentagon"
+msgstr "Segilima"
+
+#: src/shapes.h:133 src/shapes.h:134
+msgid "Diamond"
+msgstr "Intan"
+
+#: src/shapes.h:141 src/shapes.h:142
+msgid "A square has four sides, each the same length."
+msgstr "Persegi memiliki empat sisi, setiap sisi dengan panjang sama."
+
+#: src/shapes.h:143 src/shapes.h:144
+msgid "A rectangle has four sides."
+msgstr "Sebuah kotak memiliki empat sisi."
+
+#: src/shapes.h:145 src/shapes.h:146
+msgid "A circle is exactly round."
+msgstr "Sebuah lingkaran tepat bulat."
+
+#: src/shapes.h:149 src/shapes.h:150
+msgid "A triangle has three sides."
+msgstr "Sebuah segitiga memiliki tiga sisi."
+
+#: src/shapes.h:151 src/shapes.h:152
+msgid "A pentagon has five sides."
+msgstr "Sebuah segilima memiliki lima sisi."
+
+#: src/shapes.h:153 src/shapes.h:154
+msgid "A diamond is a square, turned around slightly."
+msgstr "Sebuah intan adalah sebuah persegi, yang diputar sedikit."
+
+#: src/magic.h:48
+msgid "Rainbow"
+msgstr "Pelangi"
+
+#: src/magic.h:49
+msgid "Sparkles"
+msgstr "Kilau"
+
+#: src/magic.h:51
+msgid "Mirror"
+msgstr "Mirror"
+
+#: src/magic.h:52
+msgid "Flip"
+msgstr "Flip"
+
+#: src/magic.h:54
+msgid "Blur"
+msgstr "Blur"
+
+#: src/magic.h:55
+msgid "Blocks"
+msgstr "Blok"
+
+#: src/magic.h:57
+msgid "Negative"
+msgstr "Negatif"
+
+#: src/magic.h:58
+msgid "Fade"
+msgstr "Fade"
+
+#: src/magic.h:60
+msgid "Chalk"
+msgstr "Kapur"
+
+#: src/magic.h:61
+msgid "Drip"
+msgstr "Drip"
+
+#: src/magic.h:63
+msgid "Thick"
+msgstr "Tebal"
+
+#: src/magic.h:64
+msgid "Thin"
+msgstr "Tipis"
+
+#: src/magic.h:66
+msgid "Fill"
+msgstr "Isi"
+
+#: src/magic.h:73
+msgid "You can draw in rainbow colors!"
+msgstr "Kamu dapat menggambar dengan warna pelangi!"
+
+#: src/magic.h:74
+msgid "Click and move to draw sparkles"
+msgstr "Klik dan pindahkan untuk menggambar kilau"
+
+#: src/magic.h:76
+msgid "Click to make a mirror image!"
+msgstr "Klik untuk membuat mirror gambar!"
+
+#: src/magic.h:77
+msgid "Click to flip the picture upside-down!"
+msgstr "Klik untuk membalik gambar!"
+
+#: src/magic.h:79
+msgid "Click and move the mouse around to blur the picture"
+msgstr "Klik dan pindahkan mouse ke sekitar untuk mengaburkan gambar"
+
+#: src/magic.h:80
+msgid "Click and move the mouse around to make the picture blocky"
+msgstr "Klik dan pindah mouse ke sekitar untuk membuat gambar berblok"
+
+#: src/magic.h:82
+msgid "Click and move the mouse around to draw a negative"
+msgstr "Klik dan pindahkan mouse ke sekitar untuk menggambar sebuah negatif"
+
+#: src/magic.h:83
+msgid "Click and move to fade the colors."
+msgstr "Klik dan pindahkan untuk mengaburkan warna."
+
+#: src/magic.h:85
+msgid "Click and move the mouse around to turn the picture into a chalk drawing."
+msgstr "Klik dan pindahkan mouse ke sekitar untuk merubah gambar ke gambar dengan kapur."
+
+#: src/magic.h:86
+msgid "Click and move the mouse around to make the picture drip!"
+msgstr "Klik dan pindahkan mouse ke sekitar untuk membuat gambar drip!"
+
+#: src/magic.h:88
+msgid "Click and move the mouse to thicken the picture"
+msgstr "Klik dan pindahkan mouse untuk menebalkan gambar"
+
+#: src/magic.h:89
+msgid "Click and move the mouse to thin the picture"
+msgstr "Klik dan pindahkan mouse untuk menipiskan gambar"
+
+#: src/magic.h:91
+msgid "Click in the picture to fill that area with color"
+msgstr "Klik dalam gambar untuk mengisi area dengan warna"
+
+#: src/great.h:20
+msgid "Great!"
+msgstr "Bagus!"
+
+#: src/great.h:21
+msgid "Cool!"
+msgstr "Hebat!"
+
+#: src/great.h:22
+msgid "Keep it up!"
+msgstr "Teruskan!"
+
+#: src/great.h:23
+msgid "Good job!"
+msgstr "Kerja yang bagus!"
+

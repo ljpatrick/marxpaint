@@ -1,0 +1,552 @@
+# Makefile for tuxpaint
+
+# Tux Paint - A simple drawing program for children.
+
+# Copyright (c) 2002 by Bill Kendrick
+# bill@newbreedsoftware.com
+# http://www.newbreedsoftware.com/tuxpaint/
+
+# June 14, 2002 - January 13, 2002
+# Updated 2003.Feb.03
+
+
+# Where to install things:
+
+PREFIX=/boot/develop/tools/gnupro
+
+
+# Program:
+
+BIN_PREFIX=./
+
+
+# Data:
+
+DATA_PREFIX=./data/
+
+
+# Docs and man page:
+
+DOC_PREFIX=./docs/
+MAN_PREFIX=./src/
+
+
+# 'System-wide' Config file:
+
+ifeq ($(PREFIX),/usr)
+  CONFDIR=/etc/tuxpaint
+else
+  CONFDIR=./src/
+endif
+
+
+# Icons and launchers:
+
+ICON_PREFIX=./
+X11_ICON_PREFIX=./
+GNOME_PREFIX=`gnome-config --prefix`
+KDE_PREFIX=`kde-config --install apps --expandvars`
+KDE_ICON_PREFIX=`kde-config --install icon --expandvars`
+
+
+# Locale files
+
+LOCALE_PREFIX=/boot/home/config/share/locale/
+# LOCALE_PREFIX=/usr/share/locale/
+
+
+# Built with sound by default  (override with "make nosound")
+
+NOSOUNDFLAG=__SOUND
+
+
+# Libraries, paths, and flags:
+
+SDL_LIBS=$(shell sdl-config --libs) -lSDL_image -lSDL_ttf $(SDL_MIXER_LIB)
+SDL_MIXER_LIB=-lSDL_mixer
+SDL_CFLAGS=$(shell sdl-config --cflags)
+
+
+# The entire set of CFLAGS:
+
+CFLAGS=-O1 -funroll-loops -fomit-frame-pointer -pipe -Wall $(SDL_CFLAGS) -DDATA_PREFIX=\"$(DATA_PREFIX)\" \
+	-D$(NOSOUNDFLAG) -DDOC_PREFIX=\"$(DOC_PREFIX)\" \
+	-DLOCALEDIR=\"$(LOCALE_PREFIX)\" -DCONFDIR=\"$(CONFDIR)\"
+
+
+# "make" with no arguments builds the program and man page from sources:
+
+all:	tuxpaint translations
+	@echo
+	@echo "Done compiling."
+	@echo "Now (probably as 'root' superuser), run 'make install'"
+	@echo "to install Tux Paint."
+	@echo
+
+
+
+# "make nosound" builds the program with sound disabled, and man page,
+# from sources:
+
+nosound:
+	@echo
+	@echo "Building with sound DISABLED"
+	@echo
+	make SDL_MIXER_LIB= NOSOUNDFLAG=NOSOUND
+
+
+
+# "make install" installs all of the various parts
+# (depending on the *PREFIX variables at the top, you probably need
+# to do this as superuser ("root"))
+
+install:	install-bin install-data install-man install-doc \
+		install-gnome install-kde install-kde-icons \
+		install-icon install-gettext install-importscript \
+		install-default-config
+	@echo
+	@echo "All done! Now (preferably NOT as 'root' superuser),"
+	@echo "you can type the command 'tuxpaint' to run the program!!!"
+	@echo
+	@echo "For more information, see the 'tuxpaint' man page,"
+	@echo "run 'tuxpaint --usage' or see $(DOC_PREFIX)README.txt"
+	@echo
+	@echo "Enjoy!"
+	@echo
+
+
+# "make clean" deletes the program, the compiled objects and the
+# built man page (returns to factory archive, pretty much...)
+
+clean:
+	@echo
+	@echo "Cleaning up the build directory! ($(PWD))"
+	@-rm -f tuxpaint
+	@-rm -f obj/*.o
+	@if [ -d obj ]; then rmdir obj; fi
+	@-rm -f trans/*.mo
+	@if [ -d trans ]; then rmdir trans; fi
+	@echo
+
+
+# "make uninstall" should remove the various parts from their
+# installation locations.  BE SURE the *PREFIX variables at the top
+# are the same as they were when you installed, of course!!!
+
+uninstall:
+	if [ "x$(GNOME_PREFIX)" != "x" ]; then \
+	  rm $(GNOME_PREFIX)/share/gnome/apps/Graphics/tuxpaint.desktop; \
+	  rm $(GNOME_PREFIX)/share/pixmaps/tuxpaint.png; \
+	fi
+	if [ "x$(KDE_PREFIX)" != "x" ]; then \
+	  rm $(KDE_PREFIX)/Graphics/tuxpaint.desktop; \
+	fi
+	-rm $(ICON_PREFIX)tuxpaint.png
+	-rm $(X11_ICON_PREFIX)tuxpaint.xpm
+	-rm $(BIN_PREFIX)/tuxpaint
+	-rm $(BIN_PREFIX)/tuxpaint-import
+	-rm -r $(DATA_PREFIX)
+	-rm -r $(DOC_PREFIX)
+	-rm $(MAN_PREFIX)/man1/tuxpaint.1.gz
+	-rm $(LOCALE_PREFIX)cs/LC_MESSAGES/tuxpaint.mo
+	-rm $(LOCALE_PREFIX)ca/LC_MESSAGES/tuxpaint.mo
+	-rm $(LOCALE_PREFIX)da/LC_MESSAGES/tuxpaint.mo
+	-rm $(LOCALE_PREFIX)de/LC_MESSAGES/tuxpaint.mo
+	-rm $(LOCALE_PREFIX)en_GB/LC_MESSAGES/tuxpaint.mo
+	-rm $(LOCALE_PREFIX)zh_CN/LC_MESSAGES/tuxpaint.mo
+	-rm $(LOCALE_PREFIX)id/LC_MESSAGES/tuxpaint.mo
+	-rm $(LOCALE_PREFIX)el/LC_MESSAGES/tuxpaint.mo
+	-rm $(LOCALE_PREFIX)es/LC_MESSAGES/tuxpaint.mo
+	-rm $(LOCALE_PREFIX)fi/LC_MESSAGES/tuxpaint.mo
+	-rm $(LOCALE_PREFIX)fr/LC_MESSAGES/tuxpaint.mo
+	-rm $(LOCALE_PREFIX)hu/LC_MESSAGES/tuxpaint.mo
+	-rm $(LOCALE_PREFIX)is/LC_MESSAGES/tuxpaint.mo
+	-rm $(LOCALE_PREFIX)it/LC_MESSAGES/tuxpaint.mo
+	-rm $(LOCALE_PREFIX)ja/LC_MESSAGES/tuxpaint.mo
+	-rm $(LOCALE_PREFIX)ko/LC_MESSAGES/tuxpaint.mo
+	-rm $(LOCALE_PREFIX)ro/LC_MESSAGES/tuxpaint.mo
+	-rm $(LOCALE_PREFIX)nl/LC_MESSAGES/tuxpaint.mo
+	-rm $(LOCALE_PREFIX)nn/LC_MESSAGES/tuxpaint.mo
+	-rm $(LOCALE_PREFIX)sv/LC_MESSAGES/tuxpaint.mo
+	-rm $(LOCALE_PREFIX)pt_BR/LC_MESSAGES/tuxpaint.mo
+	-rm $(LOCALE_PREFIX)pl/LC_MESSAGES/tuxpaint.mo
+	-rm $(LOCALE_PREFIX)tr/LC_MESSAGES/tuxpaint.mo
+	-rm -f -r $(CONFDIR)
+
+
+# Install default config file:
+
+install-default-config:
+	@echo
+	@echo "...Installing default config file..."
+	@install -d $(CONFDIR)
+	@cp src/tuxpaint.conf $(CONFDIR)
+	@chmod 644 $(CONFDIR)/tuxpaint.conf
+
+
+# Install a launcher icon in the Gnome menu, under "Graphics"
+
+install-gnome:
+	@echo
+	@echo "...Installing launcher icon into GNOME..."
+	@if [ "x$(GNOME_PREFIX)" != "x" ]; then \
+	 install -d $(GNOME_PREFIX)/share/pixmaps; \
+	 cp data/images/icon.png $(GNOME_PREFIX)/share/pixmaps/tuxpaint.png; \
+	 chmod 644 $(GNOME_PREFIX)/share/pixmaps/tuxpaint.png; \
+	 install -d $(GNOME_PREFIX)/share/gnome/apps/Graphics; \
+	 cp src/tuxpaint.desktop $(GNOME_PREFIX)/share/gnome/apps/Graphics/; \
+	 chmod 644 $(GNOME_PREFIX)/share/gnome/apps/Graphics/tuxpaint.desktop; \
+	fi
+
+
+# Install a launcher icon in the KDE menu...
+
+install-kde:
+	@echo
+	@echo "...Installing launcher icon into KDE..."
+	@if [ "x$(KDE_PREFIX)" != "x" ]; then \
+	  cp src/tuxpaint.desktop $(KDE_PREFIX)/Graphics/; \
+	  chmod 644 $(KDE_PREFIX)/Graphics/tuxpaint.desktop; \
+	fi
+
+
+install-kde-icons:
+	@echo "...Installing launcher icon graphics into KDE..."
+	@if [ "x$(KDE_ICON_PREFIX)" != "x" ]; then \
+	  cp data/images/icon48x48.png \
+		$(KDE_ICON_PREFIX)/hicolor/48x48/apps/tuxpaint.png; \
+	  cp data/images/icon32x32.png \
+		$(KDE_ICON_PREFIX)/hicolor/32x32/apps/tuxpaint.png; \
+	  cp data/images/icon16x16.png \
+		$(KDE_ICON_PREFIX)/hicolor/16x16/apps/tuxpaint.png; \
+	fi
+
+
+# Install the PNG icon (for GNOME, KDE, etc.)
+# and the 24-color 32x32 XPM (for other Window managers):
+
+install-icon:
+	@echo
+	@echo "...Installing launcher icon graphics..."
+	@install -d $(ICON_PREFIX)
+	@cp data/images/icon.png $(ICON_PREFIX)tuxpaint.png
+	@chmod 644 $(ICON_PREFIX)tuxpaint.png
+	@install -d $(X11_ICON_PREFIX)
+	@cp data/images/icon32x32.xpm $(X11_ICON_PREFIX)tuxpaint.xpm
+	@chmod 644 $(X11_ICON_PREFIX)tuxpaint.xpm
+
+
+# Install the program:
+
+install-bin:
+	@echo
+	@echo "...Installing program itself..."
+	@cp tuxpaint $(BIN_PREFIX)
+	@chmod a+rx,g-w,o-w $(BIN_PREFIX)/tuxpaint
+
+
+# Install the import script:
+
+install-importscript:
+	@echo
+	@echo "...Installing 'tuxpaint-import' script..."
+	@cp src/tuxpaint-import.sh $(BIN_PREFIX)/tuxpaint-import
+	@chmod a+rx,g-w,o-w $(BIN_PREFIX)/tuxpaint-import
+
+
+# Install the data (sound, graphics, fonts):
+
+install-data:
+	@echo
+	@echo "...Installing data files..."
+	@install -d $(DATA_PREFIX)
+	@cp -R data/* $(DATA_PREFIX)
+	@chmod -R a+rX,g-w,o-w $(DATA_PREFIX)
+
+
+# Install the translated text:
+
+install-gettext:
+	@echo
+	@echo "...Installing translation files..."
+	@#
+	@echo "   ...French..."
+	@install -d $(LOCALE_PREFIX)fr/LC_MESSAGES
+	@cp trans/fr.mo $(LOCALE_PREFIX)fr/LC_MESSAGES/tuxpaint.mo
+	@chmod 644 $(LOCALE_PREFIX)fr/LC_MESSAGES/tuxpaint.mo
+	@#
+	@echo "   ...Icelandic..."
+	@install -d $(LOCALE_PREFIX)is/LC_MESSAGES
+	@cp trans/is.mo $(LOCALE_PREFIX)is/LC_MESSAGES/tuxpaint.mo
+	@chmod 644 $(LOCALE_PREFIX)is/LC_MESSAGES/tuxpaint.mo
+	@#
+	@echo "   ...Hungarian..."
+	@install -d $(LOCALE_PREFIX)hu/LC_MESSAGES
+	@cp trans/hu.mo $(LOCALE_PREFIX)hu/LC_MESSAGES/tuxpaint.mo
+	@chmod 644 $(LOCALE_PREFIX)hu/LC_MESSAGES/tuxpaint.mo
+	@#
+	@echo "   ...Chinese (Simplified)..."
+	@install -d $(LOCALE_PREFIX)zh_CN/LC_MESSAGES
+	@cp trans/zh_cn.mo $(LOCALE_PREFIX)zh_CN/LC_MESSAGES/tuxpaint.mo
+	@chmod 644 $(LOCALE_PREFIX)zh_CN/LC_MESSAGES/tuxpaint.mo
+	@#
+	@echo "   ...Indonesian..."
+	@install -d $(LOCALE_PREFIX)id/LC_MESSAGES
+	@cp trans/id.mo $(LOCALE_PREFIX)id/LC_MESSAGES/tuxpaint.mo
+	@chmod 644 $(LOCALE_PREFIX)id/LC_MESSAGES/tuxpaint.mo
+	@#
+	@echo "   ...Greek..."
+	@install -d $(LOCALE_PREFIX)el/LC_MESSAGES
+	@cp trans/el.mo $(LOCALE_PREFIX)el/LC_MESSAGES/tuxpaint.mo
+	@chmod 644 $(LOCALE_PREFIX)el/LC_MESSAGES/tuxpaint.mo
+	@#
+	@echo "   ...Romanian..."
+	@install -d $(LOCALE_PREFIX)ro/LC_MESSAGES
+	@cp trans/ro.mo $(LOCALE_PREFIX)ro/LC_MESSAGES/tuxpaint.mo
+	@chmod 644 $(LOCALE_PREFIX)ro/LC_MESSAGES/tuxpaint.mo
+	@#
+	@echo "   ...British English..."
+	@install -d $(LOCALE_PREFIX)en_GB/LC_MESSAGES
+	@cp trans/en_gb.mo $(LOCALE_PREFIX)en_GB/LC_MESSAGES/tuxpaint.mo
+	@chmod 644 $(LOCALE_PREFIX)en_GB/LC_MESSAGES/tuxpaint.mo
+	@#
+	@echo "   ...Catalan..."
+	@install -d $(LOCALE_PREFIX)ca/LC_MESSAGES
+	@cp trans/ca.mo $(LOCALE_PREFIX)ca/LC_MESSAGES/tuxpaint.mo
+	@chmod 644 $(LOCALE_PREFIX)ca/LC_MESSAGES/tuxpaint.mo
+	@#
+	@echo "   ...German..."
+	@install -d $(LOCALE_PREFIX)de/LC_MESSAGES
+	@cp trans/de.mo $(LOCALE_PREFIX)de/LC_MESSAGES/tuxpaint.mo
+	@chmod 644 $(LOCALE_PREFIX)de/LC_MESSAGES/tuxpaint.mo
+	@#
+	@echo "   ...Spanish..."
+	@install -d $(LOCALE_PREFIX)es/LC_MESSAGES
+	@cp trans/es.mo $(LOCALE_PREFIX)es/LC_MESSAGES/tuxpaint.mo
+	@chmod 644 $(LOCALE_PREFIX)es/LC_MESSAGES/tuxpaint.mo
+	@#
+	@echo "   ...Finnish..."
+	@install -d $(LOCALE_PREFIX)fi/LC_MESSAGES
+	@cp trans/fi.mo $(LOCALE_PREFIX)fi/LC_MESSAGES/tuxpaint.mo
+	@chmod 644 $(LOCALE_PREFIX)fi/LC_MESSAGES/tuxpaint.mo
+	@#
+	@echo "   ...Turkish..."
+	@install -d $(LOCALE_PREFIX)tr/LC_MESSAGES
+	@cp trans/tr.mo $(LOCALE_PREFIX)tr/LC_MESSAGES/tuxpaint.mo
+	@chmod 644 $(LOCALE_PREFIX)tr/LC_MESSAGES/tuxpaint.mo
+	@#
+	@echo "   ...Norwegian..."
+	@install -d $(LOCALE_PREFIX)nn/LC_MESSAGES
+	@cp trans/nn.mo $(LOCALE_PREFIX)nn/LC_MESSAGES/tuxpaint.mo
+	@chmod 644 $(LOCALE_PREFIX)nn/LC_MESSAGES/tuxpaint.mo
+	@#
+	@echo "   ...Italian..."
+	@install -d $(LOCALE_PREFIX)it/LC_MESSAGES
+	@cp trans/it.mo $(LOCALE_PREFIX)it/LC_MESSAGES/tuxpaint.mo
+	@chmod 644 $(LOCALE_PREFIX)it/LC_MESSAGES/tuxpaint.mo
+	@#
+	@echo "   ...Dutch..."
+	@install -d $(LOCALE_PREFIX)nl/LC_MESSAGES
+	@cp trans/nl.mo $(LOCALE_PREFIX)nl/LC_MESSAGES/tuxpaint.mo
+	@chmod 644 $(LOCALE_PREFIX)nl/LC_MESSAGES/tuxpaint.mo
+	@#
+	@echo "   ...Swedish..."
+	@install -d $(LOCALE_PREFIX)sv/LC_MESSAGES
+	@cp trans/sv.mo $(LOCALE_PREFIX)sv/LC_MESSAGES/tuxpaint.mo
+	@chmod 644 $(LOCALE_PREFIX)sv/LC_MESSAGES/tuxpaint.mo
+	@#
+	@echo "   ...Brazilian Portuguese..."
+	@install -d $(LOCALE_PREFIX)pt_BR/LC_MESSAGES
+	@cp trans/pt_br.mo $(LOCALE_PREFIX)pt_BR/LC_MESSAGES/tuxpaint.mo
+	@chmod 644 $(LOCALE_PREFIX)pt_BR/LC_MESSAGES/tuxpaint.mo
+	@#
+	@echo "   ...Korean..."
+	@install -d $(LOCALE_PREFIX)ko/LC_MESSAGES
+	@cp trans/ko.mo $(LOCALE_PREFIX)ko/LC_MESSAGES/tuxpaint.mo
+	@chmod 644 $(LOCALE_PREFIX)ko/LC_MESSAGES/tuxpaint.mo
+	@#
+	@echo "   ...Polish..."
+	@install -d $(LOCALE_PREFIX)pl/LC_MESSAGES
+	@cp trans/pl.mo $(LOCALE_PREFIX)pl/LC_MESSAGES/tuxpaint.mo
+	@chmod 644 $(LOCALE_PREFIX)pl/LC_MESSAGES/tuxpaint.mo
+	@#
+	@echo "   ...Czech..."
+	@install -d $(LOCALE_PREFIX)cs/LC_MESSAGES
+	@cp trans/cs.mo $(LOCALE_PREFIX)cs/LC_MESSAGES/tuxpaint.mo
+	@chmod 644 $(LOCALE_PREFIX)cs/LC_MESSAGES/tuxpaint.mo
+	@#
+	@echo "   ...Danish..."
+	@install -d $(LOCALE_PREFIX)da/LC_MESSAGES
+	@cp trans/da.mo $(LOCALE_PREFIX)da/LC_MESSAGES/tuxpaint.mo
+	@chmod 644 $(LOCALE_PREFIX)da/LC_MESSAGES/tuxpaint.mo
+
+
+# Install the text documentation:
+
+install-doc:
+	@echo
+	@echo "...Installing documentation..."
+	@install -d $(DOC_PREFIX)
+	@cp -R docs/* $(DOC_PREFIX)
+	@chmod a=rX,g=rX,o=rwX $(DOC_PREFIX)
+
+
+# Install the man page:
+
+install-man:
+	@echo
+	@echo "...Installing man pages..."
+	@# man1 directory...
+	@install -d $(MAN_PREFIX)/man1/
+	@# tuxpaint.1
+	@cp src/tuxpaint.1 $(MAN_PREFIX)/man1/
+	@gzip -f $(MAN_PREFIX)/man1/tuxpaint.1
+	@chmod a+rx,g-w,o-w $(MAN_PREFIX)/man1/tuxpaint.1.gz
+	@# tuxpaint-import.1
+	@cp src/tuxpaint-import.1 $(MAN_PREFIX)/man1/
+	@gzip -f $(MAN_PREFIX)/man1/tuxpaint-import.1
+	@chmod a+rx,g-w,o-w $(MAN_PREFIX)/man1/tuxpaint-import.1.gz
+
+
+# Build the program!
+
+tuxpaint:	obj/tuxpaint.o	obj/BeOS_print.o
+	@echo
+	@echo "...Linking Tux Paint..."
+	@$(CC) $(CFLAGS) -o tuxpaint obj/tuxpaint.o obj/BeOS_print.o $(SDL_LIBS) -lintl -lpng -lz -lbe
+	@xres -o tuxpaint tuxpaint.rsrc
+	@mimeset -f tuxpaint
+
+# Build the object for the program!
+
+obj/tuxpaint.o:	src/tuxpaint.c obj \
+		src/tools.h src/titles.h src/colors.h src/shapes.h \
+		src/magic.h src/sounds.h src/tip_tux.h src/great.h \
+		src/mouse/arrow.xbm src/mouse/arrow-mask.xbm \
+		src/mouse/hand.xbm src/mouse/hand-mask.xbm \
+		src/mouse/insertion.xbm src/mouse/insertion-mask.xbm \
+		src/mouse/wand.xbm src/mouse/wand-mask.xbm \
+		src/mouse/brush.xbm src/mouse/brush-mask.xbm \
+		src/mouse/crosshair.xbm src/mouse/crosshair-mask.xbm \
+		src/mouse/rotate.xbm src/mouse/rotate-mask.xbm \
+		src/mouse/tiny.xbm src/mouse/tiny-mask.xbm \
+		src/mouse/watch.xbm src/mouse/watch-mask.xbm \
+		src/mouse/up.xbm src/mouse/up-mask.xbm \
+		src/mouse/down.xbm src/mouse/down-mask.xbm
+	@echo
+	@echo "...Compiling Tux Paint from source..."
+	@$(CC) $(CFLAGS) -c src/tuxpaint.c -o obj/tuxpaint.o
+
+obj/BeOS_print.o: src/BeOS_print.cpp obj \
+		src/BeOS_print.h
+	@echo
+	@echo "... Compiling BeOS_print support..."
+	@$(CC) $(CFLAGS) -c src/BeOS_print.cpp -o obj/BeOS_print.o
+
+# Build the translation files for gettext
+
+translations:	trans trans/fr.mo trans/de.mo trans/en_gb.mo trans/es.mo \
+		trans/fi.mo trans/tr.mo trans/nn.mo trans/it.mo trans/nl.mo \
+		trans/sv.mo trans/is.mo trans/da.mo trans/pt_br.mo \
+		trans/cs.mo trans/hu.mo trans/ko.mo trans/ca.mo trans/zh_cn.mo \
+		trans/id.mo trans/ro.mo trans/el.mo trans/pl.mo
+
+trans:
+	@echo
+	@echo "...Preparing translation files..."
+	@mkdir trans
+
+trans/fr.mo:	src/messages/fr.po
+	@echo "   ...French..."
+	@msgfmt src/messages/fr.po -o trans/fr.mo
+
+trans/ro.mo:	src/messages/ro.po
+	@echo "   ...Romanian..."
+	@msgfmt src/messages/ro.po -o trans/ro.mo
+
+trans/de.mo:	src/messages/de.po
+	@echo "   ...German..."
+	@msgfmt src/messages/de.po -o trans/de.mo
+
+trans/en_gb.mo:	src/messages/en_gb.po
+	@echo "   ...British English..."
+	@msgfmt src/messages/en_gb.po -o trans/en_gb.mo
+
+trans/zh_cn.mo:	src/messages/zh_cn.po
+	@echo "   ...Chinese..."
+	@msgfmt src/messages/zh_cn.po -o trans/zh_cn.mo
+
+trans/id.mo:	src/messages/id.po
+	@echo "   ...Indonesian..."
+	@msgfmt src/messages/id.po -o trans/id.mo
+
+trans/el.mo:	src/messages/el.po
+	@echo "   ...Greek..."
+	@msgfmt src/messages/el.po -o trans/el.mo
+
+trans/ca.mo:	src/messages/ca.po
+	@echo "   ...Catalan..."
+	@msgfmt src/messages/ca.po -o trans/ca.mo
+
+trans/da.mo:	src/messages/da.po
+	@echo "   ...Danish..."
+	@msgfmt src/messages/da.po -o trans/da.mo
+
+trans/ko.mo:	src/messages/ko.po
+	@echo "   ...Korean..."
+	@msgfmt src/messages/ko.po -o trans/ko.mo
+
+trans/es.mo:	src/messages/es.po
+	@echo "   ...Spanish..."
+	@msgfmt src/messages/es.po -o trans/es.mo
+
+trans/fi.mo:	src/messages/fi.po
+	@echo "   ...Finnish..."
+	@msgfmt src/messages/fi.po -o trans/fi.mo
+	
+trans/tr.mo:	src/messages/tr.po
+	@echo "   ...Turkish..."
+	@msgfmt src/messages/tr.po -o trans/tr.mo
+
+trans/sv.mo:	src/messages/sv.po
+	@echo "   ...Swedish..."
+	@msgfmt src/messages/sv.po -o trans/sv.mo
+
+trans/pt_br.mo:	src/messages/pt_br.po
+	@echo "   ...Brazilian Portuguese..."
+	@msgfmt src/messages/pt_br.po -o trans/pt_br.mo
+
+trans/pl.mo:	src/messages/pl.po
+	@echo "   ...Polish..."
+	@msgfmt src/messages/pl.po -o trans/pl.mo
+
+trans/nn.mo:	src/messages/nn.po
+	@echo "   ...Norwegian..."
+	@msgfmt src/messages/nn.po -o trans/nn.mo
+	
+trans/it.mo:	src/messages/it.po
+	@echo "   ...Italian..."
+	@msgfmt src/messages/it.po -o trans/it.mo
+	
+trans/nl.mo:	src/messages/nl.po
+	@echo "   ...Dutch..."
+	@msgfmt src/messages/nl.po -o trans/nl.mo
+	
+trans/is.mo:	src/messages/is.po
+	@echo "   ...Icelandic..."
+	@msgfmt src/messages/is.po -o trans/is.mo
+
+trans/hu.mo:	src/messages/hu.po
+	@echo "   ...Hungarian..."
+	@msgfmt src/messages/hu.po -o trans/hu.mo
+
+trans/cs.mo:	src/messages/cs.po
+	@echo "   ...Czech..."
+	@msgfmt src/messages/cs.po -o trans/cs.mo
+
+
+# Make the "obj" directory to throw the object(s) into:
+
+obj:
+	@mkdir obj
+

@@ -1,0 +1,394 @@
+# Tux Paint czech messages.
+#
+msgid ""
+msgstr ""
+"POT-Creation-Date: 2002-09-26 00:00-0800\n"
+"PO-Revision-Date: 2002-09-26 00:00-0800\n"
+"Last-Translator: Peter Sterba <sterba@sterba.com>\n"
+"Language-Team: Czech\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: tuxpaint.c:368
+msgid "Do you really want to quit?"
+msgstr "Opravdu to chces ukoncit?"
+
+#: tuxpaint.c:369 tuxpaint.c:373 tuxpaint.c:377 tuxpaint.c:388 tuxpaint.c:4592
+msgid "Yes"
+msgstr "Ano"
+
+#: tuxpaint.c:370 tuxpaint.c:374 tuxpaint.c:378 tuxpaint.c:389
+msgid "No"
+msgstr "Ne"
+
+#: tuxpaint.c:372
+msgid "If you quit, you'll lose your picture! Save it?"
+msgstr "Pokud skoncis, ztratis svuj obrazek! Chces ho ulozit?"
+
+#: tuxpaint.c:376
+msgid "Save your picture first?"
+msgstr "Chces nejdriv ulozit svuj obrazek?"
+
+#: tuxpaint.c:380
+msgid "Starting a new picture will erase the current one!"
+msgstr "S otevrenim noveho obrazku bude vymazan prave aktualni!"
+
+#: tuxpaint.c:381
+msgid "That's Ok"
+msgstr "OK, Pokracuj"
+
+#: tuxpaint.c:382
+msgid "Never Mind!"
+msgstr "Ne, zpet!"
+
+#: tuxpaint.c:384
+msgid "There are no saved files!"
+msgstr "Jsou zde neulozene soubory!"
+
+#: tuxpaint.c:385
+msgid "Okay"
+msgstr "OK"
+
+#: tuxpaint.c:387
+msgid "Erase this picture?"
+msgstr "Vymazat tento obrazek?"
+
+#: tuxpaint.c:4591
+msgid "Save over the older version of this drawing?"
+msgstr "Prepsat jiz drive vytvorenou verzi tohoto souboru?"
+
+#: tuxpaint.c:4593
+msgid "No, save a new file"
+msgstr "Ne, uloz jako novy soubor"
+
+#: colors.h:56
+msgid "Black"
+msgstr "Cerna"
+
+#: colors.h:57
+msgid "White"
+msgstr "Bila"
+
+#: colors.h:58
+msgid "Red"
+msgstr "Cervena"
+
+#: colors.h:59
+msgid "Pink"
+msgstr "Ruzova"
+
+#: colors.h:60
+msgid "Orange"
+msgstr "Oranzova"
+
+#: colors.h:61
+msgid "Yellow"
+msgstr "Zluta"
+
+#: colors.h:62
+msgid "Green"
+msgstr "Zelena"
+
+#: colors.h:63
+msgid "Cyan"
+msgstr "Cerveno-fialova"
+
+#: colors.h:64
+msgid "Blue"
+msgstr "Modra"
+
+#: colors.h:65
+msgid "Purple"
+msgstr "Fialova"
+
+#: colors.h:66
+msgid "Brown"
+msgstr "Hneda"
+
+#: colors.h:67
+msgid "Grey"
+msgstr "Seda"
+
+#: magic.h:46
+msgid "Mirror"
+msgstr "Zrcadlo"
+
+#: magic.h:47
+msgid "Flip"
+msgstr "Otocit naruby"
+
+#: magic.h:49
+msgid "Blur"
+msgstr "Skvrna"
+
+#: magic.h:50
+msgid "Blocks"
+msgstr "Kostka"
+
+#: magic.h:52
+msgid "Negative"
+msgstr "Negativ"
+
+#: magic.h:53
+msgid "Fade"
+msgstr "Vyblednout"
+
+#: magic.h:55
+msgid "Rainbow"
+msgstr "Duha"
+
+#: magic.h:56
+msgid "Sparkles"
+msgstr "Jiskry"
+
+#: magic.h:58
+msgid "Chalk"
+msgstr "Krida"
+
+#: magic.h:59
+msgid "Drip"
+msgstr "Kapka"
+
+#: magic.h:61
+msgid "Thick"
+msgstr "Tucne"
+
+#: magic.h:62
+msgid "Thin"
+msgstr "Tence"
+
+#: magic.h:69
+msgid "Click to make a mirror image!"
+msgstr "Klikni pro ozrcadleni obrazku!"
+
+#: magic.h:70
+msgid "Click to flip the picture upside-down!"
+msgstr "Klikni pro otoceni obrazku naruby shora-dolu!"
+
+#: magic.h:72
+msgid "Click and move the mouse around to blur the picture"
+msgstr "Klikni a pohybuj mysi dokola pro rozmazani obrazku"
+
+#: magic.h:73
+msgid "Click and move the mouse around to make the picture blocky"
+msgstr "Klikni a pohybuj mysi dokola pro vytvoreni kaskady"
+
+#: magic.h:75
+msgid "Click and move the mouse around to draw a negative"
+msgstr "Klikni a pohybuj mysi dokola pro vykresleni negativu"
+
+#: magic.h:76
+msgid "Click and move to fade the colors."
+msgstr "Klikni a posun pro vyblednuti barev."
+
+#: magic.h:78
+msgid "You can draw in rainbow colors!"
+msgstr "Muzes kreslit v duhovych barvach!"
+
+#: magic.h:79
+msgid "Click and move to draw sparkles"
+msgstr "Klikni a pohybuj pro kresleni jisker"
+
+#: magic.h:81
+msgid "Click and move the mouse around to turn the picture into a chalk drawing."
+msgstr "Klikni a pohybuj mysi pro pretvoreni obrazku do kridoveho vzhledu."
+
+#: magic.h:82
+msgid "Click and move the mouse around to make the picture drip!"
+msgstr "Klikni a pohybuj mysi pro vytvoreni kapkoviteho obrazku."
+
+#: magic.h:84
+msgid "Click and move the mouse to thicken the picture"
+msgstr "Klikni a pohybuj mysi pro rozsireni obrazku."
+
+#: magic.h:85
+msgid "Click and move the mouse to thin the picture"
+msgstr "Klikni a pohybuj mysi pro zuzeni obrazku."
+
+#: shapes.h:121 shapes.h:122
+msgid "Square"
+msgstr "Ctverec"
+
+#: shapes.h:123 shapes.h:124
+msgid "Rectangle"
+msgstr "Obdelnik"
+
+#: shapes.h:125 shapes.h:126
+msgid "Circle"
+msgstr "Kruh"
+
+#: shapes.h:127 shapes.h:128 shapes.h:147 shapes.h:148
+msgid "Oval"
+msgstr "Oval"
+
+#: shapes.h:129 shapes.h:130
+msgid "Triangle"
+msgstr "Trojuhelnik"
+
+#: shapes.h:131 shapes.h:132
+msgid "Pentagon"
+msgstr "Petiuhelnik"
+
+#: shapes.h:133 shapes.h:134
+msgid "Diamond"
+msgstr "Krystal"
+
+#: shapes.h:141 shapes.h:142
+msgid "A square has four sides, each the same length."
+msgstr "Ctverec ma ctyri strany, vsechny stejne delky."
+
+#: shapes.h:143 shapes.h:144
+msgid "A rectangle has four sides."
+msgstr "Obdelnik ma ctyri strany"
+
+#: shapes.h:145 shapes.h:146
+msgid "A circle is exactly round."
+msgstr "Kruh je presne kulaty."
+
+#: shapes.h:149 shapes.h:150
+msgid "A triangle has three sides."
+msgstr "Trojuhelnik ma tri strany."
+
+#: shapes.h:151 shapes.h:152
+msgid "A pentagon has five sides."
+msgstr "Petiuhelnik ma pet stran"
+
+#: shapes.h:153 shapes.h:154
+msgid "A diamond is a square, turned around slightly."
+msgstr "Krystal vznikne pootacenim ctverce kolem osy."
+
+#: tools.h:42
+msgid "Paint"
+msgstr "Kreslit"
+
+#: tools.h:43
+msgid "Stamp"
+msgstr "Narazit"
+
+#: tools.h:44
+msgid "Lines"
+msgstr "Usecka"
+
+#: tools.h:45
+msgid "Shapes"
+msgstr "Tvary"
+
+#: tools.h:46
+msgid "Text"
+msgstr "Text"
+
+#: tools.h:47
+msgid "Magic"
+msgstr "Magie"
+
+#: tools.h:48
+msgid "Undo"
+msgstr "Zpet"
+
+#: tools.h:49
+msgid "Redo"
+msgstr "Znovu"
+
+#: tools.h:50
+msgid "Eraser"
+msgstr "Vymazani"
+
+#: tools.h:51
+msgid "New"
+msgstr "Novy"
+
+#: tools.h:52
+msgid "Open"
+msgstr "Otevri"
+
+#: tools.h:53
+msgid "Save"
+msgstr "Uloz"
+
+#: tools.h:54
+msgid "Print"
+msgstr "Tisk"
+
+#: tools.h:55
+msgid "Quit"
+msgstr "Exit"
+
+#: tools.h:62
+msgid "Pick a color and a brush shape to draw with."
+msgstr "Vyber barvu a spray tvar pro pouziti."
+
+#: tools.h:63
+msgid "Pick a picture to stamp around your drawing."
+msgstr "Vyber obrazek pro podklad Tveho obrazku."
+
+#: tools.h:64
+msgid "Click to start drawing a line.  Let go to complete it."
+msgstr "Klikni pro pocatek usecky, tahni mysi pro orientaci usecky a klikni pro ukonceni usecky."
+
+#: tools.h:65
+msgid ""
+"Pick a shape to draw.  Click once to pick the center of the shape, click "
+"again to draw it."
+msgstr "Vyber tvar pro pouziti. Klikni jednou pro vyber stredu tvaru, pudruhe klikni pro vlozeni tvaru."
+
+#: tools.h:66
+msgid "Choose a style of text.  Click on your drawing and you can start typing."
+msgstr "Vyber styl textu. Klikni tam, kde chces psat, a muzes zadavat text."
+
+#: tools.h:67
+msgid "Pick a magical effect to use on your drawing!"
+msgstr "Vyber magicky efekt pro pouziti."
+
+#: tools.h:68
+msgid "Undo!"
+msgstr "Zpet!"
+
+#: tools.h:69
+msgid "Redo!"
+msgstr "Znovu!"
+
+#: tools.h:70
+msgid "Eraser!"
+msgstr "Vymazat!"
+
+#: tools.h:71
+msgid "You now have a blank sheet to draw on!"
+msgstr "Mas ted prazdnou plochu pro kresleni!"
+
+#: tools.h:72
+msgid "Open..."
+msgstr "Otevri..."
+
+#: tools.h:73
+msgid "Your image has been saved!"
+msgstr "Obrazek byl ulozen!"
+
+#: tools.h:74
+msgid "Printing..."
+msgstr "Tiskne se..."
+
+#: tools.h:75
+msgid "Bye bye!"
+msgstr "Ahoj ahoj!"
+
+#: tools.h:78
+msgid "Let go of the button to complete the line."
+msgstr "Drz zmacknute tlacitko pro dokonceni usecky."
+
+#: tools.h:79
+msgid "Hold the button to stretch the shape."
+msgstr "Drz tlacitko pro rozcleneni tvaru."
+
+#: tools.h:80
+msgid "Move the mouse to rotate the shape. Click to draw it."
+msgstr "Posun mysi pro rotaci tvaru. Klikni pro jeho vykresleni."
+
+#: tools.h:81
+msgid "Great!"
+msgstr "Vyborne!"
+
+#: tools.h:82
+msgid "Ok then... Let's keep drawing this one!"
+msgstr "Ok, nezapomen si ulozit tento obrazek!"
+
+

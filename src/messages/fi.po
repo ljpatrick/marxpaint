@@ -1,0 +1,450 @@
+# Tux Paint messages in Finnish
+# Copyright (C) 2002
+# Tarmo Toikkanen <tarmo.toikkanen@iki.fi>
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: TuxPaint 0.0.1pre\n"
+"POT-Creation-Date: 2002-09-30 19:26+0200\n"
+"PO-Revision-Date: 2002-10-01 11:57+0300\n"
+"Last-Translator: Tarmo Toikkanen <tarmo@iki.fi>\n"
+"Language-Team: Finnish <fi@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: tuxpaint.c:561
+msgid "Do you really want to quit?"
+msgstr "Haluatko varmasti lopettaa?"
+
+#: tuxpaint.c:562 tuxpaint.c:566 tuxpaint.c:570 tuxpaint.c:590 tuxpaint.c:6224
+#: tuxpaint.c:6854
+msgid "Yes"
+msgstr "Kyllä"
+
+#: tuxpaint.c:563 tuxpaint.c:567 tuxpaint.c:571 tuxpaint.c:591 tuxpaint.c:6227
+msgid "No"
+msgstr "Ei"
+
+#: tuxpaint.c:565
+msgid "If you quit, you'll lose your picture! Save it?"
+msgstr "Menetät kuvan jos lopetat. Tallennetaanko se?"
+
+#: tuxpaint.c:569
+msgid "Save your picture first?"
+msgstr "Tallennetaanko kuvasi ensin?"
+
+#: tuxpaint.c:573
+msgid "Can't open that picture!"
+msgstr "Kuvan avaaminen ei onnistu!"
+
+#: tuxpaint.c:574 tuxpaint.c:581 tuxpaint.c:584 tuxpaint.c:587 tuxpaint.c:7188
+msgid "Okay"
+msgstr "Selvä"
+
+#: tuxpaint.c:576
+msgid "Starting a new picture will erase the current one!"
+msgstr "Uuden kuvan aloittaminen pyyhkii nykyisen pois!"
+
+#: tuxpaint.c:577
+msgid "That's Ok"
+msgstr "Se sopii"
+
+#: tuxpaint.c:578
+msgid "Never Mind!"
+msgstr "Ei sitten!"
+
+#: tuxpaint.c:580
+msgid "There are no saved files!"
+msgstr "Ei löytynyt yhtään tallennettuja kuvia!"
+
+#: tuxpaint.c:583
+msgid "Your picture has been printed!"
+msgstr "Kuvasi on tulostettu!"
+
+#: tuxpaint.c:586
+msgid "You can't print yet!"
+msgstr "Et voi vielä tulostaa!"
+
+#: tuxpaint.c:589
+msgid "Erase this picture?"
+msgstr "Pyyhitäänkö tämä kuva?"
+
+#: tools.h:52 tuxpaint.c:4006
+msgid "Open"
+msgstr "Avaa"
+
+#: tuxpaint.c:4016
+msgid "Erase"
+msgstr "Pyyhi"
+
+#: tuxpaint.c:4026
+msgid "Back"
+msgstr "Takaisin"
+
+#: tuxpaint.c:6853
+msgid "Save over the older version of this drawing?"
+msgstr "Tämän niminen kuva on jo olemassa. Tallennetaanko sen päälle?"
+
+#: tuxpaint.c:6855
+msgid "No, save a new file"
+msgstr "Ei, tallennetaan uuteen tiedostoon"
+
+#: tuxpaint.c:7449
+msgid "Choose the picture you want, then click 'Open'"
+msgstr "Valitse haluamasi kuva ja valitse 'Avaa'"
+
+#: colors.h:56
+msgid "Black"
+msgstr "Musta"
+
+#: colors.h:57
+msgid "White"
+msgstr "Valkoinen"
+
+#: colors.h:58
+msgid "Red"
+msgstr "Punainen"
+
+#: colors.h:59
+msgid "Pink"
+msgstr "Vaaleanpunainen"
+
+#: colors.h:60
+msgid "Orange"
+msgstr "Oranssi"
+
+#: colors.h:61
+msgid "Yellow"
+msgstr "Keltainen"
+
+#: colors.h:62
+msgid "Green"
+msgstr "Vihreä"
+
+#: colors.h:63
+msgid "Cyan"
+msgstr "Turkoosi"
+
+#: colors.h:64
+msgid "Blue"
+msgstr "Sininen"
+
+#: colors.h:65
+msgid "Purple"
+msgstr "Violetti"
+
+#: colors.h:66
+msgid "Brown"
+msgstr "Ruskea"
+
+#: colors.h:67
+msgid "Grey"
+msgstr "Harmaa"
+
+#: great.h:20
+msgid "Great!"
+msgstr "Hienoa!"
+
+#: great.h:21
+msgid "Cool!"
+msgstr "Hienoa!"
+
+#: great.h:22
+msgid "Keep it up!"
+msgstr "Jatka samaan tapaan!"
+
+#: great.h:23
+msgid "Good job!"
+msgstr "Hyvin tehty!"
+
+#: magic.h:48
+msgid "Rainbow"
+msgstr "Sateenkaari"
+
+#: magic.h:49
+msgid "Sparkles"
+msgstr "Kipinät"
+
+#: magic.h:51
+msgid "Mirror"
+msgstr "Peilikuva"
+
+#: magic.h:52
+msgid "Flip"
+msgstr "Käännä"
+
+#: magic.h:54
+msgid "Blur"
+msgstr "Sumenna"
+
+#: magic.h:55
+msgid "Blocks"
+msgstr "Rakeista"
+
+#: magic.h:57
+msgid "Negative"
+msgstr "Vastaväri"
+
+#: magic.h:58
+msgid "Fade"
+msgstr "Haalista"
+
+#: magic.h:60
+msgid "Chalk"
+msgstr "Hiilipiirros"
+
+#: magic.h:61
+msgid "Drip"
+msgstr "Valuta"
+
+#: magic.h:63
+msgid "Thick"
+msgstr "Paksu"
+
+#: magic.h:64
+msgid "Thin"
+msgstr "Ohut"
+
+#: magic.h:66
+msgid "Fill"
+msgstr "Täytä"
+
+#: magic.h:73
+msgid "You can draw in rainbow colors!"
+msgstr "Voit piirtää sateenkaaren väreissä!"
+
+#: magic.h:74
+msgid "Click and move to draw sparkles"
+msgstr "Piirrä kipinöitä liikuttamalla hiirtä nappi pohjassa."
+
+#: magic.h:76
+msgid "Click to make a mirror image!"
+msgstr "Tee kuvasta peilikuva napsauttamalla hiirtä!"
+
+#: magic.h:77
+msgid "Click to flip the picture upside-down!"
+msgstr "Käännä kuva ylösalaisin napsauttamalla hiirtä!"
+
+#: magic.h:79
+msgid "Click and move the mouse around to blur the picture"
+msgstr "Voit sumentaa kuvaa liikuttamalla hiirtä nappi pohjassa."
+
+#: magic.h:80
+msgid "Click and move the mouse around to make the picture blocky"
+msgstr "Voit rakeistaa kuvaa liikuttamalla hiirtä nappi pohjassa."
+
+#: magic.h:82
+msgid "Click and move the mouse around to draw a negative"
+msgstr "Vaihda värit vastakkaisiksi liikuttamalla hiirtä nappi pohjassa."
+
+#: magic.h:83
+msgid "Click and move to fade the colors."
+msgstr "Haalista värejä liikuttamalla hiirtä nappi pohjassa."
+
+#: magic.h:85
+msgid ""
+"Click and move the mouse around to turn the picture into a chalk drawing."
+msgstr "Muuta kuva hiilipiirrokseksi liikuttamalla hiirtä nappi pohjassa."
+
+#: magic.h:86
+msgid "Click and move the mouse around to make the picture drip!"
+msgstr "Valuta kuvaa liikuttamalla hiirtä nappi pohjassa."
+
+#: magic.h:88
+msgid "Click and move the mouse to thicken the picture"
+msgstr "Voit sumentaa kuvaa liikuttamalla hiirtä nappi pohjassa."
+
+#: magic.h:89
+msgid "Click and move the mouse to thin the picture"
+msgstr "Voit sumentaa kuvaa liikuttamalla hiirtä nappi pohjassa."
+
+#: magic.h:91
+msgid "Click in the picture to fill that area with color"
+msgstr "Napsauta kuvasta aluetta, jonka haluat värittää"
+
+#: shapes.h:121 shapes.h:122
+msgid "Square"
+msgstr "Neliö"
+
+#: shapes.h:123 shapes.h:124
+msgid "Rectangle"
+msgstr "Nelikulmio"
+
+#: shapes.h:125 shapes.h:126
+msgid "Circle"
+msgstr "Ympyrä"
+
+#: shapes.h:127 shapes.h:128 shapes.h:147 shapes.h:148
+msgid "Oval"
+msgstr "Soikio"
+
+#: shapes.h:129 shapes.h:130
+msgid "Triangle"
+msgstr "Kolmio"
+
+#: shapes.h:131 shapes.h:132
+msgid "Pentagon"
+msgstr "Viisikulmio"
+
+#: shapes.h:133 shapes.h:134
+msgid "Diamond"
+msgstr "Vinoneliö"
+
+#: shapes.h:141 shapes.h:142
+msgid "A square has four sides, each the same length."
+msgstr "Neliössä on neljä sivua, jotka kaikki ovat saman pituisia."
+
+#: shapes.h:143 shapes.h:144
+msgid "A rectangle has four sides."
+msgstr "Suorakaiteessa on neljä sivua."
+
+#: shapes.h:145 shapes.h:146
+msgid "A circle is exactly round."
+msgstr "Ympyrä on täysin pyöreä."
+
+#: shapes.h:149 shapes.h:150
+msgid "A triangle has three sides."
+msgstr "Kolmiossa on kolme sivua."
+
+#: shapes.h:151 shapes.h:152
+msgid "A pentagon has five sides."
+msgstr "Viisikulmiossa on viisi sivua."
+
+#: shapes.h:153 shapes.h:154
+msgid "A diamond is a square, turned around slightly."
+msgstr "Vinoneliö on neliö, joka on käännetty vinoon."
+
+#: tools.h:42
+msgid "Paint"
+msgstr "Maalaa"
+
+#: tools.h:43
+msgid "Stamp"
+msgstr "Leimaa"
+
+#: tools.h:44
+msgid "Lines"
+msgstr "Viivat"
+
+#: tools.h:45
+msgid "Shapes"
+msgstr "Muodot"
+
+#: tools.h:46
+msgid "Text"
+msgstr "Teksti"
+
+#: tools.h:47
+msgid "Magic"
+msgstr "Taiat"
+
+#: tools.h:48
+msgid "Undo"
+msgstr "Peru"
+
+#: tools.h:49
+msgid "Redo"
+msgstr "Palauta"
+
+#: tools.h:50
+msgid "Eraser"
+msgstr "Pyyhekumi"
+
+#: tools.h:51
+msgid "New"
+msgstr "Uusi"
+
+#: tools.h:53
+msgid "Save"
+msgstr "Tallenna"
+
+#: tools.h:54
+msgid "Print"
+msgstr "Tulosta"
+
+#: tools.h:55
+msgid "Quit"
+msgstr "Poistu"
+
+#: tools.h:62
+msgid "Pick a color and a brush shape to draw with."
+msgstr "Valitse väri ja siveltimen muoto, joilla haluat piirtää."
+
+#: tools.h:63
+msgid "Pick a picture to stamp around your drawing."
+msgstr "Valitse kuva, jonka haluat leimata piirustukseesi."
+
+#: tools.h:64
+msgid "Click to start drawing a line.  Let go to complete it."
+msgstr ""
+"Paina hiiren nappi alas aloittaaksesi viivan piirto ja päästä irti "
+"lopettaaksesi."
+
+#: tools.h:65
+msgid ""
+"Pick a shape to draw.  Click once to pick the center of the shape, click "
+"again to draw it."
+msgstr ""
+"Valitse piirrettävä kuvio.  Valitse keskikohta napsauttamalla ja piirrä "
+"kuvio napsauttamalla uudelleen."
+
+#: tools.h:66
+msgid ""
+"Choose a style of text.  Click on your drawing and you can start typing."
+msgstr ""
+"Valitse tekstityyli.  Napsauta piirrokseesi, niin voit aloittaa "
+"kirjoittamisen."
+
+#: tools.h:67
+msgid "Pick a magical effect to use on your drawing!"
+msgstr "Valitse taikaefekti, jota haluat käyttää piirrokseesi!"
+
+#: tools.h:68
+msgid "Undo!"
+msgstr "Peru!"
+
+#: tools.h:69
+msgid "Redo!"
+msgstr "Palauta!"
+
+#: tools.h:70
+msgid "Eraser!"
+msgstr "Pyyhekumi!"
+
+#: tools.h:71
+msgid "You now have a blank sheet to draw on!"
+msgstr "Sinulla on nyt tyhjä piirtoalue!"
+
+#: tools.h:72
+msgid "Open..."
+msgstr "Avaa... "
+
+#: tools.h:73
+msgid "Your image has been saved!"
+msgstr "Kuvasi on tallennettu!"
+
+#: tools.h:74
+msgid "Printing..."
+msgstr "Tulostetaan..."
+
+#: tools.h:75
+msgid "Bye bye!"
+msgstr "Hei hei!"
+
+#: tools.h:78
+msgid "Let go of the button to complete the line."
+msgstr "Piirrä viiva päästämällä napista irti."
+
+#: tools.h:79
+msgid "Hold the button to stretch the shape."
+msgstr "Pidä nappia pohjassa venyttääksesi kuviota."
+
+#: tools.h:80
+msgid "Move the mouse to rotate the shape. Click to draw it."
+msgstr "Pyöritä kuviota liikuttamalla hiirtä. Piirrä napsauttamalla."
+
+#: tools.h:81
+msgid "Ok then... Let's keep drawing this one!"
+msgstr "Hyvä on... Jatketaan tämän piirtämistä!"
+

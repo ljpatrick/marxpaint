@@ -1,0 +1,475 @@
+# Tux Paint messages
+# Translation: greek (el)
+#
+# This file is distributed under the same license as the Tux Paint
+# program.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Tuxpaint 0.9.2pre\n"
+"POT-Creation-Date: 2003-01-04 12:00+0200\n"
+"PO-Revision-Date: 2003-01-04 12:00+0200\n"
+"Last-Translator: N/A <i18ngr@lists.hellug.gr>\n"
+"Language-Team: N/A <i18ngr@lists.hellug.gr>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: src/tuxpaint.c:567
+msgid "Do you really want to quit?"
+msgstr "Σίγουρα θέλεις να βγεις από το πρόγραμμα;"
+
+#: src/tuxpaint.c:568 src/tuxpaint.c:572 src/tuxpaint.c:576 src/tuxpaint.c:596
+#: src/tuxpaint.c:6280 src/tuxpaint.c:6921
+msgid "Yes"
+msgstr "Ναι"
+
+#: src/tuxpaint.c:569 src/tuxpaint.c:573 src/tuxpaint.c:577 src/tuxpaint.c:597
+#: src/tuxpaint.c:6283
+msgid "No"
+msgstr "Όχι"
+
+#: src/tuxpaint.c:571
+msgid "If you quit, you'll lose your picture! Save it?"
+msgstr "Αν βγεις από το πρόγραμμα, θα χαθεί η εικόνα σου! Να σωθεί;"
+
+#: src/tuxpaint.c:575
+msgid "Save your picture first?"
+msgstr "Να σωθεί η εικόνα σου πρώτα;"
+
+#: src/tuxpaint.c:579
+msgid "Can't open that picture!"
+msgstr "Αδυναμία ανοίγματος αυτής της εικόνας!"
+
+#: src/tuxpaint.c:580 src/tuxpaint.c:587 src/tuxpaint.c:590 src/tuxpaint.c:593
+#: src/tuxpaint.c:7255
+msgid "Okay"
+msgstr "Εντάξει"
+
+#: src/tuxpaint.c:582
+msgid "Starting a new picture will erase the current one!"
+msgstr "Αρχίζοντας μια νέα εικόνα θα σβηστεί η παλιά!"
+
+#: src/tuxpaint.c:583
+msgid "That's Ok"
+msgstr "Είναι εντάξει"
+
+#: src/tuxpaint.c:584
+msgid "Never Mind!"
+msgstr "Δεν πειράζει!"
+
+#: src/tuxpaint.c:586
+msgid "There are no saved files!"
+msgstr "Δεν υπάρχουν αποθηκευμένα αρχεία!"
+
+#: src/tuxpaint.c:589
+msgid "Your picture has been printed!"
+msgstr "Η εικόνα σου εκτυπώθηκε!"
+
+#: src/tuxpaint.c:592
+msgid "You can't print yet!"
+msgstr "Δεν μπορείς να τυπώσεις ακόμη!"
+
+#: src/tuxpaint.c:595
+msgid "Erase this picture?"
+msgstr "Σβήσιμο αυτής της εικόνας;"
+
+#: src/tuxpaint.c:4067 src/tools.h:52
+msgid "Open"
+msgstr "Άνοιγμα"
+
+#: src/tuxpaint.c:4077
+msgid "Erase"
+msgstr "Σβήσιμο"
+
+#: src/tuxpaint.c:4087
+msgid "Back"
+msgstr "Προηγούμενο"
+
+#: src/tuxpaint.c:6920
+msgid "Save over the older version of this drawing?"
+msgstr "Αποθήκευση στο ίδιο αρχείο με την παλαιότερη έκδοση αυτού του σχεδίου;"
+
+#: src/tuxpaint.c:6922
+msgid "No, save a new file"
+msgstr "Όχι, αποθήκευση σε νέο αρχείο"
+
+#: src/tuxpaint.c:7516
+msgid "Choose the picture you want, then click 'Open'"
+msgstr "Επέλεξε την εικόνα που θέλεις, και μετά πάτησε 'Άνοιγμα'"
+
+#: src/tools.h:42
+msgid "Paint"
+msgstr "Ζωγραφιά"
+
+#: src/tools.h:43
+msgid "Stamp"
+msgstr "Στάμπα"
+
+#: src/tools.h:44
+msgid "Lines"
+msgstr "Γραμμές"
+
+#: src/tools.h:45 src/titles.h:41
+msgid "Shapes"
+msgstr "Σχήματα"
+
+#: src/tools.h:46
+msgid "Text"
+msgstr "Κείμενο"
+
+#: src/tools.h:47 src/titles.h:43
+msgid "Magic"
+msgstr "Μαγικά"
+
+#: src/tools.h:48
+msgid "Undo"
+msgstr "Αναίρεση"
+
+#: src/tools.h:49
+msgid "Redo"
+msgstr "Επανάληψη"
+
+#: src/tools.h:50
+msgid "Eraser"
+msgstr "Σβηστήρας"
+
+#: src/tools.h:51
+msgid "New"
+msgstr "Νέο"
+
+#: src/tools.h:53
+msgid "Save"
+msgstr "Φύλαξη"
+
+#: src/tools.h:54
+msgid "Print"
+msgstr "Εκτύπωση"
+
+#: src/tools.h:55
+msgid "Quit"
+msgstr "Έξοδος"
+
+#: src/tools.h:62
+msgid "Pick a color and a brush shape to draw with."
+msgstr "Επέλεξε χρώμα και μορφή πινέλου για να σχεδιάσεις."
+
+#: src/tools.h:63
+msgid "Pick a picture to stamp around your drawing."
+msgstr "Επέλεξε μία εικόνα για να σταμπωθεί γύρω από το σχέδιό σου."
+
+#: src/tools.h:64
+msgid "Click to start drawing a line.  Let go to complete it."
+msgstr ""
+"Κάνε κλικ για να αρχίσεις τη σχεδίαση μίας γραμμής.  Άφησε για να την "
+"ολοκληρώσεις."
+
+#: src/tools.h:65
+msgid ""
+"Pick a shape. Click to pick the center, drag, then let go when it is the "
+"size you want.  Move around to rotate it, and click to draw it."
+msgstr ""
+"Επέλεξε ένα σχήμα. Κάνε κλικ για επιλογή κέντρου, σύρε, και μετά άφησε "
+"όταν έχει το μέγεθος που θέλεις. Κινήσου δεξιά-αριστερά για να το "
+"περιστρέψεις, και ξανακάνε κλικ για να το σχεδιάσεις."
+
+#: src/tools.h:66
+msgid ""
+"Choose a style of text.  Click on your drawing and you can start typing."
+msgstr ""
+"Επέλεξε ύφος κειμένου. Κάνε κλικ στο σχέδιό σου και άρχισε να γράφεις."
+
+#: src/tools.h:67
+msgid "Pick a magical effect to use on your drawing!"
+msgstr "Διάλεξε ένα μαγικό εφφέ για να χρησιμοποιήσεις στο σχέδιό σου!"
+
+#: src/tools.h:68
+msgid "Undo!"
+msgstr "Αναίρεση!"
+
+#: src/tools.h:69
+msgid "Redo!"
+msgstr "Επανάληψη!"
+
+#: src/tools.h:70
+msgid "Eraser!"
+msgstr "Σβηστήρας!"
+
+#: src/tools.h:71
+msgid "You now have a blank sheet to draw on!"
+msgstr "Τώρα έχεις ένα λευκό φύλλο για να σχεδιάσεις!"
+
+#: src/tools.h:72
+msgid "Open..."
+msgstr "Άνοιγμα..."
+
+#: src/tools.h:73
+msgid "Your image has been saved!"
+msgstr "Η εικόνα σου αποθηκεύθηκε!"
+
+#: src/tools.h:74
+msgid "Printing..."
+msgstr "Εκτύπωση..."
+
+#: src/tools.h:75
+msgid "Bye bye!"
+msgstr "Γειά χαρά!"
+
+#: src/tools.h:78
+msgid "Let go of the button to complete the line."
+msgstr "Άφησε το πλήκτρο για να ολοκληρωθεί η γραμμή."
+
+#: src/tools.h:79
+msgid "Hold the button to stretch the shape."
+msgstr "Κράτησε πατημένο το πλήκτρο για να τεντώσεις το σχήμα."
+
+#: src/tools.h:80
+msgid "Move the mouse to rotate the shape. Click to draw it."
+msgstr "Κίνησε το ποντίκι για να περιστραφεί το σχήμα. Κάνε κλικ για να σχεδιαστεί."
+
+#: src/tools.h:81
+msgid "Ok then... Let's keep drawing this one!"
+msgstr "Εντάξει λοιπόν... Ας συνεχίσουμε τη σχεδίαση του ίδιου!"
+
+#: src/titles.h:37
+msgid "Tools"
+msgstr "Εργαλεία"
+
+#: src/titles.h:38
+msgid "Colors"
+msgstr "Χρώματα"
+
+#: src/titles.h:39
+msgid "Brushes"
+msgstr "Πινέλα"
+
+#: src/titles.h:40
+msgid "Stamps"
+msgstr "Στάμπες"
+
+#: src/titles.h:42
+msgid "Letters"
+msgstr "Γράμματα"
+
+#: src/colors.h:56
+msgid "Black"
+msgstr "Μαύρο"
+
+#: src/colors.h:57
+msgid "White"
+msgstr "Άσπρο"
+
+#: src/colors.h:58
+msgid "Red"
+msgstr "Κόκκινο"
+
+#: src/colors.h:59
+msgid "Pink"
+msgstr "Ροζ"
+
+#: src/colors.h:60
+msgid "Orange"
+msgstr "Πορτοκαλί"
+
+#: src/colors.h:61
+msgid "Yellow"
+msgstr "Κίτρινο"
+
+#: src/colors.h:62
+msgid "Green"
+msgstr "Πράσινο"
+
+#: src/colors.h:63
+msgid "Cyan"
+msgstr "Γαλάζιο"
+
+#: src/colors.h:64
+msgid "Blue"
+msgstr "Μπλε"
+
+#: src/colors.h:65
+msgid "Purple"
+msgstr "Μωβ"
+
+#: src/colors.h:66
+msgid "Brown"
+msgstr "Καφέ"
+
+#: src/colors.h:67
+msgid "Grey"
+msgstr "Γκρι"
+
+#: src/shapes.h:121 src/shapes.h:122
+msgid "Square"
+msgstr "Τετράγωνο"
+
+#: src/shapes.h:123 src/shapes.h:124
+msgid "Rectangle"
+msgstr "Ορθογώνιο"
+
+#: src/shapes.h:125 src/shapes.h:126
+msgid "Circle"
+msgstr "Κύκλος"
+
+#: src/shapes.h:127 src/shapes.h:128 src/shapes.h:147 src/shapes.h:148
+msgid "Oval"
+msgstr "Οβάλ"
+
+#: src/shapes.h:129 src/shapes.h:130
+msgid "Triangle"
+msgstr "Τρίγωνο"
+
+#: src/shapes.h:131 src/shapes.h:132
+msgid "Pentagon"
+msgstr "Πεντάγωνο"
+
+#: src/shapes.h:133 src/shapes.h:134
+msgid "Diamond"
+msgstr "Ρόμβος"
+
+#: src/shapes.h:141 src/shapes.h:142
+msgid "A square has four sides, each the same length."
+msgstr "Το τετράγωνο έχει τέσσερις πλευερές, με το ίδιο μήκος."
+
+#: src/shapes.h:143 src/shapes.h:144
+msgid "A rectangle has four sides."
+msgstr "Το ορθογώνιο έχει τέσσερις πλευρές."
+
+#: src/shapes.h:145 src/shapes.h:146
+msgid "A circle is exactly round."
+msgstr "Ο κύκλος είναι ακριβώς στρογγυλός."
+
+#: src/shapes.h:149 src/shapes.h:150
+msgid "A triangle has three sides."
+msgstr "Το τρίγωνο έχει τρεις πλευρές."
+
+#: src/shapes.h:151 src/shapes.h:152
+msgid "A pentagon has five sides."
+msgstr "Το πεντάγωνο έχει πέντε πλευρές."
+
+#: src/shapes.h:153 src/shapes.h:154
+msgid "A diamond is a square, turned around slightly."
+msgstr "Ο ρόμβος είναι ένα τετράγωνο, ελαφρώς στριμμένο πλάγια."
+
+#: src/magic.h:48
+msgid "Rainbow"
+msgstr "Ουράνιο Τόξο"
+
+#: src/magic.h:49
+msgid "Sparkles"
+msgstr "Λάμψεις"
+
+#: src/magic.h:51
+msgid "Mirror"
+msgstr "Καθρέπτης"
+
+#: src/magic.h:52
+msgid "Flip"
+msgstr "Άνω-Κάτω"
+
+#: src/magic.h:54
+msgid "Blur"
+msgstr "Θάμπωμα"
+
+#: src/magic.h:55
+msgid "Blocks"
+msgstr "Κομματάκια"
+
+#: src/magic.h:57
+msgid "Negative"
+msgstr "Αρνητικό"
+
+#: src/magic.h:58
+msgid "Fade"
+msgstr "Ξεθώριασμα"
+
+#: src/magic.h:60
+msgid "Chalk"
+msgstr "Κιμωλία"
+
+#: src/magic.h:61
+msgid "Drip"
+msgstr "Στάζει"
+
+#: src/magic.h:63
+msgid "Thick"
+msgstr "Παχύ"
+
+#: src/magic.h:64
+msgid "Thin"
+msgstr "Λεπτό"
+
+#: src/magic.h:66
+msgid "Fill"
+msgstr "Γέμισμα"
+
+#: src/magic.h:73
+msgid "You can draw in rainbow colors!"
+msgstr "Μπορείς να ζωγραφίσεις με τα χρώματα του ουράνιου τόξου!"
+
+#: src/magic.h:74
+msgid "Click and move to draw sparkles"
+msgstr "Κάνε κλικ και κινήσου για να ζωγραφίσεις λάμψεις"
+
+#: src/magic.h:76
+msgid "Click to make a mirror image!"
+msgstr "Κάνε κλικ για να φτιάξεις μια εικόνα-είδωλο!"
+
+#: src/magic.h:77
+msgid "Click to flip the picture upside-down!"
+msgstr "Κάνε κλικ για να γυρίσεις την εικόνα άνω-κάτω!"
+
+#: src/magic.h:79
+msgid "Click and move the mouse around to blur the picture"
+msgstr "Κάνε κλικ και κίνησε το ποντίκι για να θαμπώσεις την εικόνα"
+
+#: src/magic.h:80
+msgid "Click and move the mouse around to make the picture blocky"
+msgstr "Κάνε κλικ και κίνησε το ποντίκι για να κάνεις την εικόνα κομματάκια"
+
+#: src/magic.h:82
+msgid "Click and move the mouse around to draw a negative"
+msgstr "Κάνε κλικ και κίνησε το ποντίκι για να σχεδιάσεις το αρνητικό"
+
+#: src/magic.h:83
+msgid "Click and move to fade the colors."
+msgstr "Κάνε κλικ και κινήσου για να ξεθωριάσεις τα χρώματα."
+
+#: src/magic.h:85
+msgid ""
+"Click and move the mouse around to turn the picture into a chalk drawing."
+msgstr ""
+"Κάνε κλικ και κίνησε το ποντίκι για να μετατρέψεις την εικόνα σε "
+"σχέδιο με κιμωλία."
+
+#: src/magic.h:86
+msgid "Click and move the mouse around to make the picture drip!"
+msgstr "Κάνε κλικ και κίνησε το ποντίκι για να κάνεις την εικόνα να στάζει!"
+
+#: src/magic.h:88
+msgid "Click and move the mouse to thicken the picture"
+msgstr "Κάνε κλικ και κίνησε το ποντίκι για να παχύνεις την εικόνα"
+
+#: src/magic.h:89
+msgid "Click and move the mouse to thin the picture"
+msgstr "Κάνε κλικ και κίνησε το ποντίκι για να λεπτύνεις την εικόνα"
+
+#: src/magic.h:91
+msgid "Click in the picture to fill that area with color"
+msgstr "Κάνε κλικ και κίνησε το ποντίκι για να γεμίσεις την περιοχή με χρώμα"
+
+#: src/great.h:20
+msgid "Great!"
+msgstr "Μπράβο!"
+
+#: src/great.h:21
+msgid "Cool!"
+msgstr "Ωραία!"
+
+#: src/great.h:22
+msgid "Keep it up!"
+msgstr "Καλά πας, συνέχισε!"
+
+#: src/great.h:23
+msgid "Good job!"
+msgstr "Συγχαρητήρια!"

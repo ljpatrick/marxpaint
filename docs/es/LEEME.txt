@@ -1,0 +1,1346 @@
+                                   Tux Paint
+                                     0.9.2
+
+  Un programa de dibujo simple para ninos
+
+                        Copyright 2002 por Bill Kendrick
+                               New Breed Software
+
+                           bill@newbreedsoftware.com
+                   http://www.newbreedsoftware.com/tuxpaint/
+
+                 14 de Junio de 2002 - 10 de Diciembre de 2002
+
+     ----------------------------------------------------------------------
+
+                                   Acerca de
+
+     "Tux Paint" es un programa de dibujo para ninos chicos. Presenta una
+     interfaz simple con una tela de tamano fijo, y da acceso a las imagenes
+     previas mediante un navegador de miniaturas (sin acceder al sistema de
+     archivos subyacente).
+
+     Al contrario de otros programas populares de dibujo como "The GIMP,"
+     posee un conjunto de herramientas muy limitado. Sin embargo, proporciona
+     una interfaz mucho mas simple con agregados orientados a entretener a
+     los ninos, como efectos de sonido.
+
+     ----------------------------------------------------------------------
+
+                                   Licencia:
+
+     Tux Paint es un proyecto de Codigo Abierto, entregado bajo la licencia
+     GNU General Public License (GPL). Es libre y el 'codigo fuente' del
+     programa esta disponible. (Esto le permite a otros agregar funciones,
+     corregir errores y utilizar partes del programa en sus propios programas
+     de Codigo Abierto bajo licencia GPL.)
+
+     Ver COPIADO.txt para el texto completo de la licencia GPL.
+
+     ----------------------------------------------------------------------
+
+                                   Objetivos:
+
+     Sencillo y Divertido
+             Tux Paint esta concebido para ser un programa de dibujo sencillo
+             para ninos chicos. No esta pensado como una herramienta de
+             dibujo de uso general. Si esta concebido para ser divertido y
+             facil de usar. Efectos de sonido y un personaje tipo dibujo
+             animado le permiten al usuario saber que esta sucediendo y
+             mentenerse entretenido. Tambien hay punteros de raton tipo
+             dibujo animado de formas extra grandes.
+
+     Extensibilidad
+             Tux Paint es extensible. Pinceles y "sellos" con imagenes pueden
+             ser agregados y retirados. Por ejemplo, una maestra puede
+             agregar una coleccion de figuras de animales y pedirle a sus
+             alumnos que dibujen un ecosistema. Cada figura puede tener un
+             sonido asociado y textos descriptivos, los cuales se despliegan
+             cuando el nino selecciona la figura.
+
+     Portabilidad
+             Tux Paint es portable a varias plataformas de computacion:
+             Windows, Macintosh, Linux, etc. La interfaz luce identica en
+             todas ellas. Tux Paint se ejecuta correctamente en sistemas
+             viejos (como Pentiums de 133MHz) y puede ser compilado para
+             correr mejor en sistemas lentos.
+
+     Simplicidad
+             No existe acceso directo a las complicaciones subyacentes de la
+             computadora. La imagen actual es conservada cuando se sale del
+             programa y reaparece cuando este se vuelve a usar. Guardar las
+             imagenes no requiere saber como crear nombres de archivo o usar
+             el teclado. La apertura de las imagenes se realiza mediante su
+             seleccion de una coleccion de miniaturas de las propias
+             imagenes. El acceso a otros archivos de la computadora esta
+             restringido.
+
+     ----------------------------------------------------------------------
+
+                               Otra Documentacion
+
+     Otra documentacion incluida con Tux Paint (en las carpetas/directorios
+     "docs/es" y "docs"):
+
+       * AUTORES.txt
+         Lista de autores y contribuyentes
+       * CHANGES.txt
+         Sumario de los cambios entre cada version (en ingles)
+       * COPIADO.txt
+         Licencia de copia. (La licencia GPL)
+       * INSTALACION.txt
+         Instrucciones para la compilacion/instalacion, si corresponde
+       * PNG.txt
+         Notas sobre como crear imagenes en formato PNG para usar en Tux
+         Paint
+       * LEEME.txt
+         (Este archivo en version texto)
+       * TODO.txt
+         Lista de funciones pendientes o errores que necesitan ser arreglados
+         (en ingles)
+
+     ----------------------------------------------------------------------
+
+                                Usando Tux Paint
+
+Compilando Tux Paint
+
+       Para compilar Tux Paint a partir de las fuentes, por favor referirse a
+       INSTALACION.txt.
+
+     ----------------------------------------------------------------------
+
+Cargando Tux Paint
+
+  Usuarios de Linux/Unix
+
+         Ejecutar el siguiente comando en el prompt de un shell (p.ej: "$"):
+
+           $ tuxpaint
+
+         Tambien es posible hacer un boton o icono para lanzarlo (p.ej: en
+         GNOME o KDE). Ver la documentacion del entorno de escritorio usado
+         para mas detalles...
+
+         Si ocurriera algun error, se mostrara en la terminal (en "stderr").
+
+     ----------------------------------------------------------------------
+
+  Usuarios de Windows
+
+                                                                    [Icon]    
+                                                                   Tux Paint  
+
+         Simplemente hacer doble clic sobre el icono de "Tux Paint" en el
+         escritorio (el cual fue creado automaticamente por el instalador) o
+         doble clic sobre el icono del archivo "tuxpaint.exe" dentro de la
+         carpeta del 'Tux Paint' en la computadora.
+
+         Si ocurriera algun error, sera guardado en un archivo llamado
+         "stderr.txt" en la carpeta del Tux Paint.
+
+         Ver "INSTALACION.txt" para mas detalles sobre como personalizar el
+         icono de "Acceso Directo" a Tux Paint, que permite establecer de
+         forma sencilla las opciones del programa (mediantre la linea de
+         comandos).
+
+         Para ejecutar Tux Paint y especificar opciones de linea de comandos
+         directamente, se necesitara ejecutar "tuxpaint.exe" desde una
+         ventana de Simbolo MSDOS. (Ver "INSTALACION.txt" para mas detalles.)
+
+     ----------------------------------------------------------------------
+
+Opciones
+
+  Archivo de Configuracion
+
+         Es posible crear un sencillo archivo de configuracion para el Tux
+         Paint, el que sera leido cada vez que se ejecuta el programa.
+
+         El archivo es simplemente un archivo de texto conteniendo las
+         opciones que se desea habilitar:
+
+    Usuarios de Linux
+
+           El archivo que deberia ser creado se llama ".tuxpaintrc" y debera
+           residir en el directorio personal del usuario. ("~/.tuxpaintrc" o
+           "$HOME/.tuxpaintrc")
+
+           Con anterioridad a que este archivo sea leido, un archivo de
+           configuracion global del sistema es leido. (Por defecto este
+           archivo no tiene opciones habilitadas.) Reside en:
+
+             /etc/tuxpaint/tuxpaint.conf
+
+           Es posible deshabilitar completamente su lectura, manteniendo las
+           preferencias por defecto (las cuales seran sobreescritas por las
+           del archivo ".tuxpaintrc" y/o por argumendos en la linea de
+           comandos) usando la opcion de linea de comandos:
+
+             --nosysconfig
+
+    Usuarios de Windows
+
+           El archivo que deberia ser creado se llama "tuxpaint.cfg" y debera
+           residir en la carpeta del Tux Paint.
+
+           Es posible usar el Bloc de Notas o WordPad para crear este
+           archivo. Asegurarse de guardarlo como Documento de Texto y que el
+           nombre del archivo no termine en ".txt"...
+
+    Opciones Disponibles
+
+           Las siguientes opciones pueden ser establecidas en el archivo de
+           configuracion. (Las opciones de la linea de comandos las sobre
+           escribiran. Ver mas abajo.)
+
+           fullscreen=yes
+                   Ejecuta el programa en modo pantalla completa, en vez de
+                   en una ventana.
+
+           nosound=yes
+                   Deshabilita los efectos de sonido.
+
+           noquit=yes
+                   Deshabilita el boton "Salir" en pantalla. (Presionar la
+                   tecla [Escape] o hacer clic sobre el boton de cerrar
+                   ventana seguira funcionando.)
+
+           noprint=yes
+                   Deshabilita la impresion.
+
+           printdelay=SEGUNDOS
+                   Restringe la impresion de manera que esta pueda ocurrir
+                   solo una vez cada SEGUNDOS segundos.
+
+           printcommand=COMANDO
+
+                   (Solo Linux y Unix)
+
+                   Usa el comando COMANDO para imprimir un archivo PNG. Si no
+                   se especifica, el comando por defecto es:
+
+                     pngtopnm | pnmtops | lpr
+
+                   Lo que convierte la PNG un archivo 'portable anymap' de
+                   NetPBM, luego convierte eso a un archivo PostScript y
+                   finalmente envia eso a la impresora utilizando el comando
+                   "lpr".
+
+           simpleshapes=yes
+                   Deshabilita el modo rotacion en la herramienta Figuras.
+                   Hacer clic, arrastrar y soltar sera todo lo necesario para
+                   dibujar una figura.
+
+           uppercase=yes
+                   Todo el texto sera mostrado en mayusculas (p.ej.: "Pincel"
+                   sera "PINCEL"). Util para ninos que pueden leer, pero que
+                   hasta el momento solo han aprendido las letras mayusculas.
+
+           grab=yes
+
+                   Tux Paint intentara 'retener' el raton y el teclado, de
+                   modo que el raton quede confinado a la ventana del Tux
+                   Paint y casi todo ingreso por teclado sea pasado
+                   directamente al programa.
+
+                   Esto es util para deshabilitar acciones del sistema
+                   operativo que podrian sacar al usuario fuera de Tux Paint,
+                   como el ciclado de ventanas hecho con [Alt]-[Tab],
+                   [Ctrl]-[Escape], etc. Esto resulta especialmente util en
+                   modo pantalla completa.
+
+           nowheelmouse=yes
+                   Esto deshabilita el soporte para la rueda, en los ratones
+                   que tienen. (Normalmente, la rueda desplaza el menu del
+                   selector de la derecha.)
+
+           keyboard=yes
+                   Esto permite que las teclas de cursor del teclado sean
+                   utilizadas para controlar el puntero del raton. (para
+                   entornos donde no haya raton disponible.)
+
+                   Las teclas de [Cursor] mueven el puntero del raton. La
+                   [Barra Espaciadora] actua como el boton del raton.
+
+           saveover=yes
+                   Esto deshabilita la consulta "?Guardar sobre la version
+                   anterior...?" al guardar un archivo ya existente. Con esta
+                   opcion, la version antigua sera automaticamente
+                   reemplazada por la nueva, en todos los casos.
+
+           saveover=new
+                   Esto tambien deshabilita la consulta "?Guardar sobre la
+                   version anterior...?" al guardar un archivo ya existente.
+                   Esta opcion, sin embargo, siempre guardara un nuevo
+                   archivo, en vez de sobreescribir la version antigua.
+
+           saveover=ask
+
+                   (Esta opcion es redundante, al ser la opcion por defecto.)
+
+                   Al intentar guardar un dibujo ya existente, se consultara
+                   antes si se va a guardar sobre la version anterior o no.
+
+           lang=IDIOMA
+
+                   Ejecuta Tux Paint en uno de los idiomas soportados. Las
+                   opciones actualmente disponibles para IDIOMA son:
+
+                 +-------------------------------------------------------------+
+                 |english             |american-english  |         | (ingles de|
+                 |                    |                  |         |    ee.uu.)|
+                 |--------------------+------------------+---------+-----------|
+                 |                    |                  |         |(ingles del|
+                 |british-english     |british           |         |      reino|
+                 |                    |                  |         |     unido)|
+                 |--------------------+------------------+---------+-----------|
+                 |brazilian-portuguese|portuges-brazilian|brazilian| (portugues|
+                 |                    |                  |         | de brasil)|
+                 |--------------------+------------------+---------+-----------|
+                 |catalan             |catala            |         |  (catalan)|
+                 |--------------------+------------------+---------+-----------|
+                 |czech               |cesky             |         |    (checo)|
+                 |--------------------+------------------+---------+-----------|
+                 |danish              |dansk             |         |    (danes)|
+                 |--------------------+------------------+---------+-----------|
+                 |dutch               |                  |         | (holandes)|
+                 |--------------------+------------------+---------+-----------|
+                 |finnish             |suomi             |         |(finlandes)|
+                 |--------------------+------------------+---------+-----------|
+                 |french              |francais          |         |  (frances)|
+                 |--------------------+------------------+---------+-----------|
+                 |german              |deutsch           |         |   (aleman)|
+                 |--------------------+------------------+---------+-----------|
+                 |hungarian           |magyar            |         |  (hungaro)|
+                 |--------------------+------------------+---------+-----------|
+                 |icelandic           |islenska          |         | (islandes)|
+                 |--------------------+------------------+---------+-----------|
+                 |italian             |italiano          |         | (italiano)|
+                 |--------------------+------------------+---------+-----------|
+                 |korean              |                  |         |  (coreano)|
+                 |--------------------+------------------+---------+-----------|
+                 |norwegian           |nynorsk           |         |  (noruego)|
+                 |--------------------+------------------+---------+-----------|
+                 |spanish             |espanol           |         |  (espanol)|
+                 |--------------------+------------------+---------+-----------|
+                 |swedish             |svenska           |         |    (sueco)|
+                 |--------------------+------------------+---------+-----------|
+                 |turkish             |                  |         |    (turco)|
+                 +-------------------------------------------------------------+
+
+     ----------------------------------------------------------------------
+
+    Sobreescribiendo las Opciones de Configuracion del Sistema usando
+    .tuxpaintrc
+
+           Si cualquiera de la opciones de arriba han sido fijadas en
+           "/etc/tuxpaint/tuxpaint.config", es posible sobreescribirlas en el
+           archivo de configuracion de cada usuario "~/.tuxpaintrc".
+
+           Para las opciones de tipo verdadero/falso, como "noprint" y
+           "grab", es posible asumir simplemente que equivalen a 'no' en el
+           archivo "~/.tuxpaintrc":
+
+             noprint=no
+             uppercase=no
+
+           O es posible usar opciones similares a las opciones de linea de
+           comandos descriptas abaja. Por ejemplo:
+
+             print=yes
+             mixedcase=yes
+
+     ----------------------------------------------------------------------
+
+  Opciones de Linea de Comandos
+
+         Tambien es posible enviar opciones en la linea de comandos al
+         ejecutar Tux Paint.
+
+           --fullscreen
+           --nosound
+           --noquit
+           --noprint
+           --printdelay=SEGUNDOS
+           --simpleshapes
+           --uppercase
+           --grab
+           --nowheelmouse
+           --keyboard
+           --saveover
+           --saveovernew
+           --lang IDIOMA
+                   Estas habilitan las opciones descriptas arriba.
+
+           --windowed
+           --sound
+           --quit
+           --print
+           --printdelay=0
+           --complexshapes
+           --mixedcase
+           --dontgrab
+           --mouse
+           --wheelmouse
+           --saveoverask
+                   Estas opciones pueden ser utilizadas para sobreescribir
+                   cualquier opcion incluida en el archivo de configuracion.
+                   (Si la opcion no fue incluida en el(los) archivo(s) de
+                   configuracion, no sera necesaria una opcion de
+                   sobreescritura.)
+
+           --locale localizacion
+
+                   Ejecuta Tux Paint en uno de los idiomas soportados. Ver la
+                   seccion "Escogiendo un Idioma Distinto" abajo para obtener
+                   los codigos de localizacion a ser utilizados (p.ej:
+                   "de_DE@euro" para Aleman).
+
+                   (Si la localizacion ya esta establecida, mediante la
+                   variable de entorno "$LANG", esta opcion no deberia ser
+                   necesaria, pues Tux Paint se ajusta a las preferencias de
+                   entorno, siempre que esto sea posible.)
+
+           --nosysconfig
+
+                   Bajo Linux y Unix, esta opcion impide la lectura del
+                   archivo de configuracion global del sistema:
+                   "/etc/tuxpaint/tuxpaint.conf".
+
+                   Solamente el archivo personal de configuracion
+                   "~/.tuxpaintrc" sera usado, si existiera.
+
+     ----------------------------------------------------------------------
+
+  Opciones Informativas de Linea de Comandos
+
+         Las siguientes opciones muestran texto informativo en pantalla. Sin
+         embargo Tux Paint no se llega a ejecutar realmente despues de esto.
+
+           --version
+                   Muestra el numero de version y fecha de la copia de
+                   Tux Paint que se esta ejecutando. Tambien lista que
+                   opciones de compilacion fueron usadas, en caso que se haya
+                   usado alguna. (Ver INSTALACION.txt y FAQ.txt).
+
+           --copying
+                   Muestra una breve informacion acerca de la licencia de uso
+                   y copia de Tux Paint.
+
+           --usage
+                   Muestra la lista de opciones de linea de comandos
+                   disponibles.
+
+           --help
+                   Muestra una breve ayuda acerca de como usar Tux Paint.
+
+     ----------------------------------------------------------------------
+
+  Escogiendo un Idioma Distinto
+
+         Tux Paint ha sido traducido a varios idiomas. Para acceder a las
+         traducciones, es posible usar la opcion "--lang" en la linea de
+         comandos para fijar el idioma (p.ej: "--lang spanish") o usar la
+         opcion "lang=" en el archivo de configuracion (p.ej:
+         "lang=spanish").
+
+         Tux Paint tambien se adapta a la localizacion actual del entorno.
+         (Es posible sobreescribirla en la linea de comandos usando la opcion
+         "--locale" (ver arriba).
+
+         Los siguientes idiomas son los soportados:
+
+           +--------------------------------------------------------------+
+           |Codigo de Localizacion|      Idioma       |      Idioma       |
+           |                      |  (nombre nativo)  |(nombre en espanol)|
+           |----------------------+-------------------+-------------------|
+           |C                     |English            |Ingles             |
+           |----------------------+-------------------+-------------------|
+           |ca_ES                 |Catal`a            |Catalan            |
+           |----------------------+-------------------+-------------------|
+           |cs_CZ                 |Cesky              |Checo              |
+           |----------------------+-------------------+-------------------|
+           |da_DK                 |Dansk              |Danes              |
+           |----------------------+-------------------+-------------------|
+           |de_DE@euro            |Deutsch            |Aleman             |
+           |----------------------+-------------------+-------------------|
+           |en_GB                 |British English    |Ingles Britanico   |
+           |----------------------+-------------------+-------------------|
+           |es_ES@euro            |Espanol            |Espanol            |
+           |----------------------+-------------------+-------------------|
+           |fi_FI@euro            |Suomi              |Finlandes          |
+           |----------------------+-------------------+-------------------|
+           |fr_FR@euro            |Franc,ais          |Frances            |
+           |----------------------+-------------------+-------------------|
+           |hu_HU                 |Magyar             |Hungaro            |
+           |----------------------+-------------------+-------------------|
+           |is_IS                 |Islenska           |Islandes           |
+           |----------------------+-------------------+-------------------|
+           |it_IT@euro            |Italiano           |Italiano           |
+           |----------------------+-------------------+-------------------|
+           |ko_KR.UTF-8 (*)       |                   |Coreano            |
+           |----------------------+-------------------+-------------------|
+           |nn_NO                 |Norsk (nynorsk)    |Noruego (Nynorsk)  |
+           |----------------------+-------------------+-------------------|
+           |nl_NL@euro            |                   |Holandes           |
+           |----------------------+-------------------+-------------------|
+           |pt_BR                 |Portuges Brasileiro|Portugues Brasilero|
+           |----------------------+-------------------+-------------------|
+           |sv_SE@euro            |Svenska            |Sueco              |
+           |----------------------+-------------------+-------------------|
+           |tr_TR@euro            |                   |Turco              |
+           +--------------------------------------------------------------+
+
+           (*) - Estos idiomas requieren sus propios tipos de letra
+           (fuentes), porque no se representan utilizando el conjunto Latino
+           de caracteres, como los otros. Ver Fuentes Especiales, abajo.
+
+    Estableciendo la Localizacion del Entorno
+
+           Cambiar la localizacion afectara muchas partes del entorno.
+
+           Como se menciono arriba, ademas de permitir cambiar el idioma en
+           el momento de su ejecucion usando opciones de linea de comandos
+           ("--lang" y "--locale"), Tux Paint se ajusta a las preferencias
+           globales de localizacion del entorno.
+
+           Si aun no se hubiera establecido la localizacion del entorno, lo
+           siguiente explicara brevemente como hacerlo:
+
+      Usuarios de Linux/Unix
+
+             Primero asegurarse de que la localizacion que se desea usar este
+             habilitada editando el archivo "/etc/locale.gen" del sistema y
+             luego ejecutando el programa "locale-gen" como root.
+
+             Nota: Los usuarios de Debian podran simplemente ejecutar el
+             comando "dpkg-reconfigure locales".
+
+             Luego, antes de ejecutar el Tux Paint, fijar la variable de
+             entorno "$LANG" a una de las localizaciones listadas arriba. (Si
+             se quiere que todos los programas que puedan ser traducidos lo
+             sean, es posible que se desee incluir lo siguiente en el guion
+             de entrada: p.ej: ~/.profile, ~/.bashrc, ~/.cshrc, etc.)
+
+             Por ejemplo, en un shell tipo Bourne (como el BASH):
+
+               export LANG=es_ES@euro ; \
+               tuxpaint
+
+             Y en un shell tipo C Shell (como el TCSH):
+
+               setenv LANG es_ES@euro ; \
+               tuxpaint
+
+     ----------------------------------------------------------------------
+
+      Usuarios de Windows
+
+             Tux Paint reconocera la localizacion actual y usara los archivos
+             apropiados por defecto. Por lo que esta seccion interesara
+             solamente a aquellos que esten intentando usar otro idioma.
+
+             Lo mas sencillo es usar la opcion '--lang' en el acceso directo
+             (ver "INSTALACION.txt"). Sin embargo, utilizando una ventana de
+             Simbolo MSDOS, es tambien posible enviar un comando como este:
+
+               set LANG=es_ES@euro
+
+             ...el que establecera el idioma durante la duracion de esa
+             ventana DOS.
+
+             Para algo mas permanente, intentar editar el archivo
+             'autoexec.bat' de la computadora usando la herramienta "sysedit"
+             de Windows:
+
+        Windows 95/98
+
+              1. Hacer clic en el boton 'Inicio' y seleccionar 'Ejecutar...'.
+              2. Escribir "sysedit" en el espacio 'Abrir:' (con o sin las
+                 comillas).
+              3. Presionar 'Aceptar'.
+              4. Localizar la ventana del AUTOEXEC.BAT en el Editor de
+                 Configuracion del Sistema.
+              5. Agregar lo siguiente al final del archivo:
+
+                   set LANG=es_ES@euro
+
+              6. Cerrar el Editor de Configuracion del Sistema, respondiendo
+                 que si a guardar los cambios.
+              7. Reiniciar la maquina.
+
+               Para afectar a la maquina entera y a todas las aplicaciones,
+               es posible usar el panel de control de "Configuracion
+               Regional":
+
+              1. Hacer clic en el boton 'Inicio' y seleccionar
+                 'Configuracion | Panel de Control'.
+              2. Hacer doble clic en el globo de "Configuracion Regional".
+              3. Seleccionar un idioma/region de la lista desplegable.
+              4. Hacer clic en 'Aceptar'.
+              5. Reiniciar la maquina cuando se indique.
+
+    Fuentes Especiales
+
+           Algunos idiomas requieren que sean instalados tipos de letra
+           especiales. Estos archivos de fuentes (que estan en formato
+           TrueType (TTF)), son demasiado grandes para ser incluidos en el
+           paquete del TuxPaint y estan disponibles por separado. (Ver la
+           tabla de arriba, bajo la seccion "Escogiendo un Idioma Distinto".)
+
+           Al ejecutar Tux Paint en un idioma que requiere su propia fuente,
+           Tux Paint intentara cargar el archivo de la fuente desde el
+           directorio de fuentes del sistema ("fonts", bajo el subdirectorio
+           de dicha "localizacion"). El nombre del archivo corresponde a las
+           dos primeras letras en el codigo de la 'localizacion' del idioma
+           (p.ej: "ko" para Coreano, "jp" para Japones).
+
+           Por ejemplo, bajo Linux o Unix, cuando Tux Paint es ejecutado en
+           Coreano (p.ej: con la opcion "--lang korean"), Tux Paint intentara
+           cargar el siguiente archivo de fuentes:
+
+           /usr/share/tuxpaint/fonts/locale/ko.ttf
+
+           Las fuentes para los idiomas soportados se pueden bajar desde el
+           sitio web del Tux Paint:
+           http://www.newbreedsoftware.com/tuxpaint/. (Buscar en la seccion
+           'Fonts' en 'Download.')
+
+           Bajo Unix y Linux, es posible usar el Makefile que viene con la
+           fuente para instalarla en la ubicacion apropiada.
+
+     ----------------------------------------------------------------------
+
+Pantalla de Titulo
+
+       Mientras Tux Paint se esta cargando, aparecera una pantalla de
+       titulo/creditos.
+
+                               [Title Screenshot]
+
+       Una vez que la carga se ha completado, presionar una tecla o hacer
+       clic con el raton para continuar (o, luego de aproximadamente
+       30 segundos, la pantalla de titulo desaparecera automaticamente.)
+
+     ----------------------------------------------------------------------
+
+Pantalla Principal
+
+       La pantalla principal esta dividida en las siguientes secciones:
+
+       Lado Izquierdo: Barra de Herramientas
+
+               La barra de herramientas contiene los controles de dibujo y
+               edicion.
+
+[Tools: Paint, Stamp, Lines, Shapes, Text, Magic, Undo, Redo,      Eraser, New,
+                            Open, Save, Print, Quit]
+
+       Centro: Tela de Dibujo
+
+               La parte mas grande de la pantalla, en el centro, es la tela
+               de dibujo. !Aca es, obviamente, donde se dibuja!
+
+                                   [(Canvas)]
+
+       Lado Derecho: Selector
+
+               Dependiendo de la herramienta activa, el selector muestra
+               distintas cosas. p.ej: mientras la herramienta Pintar esta
+               activa, muestra los varios pinceles disponibles. Mientras la
+               herramienta Sellos esta activa, muestra las diferentes figuras
+               que pueden ser usadas.
+
+                 [Selectors - Brushes, Letters, Shapes, Stamps]
+
+       Abajo: Colores
+
+               Una paleta con los colores disponibles se muestra cerca de la
+               parte inferior de la pantalla.
+
+   [Colors - Black, White, Red, Pink, Orange, Yellow, Green, Cyan,      Blue,
+                              Purple, Brown, Grey]
+
+       Mas abajo: Area de Ayuda
+
+               En la parte mas baja de la pantalla, Tux, el Pingu:ino de
+               Linux, da consejos y otras informaciones al dibujar.
+
+ (For example: 'Pick a shape. Click to pick the center, drag, then      let go
+when it is the size you want.  Move around to rotate it, and      click to draw
+                                      it.)
+
+     ----------------------------------------------------------------------
+
+Herramientas Disponibles
+
+  Herramientas de Dibujo
+
+         Pintar (Pinceles)
+
+                 La herramienta Pintar permite dibujar a mano alzada, usando
+                 distintos pinceles (elegidos en el Selector de la derecha) y
+                 colores (elegidos en la paleta de Colores en la parte de
+                 abajo).
+
+                 Si se mantiene presionado el boton del raton y se mueve,
+                 este dibujara a medida que se mueve.
+
+                 A medida que se dibuja, se escucha un sonido. Cuanto mas
+                 grande sea el pincel, mas grave sera el tono.
+
+     ----------------------------------------------------------------------
+
+         Sellos (de Goma)
+
+                 La herramienta Sellos recuerda a sellos de goma o
+                 calcomanias. Permite pegar imagenes pre-dibujadas o
+                 fotografias (como una foto de un caballo, un arbol o la
+                 Luna) sobre la tela.
+
+                 A medida que se mueve el raton, un contorno rectangular
+                 acompana al raton, indicando donde sera ubicado el sello.
+
+                 Distintos sellos pueden tener diferentes efectos de sonido.
+
+     ----------------------------------------------------------------------
+
+         Lineas
+
+                 Esta herramienta permite dibujar lineas rectas usando los
+                 varios pinceles y colores que normalmente se utilizan con
+                 Pintar.
+
+                 Hacer clic y mantener presionado para escoger el punto
+                 inicial de la linea. A medida que se mueve el raton, una
+                 'banda elastica' fina indicara donde sera dibujada la linea.
+
+                 Soltar el boton para completar la linea. Se escuchara un
+                 sonido tipo "!sproing!".
+
+     ----------------------------------------------------------------------
+
+         Figuras
+
+                 Esta herramienta permite dibujar figuras simples, tanto
+                 rellenas como huecas.
+
+                 Seleccionar una figura del selector de la derecha (circulo,
+                 cuadrado, ovalo, etc.).
+
+                 En la tela, hacer clic y arrastrar para estirar la figura
+                 desde su centro. Algunas figuras pueden cambiar su
+                 proporcion p.ej: el rectangulo y el ovalo), otras no (p.ej:
+                 el cuadrado y el circulo).
+
+                 Soltar el boton para terminar de estirar.
+
+                      Modo Normal
+
+                              Ahora es posible mover el raton sobre la tela
+                              para rotar la figura.
+
+                              Hacer clic otra vez para que la figura se
+                              dibuje usando el color actual.
+
+                      Modo de Figuras Simples
+                              Si el modo de figuras simples esta activado
+                              (opcion "--simpleshapes"), la figura se
+                              dibujara sobre la tela al soltar el boton del
+                              raton. (Sin el paso para la rotacion.)
+
+     ----------------------------------------------------------------------
+
+         Texto
+
+                 Escoger un tipo de letra y un color. Hacer clic en la
+                 pantalla y un cursor aparecera. Ingresar el texto que se
+                 mostrara en la pantalla.
+
+                 Presionar [Enter] o [Intro] y el texto sera dibujado sobre
+                 la imagen y el cursor se movera una linea hacia abajo.
+
+                 Hacer clic en otro lugar de la imagen y la linea de texto
+                 actual se movera a ahi, donde se podra continuar la edicion.
+
+     ----------------------------------------------------------------------
+
+         Magicas (Efectos Especiales)
+
+                 Las herramientas magicas son un conjunto de herramientas
+                 especiales. Seleccionar los efectos "magicos" desde el
+                 selector de la derecha y luego hacer clic arrastrando el
+                 raton por la imagen para aplicar el efecto.
+
+                      Arcoiris
+                              Esta herramienta es similar a Pintar, pero a
+                              medida que se mueve el raton pasa por todos los
+                              colores del arcoiris.
+
+                      Chispas
+                              Esta herramienta dibuja chispas amarillas en la
+                              imagen.
+
+                      Espejar
+                              Al hacer clic con el raton sobre la imagen
+                              usando el efecto magico "Espejar", la imagen
+                              entera sera invertida horizontalmente,
+                              transformandola en una imagen a espejo.
+
+                      Invertir
+                              Similar a "Espejar". Hacer clic y la imagen
+                              entera sera invertida verticalmente.
+
+                      Desenfocar
+                              Esta herramienta deja la imagen borrosa por
+                              donde se pase el raton.
+
+                      Bloques
+                              Esta herramienta deja la imagen cuadriculada
+                              ("pixelizada") donde se haya pasado el raton.
+
+                      Negativo
+                              Esta herramienta invierte los colores en donde
+                              se pase el raton. (p.ej: el blanco se vuelve
+                              negro y viceversa.)
+
+                      Desvanecer
+                              Esta herramienta desvanece los colores en donde
+                              se arrastre el raton. (Hacerlo sobre el mismo
+                              punto varias veces lo tornara finalmente
+                              blanco.)
+
+                      Tiza
+                              Esta herramienta hace que partes de la imagen
+                              (donde se mueva el raton) luzcan como dibujadas
+                              con tiza.
+
+                      Gotear
+                              Esta herramienta hace que la pintura "gotee" en
+                              donde se haya pasado el raton.
+
+                      Grueso
+                              Esta herramienta hace que los colores mas
+                              oscuros de la imagen se vuelvan mas gruesos por
+                              donde se pase el raton.
+
+                      Fino
+                              Similar a "Grueso", excepto que los colores mas
+                              oscuros se vuelven mas finos (los colores mas
+                              claros se vuelven mas gruesos).
+
+                      Rellenar
+                              Esta herramienta inunda la imagen con un color.
+                              Permite rellenar rapidamente partes de la
+                              imagen, como si se tratara de un libro de
+                              colorear.
+
+     ----------------------------------------------------------------------
+
+         Goma de Borrar
+
+                 Esta herramienta es similar a Pintar. Donde se haga un clic
+                 (o clic y arrastrar), la imagen sera borrada a blanco.
+
+                 A medida que el raton es movido, un gran cuadrado blanco
+                 sigue al puntero, indicando que parte de la imagen sera
+                 borrada.
+
+                 A medida que se borra, un sonido "chillonamente limpio" de
+                 limpieza se escucha.
+
+     ----------------------------------------------------------------------
+
+  Otros Controles
+
+         Deshacer
+
+                 Hacer clic en esta herramienta deshara la ultima accion de
+                 dibujo. !Hasta es posible deshacer mas de una vez!
+
+                 Nota: Tambien es posible presionar [Control]-[Z] en el
+                 teclado para deshacer.
+
+     ----------------------------------------------------------------------
+
+         Rehacer
+
+                 Hacer clic en esta herramienta rehara la accion de dibujo
+                 que acabo de ser "deshecha" con el boton 'Deshacer'.
+
+                 Mientras no se vuelva a dibujar nada, !es posible rehacer
+                 tantos pasos como se hayan "deshecho"!.
+
+                 Nota: Tambien es posible presionar [Control]-[R] en el
+                 teclado para rehacer.
+
+     ----------------------------------------------------------------------
+
+         Nuevo
+
+                 Hacer clic en el boton "Nuevo" comenzara un nuevo dibujo.
+                 Antes de hacerlo se pedira una confirmacion de la decision.
+
+                 Nota: Tambien es posible presionar [Control]-[N] en el
+                 teclado para comenzar un nuevo dibujo.
+
+     ----------------------------------------------------------------------
+
+         Abrir
+
+                 Esto muestra una lista de todas las imagenes que han sido
+                 guardadas. Si hubiera mas de las que entran en la pantalla,
+                 usar las flechas "Arriba" y "Abajo" en las partes superior e
+                 inferior de la lista para desplazarse por la lista de
+                 imagenes.
+
+                 Hacer clic en una imagen para seleccionarla, luego...
+
+                      * Hacer clic en el boton verde "Abrir" en la parte
+                        inferior izquierda de la lista para abrir la imagen
+                        seleccionada.
+
+                        (Alternativamente, es posible hacer doble clic en el
+                        icono de una imagen para abrirla.)
+
+                      * Hacer clic en el boton marron "Borrar" (la lata de
+                        basura) en la parte inferior derecha de la lista para
+                        borrar la imagen seleccionada. (Se pedira una
+                        confirmacion.)
+
+                      * O hacer clic en el boton rojo "Atras" (flecha) en la
+                        parte inferior derecha de la lista para cancelar y
+                        regresar a la imagen que se estaba dibujando
+                        previamente.
+
+                 Si se elige abrir un imagen y la imagen actual no habia sido
+                 guardada, se consultara si se desea gurdarla o no. (Ver
+                 "Guardar", mas abajo.)
+
+                 Nota: Tambien es posible presionar [Control]-[O] en el
+                 teclado para obtener el dialogo 'Abrir'.
+
+     ----------------------------------------------------------------------
+
+         Guardar
+
+                 Esto guarda tu imagen actual.
+
+                 Si no habia sido guardada previamente, creara una nueva
+                 entrada en la lista de imagenes guardadas. (y creara un
+                 nuevo archivo)
+
+                 Nota: No se hara ninguna pregunta (p.ej: sobre un nombre de
+                 archivo). Simplemente guardara la imagen y se escuchara un
+                 efecto de sonido tipo "obturador de camara".
+
+                 Si YA se habia guardado la imagen con anterioridad, o si era
+                 una imagen abierta usando el comando "Abrir", se preguntara
+                 antes si se desea sobreescribir la version vieja o crear una
+                 nueva entrada (un nuevo archivo).
+
+                 (NOTA: Si una de las opciones: "saveover" o "saveovernew"
+                 estuviera activa, no se consultara antes de guardar sobre
+                 otra imagen. Ver la seccion "Opciones" de este documento,
+                 mas arriba.)
+
+                 Nota: Tambien es posible presionar [Control]-[S] en el
+                 teclado para guardar una imagen.
+
+     ----------------------------------------------------------------------
+
+         Imprimir
+
+                 !Hacer clic sobre este boton para que la imagen se imprima!
+
+                      Deshabilitando la Impresion
+
+                              Si la opcion "noprint" fue activada (tanto con
+                              "noprint=yes" en el archivo de configuracion de
+                              Tux Paint, como usando "--noprint" en la linea
+                              de comandos), el boton "Imprimir" estara
+                              deshabilitado.
+
+                              Ver la seccion "Opciones" de este documento,
+                              mas arriba.
+
+                      Restringiendo la Impresion
+
+                              Si la opcion "printdelay" fue activada (tanto
+                              con "printdelay=SEGUNDOS" en el archivo de
+                              configuracion, como usando
+                              "--printdelay=SEGUNDOS" en la linea de
+                              comandos), solo se podra imprimir una vez cada
+                              SEGUNDOS segundos.
+
+                              Pro ejemplo, con "printdelay=60", se podra
+                              imprimir solo una vez cada minuto.
+
+                              Ver la seccion "Opciones" de este documento,
+                              mas arriba.
+
+                      Otras Opciones de Impresion
+
+                              (Linux y Unix solamente)
+
+                              El comando usado para imprimir es realmente una
+                              serie de comandos que convierten la imagen PNG
+                              a un archivo PostScript y lo envian a la
+                              impresora:
+
+                                pngtopnm | pnmtops | lpr
+
+                              Este comando puede ser cambiado modificando el
+                              valor "printcommand" en el archivo de
+                              configuracion de Tux Paint.
+
+                              Ver la seccion "Opciones" de este documento,
+                              mas arriba.
+
+     ----------------------------------------------------------------------
+
+         Salir
+
+                 Haciendo clic en el boton "Salir", cerrando la ventana del
+                 Tux Paint o presionando la tecla "Escape" se saldra de Tux
+                 Paint.
+
+                 (NOTA: El boton "Salir" puede ser deshabilitado (p.ej: con
+                 la opcion de linea de comandos "--noquit"), pero la tecla
+                 [Escape] aun seguira funcionando. Ver la seccion "Opciones"
+                 de este documento, mas arriba.)
+
+                 Primero se pedira confirmar la desicion de salir.
+
+                 Si se elige salir y y no se ha guardado la imagen actual, se
+                 consultara si se desea guardarla. Si no fuera una nueva
+                 imagen, entonces se consultara si se desea guardarla sobre
+                 la version vieja o crear una nueva entrada. (Ver "Guardar"
+                 arriba.)
+
+                 NOTA: !Si la imagen es guardada, sera re abierta
+                 automaticamente la proxima vez que se use el Tux Paint!
+
+     ----------------------------------------------------------------------
+
+                      Abriendo Otras Imagenes en Tux Paint
+
+     Como el dialogo 'Abrir' del Tux Paint solo muestra las imagenes creadas
+     en el propio Tux Paint, ?que hay que hacer si se quisieran cargar otras
+     imagenes o fotografias en Tux Paint para editarlas?
+
+     Para hacer esto, simplemente se necesitaria convertir la imagen al
+     formato PNG (Portable Network Graphic) y ubicarla en el directorio donde
+     Tux Paint guarda sus imagenes. ("~/.tuxpaint/saved/" bajo Linux y Unix,
+     "userdata\saved\" bajo Windows.)
+
+Usando 'tuxpaint-import'
+
+       Los usuarios de Linux y Unix pueden utilizar el guion de shell
+       "tuxpaint-import", que se instala al instalar Tux Paint. Este utiliza
+       algunas de las herramientas NetPBM para convertir la imagen
+       ("anytopnm"), reescalarla de forma que quepa en la tela del Tux Paint
+       ("pnmscale") y convertirla a PNG ("pnmtopng").
+
+       Tambien utiliza "date" para obtener la hora y fecha actuales, que es
+       la convencion que Tux Paint utiliza para nombrar los archivos
+       guardados. (Recuerda que nunca se pide un 'nombre de archivo' al
+       querer Guardar o Abrir imagenes!)
+
+       Para usar 'tuxpaint-import', simplemente ejecutar el comando desde la
+       linea de comandos y proveerle de el(los) nombre(s) de el(los)
+       archivos(s) que se desean convertir.
+
+       Seran convertidos y ubicados en el directorio de imagenes guardadas
+       del Tux Paint. (Nota: Si estas realizando esto para otro usuario -
+       p.ej: tu hijo, necesitaras asegurarte de ejecutar el comando usando su
+       cuenta.)
+
+       Por ejemplo:
+
+         $ tuxpaint-import abuela.jpg
+         abuela.jpg -> /home/username/.tuxpaint/saved/20020921123456.png
+         jpegtopnm: WRITING A PPM FILE
+
+       La primera linea ("tuxpaint-import abuela.jpg") es el comando a
+       ejecutar. Las siguientes dos lineas es salida del programa mientras
+       esta trabajando.
+
+       Ahora ya es posible cargar Tux Paint y una version de la imagen
+       original estara disponible en el dialogo 'Abrir'. !Simplemente hay que
+       hacer doble clic sobre su icono!
+
+Haciendolo Manualmente
+
+       Los usuarios de Windows por el momento deberan realizar la conversion
+       manualmente.
+
+       Cargar un programa grafico que sea capaz tanto de cargar la imagen
+       como de guardar archivos en formato PNG. (Ver "PNG.txt" para una lista
+       de programas sugeridos.)
+
+       Reducir el tamano de la imagen a no mas de 448 pixels de ancho por no
+       mas de 376 pixels de alto. (el tamano maximo es de 448 x 376 pixels)
+
+       Guardar la imagen en formato PNG. Es altamente recomendado nombrar el
+       archivo usando la fecha y hora actuales, porque esa es la convencion
+       utilizada por Tux Paint:
+
+         AAAAMMDDhhmmss.png
+
+         * AAAA = Ano
+         * MM = Mes (01-12)
+         * DD = Dia (01-31)
+         * HH = Hora, en formato de 24 horas (00-23)
+         * mm = Minuto (00-59)
+         * ss = Segundo (00-59)
+
+       p.ej:
+
+         20020921130500 - para el 21 de Setiembre de 2002, a la 1:05:00 PM
+
+       Ubicar este archivo PNG en el directorio de archivos 'guardados' del
+       Tux Paint. (Ver mas arriba.)
+
+       Bajo Windows, esto es en la carpeta "userdata".
+
+     ----------------------------------------------------------------------
+
+                            Extendiendo al Tux Paint
+
+     Si se quieren agregar o cambiar cosas tales como los Pinceles y Sellos
+     usados por el Tux Paint, es posible hacerlo de forma sencilla incluyendo
+     o removiendo archivos del disco duro.
+
+     Nota: Se necesitara reiniciar el Tux Paint para que los cambios surtan
+     efecto.
+
+Donde van los archivos
+
+  Archivos Estandar
+
+         Tux Paint busca sus varios archivos de datos en su directorio
+         'data'.
+
+    Linux y Unix
+
+           Donde va este directorio depende del valor fijado para
+           "DATA_PREFIX" al compilar Tux Paint. Ver INSTALACION.txt para mas
+           detalles.
+
+           Por defecto, este directorio es:
+
+             /usr/local/share/tuxpaint/
+
+           Si ha sido instalado desde un paquete, es mas probable:
+
+             /usr/share/tuxpaint/
+
+    Windows
+
+           Tux Paint busca una carpeta llamada 'data' en la misma carpeta en
+           que se encuentra el ejecutable. Esta es la carpeta que utilizo el
+           instalador al instalar Tux Paint, p.ej:
+
+             "C:\Archivos de Programa\TuxPaint\data"
+
+     ----------------------------------------------------------------------
+
+  Archivos Presonales
+
+         Tambien es posible ubicar pinceles, sellos y tipos de letra en los
+         directorios personales y que el Tux Paint los utilice.
+
+    Linux y Unix
+
+           El directorio personal para cada usuario de Tux Paint es
+           "~/.tuxpaint/".
+
+           Esto es, si el directorio personal fuera "/home/carlos", entonces
+           el directorio del Tux Paint seria "/home/carlos/.tuxpaint/".
+
+           !No olvidar el punto (".") antes de la palabra 'tuxpaint'!
+
+    Windows
+
+           El directorio personal del Tux Paint se llama "userdata" y reside
+           en la misma carpeta que el ejecutable, p.ej:
+
+             "C:\Archivos de Programa\TuxPaint\userdata"
+
+         Para agregar pinceles, sellos y fuentes crear subcarpetas bajo el
+         directorio personal del Tux Paint llamadas "brushes", "stamps" y
+         "fonts", respectivamente.
+
+         (Por ejemplo, si se hubiera creado un pincel llamado "flor.png",
+         deberia ser puesto en "~/.tuxpaint/brushes/" bajor Linux o Unix.)
+
+     ----------------------------------------------------------------------
+
+Pinceles
+
+       Los pinceles utilizados para dibujar con las herramientas Pintar y
+       Lineas del Tux Paint son simplemente imagenes PNG en escala de grises.
+
+       El alfa (transparencia) de la imagen PNG es utilizada para determinar
+       la forma del pincel, !lo que significa que la forma puede contener
+       'anti-alias' y hasta ser parcialmente transparente!
+
+       Las imagenes para los pinceles deberian tener un maximo de 40 pixeles
+       de ancho y 40 de alto. (el tamano maximo es 40 x 40.)
+
+       Deberan simplemente ser ubicadas en el directorio "brushes".
+
+       Nota: Si los nuevos pinceles aparecen todos como cuadrados solidos,
+       !es porque no se ha usado transparencia alfa! Ver el documento
+       "PNG.txt" para mas informacion y consejos.
+
+     ----------------------------------------------------------------------
+
+Sellos
+
+       Todos los archivos de sellos van en el directorio "stamps". Es util
+       crear subdirectorios y sub-subdirectorios alli para organizar los
+       sellos. (Por ejemplo: es posible tener una carpeta "celebraciones" con
+       subcarpetas "noche de brujas" y "navidad".)
+
+  Imagenes
+
+         Los Sellos del Tux Paint pueden contener una serie de archivos
+         separados. El archivo que es requerido es, por supuesto, la imagen
+         en si misma.
+
+         Los Sellos usados por el Tux Paint son imagenes PNG. Pueden ser en
+         colores o en escala de grises. El alfa (transparencia) de la PNG es
+         usado para determinar la forma de la imagen (de otro modo se
+         estamparia un gran rectangulo en el dibujo).
+
+         Las PNGs pueden ser de cualquier tamano, pero en la practica, una de
+         100 pixeles de ancho por 100 pixeles de alto (100x100) es bien
+         grande para el Tux Paint.
+
+         Nota: Si los nuevos pinceles aparecen todos como cuadrados solidos,
+         !es porque no se ha usado transparencia alfa! Ver el documento
+         "PNG.txt" para mas informacion y consejos.
+
+     ----------------------------------------------------------------------
+
+  Texto Descriptivo
+
+         Archivos de texto (".TXT") con el mismo nombre de la PNG. (p.ej: la
+         descripcion de "imagen.png" se almacena en "imagen.txt" en el mismo
+         directorio.)
+
+    Soporte de Idiomas
+
+           Las lineas que comienzan con "xx=" (donde "xx" es uno de los
+           idiomas soportados; p.ej: "de" para Aleman, "fr" para Frances,
+           etc.) seran usadas bajo las correspondientes localizaciones
+           soportadas.
+
+           Si no existe una traduccion para la localizacion del usuario, el
+           texto por defecto (en la primera linea, que deberia estar en
+           Ingles) sera usado.
+
+    Usuarios de Windows
+
+           Usar el Bloc de Notas o WordPad para editar/crear estos archivos.
+           Asegurarse de guardarlos como Documento de Texto y que tengan la
+           extension ".txt" al final del nombre de archivo...
+
+     ----------------------------------------------------------------------
+
+  Efectos de Sonido
+
+         Archivos WAVE (".WAV") con el mismo nombre que la PNG. (p.ej.: el
+         efecto de sonido de "imagen.png" sera el sonido "imagen.wav" en el
+         mismo directorio.)
+
+    Soporte de Idiomas
+
+           Para tener sonidos para las diferentes localizaciones (p.ej.: si
+           el sonido fuera alguien diciendo una palabra y se quisiera tener
+           versiones traducidas de esa palabra), se deben crear archivos WAV
+           con la etiqueta de la localizacion en el nombre del archivo, en la
+           siguiente forma: "SELLO_LOCALIZACION.wav"
+
+           El efecto de sonido de "imagen.png", cuando Tux Paint se ejecuta
+           en Espanol, seria "imagen_es.wav". En Frances: "imagen_fr.wav". Y
+           asi sucesivamente...
+
+           Si no puede ser abierto un efecto de sonido localizado, Tux Paint
+           intentara abrir el archivo de sonido 'por defecto'. (p.ej:
+           "imagen.wav")
+
+     ----------------------------------------------------------------------
+
+  Opciones de los Sellos
+
+         Aparte de darles una forma grafica, un texto descriptivo y un efecto
+         de sonido, tambien es posible dar a los sellos otros atributos. Para
+         hacer esto, se necesitara crear una 'archivo de datos' del sello.
+
+         Un archivo de datos del sello es simplemente un archivo de texto que
+         contiene las opciones.
+
+         El archivo tendra el mismo nombre que la imagen PNG, pero con una
+         extension ".dat". (p.ej.: el archivo de datos de "imagen.png", es el
+         archivo de texto "imagen.dat" en el mismo directorio.)
+
+    Sellos Coloreados
+
+           Los sellos pueden hacerse tanto "coloreables" como "tenibles".
+
+      Coloreables
+
+             Los sellos "coloreables" funcionan de forma similar a pinceles -
+             se escoge el sello para obtener la forma y luego se escoge el
+             color que se desea que tenga. (Los sellos de simbolos, como los
+             matematicos y musicales, son un ejemplo.)
+
+             Nada de la imagen original es utilizado, excepto la
+             transparencia (el "canal alfa"). El color del sello es solido.
+
+             Agregar el termino "colorable" al archivo de datos del sello.
+
+      Tenibles
+
+             Los sellos "tenibles" son similares a los "coloreables", excepto
+             que los detalles de la imagen original se preservan. (Para
+             decirlo mas tecnicamente, se utiliza la imagen original, pero su
+             tono es cambiado, basado en el color actualmente seleccionado.)
+
+             Agregar el termino "tintable" al archivo de datos del sello.
+
+    Usuarios de Windows
+
+           Usar el Bloc de Notas o WordPad para editar/crear estos archivos.
+           Asegurarse de guardarlos como Documento de Texto y que tengan la
+           extension ".dat" al final, en vez de ".txt"...
+
+     ----------------------------------------------------------------------
+
+Tipos de Letra
+
+       Las fuentes utilizadas por el Tux Paint son Fuentes TrueType (TTF).
+
+       Simplemente hay que ubicarlas en el directorio "fonts". Tux Paint
+       cargara la fuente y proveera cuatro tamanos distintos en el 'Selector
+       de Fuentes' al usar la herramienta 'Texto'.
+
+     ----------------------------------------------------------------------
+
+                                Mas Informacion
+
+     Por mas informacion, ver los otros documentos que vienen con Tux Paint.
+
+     Si necesitas ayuda, sientete libre de contactarte con New Breed Software
+     (en ingles):
+
+       http://www.newbreedsoftware.com/
+
+     Puede que tambien desees participar en las varias listas de correo de
+     Tux Paint:
+
+       http://www.newbreedsoftware.com/tuxpaint/lists/

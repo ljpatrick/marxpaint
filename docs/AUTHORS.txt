@@ -1,0 +1,185 @@
+AUTHORS.txt for Tux Paint
+
+Tux Paint - A simple drawing program for children.
+
+Copyright (c) 2003 by Bill Kendrick
+bill@newbreedsoftware.com
+http://www.newbreedsoftware.com/tuxpaint/
+
+
+June 17, 2002 - February 18, 2003
+
+
+* Design and Coding:
+
+  Bill Kendrick <bill@newbreedsoftware.com>
+  New Breed Software
+  http://www.newbreedsoftware.com/
+
+  Filled shapes algorythm based on description from
+  the book "Computer Graphics: C Version," (c) Prentice Hall 1997
+  by Donald Hearn and M. Pauline Baker.
+  [ NOTE: Currently not in use. ]
+
+  Flood fill code based on Wikipedia example:
+  http://www.wikipedia.org/wiki/Flood_fill/C_example
+  by Damian Yerrick - http://www.wikipedia.org/wiki/Damian_Yerrick
+
+  800x600 resolution support patch by:
+  TOYAMA Shin-ichi <kyone@tky2.3web.ne.jp>
+
+
+* Graphics
+
+  * UI buttons - Created using "AquaPro" button script in The GIMP
+    Copyright (C) 2001 Denis Bodor <b.bodor@calixo.net>
+
+  * UI icons - Created by Bill Kendrick using The GIMP
+
+  * Cartoon representation of "Tux," the Linux penguin
+    Created by Sam "Criswell" Hart  <criswell@geekcomix.com>
+    Tux originally designed by Larry Ewing <lewing@isc.tamue.edu>
+    http://www.isc.tamu.edu/~lewing/linux/
+
+  * Brushes created using The GIMP
+    http://www.gimp.org/
+
+
+* Fonts
+
+  * "efont-serif.ttf" by Electronic Font Open Laboratory 
+    http://openlab.ring.gr.jp/efont/serif/
+    GPL'd, Copyright 2000-2001 Kazuhiko <kazuhiko@ring.gr.jp>
+
+  * "default_font.ttf" is "FreeSans.ttf" from the Free UCS Outline Fonts.
+    http://www.freesoftware.fsf.org/freefont/
+    GPL'd, Copyright 2002 Primoz Peterlin <primoz.peterlin@biofiz.mf.uni-lj.si>
+    et al
+
+
+* Sound
+
+  * Many recorded by Bill Kendrick
+    * Blocks - Stack of Nintendo NES cartridges hitting each other.
+    * Blur - Microphone against mousepad.
+    * Chalk - Microphone against head of hair.
+    * Fade - Squeaky frog.
+    
+  * Many others taken from various sources on the web.
+
+  * Edited using SOX
+    http://sox.sourceforge.net/
+
+  * Edited using Audacity
+    http://www.audacity.org/
+
+
+* Translations
+
+  * Catalan
+    Pere Pujal Carabantes <ppujal@airtel.net>
+
+  * Chinese
+    Wang Jian <lark@linux.net.cn>
+  
+  * Czech
+    Peter Sterba <sterba@sterba.com>
+    Martin <barin@email.cz>,
+    (Coming soon) Ales <garalda@email.cz>
+
+  * Danish
+    Rasmus Erik Voel Jensen <i18n@solsort.dk> [retired]
+
+  * Dutch
+    Herman Bruyninckx <Herman.Bruyninckx@mech.kuleuven.ac.be>
+    Geert Stams <geert-csg@wanadoo.nl>
+
+  * Finnish
+    Tarmo Toikkanen <tarmo.toikkanen@iki.fi>
+
+  * French
+    Jacques Chion <Jacques.Chion@wanadoo.fr>
+    Charles Vidal <vidalc@club-internet.fr>
+    
+  * German
+    Fabian Franz <FabianFranz@gmx.de>
+
+  * Greek
+    The Greek Linux i18n Team <i18ngr@lists.hellug.gr>
+
+  * Hungarian
+    Török Gábor <gabo@linuxmania.hu>
+
+  * Icelandic
+    Pjetur G. Hjaltason <pjetur@pjetur.net>
+
+  * Indonesian
+    Tedi Heriyanto <tedi_h@gmx.net>
+
+  * Italian
+    Marco Milanesi <kpanic@pavia.linux.it>
+  
+  * Japanese
+    TOYAMA Shin-ichi <kyone@tky2.3web.ne.jp>
+
+  * Korean
+    Mark Kim <markbk@cbreak.org>
+
+  * Norwegian
+    Karl Ove Hufthammer <karl@huftis.org>
+
+  * Polish
+    Arkadiusz Lipiec <A.Lipiec@elka.pw.edu.pl>
+
+  * Portuguese (Brazilian)
+    Daniel José Viana <danjovic@vespanet.com.br>
+    Dedicated to my beloved daughter Scarlet
+ 
+  * Portuguese
+    Ricardo Cruz <rick2@aeiu.pt>,
+    
+  * Romanian
+    Laurentiu Buzdugan <buzdugan@voyager.net>
+  
+  * Spanish
+    Gabriel Gazzan <ggabriel@internet.com.uy>
+
+  * Slovak
+    Milan Plzik <mmp@golem.gymzv.sk>
+
+  * Swedish
+    Daniel Andersson <daniel@septum.org> [retired]
+
+  * Turkish
+    Doruk Fisek <dfisek@fisek.com.tr>
+    
+
+* Ports and Packaging
+
+  * Windows 32-bit builds
+    John Popplewell <john@johnnypops.demon.co.uk>
+
+  * Debian packages
+    Ben Armstrong <synrg@sanctuary.nslug.ns.ca>
+
+  * NetBSD packages
+    Thomas Klausner <wiz@danbala.ifoer.tuwien.ac.at>
+
+  * Mac OS X builds
+    Darrell Walisser <walisser@mac.com>
+
+  * BeOS builds
+    Marcin 'Shard' Konicki <shard at beosjournal.org>
+
+  * Slackware packages
+    Torsten Giebl <wizard@turricane.org>
+
+
+* Support / Testers
+
+  Tux4Kids.org, Sam Hart  (Tux4Kids project manager)
+  Many others in the community!  (Testing, bug fixes, comments, kudos)
+
+
+See also:  CHANGES.txt
+

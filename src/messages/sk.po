@@ -1,0 +1,478 @@
+# Tux Paint slovak messages.
+# Czech original 'stolen' from Peter Sterba - thanks
+# merged with nessages from 0.9.3
+msgid ""
+msgstr ""
+"POT-Creation-Date: 2003-01-11 13:40+0100\n"
+"PO-Revision-Date: 2003-01-10 00:00+0100\n"
+"Last-Translator: Milan Plzik <mplzik@post.sk>\n"
+"Language-Team: Slovak <sk-i18n@lists.linux.sk>\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: colors.h:56
+msgid "Black"
+msgstr "Cierna"
+
+#: colors.h:57
+msgid "White"
+msgstr "Biela"
+
+#: colors.h:58
+msgid "Red"
+msgstr "Cervena"
+
+#: colors.h:59
+msgid "Pink"
+msgstr "Ruzova"
+
+#: colors.h:60
+msgid "Orange"
+msgstr "Oranzova"
+
+#: colors.h:61
+msgid "Yellow"
+msgstr "Zlta"
+
+#: colors.h:62
+msgid "Green"
+msgstr "Zelena"
+
+#: colors.h:63
+msgid "Cyan"
+msgstr "Cerveno-fialova"
+
+#: colors.h:64
+msgid "Blue"
+msgstr "Modra"
+
+#: colors.h:65
+msgid "Purple"
+msgstr "Fialova"
+
+#: colors.h:66
+msgid "Brown"
+msgstr "Hneda"
+
+#: colors.h:67
+msgid "Grey"
+msgstr "Seda"
+
+#: great.h:20
+msgid "Great!"
+msgstr "Vyborne!"
+
+#: great.h:21
+msgid "Cool!"
+msgstr "Pekne!"
+
+#: great.h:22
+msgid "Keep it up!"
+msgstr "Uz to nemen!"
+
+#: great.h:23
+msgid "Good job!"
+msgstr "Dobra praca!"
+
+#: magic.h:48
+msgid "Rainbow"
+msgstr "Duha"
+
+#: magic.h:49
+msgid "Sparkles"
+msgstr "Iskry"
+
+#: magic.h:51
+msgid "Mirror"
+msgstr "Zrkadlo"
+
+#: magic.h:52
+msgid "Flip"
+msgstr "Otocit hore hlavou"
+
+#: magic.h:54
+msgid "Blur"
+msgstr "Skvrna"
+
+#: magic.h:55
+msgid "Blocks"
+msgstr "Kocka"
+
+#: magic.h:57
+msgid "Negative"
+msgstr "Negativ"
+
+#: magic.h:58
+msgid "Fade"
+msgstr "Vyblednut"
+
+#: magic.h:60
+msgid "Chalk"
+msgstr "Krieda"
+
+#: magic.h:61
+msgid "Drip"
+msgstr "Kvapka"
+
+#: magic.h:63
+msgid "Thick"
+msgstr "Tucne"
+
+#: magic.h:64
+msgid "Thin"
+msgstr "Tenko"
+
+#: magic.h:66
+msgid "Fill"
+msgstr "Vyplnit"
+
+#: magic.h:73
+msgid "You can draw in rainbow colors!"
+msgstr "Mozes kreslit v duhovych farbach!"
+
+#: magic.h:74
+msgid "Click and move to draw sparkles"
+msgstr "Klikni a pohybuj pre kreslenie iskier"
+
+#: magic.h:76
+msgid "Click to make a mirror image!"
+msgstr "Klikni pre zrkadlenie obrazku!"
+
+#: magic.h:77
+msgid "Click to flip the picture upside-down!"
+msgstr "Klikni pre otocenie obrazka zhora hadol !"
+
+#: magic.h:79
+msgid "Click and move the mouse around to blur the picture"
+msgstr "Klikni a pohybuj mysou dokoola pre rozmazanie obrazku"
+
+#: magic.h:80
+msgid "Click and move the mouse around to make the picture blocky"
+msgstr "Klikni a pohybuj mysou dokoola pre vytvorenie kaskady"
+
+#: magic.h:82
+msgid "Click and move the mouse around to draw a negative"
+msgstr "Klikni a pohybuj mysou dokoola pre vykreslenie negativu"
+
+#: magic.h:83
+msgid "Click and move to fade the colors."
+msgstr "Klikni a hyb mysou pre vyblednutie farieb."
+
+#: magic.h:85
+msgid ""
+"Click and move the mouse around to turn the picture into a chalk drawing."
+msgstr "Klikni a pohybuj mysou pre pretvorenie obrazku do kriedoveho vzhladu."
+
+#: magic.h:86
+msgid "Click and move the mouse around to make the picture drip!"
+msgstr "Klikni a pohybuj mysou pre vytvorenie kvapkoviteho obrazku."
+
+#: magic.h:88
+msgid "Click and move the mouse to thicken the picture"
+msgstr "Klikni a pohybuj mysou pre rozsirenie obrazku."
+
+#: magic.h:89
+msgid "Click and move the mouse to thin the picture"
+msgstr "Klikni a pohybuj mysi pre zuzenie obrazku."
+
+#: magic.h:91
+#, fuzzy
+msgid "Click in the picture to fill that area with color"
+msgstr "Klikni a posun pre vyblednutie farieb."
+
+#: shapes.h:121 shapes.h:122
+msgid "Square"
+msgstr "Stvorec"
+
+#: shapes.h:123 shapes.h:124
+msgid "Rectangle"
+msgstr "Obdlznik"
+
+#: shapes.h:125 shapes.h:126
+msgid "Circle"
+msgstr "Kruh"
+
+#: shapes.h:127 shapes.h:128 shapes.h:147 shapes.h:148
+msgid "Oval"
+msgstr "Oval"
+
+#: shapes.h:129 shapes.h:130
+msgid "Triangle"
+msgstr "Trojuholnik"
+
+#: shapes.h:131 shapes.h:132
+msgid "Pentagon"
+msgstr "Petuholnik"
+
+#: shapes.h:133 shapes.h:134
+msgid "Diamond"
+msgstr "Krystal"
+
+#: shapes.h:141 shapes.h:142
+msgid "A square has four sides, each the same length."
+msgstr "Stvorec ma styri strany, vsetky rovnako dlhe."
+
+#: shapes.h:143 shapes.h:144
+msgid "A rectangle has four sides."
+msgstr "Obdlzik ma styri strany"
+
+#: shapes.h:145 shapes.h:146
+msgid "A circle is exactly round."
+msgstr "Kruh je presne okruhly."
+
+#: shapes.h:149 shapes.h:150
+msgid "A triangle has three sides."
+msgstr "Trojuholnik ma tri strany."
+
+#: shapes.h:151 shapes.h:152
+msgid "A pentagon has five sides."
+msgstr "Petuholnik ma pat stran"
+
+#: shapes.h:153 shapes.h:154
+msgid "A diamond is a square, turned around slightly."
+msgstr "Krystal vznikne pootacanim stvorca okolo osi."
+
+#: titles.h:37
+msgid "Tools"
+msgstr "Nastroje"
+
+#: titles.h:38
+msgid "Colors"
+msgstr "Farby"
+
+#: titles.h:39
+msgid "Brushes"
+msgstr "Stetce"
+
+#: titles.h:40
+#, fuzzy
+msgid "Stamps"
+msgstr "Razitka"
+
+#: titles.h:41 tools.h:45
+msgid "Shapes"
+msgstr "Tvary"
+
+#: titles.h:42
+msgid "Letters"
+msgstr "Pismenka"
+
+#: titles.h:43 tools.h:47
+msgid "Magic"
+msgstr "Kuzlo"
+
+#: tools.h:42
+msgid "Paint"
+msgstr "Kreslit"
+
+#: tools.h:43
+msgid "Stamp"
+msgstr "Razitko"
+
+#: tools.h:44
+msgid "Lines"
+msgstr "Usecky"
+
+#: tools.h:46
+msgid "Text"
+msgstr "Text"
+
+#: tools.h:48
+msgid "Undo"
+msgstr "Spat"
+
+#: tools.h:49
+msgid "Redo"
+msgstr "Znovu"
+
+#: tools.h:50
+msgid "Eraser"
+msgstr "Guma"
+
+#: tools.h:51
+msgid "New"
+msgstr "Novy"
+
+#: tools.h:52 tuxpaint.c:4215
+msgid "Open"
+msgstr "Otvor"
+
+#: tools.h:53
+msgid "Save"
+msgstr "Uloz"
+
+#: tools.h:54
+msgid "Print"
+msgstr "Tlac"
+
+#: tools.h:55
+msgid "Quit"
+msgstr "Odchod"
+
+#: tools.h:62
+msgid "Pick a color and a brush shape to draw with."
+msgstr "Vyber farbu a tvar stetca pre pouzitie."
+
+#: tools.h:63
+msgid "Pick a picture to stamp around your drawing."
+msgstr "Vyber obrazok pre podklad Tvojho obrazku."
+
+#: tools.h:64
+msgid "Click to start drawing a line.  Let go to complete it."
+msgstr ""
+"Klikni pre pociatok usecky, tahaj mys pre orientaciu usecky a klikni pre "
+"ukoncenie usecky."
+
+#: tools.h:65
+msgid ""
+"Pick a shape. Click to pick the center, drag, then let go when it is the "
+"size you want.  Move around to rotate it, and click to draw it."
+msgstr ""
+"Vyber si tvar. Kliknutim si vyber stred, potom tahaj, az kym nema spravnu"
+"velkost. Hybanim mysi ho mozes otacat a kliknutim nakreslit."
+
+#: tools.h:66
+msgid ""
+"Choose a style of text.  Click on your drawing and you can start typing."
+msgstr ""
+"Vyber styl textu. Klikni tam, kde chces pisat, a mozes zadavat text."
+
+#: tools.h:67
+msgid "Pick a magical effect to use on your drawing!"
+msgstr "Vyber kuzelny efekt pre pouziti."
+
+#: tools.h:68
+msgid "Undo!"
+msgstr "Spat!"
+
+#: tools.h:69
+msgid "Redo!"
+msgstr "Znovu!"
+
+#: tools.h:70
+msgid "Eraser!"
+msgstr "Gumovat!"
+
+#: tools.h:71
+msgid "You now have a blank sheet to draw on!"
+msgstr "Mas teraz prazdnu plochu na kreslenie!"
+
+#: tools.h:72
+msgid "Open..."
+msgstr "Otvorit..."
+
+#: tools.h:73
+msgid "Your image has been saved!"
+msgstr "Obrazok bol ulozeny!"
+
+#: tools.h:74
+msgid "Printing..."
+msgstr "Tlaci sa..."
+
+#: tools.h:75
+msgid "Bye bye!"
+msgstr "Dovidenia!"
+
+#: tools.h:78
+msgid "Let go of the button to complete the line."
+msgstr "Drz stlacene tlacitko pre dokoncenie usecky."
+
+#: tools.h:79
+msgid "Hold the button to stretch the shape."
+msgstr "Drz tlacitko pre roztiahnutie tvaru."
+
+#: tools.h:80
+msgid "Move the mouse to rotate the shape. Click to draw it."
+msgstr "Hyb mysou pre rotaciu tvaru. Klikni pre jeho vykreslenie."
+
+#: tools.h:81
+msgid "Ok then... Let's keep drawing this one!"
+msgstr "Ok, nezabudni si tento obrazok ulozit!"
+
+#: tuxpaint.c:621
+msgid "Do you really want to quit?"
+msgstr "Naozaj chces skoncit?"
+
+#: tuxpaint.c:622 tuxpaint.c:626 tuxpaint.c:630 tuxpaint.c:650 tuxpaint.c:6529
+#: tuxpaint.c:7187
+msgid "Yes"
+msgstr "Ano"
+
+#: tuxpaint.c:623 tuxpaint.c:627 tuxpaint.c:631 tuxpaint.c:651 tuxpaint.c:6532
+msgid "No"
+msgstr "Niee"
+
+#: tuxpaint.c:625
+msgid "If you quit, you'll lose your picture! Save it?"
+msgstr "Ak skoncis, stratis svoj obrazok! Chces ho ulozit?"
+
+#: tuxpaint.c:629
+msgid "Save your picture first?"
+msgstr "Chces najskor ulozit obrazok?"
+
+#: tuxpaint.c:633
+#, fuzzy
+msgid "Can't open that picture!"
+msgstr "Vymazat tento obrazok?"
+
+#: tuxpaint.c:634 tuxpaint.c:641 tuxpaint.c:644 tuxpaint.c:647 tuxpaint.c:7521
+msgid "Okay"
+msgstr "OK"
+
+#: tuxpaint.c:636
+msgid "Starting a new picture will erase the current one!"
+msgstr "Vytvorenim noveho obrazku vymazes tento!"
+
+#: tuxpaint.c:637
+msgid "That's Ok"
+msgstr "OK, pokracuj"
+
+#: tuxpaint.c:638
+msgid "Never Mind!"
+msgstr "Niee, spat!"
+
+#: tuxpaint.c:640
+msgid "There are no saved files!"
+msgstr "Nie su tu ziadne ulozene subrory!"
+
+#: tuxpaint.c:643
+#, fuzzy
+msgid "Your picture has been printed!"
+msgstr "Obrazok bol ulozeny!"
+
+#: tuxpaint.c:646
+msgid "You can't print yet!"
+msgstr "Teraz sa neda tlacit!"
+
+#: tuxpaint.c:649
+msgid "Erase this picture?"
+msgstr "Vymazat tento obrazok?"
+
+#: tuxpaint.c:4220
+#, fuzzy
+msgid "Erase"
+msgstr "Guma"
+
+#: tuxpaint.c:4225
+#, fuzzy
+msgid "Back"
+msgstr "Cierna"
+
+#: tuxpaint.c:7186
+msgid "Save over the older version of this drawing?"
+msgstr "Chces prepisat starsti obrazok tymto?"
+
+#: tuxpaint.c:7188
+msgid "No, save a new file"
+msgstr "Nie, uloz ho ako novy subor"
+
+#: tuxpaint.c:7782
+msgid "Choose the picture you want, then click 'Open'"
+msgstr "Vyber obrazok, ktory chces, a potom klikni na 'Otvor'"
+
+#~ msgid ""
+#~ "Pick a shape to draw.  Click once to pick the center of the shape, click "
+#~ "again to draw it."
+#~ msgstr ""
+#~ "Vyber tvar pre pouzitie. Klikni raz pre vyber stredu tvaru, druhykrat "
+#~ "klikni pre vlozenie tvaru."

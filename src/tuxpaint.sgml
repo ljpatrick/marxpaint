@@ -1,0 +1,252 @@
+<!doctype refentry PUBLIC "-//OASIS//DTD DocBook V4.1//EN" [
+
+<!-- tuxpaint.sgml
+     SGML source for Tux Paint's man page
+
+     Ben Armstrong <synrg@sanctuary.nslug.ns.ca>
+     Bill Kendrick <bill@newbreedsoftware.com>
+
+     2002.July.09 - 2002.September.28
+  -->
+
+<!-- Process this file with docbook-to-man to generate an nroff manual
+     page: `docbook-to-man tuxpaint.sgml > tuxpaint.1'.  You may view
+     the manual page with: `docbook-to-man tuxpaint.sgml | nroff -man |
+     less'.  A typical entry in a Makefile or Makefile.am is:
+
+tuxpaint.1: tuxpaint.sgml
+	docbook-to-man $< > $@
+
+	The docbook-to-man binary is found in the docbook-to-man package.
+	Please remember that if you create the nroff version in one of the
+	debian/rules file targets (such as build), you will need to include
+	docbook-to-man in your Build-Depends control field.
+
+     Details on docbook:
+     http://www.oasis-open.org/docbook/documentation/reference/html/docbook.html
+
+  -->
+
+  <!-- Fill in your name for FIRSTNAME and SURNAME. -->
+  <!ENTITY dhfirstname "<firstname>Bill</firstname>">
+  <!ENTITY dhsurname   "<surname>Kendrick</surname>">
+  <!-- Please adjust the date whenever revising the manpage. -->
+  <!ENTITY dhdate      "<date>September 28, 2002</date>">
+  <!ENTITY dhsection   "<manvolnum>1</manvolnum>">
+  <!ENTITY dhemail     "<email>bill@newbreedsoftware.com</email>">
+  <!ENTITY dhusername  "Bill Kendrick">
+  <!ENTITY dhucpackage "<refentrytitle>TUXPAINT</refentrytitle>">
+  <!ENTITY dhpackage   "tuxpaint">
+
+  <!ENTITY debian      "<productname>Debian</productname>">
+  <!ENTITY gnu         "<acronym>GNU</acronym>">
+]>
+
+<refentry>
+  <refentryinfo>
+    <address>
+      &dhemail;
+    </address>
+    <author>
+      &dhfirstname;
+      &dhsurname;
+    </author>
+    <copyright>
+      <year>2002</year>
+      <holder>&dhusername;</holder>
+    </copyright>
+    &dhdate;
+  </refentryinfo>
+  <refmeta>
+    &dhucpackage;
+
+    &dhsection;
+  </refmeta>
+  <refnamediv>
+    <refname>&dhpackage;</refname>
+
+    <refpurpose>Painting program for kids</refpurpose>
+  </refnamediv>
+  <refsynopsisdiv>
+    <cmdsynopsis>
+      <command>&dhpackage;</command>
+      <arg>--fullscreen</arg>
+      <arg>--nosound</arg>
+      <arg>--noquit</arg>
+      <arg>--noprint</arg>
+      <arg>--printdelay=SECONDS</arg>
+      <arg>--simpleshapes</arg>
+      <arg>--uppercase</arg>
+      <arg>--grab</arg>
+      <arg>--nowheelmouse</arg>
+      <arg>--nofancycursors</arg>
+      <arg>--saveover</arg>
+      <arg>--saveovernew</arg>
+    </cmdsynopsis>
+    <cmdsynopsis>
+      <command>&dhpackage;</command>
+      <arg>--windowed</arg>
+      <arg>--sound</arg>
+      <arg>--quit</arg>
+      <arg>--print</arg>
+      <arg>--printdelay=0</arg>
+      <arg>--complexshapes</arg>
+      <arg>--mixedcase</arg>
+      <arg>--dontgrab</arg>
+      <arg>--wheelmouse</arg>
+      <arg>--fancycursors</arg>
+      <arg>--saveoverask</arg>
+    </cmdsynopsis>
+    <cmdsynopsis>
+      <command>&dhpackage;</command>
+      <arg>--lang
+        <group>
+	  <arg>english</arg>
+	  <arg><group><arg>danish</arg><arg>dansk</arg></group></arg>
+	  <arg><group><arg>dutch</arg></group></arg>
+	  <arg><group><arg>finnish</arg><arg>suomi</arg></group></arg>
+	  <arg><group><arg>french</arg><arg>francais</arg></group></arg>
+	  <arg><group><arg>german</arg><arg>deutsch</arg></group></arg>
+	  <arg><group><arg>icelandic</arg><arg>islenska</arg></group></arg>
+	  <arg><group><arg>italian</arg><arg>italiano</arg></group></arg>
+	  <arg><group>
+	    <arg>norwegian</arg><arg>nynorsk</arg><arg>norsk</arg>
+	  </group></arg>
+	  <arg><group><arg>spanish</arg><arg>espanol</arg></group></arg>
+	  <arg><group><arg>swedish</arg><arg>svenska</arg></group></arg>
+	  <arg><group><arg>turkish</arg></group></arg>
+	</group>
+      </arg>
+      <arg>--locale LOCALE</arg>
+    </cmdsynopsis>
+    <cmdsynopsis>
+      <command>&dhpackage;</command>
+       <arg>--nosysconfig</arg>
+    </cmdsynopsis>
+    <cmdsynopsis>
+      <command>&dhpackage;</command>
+      <group>
+	<arg>--help</arg>
+        <arg>--usage</arg>
+	<arg>--version</arg>
+	<arg>--copying</arg>
+      </group>
+    </cmdsynopsis>
+  </refsynopsisdiv>
+  <refsect1>
+    <title>DESCRIPTION</title>
+
+    <para><command>&dhpackage;</command> is a drawing program for young children.
+    It is meant to be easy and fun to use.</para>
+
+    <para>The screen is divided into five (5) areas:</para>
+
+    <OrderedList>
+      <ListItem><para><Emphasis>The toolbar, on the left.</Emphasis></para>
+        <para>This lists the available tools in Tux Paint:</para>
+
+	<OrderedList>
+	  <ListItem><para>Brush - Draw using various brush shapes and
+	  colors.</para></ListItem>
+
+	  <ListItem><para>Stamp - Paste pre-drawn pictures into your
+	  drawing.</para></ListItem>
+
+	  <ListItem><para>Lines - Draw straight lines using various brush shapes
+	  and colors.</para></ListItem>
+
+	  <ListItem><para>Shapes - Draw various polygon shapes, both outlined
+	  and filled.</para></ListItem>
+
+	  <ListItem><para>Text - Add text to your picture using various
+	  typefaces (fonts), sizes, and colors.</para></ListItem>
+
+	  <ListItem><para>Magic - A collection of filters and effects.
+	  (See below.)</para></ListItem>
+
+	  <ListItem><para>Undo and Redo - Undo the last changes you made
+	  to your picture, or bring the changes back.</para></ListItem>
+
+	  <ListItem><para>Eraser - A large eraser you can use to wipe
+	  parts of the picture blank (white).</para></ListItem>
+
+	  <ListItem><para>New - Erase the entire picture and start
+	  over.</para></ListItem>
+
+	  <ListItem><para>Open and Save - Open a previously-saved picture,
+	  or save the current one.  (If saving again, by default you will
+	  be prompted whether you want to save over, or save a new
+	  file.)</para></ListItem>
+
+	  <ListItem><para>Print - Print the current drawing.</para></ListItem>
+
+	  <ListItem><para>Quit - Exit Tux Paint.</para></ListItem>
+	</OrderedList>
+      </ListItem>
+
+      
+      <ListItem><para><Emphasis>The selector, on the right.</Emphasis></para>
+        <para>Depending on the current tool, this will show different items.
+	In Brush and Lines mode, it will show a collection of brush shapes.
+	In Stamp mode, it will show rubber-stamp pictures.
+	In Shapes mode, it will show different filled and unfilled shapes.
+	In Text mode, it will show various fonts and sizes.
+	And in Magic mode, it will show the different Magic effect tools
+	(see below).</para></ListItem>
+      
+      <ListItem><para><Emphasis>The canvas, in the middle.</Emphasis></para>
+        <para>This is where your picture is!</para></ListItem>
+      
+      <ListItem><para><Emphasis>The color palette, near the
+        bottom.</Emphasis></para>
+	
+      </ListItem>
+      
+      <ListItem><para><Emphasis>Tips and information, at the very
+        bottom.</Emphasis></para>
+      
+      </ListItem>
+    </OrderedList>
+
+  </refsect1>
+  <refsect1>
+    <title>SEE ALSO</title>
+
+    <para>tuxpaint-import (1), xpaint (1), gpaint (1X), gimp (1).</para>
+
+    <para>Tux Paint documentation in /usr/local/share/doc/tuxpaint/</para>
+
+  </refsect1>
+  <refsect1>
+    <title>AUTHOR</title>
+
+    <para>This manual page was originally written by 
+      Ben Armstrong <email>synrg@sanctuary.nslug.ns.ca</email> for
+      the &debian; system (but may be used by others).  It is now maintained
+      by Bill Kendrick <email>bill@newbreedsoftware.com</email>.</para>
+      
+    <para>Permission is granted to copy, distribute and/or modify this document
+      under the terms of the <acronym>GNU</acronym> Free Documentation
+      License, Version 1.1 or any later version published by the Free
+      Software Foundation; with no Invariant Sections, no Front-Cover
+      Texts and no Back-Cover Texts.</para>
+
+  </refsect1>
+</refentry>
+
+<!-- Keep this comment at the end of the file
+Local variables:
+mode: sgml
+sgml-omittag:t
+sgml-shorttag:t
+sgml-minimize-attributes:nil
+sgml-always-quote-attributes:t
+sgml-indent-step:2
+sgml-indent-data:t
+sgml-parent-document:nil
+sgml-default-dtd-file:nil
+sgml-exposed-tags:nil
+sgml-local-catalogs:nil
+sgml-local-ecat-files:nil
+End:
+-->

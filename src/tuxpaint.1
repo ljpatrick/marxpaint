@@ -1,0 +1,413 @@
+.\" tuxpaint.1 - 2003.02.22
+.TH TUXPAINT 1 "22 Feb 2003" "0.9.10" "Tux Paint"
+.SH NAME
+tuxpaint -- A drawing program for young children.
+
+.SH SYNOPSYS
+.B tuxpaint
+[\-\-help \-\-version \-\-usage \-\-copying]
+
+.TP 9
+.B tuxpaint
+[\-\-fullscreen]
+[\-\-800x600]
+[\-\-nosound]
+[\-\-noquit]
+[\-\-noprint]
+[\-\-printdelay=\fISECONDS\fP]
+[\-\-printcfg]
+[\-\-simpleshapes]
+[\-\-uppercase]
+[\-\-grab]
+[\-\-nowheelmouse]
+[\-\-nofancycursors]
+[\-\-nooutlines]
+[\-\-keyboard]
+[\-\-savedir \fiDIR\fP]
+[\-\-saveover]
+[\-\-saveovernew]
+
+.TP 9
+.B tuxpaint
+[\-\-windowed]
+[\-\-640x480]
+[\-\-sound]
+[\-\-quit]
+[\-\-print]
+[\-\-printdelay=0]
+[\-\-noprintcfg]
+[\-\-complexshapes]
+[\-\-mixedcase]
+[\-\-dontgrab]
+[\-\-wheelmouse]
+[\-\-mouse]
+[\-\-outlines]
+[\-\-fancycursors]
+[\-\-saveoverask]
+
+.TP 9
+.B tuxpaint
+[\-\-locale]
+
+.TP 9
+.B tuxpaint
+[\-\-lang \fILANGUAGE\fP]
+
+.TP 9
+.B tuxpaint
+[\-\-nosysconfig]
+
+.SH DESCRIPTION
+.PP
+\fITux Paint\fP is a drawing program for young children.  It is meant to be
+easy and fun to use.  It provides a simple interface and fixed canvas size,
+and provides access to previous images using a thumbnail browser
+(i.e., no access to the underlying filesystem).
+
+Unlike popular drawing programs like "\fIThe GIMP\fP," it has a very limited
+toolset. However, it provides a much simpler interface, and has entertaining,
+child-oriented additions such as sound effects.
+
+.SH OPTIONS - INFORMATIONAL
+.TP 8
+.B \-\-help
+Display short, helpful information about Tux Paint.
+.TP 8
+.B \-\-version
+Output the version info.
+.TP 8
+.B \-\-usage
+Display a list of all commandline options.
+.TP 8
+.B \-\-copying
+Show the license (GNU GPL) under which Tux Paint is released.
+
+.SH OPTIONS - INTERFACE
+.l
+\fItuxpaint\fP accepts the following options to alter the interface.
+They can be used along with, instead of, or to override options set in
+configuration files. (See below.)
+.TP 8
+.B \-\-fullscreen \-\-windowed
+Run \fITux Paint\fP in full-screen mode, or in a window (default).
+
+.TP 8
+.B \-\-800x600 \-\-640x480
+Run \fITux Paint\fP at 800x600 resolution (EXPERIMENTAL), or
+640x480 resolution (default).
+
+.TP 8
+.B \-\-nosound \-\-sound
+Disable or enable (default) sound.
+
+.TP 8
+.B \-\-noquit \-\-quit
+Disable or enable (default) the on-screen \fIQuit\fP button.
+
+.TP 8
+.B \-\-noprint \-\-print
+Disable or enable (default) the \fIPrint\fP command within \fITux Paint\fP.
+
+.TP 8
+.B \-\-printdelay=\fISECONDS\fP \-\-printdelay=0
+Only allow printing (via the \fIPrint\fP command) once every \fISECONDS\fP
+seconds.  Default is 0 (no limitation).
+
+.TP 8
+.B \-\-printcfg \-\-noprintcfg
+(Windows only.)  Enable or disable loading and saving of printer settings.
+By default, \fITux Paint\fP will print to the default printer with default
+settings.  Pressing \fI[ALT]\fP while pushing the \fIPrint\fP button
+will cause a Windows printer dialog to appear (as long as you're not in
+fullscreen mdoe.)  If \-\-printcfg is used, your previous settings will
+be loaded when \fITux Paint\fP starts up, and setting changes will be saved
+for next time.
+
+.TP 8
+.B \-\-simpleshapes \-\-complexshapes
+Disable or enable (default) the \fIrotation\fP step when using the
+\fIShape\fP tool within \fITux Paint\fP.  When disabled, shapes cannot be
+rotated; however, the interface is easier (click, drag, release), which can
+be useful for younger or disabled children.
+
+.TP 8
+.B \-\-uppercase \-\-mixedcase
+In \fIuppercase\fP mode, all text prompts and the \fIText\fP drawing tool
+will display only uppercase letters.  This is useful for children who are not
+yet comfortable with the lowercase characterset.  Default mode is
+\fImixed case\fP.
+
+.TP 8
+.B \-\-grab \-\-nograb
+Grab the mouse and keyboard input (if possible), so that the mouse is
+confined to the \fITux Paint\fP window.  Default is to not grab.
+
+.TP 8
+.B \-\-nowheelmouse \-\-wheelmouse
+By default, the wheel (jog dial) on a mouse will be used to scroll the
+\fIselector\fP on the right of the screen.  This can be disabled, and the
+wheel completely ignored, with the \fI\-\-nowheelmouse\fP option.
+This is useful for children who aren't yet comfortable with the mouse.
+Default is to support the wheel.
+
+.TP 8
+.B \-\-nofancycursors \-\-fancycursors
+Disable or enable (default) the 'fancy' mouse pointer shapes in \fITux Paint\fP.
+While the shapes are larger, and context sensitive, some environments have
+trouble displaying the mouse pointer, and/or leave 'trails' on the screen.
+
+.TP 8
+.B \-\-keyboard \-\-mouse
+The \fIkeyboard\fP option lets the mouse pointer in \fITux Paint\fP be
+controlled with the keyboard.  The \fIarrow keys\fP move the pointer.
+\fISpacebar\fP acts as the mouse button.
+
+.TP 8
+.B \-\-nooutlines \-\-outlines
+In \fInooutlines\fP mode, much simpler outlines and 'rubber-band' lines are
+displayed when using the \fILines\fP, \fIShapes\fP, \fIStamps\fP and
+\fIEraser\fP tools. (This can help when \fITux Paint\fP is run on slower
+computers, or displayed on a remote X display.)
+
+.TP 8
+.B \-\-savedir \fIDIR\fP
+Specify where \fITux Paint\fP should save files.  By default, this is
+"~/.tuxpaint/saved" under Linux and Unix, and "userdata\\" under Windows.
+
+.TP 8
+.B \-\-saveover \-\-saveovernew \-\-saveoverask
+If, when saving a picture, an older version of the file will be overwritten,
+\fITux Paint\fP will, by default, ask for confirmation: either
+\fIsave over\fP the old file, or \fIcreate\fP a new file.  This prompt
+can be disabled with \fI\-\-saveover\fP (which always saves over older versions
+of pictures) or \fI\-\-saveovernew\fP (which always saves a new file).
+The default is to prompt (\fI\-\-saveoverask\fP).
+
+.SH OPTIONS - LANGUAGE
+.l
+Various parts of \fITux Paint\fP have been translated into numerous languages.
+\fITux Paint\fP will try its best to honor your \fIlocale\fP setting
+(i.e., the \fILANG\fP environment variable), if possible.
+You can also specifically set the language using options on the command-line
+or in a configuration file.
+
+.TP 8
+.B \-\-locale \fILOCALE\fP
+Specify the language to use, based on locale name (which is typically of the
+form \fIlanguage\fP[_\fIterritory\fP][.\fIcodeset\fP][@\fImodifier\fP],
+where \fIlanguage\fP is an ISO 639 language code,
+\fIterritory\fP is an ISO 3166 country code, and
+\fIcodeset\fP is a character set or encoding identifier like ISO-8859-1 or
+UTF-8.)
+.PP
+.RS
+For example, \fIde_DE@euro\fP for German, or \fIpt_BR\fP
+for Brazilian Portuguese.
+.RE
+
+.TP 8
+.B \-\-lang \fiLANGUAGE\fP
+Specify the language to use, based on the language's name
+(as recognized by \fITux Paint\fP).  Choose one of the language names
+listed below:
+.PP
+.RS
+.PD 0
+.TP 2
+-
+english | american-english
+.TP 2
+-
+brazilian-portuguese | portuges-brazilian | brazilian
+.TP 2
+-
+british | british-english
+.TP 2
+-
+catalan | catala
+.TP 2
+-
+czech | cesky
+.TP 2
+-
+chinese
+.TP 2
+-
+danish | dansk
+.TP 2
+-
+dutch
+.TP 2
+-
+finnish | suomi
+.TP 2
+-
+french | francais
+.TP 2
+-
+german | dutch
+.TP 2
+-
+greek
+.TP 2
+-
+hungarian | magyar
+.TP 2
+-
+icelandic | islenska
+.TP 2
+-
+indonesian | bahasa-indonesia
+.TP 2
+-
+italian | italiano
+.TP 2
+-
+japanese
+.TP 2
+-
+korean
+.TP 2
+-
+norwegian | nynorsk
+.TP 2
+-
+polish | polski
+.TP 2
+-
+portuguese | portugues
+.TP 2
+-
+romanian
+.TP 2
+-
+spanish | espanol
+.TP 2
+-
+swedish | svenska
+.TP 2
+-
+turkish
+.RE
+.PD
+
+.SH OPTIONS - MISCELLANEOUS
+.TP 8
+.B \-\-nosysconfig
+With this option, \fITux Paint\fP will not attempt to read the
+system-wide configuration file (typically \fI/etc/tuxpaint/tuxpaint.conf\fP).
+
+.SH ENVIRONMENT
+.l
+While \fITux Paint\fB may refer to a number of environment variables indirectly
+(e.g., via \fISDL(3)\fP), it only directly accesses the following:
+.PP
+.TP 8
+.B HOME
+to determine where picture files go when using the \fISave\fP and \fIOpen\fP
+commands within \fITux Paint\fP, to keep track of the current image,
+when quitting and restarting \fITux Paint\fP, and to get the user's
+configuration file. 
+
+.TP 8
+.B LANG
+to determine langauge to use, if \fIsetlocale(3)\fP refers to 'LC_MESSAGES'.
+
+.SH FILES
+.TP 8
+.B /etc/tuxpaint/tuxpaint.conf
+System-wide configuration file.  It is read first
+(unless the \fI\-\-nosysconfig\fP option was given on the command-line).
+.RS
+.PP
+(Created during installation.)
+.RE
+.TP 8
+.B $HOME/.tuxpaintrc
+User's configuration file.  It can be used to set default options
+(rather than setting them on the command-line every time), and/or to
+override any settings in the system-wide configuration file.
+.RS
+.PP
+(Not created or edited automatically; must be created manually.)
+.RE
+.TP 8
+.B $HOME/.tuxpaint/saved/
+A directory of previously-saved images (and thumbnails).  Only files in this
+directory will be made available using the \fIOpen\fP command within
+\fITux Paint\fP.  (See \fItuxpaint-import(1)\fP.)
+.RS
+.PP
+(Created when \fISave\fP command is used.)
+.RE
+.TP 8
+.B $HOME/.tuxpaint/current_id.txt
+A reference to the image which was being edited when \fITux Paint\fP was
+last quit.  (This image is automatically loaded the next time \fITux Paint\fP
+is re-run.)
+.RS
+.PP
+(Created when \fITux Paint\fP is \fIQuit\fP.)
+.RE
+
+.SH COPYRIGHT
+This program is free software; you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation; either version 2 of the License, or
+(at your option) any later version.
+
+.SH OTHER INFO
+The canonical place to find \fITux Paint\fP information is at
+http://www.newbreedsoftware.com/tuxpaint/.
+
+.SH AUTHORS
+Bill Kendrick.  <bill@newbreedsoftware.com>
+
+With patches, fixes, extensions, translation, documentation and more from
+lots of people, including, but not limited to:
+
+Daniel Andersson,
+Ben Armstrong,
+Denis Bodor,
+Herman Bruyninckx,
+Laurentiu Buzdugan,
+Pere Pujal Carabantes,
+Jacques Chion,
+Ricardo Cruz,
+Doruk Fisek,
+Fabian Franz,
+Gabriel Gazzan,
+The Greek Linux i18n Team,
+Sam "Criswell" Hart,
+Tedi Heriyanto,
+Pjetur G. Hjaltason,
+Karl Ove Hufthammer,
+Rasmus Erik Voel Jensen,
+Wang Jian,
+Kazuhiko,
+Mark Kim,
+Thomas Klausner,
+Marcin 'Shard' Konicki,
+Arkadiusz Lipiec,
+Martin,
+Marco Milanesi,
+Primoz Peterlin,
+Milan Plzik,
+John Popplewell,
+Geert Stams,
+Peter Sterba,
+Tarmo Toikkanen,
+TOYAMA Shin-ichi,
+Daniel Jose Viana,
+Charles Vidal,
+and
+Damian Yerrick.
+
+.SH "SEE ALSO"
+.BR tuxpaint-import (1),
+.BR xpaint (1),
+.BR gpaint (1),
+.BR gimp (1)
+.PP
+And documentation within /usr/[local/]share/doc/tuxpaint/.
+

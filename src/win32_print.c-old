@@ -1,0 +1,301 @@
+/* win32_print.c */
+
+/* printing support for Tux Paint */
+/* John Popplewell <john@johnnypops.demon.co.uk> */
+
+/* Sept. 30, 2002 - Oct. 17, 2002 */
+
+
+#include "SDL_syswm.h"
+#include "win32_print.h"
+#include "resource.h"
+
+
+#define NOREF(x)            ((x)=(x))
+#define GETHINST(hWnd)		((HINSTANCE)GetWindowLong( hWnd, GWL_HINSTANCE )) 
+#define MIR( id )			(MAKEINTRESOURCE( id ))
+
+
+static int	bPrint;
+static HWND	hDlgCancel;
+
+
+static int GetPrinterContext( HWND hWnd, PRINTDLG *pd )
+{
+	pd->hwndOwner = hWnd;
+	pd->Flags = PD_RETURNDC;
+	pd->nFromPage = 0xFFFF;
+	pd->nToPage = 0xFFFF;
+	pd->nMinPage = 0xFFFF;
+	pd->nMaxPage = 0xFFFF;
+	pd->nCopies = 1;
+
+    return PrintDlg( pd );
+}
+
+
+BOOL CALLBACK AbortProc( HDC hDC, int nCode )
+{
+	MSG msg;
+
+	NOREF(nCode);
+	NOREF(hDC);
+    while ( PeekMessage( (LPMSG)&msg, (HWND)NULL, 0, 0, PM_REMOVE) )
+	{ 
+        if ( !IsDialogMessage( hDlgCancel, (LPMSG)&msg ) )
+		{
+			TranslateMessage( (LPMSG)&msg );
+			DispatchMessage( (LPMSG)&msg );
+		}
+	}
+
+	return bPrint;
+}
+
+
+LRESULT CALLBACK AbortPrintJob( HWND hDlg, UINT message, WPARAM wParam, LPARAM lParam )
+{
+	NOREF(hDlg);
+	NOREF(lParam);
+	NOREF(wParam);
+	NOREF(message);
+	switch ( message )
+	{ 
+		case WM_INITDIALOG	:
+			return TRUE;
+		case WM_COMMAND		:
+			bPrint = FALSE;
+			return TRUE;
+		default				:
+			return FALSE;
+	}
+}
+
+
+static SDL_Surface *make32bitDIB( SDL_Surface *surf )
+{
+    SDL_PixelFormat     pixfmt;
+    SDL_Surface         *surf32;
+    SDL_Surface         *surfDIB;
+    Uint8               *src,*dst;
+    Uint32              linesize;
+    int                 i;
+
+    memset( &pixfmt, 0, sizeof(pixfmt) );
+    pixfmt.palette      = NULL;
+    pixfmt.BitsPerPixel = 32;
+    pixfmt.BytesPerPixel= 4;
+    pixfmt.Rmask        = 0x00FF0000;
+    pixfmt.Gmask        = 0x0000FF00;
+    pixfmt.Bmask        = 0x000000FF;
+    pixfmt.Amask        = 0xFF000000;
+    pixfmt.Rshift       = 16;
+    pixfmt.Gshift       = 8;
+    pixfmt.Bshift       = 0;
+    pixfmt.Ashift       = 24;
+    pixfmt.Rloss        = 0;
+    pixfmt.Gloss        = 0;
+    pixfmt.Bloss        = 0;
+    pixfmt.Aloss        = 0;
+    pixfmt.colorkey     = 0;
+    pixfmt.alpha        = 0;
+
+    surf32 = SDL_ConvertSurface( surf, &pixfmt, SDL_SWSURFACE );
+    surfDIB = SDL_CreateRGBSurface( SDL_SWSURFACE, surf32->w, surf32->h, 32, 
+                      pixfmt.Rmask, pixfmt.Gmask, pixfmt.Bmask, pixfmt.Amask );
+
+    linesize = surf32->w*sizeof(Uint32);    /* Flip top2bottom */
+    dst = surfDIB->pixels;
+    src = ((Uint8*)surf32->pixels)+((surf32->h-1)*surf32->pitch);
+    for ( i = 0; i < surf32->h; ++i )
+    {
+        memcpy( dst, src, linesize );
+        src -= surf32->pitch;
+        dst += surfDIB->pitch;
+    }
+
+    SDL_FreeSurface( surf32 );              /* Free temp surface */
+
+    return surfDIB;
+}
+
+
+int IsPrinterAvailable( void )
+{
+     char   *section = "windows";
+     char   *key = "device";
+     char   *def = "NODEFAULTPRINTER";
+     char    buff[256];
+     
+     if ( !GetProfileString( section, key, def, buff, sizeof(buff) ) )
+       return 0;
+ 
+     return (strcmp( buff, def ) != 0);
+}
+
+
+int SurfacePrint( SDL_Surface *surf )
+{
+    int                 res = 0;
+    HWND                hWnd;
+	PRINTDLG	        pd;
+	DOCINFO		        di;
+	int			        nError;
+    SDL_SysWMinfo       wminfo;
+    HDC                 hDC;
+    BITMAPINFOHEADER    bmih;
+    SDL_Surface         *surf32 = NULL;
+    RECT                rc;
+    float               fLogPelsX1, fLogPelsY1, fLogPelsX2, fLogPelsY2;
+    float               fScaleX, fScaleY;
+    int                 cWidthPels, xLeft, yTop;
+    float               subscaler,subscalerx,subscalery;
+    int                 hDCCaps;
+    HANDLE              hOldObject = NULL;
+    HBITMAP             hbm = NULL;
+    HDC                 hdcMem = NULL;
+
+    SDL_VERSION(&wminfo.version);
+    if ( !SDL_GetWMInfo( &wminfo ) )
+        return -1;
+    hWnd = wminfo.window;
+
+    memset( &pd, 0, sizeof(PRINTDLG) );
+	pd.lStructSize = sizeof(PRINTDLG);
+    if ( !GetPrinterContext( hWnd, &pd ) || (pd.hDC == NULL) )
+        return -1;
+
+	bPrint = TRUE;
+	SetAbortProc( pd.hDC, AbortProc );
+	hDlgCancel = CreateDialog( GETHINST(hWnd), MIR(IDD_ABORTDLG), hWnd, (DLGPROC)AbortPrintJob );
+	EnableWindow( hWnd, FALSE );
+
+	di.cbSize = sizeof(DOCINFO);
+	di.lpszDocName = "Tux Paint";
+	di.lpszOutput = (LPTSTR)NULL;
+	di.lpszDatatype = (LPTSTR)NULL;
+	di.fwType = 0;
+
+	nError = StartDoc( pd.hDC, &di );
+	if ( nError == SP_ERROR )
+    {
+        res = -2;
+        goto error;
+    }
+
+	nError = StartPage(pd.hDC);
+	if (nError <= 0)
+    {
+        res = -3;
+        goto error;
+    }
+
+//////////////////////////////////////////////////////////////////////////////////////
+
+    surf32 = make32bitDIB( surf );
+    if ( !surf32 )
+    {
+        res = -4;
+        goto error;
+    }
+
+    memset( &bmih,0, sizeof(bmih) );
+    bmih.biSize         = sizeof(bmih);
+    bmih.biPlanes       = 1;
+    bmih.biCompression  = BI_RGB;
+    bmih.biBitCount     = 32;
+    bmih.biWidth        = surf32->w;
+    bmih.biHeight       = surf32->h;
+
+    GetClientRect( hWnd, &rc );
+    subscalerx = (float)rc.right/surf32->w;
+    subscalery = (float)rc.bottom/surf32->h;
+    subscaler = subscalery;
+    if ( subscalerx < subscalery )
+        subscaler = subscalerx;
+
+    hDC = GetDC( hWnd );
+    fLogPelsX1 = (float)GetDeviceCaps(hDC, LOGPIXELSX);
+    fLogPelsY1 = (float)GetDeviceCaps(hDC, LOGPIXELSY);
+    ReleaseDC( hWnd, hDC );
+    fLogPelsX2 = (float)GetDeviceCaps(pd.hDC, LOGPIXELSX);
+    fLogPelsY2 = (float)GetDeviceCaps(pd.hDC, LOGPIXELSY);
+
+    if (fLogPelsX1 > fLogPelsX2)
+        fScaleX = (fLogPelsX1/fLogPelsX2);
+    else
+        fScaleX = (fLogPelsX2/fLogPelsX1);
+
+    if (fLogPelsY1 > fLogPelsY2)
+        fScaleY = (fLogPelsY1/fLogPelsY2);
+    else
+        fScaleY = (fLogPelsY2/fLogPelsY1);
+
+    fScaleX *= subscaler;
+    fScaleY *= subscaler;
+
+    yTop = 0;
+    cWidthPels = GetDeviceCaps(pd.hDC, PHYSICALWIDTH);
+    xLeft = ((cWidthPels - ((int)(fScaleX*bmih.biWidth)))/2)-
+                            GetDeviceCaps(pd.hDC, PHYSICALOFFSETX);
+
+    hDCCaps = GetDeviceCaps(pd.hDC, RASTERCAPS);
+
+    if ( hDCCaps & RC_STRETCHDIB )
+    {
+        StretchDIBits(pd.hDC, xLeft, yTop,
+                      (int)(fScaleX*bmih.biWidth),
+                      (int)(fScaleY*bmih.biHeight),
+                      0, 0, bmih.biWidth, bmih.biHeight,
+                      surf32->pixels, (BITMAPINFO*)&bmih,
+                      DIB_RGB_COLORS, SRCCOPY);
+    }
+    else
+    if ( hDCCaps & RC_STRETCHBLT )
+    {
+        hbm = CreateDIBitmap(pd.hDC, &bmih, CBM_INIT, 
+                             surf32->pixels, (const BITMAPINFO*)&bmih, 0);
+        if ( hbm )
+        {
+            hdcMem = CreateCompatibleDC( pd.hDC );
+            if ( hdcMem )
+            {
+                hOldObject = SelectObject(hdcMem, hbm);
+                if ( hOldObject ) 
+                {
+                    StretchBlt(pd.hDC, xLeft, yTop,
+                               (int)(fScaleX*bmih.biWidth),
+                               (int)(fScaleY*bmih.biHeight),
+                               hdcMem, 0, 0, bmih.biWidth, bmih.biHeight, SRCCOPY);
+                    SelectObject(hdcMem, hOldObject);
+                }
+            }
+        }
+    }
+    else
+    {
+        res = -10;
+		goto error;
+    }
+
+//////////////////////////////////////////////////////////////////////////////////////
+
+    nError = EndPage( pd.hDC );
+	if ( nError <= 0 )
+	{
+        res = -9;
+		goto error;
+	}
+
+	EndDoc( pd.hDC );
+
+error: 
+    if ( hdcMem ) DeleteDC( hdcMem );
+    if ( hbm ) DeleteObject( hbm );
+    if ( surf32 ) SDL_FreeSurface( surf32 );
+
+	EnableWindow( hWnd, TRUE );
+	DestroyWindow( hDlgCancel );
+	DeleteDC( pd.hDC );
+    return res;
+}

@@ -1,0 +1,470 @@
+# Tux Paint messages
+# Translation: N/A
+#
+# This file is distributed under the same license as the Tux Paint
+# program.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Tuxpaint 0.9.2pre\n"
+"POT-Creation-Date: 2003-01-03 14:29-0800\n"
+"PO-Revision-Date: 2003-01-03 21:32-0500\n"
+"Last-Translator: Laurentiu Buzdugan <buzdugan@voyager.net>\n"
+"Language-Team: Romanian <ro@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 0.9.6\n"
+
+#: src/tuxpaint.c:567
+msgid "Do you really want to quit?"
+msgstr "Doriþi într-adevãr sã ieºiþi?"
+
+#: src/tuxpaint.c:568 src/tuxpaint.c:572 src/tuxpaint.c:576 src/tuxpaint.c:596
+#: src/tuxpaint.c:6280 src/tuxpaint.c:6921
+msgid "Yes"
+msgstr "Da"
+
+#: src/tuxpaint.c:569 src/tuxpaint.c:573 src/tuxpaint.c:577 src/tuxpaint.c:597
+#: src/tuxpaint.c:6283
+msgid "No"
+msgstr "Nu"
+
+#: src/tuxpaint.c:571
+msgid "If you quit, you'll lose your picture! Save it?"
+msgstr "Dacã ieºiþi veþi pierde imaginea voastrã! Doreºti sã o salvezi?"
+
+#: src/tuxpaint.c:575
+msgid "Save your picture first?"
+msgstr "Salvezi imaginea mai întâi?"
+
+#: src/tuxpaint.c:579
+msgid "Can't open that picture!"
+msgstr "Nu pot deschide acea imagine!"
+
+#: src/tuxpaint.c:580 src/tuxpaint.c:587 src/tuxpaint.c:590 src/tuxpaint.c:593
+#: src/tuxpaint.c:7255
+msgid "Okay"
+msgstr "Bine"
+
+#: src/tuxpaint.c:582
+msgid "Starting a new picture will erase the current one!"
+msgstr "Dacã începi o nouã imagine cea curentã va fi distrusã!"
+
+#: src/tuxpaint.c:583
+msgid "That's Ok"
+msgstr "E în regulã"
+
+#: src/tuxpaint.c:584
+msgid "Never Mind!"
+msgstr "Nu face nimic!"
+
+#: src/tuxpaint.c:586
+msgid "There are no saved files!"
+msgstr "Nu este nici un fiºier salvat!"
+
+#: src/tuxpaint.c:589
+msgid "Your picture has been printed!"
+msgstr "Imaginea ta a fost tipãritã!"
+
+#: src/tuxpaint.c:592
+msgid "You can't print yet!"
+msgstr "Nu poþi încã tipãri!"
+
+#: src/tuxpaint.c:595
+msgid "Erase this picture?"
+msgstr "Stergi aceastã imagine?"
+
+#: src/tuxpaint.c:4067 src/tools.h:52
+msgid "Open"
+msgstr "Deschide"
+
+#: src/tuxpaint.c:4077
+msgid "Erase"
+msgstr "ªterge"
+
+#: src/tuxpaint.c:4087
+msgid "Back"
+msgstr "Înapoi"
+
+#: src/tuxpaint.c:6920
+msgid "Save over the older version of this drawing?"
+msgstr "Salveazã peste vechea versiune a acestui desen?"
+
+#: src/tuxpaint.c:6922
+msgid "No, save a new file"
+msgstr "Nu, salveazã un nou fiºier"
+
+#: src/tuxpaint.c:7516
+msgid "Choose the picture you want, then click 'Open'"
+msgstr "Alege imaginea doritã, apoi fã clic pe 'Deschide'"
+
+#: src/tools.h:42
+msgid "Paint"
+msgstr "Picturã"
+
+#: src/tools.h:43
+msgid "Stamp"
+msgstr "ªtampilã"
+
+#: src/tools.h:44
+msgid "Lines"
+msgstr "Linii"
+
+#: src/tools.h:45 src/titles.h:41
+msgid "Shapes"
+msgstr "Forme"
+
+#: src/tools.h:46
+msgid "Text"
+msgstr "Text"
+
+#: src/tools.h:47 src/titles.h:43
+msgid "Magic"
+msgstr "Magic"
+
+#: src/tools.h:48
+msgid "Undo"
+msgstr "Des-fã"
+
+#: src/tools.h:49
+msgid "Redo"
+msgstr "Re-fã"
+
+#: src/tools.h:50
+msgid "Eraser"
+msgstr "Gumã de ºters"
+
+#: src/tools.h:51
+msgid "New"
+msgstr "Nou"
+
+#: src/tools.h:53
+msgid "Save"
+msgstr "Salveazã"
+
+#: src/tools.h:54
+msgid "Print"
+msgstr "Tipãreºte"
+
+#: src/tools.h:55
+msgid "Quit"
+msgstr "Terminã"
+
+#: src/tools.h:62
+msgid "Pick a color and a brush shape to draw with."
+msgstr "Alegeþi culoarea ºi forma de pensulã cu care sã desenezi"
+
+#: src/tools.h:63
+msgid "Pick a picture to stamp around your drawing."
+msgstr "Alege o imagine pe care sã o imprimi în jurul desenului"
+
+#: src/tools.h:64
+msgid "Click to start drawing a line.  Let go to complete it."
+msgstr "Fã clic pentru a începe sã desenezi o linie. Dã-i drumul pentru a o termina."
+
+#: src/tools.h:65
+msgid ""
+"Pick a shape. Click to pick the center, drag, then let go when it is the "
+"size you want.  Move around to rotate it, and click to draw it."
+msgstr ""
+"Alege o formã. Fã clic pentru a alege centrul, apoi dã-i drumul când are "
+"dimensiunea pe care o vrei. Miºcã maus-ul pentru a o roti ºi fã clic pentru "
+"a o desena."
+
+#: src/tools.h:66
+msgid "Choose a style of text.  Click on your drawing and you can start typing."
+msgstr "Alege un stil de text. Fã clic pe desen apoi începe sã tastezi."
+
+#: src/tools.h:67
+msgid "Pick a magical effect to use on your drawing!"
+msgstr "Alege un efect magic pe care vrei sã-l foloseºti în desen!"
+
+#: src/tools.h:68
+msgid "Undo!"
+msgstr "Des-fã!"
+
+#: src/tools.h:69
+msgid "Redo!"
+msgstr "Re-fã!"
+
+#: src/tools.h:70
+msgid "Eraser!"
+msgstr "ªterge!"
+
+#: src/tools.h:71
+msgid "You now have a blank sheet to draw on!"
+msgstr "Acum ai o foaie albã pe care sã desenezi!"
+
+#: src/tools.h:72
+msgid "Open..."
+msgstr "Deschide..."
+
+#: src/tools.h:73
+msgid "Your image has been saved!"
+msgstr "Imaginea ta a fost salvatã!"
+
+#: src/tools.h:74
+msgid "Printing..."
+msgstr "Tipãreºte..."
+
+#: src/tools.h:75
+msgid "Bye bye!"
+msgstr "La revedere!"
+
+#: src/tools.h:78
+msgid "Let go of the button to complete the line."
+msgstr "Ridicaþi mâna de pe buton pentru a termina linia."
+
+#: src/tools.h:79
+msgid "Hold the button to stretch the shape."
+msgstr "Þine apãsat butonul pentru a întinde forma."
+
+#: src/tools.h:80
+msgid "Move the mouse to rotate the shape. Click to draw it."
+msgstr "Mutã mausul pentru a roti forma. Click pentru a o desena."
+
+#: src/tools.h:81
+msgid "Ok then... Let's keep drawing this one!"
+msgstr "Bine atunci... Sã continuãm sã-l desenãm pe acesta!"
+
+#: src/titles.h:37
+msgid "Tools"
+msgstr "Unelte"
+
+#: src/titles.h:38
+msgid "Colors"
+msgstr "Culori"
+
+#: src/titles.h:39
+msgid "Brushes"
+msgstr "Pensule"
+
+#: src/titles.h:40
+msgid "Stamps"
+msgstr "ªtampile"
+
+#: src/titles.h:42
+msgid "Letters"
+msgstr "Litere"
+
+#: src/colors.h:56
+msgid "Black"
+msgstr "Negru"
+
+#: src/colors.h:57
+msgid "White"
+msgstr "Alb"
+
+#: src/colors.h:58
+msgid "Red"
+msgstr "Roºu"
+
+#: src/colors.h:59
+msgid "Pink"
+msgstr "Roz"
+
+#: src/colors.h:60
+msgid "Orange"
+msgstr "Portocaliu"
+
+#: src/colors.h:61
+msgid "Yellow"
+msgstr "Galben"
+
+#: src/colors.h:62
+msgid "Green"
+msgstr "Verde"
+
+#: src/colors.h:63
+msgid "Cyan"
+msgstr "Ceruleum"
+
+#: src/colors.h:64
+msgid "Blue"
+msgstr "Albastru"
+
+#: src/colors.h:65
+msgid "Purple"
+msgstr "Violet"
+
+#: src/colors.h:66
+msgid "Brown"
+msgstr "Maro"
+
+#: src/colors.h:67
+msgid "Grey"
+msgstr "Gri"
+
+#: src/shapes.h:121 src/shapes.h:122
+msgid "Square"
+msgstr "Pãtrat"
+
+#: src/shapes.h:123 src/shapes.h:124
+msgid "Rectangle"
+msgstr "Dreptunghi"
+
+#: src/shapes.h:125 src/shapes.h:126
+msgid "Circle"
+msgstr "Cerc"
+
+#: src/shapes.h:127 src/shapes.h:128 src/shapes.h:147 src/shapes.h:148
+msgid "Oval"
+msgstr "Oval"
+
+#: src/shapes.h:129 src/shapes.h:130
+msgid "Triangle"
+msgstr "Triunghi"
+
+#: src/shapes.h:131 src/shapes.h:132
+msgid "Pentagon"
+msgstr "Pentagon"
+
+#: src/shapes.h:133 src/shapes.h:134
+msgid "Diamond"
+msgstr "Diamant"
+
+#: src/shapes.h:141 src/shapes.h:142
+msgid "A square has four sides, each the same length."
+msgstr "Un pãtrat are patru laturi, fiecare de aceeaºi lungime."
+
+#: src/shapes.h:143 src/shapes.h:144
+msgid "A rectangle has four sides."
+msgstr "Un dreptunghi are patru laturi."
+
+#: src/shapes.h:145 src/shapes.h:146
+msgid "A circle is exactly round."
+msgstr "Un cerc este rotund perfect."
+
+#: src/shapes.h:149 src/shapes.h:150
+msgid "A triangle has three sides."
+msgstr "Un triunghi are trei laturi."
+
+#: src/shapes.h:151 src/shapes.h:152
+msgid "A pentagon has five sides."
+msgstr "Un pentagon are cinci laturi."
+
+#: src/shapes.h:153 src/shapes.h:154
+msgid "A diamond is a square, turned around slightly."
+msgstr "Un romb este un pãtrat, rotit puþin."
+
+#: src/magic.h:48
+msgid "Rainbow"
+msgstr "Curcubeu"
+
+#: src/magic.h:49
+msgid "Sparkles"
+msgstr "Steluþe"
+
+#: src/magic.h:51
+msgid "Mirror"
+msgstr "Oglideºte"
+
+#: src/magic.h:52
+msgid "Flip"
+msgstr "Rãstoarnã"
+
+#: src/magic.h:54
+msgid "Blur"
+msgstr "Neclar"
+
+#: src/magic.h:55
+msgid "Blocks"
+msgstr "Blocuri"
+
+#: src/magic.h:57
+msgid "Negative"
+msgstr "Negativ"
+
+#: src/magic.h:58
+msgid "Fade"
+msgstr "Estompeazã"
+
+#: src/magic.h:60
+msgid "Chalk"
+msgstr "Cretã"
+
+#: src/magic.h:61
+msgid "Drip"
+msgstr "Picurã"
+
+#: src/magic.h:63
+msgid "Thick"
+msgstr "Gros"
+
+#: src/magic.h:64
+msgid "Thin"
+msgstr "Subþire"
+
+#: src/magic.h:66
+msgid "Fill"
+msgstr "Umple"
+
+#: src/magic.h:73
+msgid "You can draw in rainbow colors!"
+msgstr "Poþi desena în culorile curcubeului!"
+
+#: src/magic.h:74
+msgid "Click and move to draw sparkles"
+msgstr "Clic ºi miºcã pentru a desena steluþe"
+
+#: src/magic.h:76
+msgid "Click to make a mirror image!"
+msgstr "Clic pentru a face o imagine în oglindã!"
+
+#: src/magic.h:77
+msgid "Click to flip the picture upside-down!"
+msgstr "Clic pentru a rãsturna imaginea cu susul în jos!"
+
+#: src/magic.h:79
+msgid "Click and move the mouse around to blur the picture"
+msgstr "Clic ºi miºcã maus-ul pentru a face imaginea neclarã"
+
+#: src/magic.h:80
+msgid "Click and move the mouse around to make the picture blocky"
+msgstr "Clic ºi miºcã maus-ul pentru a face desenul pãtrãþos"
+
+#: src/magic.h:82
+msgid "Click and move the mouse around to draw a negative"
+msgstr "Clic ºi miºcã maus-ul pentru a desena un negativ"
+
+#: src/magic.h:83
+msgid "Click and move to fade the colors."
+msgstr "Clic ºi miºcã pentru a estompa culorile."
+
+#: src/magic.h:85
+msgid "Click and move the mouse around to turn the picture into a chalk drawing."
+msgstr "Clic ºi miºcã maus-ul pentru a schimba desenul într-un desen din cretã."
+
+#: src/magic.h:86
+msgid "Click and move the mouse around to make the picture drip!"
+msgstr "Clic ºi miºcã maus-ul pentru a face desenul curgãtor!"
+
+#: src/magic.h:88
+msgid "Click and move the mouse to thicken the picture"
+msgstr "Clic ºi miºcã maus-ul pentru a îngroºa desenul"
+
+#: src/magic.h:89
+msgid "Click and move the mouse to thin the picture"
+msgstr "Clic ºi miºcã maus-ul pentru a subþia desenul"
+
+#: src/magic.h:91
+msgid "Click in the picture to fill that area with color"
+msgstr "Clic în desen pentru a umple acea zonã cu culoare"
+
+#: src/great.h:20
+msgid "Great!"
+msgstr "Grozav!"
+
+#: src/great.h:21
+msgid "Cool!"
+msgstr "Fantastic!"
+
+#: src/great.h:22
+msgid "Keep it up!"
+msgstr "Þine-o tot aºa!"
+
+#: src/great.h:23
+msgid "Good job!"
+msgstr "Bunã treabã!"
+

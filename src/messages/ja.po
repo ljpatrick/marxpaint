@@ -1,0 +1,481 @@
+# Tuxpaint japanese translation.
+# tuxpaint の 日本語訳
+# Copyright (C) 2003
+# This file is distributed under the same license as the Tuxpaint package.
+# このファイルは Tuxpaint のパッケージと同じ使用許諾に基づいて配布されます。
+# TOYAMA Shin-ichi <kyone@tky2.3web.ne.jp>, 2003.
+#
+# Nota per futures traduccions/actualitzacions:
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: Tuxpaint 0.9.5\n"
+"POT-Creation-Date: 2003-01-20 07:20+0900\n"
+"PO-Revision-Date: 2003-01-27 14:36-0800\n"
+"Last-Translator: TOYAMA Shin-ichi <kyone@tky2.3web.ne.jp>\n"
+"Language-Team: TOYAMA Shin-ichi <kyone@tky2.3web.ne.jp>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: src/tuxpaint.c:567
+msgid "Do you really want to quit?"
+msgstr "ほんとうにやめる？"
+
+#: src/tuxpaint.c:568 src/tuxpaint.c:572 src/tuxpaint.c:576 src/tuxpaint.c:596
+#: src/tuxpaint.c:6280 src/tuxpaint.c:6921
+msgid "Yes"
+msgstr "はい"
+
+#: src/tuxpaint.c:569 src/tuxpaint.c:573 src/tuxpaint.c:577 src/tuxpaint.c:597
+#: src/tuxpaint.c:6283
+msgid "No"
+msgstr "いいえ"
+
+#: src/tuxpaint.c:571
+msgid "If you quit, you'll lose your picture! Save it?"
+msgstr "やめると えがきえちゃうよ！ セーブする？"
+
+#: src/tuxpaint.c:575
+msgid "Save your picture first?"
+msgstr "そのまえに いまのえを セーブする？"
+
+#: src/tuxpaint.c:579
+msgid "Can't open that picture!"
+msgstr "そのえはひらけませんでした！"
+
+#: src/tuxpaint.c:580 src/tuxpaint.c:587 src/tuxpaint.c:590 src/tuxpaint.c:593
+#: src/tuxpaint.c:7255
+msgid "Okay"
+msgstr "おっけー"
+
+#: src/tuxpaint.c:582
+msgid "Starting a new picture will erase the current one!"
+msgstr "さいしょからやりなおすと、いまのえがきえるよ！"
+
+#: src/tuxpaint.c:583
+msgid "That's Ok"
+msgstr "いいよ"
+
+#: src/tuxpaint.c:584
+msgid "Never Mind!"
+msgstr "やめた！"
+
+#: src/tuxpaint.c:586
+msgid "There are no saved files!"
+msgstr "セーブされた えは ありません！"
+
+#: src/tuxpaint.c:589
+msgid "Your picture has been printed!"
+msgstr "えを いんさつしました！"
+
+#: src/tuxpaint.c:592
+msgid "You can't print yet!"
+msgstr "まだ いんさつは できません！"
+
+#: src/tuxpaint.c:595
+msgid "Erase this picture?"
+msgstr "このえを けしますか？"
+
+#: src/tuxpaint.c:4067 src/tools.h:52
+msgid "Open"
+msgstr "ひらく"
+
+#: src/tuxpaint.c:4077
+msgid "Erase"
+msgstr "けす"
+
+#: src/tuxpaint.c:4087
+msgid "Back"
+msgstr "もどる"
+
+#: src/tuxpaint.c:6920
+msgid "Save over the older version of this drawing?"
+msgstr "まえの えを うわがきしますか？"
+
+#: src/tuxpaint.c:6922
+msgid "No, save a new file"
+msgstr "いいえ、べつのファイルに セーブします"
+
+#: src/tuxpaint.c:7516
+msgid "Choose the picture you want, then click 'Open'"
+msgstr "えをえらんでから 「ひらく」をクリックしてね"
+
+#: src/tools.h:42
+msgid "Paint"
+msgstr "ふで"
+
+#: src/tools.h:43
+msgid "Stamp"
+msgstr "はんこ"
+
+#: src/tools.h:44
+msgid "Lines"
+msgstr "せん"
+
+#: src/tools.h:45 src/titles.h:41
+msgid "Shapes"
+msgstr "ずけい"
+
+#: src/tools.h:46
+msgid "Text"
+msgstr "もじ"
+
+#: src/tools.h:47 src/titles.h:43
+msgid "Magic"
+msgstr "まほう"
+
+#: src/tools.h:48
+msgid "Undo"
+msgstr "とりけし"
+
+#: src/tools.h:49
+msgid "Redo"
+msgstr "やりなおし"
+
+#: src/tools.h:50
+msgid "Eraser"
+msgstr "けしゴム"
+
+#: src/tools.h:51
+msgid "New"
+msgstr "さいしょから"
+
+#: src/tools.h:53
+msgid "Save"
+msgstr "セーブ"
+
+#: src/tools.h:54
+msgid "Print"
+msgstr "いんさつ"
+
+#: src/tools.h:55
+msgid "Quit"
+msgstr "やめる"
+
+#: src/tools.h:62
+msgid "Pick a color and a brush shape to draw with."
+msgstr "つかういろと ふでのかたちを えらぼう"
+
+#: src/tools.h:63
+msgid "Pick a picture to stamp around your drawing."
+msgstr "はんこをえらぼう"
+
+#: src/tools.h:64
+msgid "Click to start drawing a line.  Let go to complete it."
+msgstr "クリックして せんを ひこう"
+
+#: src/tools.h:65
+msgid ""
+"Pick a shape. Click to pick the center, drag, then let go when it is the "
+"size you want.  Move around to rotate it, and click to draw it."
+msgstr ""
+"ずけいをえらんでクリックしたら、ドラッグして すきなおおきさにしよう。"
+"まわして、クリックしたら できあがり"
+
+#: src/tools.h:66
+msgid "Choose a style of text.  Click on your drawing and you can start typing."
+msgstr "じのかたちをえらんで、クリックしたあと キーをおして じをかこう"
+
+#: src/tools.h:67
+msgid "Pick a magical effect to use on your drawing!"
+msgstr "つかいたい まほうのこうかを えらぼう！"
+
+#: src/tools.h:68
+msgid "Undo!"
+msgstr "いまの なし！"
+
+#: src/tools.h:69
+msgid "Redo!"
+msgstr "やっぱり やりなおし！"
+
+#: src/tools.h:70
+msgid "Eraser!"
+msgstr "けしゴム！"
+
+#: src/tools.h:71
+msgid "You now have a blank sheet to draw on!"
+msgstr "あたらしいかみだよ。さあかこう！"
+
+#: src/tools.h:72
+msgid "Open..."
+msgstr "ひらく..."
+
+#: src/tools.h:73
+msgid "Your image has been saved!"
+msgstr "えをセーブしました！"
+
+#: src/tools.h:74
+msgid "Printing..."
+msgstr "いんさつちゅう..."
+
+#: src/tools.h:75
+msgid "Bye bye!"
+msgstr "バイバーイ！"
+
+#: src/tools.h:78
+msgid "Let go of the button to complete the line."
+msgstr "ボタンをはなすと せんを ひきおわるよ"
+
+#: src/tools.h:79
+msgid "Hold the button to stretch the shape."
+msgstr "ボタンをおしたまま ずけいを ひろげよう"
+
+#: src/tools.h:80
+msgid "Move the mouse to rotate the shape. Click to draw it."
+msgstr "マウスをうごかして ずけいをまわそう。クリックしたら できあがり"
+
+#: src/tools.h:81
+msgid "Ok then... Let's keep drawing this one!"
+msgstr "オッケー。 じゃあ このままつづけよう！"
+
+#: src/titles.h:37
+msgid "Tools"
+msgstr "どうぐ"
+
+#: src/titles.h:38
+msgid "Colors"
+msgstr "いろ"
+
+#: src/titles.h:39
+msgid "Brushes"
+msgstr "ふで"
+
+#: src/titles.h:40
+msgid "Stamps"
+msgstr "はんこ"
+
+#: src/titles.h:42
+msgid "Letters"
+msgstr "もじ"
+
+#: src/colors.h:56
+msgid "Black"
+msgstr "くろ"
+
+#: src/colors.h:57
+msgid "White"
+msgstr "しろ"
+
+#: src/colors.h:58
+msgid "Red"
+msgstr "あか"
+
+#: src/colors.h:59
+msgid "Pink"
+msgstr "ピンク"
+
+#: src/colors.h:60
+msgid "Orange"
+msgstr "オレンジ"
+
+#: src/colors.h:61
+msgid "Yellow"
+msgstr "きいろ"
+
+#: src/colors.h:62
+msgid "Lime"
+msgstr "ライム"
+
+msgid "Green"
+msgstr "みどり"
+
+#: src/colors.h:63
+msgid "Cyan"
+msgstr "みずいろ"
+
+#: src/colors.h:64
+msgid "Blue"
+msgstr "あお"
+
+#: src/colors.h:65
+msgid "Purple"
+msgstr "むらさき"
+
+msgid "Fuchsia"
+msgstr "ホクシャ"
+
+#: src/colors.h:66
+msgid "Brown"
+msgstr "ちゃいろ"
+
+#: src/colors.h:67
+msgid "Grey"
+msgstr "はいいろ"
+
+msgid "Silver"
+msgstr "ぎんいろ"
+
+#: src/shapes.h:121 src/shapes.h:122
+msgid "Square"
+msgstr "ましかく"
+
+#: src/shapes.h:123 src/shapes.h:124
+msgid "Rectangle"
+msgstr "ながしかく"
+
+#: src/shapes.h:125 src/shapes.h:126
+msgid "Circle"
+msgstr "えん"
+
+#: src/shapes.h:127 src/shapes.h:128 src/shapes.h:147 src/shapes.h:148
+msgid "Oval"
+msgstr "だえん"
+
+#: src/shapes.h:129 src/shapes.h:130
+msgid "Triangle"
+msgstr "さんかっけい"
+
+#: src/shapes.h:131 src/shapes.h:132
+msgid "Pentagon"
+msgstr "ごかっけい"
+
+#: src/shapes.h:133 src/shapes.h:134
+msgid "Diamond"
+msgstr "ダイヤ"
+
+#: src/shapes.h:141 src/shapes.h:142
+msgid "A square has four sides, each the same length."
+msgstr "ましかくは ４つのへんが ぜんぶ おんなじ ながさだよ。"
+
+#: src/shapes.h:143 src/shapes.h:144
+msgid "A rectangle has four sides."
+msgstr "ながしかくには ４つのへんが あるんだ"
+
+#: src/shapes.h:145 src/shapes.h:146
+msgid "A circle is exactly round."
+msgstr "えんは まんまるのこと"
+
+#: src/shapes.h:149 src/shapes.h:150
+msgid "A triangle has three sides."
+msgstr "さんかっけいには ３つのへんが あるんだ"
+
+#: src/shapes.h:151 src/shapes.h:152
+msgid "A pentagon has five sides."
+msgstr "ごかっけいには ５つのへんが あるんだ"
+
+#: src/shapes.h:153 src/shapes.h:154
+msgid "A diamond is a square, turned around slightly."
+msgstr "ダイヤは ましかくを すこしまわしたかたちだね"
+
+#: src/magic.h:48
+msgid "Rainbow"
+msgstr "にじ"
+
+#: src/magic.h:49
+msgid "Sparkles"
+msgstr "ひばな"
+
+#: src/magic.h:51
+msgid "Mirror"
+msgstr "はんてん"
+
+#: src/magic.h:52
+msgid "Flip"
+msgstr "さかさま"
+
+#: src/magic.h:54
+msgid "Blur"
+msgstr "ぼかし"
+
+#: src/magic.h:55
+msgid "Blocks"
+msgstr "モザイク"
+
+#: src/magic.h:57
+msgid "Negative"
+msgstr "ネガ"
+
+#: src/magic.h:58
+msgid "Fade"
+msgstr "うすく"
+
+#: src/magic.h:60
+msgid "Chalk"
+msgstr "チョーク"
+
+#: src/magic.h:61
+msgid "Drip"
+msgstr "ぬらす"
+
+#: src/magic.h:63
+msgid "Thick"
+msgstr "ふとく"
+
+#: src/magic.h:64
+msgid "Thin"
+msgstr "ほそく"
+
+#: src/magic.h:66
+msgid "Fill"
+msgstr "ぬる"
+
+#: src/magic.h:73
+msgid "You can draw in rainbow colors!"
+msgstr "にじいろで かこう！"
+
+#: src/magic.h:74
+msgid "Click and move to draw sparkles"
+msgstr "ひばなを かこう"
+
+#: src/magic.h:76
+msgid "Click to make a mirror image!"
+msgstr "クリックすると さゆうにひっくりかえるよ！"
+
+#: src/magic.h:77
+msgid "Click to flip the picture upside-down!"
+msgstr "クリックすると えが さかさまになるよ！"
+
+#: src/magic.h:79
+msgid "Click and move the mouse around to blur the picture"
+msgstr "クリックしたまま マウスをうごかして えを ぼかしましょう"
+
+#: src/magic.h:80
+msgid "Click and move the mouse around to make the picture blocky"
+msgstr "クリックしたまま マウスをうごかすと そこがモザイクになるよ"
+
+#: src/magic.h:82
+msgid "Click and move the mouse around to draw a negative"
+msgstr "クリックしたまま マウスをうごかして ネガポジにしよう"
+
+#: src/magic.h:83
+msgid "Click and move to fade the colors."
+msgstr "クリックしたまま マウスをうごかすと いろが うすくなるよ."
+
+#: src/magic.h:85
+msgid "Click and move the mouse around to turn the picture into a chalk drawing."
+msgstr "クリックしたままマウスをうごかすと チョークでかいたみたいに なるよ"
+
+
+#: src/magic.h:86
+msgid "Click and move the mouse around to make the picture drip!"
+msgstr "クリックしたまま マウスをうごかすと ぬらしたように なるよ！"
+
+#: src/magic.h:88
+msgid "Click and move the mouse to thicken the picture"
+msgstr "クリックしたまま マウスをうごかすと そこが ふとくなるよ！"
+
+#: src/magic.h:89
+msgid "Click and move the mouse to thin the picture"
+msgstr "クリックしたまま マウスをうごかすと そこが ほそくなるよ！"
+
+#: src/magic.h:91
+msgid "Click in the picture to fill that area with color"
+msgstr "ぬりつぶしたいところを クリックしてね"
+
+#: src/great.h:20
+msgid "Great!"
+msgstr "すごい！"
+
+#: src/great.h:21
+msgid "Cool!"
+msgstr "うまいね！"
+
+#: src/great.h:22
+msgid "Keep it up!"
+msgstr "そのちょうし！"
+
+#: src/great.h:23
+msgid "Good job!"
+msgstr "じょうでき！"
+
