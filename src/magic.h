@@ -46,6 +46,37 @@ enum {
 };
 
 
+/* Need for the color selector: */
+
+const int magic_colors[] = {
+  COLORSEL_ENABLE, // fill
+  COLORSEL_ENABLE, // grass
+
+  COLORSEL_DISABLE,
+  COLORSEL_DISABLE,
+
+  COLORSEL_DISABLE,
+  COLORSEL_DISABLE,
+
+  COLORSEL_DISABLE,
+  COLORSEL_DISABLE,
+
+  COLORSEL_DISABLE,
+  COLORSEL_DISABLE,
+
+  COLORSEL_DISABLE,
+  COLORSEL_DISABLE,
+
+  COLORSEL_DISABLE,
+  COLORSEL_ENABLE, // tint
+
+  COLORSEL_DISABLE,
+  COLORSEL_DISABLE,
+
+  COLORSEL_DISABLE,
+  COLORSEL_DISABLE,
+};
+
 /* Magic tool names: */
 
 const char * const magic_names[NUM_MAGICS] = {

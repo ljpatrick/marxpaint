@@ -55,6 +55,14 @@
 #define PROMPTOFFSETX (WINDOW_WIDTH - 640) / 2
 #define PROMPTOFFSETY (HEIGHTOFFSET / 2)
 
+// control the color selector
+#define COLORSEL_DISABLE 0  // disable and draw the (greyed out) colors
+#define COLORSEL_ENABLE  1  // enable and draw the colors
+#define COLORSEL_CLOBBER 2  // colors get scribbled over
+#define COLORSEL_REFRESH 4  // redraw the colors, either on or off
+
+static void draw_colors(int action);
+
 /////////////////////////////////////////////////////////////////////
 // hide all scale-related values here
 
@@ -686,14 +694,6 @@ static SDL_Surface * img_tux[NUM_TIP_TUX];
 static SDL_Surface * img_color_btns[NUM_COLORS];
 #endif
 
-// control the color selector
-#define COLORSEL_DISABLE 0  // disable and draw the (greyed out) colors
-#define COLORSEL_ENABLE  1  // enable and draw the colors
-#define COLORSEL_CLOBBER 2  // colors get scribbled over
-#define COLORSEL_REFRESH 4  // redraw the colors, either on or off
-
-static void draw_colors(int action);
-
 #ifndef LOW_QUALITY_COLOR_SELECTOR
 static Uint8 colorsel_alpha(Uint8 c1, Uint8 c2, Uint8 a);
 #endif
@@ -1023,7 +1023,7 @@ int main(int argc, char * argv[])
   SDL_FillRect(screen, NULL, SDL_MapRGB(screen->format, 255, 255, 255));
 
   draw_toolbar();
-  draw_colors(COLORSEL_ENABLE);
+  draw_colors(COLORSEL_REFRESH);
   draw_brushes();
   update_canvas(0, 0, WINDOW_WIDTH - 96, (48 * 7) + 40 + HEIGHTOFFSET);
 
@@ -1237,7 +1237,7 @@ static void mainloop(void)
 		  tmp_int = tool_avail[TOOL_NEW];
 		  disable_avail_tools();
 		  draw_toolbar();
-		  draw_colors(COLORSEL_DISABLE);
+		  draw_colors(COLORSEL_CLOBBER);
 		  draw_none();
 		  
 		  tmp_int = do_open(tmp_int);
@@ -1249,25 +1249,7 @@ static void mainloop(void)
 		  SDL_UpdateRect(screen,
 				 0, 0,
 				 96, (48 * (7 + TOOLOFFSET / 2)) + 40);
-			  
-		  if (cur_tool == TOOL_BRUSH ||
-		      cur_tool == TOOL_LINES ||
-		      cur_tool == TOOL_SHAPES ||
-		      cur_tool == TOOL_TEXT)
-		    {
-		      draw_colors(COLORSEL_ENABLE);
-		    }
-		  else if (cur_tool == TOOL_STAMP)
-		    {
-		      draw_colors(stamp_colorable(cur_stamp) ||
-				  stamp_tintable(cur_stamp));
-		    }
-		  else if (cur_tool == TOOL_MAGIC &&
-			   (cur_magic == MAGIC_FILL || cur_magic == MAGIC_GRASS ||
-			    cur_magic == MAGIC_TINT))
-		    {
-		      draw_colors(COLORSEL_ENABLE);
-		    }
+		  draw_colors(COLORSEL_REFRESH);
 
 		  if (cur_tool == TOOL_BRUSH || cur_tool == TOOL_LINES)
 		    draw_brushes();
@@ -1284,9 +1266,7 @@ static void mainloop(void)
 		  
 		  draw_tux_text(TUX_GREAT, tool_tips[cur_tool], 1);
 
-
 		  /* FIXME: Make delay configurable: */
-
 		  control_drawtext_timer(1000, tool_tips[cur_tool]);
 		}
 	      else if ((key == SDLK_n &&
@@ -1564,7 +1544,7 @@ static void mainloop(void)
 			  tmp_int = tool_avail[TOOL_NEW];
 			  disable_avail_tools();
 			  draw_toolbar();
-		          draw_colors(COLORSEL_DISABLE);
+		          draw_colors(COLORSEL_CLOBBER);
 		          draw_none();
 			  
 			  tmp_int = do_open(tmp_int);
@@ -1580,24 +1560,7 @@ static void mainloop(void)
 			  
 			  draw_tux_text(TUX_GREAT, tool_tips[cur_tool], 1);
 
-			  if (cur_tool == TOOL_BRUSH ||
-			      cur_tool == TOOL_LINES ||
-			      cur_tool == TOOL_SHAPES ||
-			      cur_tool == TOOL_TEXT)
-			    {
-			      draw_colors(COLORSEL_ENABLE);
-			    }
-			  else if (cur_tool == TOOL_STAMP)
-			    {
-			      draw_colors(stamp_colorable(cur_stamp) ||
-					  stamp_tintable(cur_stamp));
-			    }
-		  	  else if (cur_tool == TOOL_MAGIC &&
-				   (cur_magic == MAGIC_FILL || cur_magic == MAGIC_GRASS ||
-				    cur_magic == MAGIC_TINT))
-			    {
-			      draw_colors(COLORSEL_ENABLE);
-			    }
+			  draw_colors(COLORSEL_REFRESH);
 
 			  if (cur_tool == TOOL_BRUSH || cur_tool == TOOL_LINES)
 			    draw_brushes();
@@ -1702,12 +1665,7 @@ static void mainloop(void)
 			  cur_thing = cur_magic;
 			  rainbow_color = 0;
 			  draw_magic();
-
-			  if (cur_magic == MAGIC_FILL || cur_magic == MAGIC_GRASS ||
-			      cur_magic == MAGIC_TINT)
-			    draw_colors(COLORSEL_ENABLE);
-			  else
-			    draw_colors(COLORSEL_DISABLE);
+			  draw_colors(magic_colors[cur_magic]);
 			}
 		      else if (cur_tool == TOOL_QUIT)
 			{
@@ -2105,18 +2063,14 @@ static void mainloop(void)
 			{
 			  if (cur_thing != cur_magic)
 			    {
-			      if (cur_thing == MAGIC_FILL || cur_magic == MAGIC_GRASS ||
-			          cur_thing == MAGIC_TINT)
-				draw_colors(COLORSEL_ENABLE);
-			      else
-				draw_colors(COLORSEL_DISABLE);
+			      cur_magic = cur_thing;
+			      draw_colors(magic_colors[cur_magic]);
 
 			      SDL_UpdateRect(screen,
 					     0, (48 * 7) + 40 + HEIGHTOFFSET,
 					     WINDOW_WIDTH, 48);
 			    }
 			  
-			  cur_magic = cur_thing;
 			  magic_scroll = thing_scroll;
 
 			  draw_tux_text(TUX_GREAT, magic_tips[cur_magic], 1);
@@ -2156,7 +2110,7 @@ static void mainloop(void)
 		    {
 		      cur_color = which;
 		      playsound(1, SND_BUBBLE, 1);
-		      draw_colors(COLORSEL_ENABLE);
+		      draw_colors(COLORSEL_REFRESH);
 		      SDL_UpdateRect(screen,
 				     0, (48 * 7) + 40 + HEIGHTOFFSET,
 				     WINDOW_WIDTH, 48);
@@ -2534,11 +2488,7 @@ static void mainloop(void)
 		{
 		  if (cur_thing != cur_magic)
 		    {
-		      if (cur_thing == MAGIC_FILL || cur_magic == MAGIC_GRASS ||
-			  cur_thing == MAGIC_TINT)
-			draw_colors(COLORSEL_ENABLE);
-		      else
-			draw_colors(COLORSEL_DISABLE);
+		      draw_colors(magic_colors[cur_magic]);
 
 		      SDL_UpdateRect(screen,
 				     0, (48 * 7) + 40 + HEIGHTOFFSET,
@@ -7144,7 +7094,7 @@ static void draw_colors(int action)
   if (action==COLORSEL_CLOBBER)
     colors_state |= COLORSEL_CLOBBER;
   if (action==COLORSEL_REFRESH)
-    colors_state &= ~COLORSEL_CLOBBER;;
+    colors_state &= ~COLORSEL_CLOBBER;
   if (action==COLORSEL_DISABLE)
     colors_state = COLORSEL_DISABLE;
   if (action==COLORSEL_ENABLE)
@@ -7208,6 +7158,7 @@ static void draw_colors(int action)
 	  SDL_BlitSurface(img_paintcan, NULL, screen, &dest);
 	}
     }
+//    SDL_UpdateRect(screen, 0, 0, screen->w, screen->h);
 }
 
 
