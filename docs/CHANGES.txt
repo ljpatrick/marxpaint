@@ -18,6 +18,9 @@ http://www.newbreedsoftware.com/tuxpaint/
   * Made sure shape tool never made a tiny shape.
     (Should hint users that they should click-and-drag.)
 
+  * Added some more brushes.
+    Jeremie Zimmermann <txptdv@tofz.org>
+
   * Updated/corrected Tamil translation
     Mugunth <mugunth@thamizha.com>
 
