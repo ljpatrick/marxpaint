@@ -216,7 +216,7 @@ uninstall:
 	-rm $(BIN_PREFIX)/tuxpaint
 	-rm $(BIN_PREFIX)/tuxpaint-import
 	-rm -r $(DATA_PREFIX)
-	-rm -r $(DOC_PREFIX)32
+	-rm -r $(DOC_PREFIX)
 	-rm $(MAN_PREFIX)/man1/tuxpaint.1.gz
 	-rm $(MAN_PREFIX)/pl/man1/tuxpaint.1.gz
 	-rm $(MAN_PREFIX)/man1/tuxpaint-import.1.gz
@@ -307,6 +307,7 @@ install-kde:
 	@echo
 	@echo "...Installing launcher icon into KDE..."
 	@if [ "x$(KDE_PREFIX)" != "x" ]; then \
+	  install -d $(KDE_PREFIX)/Graphics; \
 	  cp src/tuxpaint.desktop $(KDE_PREFIX)/Graphics/; \
 	  chmod 644 $(KDE_PREFIX)/Graphics/tuxpaint.desktop; \
 	fi
