@@ -4658,7 +4658,7 @@ void setup(int argc, char * argv[])
       else
 	{
 #ifndef WIN32
-	  if (Mix_OpenAudio(44100, AUDIO_S16, 2, 256) < 0)
+	  if (Mix_OpenAudio(44100, AUDIO_S16, 2, 1024) < 0)
 #else
 	    if (Mix_OpenAudio(44100, AUDIO_S16, 2, 2048) < 0)
 #endif
