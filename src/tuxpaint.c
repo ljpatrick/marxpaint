@@ -7,12 +7,12 @@
   bill@newbreedsoftware.com
   http://www.newbreedsoftware.com/tuxpaint/
   
-  June 14, 2002 - February 22, 2003
+  June 14, 2002 - February 26, 2003
 */
 
 
-#define VER_VERSION     "0.9.10"
-#define VER_DATE        "2003.02.22"
+#define VER_VERSION     "0.9.11"
+#define VER_DATE        "2003.02.26"
 
 
 /* #define DEBUG */
@@ -3658,16 +3658,6 @@ void setup(int argc, char * argv[])
 
   /* Set up language: */
 
-  /* ja_JP.eucJP locale is usually used for Japanese, but SDL_ttf does NOT
-     support it! - TOYAMA Shin-ichi <kyone@tky2.3web.ne.jp> - 2003.01.24 */
-
-  if (langstr == NULL && getenv("LANG") != NULL &&
-      strcmp(getenv("LANG"), "ja_JP.eucJP") == 0)
-  {
-    langstr = strdup("japanese");
-  }
-
-
   if (langstr != NULL)
   {
     if (strcmp(langstr, "english") == 0 ||
@@ -3812,6 +3802,9 @@ void setup(int argc, char * argv[])
   textdomain("tuxpaint");
 
   language = current_language();
+
+  if (language == LANG_JA)
+    putenv("OUTPUT_CHARSET=ja_JP.UTF-8");
 
 
 #ifdef DEBUG
@@ -4252,6 +4245,7 @@ void setup(int argc, char * argv[])
       /* Revert to default: */
       
       putenv("LANG=C");
+      putenv("OUTPUT_CHARSET=C");
       setlocale(LC_ALL, "");
 
       bindtextdomain("tuxpaint", LOCALEDIR);

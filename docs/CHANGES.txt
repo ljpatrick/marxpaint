@@ -7,6 +7,11 @@ bill@newbreedsoftware.com
 http://www.newbreedsoftware.com/tuxpaint/
 
 
+2003.February.26 (0.9.11)
+  * Set $OUTPUT_CHARSET for Japanese locale, to fix Win32 issue.
+    TOYAMA Shin-ichi <kyone@tky2.3web.ne.jp>
+
+
 2003.February.22 (0.9.10)
   * UTF-8 stamp descriptions word-wrap around spaces.
 
