@@ -6,7 +6,7 @@ Copyright (c) 2004 by Bill Kendrick
 bill@newbreedsoftware.com
 http://www.newbreedsoftware.com/tuxpaint/
 
-January 14, 2004
+February 9, 2004
 
 
 LOW-PRIORITY DOCUMENTATION CHANGES:
@@ -30,6 +30,9 @@ HIGH-PRIORITY IMPLEMENTATION CHANGES:
 
   * Get Mac OS X to look for stamps, brushes, etc. in
     /Library/Preferences/tuxpaint first, then ~/Library/Preferences/tuxpaint
+
+  * Only use "savedir" for saved files, not to look for stamps/brushes.
+    Added "datadir" option to override where to look for local stamps/brushes.
 
 
 LOW-PRIORITY IMPLEMENTATION CHANGES:

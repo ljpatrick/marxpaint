@@ -41,6 +41,12 @@ http://www.newbreedsoftware.com/tuxpaint/
   * Updated punctuation in many text strings.
     Karl Ove Hufthammer <karl@huftis.org>
 
+  * Keywords ("Title" and "Software") now written into PNGs.
+
+  * Fixed 'savedir' bug.  (Was dropping filenames)
+
+  * Made current image the selected image on Open screen, if applicable.
+
 
 2003.Dec.23 (0.9.13)
   * Translated into Basque (eu_ES)

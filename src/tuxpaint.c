@@ -21,12 +21,12 @@
   along with this program; if not, write to the Free Software
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   
-  June 14, 2002 - January 14, 2004
+  June 14, 2002 - February 9, 2004
 */
 
 
 #define VER_VERSION     "0.9.14"
-#define VER_DATE        "2004.01.14"
+#define VER_DATE        "2004.02.09"
 
 
 /* #define DEBUG */
@@ -8234,7 +8234,7 @@ void save_current(void)
       fprintf(stderr,
 	      "\nError: Can't keep track of current image.\n"
 	      "%s\n"
-	      "The error that occred was:\n"
+	      "The error that occurred was:\n"
 	      "%s\n\n", fname, strerror(errno));
 
       draw_tux_text(TUX_OOPS, strerror(errno), 0, 0, 0);
@@ -8321,7 +8321,7 @@ char * get_fname(char * name)
     {
       /* User had overridden save directory with "--savedir" option: */
 
-      if (*name == '\0')
+      if (*name != '\0')
 	{
 	  /* (Some mkdir()'s don't like trailing slashes) */
 
@@ -8436,7 +8436,8 @@ int do_prompt(char * text, char * btn_yes, char * btn_no)
   /* Draw the question: */
 
   wordwrap_text(font, text, black,
-		166 + PROMPTOFFSETX, 100 + PROMPTOFFSETY, 475 + PROMPTOFFSETX, 1, 0, 1);
+		166 + PROMPTOFFSETX, 100 + PROMPTOFFSETY, 475 + PROMPTOFFSETX,
+		1, 0, 1);
 
 
   /* Draw yes button: */
@@ -8523,7 +8524,8 @@ int do_prompt(char * text, char * btn_yes, char * btn_no)
 		{
 		  if (key == SDLK_ESCAPE)
 		    {
-		      /* ESCAPE also simply dismisses if there's no Yes/No choice: */
+		      /* ESCAPE also simply dismisses if there's no Yes/No
+		         choice: */
 	
 		      ans = 1;
 		      done = 1;
@@ -9313,9 +9315,10 @@ int do_png_save(FILE * fi, char * fname, SDL_Surface * surf)
 {
   png_structp png_ptr;
   png_infop info_ptr;
+  png_text text_ptr[4];
   unsigned char ** png_rows;
   Uint8 r, g, b;
-  int x, y;
+  int x, y, count;
   
   
   png_ptr = png_create_write_struct(PNG_LIBPNG_VER_STRING, NULL, NULL, NULL);
@@ -9361,7 +9364,32 @@ int do_png_save(FILE * fi, char * fname, SDL_Surface * surf)
 	      info_ptr->interlace_type = 1;
 	      info_ptr->valid = 0;
 
+
+	      /* Set headers */
+
+	      count = 0;
+
+	      /*
+	      if (title != NULL && strlen(title) > 0)
+	      {
+	        text_ptr[count].key = "Title";
+	        text_ptr[count].text = title;
+	        text_ptr[count].compression = PNG_TEXT_COMPRESSION_NONE;
+	        count++;
+	      }
+	      */
+
+	      text_ptr[count].key = "Software";
+	      text_ptr[count].text =
+	        "Tux Paint " VER_VERSION " (" VER_DATE ")";
+	      text_ptr[count].compression = PNG_TEXT_COMPRESSION_NONE;
+	      count++;
+
+	      
+	      png_set_text(png_ptr, info_ptr, text_ptr, count);
+			      
 	      png_write_info(png_ptr, info_ptr);
+
 
 
 	      /* Save the picture: */
@@ -9518,6 +9546,8 @@ int do_open(int want_new_tool)
   /* Read directory of images and build thumbnails: */
 
   num_files = 0;
+  cur = 0;
+  which = 0;
   
   if (d != NULL)
     {
@@ -9536,8 +9566,8 @@ int do_open(int want_new_tool)
 		  d_exts[num_files_in_dir] = strdup(dot);
 		  *dot = 0;
 		  d_names[num_files_in_dir] = strdup(f->d_name);
-		  
-		  
+
+
 		  /* Try to load thumbnail first: */
 		  
 		  snprintf(fname, sizeof(fname), "%s/%s-t%s",
@@ -9716,7 +9746,17 @@ int do_open(int want_new_tool)
 		      
 		      d_names[num_files] = strdup(fname);
 		      
-		      
+		  
+		      /* Is it the 'current' file we just loaded?
+		         We'll make it the current selection! */
+		 
+		      if (strcmp(d_names[num_files], file_id) == 0)
+		      {
+		        which = num_files;
+			cur = (which / 4) * 4;
+		      }
+		     
+
 		      /* Try to load thumbnail first: */
 		      
 		      snprintf(fname, sizeof(fname), "%s/.thumbs/%s-t.png",
@@ -9884,13 +9924,14 @@ int do_open(int want_new_tool)
 	  draw_tux_text(TUX_BORED,
 			textdir(gettext_noop("Choose the picture you want, "
 					     "then click 'Open'.")), 1, 0, 1);
-      
-	  cur = 0;
+     
+	  /* NOTE: cur is now set above; if file_id'th file is found, it's
+	     set to that file's index; otherwise, we default to '0' */
+	  
 	  update_list = 1;
 	  want_erase = 0;
       
 	  done = 0;
-	  which = 0;
       
 	  last_click_which = -1;
 	  last_click_time = 0;
