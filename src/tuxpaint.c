@@ -1188,14 +1188,14 @@ static void setup_normal_screen_layout(void)
   r_ttoolopt.y = 0;
 
   gd_colors.rows = 1;
-  gd_colors.cols = NUM_COLORS;
+  gd_colors.cols = (NUM_COLORS + gd_colors.rows - 1) / gd_colors.rows;
 
-  color_button_h = 48;
-  r_colors.h = color_button_h * gd_colors.rows;
+  r_colors.h = 48;
+  color_button_h = r_colors.h / gd_colors.rows;
   r_tcolors.h = r_colors.h;
 
   r_tcolors.x = 0;
-  r_tcolors.w = gd_tools.cols * button_w;;
+  r_tcolors.w = gd_tools.cols * button_w;
   r_colors.x = r_tcolors.w;
   r_colors.w = WINDOW_WIDTH - r_tcolors.w;
 
@@ -7440,10 +7440,10 @@ static void setup(int argc, char * argv[])
 
   /* Create appropriately-shaped buttons: */
   SDL_Surface *img1 = loadimage(DATA_PREFIX "images/ui/paintwell.png");
-  SDL_Surface *img2 = thumbnail(img1,        (WINDOW_WIDTH - 96) / NUM_COLORS, 48, 0);
-  tmp_btn_up        = thumbnail(img_btn_up,  (WINDOW_WIDTH - 96) / NUM_COLORS, 48, 0);
-  tmp_btn_down      = thumbnail(img_btn_down,(WINDOW_WIDTH - 96) / NUM_COLORS, 48, 0);
-  img_color_btn_off = thumbnail(img_btn_off, (WINDOW_WIDTH - 96) / NUM_COLORS, 48, 0);
+  SDL_Surface *img2 = thumbnail(img1,        color_button_w, color_button_h, 0);
+  tmp_btn_up        = thumbnail(img_btn_up,  color_button_w, color_button_h, 0);
+  tmp_btn_down      = thumbnail(img_btn_down,color_button_w, color_button_h, 0);
+  img_color_btn_off = thumbnail(img_btn_off, color_button_w, color_button_h, 0);
   SDL_FreeSurface(img1);
 
   /* Create surfaces to draw them into: */
