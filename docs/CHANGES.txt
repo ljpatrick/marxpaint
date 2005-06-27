@@ -7,7 +7,7 @@ bill@newbreedsoftware.com
 http://www.newbreedsoftware.com/tuxpaint/
 
 
-2005.April.6 (0.9.15)
+2005.Jun.26 (0.9.15)
 
   * uncatagorized and messy:
     -----------------------
@@ -275,6 +275,9 @@ http://www.newbreedsoftware.com/tuxpaint/
 
   * Translation updates:
     --------------------
+    * Bulgarian
+      Yavor Doganov <yavor@doganov.org>
+
     * Chinese (Traditional) documentation
       Song Huang <Song@ossacc.org>
 
