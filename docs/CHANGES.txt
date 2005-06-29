@@ -7,7 +7,7 @@ bill@newbreedsoftware.com
 http://www.newbreedsoftware.com/tuxpaint/
 
 
-2005.Jun.26 (0.9.15)
+2005.Jun.28 (0.9.15)
 
   * uncatagorized and messy:
     -----------------------
@@ -307,6 +307,9 @@ http://www.newbreedsoftware.com/tuxpaint/
 
     * Norwegian Bokmal
       Klaus Ade Johnstad <klaus@skolelinux.no>
+
+    * Polish documentation
+      Tomasz 'karave' Tarach <karave@poczta.onet.pl>
 
     * Russian
       Eugene Zelenko <greendeath@mail.ru>

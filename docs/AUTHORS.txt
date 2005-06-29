@@ -7,7 +7,7 @@ bill@newbreedsoftware.com
 http://www.newbreedsoftware.com/tuxpaint/
 
 
-June 17, 2002 - June 26, 2005
+June 17, 2002 - June 28, 2005
 
 
 * Design and Coding:
@@ -209,6 +209,7 @@ June 17, 2002 - June 26, 2005
   * Polish
     Arkadiusz Lipiec <A.Lipiec@elka.pw.edu.pl>
     Robert Glowczynski <robertg@software.com.pl>
+    Tomasz 'karave' Tarach <karave@poczta.onet.pl>
 
   * Portuguese (Brazilian)
     Daniel José Viana <danjovic@vespanet.com.br>
