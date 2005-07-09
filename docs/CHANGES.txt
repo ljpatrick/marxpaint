@@ -7,7 +7,7 @@ bill@newbreedsoftware.com
 http://www.newbreedsoftware.com/tuxpaint/
 
 
-2005.Jun.28 (0.9.15)
+2005.Jul.08 (0.9.15)
 
   * uncatagorized and messy:
     -----------------------
@@ -204,6 +204,9 @@ http://www.newbreedsoftware.com/tuxpaint/
 
   * Compiling, porting and packaging updates:
     -----------------------------------------
+    * Added "Categories" to the 'tuxpaint.desktop' file
+      ("Education," "RasterGraphics," "Graphics" and "Art").
+      
     * Added 'win32' target to Makefile, for use on Windows with MinGW/MSYS.
       John Popplewell <john@johnnypops.demon.co.uk>
     
