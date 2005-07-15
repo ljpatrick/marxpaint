@@ -1,0 +1,452 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2005-02-19 23:58+0100\n"
+"PO-Revision-Date: 2005-07-15 10:38+0700\n"
+"Last-Translator: Ouychai Chaita <Ae.freeman@gmail.com>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "A drawing program for children."
+msgstr "โปรแกรมวาดรูปสำหรับเด็ก"
+
+msgid "Drawing program"
+msgstr "โปรแกรมวาดภาพ"
+
+msgid "Tux Paint"
+msgstr "เพนกวิ้น วาดรูป"
+
+msgid "Black!"
+msgstr "ดำ"
+
+msgid "Dark grey! Some people spell it “dark gray”."
+msgstr ""
+
+msgid "Light grey! Some people spell it “light gray”."
+msgstr ""
+
+msgid "White!"
+msgstr "ขาว"
+
+msgid "Red!"
+msgstr "แดง"
+
+msgid "Orange!"
+msgstr "ส้ม"
+
+msgid "Yellow!"
+msgstr "เหลือง"
+
+msgid "Light green!"
+msgstr "เขียวสว่าง"
+
+msgid "Dark green!"
+msgstr ""
+
+msgid "Sky blue!"
+msgstr ""
+
+msgid "Blue!"
+msgstr "น้ำเงิน"
+
+msgid "Lavender!"
+msgstr ""
+
+msgid "Purple!"
+msgstr ""
+
+msgid "Pink!"
+msgstr ""
+
+msgid "Brown!"
+msgstr ""
+
+msgid "Tan!"
+msgstr ""
+
+msgid "Beige!"
+msgstr ""
+
+msgid "Great!"
+msgstr ""
+
+msgid "Cool!"
+msgstr "เยี่ยม!"
+
+msgid "Keep it up!"
+msgstr ""
+
+msgid "Good job!"
+msgstr ""
+
+msgid "Fill"
+msgstr "เติม"
+
+msgid "Grass"
+msgstr ""
+
+msgid "Bricks"
+msgstr ""
+
+msgid "Rainbow"
+msgstr "รุ้ง"
+
+msgid "Sparkles"
+msgstr ""
+
+msgid "Blur"
+msgstr "มัว"
+
+msgid "Smudge"
+msgstr ""
+
+msgid "Lighten"
+msgstr ""
+
+msgid "Darken"
+msgstr ""
+
+msgid "Chalk"
+msgstr ""
+
+msgid "Blocks"
+msgstr ""
+
+msgid "Negative"
+msgstr ""
+
+msgid "Tint"
+msgstr ""
+
+msgid "Drip"
+msgstr ""
+
+msgid "Cartoon"
+msgstr "การ์ตูน"
+
+msgid "Mirror"
+msgstr "กลับด้าน"
+
+msgid "Flip"
+msgstr ""
+
+msgid "Click in the picture to fill that area with color."
+msgstr ""
+
+msgid "Click and move to draw grass. Don’t forget the dirt!"
+msgstr ""
+
+msgid "Click and move to draw large bricks."
+msgstr ""
+
+msgid "Click and move to draw small bricks."
+msgstr ""
+
+msgid "You can draw in rainbow colors!"
+msgstr ""
+
+msgid "Click and move to draw sparkles."
+msgstr ""
+
+msgid "Click and move the mouse around to blur the picture."
+msgstr ""
+
+msgid "Click and move the mouse around to smudge the picture."
+msgstr ""
+
+msgid "Click and move to fade the colors."
+msgstr ""
+
+msgid "Click and move to darken the colors."
+msgstr ""
+
+msgid "Click and move the mouse around to turn the picture into a chalk drawing."
+msgstr ""
+
+msgid "Click and move the mouse around to make the picture blocky."
+msgstr ""
+
+msgid "Click and move the mouse around to draw a negative."
+msgstr ""
+
+msgid "Click and move the mouse around to change the picture’s color."
+msgstr ""
+
+msgid "Click and move the mouse around to make the picture drip."
+msgstr ""
+
+msgid "Click and move the mouse around to turn the picture into a cartoon."
+msgstr ""
+
+msgid "Click to make a mirror image."
+msgstr ""
+
+msgid "Click to flip the picture upside-down."
+msgstr ""
+
+msgid "Square"
+msgstr ""
+
+msgid "Rectangle"
+msgstr ""
+
+msgid "Circle"
+msgstr ""
+
+msgid "Ellipse"
+msgstr ""
+
+msgid "Triangle"
+msgstr ""
+
+msgid "Pentagon"
+msgstr ""
+
+msgid "Rhombus"
+msgstr ""
+
+msgid "A square is a rectangle with four equal sides."
+msgstr ""
+
+msgid "A rectangle has four sides and four right angles."
+msgstr ""
+
+msgid "A circle is a curve where all points have the same distance from the centre."
+msgstr ""
+
+msgid "An ellipse is a stretched circle."
+msgstr ""
+
+msgid "A triangle has three sides."
+msgstr ""
+
+msgid "A pentagon has five sides."
+msgstr ""
+
+msgid "A rhombus has four equal sides, and opposite sides are parallel."
+msgstr ""
+
+msgid "Tools"
+msgstr "เครื่องมือ"
+
+msgid "Colors"
+msgstr ""
+
+msgid "Brushes"
+msgstr ""
+
+msgid "Erasers"
+msgstr "ยางลบ"
+
+msgid "Stamps"
+msgstr "ตราประทับ"
+
+msgid "Shapes"
+msgstr ""
+
+msgid "Letters"
+msgstr "จดหมาย"
+
+msgid "Magic"
+msgstr ""
+
+msgid "Paint"
+msgstr ""
+
+msgid "Stamp"
+msgstr "ตราประทับ"
+
+msgid "Lines"
+msgstr ""
+
+msgid "Text"
+msgstr "ข้อความ"
+
+msgid "Undo"
+msgstr "เลิกทำ"
+
+msgid "Redo"
+msgstr "่ทำอีกครั้ง"
+
+msgid "Eraser"
+msgstr "ยางลบ"
+
+msgid "New"
+msgstr "ใหม่"
+
+#. buttons for the file open dialog
+msgid "Open"
+msgstr "เปิด"
+
+msgid "Save"
+msgstr "บันทึก"
+
+msgid "Print"
+msgstr "พิมพ์"
+
+msgid "Quit"
+msgstr "ออก"
+
+msgid "Pick a color and a brush shape to draw with."
+msgstr ""
+
+msgid "Pick a picture to stamp around your drawing."
+msgstr ""
+
+msgid "Click to start drawing a line. Let go to complete it."
+msgstr ""
+
+msgid "Pick a shape. Click to pick the center, drag, then let go when it is the size you want. Move around to rotate it, and click to draw it."
+msgstr ""
+
+msgid "Choose a style of text. Click on your drawing and you can start typing."
+msgstr ""
+
+msgid "Pick a magical effect to use on your drawing!"
+msgstr ""
+
+#. Undo
+msgid "Undo!"
+msgstr ""
+
+#. Redo
+msgid "Redo!"
+msgstr ""
+
+#. Eraser
+msgid "Eraser!"
+msgstr ""
+
+#. New
+msgid "You now have a blank sheet to draw on!"
+msgstr ""
+
+#. Open
+msgid "Open…"
+msgstr "เปิด"
+
+#. Save
+msgid "Your image has been saved!"
+msgstr "รูปของคุณบันทึกแล้ว"
+
+#. Print
+msgid "Printing…"
+msgstr ""
+
+#. Quit
+msgid "Bye bye!"
+msgstr ""
+
+msgid "Let go of the button to complete the line."
+msgstr ""
+
+msgid "Hold the button to stretch the shape."
+msgstr ""
+
+msgid "Move the mouse to rotate the shape. Click to draw it."
+msgstr ""
+
+msgid "OK then… Let’s keep drawing this one!"
+msgstr ""
+
+#. FIXME: Move elsewhere!!!
+msgid "Do you really want to quit?"
+msgstr "แน่ใจนะว่าต้องการออกจากโปรแกรม"
+
+#. FIXME: Move elsewhere! Or not?!
+msgid "Yes"
+msgstr "ใช่"
+
+msgid "No"
+msgstr "ไม่"
+
+msgid "If you quit, you’ll lose your picture! Save it?"
+msgstr ""
+
+msgid "Save your picture first?"
+msgstr ""
+
+msgid "Can’t open that picture!"
+msgstr ""
+
+msgid "OK"
+msgstr "ตกลง"
+
+msgid "Starting a new picture will erase the current one!"
+msgstr "ถ้าเร่ิมรูปใหม่ตอนนี้ มัันจะลบรูปเดิม"
+
+msgid "That’s OK!"
+msgstr ""
+
+msgid "Never mind!"
+msgstr ""
+
+msgid "There are no saved files!"
+msgstr ""
+
+msgid "Print your picture now?"
+msgstr "พิมพ์รูปตอนนี้หรือไม่"
+
+msgid "Your picture has been printed!"
+msgstr "รูปของคุณกำลังพิมพ์"
+
+msgid "You can’t print yet!"
+msgstr ""
+
+msgid "Erase this picture?"
+msgstr "ลบรูปนี้หรือไม่"
+
+msgid "Remember to use the left mouse button!"
+msgstr "โปรดจำไว้ว่าใช้เม้าปุ่มซ้าย"
+
+msgid "jq"
+msgstr ""
+
+msgid "JQ"
+msgstr ""
+
+msgid "oO"
+msgstr ""
+
+msgid "`\\%_@$~#{}<>^&*"
+msgstr ""
+
+msgid ",.?!"
+msgstr ""
+
+msgid "017"
+msgstr ""
+
+msgid "O0"
+msgstr ""
+
+msgid "1Il|"
+msgstr ""
+
+msgid "Erase"
+msgstr ""
+
+msgid "Back"
+msgstr ""
+
+msgid "Aa"
+msgstr ""
+
+#. FIXME: Move elsewhere!!!
+msgid "Save over the older version of this picture?"
+msgstr "บันทึกทับรูปเดิมหรือไม่"
+
+msgid "No, save a new file"
+msgstr "ไม่ บันทึกเป็นแฟ้มใหม่"
+
+msgid "Choose the picture you want, then click “Open”."
+msgstr ""
+

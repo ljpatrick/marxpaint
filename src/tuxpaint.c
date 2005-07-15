@@ -22,12 +22,12 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
   
-  June 14, 2002 - April 6, 2005
+  June 14, 2002 - July 14, 2005
 */
 
 
 #define VER_VERSION     "0.9.15"
-#define VER_DATE        "2005-04-06"
+#define VER_DATE        "2005-07-14"
 
 
 /* Color depth for Tux Paint to run in, and store canvases in: */
@@ -552,6 +552,7 @@ enum {
   LANG_SV,     /* Swedish */
   LANG_SW,     /* Swahili */
   LANG_TA,     /* Tamil */
+  LANG_TH,     /* Thai */
   LANG_TR,     /* Turkish */
   LANG_VI,     /* Vietnamese */
   LANG_WA,     /* Walloon */
@@ -609,6 +610,7 @@ static const char * lang_prefixes[NUM_LANGS] = {
   "sv",
   "sw",
   "ta",
+  "th",
   "tr",
   "vi",
   "wa",
@@ -626,6 +628,7 @@ static int lang_use_own_font[] = {
   LANG_KA,
   LANG_KO,
   LANG_TA,
+  LANG_TH,
   LANG_ZH_CN,
   LANG_ZH_TW,
   -1
@@ -779,6 +782,7 @@ static void show_lang_usage(FILE * f, const char * const prg)
 /* sw */     "  swahili\n"
 /* sv */     "  swedish      svenska\n"
 /* ta */     "  tamil\n"
+/* th */     "  thai\n"
 /* tr */     "  turkish\n"
 /* vi */     "  vietnamese\n"
 /* wa */     "  walloon      walon\n"
@@ -845,6 +849,7 @@ static void show_locale_usage(FILE * f, const char * const prg)
 	  "  es_ES   (Spanish      Espanol)\n"
 	  "  sw_TZ   (Swahili)\n"
 	  "  sv_SE   (Swedish      Svenska)\n"
+	  "  th_TH   (Thai)\n"
 	  "  tr_TR   (Turkish)\n"
 	  "  vi_VN   (Vietnamese)\n"
 	  "  wa_BE   (Walloon)\n"
@@ -942,6 +947,7 @@ static const language_to_locale_struct language_to_locale_array[] = {
 {"swedish",              "sv_SE.UTF-8"},
 {"svenska",              "sv_SE.UTF-8"},
 {"swahili",              "sw_TZ.UTF-8"},
+{"thai",                 "th_TH.UTF-8"},
 {"turkish",              "tr_TR.UTF-8"},
 {"walloon",              "wa_BE.UTF-8"},
 {"walon",                "wa_BE.UTF-8"},

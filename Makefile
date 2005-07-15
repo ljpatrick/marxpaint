@@ -6,7 +6,7 @@
 # bill@newbreedsoftware.com
 # http://www.newbreedsoftware.com/tuxpaint/
 
-# June 14, 2002 - April 6, 2005
+# June 14, 2002 - July 14, 2005
 
 
 # Where to install things:
@@ -347,6 +347,7 @@ uninstall:
 	-rm $(LOCALE_PREFIX)sv/LC_MESSAGES/tuxpaint.mo
 	-rm $(LOCALE_PREFIX)sw/LC_MESSAGES/tuxpaint.mo
 	-rm $(LOCALE_PREFIX)ta/LC_MESSAGES/tuxpaint.mo
+	-rm $(LOCALE_PREFIX)th/LC_MESSAGES/tuxpaint.mo
 	-rm $(LOCALE_PREFIX)tr/LC_MESSAGES/tuxpaint.mo
 	-rm $(LOCALE_PREFIX)vi/LC_MESSAGES/tuxpaint.mo
 	-rm $(LOCALE_PREFIX)wa/LC_MESSAGES/tuxpaint.mo
@@ -749,6 +750,11 @@ install-gettext:
 	@cp trans/ta.mo $(LOCALE_PREFIX)ta/LC_MESSAGES/tuxpaint.mo
 	@chmod 644 $(LOCALE_PREFIX)ta/LC_MESSAGES/tuxpaint.mo
 	@#
+	@echo "   th_TH ...Thai..."
+	@install -d $(LOCALE_PREFIX)th/LC_MESSAGES
+	@cp trans/th.mo $(LOCALE_PREFIX)th/LC_MESSAGES/tuxpaint.mo
+	@chmod 644 $(LOCALE_PREFIX)th/LC_MESSAGES/tuxpaint.mo
+	@#
 	@echo "   tr_TR ...Turkish..."
 	@install -d $(LOCALE_PREFIX)tr/LC_MESSAGES
 	@cp trans/tr.mo $(LOCALE_PREFIX)tr/LC_MESSAGES/tuxpaint.mo
@@ -910,6 +916,7 @@ translations: trans \
 	trans/sv.mo \
 	trans/sw.mo \
 	trans/ta.mo \
+	trans/th.mo \
 	trans/tlh.mo \
 	trans/tr.mo \
 	trans/vi.mo \
@@ -1109,6 +1116,10 @@ trans/sw.mo:	src/po/sw.po
 trans/ta.mo:	src/po/ta.po
 	@echo "   ta_IN ...Tamil..."
 	@msgfmt -o trans/ta.mo src/po/ta.po
+
+trans/th.mo:	src/po/th.po
+	@echo "   th_TH ...Thai..."
+	@msgfmt -o trans/th.mo src/po/th.po
 
 trans/tr.mo:	src/po/tr.po
 	@echo "   tr_TR ...Turkish..."

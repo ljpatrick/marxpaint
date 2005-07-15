@@ -7,7 +7,7 @@ bill@newbreedsoftware.com
 http://www.newbreedsoftware.com/tuxpaint/
 
 
-2005.Jul.08 (0.9.15)
+2005.Jul.14 (0.9.15)
 
   * uncatagorized and messy:
     -----------------------
@@ -275,6 +275,9 @@ http://www.newbreedsoftware.com/tuxpaint/
       Alberto Escudero-Pascual <aep@it46.se>
       Kamusi Project at Yale University
       Open Swahili Localization Project at the University of Dar es Salaam
+
+    * Thai
+      Ouychai Chaita <ae.freeman@gmail.com>
 
   * Translation updates:
     --------------------
