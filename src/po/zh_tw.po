@@ -3,15 +3,14 @@
 # Copyright (C) 2003
 # This file is distributed under the same license as the Tuxpaint package.
 # 本檔案使用和 Tuxpaint 相同的版權宣告散佈。
-# Song Huang <song@ossacc.org>, 2004.
+# Song Huang <song@song.idv.tw>, 2004.
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: Tuxpaint 0.9.5\n"
-"Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2005-01-06 12:31+0100\n"
-"PO-Revision-Date: 2005-01-16 11:00+0800\n"
-"Last-Translator: Song Huang <Song@ossacc.org>\n"
+"PO-Revision-Date: 2005-07-15 22:56+0800\n"
+"Last-Translator: Song Huang <Song@song.idv.tw>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -29,14 +28,13 @@ msgstr "繪畫"
 msgid "Black!"
 msgstr "黑色"
 
-msgid "Dark Gray!"
+msgid "Dark grey! Some people spell it “dark gray”."
 msgstr "深灰色"
 
-#. using both valid spellings
-msgid "Light Grey!"
+msgid "Light grey! Some people spell it “light gray”."
 msgstr "淺灰色"
 
-#. using both valid spellings
+#  using both valid spellings
 msgid "White!"
 msgstr "白色"
 
@@ -44,16 +42,17 @@ msgid "Red!"
 msgstr "紅色"
 
 msgid "Orange!"
-msgstr "橙色!"
+msgstr "橙色"
 
 msgid "Yellow!"
 msgstr "黃色"
 
-msgid "Neon green!"
-msgstr "螢光綠"
+#  using both valid spellings
+msgid "Light green!"
+msgstr "淺灰色"
 
-msgid "Green!"
-msgstr "綠色"
+msgid "Dark green!"
+msgstr "墨綠"
 
 msgid "Sky blue!"
 msgstr "天空藍"
@@ -61,11 +60,11 @@ msgstr "天空藍"
 msgid "Blue!"
 msgstr "藍色"
 
+msgid "Lavender!"
+msgstr "淡紫色"
+
 msgid "Purple!"
 msgstr "紫色"
-
-msgid "Magenta!"
-msgstr "洋紅色"
 
 msgid "Pink!"
 msgstr "粉紅色"
@@ -112,8 +111,9 @@ msgstr "模糊"
 msgid "Smudge"
 msgstr "煙燻"
 
-msgid "Fade"
-msgstr "褪色"
+#  using both valid spellings
+msgid "Lighten"
+msgstr "淺灰色"
 
 msgid "Darken"
 msgstr "變深"
@@ -145,7 +145,7 @@ msgstr "上下翻轉"
 msgid "Click in the picture to fill that area with color."
 msgstr "點在圖像內來用顏色填滿整個區域。"
 
-msgid "Click and move to draw grass. Don't forget the dirt!"
+msgid "Click and move to draw grass. Don’t forget the dirt!"
 msgstr "按著並移動滑鼠來繪製青草，別忘了泥土囉。"
 
 msgid "Click and move to draw large bricks."
@@ -181,7 +181,7 @@ msgstr "按著並移動滑鼠來打上馬賽克。"
 msgid "Click and move the mouse around to draw a negative."
 msgstr "按著並移動滑鼠來畫出反相的顏色。"
 
-msgid "Click and move the mouse around to change the picture's color."
+msgid "Click and move the mouse around to change the picture’s color."
 msgstr "按著並移動滑鼠來更改圖形的顏色。"
 
 msgid "Click and move the mouse around to make the picture drip."
@@ -200,12 +200,12 @@ msgid "Square"
 msgstr "正方形"
 
 msgid "Rectangle"
-msgstr "長方形"
+msgstr "矩形"
 
 msgid "Circle"
 msgstr "圓形"
 
-msgid "Oval"
+msgid "Ellipse"
 msgstr "橢圓形"
 
 msgid "Triangle"
@@ -214,17 +214,20 @@ msgstr "三角形"
 msgid "Pentagon"
 msgstr "五角形"
 
-msgid "Diamond"
-msgstr "鑽石形"
+msgid "Rhombus"
+msgstr "菱形"
 
-msgid "A square has four sides, each the same length."
-msgstr "正方形有四個邊，每邊都一樣長。"
+msgid "A square is a rectangle with four equal sides."
+msgstr "正方形是有四個等邊的矩形。"
 
-msgid "A rectangle has four sides."
-msgstr "長方形有四個邊。"
+msgid "A rectangle has four sides and four right angles."
+msgstr "矩形有四個邊和四個直角。"
 
-msgid "A circle is exactly round."
-msgstr "圓形是精準的圓。"
+msgid "A circle is a curve where all points have the same distance from the centre."
+msgstr "圓形是每一點都和圓心保持相同距離的曲線"
+
+msgid "An ellipse is a stretched circle."
+msgstr "橢圓形是伸展開來的圓形"
 
 msgid "A triangle has three sides."
 msgstr "三角形有三個邊。"
@@ -232,8 +235,8 @@ msgstr "三角形有三個邊。"
 msgid "A pentagon has five sides."
 msgstr "五角形有五個邊。"
 
-msgid "A diamond is a square, turned around slightly."
-msgstr "鑽石形是正方形，轉了方向。"
+msgid "A rhombus has four equal sides, and opposite sides are parallel."
+msgstr "菱形有四個相同的邊，而且相對面的邊是平行的。"
 
 msgid "Tools"
 msgstr "工具"
@@ -305,12 +308,8 @@ msgstr "挑選一個圖畫用來印在您的畫上。"
 msgid "Click to start drawing a line. Let go to complete it."
 msgstr "點一下就會開始繪製一條線，讓我們來完成他吧。"
 
-msgid ""
-"Pick a shape. Click to pick the center, drag, then let go when it is the "
-"size you want. Move around to rotate it, and click to draw it."
-msgstr ""
-"挑選一個形狀。點一下形狀的中心位置，然後拖拉他到您要的大小。環繞著移動來旋轉"
-"形狀，然後點一下把他畫下來。"
+msgid "Pick a shape. Click to pick the center, drag, then let go when it is the size you want. Move around to rotate it, and click to draw it."
+msgstr "挑選一個形狀。點一下形狀的中心位置，然後拖拉他到您要的大小。環繞著移動來旋轉形狀，然後點一下把他畫下來。"
 
 msgid "Choose a style of text. Click on your drawing and you can start typing."
 msgstr "選擇字母的樣式，在圖上點一下就可以開始輸入。"
@@ -318,34 +317,42 @@ msgstr "選擇字母的樣式，在圖上點一下就可以開始輸入。"
 msgid "Pick a magical effect to use on your drawing!"
 msgstr "挑選一種魔術的效果來用在您的圖畫上"
 
+#  Undo
 #. Undo
 msgid "Undo!"
 msgstr "回復"
 
+#  Redo
 #. Redo
 msgid "Redo!"
 msgstr "重作"
 
+#  Eraser
 #. Eraser
 msgid "Eraser!"
 msgstr "橡皮擦"
 
+#  New
 #. New
 msgid "You now have a blank sheet to draw on!"
 msgstr "您現在可以在空白頁上來繪圖"
 
+#  Open
 #. Open
 msgid "Open…"
 msgstr "開啟..."
 
+#  Save
 #. Save
 msgid "Your image has been saved!"
 msgstr "您的圖畫已經儲存!"
 
+#  Print
 #. Print
 msgid "Printing…"
 msgstr "列印中..."
 
+#  Quit
 #. Quit
 msgid "Bye bye!"
 msgstr "再見!"
@@ -362,10 +369,12 @@ msgstr "移動滑鼠來旋轉這形狀。點一下來繪製他。"
 msgid "OK then… Let’s keep drawing this one!"
 msgstr "好的，那麼讓我們繼續來畫這張圖。"
 
+#  FIXME: Move elsewhere!!!
 #. FIXME: Move elsewhere!!!
 msgid "Do you really want to quit?"
 msgstr "您確定要離開嗎？"
 
+#  FIXME: Move elsewhere! Or not?!
 #. FIXME: Move elsewhere! Or not?!
 msgid "Yes"
 msgstr "是的"
@@ -409,6 +418,33 @@ msgstr "您還不可以列印"
 msgid "Erase this picture?"
 msgstr "刪除這張圖畫？"
 
+msgid "Remember to use the left mouse button!"
+msgstr "記得使用滑鼠的左鍵"
+
+msgid "jq"
+msgstr "jq"
+
+msgid "JQ"
+msgstr "JQ"
+
+msgid "oO"
+msgstr "oO"
+
+msgid "`\\%_@$~#{}<>^&*"
+msgstr "`\\%_@$~#{}<>^&*"
+
+msgid ",.?!"
+msgstr ",.?!"
+
+msgid "017"
+msgstr "017"
+
+msgid "O0"
+msgstr "O0"
+
+msgid "1Il|"
+msgstr "1Il|"
+
 msgid "Erase"
 msgstr "刪除"
 
@@ -418,6 +454,7 @@ msgstr "回復"
 msgid "Aa"
 msgstr "Aa"
 
+#  FIXME: Move elsewhere!!!
 #. FIXME: Move elsewhere!!!
 msgid "Save over the older version of this picture?"
 msgstr "儲存這張圖畫覆蓋掉舊的版本？"
@@ -428,20 +465,3 @@ msgstr "不，儲存一個新的檔案"
 msgid "Choose the picture you want, then click “Open”."
 msgstr "選擇您想要的圖畫，然後按下「開啟」"
 
-#~ msgid "Lime!"
-#~ msgstr "淡黃綠色!"
-
-#~ msgid "Fuchsia!"
-#~ msgstr "淡紫色!"
-
-#~ msgid "Silver!"
-#~ msgstr "銀色!"
-
-#~ msgid "Thick"
-#~ msgstr "加粗"
-
-#~ msgid "Click and move the mouse to thicken the picture."
-#~ msgstr "按著並移動滑鼠來將筆劃加粗。"
-
-#~ msgid "Click and move the mouse to thin the picture."
-#~ msgstr "按著並移動滑鼠來將筆劃變薄。"
