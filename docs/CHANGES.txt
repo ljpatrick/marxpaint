@@ -187,8 +187,24 @@ http://www.newbreedsoftware.com/tuxpaint/
       256 to 512.
       Albert Cahalan <albert@users.sourceforge.net>
 
+    * Holding [Alt] while clicking 'Print' on Unix/Linux can now bring up
+      a print dialog. (Defaults to KDE's 'kprinter'.)  Can be altered
+      via 'altprintcommand' in ~/.tuxpaintrc.
+
+    * Printer dialog (and 'altprintcommand') can be forced to come up
+      all the time (not just when [Alt] is held) via a new
+      "--altprintalways" command-line option (and "altprint=always" config.
+      file option).
+
+    * Similarly, printer dialog can be prevented ([Alt] key has no effect)
+      via a new "--altprintnever" option (and "altprint=never").
+      (Default (where [Alt] must be held to show dialog) is "altprintmod".)
+
   * Bug fixes:
     -------------------
+    * [Alt] to bring up print dialog had to be held while hitting 'Ok' to
+      confirm print.  This was a bug!  Fixed!
+
     * Lockfile now cleared upon exit, allowing Tux Paint to be re-launched
       immediately.
       
@@ -390,19 +406,6 @@ http://www.newbreedsoftware.com/tuxpaint/
     * Made current image the selected image on Open screen, if applicable.
 
     * Now prompts to confirm before printing.
-
-    * Holding [Alt] while clicking 'Print' on Unix/Linux can now bring up
-      a print dialog. (Defaults to KDE's 'kprinter'.)  Can be altered
-      via 'altprintcommand' in ~/.tuxpaintrc.
-
-    * Printer dialog (and 'altprintcommand') can be forced to come up
-      all the time (not just when [Alt] is held) via a new
-      "--altprintalways" command-line option (and "altprint=always" config.
-      file option).
-
-    * Similarly, printer dialog can be prevented ([Alt] key has no effect)
-      via a new "--altprintnever" option (and "altprint=never").
-      (Default (where [Alt] must be held to show dialog) is "altprintmod".)
 
 
   * New translations:
