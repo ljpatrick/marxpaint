@@ -6,7 +6,7 @@
 # bill@newbreedsoftware.com
 # http://www.newbreedsoftware.com/tuxpaint/
 
-# June 14, 2002 - July 14, 2005
+# June 14, 2002 - July 15, 2005
 
 
 # Where to install things:
@@ -502,7 +502,11 @@ install-data:
 	@install -d $(DATA_PREFIX)
 	@cp -R data/* $(DATA_PREFIX)
 	@chmod -R a+rX,g-w,o-w $(DATA_PREFIX)
-
+	@echo
+	@echo "...Installing fonts..."
+	@install -d $(DATA_PREFIX)/fonts/locale
+	@cp -R fonts/locale/* $(DATA_PREFIX)/fonts/locale
+	@chmod -R a+rX,g-w,o-w $(DATA_PREFIX)/fonts/locale
 
 # Install the translated text:
 

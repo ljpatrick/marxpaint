@@ -202,6 +202,9 @@ http://www.newbreedsoftware.com/tuxpaint/
       (Apparently, the "[[...]]" version didn't work some places.)
       Jeff Smith <whydoubt@yahoo.com>
 
+    * Failed to install default locale fonts.  Fixed.
+      kyjo44 <kyjo44@users.sourceforge.net>
+
   * Compiling, porting and packaging updates:
     -----------------------------------------
     * Added "Categories" to the 'tuxpaint.desktop' file
