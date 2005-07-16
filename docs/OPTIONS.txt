@@ -149,6 +149,28 @@ Windows Users
              saved to the file "userdata/print.cfg", and used again, as long
              as the "printcfg" option is set.
 
+     altprint=always
+
+             This causes Tux Paint to always show the printer dialog (or, on
+             Linux/Unix, run the "altprintcommand") when the 'Print' button
+             is clicked. In other words, it's like clicking 'Print' while
+             holding [Alt], except you don't need to hold [Alt] every time.
+
+     altprint=never
+
+             This prevents Tux Paint from ever showing the printer dialog
+             (or, on Linux/Unix, run the "altprintcommand") when the 'Print'
+             button is clicked. In other words, it makes the [Alt] key have
+             no effect when clicking the 'Print' button.
+
+     altprint=mod
+
+             This is the normal, default behavior. Tux Paint shows a printer
+             dialog (or, on Linux/Unix, runs the "altprintcommand"), when the
+             [Alt] key is pressed while the 'Print' button is clicked.
+             Clicking 'Print' without holding [Alt] prints without showing a
+             dialog.
+
      simpleshapes=yes
              Disable the rotation step of the 'Shape' tool. Click, drag and
              release is all that will be needed to draw a shape.

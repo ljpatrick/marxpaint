@@ -144,7 +144,7 @@ New Breed Software</p>
     Restrict printing so that printing can occur only once every
     <i>SECONDS</i> seconds.
   </dd>
-
+  
   <dt><code><b>printcommand=<i>COMMAND</i></b></code></dt>
   <dd>
     <p><i>(Linux and Unix only)</i></p>
@@ -197,6 +197,31 @@ New Breed Software</p>
     used again, as long as the "printcfg" option is set.</p>
   </dd>
   
+  <dt><code><b>altprint=always</b></code></dt>
+  <dd>
+    <p>This causes Tux&nbsp;Paint to always show the printer dialog
+    (or, on Linux/Unix, run the "altprintcommand") when the 'Print' button
+    is clicked.  In other words, it's like clicking 'Print' while holding
+    <b>[Alt]</b>, except you don't need to hold <b>[Alt]</b> every time.</p>
+  </dd>
+  
+  <dt><code><b>altprint=never</b></code></dt>
+  <dd>
+    <p>This prevents Tux&nbsp;Paint from <i>ever</i> showing the printer dialog
+    (or, on Linux/Unix, run the "altprintcommand") when the 'Print' button
+    is clicked.  In other words, it makes the <b>[Alt]</b> key have no
+    effect when clicking the 'Print' button.</p>
+  </dd>
+  
+  <dt><code><b>altprint=mod</b></code></dt>
+  <dd>
+    <p>This is the normal, default behavior.  Tux&nbsp;Paint shows a
+    printer dialog (or, on Linux/Unix, runs the "altprintcommand"),
+    when the <b>[Alt]</b> key is pressed while the 'Print' button is clicked.
+    Clicking 'Print' without holding <b>[Alt]</b> prints without showing
+    a dialog.</p>
+  </dd>
+
   <dt><code><b>simpleshapes=yes</b></code></dt>
   <dd>
     Disable the rotation step of the 'Shape' tool.

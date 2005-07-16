@@ -482,6 +482,12 @@ enum {
   SAVE_OVER_NO
 };
 
+enum {
+  ALTPRINT_MOD,
+  ALTPRINT_ALWAYS,
+  ALTPRINT_NEVER
+};
+
 
 enum {
   STARTER_OUTLINE,
@@ -1417,7 +1423,8 @@ static int use_sound, fullscreen, disable_quit, simple_shapes,
   mousekey_up, mousekey_down, mousekey_left, mousekey_right,
   dont_do_xor, use_print_config, dont_load_stamps, noshortcuts,
   no_system_fonts, no_button_distinction,
-  mirrorstamps, disable_stamp_controls, disable_save, ok_to_use_lockfile;
+  mirrorstamps, disable_stamp_controls, disable_save, ok_to_use_lockfile,
+  alt_print_command_default;
 static int want_alt_printcommand;
 static int starter_mirrored, starter_flipped;
 static int recording, playing;
@@ -3205,7 +3212,12 @@ static void mainloop(void)
 			  
 			  if (cur_time >= last_print_time + print_delay)
 			    {
-			      want_alt_printcommand = (SDL_GetModState() & KMOD_ALT);
+			      if (alt_print_command_default == ALTPRINT_ALWAYS)
+				want_alt_printcommand = 1;
+			      else if (alt_print_command_default == ALTPRINT_NEVER)
+				want_alt_printcommand = 0;
+			      else /* ALTPRINT_MOD */
+			        want_alt_printcommand = (SDL_GetModState() & KMOD_ALT);
 			      
 		              if (do_prompt_image(PROMPT_PRINT_NOW_TXT,
 				            PROMPT_PRINT_NOW_YES,
@@ -6188,6 +6200,7 @@ static void show_usage(FILE * f, char * prg)
 	  "  %s [--printcfg | --noprintcfg]\n"
 #endif
 	  "  %s [--printdelay=SECONDS]\n"
+	  "  %s [--altprintmod | --altprintalways | --altprintnever]\n"
 	  "  %s [--lang LANGUAGE | --locale LOCALE | --lang help]\n"
 	  "  %s [--nosysconfig] [--nolockfile]\n"
 	  /* "  %s [--record FILE | --playback FILE]\n" */
@@ -7344,6 +7357,7 @@ static void setup(int argc, char * argv[])
   simple_shapes = 0;
   only_uppercase = 0;
   promptless_save = SAVE_OVER_PROMPT;
+  alt_print_command_default = ALTPRINT_MOD;
   disable_quit = 0;
   disable_save = 0;
   disable_print = 0;
@@ -7557,6 +7571,18 @@ static void setup(int argc, char * argv[])
       else if (strcmp(argv[i], "--saveovernew") == 0)
 	{
 	  promptless_save = SAVE_OVER_NO;
+	}
+      else if (strcmp(argv[i], "--altprintnever") == 0)
+	{
+	  alt_print_command_default = ALTPRINT_NEVER;
+	}
+      else if (strcmp(argv[i], "--altprintalways") == 0)
+	{
+	  alt_print_command_default = ALTPRINT_ALWAYS;
+	}
+      else if (strcmp(argv[i], "--altprintmod") == 0)
+	{
+	  alt_print_command_default = ALTPRINT_MOD;
 	}
       else if (strcmp(argv[i], "--uppercase") == 0 || strcmp(argv[i], "-u") == 0)
 	{
@@ -15127,6 +15153,20 @@ static void parse_options(FILE * fi)
 	  else if (strcmp(str, "saveover=new") == 0)
 	    {
 	      promptless_save = SAVE_OVER_NO;
+	    }
+	  else if (strcmp(str, "altprint=always") == 0)
+	    {
+	      alt_print_command_default = ALTPRINT_ALWAYS;
+	    }
+	  else if (strcmp(str, "altprint=mod") == 0)
+	    {
+	      /* (Default) */
+
+	      alt_print_command_default = ALTPRINT_MOD;
+	    }
+	  else if (strcmp(str, "altprint=never") == 0)
+	    {
+	      alt_print_command_default = ALTPRINT_NEVER;
 	    }
 	  else if (strstr(str, "savedir=") == str)
 	    {

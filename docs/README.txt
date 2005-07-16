@@ -575,6 +575,24 @@ Available Tools
 
                               See the "Options" documentation.)
 
+                      Printer Dialog Options
+
+                              By default, Tux Paint only shows the printer
+                              dialog (or, on Linux/Unix, runs the
+                              "altprintcommand", e.g., "kprinter" instead of
+                              "lpr") if the [Alt] key is held while clicking
+                              the 'Print' button.
+
+                              However, this behavior can be changed. You can
+                              have the printer dialog always appear by using
+                              "--altprintalways" on the command-line, or
+                              "altprint=always" in Tux Paint's configuration
+                              file. Or, you can prevent the [Alt] key from
+                              having any effect by using "--altprintnever",
+                              or "altprint=never".
+
+                              See the "Options" documentation.)
+
    --------------------------------------------------------------------------
 
          Quit
