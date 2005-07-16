@@ -147,6 +147,7 @@ static scaleparams scaletable[] = {
 
 #include <stdio.h>
 #include <stdlib.h>
+#define __USE_GNU  /* for strcasestr() */
 #include <string.h>
 #include <ctype.h>
 #include <time.h>
@@ -1742,7 +1743,7 @@ static void parse_font_style(style_info *si)
     si->boldness = 1;
 
   // we'll count both TrueType and OpenType
-  si->truetype = !!strstr(si->filename,".ttf") || !!strstr(si->filename,".otf");
+  si->truetype = !!strcasestr(si->filename,".ttf") || !!strcasestr(si->filename,".otf");
 }
 
 static void groupfonts_range(style_info **base, int count)
@@ -6487,7 +6488,7 @@ static void loadfont_callback(const char *restrict const dir, unsigned dirlen, t
         }
       if(!loadable)
         {
-          if(strstr(files[i].str, "/rsrc"))
+          if(strcasestr(files[i].str, "/rsrc"))
             loadable = 1;
         }
       // Loadable: TrueType (.ttf), OpenType (.otf), Type1 (.pfa and .pfb),
@@ -6568,7 +6569,7 @@ static void loadbrush_callback(const char *restrict const dir, unsigned dirlen, 
   while(i--)
     {
       show_progress_bar();
-      if (strstr(files[i].str, ".png"))
+      if (strcasestr(files[i].str, ".png"))
         {
           char fname[512];
           snprintf(fname, sizeof fname, "%s/%s", dir, files[i].str);
@@ -6885,9 +6886,9 @@ static void loadstamp_callback(const char *restrict const dir, unsigned dirlen, 
       char fname[512];
       show_progress_bar();
 
-      char *dotpng = strstr(files[i].str, ".png");
+      char *dotpng = strcasestr(files[i].str, ".png");
 
-      if (dotpng>files[i].str && !strcmp(dotpng,".png") && (dotpng-files[i].str+1+dirlen < sizeof fname) && !strstr(files[i].str, "_mirror.png"))
+      if (dotpng>files[i].str && !strcasecmp(dotpng,".png") && (dotpng-files[i].str+1+dirlen < sizeof fname) && !strcasestr(files[i].str, "_mirror.png"))
         {
           snprintf(fname, sizeof fname, "%s/%s", dir, files[i].str);
           if(num_stamps == max_stamps)
@@ -10878,9 +10879,9 @@ static Mix_Chunk * loadsound(const char * const fname)
   snprintf(tmp_str, sizeof(tmp_str), "_%s.wav", lang_prefix);
 
 
-  if (strstr(snd_fname, ".png") != NULL)
+  if (strcasestr(snd_fname, ".png") != NULL)
     {
-      strcpy(strstr(snd_fname, ".png"), tmp_str);
+      strcpy(strcasestr(snd_fname, ".png"), tmp_str);
       debug(snd_fname);
 
       tmp_snd = Mix_LoadWAV(snd_fname);
@@ -10895,9 +10896,9 @@ static Mix_Chunk * loadsound(const char * const fname)
 
 	  snd_fname = strdup(fname);
 
-	  if (strstr(snd_fname, ".png") != NULL)
+	  if (strcasestr(snd_fname, ".png") != NULL)
 	    {
-	      strcpy(strstr(snd_fname, ".png"), ".wav");
+	      strcpy(strcasestr(snd_fname, ".png"), ".wav");
 	      debug(snd_fname);
 	      tmp_snd = Mix_LoadWAV(snd_fname);
 	      free(snd_fname);
@@ -10952,9 +10953,9 @@ static char * loaddesc(const char * const fname)
 
   txt_fname = strdup(fname);
 
-  if (strstr(txt_fname, ".png") != NULL)   // FIXME: isn't this always OK?
+  if (strcasestr(txt_fname, ".png") != NULL)   // FIXME: isn't this always OK?
     {
-      strcpy(strstr(txt_fname, ".png"), ".txt");
+      strcpy(strcasestr(txt_fname, ".png"), ".txt");
 
       fi = fopen(txt_fname, "r");
       free(txt_fname);
@@ -10991,11 +10992,11 @@ static char * loaddesc(const char * const fname)
 
 	      /* See if it's the one for this locale... */
 	
-	      if (strstr(buf, lang_prefix) == buf)
+	      if (strcasestr(buf, lang_prefix) == buf)
 		{
 
 		  debug(buf + strlen(lang_prefix));
-		  if (strstr(buf + strlen(lang_prefix), ".utf8=") ==
+		  if (strcasestr(buf + strlen(lang_prefix), ".utf8=") ==
 			   buf + strlen(lang_prefix))
 		    {
 		      found = 1;
@@ -13128,28 +13129,28 @@ void do_open(void)
       {
         debug(f->d_name);
 	      
-        if (strstr(f->d_name, "-t.") == NULL &&
-	    strstr(f->d_name, "-back.") == NULL)
+        if (strcasestr(f->d_name, "-t.") == NULL &&
+	    strcasestr(f->d_name, "-back.") == NULL)
 	{
-	  if (strstr(f->d_name, FNAME_EXTENSION) != NULL
+	  if (strcasestr(f->d_name, FNAME_EXTENSION) != NULL
 #ifndef SAVE_AS_BMP
           /* Support legacy BMP files for load: */
 		      
-	      || strstr(f->d_name, ".bmp") != NULL
+	      || strcasestr(f->d_name, ".bmp") != NULL
 #endif
 	      )
 	  {
 	    strcpy(fname, f->d_name);
-	    if (strstr(fname, FNAME_EXTENSION) != NULL)
+	    if (strcasestr(fname, FNAME_EXTENSION) != NULL)
 	    {
-	      strcpy(strstr(fname, FNAME_EXTENSION), "");
+	      strcpy(strcasestr(fname, FNAME_EXTENSION), "");
 	      d_exts[num_files] = strdup(FNAME_EXTENSION);
 	    }
 		      
 #ifndef SAVE_AS_BMP
-	    if (strstr(fname, ".bmp") != NULL)
+	    if (strcasestr(fname, ".bmp") != NULL)
 	    {
-	      strcpy(strstr(fname, ".bmp"), "");
+	      strcpy(strcasestr(fname, ".bmp"), "");
 	      d_exts[num_files] = strdup(".bmp");
 	    }
 #endif
