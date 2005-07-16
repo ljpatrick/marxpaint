@@ -9,7 +9,7 @@
                            bill@newbreedsoftware.com
                    http://www.newbreedsoftware.com/tuxpaint/
 
-                                 July 14, 2005
+                                 July 16, 2005
 
    --------------------------------------------------------------------------
 
@@ -108,8 +108,9 @@ Windows Users
 
              (Linux and Unix only)
 
-             Use the command COMMAND to print a PostScript format file. If
-             not set, the default command is:
+             Use the command COMMAND to print a PostScript format file when
+             the 'Print' button is clicked. If this option is not
+             specifically not set, the default command is:
 
                lpr
 
@@ -120,12 +121,27 @@ Windows Users
              If you set an alternative printcommand in the configuration file
              prior to version 0.9.15, you will need to change it.
 
+     altprintcommand=COMMAND
+
+             (Linux and Unix only)
+
+             Use the command COMMAND to print a PostScript format file when
+             the 'Print' button is clicked while the [Alt] modifier key is
+             being held. (This is typically used for providing a print
+             dialog, similar to when pressing [Alt]+'Print' in Windows and
+             Mac OS X.)
+
+             If this option is not specifically not set, the default command
+             is KDE's graphical print dialog:
+
+               kprinter
+
      printcfg=yes
 
              (Windows only)
 
              Tux Paint will use a printer configuration file when printing.
-             Push the [ALT] key while clicking the 'Print' button in
+             Push the [Alt] key while clicking the 'Print' button in
              Tux Paint to cause a Windows print dialog window to appear.
 
              (Note: This only works when not running Tux Paint in fullscreen

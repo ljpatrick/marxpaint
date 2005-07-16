@@ -27,7 +27,7 @@
 
 
 #define VER_VERSION     "0.9.15"
-#define VER_DATE        "2005-07-15"
+#define VER_DATE        "2005-07-16"
 
 
 /* Color depth for Tux Paint to run in, and store canvases in: */
@@ -52,14 +52,27 @@
 //#define PRINTMETHOD_PNG_PNM_PS   /* Output PNG, assuming it gets printed */
 
 
-/* Default print command, depending on the print method: */
+/* Default print and alt-print command, depending on the print method: */
+
+#define DEFAULT_PRINTCOMMAND "lpr"
+#define DEFAULT_ALTPRINTCOMMAND "kprinter"
 
 #ifdef PRINTMETHOD_PNG_PNM_PS
-#define PRINTCOMMAND "pngtopnm | pnmtops | lpr"
+#define PRINTCOMMAND "pngtopnm | pnmtops | " DEFAULT_PRINTCOMMAND
 #elif defined(PRINTMETHOD_PNM_PS)
-#define PRINTCOMMAND "pnmtops | lpr"
+#define PRINTCOMMAND "pnmtops | " DEFAULT_PRINTCOMMAND
 #elif defined(PRINTMETHOD_PS)
-#define PRINTCOMMAND "lpr"
+#define PRINTCOMMAND DEFAULT_PRINTCOMMAND
+#else
+#error No print method defined!
+#endif
+
+#ifdef PRINTMETHOD_PNG_PNM_PS
+#define ALTPRINTCOMMAND "pngtopnm | pnmtops | " DEFAULT_ALTPRINTCOMMAND
+#elif defined(PRINTMETHOD_PNM_PS)
+#define ALTPRINTCOMMAND "pnmtops | " DEFAULT_ALTPRINTCOMMAND
+#elif defined(PRINTMETHOD_PS)
+#define ALTPRINTCOMMAND DEFAULT_ALTPRINTCOMMAND
 #else
 #error No print method defined!
 #endif
@@ -184,6 +197,7 @@ static scaleparams scaletable[] = {
 #ifndef WIN32
 #include <unistd.h>
 #include <dirent.h>
+#include <signal.h>
 #ifdef __BEOS__
 #include "BeOS_print.h"
 // workaround dirent handling bug in TuxPaint code
@@ -1404,11 +1418,13 @@ static int use_sound, fullscreen, disable_quit, simple_shapes,
   dont_do_xor, use_print_config, dont_load_stamps, noshortcuts,
   no_system_fonts, no_button_distinction,
   mirrorstamps, disable_stamp_controls, disable_save, ok_to_use_lockfile;
+static int want_alt_printcommand;
 static int starter_mirrored, starter_flipped;
 static int recording, playing;
 static char * playfile;
 static FILE * demofi;
 static const char * printcommand = PRINTCOMMAND;
+static const char * altprintcommand = ALTPRINTCOMMAND;
 static int prog_bar_ctr;
 
 enum {
@@ -2163,6 +2179,7 @@ static void stamp_draw(int x, int y);
 static void rec_undo_buffer(void);
 static void show_usage(FILE * f, char * prg);
 static void setup(int argc, char * argv[]);
+void signal_handler(int sig);
 static SDL_Cursor * get_cursor(char * bits, char * mask_bits,
 		        int w, int h, int x, int y);
 static void seticon(void);
@@ -3188,13 +3205,15 @@ static void mainloop(void)
 			  
 			  if (cur_time >= last_print_time + print_delay)
 			    {
+			      want_alt_printcommand = (SDL_GetModState() & KMOD_ALT);
+			      
 		              if (do_prompt_image(PROMPT_PRINT_NOW_TXT,
 				            PROMPT_PRINT_NOW_YES,
 				            PROMPT_PRINT_NOW_NO,
 					    img_printer, NULL, NULL))
 			      {
 			        do_print();
-			      
+				
 			        last_print_time = cur_time;
 			      }
 			    }
@@ -8472,8 +8491,15 @@ static void setup(int argc, char * argv[])
   /* Enable Unicode support in SDL: */
   
   SDL_EnableUNICODE(1);
-
-
+  
+  
+  /* Set up signal handler for SIGPIPE (in case printer command dies;
+     e.g., altprintcommand=kprinter, but 'Cancel' is clicked,
+     instead of 'Ok') */
+  
+  signal(SIGPIPE, signal_handler);
+  
+  
   /* Open demo recording or playback file: */
 
   if (recording)
@@ -8504,6 +8530,13 @@ static void setup(int argc, char * argv[])
     {
       demofi = NULL;
     }
+}
+
+
+void signal_handler(int sig)
+{
+  if (sig == SIGPIPE)
+    /* fprintf(stderr, "SIGPIPE!\n") */;
 }
 
 
@@ -14329,25 +14362,31 @@ static void hsvtorgb(float h, float s, float v, Uint8 *r8, Uint8 *g8, Uint8 *b8)
 static void do_print(void)
 {
 #if !defined(WIN32) && !defined(__BEOS__) && !defined(__APPLE__)
-  /* Linux, Unix, etc. */
-
+  char * pcmd;
   FILE * pi;
 
-  pi = popen(printcommand, "w");
+  /* Linux, Unix, etc. */
+  
+  if (want_alt_printcommand && !fullscreen)
+    pcmd = altprintcommand;
+  else
+    pcmd = printcommand;
+
+  pi = popen(pcmd, "w");
 
   if (pi == NULL)
     {
-      perror(printcommand);
+      perror(pcmd);
     }
   else
     {
 #ifdef PRINTMETHOD_PNG_PNM_PS
-      if (do_png_save(pi, printcommand, canvas))
+      if (do_png_save(pi, pcmd, canvas))
 	do_prompt(PROMPT_PRINT_TXT, PROMPT_PRINT_YES, "");
 #elif defined(PRINTMETHOD_PNM_PS)
       // nothing here
 #elif defined(PRINTMETHOD_PS)
-      if (do_ps_save(pi, printcommand, canvas))
+      if (do_ps_save(pi, pcmd, canvas))
 	do_prompt(PROMPT_PRINT_TXT, PROMPT_PRINT_YES, "");
 #else
 #error No print method defined!
@@ -14358,7 +14397,7 @@ static void do_print(void)
   /* Win32 */
 
   char  f[512];
-  int   show = (SDL_GetModState() & KMOD_ALT) && !fullscreen;
+  int   show = (want_alt_printcommand && !fullscreen);
 
   snprintf(f, sizeof(f), "%s/%s", savedir, "print.cfg");
 
@@ -15070,6 +15109,10 @@ static void parse_options(FILE * fi)
 	  else if (strstr(str, "printcommand=") == str)
 	    {
 	      printcommand = strdup(str + 13);
+	    }
+	  else if (strstr(str, "altprintcommand=") == str)
+	    {
+	      altprintcommand = strdup(str + 16);
 	    }
 	  else if (strcmp(str, "saveover=yes") == 0)
 	    {

@@ -22,7 +22,7 @@ New Breed Software</p>
 <p><a href="mailto:bill@newbreedsoftware.com">bill@newbreedsoftware.com</a><br>
 <a href="http://www.newbreedsoftware.com/tuxpaint/">http://www.newbreedsoftware.com/tuxpaint/</a></p>
 
-<p>July 14, 2005</p>
+<p>July 16, 2005</p>
 </center>
 
 <hr size=2 noshade>
@@ -149,8 +149,9 @@ New Breed Software</p>
   <dd>
     <p><i>(Linux and Unix only)</i></p>
 
-    <p>Use the command <i>COMMAND</i> to print a PostScript format file.
-    If not set, the default command is:</p>
+    <p>Use the command <i>COMMAND</i> to print a PostScript format file
+    when the 'Print' button is clicked.
+    If this option is not specifically not set, the default command is:</p>
 
     <blockquote>
       <code>lpr</code>
@@ -164,12 +165,30 @@ New Breed Software</p>
     configuration file prior to version 0.9.15, you will need to change it.</p>
   </dd>
 
+  <dt><code><b>altprintcommand=<i>COMMAND</i></b></code></dt>
+  <dd>
+    <p><i>(Linux and Unix only)</i></p>
+
+    <p>Use the command <i>COMMAND</i> to print a PostScript format file
+    when the 'Print' button is clicked while the <b>[Alt]</b> modifier
+    key is being held.  (This is typically used for providing a print
+    dialog, similar to when pressing <b>[Alt]</b>+'Print' in Windows and
+    Mac&nbsp;OS&nbsp;X.)</p>
+    
+    <p>If this option is not specifically not set, the default command is
+    KDE's graphical print dialog:</p>
+
+    <blockquote>
+      <code>kprinter</code>
+    </blockquote>
+  </dd>
+
   <dt><code><b>printcfg=yes</b></code></dt>
   <dd>
     <p><i>(Windows only)</i></p>
 
     <p>Tux&nbsp;Paint will use a printer configuration file when printing.
-    Push the <b>[ALT]</b> key while clicking the 'Print' button in
+    Push the <b>[Alt]</b> key while clicking the 'Print' button in
     Tux&nbsp;Paint to cause a Windows print dialog window to appear.</p>
     
     <p>(Note: This only works when not running Tux&nbsp;Paint in

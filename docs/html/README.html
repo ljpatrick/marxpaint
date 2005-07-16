@@ -23,7 +23,7 @@ New Breed Software</p>
 <p><a href="mailto:bill@newbreedsoftware.com">bill@newbreedsoftware.com</a><br>
 <a href="http://www.newbreedsoftware.com/tuxpaint/">http://www.newbreedsoftware.com/tuxpaint/</a></p>
 
-<p>June 14, 2002 - February 13, 2005</p>
+<p>June 14, 2002 - July 16, 2005</p>
 </center>
 
 <hr size=2 noshade>
@@ -713,6 +713,11 @@ New Breed Software</p>
         <img src="images/tool_print.png" width=48 height=48 alt="" align=right>
 
         <p>Click this button and your picture will be printed!</p>
+	
+	<p>On most platforms, you can also hold the <b>[Alt]</b> key while
+	clicking the 'Print' button to get a printer dialog, as long
+	as you're not running Tux&nbsp;Paint in fullscreen mode.
+	See below.</p>
 
         <dl>
 	<dt>Disabling Printing</dt>
@@ -743,7 +748,7 @@ New Breed Software</p>
 	</dd>
 
 	
-	<dt>Printing Command</dt>
+	<dt>Printing Commands</dt>
 	<dd>
 	  <p><i>(Linux and Unix only)</i></p>
 
@@ -758,8 +763,21 @@ New Breed Software</p>
 	  <p>This command can be changed by setting the "printcommand" value
 	  in Tux&nbsp;Paint's configuration file.</p>
 
-	  <p>See the "<a href="OPTIONS.html"><i>Options</i></a>"
-	  documentation.)</p>
+	  <p>If the <b>[Alt]</b> key on the keyboard is being pushed
+	  while clicking the 'Print' button, as long as you're not in
+	  fullscreen mode, an alternative program is run.  By default,
+	  the program is KDE's graphical print dialog:</p>
+
+          <blockquote><code>
+	    kprinter
+	  </code></blockquote>
+
+	  <p>This command can be changed by setting the "altprintcommand" value
+	  in Tux&nbsp;Paint's configuration file.</p>
+
+	  <p>For information on how to change the printing commands,
+	  see the "<a href="OPTIONS.html"><i>Options</i></a>"
+	  documentation.</p>
 	</dd>
 
 
@@ -771,7 +789,7 @@ New Breed Software</p>
 	  printer with default settings when the 'Print' button is
 	  pushed.</p>
 
-	  <p>However, if you hold the <b>[ALT]</b> key on the keyboard
+	  <p>However, if you hold the <b>[Alt]</b> key on the keyboard
 	  while pushing the button, as long as you're not in fullscreen mode,
 	  a Windows print dialog will appear, where you can change the
 	  settings.</p>

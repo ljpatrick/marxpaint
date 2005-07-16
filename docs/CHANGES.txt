@@ -391,6 +391,11 @@ http://www.newbreedsoftware.com/tuxpaint/
 
     * Now prompts to confirm before printing.
 
+    * Holding [Alt] while clicking 'Print' on Unix/Linux can now bring up
+      a print dialog. (Defaults to KDE's 'kprinter'.)  Can be altered
+      via 'altprintcommand' in ~/.tuxpaintrc.
+
+
   * New translations:
     -----------------
     * Afrikaans translation created.

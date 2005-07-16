@@ -9,9 +9,9 @@
                            bill@newbreedsoftware.com
                    http://www.newbreedsoftware.com/tuxpaint/
 
-                        June 14, 2002 - January 8, 2005
+                         June 14, 2002 - July 16, 2005
 
-   ---------------------------------------------------------------------------
+   --------------------------------------------------------------------------
 
                                      About
 
@@ -65,7 +65,7 @@ Objectives:
                is done by selecting it from a collection of thumbnails.
                Access to other files on the computer is restricted.
 
-   ---------------------------------------------------------------------------
+   --------------------------------------------------------------------------
 
                                 Using Tux Paint
 
@@ -84,12 +84,12 @@ Loading Tux Paint
          If any errors occur, they will be displayed on the terminal (to
          "stderr").
 
-   ---------------------------------------------------------------------------
+   --------------------------------------------------------------------------
 
   Windows Users
 
-                                                                    [Icon]    
-                                                                   Tux Paint  
+                                                                    [Icon]
+                                                                   Tux Paint
 
          If you installed Tux Paint on your computer using the
          'Tux Paint Installer,' it will have asked you whether you wanted a
@@ -110,13 +110,13 @@ Loading Tux Paint
          If you used the 'ZIP-file' download, Tux Paint's folder will be
          wherever you put it when you unzipped the ZIP file.
 
-   ---------------------------------------------------------------------------
+   --------------------------------------------------------------------------
 
   Mac OS X Users
 
          Simply double-click the "Tux Paint" icon.
 
-   ---------------------------------------------------------------------------
+   --------------------------------------------------------------------------
 
 Title Screen
 
@@ -128,7 +128,7 @@ Title Screen
        continue. (Or, after about 30 seconds, the title screen will go away
        automatically.)
 
-   ---------------------------------------------------------------------------
+   --------------------------------------------------------------------------
 
 Main Screen
 
@@ -138,8 +138,8 @@ Main Screen
 
                The toolbar contains the drawing and editing controls.
 
-[Tools: Paint, Stamp, Lines, Shapes, Text, Magic, Undo, Redo,       Eraser, New,
-                            Open, Save, Print, Quit]
+[Tools: Paint, Stamp, Lines, Shapes, Text, Magic, Undo, Redo, Eraser, New, Open,
+                               Save, Print, Quit]
 
        Middle: Drawing Canvas
 
@@ -162,26 +162,24 @@ Main Screen
                A palette of available colors are shown near the bottom of the
                screen.
 
-  [Colors - Black, White, Red, Pink, Orange, Yellow, Green, Cyan,       Blue,
-                              Purple, Brown, Grey]
+ [Colors - Black, White, Red, Pink, Orange, Yellow, Green, Cyan, Blue, Purple,
+                                  Brown, Grey]
 
        Bottom: Help Area
 
                At the very bottom of the screen, Tux, the Linux Penguin,
                provides tips and other information while you draw.
 
- (For example: 'Pick a shape. Click to pick the center, drag, then       let go
-when it is the size you want.  Move around to rotate it, and       click to draw
-                                      it.)
+(For example: 'Pick a shape. Click to pick the center, drag, then let go when it
+     is the size you want. Move around to rotate it, and click to draw it.)
 
-   ---------------------------------------------------------------------------
+   --------------------------------------------------------------------------
 
 Available Tools
 
   Drawing Tools
 
          Paint (Brush)
-                 [IMG]
 
                  The Paint Brush tool lets you draw freehand, using various
                  brushes (chosen in the Selector on the right) and colors
@@ -193,12 +191,9 @@ Available Tools
                  As you draw, a sound is played. The bigger the brush, the
                  lower the pitch.
 
-                                     [IMG]
-
-   ---------------------------------------------------------------------------
+   --------------------------------------------------------------------------
 
          Stamp (Rubber Stamp)
-                 [IMG]
 
                  The Stamp tool is like a rubber stamp, or stickers. It lets
                  you paste pre-drawn or photographic images (like a picture
@@ -218,12 +213,9 @@ Available Tools
                  won't display the Mirror, Flip, Shrink and Grow controls for
                  stamps. See the "Options" documentation.)
 
-                                     [IMG]
-
-   ---------------------------------------------------------------------------
+   --------------------------------------------------------------------------
 
          Lines
-                 [IMG]
 
                  This tool lets you draw straight lines using the various
                  brushes and colors you normally use with the Paint Brush.
@@ -235,12 +227,9 @@ Available Tools
                  Let go of the mouse to complete the line. A "sproing!" sound
                  will play.
 
-                                     [IMG]
-
-   ---------------------------------------------------------------------------
+   --------------------------------------------------------------------------
 
          Shapes
-                 [IMG]
 
                  This tool lets you draw some simple filled, and un-filled
                  shapes.
@@ -269,12 +258,9 @@ Available Tools
                               drawn on the canvas when you let go of the
                               mouse button. (There's no rotation step.)
 
-                                     [IMG]
-
-   ---------------------------------------------------------------------------
+   --------------------------------------------------------------------------
 
          Text
-                 [IMG]
 
                  Choose a font (from the 'Letters' available on the right)
                  and a color (from the color palette near the bottom). Click
@@ -287,12 +273,9 @@ Available Tools
                  Click elsewhere in the picture and the current line of text
                  will move there, where you can continue editing.
 
-                                     [IMG]
-
-   ---------------------------------------------------------------------------
+   --------------------------------------------------------------------------
 
          Magic (Special Effects)
-                 [IMG]
 
                  The 'Magic' tool is actually a set of special tools. Select
                  one of the "magic" effects from the selector on the right,
@@ -375,10 +358,9 @@ Available Tools
                               you quickly fill parts of the picture, as if it
                               were a coloring book.
 
-   ---------------------------------------------------------------------------
+   --------------------------------------------------------------------------
 
          Eraser
-                 [IMG]
 
                  This tool is similar to the Paint Brush. Wherever you click
                  (or click and drag), the picture will be erased either to
@@ -394,12 +376,11 @@ Available Tools
                  As you erase, a "squeaky clean" eraser/wiping sound is
                  played.
 
-   ---------------------------------------------------------------------------
+   --------------------------------------------------------------------------
 
   Other Controls
 
          Undo
-                 [IMG]
 
                  Clicking this tool will undo the last drawing action. You
                  can even undo more than once!
@@ -407,10 +388,9 @@ Available Tools
                  Note: You can also press [Control]-[Z] on the keyboard to
                  undo.
 
-   ---------------------------------------------------------------------------
+   --------------------------------------------------------------------------
 
          Redo
-                 [IMG]
 
                  Clicking this tool will redo the drawing action you just
                  "undid" with the 'Undo' button.
@@ -421,10 +401,9 @@ Available Tools
                  Note: You can also press [Control]-[R] on the keyboard to
                  redo.
 
-   ---------------------------------------------------------------------------
+   --------------------------------------------------------------------------
 
          New
-                 [IMG]
 
                  Clicking the "New" button will start a new drawing. You will
                  first be asked whether you really want to do this.
@@ -432,37 +411,28 @@ Available Tools
                  Note: You can also press [Control]-[N] on the keyboard to
                  start a new drawing.
 
-   ---------------------------------------------------------------------------
+   --------------------------------------------------------------------------
 
          Open
-                 [IMG]
 
                  This shows you a list of all of the pictures you've saved.
                  If there are more than can fit on the screen, use the "Up"
                  and "Down" arrows at the top and bottom of the list to
                  scroll through the list of pictures.
 
-                                     [IMG]
-
                  Click a picture to select it, then...
 
-                      * [IMG]
-
-                        Click the green "Open" button at the lower left of
+                      * Click the green "Open" button at the lower left of
                         the list to load the selected picture.
 
                         (Alternatively, you can double-click a picture's icon
                         to load it.)
 
-                      * [IMG]
-
-                        Click the brown "Erase" (trash can) button at the
+                      * Click the brown "Erase" (trash can) button at the
                         lower right of the list to erase the selected
                         picture. (You will be asked to confirm.)
 
-                      * [IMG]
-
-                        Or click the red "Back" arrow button at the lower
+                      * Or click the red "Back" arrow button at the lower
                         right of the list to cancel and return to the picture
                         you were drawing.
 
@@ -488,10 +458,9 @@ Available Tools
                  Note: You can also press [Control]-[O] on the keyboard to
                  get the 'Open' dialog.
 
-   ---------------------------------------------------------------------------
+   --------------------------------------------------------------------------
 
          Save
-                 [IMG]
 
                  This saves your current picture.
 
@@ -508,8 +477,6 @@ Available Tools
                  asked whether you want to save over the old version, or
                  create a new entry (a new file).
 
-                                     [IMG]
-
                  (NOTE: If either the "saveover" or "saveovernew" options are
                  set, it won't ask before saving over. See the "Options"
                  documentation.)
@@ -517,12 +484,16 @@ Available Tools
                  Note: You can also press [Control]-[S] on the keyboard to
                  save.
 
-   ---------------------------------------------------------------------------
+   --------------------------------------------------------------------------
 
          Print
-                 [IMG]
 
                  Click this button and your picture will be printed!
+
+                 On most platforms, you can also hold the [Alt] key while
+                 clicking the 'Print' button to get a printer dialog, as long
+                 as you're not running Tux Paint in fullscreen mode. See
+                 below.
 
                       Disabling Printing
 
@@ -547,7 +518,7 @@ Available Tools
 
                               See the "Options" documentation.)
 
-                      Printing Command
+                      Printing Commands
 
                               (Linux and Unix only)
 
@@ -562,7 +533,20 @@ Available Tools
                               "printcommand" value in Tux Paint's
                               configuration file.
 
-                              See the "Options" documentation.)
+                              If the [Alt] key on the keyboard is being
+                              pushed while clicking the 'Print' button, as
+                              long as you're not in fullscreen mode, an
+                              alternative program is run. By default, the
+                              program is KDE's graphical print dialog:
+
+                                kprinter
+
+                              This command can be changed by setting the
+                              "altprintcommand" value in Tux Paint's
+                              configuration file.
+
+                              For information on how to change the printing
+                              commands, see the "Options" documentation.
 
                       Printer Settings
 
@@ -572,7 +556,7 @@ Available Tools
                               default printer with default settings when the
                               'Print' button is pushed.
 
-                              However, if you hold the [ALT] key on the
+                              However, if you hold the [Alt] key on the
                               keyboard while pushing the button, as long as
                               you're not in fullscreen mode, a Windows print
                               dialog will appear, where you can change the
@@ -591,10 +575,9 @@ Available Tools
 
                               See the "Options" documentation.)
 
-   ---------------------------------------------------------------------------
+   --------------------------------------------------------------------------
 
          Quit
-                 [IMG]
 
                  Clicking the "Quit" button, closing the Tux Paint window, or
                  pushing the [Escape] key will quit Tux Paint.
@@ -624,7 +607,7 @@ Available Tools
                  [Shift] + [Control] + [Escape] may be used to quit. (See the
                  "Options" documentation.)
 
-   ---------------------------------------------------------------------------
+   --------------------------------------------------------------------------
 
                      Loading Other Pictures into Tux Paint
 
@@ -704,7 +687,7 @@ Doing it Manually
        Under Windows, this is in the "userdata" folder. Under Mac OS X, this
        is in "Library/Preferences/tuxpaint/" in your home directory.
 
-   ---------------------------------------------------------------------------
+   --------------------------------------------------------------------------
 
                               Extending Tux Paint
 
@@ -749,7 +732,7 @@ Where Files Go
 
              /Users/Joe/Library/Preferences/
 
-   ---------------------------------------------------------------------------
+   --------------------------------------------------------------------------
 
   Personal Files
 
@@ -779,14 +762,12 @@ Where Files Go
          (For example, if you created a brush named "flower.png", you would
          put it in "~/.tuxpaint/brushes/" under Linux or Unix.)
 
-   ---------------------------------------------------------------------------
+   --------------------------------------------------------------------------
 
 Brushes
 
        The brushes used for drawing with the 'Brush' and 'Lines' tools in
        Tux Paint are simply greyscale PNG images.
-
-       [IMG]
 
        The alpha (transparency) of the PNG image is used to determine the
        shape of the brush, which means that the shape can be 'anti-aliased'
@@ -801,7 +782,7 @@ Brushes
        it's because you forgot to use alpha transparency! See the
        documentation file "PNG.txt" for more information and tips.
 
-   ---------------------------------------------------------------------------
+   --------------------------------------------------------------------------
 
 Stamps
 
@@ -816,8 +797,6 @@ Stamps
          files. The one file that is required is, of course, the picture
          itself.
 
-         [IMG]
-
          The Stamps used by Tux Paint are PNG pictures. They can be
          full-color or greyscale. The alpha (transparency) of the PNG is used
          to determine the actual shape of the picture (otherwise you'll stamp
@@ -831,7 +810,7 @@ Stamps
          use alpha transparency! See the documentation file "PNG.txt" for
          more information and tips.
 
-   ---------------------------------------------------------------------------
+   --------------------------------------------------------------------------
 
   Description Text
 
@@ -867,7 +846,7 @@ Stamps
            them as Plain Text, and make sure they have ".txt" at the end of
            the filename...
 
-   ---------------------------------------------------------------------------
+   --------------------------------------------------------------------------
 
   Sound Effects
 
@@ -889,7 +868,7 @@ Stamps
            If no localized sound effect can be loaded, Tux Paint will attempt
            to load the 'default' sound file. (e.g., "picture.wav")
 
-   ---------------------------------------------------------------------------
+   --------------------------------------------------------------------------
 
   Stamp Options
 
@@ -917,8 +896,6 @@ Stamps
              Nothing about the original image is used except the transparency
              ("alpha" channel). The color of the stamp comes out solid.
 
-                                     [IMG]
-
              Add the word "colorable" to the stamp's data file.
 
       Tinted
@@ -927,8 +904,6 @@ Stamps
              details of the original image are kept. (To put it technically,
              the original image is used, but its hue is changed, based on the
              currently-selected color.)
-
-                                     [IMG]
 
              Add the word "tintable" to the stamp's data file.
 
@@ -993,11 +968,9 @@ Stamps
          named "truck_mirror.png", which will be used when the stamp is
          mirrored (rather than using a backwards version of 'truck.png').
 
-   ---------------------------------------------------------------------------
+   --------------------------------------------------------------------------
 
 Fonts
-
-       [IMG]
 
        The fonts used by Tux Paint are TrueType Fonts (TTF).
 
@@ -1005,11 +978,9 @@ Fonts
        font and provide four different sizes in the 'Letters' selector when
        using the 'Text' tool.
 
-   ---------------------------------------------------------------------------
+   --------------------------------------------------------------------------
 
 'Starters'
-
-       [IMG]
 
        'Starter' images appear in the 'Open' dialog, along with pictures
        you've created. They have a green button background, instead of blue.
@@ -1080,7 +1051,7 @@ Fonts
        picture loaded or started. (In other words, if you base a drawing on a
        'starter' image, it will always be affected by it.)
 
-   ---------------------------------------------------------------------------
+   --------------------------------------------------------------------------
 
                                 Further Reading
 
@@ -1101,7 +1072,7 @@ Fonts
        * PNG.txt
          Notes on creating PNG format images for use in Tux Paint
 
-   ---------------------------------------------------------------------------
+   --------------------------------------------------------------------------
 
                                 How to Get Help
 
