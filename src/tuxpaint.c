@@ -14413,7 +14413,7 @@ static void do_print(void)
 #elif defined(__APPLE__)
   /* Mac OS X */
 
-  int show = (SDL_GetModState() & KMOD_ALT) && !fullscreen;
+  int show = (want_alt_printcommand && !fullscreen);
 
   const char* error = SurfacePrint (canvas, show);
 
