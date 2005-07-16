@@ -27,7 +27,7 @@
 
 
 #define VER_VERSION     "0.9.15"
-#define VER_DATE        "2005-07-14"
+#define VER_DATE        "2005-07-15"
 
 
 /* Color depth for Tux Paint to run in, and store canvases in: */
@@ -2255,6 +2255,9 @@ static void hsvtorgb(float h, float s, float v, Uint8 *r8, Uint8 *g8, Uint8 *b8)
 
 static void show_progress_bar(void);
 static int progress_bar_disabled;
+
+SDL_Surface * flip_surface(SDL_Surface *s);
+SDL_Surface * mirror_surface(SDL_Surface *s);
 
 static void do_print(void);
 static void strip_trailing_whitespace(char * buf);
@@ -6592,10 +6595,76 @@ static void load_brush_dir(const char * const dir)
   tp_ftw(buf, dirlen, 0, loadbrush_callback);
 }
 
-static void mirror_surface(SDL_Surface *s){
+SDL_Surface * mirror_surface(SDL_Surface *s)
+{
+  SDL_Surface * new_surf;
+  int x;
+  SDL_Rect src, dest;
+
+  
+  /* Mirror surface: */
+
+  new_surf = duplicate_surface(s);
+  
+  if (new_surf != NULL)
+  {
+    for (x = 0; x < s->w; x++)
+    {
+      src.x = x;
+      src.y = 0;
+      src.w = 1;
+      src.h = s->h;
+
+      dest.x = s->w - x - 1;
+      dest.y = 0;
+
+      SDL_BlitSurface(s, &src, new_surf, &dest);
+    }
+    
+    SDL_FreeSurface(s);
+    
+    return(new_surf);
+  }
+  else
+  {
+    return(s);
+  }
 }
 
-static void flip_surface(SDL_Surface *s){
+SDL_Surface * flip_surface(SDL_Surface *s)
+{
+  SDL_Surface * new_surf;
+  int y;
+  SDL_Rect src, dest;
+
+  
+  /* Flip surface: */
+
+  new_surf = duplicate_surface(s);
+
+  if (new_surf != NULL)
+  {
+    for (y = 0; y < s->h; y++)
+    {
+      src.x = 0;
+      src.y = y;
+      src.w = s->w;
+      src.h = 1;
+
+      dest.x = 0;
+      dest.y = s->h - y - 1;
+
+      SDL_BlitSurface(s, &src, new_surf, &dest);
+    }
+    
+    SDL_FreeSurface(s);
+    
+    return(new_surf);
+  }
+  else
+  {
+    return(s);
+  }
 }
 
 static unsigned default_stamp_size;
@@ -6686,11 +6755,11 @@ static void set_active_stamp(void)
       if(!active_stamp)
         active_stamp = thumbnail(img_dead40x40, 40, 40, 1);  // copy it
       if(sd->mirrored)
-        mirror_surface(active_stamp);
+        active_stamp = mirror_surface(active_stamp);
     }
 
   if(sd->flipped)
-    flip_surface(active_stamp);
+    active_stamp = flip_surface(active_stamp);
 }
 
 static void get_stamp_thumb(stamp_type *sd)
@@ -6735,7 +6804,7 @@ static void get_stamp_thumb(stamp_type *sd)
         {
           if(sd->flipped  == sd->thumb_flipped)
             return;
-          flip_surface(sd->thumbnail);
+          sd->thumbnail = flip_surface(sd->thumbnail);
           sd->thumb_flipped = !sd->thumb_flipped;
           return;
         }
@@ -6757,13 +6826,13 @@ static void get_stamp_thumb(stamp_type *sd)
     }
   if(wrongmirror && sd->no_premirror)
     {
-      mirror_surface(wrongmirror);
+      wrongmirror = mirror_surface(wrongmirror);
       sd->thumbnail = wrongmirror;
       sd->thumb_mirrored = !sd->thumb_mirrored;
 
       if(sd->flipped  == sd->thumb_flipped)
         return;
-      flip_surface(sd->thumbnail);
+      sd->thumbnail = flip_surface(sd->thumbnail);
       sd->thumb_flipped = !sd->thumb_flipped;
       return;
     }
@@ -6794,11 +6863,11 @@ static void get_stamp_thumb(stamp_type *sd)
     sd->thumbnail = bigimg;
 
   if(need_mirror)
-    mirror_surface(sd->thumbnail);
+    sd->thumbnail = mirror_surface(sd->thumbnail);
   sd->thumb_mirrored = sd->mirrored;
 
   if(sd->flipped)
-    flip_surface(sd->thumbnail);
+    sd->thumbnail = flip_surface(sd->thumbnail);
   sd->thumb_flipped = sd->flipped;
 
   if(sd->processed)
@@ -15265,7 +15334,7 @@ static int mySDL_PollEvent(SDL_Event *event)
 
 static SDL_Surface * duplicate_surface(SDL_Surface * orig)
 {
-/*
+  /*
   Uint32 amask;
 
   amask = ~(orig->format->Rmask |
@@ -15279,7 +15348,7 @@ static SDL_Surface * duplicate_surface(SDL_Surface * orig)
 			      orig->format->Gmask,
 			      orig->format->Bmask,
 			      amask));
-*/
+  */
 
   return(SDL_DisplayFormatAlpha(orig));
 }
