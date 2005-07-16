@@ -7,7 +7,7 @@ bill@newbreedsoftware.com
 http://www.newbreedsoftware.com/tuxpaint/
 
 
-June 17, 2002 - July 14, 2005
+June 17, 2002 - July 15, 2005
 
 
 * Design and Coding:
@@ -105,7 +105,7 @@ June 17, 2002 - July 14, 2005
     Wang Jian <lark@linux.net.cn>
 
   * Chinese (Traditional)
-    Song Huang <Song@ossacc.org>
+    Song Huang <song@song.idv.tw>
 
   * Croatian
     Nedjeljko Jedvaj <jedvaj.nedeljko@lexunit.com>
