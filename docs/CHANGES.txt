@@ -207,6 +207,8 @@ http://www.newbreedsoftware.com/tuxpaint/
 
   * Compiling, porting and packaging updates:
     -----------------------------------------
+    * *_PREFIX variables in Makefile no longer need trailing '/'.
+
     * Added "Categories" to the 'tuxpaint.desktop' file
       ("Education," "RasterGraphics," "Graphics" and "Art").
       
