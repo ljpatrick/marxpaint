@@ -365,6 +365,13 @@ static void win32_perror(const char * const str)
 	  (errno<_sys_nerr)?_sys_errlist[errno]:"unknown",errno );
 }
 #define perror         win32_perror
+
+/*
+  WIN32 and MINGW don't have strcasestr().
+*/
+#define NOMINMAX
+#include "Shlwapi.h"
+#define strcasestr StrStrI
 #endif
 
 
@@ -8518,13 +8525,13 @@ static void setup(int argc, char * argv[])
   
   SDL_EnableUNICODE(1);
   
-  
+#ifndef WIN32  
   /* Set up signal handler for SIGPIPE (in case printer command dies;
      e.g., altprintcommand=kprinter, but 'Cancel' is clicked,
      instead of 'Ok') */
   
   signal(SIGPIPE, signal_handler);
-  
+#endif
   
   /* Open demo recording or playback file: */
 
@@ -8558,13 +8565,13 @@ static void setup(int argc, char * argv[])
     }
 }
 
-
+#ifndef WIN32
 void signal_handler(int sig)
 {
   if (sig == SIGPIPE)
     /* fprintf(stderr, "SIGPIPE!\n") */;
 }
-
+#endif
 
 /* Render a button label using the appropriate string/font: */
 static SDL_Surface * do_render_button_label(const char * const label)
