@@ -6217,11 +6217,11 @@ static void show_usage(FILE * f, char * prg)
 	  blank, blank, blank,
 	  blank, blank, blank,
 	  blank, blank, blank,
-	  blank, blank, blank,
+	  blank, blank,
 #ifdef WIN32
 	  blank,
 #endif
-	  blank, blank);
+	  blank, blank, blank, blank, blank);
 
   free(blank);
 }
