@@ -22,12 +22,12 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
   
-  June 14, 2002 - July 14, 2005
+  June 14, 2002 - July 17, 2005
 */
 
 
 #define VER_VERSION     "0.9.15"
-#define VER_DATE        "2005-07-16"
+#define VER_DATE        "2005-07-17"
 
 
 /* Color depth for Tux Paint to run in, and store canvases in: */
@@ -2266,8 +2266,11 @@ static void load_current(void);
 static void save_current(void);
 static char * get_fname(const char * const name);
 static int do_prompt_image_flash(const char * const text, const char * const btn_yes, const char * const btn_no, SDL_Surface * img1, SDL_Surface * img2, SDL_Surface * img3, int animate);
+static int do_prompt_image_flash_snd(const char * const text, const char * const btn_yes, const char * const btn_no, SDL_Surface * img1, SDL_Surface * img2, SDL_Surface * img3, int animate, int snd);
 static int do_prompt_image(const char * const text, const char * const btn_yes, const char * const btn_no, SDL_Surface * img1, SDL_Surface * img2, SDL_Surface * img3);
+static int do_prompt_image_snd(const char * const text, const char * const btn_yes, const char * const btn_no, SDL_Surface * img1, SDL_Surface * img2, SDL_Surface * img3, int snd);
 static int do_prompt(const char * const text, const char * const btn_yes, const char * const btn_no);
+static int do_prompt_snd(const char * const text, const char * const btn_yes, const char * const btn_no, int snd);
 static void cleanup(void);
 static void free_cursor(SDL_Cursor ** cursor);
 static void free_surface(SDL_Surface **surface_array);
@@ -2828,9 +2831,10 @@ static void mainloop(void)
 		{
 		  /* Ctrl-N - New */
 		  
-		  if (do_prompt(PROMPT_NEW_TXT,
-				PROMPT_NEW_YES,
-				PROMPT_NEW_NO))
+		  if (do_prompt_snd(PROMPT_NEW_TXT,
+				    PROMPT_NEW_YES,
+				    PROMPT_NEW_NO,
+				    SND_AREYOUSURE))
 		    {
 		      free_surface(&img_starter);
 		      free_surface(&img_starter_bkgd);
@@ -3170,9 +3174,10 @@ static void mainloop(void)
 			}
 		      else if (cur_tool == TOOL_NEW)
 			{
-			  if (do_prompt(PROMPT_NEW_TXT,
-					PROMPT_NEW_YES,
-					PROMPT_NEW_NO))
+			  if (do_prompt_snd(PROMPT_NEW_TXT,
+					    PROMPT_NEW_YES,
+					    PROMPT_NEW_NO,
+					    SND_AREYOUSURE))
 			    {
 		      	      free_surface(&img_starter);
 			      free_surface(&img_starter_bkgd);
@@ -3226,10 +3231,11 @@ static void mainloop(void)
 			      else /* ALTPRINT_MOD */
 			        want_alt_printcommand = (SDL_GetModState() & KMOD_ALT);
 			      
-		              if (do_prompt_image(PROMPT_PRINT_NOW_TXT,
-				            PROMPT_PRINT_NOW_YES,
-				            PROMPT_PRINT_NOW_NO,
-					    img_printer, NULL, NULL))
+		              if (do_prompt_image_snd(PROMPT_PRINT_NOW_TXT,
+						      PROMPT_PRINT_NOW_YES,
+						      PROMPT_PRINT_NOW_NO,
+						      img_printer, NULL, NULL,
+						      SND_AREYOUSURE))
 			      {
 			        do_print();
 				
@@ -3238,10 +3244,11 @@ static void mainloop(void)
 			    }
 			  else
 			    {
-			      do_prompt_image(PROMPT_PRINT_TOO_SOON_TXT,
-					PROMPT_PRINT_TOO_SOON_YES,
-					"",
-					img_printer_wait, NULL, NULL);
+			      do_prompt_image_snd(PROMPT_PRINT_TOO_SOON_TXT,
+						  PROMPT_PRINT_TOO_SOON_YES,
+						  "",
+						  img_printer_wait, NULL, NULL,
+						  SND_YOUCANNOT);
 			    }
 			  
 			  cur_tool = old_tool;
@@ -10303,7 +10310,7 @@ static void render_brush(void)
 static void playsound(int chan, int s, int override)
 {
 #ifndef NOSOUND
-  if (use_sound)
+  if (use_sound && s != SND_NONE)
     {
       if (override || !Mix_Playing(chan))
 	Mix_PlayChannel(chan, sounds[s], 0);
@@ -11675,13 +11682,27 @@ static int do_prompt(const char * const text, const char * const btn_yes, const 
 }
 
 
-static int do_prompt_image(const char * const text, const char * const btn_yes, const char * const btn_no, SDL_Surface * img1, SDL_Surface * img2, SDL_Surface * img3)
+static int do_prompt_snd(const char * const text, const char * const btn_yes, const char * const btn_no, int snd)
 {
-  return(do_prompt_image_flash(text, btn_yes, btn_no, img1, img2, img3, 0));
+  return(do_prompt_image_flash_snd(text, btn_yes, btn_no, NULL, NULL, NULL, 0, snd));
 }
 
+static int do_prompt_image(const char * const text, const char * const btn_yes, const char * const btn_no, SDL_Surface * img1, SDL_Surface * img2, SDL_Surface * img3)
+{
+  return(do_prompt_image_snd(text, btn_yes, btn_no, img1, img2, img3, SND_NONE));
+}
+
+static int do_prompt_image_snd(const char * const text, const char * const btn_yes, const char * const btn_no, SDL_Surface * img1, SDL_Surface * img2, SDL_Surface * img3, int snd)
+{
+  return(do_prompt_image_flash_snd(text, btn_yes, btn_no, img1, img2, img3, 0, snd));
+}
 
 static int do_prompt_image_flash(const char * const text, const char * const btn_yes, const char * const btn_no, SDL_Surface * img1, SDL_Surface * img2, SDL_Surface * img3, int animate)
+{
+  return(do_prompt_image_flash_snd(text, btn_yes, btn_no, img1, img2, img3, animate, SND_NONE));
+}
+
+static int do_prompt_image_flash_snd(const char * const text, const char * const btn_yes, const char * const btn_no, SDL_Surface * img1, SDL_Surface * img2, SDL_Surface * img3, int animate, int snd)
 {
   SDL_Event event;
   SDL_Rect dest;
@@ -11723,6 +11744,7 @@ static int do_prompt_image_flash(const char * const text, const char * const btn
   /* Draw button box: */
 
   playsound(0, SND_PROMPT, 1);
+  playsound(1, snd, 1);
 
   for (w = 0; w <= 96; w = w + 4)
     {
@@ -12577,10 +12599,11 @@ static int do_save(void)
 	{
 	  /* We sure we want to do that? */
 
-	  if (do_prompt_image(PROMPT_SAVE_OVER_TXT,
-			PROMPT_SAVE_OVER_YES,
-			PROMPT_SAVE_OVER_NO,
-			img_save_over, NULL, NULL) == 0)
+	  if (do_prompt_image_snd(PROMPT_SAVE_OVER_TXT,
+				  PROMPT_SAVE_OVER_YES,
+				  PROMPT_SAVE_OVER_NO,
+				  img_save_over, NULL, NULL,
+				  SND_AREYOUSURE) == 0)
 	    {
 	      /* No - Let's save a new picture! */
 
@@ -13041,9 +13064,10 @@ static int do_quit(void)
 {
   int done;
 
-  done = do_prompt(PROMPT_QUIT_TXT,
-	           PROMPT_QUIT_YES,
-		   PROMPT_QUIT_NO);
+  done = do_prompt_snd(PROMPT_QUIT_TXT,
+		       PROMPT_QUIT_YES,
+		       PROMPT_QUIT_NO,
+		       SND_AREYOUSURE);
 
   if (done && !been_saved && !disable_save)
     {
@@ -13455,7 +13479,8 @@ void do_open(void)
   
   if (num_files == 0)
   {
-    do_prompt(PROMPT_OPEN_NOFILES_TXT, PROMPT_OPEN_NOFILES_YES, "");
+    do_prompt_snd(PROMPT_OPEN_NOFILES_TXT, PROMPT_OPEN_NOFILES_YES, "",
+		  SND_YOUCANNOT);
   }
   else
   {
@@ -13869,11 +13894,12 @@ void do_open(void)
 		{
 		  want_erase = 0;
 	      
-		  if (do_prompt_image(PROMPT_ERASE_TXT,
-				      PROMPT_ERASE_YES, PROMPT_ERASE_NO,
-				      thumbs[which],
-				      img_popup_arrow,
-				      img_trash))
+		  if (do_prompt_image_snd(PROMPT_ERASE_TXT,
+					  PROMPT_ERASE_YES, PROMPT_ERASE_NO,
+					  thumbs[which],
+					  img_popup_arrow,
+					  img_trash,
+					  SND_AREYOUSURE))
 		    {
 		      snprintf(fname, sizeof(fname), "saved/%s%s",
 			       d_names[which], d_exts[which]);
@@ -13963,8 +13989,9 @@ void do_open(void)
 		      
 			  if (which < 0)
 			    {
-			      do_prompt(PROMPT_OPEN_NOFILES_TXT,
-					PROMPT_OPEN_NOFILES_YES, "");
+			      do_prompt_snd(PROMPT_OPEN_NOFILES_TXT,
+					    PROMPT_OPEN_NOFILES_YES, "",
+					    SND_YOUCANNOT);
 			      done = 1;
 			    }
 			}
@@ -13972,7 +13999,7 @@ void do_open(void)
 			{
 			  perror(rfname);
 		      
-			  do_prompt("CAN'T", "OK", "");
+			  do_prompt_snd("CAN'T", "OK", "", SND_YOUCANNOT);
 			  update_list = 1;
 			}
 		  
@@ -13996,10 +14023,11 @@ void do_open(void)
 	  
 	      if (!been_saved && !disable_save)
 		{
-		  if (do_prompt_image(PROMPT_OPEN_SAVE_TXT,
-				PROMPT_OPEN_SAVE_YES,
-				PROMPT_OPEN_SAVE_NO,
-				img_tools[TOOL_SAVE], NULL, NULL))
+		  if (do_prompt_image_snd(PROMPT_OPEN_SAVE_TXT,
+					  PROMPT_OPEN_SAVE_YES,
+					  PROMPT_OPEN_SAVE_NO,
+					  img_tools[TOOL_SAVE], NULL, NULL,
+					  SND_AREYOUSURE))
 		    {
 		      do_save();
 		    }
@@ -14420,12 +14448,12 @@ static void do_print(void)
     {
 #ifdef PRINTMETHOD_PNG_PNM_PS
       if (do_png_save(pi, pcmd, canvas))
-	do_prompt(PROMPT_PRINT_TXT, PROMPT_PRINT_YES, "");
+	do_prompt_snd(PROMPT_PRINT_TXT, PROMPT_PRINT_YES, "", SND_TUXOK);
 #elif defined(PRINTMETHOD_PNM_PS)
       // nothing here
 #elif defined(PRINTMETHOD_PS)
       if (do_ps_save(pi, pcmd, canvas))
-	do_prompt(PROMPT_PRINT_TXT, PROMPT_PRINT_YES, "");
+	do_prompt_snd(PROMPT_PRINT_TXT, PROMPT_PRINT_YES, "", SND_TUXOK);
 #else
 #error No print method defined!
 #endif
@@ -14458,7 +14486,7 @@ static void do_print(void)
   if (error)
     fprintf (stderr, "Cannot print: %s\n", error);
   else
-    do_prompt (PROMPT_PRINT_TXT, PROMPT_PRINT_YES, "");
+    do_prompt_snd(PROMPT_PRINT_TXT, PROMPT_PRINT_YES, "", SND_TUXOK);
 #endif
   
 #endif

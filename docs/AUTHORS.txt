@@ -60,6 +60,9 @@ June 17, 2002 - July 15, 2005
     * Chalk - Microphone against head of hair.
     * Fade - Squeaky frog.
     * Smudge - Squishy mouth noise.
+
+  * Voice of Tux the Penguin
+    Daniel 'TuxthePenguin' Alston <supertuxfansite@gmail.com>
   
   * Cartoon
     * "cartoon6.wav" from http://www.grsites.com/

@@ -156,7 +156,10 @@ http://www.newbreedsoftware.com/tuxpaint/
     * Tux Paint can now be quit with [Shift]+[Control]+[Escape], as well.
       (Useful for when "noquit" and "fullscreen" are set, and the
       [Alt]+[F4] combination is not possible.)
-      
+
+    * Gave Tux the Penguin a voice (e.g., during prompts)
+      Voice: Daniel 'TuxthePenguin' Alston <supertuxfansite@gmail.com>
+
   * Other improvements:
     -------------------
     * Now printing directly via Postscript.

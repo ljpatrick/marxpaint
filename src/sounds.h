@@ -8,12 +8,14 @@
   bill@newbreedsoftware.com
   http://www.newbreedsoftware.com/tuxpaint/
 
-  June 15, 2002 - January 8, 2005
+  June 15, 2002 - July 17, 2005
 */
 
 
 
 /* Sounds available: */
+
+#define SND_NONE -1
 
 enum {
   SND_HARP,          /* Begin / New */
@@ -57,6 +59,9 @@ enum {
   SND_GROW,          /* Stamp grow */
   SND_ITALIC_ON,     /* Italic on */
   SND_ITALIC_OFF,    /* Italic off */
+  SND_AREYOUSURE,    /* "Are you sure?" */
+  SND_YOUCANNOT,     /* "No no no!" */
+  SND_TUXOK,         /* "Ok" */
   NUM_SOUNDS
 };
 
@@ -104,6 +109,9 @@ const char * const sound_fnames[NUM_SOUNDS] = {
   DATA_PREFIX "sounds/shrink.wav",
   DATA_PREFIX "sounds/grow.wav",
   DATA_PREFIX "sounds/italic_on.wav",
-  DATA_PREFIX "sounds/italic_off.wav"
+  DATA_PREFIX "sounds/italic_off.wav",
+  DATA_PREFIX "sounds/areyousure.wav",
+  DATA_PREFIX "sounds/youcannot.wav",
+  DATA_PREFIX "sounds/tuxok.wav"
 };
 
