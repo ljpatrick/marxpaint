@@ -6818,6 +6818,8 @@ static void get_stamp_thumb(stamp_type *sd)
       memcpy(buf+len, ".dat", 5);
       ratio = loadinfo(buf, sd);
     }
+  else
+    ratio = 1.0;
 
 #ifndef NOSOUND
   // good time to load the sound
@@ -8569,8 +8571,10 @@ static void setup(int argc, char * argv[])
 #ifndef WIN32
 void signal_handler(int sig)
 {
+  /*
   if (sig == SIGPIPE)
-    /* fprintf(stderr, "SIGPIPE!\n") */;
+    fprintf(stderr, "SIGPIPE!\n");
+  */
 }
 #endif
 
@@ -14402,9 +14406,9 @@ static void do_print(void)
   /* Linux, Unix, etc. */
   
   if (want_alt_printcommand && !fullscreen)
-    pcmd = altprintcommand;
+    pcmd = (char *) altprintcommand;
   else
-    pcmd = printcommand;
+    pcmd = (char *) printcommand;
 
   pi = popen(pcmd, "w");
 
