@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: fr\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2005-03-05 16:40+0100\n"
+"POT-Creation-Date: 2005-07-16 10:57+0200\n"
 "PO-Revision-Date: 2004-05-30 21:20-0700\n"
 "Last-Translator: jimmy <jacques.chion@wanadoo.fr>\n"
 "Language-Team:  <fr@li.org>\n"
@@ -390,7 +390,7 @@ msgid "If you quit, you’ll lose your picture! Save it?"
 msgstr "Si tu quittes, ton image sera perdue ! Tu sauvegardes ?"
 
 msgid "Save your picture first?"
-msgstr "Sauvegarder d'abord ton image ?"
+msgstr "Sauvegarder tout d'abord ton image ?"
 
 msgid "Can’t open that picture!"
 msgstr "Je ne peux pas ouvrir cette image !"
@@ -405,7 +405,7 @@ msgid "That’s OK!"
 msgstr "C'est d'accord !"
 
 msgid "Never mind!"
-msgstr "Ne t'en fais pas !"
+msgstr "Ne fais rien !"
 
 msgid "There are no saved files!"
 msgstr "Il n'y a pas de fichiers sauvegardés !"
@@ -460,11 +460,10 @@ msgstr "Aa"
 
 #. FIXME: Move elsewhere!!!
 msgid "Save over the older version of this picture?"
-msgstr "Écraser l'ancienne version de ce dessin ?"
+msgstr "Remplacer l'ancienne version de ce dessin ?"
 
 msgid "No, save a new file"
 msgstr "Non, sous un autre nom"
 
 msgid "Choose the picture you want, then click “Open”."
 msgstr "Choisis une image, et clique ensuite sur “Ouvrir”"
-

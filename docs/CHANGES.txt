@@ -7,7 +7,7 @@ bill@newbreedsoftware.com
 http://www.newbreedsoftware.com/tuxpaint/
 
 
-2005.Jul.14 (0.9.15)
+2005.Jul.17 (0.9.15)
 
   * uncatagorized and messy:
     -----------------------
