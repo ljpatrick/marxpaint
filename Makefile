@@ -146,19 +146,20 @@ beos:
 		ARCH_LIBS="obj/BeOS_print.o"
 
 # "make win32" builds the program for Windows using MinGW/MSYS
+# The DATA_, DOC_ and LOCALE_ prefixes are relative to the executable.
 win32:
 	make \
 		PREFIX=/usr/local \
 		BIN_PREFIX=$(PREFIX)/bin \
 		EXE_EXT=.exe \
-		DATA_PREFIX=$(PREFIX)/share/tuxpaint \
-		DOC_PREFIX=$(PREFIX)/share/doc/tuxpaint \
+		DATA_PREFIX=data \
+		DOC_PREFIX=docs \
 		MAN_PREFIX=$(PREFIX)/share/man \
 		ICON_PREFIX=. \
 		X11_ICON_PREFIX=. \
-		LOCALE_PREFIX=$(PREFIX)/share/locale \
+		LOCALE_PREFIX=locale \
 		CONFDIR=$(PREFIX)/etc/tuxpaint \
-		ARCH_LINKS="-lintl-3 -lpng12 -lwinspool" \
+		ARCH_LINKS="-lintl-3 -lpng12 -lwinspool -lshlwapi" \
 		ARCH_HEADERS="src/win32_print.h" \
 		ARCH_LIBS="obj/win32_print.o obj/resource.o"
 
@@ -234,20 +235,21 @@ install-beos:
 		ARCH_LIBS="obj/BeOS_print.o"
 
 # "make install-win32" installs Tux Paint, but using MinGW/MSYS settings
+# Install the data, docs and locale files in a VERY non-standard place.
 install-win32:
 	strip -s tuxpaint.exe
 	make install-private-win32 \
 		PREFIX=/usr/local \
 		BIN_PREFIX=$(PREFIX)/bin \
 		EXE_EXT=.exe \
-		DATA_PREFIX=$(PREFIX)/share/tuxpaint \
-		DOC_PREFIX=$(PREFIX)/share/doc/tuxpaint \
+		DATA_PREFIX=$(PREFIX)/bin/data \
+		DOC_PREFIX=$(PREFIX)/bin/docs \
 		MAN_PREFIX=$(PREFIX)/share/man \
 		ICON_PREFIX=. \
 		X11_ICON_PREFIX=. \
-		LOCALE_PREFIX=$(PREFIX)/share/locale \
+		LOCALE_PREFIX=$(PREFIX)/bin/locale \
 		CONFDIR=$(PREFIX)/etc/tuxpaint \
-		ARCH_LINKS="-lintl-3 -lpng12 -lwinspool" \
+		ARCH_LINKS="-lintl-3 -lpng12 -lwinspool -lshlwapi" \
 		ARCH_HEADERS="src/win32_print.h" \
 		ARCH_LIBS="obj/win32_print.o obj/resource.o"
 
