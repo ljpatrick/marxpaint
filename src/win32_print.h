@@ -19,4 +19,7 @@ extern const char *SurfacePrint( SDL_Surface *surf,
 			         int showdialog );
 extern int IsPrinterAvailable( void );
 
+/* additional windows functions requiring <windows.h> */
+extern char *GetDefaultSaveDir(const char *suffix);
+
 #endif

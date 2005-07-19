@@ -372,7 +372,7 @@ static void win32_perror(const char * const str)
 #define NOMINMAX
 #include "Shlwapi.h"
 #define strcasestr StrStrI
-#endif
+#endif /* WIN32 */
 
 
 #ifdef __GNUC__
@@ -7342,20 +7342,31 @@ static void setup(int argc, char * argv[])
   SDL_Surface * tmp_imgcurup, * tmp_imgcurdown;
 
 
-#ifdef __BEOS__
+#if defined(__BEOS__) || defined(WIN32)
   /* if run from gui, like OpenTracker in BeOS or Explorer in Windows,
      find path from which binary was run and change dir to it
      so all files will be local :) */
   /* UPDATE (2004.10.06): Since SDL 1.2.7 SDL sets that path correctly,
      so this code wouldn't be needed if SDL was init before anything else,
      (just basic init, window shouldn't be needed). */
+  /* UPDATE (2005 July 19): Enable and make work on Windows. Makes testing
+     with MINGW/MSYS easier */
 
   if (argc && argv[0])
     {
-      char * slash = strrchr(argv[0], '/');
-      *(slash + 1) = '\0';
-      chdir(argv[0]);
-      *(slash + 1) = '/';
+      char *app_path = strdup(argv[0]);
+      char *slash = strrchr(app_path, '/');
+
+      if (!slash)
+      {
+        slash = strrchr(app_path, '\\');
+      }
+      if (slash)
+      {
+        *(slash + 1) = '\0';
+        chdir(app_path);
+      }
+      free(app_path);
     }
 #endif
 
@@ -7400,7 +7411,7 @@ static void setup(int argc, char * argv[])
 
 
 #ifdef WIN32
-  savedir = strdup("userdata");
+  savedir = GetDefaultSaveDir("TuxPaint");
 #elif __BEOS__
   savedir = strdup("./userdata");
 #else
@@ -11600,8 +11611,9 @@ static char * get_fname(const char * const name)
      and where the "current_id.txt" file is saved */
 
 #ifdef WIN32
-  /* Windows predefines "savedir" as "userdata", though it may get
-     overridden with "--savedir" option */
+  /* Windows predefines "savedir" as:
+     "C:\Documents and Settings\%USERNAME%\Application Data\TuxPaint"
+     though it may get overridden with "--savedir" option */
 
   snprintf(f, sizeof(f), "%s/%s", savedir, name);
 
