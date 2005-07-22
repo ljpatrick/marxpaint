@@ -20,4 +20,5 @@ stderr.txt
 *.PYC
 *.pyo
 *.PYO
+bdist
 
