@@ -145,19 +145,20 @@ beos:
 		ARCH_HEADERS="src/BeOS_Print.h" \
 		ARCH_LIBS="obj/BeOS_print.o"
 
-# "make win32" builds the program for Windows using MinGW/MSYS
-# The DATA_, DOC_ and LOCALE_ prefixes are relative to the executable.
+# "make win32" builds the program for Windows using MinGW/MSYS.
+# The DATA_, DOC_ and LOCALE_ prefixes are absolute paths.
+# Suitable for development/testing in the MinGW/MSYS environment.
 win32:
 	make \
 		PREFIX=/usr/local \
 		BIN_PREFIX=$(PREFIX)/bin \
 		EXE_EXT=.exe \
-		DATA_PREFIX=data \
-		DOC_PREFIX=docs \
+		DATA_PREFIX=$(PREFIX)/share/tuxpaint \
+		DOC_PREFIX=$(PREFIX)/share/doc/tuxpaint \
 		MAN_PREFIX=$(PREFIX)/share/man \
 		ICON_PREFIX=. \
 		X11_ICON_PREFIX=. \
-		LOCALE_PREFIX=locale \
+		LOCALE_PREFIX=$(PREFIX)/share/locale \
 		CONFDIR=$(PREFIX)/etc/tuxpaint \
 		ARCH_LINKS="-lintl-3 -lpng12 -lwinspool -lshlwapi" \
 		ARCH_HEADERS="src/win32_print.h" \
@@ -190,10 +191,10 @@ install:	install-bin install-data install-man install-doc \
 	@echo
 
 
-# "make private-win32" installs all of the various parts for MinGW
+# Installs the various parts for the MinGW/MSYS development/testing environment.
 
 install-private-win32:	install-bin install-data install-man install-doc \
-		install-icon install-gettext install-importscript \
+		install-gettext install-importscript \
 		install-default-config install-example-stamps \
 		install-example-starters
 	@echo
@@ -211,6 +212,21 @@ install-private-win32:	install-bin install-data install-man install-doc \
 	@echo "  http://www.newbreedsoftware.com/tuxpaint/"
 	@echo
 	@echo "Enjoy!"
+	@echo
+
+
+# Installs the various parts for the MinGW/MSYS development/testing environment.
+
+bdist-private-win32:	install-bin install-data install-doc \
+		install-gettext install-dlls\
+		install-example-stamps install-example-starters
+	@echo
+	@echo "--------------------------------------------------------------"
+	@echo
+	@echo "A binary distribution suitable for running on Windows systems"
+	@echo "other than this one is now available in $(PREFIX)."
+	@echo
+	@echo "Try compiling the InnoSetup installer script 'tuxpaint.iss'."
 	@echo
 
 
@@ -235,23 +251,50 @@ install-beos:
 		ARCH_LIBS="obj/BeOS_print.o"
 
 # "make install-win32" installs Tux Paint, but using MinGW/MSYS settings
-# Install the data, docs and locale files in a VERY non-standard place.
+# Suitable for development/testing in the MinGW/MSYS environment.
 install-win32:
 	strip -s tuxpaint.exe
 	make install-private-win32 \
 		PREFIX=/usr/local \
 		BIN_PREFIX=$(PREFIX)/bin \
 		EXE_EXT=.exe \
-		DATA_PREFIX=$(PREFIX)/bin/data \
-		DOC_PREFIX=$(PREFIX)/bin/docs \
+		DATA_PREFIX=$(PREFIX)/share/tuxpaint \
+		DOC_PREFIX=$(PREFIX)/share/doc/tuxpaint \
 		MAN_PREFIX=$(PREFIX)/share/man \
 		ICON_PREFIX=. \
 		X11_ICON_PREFIX=. \
-		LOCALE_PREFIX=$(PREFIX)/bin/locale \
+		LOCALE_PREFIX=$(PREFIX)/share/locale \
 		CONFDIR=$(PREFIX)/etc/tuxpaint \
+
+# "make bdist-win32" recompiles Tux Paint to work with executable-relative 
+# data, docs and locale directories. Also copies all files, including DLLs,
+# into a 'bdist' output directory ready for processing by an installer script.
+bdist-win32:
+	make \
+		PREFIX=./visualc/bdist \
+		BIN_PREFIX=$(PREFIX)/bin \
+		EXE_EXT=.exe \
+		DATA_PREFIX=data \
+		DOC_PREFIX=docs \
+		LOCALE_PREFIX=locale \
 		ARCH_LINKS="-lintl-3 -lpng12 -lwinspool -lshlwapi" \
 		ARCH_HEADERS="src/win32_print.h" \
 		ARCH_LIBS="obj/win32_print.o obj/resource.o"
+	strip -s tuxpaint.exe
+	make bdist-private-win32 \
+		PREFIX=./visualc/bdist \
+		BIN_PREFIX=./visualc/bdist \
+		EXE_EXT=.exe \
+		DATA_PREFIX=./visualc/bdist/data \
+		DOC_PREFIX=./visualc/bdist/docs \
+		LOCALE_PREFIX=./visualc/bdist/locale \
+
+# "make bdist-clean" deletes the 'bdist' directory
+bdist-clean:
+	@echo
+	@echo "Cleaning up the 'bdist' directory! ($(PWD))"
+	@-rm -rf ./visualc/bdist
+	@echo
 
 # "make clean" deletes the program, the compiled objects and the
 # built man page (returns to factory archive, pretty much...)
@@ -486,7 +529,20 @@ install-bin:
 	@cp tuxpaint $(BIN_PREFIX)
 	@chmod a+rx,g-w,o-w $(BIN_PREFIX)/tuxpaint$(EXE_EXT)
 
+# Install the required Windows DLLs into the 'bdist' directory
 
+install-dlls:
+	@echo
+	@echo "...Installing Windows DLLs..."
+	@install -d $(BIN_PREFIX)
+	@cp `which libintl-3.dll` $(BIN_PREFIX)
+	@cp `which libpng12.dll` $(BIN_PREFIX)
+	@cp `which SDL.dll` $(BIN_PREFIX)
+	@cp `which SDL_image.dll` $(BIN_PREFIX)
+	@cp `which SDL_mixer.dll` $(BIN_PREFIX)
+	@cp `which SDL_ttf.dll` $(BIN_PREFIX)
+	@cp `which zlib1.dll` $(BIN_PREFIX)
+	
 # Install the import script:
 
 install-importscript:
