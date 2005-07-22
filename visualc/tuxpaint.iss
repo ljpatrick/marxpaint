@@ -7,10 +7,10 @@ AppSupportURL=http://www.newbreedsoftware.com/tuxpaint/
 AppUpdatesURL=http://www.newbreedsoftware.com/tuxpaint/
 DefaultDirName={pf}\TuxPaint
 DefaultGroupName=Tux Paint
-LicenseFile=C:\msys\1.0\local\bin\docs\COPYING.txt
-OutputDir=C:\home\tuxpaint\visualc
+LicenseFile=.\bdist\docs\COPYING.txt
+OutputDir=.\
 OutputBaseFilename=tuxpaint-0.9.15-cvs-win32-installer
-SetupIconFile=C:\home\tuxpaint\data\images\icon-win32.ico
+SetupIconFile=.\bdist\data\images\icon-win32.ico
 Compression=lzma
 SolidCompression=yes
 
@@ -35,18 +35,18 @@ Name: "slo"; MessagesFile: "compiler:Languages\Slovenian.isl"
 Name: "desktopicon"; Description: "{cm:CreateDesktopIcon}"; GroupDescription: "{cm:AdditionalIcons}"; Flags: unchecked
 
 [Files]
-Source: "C:\msys\1.0\local\bin\tuxpaint.exe"; DestDir: "{app}"; Flags: ignoreversion
-Source: "C:\msys\1.0\local\bin\zlib1.dll"; DestDir: "{app}"; Flags: ignoreversion
-Source: "C:\msys\1.0\local\bin\libintl-3.dll"; DestDir: "{app}"; Flags: ignoreversion
-Source: "C:\msys\1.0\local\bin\libpng12.dll"; DestDir: "{app}"; Flags: ignoreversion
-Source: "C:\msys\1.0\local\bin\SDL.dll"; DestDir: "{app}"; Flags: ignoreversion
-Source: "C:\msys\1.0\local\bin\SDL_image.dll"; DestDir: "{app}"; Flags: ignoreversion
-Source: "C:\msys\1.0\local\bin\SDL_mixer.dll"; DestDir: "{app}"; Flags: ignoreversion
-Source: "C:\msys\1.0\local\bin\SDL_ttf.dll"; DestDir: "{app}"; Flags: ignoreversion
-Source: "C:\msys\1.0\local\bin\data\*"; DestDir: "{app}\data"; Flags: ignoreversion recursesubdirs createallsubdirs
-Source: "C:\msys\1.0\local\bin\docs\*"; DestDir: "{app}\docs"; Flags: ignoreversion recursesubdirs createallsubdirs
-Source: "C:\msys\1.0\local\bin\locale\*"; DestDir: "{app}\locale"; Flags: ignoreversion recursesubdirs createallsubdirs
-Source: "C:\msys\1.0\local\bin\tuxpaint-config.exe"; DestDir: "{app}"; Flags: ignoreversion
+Source: ".\bdist\tuxpaint.exe"; DestDir: "{app}"; Flags: ignoreversion
+Source: ".\bdist\zlib1.dll"; DestDir: "{app}"; Flags: ignoreversion
+Source: ".\bdist\libintl-3.dll"; DestDir: "{app}"; Flags: ignoreversion
+Source: ".\bdist\libpng12.dll"; DestDir: "{app}"; Flags: ignoreversion
+Source: ".\bdist\SDL.dll"; DestDir: "{app}"; Flags: ignoreversion
+Source: ".\bdist\SDL_image.dll"; DestDir: "{app}"; Flags: ignoreversion
+Source: ".\bdist\SDL_mixer.dll"; DestDir: "{app}"; Flags: ignoreversion
+Source: ".\bdist\SDL_ttf.dll"; DestDir: "{app}"; Flags: ignoreversion
+Source: ".\bdist\data\*"; DestDir: "{app}\data"; Flags: ignoreversion recursesubdirs createallsubdirs
+Source: ".\bdist\docs\*"; DestDir: "{app}\docs"; Flags: ignoreversion recursesubdirs createallsubdirs
+Source: ".\bdist\locale\*"; DestDir: "{app}\locale"; Flags: ignoreversion recursesubdirs createallsubdirs
+Source: ".\bdist\tuxpaint-config.exe"; DestDir: "{app}"; Flags: ignoreversion
 ; NOTE: Don't use "Flags: ignoreversion" on any shared system files
 
 [INI]
@@ -100,7 +100,7 @@ var
   Path: String;
 begin
   Path := ExpandConstant('{pf}')
-  if Restricted() or CurrentUserOnly() then
+  if UsingWinNT() and (Restricted() or CurrentUserOnly()) then
   begin
     Path := GetShellFolderByCSIDL(CSIDL_PROFILE, True);
     if Path = '' then
