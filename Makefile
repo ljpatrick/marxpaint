@@ -270,6 +270,8 @@ install-win32:
 # data, docs and locale directories. Also copies all files, including DLLs,
 # into a 'bdist' output directory ready for processing by an installer script.
 bdist-win32:
+	@-rm -f tuxpaint.exe
+	@-rm -f obj/*.o
 	make \
 		PREFIX=./visualc/bdist \
 		BIN_PREFIX=$(PREFIX)/bin \
