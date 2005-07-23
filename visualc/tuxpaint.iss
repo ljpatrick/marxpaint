@@ -62,6 +62,10 @@ Name: "{code:MyGroupDir}\{cm:ProgramOnTheWeb,Tux Paint}"; Filename: "{app}\tuxpa
 Name: "{code:MyGroupDir}\{cm:UninstallProgram,Tux Paint}"; Filename: "{uninstallexe}"; IconFilename: "{app}\data\images\tuxpaint-installer.ico"; Comment: "Remove Tux Paint"
 Name: "{code:MyDesktopDir}\Tux Paint"; Filename: "{app}\tuxpaint.exe"; Tasks: desktopicon
 
+[Registry]
+Root: HKLM; Subkey: "SOFTWARE\TuxPaint"; Flags: uninsdeletekey; ValueName: "Install_Dir"; ValueType: string; ValueData: "{app}"; Check: AllUsers;
+Root: HKCU; Subkey: "SOFTWARE\TuxPaint"; Flags: uninsdeletekey; ValueName: "Install_Dir"; ValueType: string; ValueData: "{app}"; Check: ThisUserOnly;
+
 [Run]
 Filename: "{app}\docs\html\README.html"; Description: "View the README file"; Flags: postinstall shellexec
 Filename: "{app}\tuxpaint-config.exe"; Description: "{cm:LaunchProgram,Tux Paint Config}"; Flags: nowait postinstall skipifsilent
@@ -95,12 +99,22 @@ begin
   Result := CheckListBox2.Checked[2]
 end;
 
+function ThisUserOnly(): Boolean;
+begin
+  Result := UsingWinNT() and (Restricted() or CurrentUserOnly())
+end;
+
+function AllUsers(): Boolean;
+begin
+  Result := not ThisUserOnly()
+end;
+
 function MyAppDir(): String;
 var
   Path: String;
 begin
   Path := ExpandConstant('{pf}')
-  if UsingWinNT() and (Restricted() or CurrentUserOnly()) then
+  if ThisUserOnly() then
   begin
     Path := GetShellFolderByCSIDL(CSIDL_PROFILE, True);
     if Path = '' then
@@ -114,7 +128,7 @@ function MyGroupDir(Default: String): String;
 var
   Path: String;
 begin
-  if Restricted() or CurrentUserOnly() then
+  if ThisUserOnly() then
     Path := ExpandConstant('{userprograms}')
   else
   begin
@@ -127,7 +141,7 @@ function MyDesktopDir(Default: String): String;
 var
   Path: String;
 begin
-  if Restricted() or CurrentUserOnly() then
+  if ThisUserOnly() then
     Path := ExpandConstant('{userdesktop}')
   else
   begin
@@ -139,11 +153,11 @@ end;
 procedure CreateTheWizardPages;
 var
   Page: TWizardPage;
-  Enabled, AllUsers: Boolean;
+  Enabled, InstallAllUsers: Boolean;
 begin
   Page := CreateCustomPage(wpLicense, 'Choose Installation Type', 'Who do you want to be able to use this program?');
   Enabled := NotRestricted() and UsingWinNT();
-  AllUsers := NotRestricted() and UsingWinNT();
+  InstallAllUsers := NotRestricted() and UsingWinNT();
   CheckListBox2 := TNewCheckListBox.Create(Page);
   CheckListBox2.Width := Page.SurfaceWidth;
   CheckListBox2.Height := ScaleY(97);
@@ -154,8 +168,8 @@ begin
   CheckListBox2.WantTabs := True;
   CheckListBox2.Parent := Page.Surface;
   CheckListBox2.AddGroup('Installation Type:', '', 0, nil);
-  CheckListBox2.AddRadioButton('All Users', '', 0, AllUsers, Enabled, nil);
-  CheckListBox2.AddRadioButton('Current User Only', '', 0, not AllUsers, True, nil);
+  CheckListBox2.AddRadioButton('All Users', '', 0, InstallAllUsers, Enabled, nil);
+  CheckListBox2.AddRadioButton('Current User Only', '', 0, not InstallAllUsers, True, nil);
 end;
 
 procedure CurPageChanged(CurPageID: Integer);
