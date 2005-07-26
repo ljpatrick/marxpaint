@@ -7,7 +7,7 @@ bill@newbreedsoftware.com
 http://www.newbreedsoftware.com/tuxpaint/
 
 
-2005.Jul.17 (0.9.15)
+2005.Jul.25 (0.9.15)
 
   * uncatagorized and messy:
     -----------------------
@@ -328,6 +328,7 @@ http://www.newbreedsoftware.com/tuxpaint/
       
     * Hebrew
       Dovix <dovix2003@yahoo.com>
+      Leor Bleier <leor972@gmail.com>
       
     * Japanese
       TOYAMA Shin-ichi <shin1@wmail.plala.or.jp>

@@ -7,7 +7,7 @@ bill@newbreedsoftware.com
 http://www.newbreedsoftware.com/tuxpaint/
 
 
-June 17, 2002 - July 15, 2005
+June 17, 2002 - July 26, 2005
 
 
 * Design and Coding:
@@ -163,6 +163,7 @@ June 17, 2002 - July 15, 2005
     Dovix <dovix2003@yahoo.com>
     Koby <kobybo@hotmail.com>
     Itai <Itais@newmail.net>
+    Leor Bleier <leor972@gmail.com>
 
   * Icelandic
     Pjetur G. Hjaltason <pjetur@pjetur.net>
