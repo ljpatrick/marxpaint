@@ -6,7 +6,7 @@
 # bill@newbreedsoftware.com
 # http://www.newbreedsoftware.com/tuxpaint/
 
-# June 14, 2002 - July 15, 2005
+# June 14, 2002 - July 27, 2005
 
 
 # Where to install things:
@@ -365,6 +365,7 @@ uninstall:
 	-rm $(LOCALE_PREFIX)/fr/LC_MESSAGES/tuxpaint.mo
 	-rm $(LOCALE_PREFIX)/ga/LC_MESSAGES/tuxpaint.mo
 	-rm $(LOCALE_PREFIX)/gl/LC_MESSAGES/tuxpaint.mo
+	-rm $(LOCALE_PREFIX)/gr/LC_MESSAGES/tuxpaint.mo
 	-rm $(LOCALE_PREFIX)/he/LC_MESSAGES/tuxpaint.mo
 	-rm $(LOCALE_PREFIX)/hi/LC_MESSAGES/tuxpaint.mo
 	-rm $(LOCALE_PREFIX)/hr/LC_MESSAGES/tuxpaint.mo
@@ -689,6 +690,11 @@ install-gettext:
 	@cp trans/el.mo $(LOCALE_PREFIX)/el/LC_MESSAGES/tuxpaint.mo
 	@chmod 644 $(LOCALE_PREFIX)/el/LC_MESSAGES/tuxpaint.mo
 	@#
+	@echo "   gr_NL ...Gronings..."
+	@install -d $(LOCALE_PREFIX)/gr/LC_MESSAGES
+	@cp trans/gr.mo $(LOCALE_PREFIX)/gr/LC_MESSAGES/tuxpaint.mo
+	@chmod 644 $(LOCALE_PREFIX)/gr/LC_MESSAGES/tuxpaint.mo
+	@#
 	@echo "   he_IL ...Hebrew..."
 	@install -d $(LOCALE_PREFIX)/he/LC_MESSAGES
 	@cp trans/he.mo $(LOCALE_PREFIX)/he/LC_MESSAGES/tuxpaint.mo
@@ -952,6 +958,7 @@ translations: trans \
 	trans/fr.mo \
 	trans/ga.mo \
 	trans/gl.mo \
+	trans/gr.mo \
 	trans/he.mo \
 	trans/hi.mo \
 	trans/hr.mo \
@@ -1064,6 +1071,10 @@ trans/ga.mo:	src/po/ga.po
 trans/gl.mo:	src/po/gl.po
 	@echo "   gl_ES ...Galician..."
 	@msgfmt -o trans/gl.mo src/po/gl.po
+
+trans/gr.mo:	src/po/gr.po
+	@echo "   gr_NL ...Gronings..."
+	@msgfmt -o trans/gr.mo src/po/gr.po
 
 trans/he.mo:	src/po/he.po
 	@echo "   he_IL ...Hebrew..."

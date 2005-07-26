@@ -284,6 +284,9 @@ http://www.newbreedsoftware.com/tuxpaint/
     * Galician translation created.
       Leandro Regueiro <unho@gulo.org>
 
+    * Gronings translation created.
+      J.F.M. Lange <jfm.lange@hky.de>
+
     * Kinyarwanda translation created.
       Steve Murphy <murf@e-tools.com>
 
