@@ -22,12 +22,12 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
   
-  June 14, 2002 - July 17, 2005
+  June 14, 2002 - July 26, 2005
 */
 
 
 #define VER_VERSION     "0.9.15"
-#define VER_DATE        "2005-07-17"
+#define VER_DATE        "2005-07-26"
 
 
 /* Color depth for Tux Paint to run in, and store canvases in: */
@@ -10651,6 +10651,12 @@ static void wordwrap_text(const char * const str, SDL_Color color,
 
   if (strcmp(str, "") != 0)
     {
+      if (strcmp(str, gettext(str)) == 0)
+      {
+	/* String isn't translated!  Don't write right-to-left */
+	want_right_to_left = 0;
+      }
+
       if (want_right_to_left == 0)
 	locale_str = strdup(gettext(str));
       else

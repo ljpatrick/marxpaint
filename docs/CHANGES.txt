@@ -7,7 +7,7 @@ bill@newbreedsoftware.com
 http://www.newbreedsoftware.com/tuxpaint/
 
 
-2005.Jul.25 (0.9.15)
+2005.Jul.26 (0.9.15)
 
   * uncatagorized and messy:
     -----------------------
@@ -205,6 +205,9 @@ http://www.newbreedsoftware.com/tuxpaint/
 
   * Bug fixes:
     -------------------
+    * Untranslated text in right-to-left languages (e.g., Hebrew) are no
+      longer displayed backwards.
+
     * [Alt] to bring up print dialog had to be held while hitting 'Ok' to
       confirm print.  This was a bug!  Fixed!
 
