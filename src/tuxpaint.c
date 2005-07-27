@@ -80,7 +80,7 @@
 
 /* Compile-time options: */
 
-#define DEBUG
+/* #define DEBUG */
 /* #define DEBUG_MALLOC */
 /* #define LOW_QUALITY_THUMBNAILS */
 /* #define LOW_QUALITY_COLOR_SELECTOR */
@@ -610,7 +610,7 @@ static const char * lang_prefixes[NUM_LANGS] = {
   "fr",
   "ga",
   "gl",
-  "gr",
+  "gos",
   "he",
   "hi",
   "hr",
@@ -788,7 +788,7 @@ static void show_lang_usage(FILE * f, const char * const prg)
 /* ka */     "  georgian\n"
 /* de */     "  german       deutsch\n"
 /* el */     "  greek\n"
-/* gr */     "  gronings     zudelk-veenkelonioals\n"
+/* gos */    "  gronings     zudelk-veenkelonioals\n"
 /* he */     "  hebrew\n"
 /* hi */     "  hindi\n"
 /* hu */     "  hungarian    magyar\n"
@@ -851,7 +851,7 @@ static void show_locale_usage(FILE * f, const char * const prg)
 	  "  fr_FR   (French       Francais)\n"
 	  "  ga_IE   (Gaelic       Gaidhlig)\n"
 	  "  gl_ES   (Galician     Galego)\n"
-	  "  gr_NL   (Gronings     Zudelk Veenkelonioals)\n"
+	  "  gos_NL  (Gronings     Zudelk Veenkelonioals)\n"
 	  "  de_DE   (German       Deutsch)\n"
 	  "  et_EE   (Estonian)\n"
 	  "  el_GR   (Greek)\n"
@@ -913,8 +913,8 @@ static const language_to_locale_struct language_to_locale_array[] = {
 {"deutsch",              "de_DE.UTF-8"},
 {"estonian",             "et_EE.UTF-8"},
 {"greek",                "el_GR.UTF-8"},
-{"gronings",		 "gr_NL.UTF-8"},
-{"zudelk-veenkelonioals","gr_NL.UTF-8"},
+{"gronings",		 "gos_NL.UTF-8"},
+{"zudelk-veenkelonioals","gos_NL.UTF-8"},
 {"british-english",      "en_GB.UTF-8"},
 {"british",              "en_GB.UTF-8"},
 {"spanish",              "es_ES.UTF-8"},

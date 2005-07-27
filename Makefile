@@ -365,7 +365,7 @@ uninstall:
 	-rm $(LOCALE_PREFIX)/fr/LC_MESSAGES/tuxpaint.mo
 	-rm $(LOCALE_PREFIX)/ga/LC_MESSAGES/tuxpaint.mo
 	-rm $(LOCALE_PREFIX)/gl/LC_MESSAGES/tuxpaint.mo
-	-rm $(LOCALE_PREFIX)/gr/LC_MESSAGES/tuxpaint.mo
+	-rm $(LOCALE_PREFIX)/gos/LC_MESSAGES/tuxpaint.mo
 	-rm $(LOCALE_PREFIX)/he/LC_MESSAGES/tuxpaint.mo
 	-rm $(LOCALE_PREFIX)/hi/LC_MESSAGES/tuxpaint.mo
 	-rm $(LOCALE_PREFIX)/hr/LC_MESSAGES/tuxpaint.mo
@@ -690,10 +690,10 @@ install-gettext:
 	@cp trans/el.mo $(LOCALE_PREFIX)/el/LC_MESSAGES/tuxpaint.mo
 	@chmod 644 $(LOCALE_PREFIX)/el/LC_MESSAGES/tuxpaint.mo
 	@#
-	@echo "   gr_NL ...Gronings..."
-	@install -d $(LOCALE_PREFIX)/gr/LC_MESSAGES
-	@cp trans/gr.mo $(LOCALE_PREFIX)/gr/LC_MESSAGES/tuxpaint.mo
-	@chmod 644 $(LOCALE_PREFIX)/gr/LC_MESSAGES/tuxpaint.mo
+	@echo "   gos_NL ...Gronings..."
+	@install -d $(LOCALE_PREFIX)/gos/LC_MESSAGES
+	@cp trans/gos.mo $(LOCALE_PREFIX)/gos/LC_MESSAGES/tuxpaint.mo
+	@chmod 644 $(LOCALE_PREFIX)/gos/LC_MESSAGES/tuxpaint.mo
 	@#
 	@echo "   he_IL ...Hebrew..."
 	@install -d $(LOCALE_PREFIX)/he/LC_MESSAGES
@@ -958,7 +958,7 @@ translations: trans \
 	trans/fr.mo \
 	trans/ga.mo \
 	trans/gl.mo \
-	trans/gr.mo \
+	trans/gos.mo \
 	trans/he.mo \
 	trans/hi.mo \
 	trans/hr.mo \
@@ -1072,9 +1072,9 @@ trans/gl.mo:	src/po/gl.po
 	@echo "   gl_ES ...Galician..."
 	@msgfmt -o trans/gl.mo src/po/gl.po
 
-trans/gr.mo:	src/po/gr.po
-	@echo "   gr_NL ...Gronings..."
-	@msgfmt -o trans/gr.mo src/po/gr.po
+trans/gos.mo:	src/po/gos.po
+	@echo "   gos_NL ...Gronings..."
+	@msgfmt -o trans/gos.mo src/po/gos.po
 
 trans/he.mo:	src/po/he.po
 	@echo "   he_IL ...Hebrew..."
