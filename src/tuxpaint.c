@@ -80,7 +80,7 @@
 
 /* Compile-time options: */
 
-/* #define DEBUG */
+#define DEBUG
 /* #define DEBUG_MALLOC */
 /* #define LOW_QUALITY_THUMBNAILS */
 /* #define LOW_QUALITY_COLOR_SELECTOR */
@@ -15253,6 +15253,7 @@ static char * debug_gettext(const char * str)
   if (strcmp(str, dgettext(NULL, str)) == 0)
     {
       printf("NOTRANS: %s\n", str);
+      printf("..TRANS: %s\n", dgettext(NULL, str));
       fflush(stdout);
     }
 
