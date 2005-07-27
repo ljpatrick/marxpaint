@@ -21,4 +21,5 @@ stderr.txt
 *.pyo
 *.PYO
 bdist
+Preprocessed.iss
 
