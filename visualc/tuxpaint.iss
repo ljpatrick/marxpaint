@@ -1,16 +1,41 @@
+;
+; This script needs the InnoSetup PreProcessor (ISPP) to compile correctly. 
+; I downloaded a combined 'QuickStart Pack' from here:
+; http://www.jrsoftware.org/isdl.php#qsp
+;
+; The version string is extracted from the executable.
+;
+
+#define PublisherName "New Breed Software"
+#define PublisherURL  "http://www.newbreedsoftware.com/tuxpaint/"
+
+#define AppName       "Tux Paint"
+#define AppDirName    "TuxPaint"
+#define AppPrefix     "tuxpaint"
+
+#define AppGroupName  AppName
+#define AppExe        AppPrefix+".exe"
+#define AppConfigName AppName+" Config"
+#define AppConfigExe  AppPrefix+"-config.exe"
+#define AppReadme     "docs\html\README.html"
+#define AppLicence    "docs\COPYING.txt"
+
+#define BdistDir      ".\bdist"
+#define AppVersion    GetStringFileInfo(BdistDir+"\"+AppExe, "FileVersion")
+
 [Setup]
-AppName=Tux Paint
-AppVerName=Tux Paint 0.9.15-cvs
-AppPublisher=New Breed Software
-AppPublisherURL=http://www.newbreedsoftware.com/tuxpaint/
-AppSupportURL=http://www.newbreedsoftware.com/tuxpaint/
-AppUpdatesURL=http://www.newbreedsoftware.com/tuxpaint/
-DefaultDirName={pf}\TuxPaint
-DefaultGroupName=Tux Paint
-LicenseFile=.\bdist\docs\COPYING.txt
+AppName={#AppName}
+AppVerName={#AppName} {#AppVersion}
+AppPublisher={#PublisherName}
+AppPublisherURL={#PublisherURL}
+AppSupportURL={#PublisherURL}
+AppUpdatesURL={#PublisherURL}
+DefaultDirName={pf}\{#AppDirName}
+DefaultGroupName={#AppGroupName}
+LicenseFile={#BdistDir}\{#AppLicence}
 OutputDir=.\
-OutputBaseFilename=tuxpaint-0.9.15-cvs-win32-installer
-SetupIconFile=.\bdist\data\images\icon-win32.ico
+OutputBaseFilename={#AppPrefix}-{#AppVersion}-win32-installer
+SetupIconFile={#BdistDir}\data\images\icon-win32.ico
 Compression=lzma
 SolidCompression=yes
 
@@ -35,43 +60,43 @@ Name: "slo"; MessagesFile: "compiler:Languages\Slovenian.isl"
 Name: "desktopicon"; Description: "{cm:CreateDesktopIcon}"; GroupDescription: "{cm:AdditionalIcons}"; Flags: unchecked
 
 [Files]
-Source: ".\bdist\tuxpaint.exe"; DestDir: "{app}"; Flags: ignoreversion
-Source: ".\bdist\zlib1.dll"; DestDir: "{app}"; Flags: ignoreversion
-Source: ".\bdist\libintl-3.dll"; DestDir: "{app}"; Flags: ignoreversion
-Source: ".\bdist\libpng12.dll"; DestDir: "{app}"; Flags: ignoreversion
-Source: ".\bdist\SDL.dll"; DestDir: "{app}"; Flags: ignoreversion
-Source: ".\bdist\SDL_image.dll"; DestDir: "{app}"; Flags: ignoreversion
-Source: ".\bdist\SDL_mixer.dll"; DestDir: "{app}"; Flags: ignoreversion
-Source: ".\bdist\SDL_ttf.dll"; DestDir: "{app}"; Flags: ignoreversion
-Source: ".\bdist\data\*"; DestDir: "{app}\data"; Excludes: "CVS"; Flags: ignoreversion recursesubdirs createallsubdirs
-Source: ".\bdist\docs\*"; DestDir: "{app}\docs"; Excludes: "CVS"; Flags: ignoreversion recursesubdirs createallsubdirs
-Source: ".\bdist\locale\*"; DestDir: "{app}\locale"; Excludes: "CVS"; Flags: ignoreversion recursesubdirs createallsubdirs
-Source: ".\bdist\tuxpaint-config.exe"; DestDir: "{app}"; Flags: ignoreversion
+Source: "{#BdistDir}\tuxpaint.exe"; DestDir: "{app}"; Flags: ignoreversion
+Source: "{#BdistDir}\zlib1.dll"; DestDir: "{app}"; Flags: ignoreversion
+Source: "{#BdistDir}\libintl-3.dll"; DestDir: "{app}"; Flags: ignoreversion
+Source: "{#BdistDir}\libpng12.dll"; DestDir: "{app}"; Flags: ignoreversion
+Source: "{#BdistDir}\SDL.dll"; DestDir: "{app}"; Flags: ignoreversion
+Source: "{#BdistDir}\SDL_image.dll"; DestDir: "{app}"; Flags: ignoreversion
+Source: "{#BdistDir}\SDL_mixer.dll"; DestDir: "{app}"; Flags: ignoreversion
+Source: "{#BdistDir}\SDL_ttf.dll"; DestDir: "{app}"; Flags: ignoreversion
+Source: "{#BdistDir}\data\*"; DestDir: "{app}\data"; Excludes: "CVS"; Flags: ignoreversion recursesubdirs createallsubdirs
+Source: "{#BdistDir}\docs\*"; DestDir: "{app}\docs"; Excludes: "CVS"; Flags: ignoreversion recursesubdirs createallsubdirs
+Source: "{#BdistDir}\locale\*"; DestDir: "{app}\locale"; Excludes: "CVS"; Flags: ignoreversion recursesubdirs createallsubdirs
+Source: "{#BdistDir}\tuxpaint-config.exe"; DestDir: "{app}"; Flags: ignoreversion
 ; NOTE: Don't use "Flags: ignoreversion" on any shared system files
 
 [INI]
-Filename: "{app}\tuxpaint.url"; Section: "InternetShortcut"; Key: "URL"; String: "http://www.newbreedsoftware.com/tuxpaint/"
+Filename: "{app}\{#AppName}.url"; Section: "InternetShortcut"; Key: "URL"; String: "{#PublisherURL}"
 
 [Icons]
-Name: "{code:MyGroupDir}\Configure Tux Paint"; Filename: "{app}\tuxpaint-config.exe"; Comment: "Tux Paint Config"
-Name: "{code:MyGroupDir}\Tux Paint (Full Screen)"; Filename: "{app}\tuxpaint.exe"; Parameters: "--fullscreen"; Comment: "Start Tux Paint in Fullscreen mode"
-Name: "{code:MyGroupDir}\Tux Paint (Windowed)"; Filename: "{app}\tuxpaint.exe"; Parameters: "--windowed"; Comment: "Start Tux Paint in a Window"
-Name: "{code:MyGroupDir}\Readme"; Filename: "{app}\docs\html\README.html"; Comment: "View ReadMe"
-Name: "{code:MyGroupDir}\Licence"; Filename: "{app}\docs\copying.txt"; Comment: "View License"
-Name: "{code:MyGroupDir}\{cm:ProgramOnTheWeb,Tux Paint}"; Filename: "{app}\tuxpaint.url"; Comment: "{cm:ProgramOnTheWeb,Tux Paint}"
-Name: "{code:MyGroupDir}\{cm:UninstallProgram,Tux Paint}"; Filename: "{uninstallexe}"; IconFilename: "{app}\data\images\tuxpaint-installer.ico"; Comment: "Remove Tux Paint"
-Name: "{code:MyDesktopDir}\Tux Paint"; Filename: "{app}\tuxpaint.exe"; Tasks: desktopicon
+Name: "{code:MyGroupDir}\{#AppGroupName}\Configure {#AppName}"; Filename: "{app}\{#AppConfigExe}"; Comment: "{#AppConfigName}"
+Name: "{code:MyGroupDir}\{#AppGroupName}\{#AppName} (Full Screen)"; Filename: "{app}\{#AppExe}"; Parameters: "--fullscreen"; Comment: "Start {#AppName} in Fullscreen mode"
+Name: "{code:MyGroupDir}\{#AppGroupName}\{#AppName} (Windowed)"; Filename: "{app}\{#AppExe}"; Parameters: "--windowed"; Comment: "Start {#AppName} in a Window"
+Name: "{code:MyGroupDir}\{#AppGroupName}\Readme"; Filename: "{app}\{#AppReadme}"; Comment: "View ReadMe"
+Name: "{code:MyGroupDir}\{#AppGroupName}\Licence"; Filename: "{app}\{#AppLicence}"; Comment: "View License"
+Name: "{code:MyGroupDir}\{#AppGroupName}\{cm:ProgramOnTheWeb,{#AppName}}"; Filename: "{app}\{#AppName}.url"; Comment: "{cm:ProgramOnTheWeb,{#AppName}}"
+Name: "{code:MyGroupDir}\{#AppGroupName}\{cm:UninstallProgram,{#AppName}}"; Filename: "{uninstallexe}"; IconFilename: "{app}\data\images\tuxpaint-installer.ico"; Comment: "Remove {#AppName}"
+Name: "{code:MyDesktopDir}\{#AppName}"; Filename: "{app}\{#AppExe}"; Tasks: desktopicon
 
 [Registry]
-Root: HKLM; Subkey: "SOFTWARE\TuxPaint"; Flags: uninsdeletekey; ValueName: "Install_Dir"; ValueType: string; ValueData: "{app}"; Check: AllUsers;
-Root: HKCU; Subkey: "SOFTWARE\TuxPaint"; Flags: uninsdeletekey; ValueName: "Install_Dir"; ValueType: string; ValueData: "{app}"; Check: ThisUserOnly;
+Root: HKLM; Subkey: "SOFTWARE\{#AppDirName}"; Flags: uninsdeletekey; ValueName: "Install_Dir"; ValueType: string; ValueData: "{app}"; Check: AllUsers;
+Root: HKCU; Subkey: "SOFTWARE\{#AppDirName}"; Flags: uninsdeletekey; ValueName: "Install_Dir"; ValueType: string; ValueData: "{app}"; Check: ThisUserOnly;
 
 [Run]
-Filename: "{app}\docs\html\README.html"; Description: "View the README file"; Flags: postinstall shellexec
-Filename: "{app}\tuxpaint-config.exe"; Description: "{cm:LaunchProgram,Tux Paint Config}"; Flags: nowait postinstall skipifsilent
+Filename: "{app}\{#AppReadme}"; Description: "View the README file"; Flags: postinstall shellexec
+Filename: "{app}\{#AppConfigExe}"; Description: "{cm:LaunchProgram,{#AppConfigName}}"; Flags: nowait postinstall skipifsilent
 
 [UninstallDelete]
-Type: files; Name: "{app}\tuxpaint.url"
+Type: files; Name: "{app}\{#AppName}.url"
 
 [code]
 const
@@ -113,15 +138,19 @@ function MyAppDir(): String;
 var
   Path: String;
 begin
-  Path := ExpandConstant('{pf}')
+  Path := ExpandConstant('{reg:HKLM\SOFTWARE\{#AppDirName},Install_Dir|{pf}\{#AppDirName}}');
   if ThisUserOnly() then
   begin
-    Path := GetShellFolderByCSIDL(CSIDL_PROFILE, True);
-    if Path = '' then
-      Path := RemoveBackslashUnlessRoot(ExtractFilePath(ExpandConstant('{userdocs}')));
-    Path := Path + '\Programs'
+    Path := ExpandConstant('{reg:HKCU\SOFTWARE\{#AppDirName},Install_Dir|__MissingKey__}');
+    if Path = '__MissingKey__' then
+    begin
+      Path := GetShellFolderByCSIDL(CSIDL_PROFILE, True);
+      if Path = '' then
+        Path := RemoveBackslashUnlessRoot(ExtractFilePath(ExpandConstant('{userdocs}')));
+      Path := Path + '\Programs\{#AppDirName}'
+    end
   end
-  Result := Path + '\TuxPaint'
+  Result := Path
 end;
 
 function MyGroupDir(Default: String): String;
@@ -131,10 +160,8 @@ begin
   if ThisUserOnly() then
     Path := ExpandConstant('{userprograms}')
   else
-  begin
     Path := ExpandConstant('{commonprograms}')
-  end
-  Result := Path + '\Tux Paint'
+  Result := Path
 end;
 
 function MyDesktopDir(Default: String): String;
@@ -144,9 +171,7 @@ begin
   if ThisUserOnly() then
     Path := ExpandConstant('{userdesktop}')
   else
-  begin
     Path := ExpandConstant('{commondesktop}')
-  end
   Result := Path
 end;
 
@@ -185,4 +210,5 @@ begin
   CreateTheWizardPages;
 end;
 
+#expr SaveToFile(AddBackslash(SourcePath) + "Preprocessed.iss")
 
