@@ -1,3 +1,11 @@
+Note: Also see the respective "COPYING.txt" license documentation
+included with the TrueType Fonts that come with Tux Paint.
+See: ../fonts/locale/LL_docs/, where "LL" corresponds to a font filename.
+
+Bill Kendrick, 2005.July.27
+
+----------------------------------------
+
 		    GNU GENERAL PUBLIC LICENSE
 		       Version 2, June 1991
 
