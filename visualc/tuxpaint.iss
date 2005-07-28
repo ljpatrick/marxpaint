@@ -12,6 +12,8 @@
 #define AppName       "Tux Paint"
 #define AppDirName    "TuxPaint"
 #define AppPrefix     "tuxpaint"
+#define AppRegKey     AppDirName
+#define AppRegValue   "Install_Dir"
 
 #define AppGroupName  AppName
 #define AppExe        AppPrefix+".exe"
@@ -88,8 +90,8 @@ Name: "{code:MyGroupDir}\{#AppGroupName}\{cm:UninstallProgram,{#AppName}}"; File
 Name: "{code:MyDesktopDir}\{#AppName}"; Filename: "{app}\{#AppExe}"; Tasks: desktopicon
 
 [Registry]
-Root: HKLM; Subkey: "SOFTWARE\{#AppDirName}"; Flags: uninsdeletekey; ValueName: "Install_Dir"; ValueType: string; ValueData: "{app}"; Check: AllUsers;
-Root: HKCU; Subkey: "SOFTWARE\{#AppDirName}"; Flags: uninsdeletekey; ValueName: "Install_Dir"; ValueType: string; ValueData: "{app}"; Check: ThisUserOnly;
+Root: HKLM; Subkey: "SOFTWARE\{#AppRegKey}"; Flags: uninsdeletekey; ValueName: "{#AppRegValue}"; ValueType: string; ValueData: "{app}"; Check: AllUsers;
+Root: HKCU; Subkey: "SOFTWARE\{#AppRegKey}"; Flags: uninsdeletekey; ValueName: "{#AppRegValue}"; ValueType: string; ValueData: "{app}"; Check: ThisUserOnly;
 
 [Run]
 Filename: "{app}\{#AppReadme}"; Description: "View the README file"; Flags: postinstall shellexec
@@ -138,10 +140,10 @@ function MyAppDir(): String;
 var
   Path: String;
 begin
-  Path := ExpandConstant('{reg:HKLM\SOFTWARE\{#AppDirName},Install_Dir|{pf}\{#AppDirName}}');
+  Path := ExpandConstant('{reg:HKLM\SOFTWARE\{#AppRegKey},{#AppRegValue}|{pf}\{#AppDirName}}');
   if ThisUserOnly() then
   begin
-    Path := ExpandConstant('{reg:HKCU\SOFTWARE\{#AppDirName},Install_Dir|__MissingKey__}');
+    Path := ExpandConstant('{reg:HKCU\SOFTWARE\{#AppRegKey},{#AppRegValue}|__MissingKey__}');
     if Path = '__MissingKey__' then
     begin
       Path := GetShellFolderByCSIDL(CSIDL_PROFILE, True);
