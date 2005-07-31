@@ -7,7 +7,7 @@ bill@newbreedsoftware.com
 http://www.newbreedsoftware.com/tuxpaint/
 
 
-2005.Jul.26 (0.9.15)
+2005.Jul.30 (0.9.15)
 
   * uncatagorized and messy:
     -----------------------
@@ -235,6 +235,29 @@ http://www.newbreedsoftware.com/tuxpaint/
       ("Education," "RasterGraphics," "Graphics" and "Art").
       
     * Added 'win32' target to Makefile, for use on Windows with MinGW/MSYS.
+      John Popplewell <john@johnnypops.demon.co.uk>
+
+    * Now links with 'shlwapi.dll' so that it works on Windows 98.
+      John Popplewell <john@johnnypops.demon.co.uk>
+
+    * Added GetDefaultSaveDir(suffix) which fetches the default
+      "Application Data" path for the current user from the Windows registry,
+      appends the suffix, creates the subdirectory if it doesn't exist,
+      then returns a string from the heap.  This path is the new default
+      "savedir" location on Windows. Tested on 98/2K/XP.
+      John Popplewell <john@johnnypops.demon.co.uk>
+
+    * Switching from NSIS to InnoSetup 5 installer generator for Windows.
+      John Popplewell <john@johnnypops.demon.co.uk>
+
+    * Added a Windows registry entry 'Install_Dir' in either
+      HKCU\Software\TuxPaint or HKLM... depending on whether the user is
+      restricted (or doing a current user-only install) or is installing
+      for all users.
+      John Popplewell <john@johnnypops.demon.co.uk>
+
+    * Added ability to detect previous install directory entries in the
+      Windows registry.  Searches for entry in HKLM and HKCU sections.
       John Popplewell <john@johnnypops.demon.co.uk>
     
     * BeOS code updates.
