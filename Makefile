@@ -539,6 +539,7 @@ install-dlls:
 	@echo "...Installing Windows DLLs..."
 	@install -d $(BIN_PREFIX)
 	@cp `which libintl-3.dll` $(BIN_PREFIX)
+	@cp `which libiconv-2.dll` $(BIN_PREFIX)
 	@cp `which libpng12.dll` $(BIN_PREFIX)
 	@cp `which SDL.dll` $(BIN_PREFIX)
 	@cp `which SDL_image.dll` $(BIN_PREFIX)
