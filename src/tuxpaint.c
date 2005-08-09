@@ -701,9 +701,6 @@ static const char * lang_prefix;
 static void set_current_language(void)
 {
   char * loc;
-#ifdef WIN32
-  char str[128];
-#endif
   int lang, i, found;
 
   bindtextdomain("tuxpaint", LOCALEDIR);
@@ -718,12 +715,29 @@ static void set_current_language(void)
   lang = LANG_EN;
 
 
+#ifndef WIN32
   loc = setlocale(LC_MESSAGES, NULL);
   if (loc != NULL)
     {
       if (strstr(loc, "LC_MESSAGES") != NULL)
 	loc = getenv("LANG");
     }
+#else
+  loc = getenv("LANGUAGE");
+  if (!loc)
+    {
+      loc = _nl_locale_name(LC_MESSAGES, "");
+      if (loc)
+        {
+          char *s;
+          int  len;
+          len = strlen("LANGUAGE=")+strlen(loc)+1;
+          s = malloc(len);
+          snprintf(s, len, "LANGUAGE=%s", loc);
+          putenv(s);
+        }
+    }
+#endif
 
   debug(loc);
 
@@ -749,7 +763,8 @@ static void set_current_language(void)
   need_right_to_left = search_int_array(lang,lang_use_right_to_left);
 
 #ifdef DEBUG
-  printf("DEBUG: Language is %s (%d)\n", lang_prefix, lang);
+  fprintf(stderr,"DEBUG: Language is %s (%d)\n", lang_prefix, lang);
+  fflush(stderr);
 #endif
 
 }
