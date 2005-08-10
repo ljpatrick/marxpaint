@@ -723,6 +723,7 @@ static void set_current_language(void)
 	loc = getenv("LANG");
     }
 #else
+  bind_textdomain_codeset("tuxpaint", "UTF-8");
   loc = getenv("LANGUAGE");
   if (!loc)
     {
