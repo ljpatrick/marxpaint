@@ -64,6 +64,7 @@ Name: "desktopicon"; Description: "{cm:CreateDesktopIcon}"; GroupDescription: "{
 [Files]
 Source: "{#BdistDir}\tuxpaint.exe"; DestDir: "{app}"; Flags: ignoreversion
 Source: "{#BdistDir}\zlib1.dll"; DestDir: "{app}"; Flags: ignoreversion
+Source: "{#BdistDir}\libiconv-2.dll"; DestDir: "{app}"; Flags: ignoreversion
 Source: "{#BdistDir}\libintl-3.dll"; DestDir: "{app}"; Flags: ignoreversion
 Source: "{#BdistDir}\libpng12.dll"; DestDir: "{app}"; Flags: ignoreversion
 Source: "{#BdistDir}\SDL.dll"; DestDir: "{app}"; Flags: ignoreversion
