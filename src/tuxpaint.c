@@ -22,12 +22,12 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
   
-  June 14, 2002 - July 26, 2005
+  June 14, 2002 - September 5, 2005
 */
 
 
 #define VER_VERSION     "0.9.15"
-#define VER_DATE        "2005-07-26"
+#define VER_DATE        "2005-09-05"
 
 
 /* Color depth for Tux Paint to run in, and store canvases in: */
@@ -6226,7 +6226,7 @@ static void show_usage(FILE * f, char * prg)
 	  "  %s [--mouse | --keyboard]        [--dontgrab | --grab]\n"
 	  "  %s [--noshortcuts | --shortcuts] [--wheelmouse | --nowheelmouse]\n"
 	  "  %s [--outlines | --nooutlines]   [--stamps | --nostamps]\n"
-	  "  %s [--nosysfonts | --sysfonts]\n"
+	  "  %s [--sysfonts | --nosysfonts]\n"
 	  "  %s [--nostampcontrols | --stampcontrols]\n"
 	  "  %s [--mirrorstamps | --dontmirrorstamps]\n"
 	  "  %s [--saveoverask | --saveover | --saveovernew]\n"
@@ -7412,7 +7412,7 @@ static void setup(int argc, char * argv[])
   disable_save = 0;
   disable_print = 0;
   dont_load_stamps = 0;
-  no_system_fonts = 0;
+  no_system_fonts = 1;
   print_delay = 0;
   use_print_config = 0;
   mirrorstamps = 0;
@@ -15148,7 +15148,8 @@ static void parse_options(FILE * fi)
 	    {
 	      dont_load_stamps = 0;
 	    }
-	  else if (strcmp(str, "nosysfonts=yes") == 0)
+	  else if (strcmp(str, "nosysfonts=yes") == 0 ||
+	           strcmp(str, "sysfonts=no") == 0)
 	    {
 	      no_system_fonts = 1;
 	    }
