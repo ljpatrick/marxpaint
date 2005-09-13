@@ -6,7 +6,7 @@
 # bill@newbreedsoftware.com
 # http://www.newbreedsoftware.com/tuxpaint/
 
-# June 14, 2002 - July 27, 2005
+# June 14, 2002 - Sept. 12, 2005
 
 
 # Where to install things:
@@ -397,6 +397,7 @@ uninstall:
 	-rm $(LOCALE_PREFIX)/ta/LC_MESSAGES/tuxpaint.mo
 	-rm $(LOCALE_PREFIX)/th/LC_MESSAGES/tuxpaint.mo
 	-rm $(LOCALE_PREFIX)/tr/LC_MESSAGES/tuxpaint.mo
+	-rm $(LOCALE_PREFIX)/uk/LC_MESSAGES/tuxpaint.mo
 	-rm $(LOCALE_PREFIX)/vi/LC_MESSAGES/tuxpaint.mo
 	-rm $(LOCALE_PREFIX)/wa/LC_MESSAGES/tuxpaint.mo
 	-rm $(LOCALE_PREFIX)/zh_CN/LC_MESSAGES/tuxpaint.mo
@@ -831,6 +832,11 @@ install-gettext:
 	@cp trans/tr.mo $(LOCALE_PREFIX)/tr/LC_MESSAGES/tuxpaint.mo
 	@chmod 644 $(LOCALE_PREFIX)/tr/LC_MESSAGES/tuxpaint.mo
 	@#
+	@echo "   uk_UA ...Ukrainian..."
+	@install -d $(LOCALE_PREFIX)/uk/LC_MESSAGES
+	@cp trans/uk.mo $(LOCALE_PREFIX)/uk/LC_MESSAGES/tuxpaint.mo
+	@chmod 644 $(LOCALE_PREFIX)/uk/LC_MESSAGES/tuxpaint.mo
+	@#
 	@echo "   vi_VN ...Vietnamese..."
 	@install -d $(LOCALE_PREFIX)/vi/LC_MESSAGES
 	@cp trans/vi.mo $(LOCALE_PREFIX)/vi/LC_MESSAGES/tuxpaint.mo
@@ -991,6 +997,7 @@ translations: trans \
 	trans/th.mo \
 	trans/tlh.mo \
 	trans/tr.mo \
+	trans/uk.mo \
 	trans/vi.mo \
 	trans/wa.mo \
 	trans/zh_cn.mo \
@@ -1200,6 +1207,10 @@ trans/th.mo:	src/po/th.po
 trans/tr.mo:	src/po/tr.po
 	@echo "   tr_TR ...Turkish..."
 	@msgfmt -o trans/tr.mo src/po/tr.po
+
+trans/uk.mo:	src/po/uk.po
+	@echo "   uk_UA ...Ukrainian..."
+	@msgfmt -o trans/uk.mo src/po/uk.po
 
 trans/vi.mo:	src/po/vi.po
 	@echo "   vi_VN ...Vietnamese..."

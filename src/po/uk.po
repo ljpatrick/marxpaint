@@ -1,0 +1,496 @@
+# Tux Pant Ukrainian messages
+# Copyright (C) 2003-2004
+# Translators: Serhij Dubyk <dubyk@lsl.lviv.ua>
+#            
+msgid ""
+msgstr ""
+"Project-Id-Version: TuxPaint\n"
+"POT-Creation-Date: 2004-06-14 22:41+0200\n"
+"PO-Revision-Date: 2005-09-13 04:48+0200\n"
+"Last-Translator: Serhij Dubyk <dubyk@lsl.lviv.ua>\n"
+"Language-Team: Serhij Dubyk <dubyk@lsl.lviv.ua>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-Language: Ukrainian\n"
+"X-Poedit-Country: UKRAINE\n"
+
+#, fuzzy
+msgid "A drawing program for children."
+msgstr "Дитяча програма для малювання."
+
+msgid "Drawing program"
+msgstr "Програма для малювання"
+
+msgid "Tux Paint"
+msgstr "Малюй разом з Tux!"
+
+msgid "Black!"
+msgstr "Чорний!"
+
+msgid "Dark grey! Some people spell it “dark gray”."
+msgstr "Темно сірий! Деякі люди читають то як “тепло-темний”."
+
+msgid "Light grey! Some people spell it “light gray”."
+msgstr "Світло сірий! Деякі люди читають то як “світло-теплий”."
+
+msgid "White!"
+msgstr "Білий!"
+
+msgid "Red!"
+msgstr "Червоний!"
+
+msgid "Orange!"
+msgstr "Оранжевий!"
+
+msgid "Yellow!"
+msgstr "Жовтий!"
+
+#, fuzzy
+msgid "Light green!"
+msgstr "Білі та сірі клітинки"
+
+#, fuzzy
+msgid "Dark green!"
+msgstr "Чорні та сірі клітинки"
+
+#, fuzzy
+msgid "Sky blue!"
+msgstr "Ча_стота синього:"
+
+msgid "Blue!"
+msgstr "Голубий!"
+
+msgid "Lavender!"
+msgstr "Лаванда!"
+
+msgid "Purple!"
+msgstr "Пурпурний!"
+
+msgid "Pink!"
+msgstr "Рожевий!"
+
+msgid "Brown!"
+msgstr "Коричневий!"
+
+#, fuzzy
+msgid "Tan!"
+msgstr "Ціан!"
+
+msgid "Beige!"
+msgstr "Беж!"
+
+msgid "Great!"
+msgstr "Прекрасно!"
+
+msgid "Cool!"
+msgstr "Круто!"
+
+msgid "Keep it up!"
+msgstr "Так і продовжуй!"
+
+msgid "Good job!"
+msgstr "Хороша робота!"
+
+msgid "Fill"
+msgstr "Залити"
+
+msgid "Grass"
+msgstr "Трава"
+
+#, fuzzy
+msgid "Bricks"
+msgstr "Мозаїка"
+
+msgid "Rainbow"
+msgstr "Веселка"
+
+msgid "Sparkles"
+msgstr "Іскри"
+
+msgid "Blur"
+msgstr "Розмити"
+
+#, fuzzy
+msgid "Smudge"
+msgstr "Палець"
+
+#, fuzzy
+msgid "Lighten"
+msgstr "Лише світле"
+
+#, fuzzy
+msgid "Darken"
+msgstr "Темні краї:"
+
+msgid "Chalk"
+msgstr "Крейда"
+
+msgid "Blocks"
+msgstr "Мозаїка"
+
+msgid "Negative"
+msgstr "Негатив"
+
+#, fuzzy
+msgid "Tint"
+msgstr "Тонке"
+
+msgid "Drip"
+msgstr "Капання"
+
+#, fuzzy
+msgid "Cartoon"
+msgstr "_Картон"
+
+msgid "Mirror"
+msgstr "Дзеркало"
+
+msgid "Flip"
+msgstr "Переворот"
+
+msgid "Click in the picture to fill that area with color."
+msgstr "Клацніть, щоб заповнити цю область кольором."
+
+#, fuzzy
+msgid "Click and move to draw grass. Don’t forget the dirt!"
+msgstr "Клацніть та поводіть по малюнку, щоб намалювати іскри."
+
+#, fuzzy
+msgid "Click and move to draw large bricks."
+msgstr "Клацніть та поводіть по малюнку, щоб намалювати іскри."
+
+#, fuzzy
+msgid "Click and move to draw small bricks."
+msgstr "Клацніть та поводіть по малюнку, щоб намалювати іскри."
+
+msgid "You can draw in rainbow colors!"
+msgstr "Ви можете малювати барвами веселки!"
+
+msgid "Click and move to draw sparkles."
+msgstr "Клацніть та поводіть по малюнку, щоб намалювати іскри."
+
+msgid "Click and move the mouse around to blur the picture."
+msgstr "Клацніть та поводіть по малюнку, щоб трохи порозмазувати його."
+
+#, fuzzy
+msgid "Click and move the mouse around to smudge the picture."
+msgstr "Клацніть та поводіть по малюнку, щоб трохи порозмазувати його."
+
+msgid "Click and move to fade the colors."
+msgstr "Клацніть та поводіть по малюнку, щоб освітлити."
+
+#, fuzzy
+msgid "Click and move to darken the colors."
+msgstr "Клацніть та поводіть по малюнку, щоб освітлити."
+
+#, fuzzy
+msgid "Click and move the mouse around to turn the picture into a chalk drawing."
+msgstr "Клацніть та поводіть по малюнку, щоб робити малюнок крейдою."
+
+msgid "Click and move the mouse around to make the picture blocky."
+msgstr "Клацніть та поводіть по малюнку, щоб зробити мозаїку."
+
+#, fuzzy
+msgid "Click and move the mouse around to draw a negative."
+msgstr "Клацніть та поводіть по малюнку, щоб зробити з того негатив."
+
+#, fuzzy
+msgid "Click and move the mouse around to change the picture’s color."
+msgstr "Клацніть та поводіть по малюнку, щоб зробити мозаїку."
+
+msgid "Click and move the mouse around to make the picture drip."
+msgstr "Клацніть та поводіть по малюнку, щоб примусити його капати."
+
+#, fuzzy
+msgid "Click and move the mouse around to turn the picture into a cartoon."
+msgstr "Клацніть та поводіть по малюнку, щоб робити малюнок крейдою."
+
+#, fuzzy
+msgid "Click to make a mirror image."
+msgstr "Натисніть, щоб зробити цю точку кутовою."
+
+msgid "Click to flip the picture upside-down."
+msgstr "Клацніть на малюнку, щоб перевернути його догори ногами."
+
+msgid "Square"
+msgstr "Квадрат"
+
+msgid "Rectangle"
+msgstr "Прямокутник"
+
+msgid "Circle"
+msgstr "Круг"
+
+#, fuzzy
+msgid "Ellipse"
+msgstr "Створити еліпс"
+
+msgid "Triangle"
+msgstr "Трикутник"
+
+msgid "Pentagon"
+msgstr "П'ятикутник"
+
+msgid "Rhombus"
+msgstr "Ромб"
+
+#, fuzzy
+msgid "A square is a rectangle with four equal sides."
+msgstr "У прямокутника чотири сторони."
+
+#, fuzzy
+msgid "A rectangle has four sides and four right angles."
+msgstr "У прямокутника чотири сторони."
+
+msgid "A circle is a curve where all points have the same distance from the centre."
+msgstr "Коло - крива, у якоє всі крапки мають таку ж відстань від центру."
+
+msgid "An ellipse is a stretched circle."
+msgstr "Еліпс - витянуте коло."
+
+#, fuzzy
+msgid "A triangle has three sides."
+msgstr "Кожен елемент має викривлені сторони"
+
+#, fuzzy
+msgid "A pentagon has five sides."
+msgstr "Кожен елемент має викривлені сторони"
+
+msgid "A rhombus has four equal sides, and opposite sides are parallel."
+msgstr "Ромб має чотири рівні сторони, і протилежні сторони паралельні."
+
+msgid "Tools"
+msgstr "Інструменти"
+
+msgid "Colors"
+msgstr "Фарба"
+
+msgid "Brushes"
+msgstr "Пензлі"
+
+#, fuzzy
+msgid "Erasers"
+msgstr "Гумка"
+
+msgid "Stamps"
+msgstr "Штампи"
+
+msgid "Shapes"
+msgstr "Форми"
+
+msgid "Letters"
+msgstr "Букви"
+
+msgid "Magic"
+msgstr "Магія"
+
+msgid "Paint"
+msgstr "Пензель"
+
+msgid "Stamp"
+msgstr "Штамп"
+
+msgid "Lines"
+msgstr "Лінії"
+
+msgid "Text"
+msgstr "Текст"
+
+msgid "Undo"
+msgstr "Відміни"
+
+msgid "Redo"
+msgstr "Віднови"
+
+msgid "Eraser"
+msgstr "Гумка"
+
+msgid "New"
+msgstr "Новий"
+
+#  'Open' label:
+#. buttons for the file open dialog
+msgid "Open"
+msgstr "Відкрий"
+
+msgid "Save"
+msgstr "Збережи"
+
+msgid "Print"
+msgstr "Друк"
+
+msgid "Quit"
+msgstr "Вихід"
+
+#, fuzzy
+msgid "Pick a color and a brush shape to draw with."
+msgstr "Виберіть колір та форму пензлика, якою Ви хочете малювати."
+
+#, fuzzy
+msgid "Pick a picture to stamp around your drawing."
+msgstr "Виберіть картинку, щоб поставити штамп на Вашому малюнку."
+
+#, fuzzy
+msgid "Click to start drawing a line. Let go to complete it."
+msgstr "Клацніть, щоб почати малювати лінію. Відпустіть кнопку, щоб закінчити."
+
+#, fuzzy
+msgid "Pick a shape. Click to pick the center, drag, then let go when it is the size you want. Move around to rotate it, and click to draw it."
+msgstr "Виберіть форму. Клацніть для вибору центру, розтягніть до потрібного розміру, відпустіть. Покрутіть форму, потім клацніть, щоб намалювати її."
+
+#, fuzzy
+msgid "Choose a style of text. Click on your drawing and you can start typing."
+msgstr "Виберіть стиль тексту. Клацніть на Вашому малюнку та друкуйте."
+
+#, fuzzy
+msgid "Pick a magical effect to use on your drawing!"
+msgstr "Виберіть чарівний ефект, щоб використовувати його на Вашому малюнку!"
+
+#  Undo
+#. Undo
+msgid "Undo!"
+msgstr "Скасувати дію!"
+
+#  Redo
+#. Redo
+msgid "Redo!"
+msgstr "Переробити!"
+
+#  Eraser
+#. Eraser
+msgid "Eraser!"
+msgstr "Стерти!"
+
+#. New
+#, fuzzy
+msgid "You now have a blank sheet to draw on!"
+msgstr "Тепер у Вас є чистий лист!"
+
+#. Open
+msgid "Open…"
+msgstr "Відкрити…"
+
+#  Save
+#. Save
+msgid "Your image has been saved!"
+msgstr "Ваш малюнок збережений!"
+
+#  Print
+#. Print
+msgid "Printing…"
+msgstr "Друкую…"
+
+#  Quit
+#. Quit
+msgid "Bye bye!"
+msgstr "Па-па!"
+
+msgid "Let go of the button to complete the line."
+msgstr "Відпустіть кнопку, щоб закінчити лінію."
+
+msgid "Hold the button to stretch the shape."
+msgstr "Тримайте кнопку, щоб розтягнути форму."
+
+msgid "Move the mouse to rotate the shape. Click to draw it."
+msgstr "Покрутіть форму, потім клацніть, щоб намалювати її."
+
+msgid "OK then… Let’s keep drawing this one!"
+msgstr "Добре, продовжуємо малювати!"
+
+#. FIXME: Move elsewhere!!!
+msgid "Do you really want to quit?"
+msgstr "Ви дійсно хочете вийти?"
+
+#. FIXME: Move elsewhere! Or not?!
+msgid "Yes"
+msgstr "Так"
+
+msgid "No"
+msgstr "Ні"
+
+msgid "If you quit, you’ll lose your picture! Save it?"
+msgstr "Якщо Ви вийдете, Ви втратите Ваш малюнок! Зберегти?"
+
+msgid "Save your picture first?"
+msgstr "Зберегти Ваш малюнок спочатку?"
+
+msgid "Can’t open that picture!"
+msgstr "Не можу відкрити цей малюнок!"
+
+msgid "OK"
+msgstr "Гаразд"
+
+#, fuzzy
+msgid "Starting a new picture will erase the current one!"
+msgstr "Починаючи новий малюнок Ви знищите поточний!"
+
+msgid "That’s OK!"
+msgstr "Це добре!"
+
+msgid "Never mind!"
+msgstr "Байдуже!"
+
+msgid "There are no saved files!"
+msgstr "Немає збережених малюнків!"
+
+msgid "Print your picture now?"
+msgstr "Надрукувати Вашу малюнок?"
+
+msgid "Your picture has been printed!"
+msgstr "Ваш малюнок роздруковано!"
+
+msgid "You can’t print yet!"
+msgstr "Ви поки не можете друкувати!"
+
+msgid "Erase this picture?"
+msgstr "Видалити цей малюнок?"
+
+msgid "Remember to use the left mouse button!"
+msgstr "Не забувайте про ліву клавішу миші!"
+
+msgid "jq"
+msgstr "jq"
+
+msgid "JQ"
+msgstr "JQ"
+
+msgid "oO"
+msgstr "oO"
+
+msgid "`\\%_@$~#{}<>^&*"
+msgstr "`\\%_@$~#{}<>^&*"
+
+msgid ",.?!"
+msgstr ",.?!"
+
+msgid "017"
+msgstr "017"
+
+msgid "O0"
+msgstr "O0"
+
+msgid "1Il|"
+msgstr "1Il|"
+
+#  'Erase' label:
+msgid "Erase"
+msgstr "Видалити"
+
+msgid "Back"
+msgstr "Назад"
+
+msgid "Aa"
+msgstr "Aa"
+
+#. FIXME: Move elsewhere!!!
+msgid "Save over the older version of this picture?"
+msgstr "Зберегти поверх старої версії цього малюнка?"
+
+#, fuzzy
+msgid "No, save a new file"
+msgstr "Не вдається зберегти файл ресурсів: "
+
+msgid "Choose the picture you want, then click “Open”."
+msgstr "Виберіть бажаний малюнок, а потім клацніть «Відкрити»."
+

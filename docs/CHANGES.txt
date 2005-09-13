@@ -335,6 +335,10 @@ http://www.newbreedsoftware.com/tuxpaint/
     * Thai
       Ouychai Chaita <ae.freeman@gmail.com>
 
+    * Ukranian
+      Serhij Dubyk <dubyk@ukr.net>
+
+
   * Translation updates:
     --------------------
     * Bulgarian

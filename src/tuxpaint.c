@@ -22,12 +22,12 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
   
-  June 14, 2002 - September 5, 2005
+  June 14, 2002 - September 12, 2005
 */
 
 
 #define VER_VERSION     "0.9.15"
-#define VER_DATE        "2005-09-05"
+#define VER_DATE        "2005-09-12"
 
 
 /* Color depth for Tux Paint to run in, and store canvases in: */
@@ -583,6 +583,7 @@ enum {
   LANG_TA,     /* Tamil */
   LANG_TH,     /* Thai */
   LANG_TR,     /* Turkish */
+  LANG_UK,     /* Ukrainian */
   LANG_VI,     /* Vietnamese */
   LANG_WA,     /* Walloon */
   LANG_ZH_CN,  /* Chinese (Simplified) */
@@ -642,6 +643,7 @@ static const char * lang_prefixes[NUM_LANGS] = {
   "ta",
   "th",
   "tr",
+  "uk",
   "vi",
   "wa",
   "zh_cn",
@@ -831,6 +833,7 @@ static void show_lang_usage(FILE * f, const char * const prg)
 /* ta */     "  tamil\n"
 /* th */     "  thai\n"
 /* tr */     "  turkish\n"
+/* uk */     "  ukrainian\n"
 /* vi */     "  vietnamese\n"
 /* wa */     "  walloon      walon\n"
 /* cy */     "  welsh        cymraeg\n"
@@ -899,6 +902,7 @@ static void show_locale_usage(FILE * f, const char * const prg)
 	  "  sv_SE   (Swedish      Svenska)\n"
 	  "  th_TH   (Thai)\n"
 	  "  tr_TR   (Turkish)\n"
+	  "  uk_UA   (Ukrainian)\n"
 	  "  vi_VN   (Vietnamese)\n"
 	  "  wa_BE   (Walloon)\n"
 	  "  cy_GB   (Welsh        Cymraeg)\n"
@@ -999,6 +1003,7 @@ static const language_to_locale_struct language_to_locale_array[] = {
 {"swahili",              "sw_TZ.UTF-8"},
 {"thai",                 "th_TH.UTF-8"},
 {"turkish",              "tr_TR.UTF-8"},
+{"ukrainian",            "uk_UA.UTF-8"},
 {"walloon",              "wa_BE.UTF-8"},
 {"walon",                "wa_BE.UTF-8"},
 {"chinese",              "zh_CN.UTF-8"},
