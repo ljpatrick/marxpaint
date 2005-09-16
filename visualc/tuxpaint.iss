@@ -14,6 +14,7 @@
 #define AppPrefix     "tuxpaint"
 #define AppRegKey     AppDirName
 #define AppRegValue   "Install_Dir"
+#define AppRegVersion "Version"
 
 #define AppGroupName  AppName
 #define AppExe        AppPrefix+".exe"
@@ -93,6 +94,8 @@ Name: "{code:MyDesktopDir}\{#AppName}"; Filename: "{app}\{#AppExe}"; Tasks: desk
 [Registry]
 Root: HKLM; Subkey: "SOFTWARE\{#AppRegKey}"; Flags: uninsdeletekey; ValueName: "{#AppRegValue}"; ValueType: string; ValueData: "{app}"; Check: AllUsers;
 Root: HKCU; Subkey: "SOFTWARE\{#AppRegKey}"; Flags: uninsdeletekey; ValueName: "{#AppRegValue}"; ValueType: string; ValueData: "{app}"; Check: ThisUserOnly;
+Root: HKLM; Subkey: "SOFTWARE\{#AppRegKey}"; Flags: uninsdeletekey; ValueName: "{#AppRegVersion}"; ValueType: string; ValueData: "{#AppVersion}"; Check: AllUsers;
+Root: HKCU; Subkey: "SOFTWARE\{#AppRegKey}"; Flags: uninsdeletekey; ValueName: "{#AppRegVersion}"; ValueType: string; ValueData: "{#AppVersion}"; Check: ThisUserOnly;
 
 [Run]
 Filename: "{app}\{#AppReadme}"; Description: "View the README file"; Flags: postinstall shellexec
@@ -129,7 +132,7 @@ end;
 
 function ThisUserOnly(): Boolean;
 begin
-  Result := UsingWinNT() and (Restricted() or CurrentUserOnly())
+  Result := Restricted() or CurrentUserOnly()
 end;
 
 function AllUsers(): Boolean;
@@ -184,8 +187,8 @@ var
   Enabled, InstallAllUsers: Boolean;
 begin
   Page := CreateCustomPage(wpLicense, 'Choose Installation Type', 'Who do you want to be able to use this program?');
-  Enabled := NotRestricted() and UsingWinNT();
-  InstallAllUsers := NotRestricted() and UsingWinNT();
+  Enabled := NotRestricted();
+  InstallAllUsers := NotRestricted();
   CheckListBox2 := TNewCheckListBox.Create(Page);
   CheckListBox2.Width := Page.SurfaceWidth;
   CheckListBox2.Height := ScaleY(97);
