@@ -7005,6 +7005,11 @@ static void load_stamps(void)
 #ifdef __APPLE__
   load_stamp_dir("/Library/Application Support/TuxPaint/stamps");
 #endif
+#ifdef WIN32
+  free(homedirdir);
+  homedirdir = get_fname("data/stamps");
+  load_stamp_dir(homedirdir);
+#endif
 
   if (num_stamps == 0)
     {
@@ -7058,6 +7063,11 @@ static int load_user_fonts(void *vp)
   char *homedirdir = get_fname("fonts");
   loadfonts(homedirdir);
   free(homedirdir);
+#ifdef WIN32
+  homedirdir = get_fname("data/fonts");
+  loadfonts(homedirdir);
+  free(homedirdir);
+#endif
 
   groupfonts();
 
@@ -8356,6 +8366,11 @@ static void setup(int argc, char * argv[])
   load_brush_dir(DATA_PREFIX "brushes");
   homedirdir = get_fname("brushes");
   load_brush_dir(homedirdir);
+#ifdef WIN32
+  free(homedirdir);
+  homedirdir = get_fname("data/brushes");
+  load_brush_dir(homedirdir);
+#endif
 
   if (num_brushes == 0)
     {
