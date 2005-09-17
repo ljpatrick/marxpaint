@@ -6,7 +6,7 @@
 # bill@newbreedsoftware.com
 # http://www.newbreedsoftware.com/tuxpaint/
 
-# June 14, 2002 - Sept. 12, 2005
+# June 14, 2002 - Sept. 17, 2005
 
 
 # Where to install things:
@@ -39,7 +39,7 @@ MAN_PREFIX=$(PKG_ROOT)$(PREFIX)/share/man
 # 'System-wide' Config file:
 
 ifeq ($(PREFIX),/usr)
-  CONFDIR=$(PKG_ROOT)etc/tuxpaint
+  CONFDIR=$(PKG_ROOT)/etc/tuxpaint
 else
   CONFDIR=$(PKG_ROOT)$(PREFIX)/etc/tuxpaint
 endif
@@ -447,8 +447,6 @@ install-gnome:
 	 install -d $(PKG_ROOT)$(GNOME_PREFIX)/share/gnome/apps/Graphics; \
 	 cp src/tuxpaint.desktop $(PKG_ROOT)$(GNOME_PREFIX)/share/gnome/apps/Graphics/; \
 	 chmod 644 $(PKG_ROOT)$(GNOME_PREFIX)/share/gnome/apps/Graphics/tuxpaint.desktop; \
-	else \
-	 make install-gnome GNOME_PREFIX=$(PREFIX); \
 	fi
 
 
@@ -461,8 +459,6 @@ install-kde:
 	  install -d $(PKG_ROOT)$(KDE_PREFIX)/Graphics; \
 	  cp src/tuxpaint.desktop $(PKG_ROOT)$(KDE_PREFIX)/Graphics/; \
 	  chmod 644 $(PKG_ROOT)$(KDE_PREFIX)/Graphics/tuxpaint.desktop; \
-	else \
-	  make KDE_PREFIX=$(PREFIX)/share/applnk install-kde; \
 	fi
 
 

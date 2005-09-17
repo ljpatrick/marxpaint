@@ -35,12 +35,22 @@ make PREFIX=/usr
 rm -rf $RPM_BUILD_ROOT
 make PREFIX=/usr PKG_ROOT=$RPM_BUILD_ROOT install
 
-rm -rf $RPM_BUILD_ROOT/%{_datadir}/doc/tuxpaint
+find $RPM_BUILD_ROOT -name tuxpaint.desktop | sort | \
+    sed -e "s@$RPM_BUILD_ROOT@@g" > filelist.icons
+find $RPM_BUILD_ROOT -name tuxpaint.png | sort | \
+    sed -e "s@$RPM_BUILD_ROOT@@g" >> filelist.icons
+find $RPM_BUILD_ROOT -name tuxpaint.svg | sort | \
+    sed -e "s@$RPM_BUILD_ROOT@@g" >> filelist.icons
+find $RPM_BUILD_ROOT -name tuxpaint.xpm | sort | \
+    sed -e "s@$RPM_BUILD_ROOT@@g" >> filelist.icons
+
+rm -rf $RPM_BUILD_ROOT/usr/share/doc/tuxpaint
+
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
-%files
+%files -f filelist.icons
 %defattr(-,root,root,-)
 %doc docs/*
 
@@ -52,19 +62,16 @@ rm -rf $RPM_BUILD_ROOT
 /usr/share/man/man1/*
 /usr/share/man/*/man1/tuxpaint.1.gz
 
-%config(noreplace) %{_sysconfdir}/tuxpaint/tuxpaint.conf
+%config(noreplace) /etc/tuxpaint/tuxpaint.conf
+
 
 %defattr(-, root, root)
 /usr/share/tuxpaint/*
 
-%defattr(-, root, root)
-/usr/share/pixmaps/tuxpaint.png
-/usr/X11R6/include/X11/pixmaps/tuxpaint.xpm
-
-/usr/share/applnk/Graphics/tuxpaint.desktop
-/usr/share/gnome/apps/Graphics/tuxpaint.desktop
-
 %changelog
+* Thu Sep 15 2005  <shin1@wmail.plala.or.jp> -
+- Do not force install desktop icons when Gnome and/or KDE are not installed.
+
 * Sun Mar 27 2005  <shin1@wmail.plala.or.jp> -
 - Some hicolor icons not installed were removed from file list
 
