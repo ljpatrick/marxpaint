@@ -1202,6 +1202,8 @@ static int WINDOW_WIDTH, WINDOW_HEIGHT;
 
 static void setup_normal_screen_layout(void)
 {
+  int buttons_tall;
+
   button_w = 48;
   button_h = 48;
 
@@ -1244,7 +1246,7 @@ static void setup_normal_screen_layout(void)
   r_tuxarea.w = WINDOW_WIDTH;
 
   // need 56 minimum for the Tux area
-  int buttons_tall = (WINDOW_HEIGHT -  r_ttoolopt.h - 56 - r_colors.h) / button_h;
+  buttons_tall = (WINDOW_HEIGHT -  r_ttoolopt.h - 56 - r_colors.h) / button_h;
   gd_tools.rows = buttons_tall;
   gd_toolopt.rows = buttons_tall;
 
@@ -1561,12 +1563,14 @@ static void receive_some_font_info(void);
 
 static TTF_Font *getfonthandle(int desire)
 {
+  int missing = 0;
   family_info *fi = user_font_families[desire];
+  char *name = fi->filename[text_state];
+  char *pathname;
+
   if(fi->handle)
     return fi->handle;
-  int missing = 0;
 
-  char *name = fi->filename[text_state];
   if(!name)
     {
       name = fi->filename[text_state ^ TTF_STYLE_ITALIC];
@@ -1582,7 +1586,7 @@ static TTF_Font *getfonthandle(int desire)
       name = fi->filename[text_state ^ (TTF_STYLE_ITALIC|TTF_STYLE_BOLD)];
       missing = text_state & (TTF_STYLE_ITALIC|TTF_STYLE_BOLD);
     }
-  char *pathname = alloca(strlen(fi->directory) + 1 + strlen(name) + 1);
+  pathname = alloca(strlen(fi->directory) + 1 + strlen(name) + 1);
   sprintf(pathname, "%s/%s", fi->directory, name);
   
   fi->handle = TTF_OpenFont(pathname,text_sizes[text_size]);
@@ -1595,13 +1599,15 @@ static TTF_Font *getfonthandle(int desire)
 static SDL_Surface *render_text(TTF_Font *restrict font, const char *restrict str, SDL_Color color)
 {
   SDL_Surface *ret;
+  int height;
+
   ret = TTF_RenderUTF8_Blended(font, str, color);
   if(ret)
     return ret;
   // Sometimes a font will be missing a character we need. Sometimes the library
   // will substitute a rectangle without telling us. Sometimes it returns NULL.
   // Probably we should use FreeType directly. For now though...
-  int height = TTF_FontHeight(font);
+  height = TTF_FontHeight(font);
   if(height<2)
     height = 2;
   return thumbnail(img_title_large_off, height*strlen(str)/2, height, 0);
@@ -1669,10 +1675,11 @@ static void parse_font_style(style_info *si)
   int have_black = 0;
   int have_heavy = 0;
 
-  si->italic = 0;
-
   int stumped = 0;
   char *sp = si->style;
+
+  si->italic = 0;
+
 
   while(*sp)
     {
@@ -1707,9 +1714,9 @@ static void parse_font_style(style_info *si)
       // move " Condensed" from style to family
       if(!strncasecmp(sp,"Condensed",strlen("Condensed")))
         {
-          sp += strlen("Condensed");
           size_t len = strlen(si->family);
           char *name = malloc(len + strlen(" Condensed") + 1);
+          sp += strlen("Condensed");
           memcpy(name,si->family,len);
           strcpy(name+len," Condensed");
           free(si->family);
@@ -1808,6 +1815,11 @@ static void groupfonts_range(style_info **base, int count)
   int boldcounts[4] = {0,0,0,0};
   int boldmap[4] = {-1,-1,-1,-1};
   int i;
+  int boldmax;
+  int boldmin;
+  int bolduse;
+  int spot;
+  family_info *fi;
 
 #if 0
 // THREADED_FONTS
@@ -1826,9 +1838,9 @@ printf("               %s\n", base[i]->style);
   while(i--)
     boldcounts[base[i]->boldness]++;
 
-  int boldmax = base[0]->boldness;
-  int boldmin = base[0]->boldness;
-  int bolduse = 0;
+  boldmax = base[0]->boldness;
+  boldmin = base[0]->boldness;
+  bolduse = 0;
 
   i = 4;
   while(i--)
@@ -1850,10 +1862,13 @@ printf("               %s\n", base[i]->style);
     }
   else if(count==3)
     {
+      int boldmid;
+      int zmin = 0, zmid = 0, zmax = 0;
+      
       boldmap[boldmax] = 1;
       boldmap[boldmin] = 0;
-      int boldmid = boldcounts[boldmin+1] ? boldmin+1 : boldmin+2;
-      int zmin = 0, zmid = 0, zmax = 0;
+      boldmid = boldcounts[boldmin+1] ? boldmin+1 : boldmin+2;
+
       i = 3;
       while(i--){
         if(base[i]->boldness==boldmin)
@@ -1875,16 +1890,17 @@ printf("               %s\n", base[i]->style);
     }
   else
     {
+      int claimed_bold = boldcounts[3];
+      int claimed_norm = boldcounts[1];
+
       // 3 or 4 boldness levels, 4 or more styles!
       // This is going to be random hacks and hopes.
 
       // bold is bold
       boldmap[3] = 1;
-      int claimed_bold = boldcounts[3];
 
       // norm is norm
       boldmap[1] = 0;
-      int claimed_norm = boldcounts[1];
 
       // classify demi-bold or medium
       if(claimed_bold<2)
@@ -1912,7 +1928,7 @@ printf("               %s\n", base[i]->style);
       user_font_families = realloc(user_font_families, num_font_families_max * sizeof *user_font_families); 
     }
 
-  family_info *fi = calloc(1, sizeof *fi);
+  fi = calloc(1, sizeof *fi);
   user_font_families[num_font_families++] = fi;
   fi->directory = strdup(base[0]->directory);
   fi->family    = strdup(base[0]->family);
@@ -1929,7 +1945,7 @@ printf("               %s\n", base[i]->style);
 #endif
           continue;
         }
-      int spot = b ? TTF_STYLE_BOLD : 0;
+      spot = b ? TTF_STYLE_BOLD : 0;
       spot += base[i]->italic ? TTF_STYLE_ITALIC : 0;
       if(fi->filename[spot])
         {
@@ -1990,16 +2006,20 @@ static void dupe_markdown_range(family_info **base, int count)
 
 static void groupfonts(void)
 {
+  char * * cpp;
   int i = num_font_styles;
+  int low  = 0;
+
   while(i--)
     parse_font_style(user_font_styles[i]);
+
   qsort(user_font_styles, num_font_styles, sizeof user_font_styles[0], compar_fontgroup);
-  int low  = 0;
+
   for(;;)
     {
+      int high = low;
       if(low >= num_font_styles)
         break;
-      int high = low;
       for(;;)
         {
           if(++high >= num_font_styles)
@@ -2027,9 +2047,9 @@ static void groupfonts(void)
   low = 0;
   for(;;)
     {
+      int high = low;
       if(low >= num_font_families)
         break;
-      int high = low;
       for(;;)
         {
           if(++high >= num_font_families)
@@ -2052,7 +2072,7 @@ static void groupfonts(void)
       i = --num_font_families;
       free(user_font_families[i]->directory);
       free(user_font_families[i]->family);
-      char ** cpp = user_font_families[i]->filename;
+      cpp = user_font_families[i]->filename;
       if(cpp[0])
         free(cpp[0]);
       if(cpp[1])
@@ -2509,6 +2529,11 @@ static void show_progress_bar(void)
 
 int main(int argc, char * argv[])
 {
+  CLOCK_TYPE time1;
+  CLOCK_TYPE time2;
+  SDL_Rect dest;
+  SDL_Rect src;
+
 #ifdef FORKED_FONTS
   run_font_scanner();
 #endif
@@ -2516,7 +2541,6 @@ int main(int argc, char * argv[])
   /* Set up locale support */
   setlocale(LC_ALL, "");
 
-  CLOCK_TYPE time1;
   CLOCK_ASM(time1);
 
   /* Set up! */
@@ -2533,15 +2557,12 @@ int main(int argc, char * argv[])
   SDL_WaitThread(font_thread, NULL);
 #endif
 
-  CLOCK_TYPE time2;
   CLOCK_ASM(time2);
 
   printf("Start-up time: %.3f\n", (double)(time2-time1)/CLOCK_SPEED);
 
   // Let the user know we're (nearly) ready now
 
-  SDL_Rect dest;
-  SDL_Rect src;
   dest.x = 0;
   dest.y = WINDOW_HEIGHT - img_progress->h;
   dest.h = img_progress->h;
@@ -2941,6 +2962,7 @@ static void mainloop(void)
 			}
 		      else if (key_down == SDLK_RETURN)
 			{
+			  int font_height;
 			  if (texttool_len > 0)
 			    {
 			      rec_undo_buffer();
@@ -2948,7 +2970,7 @@ static void mainloop(void)
 			      texttool_len = 0;
 			      cursor_textwidth = 0;
 			    }
-			  int font_height = TTF_FontHeight(getfonthandle(cur_font));
+			  font_height = TTF_FontHeight(getfonthandle(cur_font));
 
 			  cursor_x = cursor_left;
 			  cursor_y = min(cursor_y+font_height, canvas->h-font_height);
@@ -3305,6 +3327,12 @@ static void mainloop(void)
 		      cur_tool == TOOL_ERASER)
 		    {
 		      int old_thing;
+	              int num_rows_needed;
+		      SDL_Rect r_controls;
+		      SDL_Rect r_notcontrols;
+		      SDL_Rect r_items = r_notcontrols;
+	              int toolopt_changed;
+
 		      grid_dims gd_controls = {0,0}; // might become 2-by-2
 		      grid_dims gd_items = {2,2}; // generally becoming 2-by-whatever
 
@@ -3324,23 +3352,20 @@ static void mainloop(void)
 
 		      // number of whole or partial rows that will be needed
 		      // (can make this per-tool if variable columns needed)
-	              int num_rows_needed = (num_things+gd_items.cols-1)/gd_items.cols;
+	              num_rows_needed = (num_things+gd_items.cols-1)/gd_items.cols;
 
 		      do_draw = 0;
 
-		      SDL_Rect r_controls;
 		      r_controls.w = r_toolopt.w;
 		      r_controls.h = gd_controls.rows * button_h;
 		      r_controls.x = r_toolopt.x;
 		      r_controls.y = r_toolopt.y + r_toolopt.h - r_controls.h;
 		      
-		      SDL_Rect r_notcontrols;
 		      r_notcontrols.w = r_toolopt.w;
 		      r_notcontrols.h = r_toolopt.h - r_controls.h;
 		      r_notcontrols.x = r_toolopt.x;
 		      r_notcontrols.y = r_toolopt.y;
 		      
-		      SDL_Rect r_items = r_notcontrols;
 		      if(num_rows_needed * button_h > r_items.h)
 		        {
 		          // too many; we'll need scroll buttons
@@ -3349,8 +3374,8 @@ static void mainloop(void)
 		        }
 	              gd_items.rows = r_items.h / button_h;
 
-	              int toolopt_changed = 0;
-
+	              toolopt_changed = 0;
+		      
 		      if(HIT(r_items))
 		        {
 		          which = GRIDHIT_GD(r_items,gd_items) + *thing_scroll;
@@ -3575,9 +3600,10 @@ static void mainloop(void)
                         }
                       else if (cur_tool == TOOL_TEXT)
                         {
+                          char font_tux_text[512];
+
                           cur_font = cur_thing;
                           
-                          char font_tux_text[512];
                           snprintf(font_tux_text, sizeof font_tux_text, "%s (%s).", TTF_FontFaceFamilyName(getfonthandle(cur_font)), TTF_FontFaceStyleName(getfonthandle(cur_font)));
 //                          printf("font change:%s\n", font_tux_text);
                           draw_tux_text(TUX_GREAT, font_tux_text, 1);
@@ -3852,6 +3878,11 @@ static void mainloop(void)
 		   event.button.button >= 4 &&
 		   event.button.button <= 5)
             {
+	      int num_rows_needed;
+	      SDL_Rect r_controls;
+	      SDL_Rect r_notcontrols;
+	      SDL_Rect r_items = r_notcontrols;
+	      
               // Scroll wheel code.
               // WARNING: this must be kept in sync with the mouse-move
               // code (for cursor changes) and mouse-click code.
@@ -3880,23 +3911,20 @@ static void mainloop(void)
 
                   // number of whole or partial rows that will be needed
                   // (can make this per-tool if variable columns needed)
-                  int num_rows_needed = (num_things+gd_items.cols-1)/gd_items.cols;
+                  num_rows_needed = (num_things+gd_items.cols-1)/gd_items.cols;
 
                   do_draw = 0;
 
-                  SDL_Rect r_controls;
                   r_controls.w = r_toolopt.w;
                   r_controls.h = gd_controls.rows * button_h;
                   r_controls.x = r_toolopt.x;
                   r_controls.y = r_toolopt.y + r_toolopt.h - r_controls.h;
                   
-                  SDL_Rect r_notcontrols;
                   r_notcontrols.w = r_toolopt.w;
                   r_notcontrols.h = r_toolopt.h - r_controls.h;
                   r_notcontrols.x = r_toolopt.x;
                   r_notcontrols.y = r_toolopt.y;
                   
-                  SDL_Rect r_items = r_notcontrols;
                   if(num_rows_needed * button_h > r_items.h)
                     {
                       // too many; we'll need scroll buttons
@@ -4889,6 +4917,7 @@ static double tint_part_1(multichan *work, SDL_Surface *in)
   int xx,yy;
   double u_total = 0;
   double v_total = 0;
+  double u,v;
   Uint32 (*getpixel)(SDL_Surface *, int, int) = getpixels[in->format->BytesPerPixel];
   
 
@@ -4902,7 +4931,7 @@ static double tint_part_1(multichan *work, SDL_Surface *in)
           SDL_GetRGBA(getpixel(in, xx, yy),
                       in->format,
                       &mc->or, &mc->og, &mc->ob, &mc->alpha);
-          double u,v;
+
           fill_multichan(mc,&u,&v);
           // average out u and v, giving more weight to opaque high-saturation pixels
           // (this is to take an initial guess at the primary hue)
@@ -4920,6 +4949,20 @@ static void change_colors(SDL_Surface *out, multichan *work, double hue_range, m
 {
   double lower_hue_1,upper_hue_1,lower_hue_2,upper_hue_2;
   int xx,yy;
+  multichan dst;
+  double satratio;
+  double slope;
+  void (*putpixel)(SDL_Surface *, int, int, Uint32);
+  double old_sat;
+  double newsat;
+  double L;
+  double X,Y,Z;
+  double u_prime, v_prime; /* temp, part of official formula */
+  unsigned tries;
+  double u;
+  double v;
+  double r, g, b;
+
 
   // prepare source and destination color info
   // should reset hue_range or not? won't bother for now
@@ -4938,14 +4981,14 @@ static void change_colors(SDL_Surface *out, multichan *work, double hue_range, m
     }
 
   // get the destination color set up
-  multichan dst;
   dst.or = color_hexes[cur_color][0];
   dst.og = color_hexes[cur_color][1];
   dst.ob = color_hexes[cur_color][2];
   fill_multichan(&dst,NULL,NULL);
-  double satratio = dst.sat / key_color.sat;
-  double slope = (dst.L-key_color.L)/dst.sat;
-  void (*putpixel)(SDL_Surface *, int, int, Uint32) = putpixels[out->format->BytesPerPixel];
+
+  satratio = dst.sat / key_color.sat;
+  slope = (dst.L-key_color.L)/dst.sat;
+  putpixel = putpixels[out->format->BytesPerPixel];
 
   SDL_LockSurface(out);
   for (yy = 0; yy < out->h; yy++)
@@ -4953,7 +4996,6 @@ static void change_colors(SDL_Surface *out, multichan *work, double hue_range, m
       for (xx = 0; xx < out->w; xx++)
 	{
 	  multichan *mc = work+yy*out->w+xx;
-
           double oldhue = mc->hue;
 
           // if not in the first range, and not in the second range, skip this one
@@ -4965,21 +5007,19 @@ static void change_colors(SDL_Surface *out, multichan *work, double hue_range, m
 	    }
 
           // Modify the pixel
-          double old_sat = mc->sat;
-          double newsat = old_sat * satratio;
-          double L = mc->L;
+          old_sat = mc->sat;
+          newsat = old_sat * satratio;
+          L = mc->L;
           if(dst.sat>0)
 	    L  += newsat * slope; // not greyscale destination
           else
 	    L  += old_sat*(dst.L-key_color.L)/key_color.sat;
 
           // convert from L,u,v all the way back to sRGB with 8-bit channels
-          double X,Y,Z;
-          double u_prime, v_prime; /* temp, part of official formula */
-          unsigned tries = 3;
+          tries = 3;
 trysat:;
-          double u = newsat * sin(dst.hue);
-          double v = newsat * cos(dst.hue);
+          u = newsat * sin(dst.hue);
+          v = newsat * cos(dst.hue);
 
           // Luv to XYZ
           u_prime = u/(13.0*L)+u0_prime;
@@ -4989,9 +5029,9 @@ trysat:;
           Z = (3.0*Y - 0.75*Y*u_prime)/v_prime - 5.0*Y;
           
           // coordinate change: XYZ to RGB
-          double r =  3.2410*X + -1.5374*Y + -0.4986*Z;
-          double g = -0.9692*X +  1.8760*Y +  0.0416*Z;
-          double b =  0.0556*X + -0.2040*Y +  1.0570*Z;
+          r =  3.2410*X + -1.5374*Y + -0.4986*Z;
+          g = -0.9692*X +  1.8760*Y +  0.0416*Z;
+          b =  0.0556*X + -0.2040*Y +  1.0570*Z;
           
           // If it is out of gamut, try to de-saturate it a few times before truncating.
           // (the linear_to_sRGB function will truncate)
@@ -5016,7 +5056,13 @@ static multichan *find_most_saturated(double initial_hue, multichan * work,
   multichan *key_color_ptr = NULL;
   double hue_range;
   unsigned i;
-  
+  double max_sat;
+  double lower_hue_1;
+  double upper_hue_1;
+  double lower_hue_2;
+  double upper_hue_2;
+  multichan * mc;
+
   switch (stamp_data[cur_stamp]->tinter)
   {
     default:
@@ -5032,12 +5078,10 @@ static multichan *find_most_saturated(double initial_hue, multichan * work,
   }
 
 hue_range_retry:;
-  double max_sat = 0;
-  double lower_hue_1 = initial_hue - hue_range;
-  double upper_hue_1 = initial_hue + hue_range;
-  double lower_hue_2;
-  double upper_hue_2;
-  multichan * mc;
+
+  max_sat = 0;
+  lower_hue_1 = initial_hue - hue_range;
+  upper_hue_1 = initial_hue + hue_range;
   
   if (lower_hue_1 < -M_PI)
     {
@@ -5098,11 +5142,13 @@ static void vector_tint_surface(SDL_Surface * out, SDL_Surface * in)
       for (xx = 0; xx < in->w; xx++)
         {
           unsigned char r8, g8, b8, a8;
+	  double old;
+	  
           SDL_GetRGBA(getpixel(in, xx, yy),
                       in->format,
                       &r8, &g8, &b8, &a8);
           // get the linear greyscale value
-          double old = sRGB_to_linear_table[r8]*0.2126 + sRGB_to_linear_table[g8]*0.7152 + sRGB_to_linear_table[b8]*0.0722;
+          old = sRGB_to_linear_table[r8]*0.2126 + sRGB_to_linear_table[g8]*0.7152 + sRGB_to_linear_table[b8]*0.0722;
 
 	  putpixel(out, xx, yy,
 		   SDL_MapRGBA(out->format, linear_to_sRGB(r*old), linear_to_sRGB(g*old), linear_to_sRGB(b*old), a8));
@@ -5431,11 +5477,6 @@ static void do_brick(int x, int y, int w, int h)
 {
   SDL_Rect dest;
 
-  dest.x = x;
-  dest.y = y;
-  dest.w = w;
-  dest.h = h;
-
   // brick color: 127,76,73
   double ran_r = rand()/(double)RAND_MAX;
   double ran_g = rand()/(double)RAND_MAX;
@@ -5446,6 +5487,11 @@ static void do_brick(int x, int y, int w, int h)
   Uint8 r = linear_to_sRGB(base_r/7.5);
   Uint8 g = linear_to_sRGB(base_g/7.5);
   Uint8 b = linear_to_sRGB(base_b/7.5);
+
+  dest.x = x;
+  dest.y = y;
+  dest.w = w;
+  dest.h = h;
 
 
   SDL_FillRect(canvas, &dest, SDL_MapRGB(canvas->format, r, g, b));
@@ -5471,6 +5517,7 @@ static void blit_magic(int x, int y, int button_down)
   int undo_ctr;
   Uint32 (*getpixel_canvas)(SDL_Surface *, int, int) = getpixels[canvas->format->BytesPerPixel];
   void (*putpixel)(SDL_Surface *, int, int, Uint32) = putpixels[canvas->format->BytesPerPixel];
+  Uint32 (*getpixel_last)(SDL_Surface *, int, int);
 
 
   /* In case we need to use the current canvas (just saved to undo buf)... */
@@ -5481,7 +5528,7 @@ static void blit_magic(int x, int y, int button_down)
     undo_ctr = NUM_UNDO_BUFS - 1;
 
   last = undo_bufs[undo_ctr];
-  Uint32 (*getpixel_last)(SDL_Surface *, int, int) = getpixels[last->format->BytesPerPixel];
+  getpixel_last = getpixels[last->format->BytesPerPixel];
 
 
   brush_counter++;
@@ -5625,6 +5672,10 @@ static void blit_magic(int x, int y, int button_down)
 	  int horizontal_joint = 2; // between a brick and the one to the side
 	  int nominal_width    = 18;
 	  int nominal_height   = 12; // 11 to 14, for joints of 2
+	  static unsigned char *map;
+	  static int x_count;
+	  static int y_count;
+          unsigned char *mybrick;
 
 #if 0
 	  if (cur_magic == MAGIC_SMALLBRICK)
@@ -5658,9 +5709,7 @@ static void blit_magic(int x, int y, int button_down)
 	  specified_width  = nominal_width - horizontal_joint;
 	  specified_height = nominal_height - vertical_joint;
 	  specified_length = nominal_length - horizontal_joint;
-	  static unsigned char *map;
-	  static int x_count;
-	  static int y_count;
+
           if (!button_down)
             {
               if (map)
@@ -5674,7 +5723,7 @@ static void blit_magic(int x, int y, int button_down)
 	  brick_x = x / nominal_width;
 	  brick_y = y / nominal_height;
 
-          unsigned char *mybrick = map + brick_x+1 + (brick_y+1)*x_count;
+          mybrick = map + brick_x+1 + (brick_y+1)*x_count;
 
           if ( (unsigned)x < (unsigned)canvas->w && (unsigned)y < (unsigned)canvas->h && !*mybrick)
             {
@@ -5959,6 +6008,9 @@ static void blit_magic(int x, int y, int button_down)
 	{
 	  // grass color: 82,180,17
 	  static int bucket;
+	  double tmp_red, tmp_green, tmp_blue;
+	  Uint32 (*getpixel_grass)(SDL_Surface *, int, int);
+	  
 	  if (!button_down)
 	    bucket = 0;
 	  bucket += (3.5+(rand()/(double)RAND_MAX)) * 7.0;
@@ -5977,24 +6029,27 @@ static void blit_magic(int x, int y, int button_down)
 
 #if 1
               // grass color: 82,180,17
-              double tmp_red   = sRGB_to_linear_table[color_hexes[cur_color][0]]*2.0 + (rand()/(double)RAND_MAX);
-              double tmp_green = sRGB_to_linear_table[color_hexes[cur_color][1]]*2.0 + (rand()/(double)RAND_MAX);
-              double tmp_blue  = sRGB_to_linear_table[color_hexes[cur_color][2]]*2.0 + sRGB_to_linear_table[17];
 
-	      Uint32 (*getpixel_grass)(SDL_Surface *, int, int) = getpixels[img_grass->format->BytesPerPixel];
+              tmp_red   = sRGB_to_linear_table[color_hexes[cur_color][0]]*2.0 + (rand()/(double)RAND_MAX);
+              tmp_green = sRGB_to_linear_table[color_hexes[cur_color][1]]*2.0 + (rand()/(double)RAND_MAX);
+              tmp_blue  = sRGB_to_linear_table[color_hexes[cur_color][2]]*2.0 + sRGB_to_linear_table[17];
+
+	      getpixel_grass = getpixels[img_grass->format->BytesPerPixel];
 	      
 	      for (yy = 0; yy < ah; yy++)
 	        {
 	          for (xx = 0; xx < 64; xx++)
 		    {
+		      double rd, gd, bd;
+		      
 		      SDL_GetRGBA(getpixel_grass(img_grass, xx+src.x, yy+src.y), img_grass->format,
 			         &r, &g, &b, &a);
-
-                      double rd = sRGB_to_linear_table[r]*8.0 + tmp_red;
+		      
+                      rd = sRGB_to_linear_table[r]*8.0 + tmp_red;
                       rd = rd * (a/255.0) / 11.0;
-                      double gd = sRGB_to_linear_table[g]*8.0 + tmp_green;
+                      gd = sRGB_to_linear_table[g]*8.0 + tmp_green;
                       gd = gd * (a/255.0) / 11.0;
-                      double bd = sRGB_to_linear_table[b]*8.0 + tmp_blue;
+                      bd = sRGB_to_linear_table[b]*8.0 + tmp_blue;
                       bd = bd * (a/255.0) / 11.0;
 
 		      SDL_GetRGB(getpixel_canvas(canvas, xx+dest.x, yy+dest.y), canvas->format,
@@ -6294,6 +6349,10 @@ static int do_surfcmp(const SDL_Surface *const *const v1, const SDL_Surface *con
 {
   const SDL_Surface *const s1 = *v1;
   const SDL_Surface *const s2 = *v2;
+  int width;
+  int cmp;
+  int i;
+
   if(s1==s2)
     {
       printf("WTF?\n");
@@ -6316,19 +6375,22 @@ static int do_surfcmp(const SDL_Surface *const *const v1, const SDL_Surface *con
   if(s1->h != s2->h)
     return s1->h - s2->h;
 
-  const char *const c1 = (const char *const)s1->pixels;
-  const char *const c2 = (const char *const)s2->pixels;
-  int width = s1->format->BytesPerPixel * s1->w;
-  if(width==s1->pitch)
-    return memcmp(c1,c2,width*s1->h);
-  int cmp = 0;
-  int i = s1->h;
-  while(i--)
-    {
-      cmp = memcmp(c1 + i*s1->pitch, c2 + i*s2->pitch, width);
-      if(cmp)
-        break;
-    }
+  {
+    const char *const c1 = (char *const)s1->pixels;
+    const char *const c2 = (char *const)s2->pixels;
+    width = s1->format->BytesPerPixel * s1->w;
+    if(width==s1->pitch)
+      return memcmp(c1,c2,width*s1->h);
+    cmp = 0;
+    i = s1->h;
+    while(i--)
+      {
+	cmp = memcmp(c1 + i*s1->pitch, c2 + i*s2->pitch, width);
+	if(cmp)
+	  break;
+      }
+  }
+
   return cmp;
 }
 
@@ -6352,11 +6414,12 @@ static int charset_works(TTF_Font *font, const char *s)
     {
       char c[8];
       unsigned offset = 0;
+      SDL_Surface *tmp_surf;
       do
         c[offset++] = *s++;
         while((*s & 0xc0u) == 0x80u); // assume safe input
       c[offset++] = '\0';
-      SDL_Surface *tmp_surf = TTF_RenderUTF8_Blended(font, c, black);
+      tmp_surf = TTF_RenderUTF8_Blended(font, c, black);
       if(!tmp_surf)
         {
 #if 0
@@ -6404,29 +6467,33 @@ static void tp_ftw(char *restrict const dir, unsigned dirlen, int rsrc,
   void (*fn)(const char *restrict const dir, unsigned dirlen, tp_ftw_str *files, unsigned count)
   )
 {
-  dir[dirlen++] = '/';
-  dir[dirlen] = '\0';
-//printf("processing directory %s %d\n", dir, dirlen);
-  /* Open the directory: */
-  DIR *d = opendir(dir);
-  if (!d)
-    return;
-
+  DIR *d;
   unsigned num_file_names = 0;
   unsigned max_file_names = 0;
   tp_ftw_str *file_names = NULL;
   unsigned num_dir_names = 0;
   unsigned max_dir_names = 0;
   tp_ftw_str *dir_names = NULL;
+  int d_namlen;
+  int add_rsrc;
+
+  dir[dirlen++] = '/';
+  dir[dirlen] = '\0';
+//printf("processing directory %s %d\n", dir, dirlen);
+  /* Open the directory: */
+  d = opendir(dir);
+  if (!d)
+    return;
 
   for(;;)
     {
       struct dirent * f = readdir(d);
+      int filetype = TP_FTW_UNKNOWN;
+
       if(!f)
         break;
       if(f->d_name[0]=='.')
         continue;
-      int filetype = TP_FTW_UNKNOWN;
 // Linux and BSD can often provide file type info w/o the stat() call
 #ifdef DT_UNKNOWN
       switch(f->d_type)
@@ -6449,11 +6516,11 @@ static void tp_ftw(char *restrict const dir, unsigned dirlen, int rsrc,
 #endif
 
 #if defined(_DIRENT_HAVE_D_NAMLEN) || defined(__APPLE__) || defined(__OpenBSD__) || defined(__NetBSD__) || defined(__FreeBSD__)
-      int d_namlen = f->d_namlen;
+      d_namlen = f->d_namlen;
 #else
-      int d_namlen = strlen(f->d_name);
+      d_namlen = strlen(f->d_name);
 #endif
-      int add_rsrc = 0;
+      add_rsrc = 0;
 
       if(filetype == TP_FTW_UNKNOWN)
         {
@@ -6474,12 +6541,14 @@ static void tp_ftw(char *restrict const dir, unsigned dirlen, int rsrc,
         }
       if(filetype==TP_FTW_NORMAL)
         {
+          char *cp;
+
           if(num_file_names==max_file_names)
             {
               max_file_names = max_file_names * 5 / 4 + 30;
               file_names = realloc(file_names, max_file_names * sizeof *file_names);
             }
-          char *cp = malloc(d_namlen + add_rsrc + 1);
+          cp = malloc(d_namlen + add_rsrc + 1);
           memcpy(cp, f->d_name, d_namlen);
           if(add_rsrc)
             memcpy(cp+d_namlen, "/rsrc", 6);
@@ -6491,12 +6560,13 @@ static void tp_ftw(char *restrict const dir, unsigned dirlen, int rsrc,
         }
       if(filetype==TP_FTW_DIRECTORY)
         {
+	  char * cp;
           if(num_dir_names==max_dir_names)
             {
               max_dir_names = max_dir_names * 5 / 4 + 3;
               dir_names = realloc(dir_names, max_dir_names * sizeof *dir_names);
             }
-          char *cp = malloc(d_namlen + 1);
+          cp = malloc(d_namlen + 1);
           memcpy(cp, f->d_name, d_namlen + 1);
           dir_names[num_dir_names].str = cp;
           dir_names[num_dir_names].len = d_namlen;
@@ -6542,9 +6612,9 @@ static void loadfont_callback(const char *restrict const dir, unsigned dirlen, t
 {
   while(i--)
     {
-      show_progress_bar();
       int loadable = 0;
       const char *restrict const cp = strchr(files[i].str, '.');
+      show_progress_bar();
       if(cp)
         {
           // need gcc 3.4 for the restrict in this location
@@ -6572,9 +6642,10 @@ static void loadfont_callback(const char *restrict const dir, unsigned dirlen, t
       if (loadable)
         {
           char fname[512];
+          TTF_Font *font;
           snprintf(fname, sizeof fname, "%s/%s", dir, files[i].str);
 //printf("Loading font: %s\n", fname);
-          TTF_Font *font = TTF_OpenFont(fname, text_sizes[text_size]);
+          font = TTF_OpenFont(fname, text_sizes[text_size]);
           if(font)
             {
               const char *restrict const family = TTF_FontFaceFamilyName(font);
@@ -6746,12 +6817,13 @@ static unsigned default_stamp_size;
 
 static void loadstamp_finisher(stamp_type *sd, unsigned w, unsigned h, double ratio)
 {
+  unsigned int upper = HARD_MAX_STAMP_SIZE;
+  unsigned int lower = 0;
+  unsigned mid;
+
   /* If Tux Paint is in mirror-image-by-default mode, mirror, if we can: */
   if (mirrorstamps && sd->mirrorable)
     sd->mirrored = 1;
-
-  unsigned int upper = HARD_MAX_STAMP_SIZE;
-  unsigned int lower = 0;
 
   do
   {
@@ -6789,7 +6861,7 @@ static void loadstamp_finisher(stamp_type *sd, unsigned w, unsigned h, double ra
     lower = upper;
   }
 
-  unsigned mid = default_stamp_size;
+  mid = default_stamp_size;
   if(ratio != 1.0)
      mid = compute_default_scale_factor(ratio);
 
@@ -6809,13 +6881,13 @@ static void loadstamp_finisher(stamp_type *sd, unsigned w, unsigned h, double ra
 static void set_active_stamp(void)
 {
   stamp_type *sd = stamp_data[cur_stamp];
+  unsigned len = strlen(sd->stampname);
+  char *buf = alloca(len + strlen("_mirror.png") + 1);
 
   if(active_stamp)
     SDL_FreeSurface(active_stamp);
   active_stamp = NULL;
   
-  unsigned len = strlen(sd->stampname);
-  char *buf = alloca(len + strlen("_mirror.png") + 1);
   memcpy(buf, sd->stampname, len);
 
   if(sd->mirrored && !sd->no_premirror)
@@ -6842,10 +6914,13 @@ static void get_stamp_thumb(stamp_type *sd)
   SDL_Surface *bigimg = NULL;
   unsigned len = strlen(sd->stampname);
   char *buf = alloca(len + strlen("_mirror.png") + 1);
-  memcpy(buf, sd->stampname, len);
   SDL_Surface *wrongmirror = NULL;
   int need_mirror = 0;
   double ratio;
+  unsigned w;
+  unsigned h;
+
+  memcpy(buf, sd->stampname, len);
 
   if(!sd->processed)
     {
@@ -6921,8 +6996,8 @@ static void get_stamp_thumb(stamp_type *sd)
         need_mirror = 1;  // want to mirror after scaling
     }
 
-  unsigned w = 40;
-  unsigned h = 40;
+  w = 40;
+  h = 40;
   if(bigimg)
     {
       w = bigimg->w;
@@ -6960,9 +7035,9 @@ static void loadstamp_callback(const char *restrict const dir, unsigned dirlen, 
   while(i--)
     {
       char fname[512];
-      show_progress_bar();
-
       char *dotpng = strcasestr(files[i].str, ".png");
+
+      show_progress_bar();
 
       if (dotpng>files[i].str && !strcasecmp(dotpng,".png") && (dotpng-files[i].str+1+dirlen < sizeof fname) && !strcasestr(files[i].str, "_mirror.png"))
         {
@@ -6996,9 +7071,9 @@ static void load_stamp_dir(const char * const dir)
 
 static void load_stamps(void)
 {
-  default_stamp_size = compute_default_scale_factor(1.0);
-
   char * homedirdir = get_fname("stamps");
+
+  default_stamp_size = compute_default_scale_factor(1.0);
 
   load_stamp_dir(homedirdir);
   load_stamp_dir(DATA_PREFIX "stamps");
@@ -7025,6 +7100,8 @@ static void load_stamps(void)
 
 static int load_user_fonts(void *vp)
 {
+  char *homedirdir;
+
   (void)vp; // junk passed by threading library
 
   loadfonts(DATA_PREFIX "fonts");
@@ -7060,7 +7137,7 @@ static int load_user_fonts(void *vp)
 #endif
   }
 
-  char *homedirdir = get_fname("fonts");
+  homedirdir = get_fname("fonts");
   loadfonts(homedirdir);
   free(homedirdir);
 #ifdef WIN32
@@ -7100,6 +7177,7 @@ static int load_user_fonts(void *vp)
 
 static void reliable_write(int fd, const void *buf, size_t count)
 {
+  struct pollfd p;
   do
     {
       ssize_t rc = write(fd,buf,count);
@@ -7112,7 +7190,7 @@ static void reliable_write(int fd, const void *buf, size_t count)
               case EAGAIN:
               case ENOSPC:
                 ; // satisfy a C syntax abomination
-                struct pollfd p = (struct pollfd){fd, POLLOUT, 0};
+                p = (struct pollfd){fd, POLLOUT, 0};
                 poll(&p, 1, -1);  // try not to burn CPU time
                 // FALL THROUGH
               case EINTR:
@@ -7127,6 +7205,7 @@ static void reliable_write(int fd, const void *buf, size_t count)
 
 static void reliable_read(int fd, void *buf, size_t count)
 {
+  struct pollfd p;
   do
     {
       ssize_t rc = read(fd,buf,count);
@@ -7138,7 +7217,7 @@ static void reliable_read(int fd, void *buf, size_t count)
                 return;
               case EAGAIN:
                 ; // satisfy a C syntax abomination
-                struct pollfd p = (struct pollfd){fd, POLLIN, 0};
+                p = (struct pollfd){fd, POLLIN, 0};
                 poll(&p, 1, -1);  // try not to burn CPU time
                 // FALL THROUGH
               case EINTR:
@@ -7156,6 +7235,9 @@ static void reliable_read(int fd, void *buf, size_t count)
 static void run_font_scanner(void)
 {
   int sv[2];
+  int size, i;
+  char * buf, * walk;
+
   if(socketpair(AF_UNIX, SOCK_STREAM, 0, sv))
     exit(42);
   font_scanner_pid = fork();
@@ -7177,8 +7259,9 @@ static void run_font_scanner(void)
   SDL_Init(SDL_INIT_NOPARACHUTE);
   TTF_Init();
   load_user_fonts(NULL);
-  int size = 0;
-  int i = num_font_families;
+
+  size = 0;
+  i = num_font_families;
   while(i--)
     {
       char *s;
@@ -7197,8 +7280,8 @@ static void run_font_scanner(void)
       size += 6;  // for '\0' on each of the above
     }
   size += 2;  // for 2-byte font count
-  char *buf = malloc(size);
-  char *walk = buf;
+  buf = malloc(size);
+  walk = buf;
   printf("Sending %u bytes with %u families.\n", size, num_font_families);
   *walk++ = num_font_families & 0xffu;
   *walk++ = num_font_families >> 8u;
@@ -7271,6 +7354,13 @@ static void receive_some_font_info(void)
   char *buf = NULL;
   unsigned buf_size = 0;
   unsigned buf_fill = 0;
+  ssize_t rc;
+  struct pollfd p;
+  int status;
+  unsigned char *walk;
+  unsigned i;
+  family_info *fip;
+
   fcntl(font_socket_fd, F_SETFL, O_NONBLOCK);
   for(;;)
     {
@@ -7279,7 +7369,7 @@ static void receive_some_font_info(void)
           buf_size = buf_size*5/4+256;
           buf = realloc(buf, buf_size);
         }
-      ssize_t rc = read(font_socket_fd, buf+buf_fill, buf_size-buf_fill);
+      rc = read(font_socket_fd, buf+buf_fill, buf_size-buf_fill);
 //printf("read: fd=%d buf_fill=%u buf_size=%u rc=%ld\n", font_socket_fd, buf_fill, buf_size, rc);
       if(rc==-1)
         {
@@ -7289,7 +7379,7 @@ static void receive_some_font_info(void)
                 return;
               case EAGAIN:
                 ; // satisfy a C syntax abomination
-                struct pollfd p = (struct pollfd){font_socket_fd, POLLIN, 0};
+                p = (struct pollfd){font_socket_fd, POLLIN, 0};
                 show_progress_bar();
                 poll(&p, 1, 29);  // try not to burn CPU time
                 continue;
@@ -7303,7 +7393,6 @@ static void receive_some_font_info(void)
     }
   close(font_socket_fd);
 
-  int status;
   waitpid(font_scanner_pid,&status,0);
   if(WIFSIGNALED(status))
     {
@@ -7312,17 +7401,17 @@ static void receive_some_font_info(void)
     }
 
   show_progress_bar();
-  unsigned char *walk = buf;
+  walk = buf;
   num_font_families = *walk++;
   num_font_families += *walk++ << 8u;
   printf("Got %u bytes with %u families.\n", buf_fill, num_font_families);
   user_font_families = malloc(num_font_families * sizeof *user_font_families);
-  family_info *fip = malloc(num_font_families * sizeof **user_font_families);
-  unsigned i = num_font_families;
+  fip = malloc(num_font_families * sizeof **user_font_families);
+  i = num_font_families;
   while(i--)
     {
-      user_font_families[i] = fip+i;
       unsigned len;
+      user_font_families[i] = fip+i;
 
       len = strlen(walk);
       user_font_families[i]->directory = len ? walk : NULL;
@@ -7377,6 +7466,14 @@ static void setup(int argc, char * argv[])
   Uint8 r, g, b;
 #endif
   SDL_Surface * tmp_imgcurup, * tmp_imgcurdown;
+  Uint32 init_flags;
+  char tmp_str[128];
+  SDL_Surface *img1;
+  SDL_Surface *img2;
+  Uint32 (*getpixel_tmp_btn_up)(SDL_Surface *, int, int);
+  Uint32 (*getpixel_tmp_btn_down)(SDL_Surface *, int, int);
+  Uint32 (*getpixel_img2)(SDL_Surface *, int, int);
+  
 
 
 #if defined(__BEOS__) || defined(WIN32)
@@ -7959,7 +8056,7 @@ static void setup(int argc, char * argv[])
   }
 
 
-  Uint32 init_flags = SDL_INIT_VIDEO|SDL_INIT_TIMER;
+  init_flags = SDL_INIT_VIDEO|SDL_INIT_TIMER;
   if(use_sound)
     init_flags |= SDL_INIT_AUDIO;
   if(!fullscreen)
@@ -7969,9 +8066,9 @@ static void setup(int argc, char * argv[])
   if (SDL_Init(init_flags) < 0)
     {
 #ifndef NOSOUND
+      char *olderr = strdup(SDL_GetError());
       use_sound = 0;
       init_flags &= ~SDL_INIT_AUDIO;
-      char *olderr = strdup(SDL_GetError());
       if (SDL_Init(init_flags) >= 0)
         {
           // worked, w/o sound
@@ -8127,7 +8224,6 @@ static void setup(int argc, char * argv[])
       exit(1);
     }
 
-  char tmp_str[128];
   snprintf(tmp_str, sizeof(tmp_str), "%s – %s", VER_VERSION, VER_DATE);
   tmp_surf = render_text(medium_font, tmp_str, black);
   dest.x = 20 + (WINDOW_WIDTH - img_title->w) / 2;
@@ -8460,9 +8556,9 @@ static void setup(int argc, char * argv[])
       if (strlen(title_names[i]) > 0)
 	{
 	  TTF_Font * myfont = large_font;
+          char *td_str = textdir(gettext(title_names[i]));
 	  if (need_own_font && strcmp(gettext(title_names[i]), title_names[i]))
 	    myfont = locale_font;
-          char *td_str = textdir(gettext(title_names[i]));
           upstr = uppercase(td_str);
           free(td_str);
           tmp_surf = render_text(myfont, upstr, black);
@@ -8483,8 +8579,8 @@ static void setup(int argc, char * argv[])
 #ifndef LOW_QUALITY_COLOR_SELECTOR
 
   /* Create appropriately-shaped buttons: */
-  SDL_Surface *img1 = loadimage(DATA_PREFIX "images/ui/paintwell.png");
-  SDL_Surface *img2 = thumbnail(img1,        color_button_w, color_button_h, 0);
+  img1 = loadimage(DATA_PREFIX "images/ui/paintwell.png");
+  img2 = thumbnail(img1,        color_button_w, color_button_h, 0);
   tmp_btn_up        = thumbnail(img_btn_up,  color_button_w, color_button_h, 0);
   tmp_btn_down      = thumbnail(img_btn_down,color_button_w, color_button_h, 0);
   img_color_btn_off = thumbnail(img_btn_off, color_button_w, color_button_h, 0);
@@ -8523,26 +8619,29 @@ static void setup(int argc, char * argv[])
   SDL_LockSurface(tmp_btn_down);
   SDL_LockSurface(tmp_btn_up);
 
-  Uint32 (*getpixel_tmp_btn_up)(SDL_Surface *, int, int) = getpixels[tmp_btn_up->format->BytesPerPixel];
-  Uint32 (*getpixel_tmp_btn_down)(SDL_Surface *, int, int) = getpixels[tmp_btn_down->format->BytesPerPixel];
-  Uint32 (*getpixel_img2)(SDL_Surface *, int, int) = getpixels[img2->format->BytesPerPixel];
+  getpixel_tmp_btn_up = getpixels[tmp_btn_up->format->BytesPerPixel];
+  getpixel_tmp_btn_down = getpixels[tmp_btn_down->format->BytesPerPixel];
+  getpixel_img2 = getpixels[img2->format->BytesPerPixel];
   
 
   for (y = 0; y < tmp_btn_up->h /* 48 */; y++)
     {
       for (x = 0; x < tmp_btn_up->w /* (WINDOW_WIDTH - 96) / NUM_COLORS */; x++)
 	{
-	  SDL_GetRGB(getpixel_tmp_btn_up(tmp_btn_up, x, y), tmp_btn_up->format, &r, &g, &b);
-	  double ru = sRGB_to_linear_table[r];
-	  double gu = sRGB_to_linear_table[g];
-	  double bu = sRGB_to_linear_table[b];
-	  SDL_GetRGB(getpixel_tmp_btn_down(tmp_btn_down, x, y), tmp_btn_down->format, &r, &g, &b);
-	  double rd = sRGB_to_linear_table[r];
-	  double gd = sRGB_to_linear_table[g];
-	  double bd = sRGB_to_linear_table[b];
+	  double ru, gu, bu, rd, gd, bd, aa;
 	  Uint8 a;
+
+	  SDL_GetRGB(getpixel_tmp_btn_up(tmp_btn_up, x, y), tmp_btn_up->format, &r, &g, &b);
+	  
+	  ru = sRGB_to_linear_table[r];
+	  gu = sRGB_to_linear_table[g];
+	  bu = sRGB_to_linear_table[b];
+	  SDL_GetRGB(getpixel_tmp_btn_down(tmp_btn_down, x, y), tmp_btn_down->format, &r, &g, &b);
+	  rd = sRGB_to_linear_table[r];
+	  gd = sRGB_to_linear_table[g];
+	  bd = sRGB_to_linear_table[b];
 	  SDL_GetRGBA(getpixel_img2(img2, x, y), img2->format, &r, &g, &b, &a);
-	  double aa = a/255.0;
+	  aa = a/255.0;
 
 	  for (i = 0; i < NUM_COLORS; i++)
 	    {
@@ -8644,12 +8743,13 @@ static SDL_Surface * do_render_button_label(const char * const label)
   SDL_Surface * tmp_surf, * surf;
   SDL_Color black = {0, 0, 0, 0};
   TTF_Font * myfont = small_font;
+  char *td_str = textdir(gettext(label));
+  char *upstr = uppercase(td_str);
+
+  free(td_str);
 
   if (need_own_font && strcmp(gettext(label), label))
     myfont = locale_font;
-  char *td_str = textdir(gettext(label));
-  char *upstr = uppercase(td_str);
-  free(td_str);
   tmp_surf = render_text(myfont, upstr, black);
   free(upstr);
   surf = thumbnail(tmp_surf, min(48, tmp_surf->w), tmp_surf->h, 0);
@@ -9180,7 +9280,7 @@ static void draw_brushes(void)
 /* Draw fonts: */
 static void draw_fonts(void)
 {
-  int i, off_y, max, font;
+  int i, off_y, max, font, most;
   SDL_Rect dest, src;
   SDL_Surface * tmp_surf;
   SDL_Color black = {0, 0, 0, 0};
@@ -9191,7 +9291,7 @@ static void draw_fonts(void)
 
   /* How many can we show? */
 
-  int most = 10;
+  most = 10;
   if (disable_stamp_controls)
     most = 14;
 
@@ -9788,6 +9888,7 @@ static SDL_Surface * thumbnail(SDL_Surface * src, int max_x, int max_y,
   Uint8 r, g, b, a;
   float xscale, yscale;
   int tmp;
+  void (*putpixel)(SDL_Surface *, int, int, Uint32);
   Uint32 (*getpixel)(SDL_Surface *, int, int) = getpixels[src->format->BytesPerPixel];
 
 
@@ -9847,7 +9948,7 @@ static SDL_Surface * thumbnail(SDL_Surface * src, int max_x, int max_y,
       exit(1);
     }
 
-  void (*putpixel)(SDL_Surface *, int, int, Uint32) = putpixels[s->format->BytesPerPixel];
+  putpixel= putpixels[s->format->BytesPerPixel];
 
   /* Create thumbnail itself: */
 
@@ -10129,6 +10230,9 @@ static void putpixel32(SDL_Surface * surface, int x, int y, Uint32 pixel)
 // XOR must be exactly 100% perfectly reversable.
 static void xorpixel(int x, int y)
 {
+  Uint8 * p;
+  int BytesPerPixel;
+
   // if outside the canvas, return
   if( (unsigned)x >= (unsigned)canvas->w || (unsigned)y >= (unsigned)canvas->h)
     return;
@@ -10136,9 +10240,8 @@ static void xorpixel(int x, int y)
   x += r_canvas.x;
   y += r_canvas.y;
 
-  Uint8 * p;
   // Always 4, except 3 when loading a saved image.
-  int BytesPerPixel = screen->format->BytesPerPixel;
+  BytesPerPixel = screen->format->BytesPerPixel;
 
   // Set a pointer to the exact location in memory of the pixel
   p = (Uint8 *) (((Uint8 *)screen->pixels) + /* Start: beginning of RAM */
@@ -11775,6 +11878,7 @@ static int do_prompt_image_flash_snd(const char * const text, const char * const
   int i;
   SDL_Surface * alpha_surf;
 #endif
+  int img1_w, img2_w, img3_w, max_img_w, img_x, img_y, offset;
 
 
   /* FIXME: Move elsewhere! Or not?! */
@@ -11862,8 +11966,6 @@ static int do_prompt_image_flash_snd(const char * const text, const char * const
      for them: */
 
   /* FIXME: This needs to be fixed for right-to-left interfaces! */
-
-  int img1_w, img2_w, img3_w, max_img_w, img_x, img_y, offset;
 
   offset = img1_w = img2_w = img3_w = 0;
   
@@ -13026,10 +13128,10 @@ static int do_ps_save(FILE * fi, const char *restrict  const fname, SDL_Surface 
   int x, y;
   char buf[256];
   Uint32 (*getpixel)(SDL_Surface *, int, int) = getpixels[surf->format->BytesPerPixel];
+  time_t t = time(NULL);
   
   fprintf(fi, "%%!PS-Adobe-3.0 EPSF-3.0\n");  // probably broken, but close enough maybe
   fprintf(fi, "%%%%Title: (%s)\n", fname);
-  time_t t = time(NULL);
   strftime(buf, sizeof buf - 1, "%a %b %e %H:%M:%S %Y", localtime(&t));
   fprintf(fi, "%%%%CreationDate: (%s)\n", buf);
   fprintf(fi, "%%%%Creator: (Tux Paint " VER_VERSION ", " VER_DATE ")\n");
@@ -14276,14 +14378,20 @@ static void update_stamp_xor(void)
   int xx, yy, rx, ry;
   Uint8 dummy;
   SDL_Surface * src;
+  Uint32 (*getpixel)(SDL_Surface *, int, int);
+  unsigned char *alphabits;
+  int new_w;
+  int new_h;
+  unsigned char *outline;
+  char *old_outline_data;
 
   src = active_stamp;
 
   // start by scaling
   src = thumbnail(src, CUR_STAMP_W, CUR_STAMP_H, 0);
 
-  Uint32 (*getpixel)(SDL_Surface *, int, int) = getpixels[src->format->BytesPerPixel];
-  unsigned char *alphabits = calloc(src->w+4, src->h+4);
+  getpixel = getpixels[src->format->BytesPerPixel];
+  alphabits = calloc(src->w+4, src->h+4);
 
   SDL_LockSurface(src);
   for (yy = 0; yy < src->h; yy++)
@@ -14298,10 +14406,10 @@ static void update_stamp_xor(void)
     }
   SDL_UnlockSurface(src);
 
-  int new_w = src->w+4;
-  int new_h = src->h+4;
+  new_w = src->w+4;
+  new_h = src->h+4;
   SDL_FreeSurface(src);
-  unsigned char *outline   = calloc(new_w, new_h);
+  outline   = calloc(new_w, new_h);
 
   for (yy = 1; yy < new_h-1; yy++)
     {
@@ -14345,7 +14453,7 @@ static void update_stamp_xor(void)
 	}
     }
 
-    char *old_outline_data = stamp_outline_data;
+    old_outline_data = stamp_outline_data;
     stamp_outline_data = outline;
     stamp_outline_w = new_w;
     stamp_outline_h = new_h;

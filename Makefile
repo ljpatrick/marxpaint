@@ -93,7 +93,8 @@ CFLAGS=-O2 -W -Wall -fno-common -ffast-math \
 	-Wcast-align -Wredundant-decls \
 	-Wbad-function-cast -Wwrite-strings \
 	-Waggregate-return \
-	-Wstrict-prototypes -Wmissing-prototypes
+	-Wstrict-prototypes -Wmissing-prototypes \
+	-Wdeclaration-after-statement
 
 DEFS=-DDATA_PREFIX=\"$(DATA_PREFIX)/\" \
 	-D$(NOSOUNDFLAG) -DDOC_PREFIX=\"$(DOC_PREFIX)/\" \
