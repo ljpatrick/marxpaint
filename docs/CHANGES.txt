@@ -7,7 +7,7 @@ bill@newbreedsoftware.com
 http://www.newbreedsoftware.com/tuxpaint/
 
 
-2005.Sept.4 (0.9.15)
+2005.Oct.2 (0.9.15)
 
   * uncatagorized and messy:
     -----------------------
@@ -325,6 +325,11 @@ http://www.newbreedsoftware.com/tuxpaint/
       Augustin KIBERWA <akiberwa@yahoo.co.uk>, 2005.
       Donatien NSENGIYUMVA <ndonatienuk@yahoo.co.uk>, 2005.
       Antoine Bigirimana <antoine@e-tools.com>, 2005.)
+
+    * Mexican Spanish
+      Ignacio Tike <ignaciotike@spymac.com>
+      Daniel Illingworth <webmaster@intermagen.net>
+      Luis C. Suárez M. <luiscsuarez@gmail.com>
 
     * Swahili translation created.
       Martin Benjamin <martin.benjamin@yale.edu>

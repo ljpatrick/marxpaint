@@ -6,7 +6,7 @@
 # bill@newbreedsoftware.com
 # http://www.newbreedsoftware.com/tuxpaint/
 
-# June 14, 2002 - Sept. 17, 2005
+# June 14, 2002 - October 2, 2005
 
 
 # Where to install things:
@@ -361,6 +361,7 @@ uninstall:
 	-rm $(LOCALE_PREFIX)/el/LC_MESSAGES/tuxpaint.mo
 	-rm $(LOCALE_PREFIX)/en_GB/LC_MESSAGES/tuxpaint.mo
 	-rm $(LOCALE_PREFIX)/es/LC_MESSAGES/tuxpaint.mo
+	-rm $(LOCALE_PREFIX)/es_MX/LC_MESSAGES/tuxpaint.mo
 	-rm $(LOCALE_PREFIX)/eu/LC_MESSAGES/tuxpaint.mo
 	-rm $(LOCALE_PREFIX)/fi/LC_MESSAGES/tuxpaint.mo
 	-rm $(LOCALE_PREFIX)/fr/LC_MESSAGES/tuxpaint.mo
@@ -804,6 +805,11 @@ install-gettext:
 	@cp trans/es.mo $(LOCALE_PREFIX)/es/LC_MESSAGES/tuxpaint.mo
 	@chmod 644 $(LOCALE_PREFIX)/es/LC_MESSAGES/tuxpaint.mo
 	@#
+	@echo "   es_MX ...Mexican Spanish..."
+	@install -d $(LOCALE_PREFIX)/es_MX/LC_MESSAGES
+	@cp trans/es_mx.mo $(LOCALE_PREFIX)/es_MX/LC_MESSAGES/tuxpaint.mo
+	@chmod 644 $(LOCALE_PREFIX)/es_MX/LC_MESSAGES/tuxpaint.mo
+	@#
 	@echo "   sw_TZ ...Swahili..."
 	@install -d $(LOCALE_PREFIX)/sw/LC_MESSAGES
 	@cp trans/sw.mo $(LOCALE_PREFIX)/sw/LC_MESSAGES/tuxpaint.mo
@@ -957,6 +963,7 @@ translations: trans \
 	trans/el.mo \
 	trans/en_gb.mo \
 	trans/es.mo \
+	trans/es_mx.mo \
 	trans/eu.mo \
 	trans/fi.mo \
 	trans/fr.mo \
@@ -1056,6 +1063,10 @@ trans/en_gb.mo:	src/po/en_gb.po
 trans/es.mo:	src/po/es.po
 	@echo "   es_ES ...Spanish..."
 	@msgfmt -o trans/es.mo src/po/es.po
+
+trans/es_mx.mo:	src/po/es_mx.po
+	@echo "   es_MX ...Mexcian Spanish..."
+	@msgfmt -o trans/es_mx.mo src/po/es_mx.po
 
 trans/eu.mo:	src/po/eu.po
 	@echo "   eu_ES ...Basque..."

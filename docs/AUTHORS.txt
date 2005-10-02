@@ -7,7 +7,7 @@ bill@newbreedsoftware.com
 http://www.newbreedsoftware.com/tuxpaint/
 
 
-June 17, 2002 - July 26, 2005
+June 17, 2002 - October 2, 2005
 
 
 * Design and Coding:
@@ -244,6 +244,11 @@ June 17, 2002 - July 26, 2005
 
   * Spanish
     Gabriel Gazzan <ggabriel@internet.com.uy>
+
+  * Spanish (Mexico)
+    Ignacio Tike <ignaciotike@spymac.com>
+    Daniel Illingworth <webmaster@intermagen.net>
+    Luis C. Suárez <luiscsuarez@gmail.com>
 
   * Swahili
     Martin Benjamin <martin.benjamin@yale.edu>

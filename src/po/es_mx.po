@@ -1,0 +1,408 @@
+msgid ""
+msgstr "Project-Id-Version: TuxPaint 0.9.2\nReport-Msgid-Bugs-To: \nPOT-Creation-Date: 2005-01-06 12:31+0100\nPO-Revision-Date: 2005-01-09 18:18-0300\nLast-Translator: Gabriel Gazzán <ggabriel@internet.com.uy>\nLanguage-Team: Español <ggabriel@internet.com.uy>\nMIME-Version: 1.0\nContent-Type: text/plain; charset=UTF-8\n 8bit\n"
+
+msgid "A drawing program for children."
+msgstr "Un programa de dibujo para niños."
+
+msgid "Drawing program"
+msgstr "Programa de dibujo"
+
+msgid "Tux Paint"
+msgstr "Tux Paint"
+
+msgid "Black!"
+msgstr "¡Negro!"
+
+msgid "Dark Gray!"
+msgstr "Gris oscuro"
+
+msgid "Light Grey!"
+msgstr "Gris claro"
+
+msgid "White!"
+msgstr "¡Blanco!"
+
+msgid "Red!"
+msgstr "¡Rojo!"
+
+msgid "Orange!"
+msgstr "¡Naranja!"
+
+msgid "Yellow!"
+msgstr "¡Amarillo!"
+
+msgid "Neon green!"
+msgstr "Verde Neón"
+
+msgid "Green!"
+msgstr "¡Verde!"
+
+msgid "Sky blue!"
+msgstr "¡Azul Cielo!"
+
+msgid "Blue!"
+msgstr "¡Azul!"
+
+msgid "Purple!"
+msgstr "¡Púrpura!"
+
+msgid "Magenta!"
+msgstr "¡Magenta!"
+
+msgid "Pink!"
+msgstr "¡Rosa!"
+
+msgid "Brown!"
+msgstr "¡Café!"
+
+msgid "Tan!"
+msgstr "Broncear!"
+
+msgid "Beige!"
+msgstr "¡Beige!"
+
+msgid "Great!"
+msgstr "¡Grandioso!"
+
+msgid "Cool!"
+msgstr "¡Genial!"
+
+msgid "Keep it up!"
+msgstr "¡Sigue así!"
+
+msgid "Good job!"
+msgstr "¡Buen trabajo!"
+
+msgid "Fill"
+msgstr "Rellenar"
+
+msgid "Grass"
+msgstr "Hierba"
+
+msgid "Bricks"
+msgstr "Ladrillos"
+
+msgid "Rainbow"
+msgstr "Arcoiris"
+
+msgid "Sparkles"
+msgstr "Chispas"
+
+msgid "Blur"
+msgstr "Borrosidad"
+
+msgid "Smudge"
+msgstr "Mancha"
+
+msgid "Fade"
+msgstr "Desvanecer"
+
+msgid "Darken"
+msgstr "Oscurecer"
+
+msgid "Chalk"
+msgstr "Gis"
+
+msgid "Blocks"
+msgstr "Bloques"
+
+msgid "Negative"
+msgstr "Negativo"
+
+msgid "Tint"
+msgstr "Tinta"
+
+msgid "Drip"
+msgstr "Goteo"
+
+msgid "Cartoon"
+msgstr "Caricatura"
+
+msgid "Mirror"
+msgstr "Espejo"
+
+msgid "Flip"
+msgstr "Voltear"
+
+msgid "Click in the picture to fill that area with color."
+msgstr "Haga click en la imagen para rellenar esa área con color."
+
+msgid "Click and move to draw grass. Don't forget the dirt!"
+msgstr "Hacer click y mover para dibujar el pasto. ¡No olvide la tierra!"
+
+msgid "Click and move to draw large bricks."
+msgstr "Hacer click y mover para dibujar ladrillos grandes"
+
+msgid "Click and move to draw small bricks."
+msgstr "Hacer click y mover para dibujar ladrillos pequeños"
+
+msgid "You can draw in rainbow colors!"
+msgstr "¡Puede dibujar con los colores del arcoiris!"
+
+msgid "Click and move to draw sparkles."
+msgstr "Hacer click y mover para dibujar chispas"
+
+msgid "Click and move the mouse around to blur the picture."
+msgstr "Haga click y mueva el ratón alrededor para difuminar la pintura."
+
+msgid "Click and move the mouse around to smudge the picture."
+msgstr "Haga click y mueva el ratón alrededor para manchar la pintura"
+
+msgid "Click and move to fade the colors."
+msgstr "Hacer click y mover para desvanecer los colores."
+
+msgid "Click and move to darken the colors."
+msgstr "Hacer click y mover para oscurecer los colores."
+
+msgid "Click and move the mouse around to turn the picture into a chalk drawing."
+msgstr "Haga click y mueva el ratón alrededor para convertir la pintura en un dibujo de tiza."
+
+msgid "Click and move the mouse around to make the picture blocky."
+msgstr "Presione el botón y mueva el ratón para hacer la imágen en bloques."
+
+msgid "Click and move the mouse around to draw a negative."
+msgstr "Presione el botón y mueva el ratón para generar un negativo."
+
+msgid "Click and move the mouse around to change the picture's color."
+msgstr "Presione el botón y mueva el ratón para cambiar el color de la imágen."
+
+msgid "Click and move the mouse around to make the picture drip."
+msgstr "Presione el botón y mueva el ratón para hacer que la imágen gotée."
+
+msgid "Click and move the mouse around to turn the picture into a cartoon."
+msgstr "Presione el botón y mueva el ratón para convertir la imágen en caricatura"
+
+msgid "Click to make a mirror image."
+msgstr "Presione el botón para hacer una imágen espejo"
+
+msgid "Click to flip the picture upside-down."
+msgstr "Presione el botón para voltear la imágen de arriba a abajo"
+
+msgid "Square"
+msgstr "Cuadrado"
+
+msgid "Rectangle"
+msgstr "Rectángulo"
+
+msgid "Circle"
+msgstr "Círculo"
+
+msgid "Oval"
+msgstr "Ovalo"
+
+msgid "Triangle"
+msgstr "TRIANGULO"
+
+msgid "Pentagon"
+msgstr "Pentágono"
+
+msgid "Diamond"
+msgstr "Rombo"
+
+msgid "A square has four sides, each the same length."
+msgstr "Un cuadrado tiene cuatro lados, todos del mismo largo."
+
+msgid "A rectangle has four sides."
+msgstr "Un rectángulo tiene cuatro lados."
+
+msgid "A circle is exactly round."
+msgstr "Un círculo es exactamente redondo."
+
+msgid "A triangle has three sides."
+msgstr "Un triángulo tiene tres lados."
+
+msgid "A pentagon has five sides."
+msgstr "Un pentágono tiene cinco lados."
+
+msgid "A diamond is a square, turned around slightly."
+msgstr "Un rombo es un cuadrado un poco deformado."
+
+msgid "Tools"
+msgstr "Herramientas"
+
+msgid "Colors"
+msgstr "Colores"
+
+msgid "Brushes"
+msgstr "Pinceles"
+
+msgid "Erasers"
+msgstr "Borradores"
+
+msgid "Stamps"
+msgstr "Sellos"
+
+msgid "Shapes"
+msgstr "Formas"
+
+msgid "Letters"
+msgstr "LEtras"
+
+msgid "Magic"
+msgstr "Magia"
+
+msgid "Paint"
+msgstr "Pintura"
+
+msgid "Stamp"
+msgstr "Sello"
+
+msgid "Lines"
+msgstr "Lineas"
+
+msgid "Text"
+msgstr "Texto"
+
+msgid "Undo"
+msgstr "Deshacer"
+
+msgid "Redo"
+msgstr "Rehacer"
+
+msgid "Eraser"
+msgstr "Borrador"
+
+msgid "New"
+msgstr "Nuevo"
+
+msgid "Open"
+msgstr "Abrir"
+
+msgid "Save"
+msgstr "Guardar"
+
+msgid "Print"
+msgstr "Imprimir"
+
+msgid "Quit"
+msgstr "Salir"
+
+msgid "Pick a color and a brush shape to draw with."
+msgstr "Elige un color y una forma de pincel para dibujar."
+
+msgid "Pick a picture to stamp around your drawing."
+msgstr "Escoja una imagen para usar como sello en su dibujo"
+
+msgid "Click to start drawing a line. Let go to complete it."
+msgstr "Haga click para empezar a dibujar una línea.  Suelte el botón para terminarla."
+
+msgid "Pick a shape. Click to pick the center, drag, then let go when it is the size you want. Move around to rotate it, and click to draw it."
+msgstr "Escoja una figura.  Haga click para seleccionar el centro, deslice, luego suelte el botón cuando sea del<br> tamaño deseado.  Mueva el ratón para rotar la figura y haga click para dibujarla."
+
+msgid "Choose a style of text. Click on your drawing and you can start typing."
+msgstr "Selecciona un estilo de texto. Haz click en tu dibujo y podrás empezar a escribir."
+
+msgid "Pick a magical effect to use on your drawing!"
+msgstr "¡Elige un efecto mágico para usar en tu dibujo!"
+
+msgid "Undo!"
+msgstr "¡Deshacer!"
+
+msgid "Redo!"
+msgstr "¡Rehacer!"
+
+msgid "Eraser!"
+msgstr "¡Borrador!"
+
+msgid "You now have a blank sheet to draw on!"
+msgstr "¡Ahora tienes una hoja en blanco para dibujar!"
+
+msgid "Open…"
+msgstr "Abrir..."
+
+msgid "Your image has been saved!"
+msgstr "¡Tu imagen ha sido guardada!"
+
+msgid "Printing…"
+msgstr "Imprimiendo..."
+
+msgid "Bye bye!"
+msgstr "¡Adiós!"
+
+msgid "Let go of the button to complete the line."
+msgstr "Suelte el botón para completar la línea."
+
+msgid "Hold the button to stretch the shape."
+msgstr "Mantenga el botón presionado para estirar la forma"
+
+msgid "Move the mouse to rotate the shape. Click to draw it."
+msgstr "Mueva el ratón para rotar la forma.  Click para dibujarla."
+
+msgid "OK then… Let’s keep drawing this one!"
+msgstr "OK entonces... ¡Sigamos dibujando esto!"
+
+msgid "Do you really want to quit?"
+msgstr "¿Realmente quieres salir?"
+
+msgid "Yes"
+msgstr "Si"
+
+msgid "No"
+msgstr "No"
+
+msgid "If you quit, you’ll lose your picture! Save it?"
+msgstr "Si sales, ¡perderás tu pintura!\n¿Guardarla?"
+
+msgid "Save your picture first?"
+msgstr "¿Guardar tu imagen primero?"
+
+msgid "Can’t open that picture!"
+msgstr "No se puede abrir esa imágen!"
+
+msgid "OK"
+msgstr "OK"
+
+msgid "Starting a new picture will erase the current one!"
+msgstr "¡Empezar una nueva imagen borrará la actual!"
+
+msgid "That’s OK!"
+msgstr "¡Está bien!"
+
+msgid "Never mind!"
+msgstr "Olvídalo!"
+
+msgid "There are no saved files!"
+msgstr "¡No hay archivos guardados!"
+
+msgid "Print your picture now?"
+msgstr "¿Imprimir tu imagen ahora?"
+
+msgid "Your picture has been printed!"
+msgstr "¡Tu imagen ha sido impresa!"
+
+msgid "You can’t print yet!"
+msgstr "¡Aún no puedes imprimir!"
+
+msgid "Erase this picture?"
+msgstr "¿Borrar esta imagen?"
+
+msgid "Erase"
+msgstr "Borrar"
+
+msgid "Back"
+msgstr "Atrás"
+
+msgid "Aa"
+msgstr "Aa"
+
+msgid "Save over the older version of this picture?"
+msgstr "¿Guardar sobre la versión anterior de esta imagen?"
+
+msgid "No, save a new file"
+msgstr "No, guardar en nuevo archivo"
+
+msgid "Choose the picture you want, then click “Open”."
+msgstr "Selecciona la imagen que quieres, luego haz click en \"Abrir\"."
+
+msgid "Rhombus"
+msgstr "Rombo"
+
+msgid "A square has four equal sides and L-shaped corners."
+msgstr "Un cuadrado tiene cuatro lados iguales y esquinas en forma de L."
+
+msgid "A rectangle has four sides and L-shaped corners."
+msgstr "Un rectángulo tiene cuatro lados y esquinas en forma de L."
+
+msgid "A rhombus has four equal sides."
+msgstr "Un rombo tiene cuatro lados iguales."
+

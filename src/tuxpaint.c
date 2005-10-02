@@ -22,12 +22,12 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
   
-  June 14, 2002 - September 12, 2005
+  June 14, 2002 - October 2, 2005
 */
 
 
 #define VER_VERSION     "0.9.15"
-#define VER_DATE        "2005-09-12"
+#define VER_DATE        "2005-10-02"
 
 
 /* Color depth for Tux Paint to run in, and store canvases in: */
@@ -545,6 +545,7 @@ enum {
   LANG_EN,     /* English (American) (DEFAULT) */
   LANG_EN_GB,  /* English (British) */
   LANG_ES,     /* Spanish */
+  LANG_ES_MX,  /* Spanish (Mexican) */
   LANG_ET,     /* Estonian */
   LANG_EU,     /* Basque */
   LANG_FI,     /* Finnish */
@@ -819,6 +820,7 @@ static void show_lang_usage(FILE * f, const char * const prg)
 /* ko */     "  korean\n"
 /* lt */     "  lithuanian   lietuviu\n"
 /* ms */     "  malay\n"
+/* es_MX */  "  mexican      mexican-spanish        espanol-mejicano\n"
 /* nn */     "  norwegian    nynorsk                norsk\n"
 /* pl */     "  polish       polski\n"
 /* pt_PT */  "  portuguese   portugues\n"
@@ -898,6 +900,7 @@ static void show_locale_usage(FILE * f, const char * const prg)
 	  "  sq_AL   (Albanian)\n"
 	  "  sr_YU   (Serbian)\n"
 	  "  es_ES   (Spanish      Espanol)\n"
+	  "  es_MX   (Mexican      Mexican Spanish       Espanol Mejicano)\n"
 	  "  sw_TZ   (Swahili)\n"
 	  "  sv_SE   (Swedish      Svenska)\n"
 	  "  th_TH   (Thai)\n"
@@ -938,6 +941,9 @@ static const language_to_locale_struct language_to_locale_array[] = {
 {"british-english",      "en_GB.UTF-8"},
 {"british",              "en_GB.UTF-8"},
 {"spanish",              "es_ES.UTF-8"},
+{"mexican",              "es_MX.UTF-8"},
+{"mexican-spanish",      "es_MX.UTF-8"},
+{"espanol-mejicano",     "es_MX.UTF-8"},
 {"espanol",              "es_ES.UTF-8"},
 {"finnish",              "fi_FI.UTF-8"},
 {"suomi",                "fi_FI.UTF-8"},
