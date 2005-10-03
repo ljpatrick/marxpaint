@@ -1,7 +1,7 @@
 # Tux Paint Korean messages
-# Copyright (C) 2002-2004 Mark K. Kim
+# Copyright (C) 2002-2005 Mark K. Kim
 # Translation: Mark K. Kim (김강현) <tuxNO_SOLICITATIONpaint-dev@cbreak.org>,
-# 2003-2004.
+# 2003-2005.
 #
 # This file is distributed under the same license as the Tux Paint program.
 #
@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Tux Paint 0.9.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2005-01-06 12:31+0100\n"
+"POT-Creation-Date: 2005-02-19 23:58+0100\n"
 "PO-Revision-Date: 2005-10-03 00:15-0700\n"
 "Last-Translator: Mark K. Kim <tuxNO_SOLICITATIONpaint-dev@cbreak.org>\n"
 "Language-Team: N/A\n"
@@ -30,19 +30,17 @@ msgstr "턱스페인트"
 msgid "Black!"
 msgstr "검정색!"
 
-msgid "Dark Gray!"
+msgid "Dark grey! Some people spell it “dark gray”."
 msgstr "어두운 회색!"
 
-#. using both valid spellings
-msgid "Light Grey!"
+msgid "Light grey! Some people spell it “light gray”."
 msgstr "밝은 회색!"
 
-#. using both valid spellings
 msgid "White!"
 msgstr "흰색!"
 
 msgid "Red!"
-msgstr "빨간색"
+msgstr "빨간색!"
 
 msgid "Orange!"
 msgstr "오렌지색!"
@@ -50,11 +48,11 @@ msgstr "오렌지색!"
 msgid "Yellow!"
 msgstr "노란색!"
 
-msgid "Neon green!"
-msgstr "네온색!"
+msgid "Light green!"
+msgstr "연두색!"
 
-msgid "Green!"
-msgstr "녹색!"
+msgid "Dark green!"
+msgstr "청녹색!"
 
 msgid "Sky blue!"
 msgstr "하늘색!"
@@ -62,11 +60,11 @@ msgstr "하늘색!"
 msgid "Blue!"
 msgstr "파란색!"
 
+msgid "Lavender!"
+msgstr "엷은 자주색!"
+
 msgid "Purple!"
 msgstr "자주색!"
-
-msgid "Magenta!"
-msgstr "자홍색!"
 
 msgid "Pink!"
 msgstr "핑크색!"
@@ -113,7 +111,7 @@ msgstr "흐리게"
 msgid "Smudge"
 msgstr "번지게"
 
-msgid "Fade"
+msgid "Lighten"
 msgstr "사라지게"
 
 msgid "Darken"
@@ -144,27 +142,22 @@ msgid "Flip"
 msgstr "뒤집기"
 
 msgid "Click in the picture to fill that area with color."
-msgstr ""
-"마우스를 누르면 물통을 엎을 수 있어요!"
+msgstr "마우스를 누르면 물통을 엎을 수 있어요!"
 
-msgid "Click and move to draw grass. Don't forget the dirt!"
-msgstr ""
-"마우스를 누르면 풀이 그려져요. 땅도 그리는 것 잊지 마세요!"
+msgid "Click and move to draw grass. Don’t forget the dirt!"
+msgstr "마우스를 누르면 풀이 그려져요. 땅도 그리는 것 잊지 마세요!"
 
 msgid "Click and move to draw large bricks."
-msgstr ""
-"마우스를 누르면 큰 벽돌이 그려져요!"
+msgstr "마우스를 누르면 큰 벽돌이 그려져요!"
 
 msgid "Click and move to draw small bricks."
-msgstr ""
-"마우스를 누르면 작은 벽돌이 그려져요!"
+msgstr "마우스를 누르면 작은 벽돌이 그려져요!"
 
 msgid "You can draw in rainbow colors!"
 msgstr "여러가지의 색으로 그림을 그려 보세요."
 
 msgid "Click and move to draw sparkles."
-msgstr ""
-"마우스를 누르면 불꽃이 터지는 것 같은 그림이 나와요."
+msgstr "마우스를 누르면 불꽃이 터지는 것 같은 그림이 나와요."
 
 msgid "Click and move the mouse around to blur the picture."
 msgstr "마우스를 누르면 그림을 흐리게 만들 수 있어요."
@@ -180,8 +173,7 @@ msgstr "마우스를 누르면 그림을 어둡게 만들 수 있어요."
 
 msgid ""
 "Click and move the mouse around to turn the picture into a chalk drawing."
-msgstr ""
-"마우스를 누르면 그림이 분필로 만든 것 같이 되어요."
+msgstr "마우스를 누르면 그림이 분필로 만든 것 같이 되어요."
 
 msgid "Click and move the mouse around to make the picture blocky."
 msgstr "마우스를 누르면 그림이 네모나게 되어요."
@@ -189,7 +181,7 @@ msgstr "마우스를 누르면 그림이 네모나게 되어요."
 msgid "Click and move the mouse around to draw a negative."
 msgstr "마우스를 누르면 그림의 색이 뒤집어져요."
 
-msgid "Click and move the mouse around to change the picture's color."
+msgid "Click and move the mouse around to change the picture’s color."
 msgstr "마우스를 누르면 그림이 색이 변화돼요."
 
 msgid "Click and move the mouse around to make the picture drip."
@@ -213,8 +205,8 @@ msgstr "사각형"
 msgid "Circle"
 msgstr "원"
 
-msgid "Oval"
-msgstr "달걀형"
+msgid "Ellipse"
+msgstr "타원"
 
 msgid "Triangle"
 msgstr "삼각형"
@@ -222,17 +214,21 @@ msgstr "삼각형"
 msgid "Pentagon"
 msgstr "5각형"
 
-msgid "Diamond"
-msgstr "다이아형"
+msgid "Rhombus"
+msgstr "마름모꼴"
 
-msgid "A square has four sides, each the same length."
+msgid "A square is a rectangle with four equal sides."
 msgstr "4개의 면이 다 똑같은 길이의 모양이 '정사각형' 입니다."
 
-msgid "A rectangle has four sides."
+msgid "A rectangle has four sides and four right angles."
 msgstr "4개의 면이 있는 모양이 '사각형' 입니다."
 
-msgid "A circle is exactly round."
+msgid ""
+"A circle is a curve where all points have the same distance from the centre."
 msgstr "해같이 둥그런 모양이 '동그라미' 입니다."
+
+msgid "An ellipse is a stretched circle."
+msgstr "타원은 달걀같이 찌그러진 원형을 말합니다."
 
 msgid "A triangle has three sides."
 msgstr "3개의 면이 있는 모양이 '삼각형' 입니다."
@@ -240,8 +236,8 @@ msgstr "3개의 면이 있는 모양이 '삼각형' 입니다."
 msgid "A pentagon has five sides."
 msgstr "5개의 면이 있는 모양이 '5각형' 입니다."
 
-msgid "A diamond is a square, turned around slightly."
-msgstr "다이아몬드형은 정사각형을 약간 옆으로 돌려놓은 모양 입니다."
+msgid "A rhombus has four equal sides, and opposite sides are parallel."
+msgstr "마름모꼴은 사면의 길이가 같고, 반대의 두면이 평행선인 형을 말합니다."
 
 msgid "Tools"
 msgstr "도구"
@@ -311,9 +307,7 @@ msgid "Pick a picture to stamp around your drawing."
 msgstr "도장 그림을 고르세요."
 
 msgid "Click to start drawing a line. Let go to complete it."
-msgstr ""
-"마우스의 버튼을 누르는 곳이 줄의 시작점 입니다. 버튼을 놓는곳이 종료점 입니"
-"다."
+msgstr "마우스의 버튼을 누르는 곳이 줄의 시작점 입니다. 버튼을 놓는곳이 종료점 입니다."
 
 msgid ""
 "Pick a shape. Click to pick the center, drag, then let go when it is the "
@@ -419,14 +413,14 @@ msgstr "아직 인쇄 하지 못합니다!"
 msgid "Erase this picture?"
 msgstr "이 그림을 지울까요?"
 
+msgid "Remember to use the left mouse button!"
+msgstr "왼쪽 마우스버튼을 사용하는걸 잊지 마세요!"
+
 msgid "Erase"
 msgstr "지우기"
 
 msgid "Back"
 msgstr "되 돌아가기"
-
-msgid "Aa"
-msgstr "아"
 
 #. FIXME: Move elsewhere!!!
 msgid "Save over the older version of this picture?"
@@ -437,22 +431,3 @@ msgstr "아니요, 새로운 파일로 저장하죠"
 
 msgid "Choose the picture you want, then click “Open”."
 msgstr "원하는 그림을 고른후 '열기'버튼을 눌러주세요."
-
-#~ msgid "Lime!"
-#~ msgstr "라임색!"
-
-#~ msgid "Fuchsia!"
-#~ msgstr "퓨셔색!"
-
-#~ msgid "Silver!"
-#~ msgstr "은색!"
-
-#~ msgid "Thick"
-#~ msgstr "두껍게"
-
-#~ msgid "Click and move the mouse to thicken the picture."
-#~ msgstr ""
-#~ "그림을 두껍게 만들려면 마우스 버튼을 누른 상태로 마우스를 움직이세요."
-
-#~ msgid "Click and move the mouse to thin the picture."
-#~ msgstr "그림을 얇게 만들려면 버튼을 누른 상태로 마우스를 움직이세요."
