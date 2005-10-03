@@ -180,7 +180,8 @@ msgstr "마우스를 누르면 그림을 어둡게 만들 수 있어요."
 
 msgid ""
 "Click and move the mouse around to turn the picture into a chalk drawing."
-msgstr "마우스를 누르면 그림이 분필로 만든 것 같이 되어요."
+msgstr ""
+"마우스를 누르면 그림이 분필로 만든 것 같이 되어요."
 
 msgid "Click and move the mouse around to make the picture blocky."
 msgstr "마우스를 누르면 그림이 네모나게 되어요."
