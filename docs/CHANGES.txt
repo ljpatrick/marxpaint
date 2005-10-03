@@ -357,6 +357,7 @@ http://www.newbreedsoftware.com/tuxpaint/
 
     * Dutch
       Geert Stams <geertstams@wanadoo.nl>
+      Michael de Rooij <micr@zeelandnet.nl>
     
     * French
       Jacques Chion <Jacques.Chion@wanadoo.fr>

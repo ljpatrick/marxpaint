@@ -7,7 +7,7 @@ bill@newbreedsoftware.com
 http://www.newbreedsoftware.com/tuxpaint/
 
 
-June 17, 2002 - October 2, 2005
+June 17, 2002 - October 3, 2005
 
 
 * Design and Coding:
@@ -125,6 +125,7 @@ June 17, 2002 - October 2, 2005
   * Dutch
     Herman Bruyninckx <Herman.Bruyninckx@mech.kuleuven.ac.be>
     Geert Stams <geertstams@wanadoo.nl>
+    Michael de Rooij <micr@zeelandnet.nl>
 
   * Estonian
     Henrik Pihl <henrik@saarlane.ee>
