@@ -374,6 +374,9 @@ http://www.newbreedsoftware.com/tuxpaint/
     * Japanese
       TOYAMA Shin-ichi <shin1@wmail.plala.or.jp>
 
+    * Korean
+      Mark K. Kim <tuxNO_SOLICITATIONpaint-dev@cbreak.org>
+
     * Lithuanian
       Gintaras Go?tautas <gintaras@nes.lt>
 

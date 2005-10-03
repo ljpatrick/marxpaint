@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: Tux Paint 0.9.14\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2005-01-06 12:31+0100\n"
-"PO-Revision-Date: 2004-07-07 01:25-0700\n"
+"PO-Revision-Date: 2005-10-03 00:15-0700\n"
 "Last-Translator: Mark K. Kim <tuxNO_SOLICITATIONpaint-dev@cbreak.org>\n"
 "Language-Team: N/A\n"
 "MIME-Version: 1.0\n"
@@ -19,10 +19,10 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 msgid "A drawing program for children."
-msgstr "어린이를 위한 그림 프로그램"
+msgstr "어린이를 위한 미술 프로그램"
 
 msgid "Drawing program"
-msgstr "그림 프로그램"
+msgstr "미술 프로그램"
 
 msgid "Tux Paint"
 msgstr "턱스페인트"
@@ -30,13 +30,12 @@ msgstr "턱스페인트"
 msgid "Black!"
 msgstr "검정색!"
 
-#, fuzzy
 msgid "Dark Gray!"
-msgstr "회색!"
+msgstr "어두운 회색!"
 
 #. using both valid spellings
 msgid "Light Grey!"
-msgstr ""
+msgstr "밝은 회색!"
 
 #. using both valid spellings
 msgid "White!"
@@ -52,13 +51,13 @@ msgid "Yellow!"
 msgstr "노란색!"
 
 msgid "Neon green!"
-msgstr ""
+msgstr "네온색!"
 
 msgid "Green!"
 msgstr "녹색!"
 
 msgid "Sky blue!"
-msgstr ""
+msgstr "하늘색!"
 
 msgid "Blue!"
 msgstr "파란색!"
@@ -67,7 +66,7 @@ msgid "Purple!"
 msgstr "자주색!"
 
 msgid "Magenta!"
-msgstr ""
+msgstr "자홍색!"
 
 msgid "Pink!"
 msgstr "핑크색!"
@@ -75,12 +74,11 @@ msgstr "핑크색!"
 msgid "Brown!"
 msgstr "갈색!"
 
-#, fuzzy
 msgid "Tan!"
-msgstr "청록색!"
+msgstr "살색!"
 
 msgid "Beige!"
-msgstr ""
+msgstr "낙타색!"
 
 msgid "Great!"
 msgstr "잘한다!"
@@ -97,13 +95,11 @@ msgstr "잘했어요!"
 msgid "Fill"
 msgstr "물통"
 
-#, fuzzy
 msgid "Grass"
-msgstr "지우기"
+msgstr "풀"
 
-#, fuzzy
 msgid "Bricks"
-msgstr "모자이크"
+msgstr "벽돌"
 
 msgid "Rainbow"
 msgstr "무지개"
@@ -115,32 +111,31 @@ msgid "Blur"
 msgstr "흐리게"
 
 msgid "Smudge"
-msgstr ""
+msgstr "번지게"
 
 msgid "Fade"
-msgstr "사라지기"
+msgstr "사라지게"
 
 msgid "Darken"
-msgstr ""
+msgstr "어둡게"
 
 msgid "Chalk"
 msgstr "분필"
 
 msgid "Blocks"
-msgstr "모자이크"
+msgstr "네모나게"
 
 msgid "Negative"
 msgstr "음화"
 
-#, fuzzy
 msgid "Tint"
-msgstr "얇게"
+msgstr "배합"
 
 msgid "Drip"
-msgstr "흘리기"
+msgstr "흘리게"
 
 msgid "Cartoon"
-msgstr ""
+msgstr "만화"
 
 msgid "Mirror"
 msgstr "거울"
@@ -150,80 +145,64 @@ msgstr "뒤집기"
 
 msgid "Click in the picture to fill that area with color."
 msgstr ""
-"연결된 부분의 색을 바꾸려면 마우스 버튼을 연결된 부분 아무대나 누르세요."
+"마우스를 누르면 물통을 엎을 수 있어요!"
 
-#, fuzzy
 msgid "Click and move to draw grass. Don't forget the dirt!"
 msgstr ""
-"불꽃으로 그림을 그릴려면 마우스 버튼을 누른 상태로 마우스를 움직이세요."
+"마우스를 누르면 풀이 그려져요. 땅도 그리는 것 잊지 마세요!"
 
-#, fuzzy
 msgid "Click and move to draw large bricks."
 msgstr ""
-"불꽃으로 그림을 그릴려면 마우스 버튼을 누른 상태로 마우스를 움직이세요."
+"마우스를 누르면 큰 벽돌이 그려져요!"
 
-#, fuzzy
 msgid "Click and move to draw small bricks."
 msgstr ""
-"불꽃으로 그림을 그릴려면 마우스 버튼을 누른 상태로 마우스를 움직이세요."
+"마우스를 누르면 작은 벽돌이 그려져요!"
 
 msgid "You can draw in rainbow colors!"
-msgstr "여러가지의 색으로 그림을 그리세요!"
+msgstr "여러가지의 색으로 그림을 그려 보세요."
 
 msgid "Click and move to draw sparkles."
 msgstr ""
-"불꽃으로 그림을 그릴려면 마우스 버튼을 누른 상태로 마우스를 움직이세요."
+"마우스를 누르면 불꽃이 터지는 것 같은 그림이 나와요."
 
 msgid "Click and move the mouse around to blur the picture."
-msgstr "그림을 흐리게 하려면 마우스 버튼을 누른 상태로 마우스를 움직이세요."
+msgstr "마우스를 누르면 그림을 흐리게 만들 수 있어요."
 
-#, fuzzy
 msgid "Click and move the mouse around to smudge the picture."
-msgstr "그림을 흐리게 하려면 마우스 버튼을 누른 상태로 마우스를 움직이세요."
+msgstr "마우스를 누르면 그림을 번지게 만들 수 있어요."
 
 msgid "Click and move to fade the colors."
-msgstr "색을 희미하게 하려면 마우스 버튼을 누르고 움직이세요."
+msgstr "마우스를 누르면 그림을 희미하게 만들 수 있어요."
 
-#, fuzzy
 msgid "Click and move to darken the colors."
-msgstr "색을 희미하게 하려면 마우스 버튼을 누르고 움직이세요."
+msgstr "마우스를 누르면 그림을 어둡게 만들 수 있어요."
 
 msgid ""
 "Click and move the mouse around to turn the picture into a chalk drawing."
 msgstr ""
-"그림을 분필로 그린 것 같이 만들려면 마우스 버튼을 누른 상태로 마우스를 움직이"
-"세요."
+msgstr "마우스를 누르면 그림이 분필로 만든 것 같이 되어요."
 
 msgid "Click and move the mouse around to make the picture blocky."
-msgstr "모자이크를 만들려면 마우스 버튼을 누른 상태로 마우스를 움직이세요."
+msgstr "마우스를 누르면 그림이 네모나게 되어요."
 
 msgid "Click and move the mouse around to draw a negative."
-msgstr ""
-"그림의 색을 음화로 바꾸려면 마우스 버튼을 누른 상태로 마우스를 움직이세요."
+msgstr "마우스를 누르면 그림의 색이 뒤집어져요."
 
-#, fuzzy
 msgid "Click and move the mouse around to change the picture's color."
-msgstr "모자이크를 만들려면 마우스 버튼을 누른 상태로 마우스를 움직이세요."
+msgstr "마우스를 누르면 그림이 색이 변화돼요."
 
 msgid "Click and move the mouse around to make the picture drip."
-msgstr ""
-"그림이 밑으로 흐르는 것 같이 만들려면 마우스 버튼을 누른 상태로 마우스를 움직"
-"이세요."
+msgstr "마우스를 누르면 그림이 흐르는 것 같이 되어요."
 
-#, fuzzy
 msgid "Click and move the mouse around to turn the picture into a cartoon."
-msgstr ""
-"그림을 분필로 그린 것 같이 만들려면 마우스 버튼을 누른 상태로 마우스를 움직이"
-"세요."
+msgstr "마우스를 누르면 그림이 만화 같이 변화돼요."
 
 msgid "Click to make a mirror image."
-msgstr "그림을 옆으로 뒤집으려면 마우스버튼을 누르세요."
+msgstr "마우스를 누르면 그림이 뒤집어져요."
 
-# "magical effect" is hard to translate. Korean translation uses
-# a question to make it easier to convey our message lacking the word
-# for "magical effect."
 msgid "Click to flip the picture upside-down."
-msgstr "그림을 위로 뒤집으려면 마우스 버튼을 누르세요."
+msgstr "마우스를 누르면 그림이 엎어져요."
 
 msgid "Square"
 msgstr "정사각형"
@@ -253,7 +232,7 @@ msgid "A rectangle has four sides."
 msgstr "4개의 면이 있는 모양이 '사각형' 입니다."
 
 msgid "A circle is exactly round."
-msgstr "해나 달같이 둥그런 모양이 '동그라미' 입니다."
+msgstr "해같이 둥그런 모양이 '동그라미' 입니다."
 
 msgid "A triangle has three sides."
 msgstr "3개의 면이 있는 모양이 '삼각형' 입니다."
@@ -273,7 +252,6 @@ msgstr "색"
 msgid "Brushes"
 msgstr "붓"
 
-#, fuzzy
 msgid "Erasers"
 msgstr "지우개"
 
@@ -356,7 +334,7 @@ msgstr "전 상태로!"
 
 #. Redo
 msgid "Redo!"
-msgstr "다시 상채로!"
+msgstr "다시 상태로!"
 
 #. Eraser
 msgid "Eraser!"
@@ -364,7 +342,7 @@ msgstr "지우개!"
 
 #. New
 msgid "You now have a blank sheet to draw on!"
-msgstr "그림 다 지워졌습니다.  새 그림을 시작하세요!"
+msgstr "그림이 다 지워졌습니다.  새 그림을 시작하세요!"
 
 #. Open
 msgid "Open…"
@@ -383,14 +361,13 @@ msgid "Bye bye!"
 msgstr "안녕!"
 
 msgid "Let go of the button to complete the line."
-msgstr "줄을 완성하려면 마우스의 버튼을 놓으세요."
+msgstr "마우스를 놓으면 줄이 완성돼요."
 
 msgid "Hold the button to stretch the shape."
-msgstr "모양을 늘리려면 마우스를 버튼을 누른 상태로 움직이세요."
+msgstr "마우스를 누르고 옮기면 모양이 늘려져요."
 
 msgid "Move the mouse to rotate the shape. Click to draw it."
-msgstr ""
-"(1) 마우스를 움직여 모양을 돌리세요.  (2) 마우스 버튼을 눌러 완성 시키세요."
+msgstr "마우스를 옮기면 모양이 돌려져요. 마우스를 누르면 그림이 만들어 져요."
 
 msgid "OK then… Let’s keep drawing this one!"
 msgstr "그럼, 계속 그림을 그리세요!"
@@ -410,7 +387,7 @@ msgid "If you quit, you’ll lose your picture! Save it?"
 msgstr "그림을 저장않하고 종료 하면 그림이 없어져요! 저장할까요?"
 
 msgid "Save your picture first?"
-msgstr "먼저 그림을 저장할까요?"
+msgstr "먼저, 그림을 저장할까요?"
 
 msgid "Can’t open that picture!"
 msgstr "그 그림은 열지 못합니다!"
@@ -449,7 +426,7 @@ msgid "Back"
 msgstr "되 돌아가기"
 
 msgid "Aa"
-msgstr ""
+msgstr "아"
 
 #. FIXME: Move elsewhere!!!
 msgid "Save over the older version of this picture?"
