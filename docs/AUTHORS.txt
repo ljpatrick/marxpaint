@@ -255,6 +255,7 @@ June 17, 2002 - October 2, 2005
     Alberto Escudero-Pascual <aep@it46.se>
 
   * Swedish
+    Magnus Dahl <magnus.dahl@bredband.net>
     Daniel Andersson <daniel@septum.org> [retired]
 
   * Tamil
