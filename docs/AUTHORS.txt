@@ -221,7 +221,8 @@ June 17, 2002 - October 3, 2005
 
   * Portuguese (Brazilian)
     Daniel José Viana <danjovic@vespanet.com.br>
-    Dedicated to my beloved daughter Scarlet
+      - Dedicated to my beloved daughter Scarlet
+    Silvio Faria <sirofa2003@yahoo.com.br>
  
   * Portuguese (Portugal)
     Ricardo Cruz <rick2@aeiou.pt>
