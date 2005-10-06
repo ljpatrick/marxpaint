@@ -22,12 +22,12 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
   
-  June 14, 2002 - October 2, 2005
+  June 14, 2002 - October 5, 2005
 */
 
 
 #define VER_VERSION     "0.9.15"
-#define VER_DATE        "2005-10-02"
+#define VER_DATE        "2005-10-05"
 
 
 /* Color depth for Tux Paint to run in, and store canvases in: */
@@ -298,7 +298,9 @@ extern WrapperData macosx;
 #define SDL_mutexV(lock)  // release lock
 #endif
 
+#ifndef FORKED_FONTS
 static SDL_Thread *font_thread;
+#endif
 static volatile long font_thread_done;
 static void run_font_scanner(void);
 static int font_scanner_pid;
@@ -2248,8 +2250,9 @@ static void rec_undo_buffer(void);
 static void show_usage(FILE * f, char * prg);
 static void setup(int argc, char * argv[]);
 void signal_handler(int sig);
-static SDL_Cursor * get_cursor(char * bits, char * mask_bits,
-		        int w, int h, int x, int y);
+static SDL_Cursor * get_cursor(unsigned char * bits, unsigned char * mask_bits,
+			       unsigned int w, unsigned int h,
+			       unsigned int x, unsigned int y);
 static void seticon(void);
 static SDL_Surface * loadimage(const char * const fname);
 static SDL_Surface * do_loadimage(const char * const fname, int abort_on_error);
@@ -2353,7 +2356,7 @@ static void strip_trailing_whitespace(char * buf);
 static void do_render_cur_text(int do_blit);
 static void loadfonts(const char * const dir);
 static char * uppercase(char * str);
-static unsigned char * textdir(const unsigned char * const str);
+static char * textdir(const char * const str);
 static SDL_Surface * do_render_button_label(const char * const label);
 static void create_button_labels(void);
 static int colors_close(Uint32 c1, Uint32 c2);
@@ -3337,7 +3340,7 @@ static void mainloop(void)
 	              int num_rows_needed;
 		      SDL_Rect r_controls;
 		      SDL_Rect r_notcontrols;
-		      SDL_Rect r_items = r_notcontrols;
+		      SDL_Rect r_items;// = r_notcontrols;
 	              int toolopt_changed;
 
 		      grid_dims gd_controls = {0,0}; // might become 2-by-2
@@ -3373,6 +3376,11 @@ static void mainloop(void)
 		      r_notcontrols.x = r_toolopt.x;
 		      r_notcontrols.y = r_toolopt.y;
 		      
+		      r_items.x = r_notcontrols.x;
+		      r_items.y = r_notcontrols.y;
+		      r_items.w = r_notcontrols.w;
+		      r_items.h = r_notcontrols.h;
+
 		      if(num_rows_needed * button_h > r_items.h)
 		        {
 		          // too many; we'll need scroll buttons
@@ -3888,7 +3896,7 @@ static void mainloop(void)
 	      int num_rows_needed;
 	      SDL_Rect r_controls;
 	      SDL_Rect r_notcontrols;
-	      SDL_Rect r_items = r_notcontrols;
+	      SDL_Rect r_items;// = r_notcontrols;
 	      
               // Scroll wheel code.
               // WARNING: this must be kept in sync with the mouse-move
@@ -3901,7 +3909,7 @@ static void mainloop(void)
                 {
                   grid_dims gd_controls = {0,0}; // might become 2-by-2
                   grid_dims gd_items = {2,2}; // generally becoming 2-by-whatever
-
+		  
                   /* Note set of things we're dealing with */
                   /* (stamps, brushes, etc.) */
                   
@@ -3915,7 +3923,7 @@ static void mainloop(void)
                       if(!disable_stamp_controls)
                         gd_controls = (grid_dims){2,2};
                     }
-
+		  
                   // number of whole or partial rows that will be needed
                   // (can make this per-tool if variable columns needed)
                   num_rows_needed = (num_things+gd_items.cols-1)/gd_items.cols;
@@ -3932,6 +3940,11 @@ static void mainloop(void)
                   r_notcontrols.x = r_toolopt.x;
                   r_notcontrols.y = r_toolopt.y;
                   
+		  r_items.x = r_notcontrols.x;
+		  r_items.y = r_notcontrols.y;
+		  r_items.w = r_notcontrols.w;
+		  r_items.h = r_notcontrols.h;
+		  
                   if(num_rows_needed * button_h > r_items.h)
                     {
                       // too many; we'll need scroll buttons
@@ -6617,6 +6630,8 @@ static void tp_ftw(char *restrict const dir, unsigned dirlen, int rsrc,
 
 static void loadfont_callback(const char *restrict const dir, unsigned dirlen, tp_ftw_str *files, unsigned i)
 {
+  dirlen = dirlen;
+
   while(i--)
     {
       int loadable = 0;
@@ -6717,6 +6732,8 @@ static void loadfonts(const char * const dir)
 
 static void loadbrush_callback(const char *restrict const dir, unsigned dirlen, tp_ftw_str *files, unsigned i)
 {
+  dirlen = dirlen;
+
   qsort(files, i, sizeof *files, compare_ftw_str);
   while(i--)
     {
@@ -7364,7 +7381,7 @@ static void receive_some_font_info(void)
   ssize_t rc;
   struct pollfd p;
   int status;
-  unsigned char *walk;
+  /* unsigned */ char *walk;
   unsigned i;
   family_info *fip;
 
@@ -8564,6 +8581,7 @@ static void setup(int argc, char * argv[])
 	{
 	  TTF_Font * myfont = large_font;
           char *td_str = textdir(gettext(title_names[i]));
+	  
 	  if (need_own_font && strcmp(gettext(title_names[i]), title_names[i]))
 	    myfont = locale_font;
           upstr = uppercase(td_str);
@@ -8737,6 +8755,7 @@ static void setup(int argc, char * argv[])
 #ifndef WIN32
 void signal_handler(int sig)
 {
+  sig = sig;
   /*
   if (sig == SIGPIPE)
     fprintf(stderr, "SIGPIPE!\n");
@@ -8839,12 +8858,13 @@ static void seticon(void)
 
 /* Load a mouse pointer (cursor) shape: */
 
-static SDL_Cursor * get_cursor(char * bits, char * mask_bits,
-		        int width, int height, int x, int y)
+static SDL_Cursor * get_cursor(unsigned char * bits, unsigned char * mask_bits,
+			       unsigned int width, unsigned int height,
+			       unsigned int x, unsigned int y)
 {
   Uint8 b;
   Uint8 temp_bitmap[128], temp_bitmask[128];
-  int i;
+  unsigned int i;
 
 
   if (((width + 7) / 8) * height > 128)
@@ -10810,9 +10830,9 @@ static void wordwrap_text(const char * const str, SDL_Color color,
       }
 
       if (want_right_to_left == 0)
-	locale_str = strdup(gettext(str));
+	locale_str = (unsigned char *) strdup(gettext(str));
       else
-	locale_str = textdir(gettext(str));
+	locale_str = (unsigned char *) textdir(gettext(str));
 
 
       /* For each UTF8 character: */
@@ -10820,7 +10840,7 @@ static void wordwrap_text(const char * const str, SDL_Color color,
       utf8_str_len = 0;
       utf8_str[0] = '\0';
 
-      for (i = 0; i <= strlen(locale_str); i++)
+      for (i = 0; i <= strlen((char *) locale_str); i++)
 	{
 	  if (locale_str[i] < 128)
 	    {
@@ -10832,7 +10852,7 @@ static void wordwrap_text(const char * const str, SDL_Color color,
 
 	      if (locale_str[i] == ' ' || locale_str[i] == '\0')
 		{
-		  text = render_text(locale_font, utf8_str, color);
+		  text = render_text(locale_font, (char *) utf8_str, color);
 
 		  if (!text) continue;  /* Didn't render anything... */
 
@@ -10897,7 +10917,7 @@ static void wordwrap_text(const char * const str, SDL_Color color,
 
 			  if (utf8_char[0] != '\0')
 			    {
-			      text = render_text(locale_font, utf8_char, color);
+			      text = render_text(locale_font, (char *) utf8_char, color);
 			      if (text != NULL)
 				{
 				  if (x + text->w > right)
@@ -14390,7 +14410,7 @@ static void update_stamp_xor(void)
   int new_w;
   int new_h;
   unsigned char *outline;
-  char *old_outline_data;
+  unsigned char *old_outline_data;
 
   src = active_stamp;
 
@@ -14460,13 +14480,13 @@ static void update_stamp_xor(void)
 	}
     }
 
-    old_outline_data = stamp_outline_data;
-    stamp_outline_data = outline;
-    stamp_outline_w = new_w;
-    stamp_outline_h = new_h;
-    if (old_outline_data)
-      free(old_outline_data);
-    free(alphabits);
+  old_outline_data = stamp_outline_data;
+  stamp_outline_data = outline;
+  stamp_outline_w = new_w;
+  stamp_outline_h = new_h;
+  if (old_outline_data)
+    free(old_outline_data);
+  free(alphabits);
 }
 
 static void stamp_xor(int x, int y)
@@ -14880,15 +14900,16 @@ static char * uppercase(char * str)
 
 /* Return string in right-to-left mode, if necessary: */
 
-static unsigned char * textdir(const unsigned char * const str)
+static char * textdir(const char * const str)
 {
   unsigned char * dstr;
   unsigned i, j;
-
+  unsigned char c1, c2, c3, c4;
+  
 #ifdef DEBUG
   printf("ORIG_DIR: %s\n", str);
 #endif
-
+  
   dstr = malloc(strlen(str) + 5);
 
   if (need_right_to_left)
@@ -14898,44 +14919,49 @@ static unsigned char * textdir(const unsigned char * const str)
       for (i = 0; i < strlen(str); i++)
 	{
 	  j = (strlen(str) - i - 1);
-      
-	  if (str[i] < 128)  /* 0xxx xxxx - 1 byte */
+	  
+	  c1 = (unsigned char) str[i + 0];
+	  c2 = (unsigned char) str[i + 1];
+	  c3 = (unsigned char) str[i + 2];
+	  c4 = (unsigned char) str[i + 3];
+	  
+	  if (c1 < 128)  /* 0xxx xxxx - 1 byte */
 	    {
 	      dstr[j] = str[i];
 	    }
-	  else if ((str[i] & 0xE0) == 0xC0)  /* 110x xxxx - 2 bytes */
+	  else if ((c1 & 0xE0) == 0xC0)  /* 110x xxxx - 2 bytes */
 	    {
-	      dstr[j - 1] = str[i + 0];
-	      dstr[j - 0] = str[i + 1];
+	      dstr[j - 1] = c1;
+	      dstr[j - 0] = c2;
 	      i = i + 1;
 	    }
-	  else if ((str[i] & 0xF0) == 0xE0)  /* 1110 xxxx - 3 bytes */
+	  else if ((c1 & 0xF0) == 0xE0)  /* 1110 xxxx - 3 bytes */
 	    {
-	      dstr[j - 2] = str[i + 0];
-	      dstr[j - 1] = str[i + 1];
-	      dstr[j - 0] = str[i + 2];
+	      dstr[j - 2] = c1;
+	      dstr[j - 1] = c2;
+	      dstr[j - 0] = c3;
 	      i = i + 2;
 	    }
 	  else  /* 1111 0xxx - 4 bytes */
 	    {
-	      dstr[j - 3] = str[i + 0];
-	      dstr[j - 2] = str[i + 1];
-	      dstr[j - 1] = str[i + 2];
-	      dstr[j - 0] = str[i + 3];
+	      dstr[j - 3] = c1;
+	      dstr[j - 2] = c2;
+	      dstr[j - 1] = c3;
+	      dstr[j - 0] = c4;
 	      i = i + 3;
 	    }
 	}
     }
   else
     {
-      strcpy(dstr, str);
+      strcpy((char *) dstr, str);
     }
 
 #ifdef DEBUG
   printf("L2R_DIR: %s\n", dstr);
 #endif
-
-  return (dstr);
+  
+  return ((char *) dstr);
 }
 
 
