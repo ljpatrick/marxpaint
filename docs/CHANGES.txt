@@ -7,7 +7,7 @@ bill@newbreedsoftware.com
 http://www.newbreedsoftware.com/tuxpaint/
 
 
-2005.Oct.3 (0.9.15)
+2005.Oct.5 (0.9.15)
 
   * uncatagorized and messy:
     -----------------------
@@ -115,6 +115,8 @@ http://www.newbreedsoftware.com/tuxpaint/
       displays (e.g., Mac monitors)
       Albert Cahalan <albert@users.sf.net>
   
+    * Now defaults to 800x600 screen size.  Welcome to the future. ;^)
+
     * Switched from using 16bpp display surfaces to 32bpp, to reduce
       discoloration. ("#define" options exist at the top of src/tuxpaint.c
       to choose which you want.)

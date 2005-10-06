@@ -7553,8 +7553,10 @@ static void setup(int argc, char * argv[])
   use_print_config = 0;
   mirrorstamps = 0;
   disable_stamp_controls = 0;
-  WINDOW_WIDTH = 640;
-  WINDOW_HEIGHT = 480;
+  //  WINDOW_WIDTH = 640;
+  //  WINDOW_HEIGHT = 480;
+  WINDOW_WIDTH = 800;
+  WINDOW_HEIGHT = 600;
   playfile = NULL;
   recording = 0;
   playing = 0;
