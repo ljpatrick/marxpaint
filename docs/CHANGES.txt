@@ -205,6 +205,8 @@ http://www.newbreedsoftware.com/tuxpaint/
       via a new "--altprintnever" option (and "altprint=never").
       (Default (where [Alt] must be held to show dialog) is "altprintmod".)
 
+    * Splash screen scales to different window sizes.
+
   * Bug fixes:
     -------------------
     * Untranslated text in right-to-left languages (e.g., Hebrew) are no

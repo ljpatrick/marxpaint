@@ -22,12 +22,12 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
   
-  June 14, 2002 - October 5, 2005
+  June 14, 2002 - October 6, 2005
 */
 
 
 #define VER_VERSION     "0.9.15"
-#define VER_DATE        "2005-10-05"
+#define VER_DATE        "2005-10-06"
 
 
 /* Color depth for Tux Paint to run in, and store canvases in: */
@@ -1490,7 +1490,8 @@ static SDL_Surface * undo_bufs[NUM_UNDO_BUFS];
 static int undo_starters[NUM_UNDO_BUFS];
 static int cur_undo, oldest_undo, newest_undo;
 
-static SDL_Surface * img_title, * img_progress;
+static SDL_Surface * img_title, * img_title_credits, * img_title_tuxpaint;
+static SDL_Surface * img_progress;
 static SDL_Surface * img_btn_up, * img_btn_down, * img_btn_off;
 static SDL_Surface * img_dead40x40;
 static SDL_Surface * img_black, * img_grey;
@@ -2582,9 +2583,12 @@ int main(int argc, char * argv[])
   src.w = img_title->w;
   src.x = 0;
   src.y = img_title->h - img_progress->h;
-  dest.x = (WINDOW_WIDTH - img_title->w) / 2;
+  dest.x = ((WINDOW_WIDTH - img_title->w - (img_title_tuxpaint->w / 2)) / 2) + (img_title_tuxpaint->w / 2);
   SDL_BlitSurface(img_title, &src, screen, &dest);
+
   SDL_FreeSurface(img_title);
+  SDL_FreeSurface(img_title_credits);
+  SDL_FreeSurface(img_title_tuxpaint);
 
   dest.x = 0;
   dest.w = WINDOW_WIDTH;  // SDL mangles this! So, do repairs.
@@ -2592,7 +2596,7 @@ int main(int argc, char * argv[])
 
   do_setcursor(cursor_arrow);
   playsound(0, SND_HARP, 1);
-  do_wait(50);  // about 5 seconds
+  do_wait(500);  // about 5 seconds
 
 
   /* Set defaults! */
@@ -8221,14 +8225,26 @@ static void setup(int argc, char * argv[])
   ////////// quickly: title image, version, progress bar, and watch cursor
 
   img_title = loadimage(DATA_PREFIX "images/title.png");
+  img_title_tuxpaint = loadimage(DATA_PREFIX "images/title-tuxpaint.png");
+  img_title_credits = loadimage(DATA_PREFIX "images/title-credits.png");
   img_progress = loadimage(DATA_PREFIX "images/ui/progress.png");
 
   SDL_FillRect(screen, NULL, SDL_MapRGB(screen->format, 255, 255, 255));
 
-  dest.x = (WINDOW_WIDTH - img_title->w) / 2;
+  dest.x = ((WINDOW_WIDTH - img_title->w - (img_title_tuxpaint->w / 2)) / 2) + (img_title_tuxpaint->w / 2);
   dest.y = (WINDOW_HEIGHT - img_title->h);
 
   SDL_BlitSurface(img_title, NULL, screen, &dest);
+
+  dest.x = (WINDOW_WIDTH - img_title->w - (img_title_tuxpaint->w / 2)) / 2;
+  dest.y = (WINDOW_HEIGHT - img_title->h) + img_title_tuxpaint->h * 0.8;
+
+  SDL_BlitSurface(img_title_tuxpaint, NULL, screen, &dest);
+
+  dest.x = 0;
+  dest.y = 0;
+
+  SDL_BlitSurface(img_title_credits, NULL, screen, &dest);
 
   prog_bar_ctr = 0;
   show_progress_bar();
@@ -8252,10 +8268,20 @@ static void setup(int argc, char * argv[])
 
   snprintf(tmp_str, sizeof(tmp_str), "%s – %s", VER_VERSION, VER_DATE);
   tmp_surf = render_text(medium_font, tmp_str, black);
-  dest.x = 20 + (WINDOW_WIDTH - img_title->w) / 2;
-  dest.y = WINDOW_HEIGHT - 60;
+  dest.x = 0;
+  dest.y = WINDOW_HEIGHT - img_progress->h - tmp_surf->h;
   SDL_BlitSurface(tmp_surf, NULL, screen, &dest);
   SDL_FreeSurface(tmp_surf);
+  printf("%s\n", tmp_str);
+  
+  snprintf(tmp_str, sizeof(tmp_str),
+	   "©2002-2005 Bill Kendrick, et al");
+  tmp_surf = render_text(medium_font, tmp_str, black);
+  dest.x = 0;
+  dest.y = WINDOW_HEIGHT - img_progress->h - (tmp_surf->h * 2);
+  SDL_BlitSurface(tmp_surf, NULL, screen, &dest);
+  SDL_FreeSurface(tmp_surf);
+
   SDL_Flip(screen);
 
 
