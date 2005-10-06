@@ -606,6 +606,7 @@ static const char * lang_prefixes[NUM_LANGS] = {
   "en",
   "en_gb",
   "es",
+  "es_mx",
   "et",
   "eu",
   "fi",
@@ -648,7 +649,7 @@ static const char * lang_prefixes[NUM_LANGS] = {
   "vi",
   "wa",
   "zh_cn",
-  "zh_tw",
+  "zh_tw"
 };
 
 
