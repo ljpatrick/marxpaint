@@ -2583,7 +2583,7 @@ int main(int argc, char * argv[])
   src.w = img_title->w;
   src.x = 0;
   src.y = img_title->h - img_progress->h;
-  dest.x = ((WINDOW_WIDTH - img_title->w - (img_title_tuxpaint->w / 2)) / 2) + (img_title_tuxpaint->w / 2);
+  dest.x = ((WINDOW_WIDTH - img_title->w - (img_title_tuxpaint->w / 2)) / 2) + (img_title_tuxpaint->w / 2) + 20;
   SDL_BlitSurface(img_title, &src, screen, &dest);
 
   SDL_FreeSurface(img_title);
@@ -8231,18 +8231,18 @@ static void setup(int argc, char * argv[])
 
   SDL_FillRect(screen, NULL, SDL_MapRGB(screen->format, 255, 255, 255));
 
-  dest.x = ((WINDOW_WIDTH - img_title->w - (img_title_tuxpaint->w / 2)) / 2) + (img_title_tuxpaint->w / 2);
+  dest.x = ((WINDOW_WIDTH - img_title->w - (img_title_tuxpaint->w / 2)) / 2) + (img_title_tuxpaint->w / 2) + 20;
   dest.y = (WINDOW_HEIGHT - img_title->h);
 
   SDL_BlitSurface(img_title, NULL, screen, &dest);
 
-  dest.x = (WINDOW_WIDTH - img_title->w - (img_title_tuxpaint->w / 2)) / 2;
-  dest.y = (WINDOW_HEIGHT - img_title->h) + img_title_tuxpaint->h * 0.8;
+  dest.x = 10;
+  dest.y = (WINDOW_HEIGHT - img_title->h) + img_title_tuxpaint->h * 0.8 + 7;
 
   SDL_BlitSurface(img_title_tuxpaint, NULL, screen, &dest);
 
-  dest.x = 0;
-  dest.y = 0;
+  dest.x = 10;
+  dest.y = 5;
 
   SDL_BlitSurface(img_title_credits, NULL, screen, &dest);
 
@@ -8266,18 +8266,18 @@ static void setup(int argc, char * argv[])
       exit(1);
     }
 
-  snprintf(tmp_str, sizeof(tmp_str), "%s – %s", VER_VERSION, VER_DATE);
+  snprintf(tmp_str, sizeof(tmp_str), "Version: %s – %s", VER_VERSION, VER_DATE);
   tmp_surf = render_text(medium_font, tmp_str, black);
-  dest.x = 0;
+  dest.x = 10;
   dest.y = WINDOW_HEIGHT - img_progress->h - tmp_surf->h;
   SDL_BlitSurface(tmp_surf, NULL, screen, &dest);
   SDL_FreeSurface(tmp_surf);
   printf("%s\n", tmp_str);
   
   snprintf(tmp_str, sizeof(tmp_str),
-	   "©2002-2005 Bill Kendrick, et al");
+	   "© 2002–2005 Bill Kendrick et al.");
   tmp_surf = render_text(medium_font, tmp_str, black);
-  dest.x = 0;
+  dest.x = 10;
   dest.y = WINDOW_HEIGHT - img_progress->h - (tmp_surf->h * 2);
   SDL_BlitSurface(tmp_surf, NULL, screen, &dest);
   SDL_FreeSurface(tmp_surf);
