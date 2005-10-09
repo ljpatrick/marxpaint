@@ -235,6 +235,9 @@ http://www.newbreedsoftware.com/tuxpaint/
 
   * Compiling, porting and packaging updates:
     -----------------------------------------
+    * Added additional Windows-only search paths for stamps, fonts and brushes.
+      John Popplewell <john@johnnypops.demon.co.uk>
+
     * Created Makefile to convert HTML documentation into plaintext using Links
       (I can never remember the precise options!)
 
