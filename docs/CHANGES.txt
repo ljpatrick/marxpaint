@@ -7,13 +7,10 @@ bill@newbreedsoftware.com
 http://www.newbreedsoftware.com/tuxpaint/
 
 
-2005.Oct.5 (0.9.15)
+2005.October.9 (0.9.15)
 
-  * uncatagorized and messy:
-    -----------------------
-    * "New" always available.
-      (Prepping for when "New" will give options for background colors, etc.)
-
+  * Speed improvements:
+    -------------------
     * Splash screen appears earlier, along with the version info and cursor.
       Albert Cahalan <albert@users.sf.net>
 
@@ -131,6 +128,9 @@ http://www.newbreedsoftware.com/tuxpaint/
     
   * Interface improvements:
     -----------------------
+    * "New" always available.
+      (Prepping for when "New" will give options for background colors, etc.)
+
     * Middle and right mouse buttons no longer do anything.
       (No reason to teach kids that all the buttons do the same thing!)
 
@@ -162,13 +162,28 @@ http://www.newbreedsoftware.com/tuxpaint/
     * Gave Tux the Penguin a voice (e.g., during prompts)
       Voice: Daniel 'TuxthePenguin' Alston <supertuxfansite@gmail.com>
 
-  * Other improvements:
-    -------------------
+  * Printing improvements:
+    ----------------------
     * Now printing directly via Postscript.
       (So print command can change from "pngtopnm | pnmtops | lpr" to
       simply "lpr").
       Albert Cahalan <albert@users.sf.net>
     
+    * Holding [Alt] while clicking 'Print' on Unix/Linux can now bring up
+      a print dialog. (Defaults to KDE's 'kprinter'.)  Can be altered
+      via 'altprintcommand' in ~/.tuxpaintrc.
+
+    * Printer dialog (and 'altprintcommand') can be forced to come up
+      all the time (not just when [Alt] is held) via a new
+      "--altprintalways" command-line option (and "altprint=always" config.
+      file option).
+
+    * Similarly, printer dialog can be prevented ([Alt] key has no effect)
+      via a new "--altprintnever" option (and "altprint=never").
+      (Default (where [Alt] must be held to show dialog) is "altprintmod".)
+
+  * Other improvements:
+    -------------------
     * Added beige and tan colors.  Changed "Lime" to "Neon Green."
       Renamed "Fuschia" to "Magenta."  Tweaked some color values.
       Moved grey/silver next to black/white.
@@ -191,19 +206,6 @@ http://www.newbreedsoftware.com/tuxpaint/
     * Increased maximum number of stamps that can be loaded at once from
       256 to 512.
       Albert Cahalan <albert@users.sourceforge.net>
-
-    * Holding [Alt] while clicking 'Print' on Unix/Linux can now bring up
-      a print dialog. (Defaults to KDE's 'kprinter'.)  Can be altered
-      via 'altprintcommand' in ~/.tuxpaintrc.
-
-    * Printer dialog (and 'altprintcommand') can be forced to come up
-      all the time (not just when [Alt] is held) via a new
-      "--altprintalways" command-line option (and "altprint=always" config.
-      file option).
-
-    * Similarly, printer dialog can be prevented ([Alt] key has no effect)
-      via a new "--altprintnever" option (and "altprint=never").
-      (Default (where [Alt] must be held to show dialog) is "altprintmod".)
 
     * Splash screen scales to different window sizes.
 
