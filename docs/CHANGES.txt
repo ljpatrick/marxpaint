@@ -304,6 +304,10 @@ http://www.newbreedsoftware.com/tuxpaint/
       and feature requests to the SourceForge
       tracker: http://sourceforge.net/tracker/?group_id=66938
 
+    * Converted Frequently Asked Questions (FAQ) to HTML.
+
+    * Mentioned Tux Paint Config. tool in FAQ.
+
   * New translations:
     -----------------
     * Albanian translation created.
