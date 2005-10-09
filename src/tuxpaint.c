@@ -27,7 +27,7 @@
 
 
 #define VER_VERSION     "0.9.15"
-#define VER_DATE        "2005-10-06"
+#define VER_DATE        "2005-10-09"
 
 
 /* Color depth for Tux Paint to run in, and store canvases in: */
@@ -90,6 +90,7 @@
 /* #define USE_HWSURFACE */
 
 /* Disable fancy cursors in fullscreen mode, to avoid SDL bug: */
+/* (This bug is still around, as of SDL 1.2.9, October 2005) */
 #define LARGE_CURSOR_FULLSCREEN_BUG
 
 // control the color selector
