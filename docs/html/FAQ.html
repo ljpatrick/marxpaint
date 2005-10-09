@@ -28,6 +28,41 @@ com/tuxpaint/</a></p>
 
 <h2>Drawing-related</h2>
 
+<li><em>Fonts I added to Tux&nbsp;Paint only show squares</em>
+  <p>The TrueType Font you're using might have the wrong encoding.
+  If it's 'custom' encoded, for example, you can try running it through
+  FontForge
+  (<a href="http://fontforge.sourceforge.net/"
+  >http://fontforge.sourceforge.net/</a>) to convert it to an
+  ISO-8859 format.  (Email us if you need help with special fonts.)</p>
+
+<li><em>The Rubber Stamp tool is greyed out!</em>
+  <p>This means that Tux&nbsp;Paint either couldn't find any stamp images,
+  or was asked not to load them.</p>
+
+  <p>If you installed Tux&nbsp;Paint, but did not install the separate,
+  optional "Stamps" collection, quit Tux&nbsp;Paint and install it now.
+  It should be available from the same place you got the main
+  Tux&nbsp;Paint program. <i>(Note: As of version 0.9.14, Tux&nbsp;Paint
+  comes with a small collection of example stamps.)</i></p>
+
+  <p>If you don't want to install the default collection of stamps,
+  you can just create your own.  See the <a href="README.html">README
+  documentation</a> for more on creating PNG image files, TXT text
+  description files, WAV sound files, and DAT text data files that
+  make up stamps.</p>
+
+  <p>Finally, if you install the stamps, and think they should be loading,
+  check to see that the "nostamps" option isn't being set.
+  (Either via a "--nostamps" option to Tux&nbsp;Paint's command line, or
+  "nostamps=yes" in the configuration file.)</p>
+
+  <p>If so, either change/remove the "nostamps" option, or you can
+  override it with "--stamps" on the command line or
+  "nostamps=no" or "stamps=yes" in a configuration file.</p>
+</li>
+
+
 <ul>
 <li><em>The Magic "Fill" Tool Looks Bad</em>
   <p>Tux&nbsp;Paint is probably comparing exact pixel colors when filling.
@@ -56,32 +91,6 @@ com/tuxpaint/</a></p>
   </code></p></blockquote>
 
   <p>in the "tuxpaint.c" file in the "src" directory.</p>
-</li>
-
-<li><em>The Rubber Stamp tool is greyed out!</em>
-  <p>This means that Tux&nbsp;Paint either couldn't find any stamp images,
-  or was asked not to load them.</p>
-
-  <p>If you installed Tux&nbsp;Paint, but did not install the separate,
-  optional "Stamps" collection, quit Tux&nbsp;Paint and install it now.
-  It should be available from the same place you got the main
-  Tux&nbsp;Paint program. <i>(Note: As of version 0.9.14, Tux&nbsp;Paint
-  comes with a small collection of example stamps.)</i></p>
-
-  <p>If you don't want to install the default collection of stamps,
-  you can just create your own.  See the <a href="README.html">README
-  documentation</a> for more on creating PNG image files, TXT text
-  description files, WAV sound files, and DAT text data files that
-  make up stamps.</p>
-
-  <p>Finally, if you install the stamps, and think they should be loading,
-  check to see that the "nostamps" option isn't being set.
-  (Either via a "--nostamps" option to Tux&nbsp;Paint's command line, or
-  "nostamps=yes" in the configuration file.)</p>
-
-  <p>If so, either change/remove the "nostamps" option, or you can
-  override it with "--stamps" on the command line or
-  "nostamps=no" or "stamps=yes" in a configuration file.</p>
 </li>
 </ul>
 
