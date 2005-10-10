@@ -32,10 +32,10 @@ msgid "Black!"
 msgstr "Zwart!"
 
 msgid "Dark grey! Some people spell it “dark gray”."
-msgstr ""
+msgstr "Donkergrijs!"
 
 msgid "Light grey! Some people spell it “light gray”."
-msgstr ""
+msgstr "Lichtgrijs!"
 
 msgid "White!"
 msgstr "Wit!"
@@ -62,7 +62,7 @@ msgid "Blue!"
 msgstr "Blauw!"
 
 msgid "Lavender!"
-msgstr ""
+msgstr "Lavendel"
 
 msgid "Purple!"
 msgstr "Paars!"
@@ -143,7 +143,7 @@ msgid "Flip"
 msgstr "Omkeren"
 
 msgid "Click in the picture to fill that area with color."
-msgstr "Klik en beweeg de muis om de kleuren te vervagen."
+msgstr "Klik in het beeld om het gebied te kleuren."
 
 msgid "Click and move to draw grass. Don’t forget the dirt!"
 msgstr "Klik en beweeg de muis om gras te tekenen. Vergeet het vuil niet!"
@@ -194,10 +194,10 @@ msgstr ""
 "Klik en beweeg de muis om de tekening te veranderen in een krijt-tekening."
 
 msgid "Click to make a mirror image."
-msgstr "Klik om er een spiegelbeeld van te maken."
+msgstr "Klik om een spiegelbeeld te maken."
 
 msgid "Click to flip the picture upside-down."
-msgstr "Klik om beeld ondersteboven te zetten."
+msgstr "Klik om het beeld ondersteboven te zetten."
 
 msgid "Square"
 msgstr "Vierkant"
@@ -218,7 +218,7 @@ msgid "Pentagon"
 msgstr "Vijfhoek"
 
 msgid "Rhombus"
-msgstr "ruit"
+msgstr "Ruit"
 
 msgid "A square is a rectangle with four equal sides."
 msgstr "Een vierkant is een rechthoek met vier gelijke zijden."
@@ -229,8 +229,7 @@ msgstr "Een rechthoek heeft vier zijden en vier rechte hoeken."
 msgid ""
 "A circle is a curve where all points have the same distance from the centre."
 msgstr ""
-"Een cirkel is een curve, waarvan alle punten even ver van het middelpunt "
-"liggen."
+"Een cirkel is een curve, met alle punten even ver van het midden."
 
 msgid "An ellipse is a stretched circle."
 msgstr "Een ovaal is een uitgerekte cirkel."
@@ -324,8 +323,7 @@ msgstr ""
 "heeft die je wil. Beweeg om het te laten draaien en klik als je klaar bent."
 
 msgid "Choose a style of text. Click on your drawing and you can start typing."
-msgstr ""
-"Kies een stijl voor je letters. Klik op je tekening en begin te schrijven."
+msgstr "Kies een stijl voor je letters. Klik op je tekening en begin te schrijven."
 
 msgid "Pick a magical effect to use on your drawing!"
 msgstr "Kies een tover-effect om je tekening te veranderen!"
@@ -422,31 +420,31 @@ msgid "Erase this picture?"
 msgstr "Mag ik de gekozen tekening uitvegen?"
 
 msgid "Remember to use the left mouse button!"
-msgstr ""
+msgstr "Vergeet niet om de linkse muisknop te gebruiken!"
 
 msgid "jq"
-msgstr ""
+msgstr "jq"
 
 msgid "JQ"
-msgstr ""
+msgstr "JQ"
 
 msgid "oO"
-msgstr ""
+msgstr "oO"
 
 msgid "`\\%_@$~#{}<>^&*"
-msgstr ""
+msgstr "`\\%_@$~#{}<>^&*"
 
 msgid ",.?!"
-msgstr ""
+msgstr ",.?!"
 
 msgid "017"
-msgstr ""
+msgstr "017"
 
 msgid "O0"
-msgstr ""
+msgstr "00"
 
 msgid "1Il|"
-msgstr ""
+msgstr "1Il|"
 
 msgid "Erase"
 msgstr "Uitgommen"
