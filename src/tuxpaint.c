@@ -22,12 +22,11 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
   
-  June 14, 2002 - October 6, 2005
+  June 14, 2002 - October 9, 2005
 */
 
 
-#define VER_VERSION     "0.9.15"
-#define VER_DATE        "2005-10-09"
+/* (Note: VER_VERSION and VER_DATE are now handled by Makefile) */
 
 
 /* Color depth for Tux Paint to run in, and store canvases in: */

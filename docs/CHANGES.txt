@@ -235,6 +235,12 @@ http://www.newbreedsoftware.com/tuxpaint/
 
   * Compiling, porting and packaging updates:
     -----------------------------------------
+    * Created 'release' Makefile target, which generates a .tar.gz
+      (sans CVS-related files) based on the clean source directory.
+
+    * Moved "VER_VERSION" to Makefile (where 'release' can pick it up),
+      and made "VER_DATE" a dynamically-generated Makefile variable.
+
     * Added additional Windows-only search paths for stamps, fonts and brushes.
       John Popplewell <john@johnnypops.demon.co.uk>
 

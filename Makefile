@@ -2,11 +2,17 @@
 
 # Tux Paint - A simple drawing program for children.
 
-# Copyright (c) 2005 by Bill Kendrick
+# Copyright (c) 2005 by Bill Kendrick and others
 # bill@newbreedsoftware.com
 # http://www.newbreedsoftware.com/tuxpaint/
 
-# June 14, 2002 - October 2, 2005
+# June 14, 2002 - October 9, 2005
+
+
+# The version number, for release:
+
+VER_VERSION=0.9.15
+VER_DATE=`date +"%Y-%m-%d"`
 
 
 # Where to install things:
@@ -94,7 +100,9 @@ CFLAGS=-O2 -W -Wall -fno-common -ffast-math \
 	-Wbad-function-cast -Wwrite-strings \
 	-Waggregate-return \
 	-Wstrict-prototypes -Wmissing-prototypes \
-	-Wdeclaration-after-statement
+	-Wdeclaration-after-statement \
+	-DVER_VERSION=\"$(VER_VERSION)\" \
+	-DVER_DATE=\"$(VER_DATE)\"
 
 DEFS=-DDATA_PREFIX=\"$(DATA_PREFIX)/\" \
 	-D$(NOSOUNDFLAG) -DDOC_PREFIX=\"$(DOC_PREFIX)/\" \
@@ -114,6 +122,17 @@ all:	tuxpaint translations
 	@echo "to install Tux Paint."
 	@echo
 
+release:
+	@echo
+	@echo "Creating release tarball"
+	@
+	@make clean
+	-@rm -f ../tuxpaint-$(VER_VERSION).tar
+	@cd .. ; \
+	 find tuxpaint-$(VER_VERSION) -follow \
+	     \( -wholename '*/CVS' -o -name .cvsignore \) \
+	     -prune -o -type f -print0 | \
+	   xargs -0 tar -czvf tuxpaint-$(VER_VERSION).tar.gz 
 
 
 # "make nosound" builds the program with sound disabled, and man page,
