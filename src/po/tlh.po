@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Tux Paint\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2005-01-06 12:31+0100\n"
+"POT-Creation-Date: 2005-10-10 00:12-0700\n"
 "PO-Revision-Date: 2004-08-16 23:14-0800\n"
 "Last-Translator: Bill Kendrick <bill@newbreedsoftware.com>\n"
 "Language-Team: Bill Kendrick <nbs@sonic.net>\n"
@@ -28,15 +28,13 @@ msgstr ""
 msgid "Black!"
 msgstr "qIj!"
 
-msgid "Dark Gray!"
+msgid "Dark grey! Some people spell it “dark gray”."
 msgstr ""
 
-#. using both valid spellings
-msgid "Light Grey!"
+msgid "Light grey! Some people spell it “light gray”."
 msgstr ""
 
 # white
-#. using both valid spellings
 msgid "White!"
 msgstr "chIS!"
 
@@ -52,12 +50,11 @@ msgstr "Doq!"
 msgid "Yellow!"
 msgstr "SuD!"
 
-msgid "Neon green!"
+msgid "Light green!"
 msgstr ""
 
-# Yellow, Green, Blue
-msgid "Green!"
-msgstr "SuD!"
+msgid "Dark green!"
+msgstr ""
 
 msgid "Sky blue!"
 msgstr ""
@@ -66,10 +63,10 @@ msgstr ""
 msgid "Blue!"
 msgstr "SuD!"
 
-msgid "Purple!"
+msgid "Lavender!"
 msgstr ""
 
-msgid "Magenta!"
+msgid "Purple!"
 msgstr ""
 
 msgid "Pink!"
@@ -122,9 +119,8 @@ msgstr ""
 msgid "Smudge"
 msgstr ""
 
-# brighten
-msgid "Fade"
-msgstr "wov"
+msgid "Lighten"
+msgstr ""
 
 msgid "Darken"
 msgstr ""
@@ -160,7 +156,7 @@ msgstr ""
 msgid "Click in the picture to fill that area with color."
 msgstr ""
 
-msgid "Click and move to draw grass. Don't forget the dirt!"
+msgid "Click and move to draw grass. Don’t forget the dirt!"
 msgstr ""
 
 msgid "Click and move to draw large bricks."
@@ -197,7 +193,7 @@ msgstr ""
 msgid "Click and move the mouse around to draw a negative."
 msgstr ""
 
-msgid "Click and move the mouse around to change the picture's color."
+msgid "Click and move the mouse around to change the picture’s color."
 msgstr ""
 
 msgid "Click and move the mouse around to make the picture drip."
@@ -222,7 +218,7 @@ msgstr ""
 msgid "Circle"
 msgstr "gho"
 
-msgid "Oval"
+msgid "Ellipse"
 msgstr ""
 
 msgid "Triangle"
@@ -231,17 +227,20 @@ msgstr ""
 msgid "Pentagon"
 msgstr ""
 
-# crystal
-msgid "Diamond"
-msgstr "qut"
-
-msgid "A square has four sides, each the same length."
+msgid "Rhombus"
 msgstr ""
 
-msgid "A rectangle has four sides."
+msgid "A square is a rectangle with four equal sides."
 msgstr ""
 
-msgid "A circle is exactly round."
+msgid "A rectangle has four sides and four right angles."
+msgstr ""
+
+msgid ""
+"A circle is a curve where all points have the same distance from the centre."
+msgstr ""
+
+msgid "An ellipse is a stretched circle."
 msgstr ""
 
 msgid "A triangle has three sides."
@@ -250,7 +249,7 @@ msgstr ""
 msgid "A pentagon has five sides."
 msgstr ""
 
-msgid "A diamond is a square, turned around slightly."
+msgid "A rhombus has four equal sides, and opposite sides are parallel."
 msgstr ""
 
 msgid "Tools"
@@ -444,6 +443,33 @@ msgstr ""
 msgid "Erase this picture?"
 msgstr ""
 
+msgid "Remember to use the left mouse button!"
+msgstr ""
+
+msgid "jq"
+msgstr ""
+
+msgid "JQ"
+msgstr ""
+
+msgid "oO"
+msgstr ""
+
+msgid "`\\%_@$~#{}<>^&*"
+msgstr ""
+
+msgid ",.?!"
+msgstr ""
+
+msgid "017"
+msgstr ""
+
+msgid "O0"
+msgstr ""
+
+msgid "1Il|"
+msgstr ""
+
 msgid "Erase"
 msgstr ""
 
@@ -463,3 +489,15 @@ msgstr ""
 
 msgid "Choose the picture you want, then click “Open”."
 msgstr ""
+
+# Yellow, Green, Blue
+#~ msgid "Green!"
+#~ msgstr "SuD!"
+
+# brighten
+#~ msgid "Fade"
+#~ msgstr "wov"
+
+# crystal
+#~ msgid "Diamond"
+#~ msgstr "qut"

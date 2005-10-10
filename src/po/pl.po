@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TuxPaint\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2005-01-06 12:31+0100\n"
+"POT-Creation-Date: 2005-10-10 00:12-0700\n"
 "PO-Revision-Date: 2003-03-09 14:44+0100\n"
 "Last-Translator: Robert Główczyński <robertg@software.com.pl>\n"
 "Language-Team: Polish <pl@li.org>\n"
@@ -28,15 +28,12 @@ msgstr "Rysuj"
 msgid "Black!"
 msgstr "Czarny!"
 
-#, fuzzy
-msgid "Dark Gray!"
-msgstr "Wspaniale!"
-
-#. using both valid spellings
-msgid "Light Grey!"
+msgid "Dark grey! Some people spell it “dark gray”."
 msgstr ""
 
-#. using both valid spellings
+msgid "Light grey! Some people spell it “light gray”."
+msgstr ""
+
 #, fuzzy
 msgid "White!"
 msgstr "Biały!"
@@ -53,12 +50,12 @@ msgstr "Pomarańczowy!"
 msgid "Yellow!"
 msgstr "Żółty!"
 
-msgid "Neon green!"
+msgid "Light green!"
 msgstr ""
 
 #, fuzzy
-msgid "Green!"
-msgstr "Zielony!"
+msgid "Dark green!"
+msgstr "Wspaniale!"
 
 msgid "Sky blue!"
 msgstr ""
@@ -67,12 +64,12 @@ msgstr ""
 msgid "Blue!"
 msgstr "Niebieski!"
 
+msgid "Lavender!"
+msgstr ""
+
 #, fuzzy
 msgid "Purple!"
 msgstr "Purpurowy!"
-
-msgid "Magenta!"
-msgstr ""
 
 #, fuzzy
 msgid "Pink!"
@@ -124,8 +121,8 @@ msgstr "Rozmaż"
 msgid "Smudge"
 msgstr ""
 
-msgid "Fade"
-msgstr "Przenikanie"
+msgid "Lighten"
+msgstr ""
 
 msgid "Darken"
 msgstr ""
@@ -160,7 +157,7 @@ msgid "Click in the picture to fill that area with color."
 msgstr "Kliknij na obrazek, aby wypełnić wskazany obszar kolorem"
 
 #, fuzzy
-msgid "Click and move to draw grass. Don't forget the dirt!"
+msgid "Click and move to draw grass. Don’t forget the dirt!"
 msgstr "Kliknij i przesuń, aby narysować iskierki."
 
 #, fuzzy
@@ -209,7 +206,7 @@ msgid "Click and move the mouse around to draw a negative."
 msgstr "Kliknij i przesuń myszką dookoła, aby narysować negatyw."
 
 #, fuzzy
-msgid "Click and move the mouse around to change the picture's color."
+msgid "Click and move the mouse around to change the picture’s color."
 msgstr ""
 "Kliknij i przesuń myszką dookoła, aby obrazek wyglądał jak zrobiony z "
 "kwadracików."
@@ -240,8 +237,8 @@ msgstr "Prostokąt"
 msgid "Circle"
 msgstr "Koło"
 
-msgid "Oval"
-msgstr "Owal"
+msgid "Ellipse"
+msgstr ""
 
 msgid "Triangle"
 msgstr "Trójkąt"
@@ -249,17 +246,23 @@ msgstr "Trójkąt"
 msgid "Pentagon"
 msgstr "Pięciokąt"
 
-msgid "Diamond"
-msgstr "Diament"
+msgid "Rhombus"
+msgstr ""
 
-msgid "A square has four sides, each the same length."
-msgstr "Kwadrat ma cztery boki, każdy o tej samej długości."
-
-msgid "A rectangle has four sides."
+#, fuzzy
+msgid "A square is a rectangle with four equal sides."
 msgstr "Prostokąt ma cztery boki."
 
-msgid "A circle is exactly round."
-msgstr "Koło jest okrągłe."
+#, fuzzy
+msgid "A rectangle has four sides and four right angles."
+msgstr "Prostokąt ma cztery boki."
+
+msgid ""
+"A circle is a curve where all points have the same distance from the centre."
+msgstr ""
+
+msgid "An ellipse is a stretched circle."
+msgstr ""
 
 msgid "A triangle has three sides."
 msgstr "Trójkąt ma trzy boki."
@@ -267,8 +270,8 @@ msgstr "Trójkąt ma trzy boki."
 msgid "A pentagon has five sides."
 msgstr "Pięciokąt ma pięć boków."
 
-msgid "A diamond is a square, turned around slightly."
-msgstr "Diament jest trochę przekręconym kwadratem."
+msgid "A rhombus has four equal sides, and opposite sides are parallel."
+msgstr ""
 
 msgid "Tools"
 msgstr "Narzędzia"
@@ -451,6 +454,33 @@ msgstr "Nie możesz jeszcze drukować!"
 msgid "Erase this picture?"
 msgstr "Czy usunąć ten obrazek?"
 
+msgid "Remember to use the left mouse button!"
+msgstr ""
+
+msgid "jq"
+msgstr ""
+
+msgid "JQ"
+msgstr ""
+
+msgid "oO"
+msgstr ""
+
+msgid "`\\%_@$~#{}<>^&*"
+msgstr ""
+
+msgid ",.?!"
+msgstr ""
+
+msgid "017"
+msgstr ""
+
+msgid "O0"
+msgstr ""
+
+msgid "1Il|"
+msgstr ""
+
 msgid "Erase"
 msgstr "Usuń"
 
@@ -471,6 +501,28 @@ msgstr "Nie, zapisz nowy plik"
 #, fuzzy
 msgid "Choose the picture you want, then click “Open”."
 msgstr "Wybierz obrazek, a potem kliknij 'Otwórz'"
+
+#, fuzzy
+#~ msgid "Green!"
+#~ msgstr "Zielony!"
+
+#~ msgid "Fade"
+#~ msgstr "Przenikanie"
+
+#~ msgid "Oval"
+#~ msgstr "Owal"
+
+#~ msgid "Diamond"
+#~ msgstr "Diament"
+
+#~ msgid "A square has four sides, each the same length."
+#~ msgstr "Kwadrat ma cztery boki, każdy o tej samej długości."
+
+#~ msgid "A circle is exactly round."
+#~ msgstr "Koło jest okrągłe."
+
+#~ msgid "A diamond is a square, turned around slightly."
+#~ msgstr "Diament jest trochę przekręconym kwadratem."
 
 #, fuzzy
 #~ msgid "Lime!"

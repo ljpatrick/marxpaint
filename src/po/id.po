@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: id\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2005-01-06 12:31+0100\n"
+"POT-Creation-Date: 2005-10-10 00:12-0700\n"
 "PO-Revision-Date: 2004-07-20 16:09+0700\n"
 "Last-Translator: Tedi Heriyanto <tedi_h@gmx.net>\n"
 "Language-Team: Indonesian <translation-team-id@lists.sourceforge.net>\n"
@@ -32,15 +32,12 @@ msgstr "Tux Paint"
 msgid "Black!"
 msgstr "Hitam!"
 
-#, fuzzy
-msgid "Dark Gray!"
-msgstr "Abu-abu!"
-
-#. using both valid spellings
-msgid "Light Grey!"
+msgid "Dark grey! Some people spell it “dark gray”."
 msgstr ""
 
-#. using both valid spellings
+msgid "Light grey! Some people spell it “light gray”."
+msgstr ""
+
 msgid "White!"
 msgstr "Putih!"
 
@@ -53,11 +50,12 @@ msgstr "Oranye!"
 msgid "Yellow!"
 msgstr "Kuning!"
 
-msgid "Neon green!"
+msgid "Light green!"
 msgstr ""
 
-msgid "Green!"
-msgstr "Hijau!"
+#, fuzzy
+msgid "Dark green!"
+msgstr "Abu-abu!"
 
 msgid "Sky blue!"
 msgstr ""
@@ -65,11 +63,11 @@ msgstr ""
 msgid "Blue!"
 msgstr "Biru!"
 
+msgid "Lavender!"
+msgstr ""
+
 msgid "Purple!"
 msgstr "Ungu!"
-
-msgid "Magenta!"
-msgstr ""
 
 msgid "Pink!"
 msgstr "Merah muda!"
@@ -119,8 +117,8 @@ msgstr "Blur"
 msgid "Smudge"
 msgstr ""
 
-msgid "Fade"
-msgstr "Fade"
+msgid "Lighten"
+msgstr ""
 
 msgid "Darken"
 msgstr ""
@@ -154,7 +152,7 @@ msgid "Click in the picture to fill that area with color."
 msgstr "Klik dalam gambar untuk mengisi area dengan warna."
 
 #, fuzzy
-msgid "Click and move to draw grass. Don't forget the dirt!"
+msgid "Click and move to draw grass. Don’t forget the dirt!"
 msgstr "Klik dan pindahkan untuk menggambar kilau."
 
 #, fuzzy
@@ -198,7 +196,7 @@ msgid "Click and move the mouse around to draw a negative."
 msgstr "Klik dan pindahkan mouse ke sekitar untuk menggambar sebuah negatif."
 
 #, fuzzy
-msgid "Click and move the mouse around to change the picture's color."
+msgid "Click and move the mouse around to change the picture’s color."
 msgstr "Klik dan pindah mouse ke sekitar untuk membuat gambar berblok."
 
 msgid "Click and move the mouse around to make the picture drip."
@@ -225,8 +223,8 @@ msgstr "Kotak"
 msgid "Circle"
 msgstr "Lingkaran"
 
-msgid "Oval"
-msgstr "Oval"
+msgid "Ellipse"
+msgstr ""
 
 msgid "Triangle"
 msgstr "Segitiga"
@@ -234,17 +232,23 @@ msgstr "Segitiga"
 msgid "Pentagon"
 msgstr "Segilima"
 
-msgid "Diamond"
-msgstr "Intan"
+msgid "Rhombus"
+msgstr ""
 
-msgid "A square has four sides, each the same length."
-msgstr "Persegi memiliki empat sisi, setiap sisi dengan panjang sama."
-
-msgid "A rectangle has four sides."
+#, fuzzy
+msgid "A square is a rectangle with four equal sides."
 msgstr "Sebuah kotak memiliki empat sisi."
 
-msgid "A circle is exactly round."
-msgstr "Sebuah lingkaran tepat bulat."
+#, fuzzy
+msgid "A rectangle has four sides and four right angles."
+msgstr "Sebuah kotak memiliki empat sisi."
+
+msgid ""
+"A circle is a curve where all points have the same distance from the centre."
+msgstr ""
+
+msgid "An ellipse is a stretched circle."
+msgstr ""
 
 msgid "A triangle has three sides."
 msgstr "Sebuah segitiga memiliki tiga sisi."
@@ -252,8 +256,8 @@ msgstr "Sebuah segitiga memiliki tiga sisi."
 msgid "A pentagon has five sides."
 msgstr "Sebuah segilima memiliki lima sisi."
 
-msgid "A diamond is a square, turned around slightly."
-msgstr "Sebuah intan adalah sebuah persegi, yang diputar sedikit."
+msgid "A rhombus has four equal sides, and opposite sides are parallel."
+msgstr ""
 
 msgid "Tools"
 msgstr "Tool"
@@ -432,6 +436,33 @@ msgstr "Kamu belum dapat mencetak!"
 msgid "Erase this picture?"
 msgstr "Hapus gambar ini?"
 
+msgid "Remember to use the left mouse button!"
+msgstr ""
+
+msgid "jq"
+msgstr ""
+
+msgid "JQ"
+msgstr ""
+
+msgid "oO"
+msgstr ""
+
+msgid "`\\%_@$~#{}<>^&*"
+msgstr ""
+
+msgid ",.?!"
+msgstr ""
+
+msgid "017"
+msgstr ""
+
+msgid "O0"
+msgstr ""
+
+msgid "1Il|"
+msgstr ""
+
 msgid "Erase"
 msgstr "Hapus"
 
@@ -450,6 +481,27 @@ msgstr "Tidak, simpan gambar baru"
 
 msgid "Choose the picture you want, then click “Open”."
 msgstr "Pilih gambar yang kamu inginkan, lalu klik \"Open\"."
+
+#~ msgid "Green!"
+#~ msgstr "Hijau!"
+
+#~ msgid "Fade"
+#~ msgstr "Fade"
+
+#~ msgid "Oval"
+#~ msgstr "Oval"
+
+#~ msgid "Diamond"
+#~ msgstr "Intan"
+
+#~ msgid "A square has four sides, each the same length."
+#~ msgstr "Persegi memiliki empat sisi, setiap sisi dengan panjang sama."
+
+#~ msgid "A circle is exactly round."
+#~ msgstr "Sebuah lingkaran tepat bulat."
+
+#~ msgid "A diamond is a square, turned around slightly."
+#~ msgstr "Sebuah intan adalah sebuah persegi, yang diputar sedikit."
 
 #~ msgid "Lime!"
 #~ msgstr "Limo!"

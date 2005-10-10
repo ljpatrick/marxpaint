@@ -6,7 +6,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint 0.9.15\n"
-"POT-Creation-Date: 2005-02-19 23:58+0100\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2005-10-10 00:12-0700\n"
 "PO-Revision-Date: 2005-10-04 12:43+0900\n"
 "Last-Translator: TOYAMA Shin-ichi <shin1@wmail.plala.jp>\n"
 "Language-Team: japanese <shin1@wmail.plala.or.jp>\n"
@@ -167,7 +168,8 @@ msgstr "クリックしたまま マウスをうごかして いろを うすく
 msgid "Click and move to darken the colors."
 msgstr "クリックしたまま マウスをうごかして いろを こく しよう．"
 
-msgid "Click and move the mouse around to turn the picture into a chalk drawing."
+msgid ""
+"Click and move the mouse around to turn the picture into a chalk drawing."
 msgstr "クリックしたままマウスをうごかして チョークでかいたみたいに しよう"
 
 msgid "Click and move the mouse around to make the picture blocky."
@@ -218,8 +220,11 @@ msgstr "ましかくは ４つの「へん」が ぜんぶ おんなじ なが�
 msgid "A rectangle has four sides and four right angles."
 msgstr "ながしかくには ４つの「へん」と ４つの「ちょっかく」があるんだ"
 
-msgid "A circle is a curve where all points have the same distance from the centre."
-msgstr "「えん」のうえでは どの「てん」も ちゅうしんから おなじきょりだけ はなれているよ"
+msgid ""
+"A circle is a curve where all points have the same distance from the centre."
+msgstr ""
+"「えん」のうえでは どの「てん」も ちゅうしんから おなじきょりだけ はなれてい"
+"るよ"
 
 msgid "An ellipse is a stretched circle."
 msgstr "だえんは えんを ひきのばしたもの"
@@ -231,7 +236,9 @@ msgid "A pentagon has five sides."
 msgstr "ごかっけいには ５つの「へん」が あるんだ"
 
 msgid "A rhombus has four equal sides, and opposite sides are parallel."
-msgstr "ひしがたには ４つの おなじながさの「へん」が あって むかいあった「へん」が へいこうなんだ"
+msgstr ""
+"ひしがたには ４つの おなじながさの「へん」が あって むかいあった「へん」が へ"
+"いこうなんだ"
 
 msgid "Tools"
 msgstr "どうぐ"
@@ -282,6 +289,7 @@ msgid "New"
 msgstr "さいしょから"
 
 #  buttons for the file open dialog
+#. buttons for the file open dialog
 msgid "Open"
 msgstr "ひらく"
 
@@ -303,8 +311,12 @@ msgstr "はんこをえらぼう"
 msgid "Click to start drawing a line. Let go to complete it."
 msgstr "クリックして せんを ひこう"
 
-msgid "Pick a shape. Click to pick the center, drag, then let go when it is the size you want. Move around to rotate it, and click to draw it."
-msgstr "ずけいをえらんでクリックしたら、ドラッグして すきなおおきさにしよう。まわして、クリックしたら できあがり"
+msgid ""
+"Pick a shape. Click to pick the center, drag, then let go when it is the "
+"size you want. Move around to rotate it, and click to draw it."
+msgstr ""
+"ずけいをえらんでクリックしたら、ドラッグして すきなおおきさにしよう。まわし"
+"て、クリックしたら できあがり"
 
 msgid "Choose a style of text. Click on your drawing and you can start typing."
 msgstr "じのかたちをえらんで、クリックしたあと キーをおして じをかこう"
@@ -313,34 +325,42 @@ msgid "Pick a magical effect to use on your drawing!"
 msgstr "つかいたい まほうのこうかを えらぼう！"
 
 #  Undo
+#. Undo
 msgid "Undo!"
 msgstr "いまの なし！"
 
 #  Redo
+#. Redo
 msgid "Redo!"
 msgstr "やっぱり やりなおし！"
 
 #  Eraser
+#. Eraser
 msgid "Eraser!"
 msgstr "けしゴム！"
 
 #  New
+#. New
 msgid "You now have a blank sheet to draw on!"
 msgstr "あたらしいかみだよ。さあかこう！"
 
 #  Open
+#. Open
 msgid "Open…"
 msgstr "ひらく…"
 
 #  Save
+#. Save
 msgid "Your image has been saved!"
 msgstr "えをセーブしました！"
 
 #  Print
+#. Print
 msgid "Printing…"
 msgstr "いんさつちゅう…"
 
 #  Quit
+#. Quit
 msgid "Bye bye!"
 msgstr "バイバーイ！"
 
@@ -357,10 +377,12 @@ msgid "OK then… Let’s keep drawing this one!"
 msgstr "オッケー。 じゃあ このままつづけよう！"
 
 #  FIXME: Move elsewhere!!!
+#. FIXME: Move elsewhere!!!
 msgid "Do you really want to quit?"
 msgstr "ほんとうにやめる？"
 
 #  FIXME: Move elsewhere! Or not?!
+#. FIXME: Move elsewhere! Or not?!
 msgid "Yes"
 msgstr "はい"
 
@@ -440,6 +462,7 @@ msgid "Aa"
 msgstr "Aa"
 
 #  FIXME: Move elsewhere!!!
+#. FIXME: Move elsewhere!!!
 msgid "Save over the older version of this picture?"
 msgstr "まえの えを うわがきしますか？"
 
@@ -448,4 +471,3 @@ msgstr "いいえ、べつのファイルに セーブします"
 
 msgid "Choose the picture you want, then click “Open”."
 msgstr "えをえらんでから 「ひらく」をクリックしてね"
-

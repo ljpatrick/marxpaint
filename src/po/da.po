@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: da\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2005-01-06 12:31+0100\n"
+"POT-Creation-Date: 2005-10-10 00:12-0700\n"
 "PO-Revision-Date: 2004-07-31 04:39+0200\n"
 "Last-Translator: Mogens Jaeger <mogensjaeger@get2net.dk>\n"
 "Language-Team: Dansk <da@li.org>\n"
@@ -26,15 +26,12 @@ msgstr "Tux maling"
 msgid "Black!"
 msgstr "Sort."
 
-#, fuzzy
-msgid "Dark Gray!"
-msgstr "Grå."
-
-#. using both valid spellings
-msgid "Light Grey!"
+msgid "Dark grey! Some people spell it “dark gray”."
 msgstr ""
 
-#. using both valid spellings
+msgid "Light grey! Some people spell it “light gray”."
+msgstr ""
+
 msgid "White!"
 msgstr "Hvid."
 
@@ -47,11 +44,12 @@ msgstr "Orange."
 msgid "Yellow!"
 msgstr "Gul."
 
-msgid "Neon green!"
+msgid "Light green!"
 msgstr ""
 
-msgid "Green!"
-msgstr "Grøn."
+#, fuzzy
+msgid "Dark green!"
+msgstr "Grå."
 
 msgid "Sky blue!"
 msgstr ""
@@ -59,11 +57,11 @@ msgstr ""
 msgid "Blue!"
 msgstr "Blå."
 
+msgid "Lavender!"
+msgstr ""
+
 msgid "Purple!"
 msgstr "Violet."
-
-msgid "Magenta!"
-msgstr ""
 
 msgid "Pink!"
 msgstr "Lyserød."
@@ -113,8 +111,8 @@ msgstr "Sløring"
 msgid "Smudge"
 msgstr ""
 
-msgid "Fade"
-msgstr "Bleg"
+msgid "Lighten"
+msgstr ""
 
 msgid "Darken"
 msgstr ""
@@ -148,7 +146,7 @@ msgid "Click in the picture to fill that area with color."
 msgstr "Klik på et område for at fylde det med en farve."
 
 #, fuzzy
-msgid "Click and move to draw grass. Don't forget the dirt!"
+msgid "Click and move to draw grass. Don’t forget the dirt!"
 msgstr "Klik og flyt for at tegne gnister."
 
 #, fuzzy
@@ -190,7 +188,7 @@ msgid "Click and move the mouse around to draw a negative."
 msgstr "Klik og flyt mysen, for at tegne et negativ."
 
 #, fuzzy
-msgid "Click and move the mouse around to change the picture's color."
+msgid "Click and move the mouse around to change the picture’s color."
 msgstr "Klik og flyt muset for at gøre billedet ternet."
 
 msgid "Click and move the mouse around to make the picture drip."
@@ -216,8 +214,8 @@ msgstr "Rektangel"
 msgid "Circle"
 msgstr "Cirkel"
 
-msgid "Oval"
-msgstr "Oval"
+msgid "Ellipse"
+msgstr ""
 
 msgid "Triangle"
 msgstr "Trekant"
@@ -225,18 +223,25 @@ msgstr "Trekant"
 msgid "Pentagon"
 msgstr "Femkant"
 
-msgid "Diamond"
-msgstr "Rhombe"
+msgid "Rhombus"
+msgstr ""
 
-msgid "A square has four sides, each the same length."
-msgstr "Et kvadrat er en firkant, hvor alle sider er lige lange."
-
-msgid "A rectangle has four sides."
+#, fuzzy
+msgid "A square is a rectangle with four equal sides."
 msgstr ""
 "Et rektangel er en firkant hvor siderne er lige lange overfor hinanden."
 
-msgid "A circle is exactly round."
-msgstr "En cirkel er fundstændig rund."
+#, fuzzy
+msgid "A rectangle has four sides and four right angles."
+msgstr ""
+"Et rektangel er en firkant hvor siderne er lige lange overfor hinanden."
+
+msgid ""
+"A circle is a curve where all points have the same distance from the centre."
+msgstr ""
+
+msgid "An ellipse is a stretched circle."
+msgstr ""
 
 msgid "A triangle has three sides."
 msgstr "En trekant har tre sider."
@@ -244,8 +249,8 @@ msgstr "En trekant har tre sider."
 msgid "A pentagon has five sides."
 msgstr "En femkant har fem sider."
 
-msgid "A diamond is a square, turned around slightly."
-msgstr "En rhombe har samme form som en ruder i et kortspil."
+msgid "A rhombus has four equal sides, and opposite sides are parallel."
+msgstr ""
 
 msgid "Tools"
 msgstr "Værktøj"
@@ -426,6 +431,33 @@ msgstr "Du kan ikke udskrive endnu."
 msgid "Erase this picture?"
 msgstr "Skal billedet slettes?"
 
+msgid "Remember to use the left mouse button!"
+msgstr ""
+
+msgid "jq"
+msgstr ""
+
+msgid "JQ"
+msgstr ""
+
+msgid "oO"
+msgstr ""
+
+msgid "`\\%_@$~#{}<>^&*"
+msgstr ""
+
+msgid ",.?!"
+msgstr ""
+
+msgid "017"
+msgstr ""
+
+msgid "O0"
+msgstr ""
+
+msgid "1Il|"
+msgstr ""
+
 msgid "Erase"
 msgstr "Slet"
 
@@ -444,6 +476,27 @@ msgstr "Nej, gem istedet som et nyt billede."
 
 msgid "Choose the picture you want, then click “Open”."
 msgstr "Vælg et billede, og tryk på »Åbn«."
+
+#~ msgid "Green!"
+#~ msgstr "Grøn."
+
+#~ msgid "Fade"
+#~ msgstr "Bleg"
+
+#~ msgid "Oval"
+#~ msgstr "Oval"
+
+#~ msgid "Diamond"
+#~ msgstr "Rhombe"
+
+#~ msgid "A square has four sides, each the same length."
+#~ msgstr "Et kvadrat er en firkant, hvor alle sider er lige lange."
+
+#~ msgid "A circle is exactly round."
+#~ msgstr "En cirkel er fundstændig rund."
+
+#~ msgid "A diamond is a square, turned around slightly."
+#~ msgstr "En rhombe har samme form som en ruder i et kortspil."
 
 #~ msgid "Lime!"
 #~ msgstr "Lime."

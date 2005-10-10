@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: he\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2005-01-06 12:31+0100\n"
+"POT-Creation-Date: 2005-10-10 00:12-0700\n"
 "PO-Revision-Date: 2005-07-26 22:23+0300\n"
 "Last-Translator: dovix <dovix2003@yahoo.com>\n"
 "Language-Team: Hebrew <mdk-hebrew@iglu.org.il>\n"
@@ -179,7 +179,8 @@ msgstr "עליך ללחוץ ולהזיז כדי לעמעם את הצבעים."
 msgid "Click and move to darken the colors."
 msgstr "עליך ללחוץ ולהזיז כדי להשחיר את הצבעים."
 
-msgid "Click and move the mouse around to turn the picture into a chalk drawing."
+msgid ""
+"Click and move the mouse around to turn the picture into a chalk drawing."
 msgstr "עליך ללחוץ ולהזיז את העכבר כדי ליצור אפקט של ציור גיר."
 
 # 'Blocky' is very difficult to translate to Hebrew.
@@ -232,7 +233,8 @@ msgid "A rectangle has four sides and four right angles."
 msgstr "למלבן יש ארבע צלעות וארבע זוויות ישרות."
 
 # This needs to be checked for correct gender correctness.
-msgid "A circle is a curve where all points have the same distance from the centre."
+msgid ""
+"A circle is a curve where all points have the same distance from the centre."
 msgstr "עיגול היא עקומה שבה כל הנקודות הן במרחק שווה מהמרכז."
 
 # This also needs to be checked for gender correctness.
@@ -318,8 +320,12 @@ msgstr "עליך לבחור חותמת שתוטבע בציור."
 msgid "Click to start drawing a line. Let go to complete it."
 msgstr "עליך ללחוץ על מנת להתחיל לצייר. יש לשחרר כדי להשלים את הציור."
 
-msgid "Pick a shape. Click to pick the center, drag, then let go when it is the size you want. Move around to rotate it, and click to draw it."
-msgstr "עליך לבחור צורה, ללחוץ כדי לבחור את המרכז, לגרור, ואז לשחרר כאשר הצורה בגודל הרצוי לך. יש להזיז את העכבר כדי לסובב את הצורה, וללחוץ כדי לקבע אותה."
+msgid ""
+"Pick a shape. Click to pick the center, drag, then let go when it is the "
+"size you want. Move around to rotate it, and click to draw it."
+msgstr ""
+"עליך לבחור צורה, ללחוץ כדי לבחור את המרכז, לגרור, ואז לשחרר כאשר הצורה בגודל "
+"הרצוי לך. יש להזיז את העכבר כדי לסובב את הצורה, וללחוץ כדי לקבע אותה."
 
 msgid "Choose a style of text. Click on your drawing and you can start typing."
 msgstr "עליך לבחור סגנון לטקסט.  לחיצה על הציור תאפשר לך להתחיל לכתוב."
@@ -463,4 +469,3 @@ msgstr "לא, שמור בקובץ חדש"
 
 msgid "Choose the picture you want, then click “Open”."
 msgstr "עליך לבחור את התמונה הרצויה, ואז ללחוץ על 'פתיחה'"
-

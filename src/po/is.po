@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint-is 0.9.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2005-01-06 12:31+0100\n"
+"POT-Creation-Date: 2005-10-10 00:12-0700\n"
 "PO-Revision-Date: 2004-03-15 15:38GMT\n"
 "Last-Translator: Pjetur G. Hjaltason <pjetur@pjetur.net>\n"
 "Language-Team: Icelandic <kde-isl@molar.is>\n"
@@ -31,15 +31,12 @@ msgstr "Teikna"
 msgid "Black!"
 msgstr "Svart!"
 
-#, fuzzy
-msgid "Dark Gray!"
-msgstr "Grátt!"
-
-#. using both valid spellings
-msgid "Light Grey!"
+msgid "Dark grey! Some people spell it “dark gray”."
 msgstr ""
 
-#. using both valid spellings
+msgid "Light grey! Some people spell it “light gray”."
+msgstr ""
+
 msgid "White!"
 msgstr "Hvítt!"
 
@@ -52,11 +49,12 @@ msgstr "Appelsínugult!"
 msgid "Yellow!"
 msgstr "Gult!"
 
-msgid "Neon green!"
+msgid "Light green!"
 msgstr ""
 
-msgid "Green!"
-msgstr "Grænt!"
+#, fuzzy
+msgid "Dark green!"
+msgstr "Grátt!"
 
 msgid "Sky blue!"
 msgstr ""
@@ -64,11 +62,11 @@ msgstr ""
 msgid "Blue!"
 msgstr "Blátt!"
 
+msgid "Lavender!"
+msgstr ""
+
 msgid "Purple!"
 msgstr "Fjólublátt!"
-
-msgid "Magenta!"
-msgstr ""
 
 msgid "Pink!"
 msgstr "Bleikt!"
@@ -118,8 +116,8 @@ msgstr "Óskýr"
 msgid "Smudge"
 msgstr ""
 
-msgid "Fade"
-msgstr "Þynna út"
+msgid "Lighten"
+msgstr ""
 
 msgid "Darken"
 msgstr ""
@@ -153,7 +151,7 @@ msgid "Click in the picture to fill that area with color."
 msgstr "Smelltu og hreyfðu músina til að fylla svæðið með lit."
 
 #, fuzzy
-msgid "Click and move to draw grass. Don't forget the dirt!"
+msgid "Click and move to draw grass. Don’t forget the dirt!"
 msgstr "Smelltu og hreyfðu músina til að búa til neista."
 
 #, fuzzy
@@ -195,7 +193,7 @@ msgid "Click and move the mouse around to draw a negative."
 msgstr "Smelltu og hreyfðu músina til að teikna andhverfu-liti."
 
 #, fuzzy
-msgid "Click and move the mouse around to change the picture's color."
+msgid "Click and move the mouse around to change the picture’s color."
 msgstr "Smelltu og hreyfðu músina til að gera myndina 'Kassa-lega'."
 
 msgid "Click and move the mouse around to make the picture drip."
@@ -220,8 +218,8 @@ msgstr "Rétthyrningur"
 msgid "Circle"
 msgstr "Hringur"
 
-msgid "Oval"
-msgstr "Hringlaga"
+msgid "Ellipse"
+msgstr ""
 
 msgid "Triangle"
 msgstr "Þríhyrningur"
@@ -229,17 +227,23 @@ msgstr "Þríhyrningur"
 msgid "Pentagon"
 msgstr "Fimmhyrningur"
 
-msgid "Diamond"
-msgstr "Tígull"
+msgid "Rhombus"
+msgstr ""
 
-msgid "A square has four sides, each the same length."
-msgstr "Ferningur hefur fjórar hliðar, allar jafn langar."
-
-msgid "A rectangle has four sides."
+#, fuzzy
+msgid "A square is a rectangle with four equal sides."
 msgstr "Rétthyrningur hefur fjórar hliðar."
 
-msgid "A circle is exactly round."
-msgstr "Hringur er nákvæmlega kringlóttur."
+#, fuzzy
+msgid "A rectangle has four sides and four right angles."
+msgstr "Rétthyrningur hefur fjórar hliðar."
+
+msgid ""
+"A circle is a curve where all points have the same distance from the centre."
+msgstr ""
+
+msgid "An ellipse is a stretched circle."
+msgstr ""
 
 msgid "A triangle has three sides."
 msgstr "Þríhyrningur hefur þrjár hliðar."
@@ -247,8 +251,8 @@ msgstr "Þríhyrningur hefur þrjár hliðar."
 msgid "A pentagon has five sides."
 msgstr "Fimmhyrnigur hefur fimm hliðar."
 
-msgid "A diamond is a square, turned around slightly."
-msgstr "Tígull er ferhyrndur, svolítið snúinn."
+msgid "A rhombus has four equal sides, and opposite sides are parallel."
+msgstr ""
 
 msgid "Tools"
 msgstr "Tól"
@@ -426,6 +430,33 @@ msgstr "Þú getur ekki prentað strax!"
 msgid "Erase this picture?"
 msgstr "Eyða myndinni?"
 
+msgid "Remember to use the left mouse button!"
+msgstr ""
+
+msgid "jq"
+msgstr ""
+
+msgid "JQ"
+msgstr ""
+
+msgid "oO"
+msgstr ""
+
+msgid "`\\%_@$~#{}<>^&*"
+msgstr ""
+
+msgid ",.?!"
+msgstr ""
+
+msgid "017"
+msgstr ""
+
+msgid "O0"
+msgstr ""
+
+msgid "1Il|"
+msgstr ""
+
 msgid "Erase"
 msgstr "Eyða"
 
@@ -444,6 +475,27 @@ msgstr "Nei, geyma nýja mynd!"
 
 msgid "Choose the picture you want, then click “Open”."
 msgstr "Veldu teikningu, og smelltu svo á 'Opna'."
+
+#~ msgid "Green!"
+#~ msgstr "Grænt!"
+
+#~ msgid "Fade"
+#~ msgstr "Þynna út"
+
+#~ msgid "Oval"
+#~ msgstr "Hringlaga"
+
+#~ msgid "Diamond"
+#~ msgstr "Tígull"
+
+#~ msgid "A square has four sides, each the same length."
+#~ msgstr "Ferningur hefur fjórar hliðar, allar jafn langar."
+
+#~ msgid "A circle is exactly round."
+#~ msgstr "Hringur er nákvæmlega kringlóttur."
+
+#~ msgid "A diamond is a square, turned around slightly."
+#~ msgstr "Tígull er ferhyrndur, svolítið snúinn."
 
 #~ msgid "Lime!"
 #~ msgstr "Gulgrænt!"

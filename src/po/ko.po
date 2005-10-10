@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Tux Paint 0.9.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2005-02-19 23:58+0100\n"
+"POT-Creation-Date: 2005-10-10 00:12-0700\n"
 "PO-Revision-Date: 2005-10-03 00:15-0700\n"
 "Last-Translator: Mark K. Kim <tuxNO_SOLICITATIONpaint-dev@cbreak.org>\n"
 "Language-Team: N/A\n"
@@ -307,7 +307,9 @@ msgid "Pick a picture to stamp around your drawing."
 msgstr "도장 그림을 고르세요."
 
 msgid "Click to start drawing a line. Let go to complete it."
-msgstr "마우스의 버튼을 누르는 곳이 줄의 시작점 입니다. 버튼을 놓는곳이 종료점 입니다."
+msgstr ""
+"마우스의 버튼을 누르는 곳이 줄의 시작점 입니다. 버튼을 놓는곳이 종료점 입니"
+"다."
 
 msgid ""
 "Pick a shape. Click to pick the center, drag, then let go when it is the "
@@ -416,11 +418,38 @@ msgstr "이 그림을 지울까요?"
 msgid "Remember to use the left mouse button!"
 msgstr "왼쪽 마우스버튼을 사용하는걸 잊지 마세요!"
 
+msgid "jq"
+msgstr ""
+
+msgid "JQ"
+msgstr ""
+
+msgid "oO"
+msgstr ""
+
+msgid "`\\%_@$~#{}<>^&*"
+msgstr ""
+
+msgid ",.?!"
+msgstr ""
+
+msgid "017"
+msgstr ""
+
+msgid "O0"
+msgstr ""
+
+msgid "1Il|"
+msgstr ""
+
 msgid "Erase"
 msgstr "지우기"
 
 msgid "Back"
 msgstr "되 돌아가기"
+
+msgid "Aa"
+msgstr ""
 
 #. FIXME: Move elsewhere!!!
 msgid "Save over the older version of this picture?"

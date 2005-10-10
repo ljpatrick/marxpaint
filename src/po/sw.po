@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint 0.9.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2005-01-06 12:31+0100\n"
+"POT-Creation-Date: 2005-10-10 00:12-0700\n"
 "PO-Revision-Date: 2004-12-04 15:45-0800\n"
 "Last-Translator: Alberto Escudero <aep@it46.se>\n"
 "Language-Team: Swahili\n"
@@ -28,15 +28,12 @@ msgstr "Koti ya Rangi"
 msgid "Black!"
 msgstr "Nyeusi!"
 
-#, fuzzy
-msgid "Dark Gray!"
-msgstr "Kijivu!"
-
-#. using both valid spellings
-msgid "Light Grey!"
+msgid "Dark grey! Some people spell it “dark gray”."
 msgstr ""
 
-#. using both valid spellings
+msgid "Light grey! Some people spell it “light gray”."
+msgstr ""
+
 msgid "White!"
 msgstr "Nyeupe!"
 
@@ -49,11 +46,12 @@ msgstr "Machungwa!"
 msgid "Yellow!"
 msgstr "Manjano!"
 
-msgid "Neon green!"
+msgid "Light green!"
 msgstr ""
 
-msgid "Green!"
-msgstr "Kijani!"
+#, fuzzy
+msgid "Dark green!"
+msgstr "Kijivu!"
 
 msgid "Sky blue!"
 msgstr ""
@@ -61,11 +59,11 @@ msgstr ""
 msgid "Blue!"
 msgstr "Buluu!"
 
+msgid "Lavender!"
+msgstr ""
+
 msgid "Purple!"
 msgstr "Zambarau!"
-
-msgid "Magenta!"
-msgstr ""
 
 msgid "Pink!"
 msgstr "Pinki!"
@@ -115,8 +113,8 @@ msgstr "Ukungu"
 msgid "Smudge"
 msgstr ""
 
-msgid "Fade"
-msgstr "Pausha"
+msgid "Lighten"
+msgstr ""
 
 msgid "Darken"
 msgstr ""
@@ -150,7 +148,7 @@ msgid "Click in the picture to fill that area with color."
 msgstr "Bofya katika picha kujaza eneo hilo na rangi."
 
 #, fuzzy
-msgid "Click and move to draw grass. Don't forget the dirt!"
+msgid "Click and move to draw grass. Don’t forget the dirt!"
 msgstr "Bofya na sogea kuchora vimetameta."
 
 #, fuzzy
@@ -192,7 +190,7 @@ msgid "Click and move the mouse around to draw a negative."
 msgstr "Bofya na sogea puku kuchora rangi za kinyume."
 
 #, fuzzy
-msgid "Click and move the mouse around to change the picture's color."
+msgid "Click and move the mouse around to change the picture’s color."
 msgstr "Bofya na sogea puku kuweka miraba midogo kwenye picha."
 
 msgid "Click and move the mouse around to make the picture drip."
@@ -217,8 +215,8 @@ msgstr "Pembenne"
 msgid "Circle"
 msgstr "Duara"
 
-msgid "Oval"
-msgstr "Yai"
+msgid "Ellipse"
+msgstr ""
 
 msgid "Triangle"
 msgstr "Pembetatu"
@@ -226,17 +224,23 @@ msgstr "Pembetatu"
 msgid "Pentagon"
 msgstr "Pembetano"
 
-msgid "Diamond"
-msgstr "Almasi"
+msgid "Rhombus"
+msgstr ""
 
-msgid "A square has four sides, each the same length."
-msgstr "Mraba una pande nne, kila moja urefu sawa."
-
-msgid "A rectangle has four sides."
+#, fuzzy
+msgid "A square is a rectangle with four equal sides."
 msgstr "Pembenne ina pande nne."
 
-msgid "A circle is exactly round."
-msgstr "Duara imeviringana kabisa."
+#, fuzzy
+msgid "A rectangle has four sides and four right angles."
+msgstr "Pembenne ina pande nne."
+
+msgid ""
+"A circle is a curve where all points have the same distance from the centre."
+msgstr ""
+
+msgid "An ellipse is a stretched circle."
+msgstr ""
 
 msgid "A triangle has three sides."
 msgstr "Pembetatu ina pande tatu."
@@ -244,8 +248,8 @@ msgstr "Pembetatu ina pande tatu."
 msgid "A pentagon has five sides."
 msgstr "Pembetano ina pande tano."
 
-msgid "A diamond is a square, turned around slightly."
-msgstr "Almasi ni mraba uliogeuzwa kidogo."
+msgid "A rhombus has four equal sides, and opposite sides are parallel."
+msgstr ""
 
 msgid "Tools"
 msgstr "Zana"
@@ -424,6 +428,33 @@ msgstr "Huwezi kuchapisha picha bado!"
 msgid "Erase this picture?"
 msgstr "Futa picha hii?"
 
+msgid "Remember to use the left mouse button!"
+msgstr ""
+
+msgid "jq"
+msgstr ""
+
+msgid "JQ"
+msgstr ""
+
+msgid "oO"
+msgstr ""
+
+msgid "`\\%_@$~#{}<>^&*"
+msgstr ""
+
+msgid ",.?!"
+msgstr ""
+
+msgid "017"
+msgstr ""
+
+msgid "O0"
+msgstr ""
+
+msgid "1Il|"
+msgstr ""
+
 msgid "Erase"
 msgstr "Futa"
 
@@ -442,6 +473,27 @@ msgstr "Hapana, hifadhi kama faili mpya."
 
 msgid "Choose the picture you want, then click “Open”."
 msgstr "Chagua picha unayotaka, halafu bofya “Fungua”."
+
+#~ msgid "Green!"
+#~ msgstr "Kijani!"
+
+#~ msgid "Fade"
+#~ msgstr "Pausha"
+
+#~ msgid "Oval"
+#~ msgstr "Yai"
+
+#~ msgid "Diamond"
+#~ msgstr "Almasi"
+
+#~ msgid "A square has four sides, each the same length."
+#~ msgstr "Mraba una pande nne, kila moja urefu sawa."
+
+#~ msgid "A circle is exactly round."
+#~ msgstr "Duara imeviringana kabisa."
+
+#~ msgid "A diamond is a square, turned around slightly."
+#~ msgstr "Almasi ni mraba uliogeuzwa kidogo."
 
 #~ msgid "Lime!"
 #~ msgstr "Ndimu!"

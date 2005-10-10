@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint 0.9.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2005-01-06 12:31+0100\n"
+"POT-Creation-Date: 2005-10-10 00:12-0700\n"
 "PO-Revision-Date: 2004-10-17 11:19+0200\n"
 "Last-Translator: Laurent Dhima <laurenti@alblinux.net>\n"
 "Language-Team: Albanian <translation-team-sq@lists.sourceforge.net>\n"
@@ -29,15 +29,12 @@ msgstr "Bojë"
 msgid "Black!"
 msgstr "E zezë!"
 
-#, fuzzy
-msgid "Dark Gray!"
-msgstr "Gri!"
-
-#. using both valid spellings
-msgid "Light Grey!"
+msgid "Dark grey! Some people spell it “dark gray”."
 msgstr ""
 
-#. using both valid spellings
+msgid "Light grey! Some people spell it “light gray”."
+msgstr ""
+
 msgid "White!"
 msgstr "E bardhë!"
 
@@ -50,11 +47,12 @@ msgstr "Portokalli!"
 msgid "Yellow!"
 msgstr "E verdhë!"
 
-msgid "Neon green!"
+msgid "Light green!"
 msgstr ""
 
-msgid "Green!"
-msgstr "E gjelbërt!"
+#, fuzzy
+msgid "Dark green!"
+msgstr "Gri!"
 
 msgid "Sky blue!"
 msgstr ""
@@ -62,11 +60,11 @@ msgstr ""
 msgid "Blue!"
 msgstr "Blu!"
 
+msgid "Lavender!"
+msgstr ""
+
 msgid "Purple!"
 msgstr "E kuqe e ndezur!"
-
-msgid "Magenta!"
-msgstr ""
 
 msgid "Pink!"
 msgstr "E kuqe!"
@@ -116,8 +114,8 @@ msgstr "Jashtë objektivi"
 msgid "Smudge"
 msgstr ""
 
-msgid "Fade"
-msgstr "Zbehje"
+msgid "Lighten"
+msgstr ""
 
 msgid "Darken"
 msgstr ""
@@ -151,7 +149,7 @@ msgid "Click in the picture to fill that area with color."
 msgstr "Kliko në pikturë për të ngjyrosur atë zonë."
 
 #, fuzzy
-msgid "Click and move to draw grass. Don't forget the dirt!"
+msgid "Click and move to draw grass. Don’t forget the dirt!"
 msgstr "Kliko dhe lëviz për të vizatuar spërkatje."
 
 #, fuzzy
@@ -195,7 +193,7 @@ msgid "Click and move the mouse around to draw a negative."
 msgstr "Kliko dhe lëviz mausin rreth e qark për të krijuar një negativ."
 
 #, fuzzy
-msgid "Click and move the mouse around to change the picture's color."
+msgid "Click and move the mouse around to change the picture’s color."
 msgstr "Kliko dhe lëviz përqark miun për të grupuar foton."
 
 msgid "Click and move the mouse around to make the picture drip."
@@ -222,8 +220,8 @@ msgstr "Drejtkëndësh"
 msgid "Circle"
 msgstr "Rreth"
 
-msgid "Oval"
-msgstr "Ovale"
+msgid "Ellipse"
+msgstr ""
 
 msgid "Triangle"
 msgstr "Trekëndësh"
@@ -231,17 +229,23 @@ msgstr "Trekëndësh"
 msgid "Pentagon"
 msgstr "Pesëkëndësh"
 
-msgid "Diamond"
-msgstr "Diamant"
+msgid "Rhombus"
+msgstr ""
 
-msgid "A square has four sides, each the same length."
-msgstr "Një katror ka katër anë, secila me të njëjtën gjatësi."
-
-msgid "A rectangle has four sides."
+#, fuzzy
+msgid "A square is a rectangle with four equal sides."
 msgstr "Një drejtkëndësh ka katër anë."
 
-msgid "A circle is exactly round."
-msgstr "Një rreth është tamam rrumbullak."
+#, fuzzy
+msgid "A rectangle has four sides and four right angles."
+msgstr "Një drejtkëndësh ka katër anë."
+
+msgid ""
+"A circle is a curve where all points have the same distance from the centre."
+msgstr ""
+
+msgid "An ellipse is a stretched circle."
+msgstr ""
 
 msgid "A triangle has three sides."
 msgstr "Një trekëndësh ka tre anë."
@@ -249,8 +253,8 @@ msgstr "Një trekëndësh ka tre anë."
 msgid "A pentagon has five sides."
 msgstr "Një pesëkëndësh ka pesë anë."
 
-msgid "A diamond is a square, turned around slightly."
-msgstr "Një diamant është një katror, i kthyer pak përqark."
+msgid "A rhombus has four equal sides, and opposite sides are parallel."
+msgstr ""
 
 msgid "Tools"
 msgstr "Vegla"
@@ -430,6 +434,33 @@ msgstr "Akoma nuk mund të printoni!"
 msgid "Erase this picture?"
 msgstr "Fshin këtë foto?"
 
+msgid "Remember to use the left mouse button!"
+msgstr ""
+
+msgid "jq"
+msgstr ""
+
+msgid "JQ"
+msgstr ""
+
+msgid "oO"
+msgstr ""
+
+msgid "`\\%_@$~#{}<>^&*"
+msgstr ""
+
+msgid ",.?!"
+msgstr ""
+
+msgid "017"
+msgstr ""
+
+msgid "O0"
+msgstr ""
+
+msgid "1Il|"
+msgstr ""
+
 msgid "Erase"
 msgstr "Fshi"
 
@@ -448,6 +479,27 @@ msgstr "Jo, ruaje në file tjetër"
 
 msgid "Choose the picture you want, then click “Open”."
 msgstr "Zgjidh pikturën që dëshiron, pastaj kliko \"Hap\"."
+
+#~ msgid "Green!"
+#~ msgstr "E gjelbërt!"
+
+#~ msgid "Fade"
+#~ msgstr "Zbehje"
+
+#~ msgid "Oval"
+#~ msgstr "Ovale"
+
+#~ msgid "Diamond"
+#~ msgstr "Diamant"
+
+#~ msgid "A square has four sides, each the same length."
+#~ msgstr "Një katror ka katër anë, secila me të njëjtën gjatësi."
+
+#~ msgid "A circle is exactly round."
+#~ msgstr "Një rreth është tamam rrumbullak."
+
+#~ msgid "A diamond is a square, turned around slightly."
+#~ msgstr "Një diamant është një katror, i kthyer pak përqark."
 
 #~ msgid "Lime!"
 #~ msgstr "Gëlqere!"

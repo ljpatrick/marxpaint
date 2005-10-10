@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Tuxpaint 0.9.9\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2005-01-06 12:31+0100\n"
+"POT-Creation-Date: 2005-10-10 00:12-0700\n"
 "PO-Revision-Date: 2004-12-10 18:11+0200\n"
 "Last-Translator: Gintaras Goštautas <gintaras@nes.lt>\n"
 "Language-Team: Lithuanian <komp_lt@konf.lt>\n"
@@ -30,15 +30,12 @@ msgstr "Tux Paint"
 msgid "Black!"
 msgstr "Juoda!"
 
-#, fuzzy
-msgid "Dark Gray!"
-msgstr "Pilka!"
-
-#. using both valid spellings
-msgid "Light Grey!"
+msgid "Dark grey! Some people spell it “dark gray”."
 msgstr ""
 
-#. using both valid spellings
+msgid "Light grey! Some people spell it “light gray”."
+msgstr ""
+
 msgid "White!"
 msgstr "Balta!"
 
@@ -51,11 +48,12 @@ msgstr "Oranžinė!"
 msgid "Yellow!"
 msgstr "Geltona!"
 
-msgid "Neon green!"
+msgid "Light green!"
 msgstr ""
 
-msgid "Green!"
-msgstr "Žalia!"
+#, fuzzy
+msgid "Dark green!"
+msgstr "Pilka!"
 
 msgid "Sky blue!"
 msgstr ""
@@ -63,11 +61,11 @@ msgstr ""
 msgid "Blue!"
 msgstr "Mėlyna!"
 
+msgid "Lavender!"
+msgstr ""
+
 msgid "Purple!"
 msgstr "Violetinė!"
-
-msgid "Magenta!"
-msgstr ""
 
 msgid "Pink!"
 msgstr "Rožinė!"
@@ -117,8 +115,8 @@ msgstr "Suliejimas"
 msgid "Smudge"
 msgstr ""
 
-msgid "Fade"
-msgstr "Blukinimas"
+msgid "Lighten"
+msgstr ""
 
 msgid "Darken"
 msgstr ""
@@ -152,7 +150,7 @@ msgid "Click in the picture to fill that area with color."
 msgstr "Spustelėkite piešinyje, norėdami tą plotą nuspalvinti."
 
 #, fuzzy
-msgid "Click and move to draw grass. Don't forget the dirt!"
+msgid "Click and move to draw grass. Don’t forget the dirt!"
 msgstr "Spustelėkite ir pieškite žybsnius."
 
 #, fuzzy
@@ -194,7 +192,7 @@ msgid "Click and move the mouse around to draw a negative."
 msgstr "Spustelėkite ir judindami pelę invertuosite paveikslėlio spalvas."
 
 #, fuzzy
-msgid "Click and move the mouse around to change the picture's color."
+msgid "Click and move the mouse around to change the picture’s color."
 msgstr "Spustelėkite ir judindami pelę išskaidysite piešinį kvadratėliais."
 
 msgid "Click and move the mouse around to make the picture drip."
@@ -219,8 +217,8 @@ msgstr "Stačiakampis"
 msgid "Circle"
 msgstr "Apskritimas"
 
-msgid "Oval"
-msgstr "Ovalas"
+msgid "Ellipse"
+msgstr ""
 
 msgid "Triangle"
 msgstr "Trikampis"
@@ -228,17 +226,23 @@ msgstr "Trikampis"
 msgid "Pentagon"
 msgstr "Penkiakampis"
 
-msgid "Diamond"
-msgstr "Rombas"
+msgid "Rhombus"
+msgstr ""
 
-msgid "A square has four sides, each the same length."
-msgstr "Kvadratas turi keturias kraštines, kurių ilgiai - vienodi."
-
-msgid "A rectangle has four sides."
+#, fuzzy
+msgid "A square is a rectangle with four equal sides."
 msgstr "Stačiakampis turi keturias kraštines."
 
-msgid "A circle is exactly round."
-msgstr "Apskritimas yra tiksliai apvalus."
+#, fuzzy
+msgid "A rectangle has four sides and four right angles."
+msgstr "Stačiakampis turi keturias kraštines."
+
+msgid ""
+"A circle is a curve where all points have the same distance from the centre."
+msgstr ""
+
+msgid "An ellipse is a stretched circle."
+msgstr ""
 
 msgid "A triangle has three sides."
 msgstr "Trikampis turi tris kraštines."
@@ -246,8 +250,8 @@ msgstr "Trikampis turi tris kraštines."
 msgid "A pentagon has five sides."
 msgstr "Penkiakampis turi penkias kraštines."
 
-msgid "A diamond is a square, turned around slightly."
-msgstr "Rombas yra truputį pasuktas kvadratas."
+msgid "A rhombus has four equal sides, and opposite sides are parallel."
+msgstr ""
 
 msgid "Tools"
 msgstr "Įrankiai"
@@ -426,6 +430,33 @@ msgstr "Jūs dar negalite spausdinti!"
 msgid "Erase this picture?"
 msgstr "Ar ištrinti šį piešinį?"
 
+msgid "Remember to use the left mouse button!"
+msgstr ""
+
+msgid "jq"
+msgstr ""
+
+msgid "JQ"
+msgstr ""
+
+msgid "oO"
+msgstr ""
+
+msgid "`\\%_@$~#{}<>^&*"
+msgstr ""
+
+msgid ",.?!"
+msgstr ""
+
+msgid "017"
+msgstr ""
+
+msgid "O0"
+msgstr ""
+
+msgid "1Il|"
+msgstr ""
+
 msgid "Erase"
 msgstr "Ištrinti"
 
@@ -444,6 +475,27 @@ msgstr "Ne, išsaugoti į naują bylą"
 
 msgid "Choose the picture you want, then click “Open”."
 msgstr "Išsirinkite norimą piešinį, po to Spustelėkite 'Open'."
+
+#~ msgid "Green!"
+#~ msgstr "Žalia!"
+
+#~ msgid "Fade"
+#~ msgstr "Blukinimas"
+
+#~ msgid "Oval"
+#~ msgstr "Ovalas"
+
+#~ msgid "Diamond"
+#~ msgstr "Rombas"
+
+#~ msgid "A square has four sides, each the same length."
+#~ msgstr "Kvadratas turi keturias kraštines, kurių ilgiai - vienodi."
+
+#~ msgid "A circle is exactly round."
+#~ msgstr "Apskritimas yra tiksliai apvalus."
+
+#~ msgid "A diamond is a square, turned around slightly."
+#~ msgstr "Rombas yra truputį pasuktas kvadratas."
 
 #~ msgid "Lime!"
 #~ msgstr "Salotinė!"

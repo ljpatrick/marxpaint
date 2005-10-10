@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TuxPaint 0.9.13\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2005-01-06 12:31+0100\n"
+"POT-Creation-Date: 2005-10-10 00:12-0700\n"
 "PO-Revision-Date: 2004-07-15 00:25+0800\n"
 "Last-Translator: Muguntharaj <mugunth@thamizha.com>\n"
 "Language-Team: \n"
@@ -22,15 +22,12 @@ msgstr "¼ìŠ ¦ÀÂ¢ýð"
 msgid "Black!"
 msgstr "¸ÕôÒ!"
 
-#, fuzzy
-msgid "Dark Gray!"
-msgstr "º¡õÀø¿¢Èõ!"
-
-#. using both valid spellings
-msgid "Light Grey!"
+msgid "Dark grey! Some people spell it “dark gray”."
 msgstr ""
 
-#. using both valid spellings
+msgid "Light grey! Some people spell it “light gray”."
+msgstr ""
+
 msgid "White!"
 msgstr "¦Åû¨Ç!"
 
@@ -43,11 +40,12 @@ msgstr "¬ÃïÍ!"
 msgid "Yellow!"
 msgstr "Áïºû!"
 
-msgid "Neon green!"
+msgid "Light green!"
 msgstr ""
 
-msgid "Green!"
-msgstr "Àî¨º!"
+#, fuzzy
+msgid "Dark green!"
+msgstr "º¡õÀø¿¢Èõ!"
 
 msgid "Sky blue!"
 msgstr ""
@@ -55,11 +53,11 @@ msgstr ""
 msgid "Blue!"
 msgstr "¿£Äõ!"
 
+msgid "Lavender!"
+msgstr ""
+
 msgid "Purple!"
 msgstr "°¾¡!"
-
-msgid "Magenta!"
-msgstr ""
 
 msgid "Pink!"
 msgstr "þÇïº¢ÅôÒ!"
@@ -110,8 +108,8 @@ msgstr "ÁíÌ"
 msgid "Smudge"
 msgstr ""
 
-msgid "Fade"
-msgstr "Áí¸Ä¡ìÌ"
+msgid "Lighten"
+msgstr ""
 
 msgid "Darken"
 msgstr ""
@@ -146,7 +144,7 @@ msgid "Click in the picture to fill that area with color."
 msgstr "À¼ò¾¢Ûû ¦º¡Îì¸¢É¡ø, «ó¾ ÀÃôÒ ÓØì¸ ¿¢Èõ Á¡Úõ"
 
 #, fuzzy
-msgid "Click and move to draw grass. Don't forget the dirt!"
+msgid "Click and move to draw grass. Don’t forget the dirt!"
 msgstr "¾ðÊÅ¢ðÎ ±Ä¢¨Â ¿¸÷ò¾¢É¡ø ´Ç¢ÕõÀ¼õ Å¨ÃÂÄ¡õ."
 
 #, fuzzy
@@ -188,7 +186,7 @@ msgid "Click and move the mouse around to draw a negative."
 msgstr "¾ðÊÅ¢ðÎ ±Ä¢¨Â ¿¸÷ò¾¢É¡ø À¼õ ¦¿¸ðÊù À¼Á¡¸ Á¡Úõ."
 
 #, fuzzy
-msgid "Click and move the mouse around to change the picture's color."
+msgid "Click and move the mouse around to change the picture’s color."
 msgstr "¾ðÊÅ¢ðÎ ±Ä¢¨Â ¿¸÷ò¾¢É¡ø À¼õ ¸ð¼í¸Ç¡¸ Á¡Úõ."
 
 msgid "Click and move the mouse around to make the picture drip."
@@ -213,8 +211,8 @@ msgstr "¦ºùÅ¸õ"
 msgid "Circle"
 msgstr "Åð¼õ"
 
-msgid "Oval"
-msgstr "¿£ûÅð¼õ"
+msgid "Ellipse"
+msgstr ""
 
 msgid "Triangle"
 msgstr "Óì§¸¡Éõ"
@@ -222,17 +220,23 @@ msgstr "Óì§¸¡Éõ"
 msgid "Pentagon"
 msgstr "³í§¸¡É"
 
-msgid "Diamond"
-msgstr "¨ÅÃÅÊÅõ"
+msgid "Rhombus"
+msgstr ""
 
-msgid "A square has four sides, each the same length."
-msgstr "ºÐÃò¾¢üÌ ¿¡ýÌ Àì¸í¸û ¯ñÎ. «¨ÉòÐôÀì¸í¸Ùõ ºÁ «Ç× ¯¨¼ÂÐ."
-
-msgid "A rectangle has four sides."
+#, fuzzy
+msgid "A square is a rectangle with four equal sides."
 msgstr "¦ºùÅ¸òÐìÌ ¿¡ýÌ Àì¸í¸û ¯ñÎ."
 
-msgid "A circle is exactly round."
-msgstr "Åð¼õ ºÃ¢Â¡¸ ¯Õñ¨¼ §À¡ø þÕìÌõ"
+#, fuzzy
+msgid "A rectangle has four sides and four right angles."
+msgstr "¦ºùÅ¸òÐìÌ ¿¡ýÌ Àì¸í¸û ¯ñÎ."
+
+msgid ""
+"A circle is a curve where all points have the same distance from the centre."
+msgstr ""
+
+msgid "An ellipse is a stretched circle."
+msgstr ""
 
 msgid "A triangle has three sides."
 msgstr "Óì§¸¡Éò¾¢üÌ ãýÚ Àì¸í¸û."
@@ -240,8 +244,8 @@ msgstr "Óì§¸¡Éò¾¢üÌ ãýÚ Àì¸í¸û."
 msgid "A pentagon has five sides."
 msgstr "´Õ ³í§¸¡Éò¾¢üÌ ³óÐ Àì¸í¸û ¯ñÎ."
 
-msgid "A diamond is a square, turned around slightly."
-msgstr "¨ÅÃÅÊÅõ ±ýÀÐ, ºüÚ ¾¢ÕõôÀð¼ ´Õ ºÐÃõ."
+msgid "A rhombus has four equal sides, and opposite sides are parallel."
+msgstr ""
 
 msgid "Tools"
 msgstr "¸ÕÅ¢¸û"
@@ -423,6 +427,33 @@ msgstr "¿£í¸û «¾üÌû «îº¢¼ ÓÊÂ¡Ð!"
 msgid "Erase this picture?"
 msgstr "À¼ò¨¾ «Æ¢òÐÅ¢¼Ä¡Á¡?"
 
+msgid "Remember to use the left mouse button!"
+msgstr ""
+
+msgid "jq"
+msgstr ""
+
+msgid "JQ"
+msgstr ""
+
+msgid "oO"
+msgstr ""
+
+msgid "`\\%_@$~#{}<>^&*"
+msgstr ""
+
+msgid ",.?!"
+msgstr ""
+
+msgid "017"
+msgstr ""
+
+msgid "O0"
+msgstr ""
+
+msgid "1Il|"
+msgstr ""
+
 #  'Erase' label:
 msgid "Erase"
 msgstr "«Æ¢"
@@ -445,6 +476,27 @@ msgstr "§Åñ¼¡õ, þôÀ¼ò¨¾ Ò¾¢Â §¸¡ôÀ¡¸ §ºÁ¢"
 
 msgid "Choose the picture you want, then click “Open”."
 msgstr "§¾¨ÅÂ¡É À¼ò¨¾ §¾÷ó¦¾ÎòÐ, À¢ÈÌ '¾¢È'-³ò ¾ð¼×õ."
+
+#~ msgid "Green!"
+#~ msgstr "Àî¨º!"
+
+#~ msgid "Fade"
+#~ msgstr "Áí¸Ä¡ìÌ"
+
+#~ msgid "Oval"
+#~ msgstr "¿£ûÅð¼õ"
+
+#~ msgid "Diamond"
+#~ msgstr "¨ÅÃÅÊÅõ"
+
+#~ msgid "A square has four sides, each the same length."
+#~ msgstr "ºÐÃò¾¢üÌ ¿¡ýÌ Àì¸í¸û ¯ñÎ. «¨ÉòÐôÀì¸í¸Ùõ ºÁ «Ç× ¯¨¼ÂÐ."
+
+#~ msgid "A circle is exactly round."
+#~ msgstr "Åð¼õ ºÃ¢Â¡¸ ¯Õñ¨¼ §À¡ø þÕìÌõ"
+
+#~ msgid "A diamond is a square, turned around slightly."
+#~ msgstr "¨ÅÃÅÊÅõ ±ýÀÐ, ºüÚ ¾¢ÕõôÀð¼ ´Õ ºÐÃõ."
 
 #~ msgid "Lime!"
 #~ msgstr "þÇõÀî¨º!"

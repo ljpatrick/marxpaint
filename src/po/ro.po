@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Tuxpaint 0.9.2pre\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2005-01-06 12:31+0100\n"
+"POT-Creation-Date: 2005-10-10 00:12-0700\n"
 "PO-Revision-Date: 2003-01-03 21:32-0500\n"
 "Last-Translator: Laurentiu Buzdugan <buzdugan@voyager.net>\n"
 "Language-Team: Romanian <ro@li.org>\n"
@@ -31,15 +31,12 @@ msgstr "Picturã"
 msgid "Black!"
 msgstr "Negru!"
 
-#, fuzzy
-msgid "Dark Gray!"
-msgstr "Grozav!"
-
-#. using both valid spellings
-msgid "Light Grey!"
+msgid "Dark grey! Some people spell it “dark gray”."
 msgstr ""
 
-#. using both valid spellings
+msgid "Light grey! Some people spell it “light gray”."
+msgstr ""
+
 #, fuzzy
 msgid "White!"
 msgstr "Alb!"
@@ -56,12 +53,12 @@ msgstr "Portocaliu!"
 msgid "Yellow!"
 msgstr "Galben!"
 
-msgid "Neon green!"
+msgid "Light green!"
 msgstr ""
 
 #, fuzzy
-msgid "Green!"
-msgstr "Verde!"
+msgid "Dark green!"
+msgstr "Grozav!"
 
 msgid "Sky blue!"
 msgstr ""
@@ -70,12 +67,12 @@ msgstr ""
 msgid "Blue!"
 msgstr "Albastru!"
 
+msgid "Lavender!"
+msgstr ""
+
 #, fuzzy
 msgid "Purple!"
 msgstr "Violet!"
-
-msgid "Magenta!"
-msgstr ""
 
 #, fuzzy
 msgid "Pink!"
@@ -127,8 +124,8 @@ msgstr "Neclar"
 msgid "Smudge"
 msgstr ""
 
-msgid "Fade"
-msgstr "Estompeazã"
+msgid "Lighten"
+msgstr ""
 
 msgid "Darken"
 msgstr ""
@@ -163,7 +160,7 @@ msgid "Click in the picture to fill that area with color."
 msgstr "Clic în desen pentru a umple acea zonã cu culoare"
 
 #, fuzzy
-msgid "Click and move to draw grass. Don't forget the dirt!"
+msgid "Click and move to draw grass. Don’t forget the dirt!"
 msgstr "Clic ºi miºcã pentru a desena steluþe"
 
 #, fuzzy
@@ -210,7 +207,7 @@ msgid "Click and move the mouse around to draw a negative."
 msgstr "Clic ºi miºcã maus-ul pentru a desena un negativ"
 
 #, fuzzy
-msgid "Click and move the mouse around to change the picture's color."
+msgid "Click and move the mouse around to change the picture’s color."
 msgstr "Clic ºi miºcã maus-ul pentru a face desenul pãtrãþos"
 
 #, fuzzy
@@ -239,8 +236,8 @@ msgstr "Dreptunghi"
 msgid "Circle"
 msgstr "Cerc"
 
-msgid "Oval"
-msgstr "Oval"
+msgid "Ellipse"
+msgstr ""
 
 msgid "Triangle"
 msgstr "Triunghi"
@@ -248,17 +245,23 @@ msgstr "Triunghi"
 msgid "Pentagon"
 msgstr "Pentagon"
 
-msgid "Diamond"
-msgstr "Diamant"
+msgid "Rhombus"
+msgstr ""
 
-msgid "A square has four sides, each the same length."
-msgstr "Un pãtrat are patru laturi, fiecare de aceeaºi lungime."
-
-msgid "A rectangle has four sides."
+#, fuzzy
+msgid "A square is a rectangle with four equal sides."
 msgstr "Un dreptunghi are patru laturi."
 
-msgid "A circle is exactly round."
-msgstr "Un cerc este rotund perfect."
+#, fuzzy
+msgid "A rectangle has four sides and four right angles."
+msgstr "Un dreptunghi are patru laturi."
+
+msgid ""
+"A circle is a curve where all points have the same distance from the centre."
+msgstr ""
+
+msgid "An ellipse is a stretched circle."
+msgstr ""
 
 msgid "A triangle has three sides."
 msgstr "Un triunghi are trei laturi."
@@ -266,8 +269,8 @@ msgstr "Un triunghi are trei laturi."
 msgid "A pentagon has five sides."
 msgstr "Un pentagon are cinci laturi."
 
-msgid "A diamond is a square, turned around slightly."
-msgstr "Un romb este un pãtrat, rotit puþin."
+msgid "A rhombus has four equal sides, and opposite sides are parallel."
+msgstr ""
 
 msgid "Tools"
 msgstr "Unelte"
@@ -452,6 +455,33 @@ msgstr "Nu poþi încã tipãri!"
 msgid "Erase this picture?"
 msgstr "Stergi aceastã imagine?"
 
+msgid "Remember to use the left mouse button!"
+msgstr ""
+
+msgid "jq"
+msgstr ""
+
+msgid "JQ"
+msgstr ""
+
+msgid "oO"
+msgstr ""
+
+msgid "`\\%_@$~#{}<>^&*"
+msgstr ""
+
+msgid ",.?!"
+msgstr ""
+
+msgid "017"
+msgstr ""
+
+msgid "O0"
+msgstr ""
+
+msgid "1Il|"
+msgstr ""
+
 msgid "Erase"
 msgstr "ªterge"
 
@@ -472,6 +502,28 @@ msgstr "Nu, salveazã un nou fiºier"
 #, fuzzy
 msgid "Choose the picture you want, then click “Open”."
 msgstr "Alege imaginea doritã, apoi fã clic pe 'Deschide'"
+
+#, fuzzy
+#~ msgid "Green!"
+#~ msgstr "Verde!"
+
+#~ msgid "Fade"
+#~ msgstr "Estompeazã"
+
+#~ msgid "Oval"
+#~ msgstr "Oval"
+
+#~ msgid "Diamond"
+#~ msgstr "Diamant"
+
+#~ msgid "A square has four sides, each the same length."
+#~ msgstr "Un pãtrat are patru laturi, fiecare de aceeaºi lungime."
+
+#~ msgid "A circle is exactly round."
+#~ msgstr "Un cerc este rotund perfect."
+
+#~ msgid "A diamond is a square, turned around slightly."
+#~ msgstr "Un romb este un pãtrat, rotit puþin."
 
 #, fuzzy
 #~ msgid "Lime!"

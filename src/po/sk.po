@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint 0.9.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2005-01-06 12:31+0100\n"
+"POT-Creation-Date: 2005-10-10 00:12-0700\n"
 "PO-Revision-Date: 2004-07-26 02:40+0200\n"
 "Last-Translator: Andrej Kacian <andrej@kacian.sk>\n"
 "Language-Team: Slovak <sk-i18n@lists.linux.sk>\n"
@@ -26,15 +26,12 @@ msgstr "Kresliť"
 msgid "Black!"
 msgstr "Čierna!"
 
-#, fuzzy
-msgid "Dark Gray!"
-msgstr "Sivá!"
-
-#. using both valid spellings
-msgid "Light Grey!"
+msgid "Dark grey! Some people spell it “dark gray”."
 msgstr ""
 
-#. using both valid spellings
+msgid "Light grey! Some people spell it “light gray”."
+msgstr ""
+
 msgid "White!"
 msgstr "Biela!"
 
@@ -47,11 +44,12 @@ msgstr "Oranžová!"
 msgid "Yellow!"
 msgstr "Žltá!"
 
-msgid "Neon green!"
+msgid "Light green!"
 msgstr ""
 
-msgid "Green!"
-msgstr "Zelená!"
+#, fuzzy
+msgid "Dark green!"
+msgstr "Sivá!"
 
 msgid "Sky blue!"
 msgstr ""
@@ -59,11 +57,11 @@ msgstr ""
 msgid "Blue!"
 msgstr "Modrá!"
 
+msgid "Lavender!"
+msgstr ""
+
 msgid "Purple!"
 msgstr "Fialová!"
-
-msgid "Magenta!"
-msgstr ""
 
 msgid "Pink!"
 msgstr "Ružová!"
@@ -113,8 +111,8 @@ msgstr "Rozmazať"
 msgid "Smudge"
 msgstr ""
 
-msgid "Fade"
-msgstr "Vyblednúť"
+msgid "Lighten"
+msgstr ""
 
 msgid "Darken"
 msgstr ""
@@ -148,7 +146,7 @@ msgid "Click in the picture to fill that area with color."
 msgstr "Klikni do obrázku pre vyplnenie oblasti farbou."
 
 #, fuzzy
-msgid "Click and move to draw grass. Don't forget the dirt!"
+msgid "Click and move to draw grass. Don’t forget the dirt!"
 msgstr "Klikni a pohybuj myšou a budeš kresliť iskry."
 
 #, fuzzy
@@ -190,7 +188,7 @@ msgid "Click and move the mouse around to draw a negative."
 msgstr "Klikni a pohybuj myšou pre vykreslenie negatívu."
 
 #, fuzzy
-msgid "Click and move the mouse around to change the picture's color."
+msgid "Click and move the mouse around to change the picture’s color."
 msgstr "Klikni a pohybuj myšou pre rozstvorcekovanie obrázku."
 
 msgid "Click and move the mouse around to make the picture drip."
@@ -215,8 +213,8 @@ msgstr "Obdĺžnik"
 msgid "Circle"
 msgstr "Kruh"
 
-msgid "Oval"
-msgstr "Ovál"
+msgid "Ellipse"
+msgstr ""
 
 msgid "Triangle"
 msgstr "Trojuholník"
@@ -224,17 +222,23 @@ msgstr "Trojuholník"
 msgid "Pentagon"
 msgstr "Päťuholník"
 
-msgid "Diamond"
-msgstr "Diamant"
+msgid "Rhombus"
+msgstr ""
 
-msgid "A square has four sides, each the same length."
-msgstr "Štvorec má štyri strany, všetky rovnako dlhé."
-
-msgid "A rectangle has four sides."
+#, fuzzy
+msgid "A square is a rectangle with four equal sides."
 msgstr "Obdĺžnik má štyri strany."
 
-msgid "A circle is exactly round."
-msgstr "Kruh je presne okrúhly."
+#, fuzzy
+msgid "A rectangle has four sides and four right angles."
+msgstr "Obdĺžnik má štyri strany."
+
+msgid ""
+"A circle is a curve where all points have the same distance from the centre."
+msgstr ""
+
+msgid "An ellipse is a stretched circle."
+msgstr ""
 
 msgid "A triangle has three sides."
 msgstr "Trojuholník má tri strany."
@@ -242,8 +246,8 @@ msgstr "Trojuholník má tri strany."
 msgid "A pentagon has five sides."
 msgstr "Päťuholník má päť strán."
 
-msgid "A diamond is a square, turned around slightly."
-msgstr "Diamant vznikne pootočením štvorca."
+msgid "A rhombus has four equal sides, and opposite sides are parallel."
+msgstr ""
 
 msgid "Tools"
 msgstr "Nástroje"
@@ -422,6 +426,33 @@ msgstr "Ešte sa nedá tlačiť!"
 msgid "Erase this picture?"
 msgstr "Vymazať tento obrázok?"
 
+msgid "Remember to use the left mouse button!"
+msgstr ""
+
+msgid "jq"
+msgstr ""
+
+msgid "JQ"
+msgstr ""
+
+msgid "oO"
+msgstr ""
+
+msgid "`\\%_@$~#{}<>^&*"
+msgstr ""
+
+msgid ",.?!"
+msgstr ""
+
+msgid "017"
+msgstr ""
+
+msgid "O0"
+msgstr ""
+
+msgid "1Il|"
+msgstr ""
+
 msgid "Erase"
 msgstr "Guma"
 
@@ -440,6 +471,27 @@ msgstr "Nie, ulož ho ako nový súbor"
 
 msgid "Choose the picture you want, then click “Open”."
 msgstr "Vyber obrázok, ktorý chceš, a potom klikni na \"Otvor\"."
+
+#~ msgid "Green!"
+#~ msgstr "Zelená!"
+
+#~ msgid "Fade"
+#~ msgstr "Vyblednúť"
+
+#~ msgid "Oval"
+#~ msgstr "Ovál"
+
+#~ msgid "Diamond"
+#~ msgstr "Diamant"
+
+#~ msgid "A square has four sides, each the same length."
+#~ msgstr "Štvorec má štyri strany, všetky rovnako dlhé."
+
+#~ msgid "A circle is exactly round."
+#~ msgstr "Kruh je presne okrúhly."
+
+#~ msgid "A diamond is a square, turned around slightly."
+#~ msgstr "Diamant vznikne pootočením štvorca."
 
 #~ msgid "Lime!"
 #~ msgstr "Žltozelená!"

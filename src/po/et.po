@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ee_et\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2004-07-16 21:12+0200\n"
+"POT-Creation-Date: 2005-10-10 00:12-0700\n"
 "PO-Revision-Date: 2005-02-13 17:36+0200\n"
 "Last-Translator: Henrik Pihl <henrik@saarlane.ee>\n"
 "Language-Team: Estonian <et@li.org>\n"
@@ -28,14 +28,17 @@ msgstr "Joonistame koos Tuksiga!"
 msgid "Black!"
 msgstr "Must!"
 
+msgid "Dark grey! Some people spell it “dark gray”."
+msgstr ""
+
+msgid "Light grey! Some people spell it “light gray”."
+msgstr ""
+
 msgid "White!"
 msgstr "Valge!"
 
 msgid "Red!"
 msgstr "Punane!"
-
-msgid "Pink!"
-msgstr "Roosa!"
 
 msgid "Orange!"
 msgstr "Oranž!"
@@ -43,32 +46,36 @@ msgstr "Oranž!"
 msgid "Yellow!"
 msgstr "Kollane!"
 
-msgid "Lime!"
-msgstr "Heleroheline!"
+msgid "Light green!"
+msgstr ""
 
-msgid "Green!"
-msgstr "Roheline!"
+msgid "Dark green!"
+msgstr ""
 
-msgid "Cyan!"
-msgstr "Türkiissinine!"
+msgid "Sky blue!"
+msgstr ""
 
 msgid "Blue!"
 msgstr "Sinine!"
 
+msgid "Lavender!"
+msgstr ""
+
 msgid "Purple!"
 msgstr "Lilla!"
 
-msgid "Fuchsia!"
-msgstr "Helelilla!"
+msgid "Pink!"
+msgstr "Roosa!"
 
 msgid "Brown!"
 msgstr "Pruun!"
 
-msgid "Gray!"
-msgstr "Hall!"
+#, fuzzy
+msgid "Tan!"
+msgstr "Türkiissinine!"
 
-msgid "Silver!"
-msgstr "Hõbedane!"
+msgid "Beige!"
+msgstr ""
 
 msgid "Great!"
 msgstr "Suurepärane!"
@@ -82,20 +89,37 @@ msgstr "Jätka samas vaimus!"
 msgid "Good job!"
 msgstr "Hästi tehtud!"
 
+msgid "Fill"
+msgstr "Täitmine"
+
+#, fuzzy
+msgid "Grass"
+msgstr "Kustuta"
+
+#, fuzzy
+msgid "Bricks"
+msgstr "Plokid"
+
 msgid "Rainbow"
 msgstr "Vikerkaar"
 
 msgid "Sparkles"
 msgstr "Sädelus"
 
-msgid "Mirror"
-msgstr "Peegelpilt"
-
-msgid "Flip"
-msgstr "Pahupidi"
-
 msgid "Blur"
 msgstr "Ähmasus"
+
+msgid "Smudge"
+msgstr ""
+
+msgid "Lighten"
+msgstr ""
+
+msgid "Darken"
+msgstr ""
+
+msgid "Chalk"
+msgstr "Kriit"
 
 msgid "Blocks"
 msgstr "Plokid"
@@ -103,23 +127,36 @@ msgstr "Plokid"
 msgid "Negative"
 msgstr "Negatiiv"
 
-msgid "Fade"
-msgstr "Pleegitus"
-
-msgid "Chalk"
-msgstr "Kriit"
+#, fuzzy
+msgid "Tint"
+msgstr "Peenike"
 
 msgid "Drip"
 msgstr "Tilgad"
 
-msgid "Thick"
-msgstr "Paks"
+msgid "Cartoon"
+msgstr ""
 
-msgid "Thin"
-msgstr "Peenike"
+msgid "Mirror"
+msgstr "Peegelpilt"
 
-msgid "Fill"
-msgstr "Täitmine"
+msgid "Flip"
+msgstr "Pahupidi"
+
+msgid "Click in the picture to fill that area with color."
+msgstr "Klõpsa pildil, et täita see ala värviga."
+
+#, fuzzy
+msgid "Click and move to draw grass. Don’t forget the dirt!"
+msgstr "Tee klõps ja liiguta hiirt,et tekitada sädemeid."
+
+#, fuzzy
+msgid "Click and move to draw large bricks."
+msgstr "Tee klõps ja liiguta hiirt,et tekitada sädemeid."
+
+#, fuzzy
+msgid "Click and move to draw small bricks."
+msgstr "Tee klõps ja liiguta hiirt,et tekitada sädemeid."
 
 msgid "You can draw in rainbow colors!"
 msgstr "Sa saad joonistada vikerkaarevärvidega!"
@@ -127,14 +164,23 @@ msgstr "Sa saad joonistada vikerkaarevärvidega!"
 msgid "Click and move to draw sparkles."
 msgstr "Tee klõps ja liiguta hiirt,et tekitada sädemeid."
 
-msgid "Click to make a mirror image."
-msgstr "Tee klõps, et tekitada peegelpilt."
-
-msgid "Click to flip the picture upside-down."
-msgstr "Tee klõps, et pöörata pilt pahupidi."
-
 msgid "Click and move the mouse around to blur the picture."
 msgstr "Tee klõps ja liiguta hiirt, et teha pilt ähmasemaks."
+
+#, fuzzy
+msgid "Click and move the mouse around to smudge the picture."
+msgstr "Tee klõps ja liiguta hiirt, et teha pilt ähmasemaks."
+
+msgid "Click and move to fade the colors."
+msgstr "Tee klõps ja liiguta hiirt, et pleegitada värve."
+
+#, fuzzy
+msgid "Click and move to darken the colors."
+msgstr "Tee klõps ja liiguta hiirt, et pleegitada värve."
+
+msgid ""
+"Click and move the mouse around to turn the picture into a chalk drawing."
+msgstr "Tee klõps ja liiguta hiirt, et muuta pilt kriidijoonistuse sarnaseks."
 
 msgid "Click and move the mouse around to make the picture blocky."
 msgstr "Tee klõps ja liiguta hiirt, et pilt muutuks ruudulisemaks."
@@ -142,23 +188,22 @@ msgstr "Tee klõps ja liiguta hiirt, et pilt muutuks ruudulisemaks."
 msgid "Click and move the mouse around to draw a negative."
 msgstr "Tee klõps ja liiguta hiirt, et tekitada negatiiv."
 
-msgid "Click and move to fade the colors."
-msgstr "Tee klõps ja liiguta hiirt, et pleegitada värve."
-
-msgid "Click and move the mouse around to turn the picture into a chalk drawing."
-msgstr "Tee klõps ja liiguta hiirt, et muuta pilt kriidijoonistuse sarnaseks."
+#, fuzzy
+msgid "Click and move the mouse around to change the picture’s color."
+msgstr "Tee klõps ja liiguta hiirt, et pilt muutuks ruudulisemaks."
 
 msgid "Click and move the mouse around to make the picture drip."
 msgstr "Tee klõps ja liiguta hiirt, et panna pilt tilkuma."
 
-msgid "Click and move the mouse to thicken the picture."
-msgstr "Tee klõps ja liiguta hiirt, et teha pilt paksemaks."
+#, fuzzy
+msgid "Click and move the mouse around to turn the picture into a cartoon."
+msgstr "Tee klõps ja liiguta hiirt, et muuta pilt kriidijoonistuse sarnaseks."
 
-msgid "Click and move the mouse to thin the picture."
-msgstr "Tee klõps ja liiguta hiirt, et teha pilt õhemaks."
+msgid "Click to make a mirror image."
+msgstr "Tee klõps, et tekitada peegelpilt."
 
-msgid "Click in the picture to fill that area with color."
-msgstr "Klõpsa pildil, et täita see ala värviga."
+msgid "Click to flip the picture upside-down."
+msgstr "Tee klõps, et pöörata pilt pahupidi."
 
 msgid "Square"
 msgstr "Ruut"
@@ -169,8 +214,8 @@ msgstr "Ristkülik"
 msgid "Circle"
 msgstr "Ring"
 
-msgid "Oval"
-msgstr "Ovaal"
+msgid "Ellipse"
+msgstr ""
 
 msgid "Triangle"
 msgstr "Kolmnurk"
@@ -178,17 +223,23 @@ msgstr "Kolmnurk"
 msgid "Pentagon"
 msgstr "Viisnurk"
 
-msgid "Diamond"
-msgstr "Romb"
+msgid "Rhombus"
+msgstr ""
 
-msgid "A square has four sides, each the same length."
-msgstr "Ruudul on neli külge, igal küljel on sama pikkus."
-
-msgid "A rectangle has four sides."
+#, fuzzy
+msgid "A square is a rectangle with four equal sides."
 msgstr "Ristkülikul on neli külge."
 
-msgid "A circle is exactly round."
-msgstr "Ring on täiesti ümmargune."
+#, fuzzy
+msgid "A rectangle has four sides and four right angles."
+msgstr "Ristkülikul on neli külge."
+
+msgid ""
+"A circle is a curve where all points have the same distance from the centre."
+msgstr ""
+
+msgid "An ellipse is a stretched circle."
+msgstr ""
 
 msgid "A triangle has three sides."
 msgstr "Kolmnurgal on kolm külge."
@@ -196,8 +247,8 @@ msgstr "Kolmnurgal on kolm külge."
 msgid "A pentagon has five sides."
 msgstr "Viisnurgal on viis külge."
 
-msgid "A diamond is a square, turned around slightly."
-msgstr "Romb on ruut, mis on pööratud natuke viltu."
+msgid "A rhombus has four equal sides, and opposite sides are parallel."
+msgstr ""
 
 msgid "Tools"
 msgstr "Tööriistad"
@@ -207,6 +258,10 @@ msgstr "Värvid"
 
 msgid "Brushes"
 msgstr "Pintslid"
+
+#, fuzzy
+msgid "Erasers"
+msgstr "Kustukumm"
 
 msgid "Stamps"
 msgstr "Templid"
@@ -244,7 +299,7 @@ msgstr "Kustukumm"
 msgid "New"
 msgstr "Uus"
 
-#. 'Open' label:
+#. buttons for the file open dialog
 msgid "Open"
 msgstr "Ava"
 
@@ -269,7 +324,10 @@ msgstr "Klõpsa pildil joone joonistamiseks. Lõpetamiseks vabasta hiire nupp."
 msgid ""
 "Pick a shape. Click to pick the center, drag, then let go when it is the "
 "size you want. Move around to rotate it, and click to draw it."
-msgstr "Vali kujund. Klõpsa, et valida keskkoht, lohista, siis lase paraja suuruse juures nupp lahti. Liiguta hiirt ringi, et pöörata kujund ümber, ning siis klõpsa uuesti lõpetamiseks."
+msgstr ""
+"Vali kujund. Klõpsa, et valida keskkoht, lohista, siis lase paraja suuruse "
+"juures nupp lahti. Liiguta hiirt ringi, et pöörata kujund ümber, ning siis "
+"klõpsa uuesti lõpetamiseks."
 
 msgid "Choose a style of text. Click on your drawing and you can start typing."
 msgstr "Vali teksti stiil. Klõpsa joonistusele ja sa saad hakata kirjutama."
@@ -368,13 +426,41 @@ msgstr "Ei saa veel välja trükkida!"
 msgid "Erase this picture?"
 msgstr "Kas kustutame selle pildi?"
 
-#. 'Erase' label:
+msgid "Remember to use the left mouse button!"
+msgstr ""
+
+msgid "jq"
+msgstr ""
+
+msgid "JQ"
+msgstr ""
+
+msgid "oO"
+msgstr ""
+
+msgid "`\\%_@$~#{}<>^&*"
+msgstr ""
+
+msgid ",.?!"
+msgstr ""
+
+msgid "017"
+msgstr ""
+
+msgid "O0"
+msgstr ""
+
+msgid "1Il|"
+msgstr ""
+
 msgid "Erase"
 msgstr "Kustuta"
 
-#. 'Back' label:
 msgid "Back"
 msgstr "Tagasi"
+
+msgid "Aa"
+msgstr ""
 
 #. FIXME: Move elsewhere!!!
 msgid "Save over the older version of this picture?"
@@ -386,3 +472,44 @@ msgstr "Ei, salvestame uude faili"
 msgid "Choose the picture you want, then click “Open”."
 msgstr "Vali pilt ja klõpsa nupul  \"Avamine\"."
 
+#~ msgid "Lime!"
+#~ msgstr "Heleroheline!"
+
+#~ msgid "Green!"
+#~ msgstr "Roheline!"
+
+#~ msgid "Fuchsia!"
+#~ msgstr "Helelilla!"
+
+#~ msgid "Gray!"
+#~ msgstr "Hall!"
+
+#~ msgid "Silver!"
+#~ msgstr "Hõbedane!"
+
+#~ msgid "Fade"
+#~ msgstr "Pleegitus"
+
+#~ msgid "Thick"
+#~ msgstr "Paks"
+
+#~ msgid "Click and move the mouse to thicken the picture."
+#~ msgstr "Tee klõps ja liiguta hiirt, et teha pilt paksemaks."
+
+#~ msgid "Click and move the mouse to thin the picture."
+#~ msgstr "Tee klõps ja liiguta hiirt, et teha pilt õhemaks."
+
+#~ msgid "Oval"
+#~ msgstr "Ovaal"
+
+#~ msgid "Diamond"
+#~ msgstr "Romb"
+
+#~ msgid "A square has four sides, each the same length."
+#~ msgstr "Ruudul on neli külge, igal küljel on sama pikkus."
+
+#~ msgid "A circle is exactly round."
+#~ msgstr "Ring on täiesti ümmargune."
+
+#~ msgid "A diamond is a square, turned around slightly."
+#~ msgstr "Romb on ruut, mis on pööratud natuke viltu."

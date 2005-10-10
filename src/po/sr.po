@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint 0.9.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2005-01-06 12:31+0100\n"
+"POT-Creation-Date: 2005-10-10 00:12-0700\n"
 "PO-Revision-Date: 2004-03-29 18:58-0500\n"
 "Last-Translator: Aleksandar Jelenak <jelenak@netlinkplus.net>\n"
 "Language-Team: Serbian <gnu@prevod.org>\n"
@@ -29,17 +29,13 @@ msgstr "Бојити"
 msgid "Black!"
 msgstr "црна!"
 
-#
-#, fuzzy
-msgid "Dark Gray!"
-msgstr "сива!"
+msgid "Dark grey! Some people spell it “dark gray”."
+msgstr ""
 
-#. using both valid spellings
-msgid "Light Grey!"
+msgid "Light grey! Some people spell it “light gray”."
 msgstr ""
 
 #
-#. using both valid spellings
 msgid "White!"
 msgstr "бела!"
 
@@ -55,12 +51,13 @@ msgstr "наранџаста!"
 msgid "Yellow!"
 msgstr "жута!"
 
-msgid "Neon green!"
+msgid "Light green!"
 msgstr ""
 
 #
-msgid "Green!"
-msgstr "зелена!"
+#, fuzzy
+msgid "Dark green!"
+msgstr "сива!"
 
 msgid "Sky blue!"
 msgstr ""
@@ -69,12 +66,12 @@ msgstr ""
 msgid "Blue!"
 msgstr "плава!"
 
+msgid "Lavender!"
+msgstr ""
+
 #
 msgid "Purple!"
 msgstr "љубичаста!"
-
-msgid "Magenta!"
-msgstr ""
 
 #
 msgid "Pink!"
@@ -137,9 +134,8 @@ msgstr "Замагли"
 msgid "Smudge"
 msgstr ""
 
-#
-msgid "Fade"
-msgstr "Избледи"
+msgid "Lighten"
+msgstr ""
 
 msgid "Darken"
 msgstr ""
@@ -182,7 +178,7 @@ msgstr "Кликни у слику да би попунио ту област б
 
 #
 #, fuzzy
-msgid "Click and move to draw grass. Don't forget the dirt!"
+msgid "Click and move to draw grass. Don’t forget the dirt!"
 msgstr "Кликни и померај да би цртао искрице."
 
 #
@@ -236,7 +232,7 @@ msgstr "Кликни и шетај мишем да би правио негат�
 
 #
 #, fuzzy
-msgid "Click and move the mouse around to change the picture's color."
+msgid "Click and move the mouse around to change the picture’s color."
 msgstr "Кликни и померај миша да би огрубео слику."
 
 #
@@ -268,9 +264,8 @@ msgstr "правоугаоник"
 msgid "Circle"
 msgstr "круг"
 
-#
-msgid "Oval"
-msgstr "овал"
+msgid "Ellipse"
+msgstr ""
 
 #
 msgid "Triangle"
@@ -280,21 +275,25 @@ msgstr "троугао"
 msgid "Pentagon"
 msgstr "петоугао"
 
-#
-msgid "Diamond"
-msgstr "дијамант"
+msgid "Rhombus"
+msgstr ""
 
 #
-msgid "A square has four sides, each the same length."
-msgstr "Квадрат има четири странице подједнаке дужине."
-
-#
-msgid "A rectangle has four sides."
+#, fuzzy
+msgid "A square is a rectangle with four equal sides."
 msgstr "Правоугаоник има четири странице."
 
 #
-msgid "A circle is exactly round."
-msgstr "Круг је потпуно заобљен."
+#, fuzzy
+msgid "A rectangle has four sides and four right angles."
+msgstr "Правоугаоник има четири странице."
+
+msgid ""
+"A circle is a curve where all points have the same distance from the centre."
+msgstr ""
+
+msgid "An ellipse is a stretched circle."
+msgstr ""
 
 #
 msgid "A triangle has three sides."
@@ -304,9 +303,8 @@ msgstr "Троугао има три странице."
 msgid "A pentagon has five sides."
 msgstr "Петоугао има пет страница."
 
-#
-msgid "A diamond is a square, turned around slightly."
-msgstr "Дијамант је квадрат, мало заокренут."
+msgid "A rhombus has four equal sides, and opposite sides are parallel."
+msgstr ""
 
 #
 msgid "Tools"
@@ -536,6 +534,33 @@ msgstr "Не можеш још да штампаш!"
 msgid "Erase this picture?"
 msgstr "Обрисати ову слику?"
 
+msgid "Remember to use the left mouse button!"
+msgstr ""
+
+msgid "jq"
+msgstr ""
+
+msgid "JQ"
+msgstr ""
+
+msgid "oO"
+msgstr ""
+
+msgid "`\\%_@$~#{}<>^&*"
+msgstr ""
+
+msgid ",.?!"
+msgstr ""
+
+msgid "017"
+msgstr ""
+
+msgid "O0"
+msgstr ""
+
+msgid "1Il|"
+msgstr ""
+
 #
 msgid "Erase"
 msgstr "Бриши"
@@ -559,6 +584,34 @@ msgstr "Не, сачувај у нову датотеку"
 #
 msgid "Choose the picture you want, then click “Open”."
 msgstr "Изабери слику коју желиш, затим кликни „Отвори“."
+
+#
+#~ msgid "Green!"
+#~ msgstr "зелена!"
+
+#
+#~ msgid "Fade"
+#~ msgstr "Избледи"
+
+#
+#~ msgid "Oval"
+#~ msgstr "овал"
+
+#
+#~ msgid "Diamond"
+#~ msgstr "дијамант"
+
+#
+#~ msgid "A square has four sides, each the same length."
+#~ msgstr "Квадрат има четири странице подједнаке дужине."
+
+#
+#~ msgid "A circle is exactly round."
+#~ msgstr "Круг је потпуно заобљен."
+
+#
+#~ msgid "A diamond is a square, turned around slightly."
+#~ msgstr "Дијамант је квадрат, мало заокренут."
 
 #
 #~ msgid "Lime!"

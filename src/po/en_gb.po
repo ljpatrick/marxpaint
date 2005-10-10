@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint 0.9.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2005-01-06 12:31+0100\n"
+"POT-Creation-Date: 2005-10-10 00:12-0700\n"
 "PO-Revision-Date: 2004-04-26 11:20-0400\n"
 "Last-Translator: Gareth Owen <gowen72@yahoo.com>\n"
 "Language-Team: English (British) <en_gb@li.org>\n"
@@ -25,15 +25,12 @@ msgstr "Tux Paint"
 msgid "Black!"
 msgstr "Black!"
 
-#, fuzzy
-msgid "Dark Gray!"
-msgstr "Grey!"
-
-#. using both valid spellings
-msgid "Light Grey!"
+msgid "Dark grey! Some people spell it “dark gray”."
 msgstr ""
 
-#. using both valid spellings
+msgid "Light grey! Some people spell it “light gray”."
+msgstr ""
+
 msgid "White!"
 msgstr "White!"
 
@@ -46,11 +43,12 @@ msgstr "Orange!"
 msgid "Yellow!"
 msgstr "Yellow!"
 
-msgid "Neon green!"
+msgid "Light green!"
 msgstr ""
 
-msgid "Green!"
-msgstr "Green!"
+#, fuzzy
+msgid "Dark green!"
+msgstr "Grey!"
 
 msgid "Sky blue!"
 msgstr ""
@@ -58,11 +56,11 @@ msgstr ""
 msgid "Blue!"
 msgstr "Blue!"
 
+msgid "Lavender!"
+msgstr ""
+
 msgid "Purple!"
 msgstr "Purple!"
-
-msgid "Magenta!"
-msgstr ""
 
 msgid "Pink!"
 msgstr "Pink!"
@@ -112,8 +110,8 @@ msgstr "Blur"
 msgid "Smudge"
 msgstr ""
 
-msgid "Fade"
-msgstr "Fade"
+msgid "Lighten"
+msgstr ""
 
 msgid "Darken"
 msgstr ""
@@ -147,7 +145,7 @@ msgid "Click in the picture to fill that area with color."
 msgstr "Click in the picture to fill that area with colour."
 
 #, fuzzy
-msgid "Click and move to draw grass. Don't forget the dirt!"
+msgid "Click and move to draw grass. Don’t forget the dirt!"
 msgstr "Click and move to draw sparkles."
 
 #, fuzzy
@@ -190,7 +188,7 @@ msgid "Click and move the mouse around to draw a negative."
 msgstr "Click and move the mouse around to draw a negative."
 
 #, fuzzy
-msgid "Click and move the mouse around to change the picture's color."
+msgid "Click and move the mouse around to change the picture’s color."
 msgstr "Click and move the mouse around to make the picture blocky."
 
 msgid "Click and move the mouse around to make the picture drip."
@@ -216,8 +214,8 @@ msgstr "Rectangle"
 msgid "Circle"
 msgstr "Circle"
 
-msgid "Oval"
-msgstr "Oval"
+msgid "Ellipse"
+msgstr ""
 
 msgid "Triangle"
 msgstr "Triangle"
@@ -225,17 +223,23 @@ msgstr "Triangle"
 msgid "Pentagon"
 msgstr "Pentagon"
 
-msgid "Diamond"
-msgstr "Diamond"
+msgid "Rhombus"
+msgstr ""
 
-msgid "A square has four sides, each the same length."
-msgstr "A square has four sides, each the same length."
-
-msgid "A rectangle has four sides."
+#, fuzzy
+msgid "A square is a rectangle with four equal sides."
 msgstr "A rectangle has four sides."
 
-msgid "A circle is exactly round."
-msgstr "A circle is exactly round."
+#, fuzzy
+msgid "A rectangle has four sides and four right angles."
+msgstr "A rectangle has four sides."
+
+msgid ""
+"A circle is a curve where all points have the same distance from the centre."
+msgstr ""
+
+msgid "An ellipse is a stretched circle."
+msgstr ""
 
 msgid "A triangle has three sides."
 msgstr "A triangle has three sides."
@@ -243,8 +247,8 @@ msgstr "A triangle has three sides."
 msgid "A pentagon has five sides."
 msgstr "A pentagon has five sides."
 
-msgid "A diamond is a square, turned around slightly."
-msgstr "A diamond is a square, turned around slightly."
+msgid "A rhombus has four equal sides, and opposite sides are parallel."
+msgstr ""
 
 msgid "Tools"
 msgstr "Tools"
@@ -422,6 +426,33 @@ msgstr "You can’t print yet!"
 msgid "Erase this picture?"
 msgstr "Erase this picture?"
 
+msgid "Remember to use the left mouse button!"
+msgstr ""
+
+msgid "jq"
+msgstr ""
+
+msgid "JQ"
+msgstr ""
+
+msgid "oO"
+msgstr ""
+
+msgid "`\\%_@$~#{}<>^&*"
+msgstr ""
+
+msgid ",.?!"
+msgstr ""
+
+msgid "017"
+msgstr ""
+
+msgid "O0"
+msgstr ""
+
+msgid "1Il|"
+msgstr ""
+
 msgid "Erase"
 msgstr "Erase"
 
@@ -440,6 +471,27 @@ msgstr "No, save a new file"
 
 msgid "Choose the picture you want, then click “Open”."
 msgstr "Choose the picture you want, then click ‘Open’."
+
+#~ msgid "Green!"
+#~ msgstr "Green!"
+
+#~ msgid "Fade"
+#~ msgstr "Fade"
+
+#~ msgid "Oval"
+#~ msgstr "Oval"
+
+#~ msgid "Diamond"
+#~ msgstr "Diamond"
+
+#~ msgid "A square has four sides, each the same length."
+#~ msgstr "A square has four sides, each the same length."
+
+#~ msgid "A circle is exactly round."
+#~ msgstr "A circle is exactly round."
+
+#~ msgid "A diamond is a square, turned around slightly."
+#~ msgstr "A diamond is a square, turned around slightly."
 
 #~ msgid "Lime!"
 #~ msgstr "Lime!"

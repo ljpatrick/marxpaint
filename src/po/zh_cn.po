@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint 0.9.11\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2005-01-06 12:31+0100\n"
+"POT-Creation-Date: 2005-10-10 00:12-0700\n"
 "PO-Revision-Date: 2004-07-18 13:50+0800\n"
 "Last-Translator: Wang Jian <lark@linux.net.cn>\n"
 "Language-Team: zh_CN <i18n-translation@lists.linux.net.cn>\n"
@@ -33,15 +33,12 @@ msgstr "Tux Paint"
 msgid "Black!"
 msgstr "黑色！"
 
-#, fuzzy
-msgid "Dark Gray!"
-msgstr "灰色！"
-
-#. using both valid spellings
-msgid "Light Grey!"
+msgid "Dark grey! Some people spell it “dark gray”."
 msgstr ""
 
-#. using both valid spellings
+msgid "Light grey! Some people spell it “light gray”."
+msgstr ""
+
 msgid "White!"
 msgstr "白色！"
 
@@ -54,11 +51,12 @@ msgstr "橙色！"
 msgid "Yellow!"
 msgstr "黄色！"
 
-msgid "Neon green!"
+msgid "Light green!"
 msgstr ""
 
-msgid "Green!"
-msgstr "绿色！"
+#, fuzzy
+msgid "Dark green!"
+msgstr "灰色！"
 
 msgid "Sky blue!"
 msgstr ""
@@ -66,11 +64,11 @@ msgstr ""
 msgid "Blue!"
 msgstr "蓝色"
 
+msgid "Lavender!"
+msgstr ""
+
 msgid "Purple!"
 msgstr "紫色！"
-
-msgid "Magenta!"
-msgstr ""
 
 msgid "Pink!"
 msgstr "粉红色！"
@@ -120,8 +118,8 @@ msgstr "模糊"
 msgid "Smudge"
 msgstr ""
 
-msgid "Fade"
-msgstr "退色"
+msgid "Lighten"
+msgstr ""
 
 msgid "Darken"
 msgstr ""
@@ -155,7 +153,7 @@ msgid "Click in the picture to fill that area with color."
 msgstr "单击图片用颜色填充区域。"
 
 #, fuzzy
-msgid "Click and move to draw grass. Don't forget the dirt!"
+msgid "Click and move to draw grass. Don’t forget the dirt!"
 msgstr "单击然后移动来画火花。"
 
 #, fuzzy
@@ -197,7 +195,7 @@ msgid "Click and move the mouse around to draw a negative."
 msgstr "单击然后移动鼠标来绘制相片底片。"
 
 #, fuzzy
-msgid "Click and move the mouse around to change the picture's color."
+msgid "Click and move the mouse around to change the picture’s color."
 msgstr "单击然后移动鼠标将图片变成驳裂的效果。"
 
 msgid "Click and move the mouse around to make the picture drip."
@@ -222,8 +220,8 @@ msgstr "长方形"
 msgid "Circle"
 msgstr "圆形"
 
-msgid "Oval"
-msgstr "椭圆形"
+msgid "Ellipse"
+msgstr ""
 
 msgid "Triangle"
 msgstr "三角形"
@@ -231,17 +229,23 @@ msgstr "三角形"
 msgid "Pentagon"
 msgstr "五角形"
 
-msgid "Diamond"
-msgstr "菱形"
+msgid "Rhombus"
+msgstr ""
 
-msgid "A square has four sides, each the same length."
-msgstr "正方形有四个边，每个边的长度都相等。"
-
-msgid "A rectangle has four sides."
+#, fuzzy
+msgid "A square is a rectangle with four equal sides."
 msgstr "长方形有四个边。"
 
-msgid "A circle is exactly round."
-msgstr "圆形是正圆的。"
+#, fuzzy
+msgid "A rectangle has four sides and four right angles."
+msgstr "长方形有四个边。"
+
+msgid ""
+"A circle is a curve where all points have the same distance from the centre."
+msgstr ""
+
+msgid "An ellipse is a stretched circle."
+msgstr ""
 
 msgid "A triangle has three sides."
 msgstr "三角形有三个边。"
@@ -249,8 +253,8 @@ msgstr "三角形有三个边。"
 msgid "A pentagon has five sides."
 msgstr "五角形有五个边。"
 
-msgid "A diamond is a square, turned around slightly."
-msgstr "菱形就象一个正方形稍微倾斜了。"
+msgid "A rhombus has four equal sides, and opposite sides are parallel."
+msgstr ""
 
 msgid "Tools"
 msgstr "工具"
@@ -427,6 +431,33 @@ msgstr "你还不能打印耶！"
 msgid "Erase this picture?"
 msgstr "删除这个图片吗？"
 
+msgid "Remember to use the left mouse button!"
+msgstr ""
+
+msgid "jq"
+msgstr ""
+
+msgid "JQ"
+msgstr ""
+
+msgid "oO"
+msgstr ""
+
+msgid "`\\%_@$~#{}<>^&*"
+msgstr ""
+
+msgid ",.?!"
+msgstr ""
+
+msgid "017"
+msgstr ""
+
+msgid "O0"
+msgstr ""
+
+msgid "1Il|"
+msgstr ""
+
 msgid "Erase"
 msgstr "删除"
 
@@ -445,6 +476,27 @@ msgstr "不，保存到新文件"
 
 msgid "Choose the picture you want, then click “Open”."
 msgstr "选择你要打开的图片，然后点击“打开”。"
+
+#~ msgid "Green!"
+#~ msgstr "绿色！"
+
+#~ msgid "Fade"
+#~ msgstr "退色"
+
+#~ msgid "Oval"
+#~ msgstr "椭圆形"
+
+#~ msgid "Diamond"
+#~ msgstr "菱形"
+
+#~ msgid "A square has four sides, each the same length."
+#~ msgstr "正方形有四个边，每个边的长度都相等。"
+
+#~ msgid "A circle is exactly round."
+#~ msgstr "圆形是正圆的。"
+
+#~ msgid "A diamond is a square, turned around slightly."
+#~ msgstr "菱形就象一个正方形稍微倾斜了。"
 
 #~ msgid "Lime!"
 #~ msgstr "浅绿！"

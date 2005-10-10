@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2005-09-26 14:22+0700\n"
+"POT-Creation-Date: 2005-10-10 00:12-0700\n"
 "PO-Revision-Date: 2005-10-10 10:56+0700\n"
 "Last-Translator: Ouychai Chaita <Ae.freeman@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -30,14 +30,17 @@ msgstr "เพนกวิ้น วาดรูป"
 msgid "Black!"
 msgstr "ดำ"
 
+msgid "Dark grey! Some people spell it “dark gray”."
+msgstr "Dark grey บางคนก็เรียกว่า Dark gray"
+
+msgid "Light grey! Some people spell it “light gray”."
+msgstr "Light grey บางคนก็เรียกว่า ligh gray"
+
 msgid "White!"
 msgstr "ขาว"
 
 msgid "Red!"
 msgstr "แดง"
-
-msgid "Pink!"
-msgstr "ีสีชมพู"
 
 msgid "Orange!"
 msgstr "ส้ม"
@@ -45,32 +48,36 @@ msgstr "ส้ม"
 msgid "Yellow!"
 msgstr "เหลือง"
 
-msgid "Lime!"
-msgstr "สีเหลืองแกมเขียว"
+msgid "Light green!"
+msgstr "เขียวสว่าง"
 
-msgid "Green!"
-msgstr "สีเขียว"
+msgid "Dark green!"
+msgstr "เขียวมืด"
 
-msgid "Cyan!"
-msgstr "ไซแอ้น"
+msgid "Sky blue!"
+msgstr "น้ำเงินฟ้า"
 
 msgid "Blue!"
 msgstr "น้ำเงิน"
 
+msgid "Lavender!"
+msgstr "สีม่วงอ่อน"
+
 msgid "Purple!"
 msgstr "สีม่วง"
 
-msgid "Fuchsia!"
-msgstr "แดงม่วงสว่าง"
+msgid "Pink!"
+msgstr "ีสีชมพู"
 
 msgid "Brown!"
 msgstr "น้ำตาล"
 
-msgid "Gray!"
-msgstr "สีเทานะ"
+#, fuzzy
+msgid "Tan!"
+msgstr "ไซแอ้น"
 
-msgid "Silver!"
-msgstr "น้ำเงิน"
+msgid "Beige!"
+msgstr "นำตาลอ่อน"
 
 msgid "Great!"
 msgstr "เยี่ยม!"
@@ -84,20 +91,35 @@ msgstr "รักษามันไว้ให้ดีขึ้น"
 msgid "Good job!"
 msgstr "ทำงานได้ดีมาก"
 
+msgid "Fill"
+msgstr "เติม"
+
+msgid "Grass"
+msgstr "หญ้า"
+
+msgid "Bricks"
+msgstr "อิฐ"
+
 msgid "Rainbow"
 msgstr "รุ้ง"
 
 msgid "Sparkles"
 msgstr "ประกาย"
 
-msgid "Mirror"
-msgstr "กลับด้าน"
-
-msgid "Flip"
-msgstr "สลับ"
-
 msgid "Blur"
 msgstr "มัว"
+
+msgid "Smudge"
+msgstr "รอยด่าง"
+
+msgid "Lighten"
+msgstr "สว่างขึ้น"
+
+msgid "Darken"
+msgstr "มืดลง"
+
+msgid "Chalk"
+msgstr "ชอร์ค"
 
 msgid "Blocks"
 msgstr "บล๊อค"
@@ -105,23 +127,33 @@ msgstr "บล๊อค"
 msgid "Negative"
 msgstr "สีตรงข้าม"
 
-msgid "Fade"
-msgstr "เลือน"
-
-msgid "Chalk"
-msgstr "ชอร์ค"
+#, fuzzy
+msgid "Tint"
+msgstr "บาง"
 
 msgid "Drip"
 msgstr "หยด"
 
-msgid "Thick"
-msgstr "หนา"
+msgid "Cartoon"
+msgstr "การ์ตูน"
 
-msgid "Thin"
-msgstr "บาง"
+msgid "Mirror"
+msgstr "กลับด้าน"
 
-msgid "Fill"
-msgstr "เติม"
+msgid "Flip"
+msgstr "สลับ"
+
+msgid "Click in the picture to fill that area with color."
+msgstr "คลิ๊กที่รูปเพื่อเติมสีลงไป"
+
+msgid "Click and move to draw grass. Don’t forget the dirt!"
+msgstr "กดคลิ๊กเพื่อวาดรูปหญ้า แต่อย่าลืมวาดดินละ"
+
+msgid "Click and move to draw large bricks."
+msgstr "คลิ๊กและย้ายเพื่อวาดรูปอิฐใหญ่"
+
+msgid "Click and move to draw small bricks."
+msgstr "คลิ๊กและย้ายเพื่อวาดรูปอิฐเล็ก"
 
 msgid "You can draw in rainbow colors!"
 msgstr "เธอสามารถวาดสีรุ้งได้"
@@ -129,14 +161,22 @@ msgstr "เธอสามารถวาดสีรุ้งได้"
 msgid "Click and move to draw sparkles."
 msgstr "คลิ๊กและย้ายเพื่อวาดประกาย"
 
-msgid "Click to make a mirror image."
-msgstr "กดคลิ๊กเพื่อกลับด้านของรูปภาพ"
-
-msgid "Click to flip the picture upside-down."
-msgstr "คลิ๊กเพื่อกลับรูปจากบนลงล่าง"
-
 msgid "Click and move the mouse around to blur the picture."
 msgstr "คลิ๊กและย้ายเพื่อเม้าส์รอบๆ รูปที่เบลอ"
+
+#, fuzzy
+msgid "Click and move the mouse around to smudge the picture."
+msgstr "คลิ๊กและย้ายเพื่อเม้าส์รอบๆ รูปที่เบลอ"
+
+msgid "Click and move to fade the colors."
+msgstr "คลิ๊กและย้ายเพื่อทำให้สีจางลง"
+
+msgid "Click and move to darken the colors."
+msgstr "คลิ๊กและย้ายเพื่อทำให้มีดลง"
+
+msgid ""
+"Click and move the mouse around to turn the picture into a chalk drawing."
+msgstr "คลิ๊กและย้ายเม้าส์ไปรอบเพื่อทำให้รุปเป็นรูปชอร์ค"
 
 msgid "Click and move the mouse around to make the picture blocky."
 msgstr "คลิ๊กและย้ายเม้าส์ไปรอบๆ เพื่อทำให้รูปเป็น"
@@ -144,23 +184,20 @@ msgstr "คลิ๊กและย้ายเม้าส์ไปรอบๆ
 msgid "Click and move the mouse around to draw a negative."
 msgstr "คลิ๊กและย้ายเม้าส์รอบๆ เพื่อระบายกลับสี"
 
-msgid "Click and move to fade the colors."
-msgstr "คลิ๊กและย้ายเพื่อทำให้สีจางลง"
-
-msgid "Click and move the mouse around to turn the picture into a chalk drawing."
-msgstr "คลิ๊กและย้ายเม้าส์ไปรอบเพื่อทำให้รุปเป็นรูปชอร์ค"
+msgid "Click and move the mouse around to change the picture’s color."
+msgstr "คลิ๊กและย้ายเม้าส์รอบๆ เพื่อเปลี่ยนสี"
 
 msgid "Click and move the mouse around to make the picture drip."
 msgstr "คลิ๊กและย้ายเม้าส์ไปรอบๆ เพื่อสร้างรูปหยดน้ำ"
 
-msgid "Click and move the mouse to thicken the picture."
-msgstr "คลิ๊กและย้ายเม้าส์เพื่อให้เกิดรูปที่ใหญ่"
+msgid "Click and move the mouse around to turn the picture into a cartoon."
+msgstr "คลิ๊กและขยับเม้าส์ไปรอบๆ เพื่อทำให้รูปไปเป็นรูปการ์ตูน"
 
-msgid "Click and move the mouse to thin the picture."
-msgstr "คลิ๊กและย้ายเพื่อรูปบางๆ"
+msgid "Click to make a mirror image."
+msgstr "กดคลิ๊กเพื่อกลับด้านของรูปภาพ"
 
-msgid "Click in the picture to fill that area with color."
-msgstr "คลิ๊กที่รูปเพื่อเติมสีลงไป"
+msgid "Click to flip the picture upside-down."
+msgstr "คลิ๊กเพื่อกลับรูปจากบนลงล่าง"
 
 msgid "Square"
 msgstr "สี่เหลี่ยม"
@@ -171,8 +208,8 @@ msgstr "สี่เหลี่ยมผืนผ้า"
 msgid "Circle"
 msgstr "วงกลม"
 
-msgid "Oval"
-msgstr "รูปวงรี"
+msgid "Ellipse"
+msgstr "รุปวงรี"
 
 msgid "Triangle"
 msgstr "รูปสามเหลี่ยม"
@@ -180,17 +217,21 @@ msgstr "รูปสามเหลี่ยม"
 msgid "Pentagon"
 msgstr "รูปห้าเหลี่ยม"
 
-msgid "Diamond"
-msgstr "เพชร"
+msgid "Rhombus"
+msgstr "สี่เหลี่ยมขนมเปียกปูน"
 
-msgid "A square has four sides, each the same length."
-msgstr "สี่เหลี่ยมประกอบด้วย 4 ด้าน แต่ละด้านมีขนาดเท่ากัน"
+msgid "A square is a rectangle with four equal sides."
+msgstr "สี่เหลี่ยมจตุรัสประกอบด้วย 4 ด้าน ที่เท่ากัน"
 
-msgid "A rectangle has four sides."
-msgstr "สี่เหลี่ยมมุมฉากจะต้องมีสี่ด้านนะจ๊ะ"
+msgid "A rectangle has four sides and four right angles."
+msgstr "สี่เหลี่ยมผืนผ้าประกอบด้วย 4 ด้าน และมุม 4 มุม"
 
-msgid "A circle is exactly round."
-msgstr "วงกลมเกิดจากการหมุนไปเท่าๆกัน"
+msgid ""
+"A circle is a curve where all points have the same distance from the centre."
+msgstr "วงกลมคือเส้นโค้งที่ทุกๆจุดมีระยะห่างเท่ากันจากจุดศูนย์กลาง"
+
+msgid "An ellipse is a stretched circle."
+msgstr "วงรีคือวงกลมที่ยืดตัวออก"
 
 msgid "A triangle has three sides."
 msgstr "สามเหลี่ยมจะต้องมีสามด้านนะจ๊ะ"
@@ -198,8 +239,8 @@ msgstr "สามเหลี่ยมจะต้องมีสามด้า
 msgid "A pentagon has five sides."
 msgstr "รูปห้าเหลี่ยมมีห้าด้านนะจ๊ะ"
 
-msgid "A diamond is a square, turned around slightly."
-msgstr "เพชรเป็นรูปสี่เหลี่ยมจตุรัสที่หมุนไปรอบๆเพียงเล็กน้อย"
+msgid "A rhombus has four equal sides, and opposite sides are parallel."
+msgstr "สี่เหลี่ยมขนมเปียกปูนประกอบด้วยสี่ด้าน ด้านตรงข้ามจะขนานกัน"
 
 msgid "Tools"
 msgstr "เครื่องมือ"
@@ -249,7 +290,7 @@ msgstr "ยางลบ"
 msgid "New"
 msgstr "ใหม่"
 
-#. 'Open' label:
+#. buttons for the file open dialog
 msgid "Open"
 msgstr "เปิด"
 
@@ -271,8 +312,12 @@ msgstr "เลือกรูปแล้วประทับตราบนร
 msgid "Click to start drawing a line. Let go to complete it."
 msgstr "กดคลิ๊กเพื่อเริ่มวาด ทำมันให้สำเร็จนะ"
 
-msgid "Pick a shape. Click to pick the center, drag, then let go when it is the size you want. Move around to rotate it, and click to draw it."
-msgstr "เลือกรูปทรง คลิ๊กตรงจุดศูนย์กลาง วาง จากนั้นทำให้ได้รูปร่างที่เราต้องการ ย้ายไปรอบๆ เพื่อหมุน แล้วคลิ๊กเพื่อวาดรูปนั้น"
+msgid ""
+"Pick a shape. Click to pick the center, drag, then let go when it is the "
+"size you want. Move around to rotate it, and click to draw it."
+msgstr ""
+"เลือกรูปทรง คลิ๊กตรงจุดศูนย์กลาง วาง จากนั้นทำให้ได้รูปร่างที่เราต้องการ ย้ายไปรอบๆ เพื่อหมุน "
+"แล้วคลิ๊กเพื่อวาดรูปนั้น"
 
 msgid "Choose a style of text. Click on your drawing and you can start typing."
 msgstr "เลือกรูปแบบอักษร คลิ๊กที่รูปแล้วเธอก็เริ่มพิมพ์"
@@ -371,13 +416,41 @@ msgstr "ยังไม่สามารถพิมพ์ได้ตอนน
 msgid "Erase this picture?"
 msgstr "ลบรูปนี้หรือไม่?"
 
-#. 'Erase' label:
+msgid "Remember to use the left mouse button!"
+msgstr "โปรดจำไว้ว่าใช้เม้าปุ่มซ้าย"
+
+msgid "jq"
+msgstr "jq"
+
+msgid "JQ"
+msgstr "JQ"
+
+msgid "oO"
+msgstr "oO"
+
+msgid "`\\%_@$~#{}<>^&*"
+msgstr ""
+
+msgid ",.?!"
+msgstr ""
+
+msgid "017"
+msgstr ""
+
+msgid "O0"
+msgstr ""
+
+msgid "1Il|"
+msgstr ""
+
 msgid "Erase"
 msgstr "ลบ"
 
-#. 'Back' label:
 msgid "Back"
 msgstr "ย้อนกลับ"
+
+msgid "Aa"
+msgstr ""
 
 #. FIXME: Move elsewhere!!!
 msgid "Save over the older version of this picture?"
@@ -389,66 +462,47 @@ msgstr "ไม่ บันทึกเป็นแฟ้มใหม่"
 msgid "Choose the picture you want, then click “Open”."
 msgstr "เลือกรูปที่เธอต้องการจากนั้นคลิ๊ก เปิด"
 
-#~ msgid "Dark grey! Some people spell it “dark gray”."
-#~ msgstr "Dark grey บางคนก็เรียกว่า Dark gray"
-#~ msgid "Light grey! Some people spell it “light gray”."
-#~ msgstr "Light grey บางคนก็เรียกว่า ligh gray"
-#~ msgid "Light green!"
-#~ msgstr "เขียวสว่าง"
-#~ msgid "Dark green!"
-#~ msgstr "เขียวมืด"
-#~ msgid "Sky blue!"
-#~ msgstr "น้ำเงินฟ้า"
-#~ msgid "Lavender!"
-#~ msgstr "สีม่วงอ่อน"
-#~ msgid "Beige!"
-#~ msgstr "นำตาลอ่อน"
-#~ msgid "Grass"
-#~ msgstr "หญ้า"
-#~ msgid "Bricks"
-#~ msgstr "อิฐ"
-#~ msgid "Smudge"
-#~ msgstr "รอยด่าง"
-#~ msgid "Lighten"
-#~ msgstr "สว่างขึ้น"
-#~ msgid "Darken"
-#~ msgstr "มืดลง"
-#~ msgid "Cartoon"
-#~ msgstr "การ์ตูน"
-#~ msgid "Click and move to draw grass. Don’t forget the dirt!"
-#~ msgstr "กดคลิ๊กเพื่อวาดรูปหญ้า แต่อย่าลืมวาดดินละ"
-#~ msgid "Click and move to draw large bricks."
-#~ msgstr "คลิ๊กและย้ายเพื่อวาดรูปอิฐใหญ่"
-#~ msgid "Click and move to draw small bricks."
-#~ msgstr "คลิ๊กและย้ายเพื่อวาดรูปอิฐเล็ก"
-#~ msgid "Click and move to darken the colors."
-#~ msgstr "คลิ๊กและย้ายเพื่อทำให้มีดลง"
-#~ msgid "Click and move the mouse around to change the picture’s color."
-#~ msgstr "คลิ๊กและย้ายเม้าส์รอบๆ เพื่อเปลี่ยนสี"
-#~ msgid "Click and move the mouse around to turn the picture into a cartoon."
-#~ msgstr "คลิ๊กและขยับเม้าส์ไปรอบๆ เพื่อทำให้รูปไปเป็นรูปการ์ตูน"
-#~ msgid "Ellipse"
-#~ msgstr "รุปวงรี"
-#~ msgid "Rhombus"
-#~ msgstr "สี่เหลี่ยมขนมเปียกปูน"
-#~ msgid "A square is a rectangle with four equal sides."
-#~ msgstr "สี่เหลี่ยมจตุรัสประกอบด้วย 4 ด้าน ที่เท่ากัน"
-#~ msgid "A rectangle has four sides and four right angles."
-#~ msgstr "สี่เหลี่ยมผืนผ้าประกอบด้วย 4 ด้าน และมุม 4 มุม"
-#~ msgid ""
-#~ "A circle is a curve where all points have the same distance from the "
-#~ "centre."
-#~ msgstr "วงกลมคือเส้นโค้งที่ทุกๆจุดมีระยะห่างเท่ากันจากจุดศูนย์กลาง"
-#~ msgid "An ellipse is a stretched circle."
-#~ msgstr "วงรีคือวงกลมที่ยืดตัวออก"
-#~ msgid "A rhombus has four equal sides, and opposite sides are parallel."
-#~ msgstr "สี่เหลี่ยมขนมเปียกปูนประกอบด้วยสี่ด้าน ด้านตรงข้ามจะขนานกัน"
-#~ msgid "Remember to use the left mouse button!"
-#~ msgstr "โปรดจำไว้ว่าใช้เม้าปุ่มซ้าย"
-#~ msgid "jq"
-#~ msgstr "jq"
-#~ msgid "JQ"
-#~ msgstr "JQ"
-#~ msgid "oO"
-#~ msgstr "oO"
+#~ msgid "Lime!"
+#~ msgstr "สีเหลืองแกมเขียว"
 
+#~ msgid "Green!"
+#~ msgstr "สีเขียว"
+
+#~ msgid "Fuchsia!"
+#~ msgstr "แดงม่วงสว่าง"
+
+#~ msgid "Gray!"
+#~ msgstr "สีเทานะ"
+
+#~ msgid "Silver!"
+#~ msgstr "น้ำเงิน"
+
+#~ msgid "Fade"
+#~ msgstr "เลือน"
+
+#~ msgid "Thick"
+#~ msgstr "หนา"
+
+#~ msgid "Click and move the mouse to thicken the picture."
+#~ msgstr "คลิ๊กและย้ายเม้าส์เพื่อให้เกิดรูปที่ใหญ่"
+
+#~ msgid "Click and move the mouse to thin the picture."
+#~ msgstr "คลิ๊กและย้ายเพื่อรูปบางๆ"
+
+#~ msgid "Oval"
+#~ msgstr "รูปวงรี"
+
+#~ msgid "Diamond"
+#~ msgstr "เพชร"
+
+#~ msgid "A square has four sides, each the same length."
+#~ msgstr "สี่เหลี่ยมประกอบด้วย 4 ด้าน แต่ละด้านมีขนาดเท่ากัน"
+
+#~ msgid "A rectangle has four sides."
+#~ msgstr "สี่เหลี่ยมมุมฉากจะต้องมีสี่ด้านนะจ๊ะ"
+
+#~ msgid "A circle is exactly round."
+#~ msgstr "วงกลมเกิดจากการหมุนไปเท่าๆกัน"
+
+#~ msgid "A diamond is a square, turned around slightly."
+#~ msgstr "เพชรเป็นรูปสี่เหลี่ยมจตุรัสที่หมุนไปรอบๆเพียงเล็กน้อย"

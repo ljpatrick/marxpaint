@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2005-01-06 12:31+0100\n"
+"POT-Creation-Date: 2005-10-10 00:12-0700\n"
 "PO-Revision-Date: 2004-07-28 17:56+0300\n"
 "Last-Translator: Doruk Fisek <dfisek@fisek.com.tr>\n"
 "Language-Team: Turkish <gnu-tr-u12a@lists.sourceforge.net>\n"
@@ -27,15 +27,12 @@ msgstr "Tux Boyama"
 msgid "Black!"
 msgstr "Siyah!"
 
-#, fuzzy
-msgid "Dark Gray!"
-msgstr "Gri!"
-
-#. using both valid spellings
-msgid "Light Grey!"
+msgid "Dark grey! Some people spell it “dark gray”."
 msgstr ""
 
-#. using both valid spellings
+msgid "Light grey! Some people spell it “light gray”."
+msgstr ""
+
 msgid "White!"
 msgstr "Beyaz!"
 
@@ -48,11 +45,12 @@ msgstr "Turuncu!"
 msgid "Yellow!"
 msgstr "Sarı!"
 
-msgid "Neon green!"
+msgid "Light green!"
 msgstr ""
 
-msgid "Green!"
-msgstr "Yeşil!"
+#, fuzzy
+msgid "Dark green!"
+msgstr "Gri!"
 
 msgid "Sky blue!"
 msgstr ""
@@ -60,11 +58,11 @@ msgstr ""
 msgid "Blue!"
 msgstr "Mavi!"
 
+msgid "Lavender!"
+msgstr ""
+
 msgid "Purple!"
 msgstr "Mor!"
-
-msgid "Magenta!"
-msgstr ""
 
 msgid "Pink!"
 msgstr "Pembe!"
@@ -114,8 +112,8 @@ msgstr "Bulanıklaştır"
 msgid "Smudge"
 msgstr ""
 
-msgid "Fade"
-msgstr "Soluklaştır"
+msgid "Lighten"
+msgstr ""
 
 msgid "Darken"
 msgstr ""
@@ -149,7 +147,7 @@ msgid "Click in the picture to fill that area with color."
 msgstr "O alanı renkle doldurmak için resmin içine tıkla"
 
 #, fuzzy
-msgid "Click and move to draw grass. Don't forget the dirt!"
+msgid "Click and move to draw grass. Don’t forget the dirt!"
 msgstr "Kıvılcımlar çizmek için tıkla ve fareyi hareket ettir"
 
 #, fuzzy
@@ -193,7 +191,7 @@ msgid "Click and move the mouse around to draw a negative."
 msgstr "Negatif elde etmek için fareye tıkla ve fareyi etrafta gezdir"
 
 #, fuzzy
-msgid "Click and move the mouse around to change the picture's color."
+msgid "Click and move the mouse around to change the picture’s color."
 msgstr "Resmi tıknaz hale getirmek için fareye tıkla ve fareyi etrafta gezdir"
 
 msgid "Click and move the mouse around to make the picture drip."
@@ -220,8 +218,8 @@ msgstr "Dikdörtgen"
 msgid "Circle"
 msgstr "Daire"
 
-msgid "Oval"
-msgstr "Oval"
+msgid "Ellipse"
+msgstr ""
 
 msgid "Triangle"
 msgstr "Üçgen"
@@ -229,17 +227,23 @@ msgstr "Üçgen"
 msgid "Pentagon"
 msgstr "Beşgen"
 
-msgid "Diamond"
-msgstr "Eşkenar dörtgen"
+msgid "Rhombus"
+msgstr ""
 
-msgid "A square has four sides, each the same length."
-msgstr "Bir karenin dört kenarı vardır, her kenarı aynı uzunluktadır."
-
-msgid "A rectangle has four sides."
+#, fuzzy
+msgid "A square is a rectangle with four equal sides."
 msgstr "Bir dikdörtgenin dört kenarı vardır."
 
-msgid "A circle is exactly round."
-msgstr "Bir daire tam olarak yuvarlaktır."
+#, fuzzy
+msgid "A rectangle has four sides and four right angles."
+msgstr "Bir dikdörtgenin dört kenarı vardır."
+
+msgid ""
+"A circle is a curve where all points have the same distance from the centre."
+msgstr ""
+
+msgid "An ellipse is a stretched circle."
+msgstr ""
 
 msgid "A triangle has three sides."
 msgstr "Bir üçgenin üç kenarı vardır."
@@ -247,9 +251,8 @@ msgstr "Bir üçgenin üç kenarı vardır."
 msgid "A pentagon has five sides."
 msgstr "Bir beşgenin beş kenarı vardır."
 
-msgid "A diamond is a square, turned around slightly."
+msgid "A rhombus has four equal sides, and opposite sides are parallel."
 msgstr ""
-"Bir eşkenar dörtgen bir karedir, hafifçe kendi etrafında döndürülmüştür."
 
 msgid "Tools"
 msgstr "Araçlar"
@@ -429,6 +432,33 @@ msgstr "Henüz yazdıramazsın!"
 msgid "Erase this picture?"
 msgstr "Bu resmi sileyim mi?"
 
+msgid "Remember to use the left mouse button!"
+msgstr ""
+
+msgid "jq"
+msgstr ""
+
+msgid "JQ"
+msgstr ""
+
+msgid "oO"
+msgstr ""
+
+msgid "`\\%_@$~#{}<>^&*"
+msgstr ""
+
+msgid ",.?!"
+msgstr ""
+
+msgid "017"
+msgstr ""
+
+msgid "O0"
+msgstr ""
+
+msgid "1Il|"
+msgstr ""
+
 msgid "Erase"
 msgstr "Sil"
 
@@ -447,6 +477,28 @@ msgstr "Hayir, yeni bir dosyaya kaydet"
 
 msgid "Choose the picture you want, then click “Open”."
 msgstr "İstediğin resmi seç, sonra \"Aç\" seçeneğine tıkla"
+
+#~ msgid "Green!"
+#~ msgstr "Yeşil!"
+
+#~ msgid "Fade"
+#~ msgstr "Soluklaştır"
+
+#~ msgid "Oval"
+#~ msgstr "Oval"
+
+#~ msgid "Diamond"
+#~ msgstr "Eşkenar dörtgen"
+
+#~ msgid "A square has four sides, each the same length."
+#~ msgstr "Bir karenin dört kenarı vardır, her kenarı aynı uzunluktadır."
+
+#~ msgid "A circle is exactly round."
+#~ msgstr "Bir daire tam olarak yuvarlaktır."
+
+#~ msgid "A diamond is a square, turned around slightly."
+#~ msgstr ""
+#~ "Bir eşkenar dörtgen bir karedir, hafifçe kendi etrafında döndürülmüştür."
 
 #~ msgid "Lime!"
 #~ msgstr "Kireç rengi!"

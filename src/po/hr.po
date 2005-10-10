@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TuxPaint\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2005-01-06 12:31+0100\n"
+"POT-Creation-Date: 2005-10-10 00:12-0700\n"
 "PO-Revision-Date: 2004-05-23 10:53+0100\n"
 "Last-Translator: Nedjeljko Jedbaj <jedvajn@netlane.com>\n"
 "Language-Team: \n"
@@ -27,15 +27,12 @@ msgstr "Boja"
 msgid "Black!"
 msgstr "Crna!"
 
-#, fuzzy
-msgid "Dark Gray!"
-msgstr "Siva!"
-
-#. using both valid spellings
-msgid "Light Grey!"
+msgid "Dark grey! Some people spell it “dark gray”."
 msgstr ""
 
-#. using both valid spellings
+msgid "Light grey! Some people spell it “light gray”."
+msgstr ""
+
 msgid "White!"
 msgstr "Bijela!"
 
@@ -48,11 +45,12 @@ msgstr "Narančasta!"
 msgid "Yellow!"
 msgstr "Žuta!"
 
-msgid "Neon green!"
+msgid "Light green!"
 msgstr ""
 
-msgid "Green!"
-msgstr "Zelena!"
+#, fuzzy
+msgid "Dark green!"
+msgstr "Siva!"
 
 msgid "Sky blue!"
 msgstr ""
@@ -60,11 +58,11 @@ msgstr ""
 msgid "Blue!"
 msgstr "Plava!"
 
+msgid "Lavender!"
+msgstr ""
+
 msgid "Purple!"
 msgstr "Tamnoljubičasta!"
-
-msgid "Magenta!"
-msgstr ""
 
 msgid "Pink!"
 msgstr "Ružičasta!"
@@ -114,8 +112,8 @@ msgstr "Zamućeno"
 msgid "Smudge"
 msgstr ""
 
-msgid "Fade"
-msgstr "Izblijedi"
+msgid "Lighten"
+msgstr ""
 
 msgid "Darken"
 msgstr ""
@@ -149,7 +147,7 @@ msgid "Click in the picture to fill that area with color."
 msgstr "Klikni na crtež i popuniti ćeš s bojom."
 
 #, fuzzy
-msgid "Click and move to draw grass. Don't forget the dirt!"
+msgid "Click and move to draw grass. Don’t forget the dirt!"
 msgstr "Klikni i pomakni miša. Nartat ćeš iskrice."
 
 #, fuzzy
@@ -191,7 +189,7 @@ msgid "Click and move the mouse around to draw a negative."
 msgstr "Klikni i pomakni miša. Načitniti ćeš negativ crteža."
 
 #, fuzzy
-msgid "Click and move the mouse around to change the picture's color."
+msgid "Click and move the mouse around to change the picture’s color."
 msgstr "Klikni i pomakni miša. Crtež ćeš pretvoriti u kvadratiće."
 
 msgid "Click and move the mouse around to make the picture drip."
@@ -216,8 +214,8 @@ msgstr "Pravokutnik"
 msgid "Circle"
 msgstr "Kružnica"
 
-msgid "Oval"
-msgstr "Elipsa"
+msgid "Ellipse"
+msgstr ""
 
 msgid "Triangle"
 msgstr "Trokut"
@@ -225,17 +223,23 @@ msgstr "Trokut"
 msgid "Pentagon"
 msgstr "Peterokut"
 
-msgid "Diamond"
-msgstr "Dijamant"
+msgid "Rhombus"
+msgstr ""
 
-msgid "A square has four sides, each the same length."
-msgstr "Kvadrat ima četiri jednake stranice."
-
-msgid "A rectangle has four sides."
+#, fuzzy
+msgid "A square is a rectangle with four equal sides."
 msgstr "Pravokutnik im ačetiri stranice."
 
-msgid "A circle is exactly round."
-msgstr "Kružnica nema stranice."
+#, fuzzy
+msgid "A rectangle has four sides and four right angles."
+msgstr "Pravokutnik im ačetiri stranice."
+
+msgid ""
+"A circle is a curve where all points have the same distance from the centre."
+msgstr ""
+
+msgid "An ellipse is a stretched circle."
+msgstr ""
 
 msgid "A triangle has three sides."
 msgstr "Trokut ima tri stranice."
@@ -243,8 +247,8 @@ msgstr "Trokut ima tri stranice."
 msgid "A pentagon has five sides."
 msgstr "Peterokut ima pet stranica."
 
-msgid "A diamond is a square, turned around slightly."
-msgstr "Dijamant je kao kvadratići koji su malo okrenuti."
+msgid "A rhombus has four equal sides, and opposite sides are parallel."
+msgstr ""
 
 msgid "Tools"
 msgstr "Alati"
@@ -422,6 +426,33 @@ msgstr "Ne možeš još ispisati!"
 msgid "Erase this picture?"
 msgstr "Želiš li obrisati ovaj crtež?"
 
+msgid "Remember to use the left mouse button!"
+msgstr ""
+
+msgid "jq"
+msgstr ""
+
+msgid "JQ"
+msgstr ""
+
+msgid "oO"
+msgstr ""
+
+msgid "`\\%_@$~#{}<>^&*"
+msgstr ""
+
+msgid ",.?!"
+msgstr ""
+
+msgid "017"
+msgstr ""
+
+msgid "O0"
+msgstr ""
+
+msgid "1Il|"
+msgstr ""
+
 msgid "Erase"
 msgstr "Izbriši"
 
@@ -440,6 +471,27 @@ msgstr "Ne. Pohrani u novu datoteku."
 
 msgid "Choose the picture you want, then click “Open”."
 msgstr "Izaberi crtež, a zatim klikni 'Otvori'."
+
+#~ msgid "Green!"
+#~ msgstr "Zelena!"
+
+#~ msgid "Fade"
+#~ msgstr "Izblijedi"
+
+#~ msgid "Oval"
+#~ msgstr "Elipsa"
+
+#~ msgid "Diamond"
+#~ msgstr "Dijamant"
+
+#~ msgid "A square has four sides, each the same length."
+#~ msgstr "Kvadrat ima četiri jednake stranice."
+
+#~ msgid "A circle is exactly round."
+#~ msgstr "Kružnica nema stranice."
+
+#~ msgid "A diamond is a square, turned around slightly."
+#~ msgstr "Dijamant je kao kvadratići koji su malo okrenuti."
 
 #~ msgid "Lime!"
 #~ msgstr "Svjetlozelena!"

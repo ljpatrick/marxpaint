@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TuxPaint \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2005-01-06 12:31+0100\n"
+"POT-Creation-Date: 2005-10-10 00:12-0700\n"
 "PO-Revision-Date: 2004-07-14 16:30+0200\n"
 "Last-Translator: Juan Irigoien <juanirigoien@yahoo.es>\n"
 "Language-Team: basque <juanirigoien@yahoo.es>\n"
@@ -26,15 +26,12 @@ msgstr "Tux Paint"
 msgid "Black!"
 msgstr "Beltza!"
 
-#, fuzzy
-msgid "Dark Gray!"
-msgstr "Grisa!"
-
-#. using both valid spellings
-msgid "Light Grey!"
+msgid "Dark grey! Some people spell it “dark gray”."
 msgstr ""
 
-#. using both valid spellings
+msgid "Light grey! Some people spell it “light gray”."
+msgstr ""
+
 msgid "White!"
 msgstr "Zuria!"
 
@@ -47,11 +44,12 @@ msgstr "Laranja!"
 msgid "Yellow!"
 msgstr "Horia!"
 
-msgid "Neon green!"
+msgid "Light green!"
 msgstr ""
 
-msgid "Green!"
-msgstr "Berdea!"
+#, fuzzy
+msgid "Dark green!"
+msgstr "Grisa!"
 
 msgid "Sky blue!"
 msgstr ""
@@ -59,11 +57,11 @@ msgstr ""
 msgid "Blue!"
 msgstr "Urdina!"
 
+msgid "Lavender!"
+msgstr ""
+
 msgid "Purple!"
 msgstr "Purpura!"
-
-msgid "Magenta!"
-msgstr ""
 
 msgid "Pink!"
 msgstr "Arrosa!"
@@ -113,8 +111,8 @@ msgstr "Desenfokatu"
 msgid "Smudge"
 msgstr ""
 
-msgid "Fade"
-msgstr "Desagertaraziz"
+msgid "Lighten"
+msgstr ""
 
 msgid "Darken"
 msgstr ""
@@ -148,7 +146,7 @@ msgid "Click in the picture to fill that area with color."
 msgstr "Klik egin irudian eremu bat kolorez betetzeko."
 
 #, fuzzy
-msgid "Click and move to draw grass. Don't forget the dirt!"
+msgid "Click and move to draw grass. Don’t forget the dirt!"
 msgstr "Egin klik eta mugi ezazu sagua txinpartak marrazteko."
 
 #, fuzzy
@@ -192,7 +190,7 @@ msgid "Click and move the mouse around to draw a negative."
 msgstr "Klik egin eta mugi ezazu sagua irudiaren negatiboa marrazteko."
 
 #, fuzzy
-msgid "Click and move the mouse around to change the picture's color."
+msgid "Click and move the mouse around to change the picture’s color."
 msgstr "Klik egin eta mugi ezazu sagua irudia laukitxotan marrazteko."
 
 msgid "Click and move the mouse around to make the picture drip."
@@ -219,8 +217,8 @@ msgstr "Lauki Zuzena"
 msgid "Circle"
 msgstr "Biribila"
 
-msgid "Oval"
-msgstr "Obalatua"
+msgid "Ellipse"
+msgstr ""
 
 msgid "Triangle"
 msgstr "Hirukia"
@@ -228,17 +226,23 @@ msgstr "Hirukia"
 msgid "Pentagon"
 msgstr "Pentagonoa"
 
-msgid "Diamond"
-msgstr "Erronboa"
+msgid "Rhombus"
+msgstr ""
 
-msgid "A square has four sides, each the same length."
-msgstr "Laukiak lau alde ditu, denak luzera berekoak."
-
-msgid "A rectangle has four sides."
+#, fuzzy
+msgid "A square is a rectangle with four equal sides."
 msgstr "Lauki zuzenak lau alde ditu."
 
-msgid "A circle is exactly round."
-msgstr "Zirkulua biribil-biribila da"
+#, fuzzy
+msgid "A rectangle has four sides and four right angles."
+msgstr "Lauki zuzenak lau alde ditu."
+
+msgid ""
+"A circle is a curve where all points have the same distance from the centre."
+msgstr ""
+
+msgid "An ellipse is a stretched circle."
+msgstr ""
 
 msgid "A triangle has three sides."
 msgstr "Hirukiak hiru alde ditu."
@@ -246,8 +250,8 @@ msgstr "Hirukiak hiru alde ditu."
 msgid "A pentagon has five sides."
 msgstr "Pentagonoak bost alde ditu."
 
-msgid "A diamond is a square, turned around slightly."
-msgstr "Erronboa zapaldutako laukia da"
+msgid "A rhombus has four equal sides, and opposite sides are parallel."
+msgstr ""
 
 msgid "Tools"
 msgstr "Tresnak"
@@ -426,6 +430,33 @@ msgstr "Ezin duzu oraindik inprimitu!"
 msgid "Erase this picture?"
 msgstr "Irudi hau ezabatu?"
 
+msgid "Remember to use the left mouse button!"
+msgstr ""
+
+msgid "jq"
+msgstr ""
+
+msgid "JQ"
+msgstr ""
+
+msgid "oO"
+msgstr ""
+
+msgid "`\\%_@$~#{}<>^&*"
+msgstr ""
+
+msgid ",.?!"
+msgstr ""
+
+msgid "017"
+msgstr ""
+
+msgid "O0"
+msgstr ""
+
+msgid "1Il|"
+msgstr ""
+
 msgid "Erase"
 msgstr "Ezabatu"
 
@@ -445,6 +476,27 @@ msgstr "Ez, artxibo berria gorde"
 msgid "Choose the picture you want, then click “Open”."
 msgstr ""
 "Aukera ezazu ireki nahi duzun irudia. Ondoren klik egin ‘Ireki’ botoian"
+
+#~ msgid "Green!"
+#~ msgstr "Berdea!"
+
+#~ msgid "Fade"
+#~ msgstr "Desagertaraziz"
+
+#~ msgid "Oval"
+#~ msgstr "Obalatua"
+
+#~ msgid "Diamond"
+#~ msgstr "Erronboa"
+
+#~ msgid "A square has four sides, each the same length."
+#~ msgstr "Laukiak lau alde ditu, denak luzera berekoak."
+
+#~ msgid "A circle is exactly round."
+#~ msgstr "Zirkulua biribil-biribila da"
+
+#~ msgid "A diamond is a square, turned around slightly."
+#~ msgstr "Erronboa zapaldutako laukia da"
 
 #~ msgid "Lime!"
 #~ msgstr "Lima!"

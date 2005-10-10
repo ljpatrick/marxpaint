@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint 0.9.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2005-01-06 12:31+0100\n"
+"POT-Creation-Date: 2005-10-10 00:12-0700\n"
 "PO-Revision-Date: 2004-03-30 17:24+0200\n"
 "Last-Translator: Pablo Saratxaga <pablo@walon.org>\n"
 "Language-Team: Walloon <linux-wa@walon.org>\n"
@@ -26,15 +26,12 @@ msgstr "Tux Paint"
 msgid "Black!"
 msgstr "Noer!"
 
-#, fuzzy
-msgid "Dark Gray!"
-msgstr "Gris!"
-
-#. using both valid spellings
-msgid "Light Grey!"
+msgid "Dark grey! Some people spell it “dark gray”."
 msgstr ""
 
-#. using both valid spellings
+msgid "Light grey! Some people spell it “light gray”."
+msgstr ""
+
 msgid "White!"
 msgstr "Blanc!"
 
@@ -47,11 +44,12 @@ msgstr "Orandje!"
 msgid "Yellow!"
 msgstr "Djaene!"
 
-msgid "Neon green!"
+msgid "Light green!"
 msgstr ""
 
-msgid "Green!"
-msgstr "Vert!"
+#, fuzzy
+msgid "Dark green!"
+msgstr "Gris!"
 
 msgid "Sky blue!"
 msgstr ""
@@ -59,11 +57,11 @@ msgstr ""
 msgid "Blue!"
 msgstr "Bleu!"
 
+msgid "Lavender!"
+msgstr ""
+
 msgid "Purple!"
 msgstr "Poûrpe!"
-
-msgid "Magenta!"
-msgstr ""
 
 msgid "Pink!"
 msgstr "Rôze!"
@@ -113,8 +111,8 @@ msgstr "Adoûci"
 msgid "Smudge"
 msgstr ""
 
-msgid "Fade"
-msgstr "Blanki"
+msgid "Lighten"
+msgstr ""
 
 msgid "Darken"
 msgstr ""
@@ -148,7 +146,7 @@ msgid "Click in the picture to fill that area with color."
 msgstr "Clitchîz so l' imådje pol rimpli avou l' coleur tchoezeye."
 
 #, fuzzy
-msgid "Click and move to draw grass. Don't forget the dirt!"
+msgid "Click and move to draw grass. Don’t forget the dirt!"
 msgstr "Clitchîz et s' bodjîz l' sori po dessiner des spitaedjes."
 
 #, fuzzy
@@ -194,7 +192,7 @@ msgstr ""
 "Clitchîz et s' bodjîz l' sori po mete des bokets d' l' imådje e negatif."
 
 #, fuzzy
-msgid "Click and move the mouse around to change the picture's color."
+msgid "Click and move the mouse around to change the picture’s color."
 msgstr ""
 "Clitchîz et s' bodjîz l' sori po mete des bokets d' l' imådje e ptits cwårés."
 
@@ -224,8 +222,8 @@ msgstr "Rectangue"
 msgid "Circle"
 msgstr "Ceke"
 
-msgid "Oval"
-msgstr "Ovale"
+msgid "Ellipse"
+msgstr ""
 
 msgid "Triangle"
 msgstr "Triyangue"
@@ -233,17 +231,23 @@ msgstr "Triyangue"
 msgid "Pentagon"
 msgstr "Pentagone"
 
-msgid "Diamond"
-msgstr "Lozindje"
+msgid "Rhombus"
+msgstr ""
 
-msgid "A square has four sides, each the same length."
-msgstr "On cwåré a cwate costés, tos del minme grandeu."
-
-msgid "A rectangle has four sides."
+#, fuzzy
+msgid "A square is a rectangle with four equal sides."
 msgstr "On rectangue a cwate costés"
 
-msgid "A circle is exactly round."
-msgstr "On ceke est ttafwaitmint rond."
+#, fuzzy
+msgid "A rectangle has four sides and four right angles."
+msgstr "On rectangue a cwate costés"
+
+msgid ""
+"A circle is a curve where all points have the same distance from the centre."
+msgstr ""
+
+msgid "An ellipse is a stretched circle."
+msgstr ""
 
 msgid "A triangle has three sides."
 msgstr "On triyangue a troes costés."
@@ -251,8 +255,8 @@ msgstr "On triyangue a troes costés."
 msgid "A pentagon has five sides."
 msgstr "On pentagone a cénk costés."
 
-msgid "A diamond is a square, turned around slightly."
-msgstr "On lozindje rishonne ene miete a on cwåré metou sol costé."
+msgid "A rhombus has four equal sides, and opposite sides are parallel."
+msgstr ""
 
 msgid "Tools"
 msgstr "Usteyes"
@@ -436,6 +440,33 @@ msgstr "Vos n' poloz nén co imprimer!"
 msgid "Erase this picture?"
 msgstr "Disfacer ciste imådje chal?"
 
+msgid "Remember to use the left mouse button!"
+msgstr ""
+
+msgid "jq"
+msgstr ""
+
+msgid "JQ"
+msgstr ""
+
+msgid "oO"
+msgstr ""
+
+msgid "`\\%_@$~#{}<>^&*"
+msgstr ""
+
+msgid ",.?!"
+msgstr ""
+
+msgid "017"
+msgstr ""
+
+msgid "O0"
+msgstr ""
+
+msgid "1Il|"
+msgstr ""
+
 msgid "Erase"
 msgstr "Disfacer"
 
@@ -454,6 +485,27 @@ msgstr "Neni, schaper en on novea fitchî"
 
 msgid "Choose the picture you want, then click “Open”."
 msgstr "Tchoezixhoz l' imådje ki vos vloz, poy clitchîz so «Drovi»."
+
+#~ msgid "Green!"
+#~ msgstr "Vert!"
+
+#~ msgid "Fade"
+#~ msgstr "Blanki"
+
+#~ msgid "Oval"
+#~ msgstr "Ovale"
+
+#~ msgid "Diamond"
+#~ msgstr "Lozindje"
+
+#~ msgid "A square has four sides, each the same length."
+#~ msgstr "On cwåré a cwate costés, tos del minme grandeu."
+
+#~ msgid "A circle is exactly round."
+#~ msgstr "On ceke est ttafwaitmint rond."
+
+#~ msgid "A diamond is a square, turned around slightly."
+#~ msgstr "On lozindje rishonne ene miete a on cwåré metou sol costé."
 
 #~ msgid "Lime!"
 #~ msgstr "Djaene-vert!"

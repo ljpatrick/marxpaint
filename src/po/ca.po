@@ -17,7 +17,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Tuxpaint 0.0.1pre\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2005-01-06 12:31+0100\n"
+"POT-Creation-Date: 2005-10-10 00:12-0700\n"
 "PO-Revision-Date: 2004-07-15 22:48+0200\n"
 "Last-Translator: Pere Pujal i Carabantes <ppujal@airtel.net>\n"
 "Language-Team: Català <linux-ca@chanae.alphanet.ch>\n"
@@ -37,15 +37,12 @@ msgstr "Tux Paint"
 msgid "Black!"
 msgstr "Negre"
 
-#, fuzzy
-msgid "Dark Gray!"
-msgstr "Gris!"
-
-#. using both valid spellings
-msgid "Light Grey!"
+msgid "Dark grey! Some people spell it “dark gray”."
 msgstr ""
 
-#. using both valid spellings
+msgid "Light grey! Some people spell it “light gray”."
+msgstr ""
+
 msgid "White!"
 msgstr "Blanc!"
 
@@ -58,11 +55,12 @@ msgstr "Taronja!"
 msgid "Yellow!"
 msgstr "Groc!"
 
-msgid "Neon green!"
+msgid "Light green!"
 msgstr ""
 
-msgid "Green!"
-msgstr "Vert!"
+#, fuzzy
+msgid "Dark green!"
+msgstr "Gris!"
 
 msgid "Sky blue!"
 msgstr ""
@@ -70,11 +68,11 @@ msgstr ""
 msgid "Blue!"
 msgstr "Blau!"
 
+msgid "Lavender!"
+msgstr ""
+
 msgid "Purple!"
 msgstr "Porpra!"
-
-msgid "Magenta!"
-msgstr ""
 
 msgid "Pink!"
 msgstr "Rosa!"
@@ -124,8 +122,8 @@ msgstr "Difumina"
 msgid "Smudge"
 msgstr ""
 
-msgid "Fade"
-msgstr "Esvaeix"
+msgid "Lighten"
+msgstr ""
 
 msgid "Darken"
 msgstr ""
@@ -159,7 +157,7 @@ msgid "Click in the picture to fill that area with color."
 msgstr "Feu clic en la imatge per omplir de color una àrea."
 
 #, fuzzy
-msgid "Click and move to draw grass. Don't forget the dirt!"
+msgid "Click and move to draw grass. Don’t forget the dirt!"
 msgstr "Feu clic i moveu per dibuixar guspires."
 
 #, fuzzy
@@ -202,7 +200,7 @@ msgid "Click and move the mouse around to draw a negative."
 msgstr "Feu clic i moveu el ratolí per fer un negatiu."
 
 #, fuzzy
-msgid "Click and move the mouse around to change the picture's color."
+msgid "Click and move the mouse around to change the picture’s color."
 msgstr "Feu clic i move el ratolí per fer-ne quadrets de la imatge."
 
 msgid "Click and move the mouse around to make the picture drip."
@@ -228,8 +226,8 @@ msgstr "Rectangle"
 msgid "Circle"
 msgstr "Cercle"
 
-msgid "Oval"
-msgstr "Óval"
+msgid "Ellipse"
+msgstr ""
 
 msgid "Triangle"
 msgstr "Triangle"
@@ -237,17 +235,23 @@ msgstr "Triangle"
 msgid "Pentagon"
 msgstr "Pentàgon"
 
-msgid "Diamond"
-msgstr "Romb"
+msgid "Rhombus"
+msgstr ""
 
-msgid "A square has four sides, each the same length."
-msgstr "Un quadrat té quatre cares, totes de la mateixa mida."
-
-msgid "A rectangle has four sides."
+#, fuzzy
+msgid "A square is a rectangle with four equal sides."
 msgstr "Un rectangle té quatre cares."
 
-msgid "A circle is exactly round."
-msgstr "Un cercle és perfectament rodó."
+#, fuzzy
+msgid "A rectangle has four sides and four right angles."
+msgstr "Un rectangle té quatre cares."
+
+msgid ""
+"A circle is a curve where all points have the same distance from the centre."
+msgstr ""
+
+msgid "An ellipse is a stretched circle."
+msgstr ""
 
 msgid "A triangle has three sides."
 msgstr "Un triangle té tres cares."
@@ -255,8 +259,8 @@ msgstr "Un triangle té tres cares."
 msgid "A pentagon has five sides."
 msgstr "Un pentàgon té cinc cares."
 
-msgid "A diamond is a square, turned around slightly."
-msgstr "Un romb és un quadrat, una mica aplanat."
+msgid "A rhombus has four equal sides, and opposite sides are parallel."
+msgstr ""
 
 msgid "Tools"
 msgstr "Eines"
@@ -438,6 +442,33 @@ msgstr "Encara no podeu imprimir!"
 msgid "Erase this picture?"
 msgstr "Esborro aquest dibuix?"
 
+msgid "Remember to use the left mouse button!"
+msgstr ""
+
+msgid "jq"
+msgstr ""
+
+msgid "JQ"
+msgstr ""
+
+msgid "oO"
+msgstr ""
+
+msgid "`\\%_@$~#{}<>^&*"
+msgstr ""
+
+msgid ",.?!"
+msgstr ""
+
+msgid "017"
+msgstr ""
+
+msgid "O0"
+msgstr ""
+
+msgid "1Il|"
+msgstr ""
+
 msgid "Erase"
 msgstr "Esborra"
 
@@ -456,6 +487,27 @@ msgstr "No, desa en un fitxer nou"
 
 msgid "Choose the picture you want, then click “Open”."
 msgstr "Trieu el dibuix que voleu, llavors feu clic en Obre."
+
+#~ msgid "Green!"
+#~ msgstr "Vert!"
+
+#~ msgid "Fade"
+#~ msgstr "Esvaeix"
+
+#~ msgid "Oval"
+#~ msgstr "Óval"
+
+#~ msgid "Diamond"
+#~ msgstr "Romb"
+
+#~ msgid "A square has four sides, each the same length."
+#~ msgstr "Un quadrat té quatre cares, totes de la mateixa mida."
+
+#~ msgid "A circle is exactly round."
+#~ msgstr "Un cercle és perfectament rodó."
+
+#~ msgid "A diamond is a square, turned around slightly."
+#~ msgstr "Un romb és un quadrat, una mica aplanat."
 
 #~ msgid "Lime!"
 #~ msgstr "Llima!"

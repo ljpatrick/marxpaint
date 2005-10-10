@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Tuxpaint 0.9.2pre\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2005-01-06 12:31+0100\n"
+"POT-Creation-Date: 2005-10-10 00:12-0700\n"
 "PO-Revision-Date: 2003-01-04 12:00+0200\n"
 "Last-Translator: N/A <i18ngr@lists.hellug.gr>\n"
 "Language-Team: N/A <i18ngr@lists.hellug.gr>\n"
@@ -30,15 +30,12 @@ msgstr "Ζωγραφιά"
 msgid "Black!"
 msgstr "Μαύρο"
 
-#, fuzzy
-msgid "Dark Gray!"
-msgstr "Μπράβο!"
-
-#. using both valid spellings
-msgid "Light Grey!"
+msgid "Dark grey! Some people spell it “dark gray”."
 msgstr ""
 
-#. using both valid spellings
+msgid "Light grey! Some people spell it “light gray”."
+msgstr ""
+
 #, fuzzy
 msgid "White!"
 msgstr "Άσπρο"
@@ -55,12 +52,12 @@ msgstr "Πορτοκαλί"
 msgid "Yellow!"
 msgstr "Κίτρινο"
 
-msgid "Neon green!"
+msgid "Light green!"
 msgstr ""
 
 #, fuzzy
-msgid "Green!"
-msgstr "Πράσινο"
+msgid "Dark green!"
+msgstr "Μπράβο!"
 
 msgid "Sky blue!"
 msgstr ""
@@ -69,12 +66,12 @@ msgstr ""
 msgid "Blue!"
 msgstr "Μπλε"
 
+msgid "Lavender!"
+msgstr ""
+
 #, fuzzy
 msgid "Purple!"
 msgstr "Μωβ"
-
-msgid "Magenta!"
-msgstr ""
 
 #, fuzzy
 msgid "Pink!"
@@ -126,8 +123,8 @@ msgstr "Θάμπωμα"
 msgid "Smudge"
 msgstr ""
 
-msgid "Fade"
-msgstr "Ξεθώριασμα"
+msgid "Lighten"
+msgstr ""
 
 msgid "Darken"
 msgstr ""
@@ -162,7 +159,7 @@ msgid "Click in the picture to fill that area with color."
 msgstr "Κάνε κλικ και κίνησε το ποντίκι για να γεμίσεις την περιοχή με χρώμα"
 
 #, fuzzy
-msgid "Click and move to draw grass. Don't forget the dirt!"
+msgid "Click and move to draw grass. Don’t forget the dirt!"
 msgstr "Κάνε κλικ και κινήσου για να ζωγραφίσεις λάμψεις"
 
 #, fuzzy
@@ -210,7 +207,7 @@ msgid "Click and move the mouse around to draw a negative."
 msgstr "Κάνε κλικ και κίνησε το ποντίκι για να σχεδιάσεις το αρνητικό"
 
 #, fuzzy
-msgid "Click and move the mouse around to change the picture's color."
+msgid "Click and move the mouse around to change the picture’s color."
 msgstr "Κάνε κλικ και κίνησε το ποντίκι για να κάνεις την εικόνα κομματάκια"
 
 #, fuzzy
@@ -240,8 +237,8 @@ msgstr "Ορθογώνιο"
 msgid "Circle"
 msgstr "Κύκλος"
 
-msgid "Oval"
-msgstr "Οβάλ"
+msgid "Ellipse"
+msgstr ""
 
 msgid "Triangle"
 msgstr "Τρίγωνο"
@@ -249,17 +246,23 @@ msgstr "Τρίγωνο"
 msgid "Pentagon"
 msgstr "Πεντάγωνο"
 
-msgid "Diamond"
-msgstr "Ρόμβος"
+msgid "Rhombus"
+msgstr ""
 
-msgid "A square has four sides, each the same length."
-msgstr "Το τετράγωνο έχει τέσσερις πλευερές, με το ίδιο μήκος."
-
-msgid "A rectangle has four sides."
+#, fuzzy
+msgid "A square is a rectangle with four equal sides."
 msgstr "Το ορθογώνιο έχει τέσσερις πλευρές."
 
-msgid "A circle is exactly round."
-msgstr "Ο κύκλος είναι ακριβώς στρογγυλός."
+#, fuzzy
+msgid "A rectangle has four sides and four right angles."
+msgstr "Το ορθογώνιο έχει τέσσερις πλευρές."
+
+msgid ""
+"A circle is a curve where all points have the same distance from the centre."
+msgstr ""
+
+msgid "An ellipse is a stretched circle."
+msgstr ""
 
 msgid "A triangle has three sides."
 msgstr "Το τρίγωνο έχει τρεις πλευρές."
@@ -267,8 +270,8 @@ msgstr "Το τρίγωνο έχει τρεις πλευρές."
 msgid "A pentagon has five sides."
 msgstr "Το πεντάγωνο έχει πέντε πλευρές."
 
-msgid "A diamond is a square, turned around slightly."
-msgstr "Ο ρόμβος είναι ένα τετράγωνο, ελαφρώς στριμμένο πλάγια."
+msgid "A rhombus has four equal sides, and opposite sides are parallel."
+msgstr ""
 
 msgid "Tools"
 msgstr "Εργαλεία"
@@ -455,6 +458,33 @@ msgstr "Δεν μπορείς να τυπώσεις ακόμη!"
 msgid "Erase this picture?"
 msgstr "Σβήσιμο αυτής της εικόνας;"
 
+msgid "Remember to use the left mouse button!"
+msgstr ""
+
+msgid "jq"
+msgstr ""
+
+msgid "JQ"
+msgstr ""
+
+msgid "oO"
+msgstr ""
+
+msgid "`\\%_@$~#{}<>^&*"
+msgstr ""
+
+msgid ",.?!"
+msgstr ""
+
+msgid "017"
+msgstr ""
+
+msgid "O0"
+msgstr ""
+
+msgid "1Il|"
+msgstr ""
+
 msgid "Erase"
 msgstr "Σβήσιμο"
 
@@ -475,6 +505,28 @@ msgstr "Όχι, αποθήκευση σε νέο αρχείο"
 #, fuzzy
 msgid "Choose the picture you want, then click “Open”."
 msgstr "Επέλεξε την εικόνα που θέλεις, και μετά πάτησε 'Άνοιγμα'"
+
+#, fuzzy
+#~ msgid "Green!"
+#~ msgstr "Πράσινο"
+
+#~ msgid "Fade"
+#~ msgstr "Ξεθώριασμα"
+
+#~ msgid "Oval"
+#~ msgstr "Οβάλ"
+
+#~ msgid "Diamond"
+#~ msgstr "Ρόμβος"
+
+#~ msgid "A square has four sides, each the same length."
+#~ msgstr "Το τετράγωνο έχει τέσσερις πλευερές, με το ίδιο μήκος."
+
+#~ msgid "A circle is exactly round."
+#~ msgstr "Ο κύκλος είναι ακριβώς στρογγυλός."
+
+#~ msgid "A diamond is a square, turned around slightly."
+#~ msgstr "Ο ρόμβος είναι ένα τετράγωνο, ελαφρώς στριμμένο πλάγια."
 
 #, fuzzy
 #~ msgid "Lime!"

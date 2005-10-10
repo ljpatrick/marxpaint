@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: nl\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2005-01-06 12:31+0100\n"
+"POT-Creation-Date: 2005-10-10 00:12-0700\n"
 "PO-Revision-Date: 2005-01-09 21:32+0100\n"
 "Last-Translator: \n"
 "Language-Team:  <nl@li.org>\n"
@@ -31,14 +31,12 @@ msgstr "TuxPaint"
 msgid "Black!"
 msgstr "Zwart!"
 
-msgid "Dark Gray!"
-msgstr "Donkergrijs!"
+msgid "Dark grey! Some people spell it “dark gray”."
+msgstr ""
 
-#. using both valid spellings
-msgid "Light Grey!"
-msgstr "Lichtgrijs!"
+msgid "Light grey! Some people spell it “light gray”."
+msgstr ""
 
-#. using both valid spellings
 msgid "White!"
 msgstr "Wit!"
 
@@ -51,11 +49,11 @@ msgstr "Oranje!"
 msgid "Yellow!"
 msgstr "Geel!"
 
-msgid "Neon green!"
-msgstr "Fluoriserend groen!"
+msgid "Light green!"
+msgstr "Lichtgroen!"
 
-msgid "Green!"
-msgstr "Groen!"
+msgid "Dark green!"
+msgstr "Donkergroen!"
 
 msgid "Sky blue!"
 msgstr "Hemelsblauw!"
@@ -63,11 +61,11 @@ msgstr "Hemelsblauw!"
 msgid "Blue!"
 msgstr "Blauw!"
 
+msgid "Lavender!"
+msgstr ""
+
 msgid "Purple!"
 msgstr "Paars!"
-
-msgid "Magenta!"
-msgstr "Magenta!"
 
 msgid "Pink!"
 msgstr "Rose!"
@@ -114,8 +112,8 @@ msgstr "Vervaag"
 msgid "Smudge"
 msgstr "Uitsmeren"
 
-msgid "Fade"
-msgstr "Vervagen"
+msgid "Lighten"
+msgstr "Lichter maken"
 
 msgid "Darken"
 msgstr "Donker maken"
@@ -147,8 +145,8 @@ msgstr "Omkeren"
 msgid "Click in the picture to fill that area with color."
 msgstr "Klik en beweeg de muis om de kleuren te vervagen."
 
-msgid "Click and move to draw grass. Don't forget the dirt!"
-msgstr "Klik en beweeg de muis om gras te tekenen."
+msgid "Click and move to draw grass. Don’t forget the dirt!"
+msgstr "Klik en beweeg de muis om gras te tekenen. Vergeet het vuil niet!"
 
 msgid "Click and move to draw large bricks."
 msgstr "Klik en beweeg de muis om grote stenen te tekenen."
@@ -174,8 +172,10 @@ msgstr "Klik en beweeg de muis om de kleuren te vervagen."
 msgid "Click and move to darken the colors."
 msgstr "Klik en beweeg de muis om de kleuren donker te maken."
 
-msgid "Click and move the mouse around to turn the picture into a chalk drawing."
-msgstr "Klik en beweeg de muis om de tekening te veranderen in een krijt-tekening."
+msgid ""
+"Click and move the mouse around to turn the picture into a chalk drawing."
+msgstr ""
+"Klik en beweeg de muis om de tekening te veranderen in een krijt-tekening."
 
 msgid "Click and move the mouse around to make the picture blocky."
 msgstr "Klik en beweeg de muis om de tekening blokkerig te maken."
@@ -183,14 +183,15 @@ msgstr "Klik en beweeg de muis om de tekening blokkerig te maken."
 msgid "Click and move the mouse around to draw a negative."
 msgstr "Klik en beweeg de muis om de tekening negatief te maken."
 
-msgid "Click and move the mouse around to change the picture's color."
-msgstr "Klik en beweeg de muis om de kleur van de tekening te veranderen."
+msgid "Click and move the mouse around to change the picture’s color."
+msgstr "Klik en verander de kleur met draaiende bewegingen."
 
 msgid "Click and move the mouse around to make the picture drip."
 msgstr "Klik en beweeg de muis om de tekening te laten druppen."
 
 msgid "Click and move the mouse around to turn the picture into a cartoon."
-msgstr "Klik en beweeg de muis om de tekening te veranderen in een krijt-tekening."
+msgstr ""
+"Klik en beweeg de muis om de tekening te veranderen in een krijt-tekening."
 
 msgid "Click to make a mirror image."
 msgstr "Klik om er een spiegelbeeld van te maken."
@@ -207,7 +208,7 @@ msgstr "Rechthoek"
 msgid "Circle"
 msgstr "Cirkel"
 
-msgid "Oval"
+msgid "Ellipse"
 msgstr "Ovaal"
 
 msgid "Triangle"
@@ -216,17 +217,23 @@ msgstr "Driehoek"
 msgid "Pentagon"
 msgstr "Vijfhoek"
 
-msgid "Diamond"
-msgstr "Ruit"
+msgid "Rhombus"
+msgstr "ruit"
 
-msgid "A square has four sides, each the same length."
-msgstr "Een vierkant heeft vier zijden, allemaal even lang."
+msgid "A square is a rectangle with four equal sides."
+msgstr "Een vierkant is een rechthoek met vier gelijke zijden."
 
-msgid "A rectangle has four sides."
-msgstr "Een rechthoek heeft vier zijden."
+msgid "A rectangle has four sides and four right angles."
+msgstr "Een rechthoek heeft vier zijden en vier rechte hoeken."
 
-msgid "A circle is exactly round."
-msgstr "Een cirkel is precies rond."
+msgid ""
+"A circle is a curve where all points have the same distance from the centre."
+msgstr ""
+"Een cirkel is een curve, waarvan alle punten even ver van het middelpunt "
+"liggen."
+
+msgid "An ellipse is a stretched circle."
+msgstr "Een ovaal is een uitgerekte cirkel."
 
 msgid "A triangle has three sides."
 msgstr "Een driehoek heeft drie zijden."
@@ -234,8 +241,10 @@ msgstr "Een driehoek heeft drie zijden."
 msgid "A pentagon has five sides."
 msgstr "Een vijfhoek heeft vijf zijden."
 
-msgid "A diamond is a square, turned around slightly."
-msgstr "Een ruit is zoals een vierkant op zijn zij."
+msgid "A rhombus has four equal sides, and opposite sides are parallel."
+msgstr ""
+"Een ruit heeft vier gelijke zijden en de tegenover elkaar liggende zijden "
+"zijn parallel."
 
 msgid "Tools"
 msgstr "Gereedschappen"
@@ -315,7 +324,8 @@ msgstr ""
 "heeft die je wil. Beweeg om het te laten draaien en klik als je klaar bent."
 
 msgid "Choose a style of text. Click on your drawing and you can start typing."
-msgstr "Kies een stijl voor je letters. Klik op je tekening en begin te schrijven."
+msgstr ""
+"Kies een stijl voor je letters. Klik op je tekening en begin te schrijven."
 
 msgid "Pick a magical effect to use on your drawing!"
 msgstr "Kies een tover-effect om je tekening te veranderen!"
@@ -411,6 +421,33 @@ msgstr "Je kunt nog niet afdrukken!"
 msgid "Erase this picture?"
 msgstr "Mag ik de gekozen tekening uitvegen?"
 
+msgid "Remember to use the left mouse button!"
+msgstr ""
+
+msgid "jq"
+msgstr ""
+
+msgid "JQ"
+msgstr ""
+
+msgid "oO"
+msgstr ""
+
+msgid "`\\%_@$~#{}<>^&*"
+msgstr ""
+
+msgid ",.?!"
+msgstr ""
+
+msgid "017"
+msgstr ""
+
+msgid "O0"
+msgstr ""
+
+msgid "1Il|"
+msgstr ""
+
 msgid "Erase"
 msgstr "Uitgommen"
 
@@ -430,81 +467,86 @@ msgstr "Nee, bewaar op een nieuwe plaats"
 msgid "Choose the picture you want, then click “Open”."
 msgstr "Kies een tekening en klik op 'Open'"
 
-msgid "Rhombus"
-msgstr "ruit"
+#~ msgid "Dark Gray!"
+#~ msgstr "Donkergrijs!"
 
-msgid "A square has four equal sides and L-shaped corners."
-msgstr "Een vierkant heeft vier even grote zijden en L-vormige hoeken."
+#~ msgid "Light Grey!"
+#~ msgstr "Lichtgrijs!"
 
-msgid "A rectangle has four sides and L-shaped corners."
-msgstr "Een rechthoek heeft vier zijden en L-vormige hoeken."
+#~ msgid "Neon green!"
+#~ msgstr "Fluoriserend groen!"
 
-msgid "A rhombus has four equal sides."
-msgstr "Een ruit heeft vier gelijke zijden."
+#~ msgid "Green!"
+#~ msgstr "Groen!"
 
-msgid "Lime!"
-msgstr "Geel-groen!"
+#~ msgid "Magenta!"
+#~ msgstr "Magenta!"
 
-msgid "Cyan!"
-msgstr "Blauw-groen!"
+#~ msgid "Fade"
+#~ msgstr "Vervagen"
 
-msgid "Fuchsia!"
-msgstr "Purper-rood!"
+#~ msgid "Click and move to draw grass. Don't forget the dirt!"
+#~ msgstr "Klik en beweeg de muis om gras te tekenen."
 
-msgid "Gray!"
-msgstr "Grijs!"
+#~ msgid "Click and move the mouse around to change the picture's color."
+#~ msgstr "Klik en beweeg de muis om de kleur van de tekening te veranderen."
 
-msgid "Silver!"
-msgstr "Zilver!"
+#~ msgid "Oval"
+#~ msgstr "Ovaal"
 
-msgid "Thick"
-msgstr "Dik"
+#~ msgid "Diamond"
+#~ msgstr "Ruit"
 
-msgid "Thin"
-msgstr "Dun"
+#~ msgid "A square has four sides, each the same length."
+#~ msgstr "Een vierkant heeft vier zijden, allemaal even lang."
 
-msgid "Click and move the mouse to thicken the picture."
-msgstr "Klik en beweeg de muis om het beeld dikker te maken."
+#~ msgid "A rectangle has four sides."
+#~ msgstr "Een rechthoek heeft vier zijden."
 
-msgid "Click and move the mouse to thin the picture."
-msgstr "Klik en beweeg de muis om het beeld dunner te maken."
+#~ msgid "A circle is exactly round."
+#~ msgstr "Een cirkel is precies rond."
 
-msgid "Light green!"
-msgstr "Lichtgroen!"
+#~ msgid "A diamond is a square, turned around slightly."
+#~ msgstr "Een ruit is zoals een vierkant op zijn zij."
 
-msgid "Dark green!"
-msgstr "Donkergroen!"
+#~ msgid "A square has four equal sides and L-shaped corners."
+#~ msgstr "Een vierkant heeft vier even grote zijden en L-vormige hoeken."
 
-msgid "Light blue!"
-msgstr "Lichtblauw!"
+#~ msgid "A rectangle has four sides and L-shaped corners."
+#~ msgstr "Een rechthoek heeft vier zijden en L-vormige hoeken."
 
-msgid "Violet!"
-msgstr "Violet!"
+#~ msgid "A rhombus has four equal sides."
+#~ msgstr "Een ruit heeft vier gelijke zijden."
 
-msgid "Lighten"
-msgstr "Lichter maken"
+#~ msgid "Lime!"
+#~ msgstr "Geel-groen!"
 
-msgid "Click and move to draw grass. Don’t forget the dirt!"
-msgstr "Klik en beweeg de muis om gras te tekenen. Vergeet het vuil niet!"
+#~ msgid "Cyan!"
+#~ msgstr "Blauw-groen!"
 
-msgid "Click and move the mouse around to change the picture’s color."
-msgstr "Klik en verander de kleur met draaiende bewegingen."
+#~ msgid "Fuchsia!"
+#~ msgstr "Purper-rood!"
 
-msgid "Ellipse"
-msgstr "Ovaal"
+#~ msgid "Gray!"
+#~ msgstr "Grijs!"
 
-msgid "A square is a rectangle with four equal sides."
-msgstr "Een vierkant is een rechthoek met vier gelijke zijden."
+#~ msgid "Silver!"
+#~ msgstr "Zilver!"
 
-msgid "A rectangle has four sides and four right angles."
-msgstr "Een rechthoek heeft vier zijden en vier rechte hoeken."
+#~ msgid "Thick"
+#~ msgstr "Dik"
 
-msgid "A circle is a curve where all points have the same distance from the centre."
-msgstr "Een cirkel is een curve, waarvan alle punten even ver van het middelpunt liggen."
+#~ msgid "Thin"
+#~ msgstr "Dun"
 
-msgid "An ellipse is a stretched circle."
-msgstr "Een ovaal is een uitgerekte cirkel."
+#~ msgid "Click and move the mouse to thicken the picture."
+#~ msgstr "Klik en beweeg de muis om het beeld dikker te maken."
 
-msgid "A rhombus has four equal sides, and opposite sides are parallel."
-msgstr "Een ruit heeft vier gelijke zijden en de tegenover elkaar liggende zijden zijn parallel."
+#~ msgid "Click and move the mouse to thin the picture."
+#~ msgstr "Klik en beweeg de muis om het beeld dunner te maken."
 
+#~ msgid "Light blue!"
+#~ msgstr "Lichtblauw!"
+
+#~ msgid "Violet!"
+#~ msgstr "Violet!"

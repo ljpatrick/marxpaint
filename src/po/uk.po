@@ -5,7 +5,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: TuxPaint\n"
-"POT-Creation-Date: 2004-06-14 22:41+0200\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2005-10-10 00:12-0700\n"
 "PO-Revision-Date: 2005-09-13 04:48+0200\n"
 "Last-Translator: Serhij Dubyk <dubyk@lsl.lviv.ua>\n"
 "Language-Team: Serhij Dubyk <dubyk@lsl.lviv.ua>\n"
@@ -185,7 +186,8 @@ msgid "Click and move to darken the colors."
 msgstr "Клацніть та поводіть по малюнку, щоб освітлити."
 
 #, fuzzy
-msgid "Click and move the mouse around to turn the picture into a chalk drawing."
+msgid ""
+"Click and move the mouse around to turn the picture into a chalk drawing."
 msgstr "Клацніть та поводіть по малюнку, щоб робити малюнок крейдою."
 
 msgid "Click and move the mouse around to make the picture blocky."
@@ -243,7 +245,8 @@ msgstr "У прямокутника чотири сторони."
 msgid "A rectangle has four sides and four right angles."
 msgstr "У прямокутника чотири сторони."
 
-msgid "A circle is a curve where all points have the same distance from the centre."
+msgid ""
+"A circle is a curve where all points have the same distance from the centre."
 msgstr "Коло - крива, у якоє всі крапки мають таку ж відстань від центру."
 
 msgid "An ellipse is a stretched circle."
@@ -336,8 +339,12 @@ msgid "Click to start drawing a line. Let go to complete it."
 msgstr "Клацніть, щоб почати малювати лінію. Відпустіть кнопку, щоб закінчити."
 
 #, fuzzy
-msgid "Pick a shape. Click to pick the center, drag, then let go when it is the size you want. Move around to rotate it, and click to draw it."
-msgstr "Виберіть форму. Клацніть для вибору центру, розтягніть до потрібного розміру, відпустіть. Покрутіть форму, потім клацніть, щоб намалювати її."
+msgid ""
+"Pick a shape. Click to pick the center, drag, then let go when it is the "
+"size you want. Move around to rotate it, and click to draw it."
+msgstr ""
+"Виберіть форму. Клацніть для вибору центру, розтягніть до потрібного "
+"розміру, відпустіть. Покрутіть форму, потім клацніть, щоб намалювати її."
 
 #, fuzzy
 msgid "Choose a style of text. Click on your drawing and you can start typing."
@@ -493,4 +500,3 @@ msgstr "Не вдається зберегти файл ресурсів: "
 
 msgid "Choose the picture you want, then click “Open”."
 msgstr "Виберіть бажаний малюнок, а потім клацніть «Відкрити»."
-

@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TuxPaint 0.0.1pre\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2005-01-06 12:31+0100\n"
+"POT-Creation-Date: 2005-10-10 00:12-0700\n"
 "PO-Revision-Date: 2005-01-09 14:49+0100\n"
 "Last-Translator: Gugusse <titi>\n"
 "Language-Team: Breton <drouizig@drouizig.org>\n"
@@ -25,14 +25,12 @@ msgstr "Tux Paint"
 msgid "Black!"
 msgstr "Du !"
 
-msgid "Dark Gray!"
-msgstr "Gris mouk !"
+msgid "Dark grey! Some people spell it “dark gray”."
+msgstr ""
 
-#. using both valid spellings
-msgid "Light Grey!"
-msgstr "Gris sklaer !"
+msgid "Light grey! Some people spell it “light gray”."
+msgstr ""
 
-#. using both valid spellings
 msgid "White!"
 msgstr "Gwenn !"
 
@@ -45,11 +43,13 @@ msgstr "Orañjez !"
 msgid "Yellow!"
 msgstr "Melen !"
 
-msgid "Neon green!"
-msgstr "Gwer neoñ !"
+#, fuzzy
+msgid "Light green!"
+msgstr "Gris sklaer !"
 
-msgid "Green!"
-msgstr "Gwer !"
+#, fuzzy
+msgid "Dark green!"
+msgstr "Teñvaloc'h"
 
 msgid "Sky blue!"
 msgstr "Glas oabl !"
@@ -57,11 +57,11 @@ msgstr "Glas oabl !"
 msgid "Blue!"
 msgstr "Glas !"
 
+msgid "Lavender!"
+msgstr ""
+
 msgid "Purple!"
 msgstr "Limestra !"
-
-msgid "Magenta!"
-msgstr "Ruz roz !"
 
 msgid "Pink!"
 msgstr "Roz !"
@@ -108,8 +108,9 @@ msgstr "Luziañ"
 msgid "Smudge"
 msgstr "Displanaat"
 
-msgid "Fade"
-msgstr "Goulariñ"
+#, fuzzy
+msgid "Lighten"
+msgstr "Gris sklaer !"
 
 msgid "Darken"
 msgstr "Teñvaloc'h"
@@ -141,7 +142,8 @@ msgstr "Eilpennañ"
 msgid "Click in the picture to fill that area with color."
 msgstr "Klik war ar skeudenn evit leuniañ al leur-se gant ul liv."
 
-msgid "Click and move to draw grass. Don't forget the dirt!"
+#, fuzzy
+msgid "Click and move to draw grass. Don’t forget the dirt!"
 msgstr "Klik ha fiñv al logodenn evit tresañ geot. Na zisoñj ket ar poultr."
 
 msgid "Click and move to draw large bricks."
@@ -168,8 +170,10 @@ msgstr "Klik ha fiñv al logodenn evit lakaat al livioù da zislivañ."
 msgid "Click and move to darken the colors."
 msgstr "Klik ha fiñv al logodenn evit lakaat al livioù da deñvalaat."
 
-msgid "Click and move the mouse around to turn the picture into a chalk drawing."
-msgstr "Klik ha fiñv al logodenn evit cheñch ar skeudenn en un dresadenn gleiz."
+msgid ""
+"Click and move the mouse around to turn the picture into a chalk drawing."
+msgstr ""
+"Klik ha fiñv al logodenn evit cheñch ar skeudenn en un dresadenn gleiz."
 
 msgid "Click and move the mouse around to make the picture blocky."
 msgstr "Klik ha fiñv al logodenn evit kaout bloc'hadoù bihan."
@@ -177,7 +181,8 @@ msgstr "Klik ha fiñv al logodenn evit kaout bloc'hadoù bihan."
 msgid "Click and move the mouse around to draw a negative."
 msgstr "Klik ha fiñv al logodenn evit kaout ar rakluc'henn."
 
-msgid "Click and move the mouse around to change the picture's color."
+#, fuzzy
+msgid "Click and move the mouse around to change the picture’s color."
 msgstr "Klik ha fiñv al logodenn evit cheñch liv an dresadenn."
 
 msgid "Click and move the mouse around to make the picture drip."
@@ -201,8 +206,8 @@ msgstr "Hirgarrezenn"
 msgid "Circle"
 msgstr "Kelc'h"
 
-msgid "Oval"
-msgstr "Hirgelc'h"
+msgid "Ellipse"
+msgstr ""
 
 msgid "Triangle"
 msgstr "Tric'horn"
@@ -210,17 +215,23 @@ msgstr "Tric'horn"
 msgid "Pentagon"
 msgstr "Pempkorn"
 
-msgid "Diamond"
-msgstr "Romb"
+msgid "Rhombus"
+msgstr ""
 
-msgid "A square has four sides, each the same length."
-msgstr "Ur garrezenn he deus pevar zu gant ur ment heñvel."
-
-msgid "A rectangle has four sides."
+#, fuzzy
+msgid "A square is a rectangle with four equal sides."
 msgstr "Un hirgarrezenn he deus pevar zu."
 
-msgid "A circle is exactly round."
-msgstr "Ur c'helc'h a zo ront en e bezh."
+#, fuzzy
+msgid "A rectangle has four sides and four right angles."
+msgstr "Un hirgarrezenn he deus pevar zu."
+
+msgid ""
+"A circle is a curve where all points have the same distance from the centre."
+msgstr ""
+
+msgid "An ellipse is a stretched circle."
+msgstr ""
 
 msgid "A triangle has three sides."
 msgstr "Un tric'horneg en deus tri zu."
@@ -228,8 +239,8 @@ msgstr "Un tric'horneg en deus tri zu."
 msgid "A pentagon has five sides."
 msgstr "Ur pempkorneg en deus pemp tu."
 
-msgid "A diamond is a square, turned around slightly."
-msgstr "Ur romb zo ur garrezenn, hirstummet un tammig."
+msgid "A rhombus has four equal sides, and opposite sides are parallel."
+msgstr ""
 
 msgid "Tools"
 msgstr "Binvioù"
@@ -301,11 +312,16 @@ msgstr "Dibab ur skeudenn evit ensoc'hañ anezhi e-barzh da dresadenn."
 msgid "Click to start drawing a line. Let go to complete it."
 msgstr "Klik evit kregiñ da dresañ ul linenn."
 
-msgid "Pick a shape. Click to pick the center, drag, then let go when it is the size you want. Move around to rotate it, and click to draw it."
-msgstr "Diuz ur stumm. Klik warnañ, dibab e blas hag e vent. Lak anezhañ da dreiñ en ur bouezañ, ha klik evit e dresañ a-benn ar fin."
+msgid ""
+"Pick a shape. Click to pick the center, drag, then let go when it is the "
+"size you want. Move around to rotate it, and click to draw it."
+msgstr ""
+"Diuz ur stumm. Klik warnañ, dibab e blas hag e vent. Lak anezhañ da dreiñ en "
+"ur bouezañ, ha klik evit e dresañ a-benn ar fin."
 
 msgid "Choose a style of text. Click on your drawing and you can start typing."
-msgstr "Diuz ur stil testenn. Klik war da skeudenn ha krog da vizskrivañ un destenn."
+msgstr ""
+"Diuz ur stil testenn. Klik war da skeudenn ha krog da vizskrivañ un destenn."
 
 msgid "Pick a magical effect to use on your drawing!"
 msgstr "Dibab un efed strobinellus evit kemmañ da dresadenn !"
@@ -349,7 +365,8 @@ msgid "Hold the button to stretch the shape."
 msgstr "Dalc'h da bouezañ war an afell evit astenn ar stumm."
 
 msgid "Move the mouse to rotate the shape. Click to draw it."
-msgstr "Fiñv al logodenn evit ober un dro gant ar stumm. Klik evit tresañ anezhañ."
+msgstr ""
+"Fiñv al logodenn evit ober un dro gant ar stumm. Klik evit tresañ anezhañ."
 
 msgid "OK then… Let’s keep drawing this one!"
 msgstr "Mat ! neuze kendalc'homp gant an dresadenn !"
@@ -401,6 +418,33 @@ msgstr "N'hallan ket moullañ atav !"
 msgid "Erase this picture?"
 msgstr "Diverkañ an dresadenn-se ?"
 
+msgid "Remember to use the left mouse button!"
+msgstr ""
+
+msgid "jq"
+msgstr ""
+
+msgid "JQ"
+msgstr ""
+
+msgid "oO"
+msgstr ""
+
+msgid "`\\%_@$~#{}<>^&*"
+msgstr ""
+
+msgid ",.?!"
+msgstr ""
+
+msgid "017"
+msgstr ""
+
+msgid "O0"
+msgstr ""
+
+msgid "1Il|"
+msgstr ""
+
 msgid "Erase"
 msgstr "Diverkañ"
 
@@ -420,3 +464,32 @@ msgstr "Ket, gwarediñ dindan un anv nevez"
 msgid "Choose the picture you want, then click “Open”."
 msgstr "Diuz ur skeudenn ha klik war 'digeriñ' neuze."
 
+#~ msgid "Dark Gray!"
+#~ msgstr "Gris mouk !"
+
+#~ msgid "Neon green!"
+#~ msgstr "Gwer neoñ !"
+
+#~ msgid "Green!"
+#~ msgstr "Gwer !"
+
+#~ msgid "Magenta!"
+#~ msgstr "Ruz roz !"
+
+#~ msgid "Fade"
+#~ msgstr "Goulariñ"
+
+#~ msgid "Oval"
+#~ msgstr "Hirgelc'h"
+
+#~ msgid "Diamond"
+#~ msgstr "Romb"
+
+#~ msgid "A square has four sides, each the same length."
+#~ msgstr "Ur garrezenn he deus pevar zu gant ur ment heñvel."
+
+#~ msgid "A circle is exactly round."
+#~ msgstr "Ur c'helc'h a zo ront en e bezh."
+
+#~ msgid "A diamond is a square, turned around slightly."
+#~ msgstr "Ur romb zo ur garrezenn, hirstummet un tammig."

@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint 0.9.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2005-01-06 12:31+0100\n"
+"POT-Creation-Date: 2005-10-10 00:12-0700\n"
 "PO-Revision-Date: 2002-08-22 15:45-0800\n"
 "Last-Translator: Daniel Andersson <tuxpaint@septum.org>\n"
 "Language-Team: Swedish\n"
@@ -23,14 +23,12 @@ msgstr "Tux Paint"
 msgid "Black!"
 msgstr "Svart!"
 
-msgid "Dark Gray!"
-msgstr "Mörkgrå"
+msgid "Dark grey! Some people spell it “dark gray”."
+msgstr ""
 
-#. using both valid spellings
-msgid "Light Grey!"
-msgstr "Ljusgrå!"
+msgid "Light grey! Some people spell it “light gray”."
+msgstr ""
 
-#. using both valid spellings
 msgid "White!"
 msgstr "Vit!"
 
@@ -43,11 +41,11 @@ msgstr "Orange!"
 msgid "Yellow!"
 msgstr "Gul!"
 
-msgid "Neon green!"
-msgstr "Neongrön!"
+msgid "Light green!"
+msgstr "Ljusgrön!"
 
-msgid "Green!"
-msgstr "Grön!"
+msgid "Dark green!"
+msgstr "Mörkgrön!"
 
 msgid "Sky blue!"
 msgstr "Himmelblå!"
@@ -55,11 +53,11 @@ msgstr "Himmelblå!"
 msgid "Blue!"
 msgstr "Blå!"
 
+msgid "Lavender!"
+msgstr ""
+
 msgid "Purple!"
 msgstr "Lila!"
-
-msgid "Magenta!"
-msgstr "Magenta!"
 
 msgid "Pink!"
 msgstr "Rosa!"
@@ -106,8 +104,9 @@ msgstr "Suddig"
 msgid "Smudge"
 msgstr "Kladda ut"
 
-msgid "Fade"
-msgstr "Blekna"
+#, fuzzy
+msgid "Lighten"
+msgstr "Ljusgrön!"
 
 msgid "Darken"
 msgstr "Mörka"
@@ -139,7 +138,8 @@ msgstr "Vänd"
 msgid "Click in the picture to fill that area with color."
 msgstr "Klicka på bilden för att fylla den delen med färg!"
 
-msgid "Click and move to draw grass. Don't forget the dirt!"
+#, fuzzy
+msgid "Click and move to draw grass. Don’t forget the dirt!"
 msgstr "Klicka och rör musen runt för att rita gräs. Glöm inte jorden!"
 
 msgid "Click and move to draw large bricks."
@@ -176,7 +176,8 @@ msgstr "Klicka och rör musen runt för att göra bilden \"blockig\"."
 msgid "Click and move the mouse around to draw a negative."
 msgstr "Klicka och rör musen för att skapa ett negativ."
 
-msgid "Click and move the mouse around to change the picture's color."
+#, fuzzy
+msgid "Click and move the mouse around to change the picture’s color."
 msgstr "Klicka och rör musen runt för att ändra bildens färg."
 
 msgid "Click and move the mouse around to make the picture drip."
@@ -200,8 +201,8 @@ msgstr "Rektangel"
 msgid "Circle"
 msgstr "Cirkel"
 
-msgid "Oval"
-msgstr "Oval"
+msgid "Ellipse"
+msgstr ""
 
 msgid "Triangle"
 msgstr "Triangel"
@@ -209,17 +210,23 @@ msgstr "Triangel"
 msgid "Pentagon"
 msgstr "Femhörning"
 
-msgid "Diamond"
-msgstr "Romb"
+msgid "Rhombus"
+msgstr ""
 
-msgid "A square has four sides, each the same length."
-msgstr "En fyrkant har fyra sidor, alla är lika långa."
-
-msgid "A rectangle has four sides."
+#, fuzzy
+msgid "A square is a rectangle with four equal sides."
 msgstr "En rektangel har fyra sidor."
 
-msgid "A circle is exactly round."
-msgstr "En cirkel är helt rund."
+#, fuzzy
+msgid "A rectangle has four sides and four right angles."
+msgstr "En rektangel har fyra sidor."
+
+msgid ""
+"A circle is a curve where all points have the same distance from the centre."
+msgstr ""
+
+msgid "An ellipse is a stretched circle."
+msgstr ""
 
 msgid "A triangle has three sides."
 msgstr "En triangel har tre sidor."
@@ -227,8 +234,8 @@ msgstr "En triangel har tre sidor."
 msgid "A pentagon has five sides."
 msgstr "En femhörning har fem sidor."
 
-msgid "A diamond is a square, turned around slightly."
-msgstr "En romb är rund, lätt vänd."
+msgid "A rhombus has four equal sides, and opposite sides are parallel."
+msgstr ""
 
 msgid "Tools"
 msgstr "Verktyg"
@@ -405,6 +412,33 @@ msgstr "Du kan inte printa än!"
 msgid "Erase this picture?"
 msgstr "Radera den här bilden?"
 
+msgid "Remember to use the left mouse button!"
+msgstr ""
+
+msgid "jq"
+msgstr ""
+
+msgid "JQ"
+msgstr ""
+
+msgid "oO"
+msgstr ""
+
+msgid "`\\%_@$~#{}<>^&*"
+msgstr ""
+
+msgid ",.?!"
+msgstr ""
+
+msgid "017"
+msgstr ""
+
+msgid "O0"
+msgstr ""
+
+msgid "1Il|"
+msgstr ""
+
 msgid "Erase"
 msgstr "Sudda ut"
 
@@ -424,47 +458,74 @@ msgstr "Nej, spara i en ny fil!"
 msgid "Choose the picture you want, then click “Open”."
 msgstr "Välj den bild som du vill ha, klicka sedan på \"Öppna.\""
 
+#~ msgid "Dark Gray!"
+#~ msgstr "Mörkgrå"
+
+#~ msgid "Light Grey!"
+#~ msgstr "Ljusgrå!"
+
+#~ msgid "Neon green!"
+#~ msgstr "Neongrön!"
+
+#~ msgid "Green!"
+#~ msgstr "Grön!"
+
+#~ msgid "Magenta!"
+#~ msgstr "Magenta!"
+
+#~ msgid "Fade"
+#~ msgstr "Blekna"
+
+#~ msgid "Oval"
+#~ msgstr "Oval"
+
+#~ msgid "Diamond"
+#~ msgstr "Romb"
+
+#~ msgid "A square has four sides, each the same length."
+#~ msgstr "En fyrkant har fyra sidor, alla är lika långa."
+
+#~ msgid "A circle is exactly round."
+#~ msgstr "En cirkel är helt rund."
+
+#~ msgid "A diamond is a square, turned around slightly."
+#~ msgstr "En romb är rund, lätt vänd."
+
 #, fuzzy
-msgid "Lime!"
-msgstr "Linjer"
+#~ msgid "Lime!"
+#~ msgstr "Linjer"
 
-msgid "Thick"
-msgstr "Tjock"
-
-#, fuzzy
-msgid "Click and move the mouse to thicken the picture."
-msgstr "Klicka och rör musen runt för att kladda ut bilden."
+#~ msgid "Thick"
+#~ msgstr "Tjock"
 
 #, fuzzy
-msgid "Click and move the mouse to thin the picture."
-msgstr "Klicka och rör musen för att göra den suddig."
-
-msgid "Okay"
-msgstr "Okej"
+#~ msgid "Click and move the mouse to thicken the picture."
+#~ msgstr "Klicka och rör musen runt för att kladda ut bilden."
 
 #, fuzzy
-msgid "Red"
-msgstr "Göra om"
+#~ msgid "Click and move the mouse to thin the picture."
+#~ msgstr "Klicka och rör musen för att göra den suddig."
+
+#~ msgid "Okay"
+#~ msgstr "Okej"
 
 #, fuzzy
-msgid "Grey"
-msgstr "Grå!"
+#~ msgid "Red"
+#~ msgstr "Göra om"
 
-msgid ""
-"Pick a shape to draw.  Click once to pick the center of the shape, click "
-"again to draw it."
-msgstr ""
-"Välj en form att rita. Klicka en gång för att välja mitten utav formen, "
-"klicka igen för att rita med den."
+#, fuzzy
+#~ msgid "Grey"
+#~ msgstr "Grå!"
+
+#~ msgid ""
+#~ "Pick a shape to draw.  Click once to pick the center of the shape, click "
+#~ "again to draw it."
+#~ msgstr ""
+#~ "Välj en form att rita. Klicka en gång för att välja mitten utav formen, "
+#~ "klicka igen för att rita med den."
 
 #~ msgid "Silver!"
 #~ msgstr "Silver!"
-
-#~ msgid "Light green!"
-#~ msgstr "Ljusgrön!"
-
-#~ msgid "Dark green!"
-#~ msgstr "Mörkgrön!"
 
 #~ msgid "Light blue!"
 #~ msgstr "Ljusblå!"
