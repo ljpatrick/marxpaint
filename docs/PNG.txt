@@ -2,7 +2,7 @@ PNG.txt for Tux Paint
 
 Tux Paint - A simple drawing program for children.
 
-Copyright 2005 by Bill Kendrick
+Copyright 2005 by Bill Kendrick and others
 bill@newbreedsoftware.com
 http://www.newbreedsoftware.com/tuxpaint/
 

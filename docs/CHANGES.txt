@@ -2,12 +2,12 @@ CHANGES.txt for Tux Paint
 
 Tux Paint - A simple drawing program for children.
 
-Copyright (c) 2005 by Bill Kendrick
+Copyright (c) 2005 by Bill Kendrick and others
 bill@newbreedsoftware.com
 http://www.newbreedsoftware.com/tuxpaint/
 
 
-2005.October.9 (0.9.15)
+2005.October.10 (0.9.15)
 
   * Speed improvements:
     -------------------

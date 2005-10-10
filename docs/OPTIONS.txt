@@ -3,7 +3,7 @@
 
                              Options Documentation
 
-                        Copyright 2005 by Bill Kendrick
+                   Copyright 2005 by Bill Kendrick and others
                                New Breed Software
 
                            bill@newbreedsoftware.com
@@ -606,7 +606,7 @@ Available Languages
        |---------------+---------------------+---------------------|
        |br_FR          |Brezhoneg            |Breton               |
        |---------------+---------------------+---------------------|
-       |ca_ES          |Català               |Catalan              |
+       |ca_ES          |Catal`a              |Catalan              |
        |---------------+---------------------+---------------------|
        |cs_CZ          |Cesky                |Czech                |
        |---------------+---------------------+---------------------|
@@ -622,17 +622,17 @@ Available Languages
        |---------------+---------------------+---------------------|
        |en_GB          |                     |British English      |
        |---------------+---------------------+---------------------|
-       |es_ES          |Español              |Spanish              |
+       |es_ES          |Espanol              |Spanish              |
        |---------------+---------------------+---------------------|
-       |es_MX          |Español-Mejicano     |Mexican Spanish      |
+       |es_MX          |Espanol-Mejicano     |Mexican Spanish      |
        |---------------+---------------------+---------------------|
        |eu_ES          |Euskara              |Basque               |
        |---------------+---------------------+---------------------|
        |fi_FI          |Suomi                |Finnish              |
        |---------------+---------------------+---------------------|
-       |fr_FR          |Français             |French               |
+       |fr_FR          |Franc,ais            |French               |
        |---------------+---------------------+---------------------|
-       |ga_IE          |Gàidhlig             |Gaelic               |
+       |ga_IE          |G`aidhlig            |Gaelic               |
        |---------------+---------------------+---------------------|
        |gl_ES          |Galego               |Galician             |
        |---------------+---------------------+---------------------|
@@ -648,7 +648,7 @@ Available Languages
        |---------------+---------------------+---------------------|
        |id_ID          |Bahasa Indonesia     |Indonesian           |
        |---------------+---------------------+---------------------|
-       |is_IS          |Íslenska             |Icelandic            |
+       |is_IS          |Islenska             |Icelandic            |
        |---------------+---------------------+---------------------|
        |it_IT          |Italiano             |Italian              |
        |---------------+---------------------+---------------------|
@@ -660,7 +660,7 @@ Available Languages
        |---------------+---------------------+---------------------|
        |ms_MY          |                     |Malay                |
        |---------------+---------------------+---------------------|
-       |nb_NO          |Norsk (bokmål)       |Norwegian Bokmål     |
+       |nb_NO          |Norsk (bokmaal)      |Norwegian Bokmaal    |
        |---------------+---------------------+---------------------|
        |nn_NO          |Norsk (nynorsk)      |Norwegian Nynorsk    |
        |---------------+---------------------+---------------------|
@@ -668,9 +668,9 @@ Available Languages
        |---------------+---------------------+---------------------|
        |pl_PL          |Polski               |Polish               |
        |---------------+---------------------+---------------------|
-       |pt_BR          |Portugês Brazileiro  |Brazilian Portuguese |
+       |pt_BR          |Portuges Brazileiro  |Brazilian Portuguese |
        |---------------+---------------------+---------------------|
-       |pt_PT          |Portugês             |Portuguese           |
+       |pt_PT          |Portuges             |Portuguese           |
        |---------------+---------------------+---------------------|
        |ro_RO          |                     |Romanian             |
        |---------------+---------------------+---------------------|
