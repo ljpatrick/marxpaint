@@ -158,7 +158,7 @@ June 17, 2002 - October 10, 2005
     The Greek Linux i18n Team <i18ngr@lists.hellug.gr>  [NOTE: mailing list]
 
   * Hindi
-    Ankit Malik <greatestankit@yahoo.co.in>
+    Ankit Malik <ankitmalik@gmail.com>
 
   * Hungarian
     Török Gábor <gabo@linuxportal.hu>
