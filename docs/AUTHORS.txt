@@ -225,7 +225,7 @@ June 17, 2002 - October 10, 2005
     Silvio Faria <sirofa2003@yahoo.com.br>
  
   * Portuguese (Portugal)
-    Ricardo Cruz
+    Ricardo Cruz <rpmcruz@clix.pt>
     
   * Romanian
     Laurentiu Buzdugan
