@@ -1,19 +1,16 @@
-# Tux Paint Bulgarian translation file
-# Copyright (C) 2004 Bill Kendrick
-# This file is distributed under the same license as the Tux Paint package.
-# Martin Zhekov <mjekov@bginfo.net>
+# TuxPaint Bulgarian translation file
+# Copyright (C) 2004, 2005 Free Software Foundation, Inc.
+# This file is distributed under the same license as the TuxPaint package.
+# Martin Zhekov <mjekov@bginfo.net>, 2004.
 # Yavor Doganov <yavor@doganov.org>, 2005.
 # 
-# Merged by Bill Kendrick <bill@newbreedsoftware.com>, 2005.06.26;
-# tried to use the latest (though, in some cases, the shortest) translations
-# submitted to the project 
 # 
 msgid ""
 msgstr ""
-"Project-Id-Version: tuxpaint 0.9.14\n"
+"Project-Id-Version: tuxpaint 0.9.15\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2005-10-10 00:12-0700\n"
-"PO-Revision-Date: 2005-06-13 09:37+0300\n"
+"PO-Revision-Date: 2005-10-11 14:40+0300\n"
 "Last-Translator: Yavor Doganov <yavor@doganov.org>\n"
 "Language-Team: Bulgarian <dict@fsa-bg.org>\n"
 "MIME-Version: 1.0\n"
@@ -22,23 +19,22 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 
 msgid "A drawing program for children."
-msgstr ""
+msgstr "Програма за рисуване за деца."
 
 msgid "Drawing program"
-msgstr ""
+msgstr "Програма за рисуване"
 
-#, fuzzy
 msgid "Tux Paint"
-msgstr "Оцвети"
+msgstr "Рисуване с Тъкс"
 
 msgid "Black!"
 msgstr "Черно!"
 
 msgid "Dark grey! Some people spell it “dark gray”."
-msgstr ""
+msgstr "Тъмносиво!"
 
 msgid "Light grey! Some people spell it “light gray”."
-msgstr ""
+msgstr "Светлосиво!"
 
 msgid "White!"
 msgstr "Бяло!"
@@ -53,20 +49,19 @@ msgid "Yellow!"
 msgstr "Жълто!"
 
 msgid "Light green!"
-msgstr ""
+msgstr "Светлозелено!"
 
-#, fuzzy
 msgid "Dark green!"
-msgstr "Сиво!"
+msgstr "Тъмнозелено!"
 
 msgid "Sky blue!"
-msgstr ""
+msgstr "Небесносиньо!"
 
 msgid "Blue!"
 msgstr "Синьо!"
 
 msgid "Lavender!"
-msgstr ""
+msgstr "Бледолилаво!"
 
 msgid "Purple!"
 msgstr "Лилаво!"
@@ -77,12 +72,11 @@ msgstr "Розово!"
 msgid "Brown!"
 msgstr "Кафяво!"
 
-#, fuzzy
 msgid "Tan!"
-msgstr "Синьо-зелено!"
+msgstr "Жълтокафяво!"
 
 msgid "Beige!"
-msgstr ""
+msgstr "Бежово!"
 
 msgid "Great!"
 msgstr "Прекрасно!"
@@ -91,23 +85,19 @@ msgid "Cool!"
 msgstr "Чудесно!"
 
 msgid "Keep it up!"
-msgstr "Запази го!"
+msgstr "Продължавайте все така!"
 
-# msgid "Keep it up!"
-# msgstr "Продължавайте все така!"
 msgid "Good job!"
 msgstr "Добра работа!"
 
 msgid "Fill"
-msgstr "Запълни"
+msgstr "Запълване"
 
-#, fuzzy
 msgid "Grass"
-msgstr "Изтрий"
+msgstr "Тревнозелено!"
 
-#, fuzzy
 msgid "Bricks"
-msgstr "Парчета"
+msgstr "Тухли"
 
 msgid "Rainbow"
 msgstr "Дъга"
@@ -118,39 +108,32 @@ msgstr "Искри"
 msgid "Blur"
 msgstr "Размазване"
 
-# msgid "Blur"
-# msgstr "Замъглявам"
 msgid "Smudge"
-msgstr ""
+msgstr "Зацапване"
 
 msgid "Lighten"
-msgstr ""
+msgstr "Осветяване"
 
 msgid "Darken"
-msgstr ""
+msgstr "Потъмняване"
 
-# msgid "Fade"
-# msgstr "Избледняване"
 msgid "Chalk"
 msgstr "Тебешир"
 
 msgid "Blocks"
-msgstr "Парчета"
+msgstr "Квадратчета"
 
-# msgid "Blocks"
-# msgstr "Квадратчета"
 msgid "Negative"
 msgstr "Негатив"
 
-#, fuzzy
 msgid "Tint"
-msgstr "Тънък"
+msgstr "Оцветяване"
 
 msgid "Drip"
-msgstr "Разкапвам"
+msgstr "Стичане"
 
 msgid "Cartoon"
-msgstr ""
+msgstr "Карикатура"
 
 msgid "Mirror"
 msgstr "Огледало"
@@ -158,84 +141,64 @@ msgstr "Огледало"
 msgid "Flip"
 msgstr "Обръщане"
 
-# msgid "Flip"
-# msgstr "Преобърни"
 msgid "Click in the picture to fill that area with color."
-msgstr "Щтракни за да оцветиш в цвят."
+msgstr ""
+"Натиснете по рисунката, за да се запълни съответната област с избрания цвят."
 
-#, fuzzy
 msgid "Click and move to draw grass. Don’t forget the dirt!"
-msgstr "Щтракни и движи за да начертаеш искри."
+msgstr ""
+"Натиснете и движете мишката, за да рисувате трева. Не забравяйте замърсените "
+"площи!"
 
-#, fuzzy
 msgid "Click and move to draw large bricks."
-msgstr "Щтракни и движи за да начертаеш искри."
+msgstr "Натиснете и движете мишката, за да рисувате тухли."
 
-#, fuzzy
 msgid "Click and move to draw small bricks."
-msgstr "Щтракни и движи за да начертаеш искри."
+msgstr "Натиснете и движете мишката, за да рисувате малки тухли."
 
 msgid "You can draw in rainbow colors!"
-msgstr "Можеш да чертаеш дъга!"
+msgstr "Може да рисувате в цветовете на дъгата!"
 
 msgid "Click and move to draw sparkles."
-msgstr "Щтракни и движи за да начертаеш искри."
+msgstr "Натиснете и движете мишката, за да рисувате искри."
 
 msgid "Click and move the mouse around to blur the picture."
-msgstr "Щтракни и движи мишката за да замъглиш картинката."
+msgstr "Натиснете и движете мишката, за да размажете рисунката."
 
-#, fuzzy
 msgid "Click and move the mouse around to smudge the picture."
-msgstr "Щтракни и движи мишката за да замъглиш картинката."
+msgstr "Натиснете и движете мишката, за да размажете рисунката."
 
 msgid "Click and move to fade the colors."
-msgstr "Щтракни и движи за да избелиш картинката."
+msgstr "Натиснете и движете мишката, за да избледнеят цветовете."
 
-#, fuzzy
 msgid "Click and move to darken the colors."
-msgstr "Щтракни и движи за да избелиш картинката."
+msgstr "Натиснете и движете мишката, за да потъмнеят цветовете."
 
 msgid ""
 "Click and move the mouse around to turn the picture into a chalk drawing."
-msgstr "Щтракни и движи мишката за размажеш."
+msgstr "Натиснете и движете мишката, за да превърнете рисунката в тебеширена."
 
 msgid "Click and move the mouse around to make the picture blocky."
-msgstr "Щтракни и движи мишката за да направиш картинката на парчета."
+msgstr "Натиснете и движете мишката, за да направите рисунката на квадратчета."
 
-# msgid "Click to flip the picture upside-down."
-# msgstr "Натиснете, за да обърнете рисунката."
-# msgid "Click and move the mouse around to blur the picture."
-# msgstr "Натиснете и движете мишката, за да размажете рисунката."
-# msgid "Click and move the mouse around to make the picture blocky."
-# msgstr "Натиснете и движете мишката, за да направите рисунката на квадратчета."
 msgid "Click and move the mouse around to draw a negative."
 msgstr "Натиснете и движете мишката, за да нарисувате негатив."
 
-#, fuzzy
 msgid "Click and move the mouse around to change the picture’s color."
-msgstr "Щтракни и движи мишката за да направиш картинката на парчета."
+msgstr "Натиснете и движете мишката, за да промените цвета на рисунката."
 
 msgid "Click and move the mouse around to make the picture drip."
-msgstr "Щтракни и движи за да разкапеш картинката."
+msgstr "Натиснете и движете мишката, за да направите рисунката да капе."
 
-#, fuzzy
 msgid "Click and move the mouse around to turn the picture into a cartoon."
-msgstr "Щтракни и движи мишката за размажеш."
+msgstr "Натиснете и движете мишката, за да превърнете рисунката в карикатура."
 
-# msgid "Fill"
-# msgstr "Запълване"
-# msgid "You can draw in rainbow colors!"
-# msgstr "Може да рисувате в цветовете на дъгата!"
-# msgid "Click and move to draw sparkles."
-# msgstr "Натиснете и движете мишката, за да рисувате искри."
 msgid "Click to make a mirror image."
 msgstr "Натиснете, за направите огледален образ."
 
 msgid "Click to flip the picture upside-down."
-msgstr "Щтракни да обърнеш картинката."
+msgstr "Натиснете, за да обърнете рисунката."
 
-# msgid "Click in the picture to fill that area with color."
-# msgstr "Натиснете по рисунката, за да се запълни съответната област с избрания цвят."
 msgid "Square"
 msgstr "Квадрат"
 
@@ -246,10 +209,8 @@ msgid "Circle"
 msgstr "Кръг"
 
 msgid "Ellipse"
-msgstr ""
+msgstr "Елипса"
 
-# msgid "Oval"
-# msgstr "Елипса"
 msgid "Triangle"
 msgstr "Триъгълник"
 
@@ -257,35 +218,30 @@ msgid "Pentagon"
 msgstr "Петоъгълник"
 
 msgid "Rhombus"
-msgstr ""
+msgstr "Ромб"
 
-#, fuzzy
 msgid "A square is a rectangle with four equal sides."
-msgstr "Правоъгълникът има четири страни."
+msgstr "Квадратът е правоъгълник с четири равни страни."
 
-#, fuzzy
 msgid "A rectangle has four sides and four right angles."
-msgstr "Правоъгълникът има четири страни."
+msgstr "Правоъгълникът има четири страни и четири прави ъгли."
 
 msgid ""
 "A circle is a curve where all points have the same distance from the centre."
 msgstr ""
+"Кръгът е крива от точки, които са на едно и също разстояние от центъра."
 
 msgid "An ellipse is a stretched circle."
-msgstr ""
+msgstr "Елипсата е разтеглен кръг."
 
 msgid "A triangle has three sides."
-msgstr "Триъгълника има три страни."
+msgstr "Триъгълникът има три страни."
 
-# msgid "A circle is exactly round."
-# msgstr "Кръгът е напълно кръгъл."
-# msgid "A triangle has three sides."
-# msgstr "Триъгълникът има три страни."
 msgid "A pentagon has five sides."
 msgstr "Петоъгълникът има пет страни."
 
 msgid "A rhombus has four equal sides, and opposite sides are parallel."
-msgstr ""
+msgstr "Ромбът има четири равни страни и срещуположните страни са успоредни."
 
 msgid "Tools"
 msgstr "Инструменти"
@@ -296,9 +252,8 @@ msgstr "Цветове"
 msgid "Brushes"
 msgstr "Четки"
 
-#, fuzzy
 msgid "Erasers"
-msgstr "Итривач"
+msgstr "Гумички"
 
 msgid "Stamps"
 msgstr "Печати"
@@ -353,27 +308,30 @@ msgid "Pick a color and a brush shape to draw with."
 msgstr "Изберете цвят и форма на четка за рисуване."
 
 msgid "Pick a picture to stamp around your drawing."
-msgstr "Избери си печат от картинките"
+msgstr "Изберете картинка, която да поставите на рисунката."
 
 msgid "Click to start drawing a line. Let go to complete it."
-msgstr "Щтракни за да започнеш да чертаеш линия. Нека да я завършим."
+msgstr ""
+"Натиснете, за да започнете да рисувате линия. Пуснете бутона на мишката, за "
+"да я завършите."
 
 msgid ""
 "Pick a shape. Click to pick the center, drag, then let go when it is the "
 "size you want. Move around to rotate it, and click to draw it."
 msgstr ""
-"Избери си форма. След това кликни там където искаш да и е центъра . Дръпин "
-"за да я очертаеш и я завърти."
+"Изберете форма. Натиснете, за да определите центъра и влачете, докато "
+"постигнете желания размер. След това натиснете, за да се нарисува."
 
 msgid "Choose a style of text. Click on your drawing and you can start typing."
-msgstr "Избери с текст. Щтракни върху картинката и пиши."
+msgstr ""
+"Изберете стил на текста. Натиснете на рисунката, за да започнете да пишете."
 
 msgid "Pick a magical effect to use on your drawing!"
-msgstr "Избери магия и оцвети твоята картинка!"
+msgstr "Изберете магически ефект, който да използвате за рисунката!"
 
 #. Undo
 msgid "Undo!"
-msgstr "Назад!"
+msgstr "Отмяна!"
 
 #. Redo
 msgid "Redo!"
@@ -381,27 +339,15 @@ msgstr "Повтаряне!"
 
 #. Eraser
 msgid "Eraser!"
-msgstr "Изтривач!"
+msgstr "Гума!"
 
-# msgid "Pick a picture to stamp around your drawing."
-# msgstr "Изберете картинка, която да поставите на рисунката."
-# msgid "Click to start drawing a line. Let go to complete it."
-# msgstr "Натиснете, за да започнете да рисувате линия. Пуснете бутона на мишката, за да я завършите."
-# msgid "Pick a shape. Click to pick the center, drag, then let go when it is the size you want. Move around to rotate it, and click to draw it."
-# msgstr "Изберете форма. Натиснете, за да определите центъра и влачете, докато постигнете желания размер. След това натиснете, за да се нарисува."
-# msgid "Choose a style of text. Click on your drawing and you can start typing."
-# msgstr "Изберете стил на текста. Натиснете на рисунката, за да започнете да пишете."
-# msgid "Pick a magical effect to use on your drawing!"
-# msgstr "Изберете магически ефект, който да използвате за рисунката!"
-# msgid "Undo!"
-# msgstr "Отмяна!"
 #. New
 msgid "You now have a blank sheet to draw on!"
 msgstr "Вече имате празно платно за рисуване!"
 
 #. Open
 msgid "Open…"
-msgstr "Отвори…"
+msgstr "Отваряне..."
 
 #. Save
 msgid "Your image has been saved!"
@@ -422,10 +368,8 @@ msgid "Hold the button to stretch the shape."
 msgstr "Задръжте бутона, за да разтеглите формата."
 
 msgid "Move the mouse to rotate the shape. Click to draw it."
-msgstr "Движи мишката за да въртиш формата. Щтракни да я начертаеш."
+msgstr "Движете мишката, за да въртите формата. Натиснете, за да се нарисува."
 
-# msgid "Move the mouse to rotate the shape. Click to draw it."
-# msgstr "Движете мишката, за да въртите формата. Натиснете, за да се нарисува."
 msgid "OK then… Let’s keep drawing this one!"
 msgstr "Добре тогава... Да продължим да рисуваме тази!"
 
@@ -477,31 +421,31 @@ msgid "Erase this picture?"
 msgstr "Да се изтрие ли рисунката?"
 
 msgid "Remember to use the left mouse button!"
-msgstr ""
+msgstr "Не забравяйте да използвате левия бутон на мишката!"
 
 msgid "jq"
-msgstr ""
+msgstr "jq"
 
 msgid "JQ"
-msgstr ""
+msgstr "JQ"
 
 msgid "oO"
-msgstr ""
+msgstr "oO"
 
 msgid "`\\%_@$~#{}<>^&*"
-msgstr ""
+msgstr "`\\%_@$~#{}<>^&*"
 
 msgid ",.?!"
-msgstr ""
+msgstr ",.?!"
 
 msgid "017"
-msgstr ""
+msgstr "017"
 
 msgid "O0"
-msgstr ""
+msgstr "O0"
 
 msgid "1Il|"
-msgstr ""
+msgstr "1Il|"
 
 msgid "Erase"
 msgstr "Изтриване"
@@ -510,7 +454,7 @@ msgid "Back"
 msgstr "Назад"
 
 msgid "Aa"
-msgstr ""
+msgstr "Aa"
 
 #. FIXME: Move elsewhere!!!
 msgid "Save over the older version of this picture?"
@@ -520,16 +464,7 @@ msgid "No, save a new file"
 msgstr "Не, да се запази като нов файл"
 
 msgid "Choose the picture you want, then click “Open”."
-msgstr "Изберете рисунка, след това натиснете \"Отваряне\"."
-
-#~ msgid "Fade"
-#~ msgstr "Избелване"
-
-#~ msgid "Oval"
-#~ msgstr "Овал"
-
-#~ msgid "A circle is exactly round."
-#~ msgstr "Кръга е точно кръгъл."
+msgstr "Изберете рисунка, след това натиснете „Отваряне“."
 
 #~ msgid "Lime!"
 #~ msgstr "Лимонено!"
@@ -537,43 +472,35 @@ msgstr "Изберете рисунка, след това натиснете \"
 #~ msgid "Green!"
 #~ msgstr "Зелено!"
 
-#~ msgid "Cyan!"
-#~ msgstr "Синьо-зелено!"
-
 #~ msgid "Fuchsia!"
 #~ msgstr "Фуксия!"
-
-#~ msgid "Gray!"
-#~ msgstr "Сиво!"
 
 #~ msgid "Silver!"
 #~ msgstr "Сребристо!"
 
-# msgid "Drip"
-# msgstr "Стичане"
+#~ msgid "Fade"
+#~ msgstr "Избледняване"
+
 #~ msgid "Thick"
 #~ msgstr "Удебеляване"
 
-#~ msgid "Thin"
-#~ msgstr "Изтъняване"
-
-# msgid "Click and move to fade the colors."
-# msgstr "Натиснете и движете мишката, за да избледнеят цветовете."
-# msgid "Click and move the mouse around to turn the picture into a chalk drawing."
-# msgstr "Натиснете и движете мишката, за да превърнете рисунката в тебеширена."
-# msgid "Click and move the mouse around to make the picture drip."
-# msgstr "Натиснете и движете мишката, за да направите рисунката да капе."
 #~ msgid "Click and move the mouse to thicken the picture."
 #~ msgstr "Натиснете и движете мишката, за да удебелите рисунката."
 
 #~ msgid "Click and move the mouse to thin the picture."
 #~ msgstr "Натиснете и движете мишката, за да изтъните рисунката."
 
+#~ msgid "Oval"
+#~ msgstr "Елипса"
+
 #~ msgid "Diamond"
 #~ msgstr "Ромб"
 
 #~ msgid "A square has four sides, each the same length."
 #~ msgstr "Квадратът има четири страни с еднаква дължина."
+
+#~ msgid "A circle is exactly round."
+#~ msgstr "Кръгът е напълно кръгъл."
 
 #~ msgid "A diamond is a square, turned around slightly."
 #~ msgstr "Ромбът е леко завъртян квадрат."
