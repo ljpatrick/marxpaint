@@ -243,6 +243,7 @@ June 17, 2002 - October 10, 2005
   * Slovenian
     Urska Colner <urska.colner@agenda.si>
     Ines Kovacevic <ines@agenda.si>
+    Matej Urban <matej.urban@gmail.com>
 
   * Spanish
     Gabriel Gazzan <ggabriel@internet.com.uy>

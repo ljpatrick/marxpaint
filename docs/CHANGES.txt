@@ -516,7 +516,8 @@ http://www.newbreedsoftware.com/tuxpaint/
 
     * Slovenian translation created.
       Urska Colner <urska.colner@agenda.si>,
-      Ines Kovacevic <ines@agenda.si>
+      Ines Kovacevic <ines@agenda.si>,
+      Matej Urban <matej.urban@gmail.com>
 
     * Traditional Chinese translation created.
       Song Huang <Song@ossacc.org>
