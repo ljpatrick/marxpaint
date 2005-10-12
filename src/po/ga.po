@@ -5,34 +5,33 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: tuxpaint 0.9.14\n"
+"Project-Id-Version: tuxpaint 0.9.15rc1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2005-10-10 00:12-0700\n"
-"PO-Revision-Date: 2005-01-05 08:44+0100\n"
+"PO-Revision-Date: 2005-10-11 08:44+0100\n"
 "Last-Translator: Kevin Patrick Scannell <scannell@SLU.EDU>\n"
-"Language-Team: Irish <ga@li.org>\n"
+"Language-Team: Irish <gaeilge-gnulinux@lists.sourceforge.net>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
 msgid "A drawing program for children."
-msgstr ""
+msgstr "Clár líníochta le haghaidh páistí."
 
 msgid "Drawing program"
-msgstr ""
+msgstr "Clár líníochta"
 
-#, fuzzy
 msgid "Tux Paint"
-msgstr "Péint"
+msgstr "Tux Paint"
 
 msgid "Black!"
 msgstr "Dubh!"
 
 msgid "Dark grey! Some people spell it “dark gray”."
-msgstr ""
+msgstr "Dúliath! Tugtar “dúghlas” air freisin."
 
 msgid "Light grey! Some people spell it “light gray”."
-msgstr ""
+msgstr "Fionnliath! Tugtar “bánliath” air freisin."
 
 msgid "White!"
 msgstr "Bán!"
@@ -47,19 +46,19 @@ msgid "Yellow!"
 msgstr "Buí!"
 
 msgid "Light green!"
-msgstr ""
+msgstr "Bánghlas!"
 
 msgid "Dark green!"
-msgstr ""
+msgstr "Dúghlas!"
 
 msgid "Sky blue!"
-msgstr ""
+msgstr "Spéirghorm!"
 
 msgid "Blue!"
 msgstr "Gorm!"
 
 msgid "Lavender!"
-msgstr ""
+msgstr "Labhandar!"
 
 msgid "Purple!"
 msgstr "Corcairdhearg!"
@@ -70,12 +69,11 @@ msgstr "Bándearg!"
 msgid "Brown!"
 msgstr "Donn!"
 
-#, fuzzy
 msgid "Tan!"
-msgstr "Cian!"
+msgstr "Crón!"
 
 msgid "Beige!"
-msgstr ""
+msgstr "Béasa!"
 
 msgid "Great!"
 msgstr "Thar Barr!"
@@ -92,13 +90,11 @@ msgstr "An-jab!"
 msgid "Fill"
 msgstr "Líon"
 
-#, fuzzy
 msgid "Grass"
-msgstr "Liath!"
+msgstr "Féar"
 
-#, fuzzy
 msgid "Bricks"
-msgstr "Bloic"
+msgstr "Brící"
 
 msgid "Rainbow"
 msgstr "Tua Cheatha"
@@ -110,13 +106,13 @@ msgid "Blur"
 msgstr "Geamhaigh"
 
 msgid "Smudge"
-msgstr ""
+msgstr "Smálaigh"
 
 msgid "Lighten"
-msgstr ""
+msgstr "Sorchaigh"
 
 msgid "Darken"
-msgstr ""
+msgstr "Dorchaigh"
 
 msgid "Chalk"
 msgstr "Cailc"
@@ -127,15 +123,14 @@ msgstr "Bloic"
 msgid "Negative"
 msgstr "Diúltach"
 
-#, fuzzy
 msgid "Tint"
-msgstr "Tanaí"
+msgstr "Imir"
 
 msgid "Drip"
 msgstr "Sil"
 
 msgid "Cartoon"
-msgstr ""
+msgstr "Cartún"
 
 msgid "Mirror"
 msgstr "Scáthán"
@@ -144,43 +139,37 @@ msgid "Flip"
 msgstr "Smeach"
 
 msgid "Click in the picture to fill that area with color."
-msgstr "Cliceáil sa phictiúr chun an achar roghnaithe agat a líonadh le dath."
+msgstr "Cliceáil sa phictiúr chun an limistéar roghnaithe agat a líonadh le dath."
 
-#, fuzzy
 msgid "Click and move to draw grass. Don’t forget the dirt!"
-msgstr "Cliceáil agus bog chun drithlí a chruthú."
+msgstr "Cliceáil agus bog chun féar a dhearadh. Ná déan dearmad ar an ithir!"
 
-#, fuzzy
 msgid "Click and move to draw large bricks."
-msgstr "Cliceáil agus bog chun drithlí a chruthú."
+msgstr "Cliceáil agus bog chun brící móra a dhearadh."
 
-#, fuzzy
 msgid "Click and move to draw small bricks."
-msgstr "Cliceáil agus bog chun drithlí a chruthú."
+msgstr "Cliceáil agus bog chun brící beaga a dhearadh."
 
 msgid "You can draw in rainbow colors!"
 msgstr "Is féidir leat dearadh le gach dath na tua cheatha!"
 
 msgid "Click and move to draw sparkles."
-msgstr "Cliceáil agus bog chun drithlí a chruthú."
+msgstr "Cliceáil agus bog chun drithlí a dhearadh."
 
 msgid "Click and move the mouse around to blur the picture."
 msgstr "Cliceáil agus bog an luch chun an pictiúr a gheamhú."
 
-#, fuzzy
 msgid "Click and move the mouse around to smudge the picture."
-msgstr "Cliceáil agus bog an luch chun an pictiúr a gheamhú."
+msgstr "Cliceáil agus bog an luch chun an pictiúr a smálú."
 
 msgid "Click and move to fade the colors."
 msgstr "Cliceáil agus bog chun na dathanna a liathadh."
 
-#, fuzzy
 msgid "Click and move to darken the colors."
-msgstr "Cliceáil agus bog chun na dathanna a liathadh."
+msgstr "Cliceáil agus bog chun na dathanna a dhorchú."
 
-msgid ""
-"Click and move the mouse around to turn the picture into a chalk drawing."
-msgstr "Cliceáil agus bog an luch chun dearadh cailce a dhéanamh."
+msgid "Click and move the mouse around to turn the picture into a chalk drawing."
+msgstr "Cliceáil agus bog an luch chun líníocht chailce a dhéanamh ón phictiúr."
 
 msgid "Click and move the mouse around to make the picture blocky."
 msgstr "Cliceáil agus bog an luch le haghaidh maisíochta bloic."
@@ -188,16 +177,14 @@ msgstr "Cliceáil agus bog an luch le haghaidh maisíochta bloic."
 msgid "Click and move the mouse around to draw a negative."
 msgstr "Cliceáil agus bog an luch chun dearadh diúltach."
 
-#, fuzzy
 msgid "Click and move the mouse around to change the picture’s color."
-msgstr "Cliceáil agus bog an luch le haghaidh maisíochta bloic."
+msgstr "Cliceáil agus bog an luch chun dath an phictiúir a athrú."
 
 msgid "Click and move the mouse around to make the picture drip."
 msgstr "Cliceáil agus bog an luch le haghaidh maisíochta silte."
 
-#, fuzzy
 msgid "Click and move the mouse around to turn the picture into a cartoon."
-msgstr "Cliceáil agus bog an luch chun dearadh cailce a dhéanamh."
+msgstr "Cliceáil agus bog an luch chun cartún a dhéanamh ón phictiúr."
 
 msgid "Click to make a mirror image."
 msgstr "Cliceáil le haghaidh íomhá scáthánach."
@@ -215,7 +202,7 @@ msgid "Circle"
 msgstr "Ciorcal"
 
 msgid "Ellipse"
-msgstr ""
+msgstr "Éilips"
 
 msgid "Triangle"
 msgstr "Triantán"
@@ -224,22 +211,19 @@ msgid "Pentagon"
 msgstr "Peinteagán"
 
 msgid "Rhombus"
-msgstr ""
+msgstr "Rombas"
 
-#, fuzzy
 msgid "A square is a rectangle with four equal sides."
-msgstr "Tá ceithre thaobh ar dronuilleog."
+msgstr "Is dronuilleog í cearnóg a bhfuil ceithre thaobh chothrom aige."
 
-#, fuzzy
 msgid "A rectangle has four sides and four right angles."
-msgstr "Tá ceithre thaobh ar dronuilleog."
+msgstr "Tá ceithre thaobh agus ceithre dhronuillinn ar dhronuilleog."
 
-msgid ""
-"A circle is a curve where all points have the same distance from the centre."
-msgstr ""
+msgid "A circle is a curve where all points have the same distance from the centre."
+msgstr "Is cuar cruinn ceart é ciorcal, agus gach pointe comhfhad ón lár."
 
 msgid "An ellipse is a stretched circle."
-msgstr ""
+msgstr "Is ciorcal sínte é éilips."
 
 msgid "A triangle has three sides."
 msgstr "Tá trí thaobh ar thriantán."
@@ -248,7 +232,7 @@ msgid "A pentagon has five sides."
 msgstr "Tá cúig thaobh ar pheinteagán."
 
 msgid "A rhombus has four equal sides, and opposite sides are parallel."
-msgstr ""
+msgstr "Tá ceithre thaobh chothrom ar rombas, agus an dá thaobh ar aghaidh a chéile comhthreomhar."
 
 msgid "Tools"
 msgstr "Uirlisí"
@@ -259,9 +243,8 @@ msgstr "Dathanna"
 msgid "Brushes"
 msgstr "Scuaba"
 
-#, fuzzy
 msgid "Erasers"
-msgstr "Léirscriosán"
+msgstr "Léirscriosáin"
 
 msgid "Stamps"
 msgstr "Stampaí"
@@ -316,25 +299,19 @@ msgid "Pick a color and a brush shape to draw with."
 msgstr "Roghnaigh dath agus cruth scuaibe chun dearadh."
 
 msgid "Pick a picture to stamp around your drawing."
-msgstr "Roghnaigh pictiúr le húsáid mar stampa ar do dhearadh."
+msgstr "Roghnaigh pictiúr le húsáid mar stampa ar do líníocht."
 
 msgid "Click to start drawing a line. Let go to complete it."
 msgstr "Cliceáil chun líne a thosú. Scaoil an cnaipe chun é a chríochnú."
 
-msgid ""
-"Pick a shape. Click to pick the center, drag, then let go when it is the "
-"size you want. Move around to rotate it, and click to draw it."
-msgstr ""
-"Roghnaigh cruth. Cliceáil chun an lár a roghnú, tarraing, ansin scaoil an "
-"cnaipe nuair atá an méid socraithe agat.  Bog chun é a rothlú, agus cliceáil "
-"arís chun é a dhearadh."
+msgid "Pick a shape. Click to pick the center, drag, then let go when it is the size you want. Move around to rotate it, and click to draw it."
+msgstr "Roghnaigh cruth. Cliceáil chun an lár a roghnú, tarraing, ansin scaoil an cnaipe nuair atá an méid socraithe agat.  Bog chun é a rothlú, agus cliceáil arís chun é a dhearadh."
 
 msgid "Choose a style of text. Click on your drawing and you can start typing."
-msgstr ""
-"Roghnaigh stíl an téacs. Cliceáil ar do dhearadh agus ansin clóscríobh."
+msgstr "Roghnaigh stíl an téacs. Cliceáil ar do líníocht agus ansin clóscríobh."
 
 msgid "Pick a magical effect to use on your drawing!"
-msgstr "Roghnaigh maisíocht draíochta le húsáid ar do dhearadh!"
+msgstr "Roghnaigh maisíocht draíochta le húsáid ar do líníocht!"
 
 #. Undo
 msgid "Undo!"
@@ -392,7 +369,7 @@ msgid "No"
 msgstr "Níl"
 
 msgid "If you quit, you’ll lose your picture! Save it?"
-msgstr "Má scoirfidh tú, caillfidh tú an pictiúr atá agatsa! Sábháil?"
+msgstr "Má scoireann tú, caillfidh tú an pictiúr atá agatsa! Sábháil?"
 
 msgid "Save your picture first?"
 msgstr "Sábháil ar dtús?"
@@ -428,31 +405,31 @@ msgid "Erase this picture?"
 msgstr "Léirscrios an pictiúr seo?"
 
 msgid "Remember to use the left mouse button!"
-msgstr ""
+msgstr "Bí cinnte an cnaipe ar chlé a úsáid!"
 
 msgid "jq"
-msgstr ""
+msgstr "jq"
 
 msgid "JQ"
-msgstr ""
+msgstr "JQ"
 
 msgid "oO"
-msgstr ""
+msgstr "oO"
 
 msgid "`\\%_@$~#{}<>^&*"
-msgstr ""
+msgstr "`\\%_@$~#{}<>^&*"
 
 msgid ",.?!"
-msgstr ""
+msgstr ",.?!"
 
 msgid "017"
-msgstr ""
+msgstr "017"
 
 msgid "O0"
-msgstr ""
+msgstr "O0"
 
 msgid "1Il|"
-msgstr ""
+msgstr "1Il|"
 
 msgid "Erase"
 msgstr "Léirscrios"
@@ -461,7 +438,7 @@ msgid "Back"
 msgstr "Siar"
 
 msgid "Aa"
-msgstr ""
+msgstr "Aa"
 
 #. FIXME: Move elsewhere!!!
 msgid "Save over the older version of this picture?"
@@ -471,8 +448,7 @@ msgid "No, save a new file"
 msgstr "Ná forscríobh, sábháil i gcomhad nua"
 
 msgid "Choose the picture you want, then click “Open”."
-msgstr ""
-"Roghnaigh an pictiúr is mian leat a oscailt, agus ansin cliceáil “Oscail”."
+msgstr "Roghnaigh an pictiúr is mian leat a oscailt, agus ansin cliceáil “Oscail”."
 
 #~ msgid "Lime!"
 #~ msgstr "Líoma!"
