@@ -7,7 +7,7 @@ bill@newbreedsoftware.com
 http://www.newbreedsoftware.com/tuxpaint/
 
 
-2005.October.10 (0.9.15)
+2005.October.13 (0.9.15)
 
   * Speed improvements:
     -------------------
@@ -235,6 +235,11 @@ http://www.newbreedsoftware.com/tuxpaint/
 
   * Compiling, porting and packaging updates:
     -----------------------------------------
+    * Added "test-option.sh" shell script, which can be used in Makefile
+      for basic compiler option tests
+      (e.g., is "-Wdeclaration-after-statement" available?)
+      TOYAMA Shin-ichi <shin1@wmail.plala.or.jp>
+
     * Created 'release' Makefile target, which generates a .tar.gz
       (sans CVS-related files) based on the clean source directory.
 

@@ -6,7 +6,7 @@
 # bill@newbreedsoftware.com
 # http://www.newbreedsoftware.com/tuxpaint/
 
-# June 14, 2002 - October 9, 2005
+# June 14, 2002 - October 13, 2005
 
 
 # The version number, for release:
@@ -100,7 +100,7 @@ CFLAGS=-O2 -W -Wall -fno-common -ffast-math \
 	-Wbad-function-cast -Wwrite-strings \
 	-Waggregate-return \
 	-Wstrict-prototypes -Wmissing-prototypes \
-	-Wdeclaration-after-statement \
+	`src/test-option.sh -Wdeclaration-after-statement` \
 	-DVER_VERSION=\"$(VER_VERSION)\" \
 	-DVER_DATE=\"$(VER_DATE)\"
 
