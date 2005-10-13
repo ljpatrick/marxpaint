@@ -235,6 +235,9 @@ http://www.newbreedsoftware.com/tuxpaint/
 
   * Compiling, porting and packaging updates:
     -----------------------------------------
+    * There's no longer a need to remove CVS-related things in 'tuxpaint.spec'.
+      TOYAMA Shin-ichi <shin1@wmail.plala.or.jp>
+
     * Added "test-option.sh" shell script, which can be used in Makefile
       for basic compiler option tests
       (e.g., is "-Wdeclaration-after-statement" available?)

@@ -24,9 +24,6 @@ such as sound effects.
 
 %prep
 %setup -q
-for dir in `find . -name "CVS"`; do
-  rm -rf $dir
-done
 
 %build
 make PREFIX=/usr
