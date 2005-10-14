@@ -9,7 +9,7 @@
                            bill@newbreedsoftware.com
                    http://www.newbreedsoftware.com/tuxpaint/
 
-                        June 14, 2002 - October 10, 2005
+                        June 14, 2002 - October 14, 2005
 
    --------------------------------------------------------------------------
 
@@ -703,7 +703,7 @@ Doing it Manually
        Place this PNG file in your Tux Paint 'saved' directory. (See above.)
 
        Under Windows, this is in the "userdata" folder. Under Mac OS X, this
-       is in "Library/Preferences/tuxpaint/" in your home directory.
+       is in "Library/Application Support/tuxpaint/" in your home directory.
 
    --------------------------------------------------------------------------
 
