@@ -126,9 +126,11 @@ releaseclean:
 	@echo
 	@echo "Cleaning release directory"
 	@echo
-	@rm -rf build/tuxpaint-$(VER_VERSION)
+	@rm -rf "build/tuxpaint-$(VER_VERSION)" "tuxpaint-$(VER_VERSION).tar.gz"
 
-releasedir: releaseclean
+releasedir: build/tuxpaint-$(VER_VERSION)
+
+build/tuxpaint-$(VER_VERSION):
 	@echo
 	@echo "Creating release directory"
 	@echo
@@ -137,12 +139,10 @@ releasedir: releaseclean
 	     \( -wholename '*/CVS' -o -name .cvsignore -o -name 'build' \) \
 	     -prune -o -type f -exec cp --parents -vdp \{\} build/tuxpaint-$(VER_VERSION)/ \;
 
-	
-release: build/tuxpaint-$(VER_VERSION)
+release: releasedir
 	@echo
 	@echo "Creating release tarball"
 	@echo
-	-@rm -f build/tuxpaint-$(VER_VERSION).tar.gz
 	@cd build ; \
 	    tar -czvf tuxpaint-$(VER_VERSION).tar.gz tuxpaint-$(VER_VERSION)
 
