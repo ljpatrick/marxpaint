@@ -122,17 +122,29 @@ all:	tuxpaint translations
 	@echo "to install Tux Paint."
 	@echo
 
-release:
+releaseclean:
+	@echo
+	@echo "Cleaning release directory"
+	@echo
+	@rm -rf build/tuxpaint-$(VER_VERSION)
+
+releasedir: releaseclean
+	@echo
+	@echo "Creating release directory"
+	@echo
+	@mkdir -p build/tuxpaint-$(VER_VERSION)
+	@find . -follow \
+	     \( -wholename '*/CVS' -o -name .cvsignore -o -name 'build' \) \
+	     -prune -o -type f -exec cp --parents -vdp \{\} build/tuxpaint-$(VER_VERSION)/ \;
+
+	
+release: build/tuxpaint-$(VER_VERSION)
 	@echo
 	@echo "Creating release tarball"
-	@
-	@make clean
-	-@rm -f ../tuxpaint-$(VER_VERSION).tar
-	@cd .. ; \
-	 find tuxpaint-$(VER_VERSION) -follow \
-	     \( -wholename '*/CVS' -o -name .cvsignore \) \
-	     -prune -o -type f -print0 | \
-	   xargs -0 tar -czvf tuxpaint-$(VER_VERSION).tar.gz 
+	@echo
+	-@rm -f build/tuxpaint-$(VER_VERSION).tar.gz
+	@cd build ; \
+	    tar -czvf tuxpaint-$(VER_VERSION).tar.gz tuxpaint-$(VER_VERSION)
 
 
 # "make nosound" builds the program with sound disabled, and man page,
