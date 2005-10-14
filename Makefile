@@ -127,7 +127,7 @@ releaseclean:
 	@echo "Cleaning release directory"
 	@echo
 	@rm -rf "build/tuxpaint-$(VER_VERSION)" "build/tuxpaint-$(VER_VERSION).tar.gz"
-	@if [ -d build ] ; then rmdir build ; fi
+	@-if [ -d build ] ; then rmdir build ; fi
 
 releasedir: build/tuxpaint-$(VER_VERSION)
 
