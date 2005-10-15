@@ -22,7 +22,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
   
-  June 14, 2002 - October 9, 2005
+  June 14, 2002 - October 14, 2005
 */
 
 
@@ -2545,10 +2545,6 @@ int main(int argc, char * argv[])
   SDL_Rect dest;
   SDL_Rect src;
 
-#ifdef FORKED_FONTS
-  run_font_scanner();
-#endif
-
   /* Set up locale support */
   setlocale(LC_ALL, "");
 
@@ -2556,6 +2552,10 @@ int main(int argc, char * argv[])
 
   /* Set up! */
   setup(argc, argv);
+
+#ifdef FORKED_FONTS
+  run_font_scanner();
+#endif
 
 #if 0
   while(!font_thread_done)
@@ -14912,8 +14912,10 @@ static char * uppercase(char * str)
       free(dest);
     }
   
+#ifdef DEBUG
     printf(" ORIGINAL: %s\n"
            "UPPERCASE: %s\n\n", str, ustr);
+#endif
   }
   else
   {
