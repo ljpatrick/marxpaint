@@ -100,13 +100,16 @@ CFLAGS=-O2 -W -Wall -fno-common -ffast-math \
 	-Wbad-function-cast -Wwrite-strings \
 	-Waggregate-return \
 	-Wstrict-prototypes -Wmissing-prototypes \
-	`src/test-option.sh -Wdeclaration-after-statement` \
-	-DVER_VERSION=\"$(VER_VERSION)\" \
-	-DVER_DATE=\"$(VER_DATE)\"
+	`src/test-option.sh -Wdeclaration-after-statement`
 
 DEFS=-DDATA_PREFIX=\"$(DATA_PREFIX)/\" \
 	-D$(NOSOUNDFLAG) -DDOC_PREFIX=\"$(DOC_PREFIX)/\" \
-	-DLOCALEDIR=\"$(LOCALE_PREFIX)/\" -DCONFDIR=\"$(CONFDIR)/\"
+	-DLOCALEDIR=\"$(LOCALE_PREFIX)/\" -DCONFDIR=\"$(CONFDIR)/\" \
+	-DVER_VERSION=\"$(VER_VERSION)\" \
+	-DVER_DATE=\"$(VER_DATE)\"
+
+DEBUG_FLAGS=
+#DEBUG_FLAGS=-g
 
 MOUSE_CFLAGS=-Isrc/$(MOUSEDIR) -D$(CURSOR_SHAPES)_CURSOR_SHAPES
 
@@ -927,7 +930,7 @@ install-man:
 tuxpaint:	obj/tuxpaint.o $(HQXX_O) $(ARCH_LIBS)
 	@echo
 	@echo "...Linking Tux Paint..."
-	@$(CC) $(CFLAGS) $(SDL_CFLAGS) $(DEFS) \
+	@$(CC) $(CFLAGS) $(DEBUG_FLAGS) $(SDL_CFLAGS) $(DEFS) \
 		-o tuxpaint obj/tuxpaint.o $(HQXX_O) \
 		$(ARCH_LIBS) $(SDL_LIBS) \
 		-lm $(ARCH_LINKS)
@@ -957,20 +960,20 @@ obj/tuxpaint.o:	src/tuxpaint.c obj \
 		$(ARCH_HEADERS)
 	@echo
 	@echo "...Compiling Tux Paint from source..."
-	@$(CC) $(CFLAGS) $(SDL_CFLAGS) $(MOUSE_CFLAGS) $(DEFS) \
+	@$(CC) $(CFLAGS) $(DEBUG_FLAGS) $(SDL_CFLAGS) $(MOUSE_CFLAGS) $(DEFS) \
 		-c src/tuxpaint.c -o obj/tuxpaint.o
 
 
 obj/BeOS_Print.o:	src/BeOS_Print.cpp obj src/BeOS_print.h
 	@echo
 	@echo "...Compiling BeOS print support..."
-	@$(CC) $(CFLAGS) $(SDL_CFLAGS) $(DEFS) \
+	@$(CC) $(CFLAGS) $(DEBUG_FLAGS) $(SDL_CFLAGS) $(DEFS) \
 		-c src/BeOS_print.cpp -o obj/BeOS_print.o
 
 obj/win32_print.o:	src/win32_print.c obj src/win32_print.h
 	@echo
 	@echo "...Compiling win32 print support..."
-	@$(CC) $(CFLAGS) $(SDL_CFLAGS) $(DEFS) \
+	@$(CC) $(CFLAGS) $(DEBUG_FLAGS) $(SDL_CFLAGS) $(DEFS) \
 		-c src/win32_print.c -o obj/win32_print.o
 
 obj/resource.o:	visualc/resources.rc obj visualc/resource.h
