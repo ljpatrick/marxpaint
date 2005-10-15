@@ -2024,6 +2024,7 @@ static void groupfonts(void)
     parse_font_style(user_font_styles[i]);
 
   qsort(user_font_styles, num_font_styles, sizeof user_font_styles[0], compar_fontgroup);
+  printf("groupfonts() qsort(user_font_styles...)");
 
   for(;;)
     {
@@ -2054,6 +2055,7 @@ static void groupfonts(void)
   user_font_styles = NULL; // just to catch bugs
 
   qsort(user_font_families, num_font_families, sizeof user_font_families[0], compar_fontkiller);
+  printf("groupfonts() qsort(user_font_families 1...)");
   low = 0;
   for(;;)
     {
@@ -2071,6 +2073,7 @@ static void groupfonts(void)
       low = high;
     }
   qsort(user_font_families, num_font_families, sizeof user_font_families[0], compar_fontscore);
+  printf("groupfonts() qsort(user_font_families 2...)");
   if(user_font_families[0]->score < 0)
     printf("sorted the wrong way, or all fonts were crap\n");
 #if 0
@@ -2448,7 +2451,10 @@ static void eat_sdl_events(void)
   while (SDL_PollEvent(&event))
     {
       if (event.type == SDL_QUIT)
+      {
+	SDL_Quit();
         exit(0);  // can't safely use do_quit during start-up
+      }
       else if (event.type == SDL_ACTIVEEVENT)
         handle_active(&event);
       else if (event.type == SDL_KEYDOWN)
@@ -2456,9 +2462,16 @@ static void eat_sdl_events(void)
           SDLKey key  = event.key.keysym.sym;
           SDLMod ctrl = event.key.keysym.mod & KMOD_CTRL;
           SDLMod alt  = event.key.keysym.mod & KMOD_ALT;
-          if (key==SDLK_ESCAPE || (key==SDLK_c && ctrl) || (key==SDLK_F4 && alt))
+          if (/* key==SDLK_ESCAPE || */ (key==SDLK_c && ctrl) || (key==SDLK_F4 && alt))
+	  {
+            SDL_Quit();
             exit(0);
-          else                                                              
+	  }
+          else if (key==SDLK_ESCAPE)
+	  {
+	    /* FIXME: Abort font loading! */
+	  }
+	  else
             bypass_splash_wait = 1;
         }
       else if (event.type == SDL_MOUSEBUTTONDOWN)
@@ -3119,6 +3132,7 @@ static void mainloop(void)
                               draw_none();
                               update_screen_rect(&r_toolopt);
                               update_screen_rect(&r_ttoolopt);
+  			      do_setcursor(cursor_watch);
                               draw_tux_text(TUX_WAIT, "This is a slow computer with lots of fonts...", 1);
 #ifdef FORKED_FONTS
                               receive_some_font_info();
@@ -3133,6 +3147,7 @@ static void mainloop(void)
                               // FIXME: should kill this in any case
                               SDL_WaitThread(font_thread, NULL);
 #endif
+  			      do_setcursor(cursor_arrow);
                             }
 		          draw_tux_text(tool_tux[cur_tool], tool_tips[cur_tool], 1);
 			  cur_thing = cur_font;
@@ -6455,6 +6470,7 @@ static int charset_works(TTF_Font *font, const char *s)
       surfs[count++] = tmp_surf;
     }
   was_bad_font = 0;
+  printf("charset_works()");
   qsort(surfs, count, sizeof surfs[0], surfcmp);
   ret = !was_bad_font;
 out:
