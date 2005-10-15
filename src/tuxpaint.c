@@ -2596,7 +2596,7 @@ int main(int argc, char * argv[])
 
   do_setcursor(cursor_arrow);
   playsound(0, SND_HARP, 1);
-  do_wait(500);  // about 5 seconds
+  do_wait(50);  // about 5 seconds
 
 
   /* Set defaults! */
