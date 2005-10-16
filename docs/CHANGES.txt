@@ -7,7 +7,7 @@ bill@newbreedsoftware.com
 http://www.newbreedsoftware.com/tuxpaint/
 
 
-2005.October.13 (0.9.15)
+2005.October.16 (0.9.15)
 
   * Speed improvements:
     -------------------
@@ -416,6 +416,9 @@ http://www.newbreedsoftware.com/tuxpaint/
 
     * Polish documentation
       Tomasz 'karave' Tarach <karave@poczta.onet.pl>
+
+    * Portuguese (Portugal)
+      Ricardo Cruz <rpmcruz@clix.pt>
 
     * Russian
       Eugene Zelenko <greendeath@mail.ru>

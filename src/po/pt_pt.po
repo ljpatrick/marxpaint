@@ -1,20 +1,21 @@
-# translation of pt_pt.po to 
+# translation of pt_pt.po to
 # Tux Paint portuguese (european) messages
 # Copyright (C) 2003
 # Ricardo Cruz <rick2@aeiu.pt>, 2003.
 # Ricardo Cruz <rick2@aeiou.pt>, 2004.
+# Ricardo Cruz <rpmcruz@clix.pt>, 2005.
 msgid ""
 msgstr ""
 "Project-Id-Version: pt_pt\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2005-10-10 00:12-0700\n"
-"PO-Revision-Date: 2004-07-13 11:48+0100\n"
-"Last-Translator: Ricardo Cruz <rick2@aeiou.pt>\n"
-"Language-Team: \n"
+"PO-Revision-Date: 2005-10-16 00:03+0100\n"
+"Last-Translator: Ricardo Cruz <rpmcruz@clix.pt>\n"
+"Language-Team:  <pt@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: KBabel 1.3\n"
+"X-Generator: KBabel 1.10.2\n"
 
 msgid "A drawing program for children."
 msgstr "Um programa de desenho para crianças."
@@ -29,10 +30,10 @@ msgid "Black!"
 msgstr "Preto!"
 
 msgid "Dark grey! Some people spell it “dark gray”."
-msgstr ""
+msgstr "Cinzento escuro!"
 
 msgid "Light grey! Some people spell it “light gray”."
-msgstr ""
+msgstr "Cinzento claro!"
 
 msgid "White!"
 msgstr "Branco!"
@@ -47,20 +48,19 @@ msgid "Yellow!"
 msgstr "Amarelo!"
 
 msgid "Light green!"
-msgstr ""
+msgstr "Verde claro!"
 
-#, fuzzy
 msgid "Dark green!"
-msgstr "Cinzento!"
+msgstr "Verde escuro!"
 
 msgid "Sky blue!"
-msgstr ""
+msgstr "Azul céu!"
 
 msgid "Blue!"
 msgstr "Azul!"
 
 msgid "Lavender!"
-msgstr ""
+msgstr "Lilás!"
 
 msgid "Purple!"
 msgstr "Violeta!"
@@ -71,12 +71,11 @@ msgstr "Cor de Rosa!"
 msgid "Brown!"
 msgstr "Castanho!"
 
-#, fuzzy
 msgid "Tan!"
-msgstr "Ciano!"
+msgstr "Cor de bronzeado!"
 
 msgid "Beige!"
-msgstr ""
+msgstr "Bêge!"
 
 msgid "Great!"
 msgstr "Boa!"
@@ -93,13 +92,11 @@ msgstr "Bom trabalho!"
 msgid "Fill"
 msgstr "Preencher"
 
-#, fuzzy
 msgid "Grass"
-msgstr "Apagar"
+msgstr "Relva"
 
-#, fuzzy
 msgid "Bricks"
-msgstr "Quadricular"
+msgstr "Tijolos"
 
 msgid "Rainbow"
 msgstr "Arco-íris"
@@ -111,13 +108,13 @@ msgid "Blur"
 msgstr "Borrar"
 
 msgid "Smudge"
-msgstr ""
+msgstr "Esborratar"
 
 msgid "Lighten"
-msgstr ""
+msgstr "Esclarecer"
 
 msgid "Darken"
-msgstr ""
+msgstr "Escurecer"
 
 msgid "Chalk"
 msgstr "Giz"
@@ -128,15 +125,14 @@ msgstr "Quadricular"
 msgid "Negative"
 msgstr "Negativo"
 
-#, fuzzy
 msgid "Tint"
-msgstr "Encolher"
+msgstr "Matiz"
 
 msgid "Drip"
 msgstr "Pingar"
 
 msgid "Cartoon"
-msgstr ""
+msgstr "Banda-Desenhada"
 
 msgid "Mirror"
 msgstr "Espelhar"
@@ -147,17 +143,14 @@ msgstr "Girar"
 msgid "Click in the picture to fill that area with color."
 msgstr "Clica no desenho para preencheres essa área com uma cor."
 
-#, fuzzy
 msgid "Click and move to draw grass. Don’t forget the dirt!"
-msgstr "Clica e move o rato para desenhares fagulhas."
+msgstr "Clica e move o rato para desenhares relva. Não te esqueças da terra!"
 
-#, fuzzy
 msgid "Click and move to draw large bricks."
-msgstr "Clica e move o rato para desenhares fagulhas."
+msgstr "Clica e move o rato para desenhares grandes tijolos."
 
-#, fuzzy
 msgid "Click and move to draw small bricks."
-msgstr "Clica e move o rato para desenhares fagulhas."
+msgstr "Clica e move o rato para desenhares pequenos tijolos."
 
 msgid "You can draw in rainbow colors!"
 msgstr "Podes desenhar com as cores do arco-íris!"
@@ -168,19 +161,16 @@ msgstr "Clica e move o rato para desenhares fagulhas."
 msgid "Click and move the mouse around to blur the picture."
 msgstr "Clica e move o rato para borrares o desenho."
 
-#, fuzzy
 msgid "Click and move the mouse around to smudge the picture."
-msgstr "Clica e move o rato para borrares o desenho."
+msgstr "Clica e move o rato para esbateres o desenho."
 
 msgid "Click and move to fade the colors."
 msgstr "Clica e move o rato para desbotares as cores."
 
-#, fuzzy
 msgid "Click and move to darken the colors."
-msgstr "Clica e move o rato para desbotares as cores."
+msgstr "Clica e move o rato para escureceres as cores."
 
-msgid ""
-"Click and move the mouse around to turn the picture into a chalk drawing."
+msgid "Click and move the mouse around to turn the picture into a chalk drawing."
 msgstr "Clica e move o rato para transformares o desenho num desenho de giz."
 
 msgid "Click and move the mouse around to make the picture blocky."
@@ -189,16 +179,14 @@ msgstr "Clica e move o rato para transformares o desenho em blocos."
 msgid "Click and move the mouse around to draw a negative."
 msgstr "Clica e move o rato para inverteres as cores do desenho."
 
-#, fuzzy
 msgid "Click and move the mouse around to change the picture’s color."
-msgstr "Clica e move o rato para transformares o desenho em blocos."
+msgstr "Clica e move o rato para mudares as cores do desenho."
 
 msgid "Click and move the mouse around to make the picture drip."
 msgstr "Clica e move o rato para transformares o desenho numa respingada."
 
-#, fuzzy
 msgid "Click and move the mouse around to turn the picture into a cartoon."
-msgstr "Clica e move o rato para transformares o desenho num desenho de giz."
+msgstr "Clica e move o rato para transformares o desenho numa banda desenhada."
 
 msgid "Click to make a mirror image."
 msgstr "Clica para espelhares o desenho."
@@ -216,7 +204,7 @@ msgid "Circle"
 msgstr "Círculo"
 
 msgid "Ellipse"
-msgstr ""
+msgstr "Elipse"
 
 msgid "Triangle"
 msgstr "Triângulo"
@@ -225,22 +213,19 @@ msgid "Pentagon"
 msgstr "Pentágono"
 
 msgid "Rhombus"
-msgstr ""
+msgstr "Losângulo"
 
-#, fuzzy
 msgid "A square is a rectangle with four equal sides."
-msgstr "Um rectângulo tem quatro lados."
+msgstr "Um quadrado é um rectângulo com quatro lados iguais."
 
-#, fuzzy
 msgid "A rectangle has four sides and four right angles."
-msgstr "Um rectângulo tem quatro lados."
+msgstr "Um rectângulo tem quatro lados e quatro ângulos rectos."
 
-msgid ""
-"A circle is a curve where all points have the same distance from the centre."
-msgstr ""
+msgid "A circle is a curve where all points have the same distance from the centre."
+msgstr "Um círculo é uma curva em que todos os pontos estão à mesma distância do centro."
 
 msgid "An ellipse is a stretched circle."
-msgstr ""
+msgstr "Uma elipse é um círculo esticado."
 
 msgid "A triangle has three sides."
 msgstr "Um triângulo tem três lados."
@@ -249,7 +234,7 @@ msgid "A pentagon has five sides."
 msgstr "Um pentágono tem cinco lados."
 
 msgid "A rhombus has four equal sides, and opposite sides are parallel."
-msgstr ""
+msgstr "Um losângulo tem quatro lados, e os lados opostos são paralelos."
 
 msgid "Tools"
 msgstr "Ferramentas"
@@ -260,9 +245,8 @@ msgstr "Cores"
 msgid "Brushes"
 msgstr "Pincéis"
 
-#, fuzzy
 msgid "Erasers"
-msgstr "Borracha"
+msgstr "Borrachas"
 
 msgid "Stamps"
 msgstr "Carimbos"
@@ -320,8 +304,7 @@ msgid "Pick a picture to stamp around your drawing."
 msgstr "Escolhe uma imagem para carimbares no teu desenho."
 
 msgid "Click to start drawing a line. Let go to complete it."
-msgstr ""
-"Clica para começares a desenhar uma linha. Solta o rato para terminá-la."
+msgstr "Clica para começares a desenhar uma linha. Solta o rato para terminá-la."
 
 # #: tools.h:65
 # msgid "Pick a shape to draw.  Click once to pick the center of the shape, #click again to draw it."
@@ -433,31 +416,31 @@ msgid "Erase this picture?"
 msgstr "Apagar este desenho?"
 
 msgid "Remember to use the left mouse button!"
-msgstr ""
+msgstr "Lembra-te de usares o botão esquerdo do rato!"
 
 msgid "jq"
-msgstr ""
+msgstr "jq"
 
 msgid "JQ"
-msgstr ""
+msgstr "JQ"
 
 msgid "oO"
-msgstr ""
+msgstr "oO"
 
 msgid "`\\%_@$~#{}<>^&*"
-msgstr ""
+msgstr "`\\%_@$~#{}<>^&*"
 
 msgid ",.?!"
-msgstr ""
+msgstr ",.?!"
 
 msgid "017"
-msgstr ""
+msgstr "017"
 
 msgid "O0"
-msgstr ""
+msgstr "O0"
 
 msgid "1Il|"
-msgstr ""
+msgstr "1Il|"
 
 msgid "Erase"
 msgstr "Apagar"
@@ -466,11 +449,11 @@ msgid "Back"
 msgstr "Recuar"
 
 msgid "Aa"
-msgstr ""
+msgstr "Aa"
 
 #. FIXME: Move elsewhere!!!
 msgid "Save over the older version of this picture?"
-msgstr "Gravar por cima do teu desenho anterior?"
+msgstr "Gravar por cima da versão anterior do teu desenho?"
 
 msgid "No, save a new file"
 msgstr "Não, gravar como um novo desenho"
@@ -478,41 +461,3 @@ msgstr "Não, gravar como um novo desenho"
 msgid "Choose the picture you want, then click “Open”."
 msgstr "Escolhe o desenho que queres e depois clica no \"Abrir\"."
 
-#~ msgid "Green!"
-#~ msgstr "Verde!"
-
-#~ msgid "Fade"
-#~ msgstr "Desbotar"
-
-#~ msgid "Oval"
-#~ msgstr "Oval"
-
-#~ msgid "Diamond"
-#~ msgstr "Losango"
-
-#~ msgid "A square has four sides, each the same length."
-#~ msgstr "Um quadrado tem quatro lados, todos com o mesmo tamanho."
-
-#~ msgid "A circle is exactly round."
-#~ msgstr "Um círculo é totalmente redondo."
-
-#~ msgid "A diamond is a square, turned around slightly."
-#~ msgstr "Um losango é um quadrado, ligeiramente rodado."
-
-#~ msgid "Lime!"
-#~ msgstr "Cor de Lima!"
-
-#~ msgid "Fuchsia!"
-#~ msgstr "Cor de flor brincos-de-princesa!"
-
-#~ msgid "Silver!"
-#~ msgstr "Prata!"
-
-#~ msgid "Thick"
-#~ msgstr "Engrossar"
-
-#~ msgid "Click and move the mouse to thicken the picture."
-#~ msgstr "Clica e move o rato para engordares o desenho."
-
-#~ msgid "Click and move the mouse to thin the picture."
-#~ msgstr "Clica e move o rato para emagreceres o desenho."
