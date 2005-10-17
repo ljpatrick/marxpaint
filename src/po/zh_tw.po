@@ -7,10 +7,10 @@
 # 
 msgid ""
 msgstr ""
-"Project-Id-Version: Tuxpaint 0.9.5\n"
+"Project-Id-Version: Tuxpaint 0.9.15\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2005-10-10 00:12-0700\n"
-"PO-Revision-Date: 2005-07-15 22:56+0800\n"
+"PO-Revision-Date: 2005-10-17 22:00+0800\n"
 "Last-Translator: Song Huang <Song@song.idv.tw>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -50,10 +50,10 @@ msgstr "黃色"
 
 #  using both valid spellings
 msgid "Light green!"
-msgstr "淺灰色"
+msgstr "淺綠色"
 
 msgid "Dark green!"
-msgstr "墨綠"
+msgstr "墨綠色"
 
 msgid "Sky blue!"
 msgstr "天空藍"
@@ -110,11 +110,11 @@ msgid "Blur"
 msgstr "模糊"
 
 msgid "Smudge"
-msgstr "煙燻"
+msgstr "塗污"
 
 #  using both valid spellings
 msgid "Lighten"
-msgstr "淺灰色"
+msgstr "變淡"
 
 msgid "Darken"
 msgstr "變深"
@@ -144,59 +144,59 @@ msgid "Flip"
 msgstr "上下翻轉"
 
 msgid "Click in the picture to fill that area with color."
-msgstr "點在圖像內來用顏色填滿整個區域。"
+msgstr "點在圖形內讓顏色填滿整個區域。"
 
 msgid "Click and move to draw grass. Don’t forget the dirt!"
-msgstr "按著並移動滑鼠來繪製青草，別忘了泥土囉。"
+msgstr "按著拖動滑鼠來畫出青草，別忘了泥土囉。"
 
 msgid "Click and move to draw large bricks."
-msgstr "按著並移動滑鼠來繪製大的磚塊。"
+msgstr "按著拖動滑鼠來畫出大的磚塊。"
 
 msgid "Click and move to draw small bricks."
-msgstr "按著並移動滑鼠來繪製小的磚塊。"
+msgstr "按著拖動滑鼠來畫出小的磚塊。"
 
 msgid "You can draw in rainbow colors!"
-msgstr "您可以畫出彩虹的顏色"
+msgstr "你可以畫出彩虹的顏色"
 
 msgid "Click and move to draw sparkles."
-msgstr "按著並移動滑鼠來繪製火花。"
+msgstr "按著拖動滑鼠來畫出火花。"
 
 msgid "Click and move the mouse around to blur the picture."
-msgstr "按著並移動滑鼠來模糊圖像。"
+msgstr "按著拖動滑鼠來模糊圖形。"
 
 msgid "Click and move the mouse around to smudge the picture."
-msgstr "按著並移動滑鼠來燻黑圖像。"
+msgstr "按著拖動滑鼠來塗污圖形。"
 
 msgid "Click and move to fade the colors."
-msgstr "按著並移動滑鼠來退淡顏色。"
+msgstr "按著拖動滑鼠來退淡顏色。"
 
 msgid "Click and move to darken the colors."
-msgstr "按著並移動滑鼠來加深顏色。"
+msgstr "按著拖動滑鼠來加深顏色。"
 
 msgid ""
 "Click and move the mouse around to turn the picture into a chalk drawing."
-msgstr "按著並移動滑鼠來擦出粉筆的痕跡。"
+msgstr "按著拖動滑鼠來擦出粉筆的痕跡。"
 
 msgid "Click and move the mouse around to make the picture blocky."
-msgstr "按著並移動滑鼠來打上馬賽克。"
+msgstr "按著拖動滑鼠來打上馬賽克。"
 
 msgid "Click and move the mouse around to draw a negative."
-msgstr "按著並移動滑鼠來畫出反相的顏色。"
+msgstr "按著拖動滑鼠來畫出反相的顏色。"
 
 msgid "Click and move the mouse around to change the picture’s color."
-msgstr "按著並移動滑鼠來更改圖形的顏色。"
+msgstr "按著拖動滑鼠來更改圖形的顏色。"
 
 msgid "Click and move the mouse around to make the picture drip."
-msgstr "按著並移動滑鼠來作出水滴狀。"
+msgstr "按著拖動滑鼠來產生水滴狀。"
 
 msgid "Click and move the mouse around to turn the picture into a cartoon."
-msgstr "按著並移動滑鼠將圖形變成卡通風格。"
+msgstr "按著拖動滑鼠將圖形變成卡通風格。"
 
 msgid "Click to make a mirror image."
-msgstr "按下可以作出左右鏡射的圖像。"
+msgstr "按下滑鼠來產生左右相反的圖形。"
 
 msgid "Click to flip the picture upside-down."
-msgstr "按下可以作出上下顛倒的圖像。"
+msgstr "按下滑鼠來產生上下顛倒的圖形。"
 
 msgid "Square"
 msgstr "正方形"
@@ -220,7 +220,7 @@ msgid "Rhombus"
 msgstr "菱形"
 
 msgid "A square is a rectangle with four equal sides."
-msgstr "正方形是有四個等邊的矩形。"
+msgstr "正方形是四邊等長的矩形。"
 
 msgid "A rectangle has four sides and four right angles."
 msgstr "矩形有四個邊和四個直角。"
@@ -303,10 +303,10 @@ msgid "Quit"
 msgstr "離開"
 
 msgid "Pick a color and a brush shape to draw with."
-msgstr "挑選一個顏色和刷子的形狀用來繪畫。"
+msgstr "挑選一個顏色和刷子的形狀用來畫畫。"
 
 msgid "Pick a picture to stamp around your drawing."
-msgstr "挑選一個圖畫用來印在您的畫上。"
+msgstr "挑選一個圖畫用來印在你的畫上。"
 
 msgid "Click to start drawing a line. Let go to complete it."
 msgstr "點一下就會開始繪製一條線，讓我們來完成他吧。"
@@ -315,52 +315,44 @@ msgid ""
 "Pick a shape. Click to pick the center, drag, then let go when it is the "
 "size you want. Move around to rotate it, and click to draw it."
 msgstr ""
-"挑選一個形狀。點一下形狀的中心位置，然後拖拉他到您要的大小。環繞著移動來旋轉"
-"形狀，然後點一下把他畫下來。"
+"挑選一個形狀。點一下來決定形狀的中心位置，然後拖拉他到你要的大小。"
+"繞著中心轉動來旋轉形狀，然後再點一下把他畫下來。"
 
 msgid "Choose a style of text. Click on your drawing and you can start typing."
 msgstr "選擇字母的樣式，在圖上點一下就可以開始輸入。"
 
 msgid "Pick a magical effect to use on your drawing!"
-msgstr "挑選一種魔術的效果來用在您的圖畫上"
+msgstr "挑選一種魔術的效果來用在你的圖畫上"
 
 #  Undo
-#. Undo
 msgid "Undo!"
 msgstr "回復"
 
 #  Redo
-#. Redo
 msgid "Redo!"
 msgstr "重作"
 
 #  Eraser
-#. Eraser
 msgid "Eraser!"
 msgstr "橡皮擦"
 
 #  New
-#. New
 msgid "You now have a blank sheet to draw on!"
-msgstr "您現在可以在空白頁上來繪圖"
+msgstr "你現在可以在空白頁上來繪圖"
 
 #  Open
-#. Open
 msgid "Open…"
 msgstr "開啟..."
 
 #  Save
-#. Save
 msgid "Your image has been saved!"
-msgstr "您的圖畫已經儲存!"
+msgstr "你的圖畫已經儲存!"
 
 #  Print
-#. Print
 msgid "Printing…"
 msgstr "列印中..."
 
 #  Quit
-#. Quit
 msgid "Bye bye!"
 msgstr "再見!"
 
@@ -377,12 +369,10 @@ msgid "OK then… Let’s keep drawing this one!"
 msgstr "好的，那麼讓我們繼續來畫這張圖。"
 
 #  FIXME: Move elsewhere!!!
-#. FIXME: Move elsewhere!!!
 msgid "Do you really want to quit?"
-msgstr "您確定要離開嗎？"
+msgstr "你確定要離開嗎？"
 
 #  FIXME: Move elsewhere! Or not?!
-#. FIXME: Move elsewhere! Or not?!
 msgid "Yes"
 msgstr "是的"
 
@@ -390,10 +380,10 @@ msgid "No"
 msgstr "不是"
 
 msgid "If you quit, you’ll lose your picture! Save it?"
-msgstr "如果離開，您將遺失您的圖畫! 要不要先存檔呢？"
+msgstr "如果離開，你將遺失你的圖畫! 要不要先存檔呢？"
 
 msgid "Save your picture first?"
-msgstr "先儲存您的圖畫嗎？"
+msgstr "先儲存你的圖畫嗎？"
 
 msgid "Can’t open that picture!"
 msgstr "無法開啟那張圖畫"
@@ -414,13 +404,13 @@ msgid "There are no saved files!"
 msgstr "沒有已儲存的檔案"
 
 msgid "Print your picture now?"
-msgstr "現在要列印您的圖畫嗎？"
+msgstr "現在要列印你的圖畫嗎？"
 
 msgid "Your picture has been printed!"
-msgstr "您的圖畫已列印"
+msgstr "你的圖畫已經印出來了"
 
 msgid "You can’t print yet!"
-msgstr "您還不可以列印"
+msgstr "你還不可以列印"
 
 msgid "Erase this picture?"
 msgstr "刪除這張圖畫？"
@@ -470,4 +460,4 @@ msgid "No, save a new file"
 msgstr "不，儲存一個新的檔案"
 
 msgid "Choose the picture you want, then click “Open”."
-msgstr "選擇您想要的圖畫，然後按下「開啟」"
+msgstr "選擇你想要的圖畫，然後按下「開啟」"
