@@ -7,7 +7,7 @@ bill@newbreedsoftware.com
 http://www.newbreedsoftware.com/tuxpaint/
 
 
-June 17, 2002 - October 10, 2005
+June 17, 2002 - October 17, 2005
 
 
 * Design and Coding:
@@ -237,7 +237,7 @@ June 17, 2002 - October 10, 2005
     Aleksandar Jelenak <jelenak@netlinkplus.net>
   
   * Slovak
-    Milan Plzik <mmp@golem.gymzv.sk>
+    Milan Plzik <mmp@golem.gymzv.sk> [retired?]
     Andrej Kacian <andrej@kacian.sk>
 
   * Slovenian
