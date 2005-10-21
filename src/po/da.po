@@ -1,3 +1,4 @@
+# translation of da.po to Danish
 # translation of tuxpaint-0.9.15rc1.po to Danish
 # Tux Paint Danish messages
 # Rasmus Erik Voel Jensen <i18n@solsort.dk>, 2002.
@@ -7,7 +8,7 @@ msgstr ""
 "Project-Id-Version: tuxpaint 0.9.15rc1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2005-10-10 00:12-0700\n"
-"PO-Revision-Date: 2005-10-19 03:41+0200\n"
+"PO-Revision-Date: 2005-10-20 02:52+0200\n"
 "Last-Translator: Mogens Jaeger <mogensjaeger@get2net.dk>\n"
 "Language-Team: Danish <dansk@klid.dk>\n"
 "MIME-Version: 1.0\n"
@@ -27,11 +28,9 @@ msgstr "Tux maling"
 msgid "Black!"
 msgstr "Sort!"
 
-#, fuzzy
 msgid "Dark grey! Some people spell it “dark gray”."
 msgstr "Mørk grå!"
 
-#, fuzzy
 msgid "Light grey! Some people spell it “light gray”."
 msgstr "Lys grå!"
 
@@ -143,7 +142,6 @@ msgstr "Vend"
 msgid "Click in the picture to fill that area with color."
 msgstr "Klik i billedet for at fylde området med en farve"
 
-#, fuzzy
 msgid "Click and move to draw grass. Don’t forget the dirt!"
 msgstr "Klik og flyt for at tegne græs. Husk 'skidtet'!"
 
@@ -180,7 +178,6 @@ msgstr "Klik og bevæg musen rundt for at gøre billedet 'ternet'."
 msgid "Click and move the mouse around to draw a negative."
 msgstr "Klik og bevæg musen rundt for at invertere billedet."
 
-#, fuzzy
 msgid "Click and move the mouse around to change the picture’s color."
 msgstr "Klik og bevæg musen rundt for at gøre billedet 'ternet'."
 
@@ -334,18 +331,16 @@ msgid "You now have a blank sheet to draw on!"
 msgstr "Du har nu et friskt papir til at tegne på!"
 
 #. Open
-#, fuzzy
 msgid "Open…"
-msgstr "Åbn"
+msgstr "Åbn..."
 
 #. Save
 msgid "Your image has been saved!"
 msgstr "Dit billede er blevet gemt!"
 
 #. Print
-#, fuzzy
 msgid "Printing…"
-msgstr "Udskriv"
+msgstr "Udskriver..."
 
 #. Quit
 msgid "Bye bye!"
@@ -360,9 +355,8 @@ msgstr "Hold knappen nede for at trække formen."
 msgid "Move the mouse to rotate the shape. Click to draw it."
 msgstr "Bevæg musen for at dreje figuren. Klik for at tegne den."
 
-#, fuzzy
 msgid "OK then… Let’s keep drawing this one!"
-msgstr "Ok... fortsæt med denne tegning!"
+msgstr "O.k. da... fortsæt med denne tegning!"
 
 #. FIXME: Move elsewhere!!!
 msgid "Do you really want to quit?"
@@ -375,14 +369,12 @@ msgstr "Ja"
 msgid "No"
 msgstr "Nej"
 
-#, fuzzy
 msgid "If you quit, you’ll lose your picture! Save it?"
-msgstr "Du har ikke gemt billedet. Skal det gemmes før du afslutter?"
+msgstr "Hvis du afslutter nu, mister du din tegning! Vil du gemme den?"
 
 msgid "Save your picture first?"
 msgstr "Vil du gemme billedet først?"
 
-#, fuzzy
 msgid "Can’t open that picture!"
 msgstr "Billedet kan ikke åbnes!"
 
@@ -393,7 +385,7 @@ msgid "Starting a new picture will erase the current one!"
 msgstr "Hvis du starter på et nyt billede, sletter du det nuværende!"
 
 msgid "That’s OK!"
-msgstr ""
+msgstr "Det er i orden."
 
 msgid "Never mind!"
 msgstr "Nej da!"
@@ -407,7 +399,6 @@ msgstr "Vil du udskrive billedet nu?"
 msgid "Your picture has been printed!"
 msgstr "Billedet er udskrevet!"
 
-#, fuzzy
 msgid "You can’t print yet!"
 msgstr "Du kan ikke udskrive endnu!"
 
@@ -457,18 +448,50 @@ msgstr "Skal den gamle udgave af billedet overskrives?"
 msgid "No, save a new file"
 msgstr "Nej, gem som et nyt billede."
 
-#, fuzzy
 msgid "Choose the picture you want, then click “Open”."
 msgstr "Vælg et billede og tryk på \"Åbn\"."
 
-#~ msgid "Click and move the mouse around to change the pictureÃÂ¢ÃÂÃÂs color."
-#~ msgstr "Klik og bevæg musen rundt for at ændre billedets farver."
+#~ msgid "Okay"
+#~ msgstr "O.k."
 
-#~ msgid "OpenÃÂ¢ÃÂÃÂ¦"
+#~ msgid "Red"
+#~ msgstr "Rød"
+
+#~ msgid "Green"
+#~ msgstr "Grøn"
+
+#~ msgid "Cyan"
+#~ msgstr "Turkis"
+
+#~ msgid "Fade"
+#~ msgstr "Bleg"
+
+#~ msgid "Thick"
+#~ msgstr "Tyk"
+
+#~ msgid "Click and move the mouse to thicken the picture"
+#~ msgstr "Klik og bevæg musen rundt, for at gøre billedet tykkere."
+
+#~ msgid "Click and move the mouse to thin the picture"
+#~ msgstr "Klik og bevæg musen rundt, for at gøre billedet tyndere."
+
+#~ msgid "Oval"
+#~ msgstr "Oval"
+
+#~ msgid "Diamond"
+#~ msgstr "Diamant"
+
+#~ msgid "A square has four sides, each the same length."
+#~ msgstr "Et kvadrat har fire sider, hvor alle sider er lige lange."
+
+#~ msgid "A circle is exactly round."
+#~ msgstr "En cirkel er præcis rund."
+
+#~ msgid "A diamond is a square, turned around slightly."
+#~ msgstr "En diamant er et kvadrat, der er drejet lidt rundt."
+
+#~ msgid "Pick a shape to draw.  Click once to pick the center of the shape, click again to draw it."
+#~ msgstr "Vælg en figur, vælg centrum og derefter størrelse."
+
+#~ msgid "Open..."
 #~ msgstr "Åbn..."
-
-#~ msgid "PrintingÃÂ¢ÃÂÃÂ¦"
-#~ msgstr "Udskriver..."
-
-#~ msgid "ThatÃÂ¢ÃÂÃÂs OK!"
-#~ msgstr "Det er O.k.!"
