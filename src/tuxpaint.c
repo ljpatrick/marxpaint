@@ -22,7 +22,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
   
-  June 14, 2002 - October 14, 2005
+  June 14, 2002 - October 22, 2005
 */
 
 
@@ -2026,8 +2026,8 @@ static void groupfonts(void)
     parse_font_style(user_font_styles[i]);
 
   qsort(user_font_styles, num_font_styles, sizeof user_font_styles[0], compar_fontgroup);
-  printf("groupfonts() qsort(user_font_styles...)\n");
-  fflush(stdout);
+  //printf("groupfonts() qsort(user_font_styles...)\n");
+  //fflush(stdout);
 
   for(;;)
     {
@@ -2058,8 +2058,8 @@ static void groupfonts(void)
   user_font_styles = NULL; // just to catch bugs
 
   qsort(user_font_families, num_font_families, sizeof user_font_families[0], compar_fontkiller);
-  printf(stderr, "groupfonts() qsort(user_font_families 1...)\n");
-  fflush(stdout);
+  //printf(stderr, "groupfonts() qsort(user_font_families 1...)\n");
+  //fflush(stdout);
   low = 0;
   for(;;)
     {
@@ -2077,10 +2077,10 @@ static void groupfonts(void)
       low = high;
     }
   qsort(user_font_families, num_font_families, sizeof user_font_families[0], compar_fontscore);
-  printf("groupfonts() qsort(user_font_families 2...)\n");
-  fflush(stdout);
+  //printf("groupfonts() qsort(user_font_families 2...)\n");
+  //fflush(stdout);
   if(user_font_families[0]->score < 0)
-    printf("sorted the wrong way, or all fonts were crap\n");
+    printf("sorted the wrong way, or all fonts were unusable\n");
 #if 0
 // THREADED_FONTS
   printf("Trim starting with %d families\n", num_font_families);
@@ -2590,7 +2590,9 @@ int main(int argc, char * argv[])
 
   CLOCK_ASM(time2);
 
+#ifdef DEBUG
   printf("Start-up time: %.3f\n", (double)(time2-time1)/CLOCK_SPEED);
+#endif
 
   // Let the user know we're (nearly) ready now
 
@@ -6412,7 +6414,7 @@ static int do_surfcmp(const SDL_Surface *const *const v1, const SDL_Surface *con
 
   if(s1==s2)
     {
-      printf("WTF?\n");
+      printf("s1==s2?\n");
       return 0;
     }
   if(!s1 || !s2 || !s1->w || !s2->w || !s1->h || !s2->h || !s1->format || !s2->format)
@@ -6488,8 +6490,6 @@ static int charset_works(TTF_Font *font, const char *s)
       surfs[count++] = tmp_surf;
     }
   was_bad_font = 0;
-  printf("charset_works()\n");
-  fflush(stdout);
   qsort(surfs, count, sizeof surfs[0], surfcmp);
   ret = !was_bad_font;
 out:
@@ -6720,8 +6720,11 @@ static void loadfont_callback(const char *restrict const dir, unsigned dirlen, t
               const char *restrict const family = TTF_FontFaceFamilyName(font);
               const char *restrict const style = TTF_FontFaceStyleName(font);
               int numfaces = TTF_FontFaces(font);
+#ifdef DEBUG
               if (numfaces != 1)
                 printf("Found %d faces in %s, %s, %s\n", numfaces, files[i].str, family, style);
+#endif
+
               if(strcmp("Zapfino",family) && strcmp("Elvish Ring NFI",family) && charset_works(font, gettext("jq")) && charset_works(font, gettext("JQ")))
                 {
                   if (num_font_styles==num_font_styles_max)
@@ -7354,7 +7357,9 @@ static void run_font_scanner(void)
   size += 2;  // for 2-byte font count
   buf = malloc(size);
   walk = buf;
+#ifdef DEBUG
   printf("Sending %u bytes with %u families.\n", size, num_font_families);
+#endif
   *walk++ = num_font_families & 0xffu;
   *walk++ = num_font_families >> 8u;
   i = num_font_families;
@@ -7433,8 +7438,6 @@ static void receive_some_font_info(void)
   unsigned i;
   family_info *fip;
 
-  printf("receive_some_font_info()\n");
-
   fcntl(font_socket_fd, F_SETFL, O_NONBLOCK);
   for(;;)
     {
@@ -7444,7 +7447,10 @@ static void receive_some_font_info(void)
           buf = realloc(buf, buf_size);
         }
       rc = read(font_socket_fd, buf+buf_fill, buf_size-buf_fill);
+#ifdef DEBUG
 printf("read: fd=%d buf_fill=%u buf_size=%u rc=%ld\n", font_socket_fd, buf_fill, buf_size, rc);
+#endif
+
       if(rc==-1)
         {
           switch(errno)
@@ -7482,7 +7488,9 @@ printf("read: fd=%d buf_fill=%u buf_size=%u rc=%ld\n", font_socket_fd, buf_fill,
   walk = buf;
   num_font_families = *walk++;
   num_font_families += *walk++ << 8u;
+#ifdef DEBUG
   printf("Got %u bytes with %u families.\n", buf_fill, num_font_families);
+#endif
   user_font_families = malloc(num_font_families * sizeof *user_font_families);
   fip = malloc(num_font_families * sizeof **user_font_families);
   i = num_font_families;
