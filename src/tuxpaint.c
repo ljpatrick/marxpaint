@@ -1709,6 +1709,7 @@ static void parse_font_style(style_info *si)
           sp += strlen("Regular");
           continue;
         }
+#if 0
       if(!strncasecmp(sp,"Italic",strlen("Italic")))
         {
           sp += strlen("Italic");
@@ -1721,6 +1722,7 @@ static void parse_font_style(style_info *si)
           si->italic = 1;
           continue;
         }
+#endif
       // move " Condensed" from style to family
       if(!strncasecmp(sp,"Condensed",strlen("Condensed")))
         {
@@ -3154,11 +3156,23 @@ static void mainloop(void)
   			      do_setcursor(cursor_arrow);
                             }
 		          draw_tux_text(tool_tux[cur_tool], tool_tips[cur_tool], 1);
-			  cur_thing = cur_font;
-			  num_things = num_font_families;
-			  thing_scroll = &font_scroll;
-			  draw_fonts();
-			  draw_colors(COLORSEL_ENABLE);
+
+			  if (num_font_families > 0)
+			  {
+			    cur_thing = cur_font;
+			    num_things = num_font_families;
+			    thing_scroll = &font_scroll;
+			    draw_fonts();
+			    draw_colors(COLORSEL_ENABLE);
+			  }
+			  else
+			  {
+			    /* Problem using fonts! */
+
+			    cur_tool = old_tool;
+			    draw_toolbar();
+			    update_screen_rect(&r_tools);
+			  }
 			}
 		      else if (cur_tool == TOOL_MAGIC)
 			{
@@ -7457,7 +7471,11 @@ printf("read: fd=%d buf_fill=%u buf_size=%u rc=%ld\n", font_socket_fd, buf_fill,
   if(WIFSIGNALED(status))
     {
       printf("child killed by signal %u\n", WTERMSIG(status));
-      exit(42);
+      user_font_families = NULL;
+      num_font_families = 0;
+      font_thread_done = 1;
+      
+      return;
     }
 
   show_progress_bar();
