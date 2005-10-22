@@ -3453,8 +3453,10 @@ static void mainloop(void)
 		            {
                               /* Stamp controls! */
                               int control_sound = -1;
+
                               if (which&2)
                                 {
+#ifdef OLD_STAMP_GROW_SHRINK
                                   /* One of the bottom buttons: */
                                   if (which&1)
                                     {
@@ -3474,6 +3476,18 @@ static void mainloop(void)
                                           control_sound = SND_SHRINK;
                                         }
                                     }
+#else
+				  int old_size;
+
+				  old_size = stamp_data[cur_stamp]->size;
+
+				  stamp_data[cur_stamp]->size = (((MAX_STAMP_SIZE - MIN_STAMP_SIZE) * (event.button.x - (WINDOW_WIDTH - 96))) / 96) + MIN_STAMP_SIZE;
+
+				  if (stamp_data[cur_stamp]->size < old_size)
+				    control_sound = SND_SHRINK;
+				  else if (stamp_data[cur_stamp]->size > old_size)
+				    control_sound = SND_GROW;
+#endif
                                 }
                               else
                                 {
@@ -9627,6 +9641,10 @@ static void draw_stamps(void)
   int base_x, base_y;
   SDL_Rect dest;
   SDL_Surface * img;
+  int sizes, size_at;
+  float x_per, y_per;
+  int xx, yy;
+  SDL_Surface * btn, * blnk;
 
 
   /* Draw the title: */
@@ -9797,7 +9815,8 @@ static void draw_stamps(void)
       SDL_BlitSurface(button_color, NULL, img_magics[MAGIC_FLIP], NULL);
       SDL_BlitSurface(img_magics[MAGIC_FLIP], NULL, screen, &dest);
 
-    
+   
+#ifdef OLD_STAMP_GROW_SHRINK
       /* Show shrink button: */
 
       dest.x = WINDOW_WIDTH - 96;
@@ -9847,6 +9866,38 @@ static void draw_stamps(void)
       SDL_BlitSurface(button_color, NULL, img_grow, NULL);
       SDL_BlitSurface(img_grow, NULL, screen, &dest);
 
+#else
+  sizes = MAX_STAMP_SIZE - MIN_STAMP_SIZE;
+  size_at = (stamp_data[cur_stamp]->size - MIN_STAMP_SIZE);
+  x_per = 96.0 / sizes;
+  y_per = 48.0 / sizes;
+  
+  for (i = 0; i < sizes; i++)
+  {
+    xx = ceil(x_per);
+    yy = ceil(y_per * i);
+
+    if (i <= size_at)
+      btn = thumbnail(img_btn_down, xx, yy, 0);
+    else
+      btn = thumbnail(img_btn_up, xx, yy, 0);
+
+    blnk = thumbnail(img_btn_off, xx, 48 - yy, 0);
+
+    /* FIXME: Check for NULL! */
+
+    dest.x = (WINDOW_WIDTH - 96) + (i * x_per);
+    dest.y = (((7 + TOOLOFFSET / 2) * 48)) - 8;
+    SDL_BlitSurface(blnk, NULL, screen, &dest);
+
+    dest.x = (WINDOW_WIDTH - 96) + (i * x_per);
+    dest.y = (((8 + TOOLOFFSET / 2) * 48)) - 8 - (y_per * i);
+    SDL_BlitSurface(btn, NULL, screen, &dest);
+
+    SDL_FreeSurface(btn);
+    SDL_FreeSurface(blnk);
+  }
+#endif
     }
 }
 
