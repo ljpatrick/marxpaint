@@ -1709,7 +1709,6 @@ static void parse_font_style(style_info *si)
           sp += strlen("Regular");
           continue;
         }
-#if 0
       if(!strncasecmp(sp,"Italic",strlen("Italic")))
         {
           sp += strlen("Italic");
@@ -1722,7 +1721,6 @@ static void parse_font_style(style_info *si)
           si->italic = 1;
           continue;
         }
-#endif
       // move " Condensed" from style to family
       if(!strncasecmp(sp,"Condensed",strlen("Condensed")))
         {
@@ -6719,8 +6717,10 @@ static void loadfont_callback(const char *restrict const dir, unsigned dirlen, t
             {
               const char *restrict const family = TTF_FontFaceFamilyName(font);
               const char *restrict const style = TTF_FontFaceStyleName(font);
-              int numfaces = TTF_FontFaces(font);
+
+
 #ifdef DEBUG
+              int numfaces = TTF_FontFaces(font);
               if (numfaces != 1)
                 printf("Found %d faces in %s, %s, %s\n", numfaces, files[i].str, family, style);
 #endif
