@@ -301,7 +301,7 @@ extern WrapperData macosx;
 #ifndef FORKED_FONTS
 static SDL_Thread *font_thread;
 #endif
-static volatile long font_thread_done;
+static volatile long font_thread_done = 0;
 static void run_font_scanner(void);
 static int font_scanner_pid;
 static int font_socket_fd;
@@ -1562,12 +1562,12 @@ typedef struct family_info {
 static TTF_Font * medium_font, * small_font, * large_font, * locale_font;
 
 static family_info **user_font_families;
-static int num_font_families;
-static int num_font_families_max;
+static int num_font_families = 0;
+static int num_font_families_max = 0;
 
 static style_info **user_font_styles;
-static int num_font_styles;
-static int num_font_styles_max;
+static int num_font_styles = 0;
+static int num_font_styles_max = 0;
 
 static void receive_some_font_info(void);
 
@@ -2024,7 +2024,8 @@ static void groupfonts(void)
     parse_font_style(user_font_styles[i]);
 
   qsort(user_font_styles, num_font_styles, sizeof user_font_styles[0], compar_fontgroup);
-  printf("groupfonts() qsort(user_font_styles...)");
+  printf("groupfonts() qsort(user_font_styles...)\n");
+  fflush(stdout);
 
   for(;;)
     {
@@ -2055,7 +2056,8 @@ static void groupfonts(void)
   user_font_styles = NULL; // just to catch bugs
 
   qsort(user_font_families, num_font_families, sizeof user_font_families[0], compar_fontkiller);
-  printf("groupfonts() qsort(user_font_families 1...)");
+  printf(stderr, "groupfonts() qsort(user_font_families 1...)\n");
+  fflush(stdout);
   low = 0;
   for(;;)
     {
@@ -2073,7 +2075,8 @@ static void groupfonts(void)
       low = high;
     }
   qsort(user_font_families, num_font_families, sizeof user_font_families[0], compar_fontscore);
-  printf("groupfonts() qsort(user_font_families 2...)");
+  printf("groupfonts() qsort(user_font_families 2...)\n");
+  fflush(stdout);
   if(user_font_families[0]->score < 0)
     printf("sorted the wrong way, or all fonts were crap\n");
 #if 0
@@ -2558,6 +2561,10 @@ int main(int argc, char * argv[])
   SDL_Rect dest;
   SDL_Rect src;
 
+#ifdef FORKED_FONTS
+  run_font_scanner();
+#endif
+
   /* Set up locale support */
   setlocale(LC_ALL, "");
 
@@ -2566,9 +2573,7 @@ int main(int argc, char * argv[])
   /* Set up! */
   setup(argc, argv);
 
-#ifdef FORKED_FONTS
-  run_font_scanner();
-#endif
+
 
 #if 0
   while(!font_thread_done)
@@ -3133,13 +3138,12 @@ static void mainloop(void)
                               update_screen_rect(&r_toolopt);
                               update_screen_rect(&r_ttoolopt);
   			      do_setcursor(cursor_watch);
-                              draw_tux_text(TUX_WAIT, "This is a slow computer with lots of fonts...", 1);
+                              draw_tux_text(TUX_WAIT, gettext("Please wait..."), 1);
 #ifdef FORKED_FONTS
                               receive_some_font_info();
 #else
                               while(!font_thread_done)
                                 {
-                                  // FIXME: should respond to quit events
                                   // FIXME: should have a read-depends memory barrier around here
                                   show_progress_bar();
                                   SDL_Delay(20);
@@ -6470,12 +6474,21 @@ static int charset_works(TTF_Font *font, const char *s)
       surfs[count++] = tmp_surf;
     }
   was_bad_font = 0;
-  printf("charset_works()");
+  printf("charset_works()\n");
+  fflush(stdout);
   qsort(surfs, count, sizeof surfs[0], surfcmp);
   ret = !was_bad_font;
 out:
   while(count--)
-    SDL_FreeSurface(surfs[count]);
+  {
+    if (surfs[count] == NULL)
+      printf("TRYING TO RE-FREE!");
+    else
+    {
+      SDL_FreeSurface(surfs[count]);
+      surfs[count] = NULL;
+    }
+  }
   free(surfs);
   return ret;
 }
@@ -6745,6 +6758,7 @@ static void loadfonts(const char * const dir)
 {
   char buf[TP_FTW_PATHSIZE];
   unsigned dirlen = strlen(dir);
+  
   memcpy(buf,dir,dirlen);
   tp_ftw(buf, dirlen, 1, loadfont_callback);
 }  
@@ -7405,6 +7419,8 @@ static void receive_some_font_info(void)
   unsigned i;
   family_info *fip;
 
+  printf("receive_some_font_info()\n");
+
   fcntl(font_socket_fd, F_SETFL, O_NONBLOCK);
   for(;;)
     {
@@ -7414,7 +7430,7 @@ static void receive_some_font_info(void)
           buf = realloc(buf, buf_size);
         }
       rc = read(font_socket_fd, buf+buf_fill, buf_size-buf_fill);
-//printf("read: fd=%d buf_fill=%u buf_size=%u rc=%ld\n", font_socket_fd, buf_fill, buf_size, rc);
+printf("read: fd=%d buf_fill=%u buf_size=%u rc=%ld\n", font_socket_fd, buf_fill, buf_size, rc);
       if(rc==-1)
         {
           switch(errno)
