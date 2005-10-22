@@ -6660,6 +6660,7 @@ static void tp_ftw(char *restrict const dir, unsigned dirlen, int rsrc,
 
   if(dir_names)
     {
+      qsort(dir_names, num_dir_names, sizeof *dir_names, compare_ftw_str);
       while(num_dir_names--)
         {
           memcpy(dir+dirlen, dir_names[num_dir_names].str, dir_names[num_dir_names].len+1);
@@ -8330,7 +8331,10 @@ static void setup(int argc, char * argv[])
   dest.y = WINDOW_HEIGHT - img_progress->h - tmp_surf->h;
   SDL_BlitSurface(tmp_surf, NULL, screen, &dest);
   SDL_FreeSurface(tmp_surf);
+
+#ifdef DEBUG
   printf("%s\n", tmp_str);
+#endif
   
   snprintf(tmp_str, sizeof(tmp_str),
 	   "© 2002–2005 Bill Kendrick et al.");
