@@ -5940,18 +5940,19 @@ static void blit_magic(int x, int y, int button_down)
       else if (cur_magic == MAGIC_CARTOON)
 	{
 	  float hue, sat, val;
+	  Uint32 color1, color2, color3, color4;
 	  
 	  SDL_LockSurface(last);
 	  SDL_LockSurface(canvas);
 
-	  for (yy = y - 16; yy < y + 16; yy++)
+	  for (yy = ((y / 4) * 4) - 16; yy < ((y / 4) * 4) + 16; yy = yy + 4)
 	    {
-	      for (xx = x - 16; xx < x + 16; xx++)
+	      for (xx = ((x / 4) * 4) - 16; xx < ((x / 4) * 4) + 16; xx = xx + 4)
 		{
 		  /* Get original color: */
 		
-		  SDL_GetRGB(getpixel_last(last, xx, yy), last->format,
-			     &r, &g, &b);
+		  SDL_GetRGB(getpixel_last(last, xx + 1, yy + 1),
+		             last->format, &r, &g, &b);
 
 		  rgbtohsv(r, g, b, &hue, &sat, &val);
 
@@ -5959,7 +5960,8 @@ static void blit_magic(int x, int y, int button_down)
 		    sat = 0;
 		  else
 		    sat = 1.0;
-		 
+		
+#if 0
 		  val = val - 0.5;
 		  val = val * 4;
 		  val = val + 0.5;
@@ -5970,12 +5972,67 @@ static void blit_magic(int x, int y, int button_down)
 		    val = 1.0;
 
 		  val = floor(val * 10) / 10;
-
+#endif
+		  
 		  hue = floor(hue * 10) / 10;
 
-		  hsvtorgb(hue, sat, val, &r, &g, &b);
+		  hsvtorgb(hue, sat, 0.5, &r, &g, &b);
 
-		  putpixel(canvas, xx, yy, SDL_MapRGB(canvas->format, r, g, b));
+		  if (val >= 1)
+		  {
+		    color1 = SDL_MapRGB(canvas->format, 255, 255, 255);
+		    color2 = SDL_MapRGB(canvas->format, 255, 255, 255);
+		    color3 = SDL_MapRGB(canvas->format, 255, 255, 255);
+		    color4 = SDL_MapRGB(canvas->format, 255, 255, 255);
+		  }
+		  else if (val >= 0.75)
+		  {
+		    color1 = SDL_MapRGB(canvas->format, r, g, b);
+		    color2 = SDL_MapRGB(canvas->format, 255, 255, 255);
+		    color3 = SDL_MapRGB(canvas->format, 255, 255, 255);
+		    color4 = SDL_MapRGB(canvas->format, 255, 255, 255);
+		  }
+		  else if (val >= 0.5)
+		  {
+		    color1 = SDL_MapRGB(canvas->format, r, g, b);
+		    color2 = SDL_MapRGB(canvas->format, r, g, b);
+		    color3 = SDL_MapRGB(canvas->format, 255, 255, 255);
+		    color4 = SDL_MapRGB(canvas->format, 255, 255, 255);
+		  }
+		  else if (val >= 0.25)
+		  {
+		    color1 = SDL_MapRGB(canvas->format, r, g, b);
+		    color2 = SDL_MapRGB(canvas->format, r, g, b);
+		    color3 = SDL_MapRGB(canvas->format, r, g, b);
+		    color4 = SDL_MapRGB(canvas->format, 255, 255, 255);
+		  }
+		  else
+		  {
+		    color1 = SDL_MapRGB(canvas->format, r, g, b);
+		    color2 = SDL_MapRGB(canvas->format, r, g, b);
+		    color3 = SDL_MapRGB(canvas->format, r, g, b);
+		    color4 = SDL_MapRGB(canvas->format, r, g, b);
+		  }
+
+		  putpixel(canvas, xx - 1, yy - 1, color3);
+		  putpixel(canvas, xx,     yy - 1, color2);
+		  putpixel(canvas, xx + 1, yy - 1, color3);
+		  putpixel(canvas, xx + 2, yy - 1, color4);
+
+		  putpixel(canvas, xx - 1, yy,     color2);
+		  putpixel(canvas, xx,     yy,     color1);
+		  putpixel(canvas, xx + 1, yy,     color2);
+		  putpixel(canvas, xx + 2, yy,     color4);
+
+		  putpixel(canvas, xx - 1, yy + 1, color3);
+		  putpixel(canvas, xx,     yy + 1, color2);
+		  putpixel(canvas, xx + 1, yy + 1, color3);
+		  putpixel(canvas, xx + 2, yy + 1, color4);
+		  
+		  putpixel(canvas, xx - 1, yy + 2, color4);
+		  putpixel(canvas, xx,     yy + 2, color4);
+		  putpixel(canvas, xx + 1, yy + 2, color4);
+		  putpixel(canvas, xx + 2, yy + 2, color4);
 		}
 	    }
 
