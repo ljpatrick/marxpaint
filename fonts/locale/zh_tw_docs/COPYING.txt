@@ -1,7 +1,7 @@
 COPYING.txt for "tuxpaint-ttf-zh_tw"
 Traditional Chinese TrueType Font (TTF) for Tux Paint
 
-The "zh_tw.ttf" font file is a subset of a "wp010-05.ttf" TrueType font.
+The "zh_tw.ttf" font file is a subset of "wp010-05.ttf" TrueType font.
 
 The "wp010-05.ttf" by Hann-Tzong Wang <htwang@math.cycu.edu.tw>,
 and located at: http://www.ossacc.org/Download/misc/wangfont
