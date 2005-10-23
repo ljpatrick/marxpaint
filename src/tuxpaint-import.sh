@@ -12,8 +12,8 @@
 # September 21, 2002 - February 26, 2005
 
 
-TMPDIR=/tmp
 SAVEDIR=$HOME/.tuxpaint/saved
+TMPDIR=$SAVEDIR
 
 
 if [ $# -eq 0 ]; then
