@@ -9,7 +9,7 @@
 # bill@newbreedsoftware.com
 # http://www.newbreedsoftware.com/tuxpaint/
 
-# September 21, 2002 - February 26, 2005
+# September 21, 2002 - October 23, 2005
 
 
 SAVEDIR=$HOME/.tuxpaint/saved

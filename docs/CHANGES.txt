@@ -215,6 +215,11 @@ http://www.newbreedsoftware.com/tuxpaint/
 
   * Bug fixes:
     -------------------
+    * tuxpaint-import shell script created temporary files with predictable
+      names in "/tmp", leaving it open to symlink attacks.  Now creating
+      temp. files in Tux Paint's default save directory.
+      Ben Armstrong <synrg@sanctuary.nslug.ns.ca>
+
     * Untranslated text in right-to-left languages (e.g., Hebrew) are no
       longer displayed backwards.
 
