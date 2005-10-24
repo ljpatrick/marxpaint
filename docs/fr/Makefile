@@ -7,16 +7,17 @@
 # Bill Kendrick
 # bill@newbreedsoftware.com
 # 
-# Sept. 4, 2005 - October 9, 2005
+# Sept. 4, 2005 - October 24, 2005
 
 LINKS=links -dump -no-numbering -no-references
 
-all:	README.txt OPTIONS.txt FAQ.txt
+all:	README.txt OPTIONS.txt FAQ.txt PNG.txt
 
 clean:
 	-rm README.txt
 	-rm OPTIONS.txt
 	-rm FAQ.txt
+	-rm PNG.txt
 
 README.txt:	html/README.html
 	$(LINKS) $< > $@
@@ -25,5 +26,8 @@ OPTIONS.txt:	html/OPTIONS.html
 	$(LINKS) $< > $@
 
 FAQ.txt:	html/FAQ.html
+	$(LINKS) $< > $@
+
+PNG.txt:	html/PNG.html
 	$(LINKS) $< > $@
 
