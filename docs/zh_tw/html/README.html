@@ -1126,6 +1126,17 @@ New Breed Software</p>
 	<p>要使圖章不能左右鏡射的話，在圖章的資料檔案中加入 "<code><b>nomirror</b></code>" 。</p>
       </blockquote>
 
+      <h4>圖章初始尺寸</h4>
+      <blockquote>
+        <p>Tux&nbsp;Paint 預設會認為你圖章的尺寸是適合用在 608x472 的圖紙上的。
+	這是l Tux&nbsp;Paint 原始的圖紙尺寸，提供給 640x480 的螢幕。Tux&nbsp;Paint
+	會依照目前的圖紙尺寸以及使用者的圖章尺寸控制(如果有開啟)來調整圖章。</p>
+
+        <p>如果你的圖章太大或太小，你可以指定一個比例係數。如果你的圖章寬(或高)了 2.5 倍，
+	在圖章的資料檔案中加上參數  "<code><b>scale 40%</b></code>" 或 "<code><b>scale 5/2</b></code>"
+	或 "<code><b>scale 2.5</b></code>" 或 "<code><b>scale 2:5</b></code>" 。如果你想要的話也可以加上
+	"<code><b>=</b></code>"，例如 "<code><b>scale=40%</b></code>" 。</p>
+      </blockquote>
 
       <h4>Windows 的使用者</h4>
       <blockquote>
@@ -1214,7 +1225,8 @@ New Breed Software</p>
     </blockquote>
     
     <p>起始圖形必須和 Tux Paint 的圖紙一樣大，那就是 448x376 圖素。
-    (如果是使用 800x600 模式的話，那就是 608x496 。)</p>
+    如果是使用 800x600 模式的話，那就是 608x496 。 (就是要比視窗窄上 192 個圖素，
+    矮上 104 個圖素。)</p>
     
     <p>將他們放到 "<code><b>starters</b></code>" 的目錄裡，當使用 Tux Paint
     的「開啟」交談框時，這個起始圖形就會用著綠色的背景出現在圖形的開頭處。</p>
@@ -1257,8 +1269,6 @@ New Breed Software</p>
   <li><a href="../PNG.txt">PNG.txt</a><br>
     說明建立給 Tux Paint 使用的 PNG 格式的圖檔
 
-  <li><a href="../TODO.txt">TODO.txt</a><br>
-    一份列著尚未實作的功能或需要修正的臭虫的清單
   </ul>
 </blockquote>
 
