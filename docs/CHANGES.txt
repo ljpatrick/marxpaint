@@ -7,7 +7,7 @@ bill@newbreedsoftware.com
 http://www.newbreedsoftware.com/tuxpaint/
 
 
-2005.October.23 (0.9.15)
+2005.October.24 (0.9.15)
 
   * Speed improvements:
     -------------------
@@ -331,25 +331,28 @@ http://www.newbreedsoftware.com/tuxpaint/
 
     * Mentioned Tux Paint Config. tool in FAQ.
 
+    * French documentation created.
+      Jérôme Chantreau <plovemax@hotmail.com>
+
   * New translations:
     -----------------
-    * Albanian translation created.
+    * Albanian
       Ilir Rugova <ilirrugova@gmx.de>
       Laurent Dhima <laurenti@alblinux.net>
 
-    * Estonian translation created.
+    * Estonian
       Henrik Pihl <henrik@saarlane.ee>
 
-    * Gaelic translation created.
+    * Gaelic
       Kevin Patrick Scannell <scannell@SLU.EDU>
 
-    * Galician translation created.
+    * Galician
       Leandro Regueiro <unho@gulo.org>
 
-    * Gronings translation created.
+    * Gronings
       J.F.M. Lange <jfm.lange@hky.de>
 
-    * Kinyarwanda translation created.
+    * Kinyarwanda
       Steve Murphy <murf@e-tools.com>
 
       (Initial rough translation based on translations from the following:
@@ -367,7 +370,7 @@ http://www.newbreedsoftware.com/tuxpaint/
       Daniel Illingworth <webmaster@intermagen.net>
       Luis C. Suárez M. <luiscsuarez@gmail.com>
 
-    * Swahili translation created.
+    * Swahili
       Martin Benjamin <martin.benjamin@yale.edu>
       Alberto Escudero-Pascual <aep@it46.se>
       Kamusi Project at Yale University

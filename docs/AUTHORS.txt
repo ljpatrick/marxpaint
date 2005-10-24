@@ -7,7 +7,7 @@ bill@newbreedsoftware.com
 http://www.newbreedsoftware.com/tuxpaint/
 
 
-June 17, 2002 - October 17, 2005
+June 17, 2002 - October 24, 2005
 
 
 * Design and Coding:
@@ -136,6 +136,7 @@ June 17, 2002 - October 17, 2005
   * French
     Jacques Chion <Jacques.Chion@wanadoo.fr>
     Charles Vidal
+    Jérôme Chantreau <plovemax@hotmail.com> [documentation]
 
   * Gaelic
     Kevin Patrick Scannell <scannell@SLU.EDU>
