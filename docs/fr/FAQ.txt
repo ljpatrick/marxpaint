@@ -486,4 +486,3 @@
     Ou postez à notre mailing-list 'tuxpaint-dev' :
 
        http://www.newbreedsoftware.com/tuxpaint/lists/
-       haut  RetourAcceuil
