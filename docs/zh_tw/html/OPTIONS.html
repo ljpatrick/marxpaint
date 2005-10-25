@@ -11,19 +11,19 @@ alink="#FF00FF">
 
 version
 
-0.9.14
+0.9.15
 
 </h1>
 <h2>選項</h2>
 
-<p>Copyright 2004 by Bill Kendrick<br>
+<p>Copyright 2005 by Bill Kendrick and others<br>
 New Breed Software</p>
 
 <p><a href="mailto:bill@newbreedsoftware.com">bill@newbreedsoftware.com</a><br>
 <a href="http://www.newbreedsoftware.com/tuxpaint/">http://www.newbreedsoftware.com/tuxpaint/</a><br>
 翻譯：Song Huang &lt;<a href="mailto:song@ossacc.org">song@ossacc.org</a>&gt;</p>
 
-<p>九月 24, 2004</p>
+<p>十月 2, 2005</p>
 </center>
 
 <hr size=2 noshade>
@@ -88,9 +88,18 @@ New Breed Software</p>
     使用全螢幕模式。
   </dd>
   
-  <dt><code><b>800x600=yes</b></code></dt>
+  <dt><code><b>windowsize=<i>SIZE</i></b></code></dt>
   <dd>
-    使用 800x600 螢幕模式(實驗性質)，一般是 640x480 。 
+    執行程式於較高的解析度，相對於預設的 640x480。<i>SIZE</i>
+    的值可以是：
+    <ul>
+    <li>640x480
+    <li>800x600
+    <li>1024x768
+    <li>1280x1024
+    <li>1400x1050
+    <li>1600x1200
+    </ul>
   </dd>
   
   <dt><code><b>nosound=yes</b></code></dt>
@@ -100,8 +109,13 @@ New Breed Software</p>
   
   <dt><code><b>noquit=yes</b></code></dt>
   <dd>
-    關閉螢幕上「離開」的按鍵。
-    (還是可以用 <b>[Escape]</b> 鍵或視窗右上角的關閉按鈕來離開程式。)
+    <p>取消螢幕上「離開」的按鍵並預防用 <b>[Escape]</b> 鍵來離開 <i>Tux&nbsp;Paint</i>。</p>
+    
+    <p>使用 <b>[Alt]</b>&nbsp;+&nbsp;<b>[F4]</b> 組合鍵或按下視窗右上角的關閉按鈕
+    (如果你不是在全螢幕模式) 一樣可以離開 <i>Tux&nbsp;Paint</i>。</p>
+
+    <p>你也可以使用這個組合鍵來離開：
+    <b>[Shift]</b>&nbsp;+&nbsp;<b>[Control]</b>&nbsp;+&nbsp;<b>[Escape]</b>。</p>
   </dd>
   
   <dt><code><b>noprint=yes</b></code></dt>
@@ -117,22 +131,44 @@ New Breed Software</p>
   <dt><code><b>printcommand=<i>COMMAND</i></b></code></dt>
   <dd>
     <p><i>(只限於 Linux 和 Unix )</i></p>
-  
-    <p>使用這個 <i>COMMAND</i> 命令來列印 PNG 檔，如果沒有設定的話，預設的命令是：</p>
-  
-           <blockquote>
-      <code>pngtopnm | pnmtops | lpr</code>
+
+    <p>當「列印」按鈕被按下時，使用 <i>COMMAND</i> 這個指令來列印 PostScript 格式的檔案。
+    如果這個參數沒有專程設定的話，預設的指令是：</p>
+
+    <blockquote>
+      <code>lpr</code>
     </blockquote>
     
     <p>這是將 PNG 轉換成 NetPBM (可移植到任何圖像的格式)，再轉換成 PostScript 格式，
     然後 "<code>lpr</code>" 命令把他送到印表機去列印。</p>
+    
+    <p><b>Note:</b> <i>Tux&nbsp;Paint</i> 0.9.15 之前的版本傳送 PNG 格式的資料給列印的指令
+    ( 預設是給 "<code>pngtopnm&nbsp;|&nbsp;pnmtops&nbsp;|&nbsp;lpr</code>")。</p>
+    
+    <p>如果你在 0.9.15 之前的版本設定了替代的 <code><b>printcommand</b></code> 的話，
+    你要將他改回來。</p>
+  </dd>
+
+  <dt><code><b>altprintcommand=<i>COMMAND</i></b></code></dt>
+  <dd>
+    <p><i>(只限於 Linux 和 Unix)</i></p>
+
+    <p>當「列印」鈕被按下的同時 <b>[Alt]</b> 鍵也被按著，就會使用 <i>COMMAND</i>
+    這個指令來列印 PostScript 格式的檔案。(這主要被用來提供列印交談框，在 Windows
+    和 Mac OS X 按下<b>[Alt]</b>+「列印」鈕是一樣的效果。)</p>
+    
+    <p>如果這個參數沒有特別設定的話，預設的指令是 KDE 的圖形列印交談框：</p>
+
+    <blockquote>
+      <code>kprinter</code>
+    </blockquote>
   </dd>
   
   <dt><code><b>printcfg=yes</b></code></dt>
   <dd>
     <p><i>(只限於 Windows)</i></p>
   
-    <p>Tux&nbsp;Paint 會在列印時使用印表機的規劃檔。當按下 <b>[ALT]</b> 鍵同時按下「列印」按鈕時，
+    <p>Tux&nbsp;Paint 會在列印時使用印表機的規劃檔。當按下 <b>[Alt]</b> 鍵同時按下「列印」按鈕時，
     Tux&nbsp;Paint 會先開啟印表機的設定視窗。</p>
     
     <p>(註：這只能在 Tux&nbsp;Paint 不是使用全螢幕模式時有作用。)
@@ -140,6 +176,26 @@ New Breed Software</p>
     當 "printcfg" 選項被設定時都會被重複使用。</p>
   </dd>
     
+  <dt><code><b>altprint=always</b></code></dt>
+  <dd>
+    <p>這會使得 Tux&nbsp;Paint 在「列印」鈕被按下時，總是呼叫出列印交談框
+    (或者在 Linux/Unix 會執行 "altprintcommand")。換句話說，這就像同時按下「列印」鈕及
+    <b>[Alt]</b> 鍵，除了你不用每次都要按著 <b>[Alt]</b> 鍵。</p>
+  </dd>
+  
+  <dt><code><b>altprint=never</b></code></dt>
+  <dd>
+    <p>這會防止 Tux&nbsp;Paint 在按下「列印」鈕時 <i>總是</i> 呼叫出列印交談框。
+    換句話說，這會使得 <b>[Alt]</b> 在「列印」鈕被按下時失去作用。</p>
+  </dd>
+  
+  <dt><code><b>altprint=mod</b></code></dt>
+  <dd>
+    <p>這是正常預設的狀況。當同時按下「列印」鈕及 <b>[Alt]</b> 鍵時，
+    Tux&nbsp;Paint 會呼叫出列印交談框(或者在 Linux/Unix 會執行 "altprintcommand")。
+    只按下「列印」鈕不按著 <b>[Alt]</b> 的話就只會列印而不會呼叫出交談框。</p>
+  </dd>
+ 
   <dt><code><b>simpleshapes=yes</b></code></dt>
   <dd>
     關閉形狀工具的旋轉步驟。只需要點選中心位置，拖拉至適當大小然後放開滑鼠按鍵，
@@ -174,7 +230,15 @@ New Breed Software</p>
     這可以取消滑鼠上滾輪的功能。
     (正常來講滾輪可以捲動右邊的選擇目錄。)
   </dd>
-  
+
+  <dt><code><b>nobuttondistinction=yes</b></code></dt>
+  <dd>
+    <p>在 Tux&nbsp;Paint 0.9.15 之前的版本，滑鼠的中鍵及右鍵都可以用來按。
+    在 0.9.15 這個版本，變成 <i>只有</i> 滑鼠左鍵有作用，這樣就可以訓練小朋友不要使用錯誤的鼠鍵。</p>
+
+    <p>不過對於一些區分二鍵或三鍵滑鼠有困難的小朋友，可以使用這個參數來恢復到舊版的功能。</p>
+  </dd>
+
   <dt><code><b>nofancycursors=yes</b></code></dt>
   <dd>
     <p>這會使 Tux&nbsp;Paint 花俏的滑鼠游標失效，而使用系統正常的游標。</p>
@@ -191,6 +255,12 @@ New Breed Software</p>
     顯示上很有幫助。</p>
   </dd>
   
+  <dt><code><b>sysfonts=yes</b></code></dt>
+  <dd>
+    <p>這個參數會讓 Tux Paint 試著去載入作業系統的字型檔 (用在 <b>字母</b> 工具上)。
+    正常來講 Tux Paint 只會載入 Tux Paint 包裝在一起的字型。</p>
+  </dd>
+
   <dt><code><b>nostamps=yes</b></code></dt>
   <dd>
     <p>這個選項是告訴 Tux&nbsp;Paint 不要載入任何的圖章圖樣，
@@ -275,8 +345,13 @@ New Breed Software</p>
       <td>&nbsp;</td>
     </tr>
     <tr>
-      <td><code>Afrikaans</code></td>
-      <td><code>南非荷蘭語</code></td>
+      <td><code>albanian</code></td>
+      <td>阿爾巴尼亞文</td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td><code>afrikaans</code></td>
+      <td><code>南非荷蘭文</code></td>
       <td>&nbsp;</td>
     </tr>
     <tr>
@@ -345,6 +420,11 @@ New Breed Software</p>
       <td>&nbsp;</td>
     </tr>
     <tr>
+      <td><code>estonian</code></td>
+      <td>愛沙尼亞文</td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
       <td><code>finnish</code></td>
       <td><code>芬蘭文</code></td>
       <td>&nbsp;</td>
@@ -355,6 +435,16 @@ New Breed Software</p>
       <td>&nbsp;</td>
     </tr>
     <tr>
+      <td><code>gaelic</code></td>
+      <td><code>蓋爾文</code></td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td><code>galician</code></td>
+      <td><code>加里西亞文</code></td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
       <td><code>german</code></td>
       <td><code>德文</code></td>
       <td>&nbsp;</td>
@@ -362,6 +452,11 @@ New Breed Software</p>
     <tr>
       <td><code>greek</code></td>
       <td><code>希臘文</code></td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td><code>gronings</code></td>
+      <td><code>zudelk-veenkelonioals</code></td>
       <td>&nbsp;</td>
     </tr>
     <tr>
@@ -400,6 +495,11 @@ New Breed Software</p>
       <td>&nbsp;</td>
     </tr>
     <tr>
+      <td><code>kinyarwanda</code></td>
+      <td>基尼亞安達文</td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
       <td><code>klingon</code></td>
       <td><code>克林貢文</code></td>
       <td>&nbsp;</td>
@@ -418,6 +518,11 @@ New Breed Software</p>
       <td><code>malay</code></td>
       <td><code>馬來文</code></td>
       <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td><code>mexican-spanish</code></td>
+      <td><code>墨西哥的西班牙文</code></td>
+      <td><code>&nbsp;</code></td>
     </tr>
     <tr>
       <td><code>norwegian</code></td>
@@ -462,6 +567,11 @@ New Breed Software</p>
     <tr>
       <td><code>slovenian</code></td>
       <td><code>斯洛維尼亞文</code></td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td><code>swahili</code></td>
+      <td>斯華西里文</td>
       <td>&nbsp;</td>
     </tr>
     <tr>
