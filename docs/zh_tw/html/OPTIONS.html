@@ -585,6 +585,11 @@ New Breed Software</p>
       <td>&nbsp;</td>
     </tr>
     <tr>
+      <td><code>thai</code></td>
+      <td>泰文</td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
       <td><code>traditional-chinese</code></td>
       <td><code>繁體中文</code></td>
       <td></td>
@@ -592,6 +597,11 @@ New Breed Software</p>
     <tr>
       <td><code>turkish</code></td>
       <td><code>土耳其文</code></td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td><code>ukrainian</code></td>
+      <td>烏克蘭文</td>
       <td>&nbsp;</td>
     </tr>
     <tr>
@@ -651,6 +661,10 @@ New Breed Software</p>
     <dt><code><b>
     --fullscreen<br>
     --800x600<br>
+    --1024x768<br>
+    --1280x1204<br>
+    --1400x1050<br>
+    --1600x1200<br>
     --nosound<br>
     --noquit<br>
     --noprint<br>
@@ -661,10 +675,12 @@ New Breed Software</p>
     --grab<br>
     --noshortcuts<br>
     --nowheelmouse<br>
+    --nobuttondistinction<br>
     --nofancycursors<br>
     --nooutlines<br>
     --nostamps<br>
     --nostampcontrols<br>
+    --sysfonts<br>
     --mirrorstamps<br>
     --keyboard<br>
     --savedir&nbsp;DIRECTORY<br>
@@ -691,10 +707,12 @@ New Breed Software</p>
     --dontgrab<br>
     --shortcuts<br>
     --wheelmouse<br>
+    --buttondistinction<br>
     --fancycursors<br>
     --outlines<br>
     --stamps<br>
     --stampcontrols<br>
+    --nosysfonts<br>
     --dontmirrorstamps<br>
     --mouse<br>
     --saveoverask<br>
@@ -709,7 +727,7 @@ New Breed Software</p>
 
     <dt><code><b><a name="locale">--locale locale</a></b></code></dt>
     <dd>
-      <p>執行某一個 Tux&nbsp;Paint 支援的語文版本。locale 字串(如："<code>de_DE@euro</code>" 是德文)
+      <p>執行某一個 Tux&nbsp;Paint 支援的語文版本。locale 字串(如："<code>de_DE</code>" 是德文)
       請見稍後 "<i><a href="#different_language">選擇不同的語文</a></i>" 這一個章節。</p>
 
       <p>(如果您的 locale 已經使用系統變數 "<code>$LANG</code>" 來指定，
@@ -848,9 +866,14 @@ New Breed Software</p>
     <td>Danish</td>
   </tr>
   <tr>
-td><code>de_DE@euro</code></td>
+td><code>de_DE</code></td>
     <td>德文</td>
     <td>German</td>
+  </tr>
+  <tr>
+    <td><code>et_EE</code></td>
+    <td>愛沙尼亞文</td>
+    <td>Estonian</td>
   </tr>
   <tr>
     <td><code>el_GR.UTF8</code> (*)</td>
@@ -863,9 +886,14 @@ td><code>de_DE@euro</code></td>
     <td>British English</td>
   </tr>
   <tr>
-    <td><code>es_ES@euro</code></td>
+    <td><code>es_ES</code></td>
     <td>西班牙文</td>
     <td>Spanish</td>
+  </tr>
+  <tr>
+    <td><code>es_MX</code></td>
+    <td>墨西哥西班牙文</td>
+    <td>Mexican Spanish</td>
   </tr>
   <tr>
     <td><code>eu_ES</code></td>
@@ -873,14 +901,29 @@ td><code>de_DE@euro</code></td>
     <td>Basque</td>
   </tr>
   <tr>
-    <td><code>fi_FI@euro</code></td>
+    <td><code>fi_FI</code></td>
     <td>芬蘭文</td>
     <td>Finnish</td>
   </tr>
   <tr>
-    <td><code>fr_FR@euro</code></td>
+    <td><code>fr_FR</code></td>
     <td>法文</td>
     <td>French</td>
+  </tr>
+   <tr>
+    <td><code>ga_IE</code></td>
+    <td>蓋爾文</td>
+    <td>Gaelic</td>
+  </tr>
+  <tr>
+    <td><code>gl_ES</code></td>
+    <td>加里西亞文</td>
+    <td>Galician</td>
+  </tr>
+  <tr>
+    <td><code>gos_NL</code></td>
+    <td>Zudelk Veenkelonioals</td>
+    <td>Gronings</td>
   </tr>
   <tr>
     <td><code>he_IL</code> (*)</td>
@@ -913,7 +956,7 @@ td><code>de_DE@euro</code></td>
     <td>Icelandic</td>
   </tr>
   <tr>
-    <td><code>it_IT@euro</code></td>
+    <td><code>it_IT</code></td>
     <td>義大利文</td>
     <td>Italian</td>
   </tr>
@@ -948,7 +991,7 @@ td><code>de_DE@euro</code></td>
     <td>Norwegian Nynorsk</td>
   </tr>
   <tr>
-    <td><code>nl_NL@euro</code></td>
+    <td><code>nl_NL</code></td>
     <td>荷蘭文</td>
     <td>Dutch</td>
   </tr>
@@ -978,6 +1021,11 @@ td><code>de_DE@euro</code></td>
     <td>Russian</td>
   </tr>
   <tr>
+    <td><code>rw_RW</code></td>
+    <td>基尼亞安達文</td>
+    <td>Kinyarwanda</td>
+  </tr>
+  <tr>
     <td><code>sk_SK</code></td>
     <td>斯洛伐克文</td>
     <td>Slovak</td>
@@ -988,14 +1036,24 @@ td><code>de_DE@euro</code></td>
     <td>Slovenian</td>
   </tr>
   <tr>
+    <td><code>sq_AL</code></td>
+    <td>阿爾巴尼亞文</td>
+    <td>Albanian</td>
+  </tr>
+  <tr>
     <td><code>sr_YU</code></td>
     <td>塞爾維亞文</td>
     <td>Serbian</td>
   </tr>
   <tr>
-    <td><code>sv_SE@euro</code></td>
+    <td><code>sv_SE</code></td>
     <td>瑞典文</td>
     <td>Swedish</td>
+  </tr>
+  <tr>
+    <td><code>sw_TZ</code></td>
+    <td>斯瓦希里文</td>
+    <td>Swahili</td>
   </tr>
   <tr>
     <td><code>ta_IN</code> (*)</td>
@@ -1003,14 +1061,24 @@ td><code>de_DE@euro</code></td>
     <td>Tamil</td>
   </tr>
   <tr>
+    <td><code>th_TH</code> (*)</td>
+    <td>泰文</td>
+    <td>Thai</td>
+  </tr>
+  <tr>
     <td><code>tlh</code> (*)</td>
     <td>克林貢文</td>
     <td>Klingon</td>
   </tr>
   <tr>
-    <td><code>tr_TR@euro</code></td>
+    <td><code>tr_TR</code></td>
     <td>土耳其文</td>
     <td>Turkish</td>
+  </tr>
+  <tr>
+    <td><code>uk_UA</code></td>
+    <td>烏克蘭文</td>
+    <td>Ukrainian</td>
   </tr>
   <tr>
     <td><code>vi_VN</code></td>
@@ -1018,7 +1086,7 @@ td><code>de_DE@euro</code></td>
     <td>Vietnamese</td>
   </tr>
   <tr>
-    <td><code>wa_BE@euro</code></td>
+    <td><code>wa_BE</code></td>
     <td>華隆文</td>
     <td>Walloon</td>
   </tr>
@@ -1065,7 +1133,7 @@ td><code>de_DE@euro</code></td>
       <p>例如在 Bourne Shell (BASH) 中：</p>
     
       <blockquote><code>
-        export&nbsp;LANG=zh_TW.Big5&nbsp;;&nbsp;\<br>
+        export&nbsp;LANG=zh_TW.UTF-8&nbsp;;&nbsp;\<br>
         tuxpaint
       </code></blockquote>
     
@@ -1073,7 +1141,7 @@ td><code>de_DE@euro</code></td>
       <p>在 C Shell (TCSH) 中：</p>
     
       <blockquote><code>
-        setenv&nbsp;LANG&nbsp;zh_TW.Big5&nbsp;;&nbsp;\<br>
+        setenv&nbsp;LANG&nbsp;zh_TW.UTF-8&nbsp;;&nbsp;\<br>
         tuxpaint
       </code></blockquote>
     </blockquote>
