@@ -7,7 +7,7 @@ bill@newbreedsoftware.com
 http://www.newbreedsoftware.com/tuxpaint/
 
 
-June 17, 2002 - October 24, 2005
+June 17, 2002 - November 3, 2005
 
 
 * Design and Coding:
@@ -290,8 +290,9 @@ June 17, 2002 - October 24, 2005
   * Debian Linux packages
     Ben Armstrong <synrg@sanctuary.nslug.ns.ca>
 
-  * RedHat Linux / Fedora Core packages
+  * RedHat Linux / Fedora Core packages and RPM spec file
     TOYAMA Shin-ichi <shin1@wmail.plala.or.jp>
+    Richard June <rjune[AT]lumensoftware.com>
 
   * NetBSD packages
     Thomas Klausner <wiz@danbala.ifoer.tuwien.ac.at>

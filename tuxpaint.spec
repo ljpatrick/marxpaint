@@ -1,12 +1,13 @@
 Summary: A drawing program for young children
 Name: tuxpaint
-Version: 0.9.15
-Release: 1
+Version: 0.9.14
+Release: 0.lumen.0
 License: GPL
 Group: Multimedia/Graphics
 URL: http://www.newbreedsoftware.com/tuxpaint/
 Source0: %{name}-%{version}.tar.gz
-BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-root
+patch1:  tuxpaint-DESTDIR.patch
+BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
 Requires: SDL >= 1.2.4 SDL_image SDL_mixer SDL_ttf libpng zlib
 BuildRequires: SDL-devel >= 1.2.4 SDL_image-devel SDL_mixer-devel SDL_ttf-devel
 BuildRequires: libpng-devel zlib-devel gettext
@@ -24,13 +25,23 @@ such as sound effects.
 
 %prep
 %setup -q
+%patch1 -p1
 
 %build
-make PREFIX=/usr
+make PREFIX=%{_prefix}
 
 %install
 rm -rf $RPM_BUILD_ROOT
-make PREFIX=/usr PKG_ROOT=$RPM_BUILD_ROOT install
+mkdir -p $RPM_BUILD_ROOT/%{_sysconfdir}
+mkdir -p $RPM_BUILD_ROOT/%{_bindir}
+mkdir -p $RPM_BUILD_ROOT/%{_datadir}
+mkdir -p $RPM_BUILD_ROOT/%{_mandir}
+mkdir -p $RPM_BUILD_ROOT/%{_datadir}/applications
+
+make PREFIX=%{_prefix} DESTDIR=$RPM_BUILD_ROOT install
+mv $RPM_BUILD_ROOT/share/gnome/apps/Graphics/tuxpaint.desktop $RPM_BUILD_ROOT%{_datadir}/applications
+rm -R $RPM_BUILD_ROOT/share
+
 
 find $RPM_BUILD_ROOT -name tuxpaint.desktop | sort | \
     sed -e "s@$RPM_BUILD_ROOT@@g" > filelist.icons
@@ -49,23 +60,27 @@ rm -rf $RPM_BUILD_ROOT
 
 %files -f filelist.icons
 %defattr(-,root,root,-)
+%config(noreplace) %{_sysconfdir}/tuxpaint/tuxpaint.conf
 %doc docs/*
+%{_datadir}/tuxpaint/*
 
 %defattr(0755, root, root)
-/usr/bin/*
+%{_bindir}/*
 
 %defattr(0644, root, root)
-/usr/share/locale/*/LC_MESSAGES/tuxpaint.mo
-/usr/share/man/man1/*
-/usr/share/man/*/man1/tuxpaint.1.gz
-
-%config(noreplace) /etc/tuxpaint/tuxpaint.conf
-
-
-%defattr(-, root, root)
-/usr/share/tuxpaint/*
+%{_datadir}/locale/*/LC_MESSAGES/tuxpaint.mo
+%{_datadir}/man/man1/*
+%{_datadir}/man/*/man1/tuxpaint.1.gz
 
 %changelog
+* Thu Nov 03 2005  Richard June <rjune[AT]lumensoftware.com - 0:0.9.14-0.lumen.0
+- Ported from CVS for 0.9.15
+- Replaced all instances of absolute paths with macro counterparts
+- Reset buildroot to incorporate username of the builder
+- Set Release value to 0.lumen.0 ( so as not to clobber any distros that provide it)
+- Set a proper %changelog entry
+
+
 * Thu Sep 15 2005  <shin1@wmail.plala.or.jp> -
 - Do not force install desktop icons when Gnome and/or KDE are not installed.
 

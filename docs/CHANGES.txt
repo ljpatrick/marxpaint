@@ -7,7 +7,7 @@ bill@newbreedsoftware.com
 http://www.newbreedsoftware.com/tuxpaint/
 
 
-2005.October.24 (0.9.15)
+2005.November.3 (0.9.15)
 
   * Speed improvements:
     -------------------
@@ -304,6 +304,14 @@ http://www.newbreedsoftware.com/tuxpaint/
     * Added BeOS resource file (src/tuxpaint.rsrc)
       Marcin 'Shard' Konicki <shard at beosjournal.org>
   
+    * Replaced all instances of absolute paths with macro counterparts in
+      "tuxpaint.spec" file.
+      Richard June <rjune[AT]lumensoftware.com>
+    
+    * Reset buildroot in "tuxpaint.spec" to incorporate username of the
+      builder.
+      Richard June <rjune[AT]lumensoftware.com>
+    
     * Added "PKG_ROOT" variable to Makefile, and "tuxpaint.spec" file,
       for Tux Paint RPM building ease.
       TOYAMA Shin-ichi <shin1@wmail.plala.or.jp>
