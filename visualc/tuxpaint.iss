@@ -7,7 +7,7 @@
 ;
 
 #define PublisherName "New Breed Software"
-#define PublisherURL  "http://www.newbreedsoftware.com/tuxpaint/"
+#define PublisherURL  "{code:MyPublisherURL}"
 
 #define AppName       "Tux Paint"
 #define AppDirName    "TuxPaint"
@@ -20,8 +20,8 @@
 #define AppExe        AppPrefix+".exe"
 #define AppConfigName AppName+" Config"
 #define AppConfigExe  AppPrefix+"-config.exe"
-#define AppReadme     "docs\html\README.html"
-#define AppLicence    "docs\COPYING.txt"
+#define AppReadme     "{code:MyReadme}"
+#define AppLicence    "{code:MyLicence}"
 
 #define BdistDir      ".\bdist"
 #define AppVersion    GetStringFileInfo(BdistDir+"\"+AppExe, "FileVersion")
@@ -35,7 +35,7 @@ AppSupportURL={#PublisherURL}
 AppUpdatesURL={#PublisherURL}
 DefaultDirName={pf}\{#AppDirName}
 DefaultGroupName={#AppGroupName}
-LicenseFile={#BdistDir}\{#AppLicence}
+LicenseFile={#BdistDir}\docs\COPYING.txt
 OutputDir=.\
 OutputBaseFilename={#AppPrefix}-{#AppVersion}-win32-installer
 SetupIconFile={#BdistDir}\data\images\icon-win32.ico
@@ -44,20 +44,28 @@ SolidCompression=yes
 
 [Languages]
 Name: "eng"; MessagesFile: "compiler:Default.isl"
-Name: "bra"; MessagesFile: "compiler:Languages\BrazilianPortuguese.isl"
-Name: "cat"; MessagesFile: "compiler:Languages\Catalan.isl"
-Name: "cze"; MessagesFile: "compiler:Languages\Czech.isl"
-Name: "dan"; MessagesFile: "compiler:Languages\Danish.isl"
-Name: "dut"; MessagesFile: "compiler:Languages\Dutch.isl"
-Name: "fre"; MessagesFile: "compiler:Languages\French.isl"
-Name: "ger"; MessagesFile: "compiler:Languages\German.isl"
+Name: "bra"; MessagesFile: "compiler:Languages\BrazilianPortuguese.isl"; LicenseFile: {#BdistDir}\docs\pt_br\COPYING_pt_BR.txt;
+Name: "cat"; MessagesFile: "compiler:Languages\Catalan.isl"; LicenseFile: {#BdistDir}\docs\ca\COPYING.txt;
+Name: "cze"; MessagesFile: "compiler:Languages\Czech.isl"; LicenseFile: {#BdistDir}\docs\cs\COPYING.txt;
+Name: "dan"; MessagesFile: "compiler:Languages\Danish.isl"; LicenseFile: {#BdistDir}\docs\da\COPYING.txt;
+Name: "dut"; MessagesFile: "compiler:Languages\Dutch.isl"; LicenseFile: {#BdistDir}\docs\nl\COPYING_nl.txt;
+Name: "fre"; MessagesFile: "compiler:Languages\French.isl"; LicenseFile: {#BdistDir}\docs\fr\COPIER.txt;
+Name: "ger"; MessagesFile: "compiler:Languages\German.isl"; LicenseFile: {#BdistDir}\docs\de\KOPIE.txt;
 Name: "hun"; MessagesFile: "compiler:Languages\Hungarian.isl"
-Name: "ita"; MessagesFile: "compiler:Languages\Italian.isl"
+Name: "ita"; MessagesFile: "compiler:Languages\Italian.isl"; LicenseFile: {#BdistDir}\docs\it\COPIATURA.txt;
 Name: "nor"; MessagesFile: "compiler:Languages\Norwegian.isl"
-Name: "pol"; MessagesFile: "compiler:Languages\Polish.isl"
+Name: "pol"; MessagesFile: "compiler:Languages\Polish.isl"; LicenseFile: {#BdistDir}\docs\pl\LICENCJA-GNU.txt;
 Name: "por"; MessagesFile: "compiler:Languages\Portuguese.isl"
 Name: "rus"; MessagesFile: "compiler:Languages\Russian.isl"
 Name: "slo"; MessagesFile: "compiler:Languages\Slovenian.isl"
+
+; Additional, Candidate official translations
+Name: "chs"; MessagesFile: "compiler:Languages\ChineseSimp-11-5.1.0.isl"
+
+; Additional, Unofficial translations
+Name: "esp"; MessagesFile: "compiler:Languages\SpanishStd-2-5.1.0.isl"; LicenseFile: {#BdistDir}\docs\es\COPIADO.txt;
+Name: "gal"; MessagesFile: "compiler:Languages\Galician-2-5.1.0.isl"
+Name: "cht"; MessagesFile: "compiler:Languages\ChineseTrad-2-5.1.0.isl"
 
 [Tasks]
 Name: "desktopicon"; Description: "{cm:CreateDesktopIcon}"; GroupDescription: "{cm:AdditionalIcons}"; Flags: unchecked
@@ -123,6 +131,11 @@ end;
 function NotRestricted(): Boolean;
 begin
   Result := not Restricted()
+end;
+
+function Is9xME(): Boolean;
+begin
+  Result := not UsingWinNT()
 end;
 
 function CurrentUserOnly(): Boolean;
@@ -216,5 +229,154 @@ begin
   CreateTheWizardPages;
 end;
 
-#expr SaveToFile(AddBackslash(SourcePath) + "Preprocessed.iss")
+function Lang2Gettext(): String;
+var
+  lang, lc: String;
+begin
+  lang := ActiveLanguage();
+
+  if lang = 'bra' then
+    lc := 'pt_br'
+  else
+  if lang = 'cat' then
+    lc := 'ca'
+  else
+  if lang = 'cze' then
+    lc := 'cs'
+  else
+  if lang = 'dan' then
+    lc := 'da'
+  else
+  if lang = 'dut' then
+    lc := 'nl'
+  else
+  if lang = 'fre' then
+    lc := 'fr'
+  else
+  if lang = 'ger' then
+    lc := 'de'
+  else
+  if lang = 'hun' then
+    lc := 'hu'
+  else
+  if lang = 'ita' then
+    lc := 'it'
+  else
+  if lang = 'nor' then
+    lc := 'nn'
+  else
+  if lang = 'pol' then
+    lc := 'pl'
+  else
+  if lang = 'por' then
+    lc := 'pt'
+  else
+  if lang = 'rus' then
+    lc := 'ru'
+  else
+  if lang = 'slo' then
+    lc := 'sk'
+  else
+  if lang = 'chs' then
+    lc := 'zh_cn'
+  else
+  if lang = 'esp' then
+    lc := 'es'
+  else
+  if lang = 'gal' then
+    lc := 'gl'
+  else
+  if lang = 'cht' then
+    lc := 'zh_tw'
+  else
+    lc := 'en'
+  Result := lc
+end;
+
+function MyReadme(Default: String): String;
+var
+  lang, readme: String;
+begin
+  lang := Lang2Gettext();
+
+  if lang = 'nl' then
+    readme := 'nl\html\README.html'
+  else
+  if lang = 'fr' then
+    readme := 'fr\html\README1.html'
+  else
+  if lang = 'it' then
+    readme := 'it\html\README.html'
+  else
+  if lang = 'es' then
+    readme := 'es\html\LEEME.html'
+  else
+  if lang = 'gl' then
+    readme := 'gl\html\README.html'
+  else
+  if lang = 'zh_tw' then
+    readme := 'zh_tw\html\README.html'
+  else
+    readme := 'html\README.html'
+
+  Result := 'docs\'+readme
+end;
+
+function MyLicence(Default: String): String;
+var
+  lang, licence: String;
+begin
+  lang := Lang2Gettext();
+
+  if lang = 'pt_br' then
+    licence := 'pt_br\COPYING_pt_BR.txt'
+  else
+  if lang = 'ca' then
+    licence := 'ca\COPYING.txt'
+  else
+  if lang = 'cs' then
+    licence := 'cs\COPYING.txt'
+  else
+  if lang = 'da' then
+    licence := 'da\COPYING.txt'
+  else
+  if lang = 'nl' then
+    licence := 'nl\COPYING_nl.txt'
+  else
+  if lang = 'fr' then
+    licence := 'fr\COPIER.txt'
+  else
+  if lang = 'de' then
+    licence := 'de\KOPIE.txt'
+  else
+  if lang = 'it' then
+    licence := 'it\COPIATURA.txt'
+  else
+  if lang = 'pl' then
+    licence := 'pl\LICENCJA-GNU.txt'
+  else
+  if lang = 'es' then
+    licence := 'es\COPIADO.txt'
+  else
+    licence := 'COPYING.txt'
+
+  Result := 'docs\'+licence
+end;
+
+function MyPublisherURL(Default: String): String;
+var
+  lang: String;
+begin
+  lang := Lang2Gettext();
+
+  if lang = 'chs' then
+    lang := 'zh-cn'
+  else
+  if lang = 'cht' then
+    lang := 'zh-tw'
+
+  Result := 'http://www.newbreedsoftware.com/tuxpaint/?lang='+lang
+end;
+
+#expr SaveToFile(AddBackslash(SourcePath) + 'Preprocessed.iss')
 
