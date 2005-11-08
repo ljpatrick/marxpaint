@@ -118,14 +118,12 @@ const
   CSIDL_COMMON_PROGRAMS = $0017;
   CSIDL_COMMON_DESKTOPDIRECTORY = $0019;
 var
+  InstallTypePageID: Integer;
   CheckListBox2: TNewCheckListBox;
 
 function Restricted(): Boolean;
 begin
-  if IsAdminLoggedOn() or IsPowerUserLoggedOn() then
-    Result := false
-  else
-    Result := true
+  Result := not (IsAdminLoggedOn() or IsPowerUserLoggedOn())
 end;
 
 function NotRestricted(): Boolean;
@@ -145,7 +143,7 @@ end;
 
 function ThisUserOnly(): Boolean;
 begin
-  Result := Restricted() or CurrentUserOnly()
+  Result := (Restricted() or CurrentUserOnly()) and UsingWinNT()
 end;
 
 function AllUsers(): Boolean;
@@ -200,6 +198,7 @@ var
   Enabled, InstallAllUsers: Boolean;
 begin
   Page := CreateCustomPage(wpLicense, 'Choose Installation Type', 'Who do you want to be able to use this program?');
+  InstallTypePageID := Page.ID;
   Enabled := NotRestricted();
   InstallAllUsers := NotRestricted();
   CheckListBox2 := TNewCheckListBox.Create(Page);
@@ -222,6 +221,11 @@ begin
   begin
     WizardForm.DirEdit.Text := MyAppDir();
   end
+end;
+
+function ShouldSkipPage(PageID: Integer): Boolean;
+begin
+  Result := (PageID = InstallTypePageID) and Is9xME();
 end;
 
 procedure InitializeWizard();
