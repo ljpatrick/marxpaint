@@ -81,7 +81,7 @@ Source: "{#BdistDir}\SDL_image.dll"; DestDir: "{app}"; Flags: ignoreversion
 Source: "{#BdistDir}\SDL_mixer.dll"; DestDir: "{app}"; Flags: ignoreversion
 Source: "{#BdistDir}\SDL_ttf.dll"; DestDir: "{app}"; Flags: ignoreversion
 Source: "{#BdistDir}\data\*"; DestDir: "{app}\data"; Excludes: "CVS"; Flags: ignoreversion recursesubdirs createallsubdirs
-Source: "{#BdistDir}\docs\*"; DestDir: "{app}\docs"; Excludes: "CVS"; Flags: ignoreversion recursesubdirs createallsubdirs
+Source: "{#BdistDir}\docs\*"; DestDir: "{app}\docs"; Excludes: "CVS,Makefile,*~"; Flags: ignoreversion recursesubdirs createallsubdirs
 Source: "{#BdistDir}\locale\*"; DestDir: "{app}\locale"; Excludes: "CVS"; Flags: ignoreversion recursesubdirs createallsubdirs
 Source: "{#BdistDir}\tuxpaint-config.exe"; DestDir: "{app}"; Flags: ignoreversion
 ; NOTE: Don't use "Flags: ignoreversion" on any shared system files
