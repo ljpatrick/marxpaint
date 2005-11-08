@@ -7708,7 +7708,6 @@ static void setup(int argc, char * argv[])
 
   /* Load options from global config file: */
 
-#ifndef WIN32
 
   /* Check to see if it's ok first: */
 
@@ -7726,7 +7725,12 @@ static void setup(int argc, char * argv[])
 
   if (ok_to_use_sysconfig)
     {
+#ifndef WIN32
       snprintf(str, sizeof(str), "%s/tuxpaint.conf", CONFDIR);
+#else
+      /* Global config file in the application directory on Windows */
+      strcpy(str, "tuxpaint.cfg");
+#endif
     
       fi = fopen(str, "r");
       if (fi != NULL)
@@ -7738,13 +7742,15 @@ static void setup(int argc, char * argv[])
 	debug(str);
     }
 
-#endif
 
 
   /* Load options from user's own configuration (".rc" / ".cfg") file: */
 
-#if defined(WIN32) || defined(__BEOS__)
-  /* Windows and BeOS: Use a "tuxpaint.cfg" file: */
+#if defined(WIN32)
+  /* Default local config file in users savedir directory on Windows */
+  snprintf(str, sizeof(str), "%s/tuxpaint.cfg", savedir);
+#elif defined(__BEOS__)
+  /* BeOS: Use a "tuxpaint.cfg" file: */
   
   strcpy(str, "tuxpaint.cfg");
 
