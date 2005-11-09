@@ -7,7 +7,7 @@ bill@newbreedsoftware.com
 http://www.newbreedsoftware.com/tuxpaint/
 
 
-2005.November.3 (0.9.15)
+2005.November.9 (0.9.15)
 
   * Speed improvements:
     -------------------
@@ -244,6 +244,13 @@ http://www.newbreedsoftware.com/tuxpaint/
 
   * Compiling, porting and packaging updates:
     -----------------------------------------
+    * Added support for system and user configuration files on Windows.
+      (The system 'tuxpaint.cfg' file is in the same directory as the
+      executable, the user 'tuxpaint.cfg' file is in the 'savedir'
+      location, e.g. 'C:\Documents and Settings\username\Application
+      Data\TuxPaint'.)
+      John Popplewell <john@johnnypops.demon.co.uk>
+
     * There's no longer a need to remove CVS-related things in 'tuxpaint.spec'.
       TOYAMA Shin-ichi <shin1@wmail.plala.or.jp>
 
