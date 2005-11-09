@@ -455,6 +455,7 @@ http://www.newbreedsoftware.com/tuxpaint/
     
     * Swedish
       Magnus Dahl <magnus.dahl@bredband.net>
+      Tomas Skäre <tomas@nocrew.org>
     
     * Vietnamese
       Clytie Siddall <clytie@riverland.net.au>
