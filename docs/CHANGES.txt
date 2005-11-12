@@ -166,6 +166,10 @@ http://www.newbreedsoftware.com/tuxpaint/
     * Gave Tux the Penguin a voice (e.g., during prompts)
       Voice: Daniel 'TuxthePenguin' Alston <supertuxfansite@gmail.com>
 
+    * Sound effects can be muted/unmuted while the program is running
+      by pressing the [Alt]+[S] keys.  (Note: does not enable sounds if
+      "nosound" is set in configuration file or via command-line.)
+
   * Printing improvements:
     ----------------------
     * Now printing directly via Postscript.

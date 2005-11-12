@@ -9,7 +9,7 @@
                            bill@newbreedsoftware.com
                    http://www.newbreedsoftware.com/tuxpaint/
 
-                                October 2, 2005
+                               November 12, 2005
 
    --------------------------------------------------------------------------
 
@@ -83,7 +83,9 @@ Windows Users
                 * 1600x1200
 
      nosound=yes
-             Disable sound effects.
+             Disable sound effects. (Note: Pressing [Alt] + [S] cannot be
+             used to reenable sounds if they were disabled using this
+             option.)
 
      noquit=yes
 
@@ -606,7 +608,7 @@ Available Languages
        |---------------+---------------------+---------------------|
        |br_FR          |Brezhoneg            |Breton               |
        |---------------+---------------------+---------------------|
-       |ca_ES          |Catal`a              |Catalan              |
+       |ca_ES          |Català               |Catalan              |
        |---------------+---------------------+---------------------|
        |cs_CZ          |Cesky                |Czech                |
        |---------------+---------------------+---------------------|
@@ -622,17 +624,17 @@ Available Languages
        |---------------+---------------------+---------------------|
        |en_GB          |                     |British English      |
        |---------------+---------------------+---------------------|
-       |es_ES          |Espanol              |Spanish              |
+       |es_ES          |Español              |Spanish              |
        |---------------+---------------------+---------------------|
-       |es_MX          |Espanol-Mejicano     |Mexican Spanish      |
+       |es_MX          |Español-Mejicano     |Mexican Spanish      |
        |---------------+---------------------+---------------------|
        |eu_ES          |Euskara              |Basque               |
        |---------------+---------------------+---------------------|
        |fi_FI          |Suomi                |Finnish              |
        |---------------+---------------------+---------------------|
-       |fr_FR          |Franc,ais            |French               |
+       |fr_FR          |Français             |French               |
        |---------------+---------------------+---------------------|
-       |ga_IE          |G`aidhlig            |Gaelic               |
+       |ga_IE          |Gàidhlig             |Gaelic               |
        |---------------+---------------------+---------------------|
        |gl_ES          |Galego               |Galician             |
        |---------------+---------------------+---------------------|
@@ -648,7 +650,7 @@ Available Languages
        |---------------+---------------------+---------------------|
        |id_ID          |Bahasa Indonesia     |Indonesian           |
        |---------------+---------------------+---------------------|
-       |is_IS          |Islenska             |Icelandic            |
+       |is_IS          |Íslenska             |Icelandic            |
        |---------------+---------------------+---------------------|
        |it_IT          |Italiano             |Italian              |
        |---------------+---------------------+---------------------|
@@ -660,7 +662,7 @@ Available Languages
        |---------------+---------------------+---------------------|
        |ms_MY          |                     |Malay                |
        |---------------+---------------------+---------------------|
-       |nb_NO          |Norsk (bokmaal)      |Norwegian Bokmaal    |
+       |nb_NO          |Norsk (bokmål)       |Norwegian Bokmål     |
        |---------------+---------------------+---------------------|
        |nn_NO          |Norsk (nynorsk)      |Norwegian Nynorsk    |
        |---------------+---------------------+---------------------|
@@ -668,9 +670,9 @@ Available Languages
        |---------------+---------------------+---------------------|
        |pl_PL          |Polski               |Polish               |
        |---------------+---------------------+---------------------|
-       |pt_BR          |Portuges Brazileiro  |Brazilian Portuguese |
+       |pt_BR          |Portugês Brazileiro  |Brazilian Portuguese |
        |---------------+---------------------+---------------------|
-       |pt_PT          |Portuges             |Portuguese           |
+       |pt_PT          |Portugês             |Portuguese           |
        |---------------+---------------------+---------------------|
        |ro_RO          |                     |Romanian             |
        |---------------+---------------------+---------------------|

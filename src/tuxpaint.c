@@ -22,7 +22,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
   
-  June 14, 2002 - October 22, 2005
+  June 14, 2002 - November 12, 2005
 */
 
 
@@ -1469,7 +1469,7 @@ static int use_sound, fullscreen, disable_quit, simple_shapes,
   dont_do_xor, use_print_config, dont_load_stamps, noshortcuts,
   no_system_fonts, no_button_distinction,
   mirrorstamps, disable_stamp_controls, disable_save, ok_to_use_lockfile,
-  alt_print_command_default;
+  alt_print_command_default, mute;
 static int want_alt_printcommand;
 static int starter_mirrored, starter_flipped;
 static int recording, playing;
@@ -2836,6 +2836,14 @@ static void mainloop(void)
 		{
 		  done = do_quit();
 		}
+	      else if (key == SDLK_s && (mod & KMOD_ALT))
+	        {
+		  if (use_sound)
+		  {
+		    mute = !mute;
+		    Mix_HaltChannel(-1);
+		  }
+	        }
 	      else if (key == SDLK_ESCAPE &&
 		       (mod & KMOD_SHIFT) && (mod & KMOD_CTRL))
 		{
@@ -3688,7 +3696,7 @@ static void mainloop(void)
                           if (toolopt_changed)
                             {
                               // Only play when picking a different stamp
-                              if (stamp_data[cur_thing]->ssnd != NULL)
+                              if (stamp_data[cur_thing]->ssnd != NULL && !mute)
                                 Mix_PlayChannel(2, stamp_data[cur_thing]->ssnd, 0);
                             }
 #endif
@@ -7658,6 +7666,7 @@ static void setup(int argc, char * argv[])
   /* Set default options: */
 
   use_sound = 1;
+  mute = 0;
   fullscreen = 0;
   noshortcuts = 0;
   dont_do_xor = 0;
@@ -10689,7 +10698,7 @@ static void render_brush(void)
 static void playsound(int chan, int s, int override)
 {
 #ifndef NOSOUND
-  if (use_sound && s != SND_NONE)
+  if (!mute && use_sound && s != SND_NONE)
     {
       if (override || !Mix_Playing(chan))
 	Mix_PlayChannel(chan, sounds[s], 0);
@@ -10839,7 +10848,7 @@ static void do_eraser(int x, int y)
 
 
 #ifndef NOSOUND
-  if (use_sound)
+  if (!mute && use_sound)
     {
       if (!Mix_Playing(0))
 	{

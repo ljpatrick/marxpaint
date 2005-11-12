@@ -9,7 +9,7 @@
                            bill@newbreedsoftware.com
                    http://www.newbreedsoftware.com/tuxpaint/
 
-                        June 14, 2002 - October 14, 2005
+                       June 14, 2002 - November 12, 2005
 
    --------------------------------------------------------------------------
 
@@ -624,6 +624,19 @@ Available Tools
                  If neither of those are possible, the key sequence of
                  [Shift] + [Control] + [Escape] may be used to quit. (See the
                  "Options" documentation.)
+
+         Sound Muting
+
+                 There is no on-screen control button at this time, but by
+                 pressing [Alt] + [S], sound effects can be disabled and
+                 re-enabled (muted and unmuted) while the program is running.
+
+                 Note that if sounds are completely disabled (e.g., by
+                 unselecting "Enable Sound Effects" in Tux Paint Config or
+                 running Tux Paint with the "--nosound" command-line option),
+                 the [Alt] + [S] key sequence has no effect. (i.e., it cannot
+                 be used to turn on sounds when the parent/teach wants them
+                 disabled.)
 
    --------------------------------------------------------------------------
 
