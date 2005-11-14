@@ -7,7 +7,7 @@ bill@newbreedsoftware.com
 http://www.newbreedsoftware.com/tuxpaint/
 
 
-2005.November.9 (0.9.15)
+2005.November.14 (0.9.15)
 
   * Speed improvements:
     -------------------
@@ -422,6 +422,7 @@ http://www.newbreedsoftware.com/tuxpaint/
   
     * German
       Patrick <nc-spechtpa3 [At] netcologne DOT de>
+      Burkhard Lück <lueck@hube-lueck.de>
 
     * Greek
       The Greek Linux i18n Team <i18ngr@lists.hellug.gr>

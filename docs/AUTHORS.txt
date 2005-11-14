@@ -7,7 +7,7 @@ bill@newbreedsoftware.com
 http://www.newbreedsoftware.com/tuxpaint/
 
 
-June 17, 2002 - November 8, 2005
+June 17, 2002 - November 14, 2005
 
 
 * Design and Coding:
@@ -151,6 +151,7 @@ June 17, 2002 - November 8, 2005
     Fabian Franz <FabianFranz@gmx.de>
     Roland Illig <roland.illig@gmx.de>
     Patrick <nc-spechtpa3 {At} netcologne [Dot] de>
+    Burkhard Lück <lueck@hube-lueck.de>
 
   * Gronings
     J.F.M. Lange <jfm.lange@hky.de>

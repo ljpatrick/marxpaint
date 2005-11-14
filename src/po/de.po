@@ -1,19 +1,23 @@
+# translation of de.po to Deutsch
 # Tux Paint german messages.
-# Copyright (C) 2002 Free Software Foundation, Inc.
+# Copyright (C) 2002, 2005 Free Software Foundation, Inc.
 # Fabian Franz <FabianFranz@gmx.de>, 2002.
 # Roland Illig <roland.illig@gmx.de>, 2004.
+# Burkhard Lück <lueck@hube-lueck.de>, 2005.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: tuxpaint 0.9.14.1\n"
+"Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2005-10-10 00:12-0700\n"
-"PO-Revision-Date: 2005-03-09 11:02+0100\n"
-"Last-Translator: Patrick <anonymous@germany.de>\n"
-"Language-Team: German <de@li.org>\n"
+"PO-Revision-Date: 2005-11-12 15:29+0100\n"
+"Last-Translator: Burkhard Lück <lueck@hube-lueck.de>\n"
+"Language-Team: Deutsch <kde-i18n-de@kde.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.9.1\n"
+"Plural-Forms:  nplurals=2; plural=(n != 1);\n"
 
 msgid "A drawing program for children."
 msgstr "Ein Malprogramm für Kinder."
@@ -28,10 +32,10 @@ msgid "Black!"
 msgstr "Schwarz!"
 
 msgid "Dark grey! Some people spell it “dark gray”."
-msgstr ""
+msgstr "Dunkelgrau!"
 
 msgid "Light grey! Some people spell it “light gray”."
-msgstr ""
+msgstr "Hellgrau!"
 
 msgid "White!"
 msgstr "Weiß!"
@@ -45,13 +49,11 @@ msgstr "Orange!"
 msgid "Yellow!"
 msgstr "Gelb!"
 
-#, fuzzy
 msgid "Light green!"
-msgstr "Hellgrau!"
+msgstr "Hellgrün!"
 
-#, fuzzy
 msgid "Dark green!"
-msgstr "Abdunkeln"
+msgstr "Dunkelgrün!"
 
 msgid "Sky blue!"
 msgstr "Himmelblau!"
@@ -60,13 +62,13 @@ msgid "Blue!"
 msgstr "Blau!"
 
 msgid "Lavender!"
-msgstr ""
+msgstr "Lavendelfarben!"
 
 msgid "Purple!"
 msgstr "Lila!"
 
 msgid "Pink!"
-msgstr "Rosa/Hautfarben!"
+msgstr "Rosa!"
 
 msgid "Brown!"
 msgstr "Braun!"
@@ -110,9 +112,8 @@ msgstr "Unscharf"
 msgid "Smudge"
 msgstr "Verwischen"
 
-#, fuzzy
 msgid "Lighten"
-msgstr "Hellgrau!"
+msgstr "Aufhellen"
 
 msgid "Darken"
 msgstr "Abdunkeln"
@@ -144,9 +145,8 @@ msgstr "Umdrehen"
 msgid "Click in the picture to fill that area with color."
 msgstr "Klick in das Bild, um einen Bereich mit Farbe auszufüllen."
 
-#, fuzzy
 msgid "Click and move to draw grass. Don’t forget the dirt!"
-msgstr "Klick und bewege die Maus, um Grass zu malen."
+msgstr "Klick und bewege die Maus, um Gras zu malen. Vergiss die Erde nicht!"
 
 msgid "Click and move to draw large bricks."
 msgstr "Klick und bewege die Maus, um große Blöcke zu machen."
@@ -167,14 +167,13 @@ msgid "Click and move the mouse around to smudge the picture."
 msgstr "Klick und bewege die Maus, um das Bild zu verwischen."
 
 msgid "Click and move to fade the colors."
-msgstr "Klick und beweg die Maus um die Farben zu verblassen!"
+msgstr "Klick und bewege die Maus, um die Farben zu verblassen!"
 
 msgid "Click and move to darken the colors."
-msgstr "Klick und beweg die Maus um die Farben abzudunkeln!"
+msgstr "Klick und bewege die Maus, um die Farben abzudunkeln!"
 
-msgid ""
-"Click and move the mouse around to turn the picture into a chalk drawing."
-msgstr "Klick und beweg die Maus um dein Bild in ein Kreidebild zu verwandeln!"
+msgid "Click and move the mouse around to turn the picture into a chalk drawing."
+msgstr "Klick und bewege die Maus, um dein Bild in ein Kreidebild zu verwandeln!"
 
 msgid "Click and move the mouse around to make the picture blocky."
 msgstr "Klick und bewege die Maus, um das Bild pixelig zu machen."
@@ -182,21 +181,20 @@ msgstr "Klick und bewege die Maus, um das Bild pixelig zu machen."
 msgid "Click and move the mouse around to draw a negative."
 msgstr "Klick und bewege die Maus, um ein Negativ zu machen."
 
-#, fuzzy
 msgid "Click and move the mouse around to change the picture’s color."
-msgstr "Klick und bewege die Maus, um die Farben des Bildes umzuwandeln."
+msgstr "Klick und bewege die Maus, um die Farben des Bildes zu ändern."
 
 msgid "Click and move the mouse around to make the picture drip."
 msgstr "Klick und bewege die Maus, um das Bild tropfen zu lassen."
 
 msgid "Click and move the mouse around to turn the picture into a cartoon."
-msgstr "Klick und beweg die Maus um dein Bild in einen Comic zu verwandeln!"
+msgstr "Klick und bewege die Maus, um dein Bild in einen Comic zu verwandeln!"
 
 msgid "Click to make a mirror image."
-msgstr "Klick, um das Bild zu spiegeln."
+msgstr "Klicke, um das Bild zu spiegeln."
 
 msgid "Click to flip the picture upside-down."
-msgstr "Klick, um das Bild auf den Kopf zu stellen."
+msgstr "Klicke, um das Bild auf den Kopf zu stellen."
 
 msgid "Square"
 msgstr "Quadrat"
@@ -208,7 +206,7 @@ msgid "Circle"
 msgstr "Kreis"
 
 msgid "Ellipse"
-msgstr ""
+msgstr "Ellipse"
 
 msgid "Triangle"
 msgstr "Dreieck"
@@ -217,31 +215,32 @@ msgid "Pentagon"
 msgstr "Fünfeck"
 
 msgid "Rhombus"
-msgstr ""
+msgstr "Raute"
 
-#, fuzzy
 msgid "A square is a rectangle with four equal sides."
-msgstr "Das Rechteck hat 4 Seiten."
+msgstr "Ein Quadrat ist ein Rechteck mit vier gleich langen Seiten."
 
-#, fuzzy
 msgid "A rectangle has four sides and four right angles."
-msgstr "Das Rechteck hat 4 Seiten."
+msgstr "Ein Rechteck hat vier Seiten und vier rechte Winkel."
 
-msgid ""
-"A circle is a curve where all points have the same distance from the centre."
+msgid "A circle is a curve where all points have the same distance from the centre."
 msgstr ""
+"Ein Kreis ist eine Kurve, auf der alle Punkte den gleichen Abstand vom "
+"Mittelpunkt haben."
 
 msgid "An ellipse is a stretched circle."
-msgstr ""
+msgstr "Eine Ellipse ist ein gestreckter Kreis."
 
 msgid "A triangle has three sides."
-msgstr "Das Dreieck hat drei Seiten."
+msgstr "Ein Dreieck hat drei Seiten."
 
 msgid "A pentagon has five sides."
-msgstr "Das Fünfeck hat fünf Seiten."
+msgstr "Ein Fünfeck hat fünf Seiten."
 
 msgid "A rhombus has four equal sides, and opposite sides are parallel."
 msgstr ""
+"Eine Raute hat vier gleich lange Seiten, gegenüberliegende Seiten sind "
+"parallel."
 
 msgid "Tools"
 msgstr "Werkzeuge"
@@ -305,20 +304,20 @@ msgid "Quit"
 msgstr "Beenden"
 
 msgid "Pick a color and a brush shape to draw with."
-msgstr "Wähl eine Farbe und eine Pinselform zum Malen."
+msgstr "Wähle eine Farbe und eine Pinselform zum Malen."
 
 msgid "Pick a picture to stamp around your drawing."
 msgstr "Wähle ein Bild zum Stempeln."
 
 msgid "Click to start drawing a line. Let go to complete it."
-msgstr "Klick und halte die Maustaste gedrückt, um eine Linie zu malen."
+msgstr "Klicke und halte die Maustaste gedrückt, um eine Linie zu malen."
 
 msgid ""
 "Pick a shape. Click to pick the center, drag, then let go when it is the "
 "size you want. Move around to rotate it, and click to draw it."
 msgstr ""
-"Wähle eine Form. Klick, um die Mitte zu wählen, ziehe, dann lass los, wenn "
-"es die richtige Größe hat. Bewege die Maus, um es zu drehen und klick, um es "
+"Wähle eine Form. Klicke, um die Mitte zu wählen, ziehe, dann lass los, wenn "
+"es die richtige Größe hat. Bewege die Maus, um es zu drehen und klicke, um es "
 "zu zeichnen."
 
 msgid "Choose a style of text. Click on your drawing and you can start typing."
@@ -346,7 +345,7 @@ msgid "You now have a blank sheet to draw on!"
 msgstr "Du hast jetzt ein neues leeres Bild um darauf zu malen!"
 
 #. Open
-msgid "Open…"
+msgid "Open�"
 msgstr "Öffnen..."
 
 #. Save
@@ -354,7 +353,7 @@ msgid "Your image has been saved!"
 msgstr "Dein Bild wurde gespeichert!"
 
 #. Print
-msgid "Printing…"
+msgid "Printing�"
 msgstr "Drucke..."
 
 #. Quit
@@ -365,12 +364,12 @@ msgid "Let go of the button to complete the line."
 msgstr "Lass die Maustaste los, wenn du mit der Linie zufrieden bist."
 
 msgid "Hold the button to stretch the shape."
-msgstr "Halt die Maustaste gedrückt um die Form in der Größe zu verändern."
+msgstr "Halt die Maustaste gedrückt, um die Form in der Größe zu verändern."
 
 msgid "Move the mouse to rotate the shape. Click to draw it."
-msgstr "Bewege die Maus um die Form zu drehen. Klick, wenn du zufrieden bist."
+msgstr "Bewege die Maus, um die Form zu drehen. Klick, wenn du zufrieden bist."
 
-msgid "OK then… Let’s keep drawing this one!"
+msgid "OK then� Let’s keep drawing this one!"
 msgstr "OK, dann lass uns dieses Bild weitermalen!"
 
 #. FIXME: Move elsewhere!!!
@@ -423,31 +422,31 @@ msgid "Erase this picture?"
 msgstr "Möchtest du dieses Bild löschen?"
 
 msgid "Remember to use the left mouse button!"
-msgstr ""
+msgstr "Denke dran, die linke Maustaste zu benutzen!"
 
 msgid "jq"
-msgstr ""
+msgstr "jq"
 
 msgid "JQ"
-msgstr ""
+msgstr "JQ"
 
 msgid "oO"
-msgstr ""
+msgstr "oO"
 
 msgid "`\\%_@$~#{}<>^&*"
-msgstr ""
+msgstr "`\\%_@$~#{}<>^&*"
 
 msgid ",.?!"
-msgstr ""
+msgstr ",.?!"
 
 msgid "017"
-msgstr ""
+msgstr "017"
 
 msgid "O0"
-msgstr ""
+msgstr "O0"
 
 msgid "1Il|"
-msgstr ""
+msgstr "1Il|"
 
 msgid "Erase"
 msgstr "Löschen"
@@ -466,52 +465,5 @@ msgid "No, save a new file"
 msgstr "Nein, in eine neue Datei!"
 
 msgid "Choose the picture you want, then click “Open”."
-msgstr "Wähle ein Bild, dass du öffnen willst und klick auf 'Öffnen'"
+msgstr "Wähle ein Bild, dass du öffnen willst und klick auf 'Öffnen'."
 
-#~ msgid "Dark Gray!"
-#~ msgstr "Dunkelgrau!"
-
-#~ msgid "Neon green!"
-#~ msgstr "Neon Grün!"
-
-#~ msgid "Green!"
-#~ msgstr "Grün!"
-
-#~ msgid "Magenta!"
-#~ msgstr "Rosarot!"
-
-#~ msgid "Fade"
-#~ msgstr "Verblassen"
-
-#~ msgid "Oval"
-#~ msgstr "Ellipse"
-
-#~ msgid "Diamond"
-#~ msgstr "Raute"
-
-#~ msgid "A square has four sides, each the same length."
-#~ msgstr "Das Quadrat hat vier Seiten, jede mit der gleichen Länge."
-
-#~ msgid "A circle is exactly round."
-#~ msgstr "Der Kreis ist exakt rund."
-
-#~ msgid "A diamond is a square, turned around slightly."
-#~ msgstr "Eine Raute ist ein Quadrat, welches seitlich gedreht ist."
-
-#~ msgid "Lime!"
-#~ msgstr "Hellgrün!"
-
-#~ msgid "Fuchsia!"
-#~ msgstr "Flieder!"
-
-#~ msgid "Silver!"
-#~ msgstr "Silber!"
-
-#~ msgid "Thick"
-#~ msgstr "Dick"
-
-#~ msgid "Click and move the mouse to thicken the picture."
-#~ msgstr "Klicke und bewege die Maus, um das Bild dicker zu machen."
-
-#~ msgid "Click and move the mouse to thin the picture."
-#~ msgstr "Klicke und bewege die Maus, um das Bild dünner zu machen."
