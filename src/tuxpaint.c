@@ -22,7 +22,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
   
-  June 14, 2002 - November 12, 2005
+  June 14, 2002 - November 15, 2005
 */
 
 
@@ -73,7 +73,7 @@
 #elif defined(PRINTMETHOD_PS)
 #define ALTPRINTCOMMAND DEFAULT_ALTPRINTCOMMAND
 #else
-#error No print method defined!
+#error No alt print method defined!
 #endif
 
 
@@ -301,7 +301,8 @@ extern WrapperData macosx;
 #ifndef FORKED_FONTS
 static SDL_Thread *font_thread;
 #endif
-static volatile long font_thread_done = 0;
+static volatile long font_thread_done = 0, font_thread_aborted = 0;
+static volatile long waiting_for_fonts = 0;
 static void run_font_scanner(void);
 static int font_scanner_pid;
 static int font_socket_fd;
@@ -2451,6 +2452,7 @@ static void do_wait(int counter)
 static void eat_sdl_events(void)
 {
   SDL_Event event;
+  
   while (SDL_PollEvent(&event))
     {
       if (event.type == SDL_QUIT)
@@ -2465,14 +2467,19 @@ static void eat_sdl_events(void)
           SDLKey key  = event.key.keysym.sym;
           SDLMod ctrl = event.key.keysym.mod & KMOD_CTRL;
           SDLMod alt  = event.key.keysym.mod & KMOD_ALT;
-          if (/* key==SDLK_ESCAPE || */ (key==SDLK_c && ctrl) || (key==SDLK_F4 && alt))
+          if ((key==SDLK_c && ctrl) || (key==SDLK_F4 && alt))
 	  {
             SDL_Quit();
             exit(0);
 	  }
-          else if (key==SDLK_ESCAPE)
+          else if (key==SDLK_ESCAPE && waiting_for_fonts)
 	  {
-	    /* FIXME: Abort font loading! */
+	    /* abort font loading! */
+
+	    printf("Aborting font load!\n");
+
+	    font_thread_aborted = 1;
+	    //waiting_for_fonts = 0;
 	  }
 	  else
             bypass_splash_wait = 1;
@@ -3149,10 +3156,11 @@ static void mainloop(void)
                               update_screen_rect(&r_ttoolopt);
   			      do_setcursor(cursor_watch);
                               draw_tux_text(TUX_WAIT, gettext("Please wait..."), 1);
+			      waiting_for_fonts = 1;
 #ifdef FORKED_FONTS
                               receive_some_font_info();
 #else
-                              while(!font_thread_done)
+                              while(!font_thread_done && !font_thread_aborted)
                                 {
                                   // FIXME: should have a read-depends memory barrier around here
                                   show_progress_bar();
@@ -5947,20 +5955,23 @@ static void blit_magic(int x, int y, int button_down)
       else if (cur_magic == MAGIC_CARTOON)
 	{
 	  float hue, sat, val;
+	  float hue1, sat1, val1;
+	  float hue2, sat2, val2;
 	  Uint8 r1, g1, b1, r2, g2, b2, r3, g3, b3, r4, g4, b4;
-          Uint32 (*getpixel)(SDL_Surface *, int, int) = getpixels[canvas->format->BytesPerPixel];
+          Uint32 (*getpixel)(SDL_Surface *, int, int) = getpixels[last->format->BytesPerPixel];
 	  
 	  SDL_LockSurface(last);
 	  SDL_LockSurface(canvas);
 
 	  /* First, convert colors to more cartoony ones: */
 
-	  for (yy = y - 16; yy < y + 16; yy = yy + 2)
+	  for (yy = y - 16; yy < y + 16; yy = yy + 1)
 	    {
-	      for (xx = x - 16; xx < x + 16; xx = xx + 2)
+	      for (xx = x - 16; xx < x + 16; xx = xx + 1)
 		{
 		  /* Get original color: */
-		
+	
+			/*
 		  SDL_GetRGB(getpixel_last(last, xx, yy),
 		             last->format, &r1, &g1, &b1);
 		  SDL_GetRGB(getpixel_last(last, xx + 1, yy),
@@ -5973,16 +5984,21 @@ static void blit_magic(int x, int y, int button_down)
 		  r = (r1 + r2 + r3 + r4) / 4;
 		  g = (g1 + g2 + g3 + g4) / 4;
 		  b = (b1 + b2 + b3 + b4) / 4;
+*/
+		  SDL_GetRGB(getpixel_last(last, xx, yy),
+		             last->format, &r, &g, &b);
 
 		  rgbtohsv(r, g, b, &hue, &sat, &val);
 
+		  /*
 		  if (sat <= 0.2)
 		    sat = 0.0;
 		  else if (sat <= 0.7)
 		    sat = 0.5;
 		  else
 		    sat = 1.0;
-		
+		*/
+
 		  val = val - 0.5;
 		  val = val * 4;
 		  val = val + 0.5;
@@ -5995,16 +6011,20 @@ static void blit_magic(int x, int y, int button_down)
 		  val = floor(val * 4) / 4;
 		  hue = floor(hue * 4) / 4;
 
+		  sat = floor(sat * 4) / 4;
+
 		  hsvtorgb(hue, sat, val, &r, &g, &b);
 
 		  putpixel(canvas, xx, yy,
 		           SDL_MapRGB(canvas->format, r, g, b));
+		  /*
 		  putpixel(canvas, xx + 1, yy,
 		           SDL_MapRGB(canvas->format, r, g, b));
 		  putpixel(canvas, xx, yy + 1,
 		           SDL_MapRGB(canvas->format, r, g, b));
 		  putpixel(canvas, xx + 1, yy + 1,
 		           SDL_MapRGB(canvas->format, r, g, b));
+			   */
 		}
 	    }
 
@@ -6016,21 +6036,26 @@ static void blit_magic(int x, int y, int button_down)
 		{
 		  /* Get original color: */
 		
-		  SDL_GetRGB(getpixel(canvas, xx, yy),
-		             canvas->format, &r, &g, &b);
+		  SDL_GetRGB(getpixel(last, xx, yy),
+		             last->format, &r, &g, &b);
 
-		  SDL_GetRGB(getpixel(canvas, xx + 1, yy),
-		             canvas->format, &r1, &g1, &b1);
-		  
-		  SDL_GetRGB(getpixel(canvas, xx, yy + 1),
-		             canvas->format, &r2, &g2, &b2);
-		 
-		  if (abs(((r + g + b) / 3) - (r1 + g1 + b1) / 3) > 32 ||
-		      abs(((r + g + b) / 3) - (r2 + g2 + b2) / 3) > 32 ||
-		      abs(r - r1) > 32 || abs(g - g1) > 32 || abs(b - b1) > 32 ||
-		      abs(r - r2) > 32 || abs(g - g2) > 32 || abs(b - b2) > 32)
-		  { 
-		  	putpixel(canvas, xx, yy,
+		  SDL_GetRGB(getpixel(last, xx + 1, yy),
+		             last->format, &r1, &g1, &b1);
+
+		  SDL_GetRGB(getpixel(last, xx + 1, yy + 1),
+		             last->format, &r2, &g2, &b2);
+
+#define OUTLINE_THRESH 48
+		  if (abs(((r + g + b) / 3) - (r1 + g1 + b1) / 3) > OUTLINE_THRESH ||
+		      abs(((r + g + b) / 3) - (r2 + g2 + b2) / 3) > OUTLINE_THRESH ||
+		      abs(r - r1) > OUTLINE_THRESH || abs(g - g1) > OUTLINE_THRESH || abs(b - b1) > OUTLINE_THRESH ||
+		      abs(r - r2) > OUTLINE_THRESH || abs(g - g2) > OUTLINE_THRESH || abs(b - b2) > OUTLINE_THRESH)
+		  {
+		  	putpixel(canvas, xx - 1, yy,
+		        	   SDL_MapRGB(canvas->format, 0, 0, 0));
+		  	putpixel(canvas, xx, yy - 1,
+		        	   SDL_MapRGB(canvas->format, 0, 0, 0));
+		  	putpixel(canvas, xx - 1, yy - 1,
 		        	   SDL_MapRGB(canvas->format, 0, 0, 0));
 		  }
 		}
@@ -7296,6 +7321,7 @@ static int load_user_fonts(void *vp)
   groupfonts();
 
   font_thread_done = 1;
+  waiting_for_fonts = 0;
   // FIXME: need a memory barrier here
   return 0; // useless, wanted by threading library
 }
@@ -7540,13 +7566,13 @@ printf("read: fd=%d buf_fill=%u buf_size=%u rc=%ld\n", font_socket_fd, buf_fill,
             }
         }
       buf_fill += rc;
-      if(!rc)
+      if(!rc || font_thread_aborted)
         break;
     }
   close(font_socket_fd);
 
   waitpid(font_scanner_pid,&status,0);
-  if(WIFSIGNALED(status))
+  if(WIFSIGNALED(status) || font_thread_aborted)
     {
       printf("child killed by signal %u\n", WTERMSIG(status));
       user_font_families = NULL;
