@@ -23,11 +23,12 @@ New Breed Software</p>
 <a href="http://www.newbreedsoftware.com/tuxpaint/">http://www.newbreedsoftware.
 com/tuxpaint/</a></p>
 
-<p>September 14, 2002 - October 9, 2005</p>
+<p>September 14, 2002 - November 17, 2005</p>
 </center>
 
 <h2>Drawing-related</h2>
 
+<ul>
 <li><em>Fonts I added to Tux&nbsp;Paint only show squares</em>
   <p>The TrueType Font you're using might have the wrong encoding.
   If it's 'custom' encoded, for example, you can try running it through
@@ -92,6 +93,8 @@ com/tuxpaint/</a></p>
 
   <p>in the "tuxpaint.c" file in the "src" directory.</p>
 </li>
+</ul>
+
 </ul>
 
 <h2>Interface Problems</h2>
@@ -332,54 +335,88 @@ com/tuxpaint/</a></p>
 <h2>Audio Problems</h2>
 <ul>
 <li><em>There's no sound!</em>
-  <p>First, check the obvious:</p>
-
   <ul>
-  <li>Are you certain you're using the computer with the sound card?
-  <li>Are your speakers connected and turned on?
-  <li>Is the volume turned up on your speakers?
-  <li>Is the volume turned up in your Operating System's "mixer?"
-  <li>Are any other programs running that use sound?  (They may be
-      'blocking' Tux&nbsp;Paint)
-  <li>(Unix/Linux) Are you using a sound system, such as aRts, ESD or
-    GStreamer?  If so, try setting the "SDL_AUDIODRIVER" environment variable
-    before running Tux&nbsp;Paint (e.g., "export&nbsp;SDL_AUDIODRIVER=arts").
-    Or, run Tux&nbsp;Paint through the system's rerouter (e.g.,
-    run "artsdsp&nbsp;tuxpaint" or "esddsp&nbsp;tuxpaint", instead of
-    simply "tuxpaint").
+  <li><em>First, check the obvious:</em>
+    <ul>
+    <li>Are your speakers connected and turned on?
+    <li>Is the volume turned up on your speakers?
+    <li>Is the volume turned up in your Operating System's "mixer?"
+    <li>Are you certain you're using a computer with a sound card?
+    <li>Are any other programs running that use sound?  (They may be
+        'blocking' Tux&nbsp;Paint from accessing your sound device)
+    <li>(Unix/Linux) Are you using a sound system, such as aRts, ESD or
+      GStreamer?  If so, try setting the "SDL_AUDIODRIVER" environment variable
+      before running Tux&nbsp;Paint (e.g., "export&nbsp;SDL_AUDIODRIVER=arts").
+      Or, run Tux&nbsp;Paint through the system's rerouter (e.g.,
+      run "artsdsp&nbsp;tuxpaint" or "esddsp&nbsp;tuxpaint", instead of
+      simply "tuxpaint").
+    </ul>
+    
+  <li><em>Is sound disabled in Tux Paint?</em>
+    <p>If sound seems to work otherwise (and you're sure no other program is
+    "blocking" the sound device), then Tux&nbsp;Paint may be running with
+    a "no&nbsp;sound" option.</p>
+    
+    <p>Make sure you're not running Tux&nbsp;Paint with the
+    "<code>--nosound</code>" option as a command-line argument.
+    (See the <a href="OPTIONS.html">OPTIONS</a> documentation for details.)</p>
+
+    <p>If it's not, then check the configuration file
+    ("/etc/tuxpaint/tuxpaint.conf" and "~/.tuxpaintrc" under Linux and
+    Unix, and "tuxpaint.cfg" under Windows) for a line reading:
+    "<code>nosound=yes</code>".</p>
+
+    <p>Either remove that line, or simply run Tux&nbsp;Paint with the
+    command-line argument: "<code>--sound</code>", which will override
+    the configuration file's setting.</p>
+
+    <p>Alternatively, you can use Tux&nbsp;Paint&nbsp;Config. to change
+    the configuration file.  Make sure "Enable Sound Effects" (under
+    "Video &amp; Sound") is checked, then click "Apply".</p>
+
+  <li><em>Were sounds temporarily disabled?</em>
+    <p>Even if sounds are enabled in Tux&nbsp;Paint, it is possible to
+    disable and re-enable them temporarily using the
+    <b>[Alt]</b>&nbsp;+&nbsp;<b>[S]</b> key sequence.  Try pressing those
+    keys to see if sounds begin working again.</p>
+
+  <li><em>Was Tux Paint built without sound support?</em>
+    <p>Tux Paint may have been compiled with sound support disabled.
+    To test whether sound support was enabled when Tux&nbsp;Paint was
+    compiled, run Tux&nbsp;Paint from a command line, like so:</p>
+
+    <blockquote><p><code>
+          tuxpaint --version
+    </code></p></blockquote>
+
+    <p>If, amongst the other information, you see "Sound disabled", then the
+    version of Tux&nbsp;Paint you're running has sound disabled.  Recompile
+    Tux&nbsp;Paint, and be sure NOT to build the "nosound" target.
+    (i.e., don't run "<code>make&nbsp;nosound</code>")  Be sure the SDL_mixer
+    library and its development headers are available!</p>
   </ul>
 
-  <p>If sound seems to work otherwise (and you're sure no other program is
-  "blocking" the sound device), then Tux&nbsp;Paint is either running with
-  a "no sound" option or was compiled with sound support disabled entirely.</p>
+<li><em>Tux Paint makes too much noise! Can I turn them off?</em>
+  <p>Yes, there are a number of ways to disable sounds in Tux Paint:</p>
 
-  <p>To test whether sound support was enabled when Tux&nbsp;Paint was
-  compiled, run Tux&nbsp;Paint from a command line, like so:</p>
+  <ul>
+  <li>Press <b>[Alt]</b>&nbsp;+&nbsp;<b>[S]</b> while in Tux&nbsp;Paint to
+    temporarily disable sounds.  (Press that key sequence again to re-enable
+    sounds.)
 
-  <blockquote><p><code>
-        tuxpaint --version
-  </code></p></blockquote>
-
-  <p>If, amongst the other information, you see "Sound disabled", then the
-  version of Tux&nbsp;Paint you're running has sound disabled.  Recompile
-  Tux&nbsp;Paint, and be sure NOT to build the "nosound" target.
-  (i.e., don't run "make nosound")  Be sure the SDL_mixer library and
-  its development headers are available!</p>
-
-  <p>If Tux&nbsp;Paint wasn't build without sound support, make sure you're
-  not running Tux&nbsp;Paint with the "--nosound" option as a command-line
-  argument.</p>
-
-  <p>If it's not, then check the configuration file ("~/.tuxpaintrc" under
-  Linux and Unix, and "tuxpaint.cfg" under Windows) for a line reading:
-  "nosound=yes".</p>
-
-  <p>Either remove that line, or simply run Tux&nbsp;Paint with the
-  command-line argument: "--sound", which will override the configuration
-  file's setting.</p>
-
-  <p>Or use Tux&nbsp;Paint&nbsp;Config. and make sure
-  "Enable Sound Effects" (under "Video &amp; Sound") is checked.</p>
+  <li>Run Tux&nbsp;Paint with the "no&nbsp;sound" option:
+    <ul>
+    <li>Use Tux&nbsp;Paint&nbsp;Config to uncheck the "Enable Sound Effects"
+      option (under "Video &amp; Sound").
+    <li>Edit Tux&nbsp;Paint's configuration file (see
+      <a href="OPTIONS.html">OPTIONS</a> for details) and add a line
+      containing "<code>nosound=yes</code>".
+    <li>Run "<code>tuxpaint&nbsp;--nosound</code>" from the command line or
+      shortcut or desktop icon.
+    <li>Recompile Tux&nbsp;Paint with sound support disabled.
+      (See above and <a href="../INSTALL.txt">INSTALL.txt</a>.)
+    </ul>
+  </ul>
 
 <li><em>The sound effects sound strange</em>
   <p>This could have to do with how SDL and SDL_mixer were initialized.
@@ -387,7 +424,8 @@ com/tuxpaint/</a></p>
 
   <p>Please e-mail us with details about your computer system.
   (Operating system and version, sound card, which version of Tux&nbsp;Paint
-  you're running (run "tuxpaint --version" to verify), and so on.)</p>
+  you're running (run "<code>tuxpaint&nbsp;--version</code>" to verify), and
+  so on.)</p>
 </li>
 </ul>
 
