@@ -1,21 +1,19 @@
-# translation of pt_pt.po to
-# Tux Paint portuguese (european) messages
-# Copyright (C) 2003
-# Ricardo Cruz <rick2@aeiu.pt>, 2003.
-# Ricardo Cruz <rick2@aeiou.pt>, 2004.
-# Ricardo Cruz <rpmcruz@clix.pt>, 2005.
+# Portuguese translation of the "tuxpaint" messages
+# This file is distributed under the same license as the findutils package.
+# Ricardo Cruz <rick2@aeiou.pt>, 2003
+# Helder Correia <helder.pereira.correia@gmail.com>, 2005.
+#
 msgid ""
 msgstr ""
-"Project-Id-Version: pt_pt\n"
+"Project-Id-Version: tuxpaint 0.9.15rc1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2005-10-10 00:12-0700\n"
-"PO-Revision-Date: 2005-10-16 00:03+0100\n"
-"Last-Translator: Ricardo Cruz <rpmcruz@clix.pt>\n"
-"Language-Team:  <pt@li.org>\n"
+"PO-Revision-Date: 2005-11-18 21:37+0000\n"
+"Last-Translator: Helder Correia <helder.pereira.correia@gmail.com>\n"
+"Language-Team: Portuguese <translation-team-pt@lists.sourceforge.net>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: KBabel 1.10.2\n"
 
 msgid "A drawing program for children."
 msgstr "Um programa de desenho para crianças."
@@ -30,52 +28,52 @@ msgid "Black!"
 msgstr "Preto!"
 
 msgid "Dark grey! Some people spell it “dark gray”."
-msgstr "Cinzento escuro!"
+msgstr "Cinzento-escuro!"
 
 msgid "Light grey! Some people spell it “light gray”."
-msgstr "Cinzento claro!"
+msgstr "Cinzento-claro!"
 
 msgid "White!"
 msgstr "Branco!"
 
 msgid "Red!"
-msgstr "Vermelho!"
+msgstr "Encarnado!"
 
 msgid "Orange!"
-msgstr "Cor de Laranja!"
+msgstr "Cor-de-Laranja!"
 
 msgid "Yellow!"
 msgstr "Amarelo!"
 
 msgid "Light green!"
-msgstr "Verde claro!"
+msgstr "Verde-claro!"
 
 msgid "Dark green!"
-msgstr "Verde escuro!"
+msgstr "Verde-escuro!"
 
 msgid "Sky blue!"
-msgstr "Azul céu!"
+msgstr "Azul-celeste!"
 
 msgid "Blue!"
 msgstr "Azul!"
 
 msgid "Lavender!"
-msgstr "Lilás!"
+msgstr "Lavanda!"
 
 msgid "Purple!"
-msgstr "Violeta!"
+msgstr "Roxo!"
 
 msgid "Pink!"
-msgstr "Cor de Rosa!"
+msgstr "Cor-de-rosa!"
 
 msgid "Brown!"
 msgstr "Castanho!"
 
 msgid "Tan!"
-msgstr "Cor de bronzeado!"
+msgstr "Torrado"
 
 msgid "Beige!"
-msgstr "Bêge!"
+msgstr "Bege!"
 
 msgid "Great!"
 msgstr "Boa!"
@@ -105,13 +103,13 @@ msgid "Sparkles"
 msgstr "Fagulhas"
 
 msgid "Blur"
-msgstr "Borrar"
+msgstr "Embaciar"
 
 msgid "Smudge"
-msgstr "Esborratar"
+msgstr "Borrar"
 
 msgid "Lighten"
-msgstr "Esclarecer"
+msgstr "Iluminar"
 
 msgid "Darken"
 msgstr "Escurecer"
@@ -120,7 +118,7 @@ msgid "Chalk"
 msgstr "Giz"
 
 msgid "Blocks"
-msgstr "Quadricular"
+msgstr "Blocos"
 
 msgid "Negative"
 msgstr "Negativo"
@@ -132,7 +130,7 @@ msgid "Drip"
 msgstr "Pingar"
 
 msgid "Cartoon"
-msgstr "Banda-Desenhada"
+msgstr "Desenho animado"
 
 msgid "Mirror"
 msgstr "Espelhar"
@@ -144,13 +142,13 @@ msgid "Click in the picture to fill that area with color."
 msgstr "Clica no desenho para preencheres essa área com uma cor."
 
 msgid "Click and move to draw grass. Don’t forget the dirt!"
-msgstr "Clica e move o rato para desenhares relva. Não te esqueças da terra!"
+msgstr "Clica e move o rato para desenhares relva. Não te esqueças da poeira!"
 
 msgid "Click and move to draw large bricks."
-msgstr "Clica e move o rato para desenhares grandes tijolos."
+msgstr "Clica e move o rato para desenhares tijolos."
 
 msgid "Click and move to draw small bricks."
-msgstr "Clica e move o rato para desenhares pequenos tijolos."
+msgstr "Clica e move o rato para desenhares tijolos pequenos."
 
 msgid "You can draw in rainbow colors!"
 msgstr "Podes desenhar com as cores do arco-íris!"
@@ -159,16 +157,16 @@ msgid "Click and move to draw sparkles."
 msgstr "Clica e move o rato para desenhares fagulhas."
 
 msgid "Click and move the mouse around to blur the picture."
-msgstr "Clica e move o rato para borrares o desenho."
+msgstr "Clica e move o rato para embaciares o desenho."
 
 msgid "Click and move the mouse around to smudge the picture."
-msgstr "Clica e move o rato para esbateres o desenho."
+msgstr "Clica e move o rato para borrares o desenho."
 
 msgid "Click and move to fade the colors."
 msgstr "Clica e move o rato para desbotares as cores."
 
 msgid "Click and move to darken the colors."
-msgstr "Clica e move o rato para escureceres as cores."
+msgstr "Clica e move o rato para escurecer as cores."
 
 msgid "Click and move the mouse around to turn the picture into a chalk drawing."
 msgstr "Clica e move o rato para transformares o desenho num desenho de giz."
@@ -177,16 +175,16 @@ msgid "Click and move the mouse around to make the picture blocky."
 msgstr "Clica e move o rato para transformares o desenho em blocos."
 
 msgid "Click and move the mouse around to draw a negative."
-msgstr "Clica e move o rato para inverteres as cores do desenho."
+msgstr "Clica e move o rato para inverteres as cores do desenho (negativo)."
 
 msgid "Click and move the mouse around to change the picture’s color."
-msgstr "Clica e move o rato para mudares as cores do desenho."
+msgstr "Clica e move o rato para mudares a cor do desenho."
 
 msgid "Click and move the mouse around to make the picture drip."
-msgstr "Clica e move o rato para transformares o desenho numa respingada."
+msgstr "Clica e move o rato para pingares o desenho."
 
 msgid "Click and move the mouse around to turn the picture into a cartoon."
-msgstr "Clica e move o rato para transformares o desenho numa banda desenhada."
+msgstr "Clica e move o rato para transformares o desenho num desenho animado."
 
 msgid "Click to make a mirror image."
 msgstr "Clica para espelhares o desenho."
@@ -213,7 +211,7 @@ msgid "Pentagon"
 msgstr "Pentágono"
 
 msgid "Rhombus"
-msgstr "Losângulo"
+msgstr "Trapézio"
 
 msgid "A square is a rectangle with four equal sides."
 msgstr "Um quadrado é um rectângulo com quatro lados iguais."
@@ -234,7 +232,7 @@ msgid "A pentagon has five sides."
 msgstr "Um pentágono tem cinco lados."
 
 msgid "A rhombus has four equal sides, and opposite sides are parallel."
-msgstr "Um losângulo tem quatro lados, e os lados opostos são paralelos."
+msgstr "Um trapézio tem quatro lados iguais e os lados opostos são paralelos."
 
 msgid "Tools"
 msgstr "Ferramentas"
@@ -258,13 +256,13 @@ msgid "Letters"
 msgstr "Letras"
 
 msgid "Magic"
-msgstr "Mágicas"
+msgstr "Magia"
 
 msgid "Paint"
 msgstr "Pintar"
 
 msgid "Stamp"
-msgstr "Carimbos"
+msgstr "Carimbo"
 
 msgid "Lines"
 msgstr "Linhas"
@@ -304,22 +302,16 @@ msgid "Pick a picture to stamp around your drawing."
 msgstr "Escolhe uma imagem para carimbares no teu desenho."
 
 msgid "Click to start drawing a line. Let go to complete it."
-msgstr "Clica para começares a desenhar uma linha. Solta o rato para terminá-la."
+msgstr "Clica para começares a desenhar uma linha. Solta o botão quando terminares."
 
 # #: tools.h:65
 # msgid "Pick a shape to draw.  Click once to pick the center of the shape, #click again to draw it."
 # msgstr "Escolha uma forma para desenhar. Clique uma vez para definir o centro da imagem. Clique de novo para desenhá-la."
-msgid ""
-"Pick a shape. Click to pick the center, drag, then let go when it is the "
-"size you want. Move around to rotate it, and click to draw it."
-msgstr ""
-"Escolhe uma forma. Clica para pôres o centro e arrasta o rato para o tamanho "
-"que queres. Move o rato para a rodares e é só clicar."
+msgid "Pick a shape. Click to pick the center, drag, then let go when it is the size you want. Move around to rotate it, and click to draw it."
+msgstr "Escolhe uma forma. Clica para pores o centro e arrasta o rato para escolheres o tamanho. Move o rato para a rodares e clica para a desenhares."
 
 msgid "Choose a style of text. Click on your drawing and you can start typing."
-msgstr ""
-"Escolhe um tipo de letra para o texto. Clica no desenho para começares a "
-"escrever."
+msgstr "Escolhe um tipo de letra para o texto. Clica no desenho para começares a escrever."
 
 msgid "Pick a magical effect to use on your drawing!"
 msgstr "Escolhe um efeito mágico para usares no teu desenho!"
@@ -338,11 +330,11 @@ msgstr "Borracha!"
 
 #. New
 msgid "You now have a blank sheet to draw on!"
-msgstr "Agora tens uma nova folha para desenhares!"
+msgstr "Agora tens uma folha nova para desenhares!"
 
 #. Open
 msgid "Open…"
-msgstr "Abrir..."
+msgstr "Abrir…"
 
 #. Save
 msgid "Your image has been saved!"
@@ -350,11 +342,11 @@ msgstr "O teu desenho foi gravado!"
 
 #. Print
 msgid "Printing…"
-msgstr "Imprimindo..."
+msgstr "A imprimir…"
 
 #. Quit
 msgid "Bye bye!"
-msgstr "Adeuzinho!"
+msgstr "Adeus!"
 
 msgid "Let go of the button to complete the line."
 msgstr "Solta o botão para completares a linha."
@@ -366,7 +358,7 @@ msgid "Move the mouse to rotate the shape. Click to draw it."
 msgstr "Move o rato para girares a forma. Clica para a denhares."
 
 msgid "OK then… Let’s keep drawing this one!"
-msgstr "Tudo bem... Vamos continuar com este desenho!"
+msgstr " Então está bem… Vamos continuar com este desenho!"
 
 #. FIXME: Move elsewhere!!!
 msgid "Do you really want to quit?"
@@ -380,16 +372,16 @@ msgid "No"
 msgstr "Não"
 
 msgid "If you quit, you’ll lose your picture! Save it?"
-msgstr "Se saires, vais perder o teu desenho! Queres gravá-lo?"
+msgstr "Se saíres, vais perder o teu desenho! Queres gravá-lo?"
 
 msgid "Save your picture first?"
-msgstr "Queres gravar primeiro o teu desenho?"
+msgstr "Queres gravar o teu desenho primeiro?"
 
 msgid "Can’t open that picture!"
 msgstr "Não consigo abrir esse desenho!"
 
 msgid "OK"
-msgstr "OK"
+msgstr "Está bem"
 
 msgid "Starting a new picture will erase the current one!"
 msgstr "Se iniciares outro desenho, irás apagar o desenho actual!"
@@ -398,13 +390,13 @@ msgid "That’s OK!"
 msgstr "Está bem!"
 
 msgid "Never mind!"
-msgstr "Nem pensar!"
+msgstr "Esquece!"
 
 msgid "There are no saved files!"
 msgstr "Não há desenhos gravados!"
 
 msgid "Print your picture now?"
-msgstr "Imprimir o desenho agora?"
+msgstr "Queres imprimir o teu desenho agora?"
 
 msgid "Your picture has been printed!"
 msgstr "O teu desenho foi imprimido!"
@@ -416,7 +408,7 @@ msgid "Erase this picture?"
 msgstr "Apagar este desenho?"
 
 msgid "Remember to use the left mouse button!"
-msgstr "Lembra-te de usares o botão esquerdo do rato!"
+msgstr "Lembra-te de usar o botão esquerdo do rato!"
 
 msgid "jq"
 msgstr "jq"
@@ -453,11 +445,10 @@ msgstr "Aa"
 
 #. FIXME: Move elsewhere!!!
 msgid "Save over the older version of this picture?"
-msgstr "Gravar por cima da versão anterior do teu desenho?"
+msgstr "Gravar por cima do teu desenho anterior?"
 
 msgid "No, save a new file"
 msgstr "Não, gravar como um novo desenho"
 
 msgid "Choose the picture you want, then click “Open”."
-msgstr "Escolhe o desenho que queres e depois clica no \"Abrir\"."
-
+msgstr "Escolhe o desenho que queres e clica em “Abrir”."

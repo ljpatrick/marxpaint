@@ -7,7 +7,7 @@ bill@newbreedsoftware.com
 http://www.newbreedsoftware.com/tuxpaint/
 
 
-2005.November.14 (0.9.15)
+2005.November.20 (0.9.15)
 
   * Speed improvements:
     -------------------
@@ -451,6 +451,7 @@ http://www.newbreedsoftware.com/tuxpaint/
 
     * Portuguese (Portugal)
       Ricardo Cruz <rpmcruz@clix.pt>
+      Helder Correia <helder.pereira.correia@gmail.com>
 
     * Russian
       Eugene Zelenko <greendeath@mail.ru>
