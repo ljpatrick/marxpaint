@@ -22,7 +22,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
   
-  June 14, 2002 - November 15, 2005
+  June 14, 2002 - November 20, 2005
 */
 
 
@@ -5955,9 +5955,7 @@ static void blit_magic(int x, int y, int button_down)
       else if (cur_magic == MAGIC_CARTOON)
 	{
 	  float hue, sat, val;
-	  float hue1, sat1, val1;
-	  float hue2, sat2, val2;
-	  Uint8 r1, g1, b1, r2, g2, b2, r3, g3, b3, r4, g4, b4;
+	  Uint8 r1, g1, b1, r2, g2, b2;
           Uint32 (*getpixel)(SDL_Surface *, int, int) = getpixels[last->format->BytesPerPixel];
 	  
 	  SDL_LockSurface(last);
