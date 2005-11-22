@@ -346,7 +346,7 @@ msgstr "開啟..."
 
 #  Save
 msgid "Your image has been saved!"
-msgstr "你的圖畫已經儲存!"
+msgstr "你的圖畫已經儲存"
 
 #  Print
 msgid "Printing…"
@@ -354,7 +354,7 @@ msgstr "列印中..."
 
 #  Quit
 msgid "Bye bye!"
-msgstr "再見!"
+msgstr "再見"
 
 msgid "Let go of the button to complete the line."
 msgstr "放開按鍵來完成這條線。"
@@ -380,7 +380,7 @@ msgid "No"
 msgstr "不是"
 
 msgid "If you quit, you’ll lose your picture! Save it?"
-msgstr "如果離開，你將遺失你的圖畫! 要不要先存檔呢？"
+msgstr "如果離開，你將遺失你的圖畫，要不要先存檔呢？"
 
 msgid "Save your picture first?"
 msgstr "先儲存你的圖畫嗎？"
@@ -392,7 +392,7 @@ msgid "OK"
 msgstr "OK"
 
 msgid "Starting a new picture will erase the current one!"
-msgstr "開啟一張新的圖紙將會刪除目前這張圖!"
+msgstr "開啟一張新的圖紙將會刪除目前這張圖"
 
 msgid "That’s OK!"
 msgstr "確定"
@@ -431,7 +431,7 @@ msgid "`\\%_@$~#{}<>^&*"
 msgstr "`\\%_@$~#{}<>^&*"
 
 msgid ",.?!"
-msgstr ",.?!"
+msgstr ",.?"
 
 msgid "017"
 msgstr "017"
