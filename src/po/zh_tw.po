@@ -98,7 +98,7 @@ msgid "Grass"
 msgstr "青草"
 
 msgid "Bricks"
-msgstr "馬賽克"
+msgstr "磚塊"
 
 msgid "Rainbow"
 msgstr "彩虹"
