@@ -8281,8 +8281,11 @@ static void setup(int argc, char * argv[])
     }
 
 #ifndef NOSOUND
-  // need Mix_OpenAudio(44100, AUDIO_S16, 2, 2048) for WIN32 ?
+#ifndef WIN32
   if (use_sound && Mix_OpenAudio(44100, AUDIO_S16SYS, 2, 1024) < 0)
+#else
+  if (use_sound && Mix_OpenAudio(44100, AUDIO_S16SYS, 2, 2048) < 0)
+#endif
     {
       fprintf(stderr,
 	"\nWarning: I could not set up audio for 44100 Hz "
