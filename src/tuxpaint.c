@@ -14218,7 +14218,7 @@ void do_open(void)
 				do_setcursor(cursor_arrow);
 			    }
 		      
-			  if (which > cur + 16)
+			  if (which >= cur + 16)
 			    which = which - 4;
 			}
 		      else if (event.button.y >= (48 * 7 + 40 + HEIGHTOFFSET - 48) &&
@@ -14271,6 +14271,38 @@ void do_open(void)
              want_erase = 1;
            }
        }
+     else if (event.type == SDL_MOUSEBUTTONDOWN &&
+              event.button.button >= 4 &&
+	      event.button.button <= 5 &&
+	      wheely)
+     {
+        /* Scroll wheel! */
+
+	if (event.button.button == 4 && cur > 0)
+	{
+	  cur = cur - 4;
+	  update_list = 1;
+	  playsound(1, SND_SCROLL, 1);
+
+	  if (cur == 0)
+	    do_setcursor(cursor_arrow);
+
+	  if (which >= cur + 16)
+	    which = which - 4;
+	}
+	else if (event.button.button == 5 && cur < num_files - 16)
+        {
+          cur = cur + 4;
+          update_list = 1;
+          playsound(1, SND_SCROLL, 1);
+
+          if (cur >= num_files - 16)
+	    do_setcursor(cursor_arrow);
+
+          if (which < cur)
+            which = which + 4;
+        }
+     }
      else if (event.type == SDL_MOUSEMOTION)
 		{
 		  /* Deal with mouse pointer shape! */

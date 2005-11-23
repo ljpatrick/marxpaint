@@ -7,7 +7,7 @@ bill@newbreedsoftware.com
 http://www.newbreedsoftware.com/tuxpaint/
 
 
-2005.November.20 (0.9.15)
+2005.November.23 (0.9.15)
 
   * Speed improvements:
     -------------------
@@ -170,6 +170,8 @@ http://www.newbreedsoftware.com/tuxpaint/
       by pressing the [Alt]+[S] keys.  (Note: does not enable sounds if
       "nosound" is set in configuration file or via command-line.)
 
+    * Scroll wheel can be used to scroll through thumbnails in Open dialog.
+
   * Printing improvements:
     ----------------------
     * Now printing directly via Postscript.
@@ -245,6 +247,11 @@ http://www.newbreedsoftware.com/tuxpaint/
 
     * Failed to install default locale fonts.  Fixed.
       kyjo44 <kyjo44@users.sourceforge.net>
+
+    * Scroll wheel motion was being perceived as clicks in Open dialog. Fixed.
+
+    * Thumbnail cursor could fall of screen when scrolling in Open dialog.
+      Fixed.
 
   * Compiling, porting and packaging updates:
     -----------------------------------------
