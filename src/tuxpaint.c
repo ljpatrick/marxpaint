@@ -12154,6 +12154,8 @@ static int do_prompt_image_flash_snd(const char * const text, const char * const
   SDL_Surface * alpha_surf;
 #endif
   int img1_w, img2_w, img3_w, max_img_w, img_x, img_y, offset;
+  SDL_Surface * img1b;
+  int free_img1b;
 
 
   /* FIXME: Move elsewhere! Or not?! */
@@ -12237,6 +12239,27 @@ static int do_prompt_image_flash_snd(const char * const text, const char * const
   SDL_FillRect(screen, &dest, SDL_MapRGB(screen->format, 255, 255, 255));
 
 
+  /* Make sure image on the right isn't too tall!
+     (Thumbnails in Open dialog are larger on larger displays, and can
+     cause arrow and trashcan icons to be pushed out of the dialog window!) */
+
+  free_img1b = 0;
+  img1b = NULL;
+
+  if (img1 != NULL)
+  {
+    if (img1->h > 64)
+    {
+      img1b = thumbnail(img1, 80, 64, 1);
+      free_img1b = 1;
+    }
+    else
+    {
+      img1b = img1;
+    }
+  }
+
+
   /* If we're showing any images on the right, determine the widest width
      for them: */
 
@@ -12244,8 +12267,8 @@ static int do_prompt_image_flash_snd(const char * const text, const char * const
 
   offset = img1_w = img2_w = img3_w = 0;
   
-  if (img1 != NULL)
-    img1_w = img1->w;
+  if (img1b != NULL)
+    img1_w = img1b->w;
   if (img2 != NULL)
     img2_w = img2->w;
   if (img3 != NULL)
@@ -12270,15 +12293,15 @@ static int do_prompt_image_flash_snd(const char * const text, const char * const
   img_x = 457 + PROMPTOFFSETX - offset;
   img_y = 100 + PROMPTOFFSETY + 4;
 
-  if (img1 != NULL)
+  if (img1b != NULL)
   {
-    dest.x = img_x + (max_img_w - img1->w) / 2;
+    dest.x = img_x + (max_img_w - img1b->w) / 2;
     dest.y = img_y;
 
-    SDL_BlitSurface(img1, NULL, screen, &dest);
+    SDL_BlitSurface(img1b, NULL, screen, &dest);
 
     if (!animate)
-      img_y = img_y + img1->h + 4;
+      img_y = img_y + img1b->h + 4;
   }
 
   if (!animate)
@@ -12427,7 +12450,8 @@ static int do_prompt_image_flash_snd(const char * const text, const char * const
 	        ((event.button.y >= 178 + PROMPTOFFSETY &&
 		  event.button.y < 178 + 48 + PROMPTOFFSETY) ||
 	         (strlen(btn_no) != 0 &&
-		  event.button.y >= 230 && event.button.y < 230 + 48)))
+		  event.button.y >= 230 + PROMPTOFFSETY &&
+		  event.button.y < 230 + 48 + PROMPTOFFSETY)))
 	      {
 	        do_setcursor(cursor_hand);
 	      }
@@ -12468,10 +12492,10 @@ static int do_prompt_image_flash_snd(const char * const text, const char * const
 
 	if (counter == 15)
 	{
-          dest.x = img_x + (max_img_w - img1->w) / 2;
+          dest.x = img_x + (max_img_w - img1b->w) / 2;
           dest.y = img_y;
 
-          SDL_BlitSurface(img1, NULL, screen, &dest);
+          SDL_BlitSurface(img1b, NULL, screen, &dest);
 	  SDL_Flip(screen);
 
 	  counter = 0;
@@ -12488,6 +12512,9 @@ static int do_prompt_image_flash_snd(const char * const text, const char * const
   /* Erase question prompt: */
 
   update_canvas(0, 0, canvas->w, canvas->h);
+
+  if (free_img1b)
+    SDL_FreeSurface(img1b);
 
   return ans;
 }
