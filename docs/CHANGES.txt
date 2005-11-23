@@ -192,6 +192,10 @@ http://www.newbreedsoftware.com/tuxpaint/
       via a new "--altprintnever" option (and "altprint=never").
       (Default (where [Alt] must be held to show dialog) is "altprintmod".)
 
+  * New Starter Images:
+    -------------------
+    * Rocket
+
   * Other improvements:
     -------------------
     * Added beige and tan colors.  Changed "Lime" to "Neon Green."
