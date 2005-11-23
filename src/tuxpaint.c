@@ -3070,15 +3070,45 @@ static void mainloop(void)
 		}
 	    }
 	  else if (event.type == SDL_MOUSEBUTTONDOWN &&
-		   valid_click(event.button.button))
+		   event.button.button >= 2 &&
+		   event.button.button <= 3 &&
+		   (no_button_distinction == 0 &&
+		    !(HIT(r_tools) &&
+		      GRIDHIT_GD(r_tools,gd_tools) == TOOL_PRINT)))
+	    {
+	      /* They're using the middle or right mouse buttons! */
+
+	      non_left_click_count++;
+
+
+	      if (non_left_click_count == 10 ||
+		  non_left_click_count == 20 ||
+		  (non_left_click_count % 50) == 0)
+	      {
+		/* Pop up an informative animation: */
+
+		do_prompt_image_flash(PROMPT_TIP_LEFTCLICK_TXT,
+				      PROMPT_TIP_LEFTCLICK_YES,
+				      "",
+			              img_mouse, img_mouse_click, NULL, 1);
+	      }
+	    }
+	  else if (event.type == SDL_MOUSEBUTTONDOWN &&
+		   event.button.button <= 3)
 	    {
 	      if (HIT(r_tools))
 		{
 		  /* A tool on the left has been pressed! */
+
 		  which = GRIDHIT_GD(r_tools,gd_tools);
 		  
-		  if (which < NUM_TOOLS && tool_avail[which])
+		  if (which < NUM_TOOLS && tool_avail[which] &&
+		      (valid_click(event.button.button) ||
+		       which == TOOL_PRINT))
 		    {
+		      /* Allow middle/right-click on "Print", since [Alt]+click
+		         on Mac OS X changes it from left click to middle! */
+
 		      /* Render any current text: */
 		      
 		      if (cur_tool == TOOL_TEXT && which != TOOL_TEXT &&
@@ -3378,7 +3408,7 @@ static void mainloop(void)
 		      update_screen_rect(&r_ttoolopt);
 		    }
 		}
-	      else if (HIT(r_toolopt))
+	      else if (HIT(r_toolopt) && valid_click(event.button.button))
 		{
 		  // Options on the right
                   // WARNING: this must be kept in sync with the mouse-move
@@ -3763,7 +3793,8 @@ static void mainloop(void)
                         update_screen_rect(&r_toolopt);
                     }
                 }
-	      else if (HIT(r_colors) && colors_are_selectable)
+	      else if (HIT(r_colors) && colors_are_selectable &&
+		       valid_click(event.button.button))
 		{
 		  /* Color! */
 		  which = GRIDHIT_GD(r_colors,gd_colors);
@@ -3780,7 +3811,8 @@ static void mainloop(void)
 		        do_render_cur_text(0);
 		    }
 		}
-	      else if (HIT(r_canvas))
+	      else if (HIT(r_canvas) &&
+		       valid_click(event.button.button))
 		{
 		  /* Draw something! */
 		  
@@ -4103,27 +4135,6 @@ static void mainloop(void)
                     update_screen_rect(&r_toolopt);
                 }
             }
-	  else if (event.type == SDL_MOUSEBUTTONDOWN &&
-		   event.button.button >= 2 &&
-		   event.button.button <= 3)
-	    {
-	      /* They're using the middle or right mouse buttons! */
-
-	      non_left_click_count++;
-
-
-	      if (non_left_click_count == 10 ||
-		  non_left_click_count == 20 ||
-		  (non_left_click_count % 50) == 0)
-	      {
-		/* Pop up an informative animation: */
-
-		do_prompt_image_flash(PROMPT_TIP_LEFTCLICK_TXT,
-				      PROMPT_TIP_LEFTCLICK_YES,
-				      "",
-			              img_mouse, img_mouse_click, NULL, 1);
-	      }
-	    }
 	  else if (event.type == SDL_USEREVENT)
 	    {
 	      if (event.user.code == USEREVENT_TEXT_UPDATE)
@@ -14159,7 +14170,7 @@ void do_open(void)
 	    }
 	}
      else if (event.type == SDL_MOUSEBUTTONDOWN &&
-              event.button.button >= 1)
+              valid_click(event.button.button))
        {
 		  if (event.button.x >= 96 && event.button.x < WINDOW_WIDTH - 96 &&
 		      event.button.y >= 24 &&
