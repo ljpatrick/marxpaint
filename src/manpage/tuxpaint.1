@@ -1,5 +1,5 @@
-.\" tuxpaint.1 - 2005.11.20
-.TH TUXPAINT 1 "20 Nov 2005" "0.9.15" "Tux Paint"
+.\" tuxpaint.1 - 2005.11.23
+.TH TUXPAINT 1 "23 Nov 2005" "0.9.15" "Tux Paint"
 .SH NAME
 tuxpaint -- A drawing program for young children.
 
@@ -21,6 +21,7 @@ tuxpaint -- A drawing program for young children.
 [\-\-grab]
 [\-\-noshortcuts]
 [\-\-nowheelmouse]
+[\-\-nobuttondistinction]
 [\-\-nofancycursors]
 [\-\-nooutlines]
 [\-\-nostamps]
@@ -47,6 +48,7 @@ tuxpaint -- A drawing program for young children.
 [\-\-dontgrab]
 [\-\-shortcuts]
 [\-\-wheelmouse]
+[\-\-buttondistinction]
 [\-\-fancycursors]
 [\-\-outlines]
 [\-\-stamps]
@@ -168,6 +170,15 @@ By default, the wheel (jog dial) on a mouse will be used to scroll the
 wheel completely ignored, with the \fI\-\-nowheelmouse\fP option.
 This is useful for children who aren't yet comfortable with the mouse.
 Default is to support the wheel.
+
+.TP 8
+.B \-\-nobuttondistinction \-\-buttondistinction
+By default, only mouse button #1 (typically the leftmost mouse button
+on mice with more than one button) can be used for interacting with
+\fITux Paint\fP.  With the \fI\-\-nobuttondistinction\fP option,
+mouse buttons #2 (middle) and #3 (right) can be used, as well.
+This is useful for children who aren't yet comfortable with the mouse.
+Default is to only recognize button #1.
 
 .TP 8
 .B \-\-nofancycursors \-\-fancycursors

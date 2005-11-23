@@ -22,7 +22,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
   
-  June 14, 2002 - November 20, 2005
+  June 14, 2002 - November 23, 2005
 */
 
 
@@ -6436,6 +6436,7 @@ static void show_usage(FILE * f, char * prg)
 	  "  %s [--mixedcase | --uppercase]   [--fancycursors | --nofancycursors]\n"
 	  "  %s [--mouse | --keyboard]        [--dontgrab | --grab]\n"
 	  "  %s [--noshortcuts | --shortcuts] [--wheelmouse | --nowheelmouse]\n"
+	  "  %s [--nobuttondistinction | --buttondistinction ]\n"
 	  "  %s [--outlines | --nooutlines]   [--stamps | --nostamps]\n"
 	  "  %s [--sysfonts | --nosysfonts]\n"
 	  "  %s [--nostampcontrols | --stampcontrols]\n"
@@ -6462,7 +6463,7 @@ static void show_usage(FILE * f, char * prg)
 	  blank,
 #endif
 	  blank, blank, blank,
-	  blank);
+	  blank, blank);
 
   free(blank);
 }
@@ -7985,6 +7986,10 @@ static void setup(int argc, char * argv[])
       else if (strcmp(argv[i], "--nobuttondistinction") == 0)
 	{
 	  no_button_distinction = 1;
+	}
+      else if (strcmp(argv[i], "--buttondistinction") == 0)
+	{
+	  no_button_distinction = 0;
 	}
       else if (strcmp(argv[i], "--sysfonts") == 0)
 	{
