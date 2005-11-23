@@ -38,7 +38,7 @@ DefaultGroupName={#AppGroupName}
 LicenseFile={#BdistDir}\docs\COPYING.txt
 OutputDir=.\
 OutputBaseFilename={#AppPrefix}-{#AppVersion}-win32-installer
-SetupIconFile={#BdistDir}\data\images\icon-win32.ico
+SetupIconFile={#BdistDir}\data\images\tuxpaint-installer.ico
 Compression=lzma
 SolidCompression=yes
 
