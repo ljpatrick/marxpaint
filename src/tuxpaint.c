@@ -22,7 +22,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
   
-  June 14, 2002 - November 23, 2005
+  June 14, 2002 - November 25, 2005
 */
 
 
@@ -8718,7 +8718,7 @@ static void setup(int argc, char * argv[])
   /* Load system fonts: */
 
   large_font = TTF_OpenFont(DATA_PREFIX "fonts/default_font.ttf",
-			    36 - (only_uppercase * 3));
+			    30 - (only_uppercase * 3));
 
   if (large_font == NULL)
     {
@@ -8734,7 +8734,7 @@ static void setup(int argc, char * argv[])
 
 
   small_font = TTF_OpenFont(DATA_PREFIX "fonts/default_font.ttf",
-		            14 - (only_uppercase * 2));
+		            13 - (only_uppercase * 2));
 
   if (small_font == NULL)
     {
