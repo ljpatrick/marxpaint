@@ -8749,7 +8749,7 @@ static void setup(int argc, char * argv[])
     }
 
 
-  locale_font = load_locale_font(medium_font,18);
+  locale_font = load_locale_font(medium_font,16);
 
 #if 0
   // put elsewhere for THREADED_FONTS
@@ -9227,13 +9227,13 @@ static void draw_toolbar(void)
           SDL_BlitSurface(button_color, NULL, img_tool_names[i], NULL);
 
 	  dest.x = ((i % 2) * 48) + 4;
-	  dest.y = ((i / 2) * 48) + 40 + 4;
+	  dest.y = ((i / 2) * 48) + 40 + 2;
 
 	  SDL_BlitSurface(img_tools[i], NULL, screen, &dest);
 
 
 	  dest.x = ((i % 2) * 48) + 4 + (40 - img_tool_names[i]->w) / 2;
-	  dest.y = ((i / 2) * 48) + 40 + 4 + (44 - img_tool_names[i]->h);
+	  dest.y = ((i / 2) * 48) + 40 + 2 + (48 - img_tool_names[i]->h);
 
 	  SDL_BlitSurface(img_tool_names[i], NULL, screen, &dest);
 	}
@@ -12824,9 +12824,9 @@ static void do_shape(int cx, int cy, int ox, int oy, int rotn, int use_brush)
   /* Determine radius/shape of the shape to draw: */
 
   old_brush = 0;
+
   rx = ox - cx;
   ry = oy - cy;
-
 
   /* If the shape has a 1:1 ("locked") aspect ratio, use the larger radius: */
 
