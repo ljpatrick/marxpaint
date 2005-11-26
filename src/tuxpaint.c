@@ -51,6 +51,8 @@
 //#define PRINTMETHOD_PNG_PNM_PS   /* Output PNG, assuming it gets printed */
 
 
+//#define CORNER_SHAPES     /* need major work! */
+
 /* Default print and alt-print command, depending on the print method: */
 
 #define DEFAULT_PRINTCOMMAND "lpr"
@@ -12819,11 +12821,36 @@ static void do_shape(int cx, int cy, int ox, int oy, int rotn, int use_brush)
     old_brush, step;
   float a1, a2, rotn_rad;
   int xx;
+  int tmp = 0;
 
 
   /* Determine radius/shape of the shape to draw: */
 
   old_brush = 0;
+
+#ifdef CORNER_SHAPES
+  if (cx > ox)
+  {
+    tmp = cx;
+    cx = ox;
+    ox = tmp;
+  }
+
+  if (cy > oy)
+  {
+    tmp = cy;
+    cy = oy;
+    oy = tmp;
+  }
+
+  x1 = cx;
+  x2 = ox;
+  y1 = cy;
+  y2 = oy;
+
+  cx += ((x2 - x1) / 2);
+  cy += ((y2 - y1) / 2);
+#endif
 
   rx = ox - cx;
   ry = oy - cy;
