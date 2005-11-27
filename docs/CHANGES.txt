@@ -7,6 +7,13 @@ bill@newbreedsoftware.com
 http://www.newbreedsoftware.com/tuxpaint/
 
 
+2005.November.26 (0.9.15b)
+
+  * Bug Fix:
+    --------
+    * Japanese TrueType Font did not like being rendered at 16pt, so
+      reverted to larger, 18pt size.  (Other fonts were fine...?)
+
 2005.November.25 (0.9.15)
 
   * Speed improvements:

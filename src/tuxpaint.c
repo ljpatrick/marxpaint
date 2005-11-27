@@ -22,7 +22,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
   
-  June 14, 2002 - November 25, 2005
+  June 14, 2002 - November 26, 2005
 */
 
 
@@ -8751,7 +8751,7 @@ static void setup(int argc, char * argv[])
     }
 
 
-  locale_font = load_locale_font(medium_font,16);
+  locale_font = load_locale_font(medium_font,18);
 
 #if 0
   // put elsewhere for THREADED_FONTS
