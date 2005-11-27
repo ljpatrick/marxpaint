@@ -20,6 +20,10 @@ http://www.newbreedsoftware.com/tuxpaint/
     * "Thick" and "Thin" magic tools were removed, so removed mention
       of them from README documentation.
 
+  * Locale update:
+    --------------
+    * Georgian font is only ~50KB, so added to main Tux Paint archive.
+
 
 2005.November.25 (0.9.15)
 

@@ -1,0 +1,6 @@
+COPYING.txt for "tuxpaint-ttf-georgian"
+Georgian TrueType Font (TTF) for Tux Paint
+
+Copyright 2005 Gia Shervashidze (giasher@telenet.ge)
+"all my fonts are (and will be) redistributable."
+
