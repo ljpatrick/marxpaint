@@ -1,4 +1,5 @@
 # Makefile for tuxpaint
+# $Id$
 
 # Tux Paint - A simple drawing program for children.
 

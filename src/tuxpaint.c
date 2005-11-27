@@ -23,6 +23,7 @@
   (See COPYING.txt)
   
   June 14, 2002 - November 26, 2005
+  $Id$
 */
 
 

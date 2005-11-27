@@ -572,3 +572,6 @@ Help / Contact
    Or post to our 'tuxpaint-users' mailing list:
 
      http://www.newbreedsoftware.com/tuxpaint/lists/
+
+
+$Id$

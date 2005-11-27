@@ -9,6 +9,7 @@
   http://www.newbreedsoftware.com/tuxpaint/
 
   June 14, 2002 - September 14, 2004
+  $Id$
 */
 
 

@@ -6,6 +6,8 @@ Copyright (c) 2005 by Bill Kendrick and others
 bill@newbreedsoftware.com
 http://www.newbreedsoftware.com/tuxpaint/
 
+$Id$
+
 
 2005.November.26 (0.9.15b)
 
@@ -19,6 +21,10 @@ http://www.newbreedsoftware.com/tuxpaint/
     ---------------------
     * "Thick" and "Thin" magic tools were removed, so removed mention
       of them from README documentation.
+
+    * Source files and documentation files tagged with CVS Id tags
+      for easier version tracking.
+      Mark K. Kim <tuxNO_SOLICITATIONpaint-dev@cbreak.org>
 
   * Locale update:
     --------------

@@ -1,5 +1,6 @@
 Tux Paint Xcode Project
 notes by Martin Fuhrer <mfuhrer@alumni.ucalgary.ca>
+$Id$
 
 This Tux Paint project file is located in a folder titled "macosx", which should in turn be placed in the root folder of the Tux Paint source code distribution. The project will then be able to access all the source code files.
 

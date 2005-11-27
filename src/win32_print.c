@@ -22,6 +22,7 @@
 /* Sept. 30, 2002 - Oct. 17, 2002 */
 /* Oct.  07, 2003 - added banding support */
 /*                - prints using 24-bit (not 32-bit) bitmap */
+/* $Id$ */
 
 #include <windows.h>
 #include <direct.h>

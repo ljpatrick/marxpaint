@@ -7,6 +7,8 @@
 /* john@johnnypops.demon.co.uk                      */
 /*                                                  */
 /****************************************************/
+/* $Id$ */
+
 typedef long            BOOL;
 typedef unsigned int    DWORD;
 typedef wchar_t         TCHAR;

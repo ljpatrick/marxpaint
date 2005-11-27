@@ -5,6 +5,8 @@
  *  Created by Martin Fuhrer on Wed May 12 2004.
  *  Copyright (c) 2004 __MyCompanyName__. All rights reserved.
  *
+ *  $Id$
+ *
  */
 
 #ifndef WRAPPER_DATA

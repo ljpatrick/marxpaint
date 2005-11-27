@@ -3,6 +3,7 @@
        Non-NIB-Code & other changes: Max Horn <max@quendi.de>
 
     Feel free to customize this file to suit your needs
+	 $Id$
 */
 
 //#define MAC_OS_X_VERSION_MAX_ALLOWED MAC_OS_X_VERSION_10_2

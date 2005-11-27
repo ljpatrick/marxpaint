@@ -4,6 +4,7 @@
 /* John Popplewell <john@johnnypops.demon.co.uk> */
 
 /* Sept. 30, 2002 - Oct. 1, 2002 */
+/* $Id$ */
 
 
 #ifndef __WIN32_PRINT_H__

@@ -121,4 +121,4 @@ sure that the installer has the right name (this keeps bill happy:-)
 John Popplewell.
 john@johnnypops.demon.co.uk
 http://www.johnnypops.demon.co.uk/
-
+$Id$

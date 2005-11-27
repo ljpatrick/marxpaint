@@ -821,3 +821,5 @@ Setting Your Environment's Locale
 
        Under Unix and Linux, you can use the Makefile that comes with the
        font to install the font in the appropriate location.
+
+$Id$
