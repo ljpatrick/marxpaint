@@ -1,5 +1,5 @@
                                    Tux Paint
-                                 version 0.9.15
+                                version 0.9.15b
 
                      A simple drawing program for children
 
@@ -326,14 +326,6 @@ Available Tools
                       Blocks
                               This makes the picture blocky looking
                               ("pixelated") wherever you drag the mouse.
-
-                      Thick
-                              This makes the darker colors in the picture
-                              become thicker wherever you drag the mouse.
-
-                      Thin
-                              Similar to "Thick," except dark colors become
-                              thinner (light colors become thicker).
 
                       Negative
                               This inverts the colors wherever you drag the

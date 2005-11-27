@@ -9,10 +9,17 @@ http://www.newbreedsoftware.com/tuxpaint/
 
 2005.November.26 (0.9.15b)
 
-  * Bug Fix:
-    --------
+  * Bug Workaround:
+    ---------------
     * Japanese TrueType Font did not like being rendered at 16pt, so
-      reverted to larger, 18pt size.  (Other fonts were fine...?)
+      reverted to larger, 18pt size.
+      (Other fonts were fine.  I suspect it is a SDL_ttf or FreeType bug.)
+
+  * Documentation update:
+    ---------------------
+    * "Thick" and "Thin" magic tools were removed, so removed mention
+      of them from README documentation.
+
 
 2005.November.25 (0.9.15)
 
