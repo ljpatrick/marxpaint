@@ -1,6 +1,5 @@
-Tux Paint Xcode Project
+Tux Paint Xcode 2.2 Project
 notes by Martin Fuhrer <mfuhrer@alumni.ucalgary.ca>
-$Id$
 
 This Tux Paint project file is located in a folder titled "macosx", which should in turn be placed in the root folder of the Tux Paint source code distribution. The project will then be able to access all the source code files.
 
@@ -21,9 +20,9 @@ These frameworks should ideally be the non-development versions (without the hea
 So where does the project reference the SDL header files, if they are not in the frameworks?  Via the Fink installation of SDL.  So be sure to install all SDL-related packages in Fink.
 
 
--- PNG and Internationalization Libraries --
+-- PNG, Internationalization, and Character Set Conversion Libraries --
 
-Install PNG (libpng.a) and the GNU internationalization library (libintl.a) via Fink.  These libraries will be statically linked into the Tux Paint binary.
+Install PNG (libpng.a), the GNU internationalization (libintl.a), and character set conversion (libiconv.la) via Fink.  These libraries will be statically linked into the Tux Paint binary.
 
 
 -- Translation Files --
@@ -34,4 +33,19 @@ make translations
 make install-gettext
 
 This will generate translation files in /usr/local/share/locale.  Move the locale folder into the root folder of the Tux Paint source distribution, and the Tux Paint XCode project will be able to bundle the files into the Tux Paint application.
+
+
+-- Cross Development --
+
+In order to allow Tux Paint application to run on older versions of Mac OS X, this project compiles and links against an older version of the Mac OS X SDK (eg. Mac OS X 10.2.8) using an older version of gcc (eg. gcc 3.3).  Various versions of the Mac OS X SDKs and gcc can be installed from the XCode Installation DVD.  Note that any libraries Tux Paint links against (eg. libraries installed by Fink) should also be compiled and linked against the same SDK, using the same version of gcc.
+
+To set the desired Mac OS X SDK:
+1) Choose Project > Edit Project Settings
+2) Click on the General tab.
+2) Choose the desired SDK from the "Cross-Develop Using Target SDK" menu.
+
+To set the desired compiler version:
+1) Choose Project > Edit Active Target
+2) Click on the Rules tab.
+3) Set the desired associations between file types (eg. C++ source files) and the compiler version (eg. GCC 3.3).
 

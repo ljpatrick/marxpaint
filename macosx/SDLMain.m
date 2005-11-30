@@ -3,13 +3,13 @@
        Non-NIB-Code & other changes: Max Horn <max@quendi.de>
 
     Feel free to customize this file to suit your needs
-    $Id$
 */
 
 #import "SDL.h"
 #import "SDLMain.h"
 #import <sys/param.h> /* for MAXPATHLEN */
 #import <unistd.h>
+
 #include "wrapperdata.h"
 
 /* Use this flag to determine whether we use SDLMain.nib or not */
@@ -242,6 +242,31 @@ static void setupWindowMenu(void)
     [windowMenuItem release];
 }
 
+/* Create a window menu */
+static void setupHelpMenu(void)
+{
+	NSMenu      *helpMenu;
+	NSMenuItem  *helpMenuItem;
+	NSMenuItem  *menuItem;
+
+    helpMenu = [[NSMenu alloc] initWithTitle:@"Help"];
+    
+    /* "Help" item */
+	 NSString *appName = getApplicationName();
+    menuItem = [[NSMenuItem alloc] initWithTitle:[appName stringByAppendingString:@" Help"] action:@selector(showHelp:) keyEquivalent:@"?"];
+    [helpMenu addItem:menuItem];
+    [menuItem release];
+    
+    /* Put menu into the menubar */
+    helpMenuItem = [[NSMenuItem alloc] initWithTitle:@"Help" action:nil keyEquivalent:@""];
+    [helpMenuItem setSubmenu:helpMenu];
+    [[NSApp mainMenu] addItem:helpMenuItem];
+
+    /* Finally give up our references to the objects */
+    [helpMenu release];
+    [helpMenuItem release];
+}
+
 /* Replacement for NSApplicationMain */
 static void CustomApplicationMain (argc, argv)
 {
@@ -268,6 +293,7 @@ static void CustomApplicationMain (argc, argv)
     [NSApp setMainMenu:[[NSMenu alloc] init]];
 	setApplicationMenu();
     setupWindowMenu();
+	 setupHelpMenu();
 	
 	/* Pass information to SDL application */
     bridge = [[CocoaToSDLBridge alloc] init];
