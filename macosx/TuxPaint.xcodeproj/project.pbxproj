@@ -1,0 +1,584 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 42;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		2202639807AC5D3000C3AEAB /* ApplicationServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2202639707AC5D3000C3AEAB /* ApplicationServices.framework */; };
+		2202646707AC603500C3AEAB /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2202646607AC603500C3AEAB /* CoreFoundation.framework */; };
+		224A369B0933B741005A3695 /* fonts in Resources */ = {isa = PBXBuildFile; fileRef = 224A368C0933B741005A3695 /* fonts */; };
+		22581667074EE1A5005F774F /* Read Me.txt in Resources */ = {isa = PBXBuildFile; fileRef = 22581666074EE1A5005F774F /* Read Me.txt */; };
+		225FD5280934EC1A00F0B02F /* SDL_image.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 225FD5240934EC1A00F0B02F /* SDL_image.framework */; };
+		225FD5290934EC1A00F0B02F /* SDL_mixer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 225FD5250934EC1A00F0B02F /* SDL_mixer.framework */; };
+		225FD52A0934EC1A00F0B02F /* SDL_ttf.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 225FD5260934EC1A00F0B02F /* SDL_ttf.framework */; };
+		225FD52B0934EC1A00F0B02F /* SDL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 225FD5270934EC1A00F0B02F /* SDL.framework */; };
+		225FE6D20939890800F0B02F /* SDL.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 225FD5270934EC1A00F0B02F /* SDL.framework */; };
+		225FE6F00939891500F0B02F /* SDL_image.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 225FD5240934EC1A00F0B02F /* SDL_image.framework */; };
+		225FE6F40939892300F0B02F /* SDL_mixer.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 225FD5250934EC1A00F0B02F /* SDL_mixer.framework */; };
+		225FE6F70939892600F0B02F /* SDL_ttf.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 225FD5260934EC1A00F0B02F /* SDL_ttf.framework */; };
+		225FE718093AC54F00F0B02F /* libiconv.la in Frameworks */ = {isa = PBXBuildFile; fileRef = 225FE715093AC54F00F0B02F /* libiconv.la */; };
+		225FE719093AC54F00F0B02F /* libintl.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 225FE716093AC54F00F0B02F /* libintl.a */; };
+		225FE71A093AC54F00F0B02F /* libpng.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 225FE717093AC54F00F0B02F /* libpng.a */; };
+		225FEDBA093ACC0A00F0B02F /* html in Resources */ = {isa = PBXBuildFile; fileRef = 225FED8E093ACC0A00F0B02F /* html */; };
+		2286F34F0740B3FC001164FE /* SDLMain.nib in Resources */ = {isa = PBXBuildFile; fileRef = 2286F34D0740B3FC001164FE /* SDLMain.nib */; };
+		22C005D40736650D008555A2 /* tuxpaint.icns in Resources */ = {isa = PBXBuildFile; fileRef = 22C005D30736650D008555A2 /* tuxpaint.icns */; };
+		22C0EA9E0735B76F008555A2 /* SDLMain.m in Sources */ = {isa = PBXBuildFile; fileRef = 22C0EA9B0735B76F008555A2 /* SDLMain.m */; };
+		22C0EABD0735B851008555A2 /* macosx_print.m in Sources */ = {isa = PBXBuildFile; fileRef = 22C0EAAC0735B851008555A2 /* macosx_print.m */; };
+		22C0EAC40735B851008555A2 /* tuxpaint.c in Sources */ = {isa = PBXBuildFile; fileRef = 22C0EAB30735B851008555A2 /* tuxpaint.c */; };
+		22C0EDBD0735BED1008555A2 /* stamps in Resources */ = {isa = PBXBuildFile; fileRef = 22C0ED9A0735BED1008555A2 /* stamps */; };
+		22C0EDBE0735BED1008555A2 /* starters in Resources */ = {isa = PBXBuildFile; fileRef = 22C0EDAF0735BED1008555A2 /* starters */; };
+		22C0F5F60735BFA8008555A2 /* brushes in Resources */ = {isa = PBXBuildFile; fileRef = 22C0F5350735BFA8008555A2 /* brushes */; };
+		22C0F5F80735BFA8008555A2 /* images in Resources */ = {isa = PBXBuildFile; fileRef = 22C0F5600735BFA8008555A2 /* images */; };
+		22C0F5F90735BFA8008555A2 /* sounds in Resources */ = {isa = PBXBuildFile; fileRef = 22C0F5CE0735BFA8008555A2 /* sounds */; };
+		22D0201207434FD200494AE0 /* locale in Resources */ = {isa = PBXBuildFile; fileRef = 22D01F2F07434FD100494AE0 /* locale */; };
+		8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C165CFE840E0CC02AAC07 /* InfoPlist.strings */; };
+		8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXBuildRule section */
+		224A386D0933E9C4005A3695 /* PBXBuildRule */ = {
+			isa = PBXBuildRule;
+			compilerSpec = com.apple.compilers.gcc.3_3;
+			fileType = sourcecode.c;
+			isEditable = 1;
+			outputFiles = (
+			);
+		};
+		224A386E0933E9EF005A3695 /* PBXBuildRule */ = {
+			isa = PBXBuildRule;
+			compilerSpec = com.apple.compilers.gcc.3_3;
+			fileType = sourcecode.asm.asm;
+			isEditable = 1;
+			outputFiles = (
+			);
+		};
+		225FD5360934EF5600F0B02F /* PBXBuildRule */ = {
+			isa = PBXBuildRule;
+			compilerSpec = com.apple.compilers.gcc.3_3;
+			fileType = sourcecode.cpp;
+			isEditable = 1;
+			outputFiles = (
+			);
+		};
+/* End PBXBuildRule section */
+
+/* Begin PBXBuildStyle section */
+		4A9504CCFFE6A4B311CA0CBA /* Development */ = {
+			isa = PBXBuildStyle;
+			buildSettings = {
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+			};
+			name = Development;
+		};
+		4A9504CDFFE6A4B311CA0CBA /* Deployment */ = {
+			isa = PBXBuildStyle;
+			buildSettings = {
+				COPY_PHASE_STRIP = YES;
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				ZERO_LINK = NO;
+			};
+			name = Deployment;
+		};
+/* End PBXBuildStyle section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		22D5D2A80738498300B67229 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				225FE6F70939892600F0B02F /* SDL_ttf.framework in CopyFiles */,
+				225FE6F40939892300F0B02F /* SDL_mixer.framework in CopyFiles */,
+				225FE6F00939891500F0B02F /* SDL_image.framework in CopyFiles */,
+				225FE6D20939890800F0B02F /* SDL.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		089C165DFE840E0CC02AAC07 /* English */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = /System/Library/Frameworks/Cocoa.framework; sourceTree = "<absolute>"; };
+		2202639707AC5D3000C3AEAB /* ApplicationServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ApplicationServices.framework; path = /System/Library/Frameworks/ApplicationServices.framework; sourceTree = "<absolute>"; };
+		2202646607AC603500C3AEAB /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = /System/Library/Frameworks/CoreFoundation.framework; sourceTree = "<absolute>"; };
+		224A368C0933B741005A3695 /* fonts */ = {isa = PBXFileReference; lastKnownFileType = folder; name = fonts; path = ../data/fonts; sourceTree = SOURCE_ROOT; };
+		22581666074EE1A5005F774F /* Read Me.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Read Me.txt"; sourceTree = "<group>"; };
+		225FD5240934EC1A00F0B02F /* SDL_image.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDL_image.framework; path = /Library/Frameworks/SDL_image.framework; sourceTree = "<absolute>"; };
+		225FD5250934EC1A00F0B02F /* SDL_mixer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDL_mixer.framework; path = /Library/Frameworks/SDL_mixer.framework; sourceTree = "<absolute>"; };
+		225FD5260934EC1A00F0B02F /* SDL_ttf.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDL_ttf.framework; path = /Library/Frameworks/SDL_ttf.framework; sourceTree = "<absolute>"; };
+		225FD5270934EC1A00F0B02F /* SDL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDL.framework; path = /Library/Frameworks/SDL.framework; sourceTree = "<absolute>"; };
+		225FE715093AC54F00F0B02F /* libiconv.la */ = {isa = PBXFileReference; lastKnownFileType = text; name = libiconv.la; path = /Volumes/Fink/sw/lib/libiconv.la; sourceTree = "<absolute>"; };
+		225FE716093AC54F00F0B02F /* libintl.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libintl.a; path = /Volumes/Fink/sw/lib/libintl.a; sourceTree = "<absolute>"; };
+		225FE717093AC54F00F0B02F /* libpng.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libpng.a; path = /Volumes/Fink/sw/lib/libpng.a; sourceTree = "<absolute>"; };
+		225FED8E093ACC0A00F0B02F /* html */ = {isa = PBXFileReference; lastKnownFileType = folder; name = html; path = ../docs/html; sourceTree = SOURCE_ROOT; };
+		2286F34E0740B3FC001164FE /* English */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = English; path = English.lproj/SDLMain.nib; sourceTree = "<group>"; };
+		22AB8EB4076FDF270009BF7C /* Tux Paint.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Tux Paint.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		22C005D30736650D008555A2 /* tuxpaint.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = tuxpaint.icns; sourceTree = SOURCE_ROOT; };
+		22C0EA9A0735B76F008555A2 /* SDLMain.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = SDLMain.h; sourceTree = SOURCE_ROOT; };
+		22C0EA9B0735B76F008555A2 /* SDLMain.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = SDLMain.m; sourceTree = SOURCE_ROOT; };
+		22C0EA9C0735B76F008555A2 /* wrapperdata.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = wrapperdata.h; sourceTree = SOURCE_ROOT; };
+		22C0EAA30735B851008555A2 /* colors.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = colors.h; path = ../src/colors.h; sourceTree = SOURCE_ROOT; };
+		22C0EAA40735B851008555A2 /* great.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = great.h; path = ../src/great.h; sourceTree = SOURCE_ROOT; };
+		22C0EAAB0735B851008555A2 /* macosx_print.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = macosx_print.h; path = ../src/macosx_print.h; sourceTree = SOURCE_ROOT; };
+		22C0EAAC0735B851008555A2 /* macosx_print.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; name = macosx_print.m; path = ../src/macosx_print.m; sourceTree = SOURCE_ROOT; };
+		22C0EAAD0735B851008555A2 /* magic.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = magic.h; path = ../src/magic.h; sourceTree = SOURCE_ROOT; };
+		22C0EAAE0735B851008555A2 /* shapes.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = shapes.h; path = ../src/shapes.h; sourceTree = SOURCE_ROOT; };
+		22C0EAAF0735B851008555A2 /* sounds.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = sounds.h; path = ../src/sounds.h; sourceTree = SOURCE_ROOT; };
+		22C0EAB00735B851008555A2 /* tip_tux.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = tip_tux.h; path = ../src/tip_tux.h; sourceTree = SOURCE_ROOT; };
+		22C0EAB10735B851008555A2 /* titles.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = titles.h; path = ../src/titles.h; sourceTree = SOURCE_ROOT; };
+		22C0EAB20735B851008555A2 /* tools.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = tools.h; path = ../src/tools.h; sourceTree = SOURCE_ROOT; };
+		22C0EAB30735B851008555A2 /* tuxpaint.c */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.c; name = tuxpaint.c; path = ../src/tuxpaint.c; sourceTree = SOURCE_ROOT; };
+		22C0ED760735BED1008555A2 /* fonts */ = {isa = PBXFileReference; lastKnownFileType = folder; name = fonts; path = ../fonts; sourceTree = SOURCE_ROOT; };
+		22C0ED9A0735BED1008555A2 /* stamps */ = {isa = PBXFileReference; lastKnownFileType = folder; name = stamps; path = ../stamps; sourceTree = SOURCE_ROOT; };
+		22C0EDAF0735BED1008555A2 /* starters */ = {isa = PBXFileReference; lastKnownFileType = folder; name = starters; path = ../starters; sourceTree = SOURCE_ROOT; };
+		22C0F5350735BFA8008555A2 /* brushes */ = {isa = PBXFileReference; lastKnownFileType = folder; name = brushes; path = ../data/brushes; sourceTree = SOURCE_ROOT; };
+		22C0F5600735BFA8008555A2 /* images */ = {isa = PBXFileReference; lastKnownFileType = folder; name = images; path = ../data/images; sourceTree = SOURCE_ROOT; };
+		22C0F5CE0735BFA8008555A2 /* sounds */ = {isa = PBXFileReference; lastKnownFileType = folder; name = sounds; path = ../data/sounds; sourceTree = SOURCE_ROOT; };
+		22D01F2F07434FD100494AE0 /* locale */ = {isa = PBXFileReference; lastKnownFileType = folder; name = locale; path = ../locale; sourceTree = SOURCE_ROOT; };
+		8D1107310486CEB800E47090 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		8D11072E0486CEB800E47090 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */,
+				2202639807AC5D3000C3AEAB /* ApplicationServices.framework in Frameworks */,
+				2202646707AC603500C3AEAB /* CoreFoundation.framework in Frameworks */,
+				225FD5280934EC1A00F0B02F /* SDL_image.framework in Frameworks */,
+				225FD5290934EC1A00F0B02F /* SDL_mixer.framework in Frameworks */,
+				225FD52A0934EC1A00F0B02F /* SDL_ttf.framework in Frameworks */,
+				225FD52B0934EC1A00F0B02F /* SDL.framework in Frameworks */,
+				225FE718093AC54F00F0B02F /* libiconv.la in Frameworks */,
+				225FE719093AC54F00F0B02F /* libintl.a in Frameworks */,
+				225FE71A093AC54F00F0B02F /* libpng.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		080E96DDFE201D6D7F000001 /* Mac Sources */ = {
+			isa = PBXGroup;
+			children = (
+				22C0EA9A0735B76F008555A2 /* SDLMain.h */,
+				22C0EA9B0735B76F008555A2 /* SDLMain.m */,
+				22C0EAAB0735B851008555A2 /* macosx_print.h */,
+				22C0EAAC0735B851008555A2 /* macosx_print.m */,
+				22C0EA9C0735B76F008555A2 /* wrapperdata.h */,
+			);
+			name = "Mac Sources";
+			sourceTree = "<group>";
+		};
+		1058C7A0FEA54F0111CA2CBB /* Linked Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2202646607AC603500C3AEAB /* CoreFoundation.framework */,
+				2202639707AC5D3000C3AEAB /* ApplicationServices.framework */,
+				1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */,
+			);
+			name = "Linked Frameworks";
+			sourceTree = "<group>";
+		};
+		1058C7A2FEA54F0111CA2CBB /* Local Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				225FD5240934EC1A00F0B02F /* SDL_image.framework */,
+				225FD5250934EC1A00F0B02F /* SDL_mixer.framework */,
+				225FD5260934EC1A00F0B02F /* SDL_ttf.framework */,
+				225FD5270934EC1A00F0B02F /* SDL.framework */,
+			);
+			name = "Local Frameworks";
+			sourceTree = "<group>";
+		};
+		19C28FACFE9D520D11CA2CBB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				22AB8EB4076FDF270009BF7C /* Tux Paint.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		225FE714093AC50C00F0B02F /* Archives */ = {
+			isa = PBXGroup;
+			children = (
+				225FE715093AC54F00F0B02F /* libiconv.la */,
+				225FE716093AC54F00F0B02F /* libintl.a */,
+				225FE717093AC54F00F0B02F /* libpng.a */,
+			);
+			name = Archives;
+			sourceTree = "<group>";
+		};
+		29B97314FDCFA39411CA2CEA /* TuxPaint */ = {
+			isa = PBXGroup;
+			children = (
+				22581666074EE1A5005F774F /* Read Me.txt */,
+				080E96DDFE201D6D7F000001 /* Mac Sources */,
+				29B97315FDCFA39411CA2CEA /* TuxPaint Sources */,
+				29B97317FDCFA39411CA2CEA /* Resources */,
+				29B97323FDCFA39411CA2CEA /* Frameworks and Archives */,
+				19C28FACFE9D520D11CA2CBB /* Products */,
+			);
+			name = TuxPaint;
+			sourceTree = "<group>";
+		};
+		29B97315FDCFA39411CA2CEA /* TuxPaint Sources */ = {
+			isa = PBXGroup;
+			children = (
+				22C0EAA30735B851008555A2 /* colors.h */,
+				22C0EAA40735B851008555A2 /* great.h */,
+				22C0EAAD0735B851008555A2 /* magic.h */,
+				22C0EAAE0735B851008555A2 /* shapes.h */,
+				22C0EAAF0735B851008555A2 /* sounds.h */,
+				22C0EAB00735B851008555A2 /* tip_tux.h */,
+				22C0EAB10735B851008555A2 /* titles.h */,
+				22C0EAB20735B851008555A2 /* tools.h */,
+				22C0EAB30735B851008555A2 /* tuxpaint.c */,
+			);
+			name = "TuxPaint Sources";
+			sourceTree = "<group>";
+		};
+		29B97317FDCFA39411CA2CEA /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				225FED8E093ACC0A00F0B02F /* html */,
+				224A368C0933B741005A3695 /* fonts */,
+				22D01F2F07434FD100494AE0 /* locale */,
+				2286F34D0740B3FC001164FE /* SDLMain.nib */,
+				22C005D30736650D008555A2 /* tuxpaint.icns */,
+				22C0F5350735BFA8008555A2 /* brushes */,
+				22C0F5600735BFA8008555A2 /* images */,
+				22C0F5CE0735BFA8008555A2 /* sounds */,
+				22C0ED760735BED1008555A2 /* fonts */,
+				22C0ED9A0735BED1008555A2 /* stamps */,
+				22C0EDAF0735BED1008555A2 /* starters */,
+				8D1107310486CEB800E47090 /* Info.plist */,
+				089C165CFE840E0CC02AAC07 /* InfoPlist.strings */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		29B97323FDCFA39411CA2CEA /* Frameworks and Archives */ = {
+			isa = PBXGroup;
+			children = (
+				225FE714093AC50C00F0B02F /* Archives */,
+				1058C7A0FEA54F0111CA2CBB /* Linked Frameworks */,
+				1058C7A2FEA54F0111CA2CBB /* Local Frameworks */,
+			);
+			name = "Frameworks and Archives";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		8D1107260486CEB800E47090 /* Tux Paint */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 224A35F709339642005A3695 /* Build configuration list for PBXNativeTarget "Tux Paint" */;
+			buildPhases = (
+				8D1107290486CEB800E47090 /* Resources */,
+				8D11072C0486CEB800E47090 /* Sources */,
+				8D11072E0486CEB800E47090 /* Frameworks */,
+				22D5D2A80738498300B67229 /* CopyFiles */,
+			);
+			buildRules = (
+				225FD5360934EF5600F0B02F /* PBXBuildRule */,
+				224A386E0933E9EF005A3695 /* PBXBuildRule */,
+				224A386D0933E9C4005A3695 /* PBXBuildRule */,
+			);
+			buildSettings = {
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DATA_PREFIX=\"Tux Paint.app/Contents/Resources/\"",
+					"DOC_PREFIX=\"./share/doc/tuxpaint/\"",
+					"CONFDIR=\"$(HOME)/Library/Application Support/Tux Paint/\"",
+					"LOCALEDIR=\"Tux Paint.app/Contents/Resources/locale/\"",
+					"CURSOR_SHAPES=SMALL",
+					SMALL_CURSOR_SHAPES,
+					__APPLE__,
+				);
+				HEADER_SEARCH_PATHS = (
+					/sw/include/SDL,
+					/sw/include,
+					../src/mouse/16x16/,
+				);
+				INFOPLIST_FILE = Info.plist;
+				INSTALL_PATH = "$(HOME)/Applications";
+				LIBRARY_STYLE = STATIC;
+				MACOSX_DEPLOYMENT_TARGET = 10.1;
+				OTHER_CFLAGS = "";
+				OTHER_CPLUSPLUSFLAGS = "";
+				OTHER_LDFLAGS = (
+					/sw/lib/libpng.a,
+					/sw/lib/libintl.a,
+					"-lz",
+					"-liconv",
+				);
+				PRODUCT_NAME = "Tux Paint";
+				WRAPPER_EXTENSION = app;
+			};
+			dependencies = (
+			);
+			name = "Tux Paint";
+			productInstallPath = "$(HOME)/Applications";
+			productName = TuxPaint;
+			productReference = 22AB8EB4076FDF270009BF7C /* Tux Paint.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		29B97313FDCFA39411CA2CEA /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = 224A35FB09339642005A3695 /* Build configuration list for PBXProject "TuxPaint" */;
+			buildSettings = {
+			};
+			buildStyles = (
+				4A9504CCFFE6A4B311CA0CBA /* Development */,
+				4A9504CDFFE6A4B311CA0CBA /* Deployment */,
+			);
+			hasScannedForEncodings = 1;
+			mainGroup = 29B97314FDCFA39411CA2CEA /* TuxPaint */;
+			projectDirPath = "";
+			targets = (
+				8D1107260486CEB800E47090 /* Tux Paint */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		8D1107290486CEB800E47090 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */,
+				22C0EDBD0735BED1008555A2 /* stamps in Resources */,
+				22C0EDBE0735BED1008555A2 /* starters in Resources */,
+				22C0F5F60735BFA8008555A2 /* brushes in Resources */,
+				22C0F5F80735BFA8008555A2 /* images in Resources */,
+				22C0F5F90735BFA8008555A2 /* sounds in Resources */,
+				22C005D40736650D008555A2 /* tuxpaint.icns in Resources */,
+				2286F34F0740B3FC001164FE /* SDLMain.nib in Resources */,
+				22D0201207434FD200494AE0 /* locale in Resources */,
+				22581667074EE1A5005F774F /* Read Me.txt in Resources */,
+				224A369B0933B741005A3695 /* fonts in Resources */,
+				225FEDBA093ACC0A00F0B02F /* html in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		8D11072C0486CEB800E47090 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				22C0EA9E0735B76F008555A2 /* SDLMain.m in Sources */,
+				22C0EABD0735B851008555A2 /* macosx_print.m in Sources */,
+				22C0EAC40735B851008555A2 /* tuxpaint.c in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		089C165CFE840E0CC02AAC07 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				089C165DFE840E0CC02AAC07 /* English */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		2286F34D0740B3FC001164FE /* SDLMain.nib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2286F34E0740B3FC001164FE /* English */,
+			);
+			name = SDLMain.nib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		224A35F809339642005A3695 /* Development */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = "/Library/Frameworks/**";
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"VER_DATE=\"2005-11-26\"",
+					"DATA_PREFIX=\"Tux Paint.app/Contents/Resources/\"",
+					"DOC_PREFIX=\"./share/doc/tuxpaint/\"",
+					"CONFDIR=\"$(HOME)/Library/Application Support/Tux Paint/\"",
+					"LOCALEDIR=\"Tux Paint.app/Contents/Resources/locale/\"",
+					"CURSOR_SHAPES=SMALL",
+					SMALL_CURSOR_SHAPES,
+					__APPLE__,
+					"VER_VERSION=\"0.9.15\"",
+				);
+				HEADER_SEARCH_PATHS = (
+					/sw/include/SDL,
+					/sw/include,
+					../src/mouse/16x16/,
+				);
+				INFOPLIST_FILE = Info.plist;
+				INSTALL_PATH = "$(HOME)/Applications";
+				LIBRARY_SEARCH_PATHS = (
+					"$(LIBRARY_SEARCH_PATHS)",
+					"$(SRCROOT)/../../../../Libraries/jaguar/lib",
+				);
+				LIBRARY_STYLE = STATIC;
+				OTHER_CFLAGS = "";
+				OTHER_CPLUSPLUSFLAGS = "";
+				OTHER_LDFLAGS = "-lz";
+				PRODUCT_NAME = "Tux Paint";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Development;
+		};
+		224A35F909339642005A3695 /* Deployment */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = YES;
+				FRAMEWORK_SEARCH_PATHS = "/Library/Frameworks/**";
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_OPTIMIZATION_LEVEL = s;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"VER_DATE=\"2005-11-26\"",
+					"DATA_PREFIX=\"Tux Paint.app/Contents/Resources/\"",
+					"DOC_PREFIX=\"./share/doc/tuxpaint/\"",
+					"CONFDIR=\"$(HOME)/Library/Application Support/Tux Paint/\"",
+					"LOCALEDIR=\"Tux Paint.app/Contents/Resources/locale/\"",
+					"CURSOR_SHAPES=SMALL",
+					SMALL_CURSOR_SHAPES,
+					__APPLE__,
+					"VER_VERSION=\"0.9.15\"",
+				);
+				HEADER_SEARCH_PATHS = (
+					/sw/include/SDL,
+					/sw/include,
+					../src/mouse/16x16/,
+				);
+				INFOPLIST_FILE = Info.plist;
+				INSTALL_PATH = "$(HOME)/Applications";
+				LIBRARY_SEARCH_PATHS = (
+					"$(LIBRARY_SEARCH_PATHS)",
+					"$(SRCROOT)/../../../../Libraries/jaguar/lib",
+				);
+				LIBRARY_STYLE = STATIC;
+				OTHER_CFLAGS = "";
+				OTHER_CPLUSPLUSFLAGS = "";
+				OTHER_LDFLAGS = "-lz";
+				PRODUCT_NAME = "Tux Paint";
+				WRAPPER_EXTENSION = app;
+				ZERO_LINK = NO;
+			};
+			name = Deployment;
+		};
+		224A35FA09339642005A3695 /* Default */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = "/Library/Frameworks/**";
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"VER_DATE=\"2005-11-26\"",
+					"DATA_PREFIX=\"Tux Paint.app/Contents/Resources/\"",
+					"DOC_PREFIX=\"./share/doc/tuxpaint/\"",
+					"CONFDIR=\"$(HOME)/Library/Application Support/Tux Paint/\"",
+					"LOCALEDIR=\"Tux Paint.app/Contents/Resources/locale/\"",
+					"CURSOR_SHAPES=SMALL",
+					SMALL_CURSOR_SHAPES,
+					__APPLE__,
+					"VER_VERSION=\"0.9.15\"",
+				);
+				HEADER_SEARCH_PATHS = (
+					/sw/include/SDL,
+					/sw/include,
+					../src/mouse/16x16/,
+				);
+				INFOPLIST_FILE = Info.plist;
+				INSTALL_PATH = "$(HOME)/Applications";
+				LIBRARY_SEARCH_PATHS = (
+					"$(LIBRARY_SEARCH_PATHS)",
+					"$(SRCROOT)/../../../../Libraries/jaguar/lib",
+				);
+				LIBRARY_STYLE = STATIC;
+				OTHER_CFLAGS = "";
+				OTHER_CPLUSPLUSFLAGS = "";
+				OTHER_LDFLAGS = "-lz";
+				PRODUCT_NAME = "Tux Paint";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Default;
+		};
+		224A35FC09339642005A3695 /* Development */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				MACOSX_DEPLOYMENT_TARGET = 10.3;
+				SDKROOT = /Developer/SDKs/MacOSX10.3.9.sdk;
+			};
+			name = Development;
+		};
+		224A35FD09339642005A3695 /* Deployment */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				MACOSX_DEPLOYMENT_TARGET = 10.3;
+				SDKROOT = /Developer/SDKs/MacOSX10.3.9.sdk;
+			};
+			name = Deployment;
+		};
+		224A35FE09339642005A3695 /* Default */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				MACOSX_DEPLOYMENT_TARGET = 10.3;
+				SDKROOT = /Developer/SDKs/MacOSX10.3.9.sdk;
+			};
+			name = Default;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		224A35F709339642005A3695 /* Build configuration list for PBXNativeTarget "Tux Paint" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				224A35F809339642005A3695 /* Development */,
+				224A35F909339642005A3695 /* Deployment */,
+				224A35FA09339642005A3695 /* Default */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Default;
+		};
+		224A35FB09339642005A3695 /* Build configuration list for PBXProject "TuxPaint" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				224A35FC09339642005A3695 /* Development */,
+				224A35FD09339642005A3695 /* Deployment */,
+				224A35FE09339642005A3695 /* Default */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Default;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 29B97313FDCFA39411CA2CEA /* Project object */;
+}
