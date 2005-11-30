@@ -8737,7 +8737,11 @@ static void setup(int argc, char * argv[])
 
 
   small_font = TTF_OpenFont(DATA_PREFIX "fonts/default_font.ttf",
+#ifdef __APPLE__
+		            12 - (only_uppercase * 2));
+#else
 		            13 - (only_uppercase * 2));
+#endif
 
   if (small_font == NULL)
     {
