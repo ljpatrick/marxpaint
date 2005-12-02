@@ -373,6 +373,17 @@ static void win32_perror(const char * const str)
 #define perror         win32_perror
 
 /*
+  MinGW implementation of isspace() crashes on some Win98 boxes
+  if c is 'out-of-range'.
+*/
+
+static int win32_isspace(int c)
+{
+    return (c == 0x20) || (c >= 0x09 && c <= 0x0D);
+}
+#define isspace     win32_isspace
+
+/*
   WIN32 and MINGW don't have strcasestr().
 */
 #define NOMINMAX
