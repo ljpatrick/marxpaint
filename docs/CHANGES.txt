@@ -9,6 +9,13 @@ http://www.newbreedsoftware.com/tuxpaint/
 $Id$
 
 
+2005.December.5 (0.9.16)
+  * Translation Updates:
+    --------------------
+    * Vietnamese
+      Clytie Siddall <clytie@riverland.net.au>
+      
+
 2005.November.26 (0.9.15b)
 
   * Bug Workaround:

@@ -1,20 +1,22 @@
-# Vietnamese translation for tuxpaint-0.9.14
-# Copyright (C)2004 Bill Kendrick
-# Copyright (C) 2005 Free Software Foundation, Inc.
+# Vietnamese translation for Tuxpaint.
+# Copyright © 2004 Bill Kendrick
+# Copyright © 2005 Free Software Foundation, Inc.
 # Le Quang Phan <lqphan@hn.vnn.vn>, 2004.
 # Clytie Siddall <clytie@riverland.net.au>, 2005.
-#
+# 
 msgid ""
 msgstr ""
-"Project-Id-Version: tuxpaint 0.9.14\n"
+"Project-Id-Version: tuxpaint 0.9.15rc1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2005-10-10 00:12-0700\n"
-"PO-Revision-Date: 2005-02-05 20:38+1030\n"
+"PO-Revision-Date: 2005-12-05 15:35+1030\n"
 "Last-Translator: Clytie Siddall <clytie@riverland.net.au>\n"
 "Language-Team: Vietnamese <gnomevi-list@lists.sourceforge.net> \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0\n"
+"X-Generator: BBEdit 8.2.3\n"
 
 msgid "A drawing program for children."
 msgstr "Một chương trình vẽ cho đứa bé."
@@ -29,10 +31,10 @@ msgid "Black!"
 msgstr "Đen!"
 
 msgid "Dark grey! Some people spell it “dark gray”."
-msgstr ""
+msgstr "Xám tối!"
 
 msgid "Light grey! Some people spell it “light gray”."
-msgstr ""
+msgstr "Xám nhạt!"
 
 msgid "White!"
 msgstr "Trắng!"
@@ -47,19 +49,19 @@ msgid "Yellow!"
 msgstr "Vàng!"
 
 msgid "Light green!"
-msgstr ""
+msgstr "Xanh lá cây nhạt!"
 
 msgid "Dark green!"
-msgstr ""
+msgstr "Xanh lá cây sẫ!"
 
 msgid "Sky blue!"
-msgstr ""
+msgstr "Xanh da trời!"
 
 msgid "Blue!"
-msgstr "Da trời!"
+msgstr "Xanh dương!"
 
 msgid "Lavender!"
-msgstr ""
+msgstr "Hoa oải hương!"
 
 msgid "Purple!"
 msgstr "Đỏ tía!"
@@ -70,12 +72,11 @@ msgstr "Hồng!"
 msgid "Brown!"
 msgstr "Nâu!"
 
-#, fuzzy
 msgid "Tan!"
-msgstr "Xanh lông mòng!"
+msgstr "Vỏ dà!"
 
 msgid "Beige!"
-msgstr ""
+msgstr "Be!"
 
 msgid "Great!"
 msgstr "Tuyệt vời!"
@@ -92,13 +93,11 @@ msgstr "Tốt rồi!"
 msgid "Fill"
 msgstr "Điền"
 
-#, fuzzy
 msgid "Grass"
-msgstr "Xám!"
+msgstr "Cỏ"
 
-#, fuzzy
 msgid "Bricks"
-msgstr "Khối"
+msgstr "Gạch"
 
 msgid "Rainbow"
 msgstr "Cầu vồng"
@@ -110,13 +109,13 @@ msgid "Blur"
 msgstr "Mờ"
 
 msgid "Smudge"
-msgstr ""
+msgstr "Nhoè"
 
 msgid "Lighten"
-msgstr ""
+msgstr "Nhạt hơn"
 
 msgid "Darken"
-msgstr ""
+msgstr "Tối hơn"
 
 msgid "Chalk"
 msgstr "Phần"
@@ -127,15 +126,14 @@ msgstr "Khối"
 msgid "Negative"
 msgstr "Âm"
 
-#, fuzzy
 msgid "Tint"
-msgstr "Mảnh"
+msgstr "Nhuốm"
 
 msgid "Drip"
 msgstr "Nhỏ giọt"
 
 msgid "Cartoon"
-msgstr ""
+msgstr "Hoạt hình"
 
 msgid "Mirror"
 msgstr "Gương"
@@ -146,17 +144,14 @@ msgstr "Lật"
 msgid "Click in the picture to fill that area with color."
 msgstr "Nhắp vào phần hình để tô màu đầy đủ."
 
-#, fuzzy
 msgid "Click and move to draw grass. Don’t forget the dirt!"
-msgstr "Nhắp và di chuôt để vẽ lấp lánh."
+msgstr "Nhắp và di chuôt để vẽ cỏ. Đừng quên vẽ đất!"
 
-#, fuzzy
 msgid "Click and move to draw large bricks."
-msgstr "Nhắp và di chuôt để vẽ lấp lánh."
+msgstr "Nhắp và di chuôt để vẽ nhiều gạch lớn."
 
-#, fuzzy
 msgid "Click and move to draw small bricks."
-msgstr "Nhắp và di chuôt để vẽ lấp lánh."
+msgstr "Nhắp và di chuôt để vẽ nhiều gạch nhỏ."
 
 msgid "You can draw in rainbow colors!"
 msgstr "Cháu có thể vẽ bằng các màu cầu vồng!"
@@ -167,19 +162,16 @@ msgstr "Nhắp và di chuôt để vẽ lấp lánh."
 msgid "Click and move the mouse around to blur the picture."
 msgstr "Nhắp và di chuột vòng quanh để làm mờ hình."
 
-#, fuzzy
 msgid "Click and move the mouse around to smudge the picture."
-msgstr "Nhắp và di chuột vòng quanh để làm mờ hình."
+msgstr "Nhắp và di chuột vòng quanh để làm nhoè hình."
 
 msgid "Click and move to fade the colors."
 msgstr "Nhắp và di chuột để làm màu mờ dần."
 
-#, fuzzy
 msgid "Click and move to darken the colors."
-msgstr "Nhắp và di chuột để làm màu mờ dần."
+msgstr "Nhắp và di chuột để làm màu tối hơn."
 
-msgid ""
-"Click and move the mouse around to turn the picture into a chalk drawing."
+msgid "Click and move the mouse around to turn the picture into a chalk drawing."
 msgstr "Nhắp và di chuột để đổi hình này thành bản vẽ phấn."
 
 msgid "Click and move the mouse around to make the picture blocky."
@@ -188,16 +180,14 @@ msgstr "Nhắp và di chuột vòng quanh để làm hình kiểu khối."
 msgid "Click and move the mouse around to draw a negative."
 msgstr "Nhắp và di chuột để vẽ hình âm (màu ngược lại)."
 
-#, fuzzy
 msgid "Click and move the mouse around to change the picture’s color."
-msgstr "Nhắp và di chuột vòng quanh để làm hình kiểu khối."
+msgstr "Nhắp và di chuột vòng quanh để đổi màu của hình."
 
 msgid "Click and move the mouse around to make the picture drip."
 msgstr "Nhắp và di chuột để làm cho hình này chạy nhỏ giọt."
 
-#, fuzzy
 msgid "Click and move the mouse around to turn the picture into a cartoon."
-msgstr "Nhắp và di chuột để đổi hình này thành bản vẽ phấn."
+msgstr "Nhắp và di chuột vòng quanh để đổi hình này thành hoạt hình."
 
 msgid "Click to make a mirror image."
 msgstr "Nhắp để tạo một hình phản chiếu."
@@ -215,7 +205,7 @@ msgid "Circle"
 msgstr "Tròn"
 
 msgid "Ellipse"
-msgstr ""
+msgstr "Bầu dục"
 
 msgid "Triangle"
 msgstr "Tam giác"
@@ -224,22 +214,19 @@ msgid "Pentagon"
 msgstr "Năm cạnh"
 
 msgid "Rhombus"
-msgstr ""
+msgstr "Thoi"
 
-#, fuzzy
 msgid "A square is a rectangle with four equal sides."
-msgstr "Hình chữ nhật có bốn cạnh."
+msgstr "Hình vuông là hình chữ nhật có bốn cạnh bằng nhau."
 
-#, fuzzy
 msgid "A rectangle has four sides and four right angles."
-msgstr "Hình chữ nhật có bốn cạnh."
+msgstr "Hình chữ nhật có bốn cạnh và bốn góc vuông."
 
-msgid ""
-"A circle is a curve where all points have the same distance from the centre."
-msgstr ""
+msgid "A circle is a curve where all points have the same distance from the centre."
+msgstr "Hình tròn là đường cong có mọi điểm cách tâm vòng bằng nhau."
 
 msgid "An ellipse is a stretched circle."
-msgstr ""
+msgstr "Hình bầu dục là hình quả trứng."
 
 msgid "A triangle has three sides."
 msgstr "Tam giác có ba cạnh."
@@ -248,7 +235,7 @@ msgid "A pentagon has five sides."
 msgstr "Hình năm canh có ... năm cạnh. :)"
 
 msgid "A rhombus has four equal sides, and opposite sides are parallel."
-msgstr ""
+msgstr "Hình thoi có bốn cạnh bằng nhau, mỗi cặp cạnh đối diện với nhau là song song."
 
 msgid "Tools"
 msgstr "Công cụ"
@@ -259,7 +246,6 @@ msgstr "Màu"
 msgid "Brushes"
 msgstr "Chổi"
 
-#, fuzzy
 msgid "Erasers"
 msgstr "Xóa"
 
@@ -321,13 +307,8 @@ msgstr "Chọn một ảnh để dấu vòng quanh hình vẽ của cháu."
 msgid "Click to start drawing a line. Let go to complete it."
 msgstr "Nhắp chuột để bắt đầu vẽ một đường. Nhả nút chuột để vẽ xong."
 
-msgid ""
-"Pick a shape. Click to pick the center, drag, then let go when it is the "
-"size you want. Move around to rotate it, and click to draw it."
-msgstr ""
-"Chọn một hình. Nhắp chuột để định tâm, kéo, rồi nhả nút chuột đến khi có "
-"kích cỡ cháu muốn. Di chuyển chuột để quay hình, nhắp chuột lần nữa để vẽ "
-"xong."
+msgid "Pick a shape. Click to pick the center, drag, then let go when it is the size you want. Move around to rotate it, and click to draw it."
+msgstr "Chọn một hình. Nhắp chuột để định tâm, kéo, rồi nhả nút chuột đến khi có kích cỡ cháu muốn. Di chuyển chuột để quay hình, nhắp chuột lần nữa để vẽ xong."
 
 msgid "Choose a style of text. Click on your drawing and you can start typing."
 msgstr "Chọn kiểu văn bản. Nhắp vào bản vẽ và bắt đầu gõ chữ."
@@ -427,31 +408,31 @@ msgid "Erase this picture?"
 msgstr "Có xóa ảnh này không?"
 
 msgid "Remember to use the left mouse button!"
-msgstr ""
+msgstr "Hãy nhớ để dùng cái nút bên trái trên con chuột."
 
 msgid "jq"
-msgstr ""
+msgstr "jq"
 
 msgid "JQ"
-msgstr ""
+msgstr "JQ"
 
 msgid "oO"
-msgstr ""
+msgstr "oO"
 
 msgid "`\\%_@$~#{}<>^&*"
-msgstr ""
+msgstr "`\\%_@$₫~#{}<>«»^&*"
 
 msgid ",.?!"
-msgstr ""
+msgstr ",.?!"
 
 msgid "017"
-msgstr ""
+msgstr "017"
 
 msgid "O0"
-msgstr ""
+msgstr "O0"
 
 msgid "1Il|"
-msgstr ""
+msgstr "1Il|"
 
 msgid "Erase"
 msgstr "Xóa"
@@ -460,7 +441,7 @@ msgid "Back"
 msgstr "Quay lui"
 
 msgid "Aa"
-msgstr ""
+msgstr "Aa"
 
 #. FIXME: Move elsewhere!!!
 msgid "Save over the older version of this picture?"
@@ -471,42 +452,3 @@ msgstr "Không, lưu vào một tập tin mới"
 
 msgid "Choose the picture you want, then click “Open”."
 msgstr "Chọn ảnh mà cháu muốn, rồi nhắp vào nút Mở."
-
-#~ msgid "Lime!"
-#~ msgstr "Xanh lá mạ!"
-
-#~ msgid "Green!"
-#~ msgstr "Xanh lá cây!"
-
-#~ msgid "Fuchsia!"
-#~ msgstr "Tím hồng!"
-
-#~ msgid "Silver!"
-#~ msgstr "Bạc!"
-
-#~ msgid "Fade"
-#~ msgstr "Làm mờ dần"
-
-#~ msgid "Thick"
-#~ msgstr "Dày"
-
-#~ msgid "Click and move the mouse to thicken the picture."
-#~ msgstr "Nhắp và di chuột để làm dày hình lên."
-
-#~ msgid "Click and move the mouse to thin the picture."
-#~ msgstr "Nhắp và di chuột để làm mỏng hình."
-
-#~ msgid "Oval"
-#~ msgstr "Bầu dục"
-
-#~ msgid "Diamond"
-#~ msgstr "Hình thoi"
-
-#~ msgid "A square has four sides, each the same length."
-#~ msgstr "Hình vuôbng có bốn cạnh bằng nhau."
-
-#~ msgid "A circle is exactly round."
-#~ msgstr "Hình tròn là tròn hoàn toàn."
-
-#~ msgid "A diamond is a square, turned around slightly."
-#~ msgstr "Hình thoi là hình vuông đã quay môt chút."
