@@ -789,7 +789,8 @@ New Breed Software</p>
 	  file ("<code>tuxpaint.cfg</code>").</p>
 
 	  <p>If the "printcfg" option is used, printer settings will
-	  be loaded from the file "<code>userdata/print.cfg</code>".
+	  be loaded from the file "<code>print.cfg</code>" in your
+	  personal folder (see below).
 	  Any changes will be saved there as well.</p>
 	  
 	  <p>See the "<a href="OPTIONS.html"><i>Options</i></a>"
@@ -983,11 +984,6 @@ New Breed Software</p>
 
     <p>Place this PNG file in your Tux&nbsp;Paint '<code>saved</code>'
     directory.  (See above.)</p>
-
-    <p>Under Windows, this is in the "<code>userdata</code>" folder.
-    Under Mac OS X, this is in
-    "<code>Library/Application&nbsp;Support/tuxpaint/</code>"
-    in your home directory.</p>
   </blockquote>
 </blockquote>
 
@@ -1050,7 +1046,7 @@ New Breed Software</p>
 	"Libraries" folder, under "Preferences", e.g.:</p>
 
 	<blockquote><code>
-	  /Users/Joe/Library/Preferences/
+	  /Users/<i>(user&nbsp;name)</i>/Library/Preferences/
 	</code></blockquote>
 
       </blockquote>
@@ -1063,12 +1059,38 @@ New Breed Software</p>
     <h3>Personal Files</h3>
     <blockquote>
       <p>You can also create brushes, stamps, fonts and 'starters' in your
-      own directory for Tux&nbsp;Paint to find.</p>
+      own directory (folder) for Tux&nbsp;Paint to find.</p>
+      
+
+      <h4>Windows</h4>
+      <blockquote>
+        <p>Your personal Tux&nbsp;Paint folder is stored in your
+	"Application Data".  For example, on newer Windows (set up
+	for an English-speaking user):</p>
+	
+        <blockquote><code>
+          C:\Documents and Settings\<i>(user&nbsp;name)</i>\Application
+          Data\TuxPaint\
+        </code></blockquote>
+	
+      </blockquote>
+
+      <h4>Mac OS X</h4>
+      <blockquote>
+        <p>Your personal Tux&nbsp;Paint folder is stored in your
+	"Library" folder:
+    
+        <blockquote><code>
+	  Users/<i>(user&nbsp;name)</i>/Library/Application Support/
+          Tux&nbsp;Paint/</code>
+	</code></blockquote>
+      </blockquote>
 
       <h4>Linux and Unix</h4>
       <blockquote>
         <p>Your personal Tux&nbsp;Paint directory is
-        "<code>~/.tuxpaint/</code>".</p>
+        "<code>$(HOME)/.tuxpaint/</code>" (also known as
+	"<code>~/.tuxpaint/</code>".</p>
 	
 	<p>That is, if your home directory is "<code>/home/karl</code>", then
 	your Tux&nbsp;Paint directory is
@@ -1077,19 +1099,6 @@ New Breed Software</p>
 	<p>Don't forget the period ("<code>.</code>") before the
         '<code>tuxpaint</code>'!</p>
       </blockquote>
-      
-
-      <h4>Windows</h4>
-      <blockquote>
-        <p>Your personal Tux&nbsp;Paint directory is named "userdata" and
-	is in the same directory as the executable e.g.:</p>
-	
-        <blockquote><code>
-	  C:\Program&nbsp;Files\TuxPaint\userdata
-        </code></blockquote>
-	
-      </blockquote>
-
     
       <p>To add brushes, stamps fonts, and 'starters,' create subdirectories
       under your personal Tux&nbsp;Paint directory named

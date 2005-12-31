@@ -562,8 +562,9 @@ Available Tools
 
                               If the "printcfg" option is used, printer
                               settings will be loaded from the file
-                              "userdata/print.cfg". Any changes will be saved
-                              there as well.
+                              "print.cfg" in your personal folder (see
+                              below). Any changes will be saved there as
+                              well.
 
                               See the "Options" documentation.)
 
@@ -719,9 +720,6 @@ Doing it Manually
 
        Place this PNG file in your Tux Paint 'saved' directory. (See above.)
 
-       Under Windows, this is in the "userdata" folder. Under Mac OS X, this
-       is in "Library/Application Support/tuxpaint/" in your home directory.
-
    --------------------------------------------------------------------------
 
                               Extending Tux Paint
@@ -765,30 +763,38 @@ Where Files Go
            Tux Paint stores files in your account's "Libraries" folder, under
            "Preferences", e.g.:
 
-             /Users/Joe/Library/Preferences/
+             /Users/(user name)/Library/Preferences/
 
    --------------------------------------------------------------------------
 
   Personal Files
 
          You can also create brushes, stamps, fonts and 'starters' in your
-         own directory for Tux Paint to find.
+         own directory (folder) for Tux Paint to find.
+
+    Windows
+
+           Your personal Tux Paint folder is stored in your "Application
+           Data". For example, on newer Windows (set up for an
+           English-speaking user):
+
+             C:\Documents and Settings\(user name)\Application Data\TuxPaint\
+
+    Mac OS X
+
+           Your personal Tux Paint folder is stored in your "Library" folder:
+
+             Users/(user name)/Library/Application Support/ Tux Paint/
 
     Linux and Unix
 
-           Your personal Tux Paint directory is "~/.tuxpaint/".
+           Your personal Tux Paint directory is "$(HOME)/.tuxpaint/" (also
+           known as "~/.tuxpaint/".
 
            That is, if your home directory is "/home/karl", then your
            Tux Paint directory is "/home/karl/.tuxpaint/".
 
            Don't forget the period (".") before the 'tuxpaint'!
-
-    Windows
-
-           Your personal Tux Paint directory is named "userdata" and is in
-           the same directory as the executable e.g.:
-
-             C:\Program Files\TuxPaint\userdata
 
          To add brushes, stamps fonts, and 'starters,' create subdirectories
          under your personal Tux Paint directory named "brushes", "stamps",
