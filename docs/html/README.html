@@ -23,7 +23,7 @@ New Breed Software</p>
 <p><a href="mailto:bill@newbreedsoftware.com">bill@newbreedsoftware.com</a><br>
 <a href="http://www.newbreedsoftware.com/tuxpaint/">http://www.newbreedsoftware.com/tuxpaint/</a></p>
 
-<p>June 14, 2002 - December 6, 2005</p>
+<p>June 14, 2002 - December 31, 2005</p>
 </center>
 
 <hr size=2 noshade>
@@ -887,11 +887,23 @@ New Breed Software</p>
 
   <p>To do so, you simply need to convert the picture into
   a PNG (Portable Network Graphic) image file, and place it in Tux&nbsp;Paint's
-  "saved" directory.  ("<code>~/.tuxpaint/saved/</code>" under Linux and Unix,
-  "<code>userdata\saved\</code>" under Windows,
-  "<code>Library/Preferences/tuxpaint/saved/</code>" under Mac&nbsp;OS&nbsp;X.)
-  </p>
+  "saved" directory:</p>
   
+  <dl>
+  <dt>Windows</dt>
+  <dd>Inside the user's "<code>Application&nbsp;Data</code>" folder,
+    e.g.: <code>"C:\Documents and Settings\<i>(user&nbsp;name)</i>\Application
+    Data\TuxPaint\saved\</code>"</dd>
+  
+  <dt>Mac OS X</dt>
+  <dd>Inside the user's "<code>Library</code>" folder:
+    <code>"Users/<i>(user&nbsp;name)</i>/Library/Application Support/
+    Tux&nbsp;Paint/saved/</code>"</dd>
+  
+  <dt>Linux/Unix</dt>
+  <dd>Inside a hidden "<code>.tuxpaint</code>" directory, in the user's
+    home directory: "<code>$(HOME)/.tuxpaint/saved/</code>"</dd>
+  </dl>
 
   <h2>Using '<code>tuxpaint-import</code>'</h2>
   <blockquote>

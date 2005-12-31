@@ -9,7 +9,7 @@
                            bill@newbreedsoftware.com
                    http://www.newbreedsoftware.com/tuxpaint/
 
-                        June 14, 2002 - December 6, 2005
+                       June 14, 2002 - December 31, 2005
 
    --------------------------------------------------------------------------
 
@@ -640,8 +640,20 @@ Available Tools
 
      To do so, you simply need to convert the picture into a PNG (Portable
      Network Graphic) image file, and place it in Tux Paint's "saved"
-     directory. ("~/.tuxpaint/saved/" under Linux and Unix, "userdata\saved\"
-     under Windows, "Library/Preferences/tuxpaint/saved/" under Mac OS X.)
+     directory:
+
+     Windows
+             Inside the user's "Application Data" folder, e.g.: "C:\Documents
+             and Settings\(user name)\Application Data\TuxPaint\saved\"
+
+     Mac OS X
+             Inside the user's "Library" folder:
+             "Users/(user name)/Library/Application Support/
+             Tux Paint/saved/"
+
+     Linux/Unix
+             Inside a hidden ".tuxpaint" directory, in the user's home
+             directory: "$(HOME)/.tuxpaint/saved/"
 
 Using 'tuxpaint-import'
 
