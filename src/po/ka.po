@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TuxPaint\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2005-10-10 00:12-0700\n"
+"POT-Creation-Date: 2006-01-04 23:22+0100\n"
 "PO-Revision-Date: 2005-10-10 23:41+0300\n"
 "Last-Translator: Giasher <giasher@telenet.ge>\n"
 "Language-Team: Gia Shervashidze <giasher@telenet.ge>\n"
@@ -171,7 +171,8 @@ msgstr "დაწკაპეთ და გადაატარეთ ნახ
 msgid "Click and move to darken the colors."
 msgstr "დაწკაპეთ და გადაატარეთ ფერების გასამუქებლად."
 
-msgid "Click and move the mouse around to turn the picture into a chalk drawing."
+msgid ""
+"Click and move the mouse around to turn the picture into a chalk drawing."
 msgstr "დაწკაპეთ და გადაატარეთ ნახატს მისი ცარცით დახატულად გადასაქცევად."
 
 msgid "Click and move the mouse around to make the picture blocky."
@@ -222,7 +223,8 @@ msgstr "კვადრათი მართკუთხედედია ო�
 msgid "A rectangle has four sides and four right angles."
 msgstr "მართკუთხედს ოთხი გვერდი და ოთხი მართი კუთხე აქვს."
 
-msgid "A circle is a curve where all points have the same distance from the centre."
+msgid ""
+"A circle is a curve where all points have the same distance from the centre."
 msgstr "წრეწირი მრუდია, რომლის ყველა წერტილი ცენტრიდან თანაბრადაა დაცილებული."
 
 msgid "An ellipse is a stretched circle."
@@ -307,8 +309,12 @@ msgstr "შეარჩიეთ ნახატი რომლის დამ
 msgid "Click to start drawing a line. Let go to complete it."
 msgstr "დაწკაპეთ ხაზის დასაწყებად. აუშვით ღილაკი დასამთავრებლად."
 
-msgid "Pick a shape. Click to pick the center, drag, then let go when it is the size you want. Move around to rotate it, and click to draw it."
-msgstr "აირჩიეთ ფორმა. დაწკაპეთ ცენტრის ასარჩევად, გაჭიმეთ საჭირო ზომამდე, აუშვით. დაატრიალეთ ფორმა და შემდეგ დაწკაპეთ მის დასახატად."
+msgid ""
+"Pick a shape. Click to pick the center, drag, then let go when it is the "
+"size you want. Move around to rotate it, and click to draw it."
+msgstr ""
+"აირჩიეთ ფორმა. დაწკაპეთ ცენტრის ასარჩევად, გაჭიმეთ საჭირო ზომამდე, აუშვით. "
+"დაატრიალეთ ფორმა და შემდეგ დაწკაპეთ მის დასახატად."
 
 msgid "Choose a style of text. Click on your drawing and you can start typing."
 msgstr "აირჩიეთ ტექსტის სტილი. დაწკაპეთ თქვენს ნახატზე და აკრიფეთ ტექსტი."
@@ -410,6 +416,9 @@ msgstr "წავშალო ეს ნახატი?"
 msgid "Remember to use the left mouse button!"
 msgstr "არ დაგავიწყდეთ თაგუნას მარცხენა ღილაკის გამოყენება!"
 
+msgid "Please wait..."
+msgstr ""
+
 msgid "jq"
 msgstr ""
 
@@ -455,28 +464,39 @@ msgstr "აირჩიეთ ნახატი და დაწკაპეთ
 
 #~ msgid "A circle is exactly round."
 #~ msgstr "წრე სრულიად მრგვალია :)"
+
 #~ msgid "A diamond is a square, turned around slightly."
 #~ msgstr "რომბი კვადრატს ჰგავს, მაგრამ კუთხეებით განსხვავდება."
+
 #~ msgid "A square has four sides, each the same length."
 #~ msgstr "კვადრატის ყველა გვერდი ერთმანეთის ტოლია."
+
 #~ msgid "Click and move the mouse to thicken the picture."
 #~ msgstr "დაწკაპეთ და გადაატარეთ ნახატს მისი ნაწილის გასასქელებლად."
+
 #~ msgid "Click and move the mouse to thin the picture."
 #~ msgstr "დაწკაპეთ და გადაატარეთ ნახატს მისი ნაწილის დასაწვრილებლად."
+
 #~ msgid "Diamond"
 #~ msgstr "რომბი"
+
 #~ msgid "Fade"
 #~ msgstr "ჩაქრობა"
+
 #~ msgid "Fuchsia!"
 #~ msgstr "ფუქსია!"
+
 #~ msgid "Green!"
 #~ msgstr "მწვანე!"
+
 #~ msgid "Lime!"
 #~ msgstr "ღია მწვანე!"
+
 #~ msgid "Oval"
 #~ msgstr "ოვალი"
+
 #~ msgid "Silver!"
 #~ msgstr "ვერცხლისფერი!"
+
 #~ msgid "Thick"
 #~ msgstr "მსხვილი"
-

@@ -5,7 +5,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: TuxPaint 0.9.14\n"
-"POT-Creation-Date: 2005-10-10 00:12-0700\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2006-01-04 23:22+0100\n"
 "PO-Revision-Date: 2005-10-22 14:12+0100\n"
 "Last-Translator: Flavio - Iron Bishop - Pastore <ironbishop_fsfe_org>\n"
 "Language-Team: Italian <it@li.org>\n"
@@ -166,7 +167,8 @@ msgstr "Fai clic e muovi il mouse per scolorire il disegno."
 msgid "Click and move to darken the colors."
 msgstr "Fai clic e muovi il mouse per scurire il disegno."
 
-msgid "Click and move the mouse around to turn the picture into a chalk drawing."
+msgid ""
+"Click and move the mouse around to turn the picture into a chalk drawing."
 msgstr "Fai clic e muovi il mouse per ottenere un disegno stile gesso."
 
 msgid "Click and move the mouse around to make the picture blocky."
@@ -217,8 +219,11 @@ msgstr "Un quadrato è un rettangono con i lati uguali."
 msgid "A rectangle has four sides and four right angles."
 msgstr "Un rettangono ha quattro lati e quatto angoli retti."
 
-msgid "A circle is a curve where all points have the same distance from the centre."
-msgstr "Un cerchio è una curva dove tutti i punti hanno la stessa distanza dal centro."
+msgid ""
+"A circle is a curve where all points have the same distance from the centre."
+msgstr ""
+"Un cerchio è una curva dove tutti i punti hanno la stessa distanza dal "
+"centro."
 
 msgid "An ellipse is a stretched circle."
 msgstr "Un'ellisse è un cerchio schiacciato."
@@ -281,6 +286,7 @@ msgid "New"
 msgstr "Nuovo"
 
 #  buttons for the file open dialog
+#. buttons for the file open dialog
 msgid "Open"
 msgstr "Apri"
 
@@ -300,10 +306,16 @@ msgid "Pick a picture to stamp around your drawing."
 msgstr "Scegli un timbro da inserire nel disegno."
 
 msgid "Click to start drawing a line. Let go to complete it."
-msgstr "Fai clic per iniziare una linea. Lascia andare il tasto per completarla."
+msgstr ""
+"Fai clic per iniziare una linea. Lascia andare il tasto per completarla."
 
-msgid "Pick a shape. Click to pick the center, drag, then let go when it is the size you want. Move around to rotate it, and click to draw it."
-msgstr "Scegli una forma. Fai click per il scegliere il centro, trascina, lascia andare il tasto per scegliere la grandezza. Muovi il mouse per ruotare la forma, fai click per disegnarla."
+msgid ""
+"Pick a shape. Click to pick the center, drag, then let go when it is the "
+"size you want. Move around to rotate it, and click to draw it."
+msgstr ""
+"Scegli una forma. Fai click per il scegliere il centro, trascina, lascia "
+"andare il tasto per scegliere la grandezza. Muovi il mouse per ruotare la "
+"forma, fai click per disegnarla."
 
 msgid "Choose a style of text. Click on your drawing and you can start typing."
 msgstr "Scegli uno stile per il testo. Fai click sul disegno per scrivere."
@@ -312,34 +324,42 @@ msgid "Pick a magical effect to use on your drawing!"
 msgstr "Scegli un effetto magico da usare sul disegno!"
 
 #  Undo
+#. Undo
 msgid "Undo!"
 msgstr "Annulla!"
 
 #  Redo
+#. Redo
 msgid "Redo!"
 msgstr "Ripeti!"
 
 #  Eraser
+#. Eraser
 msgid "Eraser!"
 msgstr "Cancella!"
 
 #  New
+#. New
 msgid "You now have a blank sheet to draw on!"
 msgstr "Adesso hai un foglio bianco su cui disegnare!"
 
 #  Open
+#. Open
 msgid "Open…"
 msgstr "Apri..."
 
 #  Save
+#. Save
 msgid "Your image has been saved!"
 msgstr "Il tuo disegno è stato salvato!"
 
 #  Print
+#. Print
 msgid "Printing…"
 msgstr "Sto stampando..."
 
 #  Quit
+#. Quit
 msgid "Bye bye!"
 msgstr "Ciao ciao!"
 
@@ -356,10 +376,12 @@ msgid "OK then… Let’s keep drawing this one!"
 msgstr "Allora ok... continuiamo a disegnare questo!"
 
 #  FIXME: Move elsewhere!!!
+#. FIXME: Move elsewhere!!!
 msgid "Do you really want to quit?"
 msgstr "Vuoi veramente uscire?"
 
 #  FIXME: Move elsewhere! Or not?!
+#. FIXME: Move elsewhere! Or not?!
 msgid "Yes"
 msgstr "Sì"
 
@@ -405,6 +427,9 @@ msgstr "Vuoi cancellare il disegno?"
 msgid "Remember to use the left mouse button!"
 msgstr "Ricorda di usare il tasto sinistro del mouse!"
 
+msgid "Please wait..."
+msgstr ""
+
 msgid "jq"
 msgstr "jq"
 
@@ -439,6 +464,7 @@ msgid "Aa"
 msgstr "Aa"
 
 #  FIXME: Move elsewhere!!!
+#. FIXME: Move elsewhere!!!
 msgid "Save over the older version of this picture?"
 msgstr "Sovrascrivere la versione precedente di questo disegno?"
 
@@ -447,4 +473,3 @@ msgstr "No, usa un nuovo file"
 
 msgid "Choose the picture you want, then click “Open”."
 msgstr "Scegli il disegno che desideri e fai click su “Apri”."
-

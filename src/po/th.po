@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2005-10-10 00:12-0700\n"
+"POT-Creation-Date: 2006-01-04 23:22+0100\n"
 "PO-Revision-Date: 2005-10-10 10:56+0700\n"
 "Last-Translator: Ouychai Chaita <Ae.freeman@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -418,6 +418,9 @@ msgstr "ลบรูปนี้หรือไม่?"
 
 msgid "Remember to use the left mouse button!"
 msgstr "โปรดจำไว้ว่าใช้เม้าปุ่มซ้าย"
+
+msgid "Please wait..."
+msgstr ""
 
 msgid "jq"
 msgstr "jq"

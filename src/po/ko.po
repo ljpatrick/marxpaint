@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Tux Paint 0.9.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2005-10-10 00:12-0700\n"
+"POT-Creation-Date: 2006-01-04 23:22+0100\n"
 "PO-Revision-Date: 2005-10-03 00:15-0700\n"
 "Last-Translator: Mark K. Kim <tuxNO_SOLICITATIONpaint-dev@cbreak.org>\n"
 "Language-Team: N/A\n"
@@ -417,6 +417,9 @@ msgstr "이 그림을 지울까요?"
 
 msgid "Remember to use the left mouse button!"
 msgstr "왼쪽 마우스버튼을 사용하는걸 잊지 마세요!"
+
+msgid "Please wait..."
+msgstr ""
 
 msgid "jq"
 msgstr ""

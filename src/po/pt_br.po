@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TuxPaint 0.0.1pre\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2005-10-10 00:12-0700\n"
+"POT-Creation-Date: 2006-01-04 23:22+0100\n"
 "PO-Revision-Date: 2005-10-03 21:41-0300\n"
 "Last-Translator: Daniel José Viana <danjovic@vespanet.com.br>\n"
 "Language-Team: Português Brasileiro <danjovic@vespanet.com.br>\n"
@@ -441,6 +441,9 @@ msgid "Erase this picture?"
 msgstr "Apagar este desenho?"
 
 msgid "Remember to use the left mouse button!"
+msgstr ""
+
+msgid "Please wait..."
 msgstr ""
 
 msgid "jq"

@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TuxPaint 0.9.15\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2005-10-10 00:12-0700\n"
+"POT-Creation-Date: 2006-01-04 23:22+0100\n"
 "PO-Revision-Date: 2005-10-10 18:59-0300\n"
 "Last-Translator: Gabriel Gazzán <ggabriel@internet.com.uy>\n"
 "Language-Team: Español <ggabriel@internet.com.uy>\n"
@@ -167,8 +167,10 @@ msgstr "Haz clic y arrastra el ratón para desvanecer los colores."
 msgid "Click and move to darken the colors."
 msgstr "Haz clic y arrastra para oscurecer los colores."
 
-msgid "Click and move the mouse around to turn the picture into a chalk drawing."
-msgstr "Haz clic y arrastra el ratón para que la imagen parezca hecha con tiza."
+msgid ""
+"Click and move the mouse around to turn the picture into a chalk drawing."
+msgstr ""
+"Haz clic y arrastra el ratón para que la imagen parezca hecha con tiza."
 
 msgid "Click and move the mouse around to make the picture blocky."
 msgstr "Haz clic y arrastra el ratón para cuadricular la imagen."
@@ -183,7 +185,8 @@ msgid "Click and move the mouse around to make the picture drip."
 msgstr "Haz clic y arrastra el ratón para que la imagen gotee."
 
 msgid "Click and move the mouse around to turn the picture into a cartoon."
-msgstr "Haz clic y arrastra el ratón para que la imagen se vea como los dibujitos."
+msgstr ""
+"Haz clic y arrastra el ratón para que la imagen se vea como los dibujitos."
 
 msgid "Click to make a mirror image."
 msgstr "Haz clic para hacer una imagen a espejo."
@@ -218,8 +221,10 @@ msgstr "Un cuadrado es un rectángulo con sus cuatro lados iguales."
 msgid "A rectangle has four sides and four right angles."
 msgstr "Un rectángulo tiene cuatro lados y cuatro ángulos."
 
-msgid "A circle is a curve where all points have the same distance from the centre."
-msgstr "Un círculo es una curva cuyos puntos están a la misma distancia del centro."
+msgid ""
+"A circle is a curve where all points have the same distance from the centre."
+msgstr ""
+"Un círculo es una curva cuyos puntos están a la misma distancia del centro."
 
 msgid "An ellipse is a stretched circle."
 msgstr "Una elipse es un círculo estirado."
@@ -301,10 +306,16 @@ msgid "Pick a picture to stamp around your drawing."
 msgstr "Escoge un sello para estampar en tu dibujo."
 
 msgid "Click to start drawing a line. Let go to complete it."
-msgstr "Haz clic para comenzar a dibujar una línea. Suelta el botón para terminarla."
+msgstr ""
+"Haz clic para comenzar a dibujar una línea. Suelta el botón para terminarla."
 
-msgid "Pick a shape. Click to pick the center, drag, then let go when it is the size you want. Move around to rotate it, and click to draw it."
-msgstr "Escoge una figura. Haz clic para marcar el centro, arrastra, luego suelta cuando esté del tamaño deseado. Mueve alrededor para rotarla, haz clic para dibujarla."
+msgid ""
+"Pick a shape. Click to pick the center, drag, then let go when it is the "
+"size you want. Move around to rotate it, and click to draw it."
+msgstr ""
+"Escoge una figura. Haz clic para marcar el centro, arrastra, luego suelta "
+"cuando esté del tamaño deseado. Mueve alrededor para rotarla, haz clic para "
+"dibujarla."
 
 msgid "Choose a style of text. Click on your drawing and you can start typing."
 msgstr "Elige un estilo de texto. Haz clic en tu dibujo y comienza a escribir."
@@ -406,6 +417,9 @@ msgstr "¿Borrar esta imagen?"
 msgid "Remember to use the left mouse button!"
 msgstr "¡Recuerda usar el botón izquierdo del ratón!"
 
+msgid "Please wait..."
+msgstr ""
+
 msgid "jq"
 msgstr ""
 
@@ -451,22 +465,30 @@ msgstr "Escoge la imagen que quieras, luego haz clic en “Abrir”."
 
 #~ msgid "Dark Gray!"
 #~ msgstr "¡Gris oscuro!"
+
 #~ msgid "Neon green!"
 #~ msgstr "¡Verde eléctrico!"
+
 #~ msgid "Green!"
 #~ msgstr "¡Verde!"
+
 #~ msgid "Magenta!"
 #~ msgstr "¡Magenta!"
+
 #~ msgid "Fade"
 #~ msgstr "Desvanecer"
+
 #~ msgid "Oval"
 #~ msgstr "Ovalo"
+
 #~ msgid "Diamond"
 #~ msgstr "Rombo"
+
 #~ msgid "A square has four sides, each the same length."
 #~ msgstr "Un cuadrado tiene cuatro lados, todos del mismo largo."
+
 #~ msgid "A circle is exactly round."
 #~ msgstr "Un círculo es completamente redondo."
+
 #~ msgid "A diamond is a square, turned around slightly."
 #~ msgstr "Un rombo es un cuadrado un poco deformado."
-

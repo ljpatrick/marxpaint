@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: nl\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2005-10-10 00:12-0700\n"
+"POT-Creation-Date: 2006-01-04 23:22+0100\n"
 "PO-Revision-Date: 2005-01-09 21:32+0100\n"
 "Last-Translator: \n"
 "Language-Team:  <nl@li.org>\n"
@@ -228,8 +228,7 @@ msgstr "Een rechthoek heeft vier zijden en vier rechte hoeken."
 
 msgid ""
 "A circle is a curve where all points have the same distance from the centre."
-msgstr ""
-"Een cirkel is een curve, met alle punten even ver van het midden."
+msgstr "Een cirkel is een curve, met alle punten even ver van het midden."
 
 msgid "An ellipse is a stretched circle."
 msgstr "Een ovaal is een uitgerekte cirkel."
@@ -323,7 +322,8 @@ msgstr ""
 "heeft die je wil. Beweeg om het te laten draaien en klik als je klaar bent."
 
 msgid "Choose a style of text. Click on your drawing and you can start typing."
-msgstr "Kies een stijl voor je letters. Klik op je tekening en begin te schrijven."
+msgstr ""
+"Kies een stijl voor je letters. Klik op je tekening en begin te schrijven."
 
 msgid "Pick a magical effect to use on your drawing!"
 msgstr "Kies een tover-effect om je tekening te veranderen!"
@@ -421,6 +421,9 @@ msgstr "Mag ik de gekozen tekening uitvegen?"
 
 msgid "Remember to use the left mouse button!"
 msgstr "Vergeet niet om de linkse muisknop te gebruiken!"
+
+msgid "Please wait..."
+msgstr ""
 
 msgid "jq"
 msgstr "jq"

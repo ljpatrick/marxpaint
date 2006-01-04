@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ms\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2005-10-10 00:12-0700\n"
+"POT-Creation-Date: 2006-01-04 23:22+0100\n"
 "PO-Revision-Date: 2004-08-23 16:06+0800\n"
 "Last-Translator: Muhammad Najmi bin Ahmad Zabidi <md_najmi@yahoo.com>\n"
 "Language-Team: Malay <kedidiemas@yahoogroups.com>\n"
@@ -434,6 +434,9 @@ msgid "Erase this picture?"
 msgstr "Padam hasil kerja?"
 
 msgid "Remember to use the left mouse button!"
+msgstr ""
+
+msgid "Please wait..."
 msgstr ""
 
 msgid "jq"

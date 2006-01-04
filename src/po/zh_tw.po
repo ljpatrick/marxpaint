@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Tuxpaint 0.9.15\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2005-10-10 00:12-0700\n"
+"POT-Creation-Date: 2006-01-04 23:22+0100\n"
 "PO-Revision-Date: 2005-10-17 22:00+0800\n"
 "Last-Translator: Song Huang <Song@song.idv.tw>\n"
 "Language-Team: \n"
@@ -315,8 +315,8 @@ msgid ""
 "Pick a shape. Click to pick the center, drag, then let go when it is the "
 "size you want. Move around to rotate it, and click to draw it."
 msgstr ""
-"挑選一個形狀。點一下來決定形狀的中心位置，然後拖拉他到你要的大小。"
-"繞著中心轉動來旋轉形狀，然後再點一下把他畫下來。"
+"挑選一個形狀。點一下來決定形狀的中心位置，然後拖拉他到你要的大小。繞著中心轉"
+"動來旋轉形狀，然後再點一下把他畫下來。"
 
 msgid "Choose a style of text. Click on your drawing and you can start typing."
 msgstr "選擇字母的樣式，在圖上點一下就可以開始輸入。"
@@ -325,34 +325,42 @@ msgid "Pick a magical effect to use on your drawing!"
 msgstr "挑選一種魔術的效果來用在你的圖畫上"
 
 #  Undo
+#. Undo
 msgid "Undo!"
 msgstr "回復"
 
 #  Redo
+#. Redo
 msgid "Redo!"
 msgstr "重作"
 
 #  Eraser
+#. Eraser
 msgid "Eraser!"
 msgstr "橡皮擦"
 
 #  New
+#. New
 msgid "You now have a blank sheet to draw on!"
 msgstr "你現在可以在空白頁上來繪圖"
 
 #  Open
+#. Open
 msgid "Open…"
 msgstr "開啟..."
 
 #  Save
+#. Save
 msgid "Your image has been saved!"
 msgstr "你的圖畫已經儲存"
 
 #  Print
+#. Print
 msgid "Printing…"
 msgstr "列印中..."
 
 #  Quit
+#. Quit
 msgid "Bye bye!"
 msgstr "再見"
 
@@ -369,10 +377,12 @@ msgid "OK then… Let’s keep drawing this one!"
 msgstr "好的，那麼讓我們繼續來畫這張圖。"
 
 #  FIXME: Move elsewhere!!!
+#. FIXME: Move elsewhere!!!
 msgid "Do you really want to quit?"
 msgstr "你確定要離開嗎？"
 
 #  FIXME: Move elsewhere! Or not?!
+#. FIXME: Move elsewhere! Or not?!
 msgid "Yes"
 msgstr "是的"
 
@@ -417,6 +427,9 @@ msgstr "刪除這張圖畫？"
 
 msgid "Remember to use the left mouse button!"
 msgstr "記得使用滑鼠的左鍵"
+
+msgid "Please wait..."
+msgstr ""
 
 msgid "jq"
 msgstr "jq"

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint 0.9.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2005-10-10 00:12-0700\n"
+"POT-Creation-Date: 2006-01-04 23:22+0100\n"
 "PO-Revision-Date: 2004-10-17 11:19+0200\n"
 "Last-Translator: Laurent Dhima <laurenti@alblinux.net>\n"
 "Language-Team: Albanian <translation-team-sq@lists.sourceforge.net>\n"
@@ -435,6 +435,9 @@ msgid "Erase this picture?"
 msgstr "Fshin këtë foto?"
 
 msgid "Remember to use the left mouse button!"
+msgstr ""
+
+msgid "Please wait..."
 msgstr ""
 
 msgid "jq"

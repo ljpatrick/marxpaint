@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: et\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2005-10-10 00:12-0700\n"
+"POT-Creation-Date: 2006-01-04 23:22+0100\n"
 "PO-Revision-Date: 2005-10-12 22:34+0300\n"
 "Last-Translator: Henrik Pihl <henrik@saarlane.ee>\n"
 "Language-Team: Estonian <et@li.org>\n"
@@ -168,7 +168,8 @@ msgstr "Tee klõps ja liiguta hiirt, et pleegitada värve."
 msgid "Click and move to darken the colors."
 msgstr "Tee klõps ja liiguta hiirt, et muuta värve tumedamaks."
 
-msgid "Click and move the mouse around to turn the picture into a chalk drawing."
+msgid ""
+"Click and move the mouse around to turn the picture into a chalk drawing."
 msgstr "Tee klõps ja liiguta hiirt, et muuta pilt kriidijoonistuse sarnaseks."
 
 msgid "Click and move the mouse around to make the picture blocky."
@@ -219,7 +220,8 @@ msgstr "Ruut on ristkülik nelja võrdse küljega."
 msgid "A rectangle has four sides and four right angles."
 msgstr "Ristkülikul on neli külge ja neli täisnurka."
 
-msgid "A circle is a curve where all points have the same distance from the centre."
+msgid ""
+"A circle is a curve where all points have the same distance from the centre."
 msgstr "Ring on kaar, kus kõik kaare punktid on keskelt ühe kaugusel."
 
 msgid "An ellipse is a stretched circle."
@@ -412,6 +414,9 @@ msgstr "Kas kustutame selle pildi?"
 msgid "Remember to use the left mouse button!"
 msgstr "Ära unusta kasutamast vasakut hiire nuppu!"
 
+msgid "Please wait..."
+msgstr ""
+
 msgid "jq"
 msgstr ""
 
@@ -454,4 +459,3 @@ msgstr "Ei, salvestame uude faili"
 
 msgid "Choose the picture you want, then click “Open”."
 msgstr "Vali pilt ja klõpsa nupul  \"Ava\""
-

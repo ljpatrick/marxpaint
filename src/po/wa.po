@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint 0.9.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2005-10-10 00:12-0700\n"
+"POT-Creation-Date: 2006-01-04 23:22+0100\n"
 "PO-Revision-Date: 2004-03-30 17:24+0200\n"
 "Last-Translator: Pablo Saratxaga <pablo@walon.org>\n"
 "Language-Team: Walloon <linux-wa@walon.org>\n"
@@ -441,6 +441,9 @@ msgid "Erase this picture?"
 msgstr "Disfacer ciste imådje chal?"
 
 msgid "Remember to use the left mouse button!"
+msgstr ""
+
+msgid "Please wait..."
 msgstr ""
 
 msgid "jq"

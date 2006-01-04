@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint 0.9.15\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2005-10-10 00:12-0700\n"
+"POT-Creation-Date: 2006-01-04 23:22+0100\n"
 "PO-Revision-Date: 2005-10-11 14:40+0300\n"
 "Last-Translator: Yavor Doganov <yavor@doganov.org>\n"
 "Language-Team: Bulgarian <dict@fsa-bg.org>\n"
@@ -422,6 +422,9 @@ msgstr "Да се изтрие ли рисунката?"
 
 msgid "Remember to use the left mouse button!"
 msgstr "Не забравяйте да използвате левия бутон на мишката!"
+
+msgid "Please wait..."
+msgstr ""
 
 msgid "jq"
 msgstr "jq"

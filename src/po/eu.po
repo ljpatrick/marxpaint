@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TuxPaint \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2005-10-10 00:12-0700\n"
+"POT-Creation-Date: 2006-01-04 23:22+0100\n"
 "PO-Revision-Date: 2004-07-14 16:30+0200\n"
 "Last-Translator: Juan Irigoien <juanirigoien@yahoo.es>\n"
 "Language-Team: basque <juanirigoien@yahoo.es>\n"
@@ -431,6 +431,9 @@ msgid "Erase this picture?"
 msgstr "Irudi hau ezabatu?"
 
 msgid "Remember to use the left mouse button!"
+msgstr ""
+
+msgid "Please wait..."
 msgstr ""
 
 msgid "jq"

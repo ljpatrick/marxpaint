@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TuxPaint\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2005-10-10 00:12-0700\n"
+"POT-Creation-Date: 2006-01-04 23:22+0100\n"
 "PO-Revision-Date: 2005-09-13 04:48+0200\n"
 "Last-Translator: Serhij Dubyk <dubyk@lsl.lviv.ua>\n"
 "Language-Team: Serhij Dubyk <dubyk@lsl.lviv.ua>\n"
@@ -455,6 +455,9 @@ msgstr "Видалити цей малюнок?"
 
 msgid "Remember to use the left mouse button!"
 msgstr "Не забувайте про ліву клавішу миші!"
+
+msgid "Please wait..."
+msgstr ""
 
 msgid "jq"
 msgstr "jq"

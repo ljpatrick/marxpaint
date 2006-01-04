@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint 0.9.15\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2005-10-10 00:12-0700\n"
+"POT-Creation-Date: 2006-01-04 23:22+0100\n"
 "PO-Revision-Date: 2005-10-04 12:43+0900\n"
 "Last-Translator: TOYAMA Shin-ichi <shin1@wmail.plala.jp>\n"
 "Language-Team: japanese <shin1@wmail.plala.or.jp>\n"
@@ -427,6 +427,9 @@ msgstr "このえを けしますか？"
 
 msgid "Remember to use the left mouse button!"
 msgstr "マウスの ひだりのボタンを つかってね！"
+
+msgid "Please wait..."
+msgstr ""
 
 msgid "jq"
 msgstr "jq"

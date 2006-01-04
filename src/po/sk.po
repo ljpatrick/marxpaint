@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint 0.9.15rc1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2005-10-10 00:12-0700\n"
+"POT-Creation-Date: 2006-01-04 23:22+0100\n"
 "PO-Revision-Date: 2005-10-16 16:57+0200\n"
 "Last-Translator: Andrej Kacian <andrej@kacian.sk>\n"
 "Language-Team: Slovak <sk-i18n@lists.linux.sk>\n"
@@ -169,7 +169,8 @@ msgstr "Klikni a pohybuj myšou pre vyblednutie farieb."
 msgid "Click and move to darken the colors."
 msgstr "Klikni a pohybuj myšou pre stmavenie farieb."
 
-msgid "Click and move the mouse around to turn the picture into a chalk drawing."
+msgid ""
+"Click and move the mouse around to turn the picture into a chalk drawing."
 msgstr "Klikni a pohybuj myšou pre prekreslenie obrázku kriedou."
 
 msgid "Click and move the mouse around to make the picture blocky."
@@ -220,7 +221,8 @@ msgstr "Štvorec je vlastne obdĺžnik so všetkými stranami rovnakými."
 msgid "A rectangle has four sides and four right angles."
 msgstr "Obdĺžnik má štyri strany a štyri pravé uhly."
 
-msgid "A circle is a curve where all points have the same distance from the centre."
+msgid ""
+"A circle is a curve where all points have the same distance from the centre."
 msgstr "Kruh je krivka, ktorej všetky body majú rovnakú vzdialenosť od stredu."
 
 msgid "An ellipse is a stretched circle."
@@ -233,7 +235,9 @@ msgid "A pentagon has five sides."
 msgstr "Päťuholník má päť strán."
 
 msgid "A rhombus has four equal sides, and opposite sides are parallel."
-msgstr "Lichobežník má štyri rovnaké strany, pričom protiľahlé strany sú vždy rovnobežné."
+msgstr ""
+"Lichobežník má štyri rovnaké strany, pričom protiľahlé strany sú vždy "
+"rovnobežné."
 
 msgid "Tools"
 msgstr "Nástroje"
@@ -414,6 +418,9 @@ msgstr "Vymazať tento obrázok?"
 msgid "Remember to use the left mouse button!"
 msgstr "Nezabudnite používať ľavé tlačítko na myši!"
 
+msgid "Please wait..."
+msgstr ""
+
 msgid "jq"
 msgstr "jq"
 
@@ -456,4 +463,3 @@ msgstr "Nie, ulož ho ako nový súbor"
 
 msgid "Choose the picture you want, then click “Open”."
 msgstr "Vyber obrázok, ktorý chceš, a potom klikni na \"Otvor\"."
-
