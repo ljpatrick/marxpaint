@@ -32,11 +32,14 @@
 
 /* Color depth for Tux Paint to run in, and store canvases in: */
 
-//#define VIDEO_BPP 15 // saves memory
-//#define VIDEO_BPP 16 // causes discoloration
-//#define VIDEO_BPP 24 // compromise
-#define VIDEO_BPP 32 // might be fastest, if conversion funcs removed
-
+#ifdef NOKIA_770
+# define VIDEO_BPP 15
+#else
+//# define VIDEO_BPP 15 // saves memory
+//# define VIDEO_BPP 16 // causes discoloration
+//# define VIDEO_BPP 24 // compromise
+# define VIDEO_BPP 32 // might be fastest, if conversion funcs removed
+#endif
 
 // plan to rip this out as soon as it is considered stable
 //#define THREADED_FONTS
@@ -7717,7 +7720,11 @@ static void setup(int argc, char * argv[])
 
   use_sound = 1;
   mute = 0;
+#ifdef NOKIA_770
+  fullscreen = 1;
+#else
   fullscreen = 0;
+#endif
   noshortcuts = 0;
   dont_do_xor = 0;
   keymouse = 0;
@@ -7740,8 +7747,13 @@ static void setup(int argc, char * argv[])
   disable_stamp_controls = 0;
   //  WINDOW_WIDTH = 640;
   //  WINDOW_HEIGHT = 480;
+#ifdef NOKIA_770
+  WINDOW_WIDTH = 800;
+  WINDOW_HEIGHT = 480;
+#else
   WINDOW_WIDTH = 800;
   WINDOW_HEIGHT = 600;
+#endif
   playfile = NULL;
   recording = 0;
   playing = 0;

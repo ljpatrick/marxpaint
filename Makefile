@@ -201,6 +201,13 @@ win32:
 		ARCH_HEADERS="src/win32_print.h" \
 		ARCH_LIBS="obj/win32_print.o obj/resource.o"
 
+# "make nokia770" builds the program for the Nokia 770.
+
+nokia770:
+	make \
+		DATA_PREFIX=/var/lib/install/usr/share/tuxpaint \
+		CFLAGS="-DNOKIA_770"
+
 # "make install" installs all of the various parts
 # (depending on the *PREFIX variables at the top, you probably need
 # to do this as superuser ("root"))
@@ -485,6 +492,21 @@ install-gnome:
 	 install -d $(PKG_ROOT)$(GNOME_PREFIX)/share/gnome/apps/Graphics; \
 	 cp src/tuxpaint.desktop $(PKG_ROOT)$(GNOME_PREFIX)/share/gnome/apps/Graphics/; \
 	 chmod 644 $(PKG_ROOT)$(GNOME_PREFIX)/share/gnome/apps/Graphics/tuxpaint.desktop; \
+	fi
+
+
+# Install a launcher icon for the Nokia 770.
+
+install-nokia770:
+	@echo
+	@echo "...Installing launcher icon into the Nokia 770..."
+	@if [ "x$(NOKIA770_PREFIX)" != "x" ]; then \
+	 install -d $(PKG_ROOT)$(NOKIA770_PREFIX)/share/pixmaps; \
+	 cp data/images/icon.png $(PKG_ROOT)/$(NOKIA770_PREFIX)/share/pixmaps/tuxpaint.png; \
+	 chmod 644 $(PKG_ROOT)$(NOKIA770_PREFIX)/share/pixmaps/tuxpaint.png; \
+	 install -d $(PKG_ROOT)$(NOKIA770_PREFIX)/share/applications/hildon; \
+	 cp hildon/tuxpaint.desktop $(PKG_ROOT)$(NOKIA770_PREFIX)/share/applications/hildon/; \
+	 chmod 644 $(PKG_ROOT)$(NOKIA770_PREFIX)/share/applications/hildon/tuxpaint.desktop; \
 	fi
 
 
