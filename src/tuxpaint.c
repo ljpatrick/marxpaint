@@ -85,6 +85,13 @@
 
 /* Compile-time options: */
 
+#ifdef NOKIA_770
+# define LOW_QUALITY_THUMBNAILS
+# define LOW_QUALITY_STAMP_OUTLINE
+# define LOW_QUALITY_FLOOD_FILL
+# define NO_PROMPT_SHADOWS
+# define USE_HWSURFACE
+#else
 /* #define DEBUG */
 /* #define DEBUG_MALLOC */
 /* #define LOW_QUALITY_THUMBNAILS */
@@ -93,6 +100,7 @@
 /* #define LOW_QUALITY_FLOOD_FILL */
 /* #define NO_PROMPT_SHADOWS */
 /* #define USE_HWSURFACE */
+#endif
 
 /* Disable fancy cursors in fullscreen mode, to avoid SDL bug: */
 /* (This bug is still around, as of SDL 1.2.9, October 2005) */
@@ -7731,8 +7739,13 @@ static void setup(int argc, char * argv[])
   wheely = 1;
   no_button_distinction = 0;
   grab_input = 0;
-  no_fancy_cursors = 0;
+#ifdef NOKIA_770
+  simple_shapes = 1;
+  no_fancy_cursors = 1;
+#else
   simple_shapes = 0;
+  no_fancy_cursors = 0;
+#endif
   only_uppercase = 0;
   promptless_save = SAVE_OVER_PROMPT;
   alt_print_command_default = ALTPRINT_MOD;
@@ -10992,6 +11005,11 @@ static void reset_avail_tools(void)
 
   if (disallow_print)
     tool_avail[TOOL_PRINT] = 0;
+
+#ifdef NOKIA_770
+  /* There is no way for the user to enter text, so just disable this. */
+  tool_avail[TOOL_TEXT] = 0;
+#endif
 }
 
 
