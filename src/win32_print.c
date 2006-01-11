@@ -533,4 +533,23 @@ char *GetDefaultSaveDir(const char *suffix)
   return strdup("userdata");
 }
 
+/*
+  Returns heap string containing system font directory.
+  E.g. 'C:\Windows\Fonts'
+*/
+char *GetSystemFontDir()
+{
+  char          path[MAX_PATH];
+  const char   *key    = "Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\Shell Folders";
+  const char   *option = "Fonts";
+  HRESULT hr = S_OK;
+
+  if (SUCCEEDED(hr = ReadRegistry(key, option, path, sizeof(path))))
+  {
+    remove_slash(path);
+    return strdup(path);
+  }
+  return strdup("C:\\WINDOWS\\FONTS");
+}
+
 

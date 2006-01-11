@@ -178,6 +178,7 @@ static scaleparams scaletable[] = {
 #include <string.h>
 #include <ctype.h>
 #include <time.h>
+#include <wchar.h>
 
 // math.h makes y1 an obscure function!
 #define y1 evil_y1
@@ -1650,6 +1651,47 @@ static SDL_Surface *render_text(TTF_Font *restrict font, const char *restrict st
 }
 
 
+// This conversion is required on platforms where Uint16 doesn't match wchar_t.
+// On Windows, wchar_t is 16-bit, elsewhere it is 32-bit.
+// Mismatch caused by the use of Uint16 for unicode characters by SDL, SDL_ttf.
+// I guess wchar_t is really only suitable for internal use ...
+static Uint16 *wcstou16(const wchar_t *str)
+{
+    unsigned int i, len = wcslen(str);
+    Uint16  *res = malloc((len+1)*sizeof(Uint16));
+
+    for (i = 0; i < len+1; ++i)
+    {
+        // This is a bodge, but it seems unlikely that a case-conversion
+        // will cause a change from one utf16 character into two....
+        res[i] = (Uint16)str[i];
+    }
+
+    return res;
+}
+
+static SDL_Surface *render_text_w(TTF_Font *restrict font, const wchar_t *restrict str, SDL_Color color)
+{
+  SDL_Surface *ret;
+  int height;
+  Uint16 *ustr;
+
+  ustr = wcstou16(str);
+  ret = TTF_RenderUNICODE_Blended(font, ustr, color);
+  free(ustr);
+
+  if(ret)
+    return ret;
+  // Sometimes a font will be missing a character we need. Sometimes the library
+  // will substitute a rectangle without telling us. Sometimes it returns NULL.
+  // Probably we should use FreeType directly. For now though...
+  height = TTF_FontHeight(font);
+  if(height<2)
+    height = 2;
+  return thumbnail(img_title_large_off, height*wcslen(str)/2, height, 0);
+}
+
+
 // void qsort(void *base, size_t nmemb, size_t size,
 // int(*compar)(const void *, const void *));
 
@@ -2235,7 +2277,7 @@ static int eraser_scroll, shape_scroll; // dummy variables for now
 
 static int eraser_sound;
 
-static char texttool_str[256];
+static wchar_t texttool_str[256];
 static unsigned int texttool_len;
 
 static int tool_avail[NUM_TOOLS], tool_avail_bak[NUM_TOOLS];
@@ -2389,6 +2431,7 @@ static void strip_trailing_whitespace(char * buf);
 static void do_render_cur_text(int do_blit);
 static void loadfonts(const char * const dir);
 static char * uppercase(char * str);
+static wchar_t * uppercase_w(wchar_t * str);
 static char * textdir(const char * const str);
 static SDL_Surface * do_render_button_label(const char * const label);
 static void create_button_labels(void);
@@ -3028,7 +3071,7 @@ static void mainloop(void)
 			  if (texttool_len > 0)
 			    {
 			      texttool_len--;
-			      texttool_str[texttool_len] = '\0';
+			      texttool_str[texttool_len] = 0;
 			      playsound(0, SND_KEYCLICK, 0);
 	        
 			      do_render_cur_text(0);
@@ -3063,20 +3106,19 @@ static void mainloop(void)
 			      cursor_textwidth = 0;
 			    }
 		        }
-		      else if (isprint(key_unicode))
+		      else if (iswprint(key_unicode))
 			{
-			  if (texttool_len < sizeof(texttool_str) - MAX_UTF8_CHAR_LENGTH)
+			  if (texttool_len < (sizeof(texttool_str)/sizeof(wchar_t)) - 1)
 			    {
 			      int old_cursor_textwidth = cursor_textwidth;
 #ifdef DEBUG
-			      printf("    key = %c\n"
-				     "unicode = %c (%d)\n\n",
+			      wprintf(L"    key = %c\nunicode = %lc (%d)\n\n",
 				     key_down, key_unicode, key_unicode);
 #endif
 	  	     
-			        texttool_str[texttool_len++] = key_unicode;
-		
-			      texttool_str[texttool_len] = '\0';
+			      texttool_str[texttool_len++] = key_unicode;
+			      texttool_str[texttool_len] = 0;
+
 			      do_render_cur_text(0);
 
 
@@ -7316,7 +7358,9 @@ static int load_user_fonts(void *vp)
   if (!no_system_fonts)
   {
 #ifdef WIN32
-    loadfonts("%SystemRoot%\\Fonts");
+    homedirdir = GetSystemFontDir();
+    loadfonts(homedirdir);
+    free(homedirdir);
 #elif defined(__BEOS__)
     loadfonts("/boot/home/config/font/ttffonts");
     loadfonts("/usr/share/fonts");
@@ -15077,7 +15121,7 @@ static void do_render_cur_text(int do_blit)
       	             0};
   SDL_Surface * tmp_surf;
   SDL_Rect dest, src;
-  char * str;
+  wchar_t * str;
     
 
   /* Keep cursor on the screen! */
@@ -15094,9 +15138,9 @@ static void do_render_cur_text(int do_blit)
 
   if (texttool_len > 0)
     {
-      str = uppercase(texttool_str);
+      str = uppercase_w(texttool_str);
     
-      tmp_surf = render_text(getfonthandle(cur_font), str, color);
+      tmp_surf = render_text_w(getfonthandle(cur_font), str, color);
 
       w = tmp_surf->w;
       h = tmp_surf->h;
@@ -15278,6 +15322,22 @@ static char * uppercase(char * str)
 }
 
 #endif
+
+static wchar_t * uppercase_w(wchar_t * str)
+{
+  wchar_t * ustr;
+  unsigned int i;
+
+  ustr = wcsdup(str);
+
+  if (only_uppercase)
+    {
+      for (i = 0; i < wcslen(ustr); i++)
+	ustr[i] = towupper(ustr[i]);
+    }
+  
+  return (ustr);
+}
 
 
 /* Return string in right-to-left mode, if necessary: */

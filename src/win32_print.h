@@ -22,5 +22,6 @@ extern int IsPrinterAvailable( void );
 
 /* additional windows functions requiring <windows.h> */
 extern char *GetDefaultSaveDir(const char *suffix);
+extern char *GetSystemFontDir(void);
 
 #endif
