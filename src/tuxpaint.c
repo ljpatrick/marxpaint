@@ -2601,7 +2601,7 @@ static void show_progress_bar(void)
 #define CLOCK_ASM(tbl) asm volatile("mftb %0" : "=r" (tbl))
 #define CLOCK_TYPE unsigned long
 #ifndef CLOCK_SPEED
-#warning Benchmark times are based on a 99.63 MHz memory bus.
+// #warning Benchmark times are based on a 99.63 MHz memory bus.
 #define CLOCK_SPEED 24907667.0
 #endif
 #endif
@@ -2610,13 +2610,13 @@ static void show_progress_bar(void)
 #define CLOCK_ASM(tbl) asm volatile("rdtsc" : "=A" (tbl))
 #define CLOCK_TYPE unsigned long long
 #ifndef CLOCK_SPEED
-#warning Benchmark times are based on a 450 MHz CPU.
+// #warning Benchmark times are based on a 450 MHz CPU.
 #define CLOCK_SPEED 450000000.0
 #endif
 #endif
 
 #ifndef CLOCK_ASM
-#warning No idea how to read CPU cycles for you, sorry.
+// #warning No idea how to read CPU cycles for you, sorry.
 #define CLOCK_ASM(tbl)
 #define CLOCK_TYPE unsigned long
 #define CLOCK_SPEED 1000000000.0
@@ -8305,7 +8305,11 @@ static void setup(int argc, char * argv[])
 	if (time_now < time_lock + 30)
 	{
           /* FIXME: Wrap in gettext() */
-          printf("\nYou're already running a copy of Tux Paint!\n\n");
+          printf("You have already started tuxpaint less than 30 seconds ago.\n"
+            "To prevent multiple executions by mistake, TuxPaint will not run\n"
+            "before 30 seconds have elapsed since it was last started.\n"
+            "\n"
+            "You can also use the --nolockfile argument, see tuxpaint(1).\n\n");
 
 	  free(lock_fname);
 
@@ -12911,7 +12915,6 @@ static void do_shape(int cx, int cy, int ox, int oy, int rotn, int use_brush)
     old_brush, step;
   float a1, a2, rotn_rad;
   int xx;
-  int tmp = 0;
 
 
   /* Determine radius/shape of the shape to draw: */
@@ -12919,6 +12922,8 @@ static void do_shape(int cx, int cy, int ox, int oy, int rotn, int use_brush)
   old_brush = 0;
 
 #ifdef CORNER_SHAPES
+  int tmp = 0;
+
   if (cx > ox)
   {
     tmp = cx;
