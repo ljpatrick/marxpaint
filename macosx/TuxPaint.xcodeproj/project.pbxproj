@@ -19,7 +19,7 @@
 		225FE6F00939891500F0B02F /* SDL_image.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 225FD5240934EC1A00F0B02F /* SDL_image.framework */; };
 		225FE6F40939892300F0B02F /* SDL_mixer.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 225FD5250934EC1A00F0B02F /* SDL_mixer.framework */; };
 		225FE6F70939892600F0B02F /* SDL_ttf.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 225FD5260934EC1A00F0B02F /* SDL_ttf.framework */; };
-		225FE718093AC54F00F0B02F /* libiconv.la in Frameworks */ = {isa = PBXBuildFile; fileRef = 225FE715093AC54F00F0B02F /* libiconv.la */; };
+		225FE718093AC54F00F0B02F /* libiconv.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 225FE715093AC54F00F0B02F /* libiconv.dylib */; };
 		225FE719093AC54F00F0B02F /* libintl.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 225FE716093AC54F00F0B02F /* libintl.a */; };
 		225FE71A093AC54F00F0B02F /* libpng.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 225FE717093AC54F00F0B02F /* libpng.a */; };
 		225FEDBA093ACC0A00F0B02F /* html in Resources */ = {isa = PBXBuildFile; fileRef = 225FED8E093ACC0A00F0B02F /* html */; };
@@ -107,14 +107,14 @@
 		2202639707AC5D3000C3AEAB /* ApplicationServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ApplicationServices.framework; path = /System/Library/Frameworks/ApplicationServices.framework; sourceTree = "<absolute>"; };
 		2202646607AC603500C3AEAB /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = /System/Library/Frameworks/CoreFoundation.framework; sourceTree = "<absolute>"; };
 		224A368C0933B741005A3695 /* fonts */ = {isa = PBXFileReference; lastKnownFileType = folder; name = fonts; path = ../data/fonts; sourceTree = SOURCE_ROOT; };
-		22581666074EE1A5005F774F /* Read Me.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Read Me.txt"; sourceTree = "<group>"; };
+		22581666074EE1A5005F774F /* Read Me.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Read Me.txt"; sourceTree = "<group>"; wrapsLines = 1; };
 		225FD5240934EC1A00F0B02F /* SDL_image.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDL_image.framework; path = /Library/Frameworks/SDL_image.framework; sourceTree = "<absolute>"; };
 		225FD5250934EC1A00F0B02F /* SDL_mixer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDL_mixer.framework; path = /Library/Frameworks/SDL_mixer.framework; sourceTree = "<absolute>"; };
 		225FD5260934EC1A00F0B02F /* SDL_ttf.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDL_ttf.framework; path = /Library/Frameworks/SDL_ttf.framework; sourceTree = "<absolute>"; };
 		225FD5270934EC1A00F0B02F /* SDL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDL.framework; path = /Library/Frameworks/SDL.framework; sourceTree = "<absolute>"; };
-		225FE715093AC54F00F0B02F /* libiconv.la */ = {isa = PBXFileReference; lastKnownFileType = text; name = libiconv.la; path = /Volumes/Fink/sw/lib/libiconv.la; sourceTree = "<absolute>"; };
-		225FE716093AC54F00F0B02F /* libintl.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libintl.a; path = /Volumes/Fink/sw/lib/libintl.a; sourceTree = "<absolute>"; };
-		225FE717093AC54F00F0B02F /* libpng.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libpng.a; path = /Volumes/Fink/sw/lib/libpng.a; sourceTree = "<absolute>"; };
+		225FE715093AC54F00F0B02F /* libiconv.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libiconv.dylib; path = /sw/lib/libiconv.dylib; sourceTree = "<absolute>"; };
+		225FE716093AC54F00F0B02F /* libintl.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libintl.a; path = /sw/lib/libintl.a; sourceTree = "<absolute>"; };
+		225FE717093AC54F00F0B02F /* libpng.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libpng.a; path = /sw/lib/libpng.a; sourceTree = "<absolute>"; };
 		225FED8E093ACC0A00F0B02F /* html */ = {isa = PBXFileReference; lastKnownFileType = folder; name = html; path = ../docs/html; sourceTree = SOURCE_ROOT; };
 		2286F34E0740B3FC001164FE /* English */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = English; path = English.lproj/SDLMain.nib; sourceTree = "<group>"; };
 		22AB8EB4076FDF270009BF7C /* Tux Paint.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Tux Paint.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -155,7 +155,7 @@
 				225FD5290934EC1A00F0B02F /* SDL_mixer.framework in Frameworks */,
 				225FD52A0934EC1A00F0B02F /* SDL_ttf.framework in Frameworks */,
 				225FD52B0934EC1A00F0B02F /* SDL.framework in Frameworks */,
-				225FE718093AC54F00F0B02F /* libiconv.la in Frameworks */,
+				225FE718093AC54F00F0B02F /* libiconv.dylib in Frameworks */,
 				225FE719093AC54F00F0B02F /* libintl.a in Frameworks */,
 				225FE71A093AC54F00F0B02F /* libpng.a in Frameworks */,
 			);
@@ -208,7 +208,7 @@
 		225FE714093AC50C00F0B02F /* Archives */ = {
 			isa = PBXGroup;
 			children = (
-				225FE715093AC54F00F0B02F /* libiconv.la */,
+				225FE715093AC54F00F0B02F /* libiconv.dylib */,
 				225FE716093AC54F00F0B02F /* libintl.a */,
 				225FE717093AC54F00F0B02F /* libpng.a */,
 			);
@@ -281,6 +281,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 224A35F709339642005A3695 /* Build configuration list for PBXNativeTarget "Tux Paint" */;
 			buildPhases = (
+				EEDBBD40097A27A2004F0C27 /* ShellScript */,
 				8D1107290486CEB800E47090 /* Resources */,
 				8D11072C0486CEB800E47090 /* Sources */,
 				8D11072E0486CEB800E47090 /* Frameworks */,
@@ -376,6 +377,23 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		EEDBBD40097A27A2004F0C27 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			comments = "Generates locale folder\n";
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "cd ../\nmake translations\nmake LOCALE_PREFIX=./locale install-gettext\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		8D11072C0486CEB800E47090 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -439,7 +457,7 @@
 				INSTALL_PATH = "$(HOME)/Applications";
 				LIBRARY_SEARCH_PATHS = (
 					"$(LIBRARY_SEARCH_PATHS)",
-					"$(SRCROOT)/../../../../Libraries/jaguar/lib",
+					/sw/lib,
 				);
 				LIBRARY_STYLE = STATIC;
 				OTHER_CFLAGS = "";
@@ -480,7 +498,7 @@
 				INSTALL_PATH = "$(HOME)/Applications";
 				LIBRARY_SEARCH_PATHS = (
 					"$(LIBRARY_SEARCH_PATHS)",
-					"$(SRCROOT)/../../../../Libraries/jaguar/lib",
+					/sw/lib,
 				);
 				LIBRARY_STYLE = STATIC;
 				OTHER_CFLAGS = "";
@@ -520,7 +538,7 @@
 				INSTALL_PATH = "$(HOME)/Applications";
 				LIBRARY_SEARCH_PATHS = (
 					"$(LIBRARY_SEARCH_PATHS)",
-					"$(SRCROOT)/../../../../Libraries/jaguar/lib",
+					/sw/lib,
 				);
 				LIBRARY_STYLE = STATIC;
 				OTHER_CFLAGS = "";

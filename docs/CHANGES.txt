@@ -2,18 +2,25 @@ CHANGES.txt for Tux Paint
 
 Tux Paint - A simple drawing program for children.
 
-Copyright (c) 2005 by Bill Kendrick and others
+Copyright (c) 2006 by Bill Kendrick and others
 bill@newbreedsoftware.com
 http://www.newbreedsoftware.com/tuxpaint/
 
 $Id$
 
 
-2005.December.5 (0.9.16)
+2006.January.14 (0.9.16)
   * Translation Updates:
     --------------------
     * Vietnamese
       Clytie Siddall <clytie@riverland.net.au>
+
+  * Compiling, porting and packaging updates:
+    -----------------------------------------
+    * Added script to create "locale" during Build process in Xcode on Mac OS X.
+
+    * Made some Xcode project settings work better with 'default, out of the box'
+      OS X 10.4, Fink and XCode 2.1.
       
 
 2005.November.26 (0.9.15b)
