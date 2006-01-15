@@ -22,7 +22,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
   
-  June 14, 2002 - November 26, 2005
+  June 14, 2002 - January 14, 2006
   $Id$
 */
 
@@ -15333,14 +15333,18 @@ static wchar_t * uppercase_w(wchar_t * str)
   wchar_t * ustr;
   unsigned int i;
 
-  ustr = wcsdup(str);
-
-  if (only_uppercase)
+  //ustr = wcsdup(str);
+  ustr = (wchar_t *) malloc(sizeof(wchar_t) * wcslen(str));
+  
+  if (ustr != NULL)
+  {
+    if (only_uppercase)
     {
       for (i = 0; i < wcslen(ustr); i++)
 	ustr[i] = towupper(ustr[i]);
     }
-  
+  }
+
   return (ustr);
 }
 
