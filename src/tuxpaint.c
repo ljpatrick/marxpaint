@@ -178,7 +178,21 @@ static scaleparams scaletable[] = {
 #include <string.h>
 #include <ctype.h>
 #include <time.h>
+
+/* kluge; 2006.01.15 */
+//#define __APPLE_10_2_8__
+
+/* (Trouble building this for 10.2.8 target; bjk & mf 2006.01.14) */
+#ifndef __APPLE_10_2_8__
 #include <wchar.h>
+#else
+#undef FORKED_FONTS
+#define wchar_t char
+#define wcslen strlen
+#define towupper toupper
+#define iswprint isprint
+#define OLD_UPPERCASE_CODE
+#endif
 
 // math.h makes y1 an obscure function!
 #define y1 evil_y1
@@ -7284,7 +7298,7 @@ static void loadstamp_callback(const char *restrict const dir, unsigned dirlen, 
   while(i--)
     {
       char fname[512];
-      char *dotpng = strcasestr(files[i].str, ".png");
+      char *dotpng = (char *) strcasestr(files[i].str, ".png");
 
       show_progress_bar();
 
@@ -11492,7 +11506,7 @@ static Mix_Chunk * loadsound(const char * const fname)
 
   if (strcasestr(snd_fname, ".png") != NULL)
     {
-      strcpy(strcasestr(snd_fname, ".png"), tmp_str);
+      strcpy((char *) strcasestr(snd_fname, ".png"), tmp_str);
       debug(snd_fname);
 
       tmp_snd = Mix_LoadWAV(snd_fname);
@@ -11509,7 +11523,7 @@ static Mix_Chunk * loadsound(const char * const fname)
 
 	  if (strcasestr(snd_fname, ".png") != NULL)
 	    {
-	      strcpy(strcasestr(snd_fname, ".png"), ".wav");
+	      strcpy((char *) strcasestr(snd_fname, ".png"), ".wav");
 	      debug(snd_fname);
 	      tmp_snd = Mix_LoadWAV(snd_fname);
 	      free(snd_fname);
@@ -11566,7 +11580,7 @@ static char * loaddesc(const char * const fname)
 
   if (strcasestr(txt_fname, ".png") != NULL)   // FIXME: isn't this always OK?
     {
-      strcpy(strcasestr(txt_fname, ".png"), ".txt");
+      strcpy((char *) strcasestr(txt_fname, ".png"), ".txt");
 
       fi = fopen(txt_fname, "r");
       free(txt_fname);
@@ -11603,11 +11617,11 @@ static char * loaddesc(const char * const fname)
 
 	      /* See if it's the one for this locale... */
 	
-	      if (strcasestr(buf, lang_prefix) == buf)
+	    if ((char *) strcasestr(buf, lang_prefix) == buf)
 		{
 
 		  debug(buf + strlen(lang_prefix));
-		  if (strcasestr(buf + strlen(lang_prefix), ".utf8=") ==
+		  if ((char *) strcasestr(buf + strlen(lang_prefix), ".utf8=") ==
 			   buf + strlen(lang_prefix))
 		    {
 		      found = 1;
@@ -13824,14 +13838,14 @@ void do_open(void)
 	    strcpy(fname, f->d_name);
 	    if (strcasestr(fname, FNAME_EXTENSION) != NULL)
 	    {
-	      strcpy(strcasestr(fname, FNAME_EXTENSION), "");
+	      strcpy((char *) strcasestr(fname, FNAME_EXTENSION), "");
 	      d_exts[num_files] = strdup(FNAME_EXTENSION);
 	    }
 		      
 #ifndef SAVE_AS_BMP
 	    if (strcasestr(fname, ".bmp") != NULL)
 	    {
-	      strcpy(strcasestr(fname, ".bmp"), "");
+	      strcpy((char *) strcasestr(fname, ".bmp"), "");
 	      d_exts[num_files] = strdup(".bmp");
 	    }
 #endif
@@ -15305,7 +15319,7 @@ static char * uppercase(char * str)
 
       for (i = 0; i < strlen(str); i++)
       {
-	dest[i] = towupper(dest[i]);
+		dest[i] = towupper(dest[i]);
       }
 
       wcstombs(ustr, dest, sizeof(char) * (strlen(str) + 1));
