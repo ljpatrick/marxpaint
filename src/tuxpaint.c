@@ -15347,11 +15347,11 @@ static wchar_t * uppercase_w(wchar_t * str)
   wchar_t * ustr;
   unsigned int i;
 
-  //ustr = wcsdup(str);
   ustr = (wchar_t *) malloc(sizeof(wchar_t) * wcslen(str));
   
   if (ustr != NULL)
   {
+    wcscpy(ustr, str);
     if (only_uppercase)
     {
       for (i = 0; i < wcslen(ustr); i++)
