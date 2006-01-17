@@ -15347,7 +15347,7 @@ static wchar_t * uppercase_w(wchar_t * str)
   wchar_t * ustr;
   unsigned int i;
 
-  ustr = (wchar_t *) malloc(sizeof(wchar_t) * wcslen(str));
+  ustr = (wchar_t *) malloc(sizeof(wchar_t) * (wcslen(str)+1));
   
   if (ustr != NULL)
   {
