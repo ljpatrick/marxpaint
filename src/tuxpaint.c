@@ -2296,6 +2296,8 @@ static unsigned int texttool_len;
 
 static int tool_avail[NUM_TOOLS], tool_avail_bak[NUM_TOOLS];
 
+static Uint32 cur_toggle_count;
+
 typedef struct edge_type {
   int y_upper;
   float x_intersect, dx_per_scan;
@@ -2376,6 +2378,8 @@ static void render_brush(void);
 static void playsound(int chan, int s, int override);
 static void line_xor(int x1, int y1, int x2, int y2);
 static void rect_xor(int x1, int y1, int x2, int y2);
+static void draw_blinking_cursor(void);
+static void hide_blinking_cursor(void);
 
 #ifdef LOW_QUALITY_STAMP_OUTLINE
 #define stamp_xor(x,y) rect_xor( \
@@ -2875,7 +2879,7 @@ static void mainloop(void)
   shape_tool_mode = SHAPE_TOOL_MODE_DONE;
   button_down = 0;
   last_print_time = -print_delay;
-  last_cursor_blink = 0;
+  last_cursor_blink = cur_toggle_count = 0;
   texttool_len = 0;
   scrolling = 0;
   scrolltimer = 0;
@@ -2950,6 +2954,7 @@ static void mainloop(void)
 		  
 		  if (tool_avail[TOOL_UNDO])
 		    {
+		      hide_blinking_cursor();
 		      if (cur_undo == newest_undo)
 			{
 			  rec_undo_buffer();
@@ -2966,6 +2971,7 @@ static void mainloop(void)
 		  
 		  if (tool_avail[TOOL_REDO])
 		    {
+		      hide_blinking_cursor();
 		      do_redo();
 		      update_screen_rect(&r_tools);
 		      shape_tool_mode = SHAPE_TOOL_MODE_DONE;
@@ -3010,6 +3016,7 @@ static void mainloop(void)
 		{
 		  /* Ctrl-N - New */
 		  
+		  hide_blinking_cursor();
 		  if (do_prompt_snd(PROMPT_NEW_TXT,
 				    PROMPT_NEW_YES,
 				    PROMPT_NEW_NO,
@@ -3052,6 +3059,7 @@ static void mainloop(void)
 		{
 		  /* Ctrl-S - Save */
 		  
+		  hide_blinking_cursor();
 		  if (do_save())
 		    {
 		      /* Only think it's been saved if it HAS been saved :^) */
@@ -3081,19 +3089,21 @@ static void mainloop(void)
 	
 		      if (key_down == SDLK_BACKSPACE)
 			{
-
+	                  hide_blinking_cursor();
 			  if (texttool_len > 0)
 			    {
 			      texttool_len--;
 			      texttool_str[texttool_len] = 0;
 			      playsound(0, SND_KEYCLICK, 0);
-	        
+
 			      do_render_cur_text(0);
 			    }
 			}
 		      else if (key_down == SDLK_RETURN)
 			{
 			  int font_height;
+
+	                  hide_blinking_cursor();
 			  if (texttool_len > 0)
 			    {
 			      rec_undo_buffer();
@@ -3168,6 +3178,7 @@ static void mainloop(void)
 	      {
 		/* Pop up an informative animation: */
 
+	        hide_blinking_cursor();
 		do_prompt_image_flash(PROMPT_TIP_LEFTCLICK_TXT,
 				      PROMPT_TIP_LEFTCLICK_YES,
 				      "",
@@ -3192,11 +3203,11 @@ static void mainloop(void)
 
 		      /* Render any current text: */
 		      
-		      if (cur_tool == TOOL_TEXT && which != TOOL_TEXT &&
-			  texttool_len > 0)
+		      if (cur_tool == TOOL_TEXT && which != TOOL_TEXT)
 			{
 			  if (cursor_x != -1 && cursor_y != -1)
 			    {
+	                      hide_blinking_cursor();
 			      if (texttool_len > 0)
 				{
 				  rec_undo_buffer();
@@ -4621,20 +4632,34 @@ static void mainloop(void)
 	  cur_cursor_blink > last_cursor_blink + CURSOR_BLINK_SPEED)
 	{
 	  last_cursor_blink = SDL_GetTicks();
-	  
-	  line_xor(cursor_x + cursor_textwidth, cursor_y,
-	           cursor_x + cursor_textwidth,
-		   cursor_y + TTF_FontHeight(getfonthandle(cur_font)));
-
-          update_screen(cursor_x + r_canvas.x + cursor_textwidth,
-                        cursor_y + r_canvas.y,
-			cursor_x + r_canvas.x + cursor_textwidth,
-			cursor_y + r_canvas.y + TTF_FontHeight(getfonthandle(cur_font)));
+	  draw_blinking_cursor();
 	}
     }
   while (!done);
 }
 
+/* Draw using the text entry cursor/caret: */
+static void hide_blinking_cursor(void)
+{
+  if (cur_toggle_count & 1)
+  {
+    draw_blinking_cursor();
+  }
+}
+
+static void draw_blinking_cursor(void)
+{
+  cur_toggle_count++;
+
+  line_xor(cursor_x + cursor_textwidth, cursor_y,
+           cursor_x + cursor_textwidth,
+           cursor_y + TTF_FontHeight(getfonthandle(cur_font)));
+
+  update_screen(cursor_x + r_canvas.x + cursor_textwidth,
+                cursor_y + r_canvas.y,
+                cursor_x + r_canvas.x + cursor_textwidth,
+                cursor_y + r_canvas.y + TTF_FontHeight(getfonthandle(cur_font)));
+}
 
 /* Draw using the current brush: */
 
@@ -11081,6 +11106,7 @@ static void disable_avail_tools(void)
 {
   int i;
 
+  hide_blinking_cursor();
   for (i = 0; i < NUM_TOOLS; i++)
     {
       tool_avail_bak[i] = tool_avail[i];
@@ -12267,6 +12293,7 @@ static int do_prompt_image_flash_snd(const char * const text, const char * const
   SDL_Surface * img1b;
   int free_img1b;
 
+  hide_blinking_cursor();
 
   /* FIXME: Move elsewhere! Or not?! */
 
@@ -15141,7 +15168,8 @@ static void do_render_cur_text(int do_blit)
   SDL_Surface * tmp_surf;
   SDL_Rect dest, src;
   wchar_t * str;
-    
+  
+  hide_blinking_cursor();
 
   /* Keep cursor on the screen! */
 
