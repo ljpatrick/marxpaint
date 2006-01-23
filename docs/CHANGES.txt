@@ -9,7 +9,7 @@ http://www.newbreedsoftware.com/tuxpaint/
 $Id$
 
 
-2006.January.14 (0.9.16)
+2006.January.22 (0.9.16)
   * Translation Updates:
     --------------------
     * Vietnamese
@@ -17,11 +17,18 @@ $Id$
 
   * Compiling, porting and packaging updates:
     -----------------------------------------
-    * Added script to create "locale" during Build process in Xcode on Mac OS X.
+    * Added script to create "locale" during Build process in Xcode on
+      Mac OS X.
 
-    * Made some Xcode project settings work better with 'default, out of the box'
-      OS X 10.4, Fink and XCode 2.1.
-      
+    * Made some Xcode project settings work better with 'default, out of
+      the box' OS X 10.4, Fink and XCode 2.1.
+
+  * Bug Fixes:
+    ----------
+    * Tux Paint's scalable icon (tuxpaint-icon.svg) caused Gnome panel to
+      go wild (due to "libarts" bug?).  Changed a vector value which apparently
+      fixes it (and caused no noticable changes to the icon).
+
 
 2005.November.26 (0.9.15b)
 
