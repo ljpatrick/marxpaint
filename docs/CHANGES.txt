@@ -10,6 +10,16 @@ $Id$
 
 
 2006.January.22 (0.9.16)
+  * Interface improvements:
+    -----------------------
+    * Modified "Text" tool so that it correctly handles the 16-bit unicode
+      characters that SDL sends.
+      (The text buffer is held internally as an array of wchar_t, and
+      makes uses of various wide-character functions.  It is converted
+      back into 16-bit unicode characters to satisfy SDL_ttf.  Tested on
+      Windows and Linux.)
+      John Popplewell <john@johnnypops.demon.co.uk>
+    
   * Translation Updates:
     --------------------
     * Vietnamese
@@ -23,11 +33,17 @@ $Id$
     * Made some Xcode project settings work better with 'default, out of
       the box' OS X 10.4, Fink and XCode 2.1.
 
+    * Factor out general CFLAGS to facilitate packaging.  Compress man page -9.
+      Ben Armstrong <synrg@sanctuary.nslug.ns.ca>
+
   * Bug Fixes:
     ----------
     * Tux Paint's scalable icon (tuxpaint-icon.svg) caused Gnome panel to
       go wild (due to "libarts" bug?).  Changed a vector value which apparently
       fixes it (and caused no noticable changes to the icon).
+    
+    * Added GetSystemFontDir() and amended WIN32 code so that the system fonts
+      option work correctly on Windows.
 
 
 2005.November.26 (0.9.15b)
