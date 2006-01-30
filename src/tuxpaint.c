@@ -1557,6 +1557,8 @@ static SDL_Surface * img_tools[NUM_TOOLS], * img_tool_names[NUM_TOOLS];
 
 static SDL_Surface * thumbnail(SDL_Surface * src, int max_x, int max_y,
 			int keep_aspect);
+static SDL_Surface * thumbnail2(SDL_Surface * src, int max_x, int max_y,
+			int keep_aspect, int keep_alpha);
 
 //////////////////////////////////////////////////////////////////////
 // font stuff
@@ -10286,6 +10288,12 @@ static void draw_none(void)
 static SDL_Surface * thumbnail(SDL_Surface * src, int max_x, int max_y,
 			int keep_aspect)
 {
+  return(thumbnail2(src, max_x, max_y, keep_aspect, 1));
+}
+
+static SDL_Surface * thumbnail2(SDL_Surface * src, int max_x, int max_y,
+			int keep_aspect, int keep_alpha)
+{
   int x, y;
   float src_x, src_y, off_x, off_y;
   SDL_Surface * s;
@@ -10398,11 +10406,26 @@ static SDL_Surface * thumbnail(SDL_Surface * src, int max_x, int max_y,
 	      tg = tg / tmp;
 	      ta = ta / tmp;
 
-	      putpixel(s, x + off_x, y + off_y, SDL_MapRGBA(s->format,
-							    (Uint8) tr,
-							    (Uint8) tg,
-							    (Uint8) tb,
-							    (Uint8) ta));
+	      if (keep_alpha == 0 && s->format->Amask != 0)
+	      {
+		tr = ((ta * tr) / 255) + (255 - ta);
+		tg = ((ta * tg) / 255) + (255 - ta);
+		tb = ((ta * tb) / 255) + (255 - ta);
+
+	        putpixel(s, x + off_x, y + off_y, SDL_MapRGBA(s->format,
+							     (Uint8) tr,
+							     (Uint8) tg,
+							     (Uint8) tb,
+							     0xff));
+	      }
+	      else
+	      {
+	        putpixel(s, x + off_x, y + off_y, SDL_MapRGBA(s->format,
+							      (Uint8) tr,
+							      (Uint8) tg,
+							      (Uint8) tb,
+							      (Uint8) ta));
+	      }
 	    }
 #else
 	  src_x = x * xscale;
@@ -14031,9 +14054,9 @@ void do_open(void)
 	      else
 	      {
 	        /* Turn it into a thumbnail: */
-			      
-	        img1 = SDL_DisplayFormat(img);
-	        img2 = thumbnail(img1, THUMB_W - 20, THUMB_H - 20, 0);
+
+	        img1 = SDL_DisplayFormatAlpha(img);
+	        img2 = thumbnail2(img1, THUMB_W - 20, THUMB_H - 20, 0, 0);
 		SDL_FreeSurface(img1);
 			      
 		show_progress_bar();

@@ -9,7 +9,7 @@ http://www.newbreedsoftware.com/tuxpaint/
 $Id$
 
 
-2006.January.22 (0.9.16)
+2006.January.29 (0.9.16)
   * Interface improvements:
     -----------------------
     * Modified "Text" tool so that it correctly handles the 16-bit unicode
@@ -44,6 +44,11 @@ $Id$
     
     * Added GetSystemFontDir() and amended WIN32 code so that the system fonts
       option work correctly on Windows.
+
+    * Properly handles a variety of PNG formats when loading Starter images
+      and turning them into thumbnails.  (Tested with indexed PNGs, and
+      PNGs where RGB colors were stored, even where pixels were
+      fully transparent.)
 
 
 2005.November.26 (0.9.15b)
