@@ -1,11 +1,15 @@
+# Swedish translation of tuxpaint.
+# Copyright (C) 2006 Free Software Foundation, Inc.
+# Daniel Andersson <tuxpaint@septum.org>
+# Daniel Nylander <po@danielnylander.se>, 2006.
 msgid ""
 msgstr ""
-"Project-Id-Version: tuxpaint 0.9.14\n"
+"Project-Id-Version: tuxpaint 0.9.15rc1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-01-04 23:22+0100\n"
-"PO-Revision-Date: 2005-11-06 20:20+0100\n"
-"Last-Translator: Tomas Skäre <tomas@nocrew.org>\n"
-"Language-Team: Swedish\n"
+"POT-Creation-Date: 2005-10-10 00:12-0700\n"
+"PO-Revision-Date: 2006-02-02 14:44+0100\n"
+"Last-Translator: Daniel Nylander <po@danielnylander.se>\n"
+"Language-Team: Swedish <tp-sv@listor.tp-sv.se>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -24,10 +28,10 @@ msgid "Black!"
 msgstr "Svart!"
 
 msgid "Dark grey! Some people spell it “dark gray”."
-msgstr "Mörkgrå!"
+msgstr "Mörkgrå! Vissa personer stavar det \"mörk grå\"."
 
 msgid "Light grey! Some people spell it “light gray”."
-msgstr "Ljusgrå!"
+msgstr "Ljusgrå! Vissa personer stavar det \"ljus grå\"."
 
 msgid "White!"
 msgstr "Vit!"
@@ -66,7 +70,7 @@ msgid "Brown!"
 msgstr "Brun!"
 
 msgid "Tan!"
-msgstr "Göra Bränd!"
+msgstr "Göra bränd!"
 
 msgid "Beige!"
 msgstr "Beige!"
@@ -105,10 +109,10 @@ msgid "Smudge"
 msgstr "Kladda ut"
 
 msgid "Lighten"
-msgstr "Gör ljusare"
+msgstr "Ljusare"
 
 msgid "Darken"
-msgstr "Gör mörkare"
+msgstr "Mörka"
 
 msgid "Chalk"
 msgstr "Krita"
@@ -147,7 +151,7 @@ msgid "Click and move to draw small bricks."
 msgstr "Klicka och rör musen för att rita små tegelstenar."
 
 msgid "You can draw in rainbow colors!"
-msgstr "Du kan rita i regnbågsfärger!"
+msgstr "Du kan rita i regnbågens färger!"
 
 msgid "Click and move to draw sparkles."
 msgstr "Klicka och rör musen för att rita gnistor!"
@@ -159,13 +163,12 @@ msgid "Click and move the mouse around to smudge the picture."
 msgstr "Klicka och rör musen runt för att kladda ut bilden."
 
 msgid "Click and move to fade the colors."
-msgstr "Klicka och rör musen runt för att bleka färgerna!"
+msgstr "Klicka och rör musen runt för att blekna färgerna!"
 
 msgid "Click and move to darken the colors."
 msgstr "Klicka och rör musen runt för att mörka färgerna."
 
-msgid ""
-"Click and move the mouse around to turn the picture into a chalk drawing."
+msgid "Click and move the mouse around to turn the picture into a chalk drawing."
 msgstr "Klicka och rör musen runt för att omvandla bilden till krit-ritning!"
 
 msgid "Click and move the mouse around to make the picture blocky."
@@ -211,15 +214,13 @@ msgid "Rhombus"
 msgstr "Romb"
 
 msgid "A square is a rectangle with four equal sides."
-msgstr "En kvadrat har fyra lika långa sidor."
+msgstr "En fyrkant är en rektangel med fyra lika sidor."
 
 msgid "A rectangle has four sides and four right angles."
-msgstr "En rektangel har fyra sidor och fyra räta vinklar."
+msgstr "En rektangel har fyra sidor och fyra lika vinklar."
 
-msgid ""
-"A circle is a curve where all points have the same distance from the centre."
-msgstr ""
-"En cirkel är en kurva där alla punkter har samma avstånd från mittpunkten."
+msgid "A circle is a curve where all points have the same distance from the centre."
+msgstr "En cirkel är en kurva där alla punkter har samma distans från centrum."
 
 msgid "An ellipse is a stretched circle."
 msgstr "En ellips är en utsträckt cirkel."
@@ -237,13 +238,13 @@ msgid "Tools"
 msgstr "Verktyg"
 
 msgid "Colors"
-msgstr "Farger"
+msgstr "Färger"
 
 msgid "Brushes"
 msgstr "Penslar"
 
 msgid "Erasers"
-msgstr "Radergummin"
+msgstr "Suddgummin"
 
 msgid "Stamps"
 msgstr "Stämplar"
@@ -276,7 +277,7 @@ msgid "Redo"
 msgstr "Göra om"
 
 msgid "Eraser"
-msgstr "Radergummi"
+msgstr "Suddgummi"
 
 msgid "New"
 msgstr "Ny"
@@ -295,7 +296,7 @@ msgid "Quit"
 msgstr "Avsluta"
 
 msgid "Pick a color and a brush shape to draw with."
-msgstr "Välj en färg och en pensel att rita med."
+msgstr "Välj en färg och en borste att rita med."
 
 msgid "Pick a picture to stamp around your drawing."
 msgstr "Välj en bild att stämpla runt din bild."
@@ -303,13 +304,8 @@ msgstr "Välj en bild att stämpla runt din bild."
 msgid "Click to start drawing a line. Let go to complete it."
 msgstr "Klicka för att börja rita en linje. Släpp för att avsluta den."
 
-msgid ""
-"Pick a shape. Click to pick the center, drag, then let go when it is the "
-"size you want. Move around to rotate it, and click to draw it."
-msgstr ""
-"Välj en form. klicka för att välja mittpunkten, dra, släpp sedan när den har "
-"den storlek du önskar. Flytta runt för att rotera formen, och klicka för att "
-"rita den."
+msgid "Pick a shape. Click to pick the center, drag, then let go when it is the size you want. Move around to rotate it, and click to draw it."
+msgstr "Välj en form. klicka för att välja mittpunkten, dra, släpp sedan när den har den storlek du önskar. Flytta runt för att rotera den, och klicka för att bestämma storleken."
 
 msgid "Choose a style of text. Click on your drawing and you can start typing."
 msgstr "Välj stil på texten. Klicka på din bild och du kan börja skriva."
@@ -327,7 +323,7 @@ msgstr "Gör om!"
 
 #. Eraser
 msgid "Eraser!"
-msgstr "Radergummi!"
+msgstr "Suddgummi!"
 
 #. New
 msgid "You now have a blank sheet to draw on!"
@@ -335,7 +331,7 @@ msgstr "Du har nu en tom bild att rita på!"
 
 #. Open
 msgid "Open…"
-msgstr "Öppna…"
+msgstr "Öppna..."
 
 #. Save
 msgid "Your image has been saved!"
@@ -343,7 +339,7 @@ msgstr "Din bild har sparats!"
 
 #. Print
 msgid "Printing…"
-msgstr "Skriver ut…"
+msgstr "Skriver ut..."
 
 #. Quit
 msgid "Bye bye!"
@@ -359,7 +355,7 @@ msgid "Move the mouse to rotate the shape. Click to draw it."
 msgstr "Flytta musen för att rotera formen. Klicka för att rita den."
 
 msgid "OK then… Let’s keep drawing this one!"
-msgstr "Okej… Låt oss fortsätta rita den här!"
+msgstr "Okej.. Låt oss fortsätta rita den här!"
 
 #. FIXME: Move elsewhere!!!
 msgid "Do you really want to quit?"
@@ -373,13 +369,13 @@ msgid "No"
 msgstr "Nej"
 
 msgid "If you quit, you’ll lose your picture! Save it?"
-msgstr "Om du avslutar, så kommer du att förlora bilden! Vill du spara den?"
+msgstr "Om du avslutar, så kommer du att förlora bilden!Vill du spara den?"
 
 msgid "Save your picture first?"
 msgstr "Spara bilden först?"
 
 msgid "Can’t open that picture!"
-msgstr "Kan inte öppna den bilden!"
+msgstr "Kan inte öppna den här bilden!"
 
 msgid "OK"
 msgstr "OK"
@@ -391,7 +387,7 @@ msgid "That’s OK!"
 msgstr "Det är bra!"
 
 msgid "Never mind!"
-msgstr "Gör ingenting!"
+msgstr "Det gör ingenting!"
 
 msgid "There are no saved files!"
 msgstr "Det finns inga sparade filer!"
@@ -403,46 +399,43 @@ msgid "Your picture has been printed!"
 msgstr "Din bild har skrivits ut!"
 
 msgid "You can’t print yet!"
-msgstr "Du kan inte skriva ut än!"
+msgstr "Du kan inte printa än!"
 
 msgid "Erase this picture?"
 msgstr "Radera den här bilden?"
 
 msgid "Remember to use the left mouse button!"
-msgstr "Kom ihåg att använda den vänstra musknappen!"
-
-msgid "Please wait..."
-msgstr ""
+msgstr "Kom ihåg att använda vänster musknapp!"
 
 msgid "jq"
-msgstr ""
+msgstr "jq"
 
 msgid "JQ"
-msgstr ""
+msgstr "JQ"
 
 msgid "oO"
-msgstr ""
+msgstr "oO"
 
 msgid "`\\%_@$~#{}<>^&*"
-msgstr ""
+msgstr "`\\%_@$~#{}<>^&*"
 
 msgid ",.?!"
-msgstr ""
+msgstr ",.?!"
 
 msgid "017"
-msgstr ""
+msgstr "017"
 
 msgid "O0"
-msgstr ""
+msgstr "O0"
 
 msgid "1Il|"
-msgstr ""
+msgstr "1Il|"
 
 msgid "Erase"
-msgstr "Radera"
+msgstr "Sudda ut"
 
 msgid "Back"
-msgstr "Tillbaka"
+msgstr "Bakåt"
 
 msgid "Aa"
 msgstr "Aa"
@@ -456,3 +449,74 @@ msgstr "Nej, spara i en ny fil!"
 
 msgid "Choose the picture you want, then click “Open”."
 msgstr "Välj den bild som du vill ha, klicka sedan på \"Öppna.\""
+
+#~ msgid "Dark Gray!"
+#~ msgstr "Mörkgrå"
+
+#~ msgid "Light Grey!"
+#~ msgstr "Ljusgrå!"
+
+#~ msgid "Neon green!"
+#~ msgstr "Neongrön!"
+
+#~ msgid "Green!"
+#~ msgstr "Grön!"
+
+#~ msgid "Magenta!"
+#~ msgstr "Magenta!"
+
+#~ msgid "Fade"
+#~ msgstr "Blekna"
+
+#~ msgid "Oval"
+#~ msgstr "Oval"
+
+#~ msgid "Diamond"
+#~ msgstr "Romb"
+
+#~ msgid "A square has four sides, each the same length."
+#~ msgstr "En fyrkant har fyra sidor, alla är lika långa."
+
+#~ msgid "A circle is exactly round."
+#~ msgstr "En cirkel är helt rund."
+
+#~ msgid "A diamond is a square, turned around slightly."
+#~ msgstr "En romb är rund, lätt vänd."
+
+#, fuzzy
+#~ msgid "Lime!"
+#~ msgstr "Linjer"
+
+#~ msgid "Thick"
+#~ msgstr "Tjock"
+
+#, fuzzy
+#~ msgid "Click and move the mouse to thicken the picture."
+#~ msgstr "Klicka och rör musen runt för att kladda ut bilden."
+
+#, fuzzy
+#~ msgid "Click and move the mouse to thin the picture."
+#~ msgstr "Klicka och rör musen för att göra den suddig."
+
+#~ msgid "Okay"
+#~ msgstr "Okej"
+
+#, fuzzy
+#~ msgid "Red"
+#~ msgstr "Göra om"
+
+#, fuzzy
+#~ msgid "Grey"
+#~ msgstr "Grå!"
+
+#~ msgid "Pick a shape to draw.  Click once to pick the center of the shape, click again to draw it."
+#~ msgstr "Välj en form att rita. Klicka en gång för att välja mitten utav formen, klicka igen för att rita med den."
+
+#~ msgid "Silver!"
+#~ msgstr "Silver!"
+
+#~ msgid "Light blue!"
+#~ msgstr "Ljusblå!"
+
+#~ msgid "Violet!"
+#~ msgstr "Lila!"

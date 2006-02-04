@@ -7,7 +7,7 @@ bill@newbreedsoftware.com
 http://www.newbreedsoftware.com/tuxpaint/
 
 
-June 17, 2002 - December 6, 2005
+June 17, 2002 - February 3, 2006
 $Id$
 
 
@@ -262,6 +262,7 @@ $Id$
     Alberto Escudero-Pascual <aep@it46.se>
 
   * Swedish
+    Daniel Nylander <po@danielnylander.se>
     Tomas Skäre <tomas@nocrew.org>
     Magnus Dahl <magnus.dahl@bredband.net>
     Daniel Andersson <daniel@septum.org> [retired]
