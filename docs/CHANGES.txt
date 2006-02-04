@@ -22,6 +22,9 @@ $Id$
     
   * Translation Updates:
     --------------------
+    * German
+      Burkhard Lück <lueck@hube-lueck.de>
+
     * Swedish
       Daniel Nylander <po@danielnylander.se>
 

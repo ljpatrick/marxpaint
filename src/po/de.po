@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-01-04 23:22+0100\n"
+"POT-Creation-Date: 2005-10-10 00:12-0700\n"
 "PO-Revision-Date: 2005-11-12 15:29+0100\n"
 "Last-Translator: Burkhard Lück <lueck@hube-lueck.de>\n"
 "Language-Team: Deutsch <kde-i18n-de@kde.org>\n"
@@ -172,10 +172,8 @@ msgstr "Klick und bewege die Maus, um die Farben zu verblassen!"
 msgid "Click and move to darken the colors."
 msgstr "Klick und bewege die Maus, um die Farben abzudunkeln!"
 
-msgid ""
-"Click and move the mouse around to turn the picture into a chalk drawing."
-msgstr ""
-"Klick und bewege die Maus, um dein Bild in ein Kreidebild zu verwandeln!"
+msgid "Click and move the mouse around to turn the picture into a chalk drawing."
+msgstr "Klick und bewege die Maus, um dein Bild in ein Kreidebild zu verwandeln!"
 
 msgid "Click and move the mouse around to make the picture blocky."
 msgstr "Klick und bewege die Maus, um das Bild pixelig zu machen."
@@ -225,8 +223,7 @@ msgstr "Ein Quadrat ist ein Rechteck mit vier gleich langen Seiten."
 msgid "A rectangle has four sides and four right angles."
 msgstr "Ein Rechteck hat vier Seiten und vier rechte Winkel."
 
-msgid ""
-"A circle is a curve where all points have the same distance from the centre."
+msgid "A circle is a curve where all points have the same distance from the centre."
 msgstr ""
 "Ein Kreis ist eine Kurve, auf der alle Punkte den gleichen Abstand vom "
 "Mittelpunkt haben."
@@ -320,8 +317,8 @@ msgid ""
 "size you want. Move around to rotate it, and click to draw it."
 msgstr ""
 "Wähle eine Form. Klicke, um die Mitte zu wählen, ziehe, dann lass los, wenn "
-"es die richtige Größe hat. Bewege die Maus, um es zu drehen und klicke, um "
-"es zu zeichnen."
+"es die richtige Größe hat. Bewege die Maus, um es zu drehen und klicke, um es "
+"zu zeichnen."
 
 msgid "Choose a style of text. Click on your drawing and you can start typing."
 msgstr ""
@@ -348,17 +345,15 @@ msgid "You now have a blank sheet to draw on!"
 msgstr "Du hast jetzt ein neues leeres Bild um darauf zu malen!"
 
 #. Open
-#, fuzzy
-msgid "Open…"
-msgstr "Öffnen"
+msgid "Open�"
+msgstr "Öffnen..."
 
 #. Save
 msgid "Your image has been saved!"
 msgstr "Dein Bild wurde gespeichert!"
 
 #. Print
-#, fuzzy
-msgid "Printing…"
+msgid "Printing�"
 msgstr "Drucke..."
 
 #. Quit
@@ -374,8 +369,7 @@ msgstr "Halt die Maustaste gedrückt, um die Form in der Größe zu verändern."
 msgid "Move the mouse to rotate the shape. Click to draw it."
 msgstr "Bewege die Maus, um die Form zu drehen. Klick, wenn du zufrieden bist."
 
-#, fuzzy
-msgid "OK then… Let’s keep drawing this one!"
+msgid "OK then� Let’s keep drawing this one!"
 msgstr "OK, dann lass uns dieses Bild weitermalen!"
 
 #. FIXME: Move elsewhere!!!
@@ -430,9 +424,6 @@ msgstr "Möchtest du dieses Bild löschen?"
 msgid "Remember to use the left mouse button!"
 msgstr "Denke dran, die linke Maustaste zu benutzen!"
 
-msgid "Please wait..."
-msgstr ""
-
 msgid "jq"
 msgstr "jq"
 
@@ -476,5 +467,3 @@ msgstr "Nein, in eine neue Datei!"
 msgid "Choose the picture you want, then click “Open”."
 msgstr "Wähle ein Bild, dass du öffnen willst und klick auf 'Öffnen'."
 
-#~ msgid "Open�"
-#~ msgstr "Öffnen..."
