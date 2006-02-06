@@ -2,12 +2,12 @@ AUTHORS.txt for Tux Paint
 
 Tux Paint - A simple drawing program for children.
 
-Copyright (c) 2005 by Bill Kendrick and others
+Copyright (c) 2002-2006 by Bill Kendrick and others
 bill@newbreedsoftware.com
 http://www.newbreedsoftware.com/tuxpaint/
 
 
-June 17, 2002 - February 3, 2006
+June 17, 2002 - February 5, 2006
 $Id$
 
 
@@ -223,6 +223,7 @@ $Id$
     Tomasz 'karave' Tarach <karave@poczta.onet.pl>
 
   * Portuguese (Brazilian)
+    Fred Ulisses Maranhao <fred_maranhao@yahoo.com.br>
     Daniel José Viana <danjovic@vespanet.com.br>
       - Dedicated to my beloved daughter Scarlet
     Silvio Faria <sirofa2003@yahoo.com.br>
