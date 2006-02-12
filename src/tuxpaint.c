@@ -22,7 +22,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
   
-  June 14, 2002 - January 14, 2006
+  June 14, 2002 - February 12, 2006
   $Id$
 */
 
@@ -3893,7 +3893,7 @@ static void mainloop(void)
 		  /* Color! */
 		  which = GRIDHIT_GD(r_colors,gd_colors);
 		  
-		  if (which < NUM_COLORS)
+		  if (which > 0 && which < NUM_COLORS)
 		    {
 		      cur_color = which;
 		      playsound(1, SND_BUBBLE, 1);

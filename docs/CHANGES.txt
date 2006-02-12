@@ -9,7 +9,7 @@ http://www.newbreedsoftware.com/tuxpaint/
 $Id$
 
 
-2006.February.5 (0.9.16)
+2006.February.12 (0.9.16)
   * Interface improvements:
     -----------------------
     * Modified "Text" tool so that it correctly handles the 16-bit unicode
@@ -58,6 +58,9 @@ $Id$
       and turning them into thumbnails.  (Tested with indexed PNGs, and
       PNGs where RGB colors were stored, even where pixels were
       fully transparent.)
+
+    * Clicking between the rightmost color and the edge of Tux Paint's display
+      would crash Tux Paint.  (Fixes DBTS #352556)
 
 
 2005.November.26 (0.9.15b)
