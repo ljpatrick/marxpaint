@@ -3893,7 +3893,7 @@ static void mainloop(void)
 		  /* Color! */
 		  which = GRIDHIT_GD(r_colors,gd_colors);
 		  
-		  if (which > 0 && which < NUM_COLORS)
+		  if (which >= 0 && which < NUM_COLORS)
 		    {
 		      cur_color = which;
 		      playsound(1, SND_BUBBLE, 1);
