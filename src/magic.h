@@ -4,11 +4,11 @@
   For Tux Paint
   List of available tools.
 
-  Copyright (c) 2004 by Bill Kendrick
+  Copyright (c) 2002-2006 by Bill Kendrick
   bill@newbreedsoftware.com
   http://www.newbreedsoftware.com/tuxpaint/
 
-  June 29, 2002 - December 11, 2004
+  June 29, 2002 - February 13, 2006
   $Id$
 */
 
@@ -57,7 +57,7 @@ const int magic_colors[] = {
   COLORSEL_ENABLE, // small bricks
 
   COLORSEL_DISABLE,
-  COLORSEL_DISABLE,
+  COLORSEL_ENABLE, // sparkles
 
   COLORSEL_DISABLE,
   COLORSEL_DISABLE,

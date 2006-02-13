@@ -19,6 +19,10 @@ $Id$
       back into 16-bit unicode characters to satisfy SDL_ttf.  Tested on
       Windows and Linux.)
       John Popplewell <john@johnnypops.demon.co.uk>
+  
+  * Magic tool improvements:
+    ------------------------
+    * Sparkles can now be different colors.
     
   * Translation Updates:
     --------------------
