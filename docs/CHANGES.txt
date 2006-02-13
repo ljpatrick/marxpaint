@@ -62,6 +62,9 @@ $Id$
     * Clicking between the rightmost color and the edge of Tux Paint's display
       would crash Tux Paint.  (Fixes DBTS #352556)
 
+    * Bottom of grass would initially be clipped due to incorrect canvas
+      updating.  Fixed.
+
 
 2005.November.26 (0.9.15b)
 

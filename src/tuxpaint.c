@@ -3,7 +3,7 @@
   
   Tux Paint - A simple drawing program for children.
   
-  Copyright (c) 2005 by Bill Kendrick and others; see AUTHORS.txt
+  Copyright (c) 2002-2006 by Bill Kendrick and others; see AUTHORS.txt
   bill@newbreedsoftware.com
   http://www.newbreedsoftware.com/tuxpaint/
 
@@ -5659,7 +5659,7 @@ static void magic_draw(int x1, int y1, int x2, int y2, int button_down)
   /* FIXME: Arbitrary? */
 
   update_canvas(orig_x1 - 32, orig_y1 - 32,
-		orig_x2 + 32, orig_y2 + 32);
+		orig_x2 + 32, orig_y2 + 64);
 }
 
 
