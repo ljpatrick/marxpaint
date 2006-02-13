@@ -3,13 +3,13 @@
 
                      A simple drawing program for children
 
-                   Copyright 2005 by Bill Kendrick and others
+                Copyright 2002-2006 by Bill Kendrick and others
                                New Breed Software
 
                            bill@newbreedsoftware.com
                    http://www.newbreedsoftware.com/tuxpaint/
 
-                       June 14, 2002 - December 31, 2005
+                       June 14, 2002 - February 12, 2006
 
    --------------------------------------------------------------------------
 
@@ -649,8 +649,8 @@ Available Tools
 
      Mac OS X
              Inside the user's "Library" folder:
-             "Users/(user name)/Library/Application Support/
-             Tux Paint/saved/"
+             "/Users/(user name)/Library/Application
+             Support/Tux Paint/saved/"
 
      Linux/Unix
              Inside a hidden ".tuxpaint" directory, in the user's home
@@ -784,7 +784,7 @@ Where Files Go
 
            Your personal Tux Paint folder is stored in your "Library" folder:
 
-             Users/(user name)/Library/Application Support/ Tux Paint/
+             /Users/(user name)/Library/Application Support/ Tux Paint/
 
     Linux and Unix
 
