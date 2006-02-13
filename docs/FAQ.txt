@@ -1,14 +1,14 @@
                                    Tux Paint
-                                 version 0.9.15
+                                 version 0.9.16
                            Frequently Asked Questions
 
-                Copyright 2002-2005 by Bill Kendrick and others
+                Copyright 2002-2006 by Bill Kendrick and others
                                New Breed Software
 
                            bill@newbreedsoftware.com
                    http://www.newbreedsoftware. com/tuxpaint/
 
-                     September 14, 2002 - November 17, 2005
+                     September 14, 2002 - February 12, 2006
 
 Drawing-related
 
@@ -572,6 +572,3 @@ Help / Contact
    Or post to our 'tuxpaint-users' mailing list:
 
      http://www.newbreedsoftware.com/tuxpaint/lists/
-
-
-$Id$
