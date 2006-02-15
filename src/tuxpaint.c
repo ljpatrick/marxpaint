@@ -6943,7 +6943,26 @@ static void loadfont_callback(const char *restrict const dir, unsigned dirlen, t
                 printf("Found %d faces in %s, %s, %s\n", numfaces, files[i].str, family, style);
 #endif
 
-              if(strcmp("Zapfino",family) && strcmp("Elvish Ring NFI",family) && charset_works(font, gettext("jq")) && charset_works(font, gettext("JQ")))
+              // First, the blacklist. We list font families that can crash Tux Paint
+              // via bugs in the SDL_ttf library. We also test fonts to be sure that
+              // they have both uppercase and lowercase letters. Note that we do not
+              // test for "Aa", because it is OK if uppercase and lowercase are the
+              // same. (but not nice -- such fonts get a low score later)
+              //
+              // We test the alphabet twice, to help with translation. If the users
+              // will be unable to type ASCII letters, then both lines should be
+              // translated. Otherwise, only Line X should be translated and the
+              // ASCII-only fonts should be given bad scores in the scoring code below.
+              if
+                (
+                  strcmp("Zapfino",family) && strcmp("Elvish Ring NFI",family)
+                  &&
+                  (
+                  (charset_works(font, gettext("qx")) && charset_works(font, gettext("QX")))  // Line X
+                  ||
+                  (charset_works(font, gettext("qy")) && charset_works(font, gettext("QY")))  // Line Y
+                  )
+                )
                 {
                   if (num_font_styles==num_font_styles_max)
                     {
@@ -6955,14 +6974,18 @@ static void loadfont_callback(const char *restrict const dir, unsigned dirlen, t
                   user_font_styles[num_font_styles]->filename = files[i].str; // steal it (mark NULL below)
                   user_font_styles[num_font_styles]->family = strdup(family);
                   user_font_styles[num_font_styles]->style = strdup(style);
-                  user_font_styles[num_font_styles]->score  = charset_works(font, gettext("oO"));
-                  user_font_styles[num_font_styles]->score += charset_works(font, gettext("`\%_@$~#{}<>^&*"));
-                  user_font_styles[num_font_styles]->score += charset_works(font, gettext(",.?!"));
-                  user_font_styles[num_font_styles]->score += charset_works(font, gettext("017"));
-                  user_font_styles[num_font_styles]->score += charset_works(font, gettext("O0"));
-                  user_font_styles[num_font_styles]->score += charset_works(font, gettext("1Il|"));
+                  // Now we score fonts to ensure that the best ones will be placed at
+                  // the top of the list. The user will see them first. This sorting is
+                  // especially important for users who have scroll buttons disabled.
+                  // Translators should do whatever is needed to put crummy fonts last.
+                  user_font_styles[num_font_styles]->score  = charset_works(font, gettext("oO"));  // distinct uppercase and lowercase
+                  user_font_styles[num_font_styles]->score += charset_works(font, gettext("`\%_@$~#{}<>^&*"));  // uncommon punctuation
+                  user_font_styles[num_font_styles]->score += charset_works(font, gettext(",.?!"));  // common punctuation
+                  user_font_styles[num_font_styles]->score += charset_works(font, gettext("017"));  // digits
+                  user_font_styles[num_font_styles]->score += charset_works(font, gettext("O0"));  // distinct circle-like characters
+                  user_font_styles[num_font_styles]->score += charset_works(font, gettext("1Il|")); // distinct line-like characters
                   num_font_styles++;
-//printf("Accepted: %s, %s, %s\n", files[i].str, family, style);
+//printf("Accepted: %s, %s, %s, score(%d)\n", files[i].str, family, style, user_font_styles[num_font_styles]->score);
                   files[i].str = NULL;  // so free() won't crash -- we stole the memory
                 }
               else
