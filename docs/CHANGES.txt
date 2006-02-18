@@ -43,6 +43,8 @@ $Id$
     * Split language-related variables, enumerations, arrays and helper
       functions in to "i18n.c" and "i18n.h" source files.
 
+    * Made sure GPL notice was included in all other source files.
+
     * Added script to create "locale" during Build process in Xcode on
       Mac OS X.
 
