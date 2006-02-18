@@ -19,6 +19,15 @@ $Id$
       back into 16-bit unicode characters to satisfy SDL_ttf.  Tested on
       Windows and Linux.)
       John Popplewell <john@johnnypops.demon.co.uk>
+
+    * tuxpaint-import shell script now examines Tux Paint's configuration
+      file (first in /usr/local/etc/tuxpaint, then /etc/tuxpaint, then $HOME)
+      for the window size settings and saved-file directory options
+      (rather than assuming a 640x480 screen and images saved in
+      $HOME/.tuxpaint/saved/).
+
+      Discovered (or assumed) window size and directory settings are shown
+      when tuxpaint-import is first run (even with no arguments).
   
   * Magic tool improvements:
     ------------------------
