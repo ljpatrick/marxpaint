@@ -49,16 +49,15 @@ $Id$
 
   * Compiling, porting and packaging updates:
     -----------------------------------------
-    * Split language-related variables, enumerations, arrays and helper
-      functions in to "i18n.c" and "i18n.h" source files.
-
-    * Split XBM cursor #includes and set/free functions into "cursor.h" and
-      "cursor.c" source files.
-
-    * Split out some compiler-version-specific definitions into "compiler.h".
-
-    * Split out 'getpixel' and 'putpixel' family of functions into
-      "pixels.c" and "pixels.h" source files.
+    * Split parts of "tuxpaint.c" into separate source files:
+      + "i18n.c/h": Language-related variables, enums, arrays and functions.
+      + "cursor.c/h": XBM bitmap cursor #includes and functions.
+      + "compiler.h": Compiler-version-specific definitions.
+      + "pixles.c/h": 'getpixel' and 'putpixel' functions & function pointers.
+      + "floodfill.c/h": 'Fill' tool's flood-fill routine.
+      + "rgblinear.c/h": RGB-to-linear float and binary data, and functions.
+      + "progressbar.c/h": Animated progress bar function.
+      + "playsound.c/h": Sound-playing function.
 
     * Made sure GPL notice was included in all other source files.
 

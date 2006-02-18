@@ -23,10 +23,12 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  June 15, 2002 - February 12, 2006
+  June 15, 2002 - February 18, 2006
   $Id$
 */
 
+#ifndef SOUNDS_H
+#define SOUNDS_H
 
 
 /* Sounds available: */
@@ -84,7 +86,7 @@ enum {
 
 /* Sound file filenames: */
 
-const char * const sound_fnames[NUM_SOUNDS] = {
+static const char * sound_fnames[NUM_SOUNDS] = {
   DATA_PREFIX "sounds/harp.wav",
   DATA_PREFIX "sounds/click.wav",
   DATA_PREFIX "sounds/bleep.wav",
@@ -130,4 +132,6 @@ const char * const sound_fnames[NUM_SOUNDS] = {
   DATA_PREFIX "sounds/youcannot.wav",
   DATA_PREFIX "sounds/tuxok.wav"
 };
+
+#endif
 

@@ -951,12 +951,16 @@ install-man:
 # Build the program!
 
 tuxpaint:	obj/tuxpaint.o obj/i18n.o obj/cursor.o obj/pixels.o \
+		obj/floodfill.o obj/rgblinear.o obj/playsound.o \
+		obj/progressbar.o \
 		$(HQXX_O) $(ARCH_LIBS)
 	@echo
 	@echo "...Linking Tux Paint..."
 	@$(CC) $(CFLAGS) $(DEBUG_FLAGS) $(SDL_CFLAGS) $(DEFS) \
 		-o tuxpaint \
 		obj/tuxpaint.o obj/i18n.o obj/cursor.o obj/pixels.o \
+		obj/floodfill.o obj/rgblinear.o obj/playsound.o \
+		obj/progressbar.o \
 		$(HQXX_O) \
 		$(ARCH_LIBS) $(SDL_LIBS) \
 		-lm $(ARCH_LINKS)
@@ -968,6 +972,8 @@ tuxpaint:	obj/tuxpaint.o obj/i18n.o obj/cursor.o obj/pixels.o \
 
 obj/tuxpaint.o:	src/tuxpaint.c obj \
 		src/i18n.h src/cursor.h src/pixels.h \
+		src/floodfill.h src/rgblinear.h src/playsound.h \
+		src/progressbar.h \
 		src/compiler.h \
 		src/tools.h src/titles.h src/colors.h src/shapes.h \
 		src/magic.h src/sounds.h src/tip_tux.h src/great.h \
@@ -1008,6 +1014,33 @@ obj/pixels.o:	src/pixels.c src/pixels.h src/compiler.h
 	@echo "...Compiling pixel functions..."
 	@$(CC) $(CFLAGS) $(DEBUG_FLAGS) $(SDL_CFLAGS) $(DEFS) \
 		-c src/pixels.c -o obj/pixels.o
+
+obj/floodfill.o:	src/floodfill.c src/floodfill.h \
+			src/compiler.h src/rgblinear.h \
+			src/playsound.h src/progressbar.h \
+			src/sounds.h
+	@echo
+	@echo "...Compiling floodfill functions..."
+	@$(CC) $(CFLAGS) $(DEBUG_FLAGS) $(SDL_CFLAGS) $(DEFS) \
+		-c src/floodfill.c -o obj/floodfill.o
+
+obj/playsound.o:	src/playsound.c src/playsound.h src/compiler.h
+	@echo
+	@echo "...Compiling sound playback functions..."
+	@$(CC) $(CFLAGS) $(DEBUG_FLAGS) $(SDL_CFLAGS) $(DEFS) \
+		-c src/playsound.c -o obj/playsound.o
+
+obj/progressbar.o:	src/progressbar.c src/progressbar.h src/compiler.h
+	@echo
+	@echo "...Compiling progress bar functions..."
+	@$(CC) $(CFLAGS) $(DEBUG_FLAGS) $(SDL_CFLAGS) $(DEFS) \
+		-c src/progressbar.c -o obj/progressbar.o
+
+obj/rgblinear.o:	src/rgblinear.c src/rgblinear.h src/compiler.h
+	@echo
+	@echo "...Compiling RGB to Linear functions..."
+	@$(CC) $(CFLAGS) $(DEBUG_FLAGS) $(SDL_CFLAGS) $(DEFS) \
+		-c src/rgblinear.c -o obj/rgblinear.o
 
 
 obj/BeOS_Print.o:	src/BeOS_Print.cpp obj src/BeOS_print.h
