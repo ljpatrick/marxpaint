@@ -1612,7 +1612,9 @@ static int colors_are_selectable;
 static SDL_Surface * img_cur_brush;
 static int brush_counter, rainbow_color;
 
-#define NUM_ERASERS 6 /* How many sizes of erasers (from ERASER_MIN to _MAX) */
+#define NUM_ERASERS 12 /* How many sizes of erasers
+			  (from ERASER_MIN to _MAX as squares, then again
+			  from ERASER_MIN to _MAX as circles) */
 #define ERASER_MIN 13 
 #define ERASER_MAX 128 
 
@@ -3796,9 +3798,18 @@ static void mainloop(void)
 		    }
 		  else
 		    {
-		      w = (ERASER_MIN +
-			   ((NUM_ERASERS - cur_eraser - 1) *
-			    ((ERASER_MAX - ERASER_MIN) / (NUM_ERASERS - 1))));
+		      if (cur_eraser < NUM_ERASERS / 2)
+		      {
+		        w = (ERASER_MIN +
+			     (((NUM_ERASERS / 2) - cur_eraser - 1) *
+			      ((ERASER_MAX - ERASER_MIN) / ((NUM_ERASERS / 2) - 1))));
+		      }
+		      else
+		      {
+		        w = (ERASER_MIN +
+			     (((NUM_ERASERS / 2) - (cur_eraser - NUM_ERASERS / 2) - 1) *
+			      ((ERASER_MAX - ERASER_MIN) / ((NUM_ERASERS / 2) - 1))));
+		      }
 
 		      h = w;
 		    }
@@ -9189,8 +9200,11 @@ static void draw_shapes(void)
 static void draw_erasers(void)
 {
   int i, x, y, sz;
+  int xx, yy, n;
+  void (*putpixel)(SDL_Surface *, int, int, Uint32);
   SDL_Rect dest;
 
+  putpixel = putpixels[screen->format->BytesPerPixel];
 
   draw_image_title(TITLE_ERASERS, r_ttoolopt);
 
@@ -9216,42 +9230,80 @@ static void draw_erasers(void)
 
       if (i < NUM_ERASERS)
 	{
-	  sz = (2 + ((NUM_ERASERS - 1 - i) * (38 / (NUM_ERASERS - 1))));
+	  if (i < NUM_ERASERS / 2)
+	  {
+	    /* Square */
+		  
+	    sz = (2 + (((NUM_ERASERS / 2) - 1 - i) * (38 / ((NUM_ERASERS / 2) - 1))));
 
-	  x = ((i % 2) * 48) + WINDOW_WIDTH - 96 + 24 - sz / 2;
-	  y = ((i / 2) * 48) + 40 + 24 - sz / 2;
+	    x = ((i % 2) * 48) + WINDOW_WIDTH - 96 + 24 - sz / 2;
+	    y = ((i / 2) * 48) + 40 + 24 - sz / 2;
 
-	  dest.x = x;
-	  dest.y = y;
-	  dest.w = sz;
-	  dest.h = 2;
+	    dest.x = x;
+	    dest.y = y;
+	    dest.w = sz;
+	    dest.h = 2;
 
-	  SDL_FillRect(screen, &dest,
-		       SDL_MapRGB(screen->format, 0, 0, 0));
+	    SDL_FillRect(screen, &dest,
+		         SDL_MapRGB(screen->format, 0, 0, 0));
 
-	  dest.x = x;
-	  dest.y = y + sz - 2;
-	  dest.w = sz;
-	  dest.h = 2;
+	    dest.x = x;
+	    dest.y = y + sz - 2;
+	    dest.w = sz;
+	    dest.h = 2;
 
-	  SDL_FillRect(screen, &dest,
-		       SDL_MapRGB(screen->format, 0, 0, 0));
+	    SDL_FillRect(screen, &dest,
+		         SDL_MapRGB(screen->format, 0, 0, 0));
 
-	  dest.x = x;
-	  dest.y = y;
-	  dest.w = 2;
-	  dest.h = sz;
+	    dest.x = x;
+	    dest.y = y;
+	    dest.w = 2;
+	    dest.h = sz;
 
-	  SDL_FillRect(screen, &dest,
-		       SDL_MapRGB(screen->format, 0, 0, 0));
+	    SDL_FillRect(screen, &dest,
+		         SDL_MapRGB(screen->format, 0, 0, 0));
 	  
-	  dest.x = x + sz - 2;
-	  dest.y = y;
-	  dest.w = 2;
-	  dest.h = sz;
+	    dest.x = x + sz - 2;
+	    dest.y = y;
+	    dest.w = 2;
+	    dest.h = sz;
 
-	  SDL_FillRect(screen, &dest,
-		       SDL_MapRGB(screen->format, 0, 0, 0));
+	    SDL_FillRect(screen, &dest,
+		         SDL_MapRGB(screen->format, 0, 0, 0));
+	  }
+	  else
+	  {
+	    /* Circle */
+	    
+	    sz = (2 + (((NUM_ERASERS / 2) - 1 - (i - NUM_ERASERS / 2)) * (38 / ((NUM_ERASERS / 2) - 1))));
+
+	    x = ((i % 2) * 48) + WINDOW_WIDTH - 96 + 24 - sz / 2;
+	    y = ((i / 2) * 48) + 40 + 24 - sz / 2;
+
+	    for (yy = 0; yy <= sz; yy++)
+	    {
+	      for (xx = 0; xx <= sz; xx++)
+	      {
+		n = (xx * xx) + (yy * yy) - ((sz / 2) * (sz / 2));
+ 
+		if (n >= -sz && n <= sz)
+		{
+		  putpixel(screen, (x + sz / 2) + xx, (y + sz / 2) + yy,
+			   SDL_MapRGB(screen->format, 0, 0, 0));
+
+		  putpixel(screen, (x + sz / 2) - xx, (y + sz / 2) + yy,
+			   SDL_MapRGB(screen->format, 0, 0, 0));
+
+		  putpixel(screen, (x + sz / 2) + xx, (y + sz / 2) - yy,
+			   SDL_MapRGB(screen->format, 0, 0, 0));
+
+		  putpixel(screen, (x + sz / 2) - xx, (y + sz / 2) - yy,
+			   SDL_MapRGB(screen->format, 0, 0, 0));
+
+		}
+	      }
+	    }
+	  }
 	}
     }
 }
@@ -9868,24 +9920,84 @@ static void do_eraser(int x, int y)
 {
   SDL_Rect dest;
   int sz;
+  int xx, yy, n, hit;
 
-  sz = (ERASER_MIN +
-	((NUM_ERASERS - 1 - cur_eraser) *
-	 ((ERASER_MAX - ERASER_MIN) / (NUM_ERASERS - 1))));
-
-  dest.x = x - (sz / 2);
-  dest.y = y - (sz / 2);
-  dest.w = sz;
-  dest.h = sz;
-
-  if (img_starter_bkgd == NULL)
+  if (cur_eraser < NUM_ERASERS / 2)
   {
-    SDL_FillRect(canvas, &dest,
-	         SDL_MapRGB(canvas->format, 255, 255, 255));
+    /* Square eraser: */
+	  
+    sz = (ERASER_MIN +
+	  (((NUM_ERASERS / 2) - 1 - cur_eraser) *
+	   ((ERASER_MAX - ERASER_MIN) / ((NUM_ERASERS / 2) - 1))));
+
+    dest.x = x - (sz / 2);
+    dest.y = y - (sz / 2);
+    dest.w = sz;
+    dest.h = sz;
+
+    if (img_starter_bkgd == NULL)
+    {
+      SDL_FillRect(canvas, &dest,
+	           SDL_MapRGB(canvas->format, 255, 255, 255));
+    }
+    else
+    {
+      SDL_BlitSurface(img_starter_bkgd, &dest, canvas, &dest);
+    }
   }
   else
   {
-    SDL_BlitSurface(img_starter_bkgd, &dest, canvas, &dest);
+    /* Round eraser: */
+	  
+    sz = (ERASER_MIN +
+	  (((NUM_ERASERS / 2) - 1 - (cur_eraser - (NUM_ERASERS / 2))) *
+	   ((ERASER_MAX - ERASER_MIN) / ((NUM_ERASERS / 2) - 1))));
+
+    for (yy = 0; yy < sz; yy++)
+    {
+      hit = 0;
+      for (xx = 0; xx <= sz && hit == 0; xx++)
+      {
+	n = (xx * xx) + (yy * yy) - ((sz / 2) * (sz / 2));
+ 
+	if (n >= -sz && n <= sz)
+	  hit = 1;
+
+	if (hit)
+	{
+          dest.x = x - xx;
+          dest.y = y - yy;
+          dest.w = xx * 2;
+          dest.h = 1;
+
+          if (img_starter_bkgd == NULL)
+          {
+            SDL_FillRect(canvas, &dest,
+	                 SDL_MapRGB(canvas->format, 255, 255, 255));
+          }
+	  else
+	  {
+            SDL_BlitSurface(img_starter_bkgd, &dest, canvas, &dest);
+	  }
+
+
+          dest.x = x - xx;
+          dest.y = y + yy;
+          dest.w = xx * 2;
+          dest.h = 1;
+
+          if (img_starter_bkgd == NULL)
+          {
+            SDL_FillRect(canvas, &dest,
+	                 SDL_MapRGB(canvas->format, 255, 255, 255));
+          }
+	  else
+	  {
+            SDL_BlitSurface(img_starter_bkgd, &dest, canvas, &dest);
+	  }
+	}
+      }
+    }
   }
 
 

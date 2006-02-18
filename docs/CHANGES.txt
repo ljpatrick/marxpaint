@@ -29,14 +29,15 @@ $Id$
       Discovered (or assumed) window size and directory settings are shown
       when tuxpaint-import is first run (even with no arguments).
   
-  * Magic tool improvements:
+  * Tool improvements:
     ------------------------
-    * Sparkles can now be different colors.
+    * Magic Sparkles can now be different colors.
 
-    * Negative, Fade, Darken, Tint and Cartoon all now apply with a circular
-      shape, rather than a square.
-
+    * Magic Negative, Fade, Darken, Tint and Cartoon all now apply with a
+      circular shape, rather than a square.
     
+    * Round erasers added.
+
   * Translation Updates:
     --------------------
     * Brazilian Portuguese
