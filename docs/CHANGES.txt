@@ -55,6 +55,11 @@ $Id$
     * Split XBM cursor #includes and set/free functions into "cursor.h" and
       "cursor.c" source files.
 
+    * Split out some compiler-version-specific definitions into "compiler.h".
+
+    * Split out 'getpixel' and 'putpixel' family of functions into
+      "pixels.c" and "pixels.h" source files.
+
     * Made sure GPL notice was included in all other source files.
 
     * Added script to create "locale" during Build process in Xcode on

@@ -950,11 +950,14 @@ install-man:
 
 # Build the program!
 
-tuxpaint:	obj/tuxpaint.o obj/i18n.o obj/cursor.o $(HQXX_O) $(ARCH_LIBS)
+tuxpaint:	obj/tuxpaint.o obj/i18n.o obj/cursor.o obj/pixels.o \
+		$(HQXX_O) $(ARCH_LIBS)
 	@echo
 	@echo "...Linking Tux Paint..."
 	@$(CC) $(CFLAGS) $(DEBUG_FLAGS) $(SDL_CFLAGS) $(DEFS) \
-		-o tuxpaint obj/tuxpaint.o obj/i18n.o obj/cursor.o $(HQXX_O) \
+		-o tuxpaint \
+		obj/tuxpaint.o obj/i18n.o obj/cursor.o obj/pixels.o \
+		$(HQXX_O) \
 		$(ARCH_LIBS) $(SDL_LIBS) \
 		-lm $(ARCH_LINKS)
 	@$(RSRC_CMD)
@@ -964,7 +967,8 @@ tuxpaint:	obj/tuxpaint.o obj/i18n.o obj/cursor.o $(HQXX_O) $(ARCH_LIBS)
 # Build the object for the program!
 
 obj/tuxpaint.o:	src/tuxpaint.c obj \
-		src/i18n.h src/cursor.h \
+		src/i18n.h src/cursor.h src/pixels.h \
+		src/compiler.h \
 		src/tools.h src/titles.h src/colors.h src/shapes.h \
 		src/magic.h src/sounds.h src/tip_tux.h src/great.h \
 		$(HQXX_H) \
@@ -998,6 +1002,12 @@ obj/cursor.o:	src/cursor.c src/cursor.h
 	@echo "...Compiling cursor support..."
 	@$(CC) $(CFLAGS) $(DEBUG_FLAGS) $(SDL_CFLAGS) $(MOUSE_CFLAGS) $(DEFS) \
 		-c src/cursor.c -o obj/cursor.o
+
+obj/pixels.o:	src/pixels.c src/pixels.h src/compiler.h
+	@echo
+	@echo "...Compiling pixel functions..."
+	@$(CC) $(CFLAGS) $(DEBUG_FLAGS) $(SDL_CFLAGS) $(DEFS) \
+		-c src/pixels.c -o obj/pixels.o
 
 
 obj/BeOS_Print.o:	src/BeOS_Print.cpp obj src/BeOS_print.h
