@@ -950,11 +950,11 @@ install-man:
 
 # Build the program!
 
-tuxpaint:	obj/tuxpaint.o obj/i18n.o $(HQXX_O) $(ARCH_LIBS)
+tuxpaint:	obj/tuxpaint.o obj/i18n.o obj/cursor.o $(HQXX_O) $(ARCH_LIBS)
 	@echo
 	@echo "...Linking Tux Paint..."
 	@$(CC) $(CFLAGS) $(DEBUG_FLAGS) $(SDL_CFLAGS) $(DEFS) \
-		-o tuxpaint obj/tuxpaint.o obj/i18n.o $(HQXX_O) \
+		-o tuxpaint obj/tuxpaint.o obj/i18n.o obj/cursor.o $(HQXX_O) \
 		$(ARCH_LIBS) $(SDL_LIBS) \
 		-lm $(ARCH_LINKS)
 	@$(RSRC_CMD)
@@ -964,7 +964,7 @@ tuxpaint:	obj/tuxpaint.o obj/i18n.o $(HQXX_O) $(ARCH_LIBS)
 # Build the object for the program!
 
 obj/tuxpaint.o:	src/tuxpaint.c obj \
-		src/i18n.h \
+		src/i18n.h src/cursor.h \
 		src/tools.h src/titles.h src/colors.h src/shapes.h \
 		src/magic.h src/sounds.h src/tip_tux.h src/great.h \
 		$(HQXX_H) \
@@ -992,6 +992,12 @@ obj/i18n.o:	src/i18n.c src/i18n.h
 	@echo "...Compiling i18n support..."
 	@$(CC) $(CFLAGS) $(DEBUG_FLAGS) $(DEFS) \
 		-c src/i18n.c -o obj/i18n.o
+
+obj/cursor.o:	src/cursor.c src/cursor.h
+	@echo
+	@echo "...Compiling cursor support..."
+	@$(CC) $(CFLAGS) $(DEBUG_FLAGS) $(SDL_CFLAGS) $(MOUSE_CFLAGS) $(DEFS) \
+		-c src/cursor.c -o obj/cursor.o
 
 
 obj/BeOS_Print.o:	src/BeOS_Print.cpp obj src/BeOS_print.h

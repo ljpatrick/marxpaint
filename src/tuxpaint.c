@@ -337,6 +337,7 @@ static int font_scanner_pid;
 static int font_socket_fd;
 
 #include "i18n.h"
+#include "cursor.h"
 
 #include "tools.h"
 #include "titles.h"
@@ -347,39 +348,6 @@ static int font_socket_fd;
 #include "tip_tux.h"
 #include "great.h"
 
-
-#include "watch.xbm"
-#include "watch-mask.xbm"
-
-#include "hand.xbm"
-#include "hand-mask.xbm"
-
-#include "wand.xbm"
-#include "wand-mask.xbm"
-
-#include "insertion.xbm"
-#include "insertion-mask.xbm"
-
-#include "brush.xbm"
-#include "brush-mask.xbm"
-
-#include "crosshair.xbm"
-#include "crosshair-mask.xbm"
-
-#include "rotate.xbm"
-#include "rotate-mask.xbm"
-
-#include "up.xbm"
-#include "up-mask.xbm"
-
-#include "down.xbm"
-#include "down-mask.xbm"
-
-#include "tiny.xbm"
-#include "tiny-mask.xbm"
-
-#include "arrow.xbm"
-#include "arrow-mask.xbm"
 
 #ifdef DEBUG_MALLOC
 #include "malloc.c"
@@ -933,7 +901,7 @@ static void update_canvas(int x1, int y1, int x2, int y2)
 
 static int use_sound, fullscreen, disable_quit, simple_shapes,
   disable_print, print_delay, only_uppercase, promptless_save, grab_input,
-  wheely, no_fancy_cursors, keymouse, mouse_x, mouse_y,
+  wheely, keymouse, mouse_x, mouse_y,
   mousekey_up, mousekey_down, mousekey_left, mousekey_right,
   dont_do_xor, use_print_config, dont_load_stamps, noshortcuts,
   no_system_fonts, no_button_distinction,
@@ -1704,11 +1672,6 @@ static Mix_Chunk * sounds[NUM_SOUNDS];
 #define ERASER_MAX 128 
 
 
-static SDL_Cursor * cursor_hand, * cursor_arrow, * cursor_watch,
-  * cursor_up, * cursor_down, * cursor_tiny, * cursor_crosshair,
-  * cursor_brush, * cursor_wand, * cursor_insertion, * cursor_rotate;
-
-
 static unsigned cur_color;
 static int cur_tool, cur_brush, cur_stamp, cur_shape, cur_magic;
 static int cur_font, cur_eraser;
@@ -1853,7 +1816,6 @@ static int do_prompt_image_snd(const char * const text, const char * const btn_y
 static int do_prompt(const char * const text, const char * const btn_yes, const char * const btn_no);
 static int do_prompt_snd(const char * const text, const char * const btn_yes, const char * const btn_no, int snd);
 static void cleanup(void);
-static void free_cursor(SDL_Cursor ** cursor);
 static void free_surface(SDL_Surface **surface_array);
 static void free_surface_array(SDL_Surface *surface_array[], int count);
 //static void update_shape(int cx, int ox1, int ox2, int cy, int oy1, int oy2,
@@ -1890,7 +1852,6 @@ static Uint32 scrolltimer_callback(Uint32 interval, void *param);
 static Uint32 drawtext_callback(Uint32 interval, void *param);
 static void control_drawtext_timer(Uint32 interval, const char * const text);
 static void parse_options(FILE * fi);
-static void do_setcursor(SDL_Cursor * c);
 static const char * great_str(void);
 static void draw_image_title(int t, SDL_Rect dest);
 static void handle_keymouse(SDLKey key, Uint8 updown);
@@ -12438,16 +12399,6 @@ static void cleanup(void)
 }
 
 
-static void free_cursor(SDL_Cursor ** cursor)
-{
-  if (*cursor)
-    {
-      SDL_FreeCursor(*cursor);
-      *cursor = NULL;
-    }
-}
-
-
 static void free_surface(SDL_Surface **surface_array)
 {
   if (*surface_array)
@@ -15483,13 +15434,6 @@ static char * debug_gettext(const char * str)
   return(dgettext(NULL, str));
 }
 #endif
-
-
-static void do_setcursor(SDL_Cursor * c)
-{
-  if (!no_fancy_cursors)
-    SDL_SetCursor(c);
-}
 
 
 static const char * great_str(void)
