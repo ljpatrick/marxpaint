@@ -32,6 +32,10 @@ $Id$
   * Magic tool improvements:
     ------------------------
     * Sparkles can now be different colors.
+
+    * Negative, Fade, Darken, Tint and Cartoon all now apply with a circular
+      shape, rather than a square.
+
     
   * Translation Updates:
     --------------------

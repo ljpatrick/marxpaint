@@ -1790,6 +1790,7 @@ static SDL_Surface * duplicate_surface(SDL_Surface * orig);
 static void mirror_starter(void);
 static void flip_starter(void);
 int valid_click(Uint8 button);
+int in_circle(int x, int y);
 
 #ifdef DEBUG
 static char * debug_gettext(const char * str);
@@ -4945,14 +4946,17 @@ static void blit_magic(int x, int y, int button_down)
 	    {
 	      for (xx = x - 16; xx < x + 16; xx++)
 		{
-		  SDL_GetRGB(getpixel_last(last, xx, yy), last->format,
-			     &r, &g, &b);
+		  if (in_circle(xx - x, yy - y))
+		  {
+		    SDL_GetRGB(getpixel_last(last, xx, yy), last->format,
+			       &r, &g, &b);
 	
-		  r = 0xFF - r;
-		  g = 0xFF - g;
-		  b = 0xFF - b;
+		    r = 0xFF - r;
+		    g = 0xFF - g;
+		    b = 0xFF - b;
 
-		  putpixel(canvas, xx, yy, SDL_MapRGB(canvas->format, r, g, b));
+		    putpixel(canvas, xx, yy, SDL_MapRGB(canvas->format, r, g, b));
+		  }
 		}
 	    }
 
@@ -4968,25 +4972,28 @@ static void blit_magic(int x, int y, int button_down)
 	    {
 	      for (xx = x - 16; xx < x + 16; xx++)
 		{
-		  /* Get original color: */
+		  if (in_circle(xx - x, yy - y))
+		  {
+		    /* Get original color: */
 		
-		  SDL_GetRGB(getpixel_last(last, xx, yy), last->format,
-			     &r, &g, &b);
+		    SDL_GetRGB(getpixel_last(last, xx, yy), last->format,
+			       &r, &g, &b);
 
-		  if (cur_magic == MAGIC_FADE)
-		  {
-		    r = min(r + 48, 255);
-		    g = min(g + 48, 255);
-		    b = min(b + 48, 255);
-		  }
-		  else
-		  {
-		    r = max(r - 48, 0);
-		    g = max(g - 48, 0);
-		    b = max(b - 48, 0);
-		  }
+		    if (cur_magic == MAGIC_FADE)
+		    {
+		      r = min(r + 48, 255);
+		      g = min(g + 48, 255);
+		      b = min(b + 48, 255);
+		    }
+		    else
+		    {
+		      r = max(r - 48, 0);
+		      g = max(g - 48, 0);
+		      b = max(b - 48, 0);
+		    }
 
-		  putpixel(canvas, xx, yy, SDL_MapRGB(canvas->format, r, g, b));
+		    putpixel(canvas, xx, yy, SDL_MapRGB(canvas->format, r, g, b));
+		  }
 		}
 	    }
 
@@ -5007,20 +5014,23 @@ static void blit_magic(int x, int y, int button_down)
 	    {
 	      for (xx = x - 16; xx < x + 16; xx++)
 		{
-		  /* Get original pixel: */
+		  if (in_circle(xx - x, yy - y))
+		  {
+		    /* Get original pixel: */
 		
-		  SDL_GetRGB(getpixel_last(last, xx, yy), last->format,
+		    SDL_GetRGB(getpixel_last(last, xx, yy), last->format,
 			     &r, &g, &b);
   
-                  old = sRGB_to_linear_table[r] * 0.2126 +
-			sRGB_to_linear_table[g] * 0.7152 +
-			sRGB_to_linear_table[b] * 0.0722;
+                    old = sRGB_to_linear_table[r] * 0.2126 +
+			  sRGB_to_linear_table[g] * 0.7152 +
+			  sRGB_to_linear_table[b] * 0.0722;
 
-		  putpixel(canvas, xx, yy,
-			   SDL_MapRGB(canvas->format,
-			              linear_to_sRGB(rd * old),
-				      linear_to_sRGB(gd * old),
-				      linear_to_sRGB(bd * old)));
+		    putpixel(canvas, xx, yy,
+			     SDL_MapRGB(canvas->format,
+			                linear_to_sRGB(rd * old),
+				        linear_to_sRGB(gd * old),
+				        linear_to_sRGB(bd * old)));
+		  }
 		}
 	    }
 
@@ -5042,7 +5052,9 @@ static void blit_magic(int x, int y, int button_down)
 	    {
 	      for (xx = x - 16; xx < x + 16; xx = xx + 1)
 		{
-		  /* Get original color: */
+		  if (in_circle(xx - x, yy - y))
+		  {
+		    /* Get original color: */
 	
 			/*
 		  SDL_GetRGB(getpixel_last(last, xx, yy),
@@ -5058,10 +5070,10 @@ static void blit_magic(int x, int y, int button_down)
 		  g = (g1 + g2 + g3 + g4) / 4;
 		  b = (b1 + b2 + b3 + b4) / 4;
 */
-		  SDL_GetRGB(getpixel_last(last, xx, yy),
-		             last->format, &r, &g, &b);
+		    SDL_GetRGB(getpixel_last(last, xx, yy),
+		               last->format, &r, &g, &b);
 
-		  rgbtohsv(r, g, b, &hue, &sat, &val);
+		    rgbtohsv(r, g, b, &hue, &sat, &val);
 
 		  /*
 		  if (sat <= 0.2)
@@ -5072,24 +5084,24 @@ static void blit_magic(int x, int y, int button_down)
 		    sat = 1.0;
 		*/
 
-		  val = val - 0.5;
-		  val = val * 4;
-		  val = val + 0.5;
+		    val = val - 0.5;
+		    val = val * 4;
+		    val = val + 0.5;
 
-		  if (val < 0)
-		    val = 0;
-		  else if (val > 1.0)
-		    val = 1.0;
+		    if (val < 0)
+		      val = 0;
+		    else if (val > 1.0)
+		      val = 1.0;
 
-		  val = floor(val * 4) / 4;
-		  hue = floor(hue * 4) / 4;
+		    val = floor(val * 4) / 4;
+		    hue = floor(hue * 4) / 4;
 
-		  sat = floor(sat * 4) / 4;
+		    sat = floor(sat * 4) / 4;
 
-		  hsvtorgb(hue, sat, val, &r, &g, &b);
+		    hsvtorgb(hue, sat, val, &r, &g, &b);
 
-		  putpixel(canvas, xx, yy,
-		           SDL_MapRGB(canvas->format, r, g, b));
+		    putpixel(canvas, xx, yy,
+		             SDL_MapRGB(canvas->format, r, g, b));
 		  /*
 		  putpixel(canvas, xx + 1, yy,
 		           SDL_MapRGB(canvas->format, r, g, b));
@@ -5098,6 +5110,7 @@ static void blit_magic(int x, int y, int button_down)
 		  putpixel(canvas, xx + 1, yy + 1,
 		           SDL_MapRGB(canvas->format, r, g, b));
 			   */
+		  }
 		}
 	    }
 
@@ -5107,29 +5120,32 @@ static void blit_magic(int x, int y, int button_down)
 	    {
 	      for (xx = x - 16; xx < x + 16; xx++)
 		{
-		  /* Get original color: */
+		  if (in_circle(xx - x, yy - y))
+		  {
+		    /* Get original color: */
 		
-		  SDL_GetRGB(getpixel(last, xx, yy),
-		             last->format, &r, &g, &b);
+		    SDL_GetRGB(getpixel(last, xx, yy),
+		               last->format, &r, &g, &b);
 
-		  SDL_GetRGB(getpixel(last, xx + 1, yy),
-		             last->format, &r1, &g1, &b1);
+		    SDL_GetRGB(getpixel(last, xx + 1, yy),
+		               last->format, &r1, &g1, &b1);
 
-		  SDL_GetRGB(getpixel(last, xx + 1, yy + 1),
-		             last->format, &r2, &g2, &b2);
+		    SDL_GetRGB(getpixel(last, xx + 1, yy + 1),
+		               last->format, &r2, &g2, &b2);
 
 #define OUTLINE_THRESH 48
-		  if (abs(((r + g + b) / 3) - (r1 + g1 + b1) / 3) > OUTLINE_THRESH ||
-		      abs(((r + g + b) / 3) - (r2 + g2 + b2) / 3) > OUTLINE_THRESH ||
-		      abs(r - r1) > OUTLINE_THRESH || abs(g - g1) > OUTLINE_THRESH || abs(b - b1) > OUTLINE_THRESH ||
-		      abs(r - r2) > OUTLINE_THRESH || abs(g - g2) > OUTLINE_THRESH || abs(b - b2) > OUTLINE_THRESH)
-		  {
-		  	putpixel(canvas, xx - 1, yy,
-		        	   SDL_MapRGB(canvas->format, 0, 0, 0));
-		  	putpixel(canvas, xx, yy - 1,
-		        	   SDL_MapRGB(canvas->format, 0, 0, 0));
-		  	putpixel(canvas, xx - 1, yy - 1,
-		        	   SDL_MapRGB(canvas->format, 0, 0, 0));
+		    if (abs(((r + g + b) / 3) - (r1 + g1 + b1) / 3) > OUTLINE_THRESH ||
+		        abs(((r + g + b) / 3) - (r2 + g2 + b2) / 3) > OUTLINE_THRESH ||
+		        abs(r - r1) > OUTLINE_THRESH || abs(g - g1) > OUTLINE_THRESH || abs(b - b1) > OUTLINE_THRESH ||
+		        abs(r - r2) > OUTLINE_THRESH || abs(g - g2) > OUTLINE_THRESH || abs(b - b2) > OUTLINE_THRESH)
+		    {
+		  	  putpixel(canvas, xx - 1, yy,
+		        	     SDL_MapRGB(canvas->format, 0, 0, 0));
+		  	  putpixel(canvas, xx, yy - 1,
+		        	     SDL_MapRGB(canvas->format, 0, 0, 0));
+		  	  putpixel(canvas, xx - 1, yy - 1,
+		        	     SDL_MapRGB(canvas->format, 0, 0, 0));
+		    }
 		  }
 		}
 	    }
@@ -15041,3 +15057,13 @@ int valid_click(Uint8 button)
   else
     return(0);
 }
+
+
+int in_circle(int x, int y)
+{
+  if ((x * x) + (y * y) - (16 * 16) < 0)
+    return(1);
+  else
+    return(0);
+}
+
