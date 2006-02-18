@@ -1935,39 +1935,6 @@ static void show_progress_bar(void)
 }
 
 
-
-#ifdef __powerpc__
-// Ticks at 1/4  the memory bus clock (24.907667 MHz on Albert's Mac Cube)
-// This is good for 80-second diff or 160-second total.
-#define CLOCK_ASM(tbl) asm volatile("mftb %0" : "=r" (tbl))
-#define CLOCK_TYPE unsigned long
-#ifndef CLOCK_SPEED
-// #warning Benchmark times are based on a 99.63 MHz memory bus.
-#define CLOCK_SPEED 24907667.0
-#endif
-#endif
-
-#ifdef __i386__
-#define CLOCK_ASM(tbl) asm volatile("rdtsc" : "=A" (tbl))
-#define CLOCK_TYPE unsigned long long
-#ifndef CLOCK_SPEED
-// #warning Benchmark times are based on a 450 MHz CPU.
-#define CLOCK_SPEED 450000000.0
-#endif
-#endif
-
-#ifndef CLOCK_ASM
-// #warning No idea how to read CPU cycles for you, sorry.
-#define CLOCK_ASM(tbl)
-#define CLOCK_TYPE unsigned long
-#define CLOCK_SPEED 1000000000.0
-#endif
-
-#ifdef NO_ASM
-#undef CLOCK_ASM
-#define CLOCK_ASM(x) x=42
-#endif
-
 /* --- MAIN --- */
 
 int main(int argc, char * argv[])

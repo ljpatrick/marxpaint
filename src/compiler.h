@@ -1,3 +1,33 @@
+/*
+  compiler.h
+
+  Compiler-specific #defines and such
+  for Tux Paint
+
+  Mostly by Albert Cahalan <albert@users.sf.net>
+  Copyright (c) 2002-2006
+
+  http://www.newbreedsoftware.com/tuxpaint/
+
+  This program is free software; you can redistribute it and/or modify
+  it under the terms of the GNU General Public License as published by
+  the Free Software Foundation; either version 2 of the License, or
+  (at your option) any later version.
+
+  This program is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  GNU General Public License for more details.
+
+  You should have received a copy of the GNU General Public License
+  along with this program; if not, write to the Free Software
+  Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+  (See COPYING.txt)
+
+  June 14, 2002 - February 17, 2006
+  $Id$
+*/
+
 #ifdef __GNUC__
 // This version has strict type checking for safety.
 // See the "unnecessary" pointer comparison. (from Linux)
@@ -54,4 +84,38 @@
 #define unlikely(x)     (x)
 #define expected(x,y)   (x)
 #endif
+
+
+#ifdef __powerpc__
+// Ticks at 1/4  the memory bus clock (24.907667 MHz on Albert's Mac Cube)
+// This is good for 80-second diff or 160-second total.
+#define CLOCK_ASM(tbl) asm volatile("mftb %0" : "=r" (tbl))
+#define CLOCK_TYPE unsigned long
+#ifndef CLOCK_SPEED
+// #warning Benchmark times are based on a 99.63 MHz memory bus.
+#define CLOCK_SPEED 24907667.0
+#endif
+#endif
+
+#ifdef __i386__
+#define CLOCK_ASM(tbl) asm volatile("rdtsc" : "=A" (tbl))
+#define CLOCK_TYPE unsigned long long
+#ifndef CLOCK_SPEED
+// #warning Benchmark times are based on a 450 MHz CPU.
+#define CLOCK_SPEED 450000000.0
+#endif
+#endif
+
+#ifndef CLOCK_ASM
+// #warning No idea how to read CPU cycles for you, sorry.
+#define CLOCK_ASM(tbl)
+#define CLOCK_TYPE unsigned long
+#define CLOCK_SPEED 1000000000.0
+#endif
+
+#ifdef NO_ASM
+#undef CLOCK_ASM
+#define CLOCK_ASM(x) x=42
+#endif
+
 
