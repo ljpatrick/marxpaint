@@ -3,11 +3,11 @@
 
 # Tux Paint - A simple drawing program for children.
 
-# Copyright (c) 2005 by Bill Kendrick and others
+# Copyright (c) 2002-2006 by Bill Kendrick and others
 # bill@newbreedsoftware.com
 # http://www.newbreedsoftware.com/tuxpaint/
 
-# June 14, 2002 - November 26, 2005
+# June 14, 2002 - February 17, 2006
 
 
 # The version number, for release:
@@ -950,11 +950,11 @@ install-man:
 
 # Build the program!
 
-tuxpaint:	obj/tuxpaint.o $(HQXX_O) $(ARCH_LIBS)
+tuxpaint:	obj/tuxpaint.o obj/i18n.o $(HQXX_O) $(ARCH_LIBS)
 	@echo
 	@echo "...Linking Tux Paint..."
 	@$(CC) $(CFLAGS) $(DEBUG_FLAGS) $(SDL_CFLAGS) $(DEFS) \
-		-o tuxpaint obj/tuxpaint.o $(HQXX_O) \
+		-o tuxpaint obj/tuxpaint.o obj/i18n.o $(HQXX_O) \
 		$(ARCH_LIBS) $(SDL_LIBS) \
 		-lm $(ARCH_LINKS)
 	@$(RSRC_CMD)
@@ -964,6 +964,7 @@ tuxpaint:	obj/tuxpaint.o $(HQXX_O) $(ARCH_LIBS)
 # Build the object for the program!
 
 obj/tuxpaint.o:	src/tuxpaint.c obj \
+		src/i18n.h \
 		src/tools.h src/titles.h src/colors.h src/shapes.h \
 		src/magic.h src/sounds.h src/tip_tux.h src/great.h \
 		$(HQXX_H) \
@@ -985,6 +986,12 @@ obj/tuxpaint.o:	src/tuxpaint.c obj \
 	@echo "...Compiling Tux Paint from source..."
 	@$(CC) $(CFLAGS) $(DEBUG_FLAGS) $(SDL_CFLAGS) $(MOUSE_CFLAGS) $(DEFS) \
 		-c src/tuxpaint.c -o obj/tuxpaint.o
+
+obj/i18n.o:	src/i18n.c src/i18n.h
+	@echo
+	@echo "...Compiling i18n support..."
+	@$(CC) $(CFLAGS) $(DEBUG_FLAGS) $(DEFS) \
+		-c src/i18n.c -o obj/i18n.o
 
 
 obj/BeOS_Print.o:	src/BeOS_Print.cpp obj src/BeOS_print.h

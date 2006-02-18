@@ -9,7 +9,7 @@ http://www.newbreedsoftware.com/tuxpaint/
 $Id$
 
 
-2006.February.12 (0.9.16)
+2006.February.17 (0.9.16)
   * Interface improvements:
     -----------------------
     * Modified "Text" tool so that it correctly handles the 16-bit unicode
@@ -40,6 +40,9 @@ $Id$
 
   * Compiling, porting and packaging updates:
     -----------------------------------------
+    * Split language-related variables, enumerations, arrays and helper
+      functions in to "i18n.c" and "i18n.h" source files.
+
     * Added script to create "locale" during Build process in Xcode on
       Mac OS X.
 
