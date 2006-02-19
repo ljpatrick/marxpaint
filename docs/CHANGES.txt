@@ -31,6 +31,9 @@ $Id$
 
     * In windowed mode, Tux Paint tries to open its window in the center
       of the screen (if supported by the OS or window manager).
+
+    * Improved some dialog text, including labels for "Yes/No" buttons.
+      (Thanks to Vashti for suggestions.)
   
   * Tool improvements:
     ------------------------

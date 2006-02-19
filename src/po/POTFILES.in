@@ -1,9 +1,11 @@
 [encoding: UTF-8]
-tuxpaint.desktop.in
 colors.h
+dirwalk.c
+fonts.c
 great.h
 magic.h
 shapes.h
 titles.h
 tools.h
 tuxpaint.c
+tuxpaint.desktop.in

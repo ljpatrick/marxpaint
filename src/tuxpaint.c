@@ -1358,30 +1358,35 @@ int main(int argc, char * argv[])
 /* FIXME: Move elsewhere!!! */
 
 #define PROMPT_QUIT_TXT gettext_noop("Do you really want to quit?")
-#define PROMPT_QUIT_YES gettext_noop("Yes")
-#define PROMPT_QUIT_NO  gettext_noop("No")
+#define PROMPT_QUIT_YES gettext_noop("Yes, I'm done!")
+#define PROMPT_QUIT_NO  gettext_noop("No, take me back!")
 
 #define PROMPT_QUIT_SAVE_TXT gettext_noop("If you quit, you’ll lose your picture! Save it?")
-#define PROMPT_QUIT_SAVE_YES gettext_noop("Yes")
-#define PROMPT_QUIT_SAVE_NO gettext_noop("No")
+#define PROMPT_QUIT_SAVE_YES gettext_noop("Yes, save it!")
+#define PROMPT_QUIT_SAVE_NO gettext_noop("No, don't bother saving!")
 
 #define PROMPT_OPEN_SAVE_TXT gettext_noop("Save your picture first?")
-#define PROMPT_OPEN_SAVE_YES gettext_noop("Yes")
-#define PROMPT_OPEN_SAVE_NO gettext_noop("No")
+#define PROMPT_OPEN_SAVE_YES gettext_noop("Yes, save it!")
+#define PROMPT_OPEN_SAVE_NO gettext_noop("No, don't bother saving!")
 
 #define PROMPT_OPEN_UNOPENABLE_TXT gettext_noop("Can’t open that picture!")
 #define PROMPT_OPEN_UNOPENABLE_YES gettext_noop("OK")
 
-#define PROMPT_NEW_TXT gettext_noop("Starting a new picture will erase the current one!")
-#define PROMPT_NEW_YES gettext_noop("That’s OK!")
-#define PROMPT_NEW_NO gettext_noop("Never mind!")
+// This will be replaced with a dialog allowing color choice and Starter
+// picking, with a "Back" option to dismiss the "New" and return to
+// the current picture.  But for now...  (bjk 2006.02.19)
+#define PROMPT_NEW_TXT gettext_noop("Start a new picture?")
+//#define PROMPT_NEW_YES gettext_noop("That’s OK!")
+//#define PROMPT_NEW_NO gettext_noop("Never mind!")
+#define PROMPT_NEW_YES gettext_noop("Yes, let's start fresh!")
+#define PROMPT_NEW_NO gettext_noop("No, take me back!")
 
 #define PROMPT_OPEN_NOFILES_TXT gettext_noop("There are no saved files!")
 #define PROMPT_OPEN_NOFILES_YES gettext_noop("OK")
 
 #define PROMPT_PRINT_NOW_TXT gettext_noop("Print your picture now?")
-#define PROMPT_PRINT_NOW_YES gettext_noop("Yes")
-#define PROMPT_PRINT_NOW_NO gettext_noop("No")
+#define PROMPT_PRINT_NOW_YES gettext_noop("Yes, print it!")
+#define PROMPT_PRINT_NOW_NO gettext_noop("No, take me back!")
 
 #define PROMPT_PRINT_TXT gettext_noop("Your picture has been printed!")
 #define PROMPT_PRINT_YES gettext_noop("OK")
@@ -1390,8 +1395,8 @@ int main(int argc, char * argv[])
 #define PROMPT_PRINT_TOO_SOON_YES gettext_noop("OK")
 
 #define PROMPT_ERASE_TXT gettext_noop("Erase this picture?")
-#define PROMPT_ERASE_YES gettext_noop("Yes")
-#define PROMPT_ERASE_NO gettext_noop("No")
+#define PROMPT_ERASE_YES gettext_noop("Yes, erase it!")
+#define PROMPT_ERASE_NO gettext_noop("No, don't erase it!")
 
 #define PROMPT_TIP_LEFTCLICK_TXT gettext_noop("Remember to use the left mouse button!")
 #define PROMPT_TIP_LEFTCLICK_YES gettext_noop("OK")
@@ -10621,8 +10626,9 @@ static int rotation(int ctr_x, int ctr_y, int ox, int oy)
 
 /* FIXME: Move elsewhere!!! */
 
-#define PROMPT_SAVE_OVER_TXT gettext_noop("Save over the older version of this picture?")
-#define PROMPT_SAVE_OVER_YES gettext_noop("Yes")
+//#define PROMPT_SAVE_OVER_TXT gettext_noop("Save over the older version of this picture?")
+#define PROMPT_SAVE_OVER_TXT gettext_noop("Replace the picture with your changes?")
+#define PROMPT_SAVE_OVER_YES gettext_noop("Yes, replace the old one")
 #define PROMPT_SAVE_OVER_NO  gettext_noop("No, save a new file")
 
 
