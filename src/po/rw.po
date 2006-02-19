@@ -16,22 +16,13 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint 0.9.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-01-04 23:22+0100\n"
+"POT-Creation-Date: 2006-02-19 14:44-0800\n"
 "PO-Revision-Date: 2005-04-04 10:55-0700\n"
 "Last-Translator: Steven Michael Murphy <murf@e-tools.com>\n"
 "Language-Team: Kinyarwanda <translation-team-rw@lists.sourceforge.net>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-
-msgid "A drawing program for children."
-msgstr ""
-
-msgid "Drawing program"
-msgstr ""
-
-msgid "Tux Paint"
-msgstr ""
 
 # officecfg/registry\schema\org\openoffice\Office\Math.xcs:....FontFormat.Weight..10.text
 #, fuzzy
@@ -97,6 +88,45 @@ msgid "Tan!"
 msgstr "Ubururu bukeye"
 
 msgid "Beige!"
+msgstr ""
+
+msgid "qx"
+msgstr ""
+
+msgid "QX"
+msgstr ""
+
+msgid "qy"
+msgstr ""
+
+msgid "QY"
+msgstr ""
+
+#. Now we score fonts to ensure that the best ones will be placed at
+#. the top of the list. The user will see them first. This sorting is
+#. especially important for users who have scroll buttons disabled.
+#. Translators should do whatever is needed to put crummy fonts last.
+msgid "oO"
+msgstr ""
+
+#. distinct uppercase and lowercase
+msgid "`\\%_@$~#{}<>^&*"
+msgstr ""
+
+#. uncommon punctuation
+msgid ",.?!"
+msgstr ""
+
+#. common punctuation
+msgid "017"
+msgstr ""
+
+#. digits
+msgid "O0"
+msgstr ""
+
+#. distinct circle-like characters
+msgid "1Il|"
 msgstr ""
 
 msgid "Great!"
@@ -433,16 +463,21 @@ msgstr "Gumana: Igishushanyo iyi"
 msgid "Do you really want to quit?"
 msgstr "Kuri Kuvamo"
 
-#. FIXME: Move elsewhere! Or not?!
-msgid "Yes"
-msgstr "Yego"
+msgid "Yes, I'm done!"
+msgstr ""
 
-msgid "No"
-msgstr "Oya"
+msgid "No, take me back!"
+msgstr ""
 
 #, fuzzy
 msgid "If you quit, you’ll lose your picture! Save it?"
 msgstr "Kuvamo() y'Ishusho Kubika"
+
+msgid "Yes, save it!"
+msgstr ""
+
+msgid "No, don't bother saving!"
+msgstr ""
 
 #, fuzzy
 msgid "Save your picture first?"
@@ -455,14 +490,16 @@ msgstr "Gufungura() y'Ishusho"
 msgid "OK"
 msgstr "OKE"
 
+#. This will be replaced with a dialog allowing color choice and Starter
+#. picking, with a "Back" option to dismiss the "New" and return to
+#. the current picture.  But for now...  (bjk 2006.02.19)
 #, fuzzy
-msgid "Starting a new picture will erase the current one!"
-msgstr "a Gishya() y'Ishusho i KIGEZWEHO"
+msgid "Start a new picture?"
+msgstr "iyi() y'Ishusho"
 
-msgid "That’s OK!"
-msgstr ""
-
-msgid "Never mind!"
+#. #define PROMPT_NEW_YES gettext_noop("That’s OK!")
+#. #define PROMPT_NEW_NO gettext_noop("Never mind!")
+msgid "Yes, let's start fresh!"
 msgstr ""
 
 #, fuzzy
@@ -472,6 +509,9 @@ msgstr "Oya Idosiye"
 #, fuzzy
 msgid "Print your picture now?"
 msgstr "y'Ishusho NONEAHA"
+
+msgid "Yes, print it!"
+msgstr ""
 
 #, fuzzy
 msgid "Your picture has been printed!"
@@ -485,34 +525,16 @@ msgstr "Gucapa"
 msgid "Erase this picture?"
 msgstr "iyi() y'Ishusho"
 
+msgid "Yes, erase it!"
+msgstr ""
+
+msgid "No, don't erase it!"
+msgstr ""
+
 msgid "Remember to use the left mouse button!"
 msgstr ""
 
 msgid "Please wait..."
-msgstr ""
-
-msgid "jq"
-msgstr ""
-
-msgid "JQ"
-msgstr ""
-
-msgid "oO"
-msgstr ""
-
-msgid "`\\%_@$~#{}<>^&*"
-msgstr ""
-
-msgid ",.?!"
-msgstr ""
-
-msgid "017"
-msgstr ""
-
-msgid "O0"
-msgstr ""
-
-msgid "1Il|"
 msgstr ""
 
 msgid "Erase"
@@ -524,10 +546,20 @@ msgstr "Inyuma"
 msgid "Aa"
 msgstr ""
 
+#. FIXME: Move elsewhere! Or not?!
+msgid "Yes"
+msgstr "Yego"
+
+msgid "No"
+msgstr "Oya"
+
 #. FIXME: Move elsewhere!!!
-#, fuzzy
-msgid "Save over the older version of this picture?"
-msgstr "Kubika KURI i Verisiyo Bya iyi() y'Ishusho"
+#. #define PROMPT_SAVE_OVER_TXT gettext_noop("Save over the older version of this picture?")
+msgid "Replace the picture with your changes?"
+msgstr ""
+
+msgid "Yes, replace the old one"
+msgstr ""
 
 #, fuzzy
 msgid "No, save a new file"
@@ -536,6 +568,23 @@ msgstr "Kubika a Gishya IDOSIYE"
 #, fuzzy
 msgid "Choose the picture you want, then click “Open”."
 msgstr "i() y'Ishusho Hanyuma Kanda"
+
+msgid "A drawing program for children."
+msgstr ""
+
+msgid "Drawing program"
+msgstr ""
+
+msgid "Tux Paint"
+msgstr ""
+
+#, fuzzy
+#~ msgid "Starting a new picture will erase the current one!"
+#~ msgstr "a Gishya() y'Ishusho i KIGEZWEHO"
+
+#, fuzzy
+#~ msgid "Save over the older version of this picture?"
+#~ msgstr "Kubika KURI i Verisiyo Bya iyi() y'Ishusho"
 
 # sw/source\ui\utlui\attrdesc.src:STR_CHANNELG.text
 #, fuzzy

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint 0.9.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-01-04 23:22+0100\n"
+"POT-Creation-Date: 2006-02-19 14:44-0800\n"
 "PO-Revision-Date: 2005-01-17 17:50+0100\n"
 "Last-Translator: Leandro Regueiro <unho@gulo.org>\n"
 "Language-Team: Galician <trasno@ceu.fi.udc.es>\n"
@@ -16,15 +16,6 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Poedit-Language: Galician\n"
 "X-Poedit-Country: SPAIN\n"
-
-msgid "A drawing program for children."
-msgstr "Un programa de debuxo para nenos."
-
-msgid "Drawing program"
-msgstr "Programa de debuxo"
-
-msgid "Tux Paint"
-msgstr "Tux Paint"
 
 msgid "Black!"
 msgstr "Negro!"
@@ -78,6 +69,45 @@ msgstr "Bronce!"
 
 msgid "Beige!"
 msgstr "Beixe!"
+
+msgid "qx"
+msgstr ""
+
+msgid "QX"
+msgstr ""
+
+msgid "qy"
+msgstr ""
+
+msgid "QY"
+msgstr ""
+
+#. Now we score fonts to ensure that the best ones will be placed at
+#. the top of the list. The user will see them first. This sorting is
+#. especially important for users who have scroll buttons disabled.
+#. Translators should do whatever is needed to put crummy fonts last.
+msgid "oO"
+msgstr ""
+
+#. distinct uppercase and lowercase
+msgid "`\\%_@$~#{}<>^&*"
+msgstr ""
+
+#. uncommon punctuation
+msgid ",.?!"
+msgstr ""
+
+#. common punctuation
+msgid "017"
+msgstr ""
+
+#. digits
+msgid "O0"
+msgstr ""
+
+#. distinct circle-like characters
+msgid "1Il|"
+msgstr ""
 
 msgid "Great!"
 msgstr "Magnífico!"
@@ -383,15 +413,20 @@ msgstr "Ben... Imos seguir debuxando este debuxo!"
 msgid "Do you really want to quit?"
 msgstr "Desexas saír?"
 
-#. FIXME: Move elsewhere! Or not?!
-msgid "Yes"
-msgstr "Si"
+msgid "Yes, I'm done!"
+msgstr ""
 
-msgid "No"
-msgstr "Non"
+msgid "No, take me back!"
+msgstr ""
 
 msgid "If you quit, you’ll lose your picture! Save it?"
 msgstr "Se saes, perdera-lo teu debuxo! Desexas gardalo?"
+
+msgid "Yes, save it!"
+msgstr ""
+
+msgid "No, don't bother saving!"
+msgstr ""
 
 msgid "Save your picture first?"
 msgstr "Desexas garda-lo teu debuxo antes de saír?"
@@ -402,20 +437,26 @@ msgstr "Non se puido abrir este debuxo!"
 msgid "OK"
 msgstr "Aceptar"
 
-msgid "Starting a new picture will erase the current one!"
-msgstr "Se comezas un novo debuxo borrarás o actual!"
+#. This will be replaced with a dialog allowing color choice and Starter
+#. picking, with a "Back" option to dismiss the "New" and return to
+#. the current picture.  But for now...  (bjk 2006.02.19)
+#, fuzzy
+msgid "Start a new picture?"
+msgstr "Desexas borrar este debuxo?"
 
-msgid "That’s OK!"
-msgstr "Está ben!"
-
-msgid "Never mind!"
-msgstr "Nin pensalo!"
+#. #define PROMPT_NEW_YES gettext_noop("That’s OK!")
+#. #define PROMPT_NEW_NO gettext_noop("Never mind!")
+msgid "Yes, let's start fresh!"
+msgstr ""
 
 msgid "There are no saved files!"
 msgstr "Non hai ficheiros gardados!"
 
 msgid "Print your picture now?"
 msgstr "Desexas imprimi-lo teu debuxo agora?"
+
+msgid "Yes, print it!"
+msgstr ""
 
 msgid "Your picture has been printed!"
 msgstr "Xa se imprimiu o teu debuxo!"
@@ -426,34 +467,16 @@ msgstr "Ainda non podes imprimir!"
 msgid "Erase this picture?"
 msgstr "Desexas borrar este debuxo?"
 
+msgid "Yes, erase it!"
+msgstr ""
+
+msgid "No, don't erase it!"
+msgstr ""
+
 msgid "Remember to use the left mouse button!"
 msgstr ""
 
 msgid "Please wait..."
-msgstr ""
-
-msgid "jq"
-msgstr ""
-
-msgid "JQ"
-msgstr ""
-
-msgid "oO"
-msgstr ""
-
-msgid "`\\%_@$~#{}<>^&*"
-msgstr ""
-
-msgid ",.?!"
-msgstr ""
-
-msgid "017"
-msgstr ""
-
-msgid "O0"
-msgstr ""
-
-msgid "1Il|"
 msgstr ""
 
 msgid "Erase"
@@ -466,15 +489,47 @@ msgstr "Atrás"
 msgid "Aa"
 msgstr "Aa"
 
+#. FIXME: Move elsewhere! Or not?!
+msgid "Yes"
+msgstr "Si"
+
+msgid "No"
+msgstr "Non"
+
 #. FIXME: Move elsewhere!!!
-msgid "Save over the older version of this picture?"
-msgstr "Sobrescribir a versión antiga deste debuxo?"
+#. #define PROMPT_SAVE_OVER_TXT gettext_noop("Save over the older version of this picture?")
+msgid "Replace the picture with your changes?"
+msgstr ""
+
+msgid "Yes, replace the old one"
+msgstr ""
 
 msgid "No, save a new file"
 msgstr "Non, gardar coma un novo ficheiro."
 
 msgid "Choose the picture you want, then click “Open”."
 msgstr "Escolle o debuxo que queiras, e despois preme en \"Abrir\"."
+
+msgid "A drawing program for children."
+msgstr "Un programa de debuxo para nenos."
+
+msgid "Drawing program"
+msgstr "Programa de debuxo"
+
+msgid "Tux Paint"
+msgstr "Tux Paint"
+
+#~ msgid "Starting a new picture will erase the current one!"
+#~ msgstr "Se comezas un novo debuxo borrarás o actual!"
+
+#~ msgid "That’s OK!"
+#~ msgstr "Está ben!"
+
+#~ msgid "Never mind!"
+#~ msgstr "Nin pensalo!"
+
+#~ msgid "Save over the older version of this picture?"
+#~ msgstr "Sobrescribir a versión antiga deste debuxo?"
 
 #~ msgid "Dark Gray!"
 #~ msgstr "Gris Escuro!"

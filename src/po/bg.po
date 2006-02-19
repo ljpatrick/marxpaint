@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint 0.9.15\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-01-04 23:22+0100\n"
+"POT-Creation-Date: 2006-02-19 14:44-0800\n"
 "PO-Revision-Date: 2005-10-11 14:40+0300\n"
 "Last-Translator: Yavor Doganov <yavor@doganov.org>\n"
 "Language-Team: Bulgarian <dict@fsa-bg.org>\n"
@@ -17,15 +17,6 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-
-msgid "A drawing program for children."
-msgstr "Програма за рисуване за деца."
-
-msgid "Drawing program"
-msgstr "Програма за рисуване"
-
-msgid "Tux Paint"
-msgstr "Рисуване с Тъкс"
 
 msgid "Black!"
 msgstr "Черно!"
@@ -77,6 +68,45 @@ msgstr "Жълтокафяво!"
 
 msgid "Beige!"
 msgstr "Бежово!"
+
+msgid "qx"
+msgstr ""
+
+msgid "QX"
+msgstr ""
+
+msgid "qy"
+msgstr ""
+
+msgid "QY"
+msgstr ""
+
+#. Now we score fonts to ensure that the best ones will be placed at
+#. the top of the list. The user will see them first. This sorting is
+#. especially important for users who have scroll buttons disabled.
+#. Translators should do whatever is needed to put crummy fonts last.
+msgid "oO"
+msgstr "oO"
+
+#. distinct uppercase and lowercase
+msgid "`\\%_@$~#{}<>^&*"
+msgstr "`\\%_@$~#{}<>^&*"
+
+#. uncommon punctuation
+msgid ",.?!"
+msgstr ",.?!"
+
+#. common punctuation
+msgid "017"
+msgstr "017"
+
+#. digits
+msgid "O0"
+msgstr "O0"
+
+#. distinct circle-like characters
+msgid "1Il|"
+msgstr "1Il|"
 
 msgid "Great!"
 msgstr "Прекрасно!"
@@ -377,15 +407,20 @@ msgstr "Добре тогава... Да продължим да рисуваме
 msgid "Do you really want to quit?"
 msgstr "Наистина ли искате да спрете програмата?"
 
-#. FIXME: Move elsewhere! Or not?!
-msgid "Yes"
-msgstr "Да"
+msgid "Yes, I'm done!"
+msgstr ""
 
-msgid "No"
-msgstr "Не"
+msgid "No, take me back!"
+msgstr ""
 
 msgid "If you quit, you’ll lose your picture! Save it?"
 msgstr "Ако спрете програмата, ще загубите рисунката! Да се запази ли?"
+
+msgid "Yes, save it!"
+msgstr ""
+
+msgid "No, don't bother saving!"
+msgstr ""
 
 msgid "Save your picture first?"
 msgstr "Да се запази ли рисунката?"
@@ -396,20 +431,26 @@ msgstr "Тази рисунка не може да бъде отворена!"
 msgid "OK"
 msgstr "Да"
 
-msgid "Starting a new picture will erase the current one!"
-msgstr "Започването на нова рисунка ще изтрие сегашната!"
+#. This will be replaced with a dialog allowing color choice and Starter
+#. picking, with a "Back" option to dismiss the "New" and return to
+#. the current picture.  But for now...  (bjk 2006.02.19)
+#, fuzzy
+msgid "Start a new picture?"
+msgstr "Да се изтрие ли рисунката?"
 
-msgid "That’s OK!"
-msgstr "Добре!"
-
-msgid "Never mind!"
-msgstr "Няма значение!"
+#. #define PROMPT_NEW_YES gettext_noop("That’s OK!")
+#. #define PROMPT_NEW_NO gettext_noop("Never mind!")
+msgid "Yes, let's start fresh!"
+msgstr ""
 
 msgid "There are no saved files!"
 msgstr "Няма запазени файлове!"
 
 msgid "Print your picture now?"
 msgstr "Да се разпечата ли рисунката?"
+
+msgid "Yes, print it!"
+msgstr ""
 
 msgid "Your picture has been printed!"
 msgstr "Рисунката е разпечатана!"
@@ -420,35 +461,17 @@ msgstr "Все още не може да разпечатвате!"
 msgid "Erase this picture?"
 msgstr "Да се изтрие ли рисунката?"
 
+msgid "Yes, erase it!"
+msgstr ""
+
+msgid "No, don't erase it!"
+msgstr ""
+
 msgid "Remember to use the left mouse button!"
 msgstr "Не забравяйте да използвате левия бутон на мишката!"
 
 msgid "Please wait..."
 msgstr ""
-
-msgid "jq"
-msgstr "jq"
-
-msgid "JQ"
-msgstr "JQ"
-
-msgid "oO"
-msgstr "oO"
-
-msgid "`\\%_@$~#{}<>^&*"
-msgstr "`\\%_@$~#{}<>^&*"
-
-msgid ",.?!"
-msgstr ",.?!"
-
-msgid "017"
-msgstr "017"
-
-msgid "O0"
-msgstr "O0"
-
-msgid "1Il|"
-msgstr "1Il|"
 
 msgid "Erase"
 msgstr "Изтриване"
@@ -459,15 +482,53 @@ msgstr "Назад"
 msgid "Aa"
 msgstr "Aa"
 
+#. FIXME: Move elsewhere! Or not?!
+msgid "Yes"
+msgstr "Да"
+
+msgid "No"
+msgstr "Не"
+
 #. FIXME: Move elsewhere!!!
-msgid "Save over the older version of this picture?"
-msgstr "Да се презапише ли върху старата версия на рисунката?"
+#. #define PROMPT_SAVE_OVER_TXT gettext_noop("Save over the older version of this picture?")
+msgid "Replace the picture with your changes?"
+msgstr ""
+
+msgid "Yes, replace the old one"
+msgstr ""
 
 msgid "No, save a new file"
 msgstr "Не, да се запази като нов файл"
 
 msgid "Choose the picture you want, then click “Open”."
 msgstr "Изберете рисунка, след това натиснете „Отваряне“."
+
+msgid "A drawing program for children."
+msgstr "Програма за рисуване за деца."
+
+msgid "Drawing program"
+msgstr "Програма за рисуване"
+
+msgid "Tux Paint"
+msgstr "Рисуване с Тъкс"
+
+#~ msgid "Starting a new picture will erase the current one!"
+#~ msgstr "Започването на нова рисунка ще изтрие сегашната!"
+
+#~ msgid "That’s OK!"
+#~ msgstr "Добре!"
+
+#~ msgid "Never mind!"
+#~ msgstr "Няма значение!"
+
+#~ msgid "jq"
+#~ msgstr "jq"
+
+#~ msgid "JQ"
+#~ msgstr "JQ"
+
+#~ msgid "Save over the older version of this picture?"
+#~ msgstr "Да се презапише ли върху старата версия на рисунката?"
 
 #~ msgid "Lime!"
 #~ msgstr "Лимонено!"

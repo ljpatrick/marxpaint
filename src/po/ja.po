@@ -7,22 +7,13 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint 0.9.15\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-01-04 23:22+0100\n"
+"POT-Creation-Date: 2006-02-19 14:44-0800\n"
 "PO-Revision-Date: 2005-10-04 12:43+0900\n"
 "Last-Translator: TOYAMA Shin-ichi <shin1@wmail.plala.jp>\n"
 "Language-Team: japanese <shin1@wmail.plala.or.jp>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-
-msgid "A drawing program for children."
-msgstr "子供向けお絵描きプログラム"
-
-msgid "Drawing program"
-msgstr "お絵かきプログラム"
-
-msgid "Tux Paint"
-msgstr "タックスペイント"
 
 msgid "Black!"
 msgstr "くろ！"
@@ -74,6 +65,45 @@ msgstr "はだいろ！"
 
 msgid "Beige!"
 msgstr "ベージュいろ"
+
+msgid "qx"
+msgstr ""
+
+msgid "QX"
+msgstr ""
+
+msgid "qy"
+msgstr ""
+
+msgid "QY"
+msgstr ""
+
+#. Now we score fonts to ensure that the best ones will be placed at
+#. the top of the list. The user will see them first. This sorting is
+#. especially important for users who have scroll buttons disabled.
+#. Translators should do whatever is needed to put crummy fonts last.
+msgid "oO"
+msgstr "oO"
+
+#. distinct uppercase and lowercase
+msgid "`\\%_@$~#{}<>^&*"
+msgstr "`\\%_@$~#{}<>^&*"
+
+#. uncommon punctuation
+msgid ",.?!"
+msgstr ",.?!"
+
+#. common punctuation
+msgid "017"
+msgstr "017"
+
+#. digits
+msgid "O0"
+msgstr "O0"
+
+#. distinct circle-like characters
+msgid "1Il|"
+msgstr "1Il|"
 
 msgid "Great!"
 msgstr "すごい！"
@@ -381,16 +411,20 @@ msgstr "オッケー。 じゃあ このままつづけよう！"
 msgid "Do you really want to quit?"
 msgstr "ほんとうにやめる？"
 
-#  FIXME: Move elsewhere! Or not?!
-#. FIXME: Move elsewhere! Or not?!
-msgid "Yes"
-msgstr "はい"
+msgid "Yes, I'm done!"
+msgstr ""
 
-msgid "No"
-msgstr "いいえ"
+msgid "No, take me back!"
+msgstr ""
 
 msgid "If you quit, you’ll lose your picture! Save it?"
 msgstr "やめると えがきえちゃうよ！ セーブする？"
+
+msgid "Yes, save it!"
+msgstr ""
+
+msgid "No, don't bother saving!"
+msgstr ""
 
 msgid "Save your picture first?"
 msgstr "そのまえに いまのえを セーブする？"
@@ -401,20 +435,26 @@ msgstr "そのえはひらけませんでした！"
 msgid "OK"
 msgstr "オッケー"
 
-msgid "Starting a new picture will erase the current one!"
-msgstr "さいしょからやりなおすと、いまのえがきえるよ！"
+#. This will be replaced with a dialog allowing color choice and Starter
+#. picking, with a "Back" option to dismiss the "New" and return to
+#. the current picture.  But for now...  (bjk 2006.02.19)
+#, fuzzy
+msgid "Start a new picture?"
+msgstr "このえを けしますか？"
 
-msgid "That’s OK!"
-msgstr "いいよ！"
-
-msgid "Never mind!"
-msgstr "やめた！"
+#. #define PROMPT_NEW_YES gettext_noop("That’s OK!")
+#. #define PROMPT_NEW_NO gettext_noop("Never mind!")
+msgid "Yes, let's start fresh!"
+msgstr ""
 
 msgid "There are no saved files!"
 msgstr "セーブされた えは ありません！"
 
 msgid "Print your picture now?"
 msgstr "いんさつしますか？"
+
+msgid "Yes, print it!"
+msgstr ""
 
 msgid "Your picture has been printed!"
 msgstr "えを いんさつしました！"
@@ -425,35 +465,17 @@ msgstr "まだ いんさつは できません！"
 msgid "Erase this picture?"
 msgstr "このえを けしますか？"
 
+msgid "Yes, erase it!"
+msgstr ""
+
+msgid "No, don't erase it!"
+msgstr ""
+
 msgid "Remember to use the left mouse button!"
 msgstr "マウスの ひだりのボタンを つかってね！"
 
 msgid "Please wait..."
 msgstr ""
-
-msgid "jq"
-msgstr "jq"
-
-msgid "JQ"
-msgstr "JQ"
-
-msgid "oO"
-msgstr "oO"
-
-msgid "`\\%_@$~#{}<>^&*"
-msgstr "`\\%_@$~#{}<>^&*"
-
-msgid ",.?!"
-msgstr ",.?!"
-
-msgid "017"
-msgstr "017"
-
-msgid "O0"
-msgstr "O0"
-
-msgid "1Il|"
-msgstr "1Il|"
 
 msgid "Erase"
 msgstr "けす"
@@ -464,13 +486,52 @@ msgstr "もどる"
 msgid "Aa"
 msgstr "Aa"
 
-#  FIXME: Move elsewhere!!!
+#  FIXME: Move elsewhere! Or not?!
+#. FIXME: Move elsewhere! Or not?!
+msgid "Yes"
+msgstr "はい"
+
+msgid "No"
+msgstr "いいえ"
+
 #. FIXME: Move elsewhere!!!
-msgid "Save over the older version of this picture?"
-msgstr "まえの えを うわがきしますか？"
+#. #define PROMPT_SAVE_OVER_TXT gettext_noop("Save over the older version of this picture?")
+msgid "Replace the picture with your changes?"
+msgstr ""
+
+msgid "Yes, replace the old one"
+msgstr ""
 
 msgid "No, save a new file"
 msgstr "いいえ、べつのファイルに セーブします"
 
 msgid "Choose the picture you want, then click “Open”."
 msgstr "えをえらんでから 「ひらく」をクリックしてね"
+
+msgid "A drawing program for children."
+msgstr "子供向けお絵描きプログラム"
+
+msgid "Drawing program"
+msgstr "お絵かきプログラム"
+
+msgid "Tux Paint"
+msgstr "タックスペイント"
+
+#~ msgid "Starting a new picture will erase the current one!"
+#~ msgstr "さいしょからやりなおすと、いまのえがきえるよ！"
+
+#~ msgid "That’s OK!"
+#~ msgstr "いいよ！"
+
+#~ msgid "Never mind!"
+#~ msgstr "やめた！"
+
+#~ msgid "jq"
+#~ msgstr "jq"
+
+#~ msgid "JQ"
+#~ msgstr "JQ"
+
+#  FIXME: Move elsewhere!!!
+#~ msgid "Save over the older version of this picture?"
+#~ msgstr "まえの えを うわがきしますか？"

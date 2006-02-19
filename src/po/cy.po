@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: cy\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-01-04 23:22+0100\n"
+"POT-Creation-Date: 2006-02-19 14:44-0800\n"
 "PO-Revision-Date: 2004-09-21 14:28+0100\n"
 "Last-Translator: Kyfieithu <kyfieithu@dotmon.com>\n"
 "Language-Team: Cymraeg <cy@li.org>\n"
@@ -18,15 +18,6 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.2\n"
-
-msgid "A drawing program for children."
-msgstr "Rhaglen lunio ar gyfer plant."
-
-msgid "Drawing program"
-msgstr "Rhaglen lunio"
-
-msgid "Tux Paint"
-msgstr "Tux Paint"
 
 msgid "Black!"
 msgstr "Du!"
@@ -79,6 +70,45 @@ msgid "Tan!"
 msgstr "Gwyrddlas!"
 
 msgid "Beige!"
+msgstr ""
+
+msgid "qx"
+msgstr ""
+
+msgid "QX"
+msgstr ""
+
+msgid "qy"
+msgstr ""
+
+msgid "QY"
+msgstr ""
+
+#. Now we score fonts to ensure that the best ones will be placed at
+#. the top of the list. The user will see them first. This sorting is
+#. especially important for users who have scroll buttons disabled.
+#. Translators should do whatever is needed to put crummy fonts last.
+msgid "oO"
+msgstr ""
+
+#. distinct uppercase and lowercase
+msgid "`\\%_@$~#{}<>^&*"
+msgstr ""
+
+#. uncommon punctuation
+msgid ",.?!"
+msgstr ""
+
+#. common punctuation
+msgid "017"
+msgstr ""
+
+#. digits
+msgid "O0"
+msgstr ""
+
+#. distinct circle-like characters
+msgid "1Il|"
 msgstr ""
 
 msgid "Great!"
@@ -388,15 +418,20 @@ msgstr "Iawn... Gawn ni ddal i dynnu'r un yma!"
 msgid "Do you really want to quit?"
 msgstr "Wyt ti wir eisiau terfynu?"
 
-#. FIXME: Move elsewhere! Or not?!
-msgid "Yes"
-msgstr "Ydw"
+msgid "Yes, I'm done!"
+msgstr ""
 
-msgid "No"
-msgstr "Nac ydw"
+msgid "No, take me back!"
+msgstr ""
 
 msgid "If you quit, you’ll lose your picture! Save it?"
 msgstr "Os wyt am derfynu, mi fyddi di'n colli dy lun!  Wyt eisiau ei gadw?"
+
+msgid "Yes, save it!"
+msgstr ""
+
+msgid "No, don't bother saving!"
+msgstr ""
 
 msgid "Save your picture first?"
 msgstr "Cadw dy lun yn gyntaf?"
@@ -407,20 +442,26 @@ msgstr "Methu agor y llun yna!"
 msgid "OK"
 msgstr "Iawn"
 
-msgid "Starting a new picture will erase the current one!"
-msgstr "Bydd dechrau llun newydd yn colli'r un yma!"
+#. This will be replaced with a dialog allowing color choice and Starter
+#. picking, with a "Back" option to dismiss the "New" and return to
+#. the current picture.  But for now...  (bjk 2006.02.19)
+#, fuzzy
+msgid "Start a new picture?"
+msgstr "Dileu'r llun yma?"
 
-msgid "That’s OK!"
-msgstr "Iawn!"
-
-msgid "Never mind!"
-msgstr "Dim bwys!"
+#. #define PROMPT_NEW_YES gettext_noop("That’s OK!")
+#. #define PROMPT_NEW_NO gettext_noop("Never mind!")
+msgid "Yes, let's start fresh!"
+msgstr ""
 
 msgid "There are no saved files!"
 msgstr "Nid oes ffeiliau wedi'u cadw!"
 
 msgid "Print your picture now?"
 msgstr "Argraffu dy lun rwan?"
+
+msgid "Yes, print it!"
+msgstr ""
 
 msgid "Your picture has been printed!"
 msgstr "Mae dy lun wedi cael ei argraffu!"
@@ -431,34 +472,16 @@ msgstr "Rwyt yn methu argraffu eto!"
 msgid "Erase this picture?"
 msgstr "Dileu'r llun yma?"
 
+msgid "Yes, erase it!"
+msgstr ""
+
+msgid "No, don't erase it!"
+msgstr ""
+
 msgid "Remember to use the left mouse button!"
 msgstr ""
 
 msgid "Please wait..."
-msgstr ""
-
-msgid "jq"
-msgstr ""
-
-msgid "JQ"
-msgstr ""
-
-msgid "oO"
-msgstr ""
-
-msgid "`\\%_@$~#{}<>^&*"
-msgstr ""
-
-msgid ",.?!"
-msgstr ""
-
-msgid "017"
-msgstr ""
-
-msgid "O0"
-msgstr ""
-
-msgid "1Il|"
 msgstr ""
 
 msgid "Erase"
@@ -470,15 +493,47 @@ msgstr "Yn ôl"
 msgid "Aa"
 msgstr ""
 
+#. FIXME: Move elsewhere! Or not?!
+msgid "Yes"
+msgstr "Ydw"
+
+msgid "No"
+msgstr "Nac ydw"
+
 #. FIXME: Move elsewhere!!!
-msgid "Save over the older version of this picture?"
-msgstr "Cadw dros y fersiwn hynaf o'r llun yma?"
+#. #define PROMPT_SAVE_OVER_TXT gettext_noop("Save over the older version of this picture?")
+msgid "Replace the picture with your changes?"
+msgstr ""
+
+msgid "Yes, replace the old one"
+msgstr ""
 
 msgid "No, save a new file"
 msgstr "Nage, cadw ffeil newydd"
 
 msgid "Choose the picture you want, then click “Open”."
 msgstr "Dewisa'r llun yr wyt eisiau, ac wedyn clicia 'Agor'."
+
+msgid "A drawing program for children."
+msgstr "Rhaglen lunio ar gyfer plant."
+
+msgid "Drawing program"
+msgstr "Rhaglen lunio"
+
+msgid "Tux Paint"
+msgstr "Tux Paint"
+
+#~ msgid "Starting a new picture will erase the current one!"
+#~ msgstr "Bydd dechrau llun newydd yn colli'r un yma!"
+
+#~ msgid "That’s OK!"
+#~ msgstr "Iawn!"
+
+#~ msgid "Never mind!"
+#~ msgstr "Dim bwys!"
+
+#~ msgid "Save over the older version of this picture?"
+#~ msgstr "Cadw dros y fersiwn hynaf o'r llun yma?"
 
 #~ msgid "Green!"
 #~ msgstr "Gwyrdd!"

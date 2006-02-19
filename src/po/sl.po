@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint 0.9.15rc1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-01-04 23:22+0100\n"
+"POT-Creation-Date: 2006-02-19 14:44-0800\n"
 "PO-Revision-Date: 2005-10-12 10:57+0100\n"
 "Last-Translator: Matej Urbančič <matej.urban@gmail.com>\n"
 "Language-Team: Slovenian <translation-team-sl@lists.sourceforge.net>\n"
@@ -18,15 +18,6 @@ msgstr ""
 "X-Poedit-Language: Slovenian\n"
 "X-Poedit-Country: SLOVENIA\n"
 "X-Poedit-SourceCharset: utf-8\n"
-
-msgid "A drawing program for children."
-msgstr "Risarski program za otroke"
-
-msgid "Drawing program"
-msgstr "Risarski program"
-
-msgid "Tux Paint"
-msgstr "Tux Paint"
 
 msgid "Black!"
 msgstr "Črna!"
@@ -78,6 +69,45 @@ msgstr "Rumeno-rjava"
 
 msgid "Beige!"
 msgstr "Sivkasto rjava!"
+
+msgid "qx"
+msgstr ""
+
+msgid "QX"
+msgstr ""
+
+msgid "qy"
+msgstr ""
+
+msgid "QY"
+msgstr ""
+
+#. Now we score fonts to ensure that the best ones will be placed at
+#. the top of the list. The user will see them first. This sorting is
+#. especially important for users who have scroll buttons disabled.
+#. Translators should do whatever is needed to put crummy fonts last.
+msgid "oO"
+msgstr "oO"
+
+#. distinct uppercase and lowercase
+msgid "`\\%_@$~#{}<>^&*"
+msgstr "`\\%_@$~#{}<>^&*"
+
+#. uncommon punctuation
+msgid ",.?!"
+msgstr ",.?!"
+
+#. common punctuation
+msgid "017"
+msgstr "017"
+
+#. digits
+msgid "O0"
+msgstr "O0"
+
+#. distinct circle-like characters
+msgid "1Il|"
+msgstr "1Il|"
 
 msgid "Great!"
 msgstr "Super!"
@@ -372,15 +402,20 @@ msgstr "Dobro. Potem nadaljuj z risanjem te slike!"
 msgid "Do you really want to quit?"
 msgstr "Res želiš končati?"
 
-#. FIXME: Move elsewhere! Or not?!
-msgid "Yes"
-msgstr "Da"
+msgid "Yes, I'm done!"
+msgstr ""
 
-msgid "No"
-msgstr "Ne"
+msgid "No, take me back!"
+msgstr ""
 
 msgid "If you quit, you’ll lose your picture! Save it?"
 msgstr "Ob izhodu boš izgubil sliko! Jo shranim?"
+
+msgid "Yes, save it!"
+msgstr ""
+
+msgid "No, don't bother saving!"
+msgstr ""
 
 msgid "Save your picture first?"
 msgstr "Naj najprej shranim tvojo sliko?"
@@ -391,20 +426,26 @@ msgstr "Ne morem odpreti te slike!"
 msgid "OK"
 msgstr "OK"
 
-msgid "Starting a new picture will erase the current one!"
-msgstr "Če pričneš z novo sliko, bo trenutna slika zbrisana!"
+#. This will be replaced with a dialog allowing color choice and Starter
+#. picking, with a "Back" option to dismiss the "New" and return to
+#. the current picture.  But for now...  (bjk 2006.02.19)
+#, fuzzy
+msgid "Start a new picture?"
+msgstr "Zbrišem sliko?"
 
-msgid "That’s OK!"
-msgstr "V redu je!"
-
-msgid "Never mind!"
-msgstr "Ah, pusti!"
+#. #define PROMPT_NEW_YES gettext_noop("That’s OK!")
+#. #define PROMPT_NEW_NO gettext_noop("Never mind!")
+msgid "Yes, let's start fresh!"
+msgstr ""
 
 msgid "There are no saved files!"
 msgstr "Ni shranjenih datotek!"
 
 msgid "Print your picture now?"
 msgstr "Natisnem tvojo sliko?"
+
+msgid "Yes, print it!"
+msgstr ""
 
 msgid "Your picture has been printed!"
 msgstr "Tvoja slika je bila natisnjena!"
@@ -415,35 +456,17 @@ msgstr "Ne moreš še natisniti!"
 msgid "Erase this picture?"
 msgstr "Zbrišem sliko?"
 
+msgid "Yes, erase it!"
+msgstr ""
+
+msgid "No, don't erase it!"
+msgstr ""
+
 msgid "Remember to use the left mouse button!"
 msgstr "Zapomni si, da lahko uporabiš levi klik miške!"
 
 msgid "Please wait..."
 msgstr ""
-
-msgid "jq"
-msgstr "jq"
-
-msgid "JQ"
-msgstr "JQ"
-
-msgid "oO"
-msgstr "oO"
-
-msgid "`\\%_@$~#{}<>^&*"
-msgstr "`\\%_@$~#{}<>^&*"
-
-msgid ",.?!"
-msgstr ",.?!"
-
-msgid "017"
-msgstr "017"
-
-msgid "O0"
-msgstr "O0"
-
-msgid "1Il|"
-msgstr "1Il|"
 
 msgid "Erase"
 msgstr "Briši"
@@ -454,15 +477,53 @@ msgstr "Nazaj"
 msgid "Aa"
 msgstr "Aa"
 
+#. FIXME: Move elsewhere! Or not?!
+msgid "Yes"
+msgstr "Da"
+
+msgid "No"
+msgstr "Ne"
+
 #. FIXME: Move elsewhere!!!
-msgid "Save over the older version of this picture?"
-msgstr "Shranim preko starejše verzije slike?"
+#. #define PROMPT_SAVE_OVER_TXT gettext_noop("Save over the older version of this picture?")
+msgid "Replace the picture with your changes?"
+msgstr ""
+
+msgid "Yes, replace the old one"
+msgstr ""
 
 msgid "No, save a new file"
 msgstr "Ne, shrani kot novo datoteko"
 
 msgid "Choose the picture you want, then click “Open”."
 msgstr "Izberi sliko in klikni \"Odpri\"."
+
+msgid "A drawing program for children."
+msgstr "Risarski program za otroke"
+
+msgid "Drawing program"
+msgstr "Risarski program"
+
+msgid "Tux Paint"
+msgstr "Tux Paint"
+
+#~ msgid "Starting a new picture will erase the current one!"
+#~ msgstr "Če pričneš z novo sliko, bo trenutna slika zbrisana!"
+
+#~ msgid "That’s OK!"
+#~ msgstr "V redu je!"
+
+#~ msgid "Never mind!"
+#~ msgstr "Ah, pusti!"
+
+#~ msgid "jq"
+#~ msgstr "jq"
+
+#~ msgid "JQ"
+#~ msgstr "JQ"
+
+#~ msgid "Save over the older version of this picture?"
+#~ msgstr "Shranim preko starejše verzije slike?"
 
 #~ msgid "Lime!"
 #~ msgstr "Živo zelena!"

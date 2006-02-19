@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint-is 0.9.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-01-04 23:22+0100\n"
+"POT-Creation-Date: 2006-02-19 14:44-0800\n"
 "PO-Revision-Date: 2004-03-15 15:38GMT\n"
 "Last-Translator: Pjetur G. Hjaltason <pjetur@pjetur.net>\n"
 "Language-Team: Icelandic <kde-isl@molar.is>\n"
@@ -17,16 +17,6 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.0.1\n"
-
-msgid "A drawing program for children."
-msgstr "Teikniforrit fyrir krakka."
-
-msgid "Drawing program"
-msgstr "Teikniforrit"
-
-#, fuzzy
-msgid "Tux Paint"
-msgstr "Teikna"
 
 msgid "Black!"
 msgstr "Svart!"
@@ -79,6 +69,45 @@ msgid "Tan!"
 msgstr "Blágrænn!"
 
 msgid "Beige!"
+msgstr ""
+
+msgid "qx"
+msgstr ""
+
+msgid "QX"
+msgstr ""
+
+msgid "qy"
+msgstr ""
+
+msgid "QY"
+msgstr ""
+
+#. Now we score fonts to ensure that the best ones will be placed at
+#. the top of the list. The user will see them first. This sorting is
+#. especially important for users who have scroll buttons disabled.
+#. Translators should do whatever is needed to put crummy fonts last.
+msgid "oO"
+msgstr ""
+
+#. distinct uppercase and lowercase
+msgid "`\\%_@$~#{}<>^&*"
+msgstr ""
+
+#. uncommon punctuation
+msgid ",.?!"
+msgstr ""
+
+#. common punctuation
+msgid "017"
+msgstr ""
+
+#. digits
+msgid "O0"
+msgstr ""
+
+#. distinct circle-like characters
+msgid "1Il|"
 msgstr ""
 
 msgid "Great!"
@@ -387,15 +416,20 @@ msgstr "Allt í lagi... Höldum þá áfram með þessa!"
 msgid "Do you really want to quit?"
 msgstr "Viltu í alvöru hætta?"
 
-#. FIXME: Move elsewhere! Or not?!
-msgid "Yes"
-msgstr "Já"
+msgid "Yes, I'm done!"
+msgstr ""
 
-msgid "No"
-msgstr "Nei"
+msgid "No, take me back!"
+msgstr ""
 
 msgid "If you quit, you’ll lose your picture! Save it?"
 msgstr "Ef þú hættir tapast myndin! Viltu geyma hana?"
+
+msgid "Yes, save it!"
+msgstr ""
+
+msgid "No, don't bother saving!"
+msgstr ""
 
 msgid "Save your picture first?"
 msgstr "Geyma myndina fyrst?"
@@ -406,20 +440,26 @@ msgstr "Get ekki opnað þessa mynd?"
 msgid "OK"
 msgstr "Í lagi"
 
-msgid "Starting a new picture will erase the current one!"
-msgstr "Ef þú byrjar á nýrri mynd, eyðist núverandi mynd!"
+#. This will be replaced with a dialog allowing color choice and Starter
+#. picking, with a "Back" option to dismiss the "New" and return to
+#. the current picture.  But for now...  (bjk 2006.02.19)
+#, fuzzy
+msgid "Start a new picture?"
+msgstr "Eyða myndinni?"
 
-msgid "That’s OK!"
-msgstr "Það er í lagi!"
-
-msgid "Never mind!"
-msgstr "Hætta við!"
+#. #define PROMPT_NEW_YES gettext_noop("That’s OK!")
+#. #define PROMPT_NEW_NO gettext_noop("Never mind!")
+msgid "Yes, let's start fresh!"
+msgstr ""
 
 msgid "There are no saved files!"
 msgstr "Fann engar geymdar myndir!"
 
 msgid "Print your picture now?"
 msgstr "Prenta myndina núna?"
+
+msgid "Yes, print it!"
+msgstr ""
 
 msgid "Your picture has been printed!"
 msgstr "Búið að prenta myndina þína!"
@@ -430,34 +470,16 @@ msgstr "Þú getur ekki prentað strax!"
 msgid "Erase this picture?"
 msgstr "Eyða myndinni?"
 
+msgid "Yes, erase it!"
+msgstr ""
+
+msgid "No, don't erase it!"
+msgstr ""
+
 msgid "Remember to use the left mouse button!"
 msgstr ""
 
 msgid "Please wait..."
-msgstr ""
-
-msgid "jq"
-msgstr ""
-
-msgid "JQ"
-msgstr ""
-
-msgid "oO"
-msgstr ""
-
-msgid "`\\%_@$~#{}<>^&*"
-msgstr ""
-
-msgid ",.?!"
-msgstr ""
-
-msgid "017"
-msgstr ""
-
-msgid "O0"
-msgstr ""
-
-msgid "1Il|"
 msgstr ""
 
 msgid "Erase"
@@ -469,15 +491,48 @@ msgstr "Til baka"
 msgid "Aa"
 msgstr ""
 
+#. FIXME: Move elsewhere! Or not?!
+msgid "Yes"
+msgstr "Já"
+
+msgid "No"
+msgstr "Nei"
+
 #. FIXME: Move elsewhere!!!
-msgid "Save over the older version of this picture?"
-msgstr "Eyða eldri útgáfu af þessarri mynd?"
+#. #define PROMPT_SAVE_OVER_TXT gettext_noop("Save over the older version of this picture?")
+msgid "Replace the picture with your changes?"
+msgstr ""
+
+msgid "Yes, replace the old one"
+msgstr ""
 
 msgid "No, save a new file"
 msgstr "Nei, geyma nýja mynd!"
 
 msgid "Choose the picture you want, then click “Open”."
 msgstr "Veldu teikningu, og smelltu svo á 'Opna'."
+
+msgid "A drawing program for children."
+msgstr "Teikniforrit fyrir krakka."
+
+msgid "Drawing program"
+msgstr "Teikniforrit"
+
+#, fuzzy
+msgid "Tux Paint"
+msgstr "Teikna"
+
+#~ msgid "Starting a new picture will erase the current one!"
+#~ msgstr "Ef þú byrjar á nýrri mynd, eyðist núverandi mynd!"
+
+#~ msgid "That’s OK!"
+#~ msgstr "Það er í lagi!"
+
+#~ msgid "Never mind!"
+#~ msgstr "Hætta við!"
+
+#~ msgid "Save over the older version of this picture?"
+#~ msgstr "Eyða eldri útgáfu af þessarri mynd?"
 
 #~ msgid "Green!"
 #~ msgstr "Grænt!"

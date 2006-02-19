@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TuxPaint\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-01-04 23:22+0100\n"
+"POT-Creation-Date: 2006-02-19 14:44-0800\n"
 "PO-Revision-Date: 2005-10-10 23:41+0300\n"
 "Last-Translator: Giasher <giasher@telenet.ge>\n"
 "Language-Team: Gia Shervashidze <giasher@telenet.ge>\n"
@@ -17,15 +17,6 @@ msgstr ""
 "X-Generator: KBabel 1.3.1\n"
 "X-Poedit-Language: Georgian\n"
 "X-Poedit-Country: GEORGIA\n"
-
-msgid "A drawing program for children."
-msgstr "სახატავი პროგრამა ბავშვებისთვის."
-
-msgid "Drawing program"
-msgstr "სახატავი პროგრამა"
-
-msgid "Tux Paint"
-msgstr "თხუპნია!"
 
 msgid "Black!"
 msgstr "შავი!"
@@ -77,6 +68,45 @@ msgstr "ნამზეური!"
 
 msgid "Beige!"
 msgstr "ბეჟი!"
+
+msgid "qx"
+msgstr ""
+
+msgid "QX"
+msgstr ""
+
+msgid "qy"
+msgstr ""
+
+msgid "QY"
+msgstr ""
+
+#. Now we score fonts to ensure that the best ones will be placed at
+#. the top of the list. The user will see them first. This sorting is
+#. especially important for users who have scroll buttons disabled.
+#. Translators should do whatever is needed to put crummy fonts last.
+msgid "oO"
+msgstr "oO"
+
+#. distinct uppercase and lowercase
+msgid "`\\%_@$~#{}<>^&*"
+msgstr "`\\%_@$~#{}<>^&*"
+
+#. uncommon punctuation
+msgid ",.?!"
+msgstr ",.?!"
+
+#. common punctuation
+msgid "017"
+msgstr "017"
+
+#. digits
+msgid "O0"
+msgstr "O0"
+
+#. distinct circle-like characters
+msgid "1Il|"
+msgstr "1Il|"
 
 msgid "Great!"
 msgstr "მშვენიერია!"
@@ -370,15 +400,20 @@ msgstr "კარგი, გავაგრძელოთ ხატვა!"
 msgid "Do you really want to quit?"
 msgstr "ნამდვილად გინდათ გასვლა?"
 
-#. FIXME: Move elsewhere! Or not?!
-msgid "Yes"
-msgstr "დიახ"
+msgid "Yes, I'm done!"
+msgstr ""
 
-msgid "No"
-msgstr "არა"
+msgid "No, take me back!"
+msgstr ""
 
 msgid "If you quit, you’ll lose your picture! Save it?"
 msgstr "თუ გახვალთ თქვენი ნახატი დაიკარგება! შევინახო?"
+
+msgid "Yes, save it!"
+msgstr ""
+
+msgid "No, don't bother saving!"
+msgstr ""
 
 msgid "Save your picture first?"
 msgstr "ჯერ თქვენი ნახატი შევინახო?"
@@ -389,20 +424,26 @@ msgstr "ამ ნახატს ვერ ვხსნი!"
 msgid "OK"
 msgstr "კარგი"
 
-msgid "Starting a new picture will erase the current one!"
-msgstr "ახალი ნახატის დაწყებით ძველს გაანადგურებთ!"
+#. This will be replaced with a dialog allowing color choice and Starter
+#. picking, with a "Back" option to dismiss the "New" and return to
+#. the current picture.  But for now...  (bjk 2006.02.19)
+#, fuzzy
+msgid "Start a new picture?"
+msgstr "წავშალო ეს ნახატი?"
 
-msgid "That’s OK!"
-msgstr "კარგი!"
-
-msgid "Never mind!"
-msgstr "არც იფიქრო!"
+#. #define PROMPT_NEW_YES gettext_noop("That’s OK!")
+#. #define PROMPT_NEW_NO gettext_noop("Never mind!")
+msgid "Yes, let's start fresh!"
+msgstr ""
 
 msgid "There are no saved files!"
 msgstr "ნახატები არ შეგინახავთ!"
 
 msgid "Print your picture now?"
 msgstr "დავბეჭდო თქვენი ნახატი?"
+
+msgid "Yes, print it!"
+msgstr ""
 
 msgid "Your picture has been printed!"
 msgstr "თქვენი ნახატი დაიბეჭდა!"
@@ -413,35 +454,17 @@ msgstr "ჯერ ვერ დაბეჭდავთ!"
 msgid "Erase this picture?"
 msgstr "წავშალო ეს ნახატი?"
 
+msgid "Yes, erase it!"
+msgstr ""
+
+msgid "No, don't erase it!"
+msgstr ""
+
 msgid "Remember to use the left mouse button!"
 msgstr "არ დაგავიწყდეთ თაგუნას მარცხენა ღილაკის გამოყენება!"
 
 msgid "Please wait..."
 msgstr ""
-
-msgid "jq"
-msgstr ""
-
-msgid "JQ"
-msgstr ""
-
-msgid "oO"
-msgstr "oO"
-
-msgid "`\\%_@$~#{}<>^&*"
-msgstr "`\\%_@$~#{}<>^&*"
-
-msgid ",.?!"
-msgstr ",.?!"
-
-msgid "017"
-msgstr "017"
-
-msgid "O0"
-msgstr "O0"
-
-msgid "1Il|"
-msgstr "1Il|"
 
 msgid "Erase"
 msgstr "წაშლა"
@@ -452,15 +475,47 @@ msgstr "უკან"
 msgid "Aa"
 msgstr "Aa"
 
+#. FIXME: Move elsewhere! Or not?!
+msgid "Yes"
+msgstr "დიახ"
+
+msgid "No"
+msgstr "არა"
+
 #. FIXME: Move elsewhere!!!
-msgid "Save over the older version of this picture?"
-msgstr "გადავაწერო ამ ნახატის წინა ვერსიას?"
+#. #define PROMPT_SAVE_OVER_TXT gettext_noop("Save over the older version of this picture?")
+msgid "Replace the picture with your changes?"
+msgstr ""
+
+msgid "Yes, replace the old one"
+msgstr ""
 
 msgid "No, save a new file"
 msgstr "არა, შეინახე ახალ ფაილში"
 
 msgid "Choose the picture you want, then click “Open”."
 msgstr "აირჩიეთ ნახატი და დაწკაპეთ „გახსნა”."
+
+msgid "A drawing program for children."
+msgstr "სახატავი პროგრამა ბავშვებისთვის."
+
+msgid "Drawing program"
+msgstr "სახატავი პროგრამა"
+
+msgid "Tux Paint"
+msgstr "თხუპნია!"
+
+#~ msgid "Starting a new picture will erase the current one!"
+#~ msgstr "ახალი ნახატის დაწყებით ძველს გაანადგურებთ!"
+
+#~ msgid "That’s OK!"
+#~ msgstr "კარგი!"
+
+#~ msgid "Never mind!"
+#~ msgstr "არც იფიქრო!"
+
+#~ msgid "Save over the older version of this picture?"
+#~ msgstr "გადავაწერო ამ ნახატის წინა ვერსიას?"
 
 #~ msgid "A circle is exactly round."
 #~ msgstr "წრე სრულიად მრგვალია :)"

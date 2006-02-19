@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: nb\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-01-04 23:22+0100\n"
+"POT-Creation-Date: 2006-02-19 14:44-0800\n"
 "PO-Revision-Date: 2006-01-04 23:21+0100\n"
 "Last-Translator: Karl Ove Hufthammer <karl@huftis.org>\n"
 "Language-Team: Norwegian Nynorsk <i18n-nn@lister.ping.uio.no>\n"
@@ -18,15 +18,6 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.10.2\n"
 "Plural-Forms:  nplurals=2; plural=(n != 1);\n"
-
-msgid "A drawing program for children."
-msgstr "Et tegneprogram for de yngste."
-
-msgid "Drawing program"
-msgstr "Tegneprogram"
-
-msgid "Tux Paint"
-msgstr "Tux Paint"
 
 msgid "Black!"
 msgstr "Svart!"
@@ -78,6 +69,45 @@ msgstr "Lysebrun!"
 
 msgid "Beige!"
 msgstr "Beige!"
+
+msgid "qx"
+msgstr ""
+
+msgid "QX"
+msgstr ""
+
+msgid "qy"
+msgstr ""
+
+msgid "QY"
+msgstr ""
+
+#. Now we score fonts to ensure that the best ones will be placed at
+#. the top of the list. The user will see them first. This sorting is
+#. especially important for users who have scroll buttons disabled.
+#. Translators should do whatever is needed to put crummy fonts last.
+msgid "oO"
+msgstr "oO"
+
+#. distinct uppercase and lowercase
+msgid "`\\%_@$~#{}<>^&*"
+msgstr "`\\%_@$~#{}<>^&*"
+
+#. uncommon punctuation
+msgid ",.?!"
+msgstr ",.?!"
+
+#. common punctuation
+msgid "017"
+msgstr "017"
+
+#. digits
+msgid "O0"
+msgstr "O0"
+
+#. distinct circle-like characters
+msgid "1Il|"
+msgstr "1Il|"
 
 msgid "Great!"
 msgstr "Flott!"
@@ -374,15 +404,20 @@ msgstr "Greit! Da fortsetter vi med denne tegningen."
 msgid "Do you really want to quit?"
 msgstr "Er du sikker på at du vil avslutte?"
 
-#. FIXME: Move elsewhere! Or not?!
-msgid "Yes"
-msgstr "Ja!"
+msgid "Yes, I'm done!"
+msgstr ""
 
-msgid "No"
-msgstr "Nei!"
+msgid "No, take me back!"
+msgstr ""
 
 msgid "If you quit, you’ll lose your picture! Save it?"
 msgstr "Du mister tegningen hvis du avslutter. Vil du lagre den først?"
+
+msgid "Yes, save it!"
+msgstr ""
+
+msgid "No, don't bother saving!"
+msgstr ""
 
 msgid "Save your picture first?"
 msgstr "Vil du lagre tegningen først?"
@@ -393,20 +428,26 @@ msgstr "Klarte ikke åpne tegningen."
 msgid "OK"
 msgstr "OK"
 
-msgid "Starting a new picture will erase the current one!"
-msgstr "Starter du på en ny tegning så mister du den du har."
+#. This will be replaced with a dialog allowing color choice and Starter
+#. picking, with a "Back" option to dismiss the "New" and return to
+#. the current picture.  But for now...  (bjk 2006.02.19)
+#, fuzzy
+msgid "Start a new picture?"
+msgstr "Vil du virkelig slette tegningen?"
 
-msgid "That’s OK!"
-msgstr "OK!"
-
-msgid "Never mind!"
-msgstr "Avbryt!"
+#. #define PROMPT_NEW_YES gettext_noop("That’s OK!")
+#. #define PROMPT_NEW_NO gettext_noop("Never mind!")
+msgid "Yes, let's start fresh!"
+msgstr ""
 
 msgid "There are no saved files!"
 msgstr "Det finnes ingen lagrede tegninger."
 
 msgid "Print your picture now?"
 msgstr "Er du sikker på at du vil skrive ut tegningen?"
+
+msgid "Yes, print it!"
+msgstr ""
 
 msgid "Your picture has been printed!"
 msgstr "Tegningen er skrevet ut."
@@ -417,35 +458,17 @@ msgstr "Du kan ikke skrive ut enda!"
 msgid "Erase this picture?"
 msgstr "Vil du virkelig slette tegningen?"
 
+msgid "Yes, erase it!"
+msgstr ""
+
+msgid "No, don't erase it!"
+msgstr ""
+
 msgid "Remember to use the left mouse button!"
 msgstr "Husk å bruke venstre museknapp!"
 
 msgid "Please wait..."
 msgstr "Vent litt …"
-
-msgid "jq"
-msgstr "æÆ"
-
-msgid "JQ"
-msgstr "øØ"
-
-msgid "oO"
-msgstr "oO"
-
-msgid "`\\%_@$~#{}<>^&*"
-msgstr "`\\%_@$~#{}<>^&*"
-
-msgid ",.?!"
-msgstr ",.?!"
-
-msgid "017"
-msgstr "017"
-
-msgid "O0"
-msgstr "O0"
-
-msgid "1Il|"
-msgstr "1Il|"
 
 msgid "Erase"
 msgstr "Slett"
@@ -456,12 +479,50 @@ msgstr "Tilbake"
 msgid "Aa"
 msgstr "Aa"
 
+#. FIXME: Move elsewhere! Or not?!
+msgid "Yes"
+msgstr "Ja!"
+
+msgid "No"
+msgstr "Nei!"
+
 #. FIXME: Move elsewhere!!!
-msgid "Save over the older version of this picture?"
-msgstr "Vil du lagre over den gamle versjonen av tegningen?"
+#. #define PROMPT_SAVE_OVER_TXT gettext_noop("Save over the older version of this picture?")
+msgid "Replace the picture with your changes?"
+msgstr ""
+
+msgid "Yes, replace the old one"
+msgstr ""
 
 msgid "No, save a new file"
 msgstr "Nei. Lagre som ny tegning."
 
 msgid "Choose the picture you want, then click “Open”."
 msgstr "Velg en tegning og trykk «Åpne»."
+
+msgid "A drawing program for children."
+msgstr "Et tegneprogram for de yngste."
+
+msgid "Drawing program"
+msgstr "Tegneprogram"
+
+msgid "Tux Paint"
+msgstr "Tux Paint"
+
+#~ msgid "Starting a new picture will erase the current one!"
+#~ msgstr "Starter du på en ny tegning så mister du den du har."
+
+#~ msgid "That’s OK!"
+#~ msgstr "OK!"
+
+#~ msgid "Never mind!"
+#~ msgstr "Avbryt!"
+
+#~ msgid "jq"
+#~ msgstr "æÆ"
+
+#~ msgid "JQ"
+#~ msgstr "øØ"
+
+#~ msgid "Save over the older version of this picture?"
+#~ msgstr "Vil du lagre over den gamle versjonen av tegningen?"

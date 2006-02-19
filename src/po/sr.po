@@ -6,24 +6,13 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint 0.9.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-01-04 23:22+0100\n"
+"POT-Creation-Date: 2006-02-19 14:44-0800\n"
 "PO-Revision-Date: 2004-03-29 18:58-0500\n"
 "Last-Translator: Aleksandar Jelenak <jelenak@netlinkplus.net>\n"
 "Language-Team: Serbian <gnu@prevod.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-
-msgid "A drawing program for children."
-msgstr ""
-
-msgid "Drawing program"
-msgstr ""
-
-#
-#, fuzzy
-msgid "Tux Paint"
-msgstr "Бојити"
 
 #
 msgid "Black!"
@@ -87,6 +76,45 @@ msgid "Tan!"
 msgstr "цијан!"
 
 msgid "Beige!"
+msgstr ""
+
+msgid "qx"
+msgstr ""
+
+msgid "QX"
+msgstr ""
+
+msgid "qy"
+msgstr ""
+
+msgid "QY"
+msgstr ""
+
+#. Now we score fonts to ensure that the best ones will be placed at
+#. the top of the list. The user will see them first. This sorting is
+#. especially important for users who have scroll buttons disabled.
+#. Translators should do whatever is needed to put crummy fonts last.
+msgid "oO"
+msgstr ""
+
+#. distinct uppercase and lowercase
+msgid "`\\%_@$~#{}<>^&*"
+msgstr ""
+
+#. uncommon punctuation
+msgid ",.?!"
+msgstr ""
+
+#. common punctuation
+msgid "017"
+msgstr ""
+
+#. digits
+msgid "O0"
+msgstr ""
+
+#. distinct circle-like characters
+msgid "1Il|"
 msgstr ""
 
 #
@@ -477,18 +505,21 @@ msgstr "Добро онда... Хајде да наставимо са црта�
 msgid "Do you really want to quit?"
 msgstr "Стварно желиш да завршиш?"
 
-#
-#. FIXME: Move elsewhere! Or not?!
-msgid "Yes"
-msgstr "Да"
+msgid "Yes, I'm done!"
+msgstr ""
 
-#
-msgid "No"
-msgstr "Не"
+msgid "No, take me back!"
+msgstr ""
 
 #
 msgid "If you quit, you’ll lose your picture! Save it?"
 msgstr "Изгубићеш слику ако завршиш! Да се сачува?"
+
+msgid "Yes, save it!"
+msgstr ""
+
+msgid "No, don't bother saving!"
+msgstr ""
 
 #
 msgid "Save your picture first?"
@@ -503,16 +534,17 @@ msgid "OK"
 msgstr "У реду"
 
 #
-msgid "Starting a new picture will erase the current one!"
-msgstr "Започињање нове слике ће избрисати досадашњу!"
+#. This will be replaced with a dialog allowing color choice and Starter
+#. picking, with a "Back" option to dismiss the "New" and return to
+#. the current picture.  But for now...  (bjk 2006.02.19)
+#, fuzzy
+msgid "Start a new picture?"
+msgstr "Обрисати ову слику?"
 
-#
-msgid "That’s OK!"
-msgstr "Добро!"
-
-#
-msgid "Never mind!"
-msgstr "Нисам хтео!"
+#. #define PROMPT_NEW_YES gettext_noop("That’s OK!")
+#. #define PROMPT_NEW_NO gettext_noop("Never mind!")
+msgid "Yes, let's start fresh!"
+msgstr ""
 
 #
 msgid "There are no saved files!"
@@ -521,6 +553,9 @@ msgstr "Нема сачуваних датотека!"
 #
 msgid "Print your picture now?"
 msgstr "Сада штампаш своју слику?"
+
+msgid "Yes, print it!"
+msgstr ""
 
 #
 msgid "Your picture has been printed!"
@@ -534,34 +569,16 @@ msgstr "Не можеш још да штампаш!"
 msgid "Erase this picture?"
 msgstr "Обрисати ову слику?"
 
+msgid "Yes, erase it!"
+msgstr ""
+
+msgid "No, don't erase it!"
+msgstr ""
+
 msgid "Remember to use the left mouse button!"
 msgstr ""
 
 msgid "Please wait..."
-msgstr ""
-
-msgid "jq"
-msgstr ""
-
-msgid "JQ"
-msgstr ""
-
-msgid "oO"
-msgstr ""
-
-msgid "`\\%_@$~#{}<>^&*"
-msgstr ""
-
-msgid ",.?!"
-msgstr ""
-
-msgid "017"
-msgstr ""
-
-msgid "O0"
-msgstr ""
-
-msgid "1Il|"
 msgstr ""
 
 #
@@ -576,9 +593,21 @@ msgid "Aa"
 msgstr ""
 
 #
+#. FIXME: Move elsewhere! Or not?!
+msgid "Yes"
+msgstr "Да"
+
+#
+msgid "No"
+msgstr "Не"
+
 #. FIXME: Move elsewhere!!!
-msgid "Save over the older version of this picture?"
-msgstr "Сачувати преко старије верзије ове слике?"
+#. #define PROMPT_SAVE_OVER_TXT gettext_noop("Save over the older version of this picture?")
+msgid "Replace the picture with your changes?"
+msgstr ""
+
+msgid "Yes, replace the old one"
+msgstr ""
 
 #
 msgid "No, save a new file"
@@ -587,6 +616,33 @@ msgstr "Не, сачувај у нову датотеку"
 #
 msgid "Choose the picture you want, then click “Open”."
 msgstr "Изабери слику коју желиш, затим кликни „Отвори“."
+
+msgid "A drawing program for children."
+msgstr ""
+
+msgid "Drawing program"
+msgstr ""
+
+#
+#, fuzzy
+msgid "Tux Paint"
+msgstr "Бојити"
+
+#
+#~ msgid "Starting a new picture will erase the current one!"
+#~ msgstr "Започињање нове слике ће избрисати досадашњу!"
+
+#
+#~ msgid "That’s OK!"
+#~ msgstr "Добро!"
+
+#
+#~ msgid "Never mind!"
+#~ msgstr "Нисам хтео!"
+
+#
+#~ msgid "Save over the older version of this picture?"
+#~ msgstr "Сачувати преко старије верзије ове слике?"
 
 #
 #~ msgid "Green!"

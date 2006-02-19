@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-01-04 23:22+0100\n"
+"POT-Creation-Date: 2006-02-19 14:44-0800\n"
 "PO-Revision-Date: 2005-10-10 10:56+0700\n"
 "Last-Translator: Ouychai Chaita <Ae.freeman@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,15 +17,6 @@ msgstr ""
 "X-Poedit-Language: Thai\n"
 "X-Poedit-Country: THAILAND\n"
 "X-Poedit-SourceCharset: utf-8\n"
-
-msgid "A drawing program for children."
-msgstr "โปรแกรมวาดรูปสำหรับเด็ก"
-
-msgid "Drawing program"
-msgstr "โปรแกรมวาดภาพ"
-
-msgid "Tux Paint"
-msgstr "เพนกวิ้น วาดรูป"
 
 msgid "Black!"
 msgstr "ดำ"
@@ -78,6 +69,45 @@ msgstr "ไซแอ้น"
 
 msgid "Beige!"
 msgstr "นำตาลอ่อน"
+
+msgid "qx"
+msgstr ""
+
+msgid "QX"
+msgstr ""
+
+msgid "qy"
+msgstr ""
+
+msgid "QY"
+msgstr ""
+
+#. Now we score fonts to ensure that the best ones will be placed at
+#. the top of the list. The user will see them first. This sorting is
+#. especially important for users who have scroll buttons disabled.
+#. Translators should do whatever is needed to put crummy fonts last.
+msgid "oO"
+msgstr "oO"
+
+#. distinct uppercase and lowercase
+msgid "`\\%_@$~#{}<>^&*"
+msgstr ""
+
+#. uncommon punctuation
+msgid ",.?!"
+msgstr ""
+
+#. common punctuation
+msgid "017"
+msgstr ""
+
+#. digits
+msgid "O0"
+msgstr ""
+
+#. distinct circle-like characters
+msgid "1Il|"
+msgstr ""
 
 msgid "Great!"
 msgstr "เยี่ยม!"
@@ -373,15 +403,20 @@ msgstr "ตกลงเก็บรูปภาพนี้ไว้"
 msgid "Do you really want to quit?"
 msgstr "แน่ใจนะว่าต้องการออกจากโปรแกรม"
 
-#. FIXME: Move elsewhere! Or not?!
-msgid "Yes"
-msgstr "ใช่"
+msgid "Yes, I'm done!"
+msgstr ""
 
-msgid "No"
-msgstr "ไม่"
+msgid "No, take me back!"
+msgstr ""
 
 msgid "If you quit, you’ll lose your picture! Save it?"
 msgstr "ถ้าเธอออกตอนนี้ ภาพของเธอจะหาย บันทึกหรือไม่"
+
+msgid "Yes, save it!"
+msgstr ""
+
+msgid "No, don't bother saving!"
+msgstr ""
 
 msgid "Save your picture first?"
 msgstr "บันทึกภาพก่อนหรือไม่"
@@ -392,20 +427,26 @@ msgstr "ไม่สามารถเปิดรูปได้"
 msgid "OK"
 msgstr "ตกลง"
 
-msgid "Starting a new picture will erase the current one!"
-msgstr "ถ้าเร่ิมรูปใหม่ตอนนี้ มัันจะลบนี้ทั้งหมด"
+#. This will be replaced with a dialog allowing color choice and Starter
+#. picking, with a "Back" option to dismiss the "New" and return to
+#. the current picture.  But for now...  (bjk 2006.02.19)
+#, fuzzy
+msgid "Start a new picture?"
+msgstr "ลบรูปนี้หรือไม่?"
 
-msgid "That’s OK!"
-msgstr "อืม...ดี "
-
-msgid "Never mind!"
-msgstr "ไม่เป็นไร"
+#. #define PROMPT_NEW_YES gettext_noop("That’s OK!")
+#. #define PROMPT_NEW_NO gettext_noop("Never mind!")
+msgid "Yes, let's start fresh!"
+msgstr ""
 
 msgid "There are no saved files!"
 msgstr "ไม่มีข้อมูลที่บันทึกไว้เลย"
 
 msgid "Print your picture now?"
 msgstr "พิมพ์รูปตอนนี้หรือไม่"
+
+msgid "Yes, print it!"
+msgstr ""
 
 msgid "Your picture has been printed!"
 msgstr "รูปของเธอกำลังพิมพ์"
@@ -416,34 +457,16 @@ msgstr "ยังไม่สามารถพิมพ์ได้ตอนน
 msgid "Erase this picture?"
 msgstr "ลบรูปนี้หรือไม่?"
 
+msgid "Yes, erase it!"
+msgstr ""
+
+msgid "No, don't erase it!"
+msgstr ""
+
 msgid "Remember to use the left mouse button!"
 msgstr "โปรดจำไว้ว่าใช้เม้าปุ่มซ้าย"
 
 msgid "Please wait..."
-msgstr ""
-
-msgid "jq"
-msgstr "jq"
-
-msgid "JQ"
-msgstr "JQ"
-
-msgid "oO"
-msgstr "oO"
-
-msgid "`\\%_@$~#{}<>^&*"
-msgstr ""
-
-msgid ",.?!"
-msgstr ""
-
-msgid "017"
-msgstr ""
-
-msgid "O0"
-msgstr ""
-
-msgid "1Il|"
 msgstr ""
 
 msgid "Erase"
@@ -455,15 +478,53 @@ msgstr "ย้อนกลับ"
 msgid "Aa"
 msgstr ""
 
+#. FIXME: Move elsewhere! Or not?!
+msgid "Yes"
+msgstr "ใช่"
+
+msgid "No"
+msgstr "ไม่"
+
 #. FIXME: Move elsewhere!!!
-msgid "Save over the older version of this picture?"
-msgstr "บันทึกทับรูปเดิมหรือไม่"
+#. #define PROMPT_SAVE_OVER_TXT gettext_noop("Save over the older version of this picture?")
+msgid "Replace the picture with your changes?"
+msgstr ""
+
+msgid "Yes, replace the old one"
+msgstr ""
 
 msgid "No, save a new file"
 msgstr "ไม่ บันทึกเป็นแฟ้มใหม่"
 
 msgid "Choose the picture you want, then click “Open”."
 msgstr "เลือกรูปที่เธอต้องการจากนั้นคลิ๊ก เปิด"
+
+msgid "A drawing program for children."
+msgstr "โปรแกรมวาดรูปสำหรับเด็ก"
+
+msgid "Drawing program"
+msgstr "โปรแกรมวาดภาพ"
+
+msgid "Tux Paint"
+msgstr "เพนกวิ้น วาดรูป"
+
+#~ msgid "Starting a new picture will erase the current one!"
+#~ msgstr "ถ้าเร่ิมรูปใหม่ตอนนี้ มัันจะลบนี้ทั้งหมด"
+
+#~ msgid "That’s OK!"
+#~ msgstr "อืม...ดี "
+
+#~ msgid "Never mind!"
+#~ msgstr "ไม่เป็นไร"
+
+#~ msgid "jq"
+#~ msgstr "jq"
+
+#~ msgid "JQ"
+#~ msgstr "JQ"
+
+#~ msgid "Save over the older version of this picture?"
+#~ msgstr "บันทึกทับรูปเดิมหรือไม่"
 
 #~ msgid "Lime!"
 #~ msgstr "สีเหลืองแกมเขียว"

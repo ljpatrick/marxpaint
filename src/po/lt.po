@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Tuxpaint 0.9.9\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-01-04 23:22+0100\n"
+"POT-Creation-Date: 2006-02-19 14:44-0800\n"
 "PO-Revision-Date: 2004-12-10 18:11+0200\n"
 "Last-Translator: Gintaras Goštautas <gintaras@nes.lt>\n"
 "Language-Team: Lithuanian <komp_lt@konf.lt>\n"
@@ -17,15 +17,6 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Poedit-Language: Lithuanian\n"
 "X-Poedit-Country: LITHUANIA\n"
-
-msgid "A drawing program for children."
-msgstr "Piešimo programa vaikams."
-
-msgid "Drawing program"
-msgstr "Piešimo programa"
-
-msgid "Tux Paint"
-msgstr "Tux Paint"
 
 msgid "Black!"
 msgstr "Juoda!"
@@ -78,6 +69,45 @@ msgid "Tan!"
 msgstr "Žydra!"
 
 msgid "Beige!"
+msgstr ""
+
+msgid "qx"
+msgstr ""
+
+msgid "QX"
+msgstr ""
+
+msgid "qy"
+msgstr ""
+
+msgid "QY"
+msgstr ""
+
+#. Now we score fonts to ensure that the best ones will be placed at
+#. the top of the list. The user will see them first. This sorting is
+#. especially important for users who have scroll buttons disabled.
+#. Translators should do whatever is needed to put crummy fonts last.
+msgid "oO"
+msgstr ""
+
+#. distinct uppercase and lowercase
+msgid "`\\%_@$~#{}<>^&*"
+msgstr ""
+
+#. uncommon punctuation
+msgid ",.?!"
+msgstr ""
+
+#. common punctuation
+msgid "017"
+msgstr ""
+
+#. digits
+msgid "O0"
+msgstr ""
+
+#. distinct circle-like characters
+msgid "1Il|"
 msgstr ""
 
 msgid "Great!"
@@ -387,15 +417,20 @@ msgstr "Gerai tuomet...Piešk toliau šitą!"
 msgid "Do you really want to quit?"
 msgstr "Ar tikrai norite išeiti?"
 
-#. FIXME: Move elsewhere! Or not?!
-msgid "Yes"
-msgstr "Taip"
+msgid "Yes, I'm done!"
+msgstr ""
 
-msgid "No"
-msgstr "Ne"
+msgid "No, take me back!"
+msgstr ""
 
 msgid "If you quit, you’ll lose your picture! Save it?"
 msgstr "Jeigu išeisite, prarasite savo piešinį! Ar išsaugoti jį?"
+
+msgid "Yes, save it!"
+msgstr ""
+
+msgid "No, don't bother saving!"
+msgstr ""
 
 msgid "Save your picture first?"
 msgstr "Ar prieš tai išsaugoti jūsų piešinį?"
@@ -406,20 +441,26 @@ msgstr "Negalima atidaryti šio piešinio!"
 msgid "OK"
 msgstr "Gerai"
 
-msgid "Starting a new picture will erase the current one!"
-msgstr "Kurdamas naują piešinį, ištrinsi esamą !"
+#. This will be replaced with a dialog allowing color choice and Starter
+#. picking, with a "Back" option to dismiss the "New" and return to
+#. the current picture.  But for now...  (bjk 2006.02.19)
+#, fuzzy
+msgid "Start a new picture?"
+msgstr "Ar ištrinti šį piešinį?"
 
-msgid "That’s OK!"
-msgstr "Tai gerai!"
-
-msgid "Never mind!"
-msgstr "Tiek to!"
+#. #define PROMPT_NEW_YES gettext_noop("That’s OK!")
+#. #define PROMPT_NEW_NO gettext_noop("Never mind!")
+msgid "Yes, let's start fresh!"
+msgstr ""
 
 msgid "There are no saved files!"
 msgstr "Nėra išsaugotų bylų!"
 
 msgid "Print your picture now?"
 msgstr "Ar spausdinti jūsų piešinį dabar?"
+
+msgid "Yes, print it!"
+msgstr ""
 
 msgid "Your picture has been printed!"
 msgstr "Jūsų piešinys buvo atspausdintas!"
@@ -430,34 +471,16 @@ msgstr "Jūs dar negalite spausdinti!"
 msgid "Erase this picture?"
 msgstr "Ar ištrinti šį piešinį?"
 
+msgid "Yes, erase it!"
+msgstr ""
+
+msgid "No, don't erase it!"
+msgstr ""
+
 msgid "Remember to use the left mouse button!"
 msgstr ""
 
 msgid "Please wait..."
-msgstr ""
-
-msgid "jq"
-msgstr ""
-
-msgid "JQ"
-msgstr ""
-
-msgid "oO"
-msgstr ""
-
-msgid "`\\%_@$~#{}<>^&*"
-msgstr ""
-
-msgid ",.?!"
-msgstr ""
-
-msgid "017"
-msgstr ""
-
-msgid "O0"
-msgstr ""
-
-msgid "1Il|"
 msgstr ""
 
 msgid "Erase"
@@ -469,15 +492,47 @@ msgstr "Grįžti atgal"
 msgid "Aa"
 msgstr ""
 
+#. FIXME: Move elsewhere! Or not?!
+msgid "Yes"
+msgstr "Taip"
+
+msgid "No"
+msgstr "Ne"
+
 #. FIXME: Move elsewhere!!!
-msgid "Save over the older version of this picture?"
-msgstr "Ar išsaugoti šį piešinį į ankstesnės jo versijos vietą?"
+#. #define PROMPT_SAVE_OVER_TXT gettext_noop("Save over the older version of this picture?")
+msgid "Replace the picture with your changes?"
+msgstr ""
+
+msgid "Yes, replace the old one"
+msgstr ""
 
 msgid "No, save a new file"
 msgstr "Ne, išsaugoti į naują bylą"
 
 msgid "Choose the picture you want, then click “Open”."
 msgstr "Išsirinkite norimą piešinį, po to Spustelėkite 'Open'."
+
+msgid "A drawing program for children."
+msgstr "Piešimo programa vaikams."
+
+msgid "Drawing program"
+msgstr "Piešimo programa"
+
+msgid "Tux Paint"
+msgstr "Tux Paint"
+
+#~ msgid "Starting a new picture will erase the current one!"
+#~ msgstr "Kurdamas naują piešinį, ištrinsi esamą !"
+
+#~ msgid "That’s OK!"
+#~ msgstr "Tai gerai!"
+
+#~ msgid "Never mind!"
+#~ msgstr "Tiek to!"
+
+#~ msgid "Save over the older version of this picture?"
+#~ msgstr "Ar išsaugoti šį piešinį į ankstesnės jo versijos vietą?"
 
 #~ msgid "Green!"
 #~ msgstr "Žalia!"

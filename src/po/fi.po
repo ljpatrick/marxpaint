@@ -6,22 +6,13 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TuxPaint\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-01-04 23:22+0100\n"
+"POT-Creation-Date: 2006-02-19 14:44-0800\n"
 "PO-Revision-Date: 2004-07-18 16:09+0200\n"
 "Last-Translator: Tarmo Toikkanen <tarmo@iki.fi>\n"
 "Language-Team: Finnish <fi@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-
-msgid "A drawing program for children."
-msgstr "Piirto-ohjelma pienille lapsille."
-
-msgid "Drawing program"
-msgstr "Piirto-ohjelma"
-
-msgid "Tux Paint"
-msgstr "Tux Paint"
 
 msgid "Black!"
 msgstr "Musta!"
@@ -74,6 +65,45 @@ msgid "Tan!"
 msgstr "Turkoosi!"
 
 msgid "Beige!"
+msgstr ""
+
+msgid "qx"
+msgstr ""
+
+msgid "QX"
+msgstr ""
+
+msgid "qy"
+msgstr ""
+
+msgid "QY"
+msgstr ""
+
+#. Now we score fonts to ensure that the best ones will be placed at
+#. the top of the list. The user will see them first. This sorting is
+#. especially important for users who have scroll buttons disabled.
+#. Translators should do whatever is needed to put crummy fonts last.
+msgid "oO"
+msgstr ""
+
+#. distinct uppercase and lowercase
+msgid "`\\%_@$~#{}<>^&*"
+msgstr ""
+
+#. uncommon punctuation
+msgid ",.?!"
+msgstr ""
+
+#. common punctuation
+msgid "017"
+msgstr ""
+
+#. digits
+msgid "O0"
+msgstr ""
+
+#. distinct circle-like characters
+msgid "1Il|"
 msgstr ""
 
 msgid "Great!"
@@ -385,15 +415,20 @@ msgstr "Hyvä on... Jatketaan tämän piirtämistä!"
 msgid "Do you really want to quit?"
 msgstr "Haluatko varmasti lopettaa?"
 
-#. FIXME: Move elsewhere! Or not?!
-msgid "Yes"
-msgstr "Kyllä"
+msgid "Yes, I'm done!"
+msgstr ""
 
-msgid "No"
-msgstr "Ei"
+msgid "No, take me back!"
+msgstr ""
 
 msgid "If you quit, you’ll lose your picture! Save it?"
 msgstr "Menetät kuvan jos lopetat. Tallennetaanko se?"
+
+msgid "Yes, save it!"
+msgstr ""
+
+msgid "No, don't bother saving!"
+msgstr ""
 
 msgid "Save your picture first?"
 msgstr "Tallennetaanko kuvasi ensin?"
@@ -404,20 +439,26 @@ msgstr "Kuvan avaaminen ei onnistu!"
 msgid "OK"
 msgstr "OK"
 
-msgid "Starting a new picture will erase the current one!"
-msgstr "Uuden kuvan aloittaminen pyyhkii nykyisen pois!"
+#. This will be replaced with a dialog allowing color choice and Starter
+#. picking, with a "Back" option to dismiss the "New" and return to
+#. the current picture.  But for now...  (bjk 2006.02.19)
+#, fuzzy
+msgid "Start a new picture?"
+msgstr "Pyyhitäänkö tämä kuva?"
 
-msgid "That’s OK!"
-msgstr "Se sopii!"
-
-msgid "Never mind!"
-msgstr "Ei sitten!"
+#. #define PROMPT_NEW_YES gettext_noop("That’s OK!")
+#. #define PROMPT_NEW_NO gettext_noop("Never mind!")
+msgid "Yes, let's start fresh!"
+msgstr ""
 
 msgid "There are no saved files!"
 msgstr "Ei löytynyt yhtään tallennettuja kuvia!"
 
 msgid "Print your picture now?"
 msgstr "Haluatko tulostaa kuvasi nyt?"
+
+msgid "Yes, print it!"
+msgstr ""
 
 msgid "Your picture has been printed!"
 msgstr "Kuvasi on tulostettu!"
@@ -428,34 +469,16 @@ msgstr "Et voi vielä tulostaa!"
 msgid "Erase this picture?"
 msgstr "Pyyhitäänkö tämä kuva?"
 
+msgid "Yes, erase it!"
+msgstr ""
+
+msgid "No, don't erase it!"
+msgstr ""
+
 msgid "Remember to use the left mouse button!"
 msgstr ""
 
 msgid "Please wait..."
-msgstr ""
-
-msgid "jq"
-msgstr ""
-
-msgid "JQ"
-msgstr ""
-
-msgid "oO"
-msgstr ""
-
-msgid "`\\%_@$~#{}<>^&*"
-msgstr ""
-
-msgid ",.?!"
-msgstr ""
-
-msgid "017"
-msgstr ""
-
-msgid "O0"
-msgstr ""
-
-msgid "1Il|"
 msgstr ""
 
 msgid "Erase"
@@ -467,15 +490,47 @@ msgstr "Takaisin"
 msgid "Aa"
 msgstr ""
 
+#. FIXME: Move elsewhere! Or not?!
+msgid "Yes"
+msgstr "Kyllä"
+
+msgid "No"
+msgstr "Ei"
+
 #. FIXME: Move elsewhere!!!
-msgid "Save over the older version of this picture?"
-msgstr "Tämän niminen kuva on jo olemassa. Tallennetaanko sen päälle?"
+#. #define PROMPT_SAVE_OVER_TXT gettext_noop("Save over the older version of this picture?")
+msgid "Replace the picture with your changes?"
+msgstr ""
+
+msgid "Yes, replace the old one"
+msgstr ""
 
 msgid "No, save a new file"
 msgstr "Ei, tallennetaan uuteen tiedostoon"
 
 msgid "Choose the picture you want, then click “Open”."
 msgstr "Valitse haluamasi kuva ja valitse 'Avaa'"
+
+msgid "A drawing program for children."
+msgstr "Piirto-ohjelma pienille lapsille."
+
+msgid "Drawing program"
+msgstr "Piirto-ohjelma"
+
+msgid "Tux Paint"
+msgstr "Tux Paint"
+
+#~ msgid "Starting a new picture will erase the current one!"
+#~ msgstr "Uuden kuvan aloittaminen pyyhkii nykyisen pois!"
+
+#~ msgid "That’s OK!"
+#~ msgstr "Se sopii!"
+
+#~ msgid "Never mind!"
+#~ msgstr "Ei sitten!"
+
+#~ msgid "Save over the older version of this picture?"
+#~ msgstr "Tämän niminen kuva on jo olemassa. Tallennetaanko sen päälle?"
 
 #~ msgid "Green!"
 #~ msgstr "Vihreä!"

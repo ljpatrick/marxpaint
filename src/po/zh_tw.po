@@ -9,22 +9,13 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Tuxpaint 0.9.15\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-01-04 23:22+0100\n"
+"POT-Creation-Date: 2006-02-19 14:44-0800\n"
 "PO-Revision-Date: 2005-10-17 22:00+0800\n"
 "Last-Translator: Song Huang <Song@song.idv.tw>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-
-msgid "A drawing program for children."
-msgstr "一個兒童專用的畫圖程式。"
-
-msgid "Drawing program"
-msgstr "畫圖程式"
-
-msgid "Tux Paint"
-msgstr "繪畫"
 
 msgid "Black!"
 msgstr "黑色"
@@ -78,6 +69,45 @@ msgstr "褐色"
 
 msgid "Beige!"
 msgstr "米黃色"
+
+msgid "qx"
+msgstr ""
+
+msgid "QX"
+msgstr ""
+
+msgid "qy"
+msgstr ""
+
+msgid "QY"
+msgstr ""
+
+#. Now we score fonts to ensure that the best ones will be placed at
+#. the top of the list. The user will see them first. This sorting is
+#. especially important for users who have scroll buttons disabled.
+#. Translators should do whatever is needed to put crummy fonts last.
+msgid "oO"
+msgstr "oO"
+
+#. distinct uppercase and lowercase
+msgid "`\\%_@$~#{}<>^&*"
+msgstr "`\\%_@$~#{}<>^&*"
+
+#. uncommon punctuation
+msgid ",.?!"
+msgstr ",.?"
+
+#. common punctuation
+msgid "017"
+msgstr "017"
+
+#. digits
+msgid "O0"
+msgstr "O0"
+
+#. distinct circle-like characters
+msgid "1Il|"
+msgstr "1Il|"
 
 msgid "Great!"
 msgstr "太棒了"
@@ -381,16 +411,20 @@ msgstr "好的，那麼讓我們繼續來畫這張圖。"
 msgid "Do you really want to quit?"
 msgstr "你確定要離開嗎？"
 
-#  FIXME: Move elsewhere! Or not?!
-#. FIXME: Move elsewhere! Or not?!
-msgid "Yes"
-msgstr "是的"
+msgid "Yes, I'm done!"
+msgstr ""
 
-msgid "No"
-msgstr "不是"
+msgid "No, take me back!"
+msgstr ""
 
 msgid "If you quit, you’ll lose your picture! Save it?"
 msgstr "如果離開，你將遺失你的圖畫，要不要先存檔呢？"
+
+msgid "Yes, save it!"
+msgstr ""
+
+msgid "No, don't bother saving!"
+msgstr ""
 
 msgid "Save your picture first?"
 msgstr "先儲存你的圖畫嗎？"
@@ -401,20 +435,26 @@ msgstr "無法開啟那張圖畫"
 msgid "OK"
 msgstr "OK"
 
-msgid "Starting a new picture will erase the current one!"
-msgstr "開啟一張新的圖紙將會刪除目前這張圖"
+#. This will be replaced with a dialog allowing color choice and Starter
+#. picking, with a "Back" option to dismiss the "New" and return to
+#. the current picture.  But for now...  (bjk 2006.02.19)
+#, fuzzy
+msgid "Start a new picture?"
+msgstr "刪除這張圖畫？"
 
-msgid "That’s OK!"
-msgstr "確定"
-
-msgid "Never mind!"
-msgstr "取消"
+#. #define PROMPT_NEW_YES gettext_noop("That’s OK!")
+#. #define PROMPT_NEW_NO gettext_noop("Never mind!")
+msgid "Yes, let's start fresh!"
+msgstr ""
 
 msgid "There are no saved files!"
 msgstr "沒有已儲存的檔案"
 
 msgid "Print your picture now?"
 msgstr "現在要列印你的圖畫嗎？"
+
+msgid "Yes, print it!"
+msgstr ""
 
 msgid "Your picture has been printed!"
 msgstr "你的圖畫已經印出來了"
@@ -425,35 +465,17 @@ msgstr "你還不可以列印"
 msgid "Erase this picture?"
 msgstr "刪除這張圖畫？"
 
+msgid "Yes, erase it!"
+msgstr ""
+
+msgid "No, don't erase it!"
+msgstr ""
+
 msgid "Remember to use the left mouse button!"
 msgstr "記得使用滑鼠的左鍵"
 
 msgid "Please wait..."
 msgstr ""
-
-msgid "jq"
-msgstr "jq"
-
-msgid "JQ"
-msgstr "JQ"
-
-msgid "oO"
-msgstr "oO"
-
-msgid "`\\%_@$~#{}<>^&*"
-msgstr "`\\%_@$~#{}<>^&*"
-
-msgid ",.?!"
-msgstr ",.?"
-
-msgid "017"
-msgstr "017"
-
-msgid "O0"
-msgstr "O0"
-
-msgid "1Il|"
-msgstr "1Il|"
 
 msgid "Erase"
 msgstr "刪除"
@@ -464,13 +486,52 @@ msgstr "回復"
 msgid "Aa"
 msgstr "Aa"
 
-#  FIXME: Move elsewhere!!!
+#  FIXME: Move elsewhere! Or not?!
+#. FIXME: Move elsewhere! Or not?!
+msgid "Yes"
+msgstr "是的"
+
+msgid "No"
+msgstr "不是"
+
 #. FIXME: Move elsewhere!!!
-msgid "Save over the older version of this picture?"
-msgstr "儲存這張圖畫覆蓋掉舊的版本？"
+#. #define PROMPT_SAVE_OVER_TXT gettext_noop("Save over the older version of this picture?")
+msgid "Replace the picture with your changes?"
+msgstr ""
+
+msgid "Yes, replace the old one"
+msgstr ""
 
 msgid "No, save a new file"
 msgstr "不，儲存一個新的檔案"
 
 msgid "Choose the picture you want, then click “Open”."
 msgstr "選擇你想要的圖畫，然後按下「開啟」"
+
+msgid "A drawing program for children."
+msgstr "一個兒童專用的畫圖程式。"
+
+msgid "Drawing program"
+msgstr "畫圖程式"
+
+msgid "Tux Paint"
+msgstr "繪畫"
+
+#~ msgid "Starting a new picture will erase the current one!"
+#~ msgstr "開啟一張新的圖紙將會刪除目前這張圖"
+
+#~ msgid "That’s OK!"
+#~ msgstr "確定"
+
+#~ msgid "Never mind!"
+#~ msgstr "取消"
+
+#~ msgid "jq"
+#~ msgstr "jq"
+
+#~ msgid "JQ"
+#~ msgstr "JQ"
+
+#  FIXME: Move elsewhere!!!
+#~ msgid "Save over the older version of this picture?"
+#~ msgstr "儲存這張圖畫覆蓋掉舊的版本？"

@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: nl\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-01-04 23:22+0100\n"
+"POT-Creation-Date: 2006-02-19 14:44-0800\n"
 "PO-Revision-Date: 2005-01-09 21:32+0100\n"
 "Last-Translator: \n"
 "Language-Team:  <nl@li.org>\n"
@@ -18,15 +18,6 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.9.1\n"
-
-msgid "A drawing program for children."
-msgstr "Een tekenprogramma voor kinderen."
-
-msgid "Drawing program"
-msgstr "Tekenprogramma"
-
-msgid "Tux Paint"
-msgstr "TuxPaint"
 
 msgid "Black!"
 msgstr "Zwart!"
@@ -78,6 +69,45 @@ msgstr "Kleur!"
 
 msgid "Beige!"
 msgstr "Beige!"
+
+msgid "qx"
+msgstr ""
+
+msgid "QX"
+msgstr ""
+
+msgid "qy"
+msgstr ""
+
+msgid "QY"
+msgstr ""
+
+#. Now we score fonts to ensure that the best ones will be placed at
+#. the top of the list. The user will see them first. This sorting is
+#. especially important for users who have scroll buttons disabled.
+#. Translators should do whatever is needed to put crummy fonts last.
+msgid "oO"
+msgstr "oO"
+
+#. distinct uppercase and lowercase
+msgid "`\\%_@$~#{}<>^&*"
+msgstr "`\\%_@$~#{}<>^&*"
+
+#. uncommon punctuation
+msgid ",.?!"
+msgstr ",.?!"
+
+#. common punctuation
+msgid "017"
+msgstr "017"
+
+#. digits
+msgid "O0"
+msgstr "00"
+
+#. distinct circle-like characters
+msgid "1Il|"
+msgstr "1Il|"
 
 msgid "Great!"
 msgstr "Prachtig!"
@@ -376,15 +406,20 @@ msgstr "Ok, dan doen we verder met deze!"
 msgid "Do you really want to quit?"
 msgstr "Wil je echt stoppen?"
 
-#. FIXME: Move elsewhere! Or not?!
-msgid "Yes"
-msgstr "Ja"
+msgid "Yes, I'm done!"
+msgstr ""
 
-msgid "No"
-msgstr "Nee"
+msgid "No, take me back!"
+msgstr ""
 
 msgid "If you quit, you’ll lose your picture! Save it?"
 msgstr "Als je stopt ben je je tekening kwijt! Moet ik ze bewaren?"
+
+msgid "Yes, save it!"
+msgstr ""
+
+msgid "No, don't bother saving!"
+msgstr ""
 
 msgid "Save your picture first?"
 msgstr "Wil je je huidige tekening eerst nog bewaren?"
@@ -395,20 +430,26 @@ msgstr "Ik kan die tekening niet openen!"
 msgid "OK"
 msgstr "OK"
 
-msgid "Starting a new picture will erase the current one!"
-msgstr "Mag ik de huidige tekening wegdoen om met een nieuwe te beginnen?"
+#. This will be replaced with a dialog allowing color choice and Starter
+#. picking, with a "Back" option to dismiss the "New" and return to
+#. the current picture.  But for now...  (bjk 2006.02.19)
+#, fuzzy
+msgid "Start a new picture?"
+msgstr "Mag ik de gekozen tekening uitvegen?"
 
-msgid "That’s OK!"
-msgstr "OK!"
-
-msgid "Never mind!"
-msgstr "Dat geeft niet!"
+#. #define PROMPT_NEW_YES gettext_noop("That’s OK!")
+#. #define PROMPT_NEW_NO gettext_noop("Never mind!")
+msgid "Yes, let's start fresh!"
+msgstr ""
 
 msgid "There are no saved files!"
 msgstr "Er zijn geen bewaarde tekeningen!"
 
 msgid "Print your picture now?"
 msgstr "Wil je je huidige tekening afdrukken?"
+
+msgid "Yes, print it!"
+msgstr ""
 
 msgid "Your picture has been printed!"
 msgstr "Je tekening is afgedrukt!"
@@ -419,35 +460,17 @@ msgstr "Je kunt nog niet afdrukken!"
 msgid "Erase this picture?"
 msgstr "Mag ik de gekozen tekening uitvegen?"
 
+msgid "Yes, erase it!"
+msgstr ""
+
+msgid "No, don't erase it!"
+msgstr ""
+
 msgid "Remember to use the left mouse button!"
 msgstr "Vergeet niet om de linkse muisknop te gebruiken!"
 
 msgid "Please wait..."
 msgstr ""
-
-msgid "jq"
-msgstr "jq"
-
-msgid "JQ"
-msgstr "JQ"
-
-msgid "oO"
-msgstr "oO"
-
-msgid "`\\%_@$~#{}<>^&*"
-msgstr "`\\%_@$~#{}<>^&*"
-
-msgid ",.?!"
-msgstr ",.?!"
-
-msgid "017"
-msgstr "017"
-
-msgid "O0"
-msgstr "00"
-
-msgid "1Il|"
-msgstr "1Il|"
 
 msgid "Erase"
 msgstr "Uitgommen"
@@ -458,15 +481,53 @@ msgstr "Terug"
 msgid "Aa"
 msgstr "Aa"
 
+#. FIXME: Move elsewhere! Or not?!
+msgid "Yes"
+msgstr "Ja"
+
+msgid "No"
+msgstr "Nee"
+
 #. FIXME: Move elsewhere!!!
-msgid "Save over the older version of this picture?"
-msgstr "Mag ik de vorige versie van deze tekening overschrijven?"
+#. #define PROMPT_SAVE_OVER_TXT gettext_noop("Save over the older version of this picture?")
+msgid "Replace the picture with your changes?"
+msgstr ""
+
+msgid "Yes, replace the old one"
+msgstr ""
 
 msgid "No, save a new file"
 msgstr "Nee, bewaar op een nieuwe plaats"
 
 msgid "Choose the picture you want, then click “Open”."
 msgstr "Kies een tekening en klik op 'Open'"
+
+msgid "A drawing program for children."
+msgstr "Een tekenprogramma voor kinderen."
+
+msgid "Drawing program"
+msgstr "Tekenprogramma"
+
+msgid "Tux Paint"
+msgstr "TuxPaint"
+
+#~ msgid "Starting a new picture will erase the current one!"
+#~ msgstr "Mag ik de huidige tekening wegdoen om met een nieuwe te beginnen?"
+
+#~ msgid "That’s OK!"
+#~ msgstr "OK!"
+
+#~ msgid "Never mind!"
+#~ msgstr "Dat geeft niet!"
+
+#~ msgid "jq"
+#~ msgstr "jq"
+
+#~ msgid "JQ"
+#~ msgstr "JQ"
+
+#~ msgid "Save over the older version of this picture?"
+#~ msgstr "Mag ik de vorige versie van deze tekening overschrijven?"
 
 #~ msgid "Dark Gray!"
 #~ msgstr "Donkergrijs!"

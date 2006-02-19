@@ -6,23 +6,13 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint 0.9.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-01-04 23:22+0100\n"
+"POT-Creation-Date: 2006-02-19 14:44-0800\n"
 "PO-Revision-Date: 2005-07-26 01:30-0800\n"
 "Last-Translator: Bill Kendrick <bill@newbreedsoftware.com>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-
-msgid "A drawing program for children."
-msgstr ""
-
-msgid "Drawing program"
-msgstr ""
-
-#, fuzzy
-msgid "Tux Paint"
-msgstr "Vaarve"
 
 msgid "Black!"
 msgstr "Zwaart!"
@@ -75,6 +65,45 @@ msgid "Tan!"
 msgstr "Hel blaauw!"
 
 msgid "Beige!"
+msgstr ""
+
+msgid "qx"
+msgstr ""
+
+msgid "QX"
+msgstr ""
+
+msgid "qy"
+msgstr ""
+
+msgid "QY"
+msgstr ""
+
+#. Now we score fonts to ensure that the best ones will be placed at
+#. the top of the list. The user will see them first. This sorting is
+#. especially important for users who have scroll buttons disabled.
+#. Translators should do whatever is needed to put crummy fonts last.
+msgid "oO"
+msgstr ""
+
+#. distinct uppercase and lowercase
+msgid "`\\%_@$~#{}<>^&*"
+msgstr ""
+
+#. uncommon punctuation
+msgid ",.?!"
+msgstr ""
+
+#. common punctuation
+msgid "017"
+msgstr ""
+
+#. digits
+msgid "O0"
+msgstr ""
+
+#. distinct circle-like characters
+msgid "1Il|"
 msgstr ""
 
 msgid "Great!"
@@ -386,15 +415,20 @@ msgstr "Na goud din... Loawwe dizze mor tijken blieven!"
 msgid "Do you really want to quit?"
 msgstr "Wilst dr echt uut?"
 
-#. FIXME: Move elsewhere! Or not?!
-msgid "Yes"
-msgstr "Ja"
+msgid "Yes, I'm done!"
+msgstr ""
 
-msgid "No"
-msgstr "Nee"
+msgid "No, take me back!"
+msgstr ""
 
 msgid "If you quit, you’ll lose your picture! Save it?"
 msgstr "Ast dr uut gest, bust dien ploatje kwiet! Bewoaren?"
+
+msgid "Yes, save it!"
+msgstr ""
+
+msgid "No, don't bother saving!"
+msgstr ""
 
 msgid "Save your picture first?"
 msgstr "Eerst dien tijken bewoaren?"
@@ -405,20 +439,26 @@ msgstr "Krieg dij tijken nie lös!"
 msgid "OK"
 msgstr "Goud"
 
-msgid "Starting a new picture will erase the current one!"
-msgstr "Ast n nije tijken begunst, smiet ik dizze vot!"
+#. This will be replaced with a dialog allowing color choice and Starter
+#. picking, with a "Back" option to dismiss the "New" and return to
+#. the current picture.  But for now...  (bjk 2006.02.19)
+#, fuzzy
+msgid "Start a new picture?"
+msgstr "Dizze tijken votsmieten?"
 
-msgid "That’s OK!"
-msgstr "Dat is goud!"
-
-msgid "Never mind!"
-msgstr "Gef niks!"
+#. #define PROMPT_NEW_YES gettext_noop("That’s OK!")
+#. #define PROMPT_NEW_NO gettext_noop("Never mind!")
+msgid "Yes, let's start fresh!"
+msgstr ""
 
 msgid "There are no saved files!"
 msgstr "Dr bunnen gien bewoarde bestanden!"
 
 msgid "Print your picture now?"
 msgstr "Dien tijken noe ófdrukken!"
+
+msgid "Yes, print it!"
+msgstr ""
 
 msgid "Your picture has been printed!"
 msgstr "Dien tijken is ófdrukt!"
@@ -429,34 +469,16 @@ msgstr "Kanst noe nog nait ófdrukken!"
 msgid "Erase this picture?"
 msgstr "Dizze tijken votsmieten?"
 
+msgid "Yes, erase it!"
+msgstr ""
+
+msgid "No, don't erase it!"
+msgstr ""
+
 msgid "Remember to use the left mouse button!"
 msgstr ""
 
 msgid "Please wait..."
-msgstr ""
-
-msgid "jq"
-msgstr ""
-
-msgid "JQ"
-msgstr ""
-
-msgid "oO"
-msgstr ""
-
-msgid "`\\%_@$~#{}<>^&*"
-msgstr ""
-
-msgid ",.?!"
-msgstr ""
-
-msgid "017"
-msgstr ""
-
-msgid "O0"
-msgstr ""
-
-msgid "1Il|"
 msgstr ""
 
 msgid "Erase"
@@ -468,15 +490,48 @@ msgstr "Weerumme"
 msgid "Aa"
 msgstr ""
 
+#. FIXME: Move elsewhere! Or not?!
+msgid "Yes"
+msgstr "Ja"
+
+msgid "No"
+msgstr "Nee"
+
 #. FIXME: Move elsewhere!!!
-msgid "Save over the older version of this picture?"
-msgstr "Over de oldere uutvoeren van dizze tijken bewoaren?"
+#. #define PROMPT_SAVE_OVER_TXT gettext_noop("Save over the older version of this picture?")
+msgid "Replace the picture with your changes?"
+msgstr ""
+
+msgid "Yes, replace the old one"
+msgstr ""
 
 msgid "No, save a new file"
 msgstr "Nee, n nij bestaand bewoaren"
 
 msgid "Choose the picture you want, then click “Open”."
 msgstr "Kijs de tijken dijst wilst, klik din op \"Lösdoun\"."
+
+msgid "A drawing program for children."
+msgstr ""
+
+msgid "Drawing program"
+msgstr ""
+
+#, fuzzy
+msgid "Tux Paint"
+msgstr "Vaarve"
+
+#~ msgid "Starting a new picture will erase the current one!"
+#~ msgstr "Ast n nije tijken begunst, smiet ik dizze vot!"
+
+#~ msgid "That’s OK!"
+#~ msgstr "Dat is goud!"
+
+#~ msgid "Never mind!"
+#~ msgstr "Gef niks!"
+
+#~ msgid "Save over the older version of this picture?"
+#~ msgstr "Over de oldere uutvoeren van dizze tijken bewoaren?"
 
 #~ msgid "Fuchsia!"
 #~ msgstr "Haard roas!"

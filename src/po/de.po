@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2005-10-10 00:12-0700\n"
+"POT-Creation-Date: 2006-02-19 14:44-0800\n"
 "PO-Revision-Date: 2005-11-12 15:29+0100\n"
 "Last-Translator: Burkhard Lück <lueck@hube-lueck.de>\n"
 "Language-Team: Deutsch <kde-i18n-de@kde.org>\n"
@@ -18,15 +18,6 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.9.1\n"
 "Plural-Forms:  nplurals=2; plural=(n != 1);\n"
-
-msgid "A drawing program for children."
-msgstr "Ein Malprogramm für Kinder."
-
-msgid "Drawing program"
-msgstr "Malprogramm"
-
-msgid "Tux Paint"
-msgstr "Tux Paint"
 
 msgid "Black!"
 msgstr "Schwarz!"
@@ -78,6 +69,45 @@ msgstr "Gelbbraun!"
 
 msgid "Beige!"
 msgstr "Beige!"
+
+msgid "qx"
+msgstr ""
+
+msgid "QX"
+msgstr ""
+
+msgid "qy"
+msgstr ""
+
+msgid "QY"
+msgstr ""
+
+#. Now we score fonts to ensure that the best ones will be placed at
+#. the top of the list. The user will see them first. This sorting is
+#. especially important for users who have scroll buttons disabled.
+#. Translators should do whatever is needed to put crummy fonts last.
+msgid "oO"
+msgstr "oO"
+
+#. distinct uppercase and lowercase
+msgid "`\\%_@$~#{}<>^&*"
+msgstr "`\\%_@$~#{}<>^&*"
+
+#. uncommon punctuation
+msgid ",.?!"
+msgstr ",.?!"
+
+#. common punctuation
+msgid "017"
+msgstr "017"
+
+#. digits
+msgid "O0"
+msgstr "O0"
+
+#. distinct circle-like characters
+msgid "1Il|"
+msgstr "1Il|"
 
 msgid "Great!"
 msgstr "Super! Cool ;-)"
@@ -172,8 +202,10 @@ msgstr "Klick und bewege die Maus, um die Farben zu verblassen!"
 msgid "Click and move to darken the colors."
 msgstr "Klick und bewege die Maus, um die Farben abzudunkeln!"
 
-msgid "Click and move the mouse around to turn the picture into a chalk drawing."
-msgstr "Klick und bewege die Maus, um dein Bild in ein Kreidebild zu verwandeln!"
+msgid ""
+"Click and move the mouse around to turn the picture into a chalk drawing."
+msgstr ""
+"Klick und bewege die Maus, um dein Bild in ein Kreidebild zu verwandeln!"
 
 msgid "Click and move the mouse around to make the picture blocky."
 msgstr "Klick und bewege die Maus, um das Bild pixelig zu machen."
@@ -223,7 +255,8 @@ msgstr "Ein Quadrat ist ein Rechteck mit vier gleich langen Seiten."
 msgid "A rectangle has four sides and four right angles."
 msgstr "Ein Rechteck hat vier Seiten und vier rechte Winkel."
 
-msgid "A circle is a curve where all points have the same distance from the centre."
+msgid ""
+"A circle is a curve where all points have the same distance from the centre."
 msgstr ""
 "Ein Kreis ist eine Kurve, auf der alle Punkte den gleichen Abstand vom "
 "Mittelpunkt haben."
@@ -317,8 +350,8 @@ msgid ""
 "size you want. Move around to rotate it, and click to draw it."
 msgstr ""
 "Wähle eine Form. Klicke, um die Mitte zu wählen, ziehe, dann lass los, wenn "
-"es die richtige Größe hat. Bewege die Maus, um es zu drehen und klicke, um es "
-"zu zeichnen."
+"es die richtige Größe hat. Bewege die Maus, um es zu drehen und klicke, um "
+"es zu zeichnen."
 
 msgid "Choose a style of text. Click on your drawing and you can start typing."
 msgstr ""
@@ -345,15 +378,17 @@ msgid "You now have a blank sheet to draw on!"
 msgstr "Du hast jetzt ein neues leeres Bild um darauf zu malen!"
 
 #. Open
-msgid "Open�"
-msgstr "Öffnen..."
+#, fuzzy
+msgid "Open…"
+msgstr "Öffnen"
 
 #. Save
 msgid "Your image has been saved!"
 msgstr "Dein Bild wurde gespeichert!"
 
 #. Print
-msgid "Printing�"
+#, fuzzy
+msgid "Printing…"
 msgstr "Drucke..."
 
 #. Quit
@@ -369,24 +404,30 @@ msgstr "Halt die Maustaste gedrückt, um die Form in der Größe zu verändern."
 msgid "Move the mouse to rotate the shape. Click to draw it."
 msgstr "Bewege die Maus, um die Form zu drehen. Klick, wenn du zufrieden bist."
 
-msgid "OK then� Let’s keep drawing this one!"
+#, fuzzy
+msgid "OK then… Let’s keep drawing this one!"
 msgstr "OK, dann lass uns dieses Bild weitermalen!"
 
 #. FIXME: Move elsewhere!!!
 msgid "Do you really want to quit?"
 msgstr "Möchtest du wirklich aufhören?"
 
-#. FIXME: Move elsewhere! Or not?!
-msgid "Yes"
-msgstr "Ja"
+msgid "Yes, I'm done!"
+msgstr ""
 
-msgid "No"
-msgstr "Nein"
+msgid "No, take me back!"
+msgstr ""
 
 msgid "If you quit, you’ll lose your picture! Save it?"
 msgstr ""
 "Wenn du aufhörst, geht dein Bild verloren! Willst du es vorher noch "
 "speichern?"
+
+msgid "Yes, save it!"
+msgstr ""
+
+msgid "No, don't bother saving!"
+msgstr ""
 
 msgid "Save your picture first?"
 msgstr "Willst du dein Bild, vor dem Öffnen eines anderen, speichern?"
@@ -397,20 +438,26 @@ msgstr "Dieses Bild kann nicht geöffnet werden!"
 msgid "OK"
 msgstr "OK"
 
-msgid "Starting a new picture will erase the current one!"
-msgstr "Wenn du ein neues Bild öffnest, geht dein derzeitiges verloren!"
+#. This will be replaced with a dialog allowing color choice and Starter
+#. picking, with a "Back" option to dismiss the "New" and return to
+#. the current picture.  But for now...  (bjk 2006.02.19)
+#, fuzzy
+msgid "Start a new picture?"
+msgstr "Möchtest du dieses Bild löschen?"
 
-msgid "That’s OK!"
-msgstr "Das ist OK!"
-
-msgid "Never mind!"
-msgstr "Lieber doch nicht!"
+#. #define PROMPT_NEW_YES gettext_noop("That’s OK!")
+#. #define PROMPT_NEW_NO gettext_noop("Never mind!")
+msgid "Yes, let's start fresh!"
+msgstr ""
 
 msgid "There are no saved files!"
 msgstr "Es gibt noch keine gespeicherten Bilder!"
 
 msgid "Print your picture now?"
 msgstr "Willst du dein Bild jetzt ausdrucken?"
+
+msgid "Yes, print it!"
+msgstr ""
 
 msgid "Your picture has been printed!"
 msgstr "Dein Bild wurde gedruckt!"
@@ -421,32 +468,17 @@ msgstr "Du kannst noch nicht drucken!"
 msgid "Erase this picture?"
 msgstr "Möchtest du dieses Bild löschen?"
 
+msgid "Yes, erase it!"
+msgstr ""
+
+msgid "No, don't erase it!"
+msgstr ""
+
 msgid "Remember to use the left mouse button!"
 msgstr "Denke dran, die linke Maustaste zu benutzen!"
 
-msgid "jq"
-msgstr "jq"
-
-msgid "JQ"
-msgstr "JQ"
-
-msgid "oO"
-msgstr "oO"
-
-msgid "`\\%_@$~#{}<>^&*"
-msgstr "`\\%_@$~#{}<>^&*"
-
-msgid ",.?!"
-msgstr ",.?!"
-
-msgid "017"
-msgstr "017"
-
-msgid "O0"
-msgstr "O0"
-
-msgid "1Il|"
-msgstr "1Il|"
+msgid "Please wait..."
+msgstr ""
 
 msgid "Erase"
 msgstr "Löschen"
@@ -457,9 +489,20 @@ msgstr "Zurück"
 msgid "Aa"
 msgstr "Ah!"
 
+#. FIXME: Move elsewhere! Or not?!
+msgid "Yes"
+msgstr "Ja"
+
+msgid "No"
+msgstr "Nein"
+
 #. FIXME: Move elsewhere!!!
-msgid "Save over the older version of this picture?"
-msgstr "Soll die alte Version dieses Bildes überschrieben werden?"
+#. #define PROMPT_SAVE_OVER_TXT gettext_noop("Save over the older version of this picture?")
+msgid "Replace the picture with your changes?"
+msgstr ""
+
+msgid "Yes, replace the old one"
+msgstr ""
 
 msgid "No, save a new file"
 msgstr "Nein, in eine neue Datei!"
@@ -467,3 +510,32 @@ msgstr "Nein, in eine neue Datei!"
 msgid "Choose the picture you want, then click “Open”."
 msgstr "Wähle ein Bild, dass du öffnen willst und klick auf 'Öffnen'."
 
+msgid "A drawing program for children."
+msgstr "Ein Malprogramm für Kinder."
+
+msgid "Drawing program"
+msgstr "Malprogramm"
+
+msgid "Tux Paint"
+msgstr "Tux Paint"
+
+#~ msgid "Open�"
+#~ msgstr "Öffnen..."
+
+#~ msgid "Starting a new picture will erase the current one!"
+#~ msgstr "Wenn du ein neues Bild öffnest, geht dein derzeitiges verloren!"
+
+#~ msgid "That’s OK!"
+#~ msgstr "Das ist OK!"
+
+#~ msgid "Never mind!"
+#~ msgstr "Lieber doch nicht!"
+
+#~ msgid "jq"
+#~ msgstr "jq"
+
+#~ msgid "JQ"
+#~ msgstr "JQ"
+
+#~ msgid "Save over the older version of this picture?"
+#~ msgstr "Soll die alte Version dieses Bildes überschrieben werden?"

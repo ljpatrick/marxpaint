@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TuxPaint\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-01-04 23:22+0100\n"
+"POT-Creation-Date: 2006-02-19 14:44-0800\n"
 "PO-Revision-Date: 2005-01-09 12:00GMT\n"
 "Last-Translator: Eugene Zelenko <greendeath@mail.ru>\n"
 "Language-Team: Dmitriy Ivanov <ace22b@myrealbox.com>\n"
@@ -14,15 +14,6 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.3.1\n"
-
-msgid "A drawing program for children."
-msgstr "Детская программа для рисования."
-
-msgid "Drawing program"
-msgstr "Программа для рисования"
-
-msgid "Tux Paint"
-msgstr "Рисуй вместе с Tux!"
 
 msgid "Black!"
 msgstr "Чёрный!"
@@ -76,6 +67,45 @@ msgstr "Загар!"
 
 msgid "Beige!"
 msgstr "Бежевый!"
+
+msgid "qx"
+msgstr ""
+
+msgid "QX"
+msgstr ""
+
+msgid "qy"
+msgstr ""
+
+msgid "QY"
+msgstr ""
+
+#. Now we score fonts to ensure that the best ones will be placed at
+#. the top of the list. The user will see them first. This sorting is
+#. especially important for users who have scroll buttons disabled.
+#. Translators should do whatever is needed to put crummy fonts last.
+msgid "oO"
+msgstr ""
+
+#. distinct uppercase and lowercase
+msgid "`\\%_@$~#{}<>^&*"
+msgstr ""
+
+#. uncommon punctuation
+msgid ",.?!"
+msgstr ""
+
+#. common punctuation
+msgid "017"
+msgstr ""
+
+#. digits
+msgid "O0"
+msgstr ""
+
+#. distinct circle-like characters
+msgid "1Il|"
+msgstr ""
 
 msgid "Great!"
 msgstr "Прекрасно!"
@@ -378,15 +408,20 @@ msgstr "Хорошо, продолжаем рисовать!"
 msgid "Do you really want to quit?"
 msgstr "Вы действительно хотите выйти?"
 
-#. FIXME: Move elsewhere! Or not?!
-msgid "Yes"
-msgstr "Да"
+msgid "Yes, I'm done!"
+msgstr ""
 
-msgid "No"
-msgstr "Нет"
+msgid "No, take me back!"
+msgstr ""
 
 msgid "If you quit, you’ll lose your picture! Save it?"
 msgstr "Если вы выйдите, вы потеряете вашу картинку! Сохранить?"
+
+msgid "Yes, save it!"
+msgstr ""
+
+msgid "No, don't bother saving!"
+msgstr ""
 
 msgid "Save your picture first?"
 msgstr "Сохранить вашу картинку сначала?"
@@ -397,20 +432,26 @@ msgstr "Не могу открыть эту картинку!"
 msgid "OK"
 msgstr "Хорошо"
 
-msgid "Starting a new picture will erase the current one!"
-msgstr "Начиная новую картинку вы уничтожите текущую!"
+#. This will be replaced with a dialog allowing color choice and Starter
+#. picking, with a "Back" option to dismiss the "New" and return to
+#. the current picture.  But for now...  (bjk 2006.02.19)
+#, fuzzy
+msgid "Start a new picture?"
+msgstr "Удалить эту картинку?"
 
-msgid "That’s OK!"
-msgstr "Хорошо!"
-
-msgid "Never mind!"
-msgstr "Нет!"
+#. #define PROMPT_NEW_YES gettext_noop("That’s OK!")
+#. #define PROMPT_NEW_NO gettext_noop("Never mind!")
+msgid "Yes, let's start fresh!"
+msgstr ""
 
 msgid "There are no saved files!"
 msgstr "Нет сохранённых картинок!"
 
 msgid "Print your picture now?"
 msgstr "Напечатать вашу картинку?"
+
+msgid "Yes, print it!"
+msgstr ""
 
 msgid "Your picture has been printed!"
 msgstr "Ваша картинка распечатана!"
@@ -421,34 +462,16 @@ msgstr "Вы пока не можете печатать!"
 msgid "Erase this picture?"
 msgstr "Удалить эту картинку?"
 
+msgid "Yes, erase it!"
+msgstr ""
+
+msgid "No, don't erase it!"
+msgstr ""
+
 msgid "Remember to use the left mouse button!"
 msgstr ""
 
 msgid "Please wait..."
-msgstr ""
-
-msgid "jq"
-msgstr ""
-
-msgid "JQ"
-msgstr ""
-
-msgid "oO"
-msgstr ""
-
-msgid "`\\%_@$~#{}<>^&*"
-msgstr ""
-
-msgid ",.?!"
-msgstr ""
-
-msgid "017"
-msgstr ""
-
-msgid "O0"
-msgstr ""
-
-msgid "1Il|"
 msgstr ""
 
 msgid "Erase"
@@ -460,15 +483,47 @@ msgstr "Назад"
 msgid "Aa"
 msgstr "Аа"
 
+#. FIXME: Move elsewhere! Or not?!
+msgid "Yes"
+msgstr "Да"
+
+msgid "No"
+msgstr "Нет"
+
 #. FIXME: Move elsewhere!!!
-msgid "Save over the older version of this picture?"
-msgstr "Сохранить поверх старой версии этой картинки?"
+#. #define PROMPT_SAVE_OVER_TXT gettext_noop("Save over the older version of this picture?")
+msgid "Replace the picture with your changes?"
+msgstr ""
+
+msgid "Yes, replace the old one"
+msgstr ""
 
 msgid "No, save a new file"
 msgstr "Нет, сохранить в новый файл"
 
 msgid "Choose the picture you want, then click “Open”."
 msgstr "Выберите желаемую картинку, а потом щёлкните «Открыть»."
+
+msgid "A drawing program for children."
+msgstr "Детская программа для рисования."
+
+msgid "Drawing program"
+msgstr "Программа для рисования"
+
+msgid "Tux Paint"
+msgstr "Рисуй вместе с Tux!"
+
+#~ msgid "Starting a new picture will erase the current one!"
+#~ msgstr "Начиная новую картинку вы уничтожите текущую!"
+
+#~ msgid "That’s OK!"
+#~ msgstr "Хорошо!"
+
+#~ msgid "Never mind!"
+#~ msgstr "Нет!"
+
+#~ msgid "Save over the older version of this picture?"
+#~ msgstr "Сохранить поверх старой версии этой картинки?"
 
 #~ msgid "Dark Gray!"
 #~ msgstr "Тёмно-серый!"

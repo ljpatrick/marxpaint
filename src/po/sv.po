@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint 0.9.15rc1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2005-10-10 00:12-0700\n"
+"POT-Creation-Date: 2006-02-19 14:44-0800\n"
 "PO-Revision-Date: 2006-02-03 17:11+0100\n"
 "Last-Translator: Daniel Nylander <po@danielnylander.se>\n"
 "Language-Team: Swedish <tp-sv@listor.tp-sv.se>\n"
@@ -14,15 +14,6 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Textpad\n"
-
-msgid "A drawing program for children."
-msgstr "Ett ritprogram för barn."
-
-msgid "Drawing program"
-msgstr "Ritprogram"
-
-msgid "Tux Paint"
-msgstr "Tux Paint"
 
 msgid "Black!"
 msgstr "Svart!"
@@ -74,6 +65,45 @@ msgstr "Göra bränd!"
 
 msgid "Beige!"
 msgstr "Beige!"
+
+msgid "qx"
+msgstr ""
+
+msgid "QX"
+msgstr ""
+
+msgid "qy"
+msgstr ""
+
+msgid "QY"
+msgstr ""
+
+#. Now we score fonts to ensure that the best ones will be placed at
+#. the top of the list. The user will see them first. This sorting is
+#. especially important for users who have scroll buttons disabled.
+#. Translators should do whatever is needed to put crummy fonts last.
+msgid "oO"
+msgstr "oO"
+
+#. distinct uppercase and lowercase
+msgid "`\\%_@$~#{}<>^&*"
+msgstr "`\\%_@$~#{}<>^&*"
+
+#. uncommon punctuation
+msgid ",.?!"
+msgstr ",.?!"
+
+#. common punctuation
+msgid "017"
+msgstr "017"
+
+#. digits
+msgid "O0"
+msgstr "O0"
+
+#. distinct circle-like characters
+msgid "1Il|"
+msgstr "1Il|"
 
 msgid "Great!"
 msgstr "Perfekt!"
@@ -168,7 +198,8 @@ msgstr "Klicka och rör musen runt för att blekna färgerna!"
 msgid "Click and move to darken the colors."
 msgstr "Klicka och rör musen runt för att mörka färgerna."
 
-msgid "Click and move the mouse around to turn the picture into a chalk drawing."
+msgid ""
+"Click and move the mouse around to turn the picture into a chalk drawing."
 msgstr "Klicka och rör musen runt för att omvandla bilden till krit-ritning!"
 
 msgid "Click and move the mouse around to make the picture blocky."
@@ -219,7 +250,8 @@ msgstr "En fyrkant är en rektangel med fyra lika sidor."
 msgid "A rectangle has four sides and four right angles."
 msgstr "En rektangel har fyra sidor och fyra lika vinklar."
 
-msgid "A circle is a curve where all points have the same distance from the centre."
+msgid ""
+"A circle is a curve where all points have the same distance from the centre."
 msgstr "En cirkel är en kurva där alla punkter har samma distans från centrum."
 
 msgid "An ellipse is a stretched circle."
@@ -304,8 +336,13 @@ msgstr "Välj en bild att stämpla runt din bild."
 msgid "Click to start drawing a line. Let go to complete it."
 msgstr "Klicka för att börja rita en linje. Släpp för att avsluta den."
 
-msgid "Pick a shape. Click to pick the center, drag, then let go when it is the size you want. Move around to rotate it, and click to draw it."
-msgstr "Välj en form. klicka för att välja mittpunkten, dra, släpp sedan när den har den storlek du önskar. Flytta runt för att rotera den, och klicka för att bestämma storleken."
+msgid ""
+"Pick a shape. Click to pick the center, drag, then let go when it is the "
+"size you want. Move around to rotate it, and click to draw it."
+msgstr ""
+"Välj en form. klicka för att välja mittpunkten, dra, släpp sedan när den har "
+"den storlek du önskar. Flytta runt för att rotera den, och klicka för att "
+"bestämma storleken."
 
 msgid "Choose a style of text. Click on your drawing and you can start typing."
 msgstr "Välj stil på texten. Klicka på din bild och du kan börja skriva."
@@ -361,15 +398,20 @@ msgstr "Okej.. Låt oss fortsätta rita den här!"
 msgid "Do you really want to quit?"
 msgstr "Vill du verkligen avsluta?"
 
-#. FIXME: Move elsewhere! Or not?!
-msgid "Yes"
-msgstr "Ja"
+msgid "Yes, I'm done!"
+msgstr ""
 
-msgid "No"
-msgstr "Nej"
+msgid "No, take me back!"
+msgstr ""
 
 msgid "If you quit, you’ll lose your picture! Save it?"
 msgstr "Om du avslutar, så kommer du att förlora bilden!Vill du spara den?"
+
+msgid "Yes, save it!"
+msgstr ""
+
+msgid "No, don't bother saving!"
+msgstr ""
 
 msgid "Save your picture first?"
 msgstr "Spara bilden först?"
@@ -380,20 +422,26 @@ msgstr "Kan inte öppna den här bilden!"
 msgid "OK"
 msgstr "OK"
 
-msgid "Starting a new picture will erase the current one!"
-msgstr "Att påbörja en ny bild kommer att radera den nuvarande bilden!"
+#. This will be replaced with a dialog allowing color choice and Starter
+#. picking, with a "Back" option to dismiss the "New" and return to
+#. the current picture.  But for now...  (bjk 2006.02.19)
+#, fuzzy
+msgid "Start a new picture?"
+msgstr "Radera den här bilden?"
 
-msgid "That’s OK!"
-msgstr "Det är bra!"
-
-msgid "Never mind!"
-msgstr "Det gör ingenting!"
+#. #define PROMPT_NEW_YES gettext_noop("That’s OK!")
+#. #define PROMPT_NEW_NO gettext_noop("Never mind!")
+msgid "Yes, let's start fresh!"
+msgstr ""
 
 msgid "There are no saved files!"
 msgstr "Det finns inga sparade filer!"
 
 msgid "Print your picture now?"
 msgstr "Skriv ut bilden nu?"
+
+msgid "Yes, print it!"
+msgstr ""
 
 msgid "Your picture has been printed!"
 msgstr "Din bild har skrivits ut!"
@@ -404,32 +452,17 @@ msgstr "Du kan inte printa än!"
 msgid "Erase this picture?"
 msgstr "Radera den här bilden?"
 
+msgid "Yes, erase it!"
+msgstr ""
+
+msgid "No, don't erase it!"
+msgstr ""
+
 msgid "Remember to use the left mouse button!"
 msgstr "Kom ihåg att använda vänster musknapp!"
 
-msgid "jq"
-msgstr "jq"
-
-msgid "JQ"
-msgstr "JQ"
-
-msgid "oO"
-msgstr "oO"
-
-msgid "`\\%_@$~#{}<>^&*"
-msgstr "`\\%_@$~#{}<>^&*"
-
-msgid ",.?!"
-msgstr ",.?!"
-
-msgid "017"
-msgstr "017"
-
-msgid "O0"
-msgstr "O0"
-
-msgid "1Il|"
-msgstr "1Il|"
+msgid "Please wait..."
+msgstr ""
 
 msgid "Erase"
 msgstr "Sudda ut"
@@ -440,15 +473,53 @@ msgstr "Bakåt"
 msgid "Aa"
 msgstr "Aa"
 
+#. FIXME: Move elsewhere! Or not?!
+msgid "Yes"
+msgstr "Ja"
+
+msgid "No"
+msgstr "Nej"
+
 #. FIXME: Move elsewhere!!!
-msgid "Save over the older version of this picture?"
-msgstr "Spara över den äldre versionen av den här bilden?"
+#. #define PROMPT_SAVE_OVER_TXT gettext_noop("Save over the older version of this picture?")
+msgid "Replace the picture with your changes?"
+msgstr ""
+
+msgid "Yes, replace the old one"
+msgstr ""
 
 msgid "No, save a new file"
 msgstr "Nej, spara i en ny fil!"
 
 msgid "Choose the picture you want, then click “Open”."
 msgstr "Välj den bild som du vill ha, klicka sedan på \"Öppna.\""
+
+msgid "A drawing program for children."
+msgstr "Ett ritprogram för barn."
+
+msgid "Drawing program"
+msgstr "Ritprogram"
+
+msgid "Tux Paint"
+msgstr "Tux Paint"
+
+#~ msgid "Starting a new picture will erase the current one!"
+#~ msgstr "Att påbörja en ny bild kommer att radera den nuvarande bilden!"
+
+#~ msgid "That’s OK!"
+#~ msgstr "Det är bra!"
+
+#~ msgid "Never mind!"
+#~ msgstr "Det gör ingenting!"
+
+#~ msgid "jq"
+#~ msgstr "jq"
+
+#~ msgid "JQ"
+#~ msgstr "JQ"
+
+#~ msgid "Save over the older version of this picture?"
+#~ msgstr "Spara över den äldre versionen av den här bilden?"
 
 #~ msgid "Dark Gray!"
 #~ msgstr "Mörkgrå"
@@ -509,8 +580,12 @@ msgstr "Välj den bild som du vill ha, klicka sedan på \"Öppna.\""
 #~ msgid "Grey"
 #~ msgstr "Grå!"
 
-#~ msgid "Pick a shape to draw.  Click once to pick the center of the shape, click again to draw it."
-#~ msgstr "Välj en form att rita. Klicka en gång för att välja mitten utav formen, klicka igen för att rita med den."
+#~ msgid ""
+#~ "Pick a shape to draw.  Click once to pick the center of the shape, click "
+#~ "again to draw it."
+#~ msgstr ""
+#~ "Välj en form att rita. Klicka en gång för att välja mitten utav formen, "
+#~ "klicka igen för att rita med den."
 
 #~ msgid "Silver!"
 #~ msgstr "Silver!"

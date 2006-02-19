@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint 0.9.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-01-04 23:22+0100\n"
+"POT-Creation-Date: 2006-02-19 14:44-0800\n"
 "PO-Revision-Date: 2004-03-30 17:24+0200\n"
 "Last-Translator: Pablo Saratxaga <pablo@walon.org>\n"
 "Language-Team: Walloon <linux-wa@walon.org>\n"
@@ -13,15 +13,6 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.0.2\n"
-
-msgid "A drawing program for children."
-msgstr "Programe di dessinaedje po ls efants"
-
-msgid "Drawing program"
-msgstr "Programe di dessinaedje"
-
-msgid "Tux Paint"
-msgstr "Tux Paint"
 
 msgid "Black!"
 msgstr "Noer!"
@@ -74,6 +65,45 @@ msgid "Tan!"
 msgstr "Cian!"
 
 msgid "Beige!"
+msgstr ""
+
+msgid "qx"
+msgstr ""
+
+msgid "QX"
+msgstr ""
+
+msgid "qy"
+msgstr ""
+
+msgid "QY"
+msgstr ""
+
+#. Now we score fonts to ensure that the best ones will be placed at
+#. the top of the list. The user will see them first. This sorting is
+#. especially important for users who have scroll buttons disabled.
+#. Translators should do whatever is needed to put crummy fonts last.
+msgid "oO"
+msgstr ""
+
+#. distinct uppercase and lowercase
+msgid "`\\%_@$~#{}<>^&*"
+msgstr ""
+
+#. uncommon punctuation
+msgid ",.?!"
+msgstr ""
+
+#. common punctuation
+msgid "017"
+msgstr ""
+
+#. digits
+msgid "O0"
+msgstr ""
+
+#. distinct circle-like characters
+msgid "1Il|"
 msgstr ""
 
 msgid "Great!"
@@ -397,15 +427,20 @@ msgstr "D' acoird... continouwans a dessiner dabôrd!"
 msgid "Do you really want to quit?"
 msgstr "Voloz vs moussî foû po do bon?"
 
-#. FIXME: Move elsewhere! Or not?!
-msgid "Yes"
-msgstr "Oyi"
+msgid "Yes, I'm done!"
+msgstr ""
 
-msgid "No"
-msgstr "Neni"
+msgid "No, take me back!"
+msgstr ""
 
 msgid "If you quit, you’ll lose your picture! Save it?"
 msgstr "Si vos cwitez l' programe vos piedroz l' imådje! El schaper?"
+
+msgid "Yes, save it!"
+msgstr ""
+
+msgid "No, don't bother saving!"
+msgstr ""
 
 msgid "Save your picture first?"
 msgstr "Schaper d' aprume voste imådje?"
@@ -416,20 +451,26 @@ msgstr "Dji n' sai drovi ciste imådje la!"
 msgid "OK"
 msgstr "'l est bon"
 
-msgid "Starting a new picture will erase the current one!"
-msgstr "Enonder ene nouve imådje va spotchî l' cisse d' asteure!"
+#. This will be replaced with a dialog allowing color choice and Starter
+#. picking, with a "Back" option to dismiss the "New" and return to
+#. the current picture.  But for now...  (bjk 2006.02.19)
+#, fuzzy
+msgid "Start a new picture?"
+msgstr "Disfacer ciste imådje chal?"
 
-msgid "That’s OK!"
-msgstr "Dji vou bén!"
-
-msgid "Never mind!"
-msgstr "Rinoncî!"
+#. #define PROMPT_NEW_YES gettext_noop("That’s OK!")
+#. #define PROMPT_NEW_NO gettext_noop("Never mind!")
+msgid "Yes, let's start fresh!"
+msgstr ""
 
 msgid "There are no saved files!"
 msgstr "I gn a nou fitchî di schapé!"
 
 msgid "Print your picture now?"
 msgstr "Imprimer voste imådje?"
+
+msgid "Yes, print it!"
+msgstr ""
 
 msgid "Your picture has been printed!"
 msgstr "Voste imådje a stî imprimêye!"
@@ -440,34 +481,16 @@ msgstr "Vos n' poloz nén co imprimer!"
 msgid "Erase this picture?"
 msgstr "Disfacer ciste imådje chal?"
 
+msgid "Yes, erase it!"
+msgstr ""
+
+msgid "No, don't erase it!"
+msgstr ""
+
 msgid "Remember to use the left mouse button!"
 msgstr ""
 
 msgid "Please wait..."
-msgstr ""
-
-msgid "jq"
-msgstr ""
-
-msgid "JQ"
-msgstr ""
-
-msgid "oO"
-msgstr ""
-
-msgid "`\\%_@$~#{}<>^&*"
-msgstr ""
-
-msgid ",.?!"
-msgstr ""
-
-msgid "017"
-msgstr ""
-
-msgid "O0"
-msgstr ""
-
-msgid "1Il|"
 msgstr ""
 
 msgid "Erase"
@@ -479,15 +502,47 @@ msgstr "En erî"
 msgid "Aa"
 msgstr ""
 
+#. FIXME: Move elsewhere! Or not?!
+msgid "Yes"
+msgstr "Oyi"
+
+msgid "No"
+msgstr "Neni"
+
 #. FIXME: Move elsewhere!!!
-msgid "Save over the older version of this picture?"
-msgstr "Schaper tot spotchant l' viye modêye do dessin?"
+#. #define PROMPT_SAVE_OVER_TXT gettext_noop("Save over the older version of this picture?")
+msgid "Replace the picture with your changes?"
+msgstr ""
+
+msgid "Yes, replace the old one"
+msgstr ""
 
 msgid "No, save a new file"
 msgstr "Neni, schaper en on novea fitchî"
 
 msgid "Choose the picture you want, then click “Open”."
 msgstr "Tchoezixhoz l' imådje ki vos vloz, poy clitchîz so «Drovi»."
+
+msgid "A drawing program for children."
+msgstr "Programe di dessinaedje po ls efants"
+
+msgid "Drawing program"
+msgstr "Programe di dessinaedje"
+
+msgid "Tux Paint"
+msgstr "Tux Paint"
+
+#~ msgid "Starting a new picture will erase the current one!"
+#~ msgstr "Enonder ene nouve imådje va spotchî l' cisse d' asteure!"
+
+#~ msgid "That’s OK!"
+#~ msgstr "Dji vou bén!"
+
+#~ msgid "Never mind!"
+#~ msgstr "Rinoncî!"
+
+#~ msgid "Save over the older version of this picture?"
+#~ msgstr "Schaper tot spotchant l' viye modêye do dessin?"
 
 #~ msgid "Green!"
 #~ msgstr "Vert!"

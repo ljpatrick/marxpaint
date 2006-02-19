@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-02-19 14:20-0800\n"
+"POT-Creation-Date: 2006-02-19 14:44-0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,87 +16,66 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: ../colors.h:82
 msgid "Black!"
 msgstr ""
 
-#: ../colors.h:83
 msgid "Dark grey! Some people spell it “dark gray”."
 msgstr ""
 
-#: ../colors.h:84
 msgid "Light grey! Some people spell it “light gray”."
 msgstr ""
 
-#: ../colors.h:85
 msgid "White!"
 msgstr ""
 
-#: ../colors.h:86
 msgid "Red!"
 msgstr ""
 
-#: ../colors.h:87
 msgid "Orange!"
 msgstr ""
 
-#: ../colors.h:88
 msgid "Yellow!"
 msgstr ""
 
-#: ../colors.h:89
 msgid "Light green!"
 msgstr ""
 
-#: ../colors.h:90
 msgid "Dark green!"
 msgstr ""
 
-#: ../colors.h:91
 msgid "Sky blue!"
 msgstr ""
 
-#: ../colors.h:92
 msgid "Blue!"
 msgstr ""
 
-#: ../colors.h:93
 msgid "Lavender!"
 msgstr ""
 
-#: ../colors.h:94
 msgid "Purple!"
 msgstr ""
 
-#: ../colors.h:95
 msgid "Pink!"
 msgstr ""
 
-#: ../colors.h:96
 msgid "Brown!"
 msgstr ""
 
-#: ../colors.h:97
 msgid "Tan!"
 msgstr ""
 
-#: ../colors.h:98
 msgid "Beige!"
 msgstr ""
 
-#: ../dirwalk.c:101
 msgid "qx"
 msgstr ""
 
-#: ../dirwalk.c:101
 msgid "QX"
 msgstr ""
 
-#: ../dirwalk.c:103
 msgid "qy"
 msgstr ""
 
-#: ../dirwalk.c:103
 msgid "QY"
 msgstr ""
 
@@ -104,550 +83,419 @@ msgstr ""
 #. the top of the list. The user will see them first. This sorting is
 #. especially important for users who have scroll buttons disabled.
 #. Translators should do whatever is needed to put crummy fonts last.
-#: ../dirwalk.c:121
 msgid "oO"
 msgstr ""
 
 #. distinct uppercase and lowercase
-#: ../dirwalk.c:122
 msgid "`\\%_@$~#{}<>^&*"
 msgstr ""
 
 #. uncommon punctuation
-#: ../dirwalk.c:123
 msgid ",.?!"
 msgstr ""
 
 #. common punctuation
-#: ../dirwalk.c:124
 msgid "017"
 msgstr ""
 
 #. digits
-#: ../dirwalk.c:125
 msgid "O0"
 msgstr ""
 
 #. distinct circle-like characters
-#: ../dirwalk.c:126
 msgid "1Il|"
 msgstr ""
 
-#: ../great.h:36
 msgid "Great!"
 msgstr ""
 
-#: ../great.h:37
 msgid "Cool!"
 msgstr ""
 
-#: ../great.h:38
 msgid "Keep it up!"
 msgstr ""
 
-#: ../great.h:39
 msgid "Good job!"
 msgstr ""
 
-#: ../magic.h:99
 msgid "Fill"
 msgstr ""
 
-#: ../magic.h:100
 msgid "Grass"
 msgstr ""
 
-#: ../magic.h:102 ../magic.h:103
 msgid "Bricks"
 msgstr ""
 
-#: ../magic.h:105
 msgid "Rainbow"
 msgstr ""
 
-#: ../magic.h:106
 msgid "Sparkles"
 msgstr ""
 
-#: ../magic.h:108
 msgid "Blur"
 msgstr ""
 
-#: ../magic.h:109
 msgid "Smudge"
 msgstr ""
 
-#: ../magic.h:111
 msgid "Lighten"
 msgstr ""
 
-#: ../magic.h:112
 msgid "Darken"
 msgstr ""
 
-#: ../magic.h:114
 msgid "Chalk"
 msgstr ""
 
-#: ../magic.h:115
 msgid "Blocks"
 msgstr ""
 
-#: ../magic.h:117
 msgid "Negative"
 msgstr ""
 
-#: ../magic.h:118
 msgid "Tint"
 msgstr ""
 
-#: ../magic.h:120
 msgid "Drip"
 msgstr ""
 
-#: ../magic.h:121
 msgid "Cartoon"
 msgstr ""
 
-#: ../magic.h:123
 msgid "Mirror"
 msgstr ""
 
-#: ../magic.h:124
 msgid "Flip"
 msgstr ""
 
-#: ../magic.h:131
 msgid "Click in the picture to fill that area with color."
 msgstr ""
 
-#: ../magic.h:132
 msgid "Click and move to draw grass. Don’t forget the dirt!"
 msgstr ""
 
-#: ../magic.h:134
 msgid "Click and move to draw large bricks."
 msgstr ""
 
-#: ../magic.h:135
 msgid "Click and move to draw small bricks."
 msgstr ""
 
-#: ../magic.h:137
 msgid "You can draw in rainbow colors!"
 msgstr ""
 
-#: ../magic.h:138
 msgid "Click and move to draw sparkles."
 msgstr ""
 
-#: ../magic.h:140
 msgid "Click and move the mouse around to blur the picture."
 msgstr ""
 
-#: ../magic.h:141
 msgid "Click and move the mouse around to smudge the picture."
 msgstr ""
 
-#: ../magic.h:143
 msgid "Click and move to fade the colors."
 msgstr ""
 
-#: ../magic.h:144
 msgid "Click and move to darken the colors."
 msgstr ""
 
-#: ../magic.h:146
 msgid ""
 "Click and move the mouse around to turn the picture into a chalk drawing."
 msgstr ""
 
-#: ../magic.h:147
 msgid "Click and move the mouse around to make the picture blocky."
 msgstr ""
 
-#: ../magic.h:149
 msgid "Click and move the mouse around to draw a negative."
 msgstr ""
 
-#: ../magic.h:150
 msgid "Click and move the mouse around to change the picture’s color."
 msgstr ""
 
-#: ../magic.h:152
 msgid "Click and move the mouse around to make the picture drip."
 msgstr ""
 
-#: ../magic.h:153
 msgid "Click and move the mouse around to turn the picture into a cartoon."
 msgstr ""
 
-#: ../magic.h:155
 msgid "Click to make a mirror image."
 msgstr ""
 
-#: ../magic.h:156
 msgid "Click to flip the picture upside-down."
 msgstr ""
 
-#: ../shapes.h:157 ../shapes.h:158
 msgid "Square"
 msgstr ""
 
-#: ../shapes.h:159 ../shapes.h:160
 msgid "Rectangle"
 msgstr ""
 
-#: ../shapes.h:161 ../shapes.h:162
 msgid "Circle"
 msgstr ""
 
-#: ../shapes.h:163 ../shapes.h:164
 msgid "Ellipse"
 msgstr ""
 
-#: ../shapes.h:165 ../shapes.h:166
 msgid "Triangle"
 msgstr ""
 
-#: ../shapes.h:167 ../shapes.h:168
 msgid "Pentagon"
 msgstr ""
 
-#: ../shapes.h:169 ../shapes.h:170
 msgid "Rhombus"
 msgstr ""
 
-#: ../shapes.h:177 ../shapes.h:178
 msgid "A square is a rectangle with four equal sides."
 msgstr ""
 
-#: ../shapes.h:179 ../shapes.h:180
 msgid "A rectangle has four sides and four right angles."
 msgstr ""
 
-#: ../shapes.h:181 ../shapes.h:182
 msgid ""
 "A circle is a curve where all points have the same distance from the centre."
 msgstr ""
 
-#: ../shapes.h:183 ../shapes.h:184
 msgid "An ellipse is a stretched circle."
 msgstr ""
 
-#: ../shapes.h:185 ../shapes.h:186
 msgid "A triangle has three sides."
 msgstr ""
 
-#: ../shapes.h:187 ../shapes.h:188
 msgid "A pentagon has five sides."
 msgstr ""
 
-#: ../shapes.h:189 ../shapes.h:190
 msgid "A rhombus has four equal sides, and opposite sides are parallel."
 msgstr ""
 
-#: ../titles.h:39
 msgid "Tools"
 msgstr ""
 
-#: ../titles.h:40
 msgid "Colors"
 msgstr ""
 
-#: ../titles.h:41
 msgid "Brushes"
 msgstr ""
 
-#: ../titles.h:42
 msgid "Erasers"
 msgstr ""
 
-#: ../titles.h:43
 msgid "Stamps"
 msgstr ""
 
-#: ../titles.h:44 ../tools.h:46
 msgid "Shapes"
 msgstr ""
 
-#: ../titles.h:45
 msgid "Letters"
 msgstr ""
 
-#: ../titles.h:46 ../tools.h:48
 msgid "Magic"
 msgstr ""
 
-#: ../tools.h:43
 msgid "Paint"
 msgstr ""
 
-#: ../tools.h:44
 msgid "Stamp"
 msgstr ""
 
-#: ../tools.h:45
 msgid "Lines"
 msgstr ""
 
-#: ../tools.h:47
 msgid "Text"
 msgstr ""
 
-#: ../tools.h:49
 msgid "Undo"
 msgstr ""
 
-#: ../tools.h:50
 msgid "Redo"
 msgstr ""
 
-#: ../tools.h:51
 msgid "Eraser"
 msgstr ""
 
-#: ../tools.h:52
 msgid "New"
 msgstr ""
 
 #. buttons for the file open dialog
-#: ../tools.h:53 ../tuxpaint.c:6706
 msgid "Open"
 msgstr ""
 
-#: ../tools.h:54
 msgid "Save"
 msgstr ""
 
-#: ../tools.h:55
 msgid "Print"
 msgstr ""
 
-#: ../tools.h:56
 msgid "Quit"
 msgstr ""
 
-#: ../tools.h:63
 msgid "Pick a color and a brush shape to draw with."
 msgstr ""
 
-#: ../tools.h:64
 msgid "Pick a picture to stamp around your drawing."
 msgstr ""
 
-#: ../tools.h:65
 msgid "Click to start drawing a line. Let go to complete it."
 msgstr ""
 
-#: ../tools.h:66
 msgid ""
 "Pick a shape. Click to pick the center, drag, then let go when it is the "
 "size you want. Move around to rotate it, and click to draw it."
 msgstr ""
 
-#: ../tools.h:67
 msgid "Choose a style of text. Click on your drawing and you can start typing."
 msgstr ""
 
-#: ../tools.h:68
 msgid "Pick a magical effect to use on your drawing!"
 msgstr ""
 
 #. Undo
-#: ../tools.h:69
 msgid "Undo!"
 msgstr ""
 
 #. Redo
-#: ../tools.h:70
 msgid "Redo!"
 msgstr ""
 
 #. Eraser
-#: ../tools.h:71
 msgid "Eraser!"
 msgstr ""
 
 #. New
-#: ../tools.h:72
 msgid "You now have a blank sheet to draw on!"
 msgstr ""
 
 #. Open
-#: ../tools.h:73
 msgid "Open…"
 msgstr ""
 
 #. Save
-#: ../tools.h:74
 msgid "Your image has been saved!"
 msgstr ""
 
 #. Print
-#: ../tools.h:75
 msgid "Printing…"
 msgstr ""
 
 #. Quit
-#: ../tools.h:76
 msgid "Bye bye!"
 msgstr ""
 
-#: ../tools.h:79
 msgid "Let go of the button to complete the line."
 msgstr ""
 
-#: ../tools.h:80
 msgid "Hold the button to stretch the shape."
 msgstr ""
 
-#: ../tools.h:81
 msgid "Move the mouse to rotate the shape. Click to draw it."
 msgstr ""
 
-#: ../tools.h:82
 msgid "OK then… Let’s keep drawing this one!"
 msgstr ""
 
 #. FIXME: Move elsewhere!!!
-#: ../tuxpaint.c:1360
 msgid "Do you really want to quit?"
 msgstr ""
 
-#: ../tuxpaint.c:1361
 msgid "Yes, I'm done!"
 msgstr ""
 
-#: ../tuxpaint.c:1362 ../tuxpaint.c:1382 ../tuxpaint.c:1389
 msgid "No, take me back!"
 msgstr ""
 
-#: ../tuxpaint.c:1364
 msgid "If you quit, you’ll lose your picture! Save it?"
 msgstr ""
 
-#: ../tuxpaint.c:1365 ../tuxpaint.c:1369
 msgid "Yes, save it!"
 msgstr ""
 
-#: ../tuxpaint.c:1366 ../tuxpaint.c:1370
 msgid "No, don't bother saving!"
 msgstr ""
 
-#: ../tuxpaint.c:1368
 msgid "Save your picture first?"
 msgstr ""
 
-#: ../tuxpaint.c:1372
 msgid "Can’t open that picture!"
 msgstr ""
 
-#: ../tuxpaint.c:1373 ../tuxpaint.c:1385 ../tuxpaint.c:1392 ../tuxpaint.c:1395
-#: ../tuxpaint.c:1402
 msgid "OK"
 msgstr ""
 
 #. This will be replaced with a dialog allowing color choice and Starter
 #. picking, with a "Back" option to dismiss the "New" and return to
 #. the current picture.  But for now...  (bjk 2006.02.19)
-#: ../tuxpaint.c:1378
 msgid "Start a new picture?"
 msgstr ""
 
 #. #define PROMPT_NEW_YES gettext_noop("That’s OK!")
 #. #define PROMPT_NEW_NO gettext_noop("Never mind!")
-#: ../tuxpaint.c:1381
 msgid "Yes, let's start fresh!"
 msgstr ""
 
-#: ../tuxpaint.c:1384
 msgid "There are no saved files!"
 msgstr ""
 
-#: ../tuxpaint.c:1387
 msgid "Print your picture now?"
 msgstr ""
 
-#: ../tuxpaint.c:1388
 msgid "Yes, print it!"
 msgstr ""
 
-#: ../tuxpaint.c:1391
 msgid "Your picture has been printed!"
 msgstr ""
 
-#: ../tuxpaint.c:1394
 msgid "You can’t print yet!"
 msgstr ""
 
-#: ../tuxpaint.c:1397
 msgid "Erase this picture?"
 msgstr ""
 
-#: ../tuxpaint.c:1398
 msgid "Yes, erase it!"
 msgstr ""
 
-#: ../tuxpaint.c:1399
 msgid "No, don't erase it!"
 msgstr ""
 
-#: ../tuxpaint.c:1401
 msgid "Remember to use the left mouse button!"
 msgstr ""
 
-#: ../tuxpaint.c:1848
 msgid "Please wait..."
 msgstr ""
 
-#: ../tuxpaint.c:6707
 msgid "Erase"
 msgstr ""
 
-#: ../tuxpaint.c:6708
 msgid "Back"
 msgstr ""
 
-#: ../tuxpaint.c:7302
 msgid "Aa"
 msgstr ""
 
 #. FIXME: Move elsewhere! Or not?!
-#: ../tuxpaint.c:9747
 msgid "Yes"
 msgstr ""
 
-#: ../tuxpaint.c:9751
 msgid "No"
 msgstr ""
 
 #. FIXME: Move elsewhere!!!
 #. #define PROMPT_SAVE_OVER_TXT gettext_noop("Save over the older version of this picture?")
-#: ../tuxpaint.c:10630
 msgid "Replace the picture with your changes?"
 msgstr ""
 
-#: ../tuxpaint.c:10631
 msgid "Yes, replace the old one"
 msgstr ""
 
-#: ../tuxpaint.c:10632
 msgid "No, save a new file"
 msgstr ""
 
-#: ../tuxpaint.c:11556
 msgid "Choose the picture you want, then click “Open”."
 msgstr ""
 
-#: ../tuxpaint.desktop.in.h:1
 msgid "A drawing program for children."
 msgstr ""
 
-#: ../tuxpaint.desktop.in.h:2
 msgid "Drawing program"
 msgstr ""
 
-#: ../tuxpaint.desktop.in.h:3
 msgid "Tux Paint"
 msgstr ""

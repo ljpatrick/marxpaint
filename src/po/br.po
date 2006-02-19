@@ -5,22 +5,13 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TuxPaint 0.0.1pre\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-01-04 23:22+0100\n"
+"POT-Creation-Date: 2006-02-19 14:44-0800\n"
 "PO-Revision-Date: 2005-01-09 14:49+0100\n"
 "Last-Translator: Gugusse <titi>\n"
 "Language-Team: Breton <drouizig@drouizig.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-
-msgid "A drawing program for children."
-msgstr "Ur meziant tresañ evit ar vugale."
-
-msgid "Drawing program"
-msgstr "Meziant tresañ"
-
-msgid "Tux Paint"
-msgstr "Tux Paint"
 
 msgid "Black!"
 msgstr "Du !"
@@ -74,6 +65,45 @@ msgstr "Rous !"
 
 msgid "Beige!"
 msgstr "Louet-gell !"
+
+msgid "qx"
+msgstr ""
+
+msgid "QX"
+msgstr ""
+
+msgid "qy"
+msgstr ""
+
+msgid "QY"
+msgstr ""
+
+#. Now we score fonts to ensure that the best ones will be placed at
+#. the top of the list. The user will see them first. This sorting is
+#. especially important for users who have scroll buttons disabled.
+#. Translators should do whatever is needed to put crummy fonts last.
+msgid "oO"
+msgstr ""
+
+#. distinct uppercase and lowercase
+msgid "`\\%_@$~#{}<>^&*"
+msgstr ""
+
+#. uncommon punctuation
+msgid ",.?!"
+msgstr ""
+
+#. common punctuation
+msgid "017"
+msgstr ""
+
+#. digits
+msgid "O0"
+msgstr ""
+
+#. distinct circle-like characters
+msgid "1Il|"
+msgstr ""
 
 msgid "Great!"
 msgstr "Fiskal !"
@@ -375,15 +405,20 @@ msgstr "Mat ! neuze kendalc'homp gant an dresadenn !"
 msgid "Do you really want to quit?"
 msgstr "Fellout a ra dit mont kuit ?"
 
-#. FIXME: Move elsewhere! Or not?!
-msgid "Yes"
-msgstr "Ya"
+msgid "Yes, I'm done!"
+msgstr ""
 
-msgid "No"
-msgstr "Ne ra ket"
+msgid "No, take me back!"
+msgstr ""
 
 msgid "If you quit, you’ll lose your picture! Save it?"
 msgstr "Kollet e vo da skeudenn mar kuitez ! Gwarediñ a rez ?"
+
+msgid "Yes, save it!"
+msgstr ""
+
+msgid "No, don't bother saving!"
+msgstr ""
 
 msgid "Save your picture first?"
 msgstr "Gwarediñ ar skeudenn e gentañ ?"
@@ -394,20 +429,26 @@ msgstr "N'haller digeriñ ar skeudenn-se !"
 msgid "OK"
 msgstr "Mat eo !"
 
-msgid "Starting a new picture will erase the current one!"
-msgstr "Kregiñ en-dro gant ur skeudenn nevez a ziverko ar skeudenn red !"
+#. This will be replaced with a dialog allowing color choice and Starter
+#. picking, with a "Back" option to dismiss the "New" and return to
+#. the current picture.  But for now...  (bjk 2006.02.19)
+#, fuzzy
+msgid "Start a new picture?"
+msgstr "Diverkañ an dresadenn-se ?"
 
-msgid "That’s OK!"
-msgstr "Mat eo !"
-
-msgid "Never mind!"
-msgstr "Nullañ !"
+#. #define PROMPT_NEW_YES gettext_noop("That’s OK!")
+#. #define PROMPT_NEW_NO gettext_noop("Never mind!")
+msgid "Yes, let's start fresh!"
+msgstr ""
 
 msgid "There are no saved files!"
 msgstr "Restr ebet gwaredet !"
 
 msgid "Print your picture now?"
 msgstr "Moullañ ar skeudenn diouzhtu ?"
+
+msgid "Yes, print it!"
+msgstr ""
 
 msgid "Your picture has been printed!"
 msgstr "Moullet eo bet da skeudenn !"
@@ -418,34 +459,16 @@ msgstr "N'hallan ket moullañ atav !"
 msgid "Erase this picture?"
 msgstr "Diverkañ an dresadenn-se ?"
 
+msgid "Yes, erase it!"
+msgstr ""
+
+msgid "No, don't erase it!"
+msgstr ""
+
 msgid "Remember to use the left mouse button!"
 msgstr ""
 
 msgid "Please wait..."
-msgstr ""
-
-msgid "jq"
-msgstr ""
-
-msgid "JQ"
-msgstr ""
-
-msgid "oO"
-msgstr ""
-
-msgid "`\\%_@$~#{}<>^&*"
-msgstr ""
-
-msgid ",.?!"
-msgstr ""
-
-msgid "017"
-msgstr ""
-
-msgid "O0"
-msgstr ""
-
-msgid "1Il|"
 msgstr ""
 
 msgid "Erase"
@@ -457,15 +480,47 @@ msgstr "Distro"
 msgid "Aa"
 msgstr "As"
 
+#. FIXME: Move elsewhere! Or not?!
+msgid "Yes"
+msgstr "Ya"
+
+msgid "No"
+msgstr "Ne ra ket"
+
 #. FIXME: Move elsewhere!!!
-msgid "Save over the older version of this picture?"
-msgstr "Rasklañ stumm kozh an dresadenn-se ?"
+#. #define PROMPT_SAVE_OVER_TXT gettext_noop("Save over the older version of this picture?")
+msgid "Replace the picture with your changes?"
+msgstr ""
+
+msgid "Yes, replace the old one"
+msgstr ""
 
 msgid "No, save a new file"
 msgstr "Ket, gwarediñ dindan un anv nevez"
 
 msgid "Choose the picture you want, then click “Open”."
 msgstr "Diuz ur skeudenn ha klik war 'digeriñ' neuze."
+
+msgid "A drawing program for children."
+msgstr "Ur meziant tresañ evit ar vugale."
+
+msgid "Drawing program"
+msgstr "Meziant tresañ"
+
+msgid "Tux Paint"
+msgstr "Tux Paint"
+
+#~ msgid "Starting a new picture will erase the current one!"
+#~ msgstr "Kregiñ en-dro gant ur skeudenn nevez a ziverko ar skeudenn red !"
+
+#~ msgid "That’s OK!"
+#~ msgstr "Mat eo !"
+
+#~ msgid "Never mind!"
+#~ msgstr "Nullañ !"
+
+#~ msgid "Save over the older version of this picture?"
+#~ msgstr "Rasklañ stumm kozh an dresadenn-se ?"
 
 #~ msgid "Dark Gray!"
 #~ msgstr "Gris mouk !"

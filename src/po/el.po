@@ -8,23 +8,13 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Tuxpaint 0.9.2pre\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-01-04 23:22+0100\n"
+"POT-Creation-Date: 2006-02-19 14:44-0800\n"
 "PO-Revision-Date: 2003-01-04 12:00+0200\n"
 "Last-Translator: N/A <i18ngr@lists.hellug.gr>\n"
 "Language-Team: N/A <i18ngr@lists.hellug.gr>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-
-msgid "A drawing program for children."
-msgstr ""
-
-msgid "Drawing program"
-msgstr ""
-
-#, fuzzy
-msgid "Tux Paint"
-msgstr "Ζωγραφιά"
 
 #, fuzzy
 msgid "Black!"
@@ -86,6 +76,45 @@ msgid "Tan!"
 msgstr "Γαλάζιο"
 
 msgid "Beige!"
+msgstr ""
+
+msgid "qx"
+msgstr ""
+
+msgid "QX"
+msgstr ""
+
+msgid "qy"
+msgstr ""
+
+msgid "QY"
+msgstr ""
+
+#. Now we score fonts to ensure that the best ones will be placed at
+#. the top of the list. The user will see them first. This sorting is
+#. especially important for users who have scroll buttons disabled.
+#. Translators should do whatever is needed to put crummy fonts last.
+msgid "oO"
+msgstr ""
+
+#. distinct uppercase and lowercase
+msgid "`\\%_@$~#{}<>^&*"
+msgstr ""
+
+#. uncommon punctuation
+msgid ",.?!"
+msgstr ""
+
+#. common punctuation
+msgid "017"
+msgstr ""
+
+#. digits
+msgid "O0"
+msgstr ""
+
+#. distinct circle-like characters
+msgid "1Il|"
 msgstr ""
 
 msgid "Great!"
@@ -412,15 +441,20 @@ msgstr "Εντάξει λοιπόν... Ας συνεχίσουμε τη σχεδ
 msgid "Do you really want to quit?"
 msgstr "Σίγουρα θέλεις να βγεις από το πρόγραμμα;"
 
-#. FIXME: Move elsewhere! Or not?!
-msgid "Yes"
-msgstr "Ναι"
+msgid "Yes, I'm done!"
+msgstr ""
 
-msgid "No"
-msgstr "Όχι"
+msgid "No, take me back!"
+msgstr ""
 
 msgid "If you quit, you’ll lose your picture! Save it?"
 msgstr "Αν βγεις από το πρόγραμμα, θα χαθεί η εικόνα σου! Να σωθεί;"
+
+msgid "Yes, save it!"
+msgstr ""
+
+msgid "No, don't bother saving!"
+msgstr ""
 
 msgid "Save your picture first?"
 msgstr "Να σωθεί η εικόνα σου πρώτα;"
@@ -431,16 +465,17 @@ msgstr "Αδυναμία ανοίγματος αυτής της εικόνας!"
 msgid "OK"
 msgstr ""
 
-msgid "Starting a new picture will erase the current one!"
-msgstr "Αρχίζοντας μια νέα εικόνα θα σβηστεί η παλιά!"
-
+#. This will be replaced with a dialog allowing color choice and Starter
+#. picking, with a "Back" option to dismiss the "New" and return to
+#. the current picture.  But for now...  (bjk 2006.02.19)
 #, fuzzy
-msgid "That’s OK!"
-msgstr "Είναι εντάξει"
+msgid "Start a new picture?"
+msgstr "Σβήσιμο αυτής της εικόνας;"
 
-#, fuzzy
-msgid "Never mind!"
-msgstr "Δεν πειράζει!"
+#. #define PROMPT_NEW_YES gettext_noop("That’s OK!")
+#. #define PROMPT_NEW_NO gettext_noop("Never mind!")
+msgid "Yes, let's start fresh!"
+msgstr ""
 
 msgid "There are no saved files!"
 msgstr "Δεν υπάρχουν αποθηκευμένα αρχεία!"
@@ -448,6 +483,9 @@ msgstr "Δεν υπάρχουν αποθηκευμένα αρχεία!"
 #, fuzzy
 msgid "Print your picture now?"
 msgstr "Να σωθεί η εικόνα σου πρώτα;"
+
+msgid "Yes, print it!"
+msgstr ""
 
 msgid "Your picture has been printed!"
 msgstr "Η εικόνα σου εκτυπώθηκε!"
@@ -458,34 +496,16 @@ msgstr "Δεν μπορείς να τυπώσεις ακόμη!"
 msgid "Erase this picture?"
 msgstr "Σβήσιμο αυτής της εικόνας;"
 
+msgid "Yes, erase it!"
+msgstr ""
+
+msgid "No, don't erase it!"
+msgstr ""
+
 msgid "Remember to use the left mouse button!"
 msgstr ""
 
 msgid "Please wait..."
-msgstr ""
-
-msgid "jq"
-msgstr ""
-
-msgid "JQ"
-msgstr ""
-
-msgid "oO"
-msgstr ""
-
-msgid "`\\%_@$~#{}<>^&*"
-msgstr ""
-
-msgid ",.?!"
-msgstr ""
-
-msgid "017"
-msgstr ""
-
-msgid "O0"
-msgstr ""
-
-msgid "1Il|"
 msgstr ""
 
 msgid "Erase"
@@ -497,10 +517,20 @@ msgstr "Προηγούμενο"
 msgid "Aa"
 msgstr ""
 
+#. FIXME: Move elsewhere! Or not?!
+msgid "Yes"
+msgstr "Ναι"
+
+msgid "No"
+msgstr "Όχι"
+
 #. FIXME: Move elsewhere!!!
-#, fuzzy
-msgid "Save over the older version of this picture?"
-msgstr "Αποθήκευση στο ίδιο αρχείο με την παλαιότερη έκδοση αυτού του σχεδίου;"
+#. #define PROMPT_SAVE_OVER_TXT gettext_noop("Save over the older version of this picture?")
+msgid "Replace the picture with your changes?"
+msgstr ""
+
+msgid "Yes, replace the old one"
+msgstr ""
 
 msgid "No, save a new file"
 msgstr "Όχι, αποθήκευση σε νέο αρχείο"
@@ -508,6 +538,32 @@ msgstr "Όχι, αποθήκευση σε νέο αρχείο"
 #, fuzzy
 msgid "Choose the picture you want, then click “Open”."
 msgstr "Επέλεξε την εικόνα που θέλεις, και μετά πάτησε 'Άνοιγμα'"
+
+msgid "A drawing program for children."
+msgstr ""
+
+msgid "Drawing program"
+msgstr ""
+
+#, fuzzy
+msgid "Tux Paint"
+msgstr "Ζωγραφιά"
+
+#~ msgid "Starting a new picture will erase the current one!"
+#~ msgstr "Αρχίζοντας μια νέα εικόνα θα σβηστεί η παλιά!"
+
+#, fuzzy
+#~ msgid "That’s OK!"
+#~ msgstr "Είναι εντάξει"
+
+#, fuzzy
+#~ msgid "Never mind!"
+#~ msgstr "Δεν πειράζει!"
+
+#, fuzzy
+#~ msgid "Save over the older version of this picture?"
+#~ msgstr ""
+#~ "Αποθήκευση στο ίδιο αρχείο με την παλαιότερη έκδοση αυτού του σχεδίου;"
 
 #, fuzzy
 #~ msgid "Green!"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint 0.9.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-01-04 23:22+0100\n"
+"POT-Creation-Date: 2006-02-19 14:44-0800\n"
 "PO-Revision-Date: 2004-12-04 15:45-0800\n"
 "Last-Translator: Alberto Escudero <aep@it46.se>\n"
 "Language-Team: Swahili\n"
@@ -15,15 +15,6 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Pootle\n"
-
-msgid "A drawing program for children."
-msgstr "Programu kwa watoto kuchora."
-
-msgid "Drawing program"
-msgstr "Programu ya kuchora"
-
-msgid "Tux Paint"
-msgstr "Koti ya Rangi"
 
 msgid "Black!"
 msgstr "Nyeusi!"
@@ -76,6 +67,45 @@ msgid "Tan!"
 msgstr "Samawati!"
 
 msgid "Beige!"
+msgstr ""
+
+msgid "qx"
+msgstr ""
+
+msgid "QX"
+msgstr ""
+
+msgid "qy"
+msgstr ""
+
+msgid "QY"
+msgstr ""
+
+#. Now we score fonts to ensure that the best ones will be placed at
+#. the top of the list. The user will see them first. This sorting is
+#. especially important for users who have scroll buttons disabled.
+#. Translators should do whatever is needed to put crummy fonts last.
+msgid "oO"
+msgstr ""
+
+#. distinct uppercase and lowercase
+msgid "`\\%_@$~#{}<>^&*"
+msgstr ""
+
+#. uncommon punctuation
+msgid ",.?!"
+msgstr ""
+
+#. common punctuation
+msgid "017"
+msgstr ""
+
+#. digits
+msgid "O0"
+msgstr ""
+
+#. distinct circle-like characters
+msgid "1Il|"
 msgstr ""
 
 msgid "Great!"
@@ -385,15 +415,20 @@ msgstr "SAWA... Tuendelee kuchora picha hii!"
 msgid "Do you really want to quit?"
 msgstr "Unataka kuagana kweli?"
 
-#. FIXME: Move elsewhere! Or not?!
-msgid "Yes"
-msgstr "Ndiyo"
+msgid "Yes, I'm done!"
+msgstr ""
 
-msgid "No"
-msgstr "Hapana"
+msgid "No, take me back!"
+msgstr ""
 
 msgid "If you quit, you’ll lose your picture! Save it?"
 msgstr "Ukiaga, utapoteza picha yako! Hifadhi picha?"
+
+msgid "Yes, save it!"
+msgstr ""
+
+msgid "No, don't bother saving!"
+msgstr ""
 
 msgid "Save your picture first?"
 msgstr "Hifadhi picha yako kwanza?"
@@ -404,20 +439,26 @@ msgstr "Picha hiyo haifungui!"
 msgid "OK"
 msgstr "SAWA"
 
-msgid "Starting a new picture will erase the current one!"
-msgstr "Ukianza picha mpya utafuta picha unayochora sasa!"
+#. This will be replaced with a dialog allowing color choice and Starter
+#. picking, with a "Back" option to dismiss the "New" and return to
+#. the current picture.  But for now...  (bjk 2006.02.19)
+#, fuzzy
+msgid "Start a new picture?"
+msgstr "Futa picha hii?"
 
-msgid "That’s OK!"
-msgstr "Ni sawa!"
-
-msgid "Never mind!"
-msgstr "Nimebadili nia!"
+#. #define PROMPT_NEW_YES gettext_noop("That’s OK!")
+#. #define PROMPT_NEW_NO gettext_noop("Never mind!")
+msgid "Yes, let's start fresh!"
+msgstr ""
 
 msgid "There are no saved files!"
 msgstr "Hakuna mafaili yaliyohifadhiwa!"
 
 msgid "Print your picture now?"
 msgstr "Chapisha picha yako sasa?"
+
+msgid "Yes, print it!"
+msgstr ""
 
 msgid "Your picture has been printed!"
 msgstr "Picha yako imechapishwa!"
@@ -428,34 +469,16 @@ msgstr "Huwezi kuchapisha picha bado!"
 msgid "Erase this picture?"
 msgstr "Futa picha hii?"
 
+msgid "Yes, erase it!"
+msgstr ""
+
+msgid "No, don't erase it!"
+msgstr ""
+
 msgid "Remember to use the left mouse button!"
 msgstr ""
 
 msgid "Please wait..."
-msgstr ""
-
-msgid "jq"
-msgstr ""
-
-msgid "JQ"
-msgstr ""
-
-msgid "oO"
-msgstr ""
-
-msgid "`\\%_@$~#{}<>^&*"
-msgstr ""
-
-msgid ",.?!"
-msgstr ""
-
-msgid "017"
-msgstr ""
-
-msgid "O0"
-msgstr ""
-
-msgid "1Il|"
 msgstr ""
 
 msgid "Erase"
@@ -467,15 +490,47 @@ msgstr "Nyuma"
 msgid "Aa"
 msgstr ""
 
+#. FIXME: Move elsewhere! Or not?!
+msgid "Yes"
+msgstr "Ndiyo"
+
+msgid "No"
+msgstr "Hapana"
+
 #. FIXME: Move elsewhere!!!
-msgid "Save over the older version of this picture?"
-msgstr "Hifadhi juu ya toleo la zamani la picha hii?"
+#. #define PROMPT_SAVE_OVER_TXT gettext_noop("Save over the older version of this picture?")
+msgid "Replace the picture with your changes?"
+msgstr ""
+
+msgid "Yes, replace the old one"
+msgstr ""
 
 msgid "No, save a new file"
 msgstr "Hapana, hifadhi kama faili mpya."
 
 msgid "Choose the picture you want, then click “Open”."
 msgstr "Chagua picha unayotaka, halafu bofya “Fungua”."
+
+msgid "A drawing program for children."
+msgstr "Programu kwa watoto kuchora."
+
+msgid "Drawing program"
+msgstr "Programu ya kuchora"
+
+msgid "Tux Paint"
+msgstr "Koti ya Rangi"
+
+#~ msgid "Starting a new picture will erase the current one!"
+#~ msgstr "Ukianza picha mpya utafuta picha unayochora sasa!"
+
+#~ msgid "That’s OK!"
+#~ msgstr "Ni sawa!"
+
+#~ msgid "Never mind!"
+#~ msgstr "Nimebadili nia!"
+
+#~ msgid "Save over the older version of this picture?"
+#~ msgstr "Hifadhi juu ya toleo la zamani la picha hii?"
 
 #~ msgid "Green!"
 #~ msgstr "Kijani!"

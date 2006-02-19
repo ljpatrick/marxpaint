@@ -10,22 +10,13 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Tux Paint 0.9.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-01-04 23:22+0100\n"
+"POT-Creation-Date: 2006-02-19 14:44-0800\n"
 "PO-Revision-Date: 2005-10-03 00:15-0700\n"
 "Last-Translator: Mark K. Kim <tuxNO_SOLICITATIONpaint-dev@cbreak.org>\n"
 "Language-Team: N/A\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-
-msgid "A drawing program for children."
-msgstr "어린이를 위한 미술 프로그램"
-
-msgid "Drawing program"
-msgstr "미술 프로그램"
-
-msgid "Tux Paint"
-msgstr "턱스페인트"
 
 msgid "Black!"
 msgstr "검정색!"
@@ -77,6 +68,45 @@ msgstr "살색!"
 
 msgid "Beige!"
 msgstr "낙타색!"
+
+msgid "qx"
+msgstr ""
+
+msgid "QX"
+msgstr ""
+
+msgid "qy"
+msgstr ""
+
+msgid "QY"
+msgstr ""
+
+#. Now we score fonts to ensure that the best ones will be placed at
+#. the top of the list. The user will see them first. This sorting is
+#. especially important for users who have scroll buttons disabled.
+#. Translators should do whatever is needed to put crummy fonts last.
+msgid "oO"
+msgstr ""
+
+#. distinct uppercase and lowercase
+msgid "`\\%_@$~#{}<>^&*"
+msgstr ""
+
+#. uncommon punctuation
+msgid ",.?!"
+msgstr ""
+
+#. common punctuation
+msgid "017"
+msgstr ""
+
+#. digits
+msgid "O0"
+msgstr ""
+
+#. distinct circle-like characters
+msgid "1Il|"
+msgstr ""
 
 msgid "Great!"
 msgstr "잘한다!"
@@ -372,15 +402,20 @@ msgstr "그럼, 계속 그림을 그리세요!"
 msgid "Do you really want to quit?"
 msgstr "프로그램을 끝 마칠까요?"
 
-#. FIXME: Move elsewhere! Or not?!
-msgid "Yes"
-msgstr "네"
+msgid "Yes, I'm done!"
+msgstr ""
 
-msgid "No"
-msgstr "아니요"
+msgid "No, take me back!"
+msgstr ""
 
 msgid "If you quit, you’ll lose your picture! Save it?"
 msgstr "그림을 저장않하고 종료 하면 그림이 없어져요! 저장할까요?"
+
+msgid "Yes, save it!"
+msgstr ""
+
+msgid "No, don't bother saving!"
+msgstr ""
 
 msgid "Save your picture first?"
 msgstr "먼저, 그림을 저장할까요?"
@@ -391,20 +426,26 @@ msgstr "그 그림은 열지 못합니다!"
 msgid "OK"
 msgstr "네"
 
-msgid "Starting a new picture will erase the current one!"
-msgstr "새 그림을 시작하면 지금있는 그림이 없어져요!"
+#. This will be replaced with a dialog allowing color choice and Starter
+#. picking, with a "Back" option to dismiss the "New" and return to
+#. the current picture.  But for now...  (bjk 2006.02.19)
+#, fuzzy
+msgid "Start a new picture?"
+msgstr "이 그림을 지울까요?"
 
-msgid "That’s OK!"
-msgstr "괜찮습니다!"
-
-msgid "Never mind!"
-msgstr "그러면 취소!"
+#. #define PROMPT_NEW_YES gettext_noop("That’s OK!")
+#. #define PROMPT_NEW_NO gettext_noop("Never mind!")
+msgid "Yes, let's start fresh!"
+msgstr ""
 
 msgid "There are no saved files!"
 msgstr "저장된 파일이 없네요!"
 
 msgid "Print your picture now?"
 msgstr "그림을 인쇄 할까요?"
+
+msgid "Yes, print it!"
+msgstr ""
 
 msgid "Your picture has been printed!"
 msgstr "그림을 인쇄 했습니다!"
@@ -415,34 +456,16 @@ msgstr "아직 인쇄 하지 못합니다!"
 msgid "Erase this picture?"
 msgstr "이 그림을 지울까요?"
 
+msgid "Yes, erase it!"
+msgstr ""
+
+msgid "No, don't erase it!"
+msgstr ""
+
 msgid "Remember to use the left mouse button!"
 msgstr "왼쪽 마우스버튼을 사용하는걸 잊지 마세요!"
 
 msgid "Please wait..."
-msgstr ""
-
-msgid "jq"
-msgstr ""
-
-msgid "JQ"
-msgstr ""
-
-msgid "oO"
-msgstr ""
-
-msgid "`\\%_@$~#{}<>^&*"
-msgstr ""
-
-msgid ",.?!"
-msgstr ""
-
-msgid "017"
-msgstr ""
-
-msgid "O0"
-msgstr ""
-
-msgid "1Il|"
 msgstr ""
 
 msgid "Erase"
@@ -454,12 +477,44 @@ msgstr "되 돌아가기"
 msgid "Aa"
 msgstr ""
 
+#. FIXME: Move elsewhere! Or not?!
+msgid "Yes"
+msgstr "네"
+
+msgid "No"
+msgstr "아니요"
+
 #. FIXME: Move elsewhere!!!
-msgid "Save over the older version of this picture?"
-msgstr "전에 있던 그름을 지우고 저장 할까요?"
+#. #define PROMPT_SAVE_OVER_TXT gettext_noop("Save over the older version of this picture?")
+msgid "Replace the picture with your changes?"
+msgstr ""
+
+msgid "Yes, replace the old one"
+msgstr ""
 
 msgid "No, save a new file"
 msgstr "아니요, 새로운 파일로 저장하죠"
 
 msgid "Choose the picture you want, then click “Open”."
 msgstr "원하는 그림을 고른후 '열기'버튼을 눌러주세요."
+
+msgid "A drawing program for children."
+msgstr "어린이를 위한 미술 프로그램"
+
+msgid "Drawing program"
+msgstr "미술 프로그램"
+
+msgid "Tux Paint"
+msgstr "턱스페인트"
+
+#~ msgid "Starting a new picture will erase the current one!"
+#~ msgstr "새 그림을 시작하면 지금있는 그림이 없어져요!"
+
+#~ msgid "That’s OK!"
+#~ msgstr "괜찮습니다!"
+
+#~ msgid "Never mind!"
+#~ msgstr "그러면 취소!"
+
+#~ msgid "Save over the older version of this picture?"
+#~ msgstr "전에 있던 그름을 지우고 저장 할까요?"

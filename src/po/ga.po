@@ -7,22 +7,13 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint 0.9.15rc1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-01-04 23:22+0100\n"
+"POT-Creation-Date: 2006-02-19 14:44-0800\n"
 "PO-Revision-Date: 2005-10-11 08:44+0100\n"
 "Last-Translator: Kevin Patrick Scannell <scannell@SLU.EDU>\n"
 "Language-Team: Irish <gaeilge-gnulinux@lists.sourceforge.net>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-
-msgid "A drawing program for children."
-msgstr "Clár líníochta le haghaidh páistí."
-
-msgid "Drawing program"
-msgstr "Clár líníochta"
-
-msgid "Tux Paint"
-msgstr "Tux Paint"
 
 msgid "Black!"
 msgstr "Dubh!"
@@ -74,6 +65,45 @@ msgstr "Crón!"
 
 msgid "Beige!"
 msgstr "Béasa!"
+
+msgid "qx"
+msgstr ""
+
+msgid "QX"
+msgstr ""
+
+msgid "qy"
+msgstr ""
+
+msgid "QY"
+msgstr ""
+
+#. Now we score fonts to ensure that the best ones will be placed at
+#. the top of the list. The user will see them first. This sorting is
+#. especially important for users who have scroll buttons disabled.
+#. Translators should do whatever is needed to put crummy fonts last.
+msgid "oO"
+msgstr "oO"
+
+#. distinct uppercase and lowercase
+msgid "`\\%_@$~#{}<>^&*"
+msgstr "`\\%_@$~#{}<>^&*"
+
+#. uncommon punctuation
+msgid ",.?!"
+msgstr ",.?!"
+
+#. common punctuation
+msgid "017"
+msgstr "017"
+
+#. digits
+msgid "O0"
+msgstr "O0"
+
+#. distinct circle-like characters
+msgid "1Il|"
+msgstr "1Il|"
 
 msgid "Great!"
 msgstr "Thar Barr!"
@@ -373,15 +403,20 @@ msgstr "OK… Bímis ag dearadh an cheann seo!"
 msgid "Do you really want to quit?"
 msgstr "An bhfuil tú cinnte gur mhaith leat scor?"
 
-#. FIXME: Move elsewhere! Or not?!
-msgid "Yes"
-msgstr "Tá"
+msgid "Yes, I'm done!"
+msgstr ""
 
-msgid "No"
-msgstr "Níl"
+msgid "No, take me back!"
+msgstr ""
 
 msgid "If you quit, you’ll lose your picture! Save it?"
 msgstr "Má scoireann tú, caillfidh tú an pictiúr atá agatsa! Sábháil?"
+
+msgid "Yes, save it!"
+msgstr ""
+
+msgid "No, don't bother saving!"
+msgstr ""
 
 msgid "Save your picture first?"
 msgstr "Sábháil ar dtús?"
@@ -392,20 +427,26 @@ msgstr "Ní féidir an pictiúr sin a oscailt!"
 msgid "OK"
 msgstr "OK"
 
-msgid "Starting a new picture will erase the current one!"
-msgstr "Léirscriosfar an pictiúr reatha agus ceann nua á thosú!"
+#. This will be replaced with a dialog allowing color choice and Starter
+#. picking, with a "Back" option to dismiss the "New" and return to
+#. the current picture.  But for now...  (bjk 2006.02.19)
+#, fuzzy
+msgid "Start a new picture?"
+msgstr "Léirscrios an pictiúr seo?"
 
-msgid "That’s OK!"
-msgstr "Ceart go leor!"
-
-msgid "Never mind!"
-msgstr "Ná bac leis!"
+#. #define PROMPT_NEW_YES gettext_noop("That’s OK!")
+#. #define PROMPT_NEW_NO gettext_noop("Never mind!")
+msgid "Yes, let's start fresh!"
+msgstr ""
 
 msgid "There are no saved files!"
 msgstr "Níl aon chomhad sábháilte ann!"
 
 msgid "Print your picture now?"
 msgstr "Priontáil an pictiúr anois?"
+
+msgid "Yes, print it!"
+msgstr ""
 
 msgid "Your picture has been printed!"
 msgstr "Priontáladh an pictiúr agatsa!"
@@ -416,35 +457,17 @@ msgstr "Ní féidir leat priontáil fós!"
 msgid "Erase this picture?"
 msgstr "Léirscrios an pictiúr seo?"
 
+msgid "Yes, erase it!"
+msgstr ""
+
+msgid "No, don't erase it!"
+msgstr ""
+
 msgid "Remember to use the left mouse button!"
 msgstr "Bí cinnte an cnaipe ar chlé a úsáid!"
 
 msgid "Please wait..."
 msgstr ""
-
-msgid "jq"
-msgstr "jq"
-
-msgid "JQ"
-msgstr "JQ"
-
-msgid "oO"
-msgstr "oO"
-
-msgid "`\\%_@$~#{}<>^&*"
-msgstr "`\\%_@$~#{}<>^&*"
-
-msgid ",.?!"
-msgstr ",.?!"
-
-msgid "017"
-msgstr "017"
-
-msgid "O0"
-msgstr "O0"
-
-msgid "1Il|"
-msgstr "1Il|"
 
 msgid "Erase"
 msgstr "Léirscrios"
@@ -455,9 +478,20 @@ msgstr "Siar"
 msgid "Aa"
 msgstr "Aa"
 
+#. FIXME: Move elsewhere! Or not?!
+msgid "Yes"
+msgstr "Tá"
+
+msgid "No"
+msgstr "Níl"
+
 #. FIXME: Move elsewhere!!!
-msgid "Save over the older version of this picture?"
-msgstr "Forscríobh an leagan níos sine den phictiúr seo?"
+#. #define PROMPT_SAVE_OVER_TXT gettext_noop("Save over the older version of this picture?")
+msgid "Replace the picture with your changes?"
+msgstr ""
+
+msgid "Yes, replace the old one"
+msgstr ""
 
 msgid "No, save a new file"
 msgstr "Ná forscríobh, sábháil i gcomhad nua"
@@ -465,6 +499,33 @@ msgstr "Ná forscríobh, sábháil i gcomhad nua"
 msgid "Choose the picture you want, then click “Open”."
 msgstr ""
 "Roghnaigh an pictiúr is mian leat a oscailt, agus ansin cliceáil “Oscail”."
+
+msgid "A drawing program for children."
+msgstr "Clár líníochta le haghaidh páistí."
+
+msgid "Drawing program"
+msgstr "Clár líníochta"
+
+msgid "Tux Paint"
+msgstr "Tux Paint"
+
+#~ msgid "Starting a new picture will erase the current one!"
+#~ msgstr "Léirscriosfar an pictiúr reatha agus ceann nua á thosú!"
+
+#~ msgid "That’s OK!"
+#~ msgstr "Ceart go leor!"
+
+#~ msgid "Never mind!"
+#~ msgstr "Ná bac leis!"
+
+#~ msgid "jq"
+#~ msgstr "jq"
+
+#~ msgid "JQ"
+#~ msgstr "JQ"
+
+#~ msgid "Save over the older version of this picture?"
+#~ msgstr "Forscríobh an leagan níos sine den phictiúr seo?"
 
 #~ msgid "Lime!"
 #~ msgstr "Líoma!"
