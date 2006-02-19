@@ -358,40 +358,6 @@ static int font_socket_fd;
 #include "malloc.c"
 #endif
 
-#ifdef WIN32
-/*
-  The SDL stderr redirection trick doesn't seem to work for perror().
-  This does pretty much the same thing.
-*/
-static void win32_perror(const char * const str)
-{
-  if ( str && *str )
-    fprintf(stderr,"%s : ",str);
-  fprintf(stderr,
-	  "%s [%d]\n",
-	  (errno<_sys_nerr)?_sys_errlist[errno]:"unknown",errno );
-}
-#define perror         win32_perror
-
-/*
-  MinGW implementation of isspace() crashes on some Win98 boxes
-  if c is 'out-of-range'.
-*/
-
-static int win32_isspace(int c)
-{
-    return (c == 0x20) || (c >= 0x09 && c <= 0x0D);
-}
-#define isspace     win32_isspace
-
-/*
-  WIN32 and MINGW don't have strcasestr().
-*/
-#define NOMINMAX
-#include "Shlwapi.h"
-#define strcasestr StrStrI
-#endif /* WIN32 */
-
 
 #include "compiler.h"
 

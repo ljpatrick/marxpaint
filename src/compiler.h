@@ -24,9 +24,46 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  June 14, 2002 - February 17, 2006
+  June 14, 2002 - February 18, 2006
   $Id$
 */
+
+#ifdef WIN32
+/*
+  The SDL stderr redirection trick doesn't seem to work for perror().
+  This does pretty much the same thing.
+*/
+static void win32_perror(const char * const str)
+{
+  if ( str && *str )
+    fprintf(stderr,"%s : ",str);
+  fprintf(stderr,
+          "%s [%d]\n",
+          (errno<_sys_nerr)?_sys_errlist[errno]:"unknown",errno );
+}
+#define perror         win32_perror
+
+/*
+  MinGW implementation of isspace() crashes on some Win98 boxes
+  if c is 'out-of-range'.
+*/
+
+static int win32_isspace(int c)
+{
+    return (c == 0x20) || (c >= 0x09 && c <= 0x0D);
+}
+#define isspace     win32_isspace
+
+/*
+  WIN32 and MINGW don't have strcasestr().
+*/
+#define NOMINMAX
+#include "Shlwapi.h"
+#define strcasestr StrStrI
+#endif /* WIN32 */
+
+
+
 
 #ifdef __GNUC__
 // This version has strict type checking for safety.
@@ -117,5 +154,4 @@
 #undef CLOCK_ASM
 #define CLOCK_ASM(x) x=42
 #endif
-
 
