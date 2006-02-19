@@ -28,6 +28,9 @@ $Id$
 
       Discovered (or assumed) window size and directory settings are shown
       when tuxpaint-import is first run (even with no arguments).
+
+    * In windowed mode, Tux Paint tries to open its window in the center
+      of the screen (if supported by the OS or window manager).
   
   * Tool improvements:
     ------------------------

@@ -22,7 +22,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
   
-  June 14, 2002 - February 17, 2006
+  June 14, 2002 - February 19, 2006
   $Id$
 */
 
@@ -322,6 +322,8 @@ extern WrapperData macosx;
 #define SDL_mutexP(lock)  // take lock
 #define SDL_mutexV(lock)  // release lock
 #endif
+
+#include "SDL_getenv.h"
 
 #include "i18n.h"
 #include "cursor.h"
@@ -6060,6 +6062,8 @@ static void setup(int argc, char * argv[])
 
   if (!fullscreen)
     {
+      putenv((char *) "SDL_VIDEO_WINDOW_POS=center");
+
 #ifdef USE_HWSURFACE
       screen = SDL_SetVideoMode(WINDOW_WIDTH, WINDOW_HEIGHT,
 		      		VIDEO_BPP, SDL_HWSURFACE);
@@ -6067,6 +6071,8 @@ static void setup(int argc, char * argv[])
       screen = SDL_SetVideoMode(WINDOW_WIDTH, WINDOW_HEIGHT,
 		      		VIDEO_BPP, SDL_SWSURFACE);
 #endif
+      
+      putenv((char *) "SDL_VIDEO_WINDOW_POS=nopref");
     }
 
   if (screen == NULL)
