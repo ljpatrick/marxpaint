@@ -9,7 +9,7 @@ http://www.newbreedsoftware.com/tuxpaint/
 $Id$
 
 
-2006.February.17 (0.9.16)
+2006.February.19 (0.9.16)
   * Interface improvements:
     -----------------------
     * Modified "Text" tool so that it correctly handles the 16-bit unicode
@@ -55,14 +55,18 @@ $Id$
   * Compiling, porting and packaging updates:
     -----------------------------------------
     * Split parts of "tuxpaint.c" into separate source files:
-      + "i18n.c/h": Language-related variables, enums, arrays and functions.
-      + "cursor.c/h": XBM bitmap cursor #includes and functions.
       + "compiler.h": Compiler-version-specific definitions.
-      + "pixles.c/h": 'getpixel' and 'putpixel' functions & function pointers.
+      + "cursor.c/h": XBM bitmap cursor #includes and functions.
+      + "debug.h": Defines whether debugging printf() calls should be enabled.
+      + "dirwalk.c/h": Callback functions for recursive directory traversal.
+      + "fonts.c/h": Font loading/grouping/discarding variables and functions.
       + "floodfill.c/h": 'Fill' tool's flood-fill routine.
-      + "rgblinear.c/h": RGB-to-linear float and binary data, and functions.
-      + "progressbar.c/h": Animated progress bar function.
+      + "get_fname.c/h": Functions for constructing preferred file paths.
+      + "i18n.c/h": Language-related variables, enums, arrays and functions.
+      + "pixles.c/h": 'getpixel' and 'putpixel' functions & function pointers.
       + "playsound.c/h": Sound-playing function.
+      + "progressbar.c/h": Animated progress bar function.
+      + "rgblinear.c/h": RGB-to-linear float and binary data, and functions.
 
     * Made sure GPL notice was included in all other source files.
 

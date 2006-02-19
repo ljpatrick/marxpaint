@@ -41,12 +41,6 @@
 # define VIDEO_BPP 32 // might be fastest, if conversion funcs removed
 #endif
 
-// plan to rip this out as soon as it is considered stable
-//#define THREADED_FONTS
-#define FORKED_FONTS
-#ifdef WIN32
-#undef FORKED_FONTS
-#endif
 
 /* Method for printing images: */
 
@@ -85,6 +79,9 @@
 
 /* Compile-time options: */
 
+#include "debug.h"
+
+
 #ifdef NOKIA_770
 # define LOW_QUALITY_THUMBNAILS
 # define LOW_QUALITY_STAMP_OUTLINE
@@ -92,7 +89,6 @@
 # define NO_PROMPT_SHADOWS
 # define USE_HWSURFACE
 #else
-/* #define DEBUG */
 /* #define DEBUG_MALLOC */
 /* #define LOW_QUALITY_THUMBNAILS */
 /* #define LOW_QUALITY_COLOR_SELECTOR */
@@ -327,15 +323,6 @@ extern WrapperData macosx;
 #define SDL_mutexV(lock)  // release lock
 #endif
 
-#ifndef FORKED_FONTS
-static SDL_Thread *font_thread;
-#endif
-static volatile long font_thread_done = 0, font_thread_aborted = 0;
-static volatile long waiting_for_fonts = 0;
-static void run_font_scanner(void);
-static int font_scanner_pid;
-static int font_socket_fd;
-
 #include "i18n.h"
 #include "cursor.h"
 #include "pixels.h"
@@ -343,6 +330,9 @@ static int font_socket_fd;
 #include "rgblinear.h"
 #include "playsound.h"
 #include "progressbar.h"
+#include "fonts.h"
+#include "dirwalk.h"
+#include "get_fname.h"
 
 #include "tools.h"
 #include "titles.h"
@@ -360,22 +350,6 @@ static int font_socket_fd;
 
 
 #include "compiler.h"
-
-
-/* Unfortunately, there is a bug in SDL_ttf-2.0.6, the current version
-   that causes a segmentation fault if an attempt is made to call 
-   TTF_OpenFont() with the filename of a font that doesn't exist. This 
-   is an old and well documented bug that is fixed in CVS.
-*/
-static TTF_Font *BUGFIX_TTF_OpenFont206(const char * const file, int ptsize)
-{
-    FILE    *fp;
-
-    if ((fp = fopen(file, "rb")) == NULL) return NULL;
-    fclose(fp);
-    return TTF_OpenFont(file, ptsize);
-}
-#define TTF_OpenFont    BUGFIX_TTF_OpenFont206
 
 
 #if VIDEO_BPP==32
@@ -456,63 +430,6 @@ static const char *getfilename(const char* path)
 }
 
 
-
-static TTF_Font *try_alternate_font(int size)
-{
-  char  str[128];
-  char  prefix[64];
-  char  *p;
-
-  strcpy(prefix, lang_prefix);
-  if ((p = strrchr(prefix, '_')) != NULL)
-  {
-    *p = 0;
-    snprintf(str, sizeof(str), "%sfonts/locale/%s.ttf",
-             DATA_PREFIX, prefix);
-
-    return TTF_OpenFont(str, size);
-  }
-  return NULL;
-}
-
-
-static TTF_Font *load_locale_font(TTF_Font *fallback, int size)
-{
-  TTF_Font *ret = NULL;
-  if (need_own_font)
-    {
-      char str[128];
-      snprintf(str, sizeof(str), "%sfonts/locale/%s.ttf",
-	       DATA_PREFIX, lang_prefix);
-
-      ret = TTF_OpenFont(str, size);
-
-      if (ret == NULL)
-      {
-          ret = try_alternate_font(size);
-          if (ret == NULL)
-	  {
-	      fprintf(stderr,
-		      "\nWarning: Can't load font for this locale:\n"
-		      "%s\n"
-		      "The Simple DirectMedia Layer error that occurred was:\n"
-		      "%s\n\n"
-		      "Will use default (American English) instead.\n\n",
-		      str, SDL_GetError());
-
-
-	      /* Revert to default: */
-      
-	      putenv((char *) "LANG=C");
-	      putenv((char *) "OUTPUT_CHARSET=C");
-	      setlocale(LC_ALL, "C");
-
-	      set_current_language();
-	  }
-      }
-    }
-  return ret ? ret : fallback;
-}
 
 ///////////////////////////////////////////////////////////////////
 // sizing
@@ -821,7 +738,7 @@ static int fullscreen, disable_quit, simple_shapes,
   wheely, keymouse, mouse_x, mouse_y,
   mousekey_up, mousekey_down, mousekey_left, mousekey_right,
   dont_do_xor, use_print_config, dont_load_stamps, noshortcuts,
-  no_system_fonts, no_button_distinction,
+  no_button_distinction,
   mirrorstamps, disable_stamp_controls, disable_save, ok_to_use_lockfile,
   alt_print_command_default;
 static int want_alt_printcommand;
@@ -871,93 +788,7 @@ static SDL_Surface * thumbnail(SDL_Surface * src, int max_x, int max_y,
 static SDL_Surface * thumbnail2(SDL_Surface * src, int max_x, int max_y,
 			int keep_aspect, int keep_alpha);
 
-//////////////////////////////////////////////////////////////////////
-// font stuff
 
-// example from a Debian box with MS fonts:
-// start with 232 files
-// remove "Cursor", "Webdings", "Dingbats", "Standard Symbols L"
-// split "Condensed" faces out into own family
-// group by family
-// end up with 34 user choices
-
-static int text_state;
-// nice progression (alternating 33% and 25%) 9 12 18 24 36 48 72 96 144 192
-// commonly hinted sizes seem to be: 9, 10, 12, 14, 18, 20 (less so), 24
-// reasonable: 9,12,18... and 10,14,18...
-static int text_sizes[] = {9, 12, 18, 24, 36, 48,
-	                   56, 64, 96, 112, 128, 160};  // point sizes
-#define MIN_TEXT_SIZE 0u
-#define MAX_TEXT_SIZE (sizeof text_sizes / sizeof text_sizes[0] - 1)
-static unsigned text_size = 4;   // initial text size
-
-
-// for sorting through the font files at startup
-typedef struct style_info {
-  char *filename;
-  char *directory;
-  char *family;    // name like "FooCorp Thunderstruck"
-  char *style;     // junk like "Oblique Demi-Bold"
-  int italic;
-  int boldness;
-  int score;
-  int truetype; // Is it? (TrueType gets priority)
-} style_info;
-
-// user's notion of a font
-typedef struct family_info {
-  char *directory;
-  char *family;
-  char *filename[4];
-  TTF_Font *handle;
-  int score;
-} family_info;
-
-static TTF_Font * medium_font, * small_font, * large_font, * locale_font;
-
-static family_info **user_font_families;
-static int num_font_families = 0;
-static int num_font_families_max = 0;
-
-static style_info **user_font_styles;
-static int num_font_styles = 0;
-static int num_font_styles_max = 0;
-
-static void receive_some_font_info(void);
-
-static TTF_Font *getfonthandle(int desire)
-{
-  int missing = 0;
-  family_info *fi = user_font_families[desire];
-  char *name = fi->filename[text_state];
-  char *pathname;
-
-  if(fi->handle)
-    return fi->handle;
-
-  if(!name)
-    {
-      name = fi->filename[text_state ^ TTF_STYLE_ITALIC];
-      missing = text_state & TTF_STYLE_ITALIC;
-    }
-  if(!name)
-    {
-      name = fi->filename[text_state ^ TTF_STYLE_BOLD];
-      missing = text_state & TTF_STYLE_BOLD;
-    }
-  if(!name)
-    {
-      name = fi->filename[text_state ^ (TTF_STYLE_ITALIC|TTF_STYLE_BOLD)];
-      missing = text_state & (TTF_STYLE_ITALIC|TTF_STYLE_BOLD);
-    }
-  pathname = alloca(strlen(fi->directory) + 1 + strlen(name) + 1);
-  sprintf(pathname, "%s/%s", fi->directory, name);
-  
-  fi->handle = TTF_OpenFont(pathname,text_sizes[text_size]);
-  // if the font doesn't load, we die -- it did load OK before though
-  TTF_SetFontStyle(fi->handle,missing);
-  return fi->handle;
-}
 
 
 static SDL_Surface *render_text(TTF_Font *restrict font, const char *restrict str, SDL_Color color)
@@ -1018,488 +849,6 @@ static SDL_Surface *render_text_w(TTF_Font *restrict font, const wchar_t *restri
   return thumbnail(img_title_large_off, height*wcslen(str)/2, height, 0);
 }
 
-
-// void qsort(void *base, size_t nmemb, size_t size,
-// int(*compar)(const void *, const void *));
-
-
-// For qsort() and other use, to see if font files are groupable
-static int compar_fontgroup(const void *v1, const void *v2)
-{
-  const style_info *s1 = *(style_info**)v1;
-  const style_info *s2 = *(style_info**)v2;
-  int rc;
-
-  rc = strcmp(s1->directory,s2->directory);
-  if(rc)
-    return rc;
-
-  rc = s1->truetype - s2->truetype;
-  if(rc)
-    return rc;
-
-  return strcmp(s1->family,s2->family);
-}
-
-
-// For qsort() and other use, to see if font files are duplicates
-static int compar_fontkiller(const void *v1, const void *v2)
-{
-  const family_info *f1 = *(family_info**)v1;
-  const family_info *f2 = *(family_info**)v2;
-  int rc;
-
-  rc = strcmp(f1->family,f2->family);
-  if(rc)
-    return rc;
-
-  return f1->score - f2->score;
-}
-
-
-// For qsort() and other use, to order the worst ones last
-static int compar_fontscore(const void *v1, const void *v2)
-{
-  const family_info *f1 = *(family_info**)v1;
-  const family_info *f2 = *(family_info**)v2;
-
-  return f2->score - f1->score;
-}
-
-// Font style names are a mess that we must try to make
-// sense of. For example...
-//
-// Cooper: Light, Medium, Light Bold, Black
-// HoeflerText: (nil), Black
-static void parse_font_style(style_info *si)
-{
-  int have_light = 0;
-  int have_demi = 0;
-  int have_bold = 0;
-  int have_medium = 0;
-  int have_black = 0;
-  int have_heavy = 0;
-
-  int stumped = 0;
-  char *sp = si->style;
-
-  si->italic = 0;
-
-
-  while(*sp)
-    {
-      if(*sp==' ')
-        {
-          sp++;
-          continue;
-        }
-      if(!strncasecmp(sp,"Bold",strlen("Bold")))
-        {
-          sp += strlen("Bold");
-          have_bold = 1;
-          continue;
-        }
-      if(!strncasecmp(sp,"Regular",strlen("Regular")))
-        {
-          sp += strlen("Regular");
-          continue;
-        }
-      if(!strncasecmp(sp,"Italic",strlen("Italic")))
-        {
-          sp += strlen("Italic");
-          si->italic = 1;
-          continue;
-        }
-      if(!strncasecmp(sp,"Oblique",strlen("Oblique")))
-        {
-          sp += strlen("Oblique");
-          si->italic = 1;
-          continue;
-        }
-      // move " Condensed" from style to family
-      if(!strncasecmp(sp,"Condensed",strlen("Condensed")))
-        {
-          size_t len = strlen(si->family);
-          char *name = malloc(len + strlen(" Condensed") + 1);
-          sp += strlen("Condensed");
-          memcpy(name,si->family,len);
-          strcpy(name+len," Condensed");
-          free(si->family);
-          si->family = name;
-          continue;
-        }
-      if(!strncasecmp(sp,"Light",strlen("Light")))
-        {
-          sp += strlen("Light");
-          have_light = 1;
-          continue;
-        }
-      if(!strncasecmp(sp,"Medium",strlen("Medium")))
-        {
-          sp += strlen("Medium");
-          have_medium = 1;
-          continue;
-        }
-      if(!strncasecmp(sp,"Demi",strlen("Demi")))
-        {
-          sp += strlen("Demi");
-          have_demi = 1;
-          continue;
-        }
-      if(!strncasecmp(sp,"Heavy",strlen("Heavy")))
-        {
-          sp += strlen("Heavy");
-          have_heavy = 1;
-          continue;
-        }
-      if(!strncasecmp(sp,"Normal",strlen("Normal")))
-        {
-          sp += strlen("Normal");
-          continue;
-        }
-      if(!strncasecmp(sp,"Black",strlen("Black")))
-        {
-          sp += strlen("Black");
-          have_black = 1;
-          continue;
-        }
-      if(!strncasecmp(sp,"Roman",strlen("Roman")))
-        {
-          sp += strlen("Roman");
-          continue;
-        }
-      if(!strncasecmp(sp,"Book",strlen("Book")))
-        {
-          sp += strlen("Book");
-          continue;
-        }
-      if(!strncasecmp(sp,"Chancery",strlen("Chancery")))
-        {
-          sp += strlen("Chancery");
-          si->italic = 1;
-          continue;
-        }
-      if(!strncasecmp(sp,"Thin",strlen("Thin")))
-        {
-          sp += strlen("Thin");
-          have_light = 1;
-          continue;
-        }
-      if(!strncmp(sp,"LR",strlen("LR")))
-        {
-          sp += strlen("LR");
-          continue;
-        }
-
-      if(!stumped)
-        {
-          stumped=1;
-#if 0
-// THREADED_FONTS
-          printf("Font style parser stumped by \"%s\".\n", si->style);
-#endif
-        }
-      sp++; // bad: an unknown character
-    }
-
-  if (have_demi || have_medium)
-    si->boldness = 2;
-  else if (have_bold || have_black || have_heavy) // TODO: split these
-    si->boldness = 3;
-  else if (have_light)
-    si->boldness = 0;
-  else
-    si->boldness = 1;
-
-  // we'll count both TrueType and OpenType
-  si->truetype = !!strcasestr(si->filename,".ttf") || !!strcasestr(si->filename,".otf");
-}
-
-static void groupfonts_range(style_info **base, int count)
-{
-  int boldcounts[4] = {0,0,0,0};
-  int boldmap[4] = {-1,-1,-1,-1};
-  int i;
-  int boldmax;
-  int boldmin;
-  int bolduse;
-  int spot;
-  family_info *fi;
-
-#if 0
-// THREADED_FONTS
-if(count<1 || count>4)
-{
-printf("\n::::::: %d styles in %s:\n",count, base[0]->family);
-i = count;
-while(i--)
-{
-printf("               %s\n", base[i]->style);
-}
-}
-#endif
-
-  i = count;
-  while(i--)
-    boldcounts[base[i]->boldness]++;
-
-  boldmax = base[0]->boldness;
-  boldmin = base[0]->boldness;
-  bolduse = 0;
-
-  i = 4;
-  while(i--)
-    {
-      if(!boldcounts[i])
-        continue;
-      if(i>boldmax)
-        boldmax = i;
-      if(i<boldmin)
-        boldmin = i;
-      bolduse++;
-    }
-  if(likely(bolduse<=2))
-    {
-      // in case they are same, we want non-bold,
-      // so that setting goes second
-      boldmap[boldmax] = 1;
-      boldmap[boldmin] = 0;
-    }
-  else if(count==3)
-    {
-      int boldmid;
-      int zmin = 0, zmid = 0, zmax = 0;
-      
-      boldmap[boldmax] = 1;
-      boldmap[boldmin] = 0;
-      boldmid = boldcounts[boldmin+1] ? boldmin+1 : boldmin+2;
-
-      i = 3;
-      while(i--){
-        if(base[i]->boldness==boldmin)
-          zmin = base[i]->italic;
-        if(base[i]->boldness==boldmid)
-          zmid = base[i]->italic;
-        if(base[i]->boldness==boldmax)
-          zmax = base[i]->italic;
-      }
-      if(zmin!=zmid)
-        boldmap[boldmid] = 0;
-      else if(zmid!=zmax)
-        boldmap[boldmid] = 1;
-      else if(boldmin==0 && boldmid==1)
-        {
-          boldmap[0] = -1;
-          boldmap[1] = 0;
-        }
-    }
-  else
-    {
-      int claimed_bold = boldcounts[3];
-      int claimed_norm = boldcounts[1];
-
-      // 3 or 4 boldness levels, 4 or more styles!
-      // This is going to be random hacks and hopes.
-
-      // bold is bold
-      boldmap[3] = 1;
-
-      // norm is norm
-      boldmap[1] = 0;
-
-      // classify demi-bold or medium
-      if(claimed_bold<2)
-        {
-          boldmap[2] = 1;
-          claimed_bold += boldcounts[2];
-        }
-      else if(claimed_norm<2)
-        {
-          boldmap[2] = 0;
-          claimed_norm += boldcounts[2];
-        }
-
-      // classify lightface
-      if(claimed_norm<2)
-        {
-          boldmap[0] = 0;
-          //claimed_norm += boldcounts[0];
-        }
-    }
-
-  if (num_font_families==num_font_families_max)
-    {
-      num_font_families_max = num_font_families_max * 5 / 4 + 30;
-      user_font_families = realloc(user_font_families, num_font_families_max * sizeof *user_font_families); 
-    }
-
-  fi = calloc(1, sizeof *fi);
-  user_font_families[num_font_families++] = fi;
-  fi->directory = strdup(base[0]->directory);
-  fi->family    = strdup(base[0]->family);
-  fi->score     = base[0]->truetype + base[0]->score;
-  i = count;
-  while(i--)
-    {
-      int b = boldmap[base[i]->boldness];
-      if(b==-1)
-        {
-#if 0
-// THREADED_FONTS
-          printf("too many boldness levels, discarding: %s, %s\n", base[i]->family, base[i]->style);
-#endif
-          continue;
-        }
-      spot = b ? TTF_STYLE_BOLD : 0;
-      spot += base[i]->italic ? TTF_STYLE_ITALIC : 0;
-      if(fi->filename[spot])
-        {
-#if 0
-// THREADED_FONTS
-          printf("duplicates, discarding: %s, %s\n", base[i]->family, base[i]->style);
-          printf("b %d, spot %d\n", b, spot);
-          printf("occupancy %p %p %p %p\n", fi->filename[0], fi->filename[1], fi->filename[2], fi->filename[3]);
-#endif
-          continue;
-        }
-      fi->filename[spot] = strdup(base[i]->filename);
-      fi->score += 2;
-    }
-  if(!fi->filename[0] && !fi->filename[1])
-    {
-      fi->filename[0] = fi->filename[2];
-      fi->filename[2] = NULL;
-      fi->filename[1] = fi->filename[3];
-      fi->filename[3] = NULL;
-    }
-  if(!fi->filename[0] && !fi->filename[2])
-    {
-      fi->filename[0] = fi->filename[1];
-      fi->filename[1] = NULL;
-      fi->filename[2] = fi->filename[3];
-      fi->filename[3] = NULL;
-    }
-  if(!fi->filename[0])
-    {
-      fi->filename[0] = strdup(fi->filename[TTF_STYLE_BOLD]);
-    }
-}
-
-
-static void dupe_markdown_range(family_info **base, int count)
-{
-  int bestscore = -999;
-  int bestslot = 0;
-  int i = count;
-  while(i--)
-    {
-      int score = base[i]->score;
-      if(score<=bestscore)
-        continue;
-      bestscore = score;
-      bestslot = i;
-    }
-  i = count;
-  while(i--)
-    {
-      if (i==bestslot)
-        continue;
-      base[i]->score = -999;
-    }
-}
-
-
-static void groupfonts(void)
-{
-  char * * cpp;
-  int i = num_font_styles;
-  int low  = 0;
-
-  while(i--)
-    parse_font_style(user_font_styles[i]);
-
-  qsort(user_font_styles, num_font_styles, sizeof user_font_styles[0], compar_fontgroup);
-  //printf("groupfonts() qsort(user_font_styles...)\n");
-  //fflush(stdout);
-
-  for(;;)
-    {
-      int high = low;
-      if(low >= num_font_styles)
-        break;
-      for(;;)
-        {
-          if(++high >= num_font_styles)
-            break;
-          if(compar_fontgroup(user_font_styles+low, user_font_styles+high))
-            break;
-        }
-      groupfonts_range(user_font_styles+low, high-low);
-      low = high;
-    }
-
-  i = num_font_styles;
-  while(i--)
-    {
-      free(user_font_styles[i]->filename);
-      free(user_font_styles[i]->directory);
-      free(user_font_styles[i]->family);
-      free(user_font_styles[i]->style);
-      free(user_font_styles[i]);
-    }
-  free(user_font_styles);
-  user_font_styles = NULL; // just to catch bugs
-
-  qsort(user_font_families, num_font_families, sizeof user_font_families[0], compar_fontkiller);
-  //printf(stderr, "groupfonts() qsort(user_font_families 1...)\n");
-  //fflush(stdout);
-  low = 0;
-  for(;;)
-    {
-      int high = low;
-      if(low >= num_font_families)
-        break;
-      for(;;)
-        {
-          if(++high >= num_font_families)
-            break;
-          if(strcmp(user_font_families[low]->family,user_font_families[high]->family))
-            break;
-        }
-      dupe_markdown_range(user_font_families+low,high-low);
-      low = high;
-    }
-  qsort(user_font_families, num_font_families, sizeof user_font_families[0], compar_fontscore);
-  //printf("groupfonts() qsort(user_font_families 2...)\n");
-  //fflush(stdout);
-  if(user_font_families[0]->score < 0)
-    printf("sorted the wrong way, or all fonts were unusable\n");
-#if 0
-// THREADED_FONTS
-  printf("Trim starting with %d families\n", num_font_families);
-#endif
-  while(num_font_families>1 && user_font_families[num_font_families-1]->score < 0)
-    {
-      i = --num_font_families;
-      free(user_font_families[i]->directory);
-      free(user_font_families[i]->family);
-      cpp = user_font_families[i]->filename;
-      if(cpp[0])
-        free(cpp[0]);
-      if(cpp[1])
-        free(cpp[1]);
-      if(cpp[2])
-        free(cpp[2]);
-      if(cpp[3])
-        free(cpp[3]);
-      free(user_font_families[i]);
-      user_font_families[i] = NULL;
-    }
-#if 0
-// THREADED_FONTS
-  printf("Trim ending with %d families\n", num_font_families);
-#endif
-}
 
 ////////////////////////////////////////////////////////////////////
 
@@ -1627,8 +976,6 @@ static SDL_Event scrolltimer_event;
 int non_left_click_count = 0;
 
 
-static char * savedir;
-
 typedef struct dirent2 {
   struct dirent f;
   int place;
@@ -1704,7 +1051,6 @@ static Mix_Chunk * loadsound(const char * const fname);
 static void do_wait(int counter);
 static void load_current(void);
 static void save_current(void);
-static char * get_fname(const char * const name);
 static int do_prompt_image_flash(const char * const text, const char * const btn_yes, const char * const btn_no, SDL_Surface * img1, SDL_Surface * img2, SDL_Surface * img3, int animate);
 static int do_prompt_image_flash_snd(const char * const text, const char * const btn_yes, const char * const btn_no, SDL_Surface * img1, SDL_Surface * img2, SDL_Surface * img3, int animate, int snd);
 static int do_prompt_image(const char * const text, const char * const btn_yes, const char * const btn_no, SDL_Surface * img1, SDL_Surface * img2, SDL_Surface * img3);
@@ -1733,7 +1079,6 @@ SDL_Surface * mirror_surface(SDL_Surface *s);
 static void do_print(void);
 static void strip_trailing_whitespace(char * buf);
 static void do_render_cur_text(int do_blit);
-static void loadfonts(const char * const dir);
 static char * uppercase(char * str);
 static wchar_t * uppercase_w(wchar_t * str);
 static char * textdir(const char * const str);
@@ -1870,7 +1215,7 @@ int main(int argc, char * argv[])
   SDL_Rect src;
 
 #ifdef FORKED_FONTS
-  run_font_scanner();
+  run_font_scanner(screen);
 #endif
 
   /* Set up locale support */
@@ -2496,7 +1841,7 @@ static void mainloop(void)
                               draw_tux_text(TUX_WAIT, gettext("Please wait..."), 1);
 			      waiting_for_fonts = 1;
 #ifdef FORKED_FONTS
-                              receive_some_font_info();
+                              receive_some_font_info(screen);
 #else
                               while(!font_thread_done && !font_thread_aborted)
                                 {
@@ -5561,415 +4906,9 @@ static unsigned compute_default_scale_factor(double ratio)
 }
 
 
-// backdoor into qsort operations, so we don't have to do work again
-static int was_bad_font;
+// directory walking...
 
-// see if two font surfaces are the same
-static int do_surfcmp(const SDL_Surface *const *const v1, const SDL_Surface *const *const v2)
-{
-  const SDL_Surface *const s1 = *v1;
-  const SDL_Surface *const s2 = *v2;
-  int width;
-  int cmp;
-  int i;
-
-  if(s1==s2)
-    {
-      printf("s1==s2?\n");
-      return 0;
-    }
-  if(!s1 || !s2 || !s1->w || !s2->w || !s1->h || !s2->h || !s1->format || !s2->format)
-    {
-      was_bad_font = 1;
-      return 0;
-    }
-  if(s1->format->BytesPerPixel != s2->format->BytesPerPixel)
-    {
-      // something really strange and bad happened
-      was_bad_font = 1;
-      return s1->format->BytesPerPixel - s2->format->BytesPerPixel;
-    }
-
-  if(s1->w != s2->w)
-    return s1->w - s2->w;
-  if(s1->h != s2->h)
-    return s1->h - s2->h;
-
-  {
-    const char *const c1 = (char *const)s1->pixels;
-    const char *const c2 = (char *const)s2->pixels;
-    width = s1->format->BytesPerPixel * s1->w;
-    if(width==s1->pitch)
-      return memcmp(c1,c2,width*s1->h);
-    cmp = 0;
-    i = s1->h;
-    while(i--)
-      {
-	cmp = memcmp(c1 + i*s1->pitch, c2 + i*s2->pitch, width);
-	if(cmp)
-	  break;
-      }
-  }
-
-  return cmp;
-}
-
-// see if two font surfaces are the same
-static int surfcmp(const void *s1, const void *s2)
-{
-  int diff = do_surfcmp(s1, s2);
-  if(!diff)
-    was_bad_font = 1;
-  return diff;
-}
-
-// check if the characters will render distinctly
-static int charset_works(TTF_Font *font, const char *s)
-{
-  SDL_Color black = {0, 0, 0, 0};
-  SDL_Surface **surfs = malloc(strlen(s) * sizeof surfs[0]);
-  unsigned count = 0;
-  int ret = 0;
-  while(*s)
-    {
-      char c[8];
-      unsigned offset = 0;
-      SDL_Surface *tmp_surf;
-      do
-        c[offset++] = *s++;
-        while((*s & 0xc0u) == 0x80u); // assume safe input
-      c[offset++] = '\0';
-      tmp_surf = TTF_RenderUTF8_Blended(font, c, black);
-      if(!tmp_surf)
-        {
-#if 0
-// THREADED_FONTS
-          printf("could not render \"%s\" font\n", TTF_FontFaceFamilyName(font));
-#endif
-          goto out;
-        }
-      surfs[count++] = tmp_surf;
-    }
-  was_bad_font = 0;
-  qsort(surfs, count, sizeof surfs[0], surfcmp);
-  ret = !was_bad_font;
-out:
-  while(count--)
-  {
-    if (surfs[count] == NULL)
-      printf("TRYING TO RE-FREE!");
-    else
-    {
-      SDL_FreeSurface(surfs[count]);
-      surfs[count] = NULL;
-    }
-  }
-  free(surfs);
-  return ret;
-}
-
-
-/////////////////////////////// directory tree walking /////////////////////
-
-#define TP_FTW_UNKNOWN 1
-#define TP_FTW_DIRECTORY 2
-#define TP_FTW_NORMAL 0
-
-#define TP_FTW_PATHSIZE 400
-
-typedef struct tp_ftw_str {
-  char *str;
-  unsigned char len;
-//  unsigned char is_rsrc;
-} tp_ftw_str;
-
-// For qsort()
-static int compare_ftw_str(const void *v1, const void *v2)
-{
-  const char *restrict const s1 = ((tp_ftw_str*)v1)->str;
-  const char *restrict const s2 = ((tp_ftw_str*)v2)->str;
-  return -strcmp(s1, s2);
-}
-
-static void tp_ftw(char *restrict const dir, unsigned dirlen, int rsrc,
-  void (*fn)(const char *restrict const dir, unsigned dirlen, tp_ftw_str *files, unsigned count)
-  )
-{
-  DIR *d;
-  unsigned num_file_names = 0;
-  unsigned max_file_names = 0;
-  tp_ftw_str *file_names = NULL;
-  unsigned num_dir_names = 0;
-  unsigned max_dir_names = 0;
-  tp_ftw_str *dir_names = NULL;
-  int d_namlen;
-  int add_rsrc;
-
-  dir[dirlen++] = '/';
-  dir[dirlen] = '\0';
-//printf("processing directory %s %d\n", dir, dirlen);
-  /* Open the directory: */
-  d = opendir(dir);
-  if (!d)
-    return;
-
-  for(;;)
-    {
-      struct dirent * f = readdir(d);
-      int filetype = TP_FTW_UNKNOWN;
-
-      if(!f)
-        break;
-      if(f->d_name[0]=='.')
-        continue;
-// Linux and BSD can often provide file type info w/o the stat() call
-#ifdef DT_UNKNOWN
-      switch(f->d_type)
-        {
-          default:
-            continue;
-          case DT_REG:
-            if(!rsrc)  // if maybe opening resource files, need st_size
-              filetype = TP_FTW_NORMAL;
-            break;
-          case DT_DIR:
-            filetype = TP_FTW_DIRECTORY;
-            break;
-          case DT_UNKNOWN:
-          case DT_LNK:
-            ;
-        }
-#else
-#warning Failed to see DT_UNKNOWN
-#endif
-
-#if defined(_DIRENT_HAVE_D_NAMLEN) || defined(__APPLE__) || defined(__OpenBSD__) || defined(__NetBSD__) || defined(__FreeBSD__)
-      d_namlen = f->d_namlen;
-#else
-      d_namlen = strlen(f->d_name);
-#endif
-      add_rsrc = 0;
-
-      if(filetype == TP_FTW_UNKNOWN)
-        {
-          struct stat sbuf;
-          memcpy(dir+dirlen, f->d_name, d_namlen+1);
-          if(stat(dir, &sbuf))
-            continue;  // oh well... try the next one
-          if(S_ISDIR(sbuf.st_mode))
-            filetype = TP_FTW_DIRECTORY;
-          else if(S_ISREG(sbuf.st_mode))
-            {
-              filetype = TP_FTW_NORMAL;
-              if(rsrc && !sbuf.st_size)
-                add_rsrc = 5;  // 5 is length of "/rsrc"
-            }
-          else
-            continue;  // was a device file or somesuch
-        }
-      if(filetype==TP_FTW_NORMAL)
-        {
-          char *cp;
-
-          if(num_file_names==max_file_names)
-            {
-              max_file_names = max_file_names * 5 / 4 + 30;
-              file_names = realloc(file_names, max_file_names * sizeof *file_names);
-            }
-          cp = malloc(d_namlen + add_rsrc + 1);
-          memcpy(cp, f->d_name, d_namlen);
-          if(add_rsrc)
-            memcpy(cp+d_namlen, "/rsrc", 6);
-          else
-            cp[d_namlen] = '\0';
-          file_names[num_file_names].str = cp;
-          file_names[num_file_names].len = d_namlen;
-          num_file_names++;
-        }
-      if(filetype==TP_FTW_DIRECTORY)
-        {
-	  char * cp;
-          if(num_dir_names==max_dir_names)
-            {
-              max_dir_names = max_dir_names * 5 / 4 + 3;
-              dir_names = realloc(dir_names, max_dir_names * sizeof *dir_names);
-            }
-          cp = malloc(d_namlen + 1);
-          memcpy(cp, f->d_name, d_namlen + 1);
-          dir_names[num_dir_names].str = cp;
-          dir_names[num_dir_names].len = d_namlen;
-          num_dir_names++;
-        }
-    }
-
-  closedir(d);
-  show_progress_bar(screen);
-  dir[dirlen] = '\0';   // repair it (clobbered for stat() call above)
-
-  if(file_names)
-    {
-// let callee sort and keep the string
-#if 0
-      qsort(file_names, num_file_names, sizeof *file_names, compare_ftw_str);
-      while(num_file_names--)
-        {
-          free(file_names[num_file_names].str);
-        }
-      free(file_names);
-#else
-      fn(dir, dirlen, file_names, num_file_names);
-#endif
-    }
-
-  if(dir_names)
-    {
-      qsort(dir_names, num_dir_names, sizeof *dir_names, compare_ftw_str);
-      while(num_dir_names--)
-        {
-          memcpy(dir+dirlen, dir_names[num_dir_names].str, dir_names[num_dir_names].len+1);
-          tp_ftw(dir, dirlen+dir_names[num_dir_names].len, rsrc, fn);
-          free(dir_names[num_dir_names].str);
-        }
-      free(dir_names);
-    }
-}
-
-
-///////////////// directory walking callers and callbacks //////////////////
-
-static void loadfont_callback(const char *restrict const dir, unsigned dirlen, tp_ftw_str *files, unsigned i)
-{
-  dirlen = dirlen;
-
-  while(i--)
-    {
-      int loadable = 0;
-      const char *restrict const cp = strchr(files[i].str, '.');
-      show_progress_bar(screen);
-      if(cp)
-        {
-          // need gcc 3.4 for the restrict in this location
-          const char * /*restrict*/ const suffixes[] = {"ttc", "dfont", "pfa", "pfb", "otf", "ttf",};
-          int j = sizeof suffixes / sizeof suffixes[0];
-          while(j--)
-            {
-              // only check part, because of potential .gz or .bz2 suffix
-              if(!strncasecmp(cp+1,suffixes[j],strlen(suffixes[j])))
-                {
-                  loadable = 1;
-                  break;
-                }
-            }
-        }
-      if(!loadable)
-        {
-          if(strcasestr(files[i].str, "/rsrc"))
-            loadable = 1;
-        }
-      // Loadable: TrueType (.ttf), OpenType (.otf), Type1 (.pfa and .pfb),
-      // and various useless bitmap fonts. Compressed files (with .gz or .bz2)
-      // should also work. A *.dfont is pretty much a Mac resource fork in a normal
-      // file, and may load with some library versions.
-      if (loadable)
-        {
-          char fname[512];
-          TTF_Font *font;
-          snprintf(fname, sizeof fname, "%s/%s", dir, files[i].str);
-//printf("Loading font: %s\n", fname);
-          font = TTF_OpenFont(fname, text_sizes[text_size]);
-          if(font)
-            {
-              const char *restrict const family = TTF_FontFaceFamilyName(font);
-              const char *restrict const style = TTF_FontFaceStyleName(font);
-
-
-#ifdef DEBUG
-              int numfaces = TTF_FontFaces(font);
-              if (numfaces != 1)
-                printf("Found %d faces in %s, %s, %s\n", numfaces, files[i].str, family, style);
-#endif
-
-              // First, the blacklist. We list font families that can crash Tux Paint
-              // via bugs in the SDL_ttf library. We also test fonts to be sure that
-              // they have both uppercase and lowercase letters. Note that we do not
-              // test for "Aa", because it is OK if uppercase and lowercase are the
-              // same. (but not nice -- such fonts get a low score later)
-              //
-              // We test the alphabet twice, to help with translation. If the users
-              // will be unable to type ASCII letters, then both lines should be
-              // translated. Otherwise, only Line X should be translated and the
-              // ASCII-only fonts should be given bad scores in the scoring code below.
-              // (the best scores going to fonts that support both)
-              if
-                (
-                  strcmp("Zapfino",family) && strcmp("Elvish Ring NFI",family)
-                  &&
-                  (
-                  (charset_works(font, gettext("qx")) && charset_works(font, gettext("QX")))  // Line X
-                  ||
-                  (charset_works(font, gettext("qy")) && charset_works(font, gettext("QY")))  // Line Y
-                  )
-                )
-                {
-                  if (num_font_styles==num_font_styles_max)
-                    {
-                      num_font_styles_max = num_font_styles_max * 5 / 4 + 30;
-                      user_font_styles = realloc(user_font_styles, num_font_styles_max * sizeof *user_font_styles);
-                    }
-                  user_font_styles[num_font_styles] = malloc(sizeof *user_font_styles[num_font_styles]);
-                  user_font_styles[num_font_styles]->directory = strdup(dir);
-                  user_font_styles[num_font_styles]->filename = files[i].str; // steal it (mark NULL below)
-                  user_font_styles[num_font_styles]->family = strdup(family);
-                  user_font_styles[num_font_styles]->style = strdup(style);
-                  // Now we score fonts to ensure that the best ones will be placed at
-                  // the top of the list. The user will see them first. This sorting is
-                  // especially important for users who have scroll buttons disabled.
-                  // Translators should do whatever is needed to put crummy fonts last.
-                  user_font_styles[num_font_styles]->score  = charset_works(font, gettext("oO"));  // distinct uppercase and lowercase
-                  user_font_styles[num_font_styles]->score += charset_works(font, gettext("`\%_@$~#{}<>^&*"));  // uncommon punctuation
-                  user_font_styles[num_font_styles]->score += charset_works(font, gettext(",.?!"));  // common punctuation
-                  user_font_styles[num_font_styles]->score += charset_works(font, gettext("017"));  // digits
-                  user_font_styles[num_font_styles]->score += charset_works(font, gettext("O0"));  // distinct circle-like characters
-                  user_font_styles[num_font_styles]->score += charset_works(font, gettext("1Il|")); // distinct line-like characters
-                  num_font_styles++;
-//printf("Accepted: %s, %s, %s, score(%d)\n", files[i].str, family, style, user_font_styles[num_font_styles]->score);
-                  files[i].str = NULL;  // so free() won't crash -- we stole the memory
-                }
-              else
-                {
-#if 0
-// THREADED_FONTS
-                  printf("Font is too defective: %s, %s, %s\n", files[i].str, family, style);
-#endif
-                }
-              TTF_CloseFont(font);
-            }
-          else
-            {
-#if 0
-// THREADED_FONTS
-              printf("could not open %s\n", files[i].str);
-#endif
-            }
-        }
-      free(files[i].str);
-    }
-  free(files);
-}
-
-
-
-static void loadfonts(const char * const dir)
-{
-  char buf[TP_FTW_PATHSIZE];
-  unsigned dirlen = strlen(dir);
-  
-  memcpy(buf,dir,dirlen);
-  tp_ftw(buf, dirlen, 1, loadfont_callback);
-}  
-
-
-static void loadbrush_callback(const char *restrict const dir, unsigned dirlen, tp_ftw_str *files, unsigned i)
+static void loadbrush_callback(SDL_Surface * screen, const char *restrict const dir, unsigned dirlen, tp_ftw_str *files, unsigned i)
 {
   dirlen = dirlen;
 
@@ -5996,12 +4935,13 @@ static void loadbrush_callback(const char *restrict const dir, unsigned dirlen, 
 
 
 
-static void load_brush_dir(const char * const dir)
+static void load_brush_dir(SDL_Surface * screen, const char * const dir)
 {
   char buf[TP_FTW_PATHSIZE];
   unsigned dirlen = strlen(dir);
+
   memcpy(buf,dir,dirlen);
-  tp_ftw(buf, dirlen, 0, loadbrush_callback);
+  tp_ftw(screen, buf, dirlen, 0, loadbrush_callback);
 }
 
 SDL_Surface * mirror_surface(SDL_Surface *s)
@@ -6292,7 +5232,7 @@ static void get_stamp_thumb(stamp_type *sd)
 }
 
 
-static void loadstamp_callback(const char *restrict const dir, unsigned dirlen, tp_ftw_str *files, unsigned i)
+static void loadstamp_callback(SDL_Surface * screen, const char *restrict const dir, unsigned dirlen, tp_ftw_str *files, unsigned i)
 {
   qsort(files, i, sizeof *files, compare_ftw_str);
   while(i--)
@@ -6323,30 +5263,30 @@ static void loadstamp_callback(const char *restrict const dir, unsigned dirlen, 
 
 
 
-static void load_stamp_dir(const char * const dir)
+static void load_stamp_dir(SDL_Surface * screen, const char * const dir)
 {
   char buf[TP_FTW_PATHSIZE];
   unsigned dirlen = strlen(dir);
   memcpy(buf,dir,dirlen);
-  tp_ftw(buf, dirlen, 0, loadstamp_callback);
+  tp_ftw(screen, buf, dirlen, 0, loadstamp_callback);
 }
 
 
-static void load_stamps(void)
+static void load_stamps(SDL_Surface * screen)
 {
   char * homedirdir = get_fname("stamps");
 
   default_stamp_size = compute_default_scale_factor(1.0);
 
-  load_stamp_dir(homedirdir);
-  load_stamp_dir(DATA_PREFIX "stamps");
+  load_stamp_dir(screen, homedirdir);
+  load_stamp_dir(screen, DATA_PREFIX "stamps");
 #ifdef __APPLE__
-  load_stamp_dir("/Library/Application Support/TuxPaint/stamps");
+  load_stamp_dir(screen, "/Library/Application Support/TuxPaint/stamps");
 #endif
 #ifdef WIN32
   free(homedirdir);
   homedirdir = get_fname("data/stamps");
-  load_stamp_dir(homedirdir);
+  load_stamp_dir(screen, homedirdir);
 #endif
 
   if (num_stamps == 0)
@@ -6359,368 +5299,6 @@ static void load_stamps(void)
   free(homedirdir);
 }
 
-
-
-static int load_user_fonts(void *vp)
-{
-  char *homedirdir;
-
-  (void)vp; // junk passed by threading library
-
-  loadfonts(DATA_PREFIX "fonts");
-
-  if (!no_system_fonts)
-  {
-#ifdef WIN32
-    homedirdir = GetSystemFontDir();
-    loadfonts(homedirdir);
-    free(homedirdir);
-#elif defined(__BEOS__)
-    loadfonts("/boot/home/config/font/ttffonts");
-    loadfonts("/usr/share/fonts");
-    loadfonts("/usr/X11R6/lib/X11/fonts");
-#elif defined(__APPLE__)
-    loadfonts("/System/Library/Fonts");
-    loadfonts("/Library/Fonts");
-    loadfonts(macosx.fontsPath);
-    loadfonts("/usr/share/fonts");
-    loadfonts("/usr/X11R6/lib/X11/fonts");
-#elif defined(__sun__)
-    loadfonts("/usr/openwin/lib/X11/fonts");
-    loadfonts("/usr/share/fonts");
-    loadfonts("/usr/X11R6/lib/X11/fonts");
-#else
-    loadfonts("/usr/share/feh/fonts");
-    loadfonts("/usr/share/fonts");
-    loadfonts("/usr/X11R6/lib/X11/fonts");
-    loadfonts("/usr/share/texmf/fonts");
-    loadfonts("/usr/share/grace/fonts/type1");
-    loadfonts("/usr/share/hatman/fonts");
-    loadfonts("/usr/share/icewm/themes/jim-mac");
-    loadfonts("/usr/share/vlc/skins2/fonts");
-    loadfonts("/usr/share/xplanet/fonts");
-#endif
-  }
-
-  homedirdir = get_fname("fonts");
-  loadfonts(homedirdir);
-  free(homedirdir);
-#ifdef WIN32
-  homedirdir = get_fname("data/fonts");
-  loadfonts(homedirdir);
-  free(homedirdir);
-#endif
-
-  groupfonts();
-
-  font_thread_done = 1;
-  waiting_for_fonts = 0;
-  // FIXME: need a memory barrier here
-  return 0; // useless, wanted by threading library
-}
-
-
-#ifdef FORKED_FONTS
-
-#include <sys/socket.h>
-#include <unistd.h>
-#include <fcntl.h>
-#include <sys/poll.h>
-#include <sys/wait.h>
-
-#ifdef _POSIX_PRIORITY_SCHEDULING
-#include <sched.h>
-#else
-#define sched_yield()
-#endif
-
-#ifdef __linux__
-#include <sys/prctl.h>
-#else
-#define prctl(o,a1)
-#define PR_SET_PDEATHSIG 0
-#endif
-
-static void reliable_write(int fd, const void *buf, size_t count)
-{
-  struct pollfd p;
-  do
-    {
-      ssize_t rc = write(fd,buf,count);
-      if(rc==-1)
-        {
-          switch(errno)
-            {
-              default:
-                return;
-              case EAGAIN:
-              case ENOSPC:
-                ; // satisfy a C syntax abomination
-                p = (struct pollfd){fd, POLLOUT, 0};
-                poll(&p, 1, -1);  // try not to burn CPU time
-                // FALL THROUGH
-              case EINTR:
-                continue;
-            }
-        }
-      buf += rc;
-      count -= rc;
-    } while(count);
-}
-
-
-static void reliable_read(int fd, void *buf, size_t count)
-{
-  struct pollfd p;
-  do
-    {
-      ssize_t rc = read(fd,buf,count);
-      if(rc==-1)
-        {
-          switch(errno)
-            {
-              default:
-                return;
-              case EAGAIN:
-                ; // satisfy a C syntax abomination
-                p = (struct pollfd){fd, POLLIN, 0};
-                poll(&p, 1, -1);  // try not to burn CPU time
-                // FALL THROUGH
-              case EINTR:
-                continue;
-            }
-        }
-      if(rc==0)
-        break;  // EOF. Better not happen before the end!
-      buf += rc;
-      count -= rc;
-    } while(count);
-}
-
-
-static void run_font_scanner(void)
-{
-  int sv[2];
-  int size, i;
-  char * buf, * walk;
-
-  if(socketpair(AF_UNIX, SOCK_STREAM, 0, sv))
-    exit(42);
-  font_scanner_pid = fork();
-  if(font_scanner_pid)
-    {
-      // parent (or error -- but we're screwed in that case)
-      font_socket_fd = sv[0];
-      close(sv[1]);
-      return;
-    }
-  nice(42);       // be nice, letting the main thread get the CPU
-  sched_yield();     // try to let the parent run right now
-  prctl(PR_SET_PDEATHSIG, 9);    // get killed if parent exits
-  font_socket_fd = sv[1];
-  close(sv[0]);
-  progress_bar_disabled = 1;
-  reliable_read(font_socket_fd, &no_system_fonts, sizeof no_system_fonts);
-  sched_yield();     // try to let the parent run right now
-  SDL_Init(SDL_INIT_NOPARACHUTE);
-  TTF_Init();
-  load_user_fonts(NULL);
-
-  size = 0;
-  i = num_font_families;
-  while(i--)
-    {
-      char *s;
-      s = user_font_families[i]->directory;
-      if(s) size += strlen(s);
-      s = user_font_families[i]->family;
-      if(s) size += strlen(s);
-      s = user_font_families[i]->filename[0];
-      if(s) size += strlen(s);
-      s = user_font_families[i]->filename[1];
-      if(s) size += strlen(s);
-      s = user_font_families[i]->filename[2];
-      if(s) size += strlen(s);
-      s = user_font_families[i]->filename[3];
-      if(s) size += strlen(s);
-      size += 6;  // for '\0' on each of the above
-    }
-  size += 2;  // for 2-byte font count
-  buf = malloc(size);
-  walk = buf;
-#ifdef DEBUG
-  printf("Sending %u bytes with %u families.\n", size, num_font_families);
-#endif
-  *walk++ = num_font_families & 0xffu;
-  *walk++ = num_font_families >> 8u;
-  i = num_font_families;
-  while(i--)
-    {
-      int len;
-      char *s;
-
-      s = user_font_families[i]->directory;
-      if(s)
-        {
-          len = strlen(s);
-          memcpy(walk, s, len);
-          walk += len;
-        }
-      *walk++ = '\0';
-      
-      s = user_font_families[i]->family;
-      if(s)
-        {
-          len = strlen(s);
-          memcpy(walk, s, len);
-          walk += len;
-        }
-      *walk++ = '\0';
-      
-      s = user_font_families[i]->filename[0];
-      if(s)
-        {
-          len = strlen(s);
-          memcpy(walk, s, len);
-          walk += len;
-        }
-      *walk++ = '\0';
-      
-      s = user_font_families[i]->filename[1];
-      if(s)
-        {
-          len = strlen(s);
-          memcpy(walk, s, len);
-          walk += len;
-        }
-      *walk++ = '\0';
-      
-      s = user_font_families[i]->filename[2];
-      if(s)
-        {
-          len = strlen(s);
-          memcpy(walk, s, len);
-          walk += len;
-        }
-      *walk++ = '\0';
-      
-      s = user_font_families[i]->filename[3];
-      if(s)
-        {
-          len = strlen(s);
-          memcpy(walk, s, len);
-          walk += len;
-        }
-      *walk++ = '\0';
-    }
-  reliable_write(font_socket_fd, buf, size);
-  exit(0);
-}
-
-static void receive_some_font_info(void)
-{
-  char *buf = NULL;
-  unsigned buf_size = 0;
-  unsigned buf_fill = 0;
-  ssize_t rc;
-  struct pollfd p;
-  int status;
-  /* unsigned */ char *walk;
-  unsigned i;
-  family_info *fip;
-
-  fcntl(font_socket_fd, F_SETFL, O_NONBLOCK);
-  for(;;)
-    {
-      if(buf_size <= buf_fill*9/8+128)
-        {
-          buf_size = buf_size*5/4+256;
-          buf = realloc(buf, buf_size);
-        }
-      rc = read(font_socket_fd, buf+buf_fill, buf_size-buf_fill);
-#ifdef DEBUG
-printf("read: fd=%d buf_fill=%u buf_size=%u rc=%ld\n", font_socket_fd, buf_fill, buf_size, rc);
-#endif
-
-      if(rc==-1)
-        {
-          switch(errno)
-            {
-              default:
-                return;
-              case EAGAIN:
-                ; // satisfy a C syntax abomination
-                p = (struct pollfd){font_socket_fd, POLLIN, 0};
-                show_progress_bar(screen);
-                poll(&p, 1, 29);  // try not to burn CPU time
-                continue;
-              case EINTR:
-                continue;
-            }
-        }
-      buf_fill += rc;
-      if(!rc || font_thread_aborted)
-        break;
-    }
-  close(font_socket_fd);
-
-  waitpid(font_scanner_pid,&status,0);
-  if(WIFSIGNALED(status) || font_thread_aborted)
-    {
-      printf("child killed by signal %u\n", WTERMSIG(status));
-      user_font_families = NULL;
-      num_font_families = 0;
-      font_thread_done = 1;
-      
-      return;
-    }
-
-  show_progress_bar(screen);
-  walk = buf;
-  num_font_families = *walk++;
-  num_font_families += *walk++ << 8u;
-#ifdef DEBUG
-  printf("Got %u bytes with %u families.\n", buf_fill, num_font_families);
-#endif
-  user_font_families = malloc(num_font_families * sizeof *user_font_families);
-  fip = malloc(num_font_families * sizeof **user_font_families);
-  i = num_font_families;
-  while(i--)
-    {
-      unsigned len;
-      user_font_families[i] = fip+i;
-
-      len = strlen(walk);
-      user_font_families[i]->directory = len ? walk : NULL;
-      walk += len + 1;
-
-      len = strlen(walk);
-      user_font_families[i]->family = len ? walk : NULL;
-      walk += len + 1;
-
-      len = strlen(walk);
-      user_font_families[i]->filename[0] = len ? walk : NULL;
-      walk += len + 1;
-
-      len = strlen(walk);
-      user_font_families[i]->filename[1] = len ? walk : NULL;
-      walk += len + 1;
-
-      len = strlen(walk);
-      user_font_families[i]->filename[2] = len ? walk : NULL;
-      walk += len + 1;
-
-      len = strlen(walk);
-      user_font_families[i]->filename[3] = len ? walk : NULL;
-      walk += len + 1;
-
-      user_font_families[i]->handle = NULL;
-      
-      // score left uninitialized
-    }
-  font_thread_done = 1;
-}
-#endif
 
 ////////////////////////////////////////////////////////////////////////////////
 /* Setup: */
@@ -7795,13 +6373,13 @@ static void setup(int argc, char * argv[])
 
 
   /* Load brushes: */
-  load_brush_dir(DATA_PREFIX "brushes");
+  load_brush_dir(screen, DATA_PREFIX "brushes");
   homedirdir = get_fname("brushes");
-  load_brush_dir(homedirdir);
+  load_brush_dir(screen, homedirdir);
 #ifdef WIN32
   free(homedirdir);
   homedirdir = get_fname("data/brushes");
-  load_brush_dir(homedirdir);
+  load_brush_dir(screen, homedirdir);
 #endif
 
   if (num_brushes == 0)
@@ -7863,7 +6441,7 @@ static void setup(int argc, char * argv[])
 #endif
 
   if (!dont_load_stamps)
-    load_stamps();
+    load_stamps(screen);
 
 
   /* Load magic icons: */
@@ -11103,95 +9681,6 @@ static void save_current(void)
     }
 
   free(fname);
-}
-
-
-/* The filename for the current image: */
-
-static char * get_fname(const char * const name)
-{
-  char f[512];
-  const char * tux_settings_dir;
-
-
-  /* Where is the user's data directory?
-     This is where their saved files are stored,
-     local fonts, brushes and stamps can be found,
-     and where the "current_id.txt" file is saved */
-
-#ifdef WIN32
-  /* Windows predefines "savedir" as:
-     "C:\Documents and Settings\%USERNAME%\Application Data\TuxPaint"
-     though it may get overridden with "--savedir" option */
-
-  snprintf(f, sizeof(f), "%s/%s", savedir, name);
-
-#elif __BEOS__
-  /* BeOS similarly predefines "savedir" as "./userdata"... */
- 
-  if (*name == '\0')
-    strcpy(f, savedir);
-  else
-    snprintf(f, sizeof(f), "%s/%s", savedir, name);
-
-#else
-
-#ifdef __APPLE__
-  /* Macintosh: It's under ~/Library/Application Support/TuxPaint */
-  
-  tux_settings_dir = "Library/Application Support/TuxPaint";
-#else
-  /* Linux & Unix: It's under ~/.tuxpaint */
-  
-  tux_settings_dir = ".tuxpaint";
-#endif
- 
-
-  /* Put together home directory path + settings directory + filename... */
-  
-  if (savedir == NULL)
-    {
-      /* Save directory not overridden: */
-	 
-      if (getenv("HOME") != NULL)
-	{
-	  if (*name == '\0')
-	    {
-	      /* (Some mkdir()'s don't like trailing slashes) */
-
-	      snprintf(f, sizeof(f), "%s/%s", getenv("HOME"), tux_settings_dir);
-	    }
-	  else
-	    {
-	      snprintf(f, sizeof(f), "%s/%s/%s",
-		       getenv("HOME"), tux_settings_dir, name);
-	    }
-	}
-      else
-	{
-	  /* WOAH!  Don't know where HOME directory is!  Last resort, use '.'! */
-
-	  strcpy(f, name);
-	}
-    }
-  else
-    {
-      /* User had overridden save directory with "--savedir" option: */
-
-      if (*name != '\0')
-	{
-	  /* (Some mkdir()'s don't like trailing slashes) */
-
-	  snprintf(f, sizeof(f), "%s/%s", savedir, name);
-	}
-      else
-	{
-	  snprintf(f, sizeof(f), "%s", savedir);
-	}
-    }
-#endif
-
-  return strdup(f);
 }
 
 

@@ -28,6 +28,7 @@
 #include <direct.h>
 #include "SDL_syswm.h"
 #include "win32_print.h"
+#include "debug.h"
 
 
 #define NOREF(x)        ((x)=(x))

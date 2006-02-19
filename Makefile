@@ -7,7 +7,7 @@
 # bill@newbreedsoftware.com
 # http://www.newbreedsoftware.com/tuxpaint/
 
-# June 14, 2002 - February 17, 2006
+# June 14, 2002 - February 18, 2006
 
 
 # The version number, for release:
@@ -951,16 +951,14 @@ install-man:
 # Build the program!
 
 tuxpaint:	obj/tuxpaint.o obj/i18n.o obj/cursor.o obj/pixels.o \
-		obj/floodfill.o obj/rgblinear.o obj/playsound.o \
-		obj/progressbar.o \
+		obj/floodfill.o obj/rgblinear.o obj/playsound.o obj/fonts.o \
+		obj/progressbar.o obj/dirwalk.o obj/get_fname.o \
 		$(HQXX_O) $(ARCH_LIBS)
 	@echo
 	@echo "...Linking Tux Paint..."
 	@$(CC) $(CFLAGS) $(DEBUG_FLAGS) $(SDL_CFLAGS) $(DEFS) \
 		-o tuxpaint \
-		obj/tuxpaint.o obj/i18n.o obj/cursor.o obj/pixels.o \
-		obj/floodfill.o obj/rgblinear.o obj/playsound.o \
-		obj/progressbar.o \
+		$^ \
 		$(HQXX_O) \
 		$(ARCH_LIBS) $(SDL_LIBS) \
 		-lm $(ARCH_LINKS)
@@ -972,9 +970,9 @@ tuxpaint:	obj/tuxpaint.o obj/i18n.o obj/cursor.o obj/pixels.o \
 
 obj/tuxpaint.o:	src/tuxpaint.c obj \
 		src/i18n.h src/cursor.h src/pixels.h \
-		src/floodfill.h src/rgblinear.h src/playsound.h \
-		src/progressbar.h \
-		src/compiler.h \
+		src/floodfill.h src/rgblinear.h src/playsound.h src/fonts.h \
+		src/progressbar.h src/dirwalk.h src/get_fname.h \
+		src/compiler.h src/debug.h \
 		src/tools.h src/titles.h src/colors.h src/shapes.h \
 		src/magic.h src/sounds.h src/tip_tux.h src/great.h \
 		$(HQXX_H) \
@@ -997,46 +995,69 @@ obj/tuxpaint.o:	src/tuxpaint.c obj \
 	@$(CC) $(CFLAGS) $(DEBUG_FLAGS) $(SDL_CFLAGS) $(MOUSE_CFLAGS) $(DEFS) \
 		-c src/tuxpaint.c -o obj/tuxpaint.o
 
-obj/i18n.o:	src/i18n.c src/i18n.h
+obj/i18n.o:	src/i18n.c src/i18n.h src/debug.h
 	@echo
 	@echo "...Compiling i18n support..."
 	@$(CC) $(CFLAGS) $(DEBUG_FLAGS) $(DEFS) \
 		-c src/i18n.c -o obj/i18n.o
 
-obj/cursor.o:	src/cursor.c src/cursor.h
+obj/get_fname.o:	src/get_fname.c src/get_fname.h src/debug.h
+	@echo
+	@echo "...Compiling filename support..."
+	@$(CC) $(CFLAGS) $(DEBUG_FLAGS) $(DEFS) \
+		-c src/get_fname.c -o obj/get_fname.o
+
+obj/fonts.o:	src/fonts.c src/fonts.h src/dirwalk.h src/progressbar.h \
+		src/get_fname.h src/debug.h
+	@echo
+	@echo "...Compiling font support..."
+	@$(CC) $(CFLAGS) $(DEBUG_FLAGS) $(SDL_CFLAGS) $(DEFS) \
+		-c src/fonts.c -o obj/fonts.o
+
+obj/dirwalk.o:	src/dirwalk.c src/dirwalk.h src/progressbar.h src/fonts.h \
+		src/debug.h
+	@echo
+	@echo "...Compiling directory-walking support..."
+	@$(CC) $(CFLAGS) $(DEBUG_FLAGS) $(SDL_CFLAGS) $(DEFS) \
+		-c src/dirwalk.c -o obj/dirwalk.o
+
+obj/cursor.o:	src/cursor.c src/cursor.h src/debug.h
 	@echo
 	@echo "...Compiling cursor support..."
 	@$(CC) $(CFLAGS) $(DEBUG_FLAGS) $(SDL_CFLAGS) $(MOUSE_CFLAGS) $(DEFS) \
 		-c src/cursor.c -o obj/cursor.o
 
-obj/pixels.o:	src/pixels.c src/pixels.h src/compiler.h
+obj/pixels.o:	src/pixels.c src/pixels.h src/compiler.h src/debug.h
 	@echo
 	@echo "...Compiling pixel functions..."
 	@$(CC) $(CFLAGS) $(DEBUG_FLAGS) $(SDL_CFLAGS) $(DEFS) \
 		-c src/pixels.c -o obj/pixels.o
 
 obj/floodfill.o:	src/floodfill.c src/floodfill.h \
-			src/compiler.h src/rgblinear.h \
-			src/playsound.h src/progressbar.h \
-			src/sounds.h
+			src/rgblinear.h \
+			src/playsound.h src/progressbar.h src/sounds.h \
+			src/compiler.h src/debug.h
 	@echo
 	@echo "...Compiling floodfill functions..."
 	@$(CC) $(CFLAGS) $(DEBUG_FLAGS) $(SDL_CFLAGS) $(DEFS) \
 		-c src/floodfill.c -o obj/floodfill.o
 
-obj/playsound.o:	src/playsound.c src/playsound.h src/compiler.h
+obj/playsound.o:	src/playsound.c src/playsound.h \
+			src/compiler.h src/debug.h
 	@echo
 	@echo "...Compiling sound playback functions..."
 	@$(CC) $(CFLAGS) $(DEBUG_FLAGS) $(SDL_CFLAGS) $(DEFS) \
 		-c src/playsound.c -o obj/playsound.o
 
-obj/progressbar.o:	src/progressbar.c src/progressbar.h src/compiler.h
+obj/progressbar.o:	src/progressbar.c src/progressbar.h \
+			src/compiler.h src/debug.h
 	@echo
 	@echo "...Compiling progress bar functions..."
 	@$(CC) $(CFLAGS) $(DEBUG_FLAGS) $(SDL_CFLAGS) $(DEFS) \
 		-c src/progressbar.c -o obj/progressbar.o
 
-obj/rgblinear.o:	src/rgblinear.c src/rgblinear.h src/compiler.h
+obj/rgblinear.o:	src/rgblinear.c src/rgblinear.h \
+			src/compiler.h src/debug.h
 	@echo
 	@echo "...Compiling RGB to Linear functions..."
 	@$(CC) $(CFLAGS) $(DEBUG_FLAGS) $(SDL_CFLAGS) $(DEFS) \
@@ -1049,7 +1070,7 @@ obj/BeOS_Print.o:	src/BeOS_Print.cpp obj src/BeOS_print.h
 	@$(CC) $(CFLAGS) $(DEBUG_FLAGS) $(SDL_CFLAGS) $(DEFS) \
 		-c src/BeOS_print.cpp -o obj/BeOS_print.o
 
-obj/win32_print.o:	src/win32_print.c obj src/win32_print.h
+obj/win32_print.o:	src/win32_print.c obj src/win32_print.h src/debug.h
 	@echo
 	@echo "...Compiling win32 print support..."
 	@$(CC) $(CFLAGS) $(DEBUG_FLAGS) $(SDL_CFLAGS) $(DEFS) \

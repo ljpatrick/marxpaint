@@ -32,6 +32,7 @@
 #include <string.h>
 #include <libintl.h>
 #include "i18n.h"
+#include "debug.h"
 
 
 /* Globals: */

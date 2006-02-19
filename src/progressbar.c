@@ -29,12 +29,10 @@
 
 
 #include "progressbar.h"
+#include "debug.h"
 
 SDL_Surface * img_progress;
 int progress_bar_disabled, prog_bar_ctr;
-
-static void eat_sdl_events(void);
-
 
 void show_progress_bar(SDL_Surface * screen)
 {

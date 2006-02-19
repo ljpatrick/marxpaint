@@ -35,6 +35,7 @@
 #include <assert.h>
 
 #include "win32_dirent.h"
+#include "debug.h"
 
 DIR *opendir( const char *pSpec )
 {

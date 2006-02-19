@@ -29,6 +29,7 @@
 
 #include "pixels.h"
 #include "compiler.h"
+#include "debug.h"
 
 /* Draw a single pixel into the surface: */
 void putpixel8(SDL_Surface * surface, int x, int y, Uint32 pixel)

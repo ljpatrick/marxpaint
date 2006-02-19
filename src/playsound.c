@@ -1,4 +1,5 @@
 #include "playsound.h"
+#include "debug.h"
 
 #ifndef NOSOUND
 Mix_Chunk * sounds[NUM_SOUNDS];
