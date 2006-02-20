@@ -23,7 +23,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  June 14, 2002 - February 18, 2006
+  June 14, 2002 - February 20, 2006
   $Id$
 */
 
@@ -100,7 +100,7 @@ void do_flood_fill(SDL_Surface * screen, SDL_Surface * canvas, int x, int y, Uin
   if ((prog_anim % 4) == 0)
     {
       show_progress_bar(screen);
-      playsound(0, SND_BUBBLE, 0);
+      playsound(screen, 0, SND_BUBBLE, 0, x, SNDDIST_NEAR);
     }
 
 

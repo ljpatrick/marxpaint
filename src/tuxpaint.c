@@ -22,7 +22,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
   
-  June 14, 2002 - February 19, 2006
+  June 14, 2002 - February 20, 2006
   $Id$
 */
 
@@ -1256,7 +1256,7 @@ int main(int argc, char * argv[])
   update_screen_rect(&dest);
 
   do_setcursor(cursor_arrow);
-  playsound(0, SND_HARP, 1);
+  playsound(screen, 0, SND_HARP, 1, SNDPOS_CENTER, SNDDIST_NEAR);
   do_wait(50);  // about 5 seconds
 
 
@@ -1598,7 +1598,7 @@ static void mainloop(void)
 		      file_id[0] = '\0';
 		      starter_id[0] = '\0';
 		      
-		      playsound(1, SND_HARP, 1);
+		      playsound(screen, 1, SND_HARP, 1, SNDPOS_CENTER, SNDDIST_NEAR);
 		    }
 		  else
 		    {
@@ -1648,7 +1648,7 @@ static void mainloop(void)
 			    {
 			      texttool_len--;
 			      texttool_str[texttool_len] = 0;
-			      playsound(0, SND_KEYCLICK, 0);
+			      playsound(screen, 0, SND_KEYCLICK, 0, SNDPOS_CENTER, SNDDIST_NEAR);
 
 			      do_render_cur_text(0);
 			    }
@@ -1670,7 +1670,7 @@ static void mainloop(void)
 			  cursor_x = cursor_left;
 			  cursor_y = min(cursor_y+font_height, canvas->h-font_height);
 	    
-			  playsound(0, SND_RETURN, 1);
+			  playsound(screen, 0, SND_RETURN, 1, SNDPOS_RIGHT, SNDDIST_NEAR);
 			}
 		      else if (key_down == SDLK_TAB)
 		        {
@@ -1703,11 +1703,14 @@ static void mainloop(void)
 			      if (cursor_x + old_cursor_textwidth <= canvas->w - 50 &&
 				  cursor_x + cursor_textwidth > canvas->w - 50)
 			      {
-				playsound(0, SND_KEYCLICKRING, 1);
+				playsound(screen, 0, SND_KEYCLICKRING, 1, SNDPOS_RIGHT, SNDDIST_NEAR);
 			      }
 			      else
 			      {
-				playsound(0, SND_KEYCLICK, 0);
+				/* FIXME: Might be fun to position the
+				   sound based on keyboard layout...? */
+
+				playsound(screen, 0, SND_KEYCLICK, 0, SNDPOS_CENTER, SNDDIST_NEAR);
 			      }
 			    }
 			}
@@ -1778,7 +1781,7 @@ static void mainloop(void)
 		      draw_toolbar();
 		      update_screen_rect(&r_tools);
 		      
-		      playsound(1, SND_CLICK, 0);
+		      playsound(screen, 1, SND_CLICK, 0, SNDPOS_LEFT, SNDDIST_NEAR);
 
                       // FIXME: this "if" is just plain gross
 		      if(cur_tool != TOOL_TEXT)
@@ -1990,7 +1993,7 @@ static void mainloop(void)
 			      file_id[0] = '\0';
 			      starter_id[0] = '\0';
 			      
-			      playsound(1, SND_HARP, 1);
+			      playsound(screen, 1, SND_HARP, 1, SNDPOS_CENTER, SNDDIST_NEAR);
 			    }
 			  else
 			    {
@@ -2130,7 +2133,7 @@ static void mainloop(void)
 #ifndef NOSOUND
                               if (cur_tool != TOOL_STAMP || stamp_data[which]->ssnd == NULL)
                                 { 
-                                  playsound(1, SND_BLEEP, 0);
+                                  playsound(screen, 1, SND_BLEEP, 0, SNDPOS_RIGHT, SNDDIST_NEAR);
                                 }
 #endif
                               old_thing = cur_thing;
@@ -2207,7 +2210,7 @@ static void mainloop(void)
                                 }
                               if (control_sound != -1)
                                 {
-                                  playsound(0, control_sound, 0);
+                                  playsound(screen, 0, control_sound, 0, SNDPOS_CENTER, SNDDIST_NEAR);
                                   draw_stamps();
                                   update_screen_rect(&r_toolopt);
                                   set_active_stamp();
@@ -2279,7 +2282,7 @@ static void mainloop(void)
 
                               if (control_sound != -1)
                                 {
-                                  playsound(0, control_sound, 0);
+                                  playsound(screen, 0, control_sound, 0, SNDPOS_CENTER, SNDDIST_NEAR);
 
 
 				  if (cur_tool == TOOL_TEXT) // Huh? It had better be!
@@ -2313,7 +2316,7 @@ static void mainloop(void)
                             {
                               *thing_scroll += is_upper ? -gd_items.cols : gd_items.cols;
                               do_draw = 1;
-                              playsound(1, SND_SCROLL, 1);
+                              playsound(screen, 1, SND_SCROLL, 1, SNDPOS_RIGHT, SNDDIST_NEAR);
                               if (!scrolling)
                                 {
                                   memcpy(&scrolltimer_event, &event, sizeof(SDL_Event));
@@ -2448,7 +2451,7 @@ static void mainloop(void)
 		  if (which >= 0 && which < NUM_COLORS)
 		    {
 		      cur_color = which;
-		      playsound(1, SND_BUBBLE, 1);
+		      playsound(screen, 1, SND_BUBBLE, 1, event.button.x, SNDDIST_NEAR);
 		      draw_colors(COLORSEL_REFRESH);
 		      render_brush();
 		      render_sparkles();
@@ -2487,7 +2490,7 @@ static void mainloop(void)
 		      brush_counter = 999;
   	
 		      brush_draw(old_x, old_y, old_x, old_y, 1);
-		      playsound(0, SND_PAINT1 + (img_cur_brush->w) / 12, 1);
+		      playsound(screen, 0, SND_PAINT1 + (img_cur_brush->w) / 12, 1, event.button.x, SNDDIST_NEAR);
 		    }
 		  else if (cur_tool == TOOL_STAMP)
 		    {
@@ -2497,7 +2500,7 @@ static void mainloop(void)
 		      
 		      stamp_draw(old_x, old_y);
 		      stamp_xor(old_x, old_y);
-		      playsound(1, SND_STAMP, 1);
+		      playsound(screen, 1, SND_STAMP, 1, event.button.x, SNDDIST_NEAR);
 
 		      draw_tux_text(TUX_GREAT, great_str(), 1);
 
@@ -2519,7 +2522,7 @@ static void mainloop(void)
 		      
 		      brush_draw(old_x, old_y, old_x, old_y, 1);
 		      
-		      playsound(1, SND_LINE_START, 1);
+		      playsound(screen, 1, SND_LINE_START, 1, event.button.x, SNDDIST_NEAR);
 		      draw_tux_text(TUX_BORED, TIP_LINE_START, 1);
 		    }
 		  else if (cur_tool == TOOL_SHAPES)
@@ -2535,7 +2538,7 @@ static void mainloop(void)
 			  
 			  shape_tool_mode = SHAPE_TOOL_MODE_STRETCH;
 			  
-			  playsound(1, SND_LINE_START, 1);
+			  playsound(screen, 1, SND_LINE_START, 1, event.button.x, SNDDIST_NEAR);
 			  draw_tux_text(TUX_BORED, TIP_SHAPE_START, 1);
 			}
 		      else if (shape_tool_mode == SHAPE_TOOL_MODE_ROTATE)
@@ -2545,7 +2548,7 @@ static void mainloop(void)
 			  /* (Arbitrarily large...) */
 			  brush_counter = 999;
 			  
-			  playsound(1, SND_LINE_END, 1);
+			  playsound(screen, 1, SND_LINE_END, 1, event.button.x, SNDDIST_NEAR);
 			  do_shape(shape_ctr_x, shape_ctr_y,
 				   shape_outer_x, shape_outer_y,
 				   rotation(shape_ctr_x, shape_ctr_y,
@@ -2714,7 +2717,7 @@ static void mainloop(void)
                         {
                           *thing_scroll += is_upper ? -gd_items.cols : gd_items.cols;
                           do_draw = 1;
-                          playsound(1, SND_SCROLL, 1);
+                          playsound(screen, 1, SND_SCROLL, 1, SNDPOS_RIGHT, SNDDIST_NEAR);
 #if 0
                           if (!scrolling)
                             {
@@ -2825,7 +2828,7 @@ static void mainloop(void)
 		      brush_draw(event.button.x-r_canvas.x, event.button.y-r_canvas.y,
 				 event.button.x-r_canvas.x, event.button.y-r_canvas.y, 1);
 		      
-		      playsound(1, SND_LINE_END, 1);
+		      playsound(screen, 1, SND_LINE_END, 1, event.button.x, SNDDIST_NEAR);
 		      draw_tux_text(TUX_GREAT, tool_tips[TOOL_LINES], 1);
 		    }
 		  else if (cur_tool == TOOL_SHAPES)
@@ -2858,7 +2861,7 @@ static void mainloop(void)
 						shape_outer_x, shape_outer_y),
 				       0);
 			      
-			      playsound(1, SND_LINE_START, 1);
+			      playsound(screen, 1, SND_LINE_START, 1, event.button.x, SNDDIST_NEAR);
 			      draw_tux_text(TUX_BORED, TIP_SHAPE_NEXT, 1);
 			      
 			      
@@ -2871,7 +2874,7 @@ static void mainloop(void)
 			      brush_counter = 999; /* arbitrarily large... */
 			      
 		  
-			      playsound(1, SND_LINE_END, 1);
+			      playsound(screen, 1, SND_LINE_END, 1, event.button.x, SNDDIST_NEAR);
 			      do_shape(shape_ctr_x, shape_ctr_y,
 				       shape_outer_x, shape_outer_y,
 				       0, 1);
@@ -3029,7 +3032,7 @@ static void mainloop(void)
 		      
 		      brush_draw(old_x, old_y, new_x, new_y, 1);
 		      
-		      playsound(0, SND_PAINT1 + (img_cur_brush->w) / 12, 0);
+		      playsound(screen, 0, SND_PAINT1 + (img_cur_brush->w) / 12, 0, event.button.x, SNDDIST_NEAR);
 		    }
 		  else if (cur_tool == TOOL_LINES)
 		    {
@@ -3896,37 +3899,35 @@ static void magic_draw(int x1, int y1, int x2, int y2, int button_down)
   /* Play sound: */
 
   if (cur_magic == MAGIC_DRIP)
-    playsound(0, SND_DRIP, 0);
+    playsound(screen, 0, SND_DRIP, 0, x1, SNDDIST_NEAR);
   else if (cur_magic == MAGIC_CHALK)
-    playsound(0, SND_CHALK, 0);
+    playsound(screen, 0, SND_CHALK, 0, x1, SNDDIST_NEAR);
   else if (cur_magic == MAGIC_SPARKLES)
-    playsound(0, SND_SPARKLES1 + (rand() % 2), 0);
+    playsound(screen, 0, SND_SPARKLES1 + (rand() % 2), 0, x1, SNDDIST_NEAR);
   else if (cur_magic == MAGIC_FLIP)
-    playsound(0, SND_FLIP, 0);
+    playsound(screen, 0, SND_FLIP, 0, SNDPOS_CENTER, SNDDIST_NEAR);
   else if (cur_magic == MAGIC_MIRROR)
-    playsound(0, SND_MIRROR, 0);
+    playsound(screen, 0, SND_MIRROR, 0, SNDPOS_CENTER, SNDDIST_NEAR);
   else if (cur_magic == MAGIC_NEGATIVE)
-    playsound(0, SND_NEGATIVE, 0);
+    playsound(screen, 0, SND_NEGATIVE, 0, x1, SNDDIST_NEAR);
   else if (cur_magic == MAGIC_BLUR)
-    playsound(0, SND_BLUR, 0);
+    playsound(screen, 0, SND_BLUR, 0, x1, SNDDIST_NEAR);
   else if (cur_magic == MAGIC_BLOCKS && ((rand() % 10) < 5))
-    playsound(0, SND_BLOCKS, 0);
+    playsound(screen, 0, SND_BLOCKS, 0, x1, SNDDIST_NEAR);
   else if (cur_magic == MAGIC_FADE)
-    playsound(0, SND_FADE, 0);
+    playsound(screen, 0, SND_FADE, 0, x1, SNDDIST_NEAR);
   else if (cur_magic == MAGIC_DARKEN)
-    playsound(0, SND_DARKEN, 0);
+    playsound(screen, 0, SND_DARKEN, 0, x1, SNDDIST_NEAR);
   else if (cur_magic == MAGIC_RAINBOW)
-    playsound(0, SND_RAINBOW, 0);
+    playsound(screen, 0, SND_RAINBOW, 0, x1, SNDDIST_NEAR);
   else if (cur_magic == MAGIC_SMUDGE)
-    playsound(0, SND_SMUDGE, 0);
+    playsound(screen, 0, SND_SMUDGE, 0, x1, SNDDIST_NEAR);
   else if (cur_magic == MAGIC_CARTOON)
-    playsound(0, SND_CARTOON, 0);
+    playsound(screen, 0, SND_CARTOON, 0, x1, SNDDIST_NEAR);
   else if (cur_magic == MAGIC_TINT)
-    playsound(0, SND_TINT, 0);
-
-  /* FIXME: Need sounds for:
-     Grass (mower?) */
-
+    playsound(screen, 0, SND_TINT, 0, x1, SNDDIST_NEAR);
+  else if (cur_magic == MAGIC_GRASS)
+    playsound(screen, 0, SND_GRASS, 0, x1, y1);
 
   /* FIXME: Arbitrary? */
 
@@ -3979,7 +3980,7 @@ static void do_brick(int x, int y, int w, int h)
   
   /* Note: We only play the brick sound when we actually DRAW a brick: */
 
-  playsound(0, SND_BRICK, 1);
+  playsound(screen, 0, SND_BRICK, 1, x, SNDDIST_NEAR);
 }
 
 /* Draw the current brush in the current color: */
@@ -8556,7 +8557,7 @@ static void do_eraser(int x, int y)
 	{
 	  eraser_sound = (eraser_sound + 1) % 2;
 	
-	  playsound(0, SND_ERASER1 + eraser_sound, 0);
+	  playsound(screen, 0, SND_ERASER1 + eraser_sound, 0, x, SNDDIST_NEAR);
 	}
     }
 #endif
@@ -9761,8 +9762,8 @@ static int do_prompt_image_flash_snd(const char * const text, const char * const
 
   /* Draw button box: */
 
-  playsound(0, SND_PROMPT, 1);
-  playsound(1, snd, 1);
+  playsound(screen, 0, SND_PROMPT, 1, SNDPOS_CENTER, SNDDIST_NEAR);
+  playsound(screen, 1, snd, 1, SNDPOS_LEFT, SNDDIST_NEAR);
 
   for (w = 0; w <= 96; w = w + 4)
     {
@@ -10791,7 +10792,7 @@ static int do_save(void)
     {
       /* Ta-Da! */
 
-      playsound(0, SND_SAVE, 1);
+      playsound(screen, 0, SND_SAVE, 1, SNDPOS_CENTER, SNDDIST_NEAR);
       draw_tux_text(TUX_DEFAULT, tool_tips[TOOL_SAVE], 1);
     }
 #else
@@ -10884,7 +10885,7 @@ static int do_save(void)
 
   /* All happy! */
 
-  playsound(0, SND_SAVE, 1);
+  playsound(screen, 0, SND_SAVE, 1, SNDPOS_CENTER, SNDDIST_NEAR);
   draw_tux_text(TUX_DEFAULT, tool_tips[TOOL_SAVE], 1);
   do_setcursor(cursor_arrow);
 
@@ -11771,7 +11772,7 @@ void do_open(void)
 	    /* Open */
 	
 	    done = 1;
-	    playsound(1, SND_CLICK, 1);
+	    playsound(screen, 1, SND_CLICK, 1, SNDPOS_LEFT, SNDDIST_NEAR);
 	  }
 	else if (key == SDLK_ESCAPE)
 	  {
@@ -11779,7 +11780,7 @@ void do_open(void)
 	
 	    which = -1;
 	    done = 1;
-	    playsound(1, SND_CLICK, 1);
+	    playsound(screen, 1, SND_CLICK, 1, SNDPOS_RIGHT, SNDDIST_NEAR);
 	  }
 	  else if (key == SDLK_d &&
 		   (event.key.keysym.mod & KMOD_CTRL) &&
@@ -11805,7 +11806,7 @@ void do_open(void)
 		  
 		      if (which < num_files)
 			{
-			  playsound(1, SND_BLEEP, 1);
+			  playsound(screen, 1, SND_BLEEP, 1, event.button.x, SNDDIST_NEAR);
 			  update_list = 1;
 		      
 		      
@@ -11834,7 +11835,7 @@ void do_open(void)
 			    {
 			      cur = cur - 4;
 			      update_list = 1;
-			      playsound(1, SND_SCROLL, 1);
+			      playsound(screen, 1, SND_SCROLL, 1, SNDPOS_CENTER, SNDDIST_NEAR);
 
 			      if (cur == 0)
 				do_setcursor(cursor_arrow);
@@ -11852,7 +11853,7 @@ void do_open(void)
 			    {
 			      cur = cur + 4;
 			      update_list = 1;
-			      playsound(1, SND_SCROLL, 1);
+			      playsound(screen, 1, SND_SCROLL, 1, SNDPOS_CENTER, SNDDIST_NEAR);
 
 			      if (cur >= num_files - 16)
 				do_setcursor(cursor_arrow);
@@ -11869,7 +11870,7 @@ void do_open(void)
 		      /* Open */
 		  
 		      done = 1;
-		      playsound(1, SND_CLICK, 1);
+		      playsound(screen, 1, SND_CLICK, 1, SNDPOS_LEFT, SNDDIST_NEAR);
 		    }
 		  else if (event.button.x >= (WINDOW_WIDTH - 96 - 48) &&
 			   event.button.x < (WINDOW_WIDTH - 96) &&
@@ -11880,7 +11881,7 @@ void do_open(void)
 		  
 		      which = -1;
 		      done = 1;
-		      playsound(1, SND_CLICK, 1);
+		      playsound(screen, 1, SND_CLICK, 1, SNDPOS_RIGHT, SNDDIST_NEAR);
 		    }
 		  else if (event.button.x >= (WINDOW_WIDTH - 96 - 48 - 48) &&
 			   event.button.x < (WINDOW_WIDTH - 48 - 96) &&
@@ -11904,7 +11905,7 @@ void do_open(void)
 	{
 	  cur = cur - 4;
 	  update_list = 1;
-	  playsound(1, SND_SCROLL, 1);
+	  playsound(screen, 1, SND_SCROLL, 1, SNDPOS_CENTER, SNDDIST_NEAR);
 
 	  if (cur == 0)
 	    do_setcursor(cursor_arrow);
@@ -11916,7 +11917,7 @@ void do_open(void)
         {
           cur = cur + 4;
           update_list = 1;
-          playsound(1, SND_SCROLL, 1);
+	  playsound(screen, 1, SND_SCROLL, 1, SNDPOS_CENTER, SNDDIST_NEAR);
 
           if (cur >= num_files - 16)
 	    do_setcursor(cursor_arrow);

@@ -23,7 +23,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  June 15, 2002 - February 18, 2006
+  June 15, 2002 - February 20, 2006
   $Id$
 */
 
@@ -70,6 +70,7 @@ enum {
   SND_TINT,          /* Magic tint */
   SND_CARTOON,       /* Magic cartoon */
   SND_BRICK,         /* Magic brick */
+  SND_GRASS,         /* Magic grass */
   SND_KEYCLICK,      /* Text tool keyboard click feedback */
   SND_KEYCLICKRING,  /* Text tool keyboard click feedback with bell ring */
   SND_RETURN,        /* Text tool carriage return sound */
@@ -121,6 +122,7 @@ static const char * sound_fnames[NUM_SOUNDS] = {
   DATA_PREFIX "sounds/tint.wav",
   DATA_PREFIX "sounds/cartoon.wav",
   DATA_PREFIX "sounds/brick.wav",
+  DATA_PREFIX "sounds/grass.wav",
   DATA_PREFIX "sounds/keyclick.wav",
   DATA_PREFIX "sounds/typewriterbell.wav",
   DATA_PREFIX "sounds/return.wav",

@@ -9,7 +9,7 @@ http://www.newbreedsoftware.com/tuxpaint/
 $Id$
 
 
-2006.February.19 (0.9.16)
+2006.February.20 (0.9.16)
   * Interface improvements:
     -----------------------
     * Modified "Text" tool so that it correctly handles the 16-bit unicode
@@ -34,6 +34,9 @@ $Id$
 
     * Improved some dialog text, including labels for "Yes/No" buttons.
       (Thanks to Vashti for suggestions.)
+
+    * Sound effects take advantage of stereo.  (e.g., paint brush sounds come
+      more from the left speaker when painting on the left.)
   
   * Tool improvements:
     ------------------------
@@ -41,6 +44,8 @@ $Id$
 
     * Magic Negative, Fade, Darken, Tint and Cartoon all now apply with a
       circular shape, rather than a square.
+
+    * Magic Grass has a sound effect.
     
     * Round erasers added.
 

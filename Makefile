@@ -350,7 +350,7 @@ clean:
 	@echo "Cleaning up the build directory! ($(PWD))"
 	@-rm -f tuxpaint
 	@-rm -f obj/*.o
-	@if [ -d obj ]; then rmdir obj; fi
+	@#if [ -d obj ]; then rmdir obj; fi
 	@-rm -f trans/*.mo
 	@if [ -d trans ]; then rmdir trans; fi
 	@echo
@@ -1364,11 +1364,11 @@ trans/wa.mo:	src/po/wa.po
 	@msgfmt -o trans/wa.mo src/po/wa.po
 
 trans/zh_cn.mo:	src/po/zh_cn.po
-	@echo "   zh_CN ...Chinese..."
+	@echo "   zh_CN ...Chinese (Simplified)..."
 	@msgfmt -o trans/zh_cn.mo src/po/zh_cn.po
 
 trans/zh_tw.mo:	src/po/zh_tw.po
-	@echo "   zh_TW ...Chinese..."
+	@echo "   zh_TW ...Chinese (Traditional)..."
 	@msgfmt -o trans/zh_tw.mo src/po/zh_tw.po
 
 
