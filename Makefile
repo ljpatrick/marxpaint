@@ -960,7 +960,7 @@ tuxpaint:	obj/tuxpaint.o obj/i18n.o obj/cursor.o obj/pixels.o \
 		-o tuxpaint \
 		$^ \
 		$(HQXX_O) \
-		$(ARCH_LIBS) $(SDL_LIBS) \
+		$(SDL_LIBS) \
 		-lm $(ARCH_LINKS)
 	@$(RSRC_CMD)
 	@$(MIMESET_CMD)
