@@ -9,7 +9,7 @@
                            bill@newbreedsoftware.com
                    http://www.newbreedsoftware.com/tuxpaint/
 
-                       June 14, 2002 - February 12, 2006
+                       June 14, 2002 - February 20, 2006
 
    --------------------------------------------------------------------------
 
@@ -760,10 +760,38 @@ Where Files Go
 
     Mac OS X
 
-           Tux Paint stores files in your account's "Libraries" folder, under
-           "Preferences", e.g.:
+           Tux Paint stores its data files inside the "Tux Paint" icon (which
+           is actually a special kind of folder on Mac OS X). The following
+           steps explain how to get to the folders within:
 
-             /Users/(user name)/Library/Preferences/
+            1. Bring up a 'context' menu by holding the [Control] key and
+               clicking the Tux Paint icon the in Finder. (If you have a
+               mouse with more than one button, you can simply right-click
+               the icon.)
+            2. Select "Show Contents" from the menu that appears. A new
+               Finder window will appear with a folder inside called
+               "Contents."
+            3. Open the "Contents" folder and open the "Resources" folder
+               found inside.
+            4. There, you will find the "starters", "stamps" and "brushes"
+               folders. Adding new content to these folders will make the
+               content available to any user that launches this copy (icon)
+               of Tux Paint.
+
+           Note: If you install a newer version of Tux Paint (by replacing
+           its icon), you will lose changes made by following the
+           instructions above, so keep backups of your new content (stamps,
+           brushes, etc.).
+
+           Tux Paint also looks for files in a "TuxPaint" folder that you can
+           place in your system's "Application Support" folder (found under
+           "Library" at the root of your hard disk):
+
+             /Library/Application Support/TuxPaint/
+
+           It also looks for files in the user's "Preferences" folder, e.g.:
+
+             /Users/(user name)/Library/Preferences/TuxPaint/brushes/
 
    --------------------------------------------------------------------------
 

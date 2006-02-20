@@ -23,7 +23,7 @@ New Breed Software</p>
 <p><a href="mailto:bill@newbreedsoftware.com">bill@newbreedsoftware.com</a><br>
 <a href="http://www.newbreedsoftware.com/tuxpaint/">http://www.newbreedsoftware.com/tuxpaint/</a></p>
 
-<p>June 14, 2002 - February 12, 2006</p>
+<p>June 14, 2002 - February 20, 2006</p>
 </center>
 
 <hr size=2 noshade>
@@ -1041,11 +1041,44 @@ New Breed Software</p>
 
       <h4>Mac OS X</h4>
       <blockquote>
-        <p>Tux&nbsp;Paint stores files in your account's
-	"Libraries" folder, under "Preferences", e.g.:</p>
+        <p>Tux&nbsp;Paint stores its data files inside the "Tux&nbsp;Paint"
+	icon (which is actually a special kind of folder on
+	Mac&nbsp;OS&nbsp;X).  The following steps explain how to get to
+	the folders within:</p>
+
+	<ol>
+	<li>Bring up a 'context' menu by holding the [Control] key and clicking
+	  the Tux&nbsp;Paint icon the in Finder.  (If you have a mouse with more
+	  than one button, you can simply right-click the icon.)</li>
+	<li>Select "Show&nbsp;Contents" from the menu that appears.
+	  A new Finder window will appear with a folder inside called
+	  "Contents."</li>
+	<li>Open the "Contents" folder and open the "Resources" folder found
+	  inside.</li>
+	<li>There, you will find the "starters", "stamps" and "brushes"
+	  folders.  Adding new content to these folders will make the content
+	  available to any user that launches this copy (icon) of
+	  Tux&nbsp;Paint.</li>
+	</ol>
+	
+	<p><em>Note:</em> If you install a newer version of Tux&nbsp;Paint
+	(by replacing its icon), you will lose changes made by following
+	the instructions above, so keep backups of your new content
+	(stamps, brushes, etc.).</p>
+	
+	<p>Tux&nbsp;Paint also looks for files in a "TuxPaint" folder
+	that you can place in your system's "Application&nbsp;Support" folder
+	(found under "Library" at the root of your hard disk):</p>
 
 	<blockquote><code>
-	  /Users/<i>(user&nbsp;name)</i>/Library/Preferences/
+	  /Library/Application&nbsp;Support/TuxPaint/
+	</code></blockquote>
+
+	<p>It also looks for files in the user's "Preferences" folder,
+	e.g.:</p>
+
+	<blockquote><code>
+	  /Users/<i>(user&nbsp;name)</i>/Library/Preferences/TuxPaint/brushes/
 	</code></blockquote>
 
       </blockquote>
