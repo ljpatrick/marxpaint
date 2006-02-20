@@ -73,6 +73,8 @@ void receive_some_font_info(SDL_Surface * screen);
 // end up with 34 user choices
 
 extern int text_state;
+extern unsigned text_size;
+
 // nice progression (alternating 33% and 25%) 9 12 18 24 36 48 72 96 144 192
 // commonly hinted sizes seem to be: 9, 10, 12, 14, 18, 20 (less so), 24
 // reasonable: 9,12,18... and 10,14,18...
@@ -80,7 +82,6 @@ static int text_sizes[] = {9, 12, 18, 24, 36, 48,
                            56, 64, 96, 112, 128, 160};  // point sizes
 #define MIN_TEXT_SIZE 0u
 #define MAX_TEXT_SIZE (sizeof text_sizes / sizeof text_sizes[0] - 1)
-static unsigned text_size = 4;   // initial text size
 
 // for sorting through the font files at startup
 typedef struct style_info {

@@ -69,6 +69,7 @@ int num_font_styles = 0;
 int num_font_styles_max = 0;
 
 int text_state;
+unsigned text_size = 4;   // initial text size
 
 /* Unfortunately, there is a bug in SDL_ttf-2.0.6, the current version
    that causes a segmentation fault if an attempt is made to call
