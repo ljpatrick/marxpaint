@@ -7,7 +7,7 @@
 # bill@newbreedsoftware.com
 # http://www.newbreedsoftware.com/tuxpaint/
 
-# June 14, 2002 - February 18, 2006
+# June 14, 2002 - February 20, 2006
 
 
 # The version number, for release:
@@ -968,7 +968,7 @@ tuxpaint:	obj/tuxpaint.o obj/i18n.o obj/cursor.o obj/pixels.o \
 
 # Build the object for the program!
 
-obj/tuxpaint.o:	src/tuxpaint.c obj \
+obj/tuxpaint.o:	src/tuxpaint.c \
 		src/i18n.h src/cursor.h src/pixels.h \
 		src/floodfill.h src/rgblinear.h src/playsound.h src/fonts.h \
 		src/progressbar.h src/dirwalk.h src/get_fname.h \
@@ -1374,6 +1374,7 @@ trans/zh_tw.mo:	src/po/zh_tw.po
 
 
 # Make the "obj" directory to throw the object(s) into:
+# (not necessary any more; bjk 2006.02.20)
 
 obj:
 	@mkdir obj
