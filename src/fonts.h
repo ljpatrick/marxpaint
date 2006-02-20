@@ -22,9 +22,22 @@
 #ifndef FORKED_FONTS
 #include "SDL_thread.h"
 #include "SDL_mutex.h"
+#else
+/* This shouldn't really be here :-)
+ * Move into 'fonts.c' and the code in 'tuxpaint.c' 
+ * that uses this lot should be put into 'fonts.c' as well.
+ */
+#define SDL_CreateThread(fn,vp) (void*)(long)(fn(vp))
+#define SDL_WaitThread(tid,rcp) do{(void)tid;(void)rcp;}while(0)
+#define SDL_Thread int
+#define SDL_mutex int
+#define SDL_CreateMutex() 0  // creates in released state
+#define SDL_DestroyMutex(lock)
+#define SDL_mutexP(lock)  // take lock
+#define SDL_mutexV(lock)  // release lock
+#endif
 
 extern SDL_Thread *font_thread;
-#endif
 
 extern volatile long font_thread_done, font_thread_aborted;
 extern volatile long waiting_for_fonts;

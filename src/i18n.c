@@ -34,6 +34,9 @@
 #include "i18n.h"
 #include "debug.h"
 
+#ifdef WIN32
+#include <sys/types.h>
+#endif
 
 /* Globals: */
 

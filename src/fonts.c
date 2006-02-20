@@ -22,6 +22,9 @@
 #include "get_fname.h"
 #include "debug.h"
 
+#ifdef WIN32
+#include "win32_print.h"
+#endif
 
 #ifdef FORKED_FONTS
 
@@ -446,7 +449,7 @@ int load_user_fonts(SDL_Surface * screen, void *vp)
   {
 #ifdef WIN32
     homedirdir = GetSystemFontDir();
-    loadfonts(homedirdir);
+    loadfonts(screen, homedirdir);
     free(homedirdir);
 #elif defined(__BEOS__)
     loadfonts(screen, "/boot/home/config/font/ttffonts");

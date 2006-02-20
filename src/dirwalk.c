@@ -11,12 +11,7 @@
 #include <sys/types.h>
 #include <sys/stat.h>
 #include <unistd.h>
-
-
-#ifndef WIN32
-#include <unistd.h>
 #include <dirent.h>
-#endif
 
 #include "SDL_ttf.h"
 

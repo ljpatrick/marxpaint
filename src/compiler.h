@@ -29,30 +29,24 @@
 */
 
 #ifdef WIN32
+/* Horrible, dangerous macros. */
 /*
   The SDL stderr redirection trick doesn't seem to work for perror().
   This does pretty much the same thing.
 */
-static void win32_perror(const char * const str)
-{
-  if ( str && *str )
-    fprintf(stderr,"%s : ",str);
-  fprintf(stderr,
-          "%s [%d]\n",
-          (errno<_sys_nerr)?_sys_errlist[errno]:"unknown",errno );
-}
-#define perror         win32_perror
+#define perror(str) ({ \
+  if ( (str) && *(str) ) \
+    fprintf(stderr,"%s : ",(str)); \
+  fprintf(stderr, \
+          "%s [%d]\n", \
+          (errno<_sys_nerr)?_sys_errlist[errno]:"unknown",errno ); \
+})
 
 /*
   MinGW implementation of isspace() crashes on some Win98 boxes
   if c is 'out-of-range'.
 */
-
-static int win32_isspace(int c)
-{
-    return (c == 0x20) || (c >= 0x09 && c <= 0x0D);
-}
-#define isspace     win32_isspace
+#define isspace(c) (((c) == 0x20) || ((c) >= 0x09 && (c) <= 0x0D))
 
 /*
   WIN32 and MINGW don't have strcasestr().
@@ -109,7 +103,9 @@ static int win32_isspace(int c)
 // won't alias anything, and aligned enough for anything
 #define MALLOC __attribute__ ((__malloc__))
 // no side effect, may read globals
+#ifndef WIN32
 #define PURE __attribute__ ((__pure__))
+#endif
 // tell gcc what to expect:   if(unlikely(err)) die(err);
 #define likely(x)       __builtin_expect(!!(x),1)
 #define unlikely(x)     __builtin_expect(!!(x),0)

@@ -309,20 +309,6 @@ extern WrapperData macosx;
 #define FNAME_EXTENSION ".bmp"
 #endif
 
-#if defined(THREADED_FONTS) || defined(THREADED_STAMPS)
-#include "SDL_thread.h"
-#include "SDL_mutex.h"
-#else
-#define SDL_CreateThread(fn,vp) (void*)(long)(fn(vp))
-#define SDL_WaitThread(tid,rcp) do{(void)tid;(void)rcp;}while(0)
-#define SDL_Thread int
-#define SDL_mutex int
-#define SDL_CreateMutex() 0  // creates in released state
-#define SDL_DestroyMutex(lock)
-#define SDL_mutexP(lock)  // take lock
-#define SDL_mutexV(lock)  // release lock
-#endif
-
 #include "SDL_getenv.h"
 
 #include "i18n.h"
@@ -5307,6 +5293,11 @@ static void load_stamps(SDL_Surface * screen)
 }
 
 
+static int load_user_fonts_stub(void *vp)
+{
+    return load_user_fonts(screen, vp);
+}
+
 ////////////////////////////////////////////////////////////////////////////////
 /* Setup: */
 
@@ -6189,7 +6180,7 @@ static void setup(int argc, char * argv[])
 #ifdef FORKED_FONTS
   reliable_write(font_socket_fd, &no_system_fonts, sizeof no_system_fonts);
 #else
-  font_thread = SDL_CreateThread(load_user_fonts, NULL);
+  font_thread = SDL_CreateThread(load_user_fonts_stub, NULL);
 #endif
 
   // continuing on with the rest of the cursors...
@@ -6711,8 +6702,10 @@ static void create_button_labels(void)
 
 static void seticon(void)
 {
+#ifndef WIN32
   int masklen;
   Uint8 * mask;
+#endif
   SDL_Surface * icon;
 
   /* Load icon into a surface: */

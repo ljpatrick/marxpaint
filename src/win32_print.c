@@ -538,7 +538,7 @@ char *GetDefaultSaveDir(const char *suffix)
   Returns heap string containing system font directory.
   E.g. 'C:\Windows\Fonts'
 */
-char *GetSystemFontDir()
+char *GetSystemFontDir(void)
 {
   char          path[MAX_PATH];
   const char   *key    = "Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\Shell Folders";
