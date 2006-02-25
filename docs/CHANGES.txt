@@ -54,6 +54,9 @@ $Id$
     * Shipwreck
       Jim Trice <jimtrice@linuxmail.org>
 
+    * Tux the farmer
+      Jim Trice <jimtrice@linuxmail.org>
+
   * Translation Updates:
     --------------------
     * Brazilian Portuguese
