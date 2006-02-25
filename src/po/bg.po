@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint 0.9.15\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-02-19 14:44-0800\n"
+"POT-Creation-Date: 2006-02-25 09:37+0100\n"
 "PO-Revision-Date: 2005-10-11 14:40+0300\n"
 "Last-Translator: Yavor Doganov <yavor@doganov.org>\n"
 "Language-Team: Bulgarian <dict@fsa-bg.org>\n"
@@ -494,10 +494,11 @@ msgstr "Не"
 msgid "Replace the picture with your changes?"
 msgstr ""
 
-msgid "Yes, replace the old one"
+msgid "Yes, replace the old one!"
 msgstr ""
 
-msgid "No, save a new file"
+#, fuzzy
+msgid "No, save a new file!"
 msgstr "Не, да се запази като нов файл"
 
 msgid "Choose the picture you want, then click “Open”."

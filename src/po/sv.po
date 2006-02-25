@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint 0.9.15rc1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-02-19 14:44-0800\n"
+"POT-Creation-Date: 2006-02-25 09:37+0100\n"
 "PO-Revision-Date: 2006-02-03 17:11+0100\n"
 "Last-Translator: Daniel Nylander <po@danielnylander.se>\n"
 "Language-Team: Swedish <tp-sv@listor.tp-sv.se>\n"
@@ -485,10 +485,11 @@ msgstr "Nej"
 msgid "Replace the picture with your changes?"
 msgstr ""
 
-msgid "Yes, replace the old one"
+msgid "Yes, replace the old one!"
 msgstr ""
 
-msgid "No, save a new file"
+#, fuzzy
+msgid "No, save a new file!"
 msgstr "Nej, spara i en ny fil!"
 
 msgid "Choose the picture you want, then click “Open”."

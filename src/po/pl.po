@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TuxPaint\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-02-19 14:44-0800\n"
+"POT-Creation-Date: 2006-02-25 09:37+0100\n"
 "PO-Revision-Date: 2003-03-09 14:44+0100\n"
 "Last-Translator: Robert Główczyński <robertg@software.com.pl>\n"
 "Language-Team: Polish <pl@li.org>\n"
@@ -525,10 +525,11 @@ msgstr "Nie"
 msgid "Replace the picture with your changes?"
 msgstr ""
 
-msgid "Yes, replace the old one"
+msgid "Yes, replace the old one!"
 msgstr ""
 
-msgid "No, save a new file"
+#, fuzzy
+msgid "No, save a new file!"
 msgstr "Nie, zapisz nowy plik"
 
 #, fuzzy

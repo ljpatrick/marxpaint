@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TuxPaint 0.9.13\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-02-19 14:44-0800\n"
+"POT-Creation-Date: 2006-02-25 09:37+0100\n"
 "PO-Revision-Date: 2004-07-15 00:25+0800\n"
 "Last-Translator: Muguntharaj <mugunth@thamizha.com>\n"
 "Language-Team: \n"
@@ -502,10 +502,11 @@ msgstr "§Åñ¼¡õ"
 msgid "Replace the picture with your changes?"
 msgstr ""
 
-msgid "Yes, replace the old one"
+msgid "Yes, replace the old one!"
 msgstr ""
 
-msgid "No, save a new file"
+#, fuzzy
+msgid "No, save a new file!"
 msgstr "§Åñ¼¡õ, þôÀ¼ò¨¾ Ò¾¢Â §¸¡ôÀ¡¸ §ºÁ¢"
 
 msgid "Choose the picture you want, then click “Open”."

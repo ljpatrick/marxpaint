@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TuxPaint\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-02-19 14:44-0800\n"
+"POT-Creation-Date: 2006-02-25 09:37+0100\n"
 "PO-Revision-Date: 2004-07-18 16:09+0200\n"
 "Last-Translator: Tarmo Toikkanen <tarmo@iki.fi>\n"
 "Language-Team: Finnish <fi@li.org>\n"
@@ -502,10 +502,11 @@ msgstr "Ei"
 msgid "Replace the picture with your changes?"
 msgstr ""
 
-msgid "Yes, replace the old one"
+msgid "Yes, replace the old one!"
 msgstr ""
 
-msgid "No, save a new file"
+#, fuzzy
+msgid "No, save a new file!"
 msgstr "Ei, tallennetaan uuteen tiedostoon"
 
 msgid "Choose the picture you want, then click “Open”."

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pt_br\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-02-19 14:44-0800\n"
+"POT-Creation-Date: 2006-02-25 09:37+0100\n"
 "PO-Revision-Date: 2006-02-03 21:59-0300\n"
 "Last-Translator: Fred Ulisses Maranhao <fred_maranhao@yahoo.com.br>\n"
 "Language-Team: Brazilian Portuguese <pt@li.org>\n"
@@ -500,10 +500,11 @@ msgstr "Não"
 msgid "Replace the picture with your changes?"
 msgstr ""
 
-msgid "Yes, replace the old one"
+msgid "Yes, replace the old one!"
 msgstr ""
 
-msgid "No, save a new file"
+#, fuzzy
+msgid "No, save a new file!"
 msgstr "Não, guardar um novo desenho"
 
 msgid "Choose the picture you want, then click “Open”."

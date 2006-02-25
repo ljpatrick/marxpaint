@@ -1,22 +1,22 @@
 # Translation of nb to Norwegian Nynorsk
-# translation of nb.po to
-# Omsetjing av Tux Paint til bokmål.
 # Dag H. Lorås <dag.loraas@operamail.com>, 2003.
 # Knut Erik Hollund <khollund@responze.net>, 2003.
 # Karl Ove Hufthammer <karl@huftis.org>, 2003, 2005, 2006.
 # Klaus Ade Johnstad <klaus@skolelinux.no>, 2004.
+# translation of nb.po to
+# Omsetjing av Tux Paint til bokmål.
 msgid ""
 msgstr ""
 "Project-Id-Version: nb\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-02-19 14:44-0800\n"
-"PO-Revision-Date: 2006-01-04 23:21+0100\n"
+"POT-Creation-Date: 2006-02-25 09:37+0100\n"
+"PO-Revision-Date: 2006-02-25 09:37+0100\n"
 "Last-Translator: Karl Ove Hufthammer <karl@huftis.org>\n"
 "Language-Team: Norwegian Nynorsk <i18n-nn@lister.ping.uio.no>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: KBabel 1.10.2\n"
+"X-Generator: KBabel 1.11.1\n"
 "Plural-Forms:  nplurals=2; plural=(n != 1);\n"
 
 msgid "Black!"
@@ -71,16 +71,16 @@ msgid "Beige!"
 msgstr "Beige!"
 
 msgid "qx"
-msgstr ""
+msgstr "æøå"
 
 msgid "QX"
-msgstr ""
+msgstr "ÆØÅ"
 
 msgid "qy"
-msgstr ""
+msgstr "æé"
 
 msgid "QY"
-msgstr ""
+msgstr "ÆÉ"
 
 #. Now we score fonts to ensure that the best ones will be placed at
 #. the top of the list. The user will see them first. This sorting is
@@ -405,19 +405,19 @@ msgid "Do you really want to quit?"
 msgstr "Er du sikker på at du vil avslutte?"
 
 msgid "Yes, I'm done!"
-msgstr ""
+msgstr "Ja, jeg er ferdig!"
 
 msgid "No, take me back!"
-msgstr ""
+msgstr "Nei, jeg vil tegne mer!"
 
 msgid "If you quit, you’ll lose your picture! Save it?"
 msgstr "Du mister tegningen hvis du avslutter. Vil du lagre den først?"
 
 msgid "Yes, save it!"
-msgstr ""
+msgstr "Ja, lagra den!"
 
 msgid "No, don't bother saving!"
-msgstr ""
+msgstr "Nei, ikke lagra den!"
 
 msgid "Save your picture first?"
 msgstr "Vil du lagre tegningen først?"
@@ -431,14 +431,13 @@ msgstr "OK"
 #. This will be replaced with a dialog allowing color choice and Starter
 #. picking, with a "Back" option to dismiss the "New" and return to
 #. the current picture.  But for now...  (bjk 2006.02.19)
-#, fuzzy
 msgid "Start a new picture?"
-msgstr "Vil du virkelig slette tegningen?"
+msgstr "Vil du lage en ny tegning?"
 
 #. #define PROMPT_NEW_YES gettext_noop("That’s OK!")
 #. #define PROMPT_NEW_NO gettext_noop("Never mind!")
 msgid "Yes, let's start fresh!"
-msgstr ""
+msgstr "Ja, la oss starte på nytt!"
 
 msgid "There are no saved files!"
 msgstr "Det finnes ingen lagrede tegninger."
@@ -447,7 +446,7 @@ msgid "Print your picture now?"
 msgstr "Er du sikker på at du vil skrive ut tegningen?"
 
 msgid "Yes, print it!"
-msgstr ""
+msgstr "Ja, skriv den ut!"
 
 msgid "Your picture has been printed!"
 msgstr "Tegningen er skrevet ut."
@@ -459,10 +458,10 @@ msgid "Erase this picture?"
 msgstr "Vil du virkelig slette tegningen?"
 
 msgid "Yes, erase it!"
-msgstr ""
+msgstr "Ja, slett den!"
 
 msgid "No, don't erase it!"
-msgstr ""
+msgstr "Nei, ikke slett den!"
 
 msgid "Remember to use the left mouse button!"
 msgstr "Husk å bruke venstre museknapp!"
@@ -489,13 +488,13 @@ msgstr "Nei!"
 #. FIXME: Move elsewhere!!!
 #. #define PROMPT_SAVE_OVER_TXT gettext_noop("Save over the older version of this picture?")
 msgid "Replace the picture with your changes?"
-msgstr ""
+msgstr "Vil du bytte ut den gamle tegningen med den nye?"
 
-msgid "Yes, replace the old one"
-msgstr ""
+msgid "Yes, replace the old one!"
+msgstr "Ja, bytt ut den gamle!"
 
-msgid "No, save a new file"
-msgstr "Nei. Lagre som ny tegning."
+msgid "No, save a new file!"
+msgstr "Nei, lagre tegningen som en ny tegning!"
 
 msgid "Choose the picture you want, then click “Open”."
 msgstr "Velg en tegning og trykk «Åpne»."
