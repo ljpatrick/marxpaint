@@ -9,7 +9,7 @@ http://www.newbreedsoftware.com/tuxpaint/
 $Id$
 
 
-2006.February.20 (0.9.16)
+2006.February.25 (0.9.16)
   * Interface improvements:
     -----------------------
     * Modified "Text" tool so that it correctly handles the 16-bit unicode
@@ -48,6 +48,11 @@ $Id$
     * Magic Grass has a sound effect.
     
     * Round erasers added.
+
+  * New Starter Images:
+    -------------------
+    * Shipwreck
+      Jim Trice <jimtrice@linuxmail.org>
 
   * Translation Updates:
     --------------------
