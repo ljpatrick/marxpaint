@@ -10622,8 +10622,8 @@ static int rotation(int ctr_x, int ctr_y, int ox, int oy)
 
 //#define PROMPT_SAVE_OVER_TXT gettext_noop("Save over the older version of this picture?")
 #define PROMPT_SAVE_OVER_TXT gettext_noop("Replace the picture with your changes?")
-#define PROMPT_SAVE_OVER_YES gettext_noop("Yes, replace the old one")
-#define PROMPT_SAVE_OVER_NO  gettext_noop("No, save a new file")
+#define PROMPT_SAVE_OVER_YES gettext_noop("Yes, replace the old one!")
+#define PROMPT_SAVE_OVER_NO  gettext_noop("No, save a new file!")
 
 
 /* Save the current image: */
