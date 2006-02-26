@@ -1574,7 +1574,7 @@ static void mainloop(void)
 		  if (do_prompt_snd(PROMPT_NEW_TXT,
 				    PROMPT_NEW_YES,
 				    PROMPT_NEW_NO,
-				    SND_AREYOUSURE))
+				    SND_PROMPT))
 		    {
 		      free_surface(&img_starter);
 		      free_surface(&img_starter_bkgd);
@@ -1968,7 +1968,7 @@ static void mainloop(void)
 			  if (do_prompt_snd(PROMPT_NEW_TXT,
 					    PROMPT_NEW_YES,
 					    PROMPT_NEW_NO,
-					    SND_AREYOUSURE))
+					    SND_PROMPT))
 			    {
 		      	      free_surface(&img_starter);
 			      free_surface(&img_starter_bkgd);
@@ -2026,7 +2026,7 @@ static void mainloop(void)
 						      PROMPT_PRINT_NOW_YES,
 						      PROMPT_PRINT_NOW_NO,
 						      img_printer, NULL, NULL,
-						      SND_AREYOUSURE))
+						      SND_PROMPT))
 			      {
 			        do_print();
 				
@@ -2039,7 +2039,7 @@ static void mainloop(void)
 						  PROMPT_PRINT_TOO_SOON_YES,
 						  "",
 						  img_printer_wait, NULL, NULL,
-						  SND_YOUCANNOT);
+						  SND_NEGATIVE);
 			    }
 			  
 			  cur_tool = old_tool;
@@ -10663,7 +10663,7 @@ static int do_save(void)
 				  PROMPT_SAVE_OVER_YES,
 				  PROMPT_SAVE_OVER_NO,
 				  img_save_over, NULL, NULL,
-				  SND_AREYOUSURE) == 0)
+				  SND_PROMPT) == 0)
 	    {
 	      /* No - Let's save a new picture! */
 
@@ -11127,7 +11127,7 @@ static int do_quit(void)
   done = do_prompt_snd(PROMPT_QUIT_TXT,
 		       PROMPT_QUIT_YES,
 		       PROMPT_QUIT_NO,
-		       SND_AREYOUSURE);
+		       SND_PROMPT);
 
   if (done && !been_saved && !disable_save)
     {
@@ -11540,7 +11540,7 @@ void do_open(void)
   if (num_files == 0)
   {
     do_prompt_snd(PROMPT_OPEN_NOFILES_TXT, PROMPT_OPEN_NOFILES_YES, "",
-		  SND_YOUCANNOT);
+		  SND_NEGATIVE);
   }
   else
   {
@@ -11991,7 +11991,7 @@ void do_open(void)
 					  thumbs[which],
 					  img_popup_arrow,
 					  img_trash,
-					  SND_AREYOUSURE))
+					  SND_PROMPT))
 		    {
 		      snprintf(fname, sizeof(fname), "saved/%s%s",
 			       d_names[which], d_exts[which]);
@@ -12083,7 +12083,7 @@ void do_open(void)
 			    {
 			      do_prompt_snd(PROMPT_OPEN_NOFILES_TXT,
 					    PROMPT_OPEN_NOFILES_YES, "",
-					    SND_YOUCANNOT);
+					    SND_NEGATIVE);
 			      done = 1;
 			    }
 			}
@@ -12091,7 +12091,7 @@ void do_open(void)
 			{
 			  perror(rfname);
 		      
-			  do_prompt_snd("CAN'T", "OK", "", SND_YOUCANNOT);
+			  do_prompt_snd("CAN'T", "OK", "", SND_NEGATIVE);
 			  update_list = 1;
 			}
 		  
@@ -12119,7 +12119,7 @@ void do_open(void)
 					  PROMPT_OPEN_SAVE_YES,
 					  PROMPT_OPEN_SAVE_NO,
 					  img_tools[TOOL_SAVE], NULL, NULL,
-					  SND_AREYOUSURE))
+					  SND_PROMPT))
 		    {
 		      do_save();
 		    }
