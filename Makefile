@@ -7,12 +7,12 @@
 # bill@newbreedsoftware.com
 # http://www.newbreedsoftware.com/tuxpaint/
 
-# June 14, 2002 - February 20, 2006
+# June 14, 2002 - March 2, 2006
 
 
 # The version number, for release:
 
-VER_VERSION=0.9.15b
+VER_VERSION=0.9.16
 VER_DATE=`date +"%Y-%m-%d"`
 
 
