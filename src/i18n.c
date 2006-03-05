@@ -23,7 +23,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  June 14, 2002 - February 17, 2006
+  June 14, 2002 - March 4, 2006
   $Id$
 */
 
@@ -60,6 +60,7 @@ const char * lang_prefixes[NUM_LANGS] = {
   "fi",
   "fr",
   "ga",
+  "gd",
   "gl",
   "gos",
   "he",
@@ -156,7 +157,11 @@ const language_to_locale_struct language_to_locale_array[] = {
 {"french",               "fr_FR.UTF-8"},
 {"francais",             "fr_FR.UTF-8"},
 {"gaelic",               "ga_IE.UTF-8"},
+{"irish-gaelic",         "ga_IE.UTF-8"},
 {"gaidhlig",             "ga_IE.UTF-8"},
+{"scottish",             "gd_GB.UTF-8"},
+{"ghaidhlig",            "gd_GB.UTF-8"},
+{"scottish-gaelic",      "gd_GB.UTF-8"},
 {"galician",             "gl_ES.UTF-8"},
 {"galego",               "gl_ES.UTF-8"},
 {"hebrew",               "he_IL.UTF-8"},
@@ -348,7 +353,7 @@ void show_lang_usage(FILE * f, const char * const prg)
 /* et */     "  estonian\n"
 /* fi */     "  finnish      suomi\n"
 /* fr */     "  french       francais\n"
-/* ga */     "  gaelic       gaidhlig\n"
+/* ga */     "  gaelic       irish-gaelic           gaidhlig\n"
 /* gl */     "  galician     galego\n"
 /* ka */     "  georgian\n"
 /* de */     "  german       deutsch\n"
@@ -372,6 +377,7 @@ void show_lang_usage(FILE * f, const char * const prg)
 /* pt_PT */  "  portuguese   portugues\n"
 /* ro */     "  romanian\n"
 /* ru */     "  russian      russkiy\n"
+/* gd */     "  scottish     scottish-gaelic        ghaidhlig\n"
 /* sr */     "  serbian\n"
 /* sk */     "  slovak\n"
 /* sl */     "  slovenian    slovensko\n"
@@ -416,7 +422,8 @@ void show_locale_usage(FILE * f, const char * const prg)
           "  nl_NL   (Dutch)\n"
           "  fi_FI   (Finnish      Suomi)\n"
           "  fr_FR   (French       Francais)\n"
-          "  ga_IE   (Gaelic       Gaidhlig)\n"
+          "  ga_IE   (Irish Gaelic Gaidhlig)\n"
+          "  gd_GB   (Scottish Gaelic  Ghaidhlig)\n"
           "  gl_ES   (Galician     Galego)\n"
           "  gos_NL  (Gronings     Zudelk Veenkelonioals)\n"
           "  de_DE   (German       Deutsch)\n"

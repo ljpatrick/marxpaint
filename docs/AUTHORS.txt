@@ -238,6 +238,9 @@ $Id$
   * Russian
     Dmitriy Ivanov <ace22b@myrealbox.com>
 
+  * Scottish Gaelic
+    Niall Tracey <internationiall@hotmail.com>
+
   * Serbian
     Aleksandar Jelenak <jelenak@netlinkplus.net>
   

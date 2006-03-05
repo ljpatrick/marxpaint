@@ -8,7 +8,7 @@
   bill@newbreedsoftware.com
   http://www.newbreedsoftware.com/tuxpaint/
 
-  June 14, 2002 - February 17, 2006
+  June 14, 2002 - March 4, 2006
   $Id$
 */
 
@@ -36,7 +36,8 @@ enum {
   LANG_EU,     /* Basque */
   LANG_FI,     /* Finnish */
   LANG_FR,     /* French */
-  LANG_GA,     /* Gaelic */
+  LANG_GA,     /* Irish Gaelic */
+  LANG_GD,     /* Scottish Gaelic */
   LANG_GL,     /* Galician */
   LANG_GR,     /* Gronings */
   LANG_HE,     /* Hebrew */

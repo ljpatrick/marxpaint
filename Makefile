@@ -7,7 +7,7 @@
 # bill@newbreedsoftware.com
 # http://www.newbreedsoftware.com/tuxpaint/
 
-# June 14, 2002 - March 2, 2006
+# June 14, 2002 - March 4, 2006
 
 
 # The version number, for release:
@@ -409,6 +409,7 @@ uninstall:
 	-rm $(LOCALE_PREFIX)/fi/LC_MESSAGES/tuxpaint.mo
 	-rm $(LOCALE_PREFIX)/fr/LC_MESSAGES/tuxpaint.mo
 	-rm $(LOCALE_PREFIX)/ga/LC_MESSAGES/tuxpaint.mo
+	-rm $(LOCALE_PREFIX)/gd/LC_MESSAGES/tuxpaint.mo
 	-rm $(LOCALE_PREFIX)/gl/LC_MESSAGES/tuxpaint.mo
 	-rm $(LOCALE_PREFIX)/gos/LC_MESSAGES/tuxpaint.mo
 	-rm $(LOCALE_PREFIX)/he/LC_MESSAGES/tuxpaint.mo
@@ -723,7 +724,7 @@ install-gettext:
 	@cp trans/fr.mo $(LOCALE_PREFIX)/fr/LC_MESSAGES/tuxpaint.mo
 	@chmod 644 $(LOCALE_PREFIX)/fr/LC_MESSAGES/tuxpaint.mo
 	@#
-	@echo "   ga_IE ...Gaelic..."
+	@echo "   ga_IE ...Irish Gaelic..."
 	@install -d $(LOCALE_PREFIX)/ga/LC_MESSAGES
 	@cp trans/ga.mo $(LOCALE_PREFIX)/ga/LC_MESSAGES/tuxpaint.mo
 	@chmod 644 $(LOCALE_PREFIX)/ga/LC_MESSAGES/tuxpaint.mo
@@ -842,6 +843,11 @@ install-gettext:
 	@install -d $(LOCALE_PREFIX)/ru/LC_MESSAGES
 	@cp trans/ru.mo $(LOCALE_PREFIX)/ru/LC_MESSAGES/tuxpaint.mo
 	@chmod 644 $(LOCALE_PREFIX)/ru/LC_MESSAGES/tuxpaint.mo
+	@#
+	@echo "   gd_GB ...Scottish Gaelic..."
+	@install -d $(LOCALE_PREFIX)/gd/LC_MESSAGES
+	@cp trans/gd.mo $(LOCALE_PREFIX)/gd/LC_MESSAGES/tuxpaint.mo
+	@chmod 644 $(LOCALE_PREFIX)/gd/LC_MESSAGES/tuxpaint.mo
 	@#
 	@echo "   sr_YU ...Serbian..."
 	@install -d $(LOCALE_PREFIX)/sr/LC_MESSAGES
@@ -1103,6 +1109,7 @@ translations: trans \
 	trans/fi.mo \
 	trans/fr.mo \
 	trans/ga.mo \
+	trans/gd.mo \
 	trans/gl.mo \
 	trans/gos.mo \
 	trans/he.mo \
@@ -1216,8 +1223,12 @@ trans/fr.mo:	src/po/fr.po
 	@msgfmt -o trans/fr.mo src/po/fr.po
 
 trans/ga.mo:	src/po/ga.po
-	@echo "   ga_IE ...Gaelic..."
+	@echo "   ga_IE ...Irish Gaelic..."
 	@msgfmt -o trans/ga.mo src/po/ga.po
+
+trans/gd.mo:	src/po/gd.po
+	@echo "   gd_GB ...Scottish Gaelic..."
+	@msgfmt -o trans/gd.mo src/po/gd.po
 
 trans/gl.mo:	src/po/gl.po
 	@echo "   gl_ES ...Galician..."
