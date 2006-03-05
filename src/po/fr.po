@@ -173,8 +173,7 @@ msgid "Click in the picture to fill that area with color."
 msgstr "Clique sur l'image pour remplir cette surface avec une couleur."
 
 msgid "Click and move to draw grass. Don’t forget the dirt!"
-msgstr ""
-"Clique et déplace la souris pour dessiner de l'herbe. N'oublie pas la "
+msgstr "Clique et déplace la souris pour dessiner de l'herbe. N'oublie pas la "
 "poussière !"
 
 msgid "Click and move to draw large bricks."
@@ -251,16 +250,16 @@ msgid "Rhombus"
 msgstr "Losange"
 
 msgid "A square is a rectangle with four equal sides."
-msgstr "Un carré est un rectangle ayant quatre côtés égaux"
+msgstr "Un carré est un rectangle ayant quatre côtés égaux."
 
 msgid "A rectangle has four sides and four right angles."
-msgstr "Un rectangle a quatre côtés et quatre angles droits"
+msgstr "Un rectangle a quatre côtés et quatre angles droits."
 
 msgid ""
 "A circle is a curve where all points have the same distance from the centre."
 msgstr ""
 "Un cercle est une courbe dont tous les points sont à la même distance du "
-"centre"
+"centre."
 
 msgid "An ellipse is a stretched circle."
 msgstr "Une ellipse est un cercle étiré."
@@ -410,19 +409,19 @@ msgid "Do you really want to quit?"
 msgstr "Veux-tu vraiment quitter ?"
 
 msgid "Yes, I'm done!"
-msgstr ""
+msgstr "Oui, on y va !"
 
 msgid "No, take me back!"
-msgstr ""
+msgstr "Non, on revient !"
 
 msgid "If you quit, you’ll lose your picture! Save it?"
 msgstr "Si tu quittes, ton image sera perdue ! Tu sauvegardes ?"
 
 msgid "Yes, save it!"
-msgstr ""
+msgstr "Oui, on sauvegarde !"
 
 msgid "No, don't bother saving!"
-msgstr ""
+msgstr "Non, ce n'est pas la peine !"
 
 msgid "Save your picture first?"
 msgstr "Sauvegarder tout d'abord ton image ?"
@@ -436,14 +435,13 @@ msgstr "D'accord"
 #. This will be replaced with a dialog allowing color choice and Starter
 #. picking, with a "Back" option to dismiss the "New" and return to
 #. the current picture.  But for now...  (bjk 2006.02.19)
-#, fuzzy
 msgid "Start a new picture?"
-msgstr "Effacer cette image ?"
+msgstr "On fait une nouvelle image ?"
 
 #. #define PROMPT_NEW_YES gettext_noop("That’s OK!")
 #. #define PROMPT_NEW_NO gettext_noop("Never mind!")
 msgid "Yes, let's start fresh!"
-msgstr ""
+msgstr "Oui, on en fait une nouvelle !"
 
 msgid "There are no saved files!"
 msgstr "Il n'y a pas de fichiers sauvegardés !"
@@ -452,7 +450,7 @@ msgid "Print your picture now?"
 msgstr "Imprimer l'image ?"
 
 msgid "Yes, print it!"
-msgstr ""
+msgstr "Oui, imprime !"
 
 msgid "Your picture has been printed!"
 msgstr "Ton image a été imprimée !"
@@ -464,16 +462,16 @@ msgid "Erase this picture?"
 msgstr "Effacer cette image ?"
 
 msgid "Yes, erase it!"
-msgstr ""
+msgstr "Oui, efface la !"
 
 msgid "No, don't erase it!"
-msgstr ""
+msgstr "Non, ne l'efface pas !"
 
 msgid "Remember to use the left mouse button!"
 msgstr "N'oublie pas d'utiliser le bouton gauche de la souris !"
 
 msgid "Please wait..."
-msgstr ""
+msgstr "Attends s'il te plaît ..."
 
 msgid "Erase"
 msgstr "Effacer"
@@ -494,14 +492,13 @@ msgstr "Non"
 #. FIXME: Move elsewhere!!!
 #. #define PROMPT_SAVE_OVER_TXT gettext_noop("Save over the older version of this picture?")
 msgid "Replace the picture with your changes?"
-msgstr ""
+msgstr "Enregistrer l'image avec tes changements ?"
 
 msgid "Yes, replace the old one!"
-msgstr ""
+msgstr "Oui, remplace l'ancienne !"
 
-#, fuzzy
 msgid "No, save a new file!"
-msgstr "Non, sous un autre nom"
+msgstr "Non, c'est une nouvelle image !"
 
 msgid "Choose the picture you want, then click “Open”."
 msgstr "Choisis une image, et clique ensuite sur “Ouvrir”"

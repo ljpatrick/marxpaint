@@ -66,6 +66,9 @@ $Id$
     --------------------
     * Brazilian Portuguese
       Fred Ulisses Maranhao <fred_maranhao@yahoo.com.br>
+    
+    * French
+      Jacques Chion <Jacques.Chion@wanadoo.fr>
 
     * German
       Burkhard Lück <lueck@hube-lueck.de>
