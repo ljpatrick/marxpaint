@@ -9,7 +9,7 @@ http://www.newbreedsoftware.com/tuxpaint/
 $Id$
 
 
-2006.March.4 (0.9.16)
+2006.March.8 (0.9.16)
   * Interface improvements:
     -----------------------
     * Modified "Text" tool so that it correctly handles the 16-bit unicode
@@ -72,6 +72,9 @@ $Id$
 
     * German
       Burkhard Lück <lueck@hube-lueck.de>
+
+    * Hungarian
+      Gabor Kelemen <kelemeng@gnome.hu>
 
     * Swedish
       Daniel Nylander <po@danielnylander.se>
