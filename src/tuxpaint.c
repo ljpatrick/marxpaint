@@ -22,7 +22,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
   
-  June 14, 2002 - February 20, 2006
+  June 14, 2002 - March 8, 2006
   $Id$
 */
 
@@ -9045,11 +9045,23 @@ static void wordwrap_text(const char * const str, SDL_Color color,
 static Mix_Chunk * loadsound(const char * const fname)
 {
   char * snd_fname;
-  char tmp_str[64];
+  char tmp_str[64], ext[5];
   Mix_Chunk * tmp_snd;
 
 
   debug(fname);
+
+
+  if (strcasestr(fname, ".png") != NULL)
+  {
+    strcpy(ext, ".png");
+  }
+  else
+  {
+    /* Sorry, we only handle images */
+
+    return(NULL);
+  }
 
 
   /* First, check for localized version of sound: */
@@ -9060,50 +9072,38 @@ static Mix_Chunk * loadsound(const char * const fname)
   snprintf(tmp_str, sizeof(tmp_str), "_%s.wav", lang_prefix);
 
 
-  if (strcasestr(snd_fname, ".png") != NULL)
+  strcpy((char *) strcasestr(snd_fname, ext), tmp_str);
+  debug(snd_fname);
+
+  tmp_snd = Mix_LoadWAV(snd_fname);
+
+  if (tmp_snd == NULL)
+  {
+    debug("...No local version of sound!");
+
+    /* Now, check for default sound: */
+
+    free(snd_fname);
+
+    snd_fname = strdup(fname);
+
+    strcpy((char *) strcasestr(snd_fname, ext), ".wav");
+    debug(snd_fname);
+    tmp_snd = Mix_LoadWAV(snd_fname);
+    free(snd_fname);
+
+    if (tmp_snd == NULL)
     {
-      strcpy((char *) strcasestr(snd_fname, ".png"), tmp_str);
-      debug(snd_fname);
-
-      tmp_snd = Mix_LoadWAV(snd_fname);
-
-      if (tmp_snd == NULL)
-	{
-	  debug("...No local version of sound!");
-
-	  /* Now, check for default sound: */
-
-	  free(snd_fname);
-
-	  snd_fname = strdup(fname);
-
-	  if (strcasestr(snd_fname, ".png") != NULL)
-	    {
-	      strcpy((char *) strcasestr(snd_fname, ".png"), ".wav");
-	      debug(snd_fname);
-	      tmp_snd = Mix_LoadWAV(snd_fname);
-	      free(snd_fname);
-
-	      if (tmp_snd == NULL)
-		{
-		  debug("...No default version of sound!");
-		  return NULL;
-		}
-
-	      return (tmp_snd);
-	    }
-	  else
-	    {
-	      return NULL;
-	    }
-	}
-
-      return (tmp_snd);
-    }
-  else
-    {
+      debug("...No default version of sound!");
       return NULL;
     }
+
+    return (tmp_snd);
+  }
+  else
+  {
+    return NULL;
+  }
 }
 
 #endif
