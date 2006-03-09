@@ -82,6 +82,10 @@ $Id$
     * Vietnamese
       Clytie Siddall <clytie@riverland.net.au>
 
+  * Documentation Improvements:
+    ---------------------------
+    * Moved "Extending Tux Paint" into its own separate document.
+
   * Compiling, porting and packaging updates:
     -----------------------------------------
     * Split parts of "tuxpaint.c" into separate source files:
