@@ -162,6 +162,10 @@ Stamps
        alpha transparency! See the documentation file "PNG.txt" for more
        information and tips.
 
+       Advanced Users: The Advanced Stamps HOWTO describes, in detail, how to
+       make images which will scale perfectly when used as stamps in
+       Tux Paint.
+
    --------------------------------------------------------------------------
 
   Description Text
