@@ -86,6 +86,10 @@ $Id$
     ---------------------------
     * Moved "Extending Tux Paint" into its own separate document.
 
+    * Created an Advanced Stamps HOWTO (documenting how to create
+      stamp PNGs that scale well without edge fringing).
+      Albert Cahalan <albert@users.sf.net>
+
   * Compiling, porting and packaging updates:
     -----------------------------------------
     * Split parts of "tuxpaint.c" into separate source files:
