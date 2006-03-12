@@ -23,7 +23,7 @@ New Breed Software</p>
 <p><a href="mailto:bill@newbreedsoftware.com">bill@newbreedsoftware.com</a><br>
 <a href="http://www.newbreedsoftware.com/tuxpaint/">http://www.newbreedsoftware.com/tuxpaint/</a></p>
 
-<p>June 14, 2002 - March 8, 2006</p>
+<p>June 14, 2002 - March 12, 2006</p>
 </center>
 
 <hr size=2 noshade>
@@ -339,13 +339,13 @@ effect.</p>
         example.)</p>
 
         <p>Nothing about the original image is used except the transparency
-        ("alpha" channel).  The color of the stamp comes out solid.</p>
+        (from "alpha" channel).  The color of the stamp comes out solid.</p>
 
         <center><img src="images/ex_colorable.png" width=74 height=92
         alt=""></center>
       
-        <p>Add the word "<code><b>colorable</b></code>" to the stamp's data
-        file.</p>
+        <p>Add a line containing the word "<code><b>colorable</b></code>"
+	to the stamp's data file.</p>
       </blockquote>
 
       <h5>Tinted</h5>
@@ -358,15 +358,30 @@ effect.</p>
         <center><img src="images/ex_tintable.png" width=151 height=78
         alt=""></center>
 
-        <p>Add the word "<code><b>tintable</b></code>" to the stamp's data
-        file.</p>
+        <p>Add a line containing the word "<code><b>tintable</b></code>"
+	to the stamp's data file.</p>
 
-        <p>Sometimes you don't want the white or gray parts of an image
-        tinted (see for example the dry erase marker stamp in the default
-        stamp package). You can add the word "<code><b>notintgray</b></code>"
-        to the stamp's data file to accomplish this. Only areas with saturation
-        over 25 % are then tinted.</p>
+        <h6>Tinting Options:</h6>
+	<blockquote>
+	  <p>Depending on the contents of your stamp, you might want to
+	  have Tux&nbsp;Paint use one of a numer of methods when tinting it.
+	  Add one of the following lines to the stamp's data file:</p>
 
+	  <dl>
+	  <dt>"<code><b>tinter=normal</b></code>" (default)</dt>
+	  <dd>This is the normal tinting mode.</dd>
+
+	  <dt>"<code><b>tinter=anyhue</b></code>"</dt>
+	  <dd>This is ???.</dd>
+
+	  <dt>"<code><b>tinter=narrow</b></code>"</dt>
+	  <dd>This is ???.</dd>
+
+	  <dt>"<code><b>tinter=vector</b></code>"</dt>
+	  <dd>This is ???.</dd>
+	  </dl>
+
+        </blockquote>
       </blockquote>
     </blockquote>
 
@@ -385,7 +400,7 @@ effect.</p>
       <p>To make a stamp un-flippable, add the option
       "<code><b>noflip</b></code>" to the stamp's data file.</p>
 
-      <p>To keep a stamp from being mirrored, add the option
+      <p>To keep a stamp from being mirrored, add a line containing the word
       "<code><b>nomirror</b></code>" to the stamp's data file.</p>
     </blockquote>
 

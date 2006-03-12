@@ -3413,14 +3413,20 @@ static double tint_part_1(multichan *work, SDL_Surface *in)
                       &mc->or, &mc->og, &mc->ob, &mc->alpha);
 
           fill_multichan(mc,&u,&v);
-          // average out u and v, giving more weight to opaque high-saturation pixels
+
+          // average out u and v, giving more weight to opaque
+	  // high-saturation pixels
           // (this is to take an initial guess at the primary hue)
+	 
           u_total += mc->alpha * u * mc->sat;
           v_total += mc->alpha * v * mc->sat;
+	  
         }
     }
   SDL_UnlockSurface(in);
 
+  fprintf(stderr, "u_total=%f\nv_total=%f\natan2()=%f\n",
+		  u_total, v_total, atan2(u_total, v_total));
   return atan2(u_total,v_total);
 }
 
@@ -3654,8 +3660,13 @@ static void tint_surface(SDL_Surface * tmp_surf, SDL_Surface * surf_ptr)
   {
     initial_hue = tint_part_1(work, surf_ptr);
 
+    printf("initial_hue = %f\n", initial_hue);
+
     key_color_ptr = find_most_saturated(initial_hue, work,
 		    			width * height, &hue_range);
+    
+    printf("key_color_ptr = %d\n", key_color_ptr);
+
 
     if (key_color_ptr)
     {
@@ -3667,14 +3678,18 @@ static void tint_surface(SDL_Surface * tmp_surf, SDL_Surface * surf_ptr)
       free(work);
       return;
     }
+    else
+    {
+      fprintf(stderr, "find_most_saturated() failed\n");
+    }
   
     free(work);
   }
 
   /* Failed!  Fall back: */
 
-  //fprintf(stderr, "Falling back to tinter=vector, "
-  //		    "this should be in the *.dat file\n");
+  fprintf(stderr, "Falling back to tinter=vector, "
+  		    "this should be in the *.dat file\n");
   
   vector_tint_surface(tmp_surf, surf_ptr);
 }
@@ -9268,7 +9283,9 @@ static double loadinfo(const char * const fname, stamp_type *inf)
                   while(*cp && !isdigit(*cp))
                     cp++;
                   tmp2 = strtod(cp,NULL);
-                  if (tmp>0.0001 && tmp<10000.0 && tmp2>0.0001 && tmp2<10000.0 && tmp2/tmp>0.0001 && tmp2/tmp<10000.0)
+                  if (tmp > 0.0001 && tmp < 10000.0 &&
+		      tmp2 > 0.0001 && tmp2 < 10000.0 &&
+		      tmp2 / tmp > 0.0001 && tmp2 / tmp < 10000.0)
                     ratio = tmp2/tmp;
                 }
               else
@@ -9278,7 +9295,8 @@ static double loadinfo(const char * const fname, stamp_type *inf)
                     ratio = 1.0 / tmp;
                 }
             }
-          else if (!memcmp(buf, "tinter", 6) && (isspace(buf[6]) || buf[6]=='='))
+          else if (!memcmp(buf, "tinter", 6) &&
+	           (isspace(buf[6]) || buf[6]=='='))
             {
               char *cp = buf+7;
               while (isspace(*cp) || *cp=='=')
@@ -9303,6 +9321,8 @@ static double loadinfo(const char * const fname, stamp_type *inf)
                 {
                     debug(cp);
                 }
+
+	      printf("tinter=%d\n", inf->tinter);
             }
           else if (strcmp(buf, "nomirror") == 0)
             inf->mirrorable = 0;

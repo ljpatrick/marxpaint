@@ -8,7 +8,7 @@
                            bill@newbreedsoftware.com
                    http://www.newbreedsoftware.com/tuxpaint/
 
-                         June 14, 2002 - March 8, 2006
+                         June 14, 2002 - March 12, 2006
 
    --------------------------------------------------------------------------
 
@@ -250,9 +250,10 @@ Stamps
            example.)
 
            Nothing about the original image is used except the transparency
-           ("alpha" channel). The color of the stamp comes out solid.
+           (from "alpha" channel). The color of the stamp comes out solid.
 
-           Add the word "colorable" to the stamp's data file.
+           Add a line containing the word "colorable" to the stamp's data
+           file.
 
       Tinted
 
@@ -261,13 +262,26 @@ Stamps
            the original image is used, but its hue is changed, based on the
            currently-selected color.)
 
-           Add the word "tintable" to the stamp's data file.
+           Add a line containing the word "tintable" to the stamp's data
+           file.
 
-           Sometimes you don't want the white or gray parts of an image
-           tinted (see for example the dry erase marker stamp in the default
-           stamp package). You can add the word "notintgray" to the stamp's
-           data file to accomplish this. Only areas with saturation over 25 %
-           are then tinted.
+        Tinting Options:
+
+             Depending on the contents of your stamp, you might want to have
+             Tux Paint use one of a numer of methods when tinting it. Add one
+             of the following lines to the stamp's data file:
+
+             "tinter=normal" (default)
+                     This is the normal tinting mode.
+
+             "tinter=anyhue"
+                     This is ???.
+
+             "tinter=narrow"
+                     This is ???.
+
+             "tinter=vector"
+                     This is ???.
 
     Unalterable Stamps
 
@@ -283,8 +297,8 @@ Stamps
          To make a stamp un-flippable, add the option "noflip" to the stamp's
          data file.
 
-         To keep a stamp from being mirrored, add the option "nomirror" to
-         the stamp's data file.
+         To keep a stamp from being mirrored, add a line containing the word
+         "nomirror" to the stamp's data file.
 
     Initial Stamp Size
 
