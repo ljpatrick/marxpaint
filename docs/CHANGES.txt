@@ -117,6 +117,10 @@ $Id$
     * Factor out general CFLAGS to facilitate packaging.  Compress man page -9.
       Ben Armstrong <synrg@sanctuary.nslug.ns.ca>
 
+    * Building with "-ffloat-store" in CFLAGS (instead of "-ffast-math")
+      to allow stamp tinting code to work properly.
+      Thanks to: Albert Cahalan <albert@users.sf.net>
+
   * Bug Fixes:
     ----------
     * Tux Paint's scalable icon (tuxpaint-icon.svg) caused Gnome panel to

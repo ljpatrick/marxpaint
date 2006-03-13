@@ -96,7 +96,8 @@ SDL_CFLAGS=$(shell sdl-config --cflags)
 
 # The entire set of CFLAGS:
 
-CFLAGS=-O2 -W -Wall -fno-common -ffast-math \
+#-ffast-math
+CFLAGS=-O2 -W -Wall -fno-common -ffloat-store \
 	-Wcast-align -Wredundant-decls \
 	-Wbad-function-cast -Wwrite-strings \
 	-Waggregate-return \
