@@ -8,11 +8,11 @@
 # 이 파일의 라이센스는 Tux Paint의 라이센스와 같습니다.
 msgid ""
 msgstr ""
-"Project-Id-Version: Tux Paint 0.9.14\n"
+"Project-Id-Version: Tux Paint 0.9.16\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2006-02-25 09:37+0100\n"
-"PO-Revision-Date: 2005-10-03 00:15-0700\n"
-"Last-Translator: Mark K. Kim <tuxNO_SOLICITATIONpaint-dev@cbreak.org>\n"
+"PO-Revision-Date: 2006-03-25 06:50-0700\n"
+"Last-Translator: Mark K. Kim <mkkim214@gmail.com>\n"
 "Language-Team: N/A\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -70,10 +70,10 @@ msgid "Beige!"
 msgstr "낙타색!"
 
 msgid "qx"
-msgstr ""
+msgstr "ㄱㅎ"
 
 msgid "QX"
-msgstr ""
+msgstr "ㄲㅍ"
 
 msgid "qy"
 msgstr ""
@@ -86,27 +86,27 @@ msgstr ""
 #. especially important for users who have scroll buttons disabled.
 #. Translators should do whatever is needed to put crummy fonts last.
 msgid "oO"
-msgstr ""
+msgstr "oO"
 
 #. distinct uppercase and lowercase
 msgid "`\\%_@$~#{}<>^&*"
-msgstr ""
+msgstr "`\\%_@$~#{}<>^&*"
 
 #. uncommon punctuation
 msgid ",.?!"
-msgstr ""
+msgstr ",.?!"
 
 #. common punctuation
 msgid "017"
-msgstr ""
+msgstr "017"
 
 #. digits
 msgid "O0"
-msgstr ""
+msgstr "O0ㅇ"
 
 #. distinct circle-like characters
 msgid "1Il|"
-msgstr ""
+msgstr "1Il|ㅣ"
 
 msgid "Great!"
 msgstr "잘한다!"
@@ -403,19 +403,19 @@ msgid "Do you really want to quit?"
 msgstr "프로그램을 끝 마칠까요?"
 
 msgid "Yes, I'm done!"
-msgstr ""
+msgstr "네, 끝마쳐요!"
 
 msgid "No, take me back!"
-msgstr ""
+msgstr "아니요, 전 화면으로 돌아가요!"
 
 msgid "If you quit, you’ll lose your picture! Save it?"
 msgstr "그림을 저장않하고 종료 하면 그림이 없어져요! 저장할까요?"
 
 msgid "Yes, save it!"
-msgstr ""
+msgstr "네, 저장하세요!"
 
 msgid "No, don't bother saving!"
-msgstr ""
+msgstr "아니요, 저장하지 마세요!"
 
 msgid "Save your picture first?"
 msgstr "먼저, 그림을 저장할까요?"
@@ -429,14 +429,13 @@ msgstr "네"
 #. This will be replaced with a dialog allowing color choice and Starter
 #. picking, with a "Back" option to dismiss the "New" and return to
 #. the current picture.  But for now...  (bjk 2006.02.19)
-#, fuzzy
 msgid "Start a new picture?"
-msgstr "이 그림을 지울까요?"
+msgstr "새 그림을 시작할까요?"
 
 #. #define PROMPT_NEW_YES gettext_noop("That’s OK!")
 #. #define PROMPT_NEW_NO gettext_noop("Never mind!")
 msgid "Yes, let's start fresh!"
-msgstr ""
+msgstr "네, 처음부터 시작해요!"
 
 msgid "There are no saved files!"
 msgstr "저장된 파일이 없네요!"
@@ -445,7 +444,7 @@ msgid "Print your picture now?"
 msgstr "그림을 인쇄 할까요?"
 
 msgid "Yes, print it!"
-msgstr ""
+msgstr "네, 인쇄하세요!"
 
 msgid "Your picture has been printed!"
 msgstr "그림을 인쇄 했습니다!"
@@ -457,16 +456,16 @@ msgid "Erase this picture?"
 msgstr "이 그림을 지울까요?"
 
 msgid "Yes, erase it!"
-msgstr ""
+msgstr "네, 지우세요!"
 
 msgid "No, don't erase it!"
-msgstr ""
+msgstr "아니요, 지우지 마세요!"
 
 msgid "Remember to use the left mouse button!"
 msgstr "왼쪽 마우스버튼을 사용하는걸 잊지 마세요!"
 
 msgid "Please wait..."
-msgstr ""
+msgstr "잠깐만 기다려 주세요..."
 
 msgid "Erase"
 msgstr "지우기"
@@ -487,17 +486,16 @@ msgstr "아니요"
 #. FIXME: Move elsewhere!!!
 #. #define PROMPT_SAVE_OVER_TXT gettext_noop("Save over the older version of this picture?")
 msgid "Replace the picture with your changes?"
-msgstr ""
+msgstr "전그림에 덮어쓸까요? 전그림은 없어집니다."
 
 msgid "Yes, replace the old one!"
-msgstr ""
+msgstr "네, 전그림을 덮어쓰세요!"
 
-#, fuzzy
 msgid "No, save a new file!"
 msgstr "아니요, 새로운 파일로 저장하죠"
 
 msgid "Choose the picture you want, then click “Open”."
-msgstr "원하는 그림을 고른후 '열기'버튼을 눌러주세요."
+msgstr "원하는 그림을 고른후 「열기」버튼을 눌러주세요."
 
 msgid "A drawing program for children."
 msgstr "어린이를 위한 미술 프로그램"

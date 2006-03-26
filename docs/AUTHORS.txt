@@ -200,7 +200,7 @@ $Id$
     Antoine Bigirimana <antoine@e-tools.com>.)
 
   * Korean
-    Mark K. Kim <tuxNO_SOLICITATIONpaint-dev@cbreak.org>
+    Mark K. Kim <mkkim214@gmail.com>
 
   * Lithuanian
     Mantas Kriauciunas <monte@mail.lt>
