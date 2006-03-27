@@ -7,7 +7,7 @@ bill@newbreedsoftware.com
 http://www.newbreedsoftware.com/tuxpaint/
 
 
-June 17, 2002 - March 8, 2006
+June 17, 2002 - March 27, 2006
 
 $Id$
 
@@ -111,6 +111,7 @@ $Id$
 
   * Chinese (Traditional)
     Song Huang <song@song.idv.tw>
+    Wei-Lun Chao <chaoweilun@pcmail.com.tw>
 
   * Croatian
     Nedjeljko Jedvaj <jedvaj.nedeljko@lexunit.com>

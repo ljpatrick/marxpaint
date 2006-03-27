@@ -66,6 +66,9 @@ $Id$
     --------------------
     * Brazilian Portuguese
       Fred Ulisses Maranhao <fred_maranhao@yahoo.com.br>
+
+    * Chinese (Traditional)
+      Wei-Lun Chao <chaoweilun@pcmail.com.tw>
     
     * French
       Jacques Chion <Jacques.Chion@wanadoo.fr>
