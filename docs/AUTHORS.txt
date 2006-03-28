@@ -7,7 +7,7 @@ bill@newbreedsoftware.com
 http://www.newbreedsoftware.com/tuxpaint/
 
 
-June 17, 2002 - March 27, 2006
+June 17, 2002 - March 28, 2006
 
 $Id$
 
@@ -53,6 +53,9 @@ $Id$
     GPL'd, Copyright 2002 Primoz Peterlin <primoz.peterlin@biofiz.mf.uni-lj.si>
     et al
 
+  * Other fonts: See their respective "COPYING.txt" details,
+    under "fonts/locale/*_docs/"...
+
 
 * Sound
 
@@ -86,6 +89,9 @@ $Id$
   * Albanian
     Ilir Rugova <ilirrugova@gmx.de>
     Laurent Dhima <laurenti@alblinux.net>
+
+  * Arabic
+    Khalid Al Holan <alholan@gmail.com>
 
   * Basque
     Juan Irigoien <juanirigoien@yahoo.es>

@@ -8,7 +8,7 @@
   bill@newbreedsoftware.com
   http://www.newbreedsoftware.com/tuxpaint/
 
-  June 14, 2002 - March 4, 2006
+  June 14, 2002 - March 28, 2006
   $Id$
 */
 
@@ -19,6 +19,7 @@
 
 enum {
   LANG_AF,     /* Afrikaans */
+  LANG_AR,     /* Arabic */
   LANG_BE,     /* Belarusian */
   LANG_BG,     /* Bulgarian */
   LANG_BR,     /* Breton */

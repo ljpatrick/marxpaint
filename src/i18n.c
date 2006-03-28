@@ -23,7 +23,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  June 14, 2002 - March 4, 2006
+  June 14, 2002 - March 28, 2006
   $Id$
 */
 
@@ -42,6 +42,7 @@
 
 const char * lang_prefixes[NUM_LANGS] = {
   "af",
+  "ar",
   "be",
   "bg",
   "br",
@@ -104,6 +105,7 @@ const char * lang_prefixes[NUM_LANGS] = {
 
 // languages which don't use the default font
 int lang_use_own_font[] = {
+  LANG_AR,
   LANG_HI,
   LANG_JA,
   LANG_KA,
@@ -116,6 +118,7 @@ int lang_use_own_font[] = {
 };
 
 int lang_use_right_to_left[] = {
+  LANG_AR,
   LANG_HE,
   -1
 };
@@ -129,6 +132,7 @@ const char * lang_prefix;
 const language_to_locale_struct language_to_locale_array[] = {
 {"english",              "C"},
 {"american-english",     "C"},
+{"arabic",		 "ar_SA.UTF-8"},
 {"croatian",             "hr_HR.UTF-8"},
 {"hrvatski",             "hr_HR.UTF-8"},
 {"catalan",              "ca_ES.UTF-8"},
@@ -336,6 +340,7 @@ void show_lang_usage(FILE * f, const char * const prg)
 /* C */      "  english      american-english\n"
 /* af */     "  afrikaans\n"
 /* sq */     "  albanian\n"
+/* ar */     "  arabic\n"
 /* eu */     "  basque       euskara\n"
 /* be */     "  belarusian   bielaruskaja\n"
 /* nb */     "  bokmal\n"
@@ -407,6 +412,7 @@ void show_locale_usage(FILE * f, const char * const prg)
           "LOCALE may be one of:\n"
           "  C       (English      American English)\n"
           "  af_ZA   (Afrikaans)\n"
+	  "  ar_SA   (Arabic)\n"
           "  eu_ES   (Baque        Euskara)\n"
           "  be_BY   (Belarusian   Bielaruskaja)\n"
           "  nb_NO   (Bokmal)\n"

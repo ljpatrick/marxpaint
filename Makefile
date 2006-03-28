@@ -7,7 +7,7 @@
 # bill@newbreedsoftware.com
 # http://www.newbreedsoftware.com/tuxpaint/
 
-# June 14, 2002 - March 12, 2006
+# June 14, 2002 - March 28, 2006
 
 
 # The version number, for release:
@@ -393,6 +393,7 @@ uninstall:
 	-rm $(MAN_PREFIX)/pl/man1/tuxpaint.1.gz
 	-rm $(MAN_PREFIX)/man1/tuxpaint-import.1.gz
 	-rm $(LOCALE_PREFIX)/af/LC_MESSAGES/tuxpaint.mo
+	-rm $(LOCALE_PREFIX)/ar/LC_MESSAGES/tuxpaint.mo
 	-rm $(LOCALE_PREFIX)/be/LC_MESSAGES/tuxpaint.mo
 	-rm $(LOCALE_PREFIX)/bg/LC_MESSAGES/tuxpaint.mo
 	-rm $(LOCALE_PREFIX)/br/LC_MESSAGES/tuxpaint.mo
@@ -644,6 +645,11 @@ install-gettext:
 	@install -d $(LOCALE_PREFIX)/sq/LC_MESSAGES
 	@cp trans/sq.mo $(LOCALE_PREFIX)/sq/LC_MESSAGES/tuxpaint.mo
 	@chmod 644 $(LOCALE_PREFIX)/sq/LC_MESSAGES/tuxpaint.mo
+	@#
+	@echo "   ar_SA ...Arabic..."
+	@install -d $(LOCALE_PREFIX)/ar/LC_MESSAGES
+	@cp trans/ar.mo $(LOCALE_PREFIX)/ar/LC_MESSAGES/tuxpaint.mo
+	@chmod 644 $(LOCALE_PREFIX)/ar/LC_MESSAGES/tuxpaint.mo
 	@#
 	@echo "   be_BY ...Belarusian..."
 	@install -d $(LOCALE_PREFIX)/be/LC_MESSAGES
@@ -1093,6 +1099,7 @@ obj/resource.o:	visualc/resources.rc obj visualc/resource.h
 
 translations: trans \
 	trans/af.mo \
+	trans/ar.mo \
 	trans/be.mo \
 	trans/bg.mo \
 	trans/br.mo \
@@ -1158,6 +1165,10 @@ trans:
 trans/af.mo:	src/po/af.po
 	@echo "   af_ZA ...Afrikaans..."
 	@msgfmt -o trans/af.mo src/po/af.po
+
+trans/ar.mo:	src/po/ar.po
+	@echo "   ar_SA ...Arabic..."
+	@msgfmt -o trans/ar.mo src/po/ar.po
 
 trans/be.mo:	src/po/be.po
 	@echo "   be_BY ...Belarusian..."
