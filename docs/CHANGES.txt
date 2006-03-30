@@ -9,7 +9,7 @@ http://www.newbreedsoftware.com/tuxpaint/
 $Id$
 
 
-2006.March.28 (0.9.16)
+2006.March.29 (0.9.16)
   * Interface improvements:
     -----------------------
     * Modified "Text" tool so that it correctly handles the 16-bit unicode
@@ -59,11 +59,16 @@ $Id$
 
   * New Translations:
     -----------------
-    * Arabic
+    * Arabic -- includes "ar.ttf" font
       Khalid Al Holan <alholan@gmail.com>
 
     * Scottish Gaelic
       Niall Tracey <internationiall@hotmail.com>
+
+    * Tibetan -- includes "bo.ttf" font
+      (NO TRANSLATION YET!)
+      ??? <??@??.??>
+      (via Ed Montgomery <edm@rocketmail.com>)
 
   * Translation Updates:
     --------------------

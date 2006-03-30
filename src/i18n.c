@@ -23,7 +23,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  June 14, 2002 - March 28, 2006
+  June 14, 2002 - March 29, 2006
   $Id$
 */
 
@@ -45,6 +45,7 @@ const char * lang_prefixes[NUM_LANGS] = {
   "ar",
   "be",
   "bg",
+  "bo",
   "br",
   "ca",
   "cs",
@@ -106,6 +107,7 @@ const char * lang_prefixes[NUM_LANGS] = {
 // languages which don't use the default font
 int lang_use_own_font[] = {
   LANG_AR,
+  LANG_BO,
   LANG_HI,
   LANG_JA,
   LANG_KA,
@@ -223,6 +225,7 @@ const language_to_locale_struct language_to_locale_array[] = {
 {"svenska",              "sv_SE.UTF-8"},
 {"swahili",              "sw_TZ.UTF-8"},
 {"thai",                 "th_TH.UTF-8"},
+{"tibetan",		 "bo_CN.UTF-8"}, /* Based on: http://texinfo.org/pipermail/texinfo-pretest/2005-April/000334.html */
 {"turkish",              "tr_TR.UTF-8"},
 {"ukrainian",            "uk_UA.UTF-8"},
 {"walloon",              "wa_BE.UTF-8"},

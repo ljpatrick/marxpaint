@@ -7,7 +7,7 @@
 # bill@newbreedsoftware.com
 # http://www.newbreedsoftware.com/tuxpaint/
 
-# June 14, 2002 - March 28, 2006
+# June 14, 2002 - March 29, 2006
 
 
 # The version number, for release:
@@ -396,6 +396,7 @@ uninstall:
 	-rm $(LOCALE_PREFIX)/ar/LC_MESSAGES/tuxpaint.mo
 	-rm $(LOCALE_PREFIX)/be/LC_MESSAGES/tuxpaint.mo
 	-rm $(LOCALE_PREFIX)/bg/LC_MESSAGES/tuxpaint.mo
+	-rm $(LOCALE_PREFIX)/bo/LC_MESSAGES/tuxpaint.mo
 	-rm $(LOCALE_PREFIX)/br/LC_MESSAGES/tuxpaint.mo
 	-rm $(LOCALE_PREFIX)/ca/LC_MESSAGES/tuxpaint.mo
 	-rm $(LOCALE_PREFIX)/cs/LC_MESSAGES/tuxpaint.mo
@@ -901,6 +902,11 @@ install-gettext:
 	@cp trans/th.mo $(LOCALE_PREFIX)/th/LC_MESSAGES/tuxpaint.mo
 	@chmod 644 $(LOCALE_PREFIX)/th/LC_MESSAGES/tuxpaint.mo
 	@#
+	@echo "   bo_CN ...Tibetan..."
+	@install -d $(LOCALE_PREFIX)/bo/LC_MESSAGES
+	@cp trans/bo.mo $(LOCALE_PREFIX)/bo/LC_MESSAGES/tuxpaint.mo
+	@chmod 644 $(LOCALE_PREFIX)/bo/LC_MESSAGES/tuxpaint.mo
+	@#
 	@echo "   tr_TR ...Turkish..."
 	@install -d $(LOCALE_PREFIX)/tr/LC_MESSAGES
 	@cp trans/tr.mo $(LOCALE_PREFIX)/tr/LC_MESSAGES/tuxpaint.mo
@@ -1102,6 +1108,7 @@ translations: trans \
 	trans/ar.mo \
 	trans/be.mo \
 	trans/bg.mo \
+	trans/bo.mo \
 	trans/br.mo \
 	trans/ca.mo \
 	trans/cs.mo \
@@ -1177,6 +1184,10 @@ trans/be.mo:	src/po/be.po
 trans/bg.mo:	src/po/bg.po
 	@echo "   bg_BG ...Bulgarian..."
 	@msgfmt -o trans/bg.mo src/po/bg.po
+
+trans/bo.mo:	src/po/bo.po
+	@echo "   bo_CN ...Tibetan..."
+	@msgfmt -o trans/bo.mo src/po/bo.po
 
 trans/br.mo:	src/po/br.po
 	@echo "   br_FR ...Breton..."
