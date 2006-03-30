@@ -1,9 +1,9 @@
 # Tuxpaint catalan translation.
 # Traducció al català del Tuxpaint.
-# Copyright (C) 2002
+# Copyright (C) 2002-2006
 # This file is distributed under the same license as the Tuxpaint package.
 # Aquest fitxer és distribueix amb la mateixa llicència que el Tuxpaint.
-# Pere Pujal i Carabantes <ppujal@airtel.net>, 2002.
+# Pere Pujal i Carabantes <ppujal@airtel.net>, 2002-2006.
 #
 #
 # Nota per futures traduccions/actualitzacions:
@@ -15,10 +15,10 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Tuxpaint 0.0.1pre\n"
+"Project-Id-Version: Tuxpaint cvs 2006-03-26\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2006-02-25 09:37+0100\n"
-"PO-Revision-Date: 2004-07-15 22:48+0200\n"
+"PO-Revision-Date: 2006-03-28 20:03+0200\n"
 "Last-Translator: Pere Pujal i Carabantes <ppujal@airtel.net>\n"
 "Language-Team: Català <linux-ca@chanae.alphanet.ch>\n"
 "MIME-Version: 1.0\n"
@@ -26,13 +26,13 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 msgid "Black!"
-msgstr "Negre"
+msgstr "Negre!"
 
 msgid "Dark grey! Some people spell it “dark gray”."
-msgstr ""
+msgstr "Gris fosc!"
 
 msgid "Light grey! Some people spell it “light gray”."
-msgstr ""
+msgstr "Gris clar!"
 
 msgid "White!"
 msgstr "Blanc!"
@@ -47,20 +47,19 @@ msgid "Yellow!"
 msgstr "Groc!"
 
 msgid "Light green!"
-msgstr ""
+msgstr "Verd clar!"
 
-#, fuzzy
 msgid "Dark green!"
-msgstr "Gris!"
+msgstr "Verd fosc!"
 
 msgid "Sky blue!"
-msgstr ""
+msgstr "Blau cel!"
 
 msgid "Blue!"
 msgstr "Blau!"
 
 msgid "Lavender!"
-msgstr ""
+msgstr "Lila!"
 
 msgid "Purple!"
 msgstr "Porpra!"
@@ -71,51 +70,51 @@ msgstr "Rosa!"
 msgid "Brown!"
 msgstr "Marró!"
 
-#, fuzzy
 msgid "Tan!"
-msgstr "Blau cel!"
+msgstr "Torrat!"
 
+# Sí, existeix al diccionari
 msgid "Beige!"
-msgstr ""
+msgstr "Beix!"
 
 msgid "qx"
-msgstr ""
+msgstr "qx"
 
 msgid "QX"
-msgstr ""
+msgstr "QX"
 
 msgid "qy"
-msgstr ""
+msgstr "qy"
 
 msgid "QY"
-msgstr ""
+msgstr "QY"
 
 #. Now we score fonts to ensure that the best ones will be placed at
 #. the top of the list. The user will see them first. This sorting is
 #. especially important for users who have scroll buttons disabled.
 #. Translators should do whatever is needed to put crummy fonts last.
 msgid "oO"
-msgstr ""
+msgstr "oO"
 
 #. distinct uppercase and lowercase
 msgid "`\\%_@$~#{}<>^&*"
-msgstr ""
+msgstr "`\\%_@$~#{}<>^&*"
 
 #. uncommon punctuation
 msgid ",.?!"
-msgstr ""
+msgstr ",.?!"
 
 #. common punctuation
 msgid "017"
-msgstr ""
+msgstr "017"
 
 #. digits
 msgid "O0"
-msgstr ""
+msgstr "O0"
 
 #. distinct circle-like characters
 msgid "1Il|"
-msgstr ""
+msgstr "1Il|"
 
 msgid "Great!"
 msgstr "Excel·lent!"
@@ -124,7 +123,7 @@ msgid "Cool!"
 msgstr "Genial!"
 
 msgid "Keep it up!"
-msgstr "Seguiu així"
+msgstr "Seguiu així!"
 
 msgid "Good job!"
 msgstr "Bona feina!"
@@ -132,13 +131,11 @@ msgstr "Bona feina!"
 msgid "Fill"
 msgstr "Emplena"
 
-#, fuzzy
 msgid "Grass"
-msgstr "Esborra"
+msgstr "Herba"
 
-#, fuzzy
 msgid "Bricks"
-msgstr "Quadrets"
+msgstr "Rejoles"
 
 msgid "Rainbow"
 msgstr "Arc de Sant Martí"
@@ -150,13 +147,13 @@ msgid "Blur"
 msgstr "Difumina"
 
 msgid "Smudge"
-msgstr ""
+msgstr "Dit"
 
 msgid "Lighten"
-msgstr ""
+msgstr "Aclarir"
 
 msgid "Darken"
-msgstr ""
+msgstr "Enfosquir"
 
 msgid "Chalk"
 msgstr "Guix"
@@ -167,15 +164,14 @@ msgstr "Quadrets"
 msgid "Negative"
 msgstr "Negatiu"
 
-#, fuzzy
 msgid "Tint"
-msgstr "Aprima"
+msgstr "Entinta"
 
 msgid "Drip"
 msgstr "Goteja"
 
 msgid "Cartoon"
-msgstr ""
+msgstr "Solidifica"
 
 msgid "Mirror"
 msgstr "Mirall"
@@ -186,17 +182,14 @@ msgstr "Mirall vertical"
 msgid "Click in the picture to fill that area with color."
 msgstr "Feu clic en la imatge per omplir de color una àrea."
 
-#, fuzzy
 msgid "Click and move to draw grass. Don’t forget the dirt!"
-msgstr "Feu clic i moveu per dibuixar guspires."
+msgstr "Feu clic i moveu per dibuixar herba. No oblideu la terra."
 
-#, fuzzy
 msgid "Click and move to draw large bricks."
-msgstr "Feu clic i moveu per dibuixar guspires."
+msgstr "Feu clic i moveu per dibuixar rejoles grans."
 
-#, fuzzy
 msgid "Click and move to draw small bricks."
-msgstr "Feu clic i moveu per dibuixar guspires."
+msgstr "Feu clic i moveu per dibuixar rejoles petites."
 
 msgid "You can draw in rainbow colors!"
 msgstr "Podeu pintar amb els colors de l'arc de Sant Martí!"
@@ -207,16 +200,14 @@ msgstr "Feu clic i moveu per dibuixar guspires."
 msgid "Click and move the mouse around to blur the picture."
 msgstr "Feu clic i moveu el ratolí per difuminar el dibuix."
 
-#, fuzzy
 msgid "Click and move the mouse around to smudge the picture."
-msgstr "Feu clic i moveu el ratolí per difuminar el dibuix."
+msgstr "Feu clic i moveu el ratolí per passar el dit pel dibuix."
 
 msgid "Click and move to fade the colors."
 msgstr "Feu clic i moveu per esvair els colors."
 
-#, fuzzy
 msgid "Click and move to darken the colors."
-msgstr "Feu clic i moveu per esvair els colors."
+msgstr "Feu clic i moveu per enfosquir els colors."
 
 msgid ""
 "Click and move the mouse around to turn the picture into a chalk drawing."
@@ -229,17 +220,14 @@ msgstr "Feu clic i move el ratolí per fer-ne quadrets de la imatge."
 msgid "Click and move the mouse around to draw a negative."
 msgstr "Feu clic i moveu el ratolí per fer un negatiu."
 
-#, fuzzy
 msgid "Click and move the mouse around to change the picture’s color."
-msgstr "Feu clic i move el ratolí per fer-ne quadrets de la imatge."
+msgstr "Feu clic i moveu el ratolí per canviar el color de la imatge."
 
 msgid "Click and move the mouse around to make the picture drip."
 msgstr "Feu clic i moveu el ratolí per fer gotejar la imatge."
 
-#, fuzzy
 msgid "Click and move the mouse around to turn the picture into a cartoon."
-msgstr ""
-"Feu clic i moveu el ratolí per convertir la imatge en un dibuix fet amb guix."
+msgstr "Feu clic i moveu el ratolí per convertir la imatge a colors sólids."
 
 msgid "Click to make a mirror image."
 msgstr "Feu clic per invertir la imatge horitzontalment!."
@@ -257,7 +245,7 @@ msgid "Circle"
 msgstr "Cercle"
 
 msgid "Ellipse"
-msgstr ""
+msgstr "El·lipse"
 
 msgid "Triangle"
 msgstr "Triangle"
@@ -266,22 +254,22 @@ msgid "Pentagon"
 msgstr "Pentàgon"
 
 msgid "Rhombus"
-msgstr ""
+msgstr "Romb"
 
-#, fuzzy
 msgid "A square is a rectangle with four equal sides."
-msgstr "Un rectangle té quatre cares."
+msgstr "Un quadrat és un rectangle amb quatre cares iguals."
 
-#, fuzzy
 msgid "A rectangle has four sides and four right angles."
-msgstr "Un rectangle té quatre cares."
+msgstr "Un rectangle té quatre cares i quatre angles rectes."
 
 msgid ""
 "A circle is a curve where all points have the same distance from the centre."
 msgstr ""
+"Un cercle és una corba que té tots els punts a la mateixa distància del "
+"centre."
 
 msgid "An ellipse is a stretched circle."
-msgstr ""
+msgstr "Una el·lipse és un cercle estirat."
 
 msgid "A triangle has three sides."
 msgstr "Un triangle té tres cares."
@@ -290,7 +278,7 @@ msgid "A pentagon has five sides."
 msgstr "Un pentàgon té cinc cares."
 
 msgid "A rhombus has four equal sides, and opposite sides are parallel."
-msgstr ""
+msgstr "Un romb té quatre cares iguals i les cares oposades són paralel·les."
 
 msgid "Tools"
 msgstr "Eines"
@@ -301,9 +289,8 @@ msgstr "Colors"
 msgid "Brushes"
 msgstr "Pinzells"
 
-#, fuzzy
 msgid "Erasers"
-msgstr "Esborra"
+msgstr "Gomes"
 
 msgid "Stamps"
 msgstr "Segells"
@@ -420,7 +407,7 @@ msgid "Hold the button to stretch the shape."
 msgstr "Manteniu el botó premut per estirar la figura."
 
 msgid "Move the mouse to rotate the shape. Click to draw it."
-msgstr "Moveu el ratolí per girar la figura. Feu clic per dibuixar-lo."
+msgstr "Moveu el ratolí per girar la figura. Feu clic per dibuixar-la."
 
 msgid "OK then… Let’s keep drawing this one!"
 msgstr "D'acord, llavors... Seguirem dibuixant en aquest!"
@@ -430,19 +417,19 @@ msgid "Do you really want to quit?"
 msgstr "De veres voleu sortir?"
 
 msgid "Yes, I'm done!"
-msgstr ""
+msgstr "Sí, ja he acabat!"
 
 msgid "No, take me back!"
-msgstr ""
+msgstr "No, Tornem-hi!"
 
 msgid "If you quit, you’ll lose your picture! Save it?"
 msgstr "Si sortiu perdreu el vostre dibuix! El voleu desar?"
 
 msgid "Yes, save it!"
-msgstr ""
+msgstr "Sí, desa'l!"
 
 msgid "No, don't bother saving!"
-msgstr ""
+msgstr "No, no cal que desis!"
 
 msgid "Save your picture first?"
 msgstr "Deso el vostre dibuix abans?"
@@ -456,14 +443,13 @@ msgstr "D'acord"
 #. This will be replaced with a dialog allowing color choice and Starter
 #. picking, with a "Back" option to dismiss the "New" and return to
 #. the current picture.  But for now...  (bjk 2006.02.19)
-#, fuzzy
 msgid "Start a new picture?"
-msgstr "Esborro aquest dibuix?"
+msgstr "Començo un dibuix nou?"
 
 #. #define PROMPT_NEW_YES gettext_noop("That’s OK!")
 #. #define PROMPT_NEW_NO gettext_noop("Never mind!")
 msgid "Yes, let's start fresh!"
-msgstr ""
+msgstr "Sí, comencem-ne un de nou!"
 
 msgid "There are no saved files!"
 msgstr "No hi ha fitxers desats!"
@@ -472,10 +458,10 @@ msgid "Print your picture now?"
 msgstr "Imprimeixo ara el vostre dibuix?"
 
 msgid "Yes, print it!"
-msgstr ""
+msgstr "Sí, imprimeix-lo!"
 
 msgid "Your picture has been printed!"
-msgstr "El vostre fitxer s'ha imprés!"
+msgstr "El vostre dibuix s'ha imprés!"
 
 msgid "You can’t print yet!"
 msgstr "Encara no podeu imprimir!"
@@ -484,16 +470,16 @@ msgid "Erase this picture?"
 msgstr "Esborro aquest dibuix?"
 
 msgid "Yes, erase it!"
-msgstr ""
+msgstr "Sí, esborra'l!"
 
 msgid "No, don't erase it!"
-msgstr ""
+msgstr "No, no l'esborris!"
 
 msgid "Remember to use the left mouse button!"
-msgstr ""
+msgstr "Recordeu de fer servir el botó esquerre!"
 
 msgid "Please wait..."
-msgstr ""
+msgstr "Espereu, si us plau..."
 
 msgid "Erase"
 msgstr "Esborra"
@@ -502,7 +488,7 @@ msgid "Back"
 msgstr "Endarrera"
 
 msgid "Aa"
-msgstr ""
+msgstr "Aa"
 
 #. FIXME: Move elsewhere! Or not?!
 msgid "Yes"
@@ -514,12 +500,11 @@ msgstr "No"
 #. FIXME: Move elsewhere!!!
 #. #define PROMPT_SAVE_OVER_TXT gettext_noop("Save over the older version of this picture?")
 msgid "Replace the picture with your changes?"
-msgstr ""
+msgstr "Reemplaço el dibuix amb els vostres canvis?"
 
 msgid "Yes, replace the old one!"
-msgstr ""
+msgstr "Sí, reemplaça l'antic!"
 
-#, fuzzy
 msgid "No, save a new file!"
 msgstr "No, desa en un fitxer nou"
 
@@ -535,65 +520,71 @@ msgstr "Programa de dibuix"
 msgid "Tux Paint"
 msgstr "Tux Paint"
 
-#~ msgid "Starting a new picture will erase the current one!"
-#~ msgstr "Començar un nou dibuix esborrarà l'actual!"
+msgid "Starting a new picture will erase the current one!"
+msgstr "Començar un nou dibuix esborrarà l'actual!"
 
-#~ msgid "That’s OK!"
-#~ msgstr "D'acord!"
+msgid "That’s OK!"
+msgstr "D'acord!"
 
-#~ msgid "Never mind!"
-#~ msgstr "Ni pensar-hi!"
+msgid "Never mind!"
+msgstr "Ni pensar-hi!"
 
-#~ msgid "Save over the older version of this picture?"
-#~ msgstr "Deso sobre la versió antiga d'aquest dibuix?"
+msgid "Save over the older version of this picture?"
+msgstr "Deso sobre la versió antiga d'aquest dibuix?"
 
-#~ msgid "Green!"
-#~ msgstr "Vert!"
+msgid "Green!"
+msgstr "Vert!"
 
-#~ msgid "Fade"
-#~ msgstr "Esvaeix"
+msgid "Fade"
+msgstr "Esvaeix"
 
-#~ msgid "Oval"
-#~ msgstr "Óval"
+msgid "Oval"
+msgstr "Óval"
 
-#~ msgid "Diamond"
-#~ msgstr "Romb"
+msgid "Diamond"
+msgstr "Romb"
 
-#~ msgid "A square has four sides, each the same length."
-#~ msgstr "Un quadrat té quatre cares, totes de la mateixa mida."
+msgid "A square has four sides, each the same length."
+msgstr "Un quadrat té quatre cares, totes de la mateixa mida."
 
-#~ msgid "A circle is exactly round."
-#~ msgstr "Un cercle és perfectament rodó."
+msgid "A circle is exactly round."
+msgstr "Un cercle és perfectament rodó."
 
-#~ msgid "A diamond is a square, turned around slightly."
-#~ msgstr "Un romb és un quadrat, una mica aplanat."
+msgid "A diamond is a square, turned around slightly."
+msgstr "Un romb és un quadrat, una mica aplanat."
 
-#~ msgid "Lime!"
-#~ msgstr "Llima!"
+msgid "Lime!"
+msgstr "Llima!"
 
-#~ msgid "Fuchsia!"
-#~ msgstr "Fúcsia!"
+msgid "Fuchsia!"
+msgstr "Fúcsia!"
 
-#~ msgid "Silver!"
-#~ msgstr "Platejat!"
+msgid "Silver!"
+msgstr "Platejat!"
 
-#~ msgid "Thick"
-#~ msgstr "Engruixa"
+msgid "Thick"
+msgstr "Engruixa"
 
-#~ msgid "Click and move the mouse to thicken the picture."
-#~ msgstr "Feu clic i moveu el ratolí per fer engruixir la imatge."
+msgid "Click and move the mouse to thicken the picture."
+msgstr "Feu clic i moveu el ratolí per fer engruixir la imatge."
 
-#~ msgid "Click and move the mouse to thin the picture."
-#~ msgstr "Feu clic i moveu el ratolí per fer aprimar la imatge."
+msgid "Click and move the mouse to thin the picture."
+msgstr "Feu clic i moveu el ratolí per fer aprimar la imatge."
 
-#~ msgid "Okay"
-#~ msgstr "D'acord"
+msgid "Okay"
+msgstr "D'acord"
 
-#~ msgid "Red"
-#~ msgstr "Vermell"
+msgid "Red"
+msgstr "Vermell"
 
-#~ msgid "Grey"
-#~ msgstr "Gris"
+msgid "Grey"
+msgstr "Gris"
 
-#~ msgid "Happy"
-#~ msgstr "Feliç"
+msgid "Happy"
+msgstr "Feliç"
+
+#~ msgid "jq"
+#~ msgstr "jq"
+
+#~ msgid "JQ"
+#~ msgstr "JQ"
