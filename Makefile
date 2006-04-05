@@ -7,7 +7,7 @@
 # bill@newbreedsoftware.com
 # http://www.newbreedsoftware.com/tuxpaint/
 
-# June 14, 2002 - March 29, 2006
+# June 14, 2002 - April 2, 2006
 
 
 # The version number, for release:
@@ -410,6 +410,7 @@ uninstall:
 	-rm $(LOCALE_PREFIX)/es_MX/LC_MESSAGES/tuxpaint.mo
 	-rm $(LOCALE_PREFIX)/eu/LC_MESSAGES/tuxpaint.mo
 	-rm $(LOCALE_PREFIX)/fi/LC_MESSAGES/tuxpaint.mo
+	-rm $(LOCALE_PREFIX)/fo/LC_MESSAGES/tuxpaint.mo
 	-rm $(LOCALE_PREFIX)/fr/LC_MESSAGES/tuxpaint.mo
 	-rm $(LOCALE_PREFIX)/ga/LC_MESSAGES/tuxpaint.mo
 	-rm $(LOCALE_PREFIX)/gd/LC_MESSAGES/tuxpaint.mo
@@ -721,6 +722,11 @@ install-gettext:
 	@install -d $(LOCALE_PREFIX)/et/LC_MESSAGES
 	@cp trans/et.mo $(LOCALE_PREFIX)/et/LC_MESSAGES/tuxpaint.mo
 	@chmod 644 $(LOCALE_PREFIX)/et/LC_MESSAGES/tuxpaint.mo
+	@#
+	@echo "   fo_FO ...Faroese..."
+	@install -d $(LOCALE_PREFIX)/fo/LC_MESSAGES
+	@cp trans/fo.mo $(LOCALE_PREFIX)/fo/LC_MESSAGES/tuxpaint.mo
+	@chmod 644 $(LOCALE_PREFIX)/fo/LC_MESSAGES/tuxpaint.mo
 	@#
 	@echo "   fi_FI ...Finnish..."
 	@install -d $(LOCALE_PREFIX)/fi/LC_MESSAGES
@@ -1122,6 +1128,7 @@ translations: trans \
 	trans/es_mx.mo \
 	trans/eu.mo \
 	trans/fi.mo \
+	trans/fo.mo \
 	trans/fr.mo \
 	trans/ga.mo \
 	trans/gd.mo \
@@ -1240,6 +1247,10 @@ trans/eu.mo:	src/po/eu.po
 trans/fi.mo:	src/po/fi.po
 	@echo "   fi_FI ...Finnish..."
 	@msgfmt -o trans/fi.mo src/po/fi.po
+
+trans/fo.mo:	src/po/fo.po
+	@echo "   fo_FO ...Faroese..."
+	@msgfmt -o trans/fo.mo src/po/fo.po
 
 trans/fr.mo:	src/po/fr.po
 	@echo "   fr_FR ...French..."

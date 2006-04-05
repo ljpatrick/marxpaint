@@ -6,17 +6,26 @@
 # 
 msgid ""
 msgstr ""
-"Project-Id-Version: tuxpaint 0.9.15rc1\n"
+"Project-Id-Version: tuxpaint-0.9.15rc1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-02-25 09:37+0100\n"
-"PO-Revision-Date: 2005-12-05 15:35+1030\n"
+"POT-Creation-Date: 2005-10-10 00:12-0700\n"
+"PO-Revision-Date: 2006-04-05 15:17+0930\n"
 "Last-Translator: Clytie Siddall <clytie@riverland.net.au>\n"
-"Language-Team: Vietnamese <gnomevi-list@lists.sourceforge.net> \n"
+"Language-Team: Vietnamese <gnomevi-list@lists.sourceforge.net>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0\n"
-"X-Generator: BBEdit 8.2.3\n"
+"X-Generator: LocFactoryEditor 1.6b36\n"
+
+msgid "A drawing program for children."
+msgstr "Một chương trình vẽ cho đứa bé."
+
+msgid "Drawing program"
+msgstr "Trình vẽ"
+
+msgid "Tux Paint"
+msgstr "Tux Sơn"
 
 msgid "Black!"
 msgstr "Đen!"
@@ -68,45 +77,6 @@ msgstr "Vỏ dà!"
 
 msgid "Beige!"
 msgstr "Be!"
-
-msgid "qx"
-msgstr ""
-
-msgid "QX"
-msgstr ""
-
-msgid "qy"
-msgstr ""
-
-msgid "QY"
-msgstr ""
-
-#. Now we score fonts to ensure that the best ones will be placed at
-#. the top of the list. The user will see them first. This sorting is
-#. especially important for users who have scroll buttons disabled.
-#. Translators should do whatever is needed to put crummy fonts last.
-msgid "oO"
-msgstr "oO"
-
-#. distinct uppercase and lowercase
-msgid "`\\%_@$~#{}<>^&*"
-msgstr "`\\%_@$₫~#{}<>«»^&*"
-
-#. uncommon punctuation
-msgid ",.?!"
-msgstr ",.?!"
-
-#. common punctuation
-msgid "017"
-msgstr "017"
-
-#. digits
-msgid "O0"
-msgstr "O0"
-
-#. distinct circle-like characters
-msgid "1Il|"
-msgstr "1Il|"
 
 msgid "Great!"
 msgstr "Tuyệt vời!"
@@ -201,8 +171,7 @@ msgstr "Nhắp và di chuột để làm màu mờ dần."
 msgid "Click and move to darken the colors."
 msgstr "Nhắp và di chuột để làm màu tối hơn."
 
-msgid ""
-"Click and move the mouse around to turn the picture into a chalk drawing."
+msgid "Click and move the mouse around to turn the picture into a chalk drawing."
 msgstr "Nhắp và di chuột để đổi hình này thành bản vẽ phấn."
 
 msgid "Click and move the mouse around to make the picture blocky."
@@ -253,8 +222,7 @@ msgstr "Hình vuông là hình chữ nhật có bốn cạnh bằng nhau."
 msgid "A rectangle has four sides and four right angles."
 msgstr "Hình chữ nhật có bốn cạnh và bốn góc vuông."
 
-msgid ""
-"A circle is a curve where all points have the same distance from the centre."
+msgid "A circle is a curve where all points have the same distance from the centre."
 msgstr "Hình tròn là đường cong có mọi điểm cách tâm vòng bằng nhau."
 
 msgid "An ellipse is a stretched circle."
@@ -267,8 +235,7 @@ msgid "A pentagon has five sides."
 msgstr "Hình năm canh có ... năm cạnh. :)"
 
 msgid "A rhombus has four equal sides, and opposite sides are parallel."
-msgstr ""
-"Hình thoi có bốn cạnh bằng nhau, mỗi cặp cạnh đối diện với nhau là song song."
+msgstr "Hình thoi có bốn cạnh bằng nhau, mỗi cặp cạnh đối diện với nhau là song song."
 
 msgid "Tools"
 msgstr "Công cụ"
@@ -340,13 +307,8 @@ msgstr "Chọn một ảnh để dấu vòng quanh hình vẽ của cháu."
 msgid "Click to start drawing a line. Let go to complete it."
 msgstr "Nhắp chuột để bắt đầu vẽ một đường. Nhả nút chuột để vẽ xong."
 
-msgid ""
-"Pick a shape. Click to pick the center, drag, then let go when it is the "
-"size you want. Move around to rotate it, and click to draw it."
-msgstr ""
-"Chọn một hình. Nhắp chuột để định tâm, kéo, rồi nhả nút chuột đến khi có "
-"kích cỡ cháu muốn. Di chuyển chuột để quay hình, nhắp chuột lần nữa để vẽ "
-"xong."
+msgid "Pick a shape. Click to pick the center, drag, then let go when it is the size you want. Move around to rotate it, and click to draw it."
+msgstr "Chọn một hình. Nhắp chuột để định tâm, kéo, rồi nhả nút chuột đến khi có kích cỡ cháu muốn. Di chuyển chuột để quay hình, nhắp chuột lần nữa để vẽ xong."
 
 msgid "Choose a style of text. Click on your drawing and you can start typing."
 msgstr "Chọn kiểu văn bản. Nhắp vào bản vẽ và bắt đầu gõ chữ."
@@ -402,20 +364,15 @@ msgstr "Được thôi... Hãy tiếp tục bản vẽ này!"
 msgid "Do you really want to quit?"
 msgstr "Cháu có thực sư muốn thoát không?"
 
-msgid "Yes, I'm done!"
-msgstr ""
+#. FIXME: Move elsewhere! Or not?!
+msgid "Yes"
+msgstr "Có"
 
-msgid "No, take me back!"
-msgstr ""
+msgid "No"
+msgstr "Không"
 
 msgid "If you quit, you’ll lose your picture! Save it?"
 msgstr "Nếu thoát thì ảnh của cháu bị mất! Có lưu không?"
-
-msgid "Yes, save it!"
-msgstr ""
-
-msgid "No, don't bother saving!"
-msgstr ""
 
 msgid "Save your picture first?"
 msgstr "Có lưu ảnh của cháu trước?"
@@ -426,26 +383,20 @@ msgstr "Không mở được ảnh ấy!"
 msgid "OK"
 msgstr "Được"
 
-#. This will be replaced with a dialog allowing color choice and Starter
-#. picking, with a "Back" option to dismiss the "New" and return to
-#. the current picture.  But for now...  (bjk 2006.02.19)
-#, fuzzy
-msgid "Start a new picture?"
-msgstr "Có xóa ảnh này không?"
+msgid "Starting a new picture will erase the current one!"
+msgstr "Nếu bắt đầu bản vẽ mới thì bản vẽ hiện thời sẽ bị xóa!"
 
-#. #define PROMPT_NEW_YES gettext_noop("That’s OK!")
-#. #define PROMPT_NEW_NO gettext_noop("Never mind!")
-msgid "Yes, let's start fresh!"
-msgstr ""
+msgid "That’s OK!"
+msgstr "Dồng ý!"
+
+msgid "Never mind!"
+msgstr "Tôi đổi ý kiến!"
 
 msgid "There are no saved files!"
 msgstr "Không có tập tin nào được lưu!"
 
 msgid "Print your picture now?"
 msgstr "Có in ảnh của cháu bây giờ?"
-
-msgid "Yes, print it!"
-msgstr ""
 
 msgid "Your picture has been printed!"
 msgstr "Ảnh của cháu đã được in rồi!"
@@ -456,17 +407,32 @@ msgstr "Cháu chưa có thể in!"
 msgid "Erase this picture?"
 msgstr "Có xóa ảnh này không?"
 
-msgid "Yes, erase it!"
-msgstr ""
-
-msgid "No, don't erase it!"
-msgstr ""
-
 msgid "Remember to use the left mouse button!"
 msgstr "Hãy nhớ để dùng cái nút bên trái trên con chuột."
 
-msgid "Please wait..."
-msgstr ""
+msgid "jq"
+msgstr "jq"
+
+msgid "JQ"
+msgstr "JQ"
+
+msgid "oO"
+msgstr "oO"
+
+msgid "`\\%_@$~#{}<>^&*"
+msgstr "`\\%_@$₫~#{}<>«»^&*"
+
+msgid ",.?!"
+msgstr ",.?!"
+
+msgid "017"
+msgstr "017"
+
+msgid "O0"
+msgstr "O0"
+
+msgid "1Il|"
+msgstr "1Il|"
 
 msgid "Erase"
 msgstr "Xóa"
@@ -477,51 +443,12 @@ msgstr "Quay lui"
 msgid "Aa"
 msgstr "Aa"
 
-#. FIXME: Move elsewhere! Or not?!
-msgid "Yes"
-msgstr "Có"
-
-msgid "No"
-msgstr "Không"
-
 #. FIXME: Move elsewhere!!!
-#. #define PROMPT_SAVE_OVER_TXT gettext_noop("Save over the older version of this picture?")
-msgid "Replace the picture with your changes?"
-msgstr ""
+msgid "Save over the older version of this picture?"
+msgstr "Ghi đè lên bản vẽ cũ không?"
 
-msgid "Yes, replace the old one!"
-msgstr ""
-
-#, fuzzy
-msgid "No, save a new file!"
+msgid "No, save a new file"
 msgstr "Không, lưu vào một tập tin mới"
 
 msgid "Choose the picture you want, then click “Open”."
 msgstr "Chọn ảnh mà cháu muốn, rồi nhắp vào nút Mở."
-
-msgid "A drawing program for children."
-msgstr "Một chương trình vẽ cho đứa bé."
-
-msgid "Drawing program"
-msgstr "Trình vẽ"
-
-msgid "Tux Paint"
-msgstr "Tux Sơn"
-
-#~ msgid "Starting a new picture will erase the current one!"
-#~ msgstr "Nếu bắt đầu bản vẽ mới thì bản vẽ hiện thời sẽ bị xóa!"
-
-#~ msgid "That’s OK!"
-#~ msgstr "Dồng ý!"
-
-#~ msgid "Never mind!"
-#~ msgstr "Tôi đổi ý kiến!"
-
-#~ msgid "jq"
-#~ msgstr "jq"
-
-#~ msgid "JQ"
-#~ msgstr "JQ"
-
-#~ msgid "Save over the older version of this picture?"
-#~ msgstr "Ghi đề lên bản vẽ cũ không?"

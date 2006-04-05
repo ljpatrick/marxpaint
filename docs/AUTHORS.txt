@@ -7,7 +7,7 @@ bill@newbreedsoftware.com
 http://www.newbreedsoftware.com/tuxpaint/
 
 
-June 17, 2002 - March 28, 2006
+June 17, 2002 - April 2, 2006
 
 $Id$
 
@@ -138,6 +138,9 @@ $Id$
 
   * Estonian
     Henrik Pihl <henrik@saarlane.ee>
+
+  * Faroese
+    Lis Gøthe í Jákupsstovu <morshus@gmail.com>
 
   * Finnish
     Tarmo Toikkanen <tarmo.toikkanen@iki.fi>

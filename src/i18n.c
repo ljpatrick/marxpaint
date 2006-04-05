@@ -23,7 +23,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  June 14, 2002 - March 29, 2006
+  June 14, 2002 - April 2, 2006
   $Id$
 */
 
@@ -60,6 +60,7 @@ const char * lang_prefixes[NUM_LANGS] = {
   "et",
   "eu",
   "fi",
+  "fo",
   "fr",
   "ga",
   "gd",
@@ -160,6 +161,7 @@ const language_to_locale_struct language_to_locale_array[] = {
 {"espanol",              "es_ES.UTF-8"},
 {"finnish",              "fi_FI.UTF-8"},
 {"suomi",                "fi_FI.UTF-8"},
+{"faroese",		 "fo_FO.UTF-8"},
 {"french",               "fr_FR.UTF-8"},
 {"francais",             "fr_FR.UTF-8"},
 {"gaelic",               "ga_IE.UTF-8"},
@@ -359,6 +361,7 @@ void show_lang_usage(FILE * f, const char * const prg)
 /* da */     "  danish       dansk\n"
 /* nl */     "  dutch        nederlands\n"
 /* et */     "  estonian\n"
+/* fo */     "  faroese\n"
 /* fi */     "  finnish      suomi\n"
 /* fr */     "  french       francais\n"
 /* ga */     "  gaelic       irish-gaelic           gaidhlig\n"
@@ -393,6 +396,7 @@ void show_lang_usage(FILE * f, const char * const prg)
 /* sw */     "  swahili\n"
 /* sv */     "  swedish      svenska\n"
 /* ta */     "  tamil\n"
+/* bo */     "  tibetan\n"
 /* th */     "  thai\n"
 /* tr */     "  turkish\n"
 /* uk */     "  ukrainian\n"
@@ -430,6 +434,7 @@ void show_locale_usage(FILE * f, const char * const prg)
           "  da_DK   (Danish       Dansk)\n"
           "  nl_NL   (Dutch)\n"
           "  fi_FI   (Finnish      Suomi)\n"
+	  "  fo_FO   (Faroese)\n"
           "  fr_FR   (French       Francais)\n"
           "  ga_IE   (Irish Gaelic Gaidhlig)\n"
           "  gd_GB   (Scottish Gaelic  Ghaidhlig)\n"
@@ -465,6 +470,7 @@ void show_locale_usage(FILE * f, const char * const prg)
           "  es_MX   (Mexican      Mexican Spanish       Espanol Mejicano)\n"
           "  sw_TZ   (Swahili)\n"
           "  sv_SE   (Swedish      Svenska)\n"
+	  "  bo_CN   (Tibetan)\n"
           "  th_TH   (Thai)\n"
           "  tr_TR   (Turkish)\n"
           "  uk_UA   (Ukrainian)\n"
