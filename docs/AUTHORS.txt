@@ -7,7 +7,7 @@ bill@newbreedsoftware.com
 http://www.newbreedsoftware.com/tuxpaint/
 
 
-June 17, 2002 - April 2, 2006
+June 17, 2002 - April 15, 2006
 
 $Id$
 
@@ -267,6 +267,7 @@ $Id$
 
   * Spanish
     Gabriel Gazzan <ggabriel@internet.com.uy>
+    Pablo Pita <pablo.pita@kdemail.net>
 
   * Spanish (Mexico)
     Ignacio Tike <ignaciotike@spymac.com>

@@ -6,8 +6,8 @@ msgstr ""
 "Project-Id-Version: TuxPaint 0.9.15\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2006-02-25 09:37+0100\n"
-"PO-Revision-Date: 2005-10-10 18:59-0300\n"
-"Last-Translator: Gabriel Gazzán <ggabriel@internet.com.uy>\n"
+"PO-Revision-Date: 2006-04-13 18:59-0300\n"
+"Last-Translator: Pablo Pita <pablo.pita@kdemail.net>\n"
 "Language-Team: Español <ggabriel@internet.com.uy>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -138,7 +138,7 @@ msgid "Smudge"
 msgstr "Manchar"
 
 msgid "Lighten"
-msgstr "¡Aclarar!"
+msgstr "Aclarar"
 
 msgid "Darken"
 msgstr "Oscurecer"
@@ -402,19 +402,19 @@ msgid "Do you really want to quit?"
 msgstr "¿Realmente quieres salir?"
 
 msgid "Yes, I'm done!"
-msgstr ""
+msgstr "¡Sí, listo!"
 
 msgid "No, take me back!"
-msgstr ""
+msgstr "¡No, quiero volver!"
 
 msgid "If you quit, you’ll lose your picture! Save it?"
 msgstr "¡Si te vas perderás tu imagen! ¿Quieres guardarla?"
 
 msgid "Yes, save it!"
-msgstr ""
+msgstr "¡Sí, guardelo!"
 
 msgid "No, don't bother saving!"
-msgstr ""
+msgstr "¡No, no quiero guardarlo!"
 
 msgid "Save your picture first?"
 msgstr "¿Guardarás tu imagen antes?"
@@ -428,14 +428,13 @@ msgstr "Aceptar"
 #. This will be replaced with a dialog allowing color choice and Starter
 #. picking, with a "Back" option to dismiss the "New" and return to
 #. the current picture.  But for now...  (bjk 2006.02.19)
-#, fuzzy
 msgid "Start a new picture?"
-msgstr "¿Borrar esta imagen?"
+msgstr "¿Empezar con una nueva imagen?"
 
 #. #define PROMPT_NEW_YES gettext_noop("That’s OK!")
 #. #define PROMPT_NEW_NO gettext_noop("Never mind!")
 msgid "Yes, let's start fresh!"
-msgstr ""
+msgstr "¡Sí, comenzar de zero!"
 
 msgid "There are no saved files!"
 msgstr "¡No hay archivos guardados!"
@@ -444,7 +443,7 @@ msgid "Print your picture now?"
 msgstr "¿Imprimir tu imagen ahora?"
 
 msgid "Yes, print it!"
-msgstr ""
+msgstr "¡Sí, imprimir la imagen!"
 
 msgid "Your picture has been printed!"
 msgstr "¡Tu imagen ha sido impresa!"
@@ -456,16 +455,16 @@ msgid "Erase this picture?"
 msgstr "¿Borrar esta imagen?"
 
 msgid "Yes, erase it!"
-msgstr ""
+msgstr "¡Sí, bórrela!"
 
 msgid "No, don't erase it!"
-msgstr ""
+msgstr "¡No, no la borre!"
 
 msgid "Remember to use the left mouse button!"
 msgstr "¡Recuerda usar el botón izquierdo del ratón!"
 
 msgid "Please wait..."
-msgstr ""
+msgstr "Por favor, espere..."
 
 msgid "Erase"
 msgstr "Borrar"
@@ -486,14 +485,13 @@ msgstr "No"
 #. FIXME: Move elsewhere!!!
 #. #define PROMPT_SAVE_OVER_TXT gettext_noop("Save over the older version of this picture?")
 msgid "Replace the picture with your changes?"
-msgstr ""
+msgstr "Sustituir la imagen con "
 
 msgid "Yes, replace the old one!"
-msgstr ""
+msgstr "Si, remplazar la anterior "
 
-#, fuzzy
 msgid "No, save a new file!"
-msgstr "No, guardar un nuevo archivo"
+msgstr "No, guardar en un nuevo archivo"
 
 msgid "Choose the picture you want, then click “Open”."
 msgstr "Escoge la imagen que quieras, luego haz clic en “Abrir”."
