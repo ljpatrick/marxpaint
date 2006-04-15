@@ -1,0 +1,499 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: tuxpaint 0.9.15rc1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2006-02-25 09:37+0100\n"
+"PO-Revision-Date: 2006-04-02 23:21-0000\n"
+"Last-Translator: Lis í Jákupsstovu <morshus@gmail.com>\n"
+"Language-Team: faroese <morshus@gmail.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-Language: Faroese\n"
+"X-Poedit-Country: FAROE ISLANDS\n"
+
+msgid "Black!"
+msgstr "Svart!"
+
+msgid "Dark grey! Some people spell it “dark gray”."
+msgstr "Myrkagrátt!"
+
+msgid "Light grey! Some people spell it “light gray”."
+msgstr "Ljósagrátt!"
+
+msgid "White!"
+msgstr "Hvítt!"
+
+msgid "Red!"
+msgstr "Reytt!"
+
+msgid "Orange!"
+msgstr "Appelsingult!"
+
+msgid "Yellow!"
+msgstr "Gult!"
+
+msgid "Light green!"
+msgstr "Ljósagrønt!"
+
+msgid "Dark green!"
+msgstr "Myrkagrønt!"
+
+msgid "Sky blue!"
+msgstr "Himmalblátt!"
+
+msgid "Blue!"
+msgstr "Blátt!"
+
+msgid "Lavender!"
+msgstr "Bláviolett"
+
+msgid "Purple!"
+msgstr "Violett!"
+
+msgid "Pink!"
+msgstr "Ljósareytt!"
+
+msgid "Brown!"
+msgstr "Brúnt!"
+
+msgid "Tan!"
+msgstr "Húðfarvað!"
+
+msgid "Beige!"
+msgstr "Beige!"
+
+msgid "qx"
+msgstr "qx"
+
+msgid "QX"
+msgstr "QX"
+
+msgid "qy"
+msgstr "qy"
+
+msgid "QY"
+msgstr "QY"
+
+#. Now we score fonts to ensure that the best ones will be placed at
+#. the top of the list. The user will see them first. This sorting is
+#. especially important for users who have scroll buttons disabled.
+#. Translators should do whatever is needed to put crummy fonts last.
+msgid "oO"
+msgstr "oO"
+
+#. distinct uppercase and lowercase
+msgid "`\\%_@$~#{}<>^&*"
+msgstr "`\\%_@$~#{}<>^&*"
+
+#. uncommon punctuation
+msgid ",.?!"
+msgstr ",.?!"
+
+#. common punctuation
+msgid "017"
+msgstr "017"
+
+#. digits
+msgid "O0"
+msgstr "O0"
+
+#. distinct circle-like characters
+msgid "1Il|"
+msgstr "1Il|"
+
+msgid "Great!"
+msgstr "Frálíkt!"
+
+msgid "Cool!"
+msgstr "Kuul!"
+
+msgid "Keep it up!"
+msgstr "Halt á!"
+
+msgid "Good job!"
+msgstr "Flott klárað!"
+
+msgid "Fill"
+msgstr "Fyll"
+
+msgid "Grass"
+msgstr "Gras"
+
+msgid "Bricks"
+msgstr "Brikkar"
+
+msgid "Rainbow"
+msgstr "Ælabogi"
+
+msgid "Sparkles"
+msgstr "Glitur"
+
+msgid "Blur"
+msgstr "Káma"
+
+msgid "Smudge"
+msgstr "Klína"
+
+msgid "Lighten"
+msgstr "Ljósari"
+
+msgid "Darken"
+msgstr "Myrkari"
+
+msgid "Chalk"
+msgstr "Krita"
+
+msgid "Blocks"
+msgstr "Kubbar"
+
+msgid "Negative"
+msgstr "Negativ"
+
+msgid "Tint"
+msgstr "Lita"
+
+msgid "Drip"
+msgstr "Dryppa"
+
+msgid "Cartoon"
+msgstr "Kantmynd"
+
+msgid "Mirror"
+msgstr "Spegla"
+
+msgid "Flip"
+msgstr "Koppa"
+
+msgid "Click in the picture to fill that area with color."
+msgstr "Trýst á myndina til at fylla tað økið við liti."
+
+msgid "Click and move to draw grass. Don’t forget the dirt!"
+msgstr "Trýst og flyt til at tekna gras. Gloym ikki moldina!"
+
+msgid "Click and move to draw large bricks."
+msgstr "Trýst og flyt til at tekna stórar múrsteinar."
+
+msgid "Click and move to draw small bricks."
+msgstr "Trýst og flyt til at tekna smáar múrsteinar."
+
+msgid "You can draw in rainbow colors!"
+msgstr "Tú kanst tekna í ælabogalitum!"
+
+msgid "Click and move to draw sparkles."
+msgstr "Trýst og flyt til at gera glitur."
+
+msgid "Click and move the mouse around to blur the picture."
+msgstr "Trýst og flyt músina til at káma út okkurt á myndini."
+
+msgid "Click and move the mouse around to smudge the picture."
+msgstr "Trýst og flyt músina til at klína út okkurt á myndini."
+
+msgid "Click and move to fade the colors."
+msgstr "Trýst og flyt til at bleikja litirnar."
+
+msgid "Click and move to darken the colors."
+msgstr "Trýst og flyt til at myrkja litirnar."
+
+msgid "Click and move the mouse around to turn the picture into a chalk drawing."
+msgstr "Trýst og flyt músina til at umgera myndina til  til eina kritmynd."
+
+msgid "Click and move the mouse around to make the picture blocky."
+msgstr "Trýst og flyt músina til at gera myndina meira kubbuta."
+
+msgid "Click and move the mouse around to draw a negative."
+msgstr "Trýst og flyt músina til at vísa negativ av myndini."
+
+msgid "Click and move the mouse around to change the picture’s color."
+msgstr "Trýst og flyt músina til at broyta litin á myndini."
+
+msgid "Click and move the mouse around to make the picture drip."
+msgstr "Trýst og flyt músina til at fáa myndina at dryppa."
+
+msgid "Click and move the mouse around to turn the picture into a cartoon."
+msgstr "Trýst og flyt músina til at fáa kantarnar meira fram á myndini."
+
+msgid "Click to make a mirror image."
+msgstr "Trýst á myndina til at spegla hana."
+
+msgid "Click to flip the picture upside-down."
+msgstr "Trýst á myndina til at koppa henni á høvdið."
+
+msgid "Square"
+msgstr "Ferningur"
+
+msgid "Rectangle"
+msgstr "Rætthyrningur"
+
+msgid "Circle"
+msgstr "Sirkul"
+
+msgid "Ellipse"
+msgstr "Ellipsa"
+
+msgid "Triangle"
+msgstr "Trýkantur"
+
+msgid "Pentagon"
+msgstr "Fimmkantur"
+
+msgid "Rhombus"
+msgstr "Romba"
+
+msgid "A square is a rectangle with four equal sides."
+msgstr "Ein ferningur er ein rætthyrningur við fýra líka langum síðum."
+
+msgid "A rectangle has four sides and four right angles."
+msgstr "Ein rætthyningur hevur fýra síður og fýra rættar vinklar."
+
+msgid "A circle is a curve where all points have the same distance from the centre."
+msgstr "Ein sirkul er ein rás har øll punkt hava somu frástøðu frá miðjuni av sirkulinum."
+
+msgid "An ellipse is a stretched circle."
+msgstr "Ein ellipsa er ein strektur sirkul."
+
+msgid "A triangle has three sides."
+msgstr "Ein tríkantur hevur tríggjar síður."
+
+msgid "A pentagon has five sides."
+msgstr "Ein fimmkantur hevur fimm síður."
+
+msgid "A rhombus has four equal sides, and opposite sides are parallel."
+msgstr "Ein romba hevur fýra eins langar síður, og mótstandandi síður eru javnfjarar."
+
+msgid "Tools"
+msgstr "Tól"
+
+msgid "Colors"
+msgstr "Litir"
+
+msgid "Brushes"
+msgstr "Penslar"
+
+msgid "Erasers"
+msgstr "Viska"
+
+msgid "Stamps"
+msgstr "Stempul"
+
+msgid "Shapes"
+msgstr "Formar"
+
+msgid "Letters"
+msgstr "Stavir"
+
+msgid "Magic"
+msgstr "Gandur"
+
+msgid "Paint"
+msgstr "Tekna"
+
+msgid "Stamp"
+msgstr "Stempla"
+
+msgid "Lines"
+msgstr "Strikur"
+
+msgid "Text"
+msgstr "Stavir"
+
+msgid "Undo"
+msgstr "Angra"
+
+msgid "Redo"
+msgstr "Aftur"
+
+msgid "Eraser"
+msgstr "Viska"
+
+msgid "New"
+msgstr "Nýtt"
+
+#. buttons for the file open dialog
+msgid "Open"
+msgstr "Opna"
+
+msgid "Save"
+msgstr "Goym"
+
+msgid "Print"
+msgstr "Prenta"
+
+msgid "Quit"
+msgstr "Enda"
+
+msgid "Pick a color and a brush shape to draw with."
+msgstr "Vel lit og pensil at tekna við."
+
+msgid "Pick a picture to stamp around your drawing."
+msgstr "Vel eitt stempul at stempla á myndina."
+
+msgid "Click to start drawing a line. Let go to complete it."
+msgstr "Trýst og hald til at byrja eina striku. Slepp har hon skal enda."
+
+msgid "Pick a shape. Click to pick the center, drag, then let go when it is the size you want. Move around to rotate it, and click to draw it."
+msgstr "Vel ein form. Trýst har miðjan skal verða, hála og slepp tá ið støddin er sum tú ynskir. Flyt runt til at snara formin, og trýst so til at tekna hann."
+
+msgid "Choose a style of text. Click on your drawing and you can start typing."
+msgstr "Vel snið á stavum. Trýst á myndina har teksturin skal byrja, og byrja so at skriva."
+
+msgid "Pick a magical effect to use on your drawing!"
+msgstr "Vel onkran 'gand' at brúka á myndini."
+
+#. Undo
+msgid "Undo!"
+msgstr "Angra!"
+
+#. Redo
+msgid "Redo!"
+msgstr "Ger umaftur!"
+
+#. Eraser
+msgid "Eraser!"
+msgstr "Viskileður!"
+
+#. New
+msgid "You now have a blank sheet to draw on!"
+msgstr "Tú hevur nú eitt blankt ark at tekna á!"
+
+#. Open
+msgid "Open…"
+msgstr "Opna..."
+
+#. Save
+msgid "Your image has been saved!"
+msgstr "Myndin hjá tær er goymd!"
+
+#. Print
+msgid "Printing…"
+msgstr "Prentar..."
+
+#. Quit
+msgid "Bye bye!"
+msgstr "Farvæl!"
+
+msgid "Let go of the button to complete the line."
+msgstr "Slepp knøttinum til at enda strikuna."
+
+msgid "Hold the button to stretch the shape."
+msgstr "Halt á knøttinum til at strekkja skapið."
+
+msgid "Move the mouse to rotate the shape. Click to draw it."
+msgstr "Flyt músina til at snara skapinum. Trýst til at tekna tað."
+
+msgid "OK then… Let’s keep drawing this one!"
+msgstr "Alt í lagi... So halda vit á at tekna hesa!"
+
+#. FIXME: Move elsewhere!!!
+msgid "Do you really want to quit?"
+msgstr "Vilt tú veruliga gevast?"
+
+msgid "Yes, I'm done!"
+msgstr "Ja, her er liðugt!"
+
+msgid "No, take me back!"
+msgstr "Nei, lat meg koma aftur til myndina!"
+
+msgid "If you quit, you’ll lose your picture! Save it?"
+msgstr "Um tú gevst, so missir tú myndina! Vilt tú goyma hana?"
+
+msgid "Yes, save it!"
+msgstr "Ja, goym hana!"
+
+msgid "No, don't bother saving!"
+msgstr "Nei, legg ikki í at goyma!"
+
+msgid "Save your picture first?"
+msgstr "Goym myndina fyrst?"
+
+msgid "Can’t open that picture!"
+msgstr "Fái ikki opna hasa myndina!"
+
+msgid "OK"
+msgstr "OK"
+
+#. This will be replaced with a dialog allowing color choice and Starter
+#. picking, with a "Back" option to dismiss the "New" and return to
+#. the current picture.  But for now...  (bjk 2006.02.19)
+msgid "Start a new picture?"
+msgstr "Byrja eina nýggja mynd?"
+
+#. #define PROMPT_NEW_YES gettext_noop("That’s OK!")
+#. #define PROMPT_NEW_NO gettext_noop("Never mind!")
+msgid "Yes, let's start fresh!"
+msgstr "Ja, byrja av nýggjum!"
+
+msgid "There are no saved files!"
+msgstr "Har eru ongar goymdar fílur!"
+
+msgid "Print your picture now?"
+msgstr "Prenta myndina hjá tær nú?"
+
+msgid "Yes, print it!"
+msgstr "Ja, prenta hana!"
+
+msgid "Your picture has been printed!"
+msgstr "Myndin hjá tær er prentað!"
+
+msgid "You can’t print yet!"
+msgstr "Tú kanst ikki prenta enn!"
+
+msgid "Erase this picture?"
+msgstr "Strika hesa myndina?"
+
+msgid "Yes, erase it!"
+msgstr "Ja, strika hana!"
+
+msgid "No, don't erase it!"
+msgstr "Nei, ikki strika hana!"
+
+msgid "Remember to use the left mouse button!"
+msgstr "Minst til at brúka vinstra músaknøttin!"
+
+msgid "Please wait..."
+msgstr "Vinarliga bíða..."
+
+msgid "Erase"
+msgstr "Strika"
+
+msgid "Back"
+msgstr "Aftur"
+
+msgid "Aa"
+msgstr "Aa"
+
+#. FIXME: Move elsewhere! Or not?!
+msgid "Yes"
+msgstr "Ja"
+
+msgid "No"
+msgstr "Nei"
+
+#. FIXME: Move elsewhere!!!
+#. #define PROMPT_SAVE_OVER_TXT gettext_noop("Save over the older version of this picture?")
+msgid "Replace the picture with your changes?"
+msgstr "Skriva yvir myndina við tínum broytingum?"
+
+msgid "Yes, replace the old one!"
+msgstr "Ja, skriva yvir gomlu!"
+
+msgid "No, save a new file!"
+msgstr "Nei, goym eina nýggja fílu!"
+
+msgid "Choose the picture you want, then click “Open”."
+msgstr "Vel ynsktu mynd og trýst so á 'Opna'"
+
+msgid "A drawing program for children."
+msgstr "Eitt tekniforrit til børn."
+
+msgid "Drawing program"
+msgstr "Tekniforrit"
+
+msgid "Tux Paint"
+msgstr "Tux Paint"
+
