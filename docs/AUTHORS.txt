@@ -7,7 +7,7 @@ bill@newbreedsoftware.com
 http://www.newbreedsoftware.com/tuxpaint/
 
 
-June 17, 2002 - April 15, 2006
+June 17, 2002 - April 29, 2006
 
 $Id$
 
@@ -211,6 +211,9 @@ $Id$
 
   * Korean
     Mark K. Kim <mkkim214@gmail.com>
+  
+  * Kurdish
+    Amed Ç. Jiyan <amed@pckurd.net>
 
   * Lithuanian
     Mantas Kriauciunas <monte@mail.lt>
