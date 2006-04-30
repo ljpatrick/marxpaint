@@ -23,7 +23,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  June 14, 2002 - April 2, 2006
+  June 14, 2002 - April 29, 2006
   $Id$
 */
 
@@ -77,6 +77,7 @@ const char * lang_prefixes[NUM_LANGS] = {
   "ja",
   "ka",
   "ko",
+  "ku",
   "lt",
   "ms",
   "nb",
@@ -195,11 +196,12 @@ const language_to_locale_struct language_to_locale_array[] = {
 {"basque",               "eu_ES.UTF-8"},
 {"euskara",              "eu_ES.UTF-8"},
 {"georgian",             "ka_GE"},
-{"korean",               "ko_KR.UTF-8"},
 {"kinyarwanda",          "rw_RW.UTF-8"},
 {"klingon",              "tlh.UTF-8"},
 {"tlhIngan",             "tlh.UTF-8"},
 {"tlhingan",             "tlh.UTF-8"},
+{"korean",               "ko_KR.UTF-8"},
+{"kurdish",		 "ku_TR.UTF-8"},
 {"tamil",                "ta_IN.UTF-8"},
 {"lithuanian",           "lt_LT.UTF-8"},
 {"lietuviu",             "lt_LT.UTF-8"},
@@ -380,6 +382,7 @@ void show_lang_usage(FILE * f, const char * const prg)
 /* rw */     "  kinyarwanda\n"
 /* tlh */    "  klingon      tlhIngan\n"
 /* ko */     "  korean\n"
+/* ku */     "  kurdish\n"
 /* lt */     "  lithuanian   lietuviu\n"
 /* ms */     "  malay\n"
 /* es_MX */  "  mexican      mexican-spanish        espanol-mejicano\n"
@@ -454,6 +457,7 @@ void show_locale_usage(FILE * f, const char * const prg)
           "  ja_JP   (Japanese)\n"
           "  ka_GE   (Georgian)\n"
           "  ko_KR   (Korean)\n"
+	  "  ku_TR   (Kurdish)\n"
           "  ms_MY   (Malay)\n"
           "  lt_LT   (Lithuanian   Lietuviu)\n"
           "  nn_NO   (Norwegian    Nynorsk                Norsk)\n"
