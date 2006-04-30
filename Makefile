@@ -7,7 +7,7 @@
 # bill@newbreedsoftware.com
 # http://www.newbreedsoftware.com/tuxpaint/
 
-# June 14, 2002 - April 2, 2006
+# June 14, 2002 - April 29, 2006
 
 
 # The version number, for release:
@@ -427,6 +427,7 @@ uninstall:
 	-rm $(LOCALE_PREFIX)/ja/LC_MESSAGES/tuxpaint.mo
 	-rm $(LOCALE_PREFIX)/ka/LC_MESSAGES/tuxpaint.mo
 	-rm $(LOCALE_PREFIX)/ko/LC_MESSAGES/tuxpaint.mo
+	-rm $(LOCALE_PREFIX)/ku/LC_MESSAGES/tuxpaint.mo
 	-rm $(LOCALE_PREFIX)/lt/LC_MESSAGES/tuxpaint.mo
 	-rm $(LOCALE_PREFIX)/ms/LC_MESSAGES/tuxpaint.mo
 	-rm $(LOCALE_PREFIX)/nl/LC_MESSAGES/tuxpaint.mo
@@ -818,6 +819,11 @@ install-gettext:
 	@cp trans/ko.mo $(LOCALE_PREFIX)/ko/LC_MESSAGES/tuxpaint.mo
 	@chmod 644 $(LOCALE_PREFIX)/ko/LC_MESSAGES/tuxpaint.mo
 	@#
+	@echo "   ku_TR ...Kurdish..."
+	@install -d $(LOCALE_PREFIX)/ku/LC_MESSAGES
+	@cp trans/ku.mo $(LOCALE_PREFIX)/ku/LC_MESSAGES/tuxpaint.mo
+	@chmod 644 $(LOCALE_PREFIX)/ko/LC_MESSAGES/tuxpaint.mo
+	@#
 	@echo "   lt_LT ...Lithuanian..."
 	@install -d $(LOCALE_PREFIX)/lt/LC_MESSAGES
 	@cp trans/lt.mo $(LOCALE_PREFIX)/lt/LC_MESSAGES/tuxpaint.mo
@@ -1144,6 +1150,7 @@ translations: trans \
 	trans/ja.mo \
 	trans/ka.mo \
 	trans/ko.mo \
+	trans/ku.mo \
 	trans/lt.mo \
 	trans/ms.mo \
 	trans/nl.mo \
@@ -1315,6 +1322,10 @@ trans/ka.mo:	src/po/ka.po
 trans/ko.mo:	src/po/ko.po
 	@echo "   ko_KR ...Korean..."
 	@msgfmt -o trans/ko.mo src/po/ko.po
+
+trans/ku.mo:	src/po/ku.po
+	@echo "   ku_TR ...Kurdish..."
+	@msgfmt -o trans/ku.mo src/po/ku.po
 
 trans/lt.mo:	src/po/lt.po
 	@echo "   lt_LT ...Lithuanian..."

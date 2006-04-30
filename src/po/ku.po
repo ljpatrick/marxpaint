@@ -1,0 +1,497 @@
+﻿# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <amed@pckurd.net>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2006-02-25 09:37+0100\n"
+"PO-Revision-Date: 2006-04-23 00:58+0200\n"
+"Last-Translator: Amed Ç. Jiyan <amed@pckurd.net>\n"
+"Language-Team: KURDISH <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "Black!"
+msgstr "Reş"
+
+msgid "Dark grey! Some people spell it “dark gray”."
+msgstr "Griya tarî!"
+
+msgid "Light grey! Some people spell it “light gray”."
+msgstr "Griya vekirî"
+
+msgid "White!"
+msgstr "Spî"
+
+msgid "Red!"
+msgstr "Sor"
+
+msgid "Orange!"
+msgstr "Porteqalî"
+
+msgid "Yellow!"
+msgstr "Zer"
+
+msgid "Light green!"
+msgstr "Keska vekirî"
+
+msgid "Dark green!"
+msgstr "Keska tarî"
+
+msgid "Sky blue!"
+msgstr "Şîna ezmên!"
+
+msgid "Blue!"
+msgstr "Şîn!"
+
+msgid "Lavender!"
+msgstr "Lewante!"
+
+msgid "Purple!"
+msgstr "Mor!"
+
+msgid "Pink!"
+msgstr "Pembe!"
+
+msgid "Brown!"
+msgstr "Qehweyî!"
+
+msgid "Tan!"
+msgstr "Qemer!"
+
+msgid "Beige!"
+msgstr "Bej!"
+
+msgid "qx"
+msgstr "qx"
+
+msgid "QX"
+msgstr "QX"
+
+msgid "qy"
+msgstr "qy"
+
+msgid "QY"
+msgstr "QY"
+
+#. Now we score fonts to ensure that the best ones will be placed at
+#. the top of the list. The user will see them first. This sorting is
+#. especially important for users who have scroll buttons disabled.
+#. Translators should do whatever is needed to put crummy fonts last.
+msgid "oO"
+msgstr "oO"
+
+#. distinct uppercase and lowercase
+msgid "`\\%_@$~#{}<>^&*"
+msgstr "`\\%_@$~#{}<>^&*"
+
+#. uncommon punctuation
+msgid ",.?!"
+msgstr ",.?!"
+
+#. common punctuation
+msgid "017"
+msgstr "017"
+
+#. digits
+msgid "O0"
+msgstr "O0"
+
+#. distinct circle-like characters
+msgid "1Il|"
+msgstr "1Il|"
+
+msgid "Great!"
+msgstr "Zor baş!"
+
+msgid "Cool!"
+msgstr "Xweşik!"
+
+msgid "Keep it up!"
+msgstr "Vexwîne!"
+
+msgid "Good job!"
+msgstr "Te karekî xweş kir!"
+
+msgid "Fill"
+msgstr "Tije bike"
+
+msgid "Grass"
+msgstr "Jê bibe"
+
+msgid "Bricks"
+msgstr "Blok"
+
+msgid "Rainbow"
+msgstr "Keskesor"
+
+msgid "Sparkles"
+msgstr "Çirûsk"
+
+msgid "Blur"
+msgstr "ne zelal"
+
+msgid "Smudge"
+msgstr "Şîlo"
+
+msgid "Lighten"
+msgstr "Ronî"
+
+msgid "Darken"
+msgstr "Tarî"
+
+msgid "Chalk"
+msgstr "Tebeşîr"
+
+msgid "Blocks"
+msgstr "Blok"
+
+msgid "Negative"
+msgstr "Negatîf"
+
+msgid "Tint"
+msgstr "Berê"
+
+msgid "Drip"
+msgstr "Dilop"
+
+msgid "Cartoon"
+msgstr "Karton"
+
+msgid "Mirror"
+msgstr "Neynik"
+
+msgid "Flip"
+msgstr "Teqle"
+
+msgid "Click in the picture to fill that area with color."
+msgstr "Ji bo ku vê derê bi rengekî tije bikî, li ser wêneyê bitikîne."
+
+msgid "Click and move to draw grass. Don’t forget the dirt!"
+msgstr "Li serwêneyê bitikîne û mişkî bigerîne. Heriyê ji bîr neke!"
+
+msgid "Click and move to draw large bricks."
+msgstr "Ji bo blokên mezin ên xêzkirinê bitikîne û mişkî bigerîne."
+
+msgid "Click and move to draw small bricks."
+msgstr "Ji bo blokên biçûk ên xêzkirinê bitikîne û mişkî bigerîne."
+
+msgid "You can draw in rainbow colors!"
+msgstr "Dikarî bi rengên keskesorê xêz bikî!"
+
+msgid "Click and move to draw sparkles."
+msgstr "Ji bo Biriqandina xêzkirinê, bitikîne û rake."
+
+msgid "Click and move the mouse around to blur the picture."
+msgstr "Mişkî li dora reşahiya wêneyê bitikîne û rake."
+
+msgid "Click and move the mouse around to smudge the picture."
+msgstr "Mişkî li dora reşahiya wêneyê bitikîne û rake."
+
+msgid "Click and move to fade the colors."
+msgstr "Ji bo birina zindîbûna rengan bitikîne û mişkî bigerîne."
+
+msgid "Click and move to darken the colors."
+msgstr "Ji bo tarîkirina rengan bitikîne û mişkî bigerîne."
+
+msgid "Click and move the mouse around to turn the picture into a chalk drawing."
+msgstr "Ji bo ku wêne wekî xêzkirineke bi tebeşîrê xuya bibe, bitikîne û mi,şkî li dorê bigerîne bigerîne."
+
+msgid "Click and move the mouse around to make the picture blocky."
+msgstr "Ji bo ku wêneyê bikî topiklî bitikîne û mişkî bigerîne."
+
+msgid "Click and move the mouse around to draw a negative."
+msgstr "Ji bo ku wêneyê bikî negatîf bitikîne û mişkî bigerîne."
+
+msgid "Click and move the mouse around to change the picture’s color."
+msgstr "Ji bo guherandina rengê wêneyê bitikîne mişkî li dorê bigerîne."
+
+msgid "Click and move the mouse around to make the picture drip."
+msgstr "Ji bo ku wêneyê bidilop bikî bi tikîne û mişkî li dorê bigerîne."
+
+msgid "Click and move the mouse around to turn the picture into a cartoon."
+msgstr "Ji bo ku wêneyê çêkî wêneyekî kartok bitikîne û mişkî li dorê bigerîne."
+
+msgid "Click to make a mirror image."
+msgstr "Ji bo çêkirina îmaja neynikê bitikîne."
+
+msgid "Click to flip the picture upside-down."
+msgstr "Ji bo ku wêneyê berevajî bikî bitikîne."
+
+msgid "Square"
+msgstr "Çargoşe"
+
+msgid "Rectangle"
+msgstr "Lakêşe"
+
+msgid "Circle"
+msgstr "Çember"
+
+msgid "Ellipse"
+msgstr "Elîps"
+
+msgid "Triangle"
+msgstr "sêgoşe"
+
+msgid "Pentagon"
+msgstr "Pêncgoşe"
+
+msgid "Rhombus"
+msgstr "Sêgoşeya hevsan"
+
+msgid "A square is a rectangle with four equal sides."
+msgstr "Çar goşeyên çargoşeyan hene."
+
+msgid "A rectangle has four sides and four right angles."
+msgstr "Çar goşe û çar kenarên çargoşeyan hene."
+
+msgid "A circle is a curve where all points have the same distance from the centre."
+msgstr "Çember ji xalên ku dûrbûna wan a ji navendê wekhev e pêk tê."
+
+msgid "An ellipse is a stretched circle."
+msgstr "Elîps çemberên vezeliyayî ne."
+
+msgid "A triangle has three sides."
+msgstr "Sê kenarên sêgoşeyan hene."
+
+msgid "A pentagon has five sides."
+msgstr "Pênc kenarên pêncgoşeyan hene."
+
+msgid "A rhombus has four equal sides, and opposite sides are parallel."
+msgstr "Çar kenarên paraler û hevseng ên çargoşeyên hevseng hene."
+
+msgid "Tools"
+msgstr "Amûr"
+
+msgid "Colors"
+msgstr "Reng"
+
+msgid "Brushes"
+msgstr "Firçe"
+
+msgid "Erasers"
+msgstr "Jêbir"
+
+msgid "Stamps"
+msgstr "Demxe"
+
+msgid "Shapes"
+msgstr "Şikl"
+
+msgid "Letters"
+msgstr "Tîp"
+
+msgid "Magic"
+msgstr "Sêr"
+
+msgid "Paint"
+msgstr "Boyax"
+
+msgid "Stamp"
+msgstr "Damxe"
+
+msgid "Lines"
+msgstr "Xêz"
+
+msgid "Text"
+msgstr "Nivîs"
+
+msgid "Undo"
+msgstr "Rake"
+
+msgid "Redo"
+msgstr "Bîne"
+
+msgid "Eraser"
+msgstr "Jêbir"
+
+msgid "New"
+msgstr "Nû"
+
+#. buttons for the file open dialog
+msgid "Open"
+msgstr "Veke"
+
+msgid "Save"
+msgstr "Tomar bike"
+
+msgid "Print"
+msgstr "Çap bike"
+
+msgid "Quit"
+msgstr "Derkeve"
+
+msgid "Pick a color and a brush shape to draw with."
+msgstr "Ji bo bikaranînê reng û firçeyekê hilbijêre."
+
+msgid "Pick a picture to stamp around your drawing."
+msgstr "Ji bo ku li wêneyê xwe zêde bikî demxeyekê hilbijêre."
+
+msgid "Click to start drawing a line. Let go to complete it."
+msgstr "Ji bo ku dest bi xêzkirinê bikî \"Det pê bike\" bitikîne. De biqedîne."
+
+msgid "Pick a shape. Click to pick the center, drag, then let go when it is the size you want. Move around to rotate it, and click to draw it."
+msgstr "Şiklekê hilbijêre. Navendê hilbijêre, bikişîne û dema ku mezinahî bibe wekî tu dixwazî, berde. Ji bo guherandina berê wê li dorê bigerîne û ji bo xêzkirinê bitikîne."
+
+msgid "Choose a style of text. Click on your drawing and you can start typing."
+msgstr "Cureyekê nivîsê hilbijêre. Li ser wêneyê bitikîne û dest bi nivîsandinê bike."
+
+msgid "Pick a magical effect to use on your drawing!"
+msgstr "Ji bo bikaranînê efekteke sêrê hilbijêre!"
+
+#. Undo
+msgid "Undo!"
+msgstr "Rake!"
+
+#. Redo
+msgid "Redo!"
+msgstr "Bîne!"
+
+#. Eraser
+msgid "Eraser!"
+msgstr "Jêbir!"
+
+#. New
+msgid "You now have a blank sheet to draw on!"
+msgstr "Vêga ji bo xêzkirinê rûpeleke te ya vala heye!"
+
+#. Open
+msgid "Open…"
+msgstr "Veke..."
+
+#. Save
+msgid "Your image has been saved!"
+msgstr "Xebata te hat tomarkirin!"
+
+#. Print
+msgid "Printing…"
+msgstr "Tê çapkirin..."
+
+#. Quit
+msgid "Bye bye!"
+msgstr "Oxir be!"
+
+msgid "Let go of the button to complete the line."
+msgstr "Ji bo qedandina xêzê here dawî."
+
+msgid "Hold the button to stretch the shape."
+msgstr "Ji bo vezelandina şiklê bi bişkojkê bigire."
+
+msgid "Move the mouse to rotate the shape. Click to draw it."
+msgstr "Ji bo guherandina berê şiklê mişkî bikar bîne. Ji bo xêzkirinê bitikîne."
+
+msgid "OK then… Let’s keep drawing this one!"
+msgstr "Temam, nexwe vê xêzkirinê tomar bike!"
+
+#. FIXME: Move elsewhere!!!
+msgid "Do you really want to quit?"
+msgstr "Ji dil dixwazî derkevî?"
+
+msgid "Yes, I'm done!"
+msgstr "Erê, min qedand!"
+
+msgid "No, take me back!"
+msgstr "Na, min bi şûnde bibe!"
+
+msgid "If you quit, you’ll lose your picture! Save it?"
+msgstr "Heke derkevî tu yê wêneyê xwe winda bikî! Dixwazî vêga tomar bikî?"
+
+msgid "Yes, save it!"
+msgstr "Erê tomar bike!"
+
+msgid "No, don't bother saving!"
+msgstr "Na, xwe bi tomarkirinê aciz neke!"
+
+msgid "Save your picture first?"
+msgstr "Pêşî wêneyê xwe tomar bikî?"
+
+msgid "Can’t open that picture!"
+msgstr "Ev wêne nayê vekirin!"
+
+msgid "OK"
+msgstr "Temam"
+
+#. This will be replaced with a dialog allowing color choice and Starter
+#. picking, with a "Back" option to dismiss the "New" and return to
+#. the current picture.  But for now...  (bjk 2006.02.19)
+msgid "Start a new picture?"
+msgstr "Dest bi wêneyekî nû bikî?"
+
+#. #define PROMPT_NEW_YES gettext_noop("That’s OK!")
+#. #define PROMPT_NEW_NO gettext_noop("Never mind!")
+msgid "Yes, let's start fresh!"
+msgstr "Erê, dest bi nûkirinê bike!"
+
+msgid "There are no saved files!"
+msgstr "Tu dosye nehat tomarkirin!"
+
+msgid "Print your picture now?"
+msgstr "Dixwazî wêneyê vêga çap bikî?"
+
+msgid "Yes, print it!"
+msgstr "Erê, çap bike!"
+
+msgid "Your picture has been printed!"
+msgstr "Wêneyê te hat çapkirin!"
+
+msgid "You can’t print yet!"
+msgstr "Hê nikarî çap bikî!"
+
+msgid "Erase this picture?"
+msgstr "Vê wêneyê jê bibî?"
+
+msgid "Yes, erase it!"
+msgstr "Erê, jê bibe!"
+
+msgid "No, don't erase it!"
+msgstr "Na, jê nebe!"
+
+msgid "Remember to use the left mouse button!"
+msgstr "Bibîr bîne ku tu yê bişkojka çepê ya mişkî bikar bînî!"
+
+msgid "Please wait..."
+msgstr "Ji kerema xwe re li bendê bimîne..."
+
+msgid "Erase"
+msgstr "Jê bibe"
+
+msgid "Back"
+msgstr "Paş"
+
+msgid "Aa"
+msgstr "Aa"
+
+#. FIXME: Move elsewhere! Or not?!
+msgid "Yes"
+msgstr "Erê"
+
+msgid "No"
+msgstr "Na"
+
+#. FIXME: Move elsewhere!!!
+#. #define PROMPT_SAVE_OVER_TXT gettext_noop("Save over the older version of this picture?")
+msgid "Replace the picture with your changes?"
+msgstr "Wêneyê bi guherandinên xwe biguherînî?"
+
+msgid "Yes, replace the old one!"
+msgstr "Erê, li ser ya kevin binivîse!"
+
+msgid "No, save a new file!"
+msgstr "Na, dosyeyeke nû tomar bike!"
+
+msgid "Choose the picture you want, then click “Open”."
+msgstr "Ji bo vekirina wêneyê ku dixwazî \"Veke\" Bitikîne."
+
+msgid "A drawing program for children."
+msgstr "Bernameyeke xêzkirinê ji bo zarokan."
+
+msgid "Drawing program"
+msgstr "Bernameya Xêzkirinê"
+
+msgid "Tux Paint"
+msgstr "Tux Paint"
+
+
