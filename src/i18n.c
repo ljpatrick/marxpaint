@@ -23,8 +23,9 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  June 14, 2002 - April 29, 2006
   $Id$
+
+  June 14, 2002 - May 13, 2006
 */
 
 #include <stdio.h>
@@ -97,6 +98,7 @@ const char * lang_prefixes[NUM_LANGS] = {
   "sw",
   "ta",
   "th",
+  "tl",
   "tr",
   "uk",
   "vi",
@@ -228,6 +230,7 @@ const language_to_locale_struct language_to_locale_array[] = {
 {"swedish",              "sv_SE.UTF-8"},
 {"svenska",              "sv_SE.UTF-8"},
 {"swahili",              "sw_TZ.UTF-8"},
+{"tagalog",		 "tl_PH.UTF-8"},
 {"thai",                 "th_TH.UTF-8"},
 {"tibetan",		 "bo_CN.UTF-8"}, /* Based on: http://texinfo.org/pipermail/texinfo-pretest/2005-April/000334.html */
 {"turkish",              "tr_TR.UTF-8"},
@@ -398,6 +401,7 @@ void show_lang_usage(FILE * f, const char * const prg)
 /* es */     "  spanish      espanol\n"
 /* sw */     "  swahili\n"
 /* sv */     "  swedish      svenska\n"
+/* tl */     "  tagalog\n"
 /* ta */     "  tamil\n"
 /* bo */     "  tibetan\n"
 /* th */     "  thai\n"
@@ -474,6 +478,7 @@ void show_locale_usage(FILE * f, const char * const prg)
           "  es_MX   (Mexican      Mexican Spanish       Espanol Mejicano)\n"
           "  sw_TZ   (Swahili)\n"
           "  sv_SE   (Swedish      Svenska)\n"
+	  "  tl_PH   (Tagalog)\n"
 	  "  bo_CN   (Tibetan)\n"
           "  th_TH   (Thai)\n"
           "  tr_TR   (Turkish)\n"

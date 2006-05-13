@@ -7,7 +7,7 @@ bill@newbreedsoftware.com
 http://www.newbreedsoftware.com/tuxpaint/
 
 
-June 17, 2002 - April 29, 2006
+June 17, 2002 - May 13, 2006
 
 $Id$
 
@@ -286,6 +286,10 @@ $Id$
     Tomas Skäre <tomas@nocrew.org>
     Magnus Dahl <magnus.dahl@bredband.net>
     Daniel Andersson <daniel@septum.org> [retired]
+
+  * Tagalog
+    Ricky Lontoc <gb_515_deme@hotmail.com>
+    Technical assistance by Ed Montgomery <edmontgomery@hotmail.com>
 
   * Tamil
     Mugunth <mugunth@thamizha.com>

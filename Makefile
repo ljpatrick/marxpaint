@@ -7,7 +7,7 @@
 # bill@newbreedsoftware.com
 # http://www.newbreedsoftware.com/tuxpaint/
 
-# June 14, 2002 - April 29, 2006
+# June 14, 2002 - May 13, 2006
 
 
 # The version number, for release:
@@ -62,9 +62,9 @@ MIMESET_CMD=echo -n
 
 ICON_PREFIX=$(PKG_ROOT)$(PREFIX)/share/pixmaps
 X11_ICON_PREFIX=$(PKG_ROOT)$(PREFIX)/X11R6/include/X11/pixmaps
-GNOME_PREFIX=`gnome-config --prefix`
-KDE_PREFIX=`kde-config --install apps --expandvars`
-KDE_ICON_PREFIX=`kde-config --install icon --expandvars`
+GNOME_PREFIX=`gnome-config --prefix 2> /dev/null`
+KDE_PREFIX=`kde-config --install apps --expandvars 2> /dev/null`
+KDE_ICON_PREFIX=`kde-config --install icon --expandvars 2> /dev/null`
 
 
 # Locale files
@@ -904,6 +904,11 @@ install-gettext:
 	@cp trans/sv.mo $(LOCALE_PREFIX)/sv/LC_MESSAGES/tuxpaint.mo
 	@chmod 644 $(LOCALE_PREFIX)/sv/LC_MESSAGES/tuxpaint.mo
 	@#
+	@echo "   tl_PH ...Tagalog..."
+	@install -d $(LOCALE_PREFIX)/tl/LC_MESSAGES
+	@cp trans/tl.mo $(LOCALE_PREFIX)/tl/LC_MESSAGES/tuxpaint.mo
+	@chmod 644 $(LOCALE_PREFIX)/tl/LC_MESSAGES/tuxpaint.mo
+	@#
 	@echo "   ta_IN ...Tamil..."
 	@install -d $(LOCALE_PREFIX)/ta/LC_MESSAGES
 	@cp trans/ta.mo $(LOCALE_PREFIX)/ta/LC_MESSAGES/tuxpaint.mo
@@ -1170,6 +1175,7 @@ translations: trans \
 	trans/sw.mo \
 	trans/ta.mo \
 	trans/th.mo \
+	trans/tl.mo \
 	trans/tlh.mo \
 	trans/tr.mo \
 	trans/uk.mo \
@@ -1402,6 +1408,10 @@ trans/ta.mo:	src/po/ta.po
 trans/th.mo:	src/po/th.po
 	@echo "   th_TH ...Thai..."
 	@msgfmt -o trans/th.mo src/po/th.po
+
+trans/tl.mo:	src/po/tl.po
+	@echo "   tl_PH ...Tagalog..."
+	@msgfmt -o trans/tl.mo src/po/tl.po
 
 trans/tr.mo:	src/po/tr.po
 	@echo "   tr_TR ...Turkish..."

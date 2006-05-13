@@ -1,0 +1,502 @@
+# Tagalog tuxpaint.pot translation
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# RICKY LONTOC <gb_515_deme@hotmail.com>, 2006
+# Technical assistance by Ed Montgomery <edmontgomery@hotmail.com>
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2006-02-25 09:37+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "Black!"
+msgstr "Kulay Itim!"
+
+msgid "Dark grey! Some people spell it “dark gray”."
+msgstr "Malamlam na kulay abo!"
+
+msgid "Light grey! Some people spell it “light gray”."
+msgstr "Mapusyaw na kulay abo!"
+
+msgid "White!"
+msgstr "Kulay Puti!"
+
+msgid "Red!"
+msgstr "Kulay Pula!"
+
+msgid "Orange!"
+msgstr "Kulay DalandanQ"
+
+msgid "Yellow!"
+msgstr "KUlay Dilaw!"
+
+msgid "Light green!"
+msgstr "Mapusyaw na Berde!"
+
+msgid "Dark green!"
+msgstr "Malamlam na Berde!"
+
+msgid "Sky blue!"
+msgstr "Asul na Langit!"
+
+msgid "Blue!"
+msgstr "Kulay Asul!"
+
+msgid "Lavender!"
+msgstr "Mapusyaw na Lila!"
+
+msgid "Purple!"
+msgstr "Malamlam na Lila!"
+
+msgid "Pink!"
+msgstr "Kulay Rosas!"
+
+msgid "Brown!"
+msgstr "Malamlam na Kayumanggi!"
+
+msgid "Tan!"
+msgstr "Mapusyaw na Kayumanggi!"
+
+msgid "Beige!"
+msgstr "Kulay Krema!"
+
+msgid "qx"
+msgstr ""
+
+msgid "QX"
+msgstr ""
+
+msgid "qy"
+msgstr ""
+
+msgid "QY"
+msgstr ""
+
+#. Now we score fonts to ensure that the best ones will be placed at
+#. the top of the list. The user will see them first. This sorting is
+#. especially important for users who have scroll buttons disabled.
+#. Translators should do whatever is needed to put crummy fonts last.
+msgid "oO"
+msgstr ""
+
+#. distinct uppercase and lowercase
+msgid "`\\%_@$~#{}<>^&*"
+msgstr ""
+
+#. uncommon punctuation
+msgid ",.?!"
+msgstr ""
+
+#. common punctuation
+msgid "017"
+msgstr ""
+
+#. digits
+msgid "O0"
+msgstr ""
+
+#. distinct circle-like characters
+msgid "1Il|"
+msgstr ""
+
+msgid "Great!"
+msgstr "Kahanga-hanga!"
+
+msgid "Cool!"
+msgstr ""
+
+msgid "Keep it up!"
+msgstr "Ipagpatuloy!"
+
+msgid "Good job!"
+msgstr "Mahusay na gawa!"
+
+msgid "Fill"
+msgstr "Punuin"
+
+msgid "Grass"
+msgstr "Damo"
+
+msgid "Bricks"
+msgstr "Mga Landrilyo"
+
+msgid "Rainbow"
+msgstr "Bahaghari"
+
+msgid "Sparkles"
+msgstr "Kislap"
+
+msgid "Blur"
+msgstr "Gawing malabo"
+
+msgid "Smudge"
+msgstr ""
+
+msgid "Lighten"
+msgstr "Paliwanagin"
+
+msgid "Darken"
+msgstr "Padilimin"
+
+msgid "Chalk"
+msgstr "Yeso"
+
+msgid "Blocks"
+msgstr "Mga Hanay"
+
+msgid "Negative"
+msgstr "Negatibo"
+
+msgid "Tint"
+msgstr "Bahagyang Kulay"
+
+msgid "Drip"
+msgstr "Patak"
+
+msgid "Cartoon"
+msgstr ""
+
+msgid "Mirror"
+msgstr "Salamin"
+
+msgid "Flip"
+msgstr "Baliktarin"
+
+msgid "Click in the picture to fill that area with color."
+msgstr ""
+
+msgid "Click and move to draw grass. Don’t forget the dirt!"
+msgstr ""
+
+msgid "Click and move to draw large bricks."
+msgstr ""
+
+msgid "Click and move to draw small bricks."
+msgstr ""
+
+msgid "You can draw in rainbow colors!"
+msgstr ""
+
+msgid "Click and move to draw sparkles."
+msgstr ""
+
+msgid "Click and move the mouse around to blur the picture."
+msgstr ""
+
+msgid "Click and move the mouse around to smudge the picture."
+msgstr ""
+
+msgid "Click and move to fade the colors."
+msgstr ""
+
+msgid "Click and move to darken the colors."
+msgstr ""
+
+msgid ""
+"Click and move the mouse around to turn the picture into a chalk drawing."
+msgstr ""
+
+msgid "Click and move the mouse around to make the picture blocky."
+msgstr ""
+
+msgid "Click and move the mouse around to draw a negative."
+msgstr ""
+
+msgid "Click and move the mouse around to change the picture’s color."
+msgstr ""
+
+msgid "Click and move the mouse around to make the picture drip."
+msgstr ""
+
+msgid "Click and move the mouse around to turn the picture into a cartoon."
+msgstr ""
+
+msgid "Click to make a mirror image."
+msgstr ""
+
+msgid "Click to flip the picture upside-down."
+msgstr ""
+
+msgid "Square"
+msgstr "Parisukat"
+
+msgid "Rectangle"
+msgstr "Parihaba"
+
+msgid "Circle"
+msgstr "Bilog"
+
+msgid "Ellipse"
+msgstr "Habilog"
+
+msgid "Triangle"
+msgstr "Tatsulok"
+
+msgid "Pentagon"
+msgstr "Limang Sulok"
+
+msgid "Rhombus"
+msgstr ""
+
+msgid "A square is a rectangle with four equal sides."
+msgstr ""
+
+msgid "A rectangle has four sides and four right angles."
+msgstr ""
+
+msgid ""
+"A circle is a curve where all points have the same distance from the centre."
+msgstr ""
+
+msgid "An ellipse is a stretched circle."
+msgstr ""
+
+msgid "A triangle has three sides."
+msgstr ""
+
+msgid "A pentagon has five sides."
+msgstr ""
+
+msgid "A rhombus has four equal sides, and opposite sides are parallel."
+msgstr ""
+
+msgid "Tools"
+msgstr "Mga Kasangkapan"
+
+msgid "Colors"
+msgstr "Mga Kulay"
+
+msgid "Brushes"
+msgstr "Mga Pampinta"
+
+msgid "Erasers"
+msgstr "Mga Pambura"
+
+msgid "Stamps"
+msgstr "Mga Pantatak"
+
+msgid "Shapes"
+msgstr "Mga Hugis"
+
+msgid "Letters"
+msgstr "Mga Titik"
+
+msgid "Magic"
+msgstr "Mahika"
+
+msgid "Paint"
+msgstr "Pinta"
+
+msgid "Stamp"
+msgstr "Pantatak"
+
+msgid "Lines"
+msgstr "Mga Linya"
+
+msgid "Text"
+msgstr "Letra"
+
+msgid "Undo"
+msgstr "Ibalik sa nauna"
+
+msgid "Redo"
+msgstr "Ibalik sa dati"
+
+msgid "Eraser"
+msgstr "Pambura"
+
+msgid "New"
+msgstr "Panibago"
+
+#. buttons for the file open dialog
+msgid "Open"
+msgstr "Buksan"
+
+msgid "Save"
+msgstr "Save"
+
+msgid "Print"
+msgstr "Limbag"
+
+msgid "Quit"
+msgstr "Umalis"
+
+msgid "Pick a color and a brush shape to draw with."
+msgstr ""
+
+msgid "Pick a picture to stamp around your drawing."
+msgstr ""
+
+msgid "Click to start drawing a line. Let go to complete it."
+msgstr ""
+
+msgid ""
+"Pick a shape. Click to pick the center, drag, then let go when it is the "
+"size you want. Move around to rotate it, and click to draw it."
+msgstr ""
+
+msgid "Choose a style of text. Click on your drawing and you can start typing."
+msgstr ""
+
+msgid "Pick a magical effect to use on your drawing!"
+msgstr ""
+
+#. Undo
+msgid "Undo!"
+msgstr "Ibalik sa nauna!"
+
+#. Redo
+msgid "Redo!"
+msgstr "Ibalik sa dati!"
+
+#. Eraser
+msgid "Eraser!"
+msgstr "Pambura"
+
+#. New
+msgid "You now have a blank sheet to draw on!"
+msgstr "Meron ka ng panibagong dokumento para guhitan!"
+
+#. Open
+msgid "Open…"
+msgstr "Buksan"
+
+#. Save
+msgid "Your image has been saved!"
+msgstr "Nai-save na ang larawan!"
+
+#. Print
+msgid "Printing…"
+msgstr "Naglilimbag"
+
+#. Quit
+msgid "Bye bye!"
+msgstr "Paalam!"
+
+msgid "Let go of the button to complete the line."
+msgstr ""
+
+msgid "Hold the button to stretch the shape."
+msgstr ""
+
+msgid "Move the mouse to rotate the shape. Click to draw it."
+msgstr ""
+
+msgid "OK then… Let’s keep drawing this one!"
+msgstr ""
+
+#. FIXME: Move elsewhere!!!
+msgid "Do you really want to quit?"
+msgstr "Gusto mo ba talagang umalis?"
+
+msgid "Yes, I'm done!"
+msgstr "Oo. Tapos na ako!"
+
+msgid "No, take me back!"
+msgstr "Hindi. Ibalik mo ako!"
+
+msgid "If you quit, you’ll lose your picture! Save it?"
+msgstr "Kapag umalis. Mawawala ang larawan! I-save ito?"
+
+msgid "Yes, save it!"
+msgstr "Oo. i-save!"
+
+msgid "No, don't bother saving!"
+msgstr "Hindi. huwag i-save!"
+
+msgid "Save your picture first?"
+msgstr "I-save muna ang larawan?"
+
+msgid "Can’t open that picture!"
+msgstr "Hindi Mabuksan ang larawan!"
+
+msgid "OK"
+msgstr ""
+
+#. This will be replaced with a dialog allowing color choice and Starter
+#. picking, with a "Back" option to dismiss the "New" and return to
+#. the current picture.  But for now...  (bjk 2006.02.19)
+msgid "Start a new picture?"
+msgstr "Magsimula ng bagong larawan?"
+
+#. #define PROMPT_NEW_YES gettext_noop("That’s OK!")
+#. #define PROMPT_NEW_NO gettext_noop("Never mind!")
+msgid "Yes, let's start fresh!"
+msgstr "Oo. Magsimula ng bago!"
+
+msgid "There are no saved files!"
+msgstr "Walang nakasave na dokumento!"
+
+msgid "Print your picture now?"
+msgstr "Gusto mo bang ilimbag ang larawan?"
+
+msgid "Yes, print it!"
+msgstr "Oo. Ilimbag ito!"
+
+msgid "Your picture has been printed!"
+msgstr "Nailimbag na ang larawan!"
+
+msgid "You can’t print yet!"
+msgstr "Hindi pa puwedeng ilimbag!"
+
+msgid "Erase this picture?"
+msgstr "Burahin ang larawan?"
+
+msgid "Yes, erase it!"
+msgstr "Oo. Burahin ito!"
+
+msgid "No, don't erase it!"
+msgstr "Hindi. Huwag itong burahin!"
+
+msgid "Remember to use the left mouse button!"
+msgstr "Alalahaning gamitin ang kaliwang mouse button!"
+
+msgid "Please wait..."
+msgstr "Mahintay Sandali..."
+
+msgid "Erase"
+msgstr "Burahin"
+
+msgid "Back"
+msgstr "Bumalik"
+
+msgid "Aa"
+msgstr ""
+
+#. FIXME: Move elsewhere! Or not?!
+msgid "Yes"
+msgstr "Oo"
+
+msgid "No"
+msgstr "Hindi"
+
+#. FIXME: Move elsewhere!!!
+#. #define PROMPT_SAVE_OVER_TXT gettext_noop("Save over the older version of this picture?")
+msgid "Replace the picture with your changes?"
+msgstr "Palitan ang larawan ng mga nagawang pagbabago?"
+
+msgid "Yes, replace the old one!"
+msgstr "Oo. Palitan ng bago!"
+
+msgid "No, save a new file!"
+msgstr "Hindi. i-save ang dokumento!"
+
+msgid "Choose the picture you want, then click “Open”."
+msgstr "Pumili ng larawang gusto. at i-klik ang buksan."
+
+msgid "A drawing program for children."
+msgstr ""
+
+msgid "Drawing program"
+msgstr ""
+
+msgid "Tux Paint"
+msgstr ""

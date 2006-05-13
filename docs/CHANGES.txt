@@ -68,6 +68,10 @@ $Id$
     * Scottish Gaelic
       Niall Tracey <internationiall@hotmail.com>
 
+    * Tagalog
+      RICKY LONTOC <gb_515_deme@hotmail.com>
+      Technical assistance by Ed Montgomery <edmontgomery@hotmail.com>
+
     * Tibetan -- includes "bo.ttf" font
       (NO TRANSLATION YET!)
       ??? <??@??.??>
@@ -143,6 +147,8 @@ $Id$
     * Building with "-ffloat-store" in CFLAGS (instead of "-ffast-math")
       to allow stamp tinting code to work properly.
       Thanks to: Albert Cahalan <albert@users.sf.net>
+
+    * Silencing any errors when running kde- or gnome-config during install.
 
   * Bug Fixes:
     ----------
