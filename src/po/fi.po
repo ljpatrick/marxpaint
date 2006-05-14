@@ -1,27 +1,30 @@
+# translation of fi.po to Finnisf
 # Tux Paint messages in Finnish
 # Copyright (C) 2002-2004
 # Tarmo Toikkanen <tarmo.toikkanen@iki.fi>
-# 
+#
+# Niko Lewman <niko.lewman@edu.hel.fi>, 2006.
 msgid ""
 msgstr ""
-"Project-Id-Version: TuxPaint\n"
+"Project-Id-Version: fi\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2006-02-25 09:37+0100\n"
-"PO-Revision-Date: 2004-07-18 16:09+0200\n"
-"Last-Translator: Tarmo Toikkanen <tarmo@iki.fi>\n"
-"Language-Team: Finnish <fi@li.org>\n"
+"PO-Revision-Date: 2006-05-14 12:35+0300\n"
+"Last-Translator: Niko Lewman <niko.lewman@edu.hel.fi>\n"
+"Language-Team: Finnisf\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11.2\n"
 
 msgid "Black!"
 msgstr "Musta!"
 
 msgid "Dark grey! Some people spell it “dark gray”."
-msgstr ""
+msgstr "Tummanharmaa!"
 
 msgid "Light grey! Some people spell it “light gray”."
-msgstr ""
+msgstr "Vaaleanharmaa!"
 
 msgid "White!"
 msgstr "Valkoinen!"
@@ -36,20 +39,19 @@ msgid "Yellow!"
 msgstr "Keltainen!"
 
 msgid "Light green!"
-msgstr ""
+msgstr "Vaaleanvihreä!"
 
-#, fuzzy
 msgid "Dark green!"
-msgstr "Harmaa!"
+msgstr "Tummanvihreä!"
 
 msgid "Sky blue!"
-msgstr ""
+msgstr "Taivaansininen!"
 
 msgid "Blue!"
 msgstr "Sininen!"
 
 msgid "Lavender!"
-msgstr ""
+msgstr "Laventeli!"
 
 msgid "Purple!"
 msgstr "Violetti!"
@@ -60,12 +62,11 @@ msgstr "Vaaleanpunainen!"
 msgid "Brown!"
 msgstr "Ruskea!"
 
-#, fuzzy
 msgid "Tan!"
-msgstr "Turkoosi!"
+msgstr "Vaaleanruskea!"
 
 msgid "Beige!"
-msgstr ""
+msgstr "Beige!"
 
 msgid "qx"
 msgstr ""
@@ -139,13 +140,13 @@ msgid "Blur"
 msgstr "Sumenna"
 
 msgid "Smudge"
-msgstr ""
+msgstr "Tuhri"
 
 msgid "Lighten"
-msgstr ""
+msgstr "Vaalenna"
 
 msgid "Darken"
-msgstr ""
+msgstr "Tummenna"
 
 msgid "Chalk"
 msgstr "Hiilipiirros"
@@ -164,7 +165,7 @@ msgid "Drip"
 msgstr "Valuta"
 
 msgid "Cartoon"
-msgstr ""
+msgstr "Sarjakuva"
 
 msgid "Mirror"
 msgstr "Peilikuva"
@@ -207,8 +208,7 @@ msgstr "Haalista värejä liikuttamalla hiirtä nappi pohjassa."
 msgid "Click and move to darken the colors."
 msgstr "Haalista värejä liikuttamalla hiirtä nappi pohjassa."
 
-msgid ""
-"Click and move the mouse around to turn the picture into a chalk drawing."
+msgid "Click and move the mouse around to turn the picture into a chalk drawing."
 msgstr "Muuta kuva hiilipiirrokseksi liikuttamalla hiirtä nappi pohjassa."
 
 msgid "Click and move the mouse around to make the picture blocky."
@@ -244,7 +244,7 @@ msgid "Circle"
 msgstr "Ympyrä"
 
 msgid "Ellipse"
-msgstr ""
+msgstr "Ellipsi"
 
 msgid "Triangle"
 msgstr "Kolmio"
@@ -253,7 +253,7 @@ msgid "Pentagon"
 msgstr "Viisikulmio"
 
 msgid "Rhombus"
-msgstr ""
+msgstr "Vinoneliö"
 
 #, fuzzy
 msgid "A square is a rectangle with four equal sides."
@@ -263,12 +263,11 @@ msgstr "Suorakaiteessa on neljä sivua."
 msgid "A rectangle has four sides and four right angles."
 msgstr "Suorakaiteessa on neljä sivua."
 
-msgid ""
-"A circle is a curve where all points have the same distance from the centre."
-msgstr ""
+msgid "A circle is a curve where all points have the same distance from the centre."
+msgstr "Ympyrä on kaari, jonka kaikki pisteet ovat yhtä kaukana keskipisteestä."
 
 msgid "An ellipse is a stretched circle."
-msgstr ""
+msgstr "Ellipsi on venytetty ympyrä."
 
 msgid "A triangle has three sides."
 msgstr "Kolmiossa on kolme sivua."
@@ -277,7 +276,7 @@ msgid "A pentagon has five sides."
 msgstr "Viisikulmiossa on viisi sivua."
 
 msgid "A rhombus has four equal sides, and opposite sides are parallel."
-msgstr ""
+msgstr "Vinoneliössä on neljä samanpituista sivua; vastakkaiset sivut ovat samansuuntaiset."
 
 msgid "Tools"
 msgstr "Työkalut"
@@ -416,19 +415,19 @@ msgid "Do you really want to quit?"
 msgstr "Haluatko varmasti lopettaa?"
 
 msgid "Yes, I'm done!"
-msgstr ""
+msgstr "Kyllä, olen valmis!"
 
 msgid "No, take me back!"
-msgstr ""
+msgstr "Ei, palaa takaisin!"
 
 msgid "If you quit, you’ll lose your picture! Save it?"
 msgstr "Menetät kuvan jos lopetat. Tallennetaanko se?"
 
 msgid "Yes, save it!"
-msgstr ""
+msgstr "Kyllä, tallenna se!"
 
 msgid "No, don't bother saving!"
-msgstr ""
+msgstr "Ei, ei kannata tallentaa!"
 
 msgid "Save your picture first?"
 msgstr "Tallennetaanko kuvasi ensin?"
@@ -449,7 +448,7 @@ msgstr "Pyyhitäänkö tämä kuva?"
 #. #define PROMPT_NEW_YES gettext_noop("That’s OK!")
 #. #define PROMPT_NEW_NO gettext_noop("Never mind!")
 msgid "Yes, let's start fresh!"
-msgstr ""
+msgstr "Kyllä, aloitetaan tyhjällä arkilla!"
 
 msgid "There are no saved files!"
 msgstr "Ei löytynyt yhtään tallennettuja kuvia!"
@@ -458,7 +457,7 @@ msgid "Print your picture now?"
 msgstr "Haluatko tulostaa kuvasi nyt?"
 
 msgid "Yes, print it!"
-msgstr ""
+msgstr "Kyllä, tulosta se!"
 
 msgid "Your picture has been printed!"
 msgstr "Kuvasi on tulostettu!"
@@ -470,16 +469,16 @@ msgid "Erase this picture?"
 msgstr "Pyyhitäänkö tämä kuva?"
 
 msgid "Yes, erase it!"
-msgstr ""
+msgstr "Kyllä, pyyhi se!"
 
 msgid "No, don't erase it!"
-msgstr ""
+msgstr "Ei, älä pyyhi sitä!"
 
 msgid "Remember to use the left mouse button!"
-msgstr ""
+msgstr "Muista käyttää hiiren vasenta korvaa!"
 
 msgid "Please wait..."
-msgstr ""
+msgstr "Odota, ole hyvä..."
 
 msgid "Erase"
 msgstr "Pyyhi"
@@ -488,7 +487,7 @@ msgid "Back"
 msgstr "Takaisin"
 
 msgid "Aa"
-msgstr ""
+msgstr "Aa"
 
 #. FIXME: Move elsewhere! Or not?!
 msgid "Yes"
@@ -500,10 +499,10 @@ msgstr "Ei"
 #. FIXME: Move elsewhere!!!
 #. #define PROMPT_SAVE_OVER_TXT gettext_noop("Save over the older version of this picture?")
 msgid "Replace the picture with your changes?"
-msgstr ""
+msgstr "Korvaa kuva sinun muutoksillasi?"
 
 msgid "Yes, replace the old one!"
-msgstr ""
+msgstr "Kyllä, korvaa vanha kuva!"
 
 #, fuzzy
 msgid "No, save a new file!"
@@ -521,53 +520,3 @@ msgstr "Piirto-ohjelma"
 msgid "Tux Paint"
 msgstr "Tux Paint"
 
-#~ msgid "Starting a new picture will erase the current one!"
-#~ msgstr "Uuden kuvan aloittaminen pyyhkii nykyisen pois!"
-
-#~ msgid "That’s OK!"
-#~ msgstr "Se sopii!"
-
-#~ msgid "Never mind!"
-#~ msgstr "Ei sitten!"
-
-#~ msgid "Save over the older version of this picture?"
-#~ msgstr "Tämän niminen kuva on jo olemassa. Tallennetaanko sen päälle?"
-
-#~ msgid "Green!"
-#~ msgstr "Vihreä!"
-
-#~ msgid "Fade"
-#~ msgstr "Haalista"
-
-#~ msgid "Oval"
-#~ msgstr "Soikio"
-
-#~ msgid "Diamond"
-#~ msgstr "Vinoneliö"
-
-#~ msgid "A square has four sides, each the same length."
-#~ msgstr "Neliössä on neljä sivua, jotka kaikki ovat saman pituisia."
-
-#~ msgid "A circle is exactly round."
-#~ msgstr "Ympyrä on täysin pyöreä."
-
-#~ msgid "A diamond is a square, turned around slightly."
-#~ msgstr "Vinoneliö on neliö, joka on käännetty vinoon."
-
-#~ msgid "Lime!"
-#~ msgstr "Lime!"
-
-#~ msgid "Fuchsia!"
-#~ msgstr "Fuksia!"
-
-#~ msgid "Silver!"
-#~ msgstr "Hopea!"
-
-#~ msgid "Thick"
-#~ msgstr "Paksu"
-
-#~ msgid "Click and move the mouse to thicken the picture."
-#~ msgstr "Voit vahvistaa kuvaa liikuttamalla hiirtä nappi pohjassa."
-
-#~ msgid "Click and move the mouse to thin the picture."
-#~ msgstr "Voit ohentaa kuvaa liikuttamalla hiirtä nappi pohjassa."
