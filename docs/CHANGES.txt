@@ -73,9 +73,8 @@ $Id$
       Technical assistance by Ed Montgomery <edmontgomery@hotmail.com>
 
     * Tibetan -- includes "bo.ttf" font
-      (NO TRANSLATION YET!)
-      ??? <??@??.??>
-      (via Ed Montgomery <edm@rocketmail.com>)
+      Dawa Dolma
+      Technical assistance by Ed Montgomery <edmontgomery@hotmail.com>
 
   * Translation Updates:
     --------------------

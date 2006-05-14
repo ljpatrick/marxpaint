@@ -1,15 +1,15 @@
-# Tux Paint Tibetan translation (skeleton file!)
-# Copyright (C) 2006
-# This file is distributed under the same license as the Tux Paint package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-#
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# Dawa Dolma <EMAIL@ADDRESS>, May 5, 2006
+# Technical assistance by Ed Montgomery <edmontgomery@hotmail.com>
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: 0.9.16\n"
+"Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2006-02-25 09:37+0100\n"
-"PO-Revision-Date: 2006-03-29 07:18+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -17,52 +17,52 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 msgid "Black!"
-msgstr ""
+msgstr "ng.po."
 
-msgid "Dark grey! Some people spell it “dark gray”."
-msgstr ""
+msgid "Dark grey! Some people spell it âdark grayâ."
+msgstr "ng.SKKKKKKKKKKY."
 
-msgid "Light grey! Some people spell it “light gray”."
-msgstr ""
+msgid "Light grey! Some people spell it âlight grayâ."
+msgstr "av.gu.mdog."
 
 msgid "White!"
-msgstr ""
+msgstr "dkr.po."
 
 msgid "Red!"
-msgstr ""
+msgstr "dmr.po."
 
 msgid "Orange!"
-msgstr ""
+msgstr "li.wv."
 
 msgid "Yellow!"
-msgstr ""
+msgstr "ser.po."
 
 msgid "Light green!"
-msgstr ""
+msgstr "]ur.qu."
 
 msgid "Dark green!"
-msgstr ""
+msgstr "lJv.ng."
 
 msgid "Sky blue!"
-msgstr ""
+msgstr "gnm.sVon.po."
 
 msgid "Blue!"
-msgstr ""
+msgstr "sVon.po."
 
 msgid "Lavender!"
-msgstr ""
+msgstr "ziv.mr."
 
 msgid "Purple!"
-msgstr ""
+msgstr "sVo.dmr."
 
 msgid "Pink!"
-msgstr ""
+msgstr "ziv.sKY."
 
 msgid "Brown!"
-msgstr ""
+msgstr "rGY.sMug."
 
 msgid "Tan!"
-msgstr ""
+msgstr "sMug.po."
 
 msgid "Beige!"
 msgstr ""
@@ -119,60 +119,60 @@ msgid "Good job!"
 msgstr ""
 
 msgid "Fill"
-msgstr ""
+msgstr "dgv.b."
 
 msgid "Grass"
-msgstr ""
+msgstr "RCX"
 
 msgid "Bricks"
-msgstr ""
+msgstr "s.\\g."
 
 msgid "Rainbow"
-msgstr ""
+msgstr "aja."
 
 msgid "Sparkles"
-msgstr ""
+msgstr "mi.cxg.a[or.b."
 
 msgid "Blur"
-msgstr ""
+msgstr "gsl.l.m.gsl."
 
 msgid "Smudge"
-msgstr ""
+msgstr "ng.nog."
 
 msgid "Lighten"
-msgstr ""
+msgstr "aod.a\\+o.b."
 
 msgid "Darken"
-msgstr ""
+msgstr "ng.quv."
 
 msgid "Chalk"
-msgstr ""
+msgstr "s.dkr."
 
 msgid "Blocks"
-msgstr ""
+msgstr "RDog.RDog."
 
 msgid "Negative"
-msgstr ""
+msgstr "dgg.sG+ai."
 
 msgid "Tint"
-msgstr ""
+msgstr "m]xon.mdvs."
 
 msgid "Drip"
-msgstr ""
+msgstr "[igs.p.rGYb.p."
 
 msgid "Cartoon"
-msgstr ""
+msgstr "ri.mo."
 
 msgid "Mirror"
-msgstr ""
+msgstr "me.lov."
 
 msgid "Flip"
-msgstr ""
+msgstr "sBud.sGYg.rGYb.p."
 
 msgid "Click in the picture to fill that area with color."
 msgstr ""
 
-msgid "Click and move to draw grass. Don’t forget the dirt!"
+msgid "Click and move to draw grass. Don't forget the dirt!"
 msgstr ""
 
 msgid "Click and move to draw large bricks."
@@ -209,7 +209,7 @@ msgstr ""
 msgid "Click and move the mouse around to draw a negative."
 msgstr ""
 
-msgid "Click and move the mouse around to change the picture’s color."
+msgid "Click and move the mouse around to change the picture's color."
 msgstr ""
 
 msgid "Click and move the mouse around to make the picture drip."
@@ -225,25 +225,25 @@ msgid "Click to flip the picture upside-down."
 msgstr ""
 
 msgid "Square"
-msgstr ""
+msgstr "g+iu.bZi."
 
 msgid "Rectangle"
-msgstr ""
+msgstr "g+u.bZi.nr.nr."
 
 msgid "Circle"
-msgstr ""
+msgstr "sGor.sGor."
 
 msgid "Ellipse"
-msgstr ""
+msgstr "sGor.mo.]uv.[en.p."
 
 msgid "Triangle"
-msgstr ""
+msgstr "zur.gsum."
 
 msgid "Pentagon"
-msgstr ""
+msgstr "zur.lV."
 
 msgid "Rhombus"
-msgstr ""
+msgstr "\\.lm.zur.cn."
 
 msgid "A square is a rectangle with four equal sides."
 msgstr ""
@@ -268,65 +268,65 @@ msgid "A rhombus has four equal sides, and opposite sides are parallel."
 msgstr ""
 
 msgid "Tools"
-msgstr ""
+msgstr "lg.]."
 
 msgid "Colors"
-msgstr ""
+msgstr "]xn.q+."
 
 msgid "Brushes"
 msgstr ""
 
 msgid "Erasers"
-msgstr ""
+msgstr "bsub.bYeed."
 
 msgid "Stamps"
-msgstr ""
+msgstr "[m.k."
 
 msgid "Shapes"
-msgstr ""
+msgstr "bzo.lT."
 
 msgid "Letters"
 msgstr ""
 
 msgid "Magic"
-msgstr ""
+msgstr "mig.a\\+ul."
 
 msgid "Paint"
-msgstr ""
+msgstr "]xon."
 
 msgid "Stamp"
-msgstr ""
+msgstr "[m.k."
 
 msgid "Lines"
-msgstr ""
+msgstr "[ig."
 
 msgid "Text"
-msgstr ""
+msgstr "dpe.]."
 
 msgid "Undo"
-msgstr ""
+msgstr "sNd.bsKb.bsub.p."
 
 msgid "Redo"
-msgstr ""
+msgstr "yv.sKYr.bsTn.p."
 
 msgid "Eraser"
-msgstr ""
+msgstr "bsub.bYed."
 
 msgid "New"
-msgstr ""
+msgstr "gsr.p."
 
 #. buttons for the file open dialog
 msgid "Open"
-msgstr ""
+msgstr "q.\\Yed.p."
 
 msgid "Save"
-msgstr ""
+msgstr "bs+o.]xgs.bYed.p."
 
 msgid "Print"
-msgstr ""
+msgstr "pr.rGYb.p."
 
 msgid "Quit"
-msgstr ""
+msgstr "gyug.bZg.p."
 
 msgid "Pick a color and a brush shape to draw with."
 msgstr ""
@@ -350,30 +350,30 @@ msgstr ""
 
 #. Undo
 msgid "Undo!"
-msgstr ""
+msgstr "sNd.bsKb.bsub.p."
 
 #. Redo
 msgid "Redo!"
-msgstr ""
+msgstr "yv.sKYr.bsTn.p."
 
 #. Eraser
 msgid "Eraser!"
-msgstr ""
+msgstr "bsub.bYed."
 
 #. New
 msgid "You now have a blank sheet to draw on!"
 msgstr ""
 
 #. Open
-msgid "Open…"
-msgstr ""
+msgid "Open?"
+msgstr "q.\\Yed.b."
 
 #. Save
 msgid "Your image has been saved!"
 msgstr ""
 
 #. Print
-msgid "Printing…"
+msgid "Printing?"
 msgstr ""
 
 #. Quit
@@ -389,7 +389,7 @@ msgstr ""
 msgid "Move the mouse to rotate the shape. Click to draw it."
 msgstr ""
 
-msgid "OK then… Let’s keep drawing this one!"
+msgid "OK then? Let's keep drawing this one!"
 msgstr ""
 
 #. FIXME: Move elsewhere!!!
@@ -402,7 +402,7 @@ msgstr ""
 msgid "No, take me back!"
 msgstr ""
 
-msgid "If you quit, you’ll lose your picture! Save it?"
+msgid "If you quit, you'll lose your picture! Save it?"
 msgstr ""
 
 msgid "Yes, save it!"
@@ -414,7 +414,7 @@ msgstr ""
 msgid "Save your picture first?"
 msgstr ""
 
-msgid "Can’t open that picture!"
+msgid "Can't open that picture!"
 msgstr ""
 
 msgid "OK"
@@ -426,7 +426,7 @@ msgstr ""
 msgid "Start a new picture?"
 msgstr ""
 
-#. #define PROMPT_NEW_YES gettext_noop("That’s OK!")
+#. #define PROMPT_NEW_YES gettext_noop("That's OK!")
 #. #define PROMPT_NEW_NO gettext_noop("Never mind!")
 msgid "Yes, let's start fresh!"
 msgstr ""
@@ -443,7 +443,7 @@ msgstr ""
 msgid "Your picture has been printed!"
 msgstr ""
 
-msgid "You can’t print yet!"
+msgid "You can't print yet!"
 msgstr ""
 
 msgid "Erase this picture?"
@@ -488,7 +488,7 @@ msgstr ""
 msgid "No, save a new file!"
 msgstr ""
 
-msgid "Choose the picture you want, then click “Open”."
+msgid "Choose the picture you want, then click âOpenâ."
 msgstr ""
 
 msgid "A drawing program for children."

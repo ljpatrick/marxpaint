@@ -298,6 +298,9 @@ $Id$
   * Thai
     Ouychai Chaita <ae.freeman@gmail.com>
 
+  * Tibetan
+    Dawa Dolma
+
   * Turkish
     Doruk Fisek <dfisek@fisek.com.tr>
 
