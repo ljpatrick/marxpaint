@@ -155,7 +155,7 @@ $Id$
     Kevin Patrick Scannell <scannell@SLU.EDU>
 
   * Galician
-    Leandro Regueiro <unho@gulo.org>
+    Leandro Regueiro <leandro.regueiro@gmail.com>
 
   * Georgian
     Gia Shervashidze <giasher@telenet.ge>

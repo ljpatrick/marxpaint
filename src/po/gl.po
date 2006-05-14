@@ -1,30 +1,31 @@
+# translation of tuxpaint-gl.po to Galician
 # TuxPaint Galician translation file
 # Copyright (C) 2004 Bill Kendrick
 # This file is distributed under the same license as the TuxPaint package.
-# Leandro Regueiro <unho@gulo.org>, 2005.
+# Leandro Regueiro <leandro.regueiro@gmail.com>, 2005, 2006.
+#
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: tuxpaint 0.9.14\n"
+"Project-Id-Version: tuxpaint-gl\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2006-02-25 09:37+0100\n"
-"PO-Revision-Date: 2005-01-17 17:50+0100\n"
-"Last-Translator: Leandro Regueiro <unho@gulo.org>\n"
-"Language-Team: Galician <trasno@ceu.fi.udc.es>\n"
+"PO-Revision-Date: 2006-05-12 13:47+0200\n"
+"Last-Translator: Leandro Regueiro <leandro.regueiro@gmail.com>\n"
+"Language-Team: Galician <gpul-traduccion@ceu.fi.udc.es>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Poedit-Language: Galician\n"
-"X-Poedit-Country: SPAIN\n"
+"X-Generator: KBabel 1.9.1\n"
 
 msgid "Black!"
 msgstr "Negro!"
 
 msgid "Dark grey! Some people spell it “dark gray”."
-msgstr ""
+msgstr "Gris escuro!"
 
 msgid "Light grey! Some people spell it “light gray”."
-msgstr ""
+msgstr "Gris claro! Algunha xente chámalle “prata”."
 
 msgid "White!"
 msgstr "Branco!"
@@ -38,22 +39,20 @@ msgstr "Laranxa!"
 msgid "Yellow!"
 msgstr "Amarelo!"
 
-#, fuzzy
 msgid "Light green!"
-msgstr "Gris Claro!"
+msgstr "Verde claro!"
 
-#, fuzzy
 msgid "Dark green!"
-msgstr "Escurecer"
+msgstr "Verde escuro!"
 
 msgid "Sky blue!"
-msgstr "Azul Cesleste!"
+msgstr "Azul cesleste!"
 
 msgid "Blue!"
 msgstr "Azul!"
 
 msgid "Lavender!"
-msgstr ""
+msgstr "Lavanda!"
 
 msgid "Purple!"
 msgstr "Púrpura!"
@@ -71,43 +70,43 @@ msgid "Beige!"
 msgstr "Beixe!"
 
 msgid "qx"
-msgstr ""
+msgstr "qx"
 
 msgid "QX"
-msgstr ""
+msgstr "QX"
 
 msgid "qy"
-msgstr ""
+msgstr "qy"
 
 msgid "QY"
-msgstr ""
+msgstr "QY"
 
 #. Now we score fonts to ensure that the best ones will be placed at
 #. the top of the list. The user will see them first. This sorting is
 #. especially important for users who have scroll buttons disabled.
 #. Translators should do whatever is needed to put crummy fonts last.
 msgid "oO"
-msgstr ""
+msgstr "oO"
 
 #. distinct uppercase and lowercase
 msgid "`\\%_@$~#{}<>^&*"
-msgstr ""
+msgstr "`\\%_@$~#{}<>^&*"
 
 #. uncommon punctuation
 msgid ",.?!"
-msgstr ""
+msgstr ",.?!"
 
 #. common punctuation
 msgid "017"
-msgstr ""
+msgstr "017"
 
 #. digits
 msgid "O0"
-msgstr ""
+msgstr "O0"
 
 #. distinct circle-like characters
 msgid "1Il|"
-msgstr ""
+msgstr "1Il|"
 
 msgid "Great!"
 msgstr "Magnífico!"
@@ -139,13 +138,11 @@ msgstr "Escintileos"
 msgid "Blur"
 msgstr "Desenfocar"
 
-#, fuzzy
 msgid "Smudge"
-msgstr "Manchar"
+msgstr "Luxar"
 
-#, fuzzy
 msgid "Lighten"
-msgstr "Gris Claro!"
+msgstr "Aclarar"
 
 msgid "Darken"
 msgstr "Escurecer"
@@ -177,7 +174,6 @@ msgstr "Inverter"
 msgid "Click in the picture to fill that area with color."
 msgstr "Clica no debuxo para encher unha área con cor."
 
-#, fuzzy
 msgid "Click and move to draw grass. Don’t forget the dirt!"
 msgstr "Clica e move para debuxar a herba. ¡Non esquezas a terra!"
 
@@ -196,9 +192,8 @@ msgstr "Clica e move para debuxar escintileos."
 msgid "Click and move the mouse around to blur the picture."
 msgstr "Clica e move o rato para desenfocar o debuxo."
 
-#, fuzzy
 msgid "Click and move the mouse around to smudge the picture."
-msgstr "Clica e move o rato para manchar o debuxo."
+msgstr "Clica e move o rato para luxar o debuxo."
 
 msgid "Click and move to fade the colors."
 msgstr "Clica e move o rato para esvaecer as cores."
@@ -206,10 +201,8 @@ msgstr "Clica e move o rato para esvaecer as cores."
 msgid "Click and move to darken the colors."
 msgstr "Clica e move para escurecer as cores."
 
-msgid ""
-"Click and move the mouse around to turn the picture into a chalk drawing."
-msgstr ""
-"Clica e move o rato para para converter o debuxo nun debuxo feito con xiz."
+msgid "Click and move the mouse around to turn the picture into a chalk drawing."
+msgstr "Clica e move o rato para para converter o debuxo nun debuxo feito con xiz."
 
 msgid "Click and move the mouse around to make the picture blocky."
 msgstr "Clica e move o rato para cuadricular o debuxo."
@@ -217,16 +210,14 @@ msgstr "Clica e move o rato para cuadricular o debuxo."
 msgid "Click and move the mouse around to draw a negative."
 msgstr "Clica e move o rato para debuxar o negativo do debuxo."
 
-#, fuzzy
 msgid "Click and move the mouse around to change the picture’s color."
-msgstr "Clica e move o rato para trocar a cor do debuxo."
+msgstr "Clica e move o rato para cambiar a cor do debuxo."
 
 msgid "Click and move the mouse around to make the picture drip."
 msgstr "Clica e move o rato para facer que o debuxo pingue."
 
 msgid "Click and move the mouse around to turn the picture into a cartoon."
-msgstr ""
-"Clica e move o rato arredor para para converter o debuxo nun debuxo de cómic."
+msgstr "Clica e move o rato arredor para para converter o debuxo nun debuxo de cómic."
 
 msgid "Click to make a mirror image."
 msgstr "Clica para espellar o debuxo."
@@ -246,7 +237,7 @@ msgid "Circle"
 msgstr "Círculo"
 
 msgid "Ellipse"
-msgstr ""
+msgstr "Elipse"
 
 msgid "Triangle"
 msgstr "Triángulo"
@@ -255,22 +246,19 @@ msgid "Pentagon"
 msgstr "Pentágono"
 
 msgid "Rhombus"
-msgstr ""
+msgstr "Rombo"
 
-#, fuzzy
 msgid "A square is a rectangle with four equal sides."
-msgstr "Un rectángulo ten catro lados."
+msgstr "Un cadrado é un rectángulo cos catro lados iguais."
 
-#, fuzzy
 msgid "A rectangle has four sides and four right angles."
-msgstr "Un rectángulo ten catro lados."
+msgstr "Un rectángulo ten catro lados e catro ángulos rectos."
 
-msgid ""
-"A circle is a curve where all points have the same distance from the centre."
-msgstr ""
+msgid "A circle is a curve where all points have the same distance from the centre."
+msgstr "Un circulo é unha curva na que os puntos están á mesma distancia do centro."
 
 msgid "An ellipse is a stretched circle."
-msgstr ""
+msgstr "Unha elipse é un circulo estirado."
 
 msgid "A triangle has three sides."
 msgstr "Un triángulo ten tres lados."
@@ -279,7 +267,7 @@ msgid "A pentagon has five sides."
 msgstr "Un pentágono ten cinco lados."
 
 msgid "A rhombus has four equal sides, and opposite sides are parallel."
-msgstr ""
+msgstr "Un rombo ten catro lados iguais, e os lados opostos son paralelos."
 
 msgid "Tools"
 msgstr "Ferramentas"
@@ -359,8 +347,7 @@ msgstr ""
 "o tamaño que queiras. Move arredor para virala, e clica para debuxala. "
 
 msgid "Choose a style of text. Click on your drawing and you can start typing."
-msgstr ""
-"Elixe un estilo de texto. Clica no debuxo e xa podes comezar a escribir."
+msgstr "Elixe un estilo de texto. Clica no debuxo e xa podes comezar a escribir."
 
 msgid "Pick a magical effect to use on your drawing!"
 msgstr "Escolle un efecto máxico para usalo no teu debuxo!"
@@ -414,19 +401,19 @@ msgid "Do you really want to quit?"
 msgstr "Desexas saír?"
 
 msgid "Yes, I'm done!"
-msgstr ""
+msgstr "Si, xa estou listo!"
 
 msgid "No, take me back!"
-msgstr ""
+msgstr "Non, quero voltar!"
 
 msgid "If you quit, you’ll lose your picture! Save it?"
 msgstr "Se saes, perdera-lo teu debuxo! Desexas gardalo?"
 
 msgid "Yes, save it!"
-msgstr ""
+msgstr "Si, gárdao!"
 
 msgid "No, don't bother saving!"
-msgstr ""
+msgstr "Non, non te molestes en gardalo!"
 
 msgid "Save your picture first?"
 msgstr "Desexas garda-lo teu debuxo antes de saír?"
@@ -440,14 +427,13 @@ msgstr "Aceptar"
 #. This will be replaced with a dialog allowing color choice and Starter
 #. picking, with a "Back" option to dismiss the "New" and return to
 #. the current picture.  But for now...  (bjk 2006.02.19)
-#, fuzzy
 msgid "Start a new picture?"
-msgstr "Desexas borrar este debuxo?"
+msgstr "Desexas iniciar un novo debuxo?"
 
 #. #define PROMPT_NEW_YES gettext_noop("That’s OK!")
 #. #define PROMPT_NEW_NO gettext_noop("Never mind!")
 msgid "Yes, let's start fresh!"
-msgstr ""
+msgstr "Si, vou comezar un novo!"
 
 msgid "There are no saved files!"
 msgstr "Non hai ficheiros gardados!"
@@ -456,7 +442,7 @@ msgid "Print your picture now?"
 msgstr "Desexas imprimi-lo teu debuxo agora?"
 
 msgid "Yes, print it!"
-msgstr ""
+msgstr "SI, imprímeo!"
 
 msgid "Your picture has been printed!"
 msgstr "Xa se imprimiu o teu debuxo!"
@@ -468,16 +454,16 @@ msgid "Erase this picture?"
 msgstr "Desexas borrar este debuxo?"
 
 msgid "Yes, erase it!"
-msgstr ""
+msgstr "Si, elimínao!"
 
 msgid "No, don't erase it!"
-msgstr ""
+msgstr "Non, non o elimines!"
 
 msgid "Remember to use the left mouse button!"
-msgstr ""
+msgstr "Lembra usar o botón esquerdo do rato!"
 
 msgid "Please wait..."
-msgstr ""
+msgstr "Por favor agarda..."
 
 msgid "Erase"
 msgstr "Borrar"
@@ -485,7 +471,6 @@ msgstr "Borrar"
 msgid "Back"
 msgstr "Atrás"
 
-#, fuzzy
 msgid "Aa"
 msgstr "Aa"
 
@@ -499,17 +484,16 @@ msgstr "Non"
 #. FIXME: Move elsewhere!!!
 #. #define PROMPT_SAVE_OVER_TXT gettext_noop("Save over the older version of this picture?")
 msgid "Replace the picture with your changes?"
-msgstr ""
+msgstr "Desexas substituir o debuxo cos teus cambios?"
 
 msgid "Yes, replace the old one!"
-msgstr ""
+msgstr "Si, substitúe o antigo!"
 
-#, fuzzy
 msgid "No, save a new file!"
-msgstr "Non, gardar coma un novo ficheiro."
+msgstr "Non, gardar nun novo ficheiro!"
 
 msgid "Choose the picture you want, then click “Open”."
-msgstr "Escolle o debuxo que queiras, e despois preme en \"Abrir\"."
+msgstr "Escolle o debuxo que queiras, e despois preme en “Abrir”."
 
 msgid "A drawing program for children."
 msgstr "Un programa de debuxo para nenos."
@@ -520,44 +504,3 @@ msgstr "Programa de debuxo"
 msgid "Tux Paint"
 msgstr "Tux Paint"
 
-#~ msgid "Starting a new picture will erase the current one!"
-#~ msgstr "Se comezas un novo debuxo borrarás o actual!"
-
-#~ msgid "That’s OK!"
-#~ msgstr "Está ben!"
-
-#~ msgid "Never mind!"
-#~ msgstr "Nin pensalo!"
-
-#~ msgid "Save over the older version of this picture?"
-#~ msgstr "Sobrescribir a versión antiga deste debuxo?"
-
-#~ msgid "Dark Gray!"
-#~ msgstr "Gris Escuro!"
-
-#~ msgid "Neon green!"
-#~ msgstr "Verde Neon!"
-
-#~ msgid "Green!"
-#~ msgstr "Verde!"
-
-#~ msgid "Magenta!"
-#~ msgstr "Maxenta!"
-
-#~ msgid "Fade"
-#~ msgstr "Esvaecer"
-
-#~ msgid "Oval"
-#~ msgstr "Óvalo"
-
-#~ msgid "Diamond"
-#~ msgstr "Diamante"
-
-#~ msgid "A square has four sides, each the same length."
-#~ msgstr "Un cadrado ten catro lados, todos da mesma lonxitude."
-
-#~ msgid "A circle is exactly round."
-#~ msgstr "Un circulo é completamente redondo."
-
-#~ msgid "A diamond is a square, turned around slightly."
-#~ msgstr "Un diamante é un cadrado un pouco xirado."

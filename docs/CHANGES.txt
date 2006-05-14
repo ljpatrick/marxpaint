@@ -93,6 +93,9 @@ $Id$
     
     * French
       Jacques Chion <Jacques.Chion@wanadoo.fr>
+    
+    * Galician
+      Leandro Regueiro <leandro.regueiro@gmail.com>
 
     * German
       Burkhard Lück <lueck@hube-lueck.de>
