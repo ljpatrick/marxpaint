@@ -177,6 +177,9 @@ $Id$
     * Bottom of grass would initially be clipped due to incorrect canvas
       updating.  Fixed.
 
+    * Improved handling of scroll button state to prevent it from getting
+      into an infinite loop.  (Fixes bug #1396706)
+
 
 2005.November.26 (0.9.15b)
 

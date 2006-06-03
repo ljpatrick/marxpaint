@@ -762,7 +762,8 @@ static int fullscreen, disable_quit, simple_shapes,
   dont_do_xor, use_print_config, dont_load_stamps, noshortcuts,
   no_button_distinction,
   mirrorstamps, disable_stamp_controls, disable_save, ok_to_use_lockfile,
-  alt_print_command_default;
+  alt_print_command_default,
+  scrolling = 0;
 static int want_alt_printcommand;
 static int starter_mirrored, starter_flipped;
 static int recording, playing;
@@ -1137,6 +1138,8 @@ static int charsize(char c);
 
 #define USEREVENT_TEXT_UPDATE 1
 
+#define TP_SDL_MOUSEBUTTONSCROLL (SDL_USEREVENT + 1)
+
 static int bypass_splash_wait;
 
 // Wait for a keypress or mouse click
@@ -1446,8 +1449,8 @@ static void mainloop(void)
   int *thing_scroll;
   int cur_thing, do_draw, old_tool,
     tmp_int, max;
-  int cur_time, last_print_time, scrolling, ignoring_motion;
-  SDL_TimerID scrolltimer;
+  int cur_time, last_print_time, ignoring_motion;
+  SDL_TimerID scrolltimer = NULL;
   SDL_Event event;
   SDLKey key, key_down;
   Uint16 key_unicode;
@@ -1782,7 +1785,8 @@ static void mainloop(void)
 			              img_mouse, img_mouse_click, NULL, 1);
 	      }
 	    }
-	  else if (event.type == SDL_MOUSEBUTTONDOWN &&
+	  else if ((event.type == SDL_MOUSEBUTTONDOWN ||
+		    event.type == TP_SDL_MOUSEBUTTONSCROLL) &&
 		   event.button.button <= 3)
 	    {
 	      if (HIT(r_tools))
@@ -2357,24 +2361,39 @@ static void mainloop(void)
                               *thing_scroll += is_upper ? -gd_items.cols : gd_items.cols;
                               do_draw = 1;
                               playsound(screen, 1, SND_SCROLL, 1, SNDPOS_RIGHT, SNDDIST_NEAR);
-                              if (!scrolling)
+		
+			      if (scrolltimer != NULL)
+			      {
+				SDL_RemoveTimer(scrolltimer);
+				scrolltimer = NULL;
+			      }
+
+                              if (!scrolling && event.type == SDL_MOUSEBUTTONDOWN)
                                 {
+		  		  //printf("Starting scrolling\n");
                                   memcpy(&scrolltimer_event, &event, sizeof(SDL_Event));
-                                  /* FIXME: Make delay value changable: */
-                                  scrolltimer = SDL_AddTimer(REPEAT_SPEED, scrolltimer_callback, (void*) &scrolltimer_event);
+				  scrolltimer_event.type = TP_SDL_MOUSEBUTTONSCROLL;
+
                                   scrolling = 1;
+                                  
+				  scrolltimer = SDL_AddTimer(REPEAT_SPEED, scrolltimer_callback, (void*) &scrolltimer_event);
                                 }
                               else
                                 {
-                                  SDL_RemoveTimer(scrolltimer);
+		  		  //printf("Continuing scrolling\n");
                                   scrolltimer = SDL_AddTimer(REPEAT_SPEED / 3, scrolltimer_callback, (void*) &scrolltimer_event);
                                 }
+
                               if (*thing_scroll == 0)
                                 {
                                   do_setcursor(cursor_arrow);
                                   if (scrolling)
                                     {
-                                      SDL_RemoveTimer(scrolltimer);
+			     	      if (scrolltimer != NULL)
+			              {
+					SDL_RemoveTimer(scrolltimer);
+					scrolltimer = NULL;
+			      	      }
                                       scrolling = 0;
                                     }
                                 }
@@ -2758,30 +2777,9 @@ static void mainloop(void)
                           *thing_scroll += is_upper ? -gd_items.cols : gd_items.cols;
                           do_draw = 1;
                           playsound(screen, 1, SND_SCROLL, 1, SNDPOS_RIGHT, SNDDIST_NEAR);
-#if 0
-                          if (!scrolling)
-                            {
-                              memcpy(&scrolltimer_event, &event, sizeof(SDL_Event));
-                              /* FIXME: Make delay value changable: */
-                              scrolltimer = SDL_AddTimer(REPEAT_SPEED, scrolltimer_callback, (void*) &scrolltimer_event);
-                              scrolling = 1;
-                            }
-                          else
-                            {
-                              SDL_RemoveTimer(scrolltimer);
-                              scrolltimer = SDL_AddTimer(REPEAT_SPEED / 3, scrolltimer_callback, (void*) &scrolltimer_event);
-                            }
-#endif
                           if (*thing_scroll == 0)
                             {
                               do_setcursor(cursor_arrow);
-#if 0
-                              if (scrolling)
-                                {
-                                  SDL_RemoveTimer(scrolltimer);
-                                  scrolling = 0;
-                                }
-#endif
                             }
                         }
                     }
@@ -2852,8 +2850,14 @@ static void mainloop(void)
 	    {
 	      if (scrolling)
 		{
-		  SDL_RemoveTimer(scrolltimer);
+		  if (scrolltimer != NULL)
+		  {
+		    SDL_RemoveTimer(scrolltimer);
+		    scrolltimer = NULL;
+	          }
 		  scrolling = 0;
+
+		  //printf("Killing scrolling\n");
 		}
 	      
 	      if (button_down)
@@ -12957,9 +12961,18 @@ static char * textdir(const char * const str)
 
 static Uint32 scrolltimer_callback(Uint32 interval, void *param)
 {
-  SDL_PushEvent((SDL_Event*)param);
-
-  return interval;
+  //printf("scrolltimer_callback(%d) -- ", interval);
+  if (scrolling)
+  {
+    //printf("(Still scrolling)\n");
+    SDL_PushEvent((SDL_Event*)param);
+    return interval;
+  }
+  else
+  {
+    //printf("(all done)\n");
+    return 0;
+  }
 }
 
 
