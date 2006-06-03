@@ -22,7 +22,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
   
-  June 14, 2002 - April 2, 2006
+  June 14, 2002 - June 2, 2006
   $Id$
 */
 
@@ -168,12 +168,46 @@ static scaleparams scaletable[] = {
 #define REPEAT_SPEED 300  /* Initial repeat speed for scrollbars */
 #define CURSOR_BLINK_SPEED 500  /* Initial repeat speed for cursor */
 
+
+#define _GNU_SOURCE  /* for strcasestr() */
+
 #include <stdio.h>
 #include <stdlib.h>
-#define __USE_GNU  /* for strcasestr() */
 #include <string.h>
 #include <ctype.h>
 #include <time.h>
+
+
+/* Check if features.h did its 'magic', in which case strcasestr() is
+   likely available; if not using GNU, you can set HAVE_STRCASESTR to
+   avoid trying to redefine it -bjk 2006.06.02 */
+
+#if !defined(__USE_GNU) && !defined(HAVE_STRCASESTR)
+#warning "Attempting to define strcasestr(); if errors, build with -DHAVE_STRCASESTR"
+
+char * strcasestr(const char *haystack, const char *needle)
+{
+  char * uphaystack, * upneedle, * result;
+  unsigned int i;
+
+  uphaystack = strdup(haystack);
+  upneedle = strdup(needle);
+
+  if (uphaystack == NULL || upneedle == NULL)
+    return(NULL);
+
+  for (i = 0; i < strlen(uphaystack); i++)
+    uphaystack[i] = toupper(uphaystack[i]);
+
+  for (i = 0; i < strlen(upneedle); i++)
+    upneedle[i] = toupper(upneedle[i]);
+
+  result = strstr(uphaystack, upneedle);
+
+  return(result - uphaystack + (char *) haystack);
+}
+
+#endif
 
 /* kluge; 2006.01.15 */
 //#define __APPLE_10_2_8__
@@ -1152,6 +1186,11 @@ static void do_wait(int counter)
 // This lets us exit quickly; perhaps the system is swapping to death
 // or the user started Tux Paint by accident. It also lets the user
 // more easily bypass the splash screen wait.
+
+/* Was used in progressbar.c, but is currently commented out!
+   -bjk 2006.06.02 */
+
+#if 0
 static void eat_sdl_events(void)
 {
   SDL_Event event;
@@ -1191,6 +1230,7 @@ static void eat_sdl_events(void)
         bypass_splash_wait = 1;
     }
 }
+#endif
 
 
 /* --- MAIN --- */
@@ -3665,7 +3705,7 @@ static void tint_surface(SDL_Surface * tmp_surf, SDL_Surface * surf_ptr)
     key_color_ptr = find_most_saturated(initial_hue, work,
 		    			width * height, &hue_range);
     
-    printf("key_color_ptr = %d\n", key_color_ptr);
+    printf("key_color_ptr = %d\n", (int) key_color_ptr);
 
 
     if (key_color_ptr)
@@ -5308,11 +5348,13 @@ static void load_stamps(SDL_Surface * screen)
   free(homedirdir);
 }
 
-
+#ifndef FORKED_FONTS
 static int load_user_fonts_stub(void *vp)
 {
     return load_user_fonts(screen, vp);
 }
+#endif
+
 
 ////////////////////////////////////////////////////////////////////////////////
 /* Setup: */
