@@ -164,7 +164,7 @@ msgid "Drip"
 msgstr "Drypping"
 
 msgid "Cartoon"
-msgstr "Unyanser"
+msgstr "Forsterk"
 
 msgid "Mirror"
 msgstr "Speil"
