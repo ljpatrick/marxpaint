@@ -10,7 +10,7 @@
 
   $Id$
   
-  June 14, 2002 - May 13, 2006
+  June 14, 2002 - July 11, 2006
 */
 
 
@@ -44,6 +44,7 @@ enum {
   LANG_GD,     /* Scottish Gaelic */
   LANG_GL,     /* Galician */
   LANG_GR,     /* Gronings */
+  LANG_GU,     /* Gujarati */
   LANG_HE,     /* Hebrew */
   LANG_HI,     /* Hindi */
   LANG_HR,     /* Croatian */

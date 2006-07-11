@@ -9,7 +9,7 @@ http://www.newbreedsoftware.com/tuxpaint/
 $Id$
 
 
-2006.June.02 (0.9.16)
+2006.July.11 (0.9.16)
   * Interface improvements:
     -----------------------
     * Modified "Text" tool so that it correctly handles the 16-bit unicode
@@ -64,6 +64,9 @@ $Id$
 
     * Faroese
       Lis Gøthe í Jákupsstovu <morshus@gmail.com>
+
+    * Gujarati
+      Kartik Mistry <kartik.mistry@gmail.com>
 
     * Scottish Gaelic
       Niall Tracey <internationiall@hotmail.com>

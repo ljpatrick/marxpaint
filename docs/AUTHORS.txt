@@ -7,7 +7,7 @@ bill@newbreedsoftware.com
 http://www.newbreedsoftware.com/tuxpaint/
 
 
-June 17, 2002 - May 14, 2006
+June 17, 2002 - July 11, 2006
 
 $Id$
 
@@ -171,6 +171,9 @@ $Id$
 
   * Greek
     The Greek Linux i18n Team <i18ngr@lists.hellug.gr>  [NOTE: mailing list]
+
+  * Gujarati
+    Kartik Mistry <kartik.mistry@gmail.com>
 
   * Hindi
     Ankit Malik <ankitmalik@gmail.com>

@@ -7,7 +7,7 @@
 # bill@newbreedsoftware.com
 # http://www.newbreedsoftware.com/tuxpaint/
 
-# June 14, 2002 - May 13, 2006
+# June 14, 2002 - July 11, 2006
 
 
 # The version number, for release:
@@ -416,6 +416,7 @@ uninstall:
 	-rm $(LOCALE_PREFIX)/gd/LC_MESSAGES/tuxpaint.mo
 	-rm $(LOCALE_PREFIX)/gl/LC_MESSAGES/tuxpaint.mo
 	-rm $(LOCALE_PREFIX)/gos/LC_MESSAGES/tuxpaint.mo
+	-rm $(LOCALE_PREFIX)/gu/LC_MESSAGES/tuxpaint.mo
 	-rm $(LOCALE_PREFIX)/he/LC_MESSAGES/tuxpaint.mo
 	-rm $(LOCALE_PREFIX)/hi/LC_MESSAGES/tuxpaint.mo
 	-rm $(LOCALE_PREFIX)/hr/LC_MESSAGES/tuxpaint.mo
@@ -768,6 +769,11 @@ install-gettext:
 	@install -d $(LOCALE_PREFIX)/gos/LC_MESSAGES
 	@cp trans/gos.mo $(LOCALE_PREFIX)/gos/LC_MESSAGES/tuxpaint.mo
 	@chmod 644 $(LOCALE_PREFIX)/gos/LC_MESSAGES/tuxpaint.mo
+	@#
+	@echo "   gu_IN ...Gujarati..."
+	@install -d $(LOCALE_PREFIX)/gu/LC_MESSAGES
+	@cp trans/gu.mo $(LOCALE_PREFIX)/gu/LC_MESSAGES/tuxpaint.mo
+	@chmod 644 $(LOCALE_PREFIX)/gu/LC_MESSAGES/tuxpaint.mo
 	@#
 	@echo "   he_IL ...Hebrew..."
 	@install -d $(LOCALE_PREFIX)/he/LC_MESSAGES

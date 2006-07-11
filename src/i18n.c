@@ -25,7 +25,7 @@
 
   $Id$
 
-  June 14, 2002 - May 13, 2006
+  June 14, 2002 - July 11, 2006
 */
 
 #include <stdio.h>
@@ -67,6 +67,7 @@ const char * lang_prefixes[NUM_LANGS] = {
   "gd",
   "gl",
   "gos",
+  "gu",
   "he",
   "hi",
   "hr",
@@ -112,6 +113,7 @@ const char * lang_prefixes[NUM_LANGS] = {
 int lang_use_own_font[] = {
   LANG_AR,
   LANG_BO,
+  LANG_GU,
   LANG_HI,
   LANG_JA,
   LANG_KA,
@@ -155,6 +157,7 @@ const language_to_locale_struct language_to_locale_array[] = {
 {"greek",                "el_GR.UTF-8"},
 {"gronings",             "gos_NL.UTF-8"},
 {"zudelk-veenkelonioals","gos_NL.UTF-8"},
+{"gujarati",             "gu_IN.UTF-8"},
 {"british-english",      "en_GB.UTF-8"},
 {"british",              "en_GB.UTF-8"},
 {"spanish",              "es_ES.UTF-8"},
@@ -375,6 +378,7 @@ void show_lang_usage(FILE * f, const char * const prg)
 /* de */     "  german       deutsch\n"
 /* el */     "  greek\n"
 /* gos */    "  gronings     zudelk-veenkelonioals\n"
+/* gu */     "  gujarati\n"
 /* he */     "  hebrew\n"
 /* hi */     "  hindi\n"
 /* hu */     "  hungarian    magyar\n"
@@ -447,6 +451,7 @@ void show_locale_usage(FILE * f, const char * const prg)
           "  gd_GB   (Scottish Gaelic  Ghaidhlig)\n"
           "  gl_ES   (Galician     Galego)\n"
           "  gos_NL  (Gronings     Zudelk Veenkelonioals)\n"
+	  "  gu_IN   (Gujarati)\n"
           "  de_DE   (German       Deutsch)\n"
           "  et_EE   (Estonian)\n"
           "  el_GR   (Greek)\n"
