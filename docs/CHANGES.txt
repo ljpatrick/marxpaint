@@ -84,7 +84,7 @@ $Id$
     * Brazilian Portuguese
       Fred Ulisses Maranhao <fred_maranhao@yahoo.com.br>
     
-    * Updated Catalan translation.
+    * Catalan translation.
       Pere Pujal Carabantes <ppujal@airtel.net>
 
     * Chinese (Traditional)
