@@ -114,6 +114,9 @@ $Id$
     * Spanish
       Pablo Pita <pablo.pita@kdemail.net>
 
+    * Thai
+      Ouychai Chaita <ae.freeman@gmail.com>
+
     * Vietnamese
       Clytie Siddall <clytie@riverland.net.au>
 
