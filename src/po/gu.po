@@ -3,499 +3,502 @@
 # This file is distributed under the same license as the Tux Paint package.
 # Kartik Mistry <kartik.mistry@gmail.com>, 2006.
 #
-#, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
-"Report-Msgid-Bugs-To: \n"
+"Project-Id-Version: tuxpaint\n"
+"Report-Msgid-Bugs-To: Kartik Mistry <kartik.mistry@gmail.com>\n"
 "POT-Creation-Date: 2006-02-25 09:37+0100\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"PO-Revision-Date: 2006-07-12 18:45+0530\n"
 "Last-Translator: Kartik Mistry <kartik.mistry@gmail.com>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language-Team: Gujarati <team@utkarsh.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
 msgid "Black!"
-msgstr ""
+msgstr "કાળું!"
 
 msgid "Dark grey! Some people spell it “dark gray”."
-msgstr ""
+msgstr "ઘાટો રાખોડી! કેટલાક લોકો તેને આછો ભૂખરો પણ કહે છે."
 
 msgid "Light grey! Some people spell it “light gray”."
-msgstr ""
+msgstr "આછો રાખોડી! કેટલાક લોકો તેને આછો ભૂખરો પણ કહે છે."
 
 msgid "White!"
-msgstr ""
+msgstr "સફેદ!"
 
 msgid "Red!"
-msgstr ""
+msgstr "લાલ!"
 
 msgid "Orange!"
-msgstr ""
+msgstr "નારંગી!"
 
 msgid "Yellow!"
-msgstr ""
+msgstr "પીળો!"
 
 msgid "Light green!"
-msgstr ""
+msgstr "આછો લીલો!"
 
 msgid "Dark green!"
-msgstr ""
+msgstr "ઘાટો લીલો!"
 
 msgid "Sky blue!"
-msgstr ""
+msgstr "આકાશી વાદળી!"
 
 msgid "Blue!"
-msgstr ""
+msgstr "વાદળી!"
 
 msgid "Lavender!"
-msgstr ""
+msgstr "આછો જાંબલી"
 
 msgid "Purple!"
-msgstr ""
+msgstr "જાંબલી"
 
 msgid "Pink!"
-msgstr ""
+msgstr "ગુલાબી!"
 
 msgid "Brown!"
-msgstr ""
+msgstr "છીંકણી!"
 
 msgid "Tan!"
-msgstr ""
+msgstr "રાતો!"
 
 msgid "Beige!"
-msgstr ""
+msgstr "આછો પીળો"
 
 msgid "qx"
-msgstr ""
+msgstr "qx"
 
 msgid "QX"
-msgstr ""
+msgstr "QX"
 
 msgid "qy"
-msgstr ""
+msgstr "qy"
 
 msgid "QY"
-msgstr ""
+msgstr "QY"
 
 #. Now we score fonts to ensure that the best ones will be placed at
 #. the top of the list. The user will see them first. This sorting is
 #. especially important for users who have scroll buttons disabled.
 #. Translators should do whatever is needed to put crummy fonts last.
 msgid "oO"
-msgstr ""
+msgstr "oO"
 
 #. distinct uppercase and lowercase
 msgid "`\\%_@$~#{}<>^&*"
-msgstr ""
+msgstr "`\\%_@$~#{}<>^&*"
 
 #. uncommon punctuation
 msgid ",.?!"
-msgstr ""
+msgstr ",.?!"
 
 #. common punctuation
 msgid "017"
-msgstr ""
+msgstr "૦૧૭"
 
 #. digits
 msgid "O0"
-msgstr ""
+msgstr "O૦"
 
 #. distinct circle-like characters
 msgid "1Il|"
-msgstr ""
+msgstr "૧Il|"
 
 msgid "Great!"
-msgstr ""
+msgstr "અદભુત!"
 
 msgid "Cool!"
-msgstr ""
+msgstr "વાહ!"
 
 msgid "Keep it up!"
-msgstr ""
+msgstr "તેને ચાલુ રાખો!"
 
 msgid "Good job!"
-msgstr ""
+msgstr "સરસ કામ!"
 
 msgid "Fill"
-msgstr ""
+msgstr "ભરો"
 
 msgid "Grass"
-msgstr ""
+msgstr "ઘાસ"
 
 msgid "Bricks"
-msgstr ""
+msgstr "ઇંટો"
 
 msgid "Rainbow"
-msgstr ""
+msgstr "મેઘધનુષ"
 
 msgid "Sparkles"
-msgstr ""
+msgstr "ચમકારાઓ"
 
 msgid "Blur"
-msgstr ""
+msgstr "ઝાંખુ"
 
 msgid "Smudge"
-msgstr ""
+msgstr "ધબ્બો"
 
 msgid "Lighten"
-msgstr ""
+msgstr "આછું"
 
 msgid "Darken"
-msgstr ""
+msgstr "ઘેરું"
 
 msgid "Chalk"
-msgstr ""
+msgstr "ચોક"
 
 msgid "Blocks"
-msgstr ""
+msgstr "ચોકઠાંઓ"
 
 msgid "Negative"
-msgstr ""
+msgstr "ઋણ"
 
 msgid "Tint"
-msgstr ""
+msgstr "આછો રંગ"
 
 msgid "Drip"
-msgstr ""
+msgstr "ટીપાં"
 
 msgid "Cartoon"
-msgstr ""
+msgstr "કાર્ટૂન"
 
 msgid "Mirror"
-msgstr ""
+msgstr "અરીસો"
 
 msgid "Flip"
-msgstr ""
+msgstr "વાળો"
 
 msgid "Click in the picture to fill that area with color."
-msgstr ""
+msgstr "તે વિસ્તારને રંગથી ભરવાં માટે ચિત્રમાં ક્લિક કરો."
 
 msgid "Click and move to draw grass. Don’t forget the dirt!"
-msgstr ""
+msgstr "ઘાસ દોરવા માટે ક્લિક કરો અને ખસેડો. ધૂળને ભૂલશો નહી!"
 
 msgid "Click and move to draw large bricks."
-msgstr ""
+msgstr "મોટી ઇંટો દોરવા માટે ક્લિક કરો અને ખસેડો."
 
 msgid "Click and move to draw small bricks."
-msgstr ""
+msgstr "નાની ઇંટો દોરવા માટે ક્લિક કરો અને ખસેડો."
 
 msgid "You can draw in rainbow colors!"
-msgstr ""
+msgstr "તમે મેઘધનુષ રંગોમાં દોરી શકો છો!"
 
 msgid "Click and move to draw sparkles."
-msgstr ""
+msgstr "ચમકારાઓ દોરવા માટે ક્લિક કરો અને ખસેડો."
 
 msgid "Click and move the mouse around to blur the picture."
-msgstr ""
+msgstr "ચિત્રને ઝાંખું કરવા માટે માઉસને ક્લિક કરો અને આજુ-બાજુ ખસેડો."
 
 msgid "Click and move the mouse around to smudge the picture."
-msgstr ""
+msgstr "ચિત્રમાં ધબ્બાઓ ઉમેરવા માઉસને ક્લિક કરો અને આજુ-બાજુ ખસેડો."
 
 msgid "Click and move to fade the colors."
-msgstr ""
+msgstr "રંગોને ઝાંખાં કરવાં ક્લિક કરો અને ખસેડો."
 
 msgid "Click and move to darken the colors."
-msgstr ""
+msgstr "રંગોને ઘાટાં કરવાં ક્લિક કરો અને ખસેડો."
 
 msgid ""
 "Click and move the mouse around to turn the picture into a chalk drawing."
 msgstr ""
+"ચિત્રને ચોક ચિત્રમાં ફેરવવા માઉસ ક્લિક કરો અને આજુ-બાજુ ફેરવો."
 
 msgid "Click and move the mouse around to make the picture blocky."
-msgstr ""
+msgstr "ચિત્રને ચોકઠાંવાળું બનાવવા માટે માઉસ ક્લિક કરો અને ખસેડો."
 
 msgid "Click and move the mouse around to draw a negative."
-msgstr ""
+msgstr "ઋણ ચિત્ર બનાવવા માટે ક્લિક કરો અને માઉસ આજુ-બાજુ ખસેડો."
 
 msgid "Click and move the mouse around to change the picture’s color."
-msgstr ""
+msgstr "ચિત્રનો રંગ બદલવા માટે ક્લિક કરો અને માઉસ આજુબાજુ ખસેડો."
 
 msgid "Click and move the mouse around to make the picture drip."
-msgstr ""
+msgstr "ચિત્રમાં ટીપાં બનાવવા માટે ક્લિક કરો અને માઉસ આજુબાજુ ખસેડો."
 
 msgid "Click and move the mouse around to turn the picture into a cartoon."
-msgstr ""
+msgstr "ચિત્રને કાર્ટૂનમાં ફેરવવા માટે ક્લિક કરો અને માઉસ આજુબાજુ ખસેડો."
 
 msgid "Click to make a mirror image."
-msgstr ""
+msgstr "અરીસા ચિત્ર બનાવવા ક્લિક કરો."
 
 msgid "Click to flip the picture upside-down."
-msgstr ""
+msgstr "ચિત્રને ઉપર-નીચે વાળવા માટે ક્લિક કરો."
 
 msgid "Square"
-msgstr ""
+msgstr "ચોરસ"
 
 msgid "Rectangle"
-msgstr ""
+msgstr "ચતુષ્કોણ"
 
 msgid "Circle"
-msgstr ""
+msgstr "વર્તુળ"
 
 msgid "Ellipse"
-msgstr ""
+msgstr "ઉપવલય"
 
 msgid "Triangle"
-msgstr ""
+msgstr "ત્રિકોણ"
 
 msgid "Pentagon"
-msgstr ""
+msgstr "પંચકોણ"
 
 msgid "Rhombus"
-msgstr ""
+msgstr "સમચતુર્ભુજ"
 
 msgid "A square is a rectangle with four equal sides."
-msgstr ""
+msgstr "ચોરસએ ચારેય સરખી બાજુઓ ધરાવતો ચતુષ્કોણ છે."
 
 msgid "A rectangle has four sides and four right angles."
-msgstr ""
+msgstr "ચતુષ્કોણને ચાર સરખી બાજુઓ અને ચાર સરખા ખૂણાઓ હોય છે."
 
 msgid ""
 "A circle is a curve where all points have the same distance from the centre."
 msgstr ""
+"વર્તુળએ વક્ર છે કે જેમાં બધાં બિંદુઓ કેન્દ્રથી સમાન અંતરે આવેલાં હોય છે."
 
 msgid "An ellipse is a stretched circle."
-msgstr ""
+msgstr "ઉપવલય એ ખેંચાયેલ વર્તુળ છે."
 
 msgid "A triangle has three sides."
-msgstr ""
+msgstr "ત્રિકોણને ત્રણ બાજુઓ છે."
 
 msgid "A pentagon has five sides."
-msgstr ""
+msgstr "પંચકોણને પાંચ બાજુઓ છે."
 
 msgid "A rhombus has four equal sides, and opposite sides are parallel."
-msgstr ""
+msgstr "સમચતુર્ભુજને ચાર સરખી બાજુઓ છે, અને સામસામેની બાજુઓ સમાંતર છે."
 
 msgid "Tools"
-msgstr ""
+msgstr "સાધનો"
 
 msgid "Colors"
-msgstr ""
+msgstr "રંગો"
 
 msgid "Brushes"
-msgstr ""
+msgstr "પીંછીઓ"
 
 msgid "Erasers"
-msgstr ""
+msgstr "રબરો"
 
 msgid "Stamps"
-msgstr ""
+msgstr "છાપો"
 
 msgid "Shapes"
-msgstr ""
+msgstr "આકારો"
 
 msgid "Letters"
-msgstr ""
+msgstr "અક્ષરો"
 
 msgid "Magic"
-msgstr ""
+msgstr "જાદુ"
 
 msgid "Paint"
-msgstr ""
+msgstr "રંગ"
 
 msgid "Stamp"
-msgstr ""
+msgstr "છાપ"
 
 msgid "Lines"
-msgstr ""
+msgstr "લીટીઓ"
 
 msgid "Text"
-msgstr ""
+msgstr "લખાણ"
 
 msgid "Undo"
-msgstr ""
+msgstr "પાછું લાવો"
 
 msgid "Redo"
-msgstr ""
+msgstr "ફરી લાવો"
 
 msgid "Eraser"
-msgstr ""
+msgstr "રબર"
 
 msgid "New"
-msgstr ""
+msgstr "નવું"
 
 #. buttons for the file open dialog
 msgid "Open"
-msgstr ""
+msgstr "ખોલો"
 
 msgid "Save"
-msgstr ""
+msgstr "સંગ્રહો"
 
 msgid "Print"
-msgstr ""
+msgstr "છાપો"
 
 msgid "Quit"
-msgstr ""
+msgstr "બહાર નીકળો"
 
 msgid "Pick a color and a brush shape to draw with."
-msgstr ""
+msgstr "રંગ પસંદ કરો અને દોરવા માટે પીંછીનો આકાર પસંદ કરો."
 
 msgid "Pick a picture to stamp around your drawing."
-msgstr ""
+msgstr "તમારા ચિત્રની આજુબાજુ છાપ મુકવા ચિત્ર પસંદ કરો."
 
 msgid "Click to start drawing a line. Let go to complete it."
-msgstr ""
+msgstr "લીટી દોરવા માટે ક્લિક કરો. પૂરી કરવા તેનાથી દૂર જઇ ક્લિક કરો."
 
 msgid ""
 "Pick a shape. Click to pick the center, drag, then let go when it is the "
 "size you want. Move around to rotate it, and click to draw it."
 msgstr ""
+"આકાર પસંદ કરો. કેન્દ્રને પસંદ કરવા ક્લિક કરો, ખસેડો, અને તમને જોઇએ તે "
+"માપ પસંદ કરો. તેને ફેરવવા આજુબાજુ ખસેડો, અને તે દોરવા માટે ક્લિક કરો."
 
 msgid "Choose a style of text. Click on your drawing and you can start typing."
-msgstr ""
+msgstr "લખાણની પધ્ધતિ પસંદ કરો. તમારા ચિત્રમાં ક્લિક કરો અને તમે લખવાનું શરૂ કરી શકો છો."
 
 msgid "Pick a magical effect to use on your drawing!"
-msgstr ""
+msgstr "તમારા ચિત્રમાં જાદુઇ અસર ઉમેરવા પસંદ કરો!"
 
 #. Undo
 msgid "Undo!"
-msgstr ""
+msgstr "પાછું લાવો!"
 
 #. Redo
 msgid "Redo!"
-msgstr ""
+msgstr "ફરી લાવો!"
 
 #. Eraser
 msgid "Eraser!"
-msgstr ""
+msgstr "રબર!"
 
 #. New
 msgid "You now have a blank sheet to draw on!"
-msgstr ""
+msgstr "તમારે પાસે દોરવા માટે હવે કોરી સ્લેટ છે!"
 
 #. Open
 msgid "Open…"
-msgstr ""
+msgstr "ખોલો..."
 
 #. Save
 msgid "Your image has been saved!"
-msgstr ""
+msgstr "તમારૂં ચિત્ર સંગ્રહ થઇ ગયું છે!"
 
 #. Print
 msgid "Printing…"
-msgstr ""
+msgstr "છાપે છે..."
 
 #. Quit
 msgid "Bye bye!"
-msgstr ""
+msgstr "આવજો!"
 
 msgid "Let go of the button to complete the line."
-msgstr ""
+msgstr "લીટીને પૂરી કરવા માટે બટનથી છોડી જાવ."
 
 msgid "Hold the button to stretch the shape."
-msgstr ""
+msgstr "આકારને ખેંચવા બટનને પકડી રાખો."
 
 msgid "Move the mouse to rotate the shape. Click to draw it."
-msgstr ""
+msgstr "આકારને ફેરવવા માઉસને ખસેડો. તેને દોરવા ક્લિક કરો."
 
 msgid "OK then… Let’s keep drawing this one!"
-msgstr ""
+msgstr "બરાબર ત્યારે... ચાલો આ દોરવાનું ચાલુ રાખીએ!"
 
 #. FIXME: Move elsewhere!!!
 msgid "Do you really want to quit?"
-msgstr ""
+msgstr "તમે ખરેખર બહાર નીકળવા માંગો છો?"
 
 msgid "Yes, I'm done!"
-msgstr ""
+msgstr "હા, મેં પૂરૂં કર્યું!"
 
 msgid "No, take me back!"
-msgstr ""
+msgstr "ના, મને પાછા લઇ જાવ!"
 
 msgid "If you quit, you’ll lose your picture! Save it?"
-msgstr ""
+msgstr "જો તમે બહાર જશો, તો તમે તમારૂ ચિત્ર ગુમાવશો! તેને સંગ્રહશો?"
 
 msgid "Yes, save it!"
-msgstr ""
+msgstr "હા, તેને સંગ્રહો!"
 
 msgid "No, don't bother saving!"
-msgstr ""
+msgstr "ના, સંગ્રહ કરવાની ચિંતા કરશો નહી!"
 
 msgid "Save your picture first?"
-msgstr ""
+msgstr "પહેલાં તમારૂં ચિત્ર સંગ્રહશો?"
 
 msgid "Can’t open that picture!"
-msgstr ""
+msgstr "ચિત્ર ખોલી શકાતું નથી!"
 
 msgid "OK"
-msgstr ""
+msgstr "બરાબર"
 
 #. This will be replaced with a dialog allowing color choice and Starter
 #. picking, with a "Back" option to dismiss the "New" and return to
 #. the current picture.  But for now...  (bjk 2006.02.19)
 msgid "Start a new picture?"
-msgstr ""
+msgstr "નવું ચિત્ર શરૂ કરશો?"
 
 #. #define PROMPT_NEW_YES gettext_noop("That’s OK!")
 #. #define PROMPT_NEW_NO gettext_noop("Never mind!")
 msgid "Yes, let's start fresh!"
-msgstr ""
+msgstr "હા, નવેસરથી શરૂ કરો!"
 
 msgid "There are no saved files!"
-msgstr ""
+msgstr "કોઇ ફાઇલો સંગ્રહ થયેલ નથી!"
 
 msgid "Print your picture now?"
-msgstr ""
+msgstr "તમારૂં ચિત્ર અત્યારે છાપશો?"
 
 msgid "Yes, print it!"
-msgstr ""
+msgstr "હા, તેને છાપો!"
 
 msgid "Your picture has been printed!"
-msgstr ""
+msgstr "તમારૂં ચિત્ર અત્યારે છપાઇ રહ્યું છે!"
 
 msgid "You can’t print yet!"
-msgstr ""
+msgstr "તમે તેને અત્યારે છાપી શકતા નથી!"
 
 msgid "Erase this picture?"
-msgstr ""
+msgstr "આ ચિત્રને ભૂંસી નાખવા માંગો છો?"
 
 msgid "Yes, erase it!"
-msgstr ""
+msgstr "હા, તેને ભૂંસી નાખો!"
 
 msgid "No, don't erase it!"
-msgstr ""
+msgstr "ના, તેને ભૂંસો નહી!"
 
 msgid "Remember to use the left mouse button!"
-msgstr ""
+msgstr "જમણાં માઉસ બટનનો ઉપયોગ કરવાનું યાદ રાખો!"
 
 msgid "Please wait..."
-msgstr ""
+msgstr "મહેરબાની કરી રાહ જુઓ..."
 
 msgid "Erase"
-msgstr ""
+msgstr "ભૂંસો"
 
 msgid "Back"
-msgstr ""
+msgstr "પાછા"
 
 msgid "Aa"
-msgstr ""
+msgstr "આ"
 
 #. FIXME: Move elsewhere! Or not?!
 msgid "Yes"
-msgstr ""
+msgstr "હા"
 
 msgid "No"
-msgstr ""
+msgstr "ના"
 
 #. FIXME: Move elsewhere!!!
 #. #define PROMPT_SAVE_OVER_TXT gettext_noop("Save over the older version of this picture?")
 msgid "Replace the picture with your changes?"
-msgstr ""
+msgstr "ચિત્રને તમે કરેલા ફેરફારો સાથે બદલશો?"
 
 msgid "Yes, replace the old one!"
-msgstr ""
+msgstr "હા, જુની ફાઇલને બદલો!"
 
 msgid "No, save a new file!"
-msgstr ""
+msgstr "ના, નવી ફાઇલને સંગ્રહો!"
 
 msgid "Choose the picture you want, then click “Open”."
-msgstr ""
+msgstr "તમારે જોઇતું ચિત્ર પસંદ કરો, અને “ખોલો” પર ક્લિક કરો."
 
 msgid "A drawing program for children."
-msgstr ""
+msgstr "બાળકો માટે ચિત્ર કાર્યક્રમ."
 
 msgid "Drawing program"
-msgstr ""
+msgstr "ચિત્ર કાર્યક્રમ"
 
 msgid "Tux Paint"
-msgstr ""
+msgstr "ટક્સ પૅઇન્ટ"
