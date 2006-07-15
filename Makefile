@@ -1151,6 +1151,7 @@ translations: trans \
 	trans/gd.mo \
 	trans/gl.mo \
 	trans/gos.mo \
+	trans/gu.mo \
 	trans/he.mo \
 	trans/hi.mo \
 	trans/hr.mo \
@@ -1290,6 +1291,10 @@ trans/gl.mo:	src/po/gl.po
 trans/gos.mo:	src/po/gos.po
 	@echo "   gos_NL ...Gronings..."
 	@msgfmt -o trans/gos.mo src/po/gos.po
+
+trans/gu.mo:	src/po/gu.po
+	@echo "   gu ...Gujarati..."
+	@msgfmt -o trans/gu.mo src/po/gu.po
 
 trans/he.mo:	src/po/he.po
 	@echo "   he_IL ...Hebrew..."
