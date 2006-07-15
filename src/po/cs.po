@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: cs\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-02-25 09:37+0100\n"
+"POT-Creation-Date: 2006-07-15 20:07+0200\n"
 "PO-Revision-Date: 2006-06-21 12:50+0200\n"
 "Last-Translator: Jakub Friedl <jfriedl@suse.cz>\n"
 "Language-Team:  <cs@li.org>\n"
@@ -199,7 +199,8 @@ msgstr "Klikni a pohybuj myší pro vyblednutí barev."
 msgid "Click and move to darken the colors."
 msgstr "Klikni a pohybuj myší pro ztmavnutí barev."
 
-msgid "Click and move the mouse around to turn the picture into a chalk drawing."
+msgid ""
+"Click and move the mouse around to turn the picture into a chalk drawing."
 msgstr "Klikni a pohybuj myší pro vytvoření efektu kresby křídou."
 
 msgid "Click and move the mouse around to make the picture blocky."
@@ -250,7 +251,8 @@ msgstr "Čtverec je pravoúhelník se čtyřmi stejnými stranami."
 msgid "A rectangle has four sides and four right angles."
 msgstr "Obdélník má čtyři strany."
 
-msgid "A circle is a curve where all points have the same distance from the centre."
+msgid ""
+"A circle is a curve where all points have the same distance from the centre."
 msgstr "Kruh je tvořen body, které nepřesahují určitou vzdálenost od středu."
 
 msgid "An ellipse is a stretched circle."
@@ -499,4 +501,3 @@ msgstr "Malovací program"
 
 msgid "Tux Paint"
 msgstr "Tux Paint"
-

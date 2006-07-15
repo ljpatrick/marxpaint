@@ -1,24 +1,16 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Thai tux paint\n"
-"POT-Creation-Date: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2006-07-15 20:07+0200\n"
 "PO-Revision-Date: 2006-02-24 14:45+0700\n"
 "Last-Translator: ouychai chaita <Ouychai_a@hotmail.com>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Poedit-Language: Thai\n"
 "X-Poedit-Country: THAILAND\n"
-
-msgid "A drawing program for children."
-msgstr "โปรแกรมวาดรูปสำหรับเด็ก"
-
-msgid "Drawing program"
-msgstr "โปรแกรมวาดรูป"
-
-msgid "Tux Paint"
-msgstr "ทักซ์สอนวาดรูป"
 
 msgid "Black!"
 msgstr "ดำ"
@@ -70,6 +62,45 @@ msgstr "แทน"
 
 msgid "Beige!"
 msgstr "นำตาลอ่อน"
+
+msgid "qx"
+msgstr ""
+
+msgid "QX"
+msgstr ""
+
+msgid "qy"
+msgstr ""
+
+msgid "QY"
+msgstr ""
+
+#. Now we score fonts to ensure that the best ones will be placed at
+#. the top of the list. The user will see them first. This sorting is
+#. especially important for users who have scroll buttons disabled.
+#. Translators should do whatever is needed to put crummy fonts last.
+msgid "oO"
+msgstr "oO"
+
+#. distinct uppercase and lowercase
+msgid "`\\%_@$~#{}<>^&*"
+msgstr "อะแจ๊กแว๊กๆๆ"
+
+#. uncommon punctuation
+msgid ",.?!"
+msgstr "หืม"
+
+#. common punctuation
+msgid "017"
+msgstr "017"
+
+#. digits
+msgid "O0"
+msgstr "O0"
+
+#. distinct circle-like characters
+msgid "1Il|"
+msgstr "1|||"
 
 msgid "Great!"
 msgstr "เยี่ยม"
@@ -164,7 +195,8 @@ msgstr "คลิ๊กและย้ายเพื่อทำให้สี
 msgid "Click and move to darken the colors."
 msgstr "คลิ๊กและย้ายเพื่อทำให้มีดลง"
 
-msgid "Click and move the mouse around to turn the picture into a chalk drawing."
+msgid ""
+"Click and move the mouse around to turn the picture into a chalk drawing."
 msgstr "คลิ๊กและย้ายเม้าส์ไปรอบเพื่อทำให้รุปเป็นรูปชอร์ค"
 
 msgid "Click and move the mouse around to make the picture blocky."
@@ -215,7 +247,8 @@ msgstr "สี่เหลี่ยมจตุรัสประกอบด้
 msgid "A rectangle has four sides and four right angles."
 msgstr "สี่เหลี่ยมผืนผ้าประกอบด้วย 4 ด้าน และมุม 4 มุม"
 
-msgid "A circle is a curve where all points have the same distance from the centre."
+msgid ""
+"A circle is a curve where all points have the same distance from the centre."
 msgstr "วงกลมคือเส้นโค้งที่ทุกๆจุดมีระยะห่างเท่ากันจากจุดศูนย์กลาง"
 
 msgid "An ellipse is a stretched circle."
@@ -300,8 +333,12 @@ msgstr "เลือกรูปแล้วประทับตราบนร
 msgid "Click to start drawing a line. Let go to complete it."
 msgstr "กดคลิ๊กเพื่อเริ่มวาด ทำมันให้สำเร็จนะ"
 
-msgid "Pick a shape. Click to pick the center, drag, then let go when it is the size you want. Move around to rotate it, and click to draw it."
-msgstr "เลือกรูปทรง คลิ๊กตรงจุดศูนย์กลาง วาง จากนั้นทำให้ได้รูปร่างที่เราต้องการ ย้ายไปรอบๆ เพื่อหมุน แล้วคลิ๊กเพื่อวาดรูปนั้น"
+msgid ""
+"Pick a shape. Click to pick the center, drag, then let go when it is the "
+"size you want. Move around to rotate it, and click to draw it."
+msgstr ""
+"เลือกรูปทรง คลิ๊กตรงจุดศูนย์กลาง วาง จากนั้นทำให้ได้รูปร่างที่เราต้องการ ย้ายไปรอบๆ เพื่อหมุน "
+"แล้วคลิ๊กเพื่อวาดรูปนั้น"
 
 msgid "Choose a style of text. Click on your drawing and you can start typing."
 msgstr "เลือกรูปแบบอักษร คลิ๊กที่รูปแล้วเธอก็เริ่มพิมพ์"
@@ -357,15 +394,20 @@ msgstr "ตกลงเก็บรูปภาพนี้ไว้"
 msgid "Do you really want to quit?"
 msgstr "แน่ใจนะว่าต้องการออกจากโปรแกรม"
 
-#. FIXME: Move elsewhere! Or not?!
-msgid "Yes"
-msgstr "ใช่"
+msgid "Yes, I'm done!"
+msgstr ""
 
-msgid "No"
-msgstr "ไม่"
+msgid "No, take me back!"
+msgstr ""
 
 msgid "If you quit, you’ll lose your picture! Save it?"
 msgstr "ถ้าเธอออก ภาพของเธอจะหาย บันทึกหรือไม่"
+
+msgid "Yes, save it!"
+msgstr ""
+
+msgid "No, don't bother saving!"
+msgstr ""
 
 msgid "Save your picture first?"
 msgstr "บันทึกภาพก่อนหรือไม่"
@@ -376,20 +418,26 @@ msgstr "ไม่สามารถเปิดรูปได้"
 msgid "OK"
 msgstr "ตกลง"
 
-msgid "Starting a new picture will erase the current one!"
-msgstr "ถ้าเริ่มรูปใหม่ตอนนี้ มันจะลบรูปเดิม"
+#. This will be replaced with a dialog allowing color choice and Starter
+#. picking, with a "Back" option to dismiss the "New" and return to
+#. the current picture.  But for now...  (bjk 2006.02.19)
+#, fuzzy
+msgid "Start a new picture?"
+msgstr "ลบรูปนี้หรือไม่?"
 
-msgid "That’s OK!"
-msgstr "อืม...ดี "
-
-msgid "Never mind!"
-msgstr "ไม่เป็นไร"
+#. #define PROMPT_NEW_YES gettext_noop("That’s OK!")
+#. #define PROMPT_NEW_NO gettext_noop("Never mind!")
+msgid "Yes, let's start fresh!"
+msgstr ""
 
 msgid "There are no saved files!"
 msgstr "ไม่มีข้อมูลที่บันทึกไว้เลย"
 
 msgid "Print your picture now?"
 msgstr "พิมพ์รูปตอนนี้หรือไม่"
+
+msgid "Yes, print it!"
+msgstr ""
 
 msgid "Your picture has been printed!"
 msgstr "รูปของคุณกำลังพิมพ์"
@@ -400,32 +448,17 @@ msgstr "ยังไม่สามารถพิมพ์ได้ตอนน
 msgid "Erase this picture?"
 msgstr "ลบรูปนี้หรือไม่?"
 
+msgid "Yes, erase it!"
+msgstr ""
+
+msgid "No, don't erase it!"
+msgstr ""
+
 msgid "Remember to use the left mouse button!"
 msgstr "โปรดจำไว้ว่าใช้เม้าปุ่มซ้าย"
 
-msgid "jq"
-msgstr "jq"
-
-msgid "JQ"
-msgstr "JQ"
-
-msgid "oO"
-msgstr "oO"
-
-msgid "`\\%_@$~#{}<>^&*"
-msgstr "อะแจ๊กแว๊กๆๆ"
-
-msgid ",.?!"
-msgstr "หืม"
-
-msgid "017"
-msgstr "017"
-
-msgid "O0"
-msgstr "O0"
-
-msgid "1Il|"
-msgstr "1|||"
+msgid "Please wait..."
+msgstr ""
 
 msgid "Erase"
 msgstr "ลบ"
@@ -436,13 +469,51 @@ msgstr "ย้อนกลับ"
 msgid "Aa"
 msgstr "Aa"
 
-#. FIXME: Move elsewhere!!!
-msgid "Save over the older version of this picture?"
-msgstr "บันทึกทับรูปเดิมหรือไม่"
+#. FIXME: Move elsewhere! Or not?!
+msgid "Yes"
+msgstr "ใช่"
 
-msgid "No, save a new file"
+msgid "No"
+msgstr "ไม่"
+
+#. FIXME: Move elsewhere!!!
+#. #define PROMPT_SAVE_OVER_TXT gettext_noop("Save over the older version of this picture?")
+msgid "Replace the picture with your changes?"
+msgstr ""
+
+msgid "Yes, replace the old one!"
+msgstr ""
+
+#, fuzzy
+msgid "No, save a new file!"
 msgstr "ไม่ บันทึกเป็นแฟ้มใหม่"
 
 msgid "Choose the picture you want, then click “Open”."
 msgstr "เลือกรูปที่เธอต้องการจากนั้นคลิ๊ก เปิด"
 
+msgid "A drawing program for children."
+msgstr "โปรแกรมวาดรูปสำหรับเด็ก"
+
+msgid "Drawing program"
+msgstr "โปรแกรมวาดรูป"
+
+msgid "Tux Paint"
+msgstr "ทักซ์สอนวาดรูป"
+
+#~ msgid "Starting a new picture will erase the current one!"
+#~ msgstr "ถ้าเริ่มรูปใหม่ตอนนี้ มันจะลบรูปเดิม"
+
+#~ msgid "That’s OK!"
+#~ msgstr "อืม...ดี "
+
+#~ msgid "Never mind!"
+#~ msgstr "ไม่เป็นไร"
+
+#~ msgid "jq"
+#~ msgstr "jq"
+
+#~ msgid "JQ"
+#~ msgstr "JQ"
+
+#~ msgid "Save over the older version of this picture?"
+#~ msgstr "บันทึกทับรูปเดิมหรือไม่"

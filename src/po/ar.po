@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-02-25 09:37+0100\n"
+"POT-Creation-Date: 2006-07-15 20:07+0200\n"
 "PO-Revision-Date: 2006-03-27 05:57+0300\n"
 "Last-Translator: kash <alholan@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -207,7 +207,8 @@ msgstr ".انقر وحرّكُ الفأرة على الألوان لتصبح ب�
 msgid "Click and move to darken the colors."
 msgstr ".انقر وحرّكُ الفأرة على الألوان لتصبح داكنة"
 
-msgid "Click and move the mouse around to turn the picture into a chalk drawing."
+msgid ""
+"Click and move the mouse around to turn the picture into a chalk drawing."
 msgstr ".انقر وحرّكُ الفأرة على الصورة لتحويلها إلى رسمة طبشورية"
 
 msgid "Click and move the mouse around to make the picture blocky."
@@ -258,7 +259,8 @@ msgstr ".المربع هو مستطيل بأربعة جوانبِ مساويةِ
 msgid "A rectangle has four sides and four right angles."
 msgstr "المستطيل لَهُ أربعة جوانبِ وأربع زوايا قائمةِ."
 
-msgid "A circle is a curve where all points have the same distance from the centre."
+msgid ""
+"A circle is a curve where all points have the same distance from the centre."
 msgstr "الدائرة هي منحنى حيث كُلّ النقاط لَها نفس المسافةِ مِنْ المركزِ."
 
 msgid "An ellipse is a stretched circle."
@@ -344,8 +346,12 @@ msgstr ".إختر الصورة التي ستختم بها رسمتك"
 msgid "Click to start drawing a line. Let go to complete it."
 msgstr "إنقرْ للبَدْء برَسْم خطاً. ثم إتركْ لإكْماله."
 
-msgid "Pick a shape. Click to pick the center, drag, then let go when it is the size you want. Move around to rotate it, and click to draw it."
-msgstr "إختر شكلاً. إنقرْ لإلتِقاط المركزِ، إسحب، ثم إترك عندما تصل للحجم الذي تريد. تحرّكْ بسهولة لإدَارَته، وإنقرْ لسَحْبه"
+msgid ""
+"Pick a shape. Click to pick the center, drag, then let go when it is the "
+"size you want. Move around to rotate it, and click to draw it."
+msgstr ""
+"إختر شكلاً. إنقرْ لإلتِقاط المركزِ، إسحب، ثم إترك عندما تصل للحجم الذي تريد. "
+"تحرّكْ بسهولة لإدَارَته، وإنقرْ لسَحْبه"
 
 msgid "Choose a style of text. Click on your drawing and you can start typing."
 msgstr ".إخترْ إسلوب النص. إنقر على رسمتك لتتمكن من بدء الطباعة"
@@ -510,4 +516,3 @@ msgstr "برنامج الرسم"
 
 msgid "Tux Paint"
 msgstr "طباعة توكس  - طاق طاق بوابة الطفل العربي"
-

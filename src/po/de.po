@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-02-19 14:44-0800\n"
+"POT-Creation-Date: 2006-07-15 20:07+0200\n"
 "PO-Revision-Date: 2006-03-13 21:34+0100\n"
 "Last-Translator: Burkhard Lück <lueck@hube-lueck.de>\n"
 "Language-Team: Deutsch <kde-i18n-de@kde.org>\n"
@@ -202,8 +202,10 @@ msgstr "Klick und bewege die Maus, um die Farben zu verblassen!"
 msgid "Click and move to darken the colors."
 msgstr "Klick und bewege die Maus, um die Farben abzudunkeln!"
 
-msgid "Click and move the mouse around to turn the picture into a chalk drawing."
-msgstr "Klick und bewege die Maus, um dein Bild in ein Kreidebild zu verwandeln!"
+msgid ""
+"Click and move the mouse around to turn the picture into a chalk drawing."
+msgstr ""
+"Klick und bewege die Maus, um dein Bild in ein Kreidebild zu verwandeln!"
 
 msgid "Click and move the mouse around to make the picture blocky."
 msgstr "Klick und bewege die Maus, um das Bild pixelig zu machen."
@@ -253,7 +255,8 @@ msgstr "Ein Quadrat ist ein Rechteck mit vier gleich langen Seiten."
 msgid "A rectangle has four sides and four right angles."
 msgstr "Ein Rechteck hat vier Seiten und vier rechte Winkel."
 
-msgid "A circle is a curve where all points have the same distance from the centre."
+msgid ""
+"A circle is a curve where all points have the same distance from the centre."
 msgstr ""
 "Ein Kreis ist eine Kurve, auf der alle Punkte den gleichen Abstand vom "
 "Mittelpunkt haben."
@@ -494,10 +497,12 @@ msgstr "Nein"
 msgid "Replace the picture with your changes?"
 msgstr "Möchtest du das Bild mit deinen Änderungen überschreiben?"
 
-msgid "Yes, replace the old one"
+#, fuzzy
+msgid "Yes, replace the old one!"
 msgstr "Ja, überschreibe das alte Bild"
 
-msgid "No, save a new file"
+#, fuzzy
+msgid "No, save a new file!"
 msgstr "Nein, in eine neue Datei!"
 
 msgid "Choose the picture you want, then click “Open”."
@@ -511,4 +516,3 @@ msgstr "Malprogramm"
 
 msgid "Tux Paint"
 msgstr "Tux Paint"
-

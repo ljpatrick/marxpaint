@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-02-25 09:37+0100\n"
+"POT-Creation-Date: 2006-07-15 20:07+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -19,10 +19,12 @@ msgstr ""
 msgid "Black!"
 msgstr "ng.po."
 
-msgid "Dark grey! Some people spell it âdark grayâ."
+#, fuzzy
+msgid "Dark grey! Some people spell it “dark gray”."
 msgstr "ng.SKKKKKKKKKKY."
 
-msgid "Light grey! Some people spell it âlight grayâ."
+#, fuzzy
+msgid "Light grey! Some people spell it “light gray”."
 msgstr "av.gu.mdog."
 
 msgid "White!"
@@ -172,7 +174,7 @@ msgstr "sBud.sGYg.rGYb.p."
 msgid "Click in the picture to fill that area with color."
 msgstr ""
 
-msgid "Click and move to draw grass. Don't forget the dirt!"
+msgid "Click and move to draw grass. Don’t forget the dirt!"
 msgstr ""
 
 msgid "Click and move to draw large bricks."
@@ -209,7 +211,7 @@ msgstr ""
 msgid "Click and move the mouse around to draw a negative."
 msgstr ""
 
-msgid "Click and move the mouse around to change the picture's color."
+msgid "Click and move the mouse around to change the picture’s color."
 msgstr ""
 
 msgid "Click and move the mouse around to make the picture drip."
@@ -365,16 +367,18 @@ msgid "You now have a blank sheet to draw on!"
 msgstr ""
 
 #. Open
-msgid "Open?"
-msgstr "q.\\Yed.b."
+#, fuzzy
+msgid "Open…"
+msgstr "q.\\Yed.p."
 
 #. Save
 msgid "Your image has been saved!"
 msgstr ""
 
 #. Print
-msgid "Printing?"
-msgstr ""
+#, fuzzy
+msgid "Printing…"
+msgstr "pr.rGYb.p."
 
 #. Quit
 msgid "Bye bye!"
@@ -389,7 +393,7 @@ msgstr ""
 msgid "Move the mouse to rotate the shape. Click to draw it."
 msgstr ""
 
-msgid "OK then? Let's keep drawing this one!"
+msgid "OK then… Let’s keep drawing this one!"
 msgstr ""
 
 #. FIXME: Move elsewhere!!!
@@ -402,7 +406,7 @@ msgstr ""
 msgid "No, take me back!"
 msgstr ""
 
-msgid "If you quit, you'll lose your picture! Save it?"
+msgid "If you quit, you’ll lose your picture! Save it?"
 msgstr ""
 
 msgid "Yes, save it!"
@@ -414,7 +418,7 @@ msgstr ""
 msgid "Save your picture first?"
 msgstr ""
 
-msgid "Can't open that picture!"
+msgid "Can’t open that picture!"
 msgstr ""
 
 msgid "OK"
@@ -426,7 +430,7 @@ msgstr ""
 msgid "Start a new picture?"
 msgstr ""
 
-#. #define PROMPT_NEW_YES gettext_noop("That's OK!")
+#. #define PROMPT_NEW_YES gettext_noop("That’s OK!")
 #. #define PROMPT_NEW_NO gettext_noop("Never mind!")
 msgid "Yes, let's start fresh!"
 msgstr ""
@@ -443,7 +447,7 @@ msgstr ""
 msgid "Your picture has been printed!"
 msgstr ""
 
-msgid "You can't print yet!"
+msgid "You can’t print yet!"
 msgstr ""
 
 msgid "Erase this picture?"
@@ -488,7 +492,7 @@ msgstr ""
 msgid "No, save a new file!"
 msgstr ""
 
-msgid "Choose the picture you want, then click âOpenâ."
+msgid "Choose the picture you want, then click “Open”."
 msgstr ""
 
 msgid "A drawing program for children."
@@ -499,3 +503,6 @@ msgstr ""
 
 msgid "Tux Paint"
 msgstr ""
+
+#~ msgid "Open?"
+#~ msgstr "q.\\Yed.b."

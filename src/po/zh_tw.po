@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint 0.9.15rc1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2005-10-10 00:12-0700\n"
+"POT-Creation-Date: 2006-07-15 20:07+0200\n"
 "PO-Revision-Date: 2005-12-27 12:11+0800\n"
 "Last-Translator: Wei-Lun Chao <chaoweilun@pcmail.com.tw>\n"
 "Language-Team: Chinese (traditional) <zh-l10n@linux.org.tw>\n"
@@ -16,15 +16,6 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-
-msgid "A drawing program for children."
-msgstr "適合兒童的畫圖程式"
-
-msgid "Drawing program"
-msgstr "畫圖程式"
-
-msgid "Tux Paint"
-msgstr "企鵝小畫家"
 
 msgid "Black!"
 msgstr "黑色!"
@@ -76,6 +67,45 @@ msgstr "黃棕色!"
 
 msgid "Beige!"
 msgstr "米黃色!"
+
+msgid "qx"
+msgstr ""
+
+msgid "QX"
+msgstr ""
+
+msgid "qy"
+msgstr ""
+
+msgid "QY"
+msgstr ""
+
+#. Now we score fonts to ensure that the best ones will be placed at
+#. the top of the list. The user will see them first. This sorting is
+#. especially important for users who have scroll buttons disabled.
+#. Translators should do whatever is needed to put crummy fonts last.
+msgid "oO"
+msgstr "oO"
+
+#. distinct uppercase and lowercase
+msgid "`\\%_@$~#{}<>^&*"
+msgstr "`\\%_@$~#{}<>^&*"
+
+#. uncommon punctuation
+msgid ",.?!"
+msgstr ",.?!"
+
+#. common punctuation
+msgid "017"
+msgstr "017"
+
+#. digits
+msgid "O0"
+msgstr "O0"
+
+#. distinct circle-like characters
+msgid "1Il|"
+msgstr "1Il|"
 
 msgid "Great!"
 msgstr "太棒了!"
@@ -170,7 +200,8 @@ msgstr "按著並移動滑鼠來讓顏色變淺。"
 msgid "Click and move to darken the colors."
 msgstr "按著並移動滑鼠來讓顏色變深。"
 
-msgid "Click and move the mouse around to turn the picture into a chalk drawing."
+msgid ""
+"Click and move the mouse around to turn the picture into a chalk drawing."
 msgstr "按著並移動滑鼠來產生粉筆的痕跡。"
 
 msgid "Click and move the mouse around to make the picture blocky."
@@ -221,7 +252,8 @@ msgstr "正方形是四邊一樣長的長方形。"
 msgid "A rectangle has four sides and four right angles."
 msgstr "長方形有四個邊和四個直角。"
 
-msgid "A circle is a curve where all points have the same distance from the centre."
+msgid ""
+"A circle is a curve where all points have the same distance from the centre."
 msgstr "圓形是每一點都和圓心保持相同距離的曲線。"
 
 msgid "An ellipse is a stretched circle."
@@ -306,8 +338,12 @@ msgstr "挑選一個圖章來印在你的畫布上。"
 msgid "Click to start drawing a line. Let go to complete it."
 msgstr "按一下滑鼠就可以開始畫一條線. 讓我們來完成它吧!"
 
-msgid "Pick a shape. Click to pick the center, drag, then let go when it is the size you want. Move around to rotate it, and click to draw it."
-msgstr "挑選一個形狀。點一下來決定形狀的中心位置，然後持續拖拉它到你要的大小。繞著中心移動來旋轉它，然後點一下把它畫下來。"
+msgid ""
+"Pick a shape. Click to pick the center, drag, then let go when it is the "
+"size you want. Move around to rotate it, and click to draw it."
+msgstr ""
+"挑選一個形狀。點一下來決定形狀的中心位置，然後持續拖拉它到你要的大小。繞著中"
+"心移動來旋轉它，然後點一下把它畫下來。"
 
 msgid "Choose a style of text. Click on your drawing and you can start typing."
 msgstr "選擇文字的樣子。在畫布上點一下就可以開始輸入。"
@@ -363,15 +399,20 @@ msgstr "很好，讓我們繼續來畫這張圖吧!"
 msgid "Do you really want to quit?"
 msgstr "你確定要離開嗎?"
 
-#. FIXME: Move elsewhere! Or not?!
-msgid "Yes"
-msgstr "要"
+msgid "Yes, I'm done!"
+msgstr ""
 
-msgid "No"
-msgstr "不要"
+msgid "No, take me back!"
+msgstr ""
 
 msgid "If you quit, you’ll lose your picture! Save it?"
 msgstr "如果離開，將會丟掉你的圖畫喔! 要先存檔嗎?"
+
+msgid "Yes, save it!"
+msgstr ""
+
+msgid "No, don't bother saving!"
+msgstr ""
 
 msgid "Save your picture first?"
 msgstr "要先儲存你的圖畫嗎?"
@@ -382,20 +423,26 @@ msgstr "沒辦法打開這個圖畫!"
 msgid "OK"
 msgstr "好的"
 
-msgid "Starting a new picture will erase the current one!"
-msgstr "打開一張新的畫布時，會刪掉目前這張圖喔!"
+#. This will be replaced with a dialog allowing color choice and Starter
+#. picking, with a "Back" option to dismiss the "New" and return to
+#. the current picture.  But for now...  (bjk 2006.02.19)
+#, fuzzy
+msgid "Start a new picture?"
+msgstr "要刪除這張圖畫嗎?"
 
-msgid "That’s OK!"
-msgstr "沒關係啦!"
-
-msgid "Never mind!"
-msgstr "那算了吧!"
+#. #define PROMPT_NEW_YES gettext_noop("That’s OK!")
+#. #define PROMPT_NEW_NO gettext_noop("Never mind!")
+msgid "Yes, let's start fresh!"
+msgstr ""
 
 msgid "There are no saved files!"
 msgstr "沒有已經儲存的檔案!"
 
 msgid "Print your picture now?"
 msgstr "現在要列印你的圖畫嗎?"
+
+msgid "Yes, print it!"
+msgstr ""
 
 msgid "Your picture has been printed!"
 msgstr "你的圖畫已經印出來了!"
@@ -406,32 +453,17 @@ msgstr "你還沒辦法列印喔!"
 msgid "Erase this picture?"
 msgstr "要刪除這張圖畫嗎?"
 
+msgid "Yes, erase it!"
+msgstr ""
+
+msgid "No, don't erase it!"
+msgstr ""
+
 msgid "Remember to use the left mouse button!"
 msgstr "記得使用滑鼠的左邊按鍵!"
 
-msgid "jq"
-msgstr "jq"
-
-msgid "JQ"
-msgstr "JQ"
-
-msgid "oO"
-msgstr "oO"
-
-msgid "`\\%_@$~#{}<>^&*"
-msgstr "`\\%_@$~#{}<>^&*"
-
-msgid ",.?!"
-msgstr ",.?!"
-
-msgid "017"
-msgstr "017"
-
-msgid "O0"
-msgstr "O0"
-
-msgid "1Il|"
-msgstr "1Il|"
+msgid "Please wait..."
+msgstr ""
 
 msgid "Erase"
 msgstr "刪除"
@@ -442,12 +474,51 @@ msgstr "返回"
 msgid "Aa"
 msgstr "Aa"
 
-#. FIXME: Move elsewhere!!!
-msgid "Save over the older version of this picture?"
-msgstr "要儲存這張圖畫並覆蓋掉舊的那張嗎?"
+#. FIXME: Move elsewhere! Or not?!
+msgid "Yes"
+msgstr "要"
 
-msgid "No, save a new file"
+msgid "No"
+msgstr "不要"
+
+#. FIXME: Move elsewhere!!!
+#. #define PROMPT_SAVE_OVER_TXT gettext_noop("Save over the older version of this picture?")
+msgid "Replace the picture with your changes?"
+msgstr ""
+
+msgid "Yes, replace the old one!"
+msgstr ""
+
+#, fuzzy
+msgid "No, save a new file!"
 msgstr "不，另外儲存一個新的檔案"
 
 msgid "Choose the picture you want, then click “Open”."
 msgstr "選擇你想要的圖畫，然後按一下「打開」。"
+
+msgid "A drawing program for children."
+msgstr "適合兒童的畫圖程式"
+
+msgid "Drawing program"
+msgstr "畫圖程式"
+
+msgid "Tux Paint"
+msgstr "企鵝小畫家"
+
+#~ msgid "Starting a new picture will erase the current one!"
+#~ msgstr "打開一張新的畫布時，會刪掉目前這張圖喔!"
+
+#~ msgid "That’s OK!"
+#~ msgstr "沒關係啦!"
+
+#~ msgid "Never mind!"
+#~ msgstr "那算了吧!"
+
+#~ msgid "jq"
+#~ msgstr "jq"
+
+#~ msgid "JQ"
+#~ msgstr "JQ"
+
+#~ msgid "Save over the older version of this picture?"
+#~ msgstr "要儲存這張圖畫並覆蓋掉舊的那張嗎?"

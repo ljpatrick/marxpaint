@@ -1,12 +1,12 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <amed@pckurd.net>, YEAR.
-#
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-02-25 09:37+0100\n"
+"POT-Creation-Date: 2006-07-15 20:07+0200\n"
 "PO-Revision-Date: 2006-04-23 00:58+0200\n"
 "Last-Translator: Amed Ç. Jiyan <amed@pckurd.net>\n"
 "Language-Team: KURDISH <LL@li.org>\n"
@@ -197,8 +197,11 @@ msgstr "Ji bo birina zindîbûna rengan bitikîne û mişkî bigerîne."
 msgid "Click and move to darken the colors."
 msgstr "Ji bo tarîkirina rengan bitikîne û mişkî bigerîne."
 
-msgid "Click and move the mouse around to turn the picture into a chalk drawing."
-msgstr "Ji bo ku wêne wekî xêzkirineke bi tebeşîrê xuya bibe, bitikîne û mi,şkî li dorê bigerîne bigerîne."
+msgid ""
+"Click and move the mouse around to turn the picture into a chalk drawing."
+msgstr ""
+"Ji bo ku wêne wekî xêzkirineke bi tebeşîrê xuya bibe, bitikîne û mi,şkî li "
+"dorê bigerîne bigerîne."
 
 msgid "Click and move the mouse around to make the picture blocky."
 msgstr "Ji bo ku wêneyê bikî topiklî bitikîne û mişkî bigerîne."
@@ -213,7 +216,8 @@ msgid "Click and move the mouse around to make the picture drip."
 msgstr "Ji bo ku wêneyê bidilop bikî bi tikîne û mişkî li dorê bigerîne."
 
 msgid "Click and move the mouse around to turn the picture into a cartoon."
-msgstr "Ji bo ku wêneyê çêkî wêneyekî kartok bitikîne û mişkî li dorê bigerîne."
+msgstr ""
+"Ji bo ku wêneyê çêkî wêneyekî kartok bitikîne û mişkî li dorê bigerîne."
 
 msgid "Click to make a mirror image."
 msgstr "Ji bo çêkirina îmaja neynikê bitikîne."
@@ -248,7 +252,8 @@ msgstr "Çar goşeyên çargoşeyan hene."
 msgid "A rectangle has four sides and four right angles."
 msgstr "Çar goşe û çar kenarên çargoşeyan hene."
 
-msgid "A circle is a curve where all points have the same distance from the centre."
+msgid ""
+"A circle is a curve where all points have the same distance from the centre."
 msgstr "Çember ji xalên ku dûrbûna wan a ji navendê wekhev e pêk tê."
 
 msgid "An ellipse is a stretched circle."
@@ -333,11 +338,17 @@ msgstr "Ji bo ku li wêneyê xwe zêde bikî demxeyekê hilbijêre."
 msgid "Click to start drawing a line. Let go to complete it."
 msgstr "Ji bo ku dest bi xêzkirinê bikî \"Det pê bike\" bitikîne. De biqedîne."
 
-msgid "Pick a shape. Click to pick the center, drag, then let go when it is the size you want. Move around to rotate it, and click to draw it."
-msgstr "Şiklekê hilbijêre. Navendê hilbijêre, bikişîne û dema ku mezinahî bibe wekî tu dixwazî, berde. Ji bo guherandina berê wê li dorê bigerîne û ji bo xêzkirinê bitikîne."
+msgid ""
+"Pick a shape. Click to pick the center, drag, then let go when it is the "
+"size you want. Move around to rotate it, and click to draw it."
+msgstr ""
+"Şiklekê hilbijêre. Navendê hilbijêre, bikişîne û dema ku mezinahî bibe wekî "
+"tu dixwazî, berde. Ji bo guherandina berê wê li dorê bigerîne û ji bo "
+"xêzkirinê bitikîne."
 
 msgid "Choose a style of text. Click on your drawing and you can start typing."
-msgstr "Cureyekê nivîsê hilbijêre. Li ser wêneyê bitikîne û dest bi nivîsandinê bike."
+msgstr ""
+"Cureyekê nivîsê hilbijêre. Li ser wêneyê bitikîne û dest bi nivîsandinê bike."
 
 msgid "Pick a magical effect to use on your drawing!"
 msgstr "Ji bo bikaranînê efekteke sêrê hilbijêre!"
@@ -381,7 +392,8 @@ msgid "Hold the button to stretch the shape."
 msgstr "Ji bo vezelandina şiklê bi bişkojkê bigire."
 
 msgid "Move the mouse to rotate the shape. Click to draw it."
-msgstr "Ji bo guherandina berê şiklê mişkî bikar bîne. Ji bo xêzkirinê bitikîne."
+msgstr ""
+"Ji bo guherandina berê şiklê mişkî bikar bîne. Ji bo xêzkirinê bitikîne."
 
 msgid "OK then… Let’s keep drawing this one!"
 msgstr "Temam, nexwe vê xêzkirinê tomar bike!"
@@ -493,5 +505,3 @@ msgstr "Bernameya Xêzkirinê"
 
 msgid "Tux Paint"
 msgstr "Tux Paint"
-
-
