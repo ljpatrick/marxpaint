@@ -25,7 +25,7 @@
 # (See COPYING.txt)
 
 
-# September 21, 2002 - February 17, 2006
+# September 21, 2002 - August 12, 2006
 
 
 SAVEDIR=$HOME/.tuxpaint
@@ -141,8 +141,10 @@ fi
 
 
 # For each picture list...
-for i in $*
+for x in $(seq 1 $#)
 do
+  i="${!x}"
+
   if [ -e $i ]; then
     # Determine a filename for it:
     NEWFILENAME=`date "+%Y%m%d%H%M%S"`

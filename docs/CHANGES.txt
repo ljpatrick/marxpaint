@@ -173,7 +173,7 @@ $Id$
 
   * Bug Fixes:
     ----------
-    * Tux Paint's scalable icon (tuxpaint-icon.svg) caused Gnome panel to
+    * tux Paint's scalable icon (tuxpaint-icon.svg) caused Gnome panel to
       go wild (due to "libarts" bug?).  Changed a vector value which apparently
       fixes it (and caused no noticable changes to the icon).
     
@@ -193,6 +193,10 @@ $Id$
 
     * Improved handling of scroll button state to prevent it from getting
       into an infinite loop.  (Fixes bug #1396706)
+
+    * Spaces in filenames were not working in 'tuxpaint-import.sh'.
+      (Fixes bug #1527884)
+      James Le Cuirot
 
 
 2005.November.26 (0.9.15b)
