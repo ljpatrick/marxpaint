@@ -120,6 +120,11 @@ $Id$
     * Vietnamese
       Clytie Siddall <clytie@riverland.net.au>
 
+    * Including a scaled down version of the Japanese TrueType font (ja.ttf),
+      that includes only the characters uses by Tux Paint.
+      For info, see: fonts/locale/ja_docs/
+      TOYAMA Shin-ichi <shin1@wmail.plala.or.jp>
+
   * Documentation Improvements:
     ---------------------------
     * Moved "Extending Tux Paint" into its own separate document.
