@@ -1,13 +1,12 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Thai tux paint\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-07-15 20:07+0200\n"
-"PO-Revision-Date: 2006-02-24 14:45+0700\n"
-"Last-Translator: ouychai chaita <Ouychai_a@hotmail.com>\n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: 2006-07-31 11:23+0700\n"
+"Last-Translator: Ouychai Chaita <Ae.freeman@gmail.com>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Poedit-Language: Thai\n"
 "X-Poedit-Country: THAILAND\n"
@@ -16,10 +15,10 @@ msgid "Black!"
 msgstr "ดำ"
 
 msgid "Dark grey! Some people spell it “dark gray”."
-msgstr "Dark grey บางคนเขียน Dark gray"
+msgstr "เทาเข้ม"
 
 msgid "Light grey! Some people spell it “light gray”."
-msgstr "Light grey บางคนก็เขียน ligh gray"
+msgstr "เทาอ่อน"
 
 msgid "White!"
 msgstr "ขาว"
@@ -34,25 +33,25 @@ msgid "Yellow!"
 msgstr "เหลือง"
 
 msgid "Light green!"
-msgstr "เขียวสว่าง"
+msgstr "เขียวอ่อน"
 
 msgid "Dark green!"
-msgstr "เขียวมืด"
+msgstr "เขียวเข้ม"
 
 msgid "Sky blue!"
-msgstr "น้ำเงินฟ้า"
+msgstr "ฟ้า"
 
 msgid "Blue!"
 msgstr "น้ำเงิน"
 
 msgid "Lavender!"
-msgstr "สีม่วงอ่อน"
+msgstr "ม่วงอ่อน"
 
 msgid "Purple!"
-msgstr "สีม่วง"
+msgstr "ม่วง"
 
 msgid "Pink!"
-msgstr "สีชมพู"
+msgstr "ชมพู"
 
 msgid "Brown!"
 msgstr "น้ำตาล"
@@ -61,7 +60,7 @@ msgid "Tan!"
 msgstr "แทน"
 
 msgid "Beige!"
-msgstr "นำตาลอ่อน"
+msgstr "น้ำตาลอ่อน"
 
 msgid "qx"
 msgstr ""
@@ -84,11 +83,11 @@ msgstr "oO"
 
 #. distinct uppercase and lowercase
 msgid "`\\%_@$~#{}<>^&*"
-msgstr "อะแจ๊กแว๊กๆๆ"
+msgstr "`\\%_@$~#{}<>^&*"
 
 #. uncommon punctuation
 msgid ",.?!"
-msgstr "หืม"
+msgstr ",.?!"
 
 #. common punctuation
 msgid "017"
@@ -100,19 +99,19 @@ msgstr "O0"
 
 #. distinct circle-like characters
 msgid "1Il|"
-msgstr "1|||"
+msgstr "1Il|"
 
 msgid "Great!"
-msgstr "เยี่ยม"
+msgstr "ยอดมาก"
 
 msgid "Cool!"
-msgstr "เยี่ยม!"
+msgstr "เยี่ยม"
 
 msgid "Keep it up!"
-msgstr "ทำให้ดีขึ้น"
+msgstr "อย่างนี้แหละ"
 
 msgid "Good job!"
-msgstr "ทำดีมาก"
+msgstr "ดีมาก"
 
 msgid "Fill"
 msgstr "เติม"
@@ -133,25 +132,25 @@ msgid "Blur"
 msgstr "มัว"
 
 msgid "Smudge"
-msgstr "รอยด่าง"
+msgstr "เกลี่ย"
 
 msgid "Lighten"
-msgstr "สว่างขึ้น"
+msgstr "สว่าง"
 
 msgid "Darken"
-msgstr "มืดลง"
+msgstr "มืด"
 
 msgid "Chalk"
-msgstr "ชอร์ค"
+msgstr "ชอล์ก"
 
 msgid "Blocks"
-msgstr "บล๊อค"
+msgstr "บล็อก"
 
 msgid "Negative"
-msgstr "สีตรงข้าม"
+msgstr "กลับสี"
 
 msgid "Tint"
-msgstr "แต้มสีจาง"
+msgstr "ทาสีจาง"
 
 msgid "Drip"
 msgstr "หยด"
@@ -163,65 +162,64 @@ msgid "Mirror"
 msgstr "กลับด้าน"
 
 msgid "Flip"
-msgstr "สลับ"
+msgstr "พลิก"
 
 msgid "Click in the picture to fill that area with color."
-msgstr "คลิ๊กที่รูปเพื่อเติมสีลงไป"
+msgstr "คลิกที่รูปเพื่อเติมสีลงไป"
 
 msgid "Click and move to draw grass. Don’t forget the dirt!"
-msgstr "กดคลิ๊กเพื่อวาดรูปหญ้า แต่อย่าลืมวาดดินละ"
+msgstr "คลิกแล้วลากเพื่อวาดรูปหญ้า แต่อย่าลืมวาดดินล่ะ"
 
 msgid "Click and move to draw large bricks."
-msgstr "คลิ๊กและย้ายเพื่อวาดรูปอิฐใหญ่"
+msgstr "คลิกแล้วลากเพื่อวาดรูปอิฐใหญ่"
 
 msgid "Click and move to draw small bricks."
-msgstr "คลิ๊กและย้ายเพื่อวาดรูปอิฐเล็ก"
+msgstr "คลิกแล้วลากเพื่อวาดรูปอิฐเล็ก"
 
 msgid "You can draw in rainbow colors!"
 msgstr "เธอสามารถวาดสีรุ้งได้"
 
 msgid "Click and move to draw sparkles."
-msgstr "คลิ๊กและย้ายเพื่อวาดประกาย"
+msgstr "คลิกแล้วลากเพื่อวาดประกาย"
 
 msgid "Click and move the mouse around to blur the picture."
-msgstr "คลิ๊กและย้ายเพื่อเม้าส์รอบๆ รูปที่เบลอ"
+msgstr "คลิกแล้วลากเมาส์ไปมาเพื่อทำให้รูปมัว"
 
 msgid "Click and move the mouse around to smudge the picture."
-msgstr "คลิ๊กและย้ายเพื่อเม้าส์รอบๆ รูปที่เบลอ"
+msgstr "คลิกแล้วลากเมาส์ไปมาเพื่อเกลี่ยสีรูป"
 
 msgid "Click and move to fade the colors."
-msgstr "คลิ๊กและย้ายเพื่อทำให้สีจางลง"
+msgstr "คลิกแล้วลากเพื่อทำให้สีจางลง"
 
 msgid "Click and move to darken the colors."
-msgstr "คลิ๊กและย้ายเพื่อทำให้มีดลง"
+msgstr "คลิกแล้วลากเพื่อทำให้สีมืดลง"
 
-msgid ""
-"Click and move the mouse around to turn the picture into a chalk drawing."
-msgstr "คลิ๊กและย้ายเม้าส์ไปรอบเพื่อทำให้รุปเป็นรูปชอร์ค"
+msgid "Click and move the mouse around to turn the picture into a chalk drawing."
+msgstr "คลิกแล้วลากเมาส์ไปมาเพื่อทำให้รูปเป็นรูปเขียนด้วยชอล์ก"
 
 msgid "Click and move the mouse around to make the picture blocky."
-msgstr "คลิ๊กและย้ายเม้าส์ไปรอบๆ เพื่อทำให้รูปเป็น"
+msgstr "คลิกแล้วลากเมาส์ไปมาเพื่อทำให้รูปมัวเป็นบล็อกๆ"
 
 msgid "Click and move the mouse around to draw a negative."
-msgstr "คลิ๊กและย้ายเม้าส์รอบๆ เพื่อวาดกลับสี"
+msgstr "คลิกแล้วลากเมาส์ไปมาเพื่อกลับสีรูป"
 
 msgid "Click and move the mouse around to change the picture’s color."
-msgstr "คลิ๊กและย้ายเม้าส์รอบๆ เพื่อเปลี่ยนสี"
+msgstr "คลิกแล้วลากเมาส์ไปมาเพื่อเปลี่ยนสีรูป"
 
 msgid "Click and move the mouse around to make the picture drip."
-msgstr "คลิ๊กและย้ายเม้าส์ไปรอบๆ เพื่อสร้างรูปหยดน้ำ"
+msgstr "คลิกแล้วลากเมาส์ไปมา เพื่อทำให้ขอบรูปแตกเป็นฝอยๆ"
 
 msgid "Click and move the mouse around to turn the picture into a cartoon."
-msgstr "คลิ๊กและขยับเม้าส์ไปรอบๆ เพื่อทำให้รูปไปเป็นรูปการ์ตูน"
+msgstr "คลิกแล้วลากเมาส์ไปมา เพื่อทำให้รูปเป็นรูปการ์ตูน"
 
 msgid "Click to make a mirror image."
-msgstr "กดคลิ๊กเพื่อกลับด้านของรูปภาพ"
+msgstr "คลิกเพื่อกลับรูปซ้ายขวา"
 
 msgid "Click to flip the picture upside-down."
-msgstr "คลิ๊กเพื่อกลับรูปจากบนลงล่าง"
+msgstr "คลิกเพื่อกลับรูปจากบนลงล่าง"
 
 msgid "Square"
-msgstr "จตุรัส"
+msgstr "จัตุรัส"
 
 msgid "Rectangle"
 msgstr "ผืนผ้า"
@@ -242,14 +240,13 @@ msgid "Rhombus"
 msgstr "ขนมเปียกปูน"
 
 msgid "A square is a rectangle with four equal sides."
-msgstr "สี่เหลี่ยมจตุรัสประกอบด้วย 4 ด้าน ที่เท่ากัน"
+msgstr "สี่เหลี่ยมจัตุรัสประกอบด้วยด้าน 4 ด้าน ที่ยาวเท่ากัน"
 
 msgid "A rectangle has four sides and four right angles."
-msgstr "สี่เหลี่ยมผืนผ้าประกอบด้วย 4 ด้าน และมุม 4 มุม"
+msgstr "สี่เหลี่ยมผืนผ้าประกอบด้วยด้าน 4 ด้าน และมุมฉาก 4 มุม"
 
-msgid ""
-"A circle is a curve where all points have the same distance from the centre."
-msgstr "วงกลมคือเส้นโค้งที่ทุกๆจุดมีระยะห่างเท่ากันจากจุดศูนย์กลาง"
+msgid "A circle is a curve where all points have the same distance from the centre."
+msgstr "วงกลมคือเส้นโค้งที่ทุกๆ จุดมีระยะห่างเท่ากันจากจุดศูนย์กลาง"
 
 msgid "An ellipse is a stretched circle."
 msgstr "วงรีคือวงกลมที่ยืดตัวออก"
@@ -261,7 +258,7 @@ msgid "A pentagon has five sides."
 msgstr "รูปห้าเหลี่ยมมีห้าด้านนะจ๊ะ"
 
 msgid "A rhombus has four equal sides, and opposite sides are parallel."
-msgstr "สี่เหลี่ยมขนมเปียกปูนประกอบด้วยสี่ด้าน ด้านตรงข้ามจะขนานกัน"
+msgstr "สี่เหลี่ยมขนมเปียกปูนประกอบด้วยด้านสี่ด้านที่ยาวเท่ากัน และด้านตรงข้ามกันจะขนานกัน"
 
 msgid "Tools"
 msgstr "เครื่องมือ"
@@ -270,7 +267,7 @@ msgid "Colors"
 msgstr "สี"
 
 msgid "Brushes"
-msgstr "แปรง"
+msgstr "พู่กัน"
 
 msgid "Erasers"
 msgstr "ยางลบ"
@@ -279,13 +276,13 @@ msgid "Stamps"
 msgstr "ตราประทับ"
 
 msgid "Shapes"
-msgstr "รูปทรง"
+msgstr "รูปร่าง"
 
 msgid "Letters"
 msgstr "อักษร"
 
 msgid "Magic"
-msgstr "เวทย์มนต์"
+msgstr "เวทมนตร์"
 
 msgid "Paint"
 msgstr "วาดรูป"
@@ -294,16 +291,16 @@ msgid "Stamp"
 msgstr "ตราประทับ"
 
 msgid "Lines"
-msgstr "ลายเส้น"
+msgstr "เส้นตรง"
 
 msgid "Text"
 msgstr "ข้อความ"
 
 msgid "Undo"
-msgstr "เลิกทำ"
+msgstr "เรียกคืน"
 
 msgid "Redo"
-msgstr "ทำอีกครั้ง"
+msgstr "ทำซ้ำ"
 
 msgid "Eraser"
 msgstr "ยางลบ"
@@ -328,31 +325,27 @@ msgid "Pick a color and a brush shape to draw with."
 msgstr "เลือกสีและพู่กันสำหรับวาด"
 
 msgid "Pick a picture to stamp around your drawing."
-msgstr "เลือกรูปแล้วประทับตราบนรูป"
+msgstr "เลือกรูปมาประทับตราบนรูปวาด"
 
 msgid "Click to start drawing a line. Let go to complete it."
-msgstr "กดคลิ๊กเพื่อเริ่มวาด ทำมันให้สำเร็จนะ"
+msgstr "คลิกเพื่อเริ่มวาดเส้นตรง ปล่อยเมาส์ที่จุดปลายเพื่อลากเส้น"
 
-msgid ""
-"Pick a shape. Click to pick the center, drag, then let go when it is the "
-"size you want. Move around to rotate it, and click to draw it."
-msgstr ""
-"เลือกรูปทรง คลิ๊กตรงจุดศูนย์กลาง วาง จากนั้นทำให้ได้รูปร่างที่เราต้องการ ย้ายไปรอบๆ เพื่อหมุน "
-"แล้วคลิ๊กเพื่อวาดรูปนั้น"
+msgid "Pick a shape. Click to pick the center, drag, then let go when it is the size you want. Move around to rotate it, and click to draw it."
+msgstr "เลือกรูปร่าง คลิกที่จุดศูนย์กลาง ลาก แล้วปล่อยเมาส์เมื่อได้ขนาดที่ต้องการ จากนั้น ขยับไปรอบๆ เพื่อหมุน แล้วคลิกเพื่อวาดรูปนั้น"
 
 msgid "Choose a style of text. Click on your drawing and you can start typing."
-msgstr "เลือกรูปแบบอักษร คลิ๊กที่รูปแล้วเธอก็เริ่มพิมพ์"
+msgstr "เลือกรูปแบบอักษร คลิกที่รูปแล้วก็เริ่มพิมพ์ข้อความ"
 
 msgid "Pick a magical effect to use on your drawing!"
-msgstr "เลือกเวทมนต์ที่เธอต้องการสำหรับวาดรูป"
+msgstr "เลือกชนิดของเวทมนตร์สำหรับวาดรูป"
 
 #. Undo
 msgid "Undo!"
-msgstr "ไม่เอา"
+msgstr "เรียกคืนนะ!"
 
 #. Redo
 msgid "Redo!"
-msgstr "เอาอีก"
+msgstr "ทำอีกครั้งนะ!"
 
 #. Eraser
 msgid "Eraser!"
@@ -360,60 +353,60 @@ msgstr "ลบนะ!"
 
 #. New
 msgid "You now have a blank sheet to draw on!"
-msgstr "ตอนนี้คุณมีที่ว่างสำหรับวาดรูป"
+msgstr "สร้างกระดาษเปล่าสำหรับวาดรูป!"
 
 #. Open
 msgid "Open…"
-msgstr "เปิด"
+msgstr "เปิด…"
 
 #. Save
 msgid "Your image has been saved!"
-msgstr "รูปของคุณบันทึกแล้ว"
+msgstr "รูปของคุณบันทึกแล้ว!"
 
 #. Print
 msgid "Printing…"
-msgstr "กำลังพิมพ์"
+msgstr "กำลังพิมพ์…"
 
 #. Quit
 msgid "Bye bye!"
-msgstr "บ้าย บาย"
+msgstr "บ๊าย บาย!"
 
 msgid "Let go of the button to complete the line."
-msgstr "ให้ออกจากปุ่มเพื่อทำให้เกิดเส้น"
+msgstr "ปล่อยปุ่มเพื่อลากเส้น"
 
 msgid "Hold the button to stretch the shape."
-msgstr "กดปุ่มค้างเพื่อเพื่อสร้างรูปทรง"
+msgstr "กดปุ่มค้างเพื่อเพื่อยืดรูปร่าง"
 
 msgid "Move the mouse to rotate the shape. Click to draw it."
-msgstr "ขยับเม้าส์เพื่อหมุนรูปทรง คลิ๊กเพื่อวาดมัน"
+msgstr "ขยับเมาส์เพื่อหมุนรูปร่าง แล้วคลิกเพื่อวาด"
 
 msgid "OK then… Let’s keep drawing this one!"
-msgstr "ตกลงเก็บรูปภาพนี้ไว้"
+msgstr "ตกลง จากนั้น..... วาดรูปนี้ต่อ"
 
 #. FIXME: Move elsewhere!!!
 msgid "Do you really want to quit?"
-msgstr "แน่ใจนะว่าต้องการออกจากโปรแกรม"
+msgstr "แน่ใจนะว่าต้องการออกจากโปรแกรม?"
 
 msgid "Yes, I'm done!"
-msgstr ""
+msgstr "ใช่ ฉันทำเสร็จแล้ว"
 
 msgid "No, take me back!"
-msgstr ""
+msgstr "ไม่ นำฉันกลับ"
 
 msgid "If you quit, you’ll lose your picture! Save it?"
-msgstr "ถ้าเธอออก ภาพของเธอจะหาย บันทึกหรือไม่"
+msgstr "ถ้าเธอออก ภาพของเธอจะหาย บันทึกหรือไม่?"
 
 msgid "Yes, save it!"
-msgstr ""
+msgstr "ใช่ บันทึกมัน"
 
 msgid "No, don't bother saving!"
-msgstr ""
+msgstr "ไม่ อย่าเสียเวลาในการบันทึก"
 
 msgid "Save your picture first?"
-msgstr "บันทึกภาพก่อนหรือไม่"
+msgstr "บันทึกภาพก่อนหรือไม่?"
 
 msgid "Can’t open that picture!"
-msgstr "ไม่สามารถเปิดรูปได้"
+msgstr "ไม่สามารถเปิดรูปได้!"
 
 msgid "OK"
 msgstr "ตกลง"
@@ -421,26 +414,25 @@ msgstr "ตกลง"
 #. This will be replaced with a dialog allowing color choice and Starter
 #. picking, with a "Back" option to dismiss the "New" and return to
 #. the current picture.  But for now...  (bjk 2006.02.19)
-#, fuzzy
 msgid "Start a new picture?"
-msgstr "ลบรูปนี้หรือไม่?"
+msgstr "จะเริ่มด้วยรูปใหม่หรือไม่?"
 
 #. #define PROMPT_NEW_YES gettext_noop("That’s OK!")
 #. #define PROMPT_NEW_NO gettext_noop("Never mind!")
 msgid "Yes, let's start fresh!"
-msgstr ""
+msgstr "ใช่ เริ่มด้วยรูปใหม่"
 
 msgid "There are no saved files!"
 msgstr "ไม่มีข้อมูลที่บันทึกไว้เลย"
 
 msgid "Print your picture now?"
-msgstr "พิมพ์รูปตอนนี้หรือไม่"
+msgstr "พิมพ์รูปตอนนี้หรือไม่?"
 
 msgid "Yes, print it!"
-msgstr ""
+msgstr "ใช่ พิมพ์มันออกมา"
 
 msgid "Your picture has been printed!"
-msgstr "รูปของคุณกำลังพิมพ์"
+msgstr "พิมพ์รูปของคุณเสร็จแล้ว"
 
 msgid "You can’t print yet!"
 msgstr "ยังไม่สามารถพิมพ์ได้ตอนนี้"
@@ -449,16 +441,16 @@ msgid "Erase this picture?"
 msgstr "ลบรูปนี้หรือไม่?"
 
 msgid "Yes, erase it!"
-msgstr ""
+msgstr "ใช่ ลบมัน"
 
 msgid "No, don't erase it!"
-msgstr ""
+msgstr "ไม่! อย่าลบมัน"
 
 msgid "Remember to use the left mouse button!"
-msgstr "โปรดจำไว้ว่าใช้เม้าปุ่มซ้าย"
+msgstr "โปรดจำไว้ว่าใช้เมาส์ปุ่มซ้าย"
 
 msgid "Please wait..."
-msgstr ""
+msgstr "โปรดรอ ........"
 
 msgid "Erase"
 msgstr "ลบ"
@@ -479,17 +471,16 @@ msgstr "ไม่"
 #. FIXME: Move elsewhere!!!
 #. #define PROMPT_SAVE_OVER_TXT gettext_noop("Save over the older version of this picture?")
 msgid "Replace the picture with your changes?"
-msgstr ""
+msgstr "บันทึกรูปที่เธอแก้ใขหรือไม่?"
 
 msgid "Yes, replace the old one!"
-msgstr ""
+msgstr "ใช่, ทับอันเดิม"
 
-#, fuzzy
 msgid "No, save a new file!"
-msgstr "ไม่ บันทึกเป็นแฟ้มใหม่"
+msgstr "ไม่! บันทึกเป็นแฟ้มใหม่"
 
 msgid "Choose the picture you want, then click “Open”."
-msgstr "เลือกรูปที่เธอต้องการจากนั้นคลิ๊ก เปิด"
+msgstr "เลือกรูปที่เธอต้องการ จากนั้นคลิก “เปิด”"
 
 msgid "A drawing program for children."
 msgstr "โปรแกรมวาดรูปสำหรับเด็ก"
@@ -500,20 +491,12 @@ msgstr "โปรแกรมวาดรูป"
 msgid "Tux Paint"
 msgstr "ทักซ์สอนวาดรูป"
 
-#~ msgid "Starting a new picture will erase the current one!"
-#~ msgstr "ถ้าเริ่มรูปใหม่ตอนนี้ มันจะลบรูปเดิม"
+msgid "Starting a new picture will erase the current one!"
+msgstr "ถ้าหากเธอเริ่มรูปใหม่ รูปนี้จะหายไปนะ!"
 
-#~ msgid "That’s OK!"
-#~ msgstr "อืม...ดี "
+msgid "That’s OK!"
+msgstr "เอาเลย!"
 
-#~ msgid "Never mind!"
-#~ msgstr "ไม่เป็นไร"
+msgid "Never mind!"
+msgstr "งั้น ช่างมันเถอะ"
 
-#~ msgid "jq"
-#~ msgstr "jq"
-
-#~ msgid "JQ"
-#~ msgstr "JQ"
-
-#~ msgid "Save over the older version of this picture?"
-#~ msgstr "บันทึกทับรูปเดิมหรือไม่"
