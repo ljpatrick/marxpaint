@@ -22,7 +22,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
   
-  June 14, 2002 - June 2, 2006
+  June 14, 2002 - August 26, 2006
   $Id$
 */
 
@@ -75,6 +75,8 @@
 #else
 #error No alt print method defined!
 #endif
+
+#define MAX_PATH 256
 
 
 /* Compile-time options: */
@@ -880,6 +882,7 @@ typedef struct stamp_type {
   char *stxt;
 #ifndef NOSOUND
   Mix_Chunk *ssnd;
+  Mix_Chunk *sdesc;
 #endif
 
   SDL_Surface *thumbnail;
@@ -890,6 +893,7 @@ typedef struct stamp_type {
   unsigned processed : 1;  // got *.dat, computed size limits, etc.
 
   unsigned no_sound : 1;
+  unsigned no_descsound : 1;
   unsigned no_txt : 1;
 //  unsigned no_local_sound : 1;  // to remember, if code written to discard sound
 
@@ -1070,6 +1074,8 @@ static char * loaddesc(const char * const fname);
 static double loadinfo(const char * const fname, stamp_type *inf);
 #ifndef NOSOUND
 static Mix_Chunk * loadsound(const char * const fname);
+static Mix_Chunk * loaddescsound(const char * const fname);
+static void playstampdesc(int chan);
 #endif
 static void do_wait(int counter);
 static void load_current(void);
@@ -1137,6 +1143,7 @@ static int charsize(char c);
 #define MAX_UTF8_CHAR_LENGTH 6
 
 #define USEREVENT_TEXT_UPDATE 1
+#define USEREVENT_PLAYDESCSOUND 2
 
 #define TP_SDL_MOUSEBUTTONSCROLL (SDL_USEREVENT + 1)
 
@@ -2439,11 +2446,33 @@ static void mainloop(void)
                       else if (cur_tool == TOOL_STAMP)
                         {
 #ifndef NOSOUND
-                          if (toolopt_changed)
+                          // Only play when picking a different stamp
+                          if (toolopt_changed && !mute)
                             {
-                              // Only play when picking a different stamp
-                              if (stamp_data[cur_thing]->ssnd != NULL && !mute)
+			      // If there's an SFX, play it!
+			      
+                              if (stamp_data[cur_thing]->ssnd != NULL)
+			      {
+                                Mix_ChannelFinished(NULL); // Prevents multiple clicks from toggling between SFX and desc sound, rather than always playing SFX first, then desc sound...
+
                                 Mix_PlayChannel(2, stamp_data[cur_thing]->ssnd, 0);
+
+				// If there's a description sound, play it after the SFX!
+				
+			        if (stamp_data[cur_thing]->sdesc != NULL)
+			        {
+                                  Mix_ChannelFinished(playstampdesc);
+			        }
+			      }
+			      else
+			      {
+				// No SFX?  If there's a description sound, play it now!
+
+				if (stamp_data[cur_thing]->sdesc != NULL)
+				{
+                                  Mix_PlayChannel(2, stamp_data[cur_thing]->sdesc, 0);
+				}
+			      }
                             }
 #endif
 
@@ -2845,6 +2874,25 @@ static void mainloop(void)
 		  else
 		    draw_tux_text(TUX_GREAT, "", 1);
 		}
+	      else if (event.user.code == USEREVENT_PLAYDESCSOUND)
+	      {
+		/* Play a stamp's spoken description (because the sound effect just finished) */
+		/* (This event is pushed into the queue by playstampdesc(), which
+		   is a callback from Mix_ChannelFinished() when playing a stamp SFX) */
+
+    		debug("Playing description sound...");
+
+		Mix_ChannelFinished(NULL); // Kill the callback, so we don't get stuck in a loop!
+
+		if (event.user.data1 != NULL)
+		{
+		  if ((int) event.user.data1 == cur_stamp) // Don't play old stamp's sound...
+		  {
+                    if (!mute && stamp_data[(int) event.user.data1]->sdesc != NULL)
+                      Mix_PlayChannel(2, stamp_data[(int) event.user.data1]->sdesc, 0);
+		  }
+		}
+	      }
 	    }
 	  else if (event.type == SDL_MOUSEBUTTONUP)
 	    {
@@ -5193,7 +5241,20 @@ static void get_stamp_thumb(stamp_type *sd)
       // damn thing wants a .png extension; give it one
       memcpy(buf+len, ".png", 5);
       sd->ssnd = loadsound(buf);
+      if (sd->ssnd == NULL)
+        printf("ssnd NULL!\n");
       sd->no_sound = !sd->ssnd;
+    }
+
+  // ...and the description
+  if(!sd->no_descsound && !sd->sdesc && use_sound)
+    {
+      // damn thing wants a .png extension; give it one
+      memcpy(buf+len, ".png", 5);
+      sd->sdesc = loaddescsound(buf);
+      if (sd->sdesc == NULL)
+        printf("sdesc NULL!\n");
+      sd->no_descsound = !sd->sdesc;
     }
 #endif
 
@@ -9099,18 +9160,36 @@ static void wordwrap_text(const char * const str, SDL_Color color,
 }
 
 
+#ifndef NOSOUND
+
+static void playstampdesc(int chan)
+{
+  static SDL_Event playsound_event;
+ 
+  if (chan == 2) // Only do this when the channel playing the stamp sfx has ended!
+  { 
+    debug("Stamp SFX ended. Pushing event to play description sound...");
+
+    playsound_event.type = SDL_USEREVENT;
+    playsound_event.user.code = USEREVENT_PLAYDESCSOUND;
+    playsound_event.user.data1 = (void*) cur_stamp;
+  
+    SDL_PushEvent(&playsound_event);
+  }
+}
+
+#endif
+
+
 /* Load a file's sound: */
 
 #ifndef NOSOUND
 
-static Mix_Chunk * loadsound(const char * const fname)
+static Mix_Chunk * loadsound_extra(const char * const fname, const char * extra)
 {
   char * snd_fname;
-  char tmp_str[64], ext[5];
+  char tmp_str[MAX_PATH], ext[5];
   Mix_Chunk * tmp_snd;
-
-
-  debug(fname);
 
 
   if (strcasestr(fname, ".png") != NULL)
@@ -9127,44 +9206,65 @@ static Mix_Chunk * loadsound(const char * const fname)
 
   /* First, check for localized version of sound: */
 
-  snd_fname = malloc(strlen(fname) + strlen(lang_prefix) + 2);
+  snd_fname = malloc(strlen(fname) + strlen(lang_prefix) + 16);
 
   strcpy(snd_fname, fname);
-  snprintf(tmp_str, sizeof(tmp_str), "_%s.wav", lang_prefix);
-
-
+  snprintf(tmp_str, sizeof(tmp_str), "%s_%s.ogg", extra, lang_prefix);
   strcpy((char *) strcasestr(snd_fname, ext), tmp_str);
   debug(snd_fname);
-
   tmp_snd = Mix_LoadWAV(snd_fname);
 
   if (tmp_snd == NULL)
   {
-    debug("...No local version of sound!");
-
-    /* Now, check for default sound: */
-
-    free(snd_fname);
-
-    snd_fname = strdup(fname);
-
-    strcpy((char *) strcasestr(snd_fname, ext), ".wav");
+    debug("...No local version of sound (OGG)!");
+    
+    strcpy(snd_fname, fname);
+    snprintf(tmp_str, sizeof(tmp_str), "%s_%s.wav", extra, lang_prefix);
+    strcpy((char *) strcasestr(snd_fname, ext), tmp_str);
     debug(snd_fname);
     tmp_snd = Mix_LoadWAV(snd_fname);
-    free(snd_fname);
 
     if (tmp_snd == NULL)
     {
-      debug("...No default version of sound!");
-      return NULL;
-    }
+      debug("...No local version of sound (WAV)!");
 
-    return (tmp_snd);
+      /* Now, check for default sound: */
+
+      strcpy(snd_fname, fname);
+      snprintf(tmp_str, sizeof(tmp_str), "%s.ogg", extra);
+      strcpy((char *) strcasestr(snd_fname, ext), tmp_str);
+      debug(snd_fname);
+      tmp_snd = Mix_LoadWAV(snd_fname);
+
+      if (tmp_snd == NULL)
+      {
+        debug("...No default version of sound (OGG)!");
+
+        strcpy(snd_fname, fname);
+        snprintf(tmp_str, sizeof(tmp_str), "%s.wav", extra);
+        strcpy((char *) strcasestr(snd_fname, ext), tmp_str);
+        debug(snd_fname);
+        tmp_snd = Mix_LoadWAV(snd_fname);
+
+	if (tmp_snd == NULL)
+          debug("...No default version of sound (WAV)!");
+      }
+    }
   }
-  else
-  {
-    return NULL;
-  }
+
+  free(snd_fname);
+  return (tmp_snd);
+}
+
+
+static Mix_Chunk * loadsound(const char * const fname)
+{
+  return(loadsound_extra(fname, ""));
+}
+
+static Mix_Chunk * loaddescsound(const char * const fname)
+{
+  return(loadsound_extra(fname, "_desc"));
 }
 
 #endif
@@ -10177,6 +10277,11 @@ static void cleanup(void)
         {
 	  Mix_FreeChunk(stamp_data[i]->ssnd);
 	  stamp_data[i]->ssnd = NULL;
+	}
+      if (stamp_data[i]->sdesc)
+        {
+	  Mix_FreeChunk(stamp_data[i]->sdesc);
+	  stamp_data[i]->sdesc = NULL;
 	}
 #endif
       if (stamp_data[i]->stxt)

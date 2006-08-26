@@ -37,6 +37,11 @@ $Id$
 
     * Sound effects take advantage of stereo.  (e.g., paint brush sounds come
       more from the left speaker when painting on the left.)
+
+    * Stamp sound effects may be in either OGG or WAV format.
+
+    * Stamps may now include a second sound effect, used as a spoken description.
+      (stampname_desc.ogg or .wav and localized stampname_desc_ll.ogg or .wav)
   
   * Tool improvements:
     ------------------------
