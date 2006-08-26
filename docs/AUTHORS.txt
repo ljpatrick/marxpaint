@@ -45,6 +45,34 @@ $Id$
   * Brushes created using The GIMP
     http://www.gimp.org/
 
+* Starter Images
+
+  * Chicken
+  * Jet Plane
+  * Rocket
+    Bill Kendrick <bill@newbreedsoftware.com>
+
+  * San Francisco at dusk
+    Public domain.  National Oceanic & Atmospheric Adminstration (NOAA)
+    http://www.photolib.noaa.gov/
+    Image ID: line1989, America's Coastlines Collection
+    Location: San Francisco Bay, California
+    Photographer: Rich Bourgerie, Oceanographer, CO-OPS, NOS, NOAA
+
+  * Coral reef
+    Public domain.  National Oceanic & Atmospheric Adminstration (NOAA)
+    http://www.photolib.noaa.gov/
+    Image ID: reef2583, The Coral Kingdom Collection
+    Photographer: Thomas K. Gibson
+    Credit: Florida Keys National Marine Sanctuary
+
+  * Shipwreck
+  * Tux the Farmer
+    Jim Trice <jimtrice@linuxmail.org>
+
+  * Street
+    Pere Pujal Carabantes <ppujal@airtel.net>
+
 
 * Fonts
 
