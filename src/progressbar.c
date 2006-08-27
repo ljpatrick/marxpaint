@@ -31,7 +31,7 @@
 #include "progressbar.h"
 #include "debug.h"
 
-SDL_Surface * img_progress;
+SDL_Surface *img_progress;
 int progress_bar_disabled, prog_bar_ctr;
 
 void show_progress_bar(SDL_Surface * screen)
@@ -41,33 +41,32 @@ void show_progress_bar(SDL_Surface * screen)
   static Uint32 oldtime;
   Uint32 newtime;
 
-  if(progress_bar_disabled)
+  if (progress_bar_disabled)
     return;
 
   newtime = SDL_GetTicks();
-  if(newtime > oldtime+15)  // trying not to eat some serious CPU time!
+  if (newtime > oldtime + 15)	// trying not to eat some serious CPU time!
+  {
+    for (x = 0; x < screen->w; x = x + 65)
     {
-      for (x = 0; x < screen->w; x = x + 65)
-        {
-          src.x = 65 - (prog_bar_ctr % 65);
-          src.y = 0;
-          src.w = 65;
-          src.h = 24;
+      src.x = 65 - (prog_bar_ctr % 65);
+      src.y = 0;
+      src.w = 65;
+      src.h = 24;
 
-          dest.x = x;
-          dest.y = screen->h - 24;
+      dest.x = x;
+      dest.y = screen->h - 24;
 
-          SDL_BlitSurface(img_progress, &src, screen, &dest);
-        }
-
-      prog_bar_ctr++;
-
-      SDL_UpdateRect(screen, 0, screen->h - 24, screen->w, 24);
+      SDL_BlitSurface(img_progress, &src, screen, &dest);
     }
+
+    prog_bar_ctr++;
+
+    SDL_UpdateRect(screen, 0, screen->h - 24, screen->w, 24);
+  }
   oldtime = newtime;
 
 
   /* FIXME: RESURRECT THIS (bjk 2006.02.18) */
   //eat_sdl_events();
 }
-

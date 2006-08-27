@@ -32,7 +32,7 @@
 #define GREAT_H
 
 
-const char * const great_strs[] = {
+const char *const great_strs[] = {
   gettext_noop("Great!"),
   gettext_noop("Cool!"),
   gettext_noop("Keep it up!"),

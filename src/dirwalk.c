@@ -4,7 +4,7 @@
 
 #include <stdio.h>
 #include <stdlib.h>
-#define __USE_GNU  /* for strcasestr() */
+#define __USE_GNU		/* for strcasestr() */
 #include <string.h>
 #include <locale.h>
 #include <libintl.h>
@@ -25,123 +25,123 @@
 
 ///////////////// directory walking callers and callbacks //////////////////
 
-void loadfont_callback(SDL_Surface * screen, const char *restrict const dir, unsigned dirlen, tp_ftw_str *files, unsigned i)
+void loadfont_callback(SDL_Surface * screen, const char *restrict const dir,
+		       unsigned dirlen, tp_ftw_str * files, unsigned i)
 {
   dirlen = dirlen;
 
-  while(i--)
+  while (i--)
+  {
+    int loadable = 0;
+    const char *restrict const cp = strchr(files[i].str, '.');
+    show_progress_bar(screen);
+    if (cp)
     {
-      int loadable = 0;
-      const char *restrict const cp = strchr(files[i].str, '.');
-      show_progress_bar(screen);
-      if(cp)
-        {
-          // need gcc 3.4 for the restrict in this location
-          const char * /*restrict*/ const suffixes[] = {"ttc", "dfont", "pfa", "pfb", "otf", "ttf",};
-          int j = sizeof suffixes / sizeof suffixes[0];
-          while(j--)
-            {
-              // only check part, because of potential .gz or .bz2 suffix
-              if(!strncasecmp(cp+1,suffixes[j],strlen(suffixes[j])))
-                {
-                  loadable = 1;
-                  break;
-                }
-            }
-        }
-      if(!loadable)
-        {
-          if(strcasestr(files[i].str, "/rsrc"))
-            loadable = 1;
-        }
-      // Loadable: TrueType (.ttf), OpenType (.otf), Type1 (.pfa and .pfb),
-      // and various useless bitmap fonts. Compressed files (with .gz or .bz2)
-      // should also work. A *.dfont is pretty much a Mac resource fork in a normal
-      // file, and may load with some library versions.
-      if (loadable)
-        {
-          char fname[512];
-          TTF_Font *font;
-          snprintf(fname, sizeof fname, "%s/%s", dir, files[i].str);
+      // need gcc 3.4 for the restrict in this location
+      const char * /*restrict */ const suffixes[] =
+	{ "ttc", "dfont", "pfa", "pfb", "otf", "ttf", };
+      int j = sizeof suffixes / sizeof suffixes[0];
+      while (j--)
+      {
+	// only check part, because of potential .gz or .bz2 suffix
+	if (!strncasecmp(cp + 1, suffixes[j], strlen(suffixes[j])))
+	{
+	  loadable = 1;
+	  break;
+	}
+      }
+    }
+    if (!loadable)
+    {
+      if (strcasestr(files[i].str, "/rsrc"))
+	loadable = 1;
+    }
+    // Loadable: TrueType (.ttf), OpenType (.otf), Type1 (.pfa and .pfb),
+    // and various useless bitmap fonts. Compressed files (with .gz or .bz2)
+    // should also work. A *.dfont is pretty much a Mac resource fork in a normal
+    // file, and may load with some library versions.
+    if (loadable)
+    {
+      char fname[512];
+      TTF_Font *font;
+      snprintf(fname, sizeof fname, "%s/%s", dir, files[i].str);
 //printf("Loading font: %s\n", fname);
-          font = TTF_OpenFont(fname, text_sizes[text_size]);
-          if(font)
-            {
-              const char *restrict const family = TTF_FontFaceFamilyName(font);
-              const char *restrict const style = TTF_FontFaceStyleName(font);
+      font = TTF_OpenFont(fname, text_sizes[text_size]);
+      if (font)
+      {
+	const char *restrict const family = TTF_FontFaceFamilyName(font);
+	const char *restrict const style = TTF_FontFaceStyleName(font);
 
 
 #ifdef DEBUG
-              int numfaces = TTF_FontFaces(font);
-              if (numfaces != 1)
-                printf("Found %d faces in %s, %s, %s\n", numfaces, files[i].str, family, style);
+	int numfaces = TTF_FontFaces(font);
+	if (numfaces != 1)
+	  printf("Found %d faces in %s, %s, %s\n", numfaces, files[i].str,
+		 family, style);
 #endif
 
-              // First, the blacklist. We list font families that can crash Tux Paint
-              // via bugs in the SDL_ttf library. We also test fonts to be sure that
-              // they have both uppercase and lowercase letters. Note that we do not
-              // test for "Aa", because it is OK if uppercase and lowercase are the
-              // same. (but not nice -- such fonts get a low score later)
-              //
-              // We test the alphabet twice, to help with translation. If the users
-              // will be unable to type ASCII letters, then both lines should be
-              // translated. Otherwise, only Line X should be translated and the
-              // ASCII-only fonts should be given bad scores in the scoring code below.
-              // (the best scores going to fonts that support both)
-              if
-                (
-                  strcmp("Zapfino",family) && strcmp("Elvish Ring NFI",family)
-                  &&
-                  (
-                  (charset_works(font, gettext("qx")) && charset_works(font, gettext("QX")))  // Line X
-                  ||
-                  (charset_works(font, gettext("qy")) && charset_works(font, gettext("QY")))  // Line Y
-                  )
-                )
-                {
-                  if (num_font_styles==num_font_styles_max)
-                    {
-                      num_font_styles_max = num_font_styles_max * 5 / 4 + 30;
-                      user_font_styles = realloc(user_font_styles, num_font_styles_max * sizeof *user_font_styles);
-                    }
-                  user_font_styles[num_font_styles] = malloc(sizeof *user_font_styles[num_font_styles]);
-                  user_font_styles[num_font_styles]->directory = strdup(dir);
-                  user_font_styles[num_font_styles]->filename = files[i].str; // steal it (mark NULL below)
-                  user_font_styles[num_font_styles]->family = strdup(family);
-                  user_font_styles[num_font_styles]->style = strdup(style);
-                  // Now we score fonts to ensure that the best ones will be placed at
-                  // the top of the list. The user will see them first. This sorting is
-                  // especially important for users who have scroll buttons disabled.
-                  // Translators should do whatever is needed to put crummy fonts last.
-                  user_font_styles[num_font_styles]->score  = charset_works(font, gettext("oO"));  // distinct uppercase and lowercase
-                  user_font_styles[num_font_styles]->score += charset_works(font, gettext("`\%_@$~#{}<>^&*"));  // uncommon punctuation
-                  user_font_styles[num_font_styles]->score += charset_works(font, gettext(",.?!"));  // common punctuation
-                  user_font_styles[num_font_styles]->score += charset_works(font, gettext("017"));  // digits
-                  user_font_styles[num_font_styles]->score += charset_works(font, gettext("O0"));  // distinct circle-like characters
-                  user_font_styles[num_font_styles]->score += charset_works(font, gettext("1Il|")); // distinct line-like characters
-                  num_font_styles++;
+	// First, the blacklist. We list font families that can crash Tux Paint
+	// via bugs in the SDL_ttf library. We also test fonts to be sure that
+	// they have both uppercase and lowercase letters. Note that we do not
+	// test for "Aa", because it is OK if uppercase and lowercase are the
+	// same. (but not nice -- such fonts get a low score later)
+	//
+	// We test the alphabet twice, to help with translation. If the users
+	// will be unable to type ASCII letters, then both lines should be
+	// translated. Otherwise, only Line X should be translated and the
+	// ASCII-only fonts should be given bad scores in the scoring code below.
+	// (the best scores going to fonts that support both)
+	if (strcmp("Zapfino", family) && strcmp("Elvish Ring NFI", family) && ((charset_works(font, gettext("qx")) && charset_works(font, gettext("QX")))	// Line X
+									       || (charset_works(font, gettext("qy")) && charset_works(font, gettext("QY")))	// Line Y
+	    ))
+	{
+	  if (num_font_styles == num_font_styles_max)
+	  {
+	    num_font_styles_max = num_font_styles_max * 5 / 4 + 30;
+	    user_font_styles =
+	      realloc(user_font_styles,
+		      num_font_styles_max * sizeof *user_font_styles);
+	  }
+	  user_font_styles[num_font_styles] =
+	    malloc(sizeof *user_font_styles[num_font_styles]);
+	  user_font_styles[num_font_styles]->directory = strdup(dir);
+	  user_font_styles[num_font_styles]->filename = files[i].str;	// steal it (mark NULL below)
+	  user_font_styles[num_font_styles]->family = strdup(family);
+	  user_font_styles[num_font_styles]->style = strdup(style);
+	  // Now we score fonts to ensure that the best ones will be placed at
+	  // the top of the list. The user will see them first. This sorting is
+	  // especially important for users who have scroll buttons disabled.
+	  // Translators should do whatever is needed to put crummy fonts last.
+	  user_font_styles[num_font_styles]->score = charset_works(font, gettext("oO"));	// distinct uppercase and lowercase
+	  user_font_styles[num_font_styles]->score += charset_works(font, gettext("`\%_@$~#{}<>^&*"));	// uncommon punctuation
+	  user_font_styles[num_font_styles]->score += charset_works(font, gettext(",.?!"));	// common punctuation
+	  user_font_styles[num_font_styles]->score += charset_works(font, gettext("017"));	// digits
+	  user_font_styles[num_font_styles]->score += charset_works(font, gettext("O0"));	// distinct circle-like characters
+	  user_font_styles[num_font_styles]->score += charset_works(font, gettext("1Il|"));	// distinct line-like characters
+	  num_font_styles++;
 //printf("Accepted: %s, %s, %s, score(%d)\n", files[i].str, family, style, user_font_styles[num_font_styles]->score);
-                  files[i].str = NULL;  // so free() won't crash -- we stole the memory
-                }
-              else
-                {
+	  files[i].str = NULL;	// so free() won't crash -- we stole the memory
+	}
+	else
+	{
 #if 0
 // THREADED_FONTS
-                  printf("Font is too defective: %s, %s, %s\n", files[i].str, family, style);
+	  printf("Font is too defective: %s, %s, %s\n", files[i].str, family,
+		 style);
 #endif
-                }
-              TTF_CloseFont(font);
-            }
-          else
-            {
+	}
+	TTF_CloseFont(font);
+      }
+      else
+      {
 #if 0
 // THREADED_FONTS
-              printf("could not open %s\n", files[i].str);
+	printf("could not open %s\n", files[i].str);
 #endif
-            }
-        }
-      free(files[i].str);
+      }
     }
+    free(files[i].str);
+  }
   free(files);
 }
 
@@ -149,14 +149,16 @@ void loadfont_callback(SDL_Surface * screen, const char *restrict const dir, uns
 // For qsort()
 int compare_ftw_str(const void *v1, const void *v2)
 {
-  const char *restrict const s1 = ((tp_ftw_str*)v1)->str;
-  const char *restrict const s2 = ((tp_ftw_str*)v2)->str;
+  const char *restrict const s1 = ((tp_ftw_str *) v1)->str;
+  const char *restrict const s2 = ((tp_ftw_str *) v2)->str;
   return -strcmp(s1, s2);
 }
 
-void tp_ftw(SDL_Surface * screen, char *restrict const dir, unsigned dirlen, int rsrc,
-  void (*fn)(SDL_Surface * screen, const char *restrict const dir, unsigned dirlen, tp_ftw_str *files, unsigned count)
-  )
+void tp_ftw(SDL_Surface * screen, char *restrict const dir, unsigned dirlen,
+	    int rsrc, void (*fn) (SDL_Surface * screen,
+				  const char *restrict const dir,
+				  unsigned dirlen, tp_ftw_str * files,
+				  unsigned count))
 {
   DIR *d;
   unsigned num_file_names = 0;
@@ -176,124 +178,124 @@ void tp_ftw(SDL_Surface * screen, char *restrict const dir, unsigned dirlen, int
   if (!d)
     return;
 
-  for(;;)
-    {
-      struct dirent * f = readdir(d);
-      int filetype = TP_FTW_UNKNOWN;
+  for (;;)
+  {
+    struct dirent *f = readdir(d);
+    int filetype = TP_FTW_UNKNOWN;
 
-      if(!f)
-        break;
-      if(f->d_name[0]=='.')
-        continue;
+    if (!f)
+      break;
+    if (f->d_name[0] == '.')
+      continue;
 // Linux and BSD can often provide file type info w/o the stat() call
 #ifdef DT_UNKNOWN
-      switch(f->d_type)
-        {
-          default:
-            continue;
-          case DT_REG:
-            if(!rsrc)  // if maybe opening resource files, need st_size
-              filetype = TP_FTW_NORMAL;
-            break;
-          case DT_DIR:
-            filetype = TP_FTW_DIRECTORY;
-            break;
-          case DT_UNKNOWN:
-          case DT_LNK:
-            ;
-        }
+    switch (f->d_type)
+    {
+    default:
+      continue;
+    case DT_REG:
+      if (!rsrc)		// if maybe opening resource files, need st_size
+	filetype = TP_FTW_NORMAL;
+      break;
+    case DT_DIR:
+      filetype = TP_FTW_DIRECTORY;
+      break;
+    case DT_UNKNOWN:
+    case DT_LNK:
+      ;
+    }
 #else
 #warning Failed to see DT_UNKNOWN
 #endif
 
 #if defined(_DIRENT_HAVE_D_NAMLEN) || defined(__APPLE__) || defined(__OpenBSD__) || defined(__NetBSD__) || defined(__FreeBSD__)
-      d_namlen = f->d_namlen;
+    d_namlen = f->d_namlen;
 #else
-      d_namlen = strlen(f->d_name);
+    d_namlen = strlen(f->d_name);
 #endif
-      add_rsrc = 0;
+    add_rsrc = 0;
 
-      if(filetype == TP_FTW_UNKNOWN)
-        {
-          struct stat sbuf;
-          memcpy(dir+dirlen, f->d_name, d_namlen+1);
-          if(stat(dir, &sbuf))
-            continue;  // oh well... try the next one
-          if(S_ISDIR(sbuf.st_mode))
-            filetype = TP_FTW_DIRECTORY;
-          else if(S_ISREG(sbuf.st_mode))
-            {
-              filetype = TP_FTW_NORMAL;
-              if(rsrc && !sbuf.st_size)
-                add_rsrc = 5;  // 5 is length of "/rsrc"
-            }
-          else
-            continue;  // was a device file or somesuch
-        }
-      if(filetype==TP_FTW_NORMAL)
-        {
-          char *cp;
-
-          if(num_file_names==max_file_names)
-            {
-              max_file_names = max_file_names * 5 / 4 + 30;
-              file_names = realloc(file_names, max_file_names * sizeof *file_names);
-            }
-          cp = malloc(d_namlen + add_rsrc + 1);
-          memcpy(cp, f->d_name, d_namlen);
-          if(add_rsrc)
-            memcpy(cp+d_namlen, "/rsrc", 6);
-          else
-            cp[d_namlen] = '\0';
-          file_names[num_file_names].str = cp;
-          file_names[num_file_names].len = d_namlen;
-          num_file_names++;
-        }
-      if(filetype==TP_FTW_DIRECTORY)
-        {
-          char * cp;
-          if(num_dir_names==max_dir_names)
-            {
-              max_dir_names = max_dir_names * 5 / 4 + 3;
-              dir_names = realloc(dir_names, max_dir_names * sizeof *dir_names);
-            }
-          cp = malloc(d_namlen + 1);
-          memcpy(cp, f->d_name, d_namlen + 1);
-          dir_names[num_dir_names].str = cp;
-          dir_names[num_dir_names].len = d_namlen;
-          num_dir_names++;
-        }
+    if (filetype == TP_FTW_UNKNOWN)
+    {
+      struct stat sbuf;
+      memcpy(dir + dirlen, f->d_name, d_namlen + 1);
+      if (stat(dir, &sbuf))
+	continue;		// oh well... try the next one
+      if (S_ISDIR(sbuf.st_mode))
+	filetype = TP_FTW_DIRECTORY;
+      else if (S_ISREG(sbuf.st_mode))
+      {
+	filetype = TP_FTW_NORMAL;
+	if (rsrc && !sbuf.st_size)
+	  add_rsrc = 5;		// 5 is length of "/rsrc"
+      }
+      else
+	continue;		// was a device file or somesuch
     }
+    if (filetype == TP_FTW_NORMAL)
+    {
+      char *cp;
+
+      if (num_file_names == max_file_names)
+      {
+	max_file_names = max_file_names * 5 / 4 + 30;
+	file_names = realloc(file_names, max_file_names * sizeof *file_names);
+      }
+      cp = malloc(d_namlen + add_rsrc + 1);
+      memcpy(cp, f->d_name, d_namlen);
+      if (add_rsrc)
+	memcpy(cp + d_namlen, "/rsrc", 6);
+      else
+	cp[d_namlen] = '\0';
+      file_names[num_file_names].str = cp;
+      file_names[num_file_names].len = d_namlen;
+      num_file_names++;
+    }
+    if (filetype == TP_FTW_DIRECTORY)
+    {
+      char *cp;
+      if (num_dir_names == max_dir_names)
+      {
+	max_dir_names = max_dir_names * 5 / 4 + 3;
+	dir_names = realloc(dir_names, max_dir_names * sizeof *dir_names);
+      }
+      cp = malloc(d_namlen + 1);
+      memcpy(cp, f->d_name, d_namlen + 1);
+      dir_names[num_dir_names].str = cp;
+      dir_names[num_dir_names].len = d_namlen;
+      num_dir_names++;
+    }
+  }
 
   closedir(d);
   show_progress_bar(screen);
-  dir[dirlen] = '\0';   // repair it (clobbered for stat() call above)
+  dir[dirlen] = '\0';		// repair it (clobbered for stat() call above)
 
-  if(file_names)
-    {
+  if (file_names)
+  {
 // let callee sort and keep the string
 #if 0
-      qsort(file_names, num_file_names, sizeof *file_names, compare_ftw_str);
-      while(num_file_names--)
-        {
-          free(file_names[num_file_names].str);
-        }
-      free(file_names);
-#else
-      fn(screen, dir, dirlen, file_names, num_file_names);
-#endif
-    }
-
-  if(dir_names)
+    qsort(file_names, num_file_names, sizeof *file_names, compare_ftw_str);
+    while (num_file_names--)
     {
-      qsort(dir_names, num_dir_names, sizeof *dir_names, compare_ftw_str);
-      while(num_dir_names--)
-        {
-          memcpy(dir+dirlen, dir_names[num_dir_names].str, dir_names[num_dir_names].len+1);
-          tp_ftw(screen, dir, dirlen+dir_names[num_dir_names].len, rsrc, fn);
-          free(dir_names[num_dir_names].str);
-        }
-      free(dir_names);
+      free(file_names[num_file_names].str);
     }
-}
+    free(file_names);
+#else
+    fn(screen, dir, dirlen, file_names, num_file_names);
+#endif
+  }
 
+  if (dir_names)
+  {
+    qsort(dir_names, num_dir_names, sizeof *dir_names, compare_ftw_str);
+    while (num_dir_names--)
+    {
+      memcpy(dir + dirlen, dir_names[num_dir_names].str,
+	     dir_names[num_dir_names].len + 1);
+      tp_ftw(screen, dir, dirlen + dir_names[num_dir_names].len, rsrc, fn);
+      free(dir_names[num_dir_names].str);
+    }
+    free(dir_names);
+  }
+}

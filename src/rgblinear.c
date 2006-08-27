@@ -30,18 +30,16 @@
 #include "rgblinear.h"
 #include "debug.h"
 
-unsigned char linear_to_sRGB (float linear)
+unsigned char linear_to_sRGB(float linear)
 {
   unsigned slot;
-  slot = linear*4096.0 + 0.5;
-  if(slot>4095)
-    {
-      if(linear>0.5)
-        slot = 4095;
-      else
-        slot = 0;
-    }
+  slot = linear * 4096.0 + 0.5;
+  if (slot > 4095)
+  {
+    if (linear > 0.5)
+      slot = 4095;
+    else
+      slot = 0;
+  }
   return linear_to_sRGB_table[slot];
 }
-
-

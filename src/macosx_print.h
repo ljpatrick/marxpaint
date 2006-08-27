@@ -24,6 +24,4 @@
 
 #include "SDL.h"
 
-const char* SurfacePrint (SDL_Surface *surface, int showDialog);
-
-
+const char *SurfacePrint(SDL_Surface * surface, int showDialog);

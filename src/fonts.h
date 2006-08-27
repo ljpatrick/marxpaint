@@ -31,10 +31,10 @@
 #define SDL_WaitThread(tid,rcp) do{(void)tid;(void)rcp;}while(0)
 #define SDL_Thread int
 #define SDL_mutex int
-#define SDL_CreateMutex() 0  // creates in released state
+#define SDL_CreateMutex() 0	// creates in released state
 #define SDL_DestroyMutex(lock)
-#define SDL_mutexP(lock)  // take lock
-#define SDL_mutexV(lock)  // release lock
+#define SDL_mutexP(lock)	// take lock
+#define SDL_mutexV(lock)	// release lock
 #endif
 
 extern SDL_Thread *font_thread;
@@ -48,11 +48,11 @@ extern int no_system_fonts;
 extern int was_bad_font;
 
 
-TTF_Font *BUGFIX_TTF_OpenFont206(const char * const file, int ptsize);
+TTF_Font *BUGFIX_TTF_OpenFont206(const char *const file, int ptsize);
 #define TTF_OpenFont    BUGFIX_TTF_OpenFont206
 
 TTF_Font *try_alternate_font(int size);
-TTF_Font *load_locale_font(TTF_Font *fallback, int size);
+TTF_Font *load_locale_font(TTF_Font * fallback, int size);
 int load_user_fonts(SDL_Surface * screen, void *vp);
 
 #ifdef FORKED_FONTS
@@ -78,25 +78,29 @@ extern unsigned text_size;
 // nice progression (alternating 33% and 25%) 9 12 18 24 36 48 72 96 144 192
 // commonly hinted sizes seem to be: 9, 10, 12, 14, 18, 20 (less so), 24
 // reasonable: 9,12,18... and 10,14,18...
-static int text_sizes[] = {9, 12, 18, 24, 36, 48,
-                           56, 64, 96, 112, 128, 160};  // point sizes
+static int text_sizes[] = { 9, 12, 18, 24, 36, 48,
+  56, 64, 96, 112, 128, 160
+};				// point sizes
+
 #define MIN_TEXT_SIZE 0u
 #define MAX_TEXT_SIZE (sizeof text_sizes / sizeof text_sizes[0] - 1)
 
 // for sorting through the font files at startup
-typedef struct style_info {
+typedef struct style_info
+{
   char *filename;
   char *directory;
-  char *family;    // name like "FooCorp Thunderstruck"
-  char *style;     // junk like "Oblique Demi-Bold"
+  char *family;			// name like "FooCorp Thunderstruck"
+  char *style;			// junk like "Oblique Demi-Bold"
   int italic;
   int boldness;
   int score;
-  int truetype; // Is it? (TrueType gets priority)
+  int truetype;			// Is it? (TrueType gets priority)
 } style_info;
 
 // user's notion of a font
-typedef struct family_info {
+typedef struct family_info
+{
   char *directory;
   char *family;
   char *filename[4];
@@ -104,7 +108,7 @@ typedef struct family_info {
   int score;
 } family_info;
 
-extern TTF_Font * medium_font, * small_font, * large_font, * locale_font;
+extern TTF_Font *medium_font, *small_font, *large_font, *locale_font;
 
 extern family_info **user_font_families;
 extern int num_font_families;
@@ -118,17 +122,16 @@ extern int num_font_styles_max;
 int compar_fontgroup(const void *v1, const void *v2);
 int compar_fontkiller(const void *v1, const void *v2);
 int compar_fontscore(const void *v1, const void *v2);
-void parse_font_style(style_info *si);
-void groupfonts_range(style_info **base, int count);
-void dupe_markdown_range(family_info **base, int count);
+void parse_font_style(style_info * si);
+void groupfonts_range(style_info ** base, int count);
+void dupe_markdown_range(family_info ** base, int count);
 void groupfonts(void);
 TTF_Font *getfonthandle(int desire);
-void loadfonts(SDL_Surface * screen, const char * const dir);
+void loadfonts(SDL_Surface * screen, const char *const dir);
 
-int do_surfcmp(const SDL_Surface *const *const v1, const SDL_Surface *const *const v2);
+int do_surfcmp(const SDL_Surface * const *const v1,
+	       const SDL_Surface * const *const v2);
 int surfcmp(const void *s1, const void *s2);
-int charset_works(TTF_Font *font, const char *s);
+int charset_works(TTF_Font * font, const char *s);
 
 #endif
-
-

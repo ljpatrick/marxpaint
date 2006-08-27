@@ -30,11 +30,11 @@
 #include "cursor.h"
 #include "debug.h"
 
-#define UNUSED(arg) ((void)(arg)) 
+#define UNUSED(arg) ((void)(arg))
 
-SDL_Cursor * cursor_hand, * cursor_arrow, * cursor_watch,
-  * cursor_up, * cursor_down, * cursor_tiny, * cursor_crosshair,
-  * cursor_brush, * cursor_wand, * cursor_insertion, * cursor_rotate;
+SDL_Cursor *cursor_hand, *cursor_arrow, *cursor_watch,
+  *cursor_up, *cursor_down, *cursor_tiny, *cursor_crosshair,
+  *cursor_brush, *cursor_wand, *cursor_insertion, *cursor_rotate;
 
 int no_fancy_cursors;
 
@@ -73,8 +73,8 @@ void do_setcursor(SDL_Cursor * c)
 void free_cursor(SDL_Cursor ** cursor)
 {
   if (*cursor)
-    {
-      SDL_FreeCursor(*cursor);
-      *cursor = NULL;
-    }
+  {
+    SDL_FreeCursor(*cursor);
+    *cursor = NULL;
+  }
 }

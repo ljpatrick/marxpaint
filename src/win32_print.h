@@ -15,10 +15,9 @@
 #endif
 
 /* if printcfg is NULL, uses the default printer */
-extern const char *SurfacePrint( SDL_Surface *surf, 
-			         const char *printcfg, 
-			         int showdialog );
-extern int IsPrinterAvailable( void );
+extern const char *SurfacePrint(SDL_Surface * surf,
+				const char *printcfg, int showdialog);
+extern int IsPrinterAvailable(void);
 
 /* additional windows functions requiring <windows.h> */
 extern char *GetDefaultSaveDir(const char *suffix);

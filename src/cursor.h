@@ -65,9 +65,9 @@
 #include "arrow.xbm"
 #include "arrow-mask.xbm"
 
-extern SDL_Cursor * cursor_hand, * cursor_arrow, * cursor_watch,
-  * cursor_up, * cursor_down, * cursor_tiny, * cursor_crosshair,
-  * cursor_brush, * cursor_wand, * cursor_insertion, * cursor_rotate;
+extern SDL_Cursor *cursor_hand, *cursor_arrow, *cursor_watch,
+  *cursor_up, *cursor_down, *cursor_tiny, *cursor_crosshair,
+  *cursor_brush, *cursor_wand, *cursor_insertion, *cursor_rotate;
 
 extern int no_fancy_cursors;
 

@@ -35,59 +35,60 @@
 
 #define SND_NONE -1
 
-enum {
-  SND_HARP,          /* Begin / New */
-  SND_CLICK,         /* Tool selections */
-  SND_BLEEP,         /* Selector selection */
-  SND_BUBBLE,        /* Color selection */
-  SND_STAMP,         /* Using stamp tool */
-  SND_LINE_START,    /* Using line tool */
+enum
+{
+  SND_HARP,			/* Begin / New */
+  SND_CLICK,			/* Tool selections */
+  SND_BLEEP,			/* Selector selection */
+  SND_BUBBLE,			/* Color selection */
+  SND_STAMP,			/* Using stamp tool */
+  SND_LINE_START,		/* Using line tool */
   SND_LINE_END,
-  SND_SCROLL,        /* Selector scroll buttons */
-  SND_PAINT1,        /* Sound while painting */
+  SND_SCROLL,			/* Selector scroll buttons */
+  SND_PAINT1,			/* Sound while painting */
   SND_PAINT2,
   SND_PAINT3,
   SND_PAINT4,
-  SND_ERASER1,       /* Sound while erasing */
+  SND_ERASER1,			/* Sound while erasing */
   SND_ERASER2,
-  SND_SAVE,          /* Save sound effect */
-  SND_PROMPT,        /* Prompt animation sound effect */
-  SND_DRIP,          /* Magic drip */
-  SND_CHALK,         /* Magic chalk */
-  SND_SPARKLES1,     /* Magic sparkles */
+  SND_SAVE,			/* Save sound effect */
+  SND_PROMPT,			/* Prompt animation sound effect */
+  SND_DRIP,			/* Magic drip */
+  SND_CHALK,			/* Magic chalk */
+  SND_SPARKLES1,		/* Magic sparkles */
   SND_SPARKLES2,
-  SND_THICK,         /* Magic thick */
-  SND_THIN,          /* Magic thin */
-  SND_FLIP,          /* Magic flip */
-  SND_MIRROR,        /* Magic mirror */
-  SND_NEGATIVE,      /* Magic negative */
-  SND_BLUR,          /* Magic blur */
-  SND_BLOCKS,        /* Magic blocks */
-  SND_FADE,          /* Magic fade */
-  SND_DARKEN,        /* Magic darken */
-  SND_RAINBOW,       /* Magic rainbow */
-  SND_SMUDGE,        /* Magic smudge */
-  SND_TINT,          /* Magic tint */
-  SND_CARTOON,       /* Magic cartoon */
-  SND_BRICK,         /* Magic brick */
-  SND_GRASS,         /* Magic grass */
-  SND_KEYCLICK,      /* Text tool keyboard click feedback */
-  SND_KEYCLICKRING,  /* Text tool keyboard click feedback with bell ring */
-  SND_RETURN,        /* Text tool carriage return sound */
-  SND_SHRINK,        /* Stamp shrink */
-  SND_GROW,          /* Stamp grow */
-  SND_ITALIC_ON,     /* Italic on */
-  SND_ITALIC_OFF,    /* Italic off */
-  SND_AREYOUSURE,    /* "Are you sure?" */
-  SND_YOUCANNOT,     /* "No no no!" */
-  SND_TUXOK,         /* "Ok" */
+  SND_THICK,			/* Magic thick */
+  SND_THIN,			/* Magic thin */
+  SND_FLIP,			/* Magic flip */
+  SND_MIRROR,			/* Magic mirror */
+  SND_NEGATIVE,			/* Magic negative */
+  SND_BLUR,			/* Magic blur */
+  SND_BLOCKS,			/* Magic blocks */
+  SND_FADE,			/* Magic fade */
+  SND_DARKEN,			/* Magic darken */
+  SND_RAINBOW,			/* Magic rainbow */
+  SND_SMUDGE,			/* Magic smudge */
+  SND_TINT,			/* Magic tint */
+  SND_CARTOON,			/* Magic cartoon */
+  SND_BRICK,			/* Magic brick */
+  SND_GRASS,			/* Magic grass */
+  SND_KEYCLICK,			/* Text tool keyboard click feedback */
+  SND_KEYCLICKRING,		/* Text tool keyboard click feedback with bell ring */
+  SND_RETURN,			/* Text tool carriage return sound */
+  SND_SHRINK,			/* Stamp shrink */
+  SND_GROW,			/* Stamp grow */
+  SND_ITALIC_ON,		/* Italic on */
+  SND_ITALIC_OFF,		/* Italic off */
+  SND_AREYOUSURE,		/* "Are you sure?" */
+  SND_YOUCANNOT,		/* "No no no!" */
+  SND_TUXOK,			/* "Ok" */
   NUM_SOUNDS
 };
 
 
 /* Sound file filenames: */
 
-static const char * sound_fnames[NUM_SOUNDS] = {
+static const char *sound_fnames[NUM_SOUNDS] = {
   DATA_PREFIX "sounds/harp.wav",
   DATA_PREFIX "sounds/click.wav",
   DATA_PREFIX "sounds/bleep.wav",
@@ -136,4 +137,3 @@ static const char * sound_fnames[NUM_SOUNDS] = {
 };
 
 #endif
-

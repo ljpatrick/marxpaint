@@ -18,7 +18,8 @@
 
 /* What tuxes are available: */
 
-enum {
+enum
+{
   TUX_DEFAULT,
   TUX_KISS,
   TUX_BORED,
@@ -31,7 +32,7 @@ enum {
 
 /* Tux filenames: */
 
-const char * const tux_img_fnames[NUM_TIP_TUX] = {
+const char *const tux_img_fnames[NUM_TIP_TUX] = {
   DATA_PREFIX "images/tux/default.png",
   DATA_PREFIX "images/tux/kiss.png",
   DATA_PREFIX "images/tux/bored.png",

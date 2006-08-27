@@ -9,15 +9,15 @@
 #include "get_fname.h"
 #include "debug.h"
 
-char * savedir;
+char *savedir;
 
 
 /* The filename for the current image: */
 
-char * get_fname(const char * const name)
+char *get_fname(const char *const name)
 {
   char f[512];
-  const char * tux_settings_dir;
+  const char *tux_settings_dir;
 
 
   /* Where is the user's data directory?
@@ -54,46 +54,45 @@ char * get_fname(const char * const name)
   /* Put together home directory path + settings directory + filename... */
 
   if (savedir == NULL)
+  {
+    /* Save directory not overridden: */
+
+    if (getenv("HOME") != NULL)
     {
-      /* Save directory not overridden: */
+      if (*name == '\0')
+      {
+	/* (Some mkdir()'s don't like trailing slashes) */
 
-      if (getenv("HOME") != NULL)
-        {
-          if (*name == '\0')
-            {
-              /* (Some mkdir()'s don't like trailing slashes) */
-
-              snprintf(f, sizeof(f), "%s/%s", getenv("HOME"), tux_settings_dir);
-            }
-          else
-            {
-              snprintf(f, sizeof(f), "%s/%s/%s",
-                       getenv("HOME"), tux_settings_dir, name);
-            }
-        }
+	snprintf(f, sizeof(f), "%s/%s", getenv("HOME"), tux_settings_dir);
+      }
       else
-        {
-          /* WOAH!  Don't know where HOME directory is!  Last resort, use '.'! */
-
-          strcpy(f, name);
-        }
+      {
+	snprintf(f, sizeof(f), "%s/%s/%s",
+		 getenv("HOME"), tux_settings_dir, name);
+      }
     }
+    else
+    {
+      /* WOAH!  Don't know where HOME directory is!  Last resort, use '.'! */
+
+      strcpy(f, name);
+    }
+  }
   else
+  {
+    /* User had overridden save directory with "--savedir" option: */
+
+    if (*name != '\0')
     {
-      /* User had overridden save directory with "--savedir" option: */
+      /* (Some mkdir()'s don't like trailing slashes) */
 
-      if (*name != '\0')
-        {
-          /* (Some mkdir()'s don't like trailing slashes) */
-
-          snprintf(f, sizeof(f), "%s/%s", savedir, name);
-        }
-      else
-        {
-          snprintf(f, sizeof(f), "%s", savedir);
-        }
+      snprintf(f, sizeof(f), "%s/%s", savedir, name);
     }
+    else
+    {
+      snprintf(f, sizeof(f), "%s", savedir);
+    }
+  }
 
   return strdup(f);
 }
-

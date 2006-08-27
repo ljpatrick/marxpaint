@@ -31,7 +31,8 @@
 
 /* What colors are available: */
 
-enum {
+enum
+{
   COLOR_BLACK,
   COLOR_DARKGREY,
   COLOR_LIGHTGREY,
@@ -56,29 +57,29 @@ enum {
 /* Hex codes: */
 
 const int color_hexes[NUM_COLORS][3] = {
-  {0, 0, 0},       /* Black */
-  {128, 128, 128}, /* Dark grey */
-  {192, 192, 192}, /* Light grey */
-  {255, 255, 255}, /* White */
-  {255,   0,   0}, /* Red */
-  {255, 128,   0}, /* Orange */
-  {255, 255,   0}, /* Yellow */
-  {160, 228, 128}, /* Light green */
-  { 33, 148,  70}, /* Dark green */
-  {138, 168, 205}, /* Sky blue */
-  { 50, 100, 255}, /* Blue */
-  {186, 157, 255}, /* Lavender */
-  {128,   0, 128}, /* Purple */
-  {255, 165, 211}, /* Pink */
-  {128,  80,   0}, /* Brown */
-  {226, 189, 166}, /* Tan */
-  {247, 228, 219}  /* Beige */
+  {0, 0, 0},			/* Black */
+  {128, 128, 128},		/* Dark grey */
+  {192, 192, 192},		/* Light grey */
+  {255, 255, 255},		/* White */
+  {255, 0, 0},			/* Red */
+  {255, 128, 0},		/* Orange */
+  {255, 255, 0},		/* Yellow */
+  {160, 228, 128},		/* Light green */
+  {33, 148, 70},		/* Dark green */
+  {138, 168, 205},		/* Sky blue */
+  {50, 100, 255},		/* Blue */
+  {186, 157, 255},		/* Lavender */
+  {128, 0, 128},		/* Purple */
+  {255, 165, 211},		/* Pink */
+  {128, 80, 0},			/* Brown */
+  {226, 189, 166},		/* Tan */
+  {247, 228, 219}		/* Beige */
 };
 
 
 /* Color names: */
 
-const char * const color_names[NUM_COLORS] = {
+const char *const color_names[NUM_COLORS] = {
   gettext_noop("Black!"),
   gettext_noop("Dark grey! Some people spell it “dark gray”."),
   gettext_noop("Light grey! Some people spell it “light gray”."),

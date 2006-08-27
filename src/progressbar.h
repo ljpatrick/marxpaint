@@ -33,10 +33,9 @@
 
 #include "SDL.h"
 
-extern SDL_Surface * img_progress;
+extern SDL_Surface *img_progress;
 extern int progress_bar_disabled, prog_bar_ctr;
 
 void show_progress_bar(SDL_Surface * screen);
 
 #endif
-

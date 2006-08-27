@@ -33,7 +33,7 @@
 
 #include "SDL.h"
 
-void do_flood_fill(SDL_Surface * screen, SDL_Surface * canvas, int x, int y, Uint32 cur_colr, Uint32 old_colr);
+void do_flood_fill(SDL_Surface * screen, SDL_Surface * canvas, int x, int y,
+		   Uint32 cur_colr, Uint32 old_colr);
 
 #endif
-

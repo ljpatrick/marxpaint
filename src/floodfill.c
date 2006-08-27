@@ -45,51 +45,52 @@ static int colors_close(SDL_Surface * canvas, Uint32 c1, Uint32 c2)
 #ifdef LOW_QUALITY_FLOOD_FILL
   return (c1 == c2);
 #else
-  Uint8 r1, g1, b1,
-    r2, g2, b2;
+  Uint8 r1, g1, b1, r2, g2, b2;
 
   if (c1 == c2)
-    {
-      /* Get it over with quick, if possible! */
+  {
+    /* Get it over with quick, if possible! */
 
-      return 1;
-    }
+    return 1;
+  }
   else
-    {
-      double r, g, b;
-      SDL_GetRGB(c1, canvas->format, &r1, &g1, &b1);
-      SDL_GetRGB(c2, canvas->format, &r2, &g2, &b2);
+  {
+    double r, g, b;
+    SDL_GetRGB(c1, canvas->format, &r1, &g1, &b1);
+    SDL_GetRGB(c2, canvas->format, &r2, &g2, &b2);
 
-      // use distance in linear RGB space
-      r = sRGB_to_linear_table[r1] - sRGB_to_linear_table[r2];
-      r *= r;
-      g = sRGB_to_linear_table[g1] - sRGB_to_linear_table[g2];
-      g *= g;
-      b = sRGB_to_linear_table[b1] - sRGB_to_linear_table[b2];
-      b *= b;
+    // use distance in linear RGB space
+    r = sRGB_to_linear_table[r1] - sRGB_to_linear_table[r2];
+    r *= r;
+    g = sRGB_to_linear_table[g1] - sRGB_to_linear_table[g2];
+    g *= g;
+    b = sRGB_to_linear_table[b1] - sRGB_to_linear_table[b2];
+    b *= b;
 
-      // easy to confuse:
-      //   dark grey, brown, purple
-      //   light grey, tan
-      //   red, orange
-      return r+g+b < 0.04;
-    }
+    // easy to confuse:
+    //   dark grey, brown, purple
+    //   light grey, tan
+    //   red, orange
+    return r + g + b < 0.04;
+  }
 #endif
 }
 
 
 /* Flood fill! */
 
-void do_flood_fill(SDL_Surface * screen, SDL_Surface * canvas, int x, int y, Uint32 cur_colr, Uint32 old_colr)
+void do_flood_fill(SDL_Surface * screen, SDL_Surface * canvas, int x, int y,
+		   Uint32 cur_colr, Uint32 old_colr)
 {
   int fillL, fillR, i, in_line;
   static unsigned char prog_anim;
-  Uint32 (*getpixel)(SDL_Surface *, int, int) = getpixels[canvas->format->BytesPerPixel];
-  void (*putpixel)(SDL_Surface *, int, int, Uint32) = putpixels[canvas->format->BytesPerPixel];
+  Uint32(*getpixel) (SDL_Surface *, int, int) =
+    getpixels[canvas->format->BytesPerPixel];
+  void (*putpixel) (SDL_Surface *, int, int, Uint32) =
+    putpixels[canvas->format->BytesPerPixel];
 
 
-  if (cur_colr == old_colr ||
-      colors_close(canvas, cur_colr, old_colr))
+  if (cur_colr == old_colr || colors_close(canvas, cur_colr, old_colr))
     return;
 
 
@@ -98,10 +99,10 @@ void do_flood_fill(SDL_Surface * screen, SDL_Surface * canvas, int x, int y, Uin
 
   prog_anim++;
   if ((prog_anim % 4) == 0)
-    {
-      show_progress_bar(screen);
-      playsound(screen, 0, SND_BUBBLE, 0, x, SNDDIST_NEAR);
-    }
+  {
+    show_progress_bar(screen);
+    playsound(screen, 0, SND_BUBBLE, 0, x, SNDDIST_NEAR);
+  }
 
 
   /* Find left side, filling along the way */
@@ -109,13 +110,14 @@ void do_flood_fill(SDL_Surface * screen, SDL_Surface * canvas, int x, int y, Uin
   in_line = 1;
 
   while (in_line)
-    {
-      putpixel(canvas, fillL, y, cur_colr);
-      fillL--;
+  {
+    putpixel(canvas, fillL, y, cur_colr);
+    fillL--;
 
-      in_line = (fillL < 0) ? 0 : colors_close(canvas, getpixel(canvas, fillL, y),
-                                               old_colr);
-    }
+    in_line =
+      (fillL < 0) ? 0 : colors_close(canvas, getpixel(canvas, fillL, y),
+				     old_colr);
+  }
 
   fillL++;
 
@@ -124,14 +126,15 @@ void do_flood_fill(SDL_Surface * screen, SDL_Surface * canvas, int x, int y, Uin
 
   in_line = 1;
   while (in_line)
-    {
-      putpixel(canvas, fillR, y, cur_colr);
-      fillR++;
+  {
+    putpixel(canvas, fillR, y, cur_colr);
+    fillR++;
 
-      in_line = (fillR >= canvas->w) ? 0 : colors_close(canvas, getpixel(canvas,
-                                                                 fillR, y),
-                                                        old_colr);
-    }
+    in_line = (fillR >= canvas->w) ? 0 : colors_close(canvas, getpixel(canvas,
+								       fillR,
+								       y),
+						      old_colr);
+  }
 
   fillR--;
 
@@ -139,12 +142,12 @@ void do_flood_fill(SDL_Surface * screen, SDL_Surface * canvas, int x, int y, Uin
   /* Search top and bottom */
 
   for (i = fillL; i <= fillR; i++)
-    {
-      if (y > 0 && colors_close(canvas, getpixel(canvas, i, y - 1), old_colr))
-        do_flood_fill(screen, canvas, i, y - 1, cur_colr, old_colr);
+  {
+    if (y > 0 && colors_close(canvas, getpixel(canvas, i, y - 1), old_colr))
+      do_flood_fill(screen, canvas, i, y - 1, cur_colr, old_colr);
 
-      if (y < canvas->h && colors_close(canvas, getpixel(canvas, i, y + 1), old_colr))
-        do_flood_fill(screen, canvas, i, y + 1, cur_colr, old_colr);
-    }
+    if (y < canvas->h
+	&& colors_close(canvas, getpixel(canvas, i, y + 1), old_colr))
+      do_flood_fill(screen, canvas, i, y + 1, cur_colr, old_colr);
+  }
 }
-

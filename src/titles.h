@@ -16,7 +16,8 @@
 
 /* What titles are available: */
 
-enum {
+enum
+{
   TITLE_NONE,
   TITLE_NOCOLORS,
   TITLE_TOOLS,
@@ -33,7 +34,7 @@ enum {
 
 /* Title names: */
 
-const char * const title_names[NUM_TITLES] = {
+const char *const title_names[NUM_TITLES] = {
   "",
   "",
   gettext_noop("Tools"),
@@ -45,4 +46,3 @@ const char * const title_names[NUM_TITLES] = {
   gettext_noop("Letters"),
   gettext_noop("Magic")
 };
-

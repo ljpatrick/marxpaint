@@ -18,7 +18,8 @@
 
 /* What tools are available: */
 
-enum {
+enum
+{
   TOOL_BRUSH,
   TOOL_STAMP,
   TOOL_LINES,
@@ -39,7 +40,7 @@ enum {
 
 /* Tool names: */
 
-const char * const tool_names[NUM_TOOLS] = {
+const char *const tool_names[NUM_TOOLS] = {
   gettext_noop("Paint"),
   gettext_noop("Stamp"),
   gettext_noop("Lines"),
@@ -59,12 +60,14 @@ const char * const tool_names[NUM_TOOLS] = {
 
 /* Some text to write when each tool is selected: */
 
-const char * const tool_tips[NUM_TOOLS] = {
+const char *const tool_tips[NUM_TOOLS] = {
   gettext_noop("Pick a color and a brush shape to draw with."),
   gettext_noop("Pick a picture to stamp around your drawing."),
   gettext_noop("Click to start drawing a line. Let go to complete it."),
-  gettext_noop("Pick a shape. Click to pick the center, drag, then let go when it is the size you want. Move around to rotate it, and click to draw it."),
-  gettext_noop("Choose a style of text. Click on your drawing and you can start typing."),
+  gettext_noop
+    ("Pick a shape. Click to pick the center, drag, then let go when it is the size you want. Move around to rotate it, and click to draw it."),
+  gettext_noop
+    ("Choose a style of text. Click on your drawing and you can start typing."),
   gettext_noop("Pick a magical effect to use on your drawing!"),
   /* Undo */ gettext_noop("Undo!"),
   /* Redo */ gettext_noop("Redo!"),
@@ -84,7 +87,7 @@ const char * const tool_tips[NUM_TOOLS] = {
 
 /* Tool icon filenames: */
 
-const char * const tool_img_fnames[NUM_TOOLS] = {
+const char *const tool_img_fnames[NUM_TOOLS] = {
   DATA_PREFIX "images/tools/brush.png",
   DATA_PREFIX "images/tools/stamp.png",
   DATA_PREFIX "images/tools/lines.png",
@@ -120,4 +123,3 @@ const int tool_tux[NUM_TOOLS] = {
   TUX_GREAT,
   TUX_DEFAULT
 };
-

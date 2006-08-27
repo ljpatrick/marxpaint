@@ -83,7 +83,7 @@
 // since gcc-2.5
 #ifdef __GNUC__
 #define NORETURN __attribute__((__noreturn__))
-#define FUNCTION __attribute__((__const__))  // no access to global mem, even via ptr, and no side effect
+#define FUNCTION __attribute__((__const__))	// no access to global mem, even via ptr, and no side effect
 #else
 #define NORETURN
 #define FUNCTION
@@ -150,4 +150,3 @@
 #undef CLOCK_ASM
 #define CLOCK_ASM(x) x=42
 #endif
-

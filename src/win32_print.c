@@ -32,11 +32,11 @@
 
 
 #define NOREF(x)        ((x)=(x))
-#define GETHINST(hWnd)	((HINSTANCE)GetWindowLong(hWnd, GWL_HINSTANCE)) 
+#define GETHINST(hWnd)	((HINSTANCE)GetWindowLong(hWnd, GWL_HINSTANCE))
 #define MIR(id)	        (MAKEINTRESOURCE(id))
 
 
-static PRINTDLG	global_pd = {
+static PRINTDLG global_pd = {
   sizeof(PRINTDLG),
   NULL, NULL, NULL, NULL,
   PD_RETURNDC,
@@ -49,49 +49,50 @@ static PRINTDLG	global_pd = {
 };
 
 
-static SDL_Surface *make24bitDIB(SDL_Surface *surf)
+static SDL_Surface *make24bitDIB(SDL_Surface * surf)
 {
-  SDL_PixelFormat     pixfmt;
-  SDL_Surface         *surf24;
-  SDL_Surface         *surfDIB;
-  Uint8               *src,*dst;
-  Uint32              linesize;
-  int                 i;
+  SDL_PixelFormat pixfmt;
+  SDL_Surface *surf24;
+  SDL_Surface *surfDIB;
+  Uint8 *src, *dst;
+  Uint32 linesize;
+  int i;
 
   memset(&pixfmt, 0, sizeof(pixfmt));
-  pixfmt.palette      = NULL;
+  pixfmt.palette = NULL;
   pixfmt.BitsPerPixel = 24;
-  pixfmt.BytesPerPixel= 3;
-  pixfmt.Rmask        = 0x00FF0000;
-  pixfmt.Gmask        = 0x0000FF00;
-  pixfmt.Bmask        = 0x000000FF;
-  pixfmt.Amask        = 0;
-  pixfmt.Rshift       = 16;
-  pixfmt.Gshift       = 8;
-  pixfmt.Bshift       = 0;
-  pixfmt.Ashift       = 0;
-  pixfmt.Rloss        = 0;
-  pixfmt.Gloss        = 0;
-  pixfmt.Bloss        = 0;
-  pixfmt.Aloss        = 0;
-  pixfmt.colorkey     = 0;
-  pixfmt.alpha        = 0;
+  pixfmt.BytesPerPixel = 3;
+  pixfmt.Rmask = 0x00FF0000;
+  pixfmt.Gmask = 0x0000FF00;
+  pixfmt.Bmask = 0x000000FF;
+  pixfmt.Amask = 0;
+  pixfmt.Rshift = 16;
+  pixfmt.Gshift = 8;
+  pixfmt.Bshift = 0;
+  pixfmt.Ashift = 0;
+  pixfmt.Rloss = 0;
+  pixfmt.Gloss = 0;
+  pixfmt.Bloss = 0;
+  pixfmt.Aloss = 0;
+  pixfmt.colorkey = 0;
+  pixfmt.alpha = 0;
 
   surf24 = SDL_ConvertSurface(surf, &pixfmt, SDL_SWSURFACE);
   surfDIB = SDL_CreateRGBSurface(SDL_SWSURFACE, surf24->w, surf24->h, 24,
-                    pixfmt.Rmask, pixfmt.Gmask, pixfmt.Bmask, pixfmt.Amask);
+				 pixfmt.Rmask, pixfmt.Gmask, pixfmt.Bmask,
+				 pixfmt.Amask);
 
-  linesize = surf24->w * 3;    // Flip top2bottom
+  linesize = surf24->w * 3;	// Flip top2bottom
   dst = surfDIB->pixels;
-  src = ((Uint8*)surf24->pixels)+((surf24->h-1)*surf24->pitch);
+  src = ((Uint8 *) surf24->pixels) + ((surf24->h - 1) * surf24->pitch);
   for (i = 0; i < surf24->h; ++i)
   {
-      memcpy(dst, src, linesize);
-      src -= surf24->pitch;
-      dst += surfDIB->pitch;
+    memcpy(dst, src, linesize);
+    src -= surf24->pitch;
+    dst += surfDIB->pitch;
   }
 
-  SDL_FreeSurface(surf24);   // Free temp surface
+  SDL_FreeSurface(surf24);	// Free temp surface
 
   return surfDIB;
 }
@@ -99,25 +100,28 @@ static SDL_Surface *make24bitDIB(SDL_Surface *surf)
 /* returns 0 if failed */
 static int GetDefaultPrinterStrings(char *device, char *driver, char *output)
 {
-  const char  *section = "windows";
-  const char  *key = "device";
-  const char  *def = "NODEFAULTPRINTER";
-  char	buff[MAX_PATH];
-  char	*dev,*drv,*out;
-     
+  const char *section = "windows";
+  const char *key = "device";
+  const char *def = "NODEFAULTPRINTER";
+  char buff[MAX_PATH];
+  char *dev, *drv, *out;
+
   if (!GetProfileString(section, key, def, buff, sizeof(buff)))
     return 0;
- 
+
   if (strcmp(buff, def) == 0)
     return 0;
 
-  if (((dev = strtok(buff, "," )) != NULL) &&
+  if (((dev = strtok(buff, ",")) != NULL) &&
       ((drv = strtok(NULL, ", ")) != NULL) &&
       ((out = strtok(NULL, ", ")) != NULL))
   {
-    if (device) strcpy(device, dev);
-    if (driver) strcpy(driver, drv);
-    if (output) strcpy(output, out);
+    if (device)
+      strcpy(device, dev);
+    if (driver)
+      strcpy(driver, drv);
+    if (output)
+      strcpy(output, out);
     return 1;
   }
   return 0;
@@ -127,15 +131,15 @@ static int GetDefaultPrinterStrings(char *device, char *driver, char *output)
 
 static HANDLE LoadCustomPrinterHDEVMODE(HWND hWnd, const char *filepath)
 {
-  char	  device[MAX_PATH];
-  HANDLE  hPrinter = NULL;
-  int	  sizeof_devmode;
+  char device[MAX_PATH];
+  HANDLE hPrinter = NULL;
+  int sizeof_devmode;
   HGLOBAL hDevMode = NULL;
   DEVMODE *devmode = NULL;
-  int	  res;
-  FILE	  *fp = NULL;
-  int	  block_size;
-  int	  block_read;
+  int res;
+  FILE *fp = NULL;
+  int block_size;
+  int block_read;
 
   if ((fp = fopen(filepath, "rb")) == NULL)
     return NULL;
@@ -146,7 +150,7 @@ static HANDLE LoadCustomPrinterHDEVMODE(HWND hWnd, const char *filepath)
   if (!OpenPrinter(device, &hPrinter, NULL))
     return NULL;
 
-  sizeof_devmode = (int)DocumentProperties(hWnd, hPrinter, device, 
+  sizeof_devmode = (int) DocumentProperties(hWnd, hPrinter, device,
 					    NULL, NULL, 0);
 
   if (!sizeof_devmode)
@@ -156,12 +160,12 @@ static HANDLE LoadCustomPrinterHDEVMODE(HWND hWnd, const char *filepath)
   if (!hDevMode)
     goto err_exit;
 
-  devmode = (DEVMODE*)GlobalLock(hDevMode);
+  devmode = (DEVMODE *) GlobalLock(hDevMode);
   if (!devmode)
     goto err_exit;
 
-  res = DocumentProperties(hWnd, hPrinter, device, devmode, NULL, 
-			    DM_OUT_BUFFER);
+  res = DocumentProperties(hWnd, hPrinter, device, devmode, NULL,
+			   DM_OUT_BUFFER);
   if (res != IDOK)
     goto err_exit;
 
@@ -171,8 +175,8 @@ static HANDLE LoadCustomPrinterHDEVMODE(HWND hWnd, const char *filepath)
     goto err_exit;
   fclose(fp);
 
-  res = DocumentProperties(hWnd, hPrinter, device, devmode, devmode, 
-			    DM_IN_BUFFER|DM_OUT_BUFFER);
+  res = DocumentProperties(hWnd, hPrinter, device, devmode, devmode,
+			   DM_IN_BUFFER | DM_OUT_BUFFER);
   if (res != IDOK)
     goto err_exit;
 
@@ -181,27 +185,32 @@ static HANDLE LoadCustomPrinterHDEVMODE(HWND hWnd, const char *filepath)
   return hDevMode;
 
 err_exit:
-  if (fp) fclose(fp);
-  if (devmode) GlobalUnlock(hDevMode);
-  if (hDevMode) GlobalFree(hDevMode);
-  if (hPrinter) ClosePrinter(hPrinter);
+  if (fp)
+    fclose(fp);
+  if (devmode)
+    GlobalUnlock(hDevMode);
+  if (hDevMode)
+    GlobalFree(hDevMode);
+  if (hPrinter)
+    ClosePrinter(hPrinter);
   return NULL;
 }
 
 
-static int SaveCustomPrinterHDEVMODE(HWND hWnd, const char *filepath, HANDLE hDevMode)
+static int SaveCustomPrinterHDEVMODE(HWND hWnd, const char *filepath,
+				     HANDLE hDevMode)
 {
-  FILE	  *fp = NULL;
+  FILE *fp = NULL;
 
   NOREF(hWnd);
   if ((fp = fopen(filepath, "wb")) != NULL)
   {
-    DEVMODE *devmode = (DEVMODE*)GlobalLock(hDevMode);
-    int	     block_size = devmode->dmSize + devmode->dmDriverExtra;
-    int	     block_written;
-    char     devname[dmDeviceNameSize];
+    DEVMODE *devmode = (DEVMODE *) GlobalLock(hDevMode);
+    int block_size = devmode->dmSize + devmode->dmDriverExtra;
+    int block_written;
+    char devname[dmDeviceNameSize];
 
-    strcpy(devname, (const char*)devmode->dmDeviceName);
+    strcpy(devname, (const char *) devmode->dmDeviceName);
     fwrite(devname, 1, sizeof(devname), fp);
     block_written = fwrite(devmode, 1, block_size, fp);
     GlobalUnlock(hDevMode);
@@ -215,12 +224,12 @@ static int SaveCustomPrinterHDEVMODE(HWND hWnd, const char *filepath, HANDLE hDe
 static HDC GetCustomPrinterDC(HWND hWnd, const char *printcfg, int show)
 {
   global_pd.hwndOwner = hWnd;
-  global_pd.hDC       = NULL;
+  global_pd.hDC = NULL;
   global_pd.hDevNames = NULL;
 
   if (global_pd.hDevMode == NULL)
   {
-    global_pd.hDevMode  = LoadCustomPrinterHDEVMODE(hWnd, printcfg);
+    global_pd.hDevMode = LoadCustomPrinterHDEVMODE(hWnd, printcfg);
   }
 
   if (show)
@@ -234,9 +243,10 @@ static HDC GetCustomPrinterDC(HWND hWnd, const char *printcfg, int show)
   }
 
   {
-    DEVMODE *devmode = (DEVMODE*)GlobalLock(global_pd.hDevMode);
+    DEVMODE *devmode = (DEVMODE *) GlobalLock(global_pd.hDevMode);
 
-    global_pd.hDC = CreateDC(NULL, (const char*)devmode->dmDeviceName, NULL, devmode);
+    global_pd.hDC =
+      CreateDC(NULL, (const char *) devmode->dmDeviceName, NULL, devmode);
     GlobalUnlock(global_pd.hDevMode);
   }
   return global_pd.hDC;
@@ -245,7 +255,7 @@ static HDC GetCustomPrinterDC(HWND hWnd, const char *printcfg, int show)
 
 static HDC GetDefaultPrinterDC(void)
 {
-  char	device[MAX_PATH],driver[MAX_PATH],output[MAX_PATH];
+  char device[MAX_PATH], driver[MAX_PATH], output[MAX_PATH];
 
   if (GetDefaultPrinterStrings(device, driver, output))
     return CreateDC(driver, device, output, NULL);
@@ -256,7 +266,8 @@ static HDC GetDefaultPrinterDC(void)
 
 static HDC GetPrinterDC(HWND hWnd, const char *printcfg, int show)
 {
-  if (!printcfg) return GetDefaultPrinterDC();
+  if (!printcfg)
+    return GetDefaultPrinterDC();
   return GetCustomPrinterDC(hWnd, printcfg, show);
 }
 
@@ -264,11 +275,12 @@ static HDC GetPrinterDC(HWND hWnd, const char *printcfg, int show)
 static int IsBandingRequired(HDC hPrinter)
 {
   OSVERSIONINFO osvi;
-  int           indata = NEXTBAND;
+  int indata = NEXTBAND;
 
   osvi.dwOSVersionInfoSize = sizeof(OSVERSIONINFO);
   if (GetVersionEx(&osvi) && (osvi.dwPlatformId != VER_PLATFORM_WIN32_NT))
-    return Escape(hPrinter, QUERYESCSUPPORT, sizeof(int), (LPCSTR)&indata, NULL);
+    return Escape(hPrinter, QUERYESCSUPPORT, sizeof(int), (LPCSTR) & indata,
+		  NULL);
   return 0;
 }
 
@@ -279,25 +291,26 @@ int IsPrinterAvailable(void)
 }
 
 
-const char *SurfacePrint(SDL_Surface *surf, const char *printcfg, int showdialog)
+const char *SurfacePrint(SDL_Surface * surf, const char *printcfg,
+			 int showdialog)
 {
-  const char         *res = NULL;
-  HWND                hWnd;
-  DOCINFO             di;
-  int                 nError;
-  SDL_SysWMinfo       wminfo;
-  HDC                 hDCwindow;
-  HDC                 hDCprinter;
-  BITMAPINFOHEADER    bmih;
-  SDL_Surface         *surf24 = NULL;
-  RECT                rc;
-  float               fLogPelsX1, fLogPelsY1, fLogPelsX2, fLogPelsY2;
-  float               fScaleX, fScaleY;
-  int                 cWidthPels, xLeft, yTop;
-  float               subscaler,subscalerx,subscalery;
-  int                 hDCCaps;
-  HBITMAP             hbm = NULL;
-  HDC                 hdcMem = NULL;
+  const char *res = NULL;
+  HWND hWnd;
+  DOCINFO di;
+  int nError;
+  SDL_SysWMinfo wminfo;
+  HDC hDCwindow;
+  HDC hDCprinter;
+  BITMAPINFOHEADER bmih;
+  SDL_Surface *surf24 = NULL;
+  RECT rc;
+  float fLogPelsX1, fLogPelsY1, fLogPelsX2, fLogPelsY2;
+  float fScaleX, fScaleY;
+  int cWidthPels, xLeft, yTop;
+  float subscaler, subscalerx, subscalery;
+  int hDCCaps;
+  HBITMAP hbm = NULL;
+  HDC hdcMem = NULL;
 
   SDL_VERSION(&wminfo.version);
   if (!SDL_GetWMInfo(&wminfo))
@@ -312,8 +325,8 @@ const char *SurfacePrint(SDL_Surface *surf, const char *printcfg, int showdialog
 
   di.cbSize = sizeof(DOCINFO);
   di.lpszDocName = "Tux Paint";
-  di.lpszOutput = (LPTSTR)NULL;
-  di.lpszDatatype = (LPTSTR)NULL;
+  di.lpszOutput = (LPTSTR) NULL;
+  di.lpszDatatype = (LPTSTR) NULL;
   di.fwType = 0;
 
   nError = StartDoc(hDCprinter, &di);
@@ -340,16 +353,16 @@ const char *SurfacePrint(SDL_Surface *surf, const char *printcfg, int showdialog
   }
 
   memset(&bmih, 0, sizeof(bmih));
-  bmih.biSize         = sizeof(bmih);
-  bmih.biPlanes       = 1;
-  bmih.biCompression  = BI_RGB;
-  bmih.biBitCount     = 24;
-  bmih.biWidth        = surf24->w;
-  bmih.biHeight       = surf24->h;
+  bmih.biSize = sizeof(bmih);
+  bmih.biPlanes = 1;
+  bmih.biCompression = BI_RGB;
+  bmih.biBitCount = 24;
+  bmih.biWidth = surf24->w;
+  bmih.biHeight = surf24->h;
 
   GetClientRect(hWnd, &rc);
-  subscalerx = (float)rc.right/surf24->w;
-  subscalery = (float)rc.bottom/surf24->h;
+  subscalerx = (float) rc.right / surf24->w;
+  subscalery = (float) rc.bottom / surf24->h;
   subscaler = subscalery;
   if (subscalerx < subscalery)
     subscaler = subscalerx;
@@ -368,62 +381,64 @@ const char *SurfacePrint(SDL_Surface *surf, const char *printcfg, int showdialog
   fLogPelsY2 = GetDeviceCaps(hDCprinter, LOGPIXELSY);
 
   if (fLogPelsX1 > fLogPelsX2)
-    fScaleX = (fLogPelsX1/fLogPelsX2);
+    fScaleX = (fLogPelsX1 / fLogPelsX2);
   else
-    fScaleX = (fLogPelsX2/fLogPelsX1);
+    fScaleX = (fLogPelsX2 / fLogPelsX1);
 
   if (fLogPelsY1 > fLogPelsY2)
-    fScaleY = (fLogPelsY1/fLogPelsY2);
+    fScaleY = (fLogPelsY1 / fLogPelsY2);
   else
-    fScaleY = (fLogPelsY2/fLogPelsY1);
+    fScaleY = (fLogPelsY2 / fLogPelsY1);
 
   fScaleX *= subscaler;
   fScaleY *= subscaler;
 
   yTop = 0;
   cWidthPels = GetDeviceCaps(hDCprinter, PHYSICALWIDTH);
-  xLeft = ((cWidthPels - ((int)(fScaleX*bmih.biWidth)))/2)-
-                          GetDeviceCaps(hDCprinter, PHYSICALOFFSETX);
+  xLeft = ((cWidthPels - ((int) (fScaleX * bmih.biWidth))) / 2) -
+    GetDeviceCaps(hDCprinter, PHYSICALOFFSETX);
 
   hDCCaps = GetDeviceCaps(hDCprinter, RASTERCAPS);
 
   if (hDCCaps & RC_PALETTE)
   {
-	  res = "win32_print: printer context requires palette.";
-	  goto error;
+    res = "win32_print: printer context requires palette.";
+    goto error;
   }
 
   if (IsBandingRequired(hDCprinter))
   {
-    RECT  rcBand = { 0, 0, 0, 0 };
-    RECT  rcPrinter;
-    RECT  rcImage;
+    RECT rcBand = { 0, 0, 0, 0 };
+    RECT rcPrinter;
+    RECT rcImage;
 
-    SetRect(&rcPrinter, xLeft, yTop, (int)(fScaleX*bmih.biWidth), (int)(fScaleY*bmih.biHeight));
+    SetRect(&rcPrinter, xLeft, yTop, (int) (fScaleX * bmih.biWidth),
+	    (int) (fScaleY * bmih.biHeight));
     SetRect(&rcImage, 0, 0, bmih.biWidth, bmih.biHeight);
 
     while (Escape(hDCprinter, NEXTBAND, 0, NULL, &rcBand))
     {
-      if (IsRectEmpty(&rcBand)) break;
+      if (IsRectEmpty(&rcBand))
+	break;
       if (IntersectRect(&rcBand, &rcBand, &rcPrinter))
       {
-        rcImage.top = (int)(0.5f+(float)rcBand.top/fScaleX);
-        rcImage.bottom = (int)(0.5f+(float)rcBand.bottom/fScaleX);
+	rcImage.top = (int) (0.5f + (float) rcBand.top / fScaleX);
+	rcImage.bottom = (int) (0.5f + (float) rcBand.bottom / fScaleX);
 
-        SetStretchBltMode(hDCprinter, COLORONCOLOR);
-        nError = StretchDIBits(hDCprinter, rcBand.left, rcBand.top,
-                      rcBand.right - rcBand.left,
-                      rcBand.bottom - rcBand.top,
-                      rcImage.left, rcImage.top,
-                      rcImage.right - rcImage.left,
-                      rcImage.bottom - rcImage.top,
-                      surf24->pixels, (BITMAPINFO*)&bmih,
-                      DIB_RGB_COLORS, SRCCOPY);
-        if (nError == GDI_ERROR)
-        {
-	        res = "win32_print: StretchDIBits() failed.";
-	        goto error;
-        }
+	SetStretchBltMode(hDCprinter, COLORONCOLOR);
+	nError = StretchDIBits(hDCprinter, rcBand.left, rcBand.top,
+			       rcBand.right - rcBand.left,
+			       rcBand.bottom - rcBand.top,
+			       rcImage.left, rcImage.top,
+			       rcImage.right - rcImage.left,
+			       rcImage.bottom - rcImage.top,
+			       surf24->pixels, (BITMAPINFO *) & bmih,
+			       DIB_RGB_COLORS, SRCCOPY);
+	if (nError == GDI_ERROR)
+	{
+	  res = "win32_print: StretchDIBits() failed.";
+	  goto error;
+	}
       }
     }
   }
@@ -434,15 +449,15 @@ const char *SurfacePrint(SDL_Surface *surf, const char *printcfg, int showdialog
       SetStretchBltMode(hDCprinter, COLORONCOLOR);
 
       nError = StretchDIBits(hDCprinter, xLeft, yTop,
-                    (int)(fScaleX*bmih.biWidth),
-                    (int)(fScaleY*bmih.biHeight),
-                    0, 0, bmih.biWidth, bmih.biHeight,
-                    surf24->pixels, (BITMAPINFO*)&bmih,
-                    DIB_RGB_COLORS, SRCCOPY);
+			     (int) (fScaleX * bmih.biWidth),
+			     (int) (fScaleY * bmih.biHeight),
+			     0, 0, bmih.biWidth, bmih.biHeight,
+			     surf24->pixels, (BITMAPINFO *) & bmih,
+			     DIB_RGB_COLORS, SRCCOPY);
       if (nError == GDI_ERROR)
       {
-	      res = "win32_print: StretchDIBits() failed.";
-	      goto error;
+	res = "win32_print: StretchDIBits() failed.";
+	goto error;
       }
     }
     else
@@ -463,10 +478,13 @@ const char *SurfacePrint(SDL_Surface *surf, const char *printcfg, int showdialog
 
   EndDoc(hDCprinter);
 
-error: 
-  if (hdcMem) DeleteDC(hdcMem);
-  if (hbm) DeleteObject(hbm);
-  if (surf24) SDL_FreeSurface(surf24);
+error:
+  if (hdcMem)
+    DeleteDC(hdcMem);
+  if (hbm)
+    DeleteObject(hbm);
+  if (surf24)
+    SDL_FreeSurface(surf24);
 
   EnableWindow(hWnd, TRUE);
   DeleteDC(hDCprinter);
@@ -477,21 +495,25 @@ error:
 /*
   Read access to Windows Registry
 */
-static HRESULT ReadRegistry(const char *key, const char *option, char *value, int size)
+static HRESULT ReadRegistry(const char *key, const char *option, char *value,
+			    int size)
 {
-  LONG	res;
-  HKEY	hKey = NULL;
+  LONG res;
+  HKEY hKey = NULL;
 
   res = RegOpenKeyEx(HKEY_CURRENT_USER, key, 0, KEY_READ, &hKey);
   if (res != ERROR_SUCCESS)
     goto err_exit;
-  res = RegQueryValueEx(hKey, option, NULL, NULL, (LPBYTE)value, (LPDWORD)&size);
+  res =
+    RegQueryValueEx(hKey, option, NULL, NULL, (LPBYTE) value,
+		    (LPDWORD) & size);
   if (res != ERROR_SUCCESS)
     goto err_exit;
   res = ERROR_SUCCESS;
 
 err_exit:
-  if (hKey) RegCloseKey(hKey);
+  if (hKey)
+    RegCloseKey(hKey);
   return HRESULT_FROM_WIN32(res);
 }
 
@@ -505,8 +527,8 @@ static char *remove_slash(char *path)
   if (!len)
     return path;
 
-  if (path[len-1] == '/' || path[len-1] == '\\')
-    path[len-1] = 0;
+  if (path[len - 1] == '/' || path[len - 1] == '\\')
+    path[len - 1] = 0;
 
   return path;
 }
@@ -518,10 +540,11 @@ static char *remove_slash(char *path)
 */
 char *GetDefaultSaveDir(const char *suffix)
 {
-  char          prefix[MAX_PATH];
-  char          path[2*MAX_PATH];
-  const char   *key    = "Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\Shell Folders";
-  const char   *option = "AppData";
+  char prefix[MAX_PATH];
+  char path[2 * MAX_PATH];
+  const char *key =
+    "Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\Shell Folders";
+  const char *option = "AppData";
   HRESULT hr = S_OK;
 
   if (SUCCEEDED(hr = ReadRegistry(key, option, prefix, sizeof(prefix))))
@@ -540,9 +563,10 @@ char *GetDefaultSaveDir(const char *suffix)
 */
 char *GetSystemFontDir(void)
 {
-  char          path[MAX_PATH];
-  const char   *key    = "Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\Shell Folders";
-  const char   *option = "Fonts";
+  char path[MAX_PATH];
+  const char *key =
+    "Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\Shell Folders";
+  const char *option = "Fonts";
   HRESULT hr = S_OK;
 
   if (SUCCEEDED(hr = ReadRegistry(key, option, path, sizeof(path))))
@@ -552,5 +576,3 @@ char *GetSystemFontDir(void)
   }
   return strdup("C:\\WINDOWS\\FONTS");
 }
-
-
