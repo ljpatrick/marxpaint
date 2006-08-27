@@ -5360,8 +5360,6 @@ static void get_stamp_thumb(stamp_type * sd)
     // damn thing wants a .png extension; give it one
     memcpy(buf + len, ".png", 5);
     sd->ssnd = loadsound(buf);
-    if (sd->ssnd == NULL)
-      printf("ssnd NULL!\n");
     sd->no_sound = !sd->ssnd;
   }
 
@@ -5371,8 +5369,6 @@ static void get_stamp_thumb(stamp_type * sd)
     // damn thing wants a .png extension; give it one
     memcpy(buf + len, ".png", 5);
     sd->sdesc = loaddescsound(buf);
-    if (sd->sdesc == NULL)
-      printf("sdesc NULL!\n");
     sd->no_descsound = !sd->sdesc;
   }
 #endif
@@ -9563,7 +9559,7 @@ static double loadinfo(const char *const fname, stamp_type * inf)
 	  debug(cp);
 	}
 
-	printf("tinter=%d\n", inf->tinter);
+	//printf("tinter=%d\n", inf->tinter);
       }
       else if (strcmp(buf, "nomirror") == 0)
 	inf->mirrorable = 0;
