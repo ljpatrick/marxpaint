@@ -22,7 +22,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
   
-  June 14, 2002 - August 26, 2006
+  June 14, 2002 - August 27, 2006
   $Id$
 */
 
@@ -791,6 +791,7 @@ static SDL_Surface * img_dead40x40;
 static SDL_Surface * img_black, * img_grey;
 static SDL_Surface * img_yes, * img_no;
 static SDL_Surface * img_open, * img_erase, * img_back, * img_trash;
+static SDL_Surface * img_slideshow, * img_play;
 static SDL_Surface * img_printer, * img_printer_wait, * img_save_over;
 static SDL_Surface * img_popup_arrow;
 static SDL_Surface * img_cursor_up, * img_cursor_down;
@@ -936,7 +937,7 @@ static SDL_Surface **img_brushes;
 static SDL_Surface * img_shapes[NUM_SHAPES], * img_shape_names[NUM_SHAPES];
 static SDL_Surface * img_magics[NUM_MAGICS], * img_magic_names[NUM_MAGICS];
 static SDL_Surface * img_openlabels_open, * img_openlabels_erase,
-  * img_openlabels_back;
+  * img_openlabels_slideshow, * img_openlabels_back, * img_openlabels_play;
 
 static SDL_Surface * img_tux[NUM_TIP_TUX];
 
@@ -1098,6 +1099,7 @@ static int do_png_save(FILE * fi, const char * const fname, SDL_Surface * surf);
 static void get_new_file_id(void);
 static int do_quit(void);
 void do_open(void);
+void do_slideshow(void);
 static void wait_for_sfx(void);
 static void rgbtohsv(Uint8 r8, Uint8 g8, Uint8 b8, float *h, float *s, float *v);
 static void hsvtorgb(float h, float s, float v, Uint8 *r8, Uint8 *g8, Uint8 *b8);
@@ -6262,7 +6264,7 @@ static void setup(int argc, char * argv[])
 #endif
   
   snprintf(tmp_str, sizeof(tmp_str),
-	   "© 2002–2005 Bill Kendrick et al.");
+	   "© 2002–2006 Bill Kendrick et al.");
   tmp_surf = render_text(medium_font, tmp_str, black);
   dest.x = 10;
   dest.y = WINDOW_HEIGHT - img_progress->h - (tmp_surf->h * 2);
@@ -6449,6 +6451,9 @@ static void setup(int argc, char * argv[])
   img_erase = loadimage(DATA_PREFIX "images/ui/erase.png");
   img_back = loadimage(DATA_PREFIX "images/ui/back.png");
   img_trash = loadimage(DATA_PREFIX "images/ui/trash.png");
+
+  img_slideshow = loadimage(DATA_PREFIX "images/ui/slideshow.png");
+  img_play = loadimage(DATA_PREFIX "images/ui/play.png");
   
   img_popup_arrow = loadimage(DATA_PREFIX "images/ui/popup_arrow.png");
   
@@ -6819,7 +6824,9 @@ static void create_button_labels(void)
   // buttons for the file open dialog
   img_openlabels_open = do_render_button_label(gettext_noop("Open"));
   img_openlabels_erase = do_render_button_label(gettext_noop("Erase"));
+  img_openlabels_slideshow = do_render_button_label(gettext_noop("Slides"));
   img_openlabels_back = do_render_button_label(gettext_noop("Back"));
+  img_openlabels_play = do_render_button_label(gettext_noop("Play"));
 }
 
 
@@ -10309,8 +10316,10 @@ static void cleanup(void)
   free_surface_array( img_tux, NUM_TIP_TUX );
 
   free_surface( &img_openlabels_open );
+  free_surface( &img_openlabels_slideshow );
   free_surface( &img_openlabels_erase );
   free_surface( &img_openlabels_back );
+  free_surface( &img_openlabels_play );
 
   free_surface( &img_progress );
 
@@ -10326,6 +10335,9 @@ static void cleanup(void)
   free_surface( &img_erase );
   free_surface( &img_back );
   free_surface( &img_trash );
+  
+  free_surface( &img_slideshow );
+  free_surface( &img_play );
 
   free_surface( &img_dead40x40 );
 
@@ -11349,8 +11361,8 @@ void do_open(void)
   FILE * fi;
   char fname[1024];
   char * tmp_fname;
-  int num_files, i, done, update_list, want_erase, cur, which,
-    num_files_in_dirs, j, res;
+  int num_files, i, done, slideshow, update_list, want_erase, cur, which,
+    num_files_in_dirs, j, res, any_saved_files;
   SDL_Rect dest;
   SDL_Event event;
   SDLKey key;
@@ -11369,7 +11381,9 @@ void do_open(void)
   num_files = 0;
   cur = 0;
   which = 0;
+  slideshow = 0;
   num_files_in_dirs = 0;
+  any_saved_files = 0;
 
 
   /* Open directories of images: */
@@ -11410,6 +11424,9 @@ void do_open(void)
 	      fs[num_files_in_dirs].place = places_to_look;
 	      
 	      num_files_in_dirs++;
+
+	      if (places_to_look == PLACE_SAVED_DIR)
+		any_saved_files = 1;
 	      
 	      if (num_files_in_dirs >= things_alloced)
 		{
@@ -11730,6 +11747,7 @@ void do_open(void)
     want_erase = 0;
 
     done = 0;
+    slideshow = 0;
 
     last_click_which = -1;
     last_click_time = 0;
@@ -11745,7 +11763,7 @@ void do_open(void)
 	  
       if (update_list)
       {
-        /* Erase: */
+        /* Erase screen: */
 	      
 	dest.x = 96;
 	dest.y = 0;
@@ -11826,6 +11844,24 @@ void do_open(void)
 	dest.x = 96 + (48 - img_openlabels_open->w) / 2;
 	dest.y = (48 * 7 + 40 + HEIGHTOFFSET) - img_openlabels_open->h;
 	SDL_BlitSurface(img_openlabels_open, NULL, screen, &dest);
+	      
+	      
+	/* "Slideshow" button: */
+	      
+	dest.x = 96 + 48;
+	dest.y = (48 * 7 + 40 + HEIGHTOFFSET) - 48;
+	if (any_saved_files)
+	  SDL_BlitSurface(img_btn_up, NULL, screen, &dest);
+	else
+	  SDL_BlitSurface(img_btn_off, NULL, screen, &dest);
+	
+	dest.x = 96 + 48;
+	dest.y = (48 * 7 + 40 + HEIGHTOFFSET) - 48;
+	SDL_BlitSurface(img_slideshow, NULL, screen, &dest);
+
+	dest.x = 96 + 48 + (48 - img_openlabels_slideshow->w) / 2;
+	dest.y = (48 * 7 + 40 + HEIGHTOFFSET) - img_openlabels_slideshow->h;
+	SDL_BlitSurface(img_openlabels_slideshow, NULL, screen, &dest);
 	      
 	      
 	/* "Back" button: */
@@ -12043,6 +12079,17 @@ void do_open(void)
 		      done = 1;
 		      playsound(screen, 1, SND_CLICK, 1, SNDPOS_LEFT, SNDDIST_NEAR);
 		    }
+		  else if (event.button.x >= 96 + 48 && event.button.x < 96 + 48 + 48 &&
+			   event.button.y >= (48 * 7 + 40 + HEIGHTOFFSET) - 48 &&
+			   event.button.y < (48 * 7 + 40 + HEIGHTOFFSET) &&
+			   any_saved_files == 1)
+		    {
+		      /* Slideshow */
+		  
+		      done = 1;
+		      slideshow = 1;
+		      playsound(screen, 1, SND_CLICK, 1, SNDPOS_LEFT, SNDDIST_NEAR);
+		    }
 		  else if (event.button.x >= (WINDOW_WIDTH - 96 - 48) &&
 			   event.button.x < (WINDOW_WIDTH - 96) &&
 			   event.button.y >= (48 * 7 + 40 + HEIGHTOFFSET) - 48 &&
@@ -12120,7 +12167,7 @@ void do_open(void)
 
 		      do_setcursor(cursor_down);
 		    }
-		  else if (((event.button.x >= 96 && event.button.x < 96 + 48) ||
+		  else if (((event.button.x >= 96 && event.button.x < 96 + 48 + 48) ||
 			    (event.button.x >= (WINDOW_WIDTH - 96 - 48) &&
 			     event.button.x < (WINDOW_WIDTH - 96)) ||
 			    (event.button.x >= (WINDOW_WIDTH - 96 - 48 - 48) &&
@@ -12277,10 +12324,12 @@ void do_open(void)
 	    }
 	  while (!done);
       
+
+	  if (!slideshow)
+	  {
+	    /* Load the chosen picture: */
       
-	  /* Load the chosen picture: */
-      
-	  if (which != -1)
+	    if (which != -1)
 	    {
 	      /* Save old one first? */
 	  
@@ -12382,6 +12431,7 @@ void do_open(void)
 		  tool_avail_bak[TOOL_REDO] = 0;
 		}
 	    }
+	  }
   
   
 	  update_canvas(0, 0, WINDOW_WIDTH - 96 - 96, 48 * 7 + 40 + HEIGHTOFFSET);
@@ -12406,7 +12456,655 @@ void do_open(void)
       free(d_names);
       free(d_exts);
       free(d_places);
+
+      
+      if (slideshow)
+	  {
+            do_slideshow();
+	  }
 }
+
+
+void do_slideshow(void)
+{
+  SDL_Surface *img, *img1, *img2;
+  int things_alloced;
+  SDL_Surface **thumbs = NULL;
+  DIR *d;
+  struct dirent *f;
+  struct dirent2 *fs;
+  char *dirname;
+  char **d_names = NULL, **d_exts = NULL;
+  FILE *fi;
+  char fname[1024];
+  char *tmp_fname;
+  int num_files, num_files_in_dir, i, done, update_list, cur, which, j, res, go_back;
+  SDL_Rect dest;
+  SDL_Event event;
+  SDLKey key;
+  char *freeme;
+
+  do_setcursor (cursor_watch);
+
+  /* Allocate some space: */
+
+  things_alloced = 32;
+
+  fs = (struct dirent2 *) malloc (sizeof (struct dirent2) * things_alloced);
+
+  num_files_in_dir = 0;
+  num_files = 0;
+  cur = 0;
+  which = 0;
+
+
+  /* Load list of saved-images: */
+
+  dirname = get_fname ("saved");
+
+
+  /* Read directory of images and build thumbnails: */
+
+  d = opendir (dirname);
+
+  if (d != NULL)
+    {
+      /* Gather list of files (for sorting): */
+
+      do
+        {
+          f = readdir (d);
+
+          if (f != NULL)
+            {
+              memcpy (&(fs[num_files_in_dir].f), f, sizeof (struct dirent));
+	      fs[num_files_in_dir].place = PLACE_SAVED_DIR;
+
+              num_files_in_dir++;
+
+              if (num_files_in_dir >= things_alloced)
+                {
+                  things_alloced = things_alloced + 32;
+                  fs = (struct dirent2 *) realloc (fs,
+                                                   sizeof (struct dirent2) *
+                                                   things_alloced);
+                }
+            }
+        }
+      while (f != NULL);
+
+      closedir (d);
+    }
+
+
+  /* (Re)allocate space for the information about these files: */
+
+  thumbs = (SDL_Surface * *)malloc (sizeof (SDL_Surface *) * num_files_in_dir);
+  d_names = (char **) malloc (sizeof (char *) * num_files_in_dir);
+  d_exts = (char **) malloc (sizeof (char *) * num_files_in_dir);
+
+
+  /* Sort: */
+
+  qsort (fs, num_files_in_dir, sizeof (struct dirent2),
+         (int (*)(const void *, const void *)) compare_dirent2s);
+
+
+  /* Read directory of images and build thumbnails: */
+
+  for (j = 0; j < num_files_in_dir; j++)
+    {
+      f = &(fs[j].f);
+
+      show_progress_bar (screen);
+
+      if (f != NULL)
+        {
+          debug (f->d_name);
+
+          if (strcasestr (f->d_name, "-t.") == NULL &&
+              strcasestr (f->d_name, "-back.") == NULL)
+            {
+              if (strcasestr (f->d_name, FNAME_EXTENSION) != NULL
+#ifndef SAVE_AS_BMP
+                  /* Support legacy BMP files for load: */
+                  || strcasestr (f->d_name, ".bmp") != NULL
+#endif
+                )
+                {
+                  strcpy (fname, f->d_name);
+                  if (strcasestr (fname, FNAME_EXTENSION) != NULL)
+                    {
+                      strcpy ((char *) strcasestr (fname, FNAME_EXTENSION),
+                              "");
+                      d_exts[num_files] = strdup (FNAME_EXTENSION);
+                    }
+
+#ifndef SAVE_AS_BMP
+                  if (strcasestr (fname, ".bmp") != NULL)
+                    {
+                      strcpy ((char *) strcasestr (fname, ".bmp"), "");
+                      d_exts[num_files] = strdup (".bmp");
+                    }
+#endif
+
+                  d_names[num_files] = strdup (fname);
+
+
+                  /* FIXME: Try to center list on whatever was selected
+                     in do_open() when the slideshow button was clicked. */
+
+                  /* Try to load thumbnail first: */
+
+                  snprintf (fname, sizeof (fname), "%s/.thumbs/%s-t.png",
+                            dirname, d_names[num_files]);
+		  debug ("Loading thumbnail...");
+                  debug (fname);
+                  img = IMG_Load (fname);
+                  if (img == NULL)
+                    {
+                      /* No thumbnail in the new location ("saved/.thumbs"),
+                         try the old locatin ("saved/"): */
+
+                      snprintf (fname, sizeof (fname), "%s/%s-t.png",
+                                dirname, d_names[num_files]);
+                      debug (fname);
+
+                      img = IMG_Load (fname);
+                    }
+
+
+                  if (img != NULL)
+                    {
+                      /* Loaded the thumbnail from one or the other location */
+
+		      debug("Thumbnail loaded, scaling");
+                      show_progress_bar (screen);
+
+                      img1 = SDL_DisplayFormat (img);
+                      SDL_FreeSurface (img);
+
+                      if (img1 != NULL)
+                        {
+                          // if too big, or too small in both dimensions, rescale it
+                          // ( for now: using old thumbnail as source for high speed, low quality)
+                          if (img1->w > THUMB_W - 20 || img1->h > THUMB_H - 20
+                              || (img1->w < THUMB_W - 20
+                                  && img1->h < THUMB_H - 20))
+                            {
+                              img2 =
+                                thumbnail (img1, THUMB_W - 20, THUMB_H - 20,
+                                           0);
+                              SDL_FreeSurface (img1);
+                              img1 = img2;
+                            }
+
+                          thumbs[num_files] = img1;
+
+                          if (thumbs[num_files] == NULL)
+                            {
+                              fprintf (stderr,
+                                       "\nError: Couldn't create a thumbnail of saved image!\n"
+                                       "%s\n", fname);
+                            }
+			  else
+			    num_files++;
+                        }
+		    }
+                  else
+                    {
+                      /* No thumbnail - load original: */
+                      /* (Make sure we have a .../saved/.thumbs/ directory:) */
+
+                      tmp_fname = get_fname ("saved/.thumbs");
+
+                      res = mkdir (tmp_fname, 0755);
+
+                      if (res != 0 && errno != EEXIST)
+                        {
+                          fprintf (stderr,
+                                   "\nError: Can't create user data thumbnail directory:\n"
+                                   "%s\n"
+                                   "The error that occurred was:\n"
+                                   "%s\n\n", tmp_fname, strerror (errno));
+                        }
+
+                      free (tmp_fname);
+
+
+                      snprintf (fname, sizeof (fname), "%s/%s",
+                                dirname, f->d_name);
+
+		      debug ("Loading original, to make thumbnail");
+                      debug (fname);
+#ifdef SAVE_AS_BMP
+                      img = SDL_LoadBMP (fname);
+#else
+                      img = IMG_Load (fname);
+#endif
+
+
+                      show_progress_bar (screen);
+
+
+                      if (img == NULL)
+                        {
+                          fprintf (stderr,
+                                   "\nWarning: I can't open one of the saved files!\n"
+                                   "%s\n"
+                                   "The Simple DirectMedia Layer error that "
+                                   "occurred was:\n"
+                                   "%s\n\n", fname, SDL_GetError ());
+                        }
+                      else
+                        {
+                          /* Turn it into a thumbnail: */
+
+                          img1 = SDL_DisplayFormatAlpha (img);
+                          img2 =
+                            thumbnail2 (img1, THUMB_W - 20, THUMB_H - 20,
+                                        0, 0);
+                          SDL_FreeSurface (img1);
+
+                          show_progress_bar (screen);
+
+                          thumbs[num_files] = SDL_DisplayFormat (img2);
+                          SDL_FreeSurface (img2);
+
+                          SDL_FreeSurface (img);
+
+                          if (thumbs[num_files] == NULL)
+                            {
+                              fprintf (stderr,
+                                       "\nError: Couldn't create a thumbnail of saved image!\n"
+                                       "%s\n", fname);
+                            }
+                          else
+                            {
+                              show_progress_bar (screen);
+
+                              /* Let's save this thumbnail, so we don't have to
+                                 create it again next time 'Open' is called: */
+
+                              debug ("Saving thumbnail for this one!");
+
+                              snprintf (fname, sizeof (fname),
+                                        "%s/.thumbs/%s-t.png", dirname,
+                                        d_names[num_files]);
+
+                              fi = fopen (fname, "wb");
+                              if (fi == NULL)
+                                {
+                                  fprintf (stderr,
+                                           "\nError: Couldn't save thumbnail of saved image!\n"
+                                           "%s\n"
+                                           "The error that occurred was:\n"
+                                           "%s\n\n",
+                                           fname, strerror (errno));
+                                }
+                              else
+                                {
+                                  do_png_save (fi, fname, thumbs[num_files]);
+                                }
+
+                              show_progress_bar (screen);
+
+			      num_files++;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+#ifdef DEBUG
+  printf ("%d saved files were found!\n", num_files);
+#endif
+  /* Let user choose images: */
+
+  freeme = textdir (gettext_noop ("Choose the pictures you want, "
+  				  "then click “Play”."));
+  draw_tux_text (TUX_BORED, freeme, 1);
+  free (freeme);
+
+  /* NOTE: cur is now set above; if file_id'th file is found, it's
+     set to that file's index; otherwise, we default to '0' */
+
+  update_list = 1;
+
+  go_back = 0;
+  done = 0;
+
+  do_setcursor (cursor_arrow);
+
+
+  do
+    {
+      /* Update screen: */
+
+      if (update_list)
+        {
+          /* Erase screen: */
+
+          dest.x = 96;
+          dest.y = 0;
+          dest.w = WINDOW_WIDTH - 96 - 96;
+          dest.h = 48 * 7 + 40 + HEIGHTOFFSET;
+
+          SDL_FillRect (screen, &dest,
+                        SDL_MapRGB (screen->format, 255, 255, 255));
+
+
+          /* Draw icons: */
+
+          for (i = cur; i < cur + 16 && i < num_files; i++)
+            {
+              /* Draw cursor: */
+
+              dest.x = THUMB_W * ((i - cur) % 4) + 96;
+              dest.y = THUMB_H * ((i - cur) / 4) + 24;
+
+              if (i == which)
+                {
+                  SDL_BlitSurface (img_cursor_down, NULL, screen, &dest);
+                  debug (d_names[i]);
+                }
+              else
+                SDL_BlitSurface (img_cursor_up, NULL, screen, &dest);
+
+              if (thumbs[i] != NULL)
+	      {
+                dest.x = THUMB_W * ((i - cur) % 4) + 96 + 10 +
+                  (THUMB_W - 20 - thumbs[i]->w) / 2;
+                dest.y = THUMB_H * ((i - cur) / 4) + 24 + 10 +
+                  (THUMB_H - 20 - thumbs[i]->h) / 2;
+
+                SDL_BlitSurface (thumbs[i], NULL, screen, &dest);
+	      }
+            }
+
+
+          /* Draw arrows: */
+
+          dest.x = (WINDOW_WIDTH - img_scroll_up->w) / 2;
+          dest.y = 0;
+
+          if (cur > 0)
+            SDL_BlitSurface (img_scroll_up, NULL, screen, &dest);
+          else
+            SDL_BlitSurface (img_scroll_up_off, NULL, screen, &dest);
+
+          dest.x = (WINDOW_WIDTH - img_scroll_up->w) / 2;
+          dest.y = (48 * 7 + 40 + HEIGHTOFFSET) - 48;
+
+          if (cur < num_files - 16)
+            SDL_BlitSurface (img_scroll_down, NULL, screen, &dest);
+          else
+            SDL_BlitSurface (img_scroll_down_off, NULL, screen, &dest);
+
+
+          /* "Play" button: */
+
+          dest.x = 96;
+          dest.y = (48 * 7 + 40 + HEIGHTOFFSET) - 48;
+          SDL_BlitSurface (img_play, NULL, screen, &dest);
+
+          dest.x = 96 + (48 - img_openlabels_play->w) / 2;
+          dest.y = (48 * 7 + 40 + HEIGHTOFFSET) - img_openlabels_play->h;
+          SDL_BlitSurface (img_openlabels_play, NULL, screen, &dest);
+
+
+          /* "Back" button: */
+
+          dest.x = WINDOW_WIDTH - 96 - 48;
+          dest.y = (48 * 7 + 40 + HEIGHTOFFSET) - 48;
+          SDL_BlitSurface (img_back, NULL, screen, &dest);
+
+          dest.x = WINDOW_WIDTH - 96 - 48 + (48 - img_openlabels_back->w) / 2;
+          dest.y = (48 * 7 + 40 + HEIGHTOFFSET) - img_openlabels_back->h;
+          SDL_BlitSurface (img_openlabels_back, NULL, screen, &dest);
+
+
+          SDL_Flip (screen);
+
+          update_list = 0;
+        }
+
+
+      mySDL_WaitEvent (&event);
+
+      if (event.type == SDL_QUIT)
+        {
+          done = 1;
+
+          /* FIXME: Handle SDL_Quit better */
+        }
+      else if (event.type == SDL_ACTIVEEVENT)
+        {
+          handle_active (&event);
+        }
+      else if (event.type == SDL_KEYUP)
+        {
+          key = event.key.keysym.sym;
+
+          handle_keymouse (key, SDL_KEYUP);
+        }
+      else if (event.type == SDL_KEYDOWN)
+        {
+          key = event.key.keysym.sym;
+
+          handle_keymouse (key, SDL_KEYDOWN);
+
+          if (key == SDLK_RETURN || key == SDLK_SPACE)
+            {
+              /* Play */
+
+              done = 1;
+              playsound (screen, 1, SND_CLICK, 1, SNDPOS_LEFT, SNDDIST_NEAR);
+            }
+          else if (key == SDLK_ESCAPE)
+            {
+              /* Go back: */
+
+              go_back = 1;
+              done = 1;
+              playsound (screen, 1, SND_CLICK, 1, SNDPOS_RIGHT, SNDDIST_NEAR);
+            }
+        }
+      else if (event.type == SDL_MOUSEBUTTONDOWN &&
+               valid_click (event.button.button))
+        {
+          if (event.button.x >= 96 && event.button.x < WINDOW_WIDTH - 96 &&
+              event.button.y >= 24 &&
+              event.button.y < (48 * 7 + 40 + HEIGHTOFFSET - 48))
+            {
+              /* Picked an icon! */
+
+              which = ((event.button.x - 96) / (THUMB_W) +
+                       (((event.button.y - 24) / THUMB_H) * 4)) + cur;
+
+              if (which < num_files)
+                {
+                  playsound (screen, 1, SND_BLEEP, 1, event.button.x,
+                             SNDDIST_NEAR);
+                  update_list = 1;
+                }
+            }
+          else if (event.button.x >= (WINDOW_WIDTH - img_scroll_up->w) / 2 &&
+                   event.button.x <= (WINDOW_WIDTH + img_scroll_up->w) / 2)
+            {
+              if (event.button.y < 24)
+                {
+                  /* Up scroll button: */
+
+                  if (cur > 0)
+                    {
+                      cur = cur - 4;
+                      update_list = 1;
+                      playsound (screen, 1, SND_SCROLL, 1, SNDPOS_CENTER,
+                                 SNDDIST_NEAR);
+
+                      if (cur == 0)
+                        do_setcursor (cursor_arrow);
+                    }
+
+                  if (which >= cur + 16)
+                    which = which - 4;
+                }
+              else if (event.button.y >= (48 * 7 + 40 + HEIGHTOFFSET - 48) &&
+                       event.button.y < (48 * 7 + 40 + HEIGHTOFFSET - 24))
+                {
+                  /* Down scroll button: */
+
+                  if (cur < num_files - 16)
+                    {
+                      cur = cur + 4;
+                      update_list = 1;
+                      playsound (screen, 1, SND_SCROLL, 1, SNDPOS_CENTER,
+                                 SNDDIST_NEAR);
+
+                      if (cur >= num_files - 16)
+                        do_setcursor (cursor_arrow);
+                    }
+
+                  if (which < cur)
+                    which = which + 4;
+                }
+            }
+          else if (event.button.x >= 96 && event.button.x < 96 + 48 &&
+                   event.button.y >= (48 * 7 + 40 + HEIGHTOFFSET) - 48 &&
+                   event.button.y < (48 * 7 + 40 + HEIGHTOFFSET))
+            {
+              /* Play */
+
+              done = 1;
+              playsound (screen, 1, SND_CLICK, 1, SNDPOS_LEFT, SNDDIST_NEAR);
+            }
+          else if (event.button.x >= (WINDOW_WIDTH - 96 - 48) &&
+                   event.button.x < (WINDOW_WIDTH - 96) &&
+                   event.button.y >= (48 * 7 + 40 + HEIGHTOFFSET) - 48 &&
+                   event.button.y < (48 * 7 + 40 + HEIGHTOFFSET))
+            {
+              /* Back */
+
+              go_back = 1;
+              done = 1;
+              playsound (screen, 1, SND_CLICK, 1, SNDPOS_RIGHT, SNDDIST_NEAR);
+            }
+        }
+      else if (event.type == SDL_MOUSEBUTTONDOWN &&
+               event.button.button >= 4 && event.button.button <= 5 && wheely)
+        {
+          /* Scroll wheel! */
+
+          if (event.button.button == 4 && cur > 0)
+            {
+              cur = cur - 4;
+              update_list = 1;
+              playsound (screen, 1, SND_SCROLL, 1, SNDPOS_CENTER,
+                         SNDDIST_NEAR);
+
+              if (cur == 0)
+                do_setcursor (cursor_arrow);
+
+              if (which >= cur + 16)
+                which = which - 4;
+            }
+          else if (event.button.button == 5 && cur < num_files - 16)
+            {
+              cur = cur + 4;
+              update_list = 1;
+              playsound (screen, 1, SND_SCROLL, 1, SNDPOS_CENTER,
+                         SNDDIST_NEAR);
+
+              if (cur >= num_files - 16)
+                do_setcursor (cursor_arrow);
+
+              if (which < cur)
+                which = which + 4;
+            }
+        }
+      else if (event.type == SDL_MOUSEMOTION)
+        {
+          /* Deal with mouse pointer shape! */
+
+          if (event.button.y < 24 &&
+              event.button.x >= (WINDOW_WIDTH - img_scroll_up->w) / 2 &&
+              event.button.x <= (WINDOW_WIDTH + img_scroll_up->w) / 2 &&
+              cur > 0)
+            {
+              /* Scroll up button: */
+
+              do_setcursor (cursor_up);
+            }
+          else if (event.button.y >= (48 * 7 + 40 + HEIGHTOFFSET - 48) &&
+                   event.button.y < (48 * 7 + 40 + HEIGHTOFFSET - 24) &&
+                   event.button.x >= (WINDOW_WIDTH - img_scroll_up->w) / 2 &&
+                   event.button.x <= (WINDOW_WIDTH + img_scroll_up->w) / 2 &&
+                   cur < num_files - 16)
+            {
+              /* Scroll down button: */
+
+              do_setcursor (cursor_down);
+            }
+          else if (((event.button.x >= 96 && event.button.x < 96 + 48) ||
+                    (event.button.x >= (WINDOW_WIDTH - 96 - 48) &&
+                     event.button.x < (WINDOW_WIDTH - 96)) ||
+                    (event.button.x >= (WINDOW_WIDTH - 96 - 48 - 48) &&
+                     event.button.x < (WINDOW_WIDTH - 48 - 96))) &&
+                   event.button.y >= (48 * 7 + 40 + HEIGHTOFFSET) - 48 &&
+                   event.button.y < (48 * 7 + 40 + HEIGHTOFFSET))
+            {
+              /* One of the command buttons: */
+
+              do_setcursor (cursor_hand);
+            }
+          else if (event.button.x >= 96 && event.button.x < WINDOW_WIDTH - 96
+                   && event.button.y > 24
+                   && event.button.y < (48 * 7 + 40 + HEIGHTOFFSET) - 48
+                   &&
+                   ((((event.button.x - 96) / (THUMB_W) +
+                      (((event.button.y - 24) / THUMB_H) * 4)) + cur) <
+                    num_files))
+            {
+              /* One of the thumbnails: */
+
+              do_setcursor (cursor_hand);
+            }
+          else
+            {
+              /* Unclickable... */
+
+              do_setcursor (cursor_arrow);
+            }
+        }
+    }
+  while (!done);
+
+
+  /* Clean up: */
+
+  free_surface_array (thumbs, num_files);
+
+  free (thumbs);
+
+  for (i = 0; i < num_files; i++)
+    {
+      free (d_names[i]);
+      free (d_exts[i]);
+    }
+
+  free (dirname);
+
+  free (d_names);
+  free (d_exts);
+
+
+  if (go_back == 1)
+    do_open ();
+}
+
 
 
 /* Let sound effects (e.g., "Save" sfx) play out before quitting... */
