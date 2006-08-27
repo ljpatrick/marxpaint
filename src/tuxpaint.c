@@ -953,7 +953,8 @@ static SDL_Surface **img_brushes;
 static SDL_Surface *img_shapes[NUM_SHAPES], *img_shape_names[NUM_SHAPES];
 static SDL_Surface *img_magics[NUM_MAGICS], *img_magic_names[NUM_MAGICS];
 static SDL_Surface *img_openlabels_open, *img_openlabels_erase,
-  *img_openlabels_slideshow, *img_openlabels_back, *img_openlabels_play;
+  *img_openlabels_slideshow, *img_openlabels_back, *img_openlabels_play,
+  *img_openlabels_next;
 
 static SDL_Surface *img_tux[NUM_TIP_TUX];
 
@@ -6941,6 +6942,7 @@ static void create_button_labels(void)
   img_openlabels_erase = do_render_button_label(gettext_noop("Erase"));
   img_openlabels_slideshow = do_render_button_label(gettext_noop("Slides"));
   img_openlabels_back = do_render_button_label(gettext_noop("Back"));
+  img_openlabels_next = do_render_button_label(gettext_noop("Next"));
   img_openlabels_play = do_render_button_label(gettext_noop("Play"));
 }
 
@@ -10429,6 +10431,7 @@ static void cleanup(void)
   free_surface(&img_openlabels_slideshow);
   free_surface(&img_openlabels_erase);
   free_surface(&img_openlabels_back);
+  free_surface(&img_openlabels_next);
   free_surface(&img_openlabels_play);
 
   free_surface(&img_progress);
@@ -12579,6 +12582,10 @@ void do_slideshow(void)
   SDL_Event event;
   SDLKey key;
   char *freeme;
+  int speeds;
+  float x_per, y_per;
+  int xx, yy;
+  SDL_Surface *btn, *blnk;
 
   do_setcursor(cursor_watch);
 
@@ -12973,6 +12980,38 @@ void do_slideshow(void)
       dest.y = (48 * 7 + 40 + HEIGHTOFFSET) - img_openlabels_back->h;
       SDL_BlitSurface(img_openlabels_back, NULL, screen, &dest);
 
+    
+      /* Speed control: */
+      
+      speeds = 10;
+      x_per = 96.0 / speeds;
+      y_per = 48.0 / speeds;
+
+      for (i = 0; i < speeds; i++)
+      {
+        xx = ceil(x_per);
+        yy = ceil(y_per * i);
+
+        if (i <= speed)
+	  btn = thumbnail(img_btn_down, xx, yy, 0);
+        else
+	  btn = thumbnail(img_btn_up, xx, yy, 0);
+
+        blnk = thumbnail(img_btn_off, xx, 48 - yy, 0);
+
+        /* FIXME: Check for NULL! */
+
+        dest.x = 96 + 48 + (i * x_per);
+        dest.y = (48 * 7 + 40 + HEIGHTOFFSET) - 48;
+        SDL_BlitSurface(blnk, NULL, screen, &dest);
+
+        dest.x = 96 + 48 + (i * x_per);
+        dest.y = (48 * 7 + 40 + HEIGHTOFFSET) - (y_per * i);
+        SDL_BlitSurface(btn, NULL, screen, &dest);
+
+        SDL_FreeSurface(btn);
+        SDL_FreeSurface(blnk);
+      }
 
       SDL_Flip(screen);
 
@@ -13140,6 +13179,34 @@ void do_slideshow(void)
 
 	update_list = 1;
       }
+      else if (event.button.x >= 96 + 48 && event.button.x < 96 + 48 + 96 &&
+	       event.button.y >= (48 * 7 + 40 + HEIGHTOFFSET) - 48 &&
+	       event.button.y < (48 * 7 + 40 + HEIGHTOFFSET))
+      {
+	/* Speed slider */
+	
+	int old_speed, control_sound, click_x;
+
+	old_speed = speed;
+
+	click_x = event.button.x - 96 - 48;
+        speed = ((10 * click_x) / 96);
+
+	control_sound = -1;
+
+        if (speed < old_speed)
+	  control_sound = SND_SHRINK;
+	else if (speed > old_speed)
+	  control_sound = SND_GROW;
+
+	if (control_sound != -1)
+	{
+	  playsound(screen, 0, control_sound, 0, SNDPOS_CENTER,
+		    SNDDIST_NEAR);
+
+	  update_list = 1;
+	}
+      }
       else if (event.button.x >= (WINDOW_WIDTH - 96 - 48) &&
 	       event.button.x < (WINDOW_WIDTH - 96) &&
 	       event.button.y >= (48 * 7 + 40 + HEIGHTOFFSET) - 48 &&
@@ -13204,11 +13271,9 @@ void do_slideshow(void)
 
 	do_setcursor(cursor_down);
       }
-      else if (((event.button.x >= 96 && event.button.x < 96 + 48) ||
+      else if (((event.button.x >= 96 && event.button.x < 96 + 48 + 96) ||
 		(event.button.x >= (WINDOW_WIDTH - 96 - 48) &&
-		 event.button.x < (WINDOW_WIDTH - 96)) ||
-		(event.button.x >= (WINDOW_WIDTH - 96 - 48 - 48) &&
-		 event.button.x < (WINDOW_WIDTH - 48 - 96))) &&
+		 event.button.x < (WINDOW_WIDTH - 96))) &&
 	       event.button.y >= (48 * 7 + 40 + HEIGHTOFFSET) - 48 &&
 	       event.button.y < (48 * 7 + 40 + HEIGHTOFFSET))
       {
@@ -13343,6 +13408,17 @@ void play_slideshow(int * selected, int num_selected, char * dirname,
       SDL_BlitSurface(img_openlabels_back, NULL, screen, &dest);
 
       
+      /* "Next" button: */
+
+      dest.x = 0;
+      dest.y = screen->h - 48;
+      SDL_BlitSurface(img_play, NULL, screen, &dest);
+
+      dest.x = (48 - img_openlabels_next->w) / 2;
+      dest.y = screen->h - img_openlabels_next->h;
+      SDL_BlitSurface(img_openlabels_next, NULL, screen, &dest);
+
+      
       SDL_Flip(screen);
 
 
@@ -13421,10 +13497,11 @@ void play_slideshow(int * selected, int num_selected, char * dirname,
           {
 	    /* Deal with mouse pointer shape! */
 
-	    if (event.button.x >= screen->w - 48 &&
+	    if ((event.button.x >= screen->w - 48 ||
+		event.button.x < 48) &&
 		event.button.y >= screen->h - 48)
 	    {
-	      /* Back button */
+	      /* Back or Next buttons */
 
   	      do_setcursor(cursor_hand);
 	    }
@@ -13442,8 +13519,11 @@ void play_slideshow(int * selected, int num_selected, char * dirname,
 
 	/* Automatically skip to the next one after time expires: */
 
-	if (SDL_GetTicks() >= last_ticks + speed * 1000)
-	  next = 1;
+	if (speed != 0)
+	{
+	  if (SDL_GetTicks() >= last_ticks + (10 - speed) * 500)
+	    next = 1;
+	}
       }
       while (!next);
     }

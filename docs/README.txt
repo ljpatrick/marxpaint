@@ -425,7 +425,7 @@ Available Tools
                         picture. (You will be asked to confirm.)
 
                       * Click the blue "Slides" (slide projector) button at
-                        the lower left to go to slideshow mode. See "Slides,
+                        the lower left to go to slideshow mode. See "Slides",
                         below, for details.
 
                       * Or click the red "Back" arrow button at the lower
@@ -600,25 +600,33 @@ Available Tools
 
                  Click each of the images you wish to display in a
                  slideshow-style presentation, one by one. A digit will
-                 appear over each image, letting you know which order it will
-                 be displayed in.
+                 appear over each image, letting you know in which order they
+                 will be displayed.
 
-                 Click a selected image to unselect it (take it out of your
-                 slideshow). Any images you had clicked after it will go up
-                 one in the slideshow order.
+                 You can click a selected image to unselect it (take it out
+                 of your slideshow).
 
-                 Click the "Play" icon to begin the slideshow. Note: If you
-                 didn't select ANY images, then ALL images will be played in
-                 the slideshow. Click "Back" to return to the "Open" dialog.
+                 A sliding scale at the lower left of the screen (next to the
+                 "Play" button) can be used to adjust the speed of the
+                 slideshow, from slowest to fastest. Choose the leftmost
+                 setting to disable automatic advancement -- you will need to
+                 press a key or click to go to the next slide (see below).
+
+                 When you're ready, click the "Play" button to begin the
+                 slideshow. (Note: If you hadn't selected ANY images, then
+                 ALL images will be played in the slideshow.)
 
                  During the slideshow, press [Space], [Enter] or [Return] or
-                 the [Right Arrow], or click anywhere in the picture, to
-                 manually advance to the next slide. Press [Left] to go back
-                 to the previous slide.
+                 the [Right Arrow], or click the "Next" button at the lower
+                 left, to manually advance to the next slide. Press [Left] to
+                 go back to the previous slide.
 
-                 Press [Escape] or click the "Back" button at the lower right
-                 to exit the slideshow and return to the image list, where
-                 you may change which images to show in the slideshow.
+                 Press [Escape], or click the "Back" button at the lower
+                 right, to exit the slideshow and return to the slideshow
+                 image selection screen.
+
+                 Click "Back" in the slideshow image selection screen to
+                 return to the "Open" dialog.
 
          Quit
 

@@ -13,11 +13,17 @@ $Id$
   * Interface improvements:
     -----------------------
     * New slideshow tool! ("Slides", available in "Open" dialog.)
-      Select each image to play, in the order you want them, then click "Play".
+      Select each image to play, in the order you want them, and use the
+      sliding scale to adjust speed, then click "Play" to begin the show.
 
-      Space, Enter, Right and mouseclicks advance manually.
-      Left goes to the previous image.
-      Escape or "Back" button at lower right ends playback.
+      + The "Next" button and [Space], [Enter] and [Right Arrow] keys
+        advance to the next slide manually.  (Clicking anywhere in the image
+        advances, as well.)
+      + The [Left Arrow] key goes to the previous slide.
+      + The "Back" button and [Escape] ends playback.
+
+      Note: Use slowest (leftmost) speed setting to disable automatic
+      slide advancement.
 
     * Modified "Text" tool so that it correctly handles the 16-bit unicode
       characters that SDL sends.
