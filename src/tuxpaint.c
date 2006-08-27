@@ -803,7 +803,7 @@ static SDL_Surface *img_dead40x40;
 static SDL_Surface *img_black, *img_grey;
 static SDL_Surface *img_yes, *img_no;
 static SDL_Surface *img_open, *img_erase, *img_back, *img_trash;
-static SDL_Surface *img_slideshow, *img_play;
+static SDL_Surface *img_slideshow, *img_play, *img_select_digits;
 static SDL_Surface *img_printer, *img_printer_wait, *img_save_over;
 static SDL_Surface *img_popup_arrow;
 static SDL_Surface *img_cursor_up, *img_cursor_down;
@@ -1139,6 +1139,9 @@ static void get_new_file_id(void);
 static int do_quit(void);
 void do_open(void);
 void do_slideshow(void);
+void play_slideshow(int * selected, int num_selected, char * dirname,
+		    char **d_names, char **d_exts, int speed);
+void draw_selection_digits(int right, int bottom, int n);
 static void wait_for_sfx(void);
 static void rgbtohsv(Uint8 r8, Uint8 g8, Uint8 b8, float *h, float *s,
 		     float *v);
@@ -6566,6 +6569,7 @@ static void setup(int argc, char *argv[])
 
   img_slideshow = loadimage(DATA_PREFIX "images/ui/slideshow.png");
   img_play = loadimage(DATA_PREFIX "images/ui/play.png");
+  img_select_digits = loadimage(DATA_PREFIX "images/ui/select_digits.png");
 
   img_popup_arrow = loadimage(DATA_PREFIX "images/ui/popup_arrow.png");
 
@@ -10448,6 +10452,7 @@ static void cleanup(void)
 
   free_surface(&img_slideshow);
   free_surface(&img_play);
+  free_surface(&img_select_digits);
 
   free_surface(&img_dead40x40);
 
@@ -11447,6 +11452,8 @@ static int do_quit(void)
 #define PLACE_SAVED_DIR 1
 #define NUM_PLACES_TO_LOOK 2
 
+
+/* FIXME: This, and do_slideshow(), should be combined and modularized! */
 
 void do_open(void)
 {
@@ -12551,6 +12558,10 @@ void do_open(void)
 }
 
 
+/* FIXME: This, and do_open(), should be combined and modularized! */
+
+/* Slide Show Selection Screen: */
+
 void do_slideshow(void)
 {
   SDL_Surface *img, *img1, *img2;
@@ -12561,11 +12572,13 @@ void do_slideshow(void)
   struct dirent2 *fs;
   char *dirname;
   char **d_names = NULL, **d_exts = NULL;
+  int *selected;
+  int num_selected;
   FILE *fi;
   char fname[1024];
   char *tmp_fname;
   int num_files, num_files_in_dir, i, done, update_list, cur, which, j, res,
-    go_back;
+    go_back, found, speed;
   SDL_Rect dest;
   SDL_Event event;
   SDLKey key;
@@ -12629,6 +12642,7 @@ void do_slideshow(void)
   thumbs = (SDL_Surface * *)malloc(sizeof(SDL_Surface *) * num_files_in_dir);
   d_names = (char **) malloc(sizeof(char *) * num_files_in_dir);
   d_exts = (char **) malloc(sizeof(char *) * num_files_in_dir);
+  selected = (int *) malloc(sizeof(int) * num_files_in_dir);
 
 
   /* Sort: */
@@ -12853,6 +12867,10 @@ void do_slideshow(void)
   go_back = 0;
   done = 0;
 
+  // FIXME: Make these global, so it sticks between views?
+  num_selected = 0;
+  speed = 5;
+
   do_setcursor(cursor_arrow);
 
 
@@ -12897,6 +12915,24 @@ void do_slideshow(void)
 	    (THUMB_H - 20 - thumbs[i]->h) / 2;
 
 	  SDL_BlitSurface(thumbs[i], NULL, screen, &dest);
+	}
+
+	found = -1;
+
+	for (j = 0; j < num_selected && found == -1; j++)
+	{
+	  if (selected[j] == i)
+	    found = j;
+	}
+
+	if (found != -1)
+	{
+	  dest.x = (THUMB_W * ((i - cur) % 4) + 96 + 10 +
+		    (THUMB_W - 20 - thumbs[i]->w) / 2) + thumbs[i]->w;
+	  dest.y = (THUMB_H * ((i - cur) / 4) + 24 + 10 +
+		    (THUMB_H - 20 - thumbs[i]->h) / 2) + thumbs[i]->h;
+	  
+	  draw_selection_digits(dest.x, dest.y, found + 1);
 	}
       }
 
@@ -13003,6 +13039,32 @@ void do_slideshow(void)
 	if (which < num_files)
 	{
 	  playsound(screen, 1, SND_BLEEP, 1, event.button.x, SNDDIST_NEAR);
+
+	  /* Is it selected already? */
+
+	  found = -1;
+	  for (i = 0; i < num_selected && found == -1; i++)
+	  {
+	    if (selected[i] == which)
+	      found = i;
+	  }
+
+	  if (found == -1)
+	  {
+	    /* No!  Select it! */
+
+	    selected[num_selected++] = which;
+	  }
+	  else
+	  {
+            /* Yes!  Unselect it! */
+
+	    for (i = found; i < num_selected - 1; i++)
+	      selected[i] = selected[i + 1];
+	    
+	    num_selected--;
+	  }
+	  
 	  update_list = 1;
 	}
       }
@@ -13051,8 +13113,36 @@ void do_slideshow(void)
       {
 	/* Play */
 
-	done = 1;
 	playsound(screen, 1, SND_CLICK, 1, SNDPOS_LEFT, SNDDIST_NEAR);
+
+
+	/* If none selected, select all, in order! */
+
+	if (num_selected == 0)
+	{
+	  for (i = 0; i < num_files; i++)
+	    selected[i] = i;
+	  num_selected = num_files;
+	}
+	
+	play_slideshow(selected, num_selected, dirname, d_names, d_exts, speed);
+
+
+	/* Redraw entire screen, after playback: */
+
+        SDL_FillRect(screen, NULL, SDL_MapRGB(canvas->format, 255, 255, 255));
+	draw_toolbar();
+	draw_colors(COLORSEL_ENABLE);
+	draw_none();
+  
+	freeme = textdir(gettext_noop("Choose the pictures you want, "
+				      "then click “Play”."));
+	draw_tux_text(TUX_BORED, freeme, 1);
+	free(freeme);
+	
+	SDL_Flip(screen);
+
+	update_list = 1;
       }
       else if (event.button.x >= (WINDOW_WIDTH - 96 - 48) &&
 	       event.button.x < (WINDOW_WIDTH - 96) &&
@@ -13169,12 +13259,261 @@ void do_slideshow(void)
 
   free(d_names);
   free(d_exts);
+  free(selected);
 
 
   if (go_back == 1)
     do_open();
 }
 
+
+void play_slideshow(int * selected, int num_selected, char * dirname,
+		    char **d_names, char **d_exts, int speed)
+{
+  int i, which, next, done;
+  SDL_Surface * img;
+  char * tmp_starter_id, * tmp_file_id;
+  int tmp_starter_mirrored, tmp_starter_flipped;
+  char fname[1024];
+  SDL_Event event;
+  SDLKey key;
+  SDL_Rect dest;
+  Uint32 last_ticks;
+
+
+  /* Back up the current image's IDs, because they will get
+     clobbered below! */
+
+  tmp_starter_id = strdup(starter_id);
+  tmp_file_id = strdup(file_id);
+  tmp_starter_mirrored = starter_mirrored;
+  tmp_starter_flipped = starter_flipped;
+
+  do_setcursor(cursor_tiny);
+
+  done = 0;
+  
+  do
+  {
+    for (i = 0; i < num_selected && !done; i++)
+    {
+      which = selected[i];
+      show_progress_bar(screen);
+
+
+      /* Figure out filename: */
+
+      snprintf(fname, sizeof(fname), "%s/%s%s",
+	       dirname, d_names[which], d_exts[which]);
+
+
+#ifdef SAVE_AS_BMP
+      img = SDL_LoadBMP(fname);
+#else
+      img = IMG_Load(fname);
+#endif
+
+      if (img != NULL)
+      {
+	autoscale_copy_smear_free(img, screen, SDL_BlitSurface);
+
+	strcpy(file_id, d_names[which]);
+
+
+	/* See if this saved image was based on a 'starter' */
+
+	load_starter_id(d_names[which]);
+
+	if (starter_id[0] != '\0')
+	{
+	  load_starter(starter_id);
+
+	  if (starter_mirrored)
+	    mirror_starter();
+
+	  if (starter_flipped)
+	    flip_starter();
+	}
+      }
+
+      /* "Back" button: */
+
+      dest.x = screen->w - 48;
+      dest.y = screen->h - 48;
+      SDL_BlitSurface(img_back, NULL, screen, &dest);
+
+      dest.x = screen->w - 48 + (48 - img_openlabels_back->w) / 2;
+      dest.y = screen->h - img_openlabels_back->h;
+      SDL_BlitSurface(img_openlabels_back, NULL, screen, &dest);
+
+      
+      SDL_Flip(screen);
+
+
+      /* Handle any events, and otherwise wait for time to count down: */
+
+      next = 0;
+      last_ticks = SDL_GetTicks();
+      
+      do
+      {
+	while (SDL_PollEvent(&event))
+	{
+	  if (event.type == SDL_QUIT)
+	  {
+	    /* FIXME: Handle SDL_QUIT better! */
+		  
+	    next = 1;
+	    done = 1;
+	  }
+	  else if (event.type == SDL_KEYDOWN)
+	  {
+	    key = event.key.keysym.sym;
+
+            handle_keymouse(key, SDL_KEYDOWN);
+
+            if (key == SDLK_RETURN || key == SDLK_SPACE || key == SDLK_RIGHT)
+	    {
+	      /* RETURN, SPACE or RIGHT: Skip to next right away! */
+	
+	      next = 1;
+	      playsound(screen, 1, SND_CLICK, 1, SNDPOS_LEFT, SNDDIST_NEAR);
+	    }
+	    else if (key == SDLK_LEFT)
+	    {
+	      /* LEFT: Go back one! */
+
+	      i = i - 2;
+
+	      if (i < -1)
+		i = num_selected - 2;
+
+	      next = 1;
+	      playsound(screen, 1, SND_CLICK, 1, SNDPOS_LEFT, SNDDIST_NEAR);
+	    }
+            else if (key == SDLK_ESCAPE)
+            {
+	      /* Go back: */
+
+	      next = 1;
+	      done = 1;
+	      playsound(screen, 1, SND_CLICK, 1, SNDPOS_RIGHT, SNDDIST_NEAR);
+            }
+	  }
+	  else if (event.type == SDL_MOUSEBUTTONDOWN)
+	  {
+            /* Mouse click! */
+
+	    if (event.button.x >= screen->w - 48 &&
+		event.button.y >= screen->h - 48)
+	    {
+	      /* Back button */
+
+	      next = 1;
+	      done = 1;
+	      playsound(screen, 1, SND_CLICK, 1, SNDPOS_RIGHT, SNDDIST_NEAR);
+	    }
+	    else
+	    {
+	      /* Otherwise, skip to next image right away! */
+
+	      next = 1;
+	      playsound(screen, 1, SND_CLICK, 1, SNDPOS_LEFT, SNDDIST_NEAR);
+	    }
+	  }
+          else if (event.type == SDL_MOUSEMOTION)
+          {
+	    /* Deal with mouse pointer shape! */
+
+	    if (event.button.x >= screen->w - 48 &&
+		event.button.y >= screen->h - 48)
+	    {
+	      /* Back button */
+
+  	      do_setcursor(cursor_hand);
+	    }
+	    else
+	    {
+	      /* Otherwise, minimal cursor... */
+
+  	      do_setcursor(cursor_tiny);
+	    }
+	  }
+	}
+
+	SDL_Delay(100);
+
+
+	/* Automatically skip to the next one after time expires: */
+
+	if (SDL_GetTicks() >= last_ticks + speed * 1000)
+	  next = 1;
+      }
+      while (!next);
+    }
+  }
+  while (!done);
+  
+  strcpy(starter_id, tmp_starter_id);
+  free(tmp_starter_id);
+
+  strcpy(file_id, tmp_file_id);
+  free(tmp_file_id);
+
+  starter_mirrored = tmp_starter_mirrored;
+  starter_flipped = tmp_starter_flipped;
+}
+
+
+
+/* Draws large, bitmap digits over thumbnails in slideshow selection screen: */
+
+void draw_selection_digits(int right, int bottom, int n)
+{
+  SDL_Rect src, dest;
+  int i, v, len, place;
+  int digit_w, digit_h, x, y;
+
+  digit_w = img_select_digits->w / 10;
+  digit_h = img_select_digits->h;
+
+  if (n > 99)
+  {
+    len = 3;
+    place = 100;
+  }
+  else if (n > 9)
+  {
+    len = 2;
+    place = 10;
+  }
+  else
+  {
+    len = 1;
+    place = 1;
+  }
+
+  x = right - digit_w * len;
+  y = bottom - digit_h;
+
+  for (i = 0; i < len; i++)
+  {
+    v = (n / place) % (place * 10);
+
+    src.x = digit_w * v;
+    src.y = 0;
+    src.w = digit_w;
+    src.h = digit_h;
+
+    dest.x = x;
+    dest.y = y;
+
+    SDL_BlitSurface(img_select_digits, &src, screen, &dest);
+
+    x = x + digit_w;
+    place = place / 10;
+  }
+}
 
 
 /* Let sound effects (e.g., "Save" sfx) play out before quitting... */

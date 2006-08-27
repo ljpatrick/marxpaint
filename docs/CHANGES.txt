@@ -12,6 +12,13 @@ $Id$
 2006.August.27 (0.9.16)
   * Interface improvements:
     -----------------------
+    * New slideshow tool! ("Slides", available in "Open" dialog.)
+      Select each image to play, in the order you want them, then click "Play".
+
+      Space, Enter, Right and mouseclicks advance manually.
+      Left goes to the previous image.
+      Escape or "Back" button at lower right ends playback.
+
     * Modified "Text" tool so that it correctly handles the 16-bit unicode
       characters that SDL sends.
       (The text buffer is held internally as an array of wchar_t, and
@@ -40,7 +47,8 @@ $Id$
 
     * Stamp sound effects may be in either OGG or WAV format.
 
-    * Stamps may now include a second sound effect, used as a spoken description.
+    * Stamps may now include a second sound effect, used as a spoken
+      description.
       (stampname_desc.ogg or .wav and localized stampname_desc_ll.ogg or .wav)
   
   * Tool improvements:
