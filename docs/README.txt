@@ -9,7 +9,7 @@
                            bill@newbreedsoftware.com
                    http://www.newbreedsoftware.com/tuxpaint/
 
-                       June 14, 2002 - February 20, 2006
+                        June 14, 2002 - August 27, 2006
 
    --------------------------------------------------------------------------
 
@@ -424,6 +424,10 @@ Available Tools
                         lower right of the list to erase the selected
                         picture. (You will be asked to confirm.)
 
+                      * Click the blue "Slides" (slide projector) button at
+                        the lower left to go to slideshow mode. See "Slides,
+                        below, for details.
+
                       * Or click the red "Back" arrow button at the lower
                         right of the list to cancel and return to the picture
                         you were drawing.
@@ -587,6 +591,34 @@ Available Tools
                               See the "Options" documentation.)
 
    --------------------------------------------------------------------------
+
+         Slides
+
+                 The "Slides" button is available in the "Open" dialog. It
+                 displays a list of your saved files, similar to the "Open"
+                 dialog, but without listing 'Starter' images.
+
+                 Click each of the images you wish to display in a
+                 slideshow-style presentation, one by one. A digit will
+                 appear over each image, letting you know which order it will
+                 be displayed in.
+
+                 Click a selected image to unselect it (take it out of your
+                 slideshow). Any images you had clicked after it will go up
+                 one in the slideshow order.
+
+                 Click the "Play" icon to begin the slideshow. Note: If you
+                 didn't select ANY images, then ALL images will be played in
+                 the slideshow. Click "Back" to return to the "Open" dialog.
+
+                 During the slideshow, press [Space], [Enter] or [Return] or
+                 the [Right Arrow], or click anywhere in the picture, to
+                 manually advance to the next slide. Press [Left] to go back
+                 to the previous slide.
+
+                 Press [Escape] or click the "Back" button at the lower right
+                 to exit the slideshow and return to the image list, where
+                 you may change which images to show in the slideshow.
 
          Quit
 
