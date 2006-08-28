@@ -197,7 +197,12 @@ $Id$
 
   * Bug Fixes:
     ----------
-    * tux Paint's scalable icon (tuxpaint-icon.svg) caused Gnome panel to
+    * Was not looking in personal folder for starters
+      (e.g., "~/.tuxpaint/starters/" on Linux).  Fixed.  Adds a new boolean
+      to the save image's ".dat" file, denoting whether the starter is from
+      the personal folder (1) or not (0, or no data, as in prev. version).
+
+    * Tux Paint's scalable icon (tuxpaint-icon.svg) caused Gnome panel to
       go wild (due to "libarts" bug?).  Changed a vector value which apparently
       fixes it (and caused no noticable changes to the icon).
     

@@ -22,7 +22,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
   
-  June 14, 2002 - August 27, 2006
+  June 14, 2002 - August 28, 2006
   $Id$
 */
 
@@ -778,7 +778,7 @@ static int fullscreen, disable_quit, simple_shapes,
   mirrorstamps, disable_stamp_controls, disable_save, ok_to_use_lockfile,
   alt_print_command_default, scrolling = 0;
 static int want_alt_printcommand;
-static int starter_mirrored, starter_flipped;
+static int starter_mirrored, starter_flipped, starter_personal;
 static int recording, playing;
 static char *playfile;
 static FILE *demofi;
@@ -1677,6 +1677,7 @@ static void mainloop(void)
 	    free_surface(&img_starter_bkgd);
 	    starter_mirrored = 0;
 	    starter_flipped = 0;
+	    starter_personal = 0;
 
 	    SDL_FillRect(canvas, NULL,
 			 SDL_MapRGB(canvas->format, 255, 255, 255));
@@ -2066,6 +2067,7 @@ static void mainloop(void)
 		free_surface(&img_starter_bkgd);
 		starter_mirrored = 0;
 		starter_flipped = 0;
+		starter_personal = 0;
 
 		SDL_FillRect(canvas, NULL,
 			     SDL_MapRGB(canvas->format, 255, 255, 255));
@@ -6479,6 +6481,7 @@ static void setup(int argc, char *argv[])
   img_starter_bkgd = NULL;
   starter_mirrored = 0;
   starter_flipped = 0;
+  starter_personal = 0;
 
   if (canvas == NULL)
   {
@@ -9735,6 +9738,7 @@ static void load_starter_id(char *saved_id)
 
     fscanf(fi, "%d", &starter_mirrored);
     fscanf(fi, "%d", &starter_flipped);
+    fscanf(fi, "%d", &starter_personal);
 
     fclose(fi);
   }
@@ -9752,7 +9756,10 @@ static void load_starter(char *img_id)
 
   /* Determine path to starter files: */
 
-  dirname = strdup(DATA_PREFIX "starters");
+  if (starter_personal == 0)
+    dirname = strdup(DATA_PREFIX "starters");
+  else
+    dirname = get_fname("starters");
 
   /* Clear them to NULL first: */
   img_starter = NULL;
@@ -11166,7 +11173,8 @@ static int do_save(void)
     if (fi != NULL)
     {
       fprintf(fi, "%s\n", starter_id);
-      fprintf(fi, "%d %d\n", starter_mirrored, starter_flipped);
+      fprintf(fi, "%d %d %d\n",
+	      starter_mirrored, starter_flipped, starter_personal);
       fclose(fi);
     }
 
@@ -11448,8 +11456,9 @@ static int do_quit(void)
 /* Open a saved image: */
 
 #define PLACE_STARTERS_DIR 0
-#define PLACE_SAVED_DIR 1
-#define NUM_PLACES_TO_LOOK 2
+#define PLACE_PERSONAL_STARTERS_DIR 1
+#define PLACE_SAVED_DIR 2
+#define NUM_PLACES_TO_LOOK 3
 
 
 /* FIXME: This, and do_slideshow(), should be combined and modularized! */
@@ -11506,9 +11515,15 @@ void do_open(void)
 
       dirname[places_to_look] = strdup(DATA_PREFIX "starters");
     }
+    else if (places_to_look == PLACE_PERSONAL_STARTERS_DIR)
+    {
+      /* Check for coloring-book style 'starter' images in our folder, next: */
+
+      dirname[places_to_look] = get_fname("starters");
+    }
     else
     {
-      /* Then check for saved-images: */
+      /* Finally, check for saved-images: */
 
       dirname[places_to_look] = get_fname("saved");
     }
@@ -11697,7 +11712,8 @@ void do_open(void)
 
 	    img = NULL;
 
-	    if (d_places[num_files] == PLACE_STARTERS_DIR)
+	    if (d_places[num_files] == PLACE_STARTERS_DIR ||
+		d_places[num_files] == PLACE_PERSONAL_STARTERS_DIR)
 	    {
 	      /* Try to load a starter's background image, first!
 	         If it exists, it should give a better idea of what the
@@ -11979,7 +11995,8 @@ void do_open(void)
 	dest.x = WINDOW_WIDTH - 96 - 48 - 48;
 	dest.y = (48 * 7 + 40 + HEIGHTOFFSET) - 48;
 
-	if (d_places[which] != PLACE_STARTERS_DIR)
+	if (d_places[which] != PLACE_STARTERS_DIR &&
+	    d_places[which] != PLACE_PERSONAL_STARTERS_DIR)
 	  SDL_BlitSurface(img_erase, NULL, screen, &dest);
 	else
 	  SDL_BlitSurface(img_btn_off, NULL, screen, &dest);
@@ -12091,7 +12108,8 @@ void do_open(void)
 	}
 	else if (key == SDLK_d &&
 		 (event.key.keysym.mod & KMOD_CTRL) &&
-		 d_places[which] != PLACE_STARTERS_DIR && !noshortcuts)
+		 d_places[which] != PLACE_STARTERS_DIR &&
+		 d_places[which] != PLACE_PERSONAL_STARTERS_DIR && !noshortcuts)
 	{
 	  /* Delete! */
 
@@ -12206,7 +12224,8 @@ void do_open(void)
 		 event.button.x < (WINDOW_WIDTH - 48 - 96) &&
 		 event.button.y >= (48 * 7 + 40 + HEIGHTOFFSET) - 48 &&
 		 event.button.y < (48 * 7 + 40 + HEIGHTOFFSET) &&
-		 d_places[which] != PLACE_STARTERS_DIR)
+		 d_places[which] != PLACE_STARTERS_DIR &&
+		 d_places[which] != PLACE_PERSONAL_STARTERS_DIR)
 	{
 	  /* Erase */
 
@@ -12271,7 +12290,8 @@ void do_open(void)
 		   event.button.x < (WINDOW_WIDTH - 96)) ||
 		  (event.button.x >= (WINDOW_WIDTH - 96 - 48 - 48) &&
 		   event.button.x < (WINDOW_WIDTH - 48 - 96) &&
-		   d_places[which] != PLACE_STARTERS_DIR)) &&
+		   d_places[which] != PLACE_STARTERS_DIR &&
+		   d_places[which] != PLACE_PERSONAL_STARTERS_DIR)) &&
 		 event.button.y >= (48 * 7 + 40 + HEIGHTOFFSET) - 48 &&
 		 event.button.y < (48 * 7 + 40 + HEIGHTOFFSET))
 	{
@@ -12467,6 +12487,7 @@ void do_open(void)
 	  free_surface(&img_starter_bkgd);
 	  starter_mirrored = 0;
 	  starter_flipped = 0;
+	  starter_personal = 0;
 
 	  autoscale_copy_smear_free(img, canvas, SDL_BlitSurface);
 
@@ -12508,6 +12529,12 @@ void do_open(void)
 
 	    file_id[0] = '\0';
 	    strcpy(starter_id, d_names[which]);
+
+	    if (d_places[which] == PLACE_PERSONAL_STARTERS_DIR)
+	      starter_personal = 1;
+	    else
+	      starter_personal = 0;
+
 	    load_starter(starter_id);
 
 	    SDL_FillRect(canvas, NULL,
@@ -13336,7 +13363,7 @@ void play_slideshow(int * selected, int num_selected, char * dirname,
   int i, which, next, done;
   SDL_Surface * img;
   char * tmp_starter_id, * tmp_file_id;
-  int tmp_starter_mirrored, tmp_starter_flipped;
+  int tmp_starter_mirrored, tmp_starter_flipped, tmp_starter_personal;
   char fname[1024];
   SDL_Event event;
   SDLKey key;
@@ -13351,6 +13378,7 @@ void play_slideshow(int * selected, int num_selected, char * dirname,
   tmp_file_id = strdup(file_id);
   tmp_starter_mirrored = starter_mirrored;
   tmp_starter_flipped = starter_flipped;
+  tmp_starter_personal = starter_personal;
 
   do_setcursor(cursor_tiny);
 
@@ -13540,6 +13568,7 @@ void play_slideshow(int * selected, int num_selected, char * dirname,
 
   starter_mirrored = tmp_starter_mirrored;
   starter_flipped = tmp_starter_flipped;
+  starter_personal = tmp_starter_personal;
 }
 
 
