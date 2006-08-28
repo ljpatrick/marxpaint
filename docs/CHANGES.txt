@@ -79,6 +79,9 @@ $Id$
     * Street
       Pere Pujal Carabantes <ppujal@airtel.net>
 
+    * Chess board
+      (From XBoard: http://tim-mann.org/xboard.html )
+
   * New Translations:
     -----------------
     * Arabic -- includes "ar.ttf" font
