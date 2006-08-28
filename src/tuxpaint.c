@@ -13167,7 +13167,9 @@ void do_slideshow(void)
 
         SDL_FillRect(screen, NULL, SDL_MapRGB(canvas->format, 255, 255, 255));
 	draw_toolbar();
-	draw_colors(COLORSEL_ENABLE);
+        draw_colors(COLORSEL_CLOBBER);
+        draw_colors(COLORSEL_REFRESH);
+	draw_colors(COLORSEL_DISABLE);
 	draw_none();
   
 	freeme = textdir(gettext_noop("Choose the pictures you want, "
