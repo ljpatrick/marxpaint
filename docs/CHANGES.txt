@@ -82,6 +82,9 @@ $Id$
     * Chess board
       (From XBoard: http://tim-mann.org/xboard.html )
 
+    * Nagasaki
+      Jim Trice <jimtrice@linuxmail.org>
+
   * New Translations:
     -----------------
     * Arabic -- includes "ar.ttf" font

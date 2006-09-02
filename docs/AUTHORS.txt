@@ -7,7 +7,7 @@ bill@newbreedsoftware.com
 http://www.newbreedsoftware.com/tuxpaint/
 
 
-June 17, 2002 - July 11, 2006
+June 17, 2002 - September 2, 2006
 
 $Id$
 
@@ -72,6 +72,9 @@ $Id$
 
   * Street
     Pere Pujal Carabantes <ppujal@airtel.net>
+
+  * Nagasaki
+    Jim Trice <jimtrice@linuxmail.org>
 
 
 * Fonts
