@@ -9,7 +9,7 @@ http://www.newbreedsoftware.com/tuxpaint/
 $Id$
 
 
-2006.August.27 (0.9.16)
+2006.September.2 (0.9.16)
   * Interface improvements:
     -----------------------
     * New slideshow tool! ("Slides", available in "Open" dialog.)
@@ -138,6 +138,7 @@ $Id$
 
     * Spanish
       Pablo Pita <pablo.pita@kdemail.net>
+      Gabriel Gazzán <ggabriel@internet.com.uy>
 
     * Thai
       Ouychai Chaita <ae.freeman@gmail.com>
