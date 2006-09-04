@@ -22,7 +22,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
   
-  June 14, 2002 - August 28, 2006
+  June 14, 2002 - September 3, 2006
   $Id$
 */
 
@@ -972,7 +972,8 @@ static SDL_Surface *img_color_btn_off;
 static int colors_are_selectable;
 
 static SDL_Surface *img_cur_brush;
-static int brush_counter, rainbow_color;
+int img_cur_brush_w, img_cur_brush_h, img_cur_brush_frames;
+static int brush_counter, rainbow_color, brush_frame;
 
 #define NUM_ERASERS 12		/* How many sizes of erasers
 				   (from ERASER_MIN to _MAX as squares, then again
@@ -1069,6 +1070,9 @@ static void line_xor(int x1, int y1, int x2, int y2);
 static void rect_xor(int x1, int y1, int x2, int y2);
 static void draw_blinking_cursor(void);
 static void hide_blinking_cursor(void);
+
+void reset_brush_counter_and_frame(void);
+void reset_brush_counter(void);
 
 #ifdef LOW_QUALITY_STAMP_OUTLINE
 #define stamp_xor(x,y) rect_xor( \
@@ -2635,10 +2639,10 @@ static void mainloop(void)
 	    rec_undo_buffer();
 
 	    /* (Arbitrarily large, so we draw once now) */
-	    brush_counter = 999;
+	    reset_brush_counter();
 
 	    brush_draw(old_x, old_y, old_x, old_y, 1);
-	    playsound(screen, 0, SND_PAINT1 + (img_cur_brush->w) / 12, 1,
+	    playsound(screen, 0, SND_PAINT1 + (img_cur_brush_w) / 12, 1,
 		      event.button.x, SNDDIST_NEAR);
 	  }
 	  else if (cur_tool == TOOL_STAMP)
@@ -2667,7 +2671,7 @@ static void mainloop(void)
 	    line_start_y = old_y;
 
 	    /* (Arbitrarily large, so we draw once now) */
-	    brush_counter = 999;
+	    reset_brush_counter();
 
 	    brush_draw(old_x, old_y, old_x, old_y, 1);
 
@@ -2697,7 +2701,7 @@ static void mainloop(void)
 	      /* Draw the shape with the brush! */
 
 	      /* (Arbitrarily large...) */
-	      brush_counter = 999;
+	      reset_brush_counter();
 
 	      playsound(screen, 1, SND_LINE_END, 1, event.button.x,
 			SNDDIST_NEAR);
@@ -2728,7 +2732,7 @@ static void mainloop(void)
 
 
 	    /* (Arbitrarily large, so we draw once now) */
-	    brush_counter = 999;
+	    reset_brush_counter();
 
 	    if (cur_magic != MAGIC_FILL)
 	    {
@@ -2975,7 +2979,7 @@ static void mainloop(void)
 	  if (cur_tool == TOOL_LINES)
 	  {
 	    /* (Arbitrarily large, so we draw once now) */
-	    brush_counter = 999;
+	    reset_brush_counter();
 
 	    brush_draw(line_start_x, line_start_y,
 		       event.button.x - r_canvas.x,
@@ -3028,7 +3032,7 @@ static void mainloop(void)
 	      }
 	      else
 	      {
-		brush_counter = 999;	/* arbitrarily large... */
+	        reset_brush_counter();
 
 
 		playsound(screen, 1, SND_LINE_END, 1, event.button.x,
@@ -3191,7 +3195,7 @@ static void mainloop(void)
 
 	    brush_draw(old_x, old_y, new_x, new_y, 1);
 
-	    playsound(screen, 0, SND_PAINT1 + (img_cur_brush->w) / 12, 0,
+	    playsound(screen, 0, SND_PAINT1 + (img_cur_brush_w) / 12, 0,
 		      event.button.x, SNDDIST_NEAR);
 	  }
 	  else if (cur_tool == TOOL_LINES)
@@ -3483,23 +3487,43 @@ static void brush_draw(int x1, int y1, int x2, int y2, int update)
   }
 }
 
+void reset_brush_counter_and_frame(void)
+{
+  brush_counter = 999;
+  brush_frame = 0;
+}
+
+void reset_brush_counter(void)
+{
+  brush_counter = 999;
+}
+
 
 /* Draw the current brush in the current color: */
 
 static void blit_brush(int x, int y)
 {
-  SDL_Rect dest;
+  SDL_Rect src, dest;
 
   brush_counter++;
 
-  if (brush_counter >= (img_cur_brush->h / 4))
+  if (brush_counter >= (img_cur_brush_h / 4))
   {
     brush_counter = 0;
+
+    brush_frame++;
+    if (brush_frame > img_cur_brush_frames)
+      brush_frame = 0;
 
     dest.x = x;
     dest.y = y;
 
-    SDL_BlitSurface(img_cur_brush, NULL, canvas, &dest);
+    src.x = brush_frame * img_cur_brush_w;
+    src.y = 0;
+    src.w = img_cur_brush_w;
+    src.h = img_cur_brush_h;
+
+    SDL_BlitSurface(img_cur_brush, &src, canvas, &dest);
   }
 }
 
@@ -5165,14 +5189,13 @@ static void loadbrush_callback(SDL_Surface * screen,
 
       /* Load brush metadata, if any: */
       
+      brushes_frames[num_brushes] = 1;
+      brushes_directional[num_brushes] = 0;
+
       strcpy(strcasestr(fname, ".png"), ".dat");
       fi = fopen(fname, "r");
-      if (fi == NULL)
-      {
-        brushes_frames[num_brushes] = 1;
-        brushes_directional[num_brushes] = 0;
-      }
-      else
+
+      if (fi != NULL)
       {
 	do
 	{
@@ -8533,16 +8556,31 @@ static void render_brush(void)
       SDL_GetRGBA(getpixel_brush(img_brushes[cur_brush], x, y),
 		  img_brushes[cur_brush]->format, &r, &g, &b, &a);
 
-      putpixel_brush(img_cur_brush, x, y,
-		     SDL_MapRGBA(img_cur_brush->format,
-				 color_hexes[cur_color][0],
-				 color_hexes[cur_color][1],
-				 color_hexes[cur_color][2], a));
+      if (r == g && g == b)
+      {
+        putpixel_brush(img_cur_brush, x, y,
+		       SDL_MapRGBA(img_cur_brush->format,
+				   color_hexes[cur_color][0],
+				   color_hexes[cur_color][1],
+				   color_hexes[cur_color][2], a));
+      }
+      else
+      {
+        putpixel_brush(img_cur_brush, x, y,
+		       SDL_MapRGBA(img_cur_brush->format,
+		       		   (r + color_hexes[cur_color][0]) >> 1,
+		       		   (g + color_hexes[cur_color][1]) >> 1,
+		       		   (b + color_hexes[cur_color][2]) >> 1, a));
+      }
     }
   }
 
   SDL_UnlockSurface(img_cur_brush);
   SDL_UnlockSurface(img_brushes[cur_brush]);
+
+  img_cur_brush_w = img_cur_brush->w / brushes_frames[cur_brush];
+  img_cur_brush_h = img_cur_brush->h / (brushes_directional[cur_brush] ? 3 : 1);
+  img_cur_brush_frames = brushes_frames[cur_brush];
 
   brush_counter = 0;
 }

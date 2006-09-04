@@ -9,7 +9,7 @@ http://www.newbreedsoftware.com/tuxpaint/
 $Id$
 
 
-2006.September.2 (0.9.16)
+2006.September.3 (0.9.16)
   * Interface improvements:
     -----------------------
     * New slideshow tool! ("Slides", available in "Open" dialog.)
@@ -67,6 +67,14 @@ $Id$
     * Magic Grass has a sound effect.
     
     * Round erasers added.
+
+    * Brushes may be animated.
+      (Create an image (W*N) x H in size (where N is number of frames),
+      then create a ".dat" file for the brush containing "frames=N".
+
+  * New Brushes:
+    ------------
+    * Vines (animated)
 
   * New Starter Images:
     -------------------

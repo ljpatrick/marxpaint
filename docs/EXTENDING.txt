@@ -8,7 +8,7 @@
                            bill@newbreedsoftware.com
                    http://www.newbreedsoftware.com/tuxpaint/
 
-                         June 14, 2002 - March 12, 2006
+                       June 14, 2002 - September 3, 2006
 
    --------------------------------------------------------------------------
 
@@ -119,16 +119,43 @@ Where Files Go
 Brushes
 
      The brushes used for drawing with the 'Brush' and 'Lines' tools in
-     Tux Paint are simply greyscale PNG images.
+     Tux Paint are simply PNG image files.
 
      The alpha (transparency) of the PNG image is used to determine the shape
      of the brush, which means that the shape can be 'anti-aliased' and even
      partially-transparent!
 
+     Greyscale pixels in the brush PNG will be drawn using the
+     currently-selected color in Tux Paint. Color pixels will be tinted.
+
      Brush images should be no wider than 40 pixels across and no taller than
      40 pixels high. (i.e., the maximum size can be 40 x 40.)
 
-     Just place them in the "brushes" directory.
+  Brush Options
+
+       Aside from a graphical shape, brushes can also be given other
+       attributes. To do this, you need to create a 'data file' for the
+       brush.
+
+       A brush data file is simply a text file containing the options.
+
+       The file has the same name as the PNG image, but a ".dat" extension.
+       (e.g., "brush.png"'s data file is the text file "brush.dat" in the
+       same directory.)
+
+    Animated Brushes
+
+         As of Tux Paint version 0.9.16, you may now create animated brushes.
+         As the brush is drawn, each frame of the animation is displayed.
+
+         Lay each frame out across a wide PNG image. For example, if your
+         brush is 30x30 and you have 5 frames, the image should be 150x30.
+
+         Add a line containing the line "frames=N" to the brush's data file,
+         where N is the number of frames in the brush.
+
+     Place the brush image PNGs (and any data text files) in the "brushes"
+     directory.
 
      Note: If your new brushes all come out as solid squares or rectangles,
      it's because you forgot to use alpha transparency! See the documentation

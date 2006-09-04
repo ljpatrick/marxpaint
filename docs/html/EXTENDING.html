@@ -23,7 +23,7 @@ New Breed Software</p>
 <p><a href="mailto:bill@newbreedsoftware.com">bill@newbreedsoftware.com</a><br>
 <a href="http://www.newbreedsoftware.com/tuxpaint/">http://www.newbreedsoftware.com/tuxpaint/</a></p>
 
-<p>June 14, 2002 - March 12, 2006</p>
+<p>June 14, 2002 - September 3, 2006</p>
 </center>
 
 <hr size=2 noshade>
@@ -187,7 +187,7 @@ effect.</p>
 <h2>Brushes</h2>
 <blockquote>
   <p>The brushes used for drawing with the 'Brush' and 'Lines' tools in
-  Tux&nbsp;Paint are simply greyscale PNG images.</p>
+  Tux&nbsp;Paint are simply PNG image files.</p>
 
   <img src="images/brush_edit.png" width=123 height=147 alt="" align=right>
 
@@ -195,11 +195,45 @@ effect.</p>
   of the brush, which means that the shape can be 'anti-aliased' and even
   partially-transparent!</p>
 
+  <p>Greyscale pixels in the brush PNG will be drawn using the
+  currently-selected color in Tux&nbsp;Paint.  Color pixels will be
+  tinted.</p>
+
   <p>Brush images should be no wider than 40&nbsp;pixels across and
   no taller than 40&nbsp;pixels high.  (i.e., the maximum size
   can be 40&nbsp;x&nbsp;40.)</p>
 
-  <p>Just place them in the "<code><b>brushes</b></code>" directory.</p>
+
+  <h3>Brush Options</h3>
+  <blockquote>
+    <p>Aside from a graphical shape, brushes can also be given other
+    attributes.  To do this, you need to create a 'data&nbsp;file'
+    for the brush.</p>
+    
+    <p>A brush data file is simply a text file containing the options.</p>
+
+    <p>The file has the same name as the PNG image, but a "<code>.dat</code>"
+    extension.  (e.g., "<code>brush.png</code>"'s data file is the text
+    file "<code>brush.dat</code>" in the same directory.)</p>
+    
+    <h4>Animated Brushes</h4>
+    <blockquote>
+      <p>As of Tux&nbsp;Paint version 0.9.16, you may now create animated
+      brushes.  As the brush is drawn, each frame of the animation is
+      displayed.</p>
+
+      <p>Lay each frame out across a wide PNG image.  For example,
+      if your brush is 30x30 and you have 5 frames, the image should
+      be 150x30.</p>
+
+      <p>Add a line containing the line "<code><b>frames=<i>N</i></b></code>"
+      to the brush's data file, where <i>N</i> is the number of frames
+      in the brush.</p>
+    </blockquote>
+  </blockquote>
+
+  <p>Place the brush image PNGs (and any data text files) in the
+  "<code><b>brushes</b></code>" directory.</p>
 
   <p>Note: If your new brushes all come out as solid squares or rectangles,
   it's because you forgot to use alpha transparency!  See the documentation
