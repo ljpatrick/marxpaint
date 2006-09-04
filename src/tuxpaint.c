@@ -971,13 +971,26 @@ static SDL_Surface *img_color_btn_off;
 
 static int colors_are_selectable;
 
+enum {
+  BRUSH_DIRECTION_RIGHT,
+  BRUSH_DIRECTION_DOWN_RIGHT,
+  BRUSH_DIRECTION_DOWN,
+  BRUSH_DIRECTION_DOWN_LEFT,
+  BRUSH_DIRECTION_LEFT,
+  BRUSH_DIRECTION_UP_LEFT,
+  BRUSH_DIRECTION_UP,
+  BRUSH_DIRECTION_UP_RIGHT,
+  BRUSH_DIRECTION_NONE
+};
+
 static SDL_Surface *img_cur_brush;
-int img_cur_brush_w, img_cur_brush_h, img_cur_brush_frames;
+int img_cur_brush_frame_w, img_cur_brush_w, img_cur_brush_h,
+    img_cur_brush_frames, img_cur_brush_directional;
 static int brush_counter, rainbow_color, brush_frame;
 
-#define NUM_ERASERS 12		/* How many sizes of erasers
-				   (from ERASER_MIN to _MAX as squares, then again
-				   from ERASER_MIN to _MAX as circles) */
+#define NUM_ERASERS 12	/* How many sizes of erasers
+			   (from ERASER_MIN to _MAX as squares, then again
+			   from ERASER_MIN to _MAX as circles) */
 #define ERASER_MIN 13
 #define ERASER_MAX 128
 
@@ -1039,7 +1052,7 @@ typedef struct dirent2
 
 static void mainloop(void);
 static void brush_draw(int x1, int y1, int x2, int y2, int update);
-static void blit_brush(int x, int y);
+static void blit_brush(int x, int y, int direction);
 static void magic_draw(int x1, int y1, int x2, int y2, int button_down);
 static void blit_magic(int x, int y, int button_down);
 static void stamp_draw(int x, int y);
@@ -3393,12 +3406,14 @@ static void draw_blinking_cursor(void)
 		TTF_FontHeight(getfonthandle(cur_font)));
 }
 
+
 /* Draw using the current brush: */
 
 static void brush_draw(int x1, int y1, int x2, int y2, int update)
 {
-  int dx, dy, y, w, h;
+  int dx, dy, y, frame_w, w, h;
   int orig_x1, orig_y1, orig_x2, orig_y2, tmp;
+  int direction, r;
   float m, b;
 
   orig_x1 = x1;
@@ -3408,14 +3423,27 @@ static void brush_draw(int x1, int y1, int x2, int y2, int update)
   orig_y2 = y2;
 
 
-  w = img_brushes[cur_brush]->w / brushes_frames[cur_brush];
+  frame_w = img_brushes[cur_brush]->w / brushes_frames[cur_brush];
+  w = frame_w / (brushes_directional[cur_brush] ? 3: 1);
   h = img_brushes[cur_brush]->h / (brushes_directional[cur_brush] ? 3 : 1);
-  
+
   x1 = x1 - (w >> 1);
   y1 = y1 - (h >> 1);
 
   x2 = x2 - (w >> 1);
   y2 = y2 - (h >> 1);
+
+
+  direction = BRUSH_DIRECTION_NONE;
+  if (brushes_directional[cur_brush])
+  {
+    r = rotation(x1, y1, x2, y2) + 22;
+    if (r < 0)
+      r = r + 360;
+
+    if (x1 != x2 || y1 != y2)
+      direction = (r / 45);
+  }
 
 
   dx = x2 - x1;
@@ -3445,7 +3473,7 @@ static void brush_draw(int x1, int y1, int x2, int y2, int update)
       }
 
       for (y = y1; y <= y2; y++)
-	blit_brush(x1, y);
+	blit_brush(x1, y, direction);
 
       x1 = x1 + dx;
     }
@@ -3460,7 +3488,7 @@ static void brush_draw(int x1, int y1, int x2, int y2, int update)
     }
 
     for (y = y1; y <= y2; y++)
-      blit_brush(x1, y);
+      blit_brush(x1, y, direction);
   }
 
   if (orig_x1 > orig_x2)
@@ -3501,7 +3529,7 @@ void reset_brush_counter(void)
 
 /* Draw the current brush in the current color: */
 
-static void blit_brush(int x, int y)
+static void blit_brush(int x, int y, int direction)
 {
   SDL_Rect src, dest;
 
@@ -3518,8 +3546,52 @@ static void blit_brush(int x, int y)
     dest.x = x;
     dest.y = y;
 
-    src.x = brush_frame * img_cur_brush_w;
-    src.y = 0;
+    if (img_cur_brush_directional)
+    {
+      if (direction == BRUSH_DIRECTION_UP_LEFT ||
+	  direction == BRUSH_DIRECTION_UP ||
+	  direction == BRUSH_DIRECTION_UP_RIGHT)
+      {
+        src.y = 0;
+      }
+      else if (direction == BRUSH_DIRECTION_LEFT ||
+	       direction == BRUSH_DIRECTION_NONE ||
+	       direction == BRUSH_DIRECTION_RIGHT)
+      {
+        src.y = img_cur_brush_h;
+      }
+      else if (direction == BRUSH_DIRECTION_DOWN_LEFT ||
+	       direction == BRUSH_DIRECTION_DOWN ||
+	       direction == BRUSH_DIRECTION_DOWN_RIGHT)
+      {
+        src.y = img_cur_brush_h << 1;
+      }
+
+      if (direction == BRUSH_DIRECTION_UP_LEFT ||
+	  direction == BRUSH_DIRECTION_LEFT ||
+	  direction == BRUSH_DIRECTION_DOWN_LEFT)
+      {
+        src.x = brush_frame * img_cur_brush_frame_w;
+      }
+      else if (direction == BRUSH_DIRECTION_UP ||
+	       direction == BRUSH_DIRECTION_NONE ||
+	       direction == BRUSH_DIRECTION_DOWN)
+      {
+        src.x = brush_frame * img_cur_brush_frame_w + img_cur_brush_w;
+      }
+      else if (direction == BRUSH_DIRECTION_UP_RIGHT ||
+	       direction == BRUSH_DIRECTION_RIGHT ||
+	       direction == BRUSH_DIRECTION_DOWN_RIGHT)
+      {
+        src.x = brush_frame * img_cur_brush_frame_w + (img_cur_brush_w << 1);
+      }
+    }
+    else
+    {
+      src.x = brush_frame * img_cur_brush_w;
+      src.y = 0;
+    }
+
     src.w = img_cur_brush_w;
     src.h = img_cur_brush_h;
 
@@ -5206,7 +5278,7 @@ static void loadbrush_callback(SDL_Surface * screen,
 	    brushes_frames[num_brushes] =
 	      atoi(strstr(buf, "frames=") + 7);
 	  }
-	  else if (strstr(buf, "directional=yes") != NULL)
+	  else if (strstr(buf, "directional") != NULL)
 	  {
 	    brushes_directional[num_brushes] = 1;
 	  }
@@ -7494,23 +7566,15 @@ static void draw_brushes(void)
 
     if (brush < num_brushes)
     {
-      dest.x = ((i % 2) * 48) + (WINDOW_WIDTH - 96) +
-	((48 - (img_brushes[brush]->w / brushes_frames[brush])) >> 1);
-
-      /* FIXME: Shouldn't that be ->h??? */
-
-      dest.y =
-	((i / 2) * 48) + 40 +
-	 ((48 - (img_brushes[brush]->h /
-		 (brushes_directional[brush] ? 3 : 1))) >> 1) +
-	off_y;
-
       src.x = 0;
-      src.y = 0;
+      src.y = brushes_directional[brush] ? (img_brushes[brush]->h / 3) : 0;
       
       src.w = img_brushes[brush]->w / brushes_frames[brush];
       src.h = (img_brushes[brush]->h / (brushes_directional[brush] ? 3 : 1));
       
+      dest.x = ((i % 2) * 48) + (WINDOW_WIDTH - 96) + ((48 - src.w) >> 1);
+      dest.y = ((i / 2) * 48) + 40 + ((48 - src.h) >> 1) + off_y;
+
       SDL_BlitSurface(img_brushes[brush], &src, screen, &dest);
     }
   }
@@ -8578,9 +8642,12 @@ static void render_brush(void)
   SDL_UnlockSurface(img_cur_brush);
   SDL_UnlockSurface(img_brushes[cur_brush]);
 
-  img_cur_brush_w = img_cur_brush->w / brushes_frames[cur_brush];
+  img_cur_brush_frame_w = img_cur_brush->w / brushes_frames[cur_brush];
+  img_cur_brush_w = img_cur_brush_frame_w /
+	  	    (brushes_directional[cur_brush] ? 3 : 1);
   img_cur_brush_h = img_cur_brush->h / (brushes_directional[cur_brush] ? 3 : 1);
   img_cur_brush_frames = brushes_frames[cur_brush];
+  img_cur_brush_directional = brushes_directional[cur_brush];
 
   brush_counter = 0;
 }

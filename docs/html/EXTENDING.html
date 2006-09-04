@@ -219,8 +219,8 @@ effect.</p>
     <h4>Animated Brushes</h4>
     <blockquote>
       <p>As of Tux&nbsp;Paint version 0.9.16, you may now create animated
-      brushes.  As the brush is drawn, each frame of the animation is
-      displayed.</p>
+      brushes.  As the brush is used, each frame of the animation is
+      drawn.</p>
 
       <p>Lay each frame out across a wide PNG image.  For example,
       if your brush is 30x30 and you have 5 frames, the image should
@@ -230,6 +230,35 @@ effect.</p>
       to the brush's data file, where <i>N</i> is the number of frames
       in the brush.</p>
     </blockquote>
+    
+    <h4>Directional Brushes</h4>
+    <blockquote>
+      <p>As of Tux&nbsp;Paint version 0.9.16, you may now create directional
+      brushes.  As the brush is used, different shapes are drawn, depending
+      on the direction the brush is going.</p>
+
+      <p>The directional shapes are divided into a 3x3 square in a PNG image.
+      For example, if your brush is 30x30, the image should be 90x90, and
+      each of the direction's shapes placed in a 3x3 grid.  The center
+      region is used for no motion.  The top right is used for motion that's
+      both up, and to the right.  And so on.</p>
+
+      <p>Add a line containing the line "<code><b>directional</b></code>"
+      to the brush's data file.</p>
+    </blockquote>
+
+    <h4>Animated Directional Brushes</h4>
+    <blockquote>
+      <p>You may mix both animated and directional features into one
+      brush.  Use both options ("<code><b>frames=<i>N</i></b></code>" and
+      "<code><b>directional</b></code>"), in separate lines in the
+      brush's "<code>".dat</code>" file.</p>
+
+      <p>Lay the brush out so that each 3x3 set of directional shapes are
+      laid out across a wide PNG image.  For example, if the brush is 30x30
+      and there are 5 frames, it would be 450x90.  (The leftmost 150x90 pixels
+      of the image represent the 9 direction shapes for the first frame,
+      for example.)</p>
   </blockquote>
 
   <p>Place the brush image PNGs (and any data text files) in the
