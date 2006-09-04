@@ -143,6 +143,16 @@ Brushes
        (e.g., "brush.png"'s data file is the text file "brush.dat" in the
        same directory.)
 
+    Brush Spacing
+
+         As of Tux Paint version 0.9.16, you can now specify the spacing for
+         brushes (that is, how often they are drawn). By default, the spacing
+         will be the brush's height, divided by 4.
+
+         Add a line containing the line "spacing=N" to the brush's data file,
+         where N is the spacing you want for the brush. (The lower the
+         number, the more often the brush is drawn.)
+
     Animated Brushes
 
          As of Tux Paint version 0.9.16, you may now create animated brushes.
@@ -181,296 +191,293 @@ Brushes
          pixels of the image represent the 9 direction shapes for the first
          frame, for example.)
 
-       Place the brush image PNGs (and any data text files) in the "brushes"
-       directory.
+     Place the brush image PNGs (and any data text files) in the "brushes"
+     directory.
 
-       Note: If your new brushes all come out as solid squares or rectangles,
-       it's because you forgot to use alpha transparency! See the
-       documentation file "PNG.txt" for more information and tips.
+     Note: If your new brushes all come out as solid squares or rectangles,
+     it's because you forgot to use alpha transparency! See the documentation
+     file "PNG.txt" for more information and tips.
 
    --------------------------------------------------------------------------
 
 Stamps
 
-       All stamp-related files go in the "stamps" directory. It's useful to
-       create subdirectories and sub-subdirectories there to organize the
-       stamps. (For example, you can have a "holidays" folder with
-       "halloween" and "christmas" sub-folders.)
+     All stamp-related files go in the "stamps" directory. It's useful to
+     create subdirectories and sub-subdirectories there to organize the
+     stamps. (For example, you can have a "holidays" folder with "halloween"
+     and "christmas" sub-folders.)
 
   Images
 
-         Rubber Stamps in Tux Paint can be made up of a number of separate
-         files. The one file that is required is, of course, the picture
-         itself.
+       Rubber Stamps in Tux Paint can be made up of a number of separate
+       files. The one file that is required is, of course, the picture
+       itself.
 
-         The Stamps used by Tux Paint are PNG pictures. They can be
-         full-color or greyscale. The alpha (transparency) of the PNG is used
-         to determine the actual shape of the picture (otherwise you'll stamp
-         a large rectangle on your drawings).
+       The Stamps used by Tux Paint are PNG pictures. They can be full-color
+       or greyscale. The alpha (transparency) of the PNG is used to determine
+       the actual shape of the picture (otherwise you'll stamp a large
+       rectangle on your drawings).
 
-         The PNGs can be any size, but in practice, a 100 pixels wide by
-         100 pixels tall (100 x 100) is quite large for Tux Paint.
+       The PNGs can be any size, but in practice, a 100 pixels wide by
+       100 pixels tall (100 x 100) is quite large for Tux Paint.
 
-         Note: If your new stamps all have solid rectangular-shaped outlines
-         of a solid color (e.g., white or black), it's because you forgot to
-         use alpha transparency! See the documentation file "PNG.txt" for
-         more information and tips.
+       Note: If your new stamps all have solid rectangular-shaped outlines of
+       a solid color (e.g., white or black), it's because you forgot to use
+       alpha transparency! See the documentation file "PNG.txt" for more
+       information and tips.
 
-         Advanced Users: The Advanced Stamps HOWTO describes, in detail, how
-         to make images which will scale perfectly when used as stamps in
-         Tux Paint.
+       Advanced Users: The Advanced Stamps HOWTO describes, in detail, how to
+       make images which will scale perfectly when used as stamps in
+       Tux Paint.
 
    --------------------------------------------------------------------------
 
   Description Text
 
-         Text (".TXT") files with the same name as the PNG. (e.g.,
-         "picture.png"'s description is stored in "picture.txt" in the same
-         directory.)
+       Text (".TXT") files with the same name as the PNG. (e.g.,
+       "picture.png"'s description is stored in "picture.txt" in the same
+       directory.)
 
-         The first line of the text file will be used as the US English
-         description of the stamp's image. It must be encoded in UTF-8.
+       The first line of the text file will be used as the US English
+       description of the stamp's image. It must be encoded in UTF-8.
 
     Language Support
 
-           Additional lines can be added to the text file to provide
-           translations of the description, to be displayed when Tux Paint is
-           running in a different locale (like French or Spanish).
+         Additional lines can be added to the text file to provide
+         translations of the description, to be displayed when Tux Paint is
+         running in a different locale (like French or Spanish).
 
-           The beginning of the line should correspond to the language code
-           of the language in question (e.g., "fr" for French, and "zh_tw"
-           for Traditional Chinese), followed by ".utf8=" and the translated
-           description (encoded in UTF-8).
+         The beginning of the line should correspond to the language code of
+         the language in question (e.g., "fr" for French, and "zh_tw" for
+         Traditional Chinese), followed by ".utf8=" and the translated
+         description (encoded in UTF-8).
 
-           There are scripts in the "po" directory for converting the text
-           files to PO format (and back) for easy translation to different
-           languages. Therefore you should never add or change translations
-           in the .txt files directly.
+         There are scripts in the "po" directory for converting the text
+         files to PO format (and back) for easy translation to different
+         languages. Therefore you should never add or change translations in
+         the .txt files directly.
 
-           If no translation is available for the language Tux Paint is
-           currently running in, the US English text is used.
+         If no translation is available for the language Tux Paint is
+         currently running in, the US English text is used.
 
     Windows Users
 
-           Use NotePad or WordPad to edit/create these files. Be sure to save
-           them as Plain Text, and make sure they have ".txt" at the end of
-           the filename...
+         Use NotePad or WordPad to edit/create these files. Be sure to save
+         them as Plain Text, and make sure they have ".txt" at the end of the
+         filename...
 
    --------------------------------------------------------------------------
 
   Sound Effects
 
-         WAVE (".WAV") files with the same name as the PNG. (e.g.,
-         "picture.png"'s sound effect is the sound "picture.wav" in the same
-         directory.)
+       WAVE (".WAV") files with the same name as the PNG. (e.g.,
+       "picture.png"'s sound effect is the sound "picture.wav" in the same
+       directory.)
 
     Language Support
 
-           For sounds for different locales (e.g., if the sound is someone
-           saying a word, and you want translated versions of the word said),
-           also create WAV files with the locale's label in the filename, in
-           the form: "STAMP_LOCALE.wav"
+         For sounds for different locales (e.g., if the sound is someone
+         saying a word, and you want translated versions of the word said),
+         also create WAV files with the locale's label in the filename, in
+         the form: "STAMP_LOCALE.wav"
 
-           "picture.png"'s sound effect, when Tux Paint is run in Spanish
-           mode, would be "picture_es.wav". In French mode, "picture_fr.wav".
-           And so on...
+         "picture.png"'s sound effect, when Tux Paint is run in Spanish mode,
+         would be "picture_es.wav". In French mode, "picture_fr.wav". And so
+         on...
 
-           If no localized sound effect can be loaded, Tux Paint will attempt
-           to load the 'default' sound file. (e.g., "picture.wav")
+         If no localized sound effect can be loaded, Tux Paint will attempt
+         to load the 'default' sound file. (e.g., "picture.wav")
 
    --------------------------------------------------------------------------
 
   Stamp Options
 
-         Aside from a graphical shape, a textual description, and a sound
-         effect, stamps can also be given other attributes. To do this, you
-         need to create a 'data file' for the stamp.
+       Aside from a graphical shape, a textual description, and a sound
+       effect, stamps can also be given other attributes. To do this, you
+       need to create a 'data file' for the stamp.
 
-         A stamp data file is simply a text file containing the options.
+       A stamp data file is simply a text file containing the options.
 
-         The file has the same name as the PNG image, but a ".dat" extension.
-         (e.g., "picture.png"'s data file is the text file "picture.dat" in
-         the same directory.)
+       The file has the same name as the PNG image, but a ".dat" extension.
+       (e.g., "picture.png"'s data file is the text file "picture.dat" in the
+       same directory.)
 
     Colored Stamps
 
-           Stamps can be made to be either "colorable" or "tintable."
+         Stamps can be made to be either "colorable" or "tintable."
 
       Colorable
 
-             "Colorable" stamps they work much like brushes - you pick the
-             stamp to get the shape, and then pick the color you want it to
-             be. (Symbol stamps, like the mathematical and musical ones, are
-             an example.)
+           "Colorable" stamps they work much like brushes - you pick the
+           stamp to get the shape, and then pick the color you want it to be.
+           (Symbol stamps, like the mathematical and musical ones, are an
+           example.)
 
-             Nothing about the original image is used except the transparency
-             (from "alpha" channel). The color of the stamp comes out solid.
+           Nothing about the original image is used except the transparency
+           (from "alpha" channel). The color of the stamp comes out solid.
 
-             Add a line containing the word "colorable" to the stamp's data
-             file.
+           Add a line containing the word "colorable" to the stamp's data
+           file.
 
       Tinted
 
-             "Tinted" stamps are similar to "colorable" ones, except the
-             details of the original image are kept. (To put it technically,
-             the original image is used, but its hue is changed, based on the
-             currently-selected color.)
+           "Tinted" stamps are similar to "colorable" ones, except the
+           details of the original image are kept. (To put it technically,
+           the original image is used, but its hue is changed, based on the
+           currently-selected color.)
 
-             Add a line containing the word "tintable" to the stamp's data
-             file.
+           Add a line containing the word "tintable" to the stamp's data
+           file.
 
         Tinting Options:
 
-               Depending on the contents of your stamp, you might want to
-               have Tux Paint use one of a numer of methods when tinting it.
-               Add one of the following lines to the stamp's data file:
+             Depending on the contents of your stamp, you might want to have
+             Tux Paint use one of a numer of methods when tinting it. Add one
+             of the following lines to the stamp's data file:
 
-               "tinter=normal" (default)
-                       This is the normal tinting mode.
+             "tinter=normal" (default)
+                     This is the normal tinting mode.
 
-               "tinter=anyhue"
-                       This is ???.
+             "tinter=anyhue"
+                     This is ???.
 
-               "tinter=narrow"
-                       This is ???.
+             "tinter=narrow"
+                     This is ???.
 
-               "tinter=vector"
-                       This is ???.
+             "tinter=vector"
+                     This is ???.
 
     Unalterable Stamps
 
-           By default, a stamp can be flipped upside down, shown as a mirror
-           image, or both. This is done using the control buttons below the
-           stamp selector, at the lower right side of the screen in
-           Tux Paint.
+         By default, a stamp can be flipped upside down, shown as a mirror
+         image, or both. This is done using the control buttons below the
+         stamp selector, at the lower right side of the screen in Tux Paint.
 
-           Sometimes, it doesn't make sense for a stamp to be flippable or
-           mirrored; for example, stamps of letters or numbers. Sometimes
-           stamps are symmetrical, so letting the user flip or mirror them
-           isn't useful.
+         Sometimes, it doesn't make sense for a stamp to be flippable or
+         mirrored; for example, stamps of letters or numbers. Sometimes
+         stamps are symmetrical, so letting the user flip or mirror them
+         isn't useful.
 
-           To make a stamp un-flippable, add the option "noflip" to the
-           stamp's data file.
+         To make a stamp un-flippable, add the option "noflip" to the stamp's
+         data file.
 
-           To keep a stamp from being mirrored, add a line containing the
-           word "nomirror" to the stamp's data file.
+         To keep a stamp from being mirrored, add a line containing the word
+         "nomirror" to the stamp's data file.
 
     Initial Stamp Size
 
-           By default, Tux Paint assumes that your stamp is sized
-           appropriately for unscaled display on a 608x472 canvas. This is
-           the original Tux Paint canvas size, provided by a 640x480 screen.
-           Tux Paint will then adjust the stamp according to the current
-           canvas size and, if enabled, the user's stamp size controls.
+         By default, Tux Paint assumes that your stamp is sized appropriately
+         for unscaled display on a 608x472 canvas. This is the original
+         Tux Paint canvas size, provided by a 640x480 screen. Tux Paint will
+         then adjust the stamp according to the current canvas size and, if
+         enabled, the user's stamp size controls.
 
-           If your stamp would be too big or too small, you can specify a
-           scale factor. If your stamp would be 2.5 times as wide (or tall)
-           as it should be, add the option "scale 40%" or "scale 5/2" or
-           "scale 2.5" or "scale 2:5" to your image. You may include an "="
-           if you wish, as in "scale=40%".
+         If your stamp would be too big or too small, you can specify a scale
+         factor. If your stamp would be 2.5 times as wide (or tall) as it
+         should be, add the option "scale 40%" or "scale 5/2" or "scale 2.5"
+         or "scale 2:5" to your image. You may include an "=" if you wish, as
+         in "scale=40%".
 
     Windows Users
 
-           You can use NotePad or WordPad to create these file. Be sure to
-           save it as Plain Text, and make sure the filename has ".dat" at
-           the end, and not ".txt"...
+         You can use NotePad or WordPad to create these file. Be sure to save
+         it as Plain Text, and make sure the filename has ".dat" at the end,
+         and not ".txt"...
 
   Pre-Mirrored Images
 
-         In some cases, you may wish to provide a pre-drawn version of a
-         stamp's mirror-image. For example, imagine a picture of a fire truck
-         with the words "Fire Department" written across the side. You
-         probably do not want that text to appear backwards when the image is
-         flipped!
+       In some cases, you may wish to provide a pre-drawn version of a
+       stamp's mirror-image. For example, imagine a picture of a fire truck
+       with the words "Fire Department" written across the side. You probably
+       do not want that text to appear backwards when the image is flipped!
 
-         To create a mirrored version of a stamp that you want Tux Paint to
-         use, rather than mirroring one on its own, simply create a second
-         ".png" graphics file with the same name, except with the string
-         "_mirror" before the filename extension.
+       To create a mirrored version of a stamp that you want Tux Paint to
+       use, rather than mirroring one on its own, simply create a second
+       ".png" graphics file with the same name, except with the string
+       "_mirror" before the filename extension.
 
-         For example, for the stamp "truck.png" you would create another file
-         named "truck_mirror.png", which will be used when the stamp is
-         mirrored (rather than using a backwards version of 'truck.png').
+       For example, for the stamp "truck.png" you would create another file
+       named "truck_mirror.png", which will be used when the stamp is
+       mirrored (rather than using a backwards version of 'truck.png').
 
    --------------------------------------------------------------------------
 
 Fonts
 
-       The fonts used by Tux Paint are TrueType Fonts (TTF).
+     The fonts used by Tux Paint are TrueType Fonts (TTF).
 
-       Simply place them in the "fonts" directory. Tux Paint will load the
-       font and provide four different sizes in the 'Letters' selector when
-       using the 'Text' tool.
+     Simply place them in the "fonts" directory. Tux Paint will load the font
+     and provide four different sizes in the 'Letters' selector when using
+     the 'Text' tool.
 
    --------------------------------------------------------------------------
 
 'Starters'
 
-       'Starter' images appear in the 'Open' dialog, along with pictures
-       you've created. They have a green button background, instead of blue.
+     'Starter' images appear in the 'Open' dialog, along with pictures you've
+     created. They have a green button background, instead of blue.
 
-       Unlike your saved pictures, however, when you select and open a
-       'starter,' you're actually creating a new drawing. Instead of being
-       blank, though, the new drawing contains the contents of the 'starter.'
-       Additionally, as you edit your new picture, the contents of the
-       original 'starter' affect it.
+     Unlike your saved pictures, however, when you select and open a
+     'starter,' you're actually creating a new drawing. Instead of being
+     blank, though, the new drawing contains the contents of the 'starter.'
+     Additionally, as you edit your new picture, the contents of the original
+     'starter' affect it.
 
-       Coloring-Book Style
+     Coloring-Book Style
 
-         The most basic kind of 'starter' is similar to a picture in a
-         coloring book. It's an outline of a shape which you can then color
-         in and add details to. In Tux Paint, as you draw, type text, or
-         stamp stamps, the outline remains 'above' what you draw. You can
-         erase the parts of the drawing you made, but you can't erase the
-         outline.
+       The most basic kind of 'starter' is similar to a picture in a coloring
+       book. It's an outline of a shape which you can then color in and add
+       details to. In Tux Paint, as you draw, type text, or stamp stamps, the
+       outline remains 'above' what you draw. You can erase the parts of the
+       drawing you made, but you can't erase the outline.
 
-         To create this kind of 'starter' image, simply draw an outlined
-         picture in a paint program, make the rest of the graphic transparent
-         (that will come out as white in Tux Paint), and save it as a PNG
-         format file.
+       To create this kind of 'starter' image, simply draw an outlined
+       picture in a paint program, make the rest of the graphic transparent
+       (that will come out as white in Tux Paint), and save it as a PNG
+       format file.
 
-       Scene-Style
+     Scene-Style
 
-         Along with the 'coloring-book' style overlay, you can also provide a
-         separate background image as part of a 'starter' picture. The
-         overlay acts the same: it can't be drawn over, erased, or affected
-         by 'Magic' tools. However, the background can be!
+       Along with the 'coloring-book' style overlay, you can also provide a
+       separate background image as part of a 'starter' picture. The overlay
+       acts the same: it can't be drawn over, erased, or affected by 'Magic'
+       tools. However, the background can be!
 
-         When the 'Eraser' tool is used on a picture based on this kind of
-         'starter' image, rather than turning the canvas white, it returns
-         that part of the canvas to the original background picture.
+       When the 'Eraser' tool is used on a picture based on this kind of
+       'starter' image, rather than turning the canvas white, it returns that
+       part of the canvas to the original background picture.
 
-         By creating both an overlay and a background, you can create a
-         'starter' which simulates depth. Imagine a background that shows the
-         ocean, and an overlay that's a picture of a reef. You can then draw
-         (or stamp) fish in the picture. They'll appear in the ocean, but
-         never 'in front of' the reef.
+       By creating both an overlay and a background, you can create a
+       'starter' which simulates depth. Imagine a background that shows the
+       ocean, and an overlay that's a picture of a reef. You can then draw
+       (or stamp) fish in the picture. They'll appear in the ocean, but never
+       'in front of' the reef.
 
-         To create this kind of 'starter' picture, simply create an overlay
-         (with alpha transparency) as described above, and save it as a PNG.
-         Then create another image (without transparency), and save it with
-         the same filename, but with "-back" appended to the name. (e.g.,
-         "reef-back.png" would be the background ocean picture that
-         corresponds to the "reef.png" overlay, or foreground.)
+       To create this kind of 'starter' picture, simply create an overlay
+       (with alpha transparency) as described above, and save it as a PNG.
+       Then create another image (without transparency), and save it with the
+       same filename, but with "-back" appended to the name. (e.g.,
+       "reef-back.png" would be the background ocean picture that corresponds
+       to the "reef.png" overlay, or foreground.)
 
-       The 'starter' images should be the same size as Tux Paint's canvas. In
-       the default 640x480 mode, that is 448x376 pixels. If you're using
-       800x600 mode, it should be 608x496. (It should be 192 pixels less
-       wide, and 104 pixels less tall than the resolution.)
+     The 'starter' images should be the same size as Tux Paint's canvas. In
+     the default 640x480 mode, that is 448x376 pixels. If you're using
+     800x600 mode, it should be 608x496. (It should be 192 pixels less wide,
+     and 104 pixels less tall than the resolution.)
 
-       Place them in the "starters" directory. When the 'Open' dialog is
-       accessed in Tux Paint, the 'starter' images will appear at the
-       beginning of the list with a green background.
+     Place them in the "starters" directory. When the 'Open' dialog is
+     accessed in Tux Paint, the 'starter' images will appear at the beginning
+     of the list with a green background.
 
-       Note: 'Starters' can't be saved over from within Tux Paint, since
-       loading a 'starter' is really like creating a new image. (Instead of
-       being blank, though there's already something there to work with.) The
-       'Save' command simply creates a new picture, like it would if the
-       'New' command had been used.
+     Note: 'Starters' can't be saved over from within Tux Paint, since
+     loading a 'starter' is really like creating a new image. (Instead of
+     being blank, though there's already something there to work with.) The
+     'Save' command simply creates a new picture, like it would if the 'New'
+     command had been used.
 
-       Note: 'Starters' are 'attached' to saved pictures, via a small text
-       file that has the same name as the saved file, but with ".dat" as the
-       extension. This allows the overlay and background, if any, to continue
-       to affect the drawing even after Tux Paint has been quit, or another
-       picture loaded or started. (In other words, if you base a drawing on a
-       'starter' image, it will always be affected by it.)
+     Note: 'Starters' are 'attached' to saved pictures, via a small text file
+     that has the same name as the saved file, but with ".dat" as the
+     extension. This allows the overlay and background, if any, to continue
+     to affect the drawing even after Tux Paint has been quit, or another
+     picture loaded or started. (In other words, if you base a drawing on a
+     'starter' image, it will always be affected by it.)

@@ -22,7 +22,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
   
-  June 14, 2002 - September 3, 2006
+  June 14, 2002 - September 4, 2006
   $Id$
 */
 
@@ -949,8 +949,9 @@ static int stamp_tintable(int stamp)
 
 static int num_brushes, num_brushes_max;
 static SDL_Surface **img_brushes;
-static int * brushes_frames;
-static short * brushes_directional;
+static int * brushes_frames = NULL;
+static int * brushes_spacing = NULL;
+static short * brushes_directional = NULL;
 
 static SDL_Surface *img_shapes[NUM_SHAPES], *img_shape_names[NUM_SHAPES];
 static SDL_Surface *img_magics[NUM_MAGICS], *img_magic_names[NUM_MAGICS];
@@ -985,7 +986,7 @@ enum {
 
 static SDL_Surface *img_cur_brush;
 int img_cur_brush_frame_w, img_cur_brush_w, img_cur_brush_h,
-    img_cur_brush_frames, img_cur_brush_directional;
+    img_cur_brush_frames, img_cur_brush_directional, img_cur_brush_spacing;
 static int brush_counter, rainbow_color, brush_frame;
 
 #define NUM_ERASERS 12	/* How many sizes of erasers
@@ -3535,7 +3536,7 @@ static void blit_brush(int x, int y, int direction)
 
   brush_counter++;
 
-  if (brush_counter >= (img_cur_brush_h / 4))
+  if (brush_counter >= img_cur_brush_spacing)
   {
     brush_counter = 0;
 
@@ -5255,6 +5256,8 @@ static void loadbrush_callback(SDL_Surface * screen,
 	  realloc(brushes_frames, num_brushes_max * sizeof(int));
 	brushes_directional = 
 	  realloc(brushes_directional, num_brushes_max * sizeof(short));
+	brushes_spacing = 
+	  realloc(brushes_spacing, num_brushes_max * sizeof(int));
       }
       img_brushes[num_brushes] = loadimage(fname);
       
@@ -5263,6 +5266,7 @@ static void loadbrush_callback(SDL_Surface * screen,
       
       brushes_frames[num_brushes] = 1;
       brushes_directional[num_brushes] = 0;
+      brushes_spacing[num_brushes] = img_brushes[num_brushes]->h / 4;
 
       strcpy(strcasestr(fname, ".png"), ".dat");
       fi = fopen(fname, "r");
@@ -5277,6 +5281,11 @@ static void loadbrush_callback(SDL_Surface * screen,
 	  {
 	    brushes_frames[num_brushes] =
 	      atoi(strstr(buf, "frames=") + 7);
+	  }
+	  else if (strstr(buf, "spacing=") != NULL)
+	  {
+	    brushes_spacing[num_brushes] =
+	      atoi(strstr(buf, "spacing=") + 8);
 	  }
 	  else if (strstr(buf, "directional") != NULL)
 	  {
@@ -8648,6 +8657,7 @@ static void render_brush(void)
   img_cur_brush_h = img_cur_brush->h / (brushes_directional[cur_brush] ? 3 : 1);
   img_cur_brush_frames = brushes_frames[cur_brush];
   img_cur_brush_directional = brushes_directional[cur_brush];
+  img_cur_brush_spacing = brushes_spacing[cur_brush];
 
   brush_counter = 0;
 }
@@ -10585,6 +10595,7 @@ static void cleanup(void)
   free_surface_array(img_brushes, num_brushes);
   free(brushes_frames);
   free(brushes_directional);
+  free(brushes_spacing);
   free_surface_array(img_tools, NUM_TOOLS);
   free_surface_array(img_tool_names, NUM_TOOLS);
   free_surface_array(img_title_names, NUM_TITLES);

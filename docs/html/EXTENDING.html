@@ -215,7 +215,19 @@ effect.</p>
     <p>The file has the same name as the PNG image, but a "<code>.dat</code>"
     extension.  (e.g., "<code>brush.png</code>"'s data file is the text
     file "<code>brush.dat</code>" in the same directory.)</p>
+
+    <h4>Brush Spacing</h4>
+    <blockquote>
+      <p>As of Tux&nbsp;Paint version 0.9.16, you can now specify the spacing
+      for brushes (that is, how often they are drawn).  By default, the
+      spacing will be the brush's height, divided by 4.</p>
     
+      <p>Add a line containing the line "<code><b>spacing=<i>N</i></b></code>"
+      to the brush's data file, where <i>N</i> is the spacing you want
+      for the brush.  (The lower the number, the more often the brush is
+      drawn.)</p>
+    </blockquote>
+
     <h4>Animated Brushes</h4>
     <blockquote>
       <p>As of Tux&nbsp;Paint version 0.9.16, you may now create animated
@@ -259,6 +271,7 @@ effect.</p>
       and there are 5 frames, it would be 450x90.  (The leftmost 150x90 pixels
       of the image represent the 9 direction shapes for the first frame,
       for example.)</p>
+    </blockquote>
   </blockquote>
 
   <p>Place the brush image PNGs (and any data text files) in the
