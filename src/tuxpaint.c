@@ -949,6 +949,8 @@ static int stamp_tintable(int stamp)
 
 static int num_brushes, num_brushes_max;
 static SDL_Surface **img_brushes;
+static int * brushes_frames;
+static short * brushes_directional;
 
 static SDL_Surface *img_shapes[NUM_SHAPES], *img_shape_names[NUM_SHAPES];
 static SDL_Surface *img_magics[NUM_MAGICS], *img_magic_names[NUM_MAGICS];
@@ -3391,7 +3393,7 @@ static void draw_blinking_cursor(void)
 
 static void brush_draw(int x1, int y1, int x2, int y2, int update)
 {
-  int dx, dy, y;
+  int dx, dy, y, w, h;
   int orig_x1, orig_y1, orig_x2, orig_y2, tmp;
   float m, b;
 
@@ -3402,11 +3404,14 @@ static void brush_draw(int x1, int y1, int x2, int y2, int update)
   orig_y2 = y2;
 
 
-  x1 = x1 - (img_brushes[cur_brush]->w / 2);
-  y1 = y1 - (img_brushes[cur_brush]->h / 2);
+  w = img_brushes[cur_brush]->w / brushes_frames[cur_brush];
+  h = img_brushes[cur_brush]->h / (brushes_directional[cur_brush] ? 3 : 1);
+  
+  x1 = x1 - (w >> 1);
+  y1 = y1 - (h >> 1);
 
-  x2 = x2 - (img_brushes[cur_brush]->w / 2);
-  y2 = y2 - (img_brushes[cur_brush]->h / 2);
+  x2 = x2 - (w >> 1);
+  y2 = y2 - (h >> 1);
 
 
   dx = x2 - x1;
@@ -3471,10 +3476,10 @@ static void brush_draw(int x1, int y1, int x2, int y2, int update)
 
   if (update)
   {
-    update_canvas(orig_x1 - (img_brushes[cur_brush]->w / 2),
-		  orig_y1 - (img_brushes[cur_brush]->h / 2),
-		  orig_x2 + (img_brushes[cur_brush]->w / 2),
-		  orig_y2 + (img_brushes[cur_brush]->h / 2));
+    update_canvas(orig_x1 - (w >> 1),
+		  orig_y1 - (h >> 1),
+		  orig_x2 + (w >> 1),
+		  orig_y2 + (h >> 1));
   }
 }
 
@@ -5131,7 +5136,11 @@ static void loadbrush_callback(SDL_Surface * screen,
 			       unsigned dirlen, tp_ftw_str * files,
 			       unsigned i)
 {
+  FILE * fi;
+  char buf[64];
+
   dirlen = dirlen;
+
 
   qsort(files, i, sizeof *files, compare_ftw_str);
   while (i--)
@@ -5146,8 +5155,43 @@ static void loadbrush_callback(SDL_Surface * screen,
 	num_brushes_max = num_brushes_max * 5 / 4 + 4;
 	img_brushes =
 	  realloc(img_brushes, num_brushes_max * sizeof *img_brushes);
+	brushes_frames =
+	  realloc(brushes_frames, num_brushes_max * sizeof(int));
+	brushes_directional = 
+	  realloc(brushes_directional, num_brushes_max * sizeof(short));
       }
       img_brushes[num_brushes] = loadimage(fname);
+      
+
+      /* Load brush metadata, if any: */
+      
+      strcpy(strcasestr(fname, ".png"), ".dat");
+      fi = fopen(fname, "r");
+      if (fi == NULL)
+      {
+        brushes_frames[num_brushes] = 1;
+        brushes_directional[num_brushes] = 0;
+      }
+      else
+      {
+	do
+	{
+	  fgets(buf, sizeof(buf), fi);
+
+	  if (strstr(buf, "frames=") != NULL)
+	  {
+	    brushes_frames[num_brushes] =
+	      atoi(strstr(buf, "frames=") + 7);
+	  }
+	  else if (strstr(buf, "directional=yes") != NULL)
+	  {
+	    brushes_directional[num_brushes] = 1;
+	  }
+	}
+	while (!feof(fi));
+	fclose(fi);
+      }
+      
       num_brushes++;
     }
     free(files[i].str);
@@ -7357,7 +7401,7 @@ static unsigned draw_colors(unsigned action)
 static void draw_brushes(void)
 {
   int i, off_y, max, brush;
-  SDL_Rect dest;
+  SDL_Rect src, dest;
 
 
   /* Draw the title: */
@@ -7428,14 +7472,23 @@ static void draw_brushes(void)
     if (brush < num_brushes)
     {
       dest.x = ((i % 2) * 48) + (WINDOW_WIDTH - 96) +
-	((48 - (img_brushes[brush]->w)) / 2);
+	((48 - (img_brushes[brush]->w / brushes_frames[brush])) >> 1);
 
       /* FIXME: Shouldn't that be ->h??? */
 
-      dest.y = ((i / 2) * 48) + 40 + ((48 - (img_brushes[brush]->w)) / 2) +
+      dest.y =
+	((i / 2) * 48) + 40 +
+	 ((48 - (img_brushes[brush]->h /
+		 (brushes_directional[brush] ? 3 : 1))) >> 1) +
 	off_y;
 
-      SDL_BlitSurface(img_brushes[brush], NULL, screen, &dest);
+      src.x = 0;
+      src.y = 0;
+      
+      src.w = img_brushes[brush]->w / brushes_frames[brush];
+      src.h = (img_brushes[brush]->h / (brushes_directional[brush] ? 3 : 1));
+      
+      SDL_BlitSurface(img_brushes[brush], &src, screen, &dest);
     }
   }
 }
@@ -10425,6 +10478,8 @@ static void cleanup(void)
   free_surface(&active_stamp);
 
   free_surface_array(img_brushes, num_brushes);
+  free(brushes_frames);
+  free(brushes_directional);
   free_surface_array(img_tools, NUM_TOOLS);
   free_surface_array(img_tool_names, NUM_TOOLS);
   free_surface_array(img_title_names, NUM_TITLES);
