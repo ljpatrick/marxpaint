@@ -88,6 +88,9 @@ $Id$
     * Angle Lines (directional)
 
     * Squirrel (animated, directional)
+    
+    * Kuro Neko ("Black Cat") (animated, directional)
+      (Based on the cat from 'xneko' by Masayuki Koba)
 
 
   * New Starter Images:
