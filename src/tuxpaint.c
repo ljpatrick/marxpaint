@@ -1200,6 +1200,7 @@ static void mirror_starter(void);
 static void flip_starter(void);
 int valid_click(Uint8 button);
 int in_circle(int x, int y);
+int paintsound(int size);
 
 #ifdef DEBUG
 static char *debug_gettext(const char *str);
@@ -2656,7 +2657,7 @@ static void mainloop(void)
 	    reset_brush_counter();
 
 	    brush_draw(old_x, old_y, old_x, old_y, 1);
-	    playsound(screen, 0, SND_PAINT1 + (img_cur_brush_w) / 12, 1,
+	    playsound(screen, 0, paintsound(img_cur_brush_w), 1,
 		      event.button.x, SNDDIST_NEAR);
 	  }
 	  else if (cur_tool == TOOL_STAMP)
@@ -3209,7 +3210,7 @@ static void mainloop(void)
 
 	    brush_draw(old_x, old_y, new_x, new_y, 1);
 
-	    playsound(screen, 0, SND_PAINT1 + (img_cur_brush_w) / 12, 0,
+	    playsound(screen, 0, paintsound(img_cur_brush_w), 0,
 		      event.button.x, SNDDIST_NEAR);
 	  }
 	  else if (cur_tool == TOOL_LINES)
@@ -15187,4 +15188,12 @@ int in_circle(int x, int y)
     return (1);
   else
     return (0);
+}
+
+int paintsound(int size)
+{
+  if (SND_PAINT1 + (size / 12) >= SND_PAINT4)
+    return(SND_PAINT4);
+  else
+    return(SND_PAINT1 + (size / 12));
 }
