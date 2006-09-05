@@ -9,7 +9,7 @@ http://www.newbreedsoftware.com/tuxpaint/
 $Id$
 
 
-2006.September.4 (0.9.16)
+2006.September.5 (0.9.16)
 
   * Interface improvements:
     -----------------------
@@ -157,6 +157,9 @@ $Id$
 
     * Korean
       Mark K. Kim <mkkim214@gmail.com>
+
+    * Serbian
+      Aleksandar Jelenak <jelenak@verizon.net>
 
     * Swedish
       Daniel Nylander <po@danielnylander.se>

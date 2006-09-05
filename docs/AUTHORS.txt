@@ -7,7 +7,7 @@ bill@newbreedsoftware.com
 http://www.newbreedsoftware.com/tuxpaint/
 
 
-June 17, 2002 - September 2, 2006
+June 17, 2002 - September 5, 2006
 
 $Id$
 
@@ -292,7 +292,7 @@ $Id$
     Niall Tracey <internationiall@hotmail.com>
 
   * Serbian
-    Aleksandar Jelenak <jelenak@netlinkplus.net>
+    Aleksandar Jelenak <jelenak@verizon.net>
   
   * Slovak
     Milan Plzik <mmp@golem.gymzv.sk> [retired?]
