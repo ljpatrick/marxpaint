@@ -22,7 +22,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
   
-  June 14, 2002 - September 4, 2006
+  June 14, 2002 - September 5, 2006
   $Id$
 */
 
@@ -3541,7 +3541,7 @@ static void blit_brush(int x, int y, int direction)
     brush_counter = 0;
 
     brush_frame++;
-    if (brush_frame > img_cur_brush_frames)
+    if (brush_frame >= img_cur_brush_frames)
       brush_frame = 0;
 
     dest.x = x;
@@ -7578,7 +7578,8 @@ static void draw_brushes(void)
       src.x = 0;
       src.y = brushes_directional[brush] ? (img_brushes[brush]->h / 3) : 0;
       
-      src.w = img_brushes[brush]->w / brushes_frames[brush];
+      src.w = (img_brushes[brush]->w / brushes_frames[brush]) /
+	      (brushes_directional[brush] ? 3 : 1);
       src.h = (img_brushes[brush]->h / (brushes_directional[brush] ? 3 : 1));
       
       dest.x = ((i % 2) * 48) + (WINDOW_WIDTH - 96) + ((48 - src.w) >> 1);
