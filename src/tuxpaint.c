@@ -22,7 +22,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
   
-  June 14, 2002 - September 5, 2006
+  June 14, 2002 - September 6, 2006
   $Id$
 */
 
@@ -947,7 +947,8 @@ static int stamp_tintable(int stamp)
 
 
 
-static int num_brushes, num_brushes_max;
+#define SHAPE_BRUSH_NAME "round_03.png"
+static int num_brushes, num_brushes_max, shape_brush = 0;
 static SDL_Surface **img_brushes;
 static int * brushes_frames = NULL;
 static int * brushes_spacing = NULL;
@@ -5247,6 +5248,9 @@ static void loadbrush_callback(SDL_Surface * screen,
     if (strcasestr(files[i].str, ".png"))
     {
       char fname[512];
+      if (strcasecmp(files[i].str, SHAPE_BRUSH_NAME) == 0)
+        shape_brush = num_brushes;
+
       snprintf(fname, sizeof fname, "%s/%s", dir, files[i].str);
       if (num_brushes == num_brushes_max)
       {
@@ -10925,7 +10929,7 @@ static void do_shape(int cx, int cy, int ox, int oy, int rotn, int use_brush)
   if (use_brush)
   {
     old_brush = cur_brush;
-    cur_brush = 0;		/* Kludgy! */
+    cur_brush = shape_brush;	/* Now only semi-ludgy! */
     render_brush();
   }
 

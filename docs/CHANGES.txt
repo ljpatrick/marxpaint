@@ -9,7 +9,7 @@ http://www.newbreedsoftware.com/tuxpaint/
 $Id$
 
 
-2006.September.5 (0.9.16)
+2006.September.6 (0.9.16)
 
   * Interface improvements:
     -----------------------
@@ -261,6 +261,10 @@ $Id$
     * Spaces in filenames were not working in 'tuxpaint-import.sh'.
       (Fixes bug #1527884)
       James Le Cuirot
+
+    * Was always using the first brush when drawing shapes.
+      Now forcing it to always use "round_03.png", since brushes are
+      sorted alphabetically, and some new brushes appear before round ones!
 
 
 2005.November.26 (0.9.15b)
