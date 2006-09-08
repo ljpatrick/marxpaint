@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint 0.9.15\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-07-15 20:07+0200\n"
-"PO-Revision-Date: 2005-10-04 12:43+0900\n"
+"POT-Creation-Date: 2006-02-25 09:37+0100\n"
+"PO-Revision-Date: 2006-07-19 16:40+0900\n"
 "Last-Translator: TOYAMA Shin-ichi <shin1@wmail.plala.jp>\n"
 "Language-Team: japanese <shin1@wmail.plala.or.jp>\n"
 "MIME-Version: 1.0\n"
@@ -67,16 +67,16 @@ msgid "Beige!"
 msgstr "ベージュいろ"
 
 msgid "qx"
-msgstr ""
+msgstr "qx"
 
 msgid "QX"
-msgstr ""
+msgstr "QX"
 
 msgid "qy"
-msgstr ""
+msgstr "qy"
 
 msgid "QY"
-msgstr ""
+msgstr "QY"
 
 #. Now we score fonts to ensure that the best ones will be placed at
 #. the top of the list. The user will see them first. This sorting is
@@ -172,7 +172,7 @@ msgid "Click in the picture to fill that area with color."
 msgstr "いろで ぬりつぶしたいところを クリックしてね"
 
 msgid "Click and move to draw grass. Don’t forget the dirt!"
-msgstr "くさを かこう。つちもわすれずにね。"
+msgstr "くさを かこう。つちもわすれずにね"
 
 msgid "Click and move to draw large bricks."
 msgstr "おおきな レンガを かこう"
@@ -198,8 +198,7 @@ msgstr "クリックしたまま マウスをうごかして いろを うすく
 msgid "Click and move to darken the colors."
 msgstr "クリックしたまま マウスをうごかして いろを こく しよう．"
 
-msgid ""
-"Click and move the mouse around to turn the picture into a chalk drawing."
+msgid "Click and move the mouse around to turn the picture into a chalk drawing."
 msgstr "クリックしたままマウスをうごかして チョークでかいたみたいに しよう"
 
 msgid "Click and move the mouse around to make the picture blocky."
@@ -230,10 +229,10 @@ msgid "Rectangle"
 msgstr "ながしかく"
 
 msgid "Circle"
-msgstr "えん"
+msgstr "まる"
 
 msgid "Ellipse"
-msgstr "だえん"
+msgstr "ながまる"
 
 msgid "Triangle"
 msgstr "さんかく"
@@ -242,7 +241,7 @@ msgid "Pentagon"
 msgstr "ごかっけい"
 
 msgid "Rhombus"
-msgstr "ひしがた"
+msgstr "ダイヤ"
 
 msgid "A square is a rectangle with four equal sides."
 msgstr "ましかくは ４つの「へん」が ぜんぶ おんなじ ながさの ながしかくだ"
@@ -250,14 +249,11 @@ msgstr "ましかくは ４つの「へん」が ぜんぶ おんなじ なが�
 msgid "A rectangle has four sides and four right angles."
 msgstr "ながしかくには ４つの「へん」と ４つの「ちょっかく」があるんだ"
 
-msgid ""
-"A circle is a curve where all points have the same distance from the centre."
-msgstr ""
-"「えん」のうえでは どの「てん」も ちゅうしんから おなじきょりだけ はなれてい"
-"るよ"
+msgid "A circle is a curve where all points have the same distance from the centre."
+msgstr "「まる」は「えん」とも いうよ。どの「てん」も ちゅうしんから おなじきょりだけ はなれているんだ"
 
 msgid "An ellipse is a stretched circle."
-msgstr "だえんは えんを ひきのばしたもの"
+msgstr "「ながまる」は「だえん」とも いうよ。「まる」を ひきのばしたものなんだ"
 
 msgid "A triangle has three sides."
 msgstr "さんかっけいには ３つの「へん」が あるんだ"
@@ -266,9 +262,7 @@ msgid "A pentagon has five sides."
 msgstr "ごかっけいには ５つの「へん」が あるんだ"
 
 msgid "A rhombus has four equal sides, and opposite sides are parallel."
-msgstr ""
-"ひしがたには ４つの おなじながさの「へん」が あって むかいあった「へん」が へ"
-"いこうなんだ"
+msgstr "「ダイヤ」は「ひしがた」とも いうよ。４つの「へん」が おなじながさで むかいあった「へん」が へいこうなんだ"
 
 msgid "Tools"
 msgstr "どうぐ"
@@ -286,7 +280,7 @@ msgid "Stamps"
 msgstr "はんこ"
 
 msgid "Shapes"
-msgstr "ずけい"
+msgstr "かたち"
 
 msgid "Letters"
 msgstr "もじ"
@@ -341,12 +335,8 @@ msgstr "はんこをえらぼう"
 msgid "Click to start drawing a line. Let go to complete it."
 msgstr "クリックして せんを ひこう"
 
-msgid ""
-"Pick a shape. Click to pick the center, drag, then let go when it is the "
-"size you want. Move around to rotate it, and click to draw it."
-msgstr ""
-"ずけいをえらんでクリックしたら、ドラッグして すきなおおきさにしよう。まわし"
-"て、クリックしたら できあがり"
+msgid "Pick a shape. Click to pick the center, drag, then let go when it is the size you want. Move around to rotate it, and click to draw it."
+msgstr "かたちをえらんでクリックしたら、ドラッグして すきなおおきさにしよう。まわして、クリックしたら できあがり"
 
 msgid "Choose a style of text. Click on your drawing and you can start typing."
 msgstr "じのかたちをえらんで、クリックしたあと キーをおして じをかこう"
@@ -382,7 +372,7 @@ msgstr "ひらく…"
 #  Save
 #. Save
 msgid "Your image has been saved!"
-msgstr "えをセーブしました！"
+msgstr "えをセーブしたよ！"
 
 #  Print
 #. Print
@@ -398,10 +388,10 @@ msgid "Let go of the button to complete the line."
 msgstr "ボタンをはなすと せんを ひきおわるよ"
 
 msgid "Hold the button to stretch the shape."
-msgstr "ボタンをおしたまま ずけいを ひろげよう"
+msgstr "ボタンをおしたまま かたちを ひろげよう"
 
 msgid "Move the mouse to rotate the shape. Click to draw it."
-msgstr "マウスをうごかして ずけいをまわそう。クリックしたら できあがり"
+msgstr "マウスをうごかして かたちをまわそう。クリックしたら できあがり"
 
 msgid "OK then… Let’s keep drawing this one!"
 msgstr "オッケー。 じゃあ このままつづけよう！"
@@ -412,25 +402,25 @@ msgid "Do you really want to quit?"
 msgstr "ほんとうにやめる？"
 
 msgid "Yes, I'm done!"
-msgstr ""
+msgstr "はい、やめます！"
 
 msgid "No, take me back!"
-msgstr ""
+msgstr "いいえ、まえに もどります！"
 
 msgid "If you quit, you’ll lose your picture! Save it?"
 msgstr "やめると えがきえちゃうよ！ セーブする？"
 
 msgid "Yes, save it!"
-msgstr ""
+msgstr "はい、セーブします！"
 
 msgid "No, don't bother saving!"
-msgstr ""
+msgstr "いいえ、セーブしなくても いいです！"
 
 msgid "Save your picture first?"
 msgstr "そのまえに いまのえを セーブする？"
 
 msgid "Can’t open that picture!"
-msgstr "そのえはひらけませんでした！"
+msgstr "そのえはひらけないよ！"
 
 msgid "OK"
 msgstr "オッケー"
@@ -438,44 +428,43 @@ msgstr "オッケー"
 #. This will be replaced with a dialog allowing color choice and Starter
 #. picking, with a "Back" option to dismiss the "New" and return to
 #. the current picture.  But for now...  (bjk 2006.02.19)
-#, fuzzy
 msgid "Start a new picture?"
-msgstr "このえを けしますか？"
+msgstr "えを さいしょから かく？"
 
 #. #define PROMPT_NEW_YES gettext_noop("That’s OK!")
 #. #define PROMPT_NEW_NO gettext_noop("Never mind!")
 msgid "Yes, let's start fresh!"
-msgstr ""
+msgstr "はい、さいしょから かきます！"
 
 msgid "There are no saved files!"
-msgstr "セーブされた えは ありません！"
+msgstr "セーブされた えは なかったよ！"
 
 msgid "Print your picture now?"
-msgstr "いんさつしますか？"
+msgstr "いんさつする？"
 
 msgid "Yes, print it!"
-msgstr ""
+msgstr "はい、いんさつします！"
 
 msgid "Your picture has been printed!"
-msgstr "えを いんさつしました！"
+msgstr "えを いんさつしたよ！"
 
 msgid "You can’t print yet!"
-msgstr "まだ いんさつは できません！"
+msgstr "まだ いんさつは できないよ！"
 
 msgid "Erase this picture?"
-msgstr "このえを けしますか？"
+msgstr "このえを けす？"
 
 msgid "Yes, erase it!"
-msgstr ""
+msgstr "はい、けします！"
 
 msgid "No, don't erase it!"
-msgstr ""
+msgstr "いいえ、けしません！"
 
 msgid "Remember to use the left mouse button!"
 msgstr "マウスの ひだりのボタンを つかってね！"
 
 msgid "Please wait..."
-msgstr ""
+msgstr "もうちょっと まってね…"
 
 msgid "Erase"
 msgstr "けす"
@@ -497,17 +486,16 @@ msgstr "いいえ"
 #. FIXME: Move elsewhere!!!
 #. #define PROMPT_SAVE_OVER_TXT gettext_noop("Save over the older version of this picture?")
 msgid "Replace the picture with your changes?"
-msgstr ""
+msgstr "いまかいたえと まえのえを いれかえる？"
 
 msgid "Yes, replace the old one!"
-msgstr ""
+msgstr "はい、まえのえと いれかえます！"
 
-#, fuzzy
 msgid "No, save a new file!"
-msgstr "いいえ、べつのファイルに セーブします"
+msgstr "いいえ、あたらしく セーブします！"
 
 msgid "Choose the picture you want, then click “Open”."
-msgstr "えをえらんでから 「ひらく」をクリックしてね"
+msgstr "えを えらんでから 「ひらく」をクリックしてね"
 
 msgid "A drawing program for children."
 msgstr "子供向けお絵描きプログラム"
@@ -518,21 +506,14 @@ msgstr "お絵かきプログラム"
 msgid "Tux Paint"
 msgstr "タックスペイント"
 
-#~ msgid "Starting a new picture will erase the current one!"
-#~ msgstr "さいしょからやりなおすと、いまのえがきえるよ！"
+msgid "Slides"
+msgstr "スライド"
 
-#~ msgid "That’s OK!"
-#~ msgstr "いいよ！"
+msgid "Play"
+msgstr "かいし"
 
-#~ msgid "Never mind!"
-#~ msgstr "やめた！"
+msgid "Choose the pictures you want, then click “Play”."
+msgstr "えを えらんでから 「かいし」をクリックしてね"
 
-#~ msgid "jq"
-#~ msgstr "jq"
-
-#~ msgid "JQ"
-#~ msgstr "JQ"
-
-#  FIXME: Move elsewhere!!!
-#~ msgid "Save over the older version of this picture?"
-#~ msgstr "まえの えを うわがきしますか？"
+msgid "Next"
+msgstr "つぎ"

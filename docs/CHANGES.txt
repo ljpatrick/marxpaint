@@ -158,6 +158,9 @@ $Id$
     * Hungarian
       Gabor Kelemen <kelemeng@gnome.hu>
 
+    * Japanese
+      TOYAMA Shin-ichi <shin1@wmail.plala.or.jp>
+
     * Korean
       Mark K. Kim <mkkim214@gmail.com>
 
