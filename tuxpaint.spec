@@ -4,7 +4,7 @@ Version: 0.9.16
 Release: 1
 License: GPL
 Group: Multimedia/Graphics
-URL: http://www.newbreedsoftware.com/tuxpaint/
+URL: http://www.tuxpaint.org/
 Source0: %{name}-%{version}.tar.gz
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-root
 Requires: SDL >= 1.2.4 SDL_image SDL_mixer SDL_ttf libpng zlib
@@ -67,6 +67,9 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/man/*/man1/tuxpaint.1.gz
 
 %changelog
+* Fri Sep 08 2006  <shin1@wmail.plala.or.jp> -
+- New offical URL for tuxpaint (http://www.tuxpaint.org/).
+
 * Mon Aug 07 2006  <shin1@wmail.plala.or.jp> -
 - "DESTDIR" patch is no longer needed.
 
