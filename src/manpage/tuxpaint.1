@@ -1,5 +1,5 @@
-.\" tuxpaint.1 - 2006.09.08
-.TH TUXPAINT 1 "8 Sept 2006" "0.9.16" "Tux Paint"
+.\" tuxpaint.1 - 2006.09.09
+.TH TUXPAINT 1 "9 Sept 2006" "0.9.16" "Tux Paint"
 .SH NAME
 tuxpaint -- A drawing program for young children.
 
@@ -11,6 +11,7 @@ tuxpaint -- A drawing program for young children.
 .B tuxpaint
 [\-\-fullscreen]
 [\-\-800x600 | \-\-1024x768 | \-\-1280x1024 | \-\-1400x1050 | \-\-1600x1200 | \-\-WxH ]
+[\-\-startblank]
 [\-\-nosound]
 [\-\-noquit]
 [\-\-noprint]
@@ -38,6 +39,7 @@ tuxpaint -- A drawing program for young children.
 .B tuxpaint
 [\-\-windowed]
 [\-\-640x480]
+[\-\-startlast]
 [\-\-sound]
 [\-\-quit]
 [\-\-print]
@@ -243,6 +245,12 @@ The default is to prompt (\fI\-\-saveoverask\fP).
 The \fInosave\fP option disables \fITux Paint's\fP ability to save files.
 This can be used in situations where the program is only being used for
 fun, or in a test environment.
+
+.TP 8
+.B \-\-startblank \-\-startlast
+When you start \fITux Paint\fP, it loads the last image that was being worked
+on.  The \fI\-\-startblank\fP option disables this, so it always starts with
+a blank canvas.  The default behavior is \fI\-\-startlast\fP.
 
 .SH OPTIONS - LANGUAGE
 .l

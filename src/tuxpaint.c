@@ -776,7 +776,8 @@ static int fullscreen, disable_quit, simple_shapes,
   dont_do_xor, use_print_config, dont_load_stamps, noshortcuts,
   no_button_distinction,
   mirrorstamps, disable_stamp_controls, disable_save, ok_to_use_lockfile,
-  alt_print_command_default, scrolling = 0;
+  alt_print_command_default, scrolling = 0,
+  start_blank;
 static int want_alt_printcommand;
 static int starter_mirrored, starter_flipped, starter_personal;
 static int recording, playing;
@@ -1427,7 +1428,9 @@ int main(int argc, char *argv[])
 
   /* Load current image (if any): */
 
-  load_current();
+  if (start_blank == 0)
+    load_current();
+
   been_saved = 1;
   tool_avail[TOOL_SAVE] = 0;
 
@@ -5164,6 +5167,7 @@ static void show_usage(FILE * f, char *prg)
 	  "  %s [--windowed | --fullscreen]\n"
 	  "  %s [--640x480   | --800x600   | --1024x768 |\n"
 	  "  %s  --1280x1024 | --1400x1050 | --1600x1200]\n"
+	  "  %s [--startblank | --startlast ]\n"
 	  "  %s [--sound | --nosound]         [--quit | --noquit]\n"
 	  "  %s [--print | --noprint]         [--complexshapes | --simpleshapes]\n"
 	  "  %s [--mixedcase | --uppercase]   [--fancycursors | --nofancycursors]\n"
@@ -5188,7 +5192,7 @@ static void show_usage(FILE * f, char *prg)
 	  prg, prg,
 	  blank, blank, blank,
 	  blank, blank, blank,
-	  blank, blank, blank, blank, blank, blank, blank, blank,
+	  blank, blank, blank, blank, blank, blank, blank, blank, blank,
 #ifdef WIN32
 	  blank,
 #endif
@@ -5807,6 +5811,7 @@ static void setup(int argc, char *argv[])
   recording = 0;
   playing = 0;
   ok_to_use_lockfile = 1;
+  start_blank = 0;
 
 
 #ifdef __BEOS__
@@ -5919,6 +5924,14 @@ static void setup(int argc, char *argv[])
     else if (strcmp(argv[i], "--windowed") == 0 || strcmp(argv[i], "-w") == 0)
     {
       fullscreen = 0;
+    }
+    else if (strcmp(argv[i], "--startblank") == 0 || strcmp(argv[i], "-b") == 0)
+    {
+      start_blank = 1;
+    }
+    else if (strcmp(argv[i], "--startlast") == 0)
+    {
+      start_blank = 0;
     }
     else if (strcmp(argv[i], "--mirrorstamps") == 0)
     {
@@ -14528,6 +14541,15 @@ static void parse_options(FILE * fi)
 	       strcmp(str, "windowed=yes") == 0)
       {
 	fullscreen = 0;
+      }
+      else if (strcmp(str, "startblank=yes") == 0)
+      {
+	start_blank = 1;
+      }
+      else if (strcmp(str, "startblank=no") == 0 ||
+	       strcmp(str, "startlast=yes") == 0)
+      {
+	start_blank = 0;
       }
       else if (strcmp(str, "nostampcontrols=yes") == 0)
       {
