@@ -123,8 +123,14 @@ all:	tuxpaint translations
 	@echo "--------------------------------------------------------------"
 	@echo
 	@echo "Done compiling."
-	@echo "Now (probably as 'root' superuser), run 'make install'"
+	@echo
+	@echo "Now run 'make install' with any options you ran 'make' with."
 	@echo "to install Tux Paint."
+	@echo
+	@echo "You may need superuser ('root') priveleges, depending on"
+	@echo "where you're installing."
+	@echo "(Depending on your system, you either need to 'su' first,"
+	@echo "or run 'sudo make install'.)"
 	@echo
 
 releaseclean:
