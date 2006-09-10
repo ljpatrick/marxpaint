@@ -64,6 +64,8 @@ $Id$
     * The color palette may now be overridden by creating a text file
       containing color descriptions, and using the "colorfile" option.
 
+    * Default colors are duplicated, as an example, in docs/default_colors.txt.
+
   
   * Tool improvements:
     ------------------------

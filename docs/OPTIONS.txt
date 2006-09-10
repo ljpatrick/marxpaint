@@ -9,7 +9,7 @@
                            bill@newbreedsoftware.com
                    http://www.newbreedsoftware.com/tuxpaint/
 
-                               September 9, 2006
+                               September 10, 2006
 
    --------------------------------------------------------------------------
 
@@ -335,6 +335,9 @@ Windows Users
              After the color definition (on the same line) you may enter text
              to describe the color. Tux will display this text when the color
              is clicked. (For example, "#FFF White as snow.")
+
+             As an example, you can see the default colors currently used in
+             Tux Paint in: "default_colors.txt".
 
      lang=LANGUAGE
 
