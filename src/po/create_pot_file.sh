@@ -9,6 +9,8 @@
 # into i18n("_: context\ntranslatable string") that xgettext can grok
 # and produce the same kind of *.pot as expected by KDE 
 
+exit
+
 rm -f POTFILES.new
 (for i in `grep -v "encoding" POTFILES.in | sed 's:^:../:'`
 do

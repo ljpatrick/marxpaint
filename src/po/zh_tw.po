@@ -7,7 +7,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint 0.9.15rc1\n"
-"POT-Creation-Date: 2006-07-15 20:07+0200\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2006-09-10 11:18-0700\n"
 "PO-Revision-Date: 2006-09-03 20:58+0800\n"
 "Last-Translator: Song Huang <Song@song.tw>\n"
 "Language-Team: Chinese (traditional) <zh-l10n@linux.org.tw>\n"
@@ -66,12 +67,24 @@ msgstr "黃棕色!"
 msgid "Beige!"
 msgstr "米黃色!"
 
+#. First, the blacklist. We list font families that can crash Tux Paint
+#. via bugs in the SDL_ttf library. We also test fonts to be sure that
+#. they have both uppercase and lowercase letters. Note that we do not
+#. test for "Aa", because it is OK if uppercase and lowercase are the
+#. same. (but not nice -- such fonts get a low score later)
+#.
+#. We test the alphabet twice, to help with translation. If the users
+#. will be unable to type ASCII letters, then both lines should be
+#. translated. Otherwise, only Line X should be translated and the
+#. ASCII-only fonts should be given bad scores in the scoring code below.
+#. (the best scores going to fonts that support both)
 msgid "qx"
 msgstr "qx"
 
 msgid "QX"
 msgstr "QX"
 
+#. Line X
 msgid "qy"
 msgstr "qy"
 
@@ -82,26 +95,35 @@ msgstr "QY"
 #  the top of the list. The user will see them first. This sorting is
 #  especially important for users who have scroll buttons disabled.
 #  Translators should do whatever is needed to put crummy fonts last.
+#. Now we score fonts to ensure that the best ones will be placed at
+#. the top of the list. The user will see them first. This sorting is
+#. especially important for users who have scroll buttons disabled.
+#. Translators should do whatever is needed to put crummy fonts last.
 msgid "oO"
 msgstr "oO"
 
 #  distinct uppercase and lowercase
+#. distinct uppercase and lowercase
 msgid "`\\%_@$~#{}<>^&*"
 msgstr "`\\%_@$~#{}<>^&*"
 
 #  uncommon punctuation
+#. uncommon punctuation
 msgid ",.?!"
 msgstr ",.?!"
 
 #  common punctuation
+#. common punctuation
 msgid "017"
 msgstr "017"
 
 #  digits
+#. digits
 msgid "O0"
 msgstr "O0"
 
 #  distinct circle-like characters
+#. distinct circle-like characters
 msgid "1Il|"
 msgstr "1Il|"
 
@@ -198,7 +220,8 @@ msgstr "按著並移動滑鼠來讓顏色變淺。"
 msgid "Click and move to darken the colors."
 msgstr "按著並移動滑鼠來讓顏色變深。"
 
-msgid "Click and move the mouse around to turn the picture into a chalk drawing."
+msgid ""
+"Click and move the mouse around to turn the picture into a chalk drawing."
 msgstr "按著並移動滑鼠來產生粉筆的痕跡。"
 
 msgid "Click and move the mouse around to make the picture blocky."
@@ -249,7 +272,8 @@ msgstr "正方形是四邊一樣長的長方形。"
 msgid "A rectangle has four sides and four right angles."
 msgstr "長方形有四個邊和四個直角。"
 
-msgid "A circle is a curve where all points have the same distance from the centre."
+msgid ""
+"A circle is a curve where all points have the same distance from the centre."
 msgstr "圓形是每一點都和圓心保持相同距離的曲線。"
 
 msgid "An ellipse is a stretched circle."
@@ -334,8 +358,12 @@ msgstr "挑選一個圖章來印在你的畫布上。"
 msgid "Click to start drawing a line. Let go to complete it."
 msgstr "按一下滑鼠就可以開始畫一條線. 讓我們來完成它吧!"
 
-msgid "Pick a shape. Click to pick the center, drag, then let go when it is the size you want. Move around to rotate it, and click to draw it."
-msgstr "挑選一個形狀。點一下來決定形狀的中心位置，然後持續拖拉它到你要的大小。繞著中心移動來旋轉它，然後點一下把它畫下來。"
+msgid ""
+"Pick a shape. Click to pick the center, drag, then let go when it is the "
+"size you want. Move around to rotate it, and click to draw it."
+msgstr ""
+"挑選一個形狀。點一下來決定形狀的中心位置，然後持續拖拉它到你要的大小。繞著中"
+"心移動來旋轉它，然後點一下把它畫下來。"
 
 msgid "Choose a style of text. Click on your drawing and you can start typing."
 msgstr "選擇文字的樣子。在畫布上點一下就可以開始輸入。"
@@ -372,6 +400,7 @@ msgid "Printing…"
 msgstr "正在列印..."
 
 #  Quit
+#. Quit
 msgid "Bye bye!"
 msgstr "掰掰!"
 
@@ -418,11 +447,16 @@ msgstr "好的"
 #  This will be replaced with a dialog allowing color choice and Starter
 #  picking, with a "Back" option to dismiss the "New" and return to
 #  the current picture.  But for now...  (bjk 2006.02.19)
+#. This will be replaced with a dialog allowing color choice and Starter
+#. picking, with a "Back" option to dismiss the "New" and return to
+#. the current picture.  But for now...  (bjk 2006.02.19)
 msgid "Start a new picture?"
 msgstr "開啟一張新的圖畫嗎?"
 
 #  #define PROMPT_NEW_YES gettext_noop("That’s OK!")
 #  #define PROMPT_NEW_NO gettext_noop("Never mind!")
+#. #define PROMPT_NEW_YES gettext_noop("That’s OK!")
+#. #define PROMPT_NEW_NO gettext_noop("Never mind!")
 msgid "Yes, let's start fresh!"
 msgstr "是的，重新再來吧"
 
@@ -459,8 +493,18 @@ msgstr "請稍候..."
 msgid "Erase"
 msgstr "刪除"
 
+msgid "Slides"
+msgstr ""
+
 msgid "Back"
 msgstr "返回"
+
+#, fuzzy
+msgid "Next"
+msgstr "文字"
+
+msgid "Play"
+msgstr ""
 
 msgid "Aa"
 msgstr "Aa"
@@ -474,6 +518,8 @@ msgstr "不要"
 
 #  FIXME: Move elsewhere!!!
 #  #define PROMPT_SAVE_OVER_TXT gettext_noop("Save over the older version of this picture?")
+#. FIXME: Move elsewhere!!!
+#. #define PROMPT_SAVE_OVER_TXT gettext_noop("Save over the older version of this picture?")
 msgid "Replace the picture with your changes?"
 msgstr "用你的更改覆蓋掉原本的圖畫？"
 
@@ -486,6 +532,11 @@ msgstr "不，另外儲存一個新的檔案"
 msgid "Choose the picture you want, then click “Open”."
 msgstr "選擇你想要的圖畫，然後按一下「打開」。"
 
+#. Let user choose images:
+#, fuzzy
+msgid "Choose the pictures you want, then click “Play”."
+msgstr "選擇你想要的圖畫，然後按一下「打開」。"
+
 msgid "A drawing program for children."
 msgstr "適合兒童的畫圖程式"
 
@@ -494,4 +545,3 @@ msgstr "畫圖程式"
 
 msgid "Tux Paint"
 msgstr "企鵝小畫家"
-

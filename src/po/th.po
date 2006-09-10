@@ -1,12 +1,13 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Thai tux paint\n"
-"POT-Creation-Date: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2006-09-10 11:18-0700\n"
 "PO-Revision-Date: 2006-07-31 11:23+0700\n"
 "Last-Translator: Ouychai Chaita <Ae.freeman@gmail.com>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Poedit-Language: Thai\n"
 "X-Poedit-Country: THAILAND\n"
@@ -62,12 +63,24 @@ msgstr "แทน"
 msgid "Beige!"
 msgstr "น้ำตาลอ่อน"
 
+#. First, the blacklist. We list font families that can crash Tux Paint
+#. via bugs in the SDL_ttf library. We also test fonts to be sure that
+#. they have both uppercase and lowercase letters. Note that we do not
+#. test for "Aa", because it is OK if uppercase and lowercase are the
+#. same. (but not nice -- such fonts get a low score later)
+#.
+#. We test the alphabet twice, to help with translation. If the users
+#. will be unable to type ASCII letters, then both lines should be
+#. translated. Otherwise, only Line X should be translated and the
+#. ASCII-only fonts should be given bad scores in the scoring code below.
+#. (the best scores going to fonts that support both)
 msgid "qx"
 msgstr ""
 
 msgid "QX"
 msgstr ""
 
+#. Line X
 msgid "qy"
 msgstr ""
 
@@ -194,7 +207,8 @@ msgstr "คลิกแล้วลากเพื่อทำให้สีจ
 msgid "Click and move to darken the colors."
 msgstr "คลิกแล้วลากเพื่อทำให้สีมืดลง"
 
-msgid "Click and move the mouse around to turn the picture into a chalk drawing."
+msgid ""
+"Click and move the mouse around to turn the picture into a chalk drawing."
 msgstr "คลิกแล้วลากเมาส์ไปมาเพื่อทำให้รูปเป็นรูปเขียนด้วยชอล์ก"
 
 msgid "Click and move the mouse around to make the picture blocky."
@@ -245,7 +259,8 @@ msgstr "สี่เหลี่ยมจัตุรัสประกอบด
 msgid "A rectangle has four sides and four right angles."
 msgstr "สี่เหลี่ยมผืนผ้าประกอบด้วยด้าน 4 ด้าน และมุมฉาก 4 มุม"
 
-msgid "A circle is a curve where all points have the same distance from the centre."
+msgid ""
+"A circle is a curve where all points have the same distance from the centre."
 msgstr "วงกลมคือเส้นโค้งที่ทุกๆ จุดมีระยะห่างเท่ากันจากจุดศูนย์กลาง"
 
 msgid "An ellipse is a stretched circle."
@@ -330,8 +345,12 @@ msgstr "เลือกรูปมาประทับตราบนรูป
 msgid "Click to start drawing a line. Let go to complete it."
 msgstr "คลิกเพื่อเริ่มวาดเส้นตรง ปล่อยเมาส์ที่จุดปลายเพื่อลากเส้น"
 
-msgid "Pick a shape. Click to pick the center, drag, then let go when it is the size you want. Move around to rotate it, and click to draw it."
-msgstr "เลือกรูปร่าง คลิกที่จุดศูนย์กลาง ลาก แล้วปล่อยเมาส์เมื่อได้ขนาดที่ต้องการ จากนั้น ขยับไปรอบๆ เพื่อหมุน แล้วคลิกเพื่อวาดรูปนั้น"
+msgid ""
+"Pick a shape. Click to pick the center, drag, then let go when it is the "
+"size you want. Move around to rotate it, and click to draw it."
+msgstr ""
+"เลือกรูปร่าง คลิกที่จุดศูนย์กลาง ลาก แล้วปล่อยเมาส์เมื่อได้ขนาดที่ต้องการ จากนั้น ขยับไปรอบๆ "
+"เพื่อหมุน แล้วคลิกเพื่อวาดรูปนั้น"
 
 msgid "Choose a style of text. Click on your drawing and you can start typing."
 msgstr "เลือกรูปแบบอักษร คลิกที่รูปแล้วก็เริ่มพิมพ์ข้อความ"
@@ -455,8 +474,18 @@ msgstr "โปรดรอ ........"
 msgid "Erase"
 msgstr "ลบ"
 
+msgid "Slides"
+msgstr ""
+
 msgid "Back"
 msgstr "ย้อนกลับ"
+
+#, fuzzy
+msgid "Next"
+msgstr "ข้อความ"
+
+msgid "Play"
+msgstr ""
 
 msgid "Aa"
 msgstr "Aa"
@@ -482,6 +511,11 @@ msgstr "ไม่! บันทึกเป็นแฟ้มใหม่"
 msgid "Choose the picture you want, then click “Open”."
 msgstr "เลือกรูปที่เธอต้องการ จากนั้นคลิก “เปิด”"
 
+#. Let user choose images:
+#, fuzzy
+msgid "Choose the pictures you want, then click “Play”."
+msgstr "เลือกรูปที่เธอต้องการ จากนั้นคลิก “เปิด”"
+
 msgid "A drawing program for children."
 msgstr "โปรแกรมวาดรูปสำหรับเด็ก"
 
@@ -491,12 +525,11 @@ msgstr "โปรแกรมวาดรูป"
 msgid "Tux Paint"
 msgstr "ทักซ์สอนวาดรูป"
 
-msgid "Starting a new picture will erase the current one!"
-msgstr "ถ้าหากเธอเริ่มรูปใหม่ รูปนี้จะหายไปนะ!"
+#~ msgid "Starting a new picture will erase the current one!"
+#~ msgstr "ถ้าหากเธอเริ่มรูปใหม่ รูปนี้จะหายไปนะ!"
 
-msgid "That’s OK!"
-msgstr "เอาเลย!"
+#~ msgid "That’s OK!"
+#~ msgstr "เอาเลย!"
 
-msgid "Never mind!"
-msgstr "งั้น ช่างมันเถอะ"
-
+#~ msgid "Never mind!"
+#~ msgstr "งั้น ช่างมันเถอะ"

@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint 0.9.15b\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-02-25 09:37+0100\n"
+"POT-Creation-Date: 2006-09-10 11:18-0700\n"
 "PO-Revision-Date: 2006-07-14 21:03-0000\n"
 "Last-Translator: Lis Gøthe í Jákupsstovu <morshus@morshus.com>\n"
 "Language-Team: Faroese <morshus@morshus.com>\n"
@@ -64,12 +64,24 @@ msgstr "Húðfarvað!"
 msgid "Beige!"
 msgstr "Beige!"
 
+#. First, the blacklist. We list font families that can crash Tux Paint
+#. via bugs in the SDL_ttf library. We also test fonts to be sure that
+#. they have both uppercase and lowercase letters. Note that we do not
+#. test for "Aa", because it is OK if uppercase and lowercase are the
+#. same. (but not nice -- such fonts get a low score later)
+#.
+#. We test the alphabet twice, to help with translation. If the users
+#. will be unable to type ASCII letters, then both lines should be
+#. translated. Otherwise, only Line X should be translated and the
+#. ASCII-only fonts should be given bad scores in the scoring code below.
+#. (the best scores going to fonts that support both)
 msgid "qx"
 msgstr "qx"
 
 msgid "QX"
 msgstr "QX"
 
+#. Line X
 msgid "qy"
 msgstr "qy"
 
@@ -196,7 +208,8 @@ msgstr "Trýst og flyt til at bleikja litirnar."
 msgid "Click and move to darken the colors."
 msgstr "Trýst og flyt til at myrkja litirnar."
 
-msgid "Click and move the mouse around to turn the picture into a chalk drawing."
+msgid ""
+"Click and move the mouse around to turn the picture into a chalk drawing."
 msgstr "Trýst og flyt músina til at umgera myndina til  til eina kritmynd."
 
 msgid "Click and move the mouse around to make the picture blocky."
@@ -247,8 +260,11 @@ msgstr "Ein ferningur er ein rætthyrningur við fýra líka langum síðum."
 msgid "A rectangle has four sides and four right angles."
 msgstr "Ein rætthyningur hevur fýra síður og fýra rættar vinklar."
 
-msgid "A circle is a curve where all points have the same distance from the centre."
-msgstr "Ein sirkul er ein rás har øll punkt hava somu frástøðu frá miðjuni av sirkulinum."
+msgid ""
+"A circle is a curve where all points have the same distance from the centre."
+msgstr ""
+"Ein sirkul er ein rás har øll punkt hava somu frástøðu frá miðjuni av "
+"sirkulinum."
 
 msgid "An ellipse is a stretched circle."
 msgstr "Ein ellipsa er ein strektur sirkul."
@@ -260,7 +276,8 @@ msgid "A pentagon has five sides."
 msgstr "Ein fimmkantur hevur fimm síður."
 
 msgid "A rhombus has four equal sides, and opposite sides are parallel."
-msgstr "Ein romba hevur fýra eins langar síður, og mótstandandi síður eru javnfjarar."
+msgstr ""
+"Ein romba hevur fýra eins langar síður, og mótstandandi síður eru javnfjarar."
 
 msgid "Tools"
 msgstr "Tól"
@@ -332,11 +349,17 @@ msgstr "Vel eitt stempul at stempla á myndina."
 msgid "Click to start drawing a line. Let go to complete it."
 msgstr "Trýst og hald til at byrja eina striku. Slepp har hon skal enda."
 
-msgid "Pick a shape. Click to pick the center, drag, then let go when it is the size you want. Move around to rotate it, and click to draw it."
-msgstr "Vel ein form. Trýst har miðjan skal verða, hála og slepp tá ið støddin er sum tú ynskir. Flyt runt til at snara formin, og trýst so til at tekna hann."
+msgid ""
+"Pick a shape. Click to pick the center, drag, then let go when it is the "
+"size you want. Move around to rotate it, and click to draw it."
+msgstr ""
+"Vel ein form. Trýst har miðjan skal verða, hála og slepp tá ið støddin er "
+"sum tú ynskir. Flyt runt til at snara formin, og trýst so til at tekna hann."
 
 msgid "Choose a style of text. Click on your drawing and you can start typing."
-msgstr "Vel snið á stavum. Trýst á myndina har teksturin skal byrja, og byrja so at skriva."
+msgstr ""
+"Vel snið á stavum. Trýst á myndina har teksturin skal byrja, og byrja so at "
+"skriva."
 
 msgid "Pick a magical effect to use on your drawing!"
 msgstr "Vel onkran 'gand' at brúka á myndini."
@@ -457,8 +480,18 @@ msgstr "Vinarliga bíða..."
 msgid "Erase"
 msgstr "Strika"
 
+msgid "Slides"
+msgstr ""
+
 msgid "Back"
 msgstr "Aftur"
+
+#, fuzzy
+msgid "Next"
+msgstr "Stavir"
+
+msgid "Play"
+msgstr ""
 
 msgid "Aa"
 msgstr "Aa"
@@ -484,6 +517,11 @@ msgstr "Nei, goym eina nýggja fílu!"
 msgid "Choose the picture you want, then click “Open”."
 msgstr "Vel ynsktu mynd og trýst so á 'Opna'"
 
+#. Let user choose images:
+#, fuzzy
+msgid "Choose the pictures you want, then click “Play”."
+msgstr "Vel ynsktu mynd og trýst so á 'Opna'"
+
 msgid "A drawing program for children."
 msgstr "Eitt tekniforrit til børn."
 
@@ -495,18 +533,17 @@ msgstr "Tux Paint"
 
 # Morshus: Following messages added by brute hacking
 # - if not added, the messages would be in English
-msgid "Starting a new picture will erase the current one!"
-msgstr "Stovnan av nýggjari mynd strikar ta verandi!"
+#~ msgid "Starting a new picture will erase the current one!"
+#~ msgstr "Stovnan av nýggjari mynd strikar ta verandi!"
 
-msgid "That’s OK!"
-msgstr "Tað er í lagi!"
+#~ msgid "That’s OK!"
+#~ msgstr "Tað er í lagi!"
 
-msgid "Never mind!"
-msgstr "Gott er!"
+#~ msgid "Never mind!"
+#~ msgstr "Gott er!"
 
-msgid "Save over the older version of this picture?"
-msgstr "Goym yvir gomlu útgávu av hesi mynd?"
+#~ msgid "Save over the older version of this picture?"
+#~ msgstr "Goym yvir gomlu útgávu av hesi mynd?"
 
-msgid "No, save a new file"
-msgstr "Nei, goym eina nýggja fílu"
-
+#~ msgid "No, save a new file"
+#~ msgstr "Nei, goym eina nýggja fílu"

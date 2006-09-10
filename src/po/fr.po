@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: fr\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-07-15 20:07+0200\n"
+"POT-Creation-Date: 2006-09-10 11:18-0700\n"
 "PO-Revision-Date: 2004-05-30 21:20-0700\n"
 "Last-Translator: jimmy <jacques.chion@wanadoo.fr>\n"
 "Language-Team:  <fr@li.org>\n"
@@ -15,18 +15,6 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.0.2\n"
-
-msgid "Next"
-msgstr "Suite"
-
-msgid "Slides"
-msgstr "Diapos"
-
-msgid "Play"
-msgstr "Départ"
-
-msgid "Choose the pictures you want, then click “Play”."
-msgstr "Choisis les images que tu veux, puis clique sur ``Départ''"
 
 msgid "Black!"
 msgstr "Noir !"
@@ -79,12 +67,24 @@ msgstr "Tanné !"
 msgid "Beige!"
 msgstr "Beige !"
 
+#. First, the blacklist. We list font families that can crash Tux Paint
+#. via bugs in the SDL_ttf library. We also test fonts to be sure that
+#. they have both uppercase and lowercase letters. Note that we do not
+#. test for "Aa", because it is OK if uppercase and lowercase are the
+#. same. (but not nice -- such fonts get a low score later)
+#.
+#. We test the alphabet twice, to help with translation. If the users
+#. will be unable to type ASCII letters, then both lines should be
+#. translated. Otherwise, only Line X should be translated and the
+#. ASCII-only fonts should be given bad scores in the scoring code below.
+#. (the best scores going to fonts that support both)
 msgid "qx"
 msgstr "qx"
 
 msgid "QX"
 msgstr "QX"
 
+#. Line X
 msgid "qy"
 msgstr "qy"
 
@@ -489,8 +489,17 @@ msgstr "Attends s'il te plaît ..."
 msgid "Erase"
 msgstr "Effacer"
 
+msgid "Slides"
+msgstr "Diapos"
+
 msgid "Back"
 msgstr "Retour"
+
+msgid "Next"
+msgstr "Suite"
+
+msgid "Play"
+msgstr "Départ"
 
 msgid "Aa"
 msgstr "Aa"
@@ -515,6 +524,10 @@ msgstr "Non, c'est une nouvelle image !"
 
 msgid "Choose the picture you want, then click “Open”."
 msgstr "Choisis une image, et clique ensuite sur “Ouvrir”"
+
+#. Let user choose images:
+msgid "Choose the pictures you want, then click “Play”."
+msgstr "Choisis les images que tu veux, puis clique sur ``Départ''"
 
 msgid "A drawing program for children."
 msgstr "Un programme de dessin pour les enfants."

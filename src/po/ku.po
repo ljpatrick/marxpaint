@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-07-15 20:07+0200\n"
+"POT-Creation-Date: 2006-09-10 11:18-0700\n"
 "PO-Revision-Date: 2006-04-23 00:58+0200\n"
 "Last-Translator: Amed Ç. Jiyan <amed@pckurd.net>\n"
 "Language-Team: KURDISH <LL@li.org>\n"
@@ -65,12 +65,24 @@ msgstr "Qemer!"
 msgid "Beige!"
 msgstr "Bej!"
 
+#. First, the blacklist. We list font families that can crash Tux Paint
+#. via bugs in the SDL_ttf library. We also test fonts to be sure that
+#. they have both uppercase and lowercase letters. Note that we do not
+#. test for "Aa", because it is OK if uppercase and lowercase are the
+#. same. (but not nice -- such fonts get a low score later)
+#.
+#. We test the alphabet twice, to help with translation. If the users
+#. will be unable to type ASCII letters, then both lines should be
+#. translated. Otherwise, only Line X should be translated and the
+#. ASCII-only fonts should be given bad scores in the scoring code below.
+#. (the best scores going to fonts that support both)
 msgid "qx"
 msgstr "qx"
 
 msgid "QX"
 msgstr "QX"
 
+#. Line X
 msgid "qy"
 msgstr "qy"
 
@@ -470,8 +482,18 @@ msgstr "Ji kerema xwe re li bendê bimîne..."
 msgid "Erase"
 msgstr "Jê bibe"
 
+msgid "Slides"
+msgstr ""
+
 msgid "Back"
 msgstr "Paş"
+
+#, fuzzy
+msgid "Next"
+msgstr "Nivîs"
+
+msgid "Play"
+msgstr ""
 
 msgid "Aa"
 msgstr "Aa"
@@ -495,6 +517,11 @@ msgid "No, save a new file!"
 msgstr "Na, dosyeyeke nû tomar bike!"
 
 msgid "Choose the picture you want, then click “Open”."
+msgstr "Ji bo vekirina wêneyê ku dixwazî \"Veke\" Bitikîne."
+
+#. Let user choose images:
+#, fuzzy
+msgid "Choose the pictures you want, then click “Play”."
 msgstr "Ji bo vekirina wêneyê ku dixwazî \"Veke\" Bitikîne."
 
 msgid "A drawing program for children."

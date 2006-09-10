@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: fi\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-07-15 20:07+0200\n"
+"POT-Creation-Date: 2006-09-10 11:18-0700\n"
 "PO-Revision-Date: 2006-05-14 12:35+0300\n"
 "Last-Translator: Niko Lewman <niko.lewman@edu.hel.fi>\n"
 "Language-Team: Finnisf\n"
@@ -68,12 +68,24 @@ msgstr "Vaaleanruskea!"
 msgid "Beige!"
 msgstr "Beige!"
 
+#. First, the blacklist. We list font families that can crash Tux Paint
+#. via bugs in the SDL_ttf library. We also test fonts to be sure that
+#. they have both uppercase and lowercase letters. Note that we do not
+#. test for "Aa", because it is OK if uppercase and lowercase are the
+#. same. (but not nice -- such fonts get a low score later)
+#.
+#. We test the alphabet twice, to help with translation. If the users
+#. will be unable to type ASCII letters, then both lines should be
+#. translated. Otherwise, only Line X should be translated and the
+#. ASCII-only fonts should be given bad scores in the scoring code below.
+#. (the best scores going to fonts that support both)
 msgid "qx"
 msgstr ""
 
 msgid "QX"
 msgstr ""
 
+#. Line X
 msgid "qy"
 msgstr ""
 
@@ -488,8 +500,18 @@ msgstr "Odota, ole hyvä..."
 msgid "Erase"
 msgstr "Pyyhi"
 
+msgid "Slides"
+msgstr ""
+
 msgid "Back"
 msgstr "Takaisin"
+
+#, fuzzy
+msgid "Next"
+msgstr "Teksti"
+
+msgid "Play"
+msgstr ""
 
 msgid "Aa"
 msgstr "Aa"
@@ -514,6 +536,11 @@ msgid "No, save a new file!"
 msgstr "Ei, tallennetaan uuteen tiedostoon"
 
 msgid "Choose the picture you want, then click “Open”."
+msgstr "Valitse haluamasi kuva ja valitse 'Avaa'"
+
+#. Let user choose images:
+#, fuzzy
+msgid "Choose the pictures you want, then click “Play”."
 msgstr "Valitse haluamasi kuva ja valitse 'Avaa'"
 
 msgid "A drawing program for children."
