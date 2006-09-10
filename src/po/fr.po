@@ -16,6 +16,18 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.0.2\n"
 
+msgid "Next"
+msgstr "Suite"
+
+msgid "Slides"
+msgstr "Diapos"
+
+msgid "Play"
+msgstr "Départ"
+
+msgid "Choose the pictures you want, then click “Play”."
+msgstr "Choisis les images que tu veux, puis clique sur ``Départ''"
+
 msgid "Black!"
 msgstr "Noir !"
 
@@ -478,7 +490,7 @@ msgid "Erase"
 msgstr "Effacer"
 
 msgid "Back"
-msgstr "En arrière"
+msgstr "Retour"
 
 msgid "Aa"
 msgstr "Aa"
