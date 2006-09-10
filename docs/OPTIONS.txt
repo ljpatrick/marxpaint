@@ -315,6 +315,27 @@ Windows Users
              starts up, rather than loading the last image that was being
              edited.
 
+     colorfile=FILENAME
+
+             You may override Tux Paint's default color palette by creating a
+             plain ASCII text file that describes the colors you want, and
+             pointing to that file using the colorfile option.
+
+             The file should list one color per line. Colors are defined in
+             terms of their Red, Green and Blue values, each from 0 (off) to
+             255 (brightest). (For more information, try Wikipedia's "RGB
+             color model" article.)
+
+             Colors may be listed using three decimal numbers (e.g.,
+             "255 64 128") or a 6- or 3-digit-long hexadecimal 'triplet'
+             (e.g., "#ff4080" or "#F48"). Note: You must separate decimal
+             values with spaces, and begin hexadecimal values with a
+             pound/number-sign character ("#").
+
+             After the color definition (on the same line) you may enter text
+             to describe the color. Tux will display this text when the color
+             is clicked. (For example, "#FFF White as snow.")
+
      lang=LANGUAGE
 
              Run Tux Paint in one of the supported languages. Possible choice

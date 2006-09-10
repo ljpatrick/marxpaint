@@ -60,6 +60,10 @@ $Id$
     * Stamps may now include a second sound effect, used as a spoken
       description.
       (stampname_desc.ogg or .wav and localized stampname_desc_ll.ogg or .wav)
+
+    * The color palette may now be overridden by creating a text file
+      containing color descriptions, and using the "colorfile" option.
+
   
   * Tool improvements:
     ------------------------
@@ -94,7 +98,6 @@ $Id$
     
     * Kuro Neko ("Black Cat") (animated, directional)
       (Based on the cat from 'xneko' by Masayuki Koba)
-
 
   * New Starter Images:
     -------------------

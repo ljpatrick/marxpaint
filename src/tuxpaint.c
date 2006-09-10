@@ -5194,6 +5194,7 @@ static void show_usage(FILE * f, char *prg)
 	  "  %s [--altprintmod | --altprintalways | --altprintnever]\n"
 	  "  %s [--lang LANGUAGE | --locale LOCALE | --lang help]\n"
 	  "  %s [--nosysconfig] [--nolockfile]\n"
+	  "  %s [--colorfile FILE]\n"
 	  /* "  %s [--record FILE | --playback FILE]\n" */
 	  "\n",
 	  prg, prg,
@@ -5203,7 +5204,7 @@ static void show_usage(FILE * f, char *prg)
 #ifdef WIN32
 	  blank,
 #endif
-	  blank, blank, blank, blank, blank);
+	  blank, blank, blank, blank, blank, blank);
 
   free(blank);
 }
@@ -5711,6 +5712,10 @@ static int load_user_fonts_stub(void *vp)
 #endif
 
 
+#define hex2dec(c) (((c) >= '0' && (c) <= '9') ? ((c) - '0') : \
+		    ((c) >= 'A' && (c) <= 'F') ? ((c) - 'A' + 10) : \
+		    ((c) >= 'a' && (c) <= 'f') ? ((c) - 'a' + 10) : 0)
+
 ////////////////////////////////////////////////////////////////////////////////
 /* Setup: */
 
@@ -5819,6 +5824,7 @@ static void setup(int argc, char *argv[])
   playing = 0;
   ok_to_use_lockfile = 1;
   start_blank = 0;
+  colorfile[0] = '\0';
 
 
 #ifdef __BEOS__
@@ -5963,6 +5969,22 @@ static void setup(int argc, char *argv[])
     else if (strcmp(argv[i], "--shortcuts") == 0)
     {
       noshortcuts = 0;
+    }
+    else if (strcmp(argv[i], "--colorfile") == 0)
+    {
+      if (i < argc - 1)
+      {
+        strcpy(colorfile, argv[i + 1]);
+	i++;
+      }
+      else
+      {
+	/* Forgot to specify the file name! */
+
+	fprintf(stderr, "%s takes an argument\n", argv[i]);
+	show_usage(stderr, (char *) getfilename(argv[0]));
+	exit(1);
+      }
     }
     else if (argv[i][0] == '-' && argv[i][1] == '-' && argv[i][2] >= '1'
 	     && argv[i][2] <= '9')
@@ -6443,11 +6465,117 @@ static void setup(int argc, char *argv[])
 
   /* Load colors, or use default ones: */
 
-  if (0 == 1)
+  if (colorfile[0] != '\0')
   {
-    /* FIXME: Allow loading colors from file: */
+    fi = fopen(colorfile, "r");
+    if (fi == NULL)
+    {
+      fprintf(stderr,
+	      "\nWarning, could not open color file. Using defaults.\n");
+      perror(colorfile);
+      colorfile[0] = '\0';
+    }
+    else
+    {
+      int max = 0, per = 5;
+      char str[80], tmp_str[80];
+      int count;
+
+      NUM_COLORS = 0;
+
+      do
+      {
+	fgets(str, sizeof(str), fi);
+
+	if (!feof(fi))
+	{
+	  if (NUM_COLORS + 1 > max)
+	  {
+	    color_hexes = realloc(color_hexes, sizeof(Uint8 *) * (max + per));
+	    color_names = realloc(color_names, sizeof(char *) * (max + per));
+
+	    for (i = max; i < max + per; i++)
+	      color_hexes[i] = malloc(sizeof(Uint8) * 3);
+
+	    max = max + per;
+	  }
+
+	  while (str[strlen(str) - 1] == '\n' ||
+	         str[strlen(str) - 1] == '\r')
+	    str[strlen(str) - 1] = '\0';
+
+	  if (str[0] == '#')
+	  {
+	    /* Hex form */
+
+	    sscanf(str + 1, "%s %n", tmp_str, &count);
+
+	    if (strlen(tmp_str) == 6)
+	    {
+	      /* Byte (#rrggbb) form */
+		    
+	      color_hexes[NUM_COLORS][0] =
+		      (hex2dec(tmp_str[0]) << 4) + hex2dec(tmp_str[1]);
+	      color_hexes[NUM_COLORS][1] =
+		      (hex2dec(tmp_str[2]) << 4) + hex2dec(tmp_str[3]);
+	      color_hexes[NUM_COLORS][2] =
+		      (hex2dec(tmp_str[4]) << 4) + hex2dec(tmp_str[5]);
+	      
+	      color_names[NUM_COLORS] = strdup(str + count);
+	      NUM_COLORS++;
+	    }
+	    else if (strlen(tmp_str) == 3)
+	    {
+	      /* Nybble (#rgb) form */
+
+	      color_hexes[NUM_COLORS][0] = (hex2dec(tmp_str[0]) << 4);;
+	      color_hexes[NUM_COLORS][1] = (hex2dec(tmp_str[1]) << 4);;
+	      color_hexes[NUM_COLORS][2] = (hex2dec(tmp_str[2]) << 4);;
+	      
+	      color_names[NUM_COLORS] = strdup(str + count);
+	      NUM_COLORS++;
+	    }
+	  }
+	  else
+	  {
+	    /* Assume int form */
+
+            if (sscanf(str, "%hu %hu %hu %n",
+		   (short unsigned int *) &(color_hexes[NUM_COLORS][0]),
+		   (short unsigned int *) &(color_hexes[NUM_COLORS][1]),
+		   (short unsigned int *) &(color_hexes[NUM_COLORS][2]),
+		   &count) >= 3)
+	    {
+	      color_names[NUM_COLORS] = strdup(str + count);
+	      NUM_COLORS++;
+	    }
+	  }
+	}
+      }
+      while (!feof(fi));
+
+      if (NUM_COLORS < 2)
+      {
+	fprintf(stderr,
+		"\nWarning, not enough colors in color file. Using defaults.\n");
+	fprintf(stderr, "%s\n", colorfile);
+	colorfile[0] = '\0';
+
+	for (i = 0; i < NUM_COLORS; i++)
+	{
+	  free(color_names[i]);
+	  free(color_hexes[i]);
+	}
+	
+	free(color_names);
+	free(color_hexes);
+      }
+    }
   }
-  else
+ 
+  /* Use default, if no file specified (or trouble opening it) */
+
+  if (colorfile[0] == '\0')
   {
     NUM_COLORS = NUM_DEFAULT_COLORS;
 
@@ -14785,6 +14913,10 @@ static void parse_options(FILE * fi)
       else if (strstr(str, "lang=") == str)
       {
 	set_langstr(str + 5);
+      }
+      else if (strstr(str, "colorfile=") == str)
+      {
+	strcpy(colorfile, str + 10);
       }
       else if (strstr(str, "printdelay=") == str)
       {

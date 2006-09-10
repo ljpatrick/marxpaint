@@ -389,6 +389,31 @@ New Breed Software</p>
     This causes Tux&nbsp;Paint to display a blank canvas when it first
     starts up, rather than loading the last image that was being edited.
   </dd>
+
+  <dt><code><b>colorfile=<i>FILENAME</i></b></code></dt>
+  <dd>
+    <p>You may override Tux&nbsp;Paint's default color palette by creating
+    a plain ASCII text file that describes the colors you want, and
+    pointing to that file using the <code>colorfile</code> option.</p>
+
+    <p>The file should list one color per line.  Colors are defined in
+    terms of their Red, Green and Blue values, each from 0 (off) to 255
+    (brightest).  (For more information, try Wikipedia's
+    "<a href="http://en.wikipedia.org/wiki/Rgb">RGB color model</a>"
+    article.)</p>
+
+    <p>Colors may be listed using three decimal numbers (e.g.,
+    "<code>255&nbsp;64&nbsp;128</code>") or a 6- or 3-digit-long hexadecimal
+    'triplet' (e.g., "<code>#ff4080</code>" or "<code>#F48</code>").
+    Note: You must separate decimal values with spaces, and begin
+    hexadecimal values with a pound/number-sign character
+    ("<code>#</code>").</p>
+    
+    <p>After the color definition (on the same line) you may enter text to
+    describe the color.  Tux will display this text when the color is
+    clicked.  (For example,
+    "<code>#FFF&nbsp;White&nbsp;as&nbsp;snow.</code>")</p>
+  </dd>
   
   <dt><code><b>lang=<i>LANGUAGE</i></b></code></dt>
   <dd>

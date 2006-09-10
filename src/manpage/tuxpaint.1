@@ -34,6 +34,7 @@ tuxpaint -- A drawing program for young children.
 [\-\-saveover]
 [\-\-saveovernew]
 [\-\-nosave]
+[\-\-colorfile \fIFILE\fP]
 
 .TP 9
 .B tuxpaint
@@ -252,6 +253,14 @@ When you start \fITux Paint\fP, it loads the last image that was being worked
 on.  The \fI\-\-startblank\fP option disables this, so it always starts with
 a blank canvas.  The default behavior is \fI\-\-startlast\fP.
 
+.TP 8
+.B \-\-colorfile \fIFILE\fP
+This option allows you to override the default color palette in \fITux Paint\fP
+and replace it with your own. The file should be a plain ASCII text file
+containing one color description per line. Colors may be in decimal or
+6- or 3-digit hexadecimal, and followed by a description. (For example,
+"\fI#000 Black\fP" and "\fI255 192 64 Orange\fP".)
+
 .SH OPTIONS - LANGUAGE
 .l
 Various parts of \fITux Paint\fP have been translated into numerous languages.
@@ -469,7 +478,7 @@ welsh | cymraeg
 .PD
 
 .TP 8
-.B \-\- lang help
+.B \-\-lang help
 Display a lists of all supported languages.
 
 .SH OPTIONS - MISCELLANEOUS

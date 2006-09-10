@@ -9,7 +9,7 @@
                            bill@newbreedsoftware.com
                    http://www.newbreedsoftware.com/tuxpaint/
 
-                        June 14, 2002 - August 27, 2006
+                       June 14, 2002 - September 9, 2006
 
    --------------------------------------------------------------------------
 
@@ -164,6 +164,9 @@ Main Screen
 
  [Colors - Black, White, Red, Pink, Orange, Yellow, Green, Cyan, Blue, Purple,
                                   Brown, Grey]
+
+               (NOTE: You can define your own colors for Tux Paint. See the
+               "Options" documentation.)
 
        Bottom: Help Area
 

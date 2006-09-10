@@ -28,6 +28,8 @@
 */
 
 
+#ifndef COLORS_H
+#define COLORS_H
 
 /* What colors are available: */
 
@@ -98,3 +100,8 @@ const char *const default_color_names[NUM_DEFAULT_COLORS] = {
   gettext_noop("Tan!"),
   gettext_noop("Beige!")
 };
+
+char colorfile[256];
+
+#endif /* COLORS_H */
+
