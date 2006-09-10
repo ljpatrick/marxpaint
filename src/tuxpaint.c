@@ -22,7 +22,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
   
-  June 14, 2002 - September 6, 2006
+  June 14, 2002 - September 9, 2006
   $Id$
 */
 
@@ -434,6 +434,12 @@ enum
   STARTER_SCENE
 };
 
+/* Color globals (copied from colors.h, if no colors specified by user) */
+
+int NUM_COLORS;
+Uint8 * * color_hexes;
+char * * color_names;
+
 
 /* Show debugging stuff: */
 
@@ -786,6 +792,7 @@ static FILE *demofi;
 static const char *printcommand = PRINTCOMMAND;
 static const char *altprintcommand = ALTPRINTCOMMAND;
 
+
 enum
 {
   UNDO_STARTER_NONE,
@@ -968,7 +975,7 @@ static SDL_Surface *img_mouse, *img_mouse_click;
 #ifdef LOW_QUALITY_COLOR_SELECTOR
 static SDL_Surface *img_paintcan;
 #else
-static SDL_Surface *img_color_btns[NUM_COLORS * 2];
+static SDL_Surface * * img_color_btns;
 static SDL_Surface *img_color_btn_off;
 #endif
 
@@ -5709,7 +5716,7 @@ static int load_user_fonts_stub(void *vp)
 
 static void setup(int argc, char *argv[])
 {
-  int i, ok_to_use_sysconfig;
+  int i, j, ok_to_use_sysconfig;
   char str[128];
   char *upstr;
   SDL_Color black = { 0, 0, 0, 0 };
@@ -6434,9 +6441,34 @@ static void setup(int argc, char *argv[])
   }
 
 
+  /* Load colors, or use default ones: */
+
+  if (0 == 1)
+  {
+    /* FIXME: Allow loading colors from file: */
+  }
+  else
+  {
+    NUM_COLORS = NUM_DEFAULT_COLORS;
+
+    color_hexes = malloc(sizeof(Uint8 *) * NUM_COLORS);
+    color_names = malloc(sizeof(char *) * NUM_COLORS);
+    
+    for (i = 0; i < NUM_COLORS; i++)
+    {
+      color_hexes[i] = malloc(sizeof(Uint8 *) * 3);
+
+      for (j = 0; j < 3; j++)
+	color_hexes[i][j] = default_color_hexes[i][j];
+
+      color_names[i] = strdup(default_color_names[i]);
+    }
+  }
+
 
   setup_screen_layout();
 
+  
   /* Set window icon and caption: */
 
 #ifndef __APPLE__
@@ -6922,9 +6954,10 @@ static void setup(int argc, char *argv[])
 
   /* Create surfaces to draw them into: */
 
+  img_color_btns = malloc(sizeof(SDL_Surface *) * NUM_COLORS * 2);
+
   for (i = 0; i < NUM_COLORS * 2; i++)
   {
-
     img_color_btns[i] = SDL_CreateRGBSurface(screen->flags,
 					     /* (WINDOW_WIDTH - 96) / NUM_COLORS, 48, */
 					     tmp_btn_up->w, tmp_btn_up->h,
@@ -7465,7 +7498,7 @@ static unsigned draw_colors(unsigned action)
     return old_colors_state;
   old_color = cur_color;
 
-  for (i = 0; i < NUM_COLORS; i++)
+  for (i = 0; i < (unsigned int) NUM_COLORS; i++)
   {
     dest.x = r_colors.x + i % gd_colors.cols * color_button_w;
     dest.y = r_colors.y + i / gd_colors.cols * color_button_h;
@@ -10687,6 +10720,7 @@ static void cleanup(void)
   free_surface(&img_paintcan);
 #else
   free_surface_array(img_color_btns, NUM_COLORS * 2);
+  free(img_color_btns);
 #endif
 
   free_surface(&screen);
@@ -10767,6 +10801,14 @@ static void cleanup(void)
   free_cursor(&cursor_wand);
   free_cursor(&cursor_insertion);
   free_cursor(&cursor_rotate);
+
+  for (i = 0; i < NUM_COLORS; i++)
+  {
+    free(color_hexes[i]);
+    free(color_names[i]);
+  }
+  free(color_hexes);
+  free(color_names);
 
 
   /* (Just in case...) */

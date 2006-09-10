@@ -23,7 +23,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  June 14, 2002 - February 17, 2006
+  June 14, 2002 - September 9, 2006
   $Id$
 */
 
@@ -50,13 +50,13 @@ enum
   COLOR_BROWN,
   COLOR_TAN,
   COLOR_BEIGE,
-  NUM_COLORS
+  NUM_DEFAULT_COLORS
 };
 
 
 /* Hex codes: */
 
-const int color_hexes[NUM_COLORS][3] = {
+const int default_color_hexes[NUM_DEFAULT_COLORS][3] = {
   {0, 0, 0},			/* Black */
   {128, 128, 128},		/* Dark grey */
   {192, 192, 192},		/* Light grey */
@@ -79,7 +79,7 @@ const int color_hexes[NUM_COLORS][3] = {
 
 /* Color names: */
 
-const char *const color_names[NUM_COLORS] = {
+const char *const default_color_names[NUM_DEFAULT_COLORS] = {
   gettext_noop("Black!"),
   gettext_noop("Dark grey! Some people spell it “dark gray”."),
   gettext_noop("Light grey! Some people spell it “light gray”."),
