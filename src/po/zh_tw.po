@@ -7,10 +7,9 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint 0.9.15rc1\n"
-"Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2006-09-10 11:18-0700\n"
-"PO-Revision-Date: 2006-09-03 20:58+0800\n"
-"Last-Translator: Song Huang <Song@song.tw>\n"
+"PO-Revision-Date: 2006-09-11 21:32+0800\n"
+"Last-Translator: Song Huang <song@song.tw>\n"
 "Language-Team: Chinese (traditional) <zh-l10n@linux.org.tw>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -220,8 +219,7 @@ msgstr "按著並移動滑鼠來讓顏色變淺。"
 msgid "Click and move to darken the colors."
 msgstr "按著並移動滑鼠來讓顏色變深。"
 
-msgid ""
-"Click and move the mouse around to turn the picture into a chalk drawing."
+msgid "Click and move the mouse around to turn the picture into a chalk drawing."
 msgstr "按著並移動滑鼠來產生粉筆的痕跡。"
 
 msgid "Click and move the mouse around to make the picture blocky."
@@ -272,8 +270,7 @@ msgstr "正方形是四邊一樣長的長方形。"
 msgid "A rectangle has four sides and four right angles."
 msgstr "長方形有四個邊和四個直角。"
 
-msgid ""
-"A circle is a curve where all points have the same distance from the centre."
+msgid "A circle is a curve where all points have the same distance from the centre."
 msgstr "圓形是每一點都和圓心保持相同距離的曲線。"
 
 msgid "An ellipse is a stretched circle."
@@ -358,12 +355,8 @@ msgstr "挑選一個圖章來印在你的畫布上。"
 msgid "Click to start drawing a line. Let go to complete it."
 msgstr "按一下滑鼠就可以開始畫一條線. 讓我們來完成它吧!"
 
-msgid ""
-"Pick a shape. Click to pick the center, drag, then let go when it is the "
-"size you want. Move around to rotate it, and click to draw it."
-msgstr ""
-"挑選一個形狀。點一下來決定形狀的中心位置，然後持續拖拉它到你要的大小。繞著中"
-"心移動來旋轉它，然後點一下把它畫下來。"
+msgid "Pick a shape. Click to pick the center, drag, then let go when it is the size you want. Move around to rotate it, and click to draw it."
+msgstr "挑選一個形狀。點一下來決定形狀的中心位置，然後持續拖拉它到你要的大小。繞著中心移動來旋轉它，然後點一下把它畫下來。"
 
 msgid "Choose a style of text. Click on your drawing and you can start typing."
 msgstr "選擇文字的樣子。在畫布上點一下就可以開始輸入。"
@@ -494,17 +487,16 @@ msgid "Erase"
 msgstr "刪除"
 
 msgid "Slides"
-msgstr ""
+msgstr "幻燈片"
 
 msgid "Back"
 msgstr "返回"
 
-#, fuzzy
 msgid "Next"
-msgstr "文字"
+msgstr "下一張"
 
 msgid "Play"
-msgstr ""
+msgstr "播放"
 
 msgid "Aa"
 msgstr "Aa"
@@ -532,10 +524,9 @@ msgstr "不，另外儲存一個新的檔案"
 msgid "Choose the picture you want, then click “Open”."
 msgstr "選擇你想要的圖畫，然後按一下「打開」。"
 
-#. Let user choose images:
-#, fuzzy
+#  Let user choose images:
 msgid "Choose the pictures you want, then click “Play”."
-msgstr "選擇你想要的圖畫，然後按一下「打開」。"
+msgstr "選擇你想要的圖畫，然後按一下「播放」。"
 
 msgid "A drawing program for children."
 msgstr "適合兒童的畫圖程式"
@@ -545,3 +536,4 @@ msgstr "畫圖程式"
 
 msgid "Tux Paint"
 msgstr "企鵝小畫家"
+
