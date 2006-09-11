@@ -6528,9 +6528,12 @@ static void setup(int argc, char *argv[])
 	    {
 	      /* Nybble (#rgb) form */
 
-	      color_hexes[NUM_COLORS][0] = (hex2dec(tmp_str[0]) << 4);;
-	      color_hexes[NUM_COLORS][1] = (hex2dec(tmp_str[1]) << 4);;
-	      color_hexes[NUM_COLORS][2] = (hex2dec(tmp_str[2]) << 4);;
+	      color_hexes[NUM_COLORS][0] =
+		      (hex2dec(tmp_str[0]) << 4) + hex2dec(tmp_str[0]);
+	      color_hexes[NUM_COLORS][1] =
+		      (hex2dec(tmp_str[1]) << 4) + hex2dec(tmp_str[1]);
+	      color_hexes[NUM_COLORS][2] =
+		      (hex2dec(tmp_str[2]) << 4) + hex2dec(tmp_str[2]);
 	      
 	      color_names[NUM_COLORS] = strdup(str + count);
 	      NUM_COLORS++;

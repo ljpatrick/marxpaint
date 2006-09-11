@@ -403,12 +403,9 @@ New Breed Software</p>
     article.)</p>
 
     <p>Colors may be listed using three decimal numbers (e.g.,
-    "<code>255&nbsp;64&nbsp;128</code>") or a 6- or 3-digit-long hexadecimal
-    'triplet' (e.g., "<code>#ff4080</code>" or "<code>#F48</code>").
-    Note: You must separate decimal values with spaces, and begin
-    hexadecimal values with a pound/number-sign character
-    ("<code>#</code>").</p>
-    
+    "<code>255&nbsp;68&nbsp;136</code>") or a 6- or 3-digit-long hexadecimal
+    'triplet' (e.g., "<code>#ff4488</code>" or "<code>#F48</code>").</p>
+
     <p>After the color definition (on the same line) you may enter text to
     describe the color.  Tux will display this text when the color is
     clicked.  (For example,
@@ -417,6 +414,13 @@ New Breed Software</p>
     <p>As an example, you can see the default colors currently
     used in Tux&nbsp;Paint in:
     "<a href="default_colors.txt"><code>default_colors.txt</code></a>".</p>
+    
+    <p>NOTES: You must separate decimal values with spaces, and begin
+    hexadecimal values with a pound/number-sign character
+    ("<code>#</code>").  In 3-digit hexadecimal, each digit is used for
+    both the high and low halves of the byte, so
+    "<code>#FFF</code>" is the same as "<code>#FFFFFF</code>", not
+    "<code>#F0F0F0</code>".</p>
   </dd>
   
   <dt><code><b>lang=<i>LANGUAGE</i></b></code></dt>
