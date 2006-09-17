@@ -80,6 +80,9 @@ Source: "{#BdistDir}\SDL.dll"; DestDir: "{app}"; Flags: ignoreversion
 Source: "{#BdistDir}\SDL_image.dll"; DestDir: "{app}"; Flags: ignoreversion
 Source: "{#BdistDir}\SDL_mixer.dll"; DestDir: "{app}"; Flags: ignoreversion
 Source: "{#BdistDir}\SDL_ttf.dll"; DestDir: "{app}"; Flags: ignoreversion
+Source: "{#BdistDir}\libogg-0.dll"; DestDir: "{app}"; Flags: ignoreversion
+Source: "{#BdistDir}\libvorbis-0.dll"; DestDir: "{app}"; Flags: ignoreversion
+Source: "{#BdistDir}\libvorbisfile-3.dll"; DestDir: "{app}"; Flags: ignoreversion
 Source: "{#BdistDir}\data\*"; DestDir: "{app}\data"; Excludes: "CVS"; Flags: ignoreversion recursesubdirs createallsubdirs
 Source: "{#BdistDir}\docs\*"; DestDir: "{app}\docs"; Excludes: "CVS,Makefile,*~"; Flags: ignoreversion recursesubdirs createallsubdirs
 Source: "{#BdistDir}\locale\*"; DestDir: "{app}\locale"; Excludes: "CVS"; Flags: ignoreversion recursesubdirs createallsubdirs
@@ -380,7 +383,7 @@ begin
   if lang = 'cht' then
     lang := 'zh-tw'
 
-  Result := 'http://www.newbreedsoftware.com/tuxpaint/?lang='+lang
+  Result := 'http://www.tuxpaint.org/?lang='+lang
 end;
 
 #expr SaveToFile(AddBackslash(SourcePath) + 'Preprocessed.iss')
