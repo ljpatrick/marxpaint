@@ -616,6 +616,9 @@ install-dlls:
 	@cp `which SDL_mixer.dll` $(BIN_PREFIX)
 	@cp `which SDL_ttf.dll` $(BIN_PREFIX)
 	@cp `which zlib1.dll` $(BIN_PREFIX)
+	@cp `which libogg-0.dll` $(BIN_PREFIX)
+	@cp `which libvorbis-0.dll` $(BIN_PREFIX)
+	@cp `which libvorbisfile-3.dll` $(BIN_PREFIX)
 	
 # Install the import script:
 
