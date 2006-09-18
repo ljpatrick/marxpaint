@@ -19,7 +19,8 @@
 
 #include "compiler.h"
 
-#ifndef FORKED_FONTS
+/* Disable threaded font loading on Windows */
+#if !defined(FORKED_FONTS) && !defined(WIN32)
 #include "SDL_thread.h"
 #include "SDL_mutex.h"
 #else
