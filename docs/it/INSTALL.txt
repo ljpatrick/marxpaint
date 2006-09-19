@@ -1,14 +1,14 @@
-INSTALL.txt di Tux Paint
+INSTALL.it.txt di Tux Paint
 
 Tux Paint - Un semplice programma di disegno per bambini.
 
-Copyright 2002 by Bill Kendrick
+Copyright 2005 by Bill Kendrick
 bill@newbreedsoftware.com
 http://www.newbreedsoftware.com/tuxpaint/
 
-June 27, 2002 - November 5, 2002
+27 luglio 2002 - 26 febbraio 2005
 
-Traduzione a cura di Flavio `Iron Bishop' Pastore
+
 
 Requisiti di sistema:
 ---------------------
@@ -29,8 +29,8 @@ Requisiti di sistema:
     (per i file  grafici), SDL_TTF  (per il supporto dei  caratteri True
     Type Font) e, opzionalmente, SDL_Mixer (per gli effetti sonori).
 
-    Utenti GNU Linux/Unix:
-    ----------------------
+  Utenti GNU/Linux e Unix:
+  ------------------------
       Le librerie SDL sono disponibili  come codice sorgente, o come RMP 
       o pacchetti Debian per diverse distribuzioni GNU Linux.
 
@@ -97,10 +97,21 @@ Compilare e installare:
   --------------
     Compilare:
     ----------
-      Tux Paint per Windows viene distribuito  precompilato, quindi non
-      e` necessaria nessuna compilazione su questo sistema. Informazioni
-      su come ricompilare Tux Paint su Windows potranno essere inserite
-      in questa sezione. Per il momento, contate su voi stessi.
+      Tux Paint e` distribuito in forma pre-compilata per Windows, quindi
+      non e` necessario effettuare la compilazione su questo sistema.
+
+      Nel febbraio 2005 (a partire da Tux Paint 0.9.15) nel Makefile e` stato
+      incluso il supporto per la compilazione su un sistema Windows utilizzando
+      MingGW/MSYS.
+      
+      Dopo aver compilato e installato tutte le dipendenze, usare questi comandi
+      in MSYS per compilare, installare ed eseguire:
+      
+        export set CPATH=/usr/local/include
+	export set LIBRARY_PATH=/usr/local/bin:/usr/local/lib
+	make win32
+	make install-win32
+	tuxpaint
 
     Installare:
     -----------
@@ -153,8 +164,8 @@ Compilare e installare:
        
       Al termine dell'impostazione, fare click su "OK."
 
-    If Something Goes Wrong
-    -----------------------
+    Se qualcosa va storto
+    ---------------------
       Se,  facendo click sul collegamento per far partire il programma,
       non accade nulla,  probabimente qualcuno  degli argomenti di riga
       di comando e` sbagliato. Si apra in "Esplora Risorse" la cartella
@@ -165,8 +176,8 @@ Compilare e installare:
       di una minuscola, oppure un "-" di troppo (o di meno).
   
   
-  Utenti GNU Linux/Unix:
-  ----------------------
+  Utenti GNU/Linux e Unix:
+  ------------------------
     Compilare:
     ----------
       Nota: attualmente Tux Paint non usa autoconf/automake, quindi non
@@ -285,8 +296,8 @@ Disinstallare Tux Paint:
       la disinstallazione del programma.
 
 
-  GNU Linux
-  ---------
+  Utenti GNU/Linux e Unix:
+  ------------------------
     All'interno della cartella che contiene il codice sorgente di Tux
     Paint  (quella dove avete compilato il programma),  e`  possibile
     usare il "makefile" per disinstallare Tux Paint.  Per farlo serve
@@ -305,4 +316,5 @@ Disinstallare Tux Paint:
     Infine, tornare all'utente normale:
 
       # exit
+
 

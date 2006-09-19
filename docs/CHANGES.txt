@@ -169,6 +169,9 @@ $Id$
     * Italian
       Flavio "Iron Bishop" Pastore <ironbishop@fsfe.org>
 
+    * Italian AUTHORS and INSTALL documentation updates
+      Flavio "Iron Bishop" Pastore <ironbishop@fsfe.org>
+
     * Japanese
       TOYAMA Shin-ichi <shin1@wmail.plala.or.jp>
 

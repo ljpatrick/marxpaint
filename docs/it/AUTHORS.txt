@@ -2,12 +2,14 @@ AUTHORS.it.txt di Tux Paint
 
 Tux Paint - Un semplice programma di disegno per bambini.
 
-Copyright (c) 2003 by Bill Kendrick
+Copyright (c) 2002-2006 by Bill Kendrick
 bill@newbreedsoftware.com
 http://www.newbreedsoftware.com/tuxpaint/
 
 
-17 Giugno, 2002 - 18 Agosto, 2003
+17 Giugno 2002 - 5 settembre 2006
+
+
 
 
 * Progetto e programmazione:
@@ -16,17 +18,16 @@ http://www.newbreedsoftware.com/tuxpaint/
   New Breed Software
   http://www.newbreedsoftware.com/
 
-  Algoritmo per forme piene basato su una descrizione del libro:
-  "Computer Graphics: C Version," (c) Prentice Hall 1997
-  di Donald Hearn and M. Pauline Baker.
-  [  NOTA: Attualmente non utilizzato. ]
-
   Codice di riempimento forme basato sull'esempio di Wikipedia:
   http://www.wikipedia.org/wiki/Flood_fill/C_example
   di Damian Yerrick - http://www.wikipedia.org/wiki/Damian_Yerrick
 
   Patch per il supporto per la risoluzione 800x600 di:
   TOYAMA Shin-ichi <kyone@tky2.3web.ne.jp>
+
+  Supporto per tutte le risoluzioni, effetto acquarello, effetto 
+  erba, effetto blocchi, miglioramento della tinta dei timbri, e
+  altre correzioni di: Albert Cahalan <albert@users.sf.net>
 
 
 * Grafica
@@ -44,6 +45,37 @@ http://www.newbreedsoftware.com/tuxpaint/
   * Pennelli creati usando The GIMP
     http://www.gimp.org/
 
+* Starter Images
+
+  * Chicken
+  * Jet Plane
+  * Rocket
+    Bill Kendrick <bill@newbreedsoftware.com>
+
+  * San Francisco at dusk
+    Public domain.  National Oceanic & Atmospheric Adminstration (NOAA)
+    http://www.photolib.noaa.gov/
+    Image ID: line1989, America's Coastlines Collection
+    Location: San Francisco Bay, California
+    Photographer: Rich Bourgerie, Oceanographer, CO-OPS, NOS, NOAA
+
+  * Coral reef
+    Public domain.  National Oceanic & Atmospheric Adminstration (NOAA)
+    http://www.photolib.noaa.gov/
+    Image ID: reef2583, The Coral Kingdom Collection
+    Photographer: Thomas K. Gibson
+    Credit: Florida Keys National Marine Sanctuary
+
+  * Shipwreck
+  * Tux the Farmer
+    Jim Trice <jimtrice@linuxmail.org>
+
+  * Street
+    Pere Pujal Carabantes <ppujal@airtel.net>
+
+  * Nagasaki
+    Jim Trice <jimtrice@linuxmail.org>
+
 
 * Caratteri
 
@@ -57,9 +89,16 @@ http://www.newbreedsoftware.com/tuxpaint/
 
   * Molti creati da Bill Kendrick
     * Blocchi -  Pila di cartucce del Nintendo NES una contro l'altra.
-    * Sfuma   -  Microfono sfregato su mousepad.
-    * Gesso   -  Microfono sfregato su capelli.
-    * Fade    -  Rana canterina.
+    * Sfuma      -  Microfono sfregato su mousepad.
+    * Gesso      -  Microfono sfregato su capelli.
+    * Schiarisci -  Rana canterina.
+    * Acquarello -  Effetto vocale.
+    
+  * Voce di Tux il pinguino
+    Daniel 'TuxthePenguin' Alston <supertuxfansite@gmail.com>
+  
+  * Fumetto
+    * "cartoon6.wav" from http://www.grsites.com/
     
   * Molti altri presi da vari posti sul web.
 
@@ -72,44 +111,111 @@ http://www.newbreedsoftware.com/tuxpaint/
 
 * Traduzioni
 
+
+  * Afrikaans
+    Petri Jooste <rkwjpj@puk.ac.za>
+
+  * Albanian
+    Ilir Rugova <ilirrugova@gmx.de>
+    Laurent Dhima <laurenti@alblinux.net>
+
+  * Arabic
+    Khalid Al Holan <alholan@gmail.com>
+
+  * Basque
+    Juan Irigoien <juanirigoien@yahoo.es>
+
+  * Belarusian
+    Eugene Zelenko <greendeath@mail.ru>
+  
+  * Breton
+    Korvigelloù An Drouizi (Philippe) <drouizig@drouizig.org>
+
+  * British English
+    Gareth Owen <gowen72@yahoo.com>
+
+  * Bulgarian
+    Martin Zhekov <mjekov@bginfo.net>
+    Yavor Doganov <yavor@doganov.org>
+
   * Catalan
     Pere Pujal Carabantes <ppujal@airtel.net>
 
-  * Chinese
+  * Chinese (Simplified)
     Wang Jian <lark@linux.net.cn>
+
+  * Chinese (Traditional)
+    Song Huang <song@song.idv.tw>
+    Wei-Lun Chao <chaoweilun@pcmail.com.tw>
+
+  * Croatian
+    Nedjeljko Jedvaj <jedvaj.nedeljko@lexunit.com>
   
   * Czech
     Peter Sterba <sterba@sterba.com>
     Martin <barin@email.cz>,
-    (Coming soon) Ales <garalda@email.cz>
+    "Lucie Burianova" <Lucie.Burianova@global-dtp.com>
 
   * Danish
     Rasmus Erik Voel Jensen <i18n@solsort.dk> [retired]
+    Mogens Jæger <mogensjaeger@get2net.dk> [current maintainer]
 
   * Dutch
     Herman Bruyninckx <Herman.Bruyninckx@mech.kuleuven.ac.be>
-    Geert Stams <geert-csg@wanadoo.nl>
+    Geert Stams <geertstams@wanadoo.nl>
+    Michael de Rooij <micr@zeelandnet.nl>
+
+  * Estonian
+    Henrik Pihl <henrik@saarlane.ee>
+
+  * Faroese
+    Lis Gøthe í Jákupsstovu <morshus@gmail.com>
 
   * Finnish
     Tarmo Toikkanen <tarmo.toikkanen@iki.fi>
+    Niko Lewman <niko.lewman@edu.hel.fi>
 
   * French
     Jacques Chion <Jacques.Chion@wanadoo.fr>
-    Charles Vidal <vidalc@club-internet.fr>
+    Charles Vidal
+    Jérôme Chantreau <plovemax@hotmail.com> [documentation]
+
+  * Gaelic
+    Kevin Patrick Scannell <scannell@SLU.EDU>
+
+  * Galician
+    Leandro Regueiro <leandro.regueiro@gmail.com>
+
+  * Georgian
+    Gia Shervashidze <giasher@telenet.ge>
     
   * German
     Fabian Franz <FabianFranz@gmx.de>
+    Roland Illig <roland.illig@gmx.de>
+    Patrick <nc-spechtpa3 {At} netcologne [Dot] de>
+    Burkhard Lück <lueck@hube-lueck.de>
+
+  * Gronings
+    J.F.M. Lange <jfm.lange@hky.de>
 
   * Greek
-    The Greek Linux i18n Team <i18ngr@lists.hellug.gr>
+    The Greek Linux i18n Team <i18ngr@lists.hellug.gr>  [NOTE: mailing list]
+
+  * Gujarati
+    Kartik Mistry <kartik.mistry@gmail.com>
+
+  * Hindi
+    Ankit Malik <ankitmalik@gmail.com>
 
   * Hungarian
-    Török Gábor <gabo@linuxmania.hu>
+    Török Gábor <gabo@linuxportal.hu>
+    Gabor Kelemen <kelemeng@gnome.hu>
 
   * Hebrew
     Dovix <dovix2003@yahoo.com>
     Koby <kobybo@hotmail.com>
     Itai <Itais@newmail.net>
+    Leor Bleier <leor972@gmail.com>
 
   * Icelandic
     Pjetur G. Hjaltason <pjetur@pjetur.net>
@@ -119,75 +225,150 @@ http://www.newbreedsoftware.com/tuxpaint/
 
   * Italian
     Marco Milanesi <kpanic@pavia.linux.it>
-    Flavio `Iron Bishop' Pastore <flavio.pastore@zonaitalia.it>
+    Flavio Pastore <ironbishop@fsfe.org>
   
   * Japanese
-    TOYAMA Shin-ichi <kyone@tky2.3web.ne.jp>
+    TOYAMA Shin-ichi <shin1@wmail.plala.or.jp>
+
+  * Kinyarwanda
+    Steve Murphy <murf@e-tools.com>
+    (Based on translations by:
+    Philibert Ndandali <ndandali@yahoo.fr>,
+    Viateur MUGENZI <muvia1@yahoo.fr>,
+    NoÃ«lla Mupole <s24211045@tuks.co.za>,
+    Carole Karema <karemacarole@hotmail.com>,
+    JEAN BAPTISTE NGENDAHAYO <ngenda_denis@yahoo.co.uk>,
+    Augustin KIBERWA,
+    Donatien NSENGIYUMVA <ndonatienuk@yahoo.co.uk>, and
+    Antoine Bigirimana <antoine@e-tools.com>.)
 
   * Korean
-    Mark Kim <markbk@cbreak.org>
+    Mark K. Kim <mkkim214@gmail.com>
+  
+  * Kurdish
+    Amed Ç. Jiyan <amed@pckurd.net>
 
   * Lithuanian
     Mantas Kriauciunas <monte@mail.lt>
-    Rita Verbauskaite <verba@centras.lt>
+    Rita Verbauskaite
+    Gintaras Go?tautas <gintaras@nes.lt>
 
   * Malay
-    Muhammad Najmi Ahmad Zabidi <md_najmi@yahoo.com>
+    Muhammad Najmi Ahmad Zabidi <mnajem@linuxmail.org>
 
-  * Norwegian
+  * Norwegian Bokmal
+    Knut Erik Hollund <khollund@responze.net>
+    Dag H. Loras <dag.loraas@operamail.com>
+    Klaus Ade Johnstad <klaus@skolelinux.no>
+    Karl Ove Hufthammer <karl@huftis.org>
+
+  * Norwegian Nynorsk
     Karl Ove Hufthammer <karl@huftis.org>
 
   * Polish
-    Arkadiusz Lipiec <A.Lipiec@elka.pw.edu.pl>
-    Robert Glowczynski <robertg@software.com.pl>
+    Arkadiusz Lipiec
+    Robert Glowczynski
+    Tomasz 'karave' Tarach <karave@poczta.onet.pl>
 
   * Portuguese (Brazilian)
+    Fred Ulisses Maranhao <fred_maranhao@yahoo.com.br>
     Daniel José Viana <danjovic@vespanet.com.br>
-    Dedicated to my beloved daughter Scarlet
+      - Dedicated to my beloved daughter Scarlet
+    Silvio Faria <sirofa2003@yahoo.com.br>
  
-  * Portuguese
-    Ricardo Cruz <rick2@aeiu.pt>,
+  * Portuguese (Portugal)
+    Ricardo Cruz <rpmcruz@clix.pt>
+    Helder Correia <helder.pereira.correia@gmail.com>
     
   * Romanian
-    Laurentiu Buzdugan <buzdugan@voyager.net>
+    Laurentiu Buzdugan
 
   * Russian
     Dmitriy Ivanov <ace22b@myrealbox.com>
+
+  * Scottish Gaelic
+    Niall Tracey <internationiall@hotmail.com>
+
+  * Serbian
+    Aleksandar Jelenak <jelenak@verizon.net>
   
+  * Slovak
+    Milan Plzik <mmp@golem.gymzv.sk> [retired?]
+    Andrej Kacian <andrej@kacian.sk>
+
+  * Slovenian
+    Urska Colner <urska.colner@agenda.si>
+    Ines Kovacevic <ines@agenda.si>
+    Matej Urban <matej.urban@gmail.com>
+
   * Spanish
     Gabriel Gazzan <ggabriel@internet.com.uy>
+    Pablo Pita <pablo.pita@kdemail.net>
 
-  * Slovak
-    Milan Plzik <mmp@golem.gymzv.sk>
+  * Spanish (Mexico)
+    Ignacio Tike <ignaciotike@spymac.com>
+    Daniel Illingworth <webmaster@intermagen.net>
+    Luis C. Suárez <luiscsuarez@gmail.com>
+
+  * Swahili
+    Martin Benjamin <martin.benjamin@yale.edu>
+    Alberto Escudero-Pascual <aep@it46.se>
 
   * Swedish
+    Daniel Nylander <po@danielnylander.se>
+    Tomas Skäre <tomas@nocrew.org>
+    Magnus Dahl <magnus.dahl@bredband.net>
     Daniel Andersson <daniel@septum.org> [retired]
+
+  * Tagalog
+    Ricky Lontoc <gb_515_deme@hotmail.com>
+    Technical assistance by Ed Montgomery <edmontgomery@hotmail.com>
+
+  * Tamil
+    Mugunth <mugunth@thamizha.com>
+
+  * Thai
+    Ouychai Chaita <ae.freeman@gmail.com>
+
+  * Tibetan
+    Dawa Dolma
 
   * Turkish
     Doruk Fisek <dfisek@fisek.com.tr>
 
+  * Vietnamese
+    Le Quang Phan <lqphan@hn.vnn.vn>
+    Clytie Siddall <clytie@riverland.net.au>
+
   * Walloon
     Pablo Saratxaga <pablo@walon.org>
+
+  * Welsh
+    Kevin Donnelly <kevin@dotmon.com>
     
 
-* Port e Packaging
+* Ports and Packaging
 
-  * Versioni compilate per Windows 32-bit
+  * Windows 32-bit builds
     John Popplewell <john@johnnypops.demon.co.uk>
 
-  * Pacchetti Debian
+  * Debian Linux packages
     Ben Armstrong <synrg@sanctuary.nslug.ns.ca>
 
-  * Pacchetti NetBSD
+  * RedHat Linux / Fedora Core packages and RPM spec file
+    TOYAMA Shin-ichi <shin1@wmail.plala.or.jp>
+    Richard June <rjune[AT]lumensoftware.com>
+
+  * NetBSD packages
     Thomas Klausner <wiz@danbala.ifoer.tuwien.ac.at>
 
-  * Versioni compilate per Mac OS X
+  * Mac OS X builds
     Darrell Walisser <walisser@mac.com>
 
-  * Versioni compilate per BeOS
+  * BeOS builds
     Marcin 'Shard' Konicki <shard at beosjournal.org>
 
-  * Pacchetti Slackware
+  * Slackware packages
     Torsten Giebl <wizard@turricane.org>
 
 
@@ -198,4 +379,5 @@ http://www.newbreedsoftware.com/tuxpaint/
 
 
 Vedi anche:  CHANGES.txt
+
 
