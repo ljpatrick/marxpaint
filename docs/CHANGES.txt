@@ -9,7 +9,7 @@ http://www.newbreedsoftware.com/tuxpaint/
 $Id$
 
 
-2006.September.10 (0.9.16)
+2006.September.19 (0.9.16)
 
   * Interface improvements:
     -----------------------
@@ -165,6 +165,9 @@ $Id$
 
     * Hungarian
       Gabor Kelemen <kelemeng@gnome.hu>
+
+    * Italian
+      Flavio "Iron Bishop" Pastore <ironbishop@fsfe.org>
 
     * Japanese
       TOYAMA Shin-ichi <shin1@wmail.plala.or.jp>
