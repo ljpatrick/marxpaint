@@ -478,17 +478,16 @@ msgid "Erase"
 msgstr "ભૂંસો"
 
 msgid "Slides"
-msgstr ""
+msgstr "સ્લાઇડો"
 
 msgid "Back"
 msgstr "પાછા"
 
-#, fuzzy
 msgid "Next"
-msgstr "લખાણ"
+msgstr "આગળ"
 
 msgid "Play"
-msgstr ""
+msgstr "ચાલુ"
 
 msgid "Aa"
 msgstr "આ"
@@ -515,9 +514,8 @@ msgid "Choose the picture you want, then click “Open”."
 msgstr "તમારે જોઇતું ચિત્ર પસંદ કરો, અને “ખોલો” પર ક્લિક કરો."
 
 #. Let user choose images:
-#, fuzzy
 msgid "Choose the pictures you want, then click “Play”."
-msgstr "તમારે જોઇતું ચિત્ર પસંદ કરો, અને “ખોલો” પર ક્લિક કરો."
+msgstr "તમારે જોઇતું ચિત્ર પસંદ કરો, અને “ચાલુ” પર ક્લિક કરો."
 
 msgid "A drawing program for children."
 msgstr "બાળકો માટે ચિત્ર કાર્યક્રમ."
