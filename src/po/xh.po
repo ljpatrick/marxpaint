@@ -1,0 +1,529 @@
+# Tux Paint Xhosa translation.
+# Copyright (C) 2006
+# This file is distributed under the same license as the Tux Paint package.
+# Dwayne Bailey <dwayne@translate.org.za>
+msgid ""
+msgstr ""
+"Project-Id-Version: 0.9.16\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2006-09-10 11:18-0700\n"
+"PO-Revision-Date: 2006-09-22 01:42+0200\n"
+"Last-Translator: Dwayne Bailey <dwayne@translate.org.za>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Pootle 0.10\n"
+
+msgid "Black!"
+msgstr "Mnyama!"
+
+msgid "Dark grey! Some people spell it “dark gray”."
+msgstr "Ngwevu obunzulu!"
+
+msgid "Light grey! Some people spell it “light gray”."
+msgstr "Ngwevu obungephi!"
+
+msgid "White!"
+msgstr "Mhlophe!"
+
+msgid "Red!"
+msgstr "Bomvu!"
+
+msgid "Orange!"
+msgstr "Orenji!"
+
+msgid "Yellow!"
+msgstr "Tyheli!"
+
+msgid "Light green!"
+msgstr "Luhlaza obungephi!"
+
+msgid "Dark green!"
+msgstr "Luhlaza obunzulu!"
+
+msgid "Sky blue!"
+msgstr "Bublowu besibhakabhaka!"
+
+msgid "Blue!"
+msgstr "Blowu!"
+
+msgid "Lavender!"
+msgstr "Bumfusa obungephi!"
+
+msgid "Purple!"
+msgstr "Bumfusa!"
+
+msgid "Pink!"
+msgstr "Pinki!"
+
+msgid "Brown!"
+msgstr "Ntsundu!"
+
+msgid "Tan!"
+msgstr "Mthubibomvu!"
+
+msgid "Beige!"
+msgstr "Lubhelubungwevu!"
+
+#. First, the blacklist. We list font families that can crash Tux Paint
+#. via bugs in the SDL_ttf library. We also test fonts to be sure that
+#. they have both uppercase and lowercase letters. Note that we do not
+#. test for "Aa", because it is OK if uppercase and lowercase are the
+#. same. (but not nice -- such fonts get a low score later)
+#.
+#. We test the alphabet twice, to help with translation. If the users
+#. will be unable to type ASCII letters, then both lines should be
+#. translated. Otherwise, only Line X should be translated and the
+#. ASCII-only fonts should be given bad scores in the scoring code below.
+#. (the best scores going to fonts that support both)
+msgid "qx"
+msgstr "qx"
+
+msgid "QX"
+msgstr "QX"
+
+#. Line X
+msgid "qy"
+msgstr "qy"
+
+msgid "QY"
+msgstr "QY"
+
+#. Now we score fonts to ensure that the best ones will be placed at
+#. the top of the list. The user will see them first. This sorting is
+#. especially important for users who have scroll buttons disabled.
+#. Translators should do whatever is needed to put crummy fonts last.
+msgid "oO"
+msgstr "oO"
+
+#. distinct uppercase and lowercase
+msgid "`\\%_@$~#{}<>^&*"
+msgstr "`\\%_@$~#{}<>^&*"
+
+#. uncommon punctuation
+msgid ",.?!"
+msgstr ",.?!"
+
+#. common punctuation
+msgid "017"
+msgstr "017"
+
+#. digits
+msgid "O0"
+msgstr "O0"
+
+#. distinct circle-like characters
+msgid "1Il|"
+msgstr "1Il|"
+
+msgid "Great!"
+msgstr "Ngxatsho ke!"
+
+msgid "Cool!"
+msgstr "Kwakuhle oko!"
+
+msgid "Keep it up!"
+msgstr "Gcina lo mgangatho!"
+
+msgid "Good job!"
+msgstr "Uyancomeka lo msebenzi!"
+
+msgid "Fill"
+msgstr "Zalisa"
+
+msgid "Grass"
+msgstr "Ingca"
+
+msgid "Bricks"
+msgstr "Izitena"
+
+msgid "Rainbow"
+msgstr "Umnyama"
+
+msgid "Sparkles"
+msgstr "Izikhazimlisi"
+
+msgid "Blur"
+msgstr "Mfiliba"
+
+msgid "Smudge"
+msgstr "Dyobha"
+
+msgid "Lighten"
+msgstr "Yenza kukhanye"
+
+msgid "Darken"
+msgstr "Yenza sabumnyama"
+
+msgid "Chalk"
+msgstr "Ngokwetshokhwe"
+
+msgid "Blocks"
+msgstr "Iibloko"
+
+msgid "Negative"
+msgstr "Isithunzi sombala"
+
+msgid "Tint"
+msgstr "Krweca ngombala"
+
+msgid "Drip"
+msgstr "Vuzisa"
+
+msgid "Cartoon"
+msgstr "Umfanekiso oyiliweyo"
+
+msgid "Mirror"
+msgstr "Umfanekiso wesipili"
+
+msgid "Flip"
+msgstr "Guqula icala lomfanekiso"
+
+msgid "Click in the picture to fill that area with color."
+msgstr "Nqomfa emfanekisweni ukuzalisa indawo ngombala."
+
+msgid "Click and move to draw grass. Don’t forget the dirt!"
+msgstr "Nqomfa ushenxise ukuze uzobe ingca. Ungakulibali ukungcola!"
+
+msgid "Click and move to draw large bricks."
+msgstr "Nqomfa ushenxise ukuze uzobe izitena ezikhulu."
+
+msgid "Click and move to draw small bricks."
+msgstr "Nqomfa ushenxise ukuze uzobe izitena ezincinci."
+
+msgid "You can draw in rainbow colors!"
+msgstr "Ungazoba ngemibala yomnyama!"
+
+msgid "Click and move to draw sparkles."
+msgstr "Nqomfa ushenxise ukuze uzobe izikhanyisi."
+
+#, fuzzy
+msgid "Click and move the mouse around to blur the picture."
+msgstr "Nqomfa ushenxashenxise impuku ukuze udyobhe umfanekiso."
+
+msgid "Click and move the mouse around to smudge the picture."
+msgstr "Nqomfa ushenxashenxise impuku ukuze udyobhe umfanekiso."
+
+msgid "Click and move to fade the colors."
+msgstr "Nqomfa ushenxise ukuze umbatshise imibala."
+
+msgid "Click and move to darken the colors."
+msgstr "Nqomfa ushenxise ukuze wenze sabumnyama imibala."
+
+msgid ""
+"Click and move the mouse around to turn the picture into a chalk drawing."
+msgstr "Nqomfa ushenxashenxise impuku ukuze uguqule umfanekiso ube ngumzobo onjengetshokhwe."
+
+msgid "Click and move the mouse around to make the picture blocky."
+msgstr "Nqomfa ushenxashenxise impuku ukuze wenze umfanekiso ube njengeebloko."
+
+msgid "Click and move the mouse around to draw a negative."
+msgstr "Nqomfa ushenxashenxise impuku ukuze uzobe isithunzi."
+
+msgid "Click and move the mouse around to change the picture’s color."
+msgstr "Nqomfa ushenxashenxise impuku ukuze uguqule umbala womfanekiso."
+
+msgid "Click and move the mouse around to make the picture drip."
+msgstr "Nqomfa ushenxashenxise impuku ukuze wenze umfanekiso uvuzise."
+
+msgid "Click and move the mouse around to turn the picture into a cartoon."
+msgstr "Nqomfa ushenxashenxise impuku ukuze uguqule umfanekiso ufane noyiliweyo."
+
+msgid "Click to make a mirror image."
+msgstr "Nqomfa ukuze wenze umfuziselo wesipili."
+
+msgid "Click to flip the picture upside-down."
+msgstr "Nqomfa ukuze uguqule icala lomfanekiso lijonge ezantsi."
+
+msgid "Square"
+msgstr "Iskweri"
+
+msgid "Rectangle"
+msgstr "Uxande"
+
+msgid "Circle"
+msgstr "Isangqa"
+
+msgid "Ellipse"
+msgstr "Umbhoxo"
+
+msgid "Triangle"
+msgstr "Unxantathu"
+
+msgid "Pentagon"
+msgstr "Okumbombontlanu"
+
+msgid "Rhombus"
+msgstr "Okumacalamane alinganayo angenazikona"
+
+msgid "A square is a rectangle with four equal sides."
+msgstr "Iskweri luxande olunamacala amane alinganayo."
+
+msgid "A rectangle has four sides and four right angles."
+msgstr "Uxande lunamacala amane neeengile ezine ezingunkqo."
+
+msgid ""
+"A circle is a curve where all points have the same distance from the centre."
+msgstr "Isangqa ligophe apho zonke iincam zikumgama olinganayo ukusuka esizikithini."
+
+msgid "An ellipse is a stretched circle."
+msgstr "Umbhoxo sisangqa esoluliweyo."
+
+msgid "A triangle has three sides."
+msgstr "Unxantathu unamacala amathathu."
+
+msgid "A pentagon has five sides."
+msgstr "Umbombontlanu unamacala amahlanu."
+
+msgid "A rhombus has four equal sides, and opposite sides are parallel."
+msgstr "Irhombus inamacala amane alinganayo, namacala achaseneyo anxuseneyo."
+
+msgid "Tools"
+msgstr "Izixhobo zokusebenza"
+
+msgid "Colors"
+msgstr "Imibala"
+
+msgid "Brushes"
+msgstr "Iibrashi"
+
+msgid "Erasers"
+msgstr "Izicimi"
+
+msgid "Stamps"
+msgstr "Izitampu"
+
+msgid "Shapes"
+msgstr "Izimo zobume"
+
+msgid "Letters"
+msgstr "Oonobumba"
+
+msgid "Magic"
+msgstr "Ubugqi"
+
+msgid "Paint"
+msgstr "Ipeyinti"
+
+msgid "Stamp"
+msgstr "Isitampu"
+
+msgid "Lines"
+msgstr "Imigca"
+
+msgid "Text"
+msgstr "Isiqendu"
+
+msgid "Undo"
+msgstr "Qhaqha okwenzileyo"
+
+msgid "Redo"
+msgstr "Phinda obukwenzile"
+
+msgid "Eraser"
+msgstr "Isicimi"
+
+msgid "New"
+msgstr "Okutsha"
+
+#. buttons for the file open dialog
+msgid "Open"
+msgstr "Vula"
+
+msgid "Save"
+msgstr "Gcina"
+
+msgid "Print"
+msgstr "Shicilela"
+
+msgid "Quit"
+msgstr "Yeka"
+
+msgid "Pick a color and a brush shape to draw with."
+msgstr "Khetha umbala nesimo sobume bebrashi ukuze uzobe."
+
+msgid "Pick a picture to stamp around your drawing."
+msgstr "Khetha umfanekiso ukuze ugande umzobo wakho."
+
+msgid "Click to start drawing a line. Let go to complete it."
+msgstr "Nqomfa ukuze uqalise ukuzoba umgca. Qhuba njalo ukuze uwuzalise."
+
+msgid ""
+"Pick a shape. Click to pick the center, drag, then let go when it is the "
+"size you want. Move around to rotate it, and click to draw it."
+msgstr "Khetha isimo sobume. Nqomfa ukuze ukhethe isizikithi, rhuqa, wandule ukuqhuba njalo xa sesibubukhulu obufunayo. Shenxashenxisa ukuze ujikelezise, uze unqomfe ukuze usizobe."
+
+msgid "Choose a style of text. Click on your drawing and you can start typing."
+msgstr "Khetha isimbo sesiqendu. Nqomfa kumzobo wakho ukuze wandule ukuqalisa ukuchwetheza."
+
+msgid "Pick a magical effect to use on your drawing!"
+msgstr "Khetha isiphumo esibubugqi onokusisebenzisa kumzobo wakho!"
+
+#. Undo
+msgid "Undo!"
+msgstr "Qhaqha okwenzileyo!"
+
+#. Redo
+msgid "Redo!"
+msgstr "Phinda obukwenzile!"
+
+#. Eraser
+msgid "Eraser!"
+msgstr "Isicimi!"
+
+#. New
+msgid "You now have a blank sheet to draw on!"
+msgstr "Ngoku unecwecwe elingenanto onokuzoba kulo!"
+
+#. Open
+msgid "Open…"
+msgstr "Vula..."
+
+#. Save
+msgid "Your image has been saved!"
+msgstr "Umfuziselo wakho ugciniwe!"
+
+#. Print
+msgid "Printing…"
+msgstr "Kuyashicilelwa..."
+
+#. Quit
+msgid "Bye bye!"
+msgstr "Hamba kakuhle!"
+
+msgid "Let go of the button to complete the line."
+msgstr "Qhuba njalo ngeqhosha ukuze uzalise umgca."
+
+msgid "Hold the button to stretch the shape."
+msgstr "Bamba iqhosha ukuze wolule isimo sobume."
+
+msgid "Move the mouse to rotate the shape. Click to draw it."
+msgstr "Shenxisa impuku ukuze ujikelezise isimo sobume. Nqomfa ukuze usizobe."
+
+msgid "OK then… Let’s keep drawing this one!"
+msgstr "Kulungile ke... Masiqhube ngokuzoba esi!"
+
+#. FIXME: Move elsewhere!!!
+msgid "Do you really want to quit?"
+msgstr "Ingaba ufuna ukuyeka apha ngenene?"
+
+msgid "Yes, I'm done!"
+msgstr "Ewe, ndigqibile!"
+
+msgid "No, take me back!"
+msgstr "Hayi, ndibuyisele emva!"
+
+msgid "If you quit, you’ll lose your picture! Save it?"
+msgstr "Ukuba uyayeka, uya kulahlekelwa ngumfanekiso wakho! Uyawugcina?"
+
+msgid "Yes, save it!"
+msgstr "Ewe, uyagcinwa!"
+
+msgid "No, don't bother saving!"
+msgstr "Hayi, ungazixhamli ngokuwugcina!"
+
+msgid "Save your picture first?"
+msgstr "Ufuna ukugcina umfanekiso wakho kuqala?"
+
+msgid "Can’t open that picture!"
+msgstr "Awuvuleki loo mfanekiso!"
+
+msgid "OK"
+msgstr "Kulungile"
+
+#. This will be replaced with a dialog allowing color choice and Starter
+#. picking, with a "Back" option to dismiss the "New" and return to
+#. the current picture.  But for now...  (bjk 2006.02.19)
+msgid "Start a new picture?"
+msgstr "Uqalisa umfanekiso omtsha?"
+
+#. #define PROMPT_NEW_YES gettext_noop("That’s OK!")
+#. #define PROMPT_NEW_NO gettext_noop("Never mind!")
+msgid "Yes, let's start fresh!"
+msgstr "Ewe, masiqale ngokutsha!"
+
+msgid "There are no saved files!"
+msgstr "Akukho zifayili zigciniweyo!"
+
+msgid "Print your picture now?"
+msgstr "Ngoku ushicilela umfanekiso?"
+
+msgid "Yes, print it!"
+msgstr "Ewe, wushicilele!"
+
+msgid "Your picture has been printed!"
+msgstr "Umfanekiso wakho ushicilelwe!"
+
+msgid "You can’t print yet!"
+msgstr "Akunakuqalisa ukushicilela!"
+
+msgid "Erase this picture?"
+msgstr "Uyawucima lo mfanekiso?"
+
+msgid "Yes, erase it!"
+msgstr "Ewe, uyacinywa!"
+
+msgid "No, don't erase it!"
+msgstr "Hayi, ungawucimi!"
+
+msgid "Remember to use the left mouse button!"
+msgstr "Khumbula ukusebenzisa iqhosha lempuku elisekhohlo!"
+
+msgid "Please wait..."
+msgstr "Nceda linda..."
+
+msgid "Erase"
+msgstr "Sula"
+
+msgid "Slides"
+msgstr ""
+
+msgid "Back"
+msgstr "Emva"
+
+#, fuzzy
+msgid "Next"
+msgstr "Isiqendu"
+
+msgid "Play"
+msgstr ""
+
+msgid "Aa"
+msgstr "Aa"
+
+#. FIXME: Move elsewhere! Or not?!
+msgid "Yes"
+msgstr "Ewe"
+
+msgid "No"
+msgstr "Hayi"
+
+#. FIXME: Move elsewhere!!!
+#. #define PROMPT_SAVE_OVER_TXT gettext_noop("Save over the older version of this picture?")
+msgid "Replace the picture with your changes?"
+msgstr "Ususa umfanekiso ngeenguqulo zakho?"
+
+msgid "Yes, replace the old one!"
+msgstr "Ewe, susa omdala ngomnye!"
+
+msgid "No, save a new file!"
+msgstr "Hayi, gcina ifayili entsha!"
+
+msgid "Choose the picture you want, then click “Open”."
+msgstr "Khetha umfanekiso owufunayo, uze unqomfe “Vula”."
+
+#. Let user choose images:
+#, fuzzy
+msgid "Choose the pictures you want, then click “Play”."
+msgstr "Khetha umfanekiso owufunayo, uze unqomfe “Vula”."
+
+msgid "A drawing program for children."
+msgstr "Inkqubo yokuzoba yabantwana."
+
+msgid "Drawing program"
+msgstr "Inkqubo yokuzoba"
+
+msgid "Tux Paint"
+msgstr "Ipeyinti yeTux"

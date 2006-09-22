@@ -143,6 +143,9 @@ $Id$
     * Venda
       Shumani Mercy Nehulaudzi <nevhulaudzi@saps.org.za>
 
+    * Xhosa
+      Dwayne Bailey <dwayne@translate.org.za>
+
   * Translation Updates:
     --------------------
     * Brazilian Portuguese

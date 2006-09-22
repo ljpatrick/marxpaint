@@ -459,6 +459,7 @@ uninstall:
 	-rm $(LOCALE_PREFIX)/ve/LC_MESSAGES/tuxpaint.mo
 	-rm $(LOCALE_PREFIX)/vi/LC_MESSAGES/tuxpaint.mo
 	-rm $(LOCALE_PREFIX)/wa/LC_MESSAGES/tuxpaint.mo
+	-rm $(LOCALE_PREFIX)/xh/LC_MESSAGES/tuxpaint.mo
 	-rm $(LOCALE_PREFIX)/zh_CN/LC_MESSAGES/tuxpaint.mo
 	-rm $(LOCALE_PREFIX)/zh_TW/LC_MESSAGES/tuxpaint.mo
 	-rm -f -r $(CONFDIR)
@@ -969,6 +970,11 @@ install-gettext:
 	@install -d $(LOCALE_PREFIX)/cy/LC_MESSAGES
 	@cp trans/cy.mo $(LOCALE_PREFIX)/cy/LC_MESSAGES/tuxpaint.mo
 	@chmod 644 $(LOCALE_PREFIX)/cy/LC_MESSAGES/tuxpaint.mo
+	@#
+	@echo "   xh_ZA ...Xhosa..."
+	@install -d $(LOCALE_PREFIX)/xh/LC_MESSAGES
+	@cp trans/xh.mo $(LOCALE_PREFIX)/xh/LC_MESSAGES/tuxpaint.mo
+	@chmod 644 $(LOCALE_PREFIX)/xh/LC_MESSAGES/tuxpaint.mo
 
 
 # Install the text documentation:
@@ -1204,6 +1210,7 @@ translations: trans \
 	trans/ve.mo \
 	trans/vi.mo \
 	trans/wa.mo \
+	trans/xh.mo \
 	trans/zh_cn.mo \
 	trans/zh_tw.mo
 
@@ -1459,6 +1466,10 @@ trans/vi.mo:	src/po/vi.po
 trans/wa.mo:	src/po/wa.po
 	@echo "   wa_BE ...Walloon..."
 	@msgfmt -o trans/wa.mo src/po/wa.po
+
+trans/xh.mo:	src/po/xh.po
+	@echo "   xh_ZA ...Xhosa..."
+	@msgfmt -o trans/xh.mo src/po/xh.po
 
 trans/zh_cn.mo:	src/po/zh_cn.po
 	@echo "   zh_CN ...Chinese (Simplified)..."

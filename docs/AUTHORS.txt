@@ -350,6 +350,9 @@ $Id$
 
   * Welsh
     Kevin Donnelly <kevin@dotmon.com>
+
+  * Xhosa
+    Dwayne Bailey <dwayne@translate.org.za>
     
 
 * Ports and Packaging
