@@ -691,6 +691,11 @@ install-gettext:
 	@cp trans/en_gb.mo $(LOCALE_PREFIX)/en_GB/LC_MESSAGES/tuxpaint.mo
 	@chmod 644 $(LOCALE_PREFIX)/en_GB/LC_MESSAGES/tuxpaint.mo
 	@#
+	@echo "   en_ZA ...South African English..."
+	@install -d $(LOCALE_PREFIX)/en_ZA/LC_MESSAGES
+	@cp trans/en_za.mo $(LOCALE_PREFIX)/en_ZA/LC_MESSAGES/tuxpaint.mo
+	@chmod 644 $(LOCALE_PREFIX)/en_ZA/LC_MESSAGES/tuxpaint.mo
+	@#
 	@echo "   bg_BG ...Bulgarian..."
 	@install -d $(LOCALE_PREFIX)/bg/LC_MESSAGES
 	@cp trans/bg.mo $(LOCALE_PREFIX)/bg/LC_MESSAGES/tuxpaint.mo
@@ -1162,6 +1167,7 @@ translations: trans \
 	trans/et.mo \
 	trans/el.mo \
 	trans/en_gb.mo \
+	trans/en_za.mo \
 	trans/es.mo \
 	trans/es_mx.mo \
 	trans/eu.mo \
@@ -1274,6 +1280,10 @@ trans/el.mo:	src/po/el.po
 trans/en_gb.mo:	src/po/en_gb.po
 	@echo "   en_GB ...British English..."
 	@msgfmt -o trans/en_gb.mo src/po/en_gb.po
+
+trans/en_za.mo:	src/po/en_za.po
+	@echo "   en_ZA ...South African English..."
+	@msgfmt -o trans/en_za.mo src/po/en_za.po
 
 trans/es.mo:	src/po/es.po
 	@echo "   es_ES ...Spanish..."
