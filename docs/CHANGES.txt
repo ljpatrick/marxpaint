@@ -9,7 +9,7 @@ http://www.newbreedsoftware.com/tuxpaint/
 $Id$
 
 
-2006.September.19 (0.9.16)
+2006.September.22 (0.9.16)
 
   * Interface improvements:
     -----------------------
@@ -139,6 +139,9 @@ $Id$
     * Tibetan -- includes "bo.ttf" font
       Dawa Dolma
       Technical assistance by Ed Montgomery <edmontgomery@hotmail.com>
+
+    * Venda
+      Shumani Mercy Nehulaudzi <nevhulaudzi@saps.org.za>
 
   * Translation Updates:
     --------------------

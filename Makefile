@@ -7,12 +7,12 @@
 # bill@newbreedsoftware.com
 # http://www.newbreedsoftware.com/tuxpaint/
 
-# June 14, 2002 - September 10, 2006
+# June 14, 2002 - September 22, 2006
 
 
 # The version number, for release:
 
-VER_VERSION=0.9.16rc1
+VER_VERSION=0.9.16rc2
 VER_DATE=`date +"%Y-%m-%d"`
 
 
@@ -456,6 +456,7 @@ uninstall:
 	-rm $(LOCALE_PREFIX)/th/LC_MESSAGES/tuxpaint.mo
 	-rm $(LOCALE_PREFIX)/tr/LC_MESSAGES/tuxpaint.mo
 	-rm $(LOCALE_PREFIX)/uk/LC_MESSAGES/tuxpaint.mo
+	-rm $(LOCALE_PREFIX)/ve/LC_MESSAGES/tuxpaint.mo
 	-rm $(LOCALE_PREFIX)/vi/LC_MESSAGES/tuxpaint.mo
 	-rm $(LOCALE_PREFIX)/wa/LC_MESSAGES/tuxpaint.mo
 	-rm $(LOCALE_PREFIX)/zh_CN/LC_MESSAGES/tuxpaint.mo
@@ -949,6 +950,11 @@ install-gettext:
 	@cp trans/uk.mo $(LOCALE_PREFIX)/uk/LC_MESSAGES/tuxpaint.mo
 	@chmod 644 $(LOCALE_PREFIX)/uk/LC_MESSAGES/tuxpaint.mo
 	@#
+	@echo "   ve_ZA ...Venda..."
+	@install -d $(LOCALE_PREFIX)/ve/LC_MESSAGES
+	@cp trans/ve.mo $(LOCALE_PREFIX)/ve/LC_MESSAGES/tuxpaint.mo
+	@chmod 644 $(LOCALE_PREFIX)/ve/LC_MESSAGES/tuxpaint.mo
+	@#
 	@echo "   vi_VN ...Vietnamese..."
 	@install -d $(LOCALE_PREFIX)/vi/LC_MESSAGES
 	@cp trans/vi.mo $(LOCALE_PREFIX)/vi/LC_MESSAGES/tuxpaint.mo
@@ -1195,6 +1201,7 @@ translations: trans \
 	trans/tlh.mo \
 	trans/tr.mo \
 	trans/uk.mo \
+	trans/ve.mo \
 	trans/vi.mo \
 	trans/wa.mo \
 	trans/zh_cn.mo \
@@ -1440,6 +1447,10 @@ trans/tr.mo:	src/po/tr.po
 trans/uk.mo:	src/po/uk.po
 	@echo "   uk_UA ...Ukrainian..."
 	@msgfmt -o trans/uk.mo src/po/uk.po
+
+trans/ve.mo:	src/po/ve.po
+	@echo "   ve_ZA ...Venda..."
+	@msgfmt -o trans/ve.mo src/po/ve.po
 
 trans/vi.mo:	src/po/vi.po
 	@echo "   vi_VN ...Vietnamese..."

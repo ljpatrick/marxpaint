@@ -25,7 +25,7 @@
 
   $Id$
 
-  June 14, 2002 - July 11, 2006
+  June 14, 2002 - September 22, 2006
 */
 
 #include <stdio.h>
@@ -102,6 +102,7 @@ const char *lang_prefixes[NUM_LANGS] = {
   "tl",
   "tr",
   "uk",
+  "ve",
   "vi",
   "wa",
   "zh_cn",
@@ -189,6 +190,7 @@ const language_to_locale_struct language_to_locale_array[] = {
   {"italian", "it_IT.UTF-8"},
   {"italiano", "it_IT.UTF-8"},
   {"japanese", "ja_JP.UTF-8"},
+  {"venda", "ve_ZA.UTF-8"},
   {"vietnamese", "vi_VN.UTF-8"},
   {"afrikaans", "af_ZA.UTF-8"},
   {"albanian", "sq_AL.UTF-8"},
@@ -411,6 +413,7 @@ void show_lang_usage(FILE * f, const char *const prg)
 /* th */ "  thai\n"
 /* tr */ "  turkish\n"
 /* uk */ "  ukrainian\n"
+/* ve */ "  venda\n"
 /* vi */ "  vietnamese\n"
 /* wa */ "  walloon      walon\n"
 /* cy */ "  welsh        cymraeg\n"
@@ -487,6 +490,7 @@ void show_locale_usage(FILE * f, const char *const prg)
 	  "  th_TH   (Thai)\n"
 	  "  tr_TR   (Turkish)\n"
 	  "  uk_UA   (Ukrainian)\n"
+	  "  ve_ZA   (Venda)\n"
 	  "  vi_VN   (Vietnamese)\n"
 	  "  wa_BE   (Walloon)\n"
 	  "  cy_GB   (Welsh        Cymraeg)\n" "\n", prg);

@@ -4,10 +4,10 @@ Tux Paint - A simple drawing program for children.
 
 Copyright (c) 2002-2006 by Bill Kendrick and others
 bill@newbreedsoftware.com
-http://www.newbreedsoftware.com/tuxpaint/
+http://www.tuxpaint.org/
 
 
-June 17, 2002 - September 5, 2006
+June 17, 2002 - September 22, 2006
 
 $Id$
 
@@ -337,6 +337,9 @@ $Id$
 
   * Turkish
     Doruk Fisek <dfisek@fisek.com.tr>
+
+  * Venda
+    Shumani Mercy Nehulaudzi <nevhulaudzi@saps.org.za>>
 
   * Vietnamese
     Le Quang Phan <lqphan@hn.vnn.vn>
