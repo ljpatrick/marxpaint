@@ -1,0 +1,526 @@
+# Tux Paint Venda strings
+# Copyright (C) 2006
+# This file is distributed under the same license as the PACKAGE package.
+# Shumani Mercy Ṋevhulaudzi <nevhulaudzi@saps.org.za>\, 2006
+msgid ""
+msgstr ""
+"Project-Id-Version: TuxPaint 0.9.16\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2006-09-10 11:18-0700\n"
+"PO-Revision-Date: 2006-09-21 20:04+0200\n"
+"Last-Translator: Shumani Mercy Ṋevhulaudzi <nevhulaudzi@saps.org.za>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Pootle 0.10\n"
+
+msgid "Black!"
+msgstr "Mutswu!"
+
+msgid "Dark grey! Some people spell it “dark gray”."
+msgstr "Museṱha wo dombelelaho!"
+
+msgid "Light grey! Some people spell it “light gray”."
+msgstr "Museṱha! u songo dombelelaho"
+
+msgid "White!"
+msgstr "Mutshena!"
+
+msgid "Red!"
+msgstr "Mutswuku!"
+
+msgid "Orange!"
+msgstr "Muvhala wa swiri!"
+
+msgid "Yellow!"
+msgstr "Ṱaḓa!"
+
+msgid "Light green!"
+msgstr "Mudala u songo dombelelaho!"
+
+msgid "Dark green!"
+msgstr "Mudala wo dombelelaho!"
+
+msgid "Sky blue!"
+msgstr "Lutombo!"
+
+msgid "Blue!"
+msgstr "Lutombo!"
+
+msgid "Lavender!"
+msgstr "Ḽavenda!"
+
+msgid "Purple!"
+msgstr "Phephuḽu!"
+
+msgid "Pink!"
+msgstr "Pinki!"
+
+msgid "Brown!"
+msgstr "Buraweni!"
+
+msgid "Tan!"
+msgstr "Thani!"
+
+msgid "Beige!"
+msgstr "Beidzhi!"
+
+#. First, the blacklist. We list font families that can crash Tux Paint
+#. via bugs in the SDL_ttf library. We also test fonts to be sure that
+#. they have both uppercase and lowercase letters. Note that we do not
+#. test for "Aa", because it is OK if uppercase and lowercase are the
+#. same. (but not nice -- such fonts get a low score later)
+#.
+#. We test the alphabet twice, to help with translation. If the users
+#. will be unable to type ASCII letters, then both lines should be
+#. translated. Otherwise, only Line X should be translated and the
+#. ASCII-only fonts should be given bad scores in the scoring code below.
+#. (the best scores going to fonts that support both)
+msgid "qx"
+msgstr "qx"
+
+msgid "QX"
+msgstr "QX"
+
+#. Line X
+msgid "qy"
+msgstr "qy"
+
+msgid "QY"
+msgstr "QY"
+
+#. Now we score fonts to ensure that the best ones will be placed at
+#. the top of the list. The user will see them first. This sorting is
+#. especially important for users who have scroll buttons disabled.
+#. Translators should do whatever is needed to put crummy fonts last.
+msgid "oO"
+msgstr "oO"
+
+#. distinct uppercase and lowercase
+msgid "`\\%_@$~#{}<>^&*"
+msgstr "`\\%_@$~#{}<>^&*"
+
+#. uncommon punctuation
+msgid ",.?!"
+msgstr ",.?!"
+
+#. common punctuation
+msgid "017"
+msgstr "017"
+
+#. digits
+msgid "O0"
+msgstr "O0"
+
+#. distinct circle-like characters
+msgid "1Il|"
+msgstr "1Il|"
+
+msgid "Great!"
+msgstr "Muhulwane!"
+
+msgid "Cool!"
+msgstr "Wo fholaho!"
+
+msgid "Keep it up!"
+msgstr "Bvelani phanḓa ngauralo!"
+
+msgid "Good job!"
+msgstr "Mushumo wavhuḓi!"
+
+msgid "Fill"
+msgstr "Ḓadza"
+
+msgid "Grass"
+msgstr "Hatsi"
+
+msgid "Bricks"
+msgstr "Zwidina"
+
+msgid "Rainbow"
+msgstr "Musengavhadzimu"
+
+msgid "Sparkles"
+msgstr "Ṱhase"
+
+msgid "Blur"
+msgstr "Tshi sa vhonali"
+
+msgid "Smudge"
+msgstr "Ḓodza"
+
+msgid "Lighten"
+msgstr "Vhonadza"
+
+msgid "Darken"
+msgstr "Swifhadza"
+
+msgid "Chalk"
+msgstr "Tshoko"
+
+msgid "Blocks"
+msgstr "Dzibuḽoko"
+
+msgid "Negative"
+msgstr "Murunzi"
+
+msgid "Tint"
+msgstr "Muvhala"
+
+msgid "Drip"
+msgstr "Shotha"
+
+msgid "Cartoon"
+msgstr "Khathuni"
+
+msgid "Mirror"
+msgstr "Tshivhoni"
+
+msgid "Flip"
+msgstr "Monisa"
+
+msgid "Click in the picture to fill that area with color."
+msgstr "Kiḽikani kha tshifanyiso u ḓadza muvhala wonoyo nga muvhala."
+
+msgid "Click and move to draw grass. Don’t forget the dirt!"
+msgstr "Kiḽikani ni sudzuluwe u ola hatsi.Ni songo hangwa mashuka!"
+
+msgid "Click and move to draw large bricks."
+msgstr "Kiḽikani ni sudzuluwe u ola zwidina zwihulwane."
+
+msgid "Click and move to draw small bricks."
+msgstr "Kiḽikani ni sudzuluwe uola zwidina zwiṱuku."
+
+msgid "You can draw in rainbow colors!"
+msgstr "Ni nga ola nga mivhala ya musingavhadzimu!"
+
+msgid "Click and move to draw sparkles."
+msgstr "Kiḽikani ni sudzuluwe u ola ṱhase."
+
+msgid "Click and move the mouse around to blur the picture."
+msgstr "Kiḽikani ni sudzuluse mausu u mona u ita uri tshifanyiso tshi si vhonale."
+
+msgid "Click and move the mouse around to smudge the picture."
+msgstr "Kiḽikani ni sudzuluse mausu u mona u ḓodza tshifanyiso."
+
+msgid "Click and move to fade the colors."
+msgstr "Kiḽikani ni sudzuluse u ita uri mivhala i si vhonale."
+
+msgid "Click and move to darken the colors."
+msgstr "Kiḽikani ni sudzuluse u swifhadza mivhala."
+
+msgid ""
+"Click and move the mouse around to turn the picture into a chalk drawing."
+msgstr "Kiḽikani ni sudzuluse mausu u mona u rembulusa tshifanyiso nga u tou ola nga tshoko."
+
+msgid "Click and move the mouse around to make the picture blocky."
+msgstr "Kiḽikani ni sudzuluse mausu umona u ita uri tshifanyiso tshivhe buḽoko."
+
+msgid "Click and move the mouse around to draw a negative."
+msgstr "Kiḽikani ni sudzuluse mausu u mona u ola murunzi."
+
+msgid "Click and move the mouse around to change the picture’s color."
+msgstr "Kiḽikani ni sudzuluse mausu u mona u shandukisa muvhala wa tshifanyiso."
+
+msgid "Click and move the mouse around to make the picture drip."
+msgstr "Kiḽikani ni sudzuluse mausu u mona u ita uri tshifanyiso tshi vhe shotha."
+
+msgid "Click and move the mouse around to turn the picture into a cartoon."
+msgstr "Kiḽikani ni sudzuluse mausu u mona u shandukisa tshifanyiso tsha vha khathuni."
+
+msgid "Click to make a mirror image."
+msgstr "Kiḽikani u ita tshifanyiso."
+
+msgid "Click to flip the picture upside-down."
+msgstr "Kiḽikani u monisa tshifanyiso tshiye nṱha na fhasi."
+
+msgid "Square"
+msgstr "Tshikwea"
+
+msgid "Rectangle"
+msgstr "Khuḓandeiṋa"
+
+msgid "Circle"
+msgstr "Tshitendeledzi"
+
+msgid "Ellipse"
+msgstr "Tshigumba"
+
+msgid "Triangle"
+msgstr "Khuḓanderaru"
+
+msgid "Pentagon"
+msgstr "Khuḓaṱhanu"
+
+msgid "Rhombus"
+msgstr "Rombasi"
+
+msgid "A square is a rectangle with four equal sides."
+msgstr "Tshikweaa ndi khuḓandeiṋa ire na matungo maṋa ane a lingana."
+
+msgid "A rectangle has four sides and four right angles."
+msgstr "Khuḓandeiṋa ina matungo maṋa na khuḓande nṋa."
+
+msgid ""
+"A circle is a curve where all points have the same distance from the centre."
+msgstr "Tshitendeledzi ndiu mumono hune ṱhodzi dzoṱhe dza vha na tshikhala tshine tsa fana u bva vhukati."
+
+msgid "An ellipse is a stretched circle."
+msgstr "Mutengebande ndi tshitendeledzi tsho tatamudzwaho."
+
+msgid "A triangle has three sides."
+msgstr "Ṱhofunderaru ina matungo mararu."
+
+msgid "A pentagon has five sides."
+msgstr "Khuḓaṱhanu i na matungo maṱanu."
+
+msgid "A rhombus has four equal sides, and opposite sides are parallel."
+msgstr "Rombasi ina matungo maṋa ane a eḓana, matungo o fhambanaho ndi mutalobuḓo."
+
+msgid "Tools"
+msgstr "Zwishumiswa"
+
+msgid "Colors"
+msgstr "Mivhala"
+
+msgid "Brushes"
+msgstr "Bulatsho"
+
+msgid "Erasers"
+msgstr "Zwiphumuli"
+
+msgid "Stamps"
+msgstr "Zwiganḓo"
+
+msgid "Shapes"
+msgstr "Zwivhumbeo"
+
+msgid "Letters"
+msgstr "Maḽeḓere"
+
+msgid "Magic"
+msgstr "Madzhiki"
+
+msgid "Paint"
+msgstr "Pennde"
+
+msgid "Stamp"
+msgstr "Ganḓa"
+
+msgid "Lines"
+msgstr "Mitalo"
+
+msgid "Text"
+msgstr "Liṅwalo"
+
+msgid "Undo"
+msgstr "Thutha zwe wa ita"
+
+msgid "Redo"
+msgstr "U vhuedzedza zwe wa ita"
+
+msgid "Eraser"
+msgstr "Tshiphumuli"
+
+msgid "New"
+msgstr "Ḽiswa"
+
+#. buttons for the file open dialog
+msgid "Open"
+msgstr "Vula"
+
+msgid "Save"
+msgstr "Vhulunga"
+
+msgid "Print"
+msgstr "Phirinthani"
+
+msgid "Quit"
+msgstr "Ṱutshelani"
+
+msgid "Pick a color and a brush shape to draw with."
+msgstr "Nangani muvhala ni buratshe tshivhumbeo u ola ngayo."
+
+msgid "Pick a picture to stamp around your drawing."
+msgstr "Nangani tshifanyiso u ganḓa u mona na tshifanyiso tshaṋu."
+
+msgid "Click to start drawing a line. Let go to complete it."
+msgstr "Kiḽikani ni thome u ola mutalo. Ari ye u tshifhedzisa."
+
+msgid ""
+"Pick a shape. Click to pick the center, drag, then let go when it is the "
+"size you want. Move around to rotate it, and click to draw it."
+msgstr "Nangani tshivhumbeo. Kiḽikani u wana vhukati, kokodzani, iyani arali ni tshi khou vhona uri ndi saizi ine na khou i ṱoḓa.Sudzuluwani u mona , u tshi monisa, kiḽikani u tshi ola."
+
+msgid "Choose a style of text. Click on your drawing and you can start typing."
+msgstr "Nangani tshitaela tsha ḽiṅwalwa. Kiḽikani kha tshifanyiso tshaṋu ni nga thoma u thaipha."
+
+msgid "Pick a magical effect to use on your drawing!"
+msgstr "Nangani medzhiki ine ya shuma u shumisa kha nyolo yaṋu!"
+
+#. Undo
+msgid "Undo!"
+msgstr "Thutha zwe wa ita!"
+
+#. Redo
+msgid "Redo!"
+msgstr "Vhuedzedza zwe wa ita!"
+
+#. Eraser
+msgid "Eraser!"
+msgstr "Tshiphumuli!"
+
+#. New
+msgid "You now have a blank sheet to draw on!"
+msgstr "Ni na bambiri ḽi sina tshithu ḽine na teya u ola khaḽo!"
+
+#. Open
+msgid "Open…"
+msgstr "Vulani..."
+
+#. Save
+msgid "Your image has been saved!"
+msgstr "Tshifanyiso tshaṋu tsho vhulungea"
+
+#. Print
+msgid "Printing…"
+msgstr "U phirintha..."
+
+#. Quit
+msgid "Bye bye!"
+msgstr "Salani!"
+
+msgid "Let go of the button to complete the line."
+msgstr "I bvani kha gunubu u fhedzisa mutalo."
+
+msgid "Hold the button to stretch the shape."
+msgstr "Farani gunubu u tatamudza tshivhumbeo"
+
+msgid "Move the mouse to rotate the shape. Click to draw it."
+msgstr "Tshimbidzani mausu u monisa tshivhumbeo. Kiḽikani u tshi ola."
+
+msgid "OK then… Let’s keep drawing this one!"
+msgstr "Zwo luga... Kha ri bvele phanḓa na u ola hetshi."
+
+#. FIXME: Move elsewhere!!!
+msgid "Do you really want to quit?"
+msgstr "Ni a ṱoḓa u ṱutshela?"
+
+msgid "Yes, I'm done!"
+msgstr "Ee, Ndo fushea!"
+
+msgid "No, take me back!"
+msgstr "Hai, nkhumiseleni murahu!"
+
+msgid "If you quit, you’ll lose your picture! Save it?"
+msgstr "Arali ni tshi khou ṱutshela, ni ḓo xelelwa nga tshifanyiso tshaṋu! tshivhulungeni"
+
+msgid "Yes, save it!"
+msgstr "Ee, tshi vhulungeni!"
+
+msgid "No, don't bother saving!"
+msgstr "Hai, ni songo ḓidina nga u tshi vhulunga!"
+
+msgid "Save your picture first?"
+msgstr "Vhulungani tshifanyiso tshaṋu u thoma?"
+
+msgid "Can’t open that picture!"
+msgstr "Thi koni u vula tshifanyiso!"
+
+msgid "OK"
+msgstr "Zwoluga"
+
+#. This will be replaced with a dialog allowing color choice and Starter
+#. picking, with a "Back" option to dismiss the "New" and return to
+#. the current picture.  But for now...  (bjk 2006.02.19)
+msgid "Start a new picture?"
+msgstr "Thomani tshifanyiso tshiswa?"
+
+#. #define PROMPT_NEW_YES gettext_noop("That’s OK!")
+#. #define PROMPT_NEW_NO gettext_noop("Never mind!")
+msgid "Yes, let's start fresh!"
+msgstr "Ee, kha ri thome nga huswa!"
+
+msgid "There are no saved files!"
+msgstr "A huna faela dzo vhulungwaho!"
+
+msgid "Print your picture now?"
+msgstr "Phirinthani tshifanyiso tshaṋu zwazwino?"
+
+msgid "Yes, print it!"
+msgstr "Ee, tshiphirintheni!"
+
+msgid "Your picture has been printed!"
+msgstr "Tshifanyiso tshaṋu tso phirinthiwa!"
+
+msgid "You can’t print yet!"
+msgstr "Ni nga si kone u phirintha zwazwino!"
+
+msgid "Erase this picture?"
+msgstr "Phumulani hetshi tshifanyiso?"
+
+msgid "Yes, erase it!"
+msgstr "Ee, tshi thutheni!"
+
+msgid "No, don't erase it!"
+msgstr "Hai,ni songo tshi thutha!"
+
+msgid "Remember to use the left mouse button!"
+msgstr "Ni humbule u shumisa bathoni ya monde ya mausu!"
+
+msgid "Please wait..."
+msgstr "Ni humbelwa uri ni lindele.."
+
+msgid "Erase"
+msgstr "Phumulani"
+
+msgid "Slides"
+msgstr "Zwiḽaidi"
+
+msgid "Back"
+msgstr "Murahu"
+
+msgid "Next"
+msgstr "Zwitevhelaho"
+
+msgid "Play"
+msgstr "Tamba"
+
+msgid "Aa"
+msgstr "Aa"
+
+#. FIXME: Move elsewhere! Or not?!
+msgid "Yes"
+msgstr "Ee"
+
+msgid "No"
+msgstr "Hai"
+
+#. FIXME: Move elsewhere!!!
+#. #define PROMPT_SAVE_OVER_TXT gettext_noop("Save over the older version of this picture?")
+msgid "Replace the picture with your changes?"
+msgstr "Vhuedzedzani tshifanyiso no tshi shandukisa?"
+
+msgid "Yes, replace the old one!"
+msgstr "Ee, vhuedzedzani tsha kale!"
+
+msgid "No, save a new file!"
+msgstr "Hai, vhulungani faela ntswa!"
+
+msgid "Choose the picture you want, then click “Open”."
+msgstr "Nangani tshifanyiso tshine na tshi ṱoḓa, ni kiḽike \" Vulani\"."
+
+#. Let user choose images:
+msgid "Choose the pictures you want, then click “Play”."
+msgstr "Nangani zwifanyiso zwine na ṱoḓa, kiḽikani \" Tambani\"."
+
+msgid "A drawing program for children."
+msgstr "Mbekanyamushumo ya u ola ya vhana."
+
+msgid "Drawing program"
+msgstr "Mbekanyamushumo ya u ola"
+
+msgid "Tux Paint"
+msgstr "Tux Paint"
