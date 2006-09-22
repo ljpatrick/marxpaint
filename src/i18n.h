@@ -34,6 +34,7 @@ enum
   LANG_EL,			/* Greek */
   LANG_EN,			/* English (American) (DEFAULT) */
   LANG_EN_GB,			/* English (British) */
+  LANG_EN_ZA,			/* English (South African) */
   LANG_ES,			/* Spanish */
   LANG_ES_MX,			/* Spanish (Mexican) */
   LANG_ET,			/* Estonian */

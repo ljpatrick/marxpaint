@@ -56,6 +56,7 @@ const char *lang_prefixes[NUM_LANGS] = {
   "el",
   "en",
   "en_gb",
+  "en_za",
   "es",
   "es_mx",
   "et",
@@ -162,6 +163,7 @@ const language_to_locale_struct language_to_locale_array[] = {
   {"gujarati", "gu_IN.UTF-8"},
   {"british-english", "en_GB.UTF-8"},
   {"british", "en_GB.UTF-8"},
+  {"southafrican-english", "en_ZA.UTF-8"},
   {"spanish", "es_ES.UTF-8"},
   {"mexican", "es_MX.UTF-8"},
   {"mexican-spanish", "es_MX.UTF-8"},
@@ -406,6 +408,7 @@ void show_lang_usage(FILE * f, const char *const prg)
 /* sr */ "  serbian\n"
 /* sk */ "  slovak\n"
 /* sl */ "  slovenian    slovensko\n"
+/* en_ZA */ "  southafrican-english\n"
 /* es */ "  spanish      espanol\n"
 /* sw */ "  swahili\n"
 /* sv */ "  swedish      svenska\n"
@@ -442,6 +445,7 @@ void show_locale_usage(FILE * f, const char *const prg)
 	  "  pt_BR   (Brazilian    Brazilian Portuguese   Portugues Brazilian)\n"
 	  "  br_FR   (Breton       Brezhoneg)\n"
 	  "  en_GB   (British      British English)\n"
+	  "  en_ZA   (South African English)\n"
 	  "  bg_BG   (Bulgarian)\n"
 	  "  ca_ES   (Catalan      Catala)\n"
 	  "  zh_CN   (Chinese-Simplified)\n"
