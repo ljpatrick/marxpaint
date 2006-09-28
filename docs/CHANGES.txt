@@ -9,7 +9,7 @@ http://www.newbreedsoftware.com/tuxpaint/
 $Id$
 
 
-2006.September.22 (0.9.16)
+2006.September.27 (0.9.16)
 
   * Interface improvements:
     -----------------------
@@ -153,7 +153,7 @@ $Id$
     * Brazilian Portuguese
       Fred Ulisses Maranhao <fred_maranhao@yahoo.com.br>
     
-    * Catalan translation.
+    * Catalan
       Pere Pujal Carabantes <ppujal@airtel.net>
 
     * Chinese (Traditional)
@@ -185,6 +185,9 @@ $Id$
 
     * Korean
       Mark K. Kim <mkkim214@gmail.com>
+
+    * Polish documentation
+      Pawel Polak <sf_paul@users.sourceforge.net>
 
     * Serbian
       Aleksandar Jelenak <jelenak@verizon.net>
