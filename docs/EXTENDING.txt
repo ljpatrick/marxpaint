@@ -8,7 +8,7 @@
                            bill@newbreedsoftware.com
                    http://www.newbreedsoftware.com/tuxpaint/
 
-                       June 14, 2002 - September 3, 2006
+                       June 14, 2002 - September 28, 2006
 
    --------------------------------------------------------------------------
 
@@ -163,6 +163,10 @@ Brushes
 
          Add a line containing the line "frames=N" to the brush's data file,
          where N is the number of frames in the brush.
+
+         Note: If you'd rather the frames be flipped through randomly, rather
+         than sequentially, also add a line containing "random" to the
+         brush's data file.
 
     Directional Brushes
 

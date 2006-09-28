@@ -3436,7 +3436,7 @@ static void brush_draw(int x1, int y1, int x2, int y2, int update)
   orig_y2 = y2;
 
 
-  frame_w = img_brushes[cur_brush]->w / brushes_frames[cur_brush];
+  frame_w = img_brushes[cur_brush]->w / abs(brushes_frames[cur_brush]);
   w = frame_w / (brushes_directional[cur_brush] ? 3: 1);
   h = img_brushes[cur_brush]->h / (brushes_directional[cur_brush] ? 3 : 1);
 
@@ -3552,9 +3552,14 @@ static void blit_brush(int x, int y, int direction)
   {
     brush_counter = 0;
 
-    brush_frame++;
-    if (brush_frame >= img_cur_brush_frames)
-      brush_frame = 0;
+    if (img_cur_brush_frames >= 0)
+    {
+      brush_frame++;
+      if (brush_frame >= img_cur_brush_frames)
+        brush_frame = 0;
+    }
+    else
+      brush_frame = rand() % abs(img_cur_brush_frames);
 
     dest.x = x;
     dest.y = y;
@@ -5249,6 +5254,7 @@ static void loadbrush_callback(SDL_Surface * screen,
 {
   FILE * fi;
   char buf[64];
+  int want_rand;
 
   dirlen = dirlen;
 
@@ -5288,6 +5294,8 @@ static void loadbrush_callback(SDL_Surface * screen,
       strcpy(strcasestr(fname, ".png"), ".dat");
       fi = fopen(fname, "r");
 
+      want_rand = 0;
+      
       if (fi != NULL)
       {
 	do
@@ -5308,9 +5316,16 @@ static void loadbrush_callback(SDL_Surface * screen,
 	  {
 	    brushes_directional[num_brushes] = 1;
 	  }
+	  else if (strstr(buf, "random") != NULL)
+	  {
+	    want_rand = 1;
+	  }
 	}
 	while (!feof(fi));
 	fclose(fi);
+
+	if (want_rand)
+	  brushes_frames[num_brushes] *= -1;
       }
       
       num_brushes++;
@@ -7760,7 +7775,7 @@ static void draw_brushes(void)
       src.x = 0;
       src.y = brushes_directional[brush] ? (img_brushes[brush]->h / 3) : 0;
       
-      src.w = (img_brushes[brush]->w / brushes_frames[brush]) /
+      src.w = (img_brushes[brush]->w / abs(brushes_frames[brush])) /
 	      (brushes_directional[brush] ? 3 : 1);
       src.h = (img_brushes[brush]->h / (brushes_directional[brush] ? 3 : 1));
       
@@ -8834,7 +8849,7 @@ static void render_brush(void)
   SDL_UnlockSurface(img_cur_brush);
   SDL_UnlockSurface(img_brushes[cur_brush]);
 
-  img_cur_brush_frame_w = img_cur_brush->w / brushes_frames[cur_brush];
+  img_cur_brush_frame_w = img_cur_brush->w / abs(brushes_frames[cur_brush]);
   img_cur_brush_w = img_cur_brush_frame_w /
 	  	    (brushes_directional[cur_brush] ? 3 : 1);
   img_cur_brush_h = img_cur_brush->h / (brushes_directional[cur_brush] ? 3 : 1);

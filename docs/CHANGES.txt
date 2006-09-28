@@ -81,6 +81,8 @@ $Id$
       (Create an image (W*N) x H in size (where N is number of frames),
       then create a ".dat" file for the brush, containing the line "frames=N".
 
+    * Animated brushes can be randomized.  Use "random" in its ".dat" file.
+
     * Brushes can include directional variations.  (Implements RFE #1522694)
       (Create an image (W*3) x (H*3) in size, then create a ".dat" file
       for the brush, containing the line: "directional".  Each of the 9
