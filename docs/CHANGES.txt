@@ -733,6 +733,9 @@ $Id$
 
   * Translation updates:
     --------------------
+    * Afrikaans
+      Petri Jooste <rkwjpj@puk.ac.za>
+
     * Bulgarian
       Yavor Doganov <yavor@doganov.org>
 

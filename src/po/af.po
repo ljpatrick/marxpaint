@@ -5,15 +5,17 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: tuxpaint 0.9.14\n"
+"Project-Id-Version: tuxpaint 0.9.16\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2006-09-10 11:18-0700\n"
-"PO-Revision-Date: 2005-10-11 16:05+0200\n"
-"Last-Translator: Petri Jooste <rkwjpj@puknet.puk.ac.za>\n"
-"Language-Team: Afrikaans <i18n@af.org.za>\n"
+"PO-Revision-Date: 2006-09-28 09:04+0200\n"
+"Last-Translator: Petri Jooste <rkwjpj@puk.ac.za>\n"
+"Language-Team: Afrikaans <rkwjpj@puk.ac.za>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-Language: Afrikaans\n"
+"X-Poedit-Country: SOUTH AFRICA\n"
 
 msgid "Black!"
 msgstr "Swart!"
@@ -78,17 +80,17 @@ msgstr "Beige!"
 #. ASCII-only fonts should be given bad scores in the scoring code below.
 #. (the best scores going to fonts that support both)
 msgid "qx"
-msgstr ""
+msgstr "qx"
 
 msgid "QX"
-msgstr ""
+msgstr "QX"
 
 #. Line X
 msgid "qy"
-msgstr ""
+msgstr "qy"
 
 msgid "QY"
-msgstr ""
+msgstr "QY"
 
 #. Now we score fonts to ensure that the best ones will be placed at
 #. the top of the list. The user will see them first. This sorting is
@@ -210,10 +212,8 @@ msgstr "Klik en beweeg om die kleure te verdof"
 msgid "Click and move to darken the colors."
 msgstr "Klik en beweeg om die kleure donkerder te maak."
 
-msgid ""
-"Click and move the mouse around to turn the picture into a chalk drawing."
-msgstr ""
-"Klik en beweeg die muis om die prent te verander na 'n bordkryt-tekening."
+msgid "Click and move the mouse around to turn the picture into a chalk drawing."
+msgstr "Klik en beweeg die muis om die prent te verander na 'n bordkryt-tekening."
 
 msgid "Click and move the mouse around to make the picture blocky."
 msgstr "Klik en beweeg die muis om die prent blokkerig te maak."
@@ -263,11 +263,8 @@ msgstr "'n Vierkant is 'n reghoek met vier ewe lang kante."
 msgid "A rectangle has four sides and four right angles."
 msgstr "'n Reghoek het vier kante en vier regte hoeke."
 
-msgid ""
-"A circle is a curve where all points have the same distance from the centre."
-msgstr ""
-"'n Sirkel is 'n kromme waar al die punte dieselfde afstand van die middel af "
-"is."
+msgid "A circle is a curve where all points have the same distance from the centre."
+msgstr "'n Sirkel is 'n kromme waar al die punte dieselfde afstand van die middel af is."
 
 msgid "An ellipse is a stretched circle."
 msgstr "'n Ellips is 'n uitgerekte sirkel."
@@ -349,16 +346,10 @@ msgid "Pick a picture to stamp around your drawing."
 msgstr "Kies 'n prentjie om as 'n stempel te gebruik op jou tekening."
 
 msgid "Click to start drawing a line. Let go to complete it."
-msgstr ""
-"Klik-en-hou om 'n lyn te begin teken en laat los om die lyn te voltooi."
+msgstr "Klik-en-hou om 'n lyn te begin teken en laat los om die lyn te voltooi."
 
-msgid ""
-"Pick a shape. Click to pick the center, drag, then let go when it is the "
-"size you want. Move around to rotate it, and click to draw it."
-msgstr ""
-"Kies 'n vorm. Klik op die plek waar die middelpunt moet kom en sleep die "
-"rand tot die grootte wat jy wil hê.  Beweeg rond om dit te draai en klik "
-"daarop om dit vas te teken."
+msgid "Pick a shape. Click to pick the center, drag, then let go when it is the size you want. Move around to rotate it, and click to draw it."
+msgstr "Kies 'n vorm. Klik op die plek waar die middelpunt moet kom en sleep die rand tot die grootte wat jy wil hê.  Beweeg rond om dit te draai en klik daarop om dit vas te teken."
 
 msgid "Choose a style of text. Click on your drawing and you can start typing."
 msgstr "Kies 'n styl vir die teks. Klik op jou prent en begin tik."
@@ -415,19 +406,19 @@ msgid "Do you really want to quit?"
 msgstr "Wil jy regtig ophou teken?"
 
 msgid "Yes, I'm done!"
-msgstr ""
+msgstr "Ja, ek is klaar!"
 
 msgid "No, take me back!"
-msgstr ""
+msgstr "Nee, vat my terug!"
 
 msgid "If you quit, you’ll lose your picture! Save it?"
 msgstr "As jy ophou sal jy jou prent verloor! Wil jy dit eers bêre?"
 
 msgid "Yes, save it!"
-msgstr ""
+msgstr "Ja, stoor dit!"
 
 msgid "No, don't bother saving!"
-msgstr ""
+msgstr "Nee, moenie stoor nie!"
 
 msgid "Save your picture first?"
 msgstr "Wil jy eers die prent stoor?"
@@ -441,14 +432,13 @@ msgstr "Goed"
 #. This will be replaced with a dialog allowing color choice and Starter
 #. picking, with a "Back" option to dismiss the "New" and return to
 #. the current picture.  But for now...  (bjk 2006.02.19)
-#, fuzzy
 msgid "Start a new picture?"
-msgstr "Vee hierdie prent uit?"
+msgstr "Begin 'n nuwe prent?"
 
 #. #define PROMPT_NEW_YES gettext_noop("That’s OK!")
 #. #define PROMPT_NEW_NO gettext_noop("Never mind!")
 msgid "Yes, let's start fresh!"
-msgstr ""
+msgstr "Ja, kom ons begin oor!"
 
 msgid "There are no saved files!"
 msgstr "Daar is geen gestoorde lêers nie!"
@@ -457,7 +447,7 @@ msgid "Print your picture now?"
 msgstr "Wil jy nou die prent laat druk?"
 
 msgid "Yes, print it!"
-msgstr ""
+msgstr "Ja, laat dit druk!"
 
 msgid "Your picture has been printed!"
 msgstr "Jou prent is gedruk!"
@@ -469,32 +459,31 @@ msgid "Erase this picture?"
 msgstr "Vee hierdie prent uit?"
 
 msgid "Yes, erase it!"
-msgstr ""
+msgstr "Ja, vee dit uit!"
 
 msgid "No, don't erase it!"
-msgstr ""
+msgstr "Nee, moet dit nie uitvee nie!"
 
 msgid "Remember to use the left mouse button!"
 msgstr "Onthou om die linker-muisknoppie te gebruik!"
 
 msgid "Please wait..."
-msgstr ""
+msgstr "Wag asseblief ..."
 
 msgid "Erase"
 msgstr "Vee uit"
 
 msgid "Slides"
-msgstr ""
+msgstr "Skyfies"
 
 msgid "Back"
 msgstr "Terug"
 
-#, fuzzy
 msgid "Next"
-msgstr "Teks"
+msgstr "Volgende"
 
 msgid "Play"
-msgstr ""
+msgstr "Speel"
 
 msgid "Aa"
 msgstr "Aa"
@@ -509,22 +498,20 @@ msgstr "Nee"
 #. FIXME: Move elsewhere!!!
 #. #define PROMPT_SAVE_OVER_TXT gettext_noop("Save over the older version of this picture?")
 msgid "Replace the picture with your changes?"
-msgstr ""
+msgstr "Vervang die prent met jou veranderinge?"
 
 msgid "Yes, replace the old one!"
-msgstr ""
+msgstr "Ja, vervang die ou een!"
 
-#, fuzzy
 msgid "No, save a new file!"
-msgstr "Nee, stoor 'n nuwe lêer"
+msgstr "Nee, stoor 'n nuwe lêer!"
 
 msgid "Choose the picture you want, then click “Open”."
 msgstr "Kies die prent wat jy wil hê en klik 'Maak oop'."
 
 #. Let user choose images:
-#, fuzzy
 msgid "Choose the pictures you want, then click “Play”."
-msgstr "Kies die prent wat jy wil hê en klik 'Maak oop'."
+msgstr "Kies die prent wat jy wil hê en klik !Maak oop”."
 
 msgid "A drawing program for children."
 msgstr "'n Tekenprogram vir kinders."
@@ -537,18 +524,14 @@ msgstr "Tux Verf"
 
 #~ msgid "Starting a new picture will erase the current one!"
 #~ msgstr "As jy 'n nuwe prent begin word hierdie een uitgevee!"
-
 #~ msgid "That’s OK!"
 #~ msgstr "Dis goed so."
-
 #~ msgid "Never mind!"
 #~ msgstr "Toemaar!"
-
 #~ msgid "jq"
 #~ msgstr "jq"
-
 #~ msgid "JQ"
 #~ msgstr "JQ"
-
 #~ msgid "Save over the older version of this picture?"
 #~ msgstr "Moet dit die ouer weergawe van hierdie prent vervang?"
+
