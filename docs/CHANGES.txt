@@ -66,7 +66,6 @@ $Id$
 
     * Default colors are duplicated, as an example, in docs/default_colors.txt.
 
-  
   * Tool improvements:
     ------------------------
     * Magic Sparkles can now be different colors.
@@ -150,6 +149,9 @@ $Id$
 
   * Translation Updates:
     --------------------
+    * Using DejaVu Sans Condensed as default UI font now.
+      http://dejavu.sourceforge.net/
+
     * Brazilian Portuguese
       Fred Ulisses Maranhao <fred_maranhao@yahoo.com.br>
     
