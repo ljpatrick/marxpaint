@@ -194,6 +194,7 @@ $Id$
 
     * Swedish
       Daniel Nylander <po@danielnylander.se>
+      Robin Rosenberg <robin.rosenberg@dewire.com>
 
     * Spanish
       Pablo Pita <pablo.pita@kdemail.net>

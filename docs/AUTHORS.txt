@@ -317,6 +317,7 @@ $Id$
     Alberto Escudero-Pascual <aep@it46.se>
 
   * Swedish
+    Robin Rosenberg <robin.rosenberg@dewire.com>
     Daniel Nylander <po@danielnylander.se>
     Tomas Skäre <tomas@nocrew.org>
     Magnus Dahl <magnus.dahl@bredband.net>
