@@ -175,6 +175,9 @@ $Id$
     * German
       Burkhard Lück <lueck@hube-lueck.de>
 
+    * Greek
+      Sokratis Sofianopoulos <sokratis.sofianopoulos@gmail.com>
+
     * Hungarian
       Gabor Kelemen <kelemeng@gnome.hu>
 
