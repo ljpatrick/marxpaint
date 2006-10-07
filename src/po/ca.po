@@ -18,7 +18,7 @@ msgstr ""
 "Project-Id-Version: Tuxpaint cvs 2006-03-26\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2006-09-10 11:18-0700\n"
-"PO-Revision-Date: 2006-03-28 20:03+0200\n"
+"PO-Revision-Date: 2006-10-05 19:19+0200\n"
 "Last-Translator: Pere Pujal i Carabantes <ppujal@airtel.net>\n"
 "Language-Team: Català <linux-ca@chanae.alphanet.ch>\n"
 "MIME-Version: 1.0\n"
@@ -242,7 +242,7 @@ msgid "Click and move the mouse around to turn the picture into a cartoon."
 msgstr "Feu clic i moveu el ratolí per convertir la imatge a colors sólids."
 
 msgid "Click to make a mirror image."
-msgstr "Feu clic per invertir la imatge horitzontalment!."
+msgstr "Feu clic per invertir la imatge horitzontalment."
 
 msgid "Click to flip the picture upside-down."
 msgstr "Feu clic per invertir la imatge verticalment."
@@ -497,17 +497,16 @@ msgid "Erase"
 msgstr "Esborra"
 
 msgid "Slides"
-msgstr ""
+msgstr "Diapositives"
 
 msgid "Back"
 msgstr "Endarrera"
 
-#, fuzzy
 msgid "Next"
-msgstr "Texte"
+msgstr "Següent"
 
 msgid "Play"
-msgstr ""
+msgstr "Reproduïr"
 
 msgid "Aa"
 msgstr "Aa"
@@ -534,9 +533,8 @@ msgid "Choose the picture you want, then click “Open”."
 msgstr "Trieu el dibuix que voleu, llavors feu clic en Obre."
 
 #. Let user choose images:
-#, fuzzy
 msgid "Choose the pictures you want, then click “Play”."
-msgstr "Trieu el dibuix que voleu, llavors feu clic en Obre."
+msgstr "Trieu els dibuixos que voleu, llavors feu clic en «Reproduïr»."
 
 msgid "A drawing program for children."
 msgstr "Un programa de dibuix per a nens petits."
