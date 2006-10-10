@@ -9,7 +9,7 @@ http://www.newbreedsoftware.com/tuxpaint/
 $Id$
 
 
-2006.October.06 (0.9.16)
+2006.October.10 (0.9.16)
 
   * Interface improvements:
     -----------------------
@@ -212,6 +212,10 @@ $Id$
 
     * Vietnamese
       Clytie Siddall <clytie@riverland.net.au>
+
+    * Replaced old Vietnamese font (questionable license)
+      with Bitstream Vera-based "Verajja" font, by Bhikku Pesala.
+      http://www.aimwell.org/Fonts/fonts.html
 
     * Including a scaled down version of the Japanese TrueType font (ja.ttf),
       that includes only the characters uses by Tux Paint.
