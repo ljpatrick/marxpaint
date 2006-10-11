@@ -25,7 +25,7 @@
 
   $Id$
 
-  June 14, 2002 - September 22, 2006
+  June 14, 2002 - October 11, 2006
 */
 
 #include <stdio.h>
@@ -86,6 +86,7 @@ const char *lang_prefixes[NUM_LANGS] = {
   "nb",
   "nl",
   "nn",
+  "nr",
   "pl",
   "pt_br",
   "pt_pt",
@@ -221,6 +222,7 @@ const language_to_locale_struct language_to_locale_array[] = {
   {"norwegian", "nn_NO.UTF-8"},
   {"nynorsk", "nn_NO.UTF-8"},
   {"norsk", "nn_NO.UTF-8"},
+  {"ndebele", "nr_ZA.UTF-8"},
   {"polish", "pl_PL.UTF-8"},
   {"polski", "pl_PL.UTF-8"},
   {"brazilian-portuguese", "pt_BR.UTF-8"},
@@ -399,6 +401,7 @@ void show_lang_usage(FILE * f, const char *const prg)
 /* ms */ "  malay\n"
 /* es_MX */
 	  "  mexican      mexican-spanish        espanol-mejicano\n"
+/* nr */ "  ndebele\n"
 /* nn */ "  norwegian    nynorsk                norsk\n"
 /* pl */ "  polish       polski\n"
 /* pt_PT */ "  portuguese   portugues\n"
@@ -478,6 +481,7 @@ void show_locale_usage(FILE * f, const char *const prg)
 	  "  ku_TR   (Kurdish)\n"
 	  "  ms_MY   (Malay)\n"
 	  "  lt_LT   (Lithuanian   Lietuviu)\n"
+          "  nr_ZA   (Ndebele)\n"
 	  "  nn_NO   (Norwegian    Nynorsk                Norsk)\n"
 	  "  pl_PL   (Polish       Polski)\n"
 	  "  pt_PT   (Portuguese   Portugues)\n"

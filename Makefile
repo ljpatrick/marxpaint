@@ -7,7 +7,7 @@
 # bill@newbreedsoftware.com
 # http://www.newbreedsoftware.com/tuxpaint/
 
-# June 14, 2002 - September 22, 2006
+# June 14, 2002 - October 11, 2006
 
 
 # The version number, for release:
@@ -866,6 +866,11 @@ install-gettext:
 	@cp trans/nn.mo $(LOCALE_PREFIX)/nn/LC_MESSAGES/tuxpaint.mo
 	@chmod 644 $(LOCALE_PREFIX)/nn/LC_MESSAGES/tuxpaint.mo
 	@#
+	@echo "   nr_ZA ...Ndebele..."
+	@install -d $(LOCALE_PREFIX)/nr/LC_MESSAGES
+	@cp trans/nr.mo $(LOCALE_PREFIX)/nr/LC_MESSAGES/tuxpaint.mo
+	@chmod 644 $(LOCALE_PREFIX)/nr/LC_MESSAGES/tuxpaint.mo
+	@#
 	@echo "   pl_PL ...Polish..."
 	@install -d $(LOCALE_PREFIX)/pl/LC_MESSAGES
 	@cp trans/pl.mo $(LOCALE_PREFIX)/pl/LC_MESSAGES/tuxpaint.mo
@@ -1195,6 +1200,7 @@ translations: trans \
 	trans/nl.mo \
 	trans/nb.mo \
 	trans/nn.mo \
+	trans/nr.mo \
 	trans/pl.mo \
 	trans/pt_br.mo \
 	trans/pt_pt.mo \
@@ -1396,6 +1402,10 @@ trans/nb.mo:	src/po/nb.po
 trans/nn.mo:	src/po/nn.po
 	@echo "   nn_NO ...Norwegian Nynorsk..."
 	@msgfmt -o trans/nn.mo src/po/nn.po
+
+trans/nr.mo:	src/po/nr.po
+	@echo "   nr_ZA ...Ndebele..."
+	@msgfmt -o trans/nr.mo src/po/nr.po
 
 trans/pl.mo:	src/po/pl.po
 	@echo "   pl_PL ...Polish..."

@@ -10,7 +10,7 @@
 
   $Id$
   
-  June 14, 2002 - September 22, 2006
+  June 14, 2002 - October 11, 2006
 */
 
 
@@ -62,6 +62,7 @@ enum
   LANG_LT,			/* Lithuanian */
   LANG_MS,			/* Malay */
   LANG_NB,			/* Norwegian Bokmal */
+  LANG_NR,                      /* Ndebele */
   LANG_NL,			/* Dutch */
   LANG_NN,			/* Norwegian Nynorsk */
   LANG_PL,			/* Polish */
