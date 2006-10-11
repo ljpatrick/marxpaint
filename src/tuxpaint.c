@@ -9307,10 +9307,13 @@ static void wordwrap_text(const char *const str, SDL_Color color,
   int len;
   SDL_Surface *text;
   SDL_Rect dest, src;
+  TTF_Font *myfont = medium_font;
 
   int utf8_str_len, last_text_height;
   unsigned char utf8_str[512];
 
+  if (need_own_font && strcmp(gettext(str), str))
+    myfont = locale_font;
 
   /* Cursor starting position: */
 
@@ -9354,7 +9357,7 @@ static void wordwrap_text(const char *const str, SDL_Color color,
 
 	if (locale_str[i] == ' ' || locale_str[i] == '\0')
 	{
-	  text = render_text(locale_font, (char *) utf8_str, color);
+	  text = render_text(myfont, (char *) utf8_str, color);
 
 	  if (!text)
 	    continue;		/* Didn't render anything... */
@@ -9420,7 +9423,7 @@ static void wordwrap_text(const char *const str, SDL_Color color,
 
 	      if (utf8_char[0] != '\0')
 	      {
-		text = render_text(locale_font, (char *) utf8_char, color);
+		text = render_text(myfont, (char *) utf8_char, color);
 		if (text != NULL)
 		{
 		  if (x + text->w > right)
@@ -9555,7 +9558,7 @@ static void wordwrap_text(const char *const str, SDL_Color color,
       /* Render the word for display... */
 
 
-      text = render_text(locale_font, substr, color);
+      text = render_text(myfont, substr, color);
 
 
       /* If it won't fit on this line, move to the next! */

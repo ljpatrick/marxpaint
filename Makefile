@@ -12,7 +12,7 @@
 
 # The version number, for release:
 
-VER_VERSION=0.9.16rc2
+VER_VERSION=0.9.16rc4
 VER_DATE=`date +"%Y-%m-%d"`
 
 

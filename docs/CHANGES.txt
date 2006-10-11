@@ -157,6 +157,9 @@ $Id$
     * Using DejaVu Sans Condensed as default UI font now.
       http://dejavu.sourceforge.net/
 
+    * Making sure default UI font is used for untranslated strings.
+      (Hindi font, for example, didn't seem to have roman characters.)
+
     * Brazilian Portuguese
       Fred Ulisses Maranhao <fred_maranhao@yahoo.com.br>
     
