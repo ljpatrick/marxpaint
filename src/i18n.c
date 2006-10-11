@@ -442,7 +442,7 @@ void show_locale_usage(FILE * f, const char *const prg)
 	  "  C       (English      American English)\n"
 	  "  af_ZA   (Afrikaans)\n"
 	  "  ar_SA   (Arabic)\n"
-	  "  eu_ES   (Baque        Euskara)\n"
+	  "  eu_ES   (Basque       Euskara)\n"
 	  "  be_BY   (Belarusian   Bielaruskaja)\n"
 	  "  nb_NO   (Bokmal)\n"
 	  "  pt_BR   (Brazilian    Brazilian Portuguese   Portugues Brazilian)\n"
