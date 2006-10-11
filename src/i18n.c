@@ -496,6 +496,7 @@ void show_locale_usage(FILE * f, const char *const prg)
 	  "  es_MX   (Mexican      Mexican Spanish       Espanol Mejicano)\n"
 	  "  sw_TZ   (Swahili)\n"
 	  "  sv_SE   (Swedish      Svenska)\n"
+	  "  ta_IN   (Tamil)\n"
 	  "  tl_PH   (Tagalog)\n"
 	  "  bo_CN   (Tibetan)\n"
 	  "  th_TH   (Thai)\n"

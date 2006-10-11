@@ -1332,7 +1332,7 @@ trans/gos.mo:	src/po/gos.po
 	@msgfmt -o trans/gos.mo src/po/gos.po
 
 trans/gu.mo:	src/po/gu.po
-	@echo "   gu ...Gujarati..."
+	@echo "   gu_IN ...Gujarati..."
 	@msgfmt -o trans/gu.mo src/po/gu.po
 
 trans/he.mo:	src/po/he.po
