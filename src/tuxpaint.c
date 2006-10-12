@@ -208,7 +208,10 @@ char *strcasestr(const char *haystack, const char *needle)
 
   result = strstr(uphaystack, upneedle);
 
-  return (result - uphaystack + (char *) haystack);
+  if (result != NULL)
+    return (result - uphaystack + (char *) haystack);
+  else
+    return NULL;
 }
 
 #endif
