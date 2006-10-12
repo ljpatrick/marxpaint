@@ -906,6 +906,7 @@ typedef struct stamp_type
 {
   char *stampname;
   char *stxt;
+  Uint8 locale_text;
 #ifndef NOSOUND
   Mix_Chunk *ssnd;
   Mix_Chunk *sdesc;
@@ -1120,10 +1121,15 @@ static void reset_avail_tools(void);
 static int compare_dirent2s(struct dirent2 *f1, struct dirent2 *f2);
 static void draw_tux_text(int which_tux, const char *const str,
 			  int want_right_to_left);
+static void draw_tux_text_ex(int which_tux, const char *const str,
+			  int want_right_to_left, Uint8 locale_text);
 static void wordwrap_text(const char *const str, SDL_Color color,
 			  int left, int top, int right,
 			  int want_right_to_left);
-static char *loaddesc(const char *const fname);
+static void wordwrap_text_ex(const char *const str, SDL_Color color,
+			     int left, int top, int right,
+			     int want_right_to_left, Uint8 locale_text);
+static char *loaddesc(const char *const fname, Uint8 * locale_text);
 static double loadinfo(const char *const fname, stamp_type * inf);
 #ifndef NOSOUND
 static Mix_Chunk *loadsound(const char *const fname);
@@ -1192,7 +1198,7 @@ static SDL_Surface *do_render_button_label(const char *const label);
 static void create_button_labels(void);
 static Uint32 scrolltimer_callback(Uint32 interval, void *param);
 static Uint32 drawtext_callback(Uint32 interval, void *param);
-static void control_drawtext_timer(Uint32 interval, const char *const text);
+static void control_drawtext_timer(Uint32 interval, const char *const text, Uint8 locale_text);
 static void parse_options(FILE * fi);
 static const char *great_str(void);
 static void draw_image_title(int t, SDL_Rect dest);
@@ -1696,7 +1702,7 @@ static void mainloop(void)
 	  draw_tux_text(TUX_GREAT, tool_tips[cur_tool], 1);
 
 	  /* FIXME: Make delay configurable: */
-	  control_drawtext_timer(1000, tool_tips[cur_tool]);
+	  control_drawtext_timer(1000, tool_tips[cur_tool], 1);
 	}
 	else if ((key == SDLK_n && (mod & KMOD_CTRL)) && !noshortcuts)
 	{
@@ -2585,7 +2591,7 @@ static void mainloop(void)
 		       stamp_data[cur_stamp]->stxt);
 #endif
 
-		draw_tux_text(TUX_GREAT, stamp_data[cur_stamp]->stxt, 1);
+		draw_tux_text_ex(TUX_GREAT, stamp_data[cur_stamp]->stxt, 1, stamp_data[cur_stamp]->locale_text);
 	      }
 	      else
 		draw_tux_text(TUX_GREAT, "", 0);
@@ -2686,7 +2692,7 @@ static void mainloop(void)
 
 	    /* FIXME: Make delay configurable: */
 
-	    control_drawtext_timer(1000, stamp_data[cur_stamp]->stxt);
+	    control_drawtext_timer(1000, stamp_data[cur_stamp]->stxt, stamp_data[cur_stamp]->locale_text);
 	  }
 	  else if (cur_tool == TOOL_LINES)
 	  {
@@ -5561,7 +5567,7 @@ static void get_stamp_thumb(stamp_type * sd)
   {
     // damn thing wants a .png extension; give it one
     memcpy(buf + len, ".png", 5);
-    sd->stxt = loaddesc(buf);
+    sd->stxt = loaddesc(buf, &(sd->locale_text));
     sd->no_txt = !sd->stxt;
   }
 
@@ -9267,11 +9273,17 @@ static int compare_dirent2s(struct dirent2 *f1, struct dirent2 *f2)
 static void draw_tux_text(int which_tux, const char *const str,
 			  int want_right_to_left)
 {
+  draw_tux_text_ex(which_tux, str, want_right_to_left, 1);
+}
+
+static void draw_tux_text_ex(int which_tux, const char *const str,
+			     int want_right_to_left, Uint8 locale_text)
+{
   SDL_Rect dest;
   SDL_Color black = { 0, 0, 0, 0 };
 
   /* Remove any text-changing timer if one is running: */
-  control_drawtext_timer(0, "");
+  control_drawtext_timer(0, "", 0);
 
   /* Clear first: */
   SDL_FillRect(screen, &r_tuxarea, SDL_MapRGB(screen->format, 255, 255, 255));
@@ -9286,9 +9298,10 @@ static void draw_tux_text(int which_tux, const char *const str,
 
   SDL_BlitSurface(img_tux[which_tux], NULL, screen, &dest);
 
-  wordwrap_text(str, black,
-		img_tux[which_tux]->w + 5,
-		r_tuxarea.y, r_tuxarea.w, want_right_to_left);
+  wordwrap_text_ex(str, black,
+		   img_tux[which_tux]->w + 5,
+		   r_tuxarea.y, r_tuxarea.w, want_right_to_left,
+		   locale_text);
 
   update_screen_rect(&r_tuxarea);
 }
@@ -9297,6 +9310,13 @@ static void draw_tux_text(int which_tux, const char *const str,
 static void wordwrap_text(const char *const str, SDL_Color color,
 			  int left, int top, int right,
 			  int want_right_to_left)
+{
+  wordwrap_text_ex(str, color, left, top, right, want_right_to_left, 1);
+}
+
+static void wordwrap_text_ex(const char *const str, SDL_Color color,
+			  int left, int top, int right,
+			  int want_right_to_left, Uint8 locale_text)
 {
   int x, y, j;
   unsigned int i;
@@ -9312,7 +9332,7 @@ static void wordwrap_text(const char *const str, SDL_Color color,
   int utf8_str_len, last_text_height;
   unsigned char utf8_str[512];
 
-  if (need_own_font && strcmp(gettext(str), str))
+  if (locale_text && need_own_font && strcmp(gettext(str), str))
     myfont = locale_font;
 
   /* Cursor starting position: */
@@ -9756,7 +9776,7 @@ static void strip_trailing_whitespace(char *buf)
 
 /* Load a file's description: */
 
-static char *loaddesc(const char *const fname)
+static char *loaddesc(const char *const fname, Uint8 * locale_text)
 {
   char *txt_fname;
   char buf[256], def_buf[256];
@@ -9765,6 +9785,7 @@ static char *loaddesc(const char *const fname)
 
 
   txt_fname = strdup(fname);
+  *locale_text = 0;
 
   if (strcasestr(txt_fname, ".png") != NULL)	// FIXME: isn't this always OK?
   {
@@ -9828,6 +9849,7 @@ static char *loaddesc(const char *const fname)
 
     if (found)
     {
+      *locale_text = 1;
       return (strdup(buf + (strlen(lang_prefix)) + 6));
     }
     else
@@ -14671,7 +14693,7 @@ static Uint32 scrolltimer_callback(Uint32 interval, void *param)
 
 /* Controls the Text-Timer - interval == 0 removes the timer */
 
-static void control_drawtext_timer(Uint32 interval, const char *const text)
+static void control_drawtext_timer(Uint32 interval, const char *const text, Uint8 locale_text)
 {
   static int activated = 0;
   static SDL_TimerID TimerID = 0;
@@ -14693,6 +14715,7 @@ static void control_drawtext_timer(Uint32 interval, const char *const text)
   drawtext_event.type = SDL_USEREVENT;
   drawtext_event.user.code = USEREVENT_TEXT_UPDATE;
   drawtext_event.user.data1 = (void *) text;
+  drawtext_event.user.data2 = (void *) ((int) locale_text);
 
 
   /* Add new timer */
