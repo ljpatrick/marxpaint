@@ -127,7 +127,7 @@ $Id$
     * Faroese
       Lis Gøthe í Jákupsstovu <morshus@gmail.com>
 
-    * Gujarati
+    * Gujarati -- includes "gu.ttf" font
       Kartik Mistry <kartik.mistry@gmail.com>
 
     * Ndebele
