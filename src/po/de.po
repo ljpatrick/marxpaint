@@ -1,22 +1,22 @@
 # translation of de.po to Deutsch
 # Tux Paint german messages.
 # Copyright (C) 2002, 2005, 2006 Free Software Foundation, Inc.
+#
 # Fabian Franz <FabianFranz@gmx.de>, 2002.
 # Roland Illig <roland.illig@gmx.de>, 2004.
 # Burkhard Lück <lueck@hube-lueck.de>, 2005, 2006.
-#
 msgid ""
 msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2006-09-10 11:18-0700\n"
-"PO-Revision-Date: 2006-03-13 21:34+0100\n"
+"PO-Revision-Date: 2006-10-11 22:53+0200\n"
 "Last-Translator: Burkhard Lück <lueck@hube-lueck.de>\n"
 "Language-Team: Deutsch <kde-i18n-de@kde.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: KBabel 1.9.1\n"
+"X-Generator: KBabel 1.11.4\n"
 "Plural-Forms:  nplurals=2; plural=(n != 1);\n"
 
 msgid "Black!"
@@ -214,10 +214,8 @@ msgstr "Klick und bewege die Maus, um die Farben zu verblassen!"
 msgid "Click and move to darken the colors."
 msgstr "Klick und bewege die Maus, um die Farben abzudunkeln!"
 
-msgid ""
-"Click and move the mouse around to turn the picture into a chalk drawing."
-msgstr ""
-"Klick und bewege die Maus, um dein Bild in ein Kreidebild zu verwandeln!"
+msgid "Click and move the mouse around to turn the picture into a chalk drawing."
+msgstr "Klick und bewege die Maus, um dein Bild in ein Kreidebild zu verwandeln!"
 
 msgid "Click and move the mouse around to make the picture blocky."
 msgstr "Klick und bewege die Maus, um das Bild pixelig zu machen."
@@ -267,8 +265,7 @@ msgstr "Ein Quadrat ist ein Rechteck mit vier gleich langen Seiten."
 msgid "A rectangle has four sides and four right angles."
 msgstr "Ein Rechteck hat vier Seiten und vier rechte Winkel."
 
-msgid ""
-"A circle is a curve where all points have the same distance from the centre."
+msgid "A circle is a curve where all points have the same distance from the centre."
 msgstr ""
 "Ein Kreis ist eine Kurve, auf der alle Punkte den gleichen Abstand vom "
 "Mittelpunkt haben."
@@ -492,17 +489,16 @@ msgid "Erase"
 msgstr "Löschen"
 
 msgid "Slides"
-msgstr ""
+msgstr "Diashow"
 
 msgid "Back"
 msgstr "Zurück"
 
-#, fuzzy
 msgid "Next"
-msgstr "Text"
+msgstr "Weiter"
 
 msgid "Play"
-msgstr ""
+msgstr "Öffnen"
 
 msgid "Aa"
 msgstr "Ah!"
@@ -519,21 +515,18 @@ msgstr "Nein"
 msgid "Replace the picture with your changes?"
 msgstr "Möchtest du das Bild mit deinen Änderungen überschreiben?"
 
-#, fuzzy
 msgid "Yes, replace the old one!"
-msgstr "Ja, überschreibe das alte Bild"
+msgstr "Ja, überschreibe das alte Bild!"
 
-#, fuzzy
 msgid "No, save a new file!"
-msgstr "Nein, in eine neue Datei!"
+msgstr "Nein, speichere in eine neue Datei!"
 
 msgid "Choose the picture you want, then click “Open”."
 msgstr "Wähle ein Bild, dass du öffnen willst und klick auf 'Öffnen'."
 
 #. Let user choose images:
-#, fuzzy
 msgid "Choose the pictures you want, then click “Play”."
-msgstr "Wähle ein Bild, dass du öffnen willst und klick auf 'Öffnen'."
+msgstr "Wähle ein Bild und klicke auf 'Öffnen'."
 
 msgid "A drawing program for children."
 msgstr "Ein Malprogramm für Kinder."
@@ -543,3 +536,4 @@ msgstr "Malprogramm"
 
 msgid "Tux Paint"
 msgstr "Tux Paint"
+
