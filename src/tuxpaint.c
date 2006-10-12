@@ -1702,7 +1702,7 @@ static void mainloop(void)
 	  draw_tux_text(TUX_GREAT, tool_tips[cur_tool], 1);
 
 	  /* FIXME: Make delay configurable: */
-	  control_drawtext_timer(1000, tool_tips[cur_tool], 1);
+	  control_drawtext_timer(1000, tool_tips[cur_tool], 0);
 	}
 	else if ((key == SDLK_n && (mod & KMOD_CTRL)) && !noshortcuts)
 	{
@@ -9273,7 +9273,7 @@ static int compare_dirent2s(struct dirent2 *f1, struct dirent2 *f2)
 static void draw_tux_text(int which_tux, const char *const str,
 			  int want_right_to_left)
 {
-  draw_tux_text_ex(which_tux, str, want_right_to_left, 1);
+  draw_tux_text_ex(which_tux, str, want_right_to_left, 0);
 }
 
 static void draw_tux_text_ex(int which_tux, const char *const str,
@@ -9311,7 +9311,7 @@ static void wordwrap_text(const char *const str, SDL_Color color,
 			  int left, int top, int right,
 			  int want_right_to_left)
 {
-  wordwrap_text_ex(str, color, left, top, right, want_right_to_left, 1);
+  wordwrap_text_ex(str, color, left, top, right, want_right_to_left, 0);
 }
 
 static void wordwrap_text_ex(const char *const str, SDL_Color color,
@@ -9332,7 +9332,7 @@ static void wordwrap_text_ex(const char *const str, SDL_Color color,
   int utf8_str_len, last_text_height;
   unsigned char utf8_str[512];
 
-  if (locale_text && need_own_font && strcmp(gettext(str), str))
+  if (need_own_font && (strcmp(gettext(str), str) || locale_text))
     myfont = locale_font;
 
   /* Cursor starting position: */
