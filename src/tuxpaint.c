@@ -3336,10 +3336,10 @@ static void mainloop(void)
 	      rect_xor(old_x - w / 2, old_y - h / 2,
 		       old_x + w / 2, old_y + h / 2);
 
-	      update_screen(old_x - w / 2 + r_canvas.x,
-			    old_y - h / 2 + r_canvas.y,
-			    old_x + w / 2 + r_canvas.x,
-			    old_y + h / 2 + r_canvas.y);
+	      update_screen(old_x - w / 2 + r_canvas.x - 1,
+			    old_y - h / 2 + r_canvas.y - 1,
+			    old_x + w / 2 + r_canvas.x + 1,
+			    old_y + h / 2 + r_canvas.y + 1);
 	    }
 	  }
 
@@ -3360,10 +3360,10 @@ static void mainloop(void)
 	      rect_xor(new_x - w / 2, new_y - h / 2,
 		       new_x + w / 2, new_y + h / 2);
 
-	      update_screen(new_x - w / 2 + r_canvas.x,
-			    new_y - h / 2 + r_canvas.y,
-			    new_x + w / 2 + r_canvas.x,
-			    new_y + h / 2 + r_canvas.y);
+	      update_screen(new_x - w / 2 + r_canvas.x - 1,
+			    new_y - h / 2 + r_canvas.y - 1,
+			    new_x + w / 2 + r_canvas.x + 1,
+			    new_y + h / 2 + r_canvas.y + 1);
 	    }
 	  }
 	}
