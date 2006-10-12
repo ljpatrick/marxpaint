@@ -216,6 +216,9 @@ $Id$
     * Thai
       Ouychai Chaita <ae.freeman@gmail.com>
 
+    * Turkish
+      Doruk Fisek <dfisek@fisek.com.tr>
+
     * Vietnamese
       Clytie Siddall <clytie@riverland.net.au>
 
