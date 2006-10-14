@@ -17,7 +17,7 @@
 	<key>CFBundleSignature</key>
 	<string>TXPT</string>
 	<key>CFBundleVersion</key>
-	<string>2005-11-26</string>
+	<string>2006-10-18</string>
 	<key>NSMainNibFile</key>
 	<string>SDLMain</string>
 	<key>NSPrincipalClass</key>

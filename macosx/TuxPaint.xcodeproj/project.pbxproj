@@ -11,6 +11,28 @@
 		2202646707AC603500C3AEAB /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2202646607AC603500C3AEAB /* CoreFoundation.framework */; };
 		224A369B0933B741005A3695 /* fonts in Resources */ = {isa = PBXBuildFile; fileRef = 224A368C0933B741005A3695 /* fonts */; };
 		22581667074EE1A5005F774F /* Read Me.txt in Resources */ = {isa = PBXBuildFile; fileRef = 22581666074EE1A5005F774F /* Read Me.txt */; };
+		225FCE260ADF277300466C53 /* compiler.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 225FCE100ADF277300466C53 /* compiler.h */; };
+		225FCE270ADF277300466C53 /* cursor.c in Sources */ = {isa = PBXBuildFile; fileRef = 225FCE110ADF277300466C53 /* cursor.c */; };
+		225FCE280ADF277300466C53 /* cursor.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 225FCE120ADF277300466C53 /* cursor.h */; };
+		225FCE290ADF277300466C53 /* debug.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 225FCE130ADF277300466C53 /* debug.h */; };
+		225FCE2A0ADF277300466C53 /* dirwalk.c in Sources */ = {isa = PBXBuildFile; fileRef = 225FCE140ADF277300466C53 /* dirwalk.c */; };
+		225FCE2B0ADF277300466C53 /* dirwalk.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 225FCE150ADF277300466C53 /* dirwalk.h */; };
+		225FCE2C0ADF277300466C53 /* floodfill.c in Sources */ = {isa = PBXBuildFile; fileRef = 225FCE160ADF277300466C53 /* floodfill.c */; };
+		225FCE2D0ADF277300466C53 /* floodfill.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 225FCE170ADF277300466C53 /* floodfill.h */; };
+		225FCE2E0ADF277300466C53 /* fonts.c in Sources */ = {isa = PBXBuildFile; fileRef = 225FCE180ADF277300466C53 /* fonts.c */; };
+		225FCE2F0ADF277300466C53 /* get_fname.c in Sources */ = {isa = PBXBuildFile; fileRef = 225FCE190ADF277300466C53 /* get_fname.c */; };
+		225FCE300ADF277300466C53 /* get_fname.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 225FCE1A0ADF277300466C53 /* get_fname.h */; };
+		225FCE310ADF277300466C53 /* pixels.c in Sources */ = {isa = PBXBuildFile; fileRef = 225FCE1B0ADF277300466C53 /* pixels.c */; };
+		225FCE320ADF277300466C53 /* pixels.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 225FCE1C0ADF277300466C53 /* pixels.h */; };
+		225FCE330ADF277300466C53 /* playsound.c in Sources */ = {isa = PBXBuildFile; fileRef = 225FCE1D0ADF277300466C53 /* playsound.c */; };
+		225FCE340ADF277300466C53 /* playsound.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 225FCE1E0ADF277300466C53 /* playsound.h */; };
+		225FCE350ADF277300466C53 /* progressbar.c in Sources */ = {isa = PBXBuildFile; fileRef = 225FCE1F0ADF277300466C53 /* progressbar.c */; };
+		225FCE360ADF277300466C53 /* progressbar.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 225FCE200ADF277300466C53 /* progressbar.h */; };
+		225FCE370ADF277300466C53 /* rgblinear.c in Sources */ = {isa = PBXBuildFile; fileRef = 225FCE210ADF277300466C53 /* rgblinear.c */; };
+		225FCE380ADF277300466C53 /* rgblinear.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 225FCE220ADF277300466C53 /* rgblinear.h */; };
+		225FCE390ADF277300466C53 /* fonts.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 225FCE230ADF277300466C53 /* fonts.h */; };
+		225FCE3A0ADF277300466C53 /* i18n.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 225FCE240ADF277300466C53 /* i18n.h */; };
+		225FCE3B0ADF277300466C53 /* i18n.c in Sources */ = {isa = PBXBuildFile; fileRef = 225FCE250ADF277300466C53 /* i18n.c */; };
 		225FD5280934EC1A00F0B02F /* SDL_image.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 225FD5240934EC1A00F0B02F /* SDL_image.framework */; };
 		225FD5290934EC1A00F0B02F /* SDL_mixer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 225FD5250934EC1A00F0B02F /* SDL_mixer.framework */; };
 		225FD52A0934EC1A00F0B02F /* SDL_ttf.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 225FD5260934EC1A00F0B02F /* SDL_ttf.framework */; };
@@ -41,7 +63,7 @@
 /* Begin PBXBuildRule section */
 		224A386D0933E9C4005A3695 /* PBXBuildRule */ = {
 			isa = PBXBuildRule;
-			compilerSpec = com.apple.compilers.gcc.3_3;
+			compilerSpec = com.apple.compilers.gcc.4_0;
 			fileType = sourcecode.c;
 			isEditable = 1;
 			outputFiles = (
@@ -49,7 +71,7 @@
 		};
 		224A386E0933E9EF005A3695 /* PBXBuildRule */ = {
 			isa = PBXBuildRule;
-			compilerSpec = com.apple.compilers.gcc.3_3;
+			compilerSpec = com.apple.compilers.gcc.4_0;
 			fileType = sourcecode.asm.asm;
 			isEditable = 1;
 			outputFiles = (
@@ -57,33 +79,13 @@
 		};
 		225FD5360934EF5600F0B02F /* PBXBuildRule */ = {
 			isa = PBXBuildRule;
-			compilerSpec = com.apple.compilers.gcc.3_3;
+			compilerSpec = com.apple.compilers.gcc.4_0;
 			fileType = sourcecode.cpp;
 			isEditable = 1;
 			outputFiles = (
 			);
 		};
 /* End PBXBuildRule section */
-
-/* Begin PBXBuildStyle section */
-		4A9504CCFFE6A4B311CA0CBA /* Development */ = {
-			isa = PBXBuildStyle;
-			buildSettings = {
-				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_ENABLE_FIX_AND_CONTINUE = YES;
-			};
-			name = Development;
-		};
-		4A9504CDFFE6A4B311CA0CBA /* Deployment */ = {
-			isa = PBXBuildStyle;
-			buildSettings = {
-				COPY_PHASE_STRIP = YES;
-				GCC_ENABLE_FIX_AND_CONTINUE = NO;
-				ZERO_LINK = NO;
-			};
-			name = Deployment;
-		};
-/* End PBXBuildStyle section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		22D5D2A80738498300B67229 /* CopyFiles */ = {
@@ -96,6 +98,18 @@
 				225FE6F40939892300F0B02F /* SDL_mixer.framework in CopyFiles */,
 				225FE6F00939891500F0B02F /* SDL_image.framework in CopyFiles */,
 				225FE6D20939890800F0B02F /* SDL.framework in CopyFiles */,
+				225FCE260ADF277300466C53 /* compiler.h in CopyFiles */,
+				225FCE280ADF277300466C53 /* cursor.h in CopyFiles */,
+				225FCE290ADF277300466C53 /* debug.h in CopyFiles */,
+				225FCE2B0ADF277300466C53 /* dirwalk.h in CopyFiles */,
+				225FCE2D0ADF277300466C53 /* floodfill.h in CopyFiles */,
+				225FCE300ADF277300466C53 /* get_fname.h in CopyFiles */,
+				225FCE320ADF277300466C53 /* pixels.h in CopyFiles */,
+				225FCE340ADF277300466C53 /* playsound.h in CopyFiles */,
+				225FCE360ADF277300466C53 /* progressbar.h in CopyFiles */,
+				225FCE380ADF277300466C53 /* rgblinear.h in CopyFiles */,
+				225FCE390ADF277300466C53 /* fonts.h in CopyFiles */,
+				225FCE3A0ADF277300466C53 /* i18n.h in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -108,6 +122,28 @@
 		2202646607AC603500C3AEAB /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = /System/Library/Frameworks/CoreFoundation.framework; sourceTree = "<absolute>"; };
 		224A368C0933B741005A3695 /* fonts */ = {isa = PBXFileReference; lastKnownFileType = folder; name = fonts; path = ../data/fonts; sourceTree = SOURCE_ROOT; };
 		22581666074EE1A5005F774F /* Read Me.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Read Me.txt"; sourceTree = "<group>"; wrapsLines = 1; };
+		225FCE100ADF277300466C53 /* compiler.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = compiler.h; path = ../src/compiler.h; sourceTree = SOURCE_ROOT; };
+		225FCE110ADF277300466C53 /* cursor.c */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.c; name = cursor.c; path = ../src/cursor.c; sourceTree = SOURCE_ROOT; };
+		225FCE120ADF277300466C53 /* cursor.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = cursor.h; path = ../src/cursor.h; sourceTree = SOURCE_ROOT; };
+		225FCE130ADF277300466C53 /* debug.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = debug.h; path = ../src/debug.h; sourceTree = SOURCE_ROOT; };
+		225FCE140ADF277300466C53 /* dirwalk.c */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.c; name = dirwalk.c; path = ../src/dirwalk.c; sourceTree = SOURCE_ROOT; };
+		225FCE150ADF277300466C53 /* dirwalk.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = dirwalk.h; path = ../src/dirwalk.h; sourceTree = SOURCE_ROOT; };
+		225FCE160ADF277300466C53 /* floodfill.c */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.c; name = floodfill.c; path = ../src/floodfill.c; sourceTree = SOURCE_ROOT; };
+		225FCE170ADF277300466C53 /* floodfill.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = floodfill.h; path = ../src/floodfill.h; sourceTree = SOURCE_ROOT; };
+		225FCE180ADF277300466C53 /* fonts.c */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.c; name = fonts.c; path = ../src/fonts.c; sourceTree = SOURCE_ROOT; };
+		225FCE190ADF277300466C53 /* get_fname.c */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.c; name = get_fname.c; path = ../src/get_fname.c; sourceTree = SOURCE_ROOT; };
+		225FCE1A0ADF277300466C53 /* get_fname.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = get_fname.h; path = ../src/get_fname.h; sourceTree = SOURCE_ROOT; };
+		225FCE1B0ADF277300466C53 /* pixels.c */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.c; name = pixels.c; path = ../src/pixels.c; sourceTree = SOURCE_ROOT; };
+		225FCE1C0ADF277300466C53 /* pixels.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = pixels.h; path = ../src/pixels.h; sourceTree = SOURCE_ROOT; };
+		225FCE1D0ADF277300466C53 /* playsound.c */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.c; name = playsound.c; path = ../src/playsound.c; sourceTree = SOURCE_ROOT; };
+		225FCE1E0ADF277300466C53 /* playsound.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = playsound.h; path = ../src/playsound.h; sourceTree = SOURCE_ROOT; };
+		225FCE1F0ADF277300466C53 /* progressbar.c */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.c; name = progressbar.c; path = ../src/progressbar.c; sourceTree = SOURCE_ROOT; };
+		225FCE200ADF277300466C53 /* progressbar.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = progressbar.h; path = ../src/progressbar.h; sourceTree = SOURCE_ROOT; };
+		225FCE210ADF277300466C53 /* rgblinear.c */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.c; name = rgblinear.c; path = ../src/rgblinear.c; sourceTree = SOURCE_ROOT; };
+		225FCE220ADF277300466C53 /* rgblinear.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = rgblinear.h; path = ../src/rgblinear.h; sourceTree = SOURCE_ROOT; };
+		225FCE230ADF277300466C53 /* fonts.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = fonts.h; path = ../src/fonts.h; sourceTree = SOURCE_ROOT; };
+		225FCE240ADF277300466C53 /* i18n.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = i18n.h; path = ../src/i18n.h; sourceTree = SOURCE_ROOT; };
+		225FCE250ADF277300466C53 /* i18n.c */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.c; name = i18n.c; path = ../src/i18n.c; sourceTree = SOURCE_ROOT; };
 		225FD5240934EC1A00F0B02F /* SDL_image.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDL_image.framework; path = /Library/Frameworks/SDL_image.framework; sourceTree = "<absolute>"; };
 		225FD5250934EC1A00F0B02F /* SDL_mixer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDL_mixer.framework; path = /Library/Frameworks/SDL_mixer.framework; sourceTree = "<absolute>"; };
 		225FD5260934EC1A00F0B02F /* SDL_ttf.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDL_ttf.framework; path = /Library/Frameworks/SDL_ttf.framework; sourceTree = "<absolute>"; };
@@ -231,6 +267,28 @@
 		29B97315FDCFA39411CA2CEA /* TuxPaint Sources */ = {
 			isa = PBXGroup;
 			children = (
+				225FCE100ADF277300466C53 /* compiler.h */,
+				225FCE110ADF277300466C53 /* cursor.c */,
+				225FCE120ADF277300466C53 /* cursor.h */,
+				225FCE130ADF277300466C53 /* debug.h */,
+				225FCE140ADF277300466C53 /* dirwalk.c */,
+				225FCE150ADF277300466C53 /* dirwalk.h */,
+				225FCE160ADF277300466C53 /* floodfill.c */,
+				225FCE170ADF277300466C53 /* floodfill.h */,
+				225FCE180ADF277300466C53 /* fonts.c */,
+				225FCE190ADF277300466C53 /* get_fname.c */,
+				225FCE1A0ADF277300466C53 /* get_fname.h */,
+				225FCE1B0ADF277300466C53 /* pixels.c */,
+				225FCE1C0ADF277300466C53 /* pixels.h */,
+				225FCE1D0ADF277300466C53 /* playsound.c */,
+				225FCE1E0ADF277300466C53 /* playsound.h */,
+				225FCE1F0ADF277300466C53 /* progressbar.c */,
+				225FCE200ADF277300466C53 /* progressbar.h */,
+				225FCE210ADF277300466C53 /* rgblinear.c */,
+				225FCE220ADF277300466C53 /* rgblinear.h */,
+				225FCE230ADF277300466C53 /* fonts.h */,
+				225FCE240ADF277300466C53 /* i18n.h */,
+				225FCE250ADF277300466C53 /* i18n.c */,
 				22C0EAA30735B851008555A2 /* colors.h */,
 				22C0EAA40735B851008555A2 /* great.h */,
 				22C0EAAD0735B851008555A2 /* magic.h */,
@@ -292,40 +350,6 @@
 				224A386E0933E9EF005A3695 /* PBXBuildRule */,
 				224A386D0933E9C4005A3695 /* PBXBuildRule */,
 			);
-			buildSettings = {
-				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "";
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DATA_PREFIX=\"Tux Paint.app/Contents/Resources/\"",
-					"DOC_PREFIX=\"./share/doc/tuxpaint/\"",
-					"CONFDIR=\"$(HOME)/Library/Application Support/Tux Paint/\"",
-					"LOCALEDIR=\"Tux Paint.app/Contents/Resources/locale/\"",
-					"CURSOR_SHAPES=SMALL",
-					SMALL_CURSOR_SHAPES,
-					__APPLE__,
-				);
-				HEADER_SEARCH_PATHS = (
-					/sw/include/SDL,
-					/sw/include,
-					../src/mouse/16x16/,
-				);
-				INFOPLIST_FILE = Info.plist;
-				INSTALL_PATH = "$(HOME)/Applications";
-				LIBRARY_STYLE = STATIC;
-				MACOSX_DEPLOYMENT_TARGET = 10.1;
-				OTHER_CFLAGS = "";
-				OTHER_CPLUSPLUSFLAGS = "";
-				OTHER_LDFLAGS = (
-					/sw/lib/libpng.a,
-					/sw/lib/libintl.a,
-					"-lz",
-					"-liconv",
-				);
-				PRODUCT_NAME = "Tux Paint";
-				WRAPPER_EXTENSION = app;
-			};
 			dependencies = (
 			);
 			name = "Tux Paint";
@@ -340,12 +364,6 @@
 		29B97313FDCFA39411CA2CEA /* Project object */ = {
 			isa = PBXProject;
 			buildConfigurationList = 224A35FB09339642005A3695 /* Build configuration list for PBXProject "TuxPaint" */;
-			buildSettings = {
-			};
-			buildStyles = (
-				4A9504CCFFE6A4B311CA0CBA /* Development */,
-				4A9504CDFFE6A4B311CA0CBA /* Deployment */,
-			);
 			hasScannedForEncodings = 1;
 			mainGroup = 29B97314FDCFA39411CA2CEA /* TuxPaint */;
 			projectDirPath = "";
@@ -402,6 +420,16 @@
 				22C0EA9E0735B76F008555A2 /* SDLMain.m in Sources */,
 				22C0EABD0735B851008555A2 /* macosx_print.m in Sources */,
 				22C0EAC40735B851008555A2 /* tuxpaint.c in Sources */,
+				225FCE270ADF277300466C53 /* cursor.c in Sources */,
+				225FCE2A0ADF277300466C53 /* dirwalk.c in Sources */,
+				225FCE2C0ADF277300466C53 /* floodfill.c in Sources */,
+				225FCE2E0ADF277300466C53 /* fonts.c in Sources */,
+				225FCE2F0ADF277300466C53 /* get_fname.c in Sources */,
+				225FCE310ADF277300466C53 /* pixels.c in Sources */,
+				225FCE330ADF277300466C53 /* playsound.c in Sources */,
+				225FCE350ADF277300466C53 /* progressbar.c in Sources */,
+				225FCE370ADF277300466C53 /* rgblinear.c in Sources */,
+				225FCE3B0ADF277300466C53 /* i18n.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -430,6 +458,7 @@
 		224A35F809339642005A3695 /* Development */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = ppc;
 				FRAMEWORK_SEARCH_PATHS = "/Library/Frameworks/**";
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_ENABLE_FIX_AND_CONTINUE = YES;
@@ -438,18 +467,28 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "";
 				GCC_PREPROCESSOR_DEFINITIONS = (
-					"VER_DATE=\"2005-11-26\"",
-					"DATA_PREFIX=\"Tux Paint.app/Contents/Resources/\"",
-					"DOC_PREFIX=\"./share/doc/tuxpaint/\"",
-					"CONFDIR=\"$(HOME)/Library/Application Support/Tux Paint/\"",
-					"LOCALEDIR=\"Tux Paint.app/Contents/Resources/locale/\"",
+					"$(GCC_PREPROCESSOR_DEFINITIONS_QUOTED_1)",
+					"$(GCC_PREPROCESSOR_DEFINITIONS_QUOTED_2)",
+					"$(GCC_PREPROCESSOR_DEFINITIONS_QUOTED_3)",
+					"$(GCC_PREPROCESSOR_DEFINITIONS_QUOTED_4)",
+					"$(GCC_PREPROCESSOR_DEFINITIONS_QUOTED_5)",
 					"CURSOR_SHAPES=SMALL",
 					SMALL_CURSOR_SHAPES,
 					__APPLE__,
-					"VER_VERSION=\"0.9.15\"",
+					"$(GCC_PREPROCESSOR_DEFINITIONS_QUOTED_6)",
+					HAVE_STRCASESTR,
 				);
+				GCC_PREPROCESSOR_DEFINITIONS_QUOTED_1 = "VER_DATE=\\\"2005-11-26\\\"";
+				GCC_PREPROCESSOR_DEFINITIONS_QUOTED_2 = "DATA_PREFIX=\\\"Tux\\ Paint.app/Contents/Resources/\\\"";
+				GCC_PREPROCESSOR_DEFINITIONS_QUOTED_3 = "DOC_PREFIX=\\\"./share/doc/tuxpaint/\\\"";
+				GCC_PREPROCESSOR_DEFINITIONS_QUOTED_4 = "CONFDIR=\\\"$(HOME)/Library/Application\\ Support/Tux\\ Paint/\\\"";
+				GCC_PREPROCESSOR_DEFINITIONS_QUOTED_5 = "LOCALEDIR=\\\"Tux\\ Paint.app/Contents/Resources/locale/\\\"";
+				GCC_PREPROCESSOR_DEFINITIONS_QUOTED_6 = "VER_VERSION=\\\"0.9.15\\\"";
 				HEADER_SEARCH_PATHS = (
-					/sw/include/SDL,
+					/Library/Frameworks/SDL.framework/Headers,
+					/Library/Frameworks/SDL_image.framework/Headers/,
+					/Library/Frameworks/SDL_mixer.framework/Headers/,
+					/Library/Frameworks/SDL_ttf.framework/Headers/,
 					/sw/include,
 					../src/mouse/16x16/,
 				);
@@ -471,6 +510,7 @@
 		224A35F909339642005A3695 /* Deployment */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = ppc;
 				COPY_PHASE_STRIP = YES;
 				FRAMEWORK_SEARCH_PATHS = "/Library/Frameworks/**";
 				GCC_ENABLE_FIX_AND_CONTINUE = NO;
@@ -479,18 +519,28 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "";
 				GCC_PREPROCESSOR_DEFINITIONS = (
-					"VER_DATE=\"2005-11-26\"",
-					"DATA_PREFIX=\"Tux Paint.app/Contents/Resources/\"",
-					"DOC_PREFIX=\"./share/doc/tuxpaint/\"",
-					"CONFDIR=\"$(HOME)/Library/Application Support/Tux Paint/\"",
-					"LOCALEDIR=\"Tux Paint.app/Contents/Resources/locale/\"",
+					"$(GCC_PREPROCESSOR_DEFINITIONS_QUOTED_1)",
+					"$(GCC_PREPROCESSOR_DEFINITIONS_QUOTED_2)",
+					"$(GCC_PREPROCESSOR_DEFINITIONS_QUOTED_3)",
+					"$(GCC_PREPROCESSOR_DEFINITIONS_QUOTED_4)",
+					"$(GCC_PREPROCESSOR_DEFINITIONS_QUOTED_5)",
 					"CURSOR_SHAPES=SMALL",
 					SMALL_CURSOR_SHAPES,
 					__APPLE__,
-					"VER_VERSION=\"0.9.15\"",
+					"$(GCC_PREPROCESSOR_DEFINITIONS_QUOTED_6)",
+					HAVE_STRCASESTR,
 				);
+				GCC_PREPROCESSOR_DEFINITIONS_QUOTED_1 = "VER_DATE=\\\"2005-11-26\\\"";
+				GCC_PREPROCESSOR_DEFINITIONS_QUOTED_2 = "DATA_PREFIX=\\\"Tux\\ Paint.app/Contents/Resources/\\\"";
+				GCC_PREPROCESSOR_DEFINITIONS_QUOTED_3 = "DOC_PREFIX=\\\"./share/doc/tuxpaint/\\\"";
+				GCC_PREPROCESSOR_DEFINITIONS_QUOTED_4 = "CONFDIR=\\\"$(HOME)/Library/Application\\ Support/Tux\\ Paint/\\\"";
+				GCC_PREPROCESSOR_DEFINITIONS_QUOTED_5 = "LOCALEDIR=\\\"Tux\\ Paint.app/Contents/Resources/locale/\\\"";
+				GCC_PREPROCESSOR_DEFINITIONS_QUOTED_6 = "VER_VERSION=\\\"0.9.15\\\"";
 				HEADER_SEARCH_PATHS = (
-					/sw/include/SDL,
+					/Library/Frameworks/SDL.framework/Headers,
+					/Library/Frameworks/SDL_image.framework/Headers/,
+					/Library/Frameworks/SDL_mixer.framework/Headers/,
+					/Library/Frameworks/SDL_ttf.framework/Headers/,
 					/sw/include,
 					../src/mouse/16x16/,
 				);
@@ -513,24 +563,35 @@
 		224A35FA09339642005A3695 /* Default */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = ppc;
 				FRAMEWORK_SEARCH_PATHS = "/Library/Frameworks/**";
 				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "";
 				GCC_PREPROCESSOR_DEFINITIONS = (
-					"VER_DATE=\"2005-11-26\"",
-					"DATA_PREFIX=\"Tux Paint.app/Contents/Resources/\"",
-					"DOC_PREFIX=\"./share/doc/tuxpaint/\"",
-					"CONFDIR=\"$(HOME)/Library/Application Support/Tux Paint/\"",
-					"LOCALEDIR=\"Tux Paint.app/Contents/Resources/locale/\"",
+					"$(GCC_PREPROCESSOR_DEFINITIONS_QUOTED_1)",
+					"$(GCC_PREPROCESSOR_DEFINITIONS_QUOTED_2)",
+					"$(GCC_PREPROCESSOR_DEFINITIONS_QUOTED_3)",
+					"$(GCC_PREPROCESSOR_DEFINITIONS_QUOTED_4)",
+					"$(GCC_PREPROCESSOR_DEFINITIONS_QUOTED_5)",
 					"CURSOR_SHAPES=SMALL",
 					SMALL_CURSOR_SHAPES,
 					__APPLE__,
-					"VER_VERSION=\"0.9.15\"",
+					"$(GCC_PREPROCESSOR_DEFINITIONS_QUOTED_6)",
+					HAVE_STRCASESTR,
 				);
+				GCC_PREPROCESSOR_DEFINITIONS_QUOTED_1 = "VER_DATE=\\\"2005-11-26\\\"";
+				GCC_PREPROCESSOR_DEFINITIONS_QUOTED_2 = "DATA_PREFIX=\\\"Tux\\ Paint.app/Contents/Resources/\\\"";
+				GCC_PREPROCESSOR_DEFINITIONS_QUOTED_3 = "DOC_PREFIX=\\\"./share/doc/tuxpaint/\\\"";
+				GCC_PREPROCESSOR_DEFINITIONS_QUOTED_4 = "CONFDIR=\\\"$(HOME)/Library/Application\\ Support/Tux\\ Paint/\\\"";
+				GCC_PREPROCESSOR_DEFINITIONS_QUOTED_5 = "LOCALEDIR=\\\"Tux\\ Paint.app/Contents/Resources/locale/\\\"";
+				GCC_PREPROCESSOR_DEFINITIONS_QUOTED_6 = "VER_VERSION=\\\"0.9.15\\\"";
 				HEADER_SEARCH_PATHS = (
-					/sw/include/SDL,
+					/Library/Frameworks/SDL.framework/Headers,
+					/Library/Frameworks/SDL_image.framework/Headers/,
+					/Library/Frameworks/SDL_mixer.framework/Headers/,
+					/Library/Frameworks/SDL_ttf.framework/Headers/,
 					/sw/include,
 					../src/mouse/16x16/,
 				);
@@ -552,24 +613,18 @@
 		224A35FC09339642005A3695 /* Development */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				MACOSX_DEPLOYMENT_TARGET = 10.3;
-				SDKROOT = /Developer/SDKs/MacOSX10.3.9.sdk;
 			};
 			name = Development;
 		};
 		224A35FD09339642005A3695 /* Deployment */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				MACOSX_DEPLOYMENT_TARGET = 10.3;
-				SDKROOT = /Developer/SDKs/MacOSX10.3.9.sdk;
 			};
 			name = Deployment;
 		};
 		224A35FE09339642005A3695 /* Default */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				MACOSX_DEPLOYMENT_TARGET = 10.3;
-				SDKROOT = /Developer/SDKs/MacOSX10.3.9.sdk;
 			};
 			name = Default;
 		};
