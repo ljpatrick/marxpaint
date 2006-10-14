@@ -280,8 +280,6 @@ typedef struct safer_dirent
 #endif
 #ifdef __APPLE__
 #include "macosx_print.h"
-#include "wrapperdata.h"
-extern WrapperData macosx;
 #endif
 #else
 
@@ -3336,10 +3334,10 @@ static void mainloop(void)
 	      rect_xor(old_x - w / 2, old_y - h / 2,
 		       old_x + w / 2, old_y + h / 2);
 
-	      update_screen(old_x - w / 2 + r_canvas.x - 1,
-			    old_y - h / 2 + r_canvas.y - 1,
-			    old_x + w / 2 + r_canvas.x + 1,
-			    old_y + h / 2 + r_canvas.y + 1);
+	      update_screen(old_x - w / 2 + r_canvas.x - 10,
+			    old_y - h / 2 + r_canvas.y - 10,
+			    old_x + w / 2 + r_canvas.x + 10,
+			    old_y + h / 2 + r_canvas.y + 10);
 	    }
 	  }
 
@@ -3360,10 +3358,10 @@ static void mainloop(void)
 	      rect_xor(new_x - w / 2, new_y - h / 2,
 		       new_x + w / 2, new_y + h / 2);
 
-	      update_screen(new_x - w / 2 + r_canvas.x - 1,
-			    new_y - h / 2 + r_canvas.y - 1,
-			    new_x + w / 2 + r_canvas.x + 1,
-			    new_y + h / 2 + r_canvas.y + 1);
+	      update_screen(new_x - w / 2 + r_canvas.x - 10,
+			    new_y - h / 2 + r_canvas.y - 10,
+			    new_x + w / 2 + r_canvas.x + 10,
+			    new_y + h / 2 + r_canvas.y + 10);
 	    }
 	  }
 	}

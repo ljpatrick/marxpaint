@@ -26,6 +26,11 @@
 #include "win32_print.h"
 #endif
 
+#ifdef __APPLE__
+#include "wrapperdata.h"
+extern WrapperData macosx;
+#endif
+
 #ifdef FORKED_FONTS
 
 #include <sys/socket.h>
