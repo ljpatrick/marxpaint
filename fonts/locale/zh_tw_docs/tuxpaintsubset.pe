@@ -1,11 +1,15 @@
 #!/usr/bin/env fontforge
-# >> The script first draft by Edward Lee<Edward.bbs@bbs.sayya.org>. <<
-# Copyright: Song Huang <song@song.idv.tw>
+# <% The script first draft by Edward Lee<Edward.bbs@bbs.sayya.org>. %>
+# Copyright: Song Huang <song@song.tw>
 # License: GUN GPL
-# 2004/10/26
+# create: 2004/10/26 
+# modify: 2006/10/15
+
+copyright="Song Huang <song@song.tw>"
+ver="0.2"
 
 if ($argc < 4)
-  Print("usage: ", $0, " orig.ttf generate.ttf char_num [char_num ...]")
+  Print("usage: ", $0, " orig.ttf generate.ttf char_nu [char_num ...]")
   Quit(1)
 endif
 
@@ -26,7 +30,9 @@ while ( i >= 0 )
     SelectMore(a[i])
     i--
 endloop
-Copy()
+
+SelectInvert()
+Clear()
 
 fontName=GetTTFName(0x404, 6) + "[Subset for TuxPaint] "
 fontCopyRight=GetTTFName(0x404, 0)
@@ -34,11 +40,6 @@ fontVersion=GetTTFName(0x404, 5) + "[Subset for TuxPaint] "
 fontMaker="TuxPaint's Font Subset Maker"
 fontSample="TuxPaint Font Subset."
 
-Close()
-
-New()
-Reencode("unicode")
-ScaleToEm(1024)
 # nameid=1	Font Family Name
 SetTTFName(0x404,1,fontName)
 # nameid=4	Full Font Name
@@ -52,12 +53,10 @@ SetTTFName(0x404,8,fontMaker)
 # nameid=19	Sample text
 SetTTFName(0x404,4,fontName)
 
-i=$argc - 4
-while ( i >= 0 )
-    SelectMore(a[i])
-    i--
-endloop
-Paste()
+# Set font name
+SetFontNames("SubsetForTuxPaint","SubsetForTuxPaint","SubsetForTuxPaint","Book",copyright,ver)
+
+AutoCounter()
 
 Print("Generating fonts...")
 Generate($2)
