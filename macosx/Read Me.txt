@@ -15,7 +15,7 @@ SDL_image.framework
 SDL_mixer.framework
 SDL_ttf.framework
 
-You can obtain the frameworks from the SDL website <www.libsdl.org>  These frameworks contain both header files and libraries, and are copied into the Resources directory of the Tux Paint application bundle.
+You can obtain the frameworks from the SDL website <www.libsdl.org>  These frameworks contain both header files and libraries, and are copied into the Frameworks directory of the Tux Paint application bundle.
 
 
 -- PNG, Internationalization, and Character Set Conversion Libraries --
