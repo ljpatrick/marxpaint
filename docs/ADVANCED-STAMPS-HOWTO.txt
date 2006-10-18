@@ -1,6 +1,6 @@
                                    Tux Paint
                                  version 0.9.16
-                              Advanced Staps HOWTO
+                              Advanced Stamps HOWTO
 
            Copyright 2006 by Albert Cahalan for the Tux Paint project
                                New Breed Software
