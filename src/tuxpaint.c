@@ -2963,11 +2963,11 @@ static void mainloop(void)
 	  {
 	    if (((unsigned char *) event.user.data1)[0] == '=')
 	    {
-	      draw_tux_text(TUX_GREAT, (char *) event.user.data1 + 1, 1);
+	      draw_tux_text_ex(TUX_GREAT, (char *) event.user.data1 + 1, 1, (int)event.user.data2);
 	    }
 	    else
 	    {
-	      draw_tux_text(TUX_GREAT, (char *) event.user.data1, 0);
+	      draw_tux_text_ex(TUX_GREAT, (char *) event.user.data1, 0, (int)event.user.data2);
 	    }
 	  }
 	  else
