@@ -81,6 +81,12 @@ static NSString *getApplicationName(void)
 	} else 
 		[super sendEvent: anEvent];
 }
+
+- (void)tuxpaintHelp:(id)sender
+{
+	NSString* helpPath = [[NSBundle mainBundle] pathForResource:@"README" ofType:@"html" inDirectory:@"html"];
+	[[NSWorkspace sharedWorkspace] openFile:helpPath];
+}
 @end
 
 
@@ -253,7 +259,7 @@ static void setupHelpMenu(void)
     
     /* "Help" item */
 	 NSString *appName = getApplicationName();
-    menuItem = [[NSMenuItem alloc] initWithTitle:[appName stringByAppendingString:@" Help"] action:@selector(showHelp:) keyEquivalent:@"?"];
+    menuItem = [[NSMenuItem alloc] initWithTitle:[appName stringByAppendingString:@" Help"] action:@selector(tuxpaintHelp:) keyEquivalent:@"?"];
     [helpMenu addItem:menuItem];
     [menuItem release];
     
