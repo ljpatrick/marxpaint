@@ -7,7 +7,7 @@ bill@newbreedsoftware.com
 http://www.tuxpaint.org/
 
 
-June 17, 2002 - October 11, 2006
+June 17, 2002 - October 18, 2006
 
 $Id$
 
@@ -71,7 +71,8 @@ $Id$
     Jim Trice <jimtrice@linuxmail.org>
 
   * Street
-    Pere Pujal Carabantes <ppujal@airtel.net>
+    Ingrid Illa Terrier
+    (via Pere Pujal Carabantes <ppujal@airtel.net>)
 
   * Nagasaki
     Jim Trice <jimtrice@linuxmail.org>
