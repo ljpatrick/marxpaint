@@ -128,6 +128,26 @@ TTF_Font *load_locale_font(TTF_Font * fallback, int size)
 	     DATA_PREFIX, lang_prefix);
 
     ret = TTF_OpenFont(str, size);
+	 
+#ifdef __APPLE__
+    if (ret == NULL)
+    {
+      snprintf(str, sizeof(str), "%sfonts/%s.ttf", DATA_PREFIX, lang_prefix);
+      ret = TTF_OpenFont(str, size);
+    }	 
+	 
+    if (ret == NULL)
+    {
+      snprintf(str, sizeof(str), "/Library/Fonts/%s.ttf", lang_prefix);
+      ret = TTF_OpenFont(str, size);
+    }
+	 
+    if (ret == NULL)
+    {
+      snprintf(str, sizeof(str), "%s/%s.ttf", macosx.fontsPath, lang_prefix);
+      ret = TTF_OpenFont(str, size);
+    }	 
+#endif
 
     if (ret == NULL)
     {
