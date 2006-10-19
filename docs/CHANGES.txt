@@ -9,7 +9,7 @@ http://www.newbreedsoftware.com/tuxpaint/
 $Id$
 
 
-2006.October.12 (0.9.16)
+2006.October.19 (0.9.16)
 
   * Interface improvements:
     -----------------------
@@ -195,6 +195,8 @@ $Id$
 
     * Japanese
       TOYAMA Shin-ichi <shin1@wmail.plala.or.jp>
+
+    * Japanese font shipped in Tux Paint now includes common educational Kanji
 
     * Korean
       Mark K. Kim <mkkim214@gmail.com>

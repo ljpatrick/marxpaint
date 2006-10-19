@@ -1,11 +1,11 @@
-Sazanami-Gothic-noBitmap-noKanji.ttf (Custumized for TuxPaint)
+sazanami-educational-gothic.ttf (Custumized for TuxPaint)
 
 This is a custumized subset of Sazanami-Gothic.ttf for TuxPaint.
 Difference between original are, 
 
   a) Bitmap data which prevent correct rendering (due to SDL_ttf
      bug) are removed.
-  b) All Kanji data not used in TuxPaint are removed.
+  b) Kanji data except for educational level character are removed.
 
 The license depends on that of original Sazanami-Gothic as follows.
 
