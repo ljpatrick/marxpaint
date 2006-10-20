@@ -9161,6 +9161,11 @@ static void do_eraser(int x, int y)
   update_canvas(x - sz / 2, y - sz / 2, x + sz / 2, y + sz / 2);
 
   rect_xor(x - sz / 2, y - sz / 2, x + sz / 2, y + sz / 2);
+  
+#ifdef __APPLE__  
+  /* Prevent ghosted eraser outlines from remaining on the screen in windowed mode */
+  update_screen(0, 0, WINDOW_WIDTH, WINDOW_HEIGHT);
+#endif
 }
 
 
