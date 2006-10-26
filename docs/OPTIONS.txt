@@ -1,5 +1,5 @@
                                    Tux Paint
-                                 version 0.9.16
+                                 version 0.9.17
 
                              Options Documentation
 
@@ -7,9 +7,9 @@
                                New Breed Software
 
                            bill@newbreedsoftware.com
-                   http://www.newbreedsoftware.com/tuxpaint/
+                            http://www.tuxpaint.org/
 
-                                October 11, 2006
+                                October 26, 2006
 
    --------------------------------------------------------------------------
 
@@ -899,8 +899,8 @@ Setting Your Environment's Locale
          /usr/share/tuxpaint/fonts/locale/ko.ttf
 
        You can download fonts for supported languages from Tux Paint's
-       website, http://www.newbreedsoftware.com/tuxpaint/. (Look in the
-       'Fonts' section under 'Download.')
+       website, http://www.tuxpaint.org/. (Look in the 'Fonts' section under
+       'Download.')
 
        Under Unix and Linux, you can use the Makefile that comes with the
        font to install the font in the appropriate location.

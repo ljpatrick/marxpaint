@@ -1,14 +1,14 @@
                                    Tux Paint
-                                 version 0.9.16
+                                 version 0.9.17
                               Extending Tux Paint
 
                 Copyright 2002-2006 by Bill Kendrick and others
                                New Breed Software
 
                            bill@newbreedsoftware.com
-                   http://www.newbreedsoftware.com/tuxpaint/
+                            http://www.tuxpaint.org/
 
-                       June 14, 2002 - September 28, 2006
+                        June 14, 2002 - October 26, 2006
 
    --------------------------------------------------------------------------
 
@@ -217,28 +217,39 @@ Stamps
        files. The one file that is required is, of course, the picture
        itself.
 
-       The Stamps used by Tux Paint are PNG pictures. They can be full-color
-       or greyscale. The alpha (transparency) of the PNG is used to determine
-       the actual shape of the picture (otherwise you'll stamp a large
-       rectangle on your drawings).
+       As of Tux Paint version 0.9.17, Stamps may be either PNG bitmap images
+       or SVG vector images. They can be full-color or greyscale. The alpha
+       (transparency) channel of PNGs is used to determine the actual shape
+       of the picture (otherwise you'll stamp a large rectangle on your
+       drawings).
 
-       The PNGs can be any size, but in practice, a 100 pixels wide by
-       100 pixels tall (100 x 100) is quite large for Tux Paint.
+       PNGs can be any size, and Tux Paint (by default) provides a set of
+       sizing buttons to let the user scale the stamp up (larger) and down
+       (smaller).
 
-       Note: If your new stamps all have solid rectangular-shaped outlines of
-       a solid color (e.g., white or black), it's because you forgot to use
-       alpha transparency! See the documentation file "PNG.txt" for more
+       SVGs are vector-based, and will be scaled appropriately for the canvas
+       being used in Tux Paint.
+
+       Note: If your new PNG stamps all have solid rectangular-shaped
+       outlines of a solid color (e.g., white or black), it's because you
+       forgot to use alpha transparency! See the documentation file "PNG.txt"
+       for more information and tips.
+
+       Note: If your new SVG stamps seem to have a lot of whitespace, make
+       sure the SVG 'document' is no larger than the shape(s) within. If they
+       are being clipped, make sure the 'document' is large enough to contain
+       the shape(s). See the documentation file "SVG.txt" for more
        information and tips.
 
        Advanced Users: The Advanced Stamps HOWTO describes, in detail, how to
-       make images which will scale perfectly when used as stamps in
+       make PNG images which will scale perfectly when used as stamps in
        Tux Paint.
 
    --------------------------------------------------------------------------
 
   Description Text
 
-       Text (".TXT") files with the same name as the PNG. (e.g.,
+       Text (".TXT") files with the same name as the PNG or SVG. (e.g.,
        "picture.png"'s description is stored in "picture.txt" in the same
        directory.)
 
@@ -274,16 +285,16 @@ Stamps
 
   Sound Effects
 
-       WAVE (".WAV") files with the same name as the PNG. (e.g.,
-       "picture.png"'s sound effect is the sound "picture.wav" in the same
-       directory.)
+       WAVE (".wav") or OGG Vorbis (".ogg") files with the same name as the
+       PNG or SVG. (e.g., "picture.svg"'s sound effect is the sound file
+       "picture.wav" in the same directory.)
 
     Language Support
 
          For sounds for different locales (e.g., if the sound is someone
          saying a word, and you want translated versions of the word said),
-         also create WAV files with the locale's label in the filename, in
-         the form: "STAMP_LOCALE.wav"
+         also create WAV or OGG files with the locale's label in the
+         filename, in the form: "STAMP_LOCALE.EXT"
 
          "picture.png"'s sound effect, when Tux Paint is run in Spanish mode,
          would be "picture_es.wav". In French mode, "picture_fr.wav". And so
@@ -291,6 +302,31 @@ Stamps
 
          If no localized sound effect can be loaded, Tux Paint will attempt
          to load the 'default' sound file. (e.g., "picture.wav")
+
+       Note: For descriptive sounds (not sound effects, like a bang or a bird
+       chirping), consider using the Descriptive Sounds, described below.
+
+   --------------------------------------------------------------------------
+
+  Descriptive Sound
+
+       WAVE (".wav") or OGG Vorbis (".ogg") files with the same name as the
+       PNG or SVG, followed by "_desc" (e.g., "picture.svg"'s descriptive
+       sound is the sound file "picture_desc.ogg" in the same directory.)
+
+    Language Support
+
+         For descriptions in different languages, also create WAV or OGG
+         files with both "_desc" and the locale's label in the filename, in
+         the form: "STAMP_desc_LOCALE.EXT"
+
+         "picture.png"'s descriptive sound, when Tux Paint is run in Spanish
+         mode, would be "picture_desc_es.wav". In French mode,
+         "picture_desc_fr.wav". And so on...
+
+         If no localized descriptive sound can be loaded, Tux Paint will
+         attempt to load the 'default' descriptive sound file. (e.g.,
+         "picture_desc.wav")
 
    --------------------------------------------------------------------------
 
@@ -302,9 +338,9 @@ Stamps
 
        A stamp data file is simply a text file containing the options.
 
-       The file has the same name as the PNG image, but a ".dat" extension.
-       (e.g., "picture.png"'s data file is the text file "picture.dat" in the
-       same directory.)
+       The file has the same name as the PNG or SVG image, but a ".dat"
+       extension. (e.g., "picture.png"'s data file is the text file
+       "picture.dat" in the same directory.)
 
     Colored Stamps
 

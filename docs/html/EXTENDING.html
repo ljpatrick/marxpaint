@@ -12,7 +12,7 @@ alt="Tux&nbsp;Paint"><br>
 
 version
 
-0.9.16
+0.9.17
 
 <br>
 Extending Tux Paint</h1>
@@ -21,9 +21,9 @@ Extending Tux Paint</h1>
 New Breed Software</p>
 
 <p><a href="mailto:bill@newbreedsoftware.com">bill@newbreedsoftware.com</a><br>
-<a href="http://www.newbreedsoftware.com/tuxpaint/">http://www.newbreedsoftware.com/tuxpaint/</a></p>
+<a href="http://www.tuxpaint.org/">http://www.tuxpaint.org/</a></p>
 
-<p>June 14, 2002 - September 28, 2006</p>
+<p>June 14, 2002 - October 26, 2006</p>
 </center>
 
 <hr size=2 noshade>
@@ -307,23 +307,34 @@ effect.</p>
 
     <img src="images/stamp_edit.png" width=128 height=147 alt="" align=right>
  
-    <p>The Stamps used by Tux&nbsp;Paint are PNG pictures.  They can be
-    full-color or greyscale.  The alpha (transparency) of the PNG is
-    used to determine the actual shape of the picture (otherwise you'll
-    stamp a large rectangle on your drawings).</p>
+    <p>As of Tux&nbsp;Paint version 0.9.17, Stamps may be either PNG
+    bitmap images or SVG vector images.  They can be full-color or greyscale.
+    The alpha (transparency) channel of PNGs is used to determine the actual
+    shape of the picture (otherwise you'll stamp a large rectangle on your
+    drawings).</p>
 
-    <p>The PNGs can be any size, but in practice, a 100&nbsp;pixels wide by
-    100&nbsp;pixels tall (100&nbsp;x&nbsp;100) is quite large for
-    Tux&nbsp;Paint.</p>
+    <p>PNGs can be any size, and Tux&nbsp;Paint (by default) provides
+    a set of sizing buttons to let the user scale the stamp up (larger)
+    and down (smaller).</p>
 
-    <p>Note: If your new stamps all have solid rectangular-shaped outlines
+    <p>SVGs are vector-based, and will be scaled appropriately for the
+    canvas being used in Tux&nbsp;Paint.</p>
+
+    <p>Note: If your new PNG stamps all have solid rectangular-shaped outlines
     of a solid color (e.g., white or black), it's because you forgot to use
     alpha transparency!  See the documentation file
     "<a href="../PNG.txt">PNG.txt</a>" for more information and tips.</p>
 
-    <p><b>Advanced Users:</b> The <a href="ADVANCED-STAMPS-HOWTO.html">Advanced
-    Stamps HOWTO</a> describes, in detail, how to make images which will
-    scale perfectly when used as stamps in Tux&nbsp;Paint.</p>
+    <p>Note: If your new SVG stamps seem to have a lot of whitespace,
+    make sure the SVG 'document' is no larger than the shape(s) within.
+    If they are being clipped, make sure the 'document' is large enough
+    to contain the shape(s).  See the documentation file
+    "<a href="../SVG.txt">SVG.txt</a>" for more information and tips.</p>
+
+    <p><b>Advanced Users:</b> The
+    <a href="ADVANCED-STAMPS-HOWTO.html">Advanced Stamps HOWTO</a> describes,
+    in detail, how to make PNG images which will scale perfectly when used as
+    stamps in Tux&nbsp;Paint.</p>
 
     <br clear=all>
   </blockquote>
@@ -332,7 +343,7 @@ effect.</p>
 
   <h3>Description Text</h3>
   <blockquote>
-    <p>Text (".TXT") files with the same name as the PNG.
+    <p>Text (".TXT") files with the same name as the PNG or SVG.
     (e.g., "<code>picture.png</code>"'s description is stored in
     "<code>picture.txt</code>" in the same directory.)</p>
     
@@ -372,17 +383,18 @@ effect.</p>
 
   <h3>Sound Effects</h3>
   <blockquote>
-    <p>WAVE (".WAV") files with the same name as the PNG.
-    (e.g., "<code>picture.png</code>"'s sound effect is the sound
+    <p>WAVE (".wav") or OGG Vorbis (".ogg")
+    files with the same name as the PNG or SVG.
+    (e.g., "<code>picture.svg</code>"'s sound effect is the sound file
     "<code>picture.wav</code>" in the same directory.)</p>
     
     <h4>Language Support</h4>
     <blockquote>
       <p>For sounds for different locales (e.g., if the sound is someone
       saying a word, and you want translated versions of the word said),
-      also create WAV files with the locale's label in the filename, in
-      the form: "<code><b>STAMP_LOCALE</b>.wav</code>"</p>
-      
+      also create WAV or OGG files with the locale's label in the filename, in
+      the form: "<code><b>STAMP_LOCALE.EXT</b></code>"</p>
+
       <p>"<code>picture.png</code>"'s sound effect, when Tux&nbsp;Paint is run
       in Spanish mode, would be "<code>picture_es.wav</code>".
       In French mode, "<code>picture_fr.wav</code>".  And so on...</p>
@@ -390,6 +402,37 @@ effect.</p>
       <p>If no localized sound effect can be loaded, Tux&nbsp;Paint will
       attempt to load the 'default' sound file.
       (e.g., "<code>picture.wav</code>")</p>
+    </blockquote>
+
+    <p>Note: For descriptive sounds (not sound effects, like a bang or
+    a bird chirping), consider using the Descriptive&nbsp;Sounds,
+    described below.</p>
+  </blockquote>
+
+  <hr size=1 noshade>
+
+  <h3>Descriptive Sound</h3>
+  <blockquote>
+    <p>WAVE (".wav") or OGG Vorbis (".ogg")
+    files with the same name as the PNG or SVG, followed by
+    "<code>_desc</code>" (e.g., "<code>picture.svg</code>"'s descriptive
+    sound is the sound file "<code>picture_desc.ogg</code>" in the same
+    directory.)</p>
+    
+    <h4>Language Support</h4>
+    <blockquote>
+      <p>For descriptions in different languages,
+      also create WAV or OGG files with both "<code>_desc</code>" and
+      the locale's label in the filename, in
+      the form: "<code><b>STAMP_desc_LOCALE.EXT</b></code>"</p>
+      
+      <p>"<code>picture.png</code>"'s descriptive sound, when Tux&nbsp;Paint
+      is run in Spanish mode, would be "<code>picture_desc_es.wav</code>".
+      In French mode, "<code>picture_desc_fr.wav</code>".  And so on...</p>
+
+      <p>If no localized descriptive sound can be loaded, Tux&nbsp;Paint will
+      attempt to load the 'default' descriptive sound file.
+      (e.g., "<code>picture_desc.wav</code>")</p>
     </blockquote>
   </blockquote>
 
@@ -403,9 +446,10 @@ effect.</p>
     
     <p>A stamp data file is simply a text file containing the options.</p>
     
-    <p>The file has the same name as the PNG image, but a "<code>.dat</code>"
-    extension.  (e.g., "<code>picture.png</code>"'s data file is the text
-    file "<code>picture.dat</code>" in the same directory.)</p>
+    <p>The file has the same name as the PNG or SVG image, but a
+    "<code>.dat</code>" extension.  (e.g., "<code>picture.png</code>"'s
+    data file is the text file "<code>picture.dat</code>" in the same
+    directory.)</p>
 
     <h4>Colored Stamps</h4>
     <blockquote>

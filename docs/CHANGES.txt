@@ -9,6 +9,25 @@ http://www.newbreedsoftware.com/tuxpaint/
 $Id$
 
 
+2006.October.26 (0.9.17)
+
+  * Tool Improvements:
+    ------------------
+    * Stamps now supports SVG vector-based graphics!  (Via Cairo library)
+      (Experimental; build with "make nosvg" to disable SVG support and
+      Cairo dependency.)
+
+  * Documentation Improvements:
+    ---------------------------
+    * Discussed SVG Stamps in "Extending Tux Paint."
+
+    * Created an "SVG.txt" document, covering SVG software.
+
+    * Mentioned descriptive sounds (e.g., "stamp_desc_ll.ogg") in "Extending..."
+
+    * Listing new www.tuxpaint.org website URL.
+
+
 2006.October.19 (0.9.16)
 
   * Interface improvements:

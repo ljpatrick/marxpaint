@@ -22,7 +22,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
   
-  June 14, 2002 - October 9, 2006
+  June 14, 2002 - October 26, 2006
   $Id$
 */
 
@@ -116,6 +116,9 @@ static unsigned draw_colors(unsigned action);
 /////////////////////////////////////////////////////////////////////
 // hide all scale-related values here
 
+// FIXME: Does this take into account taller-than-wide canvas sizes?
+// (e.g., 768x1024 on a tablet PC in 'portrait' configuration?)
+// -bjk 2006.10.26
 typedef struct scaleparams
 {
   unsigned numer, denom;
@@ -331,6 +334,19 @@ typedef struct safer_dirent
 #error "If you installed SDL_mixer from a package, be sure"
 #error "to get the development package, as well!"
 #error "(e.g., 'libsdl-mixer1.2-devel.rpm')"
+#error "---------------------------------------------------"
+#endif
+#endif
+
+#ifndef NOSVG
+#include "cairo.h"
+#include "svg.h"
+#include "svg-cairo.h"
+#if !defined(CAIRO_H) || !defined(SVG_H) || !defined(SVG_CAIRO_H)
+#error "---------------------------------------------------"
+#error "If you installed Cairo, libSVG or svg-cairo from packages, be sure"
+#error "to get the development package, as well!"
+#error "(e.g., 'libcairo2-dev.rpm')"
 #error "---------------------------------------------------"
 #endif
 #endif
@@ -958,7 +974,7 @@ static int stamp_tintable(int stamp)
 
 
 
-#define SHAPE_BRUSH_NAME "round_03.png"
+#define SHAPE_BRUSH_NAME "aa_round_03.png"
 static int num_brushes, num_brushes_max, shape_brush = 0;
 static SDL_Surface **img_brushes;
 static int * brushes_frames = NULL;
@@ -1222,6 +1238,15 @@ int paintsound(int size);
 #ifdef DEBUG
 static char *debug_gettext(const char *str);
 static int charsize(char c);
+#endif
+
+#ifndef NOSVG
+SDL_Surface * load_svg(char * file);
+SDL_Surface * myIMG_Load(char * file);
+float pick_best_scape(unsigned int orig_w, unsigned int orig_h,
+                      unsigned int max_w, unsigned int max_h);
+#else
+#define myIMG_Load IMG_Load
 #endif
 
 
@@ -5496,7 +5521,7 @@ static void set_active_stamp(void)
 {
   stamp_type *sd = stamp_data[cur_stamp];
   unsigned len = strlen(sd->stampname);
-  char *buf = alloca(len + strlen("_mirror.png") + 1);
+  char *buf = alloca(len + strlen("_mirror.EXT") + 1);
 
   if (active_stamp)
     SDL_FreeSurface(active_stamp);
@@ -5508,11 +5533,29 @@ static void set_active_stamp(void)
   {
     memcpy(buf + len, "_mirror.png", 12);
     active_stamp = do_loadimage(buf, 0);
+
+#ifndef NOSVG
+    if (active_stamp == NULL)
+    {
+      memcpy(buf + len, "_mirror.svg", 12);
+      active_stamp = do_loadimage(buf, 0);
+    }
+#endif
   }
+
   if (!active_stamp)
   {
     memcpy(buf + len, ".png", 5);
     active_stamp = do_loadimage(buf, 0);
+
+#ifndef NOSVG
+    if (active_stamp == NULL)
+    {
+      memcpy(buf + len, ".svg", 5);
+      active_stamp = do_loadimage(buf, 0);
+    }
+#endif
+
     if (!active_stamp)
       active_stamp = thumbnail(img_dead40x40, 40, 40, 1);	// copy it
     if (sd->mirrored)
@@ -5527,7 +5570,7 @@ static void get_stamp_thumb(stamp_type * sd)
 {
   SDL_Surface *bigimg = NULL;
   unsigned len = strlen(sd->stampname);
-  char *buf = alloca(len + strlen("_mirror.png") + 1);
+  char *buf = alloca(len + strlen("_mirror.EXT") + 1);
   SDL_Surface *wrongmirror = NULL;
   int need_mirror = 0;
   double ratio;
@@ -5591,6 +5634,15 @@ static void get_stamp_thumb(stamp_type * sd)
   {
     memcpy(buf + len, "_mirror.png", 12);
     bigimg = do_loadimage(buf, 0);
+
+#ifndef NOSVG
+    if (bigimg == NULL)
+    {
+      memcpy(buf + len, "_mirror.svg", 12);
+      bigimg = do_loadimage(buf, 0);
+    }
+#endif
+
     if (bigimg)
     {
       if (wrongmirror)
@@ -5615,6 +5667,15 @@ static void get_stamp_thumb(stamp_type * sd)
   {
     memcpy(buf + len, ".png", 5);
     bigimg = do_loadimage(buf, 0);
+
+#ifndef NOSVG
+    if (bigimg == NULL)
+    {
+      memcpy(buf + len, ".svg", 5);
+      bigimg = do_loadimage(buf, 0);
+    }
+#endif
+
     if (sd->mirrored)
       need_mirror = 1;		// want to mirror after scaling
   }
@@ -5661,13 +5722,26 @@ static void loadstamp_callback(SDL_Surface * screen,
   while (i--)
   {
     char fname[512];
-    char *dotpng = (char *) strcasestr(files[i].str, ".png");
+    const char *dotext, *ext, *mirror_ext;
+
+    ext = ".png";
+    mirror_ext = "_mirror.png";
+    dotext = (char *) strcasestr(files[i].str, ext);
+
+#ifndef NOSVG
+    if (dotext == NULL)
+    {
+      ext = ".svg";
+      mirror_ext = "_mirror.svg";
+      dotext = (char *) strcasestr(files[i].str, ext);
+    }
+#endif
 
     show_progress_bar(screen);
 
-    if (dotpng > files[i].str && !strcasecmp(dotpng, ".png")
-	&& (dotpng - files[i].str + 1 + dirlen < sizeof fname)
-	&& !strcasestr(files[i].str, "_mirror.png"))
+    if (dotext > files[i].str && !strcasecmp(dotext, ext)
+	&& (dotext - files[i].str + 1 + dirlen < sizeof fname)
+	&& !strcasestr(files[i].str, mirror_ext))
     {
       snprintf(fname, sizeof fname, "%s/%s", dir, files[i].str);
       if (num_stamps == max_stamps)
@@ -5677,10 +5751,10 @@ static void loadstamp_callback(SDL_Surface * screen,
       }
       stamp_data[num_stamps] = calloc(1, sizeof *stamp_data[num_stamps]);
       stamp_data[num_stamps]->stampname =
-	malloc(dotpng - files[i].str + 1 + dirlen + 1);
+	malloc(dotext - files[i].str + 1 + dirlen + 1);
       memcpy(stamp_data[num_stamps]->stampname, fname,
-	     dotpng - files[i].str + 1 + dirlen);
-      stamp_data[num_stamps]->stampname[dotpng - files[i].str + 1 + dirlen] =
+	     dotext - files[i].str + 1 + dirlen);
+      stamp_data[num_stamps]->stampname[dotext - files[i].str + 1 + dirlen] =
 	'\0';
       num_stamps++;
     }
@@ -7419,7 +7493,7 @@ static SDL_Surface *do_loadimage(const char *const fname, int abort_on_error)
 
   /* Load the image file: */
 
-  s = IMG_Load(fname);
+  s = myIMG_Load(fname);
   if (s == NULL)
   {
     if (abort_on_error)
@@ -9784,7 +9858,7 @@ static void strip_trailing_whitespace(char *buf)
 
 static char *loaddesc(const char *const fname, Uint8 * locale_text)
 {
-  char *txt_fname;
+  char *txt_fname, *extptr;
   char buf[256], def_buf[256];
   int found, got_first;
   FILE *fi;
@@ -9793,9 +9867,16 @@ static char *loaddesc(const char *const fname, Uint8 * locale_text)
   txt_fname = strdup(fname);
   *locale_text = 0;
 
-  if (strcasestr(txt_fname, ".png") != NULL)	// FIXME: isn't this always OK?
+  extptr = strcasestr(txt_fname, ".png");
+
+#ifndef NOSVG
+  if (extptr == NULL)
+    extptr = strcasestr(txt_fname, ".svg");
+#endif
+
+  if (extptr != NULL)
   {
-    strcpy((char *) strcasestr(txt_fname, ".png"), ".txt");
+    strcpy((char *) extptr, ".txt");
 
     fi = fopen(txt_fname, "r");
     free(txt_fname);
@@ -10173,6 +10254,16 @@ static void load_starter(char *img_id)
   snprintf(fname, sizeof(fname), "%s/%s.png", dirname, img_id);
   tmp_surf = IMG_Load(fname);
 
+#ifndef NOSVG
+  if (tmp_surf == NULL)
+  {
+    /* Try loading an SVG */
+
+    snprintf(fname, sizeof(fname), "%s/%s.svg", dirname, img_id);
+    tmp_surf = load_svg(fname);
+  }
+#endif
+
   if (tmp_surf != NULL)
   {
     img_starter = SDL_DisplayFormatAlpha(tmp_surf);
@@ -10210,6 +10301,15 @@ static void load_starter(char *img_id)
     snprintf(fname, sizeof(fname), "%s/%s-back.png", dirname, img_id);
     tmp_surf = IMG_Load(fname);
   }
+
+#ifndef NOSVG
+  /* (Failed? Try SVG next) */
+  if (tmp_surf == NULL)
+  {
+    snprintf(fname, sizeof(fname), "%s/%s-back.svg", dirname, img_id);
+    tmp_surf = load_svg(fname);
+  }
+#endif
 
   if (tmp_surf != NULL)
   {
@@ -12152,6 +12252,17 @@ void do_open(void)
 
                   img = IMG_Load(fname);
                 }
+
+#ifndef NOSVG
+                if (img == NULL)
+                {
+                  /* (Try SVG next) */
+                  snprintf(fname, sizeof(fname), "%s/%s-back.svg",
+                      dirname[d_places[num_files]], d_names[num_files]);
+
+                  img = load_svg(fname);
+                }
+#endif
               }
 
 
@@ -12166,7 +12277,7 @@ void do_open(void)
 #ifdef SAVE_AS_BMP
                 img = SDL_LoadBMP(fname);
 #else
-                img = IMG_Load(fname);
+                img = myIMG_Load(fname);
 #endif
               }
 
@@ -12885,7 +12996,7 @@ void do_open(void)
 #ifdef SAVE_AS_BMP
           img = SDL_LoadBMP(fname);
 #else
-          img = IMG_Load(fname);
+          img = myIMG_Load(fname);
 #endif
 
           if (img == NULL)
@@ -13226,7 +13337,7 @@ int do_slideshow(void)
 #ifdef SAVE_AS_BMP
 	    img = SDL_LoadBMP(fname);
 #else
-	    img = IMG_Load(fname);
+	    img = myIMG_Load(fname);
 #endif
 
 
@@ -13818,7 +13929,7 @@ void play_slideshow(int * selected, int num_selected, char * dirname,
 #ifdef SAVE_AS_BMP
       img = SDL_LoadBMP(fname);
 #else
-      img = IMG_Load(fname);
+      img = myIMG_Load(fname);
 #endif
 
       if (img != NULL)
@@ -15455,3 +15566,259 @@ int paintsound(int size)
   else
     return(SND_PAINT1 + (size / 12));
 }
+
+
+#ifndef NOSVG
+// Based on cairo-demo/sdl/main.c from Cairo (GPL'd, (c) 2004 Eric Windisch):
+SDL_Surface * load_svg(char * file)
+{
+  svg_cairo_t * scr;
+  int bpp, btpp, stride;
+  unsigned int width, height;
+  unsigned int rwidth, rheight;
+  float scale;
+  unsigned char * image;
+  cairo_surface_t * cairo_surface;
+  cairo_t * cr;
+  SDL_Surface * sdl_surface, * sdl_surface_tmp;
+  Uint32 rmask, gmask, bmask, amask;
+  svg_cairo_status_t res;
+
+
+#ifdef DEBUG
+  printf("Attempting to load \"%s\" as an SVG\n", file);
+#endif
+
+  // Create the SVG cairo stuff:
+  if (svg_cairo_create(&scr) != SVG_CAIRO_STATUS_SUCCESS)
+  {
+#ifdef DEBUG
+    printf("svg_cairo_create() failed\n");
+#endif
+    return(NULL);
+  }
+  
+  // Parse the SVG file:
+  if (svg_cairo_parse(scr, file) != SVG_CAIRO_STATUS_SUCCESS)
+  {
+    svg_cairo_destroy(scr);
+#ifdef DEBUG
+    printf("svg_cairo_parse(%s) failed\n", file);
+#endif
+    return(NULL);
+  }
+
+  // Get the natural size of the SVG
+  svg_cairo_get_size(scr, &rwidth, &rheight);
+#ifdef DEBUG
+  printf("svg_get_size(): %d x %d\n", rwidth, rheight);
+#endif
+  
+  if (rwidth == 0 || rheight == 0)
+  {
+    svg_cairo_destroy(scr);
+#ifdef DEBUG
+    printf("SVG %s had 0 width or height!\n", file);
+#endif
+    return(NULL);
+  }
+
+  // We will create a CAIRO_FORMAT_ARGB32 surface. We don't need to match
+  // the screen SDL format, but we are interested in the alpha bit...
+  bpp = 32;
+  btpp = 4;
+  
+  // We want to render at full Tux Paint canvas size, so that the stamp
+  // at its largest scale remains highest quality (no pixelization):
+  // (but not messing up the aspect ratio)
+
+  scale = pick_best_scape(rwidth, rheight, r_canvas.w, r_canvas.h);
+
+  width = ((float) rwidth * scale);
+  height = ((float) rheight * scale);
+
+#ifdef DEBUG
+  printf("scaling to %d x %d (%f scale)\n", width, height, scale);
+#endif
+
+  // scanline width
+  stride = width * btpp;
+
+  // Allocate space for an image:
+  image = calloc(stride * height, 1);
+
+#ifdef DEBUG
+  printf("calling cairo_image_surface_create_for_data(..., CAIRO_FORMAT_ARGB32, %d(w), %d(h), %d(stride))\n", width, height, stride);
+#endif
+
+  // Create the cairo surface with the adjusted width and height
+  cairo_surface = cairo_image_surface_create_for_data(image,
+                                                      CAIRO_FORMAT_ARGB32,
+                                                      width, height, stride);
+
+  cr = cairo_create(cairo_surface);
+  if (cr == NULL)
+  {
+    svg_cairo_destroy(scr);
+#ifdef DEBUG
+    printf("cairo_create() failed\n");
+#endif
+    return(NULL);
+  }
+
+  // Scale it (proportionally)
+  cairo_scale(cr, scale, scale);  // no return value :(
+
+  // Render SVG to our surface:
+  res = svg_cairo_render(scr, cr);
+
+  // Clean up:
+  cairo_surface_destroy(cairo_surface);
+  cairo_destroy(cr);
+  svg_cairo_destroy(scr);
+
+  if (res != SVG_CAIRO_STATUS_SUCCESS)
+  {
+#ifdef DEBUG
+    printf("svg_cairo_render() failed\n");
+#endif
+    return(NULL);
+  }
+
+
+  // Adjust the SDL surface to match the cairo surface created
+  // (surface mask of ARGB)  NOTE: Is this endian-agnostic? -bjk 2006.10.25
+  rmask = 0x00ff0000;
+  gmask = 0x0000ff00;
+  bmask = 0x000000ff;
+  amask = 0xff000000;
+
+  // Create the SDL surface using the pixel data stored:
+  sdl_surface_tmp = SDL_CreateRGBSurfaceFrom((void *) image, width, height,
+                                             bpp, stride, 
+                                             rmask, gmask, bmask, amask);
+
+  if (sdl_surface_tmp == NULL)
+  {
+#ifdef DEBUG
+    printf("SDL_CreateRGBSurfaceFrom() failed\n");
+#endif
+    return(NULL);
+  }
+
+
+  // Convert the SDL surface to the display format, for faster blitting:
+  sdl_surface = SDL_DisplayFormatAlpha(sdl_surface_tmp);
+  SDL_FreeSurface(sdl_surface_tmp);
+
+  if (sdl_surface == NULL)
+  {
+#ifdef DEBUG
+    printf("SDL_DisplayFormatAlpha() failed\n");
+#endif
+    return(NULL);
+  }
+
+#ifdef DEBUG
+  printf("SDL surface from %d x %d SVG is %d x %d\n",
+	  rwidth, rheight, sdl_surface->w, sdl_surface->h);
+#endif
+
+  return(sdl_surface);
+}
+
+
+// Load an image; call load_svg() (above, to call Cairo and SVG-Cairo funcs)
+// if we notice it's an SVG file,
+// otherwise call SDL_Image lib's IMG_Load() (for PNGs, JPEGs, BMPs, etc.)
+SDL_Surface * myIMG_Load(char * file)
+{
+  if (strlen(file) > 4 && strcasecmp(file + strlen(file) - 4, ".svg") == 0)
+    return(load_svg(file));
+  else
+    return(IMG_Load(file));
+}
+
+float pick_best_scape(unsigned int orig_w, unsigned int orig_h,
+                      unsigned int max_w, unsigned int max_h)
+{
+  float aspect, scale, wscale, hscale;
+
+  aspect = (float) orig_w / (float) orig_h;
+
+#ifdef DEBUG
+  printf("trying to fit %d x %d (aspect: %.4f) into %d x %d\n",
+         orig_w, orig_h, aspect, max_w, max_h);
+#endif
+
+  wscale = (float) max_w / (float) orig_w;
+  hscale = (float) max_h / (float) orig_h;
+
+#ifdef DEBUG
+  printf("max_w / orig_w = wscale: %.4f\n", wscale);
+  printf("max_h / orig_h = hscale: %.4f\n", hscale);
+  printf("\n");
+#endif
+
+  if (aspect >= 1)
+  {
+    // Image is wider-than-tall (or square)
+
+    scale = wscale;
+
+#ifdef DEBUG
+    printf("Wider-than-tall.  Using wscale.\n");
+    printf("new size would be: %d x %d\n",
+           (int) ((float) orig_w * scale),
+           (int) ((float) orig_h * scale));
+#endif
+
+    if ((float) orig_h * scale > (float) max_h)
+    {
+      scale = hscale;
+
+#ifdef DEBUG
+      printf("Too tall!  Using hscale!\n");
+      printf("new size would be: %d x %d\n",
+             (int) ((float) orig_w * scale),
+             (int) ((float) orig_h * scale));
+#endif
+    }
+  }
+  else
+  {
+    // Taller-than-wide
+
+    scale = hscale;
+    
+#ifdef DEBUG
+    printf("Taller-than-wide.  Using hscale.\n");
+    printf("new size would be: %d x %d\n",
+           (int) ((float) orig_w * scale),
+           (int) ((float) orig_h * scale));
+#endif
+
+    if ((float) orig_w * scale > (float) max_w)
+    {
+      scale = wscale;
+    
+#ifdef DEBUG
+      printf("Too wide!  Using wscale!\n");
+      printf("new size would be: %d x %d\n",
+             (int) ((float) orig_w * scale),
+             (int) ((float) orig_h * scale));
+#endif
+    }
+  }
+
+
+#ifdef DEBUG
+  printf("\n");
+  printf("Final scale: %.4f\n", scale);
+#endif
+
+  return(scale);
+}
+
+#endif
+

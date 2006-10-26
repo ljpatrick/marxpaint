@@ -1,5 +1,5 @@
                                    Tux Paint
-                                 version 0.9.16
+                                 version 0.9.17
 
                      A simple drawing program for children
 
@@ -7,9 +7,9 @@
                                New Breed Software
 
                            bill@newbreedsoftware.com
-                   http://www.newbreedsoftware.com/tuxpaint/
+                            http://www.tuxpaint.org/
 
-                       June 14, 2002 - September 9, 2006
+                        June 14, 2002 - October 26, 2006
 
    --------------------------------------------------------------------------
 
@@ -785,7 +785,9 @@ Doing it Manually
          Detailed instructions on command-line and configuration-file
          options, for those who don't want to use Tux Paint Config.
        * PNG.txt
-         Notes on creating PNG format images for use in Tux Paint
+         Notes on creating PNG format bitmapped images for use in Tux Paint
+       * SVG.txt
+         Notes on creating SVG format vector images for use in Tux Paint
 
    --------------------------------------------------------------------------
 
@@ -798,4 +800,4 @@ Doing it Manually
      You may also wish to participate in the numerous Tux Paint mailing
      lists:
 
-       http://www.newbreedsoftware.com/tuxpaint/lists/
+       http://www.tuxpaint.org/lists/

@@ -7,12 +7,12 @@
 # bill@newbreedsoftware.com
 # http://www.newbreedsoftware.com/tuxpaint/
 
-# June 14, 2002 - October 13, 2006
+# June 14, 2002 - October 26, 2006
 
 
 # The version number, for release:
 
-VER_VERSION=0.9.16
+VER_VERSION=0.9.17
 VER_DATE=`date +"%Y-%m-%d"`
 
 
@@ -78,6 +78,11 @@ LOCALE_PREFIX=$(PKG_ROOT)$(PREFIX)/share/locale
 NOSOUNDFLAG=__SOUND
 
 
+# Built with SVG support (via Cairo) by default  (override with "make nosvg")
+
+NOSVGFLAG=__SVG
+
+
 # Where to find cursor shape XBMs
 
 MOUSEDIR=mouse
@@ -91,7 +96,9 @@ CURSOR_SHAPES=LARGE
 
 SDL_LIBS=$(shell sdl-config --libs) -lSDL_image -lSDL_ttf $(SDL_MIXER_LIB)
 SDL_MIXER_LIB=-lSDL_mixer
-SDL_CFLAGS=$(shell sdl-config --cflags)
+SDL_CFLAGS=$(shell sdl-config --cflags) $(SVG_CFLAGS)
+SVG_LIB=-lcairo -lsvg -lsvg-cairo
+SVG_CFLAGS=-I/usr/include/cairo
 
 
 # The entire set of CFLAGS:
@@ -105,7 +112,7 @@ CFLAGS=-O2 -W -Wall -fno-common -ffloat-store \
 	`src/test-option.sh -Wdeclaration-after-statement`
 
 DEFS=-DDATA_PREFIX=\"$(DATA_PREFIX)/\" \
-	-D$(NOSOUNDFLAG) -DDOC_PREFIX=\"$(DOC_PREFIX)/\" \
+	-D$(NOSOUNDFLAG) -D$(NOSVGFLAG) -DDOC_PREFIX=\"$(DOC_PREFIX)/\" \
 	-DLOCALEDIR=\"$(LOCALE_PREFIX)/\" -DCONFDIR=\"$(CONFDIR)/\" \
 	-DVER_VERSION=\"$(VER_VERSION)\" \
 	-DVER_DATE=\"$(VER_DATE)\"
@@ -159,14 +166,22 @@ release: releasedir
 	    tar -czvf tuxpaint-$(VER_VERSION).tar.gz tuxpaint-$(VER_VERSION)
 
 
-# "make nosound" builds the program with sound disabled, and man page,
-# from sources:
+# "make nosound" builds the program with sound disabled:
 
 nosound:
 	@echo
 	@echo "Building with sound DISABLED"
 	@echo
 	make SDL_MIXER_LIB= NOSOUNDFLAG=NOSOUND
+
+
+# "make nosvg" builds the program with SVG (Cairo) support disabled:
+
+nosvg:
+	@echo
+	@echo "Building with SVG DISABLED"
+	@echo
+	make SVG_LIB= SVG_CFLAGS= NOSVGFLAG=NOSVG
 
 
 # "make beos" builds the program for BeOS
@@ -1034,6 +1049,7 @@ tuxpaint:	obj/tuxpaint.o obj/i18n.o obj/cursor.o obj/pixels.o \
 		$^ \
 		$(HQXX_O) \
 		$(SDL_LIBS) \
+		$(SVG_LIB) \
 		-lm $(ARCH_LINKS)
 	@$(RSRC_CMD)
 	@$(MIMESET_CMD)

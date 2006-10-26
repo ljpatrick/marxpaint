@@ -1,20 +1,20 @@
                                    Tux Paint
-                                 version 0.9.16
-                              Advanced Stamps HOWTO
+                                 version 0.9.17
+                             Advanced Stamps HOWTO
 
            Copyright 2006 by Albert Cahalan for the Tux Paint project
                                New Breed Software
 
                               albert@users.sf.net
-                   http://www.newbreedsoftware .com/tuxpaint/
+                            http://www.tuxpaint.org/
 
-                         March 8, 2006 - March 8, 2006
+                        March 8, 2006 - October 26, 2006
 
 About this HOWTO
 
-     This HOWTO assumes that you want to make an excellent Tux Paint stamp
-     from a JPEG image. There are easier and faster methods that produce
-     lower quality.
+     This HOWTO assumes that you want to make an excellent Tux Paint stamp,
+     in PNG bitmapped format, from a JPEG image (e.g., a digital photograph).
+     There are easier and faster methods that produce lower quality.
 
      This HOWTO assumes you are dealing with normal opaque objects. Dealing
      with semi-transparent objects (fire, moving fan blade, kid's baloon) or

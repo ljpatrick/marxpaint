@@ -1,14 +1,14 @@
                                    Tux Paint
-                                 version 0.9.16
+                                 version 0.9.17
                            Frequently Asked Questions
 
                 Copyright 2002-2006 by Bill Kendrick and others
                                New Breed Software
 
                            bill@newbreedsoftware.com
-                   http://www.newbreedsoftware.com/tuxpaint/
+                            http://www.tuxpaint.org/
 
-                       September 14, 2002 - March 8, 2006
+                     September 14, 2002 - October 26, 2006
 
 Drawing-related
 
@@ -168,7 +168,7 @@ Interface Problems
                  The appropriate fonts for such locales can be downloaded
                  from the Tux Paint website:
 
-                   http://www.newbreedsoftware.com/tuxpaint/download/fonts/
+                   http://www.tuxpaint,org/download/fonts/
 
 Printing
 
@@ -571,4 +571,4 @@ Help / Contact
 
    Or post to our 'tuxpaint-users' mailing list:
 
-     http://www.newbreedsoftware.com/tuxpaint/lists/
+     http://www.tuxpaint.org/lists/
