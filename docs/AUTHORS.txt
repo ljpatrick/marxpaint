@@ -7,7 +7,7 @@ bill@newbreedsoftware.com
 http://www.tuxpaint.org/
 
 
-June 17, 2002 - October 18, 2006
+June 17, 2002 - November 1, 2006
 
 $Id$
 
@@ -29,6 +29,9 @@ $Id$
   brick magic tools, improved stamp tinter, and other fixes by:
   Albert Cahalan <albert@users.sf.net>
 
+  Bilinear interpolation code based on an example by Christian Graus
+  ( http://www.codeproject.com/cs/media/imageprocessing4.asp ).
+
 
 * Graphics
 
@@ -44,6 +47,7 @@ $Id$
 
   * Brushes created using The GIMP
     http://www.gimp.org/
+
 
 * Starter Images
 

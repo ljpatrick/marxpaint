@@ -9,13 +9,18 @@ http://www.newbreedsoftware.com/tuxpaint/
 $Id$
 
 
-2006.October.26 (0.9.17)
+2006.November.2 (0.9.17)
 
   * Tool Improvements:
     ------------------
     * Stamps now supports SVG vector-based graphics!  (Via Cairo library)
       (Experimental; build with "make nosvg" to disable SVG support and
       Cairo dependency.)
+
+    * Bilinear interpolation (smoothing) is done to small bitmap (PNG)
+      stamps when they are scaled up.
+      (Based on example code by Christian Graus:
+      http://www.codeproject.com/cs/media/imageprocessing4.asp )
 
   * Documentation Improvements:
     ---------------------------

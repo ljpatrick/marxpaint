@@ -176,7 +176,9 @@ static scaleparams scaletable[] = {
 #define CURSOR_BLINK_SPEED 500	/* Initial repeat speed for cursor */
 
 
+#ifndef _GNU_SOURCE
 #define _GNU_SOURCE		/* for strcasestr() */
+#endif
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -851,6 +853,10 @@ static SDL_Surface *thumbnail(SDL_Surface * src, int max_x, int max_y,
 			      int keep_aspect);
 static SDL_Surface *thumbnail2(SDL_Surface * src, int max_x, int max_y,
 			       int keep_aspect, int keep_alpha);
+
+#ifndef NO_BILINEAR
+static SDL_Surface *zoom(SDL_Surface * src, int new_x, int new_y);
+#endif
 
 
 
@@ -7493,7 +7499,7 @@ static SDL_Surface *do_loadimage(const char *const fname, int abort_on_error)
 
   /* Load the image file: */
 
-  s = myIMG_Load(fname);
+  s = myIMG_Load((char *) fname);
   if (s == NULL)
   {
     if (abort_on_error)
@@ -8556,7 +8562,7 @@ static SDL_Surface *thumbnail2(SDL_Surface * src, int max_x, int max_y,
   int x, y;
   float src_x, src_y, off_x, off_y;
   SDL_Surface *s;
-  Uint32 amask, tr, tg, tb, ta;
+  Uint32 tr, tg, tb, ta;
   Uint8 r, g, b, a;
   float xscale, yscale;
   int tmp;
@@ -8596,12 +8602,16 @@ static SDL_Surface *thumbnail2(SDL_Surface * src, int max_x, int max_y,
   }
 
 
+#ifndef NO_BILINEAR
+  if (max_x > src->w && max_y > src->h)
+    return(zoom(src, max_x, max_y));
+#endif
+
+
   /* Create surface for thumbnail: */
 
-  amask = ~(src->format->Rmask | src->format->Gmask | src->format->Bmask);
-
   s = SDL_CreateRGBSurface(src->flags,	/* SDL_SWSURFACE, */
-			   max_x, max_y, src->format->BitsPerPixel, src->format->Rmask, src->format->Gmask, src->format->Bmask, src->format->Amask);	/* amask); */
+			   max_x, max_y, src->format->BitsPerPixel, src->format->Rmask, src->format->Gmask, src->format->Bmask, src->format->Amask);
 
 
   if (s == NULL)
@@ -8693,6 +8703,115 @@ static SDL_Surface *thumbnail2(SDL_Surface * src, int max_x, int max_y,
   return s;
 }
 
+
+#ifndef NO_BILINEAR
+
+/* Based on code from: http://www.codeproject.com/cs/media/imageprocessing4.asp
+   copyright 2002 Christian Graus */
+
+static SDL_Surface *zoom(SDL_Surface * src, int new_w, int new_h)
+{
+  SDL_Surface * s;
+  void (*putpixel) (SDL_Surface *, int, int, Uint32);
+  Uint32(*getpixel) (SDL_Surface *, int, int) =
+    getpixels[src->format->BytesPerPixel];
+  float xscale, yscale;
+  int x, y;
+  float floor_x, ceil_x, floor_y, ceil_y, fraction_x, fraction_y,
+    one_minus_x, one_minus_y;
+  float n1, n2;
+  float r1, g1, b1, a1;
+  float r2, g2, b2, a2;
+  float r3, g3, b3, a3;
+  float r4, g4, b4, a4;
+  Uint8 r, g, b, a;
+
+
+  /* Create surface for zoom: */
+
+  s = SDL_CreateRGBSurface(src->flags,	/* SDL_SWSURFACE, */
+			   new_w, new_h, src->format->BitsPerPixel,
+                           src->format->Rmask,
+                           src->format->Gmask,
+                           src->format->Bmask,
+                           src->format->Amask);
+
+
+  if (s == NULL)
+  {
+    fprintf(stderr, "\nError: Can't build zoom surface\n"
+	    "The Simple DirectMedia Layer error that occurred was:\n"
+	    "%s\n\n", SDL_GetError());
+
+    cleanup();
+    exit(1);
+  }
+
+  putpixel = putpixels[s->format->BytesPerPixel];
+
+
+  SDL_LockSurface(src);
+  SDL_LockSurface(s);
+
+  xscale = (float) src->w / (float) new_w;
+  yscale = (float) src->h / (float) new_h;
+
+  for (x = 0; x < new_w; x++)
+  {
+    for (y = 0; y < new_h; y++)
+    {
+      floor_x = floor((float) x * xscale);
+      ceil_x = floor_x + 1;
+      if (ceil_x >= src->w)
+        ceil_x = floor_x;
+
+      floor_y = floor((float) y * yscale);
+      ceil_y = floor_y + 1;
+      if (ceil_y >= src->h)
+        ceil_y = floor_y;
+
+      fraction_x = x * xscale - floor_x;
+      fraction_y = y * yscale - floor_y;
+
+      one_minus_x = 1.0 - fraction_x;
+      one_minus_y = 1.0 - fraction_y;
+
+      SDL_GetRGBA(getpixel(src, floor_x, floor_y), src->format,
+                  &r1, &g1, &b1, &a1);
+      SDL_GetRGBA(getpixel(src, ceil_x,  floor_y), src->format,
+                  &r2, &g2, &b2, &a2);
+      SDL_GetRGBA(getpixel(src, floor_x, ceil_y),  src->format,
+                  &r3, &g3, &b3, &a3);
+      SDL_GetRGBA(getpixel(src, ceil_x,  ceil_y),  src->format,
+                  &r4, &g4, &b4, &a4);
+
+      n1 = (one_minus_x * r1 + fraction_x * r2);
+      n2 = (one_minus_x * r3 + fraction_x * r4);
+      r = (one_minus_y * n1 + fraction_y * n2);
+
+      n1 = (one_minus_x * g1 + fraction_x * g2);
+      n2 = (one_minus_x * g3 + fraction_x * g4);
+      g = (one_minus_y * n1 + fraction_y * n2);
+
+      n1 = (one_minus_x * b1 + fraction_x * b2);
+      n2 = (one_minus_x * b3 + fraction_x * b4);
+      b = (one_minus_y * n1 + fraction_y * n2);
+
+      n1 = (one_minus_x * a1 + fraction_x * a2);
+      n2 = (one_minus_x * a3 + fraction_x * a4);
+      a = (one_minus_y * n1 + fraction_y * n2);
+
+      putpixel(s, x, y, SDL_MapRGBA(s->format, r, g, b, a));
+    }
+  }
+
+  SDL_UnlockSurface(s);
+  SDL_UnlockSurface(src);
+
+  return s;
+
+}
+#endif
 
 
 // XOR must show up on black, white, 0x7f grey, and 0x80 grey.
