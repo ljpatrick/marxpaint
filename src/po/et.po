@@ -411,19 +411,19 @@ msgid "Do you really want to quit?"
 msgstr "Kas sa tõesti tahad väljuda?"
 
 msgid "Yes, I'm done!"
-msgstr ""
+msgstr "Jah, ma olen lõpetanud!"
 
 msgid "No, take me back!"
-msgstr ""
+msgstr "Ei, vii mind tagasi!"
 
 msgid "If you quit, you’ll lose your picture! Save it?"
 msgstr "Kui sa praegu väljud, kaotad sa oma pildi ära! Kas salvestame?"
 
 msgid "Yes, save it!"
-msgstr ""
+msgstr "Jah, salvesta!"
 
 msgid "No, don't bother saving!"
-msgstr ""
+msgstr "Ei, ma ei soovi seda pilti salvestada!"
 
 msgid "Save your picture first?"
 msgstr "Salvestame selle pildi enne ära?"
@@ -444,7 +444,7 @@ msgstr "Kas kustutame selle pildi?"
 #. #define PROMPT_NEW_YES gettext_noop("That’s OK!")
 #. #define PROMPT_NEW_NO gettext_noop("Never mind!")
 msgid "Yes, let's start fresh!"
-msgstr ""
+msgstr "Jah, teeme lehe puhtaks!"
 
 msgid "There are no saved files!"
 msgstr "Salvestatud pilte ei ole!"
@@ -453,7 +453,7 @@ msgid "Print your picture now?"
 msgstr "Kas trükkida sinu pilt välja?"
 
 msgid "Yes, print it!"
-msgstr ""
+msgstr "Jah, prindi!"
 
 msgid "Your picture has been printed!"
 msgstr "Sinu pilt on välja trükitud!"
@@ -465,22 +465,22 @@ msgid "Erase this picture?"
 msgstr "Kas kustutame selle pildi?"
 
 msgid "Yes, erase it!"
-msgstr ""
+msgstr "Jah, kustuta!"
 
 msgid "No, don't erase it!"
-msgstr ""
+msgstr "Ei, ära kustuta!"
 
 msgid "Remember to use the left mouse button!"
 msgstr "Ära unusta kasutamast vasakut hiire nuppu!"
 
 msgid "Please wait..."
-msgstr ""
+msgstr "Palun oota..."
 
 msgid "Erase"
 msgstr "Kustuta"
 
 msgid "Slides"
-msgstr ""
+msgstr "Slaidid"
 
 msgid "Back"
 msgstr "Tagasi"
@@ -490,7 +490,7 @@ msgid "Next"
 msgstr "Tekst"
 
 msgid "Play"
-msgstr ""
+msgstr "Esita"
 
 msgid "Aa"
 msgstr ""
@@ -505,10 +505,10 @@ msgstr "Ei"
 #. FIXME: Move elsewhere!!!
 #. #define PROMPT_SAVE_OVER_TXT gettext_noop("Save over the older version of this picture?")
 msgid "Replace the picture with your changes?"
-msgstr ""
+msgstr "Asenda pilt koos tehtud muudatustega?"
 
 msgid "Yes, replace the old one!"
-msgstr ""
+msgstr "Jah, vaheta vana pilt välja!"
 
 #, fuzzy
 msgid "No, save a new file!"
