@@ -1,15 +1,15 @@
 # Tux Paint basque messages
 # Tux Painten mezuak, euskarara itzuliak
 # Copyright (C) 2002
-# Juan Irigoien <juanirigoien@yahoo.es>, 2003.
+# Juan Irigoien <juanirigoien@gmail.com>, 2003.
 msgid ""
 msgstr ""
 "Project-Id-Version: TuxPaint \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2006-09-10 11:18-0700\n"
-"PO-Revision-Date: 2004-07-14 16:30+0200\n"
-"Last-Translator: Juan Irigoien <juanirigoien@yahoo.es>\n"
-"Language-Team: basque <juanirigoien@yahoo.es>\n"
+"PO-Revision-Date: 2006-11-30 16:30+0200\n"
+"Last-Translator: Juan Irigoien <juanirigoien@gmail.com>\n"
+"Language-Team: basque <juanirigoien@gmail.com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -18,10 +18,10 @@ msgid "Black!"
 msgstr "Beltza!"
 
 msgid "Dark grey! Some people spell it “dark gray”."
-msgstr ""
+msgstr "Gris iluna!"
 
 msgid "Light grey! Some people spell it “light gray”."
-msgstr ""
+msgstr "Gris argia!"
 
 msgid "White!"
 msgstr "Zuria!"
@@ -36,23 +36,22 @@ msgid "Yellow!"
 msgstr "Horia!"
 
 msgid "Light green!"
-msgstr ""
+msgstr "Berde argia"
 
-#, fuzzy
 msgid "Dark green!"
-msgstr "Grisa!"
+msgstr "Berde iluna!"
 
 msgid "Sky blue!"
-msgstr ""
+msgstr "Gris-urdin bitartekoa"
 
 msgid "Blue!"
 msgstr "Urdina!"
 
 msgid "Lavender!"
-msgstr ""
+msgstr "More argia"
 
 msgid "Purple!"
-msgstr "Purpura!"
+msgstr "Morea!"
 
 msgid "Pink!"
 msgstr "Arrosa!"
@@ -60,12 +59,11 @@ msgstr "Arrosa!"
 msgid "Brown!"
 msgstr "Marroia!"
 
-#, fuzzy
 msgid "Tan!"
-msgstr "Zyan kolorea!"
+msgstr "Marroi argia!"
 
 msgid "Beige!"
-msgstr ""
+msgstr "Beisa!"
 
 #. First, the blacklist. We list font families that can crash Tux Paint
 #. via bugs in the SDL_ttf library. We also test fonts to be sure that
@@ -79,44 +77,44 @@ msgstr ""
 #. ASCII-only fonts should be given bad scores in the scoring code below.
 #. (the best scores going to fonts that support both)
 msgid "qx"
-msgstr ""
+msgstr "qx"
 
 msgid "QX"
-msgstr ""
+msgstr "QX"
 
 #. Line X
 msgid "qy"
-msgstr ""
+msgstr "qy"
 
 msgid "QY"
-msgstr ""
+msgstr "QY"
 
 #. Now we score fonts to ensure that the best ones will be placed at
 #. the top of the list. The user will see them first. This sorting is
 #. especially important for users who have scroll buttons disabled.
 #. Translators should do whatever is needed to put crummy fonts last.
 msgid "oO"
-msgstr ""
+msgstr "oO"
 
 #. distinct uppercase and lowercase
 msgid "`\\%_@$~#{}<>^&*"
-msgstr ""
+msgstr "`\\%_@$~#{}<>^&*"
 
 #. uncommon punctuation
 msgid ",.?!"
-msgstr ""
+msgstr ",.?!"
 
 #. common punctuation
 msgid "017"
-msgstr ""
+msgstr "017"
 
 #. digits
 msgid "O0"
-msgstr ""
+msgstr "O0"
 
 #. distinct circle-like characters
 msgid "1Il|"
-msgstr ""
+msgstr "1Il|"
 
 msgid "Great!"
 msgstr "Zu bai, zu!"
@@ -133,13 +131,11 @@ msgstr "Zein ondo ari zaren!"
 msgid "Fill"
 msgstr "Bete"
 
-#, fuzzy
 msgid "Grass"
-msgstr "Ezabatu"
+msgstr "Belarra"
 
-#, fuzzy
 msgid "Bricks"
-msgstr "Laukitxoak"
+msgstr "Adreiluak"
 
 msgid "Rainbow"
 msgstr "Ostadarra"
@@ -151,13 +147,13 @@ msgid "Blur"
 msgstr "Desenfokatu"
 
 msgid "Smudge"
-msgstr ""
+msgstr "Zirriborrotu"
 
 msgid "Lighten"
-msgstr ""
+msgstr "Argitu"
 
 msgid "Darken"
-msgstr ""
+msgstr "Ilundu"
 
 msgid "Chalk"
 msgstr "Klariona"
@@ -168,15 +164,14 @@ msgstr "Laukitxoak"
 msgid "Negative"
 msgstr "Negatiboa"
 
-#, fuzzy
 msgid "Tint"
-msgstr "Mehetu"
+msgstr "Tindatu"
 
 msgid "Drip"
 msgstr "Busti"
 
 msgid "Cartoon"
-msgstr ""
+msgstr "Cartoon"
 
 msgid "Mirror"
 msgstr "Islatu"
@@ -187,17 +182,14 @@ msgstr "Irauli"
 msgid "Click in the picture to fill that area with color."
 msgstr "Klik egin irudian eremu bat kolorez betetzeko."
 
-#, fuzzy
 msgid "Click and move to draw grass. Don’t forget the dirt!"
-msgstr "Egin klik eta mugi ezazu sagua txinpartak marrazteko."
+msgstr "Egin klik eta mugi ezazu belarra marrazteko."
 
-#, fuzzy
 msgid "Click and move to draw large bricks."
-msgstr "Egin klik eta mugi ezazu sagua txinpartak marrazteko."
+msgstr "Egin klik eta mugi ezazu adreilu handiak marrazteko."
 
-#, fuzzy
 msgid "Click and move to draw small bricks."
-msgstr "Egin klik eta mugi ezazu sagua txinpartak marrazteko."
+msgstr "Egin klik eta mugi ezazu adreilu txikiak marrazteko."
 
 msgid "You can draw in rainbow colors!"
 msgstr "Marraz ezazu ostadarraren koloreekin!"
@@ -208,16 +200,14 @@ msgstr "Egin klik eta mugi ezazu sagua txinpartak marrazteko."
 msgid "Click and move the mouse around to blur the picture."
 msgstr "Klik egin eta mugi ezazu sagua irudia desenfokatzeko."
 
-#, fuzzy
 msgid "Click and move the mouse around to smudge the picture."
-msgstr "Klik egin eta mugi ezazu sagua irudia desenfokatzeko."
+msgstr "Klik egin eta mugi ezazu sagua irudia zirriborratzeko."
 
 msgid "Click and move to fade the colors."
 msgstr "Klik egin eta mugi ezazu sagua koloreak pixkanaka desagertarazteko."
 
-#, fuzzy
 msgid "Click and move to darken the colors."
-msgstr "Klik egin eta mugi ezazu sagua koloreak pixkanaka desagertarazteko."
+msgstr "Klik egin eta mugi ezazu sagua koloreak iluntzeko."
 
 msgid ""
 "Click and move the mouse around to turn the picture into a chalk drawing."
@@ -231,18 +221,15 @@ msgstr "Klik egin eta mugi ezazu sagua irudia laukitxotan marrazteko."
 msgid "Click and move the mouse around to draw a negative."
 msgstr "Klik egin eta mugi ezazu sagua irudiaren negatiboa marrazteko."
 
-#, fuzzy
 msgid "Click and move the mouse around to change the picture’s color."
-msgstr "Klik egin eta mugi ezazu sagua irudia laukitxotan marrazteko."
+msgstr "Klik egin eta mugi ezazu sagua irudiaren kolorea aldatzeko"
 
 msgid "Click and move the mouse around to make the picture drip."
 msgstr "Klik egin eta mugi ezazu sagua irudiari busti itxura emateko!"
 
-#, fuzzy
 msgid "Click and move the mouse around to turn the picture into a cartoon."
 msgstr ""
-"Klik egin eta mugi ezazu sagua irudia klarionez eginda balego bezala "
-"marrazteko."
+"Klik egin eta mugi ezazu sagua irudia biñeta bihurtzeko."
 
 msgid "Click to make a mirror image."
 msgstr "Egin klik irudiaren isla sortzeko!"
@@ -257,10 +244,10 @@ msgid "Rectangle"
 msgstr "Lauki Zuzena"
 
 msgid "Circle"
-msgstr "Biribila"
+msgstr "Zirkulua"
 
 msgid "Ellipse"
-msgstr ""
+msgstr "Elipsea"
 
 msgid "Triangle"
 msgstr "Hirukia"
@@ -269,22 +256,20 @@ msgid "Pentagon"
 msgstr "Pentagonoa"
 
 msgid "Rhombus"
-msgstr ""
+msgstr "Erronboa"
 
-#, fuzzy
 msgid "A square is a rectangle with four equal sides."
-msgstr "Lauki zuzenak lau alde ditu."
+msgstr "Laukiaren lau ertzek luzera berdina daukate"
 
-#, fuzzy
 msgid "A rectangle has four sides and four right angles."
-msgstr "Lauki zuzenak lau alde ditu."
+msgstr "Lauki zuzenak lau alde eta lau angelu zuzen ditu."
 
 msgid ""
 "A circle is a curve where all points have the same distance from the centre."
-msgstr ""
+msgstr "Zirkuluaren puntu guztiek distatzia berdina daukate erdiraino."
 
 msgid "An ellipse is a stretched circle."
-msgstr ""
+msgstr "Elipsea zirkulu zapaldua da"
 
 msgid "A triangle has three sides."
 msgstr "Hirukiak hiru alde ditu."
@@ -293,7 +278,7 @@ msgid "A pentagon has five sides."
 msgstr "Pentagonoak bost alde ditu."
 
 msgid "A rhombus has four equal sides, and opposite sides are parallel."
-msgstr ""
+msgstr "Erronboaren lau ertzak berdinak dira, eta aurrez aurre dauden alderdiak paraleloak dira"
 
 msgid "Tools"
 msgstr "Tresnak"
@@ -304,9 +289,8 @@ msgstr "Koloreak"
 msgid "Brushes"
 msgstr "Pintzelak"
 
-#, fuzzy
 msgid "Erasers"
-msgstr "Ezabatzailea"
+msgstr "Ezabatu"
 
 msgid "Stamps"
 msgstr "Zigiluak"
@@ -339,7 +323,7 @@ msgid "Redo"
 msgstr "Berregin"
 
 msgid "Eraser"
-msgstr "Ezabatzailea"
+msgstr "Ezabatu"
 
 msgid "New"
 msgstr "Berria"
@@ -370,8 +354,8 @@ msgid ""
 "Pick a shape. Click to pick the center, drag, then let go when it is the "
 "size you want. Move around to rotate it, and click to draw it."
 msgstr ""
-"Aukeratu eskuman irudia. Egin klik erdia markatzeko, jaregin, eta, nahi "
-"duzun tamainua duenean, askatu. Mugitu inguruan biratzeko eta klikatu "
+"Aukeratu eskuman irudia. Egin klik erdia markatzeko, arrastatu, eta, nahi "
+"duzun tamainua duenean, askatu. Mugitu biratzeko eta klikatu "
 "marrazteko."
 
 msgid "Choose a style of text. Click on your drawing and you can start typing."
@@ -430,19 +414,19 @@ msgid "Do you really want to quit?"
 msgstr "Irten nahi al duzu, benetan?"
 
 msgid "Yes, I'm done!"
-msgstr ""
+msgstr "Bai, amaitu dut!"
 
 msgid "No, take me back!"
-msgstr ""
+msgstr "Ez, itzul gaitezen lehengora!"
 
 msgid "If you quit, you’ll lose your picture! Save it?"
 msgstr "Irtenez gero, galdu egingo duzu irudia! Gorde nahi al duzu?"
 
 msgid "Yes, save it!"
-msgstr ""
+msgstr "Bai, gorde!"
 
 msgid "No, don't bother saving!"
-msgstr ""
+msgstr "Ez, ez gorde!"
 
 msgid "Save your picture first?"
 msgstr "Gorde nahi al duzu irudia lehenbizi?"
@@ -456,14 +440,13 @@ msgstr "OK"
 #. This will be replaced with a dialog allowing color choice and Starter
 #. picking, with a "Back" option to dismiss the "New" and return to
 #. the current picture.  But for now...  (bjk 2006.02.19)
-#, fuzzy
 msgid "Start a new picture?"
-msgstr "Irudi hau ezabatu?"
+msgstr "Irudi berria hasi?"
 
 #. #define PROMPT_NEW_YES gettext_noop("That’s OK!")
 #. #define PROMPT_NEW_NO gettext_noop("Never mind!")
 msgid "Yes, let's start fresh!"
-msgstr ""
+msgstr "Bai, prest hasteko!"
 
 msgid "There are no saved files!"
 msgstr "Ez dago gordetako artxiborik!"
@@ -472,7 +455,7 @@ msgid "Print your picture now?"
 msgstr "Oraintxe inprimatu nahi duzu irudua?"
 
 msgid "Yes, print it!"
-msgstr ""
+msgstr "Bai, inprimatu!"
 
 msgid "Your picture has been printed!"
 msgstr "Zure irudia inprimatua izan da!"
@@ -484,35 +467,34 @@ msgid "Erase this picture?"
 msgstr "Irudi hau ezabatu?"
 
 msgid "Yes, erase it!"
-msgstr ""
+msgstr "Bai, ezabatu!"
 
 msgid "No, don't erase it!"
-msgstr ""
+msgstr "Ez, ez ezabatu"
 
 msgid "Remember to use the left mouse button!"
-msgstr ""
+msgstr "Gogora ezazu saguaren ezkerreko botoia erabiltzea!"
 
 msgid "Please wait..."
-msgstr ""
+msgstr "Itxaron, mesedez..."
 
 msgid "Erase"
 msgstr "Ezabatu"
 
 msgid "Slides"
-msgstr ""
+msgstr "Filminak"
 
 msgid "Back"
 msgstr "Atzera"
 
-#, fuzzy
 msgid "Next"
-msgstr "Testua"
+msgstr "Hurrengoa"
 
 msgid "Play"
-msgstr ""
+msgstr "Hasi"
 
 msgid "Aa"
-msgstr ""
+msgstr "Aa"
 
 #. FIXME: Move elsewhere! Or not?!
 msgid "Yes"
@@ -524,12 +506,11 @@ msgstr "Ez"
 #. FIXME: Move elsewhere!!!
 #. #define PROMPT_SAVE_OVER_TXT gettext_noop("Save over the older version of this picture?")
 msgid "Replace the picture with your changes?"
-msgstr ""
+msgstr "Zure aldaketekin irudia ordeztu?"
 
 msgid "Yes, replace the old one!"
-msgstr ""
+msgstr "Bai, zaharra ordeztu!"
 
-#, fuzzy
 msgid "No, save a new file!"
 msgstr "Ez, artxibo berria gorde"
 
@@ -538,10 +519,9 @@ msgstr ""
 "Aukera ezazu ireki nahi duzun irudia. Ondoren klik egin ‘Ireki’ botoian"
 
 #. Let user choose images:
-#, fuzzy
 msgid "Choose the pictures you want, then click “Play”."
 msgstr ""
-"Aukera ezazu ireki nahi duzun irudia. Ondoren klik egin ‘Ireki’ botoian"
+"Aukera ezazu ireki nahi duzun irudia. Ondoren klik egin ‘Hasi’ botoian"
 
 msgid "A drawing program for children."
 msgstr "Umeentzako marrazketa programa"

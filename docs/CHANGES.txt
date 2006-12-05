@@ -9,7 +9,7 @@ http://www.newbreedsoftware.com/tuxpaint/
 $Id$
 
 
-2006.November.2 (0.9.17)
+2006.December.5 (0.9.17)
 
   * Tool Improvements:
     ------------------
@@ -31,6 +31,11 @@ $Id$
     * Mentioned descriptive sounds (e.g., "stamp_desc_ll.ogg") in "Extending..."
 
     * Listing new www.tuxpaint.org website URL.
+
+  * Translation Updates:
+    --------------------
+    * Basque
+      Juan Irigoien <juanirigoien@gmail.com>
 
 
 2006.October.19 (0.9.16)
