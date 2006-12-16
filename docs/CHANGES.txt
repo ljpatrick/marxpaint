@@ -9,7 +9,7 @@ http://www.newbreedsoftware.com/tuxpaint/
 $Id$
 
 
-2006.December.5 (0.9.17)
+2006.December.16 (0.9.17)
 
   * Tool Improvements:
     ------------------
@@ -36,6 +36,9 @@ $Id$
     --------------------
     * Basque
       Juan Irigoien <juanirigoien@gmail.com>
+
+    * Lithuanian
+      Gintaras Gostautas <gintaras@nes.lt>
 
 
 2006.October.19 (0.9.16)

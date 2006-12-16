@@ -22,10 +22,10 @@ msgid "Black!"
 msgstr "Juoda!"
 
 msgid "Dark grey! Some people spell it “dark gray”."
-msgstr ""
+msgstr "Tamsiai pilka! Kai kurie žmonės ją vadina “tamsiai pilka”."
 
 msgid "Light grey! Some people spell it “light gray”."
-msgstr ""
+msgstr "Šviesiai pilka! Kai kurie žmonės ją vadina “šviesiai pilka”."
 
 msgid "White!"
 msgstr "Balta!"
@@ -40,20 +40,19 @@ msgid "Yellow!"
 msgstr "Geltona!"
 
 msgid "Light green!"
-msgstr ""
+msgstr "Šviesiai žalia!"
 
-#, fuzzy
 msgid "Dark green!"
-msgstr "Pilka!"
+msgstr "Tamsiai žalia!"
 
 msgid "Sky blue!"
-msgstr ""
+msgstr "Dangaus žydrumo!"
 
 msgid "Blue!"
 msgstr "Mėlyna!"
 
 msgid "Lavender!"
-msgstr ""
+msgstr "Lavandos!"
 
 msgid "Purple!"
 msgstr "Violetinė!"
@@ -64,12 +63,11 @@ msgstr "Rožinė!"
 msgid "Brown!"
 msgstr "Ruda!"
 
-#, fuzzy
 msgid "Tan!"
-msgstr "Žydra!"
+msgstr "Gelsvai ruda!"
 
 msgid "Beige!"
-msgstr ""
+msgstr "Smėlio!"
 
 #. First, the blacklist. We list font families that can crash Tux Paint
 #. via bugs in the SDL_ttf library. We also test fonts to be sure that
@@ -83,44 +81,44 @@ msgstr ""
 #. ASCII-only fonts should be given bad scores in the scoring code below.
 #. (the best scores going to fonts that support both)
 msgid "qx"
-msgstr ""
+msgstr "qx"
 
 msgid "QX"
-msgstr ""
+msgstr "QX"
 
 #. Line X
 msgid "qy"
-msgstr ""
+msgstr "qy"
 
 msgid "QY"
-msgstr ""
+msgstr "QY"
 
 #. Now we score fonts to ensure that the best ones will be placed at
 #. the top of the list. The user will see them first. This sorting is
 #. especially important for users who have scroll buttons disabled.
 #. Translators should do whatever is needed to put crummy fonts last.
 msgid "oO"
-msgstr ""
+msgstr "oO"
 
 #. distinct uppercase and lowercase
 msgid "`\\%_@$~#{}<>^&*"
-msgstr ""
+msgstr "`\\%_@$~#{}<>^&*"
 
 #. uncommon punctuation
 msgid ",.?!"
-msgstr ""
+msgstr ",.?!"
 
 #. common punctuation
 msgid "017"
-msgstr ""
+msgstr "017"
 
 #. digits
 msgid "O0"
-msgstr ""
+msgstr "O0"
 
 #. distinct circle-like characters
 msgid "1Il|"
-msgstr ""
+msgstr "1Il|"
 
 msgid "Great!"
 msgstr "Puiku!"
@@ -137,13 +135,11 @@ msgstr "Šauniai padirbėta!"
 msgid "Fill"
 msgstr "Užpildymas"
 
-#, fuzzy
 msgid "Grass"
-msgstr "Ištrinti"
+msgstr "Žolė"
 
-#, fuzzy
 msgid "Bricks"
-msgstr "Kaladėlės"
+msgstr "Plytos"
 
 msgid "Rainbow"
 msgstr "Vaivorykštė"
@@ -152,16 +148,16 @@ msgid "Sparkles"
 msgstr "Žybsniai"
 
 msgid "Blur"
-msgstr "Suliejimas"
+msgstr "Sulieti"
 
 msgid "Smudge"
-msgstr ""
+msgstr "Sutepti"
 
 msgid "Lighten"
-msgstr ""
+msgstr "Šviesinti"
 
 msgid "Darken"
-msgstr ""
+msgstr "Tamsinti"
 
 msgid "Chalk"
 msgstr "Kreida"
@@ -172,9 +168,8 @@ msgstr "Kaladėlės"
 msgid "Negative"
 msgstr "Negatyvas"
 
-#, fuzzy
 msgid "Tint"
-msgstr "Ploninimas"
+msgstr "Spalvinti"
 
 msgid "Drip"
 msgstr "Varveklis"
@@ -191,17 +186,14 @@ msgstr "Apversti"
 msgid "Click in the picture to fill that area with color."
 msgstr "Spustelėkite piešinyje, norėdami tą plotą nuspalvinti."
 
-#, fuzzy
 msgid "Click and move to draw grass. Don’t forget the dirt!"
-msgstr "Spustelėkite ir pieškite žybsnius."
+msgstr "Spustelėkite ir pieškite žolę. Nepamirškite žemių!"
 
-#, fuzzy
 msgid "Click and move to draw large bricks."
-msgstr "Spustelėkite ir pieškite žybsnius."
+msgstr "Spustelėkite ir pieškite dideles plytas."
 
-#, fuzzy
 msgid "Click and move to draw small bricks."
-msgstr "Spustelėkite ir pieškite žybsnius."
+msgstr "Spustelėkite ir pieškite mažas plytas."
 
 msgid "You can draw in rainbow colors!"
 msgstr "Jūs galite piešti vaivorykštės spalvomis!"
@@ -212,16 +204,14 @@ msgstr "Spustelėkite ir pieškite žybsnius."
 msgid "Click and move the mouse around to blur the picture."
 msgstr "Spustelėkite ir judindami pelę suliesite piešinį."
 
-#, fuzzy
 msgid "Click and move the mouse around to smudge the picture."
-msgstr "Spustelėkite ir judindami pelę suliesite piešinį."
+msgstr "Spustelėkite ir judindami pelę sutepsite piešinį."
 
 msgid "Click and move to fade the colors."
 msgstr "Spustelėkite ir judindami pelę išblukinkite piešinio spalvas."
 
-#, fuzzy
 msgid "Click and move to darken the colors."
-msgstr "Spustelėkite ir judindami pelę išblukinkite piešinio spalvas."
+msgstr "Spustelėkite ir judindami pelę patamsinkite piešinio spalvas."
 
 msgid ""
 "Click and move the mouse around to turn the picture into a chalk drawing."
@@ -233,16 +223,14 @@ msgstr "Spustelėkite ir judindami pelę išskaidysite piešinį kvadratėliais.
 msgid "Click and move the mouse around to draw a negative."
 msgstr "Spustelėkite ir judindami pelę invertuosite paveikslėlio spalvas."
 
-#, fuzzy
 msgid "Click and move the mouse around to change the picture’s color."
-msgstr "Spustelėkite ir judindami pelę išskaidysite piešinį kvadratėliais."
+msgstr "Spustelėkite ir judindami pelę pakeisite piešinio spalvas."
 
 msgid "Click and move the mouse around to make the picture drip."
 msgstr "Spustelėkite ir pele žymėkite aplink, kad piešinys nuvarvėtų."
 
-#, fuzzy
 msgid "Click and move the mouse around to turn the picture into a cartoon."
-msgstr "Spustelėkite ir judinkite pelę ir piešinys taps panašus į kreida"
+msgstr "Spustelėkite ir judinkite pelę kol piešinys taps panašus į karikatūrą."
 
 msgid "Click to make a mirror image."
 msgstr "Spustelėkite ir gausite veidrodinį atspindį."
@@ -260,7 +248,7 @@ msgid "Circle"
 msgstr "Apskritimas"
 
 msgid "Ellipse"
-msgstr ""
+msgstr "Elipsė"
 
 msgid "Triangle"
 msgstr "Trikampis"
@@ -269,19 +257,17 @@ msgid "Pentagon"
 msgstr "Penkiakampis"
 
 msgid "Rhombus"
-msgstr ""
+msgstr "Rombas"
 
-#, fuzzy
 msgid "A square is a rectangle with four equal sides."
-msgstr "Stačiakampis turi keturias kraštines."
+msgstr "Kvadratas yra stačiakampis, kurio visos kraštinės yra lygios."
 
-#, fuzzy
 msgid "A rectangle has four sides and four right angles."
-msgstr "Stačiakampis turi keturias kraštines."
+msgstr "Stačiakampis turi keturias kraštines ir keturis lygius kampus."
 
 msgid ""
 "A circle is a curve where all points have the same distance from the centre."
-msgstr ""
+msgstr "Apskritimas yra kreivė, kurios visi taškai nuo centro yra nutolę lygiu atstumu."
 
 msgid "An ellipse is a stretched circle."
 msgstr ""
@@ -293,7 +279,7 @@ msgid "A pentagon has five sides."
 msgstr "Penkiakampis turi penkias kraštines."
 
 msgid "A rhombus has four equal sides, and opposite sides are parallel."
-msgstr ""
+msgstr "Rombas turi keturias lygias kraštines, o viena prieš kitą esančios kraštinės yra lygiagrečios."
 
 msgid "Tools"
 msgstr "Įrankiai"
@@ -304,12 +290,11 @@ msgstr "Spalvos"
 msgid "Brushes"
 msgstr "Teptukai"
 
-#, fuzzy
 msgid "Erasers"
-msgstr "Trintukas"
+msgstr "Trintukai"
 
 msgid "Stamps"
-msgstr "Štampai"
+msgstr "Atspaudai"
 
 msgid "Shapes"
 msgstr "Formos"
@@ -318,13 +303,13 @@ msgid "Letters"
 msgstr "Raidės"
 
 msgid "Magic"
-msgstr "Stebuklai"
+msgstr "Magija"
 
 msgid "Paint"
 msgstr "Tapyti"
 
 msgid "Stamp"
-msgstr "Štampas"
+msgstr "Atspaudas"
 
 msgid "Lines"
 msgstr "Linijos"
@@ -430,19 +415,19 @@ msgid "Do you really want to quit?"
 msgstr "Ar tikrai norite išeiti?"
 
 msgid "Yes, I'm done!"
-msgstr ""
+msgstr "Taip, aš baigiau!"
 
 msgid "No, take me back!"
-msgstr ""
+msgstr "Ne, grąžinkite mane atgal!"
 
 msgid "If you quit, you’ll lose your picture! Save it?"
 msgstr "Jeigu išeisite, prarasite savo piešinį! Ar išsaugoti jį?"
 
 msgid "Yes, save it!"
-msgstr ""
+msgstr "Taip, išsaugoti!"
 
 msgid "No, don't bother saving!"
-msgstr ""
+msgstr "Ne, nereikia!"
 
 msgid "Save your picture first?"
 msgstr "Ar prieš tai išsaugoti jūsų piešinį?"
@@ -456,14 +441,14 @@ msgstr "Gerai"
 #. This will be replaced with a dialog allowing color choice and Starter
 #. picking, with a "Back" option to dismiss the "New" and return to
 #. the current picture.  But for now...  (bjk 2006.02.19)
-#, fuzzy
+
 msgid "Start a new picture?"
-msgstr "Ar ištrinti šį piešinį?"
+msgstr "Ar pradėsite naują piešinį?"
 
 #. #define PROMPT_NEW_YES gettext_noop("That’s OK!")
 #. #define PROMPT_NEW_NO gettext_noop("Never mind!")
 msgid "Yes, let's start fresh!"
-msgstr ""
+msgstr "Taip, pradėkim iš naujo!"
 
 msgid "There are no saved files!"
 msgstr "Nėra išsaugotų bylų!"
@@ -472,7 +457,7 @@ msgid "Print your picture now?"
 msgstr "Ar spausdinti jūsų piešinį dabar?"
 
 msgid "Yes, print it!"
-msgstr ""
+msgstr "Taip, atspaudinti!"
 
 msgid "Your picture has been printed!"
 msgstr "Jūsų piešinys buvo atspausdintas!"
@@ -484,35 +469,34 @@ msgid "Erase this picture?"
 msgstr "Ar ištrinti šį piešinį?"
 
 msgid "Yes, erase it!"
-msgstr ""
+msgstr "Taip, ištrinti!"
 
 msgid "No, don't erase it!"
-msgstr ""
+msgstr "Ne, neištrinti!"
 
 msgid "Remember to use the left mouse button!"
-msgstr ""
+msgstr "Nepamirškite naudoti kairiojo pelės klavišo!"
 
 msgid "Please wait..."
-msgstr ""
+msgstr "Palaukite..."
 
 msgid "Erase"
 msgstr "Ištrinti"
 
 msgid "Slides"
-msgstr ""
+msgstr "Skaidrės"
 
 msgid "Back"
 msgstr "Grįžti atgal"
 
-#, fuzzy
 msgid "Next"
-msgstr "Tekstas"
+msgstr "Toliau"
 
 msgid "Play"
-msgstr ""
+msgstr "Pradėti"
 
 msgid "Aa"
-msgstr ""
+msgstr "Aa"
 
 #. FIXME: Move elsewhere! Or not?!
 msgid "Yes"
@@ -524,22 +508,20 @@ msgstr "Ne"
 #. FIXME: Move elsewhere!!!
 #. #define PROMPT_SAVE_OVER_TXT gettext_noop("Save over the older version of this picture?")
 msgid "Replace the picture with your changes?"
-msgstr ""
+msgstr "Ar perrašyti paveikslėlį su Jūsų pakeitimais?"
 
 msgid "Yes, replace the old one!"
-msgstr ""
+msgstr "Taip, perrašykim senąjį!"
 
-#, fuzzy
 msgid "No, save a new file!"
-msgstr "Ne, išsaugoti į naują bylą"
+msgstr "Ne, išsaugokim į naują bylą!"
 
 msgid "Choose the picture you want, then click “Open”."
 msgstr "Išsirinkite norimą piešinį, po to Spustelėkite 'Open'."
 
 #. Let user choose images:
-#, fuzzy
 msgid "Choose the pictures you want, then click “Play”."
-msgstr "Išsirinkite norimą piešinį, po to Spustelėkite 'Open'."
+msgstr "Išsirinkite norimus paveikslėlius, po to Spustelėkite “Pradėti”."
 
 msgid "A drawing program for children."
 msgstr "Piešimo programa vaikams."
