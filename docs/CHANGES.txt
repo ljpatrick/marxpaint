@@ -32,6 +32,9 @@ $Id$
 
     * Listing new www.tuxpaint.org website URL.
 
+    * Expanded MinGW/MSYS GCC compilation instructions for building Win32.
+
+
   * Translation Updates:
     --------------------
     * Basque
