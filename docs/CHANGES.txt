@@ -9,7 +9,7 @@ http://www.newbreedsoftware.com/tuxpaint/
 $Id$
 
 
-2006.December.16 (0.9.17)
+2006.December.21 (0.9.17)
 
   * Tool Improvements:
     ------------------
