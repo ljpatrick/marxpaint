@@ -9,7 +9,7 @@ http://www.newbreedsoftware.com/tuxpaint/
 $Id$
 
 
-2006.December.21 (0.9.17)
+2007.January.3 (0.9.17)
 
   * Tool Improvements:
     ------------------
@@ -34,6 +34,9 @@ $Id$
 
     * Expanded MinGW/MSYS GCC compilation instructions for building Win32.
 
+  * Bug Fixes:
+    ----------
+    * Tux the Penguin sound effects were not working; fixed.
 
   * Translation Updates:
     --------------------

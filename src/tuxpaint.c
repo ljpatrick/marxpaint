@@ -22,7 +22,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
   
-  June 14, 2002 - October 26, 2006
+  June 14, 2002 - January 3, 2007
   $Id$
 */
 
@@ -1742,7 +1742,7 @@ static void mainloop(void)
 
 	  hide_blinking_cursor();
 	  if (do_prompt_snd(PROMPT_NEW_TXT,
-			    PROMPT_NEW_YES, PROMPT_NEW_NO, SND_PROMPT))
+			    PROMPT_NEW_YES, PROMPT_NEW_NO, SND_AREYOUSURE))
 	  {
 	    free_surface(&img_starter);
 	    free_surface(&img_starter_bkgd);
@@ -2132,7 +2132,7 @@ static void mainloop(void)
 	    else if (cur_tool == TOOL_NEW)
 	    {
 	      if (do_prompt_snd(PROMPT_NEW_TXT,
-				PROMPT_NEW_YES, PROMPT_NEW_NO, SND_PROMPT))
+				PROMPT_NEW_YES, PROMPT_NEW_NO, SND_AREYOUSURE))
 	      {
 		free_surface(&img_starter);
 		free_surface(&img_starter_bkgd);
@@ -2189,7 +2189,7 @@ static void mainloop(void)
 		if (do_prompt_image_snd(PROMPT_PRINT_NOW_TXT,
 					PROMPT_PRINT_NOW_YES,
 					PROMPT_PRINT_NOW_NO,
-					img_printer, NULL, NULL, SND_PROMPT))
+					img_printer, NULL, NULL, SND_AREYOUSURE))
 		{
 		  do_print();
 
@@ -10679,7 +10679,6 @@ static int do_prompt_image_flash_snd(const char *const text,
   /* Draw button box: */
 
   playsound(screen, 0, SND_PROMPT, 1, SNDPOS_CENTER, SNDDIST_NEAR);
-  playsound(screen, 1, snd, 1, SNDPOS_LEFT, SNDDIST_NEAR);
 
   for (w = 0; w <= 96; w = w + 4)
   {
@@ -10693,6 +10692,7 @@ static int do_prompt_image_flash_snd(const char *const text,
     SDL_Delay(10);
   }
 
+  playsound(screen, 1, snd, 1, SNDPOS_LEFT, SNDDIST_NEAR);
 
 #ifndef NO_PROMPT_SHADOWS
   alpha_surf = SDL_CreateRGBSurface(SDL_SWSURFACE | SDL_SRCALPHA,
@@ -11600,7 +11600,7 @@ static int do_save(void)
       if (do_prompt_image_snd(PROMPT_SAVE_OVER_TXT,
 			      PROMPT_SAVE_OVER_YES,
 			      PROMPT_SAVE_OVER_NO,
-			      img_save_over, NULL, NULL, SND_PROMPT) == 0)
+			      img_save_over, NULL, NULL, SND_AREYOUSURE) == 0)
       {
 	/* No - Let's save a new picture! */
 
@@ -12063,7 +12063,7 @@ static int do_quit(void)
   int done;
 
   done = do_prompt_snd(PROMPT_QUIT_TXT,
-		       PROMPT_QUIT_YES, PROMPT_QUIT_NO, SND_PROMPT);
+		       PROMPT_QUIT_YES, PROMPT_QUIT_NO, SND_AREYOUSURE);
 
   if (done && !been_saved && !disable_save)
   {
@@ -12974,7 +12974,7 @@ void do_open(void)
           if (do_prompt_image_snd(PROMPT_ERASE_TXT,
                 PROMPT_ERASE_YES, PROMPT_ERASE_NO,
                 thumbs[which],
-                img_popup_arrow, img_trash, SND_PROMPT))
+                img_popup_arrow, img_trash, SND_AREYOUSURE))
           {
             snprintf(fname, sizeof(fname), "saved/%s%s",
                 d_names[which], d_exts[which]);
@@ -13100,7 +13100,7 @@ void do_open(void)
                   PROMPT_OPEN_SAVE_YES,
                   PROMPT_OPEN_SAVE_NO,
                   img_tools[TOOL_SAVE], NULL, NULL,
-                  SND_PROMPT))
+                  SND_AREYOUSURE))
             {
               do_save();
             }
