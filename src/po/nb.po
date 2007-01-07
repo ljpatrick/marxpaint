@@ -1,7 +1,7 @@
 # Translation of nb to Norwegian Nynorsk
 # Dag H. Lorås <dag.loraas@operamail.com>, 2003.
 # Knut Erik Hollund <khollund@responze.net>, 2003.
-# Karl Ove Hufthammer <karl@huftis.org>, 2003, 2005, 2006.
+# Karl Ove Hufthammer <karl@huftis.org>, 2003, 2005, 2006, 2007.
 # Klaus Ade Johnstad <klaus@skolelinux.no>, 2004.
 # translation of nb.po to
 # Omsetjing av Tux Paint til bokmål.
@@ -9,14 +9,14 @@ msgid ""
 msgstr ""
 "Project-Id-Version: nb\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-09-10 11:18-0700\n"
-"PO-Revision-Date: 2006-02-25 09:41+0100\n"
+"POT-Creation-Date: 2007-01-07 15:01+0100\n"
+"PO-Revision-Date: 2007-01-07 15:03+0100\n"
 "Last-Translator: Karl Ove Hufthammer <karl@huftis.org>\n"
 "Language-Team: Norwegian Nynorsk <i18n-nn@lister.ping.uio.no>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: KBabel 1.11.1\n"
+"X-Generator: KBabel 1.11.4\n"
 "Plural-Forms:  nplurals=2; plural=(n != 1);\n"
 
 msgid "Black!"
@@ -214,10 +214,8 @@ msgstr "Hold inne knappen og flytt rundt for å bleke fargene."
 msgid "Click and move to darken the colors."
 msgstr "Hold inne knappen og flytt rundt for å gjøre fargene mørkere."
 
-msgid ""
-"Click and move the mouse around to turn the picture into a chalk drawing."
-msgstr ""
-"Hold inne knappen og flytt rundt for å gjøre tegningen om til en krittegning."
+msgid "Click and move the mouse around to turn the picture into a chalk drawing."
+msgstr "Hold inne knappen og flytt rundt for å gjøre tegningen om til en krittegning."
 
 msgid "Click and move the mouse around to make the picture blocky."
 msgstr "Hold inne knappen og flytt rundt for å gjøre tegningen «blokkete»."
@@ -269,8 +267,7 @@ msgstr "Et kvadrat er et rektangel med fire like sider."
 msgid "A rectangle has four sides and four right angles."
 msgstr "Et rektangel har fire sider og fire rette vinkler."
 
-msgid ""
-"A circle is a curve where all points have the same distance from the centre."
+msgid "A circle is a curve where all points have the same distance from the centre."
 msgstr "En sirkel er en kurve der alle punktene er like langt fra sentrum."
 
 msgid "An ellipse is a stretched circle."
@@ -485,17 +482,16 @@ msgid "Erase"
 msgstr "Slett"
 
 msgid "Slides"
-msgstr ""
+msgstr "Lysbilder"
 
 msgid "Back"
 msgstr "Tilbake"
 
-#, fuzzy
 msgid "Next"
-msgstr "Tekst"
+msgstr "Neste"
 
 msgid "Play"
-msgstr ""
+msgstr "Kjør"
 
 msgid "Aa"
 msgstr "Aa"
@@ -522,9 +518,8 @@ msgid "Choose the picture you want, then click “Open”."
 msgstr "Velg en tegning og trykk «Åpne»."
 
 #. Let user choose images:
-#, fuzzy
 msgid "Choose the pictures you want, then click “Play”."
-msgstr "Velg en tegning og trykk «Åpne»."
+msgstr "Vel tegningene du vil ha, og trykk sjå på «Kjør»."
 
 msgid "A drawing program for children."
 msgstr "Et tegneprogram for de yngste."
@@ -552,3 +547,4 @@ msgstr "Tux Paint"
 
 #~ msgid "Save over the older version of this picture?"
 #~ msgstr "Vil du lagre over den gamle versjonen av tegningen?"
+

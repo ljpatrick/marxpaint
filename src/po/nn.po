@@ -1,19 +1,19 @@
 # Translation of nn to Norwegian Nynorsk
-# Karl Ove Hufthammer <karl@huftis.org>, 2003-2004, 2005, 2006.
+# Karl Ove Hufthammer <karl@huftis.org>, 2003-2004, 2005, 2006, 2007.
 # Omsetjing av Tux Paint til nynorsk.
 # Copyright © 2004 Karl Ove Hufthammer.
 msgid ""
 msgstr ""
 "Project-Id-Version: nn\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-09-10 11:18-0700\n"
-"PO-Revision-Date: 2006-02-25 09:41+0100\n"
+"POT-Creation-Date: 2007-01-07 15:01+0100\n"
+"PO-Revision-Date: 2007-01-07 15:02+0100\n"
 "Last-Translator: Karl Ove Hufthammer <karl@huftis.org>\n"
 "Language-Team: Norwegian Nynorsk <i18n-nn@lister.ping.uio.no>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: KBabel 1.11.1\n"
+"X-Generator: KBabel 1.11.4\n"
 "Plural-Forms:  nplurals=2; plural=(n != 1);\n"
 
 msgid "Black!"
@@ -211,8 +211,7 @@ msgstr "Hald inne knappen og flytt rundt for å gjera fargane lysare."
 msgid "Click and move to darken the colors."
 msgstr "Hald inne knappen og flytt rundt for å gjera fargane mørkare."
 
-msgid ""
-"Click and move the mouse around to turn the picture into a chalk drawing."
+msgid "Click and move the mouse around to turn the picture into a chalk drawing."
 msgstr ""
 "Hald inne knappen og flytt rundt for å gjera teikninga om til ei "
 "kritteikning."
@@ -267,8 +266,7 @@ msgstr "Eit kvadrat er eit rektangel med fire like sider."
 msgid "A rectangle has four sides and four right angles."
 msgstr "Eit rektangel har fire sider og fire rette vinklar."
 
-msgid ""
-"A circle is a curve where all points have the same distance from the centre."
+msgid "A circle is a curve where all points have the same distance from the centre."
 msgstr "Ein sirkel er ei kurve der alle punkta er like langt frå sentrum."
 
 msgid "An ellipse is a stretched circle."
@@ -483,17 +481,16 @@ msgid "Erase"
 msgstr "Slett"
 
 msgid "Slides"
-msgstr ""
+msgstr "Lysbilete"
 
 msgid "Back"
 msgstr "Tilbake"
 
-#, fuzzy
 msgid "Next"
-msgstr "Tekst"
+msgstr "Neste"
 
 msgid "Play"
-msgstr ""
+msgstr "Køyr"
 
 msgid "Aa"
 msgstr "Aa"
@@ -520,9 +517,8 @@ msgid "Choose the picture you want, then click “Open”."
 msgstr "Vel ei teikning og trykk «Opna»."
 
 #. Let user choose images:
-#, fuzzy
 msgid "Choose the pictures you want, then click “Play”."
-msgstr "Vel ei teikning og trykk «Opna»."
+msgstr "Vel teikningane du vil ha, og trykk så på «Køyr»."
 
 msgid "A drawing program for children."
 msgstr "Eit teikneprogram for dei yngste."
@@ -550,3 +546,4 @@ msgstr "Tux Paint"
 
 #~ msgid "Save over the older version of this picture?"
 #~ msgstr "Vil du lagra over den gamle versjonen av teikninga?"
+
