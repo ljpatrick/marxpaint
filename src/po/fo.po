@@ -3,15 +3,18 @@
 # Bill Kendrick <bill@newbreedsoftware.com>, 2002.
 msgid ""
 msgstr ""
-"Project-Id-Version: tuxpaint 0.9.15b\n"
+"Project-Id-Version: tuxpaint 0.9.16\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-09-10 11:18-0700\n"
-"PO-Revision-Date: 2006-07-14 21:03-0000\n"
+"POT-Creation-Date: 2006-02-25 09:37+0100\n"
+"PO-Revision-Date: 2007-01-09 21:32-0000\n"
 "Last-Translator: Lis Gøthe í Jákupsstovu <morshus@morshus.com>\n"
 "Language-Team: Faroese <morshus@morshus.com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-Language: Faroese\n"
+"X-Poedit-Country: FAROE ISLANDS\n"
+"Plural-Forms: nplurals=2; plural=(n != 1)\n"
 
 msgid "Black!"
 msgstr "Svart!"
@@ -208,8 +211,7 @@ msgstr "Trýst og flyt til at bleikja litirnar."
 msgid "Click and move to darken the colors."
 msgstr "Trýst og flyt til at myrkja litirnar."
 
-msgid ""
-"Click and move the mouse around to turn the picture into a chalk drawing."
+msgid "Click and move the mouse around to turn the picture into a chalk drawing."
 msgstr "Trýst og flyt músina til at umgera myndina til  til eina kritmynd."
 
 msgid "Click and move the mouse around to make the picture blocky."
@@ -260,11 +262,8 @@ msgstr "Ein ferningur er ein rætthyrningur við fýra líka langum síðum."
 msgid "A rectangle has four sides and four right angles."
 msgstr "Ein rætthyningur hevur fýra síður og fýra rættar vinklar."
 
-msgid ""
-"A circle is a curve where all points have the same distance from the centre."
-msgstr ""
-"Ein sirkul er ein rás har øll punkt hava somu frástøðu frá miðjuni av "
-"sirkulinum."
+msgid "A circle is a curve where all points have the same distance from the centre."
+msgstr "Ein sirkul er ein rás har øll punkt hava somu frástøðu frá miðjuni av sirkulinum."
 
 msgid "An ellipse is a stretched circle."
 msgstr "Ein ellipsa er ein strektur sirkul."
@@ -276,8 +275,7 @@ msgid "A pentagon has five sides."
 msgstr "Ein fimmkantur hevur fimm síður."
 
 msgid "A rhombus has four equal sides, and opposite sides are parallel."
-msgstr ""
-"Ein romba hevur fýra eins langar síður, og mótstandandi síður eru javnfjarar."
+msgstr "Ein romba hevur fýra eins langar síður, og mótstandandi síður eru javnfjarar."
 
 msgid "Tools"
 msgstr "Tól"
@@ -349,17 +347,11 @@ msgstr "Vel eitt stempul at stempla á myndina."
 msgid "Click to start drawing a line. Let go to complete it."
 msgstr "Trýst og hald til at byrja eina striku. Slepp har hon skal enda."
 
-msgid ""
-"Pick a shape. Click to pick the center, drag, then let go when it is the "
-"size you want. Move around to rotate it, and click to draw it."
-msgstr ""
-"Vel ein form. Trýst har miðjan skal verða, hála og slepp tá ið støddin er "
-"sum tú ynskir. Flyt runt til at snara formin, og trýst so til at tekna hann."
+msgid "Pick a shape. Click to pick the center, drag, then let go when it is the size you want. Move around to rotate it, and click to draw it."
+msgstr "Vel ein form. Trýst har miðjan skal verða, hála og slepp tá ið støddin er sum tú ynskir. Flyt runt til at snara formin, og trýst so til at tekna hann."
 
 msgid "Choose a style of text. Click on your drawing and you can start typing."
-msgstr ""
-"Vel snið á stavum. Trýst á myndina har teksturin skal byrja, og byrja so at "
-"skriva."
+msgstr "Vel snið á stavum. Trýst á myndina har teksturin skal byrja, og byrja so at skriva."
 
 msgid "Pick a magical effect to use on your drawing!"
 msgstr "Vel onkran 'gand' at brúka á myndini."
@@ -481,17 +473,16 @@ msgid "Erase"
 msgstr "Strika"
 
 msgid "Slides"
-msgstr ""
+msgstr "Myndarøð"
 
 msgid "Back"
 msgstr "Aftur"
 
-#, fuzzy
 msgid "Next"
-msgstr "Stavir"
+msgstr "Næsta"
 
 msgid "Play"
-msgstr ""
+msgstr "Vís"
 
 msgid "Aa"
 msgstr "Aa"
@@ -518,9 +509,8 @@ msgid "Choose the picture you want, then click “Open”."
 msgstr "Vel ynsktu mynd og trýst so á 'Opna'"
 
 #. Let user choose images:
-#, fuzzy
 msgid "Choose the pictures you want, then click “Play”."
-msgstr "Vel ynsktu mynd og trýst so á 'Opna'"
+msgstr "Vel ynsktu myndir og trýst so á 'Vís'"
 
 msgid "A drawing program for children."
 msgstr "Eitt tekniforrit til børn."
@@ -531,19 +521,3 @@ msgstr "Tekniforrit"
 msgid "Tux Paint"
 msgstr "Tux Paint"
 
-# Morshus: Following messages added by brute hacking
-# - if not added, the messages would be in English
-#~ msgid "Starting a new picture will erase the current one!"
-#~ msgstr "Stovnan av nýggjari mynd strikar ta verandi!"
-
-#~ msgid "That’s OK!"
-#~ msgstr "Tað er í lagi!"
-
-#~ msgid "Never mind!"
-#~ msgstr "Gott er!"
-
-#~ msgid "Save over the older version of this picture?"
-#~ msgstr "Goym yvir gomlu útgávu av hesi mynd?"
-
-#~ msgid "No, save a new file"
-#~ msgstr "Nei, goym eina nýggja fílu"

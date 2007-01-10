@@ -2,14 +2,14 @@ CHANGES.txt for Tux Paint
 
 Tux Paint - A simple drawing program for children.
 
-Copyright (c) 2002-2006 by Bill Kendrick and others
+Copyright (c) 2002-2007 by Bill Kendrick and others
 bill@newbreedsoftware.com
 http://www.newbreedsoftware.com/tuxpaint/
 
 $Id$
 
 
-2007.January.3 (0.9.17)
+2007.January.10 (0.9.17)
 
   * Tool Improvements:
     ------------------
@@ -42,6 +42,9 @@ $Id$
     --------------------
     * Basque
       Juan Irigoien <juanirigoien@gmail.com>
+
+    * Faroese
+      Lis Gøthe í Jákupsstovu <morshus@gmail.com>
 
     * Lithuanian
       Gintaras Gostautas <gintaras@nes.lt>
