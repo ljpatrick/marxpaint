@@ -79,7 +79,11 @@ extern unsigned text_size;
 // nice progression (alternating 33% and 25%) 9 12 18 24 36 48 72 96 144 192
 // commonly hinted sizes seem to be: 9, 10, 12, 14, 18, 20 (less so), 24
 // reasonable: 9,12,18... and 10,14,18...
-static int text_sizes[] = { 9, 12, 18, 24, 36, 48,
+static int text_sizes[] = {
+#ifndef OLPC_XO
+  9,
+#endif
+  12, 18, 24, 36, 48,
   56, 64, 96, 112, 128, 160
 };				// point sizes
 

@@ -32,7 +32,7 @@
 
 /* Color depth for Tux Paint to run in, and store canvases in: */
 
-#ifdef NOKIA_770
+#if defined(NOKIA_770) || defined(OLPC_XO)
 # define VIDEO_BPP 15
 #else
 //# define VIDEO_BPP 15 // saves memory
