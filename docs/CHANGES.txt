@@ -9,7 +9,7 @@ http://www.newbreedsoftware.com/tuxpaint/
 $Id$
 
 
-2007.January.21 (0.9.17)
+2007.March.11 (0.9.17)
 
   * Tool Improvements:
     ------------------
@@ -39,6 +39,11 @@ $Id$
   * Bug Fixes:
     ----------
     * Tux the Penguin sound effects were not working; fixed.
+
+  * Compiling, porting and packaging updates:
+    -----------------------------------------
+    * Tweaks to allow it to run on the One Laptop Per Child (OLPC) "XO".
+      Albert Cahalan <albert@users.sf.net>
 
   * Translation Updates:
     --------------------
