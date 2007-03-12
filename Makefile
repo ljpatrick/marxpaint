@@ -82,6 +82,9 @@ NOSOUNDFLAG=__SOUND
 
 NOSVGFLAG=__SVG
 
+# Maemo flag
+
+MAEMOFLAG=
 
 # Where to find cursor shape XBMs
 
@@ -116,7 +119,8 @@ DEFS=-DDATA_PREFIX=\"$(DATA_PREFIX)/\" \
 	-D$(NOSOUNDFLAG) -D$(NOSVGFLAG) -DDOC_PREFIX=\"$(DOC_PREFIX)/\" \
 	-DLOCALEDIR=\"$(LOCALE_PREFIX)/\" -DCONFDIR=\"$(CONFDIR)/\" \
 	-DVER_VERSION=\"$(VER_VERSION)\" \
-	-DVER_DATE=\"$(VER_DATE)\"
+	-DVER_DATE=\"$(VER_DATE)\" \
+	-D$(MAEMOFLAG)
 
 DEBUG_FLAGS=
 #DEBUG_FLAGS=-g
@@ -237,8 +241,10 @@ win32:
 
 nokia770:
 	make \
-		DATA_PREFIX=/var/lib/install/usr/share/tuxpaint \
-		CFLAGS="-DNOKIA_770"
+		DATA_PREFIX=/usr/share/tuxpaint \
+		SVG_LIB= SVG_CFLAGS= NOSVGFLAG=NOSVG \
+		MAEMOFLAG=NOKIA_770
+		
 
 # "make install" installs all of the various parts
 # (depending on the *PREFIX variables at the top, you probably need
