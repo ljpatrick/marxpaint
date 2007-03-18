@@ -84,7 +84,7 @@ NOSVGFLAG=__SVG
 
 # Maemo flag
 
-MAEMOFLAG=
+MAEMOFLAG=NO_MAEMOFLAG
 
 # Where to find cursor shape XBMs
 
