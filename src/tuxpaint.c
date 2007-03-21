@@ -115,10 +115,6 @@ static unsigned draw_colors(unsigned action);
 
 /////////////////////////////////////////////////////////////////////
 // hide all scale-related values here
-
-// FIXME: Does this take into account taller-than-wide canvas sizes?
-// (e.g., 768x1024 on a tablet PC in 'portrait' configuration?)
-// -bjk 2006.10.26
 typedef struct scaleparams
 {
   unsigned numer, denom;
