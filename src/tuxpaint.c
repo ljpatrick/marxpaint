@@ -32,9 +32,15 @@
 
 /* Color depth for Tux Paint to run in, and store canvases in: */
 
-#if defined(NOKIA_770) || defined(OLPC_XO)
+#if defined(NOKIA_770)
 # define VIDEO_BPP 15
-#else
+#endif
+
+#if defined(OLPC_XO)
+# define VIDEO_BPP 15
+#endif
+
+#ifndef VIDEO_BPP
 //# define VIDEO_BPP 15 // saves memory
 //# define VIDEO_BPP 16 // causes discoloration
 //# define VIDEO_BPP 24 // compromise
@@ -889,6 +895,7 @@ static Uint16 *wcstou16(const wchar_t * str)
   {
     // This is a bodge, but it seems unlikely that a case-conversion
     // will cause a change from one utf16 character into two....
+    // (though at least UTF-8 suffers from this problem)
     res[i] = (Uint16) str[i];
   }
 
@@ -5909,12 +5916,19 @@ static void setup(int argc, char *argv[])
   use_print_config = 0;
   mirrorstamps = 0;
   disable_stamp_controls = 0;
-  //  WINDOW_WIDTH = 640;
-  //  WINDOW_HEIGHT = 480;
+
 #ifdef NOKIA_770
   WINDOW_WIDTH = 800;
   WINDOW_HEIGHT = 480;
-#else
+#endif
+
+#ifdef OLPC_XO
+  // ideally we'd support rotation and 2x scaling
+  WINDOW_WIDTH = 1200;
+  WINDOW_HEIGHT = 900;
+#endif
+
+#ifndef WINDOW_WIDTH
   WINDOW_WIDTH = 800;
   WINDOW_HEIGHT = 600;
 #endif
