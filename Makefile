@@ -233,7 +233,7 @@ win32:
 		X11_ICON_PREFIX=. \
 		LOCALE_PREFIX=$(PREFIX)/share/locale \
 		CONFDIR=$(PREFIX)/etc/tuxpaint \
-		ARCH_LINKS="-lintl-3 -lpng12 -lwinspool -lshlwapi" \
+		ARCH_LINKS="-lintl -lpng12 -lwinspool -lshlwapi" \
 		ARCH_HEADERS="src/win32_print.h" \
 		ARCH_LIBS="obj/win32_print.o obj/resource.o"
 
@@ -361,7 +361,7 @@ bdist-win32:
 		DATA_PREFIX=data \
 		DOC_PREFIX=docs \
 		LOCALE_PREFIX=locale \
-		ARCH_LINKS="-lintl-3 -lpng12 -lwinspool -lshlwapi" \
+		ARCH_LINKS="-lintl -lpng12 -lwinspool -lshlwapi" \
 		ARCH_HEADERS="src/win32_print.h" \
 		ARCH_LIBS="obj/win32_print.o obj/resource.o"
 	strip -s tuxpaint.exe
@@ -641,17 +641,24 @@ install-dlls:
 	@echo
 	@echo "...Installing Windows DLLs..."
 	@install -d $(BIN_PREFIX)
-	@cp `which libintl-3.dll` $(BIN_PREFIX)
+	@cp `which libintl-8.dll` $(BIN_PREFIX)
 	@cp `which libiconv-2.dll` $(BIN_PREFIX)
 	@cp `which libpng12.dll` $(BIN_PREFIX)
 	@cp `which SDL.dll` $(BIN_PREFIX)
 	@cp `which SDL_image.dll` $(BIN_PREFIX)
 	@cp `which SDL_mixer.dll` $(BIN_PREFIX)
 	@cp `which SDL_ttf.dll` $(BIN_PREFIX)
+	@cp `which libfreetype-6.dll` $(BIN_PREFIX)
 	@cp `which zlib1.dll` $(BIN_PREFIX)
 	@cp `which libogg-0.dll` $(BIN_PREFIX)
 	@cp `which libvorbis-0.dll` $(BIN_PREFIX)
 	@cp `which libvorbisfile-3.dll` $(BIN_PREFIX)
+	@cp `which libcairo-2.dll` $(BIN_PREFIX)
+	@cp `which svg-cairo.dll` $(BIN_PREFIX)
+	@cp `which svg.dll` $(BIN_PREFIX)
+	@cp `which jpeg.dll` $(BIN_PREFIX)
+	@cp `which libxml2-2.dll` $(BIN_PREFIX)
+	@strip -s $(BIN_PREFIX)/*.dll
 	
 # Install the import script:
 
