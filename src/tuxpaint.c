@@ -3,9 +3,9 @@
   
   Tux Paint - A simple drawing program for children.
   
-  Copyright (c) 2002-2006 by Bill Kendrick and others; see AUTHORS.txt
+  Copyright (c) 2002-2007 by Bill Kendrick and others; see AUTHORS.txt
   bill@newbreedsoftware.com
-  http://www.newbreedsoftware.com/tuxpaint/
+  http://www.tuxpaint.org/
 
   This program is free software; you can redistribute it and/or modify
   it under the terms of the GNU General Public License as published by
@@ -22,7 +22,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
   
-  June 14, 2002 - January 3, 2007
+  June 14, 2002 - March 22, 2007
   $Id$
 */
 
@@ -5532,6 +5532,8 @@ static void set_active_stamp(void)
   unsigned len = strlen(sd->stampname);
   char *buf = alloca(len + strlen("_mirror.EXT") + 1);
 
+  /* FIXME: Add support for pre-flipped stamps! -bjk 2007.03.22 */
+
   if (active_stamp)
     SDL_FreeSurface(active_stamp);
   active_stamp = NULL;
@@ -5638,6 +5640,8 @@ static void get_stamp_thumb(stamp_type * sd)
     wrongmirror = sd->thumbnail;
   }
 
+  /* FIXME: Add support for pre-flipped stamps! -bjk 2007.03.22 */
+
   // nope, unless perhaps it can be mirrored
   if (sd->mirrored && !sd->no_premirror)
   {
@@ -5733,6 +5737,8 @@ static void loadstamp_callback(SDL_Surface * screen,
     char fname[512];
     const char *dotext, *ext, *mirror_ext;
 
+    /* FIXME: Support pre-flipped stamps -bjk 2007.03.22 */
+
     ext = ".png";
     mirror_ext = "_mirror.png";
     dotext = (char *) strcasestr(files[i].str, ext);
@@ -5743,6 +5749,28 @@ static void loadstamp_callback(SDL_Surface * screen,
       ext = ".svg";
       mirror_ext = "_mirror.svg";
       dotext = (char *) strcasestr(files[i].str, ext);
+    }
+    else
+    {
+      /* Found PNG, but we support SVG; let's see if there's an SVG
+ *       version too, before loading the PNG */
+
+      char svgname[512];
+      FILE * fi;
+
+      snprintf(svgname, sizeof(svgname), "%s/%s", dir, files[i].str);
+      strcpy(strcasestr(svgname, ".png"), ".svg");
+
+      fi = fopen(svgname, "r");
+      if (fi != NULL)
+      {
+        debug("Found SVG version of ");
+        debug(files[i].str);
+        debug("\n");
+
+        fclose(fi);
+        continue;  // ugh, i hate continues
+      }
     }
 #endif
 
@@ -10420,6 +10448,8 @@ static void load_starter(char *img_id)
 
   /* Try to load the a background image: */
 
+  /* FIXME: Also support .jpg extension? -bjk 2007.03.22 */
+
   /* (JPEG first) */
   snprintf(fname, sizeof(fname), "%s/%s-back.jpeg", dirname, img_id);
   tmp_surf = IMG_Load(fname);
@@ -12365,6 +12395,8 @@ void do_open(void)
                 /* Try to load a starter's background image, first!
                    If it exists, it should give a better idea of what the
                    starter looks like, compared to the overlay image... */
+
+                /* FIXME: Add .jpg support -bjk 2007.03.22 */
 
                 /* (Try JPEG first) */
                 snprintf(fname, sizeof(fname), "%s/%s-back.jpeg",

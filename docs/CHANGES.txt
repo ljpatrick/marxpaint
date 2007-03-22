@@ -9,11 +9,14 @@ http://www.newbreedsoftware.com/tuxpaint/
 $Id$
 
 
-2007.March.11 (0.9.17)
+2007.March.22 (0.9.17)
 
   * Tool Improvements:
     ------------------
     * Stamps now supports SVG vector-based graphics!  (Via Cairo library)
+      (Only SVG versions of stamps are loaded, when both PNG and SVG
+      variations are found.)
+
       (Experimental; build with "make nosvg" to disable SVG support and
       Cairo dependency.)
 
