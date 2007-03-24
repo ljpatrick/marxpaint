@@ -9,7 +9,7 @@ http://www.newbreedsoftware.com/tuxpaint/
 $Id$
 
 
-2007.March.22 (0.9.17)
+2007.March.24 (0.9.17)
 
   * Tool Improvements:
     ------------------
@@ -47,6 +47,11 @@ $Id$
     -----------------------------------------
     * Tweaks to allow it to run on the One Laptop Per Child (OLPC) "XO".
       Albert Cahalan <albert@users.sf.net>
+
+    * Updates for improved Nokia 770 and N800 (Maemo) support
+      (added icon to task manager when Home button is pressed,
+      hid on-screen mouse cursor, disabled Print and Text tools)
+      Alessandro Pasotti <apasotti@gmail.com>
 
   * Translation Updates:
     --------------------
