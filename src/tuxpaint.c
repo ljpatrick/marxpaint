@@ -1,6 +1,6 @@
 /*
   tuxpaint.c
-  
+
   Tux Paint - A simple drawing program for children.
   
   Copyright (c) 2002-2007 by Bill Kendrick and others; see AUTHORS.txt
@@ -11,12 +11,12 @@
   it under the terms of the GNU General Public License as published by
   the Free Software Foundation; either version 2 of the License, or
   (at your option) any later version.
-  
+
   This program is distributed in the hope that it will be useful,
   but WITHOUT ANY WARRANTY; without even the implied warranty of
   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
   GNU General Public License for more details.
-  
+
   You should have received a copy of the GNU General Public License
   along with this program; if not, write to the Free Software
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
@@ -1366,6 +1366,8 @@ static void eat_sdl_events(void)
 
 int main(int argc, char *argv[])
 {
+
+
   CLOCK_TYPE time1;
   CLOCK_TYPE time2;
   SDL_Rect dest;
@@ -1499,7 +1501,6 @@ int main(int argc, char *argv[])
 
   /* Main loop! */
   mainloop();
-
 
   /* Close and quit! */
 
@@ -3918,7 +3919,7 @@ hue_range_retry:;
     mc = work + i;
 
     // if not in the first range, and not in the second range, skip this one
-    // 
+    //
     if ((mc->hue < lower_hue_1 || mc->hue > upper_hue_1) &&
 	(mc->hue < lower_hue_2 || mc->hue > upper_hue_2))
       continue;
@@ -5319,16 +5320,16 @@ static void loadbrush_callback(SDL_Surface * screen,
 	  realloc(img_brushes, num_brushes_max * sizeof *img_brushes);
 	brushes_frames =
 	  realloc(brushes_frames, num_brushes_max * sizeof(int));
-	brushes_directional = 
+	brushes_directional =
 	  realloc(brushes_directional, num_brushes_max * sizeof(short));
-	brushes_spacing = 
+	brushes_spacing =
 	  realloc(brushes_spacing, num_brushes_max * sizeof(int));
       }
       img_brushes[num_brushes] = loadimage(fname);
-      
+
 
       /* Load brush metadata, if any: */
-      
+
       brushes_frames[num_brushes] = 1;
       brushes_directional[num_brushes] = 0;
       brushes_spacing[num_brushes] = img_brushes[num_brushes]->h / 4;
@@ -5337,7 +5338,7 @@ static void loadbrush_callback(SDL_Surface * screen,
       fi = fopen(fname, "r");
 
       want_rand = 0;
-      
+
       if (fi != NULL)
       {
 	do
@@ -5369,7 +5370,7 @@ static void loadbrush_callback(SDL_Surface * screen,
 	if (want_rand)
 	  brushes_frames[num_brushes] *= -1;
       }
-      
+
       num_brushes++;
     }
     free(files[i].str);
@@ -5855,6 +5856,7 @@ static int load_user_fonts_stub(void *vp)
 
 static void setup(int argc, char *argv[])
 {
+
   int i, j, ok_to_use_sysconfig;
   char str[128];
   char *upstr;
@@ -5945,6 +5947,11 @@ static void setup(int argc, char *argv[])
   mirrorstamps = 0;
   disable_stamp_controls = 0;
 
+#ifndef WINDOW_WIDTH
+  WINDOW_WIDTH = 800;
+  WINDOW_HEIGHT = 600;
+#endif
+
 #ifdef NOKIA_770
   WINDOW_WIDTH = 800;
   WINDOW_HEIGHT = 480;
@@ -5954,11 +5961,6 @@ static void setup(int argc, char *argv[])
   // ideally we'd support rotation and 2x scaling
   WINDOW_WIDTH = 1200;
   WINDOW_HEIGHT = 900;
-#endif
-
-#ifndef WINDOW_WIDTH
-  WINDOW_WIDTH = 800;
-  WINDOW_HEIGHT = 600;
 #endif
   playfile = NULL;
   recording = 0;
@@ -6556,6 +6558,7 @@ static void setup(int argc, char *argv[])
     }
   }
 
+
 #ifndef NOSOUND
 #ifndef WIN32
   if (use_sound && Mix_OpenAudio(44100, AUDIO_S16SYS, 2, 1024) < 0)
@@ -6654,14 +6657,14 @@ static void setup(int argc, char *argv[])
 	    if (strlen(tmp_str) == 6)
 	    {
 	      /* Byte (#rrggbb) form */
-		    
+
 	      color_hexes[NUM_COLORS][0] =
 		      (hex2dec(tmp_str[0]) << 4) + hex2dec(tmp_str[1]);
 	      color_hexes[NUM_COLORS][1] =
 		      (hex2dec(tmp_str[2]) << 4) + hex2dec(tmp_str[3]);
 	      color_hexes[NUM_COLORS][2] =
 		      (hex2dec(tmp_str[4]) << 4) + hex2dec(tmp_str[5]);
-	      
+
 	      color_names[NUM_COLORS] = strdup(str + count);
 	      NUM_COLORS++;
 	    }
@@ -6675,7 +6678,7 @@ static void setup(int argc, char *argv[])
 		      (hex2dec(tmp_str[1]) << 4) + hex2dec(tmp_str[1]);
 	      color_hexes[NUM_COLORS][2] =
 		      (hex2dec(tmp_str[2]) << 4) + hex2dec(tmp_str[2]);
-	      
+
 	      color_names[NUM_COLORS] = strdup(str + count);
 	      NUM_COLORS++;
 	    }
@@ -6710,13 +6713,13 @@ static void setup(int argc, char *argv[])
 	  free(color_names[i]);
 	  free(color_hexes[i]);
 	}
-	
+
 	free(color_names);
 	free(color_hexes);
       }
     }
   }
- 
+
   /* Use default, if no file specified (or trouble opening it) */
 
   if (colorfile[0] == '\0')
@@ -6725,7 +6728,7 @@ static void setup(int argc, char *argv[])
 
     color_hexes = malloc(sizeof(Uint8 *) * NUM_COLORS);
     color_names = malloc(sizeof(char *) * NUM_COLORS);
-    
+
     for (i = 0; i < NUM_COLORS; i++)
     {
       color_hexes[i] = malloc(sizeof(Uint8 *) * 3);
@@ -6740,13 +6743,17 @@ static void setup(int argc, char *argv[])
 
   setup_screen_layout();
 
-  
+
   /* Set window icon and caption: */
 
 #ifndef __APPLE__
   seticon();
 #endif
   SDL_WM_SetCaption("Tux Paint", "Tux Paint");
+
+#ifdef NOKIA_770
+  SDL_ShowCursor (SDL_DISABLE);
+#endif
 
   /* Open Window: */
 
@@ -6845,8 +6852,14 @@ static void setup(int argc, char *argv[])
     exit(1);
   }
 
+#ifdef NOKIA_770
+  snprintf(tmp_str, sizeof(tmp_str), "Version: %s – %s - Maemo", VER_VERSION,
+	   VER_DATE);
+#else
   snprintf(tmp_str, sizeof(tmp_str), "Version: %s – %s", VER_VERSION,
 	   VER_DATE);
+#endif
+
   tmp_surf = render_text(medium_font, tmp_str, black);
   dest.x = 10;
   dest.y = WINDOW_HEIGHT - img_progress->h - tmp_surf->h;
@@ -6857,7 +6870,7 @@ static void setup(int argc, char *argv[])
   printf("%s\n", tmp_str);
 #endif
 
-  snprintf(tmp_str, sizeof(tmp_str), "© 2002–2006 Bill Kendrick et al.");
+  snprintf(tmp_str, sizeof(tmp_str), "© 2002~@~S2006 Bill Kendrick et al.");
   tmp_surf = render_text(medium_font, tmp_str, black);
   dest.x = 10;
   dest.y = WINDOW_HEIGHT - img_progress->h - (tmp_surf->h * 2);
@@ -7906,11 +7919,11 @@ static void draw_brushes(void)
     {
       src.x = 0;
       src.y = brushes_directional[brush] ? (img_brushes[brush]->h / 3) : 0;
-      
+
       src.w = (img_brushes[brush]->w / abs(brushes_frames[brush])) /
 	      (brushes_directional[brush] ? 3 : 1);
       src.h = (img_brushes[brush]->h / (brushes_directional[brush] ? 3 : 1));
-      
+
       dest.x = ((i % 2) * 48) + (WINDOW_WIDTH - 96) + ((48 - src.w) >> 1);
       dest.y = ((i / 2) * 48) + 40 + ((48 - src.h) >> 1) + off_y;
 
@@ -9392,8 +9405,8 @@ static void do_eraser(int x, int y)
   update_canvas(x - sz / 2, y - sz / 2, x + sz / 2, y + sz / 2);
 
   rect_xor(x - sz / 2, y - sz / 2, x + sz / 2, y + sz / 2);
-  
-#ifdef __APPLE__  
+
+#ifdef __APPLE__
   /* Prevent ghosted eraser outlines from remaining on the screen in windowed mode */
   update_screen(0, 0, WINDOW_WIDTH, WINDOW_HEIGHT);
 #endif
@@ -11299,10 +11312,12 @@ static void cleanup(void)
     free(lock_fname);
   }
 
+
   /* Close up! */
 
   TTF_Quit();
   SDL_Quit();
+
 
 }
 
@@ -13653,7 +13668,7 @@ int do_slideshow(void)
 		    (THUMB_W - 20 - thumbs[i]->w) / 2) + thumbs[i]->w;
 	  dest.y = (THUMB_H * ((i - cur) / 4) + 24 + 10 +
 		    (THUMB_H - 20 - thumbs[i]->h) / 2) + thumbs[i]->h;
-	  
+
 	  draw_selection_digits(dest.x, dest.y, found + 1);
 	}
       }
@@ -13699,9 +13714,9 @@ int do_slideshow(void)
       dest.y = (48 * 7 + 40 + HEIGHTOFFSET) - img_openlabels_back->h;
       SDL_BlitSurface(img_openlabels_back, NULL, screen, &dest);
 
-    
+
       /* Speed control: */
-      
+
       speeds = 10;
       x_per = 96.0 / speeds;
       y_per = 48.0 / speeds;
@@ -13815,10 +13830,10 @@ int do_slideshow(void)
 
 	    for (i = found; i < num_selected - 1; i++)
 	      selected[i] = selected[i + 1];
-	    
+
 	    num_selected--;
 	  }
-	  
+
 	  update_list = 1;
 	}
       }
@@ -13878,7 +13893,7 @@ int do_slideshow(void)
 	    selected[i] = i;
 	  num_selected = num_files;
 	}
-	
+
 	play_slideshow(selected, num_selected, dirname, d_names, d_exts, speed);
 
 
@@ -13888,12 +13903,12 @@ int do_slideshow(void)
 	draw_toolbar();
         draw_colors(COLORSEL_CLOBBER_WIPE);
 	draw_none();
-  
+
 	freeme = textdir(gettext_noop("Choose the pictures you want, "
 				      "then click “Play”."));
 	draw_tux_text(TUX_BORED, freeme, 1);
 	free(freeme);
-	
+
 	SDL_Flip(screen);
 
 	update_list = 1;
@@ -13903,7 +13918,7 @@ int do_slideshow(void)
 	       event.button.y < (48 * 7 + 40 + HEIGHTOFFSET))
       {
 	/* Speed slider */
-	
+
 	int old_speed, control_sound, click_x;
 
 	old_speed = speed;
@@ -14072,7 +14087,7 @@ void play_slideshow(int * selected, int num_selected, char * dirname,
   do_setcursor(cursor_tiny);
 
   done = 0;
-  
+
   do
   {
     for (i = 0; i < num_selected && !done; i++)
@@ -14126,7 +14141,7 @@ void play_slideshow(int * selected, int num_selected, char * dirname,
       dest.y = screen->h - img_openlabels_back->h;
       SDL_BlitSurface(img_openlabels_back, NULL, screen, &dest);
 
-      
+
       /* "Next" button: */
 
       dest.x = 0;
@@ -14137,7 +14152,7 @@ void play_slideshow(int * selected, int num_selected, char * dirname,
       dest.y = screen->h - img_openlabels_next->h;
       SDL_BlitSurface(img_openlabels_next, NULL, screen, &dest);
 
-      
+
       SDL_Flip(screen);
 
 
@@ -14145,7 +14160,7 @@ void play_slideshow(int * selected, int num_selected, char * dirname,
 
       next = 0;
       last_ticks = SDL_GetTicks();
-      
+
       do
       {
 	while (SDL_PollEvent(&event))
@@ -14153,7 +14168,7 @@ void play_slideshow(int * selected, int num_selected, char * dirname,
 	  if (event.type == SDL_QUIT)
 	  {
 	    /* FIXME: Handle SDL_QUIT better! */
-		  
+
 	    next = 1;
 	    done = 1;
 	  }
@@ -14166,7 +14181,7 @@ void play_slideshow(int * selected, int num_selected, char * dirname,
             if (key == SDLK_RETURN || key == SDLK_SPACE || key == SDLK_RIGHT)
 	    {
 	      /* RETURN, SPACE or RIGHT: Skip to next right away! */
-	
+
 	      next = 1;
 	      playsound(screen, 1, SND_CLICK, 1, SNDPOS_LEFT, SNDDIST_NEAR);
 	    }
@@ -14248,7 +14263,7 @@ void play_slideshow(int * selected, int num_selected, char * dirname,
     }
   }
   while (!done);
-  
+
   strcpy(starter_id, tmp_starter_id);
   free(tmp_starter_id);
 
@@ -15758,7 +15773,7 @@ SDL_Surface * load_svg(char * file)
 #endif
     return(NULL);
   }
-  
+
   // Parse the SVG file:
   if (svg_cairo_parse(scr, file) != SVG_CAIRO_STATUS_SUCCESS)
   {
@@ -15774,7 +15789,7 @@ SDL_Surface * load_svg(char * file)
 #ifdef DEBUG
   printf("svg_get_size(): %d x %d\n", rwidth, rheight);
 #endif
-  
+
   if (rwidth == 0 || rheight == 0)
   {
     svg_cairo_destroy(scr);
@@ -15788,7 +15803,7 @@ SDL_Surface * load_svg(char * file)
   // the screen SDL format, but we are interested in the alpha bit...
   bpp = 32;
   btpp = 4;
-  
+
   // We want to render at full Tux Paint canvas size, so that the stamp
   // at its largest scale remains highest quality (no pixelization):
   // (but not messing up the aspect ratio)
@@ -15856,7 +15871,7 @@ SDL_Surface * load_svg(char * file)
 
   // Create the SDL surface using the pixel data stored:
   sdl_surface_tmp = SDL_CreateRGBSurfaceFrom((void *) image, width, height,
-                                             bpp, stride, 
+                                             bpp, stride,
                                              rmask, gmask, bmask, amask);
 
   if (sdl_surface_tmp == NULL)
@@ -15951,7 +15966,7 @@ float pick_best_scape(unsigned int orig_w, unsigned int orig_h,
     // Taller-than-wide
 
     scale = hscale;
-    
+
 #ifdef DEBUG
     printf("Taller-than-wide.  Using hscale.\n");
     printf("new size would be: %d x %d\n",
@@ -15962,7 +15977,7 @@ float pick_best_scape(unsigned int orig_w, unsigned int orig_h,
     if ((float) orig_w * scale > (float) max_w)
     {
       scale = wscale;
-    
+
 #ifdef DEBUG
       printf("Too wide!  Using wscale!\n");
       printf("new size would be: %d x %d\n",
@@ -15982,4 +15997,3 @@ float pick_best_scape(unsigned int orig_w, unsigned int orig_h,
 }
 
 #endif
-

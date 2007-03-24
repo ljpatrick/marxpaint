@@ -243,8 +243,10 @@ nokia770:
 	make \
 		DATA_PREFIX=/usr/share/tuxpaint \
 		SVG_LIB= SVG_CFLAGS= NOSVGFLAG=NOSVG \
-		MAEMOFLAG=NOKIA_770
-		
+		MAEMOFLAG=NOKIA_770 \
+		LOCALE_PREFIX=$(PREFIX)/share/locale \
+		CONFDIR=/etc/tuxpaint
+
 
 # "make install" installs all of the various parts
 # (depending on the *PREFIX variables at the top, you probably need
@@ -348,7 +350,7 @@ install-win32:
 		LOCALE_PREFIX=$(PREFIX)/share/locale \
 		CONFDIR=$(PREFIX)/etc/tuxpaint \
 
-# "make bdist-win32" recompiles Tux Paint to work with executable-relative 
+# "make bdist-win32" recompiles Tux Paint to work with executable-relative
 # data, docs and locale directories. Also copies all files, including DLLs,
 # into a 'bdist' output directory ready for processing by an installer script.
 bdist-win32:
@@ -548,12 +550,22 @@ install-nokia770:
 	@echo "...Installing launcher icon into the Nokia 770..."
 	@if [ "x$(NOKIA770_PREFIX)" != "x" ]; then \
 	 install -d $(PKG_ROOT)$(NOKIA770_PREFIX)/share/pixmaps; \
-	 cp data/images/icon.png $(PKG_ROOT)/$(NOKIA770_PREFIX)/share/pixmaps/tuxpaint.png; \
+	 cp data/images/icon.png $(PKG_ROOT)$(NOKIA770_PREFIX)/share/pixmaps/tuxpaint.png; \
 	 chmod 644 $(PKG_ROOT)$(NOKIA770_PREFIX)/share/pixmaps/tuxpaint.png; \
+	 cp hildon/tuxpaint.xpm $(PKG_ROOT)/$(NOKIA770_PREFIX)/share/pixmaps/tuxpaint.xpm; \
+	 chmod 644 $(PKG_ROOT)$(NOKIA770_PREFIX)/share/pixmaps/tuxpaint.xpm; \
 	 install -d $(PKG_ROOT)$(NOKIA770_PREFIX)/share/applications/hildon; \
 	 cp hildon/tuxpaint.desktop $(PKG_ROOT)$(NOKIA770_PREFIX)/share/applications/hildon/; \
 	 chmod 644 $(PKG_ROOT)$(NOKIA770_PREFIX)/share/applications/hildon/tuxpaint.desktop; \
+	 install -d $(PKG_ROOT)/etc/tuxpaint; \
+	 cp hildon/tuxpaint.conf $(PKG_ROOT)/etc/tuxpaint; \
+	 chmod 644 $(PKG_ROOT)/etc/tuxpaint/tuxpaint.conf; \
+	 rm -rf $(PKG_ROOT)$(NOKIA770_PREFIX)/X11R6; \
+	 rm -rf $(PKG_ROOT)$(NOKIA770_PREFIX)/share/doc; \
+	 rm -rf $(PKG_ROOT)$(NOKIA770_PREFIX)/share/man; \
 	fi
+	@-find $(PKG_ROOT)$(NOKIA770_PREFIX) -name CVS -type d -exec rm -rf \{\} \;
+
 
 
 # Install a launcher icon in the KDE menu...
