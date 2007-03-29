@@ -1366,12 +1366,12 @@ static void eat_sdl_events(void)
 
 int main(int argc, char *argv[])
 {
-
-
   CLOCK_TYPE time1;
   CLOCK_TYPE time2;
   SDL_Rect dest;
   SDL_Rect src;
+
+  CLOCK_ASM(time1);
 
 #ifdef FORKED_FONTS
   run_font_scanner(screen);
@@ -1379,8 +1379,7 @@ int main(int argc, char *argv[])
 
   /* Set up locale support */
   setlocale(LC_ALL, "");
-
-  CLOCK_ASM(time1);
+  ctype_utf8();
 
   /* Set up! */
   setup(argc, argv);

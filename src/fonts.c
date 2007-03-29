@@ -168,6 +168,7 @@ TTF_Font *load_locale_font(TTF_Font * fallback, int size)
 	putenv((char *) "LANG=C");
 	putenv((char *) "OUTPUT_CHARSET=C");
 	setlocale(LC_ALL, "C");
+	ctype_utf8();
 
 	set_current_language();
       }

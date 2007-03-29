@@ -122,6 +122,7 @@ void show_lang_usage(FILE * f, const char *const prg);
 void show_locale_usage(FILE * f, const char *const prg);
 void setup_language(const char *const prg);
 void do_locale_option(const char *const arg);
+void ctype_utf8(void);
 
 
 #endif

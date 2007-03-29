@@ -118,6 +118,9 @@ void loadfont_callback(SDL_Surface * screen, const char *restrict const dir,
 	  user_font_styles[num_font_styles]->score += charset_works(font, gettext("017"));	// digits
 	  user_font_styles[num_font_styles]->score += charset_works(font, gettext("O0"));	// distinct circle-like characters
 	  user_font_styles[num_font_styles]->score += charset_works(font, gettext("1Il|"));	// distinct line-like characters
+#ifdef OLPC_XO
+	  user_font_styles[num_font_styles]->score += charset_works(font, "\xc3\x97\xc3\xb7");	// multiply and divide
+#endif
 	  num_font_styles++;
 //printf("Accepted: %s, %s, %s, score(%d)\n", files[i].str, family, style, user_font_styles[num_font_styles]->score);
 	  files[i].str = NULL;	// so free() won't crash -- we stole the memory

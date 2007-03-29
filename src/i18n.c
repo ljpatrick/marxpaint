@@ -274,6 +274,18 @@ void set_langstr(const char *s)
   langstr = strdup(s);
 }
 
+// This is to ensure that iswprint() works beyond ASCII,
+// even if the locale wouldn't normally support that.
+void ctype_utf8(void)
+{
+#ifndef _WIN32
+  char *names[] = {"en_US.UTF8","en_US.UTF-8","UTF8","UTF-8",};
+  int i = sizeof(names)/sizeof(names[0]);
+  while(i-- && !iswprint((wchar_t)0xf7) && !setlocale(LC_CTYPE,names[i]))
+    ;
+#endif
+}
+
 /* Determine the current language/locale, and set the language string: */
 
 void set_current_language(void)
@@ -572,6 +584,7 @@ void setup_language(const char *const prg)
     }
 
     setlocale(LC_ALL, "");
+    ctype_utf8();
     free(langstr);
   }
 
@@ -590,4 +603,5 @@ void do_locale_option(const char *const arg)
   // of the environment. If it were local, the environment would
   // get corrupted.
   setlocale(LC_ALL, "");	/* use arg ? */
+  ctype_utf8();
 }
