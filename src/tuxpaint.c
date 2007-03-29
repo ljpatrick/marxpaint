@@ -1246,7 +1246,7 @@ int paintsound(int size);
 
 #ifdef DEBUG
 static char *debug_gettext(const char *str);
-static int charsize(char c);
+static int charsize(Uint16 c);
 #endif
 
 #ifndef NOSVG
@@ -1807,8 +1807,27 @@ static void mainloop(void)
 	    key_unicode = event.key.keysym.unicode;
 
 #ifdef DEBUG
-	    printf("charsize(%c) = %d\n", event.key.keysym.unicode,
-		   charsize(event.key.keysym.unicode));
+	    printf(
+	      "character 0x%04x %d <%c> is %d pixels, %sprintable, key_down 0x%x\n",
+	      (unsigned)event.key.keysym.unicode,
+	      (int)event.key.keysym.unicode,
+	      (key_unicode>' ' && key_unicode<127)?(char)event.key.keysym.unicode:' ',
+              (int)charsize(event.key.keysym.unicode),
+              iswprint(key_unicode)?"":"not ",
+              (unsigned)key_down
+            );
+#if 0
+            // this doesn't work for some reason
+	    wprintf(
+	      L"character 0x%04x %d <%lc> is %d pixels, %lsprintable, key_down 0x%x\n",
+	      event.key.keysym.unicode,
+	      event.key.keysym.unicode,
+	      (key_unicode>L' ')?event.key.keysym.unicode:L' ',
+              charsize(event.key.keysym.unicode),
+              iswprint(key_unicode)?L"":L"not ",
+              key_down
+            );
+#endif
 #endif
 
 	    if (key_down == SDLK_BACKSPACE)
@@ -1860,8 +1879,8 @@ static void mainloop(void)
 	      {
 		int old_cursor_textwidth = cursor_textwidth;
 #ifdef DEBUG
-		wprintf(L"    key = %c\nunicode = %lc (%d)\n\n",
-			key_down, key_unicode, key_unicode);
+		wprintf(L"    key = <%c>\nunicode = <%lc> 0x%04x %d\n\n",
+			key_down, key_unicode, key_unicode, key_unicode);
 #endif
 
 		texttool_str[texttool_len++] = key_unicode;
@@ -15358,7 +15377,7 @@ static const char *great_str(void)
 
 
 #ifdef DEBUG
-static int charsize(char c)
+static int charsize(Uint16 c)
 {
   Uint16 str[2];
   int w, h;
