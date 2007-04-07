@@ -46,12 +46,28 @@ $Id$
     http://www.isc.tamu.edu/~lewing/linux/
 
   * Most brushes created using The GIMP
-    http://www.gimp.org/
+    by Bill Kendrick
 
   * Neko cat brushes based on XNeko by Masayuki Koba
 
-  * Heart, "Lozenge", Oval, Sprial and Star brushes
-    Caroline Ford <caroline.ford.work@googlemail.com>
+  * More brushes created using Inkscape
+    by Caroline Ford <caroline.ford.work@googlemail.com>
+      + Blob
+      + Chisle
+      + Cut-out square in diamond
+      + Cut-out star in circle
+      + Diamond
+      + Five-petal flower (large and small)
+      + Six-petal flower (large and small)
+      + Heart
+      + Hexagon
+      + Lozenge
+      + Oval
+      + Pentagon
+      + Spiral
+      + Splat
+      + Star
+      + Triangle (up and down)
 
 
 * Starter Images

@@ -25,8 +25,25 @@ $Id$
       (Based on example code by Christian Graus:
       http://www.codeproject.com/cs/media/imageprocessing4.asp )
 
-    * New brushes: Heart, "Lozenge", Oval, Spiral and Star.
+    * New brushes:
       Caroline Ford <caroline.ford.work@googlemail.com>
+      + Blob
+      + Chisle
+      + Cut-out square in diamond
+      + Cut-out star in circle
+      + Diamond
+      + Five-petal flower (large and small)
+      + Six-petal flower (large and small)
+      + Heart
+      + Hexagon
+      + Lozenge
+      + Oval
+      + Pentagon
+      + Spiral
+      + Splat
+      + Star
+      + Triangle (up and down)
+
 
   * Documentation Improvements:
     ---------------------------
