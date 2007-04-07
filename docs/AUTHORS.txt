@@ -2,12 +2,12 @@ AUTHORS.txt for Tux Paint
 
 Tux Paint - A simple drawing program for children.
 
-Copyright (c) 2002-2006 by Bill Kendrick and others
+Copyright (c) 2002-2007 by Bill Kendrick and others
 bill@newbreedsoftware.com
 http://www.tuxpaint.org/
 
 
-June 17, 2002 - November 1, 2006
+June 17, 2002 - April 6, 2007
 
 $Id$
 
@@ -45,8 +45,13 @@ $Id$
     Tux originally designed by Larry Ewing <lewing@isc.tamue.edu>
     http://www.isc.tamu.edu/~lewing/linux/
 
-  * Brushes created using The GIMP
+  * Most brushes created using The GIMP
     http://www.gimp.org/
+
+  * Neko cat brushes based on XNeko by Masayuki Koba
+
+  * Heart, "Lozenge", Oval, Sprial and Star brushes
+    Caroline Ford <caroline.ford.work@googlemail.com>
 
 
 * Starter Images

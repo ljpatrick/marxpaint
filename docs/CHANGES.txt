@@ -9,7 +9,7 @@ http://www.newbreedsoftware.com/tuxpaint/
 $Id$
 
 
-2007.March.24 (0.9.17)
+2007.April.6 (0.9.17)
 
   * Tool Improvements:
     ------------------
@@ -24,6 +24,9 @@ $Id$
       stamps when they are scaled up.
       (Based on example code by Christian Graus:
       http://www.codeproject.com/cs/media/imageprocessing4.asp )
+
+    * New brushes: Heart, "Lozenge", Oval, Spiral and Star.
+      Caroline Ford <caroline.ford.work@googlemail.com>
 
   * Documentation Improvements:
     ---------------------------
@@ -42,6 +45,9 @@ $Id$
   * Bug Fixes:
     ----------
     * Tux the Penguin sound effects were not working; fixed.
+
+    * No longer disabling screensaver (if the system's libSDL supports
+      it via "SDL_ALLOWSCREENSAVER" environment variable).
 
   * Compiling, porting and packaging updates:
     -----------------------------------------
