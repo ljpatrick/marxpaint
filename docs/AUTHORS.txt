@@ -52,6 +52,7 @@ $Id$
 
   * More brushes created using Inkscape
     by Caroline Ford <caroline.ford.work@googlemail.com>
+    (Licensed under GFDL/CC-BY-SA/GPL)
       + Blob
       + Chisle
       + Cut-out square in diamond
