@@ -6870,13 +6870,8 @@ static void setup(int argc, char *argv[])
     exit(1);
   }
 
-#ifdef NOKIA_770
-  snprintf(tmp_str, sizeof(tmp_str), "Version: %s – %s - Maemo", VER_VERSION,
-	   VER_DATE);
-#else
   snprintf(tmp_str, sizeof(tmp_str), "Version: %s – %s", VER_VERSION,
 	   VER_DATE);
-#endif
 
   tmp_surf = render_text(medium_font, tmp_str, black);
   dest.x = 10;
@@ -6888,7 +6883,7 @@ static void setup(int argc, char *argv[])
   printf("%s\n", tmp_str);
 #endif
 
-  snprintf(tmp_str, sizeof(tmp_str), "© 2002~@~S2006 Bill Kendrick et al.");
+  snprintf(tmp_str, sizeof(tmp_str), "© 2002–2007 Bill Kendrick et al.");
   tmp_surf = render_text(medium_font, tmp_str, black);
   dest.x = 10;
   dest.y = WINDOW_HEIGHT - img_progress->h - (tmp_surf->h * 2);
