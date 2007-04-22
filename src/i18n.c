@@ -35,11 +35,32 @@
 #include "i18n.h"
 #include "debug.h"
 
+
 #ifdef WIN32
 #include <sys/types.h>
 #endif
 
+
+/* (Trouble building this for 10.2.8 target; bjk & mf 2006.01.14) */
+#ifndef __APPLE_10_2_8__
+#include <wchar.h>
+#else
+#undef FORKED_FONTS
+#define wchar_t char
+#define wcslen strlen
+#define towupper toupper
+#define iswprint isprint
+#define OLD_UPPERCASE_CODE
+#endif
+
+#ifndef OLD_UPPERCASE_CODE
+#include <wctype.h>
+#endif
+
+
 /* Globals: */
+
+static int langint = LANG_EN;
 
 const char *lang_prefixes[NUM_LANGS] = {
   "af",
@@ -279,9 +300,9 @@ void set_langstr(const char *s)
 void ctype_utf8(void)
 {
 #ifndef _WIN32
-  char *names[] = {"en_US.UTF8","en_US.UTF-8","UTF8","UTF-8",};
+  const char *names[] = {"en_US.UTF8","en_US.UTF-8","UTF8","UTF-8",};
   int i = sizeof(names)/sizeof(names[0]);
-  while(i-- && !iswprint((wchar_t)0xf7) && !setlocale(LC_CTYPE,names[i]))
+  while(i && !iswprint((wchar_t)0xf7) && !setlocale(LC_CTYPE,names[--i]))
     ;
 #endif
 }
@@ -291,7 +312,7 @@ void ctype_utf8(void)
 void set_current_language(void)
 {
   char *loc;
-  int lang, i, found;
+  int i, found;
 
   bindtextdomain("tuxpaint", LOCALEDIR);
   /* Old version of glibc does not have bind_textdomain_codeset() */
@@ -302,7 +323,7 @@ void set_current_language(void)
 
   /* Default... */
 
-  lang = LANG_EN;
+  langint = LANG_EN;
 
 
 #ifndef WIN32
@@ -343,21 +364,27 @@ void set_current_language(void)
       // Case-insensitive (both "pt_BR" and "pt_br" work, etc.)
       if (strncasecmp(loc, lang_prefixes[i], strlen(lang_prefixes[i])) == 0)
       {
-	lang = i;
+	langint = i;
 	found = 1;
       }
     }
   }
 
-  lang_prefix = lang_prefixes[lang];
-  need_own_font = search_int_array(lang, lang_use_own_font);
-  need_right_to_left = search_int_array(lang, lang_use_right_to_left);
+  lang_prefix = lang_prefixes[langint];
+  need_own_font = search_int_array(langint, lang_use_own_font);
+  need_right_to_left = search_int_array(langint, lang_use_right_to_left);
 
 #ifdef DEBUG
-  fprintf(stderr, "DEBUG: Language is %s (%d)\n", lang_prefix, lang);
+  fprintf(stderr, "DEBUG: Language is %s (%d)\n", lang_prefix, langint);
   fflush(stderr);
 #endif
 
+}
+
+
+int get_current_language(void)
+{
+  return langint;
 }
 
 
@@ -586,6 +613,7 @@ void setup_language(const char *const prg)
     setlocale(LC_ALL, "");
     ctype_utf8();
     free(langstr);
+    langstr = NULL;
   }
 
   set_current_language();

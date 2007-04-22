@@ -15,6 +15,10 @@
 
 
 #ifndef I18N_H
+#define I18N_H
+
+#include <stdio.h>
+
 
 /* Possible languages: */
 
@@ -118,6 +122,7 @@ extern const language_to_locale_struct language_to_locale_array[];
 
 void set_langstr(const char *s);
 void set_current_language(void);
+int get_current_language(void);
 void show_lang_usage(FILE * f, const char *const prg);
 void show_locale_usage(FILE * f, const char *const prg);
 void setup_language(const char *const prg);

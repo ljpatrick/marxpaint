@@ -32,6 +32,9 @@ $Id$
   Bilinear interpolation code based on an example by Christian Graus
   ( http://www.codeproject.com/cs/media/imageprocessing4.asp ).
 
+  Input Method (IM) Framework and Korean/Japanese IM implemented by:
+  Mark K. Kim <mkkim214@gmail.com>
+
 
 * Graphics
 

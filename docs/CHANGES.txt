@@ -9,10 +9,15 @@ http://www.newbreedsoftware.com/tuxpaint/
 $Id$
 
 
-2007.April.6 (0.9.17)
+2007.April.21 (0.9.17)
 
   * Tool Improvements:
     ------------------
+    * Input Method Framework, with implementations of Korean (Hangul 2-Bul)
+      and Japanese (Romanized Hiragana and Katakana) input methods.  Should
+      be extensible to other languages.
+      Mark K. Kim <mkkim214@gmail.com>
+
     * Stamps now supports SVG vector-based graphics!  (Via Cairo library)
       (Only SVG versions of stamps are loaded, when both PNG and SVG
       variations are found.)
@@ -412,7 +417,7 @@ $Id$
 
     * Source files and documentation files tagged with CVS Id tags
       for easier version tracking.
-      Mark K. Kim <tuxNO_SOLICITATIONpaint-dev@cbreak.org>
+      Mark K. Kim <mkkim214@gmail.com>
 
   * Locale update:
     --------------
@@ -867,7 +872,7 @@ $Id$
       TOYAMA Shin-ichi <shin1@wmail.plala.or.jp>
 
     * Korean
-      Mark K. Kim <tuxNO_SOLICITATIONpaint-dev@cbreak.org>
+      Mark K. Kim <mkkim214@gmail.com>
 
     * Lithuanian
       Gintaras Go?tautas <gintaras@nes.lt>
@@ -994,7 +999,7 @@ $Id$
       Bill Kendrick <bill@newbreedsoftware.com>
 
     * Korean README.txt documentation added, in both EUC-KR and UTF-8 formats.
-      Mark K. Kim <tuxNO_SOLICITATIONpaint-dev@cbreak.org>
+      Mark K. Kim <mkkim214@gmail.com>
 
     * Serbian translation created.
       Aleksandar Jelenak <jelenak@netlinkplus.net>
@@ -1062,7 +1067,7 @@ $Id$
       TOYAMA Shin-ichi <shin1@wmail.plala.or.jp>
 
     * Updated Korean translation.
-      Mark K. Kim <tuxNO_SOLICITATIONpaint-dev@cbreak.org>
+      Mark K. Kim <mkkim214@gmail.com>
 
     * Updated Malay translation.
       Muhammad Najmi Ahmad Zabidi <mnajem@linuxmail.org>
@@ -1144,7 +1149,7 @@ $Id$
       John Popplewell <john@johnnypops.demon.co.uk>
 
     * Updated Makefile for easier install.
-      Mark K. Kim <tuxNO_SOLICITATIONpaint-dev@cbreak.org>
+      Mark K. Kim <mkkim214@gmail.com>
 
     * Cleaned up desktop entry file.
       Karl Ove Hufthammer <karl@huftis.org>
@@ -1176,7 +1181,7 @@ $Id$
       Mark K. Kim & John Popplewell
   
     * Fixed security issue with permissions to Tux Paint docs directory.
-      Mark K. Kim <tuxNO_SOLICITATIONpaint-dev@cbreak.org>
+      Mark K. Kim <mkkim214@gmail.com>
 
     * Fixed 'savedir' bug.  (Was dropping filenames)
 
@@ -1357,7 +1362,7 @@ $Id$
   * Right-to-left language support (for Hebrew, for example).
 
   * Updated Korean translations.
-    Mark K. Kim <tuxNO_SOLICITATIONpaint-dev@cbreak.org>
+    Mark K. Kim <mkkim214@gmail.com>
 
   * UTF-8 support in the Text Tool!
     Robert Glowczynski <robertg@software.com.pl>,
@@ -1636,7 +1641,7 @@ $Id$
   * UTF-8 support working.
 
   * Korean translation completed!
-    Mark K. Kim <tuxNO_SOLICITATIONpaint-dev@cbreak.org>
+    Mark K. Kim <mkkim214@gmail.com>
 
   * Fixed errors in 'uninstall' target in Makefile
 
@@ -1694,7 +1699,7 @@ $Id$
     Török Gábor <gabo@linuxmania.hu>
 
   * Partly translated to Korean.  PO file in an unusable charset, though...
-    Mark K. Kim <tuxNO_SOLICITATIONpaint-dev@cbreak.org>
+    Mark K. Kim <mkkim214@gmail.com>
 
   * Supports locale-specific fonts for languages that need Unicode.
     e.g., Korean will use "ko.ttf", if found, for translated strings.

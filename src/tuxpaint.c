@@ -391,6 +391,8 @@ typedef struct safer_dirent
 #include "tip_tux.h"
 #include "great.h"
 
+#include "im.h"
+
 
 #ifdef DEBUG_MALLOC
 #include "malloc.c"
@@ -1045,6 +1047,7 @@ static int eraser_scroll, shape_scroll;	// dummy variables for now
 
 static int eraser_sound;
 
+static IM_DATA im_data;
 static wchar_t texttool_str[256];
 static unsigned int texttool_len;
 
@@ -1802,6 +1805,9 @@ static void mainloop(void)
 
 	  if (cur_tool == TOOL_TEXT && cursor_x != -1 && cursor_y != -1)
 	  {
+	    static int discard = 0;
+	    wchar_t* im_cp = im_data.s;
+
 	    key_down = key;
 	    key_unicode = event.key.keysym.unicode;
 
@@ -1829,81 +1835,102 @@ static void mainloop(void)
 #endif
 #endif
 
-	    if (key_down == SDLK_BACKSPACE)
-	    {
-	      hide_blinking_cursor();
-	      if (texttool_len > 0)
-	      {
-		texttool_len--;
-		texttool_str[texttool_len] = 0;
-		playsound(screen, 0, SND_KEYCLICK, 0, SNDPOS_CENTER,
-			  SNDDIST_NEAR);
+	    /* Discard previous # of instructed characters */
+	    if((int)texttool_len <= discard) texttool_len = 0;
+	    else texttool_len -= discard;
+	    texttool_str[texttool_len] = L'\0';
 
-		do_render_cur_text(0);
+	    /* Read IM, remember how many to discard next iteration */
+	    discard = im_read(&im_data, event.key.keysym);
+
+	    /* Queue each character to be displayed */
+	    while(*im_cp) {
+	      if (*im_cp == L'\b')
+	      {
+	        hide_blinking_cursor();
+	        if (texttool_len > 0)
+	        {
+	          texttool_len--;
+	          texttool_str[texttool_len] = 0;
+	          playsound(screen, 0, SND_KEYCLICK, 0, SNDPOS_CENTER,
+	          	  SNDDIST_NEAR);
+
+	          do_render_cur_text(0);
+	        }
 	      }
-	    }
-	    else if (key_down == SDLK_RETURN)
-	    {
-	      int font_height;
-
-	      hide_blinking_cursor();
-	      if (texttool_len > 0)
+	      else if (*im_cp == L'\r')
 	      {
-		rec_undo_buffer();
-		do_render_cur_text(1);
-		texttool_len = 0;
-		cursor_textwidth = 0;
+	        int font_height;
+
+	        hide_blinking_cursor();
+	        if (texttool_len > 0)
+	        {
+	          rec_undo_buffer();
+	          do_render_cur_text(1);
+	          texttool_len = 0;
+	          cursor_textwidth = 0;
+	        }
+	        font_height = TTF_FontHeight(getfonthandle(cur_font));
+
+	        cursor_x = cursor_left;
+	        cursor_y = min(cursor_y + font_height, canvas->h - font_height);
+
+	        playsound(screen, 0, SND_RETURN, 1, SNDPOS_RIGHT, SNDDIST_NEAR);
+		im_softreset(&im_data);
 	      }
-	      font_height = TTF_FontHeight(getfonthandle(cur_font));
-
-	      cursor_x = cursor_left;
-	      cursor_y = min(cursor_y + font_height, canvas->h - font_height);
-
-	      playsound(screen, 0, SND_RETURN, 1, SNDPOS_RIGHT, SNDDIST_NEAR);
-	    }
-	    else if (key_down == SDLK_TAB)
-	    {
-	      if (texttool_len > 0)
+	      else if (*im_cp == L'\t')
 	      {
-		rec_undo_buffer();
-		do_render_cur_text(1);
-		cursor_x = min(cursor_x + cursor_textwidth, canvas->w);
-		texttool_len = 0;
-		cursor_textwidth = 0;
+	        if (texttool_len > 0)
+	        {
+	          rec_undo_buffer();
+	          do_render_cur_text(1);
+	          cursor_x = min(cursor_x + cursor_textwidth, canvas->w);
+	          texttool_len = 0;
+	          cursor_textwidth = 0;
+	        }
+		im_softreset(&im_data);
 	      }
-	    }
-	    else if (iswprint(key_unicode))
-	    {
-	      if (texttool_len < (sizeof(texttool_str) / sizeof(wchar_t)) - 1)
+	      else if (iswprint(*im_cp))
 	      {
-		int old_cursor_textwidth = cursor_textwidth;
-#ifdef DEBUG
-		wprintf(L"    key = <%c>\nunicode = <%lc> 0x%04x %d\n\n",
-			key_down, key_unicode, key_unicode, key_unicode);
+	        if (texttool_len < (sizeof(texttool_str) / sizeof(wchar_t)) - 1)
+	        {
+	          int old_cursor_textwidth = cursor_textwidth;
+#ifdef DEBUG  
+	          wprintf(L"    key = <%c>\nunicode = <%lc> 0x%04x %d\n\n",
+	          	key_down, key_unicode, key_unicode, key_unicode);
 #endif
 
-		texttool_str[texttool_len++] = key_unicode;
-		texttool_str[texttool_len] = 0;
+	          texttool_str[texttool_len++] = *im_cp;
+	          texttool_str[texttool_len] = 0;
 
-		do_render_cur_text(0);
+	          do_render_cur_text(0);
 
 
-		if (cursor_x + old_cursor_textwidth <= canvas->w - 50 &&
-		    cursor_x + cursor_textwidth > canvas->w - 50)
-		{
-		  playsound(screen, 0, SND_KEYCLICKRING, 1, SNDPOS_RIGHT,
-			    SNDDIST_NEAR);
-		}
-		else
-		{
-		  /* FIXME: Might be fun to position the
-		     sound based on keyboard layout...? */
+	          if (cursor_x + old_cursor_textwidth <= canvas->w - 50 &&
+	              cursor_x + cursor_textwidth > canvas->w - 50)
+	          {
+	            playsound(screen, 0, SND_KEYCLICKRING, 1, SNDPOS_RIGHT,
+	          	    SNDDIST_NEAR);
+	          }
+	          else
+	          {
+	            /* FIXME: Might be fun to position the
+	               sound based on keyboard layout...? */
 
-		  playsound(screen, 0, SND_KEYCLICK, 0, SNDPOS_CENTER,
-			    SNDDIST_NEAR);
-		}
+	            playsound(screen, 0, SND_KEYCLICK, 0, SNDPOS_CENTER,
+	          	    SNDDIST_NEAR);
+	          }
+	        }
 	      }
+
+	      im_cp++;
+	    } /* while(*im_cp) */
+
+	    /* Show IM tip text */
+	    if(im_data.tip_text) {
+	      draw_tux_text(TUX_DEFAULT, im_data.tip_text, 1);
 	    }
+
 	  }
 	}
       }
@@ -6461,6 +6488,7 @@ static void setup(int argc, char *argv[])
 
 
   setup_language(getfilename(argv[0]));
+  im_init(&im_data, get_current_language());
 
 
 #ifndef WIN32

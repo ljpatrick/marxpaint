@@ -73,6 +73,11 @@ LOCALE_PREFIX=$(PKG_ROOT)$(PREFIX)/share/locale
 # LOCALE_PREFIX=/usr/share/locale
 
 
+# IM files
+
+IM_PREFIX=$(PKG_ROOT)$(PREFIX)/share/im
+
+
 # Built with sound by default  (override with "make nosound")
 
 NOSOUNDFLAG=__SOUND
@@ -82,9 +87,11 @@ NOSOUNDFLAG=__SOUND
 
 NOSVGFLAG=__SVG
 
+
 # Maemo flag
 
 MAEMOFLAG=NO_MAEMOFLAG
+
 
 # Where to find cursor shape XBMs
 
@@ -117,7 +124,8 @@ CFLAGS=$(OPTFLAGS) -W -Wall -fno-common -ffloat-store \
 
 DEFS=-DDATA_PREFIX=\"$(DATA_PREFIX)/\" \
 	-D$(NOSOUNDFLAG) -D$(NOSVGFLAG) -DDOC_PREFIX=\"$(DOC_PREFIX)/\" \
-	-DLOCALEDIR=\"$(LOCALE_PREFIX)/\" -DCONFDIR=\"$(CONFDIR)/\" \
+	-DLOCALEDIR=\"$(LOCALE_PREFIX)/\" -DIMDIR=\"$(IM_PREFIX)/\" \
+	-DCONFDIR=\"$(CONFDIR)/\" \
 	-DVER_VERSION=\"$(VER_VERSION)\" \
 	-DVER_DATE=\"$(VER_DATE)\" \
 	-D$(MAEMOFLAG)
@@ -211,6 +219,7 @@ beos:
 		ICON_PREFIX=. \
 		X11_ICON_PREFIX=. \
 		LOCALE_PREFIX=/boot/home/config/share/locale \
+		IM_PREFIX=./src \
 		CFLAGS="-O1 -funroll-loops -fomit-frame-pointer -pipe -Wall" \
 		RSRC_CMD="xres -o tuxpaint tuxpaint.rsrc" \
 		MIMESET_CMD="mimeset -f tuxpaint" \
@@ -232,6 +241,7 @@ win32:
 		ICON_PREFIX=. \
 		X11_ICON_PREFIX=. \
 		LOCALE_PREFIX=$(PREFIX)/share/locale \
+		IM_PREFIX=$(PREFIX)/share/tuxpaint/im \
 		CONFDIR=$(PREFIX)/etc/tuxpaint \
 		ARCH_LINKS="-lintl -lpng12 -lwinspool -lshlwapi" \
 		ARCH_HEADERS="src/win32_print.h" \
@@ -253,7 +263,7 @@ nokia770:
 # to do this as superuser ("root"))
 
 install:	install-bin install-data install-man install-doc \
-		install-icon install-gettext install-importscript \
+		install-icon install-gettext install-im install-importscript \
 		install-default-config install-example-stamps \
 		install-example-starters \
 		install-gnome install-kde install-kde-icons
@@ -278,7 +288,7 @@ install:	install-bin install-data install-man install-doc \
 # Installs the various parts for the MinGW/MSYS development/testing environment.
 
 install-private-win32:	install-bin install-data install-man install-doc \
-		install-gettext install-importscript \
+		install-gettext install-im install-importscript \
 		install-default-config install-example-stamps \
 		install-example-starters
 	@echo
@@ -302,7 +312,7 @@ install-private-win32:	install-bin install-data install-man install-doc \
 # Installs the various parts for the MinGW/MSYS development/testing environment.
 
 bdist-private-win32:	install-bin install-data install-doc \
-		install-gettext install-dlls\
+		install-gettext install-im install-dlls\
 		install-example-stamps install-example-starters
 	@echo
 	@echo "--------------------------------------------------------------"
@@ -327,6 +337,7 @@ install-beos:
 		ICON_PREFIX=. \
 		X11_ICON_PREFIX=. \
 		LOCALE_PREFIX=/boot/home/config/share/locale \
+		IM_PREFIX=./src \
 		CFLAGS="-O1 -funroll-loops -fomit-frame-pointer -pipe -Wall" \
 		RSRC_CMD="xres -o tuxpaint tuxpaint.rsrc" \
 		MIMESET_CMD="mimeset -f tuxpaint" \
@@ -348,6 +359,7 @@ install-win32:
 		ICON_PREFIX=. \
 		X11_ICON_PREFIX=. \
 		LOCALE_PREFIX=$(PREFIX)/share/locale \
+		IM_PREFIX=$(PREFIX)/share/tuxpaint/im \
 		CONFDIR=$(PREFIX)/etc/tuxpaint \
 
 # "make bdist-win32" recompiles Tux Paint to work with executable-relative
@@ -363,6 +375,7 @@ bdist-win32:
 		DATA_PREFIX=data \
 		DOC_PREFIX=docs \
 		LOCALE_PREFIX=locale \
+		IM_PREFIX=im \
 		ARCH_LINKS="-lintl -lpng12 -lwinspool -lshlwapi" \
 		ARCH_HEADERS="src/win32_print.h" \
 		ARCH_LIBS="obj/win32_print.o obj/resource.o"
@@ -374,6 +387,7 @@ bdist-win32:
 		DATA_PREFIX=./visualc/bdist/data \
 		DOC_PREFIX=./visualc/bdist/docs \
 		LOCALE_PREFIX=./visualc/bdist/locale \
+		IM_PREFIX=./visualc/bdist/im \
 
 # "make bdist-clean" deletes the 'bdist' directory
 bdist-clean:
@@ -495,6 +509,8 @@ uninstall:
 	-rm $(LOCALE_PREFIX)/xh/LC_MESSAGES/tuxpaint.mo
 	-rm $(LOCALE_PREFIX)/zh_CN/LC_MESSAGES/tuxpaint.mo
 	-rm $(LOCALE_PREFIX)/zh_TW/LC_MESSAGES/tuxpaint.mo
+	-rm $(IM_PREFIX)/ja.im
+	-rm $(IM_PREFIX)/ko.im
 	-rm -f -r $(CONFDIR)
 
 
@@ -1037,6 +1053,29 @@ install-gettext:
 	@chmod 644 $(LOCALE_PREFIX)/xh/LC_MESSAGES/tuxpaint.mo
 
 
+# Install the Input Method files:
+
+ifneq ($(IM_PREFIX),)
+install-im:
+	@echo
+	@echo "...Installing Input Method files..."
+	@#
+	@install -d $(IM_PREFIX)
+	@#
+	@echo "   ja ...Japanese..."
+	@cp im/ja.im $(IM_PREFIX)/ja.im
+	@chmod 644 $(IM_PREFIX)/ja.im
+	@#
+	@echo "   ko ...Korean..."
+	@cp im/ko.im $(IM_PREFIX)/ko.im
+	@chmod 644 $(IM_PREFIX)/ko.im
+else
+install-im:
+	@echo
+	@echo "...Not Installing Input Method files (no IM_PREFIX defined)..."
+endif
+
+
 # Install the text documentation:
 
 install-doc:
@@ -1073,7 +1112,7 @@ install-man:
 
 # Build the program!
 
-tuxpaint:	obj/tuxpaint.o obj/i18n.o obj/cursor.o obj/pixels.o \
+tuxpaint:	obj/tuxpaint.o obj/i18n.o obj/im.o obj/cursor.o obj/pixels.o \
 		obj/floodfill.o obj/rgblinear.o obj/playsound.o obj/fonts.o \
 		obj/progressbar.o obj/dirwalk.o obj/get_fname.o \
 		$(HQXX_O) $(ARCH_LIBS)
@@ -1093,7 +1132,7 @@ tuxpaint:	obj/tuxpaint.o obj/i18n.o obj/cursor.o obj/pixels.o \
 # Build the object for the program!
 
 obj/tuxpaint.o:	src/tuxpaint.c \
-		src/i18n.h src/cursor.h src/pixels.h \
+		src/i18n.h src/im.h src/cursor.h src/pixels.h \
 		src/floodfill.h src/rgblinear.h src/playsound.h src/fonts.h \
 		src/progressbar.h src/dirwalk.h src/get_fname.h \
 		src/compiler.h src/debug.h \
@@ -1124,6 +1163,12 @@ obj/i18n.o:	src/i18n.c src/i18n.h src/debug.h
 	@echo "...Compiling i18n support..."
 	@$(CC) $(CFLAGS) $(DEBUG_FLAGS) $(DEFS) \
 		-c src/i18n.c -o obj/i18n.o
+
+obj/im.o:	src/im.c src/im.h src/debug.h
+	@echo
+	@echo "...Compiling IM support..."
+	@$(CC) $(CFLAGS) $(DEBUG_FLAGS) $(SDL_CFLAGS) $(DEFS) \
+		-c src/im.c -o obj/im.o
 
 obj/get_fname.o:	src/get_fname.c src/get_fname.h src/debug.h
 	@echo
