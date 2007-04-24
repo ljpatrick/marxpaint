@@ -89,6 +89,9 @@ $Id$
     * Czech
       tropikhajma <tropikhajma@seznam.cz>
 
+    * Danish
+      Mikkel Kirkgaard Nielsen <translation@mikini.dk>
+
     * Faroese
       Lis Gøthe í Jákupsstovu <morshus@gmail.com>
 

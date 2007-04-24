@@ -196,7 +196,8 @@ $Id$
 
   * Danish
     Rasmus Erik Voel Jensen <i18n@solsort.dk> [retired]
-    Mogens Jæger <mogensjaeger@get2net.dk> [current maintainer]
+    Mogens Jæger <mogensjaeger@get2net.dk> 
+    Mikkel Kirkgaard Nielsen <translation@mikini.dk>
 
   * Dutch
     Herman Bruyninckx <Herman.Bruyninckx@mech.kuleuven.ac.be>
