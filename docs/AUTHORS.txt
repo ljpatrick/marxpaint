@@ -7,7 +7,7 @@ bill@newbreedsoftware.com
 http://www.tuxpaint.org/
 
 
-June 17, 2002 - April 6, 2007
+June 17, 2002 - April 24, 2007
 
 $Id$
 
@@ -191,7 +191,8 @@ $Id$
   * Czech
     Peter Sterba <sterba@sterba.com>
     Martin <barin@email.cz>,
-    "Lucie Burianova" <Lucie.Burianova@global-dtp.com>
+    Lucie Burianova <Lucie.Burianova@global-dtp.com>
+    tropikhajma <tropikhajma@seznam.cz>
 
   * Danish
     Rasmus Erik Voel Jensen <i18n@solsort.dk> [retired]

@@ -86,6 +86,9 @@ $Id$
     * Basque
       Juan Irigoien <juanirigoien@gmail.com>
 
+    * Czech
+      tropikhajma <tropikhajma@seznam.cz>
+
     * Faroese
       Lis Gøthe í Jákupsstovu <morshus@gmail.com>
 

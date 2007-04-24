@@ -414,7 +414,7 @@ msgid "Yes, I'm done!"
 msgstr "Ano, jsem hotov!"
 
 msgid "No, take me back!"
-msgstr "Na, chci zpátky!"
+msgstr "Ne, chci zpátky!"
 
 msgid "If you quit, you’ll lose your picture! Save it?"
 msgstr "Pokud skončíš, ztratíš svůj obrázek. Chceš ho uložit?"
@@ -484,12 +484,11 @@ msgstr ""
 msgid "Back"
 msgstr "Zpět"
 
-#, fuzzy
 msgid "Next"
-msgstr "Text"
+msgstr "Další"
 
 msgid "Play"
-msgstr ""
+msgstr "Přehrát"
 
 msgid "Aa"
 msgstr "Aa"
@@ -516,7 +515,6 @@ msgid "Choose the picture you want, then click “Open”."
 msgstr "Vyber si obrázek a klikni na \"Otevřít\"."
 
 #. Let user choose images:
-#, fuzzy
 msgid "Choose the pictures you want, then click “Play”."
 msgstr "Vyber si obrázek a klikni na \"Otevřít\"."
 
