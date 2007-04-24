@@ -308,9 +308,10 @@ $Id$
     Karl Ove Hufthammer <karl@huftis.org>
 
   * Polish
-    Arkadiusz Lipiec
-    Robert Glowczynski
+    Arkadiusz Lipiec <alipiec@elka.pw.edu.pl>
+    Robert Glowczynski <robertg@software.com.pl>
     Tomasz 'karave' Tarach <karave@poczta.onet.pl>
+    Andrzej M. Krzysztofowicz <ankry@mif.pg.gda.pl>
 
   * Portuguese (Brazilian)
     Fred Ulisses Maranhao <fred_maranhao@yahoo.com.br>

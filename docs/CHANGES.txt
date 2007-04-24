@@ -95,6 +95,9 @@ $Id$
     * Lithuanian
       Gintaras Gostautas <gintaras@nes.lt>
 
+    * Polish
+      Andrzej M. Krzysztofowicz <ankry@mif.pg.gda.pl>
+
     * Thai
       Ouychai Chaita <ae.freeman@gmail.com>
 
