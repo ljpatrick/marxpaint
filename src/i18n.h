@@ -4,13 +4,13 @@
   For Tux Paint
   Language-related functions
 
-  Copyright (c) 2002-2006 by Bill Kendrick and others
+  Copyright (c) 2002-2007 by Bill Kendrick and others
   bill@newbreedsoftware.com
-  http://www.newbreedsoftware.com/tuxpaint/
+  http://www.tuxpaint.org/
 
   $Id$
   
-  June 14, 2002 - October 11, 2006
+  June 14, 2002 - April 24, 2007
 */
 
 
@@ -82,6 +82,7 @@ enum
   LANG_SV,			/* Swedish */
   LANG_SW,			/* Swahili */
   LANG_TA,			/* Tamil */
+  LANG_TE,                      /* Telugu */
   LANG_TH,			/* Thai */
   LANG_TL,			/* Tagalog */
   LANG_TR,			/* Turkish */

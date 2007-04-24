@@ -3,11 +3,11 @@
 
 # Tux Paint - A simple drawing program for children.
 
-# Copyright (c) 2002-2006 by Bill Kendrick and others
+# Copyright (c) 2002-2007 by Bill Kendrick and others
 # bill@newbreedsoftware.com
-# http://www.newbreedsoftware.com/tuxpaint/
+# http://www.tuxpaint.org/
 
-# June 14, 2002 - October 26, 2006
+# June 14, 2002 - April 24, 2007
 
 
 # The version number, for release:
@@ -1007,6 +1007,11 @@ install-gettext:
 	@cp trans/ta.mo $(LOCALE_PREFIX)/ta/LC_MESSAGES/tuxpaint.mo
 	@chmod 644 $(LOCALE_PREFIX)/ta/LC_MESSAGES/tuxpaint.mo
 	@#
+	@echo "   te_IN ...Telugu..."
+	@install -d $(LOCALE_PREFIX)/te/LC_MESSAGES
+	@cp trans/te.mo $(LOCALE_PREFIX)/te/LC_MESSAGES/tuxpaint.mo
+	@chmod 644 $(LOCALE_PREFIX)/te/LC_MESSAGES/tuxpaint.mo
+	@#
 	@echo "   th_TH ...Thai..."
 	@install -d $(LOCALE_PREFIX)/th/LC_MESSAGES
 	@cp trans/th.mo $(LOCALE_PREFIX)/th/LC_MESSAGES/tuxpaint.mo
@@ -1310,6 +1315,7 @@ translations: trans \
 	trans/sv.mo \
 	trans/sw.mo \
 	trans/ta.mo \
+	trans/te.mo \
 	trans/th.mo \
 	trans/tl.mo \
 	trans/tlh.mo \
@@ -1554,6 +1560,10 @@ trans/sw.mo:	src/po/sw.po
 trans/ta.mo:	src/po/ta.po
 	@echo "   ta_IN ...Tamil..."
 	@msgfmt -o trans/ta.mo src/po/ta.po
+
+trans/te.mo:	src/po/te.po
+	@echo "   te_IN ...Telugu..."
+	@msgfmt -o trans/te.mo src/po/te.po
 
 trans/th.mo:	src/po/th.po
 	@echo "   th_TH ...Thai..."

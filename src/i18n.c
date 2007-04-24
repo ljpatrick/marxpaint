@@ -4,9 +4,9 @@
   For Tux Paint
   Language-related functions
 
-  Copyright (c) 2002-2006 by Bill Kendrick and others
+  Copyright (c) 2002-2007 by Bill Kendrick and others
   bill@newbreedsoftware.com
-  http://www.newbreedsoftware.com/tuxpaint/
+  http://www.tuxpaint.org/
 
   This program is free software; you can redistribute it and/or modify
   it under the terms of the GNU General Public License as published by
@@ -25,7 +25,7 @@
 
   $Id$
 
-  June 14, 2002 - October 11, 2006
+  June 14, 2002 - April 24, 2007
 */
 
 #include <stdio.h>
@@ -121,6 +121,7 @@ const char *lang_prefixes[NUM_LANGS] = {
   "sv",
   "sw",
   "ta",
+  "te",
   "th",
   "tl",
   "tr",
@@ -144,6 +145,7 @@ int lang_use_own_font[] = {
   LANG_KA,
   LANG_KO,
   LANG_TA,
+  LANG_TE,
   LANG_TH,
   LANG_ZH_CN,
   LANG_ZH_TW,
@@ -235,6 +237,7 @@ const language_to_locale_struct language_to_locale_array[] = {
   {"korean", "ko_KR.UTF-8"},
   {"kurdish", "ku_TR.UTF-8"},
   {"tamil", "ta_IN.UTF-8"},
+  {"telugu", "te_IN.UTF-8"},
   {"lithuanian", "lt_LT.UTF-8"},
   {"lietuviu", "lt_LT.UTF-8"},
   {"malay", "ms_MY.UTF-8"},
@@ -456,6 +459,7 @@ void show_lang_usage(FILE * f, const char *const prg)
 /* sv */ "  swedish      svenska\n"
 /* tl */ "  tagalog\n"
 /* ta */ "  tamil\n"
+/* te */ "  telugu\n"
 /* th */ "  thai\n"
 /* bo */ "  tibetan\n"
 /* tr */ "  turkish\n"
@@ -536,6 +540,7 @@ void show_locale_usage(FILE * f, const char *const prg)
 	  "  sw_TZ   (Swahili)\n"
 	  "  sv_SE   (Swedish      Svenska)\n"
 	  "  ta_IN   (Tamil)\n"
+          "  te_IN   (Telugu)\n"
 	  "  tl_PH   (Tagalog)\n"
 	  "  bo_CN   (Tibetan)\n"
 	  "  th_TH   (Thai)\n"

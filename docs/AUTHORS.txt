@@ -372,6 +372,9 @@ $Id$
   * Tamil
     Mugunth <mugunth@thamizha.com>
 
+  * Telugu
+    Pavithran Shakamuri <pavithran.s@gmail.com>
+
   * Thai
     Ouychai Chaita <ae.freeman@gmail.com>
 

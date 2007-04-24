@@ -81,6 +81,11 @@ $Id$
       hid on-screen mouse cursor, disabled Print and Text tools)
       Alessandro Pasotti <apasotti@gmail.com>
 
+  * New Translations:
+    -----------------
+    * Telugu -- includes "te.ttf" font
+      Pavithran Shakamuri <pavithran.s@gmail.com>
+
   * Translation Updates:
     --------------------
     * Basque
