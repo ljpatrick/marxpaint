@@ -103,6 +103,7 @@ const char *lang_prefixes[NUM_LANGS] = {
   "ko",
   "ku",
   "lt",
+  "lv",
   "ms",
   "nb",
   "nl",
@@ -240,6 +241,7 @@ const language_to_locale_struct language_to_locale_array[] = {
   {"telugu", "te_IN.UTF-8"},
   {"lithuanian", "lt_LT.UTF-8"},
   {"lietuviu", "lt_LT.UTF-8"},
+  {"latvian", "lv_LV.UTF-8"},
   {"malay", "ms_MY.UTF-8"},
   {"dutch", "nl_NL.UTF-8"},
   {"nederlands", "nl_NL.UTF-8"},
@@ -439,6 +441,7 @@ void show_lang_usage(FILE * f, const char *const prg)
 /* tlh */ "  klingon      tlhIngan\n"
 /* ko */ "  korean\n"
 /* ku */ "  kurdish\n"
+/* lv */ "  latvian\n"
 /* lt */ "  lithuanian   lietuviu\n"
 /* ms */ "  malay\n"
 /* es_MX */
@@ -523,6 +526,7 @@ void show_locale_usage(FILE * f, const char *const prg)
 	  "  ko_KR   (Korean)\n"
 	  "  ku_TR   (Kurdish)\n"
 	  "  ms_MY   (Malay)\n"
+	  "  lv_LV   (Latvian)\n"
 	  "  lt_LT   (Lithuanian   Lietuviu)\n"
           "  nr_ZA   (Ndebele)\n"
 	  "  nn_NO   (Norwegian    Nynorsk                Norsk)\n"

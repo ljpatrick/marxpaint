@@ -1,0 +1,513 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Projekta versija: PACKAGE VERSION\n"
+"Ziņo par kļūdu: \n"
+"POT-Izveidošnas datums: 2006-09-10 11:18-0700\n"
+"PO-Revīzijas datums: GADS-MĒ-DI HO:MI+ZONE\n"
+"Tulkoja: Raivis Strogonovs <raivucis@gmail.com>\n"
+"Valodas Kommanda: Valoda <raivucis@gmail.com>\n"
+"MIME-Versija: 1.0\n"
+"Satura tips: teksts/parasts; charset=ISO-8859-13\n"
+"Satura kodēšana: 8bit\n"
+
+msgid "Melns! Nu melns kā piķis!"
+msgstr ""
+
+msgid "Tumši pelēks!."
+msgstr ""
+
+msgid "Gaiši pelēks!"
+msgstr ""
+
+msgid "Balts! Balts kā kā diena!"
+msgstr ""
+
+msgid "Sarkans!"
+msgstr ""
+
+msgid "Oranžš!"
+msgstr ""
+
+msgid "Dzeltens!"
+msgstr ""
+
+msgid "Gaiši zaļš!"
+msgstr ""
+
+msgid "Tumši zaļš!"
+msgstr ""
+
+msgid "Debesu zils! Žēl ka bez mākoņu baltā :)"
+msgstr ""
+
+msgid "Zils!"
+msgstr ""
+
+msgid "Mēļa krāsa!"
+msgstr ""
+
+msgid "Violets!"
+msgstr ""
+
+msgid "Rozā!"
+msgstr ""
+
+msgid "Brūns!"
+msgstr ""
+
+msgid "Dzeltenbrūns!"
+msgstr ""
+
+msgid "Smilškrāsa!"
+msgstr ""
+
+#. First, the blacklist. We list font families that can crash Tux Paint
+#. via bugs in the SDL_ttf library. We also test fonts to be sure that
+#. they have both uppercase and lowercase letters. Note that we do not
+#. test for "Aa", because it is OK if uppercase and lowercase are the
+#. same. (but not nice -- such fonts get a low score later)
+#.
+#. We test the alphabet twice, to help with translation. If the users
+#. will be unable to type ASCII letters, then both lines should be
+#. translated. Otherwise, only Line X should be translated and the
+#. ASCII-only fonts should be given bad scores in the scoring code below.
+#. (the best scores going to fonts that support both)
+msgid "qx"
+msgstr ""
+
+msgid "QX"
+msgstr ""
+
+#. Line X
+msgid "qy"
+msgstr ""
+
+msgid "QY"
+msgstr ""
+
+#. Now we score fonts to ensure that the best ones will be placed at
+#. the top of the list. The user will see them first. This sorting is
+#. especially important for users who have scroll buttons disabled.
+#. Translators should do whatever is needed to put crummy fonts last.
+msgid "oO"
+msgstr ""
+
+#. distinct uppercase and lowercase
+msgid "`\\%_@$~#{}<>^&*"
+msgstr ""
+
+#. uncommon punctuation
+msgid ",.?!"
+msgstr ""
+
+#. common punctuation
+msgid "017"
+msgstr ""
+
+#. digits
+msgid "O0"
+msgstr ""
+
+#. distinct circle-like characters
+msgid "1Il|"
+msgstr ""
+
+msgid "Lieliski!"
+msgstr ""
+
+msgid "Kruti!"
+msgstr ""
+
+msgid "Tā tik turpini!"
+msgstr ""
+
+msgid "Labais!"
+msgstr ""
+
+msgid "Piepildi"
+msgstr ""
+
+msgid "Zāle"
+msgstr ""
+
+msgid "Ķieģeļi"
+msgstr ""
+
+msgid "Varavīksne"
+msgstr ""
+
+msgid "Spīdeklīši"
+msgstr ""
+
+msgid "Migla"
+msgstr ""
+
+msgid "Smēre"
+msgstr ""
+
+msgid "Zibens"
+msgstr ""
+
+msgid "Tumsība"
+msgstr ""
+
+msgid "Krts"
+msgstr ""
+
+msgid "Kluči"
+msgstr ""
+
+msgid "Negatīvs"
+msgstr ""
+
+msgid "Tinte"
+msgstr ""
+
+msgid "Pilēšana"
+msgstr ""
+
+msgid "Multene"
+msgstr ""
+
+msgid "Spogulis"
+msgstr ""
+
+msgid "Apgriezt riņķī"
+msgstr ""
+
+msgid "Nospied uz bildi, lai to piepildītu ar krāsu."
+msgstr ""
+
+msgid "Nospied, pieturi peles pogu un velc peli lai zīmētu zāli. Neaizmirsti pievienot dubļus!"
+msgstr ""
+
+msgid "Nospied, pieturi peles pogu un velc peli lai zīmētu lielus ķieģeļus."
+msgstr ""
+
+msgid "Nospied, pieturi peles pogu un velc peli lai zīmētu ķieģeļus."
+msgstr ""
+
+msgid "Tu vari zīmēt varavīksnes krāsās!"
+msgstr ""
+
+msgid "Nospied, pieturi peles pogu un velc peli lai zīmētu spīdeklīšus."
+msgstr ""
+
+msgid "Nospied, pieturi peles pogu un velc peli lai bildi padarītu miglaināku."
+msgstr ""
+
+msgid "Nospied, pieturi peles pogu un velc peli lai notraipītu zīmējumu."
+msgstr ""
+
+msgid "Nospied, pieturi peles pogu un velc peli lai balinātu krāsu."
+msgstr ""
+
+msgid "Nospied, pieturi peles pogu un velc peli lai satumšinātu bildi."
+msgstr ""
+
+msgid ""
+"Nospied, pieturi peles pogu un velc peli lai zīmējums izskatītos kā ar krītu zīmētu."
+msgstr ""
+
+msgid "Nospied, pieturi peles pogu un velc peli lai bilde būtu klucīši."
+msgstr ""
+
+msgid "Nospied, pieturi peles pogu un velc peli lai zīmējumu padarītu negatīvu."
+msgstr ""
+
+msgid "Nospied, pieturi peles pogu un velc peli lai zīmējumā mainītu krāsas."
+msgstr ""
+
+msgid "Nospied, pieturi peles pogu un velc peli lai zīmējums notecētu."
+msgstr ""
+
+msgid "Nospied, pieturi peles pogu un velc peli lai zīmējums izskatitos kā multene."
+msgstr ""
+
+msgid "Nospied peli uz zīmējumu lai to pārvērstu spoguļskatā."
+msgstr ""
+
+msgid "Nospied peli uz zīmējuma lai to apgrieztu riņķī."
+msgstr ""
+
+msgid "Kvadrāts"
+msgstr ""
+
+msgid "Taisnstūris"
+msgstr ""
+
+msgid "Riņķis"
+msgstr ""
+
+msgid "Elipse"
+msgstr ""
+
+msgid "Trīsstūris"
+msgstr ""
+
+msgid "Pentagons"
+msgstr ""
+
+msgid "Rombs"
+msgstr ""
+
+msgid "Kvadrāts ir figūra ar četrām vienādām malām."
+msgstr ""
+
+msgid "Taisnstūrim ir visi četri leņķi taisni."
+msgstr ""
+
+msgid ""
+"Riņķis ir aplis kuram no jebkurienes velkot taisni uz centru, taisnes ir vienādas."
+msgstr ""
+
+msgid "Elipse ir izstiepts riņķis."
+msgstr ""
+
+msgid "Trīsstūrim ir trīs malas."
+msgstr ""
+
+msgid "Pentagonam ir piecas malas."
+msgstr ""
+
+msgid "Rombam ir četrasvienādas malas un pretējās malas ir paralēlas."
+msgstr ""
+
+msgid "Rīki"
+msgstr ""
+
+msgid "krāsas"
+msgstr ""
+
+msgid "Otas"
+msgstr ""
+
+msgid "Dzēšgumija"
+msgstr ""
+
+msgid "Uzlīmes"
+msgstr ""
+
+msgid "Formas"
+msgstr ""
+
+msgid "Burti"
+msgstr ""
+
+msgid "Maģija"
+msgstr ""
+
+msgid "Krāsas"
+msgstr ""
+
+msgid "Līnijas"
+msgstr ""
+
+msgid "Teksts"
+msgstr ""
+
+msgid "<--"
+msgstr ""
+
+msgid "-->"
+msgstr ""
+
+msgid "Jauns"
+msgstr ""
+
+#. buttons for the file open dialog
+msgid "Atvērt"
+msgstr ""
+
+msgid "Saglabāt"
+msgstr ""
+
+msgid "Printēt"
+msgstr ""
+
+msgid "Iziet"
+msgstr ""
+
+msgid "Paņem krāsu un otas formu lai zīmētu."
+msgstr ""
+
+msgid "Izvēlies uzlīmi ar ko aplīmēsi savu zīmējumu."
+msgstr ""
+
+msgid "Nospied peli lai sāktu zīmēt līniju. Atlaid vaļā lai to pabeigtu."
+msgstr ""
+
+msgid ""
+"Izvēlies formu. Nospied peli lai paņemtu centru, velc, tad laid vaļā kad zīmējums ir "
+"izmērā kādā tu viņu gribi. Kustini apkārt lai to pagrieztu, un nopsied peli lai o uzzīmetu."
+msgstr ""
+
+msgid "Izvēlies teksta stilu. Nospied ar peli uz zīmējumu."
+msgstr ""
+
+msgid "Paņem maģisko effektu, lai tu vari burties!"
+msgstr ""
+
+#. Eraser
+msgid "Dzēšgumija!"
+msgstr ""
+
+#. New
+msgid "Tev tagad ir balta lapa uz kuras tu vari zīmēt!"
+msgstr ""
+
+#. Open
+msgid "Atvērt…"
+msgstr ""
+
+#. Save
+msgid "Tava bilde tika saglabāta!"
+msgstr ""
+
+#. Print
+msgid "Printēju…"
+msgstr ""
+
+#. Quit
+msgid "Atā atā!"
+msgstr ""
+
+msgid "Atlaid peles pogu, lai beigtu zīmēt līniju."
+msgstr ""
+
+msgid "Pieturi peles pogu lai izstieptu formu."
+msgstr ""
+
+msgid "Kustini peli lai zīmējumu pagrieztu. Nospied peles pogu lai uzzīmētu."
+msgstr ""
+
+msgid "Labi tad… turpinam zīmēt šo zīmējumu!"
+msgstr ""
+
+#. FIXME: Move elsewhere!!!
+msgid "Vai tu tiešām gribi ziet :(?"
+msgstr ""
+
+msgid "Jā, esmu beidzis!"
+msgstr ""
+
+msgid "Nē, es gribu atpakaļ!"
+msgstr ""
+
+msgid "Ja tu izies, un nesaglabāsi zīmējumu tu zaudēsi to! Vai saglabāt?"
+msgstr ""
+
+msgid "Ja, saglabāt!"
+msgstr ""
+
+msgid "Nē, nepiesienies ar saglabāšanu!"
+msgstr ""
+
+msgid "Vai vispirms saglabāt tavu bildi?"
+msgstr ""
+
+msgid "Nu nevaru es to bildi atvērt!"
+msgstr ""
+
+msgid "Labi"
+msgstr ""
+
+#. This will be replaced with a dialog allowing color choice and Starter
+#. picking, with a "Back" option to dismiss the "New" and return to
+#. the current picture.  But for now...  (bjk 2006.02.19)
+msgid "Zīmēsi jaunu zīmējumu?"
+msgstr ""
+
+#. #define PROMPT_NEW_YES gettext_noop("That’s OK!")
+#. #define PROMPT_NEW_NO gettext_noop("Never mind!")
+msgid "Jā, sāksim zīmēt!"
+msgstr ""
+
+msgid "Tev nav neviena saglabāta zīmējuma!"
+msgstr ""
+
+msgid "Printēt tavu bildi?"
+msgstr ""
+
+msgid "Jā, printē!"
+msgstr ""
+
+msgid "Tava bilde ir izprintēta!"
+msgstr ""
+
+msgid "Tu vēl nevari izprintēt!"
+msgstr ""
+
+msgid "Dzēst šo zīmējumu?"
+msgstr ""
+
+msgid "Jā, dzēs to!"
+msgstr ""
+
+msgid "Nē, nedzēs, traks vai?!"
+msgstr ""
+
+msgid "Atceries, lieto kreiso peles pogu!"
+msgstr ""
+
+msgid "Lūdzu uzgaidi..."
+msgstr ""
+
+msgid "Dzēst"
+msgstr ""
+
+msgid "Slaids"
+msgstr ""
+
+msgid "Atpakaļ"
+msgstr ""
+
+msgid "Tālāk"
+msgstr ""
+
+msgid "Spēlēt"
+msgstr ""
+
+msgid "Aa"
+msgstr ""
+
+#. FIXME: Move elsewhere! Or not?!
+msgid "Jā"
+msgstr ""
+
+msgid "Nē"
+msgstr ""
+
+#. FIXME: Move elsewhere!!!
+#. #define PROMPT_SAVE_OVER_TXT gettext_noop("Save over the older version of this picture?")
+msgid "Aizstāt zīmejumu ar tavām izmaiņām?"
+msgstr ""
+
+msgid "Jā, aizstā to veco zīmējumu!"
+msgstr ""
+
+msgid "Nē, glabā jaunā failā!"
+msgstr ""
+
+msgid "Izvēlies bildi ko gribi atvērt un spied pogu “Atvērt“."
+msgstr ""
+
+#. Let user choose images:
+msgid "Izvēlies bildi kuru tu gribi un spied pogu “Spēlēt”."
+msgstr ""
+
+msgid "Zīmēšanas programma bērniem."
+msgstr ""
+
+msgid "Zīmēšanas programma"
+msgstr ""
+
+msgid "Tux Paint"
+"Tux Zīmēšana"
+msgstr ""

@@ -64,6 +64,7 @@ enum
   LANG_KO,			/* Korean */
   LANG_KU,			/* Kurdish */
   LANG_LT,			/* Lithuanian */
+  LANG_LV,			/* Latvian */
   LANG_MS,			/* Malay */
   LANG_NB,			/* Norwegian Bokmal */
   LANG_NR,                      /* Ndebele */

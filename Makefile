@@ -917,6 +917,11 @@ install-gettext:
 	@cp trans/lt.mo $(LOCALE_PREFIX)/lt/LC_MESSAGES/tuxpaint.mo
 	@chmod 644 $(LOCALE_PREFIX)/lt/LC_MESSAGES/tuxpaint.mo
 	@#
+	@echo "   lv_LV ...Latvian..."
+	@install -d $(LOCALE_PREFIX)/lv/LC_MESSAGES
+	@cp trans/lv.mo $(LOCALE_PREFIX)/lv/LC_MESSAGES/tuxpaint.mo
+	@chmod 644 $(LOCALE_PREFIX)/lv/LC_MESSAGES/tuxpaint.mo
+	@#
 	@echo "   ms_MY ...Malay..."
 	@install -d $(LOCALE_PREFIX)/ms/LC_MESSAGES
 	@cp trans/ms.mo $(LOCALE_PREFIX)/ms/LC_MESSAGES/tuxpaint.mo
@@ -1297,6 +1302,7 @@ translations: trans \
 	trans/ko.mo \
 	trans/ku.mo \
 	trans/lt.mo \
+	trans/lv.mo \
 	trans/ms.mo \
 	trans/nl.mo \
 	trans/nb.mo \
@@ -1488,6 +1494,10 @@ trans/ku.mo:	src/po/ku.po
 trans/lt.mo:	src/po/lt.po
 	@echo "   lt_LT ...Lithuanian..."
 	@msgfmt -o trans/lt.mo src/po/lt.po
+
+trans/lv.mo:	src/po/lv.po
+	@echo "   lv_LV ...Latvian..."
+	@msgfmt -o trans/lv.mo src/po/lv.po
 
 trans/ms.mo:	src/po/ms.po
 	@echo "   ms_MY ...Malay..."

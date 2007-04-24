@@ -288,6 +288,9 @@ $Id$
   * Kurdish
     Amed Ç. Jiyan <amed@pckurd.net>
 
+  * Latvian
+    Raivis Strogonovs <raivucis@gmail.com>
+
   * Lithuanian
     Mantas Kriauciunas <monte@mail.lt>
     Rita Verbauskaite
