@@ -9,7 +9,7 @@ http://www.newbreedsoftware.com/tuxpaint/
 $Id$
 
 
-2007.April.21 (0.9.17)
+2007.April.24 (0.9.17)
 
   * Tool Improvements:
     ------------------
@@ -91,6 +91,9 @@ $Id$
 
     * Lithuanian
       Gintaras Gostautas <gintaras@nes.lt>
+
+    * Thai
+      Ouychai Chaita <ae.freeman@gmail.com>
 
 
 2006.October.19 (0.9.16)
