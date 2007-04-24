@@ -329,6 +329,7 @@ $Id$
 
   * Russian
     Dmitriy Ivanov <ace22b@myrealbox.com>
+    Sergei Popov <skein@rambler.ru>
 
   * Scottish Gaelic
     Niall Tracey <internationiall@hotmail.com>

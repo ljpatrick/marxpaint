@@ -106,6 +106,9 @@ $Id$
     * Polish
       Andrzej M. Krzysztofowicz <ankry@mif.pg.gda.pl>
 
+    * Russian
+      Sergei Popov <skein@rambler.ru>
+
     * Thai
       Ouychai Chaita <ae.freeman@gmail.com>
 

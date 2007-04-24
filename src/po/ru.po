@@ -7,8 +7,8 @@ msgstr ""
 "Project-Id-Version: TuxPaint\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2006-09-10 11:18-0700\n"
-"PO-Revision-Date: 2005-01-09 12:00GMT\n"
-"Last-Translator: Eugene Zelenko <greendeath@mail.ru>\n"
+"PO-Revision-Date: 2007-04-04 20:05+0300\n"
+"Last-Translator: Сергей Попов <skein@rambler.ru>\n"
 "Language-Team: Dmitriy Ivanov <ace22b@myrealbox.com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -19,10 +19,10 @@ msgid "Black!"
 msgstr "Чёрный!"
 
 msgid "Dark grey! Some people spell it “dark gray”."
-msgstr ""
+msgstr "Тёмно-серый!"
 
 msgid "Light grey! Some people spell it “light gray”."
-msgstr ""
+msgstr "Светло-серый!"
 
 msgid "White!"
 msgstr "Белый!"
@@ -36,13 +36,11 @@ msgstr "Оранжевый!"
 msgid "Yellow!"
 msgstr "Жёлтый!"
 
-#, fuzzy
 msgid "Light green!"
-msgstr "Светло-серый!"
+msgstr "Светло-зелёный!"
 
-#, fuzzy
 msgid "Dark green!"
-msgstr "Темнее"
+msgstr "Тёмно-зелёный!"
 
 msgid "Sky blue!"
 msgstr "Голубой!"
@@ -51,7 +49,7 @@ msgid "Blue!"
 msgstr "Синий!"
 
 msgid "Lavender!"
-msgstr ""
+msgstr "Сиреневый!"
 
 msgid "Purple!"
 msgstr "Пурпурный!"
@@ -152,9 +150,8 @@ msgstr "Размывание"
 msgid "Smudge"
 msgstr "Пятна"
 
-#, fuzzy
 msgid "Lighten"
-msgstr "Светло-серый!"
+msgstr "Светлее"
 
 msgid "Darken"
 msgstr "Темнее"
@@ -186,10 +183,8 @@ msgstr "Переворот"
 msgid "Click in the picture to fill that area with color."
 msgstr "Щёлкните, чтобы заполнить эту область цветом."
 
-#, fuzzy
 msgid "Click and move to draw grass. Don’t forget the dirt!"
-msgstr ""
-"Щёлкните и поводите по картинке, чтобы нарисовать траву. Не забудьте грязь!"
+msgstr "Щёлкните и поводите по картинке, чтобы нарисовать траву. Не забудьте про грязь!"
 
 msgid "Click and move to draw large bricks."
 msgstr "Щёлкните и поводите по картинке, чтобы нарисовать большие кирпичи."
@@ -215,10 +210,8 @@ msgstr "Щёлкните и поводите по картинке, чтобы �
 msgid "Click and move to darken the colors."
 msgstr "Щёлкните и поводите по картинке, чтобы сделать её часть более тёмной."
 
-msgid ""
-"Click and move the mouse around to turn the picture into a chalk drawing."
-msgstr ""
-"Щёлкните и поводите по картинке, чтобы превратить её часть в рисунок мелом."
+msgid "Click and move the mouse around to turn the picture into a chalk drawing."
+msgstr "Щёлкните и поводите по картинке, чтобы превратить её часть в рисунок мелом."
 
 msgid "Click and move the mouse around to make the picture blocky."
 msgstr "Щёлкните и поводите по картинке, чтобы превратить её часть в мозаику."
@@ -226,16 +219,14 @@ msgstr "Щёлкните и поводите по картинке, чтобы �
 msgid "Click and move the mouse around to draw a negative."
 msgstr "Щёлкните и поводите по картинке, чтобы превратить её часть в негатив."
 
-#, fuzzy
 msgid "Click and move the mouse around to change the picture’s color."
-msgstr "Щёлкните и поводите по картинке, чтобы изменить цвет её части."
+msgstr "Щёлкните и поводите по картинке, чтобы изменить цвет рисунка."
 
 msgid "Click and move the mouse around to make the picture drip."
 msgstr "Щёлкните и поводите по картинке, чтобы заставьте её капать."
 
 msgid "Click and move the mouse around to turn the picture into a cartoon."
-msgstr ""
-"Щёлкните и поводите по картинке, чтобы превратить её часть в мультфильм."
+msgstr "Щёлкните и поводите по картинке, чтобы превратить её часть в мультфильм."
 
 msgid "Click to make a mirror image."
 msgstr "Щёлкните на картинку, чтобы превратить её в зеркальное отражение."
@@ -253,7 +244,7 @@ msgid "Circle"
 msgstr "Круг"
 
 msgid "Ellipse"
-msgstr ""
+msgstr "Эллипс"
 
 msgid "Triangle"
 msgstr "Треугольник"
@@ -262,22 +253,19 @@ msgid "Pentagon"
 msgstr "Пятиугольник"
 
 msgid "Rhombus"
-msgstr ""
+msgstr "Ромб"
 
-#, fuzzy
 msgid "A square is a rectangle with four equal sides."
-msgstr "У прямоугольника четыре стороны."
+msgstr "Квадрат - прямоугольник с четырьмя равными сторонами."
 
-#, fuzzy
 msgid "A rectangle has four sides and four right angles."
-msgstr "У прямоугольника четыре стороны."
+msgstr "У прямоугольника четыре стороны и четыре прямых угла."
 
-msgid ""
-"A circle is a curve where all points have the same distance from the centre."
-msgstr ""
+msgid "A circle is a curve where all points have the same distance from the centre."
+msgstr "Окружность - это кривая, все точки которой удалены на равное расстояние от центра."
 
 msgid "An ellipse is a stretched circle."
-msgstr ""
+msgstr "Эллипс - это вытянутая окружность."
 
 msgid "A triangle has three sides."
 msgstr "У треугольника три стороны (и угла!)"
@@ -286,7 +274,7 @@ msgid "A pentagon has five sides."
 msgstr "А у пятиугольника пять сторон (и углов!)"
 
 msgid "A rhombus has four equal sides, and opposite sides are parallel."
-msgstr ""
+msgstr "У ромба все четыре стороны равны и противоположные стороны параллельны."
 
 msgid "Tools"
 msgstr "Инструменты"
@@ -356,15 +344,10 @@ msgid "Pick a picture to stamp around your drawing."
 msgstr "Выберите картину, чтобы поставить печать на вашем рисунке."
 
 msgid "Click to start drawing a line. Let go to complete it."
-msgstr ""
-"Щёлкните, чтобы начать рисовать линию. Отпустите кнопку, чтобы закончить."
+msgstr "Щёлкните, чтобы начать рисовать линию. Отпустите кнопку, чтобы закончить."
 
-msgid ""
-"Pick a shape. Click to pick the center, drag, then let go when it is the "
-"size you want. Move around to rotate it, and click to draw it."
-msgstr ""
-"Выберите форму. Щёлкните для выбора центра, растяните до нужного размера, "
-"отпустите. Покрутите форму, затем щёлкните, чтобы нарисовать её."
+msgid "Pick a shape. Click to pick the center, drag, then let go when it is the size you want. Move around to rotate it, and click to draw it."
+msgstr "Выберите форму. Щёлкните для выбора центра, растяните до нужного размера, отпустите. Покрутите форму, затем щёлкните, чтобы нарисовать её."
 
 msgid "Choose a style of text. Click on your drawing and you can start typing."
 msgstr "Выберите стиль текста. Щёлкните на вашем рисунке, и печатайте."
@@ -421,19 +404,19 @@ msgid "Do you really want to quit?"
 msgstr "Вы действительно хотите выйти?"
 
 msgid "Yes, I'm done!"
-msgstr ""
+msgstr "Да, я закончил!"
 
 msgid "No, take me back!"
-msgstr ""
+msgstr "Нет, хочу обратно!"
 
 msgid "If you quit, you’ll lose your picture! Save it?"
 msgstr "Если вы выйдите, вы потеряете вашу картинку! Сохранить?"
 
 msgid "Yes, save it!"
-msgstr ""
+msgstr "Да, сохранить!"
 
 msgid "No, don't bother saving!"
-msgstr ""
+msgstr "Нет, не нужно сохранять!"
 
 msgid "Save your picture first?"
 msgstr "Сохранить вашу картинку сначала?"
@@ -447,14 +430,13 @@ msgstr "Хорошо"
 #. This will be replaced with a dialog allowing color choice and Starter
 #. picking, with a "Back" option to dismiss the "New" and return to
 #. the current picture.  But for now...  (bjk 2006.02.19)
-#, fuzzy
 msgid "Start a new picture?"
-msgstr "Удалить эту картинку?"
+msgstr "Начнём новую картинку?"
 
 #. #define PROMPT_NEW_YES gettext_noop("That’s OK!")
 #. #define PROMPT_NEW_NO gettext_noop("Never mind!")
 msgid "Yes, let's start fresh!"
-msgstr ""
+msgstr "Да, начнём заново!"
 
 msgid "There are no saved files!"
 msgstr "Нет сохранённых картинок!"
@@ -463,7 +445,7 @@ msgid "Print your picture now?"
 msgstr "Напечатать вашу картинку?"
 
 msgid "Yes, print it!"
-msgstr ""
+msgstr "Да, распечатать!"
 
 msgid "Your picture has been printed!"
 msgstr "Ваша картинка распечатана!"
@@ -475,32 +457,31 @@ msgid "Erase this picture?"
 msgstr "Удалить эту картинку?"
 
 msgid "Yes, erase it!"
-msgstr ""
+msgstr "Да, удалить!"
 
 msgid "No, don't erase it!"
-msgstr ""
+msgstr "Нет, не удалять!"
 
 msgid "Remember to use the left mouse button!"
-msgstr ""
+msgstr "Используйте только левую кнопку мыши!"
 
 msgid "Please wait..."
-msgstr ""
+msgstr "Пожалуйста, подождите..."
 
 msgid "Erase"
 msgstr "Удалить"
 
 msgid "Slides"
-msgstr ""
+msgstr "Слайды"
 
 msgid "Back"
 msgstr "Назад"
 
-#, fuzzy
 msgid "Next"
-msgstr "Текст"
+msgstr "Далее"
 
 msgid "Play"
-msgstr ""
+msgstr "Запуск"
 
 msgid "Aa"
 msgstr "Аа"
@@ -515,22 +496,20 @@ msgstr "Нет"
 #. FIXME: Move elsewhere!!!
 #. #define PROMPT_SAVE_OVER_TXT gettext_noop("Save over the older version of this picture?")
 msgid "Replace the picture with your changes?"
-msgstr ""
+msgstr "Заменить старую картинку?"
 
 msgid "Yes, replace the old one!"
-msgstr ""
+msgstr "Да, заменить старую картинку!"
 
-#, fuzzy
 msgid "No, save a new file!"
-msgstr "Нет, сохранить в новый файл"
+msgstr "Нет, сохранить в новый файл!"
 
 msgid "Choose the picture you want, then click “Open”."
 msgstr "Выберите желаемую картинку, а потом щёлкните «Открыть»."
 
 #. Let user choose images:
-#, fuzzy
 msgid "Choose the pictures you want, then click “Play”."
-msgstr "Выберите желаемую картинку, а потом щёлкните «Открыть»."
+msgstr "Выберите картинку, а потом нажмите \"Запуск\"."
 
 msgid "A drawing program for children."
 msgstr "Детская программа для рисования."
@@ -543,42 +522,30 @@ msgstr "Рисуй вместе с Tux!"
 
 #~ msgid "Starting a new picture will erase the current one!"
 #~ msgstr "Начиная новую картинку вы уничтожите текущую!"
-
 #~ msgid "That’s OK!"
 #~ msgstr "Хорошо!"
-
 #~ msgid "Never mind!"
 #~ msgstr "Нет!"
-
 #~ msgid "Save over the older version of this picture?"
 #~ msgstr "Сохранить поверх старой версии этой картинки?"
-
 #~ msgid "Dark Gray!"
 #~ msgstr "Тёмно-серый!"
-
 #~ msgid "Neon green!"
 #~ msgstr "Ярко-зеленый!"
-
 #~ msgid "Green!"
 #~ msgstr "Зелёный!"
-
 #~ msgid "Magenta!"
 #~ msgstr "Ярко-красный!"
-
 #~ msgid "Fade"
 #~ msgstr "Исчезновение"
-
 #~ msgid "Oval"
 #~ msgstr "Овал"
-
 #~ msgid "Diamond"
 #~ msgstr "Ромб"
-
 #~ msgid "A square has four sides, each the same length."
 #~ msgstr "У квадрата четыре стороны, все одной длины."
-
 #~ msgid "A circle is exactly round."
 #~ msgstr "А круг совершенно круглый :)"
-
 #~ msgid "A diamond is a square, turned around slightly."
 #~ msgstr "Ромб похож на квадрат, но с другими углами."
+
