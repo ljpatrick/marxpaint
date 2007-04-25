@@ -316,27 +316,39 @@ Available Tools
                               the selector on the right, and then click and
                               drag around the picture to apply the effect.
 
+                                   Fill
+                                        This floods the picture with a color.
+                                        It lets you quickly fill parts of the
+                                        picture, as if it were a coloring
+                                        book.
+
+                                   Grass
+                                        This paints grass on the image. The
+                                        higher up the canvas, the smaller the
+                                        grass is drawn, giving an illusion of
+                                        perspective. The grass can be tinted
+                                        various greenish hues by selecting
+                                        different colors in the color
+                                        palette.
+
+                                   Bricks (Large and Small)
+                                        These two tools intelligently paint
+                                        large and small brick patterns on the
+                                        canvas. The bricks can be tinted
+                                        various redish hues by selecting
+                                        different colors in the color
+                                        palette.
+
                                    Rainbow
                                         This is similar to the paint brush,
                                         but as you move the mouse around, it
-                                        goes through all of the colors in the
-                                        rainbow.
+                                        cycles through a spectrum of bright
+                                        colors.
 
                                    Sparkles
-                                        This draws glowing yellow sparkles on
-                                        the picture.
-
-                                   Mirror
-                                        When you click the mouse in your
-                                        picture with the "Mirror" magic
-                                        effect selected, the entire image
-                                        will be reversed, turning it into a
-                                        mirror image.
-
-                                   Flip
-                                        Similar to "Mirror." Click and the
-                                        entire image will be turned
-                                        upside-down.
+                                        This draws glowing sparkles on the
+                                        canvas, in the currently-selected
+                                        color.
 
                                    Blur
                                         This makes the picture fuzzy wherever
@@ -347,7 +359,7 @@ Available Tools
                                         the mouse, like finger painting with
                                         wet paint.
 
-                                   Fade
+                                   Lighten
                                         This fades the colors wherever you
                                         drag the mouse. (Do it to the same
                                         spot many times, and it will
@@ -385,14 +397,20 @@ Available Tools
                                    Cartoon
                                         This makes the picture look like a
                                         cartoon -- with thick outlines and
-                                        solid colors -- wherever you move the
-                                        mouse.
+                                        bright, solid colors -- wherever you
+                                        move the mouse.
 
-                                   Fill
-                                        This floods the picture with a color.
-                                        It lets you quickly fill parts of the
-                                        picture, as if it were a coloring
-                                        book.
+                                   Mirror
+                                        When you click the mouse in your
+                                        picture with the "Mirror" magic
+                                        effect selected, the entire image
+                                        will be reversed, turning it into a
+                                        mirror image.
+
+                                   Flip
+                                        Similar to "Mirror." Click and the
+                                        entire image will be turned
+                                        upside-down.
 
    --------------------------------------------------------------------------
 
