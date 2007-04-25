@@ -9,7 +9,7 @@
                            bill@newbreedsoftware.com
                             http://www.tuxpaint.org/
 
-                                 April 24, 2007
+                                 April 25, 2007
 
    --------------------------------------------------------------------------
 
@@ -72,14 +72,21 @@ Windows Users
              Run the program in full screen mode, rather than in a window.
 
      windowsize=SIZE
-             Run the program at a higher resolution, rather than the default
-             of 640x480. The SIZE value may be one of:
+
+             Run the program at a different size (in windowed mode) or at a
+             different screen resolution (in fullscreen mode), rather than
+             the default (usually 800x600).
+
+             The SIZE value should be presented in pixels, in
+             'width-by-height' format, with an "x" (lowercase X) between the
+             values. The size can be anything that's at least 640 wide, and
+             at least 480 tall.
+
+             Some examples:
 
                 * 640x480
-                * 800x600
                 * 1024x768
-                * 1280x1024
-                * 1400x1050
+                * 768x1024
                 * 1600x1200
 
      nosound=yes
