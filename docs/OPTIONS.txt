@@ -525,11 +525,7 @@ Windows Users
      Options can also be issued on the command-line when you start Tux Paint.
 
        --fullscreen
-       --800x600
-       --1024x768
-       --1280x1204
-       --1400x1050
-       --1600x1200
+       --WIDTHxHEIGHT
        --startblank
        --nosound
        --noquit
@@ -560,7 +556,7 @@ Windows Users
                      -------------------------------------
 
        --windowed
-       --640x480
+       --800x600
        --startlast
        --sound
        --quit
