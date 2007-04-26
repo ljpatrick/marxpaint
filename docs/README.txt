@@ -9,7 +9,7 @@
                            bill@newbreedsoftware.com
                             http://www.tuxpaint.org/
 
-                         June 14, 2002 - April 24, 2007
+                         June 14, 2002 - April 26, 2007
 
    --------------------------------------------------------------------------
 
@@ -296,7 +296,7 @@ Available Tools
                               When Tux Paint's locale is set to one of the
                               supported languages that require an alternate
                               input mode, press the right [Alt] or
-                              right [Option] key to toggle between the normal
+                              right [Option] key to cycle through normal
                               (Latin character) and locale-specific modes.
 
                               Currently supported locales, and their input
