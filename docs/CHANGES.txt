@@ -66,6 +66,9 @@ $Id$
     * Example tuxpaint.conf has been updated to include newer options.
 
     * Briefly documented translation (gettext PO catalogs) in "Extending..."
+
+    * Briefly documented alternative input methods (IM character map files)
+      in "Extending..."
     
 
   * Bug Fixes:

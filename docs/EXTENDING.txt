@@ -571,3 +571,52 @@ Translations
      request to be added to the "tuxpaint" project and receive write-access
      to the CVS source code repository so that you may commit your changes
      directly.
+
+Alternative Input Methods
+
+     As of version 0.9.17, Tux Paint's "Text" tool can provide alternative
+     input methods for some languages. For example, when Tux Paint is running
+     with a Japanese locale, the right [Alt] can be pressed to change between
+     Latin, Romanized Hiragana and Katakana modes. This allows native
+     characters to be entered into the "Text" tool by typing one or more keys
+     on a keyboard with Latin characters (e.g., a US QWERTY keyboard).
+
+     To create an input method for a new locale, create a text file with a
+     name based on the locale (e.g., "ja" for Japanese), with ".im" as the
+     extension (e.g., "ja.im").
+
+     The ".im" file can have multiple character mapping sections for
+     different character mapping modes. For example, on a Japanese typing
+     system, typing [K] [A] in Hiragana mode generates a different Unicode
+     character than typing [K] [A] in Katakana mode.
+
+     Start each character mapping section with the word "section", the follow
+     it with the mappings, one per line. Each line should contain (separated
+     by whitespace):
+
+       * the Unicode value of the character, in hexadecimal
+       * the keycode sequence (the ASCII characters that must be entered to
+         generate the Unicode character)
+       * a flag (or "-")
+
+     Example:
+
+       # Hiragana
+       section
+       304B   ka   -
+       304C   ga   -
+       304D   ki   -
+       304E   gi   -
+
+       # Katakana
+       section
+       30AB   ka   -
+       30AC   ga   -
+       30AD   ki   -
+       30AE   gi   -
+
+     Note: Blank lines will be ignored, as will any text following a "#"
+     (pound/hash) character -- they can be used to denote comments, as seen
+     in the example above.
+
+     Note: Flags need to be explained here.
