@@ -287,11 +287,11 @@ Available Tools
 
                               Tux Paint allows inputting characters in
                               different languages. Most Latin characters
-                              (A-Z, n, egrave;, etc.) can by entered
-                              directly. Some languages require that Tux Paint
-                              be switched into an alternate input mode before
-                              entering, and some characters must be composed
-                              using numerous keypresses.
+                              (A-Z, n, e, etc.) can by entered directly. Some
+                              languages require that Tux Paint be switched
+                              into an alternate input mode before entering,
+                              and some characters must be composed using
+                              numerous keypresses.
 
                               When Tux Paint's locale is set to one of the
                               supported languages that require an alternate
