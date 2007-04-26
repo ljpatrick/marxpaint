@@ -7,7 +7,7 @@
 # bill@newbreedsoftware.com
 # http://www.tuxpaint.org/
 
-# June 14, 2002 - April 24, 2007
+# June 14, 2002 - April 26, 2007
 
 
 # The version number, for release:
@@ -1032,6 +1032,11 @@ install-gettext:
 	@cp trans/tr.mo $(LOCALE_PREFIX)/tr/LC_MESSAGES/tuxpaint.mo
 	@chmod 644 $(LOCALE_PREFIX)/tr/LC_MESSAGES/tuxpaint.mo
 	@#
+	@echo "   twi_GH ...Twi..."
+	@install -d $(LOCALE_PREFIX)/twi/LC_MESSAGES
+	@cp trans/twi.mo $(LOCALE_PREFIX)/twi/LC_MESSAGES/tuxpaint.mo
+	@chmod 644 $(LOCALE_PREFIX)/twi/LC_MESSAGES/tuxpaint.mo
+	@#
 	@echo "   uk_UA ...Ukrainian..."
 	@install -d $(LOCALE_PREFIX)/uk/LC_MESSAGES
 	@cp trans/uk.mo $(LOCALE_PREFIX)/uk/LC_MESSAGES/tuxpaint.mo
@@ -1326,6 +1331,7 @@ translations: trans \
 	trans/tl.mo \
 	trans/tlh.mo \
 	trans/tr.mo \
+	trans/twi.mo \
 	trans/uk.mo \
 	trans/ve.mo \
 	trans/vi.mo \
@@ -1586,6 +1592,10 @@ trans/tl.mo:	src/po/tl.po
 trans/tr.mo:	src/po/tr.po
 	@echo "   tr_TR ...Turkish..."
 	@msgfmt -o trans/tr.mo src/po/tr.po
+
+trans/twi.mo:	src/po/twi.po
+	@echo "   twi_GH ...Twi..."
+	@msgfmt -o trans/twi.mo src/po/twi.po
 
 trans/uk.mo:	src/po/uk.po
 	@echo "   uk_UA ...Ukrainian..."

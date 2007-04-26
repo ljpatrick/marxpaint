@@ -1,0 +1,531 @@
+# Twi translation of Tuxpaint.Joana Portia Antwi-Danso <portnass2003@yahoo.com>
+# Copyright (C) 2007
+# This file is distributed under the same license as the Tuxpaint package.
+# Joana Portia Antwi-Danso <portnass2003@yahoo.com>, 2007.
+# Samuel Sarpong <srnsam@yahoo.com>, 2007
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2006-09-10 11:18-0700\n"
+"PO-Revision-Date: 2007-04-26 15:45+0200\n"
+"Last-Translator: Joana Portia Antwi-Danso <portnass2003@yahoo.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Generator: Pootle 1.0beta2\n"
+
+# san fa bra
+msgid "Black!"
+msgstr "Tuntum!"
+
+msgid "Dark grey! Some people spell it “dark gray”."
+msgstr "Nsonso a ani dum!"
+
+msgid "Light grey! Some people spell it “light gray”."
+msgstr "Nsonso a ani hoa!"
+
+msgid "White!"
+msgstr "Fitaa!"
+
+msgid "Red!"
+msgstr "Kɔkɔɔ!"
+
+msgid "Orange!"
+msgstr "Akutu ahosu!"
+
+msgid "Yellow!"
+msgstr "Akokɔ sradeɛ!"
+
+msgid "Light green!"
+msgstr "Ahaban mono a ɛhoa!"
+
+msgid "Dark green!"
+msgstr "Ahaban mono a edum!"
+
+msgid "Sky blue!"
+msgstr "Ewiem!"
+
+msgid "Blue!"
+msgstr "Bibiri!"
+
+msgid "Lavender!"
+msgstr "Bibiri a kɔkɔɔ kakra wɔ mu!"
+
+msgid "Purple!"
+msgstr "Bibiri a kɔkɔɔ wɔ mu!"
+
+msgid "Pink!"
+msgstr "Kɔkɔɔ a ɛhoa!"
+
+msgid "Brown!"
+msgstr "Fam!"
+
+msgid "Tan!"
+msgstr "Fam a ani dum!"
+
+msgid "Beige!"
+msgstr "Fam a ani hoa!"
+
+#. First, the blacklist. We list font families that can crash Tux Paint
+#. via bugs in the SDL_ttf library. We also test fonts to be sure that
+#. they have both uppercase and lowercase letters. Note that we do not
+#. test for "Aa", because it is OK if uppercase and lowercase are the
+#. same. (but not nice -- such fonts get a low score later)
+#.
+#. We test the alphabet twice, to help with translation. If the users
+#. will be unable to type ASCII letters, then both lines should be
+#. translated. Otherwise, only Line X should be translated and the
+#. ASCII-only fonts should be given bad scores in the scoring code below.
+#. (the best scores going to fonts that support both)
+msgid "qx"
+msgstr "qx"
+
+msgid "QX"
+msgstr "QX"
+
+#. Line X
+msgid "qy"
+msgstr "qy"
+
+msgid "QY"
+msgstr "QY"
+
+#. Now we score fonts to ensure that the best ones will be placed at
+#. the top of the list. The user will see them first. This sorting is
+#. especially important for users who have scroll buttons disabled.
+#. Translators should do whatever is needed to put crummy fonts last.
+msgid "oO"
+msgstr "oO"
+
+#. distinct uppercase and lowercase
+msgid "`\\%_@$~#{}<>^&*"
+msgstr "`\\%_@$~#{}<>^&*"
+
+#. uncommon punctuation
+msgid ",.?!"
+msgstr ",.?!"
+
+#. common punctuation
+msgid "017"
+msgstr "017"
+
+#. digits
+msgid "O0"
+msgstr "O0"
+
+#. distinct circle-like characters
+msgid "1Il|"
+msgstr "1Il|"
+
+msgid "Great!"
+msgstr "Mo!"
+
+msgid "Cool!"
+msgstr "Nya ntoboase!"
+
+msgid "Keep it up!"
+msgstr "Kɔ so saa ara!"
+
+msgid "Good job!"
+msgstr "Wayɛ adwuma papa!"
+
+msgid "Fill"
+msgstr "Hyɛ no ma"
+
+msgid "Grass"
+msgstr "Ɛserɛ"
+
+msgid "Bricks"
+msgstr "Ntayaa"
+
+msgid "Rainbow"
+msgstr "Nyankontɔn"
+
+msgid "Sparkles"
+msgstr "Ɛtew gya"
+
+msgid "Blur"
+msgstr "Wisiwisi"
+
+msgid "Smudge"
+msgstr "Yɛ no wisiwisi"
+
+msgid "Lighten"
+msgstr "Ma ani nhoa"
+
+msgid "Darken"
+msgstr "Ma ani nnum"
+
+msgid "Chalk"
+msgstr "Hyirew"
+
+msgid "Blocks"
+msgstr "Ntayaa"
+
+msgid "Negative"
+msgstr "Ne sunsum"
+
+msgid "Tint"
+msgstr "Dumm"
+
+msgid "Drip"
+msgstr "Ma no nwin"
+
+msgid "Cartoon"
+msgstr "Koliko"
+
+msgid "Mirror"
+msgstr "Ahwehwɛ"
+
+msgid "Flip"
+msgstr "Si ne tiri ase"
+
+msgid "Click in the picture to fill that area with color."
+msgstr "Mia mfoni no so na ma no fa ahosuo."
+
+msgid "Click and move to draw grass. Don’t forget the dirt!"
+msgstr "Mia so na fa kɔ draw grass. Ɛmma wo werɛ mfi efi no!"
+
+msgid "Click and move to draw large bricks."
+msgstr "Mia so na kɔ drɔ ntayaa akɛseɛ."
+
+msgid "Click and move to draw small bricks."
+msgstr "Mia so na kɔ drɔ ntayaa nketewa."
+
+msgid "You can draw in rainbow colors!"
+msgstr "Wobɛtumi adorom nyankontɔn ahosuo!"
+
+msgid "Click and move to draw sparkles."
+msgstr "Mia so na kɔ draw nea ɛte gya."
+
+msgid "Click and move the mouse around to blur the picture."
+msgstr "Mia so na fa akura no to mfoni no so ma no nyɛ wisiwisi."
+
+msgid "Click and move the mouse around to smudge the picture."
+msgstr "Fa akura no fa mfoni no so na ɛmpopa kakra."
+
+msgid "Click and move to fade the colors."
+msgstr "Mia so na fa so ma no ahosuo a ɛhoa no."
+
+msgid "Click and move to darken the colors."
+msgstr "Mia na fa akura no fa so ma nnum."
+
+msgid ""
+"Click and move the mouse around to turn the picture into a chalk drawing."
+msgstr "Fa akura no fa mfoni no so ma no nyɛ sɛ hyirew."
+
+msgid "Click and move the mouse around to make the picture blocky."
+msgstr "Fa akura no fa mfoni no so ma no nyɛ keseɛ."
+
+msgid "Click and move the mouse around to draw a negative."
+msgstr "Mia so na ma ekura no drɔ ne sunsum."
+
+msgid "Click and move the mouse around to change the picture’s color."
+msgstr "Fa akura no fa mfoni no so na sesa n'ahosuo no."
+
+msgid "Click and move the mouse around to make the picture drip."
+msgstr "Fa akura no fa mfoni no so ma ahosuo no mpe mfa ho."
+
+msgid "Click and move the mouse around to turn the picture into a cartoon."
+msgstr "Fa akura no fa mfoni no so ma no nnane koriko."
+
+msgid "Click to make a mirror image."
+msgstr "Mia akura no so ma mfoni no baako mmɛka ho."
+
+msgid "Click to flip the picture upside-down."
+msgstr "Mia so ma nfoni no nsi ne ti ase."
+
+msgid "Square"
+msgstr "Nhyinan"
+
+msgid "Rectangle"
+msgstr "Nhyinanfea"
+
+msgid "Circle"
+msgstr "Kurukuruwa"
+
+msgid "Ellipse"
+msgstr "Kurukuruwa-fea"
+
+msgid "Triangle"
+msgstr "Nhyiasa"
+
+msgid "Pentagon"
+msgstr "Nhyianum"
+
+msgid "Rhombus"
+msgstr "Nhyianankyeae"
+
+msgid "A square is a rectangle with four equal sides."
+msgstr "Nhyianan yɛ nhyiae a ɛwɔ apɔw anan na ne nyinaa tenten yɛ pɛ."
+
+msgid "A rectangle has four sides and four right angles."
+msgstr "Nhyiananfea wɔ apɔw anan ne nhyianan a emu abien biara tenten yɛ pɛ."
+
+msgid ""
+"A circle is a curve where all points have the same distance from the centre."
+msgstr "Kurukuruwa yɛ kanko a efi mfinimfini dekɔ pɔw biara so tenten yɛ pɛ."
+
+msgid "An ellipse is a stretched circle."
+msgstr "Kurukuruwa-fea yɛ kurukuruwa a wɔayɛ no fea kakra."
+
+msgid "A triangle has three sides."
+msgstr "Wei yɛ nsensaeɛ mmiensa a ahyia."
+
+msgid "A pentagon has five sides."
+msgstr "Wei yɛ nsensaeɛ nnum a ahyia."
+
+msgid "A rhombus has four equal sides, and opposite sides are parallel."
+msgstr "Wei yɛ nsensaeɛ nnan a ahyia, nsensaeɛ a ɛhwɛ anim no nyianaa yɛ pɛ."
+
+msgid "Tools"
+msgstr "Nnwumade"
+
+msgid "Colors"
+msgstr "Ahosu"
+
+msgid "Brushes"
+msgstr "Mmorɔhye"
+
+msgid "Erasers"
+msgstr "Apepade"
+
+msgid "Stamps"
+msgstr "Setampo"
+
+msgid "Shapes"
+msgstr "Tebea"
+
+msgid "Letters"
+msgstr "Akyerɛwmma"
+
+msgid "Magic"
+msgstr "Nkonyaa"
+
+msgid "Paint"
+msgstr "Ahosu"
+
+msgid "Stamp"
+msgstr "Setampo"
+
+msgid "Lines"
+msgstr "Nsensan"
+
+msgid "Text"
+msgstr "Akyerɛwde"
+
+msgid "Undo"
+msgstr "Pepa"
+
+msgid "Redo"
+msgstr "San yɛ"
+
+msgid "Eraser"
+msgstr "Apepade"
+
+msgid "New"
+msgstr "Foforo"
+
+#. buttons for the file open dialog
+msgid "Open"
+msgstr "Bue"
+
+msgid "Save"
+msgstr "Fa sie"
+
+msgid "Print"
+msgstr "Tintim"
+
+msgid "Quit"
+msgstr "Fi ha"
+
+msgid "Pick a color and a brush shape to draw with."
+msgstr "Fa ahosuduru ne borɔhye a wode bɛ dorɔ."
+
+msgid "Pick a picture to stamp around your drawing."
+msgstr "Fa mfoni a wode betintim nea wadorɔ no ho."
+
+msgid "Click to start drawing a line. Let go to complete it."
+msgstr "Click to start drawing a line. Let go to complete it."
+
+msgid ""
+"Pick a shape. Click to pick the center, drag, then let go when it is the "
+"size you want. Move around to rotate it, and click to draw it."
+msgstr "Fa esu bi. Mia so wɔ nfinfin na kora mu, twe na se, sɛ ne kɛseɛ no yɛ sɛ nea"
+" wo pɛ a, gyae mu"
+"."
+
+msgid "Choose a style of text. Click on your drawing and you can start typing."
+msgstr ""
+""
+"Atwerɛdeɛ su biara a wopɛ sɛ wotwerɛ gu mfoni ho no, wotumi fa de twerɛ."
+
+msgid "Pick a magical effect to use on your drawing!"
+msgstr "Fa biribi nwanwaso bi yɛ nea woredrɔ no!"
+
+#. Undo
+msgid "Undo!"
+msgstr "Pepa!"
+
+#. Redo
+msgid "Redo!"
+msgstr "San yɛ!"
+
+#. Eraser
+msgid "Eraser!"
+msgstr "Apepade!"
+
+#. New
+msgid "You now have a blank sheet to draw on!"
+msgstr "Dorɔ wɔ ha na biribiara nni krataa yi so!"
+
+#. Open
+msgid "Open…"
+msgstr "Bue..."
+
+#. Save
+msgid "Your image has been saved!"
+msgstr "Yɛde wo mfoni no asie!"
+
+#. Print
+msgid "Printing…"
+msgstr "Ɛretintim..."
+
+#. Quit
+msgid "Bye bye!"
+msgstr "Nantew yiye!"
+
+msgid "Let go of the button to complete the line."
+msgstr "Kɔ so na nsensan no nsi."
+
+msgid "Hold the button to stretch the shape."
+msgstr "So mu na emmue mu."
+
+msgid "Move the mouse to rotate the shape. Click to draw it."
+msgstr "Mia akura no so wɔ adeɛ no so ma no ntwa ne ho."
+
+msgid "OK then… Let’s keep drawing this one!"
+msgstr "Afei eye... Ma yɛnkɔso ndorɔ eyi!"
+
+#. FIXME: Move elsewhere!!!
+msgid "Do you really want to quit?"
+msgstr "Wopɛ sɛ wofi ha?"
+
+msgid "Yes, I'm done!"
+msgstr "Yiw, mawie!"
+
+msgid "No, take me back!"
+msgstr "Daabi, fa me kɔ akyi!"
+
+msgid "If you quit, you’ll lose your picture! Save it?"
+msgstr "Sɛ wofi ha a, wo mfoni no bɛyera! Wode besie?"
+
+msgid "Yes, save it!"
+msgstr "Yiw, fa sie!"
+
+msgid "No, don't bother saving!"
+msgstr "Daabi, mfa nsie!"
+
+msgid "Save your picture first?"
+msgstr "Wobedi kan de wo mfoni no asie?"
+
+msgid "Can’t open that picture!"
+msgstr "Worentumi mmue saa mfoni no!"
+
+msgid "OK"
+msgstr "Eye"
+
+#. This will be replaced with a dialog allowing color choice and Starter
+#. picking, with a "Back" option to dismiss the "New" and return to
+#. the current picture.  But for now...  (bjk 2006.02.19)
+msgid "Start a new picture?"
+msgstr "Hyɛ mfoni foforɔ ase?"
+
+#. #define PROMPT_NEW_YES gettext_noop("That’s OK!")
+#. #define PROMPT_NEW_NO gettext_noop("Never mind!")
+msgid "Yes, let's start fresh!"
+msgstr "Aane, ma yɛnhyɛ aseɛ bio!"
+
+msgid "There are no saved files!"
+msgstr "Womfaa biribi nsieɛ!"
+
+msgid "Print your picture now?"
+msgstr "Afei wopɛ sɛ wode mfoni no to krataa so?"
+
+msgid "Yes, print it!"
+msgstr "Aane, tintim!"
+
+msgid "Your picture has been printed!"
+msgstr "Woatim wo mfoni no!"
+
+msgid "You can’t print yet!"
+msgstr "Wontumi ntintim seesie!"
+
+msgid "Erase this picture?"
+msgstr "Wopɛ sɛ wo saa mfoni yi?"
+
+msgid "Yes, erase it!"
+msgstr "Aane, pepa no!"
+
+msgid "No, don't erase it!"
+msgstr "Daabi, mpepa no!"
+
+msgid "Remember to use the left mouse button!"
+msgstr "Kae na mia akura no benkum so!"
+
+msgid "Please wait..."
+msgstr "Mepawokyɛw twɛn..."
+
+msgid "Erase"
+msgstr "Pepa"
+
+msgid "Slides"
+msgstr "Mfoni a edi hɔ"
+
+msgid "Back"
+msgstr "Kɔ wakyi"
+
+msgid "Next"
+msgstr "Deɛ edi hɔ"
+
+msgid "Play"
+msgstr "Di agorɔ"
+
+msgid "Aa"
+msgstr "Aa"
+
+#. FIXME: Move elsewhere! Or not?!
+msgid "Yes"
+msgstr "Aane"
+
+msgid "No"
+msgstr "Daabi"
+
+#. FIXME: Move elsewhere!!!
+#. #define PROMPT_SAVE_OVER_TXT gettext_noop("Save over the older version of this picture?")
+msgid "Replace the picture with your changes?"
+msgstr "Wopɛ sɛ wosesa mfoni no?"
+
+msgid "Yes, replace the old one!"
+msgstr "Aane, sesa dada no!"
+
+msgid "No, save a new file!"
+msgstr "Daabi, fa foforɔ no sie!"
+
+msgid "Choose the picture you want, then click “Open”."
+msgstr "Wofa mfoni a wopɛ wia a, mia \"bue\" so."
+
+#. Let user choose images:
+msgid "Choose the pictures you want, then click “Play”."
+msgstr "Fa mfoni a wopɛ, na mia di so ma no nyi."
+
+msgid "A drawing program for children."
+msgstr "Deɛ mmɔfra bɛtumi de adi agorɔ."
+
+msgid "Drawing program"
+msgstr "Adeɛ a yɛde drɔ"
+
+msgid "Tux Paint"
+msgstr "Tux Paint"

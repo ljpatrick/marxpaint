@@ -9,7 +9,7 @@ http://www.newbreedsoftware.com/tuxpaint/
 $Id$
 
 
-2007.April.24 (0.9.17)
+2007.April.26 (0.9.17)
 
   * Tool Improvements:
     ------------------
@@ -88,6 +88,10 @@ $Id$
 
     * Telugu -- includes "te.ttf" font
       Pavithran Shakamuri <pavithran.s@gmail.com>
+
+    * Twi
+      Joana Portia Antwi-Danso <portnass2003@yahoo.com>
+      Samuel Sarpong <srnsam@yahoo.com>
 
   * Translation Updates:
     --------------------

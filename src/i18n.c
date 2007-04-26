@@ -25,7 +25,7 @@
 
   $Id$
 
-  June 14, 2002 - April 24, 2007
+  June 14, 2002 - April 26, 2007
 */
 
 #include <stdio.h>
@@ -126,6 +126,7 @@ const char *lang_prefixes[NUM_LANGS] = {
   "th",
   "tl",
   "tr",
+  "twi",
   "uk",
   "ve",
   "vi",
@@ -270,6 +271,7 @@ const language_to_locale_struct language_to_locale_array[] = {
   {"thai", "th_TH.UTF-8"},
   {"tibetan", "bo_CN.UTF-8"},	/* Based on: http://texinfo.org/pipermail/texinfo-pretest/2005-April/000334.html */
   {"turkish", "tr_TR.UTF-8"},
+  {"twi", "twi_GH.UTF-8"},
   {"ukrainian", "uk_UA.UTF-8"},
   {"walloon", "wa_BE.UTF-8"},
   {"walon", "wa_BE.UTF-8"},
@@ -549,6 +551,7 @@ void show_locale_usage(FILE * f, const char *const prg)
 	  "  bo_CN   (Tibetan)\n"
 	  "  th_TH   (Thai)\n"
 	  "  tr_TR   (Turkish)\n"
+	  "  twi_GH  (Twi)\n"
 	  "  uk_UA   (Ukrainian)\n"
 	  "  ve_ZA   (Venda)\n"
 	  "  vi_VN   (Vietnamese)\n"

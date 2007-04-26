@@ -10,7 +10,7 @@
 
   $Id$
   
-  June 14, 2002 - April 24, 2007
+  June 14, 2002 - April 26, 2007
 */
 
 
@@ -87,6 +87,7 @@ enum
   LANG_TH,			/* Thai */
   LANG_TL,			/* Tagalog */
   LANG_TR,			/* Turkish */
+  LANG_TWI,			/* Twi */
   LANG_UK,			/* Ukrainian */
   LANG_VE,			/* Venda */
   LANG_VI,			/* Vietnamese */

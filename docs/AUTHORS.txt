@@ -7,7 +7,7 @@ bill@newbreedsoftware.com
 http://www.tuxpaint.org/
 
 
-June 17, 2002 - April 24, 2007
+June 17, 2002 - April 26, 2007
 
 $Id$
 
@@ -387,6 +387,10 @@ $Id$
 
   * Turkish
     Doruk Fisek <dfisek@fisek.com.tr>
+
+  * Twi
+    Joana Portia Antwi-Danso <portnass2003@yahoo.com>
+    Samuel Sarpong <srnsam@yahoo.com>
 
   * Venda
     Shumani Mercy Nehulaudzi <nevhulaudzi@saps.org.za>>
