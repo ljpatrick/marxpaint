@@ -738,6 +738,12 @@ effect.</p>
   to the CVS source code repository so that you may commit your changes
   directly.</p>
 
+  <p><i>Note:</i> Additional locale support requires additions
+  to Tux&nbsp;Paint's source code (<code>/src/i18n.h</code> and
+  <code>/src/i18n.c</code>), and requires updates to the <code>Makefile</code>,
+  to have the "<code>.po</code>" gettext catalog source files compiled into
+  "<code>.mo</code>" files, and installed, for use at runtime.</p>
+
 </blockquote>
 
 <h2>Alternative Input Methods</h2>
@@ -790,12 +796,20 @@ effect.</p>
   </code></p>
   </blockquote>
 
-  <p><i>Note:</i> Blank lines will be ignored, as will any text following
-  a "<code>#</code>" (pound/hash) character &mdash; they can be used to
-  denote comments, as seen in the example above.</p>
+  <p><i>Note:</i> Blank lines within the "<code>.im</code>" file
+  will be ignored, as will any text following a "<code>#</code>"
+  (pound/hash) character &mdash; it can be used to denote comments,
+  as seen in the example above.</p>
 
-  <p><i>Note:</i> Flags need to be explained here.</p>
+  <p><i>Note:</i> Flags must be set up on a per-locale basis
+  (within the source code, in "<code>src/im.c</code>").
+  For example, "<code>b</code>" is used in Korean to handle
+  Batchim, which may carry over to the next character.</p>
 
+  <p><i>Note:</i> Additional input method support requires additions
+  to Tux&nbsp;Paint's source code (<code>/src/im.c</code>), and requires
+  updates to the <code>Makefile</code>,
+  to have the "<code>.im</code>" files installed, for use at runtime.</p>
 </blockquote>
 
 </body></html>

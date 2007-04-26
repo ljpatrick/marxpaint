@@ -572,6 +572,11 @@ Translations
      to the CVS source code repository so that you may commit your changes
      directly.
 
+     Note: Additional locale support requires additions to Tux Paint's source
+     code (/src/i18n.h and /src/i18n.c), and requires updates to the
+     Makefile, to have the ".po" gettext catalog source files compiled into
+     ".mo" files, and installed, for use at runtime.
+
 Alternative Input Methods
 
      As of version 0.9.17, Tux Paint's "Text" tool can provide alternative
@@ -615,8 +620,14 @@ Alternative Input Methods
        30AD   ki   -
        30AE   gi   -
 
-     Note: Blank lines will be ignored, as will any text following a "#"
-     (pound/hash) character -- they can be used to denote comments, as seen
-     in the example above.
+     Note: Blank lines within the ".im" file will be ignored, as will any
+     text following a "#" (pound/hash) character -- it can be used to denote
+     comments, as seen in the example above.
 
-     Note: Flags need to be explained here.
+     Note: Flags must be set up on a per-locale basis (within the source
+     code, in "src/im.c"). For example, "b" is used in Korean to handle
+     Batchim, which may carry over to the next character.
+
+     Note: Additional input method support requires additions to Tux Paint's
+     source code (/src/im.c), and requires updates to the Makefile, to have
+     the ".im" files installed, for use at runtime.
