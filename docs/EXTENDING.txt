@@ -2,13 +2,13 @@
                                  version 0.9.17
                               Extending Tux Paint
 
-                Copyright 2002-2006 by Bill Kendrick and others
+                Copyright 2002-2007 by Bill Kendrick and others
                                New Breed Software
 
                            bill@newbreedsoftware.com
                             http://www.tuxpaint.org/
 
-                        June 14, 2002 - October 26, 2006
+                         June 14, 2002 - April 26, 2007
 
    --------------------------------------------------------------------------
 
@@ -521,3 +521,53 @@ Fonts
      to affect the drawing even after Tux Paint has been quit, or another
      picture loaded or started. (In other words, if you base a drawing on a
      'starter' image, it will always be affected by it.)
+
+Translations
+
+     Tux Paint supports numerous languages, thanks to use of the "gettext"
+     localization library. (See OPTIONS for how to change locales in
+     Tux Paint.)
+
+     To translate Tux Paint to a new language, copy the translation template
+     file, "tuxpaint.pot" (found in Tux Paint's source code, in the folder
+     "src/po/"). Rename the copy as a ".po" file, with an appropriate name
+     for the locale you're translating to (e.g., "es.po" for Spanish; or
+     "pt_br.po" for Brazilian Portuguese, versus "pt.po" or "pt_pt.po" for
+     Portuguese spoken in Portugal.)
+
+     Open the newly-created ".po" file -- you can edit in a plain text
+     edtior, such as Emacs, Pico or VI on Linux, or NotePad on Windows. The
+     original English text used in Tux Paint is listed in lines starting with
+     "msgid". Enter your translations of each of these pieces of text in the
+     empty "msgstr" lines directly below the corresponding "msgid" lines.
+     (Note: Do not remove the quotes.)
+
+     Example:
+
+       msgid "Smudge"
+       msgstr "Manchar"
+
+       msgid "Click and move to draw large bricks."
+       msgstr "Haz clic y arrastra para dibujar ladrillos grandes."
+
+     A graphical tool, called poEdit (http://www.poedit.net/), is available
+     for Linux, Windows and Mac OS X.
+
+     Note: It is best to always work off of the latest Tux Paint text catalog
+     template ("tuxpaint.pot"), since new text is added, and old text is
+     occasionally changed. The text catalog for the upcoming, unreleased
+     version of Tux Paint can be found in Tux Paint's CVS repository (see:
+     http://www.tuxpaint.org/download/source/cvs/), and on the Tux Paint
+     website at http://www.tuxpaint.org/help/po/.
+
+     To edit an existing translation, download the latest ".po" file for that
+     language, and edit it as described above.
+
+     You may send new or edited translation files to Bill Kendrick, lead
+     developer of Tux Paint, at: bill@newbreedsoftware.com, or post them to
+     the "tuxpaint-i18n" mailing list (see: http://www.tuxpaint.org/lists/).
+
+     Alternatively, if you have an account with SourceForge.net, you can
+     request to be added to the "tuxpaint" project and receive write-access
+     to the CVS source code repository so that you may commit your changes
+     directly.

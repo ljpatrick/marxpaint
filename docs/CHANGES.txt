@@ -55,6 +55,7 @@ $Id$
     * Discussed SVG Stamps in "Extending Tux Paint."
 
     * Created an "SVG.txt" document, covering SVG software.
+      FIXME: Not done yet?
 
     * Mentioned descriptive sounds (e.g., "stamp_desc_ll.ogg") in "Extending..."
 
@@ -63,6 +64,9 @@ $Id$
     * Expanded MinGW/MSYS GCC compilation instructions for building Win32.
 
     * Example tuxpaint.conf has been updated to include newer options.
+
+    * Briefly documented translation (gettext PO catalogs) in "Extending..."
+    
 
   * Bug Fixes:
     ----------

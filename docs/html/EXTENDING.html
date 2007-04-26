@@ -17,13 +17,13 @@ version
 <br>
 Extending Tux Paint</h1>
 
-<p>Copyright 2002-2006 by Bill Kendrick and others<br>
+<p>Copyright 2002-2007 by Bill Kendrick and others<br>
 New Breed Software</p>
 
 <p><a href="mailto:bill@newbreedsoftware.com">bill@newbreedsoftware.com</a><br>
 <a href="http://www.tuxpaint.org/">http://www.tuxpaint.org/</a></p>
 
-<p>June 14, 2002 - October 26, 2006</p>
+<p>June 14, 2002 - April 26, 2007</p>
 </center>
 
 <hr size=2 noshade>
@@ -674,6 +674,70 @@ effect.</p>
   always be affected by it.)</p>
 
   <br clear=all>
+</blockquote>
+
+<h2>Translations</h2>
+<blockquote>
+  <p>Tux Paint supports numerous languages, thanks to use of the
+  "gettext" localization library.  (See <a href="OPTIONS.html">OPTIONS</a>
+  for how to change locales in Tux&nbsp;Paint.)</p>
+
+  <p>To translate Tux&nbsp;Paint to a new language, copy the translation
+  template file, "<code>tuxpaint.pot</code>" (found in Tux&nbsp;Paint's
+  source code, in the folder "<code>src/po/</code>").  Rename the copy as a
+  "<code>.po</code>" file, with an appropriate name for the locale you're
+  translating to (e.g., "<code>es.po</code>" for Spanish; or
+  "<code>pt_br.po</code>" for Brazilian&nbsp;Portuguese, versus
+  "<code>pt.po</code>" or "<code>pt_pt.po</code>" for Portuguese spoken in
+  Portugal.)</p>
+
+  <p>Open the newly-created "<code>.po</code>" file &mdash; you can edit
+  in a <i>plain</i> text edtior, such as Emacs, Pico or VI on Linux, or
+  NotePad on Windows.  The original English text used in Tux&nbsp;Paint
+  is listed in lines starting with "<code>msgid</code>".  Enter your
+  translations of each of these pieces of text in the empty
+  "<code>msgstr</code>" lines directly below the corresponding
+  "<code>msgid</code>" lines.  (<i>Note:</i> Do not remove the quotes.)</p>
+
+  <p>Example:</p>
+
+  <blockquote>
+  <p><code>msgid "Smudge"<br>
+  msgstr "<u>Manchar</u>"<br>
+  &nbsp;<br>
+  msgid "Click and move to draw large bricks."<br>
+  msgstr "<u>Haz clic y arrastra para dibujar ladrillos grandes.</u>"
+  </code></p>
+  </blockquote>
+
+  <p>A graphical tool, called <i><b>poEdit</b></i>
+  (<a href="http://www.poedit.net/">http://www.poedit.net/</a>), is available
+  for Linux, Windows and Mac&nbsp;OS&nbsp;X.</p>
+
+  <p><i>Note:</i> It is best to always work off of the <i>latest</i>
+  Tux&nbsp;Paint text catalog template ("<code>tuxpaint.pot</code>"),
+  since new text is added, and old text is occasionally changed.
+  The text catalog for the upcoming, unreleased version of Tux&nbsp;Paint
+  can be found in Tux&nbsp;Paint's CVS repository
+  (see: <a href="http://www.tuxpaint.org/download/source/cvs/">http://www.tuxpaint.org/download/source/cvs/</a>),
+  and on the Tux&nbsp;Paint website at
+  <a href="http://www.tuxpaint.org/help/po/">http://www.tuxpaint.org/help/po/</a>.</p>
+
+  <p>To edit an existing translation, download the latest "<code>.po</code>"
+  file for that language, and edit it as described above.</p>
+
+  <p>You may send new or edited translation files to Bill&nbsp;Kendrick,
+  lead developer of Tux&nbsp;Paint, at:
+  <a href="mailto:bill@newbreedsoftware.com">bill@newbreedsoftware.com</a>,
+  or post them to the "tuxpaint-i18n" mailing list
+  (see: <a href="http://www.tuxpaint.org/lists/">http://www.tuxpaint.org/lists/</a>).</p>
+  
+  <p>Alternatively, if you have an account with
+  <a href="http://www.sourceforge.net/">SourceForge.net</a>, you can request
+  to be added to the "<code>tuxpaint</code>" project and receive write-access
+  to the CVS source code repository so that you may commit your changes
+  directly.</p>
+
 </blockquote>
 
 </body></html>
