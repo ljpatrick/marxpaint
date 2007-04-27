@@ -294,18 +294,22 @@ Available Tools
                               numerous keypresses.
 
                               When Tux Paint's locale is set to one of the
-                              supported languages that require an alternate
-                              input mode, press the right [Alt] or
-                              right [Option] key to cycle through normal
-                              (Latin character) and locale-specific modes.
+                              languages that provide alternate input modes, a
+                              key is used to cycle through normal (Latin
+                              character) and locale-specific mode or modes.
 
-                              Currently supported locales, and their input
-                              methods, are listed below. Note: Many fonts do
-                              not include all characters for all languages.
+                              Currently supported locales, the input methods
+                              available, and the key to toggle or cycle
+                              modes, are listed below. Note: Many fonts do
+                              not include all characters for all languages,
+                              so sometimes you'll need to change fonts to see
+                              the characters you're trying to type.
 
                                  * Japanese -- Romanized Hiragana and
-                                   Katakana
-                                 * Korean -- Hangul 2-Bul
+                                   Romanized Katakana -- right [Alt] or
+                                   right [Option]
+                                 * Korean -- Hangul 2-Bul -- right [Alt] or
+                                   right [Option]
 
    --------------------------------------------------------------------------
 

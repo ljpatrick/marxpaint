@@ -572,8 +572,8 @@ Translations
      to the CVS source code repository so that you may commit your changes
      directly.
 
-     Note: Additional locale support requires additions to Tux Paint's source
-     code (/src/i18n.h and /src/i18n.c), and requires updates to the
+     Note: Additional locale support also requires additions to Tux Paint's
+     source code (/src/i18n.h and /src/i18n.c), and requires updates to the
      Makefile, to have the ".po" gettext catalog source files compiled into
      ".mo" files, and installed, for use at runtime.
 
@@ -581,10 +581,11 @@ Alternative Input Methods
 
      As of version 0.9.17, Tux Paint's "Text" tool can provide alternative
      input methods for some languages. For example, when Tux Paint is running
-     with a Japanese locale, the right [Alt] can be pressed to change between
-     Latin, Romanized Hiragana and Katakana modes. This allows native
-     characters to be entered into the "Text" tool by typing one or more keys
-     on a keyboard with Latin characters (e.g., a US QWERTY keyboard).
+     with a Japanese locale, the right [Alt] key can be pressed to cycle
+     between Latin, Romanized Hiragana and Romanized Katakana modes. This
+     allows native characters and words to be entered into the "Text" tool by
+     typing one or more keys on a keyboard with Latin characters (e.g., a
+     US QWERTY keyboard).
 
      To create an input method for a new locale, create a text file with a
      name based on the locale (e.g., "ja" for Japanese), with ".im" as the
@@ -595,23 +596,28 @@ Alternative Input Methods
      system, typing [K] [A] in Hiragana mode generates a different Unicode
      character than typing [K] [A] in Katakana mode.
 
-     Start each character mapping section with the word "section", the follow
-     it with the mappings, one per line. Each line should contain (separated
-     by whitespace):
+     List the character mappings in this file, one per line. Each line should
+     contain (separated by whitespace):
 
-       * the Unicode value of the character, in hexadecimal
+       * the Unicode value of the character, in hexadecimal (more than one
+         character can be listed, separated by a colon (':'), this allowing
+         some sequences to map to words)
        * the keycode sequence (the ASCII characters that must be entered to
          generate the Unicode character)
        * a flag (or "-")
 
+     Start additional character mapping sections with a line containign the
+     word "section".
+
      Example:
 
        # Hiragana
-       section
        304B   ka   -
        304C   ga   -
        304D   ki   -
        304E   gi   -
+       304D:3083   kya   -
+       3063:305F   tta   -
 
        # Katakana
        section
@@ -624,10 +630,11 @@ Alternative Input Methods
      text following a "#" (pound/hash) character -- it can be used to denote
      comments, as seen in the example above.
 
-     Note: Flags must be set up on a per-locale basis (within the source
-     code, in "src/im.c"). For example, "b" is used in Korean to handle
-     Batchim, which may carry over to the next character.
+     Note: Meanings of the flags are locale-specific, and are processed by
+     the language-specific source code in "src/im.c". For example, "b" is
+     used in Korean to handle Batchim, which may carry over to the next
+     character.
 
-     Note: Additional input method support requires additions to Tux Paint's
-     source code (/src/im.c), and requires updates to the Makefile, to have
-     the ".im" files installed, for use at runtime.
+     Note: Additional input method support also requires additions to
+     Tux Paint's source code (/src/im.c), and requires updates to the
+     Makefile, to have the ".im" files installed, for use at runtime.

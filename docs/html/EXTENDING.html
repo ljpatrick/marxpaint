@@ -738,7 +738,7 @@ effect.</p>
   to the CVS source code repository so that you may commit your changes
   directly.</p>
 
-  <p><i>Note:</i> Additional locale support requires additions
+  <p><i>Note:</i> Additional locale support also requires additions
   to Tux&nbsp;Paint's source code (<code>/src/i18n.h</code> and
   <code>/src/i18n.c</code>), and requires updates to the <code>Makefile</code>,
   to have the "<code>.po</code>" gettext catalog source files compiled into
@@ -751,10 +751,11 @@ effect.</p>
   <p>As of version 0.9.17, Tux&nbsp;Paint's "Text" tool can provide
   alternative input methods for some languages.  For example, when
   Tux&nbsp;Paint is running with a Japanese locale, the
-  right&nbsp;<b>[Alt]</b> can be pressed to change between Latin,
-  Romanized Hiragana and Katakana modes.  This allows native characters to
-  be entered into the "Text" tool by typing one or more keys on a keyboard
-  with Latin characters (e.g., a US QWERTY keyboard).</p>
+  <b>right&nbsp;[Alt]</b> key can be pressed to cycle between Latin,
+  Romanized Hiragana and Romanized Katakana modes.
+  This allows native characters and words to be entered into the "Text" tool by
+  typing one or more keys on a keyboard with Latin characters (e.g., a
+  US&nbsp;QWERTY keyboard).</p>
 
   <p>To create an input method for a new locale, create a text file
   with a name based on the locale (e.g., "<code>ja</code>" for Japanese),
@@ -766,26 +767,31 @@ effect.</p>
   different Unicode character than typing
   <b>[K]</b>&nbsp;<b>[A]</b> in Katakana mode.</p>
 
-  <p>Start each character mapping section with the word "<code>section</code>",
-  the follow it with the mappings, one per line.  Each line should
+  <p>List the character mappings in this file, one per line.  Each line should
   contain (separated by whitespace):</p>
   
   <ul>
   <li>the Unicode value of the character, in hexadecimal
+    (more than one character can be listed, separated by a colon (':'),
+    this allowing some sequences to map to words)
   <li>the keycode sequence (the ASCII characters that must be entered to
     generate the Unicode character)
   <li>a flag (or "<code>-</code>")
   </ul>
 
+  <p>Start additional character mapping sections with a line containign the word
+  "<code>section</code>".</p>
+
   <p>Example:</p>
 
   <blockquote>
   <p><code># Hiragana<br>
-  section<br>
   304B &nbsp; ka &nbsp; -<br>
   304C &nbsp; ga &nbsp; -<br>
   304D &nbsp; ki &nbsp; -<br>
   304E &nbsp; gi &nbsp; -<br>
+  304D:3083 &nbsp; kya &nbsp; -<br>
+  3063:305F &nbsp; tta &nbsp; -<br>
   &nbsp;<br>
   # Katakana<br>
   section<br>
@@ -801,12 +807,12 @@ effect.</p>
   (pound/hash) character &mdash; it can be used to denote comments,
   as seen in the example above.</p>
 
-  <p><i>Note:</i> Flags must be set up on a per-locale basis
-  (within the source code, in "<code>src/im.c</code>").
+  <p><i>Note:</i> Meanings of the flags are locale-specific, and are processed
+  by the language-specific source code in "<code>src/im.c</code>".
   For example, "<code>b</code>" is used in Korean to handle
   Batchim, which may carry over to the next character.</p>
 
-  <p><i>Note:</i> Additional input method support requires additions
+  <p><i>Note:</i> Additional input method support also requires additions
   to Tux&nbsp;Paint's source code (<code>/src/im.c</code>), and requires
   updates to the <code>Makefile</code>,
   to have the "<code>.im</code>" files installed, for use at runtime.</p>
