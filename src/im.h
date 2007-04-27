@@ -35,7 +35,7 @@
 
 typedef struct IM_DATA {
   int lang;             /* Language used in sequence translation */
-  wchar_t s[8];         /* Characters that should be displayed */
+  wchar_t s[16];        /* Characters that should be displayed */
   const char* tip_text; /* Tip text, read-only please */
 
   /* For use by language-specific im_event_<lang> calls. PRIVATE! */

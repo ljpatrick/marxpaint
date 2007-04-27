@@ -90,6 +90,9 @@ section
 3092	wo	-
 3093	n	-
 
+304D:3083	kya	-
+3063:305F	tta	-
+
 
 # Katakana
 section
@@ -186,3 +189,5 @@ section
 30FA	vo	-
 30FB	.	-
 30FC	-	-
+
+# vim:ts=12

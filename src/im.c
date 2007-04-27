@@ -80,8 +80,9 @@ static const char* const im_tip_text[NUM_IM_TIPS] =
 
 /* #define IM_DEBUG       1 */
 
-#define MAX_SECTIONS   8   /* Maximum numbers of sections in *.im file */
-#define INITIAL_SMSIZE 8   /* Initial num of transitions in STATE_MACHINE */
+#define MAX_SECTIONS     8    /* Maximum numbers of sections in *.im file */
+#define MAX_UNICODE_SEQ 16    /* Output of state machine, including NUL */
+#define INITIAL_SMSIZE   8    /* Initial num of transitions in STATE_MACHINE */
 
 #ifndef LANG_DEFAULT
 #define LANG_DEFAULT   (LANG_EN)
@@ -138,7 +139,7 @@ typedef struct SM_WITH_KEY {
 * @see SM_WITH_KEY
 */
 typedef struct STATE_MACHINE {
-  wchar_t output;
+  wchar_t output[MAX_UNICODE_SEQ];
   char flag;
 
   SM_WITH_KEY* next;      /* Possible transitions */
@@ -158,9 +159,9 @@ typedef struct {
   int section;
 
   /* These variables get populated when a search is performed */
-  int match_count;
-  int match_is_final;
-  int match_stats;                  /* Statistics gathering */
+  int match_count;              /* How many char seq was used for output */
+  int match_is_final;           /* T/F - tells if match is final */
+  int match_stats;              /* Statistics gathering */
   STATE_MACHINE* match_state;
   STATE_MACHINE* match_state_prev;
 } CHARMAP;
@@ -322,12 +323,12 @@ static STATE_MACHINE* sm_search_shallow(STATE_MACHINE* sm, char key)
 * @param end      The last state found.  Return on output.
 * @param penult   The penultimate state found.
 *
-* @return         Found unicode output of the last state.
+* @return         Found unicode character sequence output of the last state.
 */
-static wchar_t sm_search(STATE_MACHINE* start, wchar_t* key, int* matched, STATE_MACHINE** penult, STATE_MACHINE** end)
+static const wchar_t* sm_search(STATE_MACHINE* start, wchar_t* key, int* matched, STATE_MACHINE** penult, STATE_MACHINE** end)
 {
   STATE_MACHINE* sm = sm_search_shallow(start, (char)*key);
-  wchar_t unicode;
+  const wchar_t* unicode;
 
   /* No match - stop recursion */
   if(!sm) {
@@ -359,17 +360,22 @@ static void sm_sort_shallow(STATE_MACHINE* sm)
 /**
 * Add a single sequence-to-unicode path to the state machine.
 */
-static int sm_add(STATE_MACHINE* sm, char* seq, wchar_t unicode, char flag)
+static int sm_add(STATE_MACHINE* sm, char* seq, const wchar_t* unicode, char flag)
 {
   STATE_MACHINE* sm_found = sm_search_shallow(sm, seq[0]);
 
   /* Empty sequence */
   if(seq[0] == '\0') {
-    if(sm->output) {
-      fprintf(stderr, "Unicode %04X already defined, overriding with %04X\n",
-          (int)sm->output, (int)unicode);
+    if(wcslen(sm->output)) {
+      size_t i;
+
+      fprintf(stderr, "Unicode sequence ");
+      for(i = 0; i < wcslen(sm->output); i++) fprintf(stderr, "%04X ", (int)sm->output[i]);
+      fprintf(stderr, " already defined, overriding with ");
+      for(i = 0; i < wcslen(unicode); i++) fprintf(stderr, "%04X ", (int)unicode[i]);
+      fprintf(stderr, "\n");
     }
-    sm->output = unicode;
+    wcscpy(sm->output, unicode);
     sm->flag = flag;
     return 0;
   }
@@ -443,7 +449,7 @@ static int charmap_init(CHARMAP* cm)
 *
 * @return        0 if no error, 1 if error.
 */
-static int charmap_add(CHARMAP* cm, int section, char* seq, wchar_t unicode, char* flag)
+static int charmap_add(CHARMAP* cm, int section, char* seq, const wchar_t* unicode, char* flag)
 {
   if(section >= MAX_SECTIONS) {
     fprintf(stderr, "Section count exceeded\n");
@@ -481,35 +487,67 @@ static int charmap_load(CHARMAP* cm, const char* path)
 
   /* Load */
   while(!feof(is)) {
-    wchar_t unicode;
+    wchar_t unicode[MAX_UNICODE_SEQ];
+    int ulen = 0;
+
     char buf[256];
     char flag[256];
+
     int scanned = 0;
-    int u;
 
-    scanned = fscanf(is, "%x\t%255s\t%255s", &u, buf, flag);
+    /* Scan a single token first */
+    scanned = fscanf(is, "%255s", buf);
     if(scanned < 0) break;
-    unicode = u;
+    if(scanned == 0) {
+      fprintf(stderr, "%s: Character map syntax error\n", path);
+      return 1;
+    }
 
-    switch(scanned) {
-      case 0:
-        fscanf(is, "%255s", buf);
+    /* Handle the first argument */
+    if(strcmp(buf, "section") == 0) {    /* Section division */
+      section++;
+      continue;
+    }
+    else if(buf[0] == '#') {             /* Comment */
+      fscanf(is, "%*[^\n]");
+      continue;
+    }
+    else {
+      char* bp = buf;
+      int u;
 
-        if(strcmp(buf, "section") == 0) section++;     /* Section division */
-        else if(buf[0] == '#') fscanf(is, "%*[^\n]");  /* Comment */
+      do {
+        if(sscanf(bp, "%x", &u) == 1) {   /* Unicode */
+          unicode[ulen++] = u;
+        }
         else {
           fprintf(stderr, "%s: Syntax error at '%s'\n", path, buf);
           return 1;
         }
-        break;
 
-      case 1: case 2:
+        bp = strchr(bp, ':');
+        if(bp) bp++;
+      } while(bp && ulen < MAX_UNICODE_SEQ-1);
+      unicode[ulen] = L'\0';
+    }
+
+    /* Scan some more */
+    scanned = fscanf(is, "%255s\t%255s", buf, flag);
+    if(scanned < 0) break;
+
+    /* Input count checking */
+    switch(scanned) {
+      case 0: case 1:
         fprintf(stderr, "%s: Character map syntax error\n", path);
         return 1;
 
       default:
         if(charmap_add(cm, section, buf, unicode, flag)) {
-          fwprintf(stderr, L"Unable to add sequence '%ls', unicode '%04X' in section %d\n", buf, unicode, section);
+          size_t i = 0;
+
+          fwprintf(stderr, L"Unable to add sequence '%ls', unicode ", buf);
+          for(i = 0; i < wcslen(unicode); i++) fwprintf(stderr, L"%04X ", (int)unicode[i]);
+          fwprintf(stderr, L"in section %d\n", section);
           error_code = 1;
         }
     }
@@ -540,10 +578,10 @@ static void charmap_free(CHARMAP* cm)
 /**
 * Search for a matching character string in the character map.
 */
-static wchar_t charmap_search(CHARMAP* cm, wchar_t* s)
+static const wchar_t* charmap_search(CHARMAP* cm, wchar_t* s)
 {
   STATE_MACHINE* start;
-  wchar_t unicode;
+  const wchar_t* unicode;
   int section;
 
   /* Determine the starting state based on the charmap's active section */
@@ -567,10 +605,12 @@ static wchar_t charmap_search(CHARMAP* cm, wchar_t* s)
   * final state we possibly can.
   */
   cm->match_is_final = 0;
-  cm->match_stats = MATCH_STAT_NONE;
   if(cm->match_count < (int)wcslen(s)) {
     cm->match_is_final = 1;
   }
+
+  /* Statistics */
+  cm->match_stats = MATCH_STAT_NONE;
   if(cm->match_state->next_size == 0) {
     cm->match_is_final = 1;
     cm->match_stats |= MATCH_STAT_NOMOSTATES;
@@ -757,18 +797,18 @@ static int im_event_ja(IM_DATA* im, SDL_keysym ks)
         /* Translate the characters */
         im->discard = 0;
         while(1) {
-          u = charmap_search(&cm, im->buf);
+          const wchar_t* us = charmap_search(&cm, im->buf);
           #ifdef IM_DEBUG
           wprintf(L"  [%8ls] [%8ls] %2d %2d\n", im->s, im->buf, wcslen(im->s), wcslen(im->buf));
           #endif
 
           /* Match was found? */
-          if(u) {
+          if(us && wcslen(us)) {
             #ifdef IM_DEBUG
             wprintf(L"    1\n");
             #endif
 
-            wcsncat(im->s, &u, 1);
+            wcscat(im->s, us);
 
             /* Final match */
             if(cm.match_is_final) {
@@ -778,7 +818,7 @@ static int im_event_ja(IM_DATA* im, SDL_keysym ks)
             }
             /* May need to be overwritten next time */
             else {
-              im->discard++;
+              im->discard += wcslen(us);
               break;
             }
           }
@@ -840,7 +880,7 @@ static int im_event_ja(IM_DATA* im, SDL_keysym ks)
 static int im_event_ko_isvowel(CHARMAP* cm, wchar_t c)
 {
   STATE_MACHINE *start, *next;
-  wchar_t unicode;
+  const wchar_t* unicode;
   int section;
 
   /* Determine the starting state based on the charmap's active section */
@@ -849,9 +889,9 @@ static int im_event_ko_isvowel(CHARMAP* cm, wchar_t c)
   start = &cm->sections[section];
 
   next = sm_search_shallow(start, (char)c);
-  unicode = next ? next->output : 0;
+  unicode = next ? next->output : NULL;
 
-  return (0x314F <= unicode && unicode <= 0x3163);
+  return (wcslen(unicode) == 1 && 0x314F <= unicode[0] && unicode[0] <= 0x3163);
 }
 
 
@@ -968,13 +1008,13 @@ static int im_event_ko(IM_DATA* im, SDL_keysym ks)
         /* Translate the characters */
         im->discard = 0;
         while(1) {
-          u = charmap_search(&cm, bp);
+          const wchar_t* us = charmap_search(&cm, bp);
           #ifdef IM_DEBUG
           wprintf(L"  [%8ls] [%8ls] %2d %2d\n", im->s, im->buf, wcslen(im->s), wcslen(im->buf));
           #endif
 
           /* Match was found? */
-          if(u) {
+          if(us && wcslen(us)) {
             /* Final match */
             if(cm.match_is_final) {
               /* Batchim may carry over to the next character */
@@ -987,9 +1027,9 @@ static int im_event_ko(IM_DATA* im, SDL_keysym ks)
                   wprintf(L"    1a\n");
                   #endif
 
-                  wcsncat(im->s, &u, 1); /* Output */
-                  im->discard++;         /* May need to re-eval next time */
-                  bp += cm.match_count;  /* Keep buffer data for re-eval*/
+                  wcscat(im->s, us);          /* Output */
+                  im->discard += wcslen(us);  /* May need to re-eval next time */
+                  bp += cm.match_count;       /* Keep buffer data for re-eval*/
                   cm.match_count = 0;
                   cm.match_is_final = 0;
                 }
@@ -999,7 +1039,7 @@ static int im_event_ko(IM_DATA* im, SDL_keysym ks)
                   wprintf(L"    1b\n");
                   #endif
 
-                  wcsncat(im->s, &u, 1); /* Output */
+                  wcscat(im->s, us);     /* Output */
                   wcs_lshift(bp, cm.match_count);
                   cm.match_count = 0;
                   cm.match_is_final = 0;
@@ -1010,19 +1050,20 @@ static int im_event_ko(IM_DATA* im, SDL_keysym ks)
                   wprintf(L"    1c\n");
                   #endif
 
-                  u = cm.match_state_prev->output;
-                  wcsncat(im->s, &u, 1); /* Output */
-                  cm.match_count--;      /* Matched all but one */
+                  us = cm.match_state_prev->output;
+                  wcscat(im->s, us);      /* Output */
+                  cm.match_count--;       /* Matched all but one */
                   cm.match_is_final = 0;
                   wcs_lshift(bp, cm.match_count);
                 }
               }
+              /* No batchim - this is final */
               else {
                 #ifdef IM_DEBUG
                 wprintf(L"    1d\n");
                 #endif
 
-                wcsncat(im->s, &u, 1);
+                wcscat(im->s, us);
                 wcs_lshift(bp, cm.match_count);
                 cm.match_count = 0;
                 cm.match_is_final = 0;
@@ -1034,8 +1075,8 @@ static int im_event_ko(IM_DATA* im, SDL_keysym ks)
               wprintf(L"    1e\n");
               #endif
 
-              wcsncat(im->s, &u, 1);
-              im->discard++;
+              wcscat(im->s, us);
+              im->discard += wcslen(us);
               break;
             }
           }
