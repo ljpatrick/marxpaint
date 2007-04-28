@@ -5988,7 +5988,7 @@ static void setup(int argc, char *argv[])
   dont_load_stamps = 0;
   no_system_fonts = 1;
   print_delay = 0;
-  use_print_config = 0;
+  use_print_config = 1;
   mirrorstamps = 0;
   disable_stamp_controls = 0;
 
@@ -6511,7 +6511,11 @@ static void setup(int argc, char *argv[])
 
     /* Look for the lockfile... */
 
+#ifndef WIN32
     lock_fname = get_fname("lockfile.dat");
+#else
+    lock_fname = get_temp_fname("lockfile.dat");
+#endif
 
     fi = fopen(lock_fname, "r");
     if (fi != NULL)
@@ -11330,7 +11334,11 @@ static void cleanup(void)
     time_t zero_time;
     FILE *fi;
 
+#ifndef WIN32
     lock_fname = get_fname("lockfile.dat");
+#else
+    lock_fname = get_temp_fname("lockfile.dat");
+#endif
 
     zero_time = (time_t) 0;
 

@@ -576,3 +576,29 @@ char *GetSystemFontDir(void)
   }
   return strdup("C:\\WINDOWS\\FONTS");
 }
+
+/*
+  Returns heap string containing user temp directory.
+  E.g. C:\Documents and Settings\jfp\Local Settings\Temp
+*/
+static char *GetUserTempDir(void)
+{
+  char *temp = getenv("TEMP");
+
+  if (!temp)
+  {
+    temp = "userdata";
+  }
+  return strdup(temp);
+}
+
+char *get_temp_fname(const char *const name)
+{
+  char f[512];
+  char *tempdir = GetUserTempDir();
+
+  snprintf(f, sizeof(f), "%s/%s", tempdir, name);
+  free(tempdir);
+  return strdup(f);
+}
+
