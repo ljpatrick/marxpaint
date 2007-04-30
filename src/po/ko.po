@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: Tux Paint 0.9.16\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2006-09-10 11:18-0700\n"
-"PO-Revision-Date: 2006-03-25 06:50-0700\n"
+"PO-Revision-Date: 2007-04-29 23:10-0400\n"
 "Last-Translator: Mark K. Kim <mkkim214@gmail.com>\n"
 "Language-Team: N/A\n"
 "MIME-Version: 1.0\n"
@@ -98,7 +98,7 @@ msgstr ""
 #. especially important for users who have scroll buttons disabled.
 #. Translators should do whatever is needed to put crummy fonts last.
 msgid "oO"
-msgstr "oO"
+msgstr "ㄱㄴ"
 
 #. distinct uppercase and lowercase
 msgid "`\\%_@$~#{}<>^&*"
@@ -496,7 +496,7 @@ msgid "Play"
 msgstr ""
 
 msgid "Aa"
-msgstr ""
+msgstr "A가"
 
 #. FIXME: Move elsewhere! Or not?!
 msgid "Yes"

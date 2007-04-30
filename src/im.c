@@ -89,6 +89,9 @@ static const char* const im_tip_text[NUM_IM_TIPS] =
 #endif
 
 
+/**
+* Event types that im_event_*() functions need to handle.
+*/
 enum {
   IM_REQ_TRANSLATE,    /* The ever-more important IM translation request */
   IM_REQ_INIT,         /* Initialization request */
@@ -99,6 +102,9 @@ enum {
 };
 
 
+/**
+* Match statuses.
+*/
 enum {
   MATCH_STAT_NONE       = 0x00,
   MATCH_STAT_NOMOSTATES = 0x01,
@@ -110,6 +116,9 @@ enum {
 * TYPES
 */
 
+/**
+* All im_event_*() functions have this type.
+*/
 typedef int (*IM_EVENT_FN)(IM_DATA*, SDL_keysym);   /* IM_EVENT_FN type */
 
 
@@ -891,7 +900,7 @@ static int im_event_ko_isvowel(CHARMAP* cm, wchar_t c)
   next = sm_search_shallow(start, (char)c);
   unicode = next ? next->output : NULL;
 
-  return (wcslen(unicode) == 1 && 0x314F <= unicode[0] && unicode[0] <= 0x3163);
+  return (unicode && wcslen(unicode) == 1 && 0x314F <= unicode[0] && unicode[0] <= 0x3163);
 }
 
 
@@ -961,14 +970,13 @@ static int im_event_ko(IM_DATA* im, SDL_keysym ks)
     case SDLK_NUMLOCK: case SDLK_CAPSLOCK: case SDLK_SCROLLOCK:
     case SDLK_LSHIFT:  case SDLK_RSHIFT:
     case SDLK_LCTRL:   case SDLK_RCTRL:
-    case SDLK_LALT:
     case SDLK_LMETA:   case SDLK_RMETA:
     case SDLK_LSUPER:  case SDLK_RSUPER:
     case SDLK_MODE:    case SDLK_COMPOSE:
       break;
 
     /* Right-Alt mapped to mode-switch */
-    case SDLK_RALT:
+    case SDLK_LALT: case SDLK_RALT:
       cm.section = (++cm.section % SEC_TOTAL);   /* Change section */
       im_softreset(im);                          /* Soft reset */
 
@@ -1239,7 +1247,7 @@ void im_free(IM_DATA* im)
 */
 int im_read(IM_DATA* im, SDL_keysym ks)
 {
-  IM_EVENT_FN im_event_fp = NULL;
+  IM_EVENT_FN* im_event_fp = NULL;
   int discard = 0;
 
   /* Sanity check */
@@ -1249,7 +1257,7 @@ int im_read(IM_DATA* im, SDL_keysym ks)
   }
 
   /* Function pointer to the language-specific im_event_* function */
-  im_event_fp = im_event_fns[im->lang];
+  im_event_fp = &im_event_fns[im->lang];
 
   #ifdef DEBUG
   if(im_event_fp) printf("Loading IM for %s...\n", lang_prefixes[im->lang]);
