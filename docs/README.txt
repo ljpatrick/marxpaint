@@ -9,7 +9,7 @@
                            bill@newbreedsoftware.com
                             http://www.tuxpaint.org/
 
-                         June 14, 2002 - April 26, 2007
+                          June 14, 2002 - May 2, 2007
 
    --------------------------------------------------------------------------
 
@@ -306,10 +306,9 @@ Available Tools
                               the characters you're trying to type.
 
                                  * Japanese -- Romanized Hiragana and
-                                   Romanized Katakana -- right [Alt] or
-                                   right [Option]
+                                   Romanized Katakana -- right [Alt]
                                  * Korean -- Hangul 2-Bul -- right [Alt] or
-                                   right [Option]
+                                   left [Alt]
 
    --------------------------------------------------------------------------
 
