@@ -9,7 +9,7 @@ http://www.newbreedsoftware.com/tuxpaint/
 $Id$
 
 
-2007.April.26 (0.9.17)
+2007.May.2 (0.9.17)
 
   * Tool Improvements:
     ------------------
@@ -78,6 +78,9 @@ $Id$
     * No longer disabling screensaver (if the system's libSDL supports
       it via "SDL_ALLOWSCREENSAVER" environment variable).
 
+    * "use_print_config" option defaults to 'yes' on Windows, again.
+      John Popplewell <john@johnnypops.demon.co.uk>
+
   * Compiling, porting and packaging updates:
     -----------------------------------------
     * Tweaks to allow it to run on the One Laptop Per Child (OLPC) "XO".
@@ -87,6 +90,14 @@ $Id$
       (added icon to task manager when Home button is pressed,
       hid on-screen mouse cursor, disabled Print and Text tools)
       Alessandro Pasotti <apasotti@gmail.com>
+
+    * Lockfile (that prevents multiple launches) is now stored
+      in the user's local temporary directory on Windows
+      (usually 'C:\Documents and Settings\{username}\Local Settings\Temp').
+      This allows multiple users on different desktops to use a shared
+      save directory on a network drive, without having to disable the
+      lockfile feature, or wait for the lockfile to expire.
+      John Popplewell <john@johnnypops.demon.co.uk>
 
   * New Translations:
     -----------------
