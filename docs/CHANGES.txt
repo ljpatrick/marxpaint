@@ -14,8 +14,8 @@ $Id$
   * Tool Improvements:
     ------------------
     * Input Method Framework, with implementations of Korean (Hangul 2-Bul)
-      and Japanese (Romanized Hiragana and Katakana) input methods.  Should
-      be extensible to other languages.
+      and Japanese (Romanized Hiragana and Romanized Katakana) input methods.
+      (Should be extensible to other languages.)
       Mark K. Kim <mkkim214@gmail.com>
 
     * Stamps now supports SVG vector-based graphics!  (Via Cairo library)
