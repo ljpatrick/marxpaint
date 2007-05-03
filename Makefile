@@ -7,7 +7,7 @@
 # bill@newbreedsoftware.com
 # http://www.tuxpaint.org/
 
-# June 14, 2002 - May 2, 2007
+# June 14, 2002 - May 3, 2007
 
 
 # The version number, for release:
@@ -273,7 +273,7 @@ install:	install-bin install-data install-man install-doc \
 	@echo "Visit Tux Paint's home page for more information, updates"
 	@echo "and to learn how you can help out!"
 	@echo
-	@echo "  http://www.newbreedsoftware.com/tuxpaint/"
+	@echo "  http://www.tuxpaint.org/"
 	@echo
 	@echo "Enjoy!"
 	@echo
@@ -297,7 +297,7 @@ install-private-win32:	install-bin install-data install-man install-doc \
 	@echo "Visit Tux Paint's home page for more information, updates"
 	@echo "and to learn how you can help out!"
 	@echo
-	@echo "  http://www.newbreedsoftware.com/tuxpaint/"
+	@echo "  http://www.tuxpaint.org/"
 	@echo
 	@echo "Enjoy!"
 	@echo
