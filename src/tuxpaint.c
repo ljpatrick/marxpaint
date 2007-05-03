@@ -831,6 +831,7 @@ static int cur_undo, oldest_undo, newest_undo;
 
 static SDL_Surface *img_title, *img_title_credits, *img_title_tuxpaint;
 static SDL_Surface *img_btn_up, *img_btn_down, *img_btn_off;
+static SDL_Surface *img_prev, *img_next;
 static SDL_Surface *img_dead40x40;
 static SDL_Surface *img_black, *img_grey;
 static SDL_Surface *img_yes, *img_no;
@@ -5935,6 +5936,8 @@ static void load_stamps(SDL_Surface * screen)
 	    "or %s\n\n", homedirdir);
   }
 
+  num_stamp_groups = stamp_group + 1;
+
   free(homedirdir);
 }
 
@@ -7144,6 +7147,9 @@ static void setup(int argc, char *argv[])
   img_yes = loadimage(DATA_PREFIX "images/ui/yes.png");
   img_no = loadimage(DATA_PREFIX "images/ui/no.png");
 
+  img_prev = loadimage(DATA_PREFIX "images/ui/prev.png");
+  img_next = loadimage(DATA_PREFIX "images/ui/next.png");
+
   img_open = loadimage(DATA_PREFIX "images/ui/open.png");
   img_erase = loadimage(DATA_PREFIX "images/ui/erase.png");
   img_back = loadimage(DATA_PREFIX "images/ui/back.png");
@@ -8262,6 +8268,8 @@ static void draw_stamps(void)
   float x_per, y_per;
   int xx, yy;
   SDL_Surface *btn, *blnk;
+  SDL_Surface *button_color;
+  SDL_Surface *button_body;
 
 
   /* Draw the title: */
@@ -8360,13 +8368,60 @@ static void draw_stamps(void)
   }
 
 
+  /* Draw stamp group buttons (prev/next): */
+
+
+  /* Show prev button: */
+
+  dest.x = WINDOW_WIDTH - 96;
+  dest.y = 40 + ((4 + TOOLOFFSET / 2) * 48);
+
+  if (stamp_group > 0)
+  {
+    button_color = img_black;
+    button_body = img_btn_up;
+  }
+  else
+  {
+    button_color = img_grey;
+    button_body = img_btn_off;
+  }
+  SDL_BlitSurface(button_body, NULL, screen, &dest);
+
+  dest.x = WINDOW_WIDTH - 96 + (48 - img_prev->w) / 2;
+  dest.y = (40 + ((4 + TOOLOFFSET / 2) * 48) + (48 - img_prev->h) / 2);
+
+  SDL_BlitSurface(button_color, NULL, img_prev, NULL);
+  SDL_BlitSurface(img_prev, NULL, screen, &dest);
+
+  /* Show next button: */
+
+  dest.x = WINDOW_WIDTH - 48;
+  dest.y = 40 + ((4 + TOOLOFFSET / 2) * 48);
+
+  if (stamp_group < num_stamp_groups - 1)
+  {
+    button_color = img_black;
+    button_body = img_btn_up;
+  }
+  else
+  {
+    button_color = img_grey;
+    button_body = img_btn_off;
+  }
+  SDL_BlitSurface(button_body, NULL, screen, &dest);
+
+  dest.x = WINDOW_WIDTH - 48 + (48 - img_next->w) / 2;
+  dest.y = (40 + ((4 + TOOLOFFSET / 2) * 48) + (48 - img_next->h) / 2);
+
+  SDL_BlitSurface(button_color, NULL, img_next, NULL);
+  SDL_BlitSurface(img_next, NULL, screen, &dest);
+
+
   /* Draw stamp controls: */
 
   if (!disable_stamp_controls)
   {
-    SDL_Surface *button_color;
-    SDL_Surface *button_body;
-
     /* Show mirror button: */
 
     dest.x = WINDOW_WIDTH - 96;
@@ -11229,6 +11284,9 @@ static void cleanup(void)
 
   free_surface(&img_yes);
   free_surface(&img_no);
+
+  free_surface(&img_prev);
+  free_surface(&img_next);
 
   free_surface(&img_title_on);
   free_surface(&img_title_off);
