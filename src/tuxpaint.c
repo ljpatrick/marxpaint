@@ -162,11 +162,11 @@ static scaleparams scaletable[] = {
 #define HARD_MIN_STAMP_SIZE 0	// bottom of scaletable
 #define HARD_MAX_STAMP_SIZE (sizeof scaletable / sizeof scaletable[0] - 1)
 
-#define MIN_STAMP_SIZE (stamp_data[cur_stamp]->min)
-#define MAX_STAMP_SIZE (stamp_data[cur_stamp]->max)
+#define MIN_STAMP_SIZE (stamp_data[stamp_group][cur_stamp[stamp_group]]->min)
+#define MAX_STAMP_SIZE (stamp_data[stamp_group][cur_stamp[stamp_group]]->max)
 
 // to scale some offset, in pixels, like the current stamp is scaled
-#define SCALE_LIKE_STAMP(x) ( ((x) * scaletable[stamp_data[cur_stamp]->size].numer + scaletable[stamp_data[cur_stamp]->size].denom-1) / scaletable[stamp_data[cur_stamp]->size].denom )
+#define SCALE_LIKE_STAMP(x) ( ((x) * scaletable[stamp_data[stamp_group][cur_stamp[stamp_group]]->size].numer + scaletable[stamp_data[stamp_group][cur_stamp[stamp_group]]->size].denom-1) / scaletable[stamp_data[stamp_group][cur_stamp[stamp_group]]->size].denom )
 // pixel dimensions of the current stamp, as scaled
 #define CUR_STAMP_W SCALE_LIKE_STAMP(active_stamp->w)
 #define CUR_STAMP_H SCALE_LIKE_STAMP(active_stamp->h)
@@ -965,22 +965,30 @@ typedef struct stamp_type
   unsigned max:5;
 } stamp_type;
 
-static int num_stamps;
-static int max_stamps;
-static stamp_type **stamp_data;
+#define MAX_STAMP_GROUPS 256
+
+static unsigned int stamp_group_dir_depth = 1; // How deep (how many slashes in a subdirectory path) we think a new stamp group should be
+
+static int stamp_group = 0;
+
+const char *load_stamp_basedir;
+static int num_stamp_groups = 0;
+static int num_stamps[MAX_STAMP_GROUPS];
+static int max_stamps[MAX_STAMP_GROUPS];
+static stamp_type **stamp_data[MAX_STAMP_GROUPS];
 
 static SDL_Surface *active_stamp;
 
 /* Returns whether a particular stamp can be colored: */
 static int stamp_colorable(int stamp)
 {
-  return stamp_data[stamp]->colorable;
+  return stamp_data[stamp_group][stamp]->colorable;
 }
 
 /* Returns whether a particular stamp can be tinted: */
 static int stamp_tintable(int stamp)
 {
-  return stamp_data[stamp]->tintable;
+  return stamp_data[stamp_group][stamp]->tintable;
 }
 
 
@@ -1035,14 +1043,19 @@ static int brush_counter, rainbow_color, brush_frame;
 #define ERASER_MAX 128
 
 
+
 static unsigned cur_color;
-static int cur_tool, cur_brush, cur_stamp, cur_shape, cur_magic;
+static int cur_tool, cur_brush;
+static int cur_stamp[MAX_STAMP_GROUPS];
+static int cur_shape, cur_magic;
 static int cur_font, cur_eraser;
 static int cursor_left, cursor_x, cursor_y, cursor_textwidth;	// canvas-relative
 static int been_saved;
 static char file_id[32];
 static char starter_id[32];
-static int brush_scroll, stamp_scroll, font_scroll, magic_scroll;
+static int brush_scroll;
+static int stamp_scroll[MAX_STAMP_GROUPS];
+static int font_scroll, magic_scroll;
 static int eraser_scroll, shape_scroll;	// dummy variables for now
 
 static int eraser_sound;
@@ -1373,6 +1386,7 @@ int main(int argc, char *argv[])
   CLOCK_TYPE time2;
   SDL_Rect dest;
   SDL_Rect src;
+  int i;
 
   CLOCK_ASM(time1);
 
@@ -1445,7 +1459,8 @@ int main(int argc, char *argv[])
   cur_color = COLOR_BLACK;
   colors_are_selectable = 1;
   cur_brush = 0;
-  cur_stamp = 0;
+  for (i = 0; i < MAX_STAMP_GROUPS; i++)
+    cur_stamp[i] = 0;
   cur_shape = SHAPE_SQUARE;
   cur_magic = 0;
   cur_font = 0;
@@ -1471,7 +1486,9 @@ int main(int argc, char *argv[])
   render_sparkles();
 
   brush_scroll = 0;
-  stamp_scroll = 0;
+  for (i = 0; i < MAX_STAMP_GROUPS; i++)
+    stamp_scroll[i] = 0;
+  stamp_group = 0;  // reset!
   font_scroll = 0;
   magic_scroll = 0;
 
@@ -2014,12 +2031,12 @@ static void mainloop(void)
 	    }
 	    else if (cur_tool == TOOL_STAMP)
 	    {
-	      cur_thing = cur_stamp;
-	      num_things = num_stamps;
-	      thing_scroll = &stamp_scroll;
+	      cur_thing = cur_stamp[stamp_group];
+	      num_things = num_stamps[stamp_group];
+	      thing_scroll = &(stamp_scroll[stamp_group]);
 	      draw_stamps();
-	      draw_colors(stamp_colorable(cur_stamp) ||
-			  stamp_tintable(cur_stamp));
+	      draw_colors(stamp_colorable(cur_stamp[stamp_group]) ||
+			  stamp_tintable(cur_stamp[stamp_group]));
 	      set_active_stamp();
 	      update_stamp_xor();
 	    }
@@ -2298,7 +2315,11 @@ static void mainloop(void)
 	      if (!disable_stamp_controls)
 		gd_controls = (grid_dims)
 	      {
-	      2, 2};
+	      3, 3}; // was 2,2 before adding left/right stamp group buttons -bjk 2007.05.03
+              else
+		gd_controls = (grid_dims)
+	      {
+	      1, 1};  // was left 0,0 before adding left/right stamp group buttons -bjk 2007.05.03
 	    }
 	    else if (cur_tool == TOOL_TEXT)
 	    {
@@ -2348,7 +2369,7 @@ static void mainloop(void)
 	      {
 		toolopt_changed = 1;
 #ifndef NOSOUND
-		if (cur_tool != TOOL_STAMP || stamp_data[which]->ssnd == NULL)
+		if (cur_tool != TOOL_STAMP || stamp_data[stamp_group][which]->ssnd == NULL)
 		{
 		  playsound(screen, 1, SND_BLEEP, 0, SNDPOS_RIGHT,
 			    SNDDIST_NEAR);
@@ -2374,35 +2395,35 @@ static void mainloop(void)
 		  if (which & 1)
 		  {
 		    /* Bottom right button: Grow: */
-		    if (stamp_data[cur_stamp]->size < MAX_STAMP_SIZE)
+		    if (stamp_data[stamp_group][cur_stamp[stamp_group]]->size < MAX_STAMP_SIZE)
 		    {
-		      stamp_data[cur_stamp]->size++;
+		      stamp_data[stamp_group][cur_stamp[stamp_group]]->size++;
 		      control_sound = SND_GROW;
 		    }
 		  }
 		  else
 		  {
 		    /* Bottom left button: Shrink: */
-		    if (stamp_data[cur_stamp]->size > MIN_STAMP_SIZE)
+		    if (stamp_data[stamp_group][cur_stamp[stamp_group]]->size > MIN_STAMP_SIZE)
 		    {
-		      stamp_data[cur_stamp]->size--;
+		      stamp_data[stamp_group][cur_stamp[stamp_group]]->size--;
 		      control_sound = SND_SHRINK;
 		    }
 		  }
 #else
 		  int old_size;
 
-		  old_size = stamp_data[cur_stamp]->size;
+		  old_size = stamp_data[stamp_group][cur_stamp[stamp_group]]->size;
 
-		  stamp_data[cur_stamp]->size =
+		  stamp_data[stamp_group][cur_stamp[stamp_group]]->size =
 		    (((MAX_STAMP_SIZE - MIN_STAMP_SIZE) * (event.button.x -
 							   (WINDOW_WIDTH -
 							    96))) / 96) +
 		    MIN_STAMP_SIZE;
 
-		  if (stamp_data[cur_stamp]->size < old_size)
+		  if (stamp_data[stamp_group][cur_stamp[stamp_group]]->size < old_size)
 		    control_sound = SND_SHRINK;
-		  else if (stamp_data[cur_stamp]->size > old_size)
+		  else if (stamp_data[stamp_group][cur_stamp[stamp_group]]->size > old_size)
 		    control_sound = SND_GROW;
 #endif
 		}
@@ -2412,20 +2433,20 @@ static void mainloop(void)
 		  if (which & 1)
 		  {
 		    /* Top right button: Flip: */
-		    if (stamp_data[cur_stamp]->flipable)
+		    if (stamp_data[stamp_group][cur_stamp[stamp_group]]->flipable)
 		    {
-		      stamp_data[cur_stamp]->flipped =
-			!stamp_data[cur_stamp]->flipped;
+		      stamp_data[stamp_group][cur_stamp[stamp_group]]->flipped =
+			!stamp_data[stamp_group][cur_stamp[stamp_group]]->flipped;
 		      control_sound = SND_FLIP;
 		    }
 		  }
 		  else
 		  {
 		    /* Top left button: Mirror: */
-		    if (stamp_data[cur_stamp]->mirrorable)
+		    if (stamp_data[stamp_group][cur_stamp[stamp_group]]->mirrorable)
 		    {
-		      stamp_data[cur_stamp]->mirrored =
-			!stamp_data[cur_stamp]->mirrored;
+		      stamp_data[stamp_group][cur_stamp[stamp_group]]->mirrored =
+			!stamp_data[stamp_group][cur_stamp[stamp_group]]->mirrored;
 		      control_sound = SND_MIRROR;
 		    }
 		  }
@@ -2630,15 +2651,15 @@ static void mainloop(void)
 	      {
 		// If there's an SFX, play it!
 
-		if (stamp_data[cur_thing]->ssnd != NULL)
+		if (stamp_data[stamp_group][cur_thing]->ssnd != NULL)
 		{
 		  Mix_ChannelFinished(NULL);	// Prevents multiple clicks from toggling between SFX and desc sound, rather than always playing SFX first, then desc sound...
 
-		  Mix_PlayChannel(2, stamp_data[cur_thing]->ssnd, 0);
+		  Mix_PlayChannel(2, stamp_data[stamp_group][cur_thing]->ssnd, 0);
 
 		  // If there's a description sound, play it after the SFX!
 
-		  if (stamp_data[cur_thing]->sdesc != NULL)
+		  if (stamp_data[stamp_group][cur_thing]->sdesc != NULL)
 		  {
 		    Mix_ChannelFinished(playstampdesc);
 		  }
@@ -2647,17 +2668,17 @@ static void mainloop(void)
 		{
 		  // No SFX?  If there's a description sound, play it now!
 
-		  if (stamp_data[cur_thing]->sdesc != NULL)
+		  if (stamp_data[stamp_group][cur_thing]->sdesc != NULL)
 		  {
-		    Mix_PlayChannel(2, stamp_data[cur_thing]->sdesc, 0);
+		    Mix_PlayChannel(2, stamp_data[stamp_group][cur_thing]->sdesc, 0);
 		  }
 		}
 	      }
 #endif
 
-	      if (cur_thing != cur_stamp)
+	      if (cur_thing != cur_stamp[stamp_group])
 	      {
-		cur_stamp = cur_thing;
+		cur_stamp[stamp_group] = cur_thing;
 		set_active_stamp();
 		update_stamp_xor();
 	      }
@@ -2665,21 +2686,21 @@ static void mainloop(void)
 	      if (do_draw)
 		draw_stamps();
 
-	      if (stamp_data[cur_stamp]->stxt != NULL)
+	      if (stamp_data[stamp_group][cur_stamp[stamp_group]]->stxt != NULL)
 	      {
 #ifdef DEBUG
-		printf("stamp_data[cur_stamp]->stxt = %s\n",
-		       stamp_data[cur_stamp]->stxt);
+		printf("stamp_data[stamp_group][cur_stamp[stamp_group]]->stxt = %s\n",
+		       stamp_data[stamp_group][cur_stamp[stamp_group]]->stxt);
 #endif
 
-		draw_tux_text_ex(TUX_GREAT, stamp_data[cur_stamp]->stxt, 1, stamp_data[cur_stamp]->locale_text);
+		draw_tux_text_ex(TUX_GREAT, stamp_data[stamp_group][cur_stamp[stamp_group]]->stxt, 1, stamp_data[stamp_group][cur_stamp[stamp_group]]->locale_text);
 	      }
 	      else
 		draw_tux_text(TUX_GREAT, "", 0);
 
 	      /* Enable or disable color selector: */
-	      draw_colors(stamp_colorable(cur_stamp)
-			  || stamp_tintable(cur_stamp));
+	      draw_colors(stamp_colorable(cur_stamp[stamp_group])
+			  || stamp_tintable(cur_stamp[stamp_group]));
 	    }
 	    else if (cur_tool == TOOL_SHAPES)
 	    {
@@ -2773,7 +2794,7 @@ static void mainloop(void)
 
 	    /* FIXME: Make delay configurable: */
 
-	    control_drawtext_timer(1000, stamp_data[cur_stamp]->stxt, stamp_data[cur_stamp]->locale_text);
+	    control_drawtext_timer(1000, stamp_data[stamp_group][cur_stamp[stamp_group]]->stxt, stamp_data[stamp_group][cur_stamp[stamp_group]]->locale_text);
 	  }
 	  else if (cur_tool == TOOL_LINES)
 	  {
@@ -3065,10 +3086,10 @@ static void mainloop(void)
 
 	  if (event.user.data1 != NULL)
 	  {
-	    if ((int) event.user.data1 == cur_stamp)	// Don't play old stamp's sound...
+	    if ((int) event.user.data1 == cur_stamp[stamp_group])	// Don't play old stamp's sound...
 	    {
-	      if (!mute && stamp_data[(int) event.user.data1]->sdesc != NULL)
-		Mix_PlayChannel(2, stamp_data[(int) event.user.data1]->sdesc,
+	      if (!mute && stamp_data[stamp_group][(int) event.user.data1]->sdesc != NULL)
+		Mix_PlayChannel(2, stamp_data[stamp_group][(int) event.user.data1]->sdesc,
 				0);
 	    }
 	  }
@@ -3215,7 +3236,7 @@ static void mainloop(void)
 
 	  max = 14;
 	  if (cur_tool == TOOL_STAMP && !disable_stamp_controls)
-	    max = 10;
+	    max = 8; // was 10 before left/right group buttons -bjk 2007.05.03
 	  if (cur_tool == TOOL_TEXT && !disable_stamp_controls)
 	    max = 10;
 
@@ -3927,7 +3948,7 @@ static multichan *find_most_saturated(double initial_hue, multichan * work,
   double upper_hue_2;
   multichan *mc;
 
-  switch (stamp_data[cur_stamp]->tinter)
+  switch (stamp_data[stamp_group][cur_stamp[stamp_group]]->tinter)
   {
   default:
   case TINTER_NORMAL:
@@ -4098,7 +4119,7 @@ static void stamp_draw(int x, int y)
 
   /* Create a temp surface to play with: */
 
-  if (stamp_colorable(cur_stamp) || stamp_tintable(cur_stamp))
+  if (stamp_colorable(cur_stamp[stamp_group]) || stamp_tintable(cur_stamp[stamp_group]))
   {
     amask = ~(surf_ptr->format->Rmask |
 	      surf_ptr->format->Gmask | surf_ptr->format->Bmask);
@@ -4140,7 +4161,7 @@ static void stamp_draw(int x, int y)
 
   /* Alter the stamp's color, if needed: */
 
-  if (stamp_colorable(cur_stamp) && tmp_surf != NULL)
+  if (stamp_colorable(cur_stamp[stamp_group]) && tmp_surf != NULL)
   {
     /* Render the stamp in the chosen color: */
 
@@ -4170,9 +4191,9 @@ static void stamp_draw(int x, int y)
     SDL_UnlockSurface(tmp_surf);
     SDL_UnlockSurface(surf_ptr);
   }
-  else if (stamp_tintable(cur_stamp))
+  else if (stamp_tintable(cur_stamp[stamp_group]))
   {
-    if (stamp_data[cur_stamp]->tinter == TINTER_VECTOR)
+    if (stamp_data[stamp_group][cur_stamp[stamp_group]]->tinter == TINTER_VECTOR)
       vector_tint_surface(tmp_surf, surf_ptr);
     else
       tint_surface(tmp_surf, surf_ptr);
@@ -5574,7 +5595,7 @@ static void loadstamp_finisher(stamp_type * sd, unsigned w, unsigned h,
 // Note: must have read the *.dat file before calling this
 static void set_active_stamp(void)
 {
-  stamp_type *sd = stamp_data[cur_stamp];
+  stamp_type *sd = stamp_data[stamp_group][cur_stamp[stamp_group]];
   unsigned len = strlen(sd->stampname);
   char *buf = alloca(len + strlen("_mirror.EXT") + 1);
 
@@ -5777,6 +5798,36 @@ static void loadstamp_callback(SDL_Surface * screen,
 			       unsigned dirlen, tp_ftw_str * files,
 			       unsigned i)
 {
+  if (num_stamps[stamp_group] > 0)
+  {
+    /* If previous group had any stamps... */
+
+    unsigned int i, slashcount;
+
+
+    /* See if the current directory is shallow enough to be
+       important for making a new stamp group: */
+
+    slashcount = 0;
+
+    for (i = strlen(load_stamp_basedir) + 1; i < strlen(dir); i++)
+    {
+      if (dir[i] == '/' || dir[i] == '\\')
+        slashcount++;
+    }
+
+    if (slashcount <= stamp_group_dir_depth)
+    {
+      stamp_group++;
+#ifdef DEBUG
+      printf("%s counts as a new group!\n", dir);
+#endif
+    }
+  }
+
+
+  /* Sort and iterate the file list: */
+
   qsort(files, i, sizeof *files, compare_ftw_str);
   while (i--)
   {
@@ -5827,19 +5878,21 @@ static void loadstamp_callback(SDL_Surface * screen,
 	&& !strcasestr(files[i].str, mirror_ext))
     {
       snprintf(fname, sizeof fname, "%s/%s", dir, files[i].str);
-      if (num_stamps == max_stamps)
+      if (num_stamps[stamp_group] == max_stamps[stamp_group])
       {
-	max_stamps = max_stamps * 5 / 4 + 15;
-	stamp_data = realloc(stamp_data, max_stamps * sizeof *stamp_data);
+	max_stamps[stamp_group] = max_stamps[stamp_group] * 5 / 4 + 15;
+	stamp_data[stamp_group] = realloc(stamp_data[stamp_group],
+                             max_stamps[stamp_group] * sizeof(*stamp_data[stamp_group]));
       }
-      stamp_data[num_stamps] = calloc(1, sizeof *stamp_data[num_stamps]);
-      stamp_data[num_stamps]->stampname =
+      stamp_data[stamp_group][num_stamps[stamp_group]] =
+        calloc(1, sizeof *stamp_data[stamp_group][num_stamps[stamp_group]]);
+      stamp_data[stamp_group][num_stamps[stamp_group]]->stampname =
 	malloc(dotext - files[i].str + 1 + dirlen + 1);
-      memcpy(stamp_data[num_stamps]->stampname, fname,
+      memcpy(stamp_data[stamp_group][num_stamps[stamp_group]]->stampname, fname,
 	     dotext - files[i].str + 1 + dirlen);
-      stamp_data[num_stamps]->stampname[dotext - files[i].str + 1 + dirlen] =
-	'\0';
-      num_stamps++;
+      stamp_data[stamp_group][num_stamps[stamp_group]]->stampname[dotext - files[i].str +
+                                                     1 + dirlen] = '\0';
+      num_stamps[stamp_group]++;
     }
     free(files[i].str);
   }
@@ -5853,6 +5906,7 @@ static void load_stamp_dir(SDL_Surface * screen, const char *const dir)
   char buf[TP_FTW_PATHSIZE];
   unsigned dirlen = strlen(dir);
   memcpy(buf, dir, dirlen);
+  load_stamp_basedir = dir;
   tp_ftw(screen, buf, dirlen, 0, loadstamp_callback);
 }
 
@@ -5874,7 +5928,7 @@ static void load_stamps(SDL_Surface * screen)
   load_stamp_dir(screen, homedirdir);
 #endif
 
-  if (num_stamps == 0)
+  if (num_stamps[0] == 0)
   {
     fprintf(stderr,
 	    "\nWarning: No stamps found in " DATA_PREFIX "stamps/\n"
@@ -8216,14 +8270,14 @@ static void draw_stamps(void)
 
   /* How many can we show? */
 
-  most = 10;
+  most = 8;  // was 10 and 14, before left/right controls -bjk 2007.05.03
   if (disable_stamp_controls)
-    most = 14;
+    most = 12;
 
 
   /* Do we need scrollbars? */
 
-  if (num_stamps > most + TOOLOFFSET)
+  if (num_stamps[stamp_group] > most + TOOLOFFSET)
   {
     off_y = 24;
     max = (most - 2) + TOOLOFFSET;
@@ -8231,7 +8285,7 @@ static void draw_stamps(void)
     dest.x = WINDOW_WIDTH - 96;
     dest.y = 40;
 
-    if (stamp_scroll > 0)
+    if (stamp_scroll[stamp_group] > 0)
     {
       SDL_BlitSurface(img_scroll_up, NULL, screen, &dest);
     }
@@ -8242,12 +8296,13 @@ static void draw_stamps(void)
 
 
     dest.x = WINDOW_WIDTH - 96;
-    dest.y = 40 + 24 + ((6 + TOOLOFFSET / 2) * 48);
+    dest.y = 40 + 24 + ((5 + TOOLOFFSET / 2) * 48); // was 6, before left/right controls -bjk 2007.05.03
 
     if (!disable_stamp_controls)
       dest.y = dest.y - (48 * 2);
 
-    if (stamp_scroll < num_stamps - (most - 2) - TOOLOFFSET)
+    if (stamp_scroll[stamp_group] <
+        num_stamps[stamp_group] - (most - 2) - TOOLOFFSET)
     {
       SDL_BlitSurface(img_scroll_down, NULL, screen, &dest);
     }
@@ -8265,19 +8320,21 @@ static void draw_stamps(void)
 
   /* Draw each of the shown stamps: */
 
-  for (stamp = stamp_scroll; stamp < stamp_scroll + max; stamp++)
+  for (stamp = stamp_scroll[stamp_group];
+       stamp < stamp_scroll[stamp_group] + max;
+       stamp++)
   {
-    i = stamp - stamp_scroll;
+    i = stamp - stamp_scroll[stamp_group];
 
 
     dest.x = ((i % 2) * 48) + (WINDOW_WIDTH - 96);
     dest.y = ((i / 2) * 48) + 40 + off_y;
 
-    if (stamp == cur_stamp)
+    if (stamp == cur_stamp[stamp_group])
     {
       SDL_BlitSurface(img_btn_down, NULL, screen, &dest);
     }
-    else if (stamp < num_stamps)
+    else if (stamp < num_stamps[stamp_group])
     {
       SDL_BlitSurface(img_btn_up, NULL, screen, &dest);
     }
@@ -8286,10 +8343,10 @@ static void draw_stamps(void)
       SDL_BlitSurface(img_btn_off, NULL, screen, &dest);
     }
 
-    if (stamp < num_stamps)
+    if (stamp < num_stamps[stamp_group])
     {
-      get_stamp_thumb(stamp_data[stamp]);
-      img = stamp_data[stamp]->thumbnail;
+      get_stamp_thumb(stamp_data[stamp_group][stamp]);
+      img = stamp_data[stamp_group][stamp]->thumbnail;
 
       base_x = ((i % 2) * 48) + (WINDOW_WIDTH - 96) + ((48 - (img->w)) / 2);
 
@@ -8315,9 +8372,9 @@ static void draw_stamps(void)
     dest.x = WINDOW_WIDTH - 96;
     dest.y = 40 + ((5 + TOOLOFFSET / 2) * 48);
 
-    if (stamp_data[cur_stamp]->mirrorable)
+    if (stamp_data[stamp_group][cur_stamp[stamp_group]]->mirrorable)
     {
-      if (stamp_data[cur_stamp]->mirrored)
+      if (stamp_data[stamp_group][cur_stamp[stamp_group]]->mirrored)
       {
 	button_color = img_black;
 	button_body = img_btn_down;
@@ -8348,9 +8405,9 @@ static void draw_stamps(void)
     dest.x = WINDOW_WIDTH - 48;
     dest.y = 40 + ((5 + TOOLOFFSET / 2) * 48);
 
-    if (stamp_data[cur_stamp]->flipable)
+    if (stamp_data[stamp_group][cur_stamp[stamp_group]]->flipable)
     {
-      if (stamp_data[cur_stamp]->flipped)
+      if (stamp_data[stamp_group][cur_stamp[stamp_group]]->flipped)
       {
 	button_color = img_black;
 	button_body = img_btn_down;
@@ -8382,7 +8439,7 @@ static void draw_stamps(void)
     dest.x = WINDOW_WIDTH - 96;
     dest.y = 40 + ((6 + TOOLOFFSET / 2) * 48);
 
-    if (stamp_data[cur_stamp]->size > MIN_STAMP_SIZE)
+    if (stamp_data[stamp_group][cur_stamp[stamp_group]]->size > MIN_STAMP_SIZE)
     {
       button_color = img_black;
       button_body = img_btn_up;
@@ -8406,7 +8463,7 @@ static void draw_stamps(void)
     dest.x = WINDOW_WIDTH - 48;
     dest.y = 40 + ((6 + TOOLOFFSET / 2) * 48);
 
-    if (stamp_data[cur_stamp]->size < MAX_STAMP_SIZE)
+    if (stamp_data[stamp_group][cur_stamp[stamp_group]]->size < MAX_STAMP_SIZE)
     {
       button_color = img_black;
       button_body = img_btn_up;
@@ -8426,7 +8483,7 @@ static void draw_stamps(void)
 
 #else
     sizes = MAX_STAMP_SIZE - MIN_STAMP_SIZE;
-    size_at = (stamp_data[cur_stamp]->size - MIN_STAMP_SIZE);
+    size_at = (stamp_data[stamp_group][cur_stamp[stamp_group]]->size - MIN_STAMP_SIZE);
     x_per = 96.0 / sizes;
     y_per = 48.0 / sizes;
 
@@ -9482,7 +9539,7 @@ static void reset_avail_tools(void)
 
   /* Unavailable in rare circumstances: */
 
-  if (num_stamps == 0)
+  if (num_stamps[0] == 0)
     tool_avail[TOOL_STAMP] = 0;
 
 
@@ -9957,7 +10014,7 @@ static void playstampdesc(int chan)
 
     playsound_event.type = SDL_USEREVENT;
     playsound_event.user.code = USEREVENT_PLAYDESCSOUND;
-    playsound_event.user.data1 = (void *) cur_stamp;
+    playsound_event.user.data1 = (void *) cur_stamp[stamp_group];
 
     SDL_PushEvent(&playsound_event);
   }
@@ -11115,34 +11172,37 @@ static int do_prompt_image_flash_snd(const char *const text,
 
 static void cleanup(void)
 {
-  int i;
+  int i, j;
 
-  for (i = 0; i < num_stamps; i++)
+  for (j = 0; j < num_stamp_groups; j++)
   {
+    for (i = 0; i < num_stamps[j]; i++)
+    {
 #ifndef NOSOUND
-    if (stamp_data[i]->ssnd)
-    {
-      Mix_FreeChunk(stamp_data[i]->ssnd);
-      stamp_data[i]->ssnd = NULL;
-    }
-    if (stamp_data[i]->sdesc)
-    {
-      Mix_FreeChunk(stamp_data[i]->sdesc);
-      stamp_data[i]->sdesc = NULL;
-    }
+      if (stamp_data[j][i]->ssnd)
+      {
+        Mix_FreeChunk(stamp_data[j][i]->ssnd);
+        stamp_data[j][i]->ssnd = NULL;
+      }
+      if (stamp_data[j][i]->sdesc)
+      {
+        Mix_FreeChunk(stamp_data[j][i]->sdesc);
+        stamp_data[j][i]->sdesc = NULL;
+      }
 #endif
-    if (stamp_data[i]->stxt)
-    {
-      free(stamp_data[i]->stxt);
-      stamp_data[i]->stxt = NULL;
-    }
-    free_surface(&stamp_data[i]->thumbnail);
+      if (stamp_data[j][i]->stxt)
+      {
+        free(stamp_data[j][i]->stxt);
+        stamp_data[j][i]->stxt = NULL;
+      }
+      free_surface(&stamp_data[j][i]->thumbnail);
 
-    free(stamp_data[i]->stampname);
-    free(stamp_data[i]);
-    stamp_data[i] = NULL;
+      free(stamp_data[j][i]->stampname);
+      free(stamp_data[j][i]);
+      stamp_data[j][i] = NULL;
+    }
+    free(stamp_data[j]);
   }
-  free(stamp_data);
   free_surface(&active_stamp);
 
   free_surface_array(img_brushes, num_brushes);

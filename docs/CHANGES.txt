@@ -25,6 +25,9 @@ $Id$
       (Experimental; build with "make nosvg" to disable SVG support and
       Cairo dependency.)
 
+    * Stamps now shown in groups.
+      FIXME: Finish!
+
     * Bilinear interpolation (smoothing) is done to small bitmap (PNG)
       stamps when they are scaled up.
       (Based on example code by Christian Graus:
