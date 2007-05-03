@@ -1,0 +1,838 @@
+# Makefile-i18n for tuxpaint
+# $Id$
+
+# Tux Paint - A simple drawing program for children.
+
+# Copyright (c) 2002-2007 by Bill Kendrick and others
+# bill@newbreedsoftware.com
+# http://www.tuxpaint.org/
+
+# June 14, 2002 - May 2, 2007
+
+
+# Locale files
+
+LOCALE_PREFIX=$(PKG_ROOT)$(PREFIX)/share/locale
+# LOCALE_PREFIX=/usr/share/locale
+
+
+# IM files
+
+IM_PREFIX=$(PKG_ROOT)$(PREFIX)/share/im
+
+
+# A default target, in case someone tries using this makefile directly...
+
+all-i18n:
+	@echo "This is Makefile-i18n; don't use it directly, it's used by Makefile"
+
+
+uninstall-i18n:
+	-rm $(LOCALE_PREFIX)/af/LC_MESSAGES/tuxpaint.mo
+	-rm $(LOCALE_PREFIX)/ar/LC_MESSAGES/tuxpaint.mo
+	-rm $(LOCALE_PREFIX)/be/LC_MESSAGES/tuxpaint.mo
+	-rm $(LOCALE_PREFIX)/bg/LC_MESSAGES/tuxpaint.mo
+	-rm $(LOCALE_PREFIX)/bo/LC_MESSAGES/tuxpaint.mo
+	-rm $(LOCALE_PREFIX)/br/LC_MESSAGES/tuxpaint.mo
+	-rm $(LOCALE_PREFIX)/ca/LC_MESSAGES/tuxpaint.mo
+	-rm $(LOCALE_PREFIX)/cs/LC_MESSAGES/tuxpaint.mo
+	-rm $(LOCALE_PREFIX)/cy/LC_MESSAGES/tuxpaint.mo
+	-rm $(LOCALE_PREFIX)/da/LC_MESSAGES/tuxpaint.mo
+	-rm $(LOCALE_PREFIX)/de/LC_MESSAGES/tuxpaint.mo
+	-rm $(LOCALE_PREFIX)/et/LC_MESSAGES/tuxpaint.mo
+	-rm $(LOCALE_PREFIX)/el/LC_MESSAGES/tuxpaint.mo
+	-rm $(LOCALE_PREFIX)/en_GB/LC_MESSAGES/tuxpaint.mo
+	-rm $(LOCALE_PREFIX)/es/LC_MESSAGES/tuxpaint.mo
+	-rm $(LOCALE_PREFIX)/es_MX/LC_MESSAGES/tuxpaint.mo
+	-rm $(LOCALE_PREFIX)/eu/LC_MESSAGES/tuxpaint.mo
+	-rm $(LOCALE_PREFIX)/fi/LC_MESSAGES/tuxpaint.mo
+	-rm $(LOCALE_PREFIX)/fo/LC_MESSAGES/tuxpaint.mo
+	-rm $(LOCALE_PREFIX)/fr/LC_MESSAGES/tuxpaint.mo
+	-rm $(LOCALE_PREFIX)/ga/LC_MESSAGES/tuxpaint.mo
+	-rm $(LOCALE_PREFIX)/gd/LC_MESSAGES/tuxpaint.mo
+	-rm $(LOCALE_PREFIX)/gl/LC_MESSAGES/tuxpaint.mo
+	-rm $(LOCALE_PREFIX)/gos/LC_MESSAGES/tuxpaint.mo
+	-rm $(LOCALE_PREFIX)/gu/LC_MESSAGES/tuxpaint.mo
+	-rm $(LOCALE_PREFIX)/he/LC_MESSAGES/tuxpaint.mo
+	-rm $(LOCALE_PREFIX)/hi/LC_MESSAGES/tuxpaint.mo
+	-rm $(LOCALE_PREFIX)/hr/LC_MESSAGES/tuxpaint.mo
+	-rm $(LOCALE_PREFIX)/hu/LC_MESSAGES/tuxpaint.mo
+	-rm $(LOCALE_PREFIX)/tlh/LC_MESSAGES/tuxpaint.mo
+	-rm $(LOCALE_PREFIX)/id/LC_MESSAGES/tuxpaint.mo
+	-rm $(LOCALE_PREFIX)/is/LC_MESSAGES/tuxpaint.mo
+	-rm $(LOCALE_PREFIX)/it/LC_MESSAGES/tuxpaint.mo
+	-rm $(LOCALE_PREFIX)/ja/LC_MESSAGES/tuxpaint.mo
+	-rm $(LOCALE_PREFIX)/ka/LC_MESSAGES/tuxpaint.mo
+	-rm $(LOCALE_PREFIX)/ko/LC_MESSAGES/tuxpaint.mo
+	-rm $(LOCALE_PREFIX)/ku/LC_MESSAGES/tuxpaint.mo
+	-rm $(LOCALE_PREFIX)/lt/LC_MESSAGES/tuxpaint.mo
+	-rm $(LOCALE_PREFIX)/ms/LC_MESSAGES/tuxpaint.mo
+	-rm $(LOCALE_PREFIX)/nl/LC_MESSAGES/tuxpaint.mo
+	-rm $(LOCALE_PREFIX)/nb/LC_MESSAGES/tuxpaint.mo
+	-rm $(LOCALE_PREFIX)/nn/LC_MESSAGES/tuxpaint.mo
+	-rm $(LOCALE_PREFIX)/pl/LC_MESSAGES/tuxpaint.mo
+	-rm $(LOCALE_PREFIX)/pt_PT/LC_MESSAGES/tuxpaint.mo
+	-rm $(LOCALE_PREFIX)/pt_BR/LC_MESSAGES/tuxpaint.mo
+	-rm $(LOCALE_PREFIX)/ro/LC_MESSAGES/tuxpaint.mo
+	-rm $(LOCALE_PREFIX)/ru/LC_MESSAGES/tuxpaint.mo
+	-rm $(LOCALE_PREFIX)/rw/LC_MESSAGES/tuxpaint.mo
+	-rm $(LOCALE_PREFIX)/sk/LC_MESSAGES/tuxpaint.mo
+	-rm $(LOCALE_PREFIX)/sl/LC_MESSAGES/tuxpaint.mo
+	-rm $(LOCALE_PREFIX)/sq/LC_MESSAGES/tuxpaint.mo
+	-rm $(LOCALE_PREFIX)/sr/LC_MESSAGES/tuxpaint.mo
+	-rm $(LOCALE_PREFIX)/sv/LC_MESSAGES/tuxpaint.mo
+	-rm $(LOCALE_PREFIX)/sw/LC_MESSAGES/tuxpaint.mo
+	-rm $(LOCALE_PREFIX)/ta/LC_MESSAGES/tuxpaint.mo
+	-rm $(LOCALE_PREFIX)/th/LC_MESSAGES/tuxpaint.mo
+	-rm $(LOCALE_PREFIX)/tr/LC_MESSAGES/tuxpaint.mo
+	-rm $(LOCALE_PREFIX)/uk/LC_MESSAGES/tuxpaint.mo
+	-rm $(LOCALE_PREFIX)/ve/LC_MESSAGES/tuxpaint.mo
+	-rm $(LOCALE_PREFIX)/vi/LC_MESSAGES/tuxpaint.mo
+	-rm $(LOCALE_PREFIX)/wa/LC_MESSAGES/tuxpaint.mo
+	-rm $(LOCALE_PREFIX)/xh/LC_MESSAGES/tuxpaint.mo
+	-rm $(LOCALE_PREFIX)/zh_CN/LC_MESSAGES/tuxpaint.mo
+	-rm $(LOCALE_PREFIX)/zh_TW/LC_MESSAGES/tuxpaint.mo
+	-rm $(IM_PREFIX)/ja.im
+	-rm $(IM_PREFIX)/ko.im
+
+
+# Install the translated text:
+
+install-gettext:
+	@echo
+	@echo "...Installing translation files..."
+	@#
+	@echo "   af_ZA ...Afrikaans..."
+	@install -d $(LOCALE_PREFIX)/af/LC_MESSAGES
+	@cp trans/af.mo $(LOCALE_PREFIX)/af/LC_MESSAGES/tuxpaint.mo
+	@chmod 644 $(LOCALE_PREFIX)/af/LC_MESSAGES/tuxpaint.mo
+	@#
+	@echo "   sq_AL ...Albanian..."
+	@install -d $(LOCALE_PREFIX)/sq/LC_MESSAGES
+	@cp trans/sq.mo $(LOCALE_PREFIX)/sq/LC_MESSAGES/tuxpaint.mo
+	@chmod 644 $(LOCALE_PREFIX)/sq/LC_MESSAGES/tuxpaint.mo
+	@#
+	@echo "   ar_SA ...Arabic..."
+	@install -d $(LOCALE_PREFIX)/ar/LC_MESSAGES
+	@cp trans/ar.mo $(LOCALE_PREFIX)/ar/LC_MESSAGES/tuxpaint.mo
+	@chmod 644 $(LOCALE_PREFIX)/ar/LC_MESSAGES/tuxpaint.mo
+	@#
+	@echo "   be_BY ...Belarusian..."
+	@install -d $(LOCALE_PREFIX)/be/LC_MESSAGES
+	@cp trans/be.mo $(LOCALE_PREFIX)/be/LC_MESSAGES/tuxpaint.mo
+	@chmod 644 $(LOCALE_PREFIX)/be/LC_MESSAGES/tuxpaint.mo
+	@#
+	@echo "   pt_BR ...Brazilian Portuguese..."
+	@install -d $(LOCALE_PREFIX)/pt_BR/LC_MESSAGES
+	@cp trans/pt_br.mo $(LOCALE_PREFIX)/pt_BR/LC_MESSAGES/tuxpaint.mo
+	@chmod 644 $(LOCALE_PREFIX)/pt_BR/LC_MESSAGES/tuxpaint.mo
+	@#
+	@echo "   br_FR ...Breton..."
+	@install -d $(LOCALE_PREFIX)/br/LC_MESSAGES
+	@cp trans/br.mo $(LOCALE_PREFIX)/br/LC_MESSAGES/tuxpaint.mo
+	@chmod 644 $(LOCALE_PREFIX)/br/LC_MESSAGES/tuxpaint.mo
+	@#
+	@echo "   eu_ES ...Basque..."
+	@install -d $(LOCALE_PREFIX)/eu/LC_MESSAGES
+	@cp trans/eu.mo $(LOCALE_PREFIX)/eu/LC_MESSAGES/tuxpaint.mo
+	@chmod 644 $(LOCALE_PREFIX)/eu/LC_MESSAGES/tuxpaint.mo
+	@#
+	@echo "   en_GB ...British English..."
+	@install -d $(LOCALE_PREFIX)/en_GB/LC_MESSAGES
+	@cp trans/en_gb.mo $(LOCALE_PREFIX)/en_GB/LC_MESSAGES/tuxpaint.mo
+	@chmod 644 $(LOCALE_PREFIX)/en_GB/LC_MESSAGES/tuxpaint.mo
+	@#
+	@echo "   en_ZA ...South African English..."
+	@install -d $(LOCALE_PREFIX)/en_ZA/LC_MESSAGES
+	@cp trans/en_za.mo $(LOCALE_PREFIX)/en_ZA/LC_MESSAGES/tuxpaint.mo
+	@chmod 644 $(LOCALE_PREFIX)/en_ZA/LC_MESSAGES/tuxpaint.mo
+	@#
+	@echo "   bg_BG ...Bulgarian..."
+	@install -d $(LOCALE_PREFIX)/bg/LC_MESSAGES
+	@cp trans/bg.mo $(LOCALE_PREFIX)/bg/LC_MESSAGES/tuxpaint.mo
+	@chmod 644 $(LOCALE_PREFIX)/bg/LC_MESSAGES/tuxpaint.mo
+	@#
+	@echo "   ca_ES ...Catalan..."
+	@install -d $(LOCALE_PREFIX)/ca/LC_MESSAGES
+	@cp trans/ca.mo $(LOCALE_PREFIX)/ca/LC_MESSAGES/tuxpaint.mo
+	@chmod 644 $(LOCALE_PREFIX)/ca/LC_MESSAGES/tuxpaint.mo
+	@#
+	@echo "   zh_CN ...Chinese (Simplified)..."
+	@install -d $(LOCALE_PREFIX)/zh_CN/LC_MESSAGES
+	@cp trans/zh_cn.mo $(LOCALE_PREFIX)/zh_CN/LC_MESSAGES/tuxpaint.mo
+	@chmod 644 $(LOCALE_PREFIX)/zh_CN/LC_MESSAGES/tuxpaint.mo
+	@#
+	@echo "   zh_TW ...Chinese (Traditional)..."
+	@install -d $(LOCALE_PREFIX)/zh_TW/LC_MESSAGES
+	@cp trans/zh_tw.mo $(LOCALE_PREFIX)/zh_TW/LC_MESSAGES/tuxpaint.mo
+	@chmod 644 $(LOCALE_PREFIX)/zh_TW/LC_MESSAGES/tuxpaint.mo
+	@#
+	@echo "   hr_HR ...Croatian..."
+	@install -d $(LOCALE_PREFIX)/hr/LC_MESSAGES
+	@cp trans/hr.mo $(LOCALE_PREFIX)/hr/LC_MESSAGES/tuxpaint.mo
+	@chmod 644 $(LOCALE_PREFIX)/hr/LC_MESSAGES/tuxpaint.mo
+	@#
+	@echo "   cs_CZ ...Czech..."
+	@install -d $(LOCALE_PREFIX)/cs/LC_MESSAGES
+	@cp trans/cs.mo $(LOCALE_PREFIX)/cs/LC_MESSAGES/tuxpaint.mo
+	@chmod 644 $(LOCALE_PREFIX)/cs/LC_MESSAGES/tuxpaint.mo
+	@#
+	@echo "   da_DK ...Danish..."
+	@install -d $(LOCALE_PREFIX)/da/LC_MESSAGES
+	@cp trans/da.mo $(LOCALE_PREFIX)/da/LC_MESSAGES/tuxpaint.mo
+	@chmod 644 $(LOCALE_PREFIX)/da/LC_MESSAGES/tuxpaint.mo
+	@#
+	@echo "   nl_NL ...Dutch..."
+	@install -d $(LOCALE_PREFIX)/nl/LC_MESSAGES
+	@cp trans/nl.mo $(LOCALE_PREFIX)/nl/LC_MESSAGES/tuxpaint.mo
+	@chmod 644 $(LOCALE_PREFIX)/nl/LC_MESSAGES/tuxpaint.mo
+	@#
+	@echo "   et_EE ...Estonian..."
+	@install -d $(LOCALE_PREFIX)/et/LC_MESSAGES
+	@cp trans/et.mo $(LOCALE_PREFIX)/et/LC_MESSAGES/tuxpaint.mo
+	@chmod 644 $(LOCALE_PREFIX)/et/LC_MESSAGES/tuxpaint.mo
+	@#
+	@echo "   fo_FO ...Faroese..."
+	@install -d $(LOCALE_PREFIX)/fo/LC_MESSAGES
+	@cp trans/fo.mo $(LOCALE_PREFIX)/fo/LC_MESSAGES/tuxpaint.mo
+	@chmod 644 $(LOCALE_PREFIX)/fo/LC_MESSAGES/tuxpaint.mo
+	@#
+	@echo "   fi_FI ...Finnish..."
+	@install -d $(LOCALE_PREFIX)/fi/LC_MESSAGES
+	@cp trans/fi.mo $(LOCALE_PREFIX)/fi/LC_MESSAGES/tuxpaint.mo
+	@chmod 644 $(LOCALE_PREFIX)/fi/LC_MESSAGES/tuxpaint.mo
+	@#
+	@echo "   fr_FR ...French..."
+	@install -d $(LOCALE_PREFIX)/fr/LC_MESSAGES
+	@cp trans/fr.mo $(LOCALE_PREFIX)/fr/LC_MESSAGES/tuxpaint.mo
+	@chmod 644 $(LOCALE_PREFIX)/fr/LC_MESSAGES/tuxpaint.mo
+	@#
+	@echo "   ga_IE ...Irish Gaelic..."
+	@install -d $(LOCALE_PREFIX)/ga/LC_MESSAGES
+	@cp trans/ga.mo $(LOCALE_PREFIX)/ga/LC_MESSAGES/tuxpaint.mo
+	@chmod 644 $(LOCALE_PREFIX)/ga/LC_MESSAGES/tuxpaint.mo
+	@#
+	@echo "   gl_ES ...Galician..."
+	@install -d $(LOCALE_PREFIX)/gl/LC_MESSAGES
+	@cp trans/gl.mo $(LOCALE_PREFIX)/gl/LC_MESSAGES/tuxpaint.mo
+	@chmod 644 $(LOCALE_PREFIX)/gl/LC_MESSAGES/tuxpaint.mo
+	@#
+	@echo "   ka_GE ...Georgian..."
+	@install -d $(LOCALE_PREFIX)/ka/LC_MESSAGES
+	@cp trans/ka.mo $(LOCALE_PREFIX)/ka/LC_MESSAGES/tuxpaint.mo
+	@chmod 644 $(LOCALE_PREFIX)/ka/LC_MESSAGES/tuxpaint.mo
+	@#
+	@echo "   de_DE ...German..."
+	@install -d $(LOCALE_PREFIX)/de/LC_MESSAGES
+	@cp trans/de.mo $(LOCALE_PREFIX)/de/LC_MESSAGES/tuxpaint.mo
+	@chmod 644 $(LOCALE_PREFIX)/de/LC_MESSAGES/tuxpaint.mo
+	@#
+	@echo "   el_GR ...Greek..."
+	@install -d $(LOCALE_PREFIX)/el/LC_MESSAGES
+	@cp trans/el.mo $(LOCALE_PREFIX)/el/LC_MESSAGES/tuxpaint.mo
+	@chmod 644 $(LOCALE_PREFIX)/el/LC_MESSAGES/tuxpaint.mo
+	@#
+	@echo "   gos_NL ...Gronings..."
+	@install -d $(LOCALE_PREFIX)/gos/LC_MESSAGES
+	@cp trans/gos.mo $(LOCALE_PREFIX)/gos/LC_MESSAGES/tuxpaint.mo
+	@chmod 644 $(LOCALE_PREFIX)/gos/LC_MESSAGES/tuxpaint.mo
+	@#
+	@echo "   gu_IN ...Gujarati..."
+	@install -d $(LOCALE_PREFIX)/gu/LC_MESSAGES
+	@cp trans/gu.mo $(LOCALE_PREFIX)/gu/LC_MESSAGES/tuxpaint.mo
+	@chmod 644 $(LOCALE_PREFIX)/gu/LC_MESSAGES/tuxpaint.mo
+	@#
+	@echo "   he_IL ...Hebrew..."
+	@install -d $(LOCALE_PREFIX)/he/LC_MESSAGES
+	@cp trans/he.mo $(LOCALE_PREFIX)/he/LC_MESSAGES/tuxpaint.mo
+	@chmod 644 $(LOCALE_PREFIX)/he/LC_MESSAGES/tuxpaint.mo
+	@#
+	@echo "   hi_IN ...Hindi..."
+	@install -d $(LOCALE_PREFIX)/hi/LC_MESSAGES
+	@cp trans/hi.mo $(LOCALE_PREFIX)/hi/LC_MESSAGES/tuxpaint.mo
+	@chmod 644 $(LOCALE_PREFIX)/hi/LC_MESSAGES/tuxpaint.mo
+	@#
+	@echo "   hu_HU ...Hungarian..."
+	@install -d $(LOCALE_PREFIX)/hu/LC_MESSAGES
+	@cp trans/hu.mo $(LOCALE_PREFIX)/hu/LC_MESSAGES/tuxpaint.mo
+	@chmod 644 $(LOCALE_PREFIX)/hu/LC_MESSAGES/tuxpaint.mo
+	@#
+	@echo "   is_IS ...Icelandic..."
+	@install -d $(LOCALE_PREFIX)/is/LC_MESSAGES
+	@cp trans/is.mo $(LOCALE_PREFIX)/is/LC_MESSAGES/tuxpaint.mo
+	@chmod 644 $(LOCALE_PREFIX)/is/LC_MESSAGES/tuxpaint.mo
+	@#
+	@echo "   id_ID ...Indonesian..."
+	@install -d $(LOCALE_PREFIX)/id/LC_MESSAGES
+	@cp trans/id.mo $(LOCALE_PREFIX)/id/LC_MESSAGES/tuxpaint.mo
+	@chmod 644 $(LOCALE_PREFIX)/id/LC_MESSAGES/tuxpaint.mo
+	@#
+	@echo "   it_IT ...Italian..."
+	@install -d $(LOCALE_PREFIX)/it/LC_MESSAGES
+	@cp trans/it.mo $(LOCALE_PREFIX)/it/LC_MESSAGES/tuxpaint.mo
+	@chmod 644 $(LOCALE_PREFIX)/it/LC_MESSAGES/tuxpaint.mo
+	@#
+	@echo "   ja_JP ...Japanese..."
+	@install -d $(LOCALE_PREFIX)/ja/LC_MESSAGES
+	@cp trans/ja.mo $(LOCALE_PREFIX)/ja/LC_MESSAGES/tuxpaint.mo
+	@chmod 644 $(LOCALE_PREFIX)/ja/LC_MESSAGES/tuxpaint.mo
+	@#
+	@echo "   tlh   ...Klingon (Romanized)..."
+	@install -d $(LOCALE_PREFIX)/tlh/LC_MESSAGES
+	@cp trans/tlh.mo $(LOCALE_PREFIX)/tlh/LC_MESSAGES/tuxpaint.mo
+	@chmod 644 $(LOCALE_PREFIX)/tlh/LC_MESSAGES/tuxpaint.mo
+	@#
+	@echo "   rw_RW ...Kinyarwanda..."
+	@install -d $(LOCALE_PREFIX)/rw/LC_MESSAGES
+	@cp trans/rw.mo $(LOCALE_PREFIX)/rw/LC_MESSAGES/tuxpaint.mo
+	@chmod 644 $(LOCALE_PREFIX)/rw/LC_MESSAGES/tuxpaint.mo
+	@#
+	@echo "   ko_KR ...Korean..."
+	@install -d $(LOCALE_PREFIX)/ko/LC_MESSAGES
+	@cp trans/ko.mo $(LOCALE_PREFIX)/ko/LC_MESSAGES/tuxpaint.mo
+	@chmod 644 $(LOCALE_PREFIX)/ko/LC_MESSAGES/tuxpaint.mo
+	@#
+	@echo "   ku_TR ...Kurdish..."
+	@install -d $(LOCALE_PREFIX)/ku/LC_MESSAGES
+	@cp trans/ku.mo $(LOCALE_PREFIX)/ku/LC_MESSAGES/tuxpaint.mo
+	@chmod 644 $(LOCALE_PREFIX)/ko/LC_MESSAGES/tuxpaint.mo
+	@#
+	@echo "   lt_LT ...Lithuanian..."
+	@install -d $(LOCALE_PREFIX)/lt/LC_MESSAGES
+	@cp trans/lt.mo $(LOCALE_PREFIX)/lt/LC_MESSAGES/tuxpaint.mo
+	@chmod 644 $(LOCALE_PREFIX)/lt/LC_MESSAGES/tuxpaint.mo
+	@#
+	@echo "   lv_LV ...Latvian..."
+	@install -d $(LOCALE_PREFIX)/lv/LC_MESSAGES
+	@cp trans/lv.mo $(LOCALE_PREFIX)/lv/LC_MESSAGES/tuxpaint.mo
+	@chmod 644 $(LOCALE_PREFIX)/lv/LC_MESSAGES/tuxpaint.mo
+	@#
+	@echo "   ms_MY ...Malay..."
+	@install -d $(LOCALE_PREFIX)/ms/LC_MESSAGES
+	@cp trans/ms.mo $(LOCALE_PREFIX)/ms/LC_MESSAGES/tuxpaint.mo
+	@chmod 644 $(LOCALE_PREFIX)/ms/LC_MESSAGES/tuxpaint.mo
+	@#
+	@echo "   nb_NO ...Norwegian Bokmal..."
+	@install -d $(LOCALE_PREFIX)/nb/LC_MESSAGES
+	@cp trans/nb.mo $(LOCALE_PREFIX)/nb/LC_MESSAGES/tuxpaint.mo
+	@chmod 644 $(LOCALE_PREFIX)/nb/LC_MESSAGES/tuxpaint.mo
+	@#
+	@echo "   nn_NO ...Norwegian Nynorsk..."
+	@install -d $(LOCALE_PREFIX)/nn/LC_MESSAGES
+	@cp trans/nn.mo $(LOCALE_PREFIX)/nn/LC_MESSAGES/tuxpaint.mo
+	@chmod 644 $(LOCALE_PREFIX)/nn/LC_MESSAGES/tuxpaint.mo
+	@#
+	@echo "   nr_ZA ...Ndebele..."
+	@install -d $(LOCALE_PREFIX)/nr/LC_MESSAGES
+	@cp trans/nr.mo $(LOCALE_PREFIX)/nr/LC_MESSAGES/tuxpaint.mo
+	@chmod 644 $(LOCALE_PREFIX)/nr/LC_MESSAGES/tuxpaint.mo
+	@#
+	@echo "   pl_PL ...Polish..."
+	@install -d $(LOCALE_PREFIX)/pl/LC_MESSAGES
+	@cp trans/pl.mo $(LOCALE_PREFIX)/pl/LC_MESSAGES/tuxpaint.mo
+	@chmod 644 $(LOCALE_PREFIX)/pl/LC_MESSAGES/tuxpaint.mo
+	@#
+	@echo "   pt_PT ...Portuguese (Portugal)..."
+	@install -d $(LOCALE_PREFIX)/pt_PT/LC_MESSAGES
+	@cp trans/pt_pt.mo $(LOCALE_PREFIX)/pt_PT/LC_MESSAGES/tuxpaint.mo
+	@chmod 644 $(LOCALE_PREFIX)/pt_PT/LC_MESSAGES/tuxpaint.mo
+	@#
+	@echo "   ro_RO ...Romanian..."
+	@install -d $(LOCALE_PREFIX)/ro/LC_MESSAGES
+	@cp trans/ro.mo $(LOCALE_PREFIX)/ro/LC_MESSAGES/tuxpaint.mo
+	@chmod 644 $(LOCALE_PREFIX)/ro/LC_MESSAGES/tuxpaint.mo
+	@#
+	@echo "   ru_RU ...Russian..."
+	@install -d $(LOCALE_PREFIX)/ru/LC_MESSAGES
+	@cp trans/ru.mo $(LOCALE_PREFIX)/ru/LC_MESSAGES/tuxpaint.mo
+	@chmod 644 $(LOCALE_PREFIX)/ru/LC_MESSAGES/tuxpaint.mo
+	@#
+	@echo "   gd_GB ...Scottish Gaelic..."
+	@install -d $(LOCALE_PREFIX)/gd/LC_MESSAGES
+	@cp trans/gd.mo $(LOCALE_PREFIX)/gd/LC_MESSAGES/tuxpaint.mo
+	@chmod 644 $(LOCALE_PREFIX)/gd/LC_MESSAGES/tuxpaint.mo
+	@#
+	@echo "   sr_YU ...Serbian..."
+	@install -d $(LOCALE_PREFIX)/sr/LC_MESSAGES
+	@cp trans/sr.mo $(LOCALE_PREFIX)/sr/LC_MESSAGES/tuxpaint.mo
+	@chmod 644 $(LOCALE_PREFIX)/sr/LC_MESSAGES/tuxpaint.mo
+	@#
+	@echo "   sk_SK ...Slovak..."
+	@install -d $(LOCALE_PREFIX)/sk/LC_MESSAGES
+	@cp trans/sk.mo $(LOCALE_PREFIX)/sk/LC_MESSAGES/tuxpaint.mo
+	@chmod 644 $(LOCALE_PREFIX)/sk/LC_MESSAGES/tuxpaint.mo
+	@#
+	@echo "   sl_SI ...Slovenian..."
+	@install -d $(LOCALE_PREFIX)/sl/LC_MESSAGES
+	@cp trans/sl.mo $(LOCALE_PREFIX)/sl/LC_MESSAGES/tuxpaint.mo
+	@chmod 644 $(LOCALE_PREFIX)/sl/LC_MESSAGES/tuxpaint.mo
+	@#
+	@echo "   es_ES ...Spanish..."
+	@install -d $(LOCALE_PREFIX)/es/LC_MESSAGES
+	@cp trans/es.mo $(LOCALE_PREFIX)/es/LC_MESSAGES/tuxpaint.mo
+	@chmod 644 $(LOCALE_PREFIX)/es/LC_MESSAGES/tuxpaint.mo
+	@#
+	@echo "   es_MX ...Mexican Spanish..."
+	@install -d $(LOCALE_PREFIX)/es_MX/LC_MESSAGES
+	@cp trans/es_mx.mo $(LOCALE_PREFIX)/es_MX/LC_MESSAGES/tuxpaint.mo
+	@chmod 644 $(LOCALE_PREFIX)/es_MX/LC_MESSAGES/tuxpaint.mo
+	@#
+	@echo "   sw_TZ ...Swahili..."
+	@install -d $(LOCALE_PREFIX)/sw/LC_MESSAGES
+	@cp trans/sw.mo $(LOCALE_PREFIX)/sw/LC_MESSAGES/tuxpaint.mo
+	@chmod 644 $(LOCALE_PREFIX)/sw/LC_MESSAGES/tuxpaint.mo
+	@#
+	@echo "   sv_SE ...Swedish..."
+	@install -d $(LOCALE_PREFIX)/sv/LC_MESSAGES
+	@cp trans/sv.mo $(LOCALE_PREFIX)/sv/LC_MESSAGES/tuxpaint.mo
+	@chmod 644 $(LOCALE_PREFIX)/sv/LC_MESSAGES/tuxpaint.mo
+	@#
+	@echo "   tl_PH ...Tagalog..."
+	@install -d $(LOCALE_PREFIX)/tl/LC_MESSAGES
+	@cp trans/tl.mo $(LOCALE_PREFIX)/tl/LC_MESSAGES/tuxpaint.mo
+	@chmod 644 $(LOCALE_PREFIX)/tl/LC_MESSAGES/tuxpaint.mo
+	@#
+	@echo "   ta_IN ...Tamil..."
+	@install -d $(LOCALE_PREFIX)/ta/LC_MESSAGES
+	@cp trans/ta.mo $(LOCALE_PREFIX)/ta/LC_MESSAGES/tuxpaint.mo
+	@chmod 644 $(LOCALE_PREFIX)/ta/LC_MESSAGES/tuxpaint.mo
+	@#
+	@echo "   te_IN ...Telugu..."
+	@install -d $(LOCALE_PREFIX)/te/LC_MESSAGES
+	@cp trans/te.mo $(LOCALE_PREFIX)/te/LC_MESSAGES/tuxpaint.mo
+	@chmod 644 $(LOCALE_PREFIX)/te/LC_MESSAGES/tuxpaint.mo
+	@#
+	@echo "   th_TH ...Thai..."
+	@install -d $(LOCALE_PREFIX)/th/LC_MESSAGES
+	@cp trans/th.mo $(LOCALE_PREFIX)/th/LC_MESSAGES/tuxpaint.mo
+	@chmod 644 $(LOCALE_PREFIX)/th/LC_MESSAGES/tuxpaint.mo
+	@#
+	@echo "   bo_CN ...Tibetan..."
+	@install -d $(LOCALE_PREFIX)/bo/LC_MESSAGES
+	@cp trans/bo.mo $(LOCALE_PREFIX)/bo/LC_MESSAGES/tuxpaint.mo
+	@chmod 644 $(LOCALE_PREFIX)/bo/LC_MESSAGES/tuxpaint.mo
+	@#
+	@echo "   tr_TR ...Turkish..."
+	@install -d $(LOCALE_PREFIX)/tr/LC_MESSAGES
+	@cp trans/tr.mo $(LOCALE_PREFIX)/tr/LC_MESSAGES/tuxpaint.mo
+	@chmod 644 $(LOCALE_PREFIX)/tr/LC_MESSAGES/tuxpaint.mo
+	@#
+	@echo "   twi_GH ...Twi..."
+	@install -d $(LOCALE_PREFIX)/twi/LC_MESSAGES
+	@cp trans/twi.mo $(LOCALE_PREFIX)/twi/LC_MESSAGES/tuxpaint.mo
+	@chmod 644 $(LOCALE_PREFIX)/twi/LC_MESSAGES/tuxpaint.mo
+	@#
+	@echo "   uk_UA ...Ukrainian..."
+	@install -d $(LOCALE_PREFIX)/uk/LC_MESSAGES
+	@cp trans/uk.mo $(LOCALE_PREFIX)/uk/LC_MESSAGES/tuxpaint.mo
+	@chmod 644 $(LOCALE_PREFIX)/uk/LC_MESSAGES/tuxpaint.mo
+	@#
+	@echo "   ve_ZA ...Venda..."
+	@install -d $(LOCALE_PREFIX)/ve/LC_MESSAGES
+	@cp trans/ve.mo $(LOCALE_PREFIX)/ve/LC_MESSAGES/tuxpaint.mo
+	@chmod 644 $(LOCALE_PREFIX)/ve/LC_MESSAGES/tuxpaint.mo
+	@#
+	@echo "   vi_VN ...Vietnamese..."
+	@install -d $(LOCALE_PREFIX)/vi/LC_MESSAGES
+	@cp trans/vi.mo $(LOCALE_PREFIX)/vi/LC_MESSAGES/tuxpaint.mo
+	@chmod 644 $(LOCALE_PREFIX)/vi/LC_MESSAGES/tuxpaint.mo
+	@#
+	@echo "   wa_BE ...Walloon..."
+	@install -d $(LOCALE_PREFIX)/wa/LC_MESSAGES
+	@cp trans/wa.mo $(LOCALE_PREFIX)/wa/LC_MESSAGES/tuxpaint.mo
+	@chmod 644 $(LOCALE_PREFIX)/wa/LC_MESSAGES/tuxpaint.mo
+	@#
+	@echo "   cy_GB ...Welsh..."
+	@install -d $(LOCALE_PREFIX)/cy/LC_MESSAGES
+	@cp trans/cy.mo $(LOCALE_PREFIX)/cy/LC_MESSAGES/tuxpaint.mo
+	@chmod 644 $(LOCALE_PREFIX)/cy/LC_MESSAGES/tuxpaint.mo
+	@#
+	@echo "   xh_ZA ...Xhosa..."
+	@install -d $(LOCALE_PREFIX)/xh/LC_MESSAGES
+	@cp trans/xh.mo $(LOCALE_PREFIX)/xh/LC_MESSAGES/tuxpaint.mo
+	@chmod 644 $(LOCALE_PREFIX)/xh/LC_MESSAGES/tuxpaint.mo
+
+
+# Install the Input Method files:
+
+ifneq ($(IM_PREFIX),)
+install-im:
+	@echo
+	@echo "...Installing Input Method files..."
+	@#
+	@install -d $(IM_PREFIX)
+	@#
+	@echo "   ja ...Japanese..."
+	@cp im/ja.im $(IM_PREFIX)/ja.im
+	@chmod 644 $(IM_PREFIX)/ja.im
+	@#
+	@echo "   ko ...Korean..."
+	@cp im/ko.im $(IM_PREFIX)/ko.im
+	@chmod 644 $(IM_PREFIX)/ko.im
+else
+install-im:
+	@echo
+	@echo "...Not Installing Input Method files (no IM_PREFIX defined)..."
+endif
+
+
+# Build the translation files for gettext
+
+translations: trans \
+	trans/af.mo \
+	trans/ar.mo \
+	trans/be.mo \
+	trans/bg.mo \
+	trans/bo.mo \
+	trans/br.mo \
+	trans/ca.mo \
+	trans/cs.mo \
+	trans/cy.mo \
+	trans/da.mo \
+	trans/de.mo \
+	trans/et.mo \
+	trans/el.mo \
+	trans/en_gb.mo \
+	trans/en_za.mo \
+	trans/es.mo \
+	trans/es_mx.mo \
+	trans/eu.mo \
+	trans/fi.mo \
+	trans/fo.mo \
+	trans/fr.mo \
+	trans/ga.mo \
+	trans/gd.mo \
+	trans/gl.mo \
+	trans/gos.mo \
+	trans/gu.mo \
+	trans/he.mo \
+	trans/hi.mo \
+	trans/hr.mo \
+	trans/hu.mo \
+	trans/id.mo \
+	trans/is.mo \
+	trans/it.mo \
+	trans/ja.mo \
+	trans/ka.mo \
+	trans/ko.mo \
+	trans/ku.mo \
+	trans/lt.mo \
+	trans/lv.mo \
+	trans/ms.mo \
+	trans/nl.mo \
+	trans/nb.mo \
+	trans/nn.mo \
+	trans/nr.mo \
+	trans/pl.mo \
+	trans/pt_br.mo \
+	trans/pt_pt.mo \
+	trans/ro.mo \
+	trans/ru.mo \
+	trans/rw.mo \
+	trans/sk.mo \
+	trans/sl.mo \
+	trans/sq.mo \
+	trans/sr.mo \
+	trans/sv.mo \
+	trans/sw.mo \
+	trans/ta.mo \
+	trans/te.mo \
+	trans/th.mo \
+	trans/tl.mo \
+	trans/tlh.mo \
+	trans/tr.mo \
+	trans/twi.mo \
+	trans/uk.mo \
+	trans/ve.mo \
+	trans/vi.mo \
+	trans/wa.mo \
+	trans/xh.mo \
+	trans/zh_cn.mo \
+	trans/zh_tw.mo
+
+trans:
+	@echo
+	@echo "...Preparing translation files..."
+	@mkdir trans
+
+trans/af.mo:	src/po/af.po
+	@echo "   af_ZA ...Afrikaans..."
+	@msgfmt -o trans/af.mo src/po/af.po
+
+trans/ar.mo:	src/po/ar.po
+	@echo "   ar_SA ...Arabic..."
+	@msgfmt -o trans/ar.mo src/po/ar.po
+
+trans/be.mo:	src/po/be.po
+	@echo "   be_BY ...Belarusian..."
+	@msgfmt -o trans/be.mo src/po/be.po
+
+trans/bg.mo:	src/po/bg.po
+	@echo "   bg_BG ...Bulgarian..."
+	@msgfmt -o trans/bg.mo src/po/bg.po
+
+trans/bo.mo:	src/po/bo.po
+	@echo "   bo_CN ...Tibetan..."
+	@msgfmt -o trans/bo.mo src/po/bo.po
+
+trans/br.mo:	src/po/br.po
+	@echo "   br_FR ...Breton..."
+	@msgfmt -o trans/br.mo src/po/br.po
+
+trans/ca.mo:	src/po/ca.po
+	@echo "   ca_ES ...Catalan..."
+	@msgfmt -o trans/ca.mo src/po/ca.po
+
+trans/cy.mo:	src/po/cy.po
+	@echo "   cy_GB ...Welsh..."
+	@msgfmt -o trans/cy.mo src/po/cy.po
+
+trans/cs.mo:	src/po/cs.po
+	@echo "   cs_CZ ...Czech..."
+	@msgfmt -o trans/cs.mo src/po/cs.po
+
+trans/da.mo:	src/po/da.po
+	@echo "   da_DK ...Danish..."
+	@msgfmt -o trans/da.mo src/po/da.po
+
+trans/de.mo:	src/po/de.po
+	@echo "   de_DE ...German..."
+	@msgfmt -o trans/de.mo src/po/de.po
+
+trans/et.mo:	src/po/et.po
+	@echo "   et_EE ...Estonian..."
+	@msgfmt -o trans/et.mo src/po/et.po
+
+trans/el.mo:	src/po/el.po
+	@echo "   el_GR ...Greek..."
+	@msgfmt -o trans/el.mo src/po/el.po
+
+trans/en_gb.mo:	src/po/en_gb.po
+	@echo "   en_GB ...British English..."
+	@msgfmt -o trans/en_gb.mo src/po/en_gb.po
+
+trans/en_za.mo:	src/po/en_za.po
+	@echo "   en_ZA ...South African English..."
+	@msgfmt -o trans/en_za.mo src/po/en_za.po
+
+trans/es.mo:	src/po/es.po
+	@echo "   es_ES ...Spanish..."
+	@msgfmt -o trans/es.mo src/po/es.po
+
+trans/es_mx.mo:	src/po/es_mx.po
+	@echo "   es_MX ...Mexcian Spanish..."
+	@msgfmt -o trans/es_mx.mo src/po/es_mx.po
+
+trans/eu.mo:	src/po/eu.po
+	@echo "   eu_ES ...Basque..."
+	@msgfmt -o trans/eu.mo src/po/eu.po
+
+trans/fi.mo:	src/po/fi.po
+	@echo "   fi_FI ...Finnish..."
+	@msgfmt -o trans/fi.mo src/po/fi.po
+
+trans/fo.mo:	src/po/fo.po
+	@echo "   fo_FO ...Faroese..."
+	@msgfmt -o trans/fo.mo src/po/fo.po
+
+trans/fr.mo:	src/po/fr.po
+	@echo "   fr_FR ...French..."
+	@msgfmt -o trans/fr.mo src/po/fr.po
+
+trans/ga.mo:	src/po/ga.po
+	@echo "   ga_IE ...Irish Gaelic..."
+	@msgfmt -o trans/ga.mo src/po/ga.po
+
+trans/gd.mo:	src/po/gd.po
+	@echo "   gd_GB ...Scottish Gaelic..."
+	@msgfmt -o trans/gd.mo src/po/gd.po
+
+trans/gl.mo:	src/po/gl.po
+	@echo "   gl_ES ...Galician..."
+	@msgfmt -o trans/gl.mo src/po/gl.po
+
+trans/gos.mo:	src/po/gos.po
+	@echo "   gos_NL ...Gronings..."
+	@msgfmt -o trans/gos.mo src/po/gos.po
+
+trans/gu.mo:	src/po/gu.po
+	@echo "   gu_IN ...Gujarati..."
+	@msgfmt -o trans/gu.mo src/po/gu.po
+
+trans/he.mo:	src/po/he.po
+	@echo "   he_IL ...Hebrew..."
+	@msgfmt -o trans/he.mo src/po/he.po
+
+trans/hi.mo:	src/po/hi.po
+	@echo "   hi_IN ...Hindi..."
+	@msgfmt -o trans/hi.mo src/po/hi.po
+
+trans/hr.mo:	src/po/hr.po
+	@echo "   hr_HR ...Croatian..."
+	@msgfmt -o trans/hr.mo src/po/hr.po
+
+trans/hu.mo:	src/po/hu.po
+	@echo "   hu_HU ...Hungarian..."
+	@msgfmt -o trans/hu.mo src/po/hu.po
+
+trans/tlh.mo:	src/po/tlh.po
+	@echo "   tlh   ...Klingon (Romanized)..."
+	@msgfmt -o trans/tlh.mo src/po/tlh.po
+
+trans/id.mo:	src/po/id.po
+	@echo "   id_ID ...Indonesian..."
+	@msgfmt -o trans/id.mo src/po/id.po
+
+trans/is.mo:	src/po/is.po
+	@echo "   is_IS ...Icelandic..."
+	@msgfmt -o trans/is.mo src/po/is.po
+
+trans/it.mo:	src/po/it.po
+	@echo "   it_IT ...Italian..."
+	@msgfmt -o trans/it.mo src/po/it.po
+
+trans/ja.mo:	src/po/ja.po
+	@echo "   ja_JP ...Japanese..."
+	@msgfmt -o trans/ja.mo src/po/ja.po
+
+trans/ka.mo:	src/po/ka.po
+	@echo "   ka_GE ...Georgian..."
+	@msgfmt -o trans/ka.mo src/po/ka.po
+
+trans/ko.mo:	src/po/ko.po
+	@echo "   ko_KR ...Korean..."
+	@msgfmt -o trans/ko.mo src/po/ko.po
+
+trans/ku.mo:	src/po/ku.po
+	@echo "   ku_TR ...Kurdish..."
+	@msgfmt -o trans/ku.mo src/po/ku.po
+
+trans/lt.mo:	src/po/lt.po
+	@echo "   lt_LT ...Lithuanian..."
+	@msgfmt -o trans/lt.mo src/po/lt.po
+
+trans/lv.mo:	src/po/lv.po
+	@echo "   lv_LV ...Latvian..."
+	@msgfmt -o trans/lv.mo src/po/lv.po
+
+trans/ms.mo:	src/po/ms.po
+	@echo "   ms_MY ...Malay..."
+	@msgfmt -o trans/ms.mo src/po/ms.po
+
+trans/nl.mo:	src/po/nl.po
+	@echo "   nl_NL ...Dutch..."
+	@msgfmt -o trans/nl.mo src/po/nl.po
+
+trans/nb.mo:	src/po/nb.po
+	@echo "   nb_NO ...Norwegian Bokmal..."
+	@msgfmt -o trans/nb.mo src/po/nb.po
+
+trans/nn.mo:	src/po/nn.po
+	@echo "   nn_NO ...Norwegian Nynorsk..."
+	@msgfmt -o trans/nn.mo src/po/nn.po
+
+trans/nr.mo:	src/po/nr.po
+	@echo "   nr_ZA ...Ndebele..."
+	@msgfmt -o trans/nr.mo src/po/nr.po
+
+trans/pl.mo:	src/po/pl.po
+	@echo "   pl_PL ...Polish..."
+	@msgfmt -o trans/pl.mo src/po/pl.po
+
+trans/pt_pt.mo:	src/po/pt_pt.po
+	@echo "   pt_PT ...Portuguese..."
+	@msgfmt -o trans/pt_pt.mo src/po/pt_pt.po
+
+trans/pt_br.mo:	src/po/pt_br.po
+	@echo "   pt_BR ...Brazilian Portuguese..."
+	@msgfmt -o trans/pt_br.mo src/po/pt_br.po
+
+trans/ro.mo:	src/po/ro.po
+	@echo "   ro_RO ...Romanian..."
+	@msgfmt -o trans/ro.mo src/po/ro.po
+
+trans/ru.mo:	src/po/ru.po
+	@echo "   ru_RU ...Russian..."
+	@msgfmt -o trans/ru.mo src/po/ru.po
+
+trans/rw.mo:	src/po/rw.po
+	@echo "   rw_RW ...Kinyarwanda..."
+	@msgfmt -o trans/rw.mo src/po/rw.po
+
+trans/sk.mo:	src/po/sk.po
+	@echo "   sk_SK ...Slovak..."
+	@msgfmt -o trans/sk.mo src/po/sk.po
+
+trans/sl.mo:	src/po/sl.po
+	@echo "   sl_SI ...Slovenian..."
+	@msgfmt -o trans/sl.mo src/po/sl.po
+
+trans/sq.mo:	src/po/sq.po
+	@echo "   sq_AL ...Albanian..."
+	@msgfmt -o trans/sq.mo src/po/sq.po
+
+trans/sr.mo:	src/po/sr.po
+	@echo "   sr_YU ...Serbian..."
+	@msgfmt -o trans/sr.mo src/po/sr.po
+
+trans/sv.mo:	src/po/sv.po
+	@echo "   sv_SE ...Swedish..."
+	@msgfmt -o trans/sv.mo src/po/sv.po
+
+trans/sw.mo:	src/po/sw.po
+	@echo "   sw_TZ ...Swahili..."
+	@msgfmt -o trans/sw.mo src/po/sw.po
+
+trans/ta.mo:	src/po/ta.po
+	@echo "   ta_IN ...Tamil..."
+	@msgfmt -o trans/ta.mo src/po/ta.po
+
+trans/te.mo:	src/po/te.po
+	@echo "   te_IN ...Telugu..."
+	@msgfmt -o trans/te.mo src/po/te.po
+
+trans/th.mo:	src/po/th.po
+	@echo "   th_TH ...Thai..."
+	@msgfmt -o trans/th.mo src/po/th.po
+
+trans/tl.mo:	src/po/tl.po
+	@echo "   tl_PH ...Tagalog..."
+	@msgfmt -o trans/tl.mo src/po/tl.po
+
+trans/tr.mo:	src/po/tr.po
+	@echo "   tr_TR ...Turkish..."
+	@msgfmt -o trans/tr.mo src/po/tr.po
+
+trans/twi.mo:	src/po/twi.po
+	@echo "   twi_GH ...Twi..."
+	@msgfmt -o trans/twi.mo src/po/twi.po
+
+trans/uk.mo:	src/po/uk.po
+	@echo "   uk_UA ...Ukrainian..."
+	@msgfmt -o trans/uk.mo src/po/uk.po
+
+trans/ve.mo:	src/po/ve.po
+	@echo "   ve_ZA ...Venda..."
+	@msgfmt -o trans/ve.mo src/po/ve.po
+
+trans/vi.mo:	src/po/vi.po
+	@echo "   vi_VN ...Vietnamese..."
+	@msgfmt -o trans/vi.mo src/po/vi.po
+
+trans/wa.mo:	src/po/wa.po
+	@echo "   wa_BE ...Walloon..."
+	@msgfmt -o trans/wa.mo src/po/wa.po
+
+trans/xh.mo:	src/po/xh.po
+	@echo "   xh_ZA ...Xhosa..."
+	@msgfmt -o trans/xh.mo src/po/xh.po
+
+trans/zh_cn.mo:	src/po/zh_cn.po
+	@echo "   zh_CN ...Chinese (Simplified)..."
+	@msgfmt -o trans/zh_cn.mo src/po/zh_cn.po
+
+trans/zh_tw.mo:	src/po/zh_tw.po
+	@echo "   zh_TW ...Chinese (Traditional)..."
+	@msgfmt -o trans/zh_tw.mo src/po/zh_tw.po
+
+

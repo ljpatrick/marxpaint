@@ -9,7 +9,7 @@ http://www.newbreedsoftware.com/tuxpaint/
 $Id$
 
 
-2007.May.2 (0.9.17)
+2007.May.3 (0.9.17)
 
   * Tool Improvements:
     ------------------
@@ -70,7 +70,6 @@ $Id$
     * Briefly documented alternative input methods (IM character map files)
       in "Extending..."
     
-
   * Bug Fixes:
     ----------
     * Tux the Penguin sound effects were not working; fixed.
@@ -98,6 +97,9 @@ $Id$
       save directory on a network drive, without having to disable the
       lockfile feature, or wait for the lockfile to expire.
       John Popplewell <john@johnnypops.demon.co.uk>
+
+    * Localization build, install and uninstall targets moved into
+      a separate "Makefile-i18n", to reduce clutter in main Makefile.
 
   * New Translations:
     -----------------
