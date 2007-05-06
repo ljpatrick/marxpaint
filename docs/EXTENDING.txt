@@ -8,7 +8,7 @@
                            bill@newbreedsoftware.com
                             http://www.tuxpaint.org/
 
-                         June 14, 2002 - April 26, 2007
+                          June 14, 2002 - May 6, 2007
 
    --------------------------------------------------------------------------
 
@@ -376,16 +376,20 @@ Stamps
              of the following lines to the stamp's data file:
 
              "tinter=normal" (default)
-                     This is the normal tinting mode.
+                     This is the normal tinting mode. (Hue range is
+                     +/- 18 degrees, 27 replace.)
 
              "tinter=anyhue"
-                     This is ???.
+                     This remaps all hues in the stamp. (Hue range is
+                     +/- 180 degrees.)
 
              "tinter=narrow"
-                     This is ???.
+                     This like 'anyhue', but a narrower hue angle. (Hue range
+                     is +/- 6 degrees, 9 replace.)
 
              "tinter=vector"
-                     This is ???.
+                     This is map 'black through white' to 'black through
+                     destination'.
 
     Unalterable Stamps
 
