@@ -722,7 +722,7 @@ static int im_event_ja(IM_DATA* im, SDL_keysym ks)
     case IM_REQ_RESET_SOFT:  /* Soft reset */
       im->s[0] = L'\0';
       im->buf[0] = L'\0';
-      im->discard = 0;
+      im->redraw = 0;
       cm.match_count = 0;
       cm.match_is_final = 0;
       cm.match_state = &cm.sections[cm.section];
@@ -748,9 +748,9 @@ static int im_event_ja(IM_DATA* im, SDL_keysym ks)
   if(im->request != IM_REQ_TRANSLATE) return 0;
 
 
-  /* Discard characters, per instructions */
-  if((int)wcslen(im->s) < im->discard) im->discard = wcslen(im->s);
-  wcs_lshift(im->s, (wcslen(im->s) - im->discard) );
+  /* Discard redraw characters, so they can be redrawn */
+  if((int)wcslen(im->s) < im->redraw) im->redraw = wcslen(im->s);
+  wcs_lshift(im->s, (wcslen(im->s) - im->redraw) );
 
 
   /* Handle keys */
@@ -778,14 +778,14 @@ static int im_event_ja(IM_DATA* im, SDL_keysym ks)
       }
       break;
 
-    /* Enter finalizes previous discard */
+    /* Enter finalizes previous redraw */
     case SDLK_RETURN:
-      if(im->discard <= 0) {
+      if(im->redraw <= 0) {
         im->s[0] = L'\r';
         im->s[1] = L'\0';
       }
       im->buf[0] = L'\0';
-      im->discard = 0;
+      im->redraw = 0;
       break;
 
     /* Actual character processing */
@@ -804,7 +804,7 @@ static int im_event_ja(IM_DATA* im, SDL_keysym ks)
         wcsncat(im->buf, &u, 1);              /* Copy new character */
 
         /* Translate the characters */
-        im->discard = 0;
+        im->redraw = 0;
         while(1) {
           const wchar_t* us = charmap_search(&cm, im->buf);
           #ifdef IM_DEBUG
@@ -827,7 +827,7 @@ static int im_event_ja(IM_DATA* im, SDL_keysym ks)
             }
             /* May need to be overwritten next time */
             else {
-              im->discard += wcslen(us);
+              im->redraw += wcslen(us);
               break;
             }
           }
@@ -858,7 +858,7 @@ static int im_event_ja(IM_DATA* im, SDL_keysym ks)
               #endif
               wcscat(im->s, im->buf);
               cm.match_is_final = 0;
-              im->discard += wcslen(im->buf);
+              im->redraw += wcslen(im->buf);
               break;
             }
           }
@@ -876,7 +876,7 @@ static int im_event_ja(IM_DATA* im, SDL_keysym ks)
       }
   }
 
-  return im->discard;
+  return im->redraw;
 }
 
 
@@ -933,7 +933,7 @@ static int im_event_ko(IM_DATA* im, SDL_keysym ks)
     case IM_REQ_RESET_SOFT:  /* Soft reset */
       im->s[0] = L'\0';
       im->buf[0] = L'\0';
-      im->discard = 0;
+      im->redraw = 0;
       cm.match_count = 0;
       cm.match_is_final = 0;
       cm.match_state = &cm.sections[cm.section];
@@ -959,9 +959,9 @@ static int im_event_ko(IM_DATA* im, SDL_keysym ks)
   if(im->request != IM_REQ_TRANSLATE) return 0;
 
 
-  /* Discard characters, per instructions */
-  if((int)wcslen(im->s) < im->discard) im->discard = wcslen(im->s);
-  wcs_lshift(im->s, (wcslen(im->s) - im->discard) );
+  /* Discard redraw characters, so they can be redrawn */
+  if((int)wcslen(im->s) < im->redraw) im->redraw = wcslen(im->s);
+  wcs_lshift(im->s, (wcslen(im->s) - im->redraw) );
 
 
   /* Handle keys */
@@ -992,7 +992,7 @@ static int im_event_ko(IM_DATA* im, SDL_keysym ks)
       /* Delete one buffered character */
       if(wcslen(im->buf) > 0) {
         wcs_pull(im->buf, 1);
-        if(im->discard > 0) im->discard--;
+        if(im->redraw > 0) im->redraw--;
         ks.unicode = L'\0';
       }
       /* continue processing: */
@@ -1014,7 +1014,7 @@ static int im_event_ko(IM_DATA* im, SDL_keysym ks)
         wcsncat(bp, &u, 1);                   /* Copy new character */
 
         /* Translate the characters */
-        im->discard = 0;
+        im->redraw = 0;
         while(1) {
           const wchar_t* us = charmap_search(&cm, bp);
           #ifdef IM_DEBUG
@@ -1036,7 +1036,7 @@ static int im_event_ko(IM_DATA* im, SDL_keysym ks)
                   #endif
 
                   wcscat(im->s, us);          /* Output */
-                  im->discard += wcslen(us);  /* May need to re-eval next time */
+                  im->redraw += wcslen(us);  /* May need to re-eval next time */
                   bp += cm.match_count;       /* Keep buffer data for re-eval*/
                   cm.match_count = 0;
                   cm.match_is_final = 0;
@@ -1084,7 +1084,7 @@ static int im_event_ko(IM_DATA* im, SDL_keysym ks)
               #endif
 
               wcscat(im->s, us);
-              im->discard += wcslen(us);
+              im->redraw += wcslen(us);
               break;
             }
           }
@@ -1115,7 +1115,7 @@ static int im_event_ko(IM_DATA* im, SDL_keysym ks)
               #endif
               wcscat(im->s, bp);
               cm.match_is_final = 0;
-              im->discard += wcslen(bp);
+              im->redraw += wcslen(bp);
               break;
             }
           }
@@ -1133,7 +1133,7 @@ static int im_event_ko(IM_DATA* im, SDL_keysym ks)
       }
   }
 
-  return im->discard;
+  return im->redraw;
 }
 
 
@@ -1191,11 +1191,16 @@ void im_init(IM_DATA* im, int lang)
   /* Setup static globals */
   if(!im_initialized) {
     /* ADD NEW LANGUAGE SUPPORT HERE */
-    im_event_fns[LANG_JA] = im_event_ja;
-    im_event_fns[LANG_KO] = im_event_ko;
+    im_event_fns[LANG_JA] = &im_event_ja;
+    im_event_fns[LANG_KO] = &im_event_ko;
 
     im_initialized = 1;
   }
+
+  #ifdef DEBUG
+  assert(0 <= im->lang && im->lang < NUM_LANGS);
+  if(im_event_fp) printf("Initializing IM for %s...\n", lang_prefixes[im->lang]);
+  #endif
 
   /* Initialize the individual IM */
   im_request(im, IM_REQ_INIT);
@@ -1247,8 +1252,8 @@ void im_free(IM_DATA* im)
 */
 int im_read(IM_DATA* im, SDL_keysym ks)
 {
-  IM_EVENT_FN* im_event_fp = NULL;
-  int discard = 0;
+  IM_EVENT_FN im_event_fp = NULL;
+  int redraw = 0;
 
   /* Sanity check */
   if(im->lang < 0 || im->lang >= NUM_LANGS) {
@@ -1257,21 +1262,17 @@ int im_read(IM_DATA* im, SDL_keysym ks)
   }
 
   /* Function pointer to the language-specific im_event_* function */
-  im_event_fp = &im_event_fns[im->lang];
-
-  #ifdef DEBUG
-  if(im_event_fp) printf("Loading IM for %s...\n", lang_prefixes[im->lang]);
-  #endif
+  im_event_fp = im_event_fns[im->lang];
 
   /* Run the language-specific IM or run the default C IM */
-  if(im_event_fp) discard = (*im_event_fp)(im, ks);
-  else discard = im_event_c(im, ks);
+  if(im_event_fp) redraw = (*im_event_fp)(im, ks);
+  else redraw = im_event_c(im, ks);
 
   #ifdef IM_DEBUG
-  wprintf(L"* [%8ls] [%8ls] %2d %2d (%2d)\n", im->s, im->buf, wcslen(im->s), wcslen(im->buf), im->discard);
+  wprintf(L"* [%8ls] [%8ls] %2d %2d (%2d)\n", im->s, im->buf, wcslen(im->s), wcslen(im->buf), im->redraw);
   #endif
 
-  return discard;
+  return redraw;
 }
 
 

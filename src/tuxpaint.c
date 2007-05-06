@@ -1823,7 +1823,7 @@ static void mainloop(void)
 
 	  if (cur_tool == TOOL_TEXT && cursor_x != -1 && cursor_y != -1)
 	  {
-	    static int discard = 0;
+	    static int redraw = 0;
 	    wchar_t* im_cp = im_data.s;
 
 	    key_down = key;
@@ -1853,13 +1853,13 @@ static void mainloop(void)
 #endif
 #endif
 
-	    /* Discard previous # of instructed characters */
-	    if((int)texttool_len <= discard) texttool_len = 0;
-	    else texttool_len -= discard;
+	    /* Discard previous # of redraw characters */
+	    if((int)texttool_len <= redraw) texttool_len = 0;
+	    else texttool_len -= redraw;
 	    texttool_str[texttool_len] = L'\0';
 
-	    /* Read IM, remember how many to discard next iteration */
-	    discard = im_read(&im_data, event.key.keysym);
+	    /* Read IM, remember how many to redraw next iteration */
+	    redraw = im_read(&im_data, event.key.keysym);
 
 	    /* Queue each character to be displayed */
 	    while(*im_cp) {

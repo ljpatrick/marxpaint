@@ -40,7 +40,7 @@ typedef struct IM_DATA {
 
   /* For use by language-specific im_event_<lang> calls. PRIVATE! */
   wchar_t buf[8];       /* Buffered characters */
-  int discard;          /* Discard parameter */
+  int redraw;           /* Redraw this many characters next time */
   int request;          /* Event request */
 } IM_DATA;
 
