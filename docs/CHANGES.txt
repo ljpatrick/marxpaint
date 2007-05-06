@@ -99,6 +99,7 @@ $Id$
       This allows multiple users on different desktops to use a shared
       save directory on a network drive, without having to disable the
       lockfile feature, or wait for the lockfile to expire.
+      (Addresses SourceForge Feature Request #1681125)
       John Popplewell <john@johnnypops.demon.co.uk>
 
     * Localization build, install and uninstall targets moved into
