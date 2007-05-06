@@ -22,7 +22,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
   
-  June 14, 2002 - March 22, 2007
+  June 14, 2002 - May 6, 2007
   $Id$
 */
 
@@ -8372,20 +8372,13 @@ static void draw_stamps(void)
 
 
   /* Show prev button: */
+  
+  button_color = img_black;
+  button_body = img_btn_up;
 
   dest.x = WINDOW_WIDTH - 96;
   dest.y = 40 + ((4 + TOOLOFFSET / 2) * 48);
 
-  if (stamp_group > 0)
-  {
-    button_color = img_black;
-    button_body = img_btn_up;
-  }
-  else
-  {
-    button_color = img_grey;
-    button_body = img_btn_off;
-  }
   SDL_BlitSurface(button_body, NULL, screen, &dest);
 
   dest.x = WINDOW_WIDTH - 96 + (48 - img_prev->w) / 2;
@@ -8396,19 +8389,12 @@ static void draw_stamps(void)
 
   /* Show next button: */
 
+  button_color = img_black;
+  button_body = img_btn_up;
+  
   dest.x = WINDOW_WIDTH - 48;
   dest.y = 40 + ((4 + TOOLOFFSET / 2) * 48);
 
-  if (stamp_group < num_stamp_groups - 1)
-  {
-    button_color = img_black;
-    button_body = img_btn_up;
-  }
-  else
-  {
-    button_color = img_grey;
-    button_body = img_btn_off;
-  }
   SDL_BlitSurface(button_body, NULL, screen, &dest);
 
   dest.x = WINDOW_WIDTH - 48 + (48 - img_next->w) / 2;
