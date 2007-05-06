@@ -1212,12 +1212,12 @@ static void free_surface_array(SDL_Surface * surface_array[], int count);
 //                int fixed);
 static void do_shape(int cx, int cy, int ox, int oy, int rotn, int use_brush);
 static int rotation(int ctr_x, int ctr_y, int ox, int oy);
-static int do_save(void);
+static int do_save(int tool);
 static int do_png_save(FILE * fi, const char *const fname,
 		       SDL_Surface * surf);
 static void get_new_file_id(void);
-static int do_quit(void);
-void do_open(void);
+static int do_quit(int tool);
+int do_open(void);
 int do_slideshow(void);
 void play_slideshow(int * selected, int num_selected, char * dirname,
 		    char **d_names, char **d_exts, int speed);
@@ -1654,7 +1654,7 @@ static void mainloop(void)
 
       if (event.type == SDL_QUIT)
       {
-	done = do_quit();
+	done = do_quit(cur_tool);
       }
       else if (event.type == SDL_ACTIVEEVENT)
       {
@@ -1675,7 +1675,7 @@ static void mainloop(void)
 
 	if (key == SDLK_ESCAPE && !disable_quit)
 	{
-	  done = do_quit();
+	  done = do_quit(cur_tool);
 	}
 	else if (key == SDLK_s && (mod & KMOD_ALT))
 	{
@@ -1688,12 +1688,12 @@ static void mainloop(void)
 	else if (key == SDLK_ESCAPE &&
 		 (mod & KMOD_SHIFT) && (mod & KMOD_CTRL))
 	{
-	  done = do_quit();
+	  done = do_quit(cur_tool);
 	}
 #ifdef WIN32
 	else if (key == SDLK_F4 && (mod & KMOD_ALT))
 	{
-	  done = do_quit();
+	  done = do_quit(cur_tool);
 	}
 #endif
 	else if (key == SDLK_z && (mod & KMOD_CTRL) && !noshortcuts)
@@ -1734,7 +1734,11 @@ static void mainloop(void)
 	  draw_colors(COLORSEL_CLOBBER_WIPE);
 	  draw_none();
 
-	  do_open();
+	  if (do_open() == 0)
+          {
+            if (cur_tool == TOOL_TEXT)
+	      do_render_cur_text(0);
+          }
 
 	  enable_avail_tools();
 
@@ -1795,6 +1799,9 @@ static void mainloop(void)
 	  else
 	  {
 	    draw_tux_text(tool_tux[TUX_DEFAULT], TIP_NEW_ABORT, 1);
+	    
+            if (cur_tool == TOOL_TEXT)
+	      do_render_cur_text(0);
 	  }
 
 	  draw_toolbar();
@@ -1805,7 +1812,7 @@ static void mainloop(void)
 	  /* Ctrl-S - Save */
 
 	  hide_blinking_cursor();
-	  if (do_save())
+	  if (do_save(cur_tool))
 	  {
 	    /* Only think it's been saved if it HAS been saved :^) */
 
@@ -1973,6 +1980,8 @@ static void mainloop(void)
 	  do_prompt_image_flash(PROMPT_TIP_LEFTCLICK_TXT,
 				PROMPT_TIP_LEFTCLICK_YES,
 				"", img_mouse, img_mouse_click, NULL, 1);
+          if (cur_tool == TOOL_TEXT)
+	    do_render_cur_text(0);
 	}
       }
       else if ((event.type == SDL_MOUSEBUTTONDOWN ||
@@ -1991,9 +2000,13 @@ static void mainloop(void)
 	    /* Allow middle/right-click on "Print", since [Alt]+click
 	       on Mac OS X changes it from left click to middle! */
 
-	    /* Render any current text: */
+	    /* Render any current text, if switching to a different
+               drawing tool: */
 
-	    if (cur_tool == TOOL_TEXT && which != TOOL_TEXT)
+	    if (cur_tool == TOOL_TEXT && which != TOOL_TEXT &&
+                which != TOOL_NEW && which != TOOL_OPEN &&
+                which != TOOL_SAVE && which != TOOL_PRINT &&
+                which != TOOL_QUIT)
 	    {
 	      if (cursor_x != -1 && cursor_y != -1)
 	      {
@@ -2159,7 +2172,11 @@ static void mainloop(void)
 	      draw_colors(COLORSEL_CLOBBER_WIPE);
 	      draw_none();
 
-	      do_open();
+	      if (do_open() == 0)
+              {
+                if (old_tool == TOOL_TEXT)
+	          do_render_cur_text(0);
+              }
 
 	      enable_avail_tools();
 
@@ -2186,7 +2203,7 @@ static void mainloop(void)
 	    }
 	    else if (cur_tool == TOOL_SAVE)
 	    {
-	      if (do_save())
+	      if (do_save(old_tool))
 	      {
 		been_saved = 1;
 		tool_avail[TOOL_SAVE] = 0;
@@ -2230,6 +2247,9 @@ static void mainloop(void)
 	      else
 	      {
 		draw_tux_text(tool_tux[TUX_DEFAULT], TIP_NEW_ABORT, 1);
+          
+                if (old_tool == TOOL_TEXT)
+                  do_render_cur_text(0);
 	      }
 
 	      cur_tool = old_tool;
@@ -2262,6 +2282,8 @@ static void mainloop(void)
 
 		  last_print_time = cur_time;
 		}
+                if (old_tool == TOOL_TEXT)
+	          do_render_cur_text(0);
 	      }
 	      else
 	      {
@@ -2270,6 +2292,8 @@ static void mainloop(void)
 				    "",
 				    img_printer_wait, NULL, NULL,
 				    SND_NEGATIVE);
+                if (old_tool == TOOL_TEXT)
+	          do_render_cur_text(0);
 	      }
 
 	      cur_tool = old_tool;
@@ -2278,7 +2302,7 @@ static void mainloop(void)
 	    }
 	    else if (cur_tool == TOOL_QUIT)
 	    {
-	      done = do_quit();
+	      done = do_quit(old_tool);
 	      cur_tool = old_tool;
 	      draw_toolbar();
 	      update_screen_rect(&r_tools);
@@ -11774,7 +11798,7 @@ static int rotation(int ctr_x, int ctr_y, int ox, int oy)
 
 /* Save the current image: */
 
-static int do_save(void)
+static int do_save(int tool)
 {
   int res;
   char *fname;
@@ -11814,6 +11838,8 @@ static int do_save(void)
 
 	get_new_file_id();
       }
+      if (tool == TOOL_TEXT)
+        do_render_cur_text(0);
     }
     else
     {
@@ -12266,7 +12292,7 @@ static void get_new_file_id(void)
 
 /* Handle quitting (and prompting to save, if necessary!) */
 
-static int do_quit(void)
+static int do_quit(int tool)
 {
   int done;
 
@@ -12278,7 +12304,7 @@ static int do_quit(void)
     if (do_prompt(PROMPT_QUIT_SAVE_TXT,
 		  PROMPT_QUIT_SAVE_YES, PROMPT_QUIT_SAVE_NO))
     {
-      if (do_save())
+      if (do_save(tool))
       {
 	do_prompt(tool_tips[TOOL_SAVE], "OK", "");
       }
@@ -12289,6 +12315,11 @@ static int do_quit(void)
 	done = 0;
       }
     }
+  }
+  else
+  {
+    if (tool == TOOL_TEXT)
+      do_render_cur_text(0);
   }
 
   return (done);
@@ -12306,7 +12337,7 @@ static int do_quit(void)
 
 /* FIXME: This, and do_slideshow(), should be combined and modularized! */
 
-void do_open(void)
+int do_open(void)
 {
   SDL_Surface *img, *img1, *img2;
   int things_alloced;
@@ -12330,6 +12361,9 @@ void do_open(void)
   Uint32 last_click_time;
   int last_click_which, last_click_button;
   int places_to_look;
+  int opened_something;
+
+  opened_something = 0;
 
   do
   {
@@ -13312,7 +13346,7 @@ void do_open(void)
                   img_tools[TOOL_SAVE], NULL, NULL,
                   SND_AREYOUSURE))
             {
-              do_save();
+              do_save(TOOL_OPEN);
             }
           }
 
@@ -13406,6 +13440,8 @@ void do_open(void)
 
             tool_avail_bak[TOOL_UNDO] = 0;
             tool_avail_bak[TOOL_REDO] = 0;
+
+            opened_something = 1;
           }
         }
       }
@@ -13441,6 +13477,8 @@ void do_open(void)
     }
   }
   while (slideshow);
+
+  return(opened_something);
 }
 
 

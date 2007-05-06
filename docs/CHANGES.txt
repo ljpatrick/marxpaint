@@ -16,6 +16,7 @@ $Id$
     * Input Method Framework, with implementations of Korean (Hangul 2-Bul)
       and Japanese (Romanized Hiragana and Romanized Katakana) input methods.
       (Should be extensible to other languages.)
+      (Addresses SourceForge Bug #1070414)
       Mark K. Kim <mkkim214@gmail.com>
 
     * Stamps now supports SVG vector-based graphics!  (Via Cairo library)
@@ -27,6 +28,7 @@ $Id$
 
     * Stamps now shown in groups.
       FIXME: Finish!
+      (Addresses SourceForge Feature Request #1070394)
 
     * Bilinear interpolation (smoothing) is done to small bitmap (PNG)
       stamps when they are scaled up.
@@ -76,6 +78,14 @@ $Id$
   * Bug Fixes:
     ----------
     * Tux the Penguin sound effects were not working; fixed.
+
+    * Text tool's text would be applied to canvas when clicking any tool
+      buttons.  Fixed so that it is not applied when tool changes aren't
+      happening (e.g., Print, Quit, Open, Save).
+
+    * Text tool's text would disappear until you click or type,
+      after a dialog has been dismissed.  Fixed.
+      (Addresses SourceForge.net Bug #1698855)
 
     * No longer disabling screensaver (if the system's libSDL supports
       it via "SDL_ALLOWSCREENSAVER" environment variable).
