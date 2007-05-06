@@ -25,7 +25,7 @@
 
   $Id$
 
-  June 14, 2002 - April 26, 2007
+  June 14, 2002 - May 6, 2007
 */
 
 #include <stdio.h>
@@ -466,6 +466,7 @@ void show_lang_usage(FILE * f, const char *const prg)
 /* ta */ "  tamil\n"
 /* te */ "  telugu\n"
 /* th */ "  thai\n"
+/* twi */ "  twi\n"
 /* bo */ "  tibetan\n"
 /* tr */ "  turkish\n"
 /* uk */ "  ukrainian\n"
