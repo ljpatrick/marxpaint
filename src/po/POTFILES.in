@@ -3,6 +3,7 @@ colors.h
 dirwalk.c
 fonts.c
 great.h
+im.c
 magic.h
 shapes.h
 titles.h
