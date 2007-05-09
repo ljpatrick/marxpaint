@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-09-10 11:18-0700\n"
+"POT-Creation-Date: 2007-05-09 00:32-0700\n"
 "PO-Revision-Date: 2006-10-11 22:53+0200\n"
 "Last-Translator: Burkhard Lück <lueck@hube-lueck.de>\n"
 "Language-Team: Deutsch <kde-i18n-de@kde.org>\n"
@@ -133,6 +133,18 @@ msgstr "Mach weiter so!"
 msgid "Good job!"
 msgstr "Gute Arbeit!"
 
+msgid "English"
+msgstr ""
+
+msgid "Hiragana"
+msgstr ""
+
+msgid "Katakana"
+msgstr ""
+
+msgid "Hangul"
+msgstr ""
+
 msgid "Fill"
 msgstr "Füllen"
 
@@ -214,8 +226,10 @@ msgstr "Klick und bewege die Maus, um die Farben zu verblassen!"
 msgid "Click and move to darken the colors."
 msgstr "Klick und bewege die Maus, um die Farben abzudunkeln!"
 
-msgid "Click and move the mouse around to turn the picture into a chalk drawing."
-msgstr "Klick und bewege die Maus, um dein Bild in ein Kreidebild zu verwandeln!"
+msgid ""
+"Click and move the mouse around to turn the picture into a chalk drawing."
+msgstr ""
+"Klick und bewege die Maus, um dein Bild in ein Kreidebild zu verwandeln!"
 
 msgid "Click and move the mouse around to make the picture blocky."
 msgstr "Klick und bewege die Maus, um das Bild pixelig zu machen."
@@ -265,7 +279,8 @@ msgstr "Ein Quadrat ist ein Rechteck mit vier gleich langen Seiten."
 msgid "A rectangle has four sides and four right angles."
 msgstr "Ein Rechteck hat vier Seiten und vier rechte Winkel."
 
-msgid "A circle is a curve where all points have the same distance from the centre."
+msgid ""
+"A circle is a curve where all points have the same distance from the centre."
 msgstr ""
 "Ein Kreis ist eine Kurve, auf der alle Punkte den gleichen Abstand vom "
 "Mittelpunkt haben."
@@ -536,4 +551,3 @@ msgstr "Malprogramm"
 
 msgid "Tux Paint"
 msgstr "Tux Paint"
-

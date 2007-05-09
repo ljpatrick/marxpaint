@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint 0.9.15rc1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-09-10 11:18-0700\n"
+"POT-Creation-Date: 2007-05-09 00:32-0700\n"
 "PO-Revision-Date: 2007-02-07 11:38+0100\n"
 "Last-Translator: Andrzej M. Krzysztofowicz <ankry@mif.pg.gda.pl>\n"
 "Language-Team: Polish <translation-team-pl@lists.sourceforge.net>\n"
@@ -129,6 +129,18 @@ msgstr "Tylko tak dalej!"
 
 msgid "Good job!"
 msgstr "Dobra robota!"
+
+msgid "English"
+msgstr ""
+
+msgid "Hiragana"
+msgstr ""
+
+msgid "Katakana"
+msgstr ""
+
+msgid "Hangul"
+msgstr ""
 
 msgid "Fill"
 msgstr "Wypełnij"
@@ -536,80 +548,80 @@ msgstr "Program do rysowania"
 msgid "Tux Paint"
 msgstr "Tux Paint"
 
-msgid "Starting a new picture will erase the current one!"
-msgstr "Rozpoczęcie nowego obrazka spowoduje usunięcie bieżącego!"
+#~ msgid "Starting a new picture will erase the current one!"
+#~ msgstr "Rozpoczęcie nowego obrazka spowoduje usunięcie bieżącego!"
 
-msgid "That’s OK!"
-msgstr "OK, w porządku!"
+#~ msgid "That’s OK!"
+#~ msgstr "OK, w porządku!"
 
-msgid "Never mind!"
-msgstr "Nie szkodzi!"
+#~ msgid "Never mind!"
+#~ msgstr "Nie szkodzi!"
 
-msgid "Save over the older version of this picture?"
-msgstr "Czy nadpisać starszą wersję tego obrazka?"
-
-#, fuzzy
-msgid "Green!"
-msgstr "Wspaniale!"
-
-msgid "Fade"
-msgstr "Przenikanie"
-
-msgid "Oval"
-msgstr "Owal"
-
-msgid "Diamond"
-msgstr "Diament"
-
-msgid "A square has four sides, each the same length."
-msgstr "Kwadrat ma cztery boki, każdy o tej samej długości."
-
-msgid "A circle is exactly round."
-msgstr "Koło jest okrągłe."
-
-msgid "A diamond is a square, turned around slightly."
-msgstr "Diament jest trochę przekręconym kwadratem."
+#~ msgid "Save over the older version of this picture?"
+#~ msgstr "Czy nadpisać starszą wersję tego obrazka?"
 
 #, fuzzy
-msgid "Lime!"
-msgstr "Linie"
+#~ msgid "Green!"
+#~ msgstr "Wspaniale!"
+
+#~ msgid "Fade"
+#~ msgstr "Przenikanie"
+
+#~ msgid "Oval"
+#~ msgstr "Owal"
+
+#~ msgid "Diamond"
+#~ msgstr "Diament"
+
+#~ msgid "A square has four sides, each the same length."
+#~ msgstr "Kwadrat ma cztery boki, każdy o tej samej długości."
+
+#~ msgid "A circle is exactly round."
+#~ msgstr "Koło jest okrągłe."
+
+#~ msgid "A diamond is a square, turned around slightly."
+#~ msgstr "Diament jest trochę przekręconym kwadratem."
 
 #, fuzzy
-msgid "Fuchsia!"
-msgstr "Lila!"
+#~ msgid "Lime!"
+#~ msgstr "Linie"
 
 #, fuzzy
-msgid "Silver!"
-msgstr "Srebrny!"
-
-msgid "Thick"
-msgstr "Pogrub"
+#~ msgid "Fuchsia!"
+#~ msgstr "Lila!"
 
 #, fuzzy
-msgid "Click and move the mouse to thicken the picture."
-msgstr "Kliknij i przesuń myszką dookoła, aby zabrudzić obrazek."
+#~ msgid "Silver!"
+#~ msgstr "Srebrny!"
+
+#~ msgid "Thick"
+#~ msgstr "Pogrub"
 
 #, fuzzy
-msgid "Click and move the mouse to thin the picture."
-msgstr "Kliknij i przesuń myszką dookoła, aby rozmazać obrazek."
-
-msgid "Okay"
-msgstr "OK"
+#~ msgid "Click and move the mouse to thicken the picture."
+#~ msgstr "Kliknij i przesuń myszką dookoła, aby zabrudzić obrazek."
 
 #, fuzzy
-msgid "Red"
-msgstr "Czerwony!"
+#~ msgid "Click and move the mouse to thin the picture."
+#~ msgstr "Kliknij i przesuń myszką dookoła, aby rozmazać obrazek."
+
+#~ msgid "Okay"
+#~ msgstr "OK"
 
 #, fuzzy
-msgid "Grey"
-msgstr "Wspaniale!"
+#~ msgid "Red"
+#~ msgstr "Czerwony!"
 
-msgid ""
-"Pick a shape to draw.  Click once to pick the center of the shape, click "
-"again to draw it."
-msgstr ""
-"Wybierz kształt do narysowania. Kliknij raz wewnątrz kształtu, kliknij "
-"ponownie aby go narysować."
+#, fuzzy
+#~ msgid "Grey"
+#~ msgstr "Wspaniale!"
+
+#~ msgid ""
+#~ "Pick a shape to draw.  Click once to pick the center of the shape, click "
+#~ "again to draw it."
+#~ msgstr ""
+#~ "Wybierz kształt do narysowania. Kliknij raz wewnątrz kształtu, kliknij "
+#~ "ponownie aby go narysować."
 
 #~ msgid "jq"
 #~ msgstr "jq"

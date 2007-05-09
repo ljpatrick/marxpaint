@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-09-10 11:18-0700\n"
+"POT-Creation-Date: 2007-05-09 00:32-0700\n"
 "PO-Revision-Date: 2006-03-27 05:57+0300\n"
 "Last-Translator: kash <alholan@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -137,6 +137,18 @@ msgstr "!جيد للأمام"
 
 msgid "Good job!"
 msgstr "!أحسنت"
+
+msgid "English"
+msgstr ""
+
+msgid "Hiragana"
+msgstr ""
+
+msgid "Katakana"
+msgstr ""
+
+msgid "Hangul"
+msgstr ""
 
 msgid "Fill"
 msgstr "تعبئة"

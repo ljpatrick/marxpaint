@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pt_br\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-09-10 11:18-0700\n"
+"POT-Creation-Date: 2007-05-09 00:32-0700\n"
 "PO-Revision-Date: 2006-02-03 21:59-0300\n"
 "Last-Translator: Fred Ulisses Maranhao <fred_maranhao@yahoo.com.br>\n"
 "Language-Team: Brazilian Portuguese <pt@li.org>\n"
@@ -131,6 +131,18 @@ msgstr "Continue assim!"
 
 msgid "Good job!"
 msgstr "Bom Trabalho!"
+
+msgid "English"
+msgstr ""
+
+msgid "Hiragana"
+msgstr ""
+
+msgid "Katakana"
+msgstr ""
+
+msgid "Hangul"
+msgstr ""
 
 msgid "Fill"
 msgstr "Preencher"

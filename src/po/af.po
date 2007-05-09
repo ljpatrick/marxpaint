@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint 0.9.16\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-09-10 11:18-0700\n"
+"POT-Creation-Date: 2007-05-09 00:32-0700\n"
 "PO-Revision-Date: 2006-09-28 09:04+0200\n"
 "Last-Translator: Petri Jooste <rkwjpj@puk.ac.za>\n"
 "Language-Team: Afrikaans <rkwjpj@puk.ac.za>\n"
@@ -131,6 +131,18 @@ msgstr "Hou so aan!"
 msgid "Good job!"
 msgstr "Mooi so!"
 
+msgid "English"
+msgstr ""
+
+msgid "Hiragana"
+msgstr ""
+
+msgid "Katakana"
+msgstr ""
+
+msgid "Hangul"
+msgstr ""
+
 msgid "Fill"
 msgstr "Vul"
 
@@ -212,8 +224,10 @@ msgstr "Klik en beweeg om die kleure te verdof"
 msgid "Click and move to darken the colors."
 msgstr "Klik en beweeg om die kleure donkerder te maak."
 
-msgid "Click and move the mouse around to turn the picture into a chalk drawing."
-msgstr "Klik en beweeg die muis om die prent te verander na 'n bordkryt-tekening."
+msgid ""
+"Click and move the mouse around to turn the picture into a chalk drawing."
+msgstr ""
+"Klik en beweeg die muis om die prent te verander na 'n bordkryt-tekening."
 
 msgid "Click and move the mouse around to make the picture blocky."
 msgstr "Klik en beweeg die muis om die prent blokkerig te maak."
@@ -263,8 +277,11 @@ msgstr "'n Vierkant is 'n reghoek met vier ewe lang kante."
 msgid "A rectangle has four sides and four right angles."
 msgstr "'n Reghoek het vier kante en vier regte hoeke."
 
-msgid "A circle is a curve where all points have the same distance from the centre."
-msgstr "'n Sirkel is 'n kromme waar al die punte dieselfde afstand van die middel af is."
+msgid ""
+"A circle is a curve where all points have the same distance from the centre."
+msgstr ""
+"'n Sirkel is 'n kromme waar al die punte dieselfde afstand van die middel af "
+"is."
 
 msgid "An ellipse is a stretched circle."
 msgstr "'n Ellips is 'n uitgerekte sirkel."
@@ -346,10 +363,16 @@ msgid "Pick a picture to stamp around your drawing."
 msgstr "Kies 'n prentjie om as 'n stempel te gebruik op jou tekening."
 
 msgid "Click to start drawing a line. Let go to complete it."
-msgstr "Klik-en-hou om 'n lyn te begin teken en laat los om die lyn te voltooi."
+msgstr ""
+"Klik-en-hou om 'n lyn te begin teken en laat los om die lyn te voltooi."
 
-msgid "Pick a shape. Click to pick the center, drag, then let go when it is the size you want. Move around to rotate it, and click to draw it."
-msgstr "Kies 'n vorm. Klik op die plek waar die middelpunt moet kom en sleep die rand tot die grootte wat jy wil hê.  Beweeg rond om dit te draai en klik daarop om dit vas te teken."
+msgid ""
+"Pick a shape. Click to pick the center, drag, then let go when it is the "
+"size you want. Move around to rotate it, and click to draw it."
+msgstr ""
+"Kies 'n vorm. Klik op die plek waar die middelpunt moet kom en sleep die "
+"rand tot die grootte wat jy wil hê.  Beweeg rond om dit te draai en klik "
+"daarop om dit vas te teken."
 
 msgid "Choose a style of text. Click on your drawing and you can start typing."
 msgstr "Kies 'n styl vir die teks. Klik op jou prent en begin tik."
@@ -524,14 +547,18 @@ msgstr "Tux Verf"
 
 #~ msgid "Starting a new picture will erase the current one!"
 #~ msgstr "As jy 'n nuwe prent begin word hierdie een uitgevee!"
+
 #~ msgid "That’s OK!"
 #~ msgstr "Dis goed so."
+
 #~ msgid "Never mind!"
 #~ msgstr "Toemaar!"
+
 #~ msgid "jq"
 #~ msgstr "jq"
+
 #~ msgid "JQ"
 #~ msgstr "JQ"
+
 #~ msgid "Save over the older version of this picture?"
 #~ msgstr "Moet dit die ouer weergawe van hierdie prent vervang?"
-

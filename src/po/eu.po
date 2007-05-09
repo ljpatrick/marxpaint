@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TuxPaint \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-09-10 11:18-0700\n"
+"POT-Creation-Date: 2007-05-09 00:32-0700\n"
 "PO-Revision-Date: 2006-11-30 16:30+0200\n"
 "Last-Translator: Juan Irigoien <juanirigoien@gmail.com>\n"
 "Language-Team: basque <juanirigoien@gmail.com>\n"
@@ -128,6 +128,18 @@ msgstr "Ekin horrela!"
 msgid "Good job!"
 msgstr "Zein ondo ari zaren!"
 
+msgid "English"
+msgstr ""
+
+msgid "Hiragana"
+msgstr ""
+
+msgid "Katakana"
+msgstr ""
+
+msgid "Hangul"
+msgstr ""
+
 msgid "Fill"
 msgstr "Bete"
 
@@ -228,8 +240,7 @@ msgid "Click and move the mouse around to make the picture drip."
 msgstr "Klik egin eta mugi ezazu sagua irudiari busti itxura emateko!"
 
 msgid "Click and move the mouse around to turn the picture into a cartoon."
-msgstr ""
-"Klik egin eta mugi ezazu sagua irudia biñeta bihurtzeko."
+msgstr "Klik egin eta mugi ezazu sagua irudia biñeta bihurtzeko."
 
 msgid "Click to make a mirror image."
 msgstr "Egin klik irudiaren isla sortzeko!"
@@ -278,7 +289,9 @@ msgid "A pentagon has five sides."
 msgstr "Pentagonoak bost alde ditu."
 
 msgid "A rhombus has four equal sides, and opposite sides are parallel."
-msgstr "Erronboaren lau ertzak berdinak dira, eta aurrez aurre dauden alderdiak paraleloak dira"
+msgstr ""
+"Erronboaren lau ertzak berdinak dira, eta aurrez aurre dauden alderdiak "
+"paraleloak dira"
 
 msgid "Tools"
 msgstr "Tresnak"
@@ -355,8 +368,7 @@ msgid ""
 "size you want. Move around to rotate it, and click to draw it."
 msgstr ""
 "Aukeratu eskuman irudia. Egin klik erdia markatzeko, arrastatu, eta, nahi "
-"duzun tamainua duenean, askatu. Mugitu biratzeko eta klikatu "
-"marrazteko."
+"duzun tamainua duenean, askatu. Mugitu biratzeko eta klikatu marrazteko."
 
 msgid "Choose a style of text. Click on your drawing and you can start typing."
 msgstr ""
@@ -520,8 +532,7 @@ msgstr ""
 
 #. Let user choose images:
 msgid "Choose the pictures you want, then click “Play”."
-msgstr ""
-"Aukera ezazu ireki nahi duzun irudia. Ondoren klik egin ‘Hasi’ botoian"
+msgstr "Aukera ezazu ireki nahi duzun irudia. Ondoren klik egin ‘Hasi’ botoian"
 
 msgid "A drawing program for children."
 msgstr "Umeentzako marrazketa programa"

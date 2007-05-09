@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TuxPaint\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-09-10 11:18-0700\n"
+"POT-Creation-Date: 2007-05-09 00:32-0700\n"
 "PO-Revision-Date: 2007-04-04 20:05+0300\n"
 "Last-Translator: Сергей Попов <skein@rambler.ru>\n"
 "Language-Team: Dmitriy Ivanov <ace22b@myrealbox.com>\n"
@@ -129,6 +129,18 @@ msgstr "Так и продолжай!"
 msgid "Good job!"
 msgstr "Хорошая работа!"
 
+msgid "English"
+msgstr ""
+
+msgid "Hiragana"
+msgstr ""
+
+msgid "Katakana"
+msgstr ""
+
+msgid "Hangul"
+msgstr ""
+
 msgid "Fill"
 msgstr "Заполнить"
 
@@ -184,7 +196,9 @@ msgid "Click in the picture to fill that area with color."
 msgstr "Щёлкните, чтобы заполнить эту область цветом."
 
 msgid "Click and move to draw grass. Don’t forget the dirt!"
-msgstr "Щёлкните и поводите по картинке, чтобы нарисовать траву. Не забудьте про грязь!"
+msgstr ""
+"Щёлкните и поводите по картинке, чтобы нарисовать траву. Не забудьте про "
+"грязь!"
 
 msgid "Click and move to draw large bricks."
 msgstr "Щёлкните и поводите по картинке, чтобы нарисовать большие кирпичи."
@@ -210,8 +224,10 @@ msgstr "Щёлкните и поводите по картинке, чтобы �
 msgid "Click and move to darken the colors."
 msgstr "Щёлкните и поводите по картинке, чтобы сделать её часть более тёмной."
 
-msgid "Click and move the mouse around to turn the picture into a chalk drawing."
-msgstr "Щёлкните и поводите по картинке, чтобы превратить её часть в рисунок мелом."
+msgid ""
+"Click and move the mouse around to turn the picture into a chalk drawing."
+msgstr ""
+"Щёлкните и поводите по картинке, чтобы превратить её часть в рисунок мелом."
 
 msgid "Click and move the mouse around to make the picture blocky."
 msgstr "Щёлкните и поводите по картинке, чтобы превратить её часть в мозаику."
@@ -226,7 +242,8 @@ msgid "Click and move the mouse around to make the picture drip."
 msgstr "Щёлкните и поводите по картинке, чтобы заставьте её капать."
 
 msgid "Click and move the mouse around to turn the picture into a cartoon."
-msgstr "Щёлкните и поводите по картинке, чтобы превратить её часть в мультфильм."
+msgstr ""
+"Щёлкните и поводите по картинке, чтобы превратить её часть в мультфильм."
 
 msgid "Click to make a mirror image."
 msgstr "Щёлкните на картинку, чтобы превратить её в зеркальное отражение."
@@ -261,8 +278,11 @@ msgstr "Квадрат - прямоугольник с четырьмя равн
 msgid "A rectangle has four sides and four right angles."
 msgstr "У прямоугольника четыре стороны и четыре прямых угла."
 
-msgid "A circle is a curve where all points have the same distance from the centre."
-msgstr "Окружность - это кривая, все точки которой удалены на равное расстояние от центра."
+msgid ""
+"A circle is a curve where all points have the same distance from the centre."
+msgstr ""
+"Окружность - это кривая, все точки которой удалены на равное расстояние от "
+"центра."
 
 msgid "An ellipse is a stretched circle."
 msgstr "Эллипс - это вытянутая окружность."
@@ -274,7 +294,8 @@ msgid "A pentagon has five sides."
 msgstr "А у пятиугольника пять сторон (и углов!)"
 
 msgid "A rhombus has four equal sides, and opposite sides are parallel."
-msgstr "У ромба все четыре стороны равны и противоположные стороны параллельны."
+msgstr ""
+"У ромба все четыре стороны равны и противоположные стороны параллельны."
 
 msgid "Tools"
 msgstr "Инструменты"
@@ -344,10 +365,15 @@ msgid "Pick a picture to stamp around your drawing."
 msgstr "Выберите картину, чтобы поставить печать на вашем рисунке."
 
 msgid "Click to start drawing a line. Let go to complete it."
-msgstr "Щёлкните, чтобы начать рисовать линию. Отпустите кнопку, чтобы закончить."
+msgstr ""
+"Щёлкните, чтобы начать рисовать линию. Отпустите кнопку, чтобы закончить."
 
-msgid "Pick a shape. Click to pick the center, drag, then let go when it is the size you want. Move around to rotate it, and click to draw it."
-msgstr "Выберите форму. Щёлкните для выбора центра, растяните до нужного размера, отпустите. Покрутите форму, затем щёлкните, чтобы нарисовать её."
+msgid ""
+"Pick a shape. Click to pick the center, drag, then let go when it is the "
+"size you want. Move around to rotate it, and click to draw it."
+msgstr ""
+"Выберите форму. Щёлкните для выбора центра, растяните до нужного размера, "
+"отпустите. Покрутите форму, затем щёлкните, чтобы нарисовать её."
 
 msgid "Choose a style of text. Click on your drawing and you can start typing."
 msgstr "Выберите стиль текста. Щёлкните на вашем рисунке, и печатайте."
@@ -522,30 +548,42 @@ msgstr "Рисуй вместе с Tux!"
 
 #~ msgid "Starting a new picture will erase the current one!"
 #~ msgstr "Начиная новую картинку вы уничтожите текущую!"
+
 #~ msgid "That’s OK!"
 #~ msgstr "Хорошо!"
+
 #~ msgid "Never mind!"
 #~ msgstr "Нет!"
+
 #~ msgid "Save over the older version of this picture?"
 #~ msgstr "Сохранить поверх старой версии этой картинки?"
+
 #~ msgid "Dark Gray!"
 #~ msgstr "Тёмно-серый!"
+
 #~ msgid "Neon green!"
 #~ msgstr "Ярко-зеленый!"
+
 #~ msgid "Green!"
 #~ msgstr "Зелёный!"
+
 #~ msgid "Magenta!"
 #~ msgstr "Ярко-красный!"
+
 #~ msgid "Fade"
 #~ msgstr "Исчезновение"
+
 #~ msgid "Oval"
 #~ msgstr "Овал"
+
 #~ msgid "Diamond"
 #~ msgstr "Ромб"
+
 #~ msgid "A square has four sides, each the same length."
 #~ msgstr "У квадрата четыре стороны, все одной длины."
+
 #~ msgid "A circle is exactly round."
 #~ msgstr "А круг совершенно круглый :)"
+
 #~ msgid "A diamond is a square, turned around slightly."
 #~ msgstr "Ромб похож на квадрат, но с другими углами."
-

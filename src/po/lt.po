@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Tuxpaint 0.9.9\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-09-10 11:18-0700\n"
+"POT-Creation-Date: 2007-05-09 00:32-0700\n"
 "PO-Revision-Date: 2004-12-10 18:11+0200\n"
 "Last-Translator: Gintaras Goštautas <gintaras@nes.lt>\n"
 "Language-Team: Lithuanian <komp_lt@konf.lt>\n"
@@ -131,6 +131,18 @@ msgstr "Tęsk taip ir toliau!"
 
 msgid "Good job!"
 msgstr "Šauniai padirbėta!"
+
+msgid "English"
+msgstr ""
+
+msgid "Hiragana"
+msgstr ""
+
+msgid "Katakana"
+msgstr ""
+
+msgid "Hangul"
+msgstr ""
 
 msgid "Fill"
 msgstr "Užpildymas"
@@ -267,7 +279,9 @@ msgstr "Stačiakampis turi keturias kraštines ir keturis lygius kampus."
 
 msgid ""
 "A circle is a curve where all points have the same distance from the centre."
-msgstr "Apskritimas yra kreivė, kurios visi taškai nuo centro yra nutolę lygiu atstumu."
+msgstr ""
+"Apskritimas yra kreivė, kurios visi taškai nuo centro yra nutolę lygiu "
+"atstumu."
 
 msgid "An ellipse is a stretched circle."
 msgstr ""
@@ -279,7 +293,9 @@ msgid "A pentagon has five sides."
 msgstr "Penkiakampis turi penkias kraštines."
 
 msgid "A rhombus has four equal sides, and opposite sides are parallel."
-msgstr "Rombas turi keturias lygias kraštines, o viena prieš kitą esančios kraštinės yra lygiagrečios."
+msgstr ""
+"Rombas turi keturias lygias kraštines, o viena prieš kitą esančios kraštinės "
+"yra lygiagrečios."
 
 msgid "Tools"
 msgstr "Įrankiai"
@@ -441,7 +457,6 @@ msgstr "Gerai"
 #. This will be replaced with a dialog allowing color choice and Starter
 #. picking, with a "Back" option to dismiss the "New" and return to
 #. the current picture.  But for now...  (bjk 2006.02.19)
-
 msgid "Start a new picture?"
 msgstr "Ar pradėsite naują piešinį?"
 

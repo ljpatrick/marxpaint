@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-09-10 11:18-0700\n"
+"POT-Creation-Date: 2007-05-09 00:32-0700\n"
 "PO-Revision-Date: 2007-03-15 17:27+0530\n"
 "Last-Translator: pavithran <pavithran.s@gmail.com>\n"
 "Language-Team: Telugu <indlinux-telugu@lists.sourceforge.net>\n"
@@ -130,6 +130,18 @@ msgstr ""
 msgid "Good job!"
 msgstr "మంచి పని"
 
+msgid "English"
+msgstr ""
+
+msgid "Hiragana"
+msgstr ""
+
+msgid "Katakana"
+msgstr ""
+
+msgid "Hangul"
+msgstr ""
+
 msgid "Fill"
 msgstr "నింపు"
 
@@ -211,7 +223,8 @@ msgstr "రంగుల  వాడిపోవటానికి క్లిక
 msgid "Click and move to darken the colors."
 msgstr ""
 
-msgid "Click and move the mouse around to turn the picture into a chalk drawing."
+msgid ""
+"Click and move the mouse around to turn the picture into a chalk drawing."
 msgstr ""
 
 msgid "Click and move the mouse around to make the picture blocky."
@@ -262,7 +275,8 @@ msgstr "దీర్ఘ  చతురస్రము కి నాలుగు �
 msgid "A rectangle has four sides and four right angles."
 msgstr ""
 
-msgid "A circle is a curve where all points have the same distance from the centre."
+msgid ""
+"A circle is a curve where all points have the same distance from the centre."
 msgstr ""
 
 msgid "An ellipse is a stretched circle."
@@ -522,4 +536,3 @@ msgstr "బొమ్మలు గీసె ప్రొగ్రామ్"
 
 msgid "Tux Paint"
 msgstr "టక్స పెయింట్"
-

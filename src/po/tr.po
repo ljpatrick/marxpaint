@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-09-10 11:18-0700\n"
+"POT-Creation-Date: 2007-05-09 00:32-0700\n"
 "PO-Revision-Date: 2006-10-11 23:27+0300\n"
 "Last-Translator: Doruk Fisek <dfisek@fisek.com.tr>\n"
 "Language-Team: Turkish <gnu-tr-u12a@lists.sourceforge.net>\n"
@@ -129,6 +129,18 @@ msgstr "Devam et!"
 msgid "Good job!"
 msgstr "İyi iş çıkardın!"
 
+msgid "English"
+msgstr ""
+
+msgid "Hiragana"
+msgstr ""
+
+msgid "Katakana"
+msgstr ""
+
+msgid "Hangul"
+msgstr ""
+
 msgid "Fill"
 msgstr "Doldur"
 
@@ -210,8 +222,10 @@ msgstr "Renklerin solması için tıkla ve fareyi hareket ettir."
 msgid "Click and move to darken the colors."
 msgstr "Renkleri koyulaştırmak için tıkla ve fareyi hareket ettir."
 
-msgid "Click and move the mouse around to turn the picture into a chalk drawing."
-msgstr "Resmi bir tebeşir çizimine çevirmek için tıkla ve fareyi etrafta gezdir."
+msgid ""
+"Click and move the mouse around to turn the picture into a chalk drawing."
+msgstr ""
+"Resmi bir tebeşir çizimine çevirmek için tıkla ve fareyi etrafta gezdir."
 
 msgid "Click and move the mouse around to make the picture blocky."
 msgstr "Resmi tıknaz hale getirmek için tıkla ve fareyi etrafta gezdir."
@@ -261,7 +275,8 @@ msgstr "Bir kare dört eşit kenarı olan bir dikdörtgendir."
 msgid "A rectangle has four sides and four right angles."
 msgstr "Bir dikdörtgenin dört kenarı ve dört dik açısı vardır."
 
-msgid "A circle is a curve where all points have the same distance from the centre."
+msgid ""
+"A circle is a curve where all points have the same distance from the centre."
 msgstr "Bir çember tüm noktalarının merkeze eşit uzaklıkta olduğu bir eğridir."
 
 msgid "An ellipse is a stretched circle."
@@ -274,7 +289,9 @@ msgid "A pentagon has five sides."
 msgstr "Bir beşgenin beş kenarı vardır."
 
 msgid "A rhombus has four equal sides, and opposite sides are parallel."
-msgstr "Bir eşkenar dörtgenin dört eşit kenarı vardır ve karşılıklı kenarları paraleldir."
+msgstr ""
+"Bir eşkenar dörtgenin dört eşit kenarı vardır ve karşılıklı kenarları "
+"paraleldir."
 
 msgid "Tools"
 msgstr "Araçlar"
@@ -344,7 +361,8 @@ msgid "Pick a picture to stamp around your drawing."
 msgstr "Çiziminin etrafına damga basmak için bir resim seç."
 
 msgid "Click to start drawing a line. Let go to complete it."
-msgstr "Bir doğru çizmeye başlamak için tıkla. Tamamlamak için farenin tuşunu bırak."
+msgstr ""
+"Bir doğru çizmeye başlamak için tıkla. Tamamlamak için farenin tuşunu bırak."
 
 msgid ""
 "Pick a shape. Click to pick the center, drag, then let go when it is the "
@@ -355,7 +373,8 @@ msgstr ""
 "ve çizmek için tıkla."
 
 msgid "Choose a style of text. Click on your drawing and you can start typing."
-msgstr "Bir yazı stili seç. Çiziminin üzerine tıkla ve yazmaya başlayabilirsin."
+msgstr ""
+"Bir yazı stili seç. Çiziminin üzerine tıkla ve yazmaya başlayabilirsin."
 
 msgid "Pick a magical effect to use on your drawing!"
 msgstr "Çiziminde kullanmak için bir büyülü efekt seç!"
@@ -524,4 +543,3 @@ msgstr "Çizim programı"
 
 msgid "Tux Paint"
 msgstr "Tux Boyama"
-

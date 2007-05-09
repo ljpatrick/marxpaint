@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: sv\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-09-10 11:18-0700\n"
+"POT-Creation-Date: 2007-05-09 00:32-0700\n"
 "PO-Revision-Date: 2006-09-25 22:08+0200\n"
 "Last-Translator: Robin Rosenberg <robin.rosenberg@dewire.com>\n"
 "Language-Team: Swedish <tp-sv@listor.tp-sv.se>\n"
@@ -131,6 +131,18 @@ msgstr "Fortsätt så!"
 msgid "Good job!"
 msgstr "Bra jobbat!"
 
+msgid "English"
+msgstr ""
+
+msgid "Hiragana"
+msgstr ""
+
+msgid "Katakana"
+msgstr ""
+
+msgid "Hangul"
+msgstr ""
+
 msgid "Fill"
 msgstr "Fyll"
 
@@ -212,7 +224,8 @@ msgstr "Klicka och rör musen runt för att bleka färgerna."
 msgid "Click and move to darken the colors."
 msgstr "Klicka och rör musen runt för att göra färgerna mörkare."
 
-msgid "Click and move the mouse around to turn the picture into a chalk drawing."
+msgid ""
+"Click and move the mouse around to turn the picture into a chalk drawing."
 msgstr "Klicka och rör musen runt för att omvandla bilden till kritteckning."
 
 msgid "Click and move the mouse around to make the picture blocky."
@@ -228,7 +241,8 @@ msgid "Click and move the mouse around to make the picture drip."
 msgstr "Klicka och rör musen runt för att göra så att bilden droppig."
 
 msgid "Click and move the mouse around to turn the picture into a cartoon."
-msgstr "Klicka och rör musen runt för att omvandla bilden till en serieteckning!"
+msgstr ""
+"Klicka och rör musen runt för att omvandla bilden till en serieteckning!"
 
 msgid "Click to make a mirror image."
 msgstr "Klicka för att skapa en spegelbild."
@@ -263,7 +277,8 @@ msgstr "En kvadrat är en rektangel med fyra lika sidor."
 msgid "A rectangle has four sides and four right angles."
 msgstr "En rektangel har fyra sidor och fyra räta vinklar."
 
-msgid "A circle is a curve where all points have the same distance from the centre."
+msgid ""
+"A circle is a curve where all points have the same distance from the centre."
 msgstr "En cirkel är en kurva där alla punkter har samma avstånd till centrum."
 
 msgid "An ellipse is a stretched circle."
@@ -526,4 +541,3 @@ msgstr "Ritprogram"
 
 msgid "Tux Paint"
 msgstr "Tux Paint"
-
