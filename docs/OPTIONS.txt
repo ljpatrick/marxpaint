@@ -9,7 +9,7 @@
                            bill@newbreedsoftware.com
                             http://www.tuxpaint.org/
 
-                                  May 6, 2007
+                                  May 14, 2007
 
    --------------------------------------------------------------------------
 
@@ -71,6 +71,10 @@ Windows Users
      fullscreen=yes
              Run the program in full screen mode, rather than in a window.
 
+     fullscreen=native
+             Run the program in full screen mode. Additionally, assume the
+             screen's current resolution (set by the operating system).
+
      windowsize=SIZE
 
              Run the program at a different size (in windowed mode) or at a
@@ -88,6 +92,12 @@ Windows Users
                 * 1024x768
                 * 768x1024
                 * 1600x1200
+
+     native=yes
+
+             When running Tux Paint in fullscreen mode, this assumes the
+             screen's current resolution (overriding any "windowsize"
+             option), as set by the operating system.
 
      nosound=yes
              Disable sound effects. (Note: Pressing [Alt] + [S] cannot be
@@ -528,6 +538,7 @@ Windows Users
 
        --fullscreen
        --WIDTHxHEIGHT
+       --native
        --startblank
        --nosound
        --noquit

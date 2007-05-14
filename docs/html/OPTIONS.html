@@ -23,7 +23,7 @@ New Breed Software</p>
 <a href="http://www.tuxpaint.org/">http://www.tuxpaint.org/</a></p>
 
 
-<p>May 6, 2007</p>
+<p>May 14, 2007</p>
 
 
 </center>
@@ -105,6 +105,12 @@ New Breed Software</p>
     Run the program in full screen mode, rather than in a window.
   </dd>
 
+  <dt><code><b>fullscreen=native</b></code></dt>
+  <dd>
+    Run the program in full screen mode. Additionally, assume the
+    screen's current resolution (set by the operating system).
+  </dd>
+
   <dt><code><b>windowsize=<i>SIZE</i></b></code></dt>
   <dd>
     <p>Run the program at a different size (in windowed mode) or
@@ -123,6 +129,13 @@ New Breed Software</p>
     <li>1600x1200
     </ul>
     </p>
+  </dd>
+
+  <dt><code><b>native=yes</b></code></dt>
+  <dd>
+    <p>When running <i>Tux&nbsp;Paint</i> in fullscreen mode, this
+    assumes the screen's current resolution (overriding any
+    "<code>windowsize</code>" option), as set by the operating system.
   </dd>
 
   <dt><code><b>nosound=yes</b></code></dt>
@@ -841,6 +854,7 @@ New Breed Software</p>
     <dt><code><b>
     --fullscreen<br>
     --<i>WIDTH</i>x<i>HEIGHT</i><br>
+    --native<br>
     --startblank<br>
     --nosound<br>
     --noquit<br>

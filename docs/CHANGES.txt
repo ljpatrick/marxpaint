@@ -9,7 +9,7 @@ http://www.newbreedsoftware.com/tuxpaint/
 $Id$
 
 
-2007.May.3 (0.9.17)
+2007.May.14 (0.9.17)
 
   * Tool Improvements:
     ------------------
@@ -54,6 +54,12 @@ $Id$
       + Star
       + Triangle (up and down)
 
+  * System-related improvements:
+    ----------------------------
+    * When running in fullscreen mode, you may now ask Tux Paint to display
+      at the screen's (more precisely, the operating system's) current
+      resolution.  Either use both "fullscreen=yes" and "native=yes" in the
+      config file, or "--fullscreen --native" on the command-line.
 
   * Documentation Improvements:
     ---------------------------

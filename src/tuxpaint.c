@@ -22,7 +22,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
   
-  June 14, 2002 - May 10, 2007
+  June 14, 2002 - May 14, 2007
   $Id$
 */
 
@@ -799,7 +799,7 @@ static void update_canvas(int x1, int y1, int x2, int y2)
 
 /* Globals: */
 
-static int fullscreen, disable_quit, simple_shapes,
+static int fullscreen, native_screensize, disable_quit, simple_shapes,
   disable_print, print_delay, only_uppercase, promptless_save, grab_input,
   wheely, keymouse, mouse_x, mouse_y,
   mousekey_up, mousekey_down, mousekey_left, mousekey_right,
@@ -5311,8 +5311,7 @@ static void show_usage(FILE * f, char *prg)
 	  "Usage: %s {--usage | --help | --version | --copying}\n"
 	  "\n"
 	  "  %s [--windowed | --fullscreen]\n"
-	  "  %s [--640x480   | --800x600   | --1024x768 |\n"
-	  "  %s  --1280x1024 | --1400x1050 | --1600x1200]\n"
+	  "  %s [--WIDTHxHEIGHT | --native]\n"
 	  "  %s [--startblank | --startlast ]\n"
 	  "  %s [--sound | --nosound]         [--quit | --noquit]\n"
 	  "  %s [--print | --noprint]         [--complexshapes | --simpleshapes]\n"
@@ -5339,7 +5338,7 @@ static void show_usage(FILE * f, char *prg)
 	  prg, prg,
 	  blank, blank, blank,
 	  blank, blank, blank,
-	  blank, blank, blank, blank, blank, blank, blank, blank, blank,
+	  blank, blank, blank, blank, blank, blank, blank, blank,
 #ifdef WIN32
 	  blank,
 #endif
@@ -6047,6 +6046,7 @@ static void setup(int argc, char *argv[])
 #else
   fullscreen = 0;
 #endif
+  native_screensize = 0;
   noshortcuts = 0;
   dont_do_xor = 0;
   keymouse = 0;
@@ -6272,6 +6272,10 @@ static void setup(int argc, char *argv[])
       }
       WINDOW_WIDTH = w;
       WINDOW_HEIGHT = h;
+    }
+    else if (strcmp(argv[i], "--native") == 0)
+    {
+      native_screensize = 1;
     }
     else if (strcmp(argv[i], "--nooutlines") == 0)
     {
@@ -6872,9 +6876,6 @@ static void setup(int argc, char *argv[])
   }
 
 
-  setup_screen_layout();
-
-
   /* Set window icon and caption: */
 
 #ifndef __APPLE__
@@ -6885,6 +6886,23 @@ static void setup(int argc, char *argv[])
 #ifdef NOKIA_770
   SDL_ShowCursor (SDL_DISABLE);
 #endif
+
+
+  /* Deal with 'native' screen size option */
+
+  if (native_screensize)
+  {
+    if (!fullscreen)
+    {
+      fprintf(stderr, "Warning: Asking for native screensize in a window. Ignoring.\n");
+    }
+    else
+    {
+      WINDOW_WIDTH = 0;
+      WINDOW_HEIGHT = 0;
+    }
+  }
+
 
   /* Open Window: */
 
@@ -6906,6 +6924,16 @@ static void setup(int argc, char *argv[])
 	      "%s\n\n", SDL_GetError());
 
       fullscreen = 0;
+    }
+    else
+    {
+      /* Get resolution if we asked for native: */
+
+      if (native_screensize)
+      {
+        WINDOW_WIDTH = screen->w;
+        WINDOW_HEIGHT = screen->h;
+      }
     }
   }
 
@@ -6935,6 +6963,11 @@ static void setup(int argc, char *argv[])
     cleanup();
     exit(1);
   }
+
+
+  /* (Need to do this after native screen resolution is handled) */
+
+  setup_screen_layout();
 
 
   ////////// quickly: title image, version, progress bar, and watch cursor
@@ -10196,7 +10229,8 @@ static void strip_trailing_whitespace(char *buf)
 static char *loaddesc(const char *const fname, Uint8 * locale_text)
 {
   char *txt_fname, *extptr;
-  char buf[512], def_buf[512];  // doubled to 512 per TOYAMA Shin-Ichi's requested; -bjk 2007.05.10
+  char buf[512], def_buf[512];  // doubled to 512 per TOYAMA Shin-Ichi's reque
+sted; -bjk 2007.05.10
   int found, got_first;
   FILE *fi;
 
@@ -15242,6 +15276,19 @@ static void parse_options(FILE * fi)
       if (strcmp(str, "fullscreen=yes") == 0)
       {
 	fullscreen = 1;
+      }
+      else if (strcmp(str, "fullscreen=native") == 0)
+      {
+        fullscreen = 1;
+        native_screensize = 1;
+      }
+      else if (strcmp(str, "native=yes") == 0)
+      {
+        native_screensize = 1;
+      }
+      else if (strcmp(str, "native=no") == 0)
+      {
+        native_screensize = 0;
       }
       else if (strcmp(str, "fullscreen=no") == 0 ||
 	       strcmp(str, "windowed=yes") == 0)
