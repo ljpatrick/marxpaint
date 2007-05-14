@@ -1,20 +1,21 @@
+# translation of pl.po to Polish
+# Michal Terbert <michaeel@skrzynka.pl>, 2007.
+# translation of pl.po to
 # Tux Paint Polish messages
-# Copyright (C) 2002-2007 Free Software Foundation, Inc.
-# Arkadiusz Lipiec <alipiec@elka.pw.edu.pl>, 2003
-# Robert Główczyński <robertg@software.com.pl>
-# Andrzej M. Krzysztofowicz <ankry@mif.pg.gda.pl>, 2006-2007
-#
+# Copyright (C) 2002
+# Translators: Arkadiusz Lipiec <alipiec@elka.pw.edu.pl> 2003-01-12
 msgid ""
 msgstr ""
-"Project-Id-Version: tuxpaint 0.9.15rc1\n"
+"Project-Id-Version: pl\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-05-09 00:32-0700\n"
-"PO-Revision-Date: 2007-02-07 11:38+0100\n"
-"Last-Translator: Andrzej M. Krzysztofowicz <ankry@mif.pg.gda.pl>\n"
-"Language-Team: Polish <translation-team-pl@lists.sourceforge.net>\n"
+"POT-Creation-Date: 2006-09-10 11:18-0700\n"
+"PO-Revision-Date: 2007-05-14 19:56+0200\n"
+"Last-Translator: Michal Terbert <michaeel@skrzynka.pl>\n"
+"Language-Team: Polish\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11.4\n"
 
 msgid "Black!"
 msgstr "Czarny!"
@@ -23,7 +24,7 @@ msgid "Dark grey! Some people spell it “dark gray”."
 msgstr "Ciemny szary!"
 
 msgid "Light grey! Some people spell it “light gray”."
-msgstr "Jasny szary!"
+msgstr "Jasny Szary!"
 
 msgid "White!"
 msgstr "Biały!"
@@ -38,16 +39,16 @@ msgid "Yellow!"
 msgstr "Żółty!"
 
 msgid "Light green!"
-msgstr "Jasnozielony"
+msgstr "Jasny zielony!"
 
 msgid "Dark green!"
-msgstr "Ciemnozielony"
+msgstr "Ciemny zielony!"
 
 msgid "Sky blue!"
 msgstr "Jasny niebieski!"
 
 msgid "Blue!"
-msgstr "Niebieski"
+msgstr "Niebieski!"
 
 msgid "Lavender!"
 msgstr "Lawendowy!"
@@ -62,7 +63,7 @@ msgid "Brown!"
 msgstr "Brązowy!"
 
 msgid "Tan!"
-msgstr "Turkusowy!"
+msgstr "Jasny brąz!"
 
 msgid "Beige!"
 msgstr "Beżowy!"
@@ -79,17 +80,17 @@ msgstr "Beżowy!"
 #. ASCII-only fonts should be given bad scores in the scoring code below.
 #. (the best scores going to fonts that support both)
 msgid "qx"
-msgstr ""
+msgstr "qx"
 
 msgid "QX"
-msgstr ""
+msgstr "QX"
 
 #. Line X
 msgid "qy"
-msgstr ""
+msgstr "qy"
 
 msgid "QY"
-msgstr ""
+msgstr "QY"
 
 #. Now we score fonts to ensure that the best ones will be placed at
 #. the top of the list. The user will see them first. This sorting is
@@ -130,18 +131,6 @@ msgstr "Tylko tak dalej!"
 msgid "Good job!"
 msgstr "Dobra robota!"
 
-msgid "English"
-msgstr ""
-
-msgid "Hiragana"
-msgstr ""
-
-msgid "Katakana"
-msgstr ""
-
-msgid "Hangul"
-msgstr ""
-
 msgid "Fill"
 msgstr "Wypełnij"
 
@@ -161,13 +150,13 @@ msgid "Blur"
 msgstr "Rozmaż"
 
 msgid "Smudge"
-msgstr "Zabrudź"
+msgstr "Smuga"
 
 msgid "Lighten"
-msgstr "Rozjaśnij"
+msgstr "Jaśniej"
 
 msgid "Darken"
-msgstr "Ściemnij"
+msgstr "Ciemniej"
 
 msgid "Chalk"
 msgstr "Kreda"
@@ -179,7 +168,7 @@ msgid "Negative"
 msgstr "Negatyw"
 
 msgid "Tint"
-msgstr "Zabarwienie"
+msgstr "Farbowanie"
 
 msgid "Drip"
 msgstr "Krople"
@@ -197,7 +186,7 @@ msgid "Click in the picture to fill that area with color."
 msgstr "Kliknij na obrazek, aby wypełnić wskazany obszar kolorem."
 
 msgid "Click and move to draw grass. Don’t forget the dirt!"
-msgstr "Kliknij i przesuń, aby narysować trawę."
+msgstr "Kliknij i przesuń, aby narysować trawę. "
 
 msgid "Click and move to draw large bricks."
 msgstr "Kliknij i przesuń, aby narysować duże cegły."
@@ -215,18 +204,16 @@ msgid "Click and move the mouse around to blur the picture."
 msgstr "Kliknij i przesuń myszką dookoła, aby rozmazać obrazek."
 
 msgid "Click and move the mouse around to smudge the picture."
-msgstr "Kliknij i przesuń myszką dookoła, aby zabrudzić obrazek."
+msgstr "Kliknij i przesuń myszką dookoła, aby zostawić smugę na obrazku."
 
 msgid "Click and move to fade the colors."
-msgstr "Kliknij i przesuń myszką, aby kolory zbladły."
+msgstr "Kliknij i przesuń myszką, aby rozjaśnić kolory."
 
 msgid "Click and move to darken the colors."
-msgstr "Kliknij i przesuń myszką, aby kolory ściemniały."
+msgstr "Kliknij i przesuń myszką, aby przyciemnić kolory."
 
-msgid ""
-"Click and move the mouse around to turn the picture into a chalk drawing."
-msgstr ""
-"Kliknij i przesuń myszką dookoła, aby zamienić obrazek w rysunek kredą."
+msgid "Click and move the mouse around to turn the picture into a chalk drawing."
+msgstr "Kliknij i przesuń myszką dookoła, aby zamienić obrazek w rysunek kredą."
 
 msgid "Click and move the mouse around to make the picture blocky."
 msgstr ""
@@ -234,22 +221,22 @@ msgstr ""
 "kwadracików."
 
 msgid "Click and move the mouse around to draw a negative."
-msgstr "Kliknij i przesuń myszką dookoła, aby narysować negatyw."
+msgstr "Kliknij i przesuń myszką, aby zrobić z obrazka negatyw."
 
 msgid "Click and move the mouse around to change the picture’s color."
-msgstr "Kliknij i przesuń myszką dookoła, aby zmienić kolor obrazka."
+msgstr "Kliknij i przesuń myszką dookoła, aby zmienić kolor na obrazku."
 
 msgid "Click and move the mouse around to make the picture drip."
-msgstr "Kliknij i przesuń myszką dookoła, aby obraz zaczął ociekać kroplami."
+msgstr "Kliknij i przesuń myszką dookoła, aby obraz zamienić w cieknące kropelki."
 
 msgid "Click and move the mouse around to turn the picture into a cartoon."
 msgstr "Kliknij i przesuń myszką dookoła, aby obramować obrazek konturem."
 
 msgid "Click to make a mirror image."
-msgstr "Kliknij, aby zrobić odbicie obrazka jak w lusterku!"
+msgstr "Kliknij, aby zrobić odbicie obrazka jak w lusterku."
 
 msgid "Click to flip the picture upside-down."
-msgstr "Kliknij, aby odwrócić obrazek do góry nogami!"
+msgstr "Kliknij, aby odwrócić obrazek do góry nogami."
 
 msgid "Square"
 msgstr "Kwadrat"
@@ -273,18 +260,16 @@ msgid "Rhombus"
 msgstr "Romb"
 
 msgid "A square is a rectangle with four equal sides."
-msgstr "Kwadrat jest prostokątem z czterema jednakowymi bokami."
+msgstr "Kwadrat jest prostokątem o takich samych bokach."
 
 msgid "A rectangle has four sides and four right angles."
-msgstr "Prostokąt ma cztery boki i cztery kąty proste."
+msgstr "Prostokąt ma cztery boki i cztery proste kąty."
 
-msgid ""
-"A circle is a curve where all points have the same distance from the centre."
-msgstr ""
-"Koło jest krzywą, której wszystkie punkty mają jednakową odległość od środka."
+msgid "A circle is a curve where all points have the same distance from the centre."
+msgstr "Koło to krzywa gdzie wszystkie punkty mają taką samą odległość od środka."
 
 msgid "An ellipse is a stretched circle."
-msgstr "Elipsa to rozciągnięte koło."
+msgstr "Elipsa to spłaszczone koło."
 
 msgid "A triangle has three sides."
 msgstr "Trójkąt ma trzy boki."
@@ -293,8 +278,7 @@ msgid "A pentagon has five sides."
 msgstr "Pięciokąt ma pięć boków."
 
 msgid "A rhombus has four equal sides, and opposite sides are parallel."
-msgstr ""
-"Romb ma cztery jednakowe boki, a boki leżące naprzeciw siebie są równoległe."
+msgstr "Romb ma cztery takie same boki, a boki leżące na przeciw siebie są równoległe."
 
 msgid "Tools"
 msgstr "Narzędzia"
@@ -309,7 +293,7 @@ msgid "Erasers"
 msgstr "Gumki"
 
 msgid "Stamps"
-msgstr "Pieczęcie"
+msgstr "Pieczątki"
 
 msgid "Shapes"
 msgstr "Kształty"
@@ -369,9 +353,7 @@ msgstr "Kliknij, aby rozpocząć rysowanie linii. Puść, aby je zakończyć."
 msgid ""
 "Pick a shape. Click to pick the center, drag, then let go when it is the "
 "size you want. Move around to rotate it, and click to draw it."
-msgstr ""
-"Wybierz kształt. Kliknij, gdzie ma być środek, ciągnij aż wielkość będzie "
-"dobra. Ruszaj myszką, aby obrócić, kliknij, aby narysować."
+msgstr "Wybierz kształt. Kliknij, gdzie ma być środek, rozciągnij aż do wymaganej wielkości. Ruszaj myszką, aby obrócić, kliknij, aby narysować."
 
 msgid "Choose a style of text. Click on your drawing and you can start typing."
 msgstr "Wybierz styl tekstu. Kliknij na rysunek i rozpocznij pisanie."
@@ -393,11 +375,11 @@ msgstr "Gumka!"
 
 #. New
 msgid "You now have a blank sheet to draw on!"
-msgstr "Masz teraz czysty arkusz, na którym można rysować!"
+msgstr "Masz teraz pusty arkusz, na którym można rysować!"
 
 #. Open
 msgid "Open…"
-msgstr "Otwórz…"
+msgstr "Otwórz..."
 
 #. Save
 msgid "Your image has been saved!"
@@ -405,7 +387,7 @@ msgstr "Twój obrazek został zapisany!"
 
 #. Print
 msgid "Printing…"
-msgstr "Drukowanie…"
+msgstr "Drukowanie..."
 
 #. Quit
 msgid "Bye bye!"
@@ -428,19 +410,19 @@ msgid "Do you really want to quit?"
 msgstr "Czy naprawdę chcesz zakończyć program?"
 
 msgid "Yes, I'm done!"
-msgstr ""
+msgstr "Tak, chcę!"
 
 msgid "No, take me back!"
-msgstr ""
+msgstr "Nie, wróćmy do rysowania!"
 
 msgid "If you quit, you’ll lose your picture! Save it?"
 msgstr "Jeśli zakończysz, stracisz swój obrazek! Czy chcesz go zapisać?"
 
 msgid "Yes, save it!"
-msgstr ""
+msgstr "Tak, zapisz!"
 
 msgid "No, don't bother saving!"
-msgstr ""
+msgstr "Nie, nie zapisuj!"
 
 msgid "Save your picture first?"
 msgstr "Czy chcesz najpierw zapisać swój obrazek?"
@@ -454,23 +436,22 @@ msgstr "OK"
 #. This will be replaced with a dialog allowing color choice and Starter
 #. picking, with a "Back" option to dismiss the "New" and return to
 #. the current picture.  But for now...  (bjk 2006.02.19)
-#, fuzzy
 msgid "Start a new picture?"
-msgstr "Czy usunąć ten obrazek?"
+msgstr "Chcesz narysować nowy obrazek?"
 
 #. #define PROMPT_NEW_YES gettext_noop("That’s OK!")
 #. #define PROMPT_NEW_NO gettext_noop("Never mind!")
 msgid "Yes, let's start fresh!"
-msgstr ""
+msgstr "Tak, zacznijmy od nowa!"
 
 msgid "There are no saved files!"
 msgstr "Brak zapisanych plików!"
 
 msgid "Print your picture now?"
-msgstr "Czy chcesz teraz wydrykować swój obrazek?"
+msgstr "Chcesz wydrukować teraz swój rysunek?"
 
 msgid "Yes, print it!"
-msgstr ""
+msgstr "Tak, wydrukuj!"
 
 msgid "Your picture has been printed!"
 msgstr "Twój obrazek został wydrukowany!"
@@ -482,32 +463,31 @@ msgid "Erase this picture?"
 msgstr "Czy usunąć ten obrazek?"
 
 msgid "Yes, erase it!"
-msgstr ""
+msgstr "Tak, usuń!"
 
 msgid "No, don't erase it!"
-msgstr ""
+msgstr "Nie, nie usuwaj!"
 
 msgid "Remember to use the left mouse button!"
-msgstr "Pamiętaj, żeby użyć lewego przycisku myszki!"
+msgstr "Pamiętaj o używaniu lewego przycisku myszy!"
 
 msgid "Please wait..."
-msgstr ""
+msgstr "Proszę czekać..."
 
 msgid "Erase"
 msgstr "Usuń"
 
 msgid "Slides"
-msgstr ""
+msgstr "Slajdy"
 
 msgid "Back"
 msgstr "Wróć"
 
-#, fuzzy
 msgid "Next"
-msgstr "Tekst"
+msgstr "Następny"
 
 msgid "Play"
-msgstr ""
+msgstr "Pokaż"
 
 msgid "Aa"
 msgstr "Aa"
@@ -522,25 +502,23 @@ msgstr "Nie"
 #. FIXME: Move elsewhere!!!
 #. #define PROMPT_SAVE_OVER_TXT gettext_noop("Save over the older version of this picture?")
 msgid "Replace the picture with your changes?"
-msgstr ""
+msgstr "Zapisać zmiany w tym obrazku?"
 
 msgid "Yes, replace the old one!"
-msgstr ""
+msgstr "Tak, zastąp stary plik!"
 
-#, fuzzy
 msgid "No, save a new file!"
-msgstr "Nie, zapisz nowy plik"
+msgstr "Nie, zapisz w nowym pliku!"
 
 msgid "Choose the picture you want, then click “Open”."
 msgstr "Wybierz obrazek, a potem kliknij 'Otwórz'"
 
 #. Let user choose images:
-#, fuzzy
 msgid "Choose the pictures you want, then click “Play”."
-msgstr "Wybierz obrazek, a potem kliknij 'Otwórz'"
+msgstr "Wybierz obrazek, a potem kliknij 'Pokaż'"
 
 msgid "A drawing program for children."
-msgstr "Program do rysowania dla dzieci."
+msgstr "Prosty program do rysowania dla dzieci."
 
 msgid "Drawing program"
 msgstr "Program do rysowania"
@@ -548,83 +526,3 @@ msgstr "Program do rysowania"
 msgid "Tux Paint"
 msgstr "Tux Paint"
 
-#~ msgid "Starting a new picture will erase the current one!"
-#~ msgstr "Rozpoczęcie nowego obrazka spowoduje usunięcie bieżącego!"
-
-#~ msgid "That’s OK!"
-#~ msgstr "OK, w porządku!"
-
-#~ msgid "Never mind!"
-#~ msgstr "Nie szkodzi!"
-
-#~ msgid "Save over the older version of this picture?"
-#~ msgstr "Czy nadpisać starszą wersję tego obrazka?"
-
-#, fuzzy
-#~ msgid "Green!"
-#~ msgstr "Wspaniale!"
-
-#~ msgid "Fade"
-#~ msgstr "Przenikanie"
-
-#~ msgid "Oval"
-#~ msgstr "Owal"
-
-#~ msgid "Diamond"
-#~ msgstr "Diament"
-
-#~ msgid "A square has four sides, each the same length."
-#~ msgstr "Kwadrat ma cztery boki, każdy o tej samej długości."
-
-#~ msgid "A circle is exactly round."
-#~ msgstr "Koło jest okrągłe."
-
-#~ msgid "A diamond is a square, turned around slightly."
-#~ msgstr "Diament jest trochę przekręconym kwadratem."
-
-#, fuzzy
-#~ msgid "Lime!"
-#~ msgstr "Linie"
-
-#, fuzzy
-#~ msgid "Fuchsia!"
-#~ msgstr "Lila!"
-
-#, fuzzy
-#~ msgid "Silver!"
-#~ msgstr "Srebrny!"
-
-#~ msgid "Thick"
-#~ msgstr "Pogrub"
-
-#, fuzzy
-#~ msgid "Click and move the mouse to thicken the picture."
-#~ msgstr "Kliknij i przesuń myszką dookoła, aby zabrudzić obrazek."
-
-#, fuzzy
-#~ msgid "Click and move the mouse to thin the picture."
-#~ msgstr "Kliknij i przesuń myszką dookoła, aby rozmazać obrazek."
-
-#~ msgid "Okay"
-#~ msgstr "OK"
-
-#, fuzzy
-#~ msgid "Red"
-#~ msgstr "Czerwony!"
-
-#, fuzzy
-#~ msgid "Grey"
-#~ msgstr "Wspaniale!"
-
-#~ msgid ""
-#~ "Pick a shape to draw.  Click once to pick the center of the shape, click "
-#~ "again to draw it."
-#~ msgstr ""
-#~ "Wybierz kształt do narysowania. Kliknij raz wewnątrz kształtu, kliknij "
-#~ "ponownie aby go narysować."
-
-#~ msgid "jq"
-#~ msgstr "jq"
-
-#~ msgid "JQ"
-#~ msgstr "JQ"

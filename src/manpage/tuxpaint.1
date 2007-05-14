@@ -1,5 +1,5 @@
-.\" tuxpaint.1 - 2007.04.27
-.TH TUXPAINT 1 "27 Apr 2006" "0.9.17" "Tux Paint"
+.\" tuxpaint.1 - 2007.05.14
+.TH TUXPAINT 1 "14 May 2006" "0.9.17" "Tux Paint"
 .SH NAME
 tuxpaint -- A drawing program for young children.
 
@@ -10,7 +10,8 @@ tuxpaint -- A drawing program for young children.
 .TP 9
 .B tuxpaint
 [\-\-fullscreen]
-[\-\-640x480 | \-\-1024x768 | \-\-1280x1024 | \-\-1400x1050 | \-\-1600x1200 | \-\-WxH ]
+[\-\-native]
+[\-\-WIDTHxHEIGHT]
 [\-\-startblank]
 [\-\-nosound]
 [\-\-noquit]
@@ -109,8 +110,14 @@ configuration files. (See below.)
 Run \fITux Paint\fP in full-screen mode, or in a window (default).
 
 .TP 8
-.B \-\-800x600 \-\-1024x768 \-\- 1280x1024 \-\-1400x1050 \-\-1600x1200 \-\-640x480
-Run \fITux Paint\fP at higher resolution, or 640x480 resolution (default).
+.B \-\-native
+When in fullscreen mode, use the system's default screen resolution.
+
+.TP 8
+.B \-\-WIDTHxHEIGHT
+Run \fITux Paint\fP in a particularly-sized window, or at a particular
+fullscreen resolution (if \-\-native is not used).  Default is 800x600.
+Minimum is 640x480.  Portrait and landscape orientations are both supported.
 
 .TP 8
 .B \-\-nosound \-\-sound
@@ -701,6 +708,7 @@ Geert Stams,
 Peter Sterba,
 Raivis Strogonovs,
 Tomasz 'karave' Tarach,
+Michal Terbert,
 Tarmo Toikkanen,
 TOYAMA Shin-ichi,
 Niall Tracey,

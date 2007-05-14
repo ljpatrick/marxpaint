@@ -7,7 +7,7 @@ bill@newbreedsoftware.com
 http://www.tuxpaint.org/
 
 
-June 17, 2002 - April 26, 2007
+June 17, 2002 - May 14, 2007
 
 $Id$
 
@@ -316,6 +316,7 @@ $Id$
     Robert Glowczynski <robertg@software.com.pl>
     Tomasz 'karave' Tarach <karave@poczta.onet.pl>
     Andrzej M. Krzysztofowicz <ankry@mif.pg.gda.pl>
+    Michal Terbert <michaeel@skrzynka.pl>
 
   * Portuguese (Brazilian)
     Fred Ulisses Maranhao <fred_maranhao@yahoo.com.br>

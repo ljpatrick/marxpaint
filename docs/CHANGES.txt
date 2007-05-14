@@ -152,6 +152,7 @@ $Id$
 
     * Polish
       Andrzej M. Krzysztofowicz <ankry@mif.pg.gda.pl>
+      Michal Terbert <michaeel@skrzynka.pl>
 
     * Russian
       Sergei Popov <skein@rambler.ru>
