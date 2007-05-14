@@ -10229,8 +10229,7 @@ static void strip_trailing_whitespace(char *buf)
 static char *loaddesc(const char *const fname, Uint8 * locale_text)
 {
   char *txt_fname, *extptr;
-  char buf[512], def_buf[512];  // doubled to 512 per TOYAMA Shin-Ichi's reque
-sted; -bjk 2007.05.10
+  char buf[512], def_buf[512];  // doubled to 512 per TOYAMA Shin-Ichi's requested; -bjk 2007.05.10
   int found, got_first;
   FILE *fi;
 
