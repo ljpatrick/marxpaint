@@ -123,7 +123,7 @@ $Id$
 
   * New Translations:
     -----------------
-    * Latvian (currently incorrectly implemented! -bjk 2007.04.24)
+    * Latvian
       Raivis Strogonovs <raivucis@gmail.com>
 
     * Telugu -- includes "te.ttf" font
