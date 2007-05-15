@@ -1,20 +1,19 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# Translation of tuxpaint to Latvian
+# Copyright (C) 2007
+# This file is distributed under the same license as the tuxpaint package.
+# Raivis Strogonovs <raivucis@gmail.com>
 #
-#, fuzzy
 msgid ""
 msgstr ""
-"Projekta versija: PACKAGE VERSION\n"
-"Ziņo par kļūdu: \n"
-"POT-Izveidošnas datums: 2006-09-10 11:18-0700\n"
-"PO-Revīzijas datums: GADS-MĒ-DI HO:MI+ZONE\n"
-"Tulkoja: Raivis Strogonovs <raivucis@gmail.com>\n"
-"Valodas Kommanda: Valoda <raivucis@gmail.com>\n"
-"MIME-Versija: 1.0\n"
-"Satura tips: teksts/parasts; charset=ISO-8859-13\n"
-"Satura kodēšana: 8bit\n"
+"Project-Id-Version: lv\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2006-09-10 11:18-0700\n"
+"PO-Revision-Date: 2007-05-14 18:13-0700\n"
+"Last-Translator: Raivis Strogonovs <raivucis@gmail.com>\n"
+"Language-Team: Valoda <raivucis@gmail.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
 
 msgid "Black!"
 msgstr "Melns! Nu melns kā piķis!"
