@@ -9,7 +9,7 @@ http://www.newbreedsoftware.com/tuxpaint/
 $Id$
 
 
-2007.May.14 (0.9.17)
+2007.May.15 (0.9.17)
 
   * Tool Improvements:
     ------------------
@@ -146,6 +146,9 @@ $Id$
 
     * Faroese
       Lis Gøthe í Jákupsstovu <morshus@gmail.com>
+
+    * Irish Gaelic
+      Kevin Patrick Scannell <kscanne@gmail.com>
 
     * Lithuanian
       Gintaras Gostautas <gintaras@nes.lt>

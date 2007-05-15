@@ -1,15 +1,15 @@
 # TuxPaint Irish translation file
 # Copyright (C) 2004 Bill Kendrick
 # This file is distributed under the same license as the TuxPaint package.
-# Kevin Scannell <scannell@SLU.EDU>, 2004.
+# Kevin Scannell <scannell@SLU.EDU>, 2004, 2007.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: tuxpaint 0.9.15rc1\n"
+"Project-Id-Version: tuxpaint 0.9.17\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2007-05-09 00:32-0700\n"
-"PO-Revision-Date: 2005-10-11 08:44+0100\n"
-"Last-Translator: Kevin Patrick Scannell <scannell@SLU.EDU>\n"
+"PO-Revision-Date: 2007-05-11 08:44+0100\n"
+"Last-Translator: Kevin Patrick Scannell <kscanne@gmail.com>\n"
 "Language-Team: Irish <gaeilge-gnulinux@lists.sourceforge.net>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -78,17 +78,17 @@ msgstr "Béasa!"
 #. ASCII-only fonts should be given bad scores in the scoring code below.
 #. (the best scores going to fonts that support both)
 msgid "qx"
-msgstr ""
+msgstr "qx"
 
 msgid "QX"
-msgstr ""
+msgstr "QX"
 
 #. Line X
 msgid "qy"
-msgstr ""
+msgstr "qy"
 
 msgid "QY"
-msgstr ""
+msgstr "QY"
 
 #. Now we score fonts to ensure that the best ones will be placed at
 #. the top of the list. The user will see them first. This sorting is
@@ -130,16 +130,16 @@ msgid "Good job!"
 msgstr "An-jab!"
 
 msgid "English"
-msgstr ""
+msgstr "Béarla"
 
 msgid "Hiragana"
-msgstr ""
+msgstr "Hireagána"
 
 msgid "Katakana"
-msgstr ""
+msgstr "Catacána"
 
 msgid "Hangul"
-msgstr ""
+msgstr "Hangal"
 
 msgid "Fill"
 msgstr "Líon"
@@ -193,8 +193,7 @@ msgid "Flip"
 msgstr "Smeach"
 
 msgid "Click in the picture to fill that area with color."
-msgstr ""
-"Cliceáil sa phictiúr chun an limistéar roghnaithe agat a líonadh le dath."
+msgstr "Cliceáil sa phictiúr chun an limistéar roghnaithe agat a líonadh le dath."
 
 msgid "Click and move to draw grass. Don’t forget the dirt!"
 msgstr "Cliceáil agus bog chun féar a dhearadh. Ná déan dearmad ar an ithir!"
@@ -223,10 +222,8 @@ msgstr "Cliceáil agus bog chun na dathanna a liathadh."
 msgid "Click and move to darken the colors."
 msgstr "Cliceáil agus bog chun na dathanna a dhorchú."
 
-msgid ""
-"Click and move the mouse around to turn the picture into a chalk drawing."
-msgstr ""
-"Cliceáil agus bog an luch chun líníocht chailce a dhéanamh ón phictiúr."
+msgid "Click and move the mouse around to turn the picture into a chalk drawing."
+msgstr "Cliceáil agus bog an luch chun líníocht chailce a dhéanamh ón phictiúr."
 
 msgid "Click and move the mouse around to make the picture blocky."
 msgstr "Cliceáil agus bog an luch le haghaidh maisíochta bloic."
@@ -276,8 +273,7 @@ msgstr "Is dronuilleog í cearnóg a bhfuil ceithre thaobh chothrom aige."
 msgid "A rectangle has four sides and four right angles."
 msgstr "Tá ceithre thaobh agus ceithre dhronuillinn ar dhronuilleog."
 
-msgid ""
-"A circle is a curve where all points have the same distance from the centre."
+msgid "A circle is a curve where all points have the same distance from the centre."
 msgstr "Is cuar cruinn ceart é ciorcal, agus gach pointe comhfhad ón lár."
 
 msgid "An ellipse is a stretched circle."
@@ -290,9 +286,7 @@ msgid "A pentagon has five sides."
 msgstr "Tá cúig thaobh ar pheinteagán."
 
 msgid "A rhombus has four equal sides, and opposite sides are parallel."
-msgstr ""
-"Tá ceithre thaobh chothrom ar rombas, agus an dá thaobh ar aghaidh a chéile "
-"comhthreomhar."
+msgstr "Tá ceithre thaobh chothrom ar rombas, agus an dá thaobh ar aghaidh a chéile comhthreomhar."
 
 msgid "Tools"
 msgstr "Uirlisí"
@@ -364,17 +358,11 @@ msgstr "Roghnaigh pictiúr le húsáid mar stampa ar do líníocht."
 msgid "Click to start drawing a line. Let go to complete it."
 msgstr "Cliceáil chun líne a thosú. Scaoil an cnaipe chun é a chríochnú."
 
-msgid ""
-"Pick a shape. Click to pick the center, drag, then let go when it is the "
-"size you want. Move around to rotate it, and click to draw it."
-msgstr ""
-"Roghnaigh cruth. Cliceáil chun an lár a roghnú, tarraing, ansin scaoil an "
-"cnaipe nuair atá an méid socraithe agat.  Bog chun é a rothlú, agus cliceáil "
-"arís chun é a dhearadh."
+msgid "Pick a shape. Click to pick the center, drag, then let go when it is the size you want. Move around to rotate it, and click to draw it."
+msgstr "Roghnaigh cruth. Cliceáil chun an lár a roghnú, tarraing, ansin scaoil an cnaipe nuair atá an méid socraithe agat.  Bog chun é a rothlú, agus cliceáil arís chun é a dhearadh."
 
 msgid "Choose a style of text. Click on your drawing and you can start typing."
-msgstr ""
-"Roghnaigh stíl an téacs. Cliceáil ar do líníocht agus ansin clóscríobh."
+msgstr "Roghnaigh stíl an téacs. Cliceáil ar do líníocht agus ansin clóscríobh."
 
 msgid "Pick a magical effect to use on your drawing!"
 msgstr "Roghnaigh maisíocht draíochta le húsáid ar do líníocht!"
@@ -428,19 +416,19 @@ msgid "Do you really want to quit?"
 msgstr "An bhfuil tú cinnte gur mhaith leat scor?"
 
 msgid "Yes, I'm done!"
-msgstr ""
+msgstr "Tá, táim críochnaithe!"
 
 msgid "No, take me back!"
-msgstr ""
+msgstr "Níl, ba mhaith liom dul ar ais!"
 
 msgid "If you quit, you’ll lose your picture! Save it?"
 msgstr "Má scoireann tú, caillfidh tú an pictiúr atá agatsa! Sábháil?"
 
 msgid "Yes, save it!"
-msgstr ""
+msgstr "Sábhail!"
 
 msgid "No, don't bother saving!"
-msgstr ""
+msgstr "Ná sábhail!"
 
 msgid "Save your picture first?"
 msgstr "Sábháil ar dtús?"
@@ -454,14 +442,13 @@ msgstr "OK"
 #. This will be replaced with a dialog allowing color choice and Starter
 #. picking, with a "Back" option to dismiss the "New" and return to
 #. the current picture.  But for now...  (bjk 2006.02.19)
-#, fuzzy
 msgid "Start a new picture?"
-msgstr "Léirscrios an pictiúr seo?"
+msgstr "Ar mhaith leat pictiúr nua a thosú?"
 
 #. #define PROMPT_NEW_YES gettext_noop("That’s OK!")
 #. #define PROMPT_NEW_NO gettext_noop("Never mind!")
 msgid "Yes, let's start fresh!"
-msgstr ""
+msgstr "Ba mhaith!"
 
 msgid "There are no saved files!"
 msgstr "Níl aon chomhad sábháilte ann!"
@@ -470,7 +457,7 @@ msgid "Print your picture now?"
 msgstr "Priontáil an pictiúr anois?"
 
 msgid "Yes, print it!"
-msgstr ""
+msgstr "Priontáil!"
 
 msgid "Your picture has been printed!"
 msgstr "Priontáladh an pictiúr agatsa!"
@@ -482,32 +469,31 @@ msgid "Erase this picture?"
 msgstr "Léirscrios an pictiúr seo?"
 
 msgid "Yes, erase it!"
-msgstr ""
+msgstr "Léirscrios!"
 
 msgid "No, don't erase it!"
-msgstr ""
+msgstr "Ná léirscrios!"
 
 msgid "Remember to use the left mouse button!"
 msgstr "Bí cinnte an cnaipe ar chlé a úsáid!"
 
 msgid "Please wait..."
-msgstr ""
+msgstr "Fan go fóill..."
 
 msgid "Erase"
 msgstr "Léirscrios"
 
 msgid "Slides"
-msgstr ""
+msgstr "Sleamhnáin"
 
 msgid "Back"
 msgstr "Siar"
 
-#, fuzzy
 msgid "Next"
-msgstr "Téacs"
+msgstr "Ar Aghaidh"
 
 msgid "Play"
-msgstr ""
+msgstr "Seinn"
 
 msgid "Aa"
 msgstr "Aa"
@@ -522,24 +508,20 @@ msgstr "Níl"
 #. FIXME: Move elsewhere!!!
 #. #define PROMPT_SAVE_OVER_TXT gettext_noop("Save over the older version of this picture?")
 msgid "Replace the picture with your changes?"
-msgstr ""
+msgstr "Forscríobh an pictiúr le do chuid athruithe?"
 
 msgid "Yes, replace the old one!"
-msgstr ""
+msgstr "Forscríobh é!"
 
-#, fuzzy
 msgid "No, save a new file!"
-msgstr "Ná forscríobh, sábháil i gcomhad nua"
+msgstr "Ná forscríobh, sábháil i gcomhad nua!"
 
 msgid "Choose the picture you want, then click “Open”."
-msgstr ""
-"Roghnaigh an pictiúr is mian leat a oscailt, agus ansin cliceáil “Oscail”."
+msgstr "Roghnaigh an pictiúr is mian leat a oscailt, agus ansin cliceáil “Oscail”."
 
 #. Let user choose images:
-#, fuzzy
 msgid "Choose the pictures you want, then click “Play”."
-msgstr ""
-"Roghnaigh an pictiúr is mian leat a oscailt, agus ansin cliceáil “Oscail”."
+msgstr "Roghnaigh na pictiúir is mian leat a oscailt, agus ansin cliceáil “Seinn”."
 
 msgid "A drawing program for children."
 msgstr "Clár líníochta le haghaidh páistí."

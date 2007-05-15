@@ -7,7 +7,7 @@ bill@newbreedsoftware.com
 http://www.tuxpaint.org/
 
 
-June 17, 2002 - May 14, 2007
+June 17, 2002 - May 15, 2007
 
 $Id$
 
@@ -219,9 +219,6 @@ $Id$
     Charles Vidal
     Jérôme Chantreau <plovemax@hotmail.com> [documentation]
 
-  * Gaelic
-    Kevin Patrick Scannell <scannell@SLU.EDU>
-
   * Galician
     Leandro Regueiro <leandro.regueiro@gmail.com>
 
@@ -244,6 +241,12 @@ $Id$
   * Gujarati
     Kartik Mistry <kartik.mistry@gmail.com>
 
+  * Hebrew
+    Dovix <dovix2003@yahoo.com>
+    Koby <kobybo@hotmail.com>
+    Itai <Itais@newmail.net>
+    Leor Bleier <leor972@gmail.com>
+
   * Hindi
     Ankit Malik <ankitmalik@gmail.com>
 
@@ -251,17 +254,14 @@ $Id$
     Török Gábor <gabo@linuxportal.hu>
     Gabor Kelemen <kelemeng@gnome.hu>
 
-  * Hebrew
-    Dovix <dovix2003@yahoo.com>
-    Koby <kobybo@hotmail.com>
-    Itai <Itais@newmail.net>
-    Leor Bleier <leor972@gmail.com>
-
   * Icelandic
     Pjetur G. Hjaltason <pjetur@pjetur.net>
 
   * Indonesian
     Tedi Heriyanto <tedi_h@gmx.net>
+
+  * Irish Gaelic
+    Kevin Patrick Scannell <kscanne@gmail.com>
 
   * Italian
     Marco Milanesi <kpanic@pavia.linux.it>
