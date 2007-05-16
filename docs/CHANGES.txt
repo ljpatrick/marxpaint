@@ -157,6 +157,12 @@ $Id$
     * Basque
       Juan Irigoien <juanirigoien@gmail.com>
 
+    * Bulgarian
+      Yavor Doganov <yavor@doganov.org>
+
+    * Chinese (Traditional)
+      Wei-Lun Chao <chaoweilun@gmail.com>
+
     * Czech
       tropikhajma <tropikhajma@seznam.cz>
 
