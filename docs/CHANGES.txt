@@ -45,8 +45,8 @@ $Id$
       (Experimental; build with "make nosvg" to disable SVG support and
       Cairo dependency.)
 
-    * Stamps now shown in groups.
-      FIXME: Finish!
+    * Stamps now shown in groups.  Use previous & next buttons to
+      cycle through stamp categories.
       (Addresses SourceForge Feature Request #1070394)
 
     * Bilinear interpolation (smoothing) is done to small bitmap (PNG)

@@ -3,7 +3,9 @@
 */
 
 #include <stdio.h>
+#ifndef __USE_GNU
 #define __USE_GNU		/* for strcasestr() */
+#endif
 #include <string.h>
 #include <stdlib.h>
 #include <locale.h>

@@ -4,7 +4,9 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#ifndef __USE_GNU
 #define __USE_GNU		/* for strcasestr() */
+#endif
 #include <string.h>
 #include <locale.h>
 #include <libintl.h>
@@ -274,7 +276,7 @@ void tp_ftw(SDL_Surface * screen, char *restrict const dir, unsigned dirlen,
   show_progress_bar(screen);
   dir[dirlen] = '\0';		// repair it (clobbered for stat() call above)
 
-  if (file_names)
+  if (1 || file_names)  // Now ALWAYS calling callback function, so stamp loader can notice top-level directories (even if there are only subdirs, and no files, inside) -bjk 2007.05.16
   {
 // let callee sort and keep the string
 #if 0

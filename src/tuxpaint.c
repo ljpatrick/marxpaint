@@ -22,7 +22,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
   
-  June 14, 2002 - May 15, 2007
+  June 14, 2002 - May 16, 2007
   $Id$
 */
 
@@ -1597,7 +1597,8 @@ static void mainloop(void)
 {
   int done, which, button_down, old_x, old_y, new_x, new_y,
     line_start_x, line_start_y, shape_tool_mode,
-    shape_ctr_x, shape_ctr_y, shape_outer_x, shape_outer_y;
+    shape_ctr_x, shape_ctr_y, shape_outer_x, shape_outer_y,
+    old_stamp_group;
   int num_things;
   int *thing_scroll;
   int cur_thing, do_draw, old_tool, tmp_int, max;
@@ -2481,11 +2482,35 @@ static void mainloop(void)
                 {
                   /* Prev/Next Controls: */
 
+                  old_stamp_group = stamp_group;
+
                   if (which == 1)
-                    printf("Next\n");
+                  {
+                    /* Next group */
+                    stamp_group++;
+                    if (stamp_group >= num_stamp_groups)
+                      stamp_group = 0;
+                    control_sound = SND_CLICK;
+                  }
                   else
-                    printf("Prev\n");
+                  {
+                    /* Prev group */
+                    stamp_group--;
+                    if (stamp_group < 0)
+                      stamp_group = num_stamp_groups - 1;
+                    control_sound = SND_CLICK;
+                  }
+
+                  if (stamp_group == old_stamp_group)
+                    control_sound = -1;
+                  else
+                  {
+	            cur_thing = cur_stamp[stamp_group];
+	            num_things = num_stamps[stamp_group];
+	            thing_scroll = &(stamp_scroll[stamp_group]);
+                  }
                 }
+
 		if (control_sound != -1)
 		{
 		  playsound(screen, 0, control_sound, 0, SNDPOS_CENTER,
@@ -3852,8 +3877,11 @@ static double tint_part_1(multichan * work, SDL_Surface * in)
   }
   SDL_UnlockSurface(in);
 
+#ifdef DEBUG
   fprintf(stderr, "u_total=%f\nv_total=%f\natan2()=%f\n",
 	  u_total, v_total, atan2(u_total, v_total));
+#endif
+
   return atan2(u_total, v_total);
 }
 
@@ -4098,13 +4126,16 @@ static void tint_surface(SDL_Surface * tmp_surf, SDL_Surface * surf_ptr)
   {
     initial_hue = tint_part_1(work, surf_ptr);
 
+#ifdef DEBUG
     printf("initial_hue = %f\n", initial_hue);
+#endif
 
     key_color_ptr = find_most_saturated(initial_hue, work,
 					width * height, &hue_range);
 
+#ifdef DEBUG
     printf("key_color_ptr = %d\n", (int) key_color_ptr);
-
+#endif
 
     if (key_color_ptr)
     {
@@ -5834,6 +5865,10 @@ static void loadstamp_callback(SDL_Surface * screen,
 			       unsigned dirlen, tp_ftw_str * files,
 			       unsigned i)
 {
+#ifdef DEBUG
+  printf("loadstamp_callback: %s\n", dir);
+#endif
+
   if (num_stamps[stamp_group] > 0)
   {
     /* If previous group had any stamps... */
@@ -5856,7 +5891,13 @@ static void loadstamp_callback(SDL_Surface * screen,
     {
       stamp_group++;
 #ifdef DEBUG
-      printf("%s counts as a new group!\n", dir);
+      printf("\n...counts as a new group! now: %d\n", stamp_group);
+#endif
+    }
+    else
+    {
+#ifdef DEBUG
+      printf("...is still part of group %d\n", stamp_group);
 #endif
     }
   }
