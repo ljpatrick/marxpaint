@@ -4,9 +4,9 @@
   For Tux Paint
   Bitmapped mouse pointer (cursor)
 
-  Copyright (c) 2002-2006 by Bill Kendrick and others
+  Copyright (c) 2002-2007 by Bill Kendrick and others
   bill@newbreedsoftware.com
-  http://www.newbreedsoftware.com/tuxpaint/
+  http://www.tuxpaint.org/
 
   This program is free software; you can redistribute it and/or modify
   it under the terms of the GNU General Public License as published by
@@ -23,7 +23,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  June 14, 2002 - February 17, 2006
+  June 14, 2002 - May 15, 2007
   $Id$
 */
 
@@ -69,7 +69,7 @@ extern SDL_Cursor *cursor_hand, *cursor_arrow, *cursor_watch,
   *cursor_up, *cursor_down, *cursor_tiny, *cursor_crosshair,
   *cursor_brush, *cursor_wand, *cursor_insertion, *cursor_rotate;
 
-extern int no_fancy_cursors;
+extern int no_fancy_cursors, hide_cursor;
 
 void do_setcursor(SDL_Cursor * c);
 void free_cursor(SDL_Cursor ** cursor);

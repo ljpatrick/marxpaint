@@ -1,5 +1,5 @@
-.\" tuxpaint.1 - 2007.05.14
-.TH TUXPAINT 1 "14 May 2006" "0.9.17" "Tux Paint"
+.\" tuxpaint.1 - 2007.05.15
+.TH TUXPAINT 1 "15 May 2007" "0.9.17" "Tux Paint"
 .SH NAME
 tuxpaint -- A drawing program for young children.
 
@@ -25,6 +25,7 @@ tuxpaint -- A drawing program for young children.
 [\-\-nowheelmouse]
 [\-\-nobuttondistinction]
 [\-\-nofancycursors]
+[\-\-hidecursor]
 [\-\-nooutlines]
 [\-\-nostamps]
 [\-\-nostampcontrols]
@@ -54,6 +55,7 @@ tuxpaint -- A drawing program for young children.
 [\-\-wheelmouse]
 [\-\-buttondistinction]
 [\-\-fancycursors]
+[\-\-showcursor]
 [\-\-outlines]
 [\-\-stamps]
 [\-\-stampcontrols]
@@ -195,6 +197,11 @@ Default is to only recognize button #1.
 Disable or enable (default) the 'fancy' mouse pointer shapes in \fITux Paint\fP.
 While the shapes are larger, and context sensitive, some environments have
 trouble displaying the mouse pointer, and/or leave 'trails' on the screen.
+
+.TP 8
+.B \-\-hidecursor \-\-showcursor
+Completely hide, or enable (default) the mouse pointer in \fITux Paint\fP.
+This can be useful on touchscreen devices, such as tablet PCs.
 
 .TP 8
 .B \-\-nooutlines \-\-outlines

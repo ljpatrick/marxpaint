@@ -22,7 +22,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
   
-  June 14, 2002 - May 14, 2007
+  June 14, 2002 - May 15, 2007
   $Id$
 */
 
@@ -108,6 +108,7 @@
 
 /* Disable fancy cursors in fullscreen mode, to avoid SDL bug: */
 /* (This bug is still around, as of SDL 1.2.9, October 2005) */
+/* (Is it still in SDL 1.2.11 in May 2007, though!? -bjk) */
 #define LARGE_CURSOR_FULLSCREEN_BUG
 
 // control the color selector
@@ -5315,7 +5316,8 @@ static void show_usage(FILE * f, char *prg)
 	  "  %s [--startblank | --startlast ]\n"
 	  "  %s [--sound | --nosound]         [--quit | --noquit]\n"
 	  "  %s [--print | --noprint]         [--complexshapes | --simpleshapes]\n"
-	  "  %s [--mixedcase | --uppercase]   [--fancycursors | --nofancycursors]\n"
+	  "  %s [--mixedcase | --uppercase]\n"
+	  "  %s [--fancycursors | --nofancycursors | --hidecursor ]\n"
 	  "  %s [--mouse | --keyboard]        [--dontgrab | --grab]\n"
 	  "  %s [--noshortcuts | --shortcuts] [--wheelmouse | --nowheelmouse]\n"
 	  "  %s [--nobuttondistinction | --buttondistinction ]\n"
@@ -5338,7 +5340,7 @@ static void show_usage(FILE * f, char *prg)
 	  prg, prg,
 	  blank, blank, blank,
 	  blank, blank, blank,
-	  blank, blank, blank, blank, blank, blank, blank, blank,
+	  blank, blank, blank, blank, blank, blank, blank, blank, blank,
 #ifdef WIN32
 	  blank,
 #endif
@@ -6056,9 +6058,11 @@ static void setup(int argc, char *argv[])
 #ifdef NOKIA_770
   simple_shapes = 1;
   no_fancy_cursors = 1;
+  hide_cursor = 1;
 #else
   simple_shapes = 0;
   no_fancy_cursors = 0;
+  hide_cursor = 0;
 #endif
   only_uppercase = 0;
   promptless_save = SAVE_OVER_PROMPT;
@@ -6316,6 +6320,14 @@ static void setup(int argc, char *argv[])
     else if (strcmp(argv[i], "--fancycursors") == 0)
     {
       no_fancy_cursors = 0;
+    }
+    else if (strcmp(argv[i], "--hidecursor") == 0)
+    {
+      hide_cursor = 1;
+    }
+    else if (strcmp(argv[i], "--showcursor") == 0)
+    {
+      hide_cursor = 0;
     }
     else if (strcmp(argv[i], "--saveover") == 0)
     {
@@ -6883,9 +6895,8 @@ static void setup(int argc, char *argv[])
 #endif
   SDL_WM_SetCaption("Tux Paint", "Tux Paint");
 
-#ifdef NOKIA_770
-  SDL_ShowCursor (SDL_DISABLE);
-#endif
+  if (hide_cursor)
+    SDL_ShowCursor (SDL_DISABLE);
 
 
   /* Deal with 'native' screen size option */
@@ -15409,6 +15420,15 @@ static void parse_options(FILE * fi)
 	       strcmp(str, "fancycursors=yes") == 0)
       {
 	no_fancy_cursors = 0;
+      }
+      else if (strcmp(str, "hidecursor=yes") == 0)
+      {
+	hide_cursor = 1;
+      }
+      else if (strcmp(str, "hidecursor=no") == 0 ||
+	       strcmp(str, "showcursor=yes") == 0)
+      {
+	hide_cursor = 0;
       }
       else if (strcmp(str, "uppercase=yes") == 0)
       {

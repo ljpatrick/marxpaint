@@ -11,6 +11,11 @@ $Id$
 
 2007.May.15 (0.9.17)
 
+  * Interface Improvements:
+    -----------------------
+    * Mouse cursor can be hidden (e.g., using "--hidecursor"), useful on
+      touchscreen devices like tablet PCs or the Nokia Mameo devices.
+
   * Tool Improvements:
     ------------------
     * Input Method Framework, with implementations of Korean (Hangul 2-Bul)

@@ -9,7 +9,7 @@
                            bill@newbreedsoftware.com
                             http://www.tuxpaint.org/
 
-                                  May 14, 2007
+                                  May 15, 2007
 
    --------------------------------------------------------------------------
 
@@ -242,6 +242,12 @@ Windows Users
 
              In some enviornments, the fancy cursors cause problems. Use this
              option to avoid them.
+
+     hidecursor=yes
+
+             This completely hides the mouse pointer shapes in Tux Paint.
+
+             This is useful for touchscreen devices, such as tablet PCs.
 
      nooutlines=yes
 
@@ -552,6 +558,7 @@ Windows Users
        --nowheelmouse
        --nobuttondistinction
        --nofancycursors
+       --hidecursor
        --nooutlines
        --nostamps
        --nostampcontrols
@@ -583,6 +590,7 @@ Windows Users
        --wheelmouse
        --buttondistinction
        --fancycursors
+       --showcursor
        --outlines
        --stamps
        --stampcontrols
