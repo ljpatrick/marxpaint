@@ -153,6 +153,9 @@ $Id$
     * Lithuanian
       Gintaras Gostautas <gintaras@nes.lt>
 
+    * Portuguese
+      Helder Correia <helder.pereira.correia@gmail.com>
+
     * Polish
       Andrzej M. Krzysztofowicz <ankry@mif.pg.gda.pl>
       Michal Terbert <michaeel@skrzynka.pl>
