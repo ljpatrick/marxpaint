@@ -93,6 +93,12 @@ Windows Users
                 * 768x1024
                 * 1600x1200
 
+     orient=portrait
+
+             Swaps the width/height options given to Tux Paint, useful for
+             rotating the window on portait displays, such as a tablet PC
+             that's in tablet orientation.
+
      native=yes
 
              When running Tux Paint in fullscreen mode, this assumes the
@@ -549,6 +555,7 @@ Windows Users
 
        --fullscreen
        --WIDTHxHEIGHT
+       --orient=portrait
        --native
        --startblank
        --nosound
@@ -583,6 +590,7 @@ Windows Users
 
        --windowed
        --800x600
+       --orient=landscape
        --startlast
        --sound
        --quit

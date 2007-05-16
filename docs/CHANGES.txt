@@ -22,6 +22,14 @@ $Id$
       it no longer shows 'success' pop-up that must be dismissed.)
       (Addresses SourceForge RFE #1680500)
 
+    * Screen size can be rotated using the "--orient=portrait" command-line
+      option or "orient=portait" configuration file setting.  This swaps
+      the width and height values used for window or screen size.
+      (e.g., "tuxpaint --fullscreen --1024x786 --orient=portrait" will
+      run Tux Paint in 768x1024 mode.)  Useful for tablet PCs.
+      Note: override previously-set option with "--orient=landscape" or
+      "orient=landscape".
+
   * Tool Improvements:
     ------------------
     * Input Method Framework, with implementations of Korean (Hangul 2-Bul)

@@ -808,7 +808,7 @@ static int fullscreen, native_screensize, disable_quit, simple_shapes,
   no_button_distinction,
   mirrorstamps, disable_stamp_controls, disable_save, ok_to_use_lockfile,
   alt_print_command_default, scrolling = 0,
-  start_blank, autosave_on_quit;
+  start_blank, autosave_on_quit, rotate_orientation;
 static int want_alt_printcommand;
 static int starter_mirrored, starter_flipped, starter_personal;
 static int recording, playing;
@@ -5312,7 +5312,7 @@ static void show_usage(FILE * f, char *prg)
 	  "Usage: %s {--usage | --help | --version | --copying}\n"
 	  "\n"
 	  "  %s [--windowed | --fullscreen]\n"
-	  "  %s [--WIDTHxHEIGHT | --native]\n"
+	  "  %s [--WIDTHxHEIGHT | --native]   [--orient=ORIENTATION]\n"
 	  "  %s [--startblank | --startlast ]\n"
 	  "  %s [--sound | --nosound]         [--quit | --noquit]\n"
 	  "  %s [--print | --noprint]         [--complexshapes | --simpleshapes]\n"
@@ -6050,6 +6050,7 @@ static void setup(int argc, char *argv[])
   fullscreen = 0;
 #endif
   native_screensize = 0;
+  rotate_orientation = 0;
   noshortcuts = 0;
   dont_do_xor = 0;
   keymouse = 0;
@@ -6282,6 +6283,14 @@ static void setup(int argc, char *argv[])
     else if (strcmp(argv[i], "--native") == 0)
     {
       native_screensize = 1;
+    }
+    else if (strcmp(argv[i], "--orient=portrait") == 0)
+    {
+      rotate_orientation = 1;
+    }
+    else if (strcmp(argv[i], "--orient=landscape") == 0)
+    {
+      rotate_orientation = 0;
     }
     else if (strcmp(argv[i], "--nooutlines") == 0)
     {
@@ -6908,6 +6917,23 @@ static void setup(int argc, char *argv[])
   if (hide_cursor)
     SDL_ShowCursor (SDL_DISABLE);
 
+
+  /* Deal with orientation rotation option */
+
+  if (rotate_orientation)
+  {
+    if (native_screensize && fullscreen)
+    {
+      fprintf(stderr, "Warning: Asking for native screen size overrides request to rotate orientation.\n");
+    }
+    else
+    {
+      int tmp;
+      tmp = WINDOW_WIDTH;
+      WINDOW_WIDTH = WINDOW_HEIGHT;
+      WINDOW_HEIGHT = tmp;
+    }
+  }
 
   /* Deal with 'native' screen size option */
 
