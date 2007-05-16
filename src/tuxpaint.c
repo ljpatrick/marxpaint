@@ -808,7 +808,7 @@ static int fullscreen, native_screensize, disable_quit, simple_shapes,
   no_button_distinction,
   mirrorstamps, disable_stamp_controls, disable_save, ok_to_use_lockfile,
   alt_print_command_default, scrolling = 0,
-  start_blank;
+  start_blank, autosave_on_quit;
 static int want_alt_printcommand;
 static int starter_mirrored, starter_flipped, starter_personal;
 static int recording, playing;
@@ -1213,7 +1213,7 @@ static void free_surface_array(SDL_Surface * surface_array[], int count);
 //                int fixed);
 static void do_shape(int cx, int cy, int ox, int oy, int rotn, int use_brush);
 static int rotation(int ctr_x, int ctr_y, int ox, int oy);
-static int do_save(int tool);
+static int do_save(int tool, int dont_show_success_results);
 static int do_png_save(FILE * fi, const char *const fname,
 		       SDL_Surface * surf);
 static void get_new_file_id(void);
@@ -1813,7 +1813,7 @@ static void mainloop(void)
 	  /* Ctrl-S - Save */
 
 	  hide_blinking_cursor();
-	  if (do_save(cur_tool))
+	  if (do_save(cur_tool, 0))
 	  {
 	    /* Only think it's been saved if it HAS been saved :^) */
 
@@ -2204,7 +2204,7 @@ static void mainloop(void)
 	    }
 	    else if (cur_tool == TOOL_SAVE)
 	    {
-	      if (do_save(old_tool))
+	      if (do_save(old_tool, 0))
 	      {
 		been_saved = 1;
 		tool_avail[TOOL_SAVE] = 0;
@@ -5326,7 +5326,8 @@ static void show_usage(FILE * f, char *prg)
 	  "  %s [--nostampcontrols | --stampcontrols]\n"
 	  "  %s [--mirrorstamps | --dontmirrorstamps]\n"
 	  "  %s [--saveoverask | --saveover | --saveovernew]\n"
-	  "  %s [--nosave | --save]\n" "  %s [--savedir DIRECTORY]\n"
+	  "  %s [--nosave | --save]           [--autosave | --noautosave]\n"
+          "  %s [--savedir DIRECTORY]\n"
 #ifdef WIN32
 	  "  %s [--printcfg | --noprintcfg]\n"
 #endif
@@ -6066,6 +6067,7 @@ static void setup(int argc, char *argv[])
 #endif
   only_uppercase = 0;
   promptless_save = SAVE_OVER_PROMPT;
+  autosave_on_quit = 0;
   alt_print_command_default = ALTPRINT_MOD;
   disable_quit = 0;
   disable_save = 0;
@@ -6340,6 +6342,14 @@ static void setup(int argc, char *argv[])
     else if (strcmp(argv[i], "--saveovernew") == 0)
     {
       promptless_save = SAVE_OVER_NO;
+    }
+    else if (strcmp(argv[i], "--autosave") == 0)
+    {
+      autosave_on_quit = 1;
+    }
+    else if (strcmp(argv[i], "--noautosave") == 0)
+    {
+      autosave_on_quit = 0;
     }
     else if (strcmp(argv[i], "--altprintnever") == 0)
     {
@@ -11842,7 +11852,7 @@ static int rotation(int ctr_x, int ctr_y, int ox, int oy)
 
 /* Save the current image: */
 
-static int do_save(int tool)
+static int do_save(int tool, int dont_show_success_results)
 {
   int res;
   char *fname;
@@ -12098,8 +12108,12 @@ static int do_save(int tool)
   /* All happy! */
 
   playsound(screen, 0, SND_SAVE, 1, SNDPOS_CENTER, SNDDIST_NEAR);
-  draw_tux_text(TUX_DEFAULT, tool_tips[TOOL_SAVE], 1);
-  do_setcursor(cursor_arrow);
+
+  if (!dont_show_success_results)
+  {
+    draw_tux_text(TUX_DEFAULT, tool_tips[TOOL_SAVE], 1);
+    do_setcursor(cursor_arrow);
+  }
 
   return 1;
 }
@@ -12345,12 +12359,14 @@ static int do_quit(int tool)
 
   if (done && !been_saved && !disable_save)
   {
-    if (do_prompt(PROMPT_QUIT_SAVE_TXT,
+    if (autosave_on_quit ||
+        do_prompt(PROMPT_QUIT_SAVE_TXT,
 		  PROMPT_QUIT_SAVE_YES, PROMPT_QUIT_SAVE_NO))
     {
-      if (do_save(tool))
+      if (do_save(tool, 1))
       {
-	do_prompt(tool_tips[TOOL_SAVE], "OK", "");
+        // Don't bug user about successful save when quitting -bjk 2007.05.15
+	// do_prompt(tool_tips[TOOL_SAVE], "OK", "");
       }
       else
       {
@@ -13390,7 +13406,7 @@ int do_open(void)
                   img_tools[TOOL_SAVE], NULL, NULL,
                   SND_AREYOUSURE))
             {
-              do_save(TOOL_OPEN);
+              do_save(TOOL_OPEN, 1);
             }
           }
 
@@ -15563,6 +15579,14 @@ static void parse_options(FILE * fi)
       else if (strcmp(str, "saveover=new") == 0)
       {
 	promptless_save = SAVE_OVER_NO;
+      }
+      else if (strcmp(str, "autosave=yes") == 0)
+      {
+        autosave_on_quit = 1;
+      }
+      else if (strcmp(str, "autosave=no") == 0)
+      {
+        autosave_on_quit = 0;
       }
       else if (strcmp(str, "altprint=always") == 0)
       {

@@ -15,6 +15,12 @@ $Id$
     -----------------------
     * Mouse cursor can be hidden (e.g., using "--hidecursor"), useful on
       touchscreen devices like tablet PCs or the Nokia Mameo devices.
+      (Addresses SourceForge RFE #1673344)
+
+    * Added an "autosave" option that assumes you wish to save the current
+      picture during Quit.  (Additionally, after saving during Quit or Open,
+      it no longer shows 'success' pop-up that must be dismissed.)
+      (Addresses SourceForge RFE #1680500)
 
   * Tool Improvements:
     ------------------

@@ -36,6 +36,7 @@ tuxpaint -- A drawing program for young children.
 [\-\-saveover]
 [\-\-saveovernew]
 [\-\-nosave]
+[\-\-autosave]
 [\-\-colorfile \fIFILE\fP]
 
 .TP 9
@@ -260,6 +261,11 @@ The default is to prompt (\fI\-\-saveoverask\fP).
 The \fInosave\fP option disables \fITux Paint's\fP ability to save files.
 This can be used in situations where the program is only being used for
 fun, or in a test environment.
+
+.TP 8
+.B \-\-autosave \-\-noautosave
+The \fIautosave\fP option prevents \fITux Paint\fP from asking whether you
+want to save the current picture when quitting, and assumes you do.
 
 .TP 8
 .B \-\-startblank \-\-startlast

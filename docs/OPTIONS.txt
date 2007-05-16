@@ -333,6 +333,11 @@ Windows Users
              situations where the program is only being used for fun, or in a
              test environment.
 
+     autosave=yes
+
+     This prevents Tux Paint from asking whether you want to save the current
+     picture when quitting, and assumes you do.
+
      startblank=yes
              This causes Tux Paint to display a blank canvas when it first
              starts up, rather than loading the last image that was being
@@ -569,6 +574,7 @@ Windows Users
        --saveover
        --saveovernew
        --nosave
+       --autosave
        --lang LANGUAGE
                These enable or correspond to the configuration file options
                described above.
@@ -599,6 +605,7 @@ Windows Users
        --mouse
        --saveoverask
        --save
+       --noautosave
                These options can be used to override any settings made in the
                configuration file. (If the option isn't set in the
                configuration file(s), no overriding option is necessary.)
