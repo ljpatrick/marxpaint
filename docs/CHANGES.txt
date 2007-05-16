@@ -9,7 +9,7 @@ http://www.newbreedsoftware.com/tuxpaint/
 $Id$
 
 
-2007.May.15 (0.9.17)
+2007.May.16 (0.9.17)
 
   * Interface Improvements:
     -----------------------
@@ -165,6 +165,9 @@ $Id$
 
     * Faroese
       Lis Gøthe í Jákupsstovu <morshus@gmail.com>
+
+    * Gujarati
+      Kartik Mistry <kartik.mistry@gmail.com>
 
     * Irish Gaelic
       Kevin Patrick Scannell <kscanne@gmail.com>
