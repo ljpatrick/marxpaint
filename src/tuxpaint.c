@@ -2345,7 +2345,7 @@ static void mainloop(void)
               else
 		gd_controls = (grid_dims)
 	      {
-	      1, 1};  // was left 0,0 before adding left/right stamp group buttons -bjk 2007.05.03
+	      1, 2};  // was left 0,0 before adding left/right stamp group buttons -bjk 2007.05.03
 	    }
 	    else if (cur_tool == TOOL_TEXT)
 	    {
@@ -2413,8 +2413,6 @@ static void mainloop(void)
 	      {
 		/* Stamp controls! */
 		int control_sound = -1;
-
-                printf("\n\nwhich=%d\n\n", which);
 
 		if (which == 4 || which == 5)
 		{
@@ -8492,12 +8490,12 @@ static void draw_stamps(void)
   button_body = img_btn_up;
 
   dest.x = WINDOW_WIDTH - 96;
-  dest.y = 40 + ((4 + TOOLOFFSET / 2) * 48);
+  dest.y = 40 + (((most + TOOLOFFSET) / 2) * 48);
 
   SDL_BlitSurface(button_body, NULL, screen, &dest);
 
   dest.x = WINDOW_WIDTH - 96 + (48 - img_prev->w) / 2;
-  dest.y = (40 + ((4 + TOOLOFFSET / 2) * 48) + (48 - img_prev->h) / 2);
+  dest.y = (40 + (((most + TOOLOFFSET) / 2) * 48) + (48 - img_prev->h) / 2);
 
   SDL_BlitSurface(button_color, NULL, img_prev, NULL);
   SDL_BlitSurface(img_prev, NULL, screen, &dest);
@@ -8508,12 +8506,12 @@ static void draw_stamps(void)
   button_body = img_btn_up;
   
   dest.x = WINDOW_WIDTH - 48;
-  dest.y = 40 + ((4 + TOOLOFFSET / 2) * 48);
+  dest.y = 40 + (((most + TOOLOFFSET) / 2) * 48);
 
   SDL_BlitSurface(button_body, NULL, screen, &dest);
 
   dest.x = WINDOW_WIDTH - 48 + (48 - img_next->w) / 2;
-  dest.y = (40 + ((4 + TOOLOFFSET / 2) * 48) + (48 - img_next->h) / 2);
+  dest.y = (40 + (((most + TOOLOFFSET) / 2) * 48) + (48 - img_next->h) / 2);
 
   SDL_BlitSurface(button_color, NULL, img_next, NULL);
   SDL_BlitSurface(img_next, NULL, screen, &dest);
