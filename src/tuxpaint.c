@@ -3010,13 +3010,17 @@ static void mainloop(void)
 	  /* Note set of things we're dealing with */
 	  /* (stamps, brushes, etc.) */
 
-	  if (cur_tool == TOOL_STAMP)
-	  {
-	    if (!disable_stamp_controls)
-	      gd_controls = (grid_dims)
-	    {
-	    2, 2};
-	  }
+          if (cur_tool == TOOL_STAMP)
+          {
+            if (!disable_stamp_controls)
+              gd_controls = (grid_dims)
+            {
+            3, 2}; // was 2,2 before adding left/right stamp group buttons -bjk 2007.05.15
+            else
+              gd_controls = (grid_dims)
+            {
+            1, 2};  // was left 0,0 before adding left/right stamp group buttons -bjk 2007.05.03
+          }
 	  else if (cur_tool == TOOL_TEXT)
 	  {
 	    if (!disable_stamp_controls)
