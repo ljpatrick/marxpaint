@@ -2341,7 +2341,7 @@ static void mainloop(void)
 	      if (!disable_stamp_controls)
 		gd_controls = (grid_dims)
 	      {
-	      3, 3}; // was 2,2 before adding left/right stamp group buttons -bjk 2007.05.03
+	      3, 2}; // was 2,2 before adding left/right stamp group buttons -bjk 2007.05.15
               else
 		gd_controls = (grid_dims)
 	      {
@@ -2414,11 +2414,13 @@ static void mainloop(void)
 		/* Stamp controls! */
 		int control_sound = -1;
 
-		if (which & 2)
+                printf("\n\nwhich=%d\n\n", which);
+
+		if (which == 4 || which == 5)
 		{
+		  /* Grow/Shrink Controls: */
 #ifdef OLD_STAMP_GROW_SHRINK
-		  /* One of the bottom buttons: */
-		  if (which & 1)
+		  if (which == 5)
 		  {
 		    /* Bottom right button: Grow: */
 		    if (stamp_data[stamp_group][cur_stamp[stamp_group]]->size < MAX_STAMP_SIZE)
@@ -2453,10 +2455,10 @@ static void mainloop(void)
 		    control_sound = SND_GROW;
 #endif
 		}
-		else
+		else if (which == 2 || which == 3)
 		{
-		  /* One of the top buttons: */
-		  if (which & 1)
+		  /* Mirror/Flip Controls: */
+		  if (which == 3)
 		  {
 		    /* Top right button: Flip: */
 		    if (stamp_data[stamp_group][cur_stamp[stamp_group]]->flipable)
@@ -2477,6 +2479,15 @@ static void mainloop(void)
 		    }
 		  }
 		}
+                else
+                {
+                  /* Prev/Next Controls: */
+
+                  if (which == 1)
+                    printf("Next\n");
+                  else
+                    printf("Prev\n");
+                }
 		if (control_sound != -1)
 		{
 		  playsound(screen, 0, control_sound, 0, SNDPOS_CENTER,
