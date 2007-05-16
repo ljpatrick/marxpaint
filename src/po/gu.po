@@ -130,16 +130,16 @@ msgid "Good job!"
 msgstr "સરસ કામ!"
 
 msgid "English"
-msgstr ""
+msgstr "અંગ્રેજી"
 
 msgid "Hiragana"
-msgstr ""
+msgstr "હિરાગાના"
 
 msgid "Katakana"
-msgstr ""
+msgstr "કાટાકાના"
 
 msgid "Hangul"
-msgstr ""
+msgstr "હંગુલ"
 
 msgid "Fill"
 msgstr "ભરો"
