@@ -9,7 +9,7 @@ http://www.newbreedsoftware.com/tuxpaint/
 $Id$
 
 
-2007.May.16 (0.9.17)
+2007.May.17 (0.9.17)
 
   * Interface Improvements:
     -----------------------
@@ -72,6 +72,8 @@ $Id$
       + Splat
       + Star
       + Triangle (up and down)
+      + Arrows (directional)
+      + Triangles (directional)
 
   * System-related improvements:
     ----------------------------
