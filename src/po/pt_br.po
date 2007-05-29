@@ -8,14 +8,14 @@ msgstr ""
 "Project-Id-Version: pt_br\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2007-05-09 00:32-0700\n"
-"PO-Revision-Date: 2006-02-03 21:59-0300\n"
-"Last-Translator: Fred Ulisses Maranhao <fred_maranhao@yahoo.com.br>\n"
+"PO-Revision-Date: 2007-05-19 15:50-0300\n"
+"Last-Translator: Adorilson Bezerra <adorilson@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <pt@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.11.1\n"
-"Plural-Forms:  nplurals=2; plural=(n > 1);\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
 msgid "Black!"
 msgstr "Preto!"
@@ -51,7 +51,7 @@ msgid "Blue!"
 msgstr "Azul!"
 
 msgid "Lavender!"
-msgstr ""
+msgstr "Lavanda!"
 
 msgid "Purple!"
 msgstr "Roxo!"
@@ -67,7 +67,7 @@ msgid "Tan!"
 msgstr "Azul Claro!"
 
 msgid "Beige!"
-msgstr ""
+msgstr "Bege!"
 
 #. First, the blacklist. We list font families that can crash Tux Paint
 #. via bugs in the SDL_ttf library. We also test fonts to be sure that
@@ -81,44 +81,44 @@ msgstr ""
 #. ASCII-only fonts should be given bad scores in the scoring code below.
 #. (the best scores going to fonts that support both)
 msgid "qx"
-msgstr ""
+msgstr "qx"
 
 msgid "QX"
-msgstr ""
+msgstr "QX"
 
 #. Line X
 msgid "qy"
-msgstr ""
+msgstr "qy"
 
 msgid "QY"
-msgstr ""
+msgstr "QX"
 
 #. Now we score fonts to ensure that the best ones will be placed at
 #. the top of the list. The user will see them first. This sorting is
 #. especially important for users who have scroll buttons disabled.
 #. Translators should do whatever is needed to put crummy fonts last.
 msgid "oO"
-msgstr ""
+msgstr "oO"
 
 #. distinct uppercase and lowercase
 msgid "`\\%_@$~#{}<>^&*"
-msgstr ""
+msgstr "`\\%_@$~#{}<>^&*"
 
 #. uncommon punctuation
 msgid ",.?!"
-msgstr ""
+msgstr ",.?!"
 
 #. common punctuation
 msgid "017"
-msgstr ""
+msgstr "017"
 
 #. digits
 msgid "O0"
-msgstr ""
+msgstr "O0"
 
 #. distinct circle-like characters
 msgid "1Il|"
-msgstr ""
+msgstr "1Il|"
 
 msgid "Great!"
 msgstr "Excelente!"
@@ -133,7 +133,7 @@ msgid "Good job!"
 msgstr "Bom Trabalho!"
 
 msgid "English"
-msgstr ""
+msgstr "Inglês"
 
 msgid "Hiragana"
 msgstr ""
@@ -226,10 +226,8 @@ msgstr "Clique e mova o mouse para desbotar as cores."
 msgid "Click and move to darken the colors."
 msgstr "Clique e mova o mouse para escurecer as cores."
 
-msgid ""
-"Click and move the mouse around to turn the picture into a chalk drawing."
-msgstr ""
-"Clique e mova o mouse para transformar a imagem em desenho feito com giz."
+msgid "Click and move the mouse around to turn the picture into a chalk drawing."
+msgstr "Clique e mova o mouse para transformar a imagem em desenho feito com giz."
 
 msgid "Click and move the mouse around to make the picture blocky."
 msgstr "Clique e mova o mouse para fazer a imagem ficar quadriculada."
@@ -279,10 +277,8 @@ msgstr "Um quadrado é um retângulo com os quatro lados iguais."
 msgid "A rectangle has four sides and four right angles."
 msgstr "Um retângulo tem quatro lados e quatro ângulos retos."
 
-msgid ""
-"A circle is a curve where all points have the same distance from the centre."
-msgstr ""
-"Um círculo é uma curva onde todos os pontos ficam à mesma distância do centro"
+msgid "A circle is a curve where all points have the same distance from the centre."
+msgstr "Um círculo é uma curva onde todos os pontos ficam à mesma distância do centro"
 
 msgid "An ellipse is a stretched circle."
 msgstr "Uma elipse é um círculo esticado."
@@ -294,8 +290,7 @@ msgid "A pentagon has five sides."
 msgstr "Um pentágono tem cinco lados."
 
 msgid "A rhombus has four equal sides, and opposite sides are parallel."
-msgstr ""
-"Um losângulo tem os quatro lados iguais, e os lados opostos são paralelos."
+msgstr "Um losângulo tem os quatro lados iguais, e os lados opostos são paralelos."
 
 msgid "Tools"
 msgstr "Ferramentas"
@@ -370,17 +365,11 @@ msgstr "Clique e segure para começar uma linha. Solte para terminá-la."
 # #: tools.h:65
 # msgid "Pick a shape to draw.  Click once to pick the center of the shape, #click again to draw it."
 # msgstr "Escolha uma forma para desenhar. Clique uma vez para definir o centro da imagem. Clique de novo para desenhá-la."
-msgid ""
-"Pick a shape. Click to pick the center, drag, then let go when it is the "
-"size you want. Move around to rotate it, and click to draw it."
-msgstr ""
-"Escolha uma forma. Clique para marcar o centro, mova o mouse, Solte quando "
-"estiver do tamanho que você quiser. Depois mova o mouse para girar. Clique "
-"novamente para desenhá-la de vez."
+msgid "Pick a shape. Click to pick the center, drag, then let go when it is the size you want. Move around to rotate it, and click to draw it."
+msgstr "Escolha uma forma. Clique para marcar o centro, mova o mouse, Solte quando estiver do tamanho que você quiser. Depois mova o mouse para girar. Clique novamente para desenhá-la de vez."
 
 msgid "Choose a style of text. Click on your drawing and you can start typing."
-msgstr ""
-"Escolha um tipo de letra e então clique no desenho para começar a escrever."
+msgstr "Escolha um tipo de letra e então clique no desenho para começar a escrever."
 
 msgid "Pick a magical effect to use on your drawing!"
 msgstr "Escolha um efeito mágico para usar no seu desenho!"
@@ -473,7 +462,7 @@ msgid "Yes, let's start fresh!"
 msgstr ""
 
 msgid "There are no saved files!"
-msgstr "Não há desenhos guardados"
+msgstr "Não há desenhos guardados!"
 
 msgid "Print your picture now?"
 msgstr "Quer imprimir seu desenho agora?"
@@ -556,7 +545,7 @@ msgid "Drawing program"
 msgstr "Programa de desenho"
 
 msgid "Tux Paint"
-msgstr "Pintar"
+msgstr "Tux Paint"
 
 #~ msgid "Starting a new picture will erase the current one!"
 #~ msgstr "Iniciar um novo desenho irá apagar o desenho atual!"
@@ -564,9 +553,8 @@ msgstr "Pintar"
 #, fuzzy
 #~ msgid "That’s OK!"
 #~ msgstr "Está bem!"
-
 #~ msgid "Never mind!"
 #~ msgstr "Nem Pensar!"
-
 #~ msgid "Save over the older version of this picture?"
 #~ msgstr "Guardar por cima do seu desenho anterior?"
+

@@ -9,7 +9,7 @@ http://www.newbreedsoftware.com/tuxpaint/
 $Id$
 
 
-2007.May.17 (0.9.17)
+2007.May.28 (0.9.17)
 
   * Interface Improvements:
     -----------------------
@@ -159,6 +159,9 @@ $Id$
     * Basque
       Juan Irigoien <juanirigoien@gmail.com>
 
+    * Brazilian Portuguese
+      Adorilson Bezerra de Araujo <adorilson@gmail.com>
+      
     * Bulgarian
       Yavor Doganov <yavor@doganov.org>
 

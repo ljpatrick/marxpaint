@@ -7,7 +7,7 @@ bill@newbreedsoftware.com
 http://www.tuxpaint.org/
 
 
-June 17, 2002 - May 16, 2007
+June 17, 2002 - May 28, 2007
 
 $Id$
 
@@ -323,6 +323,7 @@ $Id$
     Daniel José Viana <danjovic@vespanet.com.br>
       - Dedicated to my beloved daughter Scarlet
     Silvio Faria <sirofa2003@yahoo.com.br>
+    Adorilson Bezerra de Araujo <adorilson@gmail.com>
  
   * Portuguese (Portugal)
     Ricardo Cruz <rpmcruz@clix.pt>
