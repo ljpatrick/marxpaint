@@ -1,22 +1,22 @@
 # Vietnamese translation for Tuxpaint.
 # Copyright © 2004 Bill Kendrick
-# Copyright © 2005 Free Software Foundation, Inc.
+# Copyright © 2007 Free Software Foundation, Inc.
 # Le Quang Phan <lqphan@hn.vnn.vn>, 2004.
-# Clytie Siddall <clytie@riverland.net.au>, 2005.
+# Clytie Siddall <clytie@riverland.net.au>, 2005-2007.
 # 
 msgid ""
 msgstr ""
-"Project-Id-Version: tuxpaint-0.9.15rc1\n"
+"Project-Id-Version: tuxpaint-0.9.17\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2007-05-09 00:32-0700\n"
-"PO-Revision-Date: 2006-04-05 15:17+0930\n"
+"PO-Revision-Date: 2007-05-28 21:36+0930\n"
 "Last-Translator: Clytie Siddall <clytie@riverland.net.au>\n"
-"Language-Team: Vietnamese <gnomevi-list@lists.sourceforge.net>\n"
+"Language-Team: Vietnamese <vi-VN@googlegroups.com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=1; plural=0\n"
-"X-Generator: LocFactoryEditor 1.6b36\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: LocFactoryEditor 1.6.3b1\n"
 
 msgid "Black!"
 msgstr "Đen!"
@@ -133,16 +133,16 @@ msgid "Good job!"
 msgstr "Tốt rồi!"
 
 msgid "English"
-msgstr ""
+msgstr "Tiếng Anh"
 
 msgid "Hiragana"
-msgstr ""
+msgstr "Hiragana"
 
 msgid "Katakana"
-msgstr ""
+msgstr "Katakana"
 
 msgid "Hangul"
-msgstr ""
+msgstr "Hangul"
 
 msgid "Fill"
 msgstr "Điền"
@@ -225,8 +225,7 @@ msgstr "Nhắp và di chuột để làm màu mờ dần."
 msgid "Click and move to darken the colors."
 msgstr "Nhắp và di chuột để làm màu tối hơn."
 
-msgid ""
-"Click and move the mouse around to turn the picture into a chalk drawing."
+msgid "Click and move the mouse around to turn the picture into a chalk drawing."
 msgstr "Nhắp và di chuột để đổi hình này thành bản vẽ phấn."
 
 msgid "Click and move the mouse around to make the picture blocky."
@@ -277,8 +276,7 @@ msgstr "Hình vuông là hình chữ nhật có bốn cạnh bằng nhau."
 msgid "A rectangle has four sides and four right angles."
 msgstr "Hình chữ nhật có bốn cạnh và bốn góc vuông."
 
-msgid ""
-"A circle is a curve where all points have the same distance from the centre."
+msgid "A circle is a curve where all points have the same distance from the centre."
 msgstr "Hình tròn là đường cong có mọi điểm cách tâm vòng bằng nhau."
 
 msgid "An ellipse is a stretched circle."
@@ -291,8 +289,7 @@ msgid "A pentagon has five sides."
 msgstr "Hình năm canh có ... năm cạnh. :)"
 
 msgid "A rhombus has four equal sides, and opposite sides are parallel."
-msgstr ""
-"Hình thoi có bốn cạnh bằng nhau, mỗi cặp cạnh đối diện với nhau là song song."
+msgstr "Hình thoi có bốn cạnh bằng nhau, mỗi cặp cạnh đối diện với nhau là song song."
 
 msgid "Tools"
 msgstr "Công cụ"
@@ -364,13 +361,8 @@ msgstr "Chọn một ảnh để dấu vòng quanh hình vẽ của cháu."
 msgid "Click to start drawing a line. Let go to complete it."
 msgstr "Nhắp chuột để bắt đầu vẽ một đường. Nhả nút chuột để vẽ xong."
 
-msgid ""
-"Pick a shape. Click to pick the center, drag, then let go when it is the "
-"size you want. Move around to rotate it, and click to draw it."
-msgstr ""
-"Chọn một hình. Nhắp chuột để định tâm, kéo, rồi nhả nút chuột đến khi có "
-"kích cỡ cháu muốn. Di chuyển chuột để quay hình, nhắp chuột lần nữa để vẽ "
-"xong."
+msgid "Pick a shape. Click to pick the center, drag, then let go when it is the size you want. Move around to rotate it, and click to draw it."
+msgstr "Chọn một hình. Nhắp chuột để định tâm, kéo, rồi nhả nút chuột đến khi có kích cỡ cháu muốn. Di chuyển chuột để quay hình, nhắp chuột lần nữa để vẽ xong."
 
 msgid "Choose a style of text. Click on your drawing and you can start typing."
 msgstr "Chọn kiểu văn bản. Nhắp vào bản vẽ và bắt đầu gõ chữ."
@@ -427,19 +419,19 @@ msgid "Do you really want to quit?"
 msgstr "Cháu có thực sư muốn thoát không?"
 
 msgid "Yes, I'm done!"
-msgstr ""
+msgstr "Xong rồi."
 
 msgid "No, take me back!"
-msgstr ""
+msgstr "Chưa, trở về."
 
 msgid "If you quit, you’ll lose your picture! Save it?"
 msgstr "Nếu thoát thì ảnh của cháu bị mất! Có lưu không?"
 
 msgid "Yes, save it!"
-msgstr ""
+msgstr "Lưu đi."
 
 msgid "No, don't bother saving!"
-msgstr ""
+msgstr "Không lưu."
 
 msgid "Save your picture first?"
 msgstr "Có lưu ảnh của cháu trước?"
@@ -453,14 +445,13 @@ msgstr "Được"
 #. This will be replaced with a dialog allowing color choice and Starter
 #. picking, with a "Back" option to dismiss the "New" and return to
 #. the current picture.  But for now...  (bjk 2006.02.19)
-#, fuzzy
 msgid "Start a new picture?"
-msgstr "Có xóa ảnh này không?"
+msgstr "Có bắt đầu bức vẽ mới phải không?"
 
 #. #define PROMPT_NEW_YES gettext_noop("That’s OK!")
 #. #define PROMPT_NEW_NO gettext_noop("Never mind!")
 msgid "Yes, let's start fresh!"
-msgstr ""
+msgstr "Có phải, bắt đầu lại."
 
 msgid "There are no saved files!"
 msgstr "Không có tập tin nào được lưu!"
@@ -469,7 +460,7 @@ msgid "Print your picture now?"
 msgstr "Có in ảnh của cháu bây giờ?"
 
 msgid "Yes, print it!"
-msgstr ""
+msgstr "In đi."
 
 msgid "Your picture has been printed!"
 msgstr "Ảnh của cháu đã được in rồi!"
@@ -481,32 +472,31 @@ msgid "Erase this picture?"
 msgstr "Có xóa ảnh này không?"
 
 msgid "Yes, erase it!"
-msgstr ""
+msgstr "Xoá đi."
 
 msgid "No, don't erase it!"
-msgstr ""
+msgstr "Không xoá."
 
 msgid "Remember to use the left mouse button!"
 msgstr "Hãy nhớ để dùng cái nút bên trái trên con chuột."
 
 msgid "Please wait..."
-msgstr ""
+msgstr "Hãy đợi..."
 
 msgid "Erase"
 msgstr "Xóa"
 
 msgid "Slides"
-msgstr ""
+msgstr "Ảnh chiếu"
 
 msgid "Back"
 msgstr "Quay lui"
 
-#, fuzzy
 msgid "Next"
-msgstr "Văn bản"
+msgstr "Kế"
 
 msgid "Play"
-msgstr ""
+msgstr "Chạy"
 
 msgid "Aa"
 msgstr "Aa"
@@ -521,22 +511,20 @@ msgstr "Không"
 #. FIXME: Move elsewhere!!!
 #. #define PROMPT_SAVE_OVER_TXT gettext_noop("Save over the older version of this picture?")
 msgid "Replace the picture with your changes?"
-msgstr ""
+msgstr "Thay bức vẽ bằng các thay đổi của cháu phải không?"
 
 msgid "Yes, replace the old one!"
-msgstr ""
+msgstr "Có phải, thay thế bức cũ."
 
-#, fuzzy
 msgid "No, save a new file!"
-msgstr "Không, lưu vào một tập tin mới"
+msgstr "Không phải, lưu tập tin mới."
 
 msgid "Choose the picture you want, then click “Open”."
 msgstr "Chọn ảnh mà cháu muốn, rồi nhắp vào nút Mở."
 
 #. Let user choose images:
-#, fuzzy
 msgid "Choose the pictures you want, then click “Play”."
-msgstr "Chọn ảnh mà cháu muốn, rồi nhắp vào nút Mở."
+msgstr "Chọn các ảnh đã muốn, rồi nhấp vào nút « Chạy »."
 
 msgid "A drawing program for children."
 msgstr "Một chương trình vẽ cho đứa bé."

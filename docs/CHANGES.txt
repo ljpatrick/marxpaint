@@ -202,6 +202,9 @@ $Id$
     * Thai
       Ouychai Chaita <ae.freeman@gmail.com>
 
+    * Vietnamese
+      Clytie Siddall <clytie@riverland.net.au>
+
 
 2006.October.19 (0.9.16)
 
