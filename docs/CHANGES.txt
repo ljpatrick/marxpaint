@@ -196,6 +196,9 @@ $Id$
     * Russian
       Sergei Popov <skein@rambler.ru>
 
+    * Swedish
+      Daniel Nylander <po@danielnylander.se>
+
     * Thai
       Ouychai Chaita <ae.freeman@gmail.com>
 
