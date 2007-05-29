@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: tuxpaint\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2007-05-09 00:32-0700\n"
-"PO-Revision-Date: 2006-07-12 18:45+0530\n"
+"PO-Revision-Date: 2007-05-29 11:29+0530\n"
 "Last-Translator: Kartik Mistry <kartik.mistry@gmail.com>\n"
 "Language-Team: Gujarati <team@utkarsh.org>\n"
 "MIME-Version: 1.0\n"
@@ -19,7 +19,7 @@ msgid "Black!"
 msgstr "કાળું!"
 
 msgid "Dark grey! Some people spell it “dark gray”."
-msgstr "ઘાટો રાખોડી! કેટલાક લોકો તેને આછો ભૂખરો પણ કહે છે."
+msgstr "ઘેરો રાખોડી! કેટલાક લોકો તેને આછો ભૂખરો પણ કહે છે."
 
 msgid "Light grey! Some people spell it “light gray”."
 msgstr "આછો રાખોડી! કેટલાક લોકો તેને આછો ભૂખરો પણ કહે છે."
@@ -40,7 +40,7 @@ msgid "Light green!"
 msgstr "આછો લીલો!"
 
 msgid "Dark green!"
-msgstr "ઘાટો લીલો!"
+msgstr "ઘેરો લીલો!"
 
 msgid "Sky blue!"
 msgstr "આકાશી વાદળી!"
@@ -220,10 +220,9 @@ msgid "Click and move to fade the colors."
 msgstr "રંગોને ઝાંખાં કરવાં ક્લિક કરો અને ખસેડો."
 
 msgid "Click and move to darken the colors."
-msgstr "રંગોને ઘાટાં કરવાં ક્લિક કરો અને ખસેડો."
+msgstr "રંગોને ઘેરાં કરવાં ક્લિક કરો અને ખસેડો."
 
-msgid ""
-"Click and move the mouse around to turn the picture into a chalk drawing."
+msgid "Click and move the mouse around to turn the picture into a chalk drawing."
 msgstr "ચિત્રને ચોક ચિત્રમાં ફેરવવા માઉસ ક્લિક કરો અને આજુ-બાજુ ફેરવો."
 
 msgid "Click and move the mouse around to make the picture blocky."
@@ -269,17 +268,16 @@ msgid "Rhombus"
 msgstr "સમચતુર્ભુજ"
 
 msgid "A square is a rectangle with four equal sides."
-msgstr "ચોરસએ ચારેય સરખી બાજુઓ ધરાવતો ચતુષ્કોણ છે."
+msgstr "ચોરસ ચારેય સરખી બાજુઓ ધરાવતો ચતુષ્કોણ છે."
 
 msgid "A rectangle has four sides and four right angles."
 msgstr "ચતુષ્કોણને ચાર સરખી બાજુઓ અને ચાર સરખા ખૂણાઓ હોય છે."
 
-msgid ""
-"A circle is a curve where all points have the same distance from the centre."
-msgstr "વર્તુળએ વક્ર છે કે જેમાં બધાં બિંદુઓ કેન્દ્રથી સમાન અંતરે આવેલાં હોય છે."
+msgid "A circle is a curve where all points have the same distance from the centre."
+msgstr "વર્તુળ વક્ર છે કે જેમાં બધાં બિંદુઓ કેન્દ્રથી સમાન અંતરે આવેલાં હોય છે."
 
 msgid "An ellipse is a stretched circle."
-msgstr "ઉપવલય એ ખેંચાયેલ વર્તુળ છે."
+msgstr "ઉપવલય ખેંચાયેલ વર્તુળ છે."
 
 msgid "A triangle has three sides."
 msgstr "ત્રિકોણને ત્રણ બાજુઓ છે."
@@ -300,10 +298,10 @@ msgid "Brushes"
 msgstr "પીંછીઓ"
 
 msgid "Erasers"
-msgstr "રબરો"
+msgstr "રબર"
 
 msgid "Stamps"
-msgstr "છાપો"
+msgstr "છાપ"
 
 msgid "Shapes"
 msgstr "આકારો"
@@ -321,7 +319,7 @@ msgid "Stamp"
 msgstr "છાપ"
 
 msgid "Lines"
-msgstr "લીટીઓ"
+msgstr "રેખાઓ"
 
 msgid "Text"
 msgstr "લખાણ"
@@ -358,14 +356,10 @@ msgid "Pick a picture to stamp around your drawing."
 msgstr "તમારા ચિત્રની આજુબાજુ છાપ મુકવા ચિત્ર પસંદ કરો."
 
 msgid "Click to start drawing a line. Let go to complete it."
-msgstr "લીટી દોરવા માટે ક્લિક કરો. પૂરી કરવા તેનાથી દૂર જઇ ક્લિક કરો."
+msgstr "રેખા દોરવા માટે ક્લિક કરો. પૂરી કરવા તેનાથી દૂર જઇને ક્લિક કરો."
 
-msgid ""
-"Pick a shape. Click to pick the center, drag, then let go when it is the "
-"size you want. Move around to rotate it, and click to draw it."
-msgstr ""
-"આકાર પસંદ કરો. કેન્દ્રને પસંદ કરવા ક્લિક કરો, ખસેડો, અને તમને જોઇએ તે માપ પસંદ કરો. તેને "
-"ફેરવવા આજુબાજુ ખસેડો, અને તે દોરવા માટે ક્લિક કરો."
+msgid "Pick a shape. Click to pick the center, drag, then let go when it is the size you want. Move around to rotate it, and click to draw it."
+msgstr "આકાર પસંદ કરો. કેન્દ્રને પસંદ કરવા ક્લિક કરો, ખસેડો, અને તમને જોઇએ તે માપ પસંદ કરો. તેને ફેરવવા આજુબાજુ ખસેડો, અને તે દોરવા માટે ક્લિક કરો."
 
 msgid "Choose a style of text. Click on your drawing and you can start typing."
 msgstr "લખાણની પધ્ધતિ પસંદ કરો. તમારા ચિત્રમાં ક્લિક કરો અને તમે લખવાનું શરૂ કરી શકો છો."
@@ -406,7 +400,7 @@ msgid "Bye bye!"
 msgstr "આવજો!"
 
 msgid "Let go of the button to complete the line."
-msgstr "લીટીને પૂરી કરવા માટે બટનથી છોડી જાવ."
+msgstr "રેખાને પૂરી કરવા માટે બટનથી છોડી જાવ."
 
 msgid "Hold the button to stretch the shape."
 msgstr "આકારને ખેંચવા બટનને પકડી રાખો."
@@ -434,7 +428,7 @@ msgid "Yes, save it!"
 msgstr "હા, તેને સંગ્રહો!"
 
 msgid "No, don't bother saving!"
-msgstr "ના, સંગ્રહ કરવાની ચિંતા કરશો નહી!"
+msgstr "ના, સંગ્રહ કરશો નહી!"
 
 msgid "Save your picture first?"
 msgstr "પહેલાં તમારૂં ચિત્ર સંગ્રહશો?"
@@ -536,4 +530,5 @@ msgid "Drawing program"
 msgstr "ચિત્ર કાર્યક્રમ"
 
 msgid "Tux Paint"
-msgstr "ટક્સ પૅઇન્ટ"
+msgstr "ટક્સ પેન્ટ"
+
