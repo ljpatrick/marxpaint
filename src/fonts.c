@@ -83,6 +83,12 @@ unsigned text_size = 4;		// initial text size
    TTF_OpenFont() with the filename of a font that doesn't exist. This
    is an old and well documented bug that is fixed in CVS.
 */
+
+/* FIXME: SDL_ttf is up to 2.0.8, so we can probably fully remove this
+   -bjk 2007.06.05 */
+
+/*
+
 TTF_Font *BUGFIX_TTF_OpenFont206(const char *const file, int ptsize)
 {
   FILE *fp;
@@ -98,10 +104,9 @@ TTF_Font *BUGFIX_TTF_OpenFont206(const char *const file, int ptsize)
 #undef TTF_OpenFont
   return TTF_OpenFont(file, ptsize);
 }
+*/
 
-
-#define TTF_OpenFont    BUGFIX_TTF_OpenFont206
-
+/* #define TTF_OpenFont    BUGFIX_TTF_OpenFont206 */
 
 TTF_Font *try_alternate_font(int size)
 {

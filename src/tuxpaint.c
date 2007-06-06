@@ -1392,13 +1392,16 @@ int main(int argc, char *argv[])
 
   CLOCK_ASM(time1);
 
-#ifdef FORKED_FONTS
-  run_font_scanner(screen);
-#endif
-
   /* Set up locale support */
   setlocale(LC_ALL, "");
   ctype_utf8();
+
+
+  /* NOTE: Moved run_font_scanner() call from here, to right after
+     setup_language(), so that the gettext() calls used while testing fonts
+     actually DO something (per tuxpaint-devel discussion, April 2007)
+     -bjk 2007.06.05 */
+
 
   /* Set up! */
   setup(argc, argv);
@@ -6656,9 +6659,19 @@ static void setup(int argc, char *argv[])
     }
   }
 
-
+  
   setup_language(getfilename(argv[0]));
   im_init(&im_data, get_current_language());
+
+  
+  /* NOTE: Moved run_font_scanner() call from main(), to here,
+     so that the gettext() calls used while testing fonts
+     actually DO something (per tuxpaint-devel discussion, April 2007)
+     -bjk 2007.06.05 */
+
+#ifdef FORKED_FONTS
+  run_font_scanner(screen);
+#endif
 
 
 #ifndef WIN32

@@ -7,7 +7,7 @@ bill@newbreedsoftware.com
 http://www.tuxpaint.org/
 
 
-June 17, 2002 - May 28, 2007
+June 17, 2002 - June 5, 2007
 
 $Id$
 
@@ -193,6 +193,7 @@ $Id$
     Martin <barin@email.cz>,
     Lucie Burianova <Lucie.Burianova@global-dtp.com>
     tropikhajma <tropikhajma@seznam.cz>
+    Vaclav Cermak <vaclav.cermak@gmail.com>
 
   * Danish
     Rasmus Erik Voel Jensen <i18n@solsort.dk> [retired]

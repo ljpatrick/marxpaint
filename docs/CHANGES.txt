@@ -9,7 +9,7 @@ http://www.newbreedsoftware.com/tuxpaint/
 $Id$
 
 
-2007.May.28 (0.9.17)
+2007.June.5 (0.9.17)
 
   * Interface Improvements:
     -----------------------
@@ -75,6 +75,10 @@ $Id$
       + Arrows (directional)
       + Triangles (directional)
 
+    * New starters:
+      + 10x10 grid
+      + 20x20 grid
+
   * System-related improvements:
     ----------------------------
     * When running in fullscreen mode, you may now ask Tux Paint to display
@@ -119,6 +123,11 @@ $Id$
 
     * "use_print_config" option defaults to 'yes' on Windows, again.
       John Popplewell <john@johnnypops.demon.co.uk>
+
+    * Reordered font-loading to happen after locale switch occurs, to
+      pick up font-organizing string translations (e.g., "Aa", "qx", etc.).
+      Attempting to help address issue of Latin-only fonts being available
+      in non-Latin locales -- seemed to help with Norwegian.
 
   * Compiling, porting and packaging updates:
     -----------------------------------------
@@ -170,6 +179,7 @@ $Id$
 
     * Czech
       tropikhajma <tropikhajma@seznam.cz>
+      Vaclav Cermak <vaclav.cermak@gmail.com>
 
     * Danish
       Mikkel Kirkgaard Nielsen <translation@mikini.dk>
@@ -194,6 +204,9 @@ $Id$
       Michal Terbert <michaeel@skrzynka.pl>
 
     * Russian
+      Sergei Popov <skein@rambler.ru>
+
+    * Russian README documentation
       Sergei Popov <skein@rambler.ru>
 
     * Swedish

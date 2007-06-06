@@ -6,9 +6,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: cs\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-05-09 00:32-0700\n"
+"POT-Creation-Date: 2006-09-10 11:18-0700\n"
 "PO-Revision-Date: 2006-06-21 12:50+0200\n"
-"Last-Translator: Jakub Friedl <jfriedl@suse.cz>\n"
+"Last-Translator: Václav Čermák <vaclav.cermak@gmail.com>\n"
 "Language-Team:  <cs@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -130,18 +130,6 @@ msgstr "Jen tak dál!"
 msgid "Good job!"
 msgstr "Dobrá práce!"
 
-msgid "English"
-msgstr ""
-
-msgid "Hiragana"
-msgstr ""
-
-msgid "Katakana"
-msgstr ""
-
-msgid "Hangul"
-msgstr ""
-
 msgid "Fill"
 msgstr "Výplň"
 
@@ -194,59 +182,59 @@ msgid "Flip"
 msgstr "Převrátit"
 
 msgid "Click in the picture to fill that area with color."
-msgstr "Klikni do obrázku pro vyplnění oblasti barvou."
+msgstr "Klepni do obrázku a oblast se vyplní barvou."
 
 msgid "Click and move to draw grass. Don’t forget the dirt!"
-msgstr "Klikni a pohybuj myší pro kreslení trávy. A nezapomeň hlínu!"
+msgstr "Klepni a pohybuj myší - nakreslíš trávu. A nezapomeň hlínu!"
 
 msgid "Click and move to draw large bricks."
-msgstr "Klikni a pohybuj myší pro kreslení velkých cihel."
+msgstr "Klepni a pohybuj myší - nakreslíš velké cihly."
 
 msgid "Click and move to draw small bricks."
-msgstr "Klikni a pohybuj myší pro kreslení malých cihliček."
+msgstr "Klepni a pohybuj myší - nakreslíš malé cihly."
 
 msgid "You can draw in rainbow colors!"
 msgstr "Můžes kreslit v barvách duhy!"
 
 msgid "Click and move to draw sparkles."
-msgstr "Klikni a pohybuj myší pro kreslení jisker."
+msgstr "Klepni a pohybuj myší - nakreslíš jiskry."
 
 msgid "Click and move the mouse around to blur the picture."
-msgstr "Klikni a pohybuj myší pro rozostření obrázku."
+msgstr "Klepni a pohybuj myší - rozostříš obrázek."
 
 msgid "Click and move the mouse around to smudge the picture."
-msgstr "Klikni a pohybuj myší pro rozmazání obrázku."
+msgstr "Klepni a pohybuj myší - rozmažeš obrázek."
 
 msgid "Click and move to fade the colors."
-msgstr "Klikni a pohybuj myší pro vyblednutí barev."
+msgstr "Klepni a pohybuj myší - barvy vyblednou."
 
 msgid "Click and move to darken the colors."
-msgstr "Klikni a pohybuj myší pro ztmavnutí barev."
+msgstr "Klepni a pohybuj myší - barvy ztmavnou."
 
 msgid ""
 "Click and move the mouse around to turn the picture into a chalk drawing."
-msgstr "Klikni a pohybuj myší pro vytvoření efektu kresby křídou."
+msgstr "Klepni a pohybuj myší - vytvoříš efekt kresby křídou."
 
 msgid "Click and move the mouse around to make the picture blocky."
-msgstr "Klikni a pohybuj myší pro vytvoření kostkované mozaiky."
+msgstr "Klepni a pohybuj myší - vytvoříš kostkovanou mozaiku."
 
 msgid "Click and move the mouse around to draw a negative."
-msgstr "Klikni a pohybuj myší pro vykreslení negativu."
+msgstr "Klepni a pohybuj myší - vykreslíš negativ."
 
 msgid "Click and move the mouse around to change the picture’s color."
-msgstr "Klikni a pohybuj myší pro změnu barvy obrázku."
+msgstr "Klepni a pohybuj myší - změníš barvy obrázku."
 
 msgid "Click and move the mouse around to make the picture drip."
-msgstr "Klikni a pohybuj myší pro roztékání obrázku."
+msgstr "Klepni a pohybuj myší - obrázek se rozteče."
 
 msgid "Click and move the mouse around to turn the picture into a cartoon."
-msgstr "Klikni a pohybuj myší pro vytvoření komiksového vzhledu."
+msgstr "Klepni a pohybuj myší - obrázek získá komiksový vzhled."
 
 msgid "Click to make a mirror image."
-msgstr "Klikni pro zrcadlení obrázku."
+msgstr "Klepni a vytvoříš zrcadlový odraz obrázku."
 
 msgid "Click to flip the picture upside-down."
-msgstr "Klikni pro převrácení obrázku vzhůru nohama."
+msgstr "Klepni a obrázek se otočí nohama."
 
 msgid "Square"
 msgstr "Čtverec"
@@ -316,7 +304,7 @@ msgid "Magic"
 msgstr "Magie"
 
 msgid "Paint"
-msgstr "Kreslit"
+msgstr "Kresba"
 
 msgid "Stamp"
 msgstr "Razítko"
@@ -356,23 +344,23 @@ msgid "Pick a color and a brush shape to draw with."
 msgstr "Vyber barvu a druh štětce, kterým chceš kreslit."
 
 msgid "Pick a picture to stamp around your drawing."
-msgstr "Vyber obrázek, který chceš otisknout do svého obrázku."
+msgstr "Vyber obrázek, který chceš otisknout do své kresby."
 
 msgid "Click to start drawing a line. Let go to complete it."
-msgstr "Pro nakreslení úsečky stiskni myš na jejím začátku a uvolni na konci."
+msgstr "Stiskni tlačítko myši a táhni. Vytvoříš úsečku, která skončí tam tlačítko pustíš."
 
 msgid ""
 "Pick a shape. Click to pick the center, drag, then let go when it is the "
 "size you want. Move around to rotate it, and click to draw it."
 msgstr ""
-"Zvol tvar. V místě středu stiskni myš a táhnutím urči velikost, pak myš "
-"uvolni. Pohybem myši tvar natoč. Kliknutím se tvar nakreslí."
+"Vyber si tvar. V místě středu klepni myší a táhnutím urči velikost, pak myš "
+"uvolni. Pohybem myši tvar natoč. Klepnutím se zvolený tvar nakreslí."
 
 msgid "Choose a style of text. Click on your drawing and you can start typing."
-msgstr "Vyber styl textu. Klikni, kam chceš psát a můžeš začít."
+msgstr "Vyber si styl textu. Klepni na místo, kam chceš psát a můžeš začít."
 
 msgid "Pick a magical effect to use on your drawing!"
-msgstr "Vyber magický efekt, který chceš použít."
+msgstr "Vyber si magický efekt, který chceš v kresbě použít."
 
 #. Undo
 msgid "Undo!"
@@ -388,7 +376,7 @@ msgstr "Vymazat!"
 
 #. New
 msgid "You now have a blank sheet to draw on!"
-msgstr "Nyní máš prázdnou stranu pro kreslení!"
+msgstr "Nyní máš na kreslení prázdnou stránku!"
 
 #. Open
 msgid "Open…"
@@ -407,16 +395,16 @@ msgid "Bye bye!"
 msgstr "Ahoj!"
 
 msgid "Let go of the button to complete the line."
-msgstr "Pusť zmáčknuté tlačítko pro dokončení úsečky."
+msgstr "Uvolni tlačítko myši a úsečka se ukončí."
 
 msgid "Hold the button to stretch the shape."
-msgstr "Drž tlačítko a táhni myší pro roztažení tvaru."
+msgstr "Drž tlačítko a táhni myší - zvolený tvar se bude zvětšovat."
 
 msgid "Move the mouse to rotate the shape. Click to draw it."
-msgstr "Posuň myší pro otočení tvaru. Klikni pro jeho nakreslení."
+msgstr "Pohybem myši se bude tvar otáčet. Klepni pro jeho nakreslení."
 
 msgid "OK then… Let’s keep drawing this one!"
-msgstr "Ok, nezapomeň si uložit tento obrázek!"
+msgstr "Dobrá... A teď můžeme pokračovat dál!"
 
 #. FIXME: Move elsewhere!!!
 msgid "Do you really want to quit?"
@@ -426,7 +414,7 @@ msgid "Yes, I'm done!"
 msgstr "Ano, jsem hotov!"
 
 msgid "No, take me back!"
-msgstr "Ne, chci zpátky!"
+msgstr "Nechci, ještě budu kreslit!"
 
 msgid "If you quit, you’ll lose your picture! Save it?"
 msgstr "Pokud skončíš, ztratíš svůj obrázek. Chceš ho uložit?"
@@ -435,7 +423,7 @@ msgid "Yes, save it!"
 msgstr "Ano, uložit!"
 
 msgid "No, don't bother saving!"
-msgstr "Ne, ukládat to nemá cenu!"
+msgstr "Ne, nebudeme ho ukládat!"
 
 msgid "Save your picture first?"
 msgstr "Chceš nejdřív uložit svůj obrázek?"
@@ -461,7 +449,7 @@ msgid "There are no saved files!"
 msgstr "Nejsou zde žádné uložené soubory!"
 
 msgid "Print your picture now?"
-msgstr "Vytisknout obrázek?"
+msgstr "Chceš obrázek vytisknout?"
 
 msgid "Yes, print it!"
 msgstr "Ano, vytisknout!"
@@ -470,10 +458,10 @@ msgid "Your picture has been printed!"
 msgstr "Obrázek byl vytištěn!"
 
 msgid "You can’t print yet!"
-msgstr "Tisknout ještě nelze!"
+msgstr "Zatím nelze tisknout!"
 
 msgid "Erase this picture?"
-msgstr "Vymazat tento obrázek?"
+msgstr "Smazat tento obrázek?"
 
 msgid "Yes, erase it!"
 msgstr "Ano smazat!"
@@ -488,7 +476,7 @@ msgid "Please wait..."
 msgstr "Prosím počkej…"
 
 msgid "Erase"
-msgstr "Vymazat"
+msgstr "Smazat"
 
 msgid "Slides"
 msgstr ""
@@ -515,7 +503,7 @@ msgstr "Ne"
 #. FIXME: Move elsewhere!!!
 #. #define PROMPT_SAVE_OVER_TXT gettext_noop("Save over the older version of this picture?")
 msgid "Replace the picture with your changes?"
-msgstr "Nahradit obrázek tvými změnami?"
+msgstr "Nahradit starý obrázek změněným obrázkem?"
 
 msgid "Yes, replace the old one!"
 msgstr "Ano, nahradit starý obrázek!"
@@ -524,17 +512,17 @@ msgid "No, save a new file!"
 msgstr "Ne, ulož jako nový obrázek!"
 
 msgid "Choose the picture you want, then click “Open”."
-msgstr "Vyber si obrázek a klikni na \"Otevřít\"."
+msgstr "Vyber si obrázek a klepni na \"Otevřít\"."
 
 #. Let user choose images:
 msgid "Choose the pictures you want, then click “Play”."
-msgstr "Vyber si obrázek a klikni na \"Otevřít\"."
+msgstr "Vyber si obrázek a klikni na \"Přehrát\"."
 
 msgid "A drawing program for children."
-msgstr "Malování pro děti."
+msgstr "Kreslicí program pro děti."
 
 msgid "Drawing program"
-msgstr "Malovací program"
+msgstr "Kreslicí program"
 
 msgid "Tux Paint"
 msgstr "Tux Paint"

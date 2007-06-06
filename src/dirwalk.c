@@ -93,6 +93,7 @@ void loadfont_callback(SDL_Surface * screen, const char *restrict const dir,
 	// translated. Otherwise, only Line X should be translated and the
 	// ASCII-only fonts should be given bad scores in the scoring code below.
 	// (the best scores going to fonts that support both)
+	
 	if (strcmp("Zapfino", family) && strcmp("Elvish Ring NFI", family) && ((charset_works(font, gettext("qx")) && charset_works(font, gettext("QX")))	// Line X
 									       || (charset_works(font, gettext("qy")) && charset_works(font, gettext("QY")))	// Line Y
 	    ))

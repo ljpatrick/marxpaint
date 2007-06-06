@@ -48,9 +48,12 @@ extern int font_socket_fd;
 extern int no_system_fonts;
 extern int was_bad_font;
 
-
+/* FIXME: SDL_ttf is up to 2.0.8, so we can probably fully remove this;
+   -bjk 2007.06.05 */
+/*
 TTF_Font *BUGFIX_TTF_OpenFont206(const char *const file, int ptsize);
 #define TTF_OpenFont    BUGFIX_TTF_OpenFont206
+*/
 
 TTF_Font *try_alternate_font(int size);
 TTF_Font *load_locale_font(TTF_Font * fallback, int size);
