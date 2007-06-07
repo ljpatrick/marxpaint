@@ -22,7 +22,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
   
-  June 14, 2002 - May 16, 2007
+  June 14, 2002 - June 7, 2007
   $Id$
 */
 
@@ -510,6 +510,7 @@ typedef struct
 //static SDL_Rect r_screen; // was 640x480 @ 0,0  -- but this isn't so useful
 static SDL_Rect r_canvas;	// was 448x376 @ 96,0
 static SDL_Rect r_tools;	// was 96x336 @ 0,40
+static SDL_Rect r_sfx;
 static SDL_Rect r_toolopt;	// was 96x336 @ 544,40
 static SDL_Rect r_colors;	// was 544x48 @ 96,376
 static SDL_Rect r_ttools;	// was 96x40 @ 0,0  (title for tools, "Tools")
@@ -526,6 +527,7 @@ static int color_button_h;	// was 48
 // Define button grid dimensions. (in button units)
 // These are the maximum slots -- some may be unused.
 static grid_dims gd_tools;	// was 2x7
+static grid_dims gd_sfx;
 static grid_dims gd_toolopt;	// was 2x7
 //static grid_dims gd_open;    // was 4x4
 static grid_dims gd_colors;	// was 17x1
@@ -598,6 +600,14 @@ static void setup_normal_screen_layout(void)
 
   r_tuxarea.y = r_colors.y + r_colors.h;
   r_tuxarea.h = WINDOW_HEIGHT - r_tuxarea.y;
+
+  r_sfx.x = r_tuxarea.x;
+  r_sfx.y = r_tuxarea.y;
+  r_sfx.w = button_w;      // Two half-sized buttons across
+  r_sfx.h = button_h >> 1; // One half-sized button down
+
+  gd_sfx.rows = 1;
+  gd_sfx.cols = 2;
 
   r_tools.x = 0;
   r_tools.y = r_ttools.h + r_ttools.y;
@@ -832,10 +842,12 @@ static int cur_undo, oldest_undo, newest_undo;
 
 static SDL_Surface *img_title, *img_title_credits, *img_title_tuxpaint;
 static SDL_Surface *img_btn_up, *img_btn_down, *img_btn_off;
+static SDL_Surface *img_btnsm_up, *img_btnsm_off;
 static SDL_Surface *img_prev, *img_next;
 static SDL_Surface *img_dead40x40;
 static SDL_Surface *img_black, *img_grey;
 static SDL_Surface *img_yes, *img_no;
+static SDL_Surface *img_sfx, *img_speak;
 static SDL_Surface *img_open, *img_erase, *img_back, *img_trash;
 static SDL_Surface *img_slideshow, *img_play, *img_select_digits;
 static SDL_Surface *img_printer, *img_printer_wait, *img_save_over;
@@ -1688,6 +1700,11 @@ static void mainloop(void)
 	  {
 	    mute = !mute;
 	    Mix_HaltChannel(-1);
+
+	    if (mute)
+	      draw_tux_text(TUX_BORED, gettext("Sound muted."), 0);
+	    else
+	      draw_tux_text(TUX_BORED, gettext("Sound unmuted."), 0);
 	  }
 	}
 	else if (key == SDLK_ESCAPE &&
@@ -1987,6 +2004,7 @@ static void mainloop(void)
 				"", img_mouse, img_mouse_click, NULL, 1);
           if (cur_tool == TOOL_TEXT)
 	    do_render_cur_text(0);
+          draw_tux_text(TUX_BORED, "", 0);
 	}
       }
       else if ((event.type == SDL_MOUSEBUTTONDOWN ||
@@ -2251,9 +2269,11 @@ static void mainloop(void)
 	      }
 	      else
 	      {
+                cur_tool = old_tool;
+
 		draw_tux_text(tool_tux[TUX_DEFAULT], TIP_NEW_ABORT, 1);
           
-                if (old_tool == TOOL_TEXT)
+                if (cur_tool == TOOL_TEXT)
                   do_render_cur_text(0);
 	      }
 
@@ -2303,6 +2323,7 @@ static void mainloop(void)
 
 	      cur_tool = old_tool;
 	      draw_toolbar();
+              draw_tux_text(TUX_BORED, "", 0);
 	      update_screen_rect(&r_tools);
 	    }
 	    else if (cur_tool == TOOL_QUIT)
@@ -2989,6 +3010,30 @@ static void mainloop(void)
 
 	  button_down = 1;
 	}
+	else if (HIT(r_sfx) && valid_click(event.button.button))
+	{
+	  /* A sound player button on the lower left has been pressed! */
+
+	  if (cur_tool == TOOL_STAMP && use_sound && !mute)
+          {
+	    which = GRIDHIT_GD(r_sfx, gd_sfx);
+
+    	    if (which == 0 &&
+                !stamp_data[stamp_group][cur_stamp[stamp_group]]->no_sound)
+	    {
+	      /* Re-play sound effect: */
+
+	      Mix_ChannelFinished(NULL);
+	      Mix_PlayChannel(2, stamp_data[stamp_group][cur_thing]->ssnd, 0);
+	    }
+    	    else if (which == 1 &&
+                !stamp_data[stamp_group][cur_stamp[stamp_group]]->no_descsound)
+	    {
+	      Mix_ChannelFinished(NULL);
+	      Mix_PlayChannel(2, stamp_data[stamp_group][cur_thing]->sdesc, 0);
+	    }
+	  }
+        }
       }
       else if (event.type == SDL_MOUSEBUTTONDOWN &&
 	       wheely && event.button.button >= 4 && event.button.button <= 5)
@@ -3276,6 +3321,23 @@ static void mainloop(void)
 	    do_setcursor(cursor_arrow);
 	  }
 	}
+	else if (HIT(r_sfx))
+	{
+	  /* Sound player buttons: */
+
+	  if (cur_tool == TOOL_STAMP && use_sound && !mute &&
+	    ((GRIDHIT_GD(r_sfx, gd_sfx) == 0 &&
+              !stamp_data[stamp_group][cur_stamp[stamp_group]]->no_sound) ||
+	     (GRIDHIT_GD(r_sfx, gd_sfx) == 1 &&
+              !stamp_data[stamp_group][cur_stamp[stamp_group]]->no_descsound)))
+	  {
+	    do_setcursor(cursor_hand);
+          }
+          else
+          {
+	    do_setcursor(cursor_arrow);
+          }
+        }
 	else if (HIT(r_colors))
 	{
 	  /* Color picker: */
@@ -7294,6 +7356,12 @@ static void setup(int argc, char *argv[])
   img_btn_down = loadimage(DATA_PREFIX "images/ui/btn_down.png");
   img_btn_off = loadimage(DATA_PREFIX "images/ui/btn_off.png");
 
+  img_btnsm_up = loadimage(DATA_PREFIX "images/ui/btnsm_up.png");
+  img_btnsm_off = loadimage(DATA_PREFIX "images/ui/btnsm_off.png");
+
+  img_sfx = loadimage(DATA_PREFIX "images/tools/sfx.png");
+  img_speak = loadimage(DATA_PREFIX "images/tools/speak.png");
+
   img_black = SDL_CreateRGBSurface(SDL_SRCALPHA | SDL_SWSURFACE,
 				   img_btn_off->w, img_btn_off->h,
 				   img_btn_off->format->BitsPerPixel,
@@ -9845,6 +9913,9 @@ static void draw_tux_text_ex(int which_tux, const char *const str,
 {
   SDL_Rect dest;
   SDL_Color black = { 0, 0, 0, 0 };
+  int w;
+  SDL_Surface * btn;
+
 
   /* Remove any text-changing timer if one is running: */
   control_drawtext_timer(0, "", 0);
@@ -9860,12 +9931,63 @@ static void draw_tux_text_ex(int which_tux, const char *const str,
   if (dest.y < r_tuxarea.y)
     dest.y = r_tuxarea.y;
 
+  // Don't let sfx and speak buttons cover the top of Tux, either:
+  if (cur_tool == TOOL_STAMP && use_sound && !mute)
+  {
+    if (dest.y < r_sfx.y + r_sfx.h)
+      dest.y = r_sfx.y + r_sfx.h;
+  }
+
   SDL_BlitSurface(img_tux[which_tux], NULL, screen, &dest);
 
+  // Wide enough for Tux, or two stamp sound buttons (whichever's wider) */
+  
+  w = max(img_tux[which_tux]->w, img_btnsm_up->w) + 5;
+
   wordwrap_text_ex(str, black,
-		   img_tux[which_tux]->w + 5,
-		   r_tuxarea.y, r_tuxarea.w, want_right_to_left,
+		   w, r_tuxarea.y, r_tuxarea.w, want_right_to_left,
 		   locale_text);
+
+
+  /* Draw 'sound effect' and 'speak' buttons, if we're in the Stamp tool */
+
+  if (cur_tool == TOOL_STAMP && use_sound && !mute)
+  {
+    /* Sound effect: */
+
+    if (stamp_data[stamp_group][cur_stamp[stamp_group]]->no_sound)
+      btn = img_btnsm_off;
+    else
+      btn = img_btnsm_up;
+
+    dest.x = 0;
+    dest.y = r_tuxarea.y;
+
+    SDL_BlitSurface(btn, NULL, screen, &dest);
+
+    dest.x = (img_btnsm_up->w - img_sfx->w) / 2;
+    dest.y = r_tuxarea.y + ((img_btnsm_up->h - img_sfx->h) / 2);
+
+    SDL_BlitSurface(img_sfx, NULL, screen, &dest);
+
+
+    /* Speak: */
+
+    if (stamp_data[stamp_group][cur_stamp[stamp_group]]->no_descsound)
+      btn = img_btnsm_off;
+    else
+      btn = img_btnsm_up;
+
+    dest.x = img_btnsm_up->w;
+    dest.y = r_tuxarea.y;
+
+    SDL_BlitSurface(btn, NULL, screen, &dest);
+
+    dest.x = img_btnsm_up->w + ((img_btnsm_up->w - img_speak->w) / 2);
+    dest.y = r_tuxarea.y + ((img_btnsm_up->h - img_speak->h) / 2);
+
+    SDL_BlitSurface(img_speak, NULL, screen, &dest);
+  }
 
   update_screen_rect(&r_tuxarea);
 }
@@ -11469,6 +11591,12 @@ static void cleanup(void)
   free_surface(&img_btn_down);
   free_surface(&img_btn_off);
 
+  free_surface(&img_btnsm_up);
+  free_surface(&img_btnsm_off);
+
+  free_surface(&img_sfx);
+  free_surface(&img_speak);
+
   free_surface(&img_cursor_up);
   free_surface(&img_cursor_down);
 
@@ -12445,7 +12573,7 @@ static void get_new_file_id(void)
 
 static int do_quit(int tool)
 {
-  int done;
+  int done, tmp_tool;
 
   done = do_prompt_snd(PROMPT_QUIT_TXT,
 		       PROMPT_QUIT_YES, PROMPT_QUIT_NO, SND_AREYOUSURE);
@@ -12473,6 +12601,14 @@ static int do_quit(int tool)
   {
     if (tool == TOOL_TEXT)
       do_render_cur_text(0);
+
+    /* Bring back stamp sound effects and speak buttons, if we were in
+       Stamps tool: */
+
+    tmp_tool = cur_tool;
+    cur_tool = tool;
+    draw_tux_text(TUX_BORED, "", 0);
+    cur_tool = tmp_tool;
   }
 
   return (done);

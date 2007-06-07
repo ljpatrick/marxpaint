@@ -9,7 +9,7 @@
                            bill@newbreedsoftware.com
                             http://www.tuxpaint.org/
 
-                          June 14, 2002 - May 2, 2007
+                          June 14, 2002 - June 7, 2007
 
    --------------------------------------------------------------------------
 
@@ -198,19 +198,32 @@ Available Tools
 
          Stamp (Rubber Stamp)
 
-                 The Stamp tool is like a rubber stamp, or stickers. It lets
-                 you paste pre-drawn or photographic images (like a picture
-                 of a horse, or a tree, or the moon) in your picture.
+                 The Stamp tool is like a set of rubber stamps or stickers.
+                 It lets you paste pre-drawn or photographic images (like a
+                 picture of a horse, or a tree, or the moon) in your picture.
 
-                 As you move the mouse around, an outline follows the mouse,
-                 showing where the stamp will be placed.
+                 As you move the mouse around the canvas, an outline follows
+                 the mouse, showing where the stamp will be placed, and how
+                 big it will be.
 
-                 Different stamps can have different sound effects. Some
-                 stamps can be colored or tinted.
+                 There can be numerous categories of stamps (e.g., animals,
+                 plants, outer space, vehicles, people, etc.). Use the Left
+                 and Right arrows to cycle through the collections.
+
+                 Some stamps can be colored or tinted. If the color palette
+                 below the canvas is activated, you can click the colors to
+                 change the tint or color of the stamp before placing it in
+                 the picture.
 
                  Stamps can be shrunk and expanded, and many stamps can be
                  flipped vertically, or displayed as a mirror-image, using
                  controls at the bottom right of the screen.
+
+                 Different stamps can have different sound effects and/or
+                 descriptive (spoken) sounds. Buttons at the lower left (near
+                 Tux, the Linux penguin) allow you to re-play the sound
+                 effects and descriptive sounds for the currently-selected
+                 stamp.
 
                  (NOTE: If the "nostampcontrols" option is set, Tux Paint
                  won't display the Mirror, Flip, Shrink and Grow controls for

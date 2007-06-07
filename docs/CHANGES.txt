@@ -9,7 +9,7 @@ http://www.newbreedsoftware.com/tuxpaint/
 $Id$
 
 
-2007.June.5 (0.9.17)
+2007.June.7 (0.9.17)
 
   * Interface Improvements:
     -----------------------
@@ -29,6 +29,10 @@ $Id$
       run Tux Paint in 768x1024 mode.)  Useful for tablet PCs.
       Note: override previously-set option with "--orient=landscape" or
       "orient=landscape".
+
+    * Stamp sound effects and stamp descriptive sounds can be re-played
+      using small buttons that appear over Tux, at the lower lefthand corner.
+      (They disappear/reappear when sound is muted/unmuted via [Alt]+[S].)
 
   * Tool Improvements:
     ------------------
@@ -134,9 +138,16 @@ $Id$
     * Tweaks to allow it to run on the One Laptop Per Child (OLPC) "XO".
       Albert Cahalan <albert@users.sf.net>
 
-    * Updates for improved Nokia 770 and N800 (Maemo) support
+    * Updates for improved Nokia 770 and N800 (Maemo) Internet tablet support
       (added icon to task manager when Home button is pressed,
       hid on-screen mouse cursor, disabled Print and Text tools)
+      Alessandro Pasotti <apasotti@gmail.com>
+
+    * Added more Nokia Maemo-specific files to the "hildon" folder
+      (DEBIAN package files, updated .desktop and Tux Paint configuration
+      files, D-BUS service file), to make packaging a Tux Paint .deb for
+      Nokia 770 and N800 devices easier.  (Note: Makefile needs updating
+      and/or a compile-and-package script needs to be created.)
       Alessandro Pasotti <apasotti@gmail.com>
 
     * Lockfile (that prevents multiple launches) is now stored
