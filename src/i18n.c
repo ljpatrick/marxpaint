@@ -382,7 +382,8 @@ void set_current_language(void)
   need_right_to_left = search_int_array(langint, lang_use_right_to_left);
 
 #ifdef DEBUG
-  fprintf(stderr, "DEBUG: Language is %s (%d)\n", lang_prefix, langint);
+  fprintf(stderr, "DEBUG: Language is %s (%d) %s\n",
+	  lang_prefix, langint, need_right_to_left ? "(RTL)" : "");
   fflush(stderr);
 #endif
 
