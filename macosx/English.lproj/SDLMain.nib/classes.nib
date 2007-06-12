@@ -2,7 +2,18 @@
     IBClasses = (
         {CLASS = FirstResponder; LANGUAGE = ObjC; SUPERCLASS = NSObject; }, 
         {
-            ACTIONS = {makeFullscreen = id; quit = id; }; 
+            ACTIONS = {
+                makeFullscreen = id; 
+                onHelp = id; 
+                onNew = id; 
+                onOpen = id; 
+                onPageSetup = id; 
+                onPrint = id; 
+                onQuit = id; 
+                onRedo = id; 
+                onSave = id; 
+                onUndo = id; 
+            }; 
             CLASS = SDLMain; 
             LANGUAGE = ObjC; 
             SUPERCLASS = NSObject; 

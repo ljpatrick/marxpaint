@@ -24,7 +24,10 @@
 //
 
 #import "macosx_print.h"
+#import "wrapperdata.h"
 #import <Cocoa/Cocoa.h>
+
+extern WrapperData macosx;
 
 // this object presents the image to the printing layer
 @interface ImageView : NSView
@@ -43,8 +46,14 @@
 
 - (void) drawRect:(NSRect)rect
 {
-    [ _image compositeToPoint: NSMakePoint (0, 0) operation: NSCompositeCopy ];
+    [ _image compositeToPoint: NSMakePoint( 0, 0 ) operation: NSCompositeCopy ];
 }
+
+- (BOOL) scalesWhenResized
+{
+	return YES;
+}
+
 @end
 
 // this object waits for the print dialog to go away
@@ -112,23 +121,27 @@
 
 @end
 
-static NSImage* CreateImage (SDL_Surface *surface)
+static NSImage* CreateImage( SDL_Surface *surface )
 {
     NSBitmapImageRep* imageRep;
     NSSize            imageSize;
     NSImage*          image;
     SDL_Surface*      surface32RGBA;
-    
-    
+
     // convert surface to 32bit RGBA
-    surface32RGBA = SDL_CreateRGBSurface (SDL_SWSURFACE, surface->w, surface->h,
-                                          32, 0xff<<24, 0xff<<16, 0xff<<8, 0xff<<0);
-    if (surface32RGBA == NULL) {
+#ifdef BIG_ENDIAN_ARCH
+    surface32RGBA = SDL_CreateRGBSurface( SDL_SWSURFACE, surface->w, surface->h,
+                                          32, 0xff<<24, 0xff<<16, 0xff<<8, 0xff<<0 );
+#else
+    surface32RGBA = SDL_CreateRGBSurface( SDL_SWSURFACE, surface->w, surface->h,
+                                          32, 0xff<<0, 0xff<<8, 0xff<<16, 0xff<<24 );
+#endif
+    if( surface32RGBA == NULL ) {
         NSLog (@"CreateImage: Cannot allocate conversion surface");
         return nil;
     }
     
-    SDL_BlitSurface (surface, NULL, surface32RGBA, NULL);
+    SDL_BlitSurface( surface, NULL, surface32RGBA, NULL );
     
     // convert surface to an NSBitmapImageRep
     imageRep = [ [ NSBitmapImageRep alloc] 
@@ -142,30 +155,69 @@ static NSImage* CreateImage (SDL_Surface *surface)
                         colorSpaceName:NSDeviceRGBColorSpace 
                         bytesPerRow:surface->w * 4
                         bitsPerPixel:32 ];
-    if (imageRep == nil) {
+    if( imageRep == nil ) {
         NSLog (@"CreateImage: Could not create image representation.");
         return nil;
     }
     
-    imageSize = NSMakeSize (surface->w, surface->h);
+    imageSize = NSMakeSize( surface->w, surface->h );
     
     image = [ [ NSImage alloc ] initWithSize:imageSize ];
-    if (image == nil) {
+    if( image == nil ) {
         NSLog (@"CreateImage: Could not allocate image");
         return nil;
     }
     
     [ image addRepresentation:imageRep ];
+	[ image setScalesWhenResized:YES ];
+	[ image setDataRetained:YES ];
     
     [ image autorelease ];
     [ imageRep release ];
-    free (surface32RGBA);
+    free( surface32RGBA );
     
     return image;
 }
 
+BOOL DisplayPageSetup()
+{
+	NSPageLayout*     pageLayout;
+	NSPrintInfo*      printInfo;
+	ModalDelegate*    delegate;
+    BOOL              result;
+    
+    macosx.cocoaKeystrokes = 1;
+    printInfo = [ NSPrintInfo sharedPrintInfo ];
+    delegate = [ [ [ ModalDelegate alloc ] init ] autorelease ];
+	pageLayout = [ NSPageLayout pageLayout ];
+	[ pageLayout beginSheetWithPrintInfo:printInfo 
+                 modalForWindow:[ NSApp mainWindow ]
+                 delegate:delegate
+                 didEndSelector:@selector(pageLayoutEnded:returnCode:contextInfo:)
+                 contextInfo:nil ];
+	
+	result = [ delegate wait ];
+    macosx.cocoaKeystrokes = 0;
+    
+    return result;
+}
 
-const char* SurfacePrint (SDL_Surface *surface, int showDialog)
+void DefaultPrintSettings( SDL_Surface *surface )
+{
+    NSPrintInfo* printInfo = [ NSPrintInfo sharedPrintInfo ];
+    
+    if( surface->w > surface->h )
+        [ printInfo setOrientation:NSLandscapeOrientation ];
+    else
+        [ printInfo setOrientation:NSPortraitOrientation ];
+    
+	[ printInfo setHorizontallyCentered:true ];
+	[ printInfo setVerticallyCentered:true ];
+	[ printInfo setVerticalPagination:NSFitPagination ];
+	[ printInfo setHorizontalPagination:NSFitPagination ];    
+}
+
+const char* SurfacePrint( SDL_Surface *surface, int showDialog )
 {
     NSImage*          image;
     ImageView*        printView;
@@ -173,74 +225,68 @@ const char* SurfacePrint (SDL_Surface *surface, int showDialog)
     NSPrintOperation* printOperation;
     NSPrintInfo*      printInfo;
     ModalDelegate*    delegate;
+    static BOOL       firstTime = YES;
     BOOL              ok = YES;
     const char*       error = NULL;
-    
+	    
     // create image for surface
-    image = CreateImage (surface);
-    if (image == nil)
+    image = CreateImage( surface );
+    if( image == nil )
         return "Could not create image";
-
-    // create print view
-    printView = [ [ ImageView alloc ] initWithFrame: NSMakeRect (0, 0, surface->w, surface->h) ];
-    if (printView == nil)
-        return "Could not create print view";
-    [ printView setImage:image ];
-    
-    // attach view to offscreen window
-    printWindow = [ [ NSWindow alloc ]
-                        initWithContentRect: NSMakeRect (0, 0, surface->w, surface->h)
-                        styleMask:NSBorderlessWindowMask backing:NSBackingStoreBuffered
-                        defer:NO ];
-    if (printWindow == nil)
-        return "Could not create offscreen window";
-        
-    [ printWindow setContentView:printView ];
+	
+    if( firstTime == YES ) {
+        DefaultPrintSettings( surface );
+        firstTime = NO;
+    }
     
     // create print control objects
     printInfo = [ NSPrintInfo sharedPrintInfo ];
-    
-    delegate = [ [ ModalDelegate alloc ] init ];
-    
-    // run page layout dialog
-    if (showDialog) {
-    
-        NSPageLayout*     pageLayout;
-        
-        pageLayout = [ NSPageLayout pageLayout ];
-        [ pageLayout beginSheetWithPrintInfo:printInfo 
-            modalForWindow:[ NSApp mainWindow ]
-            delegate:delegate
-            didEndSelector:@selector(pageLayoutEnded:returnCode:contextInfo:)
-            contextInfo:nil ];
-        
-        ok = [ delegate wait ];
-        [ delegate reset ];
-    }
-
-    if (!ok) {
-        error = "Canceled printing at page layout";
-        goto bail;
-    }
-    
+     
+	NSRect pageRect = [ printInfo imageablePageBounds ];
+	NSSize pageSize = pageRect.size;
+	NSPoint pageOrigin = pageRect.origin;
+	
+	[ printInfo setTopMargin:pageOrigin.y ];
+	[ printInfo setLeftMargin:pageOrigin.x ];
+	[ printInfo setRightMargin:pageOrigin.x ];
+	[ printInfo setBottomMargin:pageOrigin.y ];
+	
+	float surfaceRatio = surface->w / surface->h;
+	float pageRatio = pageSize.width / pageSize.height;
+	
+	NSSize imageSize = pageSize;
+	if( pageRatio > surfaceRatio )   // wide page
+	{
+	    imageSize.width = surface->w * pageSize.height / surface->h;
+	}
+	else  // tall page
+	{
+		imageSize.height = surface->h * pageSize.width / surface->w;
+	}
+	
+	// create print view
+    printView = [ [ [ ImageView alloc ] initWithFrame: NSMakeRect( 0, 0, imageSize.width, imageSize.height ) ] autorelease ];
+	if (printView == nil)
+        return "Could not create print view";
+	[ image setSize:imageSize ];
+    [ printView setImage:image ];
+	
     // run printing
     printOperation = [ NSPrintOperation printOperationWithView:printView printInfo:printInfo ];
     [ printOperation setShowPanels:showDialog ];
     
+    macosx.cocoaKeystrokes = 1;
+    delegate = [ [ [ ModalDelegate alloc ] init ] autorelease ];
     [ printOperation runOperationModalForWindow:[ NSApp mainWindow ]
         delegate:delegate didRunSelector:@selector(printDidRun:success:contextInfo:) contextInfo:nil ];
     
     ok = [ delegate wait ];
     if (!ok)
         error = "Canceled or error when printing";
-  
-  bail:       
-    // cleanup
-    [ delegate release ];
+        
+    macosx.cocoaKeystrokes = 0;
     [ image release ];
-    [ printView release ];
-    [ printWindow release ];
-    
+	    
     return error;
 }
 

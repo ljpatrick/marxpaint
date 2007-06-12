@@ -224,7 +224,7 @@ char *strcasestr(const char *haystack, const char *needle)
 
 #endif
 
-/* kluge; 2006.01.15 */
+/* kludge; 2006.01.15 */
 //#define __APPLE_10_2_8__
 
 /* (Trouble building this for 10.2.8 target; bjk & mf 2006.01.14) */
@@ -288,6 +288,8 @@ typedef struct safer_dirent
 #endif
 #ifdef __APPLE__
 #include "macosx_print.h"
+#include "wrapperdata.h"
+extern WrapperData macosx;
 #endif
 #else
 
@@ -1244,7 +1246,7 @@ static void hsvtorgb(float h, float s, float v, Uint8 * r8, Uint8 * g8,
 SDL_Surface *flip_surface(SDL_Surface * s);
 SDL_Surface *mirror_surface(SDL_Surface * s);
 
-static void do_print(void);
+void do_print(void);
 static void strip_trailing_whitespace(char *buf);
 static void do_render_cur_text(int do_blit);
 static char *uppercase(char *str);
@@ -7234,6 +7236,10 @@ static void setup(int argc, char *argv[])
 #ifdef SMALL_CURSOR_SHAPES
   scale = 2;
 #endif
+  
+#ifdef __APPLE__
+  cursor_arrow = SDL_GetCursor();		// use standard system cursor
+#endif
 
   // this one first, because we need it yesterday
   cursor_watch = get_cursor(watch_bits, watch_mask_bits,
@@ -7251,6 +7257,12 @@ static void setup(int argc, char *argv[])
 
   // continuing on with the rest of the cursors...
 
+
+#ifndef __APPLE__
+  cursor_arrow = get_cursor(arrow_bits, arrow_mask_bits,
+							arrow_width, arrow_height, 0, 0);
+#endif
+  
   cursor_hand = get_cursor(hand_bits, hand_mask_bits,
 			   hand_width, hand_height, 12 / scale, 1 / scale);
 
@@ -7271,10 +7283,7 @@ static void setup(int argc, char *argv[])
   cursor_rotate = get_cursor(rotate_bits, rotate_mask_bits,
 			     rotate_width, rotate_height,
 			     15 / scale, 15 / scale);
-
-  cursor_arrow = get_cursor(arrow_bits, arrow_mask_bits,
-			    arrow_width, arrow_height, 0, 0);
-
+  
   cursor_up = get_cursor(up_bits, up_mask_bits,
 			 up_width, up_height, 15 / scale, 1 / scale);
 
@@ -15079,7 +15088,7 @@ static void hsvtorgb(float h, float s, float v, Uint8 * r8, Uint8 * g8,
 }
 
 
-static void do_print(void)
+void do_print(void)
 {
 #if !defined(WIN32) && !defined(__BEOS__) && !defined(__APPLE__)
   char *pcmd;
@@ -15134,15 +15143,15 @@ static void do_print(void)
   SurfacePrint(canvas);
 #elif defined(__APPLE__)
   /* Mac OS X */
-
-  int show = (want_alt_printcommand && !fullscreen);
+  int show = ( ( want_alt_printcommand || macosx.menuAction ) && !fullscreen);
 
   const char *error = SurfacePrint(canvas, show);
-
+/*
   if (error)
     fprintf(stderr, "Cannot print: %s\n", error);
   else
     do_prompt_snd(PROMPT_PRINT_TXT, PROMPT_PRINT_YES, "", SND_TUXOK);
+*/  
 #endif
 
 #endif

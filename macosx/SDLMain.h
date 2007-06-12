@@ -12,4 +12,20 @@
 #import <Cocoa/Cocoa.h>
 
 @interface SDLMain : NSObject
+{
+}
+
+- (IBAction)onNew:(id)sender;
+- (IBAction)onOpen:(id)sender;
+- (IBAction)onSave:(id)sender;
+- (IBAction)onPrint:(id)sender;
+- (IBAction)onPageSetup:(id)sender;
+- (IBAction)onUndo:(id)sender;
+- (IBAction)onRedo:(id)sender;
+- (IBAction)onHelp:(id)sender;
+- (IBAction)onQuit:(id)sender;
+
+- (void) sendSDLControlKeystroke:(int)key;
+- (void) setupBridge;
+
 @end
