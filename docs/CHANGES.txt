@@ -9,7 +9,7 @@ http://www.newbreedsoftware.com/tuxpaint/
 $Id$
 
 
-2007.June.7 (0.9.17)
+2007.June.12 (0.9.17)
 
   * Interface Improvements:
     -----------------------
@@ -217,7 +217,7 @@ $Id$
     * Russian
       Sergei Popov <skein@rambler.ru>
 
-    * Russian README documentation
+    * Russian README & OPTIONS documentation
       Sergei Popov <skein@rambler.ru>
 
     * Swedish
