@@ -5747,30 +5747,30 @@ static void set_active_stamp(void)
 
   if (sd->mirrored && !sd->no_premirror)
   {
-    memcpy(buf + len, "_mirror.png", 12);
+#ifndef NOSVG	  
+    memcpy(buf + len, "_mirror.svg", 12);
     active_stamp = do_loadimage(buf, 0);
+#endif
 
-#ifndef NOSVG
     if (active_stamp == NULL)
     {
-      memcpy(buf + len, "_mirror.svg", 12);
+      memcpy(buf + len, "_mirror.png", 12);
       active_stamp = do_loadimage(buf, 0);
     }
-#endif
   }
 
   if (!active_stamp)
   {
-    memcpy(buf + len, ".png", 5);
+#ifndef NOSVG	  
+    memcpy(buf + len, ".svg", 5);
     active_stamp = do_loadimage(buf, 0);
-
-#ifndef NOSVG
+#endif
+	
     if (active_stamp == NULL)
     {
-      memcpy(buf + len, ".svg", 5);
+      memcpy(buf + len, ".png", 5);
       active_stamp = do_loadimage(buf, 0);
     }
-#endif
 
     if (!active_stamp)
       active_stamp = thumbnail(img_dead40x40, 40, 40, 1);	// copy it
