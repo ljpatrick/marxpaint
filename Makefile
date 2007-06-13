@@ -7,7 +7,7 @@
 # bill@newbreedsoftware.com
 # http://www.tuxpaint.org/
 
-# June 14, 2002 - May 3, 2007
+# June 14, 2002 - June 12, 2007
 
 
 # The version number, for release:
@@ -77,6 +77,11 @@ NOSOUNDFLAG=__SOUND
 NOSVGFLAG=__SVG
 
 
+# Built with libcairo2 support by default  (use libcairo1 with "make oldsvg")
+
+OLDSVGFLAG=__SVG
+
+
 # Maemo flag
 
 MAEMOFLAG=NO_MAEMOFLAG
@@ -96,7 +101,9 @@ CURSOR_SHAPES=LARGE
 SDL_LIBS=$(shell sdl-config --libs) -lSDL_image -lSDL_ttf $(SDL_MIXER_LIB)
 SDL_MIXER_LIB=-lSDL_mixer
 SDL_CFLAGS=$(shell sdl-config --cflags) $(SVG_CFLAGS)
-SVG_LIB=-lcairo -lsvg -lsvg-cairo
+
+
+SVG_LIB=-lcairo
 SVG_CFLAGS=-I/usr/include/cairo
 
 
@@ -112,7 +119,8 @@ CFLAGS=$(OPTFLAGS) -W -Wall -fno-common -ffloat-store \
 	`src/test-option.sh -Wdeclaration-after-statement`
 
 DEFS=-DDATA_PREFIX=\"$(DATA_PREFIX)/\" \
-	-D$(NOSOUNDFLAG) -D$(NOSVGFLAG) -DDOC_PREFIX=\"$(DOC_PREFIX)/\" \
+	-D$(NOSOUNDFLAG) -D$(NOSVGFLAG) -D$(OLDSVGFLAG) \
+	-DDOC_PREFIX=\"$(DOC_PREFIX)/\" \
 	-DLOCALEDIR=\"$(LOCALE_PREFIX)/\" -DIMDIR=\"$(IM_PREFIX)/\" \
 	-DCONFDIR=\"$(CONFDIR)/\" \
 	-DVER_VERSION=\"$(VER_VERSION)\" \
@@ -177,13 +185,22 @@ nosound:
 	make SDL_MIXER_LIB= NOSOUNDFLAG=NOSOUND
 
 
-# "make nosvg" builds the program with SVG (Cairo) support disabled:
+# "make nosvg" builds the program with SVG (Cairo2) support disabled:
 
 nosvg:
 	@echo
 	@echo "Building with SVG DISABLED"
 	@echo
 	make SVG_LIB= SVG_CFLAGS= NOSVGFLAG=NOSVG
+
+
+# "make oldsvg" builds the program using older SVG (Cairo1) libraries:
+
+oldsvg:
+	@echo
+	@echo "Building with CAIRO1 SVG SUPPORT"
+	@echo
+	make SVG_LIB="-lcairo -lsvg -lsvg-cairo" OLDSVGFLAG=OLD_SVG
 
 
 # "make olpc" builds the program for an OLPC XO:
