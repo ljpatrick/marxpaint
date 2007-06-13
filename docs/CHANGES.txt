@@ -133,6 +133,25 @@ $Id$
       Attempting to help address issue of Latin-only fonts being available
       in non-Latin locales -- seemed to help with Norwegian.
 
+    * Fixed inability to type into Mac OS X print dialog.
+      Martin Fuhrer <mfuhrer@users.sourceforge.net>
+
+    * Fixed Mac OS X endian issue that caused Intel-based Macs to print
+      with the wrong colors.
+      Martin Fuhrer <mfuhrer@users.sourceforge.net>
+
+    * Added automatic scaling and orientation of images when printing on
+      Mac OS X.
+      Martin Fuhrer <mfuhrer@users.sourceforge.net>
+
+    * Added "New", "Open", "Save", "Print", "Page Setup", "Undo" and "Redo"
+      items to Tux Paint menu on Mac OS X.
+      Martin Fuhrer <mfuhrer@users.sourceforge.net>
+
+    * Using standard Mac OS X arrow cursor, rather than custom Tux Paint
+      cursor (for UI consistency on OS X).
+      Martin Fuhrer <mfuhrer@users.sourceforge.net>
+
   * Compiling, porting and packaging updates:
     -----------------------------------------
     * Tweaks to allow it to run on the One Laptop Per Child (OLPC) "XO".
