@@ -414,8 +414,18 @@ $Id$
 
 * Ports and Packaging
 
-  * Windows 32-bit builds
+  * Windows 32-bit coding and builds
     John Popplewell <john@johnnypops.demon.co.uk>
+
+  * Mac OS X coding and builds
+    Martin Fuhrer <mfuhrer@users.sourceforge.net>
+    Darrell Walisser <walisser@mac.com>  [retired]
+
+  * Maemo (Nokia 770 and N880) coding and builds
+    Alessandro Pasotti <apasotti@gmail.com>
+
+  * BeOS coding and builds
+    Marcin 'Shard' Konicki <shard at beosjournal.org>
 
   * Debian Linux packages
     Ben Armstrong <synrg@sanctuary.nslug.ns.ca>
@@ -424,17 +434,11 @@ $Id$
     TOYAMA Shin-ichi <shin1@wmail.plala.or.jp>
     Richard June <rjune[AT]lumensoftware.com>
 
+  * Slackware Linux packages
+    Torsten Giebl <wizard@turricane.org>
+
   * NetBSD packages
     Thomas Klausner <wiz@danbala.ifoer.tuwien.ac.at>
-
-  * Mac OS X builds
-    Darrell Walisser <walisser@mac.com>
-
-  * BeOS builds
-    Marcin 'Shard' Konicki <shard at beosjournal.org>
-
-  * Slackware packages
-    Torsten Giebl <wizard@turricane.org>
 
 
 * Support / Testers
