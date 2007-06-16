@@ -177,7 +177,7 @@ static NSString *getApplicationName(void)
 - (IBAction) onPrint:(id)sender
 {
     macosx.menuAction = 1;
-    do_print();
+    [self sendSDLControlKeystroke:SDLK_p];
     macosx.menuAction = 0;
 }
 
