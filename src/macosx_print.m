@@ -251,7 +251,7 @@ const char* SurfacePrint( SDL_Surface *surface, int showDialog )
 	[ printInfo setRightMargin:pageOrigin.x ];
 	[ printInfo setBottomMargin:pageOrigin.y ];
 	
-	float surfaceRatio = surface->w / surface->h;
+	float surfaceRatio = (float)( surface->w ) / (float)( surface->h );
 	float pageRatio = pageSize.width / pageSize.height;
 	
 	NSSize imageSize = pageSize;
