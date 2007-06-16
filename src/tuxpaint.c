@@ -6289,9 +6289,9 @@ static void setup(int argc, char *argv[])
 
   strcpy(str, "tuxpaint.cfg");
 
-  //#elif __APPLE__
-  /* Mac: ??? */
-  /* FIXME! */
+#elif defined(__APPLE__)
+  /* Mac OS X: Use a "tuxpaint.cfg" file in the Tux Paint application support folder */
+  snprintf(str, sizeof(str), "%s/TuxPaint/tuxpaint.cfg", macosx.preferencesPath);
 
 #else
   /* Linux and other Unixes:  Use 'rc' style (~/.tuxpaintrc) */
