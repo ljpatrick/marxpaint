@@ -1246,7 +1246,8 @@ static void hsvtorgb(float h, float s, float v, Uint8 * r8, Uint8 * g8,
 SDL_Surface *flip_surface(SDL_Surface * s);
 SDL_Surface *mirror_surface(SDL_Surface * s);
 
-void do_print(void);
+static void print_image(void);
+static void do_print(void);
 static void strip_trailing_whitespace(char *buf);
 static void do_render_cur_text(int do_blit);
 static char *uppercase(char *str);
@@ -1619,7 +1620,7 @@ static void mainloop(void)
   int num_things;
   int *thing_scroll;
   int cur_thing, do_draw, old_tool, tmp_int, max;
-  int cur_time, last_print_time, ignoring_motion;
+  int ignoring_motion;
   SDL_TimerID scrolltimer = NULL;
   SDL_Event event;
   SDLKey key, key_down;
@@ -1645,7 +1646,6 @@ static void mainloop(void)
   shape_outer_y = 0;
   shape_tool_mode = SHAPE_TOOL_MODE_DONE;
   button_down = 0;
-  last_print_time = -print_delay;
   last_cursor_blink = cur_toggle_count = 0;
   texttool_len = 0;
   scrolling = 0;
@@ -1848,6 +1848,14 @@ static void mainloop(void)
 	  draw_toolbar();
 	  update_screen_rect(&r_tools);
 	}
+    else if (key == SDLK_p && (mod & KMOD_CTRL) && !noshortcuts)
+    {
+      /* Ctrl-P - Print */
+      print_image(); 
+      draw_toolbar();
+      draw_tux_text(TUX_BORED, "", 0);
+      update_screen_rect(&r_tools);        
+    }
 	else
 	{
 	  /* Handle key in text tool: */
@@ -2285,48 +2293,15 @@ static void mainloop(void)
 	    }
 	    else if (cur_tool == TOOL_PRINT)
 	    {
-	      cur_time = SDL_GetTicks() / 1000;
-
-#ifdef DEBUG
-	      printf("Current time = %d\n", cur_time);
-#endif
-
-	      if (cur_time >= last_print_time + print_delay)
-	      {
-		if (alt_print_command_default == ALTPRINT_ALWAYS)
-		  want_alt_printcommand = 1;
-		else if (alt_print_command_default == ALTPRINT_NEVER)
-		  want_alt_printcommand = 0;
-		else		/* ALTPRINT_MOD */
-		  want_alt_printcommand = (SDL_GetModState() & KMOD_ALT);
-
-		if (do_prompt_image_snd(PROMPT_PRINT_NOW_TXT,
-					PROMPT_PRINT_NOW_YES,
-					PROMPT_PRINT_NOW_NO,
-					img_printer, NULL, NULL, SND_AREYOUSURE))
-		{
-		  do_print();
-
-		  last_print_time = cur_time;
-		}
-                if (old_tool == TOOL_TEXT)
-	          do_render_cur_text(0);
-	      }
-	      else
-	      {
-		do_prompt_image_snd(PROMPT_PRINT_TOO_SOON_TXT,
-				    PROMPT_PRINT_TOO_SOON_YES,
-				    "",
-				    img_printer_wait, NULL, NULL,
-				    SND_NEGATIVE);
-                if (old_tool == TOOL_TEXT)
-	          do_render_cur_text(0);
-	      }
-
-	      cur_tool = old_tool;
-	      draw_toolbar();
-              draw_tux_text(TUX_BORED, "", 0);
-	      update_screen_rect(&r_tools);
+          // original print code was here
+          print_image();
+            
+          if (old_tool == TOOL_TEXT)
+            do_render_cur_text(0);  
+          cur_tool = old_tool;
+          draw_toolbar();
+          draw_tux_text(TUX_BORED, "", 0);
+          update_screen_rect(&r_tools);
 	    }
 	    else if (cur_tool == TOOL_QUIT)
 	    {
@@ -15087,6 +15062,45 @@ static void hsvtorgb(float h, float s, float v, Uint8 * r8, Uint8 * g8,
   *b8 = (Uint8) (b * 255);
 }
 
+static void print_image(void)
+{
+  static int last_print_time = 0;
+  int cur_time;  
+    
+  cur_time = SDL_GetTicks() / 1000;
+
+  #ifdef DEBUG
+  printf("Current time = %d\n", cur_time);
+  #endif
+
+  if (cur_time >= last_print_time + print_delay)
+  {
+    if (alt_print_command_default == ALTPRINT_ALWAYS)
+      want_alt_printcommand = 1;
+    else if (alt_print_command_default == ALTPRINT_NEVER)
+      want_alt_printcommand = 0;
+    else		/* ALTPRINT_MOD */
+      want_alt_printcommand = (SDL_GetModState() & KMOD_ALT);
+    
+    if (do_prompt_image_snd(PROMPT_PRINT_NOW_TXT,
+                            PROMPT_PRINT_NOW_YES,
+                            PROMPT_PRINT_NOW_NO,
+                            img_printer, NULL, NULL, SND_AREYOUSURE))
+    {
+      do_print();
+        
+      last_print_time = cur_time;
+    }
+  }
+  else
+  {
+    do_prompt_image_snd(PROMPT_PRINT_TOO_SOON_TXT,
+                        PROMPT_PRINT_TOO_SOON_YES,
+                        "",
+                        img_printer_wait, NULL, NULL,
+                        SND_NEGATIVE);
+  }
+}
 
 void do_print(void)
 {
@@ -15156,7 +15170,6 @@ void do_print(void)
 
 #endif
 }
-
 
 static void do_render_cur_text(int do_blit)
 {
