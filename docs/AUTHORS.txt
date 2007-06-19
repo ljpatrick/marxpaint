@@ -7,7 +7,7 @@ bill@newbreedsoftware.com
 http://www.tuxpaint.org/
 
 
-June 17, 2002 - June 5, 2007
+June 17, 2002 - June 19, 2007
 
 $Id$
 
@@ -106,6 +106,13 @@ $Id$
   * Nagasaki
     Jim Trice <jimtrice@linuxmail.org>
 
+  * World Maps
+    Original is licensed under the GFDL and CC-BY-SA and has multiple authors.
+    Based off http://commons.wikimedia.org/wiki/Image:BlankMap-World.svg
+    (Public Domain, by Wikipedia user 'Vardion').
+    Processed and chopped into Tux Paint starter-sized pieces by
+    by Caroline Ford <caroline.ford.work@googlemail.com>.
+
 
 * Fonts
 
@@ -157,6 +164,7 @@ $Id$
     Laurent Dhima <laurenti@alblinux.net>
 
   * Arabic
+    Khaled Hosny <khaledhosny@eglug.org>
     Khalid Al Holan <alholan@gmail.com>
 
   * Basque

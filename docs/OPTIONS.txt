@@ -9,7 +9,7 @@
                            bill@newbreedsoftware.com
                             http://www.tuxpaint.org/
 
-                                  May 15, 2007
+                                 June 19, 2007
 
    --------------------------------------------------------------------------
 
@@ -663,9 +663,11 @@ Command-Line Informational Options
        Tux Paint doesn't actually start up and run afterwards, however.
 
          --version
+         --verbose-version
                  Display the version number and date of the copy of Tux Paint
-                 you are running. It also lists what, if any, compile-time
-                 options were set. (See INSTALL.txt and FAQ.txt).
+                 you are running. The "--verbose-version" also lists what
+                 compile-time options were set. (See INSTALL.txt and
+                 FAQ.txt).
 
          --copying
                  Show brief license information about copying Tux Paint.

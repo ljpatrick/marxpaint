@@ -22,7 +22,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
   
-  June 14, 2002 - June 7, 2007
+  June 14, 2002 - June 19, 2007
   $Id$
 */
 
@@ -346,6 +346,8 @@ extern WrapperData macosx;
 #endif
 
 #ifndef NOSVG
+
+#ifdef OLD_SVG
 #include "cairo.h"
 #include "svg.h"
 #include "svg-cairo.h"
@@ -353,9 +355,23 @@ extern WrapperData macosx;
 #error "---------------------------------------------------"
 #error "If you installed Cairo, libSVG or svg-cairo from packages, be sure"
 #error "to get the development package, as well!"
-#error "(e.g., 'libcairo2-dev.rpm')"
+#error "(e.g., 'libcairo-dev.rpm')"
 #error "---------------------------------------------------"
 #endif
+
+#else
+
+#include "xyzsvg.h"
+#ifndef XYZ_SVG_H
+#error "---------------------------------------------------"
+#error "If you installed libXYZ from packages, be sure"
+#error "to get the development package, as well!"
+#error "(e.g., 'libXYZ-dev.rpm')"
+#error "---------------------------------------------------"
+#endif
+
+#endif
+
 #endif
 
 #ifndef SAVE_AS_BMP
@@ -5344,38 +5360,146 @@ static void rec_undo_buffer(void)
 
 
 /* Show program version: */
-static void show_version(void)
+static void show_version(int details)
 {
   printf("\nTux Paint\n");
   printf("  Version " VER_VERSION " (" VER_DATE ")\n");
 
+
+  if (details == 0)
+    return;
+
+
+  printf("\nBuilt with these options:\n");
+
+
+  /* Quality reductions: */
+
 #ifdef LOW_QUALITY_THUMBNAILS
-  printf("  Low Quality Thumbnails enabled\n");
+  printf("  Low Quality Thumbnails enabled  (LOW_QUALITY_THUMBNAILS)\n");
 #endif
 
 #ifdef LOW_QUALITY_COLOR_SELECTOR
-  printf("  Low Quality Color Selector enabled\n");
+  printf("  Low Quality Color Selector enabled  (LOW_QUALITY_COLOR_SELECTOR)\n");
 #endif
 
 #ifdef LOW_QUALITY_STAMP_OUTLINE
-  printf("  Low Quality Stamp Outline enabled\n");
+  printf("  Low Quality Stamp Outline enabled  (LOW_QUALITY_STAMP_OUTLINE)\n");
 #endif
 
 #ifdef LOW_QUALITY_FLOOD_FILL
-  printf("  Low Quality Flood Fill enabled\n");
+  printf("  Low Quality Flood Fill enabled  (LOW_QUALITY_FLOOD_FILL)\n");
 #endif
 
 #ifdef NO_PROMPT_SHADOWS
-  printf("  Prompt Shadows disabled\n");
+  printf("  Prompt Shadows disabled  (NO_PROMPT_SHADOWS)\n");
 #endif
+
+#ifdef SMALL_CURSOR_SHAPES
+  printf("  Small cursor shapes enabled  (SMALL_CURSOR_SHAPES)\n");
+#endif
+
+#ifdef NO_BILINEAR
+  printf("  Bilinear scaling disabled  (NO_BILINEAR)\n");
+#endif
+
+#ifdef NOSVG
+  printf("  SVG support disabled  (NOSVG)\n");
+#endif
+
+  /* Sound: */
 
 #ifdef NOSOUND
-  printf("  Sound disabled\n");
+  printf("  Sound disabled  (NOSOUND)\n");
 #endif
 
-#ifdef DEBUG
-  printf("  Verbose debugging enabled\n");
+
+  /* Platform */
+
+#ifdef __APPLE__
+  printf("  Built for Mac OS X  (__APPLE__)\n");
+  #ifdef __APPLE_10_2_8_
+    printf("  Built for OS X 10.2.8  (__APPLE_10_2_8_)\n");
+  #endif
+#elif WIN32
+  printf("  Built for Windows  (WIN32)\n");
+#elif __BEOS__
+  printf("  Built for BeOS  (__BEOS__)\n");
+#elif NOKIA_770
+  printf("  Built for Maemo  (NOKIA_770)\n");
+#elif OLPC_XO
+  printf("  Built for XO  (OLPC_XO)\n");
+#else
+  printf("  Built for POSIX\n");
 #endif
+
+
+  /* Video options */
+
+#ifdef USE_HWSURFACE
+  printf("  Using hardware surface  (USE_HWSURFACE)\n");
+#else
+  printf("  Using software surface  (no USE_HWSURFACE)\n");
+#endif
+  printf("  Using %dbpp video  (VIDEO_BPP=%d)\n", VIDEO_BPP, VIDEO_BPP);
+
+
+  /* Print method */
+
+#ifdef PRINTMETHOD_PNG_PNM_PS
+  printf("  Prints as PNGs  (PRINTMETHOD_PNG_PNM_PS)\n");
+#endif
+
+#ifdef PRINTMETHOD_PS
+  printf("  Prints as PostScript  (PRINTMETHOD_PS)\n");
+#endif
+
+
+  /* Saving method */
+
+#ifdef SAVE_AS_BMP
+  printf("  Saves as BMPs  (SAVE_AS_BMP)\n");
+#else
+  printf("  Saves as PNGs  (no SAVE_AS_BMP)\n");
+#endif
+
+
+  /* Threading */
+
+#ifdef FORKED_FONTS
+  printf("  Threaded font loader enabled  (FORKED_FONTS)\n");
+#else
+  printf("  Threaded font loader disabled  (no FORKED_FONTS)\n");
+#endif
+
+
+  /* Old code used */
+
+#ifdef OLD_STAMP_GROW_SHRINK
+  printf("  Old-style stamp size UI  (OLD_STAMP_GROW_SHRINK)\n");
+#endif
+
+#ifdef OLD_UPPERCASE_CODE
+  printf("  Old-style --uppercase support  (OLD_UPPERCASE_CODE)\n");
+#endif
+
+  printf("  Data directory (DATA_PREFIX) = %s\n", DATA_PREFIX);
+  printf("  Doc directory (DOC_PREFIX) = %s\n", DOC_PREFIX);
+  printf("  Locale directory (LOCALEDIR) = %s\n", LOCALEDIR);
+  printf("  Input Method directory (IMDIR) = %s\n", IMDIR);
+  printf("  System config directory (CONFDIR) = %s\n", CONFDIR);
+
+
+  /* Debugging */
+
+#ifdef DEBUG
+  printf("  Verbose debugging enabled  (DEBUG)\n");
+#endif
+
+#ifdef DEBUG_MALLOC
+  printf("  Memory allocation debugging enabled  (DEBUG_MALLOC)\n");
+#endif
+
 
   printf("\n");
 }
@@ -5395,7 +5519,7 @@ static void show_usage(FILE * f, char *prg)
 
   fprintf(f,
 	  "\n"
-	  "Usage: %s {--usage | --help | --version | --copying}\n"
+	  "Usage: %s {--usage | --help | --version | --verbose-version | --copying}\n"
 	  "\n"
 	  "  %s [--windowed | --fullscreen]\n"
 	  "  %s [--WIDTHxHEIGHT | --native]   [--orient=ORIENTATION]\n"
@@ -6644,12 +6768,18 @@ static void setup(int argc, char *argv[])
     }
     else if (strcmp(argv[i], "--version") == 0 || strcmp(argv[i], "-v") == 0)
     {
-      show_version();
+      show_version(0);
+      exit(0);
+    }
+    else if (strcmp(argv[i], "--verbose-version") == 0 ||
+             strcmp(argv[i], "-vv") == 0)
+    {
+      show_version(1);
       exit(0);
     }
     else if (strcmp(argv[i], "--copying") == 0 || strcmp(argv[i], "-c") == 0)
     {
-      show_version();
+      show_version(0);
       printf("\n"
 	     "This program is free software; you can redistribute it\n"
 	     "and/or modify it under the terms of the GNU General Public\n"
@@ -6671,7 +6801,7 @@ static void setup(int argc, char *argv[])
     }
     else if (strcmp(argv[i], "--help") == 0 || strcmp(argv[i], "-h") == 0)
     {
-      show_version();
+      show_version(0);
       show_usage(stdout, (char *) getfilename(argv[0]));
 
       printf("See: " DOC_PREFIX "README.txt\n" "\n");
@@ -12602,9 +12732,9 @@ static int do_quit(int tool)
 
 /* Open a saved image: */
 
-#define PLACE_STARTERS_DIR 0
+#define PLACE_SAVED_DIR 0
 #define PLACE_PERSONAL_STARTERS_DIR 1
-#define PLACE_SAVED_DIR 2
+#define PLACE_STARTERS_DIR 2
 #define NUM_PLACES_TO_LOOK 3
 
 
@@ -12661,23 +12791,24 @@ int do_open(void)
     for (places_to_look = 0;
         places_to_look < NUM_PLACES_TO_LOOK; places_to_look++)
     {
-      if (places_to_look == PLACE_STARTERS_DIR)
+      if (places_to_look == PLACE_SAVED_DIR)
       {
-        /* Check for coloring-book style 'starter' images first: */
+        /* First, check for saved-images: */
 
-        dirname[places_to_look] = strdup(DATA_PREFIX "starters");
+        dirname[places_to_look] = get_fname("saved");
       }
       else if (places_to_look == PLACE_PERSONAL_STARTERS_DIR)
       {
-        /* Check for coloring-book style 'starter' images in our folder, next: */
+        /* Check for coloring-book style 'starter' images in our folder: */
 
         dirname[places_to_look] = get_fname("starters");
       }
-      else
+      else if (places_to_look == PLACE_STARTERS_DIR)
       {
-        /* Finally, check for saved-images: */
+        /* Finally, check for system-wide coloring-book style
+           'starter' images: */
 
-        dirname[places_to_look] = get_fname("saved");
+        dirname[places_to_look] = strdup(DATA_PREFIX "starters");
       }
 
 
@@ -16277,6 +16408,9 @@ int paintsound(int size)
 
 
 #ifndef NOSVG
+
+#ifdef OLD_SVG
+
 // Based on cairo-demo/sdl/main.c from Cairo (GPL'd, (c) 2004 Eric Windisch):
 SDL_Surface * load_svg(char * file)
 {
@@ -16434,6 +16568,18 @@ SDL_Surface * load_svg(char * file)
 
   return(sdl_surface);
 }
+
+#else
+
+SDL_Surface * load_svg(char * file)
+{
+  printf("load_svg(%s)\n", file);
+
+  return (NULL);
+}
+
+#endif
+
 
 
 // Load an image; call load_svg() (above, to call Cairo and SVG-Cairo funcs)

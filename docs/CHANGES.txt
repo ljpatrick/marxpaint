@@ -34,6 +34,14 @@ $Id$
       using small buttons that appear over Tux, at the lower lefthand corner.
       (They disappear/reappear when sound is muted/unmuted via [Alt]+[S].)
 
+    * "Open" dialog lists saved drawings first, then local starter images,
+      then system-wide starter images, rather than the other way around.
+      (Since there are now so many more starters.)
+
+    * All compile-time options now listed in version output, using a new
+      "--verbose-version" (or "-vv") command-line argument.
+
+
   * Tool Improvements:
     ------------------
     * Input Method Framework, with implementations of Korean (Hangul 2-Bul)
@@ -95,7 +103,7 @@ $Id$
     * Discussed SVG Stamps in "Extending Tux Paint."
 
     * Created an "SVG.txt" document, covering SVG software.
-      FIXME: Not done yet?
+      Caroline Ford <caroline.ford.work@googlemail.com>
 
     * Mentioned descriptive sounds (e.g., "stamp_desc_ll.ogg") in "Extending..."
 
@@ -195,6 +203,9 @@ $Id$
 
   * Translation Updates:
     --------------------
+    * Arabic
+      Khaled Hosny <khaledhosny@eglug.org>
+
     * Basque
       Juan Irigoien <juanirigoien@gmail.com>
 
