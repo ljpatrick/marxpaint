@@ -1,70 +1,72 @@
-# SOME DESCRIPTIVE TITLE.
+# translation of tuxpaint-HEAD.po to Arabic
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
+# Khaled Hosny <khaledhosny@eglug.org>, 2007.
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: tuxpaint-HEAD\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2007-05-09 00:32-0700\n"
-"PO-Revision-Date: 2006-03-27 05:57+0300\n"
-"Last-Translator: kash <alholan@gmail.com>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"PO-Revision-Date: 2007-05-17 06:58+0300\n"
+"Last-Translator: Khaled Hosny <khaledhosny@eglug.org>\n"
+"Language-Team: Arabic <doc@arabeyes.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11.4\n"
+"Plural-Forms: nplurals=4; plural=n==1 ? 0 : n==2 ? 1 : n>=3 && n<=10 ? 2 : 3\n"
 
 msgid "Black!"
-msgstr "!أسود"
+msgstr "أسود"
 
 msgid "Dark grey! Some people spell it “dark gray”."
-msgstr ".رمادي غامق! بعض الناس يسمونه رصاصي غامق"
+msgstr "رمادي غامق بعض الناس يسمونه ”رصاصي غامق“."
 
 msgid "Light grey! Some people spell it “light gray”."
-msgstr ".رمادي فاتح! بعض الناس يسمونه رصاصي فاتح"
+msgstr "رمادي فاتح بعض الناس يسمونه “رصاصي فاتح“."
 
 msgid "White!"
-msgstr "!أبيض"
+msgstr "أبيض"
 
 msgid "Red!"
-msgstr "!أحمر"
+msgstr "أحمر"
 
 msgid "Orange!"
-msgstr "!برتقالي"
+msgstr "برتقالي"
 
 msgid "Yellow!"
-msgstr "!أصفر"
+msgstr "أصفر"
 
 msgid "Light green!"
-msgstr "!أخضر فاتح"
+msgstr "أخضر فاتح"
 
 msgid "Dark green!"
-msgstr "!أخضر غامق"
+msgstr "أخضر غامق"
 
 msgid "Sky blue!"
-msgstr "!أزرق سماوي"
+msgstr "أزرق سماوي"
 
 msgid "Blue!"
-msgstr "!أزرق"
+msgstr "أزرق"
 
 msgid "Lavender!"
-msgstr "ي"
+msgstr "أرجواني شاحب"
 
 msgid "Purple!"
-msgstr "!بنفسجي"
+msgstr "أرجواني"
 
 msgid "Pink!"
-msgstr "!وردي"
+msgstr "وردي"
 
 msgid "Brown!"
-msgstr "!بني"
+msgstr "بني"
 
 msgid "Tan!"
-msgstr "ي"
+msgstr "قمحي"
 
 msgid "Beige!"
-msgstr "!بيج"
+msgstr "بيج"
 
 #. First, the blacklist. We list font families that can crash Tux Paint
 #. via bugs in the SDL_ttf library. We also test fonts to be sure that
@@ -109,7 +111,7 @@ msgstr "`\\%_@$~#{}<>^&*"
 # ترقيم غير شائع
 #. uncommon punctuation
 msgid ",.?!"
-msgstr ",.?!"
+msgstr "،.؟!"
 
 # ترقيم شائع
 #. common punctuation
@@ -127,31 +129,31 @@ msgid "1Il|"
 msgstr "1Il|"
 
 msgid "Great!"
-msgstr "!عظيم"
+msgstr "عظيم"
 
 msgid "Cool!"
-msgstr "!رائع"
+msgstr "رائع"
 
 msgid "Keep it up!"
-msgstr "!جيد للأمام"
+msgstr "جيد للأمام"
 
 msgid "Good job!"
-msgstr "!أحسنت"
+msgstr "أحسنت"
 
 msgid "English"
-msgstr ""
+msgstr "الإنجليزية"
 
 msgid "Hiragana"
-msgstr ""
+msgstr "هيراغنا"
 
 msgid "Katakana"
-msgstr ""
+msgstr "كتاكنا"
 
 msgid "Hangul"
-msgstr ""
+msgstr "هانكول"
 
 msgid "Fill"
-msgstr "تعبئة"
+msgstr "املأ"
 
 msgid "Grass"
 msgstr "عشب"
@@ -184,7 +186,7 @@ msgid "Blocks"
 msgstr "مكعبات"
 
 msgid "Negative"
-msgstr "مسودة"
+msgstr "سالب"
 
 msgid "Tint"
 msgstr "صبغة"
@@ -199,62 +201,61 @@ msgid "Mirror"
 msgstr "مرآة"
 
 msgid "Flip"
-msgstr "قلب"
+msgstr "اقلب"
 
 msgid "Click in the picture to fill that area with color."
-msgstr ".انقر على الصورةِ لمَلْئ تلك المنطقةِ باللونِ"
+msgstr "انقر على الصورةِ لمَلْئ تلك المنطقةِ باللونِ."
 
 msgid "Click and move to draw grass. Don’t forget the dirt!"
-msgstr "!انقر وحرّكُ لرسَم العشبِ. لا تَنْسِ الوسخَ"
+msgstr "انقر وحرّكُ لرسَم العشبِ. لا تَنْسِ الوسخَ"
 
 msgid "Click and move to draw large bricks."
-msgstr ".انقر وحرّكُ لرسَم الطابوقِ الكبيرِ"
+msgstr "انقر وحرّكُ لرسَم الطابوقِ الكبيرِ."
 
 msgid "Click and move to draw small bricks."
-msgstr ".انقر وحرّكُ لرسَم الطابوقِ الصغيرِ"
+msgstr "انقر وحرّكُ لرسَم الطابوقِ الصغيرِ."
 
 msgid "You can draw in rainbow colors!"
-msgstr "!يُمْكِنُ أَنْ تَلون بألوانِ قوس قزحِ"
+msgstr "يُمْكِنُ أَنْ تَلون بألوانِ قوس قزحِ."
 
 msgid "Click and move to draw sparkles."
-msgstr ".انقر وحرّكُ لرسَم البريق"
+msgstr "انقر وحرّكُ لرسَم البريق."
 
 msgid "Click and move the mouse around to blur the picture."
-msgstr ".انقر وحرّكُ الفأرة على الصورة لتمويهها"
+msgstr "انقر وحرّكُ الفأرة على الصورة لتمويهها."
 
 msgid "Click and move the mouse around to smudge the picture."
-msgstr ".انقر وحرّكُ الفأرة على الصورة لتشويهها"
+msgstr "انقر وحرّكُ الفأرة على الصورة لتشويهها."
 
 msgid "Click and move to fade the colors."
-msgstr ".انقر وحرّكُ الفأرة على الألوان لتصبح باهتة"
+msgstr "انقر وحرّكُ الفأرة على الألوان لتصبح باهتة."
 
 msgid "Click and move to darken the colors."
-msgstr ".انقر وحرّكُ الفأرة على الألوان لتصبح داكنة"
+msgstr "انقر وحرّكُ الفأرة على الألوان لتصبح داكنة."
 
-msgid ""
-"Click and move the mouse around to turn the picture into a chalk drawing."
-msgstr ".انقر وحرّكُ الفأرة على الصورة لتحويلها إلى رسمة طبشورية"
+msgid "Click and move the mouse around to turn the picture into a chalk drawing."
+msgstr "انقر وحرّكُ الفأرة على الصورة لتحويلها إلى رسمة طبشورية."
 
 msgid "Click and move the mouse around to make the picture blocky."
-msgstr ".انقر وحرّكُ الفأرة على الصورة لتقسيمها إلى قطع"
+msgstr "انقر وحرّكُ الفأرة على الصورة لتقسيمها إلى قطع."
 
 msgid "Click and move the mouse around to draw a negative."
-msgstr ".انقر وحرّكُ الفأرة على الصورة لتحويلها إلى رسمة مسودة"
+msgstr "انقر وحرّكُ الفأرة على الصورة لتحويلها إلى رسمة مسودة."
 
 msgid "Click and move the mouse around to change the picture’s color."
-msgstr ".انقر وحرّكُ الفأرة على الصورة لتغييرألوانها"
+msgstr "انقر وحرّكُ الفأرة على الصورة لتغييرألوانها."
 
 msgid "Click and move the mouse around to make the picture drip."
-msgstr ".انقر وحرّكُ الفأرة على الصورة لتحويلها إلى قطرات"
+msgstr "انقر وحرّكُ الفأرة على الصورة لتحويلها إلى قطرات."
 
 msgid "Click and move the mouse around to turn the picture into a cartoon."
-msgstr ".انقر وحرّكُ الفأرة على الصورة لتحويلها إلى رسمة كرتونية"
+msgstr "انقر وحرّكُ الفأرة على الصورة لتحويلها إلى رسمة كرتونية."
 
 msgid "Click to make a mirror image."
-msgstr ".إنقر لتنعكس الصورة كالصورة في المرآة"
+msgstr "انقر لتنعكس الصورة كالصورة في المرآة."
 
 msgid "Click to flip the picture upside-down."
-msgstr ".إنقر لقلب الصورة رأساً على عقب"
+msgstr "انقر لقلب الصورة رأساً على عقب."
 
 msgid "Square"
 msgstr "مربع"
@@ -278,26 +279,25 @@ msgid "Rhombus"
 msgstr "معيّن"
 
 msgid "A square is a rectangle with four equal sides."
-msgstr ".المربع هو مستطيل بأربعة جوانبِ مساويةِ"
+msgstr "المربع هو مستطيل بأربعة جوانبِ متساويةِ."
 
 msgid "A rectangle has four sides and four right angles."
 msgstr "المستطيل لَهُ أربعة جوانبِ وأربع زوايا قائمةِ."
 
-msgid ""
-"A circle is a curve where all points have the same distance from the centre."
+msgid "A circle is a curve where all points have the same distance from the centre."
 msgstr "الدائرة هي منحنى حيث كُلّ النقاط لَها نفس المسافةِ مِنْ المركزِ."
 
 msgid "An ellipse is a stretched circle."
-msgstr ".الشكل البيضاوي هو دائرة ممطوة"
+msgstr "الشكل البيضاوي هو دائرة ممطوطة."
 
 msgid "A triangle has three sides."
-msgstr " المثلث لَهُ ثلاثة جوانبِ."
+msgstr "المثلث لَهُ ثلاثة جوانبِ."
 
 msgid "A pentagon has five sides."
-msgstr " الخماسي لَهُ خمسة جوانبِ."
+msgstr "الخماسي لَهُ خمسة جوانبِ."
 
 msgid "A rhombus has four equal sides, and opposite sides are parallel."
-msgstr " المعين لَهُ أربعة جوانبِ متساويةِ، وجوانبه المتقابلة متوازية."
+msgstr "المعين لَهُ أربعة جوانبِ متساويةِ، وجوانبه المتقابلة متوازية."
 
 msgid "Tools"
 msgstr "أدوات"
@@ -309,7 +309,7 @@ msgid "Brushes"
 msgstr "فرشاة"
 
 msgid "Erasers"
-msgstr "محّايات"
+msgstr "مِمْحايات"
 
 msgid "Stamps"
 msgstr "أختام"
@@ -321,7 +321,7 @@ msgid "Letters"
 msgstr "حروف"
 
 msgid "Magic"
-msgstr "العصا السحرية"
+msgstr "سحر"
 
 msgid "Paint"
 msgstr "طلاء"
@@ -342,7 +342,7 @@ msgid "Redo"
 msgstr "تقّدم"
 
 msgid "Eraser"
-msgstr "محّاية"
+msgstr "مِمْحاة"
 
 msgid "New"
 msgstr "جديد"
@@ -350,108 +350,108 @@ msgstr "جديد"
 # أزرار لأوامر فتح الملف
 #. buttons for the file open dialog
 msgid "Open"
-msgstr "فتح"
+msgstr "افتح"
 
 msgid "Save"
-msgstr "حفظ"
+msgstr "احفظ"
 
 msgid "Print"
-msgstr "طباعة"
+msgstr "اطبع"
 
 msgid "Quit"
-msgstr "الخروج"
+msgstr "اخرج"
 
 msgid "Pick a color and a brush shape to draw with."
-msgstr ".إختر لون وشكل الفرشاة التي سترسم بها"
+msgstr "اختر لون وشكل الفرشاة التي سترسم بها."
 
 msgid "Pick a picture to stamp around your drawing."
-msgstr ".إختر الصورة التي ستختم بها رسمتك"
+msgstr "اختر الصورة التي ستختم بها حول رسمتك."
 
 msgid "Click to start drawing a line. Let go to complete it."
-msgstr "إنقرْ للبَدْء برَسْم خطاً. ثم إتركْ لإكْماله."
+msgstr "انقرْ للبَدْء برَسْم خطاً. ثم اتركْ لإكْماله."
 
 msgid ""
 "Pick a shape. Click to pick the center, drag, then let go when it is the "
 "size you want. Move around to rotate it, and click to draw it."
 msgstr ""
-"إختر شكلاً. إنقرْ لإلتِقاط المركزِ، إسحب، ثم إترك عندما تصل للحجم الذي تريد. "
-"تحرّكْ بسهولة لإدَارَته، وإنقرْ لسَحْبه"
+"اختر شكلاً. انقرْ لالتِقاط المركزِ، اسحب، ثم اترك عندما تصل للحجم الذي تريد. "
+"تحرّكْ بسهولة لإدَارَته، وانقرْ لرسمه.."
 
 msgid "Choose a style of text. Click on your drawing and you can start typing."
-msgstr ".إخترْ إسلوب النص. إنقر على رسمتك لتتمكن من بدء الطباعة"
+msgstr "اخترْ أسلوب النص. انقر على رسمتك لتتمكن من بدء الكتابة."
 
 msgid "Pick a magical effect to use on your drawing!"
-msgstr "إختر تأثير سحري لإسْتِعْماله على رسمكَ! "
+msgstr "اختر تأثير سحري لاسْتِعْماله على رسمكَ "
 
 #. Undo
 msgid "Undo!"
-msgstr "!تراجع"
+msgstr "تراجع"
 
 #. Redo
 msgid "Redo!"
-msgstr "!تقدم"
+msgstr "تقدم"
 
 #. Eraser
 msgid "Eraser!"
-msgstr "!المساحة"
+msgstr "مِمْحاة"
 
 #. New
 msgid "You now have a blank sheet to draw on!"
-msgstr "!لديك الآن صفحة نظيفة لترسم عليها"
+msgstr "لديك الآن صفحة نظيفة لترسم عليها"
 
 #. Open
 msgid "Open…"
-msgstr "...فتح"
+msgstr "افتح..."
 
 #. Save
 msgid "Your image has been saved!"
-msgstr "!لقد تم حفظ صورتك"
+msgstr "لقد حُفِظت صورتك"
 
 #. Print
 msgid "Printing…"
-msgstr "...طباعة"
+msgstr "جارِ الطبع..."
 
 #. Quit
 msgid "Bye bye!"
-msgstr "[www.6ag6ag.com] مع السلامة! طاق طاق بوابة الطفل العربي"
+msgstr "مع السلامة"
 
 msgid "Let go of the button to complete the line."
-msgstr "إتركْ الزرِّ لإكْمال الخَطِّ."
+msgstr "اتركْ الزرِّ لإكْمال الخَطِّ."
 
 msgid "Hold the button to stretch the shape."
-msgstr "إمسك زر الفأرة الزرَّ لشَدّ الشكلِ."
+msgstr "امسك زر الفأرة الزرَّ لمطّ الشكلِ."
 
 msgid "Move the mouse to rotate the shape. Click to draw it."
-msgstr "حرّكْ الفأرَ لإدَارَة الشكلِ. إنقرْ لرسَمه."
+msgstr "حرّكْ الفأرَة لإدَارَة الشكلِ. انقرْ لرسَمه."
 
 msgid "OK then… Let’s keep drawing this one!"
-msgstr "إذن …  دعنا نَستمرُّ برسَم هذا الشكل!"
+msgstr "إذن …  دعنا نَستمرُّ برسَم هذا الشكل"
 
 # FIXME: تحرّكُ الي مكان آخر! ! !
 #. FIXME: Move elsewhere!!!
 msgid "Do you really want to quit?"
-msgstr "هَلْ تُريدُ حقاً الخروج؟"
+msgstr "أتُريدُ حقاً الخروج؟"
 
 msgid "Yes, I'm done!"
-msgstr "!نعم، لقد إنتهيت"
+msgstr "نعم، لقد انتهيت"
 
 msgid "No, take me back!"
-msgstr "!لا، لنرجع إلى البرنامج"
+msgstr "لا، عُد بي ثانية"
 
 msgid "If you quit, you’ll lose your picture! Save it?"
-msgstr "!إذا خرجت الآن، ستفقد صورتك! هل تريد حفظها"
+msgstr "إذا خرجت الآن، ستفقد صورتك أتريد حفظها؟"
 
 msgid "Yes, save it!"
-msgstr "!نعم، إحفظها الآن"
+msgstr "نعم، احفظها الآن"
 
 msgid "No, don't bother saving!"
-msgstr "!لا، لا تهتم لحفظها"
+msgstr "لا، لا تهتم بحفظها"
 
 msgid "Save your picture first?"
-msgstr "إحفظ صورتك أولاً؟"
+msgstr "أأحفظ صورتك أولاً؟"
 
 msgid "Can’t open that picture!"
-msgstr "!لايمكن فتح هذه الصورة"
+msgstr "لايمكن فتح هذه الصورة"
 
 msgid "OK"
 msgstr "موافق"
@@ -461,60 +461,59 @@ msgstr "موافق"
 #. picking, with a "Back" option to dismiss the "New" and return to
 #. the current picture.  But for now...  (bjk 2006.02.19)
 msgid "Start a new picture?"
-msgstr "بدء صورة جديدة؟"
+msgstr "أأبدأ صورة جديدة؟"
 
 # #define PROMPT_NEW_YES gettext_noop("That’s OK!")
 # #define PROMPT_NEW_NO gettext_noop("Never mind!")
 #. #define PROMPT_NEW_YES gettext_noop("That’s OK!")
 #. #define PROMPT_NEW_NO gettext_noop("Never mind!")
 msgid "Yes, let's start fresh!"
-msgstr "!نعم، لنبدء صفحة بيضاء"
+msgstr "نعم، لنبدء صفحة بيضاء"
 
 msgid "There are no saved files!"
-msgstr "!لايوجد إي ملف محفوظ"
+msgstr "لايوجد أي ملف محفوظ"
 
 msgid "Print your picture now?"
-msgstr "هل اطبع صورتك الآن؟"
+msgstr "أأطبع صورتك الآن؟"
 
 msgid "Yes, print it!"
-msgstr "!نعم، إطبع الصورة"
+msgstr "نعم، اطبع الصورة"
 
 msgid "Your picture has been printed!"
-msgstr "!لقد تمت طباعة صورتك"
+msgstr "لقد طُبِعت صورتك"
 
 msgid "You can’t print yet!"
-msgstr "!لا يمكنك الطباعة الآن"
+msgstr "لا يمكنك الرسم الآن"
 
 msgid "Erase this picture?"
-msgstr "هل تريد مسح هذه الصورة؟"
+msgstr "أتريد مسح هذه الصورة؟"
 
 msgid "Yes, erase it!"
-msgstr "!نعم، إمسحه"
+msgstr "نعم، امسحه"
 
 msgid "No, don't erase it!"
-msgstr "!لا، لاتمسحه"
+msgstr "لا، لاتمسحه"
 
 msgid "Remember to use the left mouse button!"
-msgstr "!تذكر إستخدام زر الفأرة الأيسر"
+msgstr "تذكر استخدام زر الفأرة الأيسر"
 
 msgid "Please wait..."
-msgstr "...الرجاء الإنتظار"
+msgstr "من فضلك انتظر..."
 
 msgid "Erase"
-msgstr "مسح"
+msgstr "امسح"
 
 msgid "Slides"
-msgstr ""
+msgstr "شرائح"
 
 msgid "Back"
-msgstr "رجوع"
+msgstr "الخلف"
 
-#, fuzzy
 msgid "Next"
-msgstr "نَصّ"
+msgstr "التالي"
 
 msgid "Play"
-msgstr ""
+msgstr "شغّل"
 
 msgid "Aa"
 msgstr "انتبه"
@@ -531,27 +530,27 @@ msgstr "لا"
 #. FIXME: Move elsewhere!!!
 #. #define PROMPT_SAVE_OVER_TXT gettext_noop("Save over the older version of this picture?")
 msgid "Replace the picture with your changes?"
-msgstr "إستبدل الصورة بتعديلاتك؟"
+msgstr "أأستبدل الصورة بتعديلاتك؟"
 
 msgid "Yes, replace the old one!"
-msgstr "!نعم، إستبدل الملف القديم"
+msgstr "نعم، استبدل الملف القديم"
 
 msgid "No, save a new file!"
-msgstr "!لا، إحفظ بإسم جديد"
+msgstr "لا، احفظ باسم جديد"
 
 msgid "Choose the picture you want, then click “Open”."
-msgstr ".إختر الصورة التي تريد، ثم إنقر على فتح"
+msgstr "اختر الصورة التي تريد، ثم انقر على ”فتح“."
 
 #. Let user choose images:
-#, fuzzy
 msgid "Choose the pictures you want, then click “Play”."
-msgstr ".إختر الصورة التي تريد، ثم إنقر على فتح"
+msgstr "اختر الصورة التي تريد، ثم انقر ”شغّل“."
 
 msgid "A drawing program for children."
-msgstr ".برنامج رسومات للأطفال"
+msgstr "برنامج رسومات للأطفال."
 
 msgid "Drawing program"
-msgstr "برنامج الرسم"
+msgstr "برنامج رسم"
 
 msgid "Tux Paint"
-msgstr "طباعة توكس  - طاق طاق بوابة الطفل العربي"
+msgstr "رسم توكس"
+
