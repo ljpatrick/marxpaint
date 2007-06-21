@@ -66,7 +66,7 @@ $Id$
       (Based on example code by Christian Graus:
       http://www.codeproject.com/cs/media/imageprocessing4.asp )
 
-    * New brushes:
+    * New Brushes:
       Caroline Ford <caroline.ford.work@googlemail.com>
       + Blob
       + Chisle
@@ -87,9 +87,16 @@ $Id$
       + Arrows (directional)
       + Triangles (directional)
 
-    * New starters:
+    * New Starter Images:
       + 10x10 grid
       + 20x20 grid
+
+      From Wikipedia, prepared for Tux Paint by:
+      Caroline Ford <caroline.ford.work@googlemail.com>
+      + World maps
+      + United States of America map
+      + Maps from Wikipedia
+  
 
   * System-related improvements:
     ----------------------------

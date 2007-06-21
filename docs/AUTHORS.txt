@@ -110,8 +110,15 @@ $Id$
     Original is licensed under the GFDL and CC-BY-SA and has multiple authors.
     Based off http://commons.wikimedia.org/wiki/Image:BlankMap-World.svg
     (Public Domain, by Wikipedia user 'Vardion').
-    Processed and chopped into Tux Paint starter-sized pieces by
-    by Caroline Ford <caroline.ford.work@googlemail.com>.
+    Processed and chopped into Tux Paint starter-sized pieces by:
+    Caroline Ford <caroline.ford.work@googlemail.com>.
+
+  * United States of America map
+    Original is licensed under the GFDL and CC-BY-SA
+    Based off: http://commons.wikimedia.org/wiki/Image:Map_of_USA_without_state_names.svg
+    Creators: Wikipedia users Wapcaplet and Angr
+    Processed into a Tux Paint starter by:
+    Caroline Ford <caroline.ford.work@googlemail.com>.
 
 
 * Fonts
