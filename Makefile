@@ -103,8 +103,12 @@ SDL_MIXER_LIB=-lSDL_mixer
 SDL_CFLAGS=$(shell sdl-config --cflags) $(SVG_CFLAGS)
 
 
-SVG_LIB=-lcairo
-SVG_CFLAGS=-I/usr/include/cairo
+SVG_LIB=-lrsvg-2 -lcairo
+SVG_CFLAGS=-I/usr/include/librsvg-2/librsvg \
+	-I/usr/include/gtk-2.0 \
+	-I/usr/include/glib-2.0 \
+	-I/usr/lib/glib-2.0/include \
+	-I/usr/include/cairo
 
 
 # The entire set of CFLAGS:

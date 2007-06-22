@@ -2,11 +2,11 @@ INSTALL.txt for Tux Paint
 
 Tux Paint - A simple drawing program for children.
 
-Copyright 2002-2006 by Bill Kendrick and others
+Copyright 2002-2007 by Bill Kendrick and others
 bill@newbreedsoftware.com
 http://www.tuxpaint.org/
 
-June 27, 2002 - December 16, 2006
+June 27, 2002 - June 21, 2007
 $Id$
 
 
@@ -76,12 +76,38 @@ Requirements:
 
         http://www.gnu.org/software/gettext/
 
-    Cairo, libsvg, svg-cairo  [EXPERIMENTAL]  [can be disabled]
-    ----------------------------------------
-      As of Tux Paint 0.9.17, SVG vector graphics are supported by the
-      'Stamps' tool.
+    SVG graphics support
+    --------------------
+      As of Tux Paint 0.9.17, Tux Paint can load SVG
+      (Scalable Vector Graphics) images as stamps.
+      Two sets of libraries are supported, and SVG support can be
+      completely disabled (via "make nosvg")
 
-        http://www.cairographics.org/
+      librsvg-2, libCairo2  [newer libraries; default "make" target]
+      --------------------------------------------------------------
+        libRSVG 2
+          http://librsvg.sourceforge.net/
+
+        Cairo 2
+          http://www.cairographics.org/
+
+        Also depends on:
+          GdkPixbuf
+          GLib
+            http://www.gtk.org/
+
+          Pango
+            http://www.pango.org/
+
+      Older libraries ("make oldsvg")
+      -------------------------------
+        libcairo1
+        libsvg1
+        libsvg-cairo1
+          http://www.cairographics.org/
+
+        Also depends on:
+          libxml2
 
     NetPBM Tools  [OPTIONAL]  [No longer used, by default]
     ------------------------

@@ -9,7 +9,7 @@ http://www.newbreedsoftware.com/tuxpaint/
 $Id$
 
 
-2007.June.12 (0.9.17)
+2007.June.21 (0.9.17)
 
   * Interface Improvements:
     -----------------------
@@ -50,12 +50,13 @@ $Id$
       (Addresses SourceForge Bug #1070414)
       Mark K. Kim <mkkim214@gmail.com>
 
-    * Stamps now supports SVG vector-based graphics!  (Via Cairo library)
+    * Stamps now supports SVG vector-based graphics!
       (Only SVG versions of stamps are loaded, when both PNG and SVG
       variations are found.)
 
-      (Experimental; build with "make nosvg" to disable SVG support and
-      Cairo dependency.)
+      * By default, uses librsvg-2 and libcairo2 (requires glib & much more).
+      * Use "make oldsvg" to build with libsvg and libcairo1 (older libs).
+      * Use "make nosvg" to completely disable SVG support.
 
     * Stamps now shown in groups.  Use previous & next buttons to
       cycle through stamp categories.

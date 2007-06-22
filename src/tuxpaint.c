@@ -22,7 +22,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
   
-  June 14, 2002 - June 19, 2007
+  June 14, 2002 - June 21, 2007
   $Id$
 */
 
@@ -361,12 +361,13 @@ extern WrapperData macosx;
 
 #else
 
-#include "xyzsvg.h"
-#ifndef XYZ_SVG_H
+#include "rsvg.h"
+#include "rsvg-cairo.h"
+#if !defined(RSVG_H) || !defined(RSVG_CAIRO_H)
 #error "---------------------------------------------------"
-#error "If you installed libXYZ from packages, be sure"
+#error "If you installed libRSVG from packages, be sure"
 #error "to get the development package, as well!"
-#error "(e.g., 'libXYZ-dev.rpm')"
+#error "(e.g., 'librsvg2-dev.rpm')"
 #error "---------------------------------------------------"
 #endif
 
@@ -16411,7 +16412,9 @@ int paintsound(int size)
 
 #ifdef OLD_SVG
 
+// Old libcairo1, svg and svg-cairo based code
 // Based on cairo-demo/sdl/main.c from Cairo (GPL'd, (c) 2004 Eric Windisch):
+
 SDL_Surface * load_svg(char * file)
 {
   svg_cairo_t * scr;
@@ -16494,10 +16497,10 @@ SDL_Surface * load_svg(char * file)
 #endif
 
   // Create the cairo surface with the adjusted width and height
+
   cairo_surface = cairo_image_surface_create_for_data(image,
                                                       CAIRO_FORMAT_ARGB32,
                                                       width, height, stride);
-
   cr = cairo_create(cairo_surface);
   if (cr == NULL)
   {
@@ -16571,11 +16574,181 @@ SDL_Surface * load_svg(char * file)
 
 #else
 
+// New libcairo2, rsvg and rsvg-cairo based code
 SDL_Surface * load_svg(char * file)
 {
-  printf("load_svg(%s)\n", file);
+  cairo_surface_t * cairo_surf;
+  cairo_t * cr;
+  RsvgHandle * rsvg_handle;
+  GError * gerr;
+  unsigned char * image;
+  int rwidth, rheight;
+  int width, height, stride;
+  float scale;
+  int bpp = 32, btpp = 4;
+  RsvgDimensionData dimensions;
+  SDL_Surface * sdl_surface, * sdl_surface_tmp;
+  Uint32 rmask, gmask, bmask, amask;
 
-  return (NULL);
+#ifdef DEBUG
+  printf("load_svg(%s)\n", file);
+#endif
+
+  /* Create an RSVG Handle from the SVG file: */
+
+  rsvg_init();
+
+  gerr = NULL;
+
+  rsvg_handle = rsvg_handle_new_from_file(file, &gerr);
+  if (rsvg_handle == NULL)
+  {
+#ifdef DEBUG
+    fprintf(stderr, "rsvg_handle_new_from_file() failed\n");
+#endif
+    return(NULL);
+  }
+
+  rsvg_handle_get_dimensions(rsvg_handle, &dimensions);
+  rwidth = dimensions.width;
+  rheight = dimensions.height;
+
+#ifdef DEBUG
+  printf("SVG is %d x %d\n", rwidth, rheight);
+#endif
+
+
+  // Pick best scale to render to (for the canvas in this instance of Tux Paint)
+  
+  scale = pick_best_scape(rwidth, rheight, r_canvas.w, r_canvas.h);
+
+#ifdef DEBUG
+  printf("best scale is %.4f\n", scale);
+#endif
+
+  width = ((float) rwidth * scale);
+  height = ((float) rheight * scale);
+
+#ifdef DEBUG
+  printf("scaling to %d x %d (%f scale)\n", width, height, scale);
+#endif
+
+  // scanline width
+  stride = width * btpp;
+
+  // Allocate space for an image:
+  image = calloc(stride * height, 1);
+  if (image == NULL)
+  {
+#ifdef DEBUG
+    fprintf(stderr, "Unable to allocate image buffer\n");
+#endif
+    g_object_unref(rsvg_handle);
+    return(NULL);
+  }
+
+
+  /* Create a surface for Cairo to draw into: */
+
+  cairo_surf = cairo_image_surface_create_for_data(image,
+                                                   CAIRO_FORMAT_ARGB32,
+                                                   width, height, stride);
+
+  if (cairo_surface_status(cairo_surf) != CAIRO_STATUS_SUCCESS)
+  {
+#ifdef DEBUG
+    fprintf(stderr, "cairo_image_surface_create() failed\n");
+#endif
+    g_object_unref(rsvg_handle);
+    free(image);
+    return(NULL);
+  }
+
+
+  /* Create a new Cairo object: */
+
+  cr = cairo_create(cairo_surf);
+  if (cairo_status(cr) != CAIRO_STATUS_SUCCESS)
+  {
+#ifdef DEBUG
+    fprintf(stderr, "cairo_create() failed\n");
+#endif
+    g_object_unref(rsvg_handle);
+    cairo_surface_destroy(cairo_surf);
+    free(image);
+    return(NULL);
+  }
+
+
+  /* Ask RSVG to render the SVG into the Cairo object: */
+
+  cairo_scale(cr, scale, scale);
+
+  /* FIXME: We can use cairo_rotate() here to rotate stamps! -bjk 2007.06.21 */
+
+  rsvg_handle_render_cairo(rsvg_handle, cr);
+
+
+  cairo_surface_finish(cairo_surf);
+
+  
+  // Adjust the SDL surface to match the cairo surface created
+  // (surface mask of ARGB)  NOTE: Is this endian-agnostic? -bjk 2006.10.25
+  rmask = 0x00ff0000;
+  gmask = 0x0000ff00;
+  bmask = 0x000000ff;
+  amask = 0xff000000;
+
+  // Create the SDL surface using the pixel data stored:
+  sdl_surface_tmp = SDL_CreateRGBSurfaceFrom((void *) image, width, height,
+                                             bpp, stride,
+                                             rmask, gmask, bmask, amask);
+
+  if (sdl_surface_tmp == NULL)
+  {
+#ifdef DEBUG
+    fprintf(stderr, "SDL_CreateRGBSurfaceFrom() failed\n");
+#endif
+    g_object_unref(rsvg_handle);
+    cairo_surface_destroy(cairo_surf);
+    free(image);
+    cairo_destroy(cr);
+    return(NULL);
+  }
+
+  // Convert the SDL surface to the display format, for faster blitting:
+  sdl_surface = SDL_DisplayFormatAlpha(sdl_surface_tmp);
+  SDL_FreeSurface(sdl_surface_tmp);
+
+  if (sdl_surface == NULL)
+  {
+#ifdef DEBUG
+    fprintf(stderr, "SDL_DisplayFormatAlpha() failed\n");
+#endif
+    g_object_unref(rsvg_handle);
+    cairo_surface_destroy(cairo_surf);
+    free(image);
+    cairo_destroy(cr);
+    return(NULL);
+  }
+
+
+#ifdef DEBUG
+  printf("SDL surface from %d x %d SVG is %d x %d\n",
+	  rwidth, rheight, sdl_surface->w, sdl_surface->h);
+#endif
+
+
+  /* Clean up: */
+
+  g_object_unref(rsvg_handle);
+  cairo_surface_destroy(cairo_surf);
+  free(image);
+  cairo_destroy(cr);
+
+  rsvg_term();
+
+  return(sdl_surface);
 }
 
 #endif
