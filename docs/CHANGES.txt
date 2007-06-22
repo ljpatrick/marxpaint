@@ -81,6 +81,7 @@ $Id$
       + Lozenge
       + Oval
       + Pentagon
+      + Sphere
       + Spiral
       + Splat
       + Star
