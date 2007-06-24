@@ -22,7 +22,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
   
-  June 14, 2002 - June 21, 2007
+  June 14, 2002 - June 24, 2007
   $Id$
 */
 
@@ -48,39 +48,15 @@
 #endif
 
 
+//#define CORNER_SHAPES     /* need major work! */
+
+
 /* Method for printing images: */
 
 #define PRINTMETHOD_PS		/* Direct to PostScript */
 //#define PRINTMETHOD_PNM_PS       /* Output PNM, assuming it gets printed */
 //#define PRINTMETHOD_PNG_PNM_PS   /* Output PNG, assuming it gets printed */
 
-
-//#define CORNER_SHAPES     /* need major work! */
-
-/* Default print and alt-print command, depending on the print method: */
-
-#define DEFAULT_PRINTCOMMAND "lpr"
-#define DEFAULT_ALTPRINTCOMMAND "kprinter"
-
-#ifdef PRINTMETHOD_PNG_PNM_PS
-#define PRINTCOMMAND "pngtopnm | pnmtops | " DEFAULT_PRINTCOMMAND
-#elif defined(PRINTMETHOD_PNM_PS)
-#define PRINTCOMMAND "pnmtops | " DEFAULT_PRINTCOMMAND
-#elif defined(PRINTMETHOD_PS)
-#define PRINTCOMMAND DEFAULT_PRINTCOMMAND
-#else
-#error No print method defined!
-#endif
-
-#ifdef PRINTMETHOD_PNG_PNM_PS
-#define ALTPRINTCOMMAND "pngtopnm | pnmtops | " DEFAULT_ALTPRINTCOMMAND
-#elif defined(PRINTMETHOD_PNM_PS)
-#define ALTPRINTCOMMAND "pnmtops | " DEFAULT_ALTPRINTCOMMAND
-#elif defined(PRINTMETHOD_PS)
-#define ALTPRINTCOMMAND DEFAULT_ALTPRINTCOMMAND
-#else
-#error No alt print method defined!
-#endif
 
 #define MAX_PATH 256
 
@@ -269,10 +245,17 @@ char *strcasestr(const char *haystack, const char *needle)
 #include <sys/stat.h>
 
 #ifndef WIN32
+
+/* Not Windows: */
+
 #include <unistd.h>
 #include <dirent.h>
 #include <signal.h>
+
 #ifdef __BEOS__
+
+/* BeOS */
+
 #include "BeOS_print.h"
 // workaround dirent handling bug in TuxPaint code
 typedef struct safer_dirent
@@ -285,13 +268,32 @@ typedef struct safer_dirent
   char d_name[NAME_MAX];
 } safer_dirent;
 #define dirent safer_dirent
-#endif
+
+#else /* __BEOS__ */
+
+/* Not BeOS */
+
 #ifdef __APPLE__
+
+/* Apple */
+
 #include "macosx_print.h"
 #include "wrapperdata.h"
 extern WrapperData macosx;
-#endif
-#else
+
+#else /* __APPLE__ */
+
+/* Not Windows, not BeOS, not Apple */
+
+#include "postscript_print.h"
+
+#endif /* __APPLE__ */
+
+#endif /* __BEOS__ */
+
+#else /* WIN32 */
+
+/* Windows */
 
 #include <unistd.h>
 #include <dirent.h>
@@ -12579,95 +12581,6 @@ static int do_png_save(FILE * fi, const char *const fname, SDL_Surface * surf)
 
   return 0;
 }
-
-///////////////////////////////////// PostScript printing ///////////
-#ifdef PRINTMETHOD_PS
-
-/* Actually save the PostScript data to the file stream: */
-static int do_ps_save(FILE * fi, const char *restrict const fname,
-		      SDL_Surface * surf)
-{
-  unsigned char *restrict const ps_row = malloc(surf->w * 3);
-  int x, y;
-  char buf[256];
-  Uint32(*getpixel) (SDL_Surface *, int, int) =
-    getpixels[surf->format->BytesPerPixel];
-  time_t t = time(NULL);
-
-  fprintf(fi, "%%!PS-Adobe-3.0 EPSF-3.0\n");	// probably broken, but close enough maybe
-  fprintf(fi, "%%%%Title: (%s)\n", fname);
-  strftime(buf, sizeof buf - 1, "%a %b %e %H:%M:%S %Y", localtime(&t));
-  fprintf(fi, "%%%%CreationDate: (%s)\n", buf);
-  fprintf(fi, "%%%%Creator: (Tux Paint " VER_VERSION ", " VER_DATE ")\n");
-  fprintf(fi, "%%%%LanguageLevel: 2\n");
-//  fprintf(fi, "%%%%BoundingBox: 72 214 540 578\n");  // doubt we have the needed info
-  fprintf(fi, "%%%%DocumentData: Binary\n");
-  fprintf(fi, "%%%%EndComments\n");
-  fprintf(fi, "\n");
-  fprintf(fi, "gsave\n");
-  fprintf(fi, "\n");
-//  fprintf(fi, "90 rotate\n");  // landscape mode
-  fprintf(fi, "%% First, grab the page size.\n");
-  fprintf(fi, "gsave\n");
-  fprintf(fi, "  clippath\n");
-  fprintf(fi, "  pathbbox\n");
-  fprintf(fi, "grestore\n");
-  fprintf(fi, "/ury exch def\n");
-  fprintf(fi, "/urx exch def\n");
-  fprintf(fi, "/lly exch def\n");
-  fprintf(fi, "/llx exch def\n");
-  fprintf(fi, "\n");
-  fprintf(fi, "llx lly translate\n");
-  fprintf(fi, "\n");
-  fprintf(fi, "/width %u def\n", surf->w);
-  fprintf(fi, "/height %u def\n", surf->h);
-  fprintf(fi, "width height scale\n");
-  fprintf(fi, "\n");
-  fprintf(fi, "urx llx sub width div\n");
-  fprintf(fi, "ury lly sub height div\n");
-  fprintf(fi, "%% now do a 'min' operation\n");
-  fprintf(fi, "2 copy gt { exch } if pop\n");
-  fprintf(fi, "\n");
-  fprintf(fi, "dup scale\n");
-  fprintf(fi, "/DeviceRGB setcolorspace\n");
-  fprintf(fi, "<<\n");
-  fprintf(fi, "  /ImageType 1\n");
-  fprintf(fi, "  /Width width /Height height\n");
-  fprintf(fi, "  /BitsPerComponent 8\n");
-  fprintf(fi, "  /ImageMatrix [width 0 0 height neg 0 height]\n");
-  fprintf(fi, "  /Decode [0 1 0 1 0 1]\n");
-  fprintf(fi, "  /DataSource currentfile\n");
-  fprintf(fi, ">>\n");
-  fprintf(fi, "%%%%BeginData: %u Binary Bytes\n", surf->w * surf->h * 3u);
-  fprintf(fi, "image\n");
-
-  /* Save the picture: */
-  for (y = 0; y < surf->h; y++)
-  {
-    for (x = 0; x < surf->w; x++)
-    {
-      Uint8 r, g, b;
-      SDL_GetRGB(getpixel(surf, x, y), surf->format, &r, &g, &b);
-      ps_row[x * 3 + 0] = r;
-      ps_row[x * 3 + 1] = g;
-      ps_row[x * 3 + 2] = b;
-    }
-    fwrite(ps_row, surf->w, 3, fi);
-  }
-  free(ps_row);
-
-  fprintf(fi, "\n");
-  fprintf(fi, "%%%%EndData\n");
-  fprintf(fi, "grestore\n");
-  fprintf(fi, "showpage\n");
-  fprintf(fi, "%%%%EOF\n");
-
-  fclose(fi);
-  return 1;
-}
-
-#endif
-/////////////////////////////////////////////////////////////////
 
 /* Pick a new file ID: */
 static void get_new_file_id(void)

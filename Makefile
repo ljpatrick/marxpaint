@@ -7,7 +7,7 @@
 # bill@newbreedsoftware.com
 # http://www.tuxpaint.org/
 
-# June 14, 2002 - June 12, 2007
+# June 14, 2002 - June 24, 2007
 
 
 # The version number, for release:
@@ -109,6 +109,8 @@ SVG_CFLAGS=-I/usr/include/librsvg-2/librsvg \
 	-I/usr/include/glib-2.0 \
 	-I/usr/lib/glib-2.0/include \
 	-I/usr/include/cairo
+
+PAPER_LIB=-lpaper
 
 
 # The entire set of CFLAGS:
@@ -701,10 +703,12 @@ install-man:
 tuxpaint:	obj/tuxpaint.o obj/i18n.o obj/im.o obj/cursor.o obj/pixels.o \
 		obj/floodfill.o obj/rgblinear.o obj/playsound.o obj/fonts.o \
 		obj/progressbar.o obj/dirwalk.o obj/get_fname.o \
+		obj/postscript_print.o \
 		$(HQXX_O) $(ARCH_LIBS)
 	@echo
 	@echo "...Linking Tux Paint..."
-	@$(CC) $(CFLAGS) $(DEBUG_FLAGS) $(SDL_CFLAGS) $(DEFS) \
+	@$(CC) $(CFLAGS) $(DEBUG_FLAGS) $(SDL_CFLAGS) $(PAPER_CFLAGS) \
+		$(DEFS) \
 		-o tuxpaint \
 		$^ \
 		$(HQXX_O) \
@@ -830,6 +834,13 @@ obj/win32_print.o:	src/win32_print.c obj src/win32_print.h src/debug.h
 	@echo "...Compiling win32 print support..."
 	@$(CC) $(CFLAGS) $(DEBUG_FLAGS) $(SDL_CFLAGS) $(DEFS) \
 		-c src/win32_print.c -o obj/win32_print.o
+
+obj/postscript_print.o:	src/postscript_print.c obj \
+			src/postscript_print.h src/debug.h
+	@echo
+	@echo "...Compoling PostScript print support..."
+	@$(CC) $(CFLGS) $(DEBUG_FLAGS) $(SDL_CFLAGS) $(DEFS) \
+		-c src/postscript_print.c -o obj/postscript_print.o
 
 obj/resource.o:	visualc/resources.rc obj visualc/resource.h
 	@echo

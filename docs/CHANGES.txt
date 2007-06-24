@@ -9,7 +9,7 @@ http://www.newbreedsoftware.com/tuxpaint/
 $Id$
 
 
-2007.June.21 (0.9.17)
+2007.June.24 (0.9.17)
 
   * Interface Improvements:
     -----------------------
@@ -106,6 +106,9 @@ $Id$
       at the screen's (more precisely, the operating system's) current
       resolution.  Either use both "fullscreen=yes" and "native=yes" in the
       config file, or "--fullscreen --native" on the command-line.
+
+    * Split PostScript printing code (for Linux/Unix/etc.) into its own
+      source file.  (Mac OS X, Windows and BeOS all had their own.)
 
   * Documentation Improvements:
     ---------------------------
