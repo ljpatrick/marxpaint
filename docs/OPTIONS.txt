@@ -9,7 +9,7 @@
                            bill@newbreedsoftware.com
                             http://www.tuxpaint.org/
 
-                                 June 19, 2007
+                                 June 25, 2007
 
    --------------------------------------------------------------------------
 
@@ -195,6 +195,22 @@ Windows Users
              [Alt] key is pressed while the 'Print' button is clicked.
              Clicking 'Print' without holding [Alt] prints without showing a
              dialog.
+
+     papersize=PAPERSIZE
+
+             (Platforms that use Tux Paint's internal PostScript generator --
+             not Windows, Mac OS X or BeOS.)
+
+             Tell Tux Paint what size PostScript to generate. If none is
+             specified, Tux Paint first checks your $PAPER environment
+             variable, then the file /etc/papersize, then uses the the
+             'libpaper' library's default paper size.
+
+             Valid paper sizes include: letter, legal, tabloid, executive,
+             note, statement, a0, a1, a2, a3, a4, a5, a6, a7, a8, a9, a10,
+             b0, b1, b2 b3, b4, 10x14, 11x17, halfletter, halfexecutive,
+             halfnote, folio, quarto, ledger, archA, archB, archC, archD,
+             archE, flsa, flse, csheet, dsheet, esheet.
 
      simpleshapes=yes
              Disable the rotation step of the 'Shape' tool. Click, drag and
@@ -563,6 +579,7 @@ Windows Users
        --noprint
        --printdelay=SECONDS
        --printcfg
+       --papersize=PAPERSIZE
        --simpleshapes
        --uppercase
        --grab

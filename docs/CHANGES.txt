@@ -4,12 +4,12 @@ Tux Paint - A simple drawing program for children.
 
 Copyright (c) 2002-2007 by Bill Kendrick and others
 bill@newbreedsoftware.com
-http://www.newbreedsoftware.com/tuxpaint/
+http://www.tuxpaint.org/
 
 $Id$
 
 
-2007.June.24 (0.9.17)
+2007.June.25 (0.9.17)
 
   * Interface Improvements:
     -----------------------
@@ -109,6 +109,18 @@ $Id$
 
     * Split PostScript printing code (for Linux/Unix/etc.) into its own
       source file.  (Mac OS X, Windows and BeOS all had their own.)
+
+    * PostScript printing code rewritten, based on NetPBM's 'pnmtops' tool
+      by Jef Poskanzer.
+
+    * PostScript printing now uses libprint to determine papersize, and
+      scale and position image accordingly.  (No longer depending on printer
+      to figure out its own paper size; not the recommended method.)
+      Thanks to Henry House <hajhouse@houseag.com>
+
+    * "--papersize" option added to allow PostScript printing code to
+      use a different size than libpaper reports as the user's or system's
+      default.
 
   * Documentation Improvements:
     ---------------------------

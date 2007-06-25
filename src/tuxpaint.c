@@ -22,7 +22,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
   
-  June 14, 2002 - June 24, 2007
+  June 14, 2002 - June 25, 2007
   $Id$
 */
 
@@ -847,6 +847,10 @@ static char *playfile;
 static FILE *demofi;
 static const char *printcommand = PRINTCOMMAND;
 static const char *altprintcommand = ALTPRINTCOMMAND;
+
+#if !defined(WIN32) && !defined(__APPLE__) && !defined(__BEOS__)
+char *papersize = NULL;
+#endif
 
 
 enum
@@ -5546,6 +5550,9 @@ static void show_usage(FILE * f, char *prg)
 #endif
 	  "  %s [--printdelay=SECONDS]\n"
 	  "  %s [--altprintmod | --altprintalways | --altprintnever]\n"
+#if !defined(WIN32) && !defined(__APPLE__) && !defined(__BEOS__)
+	  "  %s [--papersize=PAPERSIZE]\n"
+#endif
 	  "  %s [--lang LANGUAGE | --locale LOCALE | --lang help]\n"
 	  "  %s [--nosysconfig] [--nolockfile]\n"
 	  "  %s [--colorfile FILE]\n"
@@ -5558,7 +5565,11 @@ static void show_usage(FILE * f, char *prg)
 #ifdef WIN32
 	  blank,
 #endif
-	  blank, blank, blank, blank, blank, blank);
+	  blank, blank,
+#if !defined(WIN32) && !defined(__APPLE__) && !defined(__BEOS__)
+	  blank,
+#endif
+	  blank, blank, blank, blank);
 
   free(blank);
 }
@@ -6595,6 +6606,12 @@ static void setup(int argc, char *argv[])
     {
       alt_print_command_default = ALTPRINT_MOD;
     }
+#if !defined(WIN32) && !defined(__APPLE__) && !defined(__BEOS__)
+    else if (strstr(argv[i], "--papersize=") == argv[i])
+    {
+      papersize = strdup(argv[i] + strlen("--papersize="));
+    }
+#endif
     else if (strcmp(argv[i], "--uppercase") == 0
 	     || strcmp(argv[i], "-u") == 0)
     {
@@ -11881,6 +11898,11 @@ static void cleanup(void)
     free(lock_fname);
   }
 
+#if !defined(WIN32) && !defined(__APPLE__) && !defined(__BEOS__)
+  if (papersize != NULL)
+    free(papersize);
+#endif
+
 
   /* Close up! */
 
@@ -15174,7 +15196,7 @@ void do_print(void)
 #elif defined(PRINTMETHOD_PNM_PS)
     // nothing here
 #elif defined(PRINTMETHOD_PS)
-    if (do_ps_save(pi, pcmd, canvas))
+    if (do_ps_save(pi, pcmd, canvas, papersize))
       do_prompt_snd(PROMPT_PRINT_TXT, PROMPT_PRINT_YES, "", SND_TUXOK);
 #else
 #error No print method defined!
@@ -15898,6 +15920,12 @@ static void parse_options(FILE * fi)
       {
 	alt_print_command_default = ALTPRINT_NEVER;
       }
+#if !defined(WIN32) && !defined(__APPLE__) && !defined(__BEOS__)
+      else if (strstr(str, "papersize=") == str)
+      {
+        papersize = strdup(str + strlen("papersize="));
+      }
+#endif
       else if (strstr(str, "savedir=") == str)
       {
 	savedir = strdup(str + 8);

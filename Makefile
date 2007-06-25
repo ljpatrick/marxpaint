@@ -714,6 +714,7 @@ tuxpaint:	obj/tuxpaint.o obj/i18n.o obj/im.o obj/cursor.o obj/pixels.o \
 		$(HQXX_O) \
 		$(SDL_LIBS) \
 		$(SVG_LIB) \
+		$(PAPER_LIB) \
 		-lm $(ARCH_LINKS)
 	@$(RSRC_CMD)
 	@$(MIMESET_CMD)

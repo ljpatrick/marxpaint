@@ -23,7 +23,7 @@ New Breed Software</p>
 <a href="http://www.tuxpaint.org/">http://www.tuxpaint.org/</a></p>
 
 
-<p>June 19, 2007</p>
+<p>June 25, 2007</p>
 
 
 </center>
@@ -250,6 +250,30 @@ New Breed Software</p>
     when the <b>[Alt]</b> key is pressed while the 'Print' button is clicked.
     Clicking 'Print' without holding <b>[Alt]</b> prints without showing
     a dialog.</p>
+  </dd>
+
+  <dt><code><b>papersize=<i>PAPERSIZE</i></b></code></dt>
+  <dd>
+    <p><i>(Platforms that use Tux&nbsp;Paint's internal PostScript
+    generator &mdash; not Windows, Mac OS X or BeOS.)</i></p>
+
+    <p>Tell Tux&nbsp;Paint what size PostScript to generate.
+    If none is specified, Tux&nbsp;Paint first checks
+    your <code>$PAPER</code> environment variable, then
+    the file <code>/etc/papersize</code>, then uses the the
+    'libpaper' library's default paper size.</p>
+
+    <p>Valid paper sizes include:
+    letter, legal, tabloid, executive, note, statement,
+    a0, a1, a2, a3, a4, a5, a6, a7, a8, a9, a10,
+    b0, b1, b2 b3, b4,
+    10x14, 11x17,
+    halfletter, halfexecutive, halfnote,
+    folio, quarto, ledger,
+    archA, archB, archC, archD, archE,
+    flsa, flse,
+    csheet, dsheet, esheet.
+    </p>
   </dd>
 
   <dt><code><b>simpleshapes=yes</b></code></dt>
@@ -882,6 +906,7 @@ New Breed Software</p>
     --noprint<br>
     --printdelay=<i>SECONDS</i><br>
     --printcfg<br>
+    --papersize=<i>PAPERSIZE</i><br>
     --simpleshapes<br>
     --uppercase<br>
     --grab<br>

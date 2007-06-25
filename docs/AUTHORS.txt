@@ -7,7 +7,7 @@ bill@newbreedsoftware.com
 http://www.tuxpaint.org/
 
 
-June 17, 2002 - June 19, 2007
+June 17, 2002 - June 25, 2007
 
 $Id$
 
@@ -34,6 +34,16 @@ $Id$
 
   Input Method (IM) Framework and Korean/Japanese IM implemented by:
   Mark K. Kim <mkkim214@gmail.com>
+
+  PostScript printing code based loosely on NetPBM's "pnmtops",
+  copyright (c) 1989 by Jef Poskanzer.
+  License of "pnmtops.c":
+    Permission to use, copy, modify, and distribute this software and its
+    documentation for any purpose and without fee is hereby granted, provided
+    that the above copyright notice appear in all copies and that both that
+    copyright notice and this permission notice appear in supporting
+    documentation.  This software is provided "as is" without express or
+    implied warranty.
 
 
 * Graphics

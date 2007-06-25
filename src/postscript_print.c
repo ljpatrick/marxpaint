@@ -1,97 +1,288 @@
+/*
+  postscript_print.c
+
+  For Tux Paint
+  PostScript(r) printing routine.
+  (for non-Windows, non-Mac OS X, non-BeOS platforms, e.g. Linux)
+  (moved from tuxpaint.c in 0.9.17)
+
+  Copyright (c) 2007 by Bill Kendrick and others
+  bill@newbreedsoftware.com
+  http://www.tuxpaint.org/
+
+  This program is free software; you can redistribute it and/or modify
+  it under the terms of the GNU General Public License as published by
+  the Free Software Foundation; either version 2 of the License, or
+  (at your option) any later version.
+
+  This program is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  GNU General Public License for more details.
+
+  You should have received a copy of the GNU General Public License
+  along with this program; if not, write to the Free Software
+  Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+  (See COPYING.txt)
+
+  Based loosely on examination of NetPBM's "pnmtops" code and output:
+  copyright (c) 1989 by Jef Poskanzer.
+  License from "pnmtops.c":
+    Permission to use, copy, modify, and distribute this software and its
+    documentation for any purpose and without fee is hereby granted, provided
+    that the above copyright notice appear in all copies and that both that
+    copyright notice and this permission notice appear in supporting
+    documentation.  This software is provided "as is" without express or
+    implied warranty.
+
+
+  June 24, 2007 - June 25, 2007
+  $Id$
+*/
+
+#include "postscript_print.h"
+
+#ifdef PRINTMETHOD_PS
 
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 #include <time.h>
 #include <paper.h>
-#include "postscript_print.h"
+#include <math.h>
+
+#ifndef PAPER_H
+#error "---------------------------------------------------"
+#error "If you installed libpaper from a package, be sure"
+#error "to get the development package, as well!"
+#error "(e.g., 'libpaper-dev.rpm')"
+#error "---------------------------------------------------"
+#endif
+
 #include "pixels.h"
 
-///////////////////////////////////// PostScript printing ///////////
-#ifdef PRINTMETHOD_PS
+#define my_min(x,y) ((x < y) ? (x) : (y))
 
 /* Actually save the PostScript data to the file stream: */
 int do_ps_save(FILE * fi,
-		      // const char *restrict const fname,
-		      const char * fname,
-		      SDL_Surface * surf)
+		// const char *restrict const fname,
+		const char * fname,
+		SDL_Surface * surf,
+		char * pprsize)
 {
-  unsigned char * /* restrict const */ ps_row = malloc(surf->w * 3);
+  const struct paper * ppr;
+  int img_w = surf->w;
+  int img_h = surf->h;
+  int r_img_w, r_img_h;
+  int ppr_w, ppr_h;
   int x, y;
+  float tlate_x, tlate_y;
+  int cur_line_len;
+  int plane;
+  Uint8 r, g, b;
   char buf[256];
   Uint32(*getpixel) (SDL_Surface *, int, int) =
     getpixels[surf->format->BytesPerPixel];
+  int printed_img_w, printed_img_h;
   time_t t = time(NULL);
+  int rotate;
+  float scale;
 
-  fprintf(fi, "%%!PS-Adobe-3.0 EPSF-3.0\n");	// probably broken, but close enough maybe
+
+  /* Determine paper size: */
+
+  paperinit(); // FIXME: Should we do this at startup? -bjk 2007.06.25
+
+  if (pprsize == NULL)
+  {
+    /* User did not request a specific paper size (on command-line or
+       in config file), ask the system.  It will return either their
+       $PAPER env. var., the value from /etc/papersize, or NULL: */
+
+    pprsize = (char *) systempapername();
+
+    if (pprsize == NULL)
+    {
+      /* No setting, env. var. or /etc/ file; use the default! */
+
+      pprsize = (char *) defaultpapername();
+
+#ifdef DEBUG
+      printf("Using default paper\n");
+#endif
+    }
+#ifdef DEBUG
+    else
+    {
+      printf("Using system paper\n");
+    }
+#endif
+  }
+#ifdef DEBUG
+  else
+  {
+    printf("Using user paper\n");
+  }
+#endif
+  
+#ifdef DEBUG
+  printf("Using paper size: %s\n", pprsize);
+#endif
+
+
+  /* Determine attributes of paper of the size chosen/determined: */
+
+  ppr = paperinfo(pprsize);
+
+  ppr_w = paperpswidth(ppr);
+  ppr_h = paperpsheight(ppr);
+
+#ifdef DEBUG
+  printf("Paper is %d x %d (%.2f\" x %.2f\")\n", ppr_w, ppr_h,
+	 (float) ppr_w / 72.0, (float) ppr_h / 72.0);
+#endif
+
+  paperdone(); // FIXME: Should we do this at quit? -bjk 2007.06.25
+
+
+  /* Determine whether it's best to rotate the image: */
+
+  if ((ppr_w >= ppr_h && img_w >= img_h) ||
+      (ppr_w <= ppr_h && img_w <= img_h))
+  {
+    rotate = 0;
+    r_img_w = img_w;
+    r_img_h = img_h;
+  }
+  else
+  {
+    rotate = 1;
+    r_img_w = img_h;
+    r_img_h = img_w;
+  }
+
+#ifdef DEBUG
+  printf("Image is %d x %d\n", img_w, img_h);
+  printf("Rotated? %s\n", rotate ? "yes" : "no");
+  printf("Will print %d x %d pixels\n", r_img_w, r_img_h);
+#endif
+
+
+  /* Determine scale: */
+
+  scale = my_min(((float) ppr_w / (float) r_img_w),
+		 ((float) ppr_h / (float) r_img_h)) * (72.0 / 100.0);
+
+  printed_img_w = r_img_w * scale;
+  printed_img_h = r_img_h * scale;
+
+#ifdef DEBUG
+  printf("Scaling image by %.2f (to %d x %d)\n", scale,
+	 printed_img_w, printed_img_h);
+#endif
+
+
+  // FIXME - doesn't seem to center well -bjk 2007.06.25
+  tlate_x = (ppr_w - printed_img_w) / 2;
+  tlate_y = (ppr_h - printed_img_h) / 2;
+
+
+  /* Based off of output from "pnmtops", Tux Paint 0.9.15 thru
+     0.9.17 CVS as of June 2007, and Adobe Systems Incorporated's
+     'PostScript(r) Language Reference, 3rd Ed.' */
+
+  /* Begin PostScript output with some useful meta info in comments: */
+
+  fprintf(fi, "%%!PS-Adobe-2.0 EPSF-2.0\n"); // we need LanguageLevel2 for color
+
   fprintf(fi, "%%%%Title: (%s)\n", fname);
+
   strftime(buf, sizeof buf - 1, "%a %b %e %H:%M:%S %Y", localtime(&t));
   fprintf(fi, "%%%%CreationDate: (%s)\n", buf);
+
   fprintf(fi, "%%%%Creator: (Tux Paint " VER_VERSION ", " VER_DATE ")\n");
-  fprintf(fi, "%%%%LanguageLevel: 2\n");
-//  fprintf(fi, "%%%%BoundingBox: 72 214 540 578\n");  // doubt we have the needed info
-  fprintf(fi, "%%%%DocumentData: Binary\n");
+
+  fprintf(fi, "%%%%Pages: 1\n");
+
+  fprintf(fi, "%%%%BoundingBox: %d %d %d %d\n",
+	      (int) tlate_x, (int) tlate_y,
+	      (int) (tlate_x + r_img_w + 0.5),
+	      (int) (tlate_y + r_img_h + 0.5));
+
   fprintf(fi, "%%%%EndComments\n");
-  fprintf(fi, "\n");
+
+
+  /* Define a 'readstring' routine and 'picstr' routines for RGB: */
+
+  fprintf(fi, "/readstring {\n");
+  fprintf(fi, "  currentfile exch readhexstring pop\n");
+  fprintf(fi, "} bind def\n");
+
+  fprintf(fi, "/rpicstr %d string def\n", img_w);
+  fprintf(fi, "/gpicstr %d string def\n", img_w);
+  fprintf(fi, "/bpicstr %d string def\n", img_w);
+
+  fprintf(fi, "%%%%EndProlog\n");
+
+  fprintf(fi, "%%%%Page: 1 1\n");
+
+  fprintf(fi, "<< /PageSize [ %d %d ] /ImagingBBox null >> setpagedevice\n",
+              ppr_w, ppr_h);
+
   fprintf(fi, "gsave\n");
-  fprintf(fi, "\n");
 
-  if (surf->w > surf->h)
-    fprintf(fi, "90 rotate\n");  // landscape mode
+  /* 'translate' moves the user space origin to a new position with
+  respect to the current page, leaving the orientation of the axes and
+  the unit lengths unchanged. */
+  fprintf(fi, "%.2f %.2f translate\n", tlate_x, tlate_y);
 
-  fprintf(fi, "%% First, grab the page size.\n");
-  fprintf(fi, "gsave\n");
-  fprintf(fi, "  clippath\n");
-  fprintf(fi, "  pathbbox\n");
-  fprintf(fi, "grestore\n");
-  fprintf(fi, "/ury exch def\n");
-  fprintf(fi, "/urx exch def\n");
-  fprintf(fi, "/lly exch def\n");
-  fprintf(fi, "/llx exch def\n");
-  fprintf(fi, "\n");
-  fprintf(fi, "llx lly translate\n");
-  fprintf(fi, "\n");
-  fprintf(fi, "/width %u def\n", surf->w);
-  fprintf(fi, "/height %u def\n", surf->h);
-  fprintf(fi, "width height scale\n");
-  fprintf(fi, "\n");
-  fprintf(fi, "urx llx sub width div\n");
-  fprintf(fi, "ury lly sub height div\n");
-  fprintf(fi, "%% now do a 'min' operation\n");
-  fprintf(fi, "2 copy gt { exch } if pop\n");
-  fprintf(fi, "\n");
-  fprintf(fi, "dup scale\n");
-  fprintf(fi, "/DeviceRGB setcolorspace\n");
-  fprintf(fi, "<<\n");
-  fprintf(fi, "  /ImageType 1\n");
-  fprintf(fi, "  /Width width /Height height\n");
-  fprintf(fi, "  /BitsPerComponent 8\n");
-  fprintf(fi, "  /ImageMatrix [width 0 0 height neg 0 height]\n");
-  fprintf(fi, "  /Decode [0 1 0 1 0 1]\n");
-  fprintf(fi, "  /DataSource currentfile\n");
-  fprintf(fi, ">>\n");
-  fprintf(fi, "%%%%BeginData: %u Binary Bytes\n", surf->w * surf->h * 3u);
-  fprintf(fi, "image\n");
+  /* 'scale' modiﬁes the unit lengths independently along the current
+  x and y axes, leaving the origin location and the orientation of the
+  axes unchanged. */
+  fprintf(fi, "%.2f %.2f scale\n",
+	  (float) printed_img_w * scale,
+	  (float) printed_img_h * scale);
 
-  /* Save the picture: */
-  for (y = 0; y < surf->h; y++)
+  /* Rotate the image */
+  if (rotate)
+    fprintf(fi, "0.5 0.5 translate  90 rotate  -0.5 -0.5 translate\n");
+
+  fprintf(fi, "%d %d 8\n", img_w, img_h);
+  fprintf(fi, "[ %d 0 0 %d 0 %d ]\n", img_w, -img_h, img_h);
+
+  fprintf(fi, "{ rpicstr readstring }\n");
+  fprintf(fi, "{ gpicstr readstring }\n");
+  fprintf(fi, "{ bpicstr readstring }\n");
+
+  fprintf(fi, "true 3\n");
+
+  fprintf(fi, "colorimage\n");
+
+  cur_line_len = 0;
+
+  for (y = 0; y < img_h; y++)
   {
-    for (x = 0; x < surf->w; x++)
+    for (plane = 0; plane < 3; plane++)
     {
-      Uint8 r, g, b;
-      SDL_GetRGB(getpixel(surf, x, y), surf->format, &r, &g, &b);
-      ps_row[x * 3 + 0] = r;
-      ps_row[x * 3 + 1] = g;
-      ps_row[x * 3 + 2] = b;
+      for (x = 0; x < img_w; x++)
+      {
+        SDL_GetRGB(getpixel(surf, x, y), surf->format, &r, &g, &b);
+        fprintf(fi, "%02x", (plane == 0 ? r : (plane == 1 ? g : b)));
+
+        cur_line_len++;
+        if (cur_line_len >= 30)
+        {
+          fprintf(fi, "\n");
+          cur_line_len = 0;
+        }
+      }
     }
-    fwrite(ps_row, surf->w, 3, fi);
   }
-  free(ps_row);
 
   fprintf(fi, "\n");
-  fprintf(fi, "%%%%EndData\n");
   fprintf(fi, "grestore\n");
   fprintf(fi, "showpage\n");
+  fprintf(fi, "%%%%Trailer\n");
   fprintf(fi, "%%%%EOF\n");
 
   fclose(fi);
@@ -99,5 +290,4 @@ int do_ps_save(FILE * fi,
 }
 
 #endif
-/////////////////////////////////////////////////////////////////
 
