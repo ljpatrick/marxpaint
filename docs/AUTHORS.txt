@@ -116,6 +116,10 @@ $Id$
   * Nagasaki
     Jim Trice <jimtrice@linuxmail.org>
 
+  * Caracassone, France
+    Pere Pujal i Carabantes <pere@fornol.no-ip.org>
+    License: GPL
+
   * World Maps
     Original is licensed under the GFDL and CC-BY-SA and has multiple authors.
     Based off http://commons.wikimedia.org/wiki/Image:BlankMap-World.svg

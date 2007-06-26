@@ -9,7 +9,7 @@ http://www.tuxpaint.org/
 $Id$
 
 
-2007.June.25 (0.9.17)
+2007.June.26 (0.9.17)
 
   * Interface Improvements:
     -----------------------
@@ -98,6 +98,9 @@ $Id$
       + World maps
       + United States of America map
       + Maps from Wikipedia
+
+      + Caracassone, France
+        Pere Pujal i Carabantes <pere@fornol.no-ip.org>
   
 
   * System-related improvements:
