@@ -15,10 +15,10 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Tuxpaint cvs 2006-03-26\n"
+"Project-Id-Version: Tuxpaint cvs 2007-06-23\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2007-05-09 00:32-0700\n"
-"PO-Revision-Date: 2006-10-05 19:19+0200\n"
+"PO-Revision-Date: 2007-06-24 11:39+0200\n"
 "Last-Translator: Pere Pujal i Carabantes <ppujal@airtel.net>\n"
 "Language-Team: Català <linux-ca@chanae.alphanet.ch>\n"
 "MIME-Version: 1.0\n"
@@ -141,16 +141,16 @@ msgid "Good job!"
 msgstr "Bona feina!"
 
 msgid "English"
-msgstr ""
+msgstr "Anglès"
 
 msgid "Hiragana"
-msgstr ""
+msgstr "Hiragana"
 
 msgid "Katakana"
-msgstr ""
+msgstr "Katakana"
 
 msgid "Hangul"
-msgstr ""
+msgstr "Hangul"
 
 msgid "Fill"
 msgstr "Emplena"
