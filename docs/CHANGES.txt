@@ -9,7 +9,7 @@ http://www.tuxpaint.org/
 $Id$
 
 
-2007.June.26 (0.9.17)
+2007.June.27 (0.9.17)
 
   * Interface Improvements:
     -----------------------
@@ -144,6 +144,8 @@ $Id$
 
     * Briefly documented alternative input methods (IM character map files)
       in "Extending..."
+
+    * Cleaned up FAQ a little.  Added info on "Where are my pictures?"
     
   * Bug Fixes:
     ----------

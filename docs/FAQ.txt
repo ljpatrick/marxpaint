@@ -8,7 +8,7 @@
                            bill@newbreedsoftware.com
                             http://www.tuxpaint.org/
 
-                      September 14, 2002 - April 26, 2007
+                       September 14, 2002 - June 27, 2007
 
 Drawing-related
 
@@ -31,11 +31,12 @@ Drawing-related
        of example stamps.)
 
        If you don't want to install the default collection of stamps, you can
-       just create your own. See the README documentation for more on
-       creating PNG image files, TXT text description files, WAV sound files,
-       and DAT text data files that make up stamps.
+       just create your own. See the EXTENDING TUX PAINT documentation for
+       more on creating PNG and SVG image files, TXT text description files,
+       Ogg Vorbis, MP3 or WAV sound files, and DAT text data files that make
+       up stamps.
 
-       Finally, if you install the stamps, and think they should be loading,
+       Finally, if you installed stamps, and think they should be loading,
        check to see that the "nostamps" option isn't being set. (Either via a
        "--nostamps" option to Tux Paint's command line, or "nostamps=yes" in
        the configuration file.)
@@ -47,9 +48,9 @@ Drawing-related
           * The Magic "Fill" Tool Looks Bad
 
             Tux Paint is probably comparing exact pixel colors when filling.
-            This is faster, but looks worse. Run the command "tuxpaint
-            --version" from a command line, and you should see, amongst the
-            other output: "Low Quality Flood Fill enabled".
+            This is faster, but looks worse. Run the command
+            "tuxpaint --version" from a command line, and you should see,
+            amongst the other output: "Low Quality Flood Fill enabled".
 
             To change this, you must rebuild Tux Paint from source. Be sure
             to remove or comment out any line that says:
@@ -135,7 +136,7 @@ Interface Problems
           * Linux and Unix users: Make sure the locale is available
 
             Make sure the locale you want is available. Check your
-            "/etc/locale.gen" file. See the README documentation for the
+            "/etc/locale.gen" file. See the OPTIONS documentation for the
             locales Tux Paint uses (especially when using the "--lang"
             option).
 
@@ -209,7 +210,7 @@ Printing
        "printdelay=...".
 
        Either remove that line, set the delay value to 0 (no delay), or
-       decrease the delay to a value you prefer. (See the README
+       decrease the delay to a value you prefer. (See the OPTIONS
        documentation).
 
        Or, you can simply run Tux Paint with the command-line argument:
@@ -242,6 +243,27 @@ Printing
        "Printing") is checked.
 
 Saving
+
+     * Where are my pictures?
+
+       Unless you asked Tux Paint to save into a specific location (using the
+       'savedir' option), Tux Paint saves into a standard location on your
+       local drive:
+
+          * Windows
+            In the user's "Application Data" folder:
+            e.g., C:\Documents and Settings\Username\Application
+            Data\TuxPaint\saved
+          * Mac OS X
+            In the user's "Application Support" folder:
+            e.g., /Users/Username/Library/Applicaton Support/TuxPaint/saved/
+          * Linux / Unix
+            In the user's $HOME directory, under a ".tuxpaint" subfolder:
+            e.g., /home/username/.tuxpaint/saved/
+
+       The images are stored as PNG bitmaps, which most modern programs
+       should be able to load (image editors, word processors, web browsers,
+       etc.)
 
      * Tux Paint always saves over my old picture!
 
@@ -446,7 +468,7 @@ Other Probelms
        seconds. (On Unix/Linux, this message would appear in a terminal
        console if you ran Tux Paint from a command-line. On Windows, this
        message would appear in a file named "stdout.txt" in the same folder
-       where TuxPaint.exe resides (e.g., C:\Program Files\TuxPaint).
+       where TuxPaint.exe resides (e.g., in C:\Program Files\TuxPaint).
 
        A lockfile ("~/.tuxpaint/lockfile.dat" on Linux and Unix,
        "userdata\lockfile.dat" on Windows) is used to make sure Tux Paint
