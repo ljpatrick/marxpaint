@@ -85,7 +85,7 @@
 /* Disable fancy cursors in fullscreen mode, to avoid SDL bug: */
 /* (This bug is still around, as of SDL 1.2.9, October 2005) */
 /* (Is it still in SDL 1.2.11 in May 2007, though!? -bjk) */
-#define LARGE_CURSOR_FULLSCREEN_BUG
+//#define LARGE_CURSOR_FULLSCREEN_BUG
 
 // control the color selector
 #define COLORSEL_DISABLE 0	// disable and draw the (greyed out) colors
@@ -845,10 +845,10 @@ static int starter_mirrored, starter_flipped, starter_personal;
 static int recording, playing;
 static char *playfile;
 static FILE *demofi;
-static const char *printcommand = PRINTCOMMAND;
-static const char *altprintcommand = ALTPRINTCOMMAND;
 
 #if !defined(WIN32) && !defined(__APPLE__) && !defined(__BEOS__)
+static const char *printcommand = PRINTCOMMAND;
+static const char *altprintcommand = ALTPRINTCOMMAND;
 char *papersize = NULL;
 #endif
 
@@ -15876,6 +15876,7 @@ static void parse_options(FILE * fi)
 #endif
 	use_print_config = 0;
       }
+#if !defined(WIN32) && !defined(__APPLE__) && !defined(__BEOS__)
       else if (strstr(str, "printcommand=") == str)
       {
 	printcommand = strdup(str + 13);
@@ -15884,6 +15885,7 @@ static void parse_options(FILE * fi)
       {
 	altprintcommand = strdup(str + 16);
       }
+#endif
       else if (strcmp(str, "saveover=yes") == 0)
       {
 	promptless_save = SAVE_OVER_ALWAYS;
