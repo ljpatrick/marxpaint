@@ -58,35 +58,42 @@ Name: "pol"; MessagesFile: "compiler:Languages\Polish.isl"; LicenseFile: {#Bdist
 Name: "por"; MessagesFile: "compiler:Languages\Portuguese.isl"
 Name: "rus"; MessagesFile: "compiler:Languages\Russian.isl"
 Name: "slo"; MessagesFile: "compiler:Languages\Slovenian.isl"
+Name: "esp"; MessagesFile: "compiler:Languages\Spanish.isl"; LicenseFile: {#BdistDir}\docs\es\COPIADO.txt;
 
 ; Additional, Candidate official translations
 Name: "chs"; MessagesFile: "compiler:Languages\ChineseSimp-11-5.1.0.isl"
 
 ; Additional, Unofficial translations
-Name: "esp"; MessagesFile: "compiler:Languages\SpanishStd-2-5.1.0.isl"; LicenseFile: {#BdistDir}\docs\es\COPIADO.txt;
-Name: "gal"; MessagesFile: "compiler:Languages\Galician-2-5.1.0.isl"
-Name: "cht"; MessagesFile: "compiler:Languages\ChineseTrad-2-5.1.0.isl"
+Name: "gal"; MessagesFile: "compiler:Languages\Galician-2-5.1.11.isl"
+Name: "cht"; MessagesFile: "compiler:Languages\ChineseTrad-2-5.1.11.isl"
 
 [Tasks]
 Name: "desktopicon"; Description: "{cm:CreateDesktopIcon}"; GroupDescription: "{cm:AdditionalIcons}"; Flags: unchecked
 
 [Files]
-Source: "{#BdistDir}\tuxpaint.exe"; DestDir: "{app}"; Flags: ignoreversion
-Source: "{#BdistDir}\zlib1.dll"; DestDir: "{app}"; Flags: ignoreversion
+Source: "{#BdistDir}\jpeg.dll"; DestDir: "{app}"; Flags: ignoreversion
+Source: "{#BdistDir}\libcairo-2.dll"; DestDir: "{app}"; Flags: ignoreversion
+Source: "{#BdistDir}\libfreetype-6.dll"; DestDir: "{app}"; Flags: ignoreversion
 Source: "{#BdistDir}\libiconv-2.dll"; DestDir: "{app}"; Flags: ignoreversion
-Source: "{#BdistDir}\libintl-3.dll"; DestDir: "{app}"; Flags: ignoreversion
+Source: "{#BdistDir}\libintl-8.dll"; DestDir: "{app}"; Flags: ignoreversion
+Source: "{#BdistDir}\libogg-0.dll"; DestDir: "{app}"; Flags: ignoreversion
 Source: "{#BdistDir}\libpng12.dll"; DestDir: "{app}"; Flags: ignoreversion
+Source: "{#BdistDir}\libvorbis-0.dll"; DestDir: "{app}"; Flags: ignoreversion
+Source: "{#BdistDir}\libvorbisfile-3.dll"; DestDir: "{app}"; Flags: ignoreversion
+Source: "{#BdistDir}\libxml2-2.dll"; DestDir: "{app}"; Flags: ignoreversion
 Source: "{#BdistDir}\SDL.dll"; DestDir: "{app}"; Flags: ignoreversion
 Source: "{#BdistDir}\SDL_image.dll"; DestDir: "{app}"; Flags: ignoreversion
 Source: "{#BdistDir}\SDL_mixer.dll"; DestDir: "{app}"; Flags: ignoreversion
 Source: "{#BdistDir}\SDL_ttf.dll"; DestDir: "{app}"; Flags: ignoreversion
-Source: "{#BdistDir}\libogg-0.dll"; DestDir: "{app}"; Flags: ignoreversion
-Source: "{#BdistDir}\libvorbis-0.dll"; DestDir: "{app}"; Flags: ignoreversion
-Source: "{#BdistDir}\libvorbisfile-3.dll"; DestDir: "{app}"; Flags: ignoreversion
+Source: "{#BdistDir}\svg.dll"; DestDir: "{app}"; Flags: ignoreversion
+Source: "{#BdistDir}\svg-cairo.dll"; DestDir: "{app}"; Flags: ignoreversion
+Source: "{#BdistDir}\tuxpaint.exe"; DestDir: "{app}"; Flags: ignoreversion
+Source: "{#BdistDir}\tuxpaint-config.exe"; DestDir: "{app}"; Flags: ignoreversion
+Source: "{#BdistDir}\zlib1.dll"; DestDir: "{app}"; Flags: ignoreversion
 Source: "{#BdistDir}\data\*"; DestDir: "{app}\data"; Excludes: "CVS"; Flags: ignoreversion recursesubdirs createallsubdirs
 Source: "{#BdistDir}\docs\*"; DestDir: "{app}\docs"; Excludes: "CVS,Makefile,*~"; Flags: ignoreversion recursesubdirs createallsubdirs
+Source: "{#BdistDir}\im\*"; DestDir: "{app}\im"; Flags: ignoreversion recursesubdirs createallsubdirs
 Source: "{#BdistDir}\locale\*"; DestDir: "{app}\locale"; Excludes: "CVS"; Flags: ignoreversion recursesubdirs createallsubdirs
-Source: "{#BdistDir}\tuxpaint-config.exe"; DestDir: "{app}"; Flags: ignoreversion
 Source: "{#BdistDir}\..\libdocs\*"; DestDir: "{app}\docs\libdocs"; Excludes: "CVS,Makefile,*~"; Flags: ignoreversion recursesubdirs createallsubdirs
 ; NOTE: Don't use "Flags: ignoreversion" on any shared system files
 
