@@ -257,7 +257,11 @@ win32:
 		CONFDIR=$(PREFIX)/etc/tuxpaint \
 		ARCH_LINKS="-lintl -lpng12 -lwinspool -lshlwapi" \
 		ARCH_HEADERS="src/win32_print.h" \
-		ARCH_LIBS="obj/win32_print.o obj/resource.o"
+		ARCH_LIBS="obj/win32_print.o obj/resource.o" \
+		SVG_CFLAGS=-I/usr/local/include/cairo \
+		SVG_LIB="-lcairo -lsvg -lsvg-cairo" \
+		OLDSVGFLAG=OLD_SVG \
+		PAPER_LIB= \
 
 # "make nokia770" builds the program for the Nokia 770.
 
@@ -395,7 +399,11 @@ bdist-win32:
 		IM_PREFIX=im \
 		ARCH_LINKS="-lintl -lpng12 -lwinspool -lshlwapi" \
 		ARCH_HEADERS="src/win32_print.h" \
-		ARCH_LIBS="obj/win32_print.o obj/resource.o"
+		ARCH_LIBS="obj/win32_print.o obj/resource.o" \
+		SVG_CFLAGS=-I/usr/local/include/cairo \
+		SVG_LIB="-lcairo -lsvg -lsvg-cairo" \
+		OLDSVGFLAG=OLD_SVG \
+		PAPER_LIB= 
 	strip -s tuxpaint.exe
 	make bdist-private-win32 \
 		PREFIX=./visualc/bdist \
@@ -839,7 +847,7 @@ obj/win32_print.o:	src/win32_print.c obj src/win32_print.h src/debug.h
 obj/postscript_print.o:	src/postscript_print.c obj \
 			src/postscript_print.h src/debug.h
 	@echo
-	@echo "...Compoling PostScript print support..."
+	@echo "...Compiling PostScript print support..."
 	@$(CC) $(CFLGS) $(DEBUG_FLAGS) $(SDL_CFLAGS) $(DEFS) \
 		-c src/postscript_print.c -o obj/postscript_print.o
 
