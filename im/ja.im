@@ -109,12 +109,12 @@ section
 3093	n	-
 3093	nn	-
 3094	vu	-
-#3095	xka	-	# N.G.
-#3095	lka	-	# N.G.
-#3096	xke	-	# N.G.
-#3096	lke	-	# N.G.
+3095	xka	-
+3095	lka	-
+3096	xke	-
+3096	lke	-
 30FB	/	-
-#30FC	-	-	# N.G.
+30FC	-	-
 
 3067:3043	dhi	-
 3075:3041	fa	-
@@ -411,7 +411,7 @@ section
 30F5	lka	-
 30F6	lke	-
 30FB	/	-
-#30FC	-	-	# N.G.
+30FC	-	-
 
 30C7:30A3	dhi	-
 30D5:30A1	fa	-

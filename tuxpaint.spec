@@ -8,8 +8,10 @@ URL: http://www.tuxpaint.org/
 Source0: %{name}-%{version}.tar.gz
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-root
 Requires: SDL >= 1.2.4 SDL_image SDL_mixer SDL_ttf libpng zlib
+Requires: librsvg2 libpaper
 BuildRequires: SDL-devel >= 1.2.4 SDL_image-devel SDL_mixer-devel SDL_ttf-devel
 BuildRequires: libpng-devel zlib-devel gettext
+BuildRequires: librsvg2-devel libpaper-devel
 
 %description
 "Tux Paint" is a drawing program for young children.
@@ -67,6 +69,9 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/man/*/man1/tuxpaint.1.gz
 
 %changelog
+* Sat Jun 01 2007  <shin1@wmail.plala.or.jp> -
+- Requires librsvg2 and libpaper
+
 * Fri Sep 08 2006  <shin1@wmail.plala.or.jp> -
 - New offical URL for tuxpaint (http://www.tuxpaint.org/).
 
