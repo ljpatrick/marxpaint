@@ -268,6 +268,9 @@ $Id$
 
     * Irish Gaelic
       Kevin Patrick Scannell <kscanne@gmail.com>
+    
+    * Japanese
+      TOYAMA Shin-ichi <shin1@wmail.plala.or.jp>
 
     * Lithuanian
       Gintaras Gostautas <gintaras@nes.lt>
