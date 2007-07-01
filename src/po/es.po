@@ -3,11 +3,11 @@
 # Gabriel Gazzan <ggabriel@internet.com.uy>, 2002.
 msgid ""
 msgstr ""
-"Project-Id-Version: TuxPaint 0.9.15\n"
+"Project-Id-Version: TuxPaint 0.9.17\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2007-05-09 00:32-0700\n"
-"PO-Revision-Date: 2006-10-14 16:49-0300\n"
-"Last-Translator: Gabriel Gazzán <gablistas@gmail.com>\n"
+"PO-Revision-Date: 2007-07-01 01:29-0300\n"
+"Last-Translator: Gabriel Gazzán <ggabriel@internet.com.uy>\n"
 "Language-Team: Español <gablistas@gmail.com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -66,16 +66,7 @@ msgid "Beige!"
 msgstr "¡Crema!"
 
 #. First, the blacklist. We list font families that can crash Tux Paint
-#. via bugs in the SDL_ttf library. We also test fonts to be sure that
-#. they have both uppercase and lowercase letters. Note that we do not
-#. test for "Aa", because it is OK if uppercase and lowercase are the
-#. same. (but not nice -- such fonts get a low score later)
-#.
-#. We test the alphabet twice, to help with translation. If the users
-#. will be unable to type ASCII letters, then both lines should be
 #. translated. Otherwise, only Line X should be translated and the
-#. ASCII-only fonts should be given bad scores in the scoring code below.
-#. (the best scores going to fonts that support both)
 msgid "qx"
 msgstr ""
 
@@ -90,9 +81,6 @@ msgid "QY"
 msgstr ""
 
 #. Now we score fonts to ensure that the best ones will be placed at
-#. the top of the list. The user will see them first. This sorting is
-#. especially important for users who have scroll buttons disabled.
-#. Translators should do whatever is needed to put crummy fonts last.
 msgid "oO"
 msgstr ""
 
@@ -129,16 +117,16 @@ msgid "Good job!"
 msgstr "¡Buen trabajo!"
 
 msgid "English"
-msgstr ""
+msgstr "Inglés"
 
 msgid "Hiragana"
-msgstr ""
+msgstr "Japonés (Hiragana)"
 
 msgid "Katakana"
-msgstr ""
+msgstr "Japonés (Katakana)"
 
 msgid "Hangul"
-msgstr ""
+msgstr "Coreano (Hangul)"
 
 msgid "Fill"
 msgstr "Rellenar"
@@ -221,10 +209,8 @@ msgstr "Haz clic y arrastra el ratón para desvanecer los colores."
 msgid "Click and move to darken the colors."
 msgstr "Haz clic y arrastra para oscurecer los colores."
 
-msgid ""
-"Click and move the mouse around to turn the picture into a chalk drawing."
-msgstr ""
-"Haz clic y arrastra el ratón para que la imagen parezca hecha con tiza."
+msgid "Click and move the mouse around to turn the picture into a chalk drawing."
+msgstr "Haz clic y arrastra el ratón para que la imagen parezca hecha con tiza."
 
 msgid "Click and move the mouse around to make the picture blocky."
 msgstr "Haz clic y arrastra el ratón para cuadricular la imagen."
@@ -239,8 +225,7 @@ msgid "Click and move the mouse around to make the picture drip."
 msgstr "Haz clic y arrastra el ratón para que la imagen gotee."
 
 msgid "Click and move the mouse around to turn the picture into a cartoon."
-msgstr ""
-"Haz clic y arrastra el ratón para que la imagen se vea como los dibujitos."
+msgstr "Haz clic y arrastra el ratón para que la imagen se vea como los dibujitos."
 
 msgid "Click to make a mirror image."
 msgstr "Haz clic para hacer una imagen a espejo."
@@ -275,10 +260,8 @@ msgstr "Un cuadrado es un rectángulo con sus cuatro lados iguales."
 msgid "A rectangle has four sides and four right angles."
 msgstr "Un rectángulo tiene cuatro lados y cuatro ángulos."
 
-msgid ""
-"A circle is a curve where all points have the same distance from the centre."
-msgstr ""
-"Un círculo es una curva cuyos puntos están a la misma distancia del centro."
+msgid "A circle is a curve where all points have the same distance from the centre."
+msgstr "Un círculo es una curva cuyos puntos están a la misma distancia del centro."
 
 msgid "An ellipse is a stretched circle."
 msgstr "Una elipse es un círculo estirado."
@@ -360,16 +343,10 @@ msgid "Pick a picture to stamp around your drawing."
 msgstr "Escoge un sello para estampar en tu dibujo."
 
 msgid "Click to start drawing a line. Let go to complete it."
-msgstr ""
-"Haz clic para comenzar a dibujar una línea. Suelta el botón para terminarla."
+msgstr "Haz clic para comenzar a dibujar una línea. Suelta el botón para terminarla."
 
-msgid ""
-"Pick a shape. Click to pick the center, drag, then let go when it is the "
-"size you want. Move around to rotate it, and click to draw it."
-msgstr ""
-"Escoge una figura. Haz clic para marcar el centro, arrastra, luego suelta "
-"cuando esté del tamaño deseado. Mueve alrededor para rotarla, haz clic para "
-"dibujarla."
+msgid "Pick a shape. Click to pick the center, drag, then let go when it is the size you want. Move around to rotate it, and click to draw it."
+msgstr "Escoge una figura. Haz clic para marcar el centro, arrastra, luego suelta cuando esté del tamaño deseado. Mueve alrededor para rotarla, haz clic para dibujarla."
 
 msgid "Choose a style of text. Click on your drawing and you can start typing."
 msgstr "Elige un estilo de texto. Haz clic en tu dibujo y comienza a escribir."
@@ -450,13 +427,10 @@ msgid "OK"
 msgstr "Aceptar"
 
 #. This will be replaced with a dialog allowing color choice and Starter
-#. picking, with a "Back" option to dismiss the "New" and return to
-#. the current picture.  But for now...  (bjk 2006.02.19)
 msgid "Start a new picture?"
 msgstr "¿Empezar una nueva imagen?"
 
 #. #define PROMPT_NEW_YES gettext_noop("That’s OK!")
-#. #define PROMPT_NEW_NO gettext_noop("Never mind!")
 msgid "Yes, let's start fresh!"
 msgstr "¡Sí, comenzar de cero!"
 
@@ -516,7 +490,6 @@ msgid "No"
 msgstr "No"
 
 #. FIXME: Move elsewhere!!!
-#. #define PROMPT_SAVE_OVER_TXT gettext_noop("Save over the older version of this picture?")
 msgid "Replace the picture with your changes?"
 msgstr "¿Reemplazar la imagen con la nueva?"
 
@@ -542,44 +515,3 @@ msgstr "Programa de dibujo"
 msgid "Tux Paint"
 msgstr "Tux Paint"
 
-#~ msgid "Starting a new picture will erase the current one!"
-#~ msgstr "¡Comenzar una nueva imagen borrará la actual!"
-
-#~ msgid "That’s OK!"
-#~ msgstr "¡Está bien!"
-
-#~ msgid "Never mind!"
-#~ msgstr "¡Ni loco!"
-
-#~ msgid "Save over the older version of this picture?"
-#~ msgstr "¿Guardar sobre la versión anterior del dibujo?"
-
-#~ msgid "Dark Gray!"
-#~ msgstr "¡Gris oscuro!"
-
-#~ msgid "Neon green!"
-#~ msgstr "¡Verde eléctrico!"
-
-#~ msgid "Green!"
-#~ msgstr "¡Verde!"
-
-#~ msgid "Magenta!"
-#~ msgstr "¡Magenta!"
-
-#~ msgid "Fade"
-#~ msgstr "Desvanecer"
-
-#~ msgid "Oval"
-#~ msgstr "Ovalo"
-
-#~ msgid "Diamond"
-#~ msgstr "Rombo"
-
-#~ msgid "A square has four sides, each the same length."
-#~ msgstr "Un cuadrado tiene cuatro lados, todos del mismo largo."
-
-#~ msgid "A circle is exactly round."
-#~ msgstr "Un círculo es completamente redondo."
-
-#~ msgid "A diamond is a square, turned around slightly."
-#~ msgstr "Un rombo es un cuadrado un poco deformado."

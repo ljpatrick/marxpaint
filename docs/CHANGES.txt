@@ -9,7 +9,7 @@ http://www.tuxpaint.org/
 $Id$
 
 
-2007.June.27 (0.9.17)
+2007.July.1 (0.9.17)
 
   * Interface Improvements:
     -----------------------
@@ -278,6 +278,9 @@ $Id$
 
     * Russian README & OPTIONS documentation
       Sergei Popov <skein@rambler.ru>
+
+    * Spanish
+      Gabriel Gazzan <ggabriel@internet.com.uy>
 
     * Swedish
       Daniel Nylander <po@danielnylander.se>
