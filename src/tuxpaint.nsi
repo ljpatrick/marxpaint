@@ -24,7 +24,7 @@
 #
 # NOTE: Is this file used any more???
 
-!define PKG_VERSION "0.9.16"
+!define PKG_VERSION "0.9.17"
 !define PKG_PREFIX  "tuxpaint"
 
 !define APP_PREFIX  "TuxPaint"
