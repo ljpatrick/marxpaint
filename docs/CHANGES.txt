@@ -254,6 +254,9 @@ $Id$
     * Danish
       Mikkel Kirkgaard Nielsen <translation@mikini.dk>
 
+    * Dutch
+      Freek de Kruijf <f.de.kruijf@hetnet.nl>
+
     * Faroese
       Lis Gøthe í Jákupsstovu <morshus@gmail.com>
 

@@ -1,23 +1,22 @@
-# translation of nl.po to 
-# translation of nl.po to Nederlands
+# translation of tuxpaint-0.9.17.po to Dutch
 # Tux Paint dutch messages.
 # Copyright (C) 2002.
-# Herman Bruyninckx <herman.bruyninckx@mech.kuleuven.be>, 2005.
-# Geer Stams <geertstams@wanadoo.nl>, 2004.
-# Geert Stams <geertstams@wanadoo.nl>, 2004, 2005.
 #
+# Herman Bruyninckx <herman.bruyninckx@mech.kuleuven.ac.be>, 2002.
+# Freek de Kruijf <f.de.kruijf@hetnet.nl>, 2007.
 msgid ""
 msgstr ""
-"Project-Id-Version: nl\n"
+"Project-Id-Version: tuxpaint 0.9.17\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2007-05-09 00:32-0700\n"
-"PO-Revision-Date: 2005-01-09 21:32+0100\n"
-"Last-Translator: \n"
-"Language-Team:  <nl@li.org>\n"
+"PO-Revision-Date: 2007-07-01 13:12+0200\n"
+"Last-Translator: Freek de Kruijf <f.de.kruijf@hetnet.nl>\n"
+"Language-Team: Dutch <vertaling@vrijschrift.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: KBabel 1.9.1\n"
+"X-Generator: KBabel 1.11.2\n"
+"Plural-Forms:  nplurals=2; plural=(n != 1);\n"
 
 msgid "Black!"
 msgstr "Zwart!"
@@ -53,19 +52,19 @@ msgid "Blue!"
 msgstr "Blauw!"
 
 msgid "Lavender!"
-msgstr "Lavendel"
+msgstr "Lavendel!"
 
 msgid "Purple!"
 msgstr "Paars!"
 
 msgid "Pink!"
-msgstr "Rose!"
+msgstr "Roze!"
 
 msgid "Brown!"
 msgstr "Bruin!"
 
 msgid "Tan!"
-msgstr "Kleur!"
+msgstr "Huidkleur!"
 
 msgid "Beige!"
 msgstr "Beige!"
@@ -82,17 +81,17 @@ msgstr "Beige!"
 #. ASCII-only fonts should be given bad scores in the scoring code below.
 #. (the best scores going to fonts that support both)
 msgid "qx"
-msgstr ""
+msgstr "qx"
 
 msgid "QX"
-msgstr ""
+msgstr "QX"
 
 #. Line X
 msgid "qy"
-msgstr ""
+msgstr "qy"
 
 msgid "QY"
-msgstr ""
+msgstr "QY"
 
 #. Now we score fonts to ensure that the best ones will be placed at
 #. the top of the list. The user will see them first. This sorting is
@@ -115,7 +114,7 @@ msgstr "017"
 
 #. digits
 msgid "O0"
-msgstr "00"
+msgstr "O0"
 
 #. distinct circle-like characters
 msgid "1Il|"
@@ -125,52 +124,52 @@ msgid "Great!"
 msgstr "Prachtig!"
 
 msgid "Cool!"
-msgstr "Geweldig!"
+msgstr "Cool!"
 
 msgid "Keep it up!"
-msgstr "Ga door!"
+msgstr "Volhouden!"
 
 msgid "Good job!"
-msgstr "Prima!"
+msgstr "Goed gedaan!"
 
 msgid "English"
-msgstr ""
+msgstr "Engels"
 
 msgid "Hiragana"
-msgstr ""
+msgstr "Hiragana"
 
 msgid "Katakana"
-msgstr ""
+msgstr "Katakana"
 
 msgid "Hangul"
-msgstr ""
+msgstr "Hangul"
 
 msgid "Fill"
-msgstr "Vullen"
+msgstr "Opvullen"
 
 msgid "Grass"
 msgstr "Gras"
 
 msgid "Bricks"
-msgstr "Blokken stenen"
+msgstr "Stenen"
 
 msgid "Rainbow"
 msgstr "Regenboog"
 
 msgid "Sparkles"
-msgstr "Spikkels"
+msgstr "Sterretjes"
 
 msgid "Blur"
-msgstr "Vervaag"
+msgstr "Vervagen"
 
 msgid "Smudge"
-msgstr "Uitsmeren"
+msgstr "Doezelen"
 
 msgid "Lighten"
 msgstr "Lichter maken"
 
 msgid "Darken"
-msgstr "Donker maken"
+msgstr "Donkerder maken"
 
 msgid "Chalk"
 msgstr "Krijt"
@@ -188,7 +187,7 @@ msgid "Drip"
 msgstr "Druppen"
 
 msgid "Cartoon"
-msgstr "Cartoon"
+msgstr "Striptekening"
 
 msgid "Mirror"
 msgstr "Spiegel"
@@ -197,61 +196,58 @@ msgid "Flip"
 msgstr "Omkeren"
 
 msgid "Click in the picture to fill that area with color."
-msgstr "Klik in het beeld om het gebied te kleuren."
+msgstr "Klik in de tekening om dat gebied met kleur te vullen."
 
 msgid "Click and move to draw grass. Don’t forget the dirt!"
-msgstr "Klik en beweeg de muis om gras te tekenen. Vergeet het vuil niet!"
+msgstr "Klik en beweeg om het gras te tekenen. Vergeet de modder niet!"
 
 msgid "Click and move to draw large bricks."
-msgstr "Klik en beweeg de muis om grote stenen te tekenen."
+msgstr "Klik en beweeg om de grote stenen te tekenen."
 
 msgid "Click and move to draw small bricks."
-msgstr "Klik en beweeg de muis om steentjes te tekenen."
+msgstr "Klik en beweeg om de kleine stenen te tekenen."
 
 msgid "You can draw in rainbow colors!"
 msgstr "Je kan in regenboog-kleuren tekenen!"
 
 msgid "Click and move to draw sparkles."
-msgstr "Klik en beweeg de muis om spikkels te tekenen."
+msgstr "Klik en beweeg om sterretjes te tekenen!"
 
 msgid "Click and move the mouse around to blur the picture."
-msgstr "Klik en beweeg de muis om de tekening te vervagen."
+msgstr "Klik en beweeg de muis in het rond om de tekening te vervagen."
 
 msgid "Click and move the mouse around to smudge the picture."
-msgstr "Klik en beweeg de muis om de tekening uit te smeren."
+msgstr "Klik en beweeg de muis in het rond om de tekening te doezelen!"
 
 msgid "Click and move to fade the colors."
-msgstr "Klik en beweeg de muis om de kleuren te vervagen."
+msgstr "Klik en beweeg de muis om de kleuren te vervagen!"
 
 msgid "Click and move to darken the colors."
-msgstr "Klik en beweeg de muis om de kleuren donker te maken."
+msgstr "Klik en beweeg de muis om de kleuren donkerder te maken!"
 
-msgid ""
-"Click and move the mouse around to turn the picture into a chalk drawing."
-msgstr ""
-"Klik en beweeg de muis om de tekening te veranderen in een krijt-tekening."
+msgid "Click and move the mouse around to turn the picture into a chalk drawing."
+msgstr "Klik en beweeg de muis in het rond om de tekening te veranderen in een krijttekening!"
 
 msgid "Click and move the mouse around to make the picture blocky."
-msgstr "Klik en beweeg de muis om de tekening blokkerig te maken."
+msgstr "Klik en beweeg de muis in het rond om de tekening blokkerig te maken."
 
 msgid "Click and move the mouse around to draw a negative."
-msgstr "Klik en beweeg de muis om de tekening negatief te maken."
+msgstr "Klik en beweeg de muis in het rond om een negatief te maken."
 
 msgid "Click and move the mouse around to change the picture’s color."
-msgstr "Klik en verander de kleur met draaiende bewegingen."
+msgstr "Klik en beweeg de muis in het rond om de kleur van de tekening te veranderen."
 
 msgid "Click and move the mouse around to make the picture drip."
-msgstr "Klik en beweeg de muis om de tekening te laten druppen."
+msgstr "Klik en beweeg de muis in het rond om de tekening te laten druipen!"
 
 msgid "Click and move the mouse around to turn the picture into a cartoon."
-msgstr ""
-"Klik en beweeg de muis om de tekening te veranderen in een krijt-tekening."
+msgstr "Klik en beweeg de muis in het rond om de tekening te veranderen in een strip."
 
 msgid "Click to make a mirror image."
-msgstr "Klik om een spiegelbeeld te maken."
+msgstr "Klik om een spiegelbeeld te maken!"
 
 msgid "Click to flip the picture upside-down."
-msgstr "Klik om het beeld ondersteboven te zetten."
+msgstr "Klik om de tekening ondersteboven te zetten!"
 
 msgid "Square"
 msgstr "Vierkant"
@@ -263,7 +259,7 @@ msgid "Circle"
 msgstr "Cirkel"
 
 msgid "Ellipse"
-msgstr "Ovaal"
+msgstr "Ellips"
 
 msgid "Triangle"
 msgstr "Driehoek"
@@ -280,12 +276,11 @@ msgstr "Een vierkant is een rechthoek met vier gelijke zijden."
 msgid "A rectangle has four sides and four right angles."
 msgstr "Een rechthoek heeft vier zijden en vier rechte hoeken."
 
-msgid ""
-"A circle is a curve where all points have the same distance from the centre."
-msgstr "Een cirkel is een curve, met alle punten even ver van het midden."
+msgid "A circle is a curve where all points have the same distance from the centre."
+msgstr "Een cirkel is een kromme waarvan alle punten dezelfde afstand hebben tot het middelpunt."
 
 msgid "An ellipse is a stretched circle."
-msgstr "Een ovaal is een uitgerekte cirkel."
+msgstr "Een ellips is een uitgerekte cirkel."
 
 msgid "A triangle has three sides."
 msgstr "Een driehoek heeft drie zijden."
@@ -294,24 +289,22 @@ msgid "A pentagon has five sides."
 msgstr "Een vijfhoek heeft vijf zijden."
 
 msgid "A rhombus has four equal sides, and opposite sides are parallel."
-msgstr ""
-"Een ruit heeft vier gelijke zijden en de tegenover elkaar liggende zijden "
-"zijn parallel."
+msgstr "Een ruit heeft vier gelijke zijden en tegenoverliggende zijden zijn parallel."
 
 msgid "Tools"
-msgstr "Gereedschappen"
+msgstr "Hulpmiddelen"
 
 msgid "Colors"
 msgstr "Kleuren"
 
 msgid "Brushes"
-msgstr "Kwasten"
+msgstr "Penselen"
 
 msgid "Erasers"
-msgstr "Uitgommen"
+msgstr "Gommetjes"
 
 msgid "Stamps"
-msgstr "Stempel"
+msgstr "Stempels"
 
 msgid "Shapes"
 msgstr "Vormen"
@@ -332,16 +325,16 @@ msgid "Lines"
 msgstr "Lijnen"
 
 msgid "Text"
-msgstr "Letters"
+msgstr "Tekst"
 
 msgid "Undo"
-msgstr "Wegdoen"
+msgstr "Terugwijzigen"
 
 msgid "Redo"
-msgstr "Terugdoen"
+msgstr "Opnieuw doen"
 
 msgid "Eraser"
-msgstr "Uitgommen"
+msgstr "Gom"
 
 msgid "New"
 msgstr "Nieuw"
@@ -351,7 +344,7 @@ msgid "Open"
 msgstr "Openen"
 
 msgid "Save"
-msgstr "Bewaren"
+msgstr "Opslaan"
 
 msgid "Print"
 msgstr "Afdrukken"
@@ -360,7 +353,7 @@ msgid "Quit"
 msgstr "Stoppen"
 
 msgid "Pick a color and a brush shape to draw with."
-msgstr "Kies een kleur en een borstel om mee te tekenen."
+msgstr "Kies een kleur en een penseelvorm om mee te tekenen."
 
 msgid "Pick a picture to stamp around your drawing."
 msgstr "Kies een vorm om mee te stempelen."
@@ -368,27 +361,22 @@ msgstr "Kies een vorm om mee te stempelen."
 msgid "Click to start drawing a line. Let go to complete it."
 msgstr "Klik om een lijn te beginnen. Laat pas los op het einde van de lijn."
 
-msgid ""
-"Pick a shape. Click to pick the center, drag, then let go when it is the "
-"size you want. Move around to rotate it, and click to draw it."
-msgstr ""
-"Kies een vorm. Klik om het midden te kiezen en sleep tot het de grootte "
-"heeft die je wil. Beweeg om het te laten draaien en klik als je klaar bent."
+msgid "Pick a shape. Click to pick the center, drag, then let go when it is the size you want. Move around to rotate it, and click to draw it."
+msgstr "Kies een vorm. Klik om het midden van de vorm aan te geven, sleep en laat los als de juiste grootte is bereikt. Beweeg nog in het rond om de vorm te draaien en klik om hem vast te leggen."
 
 msgid "Choose a style of text. Click on your drawing and you can start typing."
-msgstr ""
-"Kies een stijl voor je letters. Klik op je tekening en begin te schrijven."
+msgstr "Kies een stijl voor de tekst. Klik op de tekening en begin te typen."
 
 msgid "Pick a magical effect to use on your drawing!"
-msgstr "Kies een tover-effect om je tekening te veranderen!"
+msgstr "Kies een tover-effect om de tekening te veranderen!"
 
 #. Undo
 msgid "Undo!"
-msgstr "Wegdoen!"
+msgstr "Terugwijzigen!"
 
 #. Redo
 msgid "Redo!"
-msgstr "Terugdoen!"
+msgstr "Opnieuw doen!"
 
 #. Eraser
 msgid "Eraser!"
@@ -396,7 +384,7 @@ msgstr "Gom!"
 
 #. New
 msgid "You now have a blank sheet to draw on!"
-msgstr "Nu heb je een leeg blad om op te tekenen!"
+msgstr "Nu heb je een schoon blad om op te tekenen!"
 
 #. Open
 msgid "Open…"
@@ -404,7 +392,7 @@ msgstr "Openen..."
 
 #. Save
 msgid "Your image has been saved!"
-msgstr "Je tekening is bewaard!"
+msgstr "Je tekening is opgeslagen!"
 
 #. Print
 msgid "Printing…"
@@ -418,38 +406,38 @@ msgid "Let go of the button to complete the line."
 msgstr "Laat de muisknop los om de lijn af te sluiten."
 
 msgid "Hold the button to stretch the shape."
-msgstr "Druk de muisknop in en beweeg om de vorm uit te rekken."
+msgstr "Houd de muisknop ingedrukt en beweeg om de vorm uit te rekken."
 
 msgid "Move the mouse to rotate the shape. Click to draw it."
 msgstr "Beweeg de muis om de vorm te draaien. Klik als je tevreden bent."
 
 msgid "OK then… Let’s keep drawing this one!"
-msgstr "Ok, dan doen we verder met deze!"
+msgstr "Ok,... Dan gaan we verder met deze!"
 
 #. FIXME: Move elsewhere!!!
 msgid "Do you really want to quit?"
 msgstr "Wil je echt stoppen?"
 
 msgid "Yes, I'm done!"
-msgstr ""
+msgstr "Ja, het is klaar!"
 
 msgid "No, take me back!"
-msgstr ""
+msgstr "Nee, breng me terug!"
 
 msgid "If you quit, you’ll lose your picture! Save it?"
-msgstr "Als je stopt ben je je tekening kwijt! Moet ik ze bewaren?"
+msgstr "Als je stopt ben je je tekening kwijt! Toch opslaan?"
 
 msgid "Yes, save it!"
-msgstr ""
+msgstr "Ja, opslaan!"
 
 msgid "No, don't bother saving!"
-msgstr ""
+msgstr "Nee, niet opslaan!"
 
 msgid "Save your picture first?"
-msgstr "Wil je je huidige tekening eerst nog bewaren?"
+msgstr "Wil je je huidige tekening eerst nog opslaan?"
 
 msgid "Can’t open that picture!"
-msgstr "Ik kan die tekening niet openen!"
+msgstr "Kan die tekening niet openen!"
 
 msgid "OK"
 msgstr "OK"
@@ -457,60 +445,58 @@ msgstr "OK"
 #. This will be replaced with a dialog allowing color choice and Starter
 #. picking, with a "Back" option to dismiss the "New" and return to
 #. the current picture.  But for now...  (bjk 2006.02.19)
-#, fuzzy
 msgid "Start a new picture?"
-msgstr "Mag ik de gekozen tekening uitvegen?"
+msgstr "Met een nieuwe tekening beginnen?"
 
 #. #define PROMPT_NEW_YES gettext_noop("That’s OK!")
 #. #define PROMPT_NEW_NO gettext_noop("Never mind!")
 msgid "Yes, let's start fresh!"
-msgstr ""
+msgstr "Ja, laten we opnieuw beginnen!"
 
 msgid "There are no saved files!"
-msgstr "Er zijn geen bewaarde tekeningen!"
+msgstr "Er zijn geen opgeslagen tekeningen!"
 
 msgid "Print your picture now?"
-msgstr "Wil je je huidige tekening afdrukken?"
+msgstr "De tekening nu afdrukken?"
 
 msgid "Yes, print it!"
-msgstr ""
+msgstr "Ja, afdrukken!"
 
 msgid "Your picture has been printed!"
-msgstr "Je tekening is afgedrukt!"
+msgstr "De tekening is afgedrukt!"
 
 msgid "You can’t print yet!"
-msgstr "Je kunt nog niet afdrukken!"
+msgstr "Je kunt nu niet afdrukken!"
 
 msgid "Erase this picture?"
-msgstr "Mag ik de gekozen tekening uitvegen?"
+msgstr "De tekening uitvegen?"
 
 msgid "Yes, erase it!"
-msgstr ""
+msgstr "Ja, uitvegen!"
 
 msgid "No, don't erase it!"
-msgstr ""
+msgstr "Nee, niet uitvegen!"
 
 msgid "Remember to use the left mouse button!"
-msgstr "Vergeet niet om de linkse muisknop te gebruiken!"
+msgstr "Onthoud dat je de linker muisknop dient te gebruiken!"
 
 msgid "Please wait..."
-msgstr ""
+msgstr "Even geduld..."
 
 msgid "Erase"
 msgstr "Uitgommen"
 
 msgid "Slides"
-msgstr ""
+msgstr "Dia's"
 
 msgid "Back"
 msgstr "Terug"
 
-#, fuzzy
 msgid "Next"
-msgstr "Letters"
+msgstr "Volgende"
 
 msgid "Play"
-msgstr ""
+msgstr "Afspelen"
 
 msgid "Aa"
 msgstr "Aa"
@@ -525,22 +511,20 @@ msgstr "Nee"
 #. FIXME: Move elsewhere!!!
 #. #define PROMPT_SAVE_OVER_TXT gettext_noop("Save over the older version of this picture?")
 msgid "Replace the picture with your changes?"
-msgstr ""
+msgstr "De tekening vervangen met de wijzigingen?"
 
 msgid "Yes, replace the old one!"
-msgstr ""
+msgstr "Ja, vervang de oude!"
 
-#, fuzzy
 msgid "No, save a new file!"
-msgstr "Nee, bewaar op een nieuwe plaats"
+msgstr "Nee, opslaan in een nieuw bestand!"
 
 msgid "Choose the picture you want, then click “Open”."
-msgstr "Kies een tekening en klik op 'Open'"
+msgstr "Kies de tekening die je wilt en klik dan op 'Openen'."
 
 #. Let user choose images:
-#, fuzzy
 msgid "Choose the pictures you want, then click “Play”."
-msgstr "Kies een tekening en klik op 'Open'"
+msgstr "Kies de tekening die je wilt en klik dan op 'Afspelen'."
 
 msgid "A drawing program for children."
 msgstr "Een tekenprogramma voor kinderen."
@@ -549,106 +533,4 @@ msgid "Drawing program"
 msgstr "Tekenprogramma"
 
 msgid "Tux Paint"
-msgstr "TuxPaint"
-
-#~ msgid "Starting a new picture will erase the current one!"
-#~ msgstr "Mag ik de huidige tekening wegdoen om met een nieuwe te beginnen?"
-
-#~ msgid "That’s OK!"
-#~ msgstr "OK!"
-
-#~ msgid "Never mind!"
-#~ msgstr "Dat geeft niet!"
-
-#~ msgid "jq"
-#~ msgstr "jq"
-
-#~ msgid "JQ"
-#~ msgstr "JQ"
-
-#~ msgid "Save over the older version of this picture?"
-#~ msgstr "Mag ik de vorige versie van deze tekening overschrijven?"
-
-#~ msgid "Dark Gray!"
-#~ msgstr "Donkergrijs!"
-
-#~ msgid "Light Grey!"
-#~ msgstr "Lichtgrijs!"
-
-#~ msgid "Neon green!"
-#~ msgstr "Fluoriserend groen!"
-
-#~ msgid "Green!"
-#~ msgstr "Groen!"
-
-#~ msgid "Magenta!"
-#~ msgstr "Magenta!"
-
-#~ msgid "Fade"
-#~ msgstr "Vervagen"
-
-#~ msgid "Click and move to draw grass. Don't forget the dirt!"
-#~ msgstr "Klik en beweeg de muis om gras te tekenen."
-
-#~ msgid "Click and move the mouse around to change the picture's color."
-#~ msgstr "Klik en beweeg de muis om de kleur van de tekening te veranderen."
-
-#~ msgid "Oval"
-#~ msgstr "Ovaal"
-
-#~ msgid "Diamond"
-#~ msgstr "Ruit"
-
-#~ msgid "A square has four sides, each the same length."
-#~ msgstr "Een vierkant heeft vier zijden, allemaal even lang."
-
-#~ msgid "A rectangle has four sides."
-#~ msgstr "Een rechthoek heeft vier zijden."
-
-#~ msgid "A circle is exactly round."
-#~ msgstr "Een cirkel is precies rond."
-
-#~ msgid "A diamond is a square, turned around slightly."
-#~ msgstr "Een ruit is zoals een vierkant op zijn zij."
-
-#~ msgid "A square has four equal sides and L-shaped corners."
-#~ msgstr "Een vierkant heeft vier even grote zijden en L-vormige hoeken."
-
-#~ msgid "A rectangle has four sides and L-shaped corners."
-#~ msgstr "Een rechthoek heeft vier zijden en L-vormige hoeken."
-
-#~ msgid "A rhombus has four equal sides."
-#~ msgstr "Een ruit heeft vier gelijke zijden."
-
-#~ msgid "Lime!"
-#~ msgstr "Geel-groen!"
-
-#~ msgid "Cyan!"
-#~ msgstr "Blauw-groen!"
-
-#~ msgid "Fuchsia!"
-#~ msgstr "Purper-rood!"
-
-#~ msgid "Gray!"
-#~ msgstr "Grijs!"
-
-#~ msgid "Silver!"
-#~ msgstr "Zilver!"
-
-#~ msgid "Thick"
-#~ msgstr "Dik"
-
-#~ msgid "Thin"
-#~ msgstr "Dun"
-
-#~ msgid "Click and move the mouse to thicken the picture."
-#~ msgstr "Klik en beweeg de muis om het beeld dikker te maken."
-
-#~ msgid "Click and move the mouse to thin the picture."
-#~ msgstr "Klik en beweeg de muis om het beeld dunner te maken."
-
-#~ msgid "Light blue!"
-#~ msgstr "Lichtblauw!"
-
-#~ msgid "Violet!"
-#~ msgstr "Violet!"
+msgstr "Tux Paint"

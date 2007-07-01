@@ -7,7 +7,7 @@ bill@newbreedsoftware.com
 http://www.tuxpaint.org/
 
 
-June 17, 2002 - June 25, 2007
+June 17, 2002 - July 1, 2007
 
 $Id$
 
@@ -230,6 +230,7 @@ $Id$
     Mikkel Kirkgaard Nielsen <translation@mikini.dk>
 
   * Dutch
+    Freek de Kruijf <f.de.kruijf@hetnet.nl>
     Herman Bruyninckx <Herman.Bruyninckx@mech.kuleuven.ac.be>
     Geert Stams <geertstams@wanadoo.nl>
     Michael de Rooij <micr@zeelandnet.nl>
