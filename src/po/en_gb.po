@@ -16,11 +16,11 @@ msgstr ""
 msgid "Black!"
 msgstr "Black!"
 
-msgid "Dark grey! Some people spell it “dark gray”."
-msgstr ""
+msgid "Dark grey! Some people spell it ‘dark gray‘."
+msgstr "Dark grey! Some people spell it ‘dark gray‘."
 
-msgid "Light grey! Some people spell it “light gray”."
-msgstr ""
+msgid "Light grey! Some people spell it ‘light gray‘."
+msgstr "Light grey! Some people spell it ‘light gray‘."
 
 msgid "White!"
 msgstr "White!"
@@ -35,20 +35,20 @@ msgid "Yellow!"
 msgstr "Yellow!"
 
 msgid "Light green!"
-msgstr ""
+msgstr "Light green!"
 
 #, fuzzy
 msgid "Dark green!"
-msgstr "Grey!"
+msgstr "Dark green!"
 
 msgid "Sky blue!"
-msgstr ""
+msgstr "Sky blue!"
 
 msgid "Blue!"
 msgstr "Blue!"
 
 msgid "Lavender!"
-msgstr ""
+msgstr "Lavender!"
 
 msgid "Purple!"
 msgstr "Purple!"
@@ -61,10 +61,10 @@ msgstr "Brown!"
 
 #, fuzzy
 msgid "Tan!"
-msgstr "Cyan!"
+msgstr "Tan!"
 
 msgid "Beige!"
-msgstr ""
+msgstr "Beige!"
 
 #. First, the blacklist. We list font families that can crash Tux Paint
 #. via bugs in the SDL_ttf library. We also test fonts to be sure that
@@ -130,27 +130,27 @@ msgid "Good job!"
 msgstr "Good job!"
 
 msgid "English"
-msgstr ""
+msgstr "English"
 
 msgid "Hiragana"
-msgstr ""
+msgstr "Hiragana"
 
 msgid "Katakana"
-msgstr ""
+msgstr "Katakana"
 
 msgid "Hangul"
-msgstr ""
+msgstr "Hangul"
 
 msgid "Fill"
 msgstr "Fill"
 
 #, fuzzy
 msgid "Grass"
-msgstr "Erase"
+msgstr "Grass"
 
 #, fuzzy
 msgid "Bricks"
-msgstr "Blocks"
+msgstr "Bricks"
 
 msgid "Rainbow"
 msgstr "Rainbow"
@@ -162,13 +162,13 @@ msgid "Blur"
 msgstr "Blur"
 
 msgid "Smudge"
-msgstr ""
+msgstr "Smudge"
 
 msgid "Lighten"
-msgstr ""
+msgstr "Lighten"
 
 msgid "Darken"
-msgstr ""
+msgstr "Darken"
 
 msgid "Chalk"
 msgstr "Chalk"
@@ -181,13 +181,13 @@ msgstr "Negative"
 
 #, fuzzy
 msgid "Tint"
-msgstr "Thin"
+msgstr "Tint"
 
 msgid "Drip"
 msgstr "Drip"
 
 msgid "Cartoon"
-msgstr ""
+msgstr "Cartoon"
 
 msgid "Mirror"
 msgstr "Mirror"
@@ -200,15 +200,15 @@ msgstr "Click in the picture to fill that area with colour."
 
 #, fuzzy
 msgid "Click and move to draw grass. Don’t forget the dirt!"
-msgstr "Click and move to draw sparkles."
+msgstr "Click and move to draw grass. Don't forget the dirt!"
 
 #, fuzzy
 msgid "Click and move to draw large bricks."
-msgstr "Click and move to draw sparkles."
+msgstr "Click and move to draw large bricks."
 
 #, fuzzy
 msgid "Click and move to draw small bricks."
-msgstr "Click and move to draw sparkles."
+msgstr "Click and move to draw small bricks."
 
 msgid "You can draw in rainbow colors!"
 msgstr "You can draw in rainbow colours!"
@@ -221,7 +221,7 @@ msgstr "Click and move the mouse around to blur the picture."
 
 #, fuzzy
 msgid "Click and move the mouse around to smudge the picture."
-msgstr "Click and move the mouse around to blur the picture."
+msgstr "Click and move the mouse around to smudge the picture."
 
 msgid "Click and move to fade the colors."
 msgstr "Click and move to fade the colours."
@@ -243,15 +243,14 @@ msgstr "Click and move the mouse around to draw a negative."
 
 #, fuzzy
 msgid "Click and move the mouse around to change the picture’s color."
-msgstr "Click and move the mouse around to make the picture blocky."
+msgstr "Click and move the mouse around to change the picture's colour."
 
 msgid "Click and move the mouse around to make the picture drip."
 msgstr "Click and move the mouse around to make the picture drip."
 
 #, fuzzy
 msgid "Click and move the mouse around to turn the picture into a cartoon."
-msgstr ""
-"Click and move the mouse around to turn the picture into a chalk drawing."
+msgstr "Click and move the mouse around to turn the picture into a cartoon."
 
 msgid "Click to make a mirror image."
 msgstr "Click to make a mirror image."
@@ -269,7 +268,7 @@ msgid "Circle"
 msgstr "Circle"
 
 msgid "Ellipse"
-msgstr ""
+msgstr "Ellipse"
 
 msgid "Triangle"
 msgstr "Triangle"
@@ -278,22 +277,22 @@ msgid "Pentagon"
 msgstr "Pentagon"
 
 msgid "Rhombus"
-msgstr ""
+msgstr "Rhombus"
 
 #, fuzzy
 msgid "A square is a rectangle with four equal sides."
-msgstr "A rectangle has four sides."
+msgstr "A square is a rectangle with four equal sides."
 
 #, fuzzy
 msgid "A rectangle has four sides and four right angles."
-msgstr "A rectangle has four sides."
+msgstr "A rectangle has four sides and four right angles."
 
 msgid ""
 "A circle is a curve where all points have the same distance from the centre."
-msgstr ""
+msgstr "A circle is a curve where all points have the same distance from the centre."
 
 msgid "An ellipse is a stretched circle."
-msgstr ""
+msgstr "An ellipse is a stretched circle."
 
 msgid "A triangle has three sides."
 msgstr "A triangle has three sides."
@@ -302,7 +301,7 @@ msgid "A pentagon has five sides."
 msgstr "A pentagon has five sides."
 
 msgid "A rhombus has four equal sides, and opposite sides are parallel."
-msgstr ""
+msgstr "A rhombus has four equal sides, and opposite sides are parallel."
 
 msgid "Tools"
 msgstr "Tools"
@@ -315,7 +314,7 @@ msgstr "Brushes"
 
 #, fuzzy
 msgid "Erasers"
-msgstr "Eraser"
+msgstr "Erasers"
 
 msgid "Stamps"
 msgstr "Stamps"
@@ -379,12 +378,11 @@ msgid ""
 "Pick a shape. Click to pick the center, drag, then let go when it is the "
 "size you want. Move around to rotate it, and click to draw it."
 msgstr ""
-"Pick a shape. Click to pick the center, drag, then let go when it is the "
+"Pick a shape. Click to pick the centre, drag, then let go when it is the "
 "size you want. Move around to rotate it, and click to draw it."
 
 msgid "Choose a style of text. Click on your drawing and you can start typing."
-msgstr ""
-"Choose a style of text. Click on your drawing and you can start typing."
+msgstr "Choose a style of text. Click on your drawing and you can start typing."
 
 msgid "Pick a magical effect to use on your drawing!"
 msgstr "Pick a magical effect to use on your drawing!"
@@ -438,19 +436,19 @@ msgid "Do you really want to quit?"
 msgstr "Do you really want to quit?"
 
 msgid "Yes, I'm done!"
-msgstr ""
+msgstr "Yes, I'm done!"
 
 msgid "No, take me back!"
-msgstr ""
+msgstr "No. take me back!"
 
 msgid "If you quit, you’ll lose your picture! Save it?"
 msgstr "If you quit, you’ll lose your picture! Save it?"
 
 msgid "Yes, save it!"
-msgstr ""
+msgstr "Yes, save it!"
 
 msgid "No, don't bother saving!"
-msgstr ""
+msgstr "No, don't bother saving!"
 
 msgid "Save your picture first?"
 msgstr "Save your picture first?"
@@ -466,12 +464,12 @@ msgstr "OK"
 #. the current picture.  But for now...  (bjk 2006.02.19)
 #, fuzzy
 msgid "Start a new picture?"
-msgstr "Erase this picture?"
+msgstr "Start a new picture?"
 
 #. #define PROMPT_NEW_YES gettext_noop("That’s OK!")
 #. #define PROMPT_NEW_NO gettext_noop("Never mind!")
 msgid "Yes, let's start fresh!"
-msgstr ""
+msgstr "Yes, let's start afresh!"
 
 msgid "There are no saved files!"
 msgstr "There are no saved files!"
@@ -480,7 +478,7 @@ msgid "Print your picture now?"
 msgstr "Print your picture now?"
 
 msgid "Yes, print it!"
-msgstr ""
+msgstr "yes, print it!"
 
 msgid "Your picture has been printed!"
 msgstr "Your picture has been printed!"
@@ -492,35 +490,35 @@ msgid "Erase this picture?"
 msgstr "Erase this picture?"
 
 msgid "Yes, erase it!"
-msgstr ""
+msgstr "Yes, erase it!"
 
 msgid "No, don't erase it!"
-msgstr ""
+msgstr "No, don't erase it!"
 
 msgid "Remember to use the left mouse button!"
-msgstr ""
+msgstr "Remember to use the left mouse button!"
 
 msgid "Please wait..."
-msgstr ""
+msgstr "Please wait..."
 
 msgid "Erase"
 msgstr "Erase"
 
 msgid "Slides"
-msgstr ""
+msgstr "Slides"
 
 msgid "Back"
 msgstr "Back"
 
 #, fuzzy
 msgid "Next"
-msgstr "Text"
+msgstr "Next"
 
 msgid "Play"
-msgstr ""
+msgstr "Play"
 
 msgid "Aa"
-msgstr ""
+msgstr "Aa"
 
 #. FIXME: Move elsewhere! Or not?!
 msgid "Yes"
@@ -532,14 +530,14 @@ msgstr "No"
 #. FIXME: Move elsewhere!!!
 #. #define PROMPT_SAVE_OVER_TXT gettext_noop("Save over the older version of this picture?")
 msgid "Replace the picture with your changes?"
-msgstr ""
+msgstr "Replace the picture with your changes?"
 
 msgid "Yes, replace the old one!"
-msgstr ""
+msgstr "Yes, replace the old one!"
 
 #, fuzzy
 msgid "No, save a new file!"
-msgstr "No, save a new file"
+msgstr "No, save a new file!"
 
 msgid "Choose the picture you want, then click “Open”."
 msgstr "Choose the picture you want, then click ‘Open’."

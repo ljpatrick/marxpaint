@@ -240,7 +240,10 @@ $Id$
 
     * Brazilian Portuguese
       Adorilson Bezerra de Araujo <adorilson@gmail.com>
-      
+    
+    * British English
+      Caroline Ford <caroline.ford.work@googlemail.com>
+
     * Bulgarian
       Yavor Doganov <yavor@doganov.org>
 
