@@ -11158,32 +11158,40 @@ static void load_current(void)
 }
 
 
+/* Make sure we have a 'path' directory */
+
+static int make_directory(const char *path, const char *errmsg)
+{
+  char *fname;
+  int res;
+
+  fname = get_fname(path);
+  res = mkdir(fname, 0755);
+  if (res != 0 && errno != EEXIST)
+  {
+    fprintf(stderr,
+            "\nError: %s:\n"
+            "%s\n"
+            "The error that occurred was:\n"
+            "%s\n\n", errmsg, fname, strerror(errno));
+    free(fname);
+    return 0;
+  }
+  free(fname);
+  return 1;
+}
+
 /* Save the current image to disk: */
 
 static void save_current(void)
 {
   char *fname;
-  int res;
   FILE *fi;
 
-
-  fname = get_fname("");
-
-  res = mkdir(fname, 0755);
-
-  if (res != 0 && errno != EEXIST)
+  if (!make_directory("", "Can't create user data directory"))
   {
-    fprintf(stderr,
-	    "\nError: Can't create user data directory:\n"
-	    "%s\n"
-	    "The error that occurred was:\n"
-	    "%s\n\n", fname, strerror(errno));
-
     draw_tux_text(TUX_OOPS, strerror(errno), 0);
   }
-
-  free(fname);
-
 
   fname = get_fname("current_id.txt");
 
@@ -12209,12 +12217,10 @@ static int rotation(int ctr_x, int ctr_y, int ox, int oy)
 #define PROMPT_SAVE_OVER_YES gettext_noop("Yes, replace the old one!")
 #define PROMPT_SAVE_OVER_NO  gettext_noop("No, save a new file!")
 
-
 /* Save the current image: */
 
 static int do_save(int tool, int dont_show_success_results)
 {
-  int res;
   char *fname;
   char tmp[1024];
   SDL_Surface *thm;
@@ -12274,78 +12280,36 @@ static int do_save(int tool, int dont_show_success_results)
   show_progress_bar(screen);
   do_setcursor(cursor_watch);
 
-  fname = get_fname("");
-
-  res = mkdir(fname, 0755);
-
-  if (res != 0 && errno != EEXIST)
+  if (!make_directory("", "Can't create user data directory"))
   {
-    fprintf(stderr,
-	    "\nError: Can't create user data directory:\n"
-	    "%s\n"
-	    "The error that occurred was:\n"
-	    "%s\n\n", fname, strerror(errno));
-
     fprintf(stderr, "Cannot save the any pictures! SORRY!\n\n");
-
     draw_tux_text(TUX_OOPS, SDL_GetError(), 0);
-
-    free(fname);
     return 0;
   }
-  free(fname);
 
   show_progress_bar(screen);
 
 
   /* Make sure we have a ~/.tuxpaint/saved directory: */
 
-  fname = get_fname("saved");
-
-  res = mkdir(fname, 0755);
-
-  if (res != 0 && errno != EEXIST)
+  if (!make_directory("saved", "Can't create user data directory"))
   {
-    fprintf(stderr,
-	    "\nError: Can't create user data directory:\n"
-	    "%s\n"
-	    "The error that occurred was:\n"
-	    "%s\n\n", fname, strerror(errno));
-
     fprintf(stderr, "Cannot save any pictures! SORRY!\n\n");
-
     draw_tux_text(TUX_OOPS, SDL_GetError(), 0);
-
-    free(fname);
     return 0;
   }
-  free(fname);
 
   show_progress_bar(screen);
 
 
   /* Make sure we have a ~/.tuxpaint/saved/.thumbs/ directory: */
 
-  fname = get_fname("saved/.thumbs");
-
-  res = mkdir(fname, 0755);
-
-  if (res != 0 && errno != EEXIST)
+  if (!make_directory("saved/.thumbs", "Can't create user data thumbnail directory"))
   {
-    fprintf(stderr,
-	    "\nError: Can't create user data thumbnail directory:\n"
-	    "%s\n"
-	    "The error that occurred was:\n"
-	    "%s\n\n", fname, strerror(errno));
-
     fprintf(stderr, "Cannot save any pictures! SORRY!\n\n");
-
     draw_tux_text(TUX_OOPS, SDL_GetError(), 0);
-
-    free(fname);
     return 0;
   }
-  free(fname);
 
   show_progress_bar(screen);
 
@@ -12691,9 +12655,8 @@ int do_open(void)
   int *d_places;
   FILE *fi;
   char fname[1024];
-  char *tmp_fname;
   int num_files, i, done, slideshow, update_list, want_erase, cur, which,
-    num_files_in_dirs, j, res, any_saved_files;
+    num_files_in_dirs, j, any_saved_files;
   SDL_Rect dest;
   SDL_Event event;
   SDLKey key;
@@ -12911,23 +12874,13 @@ int do_open(void)
             else
             {
               /* No thumbnail - load original: */
-              /* (Make sure we have a .../saved/.thumbs/ directory:) */
 
-              tmp_fname = get_fname("saved/.thumbs");
-
-              res = mkdir(tmp_fname, 0755);
-
-              if (res != 0 && errno != EEXIST)
+              /* Make sure we have a ~/.tuxpaint/saved directory: */
+              if (make_directory("saved", "Can't create user data directory"))
               {
-                fprintf(stderr,
-                    "\nError: Can't create user data thumbnail directory:\n"
-                    "%s\n"
-                    "The error that occurred was:\n"
-                    "%s\n\n", tmp_fname, strerror(errno));
+                /* (Make sure we have a .../saved/.thumbs/ directory:) */
+                make_directory("saved/.thumbs", "Can't create user data thumbnail directory");
               }
-
-              free(tmp_fname);
-
 
               img = NULL;
 
@@ -13840,8 +13793,7 @@ int do_slideshow(void)
   int num_selected;
   FILE *fi;
   char fname[1024];
-  char *tmp_fname;
-  int num_files, num_files_in_dir, i, done, update_list, cur, which, j, res,
+  int num_files, num_files_in_dir, i, done, update_list, cur, which, j,
     go_back, found, speed;
   SDL_Rect dest;
   SDL_Event event;
@@ -14019,23 +13971,13 @@ int do_slideshow(void)
 	  else
 	  {
 	    /* No thumbnail - load original: */
-	    /* (Make sure we have a .../saved/.thumbs/ directory:) */
 
-	    tmp_fname = get_fname("saved/.thumbs");
-
-	    res = mkdir(tmp_fname, 0755);
-
-	    if (res != 0 && errno != EEXIST)
-	    {
-	      fprintf(stderr,
-		      "\nError: Can't create user data thumbnail directory:\n"
-		      "%s\n"
-		      "The error that occurred was:\n"
-		      "%s\n\n", tmp_fname, strerror(errno));
-	    }
-
-	    free(tmp_fname);
-
+            /* Make sure we have a ~/.tuxpaint/saved directory: */
+            if (make_directory("saved", "Can't create user data directory"))
+            {
+              /* (Make sure we have a .../saved/.thumbs/ directory:) */
+              make_directory("saved/.thumbs", "Can't create user data thumbnail directory");
+            }
 
 	    snprintf(fname, sizeof(fname), "%s/%s", dirname, f->d_name);
 
