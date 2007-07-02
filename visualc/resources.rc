@@ -44,10 +44,10 @@ BEGIN
         BEGIN
             VALUE "Comments", "\0"
             VALUE "CompanyName", "New Breed Software\0"
-            VALUE "FileDescription", "Tux Paint - Release Candidate.\0"
+            VALUE "FileDescription", "Tux Paint - Interactive Paint Program.\0"
             VALUE "FileVersion", "0.9.17\0"
             VALUE "InternalName", "Tux Paint\0"
-            VALUE "LegalCopyright", "Copyright © 2007 by Bill Kendrick\0"
+            VALUE "LegalCopyright", "Copyright (C) 2007 by Bill Kendrick\0"
             VALUE "LegalTrademarks", "\0"
             VALUE "OriginalFilename", "TuxPaint.exe\0"
             VALUE "PrivateBuild", "\0"
