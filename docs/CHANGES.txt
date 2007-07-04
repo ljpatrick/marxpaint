@@ -9,6 +9,15 @@ http://www.tuxpaint.org/
 $Id$
 
 
+2007.July.3 (0.9.18)
+  * System-Related Improvements:
+    ----------------------------
+    * Adding an API for developing Magic tools as plug-ins.
+      (e.g., '.so' shared objects under Linux)
+
+    * Ported (most of) 'Negative' magic tool to Magic tool plug-in system.
+
+
 2007.July.1 (0.9.17)
 
   * Interface Improvements:

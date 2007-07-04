@@ -7,12 +7,12 @@
 # bill@newbreedsoftware.com
 # http://www.tuxpaint.org/
 
-# June 14, 2002 - July 1, 2007
+# June 14, 2002 - July 3, 2007
 
 
 # The version number, for release:
 
-VER_VERSION=0.9.17
+VER_VERSION=0.9.18
 VER_DATE=`date +"%Y-%m-%d"`
 
 
@@ -35,6 +35,11 @@ EXE_EXT=
 # Data:
 
 DATA_PREFIX=$(PKG_ROOT)$(PREFIX)/share/tuxpaint
+
+
+# Magic Tool plug-ins
+
+MAGIC_PREFIX=$(PKG_ROOT)$(PREFIX)/lib/tuxpaint
 
 
 # Docs and man page:
@@ -129,6 +134,7 @@ DEFS=-DDATA_PREFIX=\"$(DATA_PREFIX)/\" \
 	-DDOC_PREFIX=\"$(DOC_PREFIX)/\" \
 	-DLOCALEDIR=\"$(LOCALE_PREFIX)/\" -DIMDIR=\"$(IM_PREFIX)/\" \
 	-DCONFDIR=\"$(CONFDIR)/\" \
+	-DMAGIC_PREFIX=\"$(MAGIC_PREFIX)/\" \
 	-DVER_VERSION=\"$(VER_VERSION)\" \
 	-DVER_DATE=\"$(VER_DATE)\" \
 	-D$(MAEMOFLAG)
@@ -141,7 +147,7 @@ MOUSE_CFLAGS=-Isrc/$(MOUSEDIR) -D$(CURSOR_SHAPES)_CURSOR_SHAPES
 
 # "make" with no arguments builds the program and man page from sources:
 
-all:	tuxpaint translations
+all:	tuxpaint translations magic-plugins
 	@echo
 	@echo "--------------------------------------------------------------"
 	@echo
@@ -284,6 +290,7 @@ include Makefile-i18n
 # to do this as superuser ("root"))
 
 install:	install-bin install-data install-man install-doc \
+		install-magic-plugins \
 		install-icon install-gettext install-im install-importscript \
 		install-default-config install-example-stamps \
 		install-example-starters \
@@ -306,9 +313,21 @@ install:	install-bin install-data install-man install-doc \
 	@echo
 
 
+install-magic-plugins:
+	@echo
+	@echo "...Installing Magic Tool plug-ins..."
+	@install -d $(MAGIC_PREFIX)
+	@cp magic/*.so $(MAGIC_PREFIX)
+	@chmod a+r,g-w,o-w $(MAGIC_PREFIX)/*.so
+	@install -d $(DATA_PREFIX)/images/magic
+	@cp magic/icons/*.png $(DATA_PREFIX)/images/magic
+	@chmod a+r,g-w,o-w $(DATA_PREFIX)/images/magic/*.png
+
+
 # Installs the various parts for the MinGW/MSYS development/testing environment.
 
 install-private-win32:	install-bin install-data install-man install-doc \
+		install-magic-plugins \
 		install-gettext install-im install-importscript \
 		install-default-config install-example-stamps \
 		install-example-starters
@@ -333,6 +352,7 @@ install-private-win32:	install-bin install-data install-man install-doc \
 # Installs the various parts for the MinGW/MSYS development/testing environment.
 
 bdist-private-win32:	install-bin install-data install-doc \
+		install-magic-plugins \
 		install-gettext install-im install-dlls\
 		install-example-stamps install-example-starters
 	@echo
@@ -432,6 +452,7 @@ clean:
 	@#if [ -d obj ]; then rmdir obj; fi
 	@-rm -f trans/*.mo
 	@if [ -d trans ]; then rmdir trans; fi
+	@cd magic ; make clean
 	@echo
 
 
@@ -471,6 +492,7 @@ uninstall:	uninstall-i18n
 	-rm $(MAN_PREFIX)/pl/man1/tuxpaint.1.gz
 	-rm $(MAN_PREFIX)/man1/tuxpaint-import.1.gz
 	-rm -f -r $(CONFDIR)
+	-rm -r $(MAGIC_PREFIX)
 
 
 # Install default config file:
@@ -736,7 +758,7 @@ obj/tuxpaint.o:	src/tuxpaint.c \
 		src/progressbar.h src/dirwalk.h src/get_fname.h \
 		src/compiler.h src/debug.h \
 		src/tools.h src/titles.h src/colors.h src/shapes.h \
-		src/magic.h src/sounds.h src/tip_tux.h src/great.h \
+		src/sounds.h src/tip_tux.h src/great.h \
 		$(HQXX_H) \
 		src/$(MOUSEDIR)/arrow.xbm src/$(MOUSEDIR)/arrow-mask.xbm \
 		src/$(MOUSEDIR)/hand.xbm src/$(MOUSEDIR)/hand-mask.xbm \
@@ -856,6 +878,11 @@ obj/resource.o:	visualc/resources.rc obj visualc/resource.h
 	@echo "...Compiling win32 resources..."
 	@windres -i visualc/resources.rc -o obj/resource.o
 
+
+# Go into 'magic' subdirectory and buld magic plug-ins
+
+magic-plugins:
+	@cd magic ; make DATA_PREFIX="$(DATA_PREFIX)"
 
 # Make the "obj" directory to throw the object(s) into:
 # (not necessary any more; bjk 2006.02.20)

@@ -22,7 +22,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
   
-  June 14, 2002 - June 25, 2007
+  June 14, 2002 - July 3, 2007
   $Id$
 */
 
@@ -408,7 +408,6 @@ extern WrapperData macosx;
 #include "titles.h"
 #include "colors.h"
 #include "shapes.h"
-#include "magic.h"
 #include "sounds.h"
 #include "tip_tux.h"
 #include "great.h"
@@ -846,6 +845,27 @@ static int recording, playing;
 static char *playfile;
 static FILE *demofi;
 
+typedef struct magic_funcs_s {
+  int (*get_tool_count)(void);
+  char * (*get_name)(int);
+  SDL_Surface * (*get_icon)(int);
+  char * (*get_description)(int);
+  int (*requires_colors)(int);
+  void (*set_color)(Uint8, Uint8, Uint8);
+  int (*init)(void);
+  void (*shutdown)(void);
+  void (*click)(int, SDL_Surface *, SDL_Surface *, int, int);
+  void (*drag)(int, SDL_Surface *, SDL_Surface *, int, int, int, int);
+} magic_funcs_t;
+
+static int num_plugin_files;
+static int num_magics;
+void * magic_handle[512];
+magic_funcs_t magic_funcs[512];
+static int magic_colors[512];
+static char * magic_names[512];
+static char * magic_tips[512];
+
 #if !defined(WIN32) && !defined(__APPLE__) && !defined(__BEOS__)
 static const char *printcommand = PRINTCOMMAND;
 static const char *altprintcommand = ALTPRINTCOMMAND;
@@ -1040,7 +1060,7 @@ static int * brushes_spacing = NULL;
 static short * brushes_directional = NULL;
 
 static SDL_Surface *img_shapes[NUM_SHAPES], *img_shape_names[NUM_SHAPES];
-static SDL_Surface *img_magics[NUM_MAGICS], *img_magic_names[NUM_MAGICS];
+static SDL_Surface * img_magics[512], * img_magic_names[512];
 static SDL_Surface *img_openlabels_open, *img_openlabels_erase,
   *img_openlabels_slideshow, *img_openlabels_back, *img_openlabels_play,
   *img_openlabels_next;
@@ -1299,6 +1319,7 @@ static void flip_starter(void);
 int valid_click(Uint8 button);
 int in_circle(int x, int y);
 int paintsound(int size);
+void load_magic_plugins(void);
 
 #ifdef DEBUG
 static char *debug_gettext(const char *str);
@@ -2174,7 +2195,7 @@ static void mainloop(void)
 	    else if (cur_tool == TOOL_MAGIC)
 	    {
 	      cur_thing = cur_magic;
-	      num_things = NUM_MAGICS;
+	      num_things = num_magics;
 	      thing_scroll = &magic_scroll;
 	      rainbow_color = 0;
 	      draw_magic();
@@ -2944,18 +2965,23 @@ static void mainloop(void)
 	    /* Mirror or flip, make a note so we record it for
 	       the starters, too! */
 
+#if 0 /* MAGIC_ME */
 	    if (cur_magic == MAGIC_MIRROR)
 	      undo_starters[tmp_int] = UNDO_STARTER_MIRRORED;
 	    else if (cur_magic == MAGIC_FLIP)
 	      undo_starters[tmp_int] = UNDO_STARTER_FLIPPED;
+#endif
 
 
 	    /* (Arbitrarily large, so we draw once now) */
 	    reset_brush_counter();
 
+#if 0 /* MAGIC_ME */
 	    if (cur_magic != MAGIC_FILL)
 	    {
+#endif
 	      magic_draw(old_x, old_y, old_x, old_y, button_down);
+#if 0 /* MAGIC_ME */
 	    }
 	    else
 	    {
@@ -2970,12 +2996,15 @@ static void mainloop(void)
 
 	      draw_tux_text(TUX_GREAT, magic_tips[MAGIC_FILL], 1);
 	    }
+#endif
 
+#if 0
 	    if (cur_magic == MAGIC_FLIP ||
 		cur_magic == MAGIC_MIRROR || cur_magic == MAGIC_FILL)
 	    {
 	      update_canvas(0, 0, canvas->w, canvas->h);
 	    }
+#endif
 	  }
 	  else if (cur_tool == TOOL_ERASER)
 	  {
@@ -3503,8 +3532,10 @@ static void mainloop(void)
 	  {
 	    /* Pushing button and moving: Do the magic: */
 
+#if 0 // MAGIC_ME
 	    if (cur_magic != MAGIC_FLIP &&
 		cur_magic != MAGIC_MIRROR && cur_magic != MAGIC_FILL)
+#endif
 	    {
 	      magic_draw(old_x, old_y, new_x, new_y, button_down);
 	    }
@@ -4372,8 +4403,10 @@ static void magic_draw(int x1, int y1, int x2, int y2, int button_down)
   int orig_x1, orig_y1, orig_x2, orig_y2, tmp;
   float m, b;
 
+#if 0 /* MAGIC_ME */
   if (cur_magic == MAGIC_RAINBOW)
     rainbow_color = (rainbow_color + 1) % NUM_RAINBOW_COLORS;
+#endif
 
   orig_x1 = x1;
   orig_y1 = y1;
@@ -4444,6 +4477,8 @@ static void magic_draw(int x1, int y1, int x2, int y2, int button_down)
   }
 
 
+#if 0 /* MAGIC_ME */
+
   /* Play sound: */
 
   if (cur_magic == MAGIC_DRIP)
@@ -4477,6 +4512,8 @@ static void magic_draw(int x1, int y1, int x2, int y2, int button_down)
   else if (cur_magic == MAGIC_GRASS)
     playsound(screen, 0, SND_GRASS, 0, x1, y1);
 
+#endif
+
   /* FIXME: Arbitrary? */
 
   update_canvas(orig_x1 - 32, orig_y1 - 32, orig_x2 + 32, orig_y2 + 64);
@@ -4497,6 +4534,8 @@ static int log2int(int x)
   }
   return y;
 }
+
+#if 0 // MAGIC_ME
 
 static void do_brick(int x, int y, int w, int h)
 {
@@ -4536,6 +4575,9 @@ static void do_brick(int x, int y, int w, int h)
   playsound(screen, 0, SND_BRICK, 1, x, SNDDIST_NEAR);
 }
 
+#endif
+
+
 /* Draw the current brush in the current color: */
 
 static void blit_magic(int x, int y, int button_down)
@@ -4570,7 +4612,10 @@ static void blit_magic(int x, int y, int button_down)
   {
     brush_counter = 0;
 
+    magic_funcs[cur_magic].click(0 /* MAGIC_ME */, canvas, last, x, y);
 
+
+#if 0 // MAGIC_ME
     if (cur_magic == MAGIC_BLUR)
     {
       double state[32][32][3];
@@ -5261,7 +5306,6 @@ static void blit_magic(int x, int y, int button_down)
       if (img_starter != NULL)
 	mirror_starter();
     }
-#if 0
     else if (cur_magic == MAGIC_THIN || cur_magic == MAGIC_THICK)
     {
       SDL_LockSurface(last);
@@ -7652,9 +7696,9 @@ static void setup(int argc, char *argv[])
     load_stamps(screen);
 
 
-  /* Load magic icons: */
-  for (i = 0; i < NUM_MAGICS; i++)
-    img_magics[i] = loadimage(magic_img_fnames[i]);
+  /* Load magic tool plugins: */
+
+  load_magic_plugins();
 
   show_progress_bar(screen);
 
@@ -7896,7 +7940,7 @@ static void create_button_labels(void)
   for (i = 0; i < NUM_TOOLS; i++)
     img_tool_names[i] = do_render_button_label(tool_names[i]);
 
-  for (i = 0; i < NUM_MAGICS; i++)
+  for (i = 0; i < num_magics; i++)
     img_magic_names[i] = do_render_button_label(magic_names[i]);
 
   for (i = 0; i < NUM_SHAPES; i++)
@@ -8149,16 +8193,16 @@ static void draw_magic(void)
   int magic, i, max, off_y;
   SDL_Rect dest;
 
+#if 0 // MAGIC_ME
   // restore these to black (stamp and text controls borrow them)
   SDL_BlitSurface(img_black, NULL, img_magics[MAGIC_FLIP], NULL);
   SDL_BlitSurface(img_black, NULL, img_magics[MAGIC_MIRROR], NULL);
-
-  /* FIXME: Should we worry about more than 14 magic effects? :^/ */
+#endif
 
 
   draw_image_title(TITLE_MAGIC, r_ttoolopt);
 
-  if (NUM_MAGICS > 14 + TOOLOFFSET)
+  if (num_magics > 14 + TOOLOFFSET)
   {
     off_y = 24;
     max = 12 + TOOLOFFSET;
@@ -8178,7 +8222,7 @@ static void draw_magic(void)
     dest.x = WINDOW_WIDTH - 96;
     dest.y = 40 + 24 + ((6 + TOOLOFFSET / 2) * 48);
 
-    if (magic_scroll < NUM_MAGICS - 12 - TOOLOFFSET)
+    if (magic_scroll < num_magics - 12 - TOOLOFFSET)
     {
       SDL_BlitSurface(img_scroll_down, NULL, screen, &dest);
     }
@@ -8201,7 +8245,7 @@ static void draw_magic(void)
     dest.x = ((i % 2) * 48) + (WINDOW_WIDTH - 96);
     dest.y = ((i / 2) * 48) + 40 + off_y;
 
-    if (magic < NUM_MAGICS)
+    if (magic < num_magics)
     {
       if (magic == cur_magic)
       {
@@ -8781,6 +8825,7 @@ static void draw_stamps(void)
 
   if (!disable_stamp_controls)
   {
+#if 0 // MAGIC_ME
     /* Show mirror button: */
 
     dest.x = WINDOW_WIDTH - 96;
@@ -8813,7 +8858,6 @@ static void draw_stamps(void)
     SDL_BlitSurface(button_color, NULL, img_magics[MAGIC_MIRROR], NULL);
     SDL_BlitSurface(img_magics[MAGIC_MIRROR], NULL, screen, &dest);
 
-
     /* Show flip button: */
 
     dest.x = WINDOW_WIDTH - 48;
@@ -8845,6 +8889,8 @@ static void draw_stamps(void)
 
     SDL_BlitSurface(button_color, NULL, img_magics[MAGIC_FLIP], NULL);
     SDL_BlitSurface(img_magics[MAGIC_FLIP], NULL, screen, &dest);
+
+#endif
 
 
 #ifdef OLD_STAMP_GROW_SHRINK
@@ -11688,8 +11734,8 @@ static void cleanup(void)
   free_surface_array(img_tools, NUM_TOOLS);
   free_surface_array(img_tool_names, NUM_TOOLS);
   free_surface_array(img_title_names, NUM_TITLES);
-  free_surface_array(img_magics, NUM_MAGICS);
-  free_surface_array(img_magic_names, NUM_MAGICS);
+  free_surface_array(img_magics, num_magics);
+  free_surface_array(img_magic_names, num_magics);
   free_surface_array(img_shapes, NUM_SHAPES);
   free_surface_array(img_shape_names, NUM_SHAPES);
   free_surface_array(img_tux, NUM_TIP_TUX);
@@ -16733,3 +16779,179 @@ float pick_best_scape(unsigned int orig_w, unsigned int orig_h,
 }
 
 #endif
+
+
+void load_magic_plugins(void)
+{
+  int res, n, i;
+  DIR *d;
+  struct dirent *f;
+  char fname[512];
+
+  num_plugin_files = 0;
+  num_magics = 0;
+
+  printf("\n");
+  printf("Loading magic plug-ins from %s\n", MAGIC_PREFIX);
+  fflush(stdout);
+
+  d = opendir(MAGIC_PREFIX);
+
+  if (d != NULL)
+  {
+    /* Gather list of files (for sorting): */
+
+    do
+    {
+      f = readdir(d);
+
+      if (f != NULL)
+      {
+        if (f->d_type == DT_REG)
+        {
+	  snprintf(fname, sizeof(fname), "%s%s", MAGIC_PREFIX, f->d_name);
+
+	  magic_handle[num_plugin_files] = SDL_LoadObject(fname);
+	  
+          if (magic_handle[num_plugin_files] != NULL)
+	  {
+            printf("loading: %s\n", fname);
+            fflush(stdout);
+
+	    magic_funcs[num_plugin_files].get_tool_count =
+	      SDL_LoadFunction(magic_handle[num_plugin_files],
+			       "get_tool_count");
+
+	    magic_funcs[num_plugin_files].get_name =
+	      SDL_LoadFunction(magic_handle[num_plugin_files],
+			       "get_name");
+
+	    magic_funcs[num_plugin_files].get_icon =
+	      SDL_LoadFunction(magic_handle[num_plugin_files],
+			       "get_icon");
+
+	    magic_funcs[num_plugin_files].get_description =
+	      SDL_LoadFunction(magic_handle[num_plugin_files],
+			       "get_description");
+
+	    magic_funcs[num_plugin_files].requires_colors =
+	      SDL_LoadFunction(magic_handle[num_plugin_files],
+			       "requires_colors");
+
+	    magic_funcs[num_plugin_files].set_color =
+	      SDL_LoadFunction(magic_handle[num_plugin_files],
+			       "set_color");
+
+	    magic_funcs[num_plugin_files].init =
+	      SDL_LoadFunction(magic_handle[num_plugin_files],
+			       "init");
+
+	    magic_funcs[num_plugin_files].shutdown =
+	      SDL_LoadFunction(magic_handle[num_plugin_files],
+			       "shutdown");
+
+	    magic_funcs[num_plugin_files].click =
+	      SDL_LoadFunction(magic_handle[num_plugin_files],
+			       "click");
+
+	    magic_funcs[num_plugin_files].drag =
+	      SDL_LoadFunction(magic_handle[num_plugin_files],
+			       "drag");
+
+#ifdef DEBUG
+	    printf("get_tool_count = 0x%x\n",
+		   (int) magic_funcs[num_plugin_files].get_tool_count);
+	    printf("get_name = 0x%x\n",
+		   (int) magic_funcs[num_plugin_files].get_name);
+	    printf("get_icon = 0x%x\n",
+		   (int) magic_funcs[num_plugin_files].get_icon);
+	    printf("get_description = 0x%x\n",
+		   (int) magic_funcs[num_plugin_files].get_description);
+	    printf("requires_colors = 0x%x\n",
+		   (int) magic_funcs[num_plugin_files].requires_colors);
+	    printf("set_color = 0x%x\n",
+		   (int) magic_funcs[num_plugin_files].set_color);
+	    printf("init = 0x%x\n",
+		   (int) magic_funcs[num_plugin_files].init);
+	    printf("shutdown = 0x%x\n",
+		   (int) magic_funcs[num_plugin_files].shutdown);
+	    printf("click = 0x%x\n",
+		   (int) magic_funcs[num_plugin_files].click);
+	    printf("drag = 0x%x\n",
+		   (int) magic_funcs[num_plugin_files].drag);
+#endif
+
+	    if (magic_funcs[num_plugin_files].get_tool_count == NULL ||
+		magic_funcs[num_plugin_files].get_name == NULL ||
+		magic_funcs[num_plugin_files].get_icon == NULL ||
+		magic_funcs[num_plugin_files].get_description == NULL ||
+		magic_funcs[num_plugin_files].requires_colors == NULL ||
+		magic_funcs[num_plugin_files].set_color == NULL ||
+		magic_funcs[num_plugin_files].init == NULL ||
+		magic_funcs[num_plugin_files].shutdown == NULL ||
+		magic_funcs[num_plugin_files].click == NULL ||
+		magic_funcs[num_plugin_files].drag == NULL)
+	    {
+	      fprintf(stderr, "Error: plugin %s is missing function(s)\n", fname);
+	      fflush(stderr);
+              SDL_UnloadObject(magic_handle[num_plugin_files]);
+	    }
+	    else
+	    {
+	      res = magic_funcs[num_plugin_files].init();
+
+              if (res != 0)
+	        n = magic_funcs[num_plugin_files].get_tool_count();
+              else
+              {
+                magic_funcs[num_plugin_files].shutdown();
+                n = 0;
+              }
+
+
+	      if (n == 0)
+              {
+                fprintf(stderr, "Error: plugin %s failed to startup or reported 0 magic tools\n", fname);
+	        fflush(stderr);
+                SDL_UnloadObject(magic_handle[num_plugin_files]);
+              }
+              else
+              {
+		for (i = 0; i < n; i++)
+		{
+		  magic_names[num_magics] = magic_funcs[num_plugin_files].get_name(i);
+		  magic_tips[num_magics] = magic_funcs[num_plugin_files].get_description(i);
+		  magic_colors[num_magics] = magic_funcs[num_plugin_files].requires_colors(i);
+
+		  img_magics[num_magics] = magic_funcs[num_plugin_files].get_icon(i);
+
+		  printf("-- %s\n", magic_names[i]);
+
+		  num_magics++;
+		}
+
+	        num_plugin_files++;
+              }
+            }
+          }
+	  else
+	  {
+	    fprintf(stderr, "Warning: Failed to load object %s: %s\n", fname, SDL_GetError());
+	    fflush(stderr);
+	  }
+	}
+      }
+    }
+    while (f != NULL);
+
+    closedir(d);
+  }
+
+  printf("Loaded %d magic tools from %d plug-in files\n", num_magics,
+	 num_plugin_files);
+  printf("\n");
+  fflush(stdout);
+
+  /* FIXME: Sort it? -bjk 2007.07.03 */
+}
+
