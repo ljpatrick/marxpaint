@@ -17,6 +17,11 @@ $Id$
 
     * Ported (most of) 'Negative' magic tool to Magic tool plug-in system.
 
+  * New Translations:
+    -----------------
+    * Wolof
+      Haby Diallo <haby42@yahoo.fr>
+
   * Translation Updates:
     --------------------
     * Dutch

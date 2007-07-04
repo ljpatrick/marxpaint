@@ -7,7 +7,7 @@
 # bill@newbreedsoftware.com
 # http://www.tuxpaint.org/
 
-# June 14, 2002 - May 2, 2007
+# June 14, 2002 - July 4, 2007
 
 
 # Locale files
@@ -89,6 +89,7 @@ uninstall-i18n:
 	-rm $(LOCALE_PREFIX)/ve/LC_MESSAGES/tuxpaint.mo
 	-rm $(LOCALE_PREFIX)/vi/LC_MESSAGES/tuxpaint.mo
 	-rm $(LOCALE_PREFIX)/wa/LC_MESSAGES/tuxpaint.mo
+	-rm $(LOCALE_PREFIX)/wo/LC_MESSAGES/tuxpaint.mo
 	-rm $(LOCALE_PREFIX)/xh/LC_MESSAGES/tuxpaint.mo
 	-rm $(LOCALE_PREFIX)/zh_CN/LC_MESSAGES/tuxpaint.mo
 	-rm $(LOCALE_PREFIX)/zh_TW/LC_MESSAGES/tuxpaint.mo
@@ -447,6 +448,11 @@ install-gettext:
 	@cp trans/cy.mo $(LOCALE_PREFIX)/cy/LC_MESSAGES/tuxpaint.mo
 	@chmod 644 $(LOCALE_PREFIX)/cy/LC_MESSAGES/tuxpaint.mo
 	@#
+	@echo "   wo_SN ...Wolof..."
+	@install -d $(LOCALE_PREFIX)/wo/LC_MESSAGES
+	@cp trans/wo.mo $(LOCALE_PREFIX)/wo/LC_MESSAGES/tuxpaint.mo
+	@chmod 644 $(LOCALE_PREFIX)/wo/LC_MESSAGES/tuxpaint.mo
+	@#
 	@echo "   xh_ZA ...Xhosa..."
 	@install -d $(LOCALE_PREFIX)/xh/LC_MESSAGES
 	@cp trans/xh.mo $(LOCALE_PREFIX)/xh/LC_MESSAGES/tuxpaint.mo
@@ -546,6 +552,7 @@ translations: trans \
 	trans/ve.mo \
 	trans/vi.mo \
 	trans/wa.mo \
+	trans/wo.mo \
 	trans/xh.mo \
 	trans/zh_cn.mo \
 	trans/zh_tw.mo
@@ -822,6 +829,10 @@ trans/vi.mo:	src/po/vi.po
 trans/wa.mo:	src/po/wa.po
 	@echo "   wa_BE ...Walloon..."
 	@msgfmt -o trans/wa.mo src/po/wa.po
+
+trans/wo.mo:	src/po/wo.po
+	@echo "   wo_SN ...Wolof..."
+	@msgfmt -o trans/wo.mo src/po/wo.po
 
 trans/xh.mo:	src/po/xh.po
 	@echo "   xh_ZA ...Xhosa..."

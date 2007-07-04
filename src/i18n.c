@@ -25,7 +25,7 @@
 
   $Id$
 
-  June 14, 2002 - May 6, 2007
+  June 14, 2002 - July 4, 2007
 */
 
 #include <stdio.h>
@@ -131,6 +131,7 @@ const char *lang_prefixes[NUM_LANGS] = {
   "ve",
   "vi",
   "wa",
+  "wo",
   "xh",
   "zh_cn",
   "zh_tw"
@@ -275,6 +276,7 @@ const language_to_locale_struct language_to_locale_array[] = {
   {"ukrainian", "uk_UA.UTF-8"},
   {"walloon", "wa_BE.UTF-8"},
   {"walon", "wa_BE.UTF-8"},
+  {"wolof", "wo_SN.UTF-8"},
   {"xhosa", "xh_ZA.UTF-8"},
   {"chinese", "zh_CN.UTF-8"},
   {"simplified-chinese", "zh_CN.UTF-8"},
@@ -474,6 +476,7 @@ void show_lang_usage(FILE * f, const char *const prg)
 /* ve */ "  venda\n"
 /* vi */ "  vietnamese\n"
 /* wa */ "  walloon      walon\n"
+/* wo */ "  wolof\n"
 /* cy */ "  welsh        cymraeg\n"
 /* xh */ "  xhosa\n"
 	  "\n", prg);
@@ -558,6 +561,7 @@ void show_locale_usage(FILE * f, const char *const prg)
 	  "  ve_ZA   (Venda)\n"
 	  "  vi_VN   (Vietnamese)\n"
 	  "  wa_BE   (Walloon)\n"
+	  "  wo_SN   (Wolof)\n"
 	  "  cy_GB   (Welsh        Cymraeg)\n"
 	  "  xh_ZA   (Xhosa)\n"
 	  "\n", prg);

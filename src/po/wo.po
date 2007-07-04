@@ -1,0 +1,525 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: 2007-07-04 11:24-0000\n"
+"Last-Translator: Haby Diallo <haby42@yahoo.fr>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-Language: Wolof\n"
+"X-Poedit-Country: SENEGAL\n"
+
+msgid "Black!"
+msgstr "Ñuul!"
+
+msgid "Dark grey! Some people spell it âdark grayâ."
+msgstr "Doomutal bu dër!"
+
+msgid "Light grey! Some people spell it âlight grayâ."
+msgstr "Doomutal bu xëc wex!"
+
+msgid "White!"
+msgstr "Weex!"
+
+msgid "Red!"
+msgstr "Xonq!"
+
+msgid "Orange!"
+msgstr "Orans!"
+
+msgid "Yellow!"
+msgstr "Mboq!"
+
+msgid "Light green!"
+msgstr "Wert!"
+
+msgid "Dark green!"
+msgstr "Wert bu dër!"
+
+msgid "Sky blue!"
+msgstr "Bulo baxa!"
+
+msgid "Blue!"
+msgstr "Bulo!"
+
+msgid "Lavender!"
+msgstr "Lawand!"
+
+msgid "Purple!"
+msgstr "Purp!"
+
+msgid "Pink!"
+msgstr "Ros!"
+
+msgid "Brown!"
+msgstr "Sokola!"
+
+msgid "Tan!"
+msgstr "tanne!"
+
+msgid "Beige!"
+msgstr "Xaal!"
+
+#. First, the blacklist. We list font families that can crash Tux Paint
+#. via bugs in the SDL_ttf library. We also test fonts to be sure that
+#. they have both uppercase and lowercase letters. Note that we do not
+#. test for "Aa", because it is OK if uppercase and lowercase are the
+#. same. (but not nice -- such fonts get a low score later)
+#.
+#. We test the alphabet twice, to help with translation. If the users
+#. will be unable to type ASCII letters, then both lines should be
+#. translated. Otherwise, only Line X should be translated and the
+#. ASCII-only fonts should be given bad scores in the scoring code below.
+#. (the best scores going to fonts that support both)
+msgid "qx"
+msgstr "qx"
+
+msgid "QX"
+msgstr "QX"
+
+#. Line X
+msgid "qy"
+msgstr "qy"
+
+msgid "QY"
+msgstr "QY"
+
+#. Now we score fonts to ensure that the best ones will be placed at
+#. the top of the list. The user will see them first. This sorting is
+#. especially important for users who have scroll buttons disabled.
+#. Translators should do whatever is needed to put crummy fonts last.
+msgid "oO"
+msgstr "oO"
+
+#. distinct uppercase and lowercase
+msgid "`\\%_@$~#{}<>^&*"
+msgstr "\\%_@$~#{}<>^&*"
+
+#. uncommon punctuation
+msgid ",.?!"
+msgstr ",.?!"
+
+#. common punctuation
+msgid "017"
+msgstr "017"
+
+#. digits
+msgid "O0"
+msgstr "O0"
+
+#. distinct circle-like characters
+msgid "1Il|"
+msgstr "1Il|"
+
+msgid "Great!"
+msgstr "Jarama !"
+
+msgid "Cool!"
+msgstr "Jaraw lak !"
+
+msgid "Keep it up!"
+msgstr "Gorgorlul !"
+
+msgid "Good job!"
+msgstr "Sa ligeey rafet na !"
+
+msgid "Fill"
+msgstr "Feesal"
+
+msgid "Grass"
+msgstr "Ñax"
+
+msgid "Bricks"
+msgstr "Mul"
+
+msgid "Rainbow"
+msgstr "Xonn"
+
+msgid "Sparkles"
+msgstr "Ferñent"
+
+msgid "Blur"
+msgstr "Reral"
+
+msgid "Smudge"
+msgstr "Jaxase"
+
+msgid "Lighten"
+msgstr "Leral"
+
+msgid "Darken"
+msgstr "Lëndëmal"
+
+msgid "Chalk"
+msgstr "Kere"
+
+msgid "Blocks"
+msgstr "saam"
+
+msgid "Negative"
+msgstr "Ludul nonu"
+
+msgid "Tint"
+msgstr "Pentur"
+
+msgid "Drip"
+msgstr "Tok tok"
+
+msgid "Cartoon"
+msgstr "Kartoŋ"
+
+msgid "Mirror"
+msgstr "Seetu"
+
+msgid "Flip"
+msgstr "Këpp"
+
+msgid "Click in the picture to fill that area with color."
+msgstr "Bëssël ci natal bi soko bëge pentur fi nga tan ak kulor bi."
+
+msgid "Click and move to draw grass. Donât forget the dirt!"
+msgstr "Bëssël te jalale ak jinax bi so bëge pentur ñax. Bul fate yok pënd mi !"
+
+msgid "Click and move to draw large bricks."
+msgstr "Bëssël te jalale ak jinax bi so buge pentur ay mul yu mak."
+
+msgid "Click and move to draw small bricks."
+msgstr "Bëssël te jalale ak jinax bi so buge pentur ay mul yu ndaw."
+
+msgid "You can draw in rainbow colors!"
+msgstr "Mën nga rëd aki kuloru xonn yi !"
+
+msgid "Click and move to draw sparkles."
+msgstr "Bëssël te jalale ak jinax bi so buge pentur ay ferñent."
+
+msgid "Click and move the mouse around to blur the picture."
+msgstr "Bëssël te jalale ak jinax bi so buge sa natal bi lëndëm."
+
+msgid "Click and move the mouse around to smudge the picture."
+msgstr "Bëssël te jalale ak jinax bi so bëgge ñu baña giss bu bax natal bi."
+
+msgid "Click and move to fade the colors."
+msgstr "Bëssël te jalale ak jinax bi ngir wañi lerayu kulor yi."
+
+msgid "Click and move to darken the colors."
+msgstr "Bëssël te jalale ak jinax bi ngir wañi lerayu culor yi."
+
+msgid "Click and move the mouse around to turn the picture into a chalk drawing."
+msgstr "Bëssël te jalale ak jinax bi ngir sopi natal bi ak kare."
+
+msgid "Click and move the mouse around to make the picture blocky."
+msgstr "Bëssël te jalale ak jinax bi ngir sopi natal bi ay sam."
+
+msgid "Click and move the mouse around to draw a negative."
+msgstr "Bëssël te jalale ak jinax bi ngir am natal bu lerul."
+
+msgid "Click and move the mouse around to change the pictureâs color."
+msgstr "Bëssël te jalale ak jinax ngir sopi so kuloru natal bi."
+
+msgid "Click and move the mouse around to make the picture drip."
+msgstr "Bëssël te jalale jinax bi ngir rogat natal bi."
+
+msgid "Click and move the mouse around to turn the picture into a cartoon."
+msgstr "Bëssël te jalale ak jinax ngir sopi sa natal bi kess."
+
+msgid "Click to make a mirror image."
+msgstr "Bëssël ngir guis natal bi ci setu."
+
+msgid "Click to flip the picture upside-down."
+msgstr "Bëssël ngir jalale natal bi ci kaw wala ci suuf."
+
+msgid "Square"
+msgstr "Kare"
+
+msgid "Rectangle"
+msgstr "Ñennt koñ"
+
+msgid "Circle"
+msgstr "Wërngël"
+
+msgid "Ellipse"
+msgstr "Wërngël bu am melo neen"
+
+msgid "Triangle"
+msgstr "Ñennt koñ"
+
+msgid "Pentagon"
+msgstr "Juro mi koñ"
+
+msgid "Rhombus"
+msgstr "Losanse"
+
+msgid "A square is a rectangle with four equal sides."
+msgstr "Kare ap ñennt koñ bu am ñennt wet yu tolo la."
+
+msgid "A rectangle has four sides and four right angles."
+msgstr "Ñennt koñ dafa am ñennt wet ak ñennt koñ yu jub."
+
+msgid "A circle is a curve where all points have the same distance from the centre."
+msgstr "Wërngël ap rëd bu wër la bu am benn tomb si digg bi te yenen tomb yu ko wër yëpp a tolo si mome."
+
+msgid "An ellipse is a stretched circle."
+msgstr "Elipse ap wërngël bu ñu xëëc la."
+
+msgid "A triangle has three sides."
+msgstr "Ñet koñ ñet wet la am."
+
+msgid "A pentagon has five sides."
+msgstr "Juroom koñ juroomi wet la am."
+
+msgid "A rhombus has four equal sides, and opposite sides are parallel."
+msgstr "Losanse Ñent wet yu wem la am, ak tamit wet yu jakarlo yi ño bok yoon."
+
+msgid "Tools"
+msgstr "Juntu kay yi"
+
+msgid "Colors"
+msgstr "Kulor yi"
+
+msgid "Brushes"
+msgstr "Natalu kay yi"
+
+msgid "Erasers"
+msgstr "Gome"
+
+msgid "Stamps"
+msgstr "Tampoŋ yi"
+
+msgid "Shapes"
+msgstr "Melokann yi"
+
+msgid "Letters"
+msgstr "Kadu yi"
+
+msgid "Magic"
+msgstr "Yeeme"
+
+msgid "Paint"
+msgstr "Pentur"
+
+msgid "Stamp"
+msgstr "Tampoŋ"
+
+msgid "Lines"
+msgstr "Rëd"
+
+msgid "Text"
+msgstr "Bataxal"
+
+msgid "Undo"
+msgstr "Dindi"
+
+msgid "Redo"
+msgstr "Defarat"
+
+msgid "Eraser"
+msgstr "Gome"
+
+msgid "New"
+msgstr "Bees"
+
+#. buttons for the file open dialog
+msgid "Open"
+msgstr "Ubbi"
+
+msgid "Save"
+msgstr "Deñc"
+
+msgid "Print"
+msgstr "Soti"
+
+msgid "Quit"
+msgstr "Tëj"
+
+msgid "Pick a color and a brush shape to draw with."
+msgstr "Tanal benn kulor ak benn natalu kay ngir defar natal."
+
+msgid "Pick a picture to stamp around your drawing."
+msgstr "Tanal benn natal bu ngay yok ci sa natal."
+
+msgid "Click to start drawing a line. Let go to complete it."
+msgstr "Bëssëll ngir rëd. Demal ngir motali ko."
+
+msgid "Pick a shape. Click to pick the center, drag, then let go when it is the size you want. Move around to rotate it, and click to draw it."
+msgstr "Tanal benn melo. Bëssëll ci digg bi, tannal fo kay tek ak nu muy tooll te baña bayi bëss bi, wengal ko, nga bëss so ko bëgge rëd."
+
+msgid "Choose a style of text. Click on your drawing and you can start typing."
+msgstr "Tanal melo bataxal bi. Bëss ci sa natal te nga dor binde sa bataxal."
+
+msgid "Pick a magical effect to use on your drawing!"
+msgstr "Tanal lu yeeme ngir sopi sa natal!"
+
+#. Undo
+msgid "Undo!"
+msgstr "Bayi ko!"
+
+#. Redo
+msgid "Redo!"
+msgstr "Defate ko!"
+
+#. Eraser
+msgid "Eraser!"
+msgstr "Dindi!"
+
+#. New
+msgid "You now have a blank sheet to draw on!"
+msgstr "Am nga kait bu wex ngir rëd!"
+
+#. Open
+msgid "Openâ¦"
+msgstr "Ubbil.."
+
+#. Save
+msgid "Your image has been saved!"
+msgstr "Deñc nañu sa natal!"
+
+#. Print
+msgid "Printingâ¦"
+msgstr "Sotilu.."
+
+#. Quit
+msgid "Bye bye!"
+msgstr "Ba Benen!"
+
+msgid "Let go of the button to complete the line."
+msgstr "Bul bayi butoŋ bi ngir motali sa rëd bi."
+
+msgid "Hold the button to stretch the shape."
+msgstr "Bul bayi butoŋ bi ngir xëc melo bi."
+
+msgid "Move the mouse to rotate the shape. Click to draw it."
+msgstr "Yengalal jinax bi ngir wëlbati melo bi. Bëssël ngir rëd."
+
+msgid "OK thenâ¦ Letâs keep drawing this one!"
+msgstr "Baxna! leeggi ñu motali suñu natal!"
+
+#. FIXME: Move elsewhere!!!
+msgid "Do you really want to quit?"
+msgstr "Da nga bëgg bayi?"
+
+msgid "Yes, I'm done!"
+msgstr "Waaw, ñu dem ci!"
+
+msgid "No, take me back!"
+msgstr "Deedeet, ñu delu ci!"
+
+msgid "If you quit, youâll lose your picture! Save it?"
+msgstr "So baye, nga ñak sa natal ! Da nga ko bëgg deñc lu?"
+
+msgid "Yes, save it!"
+msgstr "Waaw, ñu deñc ko!"
+
+msgid "No, don't bother saving!"
+msgstr "Deedeet, jaru ko!"
+
+msgid "Save your picture first?"
+msgstr "Da ngay deñc lu sa natal ba pare?"
+
+msgid "Canât open that picture!"
+msgstr "Mënuma ubbi natal bi!"
+
+msgid "OK"
+msgstr "Deegë na"
+
+#. This will be replaced with a dialog allowing color choice and Starter
+#. picking, with a "Back" option to dismiss the "New" and return to
+#. the current picture.  But for now...  (bjk 2006.02.19)
+msgid "Start a new picture?"
+msgstr "Ñu defar natal bu bess?"
+
+#. #define PROMPT_NEW_YES gettext_noop("Thatâs OK!")
+#. #define PROMPT_NEW_NO gettext_noop("Never mind!")
+msgid "Yes, let's start fresh!"
+msgstr "Waw, ñu defar bu bess!"
+
+msgid "There are no saved files!"
+msgstr "Amul fisie buñ fi mana deñc!"
+
+msgid "Print your picture now?"
+msgstr "Sotilu leeggi natal bi?"
+
+msgid "Yes, print it!"
+msgstr "Waaw,ñu sotilu ko!"
+
+msgid "Your picture has been printed!"
+msgstr "Sotilu nañu sa natal!"
+
+msgid "You canât print yet!"
+msgstr "Mëno go sotilu leeggi!"
+
+msgid "Erase this picture?"
+msgstr "Ñu dindi natal bi?"
+
+msgid "Yes, erase it!"
+msgstr "Waaw, dindi ko !"
+
+msgid "No, don't erase it!"
+msgstr "Deedeet, buko dindi !"
+
+msgid "Remember to use the left mouse button!"
+msgstr "Bul fate jëffandiku ciammoñu butoŋ jinax bi !"
+
+msgid "Please wait..."
+msgstr "Bal ma te xar..."
+
+msgid "Erase"
+msgstr "Dindil"
+
+msgid "Slides"
+msgstr "Japo"
+
+msgid "Back"
+msgstr "Dellu"
+
+msgid "Next"
+msgstr "Li ci topp"
+
+msgid "Play"
+msgstr "Ñu dor"
+
+msgid "Aa"
+msgstr "Aa"
+
+#. FIXME: Move elsewhere! Or not?!
+msgid "Yes"
+msgstr "Waaw"
+
+msgid "No"
+msgstr "Deedeet"
+
+#. FIXME: Move elsewhere!!!
+#. #define PROMPT_SAVE_OVER_TXT gettext_noop("Save over the older version of this picture?")
+msgid "Replace the picture with your changes?"
+msgstr "Ñu deñca tal natal bi ak sopitem yi ?"
+
+msgid "Yes, replace the old one!"
+msgstr "Waaw, ñu sopi bu magat bi !"
+
+msgid "No, save a new file!"
+msgstr "Deedeet, natal bu bees la !"
+
+msgid "Choose the picture you want, then click âOpenâ."
+msgstr "Tannal natal, te bëss ci «Ubbi»."
+
+#. Let user choose images:
+msgid "Choose the pictures you want, then click âPlayâ."
+msgstr "Tanal natal yu la nex so bëgge, te nga bëss ci «Ñu dor»."
+
+msgid "A drawing program for children."
+msgstr "Lël lu natal yu ñu jagglel guneyi."
+
+msgid "Drawing program"
+msgstr "Lëlu natal"
+
+msgid "Tux Paint"
+msgstr "Tux Paint"
+
+#~ msgid "Thatâs OK!"
+#~ msgstr "C'est d'accord !"
+#~ msgid "jq"
+#~ msgstr "jq"
+#~ msgid "Save over the older version of this picture?"
+#~ msgstr "Remplacer l'ancienne version de ce dessin ?"
+

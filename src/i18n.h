@@ -92,6 +92,7 @@ enum
   LANG_VE,			/* Venda */
   LANG_VI,			/* Vietnamese */
   LANG_WA,			/* Walloon */
+  LANF_WO,                      /* Wolof */
   LANG_XH,			/* Xhosa */
   LANG_ZH_CN,			/* Chinese (Simplified) */
   LANG_ZH_TW,			/* Chinese (Traditional) */
