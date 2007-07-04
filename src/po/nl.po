@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: tuxpaint 0.9.17\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2007-05-09 00:32-0700\n"
-"PO-Revision-Date: 2007-07-01 13:12+0200\n"
+"PO-Revision-Date: 2007-07-02 11:25+0200\n"
 "Last-Translator: Freek de Kruijf <f.de.kruijf@hetnet.nl>\n"
 "Language-Team: Dutch <vertaling@vrijschrift.org>\n"
 "MIME-Version: 1.0\n"
@@ -388,7 +388,7 @@ msgstr "Nu heb je een schoon blad om op te tekenen!"
 
 #. Open
 msgid "Open…"
-msgstr "Openen..."
+msgstr "Openen_"
 
 #. Save
 msgid "Your image has been saved!"
@@ -396,7 +396,7 @@ msgstr "Je tekening is opgeslagen!"
 
 #. Print
 msgid "Printing…"
-msgstr "Aan het afdrukken..."
+msgstr "Aan het afdrukken_"
 
 #. Quit
 msgid "Bye bye!"
@@ -412,7 +412,7 @@ msgid "Move the mouse to rotate the shape. Click to draw it."
 msgstr "Beweeg de muis om de vorm te draaien. Klik als je tevreden bent."
 
 msgid "OK then… Let’s keep drawing this one!"
-msgstr "Ok,... Dan gaan we verder met deze!"
+msgstr "Ok,_ Dan gaan we verder met deze!"
 
 #. FIXME: Move elsewhere!!!
 msgid "Do you really want to quit?"
@@ -481,7 +481,7 @@ msgid "Remember to use the left mouse button!"
 msgstr "Onthoud dat je de linker muisknop dient te gebruiken!"
 
 msgid "Please wait..."
-msgstr "Even geduld..."
+msgstr "Even geduld_"
 
 msgid "Erase"
 msgstr "Uitgommen"
@@ -520,11 +520,11 @@ msgid "No, save a new file!"
 msgstr "Nee, opslaan in een nieuw bestand!"
 
 msgid "Choose the picture you want, then click “Open”."
-msgstr "Kies de tekening die je wilt en klik dan op 'Openen'."
+msgstr "Kies de tekening die je wilt en klik dan op “Openen”."
 
 #. Let user choose images:
 msgid "Choose the pictures you want, then click “Play”."
-msgstr "Kies de tekening die je wilt en klik dan op 'Afspelen'."
+msgstr "Kies de tekening die je wilt en klik dan op “Afspelen”."
 
 msgid "A drawing program for children."
 msgstr "Een tekenprogramma voor kinderen."
