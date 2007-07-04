@@ -7,7 +7,7 @@
 # bill@newbreedsoftware.com
 # http://www.tuxpaint.org/
 
-# June 14, 2002 - July 3, 2007
+# June 14, 2002 - July 4, 2007
 
 
 # The version number, for release:
@@ -870,7 +870,7 @@ obj/postscript_print.o:	src/postscript_print.c obj \
 			src/postscript_print.h src/debug.h
 	@echo
 	@echo "...Compiling PostScript print support..."
-	@$(CC) $(CFLGS) $(DEBUG_FLAGS) $(SDL_CFLAGS) $(DEFS) \
+	@$(CC) $(CFLAGS) $(DEBUG_FLAGS) $(SDL_CFLAGS) $(DEFS) \
 		-c src/postscript_print.c -o obj/postscript_print.o
 
 obj/resource.o:	visualc/resources.rc obj visualc/resource.h
