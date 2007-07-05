@@ -9,13 +9,31 @@ http://www.tuxpaint.org/
 $Id$
 
 
-2007.July.4 (0.9.18)
+2007.July.5 (0.9.18)
   * System-Related Improvements:
     ----------------------------
-    * Adding an API for developing Magic tools as plug-ins.
-      (e.g., '.so' shared objects under Linux)
+    * Added an API for developing Magic tools as plug-ins.
+      ('.so' shared objects under Linux, '.dll' libraries under Windows, etc.)
+      Plugins must provide a number of functions that Tux Paint calls,
+      and Tux Paint provides a structure ("magic_api") that includes info.
+      (e.g., the running Tux Paint's version number) and pointers to
+      useful functions (e.g., getpixel(), putpixel(), etc.)
 
-    * Ported (most of) 'Negative' magic tool to Magic tool plug-in system.
+    * Magic plugin development can be done outside of Tux Paint base
+      source-code by using new "tp-magic-config" shell script to query
+      for C compiler flags, which points to where "tp_magic_api.h" header
+      file is installed.
+
+    * Magic plugin development docs created.  On Linux/Unix, installed into
+      /usr/[local/]share/docs/tuxpaint-dev/ by default.
+
+    * Ported existing magic tools to the new Magic tool plug-in system:
+      - Negative
+      - Mirror
+      - Flip
+      - Fade
+      - Darken
+      [[ FIXME: Do the rest ]]
 
   * New Translations:
     -----------------

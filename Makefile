@@ -1,4 +1,4 @@
-# Makefile for tuxpaint
+
 # $Id$
 
 # Tux Paint - A simple drawing program for children.
@@ -39,13 +39,16 @@ DATA_PREFIX=$(PKG_ROOT)$(PREFIX)/share/tuxpaint
 
 # Magic Tool plug-ins
 
+INCLUDE_PREFIX=$(PKG_ROOT)$(PREFIX)/include
 MAGIC_PREFIX=$(PKG_ROOT)$(PREFIX)/lib/tuxpaint
 
 
 # Docs and man page:
 
 DOC_PREFIX=$(PKG_ROOT)$(PREFIX)/share/doc/tuxpaint
+DEVDOC_PREFIX=$(PKG_ROOT)$(PREFIX)/share/doc/tuxpaint-dev
 MAN_PREFIX=$(PKG_ROOT)$(PREFIX)/share/man
+DEVMAN_PREFIX=$(PKG_ROOT)$(PREFIX)/share/man
 
 
 # 'System-wide' Config file:
@@ -291,6 +294,7 @@ include Makefile-i18n
 
 install:	install-bin install-data install-man install-doc \
 		install-magic-plugins \
+		install-magic-plugin-dev \
 		install-icon install-gettext install-im install-importscript \
 		install-default-config install-example-stamps \
 		install-example-starters \
@@ -322,7 +326,24 @@ install-magic-plugins:
 	@install -d $(DATA_PREFIX)/images/magic
 	@cp magic/icons/*.png $(DATA_PREFIX)/images/magic
 	@chmod a+r,g-w,o-w $(DATA_PREFIX)/images/magic/*.png
+	@install -d $(DATA_PREFIX)/sounds/magic
+	@cp magic/sounds/*.wav $(DATA_PREFIX)/sounds/magic
+	@chmod a+r,g-w,o-w $(DATA_PREFIX)/sounds/magic/*.wav
 
+install-magic-plugin-dev:
+	@echo
+	@echo "...Installing Magic Tool plug-in development files and docs..."
+	@-rm $(BIN_PREFIX)/tp-magic-config
+	@sed src/tp-magic-config.sh -e s/__VERSION__/$(VER_VERSION)/ \
+		-e s=__INCLUDE__=$(INCLUDE_PREFIX)/tuxpaint= > \
+		$(BIN_PREFIX)/tp-magic-config
+	@chmod a+rx,g-w,o-w $(BIN_PREFIX)/tp-magic-config
+	@install -d $(INCLUDE_PREFIX)/tuxpaint
+	@cp src/tp_magic_api.h $(INCLUDE_PREFIX)/tuxpaint
+	@chmod a+r,g-w,o-w $(INCLUDE_PREFIX)/tuxpaint/tp_magic_api.h
+	@install -d $(DEVDOC_PREFIX)
+	@cp -R magic/docs/* $(DEVDOC_PREFIX)
+	@chmod a=rX,g=rX,u=rwX $(DEVDOC_PREFIX)
 
 # Installs the various parts for the MinGW/MSYS development/testing environment.
 
@@ -493,6 +514,9 @@ uninstall:	uninstall-i18n
 	-rm $(MAN_PREFIX)/man1/tuxpaint-import.1.gz
 	-rm -f -r $(CONFDIR)
 	-rm -r $(MAGIC_PREFIX)
+	-rm -r $(INCLUDE_PREFIX)/tuxpaint
+	-rm $(BIN_PREFIX)/tp-magic-config
+	-rm -r $(DEVDOC_PREFIX)
 
 
 # Install default config file:
@@ -759,6 +783,7 @@ obj/tuxpaint.o:	src/tuxpaint.c \
 		src/compiler.h src/debug.h \
 		src/tools.h src/titles.h src/colors.h src/shapes.h \
 		src/sounds.h src/tip_tux.h src/great.h \
+		src/tp_magic_api.h \
 		$(HQXX_H) \
 		src/$(MOUSEDIR)/arrow.xbm src/$(MOUSEDIR)/arrow-mask.xbm \
 		src/$(MOUSEDIR)/hand.xbm src/$(MOUSEDIR)/hand-mask.xbm \
@@ -882,7 +907,7 @@ obj/resource.o:	visualc/resources.rc obj visualc/resource.h
 # Go into 'magic' subdirectory and buld magic plug-ins
 
 magic-plugins:
-	@cd magic ; make DATA_PREFIX="$(DATA_PREFIX)"
+	@cd magic ; make
 
 # Make the "obj" directory to throw the object(s) into:
 # (not necessary any more; bjk 2006.02.20)

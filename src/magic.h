@@ -44,20 +44,13 @@ enum
   MAGIC_BLUR,
   MAGIC_SMUDGE,
 
-  MAGIC_FADE,
-  MAGIC_DARKEN,
-
   MAGIC_CHALK,
   MAGIC_BLOCKS,
 
-  MAGIC_NEGATIVE,
   MAGIC_TINT,
 
   MAGIC_DRIP,
   MAGIC_CARTOON,
-
-  MAGIC_MIRROR,
-  MAGIC_FLIP,
 
   NUM_MAGICS
 };
@@ -72,26 +65,19 @@ const int magic_colors[] = {
   COLORSEL_ENABLE,		// large bricks
   COLORSEL_ENABLE,		// small bricks
 
-  COLORSEL_DISABLE,
+  COLORSEL_DISABLE,		// rainbow
   COLORSEL_ENABLE,		// sparkles
 
-  COLORSEL_DISABLE,
-  COLORSEL_DISABLE,
+  COLORSEL_DISABLE,		// blur
+  COLORSEL_DISABLE,		// smudge
 
-  COLORSEL_DISABLE,
-  COLORSEL_DISABLE,
+  COLORSEL_DISABLE,		// chalk
+  COLORSEL_DISABLE,		// blocks
 
-  COLORSEL_DISABLE,
-  COLORSEL_DISABLE,
-
-  COLORSEL_DISABLE,
   COLORSEL_ENABLE,		// tint
 
-  COLORSEL_DISABLE,
-  COLORSEL_DISABLE,
-
-  COLORSEL_DISABLE,
-  COLORSEL_DISABLE,
+  COLORSEL_DISABLE,		// drip
+  COLORSEL_DISABLE,		// cartoon
 };
 
 /* Magic tool names: */
@@ -109,20 +95,13 @@ const char *const magic_names[NUM_MAGICS] = {
   gettext_noop("Blur"),
   gettext_noop("Smudge"),
 
-  gettext_noop("Lighten"),
-  gettext_noop("Darken"),
-
   gettext_noop("Chalk"),
   gettext_noop("Blocks"),
 
-  gettext_noop("Negative"),
   gettext_noop("Tint"),
 
   gettext_noop("Drip"),
   gettext_noop("Cartoon"),
-
-  gettext_noop("Mirror"),
-  gettext_noop("Flip"),
 };
 
 
@@ -141,23 +120,16 @@ const char *const magic_tips[NUM_MAGICS] = {
   gettext_noop("Click and move the mouse around to blur the picture."),
   gettext_noop("Click and move the mouse around to smudge the picture."),
 
-  gettext_noop("Click and move to fade the colors."),
-  gettext_noop("Click and move to darken the colors."),
-
   gettext_noop
     ("Click and move the mouse around to turn the picture into a chalk drawing."),
   gettext_noop("Click and move the mouse around to make the picture blocky."),
 
-  gettext_noop("Click and move the mouse around to draw a negative."),
   gettext_noop
     ("Click and move the mouse around to change the picture’s color."),
 
   gettext_noop("Click and move the mouse around to make the picture drip."),
   gettext_noop
     ("Click and move the mouse around to turn the picture into a cartoon."),
-
-  gettext_noop("Click to make a mirror image."),
-  gettext_noop("Click to flip the picture upside-down."),
 };
 
 
@@ -176,20 +148,13 @@ const char *const magic_img_fnames[NUM_MAGICS] = {
   DATA_PREFIX "images/magic/blur.png",
   DATA_PREFIX "images/magic/smudge.png",
 
-  DATA_PREFIX "images/magic/fade.png",
-  DATA_PREFIX "images/magic/darken.png",
-
   DATA_PREFIX "images/magic/chalk.png",
   DATA_PREFIX "images/magic/blocks.png",
 
-  DATA_PREFIX "images/magic/negative.png",
   DATA_PREFIX "images/magic/tint.png",
 
   DATA_PREFIX "images/magic/drip.png",
   DATA_PREFIX "images/magic/cartoon.png",
-
-  DATA_PREFIX "images/magic/mirror.png",
-  DATA_PREFIX "images/magic/flip.png",
 };
 
 

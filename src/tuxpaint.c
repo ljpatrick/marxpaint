@@ -22,7 +22,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
   
-  June 14, 2002 - July 3, 2007
+  June 14, 2002 - July 5, 2007
   $Id$
 */
 
@@ -845,26 +845,41 @@ static int recording, playing;
 static char *playfile;
 static FILE *demofi;
 
+
+/* Magic tools API and tool handles: */
+
+#include "tp_magic_api.h"
+
+void update_progress_bar(void);
+void special_notify(int flags);
+
 typedef struct magic_funcs_s {
-  int (*get_tool_count)(void);
-  char * (*get_name)(int);
-  SDL_Surface * (*get_icon)(int);
-  char * (*get_description)(int);
-  int (*requires_colors)(int);
-  void (*set_color)(Uint8, Uint8, Uint8);
-  int (*init)(void);
-  void (*shutdown)(void);
-  void (*click)(int, SDL_Surface *, SDL_Surface *, int, int);
-  void (*drag)(int, SDL_Surface *, SDL_Surface *, int, int, int, int);
+  int (*get_tool_count)(magic_api *);
+  char * (*get_name)(magic_api *, int);
+  SDL_Surface * (*get_icon)(magic_api *, int);
+  char * (*get_description)(magic_api *, int);
+  int (*requires_colors)(magic_api *, int);
+  void (*set_color)(magic_api *, Uint8, Uint8, Uint8);
+  int (*init)(magic_api *);
+  void (*shutdown)(magic_api *);
+  void (*click)(magic_api *, int, SDL_Surface *, SDL_Surface *, int, int);
+  void (*drag)(magic_api *, int, SDL_Surface *, SDL_Surface *, int, int, int, int);
 } magic_funcs_t;
 
-static int num_plugin_files;
-static int num_magics;
-void * magic_handle[512];
-magic_funcs_t magic_funcs[512];
-static int magic_colors[512];
-static char * magic_names[512];
-static char * magic_tips[512];
+// FIXME: Drop the 512 constant :P
+
+static int num_plugin_files;	// How many shared object files we went through
+void * magic_handle[512];	// Handle to shared object (to be unloaded later) // FIXME: Unload them!
+magic_funcs_t magic_funcs[512];	// Pointer to shared objects' functions
+static int num_magics;	// How many magic tools were loaded (note: shared objs may report more than 1 tool)
+int magic_idx[512];	// Index to magic tools within shared objects (shared objs may report more than 1 tool)
+int magic_handle_idx[512];	// Index to magic funcs for each magic tool (shared objs may report more than 1 tool)
+static int magic_colors[512];	// Whether magic tool accepts colors
+static char * magic_names[512];	// Name of magic tool
+static char * magic_tips[512];	// Description of magic tool
+
+magic_api * magic_api_struct;	// Pointer to our internal functions; passed to shared object's functions when we call them
+
 
 #if !defined(WIN32) && !defined(__APPLE__) && !defined(__BEOS__)
 static const char *printcommand = PRINTCOMMAND;
@@ -889,6 +904,7 @@ static SDL_Surface *img_title, *img_title_credits, *img_title_tuxpaint;
 static SDL_Surface *img_btn_up, *img_btn_down, *img_btn_off;
 static SDL_Surface *img_btnsm_up, *img_btnsm_off;
 static SDL_Surface *img_prev, *img_next;
+static SDL_Surface *img_mirror, *img_flip;
 static SDL_Surface *img_dead40x40;
 static SDL_Surface *img_black, *img_grey;
 static SDL_Surface *img_yes, *img_no;
@@ -1166,8 +1182,6 @@ typedef struct dirent2
 static void mainloop(void);
 static void brush_draw(int x1, int y1, int x2, int y2, int update);
 static void blit_brush(int x, int y, int direction);
-static void magic_draw(int x1, int y1, int x2, int y2, int button_down);
-static void blit_magic(int x, int y, int button_down);
 static void stamp_draw(int x, int y);
 static void rec_undo_buffer(void);
 static void show_usage(FILE * f, char *prg);
@@ -1318,8 +1332,14 @@ static void mirror_starter(void);
 static void flip_starter(void);
 int valid_click(Uint8 button);
 int in_circle(int x, int y);
+int in_circle_rad(int x, int y, int rad);
 int paintsound(int size);
 void load_magic_plugins(void);
+
+void magic_line_func(int which, SDL_Surface * canvas, SDL_Surface * last,
+                     int x1, int y1, int x2, int y2, int step,
+		     void (*cb)(void *, int, SDL_Surface *, SDL_Surface *,
+				int, int));
 
 #ifdef DEBUG
 static char *debug_gettext(const char *str);
@@ -2956,32 +2976,38 @@ static void mainloop(void)
 	  }
 	  else if (cur_tool == TOOL_MAGIC)
 	  {
+	    int undo_ctr;
+            SDL_Surface * last;
+
+
 	    /* Start doing magic! */
 
 	    tmp_int = cur_undo;
 	    rec_undo_buffer();
 
+            if (cur_undo > 0)
+              undo_ctr = cur_undo - 1;
+            else
+              undo_ctr = NUM_UNDO_BUFS - 1;
 
-	    /* Mirror or flip, make a note so we record it for
-	       the starters, too! */
+            last = undo_bufs[undo_ctr];
+   
+	    magic_funcs[magic_handle_idx[cur_magic]].click(magic_api_struct,
+					                   magic_idx[cur_magic],
+					                   canvas, last,
+							   old_x, old_y);
+	    
+            // FIXME: Maybe 'click' should return an update rect?
+  	    update_canvas(0, 0, canvas->w, canvas->h);
+
 
 #if 0 /* MAGIC_ME */
-	    if (cur_magic == MAGIC_MIRROR)
-	      undo_starters[tmp_int] = UNDO_STARTER_MIRRORED;
-	    else if (cur_magic == MAGIC_FLIP)
-	      undo_starters[tmp_int] = UNDO_STARTER_FLIPPED;
-#endif
-
-
 	    /* (Arbitrarily large, so we draw once now) */
 	    reset_brush_counter();
 
-#if 0 /* MAGIC_ME */
 	    if (cur_magic != MAGIC_FILL)
 	    {
-#endif
 	      magic_draw(old_x, old_y, old_x, old_y, button_down);
-#if 0 /* MAGIC_ME */
 	    }
 	    else
 	    {
@@ -2995,14 +3021,6 @@ static void mainloop(void)
 								      old_y));
 
 	      draw_tux_text(TUX_GREAT, magic_tips[MAGIC_FILL], 1);
-	    }
-#endif
-
-#if 0
-	    if (cur_magic == MAGIC_FLIP ||
-		cur_magic == MAGIC_MIRROR || cur_magic == MAGIC_FILL)
-	    {
-	      update_canvas(0, 0, canvas->w, canvas->h);
 	    }
 #endif
 	  }
@@ -3530,15 +3548,26 @@ static void mainloop(void)
 	  }
 	  else if (cur_tool == TOOL_MAGIC)
 	  {
-	    /* Pushing button and moving: Do the magic: */
+	    int undo_ctr;
+            SDL_Surface * last;
 
-#if 0 // MAGIC_ME
-	    if (cur_magic != MAGIC_FLIP &&
-		cur_magic != MAGIC_MIRROR && cur_magic != MAGIC_FILL)
-#endif
-	    {
-	      magic_draw(old_x, old_y, new_x, new_y, button_down);
-	    }
+	    /* Pushing button and moving: Continue doing the magic: */
+
+            if (cur_undo > 0)
+              undo_ctr = cur_undo - 1;
+            else
+              undo_ctr = NUM_UNDO_BUFS - 1;
+
+            last = undo_bufs[undo_ctr];
+    
+	    magic_funcs[magic_handle_idx[cur_magic]].drag(magic_api_struct,
+							  magic_idx[cur_magic],
+							  canvas, last,
+							  old_x, old_y,
+							  new_x, new_y);
+
+	    // FIXME: Maybe 'drag' should return an update rect?
+  	    update_canvas(0, 0, canvas->w, canvas->h);
 	  }
 	  else if (cur_tool == TOOL_ERASER)
 	  {
@@ -4397,86 +4426,6 @@ static void stamp_draw(int x, int y)
 
 /* Draw using the current brush: */
 
-static void magic_draw(int x1, int y1, int x2, int y2, int button_down)
-{
-  int dx, dy, y;
-  int orig_x1, orig_y1, orig_x2, orig_y2, tmp;
-  float m, b;
-
-#if 0 /* MAGIC_ME */
-  if (cur_magic == MAGIC_RAINBOW)
-    rainbow_color = (rainbow_color + 1) % NUM_RAINBOW_COLORS;
-#endif
-
-  orig_x1 = x1;
-  orig_y1 = y1;
-
-  orig_x2 = x2;
-  orig_y2 = y2;
-
-
-  dx = x2 - x1;
-  dy = y2 - y1;
-
-  if (dx != 0)
-  {
-    m = ((float) dy) / ((float) dx);
-    b = y1 - m * x1;
-
-    if (x2 >= x1)
-      dx = 1;
-    else
-      dx = -1;
-
-
-    while (x1 != x2)
-    {
-      y1 = m * x1 + b;
-      y2 = m * (x1 + dx) + b;
-
-      if (y1 > y2)
-      {
-	for (y = y1; y >= y2; y--)
-	  blit_magic(x1, y, button_down);
-      }
-      else
-      {
-	for (y = y1; y <= y2; y++)
-	  blit_magic(x1, y, button_down);
-      }
-
-      x1 = x1 + dx;
-    }
-  }
-  else
-  {
-    if (y1 > y2)
-    {
-      for (y = y1; y >= y2; y--)
-	blit_magic(x1, y, button_down);
-    }
-    else
-    {
-      for (y = y1; y <= y2; y++)
-	blit_magic(x1, y, button_down);
-    }
-  }
-
-  if (orig_x1 > orig_x2)
-  {
-    tmp = orig_x1;
-    orig_x1 = orig_x2;
-    orig_x2 = tmp;
-  }
-
-  if (orig_y1 > orig_y2)
-  {
-    tmp = orig_y1;
-    orig_y1 = orig_y2;
-    orig_y2 = tmp;
-  }
-
-
 #if 0 /* MAGIC_ME */
 
   /* Play sound: */
@@ -4512,12 +4461,11 @@ static void magic_draw(int x1, int y1, int x2, int y2, int button_down)
   else if (cur_magic == MAGIC_GRASS)
     playsound(screen, 0, SND_GRASS, 0, x1, y1);
 
-#endif
-
   /* FIXME: Arbitrary? */
 
   update_canvas(orig_x1 - 32, orig_y1 - 32, orig_x2 + 32, orig_y2 + 64);
 }
+#endif
 
 
 // this one rounds down
@@ -4580,40 +4528,12 @@ static void do_brick(int x, int y, int w, int h)
 
 /* Draw the current brush in the current color: */
 
+#if 0 // MAGIC_ME
+
 static void blit_magic(int x, int y, int button_down)
 {
-  int xx, yy, w, h;
-  Uint32 colr;
-  Uint8 r, g, b, a;
-  SDL_Surface *last;
-  SDL_Rect src, dest;
-  int undo_ctr;
-  Uint32(*getpixel_canvas) (SDL_Surface *, int, int) =
-    getpixels[canvas->format->BytesPerPixel];
-  void (*putpixel) (SDL_Surface *, int, int, Uint32) =
-    putpixels[canvas->format->BytesPerPixel];
-  Uint32(*getpixel_last) (SDL_Surface *, int, int);
 
-
-  /* In case we need to use the current canvas (just saved to undo buf)... */
-
-  if (cur_undo > 0)
-    undo_ctr = cur_undo - 1;
-  else
-    undo_ctr = NUM_UNDO_BUFS - 1;
-
-  last = undo_bufs[undo_ctr];
-  getpixel_last = getpixels[last->format->BytesPerPixel];
-
-
-  brush_counter++;
-
-  if (brush_counter >= 4)	/* FIXME: Arbitrary? */
-  {
-    brush_counter = 0;
-
-    magic_funcs[cur_magic].click(0 /* MAGIC_ME */, canvas, last, x, y);
-
+// PORT THESE TO MAGIC PLUGIN API:
 
 #if 0 // MAGIC_ME
     if (cur_magic == MAGIC_BLUR)
@@ -4761,25 +4681,6 @@ static void blit_magic(int x, int y, int button_down)
       static int y_count;
       unsigned char *mybrick;
 
-#if 0
-      if (cur_magic == MAGIC_SMALLBRICK)
-      {
-	vertical_joint = 1;	// between a brick and the one above/below
-	horizontal_joint = 1;	// between a brick and the one to the side
-	nominal_width = 9;
-	nominal_height = 6;	// 11 to 14, for joints of 2
-      }
-#endif
-#if 0
-      if (cur_magic == MAGIC_LARGEBRICK)
-      {
-	vertical_joint = 3;	// between a brick and the one above/below
-	horizontal_joint = 3;	// between a brick and the one to the side
-	nominal_width = 27;
-	nominal_height = 18;	// 11 to 14, for joints of 2
-      }
-#endif
-#if 1
       if (cur_magic == MAGIC_LARGEBRICK)
       {
 	vertical_joint = 4;	// between a brick and the one above/below
@@ -4787,7 +4688,6 @@ static void blit_magic(int x, int y, int button_down)
 	nominal_width = 36;
 	nominal_height = 24;	// 11 to 14, for joints of 2
       }
-#endif
 
       nominal_length = 2 * nominal_width;
       specified_width = nominal_width - horizontal_joint;
@@ -4868,67 +4768,6 @@ static void blit_magic(int x, int y, int button_down)
 			    linear_to_sRGB(state[ix][iy][2])));
       }
       SDL_UnlockSurface(canvas);
-    }
-    else if (cur_magic == MAGIC_NEGATIVE)
-    {
-      SDL_LockSurface(last);
-      SDL_LockSurface(canvas);
-
-      for (yy = y - 16; yy < y + 16; yy++)
-      {
-	for (xx = x - 16; xx < x + 16; xx++)
-	{
-	  if (in_circle(xx - x, yy - y))
-	  {
-	    SDL_GetRGB(getpixel_last(last, xx, yy), last->format, &r, &g, &b);
-
-	    r = 0xFF - r;
-	    g = 0xFF - g;
-	    b = 0xFF - b;
-
-	    putpixel(canvas, xx, yy, SDL_MapRGB(canvas->format, r, g, b));
-	  }
-	}
-      }
-
-      SDL_UnlockSurface(canvas);
-      SDL_UnlockSurface(last);
-    }
-    else if (cur_magic == MAGIC_FADE || cur_magic == MAGIC_DARKEN)
-    {
-      SDL_LockSurface(last);
-      SDL_LockSurface(canvas);
-
-      for (yy = y - 16; yy < y + 16; yy++)
-      {
-	for (xx = x - 16; xx < x + 16; xx++)
-	{
-	  if (in_circle(xx - x, yy - y))
-	  {
-	    /* Get original color: */
-
-	    SDL_GetRGB(getpixel_last(last, xx, yy), last->format, &r, &g, &b);
-
-	    if (cur_magic == MAGIC_FADE)
-	    {
-	      r = min(r + 48, 255);
-	      g = min(g + 48, 255);
-	      b = min(b + 48, 255);
-	    }
-	    else
-	    {
-	      r = max(r - 48, 0);
-	      g = max(g - 48, 0);
-	      b = max(b - 48, 0);
-	    }
-
-	    putpixel(canvas, xx, yy, SDL_MapRGB(canvas->format, r, g, b));
-	  }
-	}
-      }
-
-      SDL_UnlockSurface(canvas);
-      SDL_UnlockSurface(last);
     }
     else if (cur_magic == MAGIC_TINT)
     {
@@ -5256,56 +5095,6 @@ static void blit_magic(int x, int y, int button_down)
 #endif
       }
     }
-    else if (cur_magic == MAGIC_FLIP)
-    {
-      /* Flip the canvas: */
-
-      for (yy = 0; yy < canvas->h; yy++)
-      {
-	src.x = 0;
-	src.y = yy;
-	src.w = canvas->w;
-	src.h = 1;
-
-	dest.x = 0;
-	dest.y = canvas->h - yy - 1;
-
-	SDL_BlitSurface(last, &src, canvas, &dest);
-      }
-
-
-      /* Flip starter, too! */
-
-      starter_flipped = !starter_flipped;
-
-      if (img_starter != NULL)
-	flip_starter();
-    }
-    else if (cur_magic == MAGIC_MIRROR)
-    {
-      /* Mirror-image the canvas: */
-
-      for (xx = 0; xx < canvas->w; xx++)
-      {
-	src.x = xx;
-	src.y = 0;
-	src.w = 1;
-	src.h = canvas->h;
-
-	dest.x = canvas->w - xx - 1;
-	dest.y = 0;
-
-	SDL_BlitSurface(last, &src, canvas, &dest);
-      }
-
-
-      /* Mirror starter, too! */
-
-      starter_mirrored = !starter_mirrored;
-
-      if (img_starter != NULL)
-	mirror_starter();
-    }
     else if (cur_magic == MAGIC_THIN || cur_magic == MAGIC_THICK)
     {
       SDL_LockSurface(last);
@@ -5361,6 +5150,8 @@ static void blit_magic(int x, int y, int button_down)
 #endif
   }
 }
+
+#endif
 
 
 /* Store canvas into undo buffer: */
@@ -7567,6 +7358,9 @@ static void setup(int argc, char *argv[])
   img_prev = loadimage(DATA_PREFIX "images/ui/prev.png");
   img_next = loadimage(DATA_PREFIX "images/ui/next.png");
 
+  img_mirror = loadimage(DATA_PREFIX "images/ui/mirror.png");
+  img_flip = loadimage(DATA_PREFIX "images/ui/flip.png");
+
   img_open = loadimage(DATA_PREFIX "images/ui/open.png");
   img_erase = loadimage(DATA_PREFIX "images/ui/erase.png");
   img_back = loadimage(DATA_PREFIX "images/ui/back.png");
@@ -8192,12 +7986,6 @@ static void draw_magic(void)
 {
   int magic, i, max, off_y;
   SDL_Rect dest;
-
-#if 0 // MAGIC_ME
-  // restore these to black (stamp and text controls borrow them)
-  SDL_BlitSurface(img_black, NULL, img_magics[MAGIC_FLIP], NULL);
-  SDL_BlitSurface(img_black, NULL, img_magics[MAGIC_MIRROR], NULL);
-#endif
 
 
   draw_image_title(TITLE_MAGIC, r_ttoolopt);
@@ -8825,7 +8613,6 @@ static void draw_stamps(void)
 
   if (!disable_stamp_controls)
   {
-#if 0 // MAGIC_ME
     /* Show mirror button: */
 
     dest.x = WINDOW_WIDTH - 96;
@@ -8851,12 +8638,12 @@ static void draw_stamps(void)
     }
     SDL_BlitSurface(button_body, NULL, screen, &dest);
 
-    dest.x = WINDOW_WIDTH - 96 + (48 - img_magics[MAGIC_MIRROR]->w) / 2;
+    dest.x = WINDOW_WIDTH - 96 + (48 - img_mirror->w) / 2;
     dest.y = (40 + ((5 + TOOLOFFSET / 2) * 48) +
-	      (48 - img_magics[MAGIC_MIRROR]->h) / 2);
+	      (48 - img_mirror->h) / 2);
 
-    SDL_BlitSurface(button_color, NULL, img_magics[MAGIC_MIRROR], NULL);
-    SDL_BlitSurface(img_magics[MAGIC_MIRROR], NULL, screen, &dest);
+    SDL_BlitSurface(button_color, NULL, img_mirror, NULL);
+    SDL_BlitSurface(img_mirror, NULL, screen, &dest);
 
     /* Show flip button: */
 
@@ -8883,14 +8670,12 @@ static void draw_stamps(void)
     }
     SDL_BlitSurface(button_body, NULL, screen, &dest);
 
-    dest.x = WINDOW_WIDTH - 48 + (48 - img_magics[MAGIC_FLIP]->w) / 2;
+    dest.x = WINDOW_WIDTH - 48 + (48 - img_flip->w) / 2;
     dest.y = (40 + ((5 + TOOLOFFSET / 2) * 48) +
-	      (48 - img_magics[MAGIC_FLIP]->h) / 2);
+	      (48 - img_flip->h) / 2);
 
-    SDL_BlitSurface(button_color, NULL, img_magics[MAGIC_FLIP], NULL);
-    SDL_BlitSurface(img_magics[MAGIC_FLIP], NULL, screen, &dest);
-
-#endif
+    SDL_BlitSurface(button_color, NULL, img_flip, NULL);
+    SDL_BlitSurface(img_flip, NULL, screen, &dest);
 
 
 #ifdef OLD_STAMP_GROW_SHRINK
@@ -11754,6 +11539,9 @@ static void cleanup(void)
 
   free_surface(&img_prev);
   free_surface(&img_next);
+
+  free_surface(&img_mirror);
+  free_surface(&img_flip);
 
   free_surface(&img_title_on);
   free_surface(&img_title_off);
@@ -16330,6 +16118,14 @@ int in_circle(int x, int y)
     return (0);
 }
 
+int in_circle_rad(int x, int y, int rad)
+{
+  if ((x * x) + (y * y) - (rad * rad) < 0)
+    return (1);
+  else
+    return (0);
+}
+
 int paintsound(int size)
 {
   if (SND_PAINT1 + (size / 12) >= SND_PAINT4)
@@ -16787,13 +16583,33 @@ void load_magic_plugins(void)
   DIR *d;
   struct dirent *f;
   char fname[512];
+  char objname[512];
+  char funcname[512];
 
   num_plugin_files = 0;
   num_magics = 0;
 
+#ifdef DEBUG
   printf("\n");
   printf("Loading magic plug-ins from %s\n", MAGIC_PREFIX);
   fflush(stdout);
+#endif
+
+  /* Set magic API hooks: */
+
+  magic_api_struct = (magic_api *) malloc(sizeof(magic_api));
+  magic_api_struct->tp_version = strdup(VER_VERSION);
+  magic_api_struct->data_directory = strdup(DATA_PREFIX);
+  magic_api_struct->update_progress_bar = update_progress_bar;
+  // FIXME: magic_api_struct->sRGB_to_linear_table = sRGB_to_linear_table;
+  // FIXME: magic_api_struct->linear_to_sRGB = linear_to_sRGB;
+  magic_api_struct->in_circle = in_circle_rad;
+  magic_api_struct->getpixel = getpixels[canvas->format->BytesPerPixel];
+  magic_api_struct->putpixel = putpixels[canvas->format->BytesPerPixel];
+  magic_api_struct->line = magic_line_func;
+  magic_api_struct->playsound = NULL; // FIXME
+  magic_api_struct->special_notify = special_notify;
+
 
   d = opendir(MAGIC_PREFIX);
 
@@ -16811,52 +16627,71 @@ void load_magic_plugins(void)
         {
 	  snprintf(fname, sizeof(fname), "%s%s", MAGIC_PREFIX, f->d_name);
 
+          /* Get just the name of the object (e.g., "negative"), w/o filename
+             extension: */
+
+	  strcpy(objname, f->d_name);
+          strcpy(strchr(objname, '.'), "");
+
+
 	  magic_handle[num_plugin_files] = SDL_LoadObject(fname);
 	  
           if (magic_handle[num_plugin_files] != NULL)
 	  {
+#ifdef DEBUG
             printf("loading: %s\n", fname);
             fflush(stdout);
+#endif
 
-	    magic_funcs[num_plugin_files].get_tool_count =
-	      SDL_LoadFunction(magic_handle[num_plugin_files],
+            snprintf(funcname, sizeof(funcname), "%s_%s", objname,
 			       "get_tool_count");
+	    magic_funcs[num_plugin_files].get_tool_count =
+	      SDL_LoadFunction(magic_handle[num_plugin_files], funcname);
 
-	    magic_funcs[num_plugin_files].get_name =
-	      SDL_LoadFunction(magic_handle[num_plugin_files],
+            snprintf(funcname, sizeof(funcname), "%s_%s", objname,
 			       "get_name");
+	    magic_funcs[num_plugin_files].get_name =
+	      SDL_LoadFunction(magic_handle[num_plugin_files], funcname);
 
-	    magic_funcs[num_plugin_files].get_icon =
-	      SDL_LoadFunction(magic_handle[num_plugin_files],
+            snprintf(funcname, sizeof(funcname), "%s_%s", objname,
 			       "get_icon");
+	    magic_funcs[num_plugin_files].get_icon =
+	      SDL_LoadFunction(magic_handle[num_plugin_files], funcname);
 
-	    magic_funcs[num_plugin_files].get_description =
-	      SDL_LoadFunction(magic_handle[num_plugin_files],
+            snprintf(funcname, sizeof(funcname), "%s_%s", objname,
 			       "get_description");
+	    magic_funcs[num_plugin_files].get_description =
+	      SDL_LoadFunction(magic_handle[num_plugin_files], funcname);
 
-	    magic_funcs[num_plugin_files].requires_colors =
-	      SDL_LoadFunction(magic_handle[num_plugin_files],
+            snprintf(funcname, sizeof(funcname), "%s_%s", objname,
 			       "requires_colors");
+	    magic_funcs[num_plugin_files].requires_colors =
+	      SDL_LoadFunction(magic_handle[num_plugin_files], funcname);
 
-	    magic_funcs[num_plugin_files].set_color =
-	      SDL_LoadFunction(magic_handle[num_plugin_files],
+            snprintf(funcname, sizeof(funcname), "%s_%s", objname,
 			       "set_color");
+	    magic_funcs[num_plugin_files].set_color =
+	      SDL_LoadFunction(magic_handle[num_plugin_files], funcname);
 
-	    magic_funcs[num_plugin_files].init =
-	      SDL_LoadFunction(magic_handle[num_plugin_files],
+            snprintf(funcname, sizeof(funcname), "%s_%s", objname,
 			       "init");
+	    magic_funcs[num_plugin_files].init =
+	      SDL_LoadFunction(magic_handle[num_plugin_files], funcname);
 
-	    magic_funcs[num_plugin_files].shutdown =
-	      SDL_LoadFunction(magic_handle[num_plugin_files],
+            snprintf(funcname, sizeof(funcname), "%s_%s", objname,
 			       "shutdown");
+	    magic_funcs[num_plugin_files].shutdown =
+	      SDL_LoadFunction(magic_handle[num_plugin_files], funcname);
 
-	    magic_funcs[num_plugin_files].click =
-	      SDL_LoadFunction(magic_handle[num_plugin_files],
+            snprintf(funcname, sizeof(funcname), "%s_%s", objname,
 			       "click");
+	    magic_funcs[num_plugin_files].click =
+	      SDL_LoadFunction(magic_handle[num_plugin_files], funcname);
 
-	    magic_funcs[num_plugin_files].drag =
-	      SDL_LoadFunction(magic_handle[num_plugin_files],
+            snprintf(funcname, sizeof(funcname), "%s_%s", objname,
 			       "drag");
+	    magic_funcs[num_plugin_files].drag =
+	      SDL_LoadFunction(magic_handle[num_plugin_files], funcname);
 
 #ifdef DEBUG
 	    printf("get_tool_count = 0x%x\n",
@@ -16898,13 +16733,13 @@ void load_magic_plugins(void)
 	    }
 	    else
 	    {
-	      res = magic_funcs[num_plugin_files].init();
+	      res = magic_funcs[num_plugin_files].init(magic_api_struct);
 
               if (res != 0)
-	        n = magic_funcs[num_plugin_files].get_tool_count();
+	        n = magic_funcs[num_plugin_files].get_tool_count(magic_api_struct);
               else
               {
-                magic_funcs[num_plugin_files].shutdown();
+                magic_funcs[num_plugin_files].shutdown(magic_api_struct);
                 n = 0;
               }
 
@@ -16919,13 +16754,17 @@ void load_magic_plugins(void)
               {
 		for (i = 0; i < n; i++)
 		{
-		  magic_names[num_magics] = magic_funcs[num_plugin_files].get_name(i);
-		  magic_tips[num_magics] = magic_funcs[num_plugin_files].get_description(i);
-		  magic_colors[num_magics] = magic_funcs[num_plugin_files].requires_colors(i);
+		  magic_idx[num_magics] = i;
+		  magic_handle_idx[num_magics] = num_plugin_files;
+		  magic_names[num_magics] = magic_funcs[num_plugin_files].get_name(magic_api_struct, i);
+		  magic_tips[num_magics] = magic_funcs[num_plugin_files].get_description(magic_api_struct, i);
+		  magic_colors[num_magics] = magic_funcs[num_plugin_files].requires_colors(magic_api_struct, i);
 
-		  img_magics[num_magics] = magic_funcs[num_plugin_files].get_icon(i);
+		  img_magics[num_magics] = magic_funcs[num_plugin_files].get_icon(magic_api_struct, i);
 
-		  printf("-- %s\n", magic_names[i]);
+#ifdef DEBUG
+		  printf("-- %s\n", magic_names[num_magics]);
+#endif
 
 		  num_magics++;
 		}
@@ -16947,11 +16786,151 @@ void load_magic_plugins(void)
     closedir(d);
   }
 
+#ifdef DEBUG
   printf("Loaded %d magic tools from %d plug-in files\n", num_magics,
 	 num_plugin_files);
   printf("\n");
   fflush(stdout);
+#endif
 
   /* FIXME: Sort it? -bjk 2007.07.03 */
 }
 
+void update_progress_bar(void)
+{
+  show_progress_bar(screen);
+}
+
+void magic_line_func(int which, SDL_Surface * canvas, SDL_Surface * last,
+                     int x1, int y1, int x2, int y2, int step,
+		     void (*cb)(void *, int, SDL_Surface *, SDL_Surface *,
+				int, int))
+{
+  int dx, dy, y;
+  int orig_x1, orig_y1, orig_x2, orig_y2, tmp;
+  float m, b;
+  int cnt;
+
+  orig_x1 = x1;
+  orig_y1 = y1;
+
+  orig_x2 = x2;
+  orig_y2 = y2;
+
+
+  dx = x2 - x1;
+  dy = y2 - y1;
+
+  cnt = step - 1;
+
+  if (dx != 0)
+  {
+    m = ((float) dy) / ((float) dx);
+    b = y1 - m * x1;
+
+    if (x2 >= x1)
+      dx = 1;
+    else
+      dx = -1;
+
+
+    while (x1 != x2)
+    {
+      y1 = m * x1 + b;
+      y2 = m * (x1 + dx) + b;
+
+      if (y1 > y2)
+      {
+	for (y = y1; y >= y2; y--)
+        {
+          cnt = (cnt + 1) % step;
+          if (cnt == 0)
+            cb((void *) magic_api_struct, which, canvas, last, x1, y);
+        }
+      }
+      else
+      {
+	for (y = y1; y <= y2; y++)
+        {
+          cnt = (cnt + 1) % step;
+          if (cnt == 0)
+            cb((void *) magic_api_struct, which, canvas, last, x1, y);
+        }
+      }
+
+      x1 = x1 + dx;
+    }
+  }
+  else
+  {
+    if (y1 > y2)
+    {
+      for (y = y1; y >= y2; y--)
+      {
+        cnt = (cnt + 1) % step;
+        if (cnt == 0)
+          cb((void *) magic_api_struct, which, canvas, last, x1, y);
+      }
+    }
+    else
+    {
+      for (y = y1; y <= y2; y++)
+      {
+        cnt = (cnt + 1) % step;
+        if (cnt == 0)
+          cb((void *) magic_api_struct, which, canvas, last, x1, y);
+      }
+    }
+  }
+
+  if (orig_x1 > orig_x2)
+  {
+    tmp = orig_x1;
+    orig_x1 = orig_x2;
+    orig_x2 = tmp;
+  }
+
+  if (orig_y1 > orig_y2)
+  {
+    tmp = orig_y1;
+    orig_y1 = orig_y2;
+    orig_y2 = tmp;
+  }
+
+  /* FIXME: Set and return an update rect? */
+}
+
+
+/* Handle special things that some magic tools do that
+   need to affect more than just the current canvas: */
+
+void special_notify(int flags)
+{
+  int tmp_int;
+
+  tmp_int = (cur_undo - 1) % NUM_UNDO_BUFS;
+
+  if (flags & SPECIAL_MIRROR)
+  {
+    /* Mirror starter, too! */
+
+    starter_mirrored = !starter_mirrored;
+
+    if (img_starter != NULL)
+      mirror_starter();
+
+    undo_starters[tmp_int] = UNDO_STARTER_MIRRORED;
+  }
+
+  if (flags & SPECIAL_FLIP)
+  {
+    /* Flip starter, too! */
+
+    starter_flipped = !starter_flipped;
+
+    if (img_starter != NULL)
+      flip_starter();
+    
+    undo_starters[tmp_int] = UNDO_STARTER_FLIPPED;
+  }
+}

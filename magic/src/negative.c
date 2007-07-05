@@ -1,111 +1,106 @@
 #include <stdio.h>
 #include <string.h>
+#include <libintl.h>
+#include "tp_magic_api.h"
 #include "SDL_image.h"
-#include "magic_helpers.h"
 
-void init()
+// No setup required:
+int negative_init(magic_api * api)
 {
-  printf("negative plugin initializing\n");
-}
-
-int get_tool_count(void)
-{
-  printf("negative tool reporting tool count: 1\n");
   return(1);
 }
 
-SDL_Surface * get_icon(int which)
+// Only one tool:
+int negative_get_tool_count(magic_api * api)
 {
-  printf("Loading icon: " DATA_PREFIX "/images/magic/negative.png\n");
-  return(IMG_Load(DATA_PREFIX "/images/magic/negative.png"));
+  return(1);
 }
 
-char * get_name(int which)
+// Load our icon:
+SDL_Surface * negative_get_icon(magic_api * api, int which)
 {
-  /* Only 1 tool; ignoring 'which' */
+  char fname[1024];
 
+  snprintf(fname, sizeof(fname), "%s/images/magic/negative.png",
+	   api->data_directory);
+  return(IMG_Load(fname));
+}
+
+// Return our name, localized:
+char * negative_get_name(magic_api * api, int which)
+{
   return(strdup(gettext("Negative")));
 }
 
-char * get_description(int which)
+// Return our description, localized:
+char * negative_get_description(magic_api * api, int which)
 {
-  /* Only 1 tool; ignoring 'which' */
-
-  return(strdup(gettext("Click and move the mouse around to draw a negative.")));
+  return(strdup(
+         gettext("Click and move the mouse around to draw a negative.")));
 }
 
-void drag(int which, SDL_Surface * canvas, SDL_Surface * last, int ox, int oy, int x, int y);
-
-void click(int which, SDL_Surface * canvas, SDL_Surface * last, int x, int y)
-{
-/*
-  SDL_Rect src, dest;
-
-  src.x = x - 12;
-  src.y = y - 12;
-  src.w = 16;
-  src.h = 16;
-
-  dest.x = x - 8;
-  dest.y = y - 8;
-  dest.w = 16;
-  dest.h = 16;
-
-  SDL_BlitSurface(last, &src, canvas, &dest);
-*/
-
-  drag(which, canvas, last, x, y, x, y);
-}
-
-void drag(int which, SDL_Surface * canvas, SDL_Surface * last, int ox, int oy, int x, int y)
+// Callback that does the negative color effect on a circle centered around x,y
+void do_negative(void * ptr, int which,
+	         SDL_Surface * canvas, SDL_Surface * last,
+	         int x, int y)
 {
   int xx, yy;
   Uint8 r, g, b;
-  void (*putpixel) (SDL_Surface *, int, int, Uint32) =
-    MAGIC_putpixels[canvas->format->BytesPerPixel];
-  Uint32(*getpixel_last) (SDL_Surface *, int, int);
-
-  getpixel_last = MAGIC_getpixels[last->format->BytesPerPixel];
-
-
-  SDL_LockSurface(last);
-  SDL_LockSurface(canvas);
+  magic_api * api = (magic_api *) ptr;
 
   for (yy = y - 16; yy < y + 16; yy++)
   {
     for (xx = x - 16; xx < x + 16; xx++)
     {
-      if (MAGIC_in_circle(xx - x, yy - y, 16))
+      if (api->in_circle(xx - x, yy - y, 16))
       {
-        SDL_GetRGB(getpixel_last(last, xx, yy), last->format, &r, &g, &b);
+        SDL_GetRGB(api->getpixel(last, xx, yy), last->format, &r, &g, &b);
 
         r = 0xFF - r;
         g = 0xFF - g;
         b = 0xFF - b;
 
-        putpixel(canvas, xx, yy, SDL_MapRGB(canvas->format, r, g, b));
+        api->putpixel(canvas, xx, yy, SDL_MapRGB(canvas->format, r, g, b));
       }
     }
   }
+}
+
+// Ask Tux Paint to call our 'do_negative()' callback over a line
+void negative_drag(magic_api * api, int which, SDL_Surface * canvas,
+	           SDL_Surface * last, int ox, int oy, int x, int y)
+{
+  SDL_LockSurface(last);
+  SDL_LockSurface(canvas);
+
+  api->line(which, canvas, last, ox, oy, x, y, 1, do_negative);
   
   SDL_UnlockSurface(canvas);
   SDL_UnlockSurface(last);
 }
 
-void shutdown()
+// Ask Tux Paint to call our 'do_negative()' callback at a single point
+void negative_click(magic_api * api, int which,
+	            SDL_Surface * canvas, SDL_Surface * last,
+	            int x, int y)
 {
-  printf("negative plugin shutting down\n");
+  negative_drag(api, which, canvas, last, x, y, x, y);
 }
 
-void set_color(Uint8 r, Uint8 g, Uint8 b)
+
+// No setup happened:
+void negative_shutdown(magic_api * api)
 {
-  /* Doesn't use color; ignoring */
 }
 
-int requires_colors(int which)
+// We don't use colors
+void negative_set_color(magic_api * api, Uint8 r, Uint8 g, Uint8 b)
 {
-  /* (Only 1 tool; ignoring 'which') */
+}
 
-  return 0;  // Don't need a color palette
+// We don't use colors
+int negative_requires_colors(magic_api * api, int which)
+{
+  return 0;
 }
 
