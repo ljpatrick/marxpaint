@@ -33,6 +33,9 @@ $Id$
     * Italian
       Flavio "Iron Bishop" Pastore <ironbishop@fsfe.org>
 
+    * South African English
+      Caroline Ford <caroline.ford.work@googlemail.com>
+
 
 2007.July.1 (0.9.17)
 
