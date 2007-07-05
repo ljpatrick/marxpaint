@@ -4,11 +4,11 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: TuxPaint 0.9.14\n"
+"Project-Id-Version: TuxPaint 0.9.17\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2007-05-09 00:32-0700\n"
-"PO-Revision-Date: 2006-09-18 16:44+0100\n"
-"Last-Translator: Flavio Pastore <ironbishop_fsfe_org>\n"
+"PO-Revision-Date: 2007-07-02 22:03+0100\n"
+"Last-Translator: Flavio Pastore <ironbishop@gmail.com>\n"
 "Language-Team: Italian <it@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -149,16 +149,16 @@ msgid "Good job!"
 msgstr "Ottimo lavoro!"
 
 msgid "English"
-msgstr ""
+msgstr "Inglese"
 
 msgid "Hiragana"
-msgstr ""
+msgstr "Hiragana"
 
 msgid "Katakana"
-msgstr ""
+msgstr "Katakana"
 
 msgid "Hangul"
-msgstr ""
+msgstr "Hangul"
 
 msgid "Fill"
 msgstr "Riempi"
@@ -224,7 +224,7 @@ msgid "Click and move to draw small bricks."
 msgstr "Fai click per disegnare mattoni piccoli."
 
 msgid "You can draw in rainbow colors!"
-msgstr "Puoi disegnare con i colori dell'arcobleno!"
+msgstr "Puoi disegnare con i colori dell'arcobaleno!"
 
 msgid "Click and move to draw sparkles."
 msgstr "Fai click per disegnare scintille."
@@ -241,8 +241,7 @@ msgstr "Fai click per schiarire il disegno."
 msgid "Click and move to darken the colors."
 msgstr "Fai click per scurire il disegno."
 
-msgid ""
-"Click and move the mouse around to turn the picture into a chalk drawing."
+msgid "Click and move the mouse around to turn the picture into a chalk drawing."
 msgstr "Fai click per ottenere un effetto “gessetto”."
 
 msgid "Click and move the mouse around to make the picture blocky."
@@ -293,11 +292,8 @@ msgstr "Un quadrato è un rettangolo con i lati uguali."
 msgid "A rectangle has four sides and four right angles."
 msgstr "Un rettangolo ha quattro lati e quatto angoli retti."
 
-msgid ""
-"A circle is a curve where all points have the same distance from the centre."
-msgstr ""
-"Un cerchio è una curva dove tutti i punti hanno la stessa distanza dal "
-"centro."
+msgid "A circle is a curve where all points have the same distance from the centre."
+msgstr "Un cerchio è una curva dove tutti i punti hanno la stessa distanza dal centro."
 
 msgid "An ellipse is a stretched circle."
 msgstr "Un'ellisse è un cerchio schiacciato."
@@ -381,16 +377,10 @@ msgid "Pick a picture to stamp around your drawing."
 msgstr "Scegli un timbro da inserire nel disegno."
 
 msgid "Click to start drawing a line. Let go to complete it."
-msgstr ""
-"Fai clic per iniziare una linea. Lascia andare il tasto per completarla."
+msgstr "Fai clic per iniziare una linea. Lascia andare il tasto per completarla."
 
-msgid ""
-"Pick a shape. Click to pick the center, drag, then let go when it is the "
-"size you want. Move around to rotate it, and click to draw it."
-msgstr ""
-"Scegli una forma. Fai click per il scegliere il centro, trascina, lascia "
-"andare il tasto per scegliere la grandezza. Muovi il mouse per ruotare la "
-"forma, fai click per disegnarla."
+msgid "Pick a shape. Click to pick the center, drag, then let go when it is the size you want. Move around to rotate it, and click to draw it."
+msgstr "Scegli una forma. Fai click per il scegliere il centro, trascina, lascia andare il tasto per scegliere la grandezza. Muovi il mouse per ruotare la forma, fai click per disegnarla."
 
 msgid "Choose a style of text. Click on your drawing and you can start typing."
 msgstr "Scegli uno stile per il testo. Fai click sul disegno per scrivere."
@@ -471,7 +461,7 @@ msgid "No, take me back!"
 msgstr "No, torna indietro!"
 
 msgid "If you quit, you’ll lose your picture! Save it?"
-msgstr "Uscendo adesso, il disegno verrà cancellato! Vuoi salvarlo?"
+msgstr "Uscendo adesso, il disegno verrà perso! Vuoi salvarlo?"
 
 msgid "Yes, save it!"
 msgstr "Sì, salva!"
@@ -590,3 +580,4 @@ msgstr "Programma di disegno"
 
 msgid "Tux Paint"
 msgstr "Tux Paint"
+

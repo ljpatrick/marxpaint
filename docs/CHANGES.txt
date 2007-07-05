@@ -27,6 +27,9 @@ $Id$
     * Dutch
       Freek de Kruijf <f.de.kruijf@hetnet.nl>
 
+    * Italian
+      Flavio "Iron Bishop" Pastore <ironbishop@fsfe.org>
+
 
 2007.July.1 (0.9.17)
 
