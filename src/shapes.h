@@ -180,9 +180,9 @@ const char *const shape_tips[NUM_SHAPES] = {
   gettext_noop("A rectangle has four sides and four right angles."),
   gettext_noop("A rectangle has four sides and four right angles."),
   gettext_noop
-    ("A circle is a curve where all points have the same distance from the centre."),
+    ("A circle is a curve where all points have the same distance from the center."),
   gettext_noop
-    ("A circle is a curve where all points have the same distance from the centre."),
+    ("A circle is a curve where all points have the same distance from the center."),
   gettext_noop("An ellipse is a stretched circle."),
   gettext_noop("An ellipse is a stretched circle."),
   gettext_noop("A triangle has three sides."),

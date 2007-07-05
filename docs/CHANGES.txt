@@ -24,6 +24,9 @@ $Id$
 
   * Translation Updates:
     --------------------
+    * British English
+      Caroline Ford <caroline.ford.work@googlemail.com>
+
     * Dutch
       Freek de Kruijf <f.de.kruijf@hetnet.nl>
 
