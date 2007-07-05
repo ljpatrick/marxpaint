@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint-gl\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-05-09 00:32-0700\n"
+"POT-Creation-Date: 2007-07-04 23:03-0700\n"
 "PO-Revision-Date: 2006-05-12 13:47+0200\n"
 "Last-Translator: Leandro Regueiro <leandro.regueiro@gmail.com>\n"
 "Language-Team: Galician <gpul-traduccion@ceu.fi.udc.es>\n"
@@ -281,8 +281,9 @@ msgstr "Un cadrado é un rectángulo cos catro lados iguais."
 msgid "A rectangle has four sides and four right angles."
 msgstr "Un rectángulo ten catro lados e catro ángulos rectos."
 
+#, fuzzy
 msgid ""
-"A circle is a curve where all points have the same distance from the centre."
+"A circle is a curve where all points have the same distance from the center."
 msgstr ""
 "Un circulo é unha curva na que os puntos están á mesma distancia do centro."
 
@@ -491,6 +492,12 @@ msgstr "Non, non o elimines!"
 
 msgid "Remember to use the left mouse button!"
 msgstr "Lembra usar o botón esquerdo do rato!"
+
+msgid "Sound muted."
+msgstr ""
+
+msgid "Sound unmuted."
+msgstr ""
 
 msgid "Please wait..."
 msgstr "Por favor agarda..."

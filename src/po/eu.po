@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TuxPaint \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-05-09 00:32-0700\n"
+"POT-Creation-Date: 2007-07-04 23:03-0700\n"
 "PO-Revision-Date: 2006-11-30 16:30+0200\n"
 "Last-Translator: Juan Irigoien <juanirigoien@gmail.com>\n"
 "Language-Team: basque <juanirigoien@gmail.com>\n"
@@ -275,8 +275,9 @@ msgstr "Laukiaren lau ertzek luzera berdina daukate"
 msgid "A rectangle has four sides and four right angles."
 msgstr "Lauki zuzenak lau alde eta lau angelu zuzen ditu."
 
+#, fuzzy
 msgid ""
-"A circle is a curve where all points have the same distance from the centre."
+"A circle is a curve where all points have the same distance from the center."
 msgstr "Zirkuluaren puntu guztiek distatzia berdina daukate erdiraino."
 
 msgid "An ellipse is a stretched circle."
@@ -486,6 +487,12 @@ msgstr "Ez, ez ezabatu"
 
 msgid "Remember to use the left mouse button!"
 msgstr "Gogora ezazu saguaren ezkerreko botoia erabiltzea!"
+
+msgid "Sound muted."
+msgstr ""
+
+msgid "Sound unmuted."
+msgstr ""
 
 msgid "Please wait..."
 msgstr "Itxaron, mesedez..."

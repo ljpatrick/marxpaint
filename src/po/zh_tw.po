@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint 0.9.17\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-05-09 00:32-0700\n"
+"POT-Creation-Date: 2007-07-04 23:03-0700\n"
 "PO-Revision-Date: 2007-05-16 19:56+0800\n"
 "Last-Translator: Wei-Lun Chao <chaoweilun@gmail.com>\n"
 "Language-Team: Chinese (traditional) <zh-l10n@linux.org.tw>\n"
@@ -224,7 +224,8 @@ msgstr "按著並移動滑鼠來讓顏色變淺。"
 msgid "Click and move to darken the colors."
 msgstr "按著並移動滑鼠來讓顏色變深。"
 
-msgid "Click and move the mouse around to turn the picture into a chalk drawing."
+msgid ""
+"Click and move the mouse around to turn the picture into a chalk drawing."
 msgstr "按著並移動滑鼠來產生粉筆的痕跡。"
 
 msgid "Click and move the mouse around to make the picture blocky."
@@ -275,7 +276,9 @@ msgstr "正方形是四邊一樣長的長方形。"
 msgid "A rectangle has four sides and four right angles."
 msgstr "長方形有四個邊和四個直角。"
 
-msgid "A circle is a curve where all points have the same distance from the centre."
+#, fuzzy
+msgid ""
+"A circle is a curve where all points have the same distance from the center."
 msgstr "圓形是每一點都和圓心保持相同距離的曲線。"
 
 msgid "An ellipse is a stretched circle."
@@ -360,8 +363,12 @@ msgstr "挑選一個圖章來印在你的畫布上。"
 msgid "Click to start drawing a line. Let go to complete it."
 msgstr "按一下滑鼠就可以開始畫一條線. 讓我們來完成它吧!"
 
-msgid "Pick a shape. Click to pick the center, drag, then let go when it is the size you want. Move around to rotate it, and click to draw it."
-msgstr "挑選一個形狀。點一下來決定形狀的中心位置，然後持續拖拉它到你要的大小。繞著中心移動來旋轉它，然後點一下把它畫下來。"
+msgid ""
+"Pick a shape. Click to pick the center, drag, then let go when it is the "
+"size you want. Move around to rotate it, and click to draw it."
+msgstr ""
+"挑選一個形狀。點一下來決定形狀的中心位置，然後持續拖拉它到你要的大小。繞著中"
+"心移動來旋轉它，然後點一下把它畫下來。"
 
 msgid "Choose a style of text. Click on your drawing and you can start typing."
 msgstr "選擇文字的樣子。在畫布上點一下就可以開始輸入。"
@@ -478,6 +485,12 @@ msgstr "不，別刪除它!"
 
 msgid "Remember to use the left mouse button!"
 msgstr "記得使用滑鼠的左邊按鍵!"
+
+msgid "Sound muted."
+msgstr ""
+
+msgid "Sound unmuted."
+msgstr ""
 
 msgid "Please wait..."
 msgstr "請等一下…"

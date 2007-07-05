@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: lv\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-09-10 11:18-0700\n"
+"POT-Creation-Date: 2007-07-04 23:03-0700\n"
 "PO-Revision-Date: 2007-05-14 18:13-0700\n"
 "Last-Translator: Raivis Strogonovs <raivucis@gmail.com>\n"
 "Language-Team: Valoda <raivucis@gmail.com>\n"
@@ -129,6 +129,18 @@ msgstr "Tā tik turpini!"
 msgid "Good job!"
 msgstr "Labs darbs!"
 
+msgid "English"
+msgstr ""
+
+msgid "Hiragana"
+msgstr ""
+
+msgid "Katakana"
+msgstr ""
+
+msgid "Hangul"
+msgstr ""
+
 msgid "Fill"
 msgstr "Piepildi"
 
@@ -184,7 +196,9 @@ msgid "Click in the picture to fill that area with color."
 msgstr "Nospied uz bildi, lai to piepildītu ar krāsu."
 
 msgid "Click and move to draw grass. Don’t forget the dirt!"
-msgstr "Nospied, pieturi peles pogu un velc peli lai zīmētu zāli. Neaizmirsti pievienot dubļus!"
+msgstr ""
+"Nospied, pieturi peles pogu un velc peli lai zīmētu zāli. Neaizmirsti "
+"pievienot dubļus!"
 
 msgid "Click and move to draw large bricks."
 msgstr "Nospied, pieturi peles pogu un velc peli lai zīmētu lielus ķieģeļus."
@@ -199,7 +213,8 @@ msgid "Click and move to draw sparkles."
 msgstr "Nospied, pieturi peles pogu un velc peli lai zīmētu spīdeklīšus."
 
 msgid "Click and move the mouse around to blur the picture."
-msgstr "Nospied, pieturi peles pogu un velc peli lai bildi padarītu miglaināku."
+msgstr ""
+"Nospied, pieturi peles pogu un velc peli lai bildi padarītu miglaināku."
 
 msgid "Click and move the mouse around to smudge the picture."
 msgstr "Nospied, pieturi peles pogu un velc peli lai notraipītu zīmējumu."
@@ -212,13 +227,16 @@ msgstr "Nospied, pieturi peles pogu un velc peli lai satumšinātu bildi."
 
 msgid ""
 "Click and move the mouse around to turn the picture into a chalk drawing."
-msgstr "Nospied, pieturi peles pogu un velc peli lai zīmējums izskatītos kā ar krītu zīmētu"
+msgstr ""
+"Nospied, pieturi peles pogu un velc peli lai zīmējums izskatītos kā ar krītu "
+"zīmētu"
 
 msgid "Click and move the mouse around to make the picture blocky."
 msgstr "Nospied, pieturi peles pogu un velc peli lai bilde būtu klucīši."
 
 msgid "Click and move the mouse around to draw a negative."
-msgstr "Nospied, pieturi peles pogu un velc peli lai zīmējumu padarītu negatīvu."
+msgstr ""
+"Nospied, pieturi peles pogu un velc peli lai zīmējumu padarītu negatīvu."
 
 msgid "Click and move the mouse around to change the picture’s color."
 msgstr "Nospied, pieturi peles pogu un velc peli lai zīmējumā mainītu krāsas."
@@ -227,7 +245,8 @@ msgid "Click and move the mouse around to make the picture drip."
 msgstr "Nospied, pieturi peles pogu un velc peli lai zīmējums notecētu."
 
 msgid "Click and move the mouse around to turn the picture into a cartoon."
-msgstr "Nospied, pieturi peles pogu un velc peli lai zīmējums izskatitos kā multene."
+msgstr ""
+"Nospied, pieturi peles pogu un velc peli lai zīmējums izskatitos kā multene."
 
 msgid "Click to make a mirror image."
 msgstr "Nospied peli uz zīmējumu lai to pārvērstu spoguļskatā."
@@ -262,9 +281,12 @@ msgstr "Kvadrāts ir figūra ar četrām vienādām malām."
 msgid "A rectangle has four sides and four right angles."
 msgstr "Taisnstūrim visi četri leņķi ir taisni."
 
+#, fuzzy
 msgid ""
-"A circle is a curve where all points have the same distance from the centre."
-msgstr "Riņķis ir aplis kuram no jebkurienes velkot taisni uz centru, taisnes ir vienādas."
+"A circle is a curve where all points have the same distance from the center."
+msgstr ""
+"Riņķis ir aplis kuram no jebkurienes velkot taisni uz centru, taisnes ir "
+"vienādas."
 
 msgid "An ellipse is a stretched circle."
 msgstr "Elipse ir izstiepts riņķis."
@@ -351,8 +373,10 @@ msgstr "Nospied peli lai sāktu zīmēt līniju. Atlaid vaļā lai to pabeigtu"
 msgid ""
 "Pick a shape. Click to pick the center, drag, then let go when it is the "
 "size you want. Move around to rotate it, and click to draw it."
-msgstr "Izvēlies formu. Nospied peli lai paņemtu centru, velc, tad laid vaļā kad zīmējums ir "
-"izmērā kādā tu viņu gribi. Kustini apkārt lai to pagrieztu, un nopsied peli lai to uzzīmetu."
+msgstr ""
+"Izvēlies formu. Nospied peli lai paņemtu centru, velc, tad laid vaļā kad "
+"zīmējums ir izmērā kādā tu viņu gribi. Kustini apkārt lai to pagrieztu, un "
+"nopsied peli lai to uzzīmetu."
 
 msgid "Choose a style of text. Click on your drawing and you can start typing."
 msgstr "Izvēlies teksta stilu. Nospied ar peli uz zīmējumu."
@@ -469,6 +493,12 @@ msgstr "Nē, nedzēs, traks vai?!"
 
 msgid "Remember to use the left mouse button!"
 msgstr "Atceries, lieto kreiso peles pogu!"
+
+msgid "Sound muted."
+msgstr ""
+
+msgid "Sound unmuted."
+msgstr ""
 
 msgid "Please wait..."
 msgstr "Lūdzu uzgaidi..."

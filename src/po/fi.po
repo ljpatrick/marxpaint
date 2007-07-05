@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: fi\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-05-09 00:32-0700\n"
+"POT-Creation-Date: 2007-07-04 23:03-0700\n"
 "PO-Revision-Date: 2006-05-14 12:35+0300\n"
 "Last-Translator: Niko Lewman <niko.lewman@edu.hel.fi>\n"
 "Language-Team: Finnisf\n"
@@ -288,8 +288,9 @@ msgstr "Suorakaiteessa on neljä sivua."
 msgid "A rectangle has four sides and four right angles."
 msgstr "Suorakaiteessa on neljä sivua."
 
+#, fuzzy
 msgid ""
-"A circle is a curve where all points have the same distance from the centre."
+"A circle is a curve where all points have the same distance from the center."
 msgstr ""
 "Ympyrä on kaari, jonka kaikki pisteet ovat yhtä kaukana keskipisteestä."
 
@@ -505,6 +506,12 @@ msgstr "Ei, älä pyyhi sitä!"
 
 msgid "Remember to use the left mouse button!"
 msgstr "Muista käyttää hiiren vasenta korvaa!"
+
+msgid "Sound muted."
+msgstr ""
+
+msgid "Sound unmuted."
+msgstr ""
 
 msgid "Please wait..."
 msgstr "Odota, ole hyvä..."

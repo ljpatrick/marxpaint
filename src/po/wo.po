@@ -1,12 +1,13 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2007-07-04 23:03-0700\n"
 "PO-Revision-Date: 2007-07-04 11:24-0000\n"
 "Last-Translator: Haby Diallo <haby42@yahoo.fr>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Poedit-Language: Wolof\n"
 "X-Poedit-Country: SENEGAL\n"
@@ -14,10 +15,12 @@ msgstr ""
 msgid "Black!"
 msgstr "Ñuul!"
 
-msgid "Dark grey! Some people spell it âdark grayâ."
+#, fuzzy
+msgid "Dark grey! Some people spell it “dark gray”."
 msgstr "Doomutal bu dër!"
 
-msgid "Light grey! Some people spell it âlight grayâ."
+#, fuzzy
+msgid "Light grey! Some people spell it “light gray”."
 msgstr "Doomutal bu xëc wex!"
 
 msgid "White!"
@@ -125,6 +128,18 @@ msgstr "Gorgorlul !"
 msgid "Good job!"
 msgstr "Sa ligeey rafet na !"
 
+msgid "English"
+msgstr ""
+
+msgid "Hiragana"
+msgstr ""
+
+msgid "Katakana"
+msgstr ""
+
+msgid "Hangul"
+msgstr ""
+
 msgid "Fill"
 msgstr "Feesal"
 
@@ -179,8 +194,10 @@ msgstr "Këpp"
 msgid "Click in the picture to fill that area with color."
 msgstr "Bëssël ci natal bi soko bëge pentur fi nga tan ak kulor bi."
 
-msgid "Click and move to draw grass. Donât forget the dirt!"
-msgstr "Bëssël te jalale ak jinax bi so bëge pentur ñax. Bul fate yok pënd mi !"
+#, fuzzy
+msgid "Click and move to draw grass. Don’t forget the dirt!"
+msgstr ""
+"Bëssël te jalale ak jinax bi so bëge pentur ñax. Bul fate yok pënd mi !"
 
 msgid "Click and move to draw large bricks."
 msgstr "Bëssël te jalale ak jinax bi so buge pentur ay mul yu mak."
@@ -206,7 +223,8 @@ msgstr "Bëssël te jalale ak jinax bi ngir wañi lerayu kulor yi."
 msgid "Click and move to darken the colors."
 msgstr "Bëssël te jalale ak jinax bi ngir wañi lerayu culor yi."
 
-msgid "Click and move the mouse around to turn the picture into a chalk drawing."
+msgid ""
+"Click and move the mouse around to turn the picture into a chalk drawing."
 msgstr "Bëssël te jalale ak jinax bi ngir sopi natal bi ak kare."
 
 msgid "Click and move the mouse around to make the picture blocky."
@@ -215,7 +233,8 @@ msgstr "Bëssël te jalale ak jinax bi ngir sopi natal bi ay sam."
 msgid "Click and move the mouse around to draw a negative."
 msgstr "Bëssël te jalale ak jinax bi ngir am natal bu lerul."
 
-msgid "Click and move the mouse around to change the pictureâs color."
+#, fuzzy
+msgid "Click and move the mouse around to change the picture’s color."
 msgstr "Bëssël te jalale ak jinax ngir sopi so kuloru natal bi."
 
 msgid "Click and move the mouse around to make the picture drip."
@@ -257,8 +276,12 @@ msgstr "Kare ap ñennt koñ bu am ñennt wet yu tolo la."
 msgid "A rectangle has four sides and four right angles."
 msgstr "Ñennt koñ dafa am ñennt wet ak ñennt koñ yu jub."
 
-msgid "A circle is a curve where all points have the same distance from the centre."
-msgstr "Wërngël ap rëd bu wër la bu am benn tomb si digg bi te yenen tomb yu ko wër yëpp a tolo si mome."
+#, fuzzy
+msgid ""
+"A circle is a curve where all points have the same distance from the center."
+msgstr ""
+"Wërngël ap rëd bu wër la bu am benn tomb si digg bi te yenen tomb yu ko wër "
+"yëpp a tolo si mome."
 
 msgid "An ellipse is a stretched circle."
 msgstr "Elipse ap wërngël bu ñu xëëc la."
@@ -342,8 +365,12 @@ msgstr "Tanal benn natal bu ngay yok ci sa natal."
 msgid "Click to start drawing a line. Let go to complete it."
 msgstr "Bëssëll ngir rëd. Demal ngir motali ko."
 
-msgid "Pick a shape. Click to pick the center, drag, then let go when it is the size you want. Move around to rotate it, and click to draw it."
-msgstr "Tanal benn melo. Bëssëll ci digg bi, tannal fo kay tek ak nu muy tooll te baña bayi bëss bi, wengal ko, nga bëss so ko bëgge rëd."
+msgid ""
+"Pick a shape. Click to pick the center, drag, then let go when it is the "
+"size you want. Move around to rotate it, and click to draw it."
+msgstr ""
+"Tanal benn melo. Bëssëll ci digg bi, tannal fo kay tek ak nu muy tooll te "
+"baña bayi bëss bi, wengal ko, nga bëss so ko bëgge rëd."
 
 msgid "Choose a style of text. Click on your drawing and you can start typing."
 msgstr "Tanal melo bataxal bi. Bëss ci sa natal te nga dor binde sa bataxal."
@@ -368,15 +395,17 @@ msgid "You now have a blank sheet to draw on!"
 msgstr "Am nga kait bu wex ngir rëd!"
 
 #. Open
-msgid "Openâ¦"
-msgstr "Ubbil.."
+#, fuzzy
+msgid "Open…"
+msgstr "Ubbi"
 
 #. Save
 msgid "Your image has been saved!"
 msgstr "Deñc nañu sa natal!"
 
 #. Print
-msgid "Printingâ¦"
+#, fuzzy
+msgid "Printing…"
 msgstr "Sotilu.."
 
 #. Quit
@@ -392,7 +421,8 @@ msgstr "Bul bayi butoŋ bi ngir xëc melo bi."
 msgid "Move the mouse to rotate the shape. Click to draw it."
 msgstr "Yengalal jinax bi ngir wëlbati melo bi. Bëssël ngir rëd."
 
-msgid "OK thenâ¦ Letâs keep drawing this one!"
+#, fuzzy
+msgid "OK then… Let’s keep drawing this one!"
 msgstr "Baxna! leeggi ñu motali suñu natal!"
 
 #. FIXME: Move elsewhere!!!
@@ -405,7 +435,8 @@ msgstr "Waaw, ñu dem ci!"
 msgid "No, take me back!"
 msgstr "Deedeet, ñu delu ci!"
 
-msgid "If you quit, youâll lose your picture! Save it?"
+#, fuzzy
+msgid "If you quit, you’ll lose your picture! Save it?"
 msgstr "So baye, nga ñak sa natal ! Da nga ko bëgg deñc lu?"
 
 msgid "Yes, save it!"
@@ -417,7 +448,8 @@ msgstr "Deedeet, jaru ko!"
 msgid "Save your picture first?"
 msgstr "Da ngay deñc lu sa natal ba pare?"
 
-msgid "Canât open that picture!"
+#, fuzzy
+msgid "Can’t open that picture!"
 msgstr "Mënuma ubbi natal bi!"
 
 msgid "OK"
@@ -429,7 +461,7 @@ msgstr "Deegë na"
 msgid "Start a new picture?"
 msgstr "Ñu defar natal bu bess?"
 
-#. #define PROMPT_NEW_YES gettext_noop("Thatâs OK!")
+#. #define PROMPT_NEW_YES gettext_noop("That’s OK!")
 #. #define PROMPT_NEW_NO gettext_noop("Never mind!")
 msgid "Yes, let's start fresh!"
 msgstr "Waw, ñu defar bu bess!"
@@ -446,7 +478,8 @@ msgstr "Waaw,ñu sotilu ko!"
 msgid "Your picture has been printed!"
 msgstr "Sotilu nañu sa natal!"
 
-msgid "You canât print yet!"
+#, fuzzy
+msgid "You can’t print yet!"
 msgstr "Mëno go sotilu leeggi!"
 
 msgid "Erase this picture?"
@@ -460,6 +493,12 @@ msgstr "Deedeet, buko dindi !"
 
 msgid "Remember to use the left mouse button!"
 msgstr "Bul fate jëffandiku ciammoñu butoŋ jinax bi !"
+
+msgid "Sound muted."
+msgstr ""
+
+msgid "Sound unmuted."
+msgstr ""
 
 msgid "Please wait..."
 msgstr "Bal ma te xar..."
@@ -500,11 +539,13 @@ msgstr "Waaw, ñu sopi bu magat bi !"
 msgid "No, save a new file!"
 msgstr "Deedeet, natal bu bees la !"
 
-msgid "Choose the picture you want, then click âOpenâ."
+#, fuzzy
+msgid "Choose the picture you want, then click “Open”."
 msgstr "Tannal natal, te bëss ci «Ubbi»."
 
 #. Let user choose images:
-msgid "Choose the pictures you want, then click âPlayâ."
+#, fuzzy
+msgid "Choose the pictures you want, then click “Play”."
 msgstr "Tanal natal yu la nex so bëgge, te nga bëss ci «Ñu dor»."
 
 msgid "A drawing program for children."
@@ -516,10 +557,14 @@ msgstr "Lëlu natal"
 msgid "Tux Paint"
 msgstr "Tux Paint"
 
+#~ msgid "Openâ¦"
+#~ msgstr "Ubbil.."
+
 #~ msgid "Thatâs OK!"
 #~ msgstr "C'est d'accord !"
+
 #~ msgid "jq"
 #~ msgstr "jq"
+
 #~ msgid "Save over the older version of this picture?"
 #~ msgstr "Remplacer l'ancienne version de ce dessin ?"
-

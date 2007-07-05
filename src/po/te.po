@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-05-09 00:32-0700\n"
+"POT-Creation-Date: 2007-07-04 23:03-0700\n"
 "PO-Revision-Date: 2007-03-15 17:27+0530\n"
 "Last-Translator: pavithran <pavithran.s@gmail.com>\n"
 "Language-Team: Telugu <indlinux-telugu@lists.sourceforge.net>\n"
@@ -276,7 +276,7 @@ msgid "A rectangle has four sides and four right angles."
 msgstr ""
 
 msgid ""
-"A circle is a curve where all points have the same distance from the centre."
+"A circle is a curve where all points have the same distance from the center."
 msgstr ""
 
 msgid "An ellipse is a stretched circle."
@@ -481,6 +481,12 @@ msgstr "ఒద్దు చెరపకండి"
 
 msgid "Remember to use the left mouse button!"
 msgstr "ఎడమ మౌస్ బటన్ వాడటం గుర్తుంచుకోండి"
+
+msgid "Sound muted."
+msgstr ""
+
+msgid "Sound unmuted."
+msgstr ""
 
 msgid "Please wait..."
 msgstr "దయచేసి ఆగండి"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint-HEAD\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-05-09 00:32-0700\n"
+"POT-Creation-Date: 2007-07-04 23:03-0700\n"
 "PO-Revision-Date: 2007-05-17 06:58+0300\n"
 "Last-Translator: Khaled Hosny <khaledhosny@eglug.org>\n"
 "Language-Team: Arabic <doc@arabeyes.org>\n"
@@ -15,7 +15,8 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.11.4\n"
-"Plural-Forms: nplurals=4; plural=n==1 ? 0 : n==2 ? 1 : n>=3 && n<=10 ? 2 : 3\n"
+"Plural-Forms: nplurals=4; plural=n==1 ? 0 : n==2 ? 1 : n>=3 && n<=10 ? 2 : "
+"3\n"
 
 msgid "Black!"
 msgstr "أسود"
@@ -233,7 +234,8 @@ msgstr "انقر وحرّكُ الفأرة على الألوان لتصبح با
 msgid "Click and move to darken the colors."
 msgstr "انقر وحرّكُ الفأرة على الألوان لتصبح داكنة."
 
-msgid "Click and move the mouse around to turn the picture into a chalk drawing."
+msgid ""
+"Click and move the mouse around to turn the picture into a chalk drawing."
 msgstr "انقر وحرّكُ الفأرة على الصورة لتحويلها إلى رسمة طبشورية."
 
 msgid "Click and move the mouse around to make the picture blocky."
@@ -284,7 +286,9 @@ msgstr "المربع هو مستطيل بأربعة جوانبِ متساوية�
 msgid "A rectangle has four sides and four right angles."
 msgstr "المستطيل لَهُ أربعة جوانبِ وأربع زوايا قائمةِ."
 
-msgid "A circle is a curve where all points have the same distance from the centre."
+#, fuzzy
+msgid ""
+"A circle is a curve where all points have the same distance from the center."
 msgstr "الدائرة هي منحنى حيث كُلّ النقاط لَها نفس المسافةِ مِنْ المركزِ."
 
 msgid "An ellipse is a stretched circle."
@@ -497,6 +501,12 @@ msgstr "لا، لاتمسحه"
 msgid "Remember to use the left mouse button!"
 msgstr "تذكر استخدام زر الفأرة الأيسر"
 
+msgid "Sound muted."
+msgstr ""
+
+msgid "Sound unmuted."
+msgstr ""
+
 msgid "Please wait..."
 msgstr "من فضلك انتظر..."
 
@@ -553,4 +563,3 @@ msgstr "برنامج رسم"
 
 msgid "Tux Paint"
 msgstr "رسم توكس"
-

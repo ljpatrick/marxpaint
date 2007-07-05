@@ -17,7 +17,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Tuxpaint cvs 2007-06-23\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-05-09 00:32-0700\n"
+"POT-Creation-Date: 2007-07-04 23:03-0700\n"
 "PO-Revision-Date: 2007-06-24 11:39+0200\n"
 "Last-Translator: Pere Pujal i Carabantes <ppujal@airtel.net>\n"
 "Language-Team: Català <linux-ca@chanae.alphanet.ch>\n"
@@ -286,8 +286,9 @@ msgstr "Un quadrat és un rectangle amb quatre cares iguals."
 msgid "A rectangle has four sides and four right angles."
 msgstr "Un rectangle té quatre cares i quatre angles rectes."
 
+#, fuzzy
 msgid ""
-"A circle is a curve where all points have the same distance from the centre."
+"A circle is a curve where all points have the same distance from the center."
 msgstr ""
 "Un cercle és una corba que té tots els punts a la mateixa distància del "
 "centre."
@@ -501,6 +502,12 @@ msgstr "No, no l'esborris!"
 
 msgid "Remember to use the left mouse button!"
 msgstr "Recordeu de fer servir el botó esquerre!"
+
+msgid "Sound muted."
+msgstr ""
+
+msgid "Sound unmuted."
+msgstr ""
 
 msgid "Please wait..."
 msgstr "Espereu, si us plau..."

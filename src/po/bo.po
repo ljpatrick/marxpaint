@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-05-09 00:32-0700\n"
+"POT-Creation-Date: 2007-07-04 23:03-0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -278,7 +278,7 @@ msgid "A rectangle has four sides and four right angles."
 msgstr ""
 
 msgid ""
-"A circle is a curve where all points have the same distance from the centre."
+"A circle is a curve where all points have the same distance from the center."
 msgstr ""
 
 msgid "An ellipse is a stretched circle."
@@ -484,6 +484,12 @@ msgid "No, don't erase it!"
 msgstr ""
 
 msgid "Remember to use the left mouse button!"
+msgstr ""
+
+msgid "Sound muted."
+msgstr ""
+
+msgid "Sound unmuted."
 msgstr ""
 
 msgid "Please wait..."

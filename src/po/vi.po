@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint-0.9.17\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-05-09 00:32-0700\n"
+"POT-Creation-Date: 2007-07-04 23:03-0700\n"
 "PO-Revision-Date: 2007-05-28 21:36+0930\n"
 "Last-Translator: Clytie Siddall <clytie@riverland.net.au>\n"
 "Language-Team: Vietnamese <vi-VN@googlegroups.com>\n"
@@ -225,7 +225,8 @@ msgstr "Nhắp và di chuột để làm màu mờ dần."
 msgid "Click and move to darken the colors."
 msgstr "Nhắp và di chuột để làm màu tối hơn."
 
-msgid "Click and move the mouse around to turn the picture into a chalk drawing."
+msgid ""
+"Click and move the mouse around to turn the picture into a chalk drawing."
 msgstr "Nhắp và di chuột để đổi hình này thành bản vẽ phấn."
 
 msgid "Click and move the mouse around to make the picture blocky."
@@ -276,7 +277,9 @@ msgstr "Hình vuông là hình chữ nhật có bốn cạnh bằng nhau."
 msgid "A rectangle has four sides and four right angles."
 msgstr "Hình chữ nhật có bốn cạnh và bốn góc vuông."
 
-msgid "A circle is a curve where all points have the same distance from the centre."
+#, fuzzy
+msgid ""
+"A circle is a curve where all points have the same distance from the center."
 msgstr "Hình tròn là đường cong có mọi điểm cách tâm vòng bằng nhau."
 
 msgid "An ellipse is a stretched circle."
@@ -289,7 +292,8 @@ msgid "A pentagon has five sides."
 msgstr "Hình năm canh có ... năm cạnh. :)"
 
 msgid "A rhombus has four equal sides, and opposite sides are parallel."
-msgstr "Hình thoi có bốn cạnh bằng nhau, mỗi cặp cạnh đối diện với nhau là song song."
+msgstr ""
+"Hình thoi có bốn cạnh bằng nhau, mỗi cặp cạnh đối diện với nhau là song song."
 
 msgid "Tools"
 msgstr "Công cụ"
@@ -361,8 +365,13 @@ msgstr "Chọn một ảnh để dấu vòng quanh hình vẽ của cháu."
 msgid "Click to start drawing a line. Let go to complete it."
 msgstr "Nhắp chuột để bắt đầu vẽ một đường. Nhả nút chuột để vẽ xong."
 
-msgid "Pick a shape. Click to pick the center, drag, then let go when it is the size you want. Move around to rotate it, and click to draw it."
-msgstr "Chọn một hình. Nhắp chuột để định tâm, kéo, rồi nhả nút chuột đến khi có kích cỡ cháu muốn. Di chuyển chuột để quay hình, nhắp chuột lần nữa để vẽ xong."
+msgid ""
+"Pick a shape. Click to pick the center, drag, then let go when it is the "
+"size you want. Move around to rotate it, and click to draw it."
+msgstr ""
+"Chọn một hình. Nhắp chuột để định tâm, kéo, rồi nhả nút chuột đến khi có "
+"kích cỡ cháu muốn. Di chuyển chuột để quay hình, nhắp chuột lần nữa để vẽ "
+"xong."
 
 msgid "Choose a style of text. Click on your drawing and you can start typing."
 msgstr "Chọn kiểu văn bản. Nhắp vào bản vẽ và bắt đầu gõ chữ."
@@ -479,6 +488,12 @@ msgstr "Không xoá."
 
 msgid "Remember to use the left mouse button!"
 msgstr "Hãy nhớ để dùng cái nút bên trái trên con chuột."
+
+msgid "Sound muted."
+msgstr ""
+
+msgid "Sound unmuted."
+msgstr ""
 
 msgid "Please wait..."
 msgstr "Hãy đợi..."

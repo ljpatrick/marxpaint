@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint 0.9.16\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-05-09 00:32-0700\n"
+"POT-Creation-Date: 2007-07-04 23:03-0700\n"
 "PO-Revision-Date: 2007-01-09 21:32-0000\n"
 "Last-Translator: Lis Gøthe í Jákupsstovu <morshus@morshus.com>\n"
 "Language-Team: Faroese <morshus@morshus.com>\n"
@@ -275,8 +275,9 @@ msgstr "Ein ferningur er ein rætthyrningur við fýra líka langum síðum."
 msgid "A rectangle has four sides and four right angles."
 msgstr "Ein rætthyningur hevur fýra síður og fýra rættar vinklar."
 
+#, fuzzy
 msgid ""
-"A circle is a curve where all points have the same distance from the centre."
+"A circle is a curve where all points have the same distance from the center."
 msgstr ""
 "Ein sirkul er ein rás har øll punkt hava somu frástøðu frá miðjuni av "
 "sirkulinum."
@@ -488,6 +489,12 @@ msgstr "Nei, ikki strika hana!"
 
 msgid "Remember to use the left mouse button!"
 msgstr "Minst til at brúka vinstra músaknøttin!"
+
+msgid "Sound muted."
+msgstr ""
+
+msgid "Sound unmuted."
+msgstr ""
 
 msgid "Please wait..."
 msgstr "Vinarliga bíða..."

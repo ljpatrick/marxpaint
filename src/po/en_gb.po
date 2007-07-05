@@ -5,9 +5,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint 0.9.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-05-09 00:32-0700\n"
-"PO-Revision-Date: 2004-04-26 11:20-0400\n"
-"Last-Translator: Gareth Owen <gowen72@yahoo.com>\n"
+"POT-Creation-Date: 2007-07-04 23:03-0700\n"
+"PO-Revision-Date: 2007-07-01 20:39+0100\n"
+"Last-Translator: Caroline Ford <caroline.ford.work@googlemail.com>\n"
 "Language-Team: English (British) <en_gb@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -16,10 +16,12 @@ msgstr ""
 msgid "Black!"
 msgstr "Black!"
 
-msgid "Dark grey! Some people spell it ‘dark gray‘."
+#, fuzzy
+msgid "Dark grey! Some people spell it “dark gray”."
 msgstr "Dark grey! Some people spell it ‘dark gray‘."
 
-msgid "Light grey! Some people spell it ‘light gray‘."
+#, fuzzy
+msgid "Light grey! Some people spell it “light gray”."
 msgstr "Light grey! Some people spell it ‘light gray‘."
 
 msgid "White!"
@@ -226,9 +228,8 @@ msgstr "Click and move the mouse around to smudge the picture."
 msgid "Click and move to fade the colors."
 msgstr "Click and move to fade the colours."
 
-#, fuzzy
 msgid "Click and move to darken the colors."
-msgstr "Click and move to fade the colours."
+msgstr "Click and move to darken the colours."
 
 msgid ""
 "Click and move the mouse around to turn the picture into a chalk drawing."
@@ -287,9 +288,11 @@ msgstr "A square is a rectangle with four equal sides."
 msgid "A rectangle has four sides and four right angles."
 msgstr "A rectangle has four sides and four right angles."
 
+#, fuzzy
 msgid ""
+"A circle is a curve where all points have the same distance from the center."
+msgstr ""
 "A circle is a curve where all points have the same distance from the centre."
-msgstr "A circle is a curve where all points have the same distance from the centre."
 
 msgid "An ellipse is a stretched circle."
 msgstr "An ellipse is a stretched circle."
@@ -382,7 +385,8 @@ msgstr ""
 "size you want. Move around to rotate it, and click to draw it."
 
 msgid "Choose a style of text. Click on your drawing and you can start typing."
-msgstr "Choose a style of text. Click on your drawing and you can start typing."
+msgstr ""
+"Choose a style of text. Click on your drawing and you can start typing."
 
 msgid "Pick a magical effect to use on your drawing!"
 msgstr "Pick a magical effect to use on your drawing!"
@@ -478,7 +482,7 @@ msgid "Print your picture now?"
 msgstr "Print your picture now?"
 
 msgid "Yes, print it!"
-msgstr "yes, print it!"
+msgstr "Yes, print it!"
 
 msgid "Your picture has been printed!"
 msgstr "Your picture has been printed!"
@@ -497,6 +501,12 @@ msgstr "No, don't erase it!"
 
 msgid "Remember to use the left mouse button!"
 msgstr "Remember to use the left mouse button!"
+
+msgid "Sound muted."
+msgstr ""
+
+msgid "Sound unmuted."
+msgstr ""
 
 msgid "Please wait..."
 msgstr "Please wait..."
@@ -543,9 +553,8 @@ msgid "Choose the picture you want, then click “Open”."
 msgstr "Choose the picture you want, then click ‘Open’."
 
 #. Let user choose images:
-#, fuzzy
 msgid "Choose the pictures you want, then click “Play”."
-msgstr "Choose the picture you want, then click ‘Open’."
+msgstr "Choose the pictures you want, then click ‘Play’."
 
 msgid "A drawing program for children."
 msgstr "A drawing program for children."

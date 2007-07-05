@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: fr\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-05-09 00:32-0700\n"
+"POT-Creation-Date: 2007-07-04 23:03-0700\n"
 "PO-Revision-Date: 2004-05-30 21:20-0700\n"
 "Last-Translator: jimmy <jacques.chion@wanadoo.fr>\n"
 "Language-Team:  <fr@li.org>\n"
@@ -280,8 +280,9 @@ msgstr "Un carré est un rectangle ayant quatre côtés égaux."
 msgid "A rectangle has four sides and four right angles."
 msgstr "Un rectangle a quatre côtés et quatre angles droits."
 
+#, fuzzy
 msgid ""
-"A circle is a curve where all points have the same distance from the centre."
+"A circle is a curve where all points have the same distance from the center."
 msgstr ""
 "Un cercle est une courbe dont tous les points sont à la même distance du "
 "centre."
@@ -494,6 +495,12 @@ msgstr "Non, ne l'efface pas !"
 
 msgid "Remember to use the left mouse button!"
 msgstr "N'oublie pas d'utiliser le bouton gauche de la souris !"
+
+msgid "Sound muted."
+msgstr ""
+
+msgid "Sound unmuted."
+msgstr ""
 
 msgid "Please wait..."
 msgstr "Attends s'il te plaît ..."

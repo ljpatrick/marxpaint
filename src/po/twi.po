@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-05-09 00:32-0700\n"
+"POT-Creation-Date: 2007-07-04 23:03-0700\n"
 "PO-Revision-Date: 2007-04-26 15:45+0200\n"
 "Last-Translator: Joana Portia Antwi-Danso <portnass2003@yahoo.com>\n"
 "MIME-Version: 1.0\n"
@@ -276,8 +276,9 @@ msgstr "Nhyianan yɛ nhyiae a ɛwɔ apɔw anan na ne nyinaa tenten yɛ pɛ."
 msgid "A rectangle has four sides and four right angles."
 msgstr "Nhyiananfea wɔ apɔw anan ne nhyianan a emu abien biara tenten yɛ pɛ."
 
+#, fuzzy
 msgid ""
-"A circle is a curve where all points have the same distance from the centre."
+"A circle is a curve where all points have the same distance from the center."
 msgstr "Kurukuruwa yɛ kanko a efi mfinimfini dekɔ pɔw biara so tenten yɛ pɛ."
 
 msgid "An ellipse is a stretched circle."
@@ -485,6 +486,12 @@ msgstr "Daabi, mpepa no!"
 
 msgid "Remember to use the left mouse button!"
 msgstr "Kae na mia akura no benkum so!"
+
+msgid "Sound muted."
+msgstr ""
+
+msgid "Sound unmuted."
+msgstr ""
 
 msgid "Please wait..."
 msgstr "Mepawokyɛw twɛn..."

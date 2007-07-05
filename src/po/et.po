@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: et\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-05-09 00:32-0700\n"
+"POT-Creation-Date: 2007-07-04 23:03-0700\n"
 "PO-Revision-Date: 2007-03-18 20:26+0200\n"
 "Last-Translator: Lauri Jesmin <lauri.jesmin@nordtech.ee>\n"
 "Language-Team: Estonian <et@li.org>\n"
@@ -275,8 +275,9 @@ msgstr "Ruut on ristkülik nelja võrdse küljega."
 msgid "A rectangle has four sides and four right angles."
 msgstr "Ristkülikul on neli külge ja neli täisnurka."
 
+#, fuzzy
 msgid ""
-"A circle is a curve where all points have the same distance from the centre."
+"A circle is a curve where all points have the same distance from the center."
 msgstr "Ring on kaar, kus kõik kaare punktid on keskelt ühe kaugusel."
 
 msgid "An ellipse is a stretched circle."
@@ -484,6 +485,12 @@ msgstr "Ei, ära kustuta!"
 
 msgid "Remember to use the left mouse button!"
 msgstr "Ära unusta kasutamast vasakut hiire nuppu!"
+
+msgid "Sound muted."
+msgstr ""
+
+msgid "Sound unmuted."
+msgstr ""
 
 msgid "Please wait..."
 msgstr "Palun oota..."

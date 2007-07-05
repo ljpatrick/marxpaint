@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint 0.9.17\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-05-09 00:32-0700\n"
+"POT-Creation-Date: 2007-07-04 23:03-0700\n"
 "PO-Revision-Date: 2007-05-16 17:08+0300\n"
 "Last-Translator: Yavor Doganov <yavor@doganov.org>\n"
 "Language-Team: Bulgarian <dict@fsa-bg.org>\n"
@@ -194,10 +194,12 @@ msgid "Flip"
 msgstr "Обръщане"
 
 msgid "Click in the picture to fill that area with color."
-msgstr "Натиснете по рисунката, за да се запълни съответната област с избрания цвят."
+msgstr ""
+"Натиснете по рисунката, за да се запълни съответната област с избрания цвят."
 
 msgid "Click and move to draw grass. Don’t forget the dirt!"
-msgstr "Натиснете и движете мишката, за да рисувате трева. Не забравяйте пръстта!"
+msgstr ""
+"Натиснете и движете мишката, за да рисувате трева. Не забравяйте пръстта!"
 
 msgid "Click and move to draw large bricks."
 msgstr "Натиснете и движете мишката, за да рисувате големи тухли."
@@ -223,7 +225,8 @@ msgstr "Натиснете и движете мишката, за да избл�
 msgid "Click and move to darken the colors."
 msgstr "Натиснете и движете мишката, за да потъмнеят цветовете."
 
-msgid "Click and move the mouse around to turn the picture into a chalk drawing."
+msgid ""
+"Click and move the mouse around to turn the picture into a chalk drawing."
 msgstr "Натиснете и движете мишката, за да превърнете рисунката в тебеширена."
 
 msgid "Click and move the mouse around to make the picture blocky."
@@ -274,8 +277,11 @@ msgstr "Квадратът е правоъгълник с четири равн�
 msgid "A rectangle has four sides and four right angles."
 msgstr "Правоъгълникът има четири страни и четири прави ъгли."
 
-msgid "A circle is a curve where all points have the same distance from the centre."
-msgstr "Кръгът е крива, където всички точки са на еднакво разстояние от центъра."
+#, fuzzy
+msgid ""
+"A circle is a curve where all points have the same distance from the center."
+msgstr ""
+"Кръгът е крива, където всички точки са на еднакво разстояние от центъра."
 
 msgid "An ellipse is a stretched circle."
 msgstr "Елипсата е разтеглен кръг."
@@ -357,13 +363,20 @@ msgid "Pick a picture to stamp around your drawing."
 msgstr "Изберете картинка, която да поставите на рисунката."
 
 msgid "Click to start drawing a line. Let go to complete it."
-msgstr "Натиснете, за да започнете да рисувате линия. Пуснете бутона на мишката, за да я завършите."
+msgstr ""
+"Натиснете, за да започнете да рисувате линия. Пуснете бутона на мишката, за "
+"да я завършите."
 
-msgid "Pick a shape. Click to pick the center, drag, then let go when it is the size you want. Move around to rotate it, and click to draw it."
-msgstr "Изберете форма. Натиснете, за да определите центъра и влачете, докато постигнете желания размер. След това натиснете, за да се нарисува."
+msgid ""
+"Pick a shape. Click to pick the center, drag, then let go when it is the "
+"size you want. Move around to rotate it, and click to draw it."
+msgstr ""
+"Изберете форма. Натиснете, за да определите центъра и влачете, докато "
+"постигнете желания размер. След това натиснете, за да се нарисува."
 
 msgid "Choose a style of text. Click on your drawing and you can start typing."
-msgstr "Изберете стил на текста. Натиснете на рисунката, за да започнете да пишете."
+msgstr ""
+"Изберете стил на текста. Натиснете на рисунката, за да започнете да пишете."
 
 msgid "Pick a magical effect to use on your drawing!"
 msgstr "Изберете магически ефект, който да използвате за рисунката!"
@@ -477,6 +490,12 @@ msgstr "Не, не я изтривайте!"
 
 msgid "Remember to use the left mouse button!"
 msgstr "Не забравяйте да използвате левия бутон на мишката!"
+
+msgid "Sound muted."
+msgstr ""
+
+msgid "Sound unmuted."
+msgstr ""
 
 msgid "Please wait..."
 msgstr "Изчакайте..."

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pt_br\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-05-09 00:32-0700\n"
+"POT-Creation-Date: 2007-07-04 23:03-0700\n"
 "PO-Revision-Date: 2007-05-19 15:50-0300\n"
 "Last-Translator: Adorilson Bezerra <adorilson@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <pt@li.org>\n"
@@ -226,8 +226,10 @@ msgstr "Clique e mova o mouse para desbotar as cores."
 msgid "Click and move to darken the colors."
 msgstr "Clique e mova o mouse para escurecer as cores."
 
-msgid "Click and move the mouse around to turn the picture into a chalk drawing."
-msgstr "Clique e mova o mouse para transformar a imagem em desenho feito com giz."
+msgid ""
+"Click and move the mouse around to turn the picture into a chalk drawing."
+msgstr ""
+"Clique e mova o mouse para transformar a imagem em desenho feito com giz."
 
 msgid "Click and move the mouse around to make the picture blocky."
 msgstr "Clique e mova o mouse para fazer a imagem ficar quadriculada."
@@ -277,8 +279,11 @@ msgstr "Um quadrado é um retângulo com os quatro lados iguais."
 msgid "A rectangle has four sides and four right angles."
 msgstr "Um retângulo tem quatro lados e quatro ângulos retos."
 
-msgid "A circle is a curve where all points have the same distance from the centre."
-msgstr "Um círculo é uma curva onde todos os pontos ficam à mesma distância do centro"
+#, fuzzy
+msgid ""
+"A circle is a curve where all points have the same distance from the center."
+msgstr ""
+"Um círculo é uma curva onde todos os pontos ficam à mesma distância do centro"
 
 msgid "An ellipse is a stretched circle."
 msgstr "Uma elipse é um círculo esticado."
@@ -290,7 +295,8 @@ msgid "A pentagon has five sides."
 msgstr "Um pentágono tem cinco lados."
 
 msgid "A rhombus has four equal sides, and opposite sides are parallel."
-msgstr "Um losângulo tem os quatro lados iguais, e os lados opostos são paralelos."
+msgstr ""
+"Um losângulo tem os quatro lados iguais, e os lados opostos são paralelos."
 
 msgid "Tools"
 msgstr "Ferramentas"
@@ -365,11 +371,17 @@ msgstr "Clique e segure para começar uma linha. Solte para terminá-la."
 # #: tools.h:65
 # msgid "Pick a shape to draw.  Click once to pick the center of the shape, #click again to draw it."
 # msgstr "Escolha uma forma para desenhar. Clique uma vez para definir o centro da imagem. Clique de novo para desenhá-la."
-msgid "Pick a shape. Click to pick the center, drag, then let go when it is the size you want. Move around to rotate it, and click to draw it."
-msgstr "Escolha uma forma. Clique para marcar o centro, mova o mouse, Solte quando estiver do tamanho que você quiser. Depois mova o mouse para girar. Clique novamente para desenhá-la de vez."
+msgid ""
+"Pick a shape. Click to pick the center, drag, then let go when it is the "
+"size you want. Move around to rotate it, and click to draw it."
+msgstr ""
+"Escolha uma forma. Clique para marcar o centro, mova o mouse, Solte quando "
+"estiver do tamanho que você quiser. Depois mova o mouse para girar. Clique "
+"novamente para desenhá-la de vez."
 
 msgid "Choose a style of text. Click on your drawing and you can start typing."
-msgstr "Escolha um tipo de letra e então clique no desenho para começar a escrever."
+msgstr ""
+"Escolha um tipo de letra e então clique no desenho para começar a escrever."
 
 msgid "Pick a magical effect to use on your drawing!"
 msgstr "Escolha um efeito mágico para usar no seu desenho!"
@@ -489,6 +501,12 @@ msgstr ""
 msgid "Remember to use the left mouse button!"
 msgstr "Lembre de usar o botão esquerdo do mouse!"
 
+msgid "Sound muted."
+msgstr ""
+
+msgid "Sound unmuted."
+msgstr ""
+
 msgid "Please wait..."
 msgstr "Espere, por favor..."
 
@@ -553,8 +571,9 @@ msgstr "Tux Paint"
 #, fuzzy
 #~ msgid "That’s OK!"
 #~ msgstr "Está bem!"
+
 #~ msgid "Never mind!"
 #~ msgstr "Nem Pensar!"
+
 #~ msgid "Save over the older version of this picture?"
 #~ msgstr "Guardar por cima do seu desenho anterior?"
-

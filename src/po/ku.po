@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-05-09 00:32-0700\n"
+"POT-Creation-Date: 2007-07-04 23:03-0700\n"
 "PO-Revision-Date: 2006-04-23 00:58+0200\n"
 "Last-Translator: Amed Ç. Jiyan <amed@pckurd.net>\n"
 "Language-Team: KURDISH <LL@li.org>\n"
@@ -276,8 +276,9 @@ msgstr "Çar goşeyên çargoşeyan hene."
 msgid "A rectangle has four sides and four right angles."
 msgstr "Çar goşe û çar kenarên çargoşeyan hene."
 
+#, fuzzy
 msgid ""
-"A circle is a curve where all points have the same distance from the centre."
+"A circle is a curve where all points have the same distance from the center."
 msgstr "Çember ji xalên ku dûrbûna wan a ji navendê wekhev e pêk tê."
 
 msgid "An ellipse is a stretched circle."
@@ -487,6 +488,12 @@ msgstr "Na, jê nebe!"
 
 msgid "Remember to use the left mouse button!"
 msgstr "Bibîr bîne ku tu yê bişkojka çepê ya mişkî bikar bînî!"
+
+msgid "Sound muted."
+msgstr ""
+
+msgid "Sound unmuted."
+msgstr ""
 
 msgid "Please wait..."
 msgstr "Ji kerema xwe re li bendê bimîne..."

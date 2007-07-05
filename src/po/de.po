@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-05-09 00:32-0700\n"
+"POT-Creation-Date: 2007-07-04 23:03-0700\n"
 "PO-Revision-Date: 2006-10-11 22:53+0200\n"
 "Last-Translator: Burkhard Lück <lueck@hube-lueck.de>\n"
 "Language-Team: Deutsch <kde-i18n-de@kde.org>\n"
@@ -279,8 +279,9 @@ msgstr "Ein Quadrat ist ein Rechteck mit vier gleich langen Seiten."
 msgid "A rectangle has four sides and four right angles."
 msgstr "Ein Rechteck hat vier Seiten und vier rechte Winkel."
 
+#, fuzzy
 msgid ""
-"A circle is a curve where all points have the same distance from the centre."
+"A circle is a curve where all points have the same distance from the center."
 msgstr ""
 "Ein Kreis ist eine Kurve, auf der alle Punkte den gleichen Abstand vom "
 "Mittelpunkt haben."
@@ -496,6 +497,12 @@ msgstr "Nein, nicht löschen!"
 
 msgid "Remember to use the left mouse button!"
 msgstr "Denke dran, die linke Maustaste zu benutzen!"
+
+msgid "Sound muted."
+msgstr ""
+
+msgid "Sound unmuted."
+msgstr ""
 
 msgid "Please wait..."
 msgstr "Bitte warten..."

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint 0.9.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-05-09 00:32-0700\n"
+"POT-Creation-Date: 2007-07-04 23:03-0700\n"
 "PO-Revision-Date: 2004-12-04 15:45-0800\n"
 "Last-Translator: Alberto Escudero <aep@it46.se>\n"
 "Language-Team: Swahili\n"
@@ -290,7 +290,7 @@ msgid "A rectangle has four sides and four right angles."
 msgstr "Pembenne ina pande nne."
 
 msgid ""
-"A circle is a curve where all points have the same distance from the centre."
+"A circle is a curve where all points have the same distance from the center."
 msgstr ""
 
 msgid "An ellipse is a stretched circle."
@@ -500,6 +500,12 @@ msgid "No, don't erase it!"
 msgstr ""
 
 msgid "Remember to use the left mouse button!"
+msgstr ""
+
+msgid "Sound muted."
+msgstr ""
+
+msgid "Sound unmuted."
 msgstr ""
 
 msgid "Please wait..."

@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Thai tux paint\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-05-09 00:32-0700\n"
+"POT-Creation-Date: 2007-07-04 23:03-0700\n"
 "PO-Revision-Date: 2007-01-22 10:51+0700\n"
 "Last-Translator: Ouychai <Ae.translator@gmail.com>\n"
 "Language-Team: \n"
@@ -271,8 +271,9 @@ msgstr "สี่เหลี่ยมจัตุรัสประกอบด
 msgid "A rectangle has four sides and four right angles."
 msgstr "สี่เหลี่ยมผืนผ้าประกอบด้วยด้าน 4 ด้าน และมุมฉาก 4 มุม"
 
+#, fuzzy
 msgid ""
-"A circle is a curve where all points have the same distance from the centre."
+"A circle is a curve where all points have the same distance from the center."
 msgstr "วงกลมคือเส้นโค้งที่ทุกๆ จุดมีระยะห่างเท่ากันจากจุดศูนย์กลาง"
 
 msgid "An ellipse is a stretched circle."
@@ -479,6 +480,12 @@ msgstr "ไม่! อย่าลบมัน"
 
 msgid "Remember to use the left mouse button!"
 msgstr "โปรดจำไว้ว่าใช้เมาส์ปุ่มซ้าย"
+
+msgid "Sound muted."
+msgstr ""
+
+msgid "Sound unmuted."
+msgstr ""
 
 msgid "Please wait..."
 msgstr "โปรดรอ ........"

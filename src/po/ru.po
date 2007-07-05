@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TuxPaint\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-05-09 00:32-0700\n"
+"POT-Creation-Date: 2007-07-04 23:03-0700\n"
 "PO-Revision-Date: 2007-04-04 20:05+0300\n"
 "Last-Translator: Сергей Попов <skein@rambler.ru>\n"
 "Language-Team: Dmitriy Ivanov <ace22b@myrealbox.com>\n"
@@ -278,8 +278,9 @@ msgstr "Квадрат - прямоугольник с четырьмя равн
 msgid "A rectangle has four sides and four right angles."
 msgstr "У прямоугольника четыре стороны и четыре прямых угла."
 
+#, fuzzy
 msgid ""
-"A circle is a curve where all points have the same distance from the centre."
+"A circle is a curve where all points have the same distance from the center."
 msgstr ""
 "Окружность - это кривая, все точки которой удалены на равное расстояние от "
 "центра."
@@ -490,6 +491,12 @@ msgstr "Нет, не удалять!"
 
 msgid "Remember to use the left mouse button!"
 msgstr "Используйте только левую кнопку мыши!"
+
+msgid "Sound muted."
+msgstr ""
+
+msgid "Sound unmuted."
+msgstr ""
 
 msgid "Please wait..."
 msgstr "Пожалуйста, подождите..."

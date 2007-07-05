@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint 0.9.16\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-05-09 00:32-0700\n"
+"POT-Creation-Date: 2007-07-04 23:03-0700\n"
 "PO-Revision-Date: 2006-09-28 09:04+0200\n"
 "Last-Translator: Petri Jooste <rkwjpj@puk.ac.za>\n"
 "Language-Team: Afrikaans <rkwjpj@puk.ac.za>\n"
@@ -277,8 +277,9 @@ msgstr "'n Vierkant is 'n reghoek met vier ewe lang kante."
 msgid "A rectangle has four sides and four right angles."
 msgstr "'n Reghoek het vier kante en vier regte hoeke."
 
+#, fuzzy
 msgid ""
-"A circle is a curve where all points have the same distance from the centre."
+"A circle is a curve where all points have the same distance from the center."
 msgstr ""
 "'n Sirkel is 'n kromme waar al die punte dieselfde afstand van die middel af "
 "is."
@@ -489,6 +490,12 @@ msgstr "Nee, moet dit nie uitvee nie!"
 
 msgid "Remember to use the left mouse button!"
 msgstr "Onthou om die linker-muisknoppie te gebruik!"
+
+msgid "Sound muted."
+msgstr ""
+
+msgid "Sound unmuted."
+msgstr ""
 
 msgid "Please wait..."
 msgstr "Wag asseblief ..."

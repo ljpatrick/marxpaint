@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint 0.9.17\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-05-09 00:32-0700\n"
+"POT-Creation-Date: 2007-07-04 23:03-0700\n"
 "PO-Revision-Date: 2007-05-11 08:44+0100\n"
 "Last-Translator: Kevin Patrick Scannell <kscanne@gmail.com>\n"
 "Language-Team: Irish <gaeilge-gnulinux@lists.sourceforge.net>\n"
@@ -193,7 +193,8 @@ msgid "Flip"
 msgstr "Smeach"
 
 msgid "Click in the picture to fill that area with color."
-msgstr "Cliceáil sa phictiúr chun an limistéar roghnaithe agat a líonadh le dath."
+msgstr ""
+"Cliceáil sa phictiúr chun an limistéar roghnaithe agat a líonadh le dath."
 
 msgid "Click and move to draw grass. Don’t forget the dirt!"
 msgstr "Cliceáil agus bog chun féar a dhearadh. Ná déan dearmad ar an ithir!"
@@ -222,8 +223,10 @@ msgstr "Cliceáil agus bog chun na dathanna a liathadh."
 msgid "Click and move to darken the colors."
 msgstr "Cliceáil agus bog chun na dathanna a dhorchú."
 
-msgid "Click and move the mouse around to turn the picture into a chalk drawing."
-msgstr "Cliceáil agus bog an luch chun líníocht chailce a dhéanamh ón phictiúr."
+msgid ""
+"Click and move the mouse around to turn the picture into a chalk drawing."
+msgstr ""
+"Cliceáil agus bog an luch chun líníocht chailce a dhéanamh ón phictiúr."
 
 msgid "Click and move the mouse around to make the picture blocky."
 msgstr "Cliceáil agus bog an luch le haghaidh maisíochta bloic."
@@ -273,7 +276,9 @@ msgstr "Is dronuilleog í cearnóg a bhfuil ceithre thaobh chothrom aige."
 msgid "A rectangle has four sides and four right angles."
 msgstr "Tá ceithre thaobh agus ceithre dhronuillinn ar dhronuilleog."
 
-msgid "A circle is a curve where all points have the same distance from the centre."
+#, fuzzy
+msgid ""
+"A circle is a curve where all points have the same distance from the center."
 msgstr "Is cuar cruinn ceart é ciorcal, agus gach pointe comhfhad ón lár."
 
 msgid "An ellipse is a stretched circle."
@@ -286,7 +291,9 @@ msgid "A pentagon has five sides."
 msgstr "Tá cúig thaobh ar pheinteagán."
 
 msgid "A rhombus has four equal sides, and opposite sides are parallel."
-msgstr "Tá ceithre thaobh chothrom ar rombas, agus an dá thaobh ar aghaidh a chéile comhthreomhar."
+msgstr ""
+"Tá ceithre thaobh chothrom ar rombas, agus an dá thaobh ar aghaidh a chéile "
+"comhthreomhar."
 
 msgid "Tools"
 msgstr "Uirlisí"
@@ -358,11 +365,17 @@ msgstr "Roghnaigh pictiúr le húsáid mar stampa ar do líníocht."
 msgid "Click to start drawing a line. Let go to complete it."
 msgstr "Cliceáil chun líne a thosú. Scaoil an cnaipe chun é a chríochnú."
 
-msgid "Pick a shape. Click to pick the center, drag, then let go when it is the size you want. Move around to rotate it, and click to draw it."
-msgstr "Roghnaigh cruth. Cliceáil chun an lár a roghnú, tarraing, ansin scaoil an cnaipe nuair atá an méid socraithe agat.  Bog chun é a rothlú, agus cliceáil arís chun é a dhearadh."
+msgid ""
+"Pick a shape. Click to pick the center, drag, then let go when it is the "
+"size you want. Move around to rotate it, and click to draw it."
+msgstr ""
+"Roghnaigh cruth. Cliceáil chun an lár a roghnú, tarraing, ansin scaoil an "
+"cnaipe nuair atá an méid socraithe agat.  Bog chun é a rothlú, agus cliceáil "
+"arís chun é a dhearadh."
 
 msgid "Choose a style of text. Click on your drawing and you can start typing."
-msgstr "Roghnaigh stíl an téacs. Cliceáil ar do líníocht agus ansin clóscríobh."
+msgstr ""
+"Roghnaigh stíl an téacs. Cliceáil ar do líníocht agus ansin clóscríobh."
 
 msgid "Pick a magical effect to use on your drawing!"
 msgstr "Roghnaigh maisíocht draíochta le húsáid ar do líníocht!"
@@ -477,6 +490,12 @@ msgstr "Ná léirscrios!"
 msgid "Remember to use the left mouse button!"
 msgstr "Bí cinnte an cnaipe ar chlé a úsáid!"
 
+msgid "Sound muted."
+msgstr ""
+
+msgid "Sound unmuted."
+msgstr ""
+
 msgid "Please wait..."
 msgstr "Fan go fóill..."
 
@@ -517,11 +536,13 @@ msgid "No, save a new file!"
 msgstr "Ná forscríobh, sábháil i gcomhad nua!"
 
 msgid "Choose the picture you want, then click “Open”."
-msgstr "Roghnaigh an pictiúr is mian leat a oscailt, agus ansin cliceáil “Oscail”."
+msgstr ""
+"Roghnaigh an pictiúr is mian leat a oscailt, agus ansin cliceáil “Oscail”."
 
 #. Let user choose images:
 msgid "Choose the pictures you want, then click “Play”."
-msgstr "Roghnaigh na pictiúir is mian leat a oscailt, agus ansin cliceáil “Seinn”."
+msgstr ""
+"Roghnaigh na pictiúir is mian leat a oscailt, agus ansin cliceáil “Seinn”."
 
 msgid "A drawing program for children."
 msgstr "Clár líníochta le haghaidh páistí."

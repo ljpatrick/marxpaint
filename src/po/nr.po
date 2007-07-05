@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-05-09 00:32-0700\n"
+"POT-Creation-Date: 2007-07-04 23:03-0700\n"
 "PO-Revision-Date: 2006-10-09 20:32+0200\n"
 "Last-Translator: Vincent Mahlangu <vmahlangu@parliament.gov.za>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -284,8 +284,9 @@ msgstr "Iskwere yirekthengele enamahlangothi amane alinganako."
 msgid "A rectangle has four sides and four right angles."
 msgstr "Irekthengele inamahlangothi amane begodu nama-engele amane."
 
+#, fuzzy
 msgid ""
-"A circle is a curve where all points have the same distance from the centre."
+"A circle is a curve where all points have the same distance from the center."
 msgstr ""
 "Indulungu imujikelezo oneentlobo ezilinganako kusukela lapho zihlangana "
 "khona nanyana zisuka khona."
@@ -497,6 +498,12 @@ msgstr "Awa, ungasuli!"
 
 msgid "Remember to use the left mouse button!"
 msgstr "Khumbula ukusebenzisa ikunubhana yobuncele yeKhondlwana!"
+
+msgid "Sound muted."
+msgstr ""
+
+msgid "Sound unmuted."
+msgstr ""
 
 msgid "Please wait..."
 msgstr "Ngibawa ujame..."

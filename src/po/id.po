@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: id\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-05-09 00:32-0700\n"
+"POT-Creation-Date: 2007-07-04 23:03-0700\n"
 "PO-Revision-Date: 2005-10-12 20:03+0700\n"
 "Last-Translator: Tedi Heriyanto <tedi_h@gmx.net>\n"
 "Language-Team: Indonesia <translation-team-id@lists.sourceforge.net>\n"
@@ -284,8 +284,9 @@ msgstr "Sebuah kotak adalah sebuah segiempat dengan empat sisi yang sama."
 msgid "A rectangle has four sides and four right angles."
 msgstr "Sebuah kotak memiliki empat sisi dan empat sudut."
 
+#, fuzzy
 msgid ""
-"A circle is a curve where all points have the same distance from the centre."
+"A circle is a curve where all points have the same distance from the center."
 msgstr ""
 "Sebuah lingkaran adalah sebuah kurva dengan seluruh titik memiliki jarak "
 "sama terhadap pusat."
@@ -498,6 +499,12 @@ msgstr ""
 
 msgid "Remember to use the left mouse button!"
 msgstr "Ingat untuk menggunakan tombol mouse kiri!"
+
+msgid "Sound muted."
+msgstr ""
+
+msgid "Sound unmuted."
+msgstr ""
 
 msgid "Please wait..."
 msgstr ""

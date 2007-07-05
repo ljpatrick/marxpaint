@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pl\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-09-10 11:18-0700\n"
+"POT-Creation-Date: 2007-07-04 23:03-0700\n"
 "PO-Revision-Date: 2007-05-14 19:56+0200\n"
 "Last-Translator: Michal Terbert <michaeel@skrzynka.pl>\n"
 "Language-Team: Polish\n"
@@ -131,6 +131,18 @@ msgstr "Tylko tak dalej!"
 msgid "Good job!"
 msgstr "Dobra robota!"
 
+msgid "English"
+msgstr ""
+
+msgid "Hiragana"
+msgstr ""
+
+msgid "Katakana"
+msgstr ""
+
+msgid "Hangul"
+msgstr ""
+
 msgid "Fill"
 msgstr "Wypełnij"
 
@@ -212,8 +224,10 @@ msgstr "Kliknij i przesuń myszką, aby rozjaśnić kolory."
 msgid "Click and move to darken the colors."
 msgstr "Kliknij i przesuń myszką, aby przyciemnić kolory."
 
-msgid "Click and move the mouse around to turn the picture into a chalk drawing."
-msgstr "Kliknij i przesuń myszką dookoła, aby zamienić obrazek w rysunek kredą."
+msgid ""
+"Click and move the mouse around to turn the picture into a chalk drawing."
+msgstr ""
+"Kliknij i przesuń myszką dookoła, aby zamienić obrazek w rysunek kredą."
 
 msgid "Click and move the mouse around to make the picture blocky."
 msgstr ""
@@ -227,7 +241,8 @@ msgid "Click and move the mouse around to change the picture’s color."
 msgstr "Kliknij i przesuń myszką dookoła, aby zmienić kolor na obrazku."
 
 msgid "Click and move the mouse around to make the picture drip."
-msgstr "Kliknij i przesuń myszką dookoła, aby obraz zamienić w cieknące kropelki."
+msgstr ""
+"Kliknij i przesuń myszką dookoła, aby obraz zamienić w cieknące kropelki."
 
 msgid "Click and move the mouse around to turn the picture into a cartoon."
 msgstr "Kliknij i przesuń myszką dookoła, aby obramować obrazek konturem."
@@ -265,8 +280,11 @@ msgstr "Kwadrat jest prostokątem o takich samych bokach."
 msgid "A rectangle has four sides and four right angles."
 msgstr "Prostokąt ma cztery boki i cztery proste kąty."
 
-msgid "A circle is a curve where all points have the same distance from the centre."
-msgstr "Koło to krzywa gdzie wszystkie punkty mają taką samą odległość od środka."
+#, fuzzy
+msgid ""
+"A circle is a curve where all points have the same distance from the center."
+msgstr ""
+"Koło to krzywa gdzie wszystkie punkty mają taką samą odległość od środka."
 
 msgid "An ellipse is a stretched circle."
 msgstr "Elipsa to spłaszczone koło."
@@ -278,7 +296,9 @@ msgid "A pentagon has five sides."
 msgstr "Pięciokąt ma pięć boków."
 
 msgid "A rhombus has four equal sides, and opposite sides are parallel."
-msgstr "Romb ma cztery takie same boki, a boki leżące na przeciw siebie są równoległe."
+msgstr ""
+"Romb ma cztery takie same boki, a boki leżące na przeciw siebie są "
+"równoległe."
 
 msgid "Tools"
 msgstr "Narzędzia"
@@ -353,7 +373,9 @@ msgstr "Kliknij, aby rozpocząć rysowanie linii. Puść, aby je zakończyć."
 msgid ""
 "Pick a shape. Click to pick the center, drag, then let go when it is the "
 "size you want. Move around to rotate it, and click to draw it."
-msgstr "Wybierz kształt. Kliknij, gdzie ma być środek, rozciągnij aż do wymaganej wielkości. Ruszaj myszką, aby obrócić, kliknij, aby narysować."
+msgstr ""
+"Wybierz kształt. Kliknij, gdzie ma być środek, rozciągnij aż do wymaganej "
+"wielkości. Ruszaj myszką, aby obrócić, kliknij, aby narysować."
 
 msgid "Choose a style of text. Click on your drawing and you can start typing."
 msgstr "Wybierz styl tekstu. Kliknij na rysunek i rozpocznij pisanie."
@@ -471,6 +493,12 @@ msgstr "Nie, nie usuwaj!"
 msgid "Remember to use the left mouse button!"
 msgstr "Pamiętaj o używaniu lewego przycisku myszy!"
 
+msgid "Sound muted."
+msgstr ""
+
+msgid "Sound unmuted."
+msgstr ""
+
 msgid "Please wait..."
 msgstr "Proszę czekać..."
 
@@ -525,4 +553,3 @@ msgstr "Program do rysowania"
 
 msgid "Tux Paint"
 msgstr "Tux Paint"
-

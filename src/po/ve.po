@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TuxPaint 0.9.16\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-05-09 00:32-0700\n"
+"POT-Creation-Date: 2007-07-04 23:03-0700\n"
 "PO-Revision-Date: 2006-09-21 20:04+0200\n"
 "Last-Translator: Shumani Mercy Ṋevhulaudzi <nevhulaudzi@saps.org.za>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -283,8 +283,9 @@ msgstr "Tshikweaa ndi khuḓandeiṋa ire na matungo maṋa ane a lingana."
 msgid "A rectangle has four sides and four right angles."
 msgstr "Khuḓandeiṋa ina matungo maṋa na khuḓande nṋa."
 
+#, fuzzy
 msgid ""
-"A circle is a curve where all points have the same distance from the centre."
+"A circle is a curve where all points have the same distance from the center."
 msgstr ""
 "Tshitendeledzi ndiu mumono hune ṱhodzi dzoṱhe dza vha na tshikhala tshine "
 "tsa fana u bva vhukati."
@@ -499,6 +500,12 @@ msgstr "Hai,ni songo tshi thutha!"
 
 msgid "Remember to use the left mouse button!"
 msgstr "Ni humbule u shumisa bathoni ya monde ya mausu!"
+
+msgid "Sound muted."
+msgstr ""
+
+msgid "Sound unmuted."
+msgstr ""
 
 msgid "Please wait..."
 msgstr "Ni humbelwa uri ni lindele.."

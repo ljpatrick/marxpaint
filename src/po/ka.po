@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TuxPaint\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-05-09 00:32-0700\n"
+"POT-Creation-Date: 2007-07-04 23:03-0700\n"
 "PO-Revision-Date: 2005-10-10 23:41+0300\n"
 "Last-Translator: Giasher <giasher@telenet.ge>\n"
 "Language-Team: Gia Shervashidze <giasher@telenet.ge>\n"
@@ -277,8 +277,9 @@ msgstr "კვადრათი მართკუთხედედია ო�
 msgid "A rectangle has four sides and four right angles."
 msgstr "მართკუთხედს ოთხი გვერდი და ოთხი მართი კუთხე აქვს."
 
+#, fuzzy
 msgid ""
-"A circle is a curve where all points have the same distance from the centre."
+"A circle is a curve where all points have the same distance from the center."
 msgstr "წრეწირი მრუდია, რომლის ყველა წერტილი ცენტრიდან თანაბრადაა დაცილებული."
 
 msgid "An ellipse is a stretched circle."
@@ -486,6 +487,12 @@ msgstr ""
 
 msgid "Remember to use the left mouse button!"
 msgstr "არ დაგავიწყდეთ თაგუნას მარცხენა ღილაკის გამოყენება!"
+
+msgid "Sound muted."
+msgstr ""
+
+msgid "Sound unmuted."
+msgstr ""
 
 msgid "Please wait..."
 msgstr ""

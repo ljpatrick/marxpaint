@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: cs\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-09-10 11:18-0700\n"
+"POT-Creation-Date: 2007-07-04 23:03-0700\n"
 "PO-Revision-Date: 2006-06-21 12:50+0200\n"
 "Last-Translator: Václav Čermák <vaclav.cermak@gmail.com>\n"
 "Language-Team:  <cs@li.org>\n"
@@ -129,6 +129,18 @@ msgstr "Jen tak dál!"
 
 msgid "Good job!"
 msgstr "Dobrá práce!"
+
+msgid "English"
+msgstr ""
+
+msgid "Hiragana"
+msgstr ""
+
+msgid "Katakana"
+msgstr ""
+
+msgid "Hangul"
+msgstr ""
 
 msgid "Fill"
 msgstr "Výplň"
@@ -263,8 +275,9 @@ msgstr "Čtverec je pravoúhelník se čtyřmi stejnými stranami."
 msgid "A rectangle has four sides and four right angles."
 msgstr "Obdélník má čtyři strany."
 
+#, fuzzy
 msgid ""
-"A circle is a curve where all points have the same distance from the centre."
+"A circle is a curve where all points have the same distance from the center."
 msgstr "Kruh je tvořen body, které nepřesahují určitou vzdálenost od středu."
 
 msgid "An ellipse is a stretched circle."
@@ -347,7 +360,9 @@ msgid "Pick a picture to stamp around your drawing."
 msgstr "Vyber obrázek, který chceš otisknout do své kresby."
 
 msgid "Click to start drawing a line. Let go to complete it."
-msgstr "Stiskni tlačítko myši a táhni. Vytvoříš úsečku, která skončí tam tlačítko pustíš."
+msgstr ""
+"Stiskni tlačítko myši a táhni. Vytvoříš úsečku, která skončí tam tlačítko "
+"pustíš."
 
 msgid ""
 "Pick a shape. Click to pick the center, drag, then let go when it is the "
@@ -471,6 +486,12 @@ msgstr "Ne, nemazat!"
 
 msgid "Remember to use the left mouse button!"
 msgstr "Nezapomeň používat levé tlačítko myši!"
+
+msgid "Sound muted."
+msgstr ""
+
+msgid "Sound unmuted."
+msgstr ""
 
 msgid "Please wait..."
 msgstr "Prosím počkej…"

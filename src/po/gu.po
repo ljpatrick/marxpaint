@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-05-09 00:32-0700\n"
+"POT-Creation-Date: 2007-07-04 23:03-0700\n"
 "PO-Revision-Date: 2007-05-29 11:29+0530\n"
 "Last-Translator: Kartik Mistry <kartik.mistry@gmail.com>\n"
 "Language-Team: Gujarati <team@utkarsh.org>\n"
@@ -222,7 +222,8 @@ msgstr "રંગોને ઝાંખાં કરવાં ક્લિક �
 msgid "Click and move to darken the colors."
 msgstr "રંગોને ઘેરાં કરવાં ક્લિક કરો અને ખસેડો."
 
-msgid "Click and move the mouse around to turn the picture into a chalk drawing."
+msgid ""
+"Click and move the mouse around to turn the picture into a chalk drawing."
 msgstr "ચિત્રને ચોક ચિત્રમાં ફેરવવા માઉસ ક્લિક કરો અને આજુ-બાજુ ફેરવો."
 
 msgid "Click and move the mouse around to make the picture blocky."
@@ -273,7 +274,9 @@ msgstr "ચોરસ ચારેય સરખી બાજુઓ ધરાવ�
 msgid "A rectangle has four sides and four right angles."
 msgstr "ચતુષ્કોણને ચાર સરખી બાજુઓ અને ચાર સરખા ખૂણાઓ હોય છે."
 
-msgid "A circle is a curve where all points have the same distance from the centre."
+#, fuzzy
+msgid ""
+"A circle is a curve where all points have the same distance from the center."
 msgstr "વર્તુળ વક્ર છે કે જેમાં બધાં બિંદુઓ કેન્દ્રથી સમાન અંતરે આવેલાં હોય છે."
 
 msgid "An ellipse is a stretched circle."
@@ -358,8 +361,12 @@ msgstr "તમારા ચિત્રની આજુબાજુ છાપ �
 msgid "Click to start drawing a line. Let go to complete it."
 msgstr "રેખા દોરવા માટે ક્લિક કરો. પૂરી કરવા તેનાથી દૂર જઇને ક્લિક કરો."
 
-msgid "Pick a shape. Click to pick the center, drag, then let go when it is the size you want. Move around to rotate it, and click to draw it."
-msgstr "આકાર પસંદ કરો. કેન્દ્રને પસંદ કરવા ક્લિક કરો, ખસેડો, અને તમને જોઇએ તે માપ પસંદ કરો. તેને ફેરવવા આજુબાજુ ખસેડો, અને તે દોરવા માટે ક્લિક કરો."
+msgid ""
+"Pick a shape. Click to pick the center, drag, then let go when it is the "
+"size you want. Move around to rotate it, and click to draw it."
+msgstr ""
+"આકાર પસંદ કરો. કેન્દ્રને પસંદ કરવા ક્લિક કરો, ખસેડો, અને તમને જોઇએ તે માપ પસંદ કરો. તેને "
+"ફેરવવા આજુબાજુ ખસેડો, અને તે દોરવા માટે ક્લિક કરો."
 
 msgid "Choose a style of text. Click on your drawing and you can start typing."
 msgstr "લખાણની પધ્ધતિ પસંદ કરો. તમારા ચિત્રમાં ક્લિક કરો અને તમે લખવાનું શરૂ કરી શકો છો."
@@ -477,6 +484,12 @@ msgstr "ના, તેને ભૂંસો નહી!"
 msgid "Remember to use the left mouse button!"
 msgstr "જમણાં માઉસ બટનનો ઉપયોગ કરવાનું યાદ રાખો!"
 
+msgid "Sound muted."
+msgstr ""
+
+msgid "Sound unmuted."
+msgstr ""
+
 msgid "Please wait..."
 msgstr "મહેરબાની કરી રાહ જુઓ..."
 
@@ -531,4 +544,3 @@ msgstr "ચિત્ર કાર્યક્રમ"
 
 msgid "Tux Paint"
 msgstr "ટક્સ પેન્ટ"
-

@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: he\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-05-09 00:32-0700\n"
+"POT-Creation-Date: 2007-07-04 23:03-0700\n"
 "PO-Revision-Date: 2005-10-10 21:54+0200\n"
 "Last-Translator: dovix <dovix2003@yahoo.com>\n"
 "Language-Team: Hebrew <mdk-hebrew@iglu.org.il>\n"
@@ -286,8 +286,9 @@ msgstr "ריבוע הוא מלבן עם ארבע צלעות שוות."
 msgid "A rectangle has four sides and four right angles."
 msgstr "למלבן יש ארבע צלעות וארבע זוויות ישרות."
 
+#, fuzzy
 msgid ""
-"A circle is a curve where all points have the same distance from the centre."
+"A circle is a curve where all points have the same distance from the center."
 msgstr "עיגול הוא עקומה שבה כל הנקודות הן במרחק שווה מהמרכז."
 
 msgid "An ellipse is a stretched circle."
@@ -495,6 +496,12 @@ msgstr ""
 
 msgid "Remember to use the left mouse button!"
 msgstr "יש לזכור להשתמש בכפתור השמאלי של העכבר! "
+
+msgid "Sound muted."
+msgstr ""
+
+msgid "Sound unmuted."
+msgstr ""
 
 msgid "Please wait..."
 msgstr ""
