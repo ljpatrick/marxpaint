@@ -917,8 +917,6 @@ static SDL_Surface *img_scroll_up_off, *img_scroll_down_off;
 static SDL_Surface *img_grow, *img_shrink;
 static SDL_Surface *img_bold, *img_italic;
 
-static SDL_Surface *img_sparkles, *img_sparkles_color;
-
 static SDL_Surface *img_title_on, *img_title_off,
   *img_title_large_on, *img_title_large_off;
 static SDL_Surface *img_title_names[NUM_TITLES];
@@ -1201,7 +1199,6 @@ static void draw_none(void);
 static void do_undo(void);
 static void do_redo(void);
 static void render_brush(void);
-static void render_sparkles(void);
 static void line_xor(int x1, int y1, int x2, int y2);
 static void rect_xor(int x1, int y1, int x2, int y2);
 static void draw_blinking_cursor(void);
@@ -1569,7 +1566,6 @@ int main(int argc, char *argv[])
 
   img_cur_brush = NULL;
   render_brush();
-  render_sparkles();
 
   brush_scroll = 0;
   for (i = 0; i < MAX_STAMP_GROUPS; i++)
@@ -2882,7 +2878,6 @@ static void mainloop(void)
 	    playsound(screen, 1, SND_BUBBLE, 1, event.button.x, SNDDIST_NEAR);
 	    draw_colors(COLORSEL_REFRESH);
 	    render_brush();
-	    render_sparkles();
 	    draw_tux_text(TUX_KISS, color_names[cur_color], 1);
 
 	    if (cur_tool == TOOL_TEXT)
@@ -6681,8 +6676,6 @@ static void setup(int argc, char *argv[])
 
   show_progress_bar(screen);
 
-  img_sparkles = loadimage(DATA_PREFIX "images/ui/sparkles.png");
-
 
   /* Load brushes: */
   load_brush_dir(screen, DATA_PREFIX "brushes");
@@ -8730,78 +8723,6 @@ static void render_brush(void)
 
   brush_counter = 0;
 }
-
-
-/* Create the sparkles in the current color: */
-
-static void render_sparkles(void)
-{
-  Uint32 amask;
-  int x, y;
-  Uint8 r, g, b, a;
-  Uint32(*getpixel_sparkles) (SDL_Surface *, int, int) =
-    getpixels[img_sparkles->format->BytesPerPixel];
-  void (*putpixel_sparkles) (SDL_Surface *, int, int, Uint32) =
-    putpixels[img_sparkles->format->BytesPerPixel];
-
-
-  /* Free the old rendered brush (if any): */
-
-  if (img_sparkles_color != NULL)
-  {
-    SDL_FreeSurface(img_sparkles_color);
-  }
-
-
-  /* Create a surface to render into: */
-
-  amask = ~(img_sparkles->format->Rmask |
-	    img_sparkles->format->Gmask | img_sparkles->format->Bmask);
-
-  img_sparkles_color =
-    SDL_CreateRGBSurface(SDL_SWSURFACE,
-			 img_sparkles->w,
-			 img_sparkles->h,
-			 img_sparkles->format->BitsPerPixel,
-			 img_sparkles->format->Rmask,
-			 img_sparkles->format->Gmask,
-			 img_sparkles->format->Bmask, amask);
-
-  if (img_sparkles_color == NULL)
-  {
-    fprintf(stderr, "\nError: Can't render sparkles!\n"
-	    "The Simple DirectMedia Layer error that occurred was:\n"
-	    "%s\n\n", SDL_GetError());
-
-    cleanup();
-    exit(1);
-  }
-
-
-  /* Render the colored sparkles: */
-
-  SDL_LockSurface(img_sparkles);
-  SDL_LockSurface(img_sparkles_color);
-
-  for (y = 0; y < img_sparkles->h; y++)
-  {
-    for (x = 0; x < img_sparkles->w; x++)
-    {
-      SDL_GetRGBA(getpixel_sparkles(img_sparkles, x, y),
-		  img_sparkles->format, &r, &g, &b, &a);
-
-      putpixel_sparkles(img_sparkles_color, x, y,
-			SDL_MapRGBA(img_sparkles_color->format,
-				    color_hexes[cur_color][0],
-				    color_hexes[cur_color][1],
-				    color_hexes[cur_color][2], a));
-    }
-  }
-
-  SDL_UnlockSurface(img_sparkles_color);
-  SDL_UnlockSurface(img_sparkles);
-}
-
 
 
 /* Draw a XOR line: */
@@ -10855,9 +10776,6 @@ static void cleanup(void)
 
   free_surface(&img_bold);
   free_surface(&img_italic);
-
-  free_surface(&img_sparkles);
-  free_surface(&img_sparkles_color);
 
   free_surface_array(undo_bufs, NUM_UNDO_BUFS);
 
