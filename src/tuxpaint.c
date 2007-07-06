@@ -69,7 +69,6 @@
 #ifdef NOKIA_770
 # define LOW_QUALITY_THUMBNAILS
 # define LOW_QUALITY_STAMP_OUTLINE
-# define LOW_QUALITY_FLOOD_FILL
 # define NO_PROMPT_SHADOWS
 # define USE_HWSURFACE
 #else
@@ -77,7 +76,6 @@
 /* #define LOW_QUALITY_THUMBNAILS */
 /* #define LOW_QUALITY_COLOR_SELECTOR */
 /* #define LOW_QUALITY_STAMP_OUTLINE */
-/* #define LOW_QUALITY_FLOOD_FILL */
 /* #define NO_PROMPT_SHADOWS */
 /* #define USE_HWSURFACE */
 #endif
@@ -396,7 +394,6 @@ extern WrapperData macosx;
 #include "i18n.h"
 #include "cursor.h"
 #include "pixels.h"
-#include "floodfill.h"
 #include "rgblinear.h"
 #include "playsound.h"
 #include "progressbar.h"
@@ -838,7 +835,7 @@ static int fullscreen, native_screensize, disable_quit, simple_shapes,
   no_button_distinction,
   mirrorstamps, disable_stamp_controls, disable_save, ok_to_use_lockfile,
   alt_print_command_default, scrolling = 0,
-  start_blank, autosave_on_quit, rotate_orientation;
+  start_blank, autosave_on_quit, rotate_orientation, button_down;
 static int want_alt_printcommand;
 static int starter_mirrored, starter_flipped, starter_personal;
 static int recording, playing;
@@ -921,7 +918,6 @@ static SDL_Surface *img_grow, *img_shrink;
 static SDL_Surface *img_bold, *img_italic;
 
 static SDL_Surface *img_sparkles, *img_sparkles_color;
-static SDL_Surface *img_grass;
 
 static SDL_Surface *img_title_on, *img_title_off,
   *img_title_large_on, *img_title_large_off;
@@ -1109,7 +1105,7 @@ enum {
 static SDL_Surface *img_cur_brush;
 int img_cur_brush_frame_w, img_cur_brush_w, img_cur_brush_h,
     img_cur_brush_frames, img_cur_brush_directional, img_cur_brush_spacing;
-static int brush_counter, rainbow_color, brush_frame;
+static int brush_counter, brush_frame;
 
 #define NUM_ERASERS 12	/* How many sizes of erasers
 			   (from ERASER_MIN to _MAX as squares, then again
@@ -1336,10 +1332,16 @@ int in_circle_rad(int x, int y, int rad);
 int paintsound(int size);
 void load_magic_plugins(void);
 
+Mix_Chunk * magic_current_snd_ptr;
+void magic_playsound(Mix_Chunk * snd, int left_right, int up_down);
 void magic_line_func(int which, SDL_Surface * canvas, SDL_Surface * last,
                      int x1, int y1, int x2, int y2, int step,
 		     void (*cb)(void *, int, SDL_Surface *, SDL_Surface *,
 				int, int));
+
+Uint8 magic_linear_to_sRGB(float lin);
+float magic_sRGB_to_linear(Uint8 srgb);
+int magic_button_down(void);
 
 #ifdef DEBUG
 static char *debug_gettext(const char *str);
@@ -1677,7 +1679,7 @@ enum
 
 static void mainloop(void)
 {
-  int done, which, button_down, old_x, old_y, new_x, new_y,
+  int done, which, old_x, old_y, new_x, new_y,
     line_start_x, line_start_y, shape_tool_mode,
     shape_ctr_x, shape_ctr_y, shape_outer_x, shape_outer_y,
     old_stamp_group;
@@ -2217,9 +2219,15 @@ static void mainloop(void)
 	      cur_thing = cur_magic;
 	      num_things = num_magics;
 	      thing_scroll = &magic_scroll;
-	      rainbow_color = 0;
+              magic_current_snd_ptr = NULL;
 	      draw_magic();
 	      draw_colors(magic_colors[cur_magic]);
+	      if (magic_colors[cur_magic])
+	        magic_funcs[magic_handle_idx[cur_magic]].set_color(
+						magic_api_struct,
+						color_hexes[cur_color][0],
+						color_hexes[cur_color][1],
+						color_hexes[cur_color][2]);
 	    }
 	    else if (cur_tool == TOOL_ERASER)
 	    {
@@ -2842,6 +2850,13 @@ static void mainloop(void)
 	      {
 		cur_magic = cur_thing;
 		draw_colors(magic_colors[cur_magic]);
+              
+                if (magic_colors[cur_magic])
+	          magic_funcs[magic_handle_idx[cur_magic]].set_color(
+						magic_api_struct,
+						color_hexes[cur_color][0],
+						color_hexes[cur_color][1],
+						color_hexes[cur_color][2]);
 	      }
 
 	      draw_tux_text(TUX_GREAT, magic_tips[cur_magic], 1);
@@ -2872,6 +2887,12 @@ static void mainloop(void)
 
 	    if (cur_tool == TOOL_TEXT)
 	      do_render_cur_text(0);
+            else if (cur_tool == TOOL_MAGIC)
+              magic_funcs[magic_handle_idx[cur_magic]].set_color(
+						magic_api_struct,
+						color_hexes[cur_color][0],
+						color_hexes[cur_color][1],
+						color_hexes[cur_color][2]);
 	  }
 	}
 	else if (HIT(r_canvas) && valid_click(event.button.button))
@@ -2991,38 +3012,18 @@ static void mainloop(void)
               undo_ctr = NUM_UNDO_BUFS - 1;
 
             last = undo_bufs[undo_ctr];
-   
+  
+	    // FIXME: Lock surfaces?  Probably better to let tool plugins do it 
+
 	    magic_funcs[magic_handle_idx[cur_magic]].click(magic_api_struct,
 					                   magic_idx[cur_magic],
 					                   canvas, last,
 							   old_x, old_y);
 	    
+	    draw_tux_text(TUX_GREAT, magic_tips[cur_magic], 1);
+
             // FIXME: Maybe 'click' should return an update rect?
   	    update_canvas(0, 0, canvas->w, canvas->h);
-
-
-#if 0 /* MAGIC_ME */
-	    /* (Arbitrarily large, so we draw once now) */
-	    reset_brush_counter();
-
-	    if (cur_magic != MAGIC_FILL)
-	    {
-	      magic_draw(old_x, old_y, old_x, old_y, button_down);
-	    }
-	    else
-	    {
-	      do_flood_fill(screen, canvas, old_x, old_y,
-			    SDL_MapRGB(canvas->format,
-				       color_hexes[cur_color][0],
-				       color_hexes[cur_color][1],
-				       color_hexes[cur_color][2]),
-			    getpixels[canvas->format->BytesPerPixel] (canvas,
-								      old_x,
-								      old_y));
-
-	      draw_tux_text(TUX_GREAT, magic_tips[MAGIC_FILL], 1);
-	    }
-#endif
 	  }
 	  else if (cur_tool == TOOL_ERASER)
 	  {
@@ -4424,736 +4425,6 @@ static void stamp_draw(int x, int y)
 }
 
 
-/* Draw using the current brush: */
-
-#if 0 /* MAGIC_ME */
-
-  /* Play sound: */
-
-  if (cur_magic == MAGIC_DRIP)
-    playsound(screen, 0, SND_DRIP, 0, x1, SNDDIST_NEAR);
-  else if (cur_magic == MAGIC_CHALK)
-    playsound(screen, 0, SND_CHALK, 0, x1, SNDDIST_NEAR);
-  else if (cur_magic == MAGIC_SPARKLES)
-    playsound(screen, 0, SND_SPARKLES1 + (rand() % 2), 0, x1, SNDDIST_NEAR);
-  else if (cur_magic == MAGIC_FLIP)
-    playsound(screen, 0, SND_FLIP, 0, SNDPOS_CENTER, SNDDIST_NEAR);
-  else if (cur_magic == MAGIC_MIRROR)
-    playsound(screen, 0, SND_MIRROR, 0, SNDPOS_CENTER, SNDDIST_NEAR);
-  else if (cur_magic == MAGIC_NEGATIVE)
-    playsound(screen, 0, SND_NEGATIVE, 0, x1, SNDDIST_NEAR);
-  else if (cur_magic == MAGIC_BLUR)
-    playsound(screen, 0, SND_BLUR, 0, x1, SNDDIST_NEAR);
-  else if (cur_magic == MAGIC_BLOCKS && ((rand() % 10) < 5))
-    playsound(screen, 0, SND_BLOCKS, 0, x1, SNDDIST_NEAR);
-  else if (cur_magic == MAGIC_FADE)
-    playsound(screen, 0, SND_FADE, 0, x1, SNDDIST_NEAR);
-  else if (cur_magic == MAGIC_DARKEN)
-    playsound(screen, 0, SND_DARKEN, 0, x1, SNDDIST_NEAR);
-  else if (cur_magic == MAGIC_RAINBOW)
-    playsound(screen, 0, SND_RAINBOW, 0, x1, SNDDIST_NEAR);
-  else if (cur_magic == MAGIC_SMUDGE)
-    playsound(screen, 0, SND_SMUDGE, 0, x1, SNDDIST_NEAR);
-  else if (cur_magic == MAGIC_CARTOON)
-    playsound(screen, 0, SND_CARTOON, 0, x1, SNDDIST_NEAR);
-  else if (cur_magic == MAGIC_TINT)
-    playsound(screen, 0, SND_TINT, 0, x1, SNDDIST_NEAR);
-  else if (cur_magic == MAGIC_GRASS)
-    playsound(screen, 0, SND_GRASS, 0, x1, y1);
-
-  /* FIXME: Arbitrary? */
-
-  update_canvas(orig_x1 - 32, orig_y1 - 32, orig_x2 + 32, orig_y2 + 64);
-}
-#endif
-
-
-// this one rounds down
-static int log2int(int x)
-{
-  int y = 0;
-  if (x <= 1)
-    return 0;
-  x >>= 1;
-  while (x)
-  {
-    x >>= 1;
-    y++;
-  }
-  return y;
-}
-
-#if 0 // MAGIC_ME
-
-static void do_brick(int x, int y, int w, int h)
-{
-  SDL_Rect dest;
-
-  // brick color: 127,76,73
-  double ran_r = rand() / (double) RAND_MAX;
-  double ran_g = rand() / (double) RAND_MAX;
-  double base_r =
-    sRGB_to_linear_table[color_hexes[cur_color][0]] * 1.5 +
-    sRGB_to_linear_table[127] * 5.0 + ran_r;
-  double base_g =
-    sRGB_to_linear_table[color_hexes[cur_color][1]] * 1.5 +
-    sRGB_to_linear_table[76] * 5.0 + ran_g;
-  double base_b =
-    sRGB_to_linear_table[color_hexes[cur_color][2]] * 1.5 +
-    sRGB_to_linear_table[73] * 5.0 + (ran_r + ran_g * 2.0) / 3.0;
-
-  Uint8 r = linear_to_sRGB(base_r / 7.5);
-  Uint8 g = linear_to_sRGB(base_g / 7.5);
-  Uint8 b = linear_to_sRGB(base_b / 7.5);
-
-  dest.x = x;
-  dest.y = y;
-  dest.w = w;
-  dest.h = h;
-
-
-  SDL_FillRect(canvas, &dest, SDL_MapRGB(canvas->format, r, g, b));
-
-// This is better for debugging brick layout:
-//  SDL_FillRect(canvas, &dest, SDL_MapRGB(canvas->format, rand()&255, rand()&255, rand()&255));
-
-
-  /* Note: We only play the brick sound when we actually DRAW a brick: */
-
-  playsound(screen, 0, SND_BRICK, 1, x, SNDDIST_NEAR);
-}
-
-#endif
-
-
-/* Draw the current brush in the current color: */
-
-#if 0 // MAGIC_ME
-
-static void blit_magic(int x, int y, int button_down)
-{
-
-// PORT THESE TO MAGIC PLUGIN API:
-
-#if 0 // MAGIC_ME
-    if (cur_magic == MAGIC_BLUR)
-    {
-      double state[32][32][3];
-      unsigned i = 32 * 32;
-
-      SDL_LockSurface(canvas);
-
-      while (i--)
-      {
-	int iy = i >> 5;
-	int ix = i & 0x1f;
-	// is it not on the circle of radius sqrt(220) at location 16,16?
-	if ((ix - 16) * (ix - 16) + (iy - 16) * (iy - 16) > 220)
-	  continue;
-	// it is on the circle, so grab it
-
-	SDL_GetRGB(getpixel_canvas(canvas, x + ix - 16, y + iy - 16),
-		   last->format, &r, &g, &b);
-	state[ix][iy][0] = sRGB_to_linear_table[r];
-	state[ix][iy][1] = sRGB_to_linear_table[g];
-	state[ix][iy][2] = sRGB_to_linear_table[b];
-      }
-      i = 32 * 32;
-      while (i--)
-      {
-	double lr, lg, lb;	// linear red,green,blue
-	double weight;
-	int iy = i >> 5;
-	int ix = i & 0x1f;
-	int r2 = (ix - 16) * (ix - 16) + (iy - 16) * (iy - 16);	// radius squared
-
-	// is it not on the circle of radius sqrt(140) at location 16,16?
-	if (r2 > 140)
-	  continue;
-
-	// It is on the circle, but how strongly will it be affected?
-	// This is lame; we should use something like a gaussian or cosine
-	// via a lookup table. (inverted, because this is the center weight)
-	weight = r2 / 16.0 + 3.0;
-
-	// Sampling more points would be good too, though it'd be slower.
-
-	lr = state[ix][iy - 1][0]
-	  + state[ix - 1][iy][0] + state[ix][iy][0] * weight + state[ix +
-								     1][iy][0]
-	  + state[ix][iy + 1][0];
-
-	lg = state[ix][iy - 1][1]
-	  + state[ix - 1][iy][1] + state[ix][iy][1] * weight + state[ix +
-								     1][iy][1]
-	  + state[ix][iy + 1][1];
-
-	lb = state[ix][iy - 1][2]
-	  + state[ix - 1][iy][2] + state[ix][iy][2] * weight + state[ix +
-								     1][iy][2]
-	  + state[ix][iy + 1][2];
-
-	lr /= weight + 4.0;
-	lg /= weight + 4.0;
-	lb /= weight + 4.0;
-	putpixel(canvas, x + ix - 16, y + iy - 16,
-		 SDL_MapRGB(canvas->format, linear_to_sRGB(lr),
-			    linear_to_sRGB(lg), linear_to_sRGB(lb)));
-      }
-      SDL_UnlockSurface(canvas);
-    }
-    else if (cur_magic == MAGIC_BLOCKS)
-    {
-      /* Put x/y on exact grid points: */
-
-      x = (x / 4) * 4;
-      y = (y / 4) * 4;
-
-      SDL_LockSurface(last);
-      SDL_LockSurface(canvas);
-
-      for (yy = y - 8; yy < y + 8; yy = yy + 4)
-      {
-	for (xx = x - 8; xx < x + 8; xx = xx + 4)
-	{
-	  Uint32 pix[16];
-	  Uint32 p_or = 0;
-	  Uint32 p_and = ~0;
-	  unsigned i = 16;
-	  while (i--)
-	  {
-	    Uint32 p_tmp;
-	    p_tmp = getpixel_last(last, xx + (i >> 2), yy + (i & 3));
-	    p_or |= p_tmp;
-	    p_and &= p_tmp;
-	    pix[i] = p_tmp;
-	  }
-	  if (p_or == p_and)	// if all pixels the same already
-	  {
-	    SDL_GetRGB(p_or, last->format, &r, &g, &b);
-	  }
-	  else			// nope, must average them
-	  {
-	    double r_sum = 0.0;
-	    double g_sum = 0.0;
-	    double b_sum = 0.0;
-	    i = 16;
-	    while (i--)
-	    {
-	      SDL_GetRGB(pix[i], last->format, &r, &g, &b);
-	      r_sum += sRGB_to_linear_table[r];
-	      g_sum += sRGB_to_linear_table[g];
-	      b_sum += sRGB_to_linear_table[b];
-	    }
-	    r = linear_to_sRGB(r_sum / 16.0);
-	    g = linear_to_sRGB(g_sum / 16.0);
-	    b = linear_to_sRGB(b_sum / 16.0);
-	  }
-
-	  /* Draw block: */
-
-	  dest.x = xx;
-	  dest.y = yy;
-	  dest.w = 4;
-	  dest.h = 4;
-
-	  SDL_FillRect(canvas, &dest, SDL_MapRGB(canvas->format, r, g, b));
-	}
-      }
-
-      SDL_UnlockSurface(canvas);
-      SDL_UnlockSurface(last);
-    }
-    else if (cur_magic == MAGIC_LARGEBRICK || cur_magic == MAGIC_SMALLBRICK)
-    {
-      // "specified" means the brick itself, w/o morter
-      // "nominal" means brick-to-brick (includes morter)
-      int specified_width, specified_height, specified_length;
-      int nominal_length;
-      int brick_x, brick_y;
-
-      int vertical_joint = 2;	// between a brick and the one above/below
-      int horizontal_joint = 2;	// between a brick and the one to the side
-      int nominal_width = 18;
-      int nominal_height = 12;	// 11 to 14, for joints of 2
-      static unsigned char *map;
-      static int x_count;
-      static int y_count;
-      unsigned char *mybrick;
-
-      if (cur_magic == MAGIC_LARGEBRICK)
-      {
-	vertical_joint = 4;	// between a brick and the one above/below
-	horizontal_joint = 4;	// between a brick and the one to the side
-	nominal_width = 36;
-	nominal_height = 24;	// 11 to 14, for joints of 2
-      }
-
-      nominal_length = 2 * nominal_width;
-      specified_width = nominal_width - horizontal_joint;
-      specified_height = nominal_height - vertical_joint;
-      specified_length = nominal_length - horizontal_joint;
-
-      if (!button_down)
-      {
-	if (map)
-	  free(map);
-	// the "+ 3" allows for both ends and misalignment
-	x_count = (canvas->w + nominal_width - 1) / nominal_width + 3;
-	y_count = (canvas->h + nominal_height - 1) / nominal_height + 3;
-	map = calloc(x_count, y_count);
-      }
-
-      brick_x = x / nominal_width;
-      brick_y = y / nominal_height;
-
-      mybrick = map + brick_x + 1 + (brick_y + 1) * x_count;
-
-      if ((unsigned) x < (unsigned) canvas->w
-	  && (unsigned) y < (unsigned) canvas->h && !*mybrick)
-      {
-	int my_x = brick_x * nominal_width;
-	int my_w = specified_width;
-	*mybrick = 1;
-	SDL_LockSurface(canvas);
-	if ((brick_y ^ brick_x) & 1)
-	{
-	  if (mybrick[1])
-	    my_w = specified_length;
-	}
-	else if (mybrick[-1])
-	{
-	  my_x -= nominal_width;
-	  my_w = specified_length;
-	}
-	do_brick(my_x, brick_y * nominal_height, my_w, specified_height);
-	SDL_UnlockSurface(canvas);
-	//            upper left corner        and     lower right corner
-	update_canvas(brick_x * nominal_width - nominal_width,
-		      brick_y * nominal_height - vertical_joint,
-		      brick_x * nominal_width + specified_length,
-		      (brick_y + 1) * nominal_height);
-      }
-    }
-    else if (cur_magic == MAGIC_SMUDGE)
-    {
-      static double state[32][32][3];
-      unsigned i = 32 * 32;
-      double rate = button_down ? 0.5 : 0.0;
-
-      SDL_LockSurface(canvas);
-
-      while (i--)
-      {
-	int iy = i >> 5;
-	int ix = i & 0x1f;
-	// is it not on the circle of radius sqrt(120) at location 16,16?
-	if ((ix - 16) * (ix - 16) + (iy - 16) * (iy - 16) > 120)
-	  continue;
-	// it is on the circle, so grab it
-
-	SDL_GetRGB(getpixel_canvas(canvas, x + ix - 16, y + iy - 16),
-		   last->format, &r, &g, &b);
-	state[ix][iy][0] =
-	  rate * state[ix][iy][0] + (1.0 - rate) * sRGB_to_linear_table[r];
-	state[ix][iy][1] =
-	  rate * state[ix][iy][1] + (1.0 - rate) * sRGB_to_linear_table[g];
-	state[ix][iy][2] =
-	  rate * state[ix][iy][2] + (1.0 - rate) * sRGB_to_linear_table[b];
-
-	// opacity 100% --> new data not blended w/ existing data
-	putpixel(canvas, x + ix - 16, y + iy - 16,
-		 SDL_MapRGB(canvas->format, linear_to_sRGB(state[ix][iy][0]),
-			    linear_to_sRGB(state[ix][iy][1]),
-			    linear_to_sRGB(state[ix][iy][2])));
-      }
-      SDL_UnlockSurface(canvas);
-    }
-    else if (cur_magic == MAGIC_TINT)
-    {
-      double rd = sRGB_to_linear_table[color_hexes[cur_color][0]];
-      double gd = sRGB_to_linear_table[color_hexes[cur_color][1]];
-      double bd = sRGB_to_linear_table[color_hexes[cur_color][2]];
-      double old;
-
-      SDL_LockSurface(last);
-      SDL_LockSurface(canvas);
-
-      for (yy = y - 16; yy < y + 16; yy++)
-      {
-	for (xx = x - 16; xx < x + 16; xx++)
-	{
-	  if (in_circle(xx - x, yy - y))
-	  {
-	    /* Get original pixel: */
-
-	    SDL_GetRGB(getpixel_last(last, xx, yy), last->format, &r, &g, &b);
-
-	    old = sRGB_to_linear_table[r] * 0.2126 +
-	      sRGB_to_linear_table[g] * 0.7152 +
-	      sRGB_to_linear_table[b] * 0.0722;
-
-	    putpixel(canvas, xx, yy,
-		     SDL_MapRGB(canvas->format,
-				linear_to_sRGB(rd * old),
-				linear_to_sRGB(gd * old),
-				linear_to_sRGB(bd * old)));
-	  }
-	}
-      }
-
-      SDL_UnlockSurface(canvas);
-      SDL_UnlockSurface(last);
-    }
-    else if (cur_magic == MAGIC_CARTOON)
-    {
-      float hue, sat, val;
-      Uint8 r1, g1, b1, r2, g2, b2;
-      Uint32(*getpixel) (SDL_Surface *, int, int) =
-	getpixels[last->format->BytesPerPixel];
-
-      SDL_LockSurface(last);
-      SDL_LockSurface(canvas);
-
-      /* First, convert colors to more cartoony ones: */
-
-      for (yy = y - 16; yy < y + 16; yy = yy + 1)
-      {
-	for (xx = x - 16; xx < x + 16; xx = xx + 1)
-	{
-	  if (in_circle(xx - x, yy - y))
-	  {
-	    /* Get original color: */
-
-	    /*
-	       SDL_GetRGB(getpixel_last(last, xx, yy),
-	       last->format, &r1, &g1, &b1);
-	       SDL_GetRGB(getpixel_last(last, xx + 1, yy),
-	       last->format, &r2, &g2, &b2);
-	       SDL_GetRGB(getpixel_last(last, xx, yy + 1),
-	       last->format, &r3, &g3, &b3);
-	       SDL_GetRGB(getpixel_last(last, xx + 1, yy + 1),
-	       last->format, &r4, &g4, &b4);
-
-	       r = (r1 + r2 + r3 + r4) / 4;
-	       g = (g1 + g2 + g3 + g4) / 4;
-	       b = (b1 + b2 + b3 + b4) / 4;
-	     */
-	    SDL_GetRGB(getpixel_last(last, xx, yy), last->format, &r, &g, &b);
-
-	    rgbtohsv(r, g, b, &hue, &sat, &val);
-
-	    /*
-	       if (sat <= 0.2)
-	       sat = 0.0;
-	       else if (sat <= 0.7)
-	       sat = 0.5;
-	       else
-	       sat = 1.0;
-	     */
-
-	    val = val - 0.5;
-	    val = val * 4;
-	    val = val + 0.5;
-
-	    if (val < 0)
-	      val = 0;
-	    else if (val > 1.0)
-	      val = 1.0;
-
-	    val = floor(val * 4) / 4;
-	    hue = floor(hue * 4) / 4;
-
-	    sat = floor(sat * 4) / 4;
-
-	    hsvtorgb(hue, sat, val, &r, &g, &b);
-
-	    putpixel(canvas, xx, yy, SDL_MapRGB(canvas->format, r, g, b));
-	    /*
-	       putpixel(canvas, xx + 1, yy,
-	       SDL_MapRGB(canvas->format, r, g, b));
-	       putpixel(canvas, xx, yy + 1,
-	       SDL_MapRGB(canvas->format, r, g, b));
-	       putpixel(canvas, xx + 1, yy + 1,
-	       SDL_MapRGB(canvas->format, r, g, b));
-	     */
-	  }
-	}
-      }
-
-      /* Then, draw dark outlines where there's a large contrast change */
-
-      for (yy = y - 16; yy < y + 16; yy++)
-      {
-	for (xx = x - 16; xx < x + 16; xx++)
-	{
-	  if (in_circle(xx - x, yy - y))
-	  {
-	    /* Get original color: */
-
-	    SDL_GetRGB(getpixel(last, xx, yy), last->format, &r, &g, &b);
-
-	    SDL_GetRGB(getpixel(last, xx + 1, yy),
-		       last->format, &r1, &g1, &b1);
-
-	    SDL_GetRGB(getpixel(last, xx + 1, yy + 1),
-		       last->format, &r2, &g2, &b2);
-
-#define OUTLINE_THRESH 48
-	    if (abs(((r + g + b) / 3) - (r1 + g1 + b1) / 3) > OUTLINE_THRESH
-		|| abs(((r + g + b) / 3) - (r2 + g2 + b2) / 3) >
-		OUTLINE_THRESH || abs(r - r1) > OUTLINE_THRESH
-		|| abs(g - g1) > OUTLINE_THRESH
-		|| abs(b - b1) > OUTLINE_THRESH
-		|| abs(r - r2) > OUTLINE_THRESH
-		|| abs(g - g2) > OUTLINE_THRESH
-		|| abs(b - b2) > OUTLINE_THRESH)
-	    {
-	      putpixel(canvas, xx - 1, yy,
-		       SDL_MapRGB(canvas->format, 0, 0, 0));
-	      putpixel(canvas, xx, yy - 1,
-		       SDL_MapRGB(canvas->format, 0, 0, 0));
-	      putpixel(canvas, xx - 1, yy - 1,
-		       SDL_MapRGB(canvas->format, 0, 0, 0));
-	    }
-	  }
-	}
-      }
-
-      SDL_UnlockSurface(canvas);
-      SDL_UnlockSurface(last);
-    }
-    else if (cur_magic == MAGIC_RAINBOW)
-    {
-      /* Pick next color: */
-
-      colr = SDL_MapRGB(canvas->format,
-			rainbow_hexes[rainbow_color][0],
-			rainbow_hexes[rainbow_color][1],
-			rainbow_hexes[rainbow_color][2]);
-
-
-      /* Draw the shape: */
-
-      for (yy = 0; yy <= 16; yy++)
-      {
-	w = (yy * yy) / 16;
-
-
-	/* Top half: */
-
-	dest.x = x - 16 + w;
-	dest.w = 32 - (w * 2);
-	dest.y = y - yy;;
-	dest.h = 1;
-
-	SDL_FillRect(canvas, &dest, colr);
-
-
-	/* Bottom half: */
-
-	dest.x = x - 16 + w;
-	dest.w = 32 - (w * 2);
-	dest.y = y + yy;
-	dest.h = 1;
-
-	SDL_FillRect(canvas, &dest, colr);
-      }
-    }
-    else if (cur_magic == MAGIC_CHALK)
-    {
-      SDL_LockSurface(last);
-
-      for (yy = y - 8; yy <= y + 8; yy = yy + 4)
-      {
-	for (xx = x - 8; xx <= x + 8; xx = xx + 4)
-	{
-	  dest.x = xx + ((rand() % 5) - 2);
-	  dest.y = yy + ((rand() % 5) - 2);
-	  dest.w = (rand() % 4) + 2;
-	  dest.h = (rand() % 4) + 2;
-
-	  colr = getpixel_last(last, clamp(0, xx, canvas->w - 1),
-			       clamp(0, yy, canvas->h - 1));
-	  SDL_FillRect(canvas, &dest, colr);
-	}
-      }
-
-      SDL_UnlockSurface(last);
-    }
-    else if (cur_magic == MAGIC_DRIP)
-    {
-      for (xx = x - 8; xx <= x + 8; xx++)
-      {
-	h = (rand() % 8) + 8;
-
-	for (yy = y; yy <= y + h; yy++)
-	{
-	  src.x = xx;
-	  src.y = y;
-	  src.w = 1;
-	  src.h = 16;
-
-	  dest.x = xx;
-	  dest.y = yy;
-
-	  SDL_BlitSurface(last, &src, canvas, &dest);
-	}
-      }
-    }
-    else if (cur_magic == MAGIC_SPARKLES)
-    {
-      if ((rand() % 10) < 2)
-      {
-	src.x = 0;
-	src.y = (rand() % 4) * 32;
-	src.w = 32;
-	src.h = 32;
-
-	dest.x = x - 16;
-	dest.y = y - 16;
-
-	SDL_BlitSurface(img_sparkles_color, &src, canvas, &dest);
-      }
-    }
-    else if (cur_magic == MAGIC_GRASS)
-    {
-      // grass color: 82,180,17
-      static int bucket;
-      double tmp_red, tmp_green, tmp_blue;
-      Uint32(*getpixel_grass) (SDL_Surface *, int, int);
-
-      if (!button_down)
-	bucket = 0;
-      bucket += (3.5 + (rand() / (double) RAND_MAX)) * 7.0;
-      while (bucket >= 0)
-      {
-	int rank =
-	  log2int(((double) y / canvas->h) *
-		  (0.99 + (rand() / (double) RAND_MAX)) * 64);
-	int ah = 1 << rank;
-	bucket -= ah;
-	src.x = (rand() % 4) * 64;
-	src.y = ah;
-	src.w = 64;
-	src.h = ah;
-
-	dest.x = x - 32;
-	dest.y = y - 30 + (int) ((rand() / (double) RAND_MAX) * 30);
-
-#if 1
-	// grass color: 82,180,17
-
-	tmp_red =
-	  sRGB_to_linear_table[color_hexes[cur_color][0]] * 2.0 +
-	  (rand() / (double) RAND_MAX);
-	tmp_green =
-	  sRGB_to_linear_table[color_hexes[cur_color][1]] * 2.0 +
-	  (rand() / (double) RAND_MAX);
-	tmp_blue =
-	  sRGB_to_linear_table[color_hexes[cur_color][2]] * 2.0 +
-	  sRGB_to_linear_table[17];
-
-	getpixel_grass = getpixels[img_grass->format->BytesPerPixel];
-
-	for (yy = 0; yy < ah; yy++)
-	{
-	  for (xx = 0; xx < 64; xx++)
-	  {
-	    double rd, gd, bd;
-
-	    SDL_GetRGBA(getpixel_grass(img_grass, xx + src.x, yy + src.y),
-			img_grass->format, &r, &g, &b, &a);
-
-	    rd = sRGB_to_linear_table[r] * 8.0 + tmp_red;
-	    rd = rd * (a / 255.0) / 11.0;
-	    gd = sRGB_to_linear_table[g] * 8.0 + tmp_green;
-	    gd = gd * (a / 255.0) / 11.0;
-	    bd = sRGB_to_linear_table[b] * 8.0 + tmp_blue;
-	    bd = bd * (a / 255.0) / 11.0;
-
-	    SDL_GetRGB(getpixel_canvas(canvas, xx + dest.x, yy + dest.y),
-		       canvas->format, &r, &g, &b);
-
-	    r =
-	      linear_to_sRGB(sRGB_to_linear_table[r] * (1.0 - a / 255.0) +
-			     rd);
-	    g =
-	      linear_to_sRGB(sRGB_to_linear_table[g] * (1.0 - a / 255.0) +
-			     gd);
-	    b =
-	      linear_to_sRGB(sRGB_to_linear_table[b] * (1.0 - a / 255.0) +
-			     bd);
-
-	    putpixel(canvas, xx + dest.x, yy + dest.y,
-		     SDL_MapRGB(canvas->format, r, g, b));
-	  }
-	}
-#else
-	// untinted
-	SDL_BlitSurface(img_grass, &src, canvas, &dest);
-#endif
-      }
-    }
-    else if (cur_magic == MAGIC_THIN || cur_magic == MAGIC_THICK)
-    {
-      SDL_LockSurface(last);
-      SDL_LockSurface(canvas);
-
-      for (xx = -8; xx <= 8; xx++)
-      {
-	for (yy = -8; yy <= 8; yy++)
-	{
-	  SDL_GetRGB(getpixel(last, x + xx, y + yy), last->format,
-		     &r, &g, &b);
-
-	  r = min(r, (Uint8) 255);
-	  g = min(g, (Uint8) 255);
-	  b = min(b, (Uint8) 255);
-
-	  if ((cur_magic == MAGIC_THIN && (((r + g + b) / 3) > 128)) ||
-	      (cur_magic == MAGIC_THICK && (((r + g + b) / 3) <= 128)))
-	  {
-	    putpixel(canvas, x + xx + 0, y + yy - 1,
-		     SDL_MapRGB(canvas->format, r, g, b));
-	    putpixel(canvas, x + xx - 1, y + yy + 0,
-		     SDL_MapRGB(canvas->format, r, g, b));
-	    putpixel(canvas, x + xx + 1, y + yy + 0,
-		     SDL_MapRGB(canvas->format, r, g, b));
-	    putpixel(canvas, x + xx + 0, y + yy + 1,
-		     SDL_MapRGB(canvas->format, r, g, b));
-
-	    putpixel(canvas, x + xx - 1, y + yy - 1,
-		     SDL_MapRGB(canvas->format, r, g, b));
-	    putpixel(canvas, x + xx - 1, y + yy + 1,
-		     SDL_MapRGB(canvas->format, r, g, b));
-	    putpixel(canvas, x + xx + 1, y + yy - 1,
-		     SDL_MapRGB(canvas->format, r, g, b));
-	    putpixel(canvas, x + xx + 1, y + yy + 1,
-		     SDL_MapRGB(canvas->format, r, g, b));
-
-	    putpixel(canvas, x + xx + 0, y + yy - 2,
-		     SDL_MapRGB(canvas->format, r, g, b));
-	    putpixel(canvas, x + xx - 2, y + yy + 0,
-		     SDL_MapRGB(canvas->format, r, g, b));
-	    putpixel(canvas, x + xx + 2, y + yy + 0,
-		     SDL_MapRGB(canvas->format, r, g, b));
-	    putpixel(canvas, x + xx + 0, y + yy + 2,
-		     SDL_MapRGB(canvas->format, r, g, b));
-	  }
-	}
-      }
-
-      SDL_UnlockSurface(canvas);
-      SDL_UnlockSurface(last);
-    }
-#endif
-  }
-}
-
-#endif
-
-
 /* Store canvas into undo buffer: */
 
 static void rec_undo_buffer(void)
@@ -5227,10 +4498,6 @@ static void show_version(int details)
 
 #ifdef LOW_QUALITY_STAMP_OUTLINE
   printf("  Low Quality Stamp Outline enabled  (LOW_QUALITY_STAMP_OUTLINE)\n");
-#endif
-
-#ifdef LOW_QUALITY_FLOOD_FILL
-  printf("  Low Quality Flood Fill enabled  (LOW_QUALITY_FLOOD_FILL)\n");
 #endif
 
 #ifdef NO_PROMPT_SHADOWS
@@ -7415,7 +6682,6 @@ static void setup(int argc, char *argv[])
   show_progress_bar(screen);
 
   img_sparkles = loadimage(DATA_PREFIX "images/ui/sparkles.png");
-  img_grass = loadimage(DATA_PREFIX "images/ui/grass.png");
 
 
   /* Load brushes: */
@@ -11592,7 +10858,6 @@ static void cleanup(void)
 
   free_surface(&img_sparkles);
   free_surface(&img_sparkles_color);
-  free_surface(&img_grass);
 
   free_surface_array(undo_bufs, NUM_UNDO_BUFS);
 
@@ -11669,6 +10934,8 @@ static void cleanup(void)
   }
 #endif
 
+  for (i = 0; i < num_plugin_files; i++)
+    magic_funcs[i].shutdown(magic_api_struct);
 
   free_cursor(&cursor_hand);
   free_cursor(&cursor_arrow);
@@ -12862,7 +12129,7 @@ int do_open(void)
     if (num_files == 0)
     {
       do_prompt_snd(PROMPT_OPEN_NOFILES_TXT, PROMPT_OPEN_NOFILES_YES, "",
-          SND_NEGATIVE);
+          SND_YOUCANNOT);
     }
     else
     {
@@ -13433,7 +12700,7 @@ int do_open(void)
               if (which < 0)
               {
                 do_prompt_snd(PROMPT_OPEN_NOFILES_TXT,
-                    PROMPT_OPEN_NOFILES_YES, "", SND_NEGATIVE);
+                    PROMPT_OPEN_NOFILES_YES, "", SND_YOUCANNOT);
                 done = 1;
               }
             }
@@ -13441,7 +12708,7 @@ int do_open(void)
             {
               perror(rfname);
 
-              do_prompt_snd("CAN'T", "OK", "", SND_NEGATIVE);
+              do_prompt_snd("CAN'T", "OK", "", SND_YOUCANNOT);
               update_list = 1;
             }
 
@@ -14941,7 +14208,7 @@ static void print_image(void)
                         PROMPT_PRINT_TOO_SOON_YES,
                         "",
                         img_printer_wait, NULL, NULL,
-                        SND_NEGATIVE);
+                        SND_YOUCANNOT);
   }
 }
 
@@ -16580,6 +15847,7 @@ float pick_best_scape(unsigned int orig_w, unsigned int orig_h,
 void load_magic_plugins(void)
 {
   int res, n, i;
+  int err;
   DIR *d;
   struct dirent *f;
   char fname[512];
@@ -16601,14 +15869,17 @@ void load_magic_plugins(void)
   magic_api_struct->tp_version = strdup(VER_VERSION);
   magic_api_struct->data_directory = strdup(DATA_PREFIX);
   magic_api_struct->update_progress_bar = update_progress_bar;
-  // FIXME: magic_api_struct->sRGB_to_linear_table = sRGB_to_linear_table;
-  // FIXME: magic_api_struct->linear_to_sRGB = linear_to_sRGB;
+  magic_api_struct->sRGB_to_linear = magic_sRGB_to_linear;
+  magic_api_struct->linear_to_sRGB = magic_linear_to_sRGB;
   magic_api_struct->in_circle = in_circle_rad;
   magic_api_struct->getpixel = getpixels[canvas->format->BytesPerPixel];
   magic_api_struct->putpixel = putpixels[canvas->format->BytesPerPixel];
   magic_api_struct->line = magic_line_func;
-  magic_api_struct->playsound = NULL; // FIXME
+  magic_api_struct->playsound = magic_playsound;
   magic_api_struct->special_notify = special_notify;
+  magic_api_struct->button_down = magic_button_down;
+  magic_api_struct->rgbtohsv = rgbtohsv;
+  magic_api_struct->hsvtorgb = hsvtorgb;
 
 
   d = opendir(MAGIC_PREFIX);
@@ -16716,22 +15987,74 @@ void load_magic_plugins(void)
 		   (int) magic_funcs[num_plugin_files].drag);
 #endif
 
-	    if (magic_funcs[num_plugin_files].get_tool_count == NULL ||
-		magic_funcs[num_plugin_files].get_name == NULL ||
-		magic_funcs[num_plugin_files].get_icon == NULL ||
-		magic_funcs[num_plugin_files].get_description == NULL ||
-		magic_funcs[num_plugin_files].requires_colors == NULL ||
-		magic_funcs[num_plugin_files].set_color == NULL ||
-		magic_funcs[num_plugin_files].init == NULL ||
-		magic_funcs[num_plugin_files].shutdown == NULL ||
-		magic_funcs[num_plugin_files].click == NULL ||
-		magic_funcs[num_plugin_files].drag == NULL)
+	    err = 0;
+
+	    if (magic_funcs[num_plugin_files].get_tool_count == NULL)
 	    {
-	      fprintf(stderr, "Error: plugin %s is missing function(s)\n", fname);
-	      fflush(stderr);
-              SDL_UnloadObject(magic_handle[num_plugin_files]);
+	      fprintf(stderr, "Error: plugin %s is missing get_tool_count\n",
+		      fname);
+              err = 1;
 	    }
-	    else
+	    if (magic_funcs[num_plugin_files].get_name == NULL)
+	    {
+	      fprintf(stderr, "Error: plugin %s is missing get_name\n",
+		      fname);
+              err = 1;
+	    }
+	    if (magic_funcs[num_plugin_files].get_icon == NULL)
+	    {
+	      fprintf(stderr, "Error: plugin %s is missing get_icon\n",
+		      fname);
+              err = 1;
+	    }
+	    if (magic_funcs[num_plugin_files].get_description == NULL)
+	    {
+	      fprintf(stderr, "Error: plugin %s is missing get_description\n",
+		      fname);
+              err = 1;
+	    }
+	    if (magic_funcs[num_plugin_files].requires_colors == NULL)
+	    {
+	      fprintf(stderr, "Error: plugin %s is missing requires_colors\n",
+		      fname);
+              err = 1;
+	    }
+	    if (magic_funcs[num_plugin_files].set_color == NULL)
+	    {
+	      fprintf(stderr, "Error: plugin %s is missing set_color\n",
+		      fname);
+              err = 1;
+	    }
+	    if (magic_funcs[num_plugin_files].init == NULL)
+	    {
+	      fprintf(stderr, "Error: plugin %s is missing init\n",
+		      fname);
+              err = 1;
+	    }
+	    if (magic_funcs[num_plugin_files].shutdown == NULL)
+	    {
+	      fprintf(stderr, "Error: plugin %s is missing shutdown\n",
+		      fname);
+              err = 1;
+	    }
+	    if (magic_funcs[num_plugin_files].click == NULL)
+	    {
+	      fprintf(stderr, "Error: plugin %s is missing click\n",
+		      fname);
+              err = 1;
+	    }
+	    if (magic_funcs[num_plugin_files].drag == NULL)
+	    {
+	      fprintf(stderr, "Error: plugin %s is missing drag\n",
+		      fname);
+              err = 1;
+	    }
+	    
+            if (err)
+	    {
+	      SDL_UnloadObject(magic_handle[num_plugin_files]);
+	    }
+            else
 	    {
 	      res = magic_funcs[num_plugin_files].init(magic_api_struct);
 
@@ -16933,4 +16256,61 @@ void special_notify(int flags)
     
     undo_starters[tmp_int] = UNDO_STARTER_FLIPPED;
   }
+}
+
+void magic_playsound(Mix_Chunk * snd, int left_right, int up_down)
+{
+#ifndef NOSOUND
+
+  int left, dist;
+
+
+  // Don't play if sound is disabled (nosound), or sound is temporarily
+  // muted (Alt+S), or sound ptr is NULL
+  
+  if (mute || !use_sound || snd == NULL)
+    return;
+
+
+  // Don't override the same sound, if it's already playing
+  
+  if (!Mix_Playing(0) || magic_current_snd_ptr != snd)
+    Mix_PlayChannel(0, snd, 0);
+
+  magic_current_snd_ptr = snd;
+
+
+  // Adjust panning
+  
+  if (up_down < 0)
+    up_down = 0;
+  else if (up_down > 255)
+    up_down = 255;
+
+  dist = 255 - up_down;
+
+  if (left_right < 0)
+    left_right = 0;
+  else if (left_right > 255)
+    left_right = 255;
+
+  left = ((255 - dist) * (255 - left_right)) / 255;
+
+  Mix_SetPanning(0, left, (255 - dist) - left);
+#endif
+}
+
+Uint8 magic_linear_to_sRGB(float lin)
+{
+  return(linear_to_sRGB(lin));
+}
+
+float magic_sRGB_to_linear(Uint8 srgb)
+{
+  return(sRGB_to_linear_table[srgb]);
+}
+
+int magic_button_down(void)
+{
+  return(button_down);
 }
