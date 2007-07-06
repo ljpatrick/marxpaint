@@ -4,9 +4,9 @@
   For Tux Paint
   List of sound effects.
 
-  Copyright (c) 2002-2006 by Bill Kendrick and others
+  Copyright (c) 2002-2007 by Bill Kendrick and others
   bill@newbreedsoftware.com
-  http://www.newbreedsoftware.com/tuxpaint/
+  http://www.tuxpaint.org/
 
   This program is free software; you can redistribute it and/or modify
   it under the terms of the GNU General Public License as published by
@@ -23,7 +23,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  June 15, 2002 - February 20, 2006
+  June 15, 2002 - July 5, 2007
   $Id$
 */
 
@@ -53,25 +53,8 @@ enum
   SND_ERASER2,
   SND_SAVE,			/* Save sound effect */
   SND_PROMPT,			/* Prompt animation sound effect */
-  SND_DRIP,			/* Magic drip */
-  SND_CHALK,			/* Magic chalk */
-  SND_SPARKLES1,		/* Magic sparkles */
-  SND_SPARKLES2,
-  SND_THICK,			/* Magic thick */
-  SND_THIN,			/* Magic thin */
   SND_FLIP,			/* Magic flip */
   SND_MIRROR,			/* Magic mirror */
-  SND_NEGATIVE,			/* Magic negative */
-  SND_BLUR,			/* Magic blur */
-  SND_BLOCKS,			/* Magic blocks */
-  SND_FADE,			/* Magic fade */
-  SND_DARKEN,			/* Magic darken */
-  SND_RAINBOW,			/* Magic rainbow */
-  SND_SMUDGE,			/* Magic smudge */
-  SND_TINT,			/* Magic tint */
-  SND_CARTOON,			/* Magic cartoon */
-  SND_BRICK,			/* Magic brick */
-  SND_GRASS,			/* Magic grass */
   SND_KEYCLICK,			/* Text tool keyboard click feedback */
   SND_KEYCLICKRING,		/* Text tool keyboard click feedback with bell ring */
   SND_RETURN,			/* Text tool carriage return sound */
@@ -82,6 +65,8 @@ enum
   SND_AREYOUSURE,		/* "Are you sure?" */
   SND_YOUCANNOT,		/* "No no no!" */
   SND_TUXOK,			/* "Ok" */
+  SND_THICK,
+  SND_THIN,
   NUM_SOUNDS
 };
 
@@ -105,25 +90,8 @@ static const char *sound_fnames[NUM_SOUNDS] = {
   DATA_PREFIX "sounds/eraser2.wav",
   DATA_PREFIX "sounds/save.wav",
   DATA_PREFIX "sounds/prompt.wav",
-  DATA_PREFIX "sounds/drip.wav",
-  DATA_PREFIX "sounds/chalk.wav",
-  DATA_PREFIX "sounds/sparkles1.wav",
-  DATA_PREFIX "sounds/sparkles2.wav",
-  DATA_PREFIX "sounds/thick.wav",
-  DATA_PREFIX "sounds/thin.wav",
   DATA_PREFIX "sounds/flip.wav",
   DATA_PREFIX "sounds/mirror.wav",
-  DATA_PREFIX "sounds/negative.wav",
-  DATA_PREFIX "sounds/blur.wav",
-  DATA_PREFIX "sounds/blocks.wav",
-  DATA_PREFIX "sounds/fade.wav",
-  DATA_PREFIX "sounds/darken.wav",
-  DATA_PREFIX "sounds/rainbow.wav",
-  DATA_PREFIX "sounds/smudge.wav",
-  DATA_PREFIX "sounds/tint.wav",
-  DATA_PREFIX "sounds/cartoon.wav",
-  DATA_PREFIX "sounds/brick.wav",
-  DATA_PREFIX "sounds/grass.wav",
   DATA_PREFIX "sounds/keyclick.wav",
   DATA_PREFIX "sounds/typewriterbell.wav",
   DATA_PREFIX "sounds/return.wav",
@@ -133,7 +101,9 @@ static const char *sound_fnames[NUM_SOUNDS] = {
   DATA_PREFIX "sounds/italic_off.wav",
   DATA_PREFIX "sounds/areyousure.wav",
   DATA_PREFIX "sounds/youcannot.wav",
-  DATA_PREFIX "sounds/tuxok.wav"
+  DATA_PREFIX "sounds/tuxok.wav",
+  DATA_PREFIX "sounds/thick.wav",
+  DATA_PREFIX "sounds/thin.wav"
 };
 
 #endif
