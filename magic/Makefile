@@ -16,6 +16,18 @@ CFLAGS=-g -Wall $(TP_MAGIC_CFLAGS)
 all:	negative.$(SO_TYPE) \
 	fade_darken.$(SO_TYPE) \
 	mirror_flip.$(SO_TYPE) \
+	rainbow.$(SO_TYPE) \
+	blocks_chalk_drip.$(SO_TYPE) \
+	fill.$(SO_TYPE) \
+	blur.$(SO_TYPE) \
+	grass.$(SO_TYPE) \
+	tint.$(SO_TYPE) \
+	smudge.$(SO_TYPE) \
+	cartoon.$(SO_TYPE) \
+	bricks.$(SO_TYPE)
+
+install:
+	cd .. ; make install-magic-plugins
 
 clean:
 	@echo
@@ -28,13 +40,50 @@ clean:
 
 negative.$(SO_TYPE):	src/negative.c
 	@echo "Building Negative magic tool"
-	@$(CC) $(CFLAGS) -shared -o negative.$(SO_TYPE) src/negative.c
+	$(CC) $(CFLAGS) -shared -o $@ $<
 
 fade_darken.$(SO_TYPE):	src/fade_darken.c
 	@echo "Building Fade and Darken magic tools"
-	@$(CC) $(CFLAGS) -shared -o fade_darken.$(SO_TYPE) src/fade_darken.c
+	$(CC) $(CFLAGS) -shared -o $@ $<
 
 mirror_flip.$(SO_TYPE):	src/mirror_flip.c
 	@echo "Building Mirror and Flip magic tools"
-	@$(CC) $(CFLAGS) -shared -o mirror_flip.$(SO_TYPE) src/mirror_flip.c
+	$(CC) $(CFLAGS) -shared -o $@ $<
+
+rainbow.$(SO_TYPE):	src/rainbow.c
+	@echo "Building Rainbow magic tool"
+	$(CC) $(CFLAGS) -shared -o $@ $<
+
+blocks_chalk_drip.$(SO_TYPE):	src/blocks_chalk_drip.c
+	@echo "Building Blocks, Chalk and Drip magic tools"
+	$(CC) $(CFLAGS) -shared -o $@ $<
+
+fill.$(SO_TYPE):	src/fill.c
+	@echo "Building Fill magic tool"
+	$(CC) $(CFLAGS) -shared -o $@ $<
+
+blur.$(SO_TYPE):	src/blur.c
+	@echo "Building Blur magic tool"
+	$(CC) $(CFLAGS) -shared -o $@ $<
+
+grass.$(SO_TYPE):	src/grass.c
+	@echo "Building Grass magic tool"
+	$(CC) $(CFLAGS) -shared -o $@ $<
+
+tint.$(SO_TYPE):	src/tint.c
+	@echo "Building Tint magic tool"
+	$(CC) $(CFLAGS) -shared -o $@ $<
+
+smudge.$(SO_TYPE):	src/smudge.c
+	@echo "Building Smudge magic tool"
+	$(CC) $(CFLAGS) -shared -o $@ $<
+
+cartoon.$(SO_TYPE):	src/cartoon.c
+	@echo "Building Smudge magic tool"
+	$(CC) $(CFLAGS) -shared -o $@ $<
+
+bricks.$(SO_TYPE):	src/bricks.c
+	@echo "Building Large Bricks and Small Bricks magic tools"
+	$(CC) $(CFLAGS) -shared -o $@ $<
+
 
