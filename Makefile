@@ -755,7 +755,7 @@ install-man:
 # Build the program!
 
 tuxpaint:	obj/tuxpaint.o obj/i18n.o obj/im.o obj/cursor.o obj/pixels.o \
-		obj/floodfill.o obj/rgblinear.o obj/playsound.o obj/fonts.o \
+		obj/rgblinear.o obj/playsound.o obj/fonts.o \
 		obj/progressbar.o obj/dirwalk.o obj/get_fname.o \
 		obj/postscript_print.o \
 		$(HQXX_O) $(ARCH_LIBS)
@@ -778,7 +778,7 @@ tuxpaint:	obj/tuxpaint.o obj/i18n.o obj/im.o obj/cursor.o obj/pixels.o \
 
 obj/tuxpaint.o:	src/tuxpaint.c \
 		src/i18n.h src/im.h src/cursor.h src/pixels.h \
-		src/floodfill.h src/rgblinear.h src/playsound.h src/fonts.h \
+		src/rgblinear.h src/playsound.h src/fonts.h \
 		src/progressbar.h src/dirwalk.h src/get_fname.h \
 		src/compiler.h src/debug.h \
 		src/tools.h src/titles.h src/colors.h src/shapes.h \
@@ -847,15 +847,6 @@ obj/pixels.o:	src/pixels.c src/pixels.h src/compiler.h src/debug.h
 	@echo "...Compiling pixel functions..."
 	@$(CC) $(CFLAGS) $(DEBUG_FLAGS) $(SDL_CFLAGS) $(DEFS) \
 		-c src/pixels.c -o obj/pixels.o
-
-obj/floodfill.o:	src/floodfill.c src/floodfill.h \
-			src/rgblinear.h \
-			src/playsound.h src/progressbar.h src/sounds.h \
-			src/compiler.h src/debug.h
-	@echo
-	@echo "...Compiling floodfill functions..."
-	@$(CC) $(CFLAGS) $(DEBUG_FLAGS) $(SDL_CFLAGS) $(DEFS) \
-		-c src/floodfill.c -o obj/floodfill.o
 
 obj/playsound.o:	src/playsound.c src/playsound.h \
 			src/compiler.h src/debug.h
