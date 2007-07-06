@@ -3,6 +3,7 @@
 #include <libintl.h>
 #include "tp_magic_api.h"
 #include "SDL_image.h"
+#include "SDL_mixer.h"
 
 /* What tools we contain: */
 
@@ -12,9 +13,22 @@ enum {
   NUM_TOOLS
 };
 
+Mix_Chunk * snd_effects[NUM_TOOLS];
+
+
 // No setup required:
 int mirror_flip_init(magic_api * api)
 {
+  char fname[1024];
+
+  snprintf(fname, sizeof(fname), "%s/sounds/magic/mirror.wav",
+           api->data_directory);
+  snd_effects[TOOL_MIRROR] = Mix_LoadWAV(fname);
+
+  snprintf(fname, sizeof(fname), "%s/sounds/magic/flip.wav",
+           api->data_directory);
+  snd_effects[TOOL_FLIP] = Mix_LoadWAV(fname);
+
   return(1);
 }
 
@@ -116,11 +130,17 @@ void mirror_flip_click(magic_api * api, int which,
 
     api->special_notify(SPECIAL_FLIP);
   }
+
+  api->playsound(snd_effects[which], 128, 255);
 }
 
 // No setup happened:
 void mirror_flip_shutdown(magic_api * api)
 {
+  if (snd_effects[0] != NULL)
+    Mix_FreeChunk(snd_effects[0]);
+  if (snd_effects[1] != NULL)
+    Mix_FreeChunk(snd_effects[1]);
 }
 
 // We don't use colors:

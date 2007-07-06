@@ -3,6 +3,7 @@
 #include <libintl.h>
 #include "tp_magic_api.h"
 #include "SDL_image.h"
+#include "SDL_mixer.h"
 
 enum {
   TOOL_FADE,
@@ -10,12 +11,21 @@ enum {
   NUM_TOOLS
 };
 
-#define min(a,b) ((a) < (b) ? (a) : (b))
-#define max(a,b) ((a) > (b) ? (a) : (b))
+Mix_Chunk * snd_effects[NUM_TOOLS];
 
-// No setup required:
+
 int fade_darken_init(magic_api * api)
 {
+  char fname[1024];
+
+  snprintf(fname, sizeof(fname), "%s/sounds/magic/fade.wav",
+	   api->data_directory);
+  snd_effects[TOOL_FADE] = Mix_LoadWAV(fname);  
+
+  snprintf(fname, sizeof(fname), "%s/sounds/magic/darken.wav",
+	   api->data_directory);
+  snd_effects[TOOL_DARKEN] = Mix_LoadWAV(fname);  
+
   return(1);
 }
 
@@ -112,6 +122,7 @@ void fade_darken_drag(magic_api * api, int which, SDL_Surface * canvas,
   SDL_LockSurface(canvas);
 
   api->line(which, canvas, last, ox, oy, x, y, 1, do_fade_darken);
+  api->playsound(snd_effects[which], (x * 255) / canvas->w, 255);
   
   SDL_UnlockSurface(canvas);
   SDL_UnlockSurface(last);
@@ -129,6 +140,10 @@ void fade_darken_click(magic_api * api, int which,
 // No setup happened:
 void fade_darken_shutdown(magic_api * api)
 {
+  if (snd_effects[0] != NULL)
+    Mix_FreeChunk(snd_effects[0]);
+  if (snd_effects[1] != NULL)
+    Mix_FreeChunk(snd_effects[1]);
 }
 
 // We don't use colors

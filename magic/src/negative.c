@@ -3,10 +3,20 @@
 #include <libintl.h>
 #include "tp_magic_api.h"
 #include "SDL_image.h"
+#include "SDL_mixer.h"
+
+Mix_Chunk * negative_snd;
 
 // No setup required:
 int negative_init(magic_api * api)
 {
+  char fname[1024];
+
+  snprintf(fname, sizeof(fname), "%s/sounds/magic/negative.wav",
+	   api->data_directory);
+
+  negative_snd = Mix_LoadWAV(fname);
+
   return(1);
 }
 
@@ -74,6 +84,8 @@ void negative_drag(magic_api * api, int which, SDL_Surface * canvas,
   SDL_LockSurface(canvas);
 
   api->line(which, canvas, last, ox, oy, x, y, 1, do_negative);
+
+  api->playsound(negative_snd, (x * 255) / canvas->w, 255);
   
   SDL_UnlockSurface(canvas);
   SDL_UnlockSurface(last);
@@ -88,9 +100,10 @@ void negative_click(magic_api * api, int which,
 }
 
 
-// No setup happened:
 void negative_shutdown(magic_api * api)
 {
+  if (negative_snd != NULL)
+    Mix_FreeChunk(negative_snd);
 }
 
 // We don't use colors
