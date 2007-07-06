@@ -28,12 +28,27 @@ $Id$
       /usr/[local/]share/docs/tuxpaint-dev/ by default.
 
     * Ported existing magic tools to the new Magic tool plug-in system:
-      - Negative
+      - Blur
+      - Fill
+      - Lighten
+      - Darken
       - Mirror
       - Flip
-      - Fade
-      - Darken
-      [[ FIXME: Do the rest ]]
+      - Rainbow
+      - Blocks
+      - Chalk
+      - Grass
+      - Negative
+      - Tint
+      - Smudge
+      - Drip
+      - Cartoon
+      - Brick (large)
+      - Brick (small)
+
+  * New Brushes
+    -----------
+    * Sparkles (based on old Magic Tool)
 
   * New Translations:
     -----------------
