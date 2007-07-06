@@ -1,0 +1,131 @@
+#include <stdio.h>
+#include <string.h>
+#include <libintl.h>
+#include "tp_magic_api.h"
+#include "SDL_image.h"
+#include "SDL_mixer.h"
+
+
+/* Our globals: */
+
+Mix_Chunk * tint_snd;
+Uint8 tint_r, tint_g, tint_b;
+
+
+// No setup required:
+int tint_init(magic_api * api)
+{
+  char fname[1024];
+
+  snprintf(fname, sizeof(fname), "%s/sounds/magic/tint.wav",
+	    api->data_directory);
+  tint_snd = Mix_LoadWAV(fname);
+
+  return(1);
+}
+
+// We have multiple tools:
+int tint_get_tool_count(magic_api * api)
+{
+  return(1);
+}
+
+// Load our icons:
+SDL_Surface * tint_get_icon(magic_api * api, int which)
+{
+  char fname[1024];
+
+  snprintf(fname, sizeof(fname), "%s/images/magic/tint.png",
+	   api->data_directory);
+
+  return(IMG_Load(fname));
+}
+
+// Return our names, localized:
+char * tint_get_name(magic_api * api, int which)
+{
+  return(strdup(gettext("Tint")));
+}
+
+// Return our descriptions, localized:
+char * tint_get_description(magic_api * api, int which)
+{
+  return(strdup(gettext(
+"Click and move the mouse around to change the picture’s color.")));
+}
+
+// Do the effect:
+
+void do_tint(void * ptr, int which, SDL_Surface * canvas, SDL_Surface * last,
+                int x, int y)
+{
+  magic_api * api = (magic_api *) ptr;
+  double rd = api->sRGB_to_linear(tint_r);
+  double gd = api->sRGB_to_linear(tint_g);
+  double bd = api->sRGB_to_linear(tint_b);
+  double old;
+  int xx, yy;
+  Uint8 r, g, b;
+
+  for (yy = y - 16; yy < y + 16; yy++)
+  {
+    for (xx = x - 16; xx < x + 16; xx++)
+    {
+      if (api->in_circle(xx - x, yy - y, 16))
+      {
+        /* Get original pixel: */
+
+        SDL_GetRGB(api->getpixel(last, xx, yy), last->format, &r, &g, &b);
+
+        old = api->sRGB_to_linear(r) * 0.2126 +
+          api->sRGB_to_linear(g) * 0.7152 +
+          api->sRGB_to_linear(b) * 0.0722;
+
+        api->putpixel(canvas, xx, yy,
+                 SDL_MapRGB(canvas->format,
+                            api->linear_to_sRGB(rd * old),
+                            api->linear_to_sRGB(gd * old),
+                            api->linear_to_sRGB(bd * old)));
+      }
+    }
+  }
+}
+
+// Affect the canvas on drag:
+void tint_drag(magic_api * api, int which, SDL_Surface * canvas,
+	          SDL_Surface * last, int ox, int oy, int x, int y)
+{
+  api->line(which, canvas, last, ox, oy, x, y, 1, do_tint);
+
+  api->playsound(tint_snd, (x * 255) / canvas->w, 255);
+}
+
+// Affect the canvas on click:
+void tint_click(magic_api * api, int which,
+	           SDL_Surface * canvas, SDL_Surface * last,
+	           int x, int y)
+{
+  tint_drag(api, which, canvas, last, x, y, x, y);
+}
+
+// No setup happened:
+void tint_shutdown(magic_api * api)
+{
+  if (tint_snd != NULL)
+    Mix_FreeChunk(tint_snd);
+}
+
+// Record the color from Tux Paint:
+void tint_set_color(magic_api * api, Uint8 r, Uint8 g, Uint8 b)
+{
+  tint_r = r;
+  tint_g = g;
+  tint_b = b;
+}
+
+// Use colors:
+int tint_requires_colors(magic_api * api, int which)
+{
+  return 1;
+}
+
