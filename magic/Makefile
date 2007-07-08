@@ -10,7 +10,8 @@ SO_TYPE=so
 TP_MAGIC_CFLAGS=$(shell sdl-config --cflags) \
 		-I../src/ \
 		$(shell tp-magic-config --cflags)
-CFLAGS=-g -Wall $(TP_MAGIC_CFLAGS)
+CFLAGS=-g -Wall $(TP_MAGIC_CFLAGS) -DMAGICAPI_VERSION=$(MAGIC_API_VERSION)
+
 
 
 all:	negative.$(SO_TYPE) \

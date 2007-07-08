@@ -32,6 +32,8 @@ int mirror_flip_init(magic_api * api)
   return(1);
 }
 
+Uint32 mirror_flip_api_version(void) { return(TP_MAGIC_API_VERSION); }
+
 // We have multiple tools:
 int mirror_flip_get_tool_count(magic_api * api)
 {

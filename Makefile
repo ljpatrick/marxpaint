@@ -7,13 +7,15 @@
 # bill@newbreedsoftware.com
 # http://www.tuxpaint.org/
 
-# June 14, 2002 - July 4, 2007
+# June 14, 2002 - July 8, 2007
 
 
 # The version number, for release:
 
 VER_VERSION=0.9.18
 VER_DATE=`date +"%Y-%m-%d"`
+
+MAGIC_API_VERSION=0x00000002
 
 
 # Where to install things:
@@ -139,6 +141,7 @@ DEFS=-DDATA_PREFIX=\"$(DATA_PREFIX)/\" \
 	-DCONFDIR=\"$(CONFDIR)/\" \
 	-DMAGIC_PREFIX=\"$(MAGIC_PREFIX)/\" \
 	-DVER_VERSION=\"$(VER_VERSION)\" \
+	-DMAGICAPI_VERSION=$(MAGIC_API_VERSION) \
 	-DVER_DATE=\"$(VER_DATE)\" \
 	-D$(MAEMOFLAG)
 
@@ -335,6 +338,7 @@ install-magic-plugin-dev:
 	@echo "...Installing Magic Tool plug-in development files and docs..."
 	@-rm $(BIN_PREFIX)/tp-magic-config
 	@sed src/tp-magic-config.sh -e s/__VERSION__/$(VER_VERSION)/ \
+		-e s/__APIVERSION__/$(MAGIC_API_VERSION)/ \
 		-e s=__INCLUDE__=$(INCLUDE_PREFIX)/tuxpaint= > \
 		$(BIN_PREFIX)/tp-magic-config
 	@chmod a+rx,g-w,o-w $(BIN_PREFIX)/tp-magic-config
@@ -898,7 +902,7 @@ obj/resource.o:	visualc/resources.rc obj visualc/resource.h
 # Go into 'magic' subdirectory and buld magic plug-ins
 
 magic-plugins:
-	@cd magic ; make
+	@cd magic ; make MAGIC_API_VERSION=$(MAGIC_API_VERSION)
 
 # Make the "obj" directory to throw the object(s) into:
 # (not necessary any more; bjk 2006.02.20)

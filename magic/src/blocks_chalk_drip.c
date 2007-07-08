@@ -19,7 +19,6 @@ enum {
 Mix_Chunk * snd_effect[NUM_TOOLS];
 
 
-// No setup required:
 int blocks_chalk_drip_init(magic_api * api)
 {
   char fname[1024];
@@ -38,6 +37,9 @@ int blocks_chalk_drip_init(magic_api * api)
 
   return(1);
 }
+
+Uint32 blocks_chalk_drip_api_version(void) { return(TP_MAGIC_API_VERSION); }
+
 
 // We have multiple tools:
 int blocks_chalk_drip_get_tool_count(magic_api * api)
@@ -100,8 +102,9 @@ char * blocks_chalk_drip_get_description(magic_api * api, int which)
 
 // Do the effect:
 
-void do_example(void * ptr, int which, SDL_Surface * canvas, SDL_Surface * last,
-                int x, int y)
+void blocks_chalk_drip_linecb(void * ptr, int which,
+			      SDL_Surface * canvas, SDL_Surface * last,
+	                      int x, int y)
 {
   magic_api * api = (magic_api *) ptr;
   int xx, yy;
@@ -210,7 +213,7 @@ void do_example(void * ptr, int which, SDL_Surface * canvas, SDL_Surface * last,
 void blocks_chalk_drip_drag(magic_api * api, int which, SDL_Surface * canvas,
 	          SDL_Surface * last, int ox, int oy, int x, int y)
 {
-  api->line(which, canvas, last, ox, oy, x, y, 1, do_example);
+  api->line(which, canvas, last, ox, oy, x, y, 1, blocks_chalk_drip_linecb);
 
   api->playsound(snd_effect[which], (x * 255) / canvas->w, 255);
 }

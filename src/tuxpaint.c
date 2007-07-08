@@ -22,7 +22,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
   
-  June 14, 2002 - July 5, 2007
+  June 14, 2002 - July 8, 2007
   $Id$
 */
 
@@ -858,6 +858,7 @@ typedef struct magic_funcs_s {
   int (*requires_colors)(magic_api *, int);
   void (*set_color)(magic_api *, Uint8, Uint8, Uint8);
   int (*init)(magic_api *);
+  Uint32 (*api_version)(void);
   void (*shutdown)(magic_api *);
   void (*click)(magic_api *, int, SDL_Surface *, SDL_Surface *, int, int);
   void (*drag)(magic_api *, int, SDL_Surface *, SDL_Surface *, int, int, int, int);
@@ -8974,6 +8975,9 @@ static void reset_avail_tools(void)
   if (num_stamps[0] == 0)
     tool_avail[TOOL_STAMP] = 0;
 
+  if (num_magics == 0)
+    tool_avail[TOOL_MAGIC] = 0;
+
 
   /* Disable quit? */
 
@@ -15868,6 +15872,11 @@ void load_magic_plugins(void)
 	      SDL_LoadFunction(magic_handle[num_plugin_files], funcname);
 
             snprintf(funcname, sizeof(funcname), "%s_%s", objname,
+			       "api_version");
+	    magic_funcs[num_plugin_files].api_version =
+	      SDL_LoadFunction(magic_handle[num_plugin_files], funcname);
+
+            snprintf(funcname, sizeof(funcname), "%s_%s", objname,
 			       "shutdown");
 	    magic_funcs[num_plugin_files].shutdown =
 	      SDL_LoadFunction(magic_handle[num_plugin_files], funcname);
@@ -15897,6 +15906,8 @@ void load_magic_plugins(void)
 		   (int) magic_funcs[num_plugin_files].set_color);
 	    printf("init = 0x%x\n",
 		   (int) magic_funcs[num_plugin_files].init);
+	    printf("api_version = 0x%x\n",
+		   (int) magic_funcs[num_plugin_files].api_version);
 	    printf("shutdown = 0x%x\n",
 		   (int) magic_funcs[num_plugin_files].shutdown);
 	    printf("click = 0x%x\n",
@@ -15967,7 +15978,19 @@ void load_magic_plugins(void)
 		      fname);
               err = 1;
 	    }
-	    
+
+	    if (magic_funcs[num_plugin_files].api_version == NULL)
+	    {
+	      fprintf(stderr, "Error: plugin %s is missing api_version\n",
+		      fname);
+              err = 1;
+	    }
+            else if (magic_funcs[num_plugin_files].api_version() != TP_MAGIC_API_VERSION)
+	    {
+              fprintf(stderr, "Warning: plugin %s uses Tux Paint 'Magic' tool API version %x,\nbut Tux Paint needs version %x.\n", fname, magic_funcs[num_plugin_files].api_version(), TP_MAGIC_API_VERSION);
+              err = 1;
+            }
+
             if (err)
 	    {
 	      SDL_UnloadObject(magic_handle[num_plugin_files]);

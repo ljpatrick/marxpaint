@@ -29,7 +29,7 @@
 # in Tux Paint's Makefile, via 'sed', by the 'make install-magic-plugin-dev'
 # target.
 
-# July 5, 2007 - July 5, 2007
+# July 5, 2007 - July 8, 2007
 
 
 if [ $# -ne 0 ]; then
@@ -37,15 +37,15 @@ if [ $# -ne 0 ]; then
     echo "__VERSION__"
     exit
   fi
+  if [ $1 = "--apiversion" ]; then
+    echo "__APIVERSION__"
+    exit
+  fi
   if [ $1 = "--cflags" ]; then
     echo `sdl-config --cflags` -I__INCLUDE__
     exit
   fi
-  if [ $1 = "--libs" ]; then
-    echo `sdl-config --libs`
-    exit
-  fi
 fi
 
-echo "Usage: tp-magic-config [--version] [--cflags] [--libs]"
+echo "Usage: tp-magic-config [--apiversion] [--version] [--cflags]"
 

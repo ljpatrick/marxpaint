@@ -24,6 +24,8 @@ int tint_init(magic_api * api)
   return(1);
 }
 
+Uint32 tint_api_version(void) { return(TP_MAGIC_API_VERSION); }
+
 // We have multiple tools:
 int tint_get_tool_count(magic_api * api)
 {

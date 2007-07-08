@@ -113,6 +113,11 @@ Interfaces
            palette. (It will be called whenever one of the plguin's Magic
            tools that accept colors becomes active, or the user picks a new
            color while such a tool is currently active.)
+         * Uint32 api_version(void)
+           The plugin should return an integer value representing the version
+           of the Tux Paint 'Magic' tool plugin API it was built against.
+           Simply return TP_MAGIC_API_VERSION, which is defined in
+           "tp_magic_api.h", to satisfy this requirement.
          * int init(magic_api * api)
            The plugin should do any initialization here. This function is
            called once, at Tux Paint startup. Return '1' if initialization

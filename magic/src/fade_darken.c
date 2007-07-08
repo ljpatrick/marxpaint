@@ -29,6 +29,8 @@ int fade_darken_init(magic_api * api)
   return(1);
 }
 
+Uint32 fade_darken_api_version(void) { return(TP_MAGIC_API_VERSION); }
+
 // Multiple tools:
 int fade_darken_get_tool_count(magic_api * api)
 {

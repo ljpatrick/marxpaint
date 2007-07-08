@@ -20,6 +20,9 @@ Mix_Chunk * snd_effect[NUM_TOOLS];
 Uint8 example_r, example_g, example_b;
 
 
+Uint32 example_api_version(void) { return(TP_MAGIC_API_VERSION); }
+
+
 // No setup required:
 int example_init(magic_api * api)
 {

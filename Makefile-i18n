@@ -477,7 +477,7 @@ install-im:
 	@cp im/ko.im $(IM_PREFIX)/ko.im
 	@chmod 644 $(IM_PREFIX)/ko.im
 	@#
-	@echo "   ko ...Thai..."
+	@echo "   th ...Thai..."
 	@cp im/th.im $(IM_PREFIX)/th.im
 	@chmod 644 $(IM_PREFIX)/th.im
 else
