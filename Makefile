@@ -15,7 +15,7 @@
 VER_VERSION=0.9.18
 VER_DATE=`date +"%Y-%m-%d"`
 
-include magic/Makefile-apiversion
+MAGIC_API_VERSION=0x00000001
 
 
 # Where to install things:
@@ -141,7 +141,6 @@ DEFS=-DDATA_PREFIX=\"$(DATA_PREFIX)/\" \
 	-DCONFDIR=\"$(CONFDIR)/\" \
 	-DMAGIC_PREFIX=\"$(MAGIC_PREFIX)/\" \
 	-DVER_VERSION=\"$(VER_VERSION)\" \
-	-DMAGICAPI_VERSION=$(MAGIC_API_VERSION) \
 	-DVER_DATE=\"$(VER_DATE)\" \
 	-D$(MAEMOFLAG)
 
@@ -333,7 +332,7 @@ install-magic-plugins:
 	@cp magic/sounds/*.wav $(DATA_PREFIX)/sounds/magic
 	@chmod a+r,g-w,o-w $(DATA_PREFIX)/sounds/magic/*.wav
 
-install-magic-plugin-dev:
+install-magic-plugin-dev:	src/tp_magic_api.h
 	@echo
 	@echo "...Installing Magic Tool plug-in development files and docs..."
 	@-rm $(BIN_PREFIX)/tp-magic-config
@@ -476,6 +475,7 @@ clean:
 	@-rm -f obj/*.o
 	@#if [ -d obj ]; then rmdir obj; fi
 	@-rm -f trans/*.mo
+	@-rm -f src/tp_magic_api.h
 	@if [ -d trans ]; then rmdir trans; fi
 	@cd magic ; make clean
 	@echo
@@ -805,7 +805,7 @@ obj/tuxpaint.o:	src/tuxpaint.c \
 		$(ARCH_HEADERS)
 	@echo
 	@echo "...Compiling Tux Paint from source..."
-	$(CC) $(CFLAGS) $(DEBUG_FLAGS) $(SDL_CFLAGS) $(MOUSE_CFLAGS) $(DEFS) \
+	@$(CC) $(CFLAGS) $(DEBUG_FLAGS) $(SDL_CFLAGS) $(MOUSE_CFLAGS) $(DEFS) \
 		-c src/tuxpaint.c -o obj/tuxpaint.o
 
 obj/i18n.o:	src/i18n.c src/i18n.h src/debug.h
@@ -901,8 +901,15 @@ obj/resource.o:	visualc/resources.rc obj visualc/resource.h
 
 # Go into 'magic' subdirectory and buld magic plug-ins
 
-magic-plugins:
-	@cd magic ; make MAGIC_API_VERSION=$(MAGIC_API_VERSION)
+magic-plugins:	src/tp_magic_api.h
+	@cd magic ; make
+
+
+src/tp_magic_api.h:	src/tp_magic_api.h.in
+	@echo
+	@echo "...Generating 'Magic' tool API development header file..."
+	@cat src/tp_magic_api.h.in | sed -e s/__APIVERSION__/$(MAGIC_API_VERSION)/ > src/tp_magic_api.h
+
 
 # Make the "obj" directory to throw the object(s) into:
 # (not necessary any more; bjk 2006.02.20)
