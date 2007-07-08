@@ -6,7 +6,7 @@
                            bill@newbreedsoftware.com
                             http://www.tuxpaint.org/
 
-                          July 5, 2007 - July 6, 2007
+                          July 5, 2007 - July 8, 2007
 
    --------------------------------------------------------------------------
 
@@ -62,7 +62,8 @@ Interfaces
        'Magic' tool plugins must provide the functions listed below. Note: To
        avoid namespace collisions, each function's name must start with the
        shared object's filename (e.g., "blur.so" or "blur.dll" would have
-       functions whose names begin with "blur_").
+       functions whose names begin with "blur_"). This includes private
+       functions, unless you declare those as 'static'.
 
     Common arguments to plugin functions:
 
@@ -127,20 +128,39 @@ Interfaces
            The plugin should do any cleanup here. This function is called
            once, at Tux Paint exit.
          * void click(magic_api * api, int which, SDL_Surface * snapshot,
-           SDL_Surface * canvas, int x, int y)
+           SDL_Surface * canvas, int x, int y, SDL_Rect * update_rect)
            The plugin should apply the appropriate 'Magic' tool on the
            'canvas' surface. The (x,y) coordinates are where the mouse was
            (within the canvas) when the mouse button was clicked.
+           The plugin should report back what part of the canvas was
+           affected, by filling in the (x,y) and (w,h) values in
+           'update_rect'.
            The contents of the drawing canvas immediately prior to the mouse
            button click is stored within the 'snapshot' canvas.
          * void drag(magic_api * api, int which, SDL_Surface * snapshot,
-           SDL_Surface * canvas, int ox, int oy, int x, int y)
+           SDL_Surface * canvas, int ox, int oy, int x, int y, SDL_Rect *
+           update_rect)
            The plugin should apply the appropriate 'Magic' tool on the
            'canvas' surface. The (ox,oy) and (x,y) coordinates are the
            location of the mouse at the beginning and end of the stroke.
            Typically, plugins that let the user "draw" effects onto the
            canvas call the Tux Paint 'Magic' tool plugin "line()" helper
            function. (See below).
+           The plugin should report back what part of the canvas was
+           affected, by filling in the (x,y) and (w,h) values in
+           'update_rect'.
+           Note: The contents of the drawing canvas immediately prior to the
+           mouse button click remains as it was (when the plugin's "click()"
+           function was called), and is still available in the 'snapshot'
+           canvas.
+         * void release(magic_api * api, int which, SDL_Surface * snapshot,
+           SDL_Surface * canvas, int x, int y, SDL_Rect * update_rect)
+           The plugin should apply the appropriate 'Magic' tool on the
+           'canvas' surface. The (x,y) coordinates are where the mouse was
+           (within the canvas) when the mouse button was released.
+           The plugin should report back what part of the canvas was
+           affected, by filling in the (x,y) and (w,h) values in
+           'update_rect'.
            Note: The contents of the drawing canvas immediately prior to the
            mouse button click remains as it was (when the plugin's "click()"
            function was called), and is still available in the 'snapshot'

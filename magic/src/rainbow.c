@@ -109,7 +109,8 @@ void rainbow_linecb(void * ptr, int which,
 
 // Affect the canvas on drag:
 void rainbow_drag(magic_api * api, int which, SDL_Surface * canvas,
-	          SDL_Surface * last, int ox, int oy, int x, int y)
+	          SDL_Surface * last, int ox, int oy, int x, int y,
+		  SDL_Rect * update_rect)
 {
   rainbow_color = (rainbow_color + 1) % NUM_RAINBOW_COLORS;
   rainbow_rgb = SDL_MapRGB(canvas->format,
@@ -119,15 +120,31 @@ void rainbow_drag(magic_api * api, int which, SDL_Surface * canvas,
 
   api->line(which, canvas, last, ox, oy, x, y, 1, rainbow_linecb);
 
+  if (ox > x) { int tmp = ox; ox = x; x = tmp; }
+  if (oy > y) { int tmp = oy; oy = y; y = tmp; }
+
+  update_rect->x = x - 16;
+  update_rect->y = y - 16;
+  update_rect->w = (ox + 16) - update_rect->x;
+  update_rect->h = (oy + 16) - update_rect->y;
+
   api->playsound(rainbow_snd, (x * 255) / canvas->w, 255);
 }
 
 // Affect the canvas on click:
 void rainbow_click(magic_api * api, int which,
 	           SDL_Surface * canvas, SDL_Surface * last,
-	           int x, int y)
+	           int x, int y,
+		   SDL_Rect * update_rect)
 {
-  rainbow_drag(api, which, canvas, last, x, y, x, y);
+  rainbow_drag(api, which, canvas, last, x, y, x, y, update_rect);
+}
+
+void rainbow_release(magic_api * api, int which,
+	           SDL_Surface * canvas, SDL_Surface * last,
+	           int x, int y,
+		   SDL_Rect * update_rect)
+{
 }
 
 // Clean up

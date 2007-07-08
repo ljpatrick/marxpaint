@@ -860,8 +860,9 @@ typedef struct magic_funcs_s {
   int (*init)(magic_api *);
   Uint32 (*api_version)(void);
   void (*shutdown)(magic_api *);
-  void (*click)(magic_api *, int, SDL_Surface *, SDL_Surface *, int, int);
-  void (*drag)(magic_api *, int, SDL_Surface *, SDL_Surface *, int, int, int, int);
+  void (*click)(magic_api *, int, SDL_Surface *, SDL_Surface *, int, int, SDL_Rect *);
+  void (*drag)(magic_api *, int, SDL_Surface *, SDL_Surface *, int, int, int, int, SDL_Rect *);
+  void (*release)(magic_api *, int, SDL_Surface *, SDL_Surface *, int, int, SDL_Rect *);
 } magic_funcs_t;
 
 // FIXME: Drop the 512 constant :P
@@ -1691,6 +1692,7 @@ static void mainloop(void)
   SDLMod mod;
   Uint32 last_cursor_blink, cur_cursor_blink,
     pre_event_time, current_event_time;
+  SDL_Rect update_rect;
 
 
   num_things = num_brushes;
@@ -3009,17 +3011,22 @@ static void mainloop(void)
 
             last = undo_bufs[undo_ctr];
   
-	    // FIXME: Lock surfaces?  Probably better to let tool plugins do it 
+            update_rect.x = 0;
+            update_rect.y = 0;
+            update_rect.w = 0;
+            update_rect.h = 0;
 
 	    magic_funcs[magic_handle_idx[cur_magic]].click(magic_api_struct,
 					                   magic_idx[cur_magic],
 					                   canvas, last,
-							   old_x, old_y);
+							   old_x, old_y,
+							   &update_rect);
 	    
 	    draw_tux_text(TUX_GREAT, magic_tips[cur_magic], 1);
 
-            // FIXME: Maybe 'click' should return an update rect?
-  	    update_canvas(0, 0, canvas->w, canvas->h);
+  	    update_canvas(update_rect.x, update_rect.y,
+			  update_rect.x + update_rect.w,
+			  update_rect.y + update_rect.h);
 	  }
 	  else if (cur_tool == TOOL_ERASER)
 	  {
@@ -3338,6 +3345,37 @@ static void mainloop(void)
 	      }
 	    }
 	  }
+	  else if (cur_tool == TOOL_MAGIC)
+	  {
+	    int undo_ctr;
+            SDL_Surface * last;
+
+	    /* Releasing button: Finish the magic: */
+
+            if (cur_undo > 0)
+              undo_ctr = cur_undo - 1;
+            else
+              undo_ctr = NUM_UNDO_BUFS - 1;
+
+            last = undo_bufs[undo_ctr];
+    
+            update_rect.x = 0;
+            update_rect.y = 0;
+            update_rect.w = 0;
+            update_rect.h = 0;
+
+	    magic_funcs[magic_handle_idx[cur_magic]].release(magic_api_struct,
+					                   magic_idx[cur_magic],
+					                   canvas, last,
+							   old_x, old_y,
+							   &update_rect);
+	    
+	    draw_tux_text(TUX_GREAT, magic_tips[cur_magic], 1);
+
+  	    update_canvas(update_rect.x, update_rect.y,
+			  update_rect.x + update_rect.w,
+			  update_rect.y + update_rect.h);
+          }
 	}
 
 	button_down = 0;
@@ -3557,14 +3595,21 @@ static void mainloop(void)
 
             last = undo_bufs[undo_ctr];
     
+            update_rect.x = 0;
+            update_rect.y = 0;
+            update_rect.w = 0;
+            update_rect.h = 0;
+
 	    magic_funcs[magic_handle_idx[cur_magic]].drag(magic_api_struct,
 							  magic_idx[cur_magic],
 							  canvas, last,
 							  old_x, old_y,
-							  new_x, new_y);
+							  new_x, new_y,
+							  &update_rect);
 
-	    // FIXME: Maybe 'drag' should return an update rect?
-  	    update_canvas(0, 0, canvas->w, canvas->h);
+  	    update_canvas(update_rect.x, update_rect.y,
+			  update_rect.x + update_rect.w,
+			  update_rect.y + update_rect.h);
 	  }
 	  else if (cur_tool == TOOL_ERASER)
 	  {
@@ -15891,6 +15936,11 @@ void load_magic_plugins(void)
 	    magic_funcs[num_plugin_files].drag =
 	      SDL_LoadFunction(magic_handle[num_plugin_files], funcname);
 
+            snprintf(funcname, sizeof(funcname), "%s_%s", objname,
+			       "release");
+	    magic_funcs[num_plugin_files].release =
+	      SDL_LoadFunction(magic_handle[num_plugin_files], funcname);
+
 #ifdef DEBUG
 	    printf("get_tool_count = 0x%x\n",
 		   (int) magic_funcs[num_plugin_files].get_tool_count);
@@ -15914,6 +15964,8 @@ void load_magic_plugins(void)
 		   (int) magic_funcs[num_plugin_files].click);
 	    printf("drag = 0x%x\n",
 		   (int) magic_funcs[num_plugin_files].drag);
+	    printf("release = 0x%x\n",
+		   (int) magic_funcs[num_plugin_files].release);
 #endif
 
 	    err = 0;
@@ -15969,6 +16021,12 @@ void load_magic_plugins(void)
 	    if (magic_funcs[num_plugin_files].click == NULL)
 	    {
 	      fprintf(stderr, "Error: plugin %s is missing click\n",
+		      fname);
+              err = 1;
+	    }
+	    if (magic_funcs[num_plugin_files].release == NULL)
+	    {
+	      fprintf(stderr, "Error: plugin %s is missing release\n",
 		      fname);
               err = 1;
 	    }

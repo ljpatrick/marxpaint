@@ -71,9 +71,18 @@ char * grass_get_description(magic_api * api, int which)
 
 // Affect the canvas on drag:
 void grass_drag(magic_api * api, int which, SDL_Surface * canvas,
-	          SDL_Surface * last, int ox, int oy, int x, int y)
+	          SDL_Surface * last, int ox, int oy, int x, int y,
+		  SDL_Rect * update_rect)
 {
   api->line(which, canvas, last, ox, oy, x, y, 4, do_grass);
+
+  if (ox > x) { int tmp = ox; ox = x; x = tmp; }
+  if (oy > y) { int tmp = oy; oy = y; y = tmp; }
+
+  update_rect->x = ox - 32;
+  update_rect->y = oy - 32;
+  update_rect->w = 64;
+  update_rect->h = 64;
 
   api->playsound(grass_snd,
                  (x * 255) / canvas->w, (y * 255) / canvas->h);
@@ -82,9 +91,15 @@ void grass_drag(magic_api * api, int which, SDL_Surface * canvas,
 // Affect the canvas on click:
 void grass_click(magic_api * api, int which,
 	           SDL_Surface * canvas, SDL_Surface * last,
-	           int x, int y)
+	           int x, int y, SDL_Rect * update_rect)
 {
-  grass_drag(api, which, canvas, last, x, y, x, y);
+  grass_drag(api, which, canvas, last, x, y, x, y, update_rect);
+}
+
+void grass_release(magic_api * api, int which,
+	           SDL_Surface * canvas, SDL_Surface * last,
+	           int x, int y, SDL_Rect * update_rect)
+{
 }
 
 // No setup happened:

@@ -85,7 +85,15 @@ char * mirror_flip_get_description(magic_api * api, int which)
 
 // We affect the whole canvas, so only do things on click, not drag:
 void mirror_flip_drag(magic_api * api, int which, SDL_Surface * canvas,
-	  SDL_Surface * last, int ox, int oy, int x, int y)
+	  SDL_Surface * last, int ox, int oy, int x, int y,
+	  SDL_Rect * update_rect)
+{
+  // No-op
+}
+
+void mirror_flip_release(magic_api * api, int which, SDL_Surface * canvas,
+	  SDL_Surface * last, int ox, int oy, int x, int y,
+	  SDL_Rect * update_rect)
 {
   // No-op
 }
@@ -93,7 +101,8 @@ void mirror_flip_drag(magic_api * api, int which, SDL_Surface * canvas,
 // Affect the canvas on click:
 void mirror_flip_click(magic_api * api, int which,
 	   SDL_Surface * canvas, SDL_Surface * last,
-	   int x, int y)
+	   int x, int y,
+	   SDL_Rect * update_rect)
 {
   int xx, yy;
   SDL_Rect src, dest;
@@ -132,6 +141,11 @@ void mirror_flip_click(magic_api * api, int which,
 
     api->special_notify(SPECIAL_FLIP);
   }
+
+  update_rect->x = 0;
+  update_rect->y = 0;
+  update_rect->w = canvas->w;
+  update_rect->h = canvas->h;
 
   api->playsound(snd_effects[which], 128, 255);
 }

@@ -211,9 +211,18 @@ void blocks_chalk_drip_linecb(void * ptr, int which,
 
 // Affect the canvas on drag:
 void blocks_chalk_drip_drag(magic_api * api, int which, SDL_Surface * canvas,
-	          SDL_Surface * last, int ox, int oy, int x, int y)
+	          SDL_Surface * last, int ox, int oy, int x, int y,
+		  SDL_Rect * update_rect)
 {
   api->line(which, canvas, last, ox, oy, x, y, 1, blocks_chalk_drip_linecb);
+
+  if (ox > x) { int tmp = ox; ox = x; x = tmp; }
+  if (oy > y) { int tmp = oy; oy = y; y = tmp; }
+
+  update_rect->x = ox - 16;
+  update_rect->y = oy - 16;
+  update_rect->w = (x + 16) - update_rect->x;
+  update_rect->h = (y + 16) - update_rect->y;
 
   api->playsound(snd_effect[which], (x * 255) / canvas->w, 255);
 }
@@ -221,9 +230,16 @@ void blocks_chalk_drip_drag(magic_api * api, int which, SDL_Surface * canvas,
 // Affect the canvas on click:
 void blocks_chalk_drip_click(magic_api * api, int which,
 	           SDL_Surface * canvas, SDL_Surface * last,
-	           int x, int y)
+	           int x, int y, SDL_Rect * update_rect)
 {
-  blocks_chalk_drip_drag(api, which, canvas, last, x, y, x, y);
+  blocks_chalk_drip_drag(api, which, canvas, last, x, y, x, y, update_rect);
+}
+
+// Affect the canvas on release:
+void blocks_chalk_drip_release(magic_api * api, int which,
+	           SDL_Surface * canvas, SDL_Surface * last,
+	           int x, int y, SDL_Rect * update_rect)
+{
 }
 
 // No setup happened:

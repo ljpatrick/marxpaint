@@ -15,7 +15,7 @@ New Breed Software</p>
 <p><a href="mailto:bill@newbreedsoftware.com">bill@newbreedsoftware.com</a><br>
 <a href="http://www.tuxpaint.org/">http://www.tuxpaint.org/</a></p>
 
-<p>July 5, 2007 - July 6, 2007</p>
+<p>July 5, 2007 - July 8, 2007</p>
 </center>
 
 <hr size=2 noshade>
@@ -84,7 +84,9 @@ of a "Tux&nbsp;Paint 'Magic' Tool Plugin Development package".)</p>
 <p>'Magic' tool plugins must provide the functions listed below.
 <b>Note:</b> To avoid namespace collisions, each function's name must
 start with the shared object's filename (e.g., "blur.so" or "blur.dll"
-would have functions whose names begin with "blur_").</p>
+would have functions whose names begin with "blur_").  <i>This
+includes private functions</i>, unless you declare those as
+'static'.</p>
 
 <h4>Common arguments to plugin functions:</h4>
 
@@ -160,20 +162,37 @@ would have functions whose names begin with "blur_").</p>
   at Tux&nbsp;Paint exit.
 
 <li>void click(magic_api * api, int which, SDL_Surface * snapshot,
-    SDL_Surface * canvas, int x, int y)<br>
+    SDL_Surface * canvas, int x, int y, SDL_Rect * update_rect)<br>
   The plugin should apply the appropriate 'Magic' tool on the 'canvas'
   surface.  The (x,y) coordinates are where the mouse was (within the canvas)
   when the mouse button was clicked.<br>
+  The plugin should report back what part of the canvas was affected, by
+  filling in the (x,y) and (w,h) values in 'update_rect'.<br>
   The contents of the drawing canvas immediately prior to the mouse button
   click is stored within the 'snapshot' canvas.
 
 <li>void drag(magic_api * api, int which, SDL_Surface * snapshot,
-    SDL_Surface * canvas, int ox, int oy, int x, int y)<br>
+    SDL_Surface * canvas, int ox, int oy, int x, int y,
+    SDL_Rect * update_rect)<br>
   The plugin should apply the appropriate 'Magic' tool on the 'canvas'
   surface.  The (ox,oy) and (x,y) coordinates are the location of the mouse
   at the beginning and end of the stroke.  Typically, plugins that let the
   user "draw" effects onto the canvas call the Tux&nbsp;Paint 'Magic' tool
   plugin "line()" helper function. (See below).<br>
+  The plugin should report back what part of the canvas was affected, by
+  filling in the (x,y) and (w,h) values in 'update_rect'.<br>
+  Note: The contents of the drawing canvas immediately prior to the mouse
+  button click remains as it was (when the plugin's "click()" function was
+  called), and is still available in the 'snapshot' canvas.
+
+<li>void release(magic_api * api, int which, SDL_Surface * snapshot,
+    SDL_Surface * canvas, int x, int y,
+    SDL_Rect * update_rect)<br>
+  The plugin should apply the appropriate 'Magic' tool on the 'canvas'
+  surface.  The (x,y) coordinates are where the mouse was (within the canvas)
+  when the mouse button was released.<br>
+  The plugin should report back what part of the canvas was affected, by
+  filling in the (x,y) and (w,h) values in 'update_rect'.<br>
   Note: The contents of the drawing canvas immediately prior to the mouse
   button click remains as it was (when the plugin's "click()" function was
   called), and is still available in the 'snapshot' canvas.

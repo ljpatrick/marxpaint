@@ -65,21 +65,32 @@ char * fill_get_description(magic_api * api, int which)
 
 // Affect the canvas on drag:
 void fill_drag(magic_api * api, int which, SDL_Surface * canvas,
-	          SDL_Surface * last, int ox, int oy, int x, int y)
+	          SDL_Surface * last, int ox, int oy, int x, int y,
+                  SDL_Rect * update_rect)
 {
 }
 
 // Affect the canvas on click:
 void fill_click(magic_api * api, int which,
 	           SDL_Surface * canvas, SDL_Surface * last,
-	           int x, int y)
+	           int x, int y, SDL_Rect * update_rect)
 {
   do_flood_fill(api, canvas, x, y, SDL_MapRGB(canvas->format,
                                               fill_r, fill_g, fill_b),
                 api->getpixel(canvas, x, y));
+
+  update_rect->x = 0;
+  update_rect->y = 0;
+  update_rect->w = canvas->w;
+  update_rect->h = canvas->h;
 }
 
-// No setup happened:
+void fill_release(magic_api * api, int which,
+	           SDL_Surface * canvas, SDL_Surface * last,
+	           int x, int y, SDL_Rect * update_rect)
+{
+}
+
 void fill_shutdown(magic_api * api)
 {
   Mix_FreeChunk(fill_snd);

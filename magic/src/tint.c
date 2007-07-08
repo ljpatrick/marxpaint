@@ -95,9 +95,18 @@ void do_tint(void * ptr, int which, SDL_Surface * canvas, SDL_Surface * last,
 
 // Affect the canvas on drag:
 void tint_drag(magic_api * api, int which, SDL_Surface * canvas,
-	          SDL_Surface * last, int ox, int oy, int x, int y)
+	          SDL_Surface * last, int ox, int oy, int x, int y,
+		  SDL_Rect * update_rect)
 {
   api->line(which, canvas, last, ox, oy, x, y, 1, do_tint);
+
+  if (ox > x) { int tmp = ox; ox = x; x = tmp; }
+  if (oy > y) { int tmp = oy; oy = y; y = tmp; }
+
+  update_rect->x = x - 16;
+  update_rect->y = y - 16;
+  update_rect->w = (ox + 16) - update_rect->x;
+  update_rect->h = (oy + 16) - update_rect->y;
 
   api->playsound(tint_snd, (x * 255) / canvas->w, 255);
 }
@@ -105,9 +114,16 @@ void tint_drag(magic_api * api, int which, SDL_Surface * canvas,
 // Affect the canvas on click:
 void tint_click(magic_api * api, int which,
 	           SDL_Surface * canvas, SDL_Surface * last,
-	           int x, int y)
+	           int x, int y, SDL_Rect * update_rect)
 {
-  tint_drag(api, which, canvas, last, x, y, x, y);
+  tint_drag(api, which, canvas, last, x, y, x, y, update_rect);
+}
+
+
+void tint_release(magic_api * api, int which,
+	           SDL_Surface * canvas, SDL_Surface * last,
+	           int x, int y, SDL_Rect * update_rect)
+{
 }
 
 // No setup happened:

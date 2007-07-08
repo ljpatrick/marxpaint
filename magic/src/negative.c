@@ -80,12 +80,21 @@ void do_negative(void * ptr, int which,
 
 // Ask Tux Paint to call our 'do_negative()' callback over a line
 void negative_drag(magic_api * api, int which, SDL_Surface * canvas,
-	           SDL_Surface * last, int ox, int oy, int x, int y)
+	           SDL_Surface * last, int ox, int oy, int x, int y,
+		   SDL_Rect * update_rect)
 {
   SDL_LockSurface(last);
   SDL_LockSurface(canvas);
 
   api->line(which, canvas, last, ox, oy, x, y, 1, do_negative);
+
+  if (ox > x) { int tmp = ox; ox = x; x = tmp; }
+  if (oy > y) { int tmp = oy; oy = y; y = tmp; }
+
+  update_rect->x = x - 16;
+  update_rect->y = y - 16;
+  update_rect->w = (ox + 16) - update_rect->x;
+  update_rect->h = (oy + 16) - update_rect->h;
 
   api->playsound(negative_snd, (x * 255) / canvas->w, 255);
   
@@ -96,9 +105,16 @@ void negative_drag(magic_api * api, int which, SDL_Surface * canvas,
 // Ask Tux Paint to call our 'do_negative()' callback at a single point
 void negative_click(magic_api * api, int which,
 	            SDL_Surface * canvas, SDL_Surface * last,
-	            int x, int y)
+	            int x, int y, SDL_Rect * update_rect)
 {
-  negative_drag(api, which, canvas, last, x, y, x, y);
+  negative_drag(api, which, canvas, last, x, y, x, y, update_rect);
+}
+
+
+void negative_release(magic_api * api, int which,
+	            SDL_Surface * canvas, SDL_Surface * last,
+	            int x, int y, SDL_Rect * update_rect)
+{
 }
 
 

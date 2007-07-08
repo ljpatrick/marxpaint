@@ -176,9 +176,18 @@ void do_bricks(void * ptr, int which, SDL_Surface * canvas, SDL_Surface * last,
 
 // Affect the canvas on drag:
 void bricks_drag(magic_api * api, int which, SDL_Surface * canvas,
-	          SDL_Surface * last, int ox, int oy, int x, int y)
+	          SDL_Surface * last, int ox, int oy, int x, int y,
+                  SDL_Rect * update_rect)
 {
   api->line(which, canvas, last, ox, oy, x, y, 1, do_bricks);
+
+  if (ox > x) { int tmp = ox; ox = x; x = tmp; }
+  if (oy > y) { int tmp = oy; oy = y; y = tmp; }
+
+  update_rect->x = x - 36;
+  update_rect->y = y - 24;
+  update_rect->w = (ox + 36) - update_rect->x;
+  update_rect->h = (oy + 24) - update_rect->h;
 
   api->playsound(brick_snd, (x * 255) / canvas->w, 255);
 }
@@ -186,9 +195,15 @@ void bricks_drag(magic_api * api, int which, SDL_Surface * canvas,
 // Affect the canvas on click:
 void bricks_click(magic_api * api, int which,
 	           SDL_Surface * canvas, SDL_Surface * last,
-	           int x, int y)
+	           int x, int y, SDL_Rect * update_rect)
 {
-  bricks_drag(api, which, canvas, last, x, y, x, y);
+  bricks_drag(api, which, canvas, last, x, y, x, y, update_rect);
+}
+
+void bricks_release(magic_api * api, int which,
+	           SDL_Surface * canvas, SDL_Surface * last,
+	           int x, int y, SDL_Rect * update_rect)
+{
 }
 
 // No setup happened:

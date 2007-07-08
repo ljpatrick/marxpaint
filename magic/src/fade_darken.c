@@ -118,24 +118,41 @@ void do_fade_darken(void * ptr, int which,
 
 // Ask Tux Paint to call our 'do_fade_darken()' callback over a line
 void fade_darken_drag(magic_api * api, int which, SDL_Surface * canvas,
-	           SDL_Surface * last, int ox, int oy, int x, int y)
+	           SDL_Surface * last, int ox, int oy, int x, int y,
+                   SDL_Rect * update_rect)
 {
   SDL_LockSurface(last);
   SDL_LockSurface(canvas);
 
   api->line(which, canvas, last, ox, oy, x, y, 1, do_fade_darken);
-  api->playsound(snd_effects[which], (x * 255) / canvas->w, 255);
   
   SDL_UnlockSurface(canvas);
   SDL_UnlockSurface(last);
+
+  api->playsound(snd_effects[which], (x * 255) / canvas->w, 255);
+
+  if (ox > x) { int tmp = ox; ox = x; x = tmp; }
+  if (oy > y) { int tmp = oy; oy = y; y = tmp; }
+
+  update_rect->x = ox - 16;
+  update_rect->y = oy - 16;
+  update_rect->w = (x + 16) - update_rect->x;
+  update_rect->h = (y + 16) - update_rect->y;
 }
 
 // Ask Tux Paint to call our 'do_fade_darken()' callback at a single point
 void fade_darken_click(magic_api * api, int which,
 	            SDL_Surface * canvas, SDL_Surface * last,
-	            int x, int y)
+	            int x, int y, SDL_Rect * update_rect)
 {
-  fade_darken_drag(api, which, canvas, last, x, y, x, y);
+  fade_darken_drag(api, which, canvas, last, x, y, x, y, update_rect);
+}
+
+// Release
+void fade_darken_release(magic_api * api, int which,
+	            SDL_Surface * canvas, SDL_Surface * last,
+	            int x, int y, SDL_Rect * update_rect)
+{
 }
 
 
