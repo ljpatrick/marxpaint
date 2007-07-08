@@ -95,6 +95,7 @@ uninstall-i18n:
 	-rm $(LOCALE_PREFIX)/zh_TW/LC_MESSAGES/tuxpaint.mo
 	-rm $(IM_PREFIX)/ja.im
 	-rm $(IM_PREFIX)/ko.im
+	-rm $(IM_PREFIX)/th.im
 
 
 # Install the translated text:
@@ -475,6 +476,10 @@ install-im:
 	@echo "   ko ...Korean..."
 	@cp im/ko.im $(IM_PREFIX)/ko.im
 	@chmod 644 $(IM_PREFIX)/ko.im
+	@#
+	@echo "   ko ...Thai..."
+	@cp im/th.im $(IM_PREFIX)/th.im
+	@chmod 644 $(IM_PREFIX)/th.im
 else
 install-im:
 	@echo

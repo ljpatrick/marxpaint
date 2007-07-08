@@ -60,6 +60,7 @@ enum {
   IM_TIP_HIRAGANA,
   IM_TIP_KATAKANA,
   IM_TIP_HANGUL,
+  IM_TIP_THAI,
   NUM_IM_TIPS
 };
 
@@ -70,7 +71,8 @@ static const char* const im_tip_text[NUM_IM_TIPS] =
   gettext_noop("English"),
   gettext_noop("Hiragana"),
   gettext_noop("Katakana"),
-  gettext_noop("Hangul")
+  gettext_noop("Hangul"),
+  gettext_noop("Thai")
 };
 
 
@@ -694,6 +696,192 @@ static int im_event_c(IM_DATA* im, SDL_keysym ks)
 
 
 /**
+* Thai IM.
+*
+* @see im_read
+*/
+static int im_event_th(IM_DATA* im, SDL_keysym ks)
+{
+  static const char* lang_file = IMDIR "th.im";
+  enum { SEC_ENGLISH, SEC_THAI, SEC_TOTAL };
+
+  static CHARMAP cm;
+
+
+  /* Handle event requests */
+  switch(im->request) {
+    case 0: break;
+
+    case IM_REQ_FREE:        /* Free allocated resources */
+      charmap_free(&cm);
+      /* go onto full reset */
+
+    case IM_REQ_RESET_FULL:  /* Full reset */
+      cm.section = SEC_ENGLISH;
+      im->tip_text = im_tip_text[IM_TIP_ENGLISH];
+      /* go onto soft reset */
+
+    case IM_REQ_RESET_SOFT:  /* Soft reset */
+      im->s[0] = L'\0';
+      im->buf[0] = L'\0';
+      im->redraw = 0;
+      cm.match_count = 0;
+      cm.match_is_final = 0;
+      cm.match_state = &cm.sections[cm.section];
+      cm.match_state_prev = &cm.sections[cm.section];
+      break;
+
+    case IM_REQ_INIT:        /* Initialization */
+      charmap_init(&cm);
+
+      if(charmap_load(&cm, lang_file)) {
+        fprintf(stderr, "Unable to load %s, defaulting to im_event_c\n", lang_file);
+        im->lang = LANG_DEFAULT;
+        return im_event_c(im, ks);
+      }
+
+      im_fullreset(im);
+
+      #ifdef DEBUG
+      printf("IM: Loaded '%s'\n", lang_file);
+      #endif
+      break;
+  }
+  if(im->request != IM_REQ_TRANSLATE) return 0;
+
+
+  /* Discard redraw characters, so they can be redrawn */
+  if((int)wcslen(im->s) < im->redraw) im->redraw = wcslen(im->s);
+  wcs_lshift(im->s, (wcslen(im->s) - im->redraw) );
+
+
+  /* Handle keys */
+  switch(ks.sym) {
+    /* Keys to ignore */
+    case SDLK_NUMLOCK: case SDLK_CAPSLOCK: case SDLK_SCROLLOCK:
+    case SDLK_LSHIFT:  case SDLK_RSHIFT:
+    case SDLK_LCTRL:   case SDLK_RCTRL:
+    case SDLK_LALT:
+    case SDLK_LMETA:   case SDLK_RMETA:
+    case SDLK_LSUPER:  case SDLK_RSUPER:
+    case SDLK_MODE:    case SDLK_COMPOSE:
+      break;
+
+    /* Right-Alt mapped to mode-switch */
+    case SDLK_RALT:
+      cm.section = (++cm.section % SEC_TOTAL);   /* Change section */
+      im_softreset(im);                          /* Soft reset */
+
+      /* Set tip text */
+      switch(cm.section) {
+        case SEC_ENGLISH:  im->tip_text = im_tip_text[IM_TIP_ENGLISH]; break;
+        case SEC_THAI: im->tip_text = im_tip_text[IM_TIP_THAI]; break;
+      }
+      break;
+
+    /* Enter finalizes previous redraw */
+    case SDLK_RETURN:
+      if(im->redraw <= 0) {
+        im->s[0] = L'\r';
+        im->s[1] = L'\0';
+      }
+      im->buf[0] = L'\0';
+      im->redraw = 0;
+      break;
+
+    /* Actual character processing */
+    default:
+      /* English mode */
+      if(cm.section == SEC_ENGLISH) {
+        im->s[0] = ks.unicode;
+        im->s[1] = L'\0';
+        im->buf[0] = L'\0';
+      }
+      /* Thai mode */
+      else {
+        wchar_t u = ks.unicode;
+
+        im->s[0] = L'\0';                     /* Zero-out output string */
+        wcsncat(im->buf, &u, 1);              /* Copy new character */
+
+        /* Translate the characters */
+        im->redraw = 0;
+        while(1) {
+          const wchar_t* us = charmap_search(&cm, im->buf);
+          #ifdef IM_DEBUG
+          wprintf(L"  [%8ls] [%8ls] %2d %2d\n", im->s, im->buf, wcslen(im->s), wcslen(im->buf));
+          #endif
+
+          /* Match was found? */
+          if(us && wcslen(us)) {
+            #ifdef IM_DEBUG
+            wprintf(L"    1\n");
+            #endif
+
+            wcscat(im->s, us);
+
+            /* Final match */
+            if(cm.match_is_final) {
+              wcs_lshift(im->buf, cm.match_count);
+              cm.match_count = 0;
+              cm.match_is_final = 0;
+            }
+            /* May need to be overwritten next time */
+            else {
+              im->redraw += wcslen(us);
+              break;
+            }
+          }
+          /* No match, but more data is in the buffer */
+          else if(wcslen(im->buf) > 0) {
+            /* If the input character has no state, it's its own state */
+            if(cm.match_count == 0) {
+              #ifdef IM_DEBUG
+              wprintf(L"    2a\n");
+              #endif
+              wcsncat(im->s, im->buf, 1);
+              wcs_lshift(im->buf, 1);
+              cm.match_is_final = 0;
+            }
+            /* If the matched characters didn't consume all, it's own state */
+            else if((size_t)cm.match_count != wcslen(im->buf)) {
+              #ifdef IM_DEBUG
+              wprintf(L"    2b (%2d)\n", cm.match_count);
+              #endif
+              wcsncat(im->s, im->buf, 1);
+              wcs_lshift(im->buf, 1);
+              cm.match_is_final = 0;
+            }
+            /* Otherwise it's just a part of a future input */
+            else {
+              #ifdef IM_DEBUG
+              wprintf(L"    2c (%2d)\n", cm.match_count);
+              #endif
+              wcscat(im->s, im->buf);
+              cm.match_is_final = 0;
+              im->redraw += wcslen(im->buf);
+              break;
+            }
+          }
+          /* No match and no more data in the buffer */
+          else {
+            #ifdef IM_DEBUG
+            wprintf(L"    3\n");
+            #endif
+            break;
+          }
+
+          /* Is this the end? */
+          if(cm.match_is_final) break;
+        }
+      }
+  }
+
+  return im->redraw;
+}
+
+
+/**
 * Japanese IM.
 *
 * @see im_read
@@ -1193,6 +1381,7 @@ void im_init(IM_DATA* im, int lang)
     /* ADD NEW LANGUAGE SUPPORT HERE */
     im_event_fns[LANG_JA] = &im_event_ja;
     im_event_fns[LANG_KO] = &im_event_ko;
+    im_event_fns[LANG_TH] = &im_event_th;
 
     im_initialized = 1;
   }

@@ -9,7 +9,7 @@ http://www.tuxpaint.org/
 $Id$
 
 
-2007.July.5 (0.9.18)
+2007.July.8 (0.9.18)
   * System-Related Improvements:
     ----------------------------
     * Added an API for developing Magic tools as plug-ins.
@@ -50,23 +50,26 @@ $Id$
     -----------
     * Sparkles (based on old Magic Tool)
 
-  * New Translations:
-    -----------------
-    * Wolof
+  * New Localizations:
+    ------------------
+    * Thai input method
+      Ed Montgomery <edm@rocketmail.com>
+
+    * Wolof translation
       Haby Diallo <haby42@yahoo.fr>
 
-  * Translation Updates:
-    --------------------
-    * British English
+  * Localization Updates:
+    ---------------------
+    * British English translation
       Caroline Ford <caroline.ford.work@googlemail.com>
 
-    * Dutch
+    * Dutch translation
       Freek de Kruijf <f.de.kruijf@hetnet.nl>
 
-    * Italian
+    * Italian translation
       Flavio "Iron Bishop" Pastore <ironbishop@fsfe.org>
 
-    * South African English
+    * South African English translation
       Caroline Ford <caroline.ford.work@googlemail.com>
 
 
