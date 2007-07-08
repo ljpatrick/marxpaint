@@ -5,6 +5,8 @@
 # part of Tux Paint base, so "install-plugin-dev" probably hasn't
 # been run yet; hence "-I../src/" to find 'tp_magic_api.h')
 
+include Makefile-apiversion
+
 SO_TYPE=so
 
 TP_MAGIC_CFLAGS=$(shell sdl-config --cflags) \

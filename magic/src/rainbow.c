@@ -88,8 +88,9 @@ char * rainbow_get_description(magic_api * api, int which)
 
 // Do the effect:
 
-void do_example(void * ptr, int which, SDL_Surface * canvas, SDL_Surface * last,
-                int x, int y)
+void rainbow_linecb(void * ptr, int which,
+		    SDL_Surface * canvas, SDL_Surface * last,
+                    int x, int y)
 {
   magic_api * api = (magic_api *) ptr;
   int xx, yy;
@@ -116,7 +117,7 @@ void rainbow_drag(magic_api * api, int which, SDL_Surface * canvas,
 			   rainbow_hexes[rainbow_color][1],
 			   rainbow_hexes[rainbow_color][2]);
 
-  api->line(which, canvas, last, ox, oy, x, y, 1, do_example);
+  api->line(which, canvas, last, ox, oy, x, y, 1, rainbow_linecb);
 
   api->playsound(rainbow_snd, (x * 255) / canvas->w, 255);
 }

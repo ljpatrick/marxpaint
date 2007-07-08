@@ -15,7 +15,7 @@
 VER_VERSION=0.9.18
 VER_DATE=`date +"%Y-%m-%d"`
 
-MAGIC_API_VERSION=0x00000001
+include magic/Makefile-apiversion
 
 
 # Where to install things:
