@@ -31,7 +31,8 @@ all:	negative.$(SO_TYPE) \
 	emboss.$(SO_TYPE) \
 	metalpaint.$(SO_TYPE) \
 	waves.$(SO_TYPE) \
-	flower.$(SO_TYPE)
+	flower.$(SO_TYPE) \
+	foam.$(SO_TYPE)
 
 install:
 	cd .. ; make install-magic-plugins
@@ -115,6 +116,10 @@ waves.$(SO_TYPE):	src/waves.c
 
 flower.$(SO_TYPE):	src/flower.c
 	@echo "Building Flower magic tool"
+	$(CC) $(CFLAGS) -shared -o $@ $<
+
+foam.$(SO_TYPE):	src/foam.c
+	@echo "Building Foam magic tool"
 	$(CC) $(CFLAGS) -shared -o $@ $<
 
 

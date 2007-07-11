@@ -62,8 +62,8 @@ void do_emboss(void * ptr, int which, SDL_Surface * canvas, SDL_Surface * last,
   magic_api * api = (magic_api *) ptr;
   int xx, yy;
   Uint8 r1, g1, b1,
-        r2, g2, b2,
-        r, g, b;
+        r2, g2, b2;
+  int r, g, b;
   int avg1, avg2;
 
   for (yy = -16; yy < 16; yy++)

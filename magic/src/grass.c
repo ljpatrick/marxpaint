@@ -79,10 +79,10 @@ void grass_drag(magic_api * api, int which, SDL_Surface * canvas,
   if (ox > x) { int tmp = ox; ox = x; x = tmp; }
   if (oy > y) { int tmp = oy; oy = y; y = tmp; }
 
-  update_rect->x = ox - 32;
-  update_rect->y = oy - 32;
-  update_rect->w = 64;
-  update_rect->h = 64;
+  update_rect->x = ox - 64;
+  update_rect->y = oy - 64;
+  update_rect->w = 128;
+  update_rect->h = 192;
 
   api->playsound(grass_snd,
                  (x * 255) / canvas->w, (y * 255) / canvas->h);

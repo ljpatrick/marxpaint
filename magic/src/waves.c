@@ -61,26 +61,19 @@ void waves_drag(magic_api * api, int which, SDL_Surface * canvas,
 	          SDL_Surface * last, int ox, int oy, int x, int y,
 		  SDL_Rect * update_rect)
 {
-}
-
-// Affect the canvas on click:
-void waves_click(magic_api * api, int which,
-	           SDL_Surface * canvas, SDL_Surface * last,
-	           int x, int y, SDL_Rect * update_rect)
-{
   int xx, yy;
   SDL_Rect src, dest;
-  int offset;
   int width;
   int height;
 
-  offset = (y % 72); // kinda random...
-  width = ((x * 16) / canvas->w) + 16;
-  height = 10 - ((y * 5) / canvas->h);
+  SDL_BlitSurface(last, NULL, canvas, NULL);
+
+  width = ((x * 10) / canvas->w) + 10;
+  height = ((canvas->h - y) / 10) + 1;
   
   for (yy = 0; yy < canvas->h; yy++)
   {
-    xx = sin(((yy + offset) * height) * M_PI / 180.0) * width;
+    xx = sin((yy * height) * M_PI / 180.0) * width;
 
     src.x = 0;
     src.y = yy;
@@ -97,6 +90,14 @@ void waves_click(magic_api * api, int which,
   update_rect->y = 0;
   update_rect->w = canvas->w;
   update_rect->h = canvas->h;
+}
+
+// Affect the canvas on click:
+void waves_click(magic_api * api, int which,
+	           SDL_Surface * canvas, SDL_Surface * last,
+	           int x, int y, SDL_Rect * update_rect)
+{
+  waves_drag(api, which, canvas, last, x, y, x, y, update_rect);
 }
 
 // Affect the canvas on release:

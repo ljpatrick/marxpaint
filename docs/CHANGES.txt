@@ -42,7 +42,9 @@ $Id$
     * Emboss
     * Metal Paint
     * Waves
-    * Flower [unfinished]
+    * Flower
+      (utilizes Bezier curve example code from Wikipedia.org)
+    * Foam
 
   * New Localizations:
     ------------------

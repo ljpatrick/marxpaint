@@ -184,10 +184,10 @@ void bricks_drag(magic_api * api, int which, SDL_Surface * canvas,
   if (ox > x) { int tmp = ox; ox = x; x = tmp; }
   if (oy > y) { int tmp = oy; oy = y; y = tmp; }
 
-  update_rect->x = x - 36;
-  update_rect->y = y - 24;
-  update_rect->w = (ox + 36) - update_rect->x;
-  update_rect->h = (oy + 24) - update_rect->h;
+  update_rect->x = x - 64;
+  update_rect->y = y - 64;
+  update_rect->w = (ox + 128) - update_rect->x;
+  update_rect->h = (oy + 128) - update_rect->h;
 
   api->playsound(brick_snd, (x * 255) / canvas->w, 255);
 }

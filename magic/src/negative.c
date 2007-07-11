@@ -91,10 +91,10 @@ void negative_drag(magic_api * api, int which, SDL_Surface * canvas,
   if (ox > x) { int tmp = ox; ox = x; x = tmp; }
   if (oy > y) { int tmp = oy; oy = y; y = tmp; }
 
-  update_rect->x = x - 16;
-  update_rect->y = y - 16;
-  update_rect->w = (ox + 16) - update_rect->x;
-  update_rect->h = (oy + 16) - update_rect->h;
+  update_rect->x = ox - 16;
+  update_rect->y = oy - 16;
+  update_rect->w = (x + 16) - update_rect->x;
+  update_rect->h = (y + 16) - update_rect->h;
 
   api->playsound(negative_snd, (x * 255) / canvas->w, 255);
   

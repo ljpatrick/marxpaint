@@ -1341,6 +1341,7 @@ void magic_line_func(int which, SDL_Surface * canvas, SDL_Surface * last,
 Uint8 magic_linear_to_sRGB(float lin);
 float magic_sRGB_to_linear(Uint8 srgb);
 int magic_button_down(void);
+SDL_Surface * magic_scale(SDL_Surface * surf, int w, int h, int aspect);
 
 #ifdef DEBUG
 static char *debug_gettext(const char *str);
@@ -15847,6 +15848,9 @@ void load_magic_plugins(void)
   magic_api_struct->button_down = magic_button_down;
   magic_api_struct->rgbtohsv = rgbtohsv;
   magic_api_struct->hsvtorgb = hsvtorgb;
+  magic_api_struct->canvas_w = canvas->w;
+  magic_api_struct->canvas_h = canvas->h;
+  magic_api_struct->scale = magic_scale;
 
 
   d = opendir(MAGIC_PREFIX);
@@ -16313,3 +16317,9 @@ int magic_button_down(void)
 {
   return(button_down);
 }
+
+SDL_Surface * magic_scale(SDL_Surface * surf, int w, int h, int aspect)
+{
+  return(thumbnail2(surf, w, h, aspect, 1));
+}
+
