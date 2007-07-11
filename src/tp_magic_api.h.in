@@ -42,6 +42,9 @@ typedef struct magic_api_t {
   int (*button_down)(void);
   void (*rgbtohsv)(Uint8, Uint8, Uint8, float *, float *, float *);
   void (*hsvtorgb)(float, float, float, Uint8 *, Uint8 *, Uint8 *);
+  int canvas_w;
+  int canvas_h;
+  SDL_Surface * (*scale)(SDL_Surface *, int, int, int);
 } magic_api;
 
 #define TP_MAGIC_API_VERSION __APIVERSION__
