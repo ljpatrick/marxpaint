@@ -119,17 +119,17 @@ void do_example(void * ptr, int which, SDL_Surface * canvas, SDL_Surface * last,
 // Affect the canvas on drag:
 void example_drag(magic_api * api, int which, SDL_Surface * canvas,
 	          SDL_Surface * last, int ox, int oy, int x, int y,
-		  sDL_Rect * update_rect)
+		  SDL_Rect * update_rect)
 {
   api->line(which, canvas, last, ox, oy, x, y, 1, do_example);
 
   if (ox > x) { int tmp = ox; ox = x; x = tmp; }
   if (oy > y) { int tmp = oy; oy = y; y = tmp; }
 
-  update_rect->x = x - 4;
-  update_rect->y = y - 4;
-  update_rect->w = (ox + 4) - update_rect->x;
-  update_rect->h = (oy + 4) - update_rect->h;
+  update_rect->x = ox - 4;
+  update_rect->y = oy - 4;
+  update_rect->w = (x + 4) - update_rect->x;
+  update_rect->h = (y + 4) - update_rect->h;
 
   api->playsound(snd_effect[which],
                  (x * 255) / canvas->w, (y * 255) / canvas->h);
@@ -140,7 +140,7 @@ void example_click(magic_api * api, int which,
 	           SDL_Surface * canvas, SDL_Surface * last,
 	           int x, int y, SDL_Rect * update_rect)
 {
-  example_drag(api, which, canvas, last, x, y, x, y, SDL_Rect * update_rect);
+  example_drag(api, which, canvas, last, x, y, x, y, update_rect);
 }
 
 // Affect the canvas on release:

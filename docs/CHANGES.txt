@@ -9,7 +9,7 @@ http://www.tuxpaint.org/
 $Id$
 
 
-2007.July.8 (0.9.18)
+2007.July.10 (0.9.18)
   * System-Related Improvements:
     ----------------------------
     * Added an API for developing Magic tools as plug-ins.
@@ -28,27 +28,21 @@ $Id$
       /usr/[local/]share/docs/tuxpaint-dev/ by default.
 
     * Ported existing magic tools to the new Magic tool plug-in system:
-      - Blur
-      - Fill
-      - Lighten
-      - Darken
-      - Mirror
-      - Flip
-      - Rainbow
-      - Blocks
-      - Chalk
-      - Grass
-      - Negative
-      - Tint
-      - Smudge
-      - Drip
-      - Cartoon
-      - Brick (large)
-      - Brick (small)
+      (Blur, Fill, Lighten, Darken, Mirror, Flip, Rainbow, Blocks, Chalk,
+      Grass, Negative, Tint, Smudge, Drip, Cartoon, Brick (large & small))
 
   * New Brushes
     -----------
     * Sparkles (based on old Magic Tool)
+
+  * New Magic tools:
+    ----------------
+    * Kalidescope
+    * Glass Tile
+    * Emboss
+    * Metal Paint
+    * Waves
+    * Flower [unfinished]
 
   * New Localizations:
     ------------------
