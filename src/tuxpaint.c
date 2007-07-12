@@ -22,7 +22,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
   
-  June 14, 2002 - July 8, 2007
+  June 14, 2002 - July 12, 2007
   $Id$
 */
 
@@ -334,6 +334,21 @@ extern WrapperData macosx;
 #error "---------------------------------------------------"
 #endif
 
+/*
+#ifndef NO_SDLPANGO
+
+#include "SDL_Pango.h"
+#if !defined(SDL_PANGO_H)
+#error "---------------------------------------------------"
+#error "If you installed SDL_Pango from a package, be sure"
+#error "to get the development package, as well!"
+#error "(e.g., 'libsdl-pango1-dev.rpm')"
+#error "---------------------------------------------------"
+#endif
+
+#endif
+*/
+
 #ifndef NOSOUND
 #include "SDL_mixer.h"
 #if !defined(_SDL_MIXER_H) && !defined(_MIXER_H_)
@@ -505,7 +520,6 @@ static const char *getfilename(const char *path)
     return p + 1;
   return path;
 }
-
 
 
 ///////////////////////////////////////////////////////////////////
@@ -842,6 +856,10 @@ static int recording, playing;
 static char *playfile;
 static FILE *demofi;
 
+#ifndef NO_SDLPANGO
+SDLPango_Context * pango_context;
+#endif
+
 
 /* Magic tools API and tool handles: */
 
@@ -935,22 +953,37 @@ static SDL_Surface *zoom(SDL_Surface * src, int new_x, int new_y);
 
 
 
-
-static SDL_Surface *render_text(TTF_Font * restrict font,
+static SDL_Surface *render_text(TuxPaint_Font * restrict font,
 				const char *restrict str, SDL_Color color)
 {
   SDL_Surface *ret;
   int height;
 
-  ret = TTF_RenderUTF8_Blended(font, str, color);
+#ifdef NO_SDLPANGO
+  ret = TTF_RenderUTF8_Blended(font->ttf_font, str, color);
+#else
+  SDLPango_Matrix pango_color;
+
+  sdl_color_to_pango_color(color, &pango_color);
+
+  SDLPango_SetDefaultColor(font->pango_context, &pango_color);
+  SDLPango_SetText(font->pango_context, str, -1);
+  ret = SDLPango_CreateSurfaceDraw(font->pango_context); 
+#endif
+
   if (ret)
     return ret;
+
   // Sometimes a font will be missing a character we need. Sometimes the library
   // will substitute a rectangle without telling us. Sometimes it returns NULL.
   // Probably we should use FreeType directly. For now though...
-  height = TTF_FontHeight(font);
+  
+  /*
+  height = TuxPaint_Font_FontHeight(font);
   if (height < 2)
-    height = 2;
+  */
+  height = 2;
+
   return thumbnail(img_title_large_off, height * strlen(str) / 2, height, 0);
 }
 
@@ -975,24 +1008,40 @@ static Uint16 *wcstou16(const wchar_t * str)
   return res;
 }
 
-static SDL_Surface *render_text_w(TTF_Font * restrict font,
+
+/* FIXME: This should also use SDL_Pango -bjk 2007.07.12 */
+
+static SDL_Surface *render_text_w(TuxPaint_Font * restrict font,
 				  const wchar_t * restrict str,
 				  SDL_Color color)
 {
   SDL_Surface *ret;
   int height;
   Uint16 *ustr;
+#ifndef NO_SDLPANGO
+  SDLPango_Matrix pango_color;
+#endif
 
-  ustr = wcstou16(str);
+  ustr = wcstou16(str); // FIXME: For SDL_Pango, too? -bjk 2007.07.12
+
+#ifdef NO_SDLPANGO
   ret = TTF_RenderUNICODE_Blended(font, ustr, color);
-  free(ustr);
+#else
+  sdl_color_to_pango_color(color, &pango_color);
+
+  SDLPango_SetDefaultColor(font->pango_context, &pango_color);
+  SDLPango_SetText(font->pango_context, (char *) ustr, -1); // char * cast ok for SDL_Pango? -bjk 2007.07.12
+  ret = SDLPango_CreateSurfaceDraw(font->pango_context); 
+#endif
+
+  free(ustr); // FIXME: For SDL_Pango, too? -bjk 2007.07.12
 
   if (ret)
     return ret;
   // Sometimes a font will be missing a character we need. Sometimes the library
   // will substitute a rectangle without telling us. Sometimes it returns NULL.
   // Probably we should use FreeType directly. For now though...
-  height = TTF_FontHeight(font);
+  height = TuxPaint_Font_FontHeight(font);
   if (height < 2)
     height = 2;
   return thumbnail(img_title_large_off, height * wcslen(str) / 2, height, 0);
@@ -1993,7 +2042,7 @@ static void mainloop(void)
 	          texttool_len = 0;
 	          cursor_textwidth = 0;
 	        }
-	        font_height = TTF_FontHeight(getfonthandle(cur_font));
+	        font_height = TuxPaint_Font_FontHeight(getfonthandle(cur_font));
 
 	        cursor_x = cursor_left;
 	        cursor_y = min(cursor_y + font_height, canvas->h - font_height);
@@ -2672,7 +2721,7 @@ static void mainloop(void)
 		      if (user_font_families[i]
 			  && user_font_families[i]->handle)
 		      {
-			TTF_CloseFont(user_font_families[i]->handle);
+			TuxPaint_Font_CloseFont(user_font_families[i]->handle);
 			user_font_families[i]->handle = NULL;
 		      }
 		    }
@@ -2758,15 +2807,17 @@ static void mainloop(void)
 	    }
 	    else if (cur_tool == TOOL_TEXT)
 	    {
-	      char font_tux_text[512];
+	      /* FIXME */ /* char font_tux_text[512]; */
 
 	      cur_font = cur_thing;
 
+/* FIXME */
+/*
 	      snprintf(font_tux_text, sizeof font_tux_text, "%s (%s).",
 		       TTF_FontFaceFamilyName(getfonthandle(cur_font)),
 		       TTF_FontFaceStyleName(getfonthandle(cur_font)));
-//                          printf("font change:%s\n", font_tux_text);
 	      draw_tux_text(TUX_GREAT, font_tux_text, 1);
+*/
 
 	      if (do_draw)
 		draw_fonts();
@@ -3751,15 +3802,14 @@ static void draw_blinking_cursor(void)
 
   line_xor(cursor_x + cursor_textwidth, cursor_y,
 	   cursor_x + cursor_textwidth,
-	   cursor_y + TTF_FontHeight(getfonthandle(cur_font)));
+	   cursor_y + TuxPaint_Font_FontHeight(getfonthandle(cur_font)));
 
   update_screen(cursor_x + r_canvas.x + cursor_textwidth,
 		cursor_y + r_canvas.y,
 		cursor_x + r_canvas.x + cursor_textwidth,
 		cursor_y + r_canvas.y +
-		TTF_FontHeight(getfonthandle(cur_font)));
+		TuxPaint_Font_FontHeight(getfonthandle(cur_font)));
 }
-
 
 /* Draw using the current brush: */
 
@@ -5996,6 +6046,16 @@ static void setup(int argc, char *argv[])
   setup_language(getfilename(argv[0]));
   im_init(&im_data, get_current_language());
 
+#ifndef NO_SDLPANGO
+  SDLPango_Init();
+  
+  /* SDLPango accepts font description strings; cannot send it a
+     TTF_Font.  So right now, "pango_context" is set up once,
+     with a default font, when the app starts... */
+
+  pango_context = SDLPango_CreateContext_GivenFontDesc("FreeSans");
+#endif
+
   
   /* NOTE: Moved run_font_scanner() call from main(), to here,
      so that the gettext() calls used while testing fonts
@@ -6448,8 +6508,9 @@ static void setup(int argc, char *argv[])
 
   SDL_Flip(screen);
 
-  medium_font = TTF_OpenFont(DATA_PREFIX "fonts/default_font.ttf",
-			     18 - (only_uppercase * 3));
+  medium_font = TuxPaint_Font_OpenFont(PANGO_DEFAULT_FONT,
+					DATA_PREFIX "fonts/default_font.ttf",
+			    		18 - (only_uppercase * 3));
 
   if (medium_font == NULL)
   {
@@ -6748,8 +6809,9 @@ static void setup(int argc, char *argv[])
 
   /* Load system fonts: */
 
-  large_font = TTF_OpenFont(DATA_PREFIX "fonts/default_font.ttf",
-			    30 - (only_uppercase * 3));
+  large_font = TuxPaint_Font_OpenFont(PANGO_DEFAULT_FONT,
+				      DATA_PREFIX "fonts/default_font.ttf",
+			               30 - (only_uppercase * 3));
 
   if (large_font == NULL)
   {
@@ -6764,7 +6826,8 @@ static void setup(int argc, char *argv[])
   }
 
 
-  small_font = TTF_OpenFont(DATA_PREFIX "fonts/default_font.ttf",
+  small_font = TuxPaint_Font_OpenFont(PANGO_DEFAULT_FONT,
+			    DATA_PREFIX "fonts/default_font.ttf",
 #ifdef __APPLE__
 			    12 - (only_uppercase * 2));
 #else
@@ -6825,7 +6888,7 @@ static void setup(int argc, char *argv[])
   {
     if (strlen(title_names[i]) > 0)
     {
-      TTF_Font *myfont = large_font;
+      TuxPaint_Font *myfont = large_font;
       char *td_str = textdir(gettext(title_names[i]));
 
       if (need_own_font && strcmp(gettext(title_names[i]), title_names[i]))
@@ -7017,7 +7080,7 @@ static SDL_Surface *do_render_button_label(const char *const label)
 {
   SDL_Surface *tmp_surf, *surf;
   SDL_Color black = { 0, 0, 0, 0 };
-  TTF_Font *myfont = small_font;
+  TuxPaint_Font *myfont = small_font;
   char *td_str = textdir(gettext(label));
   char *upstr = uppercase(td_str);
 
@@ -9215,7 +9278,7 @@ static void wordwrap_text_ex(const char *const str, SDL_Color color,
   int len;
   SDL_Surface *text;
   SDL_Rect dest, src;
-  TTF_Font *myfont = medium_font;
+  TuxPaint_Font *myfont = medium_font;
 
   int utf8_str_len, last_text_height;
   unsigned char utf8_str[512];
@@ -10844,19 +10907,19 @@ static void cleanup(void)
 
   if (medium_font != NULL)
   {
-    TTF_CloseFont(medium_font);
+    TuxPaint_Font_CloseFont(medium_font);
     medium_font = NULL;
   }
 
   if (small_font != NULL)
   {
-    TTF_CloseFont(small_font);
+    TuxPaint_Font_CloseFont(small_font);
     small_font = NULL;
   }
 
   if (large_font != NULL)
   {
-    TTF_CloseFont(large_font);
+    TuxPaint_Font_CloseFont(large_font);
     large_font = NULL;
   }
 
@@ -10877,7 +10940,7 @@ static void cleanup(void)
       if (*++cpp)
 	free(*cpp);
       if (user_font_families[i]->handle)
-	TTF_CloseFont(user_font_families[i]->handle);
+	TuxPaint_Font_CloseFont(user_font_families[i]->handle);
       free(user_font_families[i]->directory);
       free(user_font_families[i]->family);
       free(user_font_families[i]);
@@ -10982,6 +11045,11 @@ static void cleanup(void)
 
 
   /* Close up! */
+
+#ifndef NO_SDLPANGO
+  if (pango_context != NULL)
+    SDLPango_FreeContext(pango_context);
+#endif
 
   TTF_Quit();
   SDL_Quit();
@@ -14266,10 +14334,10 @@ static void do_render_cur_text(int do_blit)
   /* Keep cursor on the screen! */
 
   if (cursor_y > ((48 * 7 + 40 + HEIGHTOFFSET) -
-		  TTF_FontHeight(getfonthandle(cur_font))))
+		  TuxPaint_Font_FontHeight(getfonthandle(cur_font))))
   {
     cursor_y = ((48 * 7 + 40 + HEIGHTOFFSET) -
-		TTF_FontHeight(getfonthandle(cur_font)));
+		TuxPaint_Font_FontHeight(getfonthandle(cur_font)));
   }
 
 

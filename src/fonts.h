@@ -17,6 +17,12 @@
 #include "SDL.h"
 #include "SDL_ttf.h"
 
+#ifndef NO_SDLPANGO
+#include "SDL_Pango.h"
+#endif
+
+#define PANGO_DEFAULT_FONT "BitStream Vera"
+
 #include "compiler.h"
 
 /* Disable threaded font loading on Windows */
@@ -55,8 +61,24 @@ TTF_Font *BUGFIX_TTF_OpenFont206(const char *const file, int ptsize);
 #define TTF_OpenFont    BUGFIX_TTF_OpenFont206
 */
 
-TTF_Font *try_alternate_font(int size);
-TTF_Font *load_locale_font(TTF_Font * fallback, int size);
+
+/* Stuff that wraps either SDL_Pango or SDL_TTF for font rendering: */
+
+
+typedef struct TuxPaint_Font_s {
+#ifndef NO_SDLPANGO
+  SDLPango_Context * pango_context;
+#else
+  TTF_Font * ttf_font;
+#endif
+  int height;
+} TuxPaint_Font;
+
+int TuxPaint_Font_FontHeight(TuxPaint_Font * tpf);
+
+
+TuxPaint_Font *try_alternate_font(int size);
+TuxPaint_Font *load_locale_font(TuxPaint_Font * fallback, int size);
 int load_user_fonts(SDL_Surface * screen, void *vp);
 
 #ifdef FORKED_FONTS
@@ -112,11 +134,11 @@ typedef struct family_info
   char *directory;
   char *family;
   char *filename[4];
-  TTF_Font *handle;
+  TuxPaint_Font *handle;
   int score;
 } family_info;
 
-extern TTF_Font *medium_font, *small_font, *large_font, *locale_font;
+extern TuxPaint_Font *medium_font, *small_font, *large_font, *locale_font;
 
 extern family_info **user_font_families;
 extern int num_font_families;
@@ -134,12 +156,22 @@ void parse_font_style(style_info * si);
 void groupfonts_range(style_info ** base, int count);
 void dupe_markdown_range(family_info ** base, int count);
 void groupfonts(void);
-TTF_Font *getfonthandle(int desire);
+TuxPaint_Font *getfonthandle(int desire);
 void loadfonts(SDL_Surface * screen, const char *const dir);
 
 int do_surfcmp(const SDL_Surface * const *const v1,
 	       const SDL_Surface * const *const v2);
 int surfcmp(const void *s1, const void *s2);
-int charset_works(TTF_Font * font, const char *s);
+int charset_works(TuxPaint_Font * font, const char *s);
+
+TuxPaint_Font * TuxPaint_Font_OpenFont(const char * pangodesc, const char * ttffilename, int size);
+void TuxPaint_Font_CloseFont(TuxPaint_Font * tpf);
+const char * TuxPaint_Font_FontFaceFamilyName(TuxPaint_Font * tpf);
+const char * TuxPaint_Font_FontFaceStyleName(TuxPaint_Font * tpf);
+
+#ifndef NO_SDLPANGO
+void sdl_color_to_pango_color(SDL_Color sdl_color,
+                              SDLPango_Matrix * pango_color);
+#endif
 
 #endif

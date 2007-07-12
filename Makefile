@@ -7,7 +7,7 @@
 # bill@newbreedsoftware.com
 # http://www.tuxpaint.org/
 
-# June 14, 2002 - July 8, 2007
+# June 14, 2002 - July 12, 2007
 
 
 # The version number, for release:
@@ -108,8 +108,9 @@ CURSOR_SHAPES=LARGE
 
 # Libraries, paths, and flags:
 
-SDL_LIBS=$(shell sdl-config --libs) -lSDL_image -lSDL_ttf $(SDL_MIXER_LIB)
+SDL_LIBS=$(shell sdl-config --libs) -lSDL_image -lSDL_ttf $(SDL_MIXER_LIB) $(SDL_PANGO_LIB)
 SDL_MIXER_LIB=-lSDL_mixer
+SDL_PANGO_LIB=-lSDL_Pango
 SDL_CFLAGS=$(shell sdl-config --cflags) $(SVG_CFLAGS)
 
 

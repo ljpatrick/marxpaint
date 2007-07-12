@@ -31,6 +31,17 @@ $Id$
       (Blur, Fill, Lighten, Darken, Mirror, Flip, Rainbow, Blocks, Chalk,
       Grass, Negative, Tint, Smudge, Drip, Cartoon, Brick (large & small))
 
+    * Began adding support for using SDL_Pango, a wrapper to Pango,
+      a library for layout and rendering of text, with an emphasis on
+      internationalization.  (The hope is to improve support for languages
+      that SDL_ttf doesn't support well; e.g., Arabic and Telegu.)
+
+      TTF_Font structs and some functions were replaced by a new
+      TuxPaint_Font struct and function, which wraps around either TTF_Font
+      or SDLPango_Context, depending on whether SDL_Pango is being used.
+
+      Note: STILL NEEDS WORK!
+
   * New Brushes
     -----------
     * Sparkles (based on old Magic Tool)

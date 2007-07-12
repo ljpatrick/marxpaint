@@ -30,6 +30,10 @@
 void loadfont_callback(SDL_Surface * screen, const char *restrict const dir,
 		       unsigned dirlen, tp_ftw_str * files, unsigned i)
 {
+/* FIXME */
+
+#ifdef NO_SDLPANGO
+
   dirlen = dirlen;
 
   while (i--)
@@ -65,14 +69,14 @@ void loadfont_callback(SDL_Surface * screen, const char *restrict const dir,
     if (loadable)
     {
       char fname[512];
-      TTF_Font *font;
+      TuxPaint_Font *font;
       snprintf(fname, sizeof fname, "%s/%s", dir, files[i].str);
 //printf("Loading font: %s\n", fname);
-      font = TTF_OpenFont(fname, text_sizes[text_size]);
+      font = TuxPaint_Font_OpenFont("", fname, text_sizes[text_size]);
       if (font)
       {
-	const char *restrict const family = TTF_FontFaceFamilyName(font);
-	const char *restrict const style = TTF_FontFaceStyleName(font);
+	const char *restrict const family = TuxPaint_Font_FontFaceFamilyName(font);
+	const char *restrict const style = TuxPaint_Font_FontFaceStyleName(font);
 
 
 #ifdef DEBUG
@@ -149,6 +153,9 @@ void loadfont_callback(SDL_Surface * screen, const char *restrict const dir,
     free(files[i].str);
   }
   free(files);
+
+#endif
+
 }
 
 
