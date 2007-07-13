@@ -64,13 +64,19 @@ TTF_Font *BUGFIX_TTF_OpenFont206(const char *const file, int ptsize);
 
 /* Stuff that wraps either SDL_Pango or SDL_TTF for font rendering: */
 
+enum {
+#ifndef NO_SDLPANGO
+  FONT_TYPE_PANGO,
+#endif
+  FONT_TYPE_TTF
+};
 
 typedef struct TuxPaint_Font_s {
 #ifndef NO_SDLPANGO
   SDLPango_Context * pango_context;
-#else
-  TTF_Font * ttf_font;
 #endif
+  int typ;
+  TTF_Font * ttf_font;
   int height;
 } TuxPaint_Font;
 

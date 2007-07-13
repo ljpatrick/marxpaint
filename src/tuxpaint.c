@@ -978,10 +978,6 @@ static SDL_Surface *render_text(TuxPaint_Font * restrict font,
   // will substitute a rectangle without telling us. Sometimes it returns NULL.
   // Probably we should use FreeType directly. For now though...
   
-  /*
-  height = TuxPaint_Font_FontHeight(font);
-  if (height < 2)
-  */
   height = 2;
 
   return thumbnail(img_title_large_off, height * strlen(str) / 2, height, 0);
@@ -1015,35 +1011,107 @@ static SDL_Surface *render_text_w(TuxPaint_Font * restrict font,
 				  const wchar_t * restrict str,
 				  SDL_Color color)
 {
-  SDL_Surface *ret;
+  SDL_Surface *ret = NULL;
   int height;
   Uint16 *ustr;
 #ifndef NO_SDLPANGO
+  unsigned int i, j;
+  int utfstr_max;
+  char * utfstr;
   SDLPango_Matrix pango_color;
 #endif
 
-  ustr = wcstou16(str); // FIXME: For SDL_Pango, too? -bjk 2007.07.12
+#ifndef NO_SDLPANGO
+  if (font->typ == FONT_TYPE_PANGO)
+  {
+    sdl_color_to_pango_color(color, &pango_color);
 
-#ifdef NO_SDLPANGO
-  ret = TTF_RenderUNICODE_Blended(font, ustr, color);
-#else
-  sdl_color_to_pango_color(color, &pango_color);
+    SDLPango_SetDefaultColor(font->pango_context, &pango_color);
 
-  SDLPango_SetDefaultColor(font->pango_context, &pango_color);
-  SDLPango_SetText(font->pango_context, (char *) ustr, -1); // char * cast ok for SDL_Pango? -bjk 2007.07.12
-  ret = SDLPango_CreateSurfaceDraw(font->pango_context); 
+    /* Convert from 16-bit UNICODE to UTF-8 encoded for SDL_Pango: */
+
+    utfstr_max = (sizeof(char) * 4 * (wcslen(str) + 1));
+    utfstr = (char *) malloc(utfstr_max);
+    memset(utfstr, utfstr_max, 0);
+
+    j = 0;
+    for (i = 0; i < wcslen(str); i++)
+    {
+      if (str[i] <= 0x0000007F)
+      {
+        /* 0x00000000 - 0x0000007F:
+           0xxxxxxx */
+
+        utfstr[j++] = (str[i] & 0x7F);
+      }
+      else if (str[i] <= 0x000007FF)
+      {
+        /* 0x00000080 - 0x000007FF:
+ 
+           00000abc defghijk
+           110abcde 10fghijk */
+
+        utfstr[j++] = (((str[i] & 0x0700) >> 6) |  /* -----abc -------- to ---abc-- */
+                       ((str[i] & 0x00C0) >> 6) |  /* -------- de------ to ------de */
+                       (0xC0));                    /*                  add 110----- */
+
+        utfstr[j++] = (((str[i] & 0x003F)) |       /* -------- --fghijk to --fghijk */
+                       (0x80));                    /*                  add 10------ */
+      }
+      else if (str[i] <= 0x0000FFFF)
+      {
+        /* 0x00000800 - 0x0000FFFF:
+
+           abcdefgh ijklmnop
+           1110abcd 10efghij 10klmnop */
+
+        utfstr[j++] = (((str[i] & 0xF000) >> 12) |  /* abcd---- -------- to ----abcd */
+                      (0xE0));                      /*                  add 1110---- */
+        utfstr[j++] = (((str[i] & 0x0FC0) >> 6)  |  /* ----efgh ij------ to --efghij */
+                      (0x80));                      /*                  add 10------ */
+        utfstr[j++] = (((str[i] & 0x003F)) |        /* -------- --klmnop to --klmnop */
+                      (0x80));                      /*                  add 10------ */
+      }
+      else
+      {
+        /* 0x00010000 - 0x001FFFFF:
+           11110abc 10defghi 10jklmno 10pqrstu */
+
+        utfstr[j++] = (((str[i] & 0x1C0000) >> 18) |   /* ---abc-- -------- --------  to -----abc */
+                       (0xF0));                        /*                            add 11110000 */
+        utfstr[j++] = (((str[i] & 0x030000) >> 12) |   /* ------de -------- --------  to --de---- */
+                       ((str[i] & 0x00F000) >> 12) |   /* -------- fghi---- --------  to ----fghi */
+                       (0x80));                        /*                            add 10------ */
+        utfstr[j++] = (((str[i] & 0x000F00) >> 6) |    /* -------- ----jklm --------  to --jklm-- */
+                       ((str[i] & 0x0000C0) >> 6) |    /* -------- -------- no------  to ------no */
+                       (0x80));                        /*                            add 10------ */
+        utfstr[j++] = ((str[i] & 0x00003F) |           /* -------- -------- --pqrstu  to --prqstu */
+                       (0x80));                        /*                            add 10------ */
+      }
+    }
+    utfstr[j] = '\0';
+
+
+    SDLPango_SetText(font->pango_context, utfstr, -1);
+    ret = SDLPango_CreateSurfaceDraw(font->pango_context); 
+  }
 #endif
 
-  free(ustr); // FIXME: For SDL_Pango, too? -bjk 2007.07.12
+  if (font->typ == FONT_TYPE_TTF)
+  {
+    ustr = wcstou16(str);
+    ret = TTF_RenderUNICODE_Blended(font->ttf_font, ustr, color);
+    free(ustr);
+  }
 
   if (ret)
     return ret;
+
   // Sometimes a font will be missing a character we need. Sometimes the library
   // will substitute a rectangle without telling us. Sometimes it returns NULL.
   // Probably we should use FreeType directly. For now though...
-  height = TuxPaint_Font_FontHeight(font);
-  if (height < 2)
-    height = 2;
+ 
+  height = 2; 
   return thumbnail(img_title_large_off, height * wcslen(str) / 2, height, 0);
 }
 
@@ -2715,6 +2783,8 @@ static void mainloop(void)
 		  if (cur_tool == TOOL_TEXT)	// Huh? It had better be!
 		  {
 		    // need to invalidate all the cached user fonts, causing reload on demand
+
+#ifdef NO_SDLPANGO
 		    int i;
 		    for (i = 0; i < num_font_families; i++)
 		    {
@@ -2725,7 +2795,7 @@ static void mainloop(void)
 			user_font_families[i]->handle = NULL;
 		      }
 		    }
-		    // FIXME: is setting do_draw enough?
+#endif
 		    draw_fonts();
 		    update_screen_rect(&r_toolopt);
 		  }
@@ -7337,7 +7407,7 @@ static void draw_toolbar(void)
 
 
       dest.x = ((i % 2) * 48) + 4 + (40 - img_tool_names[i]->w) / 2;
-      dest.y = ((i / 2) * 48) + 40 + 2 + (48 - img_tool_names[i]->h);
+      dest.y = ((i / 2) * 48) + 40 + 2 + (44 - img_tool_names[i]->h);
 
       SDL_BlitSurface(img_tool_names[i], NULL, screen, &dest);
     }
@@ -7629,6 +7699,8 @@ static void draw_fonts(void)
   most = 10;
   if (disable_stamp_controls)
     most = 14;
+
+  printf("there are %d font families\n", num_font_families);
 
   /* Do we need scrollbars? */
 

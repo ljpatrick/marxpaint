@@ -6,7 +6,7 @@ Copyright 2002-2007 by Bill Kendrick and others
 bill@newbreedsoftware.com
 http://www.tuxpaint.org/
 
-June 27, 2002 - June 21, 2007
+June 27, 2002 - July 12, 2007
 $Id$
 
 
@@ -25,8 +25,9 @@ Requirements:
     GNU Lesser General Public License (LGPL).
 
     Along with libSDL, Tux Paint depends on a number of other SDL 'helper'
-    libraries:  SDL_Image (for graphics files), SDL_TTF (for True Type Font
-    support) and, optionally, SDL_Mixer (for sound effects).
+    libraries:  SDL_Image (for graphics files), SDL_TTF and (optionally)
+    SDL_Pango (for True Type Font support) and, optionally,
+    SDL_Mixer (for sound effects).
 
     Linux/Unix Users:
     -----------------
@@ -37,6 +38,7 @@ Requirements:
         libSDL:      http://www.libsdl.org/
         SDL_Image:   http://www.libsdl.org/projects/SDL_image/
         SDL_TTF:     http://www.libsdl.org/projects/SDL_ttf/
+        SDL_Pango:   http://sourceforge.net/projects/sdlpango/   [OPTIONAL]
         SDL_Mixer:   http://www.libsdl.org/projects/SDL_mixer/   [OPTIONAL]
 
       They are also typically available along with your Linux distribution
@@ -61,13 +63,6 @@ Requirements:
 
         http://www.libpng.org/pub/png/libpng.html
 
-    FreeType2
-    ---------
-      Tux Paint uses TTF (True Type Font) fonts for drawing text.
-      SDL_ttf will require the FreeType2 library.
-
-        http://www.freetype.org/
-
     gettext
     -------
       Tux Paint uses your system's locale settings along with the
@@ -75,6 +70,14 @@ Requirements:
       You'll need the gettext library installed.
 
         http://www.gnu.org/software/gettext/
+
+    libpaper (Linux/Unix only)
+    --------------------------
+      As of Tux Paint 0.9.17, Tux Paint can determine your system's
+      default paper size (e.g., A4 or Letter), or can be told to use a
+      particular paper size, thanks to libpaper.
+
+        http://www.debian.org/
 
     SVG graphics support
     --------------------
@@ -233,18 +236,32 @@ Compiling and Installation:
     ---------------------------------------------------------------------------
       To disable SVG support (e.g., if your system is not currently supported
       by the Cairo library or other SVG-related dependencies), you can
-      run "make" with "nosvg" as the 'target', instead:
+      run "make" with "nosvg" as the 'target:
 
         $ make nosvg
 
+    Disabling Pango support (and hence Pango, Cairo, etc. dependencies):
+    --------------------------------------------------------------------
+      Prior to version 0.9.18, Tux Paint used the libSDL_ttf library for
+      rendering text using TrueType Fonts.  Since 0.9.18, libSDL_Pango is
+      used, as it has much greater support for internationalization.
+      However, if you wish to disable the use of SDL_Pango, you may do so
+      running "make" with "nopango" as the 'target':
+
+        $ make nopango
 
     Disabling Sound at Compile-time:
     --------------------------------
-      Alternatively, if you don't have a sound card, or would prefer to build
-      the program with no sound support (therefore, SDL_mixer not having to be
-      installed), you can run "make" with "nosound" as the 'target', instead:
+      If you don't have a sound card, or would prefer to build the program
+      with no sound support (and therefore without a the SDL_mixer dependency),
+      you can run "make" with "nosound" as the 'target':
 
         $ make nosound
+
+
+    NOTE: At the moment, the above options cannot be mixed and matched.
+    In the future, we may switch to using autoconf and autotools to make
+    these options more flexible.
 
 
     If you get errors:
@@ -276,6 +293,12 @@ Compiling and Installation:
       superuser mode:
 
         # exit
+
+
+      Alternatively, you may be able to simply use the "sudo" command
+      (e.g., on Ubuntu Linux):
+
+        $ sudo make install
 
 
       NOTE: By default, "tuxpaint", the executable program, is
@@ -320,6 +343,9 @@ Compiling and Installation:
 	    (Final location of a translation file will be
 	    under the locale's directory (e.g., "es" for Spanish),
 	    within the "LC_MESSAGES" subdirectory.)
+
+        FIXME: This list is out of date.  See Makefile and Makefile-i18n for
+        a complete list.
 	
 	
 Uninstalling Tux Paint:
@@ -364,3 +390,4 @@ Uninstalling Tux Paint:
     superuser mode:
 
       # exit
+

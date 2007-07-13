@@ -144,7 +144,7 @@ TuxPaint_Font *try_alternate_font(int size)
     *p = 0;
     snprintf(str, sizeof(str), "%sfonts/locale/%s.ttf", DATA_PREFIX, prefix);
 
-    return TTF_OpenFont(str, size);
+    return TuxPaint_Font_OpenFont("", str, size);
   }
 #endif
 
@@ -169,25 +169,25 @@ TuxPaint_Font *load_locale_font(TuxPaint_Font * fallback, int size)
     snprintf(str, sizeof(str), "%sfonts/locale/%s.ttf",
 	     DATA_PREFIX, lang_prefix);
 
-    ret = TuxPaint_OpenFont(str, size);
+    ret = TuxPaint_Font_OpenFont("", str, size);
 	 
 #ifdef __APPLE__
     if (ret == NULL)
     {
       snprintf(str, sizeof(str), "%sfonts/%s.ttf", DATA_PREFIX, lang_prefix);
-      ret = TuxPaint_Font_OpenFont(str, size);
+      ret = TuxPaint_Font_OpenFont("", str, size);
     }	 
 	 
     if (ret == NULL)
     {
       snprintf(str, sizeof(str), "/Library/Fonts/%s.ttf", lang_prefix);
-      ret = TuxPaint_Font_OpenFont(str, size);
+      ret = TuxPaint_Font_OpenFont("", str, size);
     }
 	 
     if (ret == NULL)
     {
       snprintf(str, sizeof(str), "%s/%s.ttf", macosx.fontsPath, lang_prefix);
-      ret = TuxPaint_Font_OpenFont(str, size);
+      ret = TuxPaint_Font_OpenFont("", str, size);
     }	 
 #endif
 
@@ -224,37 +224,65 @@ TuxPaint_Font *load_locale_font(TuxPaint_Font * fallback, int size)
 void TuxPaint_Font_CloseFont(TuxPaint_Font * tpf)
 {
 #ifndef NO_SDLPANGO
-  SDLPango_FreeContext(tpf->pango_context);
-  tpf->pango_context = NULL;
-  free(tpf);
-#else
-  TTF_CloseFont(tpf->ttf_font);
-  tpf->ttf_font = NULL;
-  free(tpf);
+  if (tpf->typ == FONT_TYPE_PANGO)
+  {
+    SDLPango_FreeContext(tpf->pango_context);
+    tpf->pango_context = NULL;
+  }
 #endif
+  
+  if (tpf->typ == FONT_TYPE_TTF)
+  {
+    TTF_CloseFont(tpf->ttf_font);
+    tpf->ttf_font = NULL;
+  }
+  free(tpf);
 }
 
 TuxPaint_Font * TuxPaint_Font_OpenFont(const char * pangodesc, const char * ttffilename, int size)
 {
-  TuxPaint_Font * tpf = (TuxPaint_Font *) malloc(sizeof(TuxPaint_Font));
+  TuxPaint_Font * tpf = NULL;
+
+  printf("OpenFont(%s, %s)\n", pangodesc, ttffilename);
 
 #ifndef NO_SDLPANGO
 
   char desc[1024];
 
-  snprintf(desc, sizeof(desc), "%s %d", pangodesc, size - 2);
+  if (pangodesc != NULL && pangodesc[0] != '\0')
+  {
+    tpf = (TuxPaint_Font *) malloc(sizeof(TuxPaint_Font));
+    tpf->typ = FONT_TYPE_PANGO;
+    snprintf(desc, sizeof(desc), "%s %d", pangodesc, (size * 3) / 4);
 
-  tpf->pango_context = SDLPango_CreateContext_GivenFontDesc(desc);
-  tpf->height = size - 2; /* FIXME: Is this accurate!? -bjk 2007.07.12 */
-
-  (void)(ttffilename);
-#else
-
-  tpf->ttf_font = TTF_OpenFont(ttffilename, size);
-  tpf->height = TTF_FontHeight(getfonthandle(tpf->font)));
-
-  (void)(pangodesc);
+    tpf->pango_context = SDLPango_CreateContext_GivenFontDesc(desc);
+    if (tpf->pango_context == NULL)
+    {
+      printf("Failed to load %s\n", desc);
+      free(tpf);
+      tpf = NULL;
+    }
+    else
+      tpf->height = size; /* FIXME: Is this accurate!? -bjk 2007.07.12 */
+  
+    return(tpf);
+  }
 #endif
+
+  if (ttffilename != NULL && ttffilename[0] != '\0')
+  {
+    tpf = (TuxPaint_Font *) malloc(sizeof(TuxPaint_Font));
+    tpf->typ = FONT_TYPE_TTF;
+    tpf->ttf_font = TTF_OpenFont(ttffilename, size);
+    if (tpf->ttf_font == NULL)
+    {
+      printf("Failed to load %s: %s\n", ttffilename, SDL_GetError());
+      free(tpf);
+      tpf = NULL;
+    }
+    else
+      tpf->height = TTF_FontHeight(tpf->ttf_font);
+  }
 
   return(tpf);
 }
@@ -1138,6 +1166,9 @@ TuxPaint_Font *getfonthandle(int desire)
 
   pathname = (char *) "";
 
+  (void)(name);
+  (void)(missing);
+
   printf("getfonthandle(%d) asking SDL_Pango for %s\n", desire, description);
 #else
 
@@ -1166,7 +1197,7 @@ TuxPaint_Font *getfonthandle(int desire)
   // if the font doesn't load, we die -- it did load OK before though
 
 #ifdef NO_SDLPANGO
-  TTF_SetFontStyle(fi->handle, missing);
+  TTF_SetFontStyle(fi->handle->ttf_font, missing);
 #endif
 
   return fi->handle;
@@ -1252,7 +1283,7 @@ int surfcmp(const void *s1, const void *s2)
 int charset_works(TuxPaint_Font * font, const char *s)
 {
   SDL_Color black = { 0, 0, 0, 0 };
-#ifndef SDL_NOPANGO
+#ifndef NO_SDLPANGO
   SDLPango_Matrix pango_color;
 #endif
   SDL_Surface **surfs = malloc(strlen(s) * sizeof surfs[0]);
@@ -1262,20 +1293,27 @@ int charset_works(TuxPaint_Font * font, const char *s)
   {
     char c[8];
     unsigned offset = 0;
-    SDL_Surface *tmp_surf;
+    SDL_Surface *tmp_surf = NULL;
+
     do
       c[offset++] = *s++;
     while ((*s & 0xc0u) == 0x80u);	// assume safe input
     c[offset++] = '\0';
 
 #ifndef NO_SDLPANGO
-    sdl_color_to_pango_color(black, &pango_color);
-    SDLPango_SetDefaultColor(font->pango_context, &pango_color);
-    SDLPango_SetText(font->pango_context, c, -1);
-    tmp_surf = SDLPango_CreateSurfaceDraw(font->pango_context);
-#else
-    tmp_surf = TTF_RenderUTF8_Blended(font, c, black);
+    if (font->typ == FONT_TYPE_PANGO)
+    {
+      sdl_color_to_pango_color(black, &pango_color);
+      SDLPango_SetDefaultColor(font->pango_context, &pango_color);
+      SDLPango_SetText(font->pango_context, c, -1);
+      tmp_surf = SDLPango_CreateSurfaceDraw(font->pango_context);
+    }
 #endif
+
+    if (font->typ == FONT_TYPE_TTF)
+    {
+      tmp_surf = TTF_RenderUTF8_Blended(font->ttf_font, c, black);
+    }
 
     if (!tmp_surf)
     {
@@ -1314,6 +1352,7 @@ const char * TuxPaint_Font_FontFaceFamilyName(TuxPaint_Font * tpf)
 {
 #ifndef NO_SDLPANGO
   /* FIXME */
+  (void)(tpf);
   return("");
 #else
   return (TTF_FontFaceFamilyName(tpf->ttf_font));
@@ -1324,6 +1363,7 @@ const char * TuxPaint_Font_FontFaceStyleName(TuxPaint_Font * tpf)
 {
 #ifndef NO_SDLPANGO
   /* FIXME */
+  (void)(tpf);
   return("");
 #else
   return (TTF_FontFaceStyleName(tpf->ttf_font));

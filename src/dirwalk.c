@@ -30,10 +30,6 @@
 void loadfont_callback(SDL_Surface * screen, const char *restrict const dir,
 		       unsigned dirlen, tp_ftw_str * files, unsigned i)
 {
-/* FIXME */
-
-#ifdef NO_SDLPANGO
-
   dirlen = dirlen;
 
   while (i--)
@@ -78,13 +74,14 @@ void loadfont_callback(SDL_Surface * screen, const char *restrict const dir,
 	const char *restrict const family = TuxPaint_Font_FontFaceFamilyName(font);
 	const char *restrict const style = TuxPaint_Font_FontFaceStyleName(font);
 
+        printf("success: 0x%x -> 0x%x\n", font, font->ttf_font);
 
-#ifdef DEBUG
-	int numfaces = TTF_FontFaces(font);
+//#ifdef DEBUG
+	int numfaces = TTF_FontFaces(font->ttf_font);
 	if (numfaces != 1)
 	  printf("Found %d faces in %s, %s, %s\n", numfaces, files[i].str,
 		 family, style);
-#endif
+//#endif
 
 	// First, the blacklist. We list font families that can crash Tux Paint
 	// via bugs in the SDL_ttf library. We also test fonts to be sure that
@@ -140,7 +137,7 @@ void loadfont_callback(SDL_Surface * screen, const char *restrict const dir,
 		 style);
 #endif
 	}
-	TTF_CloseFont(font);
+	TuxPaint_Font_CloseFont(font);
       }
       else
       {
@@ -153,9 +150,6 @@ void loadfont_callback(SDL_Surface * screen, const char *restrict const dir,
     free(files[i].str);
   }
   free(files);
-
-#endif
-
 }
 
 

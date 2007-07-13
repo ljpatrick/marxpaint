@@ -87,6 +87,11 @@ NOSOUNDFLAG=__SOUND
 NOSVGFLAG=__SVG
 
 
+# Built with SDL Pango support by default  (override with "make nopango")
+
+NOPANGOFLAG=___SDLPANGO
+
+
 # Built with libcairo2 support by default  (use libcairo1 with "make oldsvg")
 
 OLDSVGFLAG=__SVG
@@ -137,6 +142,7 @@ CFLAGS=$(OPTFLAGS) -W -Wall -fno-common -ffloat-store \
 
 DEFS=-DDATA_PREFIX=\"$(DATA_PREFIX)/\" \
 	-D$(NOSOUNDFLAG) -D$(NOSVGFLAG) -D$(OLDSVGFLAG) \
+	-D$(NOPANGOFLAG) \
 	-DDOC_PREFIX=\"$(DOC_PREFIX)/\" \
 	-DLOCALEDIR=\"$(LOCALE_PREFIX)/\" -DIMDIR=\"$(IM_PREFIX)/\" \
 	-DCONFDIR=\"$(CONFDIR)/\" \
@@ -210,6 +216,15 @@ nosvg:
 	@echo "Building with SVG DISABLED"
 	@echo
 	make SVG_LIB= SVG_CFLAGS= NOSVGFLAG=NOSVG
+
+
+# "make nopango" builds the program with Pango support disabled:
+
+nopango:
+	@echo
+	@echo "Building with Pango DISABLED"
+	@echo
+	make NOPANGOFLAG=NO_SDLPANGO SDL_PANGO_LIB=
 
 
 # "make oldsvg" builds the program using older SVG (Cairo1) libraries:
@@ -803,7 +818,8 @@ obj/tuxpaint.o:	src/tuxpaint.c \
 		src/$(MOUSEDIR)/watch.xbm src/$(MOUSEDIR)/watch-mask.xbm \
 		src/$(MOUSEDIR)/up.xbm src/$(MOUSEDIR)/up-mask.xbm \
 		src/$(MOUSEDIR)/down.xbm src/$(MOUSEDIR)/down-mask.xbm \
-		$(ARCH_HEADERS)
+		$(ARCH_HEADERS) \
+		Makefile
 	@echo
 	@echo "...Compiling Tux Paint from source..."
 	@$(CC) $(CFLAGS) $(DEBUG_FLAGS) $(SDL_CFLAGS) $(MOUSE_CFLAGS) $(DEFS) \
@@ -887,7 +903,7 @@ obj/win32_print.o:	src/win32_print.c obj src/win32_print.h src/debug.h
 	@$(CC) $(CFLAGS) $(DEBUG_FLAGS) $(SDL_CFLAGS) $(DEFS) \
 		-c src/win32_print.c -o obj/win32_print.o
 
-obj/postscript_print.o:	src/postscript_print.c obj \
+obj/postscript_print.o:	src/postscript_print.c Makefile obj \
 			src/postscript_print.h src/debug.h
 	@echo
 	@echo "...Compiling PostScript print support..."

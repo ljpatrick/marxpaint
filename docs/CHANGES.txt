@@ -38,9 +38,13 @@ $Id$
 
       TTF_Font structs and some functions were replaced by a new
       TuxPaint_Font struct and function, which wraps around either TTF_Font
-      or SDLPango_Context, depending on whether SDL_Pango is being used.
+      or both a TTF_Font and a SDLPango_Context, depending on whether
+      SDL_Pango is being used, and how the font was loaded.
 
-      Note: STILL NEEDS WORK!
+      Can be disabled (will use older SDL_ttf-based code) by building with
+      "make nopango".
+
+      Note: Text tool doesn't show appropriate fonts, but getting closer.
 
   * New Brushes
     -----------
