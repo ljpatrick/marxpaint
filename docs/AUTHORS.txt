@@ -7,7 +7,7 @@ bill@newbreedsoftware.com
 http://www.tuxpaint.org/
 
 
-June 17, 2002 - July 1, 2007
+June 17, 2002 - July 14, 2007
 
 $Id$
 
@@ -234,6 +234,9 @@ $Id$
     Herman Bruyninckx <Herman.Bruyninckx@mech.kuleuven.ac.be>
     Geert Stams <geertstams@wanadoo.nl>
     Michael de Rooij <micr@zeelandnet.nl>
+
+  * Esperanto
+    Edmund GRIMLEY EVANS <edmundo@rano.org>
 
   * Estonian
     Henrik Pihl <henrik@saarlane.ee>

@@ -25,7 +25,7 @@
 
   $Id$
 
-  June 14, 2002 - July 4, 2007
+  June 14, 2002 - July 14, 2007
 */
 
 #include <stdio.h>
@@ -78,6 +78,7 @@ const char *lang_prefixes[NUM_LANGS] = {
   "en",
   "en_gb",
   "en_za",
+  "eo",
   "es",
   "es_mx",
   "et",
@@ -191,6 +192,7 @@ const language_to_locale_struct language_to_locale_array[] = {
   {"british-english", "en_GB.UTF-8"},
   {"british", "en_GB.UTF-8"},
   {"southafrican-english", "en_ZA.UTF-8"},
+  {"esperanto", "eo.UTF-8"},
   {"spanish", "es_ES.UTF-8"},
   {"mexican", "es_MX.UTF-8"},
   {"mexican-spanish", "es_MX.UTF-8"},
@@ -424,6 +426,7 @@ void show_lang_usage(FILE * f, const char *const prg)
 /* cs */ "  czech        cesky\n"
 /* da */ "  danish       dansk\n"
 /* nl */ "  dutch        nederlands\n"
+/* eo */ "  esperanto\n"
 /* et */ "  estonian\n"
 /* fo */ "  faroese\n"
 /* fi */ "  finnish      suomi\n"
@@ -518,6 +521,7 @@ void show_locale_usage(FILE * f, const char *const prg)
 	  "  gos_NL  (Gronings     Zudelk Veenkelonioals)\n"
 	  "  gu_IN   (Gujarati)\n"
 	  "  de_DE   (German       Deutsch)\n"
+          "  eo      (Esperanto)\n"
 	  "  et_EE   (Estonian)\n"
 	  "  el_GR   (Greek)\n"
 	  "  he_IL   (Hebrew)\n"

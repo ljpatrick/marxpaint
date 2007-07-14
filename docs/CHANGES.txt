@@ -9,7 +9,7 @@ http://www.tuxpaint.org/
 $Id$
 
 
-2007.July.10 (0.9.18)
+2007.July.14 (0.9.18)
   * System-Related Improvements:
     ----------------------------
     * Added an API for developing Magic tools as plug-ins.
@@ -63,6 +63,9 @@ $Id$
 
   * New Localizations:
     ------------------
+    * Esperanto translation
+      Edmund GRIMLEY EVANS <edmundo@rano.org>
+
     * Thai input method
       Ed Montgomery <edm@rocketmail.com>
 

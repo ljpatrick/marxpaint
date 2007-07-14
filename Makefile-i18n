@@ -7,7 +7,7 @@
 # bill@newbreedsoftware.com
 # http://www.tuxpaint.org/
 
-# June 14, 2002 - July 4, 2007
+# June 14, 2002 - July 14, 2007
 
 
 # Locale files
@@ -42,6 +42,7 @@ uninstall-i18n:
 	-rm $(LOCALE_PREFIX)/et/LC_MESSAGES/tuxpaint.mo
 	-rm $(LOCALE_PREFIX)/el/LC_MESSAGES/tuxpaint.mo
 	-rm $(LOCALE_PREFIX)/en_GB/LC_MESSAGES/tuxpaint.mo
+	-rm $(LOCALE_PREFIX)/eo/LC_MESSAGES/tuxpaint.mo
 	-rm $(LOCALE_PREFIX)/es/LC_MESSAGES/tuxpaint.mo
 	-rm $(LOCALE_PREFIX)/es_MX/LC_MESSAGES/tuxpaint.mo
 	-rm $(LOCALE_PREFIX)/eu/LC_MESSAGES/tuxpaint.mo
@@ -188,6 +189,11 @@ install-gettext:
 	@install -d $(LOCALE_PREFIX)/nl/LC_MESSAGES
 	@cp trans/nl.mo $(LOCALE_PREFIX)/nl/LC_MESSAGES/tuxpaint.mo
 	@chmod 644 $(LOCALE_PREFIX)/nl/LC_MESSAGES/tuxpaint.mo
+	@#
+	@echo "   eo ...Esperanto..."
+	@install -d $(LOCALE_PREFIX)/eo/LC_MESSAGES
+	@cp trans/eo.mo $(LOCALE_PREFIX)/eo/LC_MESSAGES/tuxpaint.mo
+	@chmod 644 $(LOCALE_PREFIX)/eo/LC_MESSAGES/tuxpaint.mo
 	@#
 	@echo "   et_EE ...Estonian..."
 	@install -d $(LOCALE_PREFIX)/et/LC_MESSAGES
@@ -505,6 +511,7 @@ translations: trans \
 	trans/el.mo \
 	trans/en_gb.mo \
 	trans/en_za.mo \
+	trans/eo.mo \
 	trans/es.mo \
 	trans/es_mx.mo \
 	trans/eu.mo \
@@ -626,6 +633,10 @@ trans/en_gb.mo:	src/po/en_gb.po
 trans/en_za.mo:	src/po/en_za.po
 	@echo "   en_ZA ...South African English..."
 	@msgfmt -o trans/en_za.mo src/po/en_za.po
+
+trans/eo.mo:	src/po/eo.po
+	@echo "   eo ...Esperanto..."
+	@msgfmt -o trans/eo.mo src/po/eo.po
 
 trans/es.mo:	src/po/es.po
 	@echo "   es_ES ...Spanish..."
