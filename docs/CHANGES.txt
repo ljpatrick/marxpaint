@@ -9,7 +9,7 @@ http://www.tuxpaint.org/
 $Id$
 
 
-2007.July.14 (0.9.18)
+2007.July.15 (0.9.18)
   * System-Related Improvements:
     ----------------------------
     * Added an API for developing Magic tools as plug-ins.
@@ -82,6 +82,9 @@ $Id$
 
     * Italian translation
       Flavio "Iron Bishop" Pastore <ironbishop@fsfe.org>
+
+    * Russian EXTENDING documentation
+      Sergei Popov <skein@rambler.ru>
 
     * South African English translation
       Caroline Ford <caroline.ford.work@googlemail.com>
