@@ -68,10 +68,20 @@ enum {
 static const char* const im_tip_text[NUM_IM_TIPS] =
 {
   NULL,
+
+  // Input Method: English mode
   gettext_noop("English"),
+
+  // Input Method: Japanese Romanized Hiragana mode
   gettext_noop("Hiragana"),
+
+  // Input Method: Japanese Romanized Katakana mode
   gettext_noop("Katakana"),
+
+  // Input Method: Korean Hangul 2-Bul mode
   gettext_noop("Hangul"),
+
+  // Input Method: Thai mode
   gettext_noop("Thai")
 };
 

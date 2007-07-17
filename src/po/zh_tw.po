@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint 0.9.17\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-07-04 23:03-0700\n"
+"POT-Creation-Date: 2007-07-17 08:24-0700\n"
 "PO-Revision-Date: 2007-05-16 19:56+0800\n"
 "Last-Translator: Wei-Lun Chao <chaoweilun@gmail.com>\n"
 "Language-Team: Chinese (traditional) <zh-l10n@linux.org.tw>\n"
@@ -17,54 +17,71 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
+#. Response to Black (0, 0, 0) color selected
 msgid "Black!"
 msgstr "黑色!"
 
+#. Response to Dark grey (128, 128, 128) color selected
 msgid "Dark grey! Some people spell it “dark gray”."
 msgstr "深灰色!"
 
+#. Response to Light grey (192, 192, 192) color selected
 msgid "Light grey! Some people spell it “light gray”."
 msgstr "淺灰色!"
 
+#. Response to White (255, 255, 255) color selected
 msgid "White!"
 msgstr "白色!"
 
+#. Response to Red (255, 0, 0) color selected
 msgid "Red!"
 msgstr "紅色!"
 
+#. Response to Orange (255, 128, 0) color selected
 msgid "Orange!"
 msgstr "橙色!"
 
+#. Response to Yellow (255, 255, 0) color selected
 msgid "Yellow!"
 msgstr "黃色!"
 
+#. Response to Light green (160, 228, 128) color selected
 msgid "Light green!"
 msgstr "淺綠色!"
 
+#. Response to Dark green (33, 148, 70) color selected
 msgid "Dark green!"
 msgstr "深綠色!"
 
+#. Response to "Sky" blue (138, 168, 205) color selected
 msgid "Sky blue!"
 msgstr "天藍色!"
 
+#. Response to Blue (50, 100, 255) color selected
 msgid "Blue!"
 msgstr "藍色!"
 
+#. Response to Lavender (186, 157, 255) color selected
 msgid "Lavender!"
 msgstr "淺紫色!"
 
+#. Response to Purple (128, 0, 128) color selected
 msgid "Purple!"
 msgstr "紫色!"
 
+#. Response to Pink (255, 165, 211) color selected
 msgid "Pink!"
 msgstr "粉紅色!"
 
+#. Response to Brown (128, 80, 0) color selected
 msgid "Brown!"
 msgstr "棕色!"
 
+#. Response to Tan (226, 189, 166) color selected
 msgid "Tan!"
 msgstr "黃棕色!"
 
+#. Response to Beige (247, 228, 219) color selected
 msgid "Beige!"
 msgstr "米黃色!"
 
@@ -72,20 +89,21 @@ msgstr "米黃色!"
 #. via bugs in the SDL_ttf library. We also test fonts to be sure that
 #. they have both uppercase and lowercase letters. Note that we do not
 #. test for "Aa", because it is OK if uppercase and lowercase are the
-#. same. (but not nice -- such fonts get a low score later)
+#. same (but not nice -- such fonts get a low score later).
 #.
 #. We test the alphabet twice, to help with translation. If the users
-#. will be unable to type ASCII letters, then both lines should be
-#. translated. Otherwise, only Line X should be translated and the
-#. ASCII-only fonts should be given bad scores in the scoring code below.
-#. (the best scores going to fonts that support both)
+#. will be unable to type ASCII letters, then both Line X and Line Y
+#. should be translated. Otherwise, only Line X should be translated
+#. and the ASCII-only fonts should be given bad scores in the scoring
+#. code below (the best scores going to fonts that support both).
+#. Line X
 msgid "qx"
 msgstr "qx"
 
 msgid "QX"
 msgstr "QX"
 
-#. Line X
+#. Line Y
 msgid "qy"
 msgstr "qy"
 
@@ -96,183 +114,99 @@ msgstr "QY"
 #. the top of the list. The user will see them first. This sorting is
 #. especially important for users who have scroll buttons disabled.
 #. Translators should do whatever is needed to put crummy fonts last.
+#. distinct uppercase and lowercase (e.g., 'o' vs. 'O')
 msgid "oO"
 msgstr "oO"
 
-#. distinct uppercase and lowercase
+#. uncommon punctuation (e.g., '@', '#', '*', etc.)
 msgid "`\\%_@$~#{}<>^&*"
 msgstr "`\\%_@$~#{}<>^&*"
 
-#. uncommon punctuation
+#. common punctuation (e.g., '?', '!', '.', ',', etc.)
 msgid ",.?!"
 msgstr ",.?!"
 
-#. common punctuation
+#. digits (e.g., '0', '1' and '7')
 msgid "017"
 msgstr "017"
 
-#. digits
+#. distinct circle-like characters (e.g., 'O' (capital oh) vs. '0' (zero))
 msgid "O0"
 msgstr "O0"
 
-#. distinct circle-like characters
+#. distinct line-like characters (e.g., 'l' (lowercase elle) vs. '1' (one) vs. 'I' (capital aye))
 msgid "1Il|"
 msgstr "1Il|"
 
+#. Congratulations #1
 msgid "Great!"
 msgstr "太棒了!"
 
+#. Congratulations #2
 msgid "Cool!"
 msgstr "酷!"
 
+#. Congratulations #3
 msgid "Keep it up!"
 msgstr "繼續!"
 
+#. Congratulations #4
 msgid "Good job!"
 msgstr "做得好!"
 
+#. Input Method: English mode
 msgid "English"
 msgstr "英文"
 
+#. Input Method: Japanese Romanized Hiragana mode
 msgid "Hiragana"
 msgstr "平假名"
 
+#. Input Method: Japanese Romanized Katakana mode
 msgid "Katakana"
 msgstr "片假名"
 
+#. Input Method: Korean Hangul 2-Bul mode
 msgid "Hangul"
 msgstr "韓文"
 
-msgid "Fill"
-msgstr "填滿"
+#. Input Method: Thai mode
+msgid "Thai"
+msgstr ""
 
-msgid "Grass"
-msgstr "青草"
-
-msgid "Bricks"
-msgstr "磚塊"
-
-msgid "Rainbow"
-msgstr "彩虹"
-
-msgid "Sparkles"
-msgstr "火花"
-
-msgid "Blur"
-msgstr "模糊"
-
-msgid "Smudge"
-msgstr "塗抹"
-
-msgid "Lighten"
-msgstr "變淺"
-
-msgid "Darken"
-msgstr "變深"
-
-msgid "Chalk"
-msgstr "粉筆"
-
-msgid "Blocks"
-msgstr "馬賽克"
-
-msgid "Negative"
-msgstr "相反"
-
-msgid "Tint"
-msgstr "著色"
-
-msgid "Drip"
-msgstr "水滴"
-
-msgid "Cartoon"
-msgstr "卡通"
-
-msgid "Mirror"
-msgstr "左右對稱"
-
-msgid "Flip"
-msgstr "上下翻轉"
-
-msgid "Click in the picture to fill that area with color."
-msgstr "在圖案中按下滑鼠來用顏色填滿整個區域。"
-
-msgid "Click and move to draw grass. Don’t forget the dirt!"
-msgstr "按著並移動滑鼠來畫出青草，別忘了泥土喔!"
-
-msgid "Click and move to draw large bricks."
-msgstr "按著並移動滑鼠來畫出大的磚塊。"
-
-msgid "Click and move to draw small bricks."
-msgstr "按著並移動滑鼠來畫出小的磚塊。"
-
-msgid "You can draw in rainbow colors!"
-msgstr "你可以畫出彩虹的顏色!"
-
-msgid "Click and move to draw sparkles."
-msgstr "按著並移動滑鼠來畫出火花。"
-
-msgid "Click and move the mouse around to blur the picture."
-msgstr "按著並移動滑鼠來使圖畫模糊。"
-
-msgid "Click and move the mouse around to smudge the picture."
-msgstr "按著並移動滑鼠來使圖畫有塗抹效果。"
-
-msgid "Click and move to fade the colors."
-msgstr "按著並移動滑鼠來讓顏色變淺。"
-
-msgid "Click and move to darken the colors."
-msgstr "按著並移動滑鼠來讓顏色變深。"
-
-msgid ""
-"Click and move the mouse around to turn the picture into a chalk drawing."
-msgstr "按著並移動滑鼠來產生粉筆的痕跡。"
-
-msgid "Click and move the mouse around to make the picture blocky."
-msgstr "按著並移動滑鼠來使圖畫有馬賽克效果。"
-
-msgid "Click and move the mouse around to draw a negative."
-msgstr "按著並移動滑鼠來畫出相反的顏色。"
-
-msgid "Click and move the mouse around to change the picture’s color."
-msgstr "按著並移動滑鼠來改變圖畫的顏色。"
-
-msgid "Click and move the mouse around to make the picture drip."
-msgstr "按著並移動滑鼠來產生水滴的效果。"
-
-msgid "Click and move the mouse around to turn the picture into a cartoon."
-msgstr "按著並移動滑鼠來將圖案變成卡通風格。"
-
-msgid "Click to make a mirror image."
-msgstr "按一下可以產生左右對稱的圖畫。"
-
-msgid "Click to flip the picture upside-down."
-msgstr "按一下可以產生上下顛倒的圖畫。"
-
+#. Square shape tool (4 equally-lengthed sides at right angles)
 msgid "Square"
 msgstr "正方形"
 
+#. Rectangle shape tool (4 sides at right angles)
 msgid "Rectangle"
 msgstr "長方形"
 
+#. Circle shape tool (X radius and Y radius are the same)
 msgid "Circle"
 msgstr "圓形"
 
+#. Ellipse shape tool (X radius and Y radius may differ)
 msgid "Ellipse"
 msgstr "橢圓形"
 
+#. Triangle shape tool (3 sides)
 msgid "Triangle"
 msgstr "三角形"
 
+#. Pentagone shape tool (5 sides)
 msgid "Pentagon"
 msgstr "五角形"
 
+#. Rhombus shape tool (4 sides, not at right angles)
 msgid "Rhombus"
 msgstr "菱形"
 
+#. Description of a square
 msgid "A square is a rectangle with four equal sides."
 msgstr "正方形是四邊一樣長的長方形。"
 
+#. Description of a rectangle
 msgid "A rectangle has four sides and four right angles."
 msgstr "長方形有四個邊和四個直角。"
 
@@ -281,88 +215,118 @@ msgid ""
 "A circle is a curve where all points have the same distance from the center."
 msgstr "圓形是每一點都和圓心保持相同距離的曲線。"
 
+#. Description of an ellipse
 msgid "An ellipse is a stretched circle."
 msgstr "橢圓形是伸展開來的圓形。"
 
+#. Description of a triangle
 msgid "A triangle has three sides."
 msgstr "三角形有三個邊。"
 
+#. Description of a pentagon
 msgid "A pentagon has five sides."
 msgstr "五角形有五個邊。"
 
 msgid "A rhombus has four equal sides, and opposite sides are parallel."
 msgstr "菱形有四個相同的邊，而且和對面的邊是平行的。"
 
+#. Title of tool selector (buttons down the left)
 msgid "Tools"
 msgstr "工具"
 
+#. Title of color palette (buttons across the bottom)
 msgid "Colors"
 msgstr "顏色"
 
+#. Title of brush selector (buttons down the right for paint and line tools)
 msgid "Brushes"
 msgstr "刷子"
 
+#. Title of eraser selector (buttons down the right for eraser tool)
 msgid "Erasers"
 msgstr "橡皮擦"
 
+#. Title of stamp selector (buttons down the right for stamps tool)
 msgid "Stamps"
 msgstr "圖章"
 
+#. Title of shape selector (buttons down the right for shapes tool)
+#. Shape creation tool (square, circle, etc.)
 msgid "Shapes"
 msgstr "形狀"
 
+#. Title of font selector (buttons down the right for text tool)
 msgid "Letters"
 msgstr "字體"
 
+#. Title of magic tool selector (buttons down the right for magic (effect plugin) tool)
+#. "Magic" effects tools (blur, flip image, etc.)
 msgid "Magic"
 msgstr "魔法"
 
+#. Freehand painting tool
 msgid "Paint"
 msgstr "色筆"
 
+#. Stamp tool (aka Rubber Stamps)
 msgid "Stamp"
 msgstr "蓋章"
 
+#. Line drawing tool
 msgid "Lines"
 msgstr "畫線"
 
+#. Text tool
 msgid "Text"
 msgstr "文字"
 
+#. Undo last action
 msgid "Undo"
 msgstr "回復"
 
+#. Redo undone action
 msgid "Redo"
 msgstr "再來"
 
+#. Eraser tool
 msgid "Eraser"
 msgstr "擦掉"
 
+#. Start a new picture
 msgid "New"
 msgstr "新圖"
 
+#. Open a saved picture
 #. buttons for the file open dialog
+#. Open dialog: 'Open' button, to load the selected picture
 msgid "Open"
 msgstr "打開"
 
+#. Save the current picture
 msgid "Save"
 msgstr "儲存"
 
+#. Print the current picture
 msgid "Print"
 msgstr "列印"
 
+#. Quit/exit Tux Paint application
 msgid "Quit"
 msgstr "離開"
 
+#. Paint tool instructions
 msgid "Pick a color and a brush shape to draw with."
 msgstr "挑選顏色和刷子的形狀來畫圖。"
 
+#. Stamp tool instructions
 msgid "Pick a picture to stamp around your drawing."
 msgstr "挑選一個圖章來印在你的畫布上。"
 
+#. Line tool instructions
 msgid "Click to start drawing a line. Let go to complete it."
 msgstr "按一下滑鼠就可以開始畫一條線. 讓我們來完成它吧!"
 
+#. Shape tool instructions
 msgid ""
 "Pick a shape. Click to pick the center, drag, then let go when it is the "
 "size you want. Move around to rotate it, and click to draw it."
@@ -370,66 +334,75 @@ msgstr ""
 "挑選一個形狀。點一下來決定形狀的中心位置，然後持續拖拉它到你要的大小。繞著中"
 "心移動來旋轉它，然後點一下把它畫下來。"
 
+#. Text tool instructions
 msgid "Choose a style of text. Click on your drawing and you can start typing."
 msgstr "選擇文字的樣子。在畫布上點一下就可以開始輸入。"
 
+#. Magic tool instruction
 msgid "Pick a magical effect to use on your drawing!"
 msgstr "挑選一個魔法效果套用在你的圖畫上!"
 
-#. Undo
+#. Response to 'undo' action
 msgid "Undo!"
 msgstr "回復到剛才之前的樣子!"
 
-#. Redo
+#. Response to 'redo' action
 msgid "Redo!"
 msgstr "再做一次剛才的動作!"
 
-#. Eraser
+#. Eraser tool
 msgid "Eraser!"
 msgstr "用橡皮擦把圖畫擦掉!"
 
-#. New
+#. Response to 'start a new image' action
 msgid "You now have a blank sheet to draw on!"
 msgstr "你現在可以在空白的畫布上畫圖!"
 
-#. Open
+#. Response to 'open' action (while file dialog is being constructed)
 msgid "Open…"
 msgstr "打開圖畫檔案..."
 
-#. Save
+#. Response to 'save' action
 msgid "Your image has been saved!"
 msgstr "你的圖畫已經儲存了!"
 
-#. Print
+#. Response to 'print' action (while printing, or print dialog is being used)
 msgid "Printing…"
 msgstr "正在列印..."
 
-#. Quit
+#. Response to 'quit' (exit) action
 msgid "Bye bye!"
 msgstr "掰掰!"
 
+#. Instruction while using Line tool (after click, before release)
 msgid "Let go of the button to complete the line."
 msgstr "放開按鍵可以完成這條線。"
 
+#. Instruction while using Shape tool (after first click, before release)
 msgid "Hold the button to stretch the shape."
 msgstr "按住按鍵可以伸長這個形狀。"
 
+#. Instruction while finishing Shape tool (after release, during rotation step before second click)
 msgid "Move the mouse to rotate the shape. Click to draw it."
 msgstr "移動滑鼠可以旋轉這個形狀。點一下可以將它畫上去。"
 
+#. Notification that 'New' action was aborted (current image would have been lost)
 msgid "OK then… Let’s keep drawing this one!"
 msgstr "很好，讓我們繼續來畫這張圖吧!"
 
-#. FIXME: Move elsewhere!!!
+#. Prompt to confirm user wishes to quit
 msgid "Do you really want to quit?"
 msgstr "你確定要離開嗎?"
 
+#. Quit prompt positive response (quit)
 msgid "Yes, I'm done!"
 msgstr "好，我做完了!"
 
+#. Quit prompt negative response (don't quit)
 msgid "No, take me back!"
 msgstr "不，讓我回去!"
 
+#. Current picture is not saved; user is quitting
 msgid "If you quit, you’ll lose your picture! Save it?"
 msgstr "如果離開，將會丟掉你的圖畫喔! 要先存檔嗎?"
 
@@ -439,41 +412,48 @@ msgstr "好，把它存起來!"
 msgid "No, don't bother saving!"
 msgstr "不，別存了!"
 
+#. Current picture is not saved; user is opening another picture
 msgid "Save your picture first?"
 msgstr "要先儲存你的圖畫嗎?"
 
+#. Error opening picture
 msgid "Can’t open that picture!"
 msgstr "沒辦法打開這個圖畫!"
 
+#. Generic dialog dismissal
 msgid "OK"
 msgstr "好的"
 
 #. This will be replaced with a dialog allowing color choice and Starter
 #. picking, with a "Back" option to dismiss the "New" and return to
 #. the current picture.  But for now...  (bjk 2006.02.19)
+#. Prompt to confirm starting a new picture
 msgid "Start a new picture?"
 msgstr "要打開一張新的圖畫嗎?"
 
-#. #define PROMPT_NEW_YES gettext_noop("That’s OK!")
-#. #define PROMPT_NEW_NO gettext_noop("Never mind!")
 msgid "Yes, let's start fresh!"
 msgstr "好，讓我們從頭開始!"
 
+#. Notification that 'Open' dialog has nothing to show
 msgid "There are no saved files!"
 msgstr "沒有已經儲存的檔案!"
 
+#. Verification of print action
 msgid "Print your picture now?"
 msgstr "現在要列印你的圖畫嗎?"
 
 msgid "Yes, print it!"
 msgstr "好，印出它來!"
 
+#. Confirmation of successful (we hope) printing
 msgid "Your picture has been printed!"
 msgstr "你的圖畫已經印出來了!"
 
+#. Notification that it's too soon to print again (--printdelay option is in effect)
 msgid "You can’t print yet!"
 msgstr "你還沒辦法列印喔!"
 
+#. Prompt to confirm erasing a picture in the Open dialog
 msgid "Erase this picture?"
 msgstr "要刪除這張圖畫嗎?"
 
@@ -483,51 +463,65 @@ msgstr "好，刪除它吧!"
 msgid "No, don't erase it!"
 msgstr "不，別刪除它!"
 
+#. Reminder that Mouse Button 1 is the button to use in Tux Paint
 msgid "Remember to use the left mouse button!"
 msgstr "記得使用滑鼠的左邊按鍵!"
 
+#. Sound has been muted (silenced) via keyboard shortcut
 msgid "Sound muted."
 msgstr ""
 
+#. Sound has been unmuted (unsilenced) via keyboard shortcut
 msgid "Sound unmuted."
 msgstr ""
 
+#. Wait while Text tool finishes loading fonts
 msgid "Please wait..."
 msgstr "請等一下…"
 
+#. Open dialog: 'Erase' button, to erase/deleted the selected picture
 msgid "Erase"
 msgstr "刪除"
 
+#. Open dialog: 'Slides' button, to switch to slide show mode
 msgid "Slides"
 msgstr "投影片"
 
+#. Open dialog: 'Back' button, to dismiss Open dialog without opening a picture
 msgid "Back"
 msgstr "上一個"
 
+#. Slideshow: 'Next' button, to load next slide (image)
 msgid "Next"
 msgstr "下一個"
 
+#. Slideshow: 'Play' button, to begin a slideshow sequence
 msgid "Play"
 msgstr "播放"
 
+#. Label for 'Letters' buttons (font selector, down the right when the Text tool is being used); used to show the difference between font faces
 msgid "Aa"
 msgstr "Aa"
 
-#. FIXME: Move elsewhere! Or not?!
+#. Admittedly stupid way of determining which keys can be used for
+#. positive and negative responses in dialogs (e.g., [Y] (for 'yes') in English)
 msgid "Yes"
 msgstr "好"
 
 msgid "No"
 msgstr "不"
 
-#. FIXME: Move elsewhere!!!
-#. #define PROMPT_SAVE_OVER_TXT gettext_noop("Save over the older version of this picture?")
+#. Prompt to ask whether user wishes to save over old version of their file
 msgid "Replace the picture with your changes?"
 msgstr "用你所做的改變來取代圖畫嗎?"
 
+#. Positive response to saving over old version
+#. (like a 'File:Save' action in other applications)
 msgid "Yes, replace the old one!"
 msgstr "好，取代舊的!"
 
+#. Negative response to saving over old version (saves a new image)
+#. (like a 'File:Save As...' action in other applications)
 msgid "No, save a new file!"
 msgstr "不，另外存一個新的檔案!"
 
@@ -535,6 +529,7 @@ msgid "Choose the picture you want, then click “Open”."
 msgstr "選擇你想要的圖畫，然後按一下「打開」。"
 
 #. Let user choose images:
+#. Instructions for Slideshow file dialog (FIXME: Make a #define)
 msgid "Choose the pictures you want, then click “Play”."
 msgstr "選擇你要的一些圖畫，然後按一下「播放」。"
 
@@ -546,3 +541,162 @@ msgstr "畫圖程式"
 
 msgid "Tux Paint"
 msgstr "企鵝小畫家"
+
+msgid "Blocks"
+msgstr "馬賽克"
+
+msgid "Chalk"
+msgstr "粉筆"
+
+msgid "Drip"
+msgstr "水滴"
+
+msgid ""
+"Click and move the mouse around to turn the picture into a chalk drawing."
+msgstr "按著並移動滑鼠來產生粉筆的痕跡。"
+
+msgid "Click and move the mouse around to make the picture blocky."
+msgstr "按著並移動滑鼠來使圖畫有馬賽克效果。"
+
+msgid "Click and move the mouse around to make the picture drip."
+msgstr "按著並移動滑鼠來產生水滴的效果。"
+
+msgid "Blur"
+msgstr "模糊"
+
+msgid "Click and move the mouse around to blur the picture."
+msgstr "按著並移動滑鼠來使圖畫模糊。"
+
+#. Both are named "Bricks", at the moment:
+msgid "Bricks"
+msgstr "磚塊"
+
+msgid "Click and move to draw large bricks."
+msgstr "按著並移動滑鼠來畫出大的磚塊。"
+
+msgid "Click and move to draw small bricks."
+msgstr "按著並移動滑鼠來畫出小的磚塊。"
+
+msgid "Cartoon"
+msgstr "卡通"
+
+msgid "Click and move the mouse around to turn the picture into a cartoon."
+msgstr "按著並移動滑鼠來將圖案變成卡通風格。"
+
+msgid "Emboss"
+msgstr ""
+
+#, fuzzy
+msgid "Click and drag the mouse to emboss the picture."
+msgstr "按著並移動滑鼠來使圖畫模糊。"
+
+msgid "Lighten"
+msgstr "變淺"
+
+msgid "Darken"
+msgstr "變深"
+
+msgid "Click and move to fade the colors."
+msgstr "按著並移動滑鼠來讓顏色變淺。"
+
+msgid "Click and move to darken the colors."
+msgstr "按著並移動滑鼠來讓顏色變深。"
+
+msgid "Fill"
+msgstr "填滿"
+
+msgid "Click in the picture to fill that area with color."
+msgstr "在圖案中按下滑鼠來用顏色填滿整個區域。"
+
+msgid "Flower"
+msgstr ""
+
+msgid "Click and drag to draw a flower stalk. Let go to finish the flower."
+msgstr ""
+
+msgid "Foam"
+msgstr ""
+
+#, fuzzy
+msgid "Click and drag the mouse to cover an area with foamy bubbles.."
+msgstr "在圖案中按下滑鼠來用顏色填滿整個區域。"
+
+msgid "Glass Tile"
+msgstr ""
+
+#, fuzzy
+msgid "Click and drag the mouse to put glass tile over your picture."
+msgstr "按著並移動滑鼠來使圖畫模糊。"
+
+msgid "Grass"
+msgstr "青草"
+
+msgid "Click and move to draw grass. Don’t forget the dirt!"
+msgstr "按著並移動滑鼠來畫出青草，別忘了泥土喔!"
+
+msgid "Kalidescope"
+msgstr ""
+
+msgid ""
+"Click and drag the mouse to draw with symmetric brushes (a kalidescope)."
+msgstr ""
+
+#, fuzzy
+msgid "Metal Paint"
+msgstr "色筆"
+
+#, fuzzy
+msgid "Click and drag the mouse to paint with a metallic color."
+msgstr "按著並移動滑鼠來讓顏色變深。"
+
+msgid "Mirror"
+msgstr "左右對稱"
+
+msgid "Flip"
+msgstr "上下翻轉"
+
+msgid "Click to flip the picture upside-down."
+msgstr "按一下可以產生上下顛倒的圖畫。"
+
+msgid "Click to make a mirror image."
+msgstr "按一下可以產生左右對稱的圖畫。"
+
+msgid "Negative"
+msgstr "相反"
+
+msgid "Click and move the mouse around to draw a negative."
+msgstr "按著並移動滑鼠來畫出相反的顏色。"
+
+msgid "Rainbow"
+msgstr "彩虹"
+
+msgid "You can draw in rainbow colors!"
+msgstr "你可以畫出彩虹的顏色!"
+
+msgid "Smudge"
+msgstr "塗抹"
+
+msgid "Click and move the mouse around to smudge the picture."
+msgstr "按著並移動滑鼠來使圖畫有塗抹效果。"
+
+msgid "Tint"
+msgstr "著色"
+
+msgid "Click and move the mouse around to change the picture’s color."
+msgstr "按著並移動滑鼠來改變圖畫的顏色。"
+
+#, fuzzy
+msgid "Waves"
+msgstr "儲存"
+
+msgid ""
+"Click to make the picture wavy. (Click towards the top for shorter waves; "
+"the bottom for taller waves. Click towards the left for small waves; the "
+"right for wide waves.)"
+msgstr ""
+
+#~ msgid "Sparkles"
+#~ msgstr "火花"
+
+#~ msgid "Click and move to draw sparkles."
+#~ msgstr "按著並移動滑鼠來畫出火花。"

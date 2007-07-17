@@ -73,6 +73,10 @@ enum
 
 /* Sound file filenames: */
 
+/* FIXME: These should be moved to a .c file (sounds.c?) and extern'd here, to
+   avoid being stored multiple times, and to avoid compiler warning
+   -bjk 2007.07.17 */
+
 static const char *sound_fnames[NUM_SOUNDS] = {
   DATA_PREFIX "sounds/harp.wav",
   DATA_PREFIX "sounds/click.wav",

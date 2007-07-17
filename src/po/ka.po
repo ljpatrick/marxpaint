@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TuxPaint\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-07-04 23:03-0700\n"
+"POT-Creation-Date: 2007-07-17 08:24-0700\n"
 "PO-Revision-Date: 2005-10-10 23:41+0300\n"
 "Last-Translator: Giasher <giasher@telenet.ge>\n"
 "Language-Team: Gia Shervashidze <giasher@telenet.ge>\n"
@@ -18,54 +18,71 @@ msgstr ""
 "X-Poedit-Language: Georgian\n"
 "X-Poedit-Country: GEORGIA\n"
 
+#. Response to Black (0, 0, 0) color selected
 msgid "Black!"
 msgstr "შავი!"
 
+#. Response to Dark grey (128, 128, 128) color selected
 msgid "Dark grey! Some people spell it “dark gray”."
 msgstr "მუქი ნაცრისფერი!"
 
+#. Response to Light grey (192, 192, 192) color selected
 msgid "Light grey! Some people spell it “light gray”."
 msgstr "ღია ნაცრისფერი!"
 
+#. Response to White (255, 255, 255) color selected
 msgid "White!"
 msgstr "თეთრი!"
 
+#. Response to Red (255, 0, 0) color selected
 msgid "Red!"
 msgstr "წითელი!"
 
+#. Response to Orange (255, 128, 0) color selected
 msgid "Orange!"
 msgstr "ნარინჯისფერი!"
 
+#. Response to Yellow (255, 255, 0) color selected
 msgid "Yellow!"
 msgstr "ყვითელი!"
 
+#. Response to Light green (160, 228, 128) color selected
 msgid "Light green!"
 msgstr "ღია მწვანე!"
 
+#. Response to Dark green (33, 148, 70) color selected
 msgid "Dark green!"
 msgstr "მუქი მწვანე!"
 
+#. Response to "Sky" blue (138, 168, 205) color selected
 msgid "Sky blue!"
 msgstr "ცისფერი!"
 
+#. Response to Blue (50, 100, 255) color selected
 msgid "Blue!"
 msgstr "ლურჯი!"
 
+#. Response to Lavender (186, 157, 255) color selected
 msgid "Lavender!"
 msgstr "ლავანდა!"
 
+#. Response to Purple (128, 0, 128) color selected
 msgid "Purple!"
 msgstr "მეწამული!"
 
+#. Response to Pink (255, 165, 211) color selected
 msgid "Pink!"
 msgstr "ვარდისფერი!"
 
+#. Response to Brown (128, 80, 0) color selected
 msgid "Brown!"
 msgstr "ყავისფერი!"
 
+#. Response to Tan (226, 189, 166) color selected
 msgid "Tan!"
 msgstr "ნამზეური!"
 
+#. Response to Beige (247, 228, 219) color selected
 msgid "Beige!"
 msgstr "ბეჟი!"
 
@@ -73,20 +90,21 @@ msgstr "ბეჟი!"
 #. via bugs in the SDL_ttf library. We also test fonts to be sure that
 #. they have both uppercase and lowercase letters. Note that we do not
 #. test for "Aa", because it is OK if uppercase and lowercase are the
-#. same. (but not nice -- such fonts get a low score later)
+#. same (but not nice -- such fonts get a low score later).
 #.
 #. We test the alphabet twice, to help with translation. If the users
-#. will be unable to type ASCII letters, then both lines should be
-#. translated. Otherwise, only Line X should be translated and the
-#. ASCII-only fonts should be given bad scores in the scoring code below.
-#. (the best scores going to fonts that support both)
+#. will be unable to type ASCII letters, then both Line X and Line Y
+#. should be translated. Otherwise, only Line X should be translated
+#. and the ASCII-only fonts should be given bad scores in the scoring
+#. code below (the best scores going to fonts that support both).
+#. Line X
 msgid "qx"
 msgstr ""
 
 msgid "QX"
 msgstr ""
 
-#. Line X
+#. Line Y
 msgid "qy"
 msgstr ""
 
@@ -97,183 +115,100 @@ msgstr ""
 #. the top of the list. The user will see them first. This sorting is
 #. especially important for users who have scroll buttons disabled.
 #. Translators should do whatever is needed to put crummy fonts last.
+#. distinct uppercase and lowercase (e.g., 'o' vs. 'O')
 msgid "oO"
 msgstr "oO"
 
-#. distinct uppercase and lowercase
+#. uncommon punctuation (e.g., '@', '#', '*', etc.)
 msgid "`\\%_@$~#{}<>^&*"
 msgstr "`\\%_@$~#{}<>^&*"
 
-#. uncommon punctuation
+#. common punctuation (e.g., '?', '!', '.', ',', etc.)
 msgid ",.?!"
 msgstr ",.?!"
 
-#. common punctuation
+#. digits (e.g., '0', '1' and '7')
 msgid "017"
 msgstr "017"
 
-#. digits
+#. distinct circle-like characters (e.g., 'O' (capital oh) vs. '0' (zero))
 msgid "O0"
 msgstr "O0"
 
-#. distinct circle-like characters
+#. distinct line-like characters (e.g., 'l' (lowercase elle) vs. '1' (one) vs. 'I' (capital aye))
 msgid "1Il|"
 msgstr "1Il|"
 
+#. Congratulations #1
 msgid "Great!"
 msgstr "მშვენიერია!"
 
+#. Congratulations #2
 msgid "Cool!"
 msgstr "მაგარია!"
 
+#. Congratulations #3
 msgid "Keep it up!"
 msgstr "ასე გააგრძელე!"
 
+#. Congratulations #4
 msgid "Good job!"
 msgstr "ყოჩაღ!"
 
+#. Input Method: English mode
 msgid "English"
 msgstr ""
 
+#. Input Method: Japanese Romanized Hiragana mode
 msgid "Hiragana"
 msgstr ""
 
+#. Input Method: Japanese Romanized Katakana mode
 msgid "Katakana"
 msgstr ""
 
+#. Input Method: Korean Hangul 2-Bul mode
 msgid "Hangul"
 msgstr ""
 
-msgid "Fill"
-msgstr "ჩასხმა"
+#. Input Method: Thai mode
+#, fuzzy
+msgid "Thai"
+msgstr "მსხვილი"
 
-msgid "Grass"
-msgstr "ბალახი"
-
-msgid "Bricks"
-msgstr "აგურები"
-
-msgid "Rainbow"
-msgstr "ცისარტყელა"
-
-msgid "Sparkles"
-msgstr "შხეფები"
-
-msgid "Blur"
-msgstr "გადღაბნა"
-
-msgid "Smudge"
-msgstr "ლაქები"
-
-msgid "Lighten"
-msgstr "ღია"
-
-msgid "Darken"
-msgstr "მუქი"
-
-msgid "Chalk"
-msgstr "ცარცი"
-
-msgid "Blocks"
-msgstr "მოზაიკა"
-
-msgid "Negative"
-msgstr "ნეგატივი"
-
-msgid "Tint"
-msgstr "ფერის შეცვლა"
-
-msgid "Drip"
-msgstr "ჩამოღვენთა"
-
-msgid "Cartoon"
-msgstr "კომიქსი"
-
-msgid "Mirror"
-msgstr "სარკე"
-
-msgid "Flip"
-msgstr "ამოტრიალება"
-
-msgid "Click in the picture to fill that area with color."
-msgstr "დაწკაპეთ ამ არეში ფერის ჩასასხმელად."
-
-msgid "Click and move to draw grass. Don’t forget the dirt!"
-msgstr "დაწკაპეთ და გადაატარეთ ბალახის დასახატად. ტალახი არ დაგავიწყდეთ!"
-
-msgid "Click and move to draw large bricks."
-msgstr "დაწკაპეთ და გადაატარეთ დიდი აგურების დასახატად."
-
-msgid "Click and move to draw small bricks."
-msgstr "დაწკაპეთ და გადაატარეთ პატარა აგურების დასახატად."
-
-msgid "You can draw in rainbow colors!"
-msgstr "შეგიძლიათ ცისარტყელას ფერებით ხატოთ!"
-
-msgid "Click and move to draw sparkles."
-msgstr "დაწკაპეთ და გადაატარეთ ნახატს შხეფების მისახატად."
-
-msgid "Click and move the mouse around to blur the picture."
-msgstr "დაწკაპეთ და გადაატარეთ ნახატს მისი ნაწილის გასადღაბნად."
-
-msgid "Click and move the mouse around to smudge the picture."
-msgstr "დაწკაპეთ და შემოატარეთ ნახატს ასაალებლად."
-
-msgid "Click and move to fade the colors."
-msgstr "დაწკაპეთ და გადაატარეთ ნახატს მისი ნაწილის გასაუფერულებლად."
-
-msgid "Click and move to darken the colors."
-msgstr "დაწკაპეთ და გადაატარეთ ფერების გასამუქებლად."
-
-msgid ""
-"Click and move the mouse around to turn the picture into a chalk drawing."
-msgstr "დაწკაპეთ და გადაატარეთ ნახატს მისი ცარცით დახატულად გადასაქცევად."
-
-msgid "Click and move the mouse around to make the picture blocky."
-msgstr "დაწკაპეთ და გადაატარეთ ნახატს მისი ნაწილის მოზაიკად გადასაქცევად."
-
-msgid "Click and move the mouse around to draw a negative."
-msgstr "დაწკაპეთ და გადაატარეთ ნახატს მისი ნაწილის ნეგატივად გადასაქცევად."
-
-msgid "Click and move the mouse around to change the picture’s color."
-msgstr "დაწკაპეთ და გადაატარეთ ნახატის ფერების შესაცვლელად."
-
-msgid "Click and move the mouse around to make the picture drip."
-msgstr "დაწკაპეთ და გადაატარეთ ნახატს მისი გამოსაღვენთად."
-
-msgid "Click and move the mouse around to turn the picture into a cartoon."
-msgstr "დაწკაპეთ და გადაატარეთ ნახატს მისი კომიქსად გადასაქცევად."
-
-msgid "Click to make a mirror image."
-msgstr "დაწკაპეთ ნახატი მისი სარკისებრი ანარეკლის მისაღებად."
-
-msgid "Click to flip the picture upside-down."
-msgstr "დაწკაპეთ ნახატი მის თავდაყირა გადმოსატრიალებლად."
-
+#. Square shape tool (4 equally-lengthed sides at right angles)
 msgid "Square"
 msgstr "კვადრატი"
 
+#. Rectangle shape tool (4 sides at right angles)
 msgid "Rectangle"
 msgstr "მართკუთხედი"
 
+#. Circle shape tool (X radius and Y radius are the same)
 msgid "Circle"
 msgstr "წრე"
 
+#. Ellipse shape tool (X radius and Y radius may differ)
 msgid "Ellipse"
 msgstr "ელიფსი"
 
+#. Triangle shape tool (3 sides)
 msgid "Triangle"
 msgstr "სამკუთხედი"
 
+#. Pentagone shape tool (5 sides)
 msgid "Pentagon"
 msgstr "ხუთკუთხედი"
 
+#. Rhombus shape tool (4 sides, not at right angles)
 msgid "Rhombus"
 msgstr "რომბი"
 
+#. Description of a square
 msgid "A square is a rectangle with four equal sides."
 msgstr "კვადრათი მართკუთხედედია ოთხივე ტოლი გვერდით."
 
+#. Description of a rectangle
 msgid "A rectangle has four sides and four right angles."
 msgstr "მართკუთხედს ოთხი გვერდი და ოთხი მართი კუთხე აქვს."
 
@@ -282,88 +217,118 @@ msgid ""
 "A circle is a curve where all points have the same distance from the center."
 msgstr "წრეწირი მრუდია, რომლის ყველა წერტილი ცენტრიდან თანაბრადაა დაცილებული."
 
+#. Description of an ellipse
 msgid "An ellipse is a stretched circle."
 msgstr "ელიფსი გაჭიმული წრეა."
 
+#. Description of a triangle
 msgid "A triangle has three sides."
 msgstr "სამკუთხედს სამი გვერდი (და კუთხე!) აქვს"
 
+#. Description of a pentagon
 msgid "A pentagon has five sides."
 msgstr "ხუთკუთხედს ხუთი გვერდი (და კუთხე!) აქვს"
 
 msgid "A rhombus has four equal sides, and opposite sides are parallel."
 msgstr "რომბს ოთხი ტოლი გვერდი აქვს და საპირისპირო გვერდები პარალელურია."
 
+#. Title of tool selector (buttons down the left)
 msgid "Tools"
 msgstr "ხელსაწყოები"
 
+#. Title of color palette (buttons across the bottom)
 msgid "Colors"
 msgstr "ფერები"
 
+#. Title of brush selector (buttons down the right for paint and line tools)
 msgid "Brushes"
 msgstr "ფუნჯები"
 
+#. Title of eraser selector (buttons down the right for eraser tool)
 msgid "Erasers"
 msgstr "საშლეები"
 
+#. Title of stamp selector (buttons down the right for stamps tool)
 msgid "Stamps"
 msgstr "დამღა"
 
+#. Title of shape selector (buttons down the right for shapes tool)
+#. Shape creation tool (square, circle, etc.)
 msgid "Shapes"
 msgstr "ფორმები"
 
+#. Title of font selector (buttons down the right for text tool)
 msgid "Letters"
 msgstr "ასოები"
 
+#. Title of magic tool selector (buttons down the right for magic (effect plugin) tool)
+#. "Magic" effects tools (blur, flip image, etc.)
 msgid "Magic"
 msgstr "მაგია"
 
+#. Freehand painting tool
 msgid "Paint"
 msgstr "ხატვა"
 
+#. Stamp tool (aka Rubber Stamps)
 msgid "Stamp"
 msgstr "დამღა"
 
+#. Line drawing tool
 msgid "Lines"
 msgstr "ხაზები"
 
+#. Text tool
 msgid "Text"
 msgstr "ტექსტი"
 
+#. Undo last action
 msgid "Undo"
 msgstr "უკან"
 
+#. Redo undone action
 msgid "Redo"
 msgstr "წინ"
 
+#. Eraser tool
 msgid "Eraser"
 msgstr "საშლელი"
 
+#. Start a new picture
 msgid "New"
 msgstr "ახალი"
 
+#. Open a saved picture
 #. buttons for the file open dialog
+#. Open dialog: 'Open' button, to load the selected picture
 msgid "Open"
 msgstr "გახსნა"
 
+#. Save the current picture
 msgid "Save"
 msgstr "შენახვა"
 
+#. Print the current picture
 msgid "Print"
 msgstr "ბეჭდვა"
 
+#. Quit/exit Tux Paint application
 msgid "Quit"
 msgstr "გასვლა"
 
+#. Paint tool instructions
 msgid "Pick a color and a brush shape to draw with."
 msgstr "შეარჩიეთ თქვენთვის სასურველი ფუნჯის ფორმა და ფერი."
 
+#. Stamp tool instructions
 msgid "Pick a picture to stamp around your drawing."
 msgstr "შეარჩიეთ ნახატი რომლის დამღაც გინდათ დაასვათ თქვენს ნახატს."
 
+#. Line tool instructions
 msgid "Click to start drawing a line. Let go to complete it."
 msgstr "დაწკაპეთ ხაზის დასაწყებად. აუშვით ღილაკი დასამთავრებლად."
 
+#. Shape tool instructions
 msgid ""
 "Pick a shape. Click to pick the center, drag, then let go when it is the "
 "size you want. Move around to rotate it, and click to draw it."
@@ -371,66 +336,75 @@ msgstr ""
 "აირჩიეთ ფორმა. დაწკაპეთ ცენტრის ასარჩევად, გაჭიმეთ საჭირო ზომამდე, აუშვით. "
 "დაატრიალეთ ფორმა და შემდეგ დაწკაპეთ მის დასახატად."
 
+#. Text tool instructions
 msgid "Choose a style of text. Click on your drawing and you can start typing."
 msgstr "აირჩიეთ ტექსტის სტილი. დაწკაპეთ თქვენს ნახატზე და აკრიფეთ ტექსტი."
 
+#. Magic tool instruction
 msgid "Pick a magical effect to use on your drawing!"
 msgstr "აირჩიეთ ჯადოსნური ჯოხი მის თქვენს ნახატზე გამოსაყენებლად!"
 
-#. Undo
+#. Response to 'undo' action
 msgid "Undo!"
 msgstr "უკან!"
 
-#. Redo
+#. Response to 'redo' action
 msgid "Redo!"
 msgstr "წინ!"
 
-#. Eraser
+#. Eraser tool
 msgid "Eraser!"
 msgstr "წაშლა!"
 
-#. New
+#. Response to 'start a new image' action
 msgid "You now have a blank sheet to draw on!"
 msgstr "ახლა თქვენ სუფთა ფურცელი გაქვთ!"
 
-#. Open
+#. Response to 'open' action (while file dialog is being constructed)
 msgid "Open…"
 msgstr "გახსნა…"
 
-#. Save
+#. Response to 'save' action
 msgid "Your image has been saved!"
 msgstr "თქვენი ნახატი შენახულია!"
 
-#. Print
+#. Response to 'print' action (while printing, or print dialog is being used)
 msgid "Printing…"
 msgstr "ბეჭდვა…"
 
-#. Quit
+#. Response to 'quit' (exit) action
 msgid "Bye bye!"
 msgstr "ნახვამდის!"
 
+#. Instruction while using Line tool (after click, before release)
 msgid "Let go of the button to complete the line."
 msgstr "აუშვით ღილაკი ხაზის დასასრულებლად."
 
+#. Instruction while using Shape tool (after first click, before release)
 msgid "Hold the button to stretch the shape."
 msgstr "დააჭირეთ ღილაკს ფორმის გასაჭიმად."
 
+#. Instruction while finishing Shape tool (after release, during rotation step before second click)
 msgid "Move the mouse to rotate the shape. Click to draw it."
 msgstr "დაატრიალეთ ფორმა, შემდეგ კი დაწკაპეთ მის დასახატად."
 
+#. Notification that 'New' action was aborted (current image would have been lost)
 msgid "OK then… Let’s keep drawing this one!"
 msgstr "კარგი, გავაგრძელოთ ხატვა!"
 
-#. FIXME: Move elsewhere!!!
+#. Prompt to confirm user wishes to quit
 msgid "Do you really want to quit?"
 msgstr "ნამდვილად გინდათ გასვლა?"
 
+#. Quit prompt positive response (quit)
 msgid "Yes, I'm done!"
 msgstr ""
 
+#. Quit prompt negative response (don't quit)
 msgid "No, take me back!"
 msgstr ""
 
+#. Current picture is not saved; user is quitting
 msgid "If you quit, you’ll lose your picture! Save it?"
 msgstr "თუ გახვალთ თქვენი ნახატი დაიკარგება! შევინახო?"
 
@@ -440,42 +414,49 @@ msgstr ""
 msgid "No, don't bother saving!"
 msgstr ""
 
+#. Current picture is not saved; user is opening another picture
 msgid "Save your picture first?"
 msgstr "ჯერ თქვენი ნახატი შევინახო?"
 
+#. Error opening picture
 msgid "Can’t open that picture!"
 msgstr "ამ ნახატს ვერ ვხსნი!"
 
+#. Generic dialog dismissal
 msgid "OK"
 msgstr "კარგი"
 
 #. This will be replaced with a dialog allowing color choice and Starter
 #. picking, with a "Back" option to dismiss the "New" and return to
 #. the current picture.  But for now...  (bjk 2006.02.19)
+#. Prompt to confirm starting a new picture
 #, fuzzy
 msgid "Start a new picture?"
 msgstr "წავშალო ეს ნახატი?"
 
-#. #define PROMPT_NEW_YES gettext_noop("That’s OK!")
-#. #define PROMPT_NEW_NO gettext_noop("Never mind!")
 msgid "Yes, let's start fresh!"
 msgstr ""
 
+#. Notification that 'Open' dialog has nothing to show
 msgid "There are no saved files!"
 msgstr "ნახატები არ შეგინახავთ!"
 
+#. Verification of print action
 msgid "Print your picture now?"
 msgstr "დავბეჭდო თქვენი ნახატი?"
 
 msgid "Yes, print it!"
 msgstr ""
 
+#. Confirmation of successful (we hope) printing
 msgid "Your picture has been printed!"
 msgstr "თქვენი ნახატი დაიბეჭდა!"
 
+#. Notification that it's too soon to print again (--printdelay option is in effect)
 msgid "You can’t print yet!"
 msgstr "ჯერ ვერ დაბეჭდავთ!"
 
+#. Prompt to confirm erasing a picture in the Open dialog
 msgid "Erase this picture?"
 msgstr "წავშალო ეს ნახატი?"
 
@@ -485,52 +466,66 @@ msgstr ""
 msgid "No, don't erase it!"
 msgstr ""
 
+#. Reminder that Mouse Button 1 is the button to use in Tux Paint
 msgid "Remember to use the left mouse button!"
 msgstr "არ დაგავიწყდეთ თაგუნას მარცხენა ღილაკის გამოყენება!"
 
+#. Sound has been muted (silenced) via keyboard shortcut
 msgid "Sound muted."
 msgstr ""
 
+#. Sound has been unmuted (unsilenced) via keyboard shortcut
 msgid "Sound unmuted."
 msgstr ""
 
+#. Wait while Text tool finishes loading fonts
 msgid "Please wait..."
 msgstr ""
 
+#. Open dialog: 'Erase' button, to erase/deleted the selected picture
 msgid "Erase"
 msgstr "წაშლა"
 
+#. Open dialog: 'Slides' button, to switch to slide show mode
 msgid "Slides"
 msgstr ""
 
+#. Open dialog: 'Back' button, to dismiss Open dialog without opening a picture
 msgid "Back"
 msgstr "უკან"
 
+#. Slideshow: 'Next' button, to load next slide (image)
 #, fuzzy
 msgid "Next"
 msgstr "ტექსტი"
 
+#. Slideshow: 'Play' button, to begin a slideshow sequence
 msgid "Play"
 msgstr ""
 
+#. Label for 'Letters' buttons (font selector, down the right when the Text tool is being used); used to show the difference between font faces
 msgid "Aa"
 msgstr "Aa"
 
-#. FIXME: Move elsewhere! Or not?!
+#. Admittedly stupid way of determining which keys can be used for
+#. positive and negative responses in dialogs (e.g., [Y] (for 'yes') in English)
 msgid "Yes"
 msgstr "დიახ"
 
 msgid "No"
 msgstr "არა"
 
-#. FIXME: Move elsewhere!!!
-#. #define PROMPT_SAVE_OVER_TXT gettext_noop("Save over the older version of this picture?")
+#. Prompt to ask whether user wishes to save over old version of their file
 msgid "Replace the picture with your changes?"
 msgstr ""
 
+#. Positive response to saving over old version
+#. (like a 'File:Save' action in other applications)
 msgid "Yes, replace the old one!"
 msgstr ""
 
+#. Negative response to saving over old version (saves a new image)
+#. (like a 'File:Save As...' action in other applications)
 #, fuzzy
 msgid "No, save a new file!"
 msgstr "არა, შეინახე ახალ ფაილში"
@@ -539,6 +534,7 @@ msgid "Choose the picture you want, then click “Open”."
 msgstr "აირჩიეთ ნახატი და დაწკაპეთ „გახსნა”."
 
 #. Let user choose images:
+#. Instructions for Slideshow file dialog (FIXME: Make a #define)
 #, fuzzy
 msgid "Choose the pictures you want, then click “Play”."
 msgstr "აირჩიეთ ნახატი და დაწკაპეთ „გახსნა”."
@@ -551,6 +547,166 @@ msgstr "სახატავი პროგრამა"
 
 msgid "Tux Paint"
 msgstr "თხუპნია!"
+
+msgid "Blocks"
+msgstr "მოზაიკა"
+
+msgid "Chalk"
+msgstr "ცარცი"
+
+msgid "Drip"
+msgstr "ჩამოღვენთა"
+
+msgid ""
+"Click and move the mouse around to turn the picture into a chalk drawing."
+msgstr "დაწკაპეთ და გადაატარეთ ნახატს მისი ცარცით დახატულად გადასაქცევად."
+
+msgid "Click and move the mouse around to make the picture blocky."
+msgstr "დაწკაპეთ და გადაატარეთ ნახატს მისი ნაწილის მოზაიკად გადასაქცევად."
+
+msgid "Click and move the mouse around to make the picture drip."
+msgstr "დაწკაპეთ და გადაატარეთ ნახატს მისი გამოსაღვენთად."
+
+msgid "Blur"
+msgstr "გადღაბნა"
+
+msgid "Click and move the mouse around to blur the picture."
+msgstr "დაწკაპეთ და გადაატარეთ ნახატს მისი ნაწილის გასადღაბნად."
+
+#. Both are named "Bricks", at the moment:
+msgid "Bricks"
+msgstr "აგურები"
+
+msgid "Click and move to draw large bricks."
+msgstr "დაწკაპეთ და გადაატარეთ დიდი აგურების დასახატად."
+
+msgid "Click and move to draw small bricks."
+msgstr "დაწკაპეთ და გადაატარეთ პატარა აგურების დასახატად."
+
+msgid "Cartoon"
+msgstr "კომიქსი"
+
+msgid "Click and move the mouse around to turn the picture into a cartoon."
+msgstr "დაწკაპეთ და გადაატარეთ ნახატს მისი კომიქსად გადასაქცევად."
+
+msgid "Emboss"
+msgstr ""
+
+#, fuzzy
+msgid "Click and drag the mouse to emboss the picture."
+msgstr "დაწკაპეთ და გადაატარეთ ნახატს მისი ნაწილის დასაწვრილებლად."
+
+msgid "Lighten"
+msgstr "ღია"
+
+msgid "Darken"
+msgstr "მუქი"
+
+msgid "Click and move to fade the colors."
+msgstr "დაწკაპეთ და გადაატარეთ ნახატს მისი ნაწილის გასაუფერულებლად."
+
+msgid "Click and move to darken the colors."
+msgstr "დაწკაპეთ და გადაატარეთ ფერების გასამუქებლად."
+
+msgid "Fill"
+msgstr "ჩასხმა"
+
+msgid "Click in the picture to fill that area with color."
+msgstr "დაწკაპეთ ამ არეში ფერის ჩასასხმელად."
+
+msgid "Flower"
+msgstr ""
+
+msgid "Click and drag to draw a flower stalk. Let go to finish the flower."
+msgstr ""
+
+msgid "Foam"
+msgstr ""
+
+#, fuzzy
+msgid "Click and drag the mouse to cover an area with foamy bubbles.."
+msgstr "დაწკაპეთ და გადაატარეთ ნახატს მისი ნაწილის გასასქელებლად."
+
+msgid "Glass Tile"
+msgstr ""
+
+#, fuzzy
+msgid "Click and drag the mouse to put glass tile over your picture."
+msgstr "დაწკაპეთ და გადაატარეთ ნახატს მისი ნაწილის დასაწვრილებლად."
+
+msgid "Grass"
+msgstr "ბალახი"
+
+msgid "Click and move to draw grass. Don’t forget the dirt!"
+msgstr "დაწკაპეთ და გადაატარეთ ბალახის დასახატად. ტალახი არ დაგავიწყდეთ!"
+
+msgid "Kalidescope"
+msgstr ""
+
+#, fuzzy
+msgid ""
+"Click and drag the mouse to draw with symmetric brushes (a kalidescope)."
+msgstr "დაწკაპეთ და გადაატარეთ ნახატს მისი ნაწილის გასასქელებლად."
+
+#, fuzzy
+msgid "Metal Paint"
+msgstr "ხატვა"
+
+#, fuzzy
+msgid "Click and drag the mouse to paint with a metallic color."
+msgstr "დაწკაპეთ და გადაატარეთ ნახატს მისი ნაწილის დასაწვრილებლად."
+
+msgid "Mirror"
+msgstr "სარკე"
+
+msgid "Flip"
+msgstr "ამოტრიალება"
+
+msgid "Click to flip the picture upside-down."
+msgstr "დაწკაპეთ ნახატი მის თავდაყირა გადმოსატრიალებლად."
+
+msgid "Click to make a mirror image."
+msgstr "დაწკაპეთ ნახატი მისი სარკისებრი ანარეკლის მისაღებად."
+
+msgid "Negative"
+msgstr "ნეგატივი"
+
+msgid "Click and move the mouse around to draw a negative."
+msgstr "დაწკაპეთ და გადაატარეთ ნახატს მისი ნაწილის ნეგატივად გადასაქცევად."
+
+msgid "Rainbow"
+msgstr "ცისარტყელა"
+
+msgid "You can draw in rainbow colors!"
+msgstr "შეგიძლიათ ცისარტყელას ფერებით ხატოთ!"
+
+msgid "Smudge"
+msgstr "ლაქები"
+
+msgid "Click and move the mouse around to smudge the picture."
+msgstr "დაწკაპეთ და შემოატარეთ ნახატს ასაალებლად."
+
+msgid "Tint"
+msgstr "ფერის შეცვლა"
+
+msgid "Click and move the mouse around to change the picture’s color."
+msgstr "დაწკაპეთ და გადაატარეთ ნახატის ფერების შესაცვლელად."
+
+#, fuzzy
+msgid "Waves"
+msgstr "შენახვა"
+
+msgid ""
+"Click to make the picture wavy. (Click towards the top for shorter waves; "
+"the bottom for taller waves. Click towards the left for small waves; the "
+"right for wide waves.)"
+msgstr ""
+
+#~ msgid "Sparkles"
+#~ msgstr "შხეფები"
+
+#~ msgid "Click and move to draw sparkles."
+#~ msgstr "დაწკაპეთ და გადაატარეთ ნახატს შხეფების მისახატად."
 
 #~ msgid "Starting a new picture will erase the current one!"
 #~ msgstr "ახალი ნახატის დაწყებით ძველს გაანადგურებთ!"
@@ -573,12 +729,6 @@ msgstr "თხუპნია!"
 #~ msgid "A square has four sides, each the same length."
 #~ msgstr "კვადრატის ყველა გვერდი ერთმანეთის ტოლია."
 
-#~ msgid "Click and move the mouse to thicken the picture."
-#~ msgstr "დაწკაპეთ და გადაატარეთ ნახატს მისი ნაწილის გასასქელებლად."
-
-#~ msgid "Click and move the mouse to thin the picture."
-#~ msgstr "დაწკაპეთ და გადაატარეთ ნახატს მისი ნაწილის დასაწვრილებლად."
-
 #~ msgid "Diamond"
 #~ msgstr "რომბი"
 
@@ -599,6 +749,3 @@ msgstr "თხუპნია!"
 
 #~ msgid "Silver!"
 #~ msgstr "ვერცხლისფერი!"
-
-#~ msgid "Thick"
-#~ msgstr "მსხვილი"

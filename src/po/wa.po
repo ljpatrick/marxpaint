@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint 0.9.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-07-04 23:03-0700\n"
+"POT-Creation-Date: 2007-07-17 08:24-0700\n"
 "PO-Revision-Date: 2004-03-30 17:24+0200\n"
 "Last-Translator: Pablo Saratxaga <pablo@walon.org>\n"
 "Language-Team: Walloon <linux-wa@walon.org>\n"
@@ -14,56 +14,73 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.0.2\n"
 
+#. Response to Black (0, 0, 0) color selected
 msgid "Black!"
 msgstr "Noer!"
 
+#. Response to Dark grey (128, 128, 128) color selected
 msgid "Dark grey! Some people spell it “dark gray”."
 msgstr ""
 
+#. Response to Light grey (192, 192, 192) color selected
 msgid "Light grey! Some people spell it “light gray”."
 msgstr ""
 
+#. Response to White (255, 255, 255) color selected
 msgid "White!"
 msgstr "Blanc!"
 
+#. Response to Red (255, 0, 0) color selected
 msgid "Red!"
 msgstr "Rodje!"
 
+#. Response to Orange (255, 128, 0) color selected
 msgid "Orange!"
 msgstr "Orandje!"
 
+#. Response to Yellow (255, 255, 0) color selected
 msgid "Yellow!"
 msgstr "Djaene!"
 
+#. Response to Light green (160, 228, 128) color selected
 msgid "Light green!"
 msgstr ""
 
+#. Response to Dark green (33, 148, 70) color selected
 #, fuzzy
 msgid "Dark green!"
 msgstr "Gris!"
 
+#. Response to "Sky" blue (138, 168, 205) color selected
 msgid "Sky blue!"
 msgstr ""
 
+#. Response to Blue (50, 100, 255) color selected
 msgid "Blue!"
 msgstr "Bleu!"
 
+#. Response to Lavender (186, 157, 255) color selected
 msgid "Lavender!"
 msgstr ""
 
+#. Response to Purple (128, 0, 128) color selected
 msgid "Purple!"
 msgstr "Poûrpe!"
 
+#. Response to Pink (255, 165, 211) color selected
 msgid "Pink!"
 msgstr "Rôze!"
 
+#. Response to Brown (128, 80, 0) color selected
 msgid "Brown!"
 msgstr "Brun!"
 
+#. Response to Tan (226, 189, 166) color selected
 #, fuzzy
 msgid "Tan!"
 msgstr "Cian!"
 
+#. Response to Beige (247, 228, 219) color selected
 msgid "Beige!"
 msgstr ""
 
@@ -71,20 +88,21 @@ msgstr ""
 #. via bugs in the SDL_ttf library. We also test fonts to be sure that
 #. they have both uppercase and lowercase letters. Note that we do not
 #. test for "Aa", because it is OK if uppercase and lowercase are the
-#. same. (but not nice -- such fonts get a low score later)
+#. same (but not nice -- such fonts get a low score later).
 #.
 #. We test the alphabet twice, to help with translation. If the users
-#. will be unable to type ASCII letters, then both lines should be
-#. translated. Otherwise, only Line X should be translated and the
-#. ASCII-only fonts should be given bad scores in the scoring code below.
-#. (the best scores going to fonts that support both)
+#. will be unable to type ASCII letters, then both Line X and Line Y
+#. should be translated. Otherwise, only Line X should be translated
+#. and the ASCII-only fonts should be given bad scores in the scoring
+#. code below (the best scores going to fonts that support both).
+#. Line X
 msgid "qx"
 msgstr ""
 
 msgid "QX"
 msgstr ""
 
-#. Line X
+#. Line Y
 msgid "qy"
 msgstr ""
 
@@ -95,203 +113,101 @@ msgstr ""
 #. the top of the list. The user will see them first. This sorting is
 #. especially important for users who have scroll buttons disabled.
 #. Translators should do whatever is needed to put crummy fonts last.
+#. distinct uppercase and lowercase (e.g., 'o' vs. 'O')
 msgid "oO"
 msgstr ""
 
-#. distinct uppercase and lowercase
+#. uncommon punctuation (e.g., '@', '#', '*', etc.)
 msgid "`\\%_@$~#{}<>^&*"
 msgstr ""
 
-#. uncommon punctuation
+#. common punctuation (e.g., '?', '!', '.', ',', etc.)
 msgid ",.?!"
 msgstr ""
 
-#. common punctuation
+#. digits (e.g., '0', '1' and '7')
 msgid "017"
 msgstr ""
 
-#. digits
+#. distinct circle-like characters (e.g., 'O' (capital oh) vs. '0' (zero))
 msgid "O0"
 msgstr ""
 
-#. distinct circle-like characters
+#. distinct line-like characters (e.g., 'l' (lowercase elle) vs. '1' (one) vs. 'I' (capital aye))
 msgid "1Il|"
 msgstr ""
 
+#. Congratulations #1
 msgid "Great!"
 msgstr "Clapant!"
 
+#. Congratulations #2
 msgid "Cool!"
 msgstr "Oufti k' c' est bea!"
 
+#. Congratulations #3
 msgid "Keep it up!"
 msgstr "Continouwez insi!"
 
+#. Congratulations #4
 msgid "Good job!"
 msgstr "Bravo nosse pitit!"
 
+#. Input Method: English mode
 msgid "English"
 msgstr ""
 
+#. Input Method: Japanese Romanized Hiragana mode
 msgid "Hiragana"
 msgstr ""
 
+#. Input Method: Japanese Romanized Katakana mode
 msgid "Katakana"
 msgstr ""
 
+#. Input Method: Korean Hangul 2-Bul mode
 msgid "Hangul"
 msgstr ""
 
-msgid "Fill"
-msgstr "Rimpli"
-
+#. Input Method: Thai mode
 #, fuzzy
-msgid "Grass"
-msgstr "Disfacer"
+msgid "Thai"
+msgstr "Sipès"
 
-#, fuzzy
-msgid "Bricks"
-msgstr "Cwårés"
-
-msgid "Rainbow"
-msgstr "Airdiè"
-
-msgid "Sparkles"
-msgstr "Sipites"
-
-msgid "Blur"
-msgstr "Adoûci"
-
-msgid "Smudge"
-msgstr ""
-
-msgid "Lighten"
-msgstr ""
-
-msgid "Darken"
-msgstr ""
-
-msgid "Chalk"
-msgstr "Croye"
-
-msgid "Blocks"
-msgstr "Cwårés"
-
-msgid "Negative"
-msgstr "Negatif"
-
-#, fuzzy
-msgid "Tint"
-msgstr "Fén"
-
-msgid "Drip"
-msgstr "Gotes"
-
-msgid "Cartoon"
-msgstr ""
-
-msgid "Mirror"
-msgstr "Muroe"
-
-msgid "Flip"
-msgstr "Cou dzeu"
-
-msgid "Click in the picture to fill that area with color."
-msgstr "Clitchîz so l' imådje pol rimpli avou l' coleur tchoezeye."
-
-#, fuzzy
-msgid "Click and move to draw grass. Don’t forget the dirt!"
-msgstr "Clitchîz et s' bodjîz l' sori po dessiner des spitaedjes."
-
-#, fuzzy
-msgid "Click and move to draw large bricks."
-msgstr "Clitchîz et s' bodjîz l' sori po dessiner des spitaedjes."
-
-#, fuzzy
-msgid "Click and move to draw small bricks."
-msgstr "Clitchîz et s' bodjîz l' sori po dessiner des spitaedjes."
-
-msgid "You can draw in rainbow colors!"
-msgstr "Vos ploz dessiner avou les coleurs di l' airdiè!"
-
-msgid "Click and move to draw sparkles."
-msgstr "Clitchîz et s' bodjîz l' sori po dessiner des spitaedjes."
-
-msgid "Click and move the mouse around to blur the picture."
-msgstr "Clitchîz et s' bodjîz l' sori po-z adoûci des bokets d' l' imådje."
-
-#, fuzzy
-msgid "Click and move the mouse around to smudge the picture."
-msgstr "Clitchîz et s' bodjîz l' sori po-z adoûci des bokets d' l' imådje."
-
-msgid "Click and move to fade the colors."
-msgstr "Clitchîz et s' bodjîz l' sori po blanki des bokets d' l' imådje."
-
-#, fuzzy
-msgid "Click and move to darken the colors."
-msgstr "Clitchîz et s' bodjîz l' sori po blanki des bokets d' l' imådje."
-
-msgid ""
-"Click and move the mouse around to turn the picture into a chalk drawing."
-msgstr ""
-"Clitchîz et s' bodjîz l' sori po mete des bokets d' l' imådje come dessinés "
-"al croye"
-
-msgid "Click and move the mouse around to make the picture blocky."
-msgstr ""
-"Clitchîz et s' bodjîz l' sori po mete des bokets d' l' imådje e ptits cwårés."
-
-msgid "Click and move the mouse around to draw a negative."
-msgstr ""
-"Clitchîz et s' bodjîz l' sori po mete des bokets d' l' imådje e negatif."
-
-#, fuzzy
-msgid "Click and move the mouse around to change the picture’s color."
-msgstr ""
-"Clitchîz et s' bodjîz l' sori po mete des bokets d' l' imådje e ptits cwårés."
-
-msgid "Click and move the mouse around to make the picture drip."
-msgstr ""
-"Clitchîz et s' bodjîz l' sori po mete des bokets d' l' imådje come moyîs "
-"avou des gotes d' aiwe."
-
-#, fuzzy
-msgid "Click and move the mouse around to turn the picture into a cartoon."
-msgstr ""
-"Clitchîz et s' bodjîz l' sori po mete des bokets d' l' imådje come dessinés "
-"al croye"
-
-msgid "Click to make a mirror image."
-msgstr "Clitchîz po mete l' imådje come dins on muroe."
-
-msgid "Click to flip the picture upside-down."
-msgstr "Clitchîz po rtourner l' imådje cou å hôt."
-
+#. Square shape tool (4 equally-lengthed sides at right angles)
 msgid "Square"
 msgstr "Cwåré"
 
+#. Rectangle shape tool (4 sides at right angles)
 msgid "Rectangle"
 msgstr "Rectangue"
 
+#. Circle shape tool (X radius and Y radius are the same)
 msgid "Circle"
 msgstr "Ceke"
 
+#. Ellipse shape tool (X radius and Y radius may differ)
 msgid "Ellipse"
 msgstr ""
 
+#. Triangle shape tool (3 sides)
 msgid "Triangle"
 msgstr "Triyangue"
 
+#. Pentagone shape tool (5 sides)
 msgid "Pentagon"
 msgstr "Pentagone"
 
+#. Rhombus shape tool (4 sides, not at right angles)
 msgid "Rhombus"
 msgstr ""
 
+#. Description of a square
 #, fuzzy
 msgid "A square is a rectangle with four equal sides."
 msgstr "On rectangue a cwate costés"
 
+#. Description of a rectangle
 #, fuzzy
 msgid "A rectangle has four sides and four right angles."
 msgstr "On rectangue a cwate costés"
@@ -300,91 +216,121 @@ msgid ""
 "A circle is a curve where all points have the same distance from the center."
 msgstr ""
 
+#. Description of an ellipse
 msgid "An ellipse is a stretched circle."
 msgstr ""
 
+#. Description of a triangle
 msgid "A triangle has three sides."
 msgstr "On triyangue a troes costés."
 
+#. Description of a pentagon
 msgid "A pentagon has five sides."
 msgstr "On pentagone a cénk costés."
 
 msgid "A rhombus has four equal sides, and opposite sides are parallel."
 msgstr ""
 
+#. Title of tool selector (buttons down the left)
 msgid "Tools"
 msgstr "Usteyes"
 
+#. Title of color palette (buttons across the bottom)
 msgid "Colors"
 msgstr "Coleurs"
 
+#. Title of brush selector (buttons down the right for paint and line tools)
 msgid "Brushes"
 msgstr "Pinceas"
 
+#. Title of eraser selector (buttons down the right for eraser tool)
 #, fuzzy
 msgid "Erasers"
 msgstr "Gome"
 
+#. Title of stamp selector (buttons down the right for stamps tool)
 msgid "Stamps"
 msgstr "Tampons"
 
+#. Title of shape selector (buttons down the right for shapes tool)
+#. Shape creation tool (square, circle, etc.)
 msgid "Shapes"
 msgstr "Foûmes"
 
+#. Title of font selector (buttons down the right for text tool)
 msgid "Letters"
 msgstr "Letes"
 
+#. Title of magic tool selector (buttons down the right for magic (effect plugin) tool)
+#. "Magic" effects tools (blur, flip image, etc.)
 msgid "Magic"
 msgstr "Madjike"
 
+#. Freehand painting tool
 msgid "Paint"
 msgstr "Ponde"
 
+#. Stamp tool (aka Rubber Stamps)
 msgid "Stamp"
 msgstr "Tampon"
 
+#. Line drawing tool
 msgid "Lines"
 msgstr "Royes"
 
+#. Text tool
 msgid "Text"
 msgstr "Tecse"
 
+#. Undo last action
 msgid "Undo"
 msgstr "Disfé"
 
+#. Redo undone action
 msgid "Redo"
 msgstr "Rifé"
 
+#. Eraser tool
 msgid "Eraser"
 msgstr "Gome"
 
+#. Start a new picture
 msgid "New"
 msgstr "Novea"
 
+#. Open a saved picture
 #. buttons for the file open dialog
+#. Open dialog: 'Open' button, to load the selected picture
 msgid "Open"
 msgstr "Drovi"
 
+#. Save the current picture
 msgid "Save"
 msgstr "Schaper"
 
+#. Print the current picture
 msgid "Print"
 msgstr "Imprimer"
 
+#. Quit/exit Tux Paint application
 msgid "Quit"
 msgstr "Cwiter"
 
+#. Paint tool instructions
 msgid "Pick a color and a brush shape to draw with."
 msgstr "Tchoezixhoz ene coleur ey on pincea et s' kimincîz a dessiner avou."
 
+#. Stamp tool instructions
 msgid "Pick a picture to stamp around your drawing."
 msgstr "Tchoezixhoz ene imådje po-z eployî come tampon."
 
+#. Line tool instructions
 msgid "Click to start drawing a line. Let go to complete it."
 msgstr ""
 "Clitchîz po cmincî a fé ene roye. Wårdez l' boton tchôkî, alez la ki l' roye "
 "doet fini, et s' låtchîz l' boton."
 
+#. Shape tool instructions
 msgid ""
 "Pick a shape. Click to pick the center, drag, then let go when it is the "
 "size you want. Move around to rotate it, and click to draw it."
@@ -392,71 +338,80 @@ msgstr ""
 "Tchoezixhoz ene foûme. Clitchîz on côp pol cinte, et s' saetchîz po l' mete "
 "al grandeu ki vos vloz. Po fini, fijhoz l' tourner avou l' sori."
 
+#. Text tool instructions
 msgid "Choose a style of text. Click on your drawing and you can start typing."
 msgstr ""
 "Tchoezixhoz ene sôre di letes pol tecse. Clitchîz sol dessin et vos ploz "
 "cmincî a taper."
 
+#. Magic tool instruction
 msgid "Pick a magical effect to use on your drawing!"
 msgstr "Tchoezixhoz èn efet madjike a-z apliker å dessin da vosse!"
 
-#. Undo
+#. Response to 'undo' action
 msgid "Undo!"
 msgstr "Disfé!"
 
-#. Redo
+#. Response to 'redo' action
 msgid "Redo!"
 msgstr "Rifé!"
 
-#. Eraser
+#. Eraser tool
 msgid "Eraser!"
 msgstr "Disfacer!"
 
-#. New
+#. Response to 'start a new image' action
 msgid "You now have a blank sheet to draw on!"
 msgstr "Asteure vos avoz ene blanke foye po dessiner dzeu!"
 
-#. Open
+#. Response to 'open' action (while file dialog is being constructed)
 msgid "Open…"
 msgstr "Drovi..."
 
-#. Save
+#. Response to 'save' action
 msgid "Your image has been saved!"
 msgstr "Voste imådje a stî schapêye!"
 
-#. Print
+#. Response to 'print' action (while printing, or print dialog is being used)
 msgid "Printing…"
 msgstr "Dj' imprime..."
 
-#. Quit
+#. Response to 'quit' (exit) action
 msgid "Bye bye!"
 msgstr "A rvey!"
 
+#. Instruction while using Line tool (after click, before release)
 msgid "Let go of the button to complete the line."
 msgstr ""
 "Wårdez l' boton tchôkî, alez la ki l' roye doet fini, et s' låtchîz l' boton "
 "po fini l' roye."
 
+#. Instruction while using Shape tool (after first click, before release)
 msgid "Hold the button to stretch the shape."
 msgstr "Wårdez l' boton tchôkî po candjî l' grandeu."
 
+#. Instruction while finishing Shape tool (after release, during rotation step before second click)
 msgid "Move the mouse to rotate the shape. Click to draw it."
 msgstr ""
 "Bodjîz l' sori po fé tourner l' foûme. Clitchîz pol dessiner po do bon."
 
+#. Notification that 'New' action was aborted (current image would have been lost)
 msgid "OK then… Let’s keep drawing this one!"
 msgstr "D' acoird... continouwans a dessiner dabôrd!"
 
-#. FIXME: Move elsewhere!!!
+#. Prompt to confirm user wishes to quit
 msgid "Do you really want to quit?"
 msgstr "Voloz vs moussî foû po do bon?"
 
+#. Quit prompt positive response (quit)
 msgid "Yes, I'm done!"
 msgstr ""
 
+#. Quit prompt negative response (don't quit)
 msgid "No, take me back!"
 msgstr ""
 
+#. Current picture is not saved; user is quitting
 msgid "If you quit, you’ll lose your picture! Save it?"
 msgstr "Si vos cwitez l' programe vos piedroz l' imådje! El schaper?"
 
@@ -466,42 +421,49 @@ msgstr ""
 msgid "No, don't bother saving!"
 msgstr ""
 
+#. Current picture is not saved; user is opening another picture
 msgid "Save your picture first?"
 msgstr "Schaper d' aprume voste imådje?"
 
+#. Error opening picture
 msgid "Can’t open that picture!"
 msgstr "Dji n' sai drovi ciste imådje la!"
 
+#. Generic dialog dismissal
 msgid "OK"
 msgstr "'l est bon"
 
 #. This will be replaced with a dialog allowing color choice and Starter
 #. picking, with a "Back" option to dismiss the "New" and return to
 #. the current picture.  But for now...  (bjk 2006.02.19)
+#. Prompt to confirm starting a new picture
 #, fuzzy
 msgid "Start a new picture?"
 msgstr "Disfacer ciste imådje chal?"
 
-#. #define PROMPT_NEW_YES gettext_noop("That’s OK!")
-#. #define PROMPT_NEW_NO gettext_noop("Never mind!")
 msgid "Yes, let's start fresh!"
 msgstr ""
 
+#. Notification that 'Open' dialog has nothing to show
 msgid "There are no saved files!"
 msgstr "I gn a nou fitchî di schapé!"
 
+#. Verification of print action
 msgid "Print your picture now?"
 msgstr "Imprimer voste imådje?"
 
 msgid "Yes, print it!"
 msgstr ""
 
+#. Confirmation of successful (we hope) printing
 msgid "Your picture has been printed!"
 msgstr "Voste imådje a stî imprimêye!"
 
+#. Notification that it's too soon to print again (--printdelay option is in effect)
 msgid "You can’t print yet!"
 msgstr "Vos n' poloz nén co imprimer!"
 
+#. Prompt to confirm erasing a picture in the Open dialog
 msgid "Erase this picture?"
 msgstr "Disfacer ciste imådje chal?"
 
@@ -511,52 +473,66 @@ msgstr ""
 msgid "No, don't erase it!"
 msgstr ""
 
+#. Reminder that Mouse Button 1 is the button to use in Tux Paint
 msgid "Remember to use the left mouse button!"
 msgstr ""
 
+#. Sound has been muted (silenced) via keyboard shortcut
 msgid "Sound muted."
 msgstr ""
 
+#. Sound has been unmuted (unsilenced) via keyboard shortcut
 msgid "Sound unmuted."
 msgstr ""
 
+#. Wait while Text tool finishes loading fonts
 msgid "Please wait..."
 msgstr ""
 
+#. Open dialog: 'Erase' button, to erase/deleted the selected picture
 msgid "Erase"
 msgstr "Disfacer"
 
+#. Open dialog: 'Slides' button, to switch to slide show mode
 msgid "Slides"
 msgstr ""
 
+#. Open dialog: 'Back' button, to dismiss Open dialog without opening a picture
 msgid "Back"
 msgstr "En erî"
 
+#. Slideshow: 'Next' button, to load next slide (image)
 #, fuzzy
 msgid "Next"
 msgstr "Tecse"
 
+#. Slideshow: 'Play' button, to begin a slideshow sequence
 msgid "Play"
 msgstr ""
 
+#. Label for 'Letters' buttons (font selector, down the right when the Text tool is being used); used to show the difference between font faces
 msgid "Aa"
 msgstr ""
 
-#. FIXME: Move elsewhere! Or not?!
+#. Admittedly stupid way of determining which keys can be used for
+#. positive and negative responses in dialogs (e.g., [Y] (for 'yes') in English)
 msgid "Yes"
 msgstr "Oyi"
 
 msgid "No"
 msgstr "Neni"
 
-#. FIXME: Move elsewhere!!!
-#. #define PROMPT_SAVE_OVER_TXT gettext_noop("Save over the older version of this picture?")
+#. Prompt to ask whether user wishes to save over old version of their file
 msgid "Replace the picture with your changes?"
 msgstr ""
 
+#. Positive response to saving over old version
+#. (like a 'File:Save' action in other applications)
 msgid "Yes, replace the old one!"
 msgstr ""
 
+#. Negative response to saving over old version (saves a new image)
+#. (like a 'File:Save As...' action in other applications)
 #, fuzzy
 msgid "No, save a new file!"
 msgstr "Neni, schaper en on novea fitchî"
@@ -565,6 +541,7 @@ msgid "Choose the picture you want, then click “Open”."
 msgstr "Tchoezixhoz l' imådje ki vos vloz, poy clitchîz so «Drovi»."
 
 #. Let user choose images:
+#. Instructions for Slideshow file dialog (FIXME: Make a #define)
 #, fuzzy
 msgid "Choose the pictures you want, then click “Play”."
 msgstr "Tchoezixhoz l' imådje ki vos vloz, poy clitchîz so «Drovi»."
@@ -577,6 +554,190 @@ msgstr "Programe di dessinaedje"
 
 msgid "Tux Paint"
 msgstr "Tux Paint"
+
+msgid "Blocks"
+msgstr "Cwårés"
+
+msgid "Chalk"
+msgstr "Croye"
+
+msgid "Drip"
+msgstr "Gotes"
+
+msgid ""
+"Click and move the mouse around to turn the picture into a chalk drawing."
+msgstr ""
+"Clitchîz et s' bodjîz l' sori po mete des bokets d' l' imådje come dessinés "
+"al croye"
+
+msgid "Click and move the mouse around to make the picture blocky."
+msgstr ""
+"Clitchîz et s' bodjîz l' sori po mete des bokets d' l' imådje e ptits cwårés."
+
+msgid "Click and move the mouse around to make the picture drip."
+msgstr ""
+"Clitchîz et s' bodjîz l' sori po mete des bokets d' l' imådje come moyîs "
+"avou des gotes d' aiwe."
+
+msgid "Blur"
+msgstr "Adoûci"
+
+msgid "Click and move the mouse around to blur the picture."
+msgstr "Clitchîz et s' bodjîz l' sori po-z adoûci des bokets d' l' imådje."
+
+#. Both are named "Bricks", at the moment:
+#, fuzzy
+msgid "Bricks"
+msgstr "Cwårés"
+
+#, fuzzy
+msgid "Click and move to draw large bricks."
+msgstr "Clitchîz et s' bodjîz l' sori po dessiner des spitaedjes."
+
+#, fuzzy
+msgid "Click and move to draw small bricks."
+msgstr "Clitchîz et s' bodjîz l' sori po dessiner des spitaedjes."
+
+msgid "Cartoon"
+msgstr ""
+
+#, fuzzy
+msgid "Click and move the mouse around to turn the picture into a cartoon."
+msgstr ""
+"Clitchîz et s' bodjîz l' sori po mete des bokets d' l' imådje come dessinés "
+"al croye"
+
+msgid "Emboss"
+msgstr ""
+
+#, fuzzy
+msgid "Click and drag the mouse to emboss the picture."
+msgstr ""
+"Clitchîz et s' bodjîz l' sori po mete des bokets d' l' imådje pus féns."
+
+msgid "Lighten"
+msgstr ""
+
+msgid "Darken"
+msgstr ""
+
+msgid "Click and move to fade the colors."
+msgstr "Clitchîz et s' bodjîz l' sori po blanki des bokets d' l' imådje."
+
+#, fuzzy
+msgid "Click and move to darken the colors."
+msgstr "Clitchîz et s' bodjîz l' sori po blanki des bokets d' l' imådje."
+
+msgid "Fill"
+msgstr "Rimpli"
+
+msgid "Click in the picture to fill that area with color."
+msgstr "Clitchîz so l' imådje pol rimpli avou l' coleur tchoezeye."
+
+msgid "Flower"
+msgstr ""
+
+msgid "Click and drag to draw a flower stalk. Let go to finish the flower."
+msgstr ""
+
+msgid "Foam"
+msgstr ""
+
+#, fuzzy
+msgid "Click and drag the mouse to cover an area with foamy bubbles.."
+msgstr ""
+"Clitchîz et s' bodjîz l' sori po mete des bokets d' l' imådje pus spès."
+
+msgid "Glass Tile"
+msgstr ""
+
+#, fuzzy
+msgid "Click and drag the mouse to put glass tile over your picture."
+msgstr ""
+"Clitchîz et s' bodjîz l' sori po mete des bokets d' l' imådje pus féns."
+
+#, fuzzy
+msgid "Grass"
+msgstr "Disfacer"
+
+#, fuzzy
+msgid "Click and move to draw grass. Don’t forget the dirt!"
+msgstr "Clitchîz et s' bodjîz l' sori po dessiner des spitaedjes."
+
+msgid "Kalidescope"
+msgstr ""
+
+#, fuzzy
+msgid ""
+"Click and drag the mouse to draw with symmetric brushes (a kalidescope)."
+msgstr ""
+"Clitchîz et s' bodjîz l' sori po mete des bokets d' l' imådje pus spès."
+
+#, fuzzy
+msgid "Metal Paint"
+msgstr "Ponde"
+
+#, fuzzy
+msgid "Click and drag the mouse to paint with a metallic color."
+msgstr ""
+"Clitchîz et s' bodjîz l' sori po mete des bokets d' l' imådje pus féns."
+
+msgid "Mirror"
+msgstr "Muroe"
+
+msgid "Flip"
+msgstr "Cou dzeu"
+
+msgid "Click to flip the picture upside-down."
+msgstr "Clitchîz po rtourner l' imådje cou å hôt."
+
+msgid "Click to make a mirror image."
+msgstr "Clitchîz po mete l' imådje come dins on muroe."
+
+msgid "Negative"
+msgstr "Negatif"
+
+msgid "Click and move the mouse around to draw a negative."
+msgstr ""
+"Clitchîz et s' bodjîz l' sori po mete des bokets d' l' imådje e negatif."
+
+msgid "Rainbow"
+msgstr "Airdiè"
+
+msgid "You can draw in rainbow colors!"
+msgstr "Vos ploz dessiner avou les coleurs di l' airdiè!"
+
+msgid "Smudge"
+msgstr ""
+
+#, fuzzy
+msgid "Click and move the mouse around to smudge the picture."
+msgstr "Clitchîz et s' bodjîz l' sori po-z adoûci des bokets d' l' imådje."
+
+#, fuzzy
+msgid "Tint"
+msgstr "Fén"
+
+#, fuzzy
+msgid "Click and move the mouse around to change the picture’s color."
+msgstr ""
+"Clitchîz et s' bodjîz l' sori po mete des bokets d' l' imådje e ptits cwårés."
+
+#, fuzzy
+msgid "Waves"
+msgstr "Schaper"
+
+msgid ""
+"Click to make the picture wavy. (Click towards the top for shorter waves; "
+"the bottom for taller waves. Click towards the left for small waves; the "
+"right for wide waves.)"
+msgstr ""
+
+#~ msgid "Sparkles"
+#~ msgstr "Sipites"
+
+#~ msgid "Click and move to draw sparkles."
+#~ msgstr "Clitchîz et s' bodjîz l' sori po dessiner des spitaedjes."
 
 #~ msgid "Starting a new picture will erase the current one!"
 #~ msgstr "Enonder ene nouve imådje va spotchî l' cisse d' asteure!"
@@ -619,14 +780,3 @@ msgstr "Tux Paint"
 
 #~ msgid "Silver!"
 #~ msgstr "Årdjint!"
-
-#~ msgid "Thick"
-#~ msgstr "Sipès"
-
-#~ msgid "Click and move the mouse to thicken the picture."
-#~ msgstr ""
-#~ "Clitchîz et s' bodjîz l' sori po mete des bokets d' l' imådje pus spès."
-
-#~ msgid "Click and move the mouse to thin the picture."
-#~ msgstr ""
-#~ "Clitchîz et s' bodjîz l' sori po mete des bokets d' l' imådje pus féns."

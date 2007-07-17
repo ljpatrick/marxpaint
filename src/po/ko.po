@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Tux Paint 0.9.16\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-07-04 23:03-0700\n"
+"POT-Creation-Date: 2007-07-17 08:24-0700\n"
 "PO-Revision-Date: 2007-04-29 23:10-0400\n"
 "Last-Translator: Mark K. Kim <mkkim214@gmail.com>\n"
 "Language-Team: N/A\n"
@@ -18,54 +18,71 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
+#. Response to Black (0, 0, 0) color selected
 msgid "Black!"
 msgstr "검정색!"
 
+#. Response to Dark grey (128, 128, 128) color selected
 msgid "Dark grey! Some people spell it “dark gray”."
 msgstr "어두운 회색!"
 
+#. Response to Light grey (192, 192, 192) color selected
 msgid "Light grey! Some people spell it “light gray”."
 msgstr "밝은 회색!"
 
+#. Response to White (255, 255, 255) color selected
 msgid "White!"
 msgstr "흰색!"
 
+#. Response to Red (255, 0, 0) color selected
 msgid "Red!"
 msgstr "빨간색!"
 
+#. Response to Orange (255, 128, 0) color selected
 msgid "Orange!"
 msgstr "오렌지색!"
 
+#. Response to Yellow (255, 255, 0) color selected
 msgid "Yellow!"
 msgstr "노란색!"
 
+#. Response to Light green (160, 228, 128) color selected
 msgid "Light green!"
 msgstr "연두색!"
 
+#. Response to Dark green (33, 148, 70) color selected
 msgid "Dark green!"
 msgstr "청녹색!"
 
+#. Response to "Sky" blue (138, 168, 205) color selected
 msgid "Sky blue!"
 msgstr "하늘색!"
 
+#. Response to Blue (50, 100, 255) color selected
 msgid "Blue!"
 msgstr "파란색!"
 
+#. Response to Lavender (186, 157, 255) color selected
 msgid "Lavender!"
 msgstr "엷은 자주색!"
 
+#. Response to Purple (128, 0, 128) color selected
 msgid "Purple!"
 msgstr "자주색!"
 
+#. Response to Pink (255, 165, 211) color selected
 msgid "Pink!"
 msgstr "핑크색!"
 
+#. Response to Brown (128, 80, 0) color selected
 msgid "Brown!"
 msgstr "갈색!"
 
+#. Response to Tan (226, 189, 166) color selected
 msgid "Tan!"
 msgstr "살색!"
 
+#. Response to Beige (247, 228, 219) color selected
 msgid "Beige!"
 msgstr "낙타색!"
 
@@ -73,20 +90,21 @@ msgstr "낙타색!"
 #. via bugs in the SDL_ttf library. We also test fonts to be sure that
 #. they have both uppercase and lowercase letters. Note that we do not
 #. test for "Aa", because it is OK if uppercase and lowercase are the
-#. same. (but not nice -- such fonts get a low score later)
+#. same (but not nice -- such fonts get a low score later).
 #.
 #. We test the alphabet twice, to help with translation. If the users
-#. will be unable to type ASCII letters, then both lines should be
-#. translated. Otherwise, only Line X should be translated and the
-#. ASCII-only fonts should be given bad scores in the scoring code below.
-#. (the best scores going to fonts that support both)
+#. will be unable to type ASCII letters, then both Line X and Line Y
+#. should be translated. Otherwise, only Line X should be translated
+#. and the ASCII-only fonts should be given bad scores in the scoring
+#. code below (the best scores going to fonts that support both).
+#. Line X
 msgid "qx"
 msgstr "ㄱㅎ"
 
 msgid "QX"
 msgstr "ㄲㅍ"
 
-#. Line X
+#. Line Y
 msgid "qy"
 msgstr ""
 
@@ -97,183 +115,99 @@ msgstr ""
 #. the top of the list. The user will see them first. This sorting is
 #. especially important for users who have scroll buttons disabled.
 #. Translators should do whatever is needed to put crummy fonts last.
+#. distinct uppercase and lowercase (e.g., 'o' vs. 'O')
 msgid "oO"
 msgstr "ㄱㄴ"
 
-#. distinct uppercase and lowercase
+#. uncommon punctuation (e.g., '@', '#', '*', etc.)
 msgid "`\\%_@$~#{}<>^&*"
 msgstr "`\\%_@$~#{}<>^&*"
 
-#. uncommon punctuation
+#. common punctuation (e.g., '?', '!', '.', ',', etc.)
 msgid ",.?!"
 msgstr ",.?!"
 
-#. common punctuation
+#. digits (e.g., '0', '1' and '7')
 msgid "017"
 msgstr "017"
 
-#. digits
+#. distinct circle-like characters (e.g., 'O' (capital oh) vs. '0' (zero))
 msgid "O0"
 msgstr "O0ㅇ"
 
-#. distinct circle-like characters
+#. distinct line-like characters (e.g., 'l' (lowercase elle) vs. '1' (one) vs. 'I' (capital aye))
 msgid "1Il|"
 msgstr "1Il|ㅣ"
 
+#. Congratulations #1
 msgid "Great!"
 msgstr "잘한다!"
 
+#. Congratulations #2
 msgid "Cool!"
 msgstr "와~!"
 
+#. Congratulations #3
 msgid "Keep it up!"
 msgstr "계속 잘 해보세요!"
 
+#. Congratulations #4
 msgid "Good job!"
 msgstr "잘했어요!"
 
+#. Input Method: English mode
 msgid "English"
 msgstr ""
 
+#. Input Method: Japanese Romanized Hiragana mode
 msgid "Hiragana"
 msgstr ""
 
+#. Input Method: Japanese Romanized Katakana mode
 msgid "Katakana"
 msgstr ""
 
+#. Input Method: Korean Hangul 2-Bul mode
 msgid "Hangul"
 msgstr ""
 
-msgid "Fill"
-msgstr "물통"
+#. Input Method: Thai mode
+msgid "Thai"
+msgstr ""
 
-msgid "Grass"
-msgstr "풀"
-
-msgid "Bricks"
-msgstr "벽돌"
-
-msgid "Rainbow"
-msgstr "무지개"
-
-msgid "Sparkles"
-msgstr "불꽃"
-
-msgid "Blur"
-msgstr "흐리게"
-
-msgid "Smudge"
-msgstr "번지게"
-
-msgid "Lighten"
-msgstr "사라지게"
-
-msgid "Darken"
-msgstr "어둡게"
-
-msgid "Chalk"
-msgstr "분필"
-
-msgid "Blocks"
-msgstr "네모나게"
-
-msgid "Negative"
-msgstr "음화"
-
-msgid "Tint"
-msgstr "배합"
-
-msgid "Drip"
-msgstr "흘리게"
-
-msgid "Cartoon"
-msgstr "만화"
-
-msgid "Mirror"
-msgstr "거울"
-
-msgid "Flip"
-msgstr "뒤집기"
-
-msgid "Click in the picture to fill that area with color."
-msgstr "마우스를 누르면 물통을 엎을 수 있어요!"
-
-msgid "Click and move to draw grass. Don’t forget the dirt!"
-msgstr "마우스를 누르면 풀이 그려져요. 땅도 그리는 것 잊지 마세요!"
-
-msgid "Click and move to draw large bricks."
-msgstr "마우스를 누르면 큰 벽돌이 그려져요!"
-
-msgid "Click and move to draw small bricks."
-msgstr "마우스를 누르면 작은 벽돌이 그려져요!"
-
-msgid "You can draw in rainbow colors!"
-msgstr "여러가지의 색으로 그림을 그려 보세요."
-
-msgid "Click and move to draw sparkles."
-msgstr "마우스를 누르면 불꽃이 터지는 것 같은 그림이 나와요."
-
-msgid "Click and move the mouse around to blur the picture."
-msgstr "마우스를 누르면 그림을 흐리게 만들 수 있어요."
-
-msgid "Click and move the mouse around to smudge the picture."
-msgstr "마우스를 누르면 그림을 번지게 만들 수 있어요."
-
-msgid "Click and move to fade the colors."
-msgstr "마우스를 누르면 그림을 희미하게 만들 수 있어요."
-
-msgid "Click and move to darken the colors."
-msgstr "마우스를 누르면 그림을 어둡게 만들 수 있어요."
-
-msgid ""
-"Click and move the mouse around to turn the picture into a chalk drawing."
-msgstr "마우스를 누르면 그림이 분필로 만든 것 같이 되어요."
-
-msgid "Click and move the mouse around to make the picture blocky."
-msgstr "마우스를 누르면 그림이 네모나게 되어요."
-
-msgid "Click and move the mouse around to draw a negative."
-msgstr "마우스를 누르면 그림의 색이 뒤집어져요."
-
-msgid "Click and move the mouse around to change the picture’s color."
-msgstr "마우스를 누르면 그림이 색이 변화돼요."
-
-msgid "Click and move the mouse around to make the picture drip."
-msgstr "마우스를 누르면 그림이 흐르는 것 같이 되어요."
-
-msgid "Click and move the mouse around to turn the picture into a cartoon."
-msgstr "마우스를 누르면 그림이 만화 같이 변화돼요."
-
-msgid "Click to make a mirror image."
-msgstr "마우스를 누르면 그림이 뒤집어져요."
-
-msgid "Click to flip the picture upside-down."
-msgstr "마우스를 누르면 그림이 엎어져요."
-
+#. Square shape tool (4 equally-lengthed sides at right angles)
 msgid "Square"
 msgstr "정사각형"
 
+#. Rectangle shape tool (4 sides at right angles)
 msgid "Rectangle"
 msgstr "사각형"
 
+#. Circle shape tool (X radius and Y radius are the same)
 msgid "Circle"
 msgstr "원"
 
+#. Ellipse shape tool (X radius and Y radius may differ)
 msgid "Ellipse"
 msgstr "타원"
 
+#. Triangle shape tool (3 sides)
 msgid "Triangle"
 msgstr "삼각형"
 
+#. Pentagone shape tool (5 sides)
 msgid "Pentagon"
 msgstr "5각형"
 
+#. Rhombus shape tool (4 sides, not at right angles)
 msgid "Rhombus"
 msgstr "마름모꼴"
 
+#. Description of a square
 msgid "A square is a rectangle with four equal sides."
 msgstr "4개의 면이 다 똑같은 길이의 모양이 '정사각형' 입니다."
 
+#. Description of a rectangle
 msgid "A rectangle has four sides and four right angles."
 msgstr "4개의 면이 있는 모양이 '사각형' 입니다."
 
@@ -282,90 +216,120 @@ msgid ""
 "A circle is a curve where all points have the same distance from the center."
 msgstr "해같이 둥그런 모양이 '동그라미' 입니다."
 
+#. Description of an ellipse
 msgid "An ellipse is a stretched circle."
 msgstr "타원은 달걀같이 찌그러진 원형을 말합니다."
 
+#. Description of a triangle
 msgid "A triangle has three sides."
 msgstr "3개의 면이 있는 모양이 '삼각형' 입니다."
 
+#. Description of a pentagon
 msgid "A pentagon has five sides."
 msgstr "5개의 면이 있는 모양이 '5각형' 입니다."
 
 msgid "A rhombus has four equal sides, and opposite sides are parallel."
 msgstr "마름모꼴은 사면의 길이가 같고, 반대의 두면이 평행선인 형을 말합니다."
 
+#. Title of tool selector (buttons down the left)
 msgid "Tools"
 msgstr "도구"
 
+#. Title of color palette (buttons across the bottom)
 msgid "Colors"
 msgstr "색"
 
+#. Title of brush selector (buttons down the right for paint and line tools)
 msgid "Brushes"
 msgstr "붓"
 
+#. Title of eraser selector (buttons down the right for eraser tool)
 msgid "Erasers"
 msgstr "지우개"
 
+#. Title of stamp selector (buttons down the right for stamps tool)
 msgid "Stamps"
 msgstr "도장"
 
+#. Title of shape selector (buttons down the right for shapes tool)
+#. Shape creation tool (square, circle, etc.)
 msgid "Shapes"
 msgstr "모양"
 
+#. Title of font selector (buttons down the right for text tool)
 msgid "Letters"
 msgstr "글"
 
+#. Title of magic tool selector (buttons down the right for magic (effect plugin) tool)
+#. "Magic" effects tools (blur, flip image, etc.)
 msgid "Magic"
 msgstr "효과"
 
+#. Freehand painting tool
 msgid "Paint"
 msgstr "물감"
 
+#. Stamp tool (aka Rubber Stamps)
 msgid "Stamp"
 msgstr "도장"
 
+#. Line drawing tool
 msgid "Lines"
 msgstr "줄"
 
+#. Text tool
 msgid "Text"
 msgstr "글"
 
+#. Undo last action
 msgid "Undo"
 msgstr "전으로"
 
+#. Redo undone action
 msgid "Redo"
 msgstr "다시"
 
+#. Eraser tool
 msgid "Eraser"
 msgstr "지우개"
 
+#. Start a new picture
 msgid "New"
 msgstr "새 그림"
 
+#. Open a saved picture
 #. buttons for the file open dialog
+#. Open dialog: 'Open' button, to load the selected picture
 msgid "Open"
 msgstr "열기"
 
+#. Save the current picture
 msgid "Save"
 msgstr "저장"
 
+#. Print the current picture
 msgid "Print"
 msgstr "인쇄"
 
+#. Quit/exit Tux Paint application
 msgid "Quit"
 msgstr "끝"
 
+#. Paint tool instructions
 msgid "Pick a color and a brush shape to draw with."
 msgstr "그림 그릴 색과 붓의 모양을 고르세요."
 
+#. Stamp tool instructions
 msgid "Pick a picture to stamp around your drawing."
 msgstr "도장 그림을 고르세요."
 
+#. Line tool instructions
 msgid "Click to start drawing a line. Let go to complete it."
 msgstr ""
 "마우스의 버튼을 누르는 곳이 줄의 시작점 입니다. 버튼을 놓는곳이 종료점 입니"
 "다."
 
+#. Shape tool instructions
 msgid ""
 "Pick a shape. Click to pick the center, drag, then let go when it is the "
 "size you want. Move around to rotate it, and click to draw it."
@@ -373,66 +337,75 @@ msgstr ""
 "(1) 모양을 고르세요.  (2) 중심지를 정하고 마우스 버튼을 누르세요.  (3) 크기"
 "를 잡고 버튼을 놓으세요.  (4) 모양을 돌린후 마우스 버튼을 누르세요."
 
+#. Text tool instructions
 msgid "Choose a style of text. Click on your drawing and you can start typing."
 msgstr "(1) 글체를 고르세요.  (2) 그림을 누르고 원하는 글을 키보드로 치세요."
 
+#. Magic tool instruction
 msgid "Pick a magical effect to use on your drawing!"
 msgstr "어떤 효과를 사용 할까요?"
 
-#. Undo
+#. Response to 'undo' action
 msgid "Undo!"
 msgstr "전 상태로!"
 
-#. Redo
+#. Response to 'redo' action
 msgid "Redo!"
 msgstr "다시 상태로!"
 
-#. Eraser
+#. Eraser tool
 msgid "Eraser!"
 msgstr "지우개!"
 
-#. New
+#. Response to 'start a new image' action
 msgid "You now have a blank sheet to draw on!"
 msgstr "그림이 다 지워졌습니다.  새 그림을 시작하세요!"
 
-#. Open
+#. Response to 'open' action (while file dialog is being constructed)
 msgid "Open…"
 msgstr "그림 열기..."
 
-#. Save
+#. Response to 'save' action
 msgid "Your image has been saved!"
 msgstr "그림을 저장 했습니다!"
 
-#. Print
+#. Response to 'print' action (while printing, or print dialog is being used)
 msgid "Printing…"
 msgstr "인쇄 중..."
 
-#. Quit
+#. Response to 'quit' (exit) action
 msgid "Bye bye!"
 msgstr "안녕!"
 
+#. Instruction while using Line tool (after click, before release)
 msgid "Let go of the button to complete the line."
 msgstr "마우스를 놓으면 줄이 완성돼요."
 
+#. Instruction while using Shape tool (after first click, before release)
 msgid "Hold the button to stretch the shape."
 msgstr "마우스를 누르고 옮기면 모양이 늘려져요."
 
+#. Instruction while finishing Shape tool (after release, during rotation step before second click)
 msgid "Move the mouse to rotate the shape. Click to draw it."
 msgstr "마우스를 옮기면 모양이 돌려져요. 마우스를 누르면 그림이 만들어 져요."
 
+#. Notification that 'New' action was aborted (current image would have been lost)
 msgid "OK then… Let’s keep drawing this one!"
 msgstr "그럼, 계속 그림을 그리세요!"
 
-#. FIXME: Move elsewhere!!!
+#. Prompt to confirm user wishes to quit
 msgid "Do you really want to quit?"
 msgstr "프로그램을 끝 마칠까요?"
 
+#. Quit prompt positive response (quit)
 msgid "Yes, I'm done!"
 msgstr "네, 끝마쳐요!"
 
+#. Quit prompt negative response (don't quit)
 msgid "No, take me back!"
 msgstr "아니요, 전 화면으로 돌아가요!"
 
+#. Current picture is not saved; user is quitting
 msgid "If you quit, you’ll lose your picture! Save it?"
 msgstr "그림을 저장않하고 종료 하면 그림이 없어져요! 저장할까요?"
 
@@ -442,41 +415,48 @@ msgstr "네, 저장하세요!"
 msgid "No, don't bother saving!"
 msgstr "아니요, 저장하지 마세요!"
 
+#. Current picture is not saved; user is opening another picture
 msgid "Save your picture first?"
 msgstr "먼저, 그림을 저장할까요?"
 
+#. Error opening picture
 msgid "Can’t open that picture!"
 msgstr "그 그림은 열지 못합니다!"
 
+#. Generic dialog dismissal
 msgid "OK"
 msgstr "네"
 
 #. This will be replaced with a dialog allowing color choice and Starter
 #. picking, with a "Back" option to dismiss the "New" and return to
 #. the current picture.  But for now...  (bjk 2006.02.19)
+#. Prompt to confirm starting a new picture
 msgid "Start a new picture?"
 msgstr "새 그림을 시작할까요?"
 
-#. #define PROMPT_NEW_YES gettext_noop("That’s OK!")
-#. #define PROMPT_NEW_NO gettext_noop("Never mind!")
 msgid "Yes, let's start fresh!"
 msgstr "네, 처음부터 시작해요!"
 
+#. Notification that 'Open' dialog has nothing to show
 msgid "There are no saved files!"
 msgstr "저장된 파일이 없네요!"
 
+#. Verification of print action
 msgid "Print your picture now?"
 msgstr "그림을 인쇄 할까요?"
 
 msgid "Yes, print it!"
 msgstr "네, 인쇄하세요!"
 
+#. Confirmation of successful (we hope) printing
 msgid "Your picture has been printed!"
 msgstr "그림을 인쇄 했습니다!"
 
+#. Notification that it's too soon to print again (--printdelay option is in effect)
 msgid "You can’t print yet!"
 msgstr "아직 인쇄 하지 못합니다!"
 
+#. Prompt to confirm erasing a picture in the Open dialog
 msgid "Erase this picture?"
 msgstr "이 그림을 지울까요?"
 
@@ -486,52 +466,66 @@ msgstr "네, 지우세요!"
 msgid "No, don't erase it!"
 msgstr "아니요, 지우지 마세요!"
 
+#. Reminder that Mouse Button 1 is the button to use in Tux Paint
 msgid "Remember to use the left mouse button!"
 msgstr "왼쪽 마우스버튼을 사용하는걸 잊지 마세요!"
 
+#. Sound has been muted (silenced) via keyboard shortcut
 msgid "Sound muted."
 msgstr ""
 
+#. Sound has been unmuted (unsilenced) via keyboard shortcut
 msgid "Sound unmuted."
 msgstr ""
 
+#. Wait while Text tool finishes loading fonts
 msgid "Please wait..."
 msgstr "잠깐만 기다려 주세요..."
 
+#. Open dialog: 'Erase' button, to erase/deleted the selected picture
 msgid "Erase"
 msgstr "지우기"
 
+#. Open dialog: 'Slides' button, to switch to slide show mode
 msgid "Slides"
 msgstr ""
 
+#. Open dialog: 'Back' button, to dismiss Open dialog without opening a picture
 msgid "Back"
 msgstr "되 돌아가기"
 
+#. Slideshow: 'Next' button, to load next slide (image)
 #, fuzzy
 msgid "Next"
 msgstr "글"
 
+#. Slideshow: 'Play' button, to begin a slideshow sequence
 msgid "Play"
 msgstr ""
 
+#. Label for 'Letters' buttons (font selector, down the right when the Text tool is being used); used to show the difference between font faces
 msgid "Aa"
 msgstr "A가"
 
-#. FIXME: Move elsewhere! Or not?!
+#. Admittedly stupid way of determining which keys can be used for
+#. positive and negative responses in dialogs (e.g., [Y] (for 'yes') in English)
 msgid "Yes"
 msgstr "네"
 
 msgid "No"
 msgstr "아니요"
 
-#. FIXME: Move elsewhere!!!
-#. #define PROMPT_SAVE_OVER_TXT gettext_noop("Save over the older version of this picture?")
+#. Prompt to ask whether user wishes to save over old version of their file
 msgid "Replace the picture with your changes?"
 msgstr "전그림에 덮어쓸까요? 전그림은 없어집니다."
 
+#. Positive response to saving over old version
+#. (like a 'File:Save' action in other applications)
 msgid "Yes, replace the old one!"
 msgstr "네, 전그림을 덮어쓰세요!"
 
+#. Negative response to saving over old version (saves a new image)
+#. (like a 'File:Save As...' action in other applications)
 msgid "No, save a new file!"
 msgstr "아니요, 새로운 파일로 저장하죠"
 
@@ -539,6 +533,7 @@ msgid "Choose the picture you want, then click “Open”."
 msgstr "원하는 그림을 고른후 「열기」버튼을 눌러주세요."
 
 #. Let user choose images:
+#. Instructions for Slideshow file dialog (FIXME: Make a #define)
 #, fuzzy
 msgid "Choose the pictures you want, then click “Play”."
 msgstr "원하는 그림을 고른후 「열기」버튼을 눌러주세요."
@@ -551,6 +546,165 @@ msgstr "미술 프로그램"
 
 msgid "Tux Paint"
 msgstr "턱스페인트"
+
+msgid "Blocks"
+msgstr "네모나게"
+
+msgid "Chalk"
+msgstr "분필"
+
+msgid "Drip"
+msgstr "흘리게"
+
+msgid ""
+"Click and move the mouse around to turn the picture into a chalk drawing."
+msgstr "마우스를 누르면 그림이 분필로 만든 것 같이 되어요."
+
+msgid "Click and move the mouse around to make the picture blocky."
+msgstr "마우스를 누르면 그림이 네모나게 되어요."
+
+msgid "Click and move the mouse around to make the picture drip."
+msgstr "마우스를 누르면 그림이 흐르는 것 같이 되어요."
+
+msgid "Blur"
+msgstr "흐리게"
+
+msgid "Click and move the mouse around to blur the picture."
+msgstr "마우스를 누르면 그림을 흐리게 만들 수 있어요."
+
+#. Both are named "Bricks", at the moment:
+msgid "Bricks"
+msgstr "벽돌"
+
+msgid "Click and move to draw large bricks."
+msgstr "마우스를 누르면 큰 벽돌이 그려져요!"
+
+msgid "Click and move to draw small bricks."
+msgstr "마우스를 누르면 작은 벽돌이 그려져요!"
+
+msgid "Cartoon"
+msgstr "만화"
+
+msgid "Click and move the mouse around to turn the picture into a cartoon."
+msgstr "마우스를 누르면 그림이 만화 같이 변화돼요."
+
+msgid "Emboss"
+msgstr ""
+
+#, fuzzy
+msgid "Click and drag the mouse to emboss the picture."
+msgstr "마우스를 누르면 그림을 흐리게 만들 수 있어요."
+
+msgid "Lighten"
+msgstr "사라지게"
+
+msgid "Darken"
+msgstr "어둡게"
+
+msgid "Click and move to fade the colors."
+msgstr "마우스를 누르면 그림을 희미하게 만들 수 있어요."
+
+msgid "Click and move to darken the colors."
+msgstr "마우스를 누르면 그림을 어둡게 만들 수 있어요."
+
+msgid "Fill"
+msgstr "물통"
+
+msgid "Click in the picture to fill that area with color."
+msgstr "마우스를 누르면 물통을 엎을 수 있어요!"
+
+msgid "Flower"
+msgstr ""
+
+msgid "Click and drag to draw a flower stalk. Let go to finish the flower."
+msgstr ""
+
+msgid "Foam"
+msgstr ""
+
+#, fuzzy
+msgid "Click and drag the mouse to cover an area with foamy bubbles.."
+msgstr "마우스를 누르면 물통을 엎을 수 있어요!"
+
+msgid "Glass Tile"
+msgstr ""
+
+#, fuzzy
+msgid "Click and drag the mouse to put glass tile over your picture."
+msgstr "마우스를 누르면 그림을 흐리게 만들 수 있어요."
+
+msgid "Grass"
+msgstr "풀"
+
+msgid "Click and move to draw grass. Don’t forget the dirt!"
+msgstr "마우스를 누르면 풀이 그려져요. 땅도 그리는 것 잊지 마세요!"
+
+msgid "Kalidescope"
+msgstr ""
+
+msgid ""
+"Click and drag the mouse to draw with symmetric brushes (a kalidescope)."
+msgstr ""
+
+#, fuzzy
+msgid "Metal Paint"
+msgstr "물감"
+
+#, fuzzy
+msgid "Click and drag the mouse to paint with a metallic color."
+msgstr "마우스를 누르면 그림을 어둡게 만들 수 있어요."
+
+msgid "Mirror"
+msgstr "거울"
+
+msgid "Flip"
+msgstr "뒤집기"
+
+msgid "Click to flip the picture upside-down."
+msgstr "마우스를 누르면 그림이 엎어져요."
+
+msgid "Click to make a mirror image."
+msgstr "마우스를 누르면 그림이 뒤집어져요."
+
+msgid "Negative"
+msgstr "음화"
+
+msgid "Click and move the mouse around to draw a negative."
+msgstr "마우스를 누르면 그림의 색이 뒤집어져요."
+
+msgid "Rainbow"
+msgstr "무지개"
+
+msgid "You can draw in rainbow colors!"
+msgstr "여러가지의 색으로 그림을 그려 보세요."
+
+msgid "Smudge"
+msgstr "번지게"
+
+msgid "Click and move the mouse around to smudge the picture."
+msgstr "마우스를 누르면 그림을 번지게 만들 수 있어요."
+
+msgid "Tint"
+msgstr "배합"
+
+msgid "Click and move the mouse around to change the picture’s color."
+msgstr "마우스를 누르면 그림이 색이 변화돼요."
+
+#, fuzzy
+msgid "Waves"
+msgstr "저장"
+
+msgid ""
+"Click to make the picture wavy. (Click towards the top for shorter waves; "
+"the bottom for taller waves. Click towards the left for small waves; the "
+"right for wide waves.)"
+msgstr ""
+
+#~ msgid "Sparkles"
+#~ msgstr "불꽃"
+
+#~ msgid "Click and move to draw sparkles."
+#~ msgstr "마우스를 누르면 불꽃이 터지는 것 같은 그림이 나와요."
 
 #~ msgid "Starting a new picture will erase the current one!"
 #~ msgstr "새 그림을 시작하면 지금있는 그림이 없어져요!"

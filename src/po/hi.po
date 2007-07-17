@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint 0.9.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-07-04 23:03-0700\n"
+"POT-Creation-Date: 2007-07-17 08:24-0700\n"
 "PO-Revision-Date: 2004-05-26 08:44+0100\n"
 "Last-Translator: Ankit Malik <greatestankit@yahoo.co.in>\n"
 "Language-Team: Hindi\n"
@@ -15,56 +15,73 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
+#. Response to Black (0, 0, 0) color selected
 msgid "Black!"
 msgstr "काला"
 
+#. Response to Dark grey (128, 128, 128) color selected
 msgid "Dark grey! Some people spell it “dark gray”."
 msgstr ""
 
+#. Response to Light grey (192, 192, 192) color selected
 msgid "Light grey! Some people spell it “light gray”."
 msgstr ""
 
+#. Response to White (255, 255, 255) color selected
 msgid "White!"
 msgstr "सफ्ेद"
 
+#. Response to Red (255, 0, 0) color selected
 msgid "Red!"
 msgstr "लाल"
 
+#. Response to Orange (255, 128, 0) color selected
 msgid "Orange!"
 msgstr "सन्तरा"
 
+#. Response to Yellow (255, 255, 0) color selected
 msgid "Yellow!"
 msgstr "पीला"
 
+#. Response to Light green (160, 228, 128) color selected
 msgid "Light green!"
 msgstr ""
 
+#. Response to Dark green (33, 148, 70) color selected
 #, fuzzy
 msgid "Dark green!"
 msgstr "ग्रे"
 
+#. Response to "Sky" blue (138, 168, 205) color selected
 msgid "Sky blue!"
 msgstr ""
 
+#. Response to Blue (50, 100, 255) color selected
 msgid "Blue!"
 msgstr "नीला २"
 
+#. Response to Lavender (186, 157, 255) color selected
 msgid "Lavender!"
 msgstr ""
 
+#. Response to Purple (128, 0, 128) color selected
 msgid "Purple!"
 msgstr "परपल"
 
+#. Response to Pink (255, 165, 211) color selected
 msgid "Pink!"
 msgstr "गुलाबी"
 
+#. Response to Brown (128, 80, 0) color selected
 msgid "Brown!"
 msgstr "भूरा"
 
+#. Response to Tan (226, 189, 166) color selected
 #, fuzzy
 msgid "Tan!"
 msgstr "नीला १"
 
+#. Response to Beige (247, 228, 219) color selected
 msgid "Beige!"
 msgstr ""
 
@@ -72,20 +89,21 @@ msgstr ""
 #. via bugs in the SDL_ttf library. We also test fonts to be sure that
 #. they have both uppercase and lowercase letters. Note that we do not
 #. test for "Aa", because it is OK if uppercase and lowercase are the
-#. same. (but not nice -- such fonts get a low score later)
+#. same (but not nice -- such fonts get a low score later).
 #.
 #. We test the alphabet twice, to help with translation. If the users
-#. will be unable to type ASCII letters, then both lines should be
-#. translated. Otherwise, only Line X should be translated and the
-#. ASCII-only fonts should be given bad scores in the scoring code below.
-#. (the best scores going to fonts that support both)
+#. will be unable to type ASCII letters, then both Line X and Line Y
+#. should be translated. Otherwise, only Line X should be translated
+#. and the ASCII-only fonts should be given bad scores in the scoring
+#. code below (the best scores going to fonts that support both).
+#. Line X
 msgid "qx"
 msgstr ""
 
 msgid "QX"
 msgstr ""
 
-#. Line X
+#. Line Y
 msgid "qy"
 msgstr ""
 
@@ -96,194 +114,101 @@ msgstr ""
 #. the top of the list. The user will see them first. This sorting is
 #. especially important for users who have scroll buttons disabled.
 #. Translators should do whatever is needed to put crummy fonts last.
+#. distinct uppercase and lowercase (e.g., 'o' vs. 'O')
 msgid "oO"
 msgstr ""
 
-#. distinct uppercase and lowercase
+#. uncommon punctuation (e.g., '@', '#', '*', etc.)
 msgid "`\\%_@$~#{}<>^&*"
 msgstr ""
 
-#. uncommon punctuation
+#. common punctuation (e.g., '?', '!', '.', ',', etc.)
 msgid ",.?!"
 msgstr ""
 
-#. common punctuation
+#. digits (e.g., '0', '1' and '7')
 msgid "017"
 msgstr ""
 
-#. digits
+#. distinct circle-like characters (e.g., 'O' (capital oh) vs. '0' (zero))
 msgid "O0"
 msgstr ""
 
-#. distinct circle-like characters
+#. distinct line-like characters (e.g., 'l' (lowercase elle) vs. '1' (one) vs. 'I' (capital aye))
 msgid "1Il|"
 msgstr ""
 
+#. Congratulations #1
 msgid "Great!"
 msgstr "शाबाश"
 
+#. Congratulations #2
 msgid "Cool!"
 msgstr "अच्छा"
 
+#. Congratulations #3
 msgid "Keep it up!"
 msgstr "वाह"
 
+#. Congratulations #4
 msgid "Good job!"
 msgstr "स्वच्छ काम है"
 
+#. Input Method: English mode
 msgid "English"
 msgstr ""
 
+#. Input Method: Japanese Romanized Hiragana mode
 msgid "Hiragana"
 msgstr ""
 
+#. Input Method: Japanese Romanized Katakana mode
 msgid "Katakana"
 msgstr ""
 
+#. Input Method: Korean Hangul 2-Bul mode
 msgid "Hangul"
 msgstr ""
 
-msgid "Fill"
-msgstr "भरो"
-
+#. Input Method: Thai mode
 #, fuzzy
-msgid "Grass"
-msgstr "नष्ट कर"
+msgid "Thai"
+msgstr "मोटा"
 
-#, fuzzy
-msgid "Bricks"
-msgstr "ब्लाक्स"
-
-msgid "Rainbow"
-msgstr "सतरंगी"
-
-msgid "Sparkles"
-msgstr "ग्लिटरस"
-
-msgid "Blur"
-msgstr "धुंध्ला"
-
-msgid "Smudge"
-msgstr ""
-
-msgid "Lighten"
-msgstr ""
-
-msgid "Darken"
-msgstr ""
-
-msgid "Chalk"
-msgstr "चाक"
-
-msgid "Blocks"
-msgstr "ब्लाक्स"
-
-msgid "Negative"
-msgstr "उल्टे रंग"
-
-#, fuzzy
-msgid "Tint"
-msgstr "दुबला"
-
-msgid "Drip"
-msgstr "गिरता हुआ"
-
-msgid "Cartoon"
-msgstr ""
-
-msgid "Mirror"
-msgstr "शीशा"
-
-msgid "Flip"
-msgstr "ऊल्टा"
-
-msgid "Click in the picture to fill that area with color."
-msgstr "रंग भरो"
-
-#, fuzzy
-msgid "Click and move to draw grass. Don’t forget the dirt!"
-msgstr "ग्लिटरस करो"
-
-#, fuzzy
-msgid "Click and move to draw large bricks."
-msgstr "ग्लिटरस करो"
-
-#, fuzzy
-msgid "Click and move to draw small bricks."
-msgstr "ग्लिटरस करो"
-
-msgid "You can draw in rainbow colors!"
-msgstr "सतरंगी काम करो"
-
-msgid "Click and move to draw sparkles."
-msgstr "ग्लिटरस करो"
-
-msgid "Click and move the mouse around to blur the picture."
-msgstr ""
-
-#, fuzzy
-msgid "Click and move the mouse around to smudge the picture."
-msgstr "ड्रिप करो"
-
-msgid "Click and move to fade the colors."
-msgstr "फेड करो"
-
-#, fuzzy
-msgid "Click and move to darken the colors."
-msgstr "फेड करो"
-
-msgid ""
-"Click and move the mouse around to turn the picture into a chalk drawing."
-msgstr "चाक करो।"
-
-msgid "Click and move the mouse around to make the picture blocky."
-msgstr "ब्लाकस करो।"
-
-msgid "Click and move the mouse around to draw a negative."
-msgstr "रंग उल्टे करो"
-
-#, fuzzy
-msgid "Click and move the mouse around to change the picture’s color."
-msgstr "ब्लाकस करो।"
-
-msgid "Click and move the mouse around to make the picture drip."
-msgstr "ड्रिप करो"
-
-#, fuzzy
-msgid "Click and move the mouse around to turn the picture into a cartoon."
-msgstr "चाक करो।"
-
-msgid "Click to make a mirror image."
-msgstr "शीशे मे देखो"
-
-msgid "Click to flip the picture upside-down."
-msgstr "उल्टा करो"
-
+#. Square shape tool (4 equally-lengthed sides at right angles)
 msgid "Square"
 msgstr "चोकार १"
 
+#. Rectangle shape tool (4 sides at right angles)
 msgid "Rectangle"
 msgstr "चोकार २"
 
+#. Circle shape tool (X radius and Y radius are the same)
 msgid "Circle"
 msgstr "गोल १"
 
+#. Ellipse shape tool (X radius and Y radius may differ)
 msgid "Ellipse"
 msgstr ""
 
+#. Triangle shape tool (3 sides)
 msgid "Triangle"
 msgstr "त्रिकाोन"
 
+#. Pentagone shape tool (5 sides)
 msgid "Pentagon"
 msgstr "पेंण्टागन"
 
+#. Rhombus shape tool (4 sides, not at right angles)
 msgid "Rhombus"
 msgstr ""
 
+#. Description of a square
 #, fuzzy
 msgid "A square is a rectangle with four equal sides."
 msgstr "चोकार २ की चार रेखाऍं  होती है ।"
 
+#. Description of a rectangle
 #, fuzzy
 msgid "A rectangle has four sides and four right angles."
 msgstr "चोकार २ की चार रेखाऍं  होती है ।"
@@ -292,154 +217,193 @@ msgid ""
 "A circle is a curve where all points have the same distance from the center."
 msgstr ""
 
+#. Description of an ellipse
 msgid "An ellipse is a stretched circle."
 msgstr ""
 
+#. Description of a triangle
 msgid "A triangle has three sides."
 msgstr "यह त्रिकाोण है"
 
+#. Description of a pentagon
 msgid "A pentagon has five sides."
 msgstr "यह पेण्टागण है"
 
 msgid "A rhombus has four equal sides, and opposite sides are parallel."
 msgstr ""
 
+#. Title of tool selector (buttons down the left)
 msgid "Tools"
 msgstr "औजार"
 
+#. Title of color palette (buttons across the bottom)
 msgid "Colors"
 msgstr "रंग"
 
+#. Title of brush selector (buttons down the right for paint and line tools)
 msgid "Brushes"
 msgstr "बरश"
 
+#. Title of eraser selector (buttons down the right for eraser tool)
 #, fuzzy
 msgid "Erasers"
 msgstr "रबर"
 
+#. Title of stamp selector (buttons down the right for stamps tool)
 msgid "Stamps"
 msgstr "स्टॉम्प"
 
+#. Title of shape selector (buttons down the right for shapes tool)
+#. Shape creation tool (square, circle, etc.)
 msgid "Shapes"
 msgstr "आकार"
 
+#. Title of font selector (buttons down the right for text tool)
 msgid "Letters"
 msgstr "अक्शर"
 
+#. Title of magic tool selector (buttons down the right for magic (effect plugin) tool)
+#. "Magic" effects tools (blur, flip image, etc.)
 msgid "Magic"
 msgstr "जादू"
 
+#. Freehand painting tool
 msgid "Paint"
 msgstr "रंग"
 
+#. Stamp tool (aka Rubber Stamps)
 msgid "Stamp"
 msgstr "स्टॉम्प"
 
+#. Line drawing tool
 msgid "Lines"
 msgstr "रेखाऍं"
 
+#. Text tool
 msgid "Text"
 msgstr "लिखना"
 
+#. Undo last action
 msgid "Undo"
 msgstr "अन्डू"
 
+#. Redo undone action
 msgid "Redo"
 msgstr "रीडू"
 
+#. Eraser tool
 msgid "Eraser"
 msgstr "रबर"
 
+#. Start a new picture
 msgid "New"
 msgstr "नया काम"
 
+#. Open a saved picture
 #. buttons for the file open dialog
+#. Open dialog: 'Open' button, to load the selected picture
 msgid "Open"
 msgstr "खोलो"
 
+#. Save the current picture
 msgid "Save"
 msgstr "सेव"
 
+#. Print the current picture
 msgid "Print"
 msgstr "पिृंट"
 
+#. Quit/exit Tux Paint application
 msgid "Quit"
 msgstr "बंद करो"
 
+#. Paint tool instructions
 msgid "Pick a color and a brush shape to draw with."
 msgstr "रंग और ब्रुश उठाओ।"
 
+#. Stamp tool instructions
 msgid "Pick a picture to stamp around your drawing."
 msgstr "स्टाम्प के लिए कला उठाओ"
 
+#. Line tool instructions
 msgid "Click to start drawing a line. Let go to complete it."
 msgstr "रेखा बनाओ"
 
+#. Shape tool instructions
 msgid ""
 "Pick a shape. Click to pick the center, drag, then let go when it is the "
 "size you want. Move around to rotate it, and click to draw it."
 msgstr "आकारो के लिए औजार।"
 
+#. Text tool instructions
 msgid "Choose a style of text. Click on your drawing and you can start typing."
 msgstr "लिखने के लिए ढंग चुनो।"
 
+#. Magic tool instruction
 msgid "Pick a magical effect to use on your drawing!"
 msgstr "जादू का औजार चुनो"
 
-#. Undo
+#. Response to 'undo' action
 msgid "Undo!"
 msgstr "अन्डू"
 
-#. Redo
+#. Response to 'redo' action
 msgid "Redo!"
 msgstr "रीडू"
 
-#. Eraser
+#. Eraser tool
 msgid "Eraser!"
 msgstr "रबर"
 
-#. New
+#. Response to 'start a new image' action
 msgid "You now have a blank sheet to draw on!"
 msgstr "आपके पास काम के लिए खाली पृष्ट है"
 
-#. Open
+#. Response to 'open' action (while file dialog is being constructed)
 msgid "Open…"
 msgstr "खालो"
 
-#. Save
+#. Response to 'save' action
 msgid "Your image has been saved!"
 msgstr "आपका काम सेव हो गया है"
 
-#. Print
+#. Response to 'print' action (while printing, or print dialog is being used)
 msgid "Printing…"
 msgstr "पृन्टिंग …"
 
-#. Quit
+#. Response to 'quit' (exit) action
 msgid "Bye bye!"
 msgstr "अच्छा फिर मिलेंगे"
 
+#. Instruction while using Line tool (after click, before release)
 msgid "Let go of the button to complete the line."
 msgstr "पूरी रेखा बनाने के लिए खीचों"
 
+#. Instruction while using Shape tool (after first click, before release)
 msgid "Hold the button to stretch the shape."
 msgstr "आकार को बडा करने के लिए खीचों"
 
+#. Instruction while finishing Shape tool (after release, during rotation step before second click)
 msgid "Move the mouse to rotate the shape. Click to draw it."
 msgstr "आकार को घुमाने के लिए घुमाओ"
 
+#. Notification that 'New' action was aborted (current image would have been lost)
 msgid "OK then… Let’s keep drawing this one!"
 msgstr "चलो काम को जाराी रखते हब्क१ै"
 
-#. FIXME: Move elsewhere!!!
+#. Prompt to confirm user wishes to quit
 msgid "Do you really want to quit?"
 msgstr "क्या आप सही मे टक्सपेंट को बंद करना चाहते है ऋ"
 
+#. Quit prompt positive response (quit)
 msgid "Yes, I'm done!"
 msgstr ""
 
+#. Quit prompt negative response (don't quit)
 msgid "No, take me back!"
 msgstr ""
 
+#. Current picture is not saved; user is quitting
 msgid "If you quit, you’ll lose your picture! Save it?"
 msgstr "आपका काम सेव करे ऋ"
 
@@ -449,42 +413,49 @@ msgstr ""
 msgid "No, don't bother saving!"
 msgstr ""
 
+#. Current picture is not saved; user is opening another picture
 msgid "Save your picture first?"
 msgstr "कया पहले काम को सेव करे ऋ"
 
+#. Error opening picture
 msgid "Can’t open that picture!"
 msgstr "खोलने में असमर्थ !"
 
+#. Generic dialog dismissal
 msgid "OK"
 msgstr "हॉंं"
 
 #. This will be replaced with a dialog allowing color choice and Starter
 #. picking, with a "Back" option to dismiss the "New" and return to
 #. the current picture.  But for now...  (bjk 2006.02.19)
+#. Prompt to confirm starting a new picture
 #, fuzzy
 msgid "Start a new picture?"
 msgstr "नष्ट करू क्या ऋ"
 
-#. #define PROMPT_NEW_YES gettext_noop("That’s OK!")
-#. #define PROMPT_NEW_NO gettext_noop("Never mind!")
 msgid "Yes, let's start fresh!"
 msgstr ""
 
+#. Notification that 'Open' dialog has nothing to show
 msgid "There are no saved files!"
 msgstr "यहॉं तो कुछ भी नहीं है"
 
+#. Verification of print action
 msgid "Print your picture now?"
 msgstr "प्रिन्ट करू क्या"
 
 msgid "Yes, print it!"
 msgstr ""
 
+#. Confirmation of successful (we hope) printing
 msgid "Your picture has been printed!"
 msgstr "प्रिन्ट हो गयी"
 
+#. Notification that it's too soon to print again (--printdelay option is in effect)
 msgid "You can’t print yet!"
 msgstr "अभी प्रिन्ट नहीं कर सकते"
 
+#. Prompt to confirm erasing a picture in the Open dialog
 msgid "Erase this picture?"
 msgstr "नष्ट करू क्या ऋ"
 
@@ -494,52 +465,66 @@ msgstr ""
 msgid "No, don't erase it!"
 msgstr ""
 
+#. Reminder that Mouse Button 1 is the button to use in Tux Paint
 msgid "Remember to use the left mouse button!"
 msgstr ""
 
+#. Sound has been muted (silenced) via keyboard shortcut
 msgid "Sound muted."
 msgstr ""
 
+#. Sound has been unmuted (unsilenced) via keyboard shortcut
 msgid "Sound unmuted."
 msgstr ""
 
+#. Wait while Text tool finishes loading fonts
 msgid "Please wait..."
 msgstr ""
 
+#. Open dialog: 'Erase' button, to erase/deleted the selected picture
 msgid "Erase"
 msgstr "नष्ट कर"
 
+#. Open dialog: 'Slides' button, to switch to slide show mode
 msgid "Slides"
 msgstr ""
 
+#. Open dialog: 'Back' button, to dismiss Open dialog without opening a picture
 msgid "Back"
 msgstr "पीछे"
 
+#. Slideshow: 'Next' button, to load next slide (image)
 #, fuzzy
 msgid "Next"
 msgstr "लिखना"
 
+#. Slideshow: 'Play' button, to begin a slideshow sequence
 msgid "Play"
 msgstr ""
 
+#. Label for 'Letters' buttons (font selector, down the right when the Text tool is being used); used to show the difference between font faces
 msgid "Aa"
 msgstr ""
 
-#. FIXME: Move elsewhere! Or not?!
+#. Admittedly stupid way of determining which keys can be used for
+#. positive and negative responses in dialogs (e.g., [Y] (for 'yes') in English)
 msgid "Yes"
 msgstr "हॉं"
 
 msgid "No"
 msgstr "नहीं"
 
-#. FIXME: Move elsewhere!!!
-#. #define PROMPT_SAVE_OVER_TXT gettext_noop("Save over the older version of this picture?")
+#. Prompt to ask whether user wishes to save over old version of their file
 msgid "Replace the picture with your changes?"
 msgstr ""
 
+#. Positive response to saving over old version
+#. (like a 'File:Save' action in other applications)
 msgid "Yes, replace the old one!"
 msgstr ""
 
+#. Negative response to saving over old version (saves a new image)
+#. (like a 'File:Save As...' action in other applications)
 #, fuzzy
 msgid "No, save a new file!"
 msgstr "नया काम बनाओ"
@@ -548,6 +533,7 @@ msgid "Choose the picture you want, then click “Open”."
 msgstr "काम को चुन कर ‘खोलो’।"
 
 #. Let user choose images:
+#. Instructions for Slideshow file dialog (FIXME: Make a #define)
 #, fuzzy
 msgid "Choose the pictures you want, then click “Play”."
 msgstr "काम को चुन कर ‘खोलो’।"
@@ -560,6 +546,176 @@ msgstr ""
 
 msgid "Tux Paint"
 msgstr ""
+
+msgid "Blocks"
+msgstr "ब्लाक्स"
+
+msgid "Chalk"
+msgstr "चाक"
+
+msgid "Drip"
+msgstr "गिरता हुआ"
+
+msgid ""
+"Click and move the mouse around to turn the picture into a chalk drawing."
+msgstr "चाक करो।"
+
+msgid "Click and move the mouse around to make the picture blocky."
+msgstr "ब्लाकस करो।"
+
+msgid "Click and move the mouse around to make the picture drip."
+msgstr "ड्रिप करो"
+
+msgid "Blur"
+msgstr "धुंध्ला"
+
+msgid "Click and move the mouse around to blur the picture."
+msgstr ""
+
+#. Both are named "Bricks", at the moment:
+#, fuzzy
+msgid "Bricks"
+msgstr "ब्लाक्स"
+
+#, fuzzy
+msgid "Click and move to draw large bricks."
+msgstr "ग्लिटरस करो"
+
+#, fuzzy
+msgid "Click and move to draw small bricks."
+msgstr "ग्लिटरस करो"
+
+msgid "Cartoon"
+msgstr ""
+
+#, fuzzy
+msgid "Click and move the mouse around to turn the picture into a cartoon."
+msgstr "चाक करो।"
+
+msgid "Emboss"
+msgstr ""
+
+#, fuzzy
+msgid "Click and drag the mouse to emboss the picture."
+msgstr "पतला करो"
+
+msgid "Lighten"
+msgstr ""
+
+msgid "Darken"
+msgstr ""
+
+msgid "Click and move to fade the colors."
+msgstr "फेड करो"
+
+#, fuzzy
+msgid "Click and move to darken the colors."
+msgstr "फेड करो"
+
+msgid "Fill"
+msgstr "भरो"
+
+msgid "Click in the picture to fill that area with color."
+msgstr "रंग भरो"
+
+msgid "Flower"
+msgstr ""
+
+msgid "Click and drag to draw a flower stalk. Let go to finish the flower."
+msgstr ""
+
+msgid "Foam"
+msgstr ""
+
+#, fuzzy
+msgid "Click and drag the mouse to cover an area with foamy bubbles.."
+msgstr "मोटा करो"
+
+msgid "Glass Tile"
+msgstr ""
+
+#, fuzzy
+msgid "Click and drag the mouse to put glass tile over your picture."
+msgstr "पतला करो"
+
+#, fuzzy
+msgid "Grass"
+msgstr "नष्ट कर"
+
+#, fuzzy
+msgid "Click and move to draw grass. Don’t forget the dirt!"
+msgstr "ग्लिटरस करो"
+
+msgid "Kalidescope"
+msgstr ""
+
+#, fuzzy
+msgid ""
+"Click and drag the mouse to draw with symmetric brushes (a kalidescope)."
+msgstr "मोटा करो"
+
+#, fuzzy
+msgid "Metal Paint"
+msgstr "रंग"
+
+#, fuzzy
+msgid "Click and drag the mouse to paint with a metallic color."
+msgstr "पतला करो"
+
+msgid "Mirror"
+msgstr "शीशा"
+
+msgid "Flip"
+msgstr "ऊल्टा"
+
+msgid "Click to flip the picture upside-down."
+msgstr "उल्टा करो"
+
+msgid "Click to make a mirror image."
+msgstr "शीशे मे देखो"
+
+msgid "Negative"
+msgstr "उल्टे रंग"
+
+msgid "Click and move the mouse around to draw a negative."
+msgstr "रंग उल्टे करो"
+
+msgid "Rainbow"
+msgstr "सतरंगी"
+
+msgid "You can draw in rainbow colors!"
+msgstr "सतरंगी काम करो"
+
+msgid "Smudge"
+msgstr ""
+
+#, fuzzy
+msgid "Click and move the mouse around to smudge the picture."
+msgstr "ड्रिप करो"
+
+#, fuzzy
+msgid "Tint"
+msgstr "दुबला"
+
+#, fuzzy
+msgid "Click and move the mouse around to change the picture’s color."
+msgstr "ब्लाकस करो।"
+
+#, fuzzy
+msgid "Waves"
+msgstr "सेव"
+
+msgid ""
+"Click to make the picture wavy. (Click towards the top for shorter waves; "
+"the bottom for taller waves. Click towards the left for small waves; the "
+"right for wide waves.)"
+msgstr ""
+
+#~ msgid "Sparkles"
+#~ msgstr "ग्लिटरस"
+
+#~ msgid "Click and move to draw sparkles."
+#~ msgstr "ग्लिटरस करो"
 
 #~ msgid "Starting a new picture will erase the current one!"
 #~ msgstr "नया काम शुृरू करने से पुराना काम नष्ट हो जाएगा"
@@ -602,12 +758,3 @@ msgstr ""
 
 #~ msgid "Silver!"
 #~ msgstr "चांदी"
-
-#~ msgid "Thick"
-#~ msgstr "मोटा"
-
-#~ msgid "Click and move the mouse to thicken the picture."
-#~ msgstr "मोटा करो"
-
-#~ msgid "Click and move the mouse to thin the picture."
-#~ msgstr "पतला करो"

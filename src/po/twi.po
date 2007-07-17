@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-07-04 23:03-0700\n"
+"POT-Creation-Date: 2007-07-17 08:24-0700\n"
 "PO-Revision-Date: 2007-04-26 15:45+0200\n"
 "Last-Translator: Joana Portia Antwi-Danso <portnass2003@yahoo.com>\n"
 "MIME-Version: 1.0\n"
@@ -17,54 +17,71 @@ msgstr ""
 "X-Generator: Pootle 1.0beta2\n"
 
 # san fa bra
+#. Response to Black (0, 0, 0) color selected
 msgid "Black!"
 msgstr "Tuntum!"
 
+#. Response to Dark grey (128, 128, 128) color selected
 msgid "Dark grey! Some people spell it “dark gray”."
 msgstr "Nsonso a ani dum!"
 
+#. Response to Light grey (192, 192, 192) color selected
 msgid "Light grey! Some people spell it “light gray”."
 msgstr "Nsonso a ani hoa!"
 
+#. Response to White (255, 255, 255) color selected
 msgid "White!"
 msgstr "Fitaa!"
 
+#. Response to Red (255, 0, 0) color selected
 msgid "Red!"
 msgstr "Kɔkɔɔ!"
 
+#. Response to Orange (255, 128, 0) color selected
 msgid "Orange!"
 msgstr "Akutu ahosu!"
 
+#. Response to Yellow (255, 255, 0) color selected
 msgid "Yellow!"
 msgstr "Akokɔ sradeɛ!"
 
+#. Response to Light green (160, 228, 128) color selected
 msgid "Light green!"
 msgstr "Ahaban mono a ɛhoa!"
 
+#. Response to Dark green (33, 148, 70) color selected
 msgid "Dark green!"
 msgstr "Ahaban mono a edum!"
 
+#. Response to "Sky" blue (138, 168, 205) color selected
 msgid "Sky blue!"
 msgstr "Ewiem!"
 
+#. Response to Blue (50, 100, 255) color selected
 msgid "Blue!"
 msgstr "Bibiri!"
 
+#. Response to Lavender (186, 157, 255) color selected
 msgid "Lavender!"
 msgstr "Bibiri a kɔkɔɔ kakra wɔ mu!"
 
+#. Response to Purple (128, 0, 128) color selected
 msgid "Purple!"
 msgstr "Bibiri a kɔkɔɔ wɔ mu!"
 
+#. Response to Pink (255, 165, 211) color selected
 msgid "Pink!"
 msgstr "Kɔkɔɔ a ɛhoa!"
 
+#. Response to Brown (128, 80, 0) color selected
 msgid "Brown!"
 msgstr "Fam!"
 
+#. Response to Tan (226, 189, 166) color selected
 msgid "Tan!"
 msgstr "Fam a ani dum!"
 
+#. Response to Beige (247, 228, 219) color selected
 msgid "Beige!"
 msgstr "Fam a ani hoa!"
 
@@ -72,20 +89,21 @@ msgstr "Fam a ani hoa!"
 #. via bugs in the SDL_ttf library. We also test fonts to be sure that
 #. they have both uppercase and lowercase letters. Note that we do not
 #. test for "Aa", because it is OK if uppercase and lowercase are the
-#. same. (but not nice -- such fonts get a low score later)
+#. same (but not nice -- such fonts get a low score later).
 #.
 #. We test the alphabet twice, to help with translation. If the users
-#. will be unable to type ASCII letters, then both lines should be
-#. translated. Otherwise, only Line X should be translated and the
-#. ASCII-only fonts should be given bad scores in the scoring code below.
-#. (the best scores going to fonts that support both)
+#. will be unable to type ASCII letters, then both Line X and Line Y
+#. should be translated. Otherwise, only Line X should be translated
+#. and the ASCII-only fonts should be given bad scores in the scoring
+#. code below (the best scores going to fonts that support both).
+#. Line X
 msgid "qx"
 msgstr "qx"
 
 msgid "QX"
 msgstr "QX"
 
-#. Line X
+#. Line Y
 msgid "qy"
 msgstr "qy"
 
@@ -96,183 +114,99 @@ msgstr "QY"
 #. the top of the list. The user will see them first. This sorting is
 #. especially important for users who have scroll buttons disabled.
 #. Translators should do whatever is needed to put crummy fonts last.
+#. distinct uppercase and lowercase (e.g., 'o' vs. 'O')
 msgid "oO"
 msgstr "oO"
 
-#. distinct uppercase and lowercase
+#. uncommon punctuation (e.g., '@', '#', '*', etc.)
 msgid "`\\%_@$~#{}<>^&*"
 msgstr "`\\%_@$~#{}<>^&*"
 
-#. uncommon punctuation
+#. common punctuation (e.g., '?', '!', '.', ',', etc.)
 msgid ",.?!"
 msgstr ",.?!"
 
-#. common punctuation
+#. digits (e.g., '0', '1' and '7')
 msgid "017"
 msgstr "017"
 
-#. digits
+#. distinct circle-like characters (e.g., 'O' (capital oh) vs. '0' (zero))
 msgid "O0"
 msgstr "O0"
 
-#. distinct circle-like characters
+#. distinct line-like characters (e.g., 'l' (lowercase elle) vs. '1' (one) vs. 'I' (capital aye))
 msgid "1Il|"
 msgstr "1Il|"
 
+#. Congratulations #1
 msgid "Great!"
 msgstr "Mo!"
 
+#. Congratulations #2
 msgid "Cool!"
 msgstr "Nya ntoboase!"
 
+#. Congratulations #3
 msgid "Keep it up!"
 msgstr "Kɔ so saa ara!"
 
+#. Congratulations #4
 msgid "Good job!"
 msgstr "Wayɛ adwuma papa!"
 
+#. Input Method: English mode
 msgid "English"
 msgstr ""
 
+#. Input Method: Japanese Romanized Hiragana mode
 msgid "Hiragana"
 msgstr ""
 
+#. Input Method: Japanese Romanized Katakana mode
 msgid "Katakana"
 msgstr ""
 
+#. Input Method: Korean Hangul 2-Bul mode
 msgid "Hangul"
 msgstr ""
 
-msgid "Fill"
-msgstr "Hyɛ no ma"
+#. Input Method: Thai mode
+msgid "Thai"
+msgstr ""
 
-msgid "Grass"
-msgstr "Ɛserɛ"
-
-msgid "Bricks"
-msgstr "Ntayaa"
-
-msgid "Rainbow"
-msgstr "Nyankontɔn"
-
-msgid "Sparkles"
-msgstr "Ɛtew gya"
-
-msgid "Blur"
-msgstr "Wisiwisi"
-
-msgid "Smudge"
-msgstr "Yɛ no wisiwisi"
-
-msgid "Lighten"
-msgstr "Ma ani nhoa"
-
-msgid "Darken"
-msgstr "Ma ani nnum"
-
-msgid "Chalk"
-msgstr "Hyirew"
-
-msgid "Blocks"
-msgstr "Ntayaa"
-
-msgid "Negative"
-msgstr "Ne sunsum"
-
-msgid "Tint"
-msgstr "Dumm"
-
-msgid "Drip"
-msgstr "Ma no nwin"
-
-msgid "Cartoon"
-msgstr "Koliko"
-
-msgid "Mirror"
-msgstr "Ahwehwɛ"
-
-msgid "Flip"
-msgstr "Si ne tiri ase"
-
-msgid "Click in the picture to fill that area with color."
-msgstr "Mia mfoni no so na ma no fa ahosuo."
-
-msgid "Click and move to draw grass. Don’t forget the dirt!"
-msgstr "Mia so na fa kɔ draw grass. Ɛmma wo werɛ mfi efi no!"
-
-msgid "Click and move to draw large bricks."
-msgstr "Mia so na kɔ drɔ ntayaa akɛseɛ."
-
-msgid "Click and move to draw small bricks."
-msgstr "Mia so na kɔ drɔ ntayaa nketewa."
-
-msgid "You can draw in rainbow colors!"
-msgstr "Wobɛtumi adorom nyankontɔn ahosuo!"
-
-msgid "Click and move to draw sparkles."
-msgstr "Mia so na kɔ draw nea ɛte gya."
-
-msgid "Click and move the mouse around to blur the picture."
-msgstr "Mia so na fa akura no to mfoni no so ma no nyɛ wisiwisi."
-
-msgid "Click and move the mouse around to smudge the picture."
-msgstr "Fa akura no fa mfoni no so na ɛmpopa kakra."
-
-msgid "Click and move to fade the colors."
-msgstr "Mia so na fa so ma no ahosuo a ɛhoa no."
-
-msgid "Click and move to darken the colors."
-msgstr "Mia na fa akura no fa so ma nnum."
-
-msgid ""
-"Click and move the mouse around to turn the picture into a chalk drawing."
-msgstr "Fa akura no fa mfoni no so ma no nyɛ sɛ hyirew."
-
-msgid "Click and move the mouse around to make the picture blocky."
-msgstr "Fa akura no fa mfoni no so ma no nyɛ keseɛ."
-
-msgid "Click and move the mouse around to draw a negative."
-msgstr "Mia so na ma ekura no drɔ ne sunsum."
-
-msgid "Click and move the mouse around to change the picture’s color."
-msgstr "Fa akura no fa mfoni no so na sesa n'ahosuo no."
-
-msgid "Click and move the mouse around to make the picture drip."
-msgstr "Fa akura no fa mfoni no so ma ahosuo no mpe mfa ho."
-
-msgid "Click and move the mouse around to turn the picture into a cartoon."
-msgstr "Fa akura no fa mfoni no so ma no nnane koriko."
-
-msgid "Click to make a mirror image."
-msgstr "Mia akura no so ma mfoni no baako mmɛka ho."
-
-msgid "Click to flip the picture upside-down."
-msgstr "Mia so ma nfoni no nsi ne ti ase."
-
+#. Square shape tool (4 equally-lengthed sides at right angles)
 msgid "Square"
 msgstr "Nhyinan"
 
+#. Rectangle shape tool (4 sides at right angles)
 msgid "Rectangle"
 msgstr "Nhyinanfea"
 
+#. Circle shape tool (X radius and Y radius are the same)
 msgid "Circle"
 msgstr "Kurukuruwa"
 
+#. Ellipse shape tool (X radius and Y radius may differ)
 msgid "Ellipse"
 msgstr "Kurukuruwa-fea"
 
+#. Triangle shape tool (3 sides)
 msgid "Triangle"
 msgstr "Nhyiasa"
 
+#. Pentagone shape tool (5 sides)
 msgid "Pentagon"
 msgstr "Nhyianum"
 
+#. Rhombus shape tool (4 sides, not at right angles)
 msgid "Rhombus"
 msgstr "Nhyianankyeae"
 
+#. Description of a square
 msgid "A square is a rectangle with four equal sides."
 msgstr "Nhyianan yɛ nhyiae a ɛwɔ apɔw anan na ne nyinaa tenten yɛ pɛ."
 
+#. Description of a rectangle
 msgid "A rectangle has four sides and four right angles."
 msgstr "Nhyiananfea wɔ apɔw anan ne nhyianan a emu abien biara tenten yɛ pɛ."
 
@@ -281,88 +215,118 @@ msgid ""
 "A circle is a curve where all points have the same distance from the center."
 msgstr "Kurukuruwa yɛ kanko a efi mfinimfini dekɔ pɔw biara so tenten yɛ pɛ."
 
+#. Description of an ellipse
 msgid "An ellipse is a stretched circle."
 msgstr "Kurukuruwa-fea yɛ kurukuruwa a wɔayɛ no fea kakra."
 
+#. Description of a triangle
 msgid "A triangle has three sides."
 msgstr "Wei yɛ nsensaeɛ mmiensa a ahyia."
 
+#. Description of a pentagon
 msgid "A pentagon has five sides."
 msgstr "Wei yɛ nsensaeɛ nnum a ahyia."
 
 msgid "A rhombus has four equal sides, and opposite sides are parallel."
 msgstr "Wei yɛ nsensaeɛ nnan a ahyia, nsensaeɛ a ɛhwɛ anim no nyianaa yɛ pɛ."
 
+#. Title of tool selector (buttons down the left)
 msgid "Tools"
 msgstr "Nnwumade"
 
+#. Title of color palette (buttons across the bottom)
 msgid "Colors"
 msgstr "Ahosu"
 
+#. Title of brush selector (buttons down the right for paint and line tools)
 msgid "Brushes"
 msgstr "Mmorɔhye"
 
+#. Title of eraser selector (buttons down the right for eraser tool)
 msgid "Erasers"
 msgstr "Apepade"
 
+#. Title of stamp selector (buttons down the right for stamps tool)
 msgid "Stamps"
 msgstr "Setampo"
 
+#. Title of shape selector (buttons down the right for shapes tool)
+#. Shape creation tool (square, circle, etc.)
 msgid "Shapes"
 msgstr "Tebea"
 
+#. Title of font selector (buttons down the right for text tool)
 msgid "Letters"
 msgstr "Akyerɛwmma"
 
+#. Title of magic tool selector (buttons down the right for magic (effect plugin) tool)
+#. "Magic" effects tools (blur, flip image, etc.)
 msgid "Magic"
 msgstr "Nkonyaa"
 
+#. Freehand painting tool
 msgid "Paint"
 msgstr "Ahosu"
 
+#. Stamp tool (aka Rubber Stamps)
 msgid "Stamp"
 msgstr "Setampo"
 
+#. Line drawing tool
 msgid "Lines"
 msgstr "Nsensan"
 
+#. Text tool
 msgid "Text"
 msgstr "Akyerɛwde"
 
+#. Undo last action
 msgid "Undo"
 msgstr "Pepa"
 
+#. Redo undone action
 msgid "Redo"
 msgstr "San yɛ"
 
+#. Eraser tool
 msgid "Eraser"
 msgstr "Apepade"
 
+#. Start a new picture
 msgid "New"
 msgstr "Foforo"
 
+#. Open a saved picture
 #. buttons for the file open dialog
+#. Open dialog: 'Open' button, to load the selected picture
 msgid "Open"
 msgstr "Bue"
 
+#. Save the current picture
 msgid "Save"
 msgstr "Fa sie"
 
+#. Print the current picture
 msgid "Print"
 msgstr "Tintim"
 
+#. Quit/exit Tux Paint application
 msgid "Quit"
 msgstr "Fi ha"
 
+#. Paint tool instructions
 msgid "Pick a color and a brush shape to draw with."
 msgstr "Fa ahosuduru ne borɔhye a wode bɛ dorɔ."
 
+#. Stamp tool instructions
 msgid "Pick a picture to stamp around your drawing."
 msgstr "Fa mfoni a wode betintim nea wadorɔ no ho."
 
+#. Line tool instructions
 msgid "Click to start drawing a line. Let go to complete it."
 msgstr "Click to start drawing a line. Let go to complete it."
 
+#. Shape tool instructions
 msgid ""
 "Pick a shape. Click to pick the center, drag, then let go when it is the "
 "size you want. Move around to rotate it, and click to draw it."
@@ -370,67 +334,76 @@ msgstr ""
 "Fa esu bi. Mia so wɔ nfinfin na kora mu, twe na se, sɛ ne kɛseɛ no yɛ sɛ nea "
 "wo pɛ a, gyae mu."
 
+#. Text tool instructions
 msgid "Choose a style of text. Click on your drawing and you can start typing."
 msgstr ""
 "Atwerɛdeɛ su biara a wopɛ sɛ wotwerɛ gu mfoni ho no, wotumi fa de twerɛ."
 
+#. Magic tool instruction
 msgid "Pick a magical effect to use on your drawing!"
 msgstr "Fa biribi nwanwaso bi yɛ nea woredrɔ no!"
 
-#. Undo
+#. Response to 'undo' action
 msgid "Undo!"
 msgstr "Pepa!"
 
-#. Redo
+#. Response to 'redo' action
 msgid "Redo!"
 msgstr "San yɛ!"
 
-#. Eraser
+#. Eraser tool
 msgid "Eraser!"
 msgstr "Apepade!"
 
-#. New
+#. Response to 'start a new image' action
 msgid "You now have a blank sheet to draw on!"
 msgstr "Dorɔ wɔ ha na biribiara nni krataa yi so!"
 
-#. Open
+#. Response to 'open' action (while file dialog is being constructed)
 msgid "Open…"
 msgstr "Bue..."
 
-#. Save
+#. Response to 'save' action
 msgid "Your image has been saved!"
 msgstr "Yɛde wo mfoni no asie!"
 
-#. Print
+#. Response to 'print' action (while printing, or print dialog is being used)
 msgid "Printing…"
 msgstr "Ɛretintim..."
 
-#. Quit
+#. Response to 'quit' (exit) action
 msgid "Bye bye!"
 msgstr "Nantew yiye!"
 
+#. Instruction while using Line tool (after click, before release)
 msgid "Let go of the button to complete the line."
 msgstr "Kɔ so na nsensan no nsi."
 
+#. Instruction while using Shape tool (after first click, before release)
 msgid "Hold the button to stretch the shape."
 msgstr "So mu na emmue mu."
 
+#. Instruction while finishing Shape tool (after release, during rotation step before second click)
 msgid "Move the mouse to rotate the shape. Click to draw it."
 msgstr "Mia akura no so wɔ adeɛ no so ma no ntwa ne ho."
 
+#. Notification that 'New' action was aborted (current image would have been lost)
 msgid "OK then… Let’s keep drawing this one!"
 msgstr "Afei eye... Ma yɛnkɔso ndorɔ eyi!"
 
-#. FIXME: Move elsewhere!!!
+#. Prompt to confirm user wishes to quit
 msgid "Do you really want to quit?"
 msgstr "Wopɛ sɛ wofi ha?"
 
+#. Quit prompt positive response (quit)
 msgid "Yes, I'm done!"
 msgstr "Yiw, mawie!"
 
+#. Quit prompt negative response (don't quit)
 msgid "No, take me back!"
 msgstr "Daabi, fa me kɔ akyi!"
 
+#. Current picture is not saved; user is quitting
 msgid "If you quit, you’ll lose your picture! Save it?"
 msgstr "Sɛ wofi ha a, wo mfoni no bɛyera! Wode besie?"
 
@@ -440,41 +413,48 @@ msgstr "Yiw, fa sie!"
 msgid "No, don't bother saving!"
 msgstr "Daabi, mfa nsie!"
 
+#. Current picture is not saved; user is opening another picture
 msgid "Save your picture first?"
 msgstr "Wobedi kan de wo mfoni no asie?"
 
+#. Error opening picture
 msgid "Can’t open that picture!"
 msgstr "Worentumi mmue saa mfoni no!"
 
+#. Generic dialog dismissal
 msgid "OK"
 msgstr "Eye"
 
 #. This will be replaced with a dialog allowing color choice and Starter
 #. picking, with a "Back" option to dismiss the "New" and return to
 #. the current picture.  But for now...  (bjk 2006.02.19)
+#. Prompt to confirm starting a new picture
 msgid "Start a new picture?"
 msgstr "Hyɛ mfoni foforɔ ase?"
 
-#. #define PROMPT_NEW_YES gettext_noop("That’s OK!")
-#. #define PROMPT_NEW_NO gettext_noop("Never mind!")
 msgid "Yes, let's start fresh!"
 msgstr "Aane, ma yɛnhyɛ aseɛ bio!"
 
+#. Notification that 'Open' dialog has nothing to show
 msgid "There are no saved files!"
 msgstr "Womfaa biribi nsieɛ!"
 
+#. Verification of print action
 msgid "Print your picture now?"
 msgstr "Afei wopɛ sɛ wode mfoni no to krataa so?"
 
 msgid "Yes, print it!"
 msgstr "Aane, tintim!"
 
+#. Confirmation of successful (we hope) printing
 msgid "Your picture has been printed!"
 msgstr "Woatim wo mfoni no!"
 
+#. Notification that it's too soon to print again (--printdelay option is in effect)
 msgid "You can’t print yet!"
 msgstr "Wontumi ntintim seesie!"
 
+#. Prompt to confirm erasing a picture in the Open dialog
 msgid "Erase this picture?"
 msgstr "Wopɛ sɛ wo saa mfoni yi?"
 
@@ -484,51 +464,65 @@ msgstr "Aane, pepa no!"
 msgid "No, don't erase it!"
 msgstr "Daabi, mpepa no!"
 
+#. Reminder that Mouse Button 1 is the button to use in Tux Paint
 msgid "Remember to use the left mouse button!"
 msgstr "Kae na mia akura no benkum so!"
 
+#. Sound has been muted (silenced) via keyboard shortcut
 msgid "Sound muted."
 msgstr ""
 
+#. Sound has been unmuted (unsilenced) via keyboard shortcut
 msgid "Sound unmuted."
 msgstr ""
 
+#. Wait while Text tool finishes loading fonts
 msgid "Please wait..."
 msgstr "Mepawokyɛw twɛn..."
 
+#. Open dialog: 'Erase' button, to erase/deleted the selected picture
 msgid "Erase"
 msgstr "Pepa"
 
+#. Open dialog: 'Slides' button, to switch to slide show mode
 msgid "Slides"
 msgstr "Mfoni a edi hɔ"
 
+#. Open dialog: 'Back' button, to dismiss Open dialog without opening a picture
 msgid "Back"
 msgstr "Kɔ wakyi"
 
+#. Slideshow: 'Next' button, to load next slide (image)
 msgid "Next"
 msgstr "Deɛ edi hɔ"
 
+#. Slideshow: 'Play' button, to begin a slideshow sequence
 msgid "Play"
 msgstr "Di agorɔ"
 
+#. Label for 'Letters' buttons (font selector, down the right when the Text tool is being used); used to show the difference between font faces
 msgid "Aa"
 msgstr "Aa"
 
-#. FIXME: Move elsewhere! Or not?!
+#. Admittedly stupid way of determining which keys can be used for
+#. positive and negative responses in dialogs (e.g., [Y] (for 'yes') in English)
 msgid "Yes"
 msgstr "Aane"
 
 msgid "No"
 msgstr "Daabi"
 
-#. FIXME: Move elsewhere!!!
-#. #define PROMPT_SAVE_OVER_TXT gettext_noop("Save over the older version of this picture?")
+#. Prompt to ask whether user wishes to save over old version of their file
 msgid "Replace the picture with your changes?"
 msgstr "Wopɛ sɛ wosesa mfoni no?"
 
+#. Positive response to saving over old version
+#. (like a 'File:Save' action in other applications)
 msgid "Yes, replace the old one!"
 msgstr "Aane, sesa dada no!"
 
+#. Negative response to saving over old version (saves a new image)
+#. (like a 'File:Save As...' action in other applications)
 msgid "No, save a new file!"
 msgstr "Daabi, fa foforɔ no sie!"
 
@@ -536,6 +530,7 @@ msgid "Choose the picture you want, then click “Open”."
 msgstr "Wofa mfoni a wopɛ wia a, mia \"bue\" so."
 
 #. Let user choose images:
+#. Instructions for Slideshow file dialog (FIXME: Make a #define)
 msgid "Choose the pictures you want, then click “Play”."
 msgstr "Fa mfoni a wopɛ, na mia di so ma no nyi."
 
@@ -547,3 +542,162 @@ msgstr "Adeɛ a yɛde drɔ"
 
 msgid "Tux Paint"
 msgstr "Tux Paint"
+
+msgid "Blocks"
+msgstr "Ntayaa"
+
+msgid "Chalk"
+msgstr "Hyirew"
+
+msgid "Drip"
+msgstr "Ma no nwin"
+
+msgid ""
+"Click and move the mouse around to turn the picture into a chalk drawing."
+msgstr "Fa akura no fa mfoni no so ma no nyɛ sɛ hyirew."
+
+msgid "Click and move the mouse around to make the picture blocky."
+msgstr "Fa akura no fa mfoni no so ma no nyɛ keseɛ."
+
+msgid "Click and move the mouse around to make the picture drip."
+msgstr "Fa akura no fa mfoni no so ma ahosuo no mpe mfa ho."
+
+msgid "Blur"
+msgstr "Wisiwisi"
+
+msgid "Click and move the mouse around to blur the picture."
+msgstr "Mia so na fa akura no to mfoni no so ma no nyɛ wisiwisi."
+
+#. Both are named "Bricks", at the moment:
+msgid "Bricks"
+msgstr "Ntayaa"
+
+msgid "Click and move to draw large bricks."
+msgstr "Mia so na kɔ drɔ ntayaa akɛseɛ."
+
+msgid "Click and move to draw small bricks."
+msgstr "Mia so na kɔ drɔ ntayaa nketewa."
+
+msgid "Cartoon"
+msgstr "Koliko"
+
+msgid "Click and move the mouse around to turn the picture into a cartoon."
+msgstr "Fa akura no fa mfoni no so ma no nnane koriko."
+
+msgid "Emboss"
+msgstr ""
+
+#, fuzzy
+msgid "Click and drag the mouse to emboss the picture."
+msgstr "Mia so na fa akura no to mfoni no so ma no nyɛ wisiwisi."
+
+msgid "Lighten"
+msgstr "Ma ani nhoa"
+
+msgid "Darken"
+msgstr "Ma ani nnum"
+
+msgid "Click and move to fade the colors."
+msgstr "Mia so na fa so ma no ahosuo a ɛhoa no."
+
+msgid "Click and move to darken the colors."
+msgstr "Mia na fa akura no fa so ma nnum."
+
+msgid "Fill"
+msgstr "Hyɛ no ma"
+
+msgid "Click in the picture to fill that area with color."
+msgstr "Mia mfoni no so na ma no fa ahosuo."
+
+msgid "Flower"
+msgstr ""
+
+msgid "Click and drag to draw a flower stalk. Let go to finish the flower."
+msgstr ""
+
+msgid "Foam"
+msgstr ""
+
+#, fuzzy
+msgid "Click and drag the mouse to cover an area with foamy bubbles.."
+msgstr "Mia mfoni no so na ma no fa ahosuo."
+
+msgid "Glass Tile"
+msgstr ""
+
+#, fuzzy
+msgid "Click and drag the mouse to put glass tile over your picture."
+msgstr "Mia so na fa akura no to mfoni no so ma no nyɛ wisiwisi."
+
+msgid "Grass"
+msgstr "Ɛserɛ"
+
+msgid "Click and move to draw grass. Don’t forget the dirt!"
+msgstr "Mia so na fa kɔ draw grass. Ɛmma wo werɛ mfi efi no!"
+
+msgid "Kalidescope"
+msgstr ""
+
+msgid ""
+"Click and drag the mouse to draw with symmetric brushes (a kalidescope)."
+msgstr ""
+
+#, fuzzy
+msgid "Metal Paint"
+msgstr "Ahosu"
+
+#, fuzzy
+msgid "Click and drag the mouse to paint with a metallic color."
+msgstr "Mia na fa akura no fa so ma nnum."
+
+msgid "Mirror"
+msgstr "Ahwehwɛ"
+
+msgid "Flip"
+msgstr "Si ne tiri ase"
+
+msgid "Click to flip the picture upside-down."
+msgstr "Mia so ma nfoni no nsi ne ti ase."
+
+msgid "Click to make a mirror image."
+msgstr "Mia akura no so ma mfoni no baako mmɛka ho."
+
+msgid "Negative"
+msgstr "Ne sunsum"
+
+msgid "Click and move the mouse around to draw a negative."
+msgstr "Mia so na ma ekura no drɔ ne sunsum."
+
+msgid "Rainbow"
+msgstr "Nyankontɔn"
+
+msgid "You can draw in rainbow colors!"
+msgstr "Wobɛtumi adorom nyankontɔn ahosuo!"
+
+msgid "Smudge"
+msgstr "Yɛ no wisiwisi"
+
+msgid "Click and move the mouse around to smudge the picture."
+msgstr "Fa akura no fa mfoni no so na ɛmpopa kakra."
+
+msgid "Tint"
+msgstr "Dumm"
+
+msgid "Click and move the mouse around to change the picture’s color."
+msgstr "Fa akura no fa mfoni no so na sesa n'ahosuo no."
+
+#, fuzzy
+msgid "Waves"
+msgstr "Fa sie"
+
+msgid ""
+"Click to make the picture wavy. (Click towards the top for shorter waves; "
+"the bottom for taller waves. Click towards the left for small waves; the "
+"right for wide waves.)"
+msgstr ""
+
+#~ msgid "Sparkles"
+#~ msgstr "Ɛtew gya"
+
+#~ msgid "Click and move to draw sparkles."
+#~ msgstr "Mia so na kɔ draw nea ɛte gya."

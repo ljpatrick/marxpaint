@@ -67,12 +67,12 @@ typedef enum {
     SDLPANGO_ALIGN_RIGHT
 } SDLPango_Alignment;
 
-extern DECLSPEC int SDLCALL SDLPango_Init();
+extern DECLSPEC int SDLCALL SDLPango_Init(void);
 
-extern DECLSPEC int SDLCALL SDLPango_WasInit();
+extern DECLSPEC int SDLCALL SDLPango_WasInit(void);
 
 extern DECLSPEC SDLPango_Context* SDLCALL SDLPango_CreateContext_GivenFontDesc(const char* font_desc);
-extern DECLSPEC SDLPango_Context* SDLCALL SDLPango_CreateContext();
+extern DECLSPEC SDLPango_Context* SDLCALL SDLPango_CreateContext(void);
 
 extern DECLSPEC void SDLCALL SDLPango_FreeContext(
     SDLPango_Context *context);

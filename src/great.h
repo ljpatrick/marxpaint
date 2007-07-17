@@ -4,9 +4,9 @@
   For Tux Paint
   Collection of congratulatory strings (like "Great!").
 
-  Copyright (c) 2002-2006 by Bill Kendrick and others
+  Copyright (c) 2002-2007 by Bill Kendrick and others
   bill@newbreedsoftware.com
-  http://www.newbreedsoftware.com/tuxpaint/
+  http://www.tuxpaint.org/
 
   This program is free software; you can redistribute it and/or modify
   it under the terms of the GNU General Public License as published by
@@ -23,7 +23,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  September 28, 2002 - February 17, 2006
+  September 28, 2002 - July 17, 2007
   $Id$
 */
 
@@ -33,9 +33,16 @@
 
 
 const char *const great_strs[] = {
+  // Congratulations #1
   gettext_noop("Great!"),
+
+  // Congratulations #2
   gettext_noop("Cool!"),
+
+  // Congratulations #3
   gettext_noop("Keep it up!"),
+
+  // Congratulations #4
   gettext_noop("Good job!")
 };
 

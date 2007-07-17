@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Tuxpaint 0.9.2pre\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-07-04 23:03-0700\n"
+"POT-Creation-Date: 2007-07-17 08:24-0700\n"
 "PO-Revision-Date: 2006-09-07 14:30+0200\n"
 "Last-Translator: \n"
 "Language-Team: N/A <i18ngr@lists.hellug.gr>\n"
@@ -19,54 +19,71 @@ msgstr ""
 "X-Poedit-Country: GREECE\n"
 "X-Poedit-Bookmarks: 128,-1,-1,-1,-1,-1,-1,-1,-1,-1\n"
 
+#. Response to Black (0, 0, 0) color selected
 msgid "Black!"
 msgstr "Μαύρο!"
 
+#. Response to Dark grey (128, 128, 128) color selected
 msgid "Dark grey! Some people spell it “dark gray”."
 msgstr "Σκούρο Γκρίζο!"
 
+#. Response to Light grey (192, 192, 192) color selected
 msgid "Light grey! Some people spell it “light gray”."
 msgstr "Ανοιχτό Γκρίζο!"
 
+#. Response to White (255, 255, 255) color selected
 msgid "White!"
 msgstr "Άσπρο!"
 
+#. Response to Red (255, 0, 0) color selected
 msgid "Red!"
 msgstr "Κόκκινο!"
 
+#. Response to Orange (255, 128, 0) color selected
 msgid "Orange!"
 msgstr "Πορτοκαλί!"
 
+#. Response to Yellow (255, 255, 0) color selected
 msgid "Yellow!"
 msgstr "Κίτρινο!"
 
+#. Response to Light green (160, 228, 128) color selected
 msgid "Light green!"
 msgstr "Ανοιχτό Πράσινο!"
 
+#. Response to Dark green (33, 148, 70) color selected
 msgid "Dark green!"
 msgstr "Σκούρο Πράσινο!"
 
+#. Response to "Sky" blue (138, 168, 205) color selected
 msgid "Sky blue!"
 msgstr "Ανοιχτό Μπλέ!"
 
+#. Response to Blue (50, 100, 255) color selected
 msgid "Blue!"
 msgstr "Μπλε!"
 
+#. Response to Lavender (186, 157, 255) color selected
 msgid "Lavender!"
 msgstr "Λεβάντα!"
 
+#. Response to Purple (128, 0, 128) color selected
 msgid "Purple!"
 msgstr "Μωβ!"
 
+#. Response to Pink (255, 165, 211) color selected
 msgid "Pink!"
 msgstr "Ροζ!"
 
+#. Response to Brown (128, 80, 0) color selected
 msgid "Brown!"
 msgstr "Καφέ!"
 
+#. Response to Tan (226, 189, 166) color selected
 msgid "Tan!"
 msgstr "Γαλάζιο!"
 
+#. Response to Beige (247, 228, 219) color selected
 msgid "Beige!"
 msgstr "Μπέζ!"
 
@@ -74,20 +91,21 @@ msgstr "Μπέζ!"
 #. via bugs in the SDL_ttf library. We also test fonts to be sure that
 #. they have both uppercase and lowercase letters. Note that we do not
 #. test for "Aa", because it is OK if uppercase and lowercase are the
-#. same. (but not nice -- such fonts get a low score later)
+#. same (but not nice -- such fonts get a low score later).
 #.
 #. We test the alphabet twice, to help with translation. If the users
-#. will be unable to type ASCII letters, then both lines should be
-#. translated. Otherwise, only Line X should be translated and the
-#. ASCII-only fonts should be given bad scores in the scoring code below.
-#. (the best scores going to fonts that support both)
+#. will be unable to type ASCII letters, then both Line X and Line Y
+#. should be translated. Otherwise, only Line X should be translated
+#. and the ASCII-only fonts should be given bad scores in the scoring
+#. code below (the best scores going to fonts that support both).
+#. Line X
 msgid "qx"
 msgstr "qx"
 
 msgid "QX"
 msgstr "QX"
 
-#. Line X
+#. Line Y
 msgid "qy"
 msgstr "qy"
 
@@ -98,192 +116,100 @@ msgstr "QY"
 #. the top of the list. The user will see them first. This sorting is
 #. especially important for users who have scroll buttons disabled.
 #. Translators should do whatever is needed to put crummy fonts last.
+#. distinct uppercase and lowercase (e.g., 'o' vs. 'O')
 msgid "oO"
 msgstr "οΟ"
 
-#. distinct uppercase and lowercase
+#. uncommon punctuation (e.g., '@', '#', '*', etc.)
 msgid "`\\%_@$~#{}<>^&*"
 msgstr "`\\%_@$~#{}<>^&*"
 
-#. uncommon punctuation
+#. common punctuation (e.g., '?', '!', '.', ',', etc.)
 msgid ",.?!"
 msgstr ",.?!"
 
-#. common punctuation
+#. digits (e.g., '0', '1' and '7')
 msgid "017"
 msgstr "017"
 
-#. digits
+#. distinct circle-like characters (e.g., 'O' (capital oh) vs. '0' (zero))
 msgid "O0"
 msgstr "O0"
 
-#. distinct circle-like characters
+#. distinct line-like characters (e.g., 'l' (lowercase elle) vs. '1' (one) vs. 'I' (capital aye))
 msgid "1Il|"
 msgstr "1Il|"
 
+#. Congratulations #1
 msgid "Great!"
 msgstr "Μπράβο!"
 
+#. Congratulations #2
 msgid "Cool!"
 msgstr "Ωραία!"
 
+#. Congratulations #3
 msgid "Keep it up!"
 msgstr "Καλά πας, συνέχισε!"
 
+#. Congratulations #4
 msgid "Good job!"
 msgstr "Συγχαρητήρια!"
 
+#. Input Method: English mode
 msgid "English"
 msgstr ""
 
+#. Input Method: Japanese Romanized Hiragana mode
 msgid "Hiragana"
 msgstr ""
 
+#. Input Method: Japanese Romanized Katakana mode
 msgid "Katakana"
 msgstr ""
 
+#. Input Method: Korean Hangul 2-Bul mode
 msgid "Hangul"
 msgstr ""
 
-msgid "Fill"
-msgstr "Γέμισμα"
+#. Input Method: Thai mode
+#, fuzzy
+msgid "Thai"
+msgstr "Παχύ"
 
-msgid "Grass"
-msgstr "Γρασίδι"
-
-msgid "Bricks"
-msgstr "Τουβλάκια"
-
-msgid "Rainbow"
-msgstr "Ουράνιο Τόξο"
-
-msgid "Sparkles"
-msgstr "Λάμψεις"
-
-msgid "Blur"
-msgstr "Θάμπωμα"
-
-msgid "Smudge"
-msgstr "Μουτζούρα"
-
-msgid "Lighten"
-msgstr "Ελαφρύνω"
-
-msgid "Darken"
-msgstr "Σκουραίνω"
-
-msgid "Chalk"
-msgstr "Κιμωλία"
-
-msgid "Blocks"
-msgstr "Κομματάκια"
-
-msgid "Negative"
-msgstr "Αρνητικό"
-
-msgid "Tint"
-msgstr "Απόχρωση"
-
-msgid "Drip"
-msgstr "Στάζει"
-
-msgid "Cartoon"
-msgstr "Καρτούν"
-
-msgid "Mirror"
-msgstr "Καθρέπτης"
-
-msgid "Flip"
-msgstr "Άνω-Κάτω"
-
-msgid "Click in the picture to fill that area with color."
-msgstr "Κάνε κλικ και κίνησε το ποντίκι για να γεμίσεις την περιοχή με χρώμα."
-
-msgid "Click and move to draw grass. Don’t forget the dirt!"
-msgstr ""
-"Κάνε κλικ και κούνα το ποντίκι για να ζωγραφίσεις το γρασίδι. Προσοχή μην "
-"ξεχάσεις το χώμα!"
-
-msgid "Click and move to draw large bricks."
-msgstr "Κάνε κλικ και κίνησε το ποντίκι για να ζωγραφίσεις μεγάλα τούβλα."
-
-msgid "Click and move to draw small bricks."
-msgstr "Κάνε κλικ και και κίνησε το ποντίκι για να ζωγραφίσεις μικρά τούβλα."
-
-msgid "You can draw in rainbow colors!"
-msgstr "Μπορείς να ζωγραφίσεις με τα χρώματα του ουράνιου τόξου!"
-
-msgid "Click and move to draw sparkles."
-msgstr "Κάνε κλικ και και κίνησε το ποντίκι για να ζωγραφίσεις λάμψεις."
-
-msgid "Click and move the mouse around to blur the picture."
-msgstr "Κάνε κλικ και κίνησε το ποντίκι για να θαμπώσεις τη ζωγραφιά."
-
-msgid "Click and move the mouse around to smudge the picture."
-msgstr "Κάνε κλικ και κίνησε το ποντίκι για να μουτζουρώσεις τη ζωγραφιά."
-
-msgid "Click and move to fade the colors."
-msgstr "Κάνε κλικ και  κίνησε το ποντίκι για να ξεθωριάσεις τα χρώματα."
-
-msgid "Click and move to darken the colors."
-msgstr "Κάνε κλικ και και κίνησε το ποντίκι για να σκουρίνεις τα χρώματα."
-
-msgid ""
-"Click and move the mouse around to turn the picture into a chalk drawing."
-msgstr ""
-"Κάνε κλικ και κίνησε το ποντίκι για να μετατρέψεις την εικόνα σε σχέδιο με "
-"κιμωλία."
-
-msgid "Click and move the mouse around to make the picture blocky."
-msgstr "Κάνε κλικ και κίνησε το ποντίκι για να κάνεις τη ζωγραφιά κομματάκια."
-
-msgid "Click and move the mouse around to draw a negative."
-msgstr ""
-"Κάνε κλικ και κίνησε το ποντίκι για να κάνεις τη ζωγραφιά να μοιάζει με "
-"αρνητικό φωτογραφίας."
-
-msgid "Click and move the mouse around to change the picture’s color."
-msgstr ""
-"Κάνε κλικ και κίνησε το ποντίκι για να αλλάξεις τα χρώματα της εικόνας."
-
-msgid "Click and move the mouse around to make the picture drip."
-msgstr "Κάνε κλικ και κίνησε το ποντίκι για να κάνεις τη ζωγραφιά να στάζει."
-
-msgid "Click and move the mouse around to turn the picture into a cartoon."
-msgstr ""
-"Κάνε κλικ και κίνησε το ποντίκι για να κάνεις τη ζωγραφιά να μοιάζει με "
-"καρτούν."
-
-msgid "Click to make a mirror image."
-msgstr "Κάνε κλικ για να φτιάξεις μια εικόνα-είδωλο."
-
-msgid "Click to flip the picture upside-down."
-msgstr "Κάνε κλικ για να γυρίσεις τη ζωγραφιά άνω-κάτω."
-
+#. Square shape tool (4 equally-lengthed sides at right angles)
 msgid "Square"
 msgstr "Τετράγωνο"
 
+#. Rectangle shape tool (4 sides at right angles)
 msgid "Rectangle"
 msgstr "Ορθογώνιο"
 
+#. Circle shape tool (X radius and Y radius are the same)
 msgid "Circle"
 msgstr "Κύκλος"
 
+#. Ellipse shape tool (X radius and Y radius may differ)
 msgid "Ellipse"
 msgstr "Έλλειψη"
 
+#. Triangle shape tool (3 sides)
 msgid "Triangle"
 msgstr "Τρίγωνο"
 
+#. Pentagone shape tool (5 sides)
 msgid "Pentagon"
 msgstr "Πεντάγωνο"
 
+#. Rhombus shape tool (4 sides, not at right angles)
 msgid "Rhombus"
 msgstr "Ρόμβος"
 
+#. Description of a square
 msgid "A square is a rectangle with four equal sides."
 msgstr "Το ορθογώνιο έχει τέσσερις ίσες πλευρές."
 
+#. Description of a rectangle
 msgid "A rectangle has four sides and four right angles."
 msgstr ""
 "Το ορθογώνιο παραλληλόγραμμο έχει τέσσερις πλευρές και τέσσερις ορθές γωνίες."
@@ -295,12 +221,15 @@ msgstr ""
 "Ένας κύκλος είναι μια καμπύλη γραμμή, της οποίας όλα τα σημεία απέχουν το "
 "ίδιο από το κέντρο της."
 
+#. Description of an ellipse
 msgid "An ellipse is a stretched circle."
 msgstr "Η έλλειψη είναι ένας τεντωμένος κύκλος."
 
+#. Description of a triangle
 msgid "A triangle has three sides."
 msgstr "Το τρίγωνο έχει τρεις πλευρές."
 
+#. Description of a pentagon
 msgid "A pentagon has five sides."
 msgstr "Το πεντάγωνο έχει πέντε πλευρές."
 
@@ -309,78 +238,105 @@ msgstr ""
 "Ένας ρόμβος έχει τέσσερις ίσες πλευρές και οι απέναντι πλευρές είναι "
 "παράλληλες."
 
+#. Title of tool selector (buttons down the left)
 msgid "Tools"
 msgstr "Εργαλεία"
 
+#. Title of color palette (buttons across the bottom)
 msgid "Colors"
 msgstr "Χρώματα"
 
+#. Title of brush selector (buttons down the right for paint and line tools)
 msgid "Brushes"
 msgstr "Πινέλα"
 
+#. Title of eraser selector (buttons down the right for eraser tool)
 msgid "Erasers"
 msgstr "Σβηστήρες"
 
+#. Title of stamp selector (buttons down the right for stamps tool)
 msgid "Stamps"
 msgstr "Στάμπες"
 
+#. Title of shape selector (buttons down the right for shapes tool)
+#. Shape creation tool (square, circle, etc.)
 msgid "Shapes"
 msgstr "Σχήματα"
 
+#. Title of font selector (buttons down the right for text tool)
 msgid "Letters"
 msgstr "Γράμματα"
 
+#. Title of magic tool selector (buttons down the right for magic (effect plugin) tool)
+#. "Magic" effects tools (blur, flip image, etc.)
 msgid "Magic"
 msgstr "Μαγικά"
 
+#. Freehand painting tool
 msgid "Paint"
 msgstr "Ζωγραφιά"
 
+#. Stamp tool (aka Rubber Stamps)
 msgid "Stamp"
 msgstr "Στάμπα"
 
+#. Line drawing tool
 msgid "Lines"
 msgstr "Γραμμές"
 
+#. Text tool
 msgid "Text"
 msgstr "Κείμενο"
 
+#. Undo last action
 msgid "Undo"
 msgstr "Αναίρεση"
 
+#. Redo undone action
 msgid "Redo"
 msgstr "Επανάληψη"
 
+#. Eraser tool
 msgid "Eraser"
 msgstr "Σβηστήρας"
 
+#. Start a new picture
 msgid "New"
 msgstr "Νέο"
 
+#. Open a saved picture
 #. buttons for the file open dialog
+#. Open dialog: 'Open' button, to load the selected picture
 msgid "Open"
 msgstr "Άνοιγμα"
 
+#. Save the current picture
 msgid "Save"
 msgstr "Φύλαξη"
 
+#. Print the current picture
 msgid "Print"
 msgstr "Εκτύπωση"
 
+#. Quit/exit Tux Paint application
 msgid "Quit"
 msgstr "Έξοδος"
 
+#. Paint tool instructions
 msgid "Pick a color and a brush shape to draw with."
 msgstr "Διάλεξε  χρώμα και μορφή πινέλου για να ζωγραφίσεις."
 
+#. Stamp tool instructions
 msgid "Pick a picture to stamp around your drawing."
 msgstr "Διάλεξε μία εικόνα για να σταμπωθεί γύρω από τη ζωγραφιά σου."
 
+#. Line tool instructions
 msgid "Click to start drawing a line. Let go to complete it."
 msgstr ""
 "Κάνε κλικ για να αρχίσεις να ζωγραφίζεις μίας γραμμής. Άφησε το πλήκτρο του "
 "ποντικιού όταν φτάσεις στο τέλος της γραμμής."
 
+#. Shape tool instructions
 msgid ""
 "Pick a shape. Click to pick the center, drag, then let go when it is the "
 "size you want. Move around to rotate it, and click to draw it."
@@ -391,68 +347,77 @@ msgstr ""
 "ποντίκι δεξιά-αριστερά για να περιστρέψεις το σχήμα, και ξανακάνε κλικ για "
 "να το ζωγραφίσεις."
 
+#. Text tool instructions
 msgid "Choose a style of text. Click on your drawing and you can start typing."
 msgstr ""
 "Διάλεξε ύφος κειμένου. Κάνε κλικ στη ζωγραφιά σου και άρχισε να γράφεις."
 
+#. Magic tool instruction
 msgid "Pick a magical effect to use on your drawing!"
 msgstr "Διάλεξε ένα μαγικό εφφέ για να χρησιμοποιήσεις στο σχέδιό σου!"
 
-#. Undo
+#. Response to 'undo' action
 msgid "Undo!"
 msgstr "Αναίρεση!"
 
-#. Redo
+#. Response to 'redo' action
 msgid "Redo!"
 msgstr "Επανάληψη!"
 
-#. Eraser
+#. Eraser tool
 msgid "Eraser!"
 msgstr "Σβηστήρας!"
 
-#. New
+#. Response to 'start a new image' action
 msgid "You now have a blank sheet to draw on!"
 msgstr "Τώρα έχεις ένα λευκό φύλλο για να σχεδιάσεις!"
 
-#. Open
+#. Response to 'open' action (while file dialog is being constructed)
 msgid "Open…"
 msgstr "Άνοιγμα…"
 
-#. Save
+#. Response to 'save' action
 msgid "Your image has been saved!"
 msgstr "Η εικόνα σου αποθηκεύθηκε!"
 
-#. Print
+#. Response to 'print' action (while printing, or print dialog is being used)
 msgid "Printing…"
 msgstr "Εκτύπωση…"
 
-#. Quit
+#. Response to 'quit' (exit) action
 msgid "Bye bye!"
 msgstr "Γειά χαρά!"
 
+#. Instruction while using Line tool (after click, before release)
 msgid "Let go of the button to complete the line."
 msgstr "Άφησε το πλήκτρο του ποντικιού για να ολοκληρωθεί η γραμμή."
 
+#. Instruction while using Shape tool (after first click, before release)
 msgid "Hold the button to stretch the shape."
 msgstr "Κράτησε πατημένο το πλήκτρο του ποντικιού για να τεντώσεις το σχήμα."
 
+#. Instruction while finishing Shape tool (after release, during rotation step before second click)
 msgid "Move the mouse to rotate the shape. Click to draw it."
 msgstr ""
 "Κίνησε το ποντίκι για να περιστραφεί το σχήμα. Κάνε κλικ για να σχεδιαστεί."
 
+#. Notification that 'New' action was aborted (current image would have been lost)
 msgid "OK then… Let’s keep drawing this one!"
 msgstr "Εντάξει λοιπόν… Ας συνεχίσουμε τη σχεδίαση του ίδιου!"
 
-#. FIXME: Move elsewhere!!!
+#. Prompt to confirm user wishes to quit
 msgid "Do you really want to quit?"
 msgstr "Σίγουρα θέλεις να βγεις από το πρόγραμμα;"
 
+#. Quit prompt positive response (quit)
 msgid "Yes, I'm done!"
 msgstr "Ναι είμαι έτοιμος!"
 
+#. Quit prompt negative response (don't quit)
 msgid "No, take me back!"
 msgstr "Όχι δεν έχω τελειώσει ακόμα!"
 
+#. Current picture is not saved; user is quitting
 msgid "If you quit, you’ll lose your picture! Save it?"
 msgstr "Αν βγεις από το πρόγραμμα, θα χαθεί η εικόνα σου! Να σωθεί;"
 
@@ -462,41 +427,48 @@ msgstr "Ναι, αποθήκευσέ το"
 msgid "No, don't bother saving!"
 msgstr "Όχι μην την σώσεις!"
 
+#. Current picture is not saved; user is opening another picture
 msgid "Save your picture first?"
 msgstr "Να σωθεί η εικόνα σου πρώτα;"
 
+#. Error opening picture
 msgid "Can’t open that picture!"
 msgstr "Δεν μπορώ να ανοίξε αυτή τη ζωγραφιά!"
 
+#. Generic dialog dismissal
 msgid "OK"
 msgstr "Εντάξει"
 
 #. This will be replaced with a dialog allowing color choice and Starter
 #. picking, with a "Back" option to dismiss the "New" and return to
 #. the current picture.  But for now...  (bjk 2006.02.19)
+#. Prompt to confirm starting a new picture
 msgid "Start a new picture?"
 msgstr "Να αρχίσουμε μια καινούργια ζωγραφιά;"
 
-#. #define PROMPT_NEW_YES gettext_noop("That’s OK!")
-#. #define PROMPT_NEW_NO gettext_noop("Never mind!")
 msgid "Yes, let's start fresh!"
 msgstr "Ναι, ας ξεκινήσουμε από την αρχή!"
 
+#. Notification that 'Open' dialog has nothing to show
 msgid "There are no saved files!"
 msgstr "Δεν υπάρχουν αποθηκευμένα αρχεία!"
 
+#. Verification of print action
 msgid "Print your picture now?"
 msgstr "Να εκτυπώσω την ζωγραφιά σου;"
 
 msgid "Yes, print it!"
 msgstr "Ναι, τύπωσέ το!"
 
+#. Confirmation of successful (we hope) printing
 msgid "Your picture has been printed!"
 msgstr "Η εικόνα σου εκτυπώθηκε!"
 
+#. Notification that it's too soon to print again (--printdelay option is in effect)
 msgid "You can’t print yet!"
 msgstr "Δεν μπορείς να τυπώσεις ακόμη!"
 
+#. Prompt to confirm erasing a picture in the Open dialog
 msgid "Erase this picture?"
 msgstr "Να σβήσω αυτήν την εικόνα;"
 
@@ -506,52 +478,66 @@ msgstr "Ναι, σβήστο!"
 msgid "No, don't erase it!"
 msgstr "Όχι, μην το σβήσεις!"
 
+#. Reminder that Mouse Button 1 is the button to use in Tux Paint
 msgid "Remember to use the left mouse button!"
 msgstr "Προσοχή, πρέπει να χρησιμοποιείς το αριστερό πλήκτρο του ποντικιού!"
 
+#. Sound has been muted (silenced) via keyboard shortcut
 msgid "Sound muted."
 msgstr ""
 
+#. Sound has been unmuted (unsilenced) via keyboard shortcut
 msgid "Sound unmuted."
 msgstr ""
 
+#. Wait while Text tool finishes loading fonts
 msgid "Please wait..."
 msgstr "Παρακαλώ περιμένετε..."
 
+#. Open dialog: 'Erase' button, to erase/deleted the selected picture
 msgid "Erase"
 msgstr "Σβήσιμο"
 
+#. Open dialog: 'Slides' button, to switch to slide show mode
 msgid "Slides"
 msgstr ""
 
+#. Open dialog: 'Back' button, to dismiss Open dialog without opening a picture
 msgid "Back"
 msgstr "Προηγούμενο"
 
+#. Slideshow: 'Next' button, to load next slide (image)
 #, fuzzy
 msgid "Next"
 msgstr "Κείμενο"
 
+#. Slideshow: 'Play' button, to begin a slideshow sequence
 msgid "Play"
 msgstr ""
 
+#. Label for 'Letters' buttons (font selector, down the right when the Text tool is being used); used to show the difference between font faces
 msgid "Aa"
 msgstr "Αα"
 
-#. FIXME: Move elsewhere! Or not?!
+#. Admittedly stupid way of determining which keys can be used for
+#. positive and negative responses in dialogs (e.g., [Y] (for 'yes') in English)
 msgid "Yes"
 msgstr "Ναι"
 
 msgid "No"
 msgstr "Όχι"
 
-#. FIXME: Move elsewhere!!!
-#. #define PROMPT_SAVE_OVER_TXT gettext_noop("Save over the older version of this picture?")
+#. Prompt to ask whether user wishes to save over old version of their file
 msgid "Replace the picture with your changes?"
 msgstr "Να αντικαταστήσω την ζωγραφιά με τις αλλαγές που έκανες;"
 
+#. Positive response to saving over old version
+#. (like a 'File:Save' action in other applications)
 msgid "Yes, replace the old one!"
 msgstr "Ναι, αντικατέστησε την παλιά ζωγραφιά"
 
+#. Negative response to saving over old version (saves a new image)
+#. (like a 'File:Save As...' action in other applications)
 msgid "No, save a new file!"
 msgstr "Όχι, αποθήκευση σε νέο αρχείο!"
 
@@ -559,6 +545,7 @@ msgid "Choose the picture you want, then click “Open”."
 msgstr "Επέλεξε την ζωγραφιά που θέλεις, και μετά πάτησε “Άνοιγμα”."
 
 #. Let user choose images:
+#. Instructions for Slideshow file dialog (FIXME: Make a #define)
 #, fuzzy
 msgid "Choose the pictures you want, then click “Play”."
 msgstr "Επέλεξε την ζωγραφιά που θέλεις, και μετά πάτησε “Άνοιγμα”."
@@ -571,6 +558,175 @@ msgstr "Πρόγραμμα ζωγραφικής"
 
 msgid "Tux Paint"
 msgstr "Tux Paint"
+
+msgid "Blocks"
+msgstr "Κομματάκια"
+
+msgid "Chalk"
+msgstr "Κιμωλία"
+
+msgid "Drip"
+msgstr "Στάζει"
+
+msgid ""
+"Click and move the mouse around to turn the picture into a chalk drawing."
+msgstr ""
+"Κάνε κλικ και κίνησε το ποντίκι για να μετατρέψεις την εικόνα σε σχέδιο με "
+"κιμωλία."
+
+msgid "Click and move the mouse around to make the picture blocky."
+msgstr "Κάνε κλικ και κίνησε το ποντίκι για να κάνεις τη ζωγραφιά κομματάκια."
+
+msgid "Click and move the mouse around to make the picture drip."
+msgstr "Κάνε κλικ και κίνησε το ποντίκι για να κάνεις τη ζωγραφιά να στάζει."
+
+msgid "Blur"
+msgstr "Θάμπωμα"
+
+msgid "Click and move the mouse around to blur the picture."
+msgstr "Κάνε κλικ και κίνησε το ποντίκι για να θαμπώσεις τη ζωγραφιά."
+
+#. Both are named "Bricks", at the moment:
+msgid "Bricks"
+msgstr "Τουβλάκια"
+
+msgid "Click and move to draw large bricks."
+msgstr "Κάνε κλικ και κίνησε το ποντίκι για να ζωγραφίσεις μεγάλα τούβλα."
+
+msgid "Click and move to draw small bricks."
+msgstr "Κάνε κλικ και και κίνησε το ποντίκι για να ζωγραφίσεις μικρά τούβλα."
+
+msgid "Cartoon"
+msgstr "Καρτούν"
+
+msgid "Click and move the mouse around to turn the picture into a cartoon."
+msgstr ""
+"Κάνε κλικ και κίνησε το ποντίκι για να κάνεις τη ζωγραφιά να μοιάζει με "
+"καρτούν."
+
+msgid "Emboss"
+msgstr ""
+
+#, fuzzy
+msgid "Click and drag the mouse to emboss the picture."
+msgstr "Κάνε κλικ και κίνησε το ποντίκι για να λεπτύνεις την εικόνα"
+
+msgid "Lighten"
+msgstr "Ελαφρύνω"
+
+msgid "Darken"
+msgstr "Σκουραίνω"
+
+msgid "Click and move to fade the colors."
+msgstr "Κάνε κλικ και  κίνησε το ποντίκι για να ξεθωριάσεις τα χρώματα."
+
+msgid "Click and move to darken the colors."
+msgstr "Κάνε κλικ και και κίνησε το ποντίκι για να σκουρίνεις τα χρώματα."
+
+msgid "Fill"
+msgstr "Γέμισμα"
+
+msgid "Click in the picture to fill that area with color."
+msgstr "Κάνε κλικ και κίνησε το ποντίκι για να γεμίσεις την περιοχή με χρώμα."
+
+msgid "Flower"
+msgstr ""
+
+msgid "Click and drag to draw a flower stalk. Let go to finish the flower."
+msgstr ""
+
+msgid "Foam"
+msgstr ""
+
+#, fuzzy
+msgid "Click and drag the mouse to cover an area with foamy bubbles.."
+msgstr "Κάνε κλικ και κίνησε το ποντίκι για να παχύνεις την εικόνα"
+
+msgid "Glass Tile"
+msgstr ""
+
+#, fuzzy
+msgid "Click and drag the mouse to put glass tile over your picture."
+msgstr "Κάνε κλικ και κίνησε το ποντίκι για να λεπτύνεις την εικόνα"
+
+msgid "Grass"
+msgstr "Γρασίδι"
+
+msgid "Click and move to draw grass. Don’t forget the dirt!"
+msgstr ""
+"Κάνε κλικ και κούνα το ποντίκι για να ζωγραφίσεις το γρασίδι. Προσοχή μην "
+"ξεχάσεις το χώμα!"
+
+msgid "Kalidescope"
+msgstr ""
+
+#, fuzzy
+msgid ""
+"Click and drag the mouse to draw with symmetric brushes (a kalidescope)."
+msgstr "Κάνε κλικ και κίνησε το ποντίκι για να παχύνεις την εικόνα"
+
+#, fuzzy
+msgid "Metal Paint"
+msgstr "Ζωγραφιά"
+
+#, fuzzy
+msgid "Click and drag the mouse to paint with a metallic color."
+msgstr "Κάνε κλικ και κίνησε το ποντίκι για να λεπτύνεις την εικόνα"
+
+msgid "Mirror"
+msgstr "Καθρέπτης"
+
+msgid "Flip"
+msgstr "Άνω-Κάτω"
+
+msgid "Click to flip the picture upside-down."
+msgstr "Κάνε κλικ για να γυρίσεις τη ζωγραφιά άνω-κάτω."
+
+msgid "Click to make a mirror image."
+msgstr "Κάνε κλικ για να φτιάξεις μια εικόνα-είδωλο."
+
+msgid "Negative"
+msgstr "Αρνητικό"
+
+msgid "Click and move the mouse around to draw a negative."
+msgstr ""
+"Κάνε κλικ και κίνησε το ποντίκι για να κάνεις τη ζωγραφιά να μοιάζει με "
+"αρνητικό φωτογραφίας."
+
+msgid "Rainbow"
+msgstr "Ουράνιο Τόξο"
+
+msgid "You can draw in rainbow colors!"
+msgstr "Μπορείς να ζωγραφίσεις με τα χρώματα του ουράνιου τόξου!"
+
+msgid "Smudge"
+msgstr "Μουτζούρα"
+
+msgid "Click and move the mouse around to smudge the picture."
+msgstr "Κάνε κλικ και κίνησε το ποντίκι για να μουτζουρώσεις τη ζωγραφιά."
+
+msgid "Tint"
+msgstr "Απόχρωση"
+
+msgid "Click and move the mouse around to change the picture’s color."
+msgstr ""
+"Κάνε κλικ και κίνησε το ποντίκι για να αλλάξεις τα χρώματα της εικόνας."
+
+#, fuzzy
+msgid "Waves"
+msgstr "Φύλαξη"
+
+msgid ""
+"Click to make the picture wavy. (Click towards the top for shorter waves; "
+"the bottom for taller waves. Click towards the left for small waves; the "
+"right for wide waves.)"
+msgstr ""
+
+#~ msgid "Sparkles"
+#~ msgstr "Λάμψεις"
+
+#~ msgid "Click and move to draw sparkles."
+#~ msgstr "Κάνε κλικ και και κίνησε το ποντίκι για να ζωγραφίσεις λάμψεις."
 
 #~ msgid "Starting a new picture will erase the current one!"
 #~ msgstr "Αρχίζοντας μια νέα εικόνα θα σβηστεί η παλιά!"
@@ -613,17 +769,6 @@ msgstr "Tux Paint"
 #, fuzzy
 #~ msgid "Lime!"
 #~ msgstr "Γραμμές"
-
-#~ msgid "Thick"
-#~ msgstr "Παχύ"
-
-#, fuzzy
-#~ msgid "Click and move the mouse to thicken the picture."
-#~ msgstr "Κάνε κλικ και κίνησε το ποντίκι για να παχύνεις την εικόνα"
-
-#, fuzzy
-#~ msgid "Click and move the mouse to thin the picture."
-#~ msgstr "Κάνε κλικ και κίνησε το ποντίκι για να λεπτύνεις την εικόνα"
 
 #~ msgid "Okay"
 #~ msgstr "Εντάξει"

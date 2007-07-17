@@ -9,7 +9,7 @@ http://www.tuxpaint.org/
 $Id$
 
 
-2007.July.15 (0.9.18)
+2007.July.17 (0.9.18)
   * System-Related Improvements:
     ----------------------------
     * Added an API for developing Magic tools as plug-ins.
@@ -50,6 +50,14 @@ $Id$
     -----------
     * Sparkles (based on old Magic Tool)
 
+  * New Starters:
+    -------------
+    * Canada map
+      Ed Monty <edmonty@gmail.com>
+
+    * Japan map
+      Ed Monty <edmonty@gmail.com>
+
   * New Magic tools:
     ----------------
     * Kalidescope
@@ -88,6 +96,12 @@ $Id$
 
     * South African English translation
       Caroline Ford <caroline.ford.work@googlemail.com>
+
+    * Vietnamese
+      Clytie Siddall <clytie@riverland.net.au>
+
+    * Improved comments near gettext() calls in the source code, to provide
+      useful descriptions of each string in the POT (translation template).
 
 
 2007.July.1 (0.9.17)

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-07-04 23:03-0700\n"
+"POT-Creation-Date: 2007-07-17 08:24-0700\n"
 "PO-Revision-Date: 2006-10-09 20:32+0200\n"
 "Last-Translator: Vincent Mahlangu <vmahlangu@parliament.gov.za>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,54 +16,71 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Pootle 0.10\n"
 
+#. Response to Black (0, 0, 0) color selected
 msgid "Black!"
 msgstr "Nzima!"
 
+#. Response to Dark grey (128, 128, 128) color selected
 msgid "Dark grey! Some people spell it “dark gray”."
 msgstr "Nzotho okuqinileko!"
 
+#. Response to Light grey (192, 192, 192) color selected
 msgid "Light grey! Some people spell it “light gray”."
 msgstr "Nzotho okulula!"
 
+#. Response to White (255, 255, 255) color selected
 msgid "White!"
 msgstr "Mhlophe!"
 
+#. Response to Red (255, 0, 0) color selected
 msgid "Red!"
 msgstr "Bomvu!"
 
+#. Response to Orange (255, 128, 0) color selected
 msgid "Orange!"
 msgstr "Salamune!"
 
+#. Response to Yellow (255, 255, 0) color selected
 msgid "Yellow!"
 msgstr "Surulani!"
 
+#. Response to Light green (160, 228, 128) color selected
 msgid "Light green!"
 msgstr "Hlaza okulula!"
 
+#. Response to Dark green (33, 148, 70) color selected
 msgid "Dark green!"
 msgstr "Hlaza okuqinileko!"
 
+#. Response to "Sky" blue (138, 168, 205) color selected
 msgid "Sky blue!"
 msgstr "Hlaza kwesibhakabhaka!"
 
+#. Response to Blue (50, 100, 255) color selected
 msgid "Blue!"
 msgstr "Hlaza!"
 
+#. Response to Lavender (186, 157, 255) color selected
 msgid "Lavender!"
 msgstr "Phephuli ngokufipheleko!"
 
+#. Response to Purple (128, 0, 128) color selected
 msgid "Purple!"
 msgstr "Phephuli!"
 
+#. Response to Pink (255, 165, 211) color selected
 msgid "Pink!"
 msgstr "Bukhobe!"
 
+#. Response to Brown (128, 80, 0) color selected
 msgid "Brown!"
 msgstr "Zotho!"
 
+#. Response to Tan (226, 189, 166) color selected
 msgid "Tan!"
 msgstr "Theni!"
 
+#. Response to Beige (247, 228, 219) color selected
 msgid "Beige!"
 msgstr "Zotho ngokufipheleko!"
 
@@ -71,20 +88,21 @@ msgstr "Zotho ngokufipheleko!"
 #. via bugs in the SDL_ttf library. We also test fonts to be sure that
 #. they have both uppercase and lowercase letters. Note that we do not
 #. test for "Aa", because it is OK if uppercase and lowercase are the
-#. same. (but not nice -- such fonts get a low score later)
+#. same (but not nice -- such fonts get a low score later).
 #.
 #. We test the alphabet twice, to help with translation. If the users
-#. will be unable to type ASCII letters, then both lines should be
-#. translated. Otherwise, only Line X should be translated and the
-#. ASCII-only fonts should be given bad scores in the scoring code below.
-#. (the best scores going to fonts that support both)
+#. will be unable to type ASCII letters, then both Line X and Line Y
+#. should be translated. Otherwise, only Line X should be translated
+#. and the ASCII-only fonts should be given bad scores in the scoring
+#. code below (the best scores going to fonts that support both).
+#. Line X
 msgid "qx"
 msgstr "qx"
 
 msgid "QX"
 msgstr "QX"
 
-#. Line X
+#. Line Y
 msgid "qy"
 msgstr "qy"
 
@@ -95,192 +113,99 @@ msgstr "QY"
 #. the top of the list. The user will see them first. This sorting is
 #. especially important for users who have scroll buttons disabled.
 #. Translators should do whatever is needed to put crummy fonts last.
+#. distinct uppercase and lowercase (e.g., 'o' vs. 'O')
 msgid "oO"
 msgstr "oO"
 
-#. distinct uppercase and lowercase
+#. uncommon punctuation (e.g., '@', '#', '*', etc.)
 msgid "`\\%_@$~#{}<>^&*"
 msgstr "`\\%_@$~#{}<>^&*"
 
-#. uncommon punctuation
+#. common punctuation (e.g., '?', '!', '.', ',', etc.)
 msgid ",.?!"
 msgstr ",.?!"
 
-#. common punctuation
+#. digits (e.g., '0', '1' and '7')
 msgid "017"
 msgstr "017"
 
-#. digits
+#. distinct circle-like characters (e.g., 'O' (capital oh) vs. '0' (zero))
 msgid "O0"
 msgstr "o0"
 
-#. distinct circle-like characters
+#. distinct line-like characters (e.g., 'l' (lowercase elle) vs. '1' (one) vs. 'I' (capital aye))
 msgid "1Il|"
 msgstr "1Il|"
 
+#. Congratulations #1
 msgid "Great!"
 msgstr "Khulu!"
 
+#. Congratulations #2
 msgid "Cool!"
 msgstr "Pholile!"
 
+#. Congratulations #3
 msgid "Keep it up!"
 msgstr "Ragela phambili!"
 
+#. Congratulations #4
 msgid "Good job!"
 msgstr "Umsebenz'omuhle!"
 
+#. Input Method: English mode
 msgid "English"
 msgstr ""
 
+#. Input Method: Japanese Romanized Hiragana mode
 msgid "Hiragana"
 msgstr ""
 
+#. Input Method: Japanese Romanized Katakana mode
 msgid "Katakana"
 msgstr ""
 
+#. Input Method: Korean Hangul 2-Bul mode
 msgid "Hangul"
 msgstr ""
 
-msgid "Fill"
-msgstr "Gcwalisa"
-
-msgid "Grass"
-msgstr "Utjani"
-
-msgid "Bricks"
-msgstr "Iintina"
-
-msgid "Rainbow"
-msgstr "Izungulekosi"
-
-msgid "Sparkles"
-msgstr "Iimbani"
-
-msgid "Blur"
-msgstr "Fipheleko"
-
-msgid "Smudge"
-msgstr "Ninda"
-
-msgid "Lighten"
-msgstr "Yenza kukhanye"
-
-msgid "Darken"
-msgstr "Yenza kube nzinyana"
-
-msgid "Chalk"
-msgstr "Itjhogo"
-
-msgid "Blocks"
-msgstr "Amabhlogo"
-
-msgid "Negative"
-msgstr "Iphikiso"
-
-msgid "Tint"
-msgstr "Umbala"
-
-msgid "Drip"
-msgstr "Thondela"
-
-msgid "Cartoon"
-msgstr "IKhathuni"
-
-msgid "Mirror"
-msgstr "Isiboniboni"
-
-msgid "Flip"
-msgstr "Mgodlana wokufaka"
-
-msgid "Click in the picture to fill that area with color."
-msgstr "Qhwarhaza esithombeni ukuze ugcwalise ngombala."
-
-msgid "Click and move to draw grass. Don’t forget the dirt!"
-msgstr "Qhwarhaza bewudose njalo ukuze udwebe utjani. Ungakhohlwa iinsila! "
-
-msgid "Click and move to draw large bricks."
-msgstr "Qhwarhaza bewudose njalo ukuze udwebe iintina ezikulu."
-
-msgid "Click and move to draw small bricks."
-msgstr "Qhwarhaza bewudose njalo ukuze udwebe iintina ezincani."
-
-msgid "You can draw in rainbow colors!"
-msgstr "Ungadweba ngaphakathi iimbala yezungelekosi!"
-
-msgid "Click and move to draw sparkles."
-msgstr "Qhwarhaza bewudose njalo ukuze udwebe imibani."
-
-msgid "Click and move the mouse around to blur the picture."
+#. Input Method: Thai mode
+msgid "Thai"
 msgstr ""
-"Qhwarhaza bewudose njalo iKhondlwana ujikeleze ukuze ufiphaze isithombe."
 
-msgid "Click and move the mouse around to smudge the picture."
-msgstr "Qhwarhaza bewudose njalo iKhondlwana ujikeleze uwezese isithombe."
-
-msgid "Click and move to fade the colors."
-msgstr "Qhwarhaza udose ukuza uvanitjhe imibala."
-
-msgid "Click and move to darken the colors."
-msgstr "Qhwarhaza udose ufiphaze imibala."
-
-msgid ""
-"Click and move the mouse around to turn the picture into a chalk drawing."
-msgstr ""
-"Qhwarhaza udose njalo iKhondlwna uzungeleze ukuze uphendulele isithombe "
-"ukuba mudwebo wetjhogo."
-
-msgid "Click and move the mouse around to make the picture blocky."
-msgstr ""
-"Qhwarhaza udose njalo iKhondlwana uzungeleze wenze isithombe sibe bubhlogo."
-
-msgid "Click and move the mouse around to draw a negative."
-msgstr "Qhwarhaza udose njalo iKhondlwana uzungeleze ukudweba okuphikisako."
-
-msgid "Click and move the mouse around to change the picture’s color."
-msgstr ""
-"Qhwarhaza udose njalo iKhondlwana uzungeleze ukuze utjhugulule umbala "
-"weithombe. "
-
-msgid "Click and move the mouse around to make the picture drip."
-msgstr ""
-"Qhwarhaza udose njalo iKhondlwana uzungeleze ukuze uthontisele isithombe."
-
-msgid "Click and move the mouse around to turn the picture into a cartoon."
-msgstr ""
-"Qhwarhaza udose njalo iKhondlwana uzungeleze ukuze utjhugulule isithombe "
-"sibe yikhathuni."
-
-msgid "Click to make a mirror image."
-msgstr "Qhwarhaza wenze umfanekiso osasiboniboni."
-
-msgid "Click to flip the picture upside-down."
-msgstr "Qhwarhaza ukuze uphose isithombe sibe phasi-phezulu."
-
+#. Square shape tool (4 equally-lengthed sides at right angles)
 msgid "Square"
 msgstr "Sikwere"
 
+#. Rectangle shape tool (4 sides at right angles)
 msgid "Rectangle"
 msgstr "Rekhthengele"
 
+#. Circle shape tool (X radius and Y radius are the same)
 msgid "Circle"
 msgstr "Ndulungu"
 
+#. Ellipse shape tool (X radius and Y radius may differ)
 msgid "Ellipse"
 msgstr "Saqanda"
 
+#. Triangle shape tool (3 sides)
 msgid "Triangle"
 msgstr "Ithrayangela"
 
+#. Pentagone shape tool (5 sides)
 msgid "Pentagon"
 msgstr "Ipenthagoni"
 
+#. Rhombus shape tool (4 sides, not at right angles)
 msgid "Rhombus"
 msgstr "Irombasi"
 
+#. Description of a square
 msgid "A square is a rectangle with four equal sides."
 msgstr "Iskwere yirekthengele enamahlangothi amane alinganako."
 
+#. Description of a rectangle
 msgid "A rectangle has four sides and four right angles."
 msgstr "Irekthengele inamahlangothi amane begodu nama-engele amane."
 
@@ -291,88 +216,118 @@ msgstr ""
 "Indulungu imujikelezo oneentlobo ezilinganako kusukela lapho zihlangana "
 "khona nanyana zisuka khona."
 
+#. Description of an ellipse
 msgid "An ellipse is a stretched circle."
 msgstr "I-elipsi yindulungu elisaqanda."
 
+#. Description of a triangle
 msgid "A triangle has three sides."
 msgstr "Ithrayengele linamahlangothi amathathu."
 
+#. Description of a pentagon
 msgid "A pentagon has five sides."
 msgstr "Iphentagoni inamahlangothi amahlanu."
 
 msgid "A rhombus has four equal sides, and opposite sides are parallel."
 msgstr "Irombasi linamahlangothi amane, amabili wayo apharalele."
 
+#. Title of tool selector (buttons down the left)
 msgid "Tools"
 msgstr "Amathulusi"
 
+#. Title of color palette (buttons across the bottom)
 msgid "Colors"
 msgstr "Imibala"
 
+#. Title of brush selector (buttons down the right for paint and line tools)
 msgid "Brushes"
 msgstr "Iimbratjhi"
 
+#. Title of eraser selector (buttons down the right for eraser tool)
 msgid "Erasers"
 msgstr "Izesuli"
 
+#. Title of stamp selector (buttons down the right for stamps tool)
 msgid "Stamps"
 msgstr "Iintembu"
 
+#. Title of shape selector (buttons down the right for shapes tool)
+#. Shape creation tool (square, circle, etc.)
 msgid "Shapes"
 msgstr "Ibumbeko"
 
+#. Title of font selector (buttons down the right for text tool)
 msgid "Letters"
 msgstr "Iincwadi"
 
+#. Title of magic tool selector (buttons down the right for magic (effect plugin) tool)
+#. "Magic" effects tools (blur, flip image, etc.)
 msgid "Magic"
 msgstr "Umhlolo"
 
+#. Freehand painting tool
 msgid "Paint"
 msgstr "Ipende"
 
+#. Stamp tool (aka Rubber Stamps)
 msgid "Stamp"
 msgstr "Isitembu"
 
+#. Line drawing tool
 msgid "Lines"
 msgstr "Imida"
 
+#. Text tool
 msgid "Text"
 msgstr "Umtlolomagama"
 
+#. Undo last action
 msgid "Undo"
 msgstr "Yenzulula"
 
+#. Redo undone action
 msgid "Redo"
 msgstr "Yenza godu"
 
+#. Eraser tool
 msgid "Eraser"
 msgstr "Isesuli"
 
+#. Start a new picture
 msgid "New"
 msgstr "Etjha"
 
+#. Open a saved picture
 #. buttons for the file open dialog
+#. Open dialog: 'Open' button, to load the selected picture
 msgid "Open"
 msgstr "Vula"
 
+#. Save the current picture
 msgid "Save"
 msgstr "Bulunga"
 
+#. Print the current picture
 msgid "Print"
 msgstr "Gadangisa"
 
+#. Quit/exit Tux Paint application
 msgid "Quit"
 msgstr "Suka"
 
+#. Paint tool instructions
 msgid "Pick a color and a brush shape to draw with."
 msgstr "Dobha umbala nebratjhi yejamo bese udweba ngayo."
 
+#. Stamp tool instructions
 msgid "Pick a picture to stamp around your drawing."
 msgstr "Dobha isithombebese ustempe umdwebo wakho buzungeleza."
 
+#. Line tool instructions
 msgid "Click to start drawing a line. Let go to complete it."
 msgstr "Qhwarhaza bese uthoma ukudweba umuda. Lisa ukuze iqedelele."
 
+#. Shape tool instructions
 msgid ""
 "Pick a shape. Click to pick the center, drag, then let go when it is the "
 "size you want. Move around to rotate it, and click to draw it."
@@ -381,68 +336,77 @@ msgstr ""
 "bese uyalisa nakuyisayizi oyifunako. Zombeleza uyijikeleze, begodu qhwarhaza "
 "ukuze uyidwebe."
 
+#. Text tool instructions
 msgid "Choose a style of text. Click on your drawing and you can start typing."
 msgstr ""
 "Khetha isitayela somtlolomagama. Qhwarhaza emdwebeni wakho bese ungathoma "
 "ngokuthayipha."
 
+#. Magic tool instruction
 msgid "Pick a magical effect to use on your drawing!"
 msgstr "Khetha umhlolomphumela ozowusebenzisa emdwebeni wakho!"
 
-#. Undo
+#. Response to 'undo' action
 msgid "Undo!"
 msgstr "Yenzulula!"
 
-#. Redo
+#. Response to 'redo' action
 msgid "Redo!"
 msgstr "Yenza godu!"
 
-#. Eraser
+#. Eraser tool
 msgid "Eraser!"
 msgstr "Isesuli!"
 
-#. New
+#. Response to 'start a new image' action
 msgid "You now have a blank sheet to draw on!"
 msgstr "Njeke sewunephepha elize ongadwebela kilo!"
 
-#. Open
+#. Response to 'open' action (while file dialog is being constructed)
 msgid "Open…"
 msgstr "Vula..."
 
-#. Save
+#. Response to 'save' action
 msgid "Your image has been saved!"
 msgstr "Umfanekiso wakho ubulungiwe!"
 
-#. Print
+#. Response to 'print' action (while printing, or print dialog is being used)
 msgid "Printing…"
 msgstr "Iyagadangisa..."
 
-#. Quit
+#. Response to 'quit' (exit) action
 msgid "Bye bye!"
 msgstr "Sala kuhle!"
 
+#. Instruction while using Line tool (after click, before release)
 msgid "Let go of the button to complete the line."
 msgstr "Ikunubhe ekhambisako ukuqedelela umuda."
 
+#. Instruction while using Shape tool (after first click, before release)
 msgid "Hold the button to stretch the shape."
 msgstr "Kakarela ikunubhe ukwelula ubujamo."
 
+#. Instruction while finishing Shape tool (after release, during rotation step before second click)
 msgid "Move the mouse to rotate the shape. Click to draw it."
 msgstr "Khambisa iKhondlwana ukujikeleza ubujamo. Qhwarhaza bese uyayidweba."
 
+#. Notification that 'New' action was aborted (current image would have been lost)
 msgid "OK then… Let’s keep drawing this one!"
 msgstr "Kulungile ke...Asiragele phambili ngokudweba le!"
 
-#. FIXME: Move elsewhere!!!
+#. Prompt to confirm user wishes to quit
 msgid "Do you really want to quit?"
 msgstr "Nangembala ufuna ukusuka?"
 
+#. Quit prompt positive response (quit)
 msgid "Yes, I'm done!"
 msgstr "Iye, ngiqedile!"
 
+#. Quit prompt negative response (don't quit)
 msgid "No, take me back!"
 msgstr "Awa, ngibuyisela emuva!"
 
+#. Current picture is not saved; user is quitting
 msgid "If you quit, you’ll lose your picture! Save it?"
 msgstr "Nawusukako, uzokulahlekelwa sithombe sakho! Sibulunge!"
 
@@ -452,41 +416,48 @@ msgstr "Iye, sibulunge!"
 msgid "No, don't bother saving!"
 msgstr "Awa, ungazitshwenyi ngokubulunga!"
 
+#. Current picture is not saved; user is opening another picture
 msgid "Save your picture first?"
 msgstr "Bulunga isithombe sakho mandanzi?"
 
+#. Error opening picture
 msgid "Can’t open that picture!"
 msgstr "Angikghoni ukuvula isithombe! "
 
+#. Generic dialog dismissal
 msgid "OK"
 msgstr "Kulungile"
 
 #. This will be replaced with a dialog allowing color choice and Starter
 #. picking, with a "Back" option to dismiss the "New" and return to
 #. the current picture.  But for now...  (bjk 2006.02.19)
+#. Prompt to confirm starting a new picture
 msgid "Start a new picture?"
 msgstr "Thoma isithombe esinye?"
 
-#. #define PROMPT_NEW_YES gettext_noop("That’s OK!")
-#. #define PROMPT_NEW_NO gettext_noop("Never mind!")
 msgid "Yes, let's start fresh!"
 msgstr "Iye, asithome ngobutjha!"
 
+#. Notification that 'Open' dialog has nothing to show
 msgid "There are no saved files!"
 msgstr "AkunamaFayili abulungiweko!"
 
+#. Verification of print action
 msgid "Print your picture now?"
 msgstr "Ugadangisa isithombe sakho nje na?"
 
 msgid "Yes, print it!"
 msgstr "Iye, gadangisa!"
 
+#. Confirmation of successful (we hope) printing
 msgid "Your picture has been printed!"
 msgstr "Isithombe sakho sigadangisiwe!"
 
+#. Notification that it's too soon to print again (--printdelay option is in effect)
 msgid "You can’t print yet!"
 msgstr "Angekhe wakghona ukugadangisa okwanjesi!"
 
+#. Prompt to confirm erasing a picture in the Open dialog
 msgid "Erase this picture?"
 msgstr "Sula lesithombe?"
 
@@ -496,51 +467,65 @@ msgstr "Iye, sula!"
 msgid "No, don't erase it!"
 msgstr "Awa, ungasuli!"
 
+#. Reminder that Mouse Button 1 is the button to use in Tux Paint
 msgid "Remember to use the left mouse button!"
 msgstr "Khumbula ukusebenzisa ikunubhana yobuncele yeKhondlwana!"
 
+#. Sound has been muted (silenced) via keyboard shortcut
 msgid "Sound muted."
 msgstr ""
 
+#. Sound has been unmuted (unsilenced) via keyboard shortcut
 msgid "Sound unmuted."
 msgstr ""
 
+#. Wait while Text tool finishes loading fonts
 msgid "Please wait..."
 msgstr "Ngibawa ujame..."
 
+#. Open dialog: 'Erase' button, to erase/deleted the selected picture
 msgid "Erase"
 msgstr "Sula"
 
+#. Open dialog: 'Slides' button, to switch to slide show mode
 msgid "Slides"
 msgstr "Amaslayidi"
 
+#. Open dialog: 'Back' button, to dismiss Open dialog without opening a picture
 msgid "Back"
 msgstr "Emuva"
 
+#. Slideshow: 'Next' button, to load next slide (image)
 msgid "Next"
 msgstr "Okulandelako"
 
+#. Slideshow: 'Play' button, to begin a slideshow sequence
 msgid "Play"
 msgstr "Dlala"
 
+#. Label for 'Letters' buttons (font selector, down the right when the Text tool is being used); used to show the difference between font faces
 msgid "Aa"
 msgstr "Aa"
 
-#. FIXME: Move elsewhere! Or not?!
+#. Admittedly stupid way of determining which keys can be used for
+#. positive and negative responses in dialogs (e.g., [Y] (for 'yes') in English)
 msgid "Yes"
 msgstr "Iye"
 
 msgid "No"
 msgstr "Awa"
 
-#. FIXME: Move elsewhere!!!
-#. #define PROMPT_SAVE_OVER_TXT gettext_noop("Save over the older version of this picture?")
+#. Prompt to ask whether user wishes to save over old version of their file
 msgid "Replace the picture with your changes?"
 msgstr "Ujamiselela isithombe sakho ngamatjhugululo owenzileko na?"
 
+#. Positive response to saving over old version
+#. (like a 'File:Save' action in other applications)
 msgid "Yes, replace the old one!"
 msgstr "Iye, jamiselela sakade!"
 
+#. Negative response to saving over old version (saves a new image)
+#. (like a 'File:Save As...' action in other applications)
 msgid "No, save a new file!"
 msgstr "Awa, bulunga ifayili etjha!"
 
@@ -548,6 +533,7 @@ msgid "Choose the picture you want, then click “Open”."
 msgstr "Khetha isithombe osifunako bese uqhwarhaza u\"Vula\"."
 
 #. Let user choose images:
+#. Instructions for Slideshow file dialog (FIXME: Make a #define)
 msgid "Choose the pictures you want, then click “Play”."
 msgstr "Khetha iithombe ozifunako, bese uqhwarhaza u\"Dlala\"."
 
@@ -559,3 +545,173 @@ msgstr "Iphrogremu youkudweba"
 
 msgid "Tux Paint"
 msgstr "ITux Pende"
+
+msgid "Blocks"
+msgstr "Amabhlogo"
+
+msgid "Chalk"
+msgstr "Itjhogo"
+
+msgid "Drip"
+msgstr "Thondela"
+
+msgid ""
+"Click and move the mouse around to turn the picture into a chalk drawing."
+msgstr ""
+"Qhwarhaza udose njalo iKhondlwna uzungeleze ukuze uphendulele isithombe "
+"ukuba mudwebo wetjhogo."
+
+msgid "Click and move the mouse around to make the picture blocky."
+msgstr ""
+"Qhwarhaza udose njalo iKhondlwana uzungeleze wenze isithombe sibe bubhlogo."
+
+msgid "Click and move the mouse around to make the picture drip."
+msgstr ""
+"Qhwarhaza udose njalo iKhondlwana uzungeleze ukuze uthontisele isithombe."
+
+msgid "Blur"
+msgstr "Fipheleko"
+
+msgid "Click and move the mouse around to blur the picture."
+msgstr ""
+"Qhwarhaza bewudose njalo iKhondlwana ujikeleze ukuze ufiphaze isithombe."
+
+#. Both are named "Bricks", at the moment:
+msgid "Bricks"
+msgstr "Iintina"
+
+msgid "Click and move to draw large bricks."
+msgstr "Qhwarhaza bewudose njalo ukuze udwebe iintina ezikulu."
+
+msgid "Click and move to draw small bricks."
+msgstr "Qhwarhaza bewudose njalo ukuze udwebe iintina ezincani."
+
+msgid "Cartoon"
+msgstr "IKhathuni"
+
+msgid "Click and move the mouse around to turn the picture into a cartoon."
+msgstr ""
+"Qhwarhaza udose njalo iKhondlwana uzungeleze ukuze utjhugulule isithombe "
+"sibe yikhathuni."
+
+msgid "Emboss"
+msgstr ""
+
+#, fuzzy
+msgid "Click and drag the mouse to emboss the picture."
+msgstr ""
+"Qhwarhaza bewudose njalo iKhondlwana ujikeleze ukuze ufiphaze isithombe."
+
+msgid "Lighten"
+msgstr "Yenza kukhanye"
+
+msgid "Darken"
+msgstr "Yenza kube nzinyana"
+
+msgid "Click and move to fade the colors."
+msgstr "Qhwarhaza udose ukuza uvanitjhe imibala."
+
+msgid "Click and move to darken the colors."
+msgstr "Qhwarhaza udose ufiphaze imibala."
+
+msgid "Fill"
+msgstr "Gcwalisa"
+
+msgid "Click in the picture to fill that area with color."
+msgstr "Qhwarhaza esithombeni ukuze ugcwalise ngombala."
+
+msgid "Flower"
+msgstr ""
+
+msgid "Click and drag to draw a flower stalk. Let go to finish the flower."
+msgstr ""
+
+msgid "Foam"
+msgstr ""
+
+#, fuzzy
+msgid "Click and drag the mouse to cover an area with foamy bubbles.."
+msgstr "Qhwarhaza esithombeni ukuze ugcwalise ngombala."
+
+msgid "Glass Tile"
+msgstr ""
+
+#, fuzzy
+msgid "Click and drag the mouse to put glass tile over your picture."
+msgstr ""
+"Qhwarhaza bewudose njalo iKhondlwana ujikeleze ukuze ufiphaze isithombe."
+
+msgid "Grass"
+msgstr "Utjani"
+
+msgid "Click and move to draw grass. Don’t forget the dirt!"
+msgstr "Qhwarhaza bewudose njalo ukuze udwebe utjani. Ungakhohlwa iinsila! "
+
+msgid "Kalidescope"
+msgstr ""
+
+msgid ""
+"Click and drag the mouse to draw with symmetric brushes (a kalidescope)."
+msgstr ""
+
+#, fuzzy
+msgid "Metal Paint"
+msgstr "Ipende"
+
+#, fuzzy
+msgid "Click and drag the mouse to paint with a metallic color."
+msgstr "Qhwarhaza udose ufiphaze imibala."
+
+msgid "Mirror"
+msgstr "Isiboniboni"
+
+msgid "Flip"
+msgstr "Mgodlana wokufaka"
+
+msgid "Click to flip the picture upside-down."
+msgstr "Qhwarhaza ukuze uphose isithombe sibe phasi-phezulu."
+
+msgid "Click to make a mirror image."
+msgstr "Qhwarhaza wenze umfanekiso osasiboniboni."
+
+msgid "Negative"
+msgstr "Iphikiso"
+
+msgid "Click and move the mouse around to draw a negative."
+msgstr "Qhwarhaza udose njalo iKhondlwana uzungeleze ukudweba okuphikisako."
+
+msgid "Rainbow"
+msgstr "Izungulekosi"
+
+msgid "You can draw in rainbow colors!"
+msgstr "Ungadweba ngaphakathi iimbala yezungelekosi!"
+
+msgid "Smudge"
+msgstr "Ninda"
+
+msgid "Click and move the mouse around to smudge the picture."
+msgstr "Qhwarhaza bewudose njalo iKhondlwana ujikeleze uwezese isithombe."
+
+msgid "Tint"
+msgstr "Umbala"
+
+msgid "Click and move the mouse around to change the picture’s color."
+msgstr ""
+"Qhwarhaza udose njalo iKhondlwana uzungeleze ukuze utjhugulule umbala "
+"weithombe. "
+
+#, fuzzy
+msgid "Waves"
+msgstr "Bulunga"
+
+msgid ""
+"Click to make the picture wavy. (Click towards the top for shorter waves; "
+"the bottom for taller waves. Click towards the left for small waves; the "
+"right for wide waves.)"
+msgstr ""
+
+#~ msgid "Sparkles"
+#~ msgstr "Iimbani"
+
+#~ msgid "Click and move to draw sparkles."
+#~ msgstr "Qhwarhaza bewudose njalo ukuze udwebe imibani."

@@ -7,7 +7,7 @@ bill@newbreedsoftware.com
 http://www.tuxpaint.org/
 
 
-June 17, 2002 - July 14, 2007
+June 17, 2002 - July 17, 2007
 
 $Id$
 
@@ -133,6 +133,10 @@ $Id$
     Creators: Wikipedia users Wapcaplet and Angr
     Processed into a Tux Paint starter by:
     Caroline Ford <caroline.ford.work@googlemail.com>.
+
+  * Canada map
+  * Japan map
+    Ed Monty <edmonty@gmail.com>
 
 
 * Fonts

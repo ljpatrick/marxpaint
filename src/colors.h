@@ -4,9 +4,9 @@
   For Tux Paint
   List of colors
 
-  Copyright (c) 2002-2006 by Bill Kendrick and others
+  Copyright (c) 2002-2007 by Bill Kendrick and others
   bill@newbreedsoftware.com
-  http://www.newbreedsoftware.com/tuxpaint/
+  http://www.tuxpaint.org/
 
   This program is free software; you can redistribute it and/or modify
   it under the terms of the GNU General Public License as published by
@@ -23,7 +23,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  June 14, 2002 - September 9, 2006
+  June 14, 2002 - July 17, 2007
   $Id$
 */
 
@@ -82,26 +82,58 @@ const int default_color_hexes[NUM_DEFAULT_COLORS][3] = {
 /* Color names: */
 
 const char *const default_color_names[NUM_DEFAULT_COLORS] = {
+  // Response to Black (0, 0, 0) color selected
   gettext_noop("Black!"),
+
+  // Response to Dark grey (128, 128, 128) color selected
   gettext_noop("Dark grey! Some people spell it “dark gray”."),
+
+  // Response to Light grey (192, 192, 192) color selected
   gettext_noop("Light grey! Some people spell it “light gray”."),
+
+  // Response to White (255, 255, 255) color selected
   gettext_noop("White!"),
+
+  // Response to Red (255, 0, 0) color selected
   gettext_noop("Red!"),
+
+  // Response to Orange (255, 128, 0) color selected
   gettext_noop("Orange!"),
+
+  // Response to Yellow (255, 255, 0) color selected
   gettext_noop("Yellow!"),
+
+  // Response to Light green (160, 228, 128) color selected
   gettext_noop("Light green!"),
+
+  // Response to Dark green (33, 148, 70) color selected
   gettext_noop("Dark green!"),
+
+  // Response to "Sky" blue (138, 168, 205) color selected
   gettext_noop("Sky blue!"),
+
+  // Response to Blue (50, 100, 255) color selected
   gettext_noop("Blue!"),
+
+  // Response to Lavender (186, 157, 255) color selected
   gettext_noop("Lavender!"),
+
+  // Response to Purple (128, 0, 128) color selected
   gettext_noop("Purple!"),
+
+  // Response to Pink (255, 165, 211) color selected
   gettext_noop("Pink!"),
+
+  // Response to Brown (128, 80, 0) color selected
   gettext_noop("Brown!"),
+
+  // Response to Tan (226, 189, 166) color selected
   gettext_noop("Tan!"),
+
+  // Response to Beige (247, 228, 219) color selected
   gettext_noop("Beige!")
 };
 
 char colorfile[256];
 
 #endif /* COLORS_H */
-

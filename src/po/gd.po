@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Tux paint anns a' ghàidhlig\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-07-04 23:03-0700\n"
+"POT-Creation-Date: 2007-07-17 08:24-0700\n"
 "PO-Revision-Date: 2006-03-04 15:51-0000\n"
 "Last-Translator: Niall Tracey <internationiall@hotmail.com>\n"
 "Language-Team:  <internationiall@hotmail.com>\n"
@@ -13,73 +13,90 @@ msgstr ""
 "X-Poedit-Country: Scotland\n"
 
 # Teach Yourself Gaelic Dictionary: Boyd Robertson & Ian Taylor
+#. Response to Black (0, 0, 0) color selected
 msgid "Black!"
 msgstr "Dubh!"
 
 # Is the Gaelic word too ambiguous?
 # Teach Yourself Gaelic Dictionary: Boyd Robertson & Ian Taylor
+#. Response to Dark grey (128, 128, 128) color selected
 #, fuzzy
 msgid "Dark grey! Some people spell it “dark gray”."
 msgstr "Glas!"
 
 # Is the Gaelic word too ambiguous?
 # Teach Yourself Gaelic Dictionary: Boyd Robertson & Ian Taylor
+#. Response to Light grey (192, 192, 192) color selected
 #, fuzzy
 msgid "Light grey! Some people spell it “light gray”."
 msgstr "Liath!"
 
 # Teach Yourself Gaelic Dictionary: Boyd Robertson & Ian Taylor
+#. Response to White (255, 255, 255) color selected
 msgid "White!"
 msgstr "Geal!"
 
 # Teach Yourself Gaelic Dictionary: Boyd Robertson & Ian Taylor
+#. Response to Red (255, 0, 0) color selected
 msgid "Red!"
 msgstr "Dearg!"
 
 # Teach Yourself Gaelic Dictionary: Boyd Robertson & Ian Taylor
 # Dictionary doesn't not explicitly state any distinction between colour and fruit.
+#. Response to Orange (255, 128, 0) color selected
 #, fuzzy
 msgid "Orange!"
 msgstr "Orains!"
 
 # Teach Yourself Gaelic Dictionary: Boyd Robertson & Ian Taylor
+#. Response to Yellow (255, 255, 0) color selected
 msgid "Yellow!"
 msgstr "Buidhe!"
 
+#. Response to Light green (160, 228, 128) color selected
 msgid "Light green!"
 msgstr ""
 
+#. Response to Dark green (33, 148, 70) color selected
 msgid "Dark green!"
 msgstr ""
 
 # Is the Gaelic word too ambiguous?
 # Teach Yourself Gaelic Dictionary: Boyd Robertson & Ian Taylor
+#. Response to "Sky" blue (138, 168, 205) color selected
 #, fuzzy
 msgid "Sky blue!"
 msgstr "Liath!"
 
 # Teach Yourself Gaelic Dictionary: Boyd Robertson & Ian Taylor
+#. Response to Blue (50, 100, 255) color selected
 msgid "Blue!"
 msgstr "Gorm!"
 
+#. Response to Lavender (186, 157, 255) color selected
 msgid "Lavender!"
 msgstr ""
 
 # Teach Yourself Gaelic Dictionary: Boyd Robertson & Ian Taylor
+#. Response to Purple (128, 0, 128) color selected
 msgid "Purple!"
 msgstr "Purpaidh!"
 
 # Teach Yourself Gaelic Dictionary: Boyd Robertson & Ian Taylor
+#. Response to Pink (255, 165, 211) color selected
 msgid "Pink!"
 msgstr "Pinc!"
 
 # Teach Yourself Gaelic Dictionary: Boyd Robertson & Ian Taylor
+#. Response to Brown (128, 80, 0) color selected
 msgid "Brown!"
 msgstr "Donn!"
 
+#. Response to Tan (226, 189, 166) color selected
 msgid "Tan!"
 msgstr ""
 
+#. Response to Beige (247, 228, 219) color selected
 msgid "Beige!"
 msgstr ""
 
@@ -87,20 +104,21 @@ msgstr ""
 #. via bugs in the SDL_ttf library. We also test fonts to be sure that
 #. they have both uppercase and lowercase letters. Note that we do not
 #. test for "Aa", because it is OK if uppercase and lowercase are the
-#. same. (but not nice -- such fonts get a low score later)
+#. same (but not nice -- such fonts get a low score later).
 #.
 #. We test the alphabet twice, to help with translation. If the users
-#. will be unable to type ASCII letters, then both lines should be
-#. translated. Otherwise, only Line X should be translated and the
-#. ASCII-only fonts should be given bad scores in the scoring code below.
-#. (the best scores going to fonts that support both)
+#. will be unable to type ASCII letters, then both Line X and Line Y
+#. should be translated. Otherwise, only Line X should be translated
+#. and the ASCII-only fonts should be given bad scores in the scoring
+#. code below (the best scores going to fonts that support both).
+#. Line X
 msgid "qx"
 msgstr ""
 
 msgid "QX"
 msgstr ""
 
-#. Line X
+#. Line Y
 msgid "qy"
 msgstr ""
 
@@ -111,215 +129,107 @@ msgstr ""
 #. the top of the list. The user will see them first. This sorting is
 #. especially important for users who have scroll buttons disabled.
 #. Translators should do whatever is needed to put crummy fonts last.
+#. distinct uppercase and lowercase (e.g., 'o' vs. 'O')
 msgid "oO"
 msgstr ""
 
-#. distinct uppercase and lowercase
+#. uncommon punctuation (e.g., '@', '#', '*', etc.)
 msgid "`\\%_@$~#{}<>^&*"
 msgstr ""
 
-#. uncommon punctuation
+#. common punctuation (e.g., '?', '!', '.', ',', etc.)
 msgid ",.?!"
 msgstr ""
 
-#. common punctuation
+#. digits (e.g., '0', '1' and '7')
 msgid "017"
 msgstr ""
 
-#. digits
+#. distinct circle-like characters (e.g., 'O' (capital oh) vs. '0' (zero))
 msgid "O0"
 msgstr ""
 
-#. distinct circle-like characters
+#. distinct line-like characters (e.g., 'l' (lowercase elle) vs. '1' (one) vs. 'I' (capital aye))
 msgid "1Il|"
 msgstr ""
 
+#. Congratulations #1
 msgid "Great!"
 msgstr "'S math sin!"
 
 # Teach Yourself Gaelic Dictionary: Boyd Robertson & Ian Taylor
+#. Congratulations #2
 msgid "Cool!"
 msgstr "Sgoinneil!"
 
 # Teach Yourself Gaelic Dictionary: Boyd Robertson & Ian Taylor
+#. Congratulations #3
 msgid "Keep it up!"
 msgstr "Cùm ort!"
 
+#. Congratulations #4
 msgid "Good job!"
 msgstr ""
 
+#. Input Method: English mode
 msgid "English"
 msgstr ""
 
+#. Input Method: Japanese Romanized Hiragana mode
 msgid "Hiragana"
 msgstr ""
 
+#. Input Method: Japanese Romanized Katakana mode
 msgid "Katakana"
 msgstr ""
 
+#. Input Method: Korean Hangul 2-Bul mode
 msgid "Hangul"
 msgstr ""
 
-msgid "Fill"
+#. Input Method: Thai mode
+msgid "Thai"
 msgstr ""
 
 # Teach Yourself Gaelic Dictionary: Boyd Robertson & Ian Taylor
-msgid "Grass"
-msgstr "Feur"
-
-# Teach Yourself Gaelic Dictionary: Boyd Robertson & Ian Taylor
-msgid "Bricks"
-msgstr "Breigichean"
-
-# Teach Yourself Gaelic Dictionary: Boyd Robertson & Ian Taylor
-msgid "Rainbow"
-msgstr "Bogha-froise"
-
-# Is this word appropriate/common?
-# Teach Yourself Gaelic Dictionary: Boyd Robertson & Ian Taylor
-#, fuzzy
-msgid "Sparkles"
-msgstr "Lainnir"
-
-msgid "Blur"
-msgstr ""
-
-# Teach Yourself Gaelic Dictionary: Boyd Robertson & Ian Taylor
-msgid "Smudge"
-msgstr "Smalaich"
-
-msgid "Lighten"
-msgstr ""
-
-msgid "Darken"
-msgstr ""
-
-# Teach Yourself Gaelic Dictionary: Boyd Robertson & Ian Taylor
-msgid "Chalk"
-msgstr "Cailc"
-
-# Teach Yourself Gaelic Dictionary: Boyd Robertson & Ian Taylor
-msgid "Blocks"
-msgstr "Blocaichean"
-
-msgid "Negative"
-msgstr ""
-
-msgid "Tint"
-msgstr ""
-
-msgid "Drip"
-msgstr ""
-
-msgid "Cartoon"
-msgstr ""
-
-# I was going to look for a verb, but the majority of the tools in the magic menu are nouns, so I though sgàthan was appropriate.
-msgid "Mirror"
-msgstr "Sgàthan"
-
-# Not too happy with this one -- the best match in TY Gaelic Dictionary.
-# It's an adjective and an adverb, but everything else in the toolbox is a verb or noun....
-#, fuzzy
-msgid "Flip"
-msgstr "Bun-os-cionn"
-
-# Gràmar?
-#, fuzzy
-msgid "Click in the picture to fill that area with color."
-msgstr "Briog anns a' dhealbh airson lìon le dath."
-
-# Gràmar?
-#, fuzzy
-msgid "Click and move to draw grass. Don’t forget the dirt!"
-msgstr "Briog agus slaod airson feur a dhèanamh dealbh."
-
-# Gràmar?
-#, fuzzy
-msgid "Click and move to draw large bricks."
-msgstr "Briog agus slaod airson na breigichean móra a dhèanamh dealbh."
-
-# Gràmar?
-#, fuzzy
-msgid "Click and move to draw small bricks."
-msgstr "Briog agus slaod airson na breigichean beaga."
-
-# Gràmar?
-msgid "You can draw in rainbow colors!"
-msgstr "'S urrain dhuit a peantadh le uile dathan na bogha-froise!"
-
-# Gràmar?
-# Is the word "lainnir" appropriate/common?
-msgid "Click and move to draw sparkles."
-msgstr "Briog agus slaod airson lainnir a dhèanamh dealbh."
-
-msgid "Click and move the mouse around to blur the picture."
-msgstr ""
-
-msgid "Click and move the mouse around to smudge the picture."
-msgstr ""
-
-msgid "Click and move to fade the colors."
-msgstr ""
-
-msgid "Click and move to darken the colors."
-msgstr ""
-
-msgid ""
-"Click and move the mouse around to turn the picture into a chalk drawing."
-msgstr ""
-
-msgid "Click and move the mouse around to make the picture blocky."
-msgstr ""
-
-msgid "Click and move the mouse around to draw a negative."
-msgstr ""
-
-msgid "Click and move the mouse around to change the picture’s color."
-msgstr ""
-
-msgid "Click and move the mouse around to make the picture drip."
-msgstr ""
-
-msgid "Click and move the mouse around to turn the picture into a cartoon."
-msgstr ""
-
-msgid "Click to make a mirror image."
-msgstr ""
-
-msgid "Click to flip the picture upside-down."
-msgstr ""
-
-# Teach Yourself Gaelic Dictionary: Boyd Robertson & Ian Taylor
+#. Square shape tool (4 equally-lengthed sides at right angles)
 msgid "Square"
 msgstr "Ceàrnag"
 
 # Teach Yourself Gaelic Dictionary: Boyd Robertson & Ian Taylor
+#. Rectangle shape tool (4 sides at right angles)
 msgid "Rectangle"
 msgstr "Ceart-cheàrnag"
 
 # Teach Yourself Gaelic Dictionary: Boyd Robertson & Ian Taylor
+#. Circle shape tool (X radius and Y radius are the same)
 msgid "Circle"
 msgstr "Cearcall"
 
+#. Ellipse shape tool (X radius and Y radius may differ)
 msgid "Ellipse"
 msgstr ""
 
 # Teach Yourself Gaelic Dictionary: Boyd Robertson & Ian Taylor
+#. Triangle shape tool (3 sides)
 msgid "Triangle"
 msgstr "Triantan"
 
 # Stòr-dàta (SMO)
+#. Pentagone shape tool (5 sides)
 msgid "Pentagon"
 msgstr "Còig-cheàrnach"
 
 # Stòr-dàta (SMO)
+#. Rhombus shape tool (4 sides, not at right angles)
 msgid "Rhombus"
 msgstr "Rombas"
 
+#. Description of a square
 msgid "A square is a rectangle with four equal sides."
 msgstr ""
 
+#. Description of a rectangle
 msgid "A rectangle has four sides and four right angles."
 msgstr ""
 
@@ -327,144 +237,176 @@ msgid ""
 "A circle is a curve where all points have the same distance from the center."
 msgstr ""
 
+#. Description of an ellipse
 msgid "An ellipse is a stretched circle."
 msgstr ""
 
+#. Description of a triangle
 msgid "A triangle has three sides."
 msgstr ""
 
+#. Description of a pentagon
 msgid "A pentagon has five sides."
 msgstr ""
 
 msgid "A rhombus has four equal sides, and opposite sides are parallel."
 msgstr ""
 
+#. Title of tool selector (buttons down the left)
 msgid "Tools"
 msgstr ""
 
 # Teach Yourself Gaelic Dictionary: Boyd Robertson & Ian Taylor
+#. Title of color palette (buttons across the bottom)
 msgid "Colors"
 msgstr "Dathan"
 
 # Teach Yourself Gaelic Dictionary: Boyd Robertson & Ian Taylor
 # (Paintbrushes -- Bruisean pheant.)
+#. Title of brush selector (buttons down the right for paint and line tools)
 msgid "Brushes"
 msgstr "Bruisean"
 
+#. Title of eraser selector (buttons down the right for eraser tool)
 msgid "Erasers"
 msgstr ""
 
+#. Title of stamp selector (buttons down the right for stamps tool)
 msgid "Stamps"
 msgstr ""
 
 # Teach Yourself Gaelic Dictionary: Boyd Robertson & Ian Taylor
+#. Title of shape selector (buttons down the right for shapes tool)
+#. Shape creation tool (square, circle, etc.)
 msgid "Shapes"
 msgstr "Cumaidhean"
 
 # Teach Yourself Gaelic Dictionary: Boyd Robertson & Ian Taylor
+#. Title of font selector (buttons down the right for text tool)
 msgid "Letters"
 msgstr "Litrichean"
 
+#. Title of magic tool selector (buttons down the right for magic (effect plugin) tool)
+#. "Magic" effects tools (blur, flip image, etc.)
 msgid "Magic"
 msgstr ""
 
 # Teach Yourself Gaelic Dictionary: Boyd Robertson & Ian Taylor
+#. Freehand painting tool
 #, fuzzy
 msgid "Paint"
 msgstr "Peant"
 
+#. Stamp tool (aka Rubber Stamps)
 msgid "Stamp"
 msgstr ""
 
 # Teach Yourself Gaelic Dictionary: Boyd Robertson & Ian Taylor
+#. Line drawing tool
 msgid "Lines"
 msgstr "Loinichean"
 
 # Teach Yourself Gaelic Dictionary: Boyd Robertson & Ian Taylor
 # Opera anns a' Ghàidhlig
+#. Text tool
 msgid "Text"
 msgstr "Teacsa"
 
 # Opera anns a' ghàidhlig
+#. Undo last action
 msgid "Undo"
 msgstr "Mar a bha"
 
 # Tha mi a creidsinn gun chuala mi an-seo àiteigin, ach chan eil mi cinnteach càite....
+#. Redo undone action
 #, fuzzy
 msgid "Redo"
 msgstr "Dèan a-rithist"
 
+#. Eraser tool
 msgid "Eraser"
 msgstr ""
 
+#. Start a new picture
 msgid "New"
 msgstr ""
 
+#. Open a saved picture
 #. buttons for the file open dialog
+#. Open dialog: 'Open' button, to load the selected picture
 msgid "Open"
 msgstr ""
 
+#. Save the current picture
 msgid "Save"
 msgstr ""
 
 # Stòr-dàta (SMO)
 # Opera anns a' ghàidhlig
+#. Print the current picture
 msgid "Print"
 msgstr "Clò-bhuail"
 
+#. Quit/exit Tux Paint application
 msgid "Quit"
 msgstr ""
 
 # Gràmar?
+#. Paint tool instructions
 #, fuzzy
 msgid "Pick a color and a brush shape to draw with."
 msgstr "Tagh dath agus bruis a dhèanamh ris."
 
+#. Stamp tool instructions
 msgid "Pick a picture to stamp around your drawing."
 msgstr ""
 
+#. Line tool instructions
 msgid "Click to start drawing a line. Let go to complete it."
 msgstr ""
 
+#. Shape tool instructions
 msgid ""
 "Pick a shape. Click to pick the center, drag, then let go when it is the "
 "size you want. Move around to rotate it, and click to draw it."
 msgstr ""
 
 # Gràmar?
+#. Text tool instructions
 #, fuzzy
 msgid "Choose a style of text. Click on your drawing and you can start typing."
 msgstr ""
 "Tagh seorsa teacsa. Briog air an dealbh airson na clò-sgrìobhadh a "
 "thoiseachadh."
 
+#. Magic tool instruction
 msgid "Pick a magical effect to use on your drawing!"
 msgstr ""
 
 # Opera anns a' ghàidhlig
-#. Undo
+#. Response to 'undo' action
 msgid "Undo!"
 msgstr "Mar a bha!"
 
 # Tha mi a creidsinn gun chuala mi an-seo àiteigin, ach chan eil mi cinnteach càite....
-#. Redo
+#. Response to 'redo' action
 #, fuzzy
 msgid "Redo!"
 msgstr "Dèan a-rithist!"
 
-#. Eraser
+#. Eraser tool
 msgid "Eraser!"
 msgstr ""
 
-#. New
+#. Response to 'start a new image' action
 msgid "You now have a blank sheet to draw on!"
 msgstr ""
 
-#. Open
+#. Response to 'open' action (while file dialog is being constructed)
 msgid "Open…"
 msgstr ""
 
-#. Save
+#. Response to 'save' action
 msgid "Your image has been saved!"
 msgstr ""
 
@@ -472,44 +414,51 @@ msgstr ""
 # Opera anns a' ghàidhlig
 # Stòr-dàta (SMO)
 # Teach Yourself Gaelic Dictionary: Boyd Robertson & Ian Taylor
-#. Print
+#. Response to 'print' action (while printing, or print dialog is being used)
 msgid "Printing…"
 msgstr "Clò-bhualadh..."
 
 # Teach Yourself Gaelic Dictionary: Boyd Robertson & Ian Taylor
-#. Quit
+#. Response to 'quit' (exit) action
 msgid "Bye bye!"
 msgstr "Tìoraidh!"
 
+#. Instruction while using Line tool (after click, before release)
 msgid "Let go of the button to complete the line."
 msgstr ""
 
+#. Instruction while using Shape tool (after first click, before release)
 msgid "Hold the button to stretch the shape."
 msgstr ""
 
+#. Instruction while finishing Shape tool (after release, during rotation step before second click)
 msgid "Move the mouse to rotate the shape. Click to draw it."
 msgstr ""
 
+#. Notification that 'New' action was aborted (current image would have been lost)
 msgid "OK then… Let’s keep drawing this one!"
 msgstr ""
 
 # Gràmar?
 # Is this an appropriate form to use?
-#. FIXME: Move elsewhere!!!
+#. Prompt to confirm user wishes to quit
 #, fuzzy
 msgid "Do you really want to quit?"
 msgstr "A bheil thu ag iarraidh a falbh?"
 
 # Neo-choileanta. (but functional)
+#. Quit prompt positive response (quit)
 #, fuzzy
 msgid "Yes, I'm done!"
 msgstr "Tha."
 
 # Neo-choileanta. (but functional)
+#. Quit prompt negative response (don't quit)
 #, fuzzy
 msgid "No, take me back!"
 msgstr "Chan eil."
 
+#. Current picture is not saved; user is quitting
 msgid "If you quit, you’ll lose your picture! Save it?"
 msgstr ""
 
@@ -519,27 +468,30 @@ msgstr ""
 msgid "No, don't bother saving!"
 msgstr ""
 
+#. Current picture is not saved; user is opening another picture
 msgid "Save your picture first?"
 msgstr ""
 
+#. Error opening picture
 msgid "Can’t open that picture!"
 msgstr ""
 
 # Opera anns a' ghàidhlig
+#. Generic dialog dismissal
 msgid "OK"
 msgstr "Ceart ma-thà"
 
 #. This will be replaced with a dialog allowing color choice and Starter
 #. picking, with a "Back" option to dismiss the "New" and return to
 #. the current picture.  But for now...  (bjk 2006.02.19)
+#. Prompt to confirm starting a new picture
 msgid "Start a new picture?"
 msgstr ""
 
-#. #define PROMPT_NEW_YES gettext_noop("That’s OK!")
-#. #define PROMPT_NEW_NO gettext_noop("Never mind!")
 msgid "Yes, let's start fresh!"
 msgstr ""
 
+#. Notification that 'Open' dialog has nothing to show
 msgid "There are no saved files!"
 msgstr ""
 
@@ -548,6 +500,7 @@ msgstr ""
 # Verb from:
 # Stòr-dàta (SMO)
 # Opera anns a' ghàidhlig
+#. Verification of print action
 #, fuzzy
 msgid "Print your picture now?"
 msgstr "An clò-bhuail mi an dealbh?"
@@ -565,15 +518,18 @@ msgstr "Clò-bhuail!"
 # Verb from:
 # Stòr-dàta (SMO)
 # Opera anns a' ghàidhlig
+#. Confirmation of successful (we hope) printing
 #, fuzzy
 msgid "Your picture has been printed!"
 msgstr "Chlò-bhuail mi an dealbh agad!"
 
 # Gràmar?
 # I think that this message is only seen when you try to print a blank page. Am I right in thinking an-dràsta is a more suitable idiomatic translation than fhathast?
+#. Notification that it's too soon to print again (--printdelay option is in effect)
 msgid "You can’t print yet!"
 msgstr "Chan urrain dhuit a chlò-bhualadh an-dràstah!"
 
+#. Prompt to confirm erasing a picture in the Open dialog
 msgid "Erase this picture?"
 msgstr ""
 
@@ -583,54 +539,68 @@ msgstr ""
 msgid "No, don't erase it!"
 msgstr ""
 
+#. Reminder that Mouse Button 1 is the button to use in Tux Paint
 msgid "Remember to use the left mouse button!"
 msgstr ""
 
+#. Sound has been muted (silenced) via keyboard shortcut
 msgid "Sound muted."
 msgstr ""
 
+#. Sound has been unmuted (unsilenced) via keyboard shortcut
 msgid "Sound unmuted."
 msgstr ""
 
+#. Wait while Text tool finishes loading fonts
 msgid "Please wait..."
 msgstr "Fuirich mionaid..."
 
+#. Open dialog: 'Erase' button, to erase/deleted the selected picture
 msgid "Erase"
 msgstr ""
 
+#. Open dialog: 'Slides' button, to switch to slide show mode
 msgid "Slides"
 msgstr ""
 
+#. Open dialog: 'Back' button, to dismiss Open dialog without opening a picture
 msgid "Back"
 msgstr ""
 
 # Teach Yourself Gaelic Dictionary: Boyd Robertson & Ian Taylor
 # Opera anns a' Ghàidhlig
+#. Slideshow: 'Next' button, to load next slide (image)
 #, fuzzy
 msgid "Next"
 msgstr "Teacsa"
 
+#. Slideshow: 'Play' button, to begin a slideshow sequence
 msgid "Play"
 msgstr ""
 
+#. Label for 'Letters' buttons (font selector, down the right when the Text tool is being used); used to show the difference between font faces
 msgid "Aa"
 msgstr ""
 
-#. FIXME: Move elsewhere! Or not?!
+#. Admittedly stupid way of determining which keys can be used for
+#. positive and negative responses in dialogs (e.g., [Y] (for 'yes') in English)
 msgid "Yes"
 msgstr ""
 
 msgid "No"
 msgstr ""
 
-#. FIXME: Move elsewhere!!!
-#. #define PROMPT_SAVE_OVER_TXT gettext_noop("Save over the older version of this picture?")
+#. Prompt to ask whether user wishes to save over old version of their file
 msgid "Replace the picture with your changes?"
 msgstr ""
 
+#. Positive response to saving over old version
+#. (like a 'File:Save' action in other applications)
 msgid "Yes, replace the old one!"
 msgstr ""
 
+#. Negative response to saving over old version (saves a new image)
+#. (like a 'File:Save As...' action in other applications)
 msgid "No, save a new file!"
 msgstr ""
 
@@ -638,6 +608,7 @@ msgid "Choose the picture you want, then click “Open”."
 msgstr ""
 
 #. Let user choose images:
+#. Instructions for Slideshow file dialog (FIXME: Make a #define)
 msgid "Choose the pictures you want, then click “Play”."
 msgstr ""
 
@@ -654,3 +625,186 @@ msgstr "Prògram dealbhan"
 # How do you deal with a name like this? (In the genitive, no less!)
 msgid "Tux Paint"
 msgstr ""
+
+# Teach Yourself Gaelic Dictionary: Boyd Robertson & Ian Taylor
+msgid "Blocks"
+msgstr "Blocaichean"
+
+# Teach Yourself Gaelic Dictionary: Boyd Robertson & Ian Taylor
+msgid "Chalk"
+msgstr "Cailc"
+
+msgid "Drip"
+msgstr ""
+
+msgid ""
+"Click and move the mouse around to turn the picture into a chalk drawing."
+msgstr ""
+
+msgid "Click and move the mouse around to make the picture blocky."
+msgstr ""
+
+msgid "Click and move the mouse around to make the picture drip."
+msgstr ""
+
+msgid "Blur"
+msgstr ""
+
+msgid "Click and move the mouse around to blur the picture."
+msgstr ""
+
+# Teach Yourself Gaelic Dictionary: Boyd Robertson & Ian Taylor
+#. Both are named "Bricks", at the moment:
+msgid "Bricks"
+msgstr "Breigichean"
+
+# Gràmar?
+#, fuzzy
+msgid "Click and move to draw large bricks."
+msgstr "Briog agus slaod airson na breigichean móra a dhèanamh dealbh."
+
+# Gràmar?
+#, fuzzy
+msgid "Click and move to draw small bricks."
+msgstr "Briog agus slaod airson na breigichean beaga."
+
+msgid "Cartoon"
+msgstr ""
+
+msgid "Click and move the mouse around to turn the picture into a cartoon."
+msgstr ""
+
+msgid "Emboss"
+msgstr ""
+
+msgid "Click and drag the mouse to emboss the picture."
+msgstr ""
+
+msgid "Lighten"
+msgstr ""
+
+msgid "Darken"
+msgstr ""
+
+msgid "Click and move to fade the colors."
+msgstr ""
+
+msgid "Click and move to darken the colors."
+msgstr ""
+
+msgid "Fill"
+msgstr ""
+
+# Gràmar?
+#, fuzzy
+msgid "Click in the picture to fill that area with color."
+msgstr "Briog anns a' dhealbh airson lìon le dath."
+
+msgid "Flower"
+msgstr ""
+
+msgid "Click and drag to draw a flower stalk. Let go to finish the flower."
+msgstr ""
+
+msgid "Foam"
+msgstr ""
+
+# Gràmar?
+#, fuzzy
+msgid "Click and drag the mouse to cover an area with foamy bubbles.."
+msgstr "Briog anns a' dhealbh airson lìon le dath."
+
+msgid "Glass Tile"
+msgstr ""
+
+msgid "Click and drag the mouse to put glass tile over your picture."
+msgstr ""
+
+# Teach Yourself Gaelic Dictionary: Boyd Robertson & Ian Taylor
+msgid "Grass"
+msgstr "Feur"
+
+# Gràmar?
+#, fuzzy
+msgid "Click and move to draw grass. Don’t forget the dirt!"
+msgstr "Briog agus slaod airson feur a dhèanamh dealbh."
+
+msgid "Kalidescope"
+msgstr ""
+
+msgid ""
+"Click and drag the mouse to draw with symmetric brushes (a kalidescope)."
+msgstr ""
+
+# Teach Yourself Gaelic Dictionary: Boyd Robertson & Ian Taylor
+#, fuzzy
+msgid "Metal Paint"
+msgstr "Peant"
+
+# Gràmar?
+#, fuzzy
+msgid "Click and drag the mouse to paint with a metallic color."
+msgstr "Briog anns a' dhealbh airson lìon le dath."
+
+# I was going to look for a verb, but the majority of the tools in the magic menu are nouns, so I though sgàthan was appropriate.
+msgid "Mirror"
+msgstr "Sgàthan"
+
+# Not too happy with this one -- the best match in TY Gaelic Dictionary.
+# It's an adjective and an adverb, but everything else in the toolbox is a verb or noun....
+#, fuzzy
+msgid "Flip"
+msgstr "Bun-os-cionn"
+
+msgid "Click to flip the picture upside-down."
+msgstr ""
+
+msgid "Click to make a mirror image."
+msgstr ""
+
+msgid "Negative"
+msgstr ""
+
+msgid "Click and move the mouse around to draw a negative."
+msgstr ""
+
+# Teach Yourself Gaelic Dictionary: Boyd Robertson & Ian Taylor
+msgid "Rainbow"
+msgstr "Bogha-froise"
+
+# Gràmar?
+msgid "You can draw in rainbow colors!"
+msgstr "'S urrain dhuit a peantadh le uile dathan na bogha-froise!"
+
+# Teach Yourself Gaelic Dictionary: Boyd Robertson & Ian Taylor
+msgid "Smudge"
+msgstr "Smalaich"
+
+msgid "Click and move the mouse around to smudge the picture."
+msgstr ""
+
+msgid "Tint"
+msgstr ""
+
+msgid "Click and move the mouse around to change the picture’s color."
+msgstr ""
+
+msgid "Waves"
+msgstr ""
+
+msgid ""
+"Click to make the picture wavy. (Click towards the top for shorter waves; "
+"the bottom for taller waves. Click towards the left for small waves; the "
+"right for wide waves.)"
+msgstr ""
+
+# Is this word appropriate/common?
+# Teach Yourself Gaelic Dictionary: Boyd Robertson & Ian Taylor
+#, fuzzy
+#~ msgid "Sparkles"
+#~ msgstr "Lainnir"
+
+# Gràmar?
+# Is the word "lainnir" appropriate/common?
+#~ msgid "Click and move to draw sparkles."
+#~ msgstr "Briog agus slaod airson lainnir a dhèanamh dealbh."

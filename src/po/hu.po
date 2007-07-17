@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint 0.9.15rc1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-07-04 23:03-0700\n"
+"POT-Creation-Date: 2007-07-17 08:24-0700\n"
 "PO-Revision-Date: 2006-01-22 15:49+0100\n"
 "Last-Translator: Gabor Kelemen <kelemeng@gnome.hu>\n"
 "Language-Team: Hungarian <translation-team-hu@lists.sourceforge.net>\n"
@@ -16,54 +16,71 @@ msgstr ""
 "X-Generator: KBabel 1.10.2\n"
 "Plural-Forms:  nplurals=1; plural=0;\n"
 
+#. Response to Black (0, 0, 0) color selected
 msgid "Black!"
 msgstr "Fekete!"
 
+#. Response to Dark grey (128, 128, 128) color selected
 msgid "Dark grey! Some people spell it “dark gray”."
 msgstr "Sötétszürke!"
 
+#. Response to Light grey (192, 192, 192) color selected
 msgid "Light grey! Some people spell it “light gray”."
 msgstr "Világosszürke!"
 
+#. Response to White (255, 255, 255) color selected
 msgid "White!"
 msgstr "Fehér!"
 
+#. Response to Red (255, 0, 0) color selected
 msgid "Red!"
 msgstr "Piros!"
 
+#. Response to Orange (255, 128, 0) color selected
 msgid "Orange!"
 msgstr "Narancssárga!"
 
+#. Response to Yellow (255, 255, 0) color selected
 msgid "Yellow!"
 msgstr "Sárga!"
 
+#. Response to Light green (160, 228, 128) color selected
 msgid "Light green!"
 msgstr "Világoszöld!"
 
+#. Response to Dark green (33, 148, 70) color selected
 msgid "Dark green!"
 msgstr "Sötétzöld!"
 
+#. Response to "Sky" blue (138, 168, 205) color selected
 msgid "Sky blue!"
 msgstr "Égkék!"
 
+#. Response to Blue (50, 100, 255) color selected
 msgid "Blue!"
 msgstr "Kék!"
 
+#. Response to Lavender (186, 157, 255) color selected
 msgid "Lavender!"
 msgstr "Levendulakék!"
 
+#. Response to Purple (128, 0, 128) color selected
 msgid "Purple!"
 msgstr "Bíbor!"
 
+#. Response to Pink (255, 165, 211) color selected
 msgid "Pink!"
 msgstr "Rózsaszín!"
 
+#. Response to Brown (128, 80, 0) color selected
 msgid "Brown!"
 msgstr "Barna!"
 
+#. Response to Tan (226, 189, 166) color selected
 msgid "Tan!"
 msgstr "Barna!"
 
+#. Response to Beige (247, 228, 219) color selected
 msgid "Beige!"
 msgstr "Bézs!"
 
@@ -71,20 +88,21 @@ msgstr "Bézs!"
 #. via bugs in the SDL_ttf library. We also test fonts to be sure that
 #. they have both uppercase and lowercase letters. Note that we do not
 #. test for "Aa", because it is OK if uppercase and lowercase are the
-#. same. (but not nice -- such fonts get a low score later)
+#. same (but not nice -- such fonts get a low score later).
 #.
 #. We test the alphabet twice, to help with translation. If the users
-#. will be unable to type ASCII letters, then both lines should be
-#. translated. Otherwise, only Line X should be translated and the
-#. ASCII-only fonts should be given bad scores in the scoring code below.
-#. (the best scores going to fonts that support both)
+#. will be unable to type ASCII letters, then both Line X and Line Y
+#. should be translated. Otherwise, only Line X should be translated
+#. and the ASCII-only fonts should be given bad scores in the scoring
+#. code below (the best scores going to fonts that support both).
+#. Line X
 msgid "qx"
 msgstr ""
 
 msgid "QX"
 msgstr ""
 
-#. Line X
+#. Line Y
 msgid "qy"
 msgstr ""
 
@@ -95,185 +113,99 @@ msgstr ""
 #. the top of the list. The user will see them first. This sorting is
 #. especially important for users who have scroll buttons disabled.
 #. Translators should do whatever is needed to put crummy fonts last.
+#. distinct uppercase and lowercase (e.g., 'o' vs. 'O')
 msgid "oO"
 msgstr "oO"
 
-#. distinct uppercase and lowercase
+#. uncommon punctuation (e.g., '@', '#', '*', etc.)
 msgid "`\\%_@$~#{}<>^&*"
 msgstr "`\\%_@$~#{}<>^&*"
 
-#. uncommon punctuation
+#. common punctuation (e.g., '?', '!', '.', ',', etc.)
 msgid ",.?!"
 msgstr ",.?!"
 
-#. common punctuation
+#. digits (e.g., '0', '1' and '7')
 msgid "017"
 msgstr "017"
 
-#. digits
+#. distinct circle-like characters (e.g., 'O' (capital oh) vs. '0' (zero))
 msgid "O0"
 msgstr "O0"
 
-#. distinct circle-like characters
+#. distinct line-like characters (e.g., 'l' (lowercase elle) vs. '1' (one) vs. 'I' (capital aye))
 msgid "1Il|"
 msgstr "1Il|"
 
+#. Congratulations #1
 msgid "Great!"
 msgstr "Klassz!"
 
+#. Congratulations #2
 msgid "Cool!"
 msgstr "Remek!"
 
+#. Congratulations #3
 msgid "Keep it up!"
 msgstr "Így tovább!"
 
+#. Congratulations #4
 msgid "Good job!"
 msgstr "Szép munka!"
 
+#. Input Method: English mode
 msgid "English"
 msgstr ""
 
+#. Input Method: Japanese Romanized Hiragana mode
 msgid "Hiragana"
 msgstr ""
 
+#. Input Method: Japanese Romanized Katakana mode
 msgid "Katakana"
 msgstr ""
 
+#. Input Method: Korean Hangul 2-Bul mode
 msgid "Hangul"
 msgstr ""
 
-msgid "Fill"
-msgstr "Kitöltés"
-
-msgid "Grass"
-msgstr "Fű"
-
-msgid "Bricks"
-msgstr "Téglák"
-
-msgid "Rainbow"
-msgstr "Szivárvány"
-
-msgid "Sparkles"
-msgstr "Festékszóró"
-
-msgid "Blur"
-msgstr "Maszat"
-
-msgid "Smudge"
-msgstr "Piszok"
-
-msgid "Lighten"
-msgstr "Fény"
-
-msgid "Darken"
-msgstr "Sötét"
-
-msgid "Chalk"
-msgstr "Kréta"
-
-msgid "Blocks"
-msgstr "Kockák"
-
-msgid "Negative"
-msgstr "Színcsere"
-
-msgid "Tint"
-msgstr "Árnyalat"
-
-msgid "Drip"
-msgstr "Csepp"
-
-msgid "Cartoon"
-msgstr "Képregény"
-
-msgid "Mirror"
-msgstr "Tükör"
-
-msgid "Flip"
-msgstr "Megfordít"
-
-msgid "Click in the picture to fill that area with color."
-msgstr "Kattints oda a rajzodon, ahol ki szeretnéd tölteni a színnel!"
-
-msgid "Click and move to draw grass. Don’t forget the dirt!"
+#. Input Method: Thai mode
+msgid "Thai"
 msgstr ""
-"Kattints oda a rajzodon, ahol füvet szeretnél rajzolni. Ne feledd a piszkot!"
 
-msgid "Click and move to draw large bricks."
-msgstr "Kattints oda a rajzodon, ahol nagy téglákat szeretnél rajzolni."
-
-msgid "Click and move to draw small bricks."
-msgstr "Kattints oda a rajzodon, ahol kis téglákat szeretnél rajzolni."
-
-msgid "You can draw in rainbow colors!"
-msgstr "Szivárványszínekkel is rajzolhatsz!"
-
-msgid "Click and move to draw sparkles."
-msgstr "Kattints oda a rajzodon, ahol festékszóróval szeretnél rajzolni."
-
-msgid "Click and move the mouse around to blur the picture."
-msgstr "Kattints oda a rajzodon, ahol maszatolni szeretnél."
-
-msgid "Click and move the mouse around to smudge the picture."
-msgstr "Kattints oda a rajzodon, ahol piszkot szeretnél."
-
-msgid "Click and move to fade the colors."
-msgstr "Kattints oda a rajzodon, ahol fakítani szeretnéd a színeket."
-
-msgid "Click and move to darken the colors."
-msgstr "Kattints oda a rajzodon, ahol sötétíteni szeretnéd a színeket."
-
-msgid ""
-"Click and move the mouse around to turn the picture into a chalk drawing."
-msgstr "Kattints oda a rajzodon, ahol krétával szeretnél rajzolni."
-
-msgid "Click and move the mouse around to make the picture blocky."
-msgstr "Kattints oda a rajzodon, ahova kockákat szeretnél rajzolni."
-
-msgid "Click and move the mouse around to draw a negative."
-msgstr "Kattints oda a rajzodon, ahol fel szeretnéd cserélni a színeket."
-
-msgid "Click and move the mouse around to change the picture’s color."
-msgstr "Kattints oda a rajzodon, ahol meg szeretnéd változtatni a kép színét."
-
-msgid "Click and move the mouse around to make the picture drip."
-msgstr "Kattints oda a rajzodon, ahova festéket szeretnél csepegtetni."
-
-msgid "Click and move the mouse around to turn the picture into a cartoon."
-msgstr ""
-"Kattints oda a rajzodon, ahol a képet képregénnyé szeretnéd változtatni!"
-
-msgid "Click to make a mirror image."
-msgstr "Kattints a rajzlapra, hogy tükrözzük a rajzodat."
-
-msgid "Click to flip the picture upside-down."
-msgstr "Kattints a rajzlapra, hogy fejjel-lefelé fordítsuk a rajzodat."
-
+#. Square shape tool (4 equally-lengthed sides at right angles)
 msgid "Square"
 msgstr "Négyzet"
 
+#. Rectangle shape tool (4 sides at right angles)
 msgid "Rectangle"
 msgstr "Téglalap"
 
+#. Circle shape tool (X radius and Y radius are the same)
 msgid "Circle"
 msgstr "Kör"
 
+#. Ellipse shape tool (X radius and Y radius may differ)
 msgid "Ellipse"
 msgstr "Ellipszis"
 
+#. Triangle shape tool (3 sides)
 msgid "Triangle"
 msgstr "Háromszög"
 
+#. Pentagone shape tool (5 sides)
 msgid "Pentagon"
 msgstr "Ötszög"
 
+#. Rhombus shape tool (4 sides, not at right angles)
 msgid "Rhombus"
 msgstr "Rombusz"
 
+#. Description of a square
 msgid "A square is a rectangle with four equal sides."
 msgstr "Egy téglalapnak négy egyenlő oldala van."
 
+#. Description of a rectangle
 msgid "A rectangle has four sides and four right angles."
 msgstr "Egy négyzetnek négy oldala és négy derékszöge van."
 
@@ -284,90 +216,120 @@ msgstr ""
 "A kör egy olyan görbe, amelynek minden pontja egyenlő távolságra van a "
 "középponttól."
 
+#. Description of an ellipse
 msgid "An ellipse is a stretched circle."
 msgstr "Az ellipszis egy nyújtott kör."
 
+#. Description of a triangle
 msgid "A triangle has three sides."
 msgstr "A háromszögnek három oldala van."
 
+#. Description of a pentagon
 msgid "A pentagon has five sides."
 msgstr "Az ötszögnek öt oldala van."
 
 msgid "A rhombus has four equal sides, and opposite sides are parallel."
 msgstr "A rombusznak négy egyenlő oldala van és a szemközti oldalak egyenlőek."
 
+#. Title of tool selector (buttons down the left)
 msgid "Tools"
 msgstr "Eszközök"
 
+#. Title of color palette (buttons across the bottom)
 msgid "Colors"
 msgstr "Színek"
 
+#. Title of brush selector (buttons down the right for paint and line tools)
 msgid "Brushes"
 msgstr "Ecsetek"
 
+#. Title of eraser selector (buttons down the right for eraser tool)
 msgid "Erasers"
 msgstr "Radírok"
 
+#. Title of stamp selector (buttons down the right for stamps tool)
 msgid "Stamps"
 msgstr "Matricák"
 
+#. Title of shape selector (buttons down the right for shapes tool)
+#. Shape creation tool (square, circle, etc.)
 msgid "Shapes"
 msgstr "Síkidomok"
 
+#. Title of font selector (buttons down the right for text tool)
 msgid "Letters"
 msgstr "Betűk"
 
+#. Title of magic tool selector (buttons down the right for magic (effect plugin) tool)
+#. "Magic" effects tools (blur, flip image, etc.)
 msgid "Magic"
 msgstr "Varázs"
 
+#. Freehand painting tool
 msgid "Paint"
 msgstr "Festék"
 
+#. Stamp tool (aka Rubber Stamps)
 msgid "Stamp"
 msgstr "Matrica"
 
+#. Line drawing tool
 msgid "Lines"
 msgstr "Vonalak"
 
+#. Text tool
 msgid "Text"
 msgstr "Szöveg"
 
+#. Undo last action
 msgid "Undo"
 msgstr "Vissza"
 
+#. Redo undone action
 msgid "Redo"
 msgstr "Újra"
 
+#. Eraser tool
 msgid "Eraser"
 msgstr "Radír"
 
+#. Start a new picture
 msgid "New"
 msgstr "Új"
 
+#. Open a saved picture
 #. buttons for the file open dialog
+#. Open dialog: 'Open' button, to load the selected picture
 msgid "Open"
 msgstr "Megnyitás"
 
+#. Save the current picture
 msgid "Save"
 msgstr "Mentés"
 
+#. Print the current picture
 msgid "Print"
 msgstr "Nyomtatás"
 
+#. Quit/exit Tux Paint application
 msgid "Quit"
 msgstr "Kilépés"
 
+#. Paint tool instructions
 msgid "Pick a color and a brush shape to draw with."
 msgstr "Válassz ki egy színt és egy ecsetet, amivel rajzolni fogsz!"
 
+#. Stamp tool instructions
 msgid "Pick a picture to stamp around your drawing."
 msgstr "Válassz ki egy képet, amit ráragasztasz a rajzodra!"
 
+#. Line tool instructions
 msgid "Click to start drawing a line. Let go to complete it."
 msgstr ""
 "Kattints oda a rajzodon, ahova a vonalat szeretnéd rajzolni. Engedd el a "
 "befejezéséhez."
 
+#. Shape tool instructions
 msgid ""
 "Pick a shape. Click to pick the center, drag, then let go when it is the "
 "size you want. Move around to rotate it, and click to draw it."
@@ -376,70 +338,79 @@ msgstr ""
 "egeret, majd engedd el, ha már akkor amekkorának szeretnéd. Mozgasd az "
 "egeret körülötte a forgatásához és kattints a húzásához."
 
+#. Text tool instructions
 msgid "Choose a style of text. Click on your drawing and you can start typing."
 msgstr ""
 "Válassz egy betűstílust. Kattints oda a rajzodon, ahol el szeretnéd kezdeni "
 "írni a szöveget."
 
+#. Magic tool instruction
 msgid "Pick a magical effect to use on your drawing!"
 msgstr "Válassz egy varázslatot, amit kipróbálsz a rajzodon."
 
-#. Undo
+#. Response to 'undo' action
 msgid "Undo!"
 msgstr "Vissza!"
 
-#. Redo
+#. Response to 'redo' action
 msgid "Redo!"
 msgstr "Újra!"
 
-#. Eraser
+#. Eraser tool
 msgid "Eraser!"
 msgstr "Radír!"
 
-#. New
+#. Response to 'start a new image' action
 msgid "You now have a blank sheet to draw on!"
 msgstr "Kezdhetsz rajzolni!"
 
-#. Open
+#. Response to 'open' action (while file dialog is being constructed)
 msgid "Open…"
 msgstr "Megnyitás…"
 
-#. Save
+#. Response to 'save' action
 msgid "Your image has been saved!"
 msgstr "Elmentettük a rajzodat!"
 
-#. Print
+#. Response to 'print' action (while printing, or print dialog is being used)
 msgid "Printing…"
 msgstr "Nyomtatás…"
 
-#. Quit
+#. Response to 'quit' (exit) action
 msgid "Bye bye!"
 msgstr "Szia!"
 
+#. Instruction while using Line tool (after click, before release)
 msgid "Let go of the button to complete the line."
 msgstr "Engedd fel a gombot a vonal befejezéséhez."
 
+#. Instruction while using Shape tool (after first click, before release)
 msgid "Hold the button to stretch the shape."
 msgstr ""
 "Tartsd nyomva az egér gombját, hogy változtatni tudd az alakzat méretét."
 
+#. Instruction while finishing Shape tool (after release, during rotation step before second click)
 msgid "Move the mouse to rotate the shape. Click to draw it."
 msgstr ""
 "Mozgasd az egeret, hogy forgatni tudd az alakzatot. Kattints a húzásához."
 
+#. Notification that 'New' action was aborted (current image would have been lost)
 msgid "OK then… Let’s keep drawing this one!"
 msgstr "Rendben… Akkor folytassuk ezt a rajzot!"
 
-#. FIXME: Move elsewhere!!!
+#. Prompt to confirm user wishes to quit
 msgid "Do you really want to quit?"
 msgstr "Biztos ki szeretnél lépni?"
 
+#. Quit prompt positive response (quit)
 msgid "Yes, I'm done!"
 msgstr ""
 
+#. Quit prompt negative response (don't quit)
 msgid "No, take me back!"
 msgstr ""
 
+#. Current picture is not saved; user is quitting
 msgid "If you quit, you’ll lose your picture! Save it?"
 msgstr "El fog veszni a rajzod, ha kilépsz. Elmentsük?"
 
@@ -449,42 +420,49 @@ msgstr ""
 msgid "No, don't bother saving!"
 msgstr ""
 
+#. Current picture is not saved; user is opening another picture
 msgid "Save your picture first?"
 msgstr "Elmentsük előbb a rajzod?"
 
+#. Error opening picture
 msgid "Can’t open that picture!"
 msgstr "Ezt a képet nem lehet megnyitni!"
 
+#. Generic dialog dismissal
 msgid "OK"
 msgstr "OK"
 
 #. This will be replaced with a dialog allowing color choice and Starter
 #. picking, with a "Back" option to dismiss the "New" and return to
 #. the current picture.  But for now...  (bjk 2006.02.19)
+#. Prompt to confirm starting a new picture
 #, fuzzy
 msgid "Start a new picture?"
 msgstr "Biztos törlöd ezt a rajzot?"
 
-#. #define PROMPT_NEW_YES gettext_noop("That’s OK!")
-#. #define PROMPT_NEW_NO gettext_noop("Never mind!")
 msgid "Yes, let's start fresh!"
 msgstr ""
 
+#. Notification that 'Open' dialog has nothing to show
 msgid "There are no saved files!"
 msgstr "Nincsenek mentett fájlok!"
 
+#. Verification of print action
 msgid "Print your picture now?"
 msgstr "Kinyomtassuk most a rajzod?"
 
 msgid "Yes, print it!"
 msgstr ""
 
+#. Confirmation of successful (we hope) printing
 msgid "Your picture has been printed!"
 msgstr "Kinyomtattuk a rajzod!"
 
+#. Notification that it's too soon to print again (--printdelay option is in effect)
 msgid "You can’t print yet!"
 msgstr "Még nem nyomtathatsz!"
 
+#. Prompt to confirm erasing a picture in the Open dialog
 msgid "Erase this picture?"
 msgstr "Biztos törlöd ezt a rajzot?"
 
@@ -494,52 +472,66 @@ msgstr ""
 msgid "No, don't erase it!"
 msgstr ""
 
+#. Reminder that Mouse Button 1 is the button to use in Tux Paint
 msgid "Remember to use the left mouse button!"
 msgstr "Ne feledd használni a bal egérgombot!"
 
+#. Sound has been muted (silenced) via keyboard shortcut
 msgid "Sound muted."
 msgstr ""
 
+#. Sound has been unmuted (unsilenced) via keyboard shortcut
 msgid "Sound unmuted."
 msgstr ""
 
+#. Wait while Text tool finishes loading fonts
 msgid "Please wait..."
 msgstr ""
 
+#. Open dialog: 'Erase' button, to erase/deleted the selected picture
 msgid "Erase"
 msgstr "Törlés"
 
+#. Open dialog: 'Slides' button, to switch to slide show mode
 msgid "Slides"
 msgstr ""
 
+#. Open dialog: 'Back' button, to dismiss Open dialog without opening a picture
 msgid "Back"
 msgstr "Vissza"
 
+#. Slideshow: 'Next' button, to load next slide (image)
 #, fuzzy
 msgid "Next"
 msgstr "Szöveg"
 
+#. Slideshow: 'Play' button, to begin a slideshow sequence
 msgid "Play"
 msgstr ""
 
+#. Label for 'Letters' buttons (font selector, down the right when the Text tool is being used); used to show the difference between font faces
 msgid "Aa"
 msgstr "Aa"
 
-#. FIXME: Move elsewhere! Or not?!
+#. Admittedly stupid way of determining which keys can be used for
+#. positive and negative responses in dialogs (e.g., [Y] (for 'yes') in English)
 msgid "Yes"
 msgstr "Igen"
 
 msgid "No"
 msgstr "Nem"
 
-#. FIXME: Move elsewhere!!!
-#. #define PROMPT_SAVE_OVER_TXT gettext_noop("Save over the older version of this picture?")
+#. Prompt to ask whether user wishes to save over old version of their file
 msgid "Replace the picture with your changes?"
 msgstr ""
 
+#. Positive response to saving over old version
+#. (like a 'File:Save' action in other applications)
 msgid "Yes, replace the old one!"
 msgstr ""
 
+#. Negative response to saving over old version (saves a new image)
+#. (like a 'File:Save As...' action in other applications)
 #, fuzzy
 msgid "No, save a new file!"
 msgstr "Nem, inkább mentsük el más néven"
@@ -548,6 +540,7 @@ msgid "Choose the picture you want, then click “Open”."
 msgstr "Válaszd ki a képet, majd kattints a \"Megnyitás\" gombra."
 
 #. Let user choose images:
+#. Instructions for Slideshow file dialog (FIXME: Make a #define)
 #, fuzzy
 msgid "Choose the pictures you want, then click “Play”."
 msgstr "Válaszd ki a képet, majd kattints a \"Megnyitás\" gombra."
@@ -560,6 +553,167 @@ msgstr "Rajzolóprogram"
 
 msgid "Tux Paint"
 msgstr "Tux Paint"
+
+msgid "Blocks"
+msgstr "Kockák"
+
+msgid "Chalk"
+msgstr "Kréta"
+
+msgid "Drip"
+msgstr "Csepp"
+
+msgid ""
+"Click and move the mouse around to turn the picture into a chalk drawing."
+msgstr "Kattints oda a rajzodon, ahol krétával szeretnél rajzolni."
+
+msgid "Click and move the mouse around to make the picture blocky."
+msgstr "Kattints oda a rajzodon, ahova kockákat szeretnél rajzolni."
+
+msgid "Click and move the mouse around to make the picture drip."
+msgstr "Kattints oda a rajzodon, ahova festéket szeretnél csepegtetni."
+
+msgid "Blur"
+msgstr "Maszat"
+
+msgid "Click and move the mouse around to blur the picture."
+msgstr "Kattints oda a rajzodon, ahol maszatolni szeretnél."
+
+#. Both are named "Bricks", at the moment:
+msgid "Bricks"
+msgstr "Téglák"
+
+msgid "Click and move to draw large bricks."
+msgstr "Kattints oda a rajzodon, ahol nagy téglákat szeretnél rajzolni."
+
+msgid "Click and move to draw small bricks."
+msgstr "Kattints oda a rajzodon, ahol kis téglákat szeretnél rajzolni."
+
+msgid "Cartoon"
+msgstr "Képregény"
+
+msgid "Click and move the mouse around to turn the picture into a cartoon."
+msgstr ""
+"Kattints oda a rajzodon, ahol a képet képregénnyé szeretnéd változtatni!"
+
+msgid "Emboss"
+msgstr ""
+
+#, fuzzy
+msgid "Click and drag the mouse to emboss the picture."
+msgstr "Kattints oda a rajzodon, ahol maszatolni szeretnél."
+
+msgid "Lighten"
+msgstr "Fény"
+
+msgid "Darken"
+msgstr "Sötét"
+
+msgid "Click and move to fade the colors."
+msgstr "Kattints oda a rajzodon, ahol fakítani szeretnéd a színeket."
+
+msgid "Click and move to darken the colors."
+msgstr "Kattints oda a rajzodon, ahol sötétíteni szeretnéd a színeket."
+
+msgid "Fill"
+msgstr "Kitöltés"
+
+msgid "Click in the picture to fill that area with color."
+msgstr "Kattints oda a rajzodon, ahol ki szeretnéd tölteni a színnel!"
+
+msgid "Flower"
+msgstr ""
+
+msgid "Click and drag to draw a flower stalk. Let go to finish the flower."
+msgstr ""
+
+msgid "Foam"
+msgstr ""
+
+#, fuzzy
+msgid "Click and drag the mouse to cover an area with foamy bubbles.."
+msgstr "Kattints oda a rajzodon, ahol ki szeretnéd tölteni a színnel!"
+
+msgid "Glass Tile"
+msgstr ""
+
+#, fuzzy
+msgid "Click and drag the mouse to put glass tile over your picture."
+msgstr "Kattints oda a rajzodon, ahol maszatolni szeretnél."
+
+msgid "Grass"
+msgstr "Fű"
+
+msgid "Click and move to draw grass. Don’t forget the dirt!"
+msgstr ""
+"Kattints oda a rajzodon, ahol füvet szeretnél rajzolni. Ne feledd a piszkot!"
+
+msgid "Kalidescope"
+msgstr ""
+
+msgid ""
+"Click and drag the mouse to draw with symmetric brushes (a kalidescope)."
+msgstr ""
+
+#, fuzzy
+msgid "Metal Paint"
+msgstr "Festék"
+
+#, fuzzy
+msgid "Click and drag the mouse to paint with a metallic color."
+msgstr "Kattints oda a rajzodon, ahol sötétíteni szeretnéd a színeket."
+
+msgid "Mirror"
+msgstr "Tükör"
+
+msgid "Flip"
+msgstr "Megfordít"
+
+msgid "Click to flip the picture upside-down."
+msgstr "Kattints a rajzlapra, hogy fejjel-lefelé fordítsuk a rajzodat."
+
+msgid "Click to make a mirror image."
+msgstr "Kattints a rajzlapra, hogy tükrözzük a rajzodat."
+
+msgid "Negative"
+msgstr "Színcsere"
+
+msgid "Click and move the mouse around to draw a negative."
+msgstr "Kattints oda a rajzodon, ahol fel szeretnéd cserélni a színeket."
+
+msgid "Rainbow"
+msgstr "Szivárvány"
+
+msgid "You can draw in rainbow colors!"
+msgstr "Szivárványszínekkel is rajzolhatsz!"
+
+msgid "Smudge"
+msgstr "Piszok"
+
+msgid "Click and move the mouse around to smudge the picture."
+msgstr "Kattints oda a rajzodon, ahol piszkot szeretnél."
+
+msgid "Tint"
+msgstr "Árnyalat"
+
+msgid "Click and move the mouse around to change the picture’s color."
+msgstr "Kattints oda a rajzodon, ahol meg szeretnéd változtatni a kép színét."
+
+#, fuzzy
+msgid "Waves"
+msgstr "Mentés"
+
+msgid ""
+"Click to make the picture wavy. (Click towards the top for shorter waves; "
+"the bottom for taller waves. Click towards the left for small waves; the "
+"right for wide waves.)"
+msgstr ""
+
+#~ msgid "Sparkles"
+#~ msgstr "Festékszóró"
+
+#~ msgid "Click and move to draw sparkles."
+#~ msgstr "Kattints oda a rajzodon, ahol festékszóróval szeretnél rajzolni."
 
 #~ msgid "Starting a new picture will erase the current one!"
 #~ msgstr "El fog veszni a régi rajzod, ha újat rajzolsz!"

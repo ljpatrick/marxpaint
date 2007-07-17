@@ -4,9 +4,9 @@
   For Tux Paint
   List of available shapes.
 
-  Copyright (c) 2002-2006 by Bill Kendrick and others
+  Copyright (c) 2002-2007 by Bill Kendrick and others
   bill@newbreedsoftware.com
-  http://www.newbreedsoftware.com/tuxpaint/
+  http://www.tuxpaint.org/
 
   This program is free software; you can redistribute it and/or modify
   it under the terms of the GNU General Public License as published by
@@ -23,7 +23,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  June 14, 2002 - February 17, 2006
+  June 14, 2002 - July 17, 2007
   $Id$
 */
 
@@ -155,18 +155,31 @@ const int shape_no_rotate[NUM_SHAPES] = {
 /* Shape names: */
 
 const char *const shape_names[NUM_SHAPES] = {
+  // Square shape tool (4 equally-lengthed sides at right angles)
   gettext_noop("Square"),
   gettext_noop("Square"),
+
+  // Rectangle shape tool (4 sides at right angles)
   gettext_noop("Rectangle"),
   gettext_noop("Rectangle"),
+
+  // Circle shape tool (X radius and Y radius are the same)
   gettext_noop("Circle"),
   gettext_noop("Circle"),
+
+  // Ellipse shape tool (X radius and Y radius may differ)
   gettext_noop("Ellipse"),
   gettext_noop("Ellipse"),
+
+  // Triangle shape tool (3 sides)
   gettext_noop("Triangle"),
   gettext_noop("Triangle"),
+
+  // Pentagone shape tool (5 sides)
   gettext_noop("Pentagon"),
   gettext_noop("Pentagon"),
+
+  // Rhombus shape tool (4 sides, not at right angles)
   gettext_noop("Rhombus"),
   gettext_noop("Rhombus")
 };
@@ -175,20 +188,33 @@ const char *const shape_names[NUM_SHAPES] = {
 /* Some text to write when each shape is selected: */
 
 const char *const shape_tips[NUM_SHAPES] = {
+  // Description of a square
   gettext_noop("A square is a rectangle with four equal sides."),
   gettext_noop("A square is a rectangle with four equal sides."),
+
+  // Description of a rectangle
   gettext_noop("A rectangle has four sides and four right angles."),
   gettext_noop("A rectangle has four sides and four right angles."),
+
+  // Description of a circle
   gettext_noop
     ("A circle is a curve where all points have the same distance from the center."),
   gettext_noop
     ("A circle is a curve where all points have the same distance from the center."),
+
+  // Description of an ellipse
   gettext_noop("An ellipse is a stretched circle."),
   gettext_noop("An ellipse is a stretched circle."),
+
+  // Description of a triangle
   gettext_noop("A triangle has three sides."),
   gettext_noop("A triangle has three sides."),
+
+  // Description of a pentagon
   gettext_noop("A pentagon has five sides."),
   gettext_noop("A pentagon has five sides."),
+
+  // Description of a rhombus
   gettext_noop
     ("A rhombus has four equal sides, and opposite sides are parallel."),
   gettext_noop

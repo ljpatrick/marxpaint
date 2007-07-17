@@ -74,29 +74,33 @@ void loadfont_callback(SDL_Surface * screen, const char *restrict const dir,
 	const char *restrict const family = TuxPaint_Font_FontFaceFamilyName(font);
 	const char *restrict const style = TuxPaint_Font_FontFaceStyleName(font);
 
-        printf("success: 0x%x -> 0x%x\n", font, font->ttf_font);
+        printf("success: 0x%x -> 0x%x\n", (unsigned int) font,
+					  (unsigned int) font->ttf_font);
 
-//#ifdef DEBUG
+#ifdef DEBUG
 	int numfaces = TTF_FontFaces(font->ttf_font);
 	if (numfaces != 1)
 	  printf("Found %d faces in %s, %s, %s\n", numfaces, files[i].str,
 		 family, style);
-//#endif
+#endif
 
 	// First, the blacklist. We list font families that can crash Tux Paint
 	// via bugs in the SDL_ttf library. We also test fonts to be sure that
 	// they have both uppercase and lowercase letters. Note that we do not
 	// test for "Aa", because it is OK if uppercase and lowercase are the
-	// same. (but not nice -- such fonts get a low score later)
+	// same (but not nice -- such fonts get a low score later).
 	//
 	// We test the alphabet twice, to help with translation. If the users
-	// will be unable to type ASCII letters, then both lines should be
-	// translated. Otherwise, only Line X should be translated and the
-	// ASCII-only fonts should be given bad scores in the scoring code below.
-	// (the best scores going to fonts that support both)
+	// will be unable to type ASCII letters, then both Line X and Line Y
+	// should be translated. Otherwise, only Line X should be translated
+	// and the ASCII-only fonts should be given bad scores in the scoring
+	// code below (the best scores going to fonts that support both).
 	
-	if (strcmp("Zapfino", family) && strcmp("Elvish Ring NFI", family) && ((charset_works(font, gettext("qx")) && charset_works(font, gettext("QX")))	// Line X
-									       || (charset_works(font, gettext("qy")) && charset_works(font, gettext("QY")))	// Line Y
+	// Line X
+	if (strcmp("Zapfino", family) && strcmp("Elvish Ring NFI", family) && ((charset_works(font, gettext("qx")) && charset_works(font, gettext("QX")))
+
+	// Line Y
+									       || (charset_works(font, gettext("qy")) && charset_works(font, gettext("QY")))
 	    ))
 	{
 	  if (num_font_styles == num_font_styles_max)
@@ -112,19 +116,34 @@ void loadfont_callback(SDL_Surface * screen, const char *restrict const dir,
 	  user_font_styles[num_font_styles]->filename = files[i].str;	// steal it (mark NULL below)
 	  user_font_styles[num_font_styles]->family = strdup(family);
 	  user_font_styles[num_font_styles]->style = strdup(style);
+
 	  // Now we score fonts to ensure that the best ones will be placed at
 	  // the top of the list. The user will see them first. This sorting is
 	  // especially important for users who have scroll buttons disabled.
 	  // Translators should do whatever is needed to put crummy fonts last.
-	  user_font_styles[num_font_styles]->score = charset_works(font, gettext("oO"));	// distinct uppercase and lowercase
-	  user_font_styles[num_font_styles]->score += charset_works(font, gettext("`\%_@$~#{}<>^&*"));	// uncommon punctuation
-	  user_font_styles[num_font_styles]->score += charset_works(font, gettext(",.?!"));	// common punctuation
-	  user_font_styles[num_font_styles]->score += charset_works(font, gettext("017"));	// digits
-	  user_font_styles[num_font_styles]->score += charset_works(font, gettext("O0"));	// distinct circle-like characters
-	  user_font_styles[num_font_styles]->score += charset_works(font, gettext("1Il|"));	// distinct line-like characters
+	  
+	  // distinct uppercase and lowercase (e.g., 'o' vs. 'O')
+	  user_font_styles[num_font_styles]->score = charset_works(font, gettext("oO"));
+
+	  // uncommon punctuation (e.g., '@', '#', '*', etc.)
+	  user_font_styles[num_font_styles]->score += charset_works(font, gettext("`\%_@$~#{}<>^&*"));
+
+	  // common punctuation (e.g., '?', '!', '.', ',', etc.)
+	  user_font_styles[num_font_styles]->score += charset_works(font, gettext(",.?!"));
+
+	  // digits (e.g., '0', '1' and '7')
+	  user_font_styles[num_font_styles]->score += charset_works(font, gettext("017"));
+
+	  // distinct circle-like characters (e.g., 'O' (capital oh) vs. '0' (zero))
+	  user_font_styles[num_font_styles]->score += charset_works(font, gettext("O0"));
+
+	  // distinct line-like characters (e.g., 'l' (lowercase elle) vs. '1' (one) vs. 'I' (capital aye))
+	  user_font_styles[num_font_styles]->score += charset_works(font, gettext("1Il|"));
+
 #ifdef OLPC_XO
 	  user_font_styles[num_font_styles]->score += charset_works(font, "\xc3\x97\xc3\xb7");	// multiply and divide
 #endif
+
 	  num_font_styles++;
 //printf("Accepted: %s, %s, %s, score(%d)\n", files[i].str, family, style, user_font_styles[num_font_styles]->score);
 	  files[i].str = NULL;	// so free() won't crash -- we stole the memory

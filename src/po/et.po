@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: et\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-07-04 23:03-0700\n"
+"POT-Creation-Date: 2007-07-17 08:24-0700\n"
 "PO-Revision-Date: 2007-03-18 20:26+0200\n"
 "Last-Translator: Lauri Jesmin <lauri.jesmin@nordtech.ee>\n"
 "Language-Team: Estonian <et@li.org>\n"
@@ -16,54 +16,71 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.11.4\n"
 
+#. Response to Black (0, 0, 0) color selected
 msgid "Black!"
 msgstr "Must!"
 
+#. Response to Dark grey (128, 128, 128) color selected
 msgid "Dark grey! Some people spell it “dark gray”."
 msgstr "Tumehall!"
 
+#. Response to Light grey (192, 192, 192) color selected
 msgid "Light grey! Some people spell it “light gray”."
 msgstr "Helehall!"
 
+#. Response to White (255, 255, 255) color selected
 msgid "White!"
 msgstr "Valge!"
 
+#. Response to Red (255, 0, 0) color selected
 msgid "Red!"
 msgstr "Punane!"
 
+#. Response to Orange (255, 128, 0) color selected
 msgid "Orange!"
 msgstr "Oranž!"
 
+#. Response to Yellow (255, 255, 0) color selected
 msgid "Yellow!"
 msgstr "Kollane!"
 
+#. Response to Light green (160, 228, 128) color selected
 msgid "Light green!"
 msgstr "Heleroheline!"
 
+#. Response to Dark green (33, 148, 70) color selected
 msgid "Dark green!"
 msgstr "Tumeroheline!"
 
+#. Response to "Sky" blue (138, 168, 205) color selected
 msgid "Sky blue!"
 msgstr "Taevassinine!"
 
+#. Response to Blue (50, 100, 255) color selected
 msgid "Blue!"
 msgstr "Sinine!"
 
+#. Response to Lavender (186, 157, 255) color selected
 msgid "Lavender!"
 msgstr "Helelilla!"
 
+#. Response to Purple (128, 0, 128) color selected
 msgid "Purple!"
 msgstr "Lilla!"
 
+#. Response to Pink (255, 165, 211) color selected
 msgid "Pink!"
 msgstr "Roosa!"
 
+#. Response to Brown (128, 80, 0) color selected
 msgid "Brown!"
 msgstr "Pruun!"
 
+#. Response to Tan (226, 189, 166) color selected
 msgid "Tan!"
 msgstr "Päevitus!"
 
+#. Response to Beige (247, 228, 219) color selected
 msgid "Beige!"
 msgstr "Beež!"
 
@@ -71,20 +88,21 @@ msgstr "Beež!"
 #. via bugs in the SDL_ttf library. We also test fonts to be sure that
 #. they have both uppercase and lowercase letters. Note that we do not
 #. test for "Aa", because it is OK if uppercase and lowercase are the
-#. same. (but not nice -- such fonts get a low score later)
+#. same (but not nice -- such fonts get a low score later).
 #.
 #. We test the alphabet twice, to help with translation. If the users
-#. will be unable to type ASCII letters, then both lines should be
-#. translated. Otherwise, only Line X should be translated and the
-#. ASCII-only fonts should be given bad scores in the scoring code below.
-#. (the best scores going to fonts that support both)
+#. will be unable to type ASCII letters, then both Line X and Line Y
+#. should be translated. Otherwise, only Line X should be translated
+#. and the ASCII-only fonts should be given bad scores in the scoring
+#. code below (the best scores going to fonts that support both).
+#. Line X
 msgid "qx"
 msgstr ""
 
 msgid "QX"
 msgstr ""
 
-#. Line X
+#. Line Y
 msgid "qy"
 msgstr ""
 
@@ -95,183 +113,99 @@ msgstr ""
 #. the top of the list. The user will see them first. This sorting is
 #. especially important for users who have scroll buttons disabled.
 #. Translators should do whatever is needed to put crummy fonts last.
+#. distinct uppercase and lowercase (e.g., 'o' vs. 'O')
 msgid "oO"
 msgstr ""
 
-#. distinct uppercase and lowercase
+#. uncommon punctuation (e.g., '@', '#', '*', etc.)
 msgid "`\\%_@$~#{}<>^&*"
 msgstr ""
 
-#. uncommon punctuation
+#. common punctuation (e.g., '?', '!', '.', ',', etc.)
 msgid ",.?!"
 msgstr ""
 
-#. common punctuation
+#. digits (e.g., '0', '1' and '7')
 msgid "017"
 msgstr ""
 
-#. digits
+#. distinct circle-like characters (e.g., 'O' (capital oh) vs. '0' (zero))
 msgid "O0"
 msgstr ""
 
-#. distinct circle-like characters
+#. distinct line-like characters (e.g., 'l' (lowercase elle) vs. '1' (one) vs. 'I' (capital aye))
 msgid "1Il|"
 msgstr ""
 
+#. Congratulations #1
 msgid "Great!"
 msgstr "Suurepärane!"
 
+#. Congratulations #2
 msgid "Cool!"
 msgstr "Vahva!"
 
+#. Congratulations #3
 msgid "Keep it up!"
 msgstr "Jätka samas vaimus!"
 
+#. Congratulations #4
 msgid "Good job!"
 msgstr "Hästi tehtud!"
 
+#. Input Method: English mode
 msgid "English"
 msgstr ""
 
+#. Input Method: Japanese Romanized Hiragana mode
 msgid "Hiragana"
 msgstr ""
 
+#. Input Method: Japanese Romanized Katakana mode
 msgid "Katakana"
 msgstr ""
 
+#. Input Method: Korean Hangul 2-Bul mode
 msgid "Hangul"
 msgstr ""
 
-msgid "Fill"
-msgstr "Täitmine"
+#. Input Method: Thai mode
+msgid "Thai"
+msgstr ""
 
-msgid "Grass"
-msgstr "Muru"
-
-msgid "Bricks"
-msgstr "Telliskivid"
-
-msgid "Rainbow"
-msgstr "Vikerkaar"
-
-msgid "Sparkles"
-msgstr "Sädelus"
-
-msgid "Blur"
-msgstr "Udu"
-
-msgid "Smudge"
-msgstr "Hägus"
-
-msgid "Lighten"
-msgstr "Valgendus"
-
-msgid "Darken"
-msgstr "Tumendus"
-
-msgid "Chalk"
-msgstr "Kriit"
-
-msgid "Blocks"
-msgstr "Plokid"
-
-msgid "Negative"
-msgstr "Negatiiv"
-
-msgid "Tint"
-msgstr "Toonimine"
-
-msgid "Drip"
-msgstr "Tilgad"
-
-msgid "Cartoon"
-msgstr "Multikas"
-
-msgid "Mirror"
-msgstr "Peegelpilt"
-
-msgid "Flip"
-msgstr "Pea alaspidi"
-
-msgid "Click in the picture to fill that area with color."
-msgstr "Klõpsa pildil, et täita see ala värviga."
-
-msgid "Click and move to draw grass. Don’t forget the dirt!"
-msgstr "Tee klõps ja liiguta hiirt,et joonistada muru. Ära unusta pori!"
-
-msgid "Click and move to draw large bricks."
-msgstr "Tee klõps ja liiguta hiirt,et joonistada suuri telliskive."
-
-msgid "Click and move to draw small bricks."
-msgstr "Tee klõps ja liiguta hiirt,et joonistada väikeseid telliskive."
-
-msgid "You can draw in rainbow colors!"
-msgstr "Sa saad joonistada vikerkaarevärvidega!"
-
-msgid "Click and move to draw sparkles."
-msgstr "Tee klõps ja liiguta hiirt,et tekitada sädemeid."
-
-msgid "Click and move the mouse around to blur the picture."
-msgstr "Tee klõps ja liiguta hiirt, et teha pilt ähmasemaks."
-
-msgid "Click and move the mouse around to smudge the picture."
-msgstr "Tee klõps ja liiguta hiirt, et värvidega mäkerdada."
-
-msgid "Click and move to fade the colors."
-msgstr "Tee klõps ja liiguta hiirt, et pleegitada värve."
-
-msgid "Click and move to darken the colors."
-msgstr "Tee klõps ja liiguta hiirt, et muuta värve tumedamaks."
-
-msgid ""
-"Click and move the mouse around to turn the picture into a chalk drawing."
-msgstr "Tee klõps ja liiguta hiirt, et muuta pilt kriidijoonistuse sarnaseks."
-
-msgid "Click and move the mouse around to make the picture blocky."
-msgstr "Tee klõps ja liiguta hiirt, et pilt muutuks ruudulisemaks."
-
-msgid "Click and move the mouse around to draw a negative."
-msgstr "Tee klõps ja liiguta hiirt, et tekitada negatiiv."
-
-msgid "Click and move the mouse around to change the picture’s color."
-msgstr "Tee klõps ja liiguta hiirt ringi värvide muutmiseks."
-
-msgid "Click and move the mouse around to make the picture drip."
-msgstr "Tee klõps ja liiguta hiirt, et panna pilt tilkuma."
-
-msgid "Click and move the mouse around to turn the picture into a cartoon."
-msgstr "Tee klõps ja liiguta hiirt, et muuta pilt multika sarnaseks."
-
-msgid "Click to make a mirror image."
-msgstr "Tee klõps, et tekitada peegelpilt."
-
-msgid "Click to flip the picture upside-down."
-msgstr "Tee klõps, et pöörata pilt pea alaspidi."
-
+#. Square shape tool (4 equally-lengthed sides at right angles)
 msgid "Square"
 msgstr "Ruut"
 
+#. Rectangle shape tool (4 sides at right angles)
 msgid "Rectangle"
 msgstr "Ristkülik"
 
+#. Circle shape tool (X radius and Y radius are the same)
 msgid "Circle"
 msgstr "Ring"
 
+#. Ellipse shape tool (X radius and Y radius may differ)
 msgid "Ellipse"
 msgstr "Ellips"
 
+#. Triangle shape tool (3 sides)
 msgid "Triangle"
 msgstr "Kolmnurk"
 
+#. Pentagone shape tool (5 sides)
 msgid "Pentagon"
 msgstr "Viisnurk"
 
+#. Rhombus shape tool (4 sides, not at right angles)
 msgid "Rhombus"
 msgstr "Romb"
 
+#. Description of a square
 msgid "A square is a rectangle with four equal sides."
 msgstr "Ruut on ristkülik nelja võrdse küljega."
 
+#. Description of a rectangle
 msgid "A rectangle has four sides and four right angles."
 msgstr "Ristkülikul on neli külge ja neli täisnurka."
 
@@ -280,88 +214,118 @@ msgid ""
 "A circle is a curve where all points have the same distance from the center."
 msgstr "Ring on kaar, kus kõik kaare punktid on keskelt ühe kaugusel."
 
+#. Description of an ellipse
 msgid "An ellipse is a stretched circle."
 msgstr "Ellips on lapergune ring."
 
+#. Description of a triangle
 msgid "A triangle has three sides."
 msgstr "Kolmnurgal on kolm külge."
 
+#. Description of a pentagon
 msgid "A pentagon has five sides."
 msgstr "Viisnurgal on viis külge."
 
 msgid "A rhombus has four equal sides, and opposite sides are parallel."
 msgstr "Rombil on neli võrdset külge ja vastasküljed on paralleelsed."
 
+#. Title of tool selector (buttons down the left)
 msgid "Tools"
 msgstr "Tööriistad"
 
+#. Title of color palette (buttons across the bottom)
 msgid "Colors"
 msgstr "Värvid"
 
+#. Title of brush selector (buttons down the right for paint and line tools)
 msgid "Brushes"
 msgstr "Pintslid"
 
+#. Title of eraser selector (buttons down the right for eraser tool)
 msgid "Erasers"
 msgstr "Kustukummid"
 
+#. Title of stamp selector (buttons down the right for stamps tool)
 msgid "Stamps"
 msgstr "Templid"
 
+#. Title of shape selector (buttons down the right for shapes tool)
+#. Shape creation tool (square, circle, etc.)
 msgid "Shapes"
 msgstr "Kujundid"
 
+#. Title of font selector (buttons down the right for text tool)
 msgid "Letters"
 msgstr "Tähed"
 
+#. Title of magic tool selector (buttons down the right for magic (effect plugin) tool)
+#. "Magic" effects tools (blur, flip image, etc.)
 msgid "Magic"
 msgstr "Maagia"
 
+#. Freehand painting tool
 msgid "Paint"
 msgstr "Värv"
 
+#. Stamp tool (aka Rubber Stamps)
 msgid "Stamp"
 msgstr "Tempel"
 
+#. Line drawing tool
 msgid "Lines"
 msgstr "Jooned"
 
+#. Text tool
 msgid "Text"
 msgstr "Tekst"
 
+#. Undo last action
 msgid "Undo"
 msgstr "Tagasi"
 
+#. Redo undone action
 msgid "Redo"
 msgstr "Uuesti"
 
+#. Eraser tool
 msgid "Eraser"
 msgstr "Kustukumm"
 
+#. Start a new picture
 msgid "New"
 msgstr "Uus"
 
+#. Open a saved picture
 #. buttons for the file open dialog
+#. Open dialog: 'Open' button, to load the selected picture
 msgid "Open"
 msgstr "Ava"
 
+#. Save the current picture
 msgid "Save"
 msgstr "Salvesta"
 
+#. Print the current picture
 msgid "Print"
 msgstr "Trüki"
 
+#. Quit/exit Tux Paint application
 msgid "Quit"
 msgstr "Välju"
 
+#. Paint tool instructions
 msgid "Pick a color and a brush shape to draw with."
 msgstr "Vali värv ja pintsli kuju, millega värvida."
 
+#. Stamp tool instructions
 msgid "Pick a picture to stamp around your drawing."
 msgstr "Vali pilt, mida asetada pildile templina."
 
+#. Line tool instructions
 msgid "Click to start drawing a line. Let go to complete it."
 msgstr "Klõpsa pildil joone joonistamiseks. Lõpetamiseks vabasta hiire nupp."
 
+#. Shape tool instructions
 msgid ""
 "Pick a shape. Click to pick the center, drag, then let go when it is the "
 "size you want. Move around to rotate it, and click to draw it."
@@ -370,66 +334,75 @@ msgstr ""
 "juures nupp lahti. Liiguta hiirt ringi, et pöörata kujund ümber, ning siis "
 "klõpsa uuesti lõpetamiseks."
 
+#. Text tool instructions
 msgid "Choose a style of text. Click on your drawing and you can start typing."
 msgstr "Vali teksti stiil. Klõpsa joonistusele ja sa saad hakata kirjutama."
 
+#. Magic tool instruction
 msgid "Pick a magical effect to use on your drawing!"
 msgstr "Vali maagiline efekt, mida tahad oma joonistusel kasutada."
 
-#. Undo
+#. Response to 'undo' action
 msgid "Undo!"
 msgstr "Võta tagasi!"
 
-#. Redo
+#. Response to 'redo' action
 msgid "Redo!"
 msgstr "Tee uuesti!"
 
-#. Eraser
+#. Eraser tool
 msgid "Eraser!"
 msgstr "Kustukumm!"
 
-#. New
+#. Response to 'start a new image' action
 msgid "You now have a blank sheet to draw on!"
 msgstr "Sul on nüüd tühi leht oma joonistuse jaoks!"
 
-#. Open
+#. Response to 'open' action (while file dialog is being constructed)
 msgid "Open…"
 msgstr "Avamine…"
 
-#. Save
+#. Response to 'save' action
 msgid "Your image has been saved!"
 msgstr "Sinu pilt on salvestatud!"
 
-#. Print
+#. Response to 'print' action (while printing, or print dialog is being used)
 msgid "Printing…"
 msgstr "Trükkimine…"
 
-#. Quit
+#. Response to 'quit' (exit) action
 msgid "Bye bye!"
 msgstr "Head aega!"
 
+#. Instruction while using Line tool (after click, before release)
 msgid "Let go of the button to complete the line."
 msgstr "Joone lõpetamiseks lase nupust lahti."
 
+#. Instruction while using Shape tool (after first click, before release)
 msgid "Hold the button to stretch the shape."
 msgstr "Hoia nuppu all kujundi venitamiseks."
 
+#. Instruction while finishing Shape tool (after release, during rotation step before second click)
 msgid "Move the mouse to rotate the shape. Click to draw it."
 msgstr "Liiguta hiirt kujundi pööramiseks. Klõpsa pildil lõpetamiseks."
 
+#. Notification that 'New' action was aborted (current image would have been lost)
 msgid "OK then… Let’s keep drawing this one!"
 msgstr "Olgu nii, joonistame seda pilti edasi!"
 
-#. FIXME: Move elsewhere!!!
+#. Prompt to confirm user wishes to quit
 msgid "Do you really want to quit?"
 msgstr "Kas sa tõesti tahad väljuda?"
 
+#. Quit prompt positive response (quit)
 msgid "Yes, I'm done!"
 msgstr "Jah, ma olen lõpetanud!"
 
+#. Quit prompt negative response (don't quit)
 msgid "No, take me back!"
 msgstr "Ei, vii mind tagasi!"
 
+#. Current picture is not saved; user is quitting
 msgid "If you quit, you’ll lose your picture! Save it?"
 msgstr "Kui sa praegu väljud, kaotad sa oma pildi ära! Kas salvestame?"
 
@@ -439,41 +412,48 @@ msgstr "Jah, salvesta!"
 msgid "No, don't bother saving!"
 msgstr "Ei, ma ei soovi seda pilti salvestada!"
 
+#. Current picture is not saved; user is opening another picture
 msgid "Save your picture first?"
 msgstr "Salvestame selle pildi enne ära?"
 
+#. Error opening picture
 msgid "Can’t open that picture!"
 msgstr "Selle pildi avamine ei ole võimalik!"
 
+#. Generic dialog dismissal
 msgid "OK"
 msgstr "OK"
 
 #. This will be replaced with a dialog allowing color choice and Starter
 #. picking, with a "Back" option to dismiss the "New" and return to
 #. the current picture.  But for now...  (bjk 2006.02.19)
+#. Prompt to confirm starting a new picture
 msgid "Start a new picture?"
 msgstr "Kas teeme uue pildi?"
 
-#. #define PROMPT_NEW_YES gettext_noop("That’s OK!")
-#. #define PROMPT_NEW_NO gettext_noop("Never mind!")
 msgid "Yes, let's start fresh!"
 msgstr "Jah, teeme lehe puhtaks!"
 
+#. Notification that 'Open' dialog has nothing to show
 msgid "There are no saved files!"
 msgstr "Salvestatud pilte ei ole!"
 
+#. Verification of print action
 msgid "Print your picture now?"
 msgstr "Kas trükkida sinu pilt välja?"
 
 msgid "Yes, print it!"
 msgstr "Jah, prindi!"
 
+#. Confirmation of successful (we hope) printing
 msgid "Your picture has been printed!"
 msgstr "Sinu pilt on välja trükitud!"
 
+#. Notification that it's too soon to print again (--printdelay option is in effect)
 msgid "You can’t print yet!"
 msgstr "Ei saa veel välja trükkida!"
 
+#. Prompt to confirm erasing a picture in the Open dialog
 msgid "Erase this picture?"
 msgstr "Kas kustutame selle pildi?"
 
@@ -483,51 +463,65 @@ msgstr "Jah, kustuta!"
 msgid "No, don't erase it!"
 msgstr "Ei, ära kustuta!"
 
+#. Reminder that Mouse Button 1 is the button to use in Tux Paint
 msgid "Remember to use the left mouse button!"
 msgstr "Ära unusta kasutamast vasakut hiire nuppu!"
 
+#. Sound has been muted (silenced) via keyboard shortcut
 msgid "Sound muted."
 msgstr ""
 
+#. Sound has been unmuted (unsilenced) via keyboard shortcut
 msgid "Sound unmuted."
 msgstr ""
 
+#. Wait while Text tool finishes loading fonts
 msgid "Please wait..."
 msgstr "Palun oota..."
 
+#. Open dialog: 'Erase' button, to erase/deleted the selected picture
 msgid "Erase"
 msgstr "Kustuta"
 
+#. Open dialog: 'Slides' button, to switch to slide show mode
 msgid "Slides"
 msgstr "Slaidid"
 
+#. Open dialog: 'Back' button, to dismiss Open dialog without opening a picture
 msgid "Back"
 msgstr "Tagasi"
 
+#. Slideshow: 'Next' button, to load next slide (image)
 msgid "Next"
 msgstr "Edasi"
 
+#. Slideshow: 'Play' button, to begin a slideshow sequence
 msgid "Play"
 msgstr "Esita"
 
+#. Label for 'Letters' buttons (font selector, down the right when the Text tool is being used); used to show the difference between font faces
 msgid "Aa"
 msgstr ""
 
-#. FIXME: Move elsewhere! Or not?!
+#. Admittedly stupid way of determining which keys can be used for
+#. positive and negative responses in dialogs (e.g., [Y] (for 'yes') in English)
 msgid "Yes"
 msgstr "Jah"
 
 msgid "No"
 msgstr "Ei"
 
-#. FIXME: Move elsewhere!!!
-#. #define PROMPT_SAVE_OVER_TXT gettext_noop("Save over the older version of this picture?")
+#. Prompt to ask whether user wishes to save over old version of their file
 msgid "Replace the picture with your changes?"
 msgstr "Asenda pilt koos tehtud muudatustega?"
 
+#. Positive response to saving over old version
+#. (like a 'File:Save' action in other applications)
 msgid "Yes, replace the old one!"
 msgstr "Jah, vaheta vana pilt välja!"
 
+#. Negative response to saving over old version (saves a new image)
+#. (like a 'File:Save As...' action in other applications)
 msgid "No, save a new file!"
 msgstr "Ei, salvestame uude faili!"
 
@@ -535,6 +529,7 @@ msgid "Choose the picture you want, then click “Open”."
 msgstr "Vali pilt ja klõpsa nupul  \"Ava\""
 
 #. Let user choose images:
+#. Instructions for Slideshow file dialog (FIXME: Make a #define)
 msgid "Choose the pictures you want, then click “Play”."
 msgstr "Vali pilt ja klõpsa nupul  \"Esita\""
 
@@ -546,3 +541,162 @@ msgstr "Joonistusprogramm"
 
 msgid "Tux Paint"
 msgstr "Joonistame koos Tuksiga!"
+
+msgid "Blocks"
+msgstr "Plokid"
+
+msgid "Chalk"
+msgstr "Kriit"
+
+msgid "Drip"
+msgstr "Tilgad"
+
+msgid ""
+"Click and move the mouse around to turn the picture into a chalk drawing."
+msgstr "Tee klõps ja liiguta hiirt, et muuta pilt kriidijoonistuse sarnaseks."
+
+msgid "Click and move the mouse around to make the picture blocky."
+msgstr "Tee klõps ja liiguta hiirt, et pilt muutuks ruudulisemaks."
+
+msgid "Click and move the mouse around to make the picture drip."
+msgstr "Tee klõps ja liiguta hiirt, et panna pilt tilkuma."
+
+msgid "Blur"
+msgstr "Udu"
+
+msgid "Click and move the mouse around to blur the picture."
+msgstr "Tee klõps ja liiguta hiirt, et teha pilt ähmasemaks."
+
+#. Both are named "Bricks", at the moment:
+msgid "Bricks"
+msgstr "Telliskivid"
+
+msgid "Click and move to draw large bricks."
+msgstr "Tee klõps ja liiguta hiirt,et joonistada suuri telliskive."
+
+msgid "Click and move to draw small bricks."
+msgstr "Tee klõps ja liiguta hiirt,et joonistada väikeseid telliskive."
+
+msgid "Cartoon"
+msgstr "Multikas"
+
+msgid "Click and move the mouse around to turn the picture into a cartoon."
+msgstr "Tee klõps ja liiguta hiirt, et muuta pilt multika sarnaseks."
+
+msgid "Emboss"
+msgstr ""
+
+#, fuzzy
+msgid "Click and drag the mouse to emboss the picture."
+msgstr "Tee klõps ja liiguta hiirt, et teha pilt ähmasemaks."
+
+msgid "Lighten"
+msgstr "Valgendus"
+
+msgid "Darken"
+msgstr "Tumendus"
+
+msgid "Click and move to fade the colors."
+msgstr "Tee klõps ja liiguta hiirt, et pleegitada värve."
+
+msgid "Click and move to darken the colors."
+msgstr "Tee klõps ja liiguta hiirt, et muuta värve tumedamaks."
+
+msgid "Fill"
+msgstr "Täitmine"
+
+msgid "Click in the picture to fill that area with color."
+msgstr "Klõpsa pildil, et täita see ala värviga."
+
+msgid "Flower"
+msgstr ""
+
+msgid "Click and drag to draw a flower stalk. Let go to finish the flower."
+msgstr ""
+
+msgid "Foam"
+msgstr ""
+
+#, fuzzy
+msgid "Click and drag the mouse to cover an area with foamy bubbles.."
+msgstr "Klõpsa pildil, et täita see ala värviga."
+
+msgid "Glass Tile"
+msgstr ""
+
+#, fuzzy
+msgid "Click and drag the mouse to put glass tile over your picture."
+msgstr "Tee klõps ja liiguta hiirt, et teha pilt ähmasemaks."
+
+msgid "Grass"
+msgstr "Muru"
+
+msgid "Click and move to draw grass. Don’t forget the dirt!"
+msgstr "Tee klõps ja liiguta hiirt,et joonistada muru. Ära unusta pori!"
+
+msgid "Kalidescope"
+msgstr ""
+
+msgid ""
+"Click and drag the mouse to draw with symmetric brushes (a kalidescope)."
+msgstr ""
+
+#, fuzzy
+msgid "Metal Paint"
+msgstr "Värv"
+
+#, fuzzy
+msgid "Click and drag the mouse to paint with a metallic color."
+msgstr "Tee klõps ja liiguta hiirt, et muuta värve tumedamaks."
+
+msgid "Mirror"
+msgstr "Peegelpilt"
+
+msgid "Flip"
+msgstr "Pea alaspidi"
+
+msgid "Click to flip the picture upside-down."
+msgstr "Tee klõps, et pöörata pilt pea alaspidi."
+
+msgid "Click to make a mirror image."
+msgstr "Tee klõps, et tekitada peegelpilt."
+
+msgid "Negative"
+msgstr "Negatiiv"
+
+msgid "Click and move the mouse around to draw a negative."
+msgstr "Tee klõps ja liiguta hiirt, et tekitada negatiiv."
+
+msgid "Rainbow"
+msgstr "Vikerkaar"
+
+msgid "You can draw in rainbow colors!"
+msgstr "Sa saad joonistada vikerkaarevärvidega!"
+
+msgid "Smudge"
+msgstr "Hägus"
+
+msgid "Click and move the mouse around to smudge the picture."
+msgstr "Tee klõps ja liiguta hiirt, et värvidega mäkerdada."
+
+msgid "Tint"
+msgstr "Toonimine"
+
+msgid "Click and move the mouse around to change the picture’s color."
+msgstr "Tee klõps ja liiguta hiirt ringi värvide muutmiseks."
+
+#, fuzzy
+msgid "Waves"
+msgstr "Salvesta"
+
+msgid ""
+"Click to make the picture wavy. (Click towards the top for shorter waves; "
+"the bottom for taller waves. Click towards the left for small waves; the "
+"right for wide waves.)"
+msgstr ""
+
+#~ msgid "Sparkles"
+#~ msgstr "Sädelus"
+
+#~ msgid "Click and move to draw sparkles."
+#~ msgstr "Tee klõps ja liiguta hiirt,et tekitada sädemeid."

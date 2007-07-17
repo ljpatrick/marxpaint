@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: lv\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-07-04 23:03-0700\n"
+"POT-Creation-Date: 2007-07-17 08:24-0700\n"
 "PO-Revision-Date: 2007-05-14 18:13-0700\n"
 "Last-Translator: Raivis Strogonovs <raivucis@gmail.com>\n"
 "Language-Team: Valoda <raivucis@gmail.com>\n"
@@ -15,54 +15,71 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
+#. Response to Black (0, 0, 0) color selected
 msgid "Black!"
 msgstr "Melns! Nu melns kā piķis!"
 
+#. Response to Dark grey (128, 128, 128) color selected
 msgid "Dark grey! Some people spell it “dark gray”."
 msgstr "Tumši pelēks!"
 
+#. Response to Light grey (192, 192, 192) color selected
 msgid "Light grey! Some people spell it “light gray”."
 msgstr "Gaiši pelēks!"
 
+#. Response to White (255, 255, 255) color selected
 msgid "White!"
 msgstr "Balts! Balts kā kā diena!"
 
+#. Response to Red (255, 0, 0) color selected
 msgid "Red!"
 msgstr "Sarkans!"
 
+#. Response to Orange (255, 128, 0) color selected
 msgid "Orange!"
 msgstr "Oranžš!"
 
+#. Response to Yellow (255, 255, 0) color selected
 msgid "Yellow!"
 msgstr "Dzeltens!"
 
+#. Response to Light green (160, 228, 128) color selected
 msgid "Light green!"
 msgstr "Gaiši zaļš!"
 
+#. Response to Dark green (33, 148, 70) color selected
 msgid "Dark green!"
 msgstr "Tumši zaļš!"
 
+#. Response to "Sky" blue (138, 168, 205) color selected
 msgid "Sky blue!"
 msgstr "Debesu zils! Žēl ka bez mākoņu baltā :)"
 
+#. Response to Blue (50, 100, 255) color selected
 msgid "Blue!"
 msgstr "Zils!"
 
+#. Response to Lavender (186, 157, 255) color selected
 msgid "Lavender!"
 msgstr "Mēļa krāsa!"
 
+#. Response to Purple (128, 0, 128) color selected
 msgid "Purple!"
 msgstr "Violets!"
 
+#. Response to Pink (255, 165, 211) color selected
 msgid "Pink!"
 msgstr "Rozā!"
 
+#. Response to Brown (128, 80, 0) color selected
 msgid "Brown!"
 msgstr "Brūns!"
 
+#. Response to Tan (226, 189, 166) color selected
 msgid "Tan!"
 msgstr "Dzeltenbrūns!"
 
+#. Response to Beige (247, 228, 219) color selected
 msgid "Beige!"
 msgstr "Smilškrāsa!"
 
@@ -70,20 +87,21 @@ msgstr "Smilškrāsa!"
 #. via bugs in the SDL_ttf library. We also test fonts to be sure that
 #. they have both uppercase and lowercase letters. Note that we do not
 #. test for "Aa", because it is OK if uppercase and lowercase are the
-#. same. (but not nice -- such fonts get a low score later)
+#. same (but not nice -- such fonts get a low score later).
 #.
 #. We test the alphabet twice, to help with translation. If the users
-#. will be unable to type ASCII letters, then both lines should be
-#. translated. Otherwise, only Line X should be translated and the
-#. ASCII-only fonts should be given bad scores in the scoring code below.
-#. (the best scores going to fonts that support both)
+#. will be unable to type ASCII letters, then both Line X and Line Y
+#. should be translated. Otherwise, only Line X should be translated
+#. and the ASCII-only fonts should be given bad scores in the scoring
+#. code below (the best scores going to fonts that support both).
+#. Line X
 msgid "qx"
 msgstr "qx"
 
 msgid "QX"
 msgstr "QX"
 
-#. Line X
+#. Line Y
 msgid "qy"
 msgstr "qy"
 
@@ -94,190 +112,99 @@ msgstr "QY"
 #. the top of the list. The user will see them first. This sorting is
 #. especially important for users who have scroll buttons disabled.
 #. Translators should do whatever is needed to put crummy fonts last.
+#. distinct uppercase and lowercase (e.g., 'o' vs. 'O')
 msgid "oO"
 msgstr "oO"
 
-#. distinct uppercase and lowercase
+#. uncommon punctuation (e.g., '@', '#', '*', etc.)
 msgid "`\\%_@$~#{}<>^&*"
 msgstr "`\\%_@$~#{}<>^&*"
 
-#. uncommon punctuation
+#. common punctuation (e.g., '?', '!', '.', ',', etc.)
 msgid ",.?!"
 msgstr ",.?!"
 
-#. common punctuation
+#. digits (e.g., '0', '1' and '7')
 msgid "017"
 msgstr "017"
 
-#. digits
+#. distinct circle-like characters (e.g., 'O' (capital oh) vs. '0' (zero))
 msgid "O0"
 msgstr "O0"
 
-#. distinct circle-like characters
+#. distinct line-like characters (e.g., 'l' (lowercase elle) vs. '1' (one) vs. 'I' (capital aye))
 msgid "1Il|"
 msgstr "1Il|"
 
+#. Congratulations #1
 msgid "Great!"
 msgstr "Lieliski!"
 
+#. Congratulations #2
 msgid "Cool!"
 msgstr "Kruti!"
 
+#. Congratulations #3
 msgid "Keep it up!"
 msgstr "Tā tik turpini!"
 
+#. Congratulations #4
 msgid "Good job!"
 msgstr "Labs darbs!"
 
+#. Input Method: English mode
 msgid "English"
 msgstr ""
 
+#. Input Method: Japanese Romanized Hiragana mode
 msgid "Hiragana"
 msgstr ""
 
+#. Input Method: Japanese Romanized Katakana mode
 msgid "Katakana"
 msgstr ""
 
+#. Input Method: Korean Hangul 2-Bul mode
 msgid "Hangul"
 msgstr ""
 
-msgid "Fill"
-msgstr "Piepildi"
-
-msgid "Grass"
-msgstr "Zāle"
-
-msgid "Bricks"
-msgstr "Ķieģeļi"
-
-msgid "Rainbow"
-msgstr "Varavīksne"
-
-msgid "Sparkles"
-msgstr "Spīdeklīši"
-
-msgid "Blur"
-msgstr "Migla"
-
-msgid "Smudge"
-msgstr "Smēre"
-
-msgid "Lighten"
-msgstr "Pagaišinātājs"
-
-msgid "Darken"
-msgstr "Tumsinātājs"
-
-msgid "Chalk"
-msgstr "Krīts"
-
-msgid "Blocks"
-msgstr "Kluči"
-
-msgid "Negative"
-msgstr "Negatīvs"
-
-msgid "Tint"
-msgstr "Tinte"
-
-msgid "Drip"
-msgstr "Pilēšana"
-
-msgid "Cartoon"
-msgstr "Multene"
-
-msgid "Mirror"
-msgstr "Spogulis"
-
-msgid "Flip"
-msgstr "Apgriezt riņķī"
-
-msgid "Click in the picture to fill that area with color."
-msgstr "Nospied uz bildi, lai to piepildītu ar krāsu."
-
-msgid "Click and move to draw grass. Don’t forget the dirt!"
+#. Input Method: Thai mode
+msgid "Thai"
 msgstr ""
-"Nospied, pieturi peles pogu un velc peli lai zīmētu zāli. Neaizmirsti "
-"pievienot dubļus!"
 
-msgid "Click and move to draw large bricks."
-msgstr "Nospied, pieturi peles pogu un velc peli lai zīmētu lielus ķieģeļus."
-
-msgid "Click and move to draw small bricks."
-msgstr "Nospied, pieturi peles pogu un velc peli lai zīmētu ķieģeļus."
-
-msgid "You can draw in rainbow colors!"
-msgstr "Tu vari zīmēt varavīksnes krāsās!"
-
-msgid "Click and move to draw sparkles."
-msgstr "Nospied, pieturi peles pogu un velc peli lai zīmētu spīdeklīšus."
-
-msgid "Click and move the mouse around to blur the picture."
-msgstr ""
-"Nospied, pieturi peles pogu un velc peli lai bildi padarītu miglaināku."
-
-msgid "Click and move the mouse around to smudge the picture."
-msgstr "Nospied, pieturi peles pogu un velc peli lai notraipītu zīmējumu."
-
-msgid "Click and move to fade the colors."
-msgstr "Nospied, pieturi peles pogu un velc peli lai balinātu krāsu."
-
-msgid "Click and move to darken the colors."
-msgstr "Nospied, pieturi peles pogu un velc peli lai satumšinātu bildi."
-
-msgid ""
-"Click and move the mouse around to turn the picture into a chalk drawing."
-msgstr ""
-"Nospied, pieturi peles pogu un velc peli lai zīmējums izskatītos kā ar krītu "
-"zīmētu"
-
-msgid "Click and move the mouse around to make the picture blocky."
-msgstr "Nospied, pieturi peles pogu un velc peli lai bilde būtu klucīši."
-
-msgid "Click and move the mouse around to draw a negative."
-msgstr ""
-"Nospied, pieturi peles pogu un velc peli lai zīmējumu padarītu negatīvu."
-
-msgid "Click and move the mouse around to change the picture’s color."
-msgstr "Nospied, pieturi peles pogu un velc peli lai zīmējumā mainītu krāsas."
-
-msgid "Click and move the mouse around to make the picture drip."
-msgstr "Nospied, pieturi peles pogu un velc peli lai zīmējums notecētu."
-
-msgid "Click and move the mouse around to turn the picture into a cartoon."
-msgstr ""
-"Nospied, pieturi peles pogu un velc peli lai zīmējums izskatitos kā multene."
-
-msgid "Click to make a mirror image."
-msgstr "Nospied peli uz zīmējumu lai to pārvērstu spoguļskatā."
-
-msgid "Click to flip the picture upside-down."
-msgstr "Nospied peli uz zīmējuma lai to apgrieztu riņķī."
-
+#. Square shape tool (4 equally-lengthed sides at right angles)
 msgid "Square"
 msgstr "Kvadrāts"
 
+#. Rectangle shape tool (4 sides at right angles)
 msgid "Rectangle"
 msgstr "Taisnstūris"
 
+#. Circle shape tool (X radius and Y radius are the same)
 msgid "Circle"
 msgstr "Riņķis"
 
+#. Ellipse shape tool (X radius and Y radius may differ)
 msgid "Ellipse"
 msgstr "Elipse"
 
+#. Triangle shape tool (3 sides)
 msgid "Triangle"
 msgstr "Trīsstūris"
 
+#. Pentagone shape tool (5 sides)
 msgid "Pentagon"
 msgstr "Pentagons"
 
+#. Rhombus shape tool (4 sides, not at right angles)
 msgid "Rhombus"
 msgstr "Rombs"
 
+#. Description of a square
 msgid "A square is a rectangle with four equal sides."
 msgstr "Kvadrāts ir figūra ar četrām vienādām malām."
 
+#. Description of a rectangle
 msgid "A rectangle has four sides and four right angles."
 msgstr "Taisnstūrim visi četri leņķi ir taisni."
 
@@ -288,88 +215,118 @@ msgstr ""
 "Riņķis ir aplis kuram no jebkurienes velkot taisni uz centru, taisnes ir "
 "vienādas."
 
+#. Description of an ellipse
 msgid "An ellipse is a stretched circle."
 msgstr "Elipse ir izstiepts riņķis."
 
+#. Description of a triangle
 msgid "A triangle has three sides."
 msgstr "Trīsstūrim ir trīs malas."
 
+#. Description of a pentagon
 msgid "A pentagon has five sides."
 msgstr "Pentagonam ir piecas malas."
 
 msgid "A rhombus has four equal sides, and opposite sides are parallel."
 msgstr "Rombam ir četrasvienādas malas un pretējās malas ir paralēlas."
 
+#. Title of tool selector (buttons down the left)
 msgid "Tools"
 msgstr "Rīki"
 
+#. Title of color palette (buttons across the bottom)
 msgid "Colors"
 msgstr "krāsas"
 
+#. Title of brush selector (buttons down the right for paint and line tools)
 msgid "Brushes"
 msgstr "Otas"
 
+#. Title of eraser selector (buttons down the right for eraser tool)
 msgid "Erasers"
 msgstr "Dzēšgumija"
 
+#. Title of stamp selector (buttons down the right for stamps tool)
 msgid "Stamps"
 msgstr "Uzlīmes"
 
+#. Title of shape selector (buttons down the right for shapes tool)
+#. Shape creation tool (square, circle, etc.)
 msgid "Shapes"
 msgstr "Formas"
 
+#. Title of font selector (buttons down the right for text tool)
 msgid "Letters"
 msgstr "Burti"
 
+#. Title of magic tool selector (buttons down the right for magic (effect plugin) tool)
+#. "Magic" effects tools (blur, flip image, etc.)
 msgid "Magic"
 msgstr "Maģija"
 
+#. Freehand painting tool
 msgid "Paint"
 msgstr "Krāsas"
 
+#. Stamp tool (aka Rubber Stamps)
 msgid "Stamp"
 msgstr "Uzlīmes"
 
+#. Line drawing tool
 msgid "Lines"
 msgstr "Līnijas"
 
+#. Text tool
 msgid "Text"
 msgstr "Teksts"
 
+#. Undo last action
 msgid "Undo"
 msgstr "<--"
 
+#. Redo undone action
 msgid "Redo"
 msgstr "-->"
 
+#. Eraser tool
 msgid "Eraser"
 msgstr "Dzēšgumija"
 
+#. Start a new picture
 msgid "New"
 msgstr "Jauns"
 
+#. Open a saved picture
 #. buttons for the file open dialog
+#. Open dialog: 'Open' button, to load the selected picture
 msgid "Open"
 msgstr "Atvērt"
 
+#. Save the current picture
 msgid "Save"
 msgstr "Saglabāt"
 
+#. Print the current picture
 msgid "Print"
 msgstr "Printēt"
 
+#. Quit/exit Tux Paint application
 msgid "Quit"
 msgstr "Iziet"
 
+#. Paint tool instructions
 msgid "Pick a color and a brush shape to draw with."
 msgstr "Paņem krāsu un otas formu lai zīmētu."
 
+#. Stamp tool instructions
 msgid "Pick a picture to stamp around your drawing."
 msgstr "Izvēlies uzlīmi ar ko aplīmēsi savu zīmējumu."
 
+#. Line tool instructions
 msgid "Click to start drawing a line. Let go to complete it."
 msgstr "Nospied peli lai sāktu zīmēt līniju. Atlaid vaļā lai to pabeigtu"
 
+#. Shape tool instructions
 msgid ""
 "Pick a shape. Click to pick the center, drag, then let go when it is the "
 "size you want. Move around to rotate it, and click to draw it."
@@ -378,66 +335,75 @@ msgstr ""
 "zīmējums ir izmērā kādā tu viņu gribi. Kustini apkārt lai to pagrieztu, un "
 "nopsied peli lai to uzzīmetu."
 
+#. Text tool instructions
 msgid "Choose a style of text. Click on your drawing and you can start typing."
 msgstr "Izvēlies teksta stilu. Nospied ar peli uz zīmējumu."
 
+#. Magic tool instruction
 msgid "Pick a magical effect to use on your drawing!"
 msgstr "Paņem maģisko effektu, lai tu vari burties!"
 
-#. Undo
+#. Response to 'undo' action
 msgid "Undo!"
 msgstr "<--"
 
-#. Redo
+#. Response to 'redo' action
 msgid "Redo!"
 msgstr "-->"
 
-#. Eraser
+#. Eraser tool
 msgid "Eraser!"
 msgstr "Dzēšgumija!"
 
-#. New
+#. Response to 'start a new image' action
 msgid "You now have a blank sheet to draw on!"
 msgstr "Tev tagad ir balta lapa uz kuras tu vari zīmēt!"
 
-#. Open
+#. Response to 'open' action (while file dialog is being constructed)
 msgid "Open…"
 msgstr "Atvērt…"
 
-#. Save
+#. Response to 'save' action
 msgid "Your image has been saved!"
 msgstr "Tava bilde tika saglabāta!"
 
-#. Print
+#. Response to 'print' action (while printing, or print dialog is being used)
 msgid "Printing…"
 msgstr "Printēju…"
 
-#. Quit
+#. Response to 'quit' (exit) action
 msgid "Bye bye!"
 msgstr "Atā atā!"
 
+#. Instruction while using Line tool (after click, before release)
 msgid "Let go of the button to complete the line."
 msgstr "Atlaid peles pogu, lai beigtu zīmēt līniju."
 
+#. Instruction while using Shape tool (after first click, before release)
 msgid "Hold the button to stretch the shape."
 msgstr "Pieturi peles pogu lai izstieptu formu."
 
+#. Instruction while finishing Shape tool (after release, during rotation step before second click)
 msgid "Move the mouse to rotate the shape. Click to draw it."
 msgstr "Kustini peli lai zīmējumu pagrieztu. Nospied peles pogu lai uzzīmētu."
 
+#. Notification that 'New' action was aborted (current image would have been lost)
 msgid "OK then… Let’s keep drawing this one!"
 msgstr "Labi tad… turpinam zīmēt šo zīmējumu!"
 
-#. FIXME: Move elsewhere!!!
+#. Prompt to confirm user wishes to quit
 msgid "Do you really want to quit?"
 msgstr "Vai tu tiešām gribi ziet :( ?"
 
+#. Quit prompt positive response (quit)
 msgid "Yes, I'm done!"
 msgstr "Jā, esmu beidzis!"
 
+#. Quit prompt negative response (don't quit)
 msgid "No, take me back!"
 msgstr "Nē, es gribu atpakaļ!"
 
+#. Current picture is not saved; user is quitting
 msgid "If you quit, you’ll lose your picture! Save it?"
 msgstr "Ja tu izies, un nesaglabāsi zīmējumu tu zaudēsi to! Vai saglabāt?"
 
@@ -447,41 +413,48 @@ msgstr "Ja, saglabāt!"
 msgid "No, don't bother saving!"
 msgstr "Nē, nesaglabāšanu!"
 
+#. Current picture is not saved; user is opening another picture
 msgid "Save your picture first?"
 msgstr "Vai vispirms saglabāt tavu bildi?"
 
+#. Error opening picture
 msgid "Can’t open that picture!"
 msgstr "Nu nevaru es to bildi atvērt!"
 
+#. Generic dialog dismissal
 msgid "OK"
 msgstr "Labi"
 
 #. This will be replaced with a dialog allowing color choice and Starter
 #. picking, with a "Back" option to dismiss the "New" and return to
 #. the current picture.  But for now...  (bjk 2006.02.19)
+#. Prompt to confirm starting a new picture
 msgid "Start a new picture?"
 msgstr "Zīmēsi jaunu zīmējumu?"
 
-#. #define PROMPT_NEW_YES gettext_noop("That’s OK!")
-#. #define PROMPT_NEW_NO gettext_noop("Never mind!")
 msgid "Yes, let's start fresh!"
 msgstr "Jā, sāksim zīmēt!"
 
+#. Notification that 'Open' dialog has nothing to show
 msgid "There are no saved files!"
 msgstr "Tev nav neviena saglabāta zīmējuma!"
 
+#. Verification of print action
 msgid "Print your picture now?"
 msgstr "Printēt tavu bildi?"
 
 msgid "Yes, print it!"
 msgstr "Jā, printē!"
 
+#. Confirmation of successful (we hope) printing
 msgid "Your picture has been printed!"
 msgstr "Tava bilde ir izprintēta!"
 
+#. Notification that it's too soon to print again (--printdelay option is in effect)
 msgid "You can’t print yet!"
 msgstr "Tu vēl nevari izprintēt!"
 
+#. Prompt to confirm erasing a picture in the Open dialog
 msgid "Erase this picture?"
 msgstr "Dzēst šo zīmējumu?"
 
@@ -491,51 +464,65 @@ msgstr "Jā, dzēs to!"
 msgid "No, don't erase it!"
 msgstr "Nē, nedzēs, traks vai?!"
 
+#. Reminder that Mouse Button 1 is the button to use in Tux Paint
 msgid "Remember to use the left mouse button!"
 msgstr "Atceries, lieto kreiso peles pogu!"
 
+#. Sound has been muted (silenced) via keyboard shortcut
 msgid "Sound muted."
 msgstr ""
 
+#. Sound has been unmuted (unsilenced) via keyboard shortcut
 msgid "Sound unmuted."
 msgstr ""
 
+#. Wait while Text tool finishes loading fonts
 msgid "Please wait..."
 msgstr "Lūdzu uzgaidi..."
 
+#. Open dialog: 'Erase' button, to erase/deleted the selected picture
 msgid "Erase"
 msgstr "Dzēst"
 
+#. Open dialog: 'Slides' button, to switch to slide show mode
 msgid "Slides"
 msgstr "Slaids"
 
+#. Open dialog: 'Back' button, to dismiss Open dialog without opening a picture
 msgid "Back"
 msgstr "Atpakaļ"
 
+#. Slideshow: 'Next' button, to load next slide (image)
 msgid "Next"
 msgstr "Tālāk"
 
+#. Slideshow: 'Play' button, to begin a slideshow sequence
 msgid "Play"
 msgstr "Spēlēt"
 
+#. Label for 'Letters' buttons (font selector, down the right when the Text tool is being used); used to show the difference between font faces
 msgid "Aa"
 msgstr "Aa"
 
-#. FIXME: Move elsewhere! Or not?!
+#. Admittedly stupid way of determining which keys can be used for
+#. positive and negative responses in dialogs (e.g., [Y] (for 'yes') in English)
 msgid "Yes"
 msgstr "Jā"
 
 msgid "No"
 msgstr "Nē"
 
-#. FIXME: Move elsewhere!!!
-#. #define PROMPT_SAVE_OVER_TXT gettext_noop("Save over the older version of this picture?")
+#. Prompt to ask whether user wishes to save over old version of their file
 msgid "Replace the picture with your changes?"
 msgstr "Aizstāt zīmejumu ar tavām izmaiņām?"
 
+#. Positive response to saving over old version
+#. (like a 'File:Save' action in other applications)
 msgid "Yes, replace the old one!"
 msgstr "Jā, aizstā to veco zīmējumu!"
 
+#. Negative response to saving over old version (saves a new image)
+#. (like a 'File:Save As...' action in other applications)
 msgid "No, save a new file!"
 msgstr "Nē, glabā jaunā failā!"
 
@@ -543,6 +530,7 @@ msgid "Choose the picture you want, then click “Open”."
 msgstr "Izvēlies bildi ko gribi atvērt un spied pogu “Atvērt“."
 
 #. Let user choose images:
+#. Instructions for Slideshow file dialog (FIXME: Make a #define)
 msgid "Choose the pictures you want, then click “Play”."
 msgstr "Izvēlies bildi kuru tu gribi un spied pogu “Spēlēt”."
 
@@ -554,3 +542,171 @@ msgstr "Zīmēšanas programma"
 
 msgid "Tux Paint"
 msgstr "Tux Zīmēšana"
+
+msgid "Blocks"
+msgstr "Kluči"
+
+msgid "Chalk"
+msgstr "Krīts"
+
+msgid "Drip"
+msgstr "Pilēšana"
+
+msgid ""
+"Click and move the mouse around to turn the picture into a chalk drawing."
+msgstr ""
+"Nospied, pieturi peles pogu un velc peli lai zīmējums izskatītos kā ar krītu "
+"zīmētu"
+
+msgid "Click and move the mouse around to make the picture blocky."
+msgstr "Nospied, pieturi peles pogu un velc peli lai bilde būtu klucīši."
+
+msgid "Click and move the mouse around to make the picture drip."
+msgstr "Nospied, pieturi peles pogu un velc peli lai zīmējums notecētu."
+
+msgid "Blur"
+msgstr "Migla"
+
+msgid "Click and move the mouse around to blur the picture."
+msgstr ""
+"Nospied, pieturi peles pogu un velc peli lai bildi padarītu miglaināku."
+
+#. Both are named "Bricks", at the moment:
+msgid "Bricks"
+msgstr "Ķieģeļi"
+
+msgid "Click and move to draw large bricks."
+msgstr "Nospied, pieturi peles pogu un velc peli lai zīmētu lielus ķieģeļus."
+
+msgid "Click and move to draw small bricks."
+msgstr "Nospied, pieturi peles pogu un velc peli lai zīmētu ķieģeļus."
+
+msgid "Cartoon"
+msgstr "Multene"
+
+msgid "Click and move the mouse around to turn the picture into a cartoon."
+msgstr ""
+"Nospied, pieturi peles pogu un velc peli lai zīmējums izskatitos kā multene."
+
+msgid "Emboss"
+msgstr ""
+
+#, fuzzy
+msgid "Click and drag the mouse to emboss the picture."
+msgstr ""
+"Nospied, pieturi peles pogu un velc peli lai bildi padarītu miglaināku."
+
+msgid "Lighten"
+msgstr "Pagaišinātājs"
+
+msgid "Darken"
+msgstr "Tumsinātājs"
+
+msgid "Click and move to fade the colors."
+msgstr "Nospied, pieturi peles pogu un velc peli lai balinātu krāsu."
+
+msgid "Click and move to darken the colors."
+msgstr "Nospied, pieturi peles pogu un velc peli lai satumšinātu bildi."
+
+msgid "Fill"
+msgstr "Piepildi"
+
+msgid "Click in the picture to fill that area with color."
+msgstr "Nospied uz bildi, lai to piepildītu ar krāsu."
+
+msgid "Flower"
+msgstr ""
+
+msgid "Click and drag to draw a flower stalk. Let go to finish the flower."
+msgstr ""
+
+msgid "Foam"
+msgstr ""
+
+#, fuzzy
+msgid "Click and drag the mouse to cover an area with foamy bubbles.."
+msgstr "Nospied uz bildi, lai to piepildītu ar krāsu."
+
+msgid "Glass Tile"
+msgstr ""
+
+#, fuzzy
+msgid "Click and drag the mouse to put glass tile over your picture."
+msgstr ""
+"Nospied, pieturi peles pogu un velc peli lai bildi padarītu miglaināku."
+
+msgid "Grass"
+msgstr "Zāle"
+
+msgid "Click and move to draw grass. Don’t forget the dirt!"
+msgstr ""
+"Nospied, pieturi peles pogu un velc peli lai zīmētu zāli. Neaizmirsti "
+"pievienot dubļus!"
+
+msgid "Kalidescope"
+msgstr ""
+
+msgid ""
+"Click and drag the mouse to draw with symmetric brushes (a kalidescope)."
+msgstr ""
+
+#, fuzzy
+msgid "Metal Paint"
+msgstr "Krāsas"
+
+#, fuzzy
+msgid "Click and drag the mouse to paint with a metallic color."
+msgstr "Nospied, pieturi peles pogu un velc peli lai satumšinātu bildi."
+
+msgid "Mirror"
+msgstr "Spogulis"
+
+msgid "Flip"
+msgstr "Apgriezt riņķī"
+
+msgid "Click to flip the picture upside-down."
+msgstr "Nospied peli uz zīmējuma lai to apgrieztu riņķī."
+
+msgid "Click to make a mirror image."
+msgstr "Nospied peli uz zīmējumu lai to pārvērstu spoguļskatā."
+
+msgid "Negative"
+msgstr "Negatīvs"
+
+msgid "Click and move the mouse around to draw a negative."
+msgstr ""
+"Nospied, pieturi peles pogu un velc peli lai zīmējumu padarītu negatīvu."
+
+msgid "Rainbow"
+msgstr "Varavīksne"
+
+msgid "You can draw in rainbow colors!"
+msgstr "Tu vari zīmēt varavīksnes krāsās!"
+
+msgid "Smudge"
+msgstr "Smēre"
+
+msgid "Click and move the mouse around to smudge the picture."
+msgstr "Nospied, pieturi peles pogu un velc peli lai notraipītu zīmējumu."
+
+msgid "Tint"
+msgstr "Tinte"
+
+msgid "Click and move the mouse around to change the picture’s color."
+msgstr "Nospied, pieturi peles pogu un velc peli lai zīmējumā mainītu krāsas."
+
+#, fuzzy
+msgid "Waves"
+msgstr "Saglabāt"
+
+msgid ""
+"Click to make the picture wavy. (Click towards the top for shorter waves; "
+"the bottom for taller waves. Click towards the left for small waves; the "
+"right for wide waves.)"
+msgstr ""
+
+#~ msgid "Sparkles"
+#~ msgstr "Spīdeklīši"
+
+#~ msgid "Click and move to draw sparkles."
+#~ msgstr "Nospied, pieturi peles pogu un velc peli lai zīmētu spīdeklīšus."

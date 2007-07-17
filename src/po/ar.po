@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint-HEAD\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-07-04 23:03-0700\n"
+"POT-Creation-Date: 2007-07-17 08:24-0700\n"
 "PO-Revision-Date: 2007-05-17 06:58+0300\n"
 "Last-Translator: Khaled Hosny <khaledhosny@eglug.org>\n"
 "Language-Team: Arabic <doc@arabeyes.org>\n"
@@ -18,54 +18,71 @@ msgstr ""
 "Plural-Forms: nplurals=4; plural=n==1 ? 0 : n==2 ? 1 : n>=3 && n<=10 ? 2 : "
 "3\n"
 
+#. Response to Black (0, 0, 0) color selected
 msgid "Black!"
 msgstr "أسود"
 
+#. Response to Dark grey (128, 128, 128) color selected
 msgid "Dark grey! Some people spell it “dark gray”."
 msgstr "رمادي غامق بعض الناس يسمونه ”رصاصي غامق“."
 
+#. Response to Light grey (192, 192, 192) color selected
 msgid "Light grey! Some people spell it “light gray”."
 msgstr "رمادي فاتح بعض الناس يسمونه “رصاصي فاتح“."
 
+#. Response to White (255, 255, 255) color selected
 msgid "White!"
 msgstr "أبيض"
 
+#. Response to Red (255, 0, 0) color selected
 msgid "Red!"
 msgstr "أحمر"
 
+#. Response to Orange (255, 128, 0) color selected
 msgid "Orange!"
 msgstr "برتقالي"
 
+#. Response to Yellow (255, 255, 0) color selected
 msgid "Yellow!"
 msgstr "أصفر"
 
+#. Response to Light green (160, 228, 128) color selected
 msgid "Light green!"
 msgstr "أخضر فاتح"
 
+#. Response to Dark green (33, 148, 70) color selected
 msgid "Dark green!"
 msgstr "أخضر غامق"
 
+#. Response to "Sky" blue (138, 168, 205) color selected
 msgid "Sky blue!"
 msgstr "أزرق سماوي"
 
+#. Response to Blue (50, 100, 255) color selected
 msgid "Blue!"
 msgstr "أزرق"
 
+#. Response to Lavender (186, 157, 255) color selected
 msgid "Lavender!"
 msgstr "أرجواني شاحب"
 
+#. Response to Purple (128, 0, 128) color selected
 msgid "Purple!"
 msgstr "أرجواني"
 
+#. Response to Pink (255, 165, 211) color selected
 msgid "Pink!"
 msgstr "وردي"
 
+#. Response to Brown (128, 80, 0) color selected
 msgid "Brown!"
 msgstr "بني"
 
+#. Response to Tan (226, 189, 166) color selected
 msgid "Tan!"
 msgstr "قمحي"
 
+#. Response to Beige (247, 228, 219) color selected
 msgid "Beige!"
 msgstr "بيج"
 
@@ -73,20 +90,21 @@ msgstr "بيج"
 #. via bugs in the SDL_ttf library. We also test fonts to be sure that
 #. they have both uppercase and lowercase letters. Note that we do not
 #. test for "Aa", because it is OK if uppercase and lowercase are the
-#. same. (but not nice -- such fonts get a low score later)
+#. same (but not nice -- such fonts get a low score later).
 #.
 #. We test the alphabet twice, to help with translation. If the users
-#. will be unable to type ASCII letters, then both lines should be
-#. translated. Otherwise, only Line X should be translated and the
-#. ASCII-only fonts should be given bad scores in the scoring code below.
-#. (the best scores going to fonts that support both)
+#. will be unable to type ASCII letters, then both Line X and Line Y
+#. should be translated. Otherwise, only Line X should be translated
+#. and the ASCII-only fonts should be given bad scores in the scoring
+#. code below (the best scores going to fonts that support both).
+#. Line X
 msgid "qx"
 msgstr "qx"
 
 msgid "QX"
 msgstr "QX"
 
-#. Line X
+#. Line Y
 msgid "qy"
 msgstr "qy"
 
@@ -101,188 +119,104 @@ msgstr "QY"
 #. the top of the list. The user will see them first. This sorting is
 #. especially important for users who have scroll buttons disabled.
 #. Translators should do whatever is needed to put crummy fonts last.
+#. distinct uppercase and lowercase (e.g., 'o' vs. 'O')
 msgid "oO"
 msgstr "oO"
 
 # فرق بين الحروف العليا والسفلى
-#. distinct uppercase and lowercase
+#. uncommon punctuation (e.g., '@', '#', '*', etc.)
 msgid "`\\%_@$~#{}<>^&*"
 msgstr "`\\%_@$~#{}<>^&*"
 
 # ترقيم غير شائع
-#. uncommon punctuation
+#. common punctuation (e.g., '?', '!', '.', ',', etc.)
 msgid ",.?!"
 msgstr "،.؟!"
 
 # ترقيم شائع
-#. common punctuation
+#. digits (e.g., '0', '1' and '7')
 msgid "017"
 msgstr "017"
 
 # الأرقام
-#. digits
+#. distinct circle-like characters (e.g., 'O' (capital oh) vs. '0' (zero))
 msgid "O0"
 msgstr "O0"
 
 # فرق بين الأحرف الشبيهة بالدائرة
-#. distinct circle-like characters
+#. distinct line-like characters (e.g., 'l' (lowercase elle) vs. '1' (one) vs. 'I' (capital aye))
 msgid "1Il|"
 msgstr "1Il|"
 
+#. Congratulations #1
 msgid "Great!"
 msgstr "عظيم"
 
+#. Congratulations #2
 msgid "Cool!"
 msgstr "رائع"
 
+#. Congratulations #3
 msgid "Keep it up!"
 msgstr "جيد للأمام"
 
+#. Congratulations #4
 msgid "Good job!"
 msgstr "أحسنت"
 
+#. Input Method: English mode
 msgid "English"
 msgstr "الإنجليزية"
 
+#. Input Method: Japanese Romanized Hiragana mode
 msgid "Hiragana"
 msgstr "هيراغنا"
 
+#. Input Method: Japanese Romanized Katakana mode
 msgid "Katakana"
 msgstr "كتاكنا"
 
+#. Input Method: Korean Hangul 2-Bul mode
 msgid "Hangul"
 msgstr "هانكول"
 
-msgid "Fill"
-msgstr "املأ"
+#. Input Method: Thai mode
+msgid "Thai"
+msgstr ""
 
-msgid "Grass"
-msgstr "عشب"
-
-msgid "Bricks"
-msgstr "طوب"
-
-msgid "Rainbow"
-msgstr "قوس قزح"
-
-msgid "Sparkles"
-msgstr "بريق"
-
-msgid "Blur"
-msgstr "تمويه"
-
-msgid "Smudge"
-msgstr "تلطيخ"
-
-msgid "Lighten"
-msgstr "تخفيف"
-
-msgid "Darken"
-msgstr "تعتيم"
-
-msgid "Chalk"
-msgstr "طباشير"
-
-msgid "Blocks"
-msgstr "مكعبات"
-
-msgid "Negative"
-msgstr "سالب"
-
-msgid "Tint"
-msgstr "صبغة"
-
-msgid "Drip"
-msgstr "قطرة"
-
-msgid "Cartoon"
-msgstr "كرتون"
-
-msgid "Mirror"
-msgstr "مرآة"
-
-msgid "Flip"
-msgstr "اقلب"
-
-msgid "Click in the picture to fill that area with color."
-msgstr "انقر على الصورةِ لمَلْئ تلك المنطقةِ باللونِ."
-
-msgid "Click and move to draw grass. Don’t forget the dirt!"
-msgstr "انقر وحرّكُ لرسَم العشبِ. لا تَنْسِ الوسخَ"
-
-msgid "Click and move to draw large bricks."
-msgstr "انقر وحرّكُ لرسَم الطابوقِ الكبيرِ."
-
-msgid "Click and move to draw small bricks."
-msgstr "انقر وحرّكُ لرسَم الطابوقِ الصغيرِ."
-
-msgid "You can draw in rainbow colors!"
-msgstr "يُمْكِنُ أَنْ تَلون بألوانِ قوس قزحِ."
-
-msgid "Click and move to draw sparkles."
-msgstr "انقر وحرّكُ لرسَم البريق."
-
-msgid "Click and move the mouse around to blur the picture."
-msgstr "انقر وحرّكُ الفأرة على الصورة لتمويهها."
-
-msgid "Click and move the mouse around to smudge the picture."
-msgstr "انقر وحرّكُ الفأرة على الصورة لتشويهها."
-
-msgid "Click and move to fade the colors."
-msgstr "انقر وحرّكُ الفأرة على الألوان لتصبح باهتة."
-
-msgid "Click and move to darken the colors."
-msgstr "انقر وحرّكُ الفأرة على الألوان لتصبح داكنة."
-
-msgid ""
-"Click and move the mouse around to turn the picture into a chalk drawing."
-msgstr "انقر وحرّكُ الفأرة على الصورة لتحويلها إلى رسمة طبشورية."
-
-msgid "Click and move the mouse around to make the picture blocky."
-msgstr "انقر وحرّكُ الفأرة على الصورة لتقسيمها إلى قطع."
-
-msgid "Click and move the mouse around to draw a negative."
-msgstr "انقر وحرّكُ الفأرة على الصورة لتحويلها إلى رسمة مسودة."
-
-msgid "Click and move the mouse around to change the picture’s color."
-msgstr "انقر وحرّكُ الفأرة على الصورة لتغييرألوانها."
-
-msgid "Click and move the mouse around to make the picture drip."
-msgstr "انقر وحرّكُ الفأرة على الصورة لتحويلها إلى قطرات."
-
-msgid "Click and move the mouse around to turn the picture into a cartoon."
-msgstr "انقر وحرّكُ الفأرة على الصورة لتحويلها إلى رسمة كرتونية."
-
-msgid "Click to make a mirror image."
-msgstr "انقر لتنعكس الصورة كالصورة في المرآة."
-
-msgid "Click to flip the picture upside-down."
-msgstr "انقر لقلب الصورة رأساً على عقب."
-
+#. Square shape tool (4 equally-lengthed sides at right angles)
 msgid "Square"
 msgstr "مربع"
 
+#. Rectangle shape tool (4 sides at right angles)
 msgid "Rectangle"
 msgstr "مستطيل"
 
+#. Circle shape tool (X radius and Y radius are the same)
 msgid "Circle"
 msgstr "دائرة"
 
+#. Ellipse shape tool (X radius and Y radius may differ)
 msgid "Ellipse"
 msgstr "بيضاوي"
 
+#. Triangle shape tool (3 sides)
 msgid "Triangle"
 msgstr "مثلث"
 
+#. Pentagone shape tool (5 sides)
 msgid "Pentagon"
 msgstr "خماسي"
 
+#. Rhombus shape tool (4 sides, not at right angles)
 msgid "Rhombus"
 msgstr "معيّن"
 
+#. Description of a square
 msgid "A square is a rectangle with four equal sides."
 msgstr "المربع هو مستطيل بأربعة جوانبِ متساويةِ."
 
+#. Description of a rectangle
 msgid "A rectangle has four sides and four right angles."
 msgstr "المستطيل لَهُ أربعة جوانبِ وأربع زوايا قائمةِ."
 
@@ -291,89 +225,119 @@ msgid ""
 "A circle is a curve where all points have the same distance from the center."
 msgstr "الدائرة هي منحنى حيث كُلّ النقاط لَها نفس المسافةِ مِنْ المركزِ."
 
+#. Description of an ellipse
 msgid "An ellipse is a stretched circle."
 msgstr "الشكل البيضاوي هو دائرة ممطوطة."
 
+#. Description of a triangle
 msgid "A triangle has three sides."
 msgstr "المثلث لَهُ ثلاثة جوانبِ."
 
+#. Description of a pentagon
 msgid "A pentagon has five sides."
 msgstr "الخماسي لَهُ خمسة جوانبِ."
 
 msgid "A rhombus has four equal sides, and opposite sides are parallel."
 msgstr "المعين لَهُ أربعة جوانبِ متساويةِ، وجوانبه المتقابلة متوازية."
 
+#. Title of tool selector (buttons down the left)
 msgid "Tools"
 msgstr "أدوات"
 
+#. Title of color palette (buttons across the bottom)
 msgid "Colors"
 msgstr "ألوان"
 
+#. Title of brush selector (buttons down the right for paint and line tools)
 msgid "Brushes"
 msgstr "فرشاة"
 
+#. Title of eraser selector (buttons down the right for eraser tool)
 msgid "Erasers"
 msgstr "مِمْحايات"
 
+#. Title of stamp selector (buttons down the right for stamps tool)
 msgid "Stamps"
 msgstr "أختام"
 
+#. Title of shape selector (buttons down the right for shapes tool)
+#. Shape creation tool (square, circle, etc.)
 msgid "Shapes"
 msgstr "أشكال"
 
+#. Title of font selector (buttons down the right for text tool)
 msgid "Letters"
 msgstr "حروف"
 
+#. Title of magic tool selector (buttons down the right for magic (effect plugin) tool)
+#. "Magic" effects tools (blur, flip image, etc.)
 msgid "Magic"
 msgstr "سحر"
 
+#. Freehand painting tool
 msgid "Paint"
 msgstr "طلاء"
 
+#. Stamp tool (aka Rubber Stamps)
 msgid "Stamp"
 msgstr "ختم"
 
+#. Line drawing tool
 msgid "Lines"
 msgstr "خطوط"
 
+#. Text tool
 msgid "Text"
 msgstr "نَصّ"
 
+#. Undo last action
 msgid "Undo"
 msgstr "تراجع"
 
+#. Redo undone action
 msgid "Redo"
 msgstr "تقّدم"
 
+#. Eraser tool
 msgid "Eraser"
 msgstr "مِمْحاة"
 
+#. Start a new picture
 msgid "New"
 msgstr "جديد"
 
 # أزرار لأوامر فتح الملف
+#. Open a saved picture
 #. buttons for the file open dialog
+#. Open dialog: 'Open' button, to load the selected picture
 msgid "Open"
 msgstr "افتح"
 
+#. Save the current picture
 msgid "Save"
 msgstr "احفظ"
 
+#. Print the current picture
 msgid "Print"
 msgstr "اطبع"
 
+#. Quit/exit Tux Paint application
 msgid "Quit"
 msgstr "اخرج"
 
+#. Paint tool instructions
 msgid "Pick a color and a brush shape to draw with."
 msgstr "اختر لون وشكل الفرشاة التي سترسم بها."
 
+#. Stamp tool instructions
 msgid "Pick a picture to stamp around your drawing."
 msgstr "اختر الصورة التي ستختم بها حول رسمتك."
 
+#. Line tool instructions
 msgid "Click to start drawing a line. Let go to complete it."
 msgstr "انقرْ للبَدْء برَسْم خطاً. ثم اتركْ لإكْماله."
 
+#. Shape tool instructions
 msgid ""
 "Pick a shape. Click to pick the center, drag, then let go when it is the "
 "size you want. Move around to rotate it, and click to draw it."
@@ -381,67 +345,76 @@ msgstr ""
 "اختر شكلاً. انقرْ لالتِقاط المركزِ، اسحب، ثم اترك عندما تصل للحجم الذي تريد. "
 "تحرّكْ بسهولة لإدَارَته، وانقرْ لرسمه.."
 
+#. Text tool instructions
 msgid "Choose a style of text. Click on your drawing and you can start typing."
 msgstr "اخترْ أسلوب النص. انقر على رسمتك لتتمكن من بدء الكتابة."
 
+#. Magic tool instruction
 msgid "Pick a magical effect to use on your drawing!"
 msgstr "اختر تأثير سحري لاسْتِعْماله على رسمكَ "
 
-#. Undo
+#. Response to 'undo' action
 msgid "Undo!"
 msgstr "تراجع"
 
-#. Redo
+#. Response to 'redo' action
 msgid "Redo!"
 msgstr "تقدم"
 
-#. Eraser
+#. Eraser tool
 msgid "Eraser!"
 msgstr "مِمْحاة"
 
-#. New
+#. Response to 'start a new image' action
 msgid "You now have a blank sheet to draw on!"
 msgstr "لديك الآن صفحة نظيفة لترسم عليها"
 
-#. Open
+#. Response to 'open' action (while file dialog is being constructed)
 msgid "Open…"
 msgstr "افتح..."
 
-#. Save
+#. Response to 'save' action
 msgid "Your image has been saved!"
 msgstr "لقد حُفِظت صورتك"
 
-#. Print
+#. Response to 'print' action (while printing, or print dialog is being used)
 msgid "Printing…"
 msgstr "جارِ الطبع..."
 
-#. Quit
+#. Response to 'quit' (exit) action
 msgid "Bye bye!"
 msgstr "مع السلامة"
 
+#. Instruction while using Line tool (after click, before release)
 msgid "Let go of the button to complete the line."
 msgstr "اتركْ الزرِّ لإكْمال الخَطِّ."
 
+#. Instruction while using Shape tool (after first click, before release)
 msgid "Hold the button to stretch the shape."
 msgstr "امسك زر الفأرة الزرَّ لمطّ الشكلِ."
 
+#. Instruction while finishing Shape tool (after release, during rotation step before second click)
 msgid "Move the mouse to rotate the shape. Click to draw it."
 msgstr "حرّكْ الفأرَة لإدَارَة الشكلِ. انقرْ لرسَمه."
 
+#. Notification that 'New' action was aborted (current image would have been lost)
 msgid "OK then… Let’s keep drawing this one!"
 msgstr "إذن …  دعنا نَستمرُّ برسَم هذا الشكل"
 
 # FIXME: تحرّكُ الي مكان آخر! ! !
-#. FIXME: Move elsewhere!!!
+#. Prompt to confirm user wishes to quit
 msgid "Do you really want to quit?"
 msgstr "أتُريدُ حقاً الخروج؟"
 
+#. Quit prompt positive response (quit)
 msgid "Yes, I'm done!"
 msgstr "نعم، لقد انتهيت"
 
+#. Quit prompt negative response (don't quit)
 msgid "No, take me back!"
 msgstr "لا، عُد بي ثانية"
 
+#. Current picture is not saved; user is quitting
 msgid "If you quit, you’ll lose your picture! Save it?"
 msgstr "إذا خرجت الآن، ستفقد صورتك أتريد حفظها؟"
 
@@ -451,12 +424,15 @@ msgstr "نعم، احفظها الآن"
 msgid "No, don't bother saving!"
 msgstr "لا، لا تهتم بحفظها"
 
+#. Current picture is not saved; user is opening another picture
 msgid "Save your picture first?"
 msgstr "أأحفظ صورتك أولاً؟"
 
+#. Error opening picture
 msgid "Can’t open that picture!"
 msgstr "لايمكن فتح هذه الصورة"
 
+#. Generic dialog dismissal
 msgid "OK"
 msgstr "موافق"
 
@@ -464,31 +440,35 @@ msgstr "موافق"
 #. This will be replaced with a dialog allowing color choice and Starter
 #. picking, with a "Back" option to dismiss the "New" and return to
 #. the current picture.  But for now...  (bjk 2006.02.19)
+#. Prompt to confirm starting a new picture
 msgid "Start a new picture?"
 msgstr "أأبدأ صورة جديدة؟"
 
 # #define PROMPT_NEW_YES gettext_noop("That’s OK!")
 # #define PROMPT_NEW_NO gettext_noop("Never mind!")
-#. #define PROMPT_NEW_YES gettext_noop("That’s OK!")
-#. #define PROMPT_NEW_NO gettext_noop("Never mind!")
 msgid "Yes, let's start fresh!"
 msgstr "نعم، لنبدء صفحة بيضاء"
 
+#. Notification that 'Open' dialog has nothing to show
 msgid "There are no saved files!"
 msgstr "لايوجد أي ملف محفوظ"
 
+#. Verification of print action
 msgid "Print your picture now?"
 msgstr "أأطبع صورتك الآن؟"
 
 msgid "Yes, print it!"
 msgstr "نعم، اطبع الصورة"
 
+#. Confirmation of successful (we hope) printing
 msgid "Your picture has been printed!"
 msgstr "لقد طُبِعت صورتك"
 
+#. Notification that it's too soon to print again (--printdelay option is in effect)
 msgid "You can’t print yet!"
 msgstr "لا يمكنك الرسم الآن"
 
+#. Prompt to confirm erasing a picture in the Open dialog
 msgid "Erase this picture?"
 msgstr "أتريد مسح هذه الصورة؟"
 
@@ -498,38 +478,49 @@ msgstr "نعم، امسحه"
 msgid "No, don't erase it!"
 msgstr "لا، لاتمسحه"
 
+#. Reminder that Mouse Button 1 is the button to use in Tux Paint
 msgid "Remember to use the left mouse button!"
 msgstr "تذكر استخدام زر الفأرة الأيسر"
 
+#. Sound has been muted (silenced) via keyboard shortcut
 msgid "Sound muted."
 msgstr ""
 
+#. Sound has been unmuted (unsilenced) via keyboard shortcut
 msgid "Sound unmuted."
 msgstr ""
 
+#. Wait while Text tool finishes loading fonts
 msgid "Please wait..."
 msgstr "من فضلك انتظر..."
 
+#. Open dialog: 'Erase' button, to erase/deleted the selected picture
 msgid "Erase"
 msgstr "امسح"
 
+#. Open dialog: 'Slides' button, to switch to slide show mode
 msgid "Slides"
 msgstr "شرائح"
 
+#. Open dialog: 'Back' button, to dismiss Open dialog without opening a picture
 msgid "Back"
 msgstr "الخلف"
 
+#. Slideshow: 'Next' button, to load next slide (image)
 msgid "Next"
 msgstr "التالي"
 
+#. Slideshow: 'Play' button, to begin a slideshow sequence
 msgid "Play"
 msgstr "شغّل"
 
+#. Label for 'Letters' buttons (font selector, down the right when the Text tool is being used); used to show the difference between font faces
 msgid "Aa"
 msgstr "انتبه"
 
 # FIXME: Move elsewhere! Or not?!
-#. FIXME: Move elsewhere! Or not?!
+#. Admittedly stupid way of determining which keys can be used for
+#. positive and negative responses in dialogs (e.g., [Y] (for 'yes') in English)
 msgid "Yes"
 msgstr "نعم"
 
@@ -537,14 +528,17 @@ msgid "No"
 msgstr "لا"
 
 # #define PROMPT_SAVE_OVER_TXT gettext_noop("Save over the older version of this picture?")
-#. FIXME: Move elsewhere!!!
-#. #define PROMPT_SAVE_OVER_TXT gettext_noop("Save over the older version of this picture?")
+#. Prompt to ask whether user wishes to save over old version of their file
 msgid "Replace the picture with your changes?"
 msgstr "أأستبدل الصورة بتعديلاتك؟"
 
+#. Positive response to saving over old version
+#. (like a 'File:Save' action in other applications)
 msgid "Yes, replace the old one!"
 msgstr "نعم، استبدل الملف القديم"
 
+#. Negative response to saving over old version (saves a new image)
+#. (like a 'File:Save As...' action in other applications)
 msgid "No, save a new file!"
 msgstr "لا، احفظ باسم جديد"
 
@@ -552,6 +546,7 @@ msgid "Choose the picture you want, then click “Open”."
 msgstr "اختر الصورة التي تريد، ثم انقر على ”فتح“."
 
 #. Let user choose images:
+#. Instructions for Slideshow file dialog (FIXME: Make a #define)
 msgid "Choose the pictures you want, then click “Play”."
 msgstr "اختر الصورة التي تريد، ثم انقر ”شغّل“."
 
@@ -563,3 +558,162 @@ msgstr "برنامج رسم"
 
 msgid "Tux Paint"
 msgstr "رسم توكس"
+
+msgid "Blocks"
+msgstr "مكعبات"
+
+msgid "Chalk"
+msgstr "طباشير"
+
+msgid "Drip"
+msgstr "قطرة"
+
+msgid ""
+"Click and move the mouse around to turn the picture into a chalk drawing."
+msgstr "انقر وحرّكُ الفأرة على الصورة لتحويلها إلى رسمة طبشورية."
+
+msgid "Click and move the mouse around to make the picture blocky."
+msgstr "انقر وحرّكُ الفأرة على الصورة لتقسيمها إلى قطع."
+
+msgid "Click and move the mouse around to make the picture drip."
+msgstr "انقر وحرّكُ الفأرة على الصورة لتحويلها إلى قطرات."
+
+msgid "Blur"
+msgstr "تمويه"
+
+msgid "Click and move the mouse around to blur the picture."
+msgstr "انقر وحرّكُ الفأرة على الصورة لتمويهها."
+
+#. Both are named "Bricks", at the moment:
+msgid "Bricks"
+msgstr "طوب"
+
+msgid "Click and move to draw large bricks."
+msgstr "انقر وحرّكُ لرسَم الطابوقِ الكبيرِ."
+
+msgid "Click and move to draw small bricks."
+msgstr "انقر وحرّكُ لرسَم الطابوقِ الصغيرِ."
+
+msgid "Cartoon"
+msgstr "كرتون"
+
+msgid "Click and move the mouse around to turn the picture into a cartoon."
+msgstr "انقر وحرّكُ الفأرة على الصورة لتحويلها إلى رسمة كرتونية."
+
+msgid "Emboss"
+msgstr ""
+
+#, fuzzy
+msgid "Click and drag the mouse to emboss the picture."
+msgstr "انقر وحرّكُ الفأرة على الصورة لتمويهها."
+
+msgid "Lighten"
+msgstr "تخفيف"
+
+msgid "Darken"
+msgstr "تعتيم"
+
+msgid "Click and move to fade the colors."
+msgstr "انقر وحرّكُ الفأرة على الألوان لتصبح باهتة."
+
+msgid "Click and move to darken the colors."
+msgstr "انقر وحرّكُ الفأرة على الألوان لتصبح داكنة."
+
+msgid "Fill"
+msgstr "املأ"
+
+msgid "Click in the picture to fill that area with color."
+msgstr "انقر على الصورةِ لمَلْئ تلك المنطقةِ باللونِ."
+
+msgid "Flower"
+msgstr ""
+
+msgid "Click and drag to draw a flower stalk. Let go to finish the flower."
+msgstr ""
+
+msgid "Foam"
+msgstr ""
+
+#, fuzzy
+msgid "Click and drag the mouse to cover an area with foamy bubbles.."
+msgstr "انقر على الصورةِ لمَلْئ تلك المنطقةِ باللونِ."
+
+msgid "Glass Tile"
+msgstr ""
+
+#, fuzzy
+msgid "Click and drag the mouse to put glass tile over your picture."
+msgstr "انقر وحرّكُ الفأرة على الصورة لتمويهها."
+
+msgid "Grass"
+msgstr "عشب"
+
+msgid "Click and move to draw grass. Don’t forget the dirt!"
+msgstr "انقر وحرّكُ لرسَم العشبِ. لا تَنْسِ الوسخَ"
+
+msgid "Kalidescope"
+msgstr ""
+
+msgid ""
+"Click and drag the mouse to draw with symmetric brushes (a kalidescope)."
+msgstr ""
+
+#, fuzzy
+msgid "Metal Paint"
+msgstr "طلاء"
+
+#, fuzzy
+msgid "Click and drag the mouse to paint with a metallic color."
+msgstr "انقر وحرّكُ الفأرة على الألوان لتصبح داكنة."
+
+msgid "Mirror"
+msgstr "مرآة"
+
+msgid "Flip"
+msgstr "اقلب"
+
+msgid "Click to flip the picture upside-down."
+msgstr "انقر لقلب الصورة رأساً على عقب."
+
+msgid "Click to make a mirror image."
+msgstr "انقر لتنعكس الصورة كالصورة في المرآة."
+
+msgid "Negative"
+msgstr "سالب"
+
+msgid "Click and move the mouse around to draw a negative."
+msgstr "انقر وحرّكُ الفأرة على الصورة لتحويلها إلى رسمة مسودة."
+
+msgid "Rainbow"
+msgstr "قوس قزح"
+
+msgid "You can draw in rainbow colors!"
+msgstr "يُمْكِنُ أَنْ تَلون بألوانِ قوس قزحِ."
+
+msgid "Smudge"
+msgstr "تلطيخ"
+
+msgid "Click and move the mouse around to smudge the picture."
+msgstr "انقر وحرّكُ الفأرة على الصورة لتشويهها."
+
+msgid "Tint"
+msgstr "صبغة"
+
+msgid "Click and move the mouse around to change the picture’s color."
+msgstr "انقر وحرّكُ الفأرة على الصورة لتغييرألوانها."
+
+#, fuzzy
+msgid "Waves"
+msgstr "احفظ"
+
+msgid ""
+"Click to make the picture wavy. (Click towards the top for shorter waves; "
+"the bottom for taller waves. Click towards the left for small waves; the "
+"right for wide waves.)"
+msgstr ""
+
+#~ msgid "Sparkles"
+#~ msgstr "بريق"
+
+#~ msgid "Click and move to draw sparkles."
+#~ msgstr "انقر وحرّكُ لرسَم البريق."

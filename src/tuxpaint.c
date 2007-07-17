@@ -958,12 +958,20 @@ static SDL_Surface *render_text(TuxPaint_Font * restrict font,
 {
   SDL_Surface *ret;
   int height;
+#ifndef NO_SDLPANGO
+  SDLPango_Matrix pango_color;
+#endif
+
+  if (font == NULL)
+  {
+    printf("render_text() received a NULL font!\n");
+    fflush(stdout);
+    return NULL;
+  }
 
 #ifdef NO_SDLPANGO
   ret = TTF_RenderUTF8_Blended(font->ttf_font, str, color);
 #else
-  SDLPango_Matrix pango_color;
-
   sdl_color_to_pango_color(color, &pango_color);
 
   SDLPango_SetDefaultColor(font->pango_context, &pango_color);
@@ -1736,49 +1744,65 @@ int main(int argc, char *argv[])
 }
 
 
-/* FIXME: Move elsewhere!!! */
-
+// Prompt to confirm user wishes to quit
 #define PROMPT_QUIT_TXT gettext_noop("Do you really want to quit?")
+
+// Quit prompt positive response (quit)
 #define PROMPT_QUIT_YES gettext_noop("Yes, I'm done!")
+
+// Quit prompt negative response (don't quit)
 #define PROMPT_QUIT_NO  gettext_noop("No, take me back!")
 
+
+// Current picture is not saved; user is quitting
 #define PROMPT_QUIT_SAVE_TXT gettext_noop("If you quit, you’ll lose your picture! Save it?")
 #define PROMPT_QUIT_SAVE_YES gettext_noop("Yes, save it!")
 #define PROMPT_QUIT_SAVE_NO gettext_noop("No, don't bother saving!")
 
+// Current picture is not saved; user is opening another picture
 #define PROMPT_OPEN_SAVE_TXT gettext_noop("Save your picture first?")
 #define PROMPT_OPEN_SAVE_YES gettext_noop("Yes, save it!")
 #define PROMPT_OPEN_SAVE_NO gettext_noop("No, don't bother saving!")
 
+// Error opening picture
 #define PROMPT_OPEN_UNOPENABLE_TXT gettext_noop("Can’t open that picture!")
+
+// Generic dialog dismissal
 #define PROMPT_OPEN_UNOPENABLE_YES gettext_noop("OK")
+
 
 // This will be replaced with a dialog allowing color choice and Starter
 // picking, with a "Back" option to dismiss the "New" and return to
 // the current picture.  But for now...  (bjk 2006.02.19)
+
+// Prompt to confirm starting a new picture
 #define PROMPT_NEW_TXT gettext_noop("Start a new picture?")
-//#define PROMPT_NEW_YES gettext_noop("That’s OK!")
-//#define PROMPT_NEW_NO gettext_noop("Never mind!")
 #define PROMPT_NEW_YES gettext_noop("Yes, let's start fresh!")
 #define PROMPT_NEW_NO gettext_noop("No, take me back!")
 
+// Notification that 'Open' dialog has nothing to show
 #define PROMPT_OPEN_NOFILES_TXT gettext_noop("There are no saved files!")
 #define PROMPT_OPEN_NOFILES_YES gettext_noop("OK")
 
+// Verification of print action
 #define PROMPT_PRINT_NOW_TXT gettext_noop("Print your picture now?")
 #define PROMPT_PRINT_NOW_YES gettext_noop("Yes, print it!")
 #define PROMPT_PRINT_NOW_NO gettext_noop("No, take me back!")
 
+// Confirmation of successful (we hope) printing
 #define PROMPT_PRINT_TXT gettext_noop("Your picture has been printed!")
 #define PROMPT_PRINT_YES gettext_noop("OK")
 
+// Notification that it's too soon to print again (--printdelay option is in effect)
 #define PROMPT_PRINT_TOO_SOON_TXT gettext_noop("You can’t print yet!")
 #define PROMPT_PRINT_TOO_SOON_YES gettext_noop("OK")
 
+// Prompt to confirm erasing a picture in the Open dialog
 #define PROMPT_ERASE_TXT gettext_noop("Erase this picture?")
 #define PROMPT_ERASE_YES gettext_noop("Yes, erase it!")
 #define PROMPT_ERASE_NO gettext_noop("No, don't erase it!")
 
+// Reminder that Mouse Button 1 is the button to use in Tux Paint
 #define PROMPT_TIP_LEFTCLICK_TXT gettext_noop("Remember to use the left mouse button!")
 #define PROMPT_TIP_LEFTCLICK_YES gettext_noop("OK")
 
@@ -1887,9 +1911,15 @@ static void mainloop(void)
 	    Mix_HaltChannel(-1);
 
 	    if (mute)
+            {
+              // Sound has been muted (silenced) via keyboard shortcut
 	      draw_tux_text(TUX_BORED, gettext("Sound muted."), 0);
+            }
 	    else
+            {
+              // Sound has been unmuted (unsilenced) via keyboard shortcut
 	      draw_tux_text(TUX_BORED, gettext("Sound unmuted."), 0);
+            }
 	  }
 	}
 	else if (key == SDLK_ESCAPE &&
@@ -2296,7 +2326,10 @@ static void mainloop(void)
 		update_screen_rect(&r_toolopt);
 		update_screen_rect(&r_ttoolopt);
 		do_setcursor(cursor_watch);
+
+                // Wait while Text tool finishes loading fonts
 		draw_tux_text(TUX_WAIT, gettext("Please wait..."), 1);
+
 		waiting_for_fonts = 1;
 #ifdef FORKED_FONTS
 		receive_some_font_info(screen);
@@ -7180,11 +7213,23 @@ static void create_button_labels(void)
     img_shape_names[i] = do_render_button_label(shape_names[i]);
 
   // buttons for the file open dialog
+  
+  // Open dialog: 'Open' button, to load the selected picture
   img_openlabels_open = do_render_button_label(gettext_noop("Open"));
+
+  // Open dialog: 'Erase' button, to erase/deleted the selected picture
   img_openlabels_erase = do_render_button_label(gettext_noop("Erase"));
+
+  // Open dialog: 'Slides' button, to switch to slide show mode
   img_openlabels_slideshow = do_render_button_label(gettext_noop("Slides"));
+
+  // Open dialog: 'Back' button, to dismiss Open dialog without opening a picture
   img_openlabels_back = do_render_button_label(gettext_noop("Back"));
+
+  // Slideshow: 'Next' button, to load next slide (image)
   img_openlabels_next = do_render_button_label(gettext_noop("Next"));
+
+  // Slideshow: 'Play' button, to begin a slideshow sequence
   img_openlabels_play = do_render_button_label(gettext_noop("Play"));
 }
 
@@ -7742,7 +7787,6 @@ static void draw_fonts(void)
     max = most + TOOLOFFSET;
   }
 
-
   /* Draw each of the shown fonts: */
 
   for (font = font_scroll; font < font_scroll + max; font++)
@@ -7766,12 +7810,18 @@ static void draw_fonts(void)
       SDL_BlitSurface(img_btn_off, NULL, screen, &dest);
     }
 
-
     if (font < num_font_families)
     {
       SDL_Surface *tmp_surf_1;
 
+      // Label for 'Letters' buttons (font selector, down the right when the Text tool is being used); used to show the difference between font faces
       tmp_surf_1 = render_text(getfonthandle(font), gettext("Aa"), black);
+
+      if (tmp_surf_1 == NULL)
+      {
+        printf("render_text() returned NULL!\n");
+        return;
+      }
 
       if (tmp_surf_1->w > 48 || tmp_surf_1->h > 48)
       {
@@ -10486,8 +10536,9 @@ static int do_prompt_image_flash_snd(const char *const text,
 
   hide_blinking_cursor();
 
-  /* FIXME: Move elsewhere! Or not?! */
 
+  // Admittedly stupid way of determining which keys can be used for
+  // positive and negative responses in dialogs (e.g., [Y] (for 'yes') in English)
   keystr = textdir(gettext("Yes"));
   key_y = tolower(keystr[0]);
   free(keystr);
@@ -11419,12 +11470,17 @@ static int rotation(int ctr_x, int ctr_y, int ox, int oy)
 }
 
 
-/* FIXME: Move elsewhere!!! */
-
-//#define PROMPT_SAVE_OVER_TXT gettext_noop("Save over the older version of this picture?")
+// Prompt to ask whether user wishes to save over old version of their file
 #define PROMPT_SAVE_OVER_TXT gettext_noop("Replace the picture with your changes?")
+
+// Positive response to saving over old version
+// (like a 'File:Save' action in other applications)
 #define PROMPT_SAVE_OVER_YES gettext_noop("Yes, replace the old one!")
+
+// Negative response to saving over old version (saves a new image)
+// (like a 'File:Save As...' action in other applications)
 #define PROMPT_SAVE_OVER_NO  gettext_noop("No, save a new file!")
+
 
 /* Save the current image: */
 
@@ -12243,6 +12299,7 @@ int do_open(void)
     {
       /* Let user choose an image: */
 
+      // Instructions for 'Open' file dialog
       char *freeme =
         textdir(gettext_noop("Choose the picture you want, "
               "then click “Open”."));
@@ -13273,6 +13330,7 @@ int do_slideshow(void)
 #endif
   /* Let user choose images: */
 
+  // Instructions for Slideshow file dialog (FIXME: Make a #define)
   freeme = textdir(gettext_noop("Choose the pictures you want, "
 				"then click “Play”."));
   draw_tux_text(TUX_BORED, freeme, 1);
@@ -13586,6 +13644,7 @@ int do_slideshow(void)
         draw_colors(COLORSEL_CLOBBER_WIPE);
 	draw_none();
 
+  	// Instructions for Slideshow file dialog (FIXME: Make a #define)
 	freeme = textdir(gettext_noop("Choose the pictures you want, "
 				      "then click “Play”."));
 	draw_tux_text(TUX_BORED, freeme, 1);

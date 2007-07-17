@@ -242,18 +242,21 @@ void TuxPaint_Font_CloseFont(TuxPaint_Font * tpf)
 TuxPaint_Font * TuxPaint_Font_OpenFont(const char * pangodesc, const char * ttffilename, int size)
 {
   TuxPaint_Font * tpf = NULL;
+#ifndef NO_SDLPANGO
+  char desc[1024];
+#endif
 
-  printf("OpenFont(%s, %s)\n", pangodesc, ttffilename);
+  printf("OpenFont(pango:\"%s\", ttf:\"%s\")\n", pangodesc, ttffilename);
 
 #ifndef NO_SDLPANGO
-
-  char desc[1024];
 
   if (pangodesc != NULL && pangodesc[0] != '\0')
   {
     tpf = (TuxPaint_Font *) malloc(sizeof(TuxPaint_Font));
     tpf->typ = FONT_TYPE_PANGO;
     snprintf(desc, sizeof(desc), "%s %d", pangodesc, (size * 3) / 4);
+
+printf("Creating context: \"%s\"\n", desc);
 
     tpf->pango_context = SDLPango_CreateContext_GivenFontDesc(desc);
     if (tpf->pango_context == NULL)
@@ -271,6 +274,8 @@ TuxPaint_Font * TuxPaint_Font_OpenFont(const char * pangodesc, const char * ttff
 
   if (ttffilename != NULL && ttffilename[0] != '\0')
   {
+    printf("Opening TTF\n"); fflush(stdout);
+
     tpf = (TuxPaint_Font *) malloc(sizeof(TuxPaint_Font));
     tpf->typ = FONT_TYPE_TTF;
     tpf->ttf_font = TTF_OpenFont(ttffilename, size);
@@ -281,7 +286,10 @@ TuxPaint_Font * TuxPaint_Font_OpenFont(const char * pangodesc, const char * ttff
       tpf = NULL;
     }
     else
+    {
+      printf("Succeeded loading %s\n", ttffilename);
       tpf->height = TTF_FontHeight(tpf->ttf_font);
+    }
   }
 
   return(tpf);
@@ -1156,9 +1164,17 @@ TuxPaint_Font *getfonthandle(int desire)
   char *pathname;
   char description[1024];
 
+  if (fi == NULL)
+  {
+    printf("getfonthandle(%d) points to a NULL family\n", desire);
+    fflush(stdout);
+    return NULL;
+  }
+
   if (fi->handle)
     return fi->handle;
 
+/*
 #ifndef NO_SDLPANGO
   snprintf(description, sizeof(description), "%s%s%s", fi->family,
     (text_state ^ TTF_STYLE_ITALIC ? " italic" : ""),
@@ -1171,6 +1187,7 @@ TuxPaint_Font *getfonthandle(int desire)
 
   printf("getfonthandle(%d) asking SDL_Pango for %s\n", desire, description);
 #else
+*/
 
   if (!name)
   {
@@ -1191,14 +1208,22 @@ TuxPaint_Font *getfonthandle(int desire)
   sprintf(pathname, "%s/%s", fi->directory, name);
 
   strcpy(description, "");
-#endif
+
+/* #endif */
 
   fi->handle = TuxPaint_Font_OpenFont(description, pathname, text_sizes[text_size]);
   // if the font doesn't load, we die -- it did load OK before though
 
-#ifdef NO_SDLPANGO
+/* #ifdef NO_SDLPANGO */
+  if (fi->handle->ttf_font == NULL)
+  {
+    printf("fi->handle->ttf_font is NULL!\n");
+    fflush(stdout);
+    return(NULL);
+  }
+
   TTF_SetFontStyle(fi->handle->ttf_font, missing);
-#endif
+/* #endif */
 
   return fi->handle;
 }

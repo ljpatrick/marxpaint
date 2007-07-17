@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: cs\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-07-04 23:03-0700\n"
+"POT-Creation-Date: 2007-07-17 08:24-0700\n"
 "PO-Revision-Date: 2006-06-21 12:50+0200\n"
 "Last-Translator: Václav Čermák <vaclav.cermak@gmail.com>\n"
 "Language-Team:  <cs@li.org>\n"
@@ -16,54 +16,71 @@ msgstr ""
 "X-Generator: KBabel 1.10.2\n"
 "Plural-Forms:  nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
 
+#. Response to Black (0, 0, 0) color selected
 msgid "Black!"
 msgstr "Černá!"
 
+#. Response to Dark grey (128, 128, 128) color selected
 msgid "Dark grey! Some people spell it “dark gray”."
 msgstr "Tmavě šedá! Někdo říká i tmavě sivá."
 
+#. Response to Light grey (192, 192, 192) color selected
 msgid "Light grey! Some people spell it “light gray”."
 msgstr "Světle šedá! Někdo říká i světle sivá."
 
+#. Response to White (255, 255, 255) color selected
 msgid "White!"
 msgstr "Bílá!"
 
+#. Response to Red (255, 0, 0) color selected
 msgid "Red!"
 msgstr "Červená!"
 
+#. Response to Orange (255, 128, 0) color selected
 msgid "Orange!"
 msgstr "Oranžová!"
 
+#. Response to Yellow (255, 255, 0) color selected
 msgid "Yellow!"
 msgstr "Žlutá!"
 
+#. Response to Light green (160, 228, 128) color selected
 msgid "Light green!"
 msgstr "Světle zelená!"
 
+#. Response to Dark green (33, 148, 70) color selected
 msgid "Dark green!"
 msgstr "Tmavě zelená!"
 
+#. Response to "Sky" blue (138, 168, 205) color selected
 msgid "Sky blue!"
 msgstr "Nebesky modrá!"
 
+#. Response to Blue (50, 100, 255) color selected
 msgid "Blue!"
 msgstr "Modrá!"
 
+#. Response to Lavender (186, 157, 255) color selected
 msgid "Lavender!"
 msgstr "Levandulová!"
 
+#. Response to Purple (128, 0, 128) color selected
 msgid "Purple!"
 msgstr "Fialová!"
 
+#. Response to Pink (255, 165, 211) color selected
 msgid "Pink!"
 msgstr "Růžová!"
 
+#. Response to Brown (128, 80, 0) color selected
 msgid "Brown!"
 msgstr "Hnědá!"
 
+#. Response to Tan (226, 189, 166) color selected
 msgid "Tan!"
 msgstr "Tříslová!!"
 
+#. Response to Beige (247, 228, 219) color selected
 msgid "Beige!"
 msgstr "Béžová!"
 
@@ -71,20 +88,21 @@ msgstr "Béžová!"
 #. via bugs in the SDL_ttf library. We also test fonts to be sure that
 #. they have both uppercase and lowercase letters. Note that we do not
 #. test for "Aa", because it is OK if uppercase and lowercase are the
-#. same. (but not nice -- such fonts get a low score later)
+#. same (but not nice -- such fonts get a low score later).
 #.
 #. We test the alphabet twice, to help with translation. If the users
-#. will be unable to type ASCII letters, then both lines should be
-#. translated. Otherwise, only Line X should be translated and the
-#. ASCII-only fonts should be given bad scores in the scoring code below.
-#. (the best scores going to fonts that support both)
+#. will be unable to type ASCII letters, then both Line X and Line Y
+#. should be translated. Otherwise, only Line X should be translated
+#. and the ASCII-only fonts should be given bad scores in the scoring
+#. code below (the best scores going to fonts that support both).
+#. Line X
 msgid "qx"
 msgstr "qx"
 
 msgid "QX"
 msgstr "QX"
 
-#. Line X
+#. Line Y
 msgid "qy"
 msgstr "qy"
 
@@ -95,183 +113,99 @@ msgstr "QY"
 #. the top of the list. The user will see them first. This sorting is
 #. especially important for users who have scroll buttons disabled.
 #. Translators should do whatever is needed to put crummy fonts last.
+#. distinct uppercase and lowercase (e.g., 'o' vs. 'O')
 msgid "oO"
 msgstr "oO"
 
-#. distinct uppercase and lowercase
+#. uncommon punctuation (e.g., '@', '#', '*', etc.)
 msgid "`\\%_@$~#{}<>^&*"
 msgstr "`\\%_@$~#{}<>^&*"
 
-#. uncommon punctuation
+#. common punctuation (e.g., '?', '!', '.', ',', etc.)
 msgid ",.?!"
 msgstr ",.?!"
 
-#. common punctuation
+#. digits (e.g., '0', '1' and '7')
 msgid "017"
 msgstr "017"
 
-#. digits
+#. distinct circle-like characters (e.g., 'O' (capital oh) vs. '0' (zero))
 msgid "O0"
 msgstr "00"
 
-#. distinct circle-like characters
+#. distinct line-like characters (e.g., 'l' (lowercase elle) vs. '1' (one) vs. 'I' (capital aye))
 msgid "1Il|"
 msgstr "1Il|"
 
+#. Congratulations #1
 msgid "Great!"
 msgstr "Výborně!"
 
+#. Congratulations #2
 msgid "Cool!"
 msgstr "Skvěle!"
 
+#. Congratulations #3
 msgid "Keep it up!"
 msgstr "Jen tak dál!"
 
+#. Congratulations #4
 msgid "Good job!"
 msgstr "Dobrá práce!"
 
+#. Input Method: English mode
 msgid "English"
 msgstr ""
 
+#. Input Method: Japanese Romanized Hiragana mode
 msgid "Hiragana"
 msgstr ""
 
+#. Input Method: Japanese Romanized Katakana mode
 msgid "Katakana"
 msgstr ""
 
+#. Input Method: Korean Hangul 2-Bul mode
 msgid "Hangul"
 msgstr ""
 
-msgid "Fill"
-msgstr "Výplň"
+#. Input Method: Thai mode
+msgid "Thai"
+msgstr ""
 
-msgid "Grass"
-msgstr "Tráva"
-
-msgid "Bricks"
-msgstr "Cihly"
-
-msgid "Rainbow"
-msgstr "Duha"
-
-msgid "Sparkles"
-msgstr "Jiskry"
-
-msgid "Blur"
-msgstr "Rozostřit"
-
-msgid "Smudge"
-msgstr "Rozmazat"
-
-msgid "Lighten"
-msgstr "Zesvětlit"
-
-msgid "Darken"
-msgstr "Ztmavit"
-
-msgid "Chalk"
-msgstr "Křída"
-
-msgid "Blocks"
-msgstr "Kostky"
-
-msgid "Negative"
-msgstr "Negativ"
-
-msgid "Tint"
-msgstr "Obarvit"
-
-msgid "Drip"
-msgstr "Kapání"
-
-msgid "Cartoon"
-msgstr "Komiks"
-
-msgid "Mirror"
-msgstr "Zrcadlit"
-
-msgid "Flip"
-msgstr "Převrátit"
-
-msgid "Click in the picture to fill that area with color."
-msgstr "Klepni do obrázku a oblast se vyplní barvou."
-
-msgid "Click and move to draw grass. Don’t forget the dirt!"
-msgstr "Klepni a pohybuj myší - nakreslíš trávu. A nezapomeň hlínu!"
-
-msgid "Click and move to draw large bricks."
-msgstr "Klepni a pohybuj myší - nakreslíš velké cihly."
-
-msgid "Click and move to draw small bricks."
-msgstr "Klepni a pohybuj myší - nakreslíš malé cihly."
-
-msgid "You can draw in rainbow colors!"
-msgstr "Můžes kreslit v barvách duhy!"
-
-msgid "Click and move to draw sparkles."
-msgstr "Klepni a pohybuj myší - nakreslíš jiskry."
-
-msgid "Click and move the mouse around to blur the picture."
-msgstr "Klepni a pohybuj myší - rozostříš obrázek."
-
-msgid "Click and move the mouse around to smudge the picture."
-msgstr "Klepni a pohybuj myší - rozmažeš obrázek."
-
-msgid "Click and move to fade the colors."
-msgstr "Klepni a pohybuj myší - barvy vyblednou."
-
-msgid "Click and move to darken the colors."
-msgstr "Klepni a pohybuj myší - barvy ztmavnou."
-
-msgid ""
-"Click and move the mouse around to turn the picture into a chalk drawing."
-msgstr "Klepni a pohybuj myší - vytvoříš efekt kresby křídou."
-
-msgid "Click and move the mouse around to make the picture blocky."
-msgstr "Klepni a pohybuj myší - vytvoříš kostkovanou mozaiku."
-
-msgid "Click and move the mouse around to draw a negative."
-msgstr "Klepni a pohybuj myší - vykreslíš negativ."
-
-msgid "Click and move the mouse around to change the picture’s color."
-msgstr "Klepni a pohybuj myší - změníš barvy obrázku."
-
-msgid "Click and move the mouse around to make the picture drip."
-msgstr "Klepni a pohybuj myší - obrázek se rozteče."
-
-msgid "Click and move the mouse around to turn the picture into a cartoon."
-msgstr "Klepni a pohybuj myší - obrázek získá komiksový vzhled."
-
-msgid "Click to make a mirror image."
-msgstr "Klepni a vytvoříš zrcadlový odraz obrázku."
-
-msgid "Click to flip the picture upside-down."
-msgstr "Klepni a obrázek se otočí nohama."
-
+#. Square shape tool (4 equally-lengthed sides at right angles)
 msgid "Square"
 msgstr "Čtverec"
 
+#. Rectangle shape tool (4 sides at right angles)
 msgid "Rectangle"
 msgstr "Obdelník"
 
+#. Circle shape tool (X radius and Y radius are the same)
 msgid "Circle"
 msgstr "Kruh"
 
+#. Ellipse shape tool (X radius and Y radius may differ)
 msgid "Ellipse"
 msgstr "Elipsa"
 
+#. Triangle shape tool (3 sides)
 msgid "Triangle"
 msgstr "Trojúhelník"
 
+#. Pentagone shape tool (5 sides)
 msgid "Pentagon"
 msgstr "Pětiúhelník"
 
+#. Rhombus shape tool (4 sides, not at right angles)
 msgid "Rhombus"
 msgstr "Kosočtverec"
 
+#. Description of a square
 msgid "A square is a rectangle with four equal sides."
 msgstr "Čtverec je pravoúhelník se čtyřmi stejnými stranami."
 
+#. Description of a rectangle
 msgid "A rectangle has four sides and four right angles."
 msgstr "Obdélník má čtyři strany."
 
@@ -280,90 +214,120 @@ msgid ""
 "A circle is a curve where all points have the same distance from the center."
 msgstr "Kruh je tvořen body, které nepřesahují určitou vzdálenost od středu."
 
+#. Description of an ellipse
 msgid "An ellipse is a stretched circle."
 msgstr "Elipsa je protáhlý kruh."
 
+#. Description of a triangle
 msgid "A triangle has three sides."
 msgstr "Trojúhelník má tři strany."
 
+#. Description of a pentagon
 msgid "A pentagon has five sides."
 msgstr "Pětiúhelník má pět stran."
 
 msgid "A rhombus has four equal sides, and opposite sides are parallel."
 msgstr "Kosočtverec má čtyři stejné strany, protilehlé jsou rovnoběžné."
 
+#. Title of tool selector (buttons down the left)
 msgid "Tools"
 msgstr "Nástroje"
 
+#. Title of color palette (buttons across the bottom)
 msgid "Colors"
 msgstr "Barvy"
 
+#. Title of brush selector (buttons down the right for paint and line tools)
 msgid "Brushes"
 msgstr "Štětce"
 
+#. Title of eraser selector (buttons down the right for eraser tool)
 msgid "Erasers"
 msgstr "Gumy"
 
+#. Title of stamp selector (buttons down the right for stamps tool)
 msgid "Stamps"
 msgstr "Razítka"
 
+#. Title of shape selector (buttons down the right for shapes tool)
+#. Shape creation tool (square, circle, etc.)
 msgid "Shapes"
 msgstr "Tvary"
 
+#. Title of font selector (buttons down the right for text tool)
 msgid "Letters"
 msgstr "Písmena"
 
+#. Title of magic tool selector (buttons down the right for magic (effect plugin) tool)
+#. "Magic" effects tools (blur, flip image, etc.)
 msgid "Magic"
 msgstr "Magie"
 
+#. Freehand painting tool
 msgid "Paint"
 msgstr "Kresba"
 
+#. Stamp tool (aka Rubber Stamps)
 msgid "Stamp"
 msgstr "Razítko"
 
+#. Line drawing tool
 msgid "Lines"
 msgstr "Úsečky"
 
+#. Text tool
 msgid "Text"
 msgstr "Text"
 
+#. Undo last action
 msgid "Undo"
 msgstr "Zpět"
 
+#. Redo undone action
 msgid "Redo"
 msgstr "Znovu"
 
+#. Eraser tool
 msgid "Eraser"
 msgstr "Guma"
 
+#. Start a new picture
 msgid "New"
 msgstr "Nový"
 
+#. Open a saved picture
 #. buttons for the file open dialog
+#. Open dialog: 'Open' button, to load the selected picture
 msgid "Open"
 msgstr "Otevřít"
 
+#. Save the current picture
 msgid "Save"
 msgstr "Uložit"
 
+#. Print the current picture
 msgid "Print"
 msgstr "Tisk"
 
+#. Quit/exit Tux Paint application
 msgid "Quit"
 msgstr "Ukončit"
 
+#. Paint tool instructions
 msgid "Pick a color and a brush shape to draw with."
 msgstr "Vyber barvu a druh štětce, kterým chceš kreslit."
 
+#. Stamp tool instructions
 msgid "Pick a picture to stamp around your drawing."
 msgstr "Vyber obrázek, který chceš otisknout do své kresby."
 
+#. Line tool instructions
 msgid "Click to start drawing a line. Let go to complete it."
 msgstr ""
 "Stiskni tlačítko myši a táhni. Vytvoříš úsečku, která skončí tam tlačítko "
 "pustíš."
 
+#. Shape tool instructions
 msgid ""
 "Pick a shape. Click to pick the center, drag, then let go when it is the "
 "size you want. Move around to rotate it, and click to draw it."
@@ -371,66 +335,75 @@ msgstr ""
 "Vyber si tvar. V místě středu klepni myší a táhnutím urči velikost, pak myš "
 "uvolni. Pohybem myši tvar natoč. Klepnutím se zvolený tvar nakreslí."
 
+#. Text tool instructions
 msgid "Choose a style of text. Click on your drawing and you can start typing."
 msgstr "Vyber si styl textu. Klepni na místo, kam chceš psát a můžeš začít."
 
+#. Magic tool instruction
 msgid "Pick a magical effect to use on your drawing!"
 msgstr "Vyber si magický efekt, který chceš v kresbě použít."
 
-#. Undo
+#. Response to 'undo' action
 msgid "Undo!"
 msgstr "Zpět!"
 
-#. Redo
+#. Response to 'redo' action
 msgid "Redo!"
 msgstr "Znovu!"
 
-#. Eraser
+#. Eraser tool
 msgid "Eraser!"
 msgstr "Vymazat!"
 
-#. New
+#. Response to 'start a new image' action
 msgid "You now have a blank sheet to draw on!"
 msgstr "Nyní máš na kreslení prázdnou stránku!"
 
-#. Open
+#. Response to 'open' action (while file dialog is being constructed)
 msgid "Open…"
 msgstr "Otevřít…"
 
-#. Save
+#. Response to 'save' action
 msgid "Your image has been saved!"
 msgstr "Tvůj obrázek byl uložen!"
 
-#. Print
+#. Response to 'print' action (while printing, or print dialog is being used)
 msgid "Printing…"
 msgstr "Tiskne se…"
 
-#. Quit
+#. Response to 'quit' (exit) action
 msgid "Bye bye!"
 msgstr "Ahoj!"
 
+#. Instruction while using Line tool (after click, before release)
 msgid "Let go of the button to complete the line."
 msgstr "Uvolni tlačítko myši a úsečka se ukončí."
 
+#. Instruction while using Shape tool (after first click, before release)
 msgid "Hold the button to stretch the shape."
 msgstr "Drž tlačítko a táhni myší - zvolený tvar se bude zvětšovat."
 
+#. Instruction while finishing Shape tool (after release, during rotation step before second click)
 msgid "Move the mouse to rotate the shape. Click to draw it."
 msgstr "Pohybem myši se bude tvar otáčet. Klepni pro jeho nakreslení."
 
+#. Notification that 'New' action was aborted (current image would have been lost)
 msgid "OK then… Let’s keep drawing this one!"
 msgstr "Dobrá... A teď můžeme pokračovat dál!"
 
-#. FIXME: Move elsewhere!!!
+#. Prompt to confirm user wishes to quit
 msgid "Do you really want to quit?"
 msgstr "Opravdu chceš malování ukončit?"
 
+#. Quit prompt positive response (quit)
 msgid "Yes, I'm done!"
 msgstr "Ano, jsem hotov!"
 
+#. Quit prompt negative response (don't quit)
 msgid "No, take me back!"
 msgstr "Nechci, ještě budu kreslit!"
 
+#. Current picture is not saved; user is quitting
 msgid "If you quit, you’ll lose your picture! Save it?"
 msgstr "Pokud skončíš, ztratíš svůj obrázek. Chceš ho uložit?"
 
@@ -440,41 +413,48 @@ msgstr "Ano, uložit!"
 msgid "No, don't bother saving!"
 msgstr "Ne, nebudeme ho ukládat!"
 
+#. Current picture is not saved; user is opening another picture
 msgid "Save your picture first?"
 msgstr "Chceš nejdřív uložit svůj obrázek?"
 
+#. Error opening picture
 msgid "Can’t open that picture!"
 msgstr "Tento obrázek nelze otevřít!"
 
+#. Generic dialog dismissal
 msgid "OK"
 msgstr "OK"
 
 #. This will be replaced with a dialog allowing color choice and Starter
 #. picking, with a "Back" option to dismiss the "New" and return to
 #. the current picture.  But for now...  (bjk 2006.02.19)
+#. Prompt to confirm starting a new picture
 msgid "Start a new picture?"
 msgstr "Začít nový obrázek?"
 
-#. #define PROMPT_NEW_YES gettext_noop("That’s OK!")
-#. #define PROMPT_NEW_NO gettext_noop("Never mind!")
 msgid "Yes, let's start fresh!"
 msgstr "Ano, začít znovu!"
 
+#. Notification that 'Open' dialog has nothing to show
 msgid "There are no saved files!"
 msgstr "Nejsou zde žádné uložené soubory!"
 
+#. Verification of print action
 msgid "Print your picture now?"
 msgstr "Chceš obrázek vytisknout?"
 
 msgid "Yes, print it!"
 msgstr "Ano, vytisknout!"
 
+#. Confirmation of successful (we hope) printing
 msgid "Your picture has been printed!"
 msgstr "Obrázek byl vytištěn!"
 
+#. Notification that it's too soon to print again (--printdelay option is in effect)
 msgid "You can’t print yet!"
 msgstr "Zatím nelze tisknout!"
 
+#. Prompt to confirm erasing a picture in the Open dialog
 msgid "Erase this picture?"
 msgstr "Smazat tento obrázek?"
 
@@ -484,51 +464,65 @@ msgstr "Ano smazat!"
 msgid "No, don't erase it!"
 msgstr "Ne, nemazat!"
 
+#. Reminder that Mouse Button 1 is the button to use in Tux Paint
 msgid "Remember to use the left mouse button!"
 msgstr "Nezapomeň používat levé tlačítko myši!"
 
+#. Sound has been muted (silenced) via keyboard shortcut
 msgid "Sound muted."
 msgstr ""
 
+#. Sound has been unmuted (unsilenced) via keyboard shortcut
 msgid "Sound unmuted."
 msgstr ""
 
+#. Wait while Text tool finishes loading fonts
 msgid "Please wait..."
 msgstr "Prosím počkej…"
 
+#. Open dialog: 'Erase' button, to erase/deleted the selected picture
 msgid "Erase"
 msgstr "Smazat"
 
+#. Open dialog: 'Slides' button, to switch to slide show mode
 msgid "Slides"
 msgstr ""
 
+#. Open dialog: 'Back' button, to dismiss Open dialog without opening a picture
 msgid "Back"
 msgstr "Zpět"
 
+#. Slideshow: 'Next' button, to load next slide (image)
 msgid "Next"
 msgstr "Další"
 
+#. Slideshow: 'Play' button, to begin a slideshow sequence
 msgid "Play"
 msgstr "Přehrát"
 
+#. Label for 'Letters' buttons (font selector, down the right when the Text tool is being used); used to show the difference between font faces
 msgid "Aa"
 msgstr "Aa"
 
-#. FIXME: Move elsewhere! Or not?!
+#. Admittedly stupid way of determining which keys can be used for
+#. positive and negative responses in dialogs (e.g., [Y] (for 'yes') in English)
 msgid "Yes"
 msgstr "Ano"
 
 msgid "No"
 msgstr "Ne"
 
-#. FIXME: Move elsewhere!!!
-#. #define PROMPT_SAVE_OVER_TXT gettext_noop("Save over the older version of this picture?")
+#. Prompt to ask whether user wishes to save over old version of their file
 msgid "Replace the picture with your changes?"
 msgstr "Nahradit starý obrázek změněným obrázkem?"
 
+#. Positive response to saving over old version
+#. (like a 'File:Save' action in other applications)
 msgid "Yes, replace the old one!"
 msgstr "Ano, nahradit starý obrázek!"
 
+#. Negative response to saving over old version (saves a new image)
+#. (like a 'File:Save As...' action in other applications)
 msgid "No, save a new file!"
 msgstr "Ne, ulož jako nový obrázek!"
 
@@ -536,6 +530,7 @@ msgid "Choose the picture you want, then click “Open”."
 msgstr "Vyber si obrázek a klepni na \"Otevřít\"."
 
 #. Let user choose images:
+#. Instructions for Slideshow file dialog (FIXME: Make a #define)
 msgid "Choose the pictures you want, then click “Play”."
 msgstr "Vyber si obrázek a klikni na \"Přehrát\"."
 
@@ -547,3 +542,162 @@ msgstr "Kreslicí program"
 
 msgid "Tux Paint"
 msgstr "Tux Paint"
+
+msgid "Blocks"
+msgstr "Kostky"
+
+msgid "Chalk"
+msgstr "Křída"
+
+msgid "Drip"
+msgstr "Kapání"
+
+msgid ""
+"Click and move the mouse around to turn the picture into a chalk drawing."
+msgstr "Klepni a pohybuj myší - vytvoříš efekt kresby křídou."
+
+msgid "Click and move the mouse around to make the picture blocky."
+msgstr "Klepni a pohybuj myší - vytvoříš kostkovanou mozaiku."
+
+msgid "Click and move the mouse around to make the picture drip."
+msgstr "Klepni a pohybuj myší - obrázek se rozteče."
+
+msgid "Blur"
+msgstr "Rozostřit"
+
+msgid "Click and move the mouse around to blur the picture."
+msgstr "Klepni a pohybuj myší - rozostříš obrázek."
+
+#. Both are named "Bricks", at the moment:
+msgid "Bricks"
+msgstr "Cihly"
+
+msgid "Click and move to draw large bricks."
+msgstr "Klepni a pohybuj myší - nakreslíš velké cihly."
+
+msgid "Click and move to draw small bricks."
+msgstr "Klepni a pohybuj myší - nakreslíš malé cihly."
+
+msgid "Cartoon"
+msgstr "Komiks"
+
+msgid "Click and move the mouse around to turn the picture into a cartoon."
+msgstr "Klepni a pohybuj myší - obrázek získá komiksový vzhled."
+
+msgid "Emboss"
+msgstr ""
+
+#, fuzzy
+msgid "Click and drag the mouse to emboss the picture."
+msgstr "Klepni a pohybuj myší - rozostříš obrázek."
+
+msgid "Lighten"
+msgstr "Zesvětlit"
+
+msgid "Darken"
+msgstr "Ztmavit"
+
+msgid "Click and move to fade the colors."
+msgstr "Klepni a pohybuj myší - barvy vyblednou."
+
+msgid "Click and move to darken the colors."
+msgstr "Klepni a pohybuj myší - barvy ztmavnou."
+
+msgid "Fill"
+msgstr "Výplň"
+
+msgid "Click in the picture to fill that area with color."
+msgstr "Klepni do obrázku a oblast se vyplní barvou."
+
+msgid "Flower"
+msgstr ""
+
+msgid "Click and drag to draw a flower stalk. Let go to finish the flower."
+msgstr ""
+
+msgid "Foam"
+msgstr ""
+
+#, fuzzy
+msgid "Click and drag the mouse to cover an area with foamy bubbles.."
+msgstr "Klepni do obrázku a oblast se vyplní barvou."
+
+msgid "Glass Tile"
+msgstr ""
+
+#, fuzzy
+msgid "Click and drag the mouse to put glass tile over your picture."
+msgstr "Klepni a pohybuj myší - rozostříš obrázek."
+
+msgid "Grass"
+msgstr "Tráva"
+
+msgid "Click and move to draw grass. Don’t forget the dirt!"
+msgstr "Klepni a pohybuj myší - nakreslíš trávu. A nezapomeň hlínu!"
+
+msgid "Kalidescope"
+msgstr ""
+
+msgid ""
+"Click and drag the mouse to draw with symmetric brushes (a kalidescope)."
+msgstr ""
+
+#, fuzzy
+msgid "Metal Paint"
+msgstr "Kresba"
+
+#, fuzzy
+msgid "Click and drag the mouse to paint with a metallic color."
+msgstr "Klepni a pohybuj myší - barvy ztmavnou."
+
+msgid "Mirror"
+msgstr "Zrcadlit"
+
+msgid "Flip"
+msgstr "Převrátit"
+
+msgid "Click to flip the picture upside-down."
+msgstr "Klepni a obrázek se otočí nohama."
+
+msgid "Click to make a mirror image."
+msgstr "Klepni a vytvoříš zrcadlový odraz obrázku."
+
+msgid "Negative"
+msgstr "Negativ"
+
+msgid "Click and move the mouse around to draw a negative."
+msgstr "Klepni a pohybuj myší - vykreslíš negativ."
+
+msgid "Rainbow"
+msgstr "Duha"
+
+msgid "You can draw in rainbow colors!"
+msgstr "Můžes kreslit v barvách duhy!"
+
+msgid "Smudge"
+msgstr "Rozmazat"
+
+msgid "Click and move the mouse around to smudge the picture."
+msgstr "Klepni a pohybuj myší - rozmažeš obrázek."
+
+msgid "Tint"
+msgstr "Obarvit"
+
+msgid "Click and move the mouse around to change the picture’s color."
+msgstr "Klepni a pohybuj myší - změníš barvy obrázku."
+
+#, fuzzy
+msgid "Waves"
+msgstr "Uložit"
+
+msgid ""
+"Click to make the picture wavy. (Click towards the top for shorter waves; "
+"the bottom for taller waves. Click towards the left for small waves; the "
+"right for wide waves.)"
+msgstr ""
+
+#~ msgid "Sparkles"
+#~ msgstr "Jiskry"
+
+#~ msgid "Click and move to draw sparkles."
+#~ msgstr "Klepni a pohybuj myší - nakreslíš jiskry."

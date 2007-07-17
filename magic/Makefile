@@ -7,10 +7,10 @@
 
 SO_TYPE=so
 
-TP_MAGIC_CFLAGS=$(shell sdl-config --cflags) \
-		-I../src/ \
-		$(shell tp-magic-config --cflags)
-CFLAGS=-g -Wall $(TP_MAGIC_CFLAGS)
+TP_MAGIC_CFLAGS=$(shell if [ -x tp-magic-config ] ; then tp-magic-config --cflags ; else echo -I../src/ ; fi)
+
+SDL_CFLAGS=$(shell sdl-config --cflags)
+CFLAGS=-g -Wall $(SDL_CFLAGS) $(TP_MAGIC_CFLAGS)
 
 
 
