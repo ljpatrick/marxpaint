@@ -103,6 +103,11 @@ $Id$
     * Improved comments near gettext() calls in the source code, to provide
       useful descriptions of each string in the POT (translation template).
 
+  * Bug Fixes
+    ---------
+    * PostScript scale and translation values were being localized
+      (so, e.g., "N.M" would be "N,M") due to use of printf().  Fixed.
+
 
 2007.July.1 (0.9.17)
 
