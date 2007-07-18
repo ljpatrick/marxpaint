@@ -170,7 +170,7 @@ msgstr "હંગુલ"
 
 #. Input Method: Thai mode
 msgid "Thai"
-msgstr ""
+msgstr "થાઇ"
 
 #. Square shape tool (4 equally-lengthed sides at right angles)
 msgid "Square"
@@ -208,10 +208,10 @@ msgstr "ચોરસ ચારેય સરખી બાજુઓ ધરાવ�
 msgid "A rectangle has four sides and four right angles."
 msgstr "ચતુષ્કોણને ચાર સરખી બાજુઓ અને ચાર સરખા ખૂણાઓ હોય છે."
 
-#, fuzzy
 msgid ""
 "A circle is a curve where all points have the same distance from the center."
-msgstr "વર્તુળ વક્ર છે કે જેમાં બધાં બિંદુઓ કેન્દ્રથી સમાન અંતરે આવેલાં હોય છે."
+msgstr "" 
+"ગોળ એ વક્ર છે કે જેમાં બધાં બિંદુઓ કેન્દ્રથી સમાન અંતરે આવેલાં હોય છે."
 
 #. Description of an ellipse
 msgid "An ellipse is a stretched circle."
@@ -302,7 +302,7 @@ msgstr "ખોલો"
 
 #. Save the current picture
 msgid "Save"
-msgstr "સંગ્રહો"
+msgstr "સાચવો"
 
 #. Print the current picture
 msgid "Print"
@@ -362,7 +362,7 @@ msgstr "ખોલો..."
 
 #. Response to 'save' action
 msgid "Your image has been saved!"
-msgstr "તમારૂં ચિત્ર સંગ્રહ થઇ ગયું છે!"
+msgstr "તમારૂં ચિત્ર સચવાઇ ગયું છે!"
 
 #. Response to 'print' action (while printing, or print dialog is being used)
 msgid "Printing…"
@@ -402,17 +402,17 @@ msgstr "ના, મને પાછા લઇ જાવ!"
 
 #. Current picture is not saved; user is quitting
 msgid "If you quit, you’ll lose your picture! Save it?"
-msgstr "જો તમે બહાર જશો, તો તમે તમારૂ ચિત્ર ગુમાવશો! તેને સંગ્રહશો?"
+msgstr "જો તમે બહાર નીકળશો, તો તમે તમારૂ ચિત્ર ગુમાવશો! તેને સાચવશો?"
 
 msgid "Yes, save it!"
-msgstr "હા, તેને સંગ્રહો!"
+msgstr "હા, તેને સાચવો!"
 
 msgid "No, don't bother saving!"
-msgstr "ના, સંગ્રહ કરશો નહી!"
+msgstr "ના, સાચવશો નહી!"
 
 #. Current picture is not saved; user is opening another picture
 msgid "Save your picture first?"
-msgstr "પહેલાં તમારૂં ચિત્ર સંગ્રહશો?"
+msgstr "પહેલાં તમારૂં ચિત્ર સાચવશો?"
 
 #. Error opening picture
 msgid "Can’t open that picture!"
@@ -434,7 +434,7 @@ msgstr "હા, નવેસરથી શરૂ કરો!"
 
 #. Notification that 'Open' dialog has nothing to show
 msgid "There are no saved files!"
-msgstr "કોઇ ફાઇલો સંગ્રહ થયેલ નથી!"
+msgstr "કોઇ ફાઇલો સાચવેલ નથી!"
 
 #. Verification of print action
 msgid "Print your picture now?"
@@ -467,11 +467,11 @@ msgstr "જમણાં માઉસ બટનનો ઉપયોગ કરવ�
 
 #. Sound has been muted (silenced) via keyboard shortcut
 msgid "Sound muted."
-msgstr ""
+msgstr "અવાજ બંધ કરેલ છે."
 
 #. Sound has been unmuted (unsilenced) via keyboard shortcut
 msgid "Sound unmuted."
-msgstr ""
+msgstr "અવાજ શરુ કરેલ છે."
 
 #. Wait while Text tool finishes loading fonts
 msgid "Please wait..."
@@ -521,7 +521,7 @@ msgstr "હા, જુની ફાઇલને બદલો!"
 #. Negative response to saving over old version (saves a new image)
 #. (like a 'File:Save As...' action in other applications)
 msgid "No, save a new file!"
-msgstr "ના, નવી ફાઇલને સંગ્રહો!"
+msgstr "ના, નવી ફાઇલને સાચવો!"
 
 msgid "Choose the picture you want, then click “Open”."
 msgstr "તમારે જોઇતું ચિત્ર પસંદ કરો, અને “ખોલો” પર ક્લિક કરો."
@@ -582,11 +582,10 @@ msgid "Click and move the mouse around to turn the picture into a cartoon."
 msgstr "ચિત્રને કાર્ટૂનમાં ફેરવવા માટે ક્લિક કરો અને માઉસ આજુબાજુ ખસેડો."
 
 msgid "Emboss"
-msgstr ""
+msgstr "ઉપસેલ"
 
-#, fuzzy
 msgid "Click and drag the mouse to emboss the picture."
-msgstr "ચિત્રને ઝાંખું કરવા માટે માઉસને ક્લિક કરો અને આજુ-બાજુ ખસેડો."
+msgstr "ચિત્રને ઉપસેલું કરવા માટે માઉસને ક્લિક કરો અને આજુ-બાજુ ખસેડો."
 
 msgid "Lighten"
 msgstr "આછું"
@@ -607,24 +606,22 @@ msgid "Click in the picture to fill that area with color."
 msgstr "તે વિસ્તારને રંગથી ભરવાં માટે ચિત્રમાં ક્લિક કરો."
 
 msgid "Flower"
-msgstr ""
+msgstr "ફૂલ"
 
 msgid "Click and drag to draw a flower stalk. Let go to finish the flower."
-msgstr ""
+msgstr "ફૂલ દાંડી દોરવા માટે ક્લિક કરો અને ખસેડો. ચાલો ફ્લને પૂર્ણ કરીએ."
 
 msgid "Foam"
-msgstr ""
+msgstr "ફોમ"
 
-#, fuzzy
 msgid "Click and drag the mouse to cover an area with foamy bubbles.."
-msgstr "તે વિસ્તારને રંગથી ભરવાં માટે ચિત્રમાં ક્લિક કરો."
+msgstr "વિસ્તારને ફોમ પરપોટાંથી ભરવા માટે માઉસને ક્લિક કરીને ખેંચો."
 
 msgid "Glass Tile"
-msgstr ""
+msgstr "કાચ તકતી"
 
-#, fuzzy
 msgid "Click and drag the mouse to put glass tile over your picture."
-msgstr "ચિત્રને ઝાંખું કરવા માટે માઉસને ક્લિક કરો અને આજુ-બાજુ ખસેડો."
+msgstr "વિસ્તારને કાચ તકતીથી ભરવા માટે માઉસને ક્લિક કરીને ખેંચો."
 
 msgid "Grass"
 msgstr "ઘાસ"
@@ -633,17 +630,15 @@ msgid "Click and move to draw grass. Don’t forget the dirt!"
 msgstr "ઘાસ દોરવા માટે ક્લિક કરો અને ખસેડો. ધૂળને ભૂલશો નહી!"
 
 msgid "Kalidescope"
-msgstr ""
+msgstr "કેલિડોસ્કોપ"
 
 msgid ""
 "Click and drag the mouse to draw with symmetric brushes (a kalidescope)."
-msgstr ""
+msgstr "સમાન બ્રશ (કેલિડોસ્કોપ) સાથે દોરવા માટે ક્લિક કરો અને ખસેડો."
 
-#, fuzzy
 msgid "Metal Paint"
-msgstr "રંગ"
+msgstr "ધાતુ રંગ"
 
-#, fuzzy
 msgid "Click and drag the mouse to paint with a metallic color."
 msgstr "રંગોને ઘેરાં કરવાં ક્લિક કરો અને ખસેડો."
 
@@ -651,10 +646,10 @@ msgid "Mirror"
 msgstr "અરીસો"
 
 msgid "Flip"
-msgstr "વાળો"
+msgstr "ફ્લીપ"
 
 msgid "Click to flip the picture upside-down."
-msgstr "ચિત્રને ઉપર-નીચે વાળવા માટે ક્લિક કરો."
+msgstr "ચિત્રને ઉપર-નીચે ફ્લીપ કરવા માટે ક્લિક કરો."
 
 msgid "Click to make a mirror image."
 msgstr "અરીસા ચિત્ર બનાવવા ક્લિક કરો."
@@ -683,15 +678,17 @@ msgstr "આછો રંગ"
 msgid "Click and move the mouse around to change the picture’s color."
 msgstr "ચિત્રનો રંગ બદલવા માટે ક્લિક કરો અને માઉસ આજુબાજુ ખસેડો."
 
-#, fuzzy
 msgid "Waves"
-msgstr "સંગ્રહો"
+msgstr "મોજાઓ"
 
 msgid ""
 "Click to make the picture wavy. (Click towards the top for shorter waves; "
 "the bottom for taller waves. Click towards the left for small waves; the "
 "right for wide waves.)"
 msgstr ""
+"ચિત્રને મોજાંઓ વાળું બનાવવા માટે ક્લિક કરો. (ઉપરની તરફ ક્લિક કરતાં મોજાં ટૂંકા થશે; "
+"નીચેની તરફ કરતાં લાંબા થશે. ડાબી બાજુ ક્લિક કરતાં મોજા નાનાં થશે; જ્યારે જમણી બાજુ"
+"ક્લિક કરતાં મોજાં પહોળા થશે.)"
 
 #~ msgid "Sparkles"
 #~ msgstr "ચમકારાઓ"
