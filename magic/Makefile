@@ -32,7 +32,9 @@ all:	negative.$(SO_TYPE) \
 	metalpaint.$(SO_TYPE) \
 	waves.$(SO_TYPE) \
 	flower.$(SO_TYPE) \
-	foam.$(SO_TYPE)
+	foam.$(SO_TYPE) \
+	ripples.$(SO_TYPE) \
+	sparkles.$(SO_TYPE)
 
 install:
 	cd .. ; make install-magic-plugins
@@ -120,5 +122,13 @@ flower.$(SO_TYPE):	src/flower.c
 
 foam.$(SO_TYPE):	src/foam.c
 	@echo "Building Foam magic tool"
+	@$(CC) $(CFLAGS) -shared -o $@ $<
+
+ripples.$(SO_TYPE):	src/ripples.c
+	@echo "Building Ripples magic tool"
+	@$(CC) $(CFLAGS) -shared -o $@ $<
+
+sparkles.$(SO_TYPE):	src/sparkles.c
+	@echo "Building Sparkles magic tool"
 	@$(CC) $(CFLAGS) -shared -o $@ $<
 

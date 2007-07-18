@@ -44,8 +44,6 @@ $Id$
       Can be disabled (will use older SDL_ttf-based code) by building with
       "make nopango".
 
-      Note: Text tool doesn't show appropriate fonts, but getting closer.
-
   * New Brushes
     -----------
     * Sparkles (based on old Magic Tool)
@@ -65,9 +63,10 @@ $Id$
     * Emboss
     * Metal Paint
     * Waves
+    * Foam
+    * Ripples
     * Flower
       (utilizes Bezier curve example code from Wikipedia.org)
-    * Foam
 
   * New Localizations:
     ------------------

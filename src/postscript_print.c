@@ -73,7 +73,7 @@ int f2int(float f)
 
 int f2dec(float f)
 {
-  return (int)(f - (((int)f) * 100));
+  return (int)((f - f2int(f)) * 100);
 }
 
 /* Actually save the PostScript data to the file stream: */

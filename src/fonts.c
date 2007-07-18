@@ -90,7 +90,7 @@ style_info **user_font_styles;
 int num_font_styles = 0;
 int num_font_styles_max = 0;
 
-int text_state;
+int text_state = 0;
 unsigned text_size = 4;		// initial text size
 
 
@@ -246,7 +246,9 @@ TuxPaint_Font * TuxPaint_Font_OpenFont(const char * pangodesc, const char * ttff
   char desc[1024];
 #endif
 
+#ifdef DEBUG
   printf("OpenFont(pango:\"%s\", ttf:\"%s\")\n", pangodesc, ttffilename);
+#endif
 
 #ifndef NO_SDLPANGO
 
@@ -256,41 +258,59 @@ TuxPaint_Font * TuxPaint_Font_OpenFont(const char * pangodesc, const char * ttff
     tpf->typ = FONT_TYPE_PANGO;
     snprintf(desc, sizeof(desc), "%s %d", pangodesc, (size * 3) / 4);
 
-printf("Creating context: \"%s\"\n", desc);
+#ifdef DEBUG
+    printf("Creating context: \"%s\"\n", desc);
+#endif
 
     tpf->pango_context = SDLPango_CreateContext_GivenFontDesc(desc);
     if (tpf->pango_context == NULL)
     {
+#ifdef DEBUG
       printf("Failed to load %s\n", desc);
+#endif
       free(tpf);
       tpf = NULL;
     }
     else
       tpf->height = size; /* FIXME: Is this accurate!? -bjk 2007.07.12 */
-  
+
+#ifdef DEBUG
+    printf("TuxPaint_Font_OpenFont() done\n"); fflush(stdout);
+#endif
+
     return(tpf);
   }
 #endif
 
   if (ttffilename != NULL && ttffilename[0] != '\0')
   {
+#ifdef DEBUG
     printf("Opening TTF\n"); fflush(stdout);
+#endif
 
     tpf = (TuxPaint_Font *) malloc(sizeof(TuxPaint_Font));
     tpf->typ = FONT_TYPE_TTF;
     tpf->ttf_font = TTF_OpenFont(ttffilename, size);
     if (tpf->ttf_font == NULL)
     {
+#ifdef DEBUG
       printf("Failed to load %s: %s\n", ttffilename, SDL_GetError());
+#endif
       free(tpf);
       tpf = NULL;
     }
     else
     {
+#ifdef DEBUG
       printf("Succeeded loading %s\n", ttffilename);
+#endif
       tpf->height = TTF_FontHeight(tpf->ttf_font);
     }
   }
+
+#ifdef DEBUG
+  printf("TuxPaint_Font_OpenFont() done\n"); fflush(stdout);
+#endif
 
   return(tpf);
 }
@@ -510,7 +530,7 @@ void receive_some_font_info(SDL_Surface * screen)
     rc = read(font_socket_fd, buf + buf_fill, buf_size - buf_fill);
 #ifdef DEBUG
     printf("read: fd=%d buf_fill=%u buf_size=%u rc=%ld\n", font_socket_fd,
-	   buf_fill, buf_size, rc);
+	   buf_fill, buf_size, (long int) rc);
 #endif
 
     if (rc == -1)
@@ -1160,70 +1180,144 @@ TuxPaint_Font *getfonthandle(int desire)
 {
   int missing = 0;
   family_info *fi = user_font_families[desire];
-  char *name = fi->filename[text_state];
+  char *name;
   char *pathname;
   char description[1024];
 
+#ifdef DEBUG
+  printf("\ngetfonthandle(%d)...\n", desire); fflush(stdout);
+#endif
+
   if (fi == NULL)
   {
+#ifdef DEBUG
     printf("getfonthandle(%d) points to a NULL family\n", desire);
     fflush(stdout);
+#endif
     return NULL;
   }
 
+  if (fi->filename != NULL)
+  {
+#ifdef DEBUG
+    printf("Setting 'name' to fi->filename[%d (0x%x)]\n",
+           (int) text_state,
+           (int) text_state);
+    fflush(stdout);
+#endif
+
+    name = fi->filename[text_state];
+
+#ifdef DEBUG
+    printf("Which is: %s\n", name); fflush(stdout);
+#endif
+  }
+  else
+  {
+#ifdef DBEUG
+    printf("fi->filename is NULL\n"); fflush(stdout);
+#endif
+
+    name = NULL;
+  }
+
   if (fi->handle)
+  {
+#ifdef DEBUG
+    printf("fi->handle was set (0x%x)\n", (int) fi->handle); fflush(stdout);
+#endif
     return fi->handle;
+  }
 
-/*
+#ifdef DEBUG
+  printf("fi->handle was not yet set\n"); fflush(stdout);
+#endif
+
+
+/* FIXME: Doesn't make sense; fi->handle is NULL! -bjk 2007.07.17
+
 #ifndef NO_SDLPANGO
-  snprintf(description, sizeof(description), "%s%s%s", fi->family,
-    (text_state ^ TTF_STYLE_ITALIC ? " italic" : ""),
-    (text_state ^ TTF_STYLE_BOLD ? " bold" : ""));
 
-  pathname = (char *) "";
+  if (fi->handle->typ == FONT_TYPE_PANGO)
+  {
+    snprintf(description, sizeof(description), "%s%s%s", fi->family,
+      (text_state ^ TTF_STYLE_ITALIC ? " italic" : ""),
+      (text_state ^ TTF_STYLE_BOLD ? " bold" : ""));
 
-  (void)(name);
-  (void)(missing);
+    pathname = (char *) "";
 
-  printf("getfonthandle(%d) asking SDL_Pango for %s\n", desire, description);
-#else
+#ifdef DEBUG
+    printf("getfonthandle(%d) asking SDL_Pango for %s\n", desire, description);
+#endif
+  }
+#endif
 */
 
-  if (!name)
+/* FIXME: Doesn't make sense; fi->handle is NULL! -bjk 2007.07.17
+  if (fi->handle->typ == FONT_TYPE_TTF)
+*/
   {
-    name = fi->filename[text_state ^ TTF_STYLE_ITALIC];
-    missing = text_state & TTF_STYLE_ITALIC;
-  }
-  if (!name)
-  {
-    name = fi->filename[text_state ^ TTF_STYLE_BOLD];
-    missing = text_state & TTF_STYLE_BOLD;
-  }
-  if (!name)
-  {
-    name = fi->filename[text_state ^ (TTF_STYLE_ITALIC | TTF_STYLE_BOLD)];
-    missing = text_state & (TTF_STYLE_ITALIC | TTF_STYLE_BOLD);
-  }
-  pathname = alloca(strlen(fi->directory) + 1 + strlen(name) + 1);
-  sprintf(pathname, "%s/%s", fi->directory, name);
+    if (!name)
+    {
+      name = fi->filename[text_state ^ TTF_STYLE_ITALIC];
+      missing = text_state & TTF_STYLE_ITALIC;
+    }
+    if (!name)
+    {
+      name = fi->filename[text_state ^ TTF_STYLE_BOLD];
+      missing = text_state & TTF_STYLE_BOLD;
+    }
+    if (!name)
+    {
+      name = fi->filename[text_state ^ (TTF_STYLE_ITALIC | TTF_STYLE_BOLD)];
+      missing = text_state & (TTF_STYLE_ITALIC | TTF_STYLE_BOLD);
+    }
+    if (!name)
+    {
+#ifdef DEBUG
+      printf("name is still NULL\n"); fflush(stdout);
+#endif
+      return(NULL);
+    }
 
-  strcpy(description, "");
+    pathname = alloca(strlen(fi->directory) + 1 + strlen(name) + 1);
+    sprintf(pathname, "%s/%s", fi->directory, name);
 
-/* #endif */
+    strcpy(description, "");
+  }
 
   fi->handle = TuxPaint_Font_OpenFont(description, pathname, text_sizes[text_size]);
   // if the font doesn't load, we die -- it did load OK before though
 
-/* #ifdef NO_SDLPANGO */
-  if (fi->handle->ttf_font == NULL)
+  if (fi->handle == NULL)
   {
-    printf("fi->handle->ttf_font is NULL!\n");
-    fflush(stdout);
+#ifdef DEBUG
+    printf("fi->handle is NULL!\n"); fflush(stdout);
+#endif
     return(NULL);
   }
 
-  TTF_SetFontStyle(fi->handle->ttf_font, missing);
-/* #endif */
+  if (fi->handle->typ == FONT_TYPE_TTF)
+  {
+    if (fi->handle->ttf_font == NULL)
+    {
+#ifdef DEBUG
+      printf("fi->handle->ttf_font is NULL!\n"); fflush(stdout);
+#endif
+      return(NULL);
+    }
+
+#ifdef DEBUG
+    printf("calling TTF_SetFontStyle(0x%x)\n", missing); fflush(stdout);
+#endif
+
+    TTF_SetFontStyle(fi->handle->ttf_font, missing);
+  }
+
+#ifndef NO_SDLPANGO
+  if (fi->handle->typ == FONT_TYPE_PANGO)
+    printf("It's a Pango context...\n");
+#endif
 
   return fi->handle;
 }
@@ -1370,29 +1464,75 @@ out:
 
 int TuxPaint_Font_FontHeight(TuxPaint_Font * tpf)
 {
+  if (tpf == NULL)
+  {
+#ifdef DEBUG
+    printf("TuxPaint_Font_FontHeight() received NULL\n"); fflush(stdout);
+#endif
+    return(1);
+  }
+
   return(tpf->height);
 }
 
 const char * TuxPaint_Font_FontFaceFamilyName(TuxPaint_Font * tpf)
 {
-#ifndef NO_SDLPANGO
-  /* FIXME */
-  (void)(tpf);
-  return("");
-#else
-  return (TTF_FontFaceFamilyName(tpf->ttf_font));
+  if (tpf == NULL)
+  {
+#ifdef DEBUG
+    printf("TuxPaint_Font_FontFaceFamilyName() received NULL\n"); fflush(stdout);
 #endif
+    return("");
+  }
+
+#ifndef NO_SDLPANGO
+  if (tpf->typ == FONT_TYPE_PANGO)
+  {
+    (void)(tpf);
+    /* FIXME */
+  
+    return("");
+  }
+#endif
+
+  if (tpf->typ == FONT_TYPE_TTF)
+    return (TTF_FontFaceFamilyName(tpf->ttf_font));
+
+#ifdef DEBUG
+  printf("TuxPaint_Font_FontFaceFamilyName() is confused\n");
+#endif
+
+  return("");
 }
 
 const char * TuxPaint_Font_FontFaceStyleName(TuxPaint_Font * tpf)
 {
-#ifndef NO_SDLPANGO
-  /* FIXME */
-  (void)(tpf);
-  return("");
-#else
-  return (TTF_FontFaceStyleName(tpf->ttf_font));
+  if (tpf == NULL)
+  {
+#ifdef DEBUG
+    printf("TuxPaint_Font_FontFaceStyleName() received NULL\n"); fflush(stdout);
 #endif
+    return("");
+  }
+
+#ifndef NO_SDLPANGO
+  if (tpf->typ == FONT_TYPE_PANGO)
+  {
+    (void)(tpf);
+    /* FIXME */
+  
+    return("");
+  }
+#endif
+
+  if (tpf->typ == FONT_TYPE_TTF)
+    return (TTF_FontFaceStyleName(tpf->ttf_font));
+  
+#ifdef DEBUG
+  printf("TuxPaint_Font_FontFaceStyleName() is confused\n");
+#endif
+
+  return("");
 }
 
 

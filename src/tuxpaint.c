@@ -956,7 +956,7 @@ static SDL_Surface *zoom(SDL_Surface * src, int new_x, int new_y);
 static SDL_Surface *render_text(TuxPaint_Font * restrict font,
 				const char *restrict str, SDL_Color color)
 {
-  SDL_Surface *ret;
+  SDL_Surface *ret = NULL;
   int height;
 #ifndef NO_SDLPANGO
   SDLPango_Matrix pango_color;
@@ -969,15 +969,31 @@ static SDL_Surface *render_text(TuxPaint_Font * restrict font,
     return NULL;
   }
 
-#ifdef NO_SDLPANGO
-  ret = TTF_RenderUTF8_Blended(font->ttf_font, str, color);
-#else
-  sdl_color_to_pango_color(color, &pango_color);
+#ifndef NO_SDLPANGO
+  if (font->typ == FONT_TYPE_PANGO)
+  {
+    sdl_color_to_pango_color(color, &pango_color);
 
-  SDLPango_SetDefaultColor(font->pango_context, &pango_color);
-  SDLPango_SetText(font->pango_context, str, -1);
-  ret = SDLPango_CreateSurfaceDraw(font->pango_context); 
+#ifdef DEBUG
+    printf("Calling SDLPango_SetText(\"%s\")\n", str);
+    fflush(stdout);
 #endif
+
+    SDLPango_SetDefaultColor(font->pango_context, &pango_color);
+    SDLPango_SetText(font->pango_context, str, -1);
+    ret = SDLPango_CreateSurfaceDraw(font->pango_context); 
+  }
+#endif
+
+  if (font->typ == FONT_TYPE_TTF)
+  {
+#ifdef DEBUG
+    printf("Calling TTF_RenderUTF8_Blended(\"%s\")\n", str);
+    fflush(stdout);
+#endif
+
+    ret = TTF_RenderUTF8_Blended(font->ttf_font, str, color);
+  }
 
   if (ret)
     return ret;
@@ -2817,7 +2833,6 @@ static void mainloop(void)
 		  {
 		    // need to invalidate all the cached user fonts, causing reload on demand
 
-#ifdef NO_SDLPANGO
 		    int i;
 		    for (i = 0; i < num_font_families; i++)
 		    {
@@ -2828,7 +2843,6 @@ static void mainloop(void)
 			user_font_families[i]->handle = NULL;
 		      }
 		    }
-#endif
 		    draw_fonts();
 		    update_screen_rect(&r_toolopt);
 		  }
