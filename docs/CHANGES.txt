@@ -9,7 +9,7 @@ http://www.tuxpaint.org/
 $Id$
 
 
-2007.July.17 (0.9.18)
+2007.July.18 (0.9.18)
   * System-Related Improvements:
     ----------------------------
     * Added an API for developing Magic tools as plug-ins.
@@ -86,6 +86,9 @@ $Id$
 
     * Dutch translation
       Freek de Kruijf <f.de.kruijf@hetnet.nl>
+
+    * Gujarati translation
+      Kartik Mistry <kartik.mistry@gmail.com>
 
     * Italian translation
       Flavio "Iron Bishop" Pastore <ironbishop@fsfe.org>
