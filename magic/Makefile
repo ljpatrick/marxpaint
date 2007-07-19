@@ -97,7 +97,7 @@ bricks.$(SO_TYPE):	src/bricks.c
 	@$(CC) $(CFLAGS) -shared -o $@ $<
 
 kalidescope.$(SO_TYPE):	src/kalidescope.c
-	@echo "Building Kalidescope magic tool"
+	@echo "Building Kaleidoscope magic tool"
 	@$(CC) $(CFLAGS) -shared -o $@ $<
 
 glasstile.$(SO_TYPE):	src/glasstile.c

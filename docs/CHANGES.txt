@@ -9,7 +9,7 @@ http://www.tuxpaint.org/
 $Id$
 
 
-2007.July.18 (0.9.18)
+2007.July.19 (0.9.18)
   * System-Related Improvements:
     ----------------------------
     * Added an API for developing Magic tools as plug-ins.
@@ -58,7 +58,7 @@ $Id$
 
   * New Magic tools:
     ----------------
-    * Kalidescope
+    * Kaleidoscope
     * Glass Tile
     * Emboss
     * Metal Paint
@@ -83,6 +83,7 @@ $Id$
     ---------------------
     * British English translation
       Caroline Ford <caroline.ford.work@googlemail.com>
+      Karl Ove Hufthammer <huftis@users.sourceforge.net>
 
     * Dutch translation
       Freek de Kruijf <f.de.kruijf@hetnet.nl>
@@ -92,6 +93,12 @@ $Id$
 
     * Italian translation
       Flavio "Iron Bishop" Pastore <ironbishop@fsfe.org>
+
+    * Norwegian Nynorsk
+      Karl Ove Hufthammer <huftis@users.sourceforge.net>
+
+    * Norwegian Bokmål
+      Karl Ove Hufthammer <huftis@users.sourceforge.net>
 
     * Russian EXTENDING documentation
       Sergei Popov <skein@rambler.ru>
