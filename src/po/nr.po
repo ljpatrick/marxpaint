@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-07-17 08:24-0700\n"
+"POT-Creation-Date: 2007-07-19 20:38+0200\n"
 "PO-Revision-Date: 2006-10-09 20:32+0200\n"
 "Last-Translator: Vincent Mahlangu <vmahlangu@parliament.gov.za>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -630,7 +630,7 @@ msgid "Foam"
 msgstr ""
 
 #, fuzzy
-msgid "Click and drag the mouse to cover an area with foamy bubbles.."
+msgid "Click and drag the mouse to cover an area with foamy bubbles."
 msgstr "Qhwarhaza esithombeni ukuze ugcwalise ngombala."
 
 msgid "Glass Tile"
@@ -647,12 +647,13 @@ msgstr "Utjani"
 msgid "Click and move to draw grass. Don’t forget the dirt!"
 msgstr "Qhwarhaza bewudose njalo ukuze udwebe utjani. Ungakhohlwa iinsila! "
 
-msgid "Kalidescope"
+msgid "Kaleidoscope"
 msgstr ""
 
+#, fuzzy
 msgid ""
-"Click and drag the mouse to draw with symmetric brushes (a kalidescope)."
-msgstr ""
+"Click and drag the mouse to draw with symmetric brushes (a kaleidoscope)."
+msgstr "Qhwarhaza udose ufiphaze imibala."
 
 #, fuzzy
 msgid "Metal Paint"
@@ -705,9 +706,9 @@ msgid "Waves"
 msgstr "Bulunga"
 
 msgid ""
-"Click to make the picture wavy. (Click towards the top for shorter waves; "
-"the bottom for taller waves. Click towards the left for small waves; the "
-"right for wide waves.)"
+"Click to make the picture wavy. Click toward the top for shorter waves, the "
+"bottom for taller waves, the left for small waves, and the right for long "
+"waves."
 msgstr ""
 
 #~ msgid "Sparkles"

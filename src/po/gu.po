@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-07-17 08:24-0700\n"
+"POT-Creation-Date: 2007-07-19 20:38+0200\n"
 "PO-Revision-Date: 2007-05-29 11:29+0530\n"
 "Last-Translator: Kartik Mistry <kartik.mistry@gmail.com>\n"
 "Language-Team: Gujarati <team@utkarsh.org>\n"
@@ -210,8 +210,7 @@ msgstr "ચતુષ્કોણને ચાર સરખી બાજુઓ �
 
 msgid ""
 "A circle is a curve where all points have the same distance from the center."
-msgstr "" 
-"ગોળ એ વક્ર છે કે જેમાં બધાં બિંદુઓ કેન્દ્રથી સમાન અંતરે આવેલાં હોય છે."
+msgstr "ગોળ એ વક્ર છે કે જેમાં બધાં બિંદુઓ કેન્દ્રથી સમાન અંતરે આવેલાં હોય છે."
 
 #. Description of an ellipse
 msgid "An ellipse is a stretched circle."
@@ -614,7 +613,8 @@ msgstr "ફૂલ દાંડી દોરવા માટે ક્લિક �
 msgid "Foam"
 msgstr "ફોમ"
 
-msgid "Click and drag the mouse to cover an area with foamy bubbles.."
+#, fuzzy
+msgid "Click and drag the mouse to cover an area with foamy bubbles."
 msgstr "વિસ્તારને ફોમ પરપોટાંથી ભરવા માટે માઉસને ક્લિક કરીને ખેંચો."
 
 msgid "Glass Tile"
@@ -629,11 +629,13 @@ msgstr "ઘાસ"
 msgid "Click and move to draw grass. Don’t forget the dirt!"
 msgstr "ઘાસ દોરવા માટે ક્લિક કરો અને ખસેડો. ધૂળને ભૂલશો નહી!"
 
-msgid "Kalidescope"
+#, fuzzy
+msgid "Kaleidoscope"
 msgstr "કેલિડોસ્કોપ"
 
+#, fuzzy
 msgid ""
-"Click and drag the mouse to draw with symmetric brushes (a kalidescope)."
+"Click and drag the mouse to draw with symmetric brushes (a kaleidoscope)."
 msgstr "સમાન બ્રશ (કેલિડોસ્કોપ) સાથે દોરવા માટે ક્લિક કરો અને ખસેડો."
 
 msgid "Metal Paint"
@@ -681,14 +683,15 @@ msgstr "ચિત્રનો રંગ બદલવા માટે ક્લ�
 msgid "Waves"
 msgstr "મોજાઓ"
 
+#, fuzzy
 msgid ""
-"Click to make the picture wavy. (Click towards the top for shorter waves; "
-"the bottom for taller waves. Click towards the left for small waves; the "
-"right for wide waves.)"
+"Click to make the picture wavy. Click toward the top for shorter waves, the "
+"bottom for taller waves, the left for small waves, and the right for long "
+"waves."
 msgstr ""
-"ચિત્રને મોજાંઓ વાળું બનાવવા માટે ક્લિક કરો. (ઉપરની તરફ ક્લિક કરતાં મોજાં ટૂંકા થશે; "
-"નીચેની તરફ કરતાં લાંબા થશે. ડાબી બાજુ ક્લિક કરતાં મોજા નાનાં થશે; જ્યારે જમણી બાજુ"
-"ક્લિક કરતાં મોજાં પહોળા થશે.)"
+"ચિત્રને મોજાંઓ વાળું બનાવવા માટે ક્લિક કરો. (ઉપરની તરફ ક્લિક કરતાં મોજાં ટૂંકા થશે; નીચેની "
+"તરફ કરતાં લાંબા થશે. ડાબી બાજુ ક્લિક કરતાં મોજા નાનાં થશે; જ્યારે જમણી બાજુક્લિક કરતાં "
+"મોજાં પહોળા થશે.)"
 
 #~ msgid "Sparkles"
 #~ msgstr "ચમકારાઓ"

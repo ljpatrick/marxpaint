@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-07-17 08:24-0700\n"
+"POT-Creation-Date: 2007-07-19 20:38+0200\n"
 "PO-Revision-Date: 2006-10-11 23:27+0300\n"
 "Last-Translator: Doruk Fisek <dfisek@fisek.com.tr>\n"
 "Language-Team: Turkish <gnu-tr-u12a@lists.sourceforge.net>\n"
@@ -622,7 +622,7 @@ msgid "Foam"
 msgstr ""
 
 #, fuzzy
-msgid "Click and drag the mouse to cover an area with foamy bubbles.."
+msgid "Click and drag the mouse to cover an area with foamy bubbles."
 msgstr "O alanı renkle doldurmak için resmin içine tıkla."
 
 msgid "Glass Tile"
@@ -638,12 +638,13 @@ msgstr "Çim"
 msgid "Click and move to draw grass. Don’t forget the dirt!"
 msgstr "Çim çizmek için tıkla ve fareyi hareket ettir. Kiri unutmayın!"
 
-msgid "Kalidescope"
+msgid "Kaleidoscope"
 msgstr ""
 
+#, fuzzy
 msgid ""
-"Click and drag the mouse to draw with symmetric brushes (a kalidescope)."
-msgstr ""
+"Click and drag the mouse to draw with symmetric brushes (a kaleidoscope)."
+msgstr "Renkleri koyulaştırmak için tıkla ve fareyi hareket ettir."
 
 #, fuzzy
 msgid "Metal Paint"
@@ -694,9 +695,9 @@ msgid "Waves"
 msgstr "Kaydet"
 
 msgid ""
-"Click to make the picture wavy. (Click towards the top for shorter waves; "
-"the bottom for taller waves. Click towards the left for small waves; the "
-"right for wide waves.)"
+"Click to make the picture wavy. Click toward the top for shorter waves, the "
+"bottom for taller waves, the left for small waves, and the right for long "
+"waves."
 msgstr ""
 
 #~ msgid "Sparkles"

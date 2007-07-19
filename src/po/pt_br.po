@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pt_br\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-07-17 08:24-0700\n"
+"POT-Creation-Date: 2007-07-19 20:38+0200\n"
 "PO-Revision-Date: 2007-05-19 15:50-0300\n"
 "Last-Translator: Adorilson Bezerra <adorilson@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <pt@li.org>\n"
@@ -635,7 +635,7 @@ msgid "Foam"
 msgstr ""
 
 #, fuzzy
-msgid "Click and drag the mouse to cover an area with foamy bubbles.."
+msgid "Click and drag the mouse to cover an area with foamy bubbles."
 msgstr "Clique na figura para pintar a área com a cor."
 
 msgid "Glass Tile"
@@ -651,12 +651,13 @@ msgstr "Grama"
 msgid "Click and move to draw grass. Don’t forget the dirt!"
 msgstr "Clique e mova para desenhar grama. Não esqueça da poeira!"
 
-msgid "Kalidescope"
+msgid "Kaleidoscope"
 msgstr ""
 
+#, fuzzy
 msgid ""
-"Click and drag the mouse to draw with symmetric brushes (a kalidescope)."
-msgstr ""
+"Click and drag the mouse to draw with symmetric brushes (a kaleidoscope)."
+msgstr "Clique e mova o mouse para escurecer as cores."
 
 #, fuzzy
 msgid "Metal Paint"
@@ -708,9 +709,9 @@ msgid "Waves"
 msgstr "Guardar"
 
 msgid ""
-"Click to make the picture wavy. (Click towards the top for shorter waves; "
-"the bottom for taller waves. Click towards the left for small waves; the "
-"right for wide waves.)"
+"Click to make the picture wavy. Click toward the top for shorter waves, the "
+"bottom for taller waves, the left for small waves, and the right for long "
+"waves."
 msgstr ""
 
 #~ msgid "Sparkles"

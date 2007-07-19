@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: en_gb\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-07-19 20:32+0200\n"
+"POT-Creation-Date: 2007-07-19 20:38+0200\n"
 "PO-Revision-Date: 2007-07-19 20:35+0200\n"
 "Last-Translator: Karl Ove Hufthammer <karl@huftis.org>\n"
 "Language-Team: Norwegian Nynorsk <i18n-nn@lister.ping.uio.no>\n"
@@ -210,8 +210,10 @@ msgstr "A square is a rectangle with four equal sides."
 msgid "A rectangle has four sides and four right angles."
 msgstr "A rectangle has four sides and four right angles."
 
-msgid "A circle is a curve where all points have the same distance from the center."
-msgstr "A circle is a curve where all points have the same distance from the center."
+msgid ""
+"A circle is a curve where all points have the same distance from the center."
+msgstr ""
+"A circle is a curve where all points have the same distance from the center."
 
 #. Description of an ellipse
 msgid "An ellipse is a stretched circle."
@@ -334,7 +336,8 @@ msgstr ""
 
 #. Text tool instructions
 msgid "Choose a style of text. Click on your drawing and you can start typing."
-msgstr "Choose a style of text. Click on your drawing and you can start typing."
+msgstr ""
+"Choose a style of text. Click on your drawing and you can start typing."
 
 #. Magic tool instruction
 msgid "Pick a magical effect to use on your drawing!"
@@ -549,8 +552,10 @@ msgstr "Chalk"
 msgid "Drip"
 msgstr "Drip"
 
-msgid "Click and move the mouse around to turn the picture into a chalk drawing."
-msgstr "Click and move the mouse around to turn the picture into a chalk drawing."
+msgid ""
+"Click and move the mouse around to turn the picture into a chalk drawing."
+msgstr ""
+"Click and move the mouse around to turn the picture into a chalk drawing."
 
 msgid "Click and move the mouse around to make the picture blocky."
 msgstr "Click and move the mouse around to make the picture blocky."
@@ -631,8 +636,10 @@ msgstr "Click and move to draw grass. Don’t forget the dirt!"
 msgid "Kaleidoscope"
 msgstr "Kaleidoscope"
 
-msgid "Click and drag the mouse to draw with symmetric brushes (a kaleidoscope)."
-msgstr "Click and drag the mouse to draw with symmetric brushes (a kaleidoscope)."
+msgid ""
+"Click and drag the mouse to draw with symmetric brushes (a kaleidoscope)."
+msgstr ""
+"Click and drag the mouse to draw with symmetric brushes (a kaleidoscope)."
 
 msgid "Metal Paint"
 msgstr "Metal Paint"
@@ -735,4 +742,3 @@ msgstr ""
 
 #~ msgid "Silver!"
 #~ msgstr "Silver!"
-

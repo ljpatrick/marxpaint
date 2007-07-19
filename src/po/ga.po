@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint 0.9.17\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-07-17 08:24-0700\n"
+"POT-Creation-Date: 2007-07-19 20:38+0200\n"
 "PO-Revision-Date: 2007-05-11 08:44+0100\n"
 "Last-Translator: Kevin Patrick Scannell <kscanne@gmail.com>\n"
 "Language-Team: Irish <gaeilge-gnulinux@lists.sourceforge.net>\n"
@@ -625,7 +625,7 @@ msgid "Foam"
 msgstr ""
 
 #, fuzzy
-msgid "Click and drag the mouse to cover an area with foamy bubbles.."
+msgid "Click and drag the mouse to cover an area with foamy bubbles."
 msgstr "Cliceáil agus bog an luch chun an pictiúr a thiúchan."
 
 msgid "Glass Tile"
@@ -641,12 +641,12 @@ msgstr "Féar"
 msgid "Click and move to draw grass. Don’t forget the dirt!"
 msgstr "Cliceáil agus bog chun féar a dhearadh. Ná déan dearmad ar an ithir!"
 
-msgid "Kalidescope"
+msgid "Kaleidoscope"
 msgstr ""
 
 #, fuzzy
 msgid ""
-"Click and drag the mouse to draw with symmetric brushes (a kalidescope)."
+"Click and drag the mouse to draw with symmetric brushes (a kaleidoscope)."
 msgstr "Cliceáil agus bog an luch chun an pictiúr a thiúchan."
 
 #, fuzzy
@@ -698,9 +698,9 @@ msgid "Waves"
 msgstr "Sábháil"
 
 msgid ""
-"Click to make the picture wavy. (Click towards the top for shorter waves; "
-"the bottom for taller waves. Click towards the left for small waves; the "
-"right for wide waves.)"
+"Click to make the picture wavy. Click toward the top for shorter waves, the "
+"bottom for taller waves, the left for small waves, and the right for long "
+"waves."
 msgstr ""
 
 #~ msgid "Sparkles"

@@ -16,7 +16,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint 0.9.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-07-17 08:24-0700\n"
+"POT-Creation-Date: 2007-07-19 20:38+0200\n"
 "PO-Revision-Date: 2005-04-04 10:55-0700\n"
 "Last-Translator: Steven Michael Murphy <murf@e-tools.com>\n"
 "Language-Team: Kinyarwanda <translation-team-rw@lists.sourceforge.net>\n"
@@ -684,7 +684,7 @@ msgid "Foam"
 msgstr ""
 
 #, fuzzy
-msgid "Click and drag the mouse to cover an area with foamy bubbles.."
+msgid "Click and drag the mouse to cover an area with foamy bubbles."
 msgstr "Na Kwimura i Imbeba Kuri i() y'Ishusho"
 
 msgid "Glass Tile"
@@ -702,12 +702,12 @@ msgstr "Ikigina"
 msgid "Click and move to draw grass. Don’t forget the dirt!"
 msgstr "Na Kwimura Kuri Gushushanya"
 
-msgid "Kalidescope"
+msgid "Kaleidoscope"
 msgstr ""
 
 #, fuzzy
 msgid ""
-"Click and drag the mouse to draw with symmetric brushes (a kalidescope)."
+"Click and drag the mouse to draw with symmetric brushes (a kaleidoscope)."
 msgstr "Na Kwimura i Imbeba Kuri i() y'Ishusho"
 
 msgid "Metal Paint"
@@ -765,9 +765,9 @@ msgid "Waves"
 msgstr "Kubika"
 
 msgid ""
-"Click to make the picture wavy. (Click towards the top for shorter waves; "
-"the bottom for taller waves. Click towards the left for small waves; the "
-"right for wide waves.)"
+"Click to make the picture wavy. Click toward the top for shorter waves, the "
+"bottom for taller waves, the left for small waves, and the right for long "
+"waves."
 msgstr ""
 
 #, fuzzy

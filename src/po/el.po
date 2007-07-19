@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Tuxpaint 0.9.2pre\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-07-17 08:24-0700\n"
+"POT-Creation-Date: 2007-07-19 20:38+0200\n"
 "PO-Revision-Date: 2006-09-07 14:30+0200\n"
 "Last-Translator: \n"
 "Language-Team: N/A <i18ngr@lists.hellug.gr>\n"
@@ -639,7 +639,7 @@ msgid "Foam"
 msgstr ""
 
 #, fuzzy
-msgid "Click and drag the mouse to cover an area with foamy bubbles.."
+msgid "Click and drag the mouse to cover an area with foamy bubbles."
 msgstr "Κάνε κλικ και κίνησε το ποντίκι για να παχύνεις την εικόνα"
 
 msgid "Glass Tile"
@@ -657,12 +657,12 @@ msgstr ""
 "Κάνε κλικ και κούνα το ποντίκι για να ζωγραφίσεις το γρασίδι. Προσοχή μην "
 "ξεχάσεις το χώμα!"
 
-msgid "Kalidescope"
+msgid "Kaleidoscope"
 msgstr ""
 
 #, fuzzy
 msgid ""
-"Click and drag the mouse to draw with symmetric brushes (a kalidescope)."
+"Click and drag the mouse to draw with symmetric brushes (a kaleidoscope)."
 msgstr "Κάνε κλικ και κίνησε το ποντίκι για να παχύνεις την εικόνα"
 
 #, fuzzy
@@ -717,9 +717,9 @@ msgid "Waves"
 msgstr "Φύλαξη"
 
 msgid ""
-"Click to make the picture wavy. (Click towards the top for shorter waves; "
-"the bottom for taller waves. Click towards the left for small waves; the "
-"right for wide waves.)"
+"Click to make the picture wavy. Click toward the top for shorter waves, the "
+"bottom for taller waves, the left for small waves, and the right for long "
+"waves."
 msgstr ""
 
 #~ msgid "Sparkles"

@@ -17,7 +17,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Tuxpaint cvs 2007-06-23\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-07-17 08:24-0700\n"
+"POT-Creation-Date: 2007-07-19 20:38+0200\n"
 "PO-Revision-Date: 2007-06-24 11:39+0200\n"
 "Last-Translator: Pere Pujal i Carabantes <ppujal@airtel.net>\n"
 "Language-Team: Català <linux-ca@chanae.alphanet.ch>\n"
@@ -636,7 +636,7 @@ msgid "Foam"
 msgstr ""
 
 #, fuzzy
-msgid "Click and drag the mouse to cover an area with foamy bubbles.."
+msgid "Click and drag the mouse to cover an area with foamy bubbles."
 msgstr "Feu clic i moveu el ratolí per fer engruixir la imatge."
 
 msgid "Glass Tile"
@@ -652,12 +652,12 @@ msgstr "Herba"
 msgid "Click and move to draw grass. Don’t forget the dirt!"
 msgstr "Feu clic i moveu per dibuixar herba. No oblideu la terra."
 
-msgid "Kalidescope"
+msgid "Kaleidoscope"
 msgstr ""
 
 #, fuzzy
 msgid ""
-"Click and drag the mouse to draw with symmetric brushes (a kalidescope)."
+"Click and drag the mouse to draw with symmetric brushes (a kaleidoscope)."
 msgstr "Feu clic i moveu el ratolí per fer engruixir la imatge."
 
 #, fuzzy
@@ -709,9 +709,9 @@ msgid "Waves"
 msgstr "Desa"
 
 msgid ""
-"Click to make the picture wavy. (Click towards the top for shorter waves; "
-"the bottom for taller waves. Click towards the left for small waves; the "
-"right for wide waves.)"
+"Click to make the picture wavy. Click toward the top for shorter waves, the "
+"bottom for taller waves, the left for small waves, and the right for long "
+"waves."
 msgstr ""
 
 #~ msgid "Sparkles"
