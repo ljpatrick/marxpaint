@@ -53,7 +53,7 @@ char * waves_get_name(magic_api * api, int which)
 // Return our descriptions, localized:
 char * waves_get_description(magic_api * api, int which)
 {
-  return(strdup(gettext("Click to make the picture wavy. (Click towards the top for shorter waves; the bottom for taller waves. Click towards the left for small waves; the right for wide waves.)")));
+  return(strdup(gettext("Click to make the picture wavy. Click toward the top for shorter waves, the bottom for taller waves, the left for small waves, and the right for long waves.")));
 }
 
 
