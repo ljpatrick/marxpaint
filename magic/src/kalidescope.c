@@ -46,13 +46,13 @@ SDL_Surface * kalidescope_get_icon(magic_api * api, int which)
 // Return our names, localized:
 char * kalidescope_get_name(magic_api * api, int which)
 {
-  return(strdup(gettext("Kalidescope")));
+  return(strdup(gettext("Kaleidoscope")));
 }
 
 // Return our descriptions, localized:
 char * kalidescope_get_description(magic_api * api, int which)
 {
-  return(strdup(gettext("Click and drag the mouse to draw with symmetric brushes (a kalidescope).")));
+  return(strdup(gettext("Click and drag the mouse to draw with symmetric brushes (a kaleidoscope).")));
 }
 
 // Do the effect:
