@@ -1,29 +1,31 @@
-# Tux Paint British English messages
-# Copyright (C) 2002, 2004 Free Software Foundation, Inc.
+# Translation of en_gb to Norwegian Nynorsk
 # Bill Kendrick <bill@newbreedsoftware.com>, 2002.
+# Karl Ove Hufthammer <karl@huftis.org>, 2007.
+# Tux Paint British English messages
+# Copyright (C) 2002, 2004, 2007 Free Software Foundation, Inc.
 msgid ""
 msgstr ""
-"Project-Id-Version: tuxpaint 0.9.14\n"
+"Project-Id-Version: en_gb\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-07-17 08:24-0700\n"
-"PO-Revision-Date: 2007-07-01 20:39+0100\n"
-"Last-Translator: Caroline Ford <caroline.ford.work@googlemail.com>\n"
-"Language-Team: English (British) <en_gb@li.org>\n"
+"POT-Creation-Date: 2007-07-19 20:32+0200\n"
+"PO-Revision-Date: 2007-07-19 20:35+0200\n"
+"Last-Translator: Karl Ove Hufthammer <karl@huftis.org>\n"
+"Language-Team: Norwegian Nynorsk <i18n-nn@lister.ping.uio.no>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11.4\n"
+"Plural-Forms:  nplurals=2; plural=(n != 1);\n"
 
 #. Response to Black (0, 0, 0) color selected
 msgid "Black!"
 msgstr "Black!"
 
 #. Response to Dark grey (128, 128, 128) color selected
-#, fuzzy
 msgid "Dark grey! Some people spell it “dark gray”."
-msgstr "Dark grey! Some people spell it ‘dark gray‘."
+msgstr "Dark grey! Some people spell it ‘dark gray’."
 
 #. Response to Light grey (192, 192, 192) color selected
-#, fuzzy
 msgid "Light grey! Some people spell it “light gray”."
 msgstr "Light grey! Some people spell it ‘light gray‘."
 
@@ -48,7 +50,6 @@ msgid "Light green!"
 msgstr "Light green!"
 
 #. Response to Dark green (33, 148, 70) color selected
-#, fuzzy
 msgid "Dark green!"
 msgstr "Dark green!"
 
@@ -77,7 +78,6 @@ msgid "Brown!"
 msgstr "Brown!"
 
 #. Response to Tan (226, 189, 166) color selected
-#, fuzzy
 msgid "Tan!"
 msgstr "Tan!"
 
@@ -98,17 +98,17 @@ msgstr "Beige!"
 #. code below (the best scores going to fonts that support both).
 #. Line X
 msgid "qx"
-msgstr ""
+msgstr "qx"
 
 msgid "QX"
-msgstr ""
+msgstr "QX"
 
 #. Line Y
 msgid "qy"
-msgstr ""
+msgstr "qy"
 
 msgid "QY"
-msgstr ""
+msgstr "QY"
 
 #. Now we score fonts to ensure that the best ones will be placed at
 #. the top of the list. The user will see them first. This sorting is
@@ -116,27 +116,27 @@ msgstr ""
 #. Translators should do whatever is needed to put crummy fonts last.
 #. distinct uppercase and lowercase (e.g., 'o' vs. 'O')
 msgid "oO"
-msgstr ""
+msgstr "oO"
 
 #. uncommon punctuation (e.g., '@', '#', '*', etc.)
 msgid "`\\%_@$~#{}<>^&*"
-msgstr ""
+msgstr "`\\%_@$~#{}<>^&*"
 
 #. common punctuation (e.g., '?', '!', '.', ',', etc.)
 msgid ",.?!"
-msgstr ""
+msgstr ",.?!"
 
 #. digits (e.g., '0', '1' and '7')
 msgid "017"
-msgstr ""
+msgstr "017"
 
 #. distinct circle-like characters (e.g., 'O' (capital oh) vs. '0' (zero))
 msgid "O0"
-msgstr ""
+msgstr "O0"
 
 #. distinct line-like characters (e.g., 'l' (lowercase elle) vs. '1' (one) vs. 'I' (capital aye))
 msgid "1Il|"
-msgstr ""
+msgstr "1Il|"
 
 #. Congratulations #1
 msgid "Great!"
@@ -171,9 +171,8 @@ msgid "Hangul"
 msgstr "Hangul"
 
 #. Input Method: Thai mode
-#, fuzzy
 msgid "Thai"
-msgstr "Thick"
+msgstr "Thai"
 
 #. Square shape tool (4 equally-lengthed sides at right angles)
 msgid "Square"
@@ -204,20 +203,15 @@ msgid "Rhombus"
 msgstr "Rhombus"
 
 #. Description of a square
-#, fuzzy
 msgid "A square is a rectangle with four equal sides."
 msgstr "A square is a rectangle with four equal sides."
 
 #. Description of a rectangle
-#, fuzzy
 msgid "A rectangle has four sides and four right angles."
 msgstr "A rectangle has four sides and four right angles."
 
-#, fuzzy
-msgid ""
-"A circle is a curve where all points have the same distance from the center."
-msgstr ""
-"A circle is a curve where all points have the same distance from the centre."
+msgid "A circle is a curve where all points have the same distance from the center."
+msgstr "A circle is a curve where all points have the same distance from the center."
 
 #. Description of an ellipse
 msgid "An ellipse is a stretched circle."
@@ -247,7 +241,6 @@ msgid "Brushes"
 msgstr "Brushes"
 
 #. Title of eraser selector (buttons down the right for eraser tool)
-#, fuzzy
 msgid "Erasers"
 msgstr "Erasers"
 
@@ -341,8 +334,7 @@ msgstr ""
 
 #. Text tool instructions
 msgid "Choose a style of text. Click on your drawing and you can start typing."
-msgstr ""
-"Choose a style of text. Click on your drawing and you can start typing."
+msgstr "Choose a style of text. Click on your drawing and you can start typing."
 
 #. Magic tool instruction
 msgid "Pick a magical effect to use on your drawing!"
@@ -434,7 +426,6 @@ msgstr "OK"
 #. picking, with a "Back" option to dismiss the "New" and return to
 #. the current picture.  But for now...  (bjk 2006.02.19)
 #. Prompt to confirm starting a new picture
-#, fuzzy
 msgid "Start a new picture?"
 msgstr "Start a new picture?"
 
@@ -476,11 +467,11 @@ msgstr "Remember to use the left mouse button!"
 
 #. Sound has been muted (silenced) via keyboard shortcut
 msgid "Sound muted."
-msgstr ""
+msgstr "Sound muted."
 
 #. Sound has been unmuted (unsilenced) via keyboard shortcut
 msgid "Sound unmuted."
-msgstr ""
+msgstr "Sound unmuted."
 
 #. Wait while Text tool finishes loading fonts
 msgid "Please wait..."
@@ -499,7 +490,6 @@ msgid "Back"
 msgstr "Back"
 
 #. Slideshow: 'Next' button, to load next slide (image)
-#, fuzzy
 msgid "Next"
 msgstr "Next"
 
@@ -530,7 +520,6 @@ msgstr "Yes, replace the old one!"
 
 #. Negative response to saving over old version (saves a new image)
 #. (like a 'File:Save As...' action in other applications)
-#, fuzzy
 msgid "No, save a new file!"
 msgstr "No, save a new file!"
 
@@ -560,10 +549,8 @@ msgstr "Chalk"
 msgid "Drip"
 msgstr "Drip"
 
-msgid ""
-"Click and move the mouse around to turn the picture into a chalk drawing."
-msgstr ""
-"Click and move the mouse around to turn the picture into a chalk drawing."
+msgid "Click and move the mouse around to turn the picture into a chalk drawing."
+msgstr "Click and move the mouse around to turn the picture into a chalk drawing."
 
 msgid "Click and move the mouse around to make the picture blocky."
 msgstr "Click and move the mouse around to make the picture blocky."
@@ -578,31 +565,26 @@ msgid "Click and move the mouse around to blur the picture."
 msgstr "Click and move the mouse around to blur the picture."
 
 #. Both are named "Bricks", at the moment:
-#, fuzzy
 msgid "Bricks"
 msgstr "Bricks"
 
-#, fuzzy
 msgid "Click and move to draw large bricks."
 msgstr "Click and move to draw large bricks."
 
-#, fuzzy
 msgid "Click and move to draw small bricks."
 msgstr "Click and move to draw small bricks."
 
 msgid "Cartoon"
 msgstr "Cartoon"
 
-#, fuzzy
 msgid "Click and move the mouse around to turn the picture into a cartoon."
 msgstr "Click and move the mouse around to turn the picture into a cartoon."
 
 msgid "Emboss"
-msgstr ""
+msgstr "Emboss"
 
-#, fuzzy
 msgid "Click and drag the mouse to emboss the picture."
-msgstr "Click and move the mouse to thin the picture."
+msgstr "Click and drag the mouse to emboss the picture."
 
 msgid "Lighten"
 msgstr "Lighten"
@@ -623,48 +605,40 @@ msgid "Click in the picture to fill that area with color."
 msgstr "Click in the picture to fill that area with colour."
 
 msgid "Flower"
-msgstr ""
+msgstr "Flower"
 
 msgid "Click and drag to draw a flower stalk. Let go to finish the flower."
-msgstr ""
+msgstr "Click and drag to draw a flower stalk. Let go to finish the flower."
 
 msgid "Foam"
-msgstr ""
+msgstr "Foam"
 
-#, fuzzy
-msgid "Click and drag the mouse to cover an area with foamy bubbles.."
-msgstr "Click and move the mouse to thicken the picture."
+msgid "Click and drag the mouse to cover an area with foamy bubbles."
+msgstr "Click and drag the mouse to cover an area with foamy bubbles."
 
 msgid "Glass Tile"
-msgstr ""
+msgstr "Glass Tile"
 
-#, fuzzy
 msgid "Click and drag the mouse to put glass tile over your picture."
-msgstr "Click and move the mouse to thin the picture."
+msgstr "Click and drag the mouse to put glass tile over your picture."
 
-#, fuzzy
 msgid "Grass"
 msgstr "Grass"
 
-#, fuzzy
 msgid "Click and move to draw grass. Don’t forget the dirt!"
-msgstr "Click and move to draw grass. Don't forget the dirt!"
+msgstr "Click and move to draw grass. Don’t forget the dirt!"
 
-msgid "Kalidescope"
-msgstr ""
+msgid "Kaleidoscope"
+msgstr "Kaleidoscope"
 
-#, fuzzy
-msgid ""
-"Click and drag the mouse to draw with symmetric brushes (a kalidescope)."
-msgstr "Click and move the mouse to thicken the picture."
+msgid "Click and drag the mouse to draw with symmetric brushes (a kaleidoscope)."
+msgstr "Click and drag the mouse to draw with symmetric brushes (a kaleidoscope)."
 
-#, fuzzy
 msgid "Metal Paint"
-msgstr "Paint"
+msgstr "Metal Paint"
 
-#, fuzzy
 msgid "Click and drag the mouse to paint with a metallic color."
-msgstr "Click and move the mouse to thin the picture."
+msgstr "Click and drag the mouse to paint with a metallic color."
 
 msgid "Mirror"
 msgstr "Mirror"
@@ -693,27 +667,26 @@ msgstr "You can draw in rainbow colours!"
 msgid "Smudge"
 msgstr "Smudge"
 
-#, fuzzy
 msgid "Click and move the mouse around to smudge the picture."
 msgstr "Click and move the mouse around to smudge the picture."
 
-#, fuzzy
 msgid "Tint"
 msgstr "Tint"
 
-#, fuzzy
 msgid "Click and move the mouse around to change the picture’s color."
-msgstr "Click and move the mouse around to change the picture's colour."
+msgstr "Click and move the mouse around to change the picture’s color."
 
-#, fuzzy
 msgid "Waves"
-msgstr "Save"
+msgstr "Waves"
 
 msgid ""
-"Click to make the picture wavy. (Click towards the top for shorter waves; "
-"the bottom for taller waves. Click towards the left for small waves; the "
-"right for wide waves.)"
+"Click to make the picture wavy. Click toward the top for shorter waves, the "
+"bottom for taller waves, the left for small waves, and the right for long "
+"waves."
 msgstr ""
+"Click to make the picture wavy. Click towards the top for shorter waves, the "
+"bottom for taller waves, the left for small waves, and the right for long "
+"waves."
 
 #~ msgid "Sparkles"
 #~ msgstr "Sparkles"
@@ -762,3 +735,4 @@ msgstr ""
 
 #~ msgid "Silver!"
 #~ msgstr "Silver!"
+

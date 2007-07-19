@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: nn\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-07-17 08:24-0700\n"
-"PO-Revision-Date: 2007-06-30 12:25+0200\n"
+"POT-Creation-Date: 2007-07-19 20:32+0200\n"
+"PO-Revision-Date: 2007-07-19 20:34+0200\n"
 "Last-Translator: Karl Ove Hufthammer <karl@huftis.org>\n"
 "Language-Team: Norwegian Nynorsk <i18n-nn@lister.ping.uio.no>\n"
 "MIME-Version: 1.0\n"
@@ -171,7 +171,7 @@ msgstr "Hangul"
 
 #. Input Method: Thai mode
 msgid "Thai"
-msgstr ""
+msgstr "Thai"
 
 #. Square shape tool (4 equally-lengthed sides at right angles)
 msgid "Square"
@@ -209,9 +209,7 @@ msgstr "Eit kvadrat er eit rektangel med fire like sider."
 msgid "A rectangle has four sides and four right angles."
 msgstr "Eit rektangel har fire sider og fire rette vinklar."
 
-#, fuzzy
-msgid ""
-"A circle is a curve where all points have the same distance from the center."
+msgid "A circle is a curve where all points have the same distance from the center."
 msgstr "Ein sirkel er ei kurve der alle punkta er like langt frå sentrum."
 
 #. Description of an ellipse
@@ -468,11 +466,11 @@ msgstr "Hugs å bruka venstre museknapp!"
 
 #. Sound has been muted (silenced) via keyboard shortcut
 msgid "Sound muted."
-msgstr ""
+msgstr "Lyd slått av."
 
 #. Sound has been unmuted (unsilenced) via keyboard shortcut
 msgid "Sound unmuted."
-msgstr ""
+msgstr "Lyd slått på."
 
 #. Wait while Text tool finishes loading fonts
 msgid "Please wait..."
@@ -550,8 +548,7 @@ msgstr "Krit"
 msgid "Drip"
 msgstr "Drypping"
 
-msgid ""
-"Click and move the mouse around to turn the picture into a chalk drawing."
+msgid "Click and move the mouse around to turn the picture into a chalk drawing."
 msgstr ""
 "Hald inne knappen og flytt rundt for å gjera teikninga om til ei "
 "kritteikning."
@@ -587,11 +584,10 @@ msgstr ""
 "tydelegare."
 
 msgid "Emboss"
-msgstr ""
+msgstr "Relieff"
 
-#, fuzzy
 msgid "Click and drag the mouse to emboss the picture."
-msgstr "Hald inne knappen og flytt rundt for å gjera teikninga uskarp."
+msgstr "Hald inne knappen og flytt rundt for å gjera teikninga om til relieff."
 
 msgid "Lighten"
 msgstr "Lysare"
@@ -612,24 +608,24 @@ msgid "Click in the picture to fill that area with color."
 msgstr "Trykk på teikninga for å fylla området med fargen frå målingbøtta."
 
 msgid "Flower"
-msgstr ""
+msgstr "Blome"
 
 msgid "Click and drag to draw a flower stalk. Let go to finish the flower."
 msgstr ""
+"Hald inne knappen og flytt rundt for å laga stilken. Slepp knappen for å "
+"teikna blomen."
 
 msgid "Foam"
-msgstr ""
+msgstr "Skum"
 
-#, fuzzy
-msgid "Click and drag the mouse to cover an area with foamy bubbles.."
-msgstr "Trykk på teikninga for å fylla området med fargen frå målingbøtta."
+msgid "Click and drag the mouse to cover an area with foamy bubbles."
+msgstr "Hald inne knappen og flytt rundt for å dekkja teikninga med såpebobler."
 
 msgid "Glass Tile"
-msgstr ""
+msgstr "Glasfliser"
 
-#, fuzzy
 msgid "Click and drag the mouse to put glass tile over your picture."
-msgstr "Hald inne knappen og flytt rundt for å gjera teikninga uskarp."
+msgstr "Hald inne knappen og flytt rundt for å leggja glasfliser over teikninga."
 
 msgid "Grass"
 msgstr "Gras"
@@ -637,20 +633,19 @@ msgstr "Gras"
 msgid "Click and move to draw grass. Don’t forget the dirt!"
 msgstr "Hald inne knappen og flytt rundt for å teikna gras. Ikkje gløym jorda!"
 
-msgid "Kalidescope"
-msgstr ""
+msgid "Kaleidoscope"
+msgstr "Kaleidoskop"
 
-msgid ""
-"Click and drag the mouse to draw with symmetric brushes (a kalidescope)."
+msgid "Click and drag the mouse to draw with symmetric brushes (a kaleidoscope)."
 msgstr ""
+"Hald inne knappen og flytt rundt for å teikna med symmetrisk pensel (som i "
+"eit kaleidoskop)."
 
-#, fuzzy
 msgid "Metal Paint"
-msgstr "Måling"
+msgstr "Metallmåling"
 
-#, fuzzy
 msgid "Click and drag the mouse to paint with a metallic color."
-msgstr "Hald inne knappen og flytt rundt for å gjera fargane mørkare."
+msgstr "Hald inne knappen og flytt rundt for å teikna med metallfargar."
 
 msgid "Mirror"
 msgstr "Spegel"
@@ -688,15 +683,17 @@ msgstr "Fargelegg"
 msgid "Click and move the mouse around to change the picture’s color."
 msgstr "Hald inne knappen og flytt rundt for å endra fargane på teikninga."
 
-#, fuzzy
 msgid "Waves"
-msgstr "Lagra"
+msgstr "Bølgjer"
 
 msgid ""
-"Click to make the picture wavy. (Click towards the top for shorter waves; "
-"the bottom for taller waves. Click towards the left for small waves; the "
-"right for wide waves.)"
+"Click to make the picture wavy. Click toward the top for shorter waves, the "
+"bottom for taller waves, the left for small waves, and the right for long "
+"waves."
 msgstr ""
+"Trykk for å gjera teikninga bølgjete. Trykk oppe for å laga låge bølgjer, "
+"nede for å laga høge bølgjer, til venstre for å laga korte bølgjer og til "
+"høgre for å laga lange bølgjer."
 
 #~ msgid "Sparkles"
 #~ msgstr "Gneistar"
@@ -721,3 +718,4 @@ msgstr ""
 
 #~ msgid "Save over the older version of this picture?"
 #~ msgstr "Vil du lagra over den gamle versjonen av teikninga?"
+
