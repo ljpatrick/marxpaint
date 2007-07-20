@@ -19,7 +19,7 @@ int metalpaint_init(magic_api * api)
 {
   char fname[1024];
 
-  snprintf(fname, sizeof(fname), "%s/sounds/magic/one.wav",
+  snprintf(fname, sizeof(fname), "%s/sounds/magic/metalpaint.wav",
 	    api->data_directory);
   metalpaint_snd = Mix_LoadWAV(fname);
 

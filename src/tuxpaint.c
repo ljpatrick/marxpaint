@@ -883,17 +883,26 @@ typedef struct magic_funcs_s {
   void (*release)(magic_api *, int, SDL_Surface *, SDL_Surface *, int, int, SDL_Rect *);
 } magic_funcs_t;
 
-// FIXME: Drop the 512 constant :P
+
+typedef struct magic_s {
+  int handle_idx;	// Index to magic funcs for each magic tool (shared objs may report more than 1 tool)
+  int idx;	// Index to magic tools within shared objects (shared objs may report more than 1 tool)
+  int colors;	// Whether magic tool accepts colors
+  char * name;	// Name of magic tool
+  char * tip;	// Description of magic tool
+  SDL_Surface * img_icon;
+  SDL_Surface * img_name;
+} magic_t;
+
+
+// FIXME: Drop the 512 constants :^P
 
 static int num_plugin_files;	// How many shared object files we went through
 void * magic_handle[512];	// Handle to shared object (to be unloaded later) // FIXME: Unload them!
 magic_funcs_t magic_funcs[512];	// Pointer to shared objects' functions
+
+magic_t magics[512];
 static int num_magics;	// How many magic tools were loaded (note: shared objs may report more than 1 tool)
-int magic_idx[512];	// Index to magic tools within shared objects (shared objs may report more than 1 tool)
-int magic_handle_idx[512];	// Index to magic funcs for each magic tool (shared objs may report more than 1 tool)
-static int magic_colors[512];	// Whether magic tool accepts colors
-static char * magic_names[512];	// Name of magic tool
-static char * magic_tips[512];	// Description of magic tool
 
 magic_api * magic_api_struct;	// Pointer to our internal functions; passed to shared object's functions when we call them
 
@@ -1213,7 +1222,6 @@ static int * brushes_spacing = NULL;
 static short * brushes_directional = NULL;
 
 static SDL_Surface *img_shapes[NUM_SHAPES], *img_shape_names[NUM_SHAPES];
-static SDL_Surface * img_magics[512], * img_magic_names[512];
 static SDL_Surface *img_openlabels_open, *img_openlabels_erase,
   *img_openlabels_slideshow, *img_openlabels_back, *img_openlabels_play,
   *img_openlabels_next;
@@ -1471,6 +1479,7 @@ int in_circle(int x, int y);
 int in_circle_rad(int x, int y, int rad);
 int paintsound(int size);
 void load_magic_plugins(void);
+int magic_sort(const void * a, const void * b);
 
 Mix_Chunk * magic_current_snd_ptr;
 void magic_playsound(Mix_Chunk * snd, int left_right, int up_down);
@@ -2387,9 +2396,9 @@ static void mainloop(void)
 	      thing_scroll = &magic_scroll;
               magic_current_snd_ptr = NULL;
 	      draw_magic();
-	      draw_colors(magic_colors[cur_magic]);
-	      if (magic_colors[cur_magic])
-	        magic_funcs[magic_handle_idx[cur_magic]].set_color(
+	      draw_colors(magics[cur_magic].colors);
+	      if (magics[cur_magic].colors)
+	        magic_funcs[magics[cur_magic].handle_idx].set_color(
 						magic_api_struct,
 						color_hexes[cur_color][0],
 						color_hexes[cur_color][1],
@@ -3017,17 +3026,17 @@ static void mainloop(void)
 	      if (cur_thing != cur_magic)
 	      {
 		cur_magic = cur_thing;
-		draw_colors(magic_colors[cur_magic]);
+		draw_colors(magics[cur_magic].colors);
               
-                if (magic_colors[cur_magic])
-	          magic_funcs[magic_handle_idx[cur_magic]].set_color(
+                if (magics[cur_magic].colors)
+	          magic_funcs[magics[cur_magic].handle_idx].set_color(
 						magic_api_struct,
 						color_hexes[cur_color][0],
 						color_hexes[cur_color][1],
 						color_hexes[cur_color][2]);
 	      }
 
-	      draw_tux_text(TUX_GREAT, magic_tips[cur_magic], 1);
+	      draw_tux_text(TUX_GREAT, magics[cur_magic].tip, 1);
 
 	      if (do_draw)
 		draw_magic();
@@ -3055,7 +3064,7 @@ static void mainloop(void)
 	    if (cur_tool == TOOL_TEXT)
 	      do_render_cur_text(0);
             else if (cur_tool == TOOL_MAGIC)
-              magic_funcs[magic_handle_idx[cur_magic]].set_color(
+              magic_funcs[magics[cur_magic].handle_idx].set_color(
 						magic_api_struct,
 						color_hexes[cur_color][0],
 						color_hexes[cur_color][1],
@@ -3185,13 +3194,13 @@ static void mainloop(void)
             update_rect.w = 0;
             update_rect.h = 0;
 
-	    magic_funcs[magic_handle_idx[cur_magic]].click(magic_api_struct,
-					                   magic_idx[cur_magic],
+	    magic_funcs[magics[cur_magic].handle_idx].click(magic_api_struct,
+					                   magics[cur_magic].idx,
 					                   canvas, last,
 							   old_x, old_y,
 							   &update_rect);
 	    
-	    draw_tux_text(TUX_GREAT, magic_tips[cur_magic], 1);
+	    draw_tux_text(TUX_GREAT, magics[cur_magic].tip, 1);
 
   	    update_canvas(update_rect.x, update_rect.y,
 			  update_rect.x + update_rect.w,
@@ -3533,13 +3542,13 @@ static void mainloop(void)
             update_rect.w = 0;
             update_rect.h = 0;
 
-	    magic_funcs[magic_handle_idx[cur_magic]].release(magic_api_struct,
-					                   magic_idx[cur_magic],
+	    magic_funcs[magics[cur_magic].handle_idx].release(magic_api_struct,
+					                   magics[cur_magic].idx,
 					                   canvas, last,
 							   old_x, old_y,
 							   &update_rect);
 	    
-	    draw_tux_text(TUX_GREAT, magic_tips[cur_magic], 1);
+	    draw_tux_text(TUX_GREAT, magics[cur_magic].tip, 1);
 
   	    update_canvas(update_rect.x, update_rect.y,
 			  update_rect.x + update_rect.w,
@@ -3769,8 +3778,8 @@ static void mainloop(void)
             update_rect.w = 0;
             update_rect.h = 0;
 
-	    magic_funcs[magic_handle_idx[cur_magic]].drag(magic_api_struct,
-							  magic_idx[cur_magic],
+	    magic_funcs[magics[cur_magic].handle_idx].drag(magic_api_struct,
+							  magics[cur_magic].idx,
 							  canvas, last,
 							  old_x, old_y,
 							  new_x, new_y,
@@ -7221,7 +7230,7 @@ static void create_button_labels(void)
     img_tool_names[i] = do_render_button_label(tool_names[i]);
 
   for (i = 0; i < num_magics; i++)
-    img_magic_names[i] = do_render_button_label(magic_names[i]);
+    magics[i].img_name = do_render_button_label(magics[i].name);
 
   for (i = 0; i < NUM_SHAPES; i++)
     img_shape_names[i] = do_render_button_label(shape_names[i]);
@@ -7545,15 +7554,15 @@ static void draw_magic(void)
       dest.x = WINDOW_WIDTH - 96 + ((i % 2) * 48) + 4;
       dest.y = ((i / 2) * 48) + 40 + 4 + off_y;
 
-      SDL_BlitSurface(img_magics[magic], NULL, screen, &dest);
+      SDL_BlitSurface(magics[magic].img_icon, NULL, screen, &dest);
 
 
       dest.x = WINDOW_WIDTH - 96 + ((i % 2) * 48) + 4 +
-	(40 - img_magic_names[magic]->w) / 2;
+	(40 - magics[magic].img_name->w) / 2;
       dest.y = (((i / 2) * 48) + 40 + 4 +
-		(44 - img_magic_names[magic]->h) + off_y);
+		(44 - magics[magic].img_name->h) + off_y);
 
-      SDL_BlitSurface(img_magic_names[magic], NULL, screen, &dest);
+      SDL_BlitSurface(magics[magic].img_name, NULL, screen, &dest);
     }
     else
     {
@@ -7759,7 +7768,10 @@ static void draw_fonts(void)
   if (disable_stamp_controls)
     most = 14;
 
+#ifdef DEBUG
   printf("there are %d font families\n", num_font_families);
+#endif
+
 
   /* Do we need scrollbars? */
 
@@ -10956,8 +10968,11 @@ static void cleanup(void)
   free_surface_array(img_tools, NUM_TOOLS);
   free_surface_array(img_tool_names, NUM_TOOLS);
   free_surface_array(img_title_names, NUM_TITLES);
-  free_surface_array(img_magics, num_magics);
-  free_surface_array(img_magic_names, num_magics);
+  for (i = 0; i < num_magics; i++)
+  {
+    free_surface(&(magics[i].img_icon));
+    free_surface(&(magics[i].img_name));
+  }
   free_surface_array(img_shapes, NUM_SHAPES);
   free_surface_array(img_shape_names, NUM_SHAPES);
   free_surface_array(img_tux, NUM_TIP_TUX);
@@ -12015,6 +12030,8 @@ int do_open(void)
             if (num_files_in_dirs >= things_alloced)
             {
               things_alloced = things_alloced + 32;
+
+	      // FIXME: Valgrind says this is leaked -bjk 2007.07.19
               fs = (struct dirent2 *) realloc(fs,
                   sizeof(struct dirent2) *
                   things_alloced);
@@ -16293,16 +16310,16 @@ void load_magic_plugins(void)
               {
 		for (i = 0; i < n; i++)
 		{
-		  magic_idx[num_magics] = i;
-		  magic_handle_idx[num_magics] = num_plugin_files;
-		  magic_names[num_magics] = magic_funcs[num_plugin_files].get_name(magic_api_struct, i);
-		  magic_tips[num_magics] = magic_funcs[num_plugin_files].get_description(magic_api_struct, i);
-		  magic_colors[num_magics] = magic_funcs[num_plugin_files].requires_colors(magic_api_struct, i);
+		  magics[num_magics].idx = i;
+		  magics[num_magics].handle_idx = num_plugin_files;
+		  magics[num_magics].name = magic_funcs[num_plugin_files].get_name(magic_api_struct, i);
+		  magics[num_magics].tip = magic_funcs[num_plugin_files].get_description(magic_api_struct, i);
+		  magics[num_magics].colors = magic_funcs[num_plugin_files].requires_colors(magic_api_struct, i);
 
-		  img_magics[num_magics] = magic_funcs[num_plugin_files].get_icon(magic_api_struct, i);
+		  magics[num_magics].img_icon = magic_funcs[num_plugin_files].get_icon(magic_api_struct, i);
 
 #ifdef DEBUG
-		  printf("-- %s\n", magic_names[num_magics]);
+		  printf("-- %s\n", magics[num_magics].name);
 #endif
 
 		  num_magics++;
@@ -16325,15 +16342,25 @@ void load_magic_plugins(void)
     closedir(d);
   }
 
+
+  qsort(magics, num_magics, sizeof(magic_t), magic_sort);
+
 #ifdef DEBUG
   printf("Loaded %d magic tools from %d plug-in files\n", num_magics,
 	 num_plugin_files);
   printf("\n");
   fflush(stdout);
 #endif
-
-  /* FIXME: Sort it? -bjk 2007.07.03 */
 }
+
+int magic_sort(const void * a, const void * b)
+{
+  magic_t * am = (magic_t *) a;
+  magic_t * bm = (magic_t *) b;
+
+  return(strcmp(am->name, bm->name));
+}
+
 
 void update_progress_bar(void)
 {

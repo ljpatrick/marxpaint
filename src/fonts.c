@@ -525,6 +525,8 @@ void receive_some_font_info(SDL_Surface * screen)
     if (buf_size <= buf_fill * 9 / 8 + 128)
     {
       buf_size = buf_size * 5 / 4 + 256;
+
+      // FIXME: Valgrind says this leaks -bjk 2007.07.19
       buf = realloc(buf, buf_size);
     }
     rc = read(font_socket_fd, buf + buf_fill, buf_size - buf_fill);
@@ -576,7 +578,10 @@ void receive_some_font_info(SDL_Surface * screen)
   printf("Got %u bytes with %u families.\n", buf_fill, num_font_families);
 #endif
   user_font_families = malloc(num_font_families * sizeof *user_font_families);
+
+  // FIXME: Valgrind says this malloc() is leaked -bjk 2007.07.19
   fip = malloc(num_font_families * sizeof **user_font_families);
+
   i = num_font_families;
   while (i--)
   {

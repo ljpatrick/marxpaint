@@ -18,7 +18,7 @@ int emboss_init(magic_api * api)
 {
   char fname[1024];
 
-  snprintf(fname, sizeof(fname), "%s/sounds/magic/one.wav",
+  snprintf(fname, sizeof(fname), "%s/sounds/magic/emboss.wav",
 	    api->data_directory);
   emboss_snd = Mix_LoadWAV(fname);
 
@@ -64,6 +64,7 @@ void do_emboss(void * ptr, int which, SDL_Surface * canvas, SDL_Surface * last,
   Uint8 r1, g1, b1,
         r2, g2, b2;
   int r, g, b;
+  float h, s, v;
   int avg1, avg2;
 
   for (yy = -16; yy < 16; yy++)
@@ -78,12 +79,18 @@ void do_emboss(void * ptr, int which, SDL_Surface * canvas, SDL_Surface * last,
         avg1 = (r1 + g1 + b1) / 3;
         avg2 = (r2 + g2 + b2) / 3;
 
+	api->rgbtohsv(r1, g1, b1, &h, &s, &v);
+
         r = 128 + (((avg1 - avg2) * 3) / 2);
         if (r < 0) r = 0;
         if (r > 255) r = 255;
         g = b = r;
 
-        api->putpixel(canvas, x + xx, y + yy, SDL_MapRGB(canvas->format, r, g, b));
+	v = (r / 255.0);
+
+	api->hsvtorgb(h, s, v, &r1, &g1, &b1);
+
+        api->putpixel(canvas, x + xx, y + yy, SDL_MapRGB(canvas->format, r1, g1, b1));
       }
     }
   }

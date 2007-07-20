@@ -25,13 +25,14 @@
 
   $Id$
 
-  June 14, 2002 - July 14, 2007
+  June 14, 2002 - July 19, 2007
 */
 
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 #include <libintl.h>
+#include <locale.h>
 #include "i18n.h"
 #include "debug.h"
 

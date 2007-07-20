@@ -404,6 +404,8 @@ void flower_drawstalk(magic_api * api, SDL_Surface * canvas,
       }
     }
   } 
+
+  free(curve);
 }
 
 void flower_shutdown(magic_api * api)
