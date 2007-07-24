@@ -7,7 +7,7 @@
 # bill@newbreedsoftware.com
 # http://www.tuxpaint.org/
 
-# June 14, 2002 - July 12, 2007
+# June 14, 2002 - July 24, 2007
 
 
 # The version number, for release:
@@ -42,7 +42,7 @@ DATA_PREFIX=$(PKG_ROOT)$(PREFIX)/share/tuxpaint
 # Magic Tool plug-ins
 
 INCLUDE_PREFIX=$(PKG_ROOT)$(PREFIX)/include
-MAGIC_PREFIX=$(PKG_ROOT)$(PREFIX)/lib/tuxpaint
+MAGIC_PREFIX=$(PKG_ROOT)$(PREFIX)/lib/tuxpaint/plugins
 
 
 # Docs and man page:
