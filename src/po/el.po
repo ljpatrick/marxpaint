@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Tuxpaint 0.9.2pre\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-07-19 20:38+0200\n"
+"POT-Creation-Date: 2007-07-24 12:05-0700\n"
 "PO-Revision-Date: 2006-09-07 14:30+0200\n"
 "Last-Translator: \n"
 "Language-Team: N/A <i18ngr@lists.hellug.gr>\n"
@@ -439,16 +439,6 @@ msgstr "Δεν μπορώ να ανοίξε αυτή τη ζωγραφιά!"
 msgid "OK"
 msgstr "Εντάξει"
 
-#. This will be replaced with a dialog allowing color choice and Starter
-#. picking, with a "Back" option to dismiss the "New" and return to
-#. the current picture.  But for now...  (bjk 2006.02.19)
-#. Prompt to confirm starting a new picture
-msgid "Start a new picture?"
-msgstr "Να αρχίσουμε μια καινούργια ζωγραφιά;"
-
-msgid "Yes, let's start fresh!"
-msgstr "Ναι, ας ξεκινήσουμε από την αρχή!"
-
 #. Notification that 'Open' dialog has nothing to show
 msgid "There are no saved files!"
 msgstr "Δεν υπάρχουν αποθηκευμένα αρχεία!"
@@ -541,6 +531,8 @@ msgstr "Ναι, αντικατέστησε την παλιά ζωγραφιά"
 msgid "No, save a new file!"
 msgstr "Όχι, αποθήκευση σε νέο αρχείο!"
 
+#. Let user choose an image:
+#. Instructions for 'New' file/color dialog  FIXME
 msgid "Choose the picture you want, then click “Open”."
 msgstr "Επέλεξε την ζωγραφιά που θέλεις, και μετά πάτησε “Άνοιγμα”."
 
@@ -721,6 +713,12 @@ msgid ""
 "bottom for taller waves, the left for small waves, and the right for long "
 "waves."
 msgstr ""
+
+#~ msgid "Start a new picture?"
+#~ msgstr "Να αρχίσουμε μια καινούργια ζωγραφιά;"
+
+#~ msgid "Yes, let's start fresh!"
+#~ msgstr "Ναι, ας ξεκινήσουμε από την αρχή!"
 
 #~ msgid "Sparkles"
 #~ msgstr "Λάμψεις"

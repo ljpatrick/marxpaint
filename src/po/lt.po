@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Tuxpaint 0.9.9\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-07-19 20:38+0200\n"
+"POT-Creation-Date: 2007-07-24 12:05-0700\n"
 "PO-Revision-Date: 2004-12-10 18:11+0200\n"
 "Last-Translator: Gintaras Goštautas <gintaras@nes.lt>\n"
 "Language-Team: Lithuanian <komp_lt@konf.lt>\n"
@@ -432,16 +432,6 @@ msgstr "Negalima atidaryti šio piešinio!"
 msgid "OK"
 msgstr "Gerai"
 
-#. This will be replaced with a dialog allowing color choice and Starter
-#. picking, with a "Back" option to dismiss the "New" and return to
-#. the current picture.  But for now...  (bjk 2006.02.19)
-#. Prompt to confirm starting a new picture
-msgid "Start a new picture?"
-msgstr "Ar pradėsite naują piešinį?"
-
-msgid "Yes, let's start fresh!"
-msgstr "Taip, pradėkim iš naujo!"
-
 #. Notification that 'Open' dialog has nothing to show
 msgid "There are no saved files!"
 msgstr "Nėra išsaugotų bylų!"
@@ -533,6 +523,8 @@ msgstr "Taip, perrašykim senąjį!"
 msgid "No, save a new file!"
 msgstr "Ne, išsaugokim į naują bylą!"
 
+#. Let user choose an image:
+#. Instructions for 'New' file/color dialog  FIXME
 msgid "Choose the picture you want, then click “Open”."
 msgstr "Išsirinkite norimą piešinį, po to Spustelėkite 'Open'."
 
@@ -703,6 +695,12 @@ msgid ""
 "bottom for taller waves, the left for small waves, and the right for long "
 "waves."
 msgstr ""
+
+#~ msgid "Start a new picture?"
+#~ msgstr "Ar pradėsite naują piešinį?"
+
+#~ msgid "Yes, let's start fresh!"
+#~ msgstr "Taip, pradėkim iš naujo!"
 
 #~ msgid "Sparkles"
 #~ msgstr "Žybsniai"

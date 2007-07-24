@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint 0.9.15\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-07-19 20:38+0200\n"
+"POT-Creation-Date: 2007-07-24 12:05-0700\n"
 "PO-Revision-Date: 2007-07-01 09:55+0900\n"
 "Last-Translator: TOYAMA Shin-ichi <shin1@wmail.plala.or.jp>\n"
 "Language-Team: japanese <shin1@wmail.plala.or.jp>\n"
@@ -436,16 +436,6 @@ msgstr "そのえはひらけないよ！"
 msgid "OK"
 msgstr "オッケー"
 
-#. This will be replaced with a dialog allowing color choice and Starter
-#. picking, with a "Back" option to dismiss the "New" and return to
-#. the current picture.  But for now...  (bjk 2006.02.19)
-#. Prompt to confirm starting a new picture
-msgid "Start a new picture?"
-msgstr "えを さいしょから かく？"
-
-msgid "Yes, let's start fresh!"
-msgstr "はい、さいしょから かきます！"
-
 #. Notification that 'Open' dialog has nothing to show
 msgid "There are no saved files!"
 msgstr "セーブされた えは なかったよ！"
@@ -538,6 +528,8 @@ msgstr "はい、まえのえと いれかえます！"
 msgid "No, save a new file!"
 msgstr "いいえ、あたらしく セーブします！"
 
+#. Let user choose an image:
+#. Instructions for 'New' file/color dialog  FIXME
 msgid "Choose the picture you want, then click “Open”."
 msgstr "えを えらんでから 「ひらく」をクリックしてね"
 
@@ -708,6 +700,12 @@ msgid ""
 "bottom for taller waves, the left for small waves, and the right for long "
 "waves."
 msgstr ""
+
+#~ msgid "Start a new picture?"
+#~ msgstr "えを さいしょから かく？"
+
+#~ msgid "Yes, let's start fresh!"
+#~ msgstr "はい、さいしょから かきます！"
 
 #~ msgid "Sparkles"
 #~ msgstr "ひばな"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-07-19 20:38+0200\n"
+"POT-Creation-Date: 2007-07-24 12:05-0700\n"
 "PO-Revision-Date: 2007-04-26 15:45+0200\n"
 "Last-Translator: Joana Portia Antwi-Danso <portnass2003@yahoo.com>\n"
 "MIME-Version: 1.0\n"
@@ -425,16 +425,6 @@ msgstr "Worentumi mmue saa mfoni no!"
 msgid "OK"
 msgstr "Eye"
 
-#. This will be replaced with a dialog allowing color choice and Starter
-#. picking, with a "Back" option to dismiss the "New" and return to
-#. the current picture.  But for now...  (bjk 2006.02.19)
-#. Prompt to confirm starting a new picture
-msgid "Start a new picture?"
-msgstr "Hyɛ mfoni foforɔ ase?"
-
-msgid "Yes, let's start fresh!"
-msgstr "Aane, ma yɛnhyɛ aseɛ bio!"
-
 #. Notification that 'Open' dialog has nothing to show
 msgid "There are no saved files!"
 msgstr "Womfaa biribi nsieɛ!"
@@ -526,6 +516,8 @@ msgstr "Aane, sesa dada no!"
 msgid "No, save a new file!"
 msgstr "Daabi, fa foforɔ no sie!"
 
+#. Let user choose an image:
+#. Instructions for 'New' file/color dialog  FIXME
 msgid "Choose the picture you want, then click “Open”."
 msgstr "Wofa mfoni a wopɛ wia a, mia \"bue\" so."
 
@@ -696,6 +688,12 @@ msgid ""
 "bottom for taller waves, the left for small waves, and the right for long "
 "waves."
 msgstr ""
+
+#~ msgid "Start a new picture?"
+#~ msgstr "Hyɛ mfoni foforɔ ase?"
+
+#~ msgid "Yes, let's start fresh!"
+#~ msgstr "Aane, ma yɛnhyɛ aseɛ bio!"
 
 #~ msgid "Sparkles"
 #~ msgstr "Ɛtew gya"

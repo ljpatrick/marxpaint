@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: nn\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-07-19 20:38+0200\n"
+"POT-Creation-Date: 2007-07-24 12:05-0700\n"
 "PO-Revision-Date: 2007-07-19 20:34+0200\n"
 "Last-Translator: Karl Ove Hufthammer <karl@huftis.org>\n"
 "Language-Team: Norwegian Nynorsk <i18n-nn@lister.ping.uio.no>\n"
@@ -422,16 +422,6 @@ msgstr "Klarte ikkje opna teikninga."
 msgid "OK"
 msgstr "OK"
 
-#. This will be replaced with a dialog allowing color choice and Starter
-#. picking, with a "Back" option to dismiss the "New" and return to
-#. the current picture.  But for now...  (bjk 2006.02.19)
-#. Prompt to confirm starting a new picture
-msgid "Start a new picture?"
-msgstr "Vil du laga ei ny teikning?"
-
-msgid "Yes, let's start fresh!"
-msgstr "Ja, la oss starta på nytt!"
-
 #. Notification that 'Open' dialog has nothing to show
 msgid "There are no saved files!"
 msgstr "Det finst ingen lagra teikningar."
@@ -523,6 +513,8 @@ msgstr "Ja, byt ut den gamle!"
 msgid "No, save a new file!"
 msgstr "Nei, lagra som ei ny teikning!"
 
+#. Let user choose an image:
+#. Instructions for 'New' file/color dialog  FIXME
 msgid "Choose the picture you want, then click “Open”."
 msgstr "Vel ei teikning og trykk «Opna»."
 
@@ -699,6 +691,12 @@ msgstr ""
 "Trykk for å gjera teikninga bølgjete. Trykk oppe for å laga låge bølgjer, "
 "nede for å laga høge bølgjer, til venstre for å laga korte bølgjer og til "
 "høgre for å laga lange bølgjer."
+
+#~ msgid "Start a new picture?"
+#~ msgstr "Vil du laga ei ny teikning?"
+
+#~ msgid "Yes, let's start fresh!"
+#~ msgstr "Ja, la oss starta på nytt!"
 
 #~ msgid "Sparkles"
 #~ msgstr "Gneistar"

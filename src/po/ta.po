@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TuxPaint 0.9.13\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-07-19 20:38+0200\n"
+"POT-Creation-Date: 2007-07-24 12:05-0700\n"
 "PO-Revision-Date: 2004-07-15 00:25+0800\n"
 "Last-Translator: Muguntharaj <mugunth@thamizha.com>\n"
 "Language-Team: \n"
@@ -426,17 +426,6 @@ msgstr "«ó¾ À¼ò¨¾ ¾¢Èì¸ ÓÊÂÅ¢ø¨Ä!"
 msgid "OK"
 msgstr "ºÃ¢"
 
-#. This will be replaced with a dialog allowing color choice and Starter
-#. picking, with a "Back" option to dismiss the "New" and return to
-#. the current picture.  But for now...  (bjk 2006.02.19)
-#. Prompt to confirm starting a new picture
-#, fuzzy
-msgid "Start a new picture?"
-msgstr "À¼ò¨¾ «Æ¢òÐÅ¢¼Ä¡Á¡?"
-
-msgid "Yes, let's start fresh!"
-msgstr ""
-
 #. Notification that 'Open' dialog has nothing to show
 msgid "There are no saved files!"
 msgstr "§ºÁ¢ò¾ §¸¡ôÒ¸û ±Ðõ þø¨Ä§Â!"
@@ -532,6 +521,8 @@ msgstr ""
 msgid "No, save a new file!"
 msgstr "§Åñ¼¡õ, þôÀ¼ò¨¾ Ò¾¢Â §¸¡ôÀ¡¸ §ºÁ¢"
 
+#. Let user choose an image:
+#. Instructions for 'New' file/color dialog  FIXME
 msgid "Choose the picture you want, then click “Open”."
 msgstr "§¾¨ÅÂ¡É À¼ò¨¾ §¾÷ó¦¾ÎòÐ, À¢ÈÌ '¾¢È'-³ò ¾ð¼×õ."
 
@@ -715,6 +706,10 @@ msgid ""
 "bottom for taller waves, the left for small waves, and the right for long "
 "waves."
 msgstr ""
+
+#, fuzzy
+#~ msgid "Start a new picture?"
+#~ msgstr "À¼ò¨¾ «Æ¢òÐÅ¢¼Ä¡Á¡?"
 
 #~ msgid "Sparkles"
 #~ msgstr "´Ç¢÷×"

@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Thai tux paint\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-07-19 20:38+0200\n"
+"POT-Creation-Date: 2007-07-24 12:05-0700\n"
 "PO-Revision-Date: 2007-01-22 10:51+0700\n"
 "Last-Translator: Ouychai <Ae.translator@gmail.com>\n"
 "Language-Team: \n"
@@ -419,16 +419,6 @@ msgstr "ไม่สามารถเปิดรูปได้!"
 msgid "OK"
 msgstr "ตกลง"
 
-#. This will be replaced with a dialog allowing color choice and Starter
-#. picking, with a "Back" option to dismiss the "New" and return to
-#. the current picture.  But for now...  (bjk 2006.02.19)
-#. Prompt to confirm starting a new picture
-msgid "Start a new picture?"
-msgstr "จะเริ่มด้วยรูปใหม่หรือไม่?"
-
-msgid "Yes, let's start fresh!"
-msgstr "ใช่ เริ่มด้วยรูปใหม่"
-
 #. Notification that 'Open' dialog has nothing to show
 msgid "There are no saved files!"
 msgstr "ไม่มีข้อมูลที่บันทึกไว้เลย"
@@ -520,6 +510,8 @@ msgstr "ใช่, ทับอันเดิม"
 msgid "No, save a new file!"
 msgstr "ไม่! บันทึกเป็นแฟ้มใหม่"
 
+#. Let user choose an image:
+#. Instructions for 'New' file/color dialog  FIXME
 msgid "Choose the picture you want, then click “Open”."
 msgstr "เลือกรูปที่เธอต้องการ จากนั้นคลิก “เปิด”"
 
@@ -690,6 +682,12 @@ msgid ""
 "bottom for taller waves, the left for small waves, and the right for long "
 "waves."
 msgstr ""
+
+#~ msgid "Start a new picture?"
+#~ msgstr "จะเริ่มด้วยรูปใหม่หรือไม่?"
+
+#~ msgid "Yes, let's start fresh!"
+#~ msgstr "ใช่ เริ่มด้วยรูปใหม่"
 
 #~ msgid "Sparkles"
 #~ msgstr "ประกาย"

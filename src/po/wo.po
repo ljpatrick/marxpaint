@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-07-19 20:38+0200\n"
+"POT-Creation-Date: 2007-07-24 12:05-0700\n"
 "PO-Revision-Date: 2007-07-04 11:24-0000\n"
 "Last-Translator: Haby Diallo <haby42@yahoo.fr>\n"
 "Language-Team: \n"
@@ -428,16 +428,6 @@ msgstr "Mënuma ubbi natal bi!"
 msgid "OK"
 msgstr "Deegë na"
 
-#. This will be replaced with a dialog allowing color choice and Starter
-#. picking, with a "Back" option to dismiss the "New" and return to
-#. the current picture.  But for now...  (bjk 2006.02.19)
-#. Prompt to confirm starting a new picture
-msgid "Start a new picture?"
-msgstr "Ñu defar natal bu bess?"
-
-msgid "Yes, let's start fresh!"
-msgstr "Waw, ñu defar bu bess!"
-
 #. Notification that 'Open' dialog has nothing to show
 msgid "There are no saved files!"
 msgstr "Amul fisie buñ fi mana deñc!"
@@ -530,6 +520,8 @@ msgstr "Waaw, ñu sopi bu magat bi !"
 msgid "No, save a new file!"
 msgstr "Deedeet, natal bu bees la !"
 
+#. Let user choose an image:
+#. Instructions for 'New' file/color dialog  FIXME
 #, fuzzy
 msgid "Choose the picture you want, then click “Open”."
 msgstr "Tannal natal, te bëss ci «Ubbi»."
@@ -705,6 +697,12 @@ msgid ""
 "bottom for taller waves, the left for small waves, and the right for long "
 "waves."
 msgstr ""
+
+#~ msgid "Start a new picture?"
+#~ msgstr "Ñu defar natal bu bess?"
+
+#~ msgid "Yes, let's start fresh!"
+#~ msgstr "Waw, ñu defar bu bess!"
 
 #~ msgid "Sparkles"
 #~ msgstr "Ferñent"

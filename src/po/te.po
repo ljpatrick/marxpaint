@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-07-19 20:38+0200\n"
+"POT-Creation-Date: 2007-07-24 12:05-0700\n"
 "PO-Revision-Date: 2007-03-15 17:27+0530\n"
 "Last-Translator: pavithran <pavithran.s@gmail.com>\n"
 "Language-Team: Telugu <indlinux-telugu@lists.sourceforge.net>\n"
@@ -420,16 +420,6 @@ msgstr "చిత్రాన్ని తెరవలేము"
 msgid "OK"
 msgstr "సరె"
 
-#. This will be replaced with a dialog allowing color choice and Starter
-#. picking, with a "Back" option to dismiss the "New" and return to
-#. the current picture.  But for now...  (bjk 2006.02.19)
-#. Prompt to confirm starting a new picture
-msgid "Start a new picture?"
-msgstr "కొత్త చిత్రాన్ని తయారు చేయండి?"
-
-msgid "Yes, let's start fresh!"
-msgstr "అవును కొత్తగా మొదలు పెట్టుడాము!"
-
 #. Notification that 'Open' dialog has nothing to show
 msgid "There are no saved files!"
 msgstr "దాచిన దస్త్రాలు లేవు"
@@ -521,6 +511,8 @@ msgstr ""
 msgid "No, save a new file!"
 msgstr "ఒద్దు కొత్త దస్త్రాన్ని దాయండి"
 
+#. Let user choose an image:
+#. Instructions for 'New' file/color dialog  FIXME
 msgid "Choose the picture you want, then click “Open”."
 msgstr ""
 
@@ -691,6 +683,12 @@ msgid ""
 "bottom for taller waves, the left for small waves, and the right for long "
 "waves."
 msgstr ""
+
+#~ msgid "Start a new picture?"
+#~ msgstr "కొత్త చిత్రాన్ని తయారు చేయండి?"
+
+#~ msgid "Yes, let's start fresh!"
+#~ msgstr "అవును కొత్తగా మొదలు పెట్టుడాము!"
 
 #~ msgid "Sparkles"
 #~ msgstr "మెరుపులు"

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TuxPaint\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-07-19 20:38+0200\n"
+"POT-Creation-Date: 2007-07-24 12:05-0700\n"
 "PO-Revision-Date: 2007-04-04 20:05+0300\n"
 "Last-Translator: Сергей Попов <skein@rambler.ru>\n"
 "Language-Team: Dmitriy Ivanov <ace22b@myrealbox.com>\n"
@@ -426,16 +426,6 @@ msgstr "Не могу открыть эту картинку!"
 msgid "OK"
 msgstr "Хорошо"
 
-#. This will be replaced with a dialog allowing color choice and Starter
-#. picking, with a "Back" option to dismiss the "New" and return to
-#. the current picture.  But for now...  (bjk 2006.02.19)
-#. Prompt to confirm starting a new picture
-msgid "Start a new picture?"
-msgstr "Начнём новую картинку?"
-
-msgid "Yes, let's start fresh!"
-msgstr "Да, начнём заново!"
-
 #. Notification that 'Open' dialog has nothing to show
 msgid "There are no saved files!"
 msgstr "Нет сохранённых картинок!"
@@ -527,6 +517,8 @@ msgstr "Да, заменить старую картинку!"
 msgid "No, save a new file!"
 msgstr "Нет, сохранить в новый файл!"
 
+#. Let user choose an image:
+#. Instructions for 'New' file/color dialog  FIXME
 msgid "Choose the picture you want, then click “Open”."
 msgstr "Выберите желаемую картинку, а потом щёлкните «Открыть»."
 
@@ -701,6 +693,12 @@ msgid ""
 "bottom for taller waves, the left for small waves, and the right for long "
 "waves."
 msgstr ""
+
+#~ msgid "Start a new picture?"
+#~ msgstr "Начнём новую картинку?"
+
+#~ msgid "Yes, let's start fresh!"
+#~ msgstr "Да, начнём заново!"
 
 #~ msgid "Sparkles"
 #~ msgstr "Искры"

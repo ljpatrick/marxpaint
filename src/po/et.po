@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: et\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-07-19 20:38+0200\n"
+"POT-Creation-Date: 2007-07-24 12:05-0700\n"
 "PO-Revision-Date: 2007-03-18 20:26+0200\n"
 "Last-Translator: Lauri Jesmin <lauri.jesmin@nordtech.ee>\n"
 "Language-Team: Estonian <et@li.org>\n"
@@ -424,16 +424,6 @@ msgstr "Selle pildi avamine ei ole võimalik!"
 msgid "OK"
 msgstr "OK"
 
-#. This will be replaced with a dialog allowing color choice and Starter
-#. picking, with a "Back" option to dismiss the "New" and return to
-#. the current picture.  But for now...  (bjk 2006.02.19)
-#. Prompt to confirm starting a new picture
-msgid "Start a new picture?"
-msgstr "Kas teeme uue pildi?"
-
-msgid "Yes, let's start fresh!"
-msgstr "Jah, teeme lehe puhtaks!"
-
 #. Notification that 'Open' dialog has nothing to show
 msgid "There are no saved files!"
 msgstr "Salvestatud pilte ei ole!"
@@ -525,6 +515,8 @@ msgstr "Jah, vaheta vana pilt välja!"
 msgid "No, save a new file!"
 msgstr "Ei, salvestame uude faili!"
 
+#. Let user choose an image:
+#. Instructions for 'New' file/color dialog  FIXME
 msgid "Choose the picture you want, then click “Open”."
 msgstr "Vali pilt ja klõpsa nupul  \"Ava\""
 
@@ -695,6 +687,12 @@ msgid ""
 "bottom for taller waves, the left for small waves, and the right for long "
 "waves."
 msgstr ""
+
+#~ msgid "Start a new picture?"
+#~ msgstr "Kas teeme uue pildi?"
+
+#~ msgid "Yes, let's start fresh!"
+#~ msgstr "Jah, teeme lehe puhtaks!"
 
 #~ msgid "Sparkles"
 #~ msgstr "Sädelus"

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ms\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-07-19 20:38+0200\n"
+"POT-Creation-Date: 2007-07-24 12:05-0700\n"
 "PO-Revision-Date: 2004-08-23 16:06+0800\n"
 "Last-Translator: Muhammad Najmi bin Ahmad Zabidi <md_najmi@yahoo.com>\n"
 "Language-Team: Malay <kedidiemas@yahoogroups.com>\n"
@@ -429,17 +429,6 @@ msgstr "Tidak boleh membuka gambar!"
 msgid "OK"
 msgstr "OK"
 
-#. This will be replaced with a dialog allowing color choice and Starter
-#. picking, with a "Back" option to dismiss the "New" and return to
-#. the current picture.  But for now...  (bjk 2006.02.19)
-#. Prompt to confirm starting a new picture
-#, fuzzy
-msgid "Start a new picture?"
-msgstr "Padam hasil kerja?"
-
-msgid "Yes, let's start fresh!"
-msgstr ""
-
 #. Notification that 'Open' dialog has nothing to show
 msgid "There are no saved files!"
 msgstr "Tiada fail yang disimpan!"
@@ -533,6 +522,8 @@ msgstr ""
 msgid "No, save a new file!"
 msgstr "Tidak, simpan kepada fail baru"
 
+#. Let user choose an image:
+#. Instructions for 'New' file/color dialog  FIXME
 msgid "Choose the picture you want, then click “Open”."
 msgstr "Pilih gambar yang anda mahu, dan klik 'Buka'"
 
@@ -720,6 +711,10 @@ msgid ""
 "bottom for taller waves, the left for small waves, and the right for long "
 "waves."
 msgstr ""
+
+#, fuzzy
+#~ msgid "Start a new picture?"
+#~ msgstr "Padam hasil kerja?"
 
 #~ msgid "Sparkles"
 #~ msgstr "Percikan"

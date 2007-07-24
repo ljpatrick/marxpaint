@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: lv\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-07-19 20:38+0200\n"
+"POT-Creation-Date: 2007-07-24 12:05-0700\n"
 "PO-Revision-Date: 2007-05-14 18:13-0700\n"
 "Last-Translator: Raivis Strogonovs <raivucis@gmail.com>\n"
 "Language-Team: Valoda <raivucis@gmail.com>\n"
@@ -425,16 +425,6 @@ msgstr "Nu nevaru es to bildi atvērt!"
 msgid "OK"
 msgstr "Labi"
 
-#. This will be replaced with a dialog allowing color choice and Starter
-#. picking, with a "Back" option to dismiss the "New" and return to
-#. the current picture.  But for now...  (bjk 2006.02.19)
-#. Prompt to confirm starting a new picture
-msgid "Start a new picture?"
-msgstr "Zīmēsi jaunu zīmējumu?"
-
-msgid "Yes, let's start fresh!"
-msgstr "Jā, sāksim zīmēt!"
-
 #. Notification that 'Open' dialog has nothing to show
 msgid "There are no saved files!"
 msgstr "Tev nav neviena saglabāta zīmējuma!"
@@ -526,6 +516,8 @@ msgstr "Jā, aizstā to veco zīmējumu!"
 msgid "No, save a new file!"
 msgstr "Nē, glabā jaunā failā!"
 
+#. Let user choose an image:
+#. Instructions for 'New' file/color dialog  FIXME
 msgid "Choose the picture you want, then click “Open”."
 msgstr "Izvēlies bildi ko gribi atvērt un spied pogu “Atvērt“."
 
@@ -705,6 +697,12 @@ msgid ""
 "bottom for taller waves, the left for small waves, and the right for long "
 "waves."
 msgstr ""
+
+#~ msgid "Start a new picture?"
+#~ msgstr "Zīmēsi jaunu zīmējumu?"
+
+#~ msgid "Yes, let's start fresh!"
+#~ msgstr "Jā, sāksim zīmēt!"
 
 #~ msgid "Sparkles"
 #~ msgstr "Spīdeklīši"

@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Tux Paint 0.9.16\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-07-19 20:38+0200\n"
+"POT-Creation-Date: 2007-07-24 12:05-0700\n"
 "PO-Revision-Date: 2007-04-29 23:10-0400\n"
 "Last-Translator: Mark K. Kim <mkkim214@gmail.com>\n"
 "Language-Team: N/A\n"
@@ -427,16 +427,6 @@ msgstr "그 그림은 열지 못합니다!"
 msgid "OK"
 msgstr "네"
 
-#. This will be replaced with a dialog allowing color choice and Starter
-#. picking, with a "Back" option to dismiss the "New" and return to
-#. the current picture.  But for now...  (bjk 2006.02.19)
-#. Prompt to confirm starting a new picture
-msgid "Start a new picture?"
-msgstr "새 그림을 시작할까요?"
-
-msgid "Yes, let's start fresh!"
-msgstr "네, 처음부터 시작해요!"
-
 #. Notification that 'Open' dialog has nothing to show
 msgid "There are no saved files!"
 msgstr "저장된 파일이 없네요!"
@@ -529,6 +519,8 @@ msgstr "네, 전그림을 덮어쓰세요!"
 msgid "No, save a new file!"
 msgstr "아니요, 새로운 파일로 저장하죠"
 
+#. Let user choose an image:
+#. Instructions for 'New' file/color dialog  FIXME
 msgid "Choose the picture you want, then click “Open”."
 msgstr "원하는 그림을 고른후 「열기」버튼을 눌러주세요."
 
@@ -700,6 +692,12 @@ msgid ""
 "bottom for taller waves, the left for small waves, and the right for long "
 "waves."
 msgstr ""
+
+#~ msgid "Start a new picture?"
+#~ msgstr "새 그림을 시작할까요?"
+
+#~ msgid "Yes, let's start fresh!"
+#~ msgstr "네, 처음부터 시작해요!"
 
 #~ msgid "Sparkles"
 #~ msgstr "불꽃"

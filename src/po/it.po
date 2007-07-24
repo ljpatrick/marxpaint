@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TuxPaint 0.9.17\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-07-19 20:38+0200\n"
+"POT-Creation-Date: 2007-07-24 12:05-0700\n"
 "PO-Revision-Date: 2007-07-02 22:03+0100\n"
 "Last-Translator: Flavio Pastore <ironbishop@gmail.com>\n"
 "Language-Team: Italian <it@li.org>\n"
@@ -465,21 +465,6 @@ msgstr "Non è possibile aprire quel disegno!"
 msgid "OK"
 msgstr "OK"
 
-#  This will be replaced with a dialog allowing color choice and Starter
-#  picking, with a "Back" option to dismiss the "New" and return to
-#  the current picture.  But for now...  (bjk 2006.02.19)
-#. This will be replaced with a dialog allowing color choice and Starter
-#. picking, with a "Back" option to dismiss the "New" and return to
-#. the current picture.  But for now...  (bjk 2006.02.19)
-#. Prompt to confirm starting a new picture
-msgid "Start a new picture?"
-msgstr "Vuoi iniziare un nuovo disegno?"
-
-#  #define PROMPT_NEW_YES gettext_noop("That’s OK!")
-#  #define PROMPT_NEW_NO gettext_noop("Never mind!")
-msgid "Yes, let's start fresh!"
-msgstr "Sì, iniziamo da capo!"
-
 #. Notification that 'Open' dialog has nothing to show
 msgid "There are no saved files!"
 msgstr "Non ci sono file salvati!"
@@ -575,6 +560,8 @@ msgstr "Sì, sostituisci il vecchio disegno!"
 msgid "No, save a new file!"
 msgstr "No, crea un nuovo file!"
 
+#. Let user choose an image:
+#. Instructions for 'New' file/color dialog  FIXME
 msgid "Choose the picture you want, then click “Open”."
 msgstr "Scegli il disegno che desideri e fai click su “Apri”."
 
@@ -746,6 +733,17 @@ msgid ""
 "bottom for taller waves, the left for small waves, and the right for long "
 "waves."
 msgstr ""
+
+#  This will be replaced with a dialog allowing color choice and Starter
+#  picking, with a "Back" option to dismiss the "New" and return to
+#  the current picture.  But for now...  (bjk 2006.02.19)
+#~ msgid "Start a new picture?"
+#~ msgstr "Vuoi iniziare un nuovo disegno?"
+
+#  #define PROMPT_NEW_YES gettext_noop("That’s OK!")
+#  #define PROMPT_NEW_NO gettext_noop("Never mind!")
+#~ msgid "Yes, let's start fresh!"
+#~ msgstr "Sì, iniziamo da capo!"
 
 #~ msgid "Sparkles"
 #~ msgstr "Scintille"

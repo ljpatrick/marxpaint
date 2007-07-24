@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint 0.9.17\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-07-19 20:38+0200\n"
+"POT-Creation-Date: 2007-07-24 12:05-0700\n"
 "PO-Revision-Date: 2007-05-26 01:00+0100\n"
 "Last-Translator: Daniel Nylander <po@danielnylander.se>\n"
 "Language-Team: Swedish <tp-sv@listor.tp-sv.se>\n"
@@ -424,16 +424,6 @@ msgstr "Kan inte öppna den här bilden!"
 msgid "OK"
 msgstr "OK"
 
-#. This will be replaced with a dialog allowing color choice and Starter
-#. picking, with a "Back" option to dismiss the "New" and return to
-#. the current picture.  But for now...  (bjk 2006.02.19)
-#. Prompt to confirm starting a new picture
-msgid "Start a new picture?"
-msgstr "Påbörja en ny bild?"
-
-msgid "Yes, let's start fresh!"
-msgstr "Ja, börja från början!"
-
 #. Notification that 'Open' dialog has nothing to show
 msgid "There are no saved files!"
 msgstr "Det finns inga sparade filer!"
@@ -525,6 +515,8 @@ msgstr "Ja, ersätt den gamla!"
 msgid "No, save a new file!"
 msgstr "Nej, spara en ny fil!"
 
+#. Let user choose an image:
+#. Instructions for 'New' file/color dialog  FIXME
 msgid "Choose the picture you want, then click “Open”."
 msgstr "Välj den bild som du vill ha, klicka sedan på \"Öppna.\""
 
@@ -695,6 +687,12 @@ msgid ""
 "bottom for taller waves, the left for small waves, and the right for long "
 "waves."
 msgstr ""
+
+#~ msgid "Start a new picture?"
+#~ msgstr "Påbörja en ny bild?"
+
+#~ msgid "Yes, let's start fresh!"
+#~ msgstr "Ja, börja från början!"
 
 #~ msgid "Sparkles"
 #~ msgstr "Gnistor"

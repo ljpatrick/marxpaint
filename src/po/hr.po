@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TuxPaint\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-07-19 20:38+0200\n"
+"POT-Creation-Date: 2007-07-24 12:05-0700\n"
 "PO-Revision-Date: 2004-05-23 10:53+0100\n"
 "Last-Translator: Nedjeljko Jedbaj <jedvajn@netlane.com>\n"
 "Language-Team: \n"
@@ -427,17 +427,6 @@ msgstr "Ne mogu otvoriti crtež!"
 msgid "OK"
 msgstr "U redu"
 
-#. This will be replaced with a dialog allowing color choice and Starter
-#. picking, with a "Back" option to dismiss the "New" and return to
-#. the current picture.  But for now...  (bjk 2006.02.19)
-#. Prompt to confirm starting a new picture
-#, fuzzy
-msgid "Start a new picture?"
-msgstr "Želiš li obrisati ovaj crtež?"
-
-msgid "Yes, let's start fresh!"
-msgstr ""
-
 #. Notification that 'Open' dialog has nothing to show
 msgid "There are no saved files!"
 msgstr "Nema pohranjenih datoteka!"
@@ -531,6 +520,8 @@ msgstr ""
 msgid "No, save a new file!"
 msgstr "Ne. Pohrani u novu datoteku."
 
+#. Let user choose an image:
+#. Instructions for 'New' file/color dialog  FIXME
 msgid "Choose the picture you want, then click “Open”."
 msgstr "Izaberi crtež, a zatim klikni 'Otvori'."
 
@@ -713,6 +704,10 @@ msgid ""
 "bottom for taller waves, the left for small waves, and the right for long "
 "waves."
 msgstr ""
+
+#, fuzzy
+#~ msgid "Start a new picture?"
+#~ msgstr "Želiš li obrisati ovaj crtež?"
 
 #~ msgid "Sparkles"
 #~ msgstr "Iskrice"

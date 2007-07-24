@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TuxPaint 0.9.16\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-07-19 20:38+0200\n"
+"POT-Creation-Date: 2007-07-24 12:05-0700\n"
 "PO-Revision-Date: 2006-09-21 20:04+0200\n"
 "Last-Translator: Shumani Mercy Ṋevhulaudzi <nevhulaudzi@saps.org.za>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -431,16 +431,6 @@ msgstr "Thi koni u vula tshifanyiso!"
 msgid "OK"
 msgstr "Zwoluga"
 
-#. This will be replaced with a dialog allowing color choice and Starter
-#. picking, with a "Back" option to dismiss the "New" and return to
-#. the current picture.  But for now...  (bjk 2006.02.19)
-#. Prompt to confirm starting a new picture
-msgid "Start a new picture?"
-msgstr "Thomani tshifanyiso tshiswa?"
-
-msgid "Yes, let's start fresh!"
-msgstr "Ee, kha ri thome nga huswa!"
-
 #. Notification that 'Open' dialog has nothing to show
 msgid "There are no saved files!"
 msgstr "A huna faela dzo vhulungwaho!"
@@ -532,6 +522,8 @@ msgstr "Ee, vhuedzedzani tsha kale!"
 msgid "No, save a new file!"
 msgstr "Hai, vhulungani faela ntswa!"
 
+#. Let user choose an image:
+#. Instructions for 'New' file/color dialog  FIXME
 msgid "Choose the picture you want, then click “Open”."
 msgstr "Nangani tshifanyiso tshine na tshi ṱoḓa, ni kiḽike \" Vulani\"."
 
@@ -712,6 +704,12 @@ msgid ""
 "bottom for taller waves, the left for small waves, and the right for long "
 "waves."
 msgstr ""
+
+#~ msgid "Start a new picture?"
+#~ msgstr "Thomani tshifanyiso tshiswa?"
+
+#~ msgid "Yes, let's start fresh!"
+#~ msgstr "Ee, kha ri thome nga huswa!"
 
 #~ msgid "Sparkles"
 #~ msgstr "Ṱhase"

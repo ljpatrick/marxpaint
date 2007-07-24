@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint 0.9.17\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-07-19 20:38+0200\n"
+"POT-Creation-Date: 2007-07-24 12:05-0700\n"
 "PO-Revision-Date: 2007-05-15 23:29+0100\n"
 "Last-Translator: Helder Correia <helder.pereira.correia@gmail.com>\n"
 "Language-Team: Portuguese <translation-team-pt@lists.sourceforge.net>\n"
@@ -430,16 +430,6 @@ msgstr "Não consigo abrir esse desenho!"
 msgid "OK"
 msgstr "Está bem"
 
-#. This will be replaced with a dialog allowing color choice and Starter
-#. picking, with a "Back" option to dismiss the "New" and return to
-#. the current picture.  But for now...  (bjk 2006.02.19)
-#. Prompt to confirm starting a new picture
-msgid "Start a new picture?"
-msgstr "Começar um novo desenho?"
-
-msgid "Yes, let's start fresh!"
-msgstr "Sim, vamos começar de novo"
-
 #. Notification that 'Open' dialog has nothing to show
 msgid "There are no saved files!"
 msgstr "Não há desenhos guardados!"
@@ -531,6 +521,8 @@ msgstr "Sim, guarda por cima do antigo!"
 msgid "No, save a new file!"
 msgstr "Não, guarda como um novo desenho!"
 
+#. Let user choose an image:
+#. Instructions for 'New' file/color dialog  FIXME
 msgid "Choose the picture you want, then click “Open”."
 msgstr "Escolhe o desenho que queres e clica em “Abrir”."
 
@@ -701,6 +693,12 @@ msgid ""
 "bottom for taller waves, the left for small waves, and the right for long "
 "waves."
 msgstr ""
+
+#~ msgid "Start a new picture?"
+#~ msgstr "Começar um novo desenho?"
+
+#~ msgid "Yes, let's start fresh!"
+#~ msgstr "Sim, vamos começar de novo"
 
 #~ msgid "Sparkles"
 #~ msgstr "Fagulhas"

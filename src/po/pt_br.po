@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pt_br\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-07-19 20:38+0200\n"
+"POT-Creation-Date: 2007-07-24 12:05-0700\n"
 "PO-Revision-Date: 2007-05-19 15:50-0300\n"
 "Last-Translator: Adorilson Bezerra <adorilson@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <pt@li.org>\n"
@@ -435,17 +435,6 @@ msgstr "Não consigo abrir este desenho!"
 msgid "OK"
 msgstr "Ok"
 
-#. This will be replaced with a dialog allowing color choice and Starter
-#. picking, with a "Back" option to dismiss the "New" and return to
-#. the current picture.  But for now...  (bjk 2006.02.19)
-#. Prompt to confirm starting a new picture
-#, fuzzy
-msgid "Start a new picture?"
-msgstr "Apagar este desenho?"
-
-msgid "Yes, let's start fresh!"
-msgstr ""
-
 #. Notification that 'Open' dialog has nothing to show
 msgid "There are no saved files!"
 msgstr "Não há desenhos guardados!"
@@ -540,6 +529,8 @@ msgstr ""
 msgid "No, save a new file!"
 msgstr "Não, guardar um novo desenho"
 
+#. Let user choose an image:
+#. Instructions for 'New' file/color dialog  FIXME
 msgid "Choose the picture you want, then click “Open”."
 msgstr "Escolha o desenho que você quer e então clique em “Abrir“"
 
@@ -713,6 +704,10 @@ msgid ""
 "bottom for taller waves, the left for small waves, and the right for long "
 "waves."
 msgstr ""
+
+#, fuzzy
+#~ msgid "Start a new picture?"
+#~ msgstr "Apagar este desenho?"
 
 #~ msgid "Sparkles"
 #~ msgstr "Fagulhas"

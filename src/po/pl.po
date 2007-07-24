@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pl\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-07-19 20:38+0200\n"
+"POT-Creation-Date: 2007-07-24 12:05-0700\n"
 "PO-Revision-Date: 2007-05-14 19:56+0200\n"
 "Last-Translator: Michal Terbert <michaeel@skrzynka.pl>\n"
 "Language-Team: Polish\n"
@@ -427,16 +427,6 @@ msgstr "Nie mogę otworzyć tego obrazka!"
 msgid "OK"
 msgstr "OK"
 
-#. This will be replaced with a dialog allowing color choice and Starter
-#. picking, with a "Back" option to dismiss the "New" and return to
-#. the current picture.  But for now...  (bjk 2006.02.19)
-#. Prompt to confirm starting a new picture
-msgid "Start a new picture?"
-msgstr "Chcesz narysować nowy obrazek?"
-
-msgid "Yes, let's start fresh!"
-msgstr "Tak, zacznijmy od nowa!"
-
 #. Notification that 'Open' dialog has nothing to show
 msgid "There are no saved files!"
 msgstr "Brak zapisanych plików!"
@@ -528,6 +518,8 @@ msgstr "Tak, zastąp stary plik!"
 msgid "No, save a new file!"
 msgstr "Nie, zapisz w nowym pliku!"
 
+#. Let user choose an image:
+#. Instructions for 'New' file/color dialog  FIXME
 msgid "Choose the picture you want, then click “Open”."
 msgstr "Wybierz obrazek, a potem kliknij 'Otwórz'"
 
@@ -702,6 +694,12 @@ msgid ""
 "bottom for taller waves, the left for small waves, and the right for long "
 "waves."
 msgstr ""
+
+#~ msgid "Start a new picture?"
+#~ msgstr "Chcesz narysować nowy obrazek?"
+
+#~ msgid "Yes, let's start fresh!"
+#~ msgstr "Tak, zacznijmy od nowa!"
 
 #~ msgid "Sparkles"
 #~ msgstr "Iskierki"

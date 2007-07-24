@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-07-19 20:38+0200\n"
+"POT-Creation-Date: 2007-07-24 12:05-0700\n"
 "PO-Revision-Date: 2006-10-11 22:53+0200\n"
 "Last-Translator: Burkhard Lück <lueck@hube-lueck.de>\n"
 "Language-Team: Deutsch <kde-i18n-de@kde.org>\n"
@@ -435,16 +435,6 @@ msgstr "Dieses Bild kann nicht geöffnet werden!"
 msgid "OK"
 msgstr "OK"
 
-#. This will be replaced with a dialog allowing color choice and Starter
-#. picking, with a "Back" option to dismiss the "New" and return to
-#. the current picture.  But for now...  (bjk 2006.02.19)
-#. Prompt to confirm starting a new picture
-msgid "Start a new picture?"
-msgstr "Möchtest du ein neues Bild malen?"
-
-msgid "Yes, let's start fresh!"
-msgstr "Ja, ich möchte ein neues Bild malen!"
-
 #. Notification that 'Open' dialog has nothing to show
 msgid "There are no saved files!"
 msgstr "Es gibt noch keine gespeicherten Bilder!"
@@ -536,6 +526,8 @@ msgstr "Ja, überschreibe das alte Bild!"
 msgid "No, save a new file!"
 msgstr "Nein, speichere in eine neue Datei!"
 
+#. Let user choose an image:
+#. Instructions for 'New' file/color dialog  FIXME
 msgid "Choose the picture you want, then click “Open”."
 msgstr "Wähle ein Bild, dass du öffnen willst und klick auf 'Öffnen'."
 
@@ -707,6 +699,12 @@ msgid ""
 "bottom for taller waves, the left for small waves, and the right for long "
 "waves."
 msgstr ""
+
+#~ msgid "Start a new picture?"
+#~ msgstr "Möchtest du ein neues Bild malen?"
+
+#~ msgid "Yes, let's start fresh!"
+#~ msgstr "Ja, ich möchte ein neues Bild malen!"
 
 #~ msgid "Sparkles"
 #~ msgstr "Sterne"

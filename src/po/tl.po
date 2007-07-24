@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-07-19 20:38+0200\n"
+"POT-Creation-Date: 2007-07-24 12:05-0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -421,16 +421,6 @@ msgstr "Hindi Mabuksan ang larawan!"
 msgid "OK"
 msgstr ""
 
-#. This will be replaced with a dialog allowing color choice and Starter
-#. picking, with a "Back" option to dismiss the "New" and return to
-#. the current picture.  But for now...  (bjk 2006.02.19)
-#. Prompt to confirm starting a new picture
-msgid "Start a new picture?"
-msgstr "Magsimula ng bagong larawan?"
-
-msgid "Yes, let's start fresh!"
-msgstr "Oo. Magsimula ng bago!"
-
 #. Notification that 'Open' dialog has nothing to show
 msgid "There are no saved files!"
 msgstr "Walang nakasave na dokumento!"
@@ -523,6 +513,8 @@ msgstr "Oo. Palitan ng bago!"
 msgid "No, save a new file!"
 msgstr "Hindi. i-save ang dokumento!"
 
+#. Let user choose an image:
+#. Instructions for 'New' file/color dialog  FIXME
 msgid "Choose the picture you want, then click “Open”."
 msgstr "Pumili ng larawang gusto. at i-klik ang buksan."
 
@@ -689,6 +681,12 @@ msgid ""
 "bottom for taller waves, the left for small waves, and the right for long "
 "waves."
 msgstr ""
+
+#~ msgid "Start a new picture?"
+#~ msgstr "Magsimula ng bagong larawan?"
+
+#~ msgid "Yes, let's start fresh!"
+#~ msgstr "Oo. Magsimula ng bago!"
 
 #~ msgid "Sparkles"
 #~ msgstr "Kislap"

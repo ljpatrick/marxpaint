@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-07-19 20:38+0200\n"
+"POT-Creation-Date: 2007-07-24 12:05-0700\n"
 "PO-Revision-Date: 2006-10-11 23:27+0300\n"
 "Last-Translator: Doruk Fisek <dfisek@fisek.com.tr>\n"
 "Language-Team: Turkish <gnu-tr-u12a@lists.sourceforge.net>\n"
@@ -427,16 +427,6 @@ msgstr "O resmi açamıyorum!"
 msgid "OK"
 msgstr "Tamam"
 
-#. This will be replaced with a dialog allowing color choice and Starter
-#. picking, with a "Back" option to dismiss the "New" and return to
-#. the current picture.  But for now...  (bjk 2006.02.19)
-#. Prompt to confirm starting a new picture
-msgid "Start a new picture?"
-msgstr "Yeni bir resme başlayalım mı?"
-
-msgid "Yes, let's start fresh!"
-msgstr "Evet, hadi temiz bir başlangıç yapalım!"
-
 #. Notification that 'Open' dialog has nothing to show
 msgid "There are no saved files!"
 msgstr "Kaydedilmiş hiç dosya yok!"
@@ -528,6 +518,8 @@ msgstr "Evet, eskisini yenile!"
 msgid "No, save a new file!"
 msgstr "Hayır, yeni bir dosyaya kaydet"
 
+#. Let user choose an image:
+#. Instructions for 'New' file/color dialog  FIXME
 msgid "Choose the picture you want, then click “Open”."
 msgstr "İstediğin resmi seç, sonra \"Aç\" seçeneğine tıkla"
 
@@ -699,6 +691,12 @@ msgid ""
 "bottom for taller waves, the left for small waves, and the right for long "
 "waves."
 msgstr ""
+
+#~ msgid "Start a new picture?"
+#~ msgstr "Yeni bir resme başlayalım mı?"
+
+#~ msgid "Yes, let's start fresh!"
+#~ msgstr "Evet, hadi temiz bir başlangıç yapalım!"
 
 #~ msgid "Sparkles"
 #~ msgstr "Kıvılcımlar"

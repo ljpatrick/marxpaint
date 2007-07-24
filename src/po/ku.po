@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-07-19 20:38+0200\n"
+"POT-Creation-Date: 2007-07-24 12:05-0700\n"
 "PO-Revision-Date: 2006-04-23 00:58+0200\n"
 "Last-Translator: Amed Ç. Jiyan <amed@pckurd.net>\n"
 "Language-Team: KURDISH <LL@li.org>\n"
@@ -424,16 +424,6 @@ msgstr "Ev wêne nayê vekirin!"
 msgid "OK"
 msgstr "Temam"
 
-#. This will be replaced with a dialog allowing color choice and Starter
-#. picking, with a "Back" option to dismiss the "New" and return to
-#. the current picture.  But for now...  (bjk 2006.02.19)
-#. Prompt to confirm starting a new picture
-msgid "Start a new picture?"
-msgstr "Dest bi wêneyekî nû bikî?"
-
-msgid "Yes, let's start fresh!"
-msgstr "Erê, dest bi nûkirinê bike!"
-
 #. Notification that 'Open' dialog has nothing to show
 msgid "There are no saved files!"
 msgstr "Tu dosye nehat tomarkirin!"
@@ -526,6 +516,8 @@ msgstr "Erê, li ser ya kevin binivîse!"
 msgid "No, save a new file!"
 msgstr "Na, dosyeyeke nû tomar bike!"
 
+#. Let user choose an image:
+#. Instructions for 'New' file/color dialog  FIXME
 msgid "Choose the picture you want, then click “Open”."
 msgstr "Ji bo vekirina wêneyê ku dixwazî \"Veke\" Bitikîne."
 
@@ -700,6 +692,12 @@ msgid ""
 "bottom for taller waves, the left for small waves, and the right for long "
 "waves."
 msgstr ""
+
+#~ msgid "Start a new picture?"
+#~ msgstr "Dest bi wêneyekî nû bikî?"
+
+#~ msgid "Yes, let's start fresh!"
+#~ msgstr "Erê, dest bi nûkirinê bike!"
 
 #~ msgid "Sparkles"
 #~ msgstr "Çirûsk"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint 0.9.16\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-07-19 20:38+0200\n"
+"POT-Creation-Date: 2007-07-24 12:05-0700\n"
 "PO-Revision-Date: 2006-09-28 09:04+0200\n"
 "Last-Translator: Petri Jooste <rkwjpj@puk.ac.za>\n"
 "Language-Team: Afrikaans <rkwjpj@puk.ac.za>\n"
@@ -428,16 +428,6 @@ msgstr "Kan nie daardie prent oopmaak nie!"
 msgid "OK"
 msgstr "Goed"
 
-#. This will be replaced with a dialog allowing color choice and Starter
-#. picking, with a "Back" option to dismiss the "New" and return to
-#. the current picture.  But for now...  (bjk 2006.02.19)
-#. Prompt to confirm starting a new picture
-msgid "Start a new picture?"
-msgstr "Begin 'n nuwe prent?"
-
-msgid "Yes, let's start fresh!"
-msgstr "Ja, kom ons begin oor!"
-
 #. Notification that 'Open' dialog has nothing to show
 msgid "There are no saved files!"
 msgstr "Daar is geen gestoorde lêers nie!"
@@ -529,6 +519,8 @@ msgstr "Ja, vervang die ou een!"
 msgid "No, save a new file!"
 msgstr "Nee, stoor 'n nuwe lêer!"
 
+#. Let user choose an image:
+#. Instructions for 'New' file/color dialog  FIXME
 msgid "Choose the picture you want, then click “Open”."
 msgstr "Kies die prent wat jy wil hê en klik 'Maak oop'."
 
@@ -700,6 +692,12 @@ msgid ""
 "bottom for taller waves, the left for small waves, and the right for long "
 "waves."
 msgstr ""
+
+#~ msgid "Start a new picture?"
+#~ msgstr "Begin 'n nuwe prent?"
+
+#~ msgid "Yes, let's start fresh!"
+#~ msgstr "Ja, kom ons begin oor!"
 
 #~ msgid "Sparkles"
 #~ msgstr "Vonke"

@@ -17,7 +17,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Tuxpaint cvs 2007-06-23\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-07-19 20:38+0200\n"
+"POT-Creation-Date: 2007-07-24 12:05-0700\n"
 "PO-Revision-Date: 2007-06-24 11:39+0200\n"
 "Last-Translator: Pere Pujal i Carabantes <ppujal@airtel.net>\n"
 "Language-Team: Català <linux-ca@chanae.alphanet.ch>\n"
@@ -441,16 +441,6 @@ msgstr "No puc obrir aquest dibuix!"
 msgid "OK"
 msgstr "D'acord"
 
-#. This will be replaced with a dialog allowing color choice and Starter
-#. picking, with a "Back" option to dismiss the "New" and return to
-#. the current picture.  But for now...  (bjk 2006.02.19)
-#. Prompt to confirm starting a new picture
-msgid "Start a new picture?"
-msgstr "Començo un dibuix nou?"
-
-msgid "Yes, let's start fresh!"
-msgstr "Sí, comencem-ne un de nou!"
-
 #. Notification that 'Open' dialog has nothing to show
 msgid "There are no saved files!"
 msgstr "No hi ha fitxers desats!"
@@ -542,6 +532,8 @@ msgstr "Sí, reemplaça l'antic!"
 msgid "No, save a new file!"
 msgstr "No, desa en un fitxer nou"
 
+#. Let user choose an image:
+#. Instructions for 'New' file/color dialog  FIXME
 msgid "Choose the picture you want, then click “Open”."
 msgstr "Trieu el dibuix que voleu, llavors feu clic en Obre."
 
@@ -713,6 +705,12 @@ msgid ""
 "bottom for taller waves, the left for small waves, and the right for long "
 "waves."
 msgstr ""
+
+#~ msgid "Start a new picture?"
+#~ msgstr "Començo un dibuix nou?"
+
+#~ msgid "Yes, let's start fresh!"
+#~ msgstr "Sí, comencem-ne un de nou!"
 
 #~ msgid "Sparkles"
 #~ msgstr "Espurnes"

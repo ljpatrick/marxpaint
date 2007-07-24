@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint 0.9.17\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-07-19 20:38+0200\n"
+"POT-Creation-Date: 2007-07-24 12:05-0700\n"
 "PO-Revision-Date: 2007-05-16 19:56+0800\n"
 "Last-Translator: Wei-Lun Chao <chaoweilun@gmail.com>\n"
 "Language-Team: Chinese (traditional) <zh-l10n@linux.org.tw>\n"
@@ -424,16 +424,6 @@ msgstr "沒辦法打開這個圖畫!"
 msgid "OK"
 msgstr "好的"
 
-#. This will be replaced with a dialog allowing color choice and Starter
-#. picking, with a "Back" option to dismiss the "New" and return to
-#. the current picture.  But for now...  (bjk 2006.02.19)
-#. Prompt to confirm starting a new picture
-msgid "Start a new picture?"
-msgstr "要打開一張新的圖畫嗎?"
-
-msgid "Yes, let's start fresh!"
-msgstr "好，讓我們從頭開始!"
-
 #. Notification that 'Open' dialog has nothing to show
 msgid "There are no saved files!"
 msgstr "沒有已經儲存的檔案!"
@@ -525,6 +515,8 @@ msgstr "好，取代舊的!"
 msgid "No, save a new file!"
 msgstr "不，另外存一個新的檔案!"
 
+#. Let user choose an image:
+#. Instructions for 'New' file/color dialog  FIXME
 msgid "Choose the picture you want, then click “Open”."
 msgstr "選擇你想要的圖畫，然後按一下「打開」。"
 
@@ -695,6 +687,12 @@ msgid ""
 "bottom for taller waves, the left for small waves, and the right for long "
 "waves."
 msgstr ""
+
+#~ msgid "Start a new picture?"
+#~ msgstr "要打開一張新的圖畫嗎?"
+
+#~ msgid "Yes, let's start fresh!"
+#~ msgstr "好，讓我們從頭開始!"
 
 #~ msgid "Sparkles"
 #~ msgstr "火花"
