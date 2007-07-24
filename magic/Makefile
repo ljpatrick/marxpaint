@@ -1,11 +1,20 @@
-# Makefile for magic plugins
+# Makefile for Tux Paint default 'Magic' tool plugins
+
+# Tux Paint - A simple drawing program for children.
+
+# Copyright (c) 2007-2007 by Bill Kendrick and others
+# bill@newbreedsoftware.com
+# http://www.tuxpaint.org/
+
+# July 2007 - July 24, 2007
+
+
+SO_TYPE=so
 
 # Places to pick up Tux Paint Magic Plugin Dev header and SDL headers
 # (can't assume plugin dev stuff has been installed yet, since we're
 # part of Tux Paint base, so "install-plugin-dev" probably hasn't
 # been run yet; hence "-I../src/" to find 'tp_magic_api.h')
-
-SO_TYPE=so
 
 TP_MAGIC_CFLAGS=$(shell if [ -x tp-magic-config ] ; then tp-magic-config --cflags ; else echo -I../src/ ; fi)
 
@@ -35,6 +44,7 @@ all:	negative.$(SO_TYPE) \
 	foam.$(SO_TYPE) \
 	ripples.$(SO_TYPE) \
 	sparkles.$(SO_TYPE)
+	@strip *.$(SO_TYPE)
 
 install:
 	cd .. ; make install-magic-plugins
