@@ -120,8 +120,10 @@ void blocks_chalk_drip_linecb(void * ptr, int which,
     x = (x / 4) * 4;
     y = (y / 4) * 4;
 
-    for (yy = y - 8; yy < y + 8; yy = yy + 4)
+    if (!api->touched(x, y))
     {
+      for (yy = y - 8; yy < y + 8; yy = yy + 4)
+      {
       for (xx = x - 8; xx < x + 8; xx = xx + 4)
       {
         Uint32 pix[16];
@@ -166,6 +168,7 @@ void blocks_chalk_drip_linecb(void * ptr, int which,
         dest.h = 4;
 
         SDL_FillRect(canvas, &dest, SDL_MapRGB(canvas->format, r, g, b));
+      }
       }
     }
   }

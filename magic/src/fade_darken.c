@@ -93,7 +93,8 @@ void do_fade_darken(void * ptr, int which,
   {
     for (xx = x - 16; xx < x + 16; xx++)
     {
-      if (api->in_circle(xx - x, yy - y, 16))
+      if (api->in_circle(xx - x, yy - y, 16) &&
+	  !api->touched(xx, yy))
       {
         SDL_GetRGB(api->getpixel(last, xx, yy), last->format, &r, &g, &b);
 

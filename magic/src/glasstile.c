@@ -91,6 +91,9 @@ void do_glasstile(void * ptr, int which, SDL_Surface * canvas, SDL_Surface * las
   x = ((x / (GT_SIZE * 2)) * (GT_SIZE * 2)) + (GT_SIZE / 2);
   y = ((y / (GT_SIZE * 2)) * (GT_SIZE * 2)) + (GT_SIZE / 2);
 
+  if (api->touched(x, y))
+    return;
+
 
   /* Apply the effect: */
 

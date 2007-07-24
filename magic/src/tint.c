@@ -75,19 +75,22 @@ void do_tint(void * ptr, int which, SDL_Surface * canvas, SDL_Surface * last,
     {
       if (api->in_circle(xx - x, yy - y, 16))
       {
-        /* Get original pixel: */
+        if (!api->touched(xx, yy))
+        {
+          /* Get original pixel: */
 
-        SDL_GetRGB(api->getpixel(last, xx, yy), last->format, &r, &g, &b);
+          SDL_GetRGB(api->getpixel(last, xx, yy), last->format, &r, &g, &b);
 
-        old = api->sRGB_to_linear(r) * 0.2126 +
-          api->sRGB_to_linear(g) * 0.7152 +
-          api->sRGB_to_linear(b) * 0.0722;
+          old = api->sRGB_to_linear(r) * 0.2126 +
+            api->sRGB_to_linear(g) * 0.7152 +
+            api->sRGB_to_linear(b) * 0.0722;
 
-        api->putpixel(canvas, xx, yy,
+          api->putpixel(canvas, xx, yy,
                  SDL_MapRGB(canvas->format,
                             api->linear_to_sRGB(rd * old),
                             api->linear_to_sRGB(gd * old),
                             api->linear_to_sRGB(bd * old)));
+        }
       }
     }
   }

@@ -10,6 +10,22 @@ $Id$
 
 
 2007.July.19 (0.9.18)
+  * Interface Improvements:
+    -----------------------
+    * Improved 'New' and 'Open' interface:
+      + 'Open' dialog no longer includes 'Starter' images
+      + 'New' now brings up a selection dialog showing 'Starter' images
+        and color choices
+      + New images can be given solid background colors
+        (which the 'Eraser' tool erases to)
+
+  * Documentation Imrpovements:
+    ---------------------------
+    * Improved --usage output.
+
+    * Added support for "--papersize help" to list papersizes available
+      via libpaper.
+
   * System-Related Improvements:
     ----------------------------
     * Added an API for developing Magic tools as plug-ins.
@@ -31,6 +47,11 @@ $Id$
       (Blur, Fill, Lighten, Darken, Mirror, Flip, Rainbow, Blocks, Chalk,
       Grass, Negative, Tint, Smudge, Drip, Cartoon, Brick (large & small))
 
+    * Some Magic tools that apply an affect once per click-and-drag no
+      longer recalculate the effect on pixels that have already been
+      affected (until mouse button is released and clicked again).
+      Improves performance, especially where heavy math is used.
+
     * Began adding support for using SDL_Pango, a wrapper to Pango,
       a library for layout and rendering of text, with an emphasis on
       internationalization.  (The hope is to improve support for languages
@@ -41,8 +62,9 @@ $Id$
       or both a TTF_Font and a SDLPango_Context, depending on whether
       SDL_Pango is being used, and how the font was loaded.
 
-      Can be disabled (will use older SDL_ttf-based code) by building with
-      "make nopango".
+      Can be disabled (will use older SDL_ttf-based code only) by building with
+      "make nopango".  Note: A modified SDL_Pango.h header file is included
+      with Tux Paint, to work around a compile issue with SDL_Pango 0.1.2's.
 
   * New Brushes
     -----------

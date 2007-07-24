@@ -73,24 +73,27 @@ void do_emboss(void * ptr, int which, SDL_Surface * canvas, SDL_Surface * last,
     {
       if (api->in_circle(xx, yy, 16))
       {
-        SDL_GetRGB(api->getpixel(last, x + xx, y + yy), last->format, &r1, &g1, &b1);
-        SDL_GetRGB(api->getpixel(last, x + xx + 2, y + yy + 2), last->format, &r2, &g2, &b2);
+        if (!api->touched(x + xx, y + yy))
+        {
+          SDL_GetRGB(api->getpixel(last, x + xx, y + yy), last->format, &r1, &g1, &b1);
+          SDL_GetRGB(api->getpixel(last, x + xx + 2, y + yy + 2), last->format, &r2, &g2, &b2);
 
-        avg1 = (r1 + g1 + b1) / 3;
-        avg2 = (r2 + g2 + b2) / 3;
+          avg1 = (r1 + g1 + b1) / 3;
+          avg2 = (r2 + g2 + b2) / 3;
 
-	api->rgbtohsv(r1, g1, b1, &h, &s, &v);
+	  api->rgbtohsv(r1, g1, b1, &h, &s, &v);
 
-        r = 128 + (((avg1 - avg2) * 3) / 2);
-        if (r < 0) r = 0;
-        if (r > 255) r = 255;
-        g = b = r;
+          r = 128 + (((avg1 - avg2) * 3) / 2);
+          if (r < 0) r = 0;
+          if (r > 255) r = 255;
+          g = b = r;
 
-	v = (r / 255.0);
+	  v = (r / 255.0);
 
-	api->hsvtorgb(h, s, v, &r1, &g1, &b1);
+	  api->hsvtorgb(h, s, v, &r1, &g1, &b1);
 
-        api->putpixel(canvas, x + xx, y + yy, SDL_MapRGB(canvas->format, r1, g1, b1));
+          api->putpixel(canvas, x + xx, y + yy, SDL_MapRGB(canvas->format, r1, g1, b1));
+        }
       }
     }
   }

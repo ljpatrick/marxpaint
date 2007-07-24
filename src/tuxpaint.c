@@ -22,7 +22,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
   
-  June 14, 2002 - July 12, 2007
+  June 14, 2002 - July 24, 2007
   $Id$
 */
 
@@ -390,7 +390,6 @@ extern WrapperData macosx;
 
 #endif
 
-#ifndef SAVE_AS_BMP
 #include <png.h>
 #define FNAME_EXTENSION ".png"
 #ifndef PNG_H
@@ -399,9 +398,6 @@ extern WrapperData macosx;
 #error "be sure to get the development package, as well!"
 #error "(e.g., 'libpng2-devel.rpm')"
 #error "---------------------------------------------------"
-#endif
-#else
-#define FNAME_EXTENSION ".bmp"
 #endif
 
 #include "SDL_getenv.h"
@@ -852,13 +848,11 @@ static int fullscreen, native_screensize, disable_quit, simple_shapes,
   start_blank, autosave_on_quit, rotate_orientation, button_down;
 static int want_alt_printcommand;
 static int starter_mirrored, starter_flipped, starter_personal;
+static Uint8 canvas_color_r, canvas_color_g, canvas_color_b;
 static int recording, playing;
 static char *playfile;
 static FILE *demofi;
-
-#ifndef NO_SDLPANGO
-SDLPango_Context * pango_context;
-#endif
+Uint8 * touched;
 
 
 /* Magic tools API and tool handles: */
@@ -908,6 +902,7 @@ magic_api * magic_api_struct;	// Pointer to our internal functions; passed to sh
 
 
 #if !defined(WIN32) && !defined(__APPLE__) && !defined(__BEOS__)
+#include <paper.h>
 static const char *printcommand = PRINTCOMMAND;
 static const char *altprintcommand = ALTPRINTCOMMAND;
 char *papersize = NULL;
@@ -1037,8 +1032,6 @@ static Uint16 *wcstou16(const wchar_t * str)
   return res;
 }
 
-
-/* FIXME: This should also use SDL_Pango -bjk 2007.07.12 */
 
 static SDL_Surface *render_text_w(TuxPaint_Font * restrict font,
 				  const wchar_t * restrict str,
@@ -1330,6 +1323,9 @@ static void blit_brush(int x, int y, int direction);
 static void stamp_draw(int x, int y);
 static void rec_undo_buffer(void);
 static void show_usage(FILE * f, char *prg);
+#if !defined(WIN32) && !defined(__APPLE__) && !defined(__BEOS__)
+void show_available_papersizes(FILE * fi, char * prg);
+#endif
 static void setup(int argc, char *argv[]);
 void signal_handler(int sig);
 static SDL_Cursor *get_cursor(unsigned char *bits, unsigned char *mask_bits,
@@ -1434,6 +1430,7 @@ static int do_png_save(FILE * fi, const char *const fname,
 static void get_new_file_id(void);
 static int do_quit(int tool);
 int do_open(void);
+int do_new_dialog(void);
 int do_slideshow(void);
 void play_slideshow(int * selected, int num_selected, char * dirname,
 		    char **d_names, char **d_exts, int speed);
@@ -1492,6 +1489,8 @@ Uint8 magic_linear_to_sRGB(float lin);
 float magic_sRGB_to_linear(Uint8 srgb);
 int magic_button_down(void);
 SDL_Surface * magic_scale(SDL_Surface * surf, int w, int h, int aspect);
+void reset_touched(void);
+Uint8 magic_touched(int x, int y);
 
 #ifdef DEBUG
 static char *debug_gettext(const char *str);
@@ -1796,15 +1795,6 @@ int main(int argc, char *argv[])
 #define PROMPT_OPEN_UNOPENABLE_YES gettext_noop("OK")
 
 
-// This will be replaced with a dialog allowing color choice and Starter
-// picking, with a "Back" option to dismiss the "New" and return to
-// the current picture.  But for now...  (bjk 2006.02.19)
-
-// Prompt to confirm starting a new picture
-#define PROMPT_NEW_TXT gettext_noop("Start a new picture?")
-#define PROMPT_NEW_YES gettext_noop("Yes, let's start fresh!")
-#define PROMPT_NEW_NO gettext_noop("No, take me back!")
-
 // Notification that 'Open' dialog has nothing to show
 #define PROMPT_OPEN_NOFILES_TXT gettext_noop("There are no saved files!")
 #define PROMPT_OPEN_NOFILES_YES gettext_noop("OK")
@@ -2031,35 +2021,10 @@ static void mainloop(void)
 	  /* Ctrl-N - New */
 
 	  hide_blinking_cursor();
-	  if (do_prompt_snd(PROMPT_NEW_TXT,
-			    PROMPT_NEW_YES, PROMPT_NEW_NO, SND_AREYOUSURE))
-	  {
-	    free_surface(&img_starter);
-	    free_surface(&img_starter_bkgd);
-	    starter_mirrored = 0;
-	    starter_flipped = 0;
-	    starter_personal = 0;
+  	  shape_tool_mode = SHAPE_TOOL_MODE_DONE;
 
-	    SDL_FillRect(canvas, NULL,
-			 SDL_MapRGB(canvas->format, 255, 255, 255));
-	    update_canvas(0, 0,
-			  WINDOW_WIDTH - 96, (48 * 7) + 40 + HEIGHTOFFSET);
-
-	    cur_undo = 0;
-	    oldest_undo = 0;
-	    newest_undo = 0;
-	    shape_tool_mode = SHAPE_TOOL_MODE_DONE;
-
-	    been_saved = 1;
-	    reset_avail_tools();
-
-	    file_id[0] = '\0';
-	    starter_id[0] = '\0';
-
-	    playsound(screen, 1, SND_HARP, 1, SNDPOS_CENTER, SNDDIST_NEAR);
-	  }
-	  else
-	  {
+          if (do_new_dialog() == 0)
+          {
 	    draw_tux_text(tool_tux[TUX_DEFAULT], TIP_NEW_ABORT, 1);
 	    
             if (cur_tool == TOOL_TEXT)
@@ -2495,36 +2460,9 @@ static void mainloop(void)
 	    }
 	    else if (cur_tool == TOOL_NEW)
 	    {
-	      if (do_prompt_snd(PROMPT_NEW_TXT,
-				PROMPT_NEW_YES, PROMPT_NEW_NO, SND_AREYOUSURE))
-	      {
-		free_surface(&img_starter);
-		free_surface(&img_starter_bkgd);
-		starter_mirrored = 0;
-		starter_flipped = 0;
-		starter_personal = 0;
+  	      shape_tool_mode = SHAPE_TOOL_MODE_DONE;
 
-		SDL_FillRect(canvas, NULL,
-			     SDL_MapRGB(canvas->format, 255, 255, 255));
-		update_canvas(0, 0,
-			      WINDOW_WIDTH - 96,
-			      (48 * 7) + 40 + HEIGHTOFFSET);
-
-		cur_undo = 0;
-		oldest_undo = 0;
-		newest_undo = 0;
-		shape_tool_mode = SHAPE_TOOL_MODE_DONE;
-
-		been_saved = 1;
-		reset_avail_tools();
-
-		file_id[0] = '\0';
-		starter_id[0] = '\0';
-
-		playsound(screen, 1, SND_HARP, 1, SNDPOS_CENTER,
-			  SNDDIST_NEAR);
-	      }
-	      else
+              if (do_new_dialog() == 0)
 	      {
                 cur_tool = old_tool;
 
@@ -3193,6 +3131,8 @@ static void mainloop(void)
             update_rect.y = 0;
             update_rect.w = 0;
             update_rect.h = 0;
+
+	    reset_touched();
 
 	    magic_funcs[magics[cur_magic].handle_idx].click(magic_api_struct,
 					                   magics[cur_magic].idx,
@@ -4782,15 +4722,6 @@ static void show_version(int details)
 #endif
 
 
-  /* Saving method */
-
-#ifdef SAVE_AS_BMP
-  printf("  Saves as BMPs  (SAVE_AS_BMP)\n");
-#else
-  printf("  Saves as PNGs  (no SAVE_AS_BMP)\n");
-#endif
-
-
   /* Threading */
 
 #ifdef FORKED_FONTS
@@ -4849,7 +4780,7 @@ static void show_usage(FILE * f, char *prg)
 	  "Usage: %s {--usage | --help | --version | --verbose-version | --copying}\n"
 	  "\n"
 	  "  %s [--windowed | --fullscreen]\n"
-	  "  %s [--WIDTHxHEIGHT | --native]   [--orient=ORIENTATION]\n"
+	  "  %s [--WIDTHxHEIGHT | --native]   [--orient=landscape | --orient=portrait]\n"
 	  "  %s [--startblank | --startlast ]\n"
 	  "  %s [--sound | --nosound]         [--quit | --noquit]\n"
 	  "  %s [--print | --noprint]         [--complexshapes | --simpleshapes]\n"
@@ -4871,7 +4802,7 @@ static void show_usage(FILE * f, char *prg)
 	  "  %s [--printdelay=SECONDS]\n"
 	  "  %s [--altprintmod | --altprintalways | --altprintnever]\n"
 #if !defined(WIN32) && !defined(__APPLE__) && !defined(__BEOS__)
-	  "  %s [--papersize=PAPERSIZE]\n"
+	  "  %s [--papersize PAPERSIZE | --papersize help]\n"
 #endif
 	  "  %s [--lang LANGUAGE | --locale LOCALE | --lang help]\n"
 	  "  %s [--nosysconfig] [--nolockfile]\n"
@@ -5931,6 +5862,26 @@ static void setup(int argc, char *argv[])
     {
       papersize = strdup(argv[i] + strlen("--papersize="));
     }
+    else if (strcmp(argv[i], "--papersize") == 0)
+    {
+      if (i + 1 < argc)
+      {
+        i++;
+        if (strcmp(argv[i], "help") == 0)
+        {
+          show_available_papersizes(stdout, argv[0]);
+          exit(0);
+        }
+        else
+          papersize = strdup(argv[i]);
+      }
+      else
+      {
+	fprintf(stderr, "%s takes an argument\n", argv[i]);
+        show_available_papersizes(stderr, argv[0]);
+        exit(1);
+      }
+    }
 #endif
     else if (strcmp(argv[i], "--uppercase") == 0
 	     || strcmp(argv[i], "-u") == 0)
@@ -6174,12 +6125,6 @@ static void setup(int argc, char *argv[])
 
 #ifndef NO_SDLPANGO
   SDLPango_Init();
-  
-  /* SDLPango accepts font description strings; cannot send it a
-     TTF_Font.  So right now, "pango_context" is set up once,
-     with a default font, when the app starts... */
-
-  pango_context = SDLPango_CreateContext_GivenFontDesc("FreeSans");
 #endif
 
   
@@ -6775,6 +6720,19 @@ static void setup(int argc, char *argv[])
     cleanup();
     exit(1);
   }
+
+  touched = (Uint8 *) malloc(sizeof(Uint8) * (canvas->w * canvas->h));
+  if (touched == NULL)
+  {
+    fprintf(stderr, "\nError: Can't build drawing touch mask!\n");
+
+    cleanup();
+    exit(1);
+  }
+
+  canvas_color_r = 255;
+  canvas_color_g = 255;
+  canvas_color_b = 255;
 
   SDL_FillRect(canvas, NULL, SDL_MapRGB(canvas->format, 255, 255, 255));
 
@@ -9119,7 +9077,10 @@ static void do_eraser(int x, int y)
 
     if (img_starter_bkgd == NULL)
     {
-      SDL_FillRect(canvas, &dest, SDL_MapRGB(canvas->format, 255, 255, 255));
+      SDL_FillRect(canvas, &dest, SDL_MapRGB(canvas->format,
+					     canvas_color_r,
+					     canvas_color_g,
+					     canvas_color_b));
     }
     else
     {
@@ -9153,8 +9114,10 @@ static void do_eraser(int x, int y)
 
 	  if (img_starter_bkgd == NULL)
 	  {
-	    SDL_FillRect(canvas, &dest,
-			 SDL_MapRGB(canvas->format, 255, 255, 255));
+	    SDL_FillRect(canvas, &dest, SDL_MapRGB(canvas->format,
+						   canvas_color_r,
+						   canvas_color_g,
+						   canvas_color_b));
 	  }
 	  else
 	  {
@@ -9169,8 +9132,10 @@ static void do_eraser(int x, int y)
 
 	  if (img_starter_bkgd == NULL)
 	  {
-	    SDL_FillRect(canvas, &dest,
-			 SDL_MapRGB(canvas->format, 255, 255, 255));
+	    SDL_FillRect(canvas, &dest, SDL_MapRGB(canvas->format,
+						   canvas_color_r,
+						   canvas_color_g,
+						   canvas_color_b));
 	  }
 	  else
 	  {
@@ -10228,6 +10193,8 @@ static void load_starter_id(char *saved_id)
   char *rname;
   char fname[32];
   FILE *fi;
+  char color_tag;
+  int r, g, b;
 
   snprintf(fname, sizeof(fname), "saved/%s.dat", saved_id);
   rname = get_fname(fname);
@@ -10243,6 +10210,29 @@ static void load_starter_id(char *saved_id)
     fscanf(fi, "%d", &starter_mirrored);
     fscanf(fi, "%d", &starter_flipped);
     fscanf(fi, "%d", &starter_personal);
+
+    do
+    {
+      color_tag = fgetc(fi);
+    }
+    while ((color_tag == '\n' || color_tag == '\r') && !feof(fi));
+
+    if (!feof(fi) && color_tag == 'c')
+    {
+      fscanf(fi, "%d", &r);
+      fscanf(fi, "%d", &g);
+      fscanf(fi, "%d", &b);
+
+      canvas_color_r = (Uint8) r;
+      canvas_color_g = (Uint8) g;
+      canvas_color_b = (Uint8) b;
+    }
+    else
+    {
+      canvas_color_r = 255;
+      canvas_color_g = 255;
+      canvas_color_b = 255;
+    }
 
     fclose(fi);
   }
@@ -10402,11 +10392,7 @@ static void load_current(void)
 
     fname = get_fname(ftmp);
 
-#ifdef SAVE_AS_BMP
-    tmp = SDL_LoadBMP(fname);
-#else
     tmp = IMG_Load(fname);
-#endif
 
     if (tmp == NULL)
     {
@@ -11057,6 +11043,12 @@ static void cleanup(void)
   free_surface(&canvas);
   free_surface(&img_cur_brush);
 
+  if (touched != NULL)
+  {
+    free(touched);
+    touched = NULL;
+  }
+
   if (medium_font != NULL)
   {
     TuxPaint_Font_CloseFont(medium_font);
@@ -11198,10 +11190,7 @@ static void cleanup(void)
 
   /* Close up! */
 
-#ifndef NO_SDLPANGO
-  if (pango_context != NULL)
-    SDLPango_FreeContext(pango_context);
-#endif
+  /* FIXME: Pango contexts lying around? -bjk 2007.07.24 */
 
   TTF_Quit();
   SDL_Quit();
@@ -11518,9 +11507,7 @@ static int do_save(int tool, int dont_show_success_results)
   char *fname;
   char tmp[1024];
   SDL_Surface *thm;
-#ifndef SAVE_AS_BMP
   FILE *fi;
-#endif
 
 
   /* Was saving completely disabled? */
@@ -11614,28 +11601,6 @@ static int do_save(int tool, int dont_show_success_results)
   fname = get_fname(tmp);
   debug(fname);
 
-#ifdef SAVE_AS_BMP
-  if (SDL_SaveBMP(canvas, fname))
-  {
-    fprintf(stderr,
-	    "\nError: Couldn't save the current image!\n"
-	    "%s\n"
-	    "The Simple DirectMedia Layer error that occurred was:\n"
-	    "%s\n\n", fname, SDL_GetError());
-
-    draw_tux_text(TUX_OOPS, SDL_GetError(), 0);
-
-    free(fname);
-    return 0;
-  }
-  else
-  {
-    /* Ta-Da! */
-
-    playsound(screen, 0, SND_SAVE, 1, SNDPOS_CENTER, SNDDIST_NEAR);
-    draw_tux_text(TUX_DEFAULT, tool_tips[TOOL_SAVE], 1);
-  }
-#else
   fi = fopen(fname, "wb");
   if (fi == NULL)
   {
@@ -11655,7 +11620,6 @@ static int do_save(int tool, int dont_show_success_results)
       return 0;
     }
   }
-#endif
 
   free(fname);
 
@@ -11704,9 +11668,12 @@ static int do_save(int tool, int dont_show_success_results)
   free(fname);
 
 
-  /* Write 'starter' info, if any: */
+  /* Write 'starter' and/or canvas color info, if it's useful to: */
 
-  if (starter_id[0] != '\0')
+  if (starter_id[0] != '\0' ||
+      canvas_color_r != 255 ||
+      canvas_color_g != 255 ||
+      canvas_color_b != 255)
   {
     snprintf(tmp, sizeof(tmp), "saved/%s.dat", file_id);
     fname = get_fname(tmp);
@@ -11716,6 +11683,10 @@ static int do_save(int tool, int dont_show_success_results)
       fprintf(fi, "%s\n", starter_id);
       fprintf(fi, "%d %d %d\n",
 	      starter_mirrored, starter_flipped, starter_personal);
+      fprintf(fi, "c%d %d %d\n",
+	      canvas_color_r,
+	      canvas_color_g,
+	      canvas_color_b);
       fclose(fi);
     }
 
@@ -11926,13 +11897,15 @@ static int do_quit(int tool)
 
 /* Open a saved image: */
 
+#define PLACE_COLOR_PALETTE (-1)
 #define PLACE_SAVED_DIR 0
 #define PLACE_PERSONAL_STARTERS_DIR 1
 #define PLACE_STARTERS_DIR 2
 #define NUM_PLACES_TO_LOOK 3
 
 
-/* FIXME: This, and do_slideshow(), should be combined and modularized! */
+/* FIXME: This, do_slideshow() and do_new_dialog() should be combined
+   and modularized! */
 
 int do_open(void)
 {
@@ -11992,16 +11965,16 @@ int do_open(void)
       }
       else if (places_to_look == PLACE_PERSONAL_STARTERS_DIR)
       {
-        /* Check for coloring-book style 'starter' images in our folder: */
-
-        dirname[places_to_look] = get_fname("starters");
+        dirname[places_to_look] = NULL;
+	continue;
       }
       else if (places_to_look == PLACE_STARTERS_DIR)
       {
         /* Finally, check for system-wide coloring-book style
            'starter' images: */
 
-        dirname[places_to_look] = strdup(DATA_PREFIX "starters");
+        dirname[places_to_look] = NULL;
+	continue;
       }
 
 
@@ -12076,10 +12049,8 @@ int do_open(void)
             strcasestr(f->d_name, "-back.") == NULL)
         {
           if (strcasestr(f->d_name, FNAME_EXTENSION) != NULL
-#ifndef SAVE_AS_BMP
               /* Support legacy BMP files for load: */
               || strcasestr(f->d_name, ".bmp") != NULL
-#endif
              )
           {
             strcpy(fname, f->d_name);
@@ -12089,13 +12060,11 @@ int do_open(void)
               d_exts[num_files] = strdup(FNAME_EXTENSION);
             }
 
-#ifndef SAVE_AS_BMP
             if (strcasestr(fname, ".bmp") != NULL)
             {
               strcpy((char *) strcasestr(fname, ".bmp"), "");
               d_exts[num_files] = strdup(".bmp");
             }
-#endif
 
             d_names[num_files] = strdup(fname);
             d_places[num_files] = place;
@@ -12178,59 +12147,13 @@ int do_open(void)
                 make_directory("saved/.thumbs", "Can't create user data thumbnail directory");
               }
 
-              img = NULL;
-
-              if (d_places[num_files] == PLACE_STARTERS_DIR ||
-                  d_places[num_files] == PLACE_PERSONAL_STARTERS_DIR)
-              {
-                /* Try to load a starter's background image, first!
-                   If it exists, it should give a better idea of what the
-                   starter looks like, compared to the overlay image... */
-
-                /* FIXME: Add .jpg support -bjk 2007.03.22 */
-
-                /* (Try JPEG first) */
-                snprintf(fname, sizeof(fname), "%s/%s-back.jpeg",
-                    dirname[d_places[num_files]], d_names[num_files]);
-
-                img = IMG_Load(fname);
-
-
-                if (img == NULL)
-                {
-                  /* (Try PNG next) */
-                  snprintf(fname, sizeof(fname), "%s/%s-back.png",
-                      dirname[d_places[num_files]], d_names[num_files]);
-
-                  img = IMG_Load(fname);
-                }
-
-#ifndef NOSVG
-                if (img == NULL)
-                {
-                  /* (Try SVG next) */
-                  snprintf(fname, sizeof(fname), "%s/%s-back.svg",
-                      dirname[d_places[num_files]], d_names[num_files]);
-
-                  img = load_svg(fname);
-                }
-#endif
-              }
-
 
               if (img == NULL)
               {
-                /* Didn't load a starter background (or didn't try!),
-                   try loading the actual image... */
-
                 snprintf(fname, sizeof(fname), "%s/%s",
                     dirname[d_places[num_files]], f->d_name);
                 debug(fname);
-#ifdef SAVE_AS_BMP
-                img = SDL_LoadBMP(fname);
-#else
                 img = myIMG_Load(fname);
-#endif
               }
 
 
@@ -12307,8 +12230,7 @@ int do_open(void)
         }
         else
         {
-          /* It was a thumbnail file ("...-t.png") or immutable scene starter's
-             overlay layer ("...-front.png") */
+          /* It was a thumbnail file ("...-t.png") */
         }
       }
     }
@@ -12380,26 +12302,13 @@ int do_open(void)
             dest.x = THUMB_W * ((i - cur) % 4) + 96;
             dest.y = THUMB_H * ((i - cur) / 4) + 24;
 
-            if (d_places[i] == PLACE_SAVED_DIR)
+            if (i == which)
             {
-              if (i == which)
-              {
-                SDL_BlitSurface(img_cursor_down, NULL, screen, &dest);
-                debug(d_names[i]);
-              }
-              else
-                SDL_BlitSurface(img_cursor_up, NULL, screen, &dest);
+              SDL_BlitSurface(img_cursor_down, NULL, screen, &dest);
+              debug(d_names[i]);
             }
             else
-            {
-              if (i == which)
-              {
-                SDL_BlitSurface(img_cursor_starter_down, NULL, screen, &dest);
-                debug(d_names[i]);
-              }
-              else
-                SDL_BlitSurface(img_cursor_starter_up, NULL, screen, &dest);
-            }
+              SDL_BlitSurface(img_cursor_up, NULL, screen, &dest);
 
 
 
@@ -12946,11 +12855,7 @@ int do_open(void)
           snprintf(fname, sizeof(fname), "%s/%s%s",
               dirname[d_places[which]], d_names[which], d_exts[which]);
 
-#ifdef SAVE_AS_BMP
-          img = SDL_LoadBMP(fname);
-#else
           img = myIMG_Load(fname);
-#endif
 
           if (img == NULL)
           {
@@ -12977,54 +12882,28 @@ int do_open(void)
             oldest_undo = 0;
             newest_undo = 0;
 
-            if (d_places[which] == PLACE_SAVED_DIR)
+            /* Saved image: */
+
+            been_saved = 1;
+
+            strcpy(file_id, d_names[which]);
+            starter_id[0] = '\0';
+
+
+            /* See if this saved image was based on a 'starter' */
+
+            load_starter_id(d_names[which]);
+
+            if (starter_id[0] != '\0')
             {
-              /* Saved image: */
-
-              been_saved = 1;
-
-              strcpy(file_id, d_names[which]);
-              starter_id[0] = '\0';
-
-
-              /* See if this saved image was based on a 'starter' */
-
-              load_starter_id(d_names[which]);
-
-              if (starter_id[0] != '\0')
-              {
-                load_starter(starter_id);
-
-                if (starter_mirrored)
-                  mirror_starter();
-
-                if (starter_flipped)
-                  flip_starter();
-              }
-            }
-            else
-            {
-              /* Immutable 'starter' image;
-                 we'll need to save a new image when saving...: */
-
-              been_saved = 1;
-
-              file_id[0] = '\0';
-              strcpy(starter_id, d_names[which]);
-
-              if (d_places[which] == PLACE_PERSONAL_STARTERS_DIR)
-                starter_personal = 1;
-              else
-                starter_personal = 0;
-
               load_starter(starter_id);
 
-              SDL_FillRect(canvas, NULL,
-                  SDL_MapRGB(canvas->format, 255, 255, 255));
-              SDL_BlitSurface(img_starter_bkgd, NULL, canvas, NULL);
-              SDL_BlitSurface(img_starter, NULL, canvas, NULL);
-            }
+              if (starter_mirrored)
+                mirror_starter();
 
+              if (starter_flipped)
+                flip_starter();
+            }
 
             reset_avail_tools();
 
@@ -13054,7 +12933,8 @@ int do_open(void)
     }
 
     for (i = 0; i < NUM_PLACES_TO_LOOK; i++)
-      free(dirname[i]);
+      if (dirname[i] != NULL)
+        free(dirname[i]);
 
     free(d_names);
     free(d_exts);
@@ -13072,7 +12952,7 @@ int do_open(void)
 }
 
 
-/* FIXME: This, and do_open(), should be combined and modularized! */
+/* FIXME: This, do_open() and do_new_dialog() should be combined and modularized! */
 
 /* Slide Show Selection Screen: */
 
@@ -13184,10 +13064,8 @@ int do_slideshow(void)
 	  strcasestr(f->d_name, "-back.") == NULL)
       {
 	if (strcasestr(f->d_name, FNAME_EXTENSION) != NULL
-#ifndef SAVE_AS_BMP
 	    /* Support legacy BMP files for load: */
 	    || strcasestr(f->d_name, ".bmp") != NULL
-#endif
 	  )
 	{
 	  strcpy(fname, f->d_name);
@@ -13197,13 +13075,11 @@ int do_slideshow(void)
 	    d_exts[num_files] = strdup(FNAME_EXTENSION);
 	  }
 
-#ifndef SAVE_AS_BMP
 	  if (strcasestr(fname, ".bmp") != NULL)
 	  {
 	    strcpy((char *) strcasestr(fname, ".bmp"), "");
 	    d_exts[num_files] = strdup(".bmp");
 	  }
-#endif
 
 	  d_names[num_files] = strdup(fname);
 
@@ -13280,11 +13156,7 @@ int do_slideshow(void)
 
 	    debug("Loading original, to make thumbnail");
 	    debug(fname);
-#ifdef SAVE_AS_BMP
-	    img = SDL_LoadBMP(fname);
-#else
 	    img = myIMG_Load(fname);
-#endif
 
 
 	    show_progress_bar(screen);
@@ -13874,11 +13746,7 @@ void play_slideshow(int * selected, int num_selected, char * dirname,
 	       dirname, d_names[which], d_exts[which]);
 
 
-#ifdef SAVE_AS_BMP
-      img = SDL_LoadBMP(fname);
-#else
       img = myIMG_Load(fname);
-#endif
 
       if (img != NULL)
       {
@@ -16081,6 +15949,7 @@ void load_magic_plugins(void)
   magic_api_struct->canvas_w = canvas->w;
   magic_api_struct->canvas_h = canvas->h;
   magic_api_struct->scale = magic_scale;
+  magic_api_struct->touched = magic_touched;
 
 
   d = opendir(MAGIC_PREFIX);
@@ -16561,5 +16430,1004 @@ int magic_button_down(void)
 SDL_Surface * magic_scale(SDL_Surface * surf, int w, int h, int aspect)
 {
   return(thumbnail2(surf, w, h, aspect, 1));
+}
+
+/* FIXME: This, do_open() and do_slideshow() should be combined and modularized! */
+
+int do_new_dialog(void)
+{
+  SDL_Surface *img, *img1, *img2;
+  int things_alloced;
+  SDL_Surface **thumbs = NULL;
+  DIR *d;
+  struct dirent *f;
+  struct dirent2 *fs;
+  int place;
+  char *dirname[NUM_PLACES_TO_LOOK];
+  char **d_names = NULL, **d_exts = NULL;
+  int *d_places;
+  FILE *fi;
+  char fname[1024];
+  int num_files, i, done, update_list, cur, which,
+    num_files_in_dirs, j;
+  SDL_Rect dest;
+  SDL_Event event;
+  SDLKey key;
+  Uint32 last_click_time;
+  int last_click_which, last_click_button;
+  int places_to_look;
+  int tot;
+  int first_starter;
+  char *freeme;
+
+  
+  do_setcursor(cursor_watch);
+
+  /* Allocate some space: */
+
+  things_alloced = 32;
+
+  fs = (struct dirent2 *) malloc(sizeof(struct dirent2) * things_alloced);
+
+  num_files = 0;
+  cur = 0;
+  which = 0;
+  num_files_in_dirs = 0;
+
+
+  /* FIXME: Propagate first entries with colors from palette */
+
+  first_starter = 0;
+
+
+  /* Open directories of images: */
+
+  for (places_to_look = 0;
+      places_to_look < NUM_PLACES_TO_LOOK; places_to_look++)
+  {
+    if (places_to_look == PLACE_SAVED_DIR)
+    {
+      /* Skip saved images; only want starters! */
+      dirname[places_to_look] = NULL;
+      continue; /* ugh */
+    }
+    else if (places_to_look == PLACE_PERSONAL_STARTERS_DIR)
+    {
+      /* Check for coloring-book style 'starter' images in our folder: */
+
+      dirname[places_to_look] = get_fname("starters");
+    }
+    else if (places_to_look == PLACE_STARTERS_DIR)
+    {
+      /* Finally, check for system-wide coloring-book style
+         'starter' images: */
+
+      dirname[places_to_look] = strdup(DATA_PREFIX "starters");
+    }
+
+
+    /* Read directory of images and build thumbnails: */
+
+    d = opendir(dirname[places_to_look]);
+
+    if (d != NULL)
+    {
+      /* Gather list of files (for sorting): */
+
+      do
+      {
+        f = readdir(d);
+
+        if (f != NULL)
+        {
+          memcpy(&(fs[num_files_in_dirs].f), f, sizeof(struct dirent));
+          fs[num_files_in_dirs].place = places_to_look;
+
+          num_files_in_dirs++;
+
+          if (num_files_in_dirs >= things_alloced)
+          {
+            things_alloced = things_alloced + 32;
+
+            fs = (struct dirent2 *) realloc(fs,
+                sizeof(struct dirent2) *
+                things_alloced);
+          }
+        }
+      }
+      while (f != NULL);
+
+      closedir(d);
+    }
+  }
+
+
+  /* (Re)allocate space for the information about these files: */
+
+  tot = num_files_in_dirs + NUM_COLORS;
+
+  thumbs = (SDL_Surface * *)malloc(sizeof(SDL_Surface *) * tot);
+  d_places = (int *) malloc(sizeof(int) * tot);
+  d_names = (char **) malloc(sizeof(char *) * tot);
+  d_exts = (char **) malloc(sizeof(char *) * tot);
+
+
+  /* Sort: */
+
+  qsort(fs, num_files_in_dirs, sizeof(struct dirent2),
+      (int (*)(const void *, const void *)) compare_dirent2s);
+
+
+  /* Throw the color palette at the beginning: */
+
+  for (j = 0; j < NUM_COLORS; j++)
+  {
+    thumbs[num_files] = SDL_CreateRGBSurface(screen->flags,
+                                             THUMB_W - 20, THUMB_H - 20,
+                                screen->format->BitsPerPixel,
+                                screen->format->Rmask,
+                                screen->format->Gmask,
+                                screen->format->Bmask, 0);
+
+    if (thumbs[num_files] != NULL)
+    {
+      SDL_FillRect(thumbs[num_files], NULL,
+                   SDL_MapRGB(thumbs[num_files]->format,
+                              color_hexes[j][0],
+                              color_hexes[j][1],
+                              color_hexes[j][2]));
+
+      d_places[num_files] = PLACE_COLOR_PALETTE;
+      d_names[num_files] = NULL;
+      d_exts[num_files] = NULL;
+
+      num_files++;
+    }
+  }
+
+  first_starter = num_files;
+
+
+  /* Read directory of images and build thumbnails: */
+
+  for (j = 0; j < num_files_in_dirs; j++)
+  {
+    f = &(fs[j].f);
+    place = fs[j].place;
+
+    show_progress_bar(screen);
+
+    if (f != NULL)
+    {
+      debug(f->d_name);
+
+      if (strcasestr(f->d_name, "-t.") == NULL &&
+          strcasestr(f->d_name, "-back.") == NULL)
+      {
+        if (strcasestr(f->d_name, FNAME_EXTENSION) != NULL
+            /* Support legacy BMP files for load: */
+            || strcasestr(f->d_name, ".bmp") != NULL
+           )
+        {
+          strcpy(fname, f->d_name);
+          if (strcasestr(fname, FNAME_EXTENSION) != NULL)
+          {
+            strcpy((char *) strcasestr(fname, FNAME_EXTENSION), "");
+            d_exts[num_files] = strdup(FNAME_EXTENSION);
+          }
+
+          if (strcasestr(fname, ".bmp") != NULL)
+          {
+            strcpy((char *) strcasestr(fname, ".bmp"), "");
+            d_exts[num_files] = strdup(".bmp");
+          }
+
+          d_names[num_files] = strdup(fname);
+          d_places[num_files] = place;
+
+
+          /* Try to load thumbnail first: */
+
+          snprintf(fname, sizeof(fname), "%s/.thumbs/%s-t.png",
+              dirname[d_places[num_files]], d_names[num_files]);
+          debug(fname);
+          img = IMG_Load(fname);
+
+          if (img == NULL)
+          {
+            /* No thumbnail in the new location ("saved/.thumbs"),
+               try the old locatin ("saved/"): */
+
+            snprintf(fname, sizeof(fname), "%s/%s-t.png",
+                dirname[d_places[num_files]], d_names[num_files]);
+            debug(fname);
+
+            img = IMG_Load(fname);
+          }
+
+          if (img != NULL)
+          {
+            /* Loaded the thumbnail from one or the other location */
+            show_progress_bar(screen);
+
+            img1 = SDL_DisplayFormat(img);
+            SDL_FreeSurface(img);
+
+            // if too big, or too small in both dimensions, rescale it
+            // ( for now: using old thumbnail as source for high speed, low quality)
+            if (img1->w > THUMB_W - 20 || img1->h > THUMB_H - 20
+                || (img1->w < THUMB_W - 20 && img1->h < THUMB_H - 20))
+            {
+              img2 = thumbnail(img1, THUMB_W - 20, THUMB_H - 20, 0);
+              SDL_FreeSurface(img1);
+              img1 = img2;
+            }
+
+            thumbs[num_files] = img1;
+
+            if (thumbs[num_files] == NULL)
+            {
+              fprintf(stderr,
+                  "\nError: Couldn't create a thumbnail of "
+                  "saved image!\n" "%s\n", fname);
+            }
+
+            num_files++;
+          }
+          else
+          {
+            /* No thumbnail - load original: */
+
+            /* Make sure we have a ~/.tuxpaint/saved directory: */
+            if (make_directory("saved", "Can't create user data directory"))
+            {
+              /* (Make sure we have a .../saved/.thumbs/ directory:) */
+              make_directory("saved/.thumbs", "Can't create user data thumbnail directory");
+            }
+
+            img = NULL;
+
+            if (d_places[num_files] == PLACE_STARTERS_DIR ||
+                d_places[num_files] == PLACE_PERSONAL_STARTERS_DIR)
+            {
+              /* Try to load a starter's background image, first!
+                 If it exists, it should give a better idea of what the
+                 starter looks like, compared to the overlay image... */
+
+              /* FIXME: Add .jpg support -bjk 2007.03.22 */
+
+              /* (Try JPEG first) */
+              snprintf(fname, sizeof(fname), "%s/%s-back.jpeg",
+                  dirname[d_places[num_files]], d_names[num_files]);
+
+              img = IMG_Load(fname);
+
+
+              if (img == NULL)
+              {
+                /* (Try PNG next) */
+                snprintf(fname, sizeof(fname), "%s/%s-back.png",
+                    dirname[d_places[num_files]], d_names[num_files]);
+
+                img = IMG_Load(fname);
+              }
+
+#ifndef NOG
+              if (img == NULL)
+              {
+                /* (Try SVG next) */
+                snprintf(fname, sizeof(fname), "%s/%s-back.svg",
+                    dirname[d_places[num_files]], d_names[num_files]);
+
+                img = load_svg(fname);
+              }
+#endif
+            }
+
+
+            if (img == NULL)
+            {
+              /* Didn't load a starter background (or didn't try!),
+                 try loading the actual image... */
+
+              snprintf(fname, sizeof(fname), "%s/%s",
+                  dirname[d_places[num_files]], f->d_name);
+              debug(fname);
+              img = myIMG_Load(fname);
+            }
+
+
+            show_progress_bar(screen);
+
+            if (img == NULL)
+            {
+              fprintf(stderr,
+                  "\nWarning: I can't open one of the saved files!\n"
+                  "%s\n"
+                  "The Simple DirectMedia Layer error that "
+                  "occurred was:\n" "%s\n\n", fname, SDL_GetError());
+
+              free(d_names[num_files]);
+              free(d_exts[num_files]);
+            }
+            else
+            {
+              /* Turn it into a thumbnail: */
+
+              img1 = SDL_DisplayFormatAlpha(img);
+              img2 = thumbnail2(img1, THUMB_W - 20, THUMB_H - 20, 0, 0);
+              SDL_FreeSurface(img1);
+
+              show_progress_bar(screen);
+
+              thumbs[num_files] = SDL_DisplayFormat(img2);
+              SDL_FreeSurface(img2);
+              if (thumbs[num_files] == NULL)
+              {
+                fprintf(stderr,
+                    "\nError: Couldn't create a thumbnail of "
+                    "saved image!\n" "%s\n", fname);
+              }
+
+              SDL_FreeSurface(img);
+
+              show_progress_bar(screen);
+
+
+              /* Let's save this thumbnail, so we don't have to
+                 create it again next time 'Open' is called: */
+
+              if (d_places[num_files] == PLACE_SAVED_DIR)
+              {
+                debug("Saving thumbnail for this one!");
+
+                snprintf(fname, sizeof(fname), "%s/.thumbs/%s-t.png",
+                    dirname[d_places[num_files]], d_names[num_files]);
+
+                fi = fopen(fname, "wb");
+                if (fi == NULL)
+                {
+                  fprintf(stderr,
+                      "\nError: Couldn't save thumbnail of "
+                      "saved image!\n"
+                      "%s\n"
+                      "The error that occurred was:\n"
+                      "%s\n\n", fname, strerror(errno));
+                }
+                else
+                {
+                  do_png_save(fi, fname, thumbs[num_files]);
+                }
+
+                show_progress_bar(screen);
+              }
+
+
+              num_files++;
+            }
+          }
+        }
+      }
+      else
+      {
+        /* It was a thumbnail file ("...-t.png") or immutable scene starter's
+           overlay layer ("...-front.png") */
+      }
+    }
+  }
+
+
+
+#ifdef DEBUG
+  printf("%d files were found!\n", num_files);
+#endif
+
+
+  /* Let user choose an image: */
+
+  // Instructions for 'New' file/color dialog  FIXME
+  freeme = textdir(gettext_noop("Choose the picture you want, "
+            "then click “Open”."));
+  draw_tux_text(TUX_BORED, freeme, 1);
+  free(freeme);
+
+  /* NOTE: cur is now set above; if file_id'th file is found, it's
+     set to that file's index; otherwise, we default to '0' */
+
+  update_list = 1;
+
+  done = 0;
+
+  last_click_which = -1;
+  last_click_time = 0;
+  last_click_button = -1;
+
+
+  do_setcursor(cursor_arrow);
+
+
+  do
+  {
+    /* Update screen: */
+
+    if (update_list)
+    {
+      /* Erase screen: */
+
+      dest.x = 96;
+      dest.y = 0;
+      dest.w = WINDOW_WIDTH - 96 - 96;
+      dest.h = 48 * 7 + 40 + HEIGHTOFFSET;
+
+      SDL_FillRect(screen, &dest, SDL_MapRGB(screen->format,
+            255, 255, 255));
+
+
+      /* Draw icons: */
+
+      for (i = cur; i < cur + 16 && i < num_files; i++)
+      {
+        /* Draw cursor: */
+
+        dest.x = THUMB_W * ((i - cur) % 4) + 96;
+        dest.y = THUMB_H * ((i - cur) / 4) + 24;
+
+        if (d_places[i] == PLACE_SAVED_DIR)
+        {
+          if (i == which)
+          {
+            SDL_BlitSurface(img_cursor_down, NULL, screen, &dest);
+            debug(d_names[i]);
+          }
+          else
+            SDL_BlitSurface(img_cursor_up, NULL, screen, &dest);
+        }
+        else
+        {
+          if (i == which)
+          {
+            SDL_BlitSurface(img_cursor_starter_down, NULL, screen, &dest);
+            debug(d_names[i]);
+          }
+          else
+            SDL_BlitSurface(img_cursor_starter_up, NULL, screen, &dest);
+        }
+
+
+
+        dest.x = THUMB_W * ((i - cur) % 4) + 96 + 10 +
+          (THUMB_W - 20 - thumbs[i]->w) / 2;
+        dest.y = THUMB_H * ((i - cur) / 4) + 24 + 10 +
+          (THUMB_H - 20 - thumbs[i]->h) / 2;
+
+        if (thumbs[i] != NULL)
+          SDL_BlitSurface(thumbs[i], NULL, screen, &dest);
+      }
+
+
+      /* Draw arrows: */
+
+      dest.x = (WINDOW_WIDTH - img_scroll_up->w) / 2;
+      dest.y = 0;
+
+      if (cur > 0)
+        SDL_BlitSurface(img_scroll_up, NULL, screen, &dest);
+      else
+        SDL_BlitSurface(img_scroll_up_off, NULL, screen, &dest);
+
+      dest.x = (WINDOW_WIDTH - img_scroll_up->w) / 2;
+      dest.y = (48 * 7 + 40 + HEIGHTOFFSET) - 48;
+
+      if (cur < num_files - 16)
+        SDL_BlitSurface(img_scroll_down, NULL, screen, &dest);
+      else
+        SDL_BlitSurface(img_scroll_down_off, NULL, screen, &dest);
+
+
+      /* "Open" button: */
+
+      dest.x = 96;
+      dest.y = (48 * 7 + 40 + HEIGHTOFFSET) - 48;
+      SDL_BlitSurface(img_open, NULL, screen, &dest);
+
+      dest.x = 96 + (48 - img_openlabels_open->w) / 2;
+      dest.y = (48 * 7 + 40 + HEIGHTOFFSET) - img_openlabels_open->h;
+      SDL_BlitSurface(img_openlabels_open, NULL, screen, &dest);
+
+
+      /* "Back" button: */
+
+      dest.x = WINDOW_WIDTH - 96 - 48;
+      dest.y = (48 * 7 + 40 + HEIGHTOFFSET) - 48;
+      SDL_BlitSurface(img_back, NULL, screen, &dest);
+
+      dest.x = WINDOW_WIDTH - 96 - 48 + (48 - img_openlabels_back->w) / 2;
+      dest.y = (48 * 7 + 40 + HEIGHTOFFSET) - img_openlabels_back->h;
+      SDL_BlitSurface(img_openlabels_back, NULL, screen, &dest);
+
+
+      SDL_Flip(screen);
+
+      update_list = 0;
+    }
+
+
+    mySDL_WaitEvent(&event);
+
+    if (event.type == SDL_QUIT)
+    {
+      done = 1;
+
+      /* FIXME: Handle SDL_Quit better */
+    }
+    else if (event.type == SDL_ACTIVEEVENT)
+    {
+      handle_active(&event);
+    }
+    else if (event.type == SDL_KEYUP)
+    {
+      key = event.key.keysym.sym;
+
+      handle_keymouse(key, SDL_KEYUP);
+    }
+    else if (event.type == SDL_KEYDOWN)
+    {
+      key = event.key.keysym.sym;
+
+      handle_keymouse(key, SDL_KEYDOWN);
+
+      if (key == SDLK_LEFT)
+      {
+        if (which > 0)
+        {
+          which--;
+
+          if (which < cur)
+            cur = cur - 4;
+
+          update_list = 1;
+        }
+      }
+      else if (key == SDLK_RIGHT)
+      {
+        if (which < num_files - 1)
+        {
+          which++;
+
+          if (which >= cur + 16)
+            cur = cur + 4;
+
+          update_list = 1;
+        }
+      }
+      else if (key == SDLK_UP)
+      {
+        if (which >= 0)
+        {
+          which = which - 4;
+
+          if (which < 0)
+            which = 0;
+
+          if (which < cur)
+            cur = cur - 4;
+
+          update_list = 1;
+        }
+      }
+      else if (key == SDLK_DOWN)
+      {
+        if (which < num_files)
+        {
+          which = which + 4;
+
+          if (which >= num_files)
+            which = num_files - 1;
+
+          if (which >= cur + 16)
+            cur = cur + 4;
+
+          update_list = 1;
+        }
+      }
+      else if (key == SDLK_RETURN || key == SDLK_SPACE)
+      {
+        /* Open */
+
+        done = 1;
+        playsound(screen, 1, SND_CLICK, 1, SNDPOS_LEFT, SNDDIST_NEAR);
+      }
+      else if (key == SDLK_ESCAPE)
+      {
+        /* Go back: */
+
+        which = -1;
+        done = 1;
+        playsound(screen, 1, SND_CLICK, 1, SNDPOS_RIGHT, SNDDIST_NEAR);
+      }
+    }
+    else if (event.type == SDL_MOUSEBUTTONDOWN &&
+        valid_click(event.button.button))
+    {
+      if (event.button.x >= 96 && event.button.x < WINDOW_WIDTH - 96 &&
+          event.button.y >= 24 &&
+          event.button.y < (48 * 7 + 40 + HEIGHTOFFSET - 48))
+      {
+        /* Picked an icon! */
+
+        which = ((event.button.x - 96) / (THUMB_W) +
+            (((event.button.y - 24) / THUMB_H) * 4)) + cur;
+
+        if (which < num_files)
+        {
+          playsound(screen, 1, SND_BLEEP, 1, event.button.x, SNDDIST_NEAR);
+          update_list = 1;
+
+
+          if (which == last_click_which &&
+              SDL_GetTicks() < last_click_time + 1000 &&
+              event.button.button == last_click_button)
+          {
+            /* Double-click! */
+
+            done = 1;
+          }
+
+          last_click_which = which;
+          last_click_time = SDL_GetTicks();
+          last_click_button = event.button.button;
+        }
+      }
+      else if (event.button.x >= (WINDOW_WIDTH - img_scroll_up->w) / 2 &&
+          event.button.x <= (WINDOW_WIDTH + img_scroll_up->w) / 2)
+      {
+        if (event.button.y < 24)
+        {
+          /* Up scroll button: */
+
+          if (cur > 0)
+          {
+            cur = cur - 4;
+            update_list = 1;
+            playsound(screen, 1, SND_SCROLL, 1, SNDPOS_CENTER,
+                SNDDIST_NEAR);
+
+            if (cur == 0)
+              do_setcursor(cursor_arrow);
+          }
+
+          if (which >= cur + 16)
+            which = which - 4;
+        }
+        else if (event.button.y >= (48 * 7 + 40 + HEIGHTOFFSET - 48) &&
+            event.button.y < (48 * 7 + 40 + HEIGHTOFFSET - 24))
+        {
+          /* Down scroll button: */
+
+          if (cur < num_files - 16)
+          {
+            cur = cur + 4;
+            update_list = 1;
+            playsound(screen, 1, SND_SCROLL, 1, SNDPOS_CENTER,
+                SNDDIST_NEAR);
+
+            if (cur >= num_files - 16)
+              do_setcursor(cursor_arrow);
+          }
+
+          if (which < cur)
+            which = which + 4;
+        }
+      }
+      else if (event.button.x >= 96 && event.button.x < 96 + 48 &&
+          event.button.y >= (48 * 7 + 40 + HEIGHTOFFSET) - 48 &&
+          event.button.y < (48 * 7 + 40 + HEIGHTOFFSET))
+      {
+        /* Open */
+
+        done = 1;
+        playsound(screen, 1, SND_CLICK, 1, SNDPOS_LEFT, SNDDIST_NEAR);
+      }
+      else if (event.button.x >= (WINDOW_WIDTH - 96 - 48) &&
+          event.button.x < (WINDOW_WIDTH - 96) &&
+          event.button.y >= (48 * 7 + 40 + HEIGHTOFFSET) - 48 &&
+          event.button.y < (48 * 7 + 40 + HEIGHTOFFSET))
+      {
+        /* Back */
+
+        which = -1;
+        done = 1;
+        playsound(screen, 1, SND_CLICK, 1, SNDPOS_RIGHT, SNDDIST_NEAR);
+      }
+    }
+    else if (event.type == SDL_MOUSEBUTTONDOWN &&
+        event.button.button >= 4 && event.button.button <= 5 && wheely)
+    {
+      /* Scroll wheel! */
+
+      if (event.button.button == 4 && cur > 0)
+      {
+        cur = cur - 4;
+        update_list = 1;
+        playsound(screen, 1, SND_SCROLL, 1, SNDPOS_CENTER, SNDDIST_NEAR);
+
+        if (cur == 0)
+          do_setcursor(cursor_arrow);
+
+        if (which >= cur + 16)
+          which = which - 4;
+      }
+      else if (event.button.button == 5 && cur < num_files - 16)
+      {
+        cur = cur + 4;
+        update_list = 1;
+        playsound(screen, 1, SND_SCROLL, 1, SNDPOS_CENTER, SNDDIST_NEAR);
+
+        if (cur >= num_files - 16)
+          do_setcursor(cursor_arrow);
+
+        if (which < cur)
+          which = which + 4;
+      }
+    }
+    else if (event.type == SDL_MOUSEMOTION)
+    {
+      /* Deal with mouse pointer shape! */
+
+      if (event.button.y < 24 &&
+          event.button.x >= (WINDOW_WIDTH - img_scroll_up->w) / 2 &&
+          event.button.x <= (WINDOW_WIDTH + img_scroll_up->w) / 2 &&
+          cur > 0)
+      {
+        /* Scroll up button: */
+
+        do_setcursor(cursor_up);
+      }
+      else if (event.button.y >= (48 * 7 + 40 + HEIGHTOFFSET - 48) &&
+          event.button.y < (48 * 7 + 40 + HEIGHTOFFSET - 24) &&
+          event.button.x >= (WINDOW_WIDTH - img_scroll_up->w) / 2 &&
+          event.button.x <= (WINDOW_WIDTH + img_scroll_up->w) / 2 &&
+          cur < num_files - 16)
+      {
+        /* Scroll down button: */
+
+        do_setcursor(cursor_down);
+      }
+      else if (((event.button.x >= 96 && event.button.x < 96 + 48 + 48) ||
+            (event.button.x >= (WINDOW_WIDTH - 96 - 48) &&
+             event.button.x < (WINDOW_WIDTH - 96)) ||
+            (event.button.x >= (WINDOW_WIDTH - 96 - 48 - 48) &&
+             event.button.x < (WINDOW_WIDTH - 48 - 96) &&
+             d_places[which] != PLACE_STARTERS_DIR &&
+             d_places[which] != PLACE_PERSONAL_STARTERS_DIR)) &&
+          event.button.y >= (48 * 7 + 40 + HEIGHTOFFSET) - 48 &&
+          event.button.y < (48 * 7 + 40 + HEIGHTOFFSET))
+      {
+        /* One of the command buttons: */
+
+        do_setcursor(cursor_hand);
+      }
+      else if (event.button.x >= 96 && event.button.x < WINDOW_WIDTH - 96 &&
+          event.button.y > 24 &&
+          event.button.y < (48 * 7 + 40 + HEIGHTOFFSET) - 48 &&
+          ((((event.button.x - 96) / (THUMB_W) +
+             (((event.button.y - 24) / THUMB_H) * 4)) +
+            cur) < num_files))
+      {
+        /* One of the thumbnails: */
+
+        do_setcursor(cursor_hand);
+      }
+      else
+      {
+        /* Unclickable... */
+
+        do_setcursor(cursor_arrow);
+      }
+    }
+  }
+  while (!done);
+
+
+  /* Load the chosen starter, or start with a blank solid color: */
+
+  if (which != -1)
+  {
+    /* Save old one first? */
+
+    if (!been_saved && !disable_save)
+    {
+      if (do_prompt_image_snd(PROMPT_OPEN_SAVE_TXT,
+            PROMPT_OPEN_SAVE_YES,
+            PROMPT_OPEN_SAVE_NO,
+            img_tools[TOOL_SAVE], NULL, NULL,
+            SND_AREYOUSURE))
+      {
+        do_save(TOOL_NEW, 1);
+      }
+    }
+
+
+    if (which >= first_starter)
+    {
+      /* Load a starter: */
+
+      /* Figure out filename: */
+
+      snprintf(fname, sizeof(fname), "%s/%s%s",
+            dirname[d_places[which]], d_names[which], d_exts[which]);
+
+      img = myIMG_Load(fname);
+
+      if (img == NULL)
+      {
+        fprintf(stderr,
+            "\nWarning: Couldn't load the saved image!\n"
+            "%s\n"
+            "The Simple DirectMedia Layer error that occurred "
+            "was:\n" "%s\n\n", fname, SDL_GetError());
+
+        do_prompt(PROMPT_OPEN_UNOPENABLE_TXT,
+            PROMPT_OPEN_UNOPENABLE_YES, "");
+      }
+      else
+      {
+        free_surface(&img_starter);
+        free_surface(&img_starter_bkgd);
+        starter_mirrored = 0;
+        starter_flipped = 0;
+        starter_personal = 0;
+
+        autoscale_copy_smear_free(img, canvas, SDL_BlitSurface);
+
+        cur_undo = 0;
+        oldest_undo = 0;
+        newest_undo = 0;
+
+        /* Immutable 'starter' image;
+           we'll need to save a new image when saving...: */
+
+        been_saved = 1;
+
+        file_id[0] = '\0';
+        strcpy(starter_id, d_names[which]);
+
+        if (d_places[which] == PLACE_PERSONAL_STARTERS_DIR)
+          starter_personal = 1;
+        else
+          starter_personal = 0;
+
+        load_starter(starter_id);
+
+        canvas_color_r = 255;
+        canvas_color_g = 255;
+        canvas_color_b = 255;
+
+        SDL_FillRect(canvas, NULL,
+                     SDL_MapRGB(canvas->format, 255, 255, 255));
+        SDL_BlitSurface(img_starter_bkgd, NULL, canvas, NULL);
+        SDL_BlitSurface(img_starter, NULL, canvas, NULL);
+      }
+    }
+    else
+    {	
+      free_surface(&img_starter);
+      free_surface(&img_starter_bkgd);
+      starter_mirrored = 0;
+      starter_flipped = 0;
+      starter_personal = 0;
+
+      canvas_color_r = color_hexes[which][0];
+      canvas_color_g = color_hexes[which][1];
+      canvas_color_b = color_hexes[which][2];
+ 
+      SDL_FillRect(canvas, NULL, SDL_MapRGB(canvas->format,
+    		                canvas_color_r,
+    				canvas_color_g,
+    				canvas_color_b));
+
+      cur_undo = 0;
+      oldest_undo = 0;
+      newest_undo = 0;
+
+      been_saved = 1;
+      reset_avail_tools();
+
+      tool_avail_bak[TOOL_UNDO] = 0;
+      tool_avail_bak[TOOL_REDO] = 0;
+
+      file_id[0] = '\0';
+      starter_id[0] = '\0';
+
+      playsound(screen, 1, SND_HARP, 1, SNDPOS_CENTER, SNDDIST_NEAR);
+    }
+  }
+
+  update_canvas(0, 0, WINDOW_WIDTH - 96 - 96, 48 * 7 + 40 + HEIGHTOFFSET);
+
+
+  /* Clean up: */
+
+  free_surface_array(thumbs, num_files);
+
+  free(thumbs);
+
+  for (i = 0; i < num_files; i++)
+  {
+    if (d_names[i] != NULL)
+      free(d_names[i]);
+    if (d_exts[i] != NULL)
+      free(d_exts[i]);
+  }
+
+  for (i = 0; i < NUM_PLACES_TO_LOOK; i++)
+    if (dirname[i] != NULL)
+      free(dirname[i]);
+
+  free(d_names);
+  free(d_exts);
+  free(d_places);
+
+  return(which != -1);
+}
+
+#if !defined(WIN32) && !defined(__APPLE__) && !defined(__BEOS__)
+void show_available_papersizes(FILE * fi, char * prg)
+{
+  const struct paper * ppr;
+  int cnt;
+
+  fprintf(fi, "Usage: %s [--papersize PAPERSIZE]\n", prg);
+  fprintf(fi, "\n");
+  fprintf(fi, "PAPERSIZE may be one of:\n");
+
+  ppr = paperfirst();
+  cnt = 0;
+
+  while (ppr != NULL)
+  {
+    fprintf(fi, "\t%s", papername(ppr));
+    cnt++;
+    if (cnt == 5)
+    {
+      cnt = 0;
+      fprintf(fi, "\n");
+    }
+
+    ppr = papernext(ppr);
+  }
+
+  fprintf(fi, "\n");
+  if (cnt != 0)
+    fprintf(fi, "\n");
+}
+#endif
+
+/* FIXME: Use a bitmask! */
+
+void reset_touched(void)
+{
+  int x, y;
+
+  for (y = 0; y < canvas->h; y++)
+  {
+    for (x = 0; x < canvas->w; x++)
+    {
+      touched[(y * canvas->w) + x] = 0;
+    }
+  }
+}
+
+Uint8 magic_touched(int x, int y)
+{
+  Uint8 res;
+
+  if (x < 0 || x >= canvas->w || y < 0 || y >= canvas->h)
+    return(1);
+
+  res = touched[(y * canvas->w) + x];
+  touched[(y* canvas->w) + x] = 1;
+
+  return(res);
 }
 

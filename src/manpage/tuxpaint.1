@@ -1,5 +1,5 @@
-.\" tuxpaint.1 - 2007.07.14
-.TH TUXPAINT 1 "14 July 2007" "0.9.18" "Tux Paint"
+.\" tuxpaint.1 - 2007.07.24
+.TH TUXPAINT 1 "24 July 2007" "0.9.18" "Tux Paint"
 .SH NAME
 tuxpaint -- A drawing program for young children.
 
@@ -18,7 +18,7 @@ tuxpaint -- A drawing program for young children.
 [\-\-noprint]
 [\-\-printdelay=\fISECONDS\fP]
 [\-\-printcfg]
-[\-\-papersize=\fIPAPERSIZE\fP]
+[\-\-papersize \fIPAPERSIZE\fP | \-\-papersize help]
 [\-\-simpleshapes]
 [\-\-uppercase]
 [\-\-grab]
@@ -157,7 +157,7 @@ be loaded when \fITux Paint\fP starts up, and setting changes will be saved
 for next time.
 
 .TP 8
-.B \-\-papersize=\fIPAPERSIZE\fP
+.B \-\-papersize \fIPAPERSIZE\fP
 (Only when PostScript printing is used \- not Windows, Mac OS X or BeOS.)
 Ask \fITux Paint\fP to generate PostScript of a particular paper size.
 Valid sizes are those supported by libpaper.  See papersize(5).
