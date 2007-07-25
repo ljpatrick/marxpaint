@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-07-24 12:05-0700\n"
+"POT-Creation-Date: 2007-07-24 23:16-0700\n"
 "PO-Revision-Date: 2006-10-09 20:32+0200\n"
 "Last-Translator: Vincent Mahlangu <vmahlangu@parliament.gov.za>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -472,6 +472,9 @@ msgstr ""
 #. Wait while Text tool finishes loading fonts
 msgid "Please wait..."
 msgstr "Ngibawa ujame..."
+
+msgid "Pick a color."
+msgstr ""
 
 #. Open dialog: 'Erase' button, to erase/deleted the selected picture
 msgid "Erase"

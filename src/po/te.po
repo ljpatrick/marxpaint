@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-07-24 12:05-0700\n"
+"POT-Creation-Date: 2007-07-24 23:16-0700\n"
 "PO-Revision-Date: 2007-03-15 17:27+0530\n"
 "Last-Translator: pavithran <pavithran.s@gmail.com>\n"
 "Language-Team: Telugu <indlinux-telugu@lists.sourceforge.net>\n"
@@ -464,6 +464,9 @@ msgstr ""
 #. Wait while Text tool finishes loading fonts
 msgid "Please wait..."
 msgstr "దయచేసి ఆగండి"
+
+msgid "Pick a color."
+msgstr ""
 
 #. Open dialog: 'Erase' button, to erase/deleted the selected picture
 msgid "Erase"

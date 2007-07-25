@@ -17,7 +17,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Tuxpaint cvs 2007-06-23\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-07-24 12:05-0700\n"
+"POT-Creation-Date: 2007-07-24 23:16-0700\n"
 "PO-Revision-Date: 2007-06-24 11:39+0200\n"
 "Last-Translator: Pere Pujal i Carabantes <ppujal@airtel.net>\n"
 "Language-Team: Català <linux-ca@chanae.alphanet.ch>\n"
@@ -485,6 +485,9 @@ msgstr ""
 #. Wait while Text tool finishes loading fonts
 msgid "Please wait..."
 msgstr "Espereu, si us plau..."
+
+msgid "Pick a color."
+msgstr ""
 
 #. Open dialog: 'Erase' button, to erase/deleted the selected picture
 msgid "Erase"

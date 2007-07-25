@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TuxPaint\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-07-24 12:05-0700\n"
+"POT-Creation-Date: 2007-07-24 23:16-0700\n"
 "PO-Revision-Date: 2005-09-13 04:48+0200\n"
 "Last-Translator: Serhij Dubyk <dubyk@lsl.lviv.ua>\n"
 "Language-Team: Serhij Dubyk <dubyk@lsl.lviv.ua>\n"
@@ -490,6 +490,9 @@ msgstr ""
 
 #. Wait while Text tool finishes loading fonts
 msgid "Please wait..."
+msgstr ""
+
+msgid "Pick a color."
 msgstr ""
 
 #  'Erase' label:
