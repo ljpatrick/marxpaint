@@ -159,7 +159,7 @@ MOUSE_CFLAGS=-Isrc/$(MOUSEDIR) -D$(CURSOR_SHAPES)_CURSOR_SHAPES
 
 # "make" with no arguments builds the program and man page from sources:
 
-all:	tuxpaint translations magic-plugins
+all:	tuxpaint translations magic-plugins tp-magic-config
 	@echo
 	@echo "--------------------------------------------------------------"
 	@echo
@@ -351,11 +351,7 @@ install-magic-plugins:
 install-magic-plugin-dev:	src/tp_magic_api.h
 	@echo
 	@echo "...Installing Magic Tool plug-in development files and docs..."
-	@-rm $(BIN_PREFIX)/tp-magic-config
-	@sed src/tp-magic-config.sh -e s/__VERSION__/$(VER_VERSION)/ \
-		-e s/__APIVERSION__/$(MAGIC_API_VERSION)/ \
-		-e s=__INCLUDE__=$(INCLUDE_PREFIX)/tuxpaint= > \
-		$(BIN_PREFIX)/tp-magic-config
+	@cp tp-magic-config $(BIN_PREFIX)
 	@chmod a+rx,g-w,o-w $(BIN_PREFIX)/tp-magic-config
 	@install -d $(INCLUDE_PREFIX)/tuxpaint
 	@cp src/tp_magic_api.h $(INCLUDE_PREFIX)/tuxpaint
@@ -492,6 +488,7 @@ clean:
 	@#if [ -d obj ]; then rmdir obj; fi
 	@-rm -f trans/*.mo
 	@-rm -f src/tp_magic_api.h
+	@-rm -f tp-magic-config
 	@if [ -d trans ]; then rmdir trans; fi
 	@cd magic ; make clean
 	@echo
@@ -927,6 +924,14 @@ src/tp_magic_api.h:	src/tp_magic_api.h.in
 	@echo "...Generating 'Magic' tool API development header file..."
 	@cat src/tp_magic_api.h.in | sed -e s/__APIVERSION__/$(MAGIC_API_VERSION)/ > src/tp_magic_api.h
 
+
+tp-magic-config:	src/tp-magic-config.sh.in Makefile
+	@echo
+	@echo "...Generating 'Magic' tool API configuration script..."
+	@sed src/tp-magic-config.sh.in -e s/__VERSION__/$(VER_VERSION)/ \
+		-e s/__APIVERSION__/$(MAGIC_API_VERSION)/ \
+		-e s=__INCLUDE__=$(INCLUDE_PREFIX)/tuxpaint= > \
+		tp-magic-config
 
 # Make the "obj" directory to throw the object(s) into:
 # (not necessary any more; bjk 2006.02.20)
