@@ -91,6 +91,7 @@
 #define COLORSEL_CLOBBER 2	// colors get scribbled over
 #define COLORSEL_REFRESH 4	// redraw the colors, either on or off
 #define COLORSEL_CLOBBER_WIPE 8 // draw the (greyed out) colors, but don't disable
+#define COLORSEL_FORCE_REDRAW 16 // enable, and force redraw (to make color picker work)
 
 static unsigned draw_colors(unsigned action);
 
@@ -940,6 +941,8 @@ static SDL_Surface *img_scroll_up, *img_scroll_down;
 static SDL_Surface *img_scroll_up_off, *img_scroll_down_off;
 static SDL_Surface *img_grow, *img_shrink;
 static SDL_Surface *img_bold, *img_italic;
+static SDL_Surface *img_color_picker, *img_color_picker_thumb, *img_paintwell;
+int color_picker_x, color_picker_y;
 
 static SDL_Surface *img_title_on, *img_title_off,
   *img_title_large_on, *img_title_large_off;
@@ -1431,6 +1434,7 @@ static void get_new_file_id(void);
 static int do_quit(int tool);
 int do_open(void);
 int do_new_dialog(void);
+int do_color_picker(void);
 int do_slideshow(void);
 void play_slideshow(int * selected, int num_selected, char * dirname,
 		    char **d_names, char **d_exts, int speed);
@@ -2023,6 +2027,11 @@ static void mainloop(void)
 	  hide_blinking_cursor();
   	  shape_tool_mode = SHAPE_TOOL_MODE_DONE;
 
+          disable_avail_tools();
+          draw_toolbar();
+          draw_colors(COLORSEL_CLOBBER_WIPE);
+          draw_none();
+
           if (do_new_dialog() == 0)
           {
 	    draw_tux_text(tool_tux[TUX_DEFAULT], TIP_NEW_ABORT, 1);
@@ -2031,8 +2040,24 @@ static void mainloop(void)
 	      do_render_cur_text(0);
 	  }
 
+	  enable_avail_tools();
+
 	  draw_toolbar();
 	  update_screen_rect(&r_tools);
+	  draw_colors(COLORSEL_REFRESH);
+
+	  if (cur_tool == TOOL_BRUSH || cur_tool == TOOL_LINES)
+	    draw_brushes();
+	  else if (cur_tool == TOOL_MAGIC)
+	    draw_magic();
+	  else if (cur_tool == TOOL_STAMP)
+	    draw_stamps();
+	  else if (cur_tool == TOOL_TEXT)
+	    draw_fonts();
+	  else if (cur_tool == TOOL_SHAPES)
+	    draw_shapes();
+	  else if (cur_tool == TOOL_ERASER)
+	    draw_erasers();
 	}
 	else if (key == SDLK_s && (mod & KMOD_CTRL) && !noshortcuts)
 	{
@@ -2052,11 +2077,12 @@ static void mainloop(void)
 	  update_screen_rect(&r_tools);
 	}
 #ifdef __APPLE__
-    else if (key == SDLK_p && (mod & KMOD_CTRL) && (mod & KMOD_SHIFT) && !noshortcuts) {
+    else if (key == SDLK_p && (mod & KMOD_CTRL) && (mod & KMOD_SHIFT) &&
+!noshortcuts) {
         /* Ctrl-Shft-P - Page Setup */
         DisplayPageSetup(canvas);
     }
-#endif    
+#endif
     else if (key == SDLK_p && (mod & KMOD_CTRL) && !noshortcuts)
     {
       /* Ctrl-P - Print */
@@ -2468,6 +2494,11 @@ static void mainloop(void)
 	    {
   	      shape_tool_mode = SHAPE_TOOL_MODE_DONE;
 
+              disable_avail_tools();
+              draw_toolbar();
+              draw_colors(COLORSEL_CLOBBER_WIPE);
+              draw_none();
+
               if (do_new_dialog() == 0)
 	      {
                 cur_tool = old_tool;
@@ -2479,8 +2510,25 @@ static void mainloop(void)
 	      }
 
 	      cur_tool = old_tool;
-	      draw_toolbar();
-	      update_screen_rect(&r_tools);
+
+              enable_avail_tools();
+
+              draw_toolbar();
+              update_screen_rect(&r_tools);
+              draw_colors(COLORSEL_REFRESH);
+
+              if (cur_tool == TOOL_BRUSH || cur_tool == TOOL_LINES)
+                draw_brushes();
+              else if (cur_tool == TOOL_MAGIC)
+                draw_magic();
+              else if (cur_tool == TOOL_STAMP)
+                draw_stamps();
+              else if (cur_tool == TOOL_TEXT)
+                draw_fonts();
+              else if (cur_tool == TOOL_SHAPES)
+                draw_shapes();
+              else if (cur_tool == TOOL_ERASER)
+                draw_erasers();
 	    }
 	    else if (cur_tool == TOOL_PRINT)
 	    {
@@ -3000,10 +3048,48 @@ static void mainloop(void)
 	  if (which >= 0 && which < NUM_COLORS)
 	  {
 	    cur_color = which;
-	    playsound(screen, 1, SND_BUBBLE, 1, event.button.x, SNDDIST_NEAR);
-	    draw_colors(COLORSEL_REFRESH);
-	    render_brush();
 	    draw_tux_text(TUX_KISS, color_names[cur_color], 1);
+
+            if (cur_color == (unsigned) (NUM_COLORS - 1))
+	    {
+              disable_avail_tools();
+              draw_toolbar();
+              draw_colors(COLORSEL_CLOBBER_WIPE);
+              draw_none();
+
+
+              do_color_picker();
+
+
+              enable_avail_tools();
+              draw_toolbar();
+              update_screen_rect(&r_tools);
+
+              draw_tux_text(TUX_GREAT, tool_tips[cur_tool], 1);
+
+              draw_colors(COLORSEL_FORCE_REDRAW);
+	      
+	      if (cur_tool == TOOL_BRUSH || cur_tool == TOOL_LINES)
+		draw_brushes();
+	      else if (cur_tool == TOOL_MAGIC)
+		draw_magic();
+	      else if (cur_tool == TOOL_STAMP)
+		draw_stamps();
+	      else if (cur_tool == TOOL_TEXT)
+		draw_fonts();
+	      else if (cur_tool == TOOL_SHAPES)
+		draw_shapes();
+	      else if (cur_tool == TOOL_ERASER)
+		draw_erasers();
+
+	      SDL_Flip(screen);
+	    }
+	    else
+              draw_colors(COLORSEL_REFRESH);
+
+	    playsound(screen, 1, SND_BUBBLE, 1, event.button.x, SNDDIST_NEAR);
+	    render_brush();
+	    
 
 	    if (cur_tool == TOOL_TEXT)
 	      do_render_cur_text(0);
@@ -5475,7 +5561,6 @@ static int load_user_fonts_stub(void *vp)
 
 static void setup(int argc, char *argv[])
 {
-
   int i, j, ok_to_use_sysconfig;
   char str[128];
   char *upstr;
@@ -5495,10 +5580,9 @@ static void setup(int argc, char *argv[])
   Uint32 init_flags;
   char tmp_str[128];
   SDL_Surface *img1;
-  SDL_Surface *img2;
   Uint32(*getpixel_tmp_btn_up) (SDL_Surface *, int, int);
   Uint32(*getpixel_tmp_btn_down) (SDL_Surface *, int, int);
-  Uint32(*getpixel_img2) (SDL_Surface *, int, int);
+  Uint32(*getpixel_img_paintwell) (SDL_Surface *, int, int);
 
 
 
@@ -6444,6 +6528,21 @@ static void setup(int argc, char *argv[])
   }
 
 
+  /* Add "Color Picker" color: */
+
+  color_hexes = (Uint8 **) realloc(color_hexes, sizeof(Uint8 *) * (NUM_COLORS + 1));
+
+  color_names = (char **) realloc(color_names, sizeof(char *) * (NUM_COLORS + 1));
+  color_names[NUM_COLORS] = strdup(gettext("Pick a color."));
+  color_hexes[NUM_COLORS] = (Uint8 *) malloc(sizeof(Uint8) * 3);
+  color_hexes[NUM_COLORS][0] = 0;
+  color_hexes[NUM_COLORS][1] = 0;
+  color_hexes[NUM_COLORS][2] = 0;
+  color_picker_x = 0;
+  color_picker_y = 0;
+  NUM_COLORS++;
+
+
   /* Set window icon and caption: */
 
 #ifndef __APPLE__
@@ -6972,6 +7071,8 @@ static void setup(int argc, char *argv[])
 
   show_progress_bar(screen);
 
+  img_color_picker = loadimage(DATA_PREFIX "images/ui/color_picker.png");
+
   /* Create toolbox and selector labels: */
 
   for (i = 0; i < NUM_TITLES; i++)
@@ -7005,12 +7106,15 @@ static void setup(int argc, char *argv[])
 
   /* Create appropriately-shaped buttons: */
   img1 = loadimage(DATA_PREFIX "images/ui/paintwell.png");
-  img2 = thumbnail(img1, color_button_w, color_button_h, 0);
+  img_paintwell = thumbnail(img1, color_button_w, color_button_h, 0);
   tmp_btn_up = thumbnail(img_btn_up, color_button_w, color_button_h, 0);
   tmp_btn_down = thumbnail(img_btn_down, color_button_w, color_button_h, 0);
   img_color_btn_off =
     thumbnail(img_btn_off, color_button_w, color_button_h, 0);
   SDL_FreeSurface(img1);
+
+  img_color_picker_thumb = thumbnail(img_color_picker,
+				     color_button_w, color_button_h, 0);
 
   /* Create surfaces to draw them into: */
 
@@ -7047,7 +7151,7 @@ static void setup(int argc, char *argv[])
 
   getpixel_tmp_btn_up = getpixels[tmp_btn_up->format->BytesPerPixel];
   getpixel_tmp_btn_down = getpixels[tmp_btn_down->format->BytesPerPixel];
-  getpixel_img2 = getpixels[img2->format->BytesPerPixel];
+  getpixel_img_paintwell = getpixels[img_paintwell->format->BytesPerPixel];
 
 
   for (y = 0; y < tmp_btn_up->h /* 48 */ ; y++)
@@ -7069,7 +7173,7 @@ static void setup(int argc, char *argv[])
       rd = sRGB_to_linear_table[r];
       gd = sRGB_to_linear_table[g];
       bd = sRGB_to_linear_table[b];
-      SDL_GetRGBA(getpixel_img2(img2, x, y), img2->format, &r, &g, &b, &a);
+      SDL_GetRGBA(getpixel_img_paintwell(img_paintwell, x, y), img_paintwell->format, &r, &g, &b, &a);
       aa = a / 255.0;
 
       for (i = 0; i < NUM_COLORS; i++)
@@ -7077,18 +7181,34 @@ static void setup(int argc, char *argv[])
 	double rh = sRGB_to_linear_table[color_hexes[i][0]];
 	double gh = sRGB_to_linear_table[color_hexes[i][1]];
 	double bh = sRGB_to_linear_table[color_hexes[i][2]];
-	putpixels[img_color_btns[i]->format->BytesPerPixel]
-	  (img_color_btns[i], x, y,
-	   SDL_MapRGB(img_color_btns[i]->format,
-		      linear_to_sRGB(rh * aa + ru * (1.0 - aa)),
-		      linear_to_sRGB(gh * aa + gu * (1.0 - aa)),
-		      linear_to_sRGB(bh * aa + bu * (1.0 - aa))));
-	putpixels[img_color_btns[i]->format->BytesPerPixel]
-	  (img_color_btns[i + NUM_COLORS], x, y,
-	   SDL_MapRGB(img_color_btns[i + NUM_COLORS]->format,
-		      linear_to_sRGB(rh * aa + rd * (1.0 - aa)),
-		      linear_to_sRGB(gh * aa + gd * (1.0 - aa)),
-		      linear_to_sRGB(bh * aa + bd * (1.0 - aa))));
+
+	if (i == NUM_COLORS - 1)
+	{
+          putpixels[img_color_btns[i]->format->BytesPerPixel]
+            (img_color_btns[i], x, y,
+             getpixels[img_color_picker_thumb->format->BytesPerPixel]
+               (img_color_picker_thumb, x, y));
+          putpixels[img_color_btns[i + NUM_COLORS]->format->BytesPerPixel]
+            (img_color_btns[i + NUM_COLORS], x, y,
+             getpixels[img_color_picker_thumb->format->BytesPerPixel]
+               (img_color_picker_thumb, x, y));
+        }
+
+        if (i < NUM_COLORS - 1 || a == 255)
+        {
+	  putpixels[img_color_btns[i]->format->BytesPerPixel]
+	      (img_color_btns[i], x, y,
+	       SDL_MapRGB(img_color_btns[i]->format,
+		        linear_to_sRGB(rh * aa + ru * (1.0 - aa)),
+		        linear_to_sRGB(gh * aa + gu * (1.0 - aa)),
+		        linear_to_sRGB(bh * aa + bu * (1.0 - aa))));
+	  putpixels[img_color_btns[i + NUM_COLORS]->format->BytesPerPixel]
+	      (img_color_btns[i + NUM_COLORS], x, y,
+	       SDL_MapRGB(img_color_btns[i + NUM_COLORS]->format,
+		        linear_to_sRGB(rh * aa + rd * (1.0 - aa)),
+		        linear_to_sRGB(gh * aa + gd * (1.0 - aa)),
+		        linear_to_sRGB(bh * aa + bd * (1.0 - aa))));
+	}
       }
     }
   }
@@ -7100,7 +7220,6 @@ static void setup(int argc, char *argv[])
   SDL_UnlockSurface(tmp_btn_down);
   SDL_FreeSurface(tmp_btn_up);
   SDL_FreeSurface(tmp_btn_down);
-  SDL_FreeSurface(img2);
 
 #endif
 
@@ -7555,15 +7674,16 @@ static unsigned draw_colors(unsigned action)
     colors_state &= ~COLORSEL_CLOBBER;
   else if (action == COLORSEL_DISABLE)
     colors_state = COLORSEL_DISABLE;
-  else if (action == COLORSEL_ENABLE)
+  else if (action == COLORSEL_ENABLE || action == COLORSEL_FORCE_REDRAW)
     colors_state = COLORSEL_ENABLE;
 
   colors_are_selectable = (colors_state == COLORSEL_ENABLE);
 
   if (colors_state & COLORSEL_CLOBBER && action != COLORSEL_CLOBBER_WIPE)
     return old_colors_state;
+
   if (cur_color == old_color && colors_state == old_colors_state &&
-      action != COLORSEL_CLOBBER_WIPE)
+      action != COLORSEL_CLOBBER_WIPE && action != COLORSEL_FORCE_REDRAW)
     return old_colors_state;
 
   old_color = cur_color;
@@ -16481,8 +16601,6 @@ int do_new_dialog(void)
   num_files_in_dirs = 0;
 
 
-  /* FIXME: Propagate first entries with colors from palette */
-
   first_starter = 0;
 
 
@@ -16568,27 +16686,38 @@ int do_new_dialog(void)
 
   for (j = 0; j < NUM_COLORS; j++)
   {
-    thumbs[num_files] = SDL_CreateRGBSurface(screen->flags,
+    if (j < NUM_COLORS - 1)
+    {
+      /* Palette colors: */
+
+      thumbs[num_files] = SDL_CreateRGBSurface(screen->flags,
                                              THUMB_W - 20, THUMB_H - 20,
                                 screen->format->BitsPerPixel,
                                 screen->format->Rmask,
                                 screen->format->Gmask,
                                 screen->format->Bmask, 0);
 
-    if (thumbs[num_files] != NULL)
-    {
-      SDL_FillRect(thumbs[num_files], NULL,
-                   SDL_MapRGB(thumbs[num_files]->format,
-                              color_hexes[j][0],
-                              color_hexes[j][1],
-                              color_hexes[j][2]));
-
-      d_places[num_files] = PLACE_COLOR_PALETTE;
-      d_names[num_files] = NULL;
-      d_exts[num_files] = NULL;
-
-      num_files++;
+      if (thumbs[num_files] != NULL)
+      {
+        SDL_FillRect(thumbs[num_files], NULL,
+                     SDL_MapRGB(thumbs[num_files]->format,
+                                color_hexes[j][0],
+                                color_hexes[j][1],
+                                color_hexes[j][2]));
+      }
     }
+    else
+    {
+      /* Color picker: */
+
+      thumbs[num_files] = thumbnail(img_color_picker, THUMB_W - 20, THUMB_H - 20, 0);
+    }
+
+    d_places[num_files] = PLACE_COLOR_PALETTE;
+    d_names[num_files] = NULL;
+    d_exts[num_files] = NULL;
+
+    num_files++;
   }
 
   first_starter = num_files;
@@ -17316,12 +17445,26 @@ int do_new_dialog(void)
       }
     }
     else
-    {	
+    {
+      /* A color! */
+
       free_surface(&img_starter);
       free_surface(&img_starter_bkgd);
       starter_mirrored = 0;
       starter_flipped = 0;
       starter_personal = 0;
+
+
+      /* Launch color picker if they chose that: */
+
+      if (which == NUM_COLORS - 1)
+      {
+        if (do_color_picker() == 0)
+	  return(0);
+      }
+
+      /* FIXME: Don't do anything and go back to Open dialog if they
+         hit BACK in color picker! */
 
       canvas_color_r = color_hexes[which][0];
       canvas_color_g = color_hexes[which][1];
@@ -17435,5 +17578,411 @@ Uint8 magic_touched(int x, int y)
   touched[(y* canvas->w) + x] = 1;
 
   return(res);
+}
+
+int do_color_picker(void)
+{
+#ifndef NO_PROMPT_SHADOWS
+  int i;
+  SDL_Surface *alpha_surf;
+#endif
+  SDL_Rect dest;
+  int x, y, w;
+  SDL_Surface * tmp_btn_up, * tmp_btn_down;
+  Uint32(*getpixel_tmp_btn_up) (SDL_Surface *, int, int);
+  Uint32(*getpixel_tmp_btn_down) (SDL_Surface *, int, int);
+  Uint32(*getpixel_img_paintwell) (SDL_Surface *, int, int);
+  Uint32(*getpixel_img_color_picker) (SDL_Surface *, int, int);
+  Uint8 r, g, b;
+  double rh, gh, bh;
+  int done, chose;
+  SDL_Event event;
+  SDLKey key;
+  int color_picker_left, color_picker_top;
+  int back_left, back_top;
+  SDL_Rect color_example_dest;
+
+
+  hide_blinking_cursor();
+
+  do_setcursor(cursor_hand);
+
+  /* Draw button box: */
+
+  playsound(screen, 0, SND_PROMPT, 1, SNDPOS_CENTER, SNDDIST_NEAR);
+
+  for (w = 0; w <= 128 + 6 + 4; w = w + 4)
+  {
+    dest.x = 160 + 96 - w + PROMPTOFFSETX;
+    dest.y = 94 + 96 - w + PROMPTOFFSETY;
+    dest.w = (320 - 96 * 2) + w * 2;
+    dest.h = w * 2;
+    SDL_FillRect(screen, &dest, SDL_MapRGB(screen->format, 0, 0, 0));
+
+    SDL_UpdateRect(screen, dest.x, dest.y, dest.w, dest.h);
+    SDL_Delay(10);
+  }
+
+#ifndef NO_PROMPT_SHADOWS
+  alpha_surf = SDL_CreateRGBSurface(SDL_SWSURFACE | SDL_SRCALPHA,
+                                    (320 - 96 * 2) + (w - 4) * 2,
+                                    (w - 4) * 2,
+                                    screen->format->BitsPerPixel,
+                                    screen->format->Rmask,
+                                    screen->format->Gmask,
+                                    screen->format->Bmask,
+                                    screen->format->Amask);
+
+  if (alpha_surf != NULL)
+  {
+    SDL_FillRect(alpha_surf, NULL, SDL_MapRGB(alpha_surf->format, 0, 0, 0));
+    SDL_SetAlpha(alpha_surf, SDL_SRCALPHA, 64);
+
+    for (i = 8; i > 0; i = i - 2)
+    {
+      dest.x = 160 + 96 - (w - 4) + i + PROMPTOFFSETX;
+      dest.y = 94 + 96 - (w - 4) + i + PROMPTOFFSETY;
+      dest.w = (320 - 96 * 2) + (w - 4) * 2;
+      dest.h = (w - 4) * 2;
+
+      SDL_BlitSurface(alpha_surf, NULL, screen, &dest);
+    }
+
+    SDL_FreeSurface(alpha_surf);
+  }
+#endif
+
+
+  /* Draw prompt box: */
+
+  w = w - 6;
+
+  dest.x = 160 + 96 - w + PROMPTOFFSETX;
+  dest.y = 94 + 96 - w + PROMPTOFFSETY;
+  dest.w = (320 - 96 * 2) + w * 2;
+  dest.h = w * 2;
+  SDL_FillRect(screen, &dest, SDL_MapRGB(screen->format, 255, 255, 255));
+
+
+  /* Draw color palette: */
+
+  color_picker_left = 160 + 96 - w + PROMPTOFFSETX + 2;
+  color_picker_top = 94 + 96 - w + PROMPTOFFSETY + 2;
+
+  dest.x = color_picker_left;
+  dest.y = color_picker_top;
+
+  SDL_BlitSurface(img_color_picker, NULL, screen, &dest);
+
+
+  /* Draw last color position: */
+
+  dest.x = color_picker_x + color_picker_left - 3;
+  dest.y = color_picker_y + color_picker_top - 1;
+  dest.w = 7;
+  dest.h = 3;
+
+  SDL_FillRect(screen, &dest, SDL_MapRGB(screen->format, 0, 0, 0));
+
+  dest.x = color_picker_x + color_picker_left - 1;
+  dest.y = color_picker_y + color_picker_top - 3;
+  dest.w = 3;
+  dest.h = 7;
+
+  SDL_FillRect(screen, &dest, SDL_MapRGB(screen->format, 0, 0, 0));
+
+  dest.x = color_picker_x + color_picker_left - 2;
+  dest.y = color_picker_y + color_picker_top;
+  dest.w = 5;
+  dest.h = 1;
+
+  SDL_FillRect(screen, &dest, SDL_MapRGB(screen->format, 255, 255, 255));
+
+  dest.x = color_picker_x + color_picker_left;
+  dest.y = color_picker_y + color_picker_top - 2;
+  dest.w = 1;
+  dest.h = 5;
+
+  SDL_FillRect(screen, &dest, SDL_MapRGB(screen->format, 255, 255, 255));
+
+  
+  /* Determine spot for example color: */
+
+  color_example_dest.x = color_picker_left + img_color_picker->w + 2;
+  color_example_dest.y = color_picker_top + 2;
+  color_example_dest.w = (320 - 96 * 2) + w * 2 - img_color_picker->w - 6;
+  color_example_dest.h = 124;
+
+
+  SDL_FillRect(screen, &color_example_dest,
+	       SDL_MapRGB(screen->format, 0, 0, 0));
+
+  color_example_dest.x += 2;
+  color_example_dest.y += 2;
+  color_example_dest.w -= 4;
+  color_example_dest.h -= 4;
+
+  SDL_FillRect(screen, &color_example_dest,
+	       SDL_MapRGB(screen->format, 255, 255, 255));
+
+  color_example_dest.x += 2;
+  color_example_dest.y += 2;
+  color_example_dest.w -= 4;
+  color_example_dest.h -= 4;
+
+
+  /* Draw current color picker color: */
+
+  SDL_FillRect(screen, &color_example_dest,
+	       SDL_MapRGB(screen->format,
+			  color_hexes[NUM_COLORS - 1][0],
+			  color_hexes[NUM_COLORS - 1][1],
+			  color_hexes[NUM_COLORS - 1][2]));
+
+
+
+  /* Show "Back" button */
+
+  back_left = (((320 - 96 * 2) + w * 2 - img_color_picker->w) - img_back->w) / 2 + color_picker_left + img_color_picker->w;
+  back_top = color_picker_top + img_color_picker->h - img_back->h - 2;
+
+  dest.x = back_left;
+  dest.y = back_top;
+
+  SDL_BlitSurface(img_back, NULL, screen, &dest);
+
+  dest.x = back_left + (img_back->w - img_openlabels_back->w) / 2;
+  dest.y = back_top + img_back->h - img_openlabels_back->h;
+  SDL_BlitSurface(img_openlabels_back, NULL, screen, &dest);
+
+
+  SDL_Flip(screen);
+
+
+  /* Let the user pick a color, or go back: */
+
+  done = 0;
+  chose = 0;
+  x = y = 0;
+
+  do
+  {
+    while (mySDL_PollEvent(&event))
+    {
+      if (event.type == SDL_QUIT)
+      {
+        chose = 0;
+        done = 1;
+      }
+      else if (event.type == SDL_ACTIVEEVENT)
+      {
+        handle_active(&event);
+      }
+      else if (event.type == SDL_KEYUP)
+      {
+        key = event.key.keysym.sym;
+
+        handle_keymouse(key, SDL_KEYUP);
+      }
+      else if (event.type == SDL_KEYDOWN)
+      {
+        key = event.key.keysym.sym;
+
+        handle_keymouse(key, SDL_KEYDOWN);
+
+        if (key == SDLK_ESCAPE)
+        {
+          chose = 0;
+          done = 1;
+        }
+      }
+      else if (event.type == SDL_MOUSEBUTTONDOWN &&
+	       valid_click(event.button.button))
+      {
+        if (event.button.x >= color_picker_left &&
+	    event.button.x < color_picker_left + img_color_picker->w &&
+            event.button.y >= color_picker_top &&
+	    event.button.y < color_picker_top + img_color_picker->h)
+	{
+          /* Picked a color! */
+
+	  chose = 1;
+	  done = 1;
+
+	  x = event.button.x - color_picker_left;
+          y = event.button.y - color_picker_top;
+
+	  color_picker_x = x;
+	  color_picker_y = y;
+        }
+	else if (event.button.x >= back_left &&
+		 event.button.x < back_left + img_back->w &&
+	         event.button.y >= back_top &&
+		 event.button.y < back_top + img_back->h)
+        {
+          /* Decided to go Back */
+          
+	  chose = 0;
+          done = 1;
+        }
+      }
+      else if (event.type == SDL_MOUSEMOTION)
+      {
+        if (event.button.x >= color_picker_left &&
+	    event.button.x < color_picker_left + img_color_picker->w &&
+            event.button.y >= color_picker_top &&
+	    event.button.y < color_picker_top + img_color_picker->h)
+        {
+	  /* Hovering over the colors! */
+
+          do_setcursor(cursor_hand);
+
+
+	  /* Show a big solid example of the color: */
+    
+	  x = event.button.x - color_picker_left;
+          y = event.button.y - color_picker_top;
+
+	  getpixel_img_color_picker = getpixels[img_color_picker->format->BytesPerPixel];
+    	  SDL_GetRGB(getpixel_img_color_picker(img_color_picker, x, y), img_color_picker->format, &r, &g, &b);
+
+	  SDL_FillRect(screen, &color_example_dest,
+		       SDL_MapRGB(screen->format, r, g, b));
+
+	  SDL_UpdateRect(screen,
+			color_example_dest.x,
+			color_example_dest.y,
+			color_example_dest.w,
+			color_example_dest.h);
+        }
+        else
+        {
+	  /* Revert to current color picker color, so we know what it was,
+	     and what we'll get if we go Back: */
+
+	  SDL_FillRect(screen, &color_example_dest,
+		       SDL_MapRGB(screen->format,
+				  color_hexes[NUM_COLORS - 1][0],
+				  color_hexes[NUM_COLORS - 1][1],
+				  color_hexes[NUM_COLORS - 1][2]));
+
+	  SDL_UpdateRect(screen,
+			color_example_dest.x,
+			color_example_dest.y,
+			color_example_dest.w,
+			color_example_dest.h);
+
+
+          /* Change cursor to arrow (or hand, if over Back): */
+
+	  if (event.button.x >= back_left &&
+	      event.button.x < back_left + img_back->w &&
+	      event.button.y >= back_top &&
+	      event.button.y < back_top + img_back->h)
+            do_setcursor(cursor_hand);
+	  else
+            do_setcursor(cursor_arrow);
+        }
+      }
+    }
+
+    SDL_Delay(10);
+  }
+  while (!done);
+
+
+  /* Set the new color: */
+
+  if (chose)
+  {
+    getpixel_img_color_picker = getpixels[img_color_picker->format->BytesPerPixel];
+    SDL_GetRGB(getpixel_img_color_picker(img_color_picker, x, y), img_color_picker->format, &r, &g, &b);
+
+    color_hexes[NUM_COLORS - 1][0] = r;
+    color_hexes[NUM_COLORS - 1][1] = g;
+    color_hexes[NUM_COLORS - 1][2] = b;
+
+ 
+    /* Re-render color picker to show the current color it contains: */
+
+    tmp_btn_up = thumbnail(img_btn_up, color_button_w, color_button_h, 0);
+    tmp_btn_down = thumbnail(img_btn_down, color_button_w, color_button_h, 0);
+    img_color_btn_off =
+      thumbnail(img_btn_off, color_button_w, color_button_h, 0);
+
+    getpixel_tmp_btn_up = getpixels[tmp_btn_up->format->BytesPerPixel];
+    getpixel_tmp_btn_down = getpixels[tmp_btn_down->format->BytesPerPixel];
+    getpixel_img_paintwell = getpixels[img_paintwell->format->BytesPerPixel];
+
+    rh = sRGB_to_linear_table[color_hexes[NUM_COLORS - 1][0]];
+    gh = sRGB_to_linear_table[color_hexes[NUM_COLORS - 1][1]];
+    bh = sRGB_to_linear_table[color_hexes[NUM_COLORS - 1][2]];
+
+    SDL_LockSurface(img_color_btns[NUM_COLORS - 1]);
+    SDL_LockSurface(img_color_btns[NUM_COLORS - 1 + NUM_COLORS]);
+
+    for (y = 0; y < tmp_btn_up->h /* 48 */ ; y++)
+    {
+      for (x = 0; x < tmp_btn_up->w; x++)
+      {
+        double ru, gu, bu, rd, gd, bd, aa;
+        Uint8 a;
+
+        SDL_GetRGB(getpixel_tmp_btn_up(tmp_btn_up, x, y), tmp_btn_up->format,
+		   &r, &g, &b);
+
+        ru = sRGB_to_linear_table[r];
+        gu = sRGB_to_linear_table[g];
+        bu = sRGB_to_linear_table[b];
+        SDL_GetRGB(getpixel_tmp_btn_down(tmp_btn_down, x, y),
+		   tmp_btn_down->format, &r, &g, &b);
+
+        rd = sRGB_to_linear_table[r];
+        gd = sRGB_to_linear_table[g];
+        bd = sRGB_to_linear_table[b];
+        SDL_GetRGBA(getpixel_img_paintwell(img_paintwell, x, y),
+		    img_paintwell->format, &r, &g, &b, &a);
+
+        aa = a / 255.0;
+
+        putpixels[img_color_btns[NUM_COLORS - 1]->format->BytesPerPixel]
+              (img_color_btns[NUM_COLORS - 1], x, y,
+               getpixels[img_color_picker_thumb->format->BytesPerPixel]
+                 (img_color_picker_thumb, x, y));
+        putpixels[img_color_btns[NUM_COLORS - 1 + NUM_COLORS]->format->BytesPerPixel]
+              (img_color_btns[NUM_COLORS - 1 + NUM_COLORS], x, y,
+               getpixels[img_color_picker_thumb->format->BytesPerPixel]
+                 (img_color_picker_thumb, x, y));
+
+        if (a == 255)
+        {
+	  putpixels[img_color_btns[NUM_COLORS - 1]->format->BytesPerPixel]
+	        (img_color_btns[NUM_COLORS - 1], x, y,
+	         SDL_MapRGB(img_color_btns[i]->format,
+		        linear_to_sRGB(rh * aa + ru * (1.0 - aa)),
+		        linear_to_sRGB(gh * aa + gu * (1.0 - aa)),
+		        linear_to_sRGB(bh * aa + bu * (1.0 - aa))));
+
+	  putpixels[img_color_btns[NUM_COLORS - 1 + NUM_COLORS]->format->BytesPerPixel]
+	        (img_color_btns[NUM_COLORS - 1 + NUM_COLORS], x, y,
+	         SDL_MapRGB(img_color_btns[i + NUM_COLORS]->format,
+		        linear_to_sRGB(rh * aa + rd * (1.0 - aa)),
+		        linear_to_sRGB(gh * aa + gd * (1.0 - aa)),
+		        linear_to_sRGB(bh * aa + bd * (1.0 - aa))));
+        }
+      }
+    }
+
+    SDL_UnlockSurface(img_color_btns[NUM_COLORS - 1]);
+    SDL_UnlockSurface(img_color_btns[NUM_COLORS - 1 + NUM_COLORS]);
+  }
+
+
+  /* Remove the prompt: */
+
+  update_canvas(0, 0, canvas->w, canvas->h);
+
+
+  return(chose);
 }
 
