@@ -28,6 +28,7 @@
 #import <Cocoa/Cocoa.h>
 
 extern WrapperData macosx;
+NSData* printData = nil;
 
 // this object presents the image to the printing layer
 @interface ImageView : NSView
@@ -179,33 +180,8 @@ static NSImage* CreateImage( SDL_Surface *surface )
     return image;
 }
 
-BOOL DisplayPageSetup()
+void DefaultPrintSettings( const SDL_Surface *surface, NSPrintInfo *printInfo )
 {
-	NSPageLayout*     pageLayout;
-	NSPrintInfo*      printInfo;
-	ModalDelegate*    delegate;
-    BOOL              result;
-    
-    macosx.cocoaKeystrokes = 1;
-    printInfo = [ NSPrintInfo sharedPrintInfo ];
-    delegate = [ [ [ ModalDelegate alloc ] init ] autorelease ];
-	pageLayout = [ NSPageLayout pageLayout ];
-	[ pageLayout beginSheetWithPrintInfo:printInfo 
-                 modalForWindow:[ NSApp mainWindow ]
-                 delegate:delegate
-                 didEndSelector:@selector(pageLayoutEnded:returnCode:contextInfo:)
-                 contextInfo:nil ];
-	
-	result = [ delegate wait ];
-    macosx.cocoaKeystrokes = 0;
-    
-    return result;
-}
-
-void DefaultPrintSettings( SDL_Surface *surface )
-{
-    NSPrintInfo* printInfo = [ NSPrintInfo sharedPrintInfo ];
-    
     if( surface->w > surface->h )
         [ printInfo setOrientation:NSLandscapeOrientation ];
     else
@@ -217,6 +193,78 @@ void DefaultPrintSettings( SDL_Surface *surface )
 	[ printInfo setHorizontalPagination:NSFitPagination ];    
 }
 
+NSPrintInfo* LoadPrintInfo( const SDL_Surface *surface )
+{
+    NSUserDefaults*   standardUserDefaults;
+    NSPrintInfo*      printInfo;
+    NSData*           printData = nil;
+    static BOOL       firstTime = YES;   
+    
+    standardUserDefaults = [ NSUserDefaults standardUserDefaults ];
+    
+    if( standardUserDefaults ) 
+    {
+        printData = [ standardUserDefaults dataForKey:@"PrintInfo" ];
+    }
+   
+    if( printData )
+    {
+        printInfo = (NSPrintInfo*)[ NSUnarchiver unarchiveObjectWithData:printData ]; 
+    }
+    else
+    {
+        printInfo = [ NSPrintInfo sharedPrintInfo ];
+        if( firstTime == YES ) 
+        {
+            DefaultPrintSettings( surface, printInfo );
+            firstTime = NO;
+        }
+    }
+    
+    return printInfo;
+}
+
+void SavePrintInfo( NSPrintInfo* printInfo )
+{
+    NSUserDefaults*   standardUserDefaults;
+    NSData*           printData = nil;
+    
+    printData = [ NSArchiver archivedDataWithRootObject:printInfo ];
+    standardUserDefaults = [ NSUserDefaults standardUserDefaults ];
+    
+    if( standardUserDefaults ) 
+    {
+        [ standardUserDefaults setObject:printData forKey:@"PrintInfo" ];
+    }
+}
+
+int DisplayPageSetup( const SDL_Surface * surface )
+{
+	NSPageLayout*     pageLayout;
+	NSPrintInfo*      printInfo;
+	ModalDelegate*    delegate;
+    BOOL              result;
+    
+    macosx.cocoaKeystrokes = 1;
+    
+    printInfo = LoadPrintInfo( surface );
+
+    delegate = [ [ [ ModalDelegate alloc ] init ] autorelease ];
+	pageLayout = [ NSPageLayout pageLayout ];
+	[ pageLayout beginSheetWithPrintInfo:printInfo 
+                 modalForWindow:[ NSApp mainWindow ]
+                 delegate:delegate
+                 didEndSelector:@selector(pageLayoutEnded:returnCode:contextInfo:)
+                 contextInfo:nil ];
+	
+	result = [ delegate wait ];
+    SavePrintInfo( printInfo );
+    
+    macosx.cocoaKeystrokes = 0;
+    
+    return (int)( result );
+}
+
 const char* SurfacePrint( SDL_Surface *surface, int showDialog )
 {
     NSImage*          image;
@@ -225,7 +273,6 @@ const char* SurfacePrint( SDL_Surface *surface, int showDialog )
     NSPrintOperation* printOperation;
     NSPrintInfo*      printInfo;
     ModalDelegate*    delegate;
-    static BOOL       firstTime = YES;
     BOOL              ok = YES;
     const char*       error = NULL;
 	    
@@ -234,13 +281,8 @@ const char* SurfacePrint( SDL_Surface *surface, int showDialog )
     if( image == nil )
         return "Could not create image";
 	
-    if( firstTime == YES ) {
-        DefaultPrintSettings( surface );
-        firstTime = NO;
-    }
-    
     // create print control objects
-    printInfo = [ NSPrintInfo sharedPrintInfo ];
+    printInfo = LoadPrintInfo( surface );
      
 	NSRect pageRect = [ printInfo imageablePageBounds ];
 	NSSize pageSize = pageRect.size;
@@ -285,6 +327,8 @@ const char* SurfacePrint( SDL_Surface *surface, int showDialog )
         error = "Canceled or error when printing";
         
     macosx.cocoaKeystrokes = 0;
+    
+    SavePrintInfo( printInfo );
     [ image release ];
 	    
     return error;

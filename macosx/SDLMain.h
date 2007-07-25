@@ -26,6 +26,7 @@
 - (IBAction)onQuit:(id)sender;
 
 - (void) sendSDLControlKeystroke:(int)key;
+- (void) sendSDLControlShiftKeystroke:(int)key;
 - (void) setupBridge;
 
 @end

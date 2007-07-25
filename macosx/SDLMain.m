@@ -183,7 +183,7 @@ static NSString *getApplicationName(void)
 
 - (IBAction) onPageSetup:(id)sender
 {
-    DisplayPageSetup();
+    [self sendSDLControlShiftKeystroke:SDLK_p];
 }
 
 - (IBAction) onUndo:(id)sender
@@ -204,6 +204,8 @@ static NSString *getApplicationName(void)
 
 - (IBAction) onQuit:(id)sender
 {
+    [[NSUserDefaults standardUserDefaults] synchronize];
+    
     /* Post a SDL_QUIT event */
     SDL_Event event;
     event.type = SDL_QUIT;
@@ -216,6 +218,15 @@ static NSString *getApplicationName(void)
 	event.type = SDL_KEYDOWN;
 	event.key.keysym.sym = key;
 	event.key.keysym.mod = KMOD_CTRL;
+	SDL_PushEvent(&event);	
+}
+
+- (void) sendSDLControlShiftKeystroke:(int)key
+{
+	SDL_Event event;
+	event.type = SDL_KEYDOWN;
+	event.key.keysym.sym = key;
+	event.key.keysym.mod = KMOD_CTRL | KMOD_SHIFT;
 	SDL_PushEvent(&event);	
 }
 

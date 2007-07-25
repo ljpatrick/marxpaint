@@ -2051,6 +2051,12 @@ static void mainloop(void)
 	  draw_toolbar();
 	  update_screen_rect(&r_tools);
 	}
+#ifdef __APPLE__
+    else if (key == SDLK_p && (mod & KMOD_CTRL) && (mod & KMOD_SHIFT) && !noshortcuts) {
+        /* Ctrl-Shft-P - Page Setup */
+        DisplayPageSetup(canvas);
+    }
+#endif    
     else if (key == SDLK_p && (mod & KMOD_CTRL) && !noshortcuts)
     {
       /* Ctrl-P - Print */
