@@ -16,7 +16,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint 0.9.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-07-24 23:16-0700\n"
+"POT-Creation-Date: 2007-07-26 09:38-0700\n"
 "PO-Revision-Date: 2005-04-04 10:55-0700\n"
 "Last-Translator: Steven Michael Murphy <murf@e-tools.com>\n"
 "Language-Team: Kinyarwanda <translation-team-rw@lists.sourceforge.net>\n"
@@ -391,8 +391,8 @@ msgstr ""
 
 #. Response to 'start a new image' action
 #, fuzzy
-msgid "You now have a blank sheet to draw on!"
-msgstr "NONEAHA a Ahatanditseho URUPAPURO Kuri Gushushanya ku"
+msgid "Pick a color or picture with which to start a new drawing."
+msgstr "a() y'Ishusho Kuri Igishushanyo"
 
 #. Response to 'open' action (while file dialog is being constructed)
 msgid "Open…"
@@ -570,8 +570,6 @@ msgstr ""
 msgid "No, save a new file!"
 msgstr "Kubika a Gishya IDOSIYE"
 
-#. Let user choose an image:
-#. Instructions for 'New' file/color dialog  FIXME
 #, fuzzy
 msgid "Choose the picture you want, then click “Open”."
 msgstr "i() y'Ishusho Hanyuma Kanda"
@@ -763,6 +761,10 @@ msgid ""
 "bottom for taller waves, the left for small waves, and the right for long "
 "waves."
 msgstr ""
+
+#, fuzzy
+#~ msgid "You now have a blank sheet to draw on!"
+#~ msgstr "NONEAHA a Ahatanditseho URUPAPURO Kuri Gushushanya ku"
 
 #, fuzzy
 #~ msgid "Start a new picture?"

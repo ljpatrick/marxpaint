@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint 0.9.17\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-07-24 23:16-0700\n"
+"POT-Creation-Date: 2007-07-26 09:38-0700\n"
 "PO-Revision-Date: 2007-07-14 12:52+0100\n"
 "Last-Translator: Edmund GRIMLEY EVANS <edmundo@rano.org>\n"
 "Language-Team: Esperanto <translation-team-eo@lists.sourceforge.net>\n"
@@ -354,8 +354,9 @@ msgid "Eraser!"
 msgstr "Viŝilo!"
 
 #. Response to 'start a new image' action
-msgid "You now have a blank sheet to draw on!"
-msgstr "Vi havas nun blankan folion por fari novan bildon!"
+#, fuzzy
+msgid "Pick a color or picture with which to start a new drawing."
+msgstr "Elektu bildon por stampi sur via bildo."
 
 #. Response to 'open' action (while file dialog is being constructed)
 msgid "Open…"
@@ -517,8 +518,6 @@ msgstr "Jes, anstataŭigi la malnovan!"
 msgid "No, save a new file!"
 msgstr "Ne, skribu novan dosieron!"
 
-#. Let user choose an image:
-#. Instructions for 'New' file/color dialog  FIXME
 msgid "Choose the picture you want, then click “Open”."
 msgstr "Elektu la bildon, kiun vi volas, kaj alklaku \"Malfermi\"."
 
@@ -689,6 +688,9 @@ msgid ""
 "bottom for taller waves, the left for small waves, and the right for long "
 "waves."
 msgstr ""
+
+#~ msgid "You now have a blank sheet to draw on!"
+#~ msgstr "Vi havas nun blankan folion por fari novan bildon!"
 
 #~ msgid "Start a new picture?"
 #~ msgstr "Ĉu komenci novan bildon?"

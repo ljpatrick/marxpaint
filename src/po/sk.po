@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint 0.9.15rc1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-07-24 23:16-0700\n"
+"POT-Creation-Date: 2007-07-26 09:38-0700\n"
 "PO-Revision-Date: 2005-10-16 16:57+0200\n"
 "Last-Translator: Andrej Kacian <andrej@kacian.sk>\n"
 "Language-Team: Slovak <sk-i18n@lists.linux.sk>\n"
@@ -358,8 +358,9 @@ msgid "Eraser!"
 msgstr "Guma!"
 
 #. Response to 'start a new image' action
-msgid "You now have a blank sheet to draw on!"
-msgstr "Máš teraz čistú plochu na kreslenie!"
+#, fuzzy
+msgid "Pick a color or picture with which to start a new drawing."
+msgstr "Vyber obrázok pre razítko."
 
 #. Response to 'open' action (while file dialog is being constructed)
 msgid "Open…"
@@ -523,8 +524,6 @@ msgstr ""
 msgid "No, save a new file!"
 msgstr "Nie, ulož ho ako nový súbor"
 
-#. Let user choose an image:
-#. Instructions for 'New' file/color dialog  FIXME
 msgid "Choose the picture you want, then click “Open”."
 msgstr "Vyber obrázok, ktorý chceš, a potom klikni na \"Otvor\"."
 
@@ -696,6 +695,9 @@ msgid ""
 "bottom for taller waves, the left for small waves, and the right for long "
 "waves."
 msgstr ""
+
+#~ msgid "You now have a blank sheet to draw on!"
+#~ msgstr "Máš teraz čistú plochu na kreslenie!"
 
 #, fuzzy
 #~ msgid "Start a new picture?"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-07-24 23:16-0700\n"
+"POT-Creation-Date: 2007-07-26 09:38-0700\n"
 "PO-Revision-Date: 2006-10-09 20:32+0200\n"
 "Last-Translator: Vincent Mahlangu <vmahlangu@parliament.gov.za>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -359,8 +359,9 @@ msgid "Eraser!"
 msgstr "Isesuli!"
 
 #. Response to 'start a new image' action
-msgid "You now have a blank sheet to draw on!"
-msgstr "Njeke sewunephepha elize ongadwebela kilo!"
+#, fuzzy
+msgid "Pick a color or picture with which to start a new drawing."
+msgstr "Dobha isithombebese ustempe umdwebo wakho buzungeleza."
 
 #. Response to 'open' action (while file dialog is being constructed)
 msgid "Open…"
@@ -522,8 +523,6 @@ msgstr "Iye, jamiselela sakade!"
 msgid "No, save a new file!"
 msgstr "Awa, bulunga ifayili etjha!"
 
-#. Let user choose an image:
-#. Instructions for 'New' file/color dialog  FIXME
 msgid "Choose the picture you want, then click “Open”."
 msgstr "Khetha isithombe osifunako bese uqhwarhaza u\"Vula\"."
 
@@ -705,6 +704,9 @@ msgid ""
 "bottom for taller waves, the left for small waves, and the right for long "
 "waves."
 msgstr ""
+
+#~ msgid "You now have a blank sheet to draw on!"
+#~ msgstr "Njeke sewunephepha elize ongadwebela kilo!"
 
 #~ msgid "Start a new picture?"
 #~ msgstr "Thoma isithombe esinye?"

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TuxPaint\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-07-24 23:16-0700\n"
+"POT-Creation-Date: 2007-07-26 09:38-0700\n"
 "PO-Revision-Date: 2004-07-06 12:00GMT\n"
 "Last-Translator: Eugene Zelenko <greendeath@mail.ru>\n"
 "Language-Team: Belarusian <kde-i18n-be@kde.org>\n"
@@ -352,7 +352,7 @@ msgid "Eraser!"
 msgstr ""
 
 #. Response to 'start a new image' action
-msgid "You now have a blank sheet to draw on!"
+msgid "Pick a color or picture with which to start a new drawing."
 msgstr ""
 
 #. Response to 'open' action (while file dialog is being constructed)
@@ -516,8 +516,6 @@ msgstr ""
 msgid "No, save a new file!"
 msgstr ""
 
-#. Let user choose an image:
-#. Instructions for 'New' file/color dialog  FIXME
 msgid "Choose the picture you want, then click “Open”."
 msgstr ""
 

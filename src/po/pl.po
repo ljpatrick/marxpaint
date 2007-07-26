@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pl\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-07-24 23:16-0700\n"
+"POT-Creation-Date: 2007-07-26 09:38-0700\n"
 "PO-Revision-Date: 2007-05-14 19:56+0200\n"
 "Last-Translator: Michal Terbert <michaeel@skrzynka.pl>\n"
 "Language-Team: Polish\n"
@@ -358,8 +358,9 @@ msgid "Eraser!"
 msgstr "Gumka!"
 
 #. Response to 'start a new image' action
-msgid "You now have a blank sheet to draw on!"
-msgstr "Masz teraz pusty arkusz, na którym można rysować!"
+#, fuzzy
+msgid "Pick a color or picture with which to start a new drawing."
+msgstr "Wybierz obrazek, aby opieczętować swój rysunek."
 
 #. Response to 'open' action (while file dialog is being constructed)
 msgid "Open…"
@@ -521,8 +522,6 @@ msgstr "Tak, zastąp stary plik!"
 msgid "No, save a new file!"
 msgstr "Nie, zapisz w nowym pliku!"
 
-#. Let user choose an image:
-#. Instructions for 'New' file/color dialog  FIXME
 msgid "Choose the picture you want, then click “Open”."
 msgstr "Wybierz obrazek, a potem kliknij 'Otwórz'"
 
@@ -697,6 +696,9 @@ msgid ""
 "bottom for taller waves, the left for small waves, and the right for long "
 "waves."
 msgstr ""
+
+#~ msgid "You now have a blank sheet to draw on!"
+#~ msgstr "Masz teraz pusty arkusz, na którym można rysować!"
 
 #~ msgid "Start a new picture?"
 #~ msgstr "Chcesz narysować nowy obrazek?"

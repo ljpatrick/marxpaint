@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint 0.9.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-07-24 23:16-0700\n"
+"POT-Creation-Date: 2007-07-26 09:38-0700\n"
 "PO-Revision-Date: 2005-07-26 01:30-0800\n"
 "Last-Translator: Bill Kendrick <bill@newbreedsoftware.com>\n"
 "Language-Team: \n"
@@ -359,8 +359,9 @@ msgid "Eraser!"
 msgstr "Gum!"
 
 #. Response to 'start a new image' action
-msgid "You now have a blank sheet to draw on!"
-msgstr "Hest noe n wit blad um op te tijken!"
+#, fuzzy
+msgid "Pick a color or picture with which to start a new drawing."
+msgstr "Kijs n stempel um rond dien tijken te stempeln."
 
 #. Response to 'open' action (while file dialog is being constructed)
 msgid "Open…"
@@ -524,8 +525,6 @@ msgstr ""
 msgid "No, save a new file!"
 msgstr "Nee, n nij bestaand bewoaren"
 
-#. Let user choose an image:
-#. Instructions for 'New' file/color dialog  FIXME
 msgid "Choose the picture you want, then click “Open”."
 msgstr "Kijs de tijken dijst wilst, klik din op \"Lösdoun\"."
 
@@ -710,6 +709,9 @@ msgid ""
 "bottom for taller waves, the left for small waves, and the right for long "
 "waves."
 msgstr ""
+
+#~ msgid "You now have a blank sheet to draw on!"
+#~ msgstr "Hest noe n wit blad um op te tijken!"
 
 #, fuzzy
 #~ msgid "Start a new picture?"

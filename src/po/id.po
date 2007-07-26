@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: id\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-07-24 23:16-0700\n"
+"POT-Creation-Date: 2007-07-26 09:38-0700\n"
 "PO-Revision-Date: 2005-10-12 20:03+0700\n"
 "Last-Translator: Tedi Heriyanto <tedi_h@gmx.net>\n"
 "Language-Team: Indonesia <translation-team-id@lists.sourceforge.net>\n"
@@ -365,8 +365,9 @@ msgid "Eraser!"
 msgstr "Penghapus!"
 
 #. Response to 'start a new image' action
-msgid "You now have a blank sheet to draw on!"
-msgstr "Kamu kini memiliki kertas kosong untuk menggambar!"
+#, fuzzy
+msgid "Pick a color or picture with which to start a new drawing."
+msgstr "Pilih sebuah gambar untuk stempel gambarmu"
 
 #. Response to 'open' action (while file dialog is being constructed)
 msgid "Open…"
@@ -530,8 +531,6 @@ msgstr ""
 msgid "No, save a new file!"
 msgstr "Tidak, simpan gambar baru"
 
-#. Let user choose an image:
-#. Instructions for 'New' file/color dialog  FIXME
 msgid "Choose the picture you want, then click “Open”."
 msgstr "Pilih gambar yang kamu inginkan, lalu klik \"Open\"."
 
@@ -706,6 +705,9 @@ msgid ""
 "bottom for taller waves, the left for small waves, and the right for long "
 "waves."
 msgstr ""
+
+#~ msgid "You now have a blank sheet to draw on!"
+#~ msgstr "Kamu kini memiliki kertas kosong untuk menggambar!"
 
 #, fuzzy
 #~ msgid "Start a new picture?"

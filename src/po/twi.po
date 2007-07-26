@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-07-24 23:16-0700\n"
+"POT-Creation-Date: 2007-07-26 09:38-0700\n"
 "PO-Revision-Date: 2007-04-26 15:45+0200\n"
 "Last-Translator: Joana Portia Antwi-Danso <portnass2003@yahoo.com>\n"
 "MIME-Version: 1.0\n"
@@ -356,8 +356,9 @@ msgid "Eraser!"
 msgstr "Apepade!"
 
 #. Response to 'start a new image' action
-msgid "You now have a blank sheet to draw on!"
-msgstr "Dorɔ wɔ ha na biribiara nni krataa yi so!"
+#, fuzzy
+msgid "Pick a color or picture with which to start a new drawing."
+msgstr "Fa mfoni a wode betintim nea wadorɔ no ho."
 
 #. Response to 'open' action (while file dialog is being constructed)
 msgid "Open…"
@@ -519,8 +520,6 @@ msgstr "Aane, sesa dada no!"
 msgid "No, save a new file!"
 msgstr "Daabi, fa foforɔ no sie!"
 
-#. Let user choose an image:
-#. Instructions for 'New' file/color dialog  FIXME
 msgid "Choose the picture you want, then click “Open”."
 msgstr "Wofa mfoni a wopɛ wia a, mia \"bue\" so."
 
@@ -691,6 +690,9 @@ msgid ""
 "bottom for taller waves, the left for small waves, and the right for long "
 "waves."
 msgstr ""
+
+#~ msgid "You now have a blank sheet to draw on!"
+#~ msgstr "Dorɔ wɔ ha na biribiara nni krataa yi so!"
 
 #~ msgid "Start a new picture?"
 #~ msgstr "Hyɛ mfoni foforɔ ase?"

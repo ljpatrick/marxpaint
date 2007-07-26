@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-07-24 23:16-0700\n"
+"POT-Creation-Date: 2007-07-26 09:38-0700\n"
 "PO-Revision-Date: 2007-07-04 11:24-0000\n"
 "Last-Translator: Haby Diallo <haby42@yahoo.fr>\n"
 "Language-Team: \n"
@@ -354,8 +354,9 @@ msgid "Eraser!"
 msgstr "Dindi!"
 
 #. Response to 'start a new image' action
-msgid "You now have a blank sheet to draw on!"
-msgstr "Am nga kait bu wex ngir rëd!"
+#, fuzzy
+msgid "Pick a color or picture with which to start a new drawing."
+msgstr "Tanal benn natal bu ngay yok ci sa natal."
 
 #. Response to 'open' action (while file dialog is being constructed)
 #, fuzzy
@@ -523,8 +524,6 @@ msgstr "Waaw, ñu sopi bu magat bi !"
 msgid "No, save a new file!"
 msgstr "Deedeet, natal bu bees la !"
 
-#. Let user choose an image:
-#. Instructions for 'New' file/color dialog  FIXME
 #, fuzzy
 msgid "Choose the picture you want, then click “Open”."
 msgstr "Tannal natal, te bëss ci «Ubbi»."
@@ -700,6 +699,9 @@ msgid ""
 "bottom for taller waves, the left for small waves, and the right for long "
 "waves."
 msgstr ""
+
+#~ msgid "You now have a blank sheet to draw on!"
+#~ msgstr "Am nga kait bu wex ngir rëd!"
 
 #~ msgid "Start a new picture?"
 #~ msgstr "Ñu defar natal bu bess?"

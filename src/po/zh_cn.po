@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint 0.9.11\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-07-24 23:16-0700\n"
+"POT-Creation-Date: 2007-07-26 09:38-0700\n"
 "PO-Revision-Date: 2004-07-18 13:50+0800\n"
 "Last-Translator: Wang Jian <lark@linux.net.cn>\n"
 "Language-Team: zh_CN <i18n-translation@lists.linux.net.cn>\n"
@@ -364,8 +364,9 @@ msgid "Eraser!"
 msgstr "橡皮擦！"
 
 #. Response to 'start a new image' action
-msgid "You now have a blank sheet to draw on!"
-msgstr "你现在可以从空白开始画了！"
+#, fuzzy
+msgid "Pick a color or picture with which to start a new drawing."
+msgstr "选择印在画周围的图片。"
 
 #. Response to 'open' action (while file dialog is being constructed)
 msgid "Open…"
@@ -529,8 +530,6 @@ msgstr ""
 msgid "No, save a new file!"
 msgstr "不，保存到新文件"
 
-#. Let user choose an image:
-#. Instructions for 'New' file/color dialog  FIXME
 msgid "Choose the picture you want, then click “Open”."
 msgstr "选择你要打开的图片，然后点击“打开”。"
 
@@ -712,6 +711,9 @@ msgid ""
 "bottom for taller waves, the left for small waves, and the right for long "
 "waves."
 msgstr ""
+
+#~ msgid "You now have a blank sheet to draw on!"
+#~ msgstr "你现在可以从空白开始画了！"
 
 #, fuzzy
 #~ msgid "Start a new picture?"

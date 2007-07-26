@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint-gl\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-07-24 23:16-0700\n"
+"POT-Creation-Date: 2007-07-26 09:38-0700\n"
 "PO-Revision-Date: 2006-05-12 13:47+0200\n"
 "Last-Translator: Leandro Regueiro <leandro.regueiro@gmail.com>\n"
 "Language-Team: Galician <gpul-traduccion@ceu.fi.udc.es>\n"
@@ -358,8 +358,9 @@ msgid "Eraser!"
 msgstr "Goma!"
 
 #. Response to 'start a new image' action
-msgid "You now have a blank sheet to draw on!"
-msgstr "Agora xa tes unha folla en branco para debuxar!"
+#, fuzzy
+msgid "Pick a color or picture with which to start a new drawing."
+msgstr "Escolle unha imaxe para estampala no debuxo."
 
 #. Response to 'open' action (while file dialog is being constructed)
 msgid "Open…"
@@ -522,8 +523,6 @@ msgstr "Si, substitúe o antigo!"
 msgid "No, save a new file!"
 msgstr "Non, gardar nun novo ficheiro!"
 
-#. Let user choose an image:
-#. Instructions for 'New' file/color dialog  FIXME
 msgid "Choose the picture you want, then click “Open”."
 msgstr "Escolle o debuxo que queiras, e despois preme en “Abrir”."
 
@@ -699,6 +698,9 @@ msgid ""
 "bottom for taller waves, the left for small waves, and the right for long "
 "waves."
 msgstr ""
+
+#~ msgid "You now have a blank sheet to draw on!"
+#~ msgstr "Agora xa tes unha folla en branco para debuxar!"
 
 #~ msgid "Start a new picture?"
 #~ msgstr "Desexas iniciar un novo debuxo?"

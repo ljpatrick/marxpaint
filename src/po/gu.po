@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-07-24 23:16-0700\n"
+"POT-Creation-Date: 2007-07-26 09:38-0700\n"
 "PO-Revision-Date: 2007-05-29 11:29+0530\n"
 "Last-Translator: Kartik Mistry <kartik.mistry@gmail.com>\n"
 "Language-Team: Gujarati <team@utkarsh.org>\n"
@@ -352,8 +352,9 @@ msgid "Eraser!"
 msgstr "રબર!"
 
 #. Response to 'start a new image' action
-msgid "You now have a blank sheet to draw on!"
-msgstr "તમારે પાસે દોરવા માટે હવે કોરી સ્લેટ છે!"
+#, fuzzy
+msgid "Pick a color or picture with which to start a new drawing."
+msgstr "તમારા ચિત્રની આજુબાજુ છાપ મુકવા ચિત્ર પસંદ કરો."
 
 #. Response to 'open' action (while file dialog is being constructed)
 msgid "Open…"
@@ -515,8 +516,6 @@ msgstr "હા, જુની ફાઇલને બદલો!"
 msgid "No, save a new file!"
 msgstr "ના, નવી ફાઇલને સાચવો!"
 
-#. Let user choose an image:
-#. Instructions for 'New' file/color dialog  FIXME
 msgid "Choose the picture you want, then click “Open”."
 msgstr "તમારે જોઇતું ચિત્ર પસંદ કરો, અને “ખોલો” પર ક્લિક કરો."
 
@@ -687,6 +686,9 @@ msgstr ""
 "ચિત્રને મોજાંઓ વાળું બનાવવા માટે ક્લિક કરો. (ઉપરની તરફ ક્લિક કરતાં મોજાં ટૂંકા થશે; નીચેની "
 "તરફ કરતાં લાંબા થશે. ડાબી બાજુ ક્લિક કરતાં મોજા નાનાં થશે; જ્યારે જમણી બાજુક્લિક કરતાં "
 "મોજાં પહોળા થશે.)"
+
+#~ msgid "You now have a blank sheet to draw on!"
+#~ msgstr "તમારે પાસે દોરવા માટે હવે કોરી સ્લેટ છે!"
 
 #~ msgid "Start a new picture?"
 #~ msgstr "નવું ચિત્ર શરૂ કરશો?"

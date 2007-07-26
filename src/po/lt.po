@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Tuxpaint 0.9.9\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-07-24 23:16-0700\n"
+"POT-Creation-Date: 2007-07-26 09:38-0700\n"
 "PO-Revision-Date: 2004-12-10 18:11+0200\n"
 "Last-Translator: Gintaras Goštautas <gintaras@nes.lt>\n"
 "Language-Team: Lithuanian <komp_lt@konf.lt>\n"
@@ -363,8 +363,9 @@ msgid "Eraser!"
 msgstr "Trintukas!"
 
 #. Response to 'start a new image' action
-msgid "You now have a blank sheet to draw on!"
-msgstr "Dabar jūs turite tuščią lapą piešimui!"
+#, fuzzy
+msgid "Pick a color or picture with which to start a new drawing."
+msgstr "Pasirinkite piešinėlį, kuriuo antspausduosite savo piešinyje."
 
 #. Response to 'open' action (while file dialog is being constructed)
 msgid "Open…"
@@ -526,8 +527,6 @@ msgstr "Taip, perrašykim senąjį!"
 msgid "No, save a new file!"
 msgstr "Ne, išsaugokim į naują bylą!"
 
-#. Let user choose an image:
-#. Instructions for 'New' file/color dialog  FIXME
 msgid "Choose the picture you want, then click “Open”."
 msgstr "Išsirinkite norimą piešinį, po to Spustelėkite 'Open'."
 
@@ -698,6 +697,9 @@ msgid ""
 "bottom for taller waves, the left for small waves, and the right for long "
 "waves."
 msgstr ""
+
+#~ msgid "You now have a blank sheet to draw on!"
+#~ msgstr "Dabar jūs turite tuščią lapą piešimui!"
 
 #~ msgid "Start a new picture?"
 #~ msgstr "Ar pradėsite naują piešinį?"

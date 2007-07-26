@@ -17,7 +17,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Tuxpaint cvs 2007-06-23\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-07-24 23:16-0700\n"
+"POT-Creation-Date: 2007-07-26 09:38-0700\n"
 "PO-Revision-Date: 2007-06-24 11:39+0200\n"
 "Last-Translator: Pere Pujal i Carabantes <ppujal@airtel.net>\n"
 "Language-Team: Català <linux-ca@chanae.alphanet.ch>\n"
@@ -372,8 +372,9 @@ msgid "Eraser!"
 msgstr "Esborra!"
 
 #. Response to 'start a new image' action
-msgid "You now have a blank sheet to draw on!"
-msgstr "Ara teniu una fulla en blanc per dibuixar-hi!"
+#, fuzzy
+msgid "Pick a color or picture with which to start a new drawing."
+msgstr "Trieu un segell per imprimir-lo sobre el vostre dibuix."
 
 #. Response to 'open' action (while file dialog is being constructed)
 msgid "Open…"
@@ -535,8 +536,6 @@ msgstr "Sí, reemplaça l'antic!"
 msgid "No, save a new file!"
 msgstr "No, desa en un fitxer nou"
 
-#. Let user choose an image:
-#. Instructions for 'New' file/color dialog  FIXME
 msgid "Choose the picture you want, then click “Open”."
 msgstr "Trieu el dibuix que voleu, llavors feu clic en Obre."
 
@@ -708,6 +707,9 @@ msgid ""
 "bottom for taller waves, the left for small waves, and the right for long "
 "waves."
 msgstr ""
+
+#~ msgid "You now have a blank sheet to draw on!"
+#~ msgstr "Ara teniu una fulla en blanc per dibuixar-hi!"
 
 #~ msgid "Start a new picture?"
 #~ msgstr "Començo un dibuix nou?"

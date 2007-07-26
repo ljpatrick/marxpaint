@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint 0.9.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-07-24 23:16-0700\n"
+"POT-Creation-Date: 2007-07-26 09:38-0700\n"
 "PO-Revision-Date: 2004-10-17 11:19+0200\n"
 "Last-Translator: Laurent Dhima <laurenti@alblinux.net>\n"
 "Language-Team: Albanian <translation-team-sq@lists.sourceforge.net>\n"
@@ -362,8 +362,9 @@ msgid "Eraser!"
 msgstr "Goma!"
 
 #. Response to 'start a new image' action
-msgid "You now have a blank sheet to draw on!"
-msgstr "Tashmë keni një fletë bosh ku mund të vizatoni!"
+#, fuzzy
+msgid "Pick a color or picture with which to start a new drawing."
+msgstr "Zgjidh një figurë për të vulosur përqark vizatimit tuaj."
 
 #. Response to 'open' action (while file dialog is being constructed)
 msgid "Open…"
@@ -527,8 +528,6 @@ msgstr ""
 msgid "No, save a new file!"
 msgstr "Jo, ruaje në file tjetër"
 
-#. Let user choose an image:
-#. Instructions for 'New' file/color dialog  FIXME
 msgid "Choose the picture you want, then click “Open”."
 msgstr "Zgjidh pikturën që dëshiron, pastaj kliko \"Hap\"."
 
@@ -715,6 +714,9 @@ msgid ""
 "bottom for taller waves, the left for small waves, and the right for long "
 "waves."
 msgstr ""
+
+#~ msgid "You now have a blank sheet to draw on!"
+#~ msgstr "Tashmë keni një fletë bosh ku mund të vizatoni!"
 
 #, fuzzy
 #~ msgid "Start a new picture?"

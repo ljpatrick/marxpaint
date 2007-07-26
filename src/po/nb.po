@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: nb\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-07-24 23:16-0700\n"
+"POT-Creation-Date: 2007-07-26 09:38-0700\n"
 "PO-Revision-Date: 2007-07-19 20:37+0200\n"
 "Last-Translator: Karl Ove Hufthammer <karl@huftis.org>\n"
 "Language-Team: Norwegian Nynorsk <i18n-nn@lister.ping.uio.no>\n"
@@ -356,8 +356,9 @@ msgid "Eraser!"
 msgstr "Viskelær!"
 
 #. Response to 'start a new image' action
-msgid "You now have a blank sheet to draw on!"
-msgstr "Du har nå blanke ark og fargestifter til!"
+#, fuzzy
+msgid "Pick a color or picture with which to start a new drawing."
+msgstr "Velg hva du vil stemple tegningen med."
 
 #. Response to 'open' action (while file dialog is being constructed)
 msgid "Open…"
@@ -519,8 +520,6 @@ msgstr "Ja, bytt ut den gamle!"
 msgid "No, save a new file!"
 msgstr "Nei, lagre som en ny tegning!"
 
-#. Let user choose an image:
-#. Instructions for 'New' file/color dialog  FIXME
 msgid "Choose the picture you want, then click “Open”."
 msgstr "Velg en tegning og trykk «Åpne»."
 
@@ -695,6 +694,9 @@ msgstr ""
 "Trykk for å gjøre tegningen bølgete. Trykk oppe for å lage lave bølger, nede "
 "for å lage høye bølger, til venstre for å lage korte bølger og til høyre for "
 "å lage lange bølger."
+
+#~ msgid "You now have a blank sheet to draw on!"
+#~ msgstr "Du har nå blanke ark og fargestifter til!"
 
 #~ msgid "Start a new picture?"
 #~ msgstr "Vil du lage en ny tegning?"

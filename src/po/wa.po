@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint 0.9.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-07-24 23:16-0700\n"
+"POT-Creation-Date: 2007-07-26 09:38-0700\n"
 "PO-Revision-Date: 2004-03-30 17:24+0200\n"
 "Last-Translator: Pablo Saratxaga <pablo@walon.org>\n"
 "Language-Team: Walloon <linux-wa@walon.org>\n"
@@ -361,8 +361,9 @@ msgid "Eraser!"
 msgstr "Disfacer!"
 
 #. Response to 'start a new image' action
-msgid "You now have a blank sheet to draw on!"
-msgstr "Asteure vos avoz ene blanke foye po dessiner dzeu!"
+#, fuzzy
+msgid "Pick a color or picture with which to start a new drawing."
+msgstr "Tchoezixhoz ene imådje po-z eployî come tampon."
 
 #. Response to 'open' action (while file dialog is being constructed)
 msgid "Open…"
@@ -529,8 +530,6 @@ msgstr ""
 msgid "No, save a new file!"
 msgstr "Neni, schaper en on novea fitchî"
 
-#. Let user choose an image:
-#. Instructions for 'New' file/color dialog  FIXME
 msgid "Choose the picture you want, then click “Open”."
 msgstr "Tchoezixhoz l' imådje ki vos vloz, poy clitchîz so «Drovi»."
 
@@ -726,6 +725,9 @@ msgid ""
 "bottom for taller waves, the left for small waves, and the right for long "
 "waves."
 msgstr ""
+
+#~ msgid "You now have a blank sheet to draw on!"
+#~ msgstr "Asteure vos avoz ene blanke foye po dessiner dzeu!"
 
 #, fuzzy
 #~ msgid "Start a new picture?"

@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TuxPaint 0.9.13\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-07-24 23:16-0700\n"
+"POT-Creation-Date: 2007-07-26 09:38-0700\n"
 "PO-Revision-Date: 2004-07-15 00:25+0800\n"
 "Last-Translator: Muguntharaj <mugunth@thamizha.com>\n"
 "Language-Team: \n"
@@ -357,8 +357,9 @@ msgid "Eraser!"
 msgstr "«Æ¢ôÀ¡ý!"
 
 #. Response to 'start a new image' action
-msgid "You now have a blank sheet to draw on!"
-msgstr "þô§À¡Ð ¿£í¸û Å¨ÃÂ ´Õ ¦ÅüÚ ¾¡û ¸¢¨¼òÐÅ¢ð¼Ð!"
+#, fuzzy
+msgid "Pick a color or picture with which to start a new drawing."
+msgstr "¯í¸û Å¨ÃÀ¼ò¾¢Ûû Óò¾¢¨ÃÂ¢¼ ´Õ À¼ò¨¾ §¾÷ó¦¾Îí¸û."
 
 #. Response to 'open' action (while file dialog is being constructed)
 msgid "Open…"
@@ -524,8 +525,6 @@ msgstr ""
 msgid "No, save a new file!"
 msgstr "§Åñ¼¡õ, þôÀ¼ò¨¾ Ò¾¢Â §¸¡ôÀ¡¸ §ºÁ¢"
 
-#. Let user choose an image:
-#. Instructions for 'New' file/color dialog  FIXME
 msgid "Choose the picture you want, then click “Open”."
 msgstr "§¾¨ÅÂ¡É À¼ò¨¾ §¾÷ó¦¾ÎòÐ, À¢ÈÌ '¾¢È'-³ò ¾ð¼×õ."
 
@@ -709,6 +708,9 @@ msgid ""
 "bottom for taller waves, the left for small waves, and the right for long "
 "waves."
 msgstr ""
+
+#~ msgid "You now have a blank sheet to draw on!"
+#~ msgstr "þô§À¡Ð ¿£í¸û Å¨ÃÂ ´Õ ¦ÅüÚ ¾¡û ¸¢¨¼òÐÅ¢ð¼Ð!"
 
 #, fuzzy
 #~ msgid "Start a new picture?"

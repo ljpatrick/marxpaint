@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pt_br\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-07-24 23:16-0700\n"
+"POT-Creation-Date: 2007-07-26 09:38-0700\n"
 "PO-Revision-Date: 2007-05-19 15:50-0300\n"
 "Last-Translator: Adorilson Bezerra <adorilson@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <pt@li.org>\n"
@@ -363,8 +363,9 @@ msgid "Eraser!"
 msgstr "Borracha!"
 
 #. Response to 'start a new image' action
-msgid "You now have a blank sheet to draw on!"
-msgstr "Agora você tem uma nova folha para desenhar!"
+#, fuzzy
+msgid "Pick a color or picture with which to start a new drawing."
+msgstr "Escolha uma figura para carimbar no seu desenho."
 
 #. Response to 'open' action (while file dialog is being constructed)
 msgid "Open…"
@@ -532,8 +533,6 @@ msgstr ""
 msgid "No, save a new file!"
 msgstr "Não, guardar um novo desenho"
 
-#. Let user choose an image:
-#. Instructions for 'New' file/color dialog  FIXME
 msgid "Choose the picture you want, then click “Open”."
 msgstr "Escolha o desenho que você quer e então clique em “Abrir“"
 
@@ -707,6 +706,9 @@ msgid ""
 "bottom for taller waves, the left for small waves, and the right for long "
 "waves."
 msgstr ""
+
+#~ msgid "You now have a blank sheet to draw on!"
+#~ msgstr "Agora você tem uma nova folha para desenhar!"
 
 #, fuzzy
 #~ msgid "Start a new picture?"

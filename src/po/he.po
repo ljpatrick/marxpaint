@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: he\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-07-24 23:16-0700\n"
+"POT-Creation-Date: 2007-07-26 09:38-0700\n"
 "PO-Revision-Date: 2005-10-10 21:54+0200\n"
 "Last-Translator: dovix <dovix2003@yahoo.com>\n"
 "Language-Team: Hebrew <mdk-hebrew@iglu.org.il>\n"
@@ -362,8 +362,9 @@ msgid "Eraser!"
 msgstr "מחיקה!"
 
 #. Response to 'start a new image' action
-msgid "You now have a blank sheet to draw on!"
-msgstr "עכשיו יש לך לוח ריק לצייר עליו!"
+#, fuzzy
+msgid "Pick a color or picture with which to start a new drawing."
+msgstr "עליך לבחור חותמת שתוטבע בציור."
 
 #. Response to 'open' action (while file dialog is being constructed)
 msgid "Open…"
@@ -527,8 +528,6 @@ msgstr ""
 msgid "No, save a new file!"
 msgstr "לא, שמור בקובץ חדש"
 
-#. Let user choose an image:
-#. Instructions for 'New' file/color dialog  FIXME
 msgid "Choose the picture you want, then click “Open”."
 msgstr "עליך לבחור את התמונה הרצויה, ואז ללחוץ על 'פתיחה'"
 
@@ -703,6 +702,9 @@ msgid ""
 "bottom for taller waves, the left for small waves, and the right for long "
 "waves."
 msgstr ""
+
+#~ msgid "You now have a blank sheet to draw on!"
+#~ msgstr "עכשיו יש לך לוח ריק לצייר עליו!"
 
 #, fuzzy
 #~ msgid "Start a new picture?"

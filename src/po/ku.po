@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-07-24 23:16-0700\n"
+"POT-Creation-Date: 2007-07-26 09:38-0700\n"
 "PO-Revision-Date: 2006-04-23 00:58+0200\n"
 "Last-Translator: Amed Ç. Jiyan <amed@pckurd.net>\n"
 "Language-Team: KURDISH <LL@li.org>\n"
@@ -354,8 +354,9 @@ msgid "Eraser!"
 msgstr "Jêbir!"
 
 #. Response to 'start a new image' action
-msgid "You now have a blank sheet to draw on!"
-msgstr "Vêga ji bo xêzkirinê rûpeleke te ya vala heye!"
+#, fuzzy
+msgid "Pick a color or picture with which to start a new drawing."
+msgstr "Ji bo ku li wêneyê xwe zêde bikî demxeyekê hilbijêre."
 
 #. Response to 'open' action (while file dialog is being constructed)
 msgid "Open…"
@@ -519,8 +520,6 @@ msgstr "Erê, li ser ya kevin binivîse!"
 msgid "No, save a new file!"
 msgstr "Na, dosyeyeke nû tomar bike!"
 
-#. Let user choose an image:
-#. Instructions for 'New' file/color dialog  FIXME
 msgid "Choose the picture you want, then click “Open”."
 msgstr "Ji bo vekirina wêneyê ku dixwazî \"Veke\" Bitikîne."
 
@@ -695,6 +694,9 @@ msgid ""
 "bottom for taller waves, the left for small waves, and the right for long "
 "waves."
 msgstr ""
+
+#~ msgid "You now have a blank sheet to draw on!"
+#~ msgstr "Vêga ji bo xêzkirinê rûpeleke te ya vala heye!"
 
 #~ msgid "Start a new picture?"
 #~ msgstr "Dest bi wêneyekî nû bikî?"

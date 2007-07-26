@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint 0.9.16\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-07-24 23:16-0700\n"
+"POT-Creation-Date: 2007-07-26 09:38-0700\n"
 "PO-Revision-Date: 2006-09-28 09:04+0200\n"
 "Last-Translator: Petri Jooste <rkwjpj@puk.ac.za>\n"
 "Language-Team: Afrikaans <rkwjpj@puk.ac.za>\n"
@@ -359,8 +359,9 @@ msgid "Eraser!"
 msgstr "Uitveër"
 
 #. Response to 'start a new image' action
-msgid "You now have a blank sheet to draw on!"
-msgstr "Jy het nou 'n skoon bladsy om op te teken!"
+#, fuzzy
+msgid "Pick a color or picture with which to start a new drawing."
+msgstr "Kies 'n prentjie om as 'n stempel te gebruik op jou tekening."
 
 #. Response to 'open' action (while file dialog is being constructed)
 msgid "Open…"
@@ -522,8 +523,6 @@ msgstr "Ja, vervang die ou een!"
 msgid "No, save a new file!"
 msgstr "Nee, stoor 'n nuwe lêer!"
 
-#. Let user choose an image:
-#. Instructions for 'New' file/color dialog  FIXME
 msgid "Choose the picture you want, then click “Open”."
 msgstr "Kies die prent wat jy wil hê en klik 'Maak oop'."
 
@@ -695,6 +694,9 @@ msgid ""
 "bottom for taller waves, the left for small waves, and the right for long "
 "waves."
 msgstr ""
+
+#~ msgid "You now have a blank sheet to draw on!"
+#~ msgstr "Jy het nou 'n skoon bladsy om op te teken!"
 
 #~ msgid "Start a new picture?"
 #~ msgstr "Begin 'n nuwe prent?"

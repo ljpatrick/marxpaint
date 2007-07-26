@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Thai tux paint\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-07-24 23:16-0700\n"
+"POT-Creation-Date: 2007-07-26 09:38-0700\n"
 "PO-Revision-Date: 2007-01-22 10:51+0700\n"
 "Last-Translator: Ouychai <Ae.translator@gmail.com>\n"
 "Language-Team: \n"
@@ -350,8 +350,9 @@ msgid "Eraser!"
 msgstr "ลบนะ!"
 
 #. Response to 'start a new image' action
-msgid "You now have a blank sheet to draw on!"
-msgstr "สร้างกระดานเปล่าสำหรับวาดรูป!"
+#, fuzzy
+msgid "Pick a color or picture with which to start a new drawing."
+msgstr "เลือกรูปมาประทับตราบนรูปวาด"
 
 #. Response to 'open' action (while file dialog is being constructed)
 msgid "Open…"
@@ -513,8 +514,6 @@ msgstr "ใช่, ทับอันเดิม"
 msgid "No, save a new file!"
 msgstr "ไม่! บันทึกเป็นแฟ้มใหม่"
 
-#. Let user choose an image:
-#. Instructions for 'New' file/color dialog  FIXME
 msgid "Choose the picture you want, then click “Open”."
 msgstr "เลือกรูปที่เธอต้องการ จากนั้นคลิก “เปิด”"
 
@@ -685,6 +684,9 @@ msgid ""
 "bottom for taller waves, the left for small waves, and the right for long "
 "waves."
 msgstr ""
+
+#~ msgid "You now have a blank sheet to draw on!"
+#~ msgstr "สร้างกระดานเปล่าสำหรับวาดรูป!"
 
 #~ msgid "Start a new picture?"
 #~ msgstr "จะเริ่มด้วยรูปใหม่หรือไม่?"

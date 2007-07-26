@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TuxPaint\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-07-24 23:16-0700\n"
+"POT-Creation-Date: 2007-07-26 09:38-0700\n"
 "PO-Revision-Date: 2005-09-13 04:48+0200\n"
 "Last-Translator: Serhij Dubyk <dubyk@lsl.lviv.ua>\n"
 "Language-Team: Serhij Dubyk <dubyk@lsl.lviv.ua>\n"
@@ -375,8 +375,8 @@ msgstr "Стерти!"
 
 #. Response to 'start a new image' action
 #, fuzzy
-msgid "You now have a blank sheet to draw on!"
-msgstr "Тепер у Вас є чистий лист!"
+msgid "Pick a color or picture with which to start a new drawing."
+msgstr "Виберіть картинку, щоб поставити штамп на Вашому малюнку."
 
 #. Response to 'open' action (while file dialog is being constructed)
 msgid "Open…"
@@ -544,8 +544,6 @@ msgstr ""
 msgid "No, save a new file!"
 msgstr "Не вдається зберегти файл ресурсів: "
 
-#. Let user choose an image:
-#. Instructions for 'New' file/color dialog  FIXME
 msgid "Choose the picture you want, then click “Open”."
 msgstr "Виберіть бажаний малюнок, а потім клацніть «Відкрити»."
 
@@ -734,6 +732,10 @@ msgid ""
 "bottom for taller waves, the left for small waves, and the right for long "
 "waves."
 msgstr ""
+
+#, fuzzy
+#~ msgid "You now have a blank sheet to draw on!"
+#~ msgstr "Тепер у Вас є чистий лист!"
 
 #, fuzzy
 #~ msgid "Start a new picture?"

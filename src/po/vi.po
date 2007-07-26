@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint-0.9.17\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-07-24 23:16-0700\n"
+"POT-Creation-Date: 2007-07-26 09:38-0700\n"
 "PO-Revision-Date: 2007-07-11 23:28+0930\n"
 "Last-Translator: Clytie Siddall <clytie@riverland.net.au>\n"
 "Language-Team: Vietnamese <vi-VN@googlegroups.com>\n"
@@ -358,8 +358,9 @@ msgid "Eraser!"
 msgstr "Xóa!"
 
 #. Response to 'start a new image' action
-msgid "You now have a blank sheet to draw on!"
-msgstr "Cháu có một tớ giấy trắng, bắt đầu vẽ nhé."
+#, fuzzy
+msgid "Pick a color or picture with which to start a new drawing."
+msgstr "Chọn một ảnh để dấu vòng quanh hình vẽ của cháu."
 
 #. Response to 'open' action (while file dialog is being constructed)
 msgid "Open…"
@@ -521,8 +522,6 @@ msgstr "Có phải, thay thế bức cũ."
 msgid "No, save a new file!"
 msgstr "Không phải, lưu tập tin mới."
 
-#. Let user choose an image:
-#. Instructions for 'New' file/color dialog  FIXME
 msgid "Choose the picture you want, then click “Open”."
 msgstr "Chọn ảnh mà cháu muốn, rồi nhắp vào nút Mở."
 
@@ -693,6 +692,9 @@ msgid ""
 "bottom for taller waves, the left for small waves, and the right for long "
 "waves."
 msgstr ""
+
+#~ msgid "You now have a blank sheet to draw on!"
+#~ msgstr "Cháu có một tớ giấy trắng, bắt đầu vẽ nhé."
 
 #~ msgid "Start a new picture?"
 #~ msgstr "Có bắt đầu bức vẽ mới phải không?"

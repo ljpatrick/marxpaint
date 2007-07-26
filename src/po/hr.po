@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TuxPaint\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-07-24 23:16-0700\n"
+"POT-Creation-Date: 2007-07-26 09:38-0700\n"
 "PO-Revision-Date: 2004-05-23 10:53+0100\n"
 "Last-Translator: Nedjeljko Jedbaj <jedvajn@netlane.com>\n"
 "Language-Team: \n"
@@ -358,8 +358,9 @@ msgid "Eraser!"
 msgstr "Briši!"
 
 #. Response to 'start a new image' action
-msgid "You now have a blank sheet to draw on!"
-msgstr "Pred tobom je prazno mjesto za crtanje!"
+#, fuzzy
+msgid "Pick a color or picture with which to start a new drawing."
+msgstr "Izaberi cretž koji će biti štambilj na tvom cretžu."
 
 #. Response to 'open' action (while file dialog is being constructed)
 msgid "Open…"
@@ -523,8 +524,6 @@ msgstr ""
 msgid "No, save a new file!"
 msgstr "Ne. Pohrani u novu datoteku."
 
-#. Let user choose an image:
-#. Instructions for 'New' file/color dialog  FIXME
 msgid "Choose the picture you want, then click “Open”."
 msgstr "Izaberi crtež, a zatim klikni 'Otvori'."
 
@@ -707,6 +706,9 @@ msgid ""
 "bottom for taller waves, the left for small waves, and the right for long "
 "waves."
 msgstr ""
+
+#~ msgid "You now have a blank sheet to draw on!"
+#~ msgstr "Pred tobom je prazno mjesto za crtanje!"
 
 #, fuzzy
 #~ msgid "Start a new picture?"

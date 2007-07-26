@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint-is 0.9.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-07-24 23:16-0700\n"
+"POT-Creation-Date: 2007-07-26 09:38-0700\n"
 "PO-Revision-Date: 2004-03-15 15:38GMT\n"
 "Last-Translator: Pjetur G. Hjaltason <pjetur@pjetur.net>\n"
 "Language-Team: Icelandic <kde-isl@molar.is>\n"
@@ -362,8 +362,9 @@ msgid "Eraser!"
 msgstr "Strokleður!"
 
 #. Response to 'start a new image' action
-msgid "You now have a blank sheet to draw on!"
-msgstr "Nú ertu með autt blað til að teikna á!"
+#, fuzzy
+msgid "Pick a color or picture with which to start a new drawing."
+msgstr "Veldu mynd til að nota sem stimpil."
 
 #. Response to 'open' action (while file dialog is being constructed)
 msgid "Open…"
@@ -527,8 +528,6 @@ msgstr ""
 msgid "No, save a new file!"
 msgstr "Nei, geyma nýja mynd!"
 
-#. Let user choose an image:
-#. Instructions for 'New' file/color dialog  FIXME
 msgid "Choose the picture you want, then click “Open”."
 msgstr "Veldu teikningu, og smelltu svo á 'Opna'."
 
@@ -711,6 +710,9 @@ msgid ""
 "bottom for taller waves, the left for small waves, and the right for long "
 "waves."
 msgstr ""
+
+#~ msgid "You now have a blank sheet to draw on!"
+#~ msgstr "Nú ertu með autt blað til að teikna á!"
 
 #, fuzzy
 #~ msgid "Start a new picture?"

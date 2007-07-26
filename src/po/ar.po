@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint-HEAD\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-07-24 23:16-0700\n"
+"POT-Creation-Date: 2007-07-26 09:38-0700\n"
 "PO-Revision-Date: 2007-05-17 06:58+0300\n"
 "Last-Translator: Khaled Hosny <khaledhosny@eglug.org>\n"
 "Language-Team: Arabic <doc@arabeyes.org>\n"
@@ -366,8 +366,9 @@ msgid "Eraser!"
 msgstr "مِمْحاة"
 
 #. Response to 'start a new image' action
-msgid "You now have a blank sheet to draw on!"
-msgstr "لديك الآن صفحة نظيفة لترسم عليها"
+#, fuzzy
+msgid "Pick a color or picture with which to start a new drawing."
+msgstr "اختر الصورة التي ستختم بها حول رسمتك."
 
 #. Response to 'open' action (while file dialog is being constructed)
 msgid "Open…"
@@ -532,8 +533,6 @@ msgstr "نعم، استبدل الملف القديم"
 msgid "No, save a new file!"
 msgstr "لا، احفظ باسم جديد"
 
-#. Let user choose an image:
-#. Instructions for 'New' file/color dialog  FIXME
 msgid "Choose the picture you want, then click “Open”."
 msgstr "اختر الصورة التي تريد، ثم انقر على ”فتح“."
 
@@ -704,6 +703,9 @@ msgid ""
 "bottom for taller waves, the left for small waves, and the right for long "
 "waves."
 msgstr ""
+
+#~ msgid "You now have a blank sheet to draw on!"
+#~ msgstr "لديك الآن صفحة نظيفة لترسم عليها"
 
 # ...هذا سَيَستبدلُ بصندوق ليسمح بإختيار اللون والبداية، مع خيار الرجوع لصرف الجديد والعودة للصورة الحالية. ولكن الآن
 #~ msgid "Start a new picture?"

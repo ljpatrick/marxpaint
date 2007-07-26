@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TuxPaint 0.9.16\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-07-24 23:16-0700\n"
+"POT-Creation-Date: 2007-07-26 09:38-0700\n"
 "PO-Revision-Date: 2006-09-21 20:04+0200\n"
 "Last-Translator: Shumani Mercy Ṋevhulaudzi <nevhulaudzi@saps.org.za>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -360,8 +360,9 @@ msgid "Eraser!"
 msgstr "Tshiphumuli!"
 
 #. Response to 'start a new image' action
-msgid "You now have a blank sheet to draw on!"
-msgstr "Ni na bambiri ḽi sina tshithu ḽine na teya u ola khaḽo!"
+#, fuzzy
+msgid "Pick a color or picture with which to start a new drawing."
+msgstr "Nangani tshifanyiso u ganḓa u mona na tshifanyiso tshaṋu."
 
 #. Response to 'open' action (while file dialog is being constructed)
 msgid "Open…"
@@ -525,8 +526,6 @@ msgstr "Ee, vhuedzedzani tsha kale!"
 msgid "No, save a new file!"
 msgstr "Hai, vhulungani faela ntswa!"
 
-#. Let user choose an image:
-#. Instructions for 'New' file/color dialog  FIXME
 msgid "Choose the picture you want, then click “Open”."
 msgstr "Nangani tshifanyiso tshine na tshi ṱoḓa, ni kiḽike \" Vulani\"."
 
@@ -707,6 +706,9 @@ msgid ""
 "bottom for taller waves, the left for small waves, and the right for long "
 "waves."
 msgstr ""
+
+#~ msgid "You now have a blank sheet to draw on!"
+#~ msgstr "Ni na bambiri ḽi sina tshithu ḽine na teya u ola khaḽo!"
 
 #~ msgid "Start a new picture?"
 #~ msgstr "Thomani tshifanyiso tshiswa?"

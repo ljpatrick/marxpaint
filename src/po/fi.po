@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: fi\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-07-24 23:16-0700\n"
+"POT-Creation-Date: 2007-07-26 09:38-0700\n"
 "PO-Revision-Date: 2006-05-14 12:35+0300\n"
 "Last-Translator: Niko Lewman <niko.lewman@edu.hel.fi>\n"
 "Language-Team: Finnisf\n"
@@ -365,8 +365,9 @@ msgid "Eraser!"
 msgstr "Pyyhekumi!"
 
 #. Response to 'start a new image' action
-msgid "You now have a blank sheet to draw on!"
-msgstr "Sinulla on nyt tyhjä piirtoalue!"
+#, fuzzy
+msgid "Pick a color or picture with which to start a new drawing."
+msgstr "Valitse kuva, jonka haluat leimata piirustukseesi."
 
 #. Response to 'open' action (while file dialog is being constructed)
 msgid "Open…"
@@ -530,8 +531,6 @@ msgstr "Kyllä, korvaa vanha kuva!"
 msgid "No, save a new file!"
 msgstr "Ei, tallennetaan uuteen tiedostoon"
 
-#. Let user choose an image:
-#. Instructions for 'New' file/color dialog  FIXME
 msgid "Choose the picture you want, then click “Open”."
 msgstr "Valitse haluamasi kuva ja valitse 'Avaa'"
 
@@ -713,6 +712,9 @@ msgid ""
 "bottom for taller waves, the left for small waves, and the right for long "
 "waves."
 msgstr ""
+
+#~ msgid "You now have a blank sheet to draw on!"
+#~ msgstr "Sinulla on nyt tyhjä piirtoalue!"
 
 #, fuzzy
 #~ msgid "Start a new picture?"

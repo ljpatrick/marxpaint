@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint 0.9.17\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-07-24 23:16-0700\n"
+"POT-Creation-Date: 2007-07-26 09:38-0700\n"
 "PO-Revision-Date: 2007-05-11 08:44+0100\n"
 "Last-Translator: Kevin Patrick Scannell <kscanne@gmail.com>\n"
 "Language-Team: Irish <gaeilge-gnulinux@lists.sourceforge.net>\n"
@@ -358,8 +358,9 @@ msgid "Eraser!"
 msgstr "Léirscriosán!"
 
 #. Response to 'start a new image' action
-msgid "You now have a blank sheet to draw on!"
-msgstr "Tá leathanach bán agat chun dearadh air!"
+#, fuzzy
+msgid "Pick a color or picture with which to start a new drawing."
+msgstr "Roghnaigh pictiúr le húsáid mar stampa ar do líníocht."
 
 #. Response to 'open' action (while file dialog is being constructed)
 msgid "Open…"
@@ -521,8 +522,6 @@ msgstr "Forscríobh é!"
 msgid "No, save a new file!"
 msgstr "Ná forscríobh, sábháil i gcomhad nua!"
 
-#. Let user choose an image:
-#. Instructions for 'New' file/color dialog  FIXME
 msgid "Choose the picture you want, then click “Open”."
 msgstr ""
 "Roghnaigh an pictiúr is mian leat a oscailt, agus ansin cliceáil “Oscail”."
@@ -697,6 +696,9 @@ msgid ""
 "bottom for taller waves, the left for small waves, and the right for long "
 "waves."
 msgstr ""
+
+#~ msgid "You now have a blank sheet to draw on!"
+#~ msgstr "Tá leathanach bán agat chun dearadh air!"
 
 #~ msgid "Start a new picture?"
 #~ msgstr "Ar mhaith leat pictiúr nua a thosú?"

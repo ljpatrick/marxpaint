@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-07-24 23:16-0700\n"
+"POT-Creation-Date: 2007-07-26 09:38-0700\n"
 "PO-Revision-Date: 2006-10-11 22:53+0200\n"
 "Last-Translator: Burkhard Lück <lueck@hube-lueck.de>\n"
 "Language-Team: Deutsch <kde-i18n-de@kde.org>\n"
@@ -364,8 +364,9 @@ msgid "Eraser!"
 msgstr "Radiergummi!"
 
 #. Response to 'start a new image' action
-msgid "You now have a blank sheet to draw on!"
-msgstr "Du hast jetzt ein neues leeres Bild um darauf zu malen!"
+#, fuzzy
+msgid "Pick a color or picture with which to start a new drawing."
+msgstr "Wähle ein Bild zum Stempeln."
 
 #. Response to 'open' action (while file dialog is being constructed)
 msgid "Open…"
@@ -529,8 +530,6 @@ msgstr "Ja, überschreibe das alte Bild!"
 msgid "No, save a new file!"
 msgstr "Nein, speichere in eine neue Datei!"
 
-#. Let user choose an image:
-#. Instructions for 'New' file/color dialog  FIXME
 msgid "Choose the picture you want, then click “Open”."
 msgstr "Wähle ein Bild, dass du öffnen willst und klick auf 'Öffnen'."
 
@@ -702,6 +701,9 @@ msgid ""
 "bottom for taller waves, the left for small waves, and the right for long "
 "waves."
 msgstr ""
+
+#~ msgid "You now have a blank sheet to draw on!"
+#~ msgstr "Du hast jetzt ein neues leeres Bild um darauf zu malen!"
 
 #~ msgid "Start a new picture?"
 #~ msgstr "Möchtest du ein neues Bild malen?"

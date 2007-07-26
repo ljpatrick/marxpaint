@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: et\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-07-24 23:16-0700\n"
+"POT-Creation-Date: 2007-07-26 09:38-0700\n"
 "PO-Revision-Date: 2007-03-18 20:26+0200\n"
 "Last-Translator: Lauri Jesmin <lauri.jesmin@nordtech.ee>\n"
 "Language-Team: Estonian <et@li.org>\n"
@@ -355,8 +355,9 @@ msgid "Eraser!"
 msgstr "Kustukumm!"
 
 #. Response to 'start a new image' action
-msgid "You now have a blank sheet to draw on!"
-msgstr "Sul on nüüd tühi leht oma joonistuse jaoks!"
+#, fuzzy
+msgid "Pick a color or picture with which to start a new drawing."
+msgstr "Vali pilt, mida asetada pildile templina."
 
 #. Response to 'open' action (while file dialog is being constructed)
 msgid "Open…"
@@ -518,8 +519,6 @@ msgstr "Jah, vaheta vana pilt välja!"
 msgid "No, save a new file!"
 msgstr "Ei, salvestame uude faili!"
 
-#. Let user choose an image:
-#. Instructions for 'New' file/color dialog  FIXME
 msgid "Choose the picture you want, then click “Open”."
 msgstr "Vali pilt ja klõpsa nupul  \"Ava\""
 
@@ -690,6 +689,9 @@ msgid ""
 "bottom for taller waves, the left for small waves, and the right for long "
 "waves."
 msgstr ""
+
+#~ msgid "You now have a blank sheet to draw on!"
+#~ msgstr "Sul on nüüd tühi leht oma joonistuse jaoks!"
 
 #~ msgid "Start a new picture?"
 #~ msgstr "Kas teeme uue pildi?"

@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TuxPaint 0.9.2\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-07-24 23:16-0700\n"
+"POT-Creation-Date: 2007-07-26 09:38-0700\n"
 "PO-Revision-Date: 2005-01-09 18:18-0300\n"
 "Last-Translator: Gabriel Gazzán <ggabriel@internet.com.uy>\n"
 "Language-Team: Español <ggabriel@internet.com.uy>\n"
@@ -357,8 +357,9 @@ msgid "Eraser!"
 msgstr "¡Borrador!"
 
 #. Response to 'start a new image' action
-msgid "You now have a blank sheet to draw on!"
-msgstr "¡Ahora tienes una hoja en blanco para dibujar!"
+#, fuzzy
+msgid "Pick a color or picture with which to start a new drawing."
+msgstr "Escoja una imagen para usar como sello en su dibujo"
 
 #. Response to 'open' action (while file dialog is being constructed)
 msgid "Open…"
@@ -524,8 +525,6 @@ msgstr ""
 msgid "No, save a new file!"
 msgstr "No, guardar en nuevo archivo"
 
-#. Let user choose an image:
-#. Instructions for 'New' file/color dialog  FIXME
 msgid "Choose the picture you want, then click “Open”."
 msgstr "Selecciona la imagen que quieres, luego haz click en \"Abrir\"."
 
@@ -703,6 +702,9 @@ msgid ""
 "bottom for taller waves, the left for small waves, and the right for long "
 "waves."
 msgstr ""
+
+#~ msgid "You now have a blank sheet to draw on!"
+#~ msgstr "¡Ahora tienes una hoja en blanco para dibujar!"
 
 #, fuzzy
 #~ msgid "Start a new picture?"

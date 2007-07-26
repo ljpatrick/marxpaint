@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint 0.9.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-07-24 23:16-0700\n"
+"POT-Creation-Date: 2007-07-26 09:38-0700\n"
 "PO-Revision-Date: 2004-12-04 15:45-0800\n"
 "Last-Translator: Alberto Escudero <aep@it46.se>\n"
 "Language-Team: Swahili\n"
@@ -361,8 +361,9 @@ msgid "Eraser!"
 msgstr "Kifutio!"
 
 #. Response to 'start a new image' action
-msgid "You now have a blank sheet to draw on!"
-msgstr "Sasa una ukurasa tupu kutumia kuchora!"
+#, fuzzy
+msgid "Pick a color or picture with which to start a new drawing."
+msgstr "Chagua picha kutia stempu katika picha yako."
 
 #. Response to 'open' action (while file dialog is being constructed)
 msgid "Open…"
@@ -526,8 +527,6 @@ msgstr ""
 msgid "No, save a new file!"
 msgstr "Hapana, hifadhi kama faili mpya."
 
-#. Let user choose an image:
-#. Instructions for 'New' file/color dialog  FIXME
 msgid "Choose the picture you want, then click “Open”."
 msgstr "Chagua picha unayotaka, halafu bofya “Fungua”."
 
@@ -709,6 +708,9 @@ msgid ""
 "bottom for taller waves, the left for small waves, and the right for long "
 "waves."
 msgstr ""
+
+#~ msgid "You now have a blank sheet to draw on!"
+#~ msgstr "Sasa una ukurasa tupu kutumia kuchora!"
 
 #, fuzzy
 #~ msgid "Start a new picture?"

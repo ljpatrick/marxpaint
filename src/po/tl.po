@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-07-24 23:16-0700\n"
+"POT-Creation-Date: 2007-07-26 09:38-0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -352,8 +352,8 @@ msgid "Eraser!"
 msgstr "Pambura"
 
 #. Response to 'start a new image' action
-msgid "You now have a blank sheet to draw on!"
-msgstr "Meron ka ng panibagong dokumento para guhitan!"
+msgid "Pick a color or picture with which to start a new drawing."
+msgstr ""
 
 #. Response to 'open' action (while file dialog is being constructed)
 msgid "Open…"
@@ -516,8 +516,6 @@ msgstr "Oo. Palitan ng bago!"
 msgid "No, save a new file!"
 msgstr "Hindi. i-save ang dokumento!"
 
-#. Let user choose an image:
-#. Instructions for 'New' file/color dialog  FIXME
 msgid "Choose the picture you want, then click “Open”."
 msgstr "Pumili ng larawang gusto. at i-klik ang buksan."
 
@@ -684,6 +682,9 @@ msgid ""
 "bottom for taller waves, the left for small waves, and the right for long "
 "waves."
 msgstr ""
+
+#~ msgid "You now have a blank sheet to draw on!"
+#~ msgstr "Meron ka ng panibagong dokumento para guhitan!"
 
 #~ msgid "Start a new picture?"
 #~ msgstr "Magsimula ng bagong larawan?"
