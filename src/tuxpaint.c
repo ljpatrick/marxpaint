@@ -16584,7 +16584,6 @@ int do_new_dialog(void)
   int places_to_look;
   int tot;
   int first_starter;
-  char *freeme;
 
   
   do_setcursor(cursor_watch);
@@ -16958,13 +16957,10 @@ int do_new_dialog(void)
 #endif
 
 
-  /* Let user choose an image: */
+  /* Let user choose a color or image: */
 
-  // Instructions for 'New' file/color dialog  FIXME
-  freeme = textdir(gettext_noop("Choose the picture you want, "
-            "then click “Open”."));
-  draw_tux_text(TUX_BORED, freeme, 1);
-  free(freeme);
+  // Instructions for 'New' file/color dialog
+  draw_tux_text(TUX_BORED, tool_tips[TOOL_NEW], 1);
 
   /* NOTE: cur is now set above; if file_id'th file is found, it's
      set to that file's index; otherwise, we default to '0' */

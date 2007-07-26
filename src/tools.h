@@ -116,7 +116,7 @@ const char *const tool_tips[NUM_TOOLS] = {
   gettext_noop("Eraser!"),
 
   // Response to 'start a new image' action
-  gettext_noop("You now have a blank sheet to draw on!"),
+  gettext_noop("Pick a color or picture with which to start a new drawing."),
 
   // Response to 'open' action (while file dialog is being constructed)
   gettext_noop("Open…"),
