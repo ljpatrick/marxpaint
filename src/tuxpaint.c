@@ -1466,8 +1466,10 @@ static void draw_image_title(int t, SDL_Rect dest);
 static void handle_keymouse(SDLKey key, Uint8 updown);
 static void handle_active(SDL_Event * event);
 static char *remove_slash(char *path);
+#ifdef NO_SDLPANGO
 static void anti_carriage_return(int left, int right, int cur_top,
 				 int new_top, int cur_bot, int line_width);
+#endif
 static int mySDL_WaitEvent(SDL_Event * event);
 static int mySDL_PollEvent(SDL_Event * event);
 static void load_starter_id(char *saved_id);
@@ -7038,6 +7040,12 @@ static void setup(int argc, char *argv[])
 
   locale_font = load_locale_font(medium_font, 18);
 
+#ifndef NO_SDLPANGO
+  if (need_right_to_left)
+    SDLPango_SetBaseDirection(locale_font->pango_context, SDLPANGO_DIRECTION_RTL);
+#endif
+
+
 #if 0
   // put elsewhere for THREADED_FONTS
   /* Load user fonts, for the text tool */
@@ -9508,22 +9516,50 @@ static void wordwrap_text_ex(const char *const str, SDL_Color color,
 			  int left, int top, int right,
 			  int want_right_to_left, Uint8 locale_text)
 {
+  SDL_Surface *text;
+  TuxPaint_Font *myfont = medium_font;
+  SDL_Rect dest;
+#ifdef NO_SDLPANGO
+  int len;
   int x, y, j;
   unsigned int i;
   char substr[512];
   unsigned char *locale_str;
   char *tstr;
   unsigned char utf8_char[5];
-  int len;
-  SDL_Surface *text;
-  SDL_Rect dest, src;
-  TuxPaint_Font *myfont = medium_font;
-
+  SDL_Rect src;
   int utf8_str_len, last_text_height;
   unsigned char utf8_str[512];
+#else
+  SDLPango_Matrix pango_color;
+#endif
+
+
+  if (str == NULL || str[0] == '\0')
+    return; // No-op!
 
   if (need_own_font && (strcmp(gettext(str), str) || locale_text))
     myfont = locale_font;
+
+
+#ifndef NO_SDLPANGO
+  /* Letting SDL_Pango do all this stuff! */
+
+  sdl_color_to_pango_color(color, &pango_color);
+
+  SDLPango_SetDefaultColor(myfont->pango_context, &pango_color);
+  SDLPango_SetMinimumSize(myfont->pango_context, right - left, canvas->h - top);
+  SDLPango_SetText(myfont->pango_context, gettext(str), -1);
+  text = SDLPango_CreateSurfaceDraw(myfont->pango_context); 
+
+  dest.x = left;
+  dest.y = top;
+  if (text != NULL)
+  {
+    SDL_BlitSurface(text, NULL, screen, &dest);
+    SDL_FreeSurface(text);
+  }
+#else
 
   /* Cursor starting position: */
 
@@ -9544,10 +9580,14 @@ static void wordwrap_text_ex(const char *const str, SDL_Color color,
       want_right_to_left = 0;
     }
 
+#ifdef NO_SDLPANGO
     if (want_right_to_left == 0)
       locale_str = (unsigned char *) strdup(gettext(str));
     else
       locale_str = (unsigned char *) textdir(gettext(str));
+#else
+    locale_str = (unsigned char *) strdup(gettext(str));
+#endif
 
 
     /* For each UTF8 character: */
@@ -9837,6 +9877,7 @@ static void wordwrap_text_ex(const char *const str, SDL_Color color,
 
     SDL_FillRect(screen, &dest, SDL_MapRGB(screen->format, 255, 255, 255));
   }
+#endif
 }
 
 
@@ -14716,7 +14757,7 @@ static char *textdir(const char *const str)
 
   dstr = malloc(strlen(str) + 5);
 
-  if (need_right_to_left)
+  if (need_right_to_left_word)
   {
     dstr[strlen(str)] = '\0';
 
@@ -15304,6 +15345,7 @@ static char *remove_slash(char *path)
 /* For right-to-left languages, when word-wrapping, we need to
    make sure the text doesn't end up going from bottom-to-top, too! */
 
+#ifdef NO_SDLPANGO
 static void anti_carriage_return(int left, int right, int cur_top,
 				 int new_top, int cur_bot, int line_width)
 {
@@ -15332,6 +15374,7 @@ static void anti_carriage_return(int left, int right, int cur_top,
 
   SDL_FillRect(screen, &dest, SDL_MapRGB(screen->format, 255, 255, 255));
 }
+#endif
 
 
 static int mySDL_WaitEvent(SDL_Event * event)

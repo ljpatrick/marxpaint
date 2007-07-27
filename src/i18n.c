@@ -25,7 +25,7 @@
 
   $Id$
 
-  June 14, 2002 - July 19, 2007
+  June 14, 2002 - July 26, 2007
 */
 
 #include <stdio.h>
@@ -163,10 +163,16 @@ int lang_use_right_to_left[] = {
   -1
 };
 
+int lang_use_right_to_left_word[] = {
+  LANG_HE,
+  -1
+};
+
 
 char *langstr;
 int need_own_font;
 int need_right_to_left;
+int need_right_to_left_word;
 const char *lang_prefix;
 
 const language_to_locale_struct language_to_locale_array[] = {
@@ -385,10 +391,13 @@ void set_current_language(void)
   lang_prefix = lang_prefixes[langint];
   need_own_font = search_int_array(langint, lang_use_own_font);
   need_right_to_left = search_int_array(langint, lang_use_right_to_left);
+  need_right_to_left_word = search_int_array(langint, lang_use_right_to_left_word);
 
 #ifdef DEBUG
-  fprintf(stderr, "DEBUG: Language is %s (%d) %s\n",
-	  lang_prefix, langint, need_right_to_left ? "(RTL)" : "");
+  fprintf(stderr, "DEBUG: Language is %s (%d) %s/%s\n",
+	  lang_prefix, langint,
+	  need_right_to_left ? "(RTL)" : "",
+	  need_right_to_left_word ? "(RTL words)" : "");
   fflush(stderr);
 #endif
 

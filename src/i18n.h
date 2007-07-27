@@ -10,7 +10,7 @@
 
   $Id$
   
-  June 14, 2002 - July 14, 2007
+  June 14, 2002 - July 26, 2007
 */
 
 
@@ -117,7 +117,8 @@ extern int lang_use_own_font[];
 extern int lang_use_right_to_left[];
 extern char *langstr;
 extern int need_own_font;
-extern int need_right_to_left;
+extern int need_right_to_left; // Right-justify
+extern int need_right_to_left_word; // Words need to be reversed, too! (e.g., Hebrew, but not Arabic)
 extern const char *lang_prefix;
 extern const language_to_locale_struct language_to_locale_array[];
 
