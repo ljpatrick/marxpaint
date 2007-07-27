@@ -15,7 +15,7 @@ New Breed Software</p>
 <p><a href="mailto:bill@newbreedsoftware.com">bill@newbreedsoftware.com</a><br>
 <a href="http://www.tuxpaint.org/">http://www.tuxpaint.org/</a></p>
 
-<p>July 5, 2007 - July 8, 2007</p>
+<p>July 5, 2007 - July 27, 2007</p>
 </center>
 
 <hr size=2 noshade>
@@ -44,7 +44,7 @@ concept.)</p>
 
 <p>Tux Paint is written in the C programming language, and uses the
 Simple&nbsp;DirectMedia&nbsp;Layer library ('libSDL', or simply 'SDL').
-Therefore, for the moment at least, one must understand the C language,
+Therefore, for the moment at least, one must understand the C language and
 how to compile C-based programs.  Familiarity with the SDL API is highly
 recommended, but some basic SDL concepts will be covered in this document.</p>
 
@@ -65,141 +65,264 @@ files on Linux or "<code>.dll</code>" files on Windows) and find the
 functions within.</p>
 
 <p>In turn, Tux Paint provides a number of helper functions that the
-plugin may (or sometimes should) use.  This is exposed as a C structure
-(containing pointers to functions inside Tux&nbsp;Paint and other data)
-that gets passed along to the plugin's functions as an argument.</p>
+plugin may (or sometimes is required to) use.  This is exposed as a C
+structure (or "<code>struct</code>") which contains pointers to functions
+and other data inside Tux&nbsp;Paint.  A pointer to this structure gets
+passed along to the plugin's functions as an argument when Tux&nbsp;Paint
+invokes them.</p>
 
-<p>Plugins should <code>#include</code> the file "<code>tp_magic_api.h</code>",
-and compiler flags which should be used when building plugins (to find the
-aforementioned header file, as well as SDL's header files) can be acquired
-by invoking the tool "<code>tp-magic-config</code>".</p>
+<p>Plugins should <code>#include</code> the C header file
+"<code>tp_magic_api.h</code>", which exposes the 'Magic' tool plugin API.
+Also, when you run the C compiler to build a plugin, you should use the
+command-line tool "<code>tp-magic-config</code>" to get the appropriate
+compiler flags (such as where the compiler can find the Tux&nbsp;Paint
+plugin header file, as well as SDL's header files) for building a plugin.</p>
 
-<p>(These are included with Tux&nbsp;Paint &mdash; or in some cases, as part
-of a "Tux&nbsp;Paint 'Magic' Tool Plugin Development package".)</p>
+<p>The C header file and command-line tool mentioned above are included
+with Tux&nbsp;Paint &mdash; or in some cases, as part of a "Tux&nbsp;Paint
+'Magic' Tool Plugin Development package".</p>
 
 <h3>'Magic' tool plugin functions</h3>
 
 <blockquote>
 
-<p>'Magic' tool plugins must provide the functions listed below.
-<b>Note:</b> To avoid namespace collisions, each function's name must
+<p>'Magic' tool plugins <i>must</i> contain the functions listed below.
+<b>Note:</b> To avoid 'namespace' collisions, each function's name must
 start with the shared object's filename (e.g., "blur.so" or "blur.dll"
-would have functions whose names begin with "blur_").  <i>This
-includes private functions</i>, unless you declare those as
-'static'.</p>
+would have functions whose names begin with "<code>blur_</code>").  <i>This
+includes private functions</i> (ones not used by Tux&nbsp;Paint directly),
+unless you declare those as '<code>static</code>'.</p>
 
 <h4>Common arguments to plugin functions:</h4>
 
+Here is a description of arguments that many of your plugin's functions
+will need to accept.
+
 <ul>
-<li>magic_api * api<br>
-  Pointer to the struct containing pointers to Tux&nbsp;Paint functions and
-  other data (see below)
-<li>int which<br>
+<li><code><b>magic_api * api</b></code><br>
+  Pointer to a C structure containing pointers to Tux&nbsp;Paint functions and
+  other data that the plugin can (and sometimes should) use.
+  The contents of this struct are <a href="#tpfuncs">described below</a>.<br>
+  <br>
+  Note: The <code>magic_api</code> struct is defined in the C header file
+  "<code>tp_magic_api.h</code>", which you should include at the top of your
+  plugin's C source file:
+  <blockquote><code>
+    #include "tp_magic_api.h"
+  </code></blockquote>
+
+<li><code><b>int which</b></code><br>
   An index the plugin should use to differentiate different 'Magic' tools,
   if the plugin provides more than one.  (If not, "which" will always be 0.)
-<li>SDL_Surface * canvas<br>
-  The active Tux&nbsp;Paint drawing canvas.  Your magical effects should end
-  up here!
-<li>SDL_Surface * last<br>
+  See <a href="#multiple">"Creating plugins with multiple effects"</a>,
+  below.<br>
+  <br>
+
+<li><code><b>SDL_Surface * snapshot</b></code><br>
   A snapshot of the previous Tux&nbsp;Paint canvas, taken when the the
-  mouse was first clicked to activate the magic tool.  If you don't
+  mouse was first clicked to activate the current magic tool.  If you don't
   continuously affect the image during one hold of the mouse button,
   you should base your effects off the contents of this canvas.
+  (That is, read from "<code>snapshot</code>" and write to
+  "<code>canvas</code>", below.)<br>
+  <br>
+
+<li><code><b>SDL_Surface * canvas</b></code><br>
+  The current Tux&nbsp;Paint drawing canvas.  Your magical effects should end
+  up here!<br>
+  <br>
+
+<li><code><b>SDL_Rect * update_rect</b></code><br>
+  A pointer to an SDL 'rectangle' structure that you use to tell Tux&nbsp;Paint
+  what part of the canvas has been updated.  If your effect affects a
+  32x32 area centered around the mouse pointer, you would fill the SDL_Rect
+  as follows:
+  <blockquote><code>
+    update_rect-&gt;x = x - 16;<br>
+    update_rect-&gt;y = y - 16;<br>
+    update_rect-&gt;w = 32;<br>
+    update_rect-&gt;h = 32;
+  </code></blockquote>
+  Or, if your effect changes the entire canvas (e.g., flips it upside-down),
+  you'd fill it as follows:
+  <blockquote><code>
+    update_rect-&gt;x = 0;<br>
+    update_rect-&gt;y = 0;<br>
+    update_rect-&gt;w = canvas-&gt;w;<br>
+    update_rect-&gt;h = canvas-&gt;h;
+  </code></blockquote>
+  Note: "<code>update_rect</code>" is a C pointer
+  (an "<code>SDL_Rect&nbsp;*</code>" rather than just an
+  "<code>SDL_Rect</code>") because you need to fill in its contents.
+  Because it is a pointer, you access its elements via
+  "<code>-&gt;</code>" (arrow) rather than "<code>.</code>" (dot).
 </ul>
 
 <h4>Required plugin functions:</h4>
 
+<blockquote>
+
+<p>Your plugin is required to contain, at the least, all of the
+following functions.</p>
+
+<p><b>Note:</b> Remember, your plugin's function names must be
+preceded by your plugin's filename.  That is, if your plugin is called
+"<code>zoom.so</code>" (on Linux) or "<code>zoom.dll</code>" (on Windows),
+then the names of your functions must begin with "<code><b>zoom_</b></code>"
+(e.g., "<code>zoom_get_name(...)</code>").</p>
+
+<h5>Plugin "housekeeping" functions:</h5>
+
 <ul>
-<li>int get_tool_count(magic_api * api)<br>
+<li><code><b>Uint32 api_version(void)</b></code><br>
+  The plugin should return an integer value representing the version of
+  the Tux&nbsp;Paint 'Magic' tool plugin API the plugin was built against.
+  The safest thing to do is return the value of
+  <code>TP_MAGIC_API_VERSION</code>, which is defined in
+  "<code>tp_magic_api.h</code>".  If Tux&nbsp;Paint deems your plugin to
+  be compatible, it will go ahead and use it.<br>
+  <br>
+  <b>Note:</b> Called once by Tux&nbsp;Paint, at startup. It is called
+  first.<br>
+
+<li><code><b>int init(magic_api * api)</b></code><br>
+  The plugin should do any initialization here.
+  Return '1' if initialization was successful,
+  or '0' if not (and Tux&nbsp;Paint will not present any 'Magic' tools
+  from the plugin).<br>
+  <br>
+  <b>Note:</b> Called once by Tux&nbsp;Paint, at startup. It is called
+  first.  It is called after "<code>api_version()</code>", if
+  Tux&nbsp;Paint believes your plugin to be compatible.<br>
+
+<li><code><b>int get_tool_count(magic_api * api)</b></code><br>
   This should return the number of Magic tools this plugin provides to
-  Tux Paint.
+  Tux Paint.<br>
+  <br>
+  <b>Note:</b> Called once by Tux&nbsp;Paint, at startup.  It is called
+  after your "<code>init()</code>", if it succeeded.<br>
+  <br>
 
-<li>char * get_name(magic_api * api, int which)<br>
+<li><code><b>char * get_name(magic_api * api, int which)</b></code><br>
   This should return a string containing the name of a magic tool.
-  This will appear on the button in the 'Magic' selector within Tux&nbsp;Paint.
+  This will appear on the button in the 'Magic' selector within
+  Tux&nbsp;Paint.<br>
+  <br>
   Tux Paint will <code>free()</code> the string upon exit, so you should
-  wrap it in a C <code>strdup()</code> call.
+  wrap it in a C <code>strdup()</code> call.<br>
+  <br>
+  <b>Note:</b> Called once for each Magic tool your plugin claims to
+  contain (by your "<code>get_tool_count()</code>").<br>
+  <br>
 
-<li>SDL_Surface * get_icon(magic_api * api, int which)<br>
+<li><code><b>SDL_Surface * get_icon(magic_api * api, int which)</b></code><br>
   This should return an SDL_Surface containing the icon representing
   the tool.  (A greyscale image with alpha, no larger than 40x40.)
   This will appear on the button in the 'Magic' selector within
   Tux&nbsp;Paint.<br>
-  Tux Paint will SDL_FreeSurface() the surface upon exit.
+  <br>
+  Tux Paint will free ("<code>SDL_FreeSurface()</code>") the surface upon
+  exit.<br>
+  <br>
+  <b>Note:</b> Called once for each Magic tool your plugin claims to
+  contain (by your "<code>get_tool_count()</code>").<br>
+  <br>
 
-<li>char * get_description(magic_api * api, int which)<br>
+<li><code><b>char * get_description(magic_api * api, int which)</b></code><br>
   This should return a string containing the description of a magic tool.
   This will appear as a help tip, explained by Tux the Penguin, within
   Tux&nbsp;Paint.<br>
+  <br>
   Tux Paint will <code>free()</code> the string upon exit, so you should
-  wrap it in a C <code>strdup()</code> call.
+  wrap it in a C <code>strdup()</code> call.<br>
+  <br>
+  <b>Note:</b> Called once for each Magic tool your plugin claims to
+  contain (by your "<code>get_tool_count()</code>").<br>
+  <br>
 
-<li>int requires_colors(magic_api * api, int which)<br>
+<li><code><b>int requires_colors(magic_api * api, int which)</b></code><br>
   Return a '1' if the 'Magic' tool accepts colors (the 'Colors' palette in
-  Tux&nbsp;Paint will be available), or '0' if not.
+  Tux&nbsp;Paint will be available), or '0' if not.<br>
+  <br>
+  <b>Note:</b> Called once for each Magic tool your plugin claims to
+  contain (by your "<code>get_tool_count()</code>").<br>
+  <br>
 
-<li>void set_color(magic_api * api, Uint8 r, Uint8 g, Uint8 g)<br>
+<li><code><b>void shutdown(magic_api * api)</b></code><br>
+  The plugin should do any cleanup here.  If you allocated any memory
+  or used SDL_Mixer to load any sounds during <code>init()</code>,
+  for example, you should <code>free()</code> the allocated memory
+  and <code>Mix_FreeChunk()</code> the sounds here.<br>
+  <br>
+  <b>Note:</b> This function is called once, when Tux&nbsp;Paint exits.<br>
+  <br>
+
+</ul>
+
+<h5>Plugin event functions:</h5>
+
+<ul>
+<li><code><b>void set_color(magic_api * api, Uint8 r, Uint8 g, Uint8 g)
+  </b></code><br>
   Tux&nbsp;Paint will call this function to inform the plugin of the
   RGB values of the currently-selected color in Tux&nbsp;Paint's
   'Colors' palette.  (It will be called whenever one of the plguin's
   Magic tools that accept colors becomes active, or the user picks a new
-  color while such a tool is currently active.)
+  color while such a tool is currently active.)<br>
+  <br>
 
-<li>Uint32 api_version(void)<br>
-  The plugin should return an integer value representing the version of
-  the Tux&nbsp;Paint 'Magic' tool plugin API it was built against.
-  Simply return TP_MAGIC_API_VERSION, which is defined in
-  "tp_magic_api.h", to satisfy this requirement.
-
-<li>int init(magic_api * api)<br>
-  The plugin should do any initialization here.  This function is called once,
-  at Tux&nbsp;Paint startup.  Return '1' if initialization was successful,
-  or '0' if not (and Tux&nbsp;Paint will not present any 'Magic' tools
-  from the plugin).
-
-<li>void shutdown(magic_api * api)<br>
-  The plugin should do any cleanup here.  This function is called once,
-  at Tux&nbsp;Paint exit.
-
-<li>void click(magic_api * api, int which, SDL_Surface * snapshot,
-    SDL_Surface * canvas, int x, int y, SDL_Rect * update_rect)<br>
+<li><code><b>void click(magic_api * api, int which, SDL_Surface * snapshot,
+    SDL_Surface * canvas, int x, int y, SDL_Rect * update_rect)
+  </b></code><br>
   The plugin should apply the appropriate 'Magic' tool on the 'canvas'
   surface.  The (x,y) coordinates are where the mouse was (within the canvas)
   when the mouse button was clicked.<br>
+  <br>
   The plugin should report back what part of the canvas was affected, by
   filling in the (x,y) and (w,h) values in 'update_rect'.<br>
+  <br>
   The contents of the drawing canvas immediately prior to the mouse button
-  click is stored within the 'snapshot' canvas.
+  click is stored within the 'snapshot' canvas.<br>
+  <br>
 
-<li>void drag(magic_api * api, int which, SDL_Surface * snapshot,
+<li><code><b>void drag(magic_api * api, int which, SDL_Surface * snapshot,
     SDL_Surface * canvas, int ox, int oy, int x, int y,
-    SDL_Rect * update_rect)<br>
+    SDL_Rect * update_rect)</b></code><br>
   The plugin should apply the appropriate 'Magic' tool on the 'canvas'
   surface.  The (ox,oy) and (x,y) coordinates are the location of the mouse
   at the beginning and end of the stroke.  Typically, plugins that let the
   user "draw" effects onto the canvas call the Tux&nbsp;Paint 'Magic' tool
   plugin "line()" helper function. (See below).<br>
+  <br>
   The plugin should report back what part of the canvas was affected, by
   filling in the (x,y) and (w,h) values in 'update_rect'.<br>
+  <br>
   Note: The contents of the drawing canvas immediately prior to the mouse
   button click remains as it was (when the plugin's "click()" function was
-  called), and is still available in the 'snapshot' canvas.
+  called), and is still available in the 'snapshot' canvas.<br>
+  <br>
 
-<li>void release(magic_api * api, int which, SDL_Surface * snapshot,
+<li><code><b>void release(magic_api * api, int which, SDL_Surface * snapshot,
     SDL_Surface * canvas, int x, int y,
-    SDL_Rect * update_rect)<br>
+    SDL_Rect * update_rect)</b></code><br>
   The plugin should apply the appropriate 'Magic' tool on the 'canvas'
   surface.  The (x,y) coordinates are where the mouse was (within the canvas)
   when the mouse button was released.<br>
+  <br>
   The plugin should report back what part of the canvas was affected, by
   filling in the (x,y) and (w,h) values in 'update_rect'.<br>
-  Note: The contents of the drawing canvas immediately prior to the mouse
+  <br>
+  <b>Note:</b> The contents of the drawing canvas immediately prior to the mouse
   button click remains as it was (when the plugin's "click()" function was
-  called), and is still available in the 'snapshot' canvas.
+  called), and is still available in the 'snapshot' canvas.<br>
+  <br>
+</ul>
 
 </blockquote>
 
-<h3>Tux Paint Functions</h3>
+</blockquote>
+
+<h3><a name="tpfuncs">Tux Paint Functions</a></h3>
 
 <blockquote>
 
@@ -208,64 +331,74 @@ access via the "magic_api" structure, sent to all of the plugin's functions
 (see above).</p>
 
 <ul>
-<li>Uint32 getpixel(SDL_Surface * surf, int x, int y)
+<li><code><b>Uint32 getpixel(SDL_Surface * surf, int x, int y)</b></code>
   Retreives the pixel value from the (x,y) coordinates of an SDL_Surface.
   (You can use SDL's "SDL_GetRGB()" function to convert the Uint32 'pixel'
-  to a set of Uint8 RGB values.)
+  to a set of Uint8 RGB values.)<br>
+  <br>
 
-<li>void putpixel(SDL_Surface * surf, int x, int y, Uint32 pixel)<br>
+<li><code><b>void putpixel(SDL_Surface * surf, int x, int y, Uint32 pixel)
+  </b></code><br>
   Sets the pixel value at position (x,y) of an SDL_Surface.
   (You can use SDL's "SDL_MapRGB()" function to convert a set of Uint8
   RGB values to a Uint32 'pixel' value appropriate to the destination
-  surface.)
+  surface.)<br>
+  <br>
 
-<li>int in_circle(int x, int y, int radius)<br>
+<li><code><b>int in_circle(int x, int y, int radius)</b></code><br>
   Returns '1' if the (x,y) location is within a circle of a particular
   radius (centered around the origin: (0,0)).  Returns '0' otherwise.
   Useful to create 'Magic' tools that affect the canvas with a circular
-  brush shape.
+  brush shape.<br>
+  <br>
 
-<li>void show_progress_bar(void)<br>
+<li><code><b>void show_progress_bar(void)</b></code><br>
   Asks Tux&nbsp;Paint to animate and draw one frame of its progress bar
   (at the bottom of the screen).  Useful for routines that may take a
   long time, to provide feedback to the user that Tux&nbsp;Paint has not
-  crashed or frozen.
+  crashed or frozen.<br>
+  <br>
 
-<li>void tuxpaint_version(int * major, int * minor, int * revision)<br>
+<li><code><b>void tuxpaint_version(int * major, int * minor, int * revision)
+  </b></code><br>
   Returns the version of Tux Paint being used (e.g., "0.9.18"),
-  separated into three integers.
+  separated into three integers.<br>
+  <br>
 
-<li>void line(int which, SDL_Surface * canvas, SDL_Surface * snapshot,
-  int x1, int y1, int x2, int y2, int step, FUNC callback)<br>
+<li><code><b>void line(int which, SDL_Surface * canvas, SDL_Surface * snapshot,
+  int x1, int y1, int x2, int y2, int step, FUNC callback)</b></code><br>
   This function calculates all points on a line between the coordinates
   (x1,y1) and (x2,y2).  Every 'step' iterations, it calls the 'callback'
   function.<br>
+  <br>
   It sends the 'callback' function the (x,y) coordinates on the line,
   Tux&nbsp;Paint's "magic_api" struct (as a "void&nbsp;*" pointer),
   a 'which' value, represening which of the plugin's 'Magic' tool is
   being used, and the current and snapshot canvases.<br>
+  <br>
+  Example prototype of a callback function that may be sent to
+  Tux&nbsp;Paint's "line()" 'Magic' tool plugin helper function:
+  <blockquote><code>
+    void exampleCallBack(void * ptr_to_api, int which_tool,
+    SDL_Surface * canvas, SDL_Surface * snapshot, int x, int y);
+  </code></blockquote>
 
-  <p>Example prototype of a callback function that may be sent to
-  Tux&nbsp;Paint's "line()" 'Magic' tool plugin helper function:</p>
-
-  <blockquote>
-    <p><code>void exampleCallBack(void * ptr_to_api, int which_tool,
-    SDL_Surface * canvas, SDL_Surface * snapshot, int x, int y);</code></p>
-  </blockquote>
-
-<li>void playsound(Mix_Chunk * snd, int pan, int dist)<br>
+<li><code><b>void playsound(Mix_Chunk * snd, int pan, int dist)</b></code><br>
   This function plays a sound (one loaded by the SDL helper library
   "SDL_mixer").  It uses SDL_mixer's "Mix_SetPanning()" to set the volume
   of the sound on the left and right speakers, based on the 'pan' and 'dist'
   values sent to it.<br>
+  <br>
   A 'pan' of 128 causes the sound to be played at equal volume on the left
   and right speakers.  A 'pan' of 0 causes it to be played completely on the
   left, and 255 completely on the right.<br>
+  <br>
   The 'dist' value affects overall volume.  255 is loudest, and 0 is silent.<br>
   The 'pan' and 'dist' values can be used to simulate location and distance of
-  the 'Magic' tool effect.
+  the 'Magic' tool effect.<br>
+  <br>
 
-<li>void special_notify(int flag)<br>
+<li><code><b>void special_notify(int flag)</b></code><br>
   This function notifies Tux&nbsp;Paint of special events.  Various values
   defined in "tp_magic_api.h" can be logically 'or'ed together and sent to
   this function.
@@ -279,17 +412,21 @@ access via the "magic_api" structure, sent to all of the plugin's functions
   <li>SPECIAL_MIRROR &mdash; Similar to SPECIAL_FLIP, but for magic tools
     that mirror the contents of the canvas.
   </ul>
+  <br>
 
-  <li>int button_down(void)<br>
-    A '1' is returned if the mouse button is down; '0' otherwise.
+  <li><code><b>int button_down(void)</b></code><br>
+    A '1' is returned if the mouse button is down; '0' otherwise.<br>
+    <br>
 
-  <li>float sRGB_to_linear(Uint8 srbg)<br>
+  <li><code><b>float sRGB_to_linear(Uint8 srbg)</b></code><br>
     Converts an 8-bit sRGB value (one between 0 and 255) to a linear
-    floating point value (between 0.0 and 1.0).
+    floating point value (between 0.0 and 1.0).<br>
+    <br>
 
-  <li>uint8 linear_to_sRGB(float linear)<br>
+  <li><code><b>uint8 linear_to_sRGB(float linear)</b></code><br>
     Converts a linear floating point value (one between 0.0 and 1.0) to
-    an 8-bit sRGB value (between 0 and 255).
+    an 8-bit sRGB value (between 0 and 255).<br>
+    <br>
   </ul>
 
 </blockquote>
@@ -306,11 +443,11 @@ access via the "magic_api" structure, sent to all of the plugin's functions
 
   <blockquote>
 
-  <p>Use the C compiler's "-shared" command-line option to generate
+  <p>Use the C compiler's "<code>-shared</code>" command-line option to generate
   a shared object file ("<code>.so</code>") based on your 'Magic' tool
   plugin's C source code.</p>
 
-  <p>Additionally, use the "tp-magic-config&nbsp;--cflags" command,
+  <p>Additionally, use the "<code>tp-magic-config&nbsp;--cflags</code>" command,
   supplied as part of Tux&nbsp;Paint, to provide additional command-line
   flags to your C compiler that will help it build your plugin.</p>
 
@@ -323,6 +460,15 @@ access via the "magic_api" structure, sent to all of the plugin's functions
     </code></p>
   </blockquote>
 
+  <p><b>Note:</b> The characters around the "<code>tp-magic-config</code>"
+  command are a grave/backtick/backquote
+  ("<code><b><font size=+1>`</font></b></code>"), and
+  not an apostrophe/single-quote ("<code><b><font size=+1>'</font></b></code>").
+  They tell the shell to execute the command within (in this case,
+  "<code>tp-magic-config&nbsp;...</code>"), and use its output
+  as an argument to the command being executed (in this case,
+  "<code>gcc&nbsp;...</code>").</p>
+
   <p>A snippet from a more generalized Makefile might look like this:</p>
 
   <blockquote>
@@ -334,8 +480,14 @@ access via the "magic_api" structure, sent to all of the plugin's functions
     </code></p>
   </blockquote>
 
-  <p>Then install globally into:  /usr/[local/]lib/tuxpaint/.
-  Or locally into:  ~/.tuxpaint/magic/</p>
+  <p>You may then install it globally into:
+  <code>/usr/lib/tuxpaint/plugins/</code> or
+  <code>/usr/local/lib/tuxpaint/plugins/</code> (depending on how
+  Tux&nbsp;Paint was installed).</p>
+
+  <p>Or install it locally (for the current user only) into:
+  <code>~/.tuxpaint/magic/</code><br>
+  (<b>FIXME:</b> As of 2007-07-27, Tux&nbsp;Paint does not look here yet!)</p>
 
   </blockquote>
 
