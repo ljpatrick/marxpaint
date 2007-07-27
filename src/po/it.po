@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TuxPaint 0.9.17\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-07-26 09:38-0700\n"
-"PO-Revision-Date: 2007-07-02 22:03+0100\n"
+"POT-Creation-Date: 2007-07-26 17:26-0700\n"
+"PO-Revision-Date: 2007-07-26 22:36+0100\n"
 "Last-Translator: Flavio Pastore <ironbishop@gmail.com>\n"
 "Language-Team: Italian <it@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -189,7 +189,7 @@ msgstr "Hangul"
 
 #. Input Method: Thai mode
 msgid "Thai"
-msgstr ""
+msgstr "Thai"
 
 #. Square shape tool (4 equally-lengthed sides at right angles)
 msgid "Square"
@@ -227,7 +227,6 @@ msgstr "Un quadrato è un rettangolo con i lati uguali."
 msgid "A rectangle has four sides and four right angles."
 msgstr "Un rettangolo ha quattro lati e quatto angoli retti."
 
-#, fuzzy
 msgid ""
 "A circle is a curve where all points have the same distance from the center."
 msgstr ""
@@ -384,9 +383,8 @@ msgid "Eraser!"
 msgstr "Gomma!"
 
 #. Response to 'start a new image' action
-#, fuzzy
 msgid "Pick a color or picture with which to start a new drawing."
-msgstr "Scegli un timbro da inserire nel disegno."
+msgstr "Scegli un colore o un'immagine con cui iniziare un nuovo disegno."
 
 #  Open
 #  Open
@@ -499,18 +497,18 @@ msgstr "Ricorda di usare il tasto sinistro del mouse!"
 
 #. Sound has been muted (silenced) via keyboard shortcut
 msgid "Sound muted."
-msgstr ""
+msgstr "Audio disattivato."
 
 #. Sound has been unmuted (unsilenced) via keyboard shortcut
 msgid "Sound unmuted."
-msgstr ""
+msgstr "Audio attivato."
 
 #. Wait while Text tool finishes loading fonts
 msgid "Please wait..."
 msgstr "Attendi..."
 
 msgid "Pick a color."
-msgstr ""
+msgstr "Scegli un colore."
 
 #. Open dialog: 'Erase' button, to erase/deleted the selected picture
 msgid "Erase"
@@ -591,10 +589,10 @@ msgstr "Gocciola"
 
 msgid ""
 "Click and move the mouse around to turn the picture into a chalk drawing."
-msgstr "Fai click per ottenere un effetto “gessetto”."
+msgstr "Fai click per ottenere un effetto “blocchi”."
 
 msgid "Click and move the mouse around to make the picture blocky."
-msgstr "Fai click per ottenere un effetto “blocchi”."
+msgstr "Fai click per ottenere un effetto “gessetto”."
 
 msgid "Click and move the mouse around to make the picture drip."
 msgstr "Fai click per ottenere un effetto “gocciolante”."
@@ -607,7 +605,7 @@ msgstr "Fai click per ottenere un effetto “sfumato”."
 
 #. Both are named "Bricks", at the moment:
 msgid "Bricks"
-msgstr "Blocchi"
+msgstr "Mattoni"
 
 msgid "Click and move to draw large bricks."
 msgstr "Fai click per disegnare mattoni."
@@ -622,11 +620,10 @@ msgid "Click and move the mouse around to turn the picture into a cartoon."
 msgstr "Fai click per ottenere un effetto “fumetto”."
 
 msgid "Emboss"
-msgstr ""
+msgstr "Rilievo"
 
-#, fuzzy
 msgid "Click and drag the mouse to emboss the picture."
-msgstr "Fai click per ottenere un effetto “sfumato”."
+msgstr "Fai click per ottenere un effetto “bassorilievo”."
 
 msgid "Lighten"
 msgstr "Schiarisci"
@@ -647,24 +644,24 @@ msgid "Click in the picture to fill that area with color."
 msgstr "Fai click per riempire l'area di colore."
 
 msgid "Flower"
-msgstr ""
+msgstr "Fiore"
 
 msgid "Click and drag to draw a flower stalk. Let go to finish the flower."
 msgstr ""
+"Fai click e tieni premuto per disegnare il gambo di un fiore. Lascia andare "
+"il tasto per completarlo."
 
 msgid "Foam"
-msgstr ""
+msgstr "Schiuma"
 
-#, fuzzy
 msgid "Click and drag the mouse to cover an area with foamy bubbles."
-msgstr "Fai click per riempire l'area di colore."
+msgstr "Fai click per coprire l'area di bolle schiumose."
 
 msgid "Glass Tile"
-msgstr ""
+msgstr "Vetro"
 
-#, fuzzy
 msgid "Click and drag the mouse to put glass tile over your picture."
-msgstr "Fai click per ottenere un effetto “sfumato”."
+msgstr "Fai click per coprire il disegno con tessere di vetro smerigliato."
 
 msgid "Grass"
 msgstr "Erba"
@@ -673,20 +670,17 @@ msgid "Click and move to draw grass. Don’t forget the dirt!"
 msgstr "Fai click per disegnare l'erba. Non dimenticare il terreno!"
 
 msgid "Kaleidoscope"
-msgstr ""
+msgstr "Caleidoscopio"
 
-#, fuzzy
 msgid ""
 "Click and drag the mouse to draw with symmetric brushes (a kaleidoscope)."
-msgstr "Fai click per scurire il disegno."
+msgstr "Fai click per disegnare con un caleidoscopio."
 
-#, fuzzy
 msgid "Metal Paint"
-msgstr "Disegno"
+msgstr "Tinta metallica"
 
-#, fuzzy
 msgid "Click and drag the mouse to paint with a metallic color."
-msgstr "Fai click per scurire il disegno."
+msgstr "Fai click per disegnare con una tinta metallizzata."
 
 msgid "Mirror"
 msgstr "Specchio"
@@ -724,34 +718,14 @@ msgstr "Tinta"
 msgid "Click and move the mouse around to change the picture’s color."
 msgstr "Fai click per cambiare la tinta del disegno."
 
-#, fuzzy
 msgid "Waves"
-msgstr "Salva"
+msgstr "Onde"
 
 msgid ""
 "Click to make the picture wavy. Click toward the top for shorter waves, the "
 "bottom for taller waves, the left for small waves, and the right for long "
 "waves."
 msgstr ""
-
-#  New
-#  New
-#~ msgid "You now have a blank sheet to draw on!"
-#~ msgstr "Adesso hai un foglio bianco su cui disegnare!"
-
-#  This will be replaced with a dialog allowing color choice and Starter
-#  picking, with a "Back" option to dismiss the "New" and return to
-#  the current picture.  But for now...  (bjk 2006.02.19)
-#~ msgid "Start a new picture?"
-#~ msgstr "Vuoi iniziare un nuovo disegno?"
-
-#  #define PROMPT_NEW_YES gettext_noop("That’s OK!")
-#  #define PROMPT_NEW_NO gettext_noop("Never mind!")
-#~ msgid "Yes, let's start fresh!"
-#~ msgstr "Sì, iniziamo da capo!"
-
-#~ msgid "Sparkles"
-#~ msgstr "Scintille"
-
-#~ msgid "Click and move to draw sparkles."
-#~ msgstr "Fai click per disegnare scintille."
+"Fai click per ottenere un effetto ondulato. Fai click nella parte superiore "
+"del foglio per onde basse, nell'inferiore per onde alte, verso sinistra per "
+"onde piccole e verso destra per onde lunghe."
