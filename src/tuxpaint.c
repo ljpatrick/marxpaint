@@ -9541,6 +9541,12 @@ static void wordwrap_text_ex(const char *const str, SDL_Color color,
   if (need_own_font && (strcmp(gettext(str), str) || locale_text))
     myfont = locale_font;
 
+  if (strcmp(str, gettext(str)) == 0)
+  {
+    /* String isn't translated!  Don't write right-to-left */
+    want_right_to_left = 0;
+  }
+
 
 #ifndef NO_SDLPANGO
   /* Letting SDL_Pango do all this stuff! */
@@ -9549,7 +9555,10 @@ static void wordwrap_text_ex(const char *const str, SDL_Color color,
 
   SDLPango_SetDefaultColor(myfont->pango_context, &pango_color);
   SDLPango_SetMinimumSize(myfont->pango_context, right - left, canvas->h - top);
-  SDLPango_SetText(myfont->pango_context, gettext(str), -1);
+  if (want_right_to_left)
+    SDLPango_SetText_GivenAlignment(myfont->pango_context, gettext(str), -1, SDLPANGO_ALIGN_RIGHT);
+  else
+    SDLPango_SetText(myfont->pango_context, gettext(str), -1);
   text = SDLPango_CreateSurfaceDraw(myfont->pango_context); 
 
   dest.x = left;
@@ -9574,20 +9583,10 @@ static void wordwrap_text_ex(const char *const str, SDL_Color color,
 
   if (strcmp(str, "") != 0)
   {
-    if (strcmp(str, gettext(str)) == 0)
-    {
-      /* String isn't translated!  Don't write right-to-left */
-      want_right_to_left = 0;
-    }
-
-#ifdef NO_SDLPANGO
     if (want_right_to_left == 0)
       locale_str = (unsigned char *) strdup(gettext(str));
     else
       locale_str = (unsigned char *) textdir(gettext(str));
-#else
-    locale_str = (unsigned char *) strdup(gettext(str));
-#endif
 
 
     /* For each UTF8 character: */
