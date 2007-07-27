@@ -19,9 +19,13 @@ $Id$
       + New images can be given solid background colors
         (which the 'Eraser' tool erases to)
 
+  * Tool Improvements:
+    ------------------
     * Added a 'color picker' entry to the color palette; allows choosing
       from over 50,000 colors.  Used by drawing and Magic tools, as well
       as the new 'New' dialog.
+
+    * Added an Octagon shape to the 'Shapes' tool.
 
   * Documentation Imrpovements:
     ---------------------------

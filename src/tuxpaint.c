@@ -8375,23 +8375,60 @@ static void draw_stamps(void)
 
 static void draw_shapes(void)
 {
-  int i;
+  int i, shape, max, off_y;
   SDL_Rect dest;
 
 
   draw_image_title(TITLE_SHAPES, r_ttoolopt);
 
-  for (i = 0; i < 14 + TOOLOFFSET; i++)
+
+  if (NUM_SHAPES > 14 + TOOLOFFSET)
   {
+    off_y = 24;
+    max = 12 + TOOLOFFSET;
+
+    dest.x = WINDOW_WIDTH - 96;
+    dest.y = 40;
+
+    if (shape_scroll > 0)
+    {
+      SDL_BlitSurface(img_scroll_up, NULL, screen, &dest);
+    }
+    else
+    {
+      SDL_BlitSurface(img_scroll_up_off, NULL, screen, &dest);
+    }
+
+    dest.x = WINDOW_WIDTH - 96;
+    dest.y = 40 + 24 + ((6 + TOOLOFFSET / 2) * 48);
+
+    if (shape_scroll < NUM_SHAPES - 12 - TOOLOFFSET)
+    {
+      SDL_BlitSurface(img_scroll_down, NULL, screen, &dest);
+    }
+    else
+    {
+      SDL_BlitSurface(img_scroll_down_off, NULL, screen, &dest);
+    }
+  }
+  else
+  {
+    off_y = 0;
+    max = 14 + TOOLOFFSET;
+  }
+
+  for (shape = shape_scroll; shape < shape_scroll + max; shape++)
+  {
+    i = shape - shape_scroll;
+
     dest.x = ((i % 2) * 48) + WINDOW_WIDTH - 96;
-    dest.y = ((i / 2) * 48) + 40;
+    dest.y = ((i / 2) * 48) + 40 + off_y;
 
-
-    if (i == cur_shape)
+    if (shape == cur_shape)
     {
       SDL_BlitSurface(img_btn_down, NULL, screen, &dest);
     }
-    else if (i < NUM_SHAPES)
+    else if (shape < NUM_SHAPES)
     {
       SDL_BlitSurface(img_btn_up, NULL, screen, &dest);
     }
@@ -8401,18 +8438,19 @@ static void draw_shapes(void)
     }
 
 
-    if (i < NUM_SHAPES)
+    if (shape < NUM_SHAPES)
     {
       dest.x = ((i % 2) * 48) + 4 + WINDOW_WIDTH - 96;
-      dest.y = ((i / 2) * 48) + 40 + 4;
+      dest.y = ((i / 2) * 48) + 40 + 4 + off_y;
 
-      SDL_BlitSurface(img_shapes[i], NULL, screen, &dest);
+      SDL_BlitSurface(img_shapes[shape], NULL, screen, &dest);
 
       dest.x = ((i % 2) * 48) + 4 + WINDOW_WIDTH - 96 +
-	(40 - img_shape_names[i]->w) / 2;
-      dest.y = ((i / 2) * 48) + 40 + 4 + (44 - img_shape_names[i]->h);
+	(40 - img_shape_names[shape]->w) / 2;
+      dest.y = ((i / 2) * 48) + 40 + 4 +
+               (44 - img_shape_names[shape]->h) + off_y;
 
-      SDL_BlitSurface(img_shape_names[i], NULL, screen, &dest);
+      SDL_BlitSurface(img_shape_names[shape], NULL, screen, &dest);
     }
   }
 }

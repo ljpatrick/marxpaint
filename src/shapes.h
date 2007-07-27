@@ -23,7 +23,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  June 14, 2002 - July 17, 2007
+  June 14, 2002 - July 26, 2007
   $Id$
 */
 
@@ -47,6 +47,8 @@ enum
   SHAPE_PENTAGON_FILL,
   SHAPE_RHOMBUS,
   SHAPE_RHOMBUS_FILL,
+  SHAPE_OCTAGON,
+  SHAPE_OCTAGON_FILL,
   NUM_SHAPES
 };
 
@@ -67,7 +69,9 @@ const int shape_sides[NUM_SHAPES] = {
   5,				/* Pentagon */
   5,				/* Pentagon */
   4,				/* Rhombus */
-  4				/* Rhombus */
+  4,				/* Rhombus */
+  8,				/* Octagon */
+  8				/* Octagon */
 };
 
 
@@ -87,7 +91,9 @@ const int shape_locked[NUM_SHAPES] = {
   0,				/* Pentagon */
   0,				/* Pentagon */
   0,				/* Rhombus */
-  0				/* Rhombus */
+  0,				/* Rhombus */
+  1,				/* Octagon */
+  1				/* Octagon */
 };
 
 
@@ -107,7 +113,9 @@ const int shape_filled[NUM_SHAPES] = {
   0,				/* Pentagon */
   1,				/* Pentagon */
   0,				/* Rhombus */
-  1				/* Rhombus */
+  1,				/* Rhombus */
+  0,				/* Octagon */
+  1				/* Octagon */
 };
 
 
@@ -128,7 +136,9 @@ const int shape_init_ang[NUM_SHAPES] = {
   162,				/* Pentagon */
   162,				/* Pentagon */
   0,				/* Rhombus */
-  0				/* Rhombus */
+  0,				/* Rhombus */
+  22,				/* Octagon */
+  22				/* Octagon */
 };
 
 
@@ -148,7 +158,9 @@ const int shape_no_rotate[NUM_SHAPES] = {
   0,				/* Pentagon */
   0,				/* Pentagon */
   0,				/* Rhombus */
-  0				/* Rhombus */
+  0,				/* Rhombus */
+  0,				/* Octagon */
+  0				/* Octagon */
 };
 
 
@@ -181,7 +193,11 @@ const char *const shape_names[NUM_SHAPES] = {
 
   // Rhombus shape tool (4 sides, not at right angles)
   gettext_noop("Rhombus"),
-  gettext_noop("Rhombus")
+  gettext_noop("Rhombus"),
+
+  // Octagon shape tool (8 sides)
+  gettext_noop("Octagon"),
+  gettext_noop("Octagon")
 };
 
 
@@ -218,7 +234,13 @@ const char *const shape_tips[NUM_SHAPES] = {
   gettext_noop
     ("A rhombus has four equal sides, and opposite sides are parallel."),
   gettext_noop
-    ("A rhombus has four equal sides, and opposite sides are parallel.")
+    ("A rhombus has four equal sides, and opposite sides are parallel."),
+
+  // Description of an octagon
+  gettext_noop
+    ("An octagon has eight equal sides."),
+  gettext_noop
+    ("An octagon has eight equal sides.")
 };
 
 
@@ -238,5 +260,7 @@ const char *const shape_img_fnames[NUM_SHAPES] = {
   DATA_PREFIX "images/shapes/pentagon.png",
   DATA_PREFIX "images/shapes/pentagon_f.png",
   DATA_PREFIX "images/shapes/diamond.png",
-  DATA_PREFIX "images/shapes/diamond_f.png"
+  DATA_PREFIX "images/shapes/diamond_f.png",
+  DATA_PREFIX "images/shapes/octagon.png",
+  DATA_PREFIX "images/shapes/octagon_f.png"
 };
