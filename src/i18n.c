@@ -164,7 +164,9 @@ int lang_use_right_to_left[] = {
 };
 
 int lang_use_right_to_left_word[] = {
+#ifdef NO_SDLPANGO
   LANG_HE,
+#endif
   -1
 };
 
