@@ -15,7 +15,7 @@ New Breed Software</p>
 <p><a href="mailto:bill@newbreedsoftware.com">bill@newbreedsoftware.com</a><br>
 <a href="http://www.tuxpaint.org/">http://www.tuxpaint.org/</a></p>
 
-<p>July 5, 2007 - July 27, 2007</p>
+<p>July 5, 2007 - July 28, 2007</p>
 </center>
 
 <hr size=2 noshade>
@@ -42,8 +42,11 @@ concept.)</p>
 
 <blockquote>
 
-<p>Tux Paint is written in the C programming language, and uses the
-Simple&nbsp;DirectMedia&nbsp;Layer library ('libSDL', or simply 'SDL').
+<p>Tux Paint is written in the
+<a href="http://en.wikipedia.org/wiki/C_(programming_language)">C programming
+language</a>, and uses the
+Simple&nbsp;DirectMedia&nbsp;Layer library ('libSDL', or simply 'SDL';
+available from <a href="http://www.libsdl.org/">http://www.libsdl.org/</a>).
 Therefore, for the moment at least, one must understand the C language and
 how to compile C-based programs.  Familiarity with the SDL API is highly
 recommended, but some basic SDL concepts will be covered in this document.</p>
@@ -292,14 +295,14 @@ then the names of your functions must begin with "<code><b>zoom_</b></code>"
   surface.  The (ox,oy) and (x,y) coordinates are the location of the mouse
   at the beginning and end of the stroke.  Typically, plugins that let the
   user "draw" effects onto the canvas call the Tux&nbsp;Paint 'Magic' tool
-  plugin "line()" helper function. (See below).<br>
+  plugin "<code>line()</code>" helper function. (See below).<br>
   <br>
   The plugin should report back what part of the canvas was affected, by
   filling in the (x,y) and (w,h) values in 'update_rect'.<br>
   <br>
   Note: The contents of the drawing canvas immediately prior to the mouse
-  button click remains as it was (when the plugin's "click()" function was
-  called), and is still available in the 'snapshot' canvas.<br>
+  button click remains as it was (when the plugin's "<code>click()</code>"
+  function was called), and is still available in the 'snapshot' canvas.<br>
   <br>
 
 <li><code><b>void release(magic_api * api, int which, SDL_Surface * snapshot,
@@ -313,8 +316,8 @@ then the names of your functions must begin with "<code><b>zoom_</b></code>"
   filling in the (x,y) and (w,h) values in 'update_rect'.<br>
   <br>
   <b>Note:</b> The contents of the drawing canvas immediately prior to the mouse
-  button click remains as it was (when the plugin's "click()" function was
-  called), and is still available in the 'snapshot' canvas.<br>
+  button click remains as it was (when the plugin's "<code>click()</code>"
+  function was called), and is still available in the 'snapshot' canvas.<br>
   <br>
 </ul>
 
@@ -322,13 +325,17 @@ then the names of your functions must begin with "<code><b>zoom_</b></code>"
 
 </blockquote>
 
-<h3><a name="tpfuncs">Tux Paint Functions</a></h3>
+<h3><a name="tpfuncs">Tux Paint Functions and Data</a></h3>
 
 <blockquote>
 
 <p>Tux&nbsp;Paint provides a number of helper functions that plugins may
-access via the "magic_api" structure, sent to all of the plugin's functions
-(see above).</p>
+access via the "<code>magic_api</code>" structure, sent to all of the
+plugin's functions (see above).</p>
+
+<h4>Pixel Manipulations</h4>
+
+<blockquote>
 
 <ul>
 <li><code><b>Uint32 getpixel(SDL_Surface * surf, int x, int y)</b></code>
@@ -344,25 +351,20 @@ access via the "magic_api" structure, sent to all of the plugin's functions
   RGB values to a Uint32 'pixel' value appropriate to the destination
   surface.)<br>
   <br>
+</ul>
 
+</blockquote>
+
+<h4>Helper Functions</h4>
+
+<blockquote>
+
+<ul> 
 <li><code><b>int in_circle(int x, int y, int radius)</b></code><br>
   Returns '1' if the (x,y) location is within a circle of a particular
   radius (centered around the origin: (0,0)).  Returns '0' otherwise.
   Useful to create 'Magic' tools that affect the canvas with a circular
   brush shape.<br>
-  <br>
-
-<li><code><b>void show_progress_bar(void)</b></code><br>
-  Asks Tux&nbsp;Paint to animate and draw one frame of its progress bar
-  (at the bottom of the screen).  Useful for routines that may take a
-  long time, to provide feedback to the user that Tux&nbsp;Paint has not
-  crashed or frozen.<br>
-  <br>
-
-<li><code><b>void tuxpaint_version(int * major, int * minor, int * revision)
-  </b></code><br>
-  Returns the version of Tux Paint being used (e.g., "0.9.18"),
-  separated into three integers.<br>
   <br>
 
 <li><code><b>void line(int which, SDL_Surface * canvas, SDL_Surface * snapshot,
@@ -372,16 +374,56 @@ access via the "magic_api" structure, sent to all of the plugin's functions
   function.<br>
   <br>
   It sends the 'callback' function the (x,y) coordinates on the line,
-  Tux&nbsp;Paint's "magic_api" struct (as a "void&nbsp;*" pointer),
-  a 'which' value, represening which of the plugin's 'Magic' tool is
-  being used, and the current and snapshot canvases.<br>
+  Tux&nbsp;Paint's "<code>magic_api</code>" struct (as a
+  "<code>void&nbsp;*</code>" pointer), a 'which' value, represening which
+  of the plugin's 'Magic' tool is being used, and the current and snapshot
+  canvases.<br>
   <br>
   Example prototype of a callback function that may be sent to
-  Tux&nbsp;Paint's "line()" 'Magic' tool plugin helper function:
+  Tux&nbsp;Paint's "<code>line()</code>" 'Magic' tool plugin helper function:
   <blockquote><code>
     void exampleCallBack(void * ptr_to_api, int which_tool,
     SDL_Surface * canvas, SDL_Surface * snapshot, int x, int y);
   </code></blockquote>
+</ul>
+
+</blockquote>
+
+<h4>Informational</h4>
+
+<blockquote>
+
+<ul>
+<li><code><b>char * tp_version</b></code><br>
+  A string containing the version of Tux&nbsp;Paint that's running
+  (e.g., "0.9.18").<br>
+  <br>
+
+<li><code><b>int canvas_w</b></code>
+  Returns the width of the drawing canvas.<br>
+  <br>
+
+<li><code><b>int canvas_h</b></code>
+  Returns the height of the drawing canvas.<br>
+  <br>
+
+<li><code><b>int button_down(void)</b></code><br>
+  A '1' is returned if the mouse button is down; '0' otherwise.<br>
+  <br>
+</ul>
+
+</blockquote>
+
+<h4>Tux Paint System Calls</h4>
+
+<blockquote>
+<ul>
+<li><code><b>void show_progress_bar(void)</b></code><br>
+  Asks Tux&nbsp;Paint to animate and draw one frame of its progress bar
+  (at the bottom of the screen).  Useful for routines that may take a
+  long time, to provide feedback to the user that Tux&nbsp;Paint has not
+  crashed or frozen.<br>
+  <br>
 
 <li><code><b>void playsound(Mix_Chunk * snd, int pan, int dist)</b></code><br>
   This function plays a sound (one loaded by the SDL helper library
@@ -400,34 +442,95 @@ access via the "magic_api" structure, sent to all of the plugin's functions
 
 <li><code><b>void special_notify(int flag)</b></code><br>
   This function notifies Tux&nbsp;Paint of special events.  Various values
-  defined in "tp_magic_api.h" can be logically 'or'ed together and sent to
-  this function.
+  defined in "<code>tp_magic_api.h</code>" can be logically 'or'ed
+  ("<code>|</code>") together and sent to this function.
   <ul>
-  <li>SPECIAL_FLIP &mdash; The contents of the canvas has been flipped.
+  <li><code>SPECIAL_FLIP</code> &mdash; The contents of the canvas has been
+    flipped.<br>
+    <br>
     If a 'Starter' image was used as the basis of this image, it should be
     flipped too, and a record of the flip should be stored as part of
     Tux&nbsp;Paint's undo buffer stack.  Additionally, the fact that the
     starter has been flipped (or unflipped) should be recorded on disk
     when the current drawing is saved.
-  <li>SPECIAL_MIRROR &mdash; Similar to SPECIAL_FLIP, but for magic tools
-    that mirror the contents of the canvas.
+  <li><code>SPECIAL_MIRROR</code> &mdash; Similar to <code>SPECIAL_FLIP</code>,
+    but for magic tools that mirror the contents of the canvas.
   </ul>
   <br>
+</ul>
+</blockquote>
 
-  <li><code><b>int button_down(void)</b></code><br>
-    A '1' is returned if the mouse button is down; '0' otherwise.<br>
-    <br>
-
+<h4>Color Conversions</h4>
+<blockquote>
+<ul>
   <li><code><b>float sRGB_to_linear(Uint8 srbg)</b></code><br>
     Converts an 8-bit sRGB value (one between 0 and 255) to a linear
     floating point value (between 0.0 and 1.0).<br>
+    <br>
+    <b>See also:</b>
+    <a href="http://en.wikipedia.org/wiki/SRGB">sRGB article at Wikipedia</a>.
+    <br>
     <br>
 
   <li><code><b>uint8 linear_to_sRGB(float linear)</b></code><br>
     Converts a linear floating point value (one between 0.0 and 1.0) to
     an 8-bit sRGB value (between 0 and 255).<br>
     <br>
+
+  <li><code><b>void rgbtohsv(Uint8 r, Uint8 g, Uint8 b,
+    float * h, float * s, float * v)</b></code><br>
+    Converts 8-bit sRGB values (between 0 and 255) to floating-point
+    HSV (Hue, Saturation and Value) values (Hue between 0.0 and 360.0,
+    and Saturation and Value between 0.0 and 1.0).<br>
+    <br>
+    <b>See also:</b>
+    <a href="http://en.wikipedia.org/wiki/HSV_color_space">HSV Color Space
+    article at Wikipedia</a>.<br>
+    <br>
+
+  <li><code><b>void hsvtorgb(float h, float s, float v,
+    Uint8 * r, Uint8 * g, Uint8 * b)</b></code><br>
+    Converts floating-point HSV (Hue, Saturation and Value) values
+    (Hue between 0.0 and 360.0, and Saturation and Value between 0.0 and 1.0)
+    to 8-bit sRGB values (between 0 and 255).<br>
+    <br>
   </ul>
+
+</blockquote>
+</blockquote>
+
+<h3>Helper Macros in "<code>tp_magic_api.h</code>":</h3>
+
+<blockquote>
+<p>Along with the "<code>magic_api</code>" C structure containing functions
+and data described above, the <code>tp_magic_api.h</code> C header file
+also contains some helper macros that you may use.</p>
+
+<ul>
+<li><code><b>min(x, y)</b></code><br>
+  The minimum of 'x' and 'y'.  (That is, if 'x' is less than or
+  equal to 'y', then the value of 'x' will be used.  If 'y' is less than 'x',
+  it will be used.)<br>
+  <br>
+
+<li><code><b>max(x, y)</b></code><br>
+  The maximum of 'x' and 'y'.  The opposite of <code>min()</code>.<br>
+  <br>
+
+<li><code><b>clamp(lo, value, hi)</b></code><br>
+  A value, clamped to be no smaller than 'lo', and no higher than 'hi'.
+  (That is, if 'value' is less than 'lo', then 'lo' will be used;
+  if 'value' is greater than 'hi', then 'hi' will be used;
+  otherwise, 'value' will be used.)<br>
+  <br>
+  <b>Example:</b> <code>red = clamp(0, n, 255);</code><br>
+  Tries to set 'red' to be the value of 'n', but without allowing it to
+  become less than 0 or greater than 255.<br>
+  <br>
+  <b>Note:</b> This macro is simply a <code>#define</code> of:
+  "<code>(min(max(value,lo),hi))</code>".<br>
+  <br>
+</ul>
 
 </blockquote>
 

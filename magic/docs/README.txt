@@ -6,7 +6,7 @@
                            bill@newbreedsoftware.com
                             http://www.tuxpaint.org/
 
-                          July 5, 2007 - July 27, 2007
+                          July 5, 2007 - July 28, 2007
 
    --------------------------------------------------------------------------
 
@@ -27,11 +27,11 @@ Overview
 Prerequisites
 
      Tux Paint is written in the C programming language, and uses the
-     Simple DirectMedia Layer library ('libSDL', or simply 'SDL'). Therefore,
-     for the moment at least, one must understand the C language and how to
-     compile C-based programs. Familiarity with the SDL API is highly
-     recommended, but some basic SDL concepts will be covered in this
-     document.
+     Simple DirectMedia Layer library ('libSDL', or simply 'SDL'; available
+     from http://www.libsdl.org/). Therefore, for the moment at least, one
+     must understand the C language and how to compile C-based programs.
+     Familiarity with the SDL API is highly recommended, but some basic SDL
+     concepts will be covered in this document.
 
    --------------------------------------------------------------------------
 
@@ -267,96 +267,156 @@ Interfaces
              "click()" function was called), and is still available in the
              'snapshot' canvas.
 
-  Tux Paint Functions
+  Tux Paint Functions and Data
 
        Tux Paint provides a number of helper functions that plugins may
        access via the "magic_api" structure, sent to all of the plugin's
        functions (see above).
 
-         * Uint32 getpixel(SDL_Surface * surf, int x, int y) Retreives the
-           pixel value from the (x,y) coordinates of an SDL_Surface. (You can
-           use SDL's "SDL_GetRGB()" function to convert the Uint32 'pixel' to
-           a set of Uint8 RGB values.)
+    Pixel Manipulations
 
-         * void putpixel(SDL_Surface * surf, int x, int y, Uint32 pixel)
-           Sets the pixel value at position (x,y) of an SDL_Surface. (You can
-           use SDL's "SDL_MapRGB()" function to convert a set of Uint8 RGB
-           values to a Uint32 'pixel' value appropriate to the destination
-           surface.)
+           * Uint32 getpixel(SDL_Surface * surf, int x, int y) Retreives the
+             pixel value from the (x,y) coordinates of an SDL_Surface. (You
+             can use SDL's "SDL_GetRGB()" function to convert the Uint32
+             'pixel' to a set of Uint8 RGB values.)
 
-         * int in_circle(int x, int y, int radius)
-           Returns '1' if the (x,y) location is within a circle of a
-           particular radius (centered around the origin: (0,0)). Returns '0'
-           otherwise. Useful to create 'Magic' tools that affect the canvas
-           with a circular brush shape.
+           * void putpixel(SDL_Surface * surf, int x, int y, Uint32 pixel)
+             Sets the pixel value at position (x,y) of an SDL_Surface. (You
+             can use SDL's "SDL_MapRGB()" function to convert a set of Uint8
+             RGB values to a Uint32 'pixel' value appropriate to the
+             destination surface.)
 
-         * void show_progress_bar(void)
-           Asks Tux Paint to animate and draw one frame of its progress bar
-           (at the bottom of the screen). Useful for routines that may take a
-           long time, to provide feedback to the user that Tux Paint has not
-           crashed or frozen.
+    Helper Functions
 
-         * void tuxpaint_version(int * major, int * minor, int * revision)
-           Returns the version of Tux Paint being used (e.g., "0.9.18"),
-           separated into three integers.
+           * int in_circle(int x, int y, int radius)
+             Returns '1' if the (x,y) location is within a circle of a
+             particular radius (centered around the origin: (0,0)). Returns
+             '0' otherwise. Useful to create 'Magic' tools that affect the
+             canvas with a circular brush shape.
 
-         * void line(int which, SDL_Surface * canvas, SDL_Surface * snapshot,
-           int x1, int y1, int x2, int y2, int step, FUNC callback)
-           This function calculates all points on a line between the
-           coordinates (x1,y1) and (x2,y2). Every 'step' iterations, it calls
-           the 'callback' function.
+           * void line(int which, SDL_Surface * canvas, SDL_Surface *
+             snapshot, int x1, int y1, int x2, int y2, int step, FUNC
+             callback)
+             This function calculates all points on a line between the
+             coordinates (x1,y1) and (x2,y2). Every 'step' iterations, it
+             calls the 'callback' function.
 
-           It sends the 'callback' function the (x,y) coordinates on the
-           line, Tux Paint's "magic_api" struct (as a "void *" pointer), a
-           'which' value, represening which of the plugin's 'Magic' tool is
-           being used, and the current and snapshot canvases.
+             It sends the 'callback' function the (x,y) coordinates on the
+             line, Tux Paint's "magic_api" struct (as a "void *" pointer), a
+             'which' value, represening which of the plugin's 'Magic' tool is
+             being used, and the current and snapshot canvases.
 
-           Example prototype of a callback function that may be sent to
-           Tux Paint's "line()" 'Magic' tool plugin helper function:
+             Example prototype of a callback function that may be sent to
+             Tux Paint's "line()" 'Magic' tool plugin helper function:
 
-             void exampleCallBack(void * ptr_to_api, int which_tool,
-             SDL_Surface * canvas, SDL_Surface * snapshot, int x, int y);
+               void exampleCallBack(void * ptr_to_api, int which_tool,
+               SDL_Surface * canvas, SDL_Surface * snapshot, int x, int y);
 
-         * void playsound(Mix_Chunk * snd, int pan, int dist)
-           This function plays a sound (one loaded by the SDL helper library
-           "SDL_mixer"). It uses SDL_mixer's "Mix_SetPanning()" to set the
-           volume of the sound on the left and right speakers, based on the
-           'pan' and 'dist' values sent to it.
+    Informational
 
-           A 'pan' of 128 causes the sound to be played at equal volume on
-           the left and right speakers. A 'pan' of 0 causes it to be played
-           completely on the left, and 255 completely on the right.
+           * char * tp_version
+             A string containing the version of Tux Paint that's running
+             (e.g., "0.9.18").
 
-           The 'dist' value affects overall volume. 255 is loudest, and 0 is
-           silent.
-           The 'pan' and 'dist' values can be used to simulate location and
-           distance of the 'Magic' tool effect.
+           * int canvas_w Returns the width of the drawing canvas.
 
-         * void special_notify(int flag)
-           This function notifies Tux Paint of special events. Various values
-           defined in "tp_magic_api.h" can be logically 'or'ed together and
-           sent to this function.
+           * int canvas_h Returns the height of the drawing canvas.
 
-              * SPECIAL_FLIP -- The contents of the canvas has been flipped.
-                If a 'Starter' image was used as the basis of this image, it
-                should be flipped too, and a record of the flip should be
-                stored as part of Tux Paint's undo buffer stack.
-                Additionally, the fact that the starter has been flipped (or
-                unflipped) should be recorded on disk when the current
-                drawing is saved.
-              * SPECIAL_MIRROR -- Similar to SPECIAL_FLIP, but for magic
-                tools that mirror the contents of the canvas.
+           * int button_down(void)
+             A '1' is returned if the mouse button is down; '0' otherwise.
 
-         * int button_down(void)
-           A '1' is returned if the mouse button is down; '0' otherwise.
+    Tux Paint System Calls
 
-         * float sRGB_to_linear(Uint8 srbg)
-           Converts an 8-bit sRGB value (one between 0 and 255) to a linear
-           floating point value (between 0.0 and 1.0).
+           * void show_progress_bar(void)
+             Asks Tux Paint to animate and draw one frame of its progress bar
+             (at the bottom of the screen). Useful for routines that may take
+             a long time, to provide feedback to the user that Tux Paint has
+             not crashed or frozen.
 
-         * uint8 linear_to_sRGB(float linear)
-           Converts a linear floating point value (one between 0.0 and 1.0)
-           to an 8-bit sRGB value (between 0 and 255).
+           * void playsound(Mix_Chunk * snd, int pan, int dist)
+             This function plays a sound (one loaded by the SDL helper
+             library "SDL_mixer"). It uses SDL_mixer's "Mix_SetPanning()" to
+             set the volume of the sound on the left and right speakers,
+             based on the 'pan' and 'dist' values sent to it.
+
+             A 'pan' of 128 causes the sound to be played at equal volume on
+             the left and right speakers. A 'pan' of 0 causes it to be played
+             completely on the left, and 255 completely on the right.
+
+             The 'dist' value affects overall volume. 255 is loudest, and 0
+             is silent.
+             The 'pan' and 'dist' values can be used to simulate location and
+             distance of the 'Magic' tool effect.
+
+           * void special_notify(int flag)
+             This function notifies Tux Paint of special events. Various
+             values defined in "tp_magic_api.h" can be logically 'or'ed ("|")
+             together and sent to this function.
+
+                * SPECIAL_FLIP -- The contents of the canvas has been
+                  flipped.
+
+                  If a 'Starter' image was used as the basis of this image,
+                  it should be flipped too, and a record of the flip should
+                  be stored as part of Tux Paint's undo buffer stack.
+                  Additionally, the fact that the starter has been flipped
+                  (or unflipped) should be recorded on disk when the current
+                  drawing is saved.
+                * SPECIAL_MIRROR -- Similar to SPECIAL_FLIP, but for magic
+                  tools that mirror the contents of the canvas.
+
+    Color Conversions
+
+           * float sRGB_to_linear(Uint8 srbg)
+             Converts an 8-bit sRGB value (one between 0 and 255) to a linear
+             floating point value (between 0.0 and 1.0).
+
+             See also: sRGB article at Wikipedia.
+
+           * uint8 linear_to_sRGB(float linear)
+             Converts a linear floating point value (one between 0.0 and 1.0)
+             to an 8-bit sRGB value (between 0 and 255).
+
+           * void rgbtohsv(Uint8 r, Uint8 g, Uint8 b, float * h, float * s,
+             float * v)
+             Converts 8-bit sRGB values (between 0 and 255) to floating-point
+             HSV (Hue, Saturation and Value) values (Hue between 0.0 and
+             360.0, and Saturation and Value between 0.0 and 1.0).
+
+             See also: HSV Color Space article at Wikipedia.
+
+           * void hsvtorgb(float h, float s, float v, Uint8 * r, Uint8 * g,
+             Uint8 * b)
+             Converts floating-point HSV (Hue, Saturation and Value) values
+             (Hue between 0.0 and 360.0, and Saturation and Value between 0.0
+             and 1.0) to 8-bit sRGB values (between 0 and 255).
+
+  Helper Macros in "tp_magic_api.h":
+
+       Along with the "magic_api" C structure containing functions and data
+       described above, the tp_magic_api.h C header file also contains some
+       helper macros that you may use.
+
+         * min(x, y)
+           The minimum of 'x' and 'y'. (That is, if 'x' is less than or equal
+           to 'y', then the value of 'x' will be used. If 'y' is less than
+           'x', it will be used.)
+
+         * max(x, y)
+           The maximum of 'x' and 'y'. The opposite of min().
+
+         * clamp(lo, value, hi)
+           A value, clamped to be no smaller than 'lo', and no higher than
+           'hi'. (That is, if 'value' is less than 'lo', then 'lo' will be
+           used; if 'value' is greater than 'hi', then 'hi' will be used;
+           otherwise, 'value' will be used.)
+
+           Example: red = clamp(0, n, 255);
+           Tries to set 'red' to be the value of 'n', but without allowing it
+           to become less than 0 or greater than 255.
+
+           Note: This macro is simply a #define of:
+           "(min(max(value,lo),hi))".
 
    --------------------------------------------------------------------------
 
@@ -407,7 +467,15 @@ Compiling
 
    --------------------------------------------------------------------------
 
+Creating plugins with multiple effects
+
+     TBD
+
+   --------------------------------------------------------------------------
+
 Example Code
+
+     TBD
 
    --------------------------------------------------------------------------
 
