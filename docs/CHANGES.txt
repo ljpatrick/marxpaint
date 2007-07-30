@@ -150,6 +150,11 @@ $Id$
     * PostScript scale and translation values were being localized
       (so, e.g., "N.M" would be "N,M") due to use of printf().  Fixed.
 
+    * Windows printing now attempts to use default printer if
+      a "print.cfg" file does not exist.  (Fixes bug where Tux Paint would
+      not print until after you've issued an [Alt]+'Print' at least once.
+      SourceForge Bug #1748705.)
+
 
 2007.July.1 (0.9.17)
 
