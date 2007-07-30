@@ -266,9 +266,14 @@ static HDC GetDefaultPrinterDC(void)
 
 static HDC GetPrinterDC(HWND hWnd, const char *printcfg, int show)
 {
-  if (!printcfg)
-    return GetDefaultPrinterDC();
-  return GetCustomPrinterDC(hWnd, printcfg, show);
+  if (printcfg)
+  {
+    HDC   hdc = NULL;
+
+    if ((hdc = GetCustomPrinterDC(hWnd, printcfg, show)) != NULL)
+        return hdc;
+  }
+  return GetDefaultPrinterDC();
 }
 
 
