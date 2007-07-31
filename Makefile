@@ -7,7 +7,7 @@
 # bill@newbreedsoftware.com
 # http://www.tuxpaint.org/
 
-# June 14, 2002 - July 24, 2007
+# June 14, 2002 - July 31, 2007
 
 
 # The version number, for release:
@@ -529,6 +529,7 @@ uninstall:	uninstall-i18n
 	-rm $(MAN_PREFIX)/man1/tuxpaint.1.gz
 	-rm $(MAN_PREFIX)/pl/man1/tuxpaint.1.gz
 	-rm $(MAN_PREFIX)/man1/tuxpaint-import.1.gz
+	-rm $(MAN_PREFIX)/man3/tp-magic-config.3.gz
 	-rm -f -r $(CONFDIR)
 	-rm -r $(MAGIC_PREFIX)
 	-rm -r $(INCLUDE_PREFIX)/tuxpaint
@@ -752,6 +753,8 @@ install-man:
 	@echo "...Installing man pages..."
 	@# man1 directory...
 	@install -d $(MAN_PREFIX)/man1
+	@# man3 directory...
+	@install -d $(MAN_PREFIX)/man3
 	@# tuxpaint.1
 	@cp src/manpage/tuxpaint.1 $(MAN_PREFIX)/man1
 	@gzip -f $(MAN_PREFIX)/man1/tuxpaint.1
@@ -766,6 +769,10 @@ install-man:
 	@cp src/manpage/tuxpaint-import.1 $(MAN_PREFIX)/man1/
 	@gzip -f $(MAN_PREFIX)/man1/tuxpaint-import.1
 	@chmod a+rx,g-w,o-w $(MAN_PREFIX)/man1/tuxpaint-import.1.gz
+	@# tp-magic-config.3
+	@cp src/manpage/tp-magic-config.3 $(MAN_PREFIX)/man3/
+	@gzip -f $(MAN_PREFIX)/man3/tp-magic-config.3
+	@chmod a+rx,g-w,o-w $(MAN_PREFIX)/man3/tp-magic-config.3.gz
 
 
 
@@ -930,8 +937,10 @@ tp-magic-config:	src/tp-magic-config.sh.in Makefile
 	@echo "...Generating 'Magic' tool API configuration script..."
 	@sed src/tp-magic-config.sh.in -e s/__VERSION__/$(VER_VERSION)/ \
 		-e s/__APIVERSION__/$(MAGIC_API_VERSION)/ \
-		-e s=__INCLUDE__=$(INCLUDE_PREFIX)/tuxpaint= > \
-		tp-magic-config
+		-e s=__INCLUDE__=$(INCLUDE_PREFIX)/tuxpaint= \
+		-e s=__DATAPREFIX__=$(DATA_PREFIX)= \
+		-e s=__PLUGINPREFIX__=$(MAGIC_PREFIX)= \
+		> tp-magic-config
 
 # Make the "obj" directory to throw the object(s) into:
 # (not necessary any more; bjk 2006.02.20)

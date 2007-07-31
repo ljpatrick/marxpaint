@@ -25,11 +25,12 @@
 # Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 # (See COPYING.txt)
 
-# Note: "__VERSION__" and "__INCLUDE__" are replaced by values
-# in Tux Paint's Makefile, via 'sed', by the 'make install-magic-plugin-dev'
+# Note: "__VERSION__", "__APIVERSION__", "__INCLUDE__",
+# "__PLUGINPREFIX__" and "__DATAPREFIX__" are replaced by
+# values in Tux Paint's Makefile, via 'sed', by the 'make tp-magic-config'
 # target.
 
-# July 5, 2007 - July 8, 2007
+# July 5, 2007 - July 31, 2007
 
 
 if [ $# -ne 0 ]; then
@@ -45,7 +46,15 @@ if [ $# -ne 0 ]; then
     echo `sdl-config --cflags` -I__INCLUDE__
     exit
   fi
+  if [ $1 = "--dataprefix" ]; then
+    echo "__DATAPREFIX__"
+    exit
+  fi
+  if [ $1 = "--pluginprefix" ]; then
+    echo "__PLUGINPREFIX__"
+    exit
+  fi
 fi
 
-echo "Usage: tp-magic-config [--apiversion] [--version] [--cflags]"
+echo "Usage: tp-magic-config [--apiversion | --version | --cflags | --pluginprefix | --dataprefix]"
 

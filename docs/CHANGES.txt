@@ -45,11 +45,14 @@ $Id$
 
     * Magic plugin development can be done outside of Tux Paint base
       source-code by using new "tp-magic-config" shell script to query
-      for C compiler flags, which points to where "tp_magic_api.h" header
-      file is installed.
+      for C compiler flags (which points to where "tp_magic_api.h" header
+      file is installed) and directories Tux Paint uses (where plugin '.so'
+      files shoudl be stored, and where Tux Paint's global data files go).
 
     * Magic plugin development docs created.  On Linux/Unix, installed into
-      /usr/[local/]share/docs/tuxpaint-dev/ by default.
+      /usr/[local/]share/docs/tuxpaint-dev/ by default.  (HTML and plaintext.)
+
+    * tp-magic-config man page created.
 
     * Ported existing magic tools to the new Magic tool plug-in system:
       (Blur, Fill, Lighten, Darken, Mirror, Flip, Rainbow, Blocks, Chalk,
