@@ -4874,23 +4874,32 @@ static void show_usage(FILE * f, char *prg)
 	  "Usage: %s {--usage | --help | --version | --verbose-version | --copying}\n"
 	  "\n"
 	  "  %s [--windowed | --fullscreen]\n"
-	  "  %s [--WIDTHxHEIGHT | --native]   [--orient=landscape | --orient=portrait]\n"
-	  "  %s [--startblank | --startlast ]\n"
-	  "  %s [--sound | --nosound]         [--quit | --noquit]\n"
-	  "  %s [--print | --noprint]         [--complexshapes | --simpleshapes]\n"
+	  "  %s [--WIDTHxHEIGHT | --native]\n"
+          "  %s [--orient=landscape | --orient=portrait]\n"
+	  "  %s [--startblank | --startlast]\n"
+	  "  %s [--sound | --nosound]\n"
+          "  %s [--quit | --noquit]\n"
+	  "  %s [--print | --noprint]\n"
+          "  %s [--complexshapes | --simpleshapes]\n"
 	  "  %s [--mixedcase | --uppercase]\n"
-	  "  %s [--fancycursors | --nofancycursors | --hidecursor ]\n"
-	  "  %s [--mouse | --keyboard]        [--dontgrab | --grab]\n"
-	  "  %s [--noshortcuts | --shortcuts] [--wheelmouse | --nowheelmouse]\n"
-	  "  %s [--nobuttondistinction | --buttondistinction ]\n"
-	  "  %s [--outlines | --nooutlines]   [--stamps | --nostamps]\n"
+	  "  %s [--fancycursors | --nofancycursors]\n"
+          "  %s [--hidecursor | --showcursor]\n"
+	  "  %s [--mouse | --keyboard]\n"
+          "  %s [--dontgrab | --grab]\n"
+	  "  %s [--noshortcuts | --shortcuts]\n"
+          "  %s [--wheelmouse | --nowheelmouse]\n"
+	  "  %s [--nobuttondistinction | --buttondistinction]\n"
+	  "  %s [--outlines | --nooutlines]\n"
+          "  %s [--stamps | --nostamps]\n"
 	  "  %s [--sysfonts | --nosysfonts]\n"
 	  "  %s [--nostampcontrols | --stampcontrols]\n"
 	  "  %s [--mirrorstamps | --dontmirrorstamps]\n"
 	  "  %s [--saveoverask | --saveover | --saveovernew]\n"
-	  "  %s [--nosave | --save]           [--autosave | --noautosave]\n"
+	  "  %s [--nosave | --save]\n"
+          "  %s [--autosave | --noautosave]\n"
           "  %s [--savedir DIRECTORY]\n"
-#ifdef WIN32
+          "  %s [--datadir DIRECTORY]\n"
+#if defined(WIN32) || defined(__APPLE__)
 	  "  %s [--printcfg | --noprintcfg]\n"
 #endif
 	  "  %s [--printdelay=SECONDS]\n"
@@ -4899,11 +4908,15 @@ static void show_usage(FILE * f, char *prg)
 	  "  %s [--papersize PAPERSIZE | --papersize help]\n"
 #endif
 	  "  %s [--lang LANGUAGE | --locale LOCALE | --lang help]\n"
-	  "  %s [--nosysconfig] [--nolockfile]\n"
+	  "  %s [--nosysconfig]\n"
+          "  %s [--nolockfile]\n"
 	  "  %s [--colorfile FILE]\n"
 	  /* "  %s [--record FILE | --playback FILE]\n" */
 	  "\n",
 	  prg, prg,
+	  blank, blank, blank, blank,
+	  blank, blank, blank,
+	  blank, blank, blank,
 	  blank, blank, blank,
 	  blank, blank, blank,
 	  blank, blank, blank, blank, blank, blank, blank, blank, blank,
@@ -5519,7 +5532,7 @@ static void load_stamp_dir(SDL_Surface * screen, const char *const dir)
 
 static void load_stamps(SDL_Surface * screen)
 {
-  char *homedirdir = get_fname("stamps");
+  char *homedirdir = get_fname("stamps", DIR_DATA);
 
   default_stamp_size = compute_default_scale_factor(1.0);
 
@@ -5530,7 +5543,7 @@ static void load_stamps(SDL_Surface * screen)
 #endif
 #ifdef WIN32
   free(homedirdir);
-  homedirdir = get_fname("data/stamps");
+  homedirdir = get_fname("data/stamps", DIR_DATA);
   load_stamp_dir(screen, homedirdir);
 #endif
 
@@ -5688,13 +5701,41 @@ static void setup(int argc, char *argv[])
 
 
 #ifdef WIN32
-  savedir = GetDefaultSaveDir("TuxPaint");
-#elif __BEOS__
-  savedir = strdup("./userdata");
-#else
-  savedir = NULL;
-#endif
+  /* Windows */
 
+  savedir = GetDefaultSaveDir("TuxPaint");
+  datadir = GetDefaultDataDir("TuxPaint");
+#elif __BEOS__
+  /* BeOS */
+
+  savedir = strdup("./userdata");
+  datadir = strdup("./userdata");
+#else
+  /* Mac OS X & Linux */
+
+  if (getenv("HOME") != NULL)
+  {
+    char tmp[MAX_PATH];
+
+    snprintf(tmp, MAX_PATH, "%s/%s", getenv("HOME"),
+#ifdef __APPLE__
+             "Library/Application Support/TuxPaint"
+#else
+             ".tuxpaint"
+#endif
+            );
+
+    savedir = strdup(tmp);
+    datadir = strdup(tmp);
+  }
+  else
+  {
+    /* Woah, don't know where $HOME is? */
+
+    fprintf(stderr, "Error: You have no $HOME environment variable!\n");
+    exit(1);
+  }
+#endif
 
 
   /* Load options from global config file: */
@@ -5739,7 +5780,7 @@ static void setup(int argc, char *argv[])
 
 #if defined(WIN32)
   /* Default local config file in users savedir directory on Windows */
-  snprintf(str, sizeof(str), "%s/tuxpaint.cfg", savedir);
+  snprintf(str, sizeof(str), "%s/tuxpaint.cfg", savedir); /* FIXME */
 #elif defined(__BEOS__)
   /* BeOS: Use a "tuxpaint.cfg" file: */
 
@@ -6044,15 +6085,15 @@ static void setup(int argc, char *argv[])
     }
     else if (strcmp(argv[i], "--noprintcfg") == 0)
     {
-#ifndef WIN32
-      fprintf(stderr, "Note: printcfg option only applies to Windows!\n");
+#if !defined(WIN32) && !defined(__APPLE__)
+      fprintf(stderr, "Note: printcfg option only applies to Windows and Mac OS X!\n");
 #endif
       use_print_config = 0;
     }
     else if (strcmp(argv[i], "--printcfg") == 0)
     {
-#ifndef WIN32
-      fprintf(stderr, "Note: printcfg option only applies to Windows!\n");
+#if !defined(WIN32) && !defined(__APPLE__)
+      fprintf(stderr, "Note: printcfg option only applies to Windows and Mac OS X!\n");
 #endif
       use_print_config = 1;
     }
@@ -6115,6 +6156,26 @@ static void setup(int argc, char *argv[])
 
 	savedir = strdup(argv[i + 1]);
 	remove_slash(savedir);
+	i++;
+      }
+      else
+      {
+	/* Forgot to specify the directory name! */
+
+	fprintf(stderr, "%s takes an argument\n", argv[i]);
+	show_usage(stderr, (char *) getfilename(argv[0]));
+	exit(1);
+      }
+    }
+    else if (strcmp(argv[i], "--datadir") == 0)
+    {
+      if (i < argc - 1)
+      {
+	if (datadir != NULL)
+	  free(datadir);
+
+	datadir = strdup(argv[i + 1]);
+	remove_slash(datadir);
 	i++;
       }
       else
@@ -6251,9 +6312,9 @@ static void setup(int argc, char *argv[])
     /* Look for the lockfile... */
 
 #ifndef WIN32
-    lock_fname = get_fname("lockfile.dat");
+    lock_fname = get_fname("lockfile.dat", DIR_SAVE);
 #else
-    lock_fname = get_temp_fname("lockfile.dat");
+    lock_fname = get_temp_fname("lockfile.dat", DIR_SAVE);
 #endif
 
     fi = fopen(lock_fname, "r");
@@ -6289,7 +6350,7 @@ static void setup(int argc, char *argv[])
     /* Okay to run; create/update the lockfile */
 
     /* (Make sure the directory exists, first!) */
-    homedirdir = get_fname("");
+    homedirdir = get_fname("", DIR_SAVE);
     mkdir(homedirdir, 0755);
     free(homedirdir);
 
@@ -6978,11 +7039,11 @@ static void setup(int argc, char *argv[])
 
   /* Load brushes: */
   load_brush_dir(screen, DATA_PREFIX "brushes");
-  homedirdir = get_fname("brushes");
+  homedirdir = get_fname("brushes", DIR_DATA);
   load_brush_dir(screen, homedirdir);
 #ifdef WIN32
   free(homedirdir);
-  homedirdir = get_fname("data/brushes");
+  homedirdir = get_fname("data/brushes", DIR_DATA);
   load_brush_dir(screen, homedirdir);
 #endif
 
@@ -10401,7 +10462,7 @@ static void load_starter_id(char *saved_id)
   int r, g, b;
 
   snprintf(fname, sizeof(fname), "saved/%s.dat", saved_id);
-  rname = get_fname(fname);
+  rname = get_fname(fname, DIR_SAVE);
 
   starter_id[0] = '\0';
 
@@ -10457,7 +10518,7 @@ static void load_starter(char *img_id)
   if (starter_personal == 0)
     dirname = strdup(DATA_PREFIX "starters");
   else
-    dirname = get_fname("starters");
+    dirname = get_fname("starters", DIR_DATA);
 
   /* Clear them to NULL first: */
   img_starter = NULL;
@@ -10562,7 +10623,7 @@ static void load_current(void)
 
   /* Determine the current picture's ID: */
 
-  fname = get_fname("current_id.txt");
+  fname = get_fname("current_id.txt", DIR_SAVE);
 
   fi = fopen(fname, "r");
   if (fi == NULL)
@@ -10594,7 +10655,7 @@ static void load_current(void)
   {
     snprintf(ftmp, sizeof(ftmp), "saved/%s%s", file_id, FNAME_EXTENSION);
 
-    fname = get_fname(ftmp);
+    fname = get_fname(ftmp, DIR_SAVE);
 
     tmp = IMG_Load(fname);
 
@@ -10634,7 +10695,7 @@ static int make_directory(const char *path, const char *errmsg)
   char *fname;
   int res;
 
-  fname = get_fname(path);
+  fname = get_fname(path, DIR_SAVE);
   res = mkdir(fname, 0755);
   if (res != 0 && errno != EEXIST)
   {
@@ -10662,7 +10723,7 @@ static void save_current(void)
     draw_tux_text(TUX_OOPS, strerror(errno), 0);
   }
 
-  fname = get_fname("current_id.txt");
+  fname = get_fname("current_id.txt", DIR_SAVE);
 
   fi = fopen(fname, "w");
   if (fi == NULL)
@@ -11360,9 +11421,9 @@ static void cleanup(void)
     FILE *fi;
 
 #ifndef WIN32
-    lock_fname = get_fname("lockfile.dat");
+    lock_fname = get_fname("lockfile.dat", DIR_SAVE);
 #else
-    lock_fname = get_temp_fname("lockfile.dat");
+    lock_fname = get_temp_fname("lockfile.dat", DIR_SAVE);
 #endif
 
     zero_time = (time_t) 0;
@@ -11802,7 +11863,7 @@ static int do_save(int tool, int dont_show_success_results)
   /* Save the file: */
 
   snprintf(tmp, sizeof(tmp), "saved/%s%s", file_id, FNAME_EXTENSION);
-  fname = get_fname(tmp);
+  fname = get_fname(tmp, DIR_SAVE);
   debug(fname);
 
   fi = fopen(fname, "wb");
@@ -11835,7 +11896,7 @@ static int do_save(int tool, int dont_show_success_results)
   /* (Was thumbnail in old directory, rather than under .thumbs?) */
 
   snprintf(tmp, sizeof(tmp), "saved/%s-t%s", file_id, FNAME_EXTENSION);
-  fname = get_fname(tmp);
+  fname = get_fname(tmp, DIR_SAVE);
   fi = fopen(fname, "r");
   if (fi != NULL)
   {
@@ -11848,7 +11909,7 @@ static int do_save(int tool, int dont_show_success_results)
 
     snprintf(tmp, sizeof(tmp), "saved/.thumbs/%s-t%s", file_id,
 	     FNAME_EXTENSION);
-    fname = get_fname(tmp);
+    fname = get_fname(tmp, DIR_SAVE);
   }
 
   debug(fname);
@@ -11880,7 +11941,7 @@ static int do_save(int tool, int dont_show_success_results)
       canvas_color_b != 255)
   {
     snprintf(tmp, sizeof(tmp), "saved/%s.dat", file_id);
-    fname = get_fname(tmp);
+    fname = get_fname(tmp, DIR_SAVE);
     fi = fopen(fname, "w");
     if (fi != NULL)
     {
@@ -12165,7 +12226,7 @@ int do_open(void)
       {
         /* First, check for saved-images: */
 
-        dirname[places_to_look] = get_fname("saved");
+        dirname[places_to_look] = get_fname("saved", DIR_SAVE);
       }
       else if (places_to_look == PLACE_PERSONAL_STARTERS_DIR)
       {
@@ -12926,7 +12987,7 @@ int do_open(void)
             snprintf(fname, sizeof(fname), "saved/%s%s",
                 d_names[which], d_exts[which]);
 
-            rfname = get_fname(fname);
+            rfname = get_fname(fname, DIR_SAVE);
             debug(rfname);
 
             if (unlink(rfname) == 0)
@@ -12940,7 +13001,7 @@ int do_open(void)
                   "saved/.thumbs/%s-t.png", d_names[which]);
 
               free(rfname);
-              rfname = get_fname(fname);
+              rfname = get_fname(fname, DIR_SAVE);
               debug(rfname);
 
               unlink(rfname);
@@ -12952,7 +13013,7 @@ int do_open(void)
               snprintf(fname, sizeof(fname), "saved/%s-t.png", d_names[which]);
 
               free(rfname);
-              rfname = get_fname(fname);
+              rfname = get_fname(fname, DIR_SAVE);
               debug(rfname);
 
               unlink(rfname);
@@ -12964,7 +13025,7 @@ int do_open(void)
               snprintf(fname, sizeof(fname), "saved/%s.dat", d_names[which]);
 
               free(rfname);
-              rfname = get_fname(fname);
+              rfname = get_fname(fname, DIR_SAVE);
               debug(rfname);
 
               unlink(rfname);
@@ -13201,7 +13262,7 @@ int do_slideshow(void)
 
   /* Load list of saved-images: */
 
-  dirname = get_fname("saved");
+  dirname = get_fname("saved", DIR_SAVE);
 
 
   /* Read directory of images and build thumbnails: */
@@ -14522,7 +14583,7 @@ void do_print(void)
   char f[512];
   int show = (want_alt_printcommand && !fullscreen);
 
-  snprintf(f, sizeof(f), "%s/%s", savedir, "print.cfg");
+  snprintf(f, sizeof(f), "%s/%s", savedir, "print.cfg"); // FIXME
 
   {
     const char *error =
@@ -15176,16 +15237,16 @@ static void parse_options(FILE * fi)
       }
       else if (strcmp(str, "printcfg=yes") == 0)
       {
-#ifndef WIN32
-	fprintf(stderr, "Note: printcfg option only applies to Windows!\n");
+#if !defined(WIN32) && !defined(__APPLE__)
+      fprintf(stderr, "Note: printcfg option only applies to Windows and Mac OS X!\n");
 #endif
 	use_print_config = 1;
       }
       else if (strcmp(str, "printcfg=no") == 0 ||
 	       strcmp(str, "noprintcfg=yes") == 0)
       {
-#ifndef WIN32
-	fprintf(stderr, "Note: printcfg option only applies to Windows!\n");
+#if !defined(WIN32) && !defined(__APPLE__)
+      fprintf(stderr, "Note: printcfg option only applies to Windows and Mac OS X!\n");
 #endif
 	use_print_config = 0;
       }
@@ -15248,6 +15309,15 @@ static void parse_options(FILE * fi)
 
 #ifdef DEBUG
 	printf("savedir set to: %s\n", savedir);
+#endif
+      }
+      else if (strstr(str, "datadir=") == str)
+      {
+	datadir = strdup(str + 8);
+	remove_slash(datadir);
+
+#ifdef DEBUG
+	printf("datadir set to: %s\n", datadir);
 #endif
       }
     }
@@ -16698,7 +16768,7 @@ int do_new_dialog(void)
     {
       /* Check for coloring-book style 'starter' images in our folder: */
 
-      dirname[places_to_look] = get_fname("starters");
+      dirname[places_to_look] = get_fname("starters", DIR_DATA);
     }
     else if (places_to_look == PLACE_STARTERS_DIR)
     {

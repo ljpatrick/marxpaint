@@ -1,0 +1,4 @@
+                          Tux Paint "Magic" Tool: Fill
+
+   This floods the picture with a color. It lets you quickly fill parts of
+   the picture, as if it were a coloring book.

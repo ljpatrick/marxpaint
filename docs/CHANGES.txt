@@ -47,7 +47,8 @@ $Id$
       source-code by using new "tp-magic-config" shell script to query
       for C compiler flags (which points to where "tp_magic_api.h" header
       file is installed) and directories Tux Paint uses (where plugin '.so'
-      files shoudl be stored, and where Tux Paint's global data files go).
+      files should be stored, and where Tux Paint's global data files and
+      documentation go).
 
     * Magic plugin development docs created.  On Linux/Unix, installed into
       /usr/[local/]share/docs/tuxpaint-dev/ by default.  (HTML and plaintext.)
@@ -62,6 +63,11 @@ $Id$
       longer recalculate the effect on pixels that have already been
       affected (until mouse button is released and clicked again).
       Improves performance, especially where heavy math is used.
+
+    * Magic tool documentation now split into separate files, and referenced
+      (as a directory) from README, so that users can find docs to any
+      additional tools (ones not included by default with Tux Paint) that are
+      installed.
 
     * Began adding support for using SDL_Pango, a wrapper to Pango,
       a library for layout and rendering of text, with an emphasis on
@@ -79,6 +85,10 @@ $Id$
 
     * Print configuration is now saved between Tux Paint sessions on Mac OS X.
       Martin Fuhrer <mfuhrer@users.sourceforge.net>
+
+    * Saved-files directory and data directory (brushes, starters, etc.) can
+      now be different.  Use "--datadir" option to override default data
+      directory, similar to "--savedir" has been for overriding save directory.
 
   * New Brushes
     -----------

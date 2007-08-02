@@ -663,11 +663,12 @@ int load_user_fonts(SDL_Surface * screen, void *vp)
 #endif
   }
 
-  homedirdir = get_fname("fonts");
+  homedirdir = get_fname("fonts", DIR_DATA);
   loadfonts(screen, homedirdir);
   free(homedirdir);
+
 #ifdef WIN32
-  homedirdir = get_fname("data/fonts");
+  homedirdir = get_fname("data/fonts", DIR_DATA);
   loadfonts(screen, homedirdir);
   free(homedirdir);
 #endif

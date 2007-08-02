@@ -1,0 +1,4 @@
+                         Tux Paint "Magic" Tool: Blocks
+
+   This makes the picture blocky looking ("pixelated") wherever you drag the
+   mouse.

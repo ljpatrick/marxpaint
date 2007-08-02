@@ -1,0 +1,5 @@
+                         Tux Paint "Magic" Tool: Emboss
+
+   This makes parts of your picture look "embossed." Wherever there are sharp
+   edges in your picture, the picture will look raised like it was stamped in
+   metal.

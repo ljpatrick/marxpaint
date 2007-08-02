@@ -1,0 +1,6 @@
+                          Tux Paint "Magic" Tool: Flip
+
+   Similar to "Mirror." Click and the entire image will be turned
+   upside-down.
+
+   See also: Mirror.

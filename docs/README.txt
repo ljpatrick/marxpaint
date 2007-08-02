@@ -9,7 +9,7 @@
                            bill@newbreedsoftware.com
                             http://www.tuxpaint.org/
 
-                         June 14, 2002 - June 27, 2007
+                         June 14, 2002 - August 2, 2007
 
    --------------------------------------------------------------------------
 
@@ -329,104 +329,13 @@ Available Tools
 
                               The 'Magic' tool is actually a set of special
                               tools. Select one of the "magic" effects from
-                              the selector on the right, and then click and
-                              drag around the picture to apply the effect.
+                              the selector on the right. Then, depending on
+                              the tool, either click and drag around the
+                              picture, or simply click the picture once, to
+                              apply the effect.
 
-                                   Fill
-                                        This floods the picture with a color.
-                                        It lets you quickly fill parts of the
-                                        picture, as if it were a coloring
-                                        book.
-
-                                   Grass
-                                        This paints grass on the image. The
-                                        higher up the canvas, the smaller the
-                                        grass is drawn, giving an illusion of
-                                        perspective. The grass can be tinted
-                                        various greenish hues by selecting
-                                        different colors in the color
-                                        palette.
-
-                                   Bricks (Large and Small)
-                                        These two tools intelligently paint
-                                        large and small brick patterns on the
-                                        canvas. The bricks can be tinted
-                                        various redish hues by selecting
-                                        different colors in the color
-                                        palette.
-
-                                   Rainbow
-                                        This is similar to the paint brush,
-                                        but as you move the mouse around, it
-                                        cycles through a spectrum of bright
-                                        colors.
-
-                                   Sparkles
-                                        This draws glowing sparkles on the
-                                        canvas, in the currently-selected
-                                        color.
-
-                                   Blur
-                                        This makes the picture fuzzy wherever
-                                        you drag the mouse.
-
-                                   Smudge
-                                        This pushes the colors around under
-                                        the mouse, like finger painting with
-                                        wet paint.
-
-                                   Lighten
-                                        This fades the colors wherever you
-                                        drag the mouse. (Do it to the same
-                                        spot many times, and it will
-                                        eventually become white.)
-
-                                   Darken
-                                        This dakrens the colors wherever you
-                                        drag the mouse. (Do it to the same
-                                        spot many times, and it will
-                                        eventually become black.)
-
-                                   Chalk
-                                        This makes parts of the picture
-                                        (where you move the mouse) look like
-                                        a chalk drawing.
-
-                                   Blocks
-                                        This makes the picture blocky looking
-                                        ("pixelated") wherever you drag the
-                                        mouse.
-
-                                   Negative
-                                        This inverts the colors wherever you
-                                        drag the mouse. (e.g., white becomes
-                                        black, and vice versa.)
-
-                                   Tint
-                                        This changes the parts of the picture
-                                        to the selected color.
-
-                                   Drip
-                                        This makes the paint "drip" wherever
-                                        you move the mouse.
-
-                                   Cartoon
-                                        This makes the picture look like a
-                                        cartoon -- with thick outlines and
-                                        bright, solid colors -- wherever you
-                                        move the mouse.
-
-                                   Mirror
-                                        When you click the mouse in your
-                                        picture with the "Mirror" magic
-                                        effect selected, the entire image
-                                        will be reversed, turning it into a
-                                        mirror image.
-
-                                   Flip
-                                        Similar to "Mirror." Click and the
-                                        entire image will be turned
-                                        upside-down.
+                              Each 'Magic' tool's instructions are contained
+                              within the "magic-docs" folder.
 
    --------------------------------------------------------------------------
 
@@ -902,15 +811,18 @@ Doing it Manually
                    Other documentation included with Tux Paint (in the "docs"
                    folder/directory) include:
 
+                      * "Magic" Tool Documentation ("magic-docs")
+                        Documentation for each of the currently-installed
+                        "Magic" tools.
                       * AUTHORS.txt
-                        List of authors and contributors
+                        List of authors and contributors.
                       * CHANGES.txt
-                        Summary of changed between releases
+                        Summary of changed between releases.
                       * COPYING.txt
-                        Copying license (The GNU General Public License)
+                        Copying license (The GNU General Public License).
                       * INSTALL.txt
                         Instructions for compiling/installing, when
-                        applicable
+                        applicable.
                       * EXTENDING.html
                         Detailed instructions on creating brushes, stamps and
                         starters, and adding fonts, to extend Tux Paint.
@@ -920,10 +832,10 @@ Doing it Manually
                         to use Tux Paint Config.
                       * PNG.txt
                         Notes on creating PNG format bitmapped images for use
-                        in Tux Paint
+                        in Tux Paint.
                       * SVG.txt
                         Notes on creating SVG format vector images for use in
-                        Tux Paint
+                        Tux Paint.
 
    --------------------------------------------------------------------------
 

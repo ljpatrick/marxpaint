@@ -1,7 +1,7 @@
-.\" tuxpaint.1 - 2007.07.24
-.TH TUXPAINT 1 "24 July 2007" "0.9.18" "Tux Paint"
+.\" tuxpaint.1 - 2007.08.02
+.TH TUXPAINT 1 "2 August 2007" "0.9.18" "Tux Paint"
 .SH NAME
-tuxpaint -- A drawing program for young children.
+tuxpaint -- "Tux Paint", a drawing program for young children.
 
 .SH SYNOPSYS
 .B tuxpaint
@@ -10,62 +10,127 @@ tuxpaint -- A drawing program for young children.
 .TP 9
 .B tuxpaint
 [\-\-fullscreen]
-[\-\-native]
+.br
 [\-\-WIDTHxHEIGHT]
+.br
+[\-\-native]
+.br
+[\-\-orient=portrait]
+.br
 [\-\-startblank]
+.br
 [\-\-nosound]
+.br
 [\-\-noquit]
+.br
 [\-\-noprint]
+.br
 [\-\-printdelay=\fISECONDS\fP]
+.br
 [\-\-printcfg]
+.br
+[\-\-altprintalways | \-\-altprintnever]
+.br
 [\-\-papersize \fIPAPERSIZE\fP | \-\-papersize help]
+.br
 [\-\-simpleshapes]
+.br
 [\-\-uppercase]
+.br
 [\-\-grab]
+.br
 [\-\-noshortcuts]
+.br
 [\-\-nowheelmouse]
+.br
 [\-\-nobuttondistinction]
+.br
 [\-\-nofancycursors]
+.br
 [\-\-hidecursor]
+.br
 [\-\-nooutlines]
+.br
 [\-\-nostamps]
+.br
 [\-\-nostampcontrols]
+.br
 [\-\-mirrorstamps]
+.br
 [\-\-keyboard]
+.br
 [\-\-nosysfonts]
+.br
 [\-\-savedir \fIDIR\fP]
+.br
+[\-\-datadir \fIDIR\fP]
+.br
 [\-\-saveover]
+.br
 [\-\-saveovernew]
+.br
 [\-\-nosave]
+.br
 [\-\-autosave]
+.br
 [\-\-colorfile \fIFILE\fP]
 
 .TP 9
 .B tuxpaint (defaults)
 [\-\-windowed]
+.br
 [\-\-800x600]
+.br
+[\-\-orient=landscape]
+.br
 [\-\-startlast]
+.br
 [\-\-sound]
+.br
 [\-\-quit]
+.br
 [\-\-print]
+.br
 [\-\-printdelay=0]
+.br
 [\-\-noprintcfg]
+.br
+[\-\-altprintmod]
+.br
 [\-\-complexshapes]
+.br
 [\-\-mixedcase]
+.br
 [\-\-dontgrab]
+.br
 [\-\-shortcuts]
+.br
 [\-\-wheelmouse]
+.br
 [\-\-buttondistinction]
+.br
 [\-\-fancycursors]
+.br
 [\-\-showcursor]
+.br
 [\-\-outlines]
+.br
 [\-\-stamps]
+.br
 [\-\-stampcontrols]
+.br
 [\-\-dontmirrorstamps]
+.br
 [\-\-mouse]
+.br
 [\-\-sysfonts]
+.br
 [\-\-saveoverask]
+.br
 [\-\-save]
+.br
+[\-\-noautosave]
+.br
 
 .TP 9
 .B tuxpaint
@@ -77,7 +142,9 @@ tuxpaint -- A drawing program for young children.
 
 .TP 9
 .B tuxpaint
-[\-\-nosysconfig] [\-\-nolockfile]
+[\-\-nosysconfig]
+.br
+[\-\-nolockfile]
 
 .SH DESCRIPTION
 .PP
@@ -124,7 +191,16 @@ When in fullscreen mode, use the system's default screen resolution.
 .B \-\-WIDTHxHEIGHT
 Run \fITux Paint\fP in a particularly-sized window, or at a particular
 fullscreen resolution (if \-\-native is not used).  Default is 800x600.
-Minimum is 640x480.  Portrait and landscape orientations are both supported.
+Minimum width is 640.  Minimum height is 480.  Portrait and landscape
+orientations are both supported.  (Also see \-\-orient, below.)
+
+.TP 8
+.B \-\-orient=landscape \-\-orient=portrait
+If \-\-orient=portraitis set, asks \fITux Paint\fP to swap the WIDTH and HEIGHT
+values it uses for windowed or fullscreen mode, without having to actually
+change the WIDTH and HEIGHT values in the configuration file or on the
+command-line. (This is useful on devices where the screen can be rotated,
+e.g. tablet PCs.)
 
 .TP 8
 .B \-\-nosound \-\-sound
@@ -148,13 +224,23 @@ seconds.  Default is 0 (no limitation).
 
 .TP 8
 .B \-\-printcfg \-\-noprintcfg
-(Windows only.)  Enable or disable loading and saving of printer settings.
-By default, \fITux Paint\fP will print to the default printer with default
-settings.  Pressing \fI[ALT]\fP while pushing the \fIPrint\fP button
-will cause a Windows printer dialog to appear (as long as you're not in
-fullscreen mode.)  If \-\-printcfg is used, your previous settings will
+(Windows and Mac OS X only.)  Enable or disable loading and saving of
+printer settings.  By default, \fITux Paint\fP will print to the default
+printer with default settings.  Pressing \fI[ALT]\fP while pushing the
+\fIPrint\fP button will cause a printer dialog to appear (as long as you're
+not in fullscreen mode; see also \-\-altprintalways and \-\-altprintnever,
+below.)  Unless \-\-noprintcfg is used, your previous settings will
 be loaded when \fITux Paint\fP starts up, and setting changes will be saved
 for next time.
+
+.TP 8
+.B \-\-altprintmod \-\-altprintnever \-\-altprintalways
+These options control whether an system printer dialog appears when the
+user clicks the \fIPrint\fP button.  By default (\-\-altprintmod), pressing
+\fI[ALT]\fP while clicking \fIPrint\fP will bring up a dialog (unless you're
+in fullscreen mode).  With \-\-altprintalways, the dialog will always appear,
+even if \fI[ALT]\fP is not being held.  With \-\-altprintnever, the dialog
+will never appear, even if \fI[ALT]\fP is being held.
 
 .TP 8
 .B \-\-papersize \fIPAPERSIZE\fP
@@ -254,8 +340,12 @@ use the \fInosysfonts\fP option to disable this feature.
 
 .TP 8
 .B \-\-savedir \fIDIR\fP
-Specify where \fITux Paint\fP should save files.  By default, this is
-"~/.tuxpaint/saved" under Linux and Unix, and "userdata\\" under Windows.
+Specify where \fITux Paint\fP should save files.
+
+.TP 8
+.B \-\-datadir \fIDIR\fP
+Specify where \fITux Paint\fP should look for personal data files
+(brushes, stamps, etc.).
 
 .TP 8
 .B \-\-saveover \-\-saveovernew \-\-saveoverask
@@ -764,6 +854,7 @@ Martin Zhekov.
 .SH "SEE ALSO"
 .BR tuxpaint-import (1),
 .BR tuxpaint-config (1),
+.BR tp-magic-config (1),
 .BR xpaint (1),
 .BR gpaint (1),
 .BR gimp (1),

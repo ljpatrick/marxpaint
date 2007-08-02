@@ -23,7 +23,7 @@ New Breed Software</p>
 <a href="http://www.tuxpaint.org/">http://www.tuxpaint.org/</a></p>
 
 
-<p>July 4, 2007</p>
+<p>August 2, 2007</p>
 
 
 </center>
@@ -90,7 +90,7 @@ New Breed Software</p>
   </blockquote>
 </blockquote>
 
-<hr size=2 noshade><p>
+<hr size=2 noshade>
 
 <h1>Available Options</h1>
 <blockquote>
@@ -215,7 +215,7 @@ New Breed Software</p>
 
   <dt><code><b>printcfg=yes</b></code></dt>
   <dd>
-    <p><i>(Windows only)</i></p>
+    <p><i>(Windows and Mac OS X only)</i></p>
 
     <p>Tux&nbsp;Paint will use a printer configuration file when printing.
     Push the <b>[Alt]</b> key while clicking the 'Print' button in
@@ -399,19 +399,78 @@ New Breed Software</p>
   
   <dt><code><b>savedir=<i>DIRECTORY</i></b></code></dt>
   <dd>
-    <p>Use this option to change where Tux&nbsp;Paint saves pictures.
-    By default, this is "<code>~/.tuxpaint/saved/</code>" under Linux
-    and Unix, and "<code>userdata\</code>" under Windows.</p>
+    <p>Use this option to change where Tux&nbsp;Paint's "<code>saved</code>"
+    directory/folder is located, which is where Tux&nbsp;Paint saves and opens
+    pictures.</p>
 
-    <p>This can be useful in a Windows lab, where Tux&nbsp;Paint is
-    installed on a server, and children run it from workstations.
-    You can set <code>savedir</code> to be a folder in their home
-    directory.  (e.g., "<code>H:\tuxpaint\</code>")</p>
+    <p>If you do not override it, the <b><i>default</i></b> location is:
+    <ul>
+    <li>Linux &amp; Unix &mdash; Under a hidden directory named
+      "<code>.tuxpaint</code>" in your home directory (aka "<code>~</code>"
+      or "<code>$HOME</code>")<br>
+      Example: "<code>/home/<i>username</i>/.tuxpaint/saved/</code>"<br>
+      <br>
+
+    <li>Windows &mdash; Inside a folder named "<code>TuxPaint</code>"
+      in your "<code>Application&nbsp;Data</code>" folder.<br>
+      Example: "<code>C:\Documents&nbsp;and&nbsp;Settings\<i>Username</i>\Application&nbsp;Data\TuxPaint\saved\</code>"<br>
+      <br>
+
+    <li>Mac OS X &mdash; Inside a folder named "<code>TuxPaint</code>" in your
+      "<code>Application&nbsp;Support</code>" folder.<br>
+      Example: "<code>/Users/<i>Username</i>/Library/Application&nbsp;Support/TuxPaint/saved/</code>"<br>
+    </ul>
+    </p>
 
     <p><b>Note:</b> When specifying a Windows drive (e.g.,
     "<code>H:\</code>"), you must also specify a subdirectory.</p>
 
+    <p><b>Note:</b> Prior to version 0.9.18, Tux&nbsp;Paint would also use
+    the setting or default for "<code>savedir</code>" as the place to
+    search for personal data files (brushes, stamps, starters and fonts).
+    As of version 0.9.18, they may be specified separately
+    (see the "<code>datadir</code>" option, below).</p>
+
     <p><b>Example:</b> <code>savedir=Z:\tuxpaint\</code></p>
+  </dd>
+  
+  <dt><code><b>datadir=<i>DIRECTORY</i></b></code></dt>
+  <dd>
+    <p>Use this option to change where Tux&nbsp;Paint looks for personal
+    data files (brushes, stamps, starters and fonts specific to the
+    current user).</p>
+
+    <p>Tux&nbsp;Paint will search for subdirectories/subfolders named
+    "<code>brushes</code>", "<code>stamps</code>", "<code>starters</code>"
+    and "<code>fonts</code>" under the data directory.</p>
+
+    <p>If you do not override it, the <b><i>default</i></b> location is:
+    <ul>
+    <li>Linux &amp; Unix &mdash; Under a hidden directory named
+      "<code>.tuxpaint</code>" in your home directory (aka "<code>~</code>"
+      or "<code>$HOME</code>")<br>
+      Example: "<code>/home/<i>username</i>/.tuxpaint/brushes/</code>"<br>
+      <br>
+
+    <li>Windows &mdash; Inside a folder named "<code>TuxPaint</code>"
+      in your "<code>Application&nbsp;Data</code>" folder.<br>
+      Example: "<code>C:\Documents&nbsp;and&nbsp;Settings\<i>Username</i>\Application&nbsp;Data\TuxPaint\brushes\</code>"<br>
+      <br>
+
+    <li>Mac OS X &mdash; Inside a folder named "<code>TuxPaint</code>" in your
+      "<code>Application&nbsp;Support</code>" folder.<br>
+      Example: "<code>/Users/<i>Username</i>/Library/Application&nbsp;Support/TuxPaint/brushes/</code>"<br>
+    </ul>
+    </p>
+
+    <p><b>Note:</b> Prior to version 0.9.18, Tux&nbsp;Paint would use the
+    same setting or default as for "<code>savedir</code>" to search for
+    data files.  As of version 0.9.18, they may be specified separately.</p>
+
+    <p><b>Note:</b> When specifying a Windows drive (e.g.,
+    "<code>H:\</code>"), you must also specify a subdirectory.</p>
+
+    <p><b>Example:</b> <code>datadir=/home/johnny/tuxpaint-data/</code></p>
   </dd>
   
   <dt><code><b>saveover=yes</b></code></dt>
@@ -445,12 +504,12 @@ New Breed Software</p>
   </dd>
 
   <dt><code><b>autosave=yes</b></code></dt>
-  <dt>
+  <dd>
     This prevents Tux&nbsp;Paint from asking whether you want to save
     the current picture when quitting, and assumes you do.
-  </dt>
+  </dd>
 
-  <dt><code><b>startblank=yes</b></code</dt>
+  <dt><code><b>startblank=yes</b></code></dt>
   <dd>
     This causes Tux&nbsp;Paint to display a blank canvas when it first
     starts up, rather than loading the last image that was being edited.
@@ -916,6 +975,8 @@ New Breed Software</p>
     --noprint<br>
     --printdelay=<i>SECONDS</i><br>
     --printcfg<br>
+    --altprintnever<br>
+    --altprintalways<br>
     --papersize=<i>PAPERSIZE</i><br>
     --simpleshapes<br>
     --uppercase<br>
@@ -932,11 +993,13 @@ New Breed Software</p>
     --mirrorstamps<br>
     --keyboard<br>
     --savedir&nbsp;<i>DIRECTORY</i><br>
+    --datadir&nbsp;<i>DIRECTORY</i><br>
     --saveover<br>
     --saveovernew<br>
     --nosave<br>
     --autosave<br>
     --lang&nbsp;<i>LANGUAGE</i><br>
+    --colorfile&nbsp;<i>FILE</i><br>
     </b></code></dt>
     <dd>
       These enable or correspond to the configuration file options
@@ -954,6 +1017,7 @@ New Breed Software</p>
     --print<br>
     --printdelay=0<br>
     --noprintcfg<br>
+    --altprintmod<br>
     --complexshapes<br>
     --mixedcase<br>
     --dontgrab<br>
@@ -980,7 +1044,7 @@ New Breed Software</p>
     </dd>
 
 
-    <dt><code><b><a name="locale">--locale locale</a></b></code></dt>
+    <dt><code><b><a name="locale">--locale LOCALE</a></b></code></dt>
     <dd>
       <p>Run Tux&nbsp;Paint in one of the support languages.
       See the "<i><a href="#different_language">Choosing a Different
@@ -1652,40 +1716,47 @@ New Breed Software</p>
 
   <h3><a name="special_fonts">Special Fonts</a></h3>
   <blockquote>
-    Some languages require special fonts be installed.  These font
+    <p>Some languages require special fonts be installed.  These font
     files (which are in TrueType format (TTF)), are much too large to
     include with the Tux&nbsp;Paint download, and are available
     separately.  (See the table above, under the
     "<a href="#different_language"><i>Choosing a Different Language</i></a>"
-    section.)<p>
+    section.)</p>
 
-    When running Tux&nbsp;Paint in a language that requires its own font,
+    <p><b>Note:</b> As of version 0.9.18, Tux&nbsp;Paint uses the "SDL_Pango"
+    library, which utilizes the "Pango" library to render text in the user
+    interface, rather than using "SDL_ttf" directly.  Unless your copy of
+    Tux&nbsp;Paint was built without Pango support, special fonts should
+    <b><i>no longer be necessary</i></b>.</p>
+
+    <p>When running Tux&nbsp;Paint in a language that requires its own font,
     Tux&nbsp;Paint will try to load the font file from its system-wide
     "<code><b>fonts</b></code>" directory (under a
     "<code><b>locale</b></code>" subdirectory).  The name of the file
     corresponds to the first two letters in the 'locale' code of the
     language (e.g., "ko" for Korean, "ja" for Japanese,
-    "zh_tw" for Traditional Chinese).<p>
+    "zh_tw" for Traditional Chinese).</p>
     
-    For example, under Linux or Unix, when Tux&nbsp;Paint is run in Korean
+    <p>For example, under Linux or Unix, when Tux&nbsp;Paint is run in Korean
     (e.g., with the option "<code>--lang&nbsp;korean</code>"),
-    Tux&nbsp;Paint will attempt to load the following font file:<p>
+    Tux&nbsp;Paint will attempt to load the following font file:</p>
 
     <blockquote>
-      <code>/usr/share/tuxpaint/fonts/locale/<b>ko.ttf</b></code>
-    </blockquote><p>
+      <p><code>/usr/share/tuxpaint/fonts/locale/<b>ko.ttf</b></code></p>
+    </blockquote>
 
-    You can download fonts for supported languages from Tux&nbsp;Paint's
+    <p>You can download fonts for supported languages from Tux&nbsp;Paint's
     website,
     <a href="http://www.tuxpaint.org/">http://www.tuxpaint.org/</a>.
-    (Look in the 'Fonts' section under 'Download.')<p>
+    (Look in the 'Fonts' section under 'Download.')</p>
 
-    Under Unix and Linux, you can use the <code>Makefile</code> that comes
-    with the font to install the font in the appropriate location.<p>
+    <p>Under Unix and Linux, you can use the <code>Makefile</code> that comes
+    with the font to install the font in the appropriate location.</p>
   </blockquote>
   
 </blockquote>
 
+<hr noshade>
 
 </body></html>
 

@@ -1,0 +1,5 @@
+                          Tux Paint "Magic" Tool: Blur
+
+   This makes the picture fuzzy wherever you drag the mouse.
+
+   See also: Smudge.

@@ -15,7 +15,7 @@ New Breed Software</p>
 <p><a href="mailto:bill@newbreedsoftware.com">bill@newbreedsoftware.com</a><br>
 <a href="http://www.tuxpaint.org/">http://www.tuxpaint.org/</a></p>
 
-<p>July 5, 2007 - July 31, 2007</p>
+<p>July 5, 2007 - August 2, 2007</p>
 </center>
 
 <hr size=2 noshade>
@@ -79,7 +79,7 @@ concept.)</p>
 <li><a href="#multiple">Creating plugins with multiple effects</a>
 <li><a href="#">Example Code</a>
 <li><a href="#">Getting Help</a>
-<li><a href="#">Glossary</a>
+<li><a href="#glossary">Glossary</a>
 </ul>
 
 
@@ -126,7 +126,8 @@ invokes them.</p>
 Also, when you run the C compiler to build a plugin, you should use the
 command-line tool "<code>tp-magic-config</code>" to get the appropriate
 compiler flags (such as where the compiler can find the Tux&nbsp;Paint
-plugin header file, as well as SDL's header files) for building a plugin.</p>
+plugin header file, as well as SDL's header files) for building a plugin.
+(See "<a href="#compiling">Compiling</a>", below.)</p>
 
 <p>The C header file and command-line tool mentioned above are included
 with Tux&nbsp;Paint &mdash; or in some cases, as part of a "Tux&nbsp;Paint
@@ -711,9 +712,15 @@ also contains some helper macros that you may use.</p>
   a shared object file ("<code>.so</code>") based on your 'Magic' tool
   plugin's C source code.</p>
 
-  <p>Additionally, use the "<code>tp-magic-config&nbsp;--cflags</code>" command,
-  supplied as part of Tux&nbsp;Paint, to provide additional command-line
-  flags to your C compiler that will help it build your plugin.</p>
+  <p>Use the "<code>tp-magic-config&nbsp;--cflags</code>" command,
+  supplied as part of Tux&nbsp;Paint &mdash; or in some cases, as part of a
+  "Tux Paint 'Magic' Tool Plugin Development package" &mdash;
+  to provide additional command-line flags to your C compiler that will help
+  it build your plugin.</p>
+
+  <h4>Command-Line Example</h4>
+
+  <blockquote>
 
   <p>As a stand-alone command, using the GNU C Compiler and BASH shell,
   for example:</p>
@@ -724,7 +731,8 @@ also contains some helper macros that you may use.</p>
     </code></p>
   </blockquote>
 
-  <p><b>Note:</b> The characters around the "<code>tp-magic-config</code>"
+  <p><a name="grave"><b>Note:</b></a>
+  The characters around the "<code>tp-magic-config</code>"
   command are a grave/backtick/backquote
   ("<code><b><font size=+1>`</font></b></code>"), and
   not an apostrophe/single-quote ("<code><b><font size=+1>'</font></b></code>").
@@ -733,16 +741,86 @@ also contains some helper macros that you may use.</p>
   as an argument to the command being executed (in this case,
   "<code>gcc&nbsp;...</code>").</p>
 
-  <p>A snippet from a more generalized Makefile might look like this:</p>
+  </blockquote>
+
+  <h4>Makefile Example</h4>
+
+  <blockquote>
+
+  <p>A snippet from a Makefile to compile a Tux&nbsp;Paint "Magic" tool
+  plugin might look like this:</p>
 
   <blockquote><table border=1 cellspacing=0 cellpadding=4><tr><td>
     <p><code>
       CFLAGS=-Wall -O2 $(shell tp-magic-config --cflags)<br>
       <br>
       my_plugin.so:  my_plugin.c<br>
+      &nbsp;&nbsp;&nbsp;gcc -shared $(CFLAGS) -o my_plugin.so my_plugin.c
+    </code></p>
+  </td></tr></table></blockquote>
+
+  <p>The first line sets up Makefile variable ("<code>CFLAGS</code>") that
+  contains flags for the compiler. "<code>-Wall</code>" asks for all compiler
+  warnings to be shown.  "<code>-O2</code>" asks for level 2 optimization.
+  "<code>($shell&nbsp;tp-magic-config&nbsp;--cflags)</code>" runs
+  "<code>tp-magic-config</code>" to retrieve additional compiler flags that
+  "Magic" tool plugins require.  (The "<code>$(shell&nbsp;...)</code>"
+  directive is similar to the <a href="#grave"><b><font size=+1>`</font></b>
+  ("grave")</a> character in the BASH shell examples, above.)</p>
+
+  <p>The next line defines a Makefile target, "<code>my_plugin.so</code>",
+  and states that it <i>depends&nbsp;on</i> the C source file
+  "<code>my_plugin.c</code>".  (Any time the C file changes, "<code>make</code>"
+  will know to recompile it and produce an updated "<code>.so</code>" file.
+  If the C file hadn't changed, it won't bother recompiling.)</p>
+
+  <p>The last line defines the command "<code>make</code>" should
+  run when it determines that it needs to (re)compile the "<code>.so</code>"
+  file.  Here, we're using "<code>gcc</code>", with "<code>-shared</code> and
+  "<code>$(CFLAGS)</code>" command-line arguments, like above.
+  "<code>-o&nbsp;my_plugin.so</code>" tells the C compiler that the output file
+  should be "<code>my_plugin.so</code>".  The last argument is the C file to
+  compile, in this case "<code>my_plugin.c</code>".</p>
+
+  <p><b>Note:</b> Commands listed below a Makefile target should be
+  intented using a single <b>tab</b> character.</p>
+
+  </blockquote>
+
+  <h4>Advanced Makefile</h4>
+
+  <blockquote>
+
+  <p>An even more generalized Makefile might look like this:</p>
+
+  <blockquote><table border=1 cellspacing=0 cellpadding=4><tr><td>
+    <p><code>
+      CFLAGS=-Wall -O2 $(shell tp-magic-config --cflags)<br>
+      <br>
+      my_plugin_1.so:  my_plugin_1.c<br>
+      &nbsp;&nbsp;&nbsp;$(CC) -shared $(CFLAGS) -o $@ $&lt;<br>
+      <br>
+      my_plugin_2.so:  my_plugin_2.c<br>
       &nbsp;&nbsp;&nbsp;$(CC) -shared $(CFLAGS) -o $@ $&lt;
     </code></p>
   </td></tr></table></blockquote>
+
+  <p>As before, there are lines that define the command "<code>make</code>"
+  should run when it determines that it needs to (re)compile the
+  "<code>.so</code>" file(s).  However, more general terms are used...</p>
+
+  <p>"<code>$(CC)</code>" gets expanded to your default C compiler (e.g.,
+  "<code>gcc</code>").  "<code>-shared</code> and "<code>$(CFLAGS)</code>"
+  are command-line arguments to the compiler, like above.
+  "<code>-o&nbsp;$@</code>" tells the C compiler what the output file
+  should be; "<code>make</code>" replaces "<code>$@</code>" with the name
+  of the target, in this case "<code>my_plugin_1.so</code>" or
+  "<code>my_plugin_2.so</code>". And finally,
+  the last argument is the C file to compile; "<code>make</code>" replaces
+  it with the target's dependency, in this case
+  "<code>my_plugin_1.c</code>" or "<code>my_plugin_2.c</code>".</p>
+
+  </blockquote>
 
   </blockquote>
 
@@ -769,23 +847,70 @@ also contains some helper macros that you may use.</p>
   <h3>Linux and other Unix-like Platforms</h3>
 
   <blockquote>
-  <p>Use the "<code>tp-magic-config&nbsp;--pluginprefix</code>"
-  command, supplied as part of Tux&nbsp;Paint, to determine where the
-  plugin shared&nbsp;object ("<code>.so</code>") files should be installed.
-  The value returned by this command will be the global location where
-  the installed version of Tux&nbsp;Paint looks for plugins
-  (e.g., "<code></code>").</p>
+  <p>Use the "<code>tp-magic-config</code>" command-line tool, supplied as
+  part of Tux&nbsp;Paint &mdash; or in some cases, as part of a "Tux
+  Paint 'Magic' Tool Plugin Development package" &mdash; to determine
+  where your plugins' files should go.</p>
+
+  <h4>Shared Object</h4>
+
+  <blockquote>
+
+  <p>Use "<code>tp-magic-config&nbsp;--pluginprefix</code>"
+  to determine where the plugin shared&nbsp;object ("<code>.so</code>")
+  files should be installed.  The value returned by this command will be
+  the global location where the installed copy of Tux&nbsp;Paint looks
+  for plugins (e.g., "<code>/usr/lib/tuxpaint/plugins</code>").</p>
 
   <p>As stand-alone commands, using the BASH shell, for example:</p>
 
   <blockquote>
     <p><code>
       # cp my_plugin.so `tp-magic-config --pluginprefix`<br>
-      # chmod 644 `tp-magic-config --pluginprefix`/my_plugin.so
+      # chmod 644 `tp-magic-config --pluginprefix`/my_plugin.so<br>
     </code></p>
   </blockquote>
 
-  <p>Additionally, use the "<code>tp-magic-config&nbsp;--dataprefix</code>"
+  <p><b>Note:</b> See the <a href="#grave">note above regarding the
+  "<font size=+1><b>`</b></font>" (grave) character</a>.</p>
+
+  </blockquote>
+
+  <h4>Documentation</h4>
+
+  <blockquote>
+  <p>Use the "<code>tp-magic-config&nbsp;--plugindocprefix</code>"
+  command to determine where documentation for your "Magic" tools should go.
+  The value returned by this command will be the location where the
+  documentation to the installed copy of Tux&nbsp;Paint is stored.
+  The main documentation includes a link to a folder where "Magic" tools'
+  documentation is expected to be installed</p>
+  (e.g., "<code>/usr/share/doc/tuxpaint/magic-docs</code>").</p>
+
+  <p><b>Note:</b> It's best to include both HTML and plain-text versions
+  of your documentation.  An "<code>html</code>" subdirectory exists within
+  the "<code>magic-docs</code>" directory, and is where the HTML versions
+  should go.</p>
+
+  <p>As stand-alone commands, using the BASH shell, for example:</p>
+
+  <blockquote>
+    <p><code>
+      # cp my_plugin.html `tp-magic-config --plugindocprefix`/html<br>
+      # cp my_plugin.txt `tp-magic-config --plugindocprefix`
+    </code></p>
+  </blockquote>
+
+  <p><b>Note:</b> See the <a href="#grave">note above regarding the
+  "<font size=+1><b>`</b></font>" (grave) character</a>.</p>
+
+  </blockquote>
+
+  <h4>Icons, Sounds and other Data Files</h4>
+
+  <blockquote>
+
+  <p>Use the "<code>tp-magic-config&nbsp;--dataprefix</code>"
   command, supplied as part of Tux&nbsp;Paint, to determine where data files
   (PNG icon, Ogg&nbsp;Vorbis sound effects, etc.) should be installed.
   The value returned by this command will be the same as the value of the
@@ -807,6 +932,11 @@ also contains some helper macros that you may use.</p>
     </code></p>
   </blockquote>
 
+  <p><b>Note:</b> See the <a href="#grave">note above regarding the
+  "<font size=+1><b>`</b></font>" (grave) character</a>.</p>
+
+  </blockquote>
+
   <h4>Putting it Together in a Makefile</h4>
 
   <blockquote>
@@ -816,20 +946,40 @@ also contains some helper macros that you may use.</p>
   <blockquote><table border=1 cellspacing=0 cellpadding=4><tr><td>
     <p><code>
       PLUGINPREFIX=$(shell tp-magic-config --pluginprefix)<br>
+      PLUGINDOCPREFIX=$(shell tp-magic-config --plugindocprefix)<br>
       DATAPREFIX=$(shell tp-magic-config --dataprefix)<br>
       <br>
       install:<br>
+      &nbsp;&nbsp;&nbsp;#<br>
+      &nbsp;&nbsp;&nbsp;# Install plugin<br>
       &nbsp;&nbsp;&nbsp;mkdir -p $(PLUGINPREFIX)<br>
       &nbsp;&nbsp;&nbsp;cp *.so $(PLUGINPREFIX)/<br>
       &nbsp;&nbsp;&nbsp;chmod 644 $(PLUGINPREFIX)/*.so<br>
+      &nbsp;&nbsp;&nbsp;#<br>
+      &nbsp;&nbsp;&nbsp;# Install icons<br>
       &nbsp;&nbsp;&nbsp;mkdir -p $(DATAPREFIX)/images/magic<br>
-      &nbsp;&nbsp;&nbsp;cp *.png $(DATAPREFIX)/images/magic/<br>
-      &nbsp;&nbsp;&nbsp;chmod 644 $(DATAPREFIX)/images/magic/*.png
+      &nbsp;&nbsp;&nbsp;cp icons/*.png $(DATAPREFIX)/images/magic/<br>
+      &nbsp;&nbsp;&nbsp;chmod 644 $(DATAPREFIX)/images/magic/*.png<br>
+      &nbsp;&nbsp;&nbsp;#<br>
+      &nbsp;&nbsp;&nbsp;# Install sound effects<br>
+      &nbsp;&nbsp;&nbsp;mkdir -p $(DATAPREFIX)/sounds/magic<br>
+      &nbsp;&nbsp;&nbsp;cp sounds/*.ogg $(DATAPREFIX)/sounds/magic/<br>
+      &nbsp;&nbsp;&nbsp;chmod 644 $(DATAPREFIX)/sounds/magic/*.ogg<br>
+      &nbsp;&nbsp;&nbsp;#<br>
+      &nbsp;&nbsp;&nbsp;# Install docs<br>
+      &nbsp;&nbsp;&nbsp;mkdir -p $(PLUGINDOCPREFIX)/html<br>
+      &nbsp;&nbsp;&nbsp;cp docs/*.html $(PLUGINDOCPREFIX)/html/<br>
+      &nbsp;&nbsp;&nbsp;cp docs/*.txt $(PLUGINDOCPREFIX)/<br>
+      &nbsp;&nbsp;&nbsp;chmod 644 $(PLUGINDOCPREFIX)/html/*.html<br>
+      &nbsp;&nbsp;&nbsp;chmod 644 $(PLUGINDOCPREFIX)/*.txt<br>
     </code></p>
   </td></tr></table></blockquote>
 
-  <p>The first two lines set up Makefile variables that contain the
-  paths returned by the "<code>tp-magic-config</code>" command-line tool.</p>
+  <p>The first three lines set up Makefile variables that contain the
+  paths returned by the "<code>tp-magic-config</code>" command-line tool.
+  (The "<code>$(shell&nbsp;...)</code>" directive is similar to the
+  <a href="#grave"><b><font size=+1>`</font></b> ("grave")</a> character
+  in the BASH shell examples, above.)</p>
 
   <p>Below that is an "<code>install</code>" target in the Makefile.
   (Invoked by, for example, "<code>$&nbsp;sudo&nbsp;make&nbsp;install</code>"
@@ -841,8 +991,11 @@ also contains some helper macros that you may use.</p>
   "<code>chmod</code>" to make sure they are readable.</p>
 
   <p>It then does a similar series of commands to install icon files
-  ("<code>.png</code>"&nbsp;images) into a subdirectory within Tux&nbsp;Paint's
-  data directory.</p>
+  ("<code>.png</code>"&nbsp;images) and sound effects
+  ("<code>.ogg</code>"&nbsp;files) into subdirectories within Tux&nbsp;Paint's
+  data directory, and to install documentation
+  ("<code>.html</code>" and "<code>.txt</code>" files) within Tux&nbsp;Paint's
+  documentation directory.</p>
 
   </blockquote>
   </blockquote>
@@ -905,7 +1058,9 @@ effects:</p>
     <br>
     for (i = 0; i &lt; NUM_TOOLS; i++)<br>
     {<br>
-    &nbsp;&nbsp;snprintf(fname, sizeof(fname), "%s/%s",<br>
+    &nbsp;&nbsp;/* Becomes, for example, "/usr/share/tuxpaint/sounds/magic/one.ogg" */<br>
+    &nbsp;&nbsp;<br>
+    &nbsp;&nbsp;snprintf(fname, sizeof(fname), "%s/sounds/magic/%s",<br>
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;api->data_prefix, my_plugin_snd_filenames[i];<br>
     <br>
     &nbsp;&nbsp;my_plugin_snds[i] = Mix_LoadWAV(fname);<br>
@@ -914,7 +1069,12 @@ effects:</p>
 
 <li>Similarly, do the same to free them later (such as freeing
   sound effects during your "<code>shutdown()</code>").<br>
-  <br>
+  <blockquote><code>
+    int i;<br>
+    <br>
+    for (i = 0; i &lt; NUM_TOOLS; i++)<br>
+    &nbsp;&nbsp;Mix_FreeChunk(my_plugin_snds[i]);
+  </code></blockquote>
 
 <li>Use "<code>which</code>" values sent to your functions as an
   index into those arrays (e.g., for playing the appropriate sound effect
@@ -960,7 +1120,7 @@ mailing lists:
 
 <hr size=1 noshade>
 
-<h2>Glossary</h2>
+<h2><a name="glossary">Glossary</a></h2>
 
 <ul>
 <li><b>alpha:</b> See "RGBA"
@@ -999,6 +1159,8 @@ mailing lists:
 <li><b>format:</b> <i>TBD</i>
 <li><b>free():</b> A C function that frees (deallocates) memory allocated by other C functions (such as "<code>strdup()</code>").
 <li><b>function:</b> See "C function"
+<li><b>gcc:</b> <i>TBD</i> (See also the "<code>gcc(1)</code>" <i>man&nbsp;page</i>)
+<li><b>GNU C Compiler:</b> See "gcc"
 <li><b>grave:</b> The "<code><font size=+1>`</font></code>" character; used by the BASH shell to use the output of a command as the command-line arguments to another.
 <li><b>green:</b> See "RGBA"
 <li><b>-&gt;:</b> See "arrow"
@@ -1015,14 +1177,17 @@ mailing lists:
 <li><b>linear:</b> <i>TBD</i>
 <li><b>macro:</b> <i>TBD</i>
 <li><b>magic_api:</b> A C structure that is passed along to a plugin's functions that exposes data and functions within the running copy of Tux&nbsp;Paint.
+<li><b>make:</b> <i>TBD</i>
+<li><b>Makefile:</b> <i>TBD</i>
 <li><b>Magic tool</b>: One of a number of effects or drawing tools in Tux&nbsp;Paint, made available via the "Magic" tool button.
 <li><b>Mix_Chunk&nbsp;*:</b> (A pointer to) a C structure defined by SDL_mixer that contains a sound.
 <li><b>Mix_FreeChunk():</b> An SDL_mixer function that frees (deallocates) memory allocated for an SDL_mixer sound 'chunk' ("<code>Mix_Chunk&nbsp;*</code>").
 <li><b>Mix_LoadWAV():</b> An SDL_mixer function that loads a sound file (WAV, Ogg&nbsp;Vorbis, etc.) and returns it as a "<code>Mix_Chunk&nbsp;*</code>".
 <li><b>namespace:</b> <i>TBD</i>
-<li><b>Ogg&nbsp;Vorbis:</b> <i>TBD</i>
+<li><b>OGG</b>: See "Ogg Vorbis"
+<li><b>Ogg&nbsp;Vorbis:</b> <i>TBD</i> (See also: "WAV")
 <li><b>Plugin</b>: <i>TBD</i>
-<li><b>PNG:</b> <i>TBD</i>
+<li><b>PNG:</b> <i>TBD</i> (See also the "<code>png(5)</code> <i>man&nbsp;page</i>)
 <li><b>pointer:</b> See "C pointer"
 <li><b>red:</b> See "RGBA"
 <li><b>release:</b> The action of releasing a button on a mouse.
@@ -1030,30 +1195,30 @@ mailing lists:
 <li><b>RGB:</b> See "RBGA"
 <li><b>saturation:</b> See "HSV"
 <li><b>SDL:</b> See "Simple DirectMedia Layer"
-<li><b>SDL_FreeSurface():</b> An libSDL function that frees (deallocates) memory allocated for an SDL surface ("<code>SDL_Surface&nbsp;*</code>").
-<li><b>SDL_GetRGB():</b> A libSDL function that, given a <code>Uint32</code> pixel value (e.g., one returned from the Tux&nbsp;Paint's Magic tool API helper function "<code>getpixel()</code>"), the format of the surface the pixel was taken from, and pointers to three <code>Uint8</code> variables, will place the Red, Green and Blue (RGB) values of the pixel into the three <code>Uint8</code> variables. (Example: "<code>SDL_GetRGB(getpixel(surf,&nbsp;x,&nbsp;y), surf-&gt;format, &amp;r, &amp;g, &amp;b);</code>".)
-<li><b>SDL_MapRGB():</b> A libSDL function that, given the format of a surface and <code>Uint8</code> values representing Red, Green and Blue values for a pixel, returns a <code>Uint32</code> pixel value that can be placed in the surface (e.g., using Tux&nbsp;Paint's Magic tool API helper function "<code>putpixel()</code>"). (Example: "<code>putpixel(surf, x, y, SDL_MapRGB(surf-&gt;format, r, g, b));</code>".)
+<li><b>SDL_FreeSurface():</b> An libSDL function that frees (deallocates) memory allocated for an SDL surface ("<code>SDL_Surface&nbsp;*</code>"). (See also the "<code>SDL_FreeSurface(3)</code>" <i>man&nbsp;page</i>)
+<li><b>SDL_GetRGB():</b> A libSDL function that, given a <code>Uint32</code> pixel value (e.g., one returned from the Tux&nbsp;Paint's Magic tool API helper function "<code>getpixel()</code>"), the format of the surface the pixel was taken from, and pointers to three <code>Uint8</code> variables, will place the Red, Green and Blue (RGB) values of the pixel into the three <code>Uint8</code> variables. (Example: "<code>SDL_GetRGB(getpixel(surf,&nbsp;x,&nbsp;y), surf-&gt;format, &amp;r, &amp;g, &amp;b);</code>".) (See also the "<code>SDL_GetRGB(3)</code>" <i>man&nbsp;page</i>)
+<li><b>SDL_MapRGB():</b> A libSDL function that, given the format of a surface and <code>Uint8</code> values representing Red, Green and Blue values for a pixel, returns a <code>Uint32</code> pixel value that can be placed in the surface (e.g., using Tux&nbsp;Paint's Magic tool API helper function "<code>putpixel()</code>"). (Example: "<code>putpixel(surf, x, y, SDL_MapRGB(surf-&gt;format, r, g, b));</code>".) (See also the "<code>SDL_MapRGB(3)</code>" <i>man&nbsp;page</i>)
 <li><b>SDL_image:</b> A library on top of libSDL that can load various kinds of image files (e.g., PNG) and return them as an "<code>SDL_Surface&nbsp;*</code>".
 <li><b>SDL_mixer:</b> A library on top of libSDL that can load various kinds of sound files (WAV, Ogg&nbsp;Vorbis, etc.) and play back multiple sounds at once (mix them).
-<li><b>SDL_Rect:</b> A C structure defined by libSDL that represents a rectangular area. It contains elements representing the coordinates of the top left corner of the rectange (x,y) and the dimensions of the rectangle (w,h).
-<li><b>SDL_Surface&nbsp;*:</b> (A pointer to) a C structure defined by libSDL that contains a drawing surface.
+<li><b>SDL_Rect:</b> A C structure defined by libSDL that represents a rectangular area. It contains elements representing the coordinates of the top left corner of the rectange (x,y) and the dimensions of the rectangle (w,h). (See also the "<code>SDL_Rect(3)</code>" <i>man&nbsp;page</i>)
+<li><b>SDL_Surface&nbsp;*:</b> (A pointer to) a C structure defined by libSDL that contains a drawing surface. (See also the "<code>SDL_Surface(3)</code>" <i>man&nbsp;page</i>)
 <li><b>Shared Object:</b> A piece of code that's compiled separately from the main application, and loaded dynamically, at runtime.
-<li><b>Simple DirectMedia Layer:</b> A programming library that allows programs portable low level access to a video framebuffer, audio output, mouse, and keyboard.
-<li><b>snprintf():</b> <i>TBD</i>
+<li><b>Simple DirectMedia Layer:</b> A programming library that allows programs portable low level access to a video framebuffer, audio output, mouse, and keyboard. (See also: <a href="http://www.libsdl.org/">http://www.libsdl.org/</a>)
+<li><b>snprintf():</b> <i>TBD</i> (See also the "<code>snprintf(3)</code>" <i>man&nbsp;page</i>)
 <li><b>.so:</b> See "Shared Object"
 <li><b>sRBG:</b> See "RGBA"
 <li><b>star:</b> "<code>*</code>". A symbol in C that, when used in the declaration of variables (e.g., arguments to a function), denotes that the variable is a pointer. (For example, "<code>int&nbsp;*&nbsp;p;</code>" means that "<code>p</code>" is a <i>pointer</i> to an integer.) When used next to a pointer, it 'dereferences' the variable. (For example, later "<code>*p&nbsp;=&nbsp;50;</code>" assigns the value of 50 to the memory that "<code>p</code>" points to; it does not change the value of "<code>p</code>", which is still a pointer to an integer. In essence, it changed the integer that's being pointed to.)
-<li><b>strdup():</b> A C function that allocates enough memory to store a copy of a string, copies the string to it, and returns a "<code>char&nbsp;*</code>" pointer to the new copy.
+<li><b>strdup():</b> A C function that allocates enough memory to store a copy of a string, copies the string to it, and returns a "<code>char&nbsp;*</code>" pointer to the new copy. (See also the "<code>strdup(3)</code>" <i>man&nbsp;page</i>)
 <li><b>struct:</b> See "C structure"
 <li><b>The GIMP</b>: An Open&nbsp;Source image manipulation and paint program.
 <li><b>tp_magic_api.h:</b> A header file that defines Tux&nbsp;Paint's Magic tool API.  Plugins must '#include' it.
-<li><b>tp-magic-config:</b> A command-line program that provides information about the installed version of Tux&nbsp;Paint to plugin developers (such as what C compiler flags they should compile with, and where plugin shared objects and data files should be installed).
+<li><b>tp-magic-config:</b> A command-line program that provides information about the installed version of Tux&nbsp;Paint to plugin developers (such as what C compiler flags they should compile with, and where plugin shared objects and data files should be installed). (See also the "<code>tp-magic-config(3)</code>" <i>man&nbsp;page</i>.)
 <li><b>Uint32:</b> A 32-bit, unsigned integer (defined by libSDL). In other words, four bytes that can represent 0 through 4294967295. (Typically used to hold enough information to store three or four bytes representing a pixel's color; i.e., RBGA value).
 <li><b>Uint8:</b> An 8-bit, unsigned integer (defined by libSDL). In other words, a byte that can represent 0 through 255.
 <li><b>unsigned:</b> <i>TBD</i>
 <li><b>value:</b> See "HSV"
 <li><b>variable:</b> <i>TBD</i>
-<li><b>WAV:</b> <i>TBD</i>
+<li><b>WAV:</b> <i>TBD</i> (See also "Ogg Vorbis")
 <li><b>(w,h):</b> See "Dimensions"
 <li><b>(x,y):</b> See "Coordinates"
 </ul>

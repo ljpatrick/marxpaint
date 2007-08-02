@@ -1,0 +1,3 @@
+                      Tux Paint "Magic" Tool: Metal Paint
+
+   Click and drag to draw shiny metal using the current color.

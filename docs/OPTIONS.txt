@@ -9,7 +9,7 @@
                            bill@newbreedsoftware.com
                             http://www.tuxpaint.org/
 
-                                  July 4, 2007
+                                 August 2, 2007
 
    --------------------------------------------------------------------------
 
@@ -163,7 +163,7 @@ Windows Users
 
      printcfg=yes
 
-             (Windows only)
+             (Windows and Mac OS X only)
 
              Tux Paint will use a printer configuration file when printing.
              Push the [Alt] key while clicking the 'Print' button in
@@ -318,19 +318,71 @@ Windows Users
 
      savedir=DIRECTORY
 
-             Use this option to change where Tux Paint saves pictures. By
-             default, this is "~/.tuxpaint/saved/" under Linux and Unix, and
-             "userdata\" under Windows.
+             Use this option to change where Tux Paint's "saved"
+             directory/folder is located, which is where Tux Paint saves and
+             opens pictures.
 
-             This can be useful in a Windows lab, where Tux Paint is
-             installed on a server, and children run it from workstations.
-             You can set savedir to be a folder in their home directory.
-             (e.g., "H:\tuxpaint\")
+             If you do not override it, the default location is:
+
+                * Linux & Unix -- Under a hidden directory named ".tuxpaint"
+                  in your home directory (aka "~" or "$HOME")
+                  Example: "/home/username/.tuxpaint/saved/"
+
+                * Windows -- Inside a folder named "TuxPaint" in your
+                  "Application Data" folder.
+                  Example:
+                  "C:\Documents and Settings\Username\Application Data\TuxPaint\saved\"
+
+                * Mac OS X -- Inside a folder named "TuxPaint" in your
+                  "Application Support" folder.
+                  Example:
+                  "/Users/Username/Library/Application Support/TuxPaint/saved/"
 
              Note: When specifying a Windows drive (e.g., "H:\"), you must
              also specify a subdirectory.
 
+             Note: Prior to version 0.9.18, Tux Paint would also use the
+             setting or default for "savedir" as the place to search for
+             personal data files (brushes, stamps, starters and fonts). As of
+             version 0.9.18, they may be specified separately (see the
+             "datadir" option, below).
+
              Example: savedir=Z:\tuxpaint\
+
+     datadir=DIRECTORY
+
+             Use this option to change where Tux Paint looks for personal
+             data files (brushes, stamps, starters and fonts specific to the
+             current user).
+
+             Tux Paint will search for subdirectories/subfolders named
+             "brushes", "stamps", "starters" and "fonts" under the data
+             directory.
+
+             If you do not override it, the default location is:
+
+                * Linux & Unix -- Under a hidden directory named ".tuxpaint"
+                  in your home directory (aka "~" or "$HOME")
+                  Example: "/home/username/.tuxpaint/brushes/"
+
+                * Windows -- Inside a folder named "TuxPaint" in your
+                  "Application Data" folder.
+                  Example:
+                  "C:\Documents and Settings\Username\Application Data\TuxPaint\brushes\"
+
+                * Mac OS X -- Inside a folder named "TuxPaint" in your
+                  "Application Support" folder.
+                  Example:
+                  "/Users/Username/Library/Application Support/TuxPaint/brushes/"
+
+             Note: Prior to version 0.9.18, Tux Paint would use the same
+             setting or default as for "savedir" to search for data files. As
+             of version 0.9.18, they may be specified separately.
+
+             Note: When specifying a Windows drive (e.g., "H:\"), you must
+             also specify a subdirectory.
+
+             Example: datadir=/home/johnny/tuxpaint-data/
 
      saveover=yes
              This disables the "Save over the old version...?" prompt when
@@ -356,9 +408,8 @@ Windows Users
              test environment.
 
      autosave=yes
-
-     This prevents Tux Paint from asking whether you want to save the current
-     picture when quitting, and assumes you do.
+             This prevents Tux Paint from asking whether you want to save the
+             current picture when quitting, and assumes you do.
 
      startblank=yes
              This causes Tux Paint to display a blank canvas when it first
@@ -583,6 +634,8 @@ Windows Users
        --noprint
        --printdelay=SECONDS
        --printcfg
+       --altprintnever
+       --altprintalways
        --papersize=PAPERSIZE
        --simpleshapes
        --uppercase
@@ -599,11 +652,13 @@ Windows Users
        --mirrorstamps
        --keyboard
        --savedir DIRECTORY
+       --datadir DIRECTORY
        --saveover
        --saveovernew
        --nosave
        --autosave
        --lang LANGUAGE
+       --colorfile FILE
                These enable or correspond to the configuration file options
                described above.
 
@@ -618,6 +673,7 @@ Windows Users
        --print
        --printdelay=0
        --noprintcfg
+       --altprintmod
        --complexshapes
        --mixedcase
        --dontgrab
@@ -641,7 +697,7 @@ Windows Users
 
                      -------------------------------------
 
-       --locale locale
+       --locale LOCALE
 
                Run Tux Paint in one of the support languages. See the
                "Choosing a Different Language" section below for the locale
@@ -971,6 +1027,12 @@ Setting Your Environment's Locale
        with the Tux Paint download, and are available separately. (See the
        table above, under the "Choosing a Different Language" section.)
 
+       Note: As of version 0.9.18, Tux Paint uses the "SDL_Pango" library,
+       which utilizes the "Pango" library to render text in the user
+       interface, rather than using "SDL_ttf" directly. Unless your copy of
+       Tux Paint was built without Pango support, special fonts should no
+       longer be necessary.
+
        When running Tux Paint in a language that requires its own font,
        Tux Paint will try to load the font file from its system-wide "fonts"
        directory (under a "locale" subdirectory). The name of the file
@@ -990,3 +1052,5 @@ Setting Your Environment's Locale
 
        Under Unix and Linux, you can use the Makefile that comes with the
        font to install the font in the appropriate location.
+
+   --------------------------------------------------------------------------

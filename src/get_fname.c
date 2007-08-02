@@ -10,89 +10,71 @@
 #include "debug.h"
 
 char *savedir;
+char *datadir;
 
 
 /* The filename for the current image: */
 
-char *get_fname(const char *const name)
+char *get_fname(const char *const name, int kind)
 {
   char f[512];
-  const char *tux_settings_dir;
+  char * dir;
 
 
-  /* Where is the user's data directory?
-     This is where their saved files are stored,
-     local fonts, brushes and stamps can be found,
-     and where the "current_id.txt" file is saved */
+  /* DIR_SAVE: Where is the user's saved directory?
+     This is where their saved files are stored
+     and where the "current_id.txt" file is saved.
+     
+     Windows predefines "savedir" as:
+     "C:\Documents and Settings\%USERNAME%\Application Data\TuxPaint"
+     though it may get overridden with "--savedir" option
+
+     BeOS similarly predefines "savedir" as "./userdata"...
+
+     Macintosh: It's under ~/Library/Application Support/TuxPaint
+
+     Linux & Unix: It's under ~/.tuxpaint
+
+     DIR_DATA: Where is the user's data directory?
+     This is where local fonts, brushes and stamps can be found. */
+
+  if (kind == DIR_SAVE)
+    dir = savedir;
+  else if (kind == DIR_DATA)
+    dir = datadir;
+  else
+    return NULL;
+
 
 #ifdef WIN32
-  /* Windows predefines "savedir" as:
-     "C:\Documents and Settings\%USERNAME%\Application Data\TuxPaint"
-     though it may get overridden with "--savedir" option */
-
-  snprintf(f, sizeof(f), "%s/%s", savedir, name);
-
+  snprintf(f, sizeof(f), "%s/%s", dir, name);
 #elif __BEOS__
-  /* BeOS similarly predefines "savedir" as "./userdata"... */
-
   if (*name == '\0')
-    strcpy(f, savedir);
+    strcpy(f, dir);
   else
-    snprintf(f, sizeof(f), "%s/%s", savedir, name);
-
-#elif __APPLE__
-  /* Macintosh: It's under ~/Library/Application Support/TuxPaint */
-
-  tux_settings_dir = "Library/Application Support/TuxPaint";
-#else
-  /* Linux & Unix: It's under ~/.tuxpaint */
-
-  tux_settings_dir = ".tuxpaint";
+    snprintf(f, sizeof(f), "%s/%s", dir, name);
 #endif
 
 
   /* Put together home directory path + settings directory + filename... */
 
-  if (savedir == NULL)
+  if (dir == NULL)
   {
-    /* Save directory not overridden: */
+    fprintf(stderr, "Warning: get_fname() has a NULL dir...!?\n");
+    return strdup(name);;
+  }
 
-    if (getenv("HOME") != NULL)
-    {
-      if (*name == '\0')
-      {
-	/* (Some mkdir()'s don't like trailing slashes) */
+  if (*name != '\0')
+  {
+    /* (Some mkdir()'s don't like trailing slashes) */
 
-	snprintf(f, sizeof(f), "%s/%s", getenv("HOME"), tux_settings_dir);
-      }
-      else
-      {
-	snprintf(f, sizeof(f), "%s/%s/%s",
-		 getenv("HOME"), tux_settings_dir, name);
-      }
-    }
-    else
-    {
-      /* WOAH!  Don't know where HOME directory is!  Last resort, use '.'! */
-
-      strcpy(f, name);
-    }
+    snprintf(f, sizeof(f), "%s/%s", dir, name);
   }
   else
   {
-    /* User had overridden save directory with "--savedir" option: */
-
-    if (*name != '\0')
-    {
-      /* (Some mkdir()'s don't like trailing slashes) */
-
-      snprintf(f, sizeof(f), "%s/%s", savedir, name);
-    }
-    else
-    {
-      snprintf(f, sizeof(f), "%s", savedir);
-    }
+    snprintf(f, sizeof(f), "%s", dir);
   }
 
   return strdup(f);
 }
+

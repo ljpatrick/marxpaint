@@ -6,7 +6,7 @@
                            bill@newbreedsoftware.com
                             http://www.tuxpaint.org/
 
-                          July 5, 2007 - July 31, 2007
+                         July 5, 2007 - August 2, 2007
 
    --------------------------------------------------------------------------
 
@@ -98,7 +98,7 @@ Interfaces
      to build a plugin, you should use the command-line tool
      "tp-magic-config" to get the appropriate compiler flags (such as where
      the compiler can find the Tux Paint plugin header file, as well as SDL's
-     header files) for building a plugin.
+     header files) for building a plugin. (See "Compiling", below.)
 
      The C header file and command-line tool mentioned above are included
      with Tux Paint -- or in some cases, as part of a "Tux Paint 'Magic' Tool
@@ -553,29 +553,86 @@ Compiling
        shared object file (".so") based on your 'Magic' tool plugin's C
        source code.
 
-       Additionally, use the "tp-magic-config --cflags" command, supplied as
-       part of Tux Paint, to provide additional command-line flags to your C
-       compiler that will help it build your plugin.
+       Use the "tp-magic-config --cflags" command, supplied as part of
+       Tux Paint -- or in some cases, as part of a "Tux Paint 'Magic' Tool
+       Plugin Development package" -- to provide additional command-line
+       flags to your C compiler that will help it build your plugin.
 
-       As a stand-alone command, using the GNU C Compiler and BASH shell, for
-       example:
+    Command-Line Example
 
-         $ gcc -shared `tp-magic-config --cflags` my_plugin.c -o my_plugin.so
+         As a stand-alone command, using the GNU C Compiler and BASH shell,
+         for example:
 
-       Note: The characters around the "tp-magic-config" command are a
-       grave/backtick/backquote ("`"), and not an apostrophe/single-quote
-       ("'"). They tell the shell to execute the command within (in this
-       case, "tp-magic-config ..."), and use its output as an argument to the
-       command being executed (in this case, "gcc ...").
+           $ gcc -shared `tp-magic-config --cflags` my_plugin.c -o
+           my_plugin.so
 
-       A snippet from a more generalized Makefile might look like this:
+         Note: The characters around the "tp-magic-config" command are a
+         grave/backtick/backquote ("`"), and not an apostrophe/single-quote
+         ("'"). They tell the shell to execute the command within (in this
+         case, "tp-magic-config ..."), and use its output as an argument to
+         the command being executed (in this case, "gcc ...").
 
-         +----------------------------------------------------+
-         | CFLAGS=-Wall -O2 $(shell tp-magic-config --cflags) |
-         |                                                    |
-         | my_plugin.so: my_plugin.c                          |
-         |    $(CC) -shared $(CFLAGS) -o $@ $<                |
-         +----------------------------------------------------+
+    Makefile Example
+
+         A snippet from a Makefile to compile a Tux Paint "Magic" tool plugin
+         might look like this:
+
+           +------------------------------------------------------+
+           | CFLAGS=-Wall -O2 $(shell tp-magic-config --cflags)   |
+           |                                                      |
+           | my_plugin.so: my_plugin.c                            |
+           |    gcc -shared $(CFLAGS) -o my_plugin.so my_plugin.c |
+           +------------------------------------------------------+
+
+         The first line sets up Makefile variable ("CFLAGS") that contains
+         flags for the compiler. "-Wall" asks for all compiler warnings to be
+         shown. "-O2" asks for level 2 optimization.
+         "($shell tp-magic-config --cflags)" runs "tp-magic-config" to
+         retrieve additional compiler flags that "Magic" tool plugins
+         require. (The "$(shell ...)" directive is similar to the ` ("grave")
+         character in the BASH shell examples, above.)
+
+         The next line defines a Makefile target, "my_plugin.so", and states
+         that it depends on the C source file "my_plugin.c". (Any time the C
+         file changes, "make" will know to recompile it and produce an
+         updated ".so" file. If the C file hadn't changed, it won't bother
+         recompiling.)
+
+         The last line defines the command "make" should run when it
+         determines that it needs to (re)compile the ".so" file. Here, we're
+         using "gcc", with "-shared and "$(CFLAGS)" command-line arguments,
+         like above. "-o my_plugin.so" tells the C compiler that the output
+         file should be "my_plugin.so". The last argument is the C file to
+         compile, in this case "my_plugin.c".
+
+         Note: Commands listed below a Makefile target should be intented
+         using a single tab character.
+
+    Advanced Makefile
+
+         An even more generalized Makefile might look like this:
+
+           +----------------------------------------------------+
+           | CFLAGS=-Wall -O2 $(shell tp-magic-config --cflags) |
+           |                                                    |
+           | my_plugin_1.so: my_plugin_1.c                      |
+           |    $(CC) -shared $(CFLAGS) -o $@ $<                |
+           |                                                    |
+           | my_plugin_2.so: my_plugin_2.c                      |
+           |    $(CC) -shared $(CFLAGS) -o $@ $<                |
+           +----------------------------------------------------+
+
+         As before, there are lines that define the command "make" should run
+         when it determines that it needs to (re)compile the ".so" file(s).
+         However, more general terms are used...
+
+         "$(CC)" gets expanded to your default C compiler (e.g., "gcc").
+         "-shared and "$(CFLAGS)" are command-line arguments to the compiler,
+         like above. "-o $@" tells the C compiler what the output file should
+         be; "make" replaces "$@" with the name of the target, in this case
+         "my_plugin_1.so" or "my_plugin_2.so". And finally, the last argument
+         is the C file to compile; "make" replaces it with the target's
+         dependency, in this case "my_plugin_1.c" or "my_plugin_2.c".
 
   Windows
 
@@ -591,54 +648,108 @@ Installing
 
   Linux and other Unix-like Platforms
 
-       Use the "tp-magic-config --pluginprefix" command, supplied as part of
-       Tux Paint, to determine where the plugin shared object (".so") files
-       should be installed. The value returned by this command will be the
-       global location where the installed version of Tux Paint looks for
-       plugins (e.g., "").
+       Use the "tp-magic-config" command-line tool, supplied as part of
+       Tux Paint -- or in some cases, as part of a "Tux Paint 'Magic' Tool
+       Plugin Development package" -- to determine where your plugins' files
+       should go.
 
-       As stand-alone commands, using the BASH shell, for example:
+    Shared Object
 
-         # cp my_plugin.so `tp-magic-config --pluginprefix`
-         # chmod 644 `tp-magic-config --pluginprefix`/my_plugin.so
+         Use "tp-magic-config --pluginprefix" to determine where the plugin
+         shared object (".so") files should be installed. The value returned
+         by this command will be the global location where the installed copy
+         of Tux Paint looks for plugins (e.g., "/usr/lib/tuxpaint/plugins").
 
-       Additionally, use the "tp-magic-config --dataprefix" command, supplied
-       as part of Tux Paint, to determine where data files (PNG icon,
-       Ogg Vorbis sound effects, etc.) should be installed. The value
-       returned by this command will be the same as the value of the
-       "data_directory" string stored within the "magic_api" structure that
-       your plugin's functions receive.
+         As stand-alone commands, using the BASH shell, for example:
 
-       Note: Tux Paint's default Magic tool plugins install their data within
-       "magic" subdirectories of Tux Paint's "images" and "sounds" data
-       directories (e.g., "/usr/share/tuxpaint/images/magic/"). You are
-       encouraged to do the same.
+           # cp my_plugin.so `tp-magic-config --pluginprefix`
+           # chmod 644 `tp-magic-config --pluginprefix`/my_plugin.so
 
-       As stand-alone commands, using the BASH shell, for example:
+         Note: See the note above regarding the "`" (grave) character.
 
-         # cp my_plugin_icon.png `tp-magic-config --dataprefix`/images/magic/
-         # chmod 644 `tp-magic-config
-         --dataprefix`/images/magic/my_plugin_icon.png
+    Documentation
+
+         Use the "tp-magic-config --plugindocprefix" command to determine
+         where documentation for your "Magic" tools should go. The value
+         returned by this command will be the location where the
+         documentation to the installed copy of Tux Paint is stored. The main
+         documentation includes a link to a folder where "Magic" tools'
+         documentation is expected to be installed
+
+         (e.g., "/usr/share/doc/tuxpaint/magic-docs").
+
+         Note: It's best to include both HTML and plain-text versions of your
+         documentation. An "html" subdirectory exists within the "magic-docs"
+         directory, and is where the HTML versions should go.
+
+         As stand-alone commands, using the BASH shell, for example:
+
+           # cp my_plugin.html `tp-magic-config --plugindocprefix`/html
+           # cp my_plugin.txt `tp-magic-config --plugindocprefix`
+
+         Note: See the note above regarding the "`" (grave) character.
+
+    Icons, Sounds and other Data Files
+
+         Use the "tp-magic-config --dataprefix" command, supplied as part of
+         Tux Paint, to determine where data files (PNG icon, Ogg Vorbis sound
+         effects, etc.) should be installed. The value returned by this
+         command will be the same as the value of the "data_directory" string
+         stored within the "magic_api" structure that your plugin's functions
+         receive.
+
+         Note: Tux Paint's default Magic tool plugins install their data
+         within "magic" subdirectories of Tux Paint's "images" and "sounds"
+         data directories (e.g., "/usr/share/tuxpaint/images/magic/"). You
+         are encouraged to do the same.
+
+         As stand-alone commands, using the BASH shell, for example:
+
+           # cp my_plugin_icon.png `tp-magic-config
+           --dataprefix`/images/magic/
+           # chmod 644 `tp-magic-config
+           --dataprefix`/images/magic/my_plugin_icon.png
+
+         Note: See the note above regarding the "`" (grave) character.
 
     Putting it Together in a Makefile
 
          A snippet from a more generalized Makefile might look like this:
 
-           +------------------------------------------------------+
-           | PLUGINPREFIX=$(shell tp-magic-config --pluginprefix) |
-           | DATAPREFIX=$(shell tp-magic-config --dataprefix)     |
-           |                                                      |
-           | install:                                             |
-           |    mkdir -p $(PLUGINPREFIX)                          |
-           |    cp *.so $(PLUGINPREFIX)/                          |
-           |    chmod 644 $(PLUGINPREFIX)/*.so                    |
-           |    mkdir -p $(DATAPREFIX)/images/magic               |
-           |    cp *.png $(DATAPREFIX)/images/magic/              |
-           |    chmod 644 $(DATAPREFIX)/images/magic/*.png        |
-           +------------------------------------------------------+
+           +------------------------------------------------------------+
+           | PLUGINPREFIX=$(shell tp-magic-config --pluginprefix)       |
+           | PLUGINDOCPREFIX=$(shell tp-magic-config --plugindocprefix) |
+           | DATAPREFIX=$(shell tp-magic-config --dataprefix)           |
+           |                                                            |
+           | install:                                                   |
+           |    #                                                       |
+           |    # Install plugin                                        |
+           |    mkdir -p $(PLUGINPREFIX)                                |
+           |    cp *.so $(PLUGINPREFIX)/                                |
+           |    chmod 644 $(PLUGINPREFIX)/*.so                          |
+           |    #                                                       |
+           |    # Install icons                                         |
+           |    mkdir -p $(DATAPREFIX)/images/magic                     |
+           |    cp icons/*.png $(DATAPREFIX)/images/magic/              |
+           |    chmod 644 $(DATAPREFIX)/images/magic/*.png              |
+           |    #                                                       |
+           |    # Install sound effects                                 |
+           |    mkdir -p $(DATAPREFIX)/sounds/magic                     |
+           |    cp sounds/*.ogg $(DATAPREFIX)/sounds/magic/             |
+           |    chmod 644 $(DATAPREFIX)/sounds/magic/*.ogg              |
+           |    #                                                       |
+           |    # Install docs                                          |
+           |    mkdir -p $(PLUGINDOCPREFIX)/html                        |
+           |    cp docs/*.html $(PLUGINDOCPREFIX)/html/                 |
+           |    cp docs/*.txt $(PLUGINDOCPREFIX)/                       |
+           |    chmod 644 $(PLUGINDOCPREFIX)/html/*.html                |
+           |    chmod 644 $(PLUGINDOCPREFIX)/*.txt                      |
+           +------------------------------------------------------------+
 
-         The first two lines set up Makefile variables that contain the paths
-         returned by the "tp-magic-config" command-line tool.
+         The first three lines set up Makefile variables that contain the
+         paths returned by the "tp-magic-config" command-line tool. (The
+         "$(shell ...)" directive is similar to the ` ("grave") character in
+         the BASH shell examples, above.)
 
          Below that is an "install" target in the Makefile. (Invoked by, for
          example, "$ sudo make install" or "# make install".)
@@ -648,7 +759,9 @@ Installing
          into it, and invokes "chmod" to make sure they are readable.
 
          It then does a similar series of commands to install icon files
-         (".png" images) into a subdirectory within Tux Paint's data
+         (".png" images) and sound effects (".ogg" files) into subdirectories
+         within Tux Paint's data directory, and to install documentation
+         (".html" and ".txt" files) within Tux Paint's documentation
          directory.
 
   Windows
@@ -696,7 +809,10 @@ Creating plugins with multiple effects
 
            for (i = 0; i < NUM_TOOLS; i++)
            {
-             snprintf(fname, sizeof(fname), "%s/%s",
+             /* Becomes, for example,
+           "/usr/share/tuxpaint/sounds/magic/one.ogg" */
+
+             snprintf(fname, sizeof(fname), "%s/sounds/magic/%s",
                  api->data_prefix, my_plugin_snd_filenames[i];
 
              my_plugin_snds[i] = Mix_LoadWAV(fname);
@@ -704,6 +820,11 @@ Creating plugins with multiple effects
 
        * Similarly, do the same to free them later (such as freeing sound
          effects during your "shutdown()").
+
+           int i;
+
+           for (i = 0; i < NUM_TOOLS; i++)
+             Mix_FreeChunk(my_plugin_snds[i]);
 
        * Use "which" values sent to your functions as an index into those
          arrays (e.g., for playing the appropriate sound effect for a tool).
@@ -787,6 +908,8 @@ Glossary
      * free(): A C function that frees (deallocates) memory allocated by
        other C functions (such as "strdup()").
      * function: See "C function"
+     * gcc: TBD (See also the "gcc(1)" man page)
+     * GNU C Compiler: See "gcc"
      * grave: The "`" character; used by the BASH shell to use the output of
        a command as the command-line arguments to another.
      * green: See "RGBA"
@@ -807,6 +930,8 @@ Glossary
      * macro: TBD
      * magic_api: A C structure that is passed along to a plugin's functions
        that exposes data and functions within the running copy of Tux Paint.
+     * make: TBD
+     * Makefile: TBD
      * Magic tool: One of a number of effects or drawing tools in Tux Paint,
        made available via the "Magic" tool button.
      * Mix_Chunk *: (A pointer to) a C structure defined by SDL_mixer that
@@ -816,9 +941,10 @@ Glossary
      * Mix_LoadWAV(): An SDL_mixer function that loads a sound file (WAV,
        Ogg Vorbis, etc.) and returns it as a "Mix_Chunk *".
      * namespace: TBD
-     * Ogg Vorbis: TBD
+     * OGG: See "Ogg Vorbis"
+     * Ogg Vorbis: TBD (See also: "WAV")
      * Plugin: TBD
-     * PNG: TBD
+     * PNG: TBD (See also the "png(5) man page)
      * pointer: See "C pointer"
      * red: See "RGBA"
      * release: The action of releasing a button on a mouse.
@@ -827,19 +953,21 @@ Glossary
      * saturation: See "HSV"
      * SDL: See "Simple DirectMedia Layer"
      * SDL_FreeSurface(): An libSDL function that frees (deallocates) memory
-       allocated for an SDL surface ("SDL_Surface *").
+       allocated for an SDL surface ("SDL_Surface *"). (See also the
+       "SDL_FreeSurface(3)" man page)
      * SDL_GetRGB(): A libSDL function that, given a Uint32 pixel value
        (e.g., one returned from the Tux Paint's Magic tool API helper
        function "getpixel()"), the format of the surface the pixel was taken
        from, and pointers to three Uint8 variables, will place the Red, Green
        and Blue (RGB) values of the pixel into the three Uint8 variables.
        (Example: "SDL_GetRGB(getpixel(surf, x, y), surf->format, &r, &g,
-       &b);".)
+       &b);".) (See also the "SDL_GetRGB(3)" man page)
      * SDL_MapRGB(): A libSDL function that, given the format of a surface
        and Uint8 values representing Red, Green and Blue values for a pixel,
        returns a Uint32 pixel value that can be placed in the surface (e.g.,
        using Tux Paint's Magic tool API helper function "putpixel()").
        (Example: "putpixel(surf, x, y, SDL_MapRGB(surf->format, r, g, b));".)
+       (See also the "SDL_MapRGB(3)" man page)
      * SDL_image: A library on top of libSDL that can load various kinds of
        image files (e.g., PNG) and return them as an "SDL_Surface *".
      * SDL_mixer: A library on top of libSDL that can load various kinds of
@@ -848,15 +976,15 @@ Glossary
      * SDL_Rect: A C structure defined by libSDL that represents a
        rectangular area. It contains elements representing the coordinates of
        the top left corner of the rectange (x,y) and the dimensions of the
-       rectangle (w,h).
+       rectangle (w,h). (See also the "SDL_Rect(3)" man page)
      * SDL_Surface *: (A pointer to) a C structure defined by libSDL that
-       contains a drawing surface.
+       contains a drawing surface. (See also the "SDL_Surface(3)" man page)
      * Shared Object: A piece of code that's compiled separately from the
        main application, and loaded dynamically, at runtime.
      * Simple DirectMedia Layer: A programming library that allows programs
        portable low level access to a video framebuffer, audio output, mouse,
-       and keyboard.
-     * snprintf(): TBD
+       and keyboard. (See also: http://www.libsdl.org/)
+     * snprintf(): TBD (See also the "snprintf(3)" man page)
      * .so: See "Shared Object"
      * sRBG: See "RGBA"
      * star: "*". A symbol in C that, when used in the declaration of
@@ -869,7 +997,7 @@ Glossary
        integer that's being pointed to.)
      * strdup(): A C function that allocates enough memory to store a copy of
        a string, copies the string to it, and returns a "char *" pointer to
-       the new copy.
+       the new copy. (See also the "strdup(3)" man page)
      * struct: See "C structure"
      * The GIMP: An Open Source image manipulation and paint program.
      * tp_magic_api.h: A header file that defines Tux Paint's Magic tool API.
@@ -877,7 +1005,8 @@ Glossary
      * tp-magic-config: A command-line program that provides information
        about the installed version of Tux Paint to plugin developers (such as
        what C compiler flags they should compile with, and where plugin
-       shared objects and data files should be installed).
+       shared objects and data files should be installed). (See also the
+       "tp-magic-config(3)" man page.)
      * Uint32: A 32-bit, unsigned integer (defined by libSDL). In other
        words, four bytes that can represent 0 through 4294967295. (Typically
        used to hold enough information to store three or four bytes
@@ -887,6 +1016,6 @@ Glossary
      * unsigned: TBD
      * value: See "HSV"
      * variable: TBD
-     * WAV: TBD
+     * WAV: TBD (See also "Ogg Vorbis")
      * (w,h): See "Dimensions"
      * (x,y): See "Coordinates"

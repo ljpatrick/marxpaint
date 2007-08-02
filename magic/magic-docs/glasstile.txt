@@ -1,0 +1,4 @@
+                       Tux Paint "Magic" Tool: Glass Tile
+
+   Click and drag over your picture to make it look like it's being seen
+   through glass tiles.

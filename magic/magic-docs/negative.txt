@@ -1,0 +1,4 @@
+                       Tux Paint "Magic" Tool: Negagtive
+
+   This inverts the colors wherever you drag the mouse. (e.g., white becomes
+   black, and vice versa.)
