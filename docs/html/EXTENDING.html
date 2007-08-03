@@ -12,7 +12,7 @@ alt="Tux&nbsp;Paint"><br>
 
 version
 
-0.9.17
+0.9.18
 
 <br>
 Extending Tux Paint</h1>
@@ -23,7 +23,7 @@ New Breed Software</p>
 <p><a href="mailto:bill@newbreedsoftware.com">bill@newbreedsoftware.com</a><br>
 <a href="http://www.tuxpaint.org/">http://www.tuxpaint.org/</a></p>
 
-<p>June 14, 2002 - May 6, 2007</p>
+<p>June 14, 2002 - August 2, 2007</p>
 </center>
 
 <hr size=2 noshade>
@@ -558,24 +558,34 @@ effect.</p>
     </blockquote>
   </blockquote>
 
-  <h3>Pre-Mirrored Images</h3>
+  <h3>Pre-Mirrored and Flipped Images</h3>
   <blockquote>
     <p>In some cases, you may wish to provide a pre-drawn version of
-    a stamp's mirror-image.  For example, imagine a picture of a fire
-    truck with the words "<i>Fire&nbsp;Department</i>" written across
-    the side.  You probably do not want that text to appear backwards
-    when the image is flipped!</p>
+    a stamp's mirror-image, flipped image, or even both.  For example,
+    imagine a picture of a fire&nbsp;truck with the words
+    "<i>Fire&nbsp;Department</i>" written across the side.  You probably
+    do not want that text to appear backwards when the image is flipped!</p>
 
     <p>To create a mirrored version of a stamp that you want Tux&nbsp;Paint
     to use, rather than mirroring one on its own, simply create a second
-    "<code>.png</code>" graphics file with the same name, except with
-    the string "<code><b>_mirror</b></code>" before the filename
+    "<code>.png</code>" or "<code>.svg</code>" graphics file with the
+    same name, except with "<code><b>_mirror</b></code>" before the filename
     extension.</p>
     
     <p>For example, for the stamp "<code><b>truck.png</b></code>" you would
     create another file named "<code><b>truck_mirror.png</b></code>", which
     will be used when the stamp is mirrored (rather than using a
     backwards version of '<code>truck.png</code>').</p>
+
+    <p>As of Tux&nbsp;Paint 0.9.18, you may similarly provide a pre-flipped
+    image with "<code><b>_flip</b></code>" in the name, and/or an image that
+    is both mirrored and flipped, by naming it
+    "<code><b>_mirror_flip</b></code>".</p>
+
+    <p><b>Note:</b> If the user flips and mirrors an image, and a pre-drawn
+    "<code>_mirror_flip</code>" doesn't exist, but either "<code>_flip</code>"
+    or "<code>_mirror</code>" does, it will be used, and mirrored or flipped,
+    respectively.</p>
   </blockquote>
   
 </blockquote>

@@ -9,7 +9,7 @@ http://www.tuxpaint.org/
 $Id$
 
 
-2007.July.19 (0.9.18)
+2007.August.2 (0.9.18)
   * Interface Improvements:
     -----------------------
     * Improved 'New' and 'Open' interface:
@@ -26,6 +26,11 @@ $Id$
       as the new 'New' dialog.
 
     * Added an Octagon shape to the 'Shapes' tool.
+
+    * Stamps can now be pre-flipped and/or pre-mirrored-and-flipped now
+      (in addition to pre-mirrored).
+      Use "_flip.png"/"_flip.svg" and "_mirror_flip.png"/"_mirror_flip.png",
+      respectively.
 
   * Documentation Imrpovements:
     ---------------------------

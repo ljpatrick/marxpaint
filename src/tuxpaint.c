@@ -1160,7 +1160,10 @@ typedef struct stamp_type
   SDL_Surface *thumbnail;
   unsigned thumb_mirrored:1;
   unsigned thumb_flipped:1;
+  unsigned thumb_mirrored_flipped:1;
   unsigned no_premirror:1;
+  unsigned no_preflip:1;
+  unsigned no_premirrorflip:1;
 
   unsigned processed:1;		// got *.dat, computed size limits, etc.
 
@@ -5206,9 +5209,8 @@ static void set_active_stamp(void)
 {
   stamp_type *sd = stamp_data[stamp_group][cur_stamp[stamp_group]];
   unsigned len = strlen(sd->stampname);
-  char *buf = alloca(len + strlen("_mirror.EXT") + 1);
-
-  /* FIXME: Add support for pre-flipped stamps! -bjk 2007.03.22 */
+  char *buf = alloca(len + strlen("_mirror_flip.EXT") + 1);
+  int needs_mirror, needs_flip;
 
   if (active_stamp)
     SDL_FreeSurface(active_stamp);
@@ -5216,8 +5218,129 @@ static void set_active_stamp(void)
 
   memcpy(buf, sd->stampname, len);
 
-  if (sd->mirrored && !sd->no_premirror)
+  printf("\nset_active_stamp()\n");
+
+  /* Look for pre-mirrored and pre-flipped version: */
+
+  needs_mirror = sd->mirrored;
+  needs_flip = sd->flipped;
+
+  if (sd->mirrored && sd->flipped)
   {
+    /* Want mirrored and flipped, both */
+   
+    printf("want both mirrored & flipped\n");
+ 
+    if (!sd->no_premirrorflip)
+    {
+#ifndef NOSVG
+      memcpy(buf + len, "_mirror_flip.svg", 17);
+      active_stamp = do_loadimage(buf, 0);
+#endif
+
+      if (active_stamp == NULL)
+      {
+        memcpy(buf + len, "_mirror_flip.png", 17);
+        active_stamp = do_loadimage(buf, 0);
+      }
+    }
+
+
+    if (active_stamp != NULL)
+    {
+      printf("found a _mirror_flip!\n");
+
+      needs_mirror = 0;
+      needs_flip = 0;
+    }
+    else
+    {
+      /* Couldn't get one that was both, look for _mirror then _flip and
+         flip or mirror it: */
+
+      printf("didn't find a _mirror_flip\n");
+
+      if (!sd->no_premirror)
+      {
+#ifndef NOSVG
+        memcpy(buf + len, "_mirror.svg", 12);
+        active_stamp = do_loadimage(buf, 0);
+#endif
+
+        if (active_stamp == NULL)
+        {
+          memcpy(buf + len, "_mirror.png", 12);
+          active_stamp = do_loadimage(buf, 0);
+        }
+      }
+
+      if (active_stamp != NULL)
+      {
+        printf("found a _mirror!\n");
+        needs_mirror = 0;
+      }
+      else
+      {
+        /* Couldn't get one that was just pre-mirrored, look for a
+           pre-flipped */
+
+        printf("didn't find a _mirror, either\n");
+
+        if (!sd->no_preflip)
+        {
+#ifndef NOSVG
+          memcpy(buf + len, "_flip.svg", 10);
+          active_stamp = do_loadimage(buf, 0);
+#endif
+
+          if (active_stamp == NULL)
+          {
+            memcpy(buf + len, "_flip.png", 10);
+            active_stamp = do_loadimage(buf, 0);
+          }
+        }
+
+        if (active_stamp != NULL)
+        {
+          printf("found a _flip!\n");
+          needs_flip = 0;
+        }
+        else
+          printf("didn't find a _flip, either\n");
+      }
+    }
+  }
+  else if (sd->flipped && !sd->no_preflip)
+  {
+    /* Want flipped only */
+
+    printf("want flipped only\n");
+
+#ifndef NOSVG	  
+    memcpy(buf + len, "_flip.svg", 10);
+    active_stamp = do_loadimage(buf, 0);
+#endif
+
+    if (active_stamp == NULL)
+    {
+      memcpy(buf + len, "_flip.png", 10);
+      active_stamp = do_loadimage(buf, 0);
+    }
+    
+    if (active_stamp != NULL)
+    {
+      printf("found a _flip!\n");
+      needs_flip = 0;
+    }
+    else
+      printf("didn't find a _flip\n");
+  }
+  else if (sd->mirrored && !sd->no_premirror)
+  {
+    /* Want mirrored only */
+
+    printf("want mirrored only\n");
+
 #ifndef NOSVG	  
     memcpy(buf + len, "_mirror.svg", 12);
     active_stamp = do_loadimage(buf, 0);
@@ -5228,11 +5351,25 @@ static void set_active_stamp(void)
       memcpy(buf + len, "_mirror.png", 12);
       active_stamp = do_loadimage(buf, 0);
     }
+    
+    if (active_stamp != NULL)
+    {
+      printf("found a _mirror!\n");
+      needs_mirror = 0;
+    }
+    else
+      printf("didn't find a _mirror\n");
   }
+
+
+  /* Didn't want mirrored, or flipped, or couldn't load anything
+     that was pre-rendered: */
 
   if (!active_stamp)
   {
-#ifndef NOSVG	  
+    printf("loading normal\n");
+
+#ifndef NOSVG
     memcpy(buf + len, ".svg", 5);
     active_stamp = do_loadimage(buf, 0);
 #endif
@@ -5243,26 +5380,43 @@ static void set_active_stamp(void)
       active_stamp = do_loadimage(buf, 0);
     }
 
-    if (!active_stamp)
-      active_stamp = thumbnail(img_dead40x40, 40, 40, 1);	// copy it
-    if (sd->mirrored)
-      active_stamp = mirror_surface(active_stamp);
   }
 
-  if (sd->flipped)
+  /* Never allow a NULL image! */
+
+  if (!active_stamp)
+    active_stamp = thumbnail(img_dead40x40, 40, 40, 1);	// copy it
+
+
+  /* If we wanted mirrored or flipped, and didn't get something pre-rendered,
+     do it to the image we did load: */
+
+  if (needs_mirror)
+  {
+    printf("mirroring\n");
+    active_stamp = mirror_surface(active_stamp);
+  }
+
+  if (needs_flip)
+  {
+    printf("flipping\n");
     active_stamp = flip_surface(active_stamp);
+  }
+
+  printf("\n\n");
 }
 
 static void get_stamp_thumb(stamp_type * sd)
 {
   SDL_Surface *bigimg = NULL;
   unsigned len = strlen(sd->stampname);
-  char *buf = alloca(len + strlen("_mirror.EXT") + 1);
-  SDL_Surface *wrongmirror = NULL;
-  int need_mirror = 0;
+  char *buf = alloca(len + strlen("_mirror_flip.EXT") + 1);
+  int need_mirror, need_flip;
   double ratio;
   unsigned w;
   unsigned h;
+
+  printf("\nget_stamp_thumb()\n");
 
   memcpy(buf, sd->stampname, len);
 
@@ -5302,25 +5456,111 @@ static void get_stamp_thumb(stamp_type * sd)
     sd->no_txt = !sd->stxt;
   }
 
+
   // first see if we can re-use an existing thumbnail
   if (sd->thumbnail)
   {
-    if (sd->mirrored == sd->thumb_mirrored)
+    printf("have an sd->thumbnail\n");
+
+    if (sd->thumb_mirrored_flipped == sd->flipped &&
+        sd->thumb_mirrored_flipped == sd->mirrored &&
+        sd->mirrored == sd->thumb_mirrored &&
+        sd->flipped == sd->thumb_flipped)
     {
-      if (sd->flipped == sd->thumb_flipped)
-	return;
-      sd->thumbnail = flip_surface(sd->thumbnail);
-      sd->thumb_flipped = !sd->thumb_flipped;
+      // It's already the way we want
+      printf("mirrored == flipped == thumb_mirrored_flipped [bye]\n");
       return;
     }
-    wrongmirror = sd->thumbnail;
   }
 
-  /* FIXME: Add support for pre-flipped stamps! -bjk 2007.03.22 */
 
-  // nope, unless perhaps it can be mirrored
-  if (sd->mirrored && !sd->no_premirror)
+  // nope, see if there's a pre-rendered one we can use
+
+  need_mirror = sd->mirrored;
+  need_flip = sd->flipped;
+  bigimg = NULL;
+
+  if (sd->mirrored && sd->flipped)
   {
+    printf("want mirrored & flipped\n");
+
+    if (!sd->no_premirrorflip)
+    {
+      memcpy(buf + len, "_mirror_flip.png", 17);
+      bigimg = do_loadimage(buf, 0);
+
+#ifndef NOSVG
+      if (bigimg == NULL)
+      {
+        memcpy(buf + len, "_mirror_flip.svg", 17);
+        bigimg = do_loadimage(buf, 0);
+      }
+#endif
+    }
+
+    if (bigimg)
+    {
+      printf("found a _mirror_flip!\n");
+
+      need_mirror = 0;
+      need_flip = 0;
+    }
+    else
+    {
+      printf("didn't find a mirror_flip\n");
+      sd->no_premirrorflip = 1;
+
+      if (!sd->no_premirror)
+      {
+        memcpy(buf + len, "_mirror.png", 12);
+        bigimg = do_loadimage(buf, 0);
+
+#ifndef NOSVG
+        if (bigimg == NULL)
+        {
+          memcpy(buf + len, "_mirror.svg", 12);
+          bigimg = do_loadimage(buf, 0);
+        }
+#endif
+      }
+
+      if (bigimg)
+      {
+        printf("found a _mirror\n");
+
+        need_mirror = 0;
+      }
+      else
+      {
+        printf("didn't find a mirror\n");
+
+        if (!sd->no_preflip)
+        {
+          memcpy(buf + len, "_flip.png", 10);
+          bigimg = do_loadimage(buf, 0);
+
+#ifndef NOSVG
+          if (bigimg == NULL)
+          {
+            memcpy(buf + len, "_flip.svg", 10);
+            bigimg = do_loadimage(buf, 0);
+          }
+#endif
+        }
+
+        if (bigimg)
+        {
+          printf("found a _flip\n");
+
+          need_flip = 0;
+        }
+      }
+    }
+  }
+  else if (sd->mirrored && !sd->no_premirror)
+  {
+    printf("want mirrored only\n");
+
     memcpy(buf + len, "_mirror.png", 12);
     bigimg = do_loadimage(buf, 0);
 
@@ -5334,26 +5574,49 @@ static void get_stamp_thumb(stamp_type * sd)
 
     if (bigimg)
     {
-      if (wrongmirror)
-	SDL_FreeSurface(wrongmirror);
+      printf("found a _mirror!\n");
+      need_mirror = 0;
     }
     else
+    {
+      printf("didn't find a mirror\n");
       sd->no_premirror = 1;
+    }
   }
-  if (wrongmirror && sd->no_premirror)
+  else if (sd->flipped && !sd->no_preflip)
   {
-    wrongmirror = mirror_surface(wrongmirror);
-    sd->thumbnail = wrongmirror;
-    sd->thumb_mirrored = !sd->thumb_mirrored;
+    printf("want flipped only\n");
 
-    if (sd->flipped == sd->thumb_flipped)
-      return;
-    sd->thumbnail = flip_surface(sd->thumbnail);
-    sd->thumb_flipped = !sd->thumb_flipped;
-    return;
+    memcpy(buf + len, "_flip.png", 10);
+    bigimg = do_loadimage(buf, 0);
+
+#ifndef NOSVG
+    if (bigimg == NULL)
+    {
+      memcpy(buf + len, "_flip.svg", 10);
+      bigimg = do_loadimage(buf, 0);
+    }
+#endif
+
+    if (bigimg)
+    {
+      printf("found a _flip!\n");
+      need_flip = 0;
+    }
+    else
+    {
+      printf("didn't find a flip\n");
+      sd->no_preflip = 1;
+    }
   }
+ 
+ 
+  /* If we didn't load a pre-rendered, load the normal one: */
+
   if (!bigimg)
   {
+    printf("loading normal...\n");
+
     memcpy(buf + len, ".png", 5);
     bigimg = do_loadimage(buf, 0);
 
@@ -5364,10 +5627,10 @@ static void get_stamp_thumb(stamp_type * sd)
       bigimg = do_loadimage(buf, 0);
     }
 #endif
-
-    if (sd->mirrored)
-      need_mirror = 1;		// want to mirror after scaling
   }
+
+
+  /* Scale the stamp down to its thumbnail size: */
 
   w = 40;
   h = 40;
@@ -5387,16 +5650,41 @@ static void get_stamp_thumb(stamp_type * sd)
   else
     sd->thumbnail = bigimg;
 
-  if (need_mirror)
-    sd->thumbnail = mirror_surface(sd->thumbnail);
-  sd->thumb_mirrored = sd->mirrored;
 
-  if (sd->flipped)
+  /* Mirror and/or flip the thumbnail, if we still need to do so: */
+
+  if (need_mirror)
+  {
+    printf("mirroring\n");
+    sd->thumbnail = mirror_surface(sd->thumbnail);
+  }
+
+  if (need_flip)
+  {
+    printf("flipping\n");
     sd->thumbnail = flip_surface(sd->thumbnail);
+  }
+
+
+  /* Note the fact that the thumbnail's mirror/flip is the same as the main
+     stamp: */
+
+  if (sd->mirrored && sd->flipped)
+    sd->thumb_mirrored_flipped = 1;
+  else
+    sd->thumb_mirrored_flipped = 0;
+
+  sd->thumb_mirrored = sd->mirrored;
   sd->thumb_flipped = sd->flipped;
+
+  printf("\n\n");
+
+
+  /* Finish up, if we need to: */
 
   if (sd->processed)
     return;
+
   sd->processed = 1;		// not really, but on the next line...
   loadstamp_finisher(sd, w, h, ratio);
 }
@@ -5451,12 +5739,12 @@ static void loadstamp_callback(SDL_Surface * screen,
   while (i--)
   {
     char fname[512];
-    const char *dotext, *ext, *mirror_ext;
-
-    /* FIXME: Support pre-flipped stamps -bjk 2007.03.22 */
+    const char *dotext, *ext, *mirror_ext, *flip_ext, *mirrorflip_ext;
 
     ext = ".png";
     mirror_ext = "_mirror.png";
+    flip_ext = "_flip.png";
+    mirrorflip_ext = "_mirror_flip.png";
     dotext = (char *) strcasestr(files[i].str, ext);
 
 #ifndef NOSVG
@@ -5464,6 +5752,8 @@ static void loadstamp_callback(SDL_Surface * screen,
     {
       ext = ".svg";
       mirror_ext = "_mirror.svg";
+      flip_ext = "_flip.svg";
+      mirrorflip_ext = "_mirror_flip.svg";
       dotext = (char *) strcasestr(files[i].str, ext);
     }
     else
@@ -5494,7 +5784,9 @@ static void loadstamp_callback(SDL_Surface * screen,
 
     if (dotext > files[i].str && !strcasecmp(dotext, ext)
 	&& (dotext - files[i].str + 1 + dirlen < sizeof fname)
-	&& !strcasestr(files[i].str, mirror_ext))
+	&& !strcasestr(files[i].str, mirror_ext)
+	&& !strcasestr(files[i].str, flip_ext)
+	&& !strcasestr(files[i].str, mirrorflip_ext))
     {
       snprintf(fname, sizeof fname, "%s/%s", dir, files[i].str);
       if (num_stamps[stamp_group] == max_stamps[stamp_group])

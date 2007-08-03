@@ -1,5 +1,5 @@
                                    Tux Paint
-                                 version 0.9.17
+                                 version 0.9.18
                               Extending Tux Paint
 
                 Copyright 2002-2007 by Bill Kendrick and others
@@ -8,7 +8,7 @@
                            bill@newbreedsoftware.com
                             http://www.tuxpaint.org/
 
-                          June 14, 2002 - May 6, 2007
+                         June 14, 2002 - August 2, 2007
 
    --------------------------------------------------------------------------
 
@@ -428,21 +428,30 @@ Stamps
          it as Plain Text, and make sure the filename has ".dat" at the end,
          and not ".txt"...
 
-  Pre-Mirrored Images
+  Pre-Mirrored and Flipped Images
 
        In some cases, you may wish to provide a pre-drawn version of a
-       stamp's mirror-image. For example, imagine a picture of a fire truck
-       with the words "Fire Department" written across the side. You probably
-       do not want that text to appear backwards when the image is flipped!
+       stamp's mirror-image, flipped image, or even both. For example,
+       imagine a picture of a fire truck with the words "Fire Department"
+       written across the side. You probably do not want that text to appear
+       backwards when the image is flipped!
 
        To create a mirrored version of a stamp that you want Tux Paint to
        use, rather than mirroring one on its own, simply create a second
-       ".png" graphics file with the same name, except with the string
+       ".png" or ".svg" graphics file with the same name, except with
        "_mirror" before the filename extension.
 
        For example, for the stamp "truck.png" you would create another file
        named "truck_mirror.png", which will be used when the stamp is
        mirrored (rather than using a backwards version of 'truck.png').
+
+       As of Tux Paint 0.9.18, you may similarly provide a pre-flipped image
+       with "_flip" in the name, and/or an image that is both mirrored and
+       flipped, by naming it "_mirror_flip".
+
+       Note: If the user flips and mirrors an image, and a pre-drawn
+       "_mirror_flip" doesn't exist, but either "_flip" or "_mirror" does, it
+       will be used, and mirrored or flipped, respectively.
 
    --------------------------------------------------------------------------
 
