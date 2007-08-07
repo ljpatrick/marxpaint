@@ -9,7 +9,7 @@ http://www.tuxpaint.org/
 $Id$
 
 
-2007.August.2 (0.9.18)
+2007.August.6 (0.9.18)
   * Interface Improvements:
     -----------------------
     * Improved 'New' and 'Open' interface:
@@ -145,10 +145,13 @@ $Id$
     * Italian translation
       Flavio "Iron Bishop" Pastore <ironbishop@fsfe.org>
 
-    * Norwegian Nynorsk
+    * Mexican Spanish translation
+      Ignacio Tike <itike0100@gmail.com>
+
+    * Norwegian Nynorsk translation
       Karl Ove Hufthammer <huftis@users.sourceforge.net>
 
-    * Norwegian Bokmål
+    * Norwegian Bokmål translation
       Karl Ove Hufthammer <huftis@users.sourceforge.net>
 
     * Russian EXTENDING documentation
@@ -157,7 +160,7 @@ $Id$
     * South African English translation
       Caroline Ford <caroline.ford.work@googlemail.com>
 
-    * Vietnamese
+    * Vietnamese translation
       Clytie Siddall <clytie@riverland.net.au>
 
     * Improved comments near gettext() calls in the source code, to provide
