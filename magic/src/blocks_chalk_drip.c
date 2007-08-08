@@ -118,10 +118,10 @@ char * blocks_chalk_drip_get_description(magic_api * api, int which)
 {
   if (which == TOOL_BLOCKS)
     return(strdup(gettext(
-"Click and move the mouse around to turn the picture into a chalk drawing.")));
+"Click and move the mouse around to make the picture blocky.")));
   else if (which == TOOL_CHALK)
     return(strdup(gettext(
-"Click and move the mouse around to make the picture blocky.")));
+"Click and move the mouse around to turn the picture into a chalk drawing.")));
   else if (which == TOOL_DRIP)
     return(strdup(gettext(
 "Click and move the mouse around to make the picture drip.")));
