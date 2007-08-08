@@ -9,7 +9,7 @@ http://www.tuxpaint.org/
 $Id$
 
 
-2007.August.6 (0.9.18)
+2007.August.8 (0.9.18)
   * Interface Improvements:
     -----------------------
     * Improved 'New' and 'Open' interface:
@@ -145,6 +145,9 @@ $Id$
 
     * Dutch translation
       Freek de Kruijf <f.de.kruijf@hetnet.nl>
+
+    * French translation
+      Jacques Chion <Jacques.Chion@wanadoo.fr>
 
     * Gujarati translation
       Kartik Mistry <kartik.mistry@gmail.com>
