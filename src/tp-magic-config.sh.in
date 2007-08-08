@@ -50,8 +50,16 @@ if [ $# -ne 0 ]; then
     echo "__DATAPREFIX__"
     exit
   fi
+  if [ $1 = "--localdataprefix" ]; then
+    echo "$HOME/.tuxpaint/plugins/data"
+    exit
+  fi
   if [ $1 = "--pluginprefix" ]; then
     echo "__PLUGINPREFIX__"
+    exit
+  fi
+  if [ $1 = "--localpluginprefix" ]; then
+    echo "$HOME/.tuxpaint/plugins"
     exit
   fi
   if [ $1 = "--plugindocprefix" ]; then

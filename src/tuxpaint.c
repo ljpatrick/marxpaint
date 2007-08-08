@@ -22,7 +22,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
   
-  June 14, 2002 - July 24, 2007
+  June 14, 2002 - August 7, 2007
   $Id$
 */
 
@@ -880,6 +880,7 @@ typedef struct magic_funcs_s {
 
 
 typedef struct magic_s {
+  int place;
   int handle_idx;	// Index to magic funcs for each magic tool (shared objs may report more than 1 tool)
   int idx;	// Index to magic tools within shared objects (shared objs may report more than 1 tool)
   int colors;	// Whether magic tool accepts colors
@@ -899,7 +900,13 @@ magic_funcs_t magic_funcs[512];	// Pointer to shared objects' functions
 magic_t magics[512];
 static int num_magics;	// How many magic tools were loaded (note: shared objs may report more than 1 tool)
 
-magic_api * magic_api_struct;	// Pointer to our internal functions; passed to shared object's functions when we call them
+enum {
+  MAGIC_PLACE_GLOBAL,
+  MAGIC_PLACE_LOCAL,
+  NUM_MAGIC_PLACES
+};
+
+magic_api * magic_api_struct[NUM_MAGIC_PLACES];	// Pointer to our internal functions; passed to shared object's functions when we call them
 
 
 #if !defined(WIN32) && !defined(__APPLE__) && !defined(__BEOS__)
@@ -1489,7 +1496,8 @@ int magic_sort(const void * a, const void * b);
 
 Mix_Chunk * magic_current_snd_ptr;
 void magic_playsound(Mix_Chunk * snd, int left_right, int up_down);
-void magic_line_func(int which, SDL_Surface * canvas, SDL_Surface * last,
+void magic_line_func(void * mapi,
+		     int which, SDL_Surface * canvas, SDL_Surface * last,
                      int x1, int y1, int x2, int y2, int step,
 		     void (*cb)(void *, int, SDL_Surface *, SDL_Surface *,
 				int, int));
@@ -2401,7 +2409,7 @@ static void mainloop(void)
 	      draw_colors(magics[cur_magic].colors);
 	      if (magics[cur_magic].colors)
 	        magic_funcs[magics[cur_magic].handle_idx].set_color(
-						magic_api_struct,
+						magic_api_struct[magics[cur_magic].place],
 						color_hexes[cur_color][0],
 						color_hexes[cur_color][1],
 						color_hexes[cur_color][2]);
@@ -3027,7 +3035,7 @@ static void mainloop(void)
               
                 if (magics[cur_magic].colors)
 	          magic_funcs[magics[cur_magic].handle_idx].set_color(
-						magic_api_struct,
+						magic_api_struct[magics[cur_magic].place],
 						color_hexes[cur_color][0],
 						color_hexes[cur_color][1],
 						color_hexes[cur_color][2]);
@@ -3100,7 +3108,7 @@ static void mainloop(void)
 	      do_render_cur_text(0);
             else if (cur_tool == TOOL_MAGIC)
               magic_funcs[magics[cur_magic].handle_idx].set_color(
-						magic_api_struct,
+						magic_api_struct[magics[cur_magic].place],
 						color_hexes[cur_color][0],
 						color_hexes[cur_color][1],
 						color_hexes[cur_color][2]);
@@ -3231,7 +3239,7 @@ static void mainloop(void)
 
 	    reset_touched();
 
-	    magic_funcs[magics[cur_magic].handle_idx].click(magic_api_struct,
+	    magic_funcs[magics[cur_magic].handle_idx].click(magic_api_struct[magics[cur_magic].place],
 					                   magics[cur_magic].idx,
 					                   canvas, last,
 							   old_x, old_y,
@@ -3579,7 +3587,7 @@ static void mainloop(void)
             update_rect.w = 0;
             update_rect.h = 0;
 
-	    magic_funcs[magics[cur_magic].handle_idx].release(magic_api_struct,
+	    magic_funcs[magics[cur_magic].handle_idx].release(magic_api_struct[magics[cur_magic].place],
 					                   magics[cur_magic].idx,
 					                   canvas, last,
 							   old_x, old_y,
@@ -3815,7 +3823,7 @@ static void mainloop(void)
             update_rect.w = 0;
             update_rect.h = 0;
 
-	    magic_funcs[magics[cur_magic].handle_idx].drag(magic_api_struct,
+	    magic_funcs[magics[cur_magic].handle_idx].drag(magic_api_struct[magics[cur_magic].place],
 							  magics[cur_magic].idx,
 							  canvas, last,
 							  old_x, old_y,
@@ -8179,7 +8187,11 @@ static void draw_brushes(void)
 
     if (brush < num_brushes)
     {
-      src.x = 0;
+      if (brushes_directional[brush])
+        src.x = (img_brushes[brush]->w / abs(brushes_frames[brush])) / 3;
+      else
+        src.x = 0;
+
       src.y = brushes_directional[brush] ? (img_brushes[brush]->h / 3) : 0;
 
       src.w = (img_brushes[brush]->w / abs(brushes_frames[brush])) /
@@ -11667,7 +11679,7 @@ static void cleanup(void)
 #endif
 
   for (i = 0; i < num_plugin_files; i++)
-    magic_funcs[i].shutdown(magic_api_struct);
+    magic_funcs[i].shutdown(magic_api_struct[magics[cur_magic].place]);
 
   free_cursor(&cursor_hand);
   free_cursor(&cursor_arrow);
@@ -16478,9 +16490,11 @@ float pick_best_scape(unsigned int orig_w, unsigned int orig_h,
 #endif
 
 
+
 void load_magic_plugins(void)
 {
-  int res, n, i;
+  int res, n, i, plc;
+  char * place;
   int err;
   DIR *d;
   struct dirent *f;
@@ -16491,292 +16505,310 @@ void load_magic_plugins(void)
   num_plugin_files = 0;
   num_magics = 0;
 
+  for (plc = 0; plc < NUM_MAGIC_PLACES; plc++)
+  {
+    if (plc == MAGIC_PLACE_GLOBAL)
+      place = strdup(MAGIC_PREFIX);
+    else if (plc == MAGIC_PLACE_LOCAL)
+      place = get_fname("plugins/", DIR_DATA);
+    else
+      continue; // Huh?
+
 #ifdef DEBUG
-  printf("\n");
-  printf("Loading magic plug-ins from %s\n", MAGIC_PREFIX);
-  fflush(stdout);
+    printf("\n");
+    printf("Loading magic plug-ins from %s\n", place);
+    fflush(stdout);
 #endif
 
-  /* Set magic API hooks: */
-
-  magic_api_struct = (magic_api *) malloc(sizeof(magic_api));
-  magic_api_struct->tp_version = strdup(VER_VERSION);
-  magic_api_struct->data_directory = strdup(DATA_PREFIX);
-  magic_api_struct->update_progress_bar = update_progress_bar;
-  magic_api_struct->sRGB_to_linear = magic_sRGB_to_linear;
-  magic_api_struct->linear_to_sRGB = magic_linear_to_sRGB;
-  magic_api_struct->in_circle = in_circle_rad;
-  magic_api_struct->getpixel = getpixels[canvas->format->BytesPerPixel];
-  magic_api_struct->putpixel = putpixels[canvas->format->BytesPerPixel];
-  magic_api_struct->line = magic_line_func;
-  magic_api_struct->playsound = magic_playsound;
-  magic_api_struct->special_notify = special_notify;
-  magic_api_struct->button_down = magic_button_down;
-  magic_api_struct->rgbtohsv = rgbtohsv;
-  magic_api_struct->hsvtorgb = hsvtorgb;
-  magic_api_struct->canvas_w = canvas->w;
-  magic_api_struct->canvas_h = canvas->h;
-  magic_api_struct->scale = magic_scale;
-  magic_api_struct->touched = magic_touched;
-
-
-  d = opendir(MAGIC_PREFIX);
-
-  if (d != NULL)
-  {
     /* Gather list of files (for sorting): */
 
-    do
+    d = opendir(place);
+
+    if (d != NULL)
     {
-      f = readdir(d);
+      /* Set magic API hooks: */
 
-      if (f != NULL)
+      magic_api_struct[plc] = (magic_api *) malloc(sizeof(magic_api));
+      magic_api_struct[plc]->tp_version = strdup(VER_VERSION);
+
+      if (plc == MAGIC_PLACE_GLOBAL)
+        magic_api_struct[plc]->data_directory = strdup(DATA_PREFIX);
+      else if (plc == MAGIC_PLACE_LOCAL)
+        magic_api_struct[plc]->data_directory = get_fname("plugins/data/", DIR_DATA);
+      else
+        magic_api_struct[plc]->data_directory = strdup("./");
+
+      magic_api_struct[plc]->update_progress_bar = update_progress_bar;
+      magic_api_struct[plc]->sRGB_to_linear = magic_sRGB_to_linear;
+      magic_api_struct[plc]->linear_to_sRGB = magic_linear_to_sRGB;
+      magic_api_struct[plc]->in_circle = in_circle_rad;
+      magic_api_struct[plc]->getpixel = getpixels[canvas->format->BytesPerPixel];
+      magic_api_struct[plc]->putpixel = putpixels[canvas->format->BytesPerPixel];
+      magic_api_struct[plc]->line = magic_line_func;
+      magic_api_struct[plc]->playsound = magic_playsound;
+      magic_api_struct[plc]->special_notify = special_notify;
+      magic_api_struct[plc]->button_down = magic_button_down;
+      magic_api_struct[plc]->rgbtohsv = rgbtohsv;
+      magic_api_struct[plc]->hsvtorgb = hsvtorgb;
+      magic_api_struct[plc]->canvas_w = canvas->w;
+      magic_api_struct[plc]->canvas_h = canvas->h;
+      magic_api_struct[plc]->scale = magic_scale;
+      magic_api_struct[plc]->touched = magic_touched;
+
+
+      do
       {
-        if (f->d_type == DT_REG)
+        f = readdir(d);
+
+        if (f != NULL)
         {
-	  snprintf(fname, sizeof(fname), "%s%s", MAGIC_PREFIX, f->d_name);
+          if (f->d_type == DT_REG)
+          {
+	    snprintf(fname, sizeof(fname), "%s%s", place, f->d_name);
 
-          /* Get just the name of the object (e.g., "negative"), w/o filename
-             extension: */
+            /* Get just the name of the object (e.g., "negative"), w/o filename
+               extension: */
 
-	  strcpy(objname, f->d_name);
-          strcpy(strchr(objname, '.'), "");
+	    strcpy(objname, f->d_name);
+            strcpy(strchr(objname, '.'), "");
 
 
-	  magic_handle[num_plugin_files] = SDL_LoadObject(fname);
+	    magic_handle[num_plugin_files] = SDL_LoadObject(fname);
 	  
-          if (magic_handle[num_plugin_files] != NULL)
-	  {
+            if (magic_handle[num_plugin_files] != NULL)
+	    {
 #ifdef DEBUG
-            printf("loading: %s\n", fname);
-            fflush(stdout);
+              printf("loading: %s\n", fname);
+              fflush(stdout);
 #endif
 
-            snprintf(funcname, sizeof(funcname), "%s_%s", objname,
-			       "get_tool_count");
-	    magic_funcs[num_plugin_files].get_tool_count =
-	      SDL_LoadFunction(magic_handle[num_plugin_files], funcname);
+              snprintf(funcname, sizeof(funcname), "%s_%s", objname,
+			         "get_tool_count");
+	      magic_funcs[num_plugin_files].get_tool_count =
+	        SDL_LoadFunction(magic_handle[num_plugin_files], funcname);
 
-            snprintf(funcname, sizeof(funcname), "%s_%s", objname,
-			       "get_name");
-	    magic_funcs[num_plugin_files].get_name =
-	      SDL_LoadFunction(magic_handle[num_plugin_files], funcname);
+              snprintf(funcname, sizeof(funcname), "%s_%s", objname,
+			         "get_name");
+	      magic_funcs[num_plugin_files].get_name =
+	        SDL_LoadFunction(magic_handle[num_plugin_files], funcname);
 
-            snprintf(funcname, sizeof(funcname), "%s_%s", objname,
-			       "get_icon");
-	    magic_funcs[num_plugin_files].get_icon =
-	      SDL_LoadFunction(magic_handle[num_plugin_files], funcname);
+              snprintf(funcname, sizeof(funcname), "%s_%s", objname,
+			         "get_icon");
+	      magic_funcs[num_plugin_files].get_icon =
+	        SDL_LoadFunction(magic_handle[num_plugin_files], funcname);
 
-            snprintf(funcname, sizeof(funcname), "%s_%s", objname,
-			       "get_description");
-	    magic_funcs[num_plugin_files].get_description =
-	      SDL_LoadFunction(magic_handle[num_plugin_files], funcname);
+              snprintf(funcname, sizeof(funcname), "%s_%s", objname,
+			         "get_description");
+	      magic_funcs[num_plugin_files].get_description =
+	        SDL_LoadFunction(magic_handle[num_plugin_files], funcname);
 
-            snprintf(funcname, sizeof(funcname), "%s_%s", objname,
-			       "requires_colors");
-	    magic_funcs[num_plugin_files].requires_colors =
-	      SDL_LoadFunction(magic_handle[num_plugin_files], funcname);
+              snprintf(funcname, sizeof(funcname), "%s_%s", objname,
+			         "requires_colors");
+	      magic_funcs[num_plugin_files].requires_colors =
+	        SDL_LoadFunction(magic_handle[num_plugin_files], funcname);
 
-            snprintf(funcname, sizeof(funcname), "%s_%s", objname,
+              snprintf(funcname, sizeof(funcname), "%s_%s", objname,
 			       "set_color");
-	    magic_funcs[num_plugin_files].set_color =
-	      SDL_LoadFunction(magic_handle[num_plugin_files], funcname);
+	      magic_funcs[num_plugin_files].set_color =
+	        SDL_LoadFunction(magic_handle[num_plugin_files], funcname);
 
-            snprintf(funcname, sizeof(funcname), "%s_%s", objname,
+              snprintf(funcname, sizeof(funcname), "%s_%s", objname,
 			       "init");
-	    magic_funcs[num_plugin_files].init =
-	      SDL_LoadFunction(magic_handle[num_plugin_files], funcname);
+	      magic_funcs[num_plugin_files].init =
+	        SDL_LoadFunction(magic_handle[num_plugin_files], funcname);
 
-            snprintf(funcname, sizeof(funcname), "%s_%s", objname,
+              snprintf(funcname, sizeof(funcname), "%s_%s", objname,
 			       "api_version");
-	    magic_funcs[num_plugin_files].api_version =
-	      SDL_LoadFunction(magic_handle[num_plugin_files], funcname);
+	      magic_funcs[num_plugin_files].api_version =
+	        SDL_LoadFunction(magic_handle[num_plugin_files], funcname);
 
-            snprintf(funcname, sizeof(funcname), "%s_%s", objname,
+              snprintf(funcname, sizeof(funcname), "%s_%s", objname,
 			       "shutdown");
-	    magic_funcs[num_plugin_files].shutdown =
-	      SDL_LoadFunction(magic_handle[num_plugin_files], funcname);
+	      magic_funcs[num_plugin_files].shutdown =
+	        SDL_LoadFunction(magic_handle[num_plugin_files], funcname);
 
-            snprintf(funcname, sizeof(funcname), "%s_%s", objname,
+              snprintf(funcname, sizeof(funcname), "%s_%s", objname,
 			       "click");
-	    magic_funcs[num_plugin_files].click =
-	      SDL_LoadFunction(magic_handle[num_plugin_files], funcname);
+	      magic_funcs[num_plugin_files].click =
+	        SDL_LoadFunction(magic_handle[num_plugin_files], funcname);
 
-            snprintf(funcname, sizeof(funcname), "%s_%s", objname,
+              snprintf(funcname, sizeof(funcname), "%s_%s", objname,
 			       "drag");
-	    magic_funcs[num_plugin_files].drag =
-	      SDL_LoadFunction(magic_handle[num_plugin_files], funcname);
+	      magic_funcs[num_plugin_files].drag =
+	        SDL_LoadFunction(magic_handle[num_plugin_files], funcname);
 
-            snprintf(funcname, sizeof(funcname), "%s_%s", objname,
+              snprintf(funcname, sizeof(funcname), "%s_%s", objname,
 			       "release");
-	    magic_funcs[num_plugin_files].release =
-	      SDL_LoadFunction(magic_handle[num_plugin_files], funcname);
+	      magic_funcs[num_plugin_files].release =
+	        SDL_LoadFunction(magic_handle[num_plugin_files], funcname);
 
 #ifdef DEBUG
-	    printf("get_tool_count = 0x%x\n",
+	      printf("get_tool_count = 0x%x\n",
 		   (int) magic_funcs[num_plugin_files].get_tool_count);
-	    printf("get_name = 0x%x\n",
+	      printf("get_name = 0x%x\n",
 		   (int) magic_funcs[num_plugin_files].get_name);
-	    printf("get_icon = 0x%x\n",
+	      printf("get_icon = 0x%x\n",
 		   (int) magic_funcs[num_plugin_files].get_icon);
-	    printf("get_description = 0x%x\n",
+	      printf("get_description = 0x%x\n",
 		   (int) magic_funcs[num_plugin_files].get_description);
-	    printf("requires_colors = 0x%x\n",
+	      printf("requires_colors = 0x%x\n",
 		   (int) magic_funcs[num_plugin_files].requires_colors);
-	    printf("set_color = 0x%x\n",
+	      printf("set_color = 0x%x\n",
 		   (int) magic_funcs[num_plugin_files].set_color);
-	    printf("init = 0x%x\n",
+	      printf("init = 0x%x\n",
 		   (int) magic_funcs[num_plugin_files].init);
-	    printf("api_version = 0x%x\n",
+	      printf("api_version = 0x%x\n",
 		   (int) magic_funcs[num_plugin_files].api_version);
-	    printf("shutdown = 0x%x\n",
+	      printf("shutdown = 0x%x\n",
 		   (int) magic_funcs[num_plugin_files].shutdown);
-	    printf("click = 0x%x\n",
+	      printf("click = 0x%x\n",
 		   (int) magic_funcs[num_plugin_files].click);
-	    printf("drag = 0x%x\n",
+	      printf("drag = 0x%x\n",
 		   (int) magic_funcs[num_plugin_files].drag);
-	    printf("release = 0x%x\n",
+	      printf("release = 0x%x\n",
 		   (int) magic_funcs[num_plugin_files].release);
 #endif
 
-	    err = 0;
+	      err = 0;
 
-	    if (magic_funcs[num_plugin_files].get_tool_count == NULL)
-	    {
-	      fprintf(stderr, "Error: plugin %s is missing get_tool_count\n",
+	      if (magic_funcs[num_plugin_files].get_tool_count == NULL)
+	      {
+	        fprintf(stderr, "Error: plugin %s is missing get_tool_count\n",
 		      fname);
-              err = 1;
-	    }
-	    if (magic_funcs[num_plugin_files].get_name == NULL)
-	    {
-	      fprintf(stderr, "Error: plugin %s is missing get_name\n",
+                err = 1;
+	      }
+	      if (magic_funcs[num_plugin_files].get_name == NULL)
+	      {
+	        fprintf(stderr, "Error: plugin %s is missing get_name\n",
 		      fname);
-              err = 1;
-	    }
-	    if (magic_funcs[num_plugin_files].get_icon == NULL)
-	    {
-	      fprintf(stderr, "Error: plugin %s is missing get_icon\n",
+                err = 1;
+	      }
+	      if (magic_funcs[num_plugin_files].get_icon == NULL)
+	      {
+	        fprintf(stderr, "Error: plugin %s is missing get_icon\n",
 		      fname);
-              err = 1;
-	    }
-	    if (magic_funcs[num_plugin_files].get_description == NULL)
-	    {
-	      fprintf(stderr, "Error: plugin %s is missing get_description\n",
+                err = 1;
+	      }
+	      if (magic_funcs[num_plugin_files].get_description == NULL)
+	      {
+	        fprintf(stderr, "Error: plugin %s is missing get_description\n",
 		      fname);
-              err = 1;
-	    }
-	    if (magic_funcs[num_plugin_files].requires_colors == NULL)
-	    {
-	      fprintf(stderr, "Error: plugin %s is missing requires_colors\n",
+                err = 1;
+	      }
+	      if (magic_funcs[num_plugin_files].requires_colors == NULL)
+	      {
+	        fprintf(stderr, "Error: plugin %s is missing requires_colors\n",
 		      fname);
-              err = 1;
-	    }
-	    if (magic_funcs[num_plugin_files].set_color == NULL)
-	    {
-	      fprintf(stderr, "Error: plugin %s is missing set_color\n",
+                err = 1;
+	      }
+	      if (magic_funcs[num_plugin_files].set_color == NULL)
+	      {
+	        fprintf(stderr, "Error: plugin %s is missing set_color\n",
 		      fname);
-              err = 1;
-	    }
-	    if (magic_funcs[num_plugin_files].init == NULL)
-	    {
-	      fprintf(stderr, "Error: plugin %s is missing init\n",
+                err = 1;
+	      }
+	      if (magic_funcs[num_plugin_files].init == NULL)
+	      {
+	        fprintf(stderr, "Error: plugin %s is missing init\n",
 		      fname);
-              err = 1;
-	    }
-	    if (magic_funcs[num_plugin_files].shutdown == NULL)
-	    {
-	      fprintf(stderr, "Error: plugin %s is missing shutdown\n",
+                err = 1;
+	      }
+	      if (magic_funcs[num_plugin_files].shutdown == NULL)
+	      {
+	        fprintf(stderr, "Error: plugin %s is missing shutdown\n",
 		      fname);
-              err = 1;
-	    }
-	    if (magic_funcs[num_plugin_files].click == NULL)
-	    {
-	      fprintf(stderr, "Error: plugin %s is missing click\n",
+                err = 1;
+	      }
+	      if (magic_funcs[num_plugin_files].click == NULL)
+	      {
+	        fprintf(stderr, "Error: plugin %s is missing click\n",
 		      fname);
-              err = 1;
-	    }
-	    if (magic_funcs[num_plugin_files].release == NULL)
-	    {
-	      fprintf(stderr, "Error: plugin %s is missing release\n",
+                err = 1;
+	      }
+	      if (magic_funcs[num_plugin_files].release == NULL)
+	      {
+	        fprintf(stderr, "Error: plugin %s is missing release\n",
 		      fname);
-              err = 1;
-	    }
-	    if (magic_funcs[num_plugin_files].drag == NULL)
-	    {
-	      fprintf(stderr, "Error: plugin %s is missing drag\n",
+                err = 1;
+	      }
+	      if (magic_funcs[num_plugin_files].drag == NULL)
+	      {
+	        fprintf(stderr, "Error: plugin %s is missing drag\n",
 		      fname);
-              err = 1;
-	    }
+                err = 1;
+	      }
 
-	    if (magic_funcs[num_plugin_files].api_version == NULL)
-	    {
-	      fprintf(stderr, "Error: plugin %s is missing api_version\n",
+	      if (magic_funcs[num_plugin_files].api_version == NULL)
+	      {
+	        fprintf(stderr, "Error: plugin %s is missing api_version\n",
 		      fname);
-              err = 1;
-	    }
-            else if (magic_funcs[num_plugin_files].api_version() != TP_MAGIC_API_VERSION)
-	    {
-              fprintf(stderr, "Warning: plugin %s uses Tux Paint 'Magic' tool API version %x,\nbut Tux Paint needs version %x.\n", fname, magic_funcs[num_plugin_files].api_version(), TP_MAGIC_API_VERSION);
-              err = 1;
-            }
-
-            if (err)
-	    {
-	      SDL_UnloadObject(magic_handle[num_plugin_files]);
-	    }
-            else
-	    {
-	      res = magic_funcs[num_plugin_files].init(magic_api_struct);
-
-              if (res != 0)
-	        n = magic_funcs[num_plugin_files].get_tool_count(magic_api_struct);
-              else
-              {
-                magic_funcs[num_plugin_files].shutdown(magic_api_struct);
-                n = 0;
+                err = 1;
+	      }
+              else if (magic_funcs[num_plugin_files].api_version() != TP_MAGIC_API_VERSION)
+	      {
+                fprintf(stderr, "Warning: plugin %s uses Tux Paint 'Magic' tool API version %x,\nbut Tux Paint needs version %x.\n", fname, magic_funcs[num_plugin_files].api_version(), TP_MAGIC_API_VERSION);
+                err = 1;
               }
 
-
-	      if (n == 0)
-              {
-                fprintf(stderr, "Error: plugin %s failed to startup or reported 0 magic tools\n", fname);
-	        fflush(stderr);
-                SDL_UnloadObject(magic_handle[num_plugin_files]);
-              }
+              if (err)
+	      {
+	        SDL_UnloadObject(magic_handle[num_plugin_files]);
+	      }
               else
-              {
-		for (i = 0; i < n; i++)
-		{
-		  magics[num_magics].idx = i;
-		  magics[num_magics].handle_idx = num_plugin_files;
-		  magics[num_magics].name = magic_funcs[num_plugin_files].get_name(magic_api_struct, i);
-		  magics[num_magics].tip = magic_funcs[num_plugin_files].get_description(magic_api_struct, i);
-		  magics[num_magics].colors = magic_funcs[num_plugin_files].requires_colors(magic_api_struct, i);
+	      {
+	        res = magic_funcs[num_plugin_files].init(magic_api_struct[plc]);
 
-		  magics[num_magics].img_icon = magic_funcs[num_plugin_files].get_icon(magic_api_struct, i);
+                if (res != 0)
+	          n = magic_funcs[num_plugin_files].get_tool_count(magic_api_struct[plc]);
+                else
+                {
+                  magic_funcs[num_plugin_files].shutdown(magic_api_struct[plc]);
+                  n = 0;
+                }
+
+
+	        if (n == 0)
+                {
+                  fprintf(stderr, "Error: plugin %s failed to startup or reported 0 magic tools\n", fname);
+	          fflush(stderr);
+                  SDL_UnloadObject(magic_handle[num_plugin_files]);
+                }
+                else
+                {
+		  for (i = 0; i < n; i++)
+		  {
+		    magics[num_magics].idx = i;
+		    magics[num_magics].place = plc;
+		    magics[num_magics].handle_idx = num_plugin_files;
+		    magics[num_magics].name = magic_funcs[num_plugin_files].get_name(magic_api_struct[plc], i);
+		    magics[num_magics].tip = magic_funcs[num_plugin_files].get_description(magic_api_struct[plc], i);
+		    magics[num_magics].colors = magic_funcs[num_plugin_files].requires_colors(magic_api_struct[plc], i);
+
+		    magics[num_magics].img_icon = magic_funcs[num_plugin_files].get_icon(magic_api_struct[plc], i);
 
 #ifdef DEBUG
-		  printf("-- %s\n", magics[num_magics].name);
+		    printf("-- %s\n", magics[num_magics].name);
 #endif
 
-		  num_magics++;
-		}
+		    num_magics++;
+		  }
 
-	        num_plugin_files++;
+	          num_plugin_files++;
+                }
               }
             }
-          }
-	  else
-	  {
-	    fprintf(stderr, "Warning: Failed to load object %s: %s\n", fname, SDL_GetError());
-	    fflush(stderr);
+	    else
+	    {
+	      fprintf(stderr, "Warning: Failed to load object %s: %s\n", fname, SDL_GetError());
+	      fflush(stderr);
+	    }
 	  }
-	}
+        }
       }
-    }
-    while (f != NULL);
+      while (f != NULL);
 
-    closedir(d);
+      closedir(d);
+    }
   }
 
 
@@ -16804,7 +16836,8 @@ void update_progress_bar(void)
   show_progress_bar(screen);
 }
 
-void magic_line_func(int which, SDL_Surface * canvas, SDL_Surface * last,
+void magic_line_func(void * mapi,
+		     int which, SDL_Surface * canvas, SDL_Surface * last,
                      int x1, int y1, int x2, int y2, int step,
 		     void (*cb)(void *, int, SDL_Surface *, SDL_Surface *,
 				int, int))
@@ -16848,7 +16881,7 @@ void magic_line_func(int which, SDL_Surface * canvas, SDL_Surface * last,
         {
           cnt = (cnt + 1) % step;
           if (cnt == 0)
-            cb((void *) magic_api_struct, which, canvas, last, x1, y);
+            cb((void *) mapi, which, canvas, last, x1, y);
         }
       }
       else
@@ -16857,7 +16890,7 @@ void magic_line_func(int which, SDL_Surface * canvas, SDL_Surface * last,
         {
           cnt = (cnt + 1) % step;
           if (cnt == 0)
-            cb((void *) magic_api_struct, which, canvas, last, x1, y);
+            cb((void *) mapi, which, canvas, last, x1, y);
         }
       }
 
@@ -16872,7 +16905,7 @@ void magic_line_func(int which, SDL_Surface * canvas, SDL_Surface * last,
       {
         cnt = (cnt + 1) % step;
         if (cnt == 0)
-          cb((void *) magic_api_struct, which, canvas, last, x1, y);
+          cb((void *) mapi, which, canvas, last, x1, y);
       }
     }
     else
@@ -16881,7 +16914,7 @@ void magic_line_func(int which, SDL_Surface * canvas, SDL_Surface * last,
       {
         cnt = (cnt + 1) % step;
         if (cnt == 0)
-          cb((void *) magic_api_struct, which, canvas, last, x1, y);
+          cb((void *) mapi, which, canvas, last, x1, y);
       }
     }
   }

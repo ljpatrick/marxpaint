@@ -1,3 +1,32 @@
+/*
+  ripples.c
+
+  Ripples Magic Tool Plugin
+  Tux Paint - A simple drawing program for children.
+
+  Copyright (c) 2002-2007 by Bill Kendrick and others; see AUTHORS.txt
+  bill@newbreedsoftware.com
+  http://www.tuxpaint.org/
+
+  This program is free software; you can redistribute it and/or modify
+  it under the terms of the GNU General Public License as published by
+  the Free Software Foundation; either version 2 of the License, or
+  (at your option) any later version.
+
+  This program is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  GNU General Public License for more details.
+
+  You should have received a copy of the GNU General Public License
+  along with this program; if not, write to the Free Software
+  Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+  (See COPYING.txt)
+
+  Last updated: August 7, 2007
+  $Id$
+*/
+
 #include <stdio.h>
 #include <string.h>
 #include <libintl.h>
@@ -23,7 +52,7 @@ int ripples_init(magic_api * api)
 {
   char fname[1024];
 
-  snprintf(fname, sizeof(fname), "%s/sounds/magic/ripples.wav",
+  snprintf(fname, sizeof(fname), "%s/sounds/magic/ripples.ogg",
 	    api->data_directory);
   ripples_snd = Mix_LoadWAV(fname);
 
@@ -109,7 +138,7 @@ void ripples_click(magic_api * api, int which,
 	      
       ripples_brite = (ripples_z * 20 * deg_sin(d + 45)) / ((fli / 4) + 1);
 
-      api->line(which, canvas, last, ox, oy, nx, ny, 1, ripples_linecb);
+      api->line((void *) api, which, canvas, last, ox, oy, nx, ny, 1, ripples_linecb);
 	      
       ox = nx;
       oy = ny;
@@ -120,6 +149,8 @@ void ripples_click(magic_api * api, int which,
   update_rect->y = y - 100;
   update_rect->w = 200;
   update_rect->h = 200;
+
+  api->playsound(ripples_snd, (x * 255) / api->canvas_w, 255);
 }
 
 // Affect the canvas on release:

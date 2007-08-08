@@ -15,7 +15,7 @@ New Breed Software</p>
 <p><a href="mailto:bill@newbreedsoftware.com">bill@newbreedsoftware.com</a><br>
 <a href="http://www.tuxpaint.org/">http://www.tuxpaint.org/</a></p>
 
-<p>July 5, 2007 - August 2, 2007</p>
+<p>July 5, 2007 - August 7, 2007</p>
 </center>
 
 <hr size=2 noshade>
@@ -41,51 +41,51 @@ concept.)</p>
 <h2>Table of Contents</h2>
 
 <ul>
-<li><a href="prereq">Prequisites</a>
-<li><a href="interfaces">Interfaces</a>
+<li><a href="#prereqs">Prequisites</a>
+<li><a href="#interfaces">Interfaces</a>
   <ul>
-  <li><a href="#">'Magic' tool plugin functions</a>
+  <li><a href="#magic_plugin_funcs">'Magic' tool plugin functions</a>
     <ul>
-    <li><a href="#">Common arguments to plugin functions</a>
-    <li><a href="#">Required Plugin Functions</a>
+    <li><a href="#common_args">Common arguments to plugin functions</a>
+    <li><a href="#toolfuncs">Required Plugin Functions</a>
       <ul>
-      <li><a href="#">Plugin "housekeeping" functions</a>
-      <li><a href="#">Plugin event functions</a>
+      <li><a href="#housekeeping">Plugin "housekeeping" functions</a>
+      <li><a href="#eventfuncs">Plugin event functions</a>
       </ul>
     </ul>
   <li><a href="#tpfuncs">Tux Paint Functions and Data</a>
     <ul>
-    <li><a href="#">Pixel Manipulations</a>
-    <li><a href="#">Helper Functions</a>
-    <li><a href="#">Informational</a>
-    <li><a href="#">Tux Paint System Calls</a>
-    <li><a href="#">Color Conversions</a>
+    <li><a href="#pixel_manip">Pixel Manipulations</a>
+    <li><a href="#helper_funcs">Helper Functions</a>
+    <li><a href="#informational">Informational</a>
+    <li><a href="#syscalls">Tux Paint System Calls</a>
+    <li><a href="#color_convs">Color Conversions</a>
     </ul>
-  <li><a href="#">Helper Macros in "tp_magic_api.h"</a>
-  <li><a href="#">Constant Definitions in "tp_magic_api.h"</a>
+  <li><a href="#macros">Helper Macros in "tp_magic_api.h"</a>
+  <li><a href="#consts">Constant Definitions in "tp_magic_api.h"</a>
   </ul>
 <li><a href="#compiling">Compiling</a>
   <ul>
-  <li><a href="#">Linux and other Unix-like Platforms</a>
-  <li><a href="#">Windows</a>
-  <li><a href="#">Mac OS X</a>
+  <li><a href="#compiling-linux">Linux and other Unix-like Platforms</a>
+  <li><a href="#compiling-windows">Windows</a>
+  <li><a href="#compiling-osx">Mac OS X</a>
   </ul>
 <li><a href="#installing">Installing</a>
   <ul>
-  <li><a href="#">Linux and other Unix-like Platforms</a>
-  <li><a href="#">Windows</a>
-  <li><a href="#">Mac OS X</a>
+  <li><a href="#installing-linux">Linux and other Unix-like Platforms</a>
+  <li><a href="#installing-windows">Windows</a>
+  <li><a href="#installing-osx">Mac OS X</a>
   </ul>
 <li><a href="#multiple">Creating plugins with multiple effects</a>
-<li><a href="#">Example Code</a>
-<li><a href="#">Getting Help</a>
+<li><a href="#examples">Example Code</a>
+<li><a href="#help">Getting Help</a>
 <li><a href="#glossary">Glossary</a>
 </ul>
 
 
 <hr size=1 noshade>
 
-<h2><a name="prereq">Prerequisites</a></h2>
+<h2><a name="prereqs">Prerequisites</a></h2>
 
 <blockquote>
 
@@ -102,7 +102,7 @@ recommended, but some basic SDL concepts will be covered in this document.</p>
 
 <hr size=1 noshade>
 
-<h2>Interfaces</h2>
+<h2><a name="interfaces">Interfaces</a></h2>
 
 <blockquote>
 
@@ -133,7 +133,7 @@ plugin header file, as well as SDL's header files) for building a plugin.
 with Tux&nbsp;Paint &mdash; or in some cases, as part of a "Tux&nbsp;Paint
 'Magic' Tool Plugin Development package".</p>
 
-<h3>'Magic' tool plugin functions</h3>
+<h3><a name="magic_plugin_funcs">'Magic' tool plugin functions</a></h3>
 
 <blockquote>
 
@@ -144,7 +144,7 @@ would have functions whose names begin with "<code>blur_</code>").  <i>This
 includes private functions</i> (ones not used by Tux&nbsp;Paint directly),
 unless you declare those as '<code>static</code>'.</p>
 
-<h4>Common arguments to plugin functions:</h4>
+<h4><a name="common_args">Common arguments to plugin functions:</a></h4>
 
 Here is a description of arguments that many of your plugin's functions
 will need to accept.
@@ -222,7 +222,7 @@ preceded by your plugin's filename.  That is, if your plugin is called
 then the names of your functions must begin with "<code><b>zoom_</b></code>"
 (e.g., "<code>zoom_get_name(...)</code>").</p>
 
-<h5>Plugin "housekeeping" functions:</h5>
+<h5><a name="housekeeping">Plugin "housekeeping" functions:</a></h5>
 
 <ul>
 <li><code><b>Uint32 api_version(void)</b></code><br>
@@ -316,7 +316,7 @@ then the names of your functions must begin with "<code><b>zoom_</b></code>"
 
 </ul>
 
-<h5>Plugin event functions:</h5>
+<h5><a name="eventfuncs">Plugin event functions:</a></h5>
 
 <ul>
 <li><code><b>void set_color(magic_api&nbsp;*&nbsp;api,
@@ -399,7 +399,7 @@ access via the "<code>magic_api</code>" structure, sent to all of the
 plugin's functions.
 (See "<a href="#toolfuncs">Required Plugin Functions</a>," above.)</p>
 
-<h4>Pixel Manipulations</h4>
+<h4><a name="pixel_manip">Pixel Manipulations</a></h4>
 
 <blockquote>
 
@@ -434,7 +434,7 @@ plugin's functions.
 
 </blockquote>
 
-<h4>Helper Functions</h4>
+<h4><a name="helper_funcs">Helper Functions</a></h4>
 
 <blockquote>
 
@@ -447,8 +447,9 @@ plugin's functions.
   brush shape.<br>
   <br>
 
-<li><code><b>void line(int&nbsp;which, SDL_Surface&nbsp;* canvas,
-  SDL_Surface&nbsp;*&nbsp;snapshot, int&nbsp;x1, int&nbsp;y1,
+<li><code><b>void line(void&nbsp;*&nbsp;api, int&nbsp;which,
+  SDL_Surface&nbsp;* canvas, SDL_Surface&nbsp;*&nbsp;snapshot,
+  int&nbsp;x1, int&nbsp;y1,
   int&nbsp;x2, int&nbsp;y2, int&nbsp;step, FUNC&nbsp;callback)</b></code><br>
   This function calculates all points on a line between the coordinates
   (x1,y1) and (x2,y2).  Every 'step' iterations, it calls the 'callback'
@@ -456,9 +457,9 @@ plugin's functions.
   <br>
   It sends the 'callback' function the (x,y) coordinates on the line,
   Tux&nbsp;Paint's "<code>magic_api</code>" struct (as a
-  "<code>void&nbsp;*</code>" pointer), a 'which' value, represening which
-  of the plugin's 'Magic' tool is being used, and the current and snapshot
-  canvases.<br>
+  "<code>void&nbsp;*</code>" pointer which you need to send to it),
+  a 'which' value, represening which of the plugin's 'Magic' tool is
+  being used, and the current and snapshot canvases.<br>
   <br>
   Example prototype of a callback function that may be sent to
   Tux&nbsp;Paint's "<code>line()</code>" 'Magic' tool plugin helper function:
@@ -466,6 +467,13 @@ plugin's functions.
     void exampleCallBack(void&nbsp;*&nbsp;ptr_to_api, int&nbsp;which_tool,
     SDL_Surface&nbsp;*&nbsp;canvas, SDL_Surface&nbsp;*&nbsp;snapshot,
     int&nbsp;x, int&nbsp;y);
+  </code></blockquote>
+  <br>
+  Example use of the "<code>line()</code>" helper (e.g., within a plugin's
+  <code>draw()</code> function):
+  <blockquote><code>
+    api-&gt;line((void&nbsp;*)&nbsp;api, which, canvas, snapshot, ox,&nbsp;oy,
+      x,&nbsp;y, 1, exampleCallBack);
   </code></blockquote>
   <br>
 
@@ -496,7 +504,7 @@ plugin's functions.
 
 </blockquote>
 
-<h4>Informational</h4>
+<h4><a name="informational">Informational</a></h4>
 
 <blockquote>
 
@@ -532,12 +540,17 @@ plugin's functions.
   placed for the installed version of Tux&nbsp;Paint to find them.
   (See "<a href="#installing">Installing</a>," below.)<br>
   <br>
+  <b>Note:</b> If your plugin is installed locally (e.g., in your
+  "<code>~/.tuxpaint/plugins/</code>" directory), rather than globally
+  (system-wide), the "<code>data_directory</code>" value will be different.
+  (e.g., "<code>/home/<i>username</i>/.tuxpaint/plugins/data/</code>").<br>
+  <br>
 
 </ul>
 
 </blockquote>
 
-<h4>Tux Paint System Calls</h4>
+<h4><a name="syscalls">Tux Paint System Calls</a></h4>
 
 <blockquote>
 <ul>
@@ -589,7 +602,7 @@ plugin's functions.
 </ul>
 </blockquote>
 
-<h4>Color Conversions</h4>
+<h4><a name="color_convs">Color Conversions</a></h4>
 
 <blockquote>
 <ul>
@@ -629,7 +642,7 @@ plugin's functions.
 </blockquote>
 </blockquote>
 
-<h3>Helper Macros in "<code>tp_magic_api.h</code>":</h3>
+<h3><a name="macros">Helper Macros in "<code>tp_magic_api.h</code>":</a></h3>
 
 <blockquote>
 <p>Along with the "<code>magic_api</code>" C structure containing functions
@@ -664,7 +677,7 @@ also contains some helper macros that you may use.</p>
 
 </blockquote>
 
-<h3>Constant Defintions in "<code>tp_magic_api.h</code>":</h3>
+<h3><a name="consts">Constant Defintions in "<code>tp_magic_api.h</code>":</a></h3>
 
 <blockquote>
 <p>The following is a summary of constant values that are set
@@ -704,7 +717,7 @@ also contains some helper macros that you may use.</p>
 
 <blockquote>
 
-  <h3>Linux and other Unix-like Platforms</h3>
+  <h3><a name="compiling-linux">Linux and other Unix-like Platforms</a></h3>
 
   <blockquote>
 
@@ -824,13 +837,13 @@ also contains some helper macros that you may use.</p>
 
   </blockquote>
 
-  <h3>Windows</h3>
+  <h3><a name="compiling-windows">Windows</a></h3>
 
   <blockquote>
   <p>TBD</p>
   </blockquote>
 
-  <h3>Mac OS X</h3>
+  <h3><a name="compiling-osx">Mac OS X</a></h3>
 
   <blockquote>
   <p>TBD</p>
@@ -844,7 +857,7 @@ also contains some helper macros that you may use.</p>
 
 <blockquote>
 
-  <h3>Linux and other Unix-like Platforms</h3>
+  <h3><a name="installing-linux">Linux and other Unix-like Platforms</a></h3>
 
   <blockquote>
   <p>Use the "<code>tp-magic-config</code>" command-line tool, supplied as
@@ -861,6 +874,11 @@ also contains some helper macros that you may use.</p>
   files should be installed.  The value returned by this command will be
   the global location where the installed copy of Tux&nbsp;Paint looks
   for plugins (e.g., "<code>/usr/lib/tuxpaint/plugins</code>").</p>
+
+  <p>Alternatively, you may use
+  "<code>tp-magic-config&nbsp;--localpluginprefix</code>" to find out where
+  Tux&nbsp;Paint expects to find local plugins for the current user (e.g.,
+  "<code>/home/<i>username</i>/.tuxpaint/plugins</code>").</p>
 
   <p>As stand-alone commands, using the BASH shell, for example:</p>
 
@@ -904,6 +922,9 @@ also contains some helper macros that you may use.</p>
   <p><b>Note:</b> See the <a href="#grave">note above regarding the
   "<font size=+1><b>`</b></font>" (grave) character</a>.</p>
 
+  <p><b>Note:</b> Currently, there is no "<code>--localplugindocprefix</code>"
+  option.</p>
+
   </blockquote>
 
   <h4>Icons, Sounds and other Data Files</h4>
@@ -915,7 +936,14 @@ also contains some helper macros that you may use.</p>
   (PNG icon, Ogg&nbsp;Vorbis sound effects, etc.) should be installed.
   The value returned by this command will be the same as the value of the
   "<code>data_directory</code>" string stored within the
-  "<code>magic_api</code>" structure that your plugin's functions receive.</p>
+  "<code>magic_api</code>" structure that your plugin's functions receive
+  (e.g., "<code>/usr/share/tuxpaint/</code>").</p>
+
+  <p>For locally-installed plugins (for the current user only), use
+  "<code>tp-magic-config&nbsp;--localdataprefix</code>".  It will return the
+  value of "<code>data_directory</code>" string that locally-installed
+  plugins will see within their "<code>magic_api</code>" structure
+  (e.g., "<code>/home/<i>username</i>/.tuxpaint/plugins/data/</code>").</p>
 
   <p><b>Note:</b> Tux&nbsp;Paint's default Magic tool plugins install their
   data within "<code>magic</code>" subdirectories of Tux&nbsp;Paint's
@@ -997,16 +1025,19 @@ also contains some helper macros that you may use.</p>
   ("<code>.html</code>" and "<code>.txt</code>" files) within Tux&nbsp;Paint's
   documentation directory.</p>
 
+  <p><b>Note:</b> The above Makefile example assumes the user will have
+  priveleges to install Tux&nbsp;Paint plugins system-wide.</p>
+
   </blockquote>
   </blockquote>
 
-  <h3>Windows</h3>
+  <h3><a name="installing-windows">Windows</a></h3>
 
   <blockquote>
   <p>TBD</p>
   </blockquote>
 
-  <h3>Mac OS X</h3>
+  <h3><a name="installing-osx">Mac OS X</a></h3>
 
   <blockquote>
   <p>TBD</p>
@@ -1092,7 +1123,7 @@ simply be '1', your arrays will be of length '1', etc.)</p>
 
 <hr size=1 noshade>
 
-<h2>Example Code</h2>
+<h2><a name="examples">Example Code</a></h2>
 
 <blockquote>
   <p>The C source file
@@ -1102,7 +1133,7 @@ simply be '1', your arrays will be of length '1', etc.)</p>
 
 <hr size=1 noshade>
 
-<h2>Getting Help</h2>
+<h2><a name="help">Getting Help</a></h2>
 
 <blockquote>
 
@@ -1127,17 +1158,17 @@ mailing lists:
 <li><b>&amp;:</b> See "ampersand"
 <li><b>ampersand:</b> "<code>&amp;</code>". A symbol in C that allows you to refer to the memory address of a variable; that is, a pointer. (For example, consider "<code>int&nbsp;i;</code>". Later, "<code>&amp;i</code>" refers to the memory where "<code>i</code>" is stored, not the value of "<code>i</code>" itself; it is a 'pointer to "<code>i</code>"'.)
 <li><b>API:</b> Application Programming Interface. <i>TBD</i>
-<li><b>argument:</b> <i>TBD</i>
+<li><b>argument:</b> A value sent to a function.
 <li><b>arrow:</b> "<code>-&gt;</code>". A symbol in C that references an element within a pointer to a struct.
 <li><b>backquote:</b> See "grave."
 <li><b>backtick:</b> See "grave."
 <li><b>blue:</b> See "RGBA"
-<li><b>boolean 'or':</b> <i>TBD</i>
+<li><b>boolean 'or':</b> A mathematical operation that results in a true value if either operand is true. ("1&nbsp;|&nbsp;0", "0&nbsp;|&nbsp;1" and "1&nbsp;|&nbsp;1" all result in "1". "0&nbsp;|&nbsp;0" results in "0".)
 <li><b>|:</b> See "boolean 'or'"
 <li><b>.:</b> See "dot"
 <li><b>`:</b> See "grave."
 <li><b>*:</b> See "star"
-<li><b>byte:</b> <i>TBD</i>
+<li><b>byte:</b> A unit of memory made up of 8 bits. As a signed value, it can represent -128 through 127. As an unsigned value, it can represent 0 through 255.
 <li><b>callback:</b> <i>TBD</i>
 <li><b>C enumeration:</b> <i>TBD</i>
 <li><b>C function:</b> <i>TBD</i>
@@ -1148,7 +1179,7 @@ mailing lists:
 <li><b>C pointer:</b> A variable that contains the location of a piece of memory; usually used to 'point' to another variable. Since C functions can only return one value as a result, pointers are often sent to functions to allow the function to change the values of multiple variables. (For example, Tux&nbsp;Paint's "<code>rgbtohsv()</code>" and "<code>hsvtorgb()</code>".)
 <li><b>C structure:</b> <i>TBD</i>
 <li><b>#define:</b> A C statement that defines a substitution that can occur later in the code. Generally used for constant values (e.g., "<code>#define&nbsp;RADIUS&nbsp;16</code>"; all instances of "<code>RADIUS</code>" will be replaced with "<code>16</code>"), but can also be used to create macros. Typically placed within C header files.
-<li><b>dimensions:</b> <i>TBD</i>
+<li><b>dimensions:</b> The size of an object, in terms of its width (left to right) and height (top to bottom).
 <li><b>.dll:</b> See "Shared Object"
 <li><b>dot:</b> "<code>.</code>". A symbol in C that references an element within a struct.
 <li><b>drag:</b> The action of moving a mouse while the button remains held.
@@ -1156,10 +1187,10 @@ mailing lists:
 <li><b>enum:</b> See "C enumeration"
 <li><b>float:</b> See "floating point"
 <li><b>floating point:</b> <i>TBD</i>
-<li><b>format:</b> <i>TBD</i>
+<li><b>format:</b> An <code>SDL_Surface</code> element (a pointer to an <code>SDL_PixelFormat</code> structure) that contains information about a surface; for example, the number of bits used to represent each pixel). (See also the "<code>SDL_PixelFormat(3)</code> <i>man&nbsp;page</i>)
 <li><b>free():</b> A C function that frees (deallocates) memory allocated by other C functions (such as "<code>strdup()</code>").
 <li><b>function:</b> See "C function"
-<li><b>gcc:</b> <i>TBD</i> (See also the "<code>gcc(1)</code>" <i>man&nbsp;page</i>)
+<li><b>gcc:</b> The GNU C compiler, a portable Open&nbsp;Source compiler. (See also the "<code>gcc(1)</code>" <i>man&nbsp;page</i>)
 <li><b>GNU C Compiler:</b> See "gcc"
 <li><b>grave:</b> The "<code><font size=+1>`</font></code>" character; used by the BASH shell to use the output of a command as the command-line arguments to another.
 <li><b>green:</b> See "RGBA"
@@ -1177,8 +1208,8 @@ mailing lists:
 <li><b>linear:</b> <i>TBD</i>
 <li><b>macro:</b> <i>TBD</i>
 <li><b>magic_api:</b> A C structure that is passed along to a plugin's functions that exposes data and functions within the running copy of Tux&nbsp;Paint.
-<li><b>make:</b> <i>TBD</i>
-<li><b>Makefile:</b> <i>TBD</i>
+<li><b>make:</b> A utility that automatically determines which pieces of a larger program need to be recompiled, and issues the commands to recompile them. (See also "Makefile")
+<li><b>Makefile:</b> A text file used by the "make" utility; it describes the relationships among files in your program, and the commands for updating each file. (For example, to compile a human-readable source-code file into a computer-readable executable program file.)
 <li><b>Magic tool</b>: One of a number of effects or drawing tools in Tux&nbsp;Paint, made available via the "Magic" tool button.
 <li><b>Mix_Chunk&nbsp;*:</b> (A pointer to) a C structure defined by SDL_mixer that contains a sound.
 <li><b>Mix_FreeChunk():</b> An SDL_mixer function that frees (deallocates) memory allocated for an SDL_mixer sound 'chunk' ("<code>Mix_Chunk&nbsp;*</code>").
@@ -1187,7 +1218,7 @@ mailing lists:
 <li><b>OGG</b>: See "Ogg Vorbis"
 <li><b>Ogg&nbsp;Vorbis:</b> <i>TBD</i> (See also: "WAV")
 <li><b>Plugin</b>: <i>TBD</i>
-<li><b>PNG:</b> <i>TBD</i> (See also the "<code>png(5)</code> <i>man&nbsp;page</i>)
+<li><b>PNG:</b> Portable Network Graphics. An extensible file format for the lossless, portable, well-compressed storage of raster images. It's the file format Tux&nbsp;Paint uses to save images, and for its brushes and stamps. It's an easy way to store 32bpp RGBA images (24bpp true color with full 8bpp alpha transparency), excellent for use in graphics programs like Tux&nbsp;Paint. (See also the "<code>png(5)</code> <i>man&nbsp;page</i>)
 <li><b>pointer:</b> See "C pointer"
 <li><b>red:</b> See "RGBA"
 <li><b>release:</b> The action of releasing a button on a mouse.

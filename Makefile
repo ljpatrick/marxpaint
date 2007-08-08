@@ -7,7 +7,7 @@
 # bill@newbreedsoftware.com
 # http://www.tuxpaint.org/
 
-# June 14, 2002 - August 2, 2007
+# June 14, 2002 - August 7, 2007
 
 
 # The version number, for release:
@@ -345,8 +345,9 @@ install-magic-plugins:
 	@cp magic/icons/*.png $(DATA_PREFIX)/images/magic
 	@chmod a+r,g-w,o-w $(DATA_PREFIX)/images/magic/*.png
 	@install -d $(DATA_PREFIX)/sounds/magic
-	@cp magic/sounds/*.wav $(DATA_PREFIX)/sounds/magic
-	@chmod a+r,g-w,o-w $(DATA_PREFIX)/sounds/magic/*.wav
+	@cp magic/sounds/*.wav magic/sounds/*.ogg $(DATA_PREFIX)/sounds/magic
+	@chmod a+r,g-w,o-w $(DATA_PREFIX)/sounds/magic/*.wav \
+			$(DATA_PREFIX)/sounds/magic/*.ogg
 
 install-magic-plugin-dev:	src/tp_magic_api.h
 	@echo

@@ -1,3 +1,32 @@
+/*
+  negative.c
+
+  Negative Magic Tool Plugin
+  Tux Paint - A simple drawing program for children.
+
+  Copyright (c) 2002-2007 by Bill Kendrick and others; see AUTHORS.txt
+  bill@newbreedsoftware.com
+  http://www.tuxpaint.org/
+
+  This program is free software; you can redistribute it and/or modify
+  it under the terms of the GNU General Public License as published by
+  the Free Software Foundation; either version 2 of the License, or
+  (at your option) any later version.
+
+  This program is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  GNU General Public License for more details.
+
+  You should have received a copy of the GNU General Public License
+  along with this program; if not, write to the Free Software
+  Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+  (See COPYING.txt)
+
+  Last updated: August 7, 2007
+  $Id$
+*/
+
 #include <stdio.h>
 #include <string.h>
 #include <libintl.h>
@@ -86,7 +115,7 @@ void negative_drag(magic_api * api, int which, SDL_Surface * canvas,
   SDL_LockSurface(last);
   SDL_LockSurface(canvas);
 
-  api->line(which, canvas, last, ox, oy, x, y, 1, do_negative);
+  api->line((void *) api, which, canvas, last, ox, oy, x, y, 1, do_negative);
 
   if (ox > x) { int tmp = ox; ox = x; x = tmp; }
   if (oy > y) { int tmp = oy; oy = y; y = tmp; }

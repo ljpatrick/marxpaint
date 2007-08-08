@@ -1,3 +1,32 @@
+/*
+  sparkles.c
+
+  Sparkles Magic Tool Plugin
+  Tux Paint - A simple drawing program for children.
+
+  Copyright (c) 2002-2007 by Bill Kendrick and others; see AUTHORS.txt
+  bill@newbreedsoftware.com
+  http://www.tuxpaint.org/
+
+  This program is free software; you can redistribute it and/or modify
+  it under the terms of the GNU General Public License as published by
+  the Free Software Foundation; either version 2 of the License, or
+  (at your option) any later version.
+
+  This program is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  GNU General Public License for more details.
+
+  You should have received a copy of the GNU General Public License
+  along with this program; if not, write to the Free Software
+  Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+  (See COPYING.txt)
+
+  Last updated: August 7, 2007
+  $Id$
+*/
+
 #include <stdio.h>
 #include <string.h>
 #include <libintl.h>
@@ -8,7 +37,7 @@
 
 /* Our globals: */
 
-Mix_Chunk * sparkles_snd;
+Mix_Chunk * sparkles1_snd, * sparkles2_snd;
 Uint8 sparkles_r, sparkles_g, sparkles_b;
 
 
@@ -20,9 +49,13 @@ int sparkles_init(magic_api * api)
 {
   char fname[1024];
 
-  snprintf(fname, sizeof(fname), "%s/sounds/magic/sparkles.wav",
+  snprintf(fname, sizeof(fname), "%s/sounds/magic/sparkles1.wav",
 	    api->data_directory);
-  sparkles_snd = Mix_LoadWAV(fname);
+  sparkles1_snd = Mix_LoadWAV(fname);
+
+  snprintf(fname, sizeof(fname), "%s/sounds/magic/sparkles2.wav",
+	    api->data_directory);
+  sparkles2_snd = Mix_LoadWAV(fname);
 
   return(1);
 }
@@ -97,7 +130,7 @@ void sparkles_drag(magic_api * api, int which, SDL_Surface * canvas,
 	          SDL_Surface * last, int ox, int oy, int x, int y,
 		  SDL_Rect * update_rect)
 {
-  api->line(which, canvas, last, ox, oy, x, y, 1, do_sparkles);
+  api->line((void *) api, which, canvas, last, ox, oy, x, y, 1, do_sparkles);
 
   if (ox > x) { int tmp = ox; ox = x; x = tmp; }
   if (oy > y) { int tmp = oy; oy = y; y = tmp; }
@@ -107,7 +140,13 @@ void sparkles_drag(magic_api * api, int which, SDL_Surface * canvas,
   update_rect->w = (x + 8) - update_rect->x;
   update_rect->h = (y + 8) - update_rect->h;
 
-  api->playsound(sparkles_snd, (x * 255) / canvas->w, 255);
+  if ((rand() % 10) == 0)
+  {
+    if ((rand() % 10) < 5)
+      api->playsound(sparkles1_snd, (x * 255) / canvas->w, 255);
+    else
+      api->playsound(sparkles2_snd, (x * 255) / canvas->w, 255);
+  }
 }
 
 // Affect the canvas on click:
@@ -128,8 +167,10 @@ void sparkles_release(magic_api * api, int which,
 // No setup happened:
 void sparkles_shutdown(magic_api * api)
 {
-  if (sparkles_snd != NULL)
-    Mix_FreeChunk(sparkles_snd);
+  if (sparkles1_snd != NULL)
+    Mix_FreeChunk(sparkles1_snd);
+  if (sparkles2_snd != NULL)
+    Mix_FreeChunk(sparkles2_snd);
 }
 
 // Record the color from Tux Paint:

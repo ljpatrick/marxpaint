@@ -146,9 +146,10 @@ int example_init(magic_api * api)
     // we installed our plugin and its data.)
 
     snprintf(fname, sizeof(fname),
-             "%s/sounds/magic/%s.wav",
+             "%s/sounds/magic/%s",
 	     api->data_directory, snd_filenames[i]);
 
+    printf("Trying to load %s sound file\n", fname);
 
     // Try to load the file!
 
@@ -334,7 +335,8 @@ void example_drag(magic_api * api, int which, SDL_Surface * canvas,
   // useful things (which of our "Magic" tools is being used and
   // the current and snapshot canvases).
 
-  api->line(which, canvas, snapshot, ox, oy, x, y, 1, example_line_callback);
+  api->line((void *) api, which, canvas, snapshot,
+            ox, oy, x, y, 1, example_line_callback);
 
 
   // If we need to, swap the X and/or Y values, so that

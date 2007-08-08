@@ -91,9 +91,10 @@ typedef struct magic_api_t {
 
   /* Asks Tux Paint to calculate a line between (x1,y1) and (x2,y2);
      every 'step' iterations, it will call your callback function
-     (which must accept a 'which' integer for which tool is being used,
-     'last' and current ('canvas') SDL_Surfaces, and an (x,y) position) */
-  void (*line)(int, SDL_Surface *, SDL_Surface *, int, int, int, int, int, void (*)(void *, int, SDL_Surface *, SDL_Surface *, int, int));
+     (which must accept a 'magic_api *' Magic API pointer and 'which' integer
+     for which tool is being used, the 'last' and current ('canvas')
+     SDL_Surfaces, and an (x,y) position) */
+  void (*line)(void *, int, SDL_Surface *, SDL_Surface *, int, int, int, int, int, void (*)(void *, int, SDL_Surface *, SDL_Surface *, int, int));
 
   /* Returns whether the mouse button is down */
   int (*button_down)(void);

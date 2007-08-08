@@ -1,3 +1,32 @@
+/*
+  flower.c
+
+  Flower Magic Tool Plugin
+  Tux Paint - A simple drawing program for children.
+
+  Copyright (c) 2002-2007 by Bill Kendrick and others; see AUTHORS.txt
+  bill@newbreedsoftware.com
+  http://www.tuxpaint.org/
+
+  This program is free software; you can redistribute it and/or modify
+  it under the terms of the GNU General Public License as published by
+  the Free Software Foundation; either version 2 of the License, or
+  (at your option) any later version.
+
+  This program is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  GNU General Public License for more details.
+
+  You should have received a copy of the GNU General Public License
+  along with this program; if not, write to the Free Software
+  Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+  (See COPYING.txt)
+
+  Last updated: August 7, 2007
+  $Id$
+*/
+
 #include <stdio.h>
 #include <string.h>
 #include <libintl.h>
@@ -13,7 +42,7 @@ enum { LEAFSIDE_RIGHT_DOWN,
        LEAFSIDE_RIGHT_UP,
        LEAFSIDE_LEFT_UP };
 
-Mix_Chunk * flower_snd;
+Mix_Chunk * flower_click_snd, * flower_release_snd;
 Uint8 flower_r, flower_g, flower_b;
 int flower_min_x, flower_max_x, flower_bottom_x, flower_bottom_y;
 int flower_side_first;
@@ -49,9 +78,13 @@ int flower_init(magic_api * api)
 {
   char fname[1024];
 
-  snprintf(fname, sizeof(fname), "%s/sounds/magic/flower.wav",
+  snprintf(fname, sizeof(fname), "%s/sounds/magic/flower_click.ogg",
 	    api->data_directory);
-  flower_snd = Mix_LoadWAV(fname);
+  flower_click_snd = Mix_LoadWAV(fname);
+
+  snprintf(fname, sizeof(fname), "%s/sounds/magic/flower_release.ogg",
+	    api->data_directory);
+  flower_release_snd = Mix_LoadWAV(fname);
 
   snprintf(fname, sizeof(fname), "%s/images/magic/flower_base.png",
 	    api->data_directory);
@@ -172,6 +205,8 @@ void flower_click(magic_api * api, int which,
   flower_side_first = SIDE_LEFT;
 
   flower_drag(api, which, canvas, last, x, y, x, y, update_rect);
+  
+  api->playsound(flower_click_snd, (x * 255) / canvas->w, 255);
 }
 
 // Affect the canvas on release:
@@ -211,7 +246,7 @@ void flower_release(magic_api * api, int which,
   update_rect->w = canvas->w;
   update_rect->h = canvas->h;
 
-  api->playsound(flower_snd, (x * 255) / canvas->w, 255); /* FIXME: Distance? */
+  api->playsound(flower_release_snd, (x * 255) / canvas->w, 255);
 }
 
 
@@ -410,8 +445,11 @@ void flower_drawstalk(magic_api * api, SDL_Surface * canvas,
 
 void flower_shutdown(magic_api * api)
 {
-  if (flower_snd != NULL)
-    Mix_FreeChunk(flower_snd);
+  if (flower_click_snd != NULL)
+    Mix_FreeChunk(flower_click_snd);
+
+  if (flower_release_snd != NULL)
+    Mix_FreeChunk(flower_release_snd);
 
   if (flower_base != NULL)
     SDL_FreeSurface(flower_base);

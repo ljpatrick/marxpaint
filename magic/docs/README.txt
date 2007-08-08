@@ -6,7 +6,7 @@
                            bill@newbreedsoftware.com
                             http://www.tuxpaint.org/
 
-                         July 5, 2007 - August 2, 2007
+                         July 5, 2007 - August 7, 2007
 
    --------------------------------------------------------------------------
 
@@ -356,7 +356,7 @@ Interfaces
              '0' otherwise. Useful to create 'Magic' tools that affect the
              canvas with a circular brush shape.
 
-           * void line(int which, SDL_Surface * canvas,
+           * void line(void * api, int which, SDL_Surface * canvas,
              SDL_Surface * snapshot, int x1, int y1, int x2, int y2,
              int step, FUNC callback)
              This function calculates all points on a line between the
@@ -364,15 +364,22 @@ Interfaces
              calls the 'callback' function.
 
              It sends the 'callback' function the (x,y) coordinates on the
-             line, Tux Paint's "magic_api" struct (as a "void *" pointer), a
-             'which' value, represening which of the plugin's 'Magic' tool is
-             being used, and the current and snapshot canvases.
+             line, Tux Paint's "magic_api" struct (as a "void *" pointer
+             which you need to send to it), a 'which' value, represening
+             which of the plugin's 'Magic' tool is being used, and the
+             current and snapshot canvases.
 
              Example prototype of a callback function that may be sent to
              Tux Paint's "line()" 'Magic' tool plugin helper function:
 
                void exampleCallBack(void * ptr_to_api, int which_tool,
                SDL_Surface * canvas, SDL_Surface * snapshot, int x, int y);
+
+             Example use of the "line()" helper (e.g., within a plugin's
+             draw() function):
+
+               api->line((void *) api, which, canvas, snapshot, ox, oy, x, y,
+               1, exampleCallBack);
 
            * Uint8 touched(int x, int y)
              This function allows you to avoid re-processing the same pixels
@@ -423,6 +430,11 @@ Interfaces
              command-line tool should be used to determine where such data
              should be placed for the installed version of Tux Paint to find
              them. (See "Installing," below.)
+
+             Note: If your plugin is installed locally (e.g., in your
+             "~/.tuxpaint/plugins/" directory), rather than globally
+             (system-wide), the "data_directory" value will be different.
+             (e.g., "/home/username/.tuxpaint/plugins/data/").
 
     Tux Paint System Calls
 
@@ -660,6 +672,10 @@ Installing
          by this command will be the global location where the installed copy
          of Tux Paint looks for plugins (e.g., "/usr/lib/tuxpaint/plugins").
 
+         Alternatively, you may use "tp-magic-config --localpluginprefix" to
+         find out where Tux Paint expects to find local plugins for the
+         current user (e.g., "/home/username/.tuxpaint/plugins").
+
          As stand-alone commands, using the BASH shell, for example:
 
            # cp my_plugin.so `tp-magic-config --pluginprefix`
@@ -689,6 +705,8 @@ Installing
 
          Note: See the note above regarding the "`" (grave) character.
 
+         Note: Currently, there is no "--localplugindocprefix" option.
+
     Icons, Sounds and other Data Files
 
          Use the "tp-magic-config --dataprefix" command, supplied as part of
@@ -696,7 +714,13 @@ Installing
          effects, etc.) should be installed. The value returned by this
          command will be the same as the value of the "data_directory" string
          stored within the "magic_api" structure that your plugin's functions
-         receive.
+         receive (e.g., "/usr/share/tuxpaint/").
+
+         For locally-installed plugins (for the current user only), use
+         "tp-magic-config --localdataprefix". It will return the value of
+         "data_directory" string that locally-installed plugins will see
+         within their "magic_api" structure (e.g.,
+         "/home/username/.tuxpaint/plugins/data/").
 
          Note: Tux Paint's default Magic tool plugins install their data
          within "magic" subdirectories of Tux Paint's "images" and "sounds"
@@ -763,6 +787,9 @@ Installing
          within Tux Paint's data directory, and to install documentation
          (".html" and ".txt" files) within Tux Paint's documentation
          directory.
+
+         Note: The above Makefile example assumes the user will have
+         priveleges to install Tux Paint plugins system-wide.
 
   Windows
 
@@ -864,18 +891,22 @@ Glossary
        "int i;". Later, "&i" refers to the memory where "i" is stored, not
        the value of "i" itself; it is a 'pointer to "i"'.)
      * API: Application Programming Interface. TBD
-     * argument: TBD
+     * argument: A value sent to a function.
      * arrow: "->". A symbol in C that references an element within a pointer
        to a struct.
      * backquote: See "grave."
      * backtick: See "grave."
      * blue: See "RGBA"
-     * boolean 'or': TBD
+     * boolean 'or': A mathematical operation that results in a true value if
+       either operand is true. ("1 | 0", "0 | 1" and "1 | 1" all result in
+       "1". "0 | 0" results in "0".)
      * |: See "boolean 'or'"
      * .: See "dot"
      * `: See "grave."
      * *: See "star"
-     * byte: TBD
+     * byte: A unit of memory made up of 8 bits. As a signed value, it can
+       represent -128 through 127. As an unsigned value, it can represent 0
+       through 255.
      * callback: TBD
      * C enumeration: TBD
      * C function: TBD
@@ -894,7 +925,8 @@ Glossary
        "#define RADIUS 16"; all instances of "RADIUS" will be replaced with
        "16"), but can also be used to create macros. Typically placed within
        C header files.
-     * dimensions: TBD
+     * dimensions: The size of an object, in terms of its width (left to
+       right) and height (top to bottom).
      * .dll: See "Shared Object"
      * dot: ".". A symbol in C that references an element within a struct.
      * drag: The action of moving a mouse while the button remains held.
@@ -904,11 +936,15 @@ Glossary
      * enum: See "C enumeration"
      * float: See "floating point"
      * floating point: TBD
-     * format: TBD
+     * format: An SDL_Surface element (a pointer to an SDL_PixelFormat
+       structure) that contains information about a surface; for example, the
+       number of bits used to represent each pixel). (See also the
+       "SDL_PixelFormat(3) man page)
      * free(): A C function that frees (deallocates) memory allocated by
        other C functions (such as "strdup()").
      * function: See "C function"
-     * gcc: TBD (See also the "gcc(1)" man page)
+     * gcc: The GNU C compiler, a portable Open Source compiler. (See also
+       the "gcc(1)" man page)
      * GNU C Compiler: See "gcc"
      * grave: The "`" character; used by the BASH shell to use the output of
        a command as the command-line arguments to another.
@@ -930,8 +966,13 @@ Glossary
      * macro: TBD
      * magic_api: A C structure that is passed along to a plugin's functions
        that exposes data and functions within the running copy of Tux Paint.
-     * make: TBD
-     * Makefile: TBD
+     * make: A utility that automatically determines which pieces of a larger
+       program need to be recompiled, and issues the commands to recompile
+       them. (See also "Makefile")
+     * Makefile: A text file used by the "make" utility; it describes the
+       relationships among files in your program, and the commands for
+       updating each file. (For example, to compile a human-readable
+       source-code file into a computer-readable executable program file.)
      * Magic tool: One of a number of effects or drawing tools in Tux Paint,
        made available via the "Magic" tool button.
      * Mix_Chunk *: (A pointer to) a C structure defined by SDL_mixer that
@@ -944,7 +985,12 @@ Glossary
      * OGG: See "Ogg Vorbis"
      * Ogg Vorbis: TBD (See also: "WAV")
      * Plugin: TBD
-     * PNG: TBD (See also the "png(5) man page)
+     * PNG: Portable Network Graphics. An extensible file format for the
+       lossless, portable, well-compressed storage of raster images. It's the
+       file format Tux Paint uses to save images, and for its brushes and
+       stamps. It's an easy way to store 32bpp RGBA images (24bpp true color
+       with full 8bpp alpha transparency), excellent for use in graphics
+       programs like Tux Paint. (See also the "png(5) man page)
      * pointer: See "C pointer"
      * red: See "RGBA"
      * release: The action of releasing a button on a mouse.

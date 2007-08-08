@@ -119,6 +119,13 @@ $Id$
     * Flower
       (utilizes Bezier curve example code from Wikipedia.org)
 
+    (Glass Tile, Emboss, Flower and Ripples sounds based on sounds
+    from KDE 3.5.7; http://www.kde.org/ )
+    (Metal Paint sound based on sound from Engima;
+    http://www.nongnu.org/enigma/ )
+    (Waves sound based on sound from Super Tux;
+    http://supertux.berlios.de/ )
+
   * New Localizations:
     ------------------
     * Esperanto translation
