@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: he\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-07-26 17:26-0700\n"
+"POT-Creation-Date: 2007-08-08 00:04-0700\n"
 "PO-Revision-Date: 2005-10-10 21:54+0200\n"
 "Last-Translator: dovix <dovix2003@yahoo.com>\n"
 "Language-Team: Hebrew <mdk-hebrew@iglu.org.il>\n"
@@ -209,6 +209,11 @@ msgstr "מחומש"
 msgid "Rhombus"
 msgstr "מעין"
 
+#. Octagon shape tool (8 sides)
+#, fuzzy
+msgid "Octagon"
+msgstr "מחומש"
+
 #. Description of a square
 msgid "A square is a rectangle with four equal sides."
 msgstr "ריבוע הוא מלבן עם ארבע צלעות שוות."
@@ -236,6 +241,10 @@ msgstr "למחומש יש חמש צלעות."
 
 msgid "A rhombus has four equal sides, and opposite sides are parallel."
 msgstr "למעין יש ארבע צלעות שוות, והצלעות המנוגדות מקבילות."
+
+#, fuzzy
+msgid "An octagon has eight equal sides."
+msgstr "למחומש יש חמש צלעות."
 
 #. Title of tool selector (buttons down the left)
 msgid "Tools"
@@ -675,6 +684,13 @@ msgstr "תשליל"
 msgid "Click and move the mouse around to draw a negative."
 msgstr "עליך ללחוץ ולהזיז את העכבר כדי להפוך את הצבעים."
 
+msgid "Ripples"
+msgstr ""
+
+#, fuzzy
+msgid "Click to make ripples appear over your picture."
+msgstr "עליך ללחוץ ולהזיז את העכבר מסביב כדי לטשטש את התמונה."
+
 msgid "Rainbow"
 msgstr "קשת בענן"
 
@@ -686,6 +702,13 @@ msgstr "כתם"
 
 msgid "Click and move the mouse around to smudge the picture."
 msgstr "עליך ללחוץ ולהזיז את העכבר מסביב כדי להכתים את התמונה."
+
+msgid "Sparkles"
+msgstr "ניצוצות"
+
+#, fuzzy
+msgid "Click and drag to draw glowing sparkles on your picture."
+msgstr "עליך ללחוץ ולהזיז את העכבר מסביב כדי לטשטש את התמונה."
 
 msgid "Tint"
 msgstr "גוון"
@@ -709,9 +732,6 @@ msgstr ""
 #, fuzzy
 #~ msgid "Start a new picture?"
 #~ msgstr "האם למחוק תמונה זו?"
-
-#~ msgid "Sparkles"
-#~ msgstr "ניצוצות"
 
 #~ msgid "Click and move to draw sparkles."
 #~ msgstr "עליך ללחוץ ולהזיז כדי לצייר ניצוצות."

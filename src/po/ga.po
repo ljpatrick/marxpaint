@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint 0.9.17\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-07-26 17:26-0700\n"
+"POT-Creation-Date: 2007-08-08 00:04-0700\n"
 "PO-Revision-Date: 2007-05-11 08:44+0100\n"
 "Last-Translator: Kevin Patrick Scannell <kscanne@gmail.com>\n"
 "Language-Team: Irish <gaeilge-gnulinux@lists.sourceforge.net>\n"
@@ -201,6 +201,11 @@ msgstr "Peinteagán"
 msgid "Rhombus"
 msgstr "Rombas"
 
+#. Octagon shape tool (8 sides)
+#, fuzzy
+msgid "Octagon"
+msgstr "Peinteagán"
+
 #. Description of a square
 msgid "A square is a rectangle with four equal sides."
 msgstr "Is dronuilleog í cearnóg a bhfuil ceithre thaobh chothrom aige."
@@ -230,6 +235,10 @@ msgid "A rhombus has four equal sides, and opposite sides are parallel."
 msgstr ""
 "Tá ceithre thaobh chothrom ar rombas, agus an dá thaobh ar aghaidh a chéile "
 "comhthreomhar."
+
+#, fuzzy
+msgid "An octagon has eight equal sides."
+msgstr "Tá cúig thaobh ar pheinteagán."
 
 #. Title of tool selector (buttons down the left)
 msgid "Tools"
@@ -669,6 +678,13 @@ msgstr "Diúltach"
 msgid "Click and move the mouse around to draw a negative."
 msgstr "Cliceáil agus bog an luch chun dearadh diúltach."
 
+msgid "Ripples"
+msgstr ""
+
+#, fuzzy
+msgid "Click to make ripples appear over your picture."
+msgstr "Cliceáil agus bog an luch chun an pictiúr a thanú."
+
 msgid "Rainbow"
 msgstr "Tua Cheatha"
 
@@ -680,6 +696,13 @@ msgstr "Smálaigh"
 
 msgid "Click and move the mouse around to smudge the picture."
 msgstr "Cliceáil agus bog an luch chun an pictiúr a smálú."
+
+msgid "Sparkles"
+msgstr "Drithlí"
+
+#, fuzzy
+msgid "Click and drag to draw glowing sparkles on your picture."
+msgstr "Cliceáil agus bog an luch chun an pictiúr a thanú."
 
 msgid "Tint"
 msgstr "Imir"
@@ -705,9 +728,6 @@ msgstr ""
 
 #~ msgid "Yes, let's start fresh!"
 #~ msgstr "Ba mhaith!"
-
-#~ msgid "Sparkles"
-#~ msgstr "Drithlí"
 
 #~ msgid "Click and move to draw sparkles."
 #~ msgstr "Cliceáil agus bog chun drithlí a dhearadh."

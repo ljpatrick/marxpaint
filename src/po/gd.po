@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Tux paint anns a' ghàidhlig\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-07-26 17:26-0700\n"
+"POT-Creation-Date: 2007-08-08 00:04-0700\n"
 "PO-Revision-Date: 2006-03-04 15:51-0000\n"
 "Last-Translator: Niall Tracey <internationiall@hotmail.com>\n"
 "Language-Team:  <internationiall@hotmail.com>\n"
@@ -225,6 +225,12 @@ msgstr "Còig-cheàrnach"
 msgid "Rhombus"
 msgstr "Rombas"
 
+# Stòr-dàta (SMO)
+#. Octagon shape tool (8 sides)
+#, fuzzy
+msgid "Octagon"
+msgstr "Còig-cheàrnach"
+
 #. Description of a square
 msgid "A square is a rectangle with four equal sides."
 msgstr ""
@@ -250,6 +256,9 @@ msgid "A pentagon has five sides."
 msgstr ""
 
 msgid "A rhombus has four equal sides, and opposite sides are parallel."
+msgstr ""
+
+msgid "An octagon has eight equal sides."
 msgstr ""
 
 #. Title of tool selector (buttons down the left)
@@ -763,6 +772,12 @@ msgstr ""
 msgid "Click and move the mouse around to draw a negative."
 msgstr ""
 
+msgid "Ripples"
+msgstr ""
+
+msgid "Click to make ripples appear over your picture."
+msgstr ""
+
 # Teach Yourself Gaelic Dictionary: Boyd Robertson & Ian Taylor
 msgid "Rainbow"
 msgstr "Bogha-froise"
@@ -778,6 +793,18 @@ msgstr "Smalaich"
 msgid "Click and move the mouse around to smudge the picture."
 msgstr ""
 
+# Is this word appropriate/common?
+# Teach Yourself Gaelic Dictionary: Boyd Robertson & Ian Taylor
+#, fuzzy
+msgid "Sparkles"
+msgstr "Lainnir"
+
+# Gràmar?
+# Is the word "lainnir" appropriate/common?
+#, fuzzy
+msgid "Click and drag to draw glowing sparkles on your picture."
+msgstr "Briog agus slaod airson lainnir a dhèanamh dealbh."
+
 msgid "Tint"
 msgstr ""
 
@@ -792,14 +819,3 @@ msgid ""
 "bottom for taller waves, the left for small waves, and the right for long "
 "waves."
 msgstr ""
-
-# Is this word appropriate/common?
-# Teach Yourself Gaelic Dictionary: Boyd Robertson & Ian Taylor
-#, fuzzy
-#~ msgid "Sparkles"
-#~ msgstr "Lainnir"
-
-# Gràmar?
-# Is the word "lainnir" appropriate/common?
-#~ msgid "Click and move to draw sparkles."
-#~ msgstr "Briog agus slaod airson lainnir a dhèanamh dealbh."

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: lv\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-07-26 17:26-0700\n"
+"POT-Creation-Date: 2007-08-08 00:04-0700\n"
 "PO-Revision-Date: 2007-05-14 18:13-0700\n"
 "Last-Translator: Raivis Strogonovs <raivucis@gmail.com>\n"
 "Language-Team: Valoda <raivucis@gmail.com>\n"
@@ -200,6 +200,11 @@ msgstr "Pentagons"
 msgid "Rhombus"
 msgstr "Rombs"
 
+#. Octagon shape tool (8 sides)
+#, fuzzy
+msgid "Octagon"
+msgstr "Pentagons"
+
 #. Description of a square
 msgid "A square is a rectangle with four equal sides."
 msgstr "Kvadrāts ir figūra ar četrām vienādām malām."
@@ -229,6 +234,10 @@ msgstr "Pentagonam ir piecas malas."
 
 msgid "A rhombus has four equal sides, and opposite sides are parallel."
 msgstr "Rombam ir četrasvienādas malas un pretējās malas ir paralēlas."
+
+#, fuzzy
+msgid "An octagon has eight equal sides."
+msgstr "Pentagonam ir piecas malas."
 
 #. Title of tool selector (buttons down the left)
 msgid "Tools"
@@ -672,6 +681,14 @@ msgid "Click and move the mouse around to draw a negative."
 msgstr ""
 "Nospied, pieturi peles pogu un velc peli lai zīmējumu padarītu negatīvu."
 
+msgid "Ripples"
+msgstr ""
+
+#, fuzzy
+msgid "Click to make ripples appear over your picture."
+msgstr ""
+"Nospied, pieturi peles pogu un velc peli lai bildi padarītu miglaināku."
+
 msgid "Rainbow"
 msgstr "Varavīksne"
 
@@ -683,6 +700,14 @@ msgstr "Smēre"
 
 msgid "Click and move the mouse around to smudge the picture."
 msgstr "Nospied, pieturi peles pogu un velc peli lai notraipītu zīmējumu."
+
+msgid "Sparkles"
+msgstr "Spīdeklīši"
+
+#, fuzzy
+msgid "Click and drag to draw glowing sparkles on your picture."
+msgstr ""
+"Nospied, pieturi peles pogu un velc peli lai bildi padarītu miglaināku."
 
 msgid "Tint"
 msgstr "Tinte"
@@ -708,9 +733,6 @@ msgstr ""
 
 #~ msgid "Yes, let's start fresh!"
 #~ msgstr "Jā, sāksim zīmēt!"
-
-#~ msgid "Sparkles"
-#~ msgstr "Spīdeklīši"
 
 #~ msgid "Click and move to draw sparkles."
 #~ msgstr "Nospied, pieturi peles pogu un velc peli lai zīmētu spīdeklīšus."

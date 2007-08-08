@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ms\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-07-26 17:26-0700\n"
+"POT-Creation-Date: 2007-08-08 00:04-0700\n"
 "PO-Revision-Date: 2004-08-23 16:06+0800\n"
 "Last-Translator: Muhammad Najmi bin Ahmad Zabidi <md_najmi@yahoo.com>\n"
 "Language-Team: Malay <kedidiemas@yahoogroups.com>\n"
@@ -205,6 +205,11 @@ msgstr "Pentagon"
 msgid "Rhombus"
 msgstr ""
 
+#. Octagon shape tool (8 sides)
+#, fuzzy
+msgid "Octagon"
+msgstr "Pentagon"
+
 #. Description of a square
 #, fuzzy
 msgid "A square is a rectangle with four equal sides."
@@ -233,6 +238,10 @@ msgstr "Pentagon ada lima bahagian."
 
 msgid "A rhombus has four equal sides, and opposite sides are parallel."
 msgstr ""
+
+#, fuzzy
+msgid "An octagon has eight equal sides."
+msgstr "Pentagon ada lima bahagian."
 
 #. Title of tool selector (buttons down the left)
 msgid "Tools"
@@ -682,6 +691,13 @@ msgstr "Negatif"
 msgid "Click and move the mouse around to draw a negative."
 msgstr "Klik dan gerakkan tetikus di sekeliling untuk menegatifkan gambar."
 
+msgid "Ripples"
+msgstr ""
+
+#, fuzzy
+msgid "Click to make ripples appear over your picture."
+msgstr "Klik dan gerakkan tetikus di sekeliling untuk menipiskan gambar."
+
 msgid "Rainbow"
 msgstr "Pelangi"
 
@@ -694,6 +710,13 @@ msgstr ""
 #, fuzzy
 msgid "Click and move the mouse around to smudge the picture."
 msgstr "Klik dan gerakkan tetikus di sekeliling untuk mengaburkan gambar."
+
+msgid "Sparkles"
+msgstr "Percikan"
+
+#, fuzzy
+msgid "Click and drag to draw glowing sparkles on your picture."
+msgstr "Klik dan gerakkan tetikus di sekeliling untuk menipiskan gambar."
 
 #, fuzzy
 msgid "Tint"
@@ -720,9 +743,6 @@ msgstr ""
 #, fuzzy
 #~ msgid "Start a new picture?"
 #~ msgstr "Padam hasil kerja?"
-
-#~ msgid "Sparkles"
-#~ msgstr "Percikan"
 
 #~ msgid "Click and move to draw sparkles."
 #~ msgstr "Klik dan alihkan untuk melukis percikan."

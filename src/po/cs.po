@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: cs\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-07-26 17:26-0700\n"
+"POT-Creation-Date: 2007-08-08 00:04-0700\n"
 "PO-Revision-Date: 2006-06-21 12:50+0200\n"
 "Last-Translator: Václav Čermák <vaclav.cermak@gmail.com>\n"
 "Language-Team:  <cs@li.org>\n"
@@ -201,6 +201,11 @@ msgstr "Pětiúhelník"
 msgid "Rhombus"
 msgstr "Kosočtverec"
 
+#. Octagon shape tool (8 sides)
+#, fuzzy
+msgid "Octagon"
+msgstr "Pětiúhelník"
+
 #. Description of a square
 msgid "A square is a rectangle with four equal sides."
 msgstr "Čtverec je pravoúhelník se čtyřmi stejnými stranami."
@@ -228,6 +233,10 @@ msgstr "Pětiúhelník má pět stran."
 
 msgid "A rhombus has four equal sides, and opposite sides are parallel."
 msgstr "Kosočtverec má čtyři stejné strany, protilehlé jsou rovnoběžné."
+
+#, fuzzy
+msgid "An octagon has eight equal sides."
+msgstr "Pětiúhelník má pět stran."
 
 #. Title of tool selector (buttons down the left)
 msgid "Tools"
@@ -663,6 +672,13 @@ msgstr "Negativ"
 msgid "Click and move the mouse around to draw a negative."
 msgstr "Klepni a pohybuj myší - vykreslíš negativ."
 
+msgid "Ripples"
+msgstr ""
+
+#, fuzzy
+msgid "Click to make ripples appear over your picture."
+msgstr "Klepni a pohybuj myší - rozostříš obrázek."
+
 msgid "Rainbow"
 msgstr "Duha"
 
@@ -674,6 +690,13 @@ msgstr "Rozmazat"
 
 msgid "Click and move the mouse around to smudge the picture."
 msgstr "Klepni a pohybuj myší - rozmažeš obrázek."
+
+msgid "Sparkles"
+msgstr "Jiskry"
+
+#, fuzzy
+msgid "Click and drag to draw glowing sparkles on your picture."
+msgstr "Klepni a pohybuj myší - rozostříš obrázek."
 
 msgid "Tint"
 msgstr "Obarvit"
@@ -699,9 +722,6 @@ msgstr ""
 
 #~ msgid "Yes, let's start fresh!"
 #~ msgstr "Ano, začít znovu!"
-
-#~ msgid "Sparkles"
-#~ msgstr "Jiskry"
 
 #~ msgid "Click and move to draw sparkles."
 #~ msgstr "Klepni a pohybuj myší - nakreslíš jiskry."

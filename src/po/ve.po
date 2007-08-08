@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TuxPaint 0.9.16\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-07-26 17:26-0700\n"
+"POT-Creation-Date: 2007-08-08 00:04-0700\n"
 "PO-Revision-Date: 2006-09-21 20:04+0200\n"
 "Last-Translator: Shumani Mercy Ṋevhulaudzi <nevhulaudzi@saps.org.za>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -201,6 +201,11 @@ msgstr "Khuḓaṱhanu"
 msgid "Rhombus"
 msgstr "Rombasi"
 
+#. Octagon shape tool (8 sides)
+#, fuzzy
+msgid "Octagon"
+msgstr "Khuḓaṱhanu"
+
 #. Description of a square
 msgid "A square is a rectangle with four equal sides."
 msgstr "Tshikweaa ndi khuḓandeiṋa ire na matungo maṋa ane a lingana."
@@ -231,6 +236,10 @@ msgstr "Khuḓaṱhanu i na matungo maṱanu."
 msgid "A rhombus has four equal sides, and opposite sides are parallel."
 msgstr ""
 "Rombasi ina matungo maṋa ane a eḓana, matungo o fhambanaho ndi mutalobuḓo."
+
+#, fuzzy
+msgid "An octagon has eight equal sides."
+msgstr "Khuḓaṱhanu i na matungo maṱanu."
 
 #. Title of tool selector (buttons down the left)
 msgid "Tools"
@@ -678,6 +687,14 @@ msgstr "Murunzi"
 msgid "Click and move the mouse around to draw a negative."
 msgstr "Kiḽikani ni sudzuluse mausu u mona u ola murunzi."
 
+msgid "Ripples"
+msgstr ""
+
+#, fuzzy
+msgid "Click to make ripples appear over your picture."
+msgstr ""
+"Kiḽikani ni sudzuluse mausu u mona u ita uri tshifanyiso tshi si vhonale."
+
 msgid "Rainbow"
 msgstr "Musengavhadzimu"
 
@@ -689,6 +706,14 @@ msgstr "Ḓodza"
 
 msgid "Click and move the mouse around to smudge the picture."
 msgstr "Kiḽikani ni sudzuluse mausu u mona u ḓodza tshifanyiso."
+
+msgid "Sparkles"
+msgstr "Ṱhase"
+
+#, fuzzy
+msgid "Click and drag to draw glowing sparkles on your picture."
+msgstr ""
+"Kiḽikani ni sudzuluse mausu u mona u ita uri tshifanyiso tshi si vhonale."
 
 msgid "Tint"
 msgstr "Muvhala"
@@ -715,9 +740,6 @@ msgstr ""
 
 #~ msgid "Yes, let's start fresh!"
 #~ msgstr "Ee, kha ri thome nga huswa!"
-
-#~ msgid "Sparkles"
-#~ msgstr "Ṱhase"
 
 #~ msgid "Click and move to draw sparkles."
 #~ msgstr "Kiḽikani ni sudzuluwe u ola ṱhase."

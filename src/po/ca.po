@@ -17,7 +17,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Tuxpaint cvs 2007-06-23\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-07-26 17:26-0700\n"
+"POT-Creation-Date: 2007-08-08 00:04-0700\n"
 "PO-Revision-Date: 2007-06-24 11:39+0200\n"
 "Last-Translator: Pere Pujal i Carabantes <ppujal@airtel.net>\n"
 "Language-Team: Català <linux-ca@chanae.alphanet.ch>\n"
@@ -212,6 +212,11 @@ msgstr "Pentàgon"
 msgid "Rhombus"
 msgstr "Romb"
 
+#. Octagon shape tool (8 sides)
+#, fuzzy
+msgid "Octagon"
+msgstr "Pentàgon"
+
 #. Description of a square
 msgid "A square is a rectangle with four equal sides."
 msgstr "Un quadrat és un rectangle amb quatre cares iguals."
@@ -241,6 +246,10 @@ msgstr "Un pentàgon té cinc cares."
 
 msgid "A rhombus has four equal sides, and opposite sides are parallel."
 msgstr "Un romb té quatre cares iguals i les cares oposades són paralel·les."
+
+#, fuzzy
+msgid "An octagon has eight equal sides."
+msgstr "Un pentàgon té cinc cares."
 
 #. Title of tool selector (buttons down the left)
 msgid "Tools"
@@ -680,6 +689,13 @@ msgstr "Negatiu"
 msgid "Click and move the mouse around to draw a negative."
 msgstr "Feu clic i moveu el ratolí per fer un negatiu."
 
+msgid "Ripples"
+msgstr ""
+
+#, fuzzy
+msgid "Click to make ripples appear over your picture."
+msgstr "Feu clic i moveu el ratolí per fer aprimar la imatge."
+
 msgid "Rainbow"
 msgstr "Arc de Sant Martí"
 
@@ -691,6 +707,13 @@ msgstr "Dit"
 
 msgid "Click and move the mouse around to smudge the picture."
 msgstr "Feu clic i moveu el ratolí per passar el dit pel dibuix."
+
+msgid "Sparkles"
+msgstr "Espurnes"
+
+#, fuzzy
+msgid "Click and drag to draw glowing sparkles on your picture."
+msgstr "Feu clic i moveu el ratolí per fer aprimar la imatge."
 
 msgid "Tint"
 msgstr "Entinta"
@@ -716,9 +739,6 @@ msgstr ""
 
 #~ msgid "Yes, let's start fresh!"
 #~ msgstr "Sí, comencem-ne un de nou!"
-
-#~ msgid "Sparkles"
-#~ msgstr "Espurnes"
 
 #~ msgid "Click and move to draw sparkles."
 #~ msgstr "Feu clic i moveu per dibuixar guspires."

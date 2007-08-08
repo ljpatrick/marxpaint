@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-07-26 17:26-0700\n"
+"POT-Creation-Date: 2007-08-08 00:04-0700\n"
 "PO-Revision-Date: 2007-03-15 17:27+0530\n"
 "Last-Translator: pavithran <pavithran.s@gmail.com>\n"
 "Language-Team: Telugu <indlinux-telugu@lists.sourceforge.net>\n"
@@ -201,6 +201,11 @@ msgstr "పంచకోణాకారము."
 msgid "Rhombus"
 msgstr ""
 
+#. Octagon shape tool (8 sides)
+#, fuzzy
+msgid "Octagon"
+msgstr "పంచకోణాకారము."
+
 #. Description of a square
 msgid "A square is a rectangle with four equal sides."
 msgstr "దీర్ఘ  చతురస్రము కి నాలుగు పక్కలు సమానము గా ఉంటే అది చతురస్రము"
@@ -227,6 +232,10 @@ msgstr "పంచకోణాకారము కి అయిదు పక్క
 
 msgid "A rhombus has four equal sides, and opposite sides are parallel."
 msgstr ""
+
+#, fuzzy
+msgid "An octagon has eight equal sides."
+msgstr "పంచకోణాకారము కి అయిదు పక్కలు ఉంటాయి"
 
 #. Title of tool selector (buttons down the left)
 msgid "Tools"
@@ -657,6 +666,13 @@ msgstr "వ్యతిరేఖార్ధమైన"
 msgid "Click and move the mouse around to draw a negative."
 msgstr ""
 
+msgid "Ripples"
+msgstr ""
+
+#, fuzzy
+msgid "Click to make ripples appear over your picture."
+msgstr "చిత్రానికి మఱక వేయడానికి క్లిక్ చేసి దాని చుట్టూ జరపండి"
+
 msgid "Rainbow"
 msgstr "ఇంద్ర ధనస్సు"
 
@@ -668,6 +684,13 @@ msgstr "మచ్చ"
 
 msgid "Click and move the mouse around to smudge the picture."
 msgstr "చిత్రానికి మచ్చ  వేయడానికి క్లిక్ చేసి దాని చుట్టూ జరపండి"
+
+msgid "Sparkles"
+msgstr "మెరుపులు"
+
+#, fuzzy
+msgid "Click and drag to draw glowing sparkles on your picture."
+msgstr "చిత్రానికి మఱక వేయడానికి క్లిక్ చేసి దాని చుట్టూ జరపండి"
 
 msgid "Tint"
 msgstr "లేత చాయ"
@@ -693,9 +716,6 @@ msgstr ""
 
 #~ msgid "Yes, let's start fresh!"
 #~ msgstr "అవును కొత్తగా మొదలు పెట్టుడాము!"
-
-#~ msgid "Sparkles"
-#~ msgstr "మెరుపులు"
 
 #~ msgid "Click and move to draw sparkles."
 #~ msgstr "మెరుపులు గీయటానికి క్లిక్ చేసి జరపండి"

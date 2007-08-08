@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint-0.9.17\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-07-26 17:26-0700\n"
+"POT-Creation-Date: 2007-08-08 00:04-0700\n"
 "PO-Revision-Date: 2007-07-11 23:28+0930\n"
 "Last-Translator: Clytie Siddall <clytie@riverland.net.au>\n"
 "Language-Team: Vietnamese <vi-VN@googlegroups.com>\n"
@@ -203,6 +203,11 @@ msgstr "Năm cạnh"
 msgid "Rhombus"
 msgstr "Thoi"
 
+#. Octagon shape tool (8 sides)
+#, fuzzy
+msgid "Octagon"
+msgstr "Năm cạnh"
+
 #. Description of a square
 msgid "A square is a rectangle with four equal sides."
 msgstr "Hình vuông là hình chữ nhật có bốn cạnh bằng nhau."
@@ -231,6 +236,10 @@ msgstr "Hình năm canh có ... năm cạnh. :)"
 msgid "A rhombus has four equal sides, and opposite sides are parallel."
 msgstr ""
 "Hình thoi có bốn cạnh bằng nhau, mỗi cặp cạnh đối diện với nhau là song song."
+
+#, fuzzy
+msgid "An octagon has eight equal sides."
+msgstr "Hình năm canh có ... năm cạnh. :)"
 
 #. Title of tool selector (buttons down the left)
 msgid "Tools"
@@ -665,6 +674,13 @@ msgstr "Âm"
 msgid "Click and move the mouse around to draw a negative."
 msgstr "Nhắp và di chuột để vẽ hình âm (màu ngược lại)."
 
+msgid "Ripples"
+msgstr ""
+
+#, fuzzy
+msgid "Click to make ripples appear over your picture."
+msgstr "Nhắp và di chuột vòng quanh để làm mờ hình."
+
 msgid "Rainbow"
 msgstr "Cầu vồng"
 
@@ -676,6 +692,13 @@ msgstr "Nhoè"
 
 msgid "Click and move the mouse around to smudge the picture."
 msgstr "Nhắp và di chuột vòng quanh để làm nhoè hình."
+
+msgid "Sparkles"
+msgstr "Lấp lánh"
+
+#, fuzzy
+msgid "Click and drag to draw glowing sparkles on your picture."
+msgstr "Nhắp và di chuột vòng quanh để làm mờ hình."
 
 msgid "Tint"
 msgstr "Nhuốm"
@@ -701,9 +724,6 @@ msgstr ""
 
 #~ msgid "Yes, let's start fresh!"
 #~ msgstr "Có phải, bắt đầu lại."
-
-#~ msgid "Sparkles"
-#~ msgstr "Lấp lánh"
 
 #~ msgid "Click and move to draw sparkles."
 #~ msgstr "Nhắp và di chuôt để vẽ lấp lánh."

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TuxPaint\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-07-26 17:26-0700\n"
+"POT-Creation-Date: 2007-08-08 00:04-0700\n"
 "PO-Revision-Date: 2005-10-10 23:41+0300\n"
 "Last-Translator: Giasher <giasher@telenet.ge>\n"
 "Language-Team: Gia Shervashidze <giasher@telenet.ge>\n"
@@ -204,6 +204,11 @@ msgstr "ხუთკუთხედი"
 msgid "Rhombus"
 msgstr "რომბი"
 
+#. Octagon shape tool (8 sides)
+#, fuzzy
+msgid "Octagon"
+msgstr "ხუთკუთხედი"
+
 #. Description of a square
 msgid "A square is a rectangle with four equal sides."
 msgstr "კვადრათი მართკუთხედედია ოთხივე ტოლი გვერდით."
@@ -231,6 +236,10 @@ msgstr "ხუთკუთხედს ხუთი გვერდი (და �
 
 msgid "A rhombus has four equal sides, and opposite sides are parallel."
 msgstr "რომბს ოთხი ტოლი გვერდი აქვს და საპირისპირო გვერდები პარალელურია."
+
+#, fuzzy
+msgid "An octagon has eight equal sides."
+msgstr "ხუთკუთხედს ხუთი გვერდი (და კუთხე!) აქვს"
 
 #. Title of tool selector (buttons down the left)
 msgid "Tools"
@@ -667,6 +676,13 @@ msgstr "ნეგატივი"
 msgid "Click and move the mouse around to draw a negative."
 msgstr "დაწკაპეთ და გადაატარეთ ნახატს მისი ნაწილის ნეგატივად გადასაქცევად."
 
+msgid "Ripples"
+msgstr ""
+
+#, fuzzy
+msgid "Click to make ripples appear over your picture."
+msgstr "დაწკაპეთ და გადაატარეთ ნახატს მისი ნაწილის დასაწვრილებლად."
+
 msgid "Rainbow"
 msgstr "ცისარტყელა"
 
@@ -678,6 +694,13 @@ msgstr "ლაქები"
 
 msgid "Click and move the mouse around to smudge the picture."
 msgstr "დაწკაპეთ და შემოატარეთ ნახატს ასაალებლად."
+
+msgid "Sparkles"
+msgstr "შხეფები"
+
+#, fuzzy
+msgid "Click and drag to draw glowing sparkles on your picture."
+msgstr "დაწკაპეთ და გადაატარეთ ნახატს მისი ნაწილის დასაწვრილებლად."
 
 msgid "Tint"
 msgstr "ფერის შეცვლა"
@@ -701,9 +724,6 @@ msgstr ""
 #, fuzzy
 #~ msgid "Start a new picture?"
 #~ msgstr "წავშალო ეს ნახატი?"
-
-#~ msgid "Sparkles"
-#~ msgstr "შხეფები"
 
 #~ msgid "Click and move to draw sparkles."
 #~ msgstr "დაწკაპეთ და გადაატარეთ ნახატს შხეფების მისახატად."

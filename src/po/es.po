@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TuxPaint 0.9.17\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-07-26 17:26-0700\n"
+"POT-Creation-Date: 2007-08-08 00:04-0700\n"
 "PO-Revision-Date: 2007-07-01 01:29-0300\n"
 "Last-Translator: Gabriel Gazzán <ggabriel@internet.com.uy>\n"
 "Language-Team: Español <gablistas@gmail.com>\n"
@@ -199,6 +199,11 @@ msgstr "Pentágono"
 msgid "Rhombus"
 msgstr "Rombo"
 
+#. Octagon shape tool (8 sides)
+#, fuzzy
+msgid "Octagon"
+msgstr "Pentágono"
+
 #. Description of a square
 msgid "A square is a rectangle with four equal sides."
 msgstr "Un cuadrado es un rectángulo con sus cuatro lados iguales."
@@ -227,6 +232,10 @@ msgstr "Un pentágono tiene cinco lados."
 
 msgid "A rhombus has four equal sides, and opposite sides are parallel."
 msgstr "Un rombo tiene cuatro lados iguales, con sus lados opuestos paralelos."
+
+#, fuzzy
+msgid "An octagon has eight equal sides."
+msgstr "Un pentágono tiene cinco lados."
 
 #. Title of tool selector (buttons down the left)
 msgid "Tools"
@@ -664,6 +673,13 @@ msgstr "Negativo"
 msgid "Click and move the mouse around to draw a negative."
 msgstr "Haz clic y arrastra el ratón para dibujar en negativo."
 
+msgid "Ripples"
+msgstr ""
+
+#, fuzzy
+msgid "Click to make ripples appear over your picture."
+msgstr "Haz clic y arrastra el ratón para desenfocar la imagen."
+
 msgid "Rainbow"
 msgstr "Arcoiris"
 
@@ -675,6 +691,13 @@ msgstr "Manchar"
 
 msgid "Click and move the mouse around to smudge the picture."
 msgstr "Haz clic y arrastra el ratón para manchar la imagen."
+
+msgid "Sparkles"
+msgstr "Chispas"
+
+#, fuzzy
+msgid "Click and drag to draw glowing sparkles on your picture."
+msgstr "Haz clic y arrastra el ratón para desenfocar la imagen."
 
 msgid "Tint"
 msgstr "Teñir"
@@ -700,9 +723,6 @@ msgstr ""
 
 #~ msgid "Yes, let's start fresh!"
 #~ msgstr "¡Sí, comenzar de cero!"
-
-#~ msgid "Sparkles"
-#~ msgstr "Chispas"
 
 #~ msgid "Click and move to draw sparkles."
 #~ msgstr "Haz clic y arrastra el ratón para dibujar chispas."

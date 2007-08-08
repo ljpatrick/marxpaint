@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TuxPaint\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-07-26 17:26-0700\n"
+"POT-Creation-Date: 2007-08-08 00:04-0700\n"
 "PO-Revision-Date: 2007-04-04 20:05+0300\n"
 "Last-Translator: Сергей Попов <skein@rambler.ru>\n"
 "Language-Team: Dmitriy Ivanov <ace22b@myrealbox.com>\n"
@@ -200,6 +200,11 @@ msgstr "Пятиугольник"
 msgid "Rhombus"
 msgstr "Ромб"
 
+#. Octagon shape tool (8 sides)
+#, fuzzy
+msgid "Octagon"
+msgstr "Пятиугольник"
+
 #. Description of a square
 msgid "A square is a rectangle with four equal sides."
 msgstr "Квадрат - прямоугольник с четырьмя равными сторонами."
@@ -230,6 +235,10 @@ msgstr "А у пятиугольника пять сторон (и углов!)"
 msgid "A rhombus has four equal sides, and opposite sides are parallel."
 msgstr ""
 "У ромба все четыре стороны равны и противоположные стороны параллельны."
+
+#, fuzzy
+msgid "An octagon has eight equal sides."
+msgstr "А у пятиугольника пять сторон (и углов!)"
 
 #. Title of tool selector (buttons down the left)
 msgid "Tools"
@@ -668,6 +677,13 @@ msgstr "Негатив"
 msgid "Click and move the mouse around to draw a negative."
 msgstr "Щёлкните и поводите по картинке, чтобы превратить её часть в негатив."
 
+msgid "Ripples"
+msgstr ""
+
+#, fuzzy
+msgid "Click to make ripples appear over your picture."
+msgstr "Щёлкните и поводите по картинке, чтобы размыть её часть."
+
 msgid "Rainbow"
 msgstr "Радуга"
 
@@ -679,6 +695,13 @@ msgstr "Пятна"
 
 msgid "Click and move the mouse around to smudge the picture."
 msgstr "Щёлкните и поводите по картинке, чтобы испачкать её часть."
+
+msgid "Sparkles"
+msgstr "Искры"
+
+#, fuzzy
+msgid "Click and drag to draw glowing sparkles on your picture."
+msgstr "Щёлкните и поводите по картинке, чтобы размыть её часть."
 
 msgid "Tint"
 msgstr "Изменить цвет"
@@ -704,9 +727,6 @@ msgstr ""
 
 #~ msgid "Yes, let's start fresh!"
 #~ msgstr "Да, начнём заново!"
-
-#~ msgid "Sparkles"
-#~ msgstr "Искры"
 
 #~ msgid "Click and move to draw sparkles."
 #~ msgstr "Щёлкните и поводите по картинке, чтобы нарисовать искры."

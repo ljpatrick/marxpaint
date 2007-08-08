@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pl\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-07-26 17:26-0700\n"
+"POT-Creation-Date: 2007-08-08 00:04-0700\n"
 "PO-Revision-Date: 2007-05-14 19:56+0200\n"
 "Last-Translator: Michal Terbert <michaeel@skrzynka.pl>\n"
 "Language-Team: Polish\n"
@@ -202,6 +202,11 @@ msgstr "Pięciokąt"
 msgid "Rhombus"
 msgstr "Romb"
 
+#. Octagon shape tool (8 sides)
+#, fuzzy
+msgid "Octagon"
+msgstr "Pięciokąt"
+
 #. Description of a square
 msgid "A square is a rectangle with four equal sides."
 msgstr "Kwadrat jest prostokątem o takich samych bokach."
@@ -232,6 +237,10 @@ msgid "A rhombus has four equal sides, and opposite sides are parallel."
 msgstr ""
 "Romb ma cztery takie same boki, a boki leżące na przeciw siebie są "
 "równoległe."
+
+#, fuzzy
+msgid "An octagon has eight equal sides."
+msgstr "Pięciokąt ma pięć boków."
 
 #. Title of tool selector (buttons down the left)
 msgid "Tools"
@@ -669,6 +678,13 @@ msgstr "Negatyw"
 msgid "Click and move the mouse around to draw a negative."
 msgstr "Kliknij i przesuń myszką, aby zrobić z obrazka negatyw."
 
+msgid "Ripples"
+msgstr ""
+
+#, fuzzy
+msgid "Click to make ripples appear over your picture."
+msgstr "Kliknij i przesuń myszką dookoła, aby rozmazać obrazek."
+
 msgid "Rainbow"
 msgstr "Tęcza"
 
@@ -680,6 +696,13 @@ msgstr "Smuga"
 
 msgid "Click and move the mouse around to smudge the picture."
 msgstr "Kliknij i przesuń myszką dookoła, aby zostawić smugę na obrazku."
+
+msgid "Sparkles"
+msgstr "Iskierki"
+
+#, fuzzy
+msgid "Click and drag to draw glowing sparkles on your picture."
+msgstr "Kliknij i przesuń myszką dookoła, aby rozmazać obrazek."
 
 msgid "Tint"
 msgstr "Farbowanie"
@@ -705,9 +728,6 @@ msgstr ""
 
 #~ msgid "Yes, let's start fresh!"
 #~ msgstr "Tak, zacznijmy od nowa!"
-
-#~ msgid "Sparkles"
-#~ msgstr "Iskierki"
 
 #~ msgid "Click and move to draw sparkles."
 #~ msgstr "Kliknij i przesuń, aby narysować iskierki."

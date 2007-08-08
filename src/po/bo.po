@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-07-26 17:26-0700\n"
+"POT-Creation-Date: 2007-08-08 00:04-0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -203,6 +203,11 @@ msgstr "zur.lV."
 msgid "Rhombus"
 msgstr "\\.lm.zur.cn."
 
+#. Octagon shape tool (8 sides)
+#, fuzzy
+msgid "Octagon"
+msgstr "zur.lV."
+
 #. Description of a square
 msgid "A square is a rectangle with four equal sides."
 msgstr ""
@@ -228,6 +233,9 @@ msgid "A pentagon has five sides."
 msgstr ""
 
 msgid "A rhombus has four equal sides, and opposite sides are parallel."
+msgstr ""
+
+msgid "An octagon has eight equal sides."
 msgstr ""
 
 #. Title of tool selector (buttons down the left)
@@ -657,6 +665,12 @@ msgstr "dgg.sG+ai."
 msgid "Click and move the mouse around to draw a negative."
 msgstr ""
 
+msgid "Ripples"
+msgstr ""
+
+msgid "Click to make ripples appear over your picture."
+msgstr ""
+
 msgid "Rainbow"
 msgstr "aja."
 
@@ -667,6 +681,12 @@ msgid "Smudge"
 msgstr "ng.nog."
 
 msgid "Click and move the mouse around to smudge the picture."
+msgstr ""
+
+msgid "Sparkles"
+msgstr "mi.cxg.a[or.b."
+
+msgid "Click and drag to draw glowing sparkles on your picture."
 msgstr ""
 
 msgid "Tint"
@@ -684,9 +704,6 @@ msgid ""
 "bottom for taller waves, the left for small waves, and the right for long "
 "waves."
 msgstr ""
-
-#~ msgid "Sparkles"
-#~ msgstr "mi.cxg.a[or.b."
 
 #~ msgid "Open?"
 #~ msgstr "q.\\Yed.b."

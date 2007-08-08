@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint 0.9.16\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-07-26 17:26-0700\n"
+"POT-Creation-Date: 2007-08-08 00:04-0700\n"
 "PO-Revision-Date: 2006-09-28 09:04+0200\n"
 "Last-Translator: Petri Jooste <rkwjpj@puk.ac.za>\n"
 "Language-Team: Afrikaans <rkwjpj@puk.ac.za>\n"
@@ -202,6 +202,11 @@ msgstr "Vyfhoek"
 msgid "Rhombus"
 msgstr "Rombus"
 
+#. Octagon shape tool (8 sides)
+#, fuzzy
+msgid "Octagon"
+msgstr "Vyfhoek"
+
 #. Description of a square
 msgid "A square is a rectangle with four equal sides."
 msgstr "'n Vierkant is 'n reghoek met vier ewe lang kante."
@@ -231,6 +236,10 @@ msgstr "'n Vyvhoek het vyf kante."
 
 msgid "A rhombus has four equal sides, and opposite sides are parallel."
 msgstr "'n Rombus het 4 ewe lang kante en teenoorstaande kante is parallel."
+
+#, fuzzy
+msgid "An octagon has eight equal sides."
+msgstr "'n Vyvhoek het vyf kante."
 
 #. Title of tool selector (buttons down the left)
 msgid "Tools"
@@ -667,6 +676,13 @@ msgstr "Negatief"
 msgid "Click and move the mouse around to draw a negative."
 msgstr "Klik en beweeg die muis om 'n negatief te maak."
 
+msgid "Ripples"
+msgstr ""
+
+#, fuzzy
+msgid "Click to make ripples appear over your picture."
+msgstr "Klik en beweeg die muis om die prent uit fokus te maak."
+
 msgid "Rainbow"
 msgstr "Reënboog"
 
@@ -678,6 +694,13 @@ msgstr "Smeer"
 
 msgid "Click and move the mouse around to smudge the picture."
 msgstr "Klik en beweeg die muis om die prent te smeer."
+
+msgid "Sparkles"
+msgstr "Vonke"
+
+#, fuzzy
+msgid "Click and drag to draw glowing sparkles on your picture."
+msgstr "Klik en beweeg die muis om die prent uit fokus te maak."
 
 msgid "Tint"
 msgstr "Tint"
@@ -703,9 +726,6 @@ msgstr ""
 
 #~ msgid "Yes, let's start fresh!"
 #~ msgstr "Ja, kom ons begin oor!"
-
-#~ msgid "Sparkles"
-#~ msgstr "Vonke"
 
 #~ msgid "Click and move to draw sparkles."
 #~ msgstr "Klik en beweeg om vonke te teken."

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TuxPaint\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-07-26 17:26-0700\n"
+"POT-Creation-Date: 2007-08-08 00:04-0700\n"
 "PO-Revision-Date: 2005-09-13 04:48+0200\n"
 "Last-Translator: Serhij Dubyk <dubyk@lsl.lviv.ua>\n"
 "Language-Team: Serhij Dubyk <dubyk@lsl.lviv.ua>\n"
@@ -206,6 +206,11 @@ msgstr "П'ятикутник"
 msgid "Rhombus"
 msgstr "Ромб"
 
+#. Octagon shape tool (8 sides)
+#, fuzzy
+msgid "Octagon"
+msgstr "П'ятикутник"
+
 #. Description of a square
 #, fuzzy
 msgid "A square is a rectangle with four equal sides."
@@ -237,6 +242,10 @@ msgstr "Кожен елемент має викривлені сторони"
 
 msgid "A rhombus has four equal sides, and opposite sides are parallel."
 msgstr "Ромб має чотири рівні сторони, і протилежні сторони паралельні."
+
+#, fuzzy
+msgid "An octagon has eight equal sides."
+msgstr "Кожен елемент має викривлені сторони"
 
 #. Title of tool selector (buttons down the left)
 msgid "Tools"
@@ -701,6 +710,13 @@ msgstr "Негатив"
 msgid "Click and move the mouse around to draw a negative."
 msgstr "Клацніть та поводіть по малюнку, щоб зробити з того негатив."
 
+msgid "Ripples"
+msgstr ""
+
+#, fuzzy
+msgid "Click to make ripples appear over your picture."
+msgstr "Клацніть та поводіть по малюнку, щоб трохи порозмазувати його."
+
 msgid "Rainbow"
 msgstr "Веселка"
 
@@ -713,6 +729,13 @@ msgstr "Палець"
 
 #, fuzzy
 msgid "Click and move the mouse around to smudge the picture."
+msgstr "Клацніть та поводіть по малюнку, щоб трохи порозмазувати його."
+
+msgid "Sparkles"
+msgstr "Іскри"
+
+#, fuzzy
+msgid "Click and drag to draw glowing sparkles on your picture."
 msgstr "Клацніть та поводіть по малюнку, щоб трохи порозмазувати його."
 
 #, fuzzy
@@ -740,9 +763,6 @@ msgstr ""
 #, fuzzy
 #~ msgid "Start a new picture?"
 #~ msgstr "Видалити цей малюнок?"
-
-#~ msgid "Sparkles"
-#~ msgstr "Іскри"
 
 #~ msgid "Click and move to draw sparkles."
 #~ msgstr "Клацніть та поводіть по малюнку, щоб намалювати іскри."

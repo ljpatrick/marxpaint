@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TuxPaint 0.0.1pre\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-07-26 17:26-0700\n"
+"POT-Creation-Date: 2007-08-08 00:04-0700\n"
 "PO-Revision-Date: 2005-01-09 14:49+0100\n"
 "Last-Translator: Gugusse <titi>\n"
 "Language-Team: Breton <drouizig@drouizig.org>\n"
@@ -200,6 +200,11 @@ msgstr "Pempkorn"
 msgid "Rhombus"
 msgstr ""
 
+#. Octagon shape tool (8 sides)
+#, fuzzy
+msgid "Octagon"
+msgstr "Pempkorn"
+
 #. Description of a square
 #, fuzzy
 msgid "A square is a rectangle with four equal sides."
@@ -228,6 +233,10 @@ msgstr "Ur pempkorneg en deus pemp tu."
 
 msgid "A rhombus has four equal sides, and opposite sides are parallel."
 msgstr ""
+
+#, fuzzy
+msgid "An octagon has eight equal sides."
+msgstr "Ur pempkorneg en deus pemp tu."
 
 #. Title of tool selector (buttons down the left)
 msgid "Tools"
@@ -669,6 +678,13 @@ msgstr "Rakluc'henn"
 msgid "Click and move the mouse around to draw a negative."
 msgstr "Klik ha fiñv al logodenn evit kaout ar rakluc'henn."
 
+msgid "Ripples"
+msgstr ""
+
+#, fuzzy
+msgid "Click to make ripples appear over your picture."
+msgstr "Klik ha fiñv al logodenn evit displanaat ar skeudenn."
+
 msgid "Rainbow"
 msgstr "Gwareg ar Glav"
 
@@ -679,6 +695,13 @@ msgid "Smudge"
 msgstr "Displanaat"
 
 msgid "Click and move the mouse around to smudge the picture."
+msgstr "Klik ha fiñv al logodenn evit displanaat ar skeudenn."
+
+msgid "Sparkles"
+msgstr "Fulennoù"
+
+#, fuzzy
+msgid "Click and drag to draw glowing sparkles on your picture."
 msgstr "Klik ha fiñv al logodenn evit displanaat ar skeudenn."
 
 msgid "Tint"
@@ -704,9 +727,6 @@ msgstr ""
 #, fuzzy
 #~ msgid "Start a new picture?"
 #~ msgstr "Diverkañ an dresadenn-se ?"
-
-#~ msgid "Sparkles"
-#~ msgstr "Fulennoù"
 
 #~ msgid "Click and move to draw sparkles."
 #~ msgstr "Klik ha fiñv al logodenn evit tresañ gant fulennoù."

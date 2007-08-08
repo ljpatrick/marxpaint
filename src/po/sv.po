@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint 0.9.17\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-07-26 17:26-0700\n"
+"POT-Creation-Date: 2007-08-08 00:04-0700\n"
 "PO-Revision-Date: 2007-05-26 01:00+0100\n"
 "Last-Translator: Daniel Nylander <po@danielnylander.se>\n"
 "Language-Team: Swedish <tp-sv@listor.tp-sv.se>\n"
@@ -201,6 +201,11 @@ msgstr "Femhörning"
 msgid "Rhombus"
 msgstr "Romb"
 
+#. Octagon shape tool (8 sides)
+#, fuzzy
+msgid "Octagon"
+msgstr "Femhörning"
+
 #. Description of a square
 msgid "A square is a rectangle with four equal sides."
 msgstr "En fyrkant är en rektangel med fyra lika sidor."
@@ -228,6 +233,10 @@ msgstr "En femhörning har fem sidor."
 
 msgid "A rhombus has four equal sides, and opposite sides are parallel."
 msgstr "En romb har fyra lika sidor och motstående sidor är parallella."
+
+#, fuzzy
+msgid "An octagon has eight equal sides."
+msgstr "En femhörning har fem sidor."
 
 #. Title of tool selector (buttons down the left)
 msgid "Tools"
@@ -662,6 +671,13 @@ msgstr "Negativ"
 msgid "Click and move the mouse around to draw a negative."
 msgstr "Klicka och rör musen för att skapa ett negativ."
 
+msgid "Ripples"
+msgstr ""
+
+#, fuzzy
+msgid "Click to make ripples appear over your picture."
+msgstr "Klicka och rör musen för att göra den suddig."
+
 msgid "Rainbow"
 msgstr "Regnbåge"
 
@@ -673,6 +689,13 @@ msgstr "Kladda ut"
 
 msgid "Click and move the mouse around to smudge the picture."
 msgstr "Klicka och rör musen runt för att kladda ut bilden."
+
+msgid "Sparkles"
+msgstr "Gnistor"
+
+#, fuzzy
+msgid "Click and drag to draw glowing sparkles on your picture."
+msgstr "Klicka och rör musen för att göra den suddig."
 
 msgid "Tint"
 msgstr "Tona"
@@ -698,9 +721,6 @@ msgstr ""
 
 #~ msgid "Yes, let's start fresh!"
 #~ msgstr "Ja, börja från början!"
-
-#~ msgid "Sparkles"
-#~ msgstr "Gnistor"
 
 #~ msgid "Click and move to draw sparkles."
 #~ msgstr "Klicka och rör musen för att rita gnistor!"

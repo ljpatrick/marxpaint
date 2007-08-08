@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-07-26 17:26-0700\n"
+"POT-Creation-Date: 2007-08-08 00:04-0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -201,6 +201,10 @@ msgstr ""
 msgid "Rhombus"
 msgstr ""
 
+#. Octagon shape tool (8 sides)
+msgid "Octagon"
+msgstr ""
+
 #. Description of a square
 msgid "A square is a rectangle with four equal sides."
 msgstr ""
@@ -226,6 +230,9 @@ msgid "A pentagon has five sides."
 msgstr ""
 
 msgid "A rhombus has four equal sides, and opposite sides are parallel."
+msgstr ""
+
+msgid "An octagon has eight equal sides."
 msgstr ""
 
 #. Title of tool selector (buttons down the left)
@@ -651,6 +658,12 @@ msgstr ""
 msgid "Click and move the mouse around to draw a negative."
 msgstr ""
 
+msgid "Ripples"
+msgstr ""
+
+msgid "Click to make ripples appear over your picture."
+msgstr ""
+
 msgid "Rainbow"
 msgstr ""
 
@@ -661,6 +674,12 @@ msgid "Smudge"
 msgstr ""
 
 msgid "Click and move the mouse around to smudge the picture."
+msgstr ""
+
+msgid "Sparkles"
+msgstr ""
+
+msgid "Click and drag to draw glowing sparkles on your picture."
 msgstr ""
 
 msgid "Tint"

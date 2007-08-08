@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-07-26 17:26-0700\n"
+"POT-Creation-Date: 2007-08-08 00:04-0700\n"
 "PO-Revision-Date: 2007-05-29 11:29+0530\n"
 "Last-Translator: Kartik Mistry <kartik.mistry@gmail.com>\n"
 "Language-Team: Gujarati <team@utkarsh.org>\n"
@@ -200,6 +200,11 @@ msgstr "પંચકોણ"
 msgid "Rhombus"
 msgstr "સમચતુર્ભુજ"
 
+#. Octagon shape tool (8 sides)
+#, fuzzy
+msgid "Octagon"
+msgstr "પંચકોણ"
+
 #. Description of a square
 msgid "A square is a rectangle with four equal sides."
 msgstr "ચોરસ ચારેય સરખી બાજુઓ ધરાવતો ચતુષ્કોણ છે."
@@ -226,6 +231,10 @@ msgstr "પંચકોણને પાંચ બાજુઓ છે."
 
 msgid "A rhombus has four equal sides, and opposite sides are parallel."
 msgstr "સમચતુર્ભુજને ચાર સરખી બાજુઓ છે, અને સામસામેની બાજુઓ સમાંતર છે."
+
+#, fuzzy
+msgid "An octagon has eight equal sides."
+msgstr "પંચકોણને પાંચ બાજુઓ છે."
 
 #. Title of tool selector (buttons down the left)
 msgid "Tools"
@@ -656,6 +665,13 @@ msgstr "ઋણ"
 msgid "Click and move the mouse around to draw a negative."
 msgstr "ઋણ ચિત્ર બનાવવા માટે ક્લિક કરો અને માઉસ આજુ-બાજુ ખસેડો."
 
+msgid "Ripples"
+msgstr ""
+
+#, fuzzy
+msgid "Click to make ripples appear over your picture."
+msgstr "વિસ્તારને કાચ તકતીથી ભરવા માટે માઉસને ક્લિક કરીને ખેંચો."
+
 msgid "Rainbow"
 msgstr "મેઘધનુષ"
 
@@ -667,6 +683,13 @@ msgstr "ધબ્બો"
 
 msgid "Click and move the mouse around to smudge the picture."
 msgstr "ચિત્રમાં ધબ્બાઓ ઉમેરવા માઉસને ક્લિક કરો અને આજુ-બાજુ ખસેડો."
+
+msgid "Sparkles"
+msgstr "ચમકારાઓ"
+
+#, fuzzy
+msgid "Click and drag to draw glowing sparkles on your picture."
+msgstr "વિસ્તારને કાચ તકતીથી ભરવા માટે માઉસને ક્લિક કરીને ખેંચો."
 
 msgid "Tint"
 msgstr "આછો રંગ"
@@ -695,9 +718,6 @@ msgstr ""
 
 #~ msgid "Yes, let's start fresh!"
 #~ msgstr "હા, નવેસરથી શરૂ કરો!"
-
-#~ msgid "Sparkles"
-#~ msgstr "ચમકારાઓ"
 
 #~ msgid "Click and move to draw sparkles."
 #~ msgstr "ચમકારાઓ દોરવા માટે ક્લિક કરો અને ખસેડો."

@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: nb\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-07-26 17:26-0700\n"
+"POT-Creation-Date: 2007-08-08 00:04-0700\n"
 "PO-Revision-Date: 2007-07-19 20:37+0200\n"
 "Last-Translator: Karl Ove Hufthammer <karl@huftis.org>\n"
 "Language-Team: Norwegian Nynorsk <i18n-nn@lister.ping.uio.no>\n"
@@ -204,6 +204,11 @@ msgstr "Femkant"
 msgid "Rhombus"
 msgstr "Rhombus"
 
+#. Octagon shape tool (8 sides)
+#, fuzzy
+msgid "Octagon"
+msgstr "Femkant"
+
 #. Description of a square
 msgid "A square is a rectangle with four equal sides."
 msgstr "Et kvadrat er et rektangel med fire like sider."
@@ -230,6 +235,10 @@ msgstr "En femkant har fem sider."
 
 msgid "A rhombus has four equal sides, and opposite sides are parallel."
 msgstr "En rombe har fire like lange sider og motstående sider er parallelle."
+
+#, fuzzy
+msgid "An octagon has eight equal sides."
+msgstr "En femkant har fem sider."
 
 #. Title of tool selector (buttons down the left)
 msgid "Tools"
@@ -665,6 +674,14 @@ msgstr "Negativ"
 msgid "Click and move the mouse around to draw a negative."
 msgstr "Hold inne knappen og flytt rundt for å invertere tegningen."
 
+msgid "Ripples"
+msgstr ""
+
+#, fuzzy
+msgid "Click to make ripples appear over your picture."
+msgstr ""
+"Hold inne knappen og flytt rundt for å legge glassfliser over tegningen."
+
 msgid "Rainbow"
 msgstr "Regnbue"
 
@@ -676,6 +693,14 @@ msgstr "Gni ut"
 
 msgid "Click and move the mouse around to smudge the picture."
 msgstr "Hold inne knappen og flytt rundt for å gni tegningen utover."
+
+msgid "Sparkles"
+msgstr "Gnister"
+
+#, fuzzy
+msgid "Click and drag to draw glowing sparkles on your picture."
+msgstr ""
+"Hold inne knappen og flytt rundt for å legge glassfliser over tegningen."
 
 msgid "Tint"
 msgstr "Fargelegg"
@@ -703,9 +728,6 @@ msgstr ""
 
 #~ msgid "Yes, let's start fresh!"
 #~ msgstr "Ja, la oss starte på nytt!"
-
-#~ msgid "Sparkles"
-#~ msgstr "Gnister"
 
 #~ msgid "Click and move to draw sparkles."
 #~ msgstr "Hold inne knappen og flytt rundt for å tegne gnister."

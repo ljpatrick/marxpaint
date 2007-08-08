@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-07-26 17:26-0700\n"
+"POT-Creation-Date: 2007-08-08 00:04-0700\n"
 "PO-Revision-Date: 2007-04-26 15:45+0200\n"
 "Last-Translator: Joana Portia Antwi-Danso <portnass2003@yahoo.com>\n"
 "MIME-Version: 1.0\n"
@@ -202,6 +202,11 @@ msgstr "Nhyianum"
 msgid "Rhombus"
 msgstr "Nhyianankyeae"
 
+#. Octagon shape tool (8 sides)
+#, fuzzy
+msgid "Octagon"
+msgstr "Nhyianum"
+
 #. Description of a square
 msgid "A square is a rectangle with four equal sides."
 msgstr "Nhyianan yɛ nhyiae a ɛwɔ apɔw anan na ne nyinaa tenten yɛ pɛ."
@@ -229,6 +234,10 @@ msgstr "Wei yɛ nsensaeɛ nnum a ahyia."
 
 msgid "A rhombus has four equal sides, and opposite sides are parallel."
 msgstr "Wei yɛ nsensaeɛ nnan a ahyia, nsensaeɛ a ɛhwɛ anim no nyianaa yɛ pɛ."
+
+#, fuzzy
+msgid "An octagon has eight equal sides."
+msgstr "Wei yɛ nsensaeɛ nnum a ahyia."
 
 #. Title of tool selector (buttons down the left)
 msgid "Tools"
@@ -663,6 +672,13 @@ msgstr "Ne sunsum"
 msgid "Click and move the mouse around to draw a negative."
 msgstr "Mia so na ma ekura no drɔ ne sunsum."
 
+msgid "Ripples"
+msgstr ""
+
+#, fuzzy
+msgid "Click to make ripples appear over your picture."
+msgstr "Mia so na fa akura no to mfoni no so ma no nyɛ wisiwisi."
+
 msgid "Rainbow"
 msgstr "Nyankontɔn"
 
@@ -674,6 +690,13 @@ msgstr "Yɛ no wisiwisi"
 
 msgid "Click and move the mouse around to smudge the picture."
 msgstr "Fa akura no fa mfoni no so na ɛmpopa kakra."
+
+msgid "Sparkles"
+msgstr "Ɛtew gya"
+
+#, fuzzy
+msgid "Click and drag to draw glowing sparkles on your picture."
+msgstr "Mia so na fa akura no to mfoni no so ma no nyɛ wisiwisi."
 
 msgid "Tint"
 msgstr "Dumm"
@@ -699,9 +722,6 @@ msgstr ""
 
 #~ msgid "Yes, let's start fresh!"
 #~ msgstr "Aane, ma yɛnhyɛ aseɛ bio!"
-
-#~ msgid "Sparkles"
-#~ msgstr "Ɛtew gya"
 
 #~ msgid "Click and move to draw sparkles."
 #~ msgstr "Mia so na kɔ draw nea ɛte gya."

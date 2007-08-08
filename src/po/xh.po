@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 0.9.16\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-07-26 17:26-0700\n"
+"POT-Creation-Date: 2007-08-08 00:04-0700\n"
 "PO-Revision-Date: 2006-09-22 01:42+0200\n"
 "Last-Translator: Dwayne Bailey <dwayne@translate.org.za>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -201,6 +201,11 @@ msgstr "Okumbombontlanu"
 msgid "Rhombus"
 msgstr "Okumacalamane alinganayo angenazikona"
 
+#. Octagon shape tool (8 sides)
+#, fuzzy
+msgid "Octagon"
+msgstr "Okumbombontlanu"
+
 #. Description of a square
 msgid "A square is a rectangle with four equal sides."
 msgstr "Iskweri luxande olunamacala amane alinganayo."
@@ -229,6 +234,10 @@ msgstr "Umbombontlanu unamacala amahlanu."
 
 msgid "A rhombus has four equal sides, and opposite sides are parallel."
 msgstr "Irhombus inamacala amane alinganayo, namacala achaseneyo anxuseneyo."
+
+#, fuzzy
+msgid "An octagon has eight equal sides."
+msgstr "Umbombontlanu unamacala amahlanu."
 
 #. Title of tool selector (buttons down the left)
 msgid "Tools"
@@ -671,6 +680,13 @@ msgstr "Isithunzi sombala"
 msgid "Click and move the mouse around to draw a negative."
 msgstr "Nqomfa ushenxashenxise impuku ukuze uzobe isithunzi."
 
+msgid "Ripples"
+msgstr ""
+
+#, fuzzy
+msgid "Click to make ripples appear over your picture."
+msgstr "Nqomfa ushenxashenxise impuku ukuze udyobhe umfanekiso."
+
 msgid "Rainbow"
 msgstr "Umnyama"
 
@@ -681,6 +697,13 @@ msgid "Smudge"
 msgstr "Dyobha"
 
 msgid "Click and move the mouse around to smudge the picture."
+msgstr "Nqomfa ushenxashenxise impuku ukuze udyobhe umfanekiso."
+
+msgid "Sparkles"
+msgstr "Izikhazimlisi"
+
+#, fuzzy
+msgid "Click and drag to draw glowing sparkles on your picture."
 msgstr "Nqomfa ushenxashenxise impuku ukuze udyobhe umfanekiso."
 
 msgid "Tint"
@@ -707,9 +730,6 @@ msgstr ""
 
 #~ msgid "Yes, let's start fresh!"
 #~ msgstr "Ewe, masiqale ngokutsha!"
-
-#~ msgid "Sparkles"
-#~ msgstr "Izikhazimlisi"
 
 #~ msgid "Click and move to draw sparkles."
 #~ msgstr "Nqomfa ushenxise ukuze uzobe izikhanyisi."

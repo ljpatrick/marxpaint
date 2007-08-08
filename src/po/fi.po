@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: fi\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-07-26 17:26-0700\n"
+"POT-Creation-Date: 2007-08-08 00:04-0700\n"
 "PO-Revision-Date: 2006-05-14 12:35+0300\n"
 "Last-Translator: Niko Lewman <niko.lewman@edu.hel.fi>\n"
 "Language-Team: Finnisf\n"
@@ -202,6 +202,11 @@ msgstr "Viisikulmio"
 msgid "Rhombus"
 msgstr "Vinoneliö"
 
+#. Octagon shape tool (8 sides)
+#, fuzzy
+msgid "Octagon"
+msgstr "Viisikulmio"
+
 #. Description of a square
 #, fuzzy
 msgid "A square is a rectangle with four equal sides."
@@ -234,6 +239,10 @@ msgid "A rhombus has four equal sides, and opposite sides are parallel."
 msgstr ""
 "Vinoneliössä on neljä samanpituista sivua; vastakkaiset sivut ovat "
 "samansuuntaiset."
+
+#, fuzzy
+msgid "An octagon has eight equal sides."
+msgstr "Viisikulmiossa on viisi sivua."
 
 #. Title of tool selector (buttons down the left)
 msgid "Tools"
@@ -682,6 +691,13 @@ msgstr "Vastaväri"
 msgid "Click and move the mouse around to draw a negative."
 msgstr "Vaihda värit vastakkaisiksi liikuttamalla hiirtä nappi pohjassa."
 
+msgid "Ripples"
+msgstr ""
+
+#, fuzzy
+msgid "Click to make ripples appear over your picture."
+msgstr "Voit sumentaa kuvaa liikuttamalla hiirtä nappi pohjassa."
+
 msgid "Rainbow"
 msgstr "Sateenkaari"
 
@@ -693,6 +709,13 @@ msgstr "Tuhri"
 
 #, fuzzy
 msgid "Click and move the mouse around to smudge the picture."
+msgstr "Voit sumentaa kuvaa liikuttamalla hiirtä nappi pohjassa."
+
+msgid "Sparkles"
+msgstr "Kipinät"
+
+#, fuzzy
+msgid "Click and drag to draw glowing sparkles on your picture."
 msgstr "Voit sumentaa kuvaa liikuttamalla hiirtä nappi pohjassa."
 
 #, fuzzy
@@ -722,9 +745,6 @@ msgstr ""
 
 #~ msgid "Yes, let's start fresh!"
 #~ msgstr "Kyllä, aloitetaan tyhjällä arkilla!"
-
-#~ msgid "Sparkles"
-#~ msgstr "Kipinät"
 
 #~ msgid "Click and move to draw sparkles."
 #~ msgstr "Piirrä kipinöitä liikuttamalla hiirtä nappi pohjassa."

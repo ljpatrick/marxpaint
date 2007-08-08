@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Thai tux paint\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-07-26 17:26-0700\n"
+"POT-Creation-Date: 2007-08-08 00:04-0700\n"
 "PO-Revision-Date: 2007-01-22 10:51+0700\n"
 "Last-Translator: Ouychai <Ae.translator@gmail.com>\n"
 "Language-Team: \n"
@@ -197,6 +197,11 @@ msgstr "ห้าเหลี่ยม"
 msgid "Rhombus"
 msgstr "ขนมเปียกปูน"
 
+#. Octagon shape tool (8 sides)
+#, fuzzy
+msgid "Octagon"
+msgstr "ห้าเหลี่ยม"
+
 #. Description of a square
 msgid "A square is a rectangle with four equal sides."
 msgstr "สี่เหลี่ยมจัตุรัสประกอบด้วยด้าน 4 ด้าน ที่ยาวเท่ากัน"
@@ -224,6 +229,10 @@ msgstr "รูปห้าเหลี่ยมมีห้าด้านนะ
 
 msgid "A rhombus has four equal sides, and opposite sides are parallel."
 msgstr "สี่เหลี่ยมขนมเปียกปูนประกอบด้วยด้านสี่ด้านที่ยาวเท่ากัน และด้านตรงข้ามกันจะขนานกัน"
+
+#, fuzzy
+msgid "An octagon has eight equal sides."
+msgstr "รูปห้าเหลี่ยมมีห้าด้านนะจ๊ะ"
 
 #. Title of tool selector (buttons down the left)
 msgid "Tools"
@@ -657,6 +666,13 @@ msgstr "กลับสี"
 msgid "Click and move the mouse around to draw a negative."
 msgstr "คลิกแล้วลากเมาส์ไปมาเพื่อกลับสีรูป"
 
+msgid "Ripples"
+msgstr ""
+
+#, fuzzy
+msgid "Click to make ripples appear over your picture."
+msgstr "คลิกแล้วลากเมาส์ไปมาเพื่อทำให้รูปมัว"
+
 msgid "Rainbow"
 msgstr "รุ้ง"
 
@@ -668,6 +684,13 @@ msgstr "เกลี่ย"
 
 msgid "Click and move the mouse around to smudge the picture."
 msgstr "คลิกแล้วลากเมาส์ไปมาเพื่อเกลี่ยสีรูป"
+
+msgid "Sparkles"
+msgstr "ประกาย"
+
+#, fuzzy
+msgid "Click and drag to draw glowing sparkles on your picture."
+msgstr "คลิกแล้วลากเมาส์ไปมาเพื่อทำให้รูปมัว"
 
 msgid "Tint"
 msgstr "ทาสีจาง"
@@ -693,9 +716,6 @@ msgstr ""
 
 #~ msgid "Yes, let's start fresh!"
 #~ msgstr "ใช่ เริ่มด้วยรูปใหม่"
-
-#~ msgid "Sparkles"
-#~ msgstr "ประกาย"
 
 #~ msgid "Click and move to draw sparkles."
 #~ msgstr "คลิกแล้วลากเพื่อวาดประกาย"

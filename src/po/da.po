@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint 0.9.15rc1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-07-26 17:26-0700\n"
+"POT-Creation-Date: 2007-08-08 00:04-0700\n"
 "PO-Revision-Date: 2007-02-18 22:30+0100\n"
 "Last-Translator: Mikkel Kirkgaard Nielsen <translation@mikini.dk>\n"
 "Language-Team: Danish <dansk@klid.dk>\n"
@@ -202,6 +202,11 @@ msgstr "Femkant"
 msgid "Rhombus"
 msgstr "Rombe"
 
+#. Octagon shape tool (8 sides)
+#, fuzzy
+msgid "Octagon"
+msgstr "Femkant"
+
 #. Description of a square
 msgid "A square is a rectangle with four equal sides."
 msgstr "Et kvadrat er en firkant hvor alle sider er lige lange."
@@ -229,6 +234,10 @@ msgstr "En femkant har ... fem kanter :-)"
 
 msgid "A rhombus has four equal sides, and opposite sides are parallel."
 msgstr "En rombe har fire ens sider, de modstående sider er parallelle."
+
+#, fuzzy
+msgid "An octagon has eight equal sides."
+msgstr "En femkant har ... fem kanter :-)"
 
 #. Title of tool selector (buttons down the left)
 msgid "Tools"
@@ -667,6 +676,13 @@ msgstr "Inverter"
 msgid "Click and move the mouse around to draw a negative."
 msgstr "Klik og bevæg musen rundt for at invertere billedet."
 
+msgid "Ripples"
+msgstr ""
+
+#, fuzzy
+msgid "Click to make ripples appear over your picture."
+msgstr "Klik og bevæg musen rundt, for at gøre billedet tyndere."
+
 msgid "Rainbow"
 msgstr "Regnbue"
 
@@ -678,6 +694,13 @@ msgstr "Udtvære"
 
 msgid "Click and move the mouse around to smudge the picture."
 msgstr "Klik og bevæg musen rundt for at udtvære billedet."
+
+msgid "Sparkles"
+msgstr "Gnister"
+
+#, fuzzy
+msgid "Click and drag to draw glowing sparkles on your picture."
+msgstr "Klik og bevæg musen rundt, for at gøre billedet tyndere."
 
 msgid "Tint"
 msgstr "Farve"
@@ -703,9 +726,6 @@ msgstr ""
 
 #~ msgid "Yes, let's start fresh!"
 #~ msgstr "Ja, lad os starte forfra!"
-
-#~ msgid "Sparkles"
-#~ msgstr "Gnister"
 
 #~ msgid "Click and move to draw sparkles."
 #~ msgstr "Klik og bevæg for at tegne gnister."

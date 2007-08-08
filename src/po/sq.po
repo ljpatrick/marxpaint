@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint 0.9.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-07-26 17:26-0700\n"
+"POT-Creation-Date: 2007-08-08 00:04-0700\n"
 "PO-Revision-Date: 2004-10-17 11:19+0200\n"
 "Last-Translator: Laurent Dhima <laurenti@alblinux.net>\n"
 "Language-Team: Albanian <translation-team-sq@lists.sourceforge.net>\n"
@@ -204,6 +204,11 @@ msgstr "Pesëkëndësh"
 msgid "Rhombus"
 msgstr ""
 
+#. Octagon shape tool (8 sides)
+#, fuzzy
+msgid "Octagon"
+msgstr "Pesëkëndësh"
+
 #. Description of a square
 #, fuzzy
 msgid "A square is a rectangle with four equal sides."
@@ -232,6 +237,10 @@ msgstr "Një pesëkëndësh ka pesë anë."
 
 msgid "A rhombus has four equal sides, and opposite sides are parallel."
 msgstr ""
+
+#, fuzzy
+msgid "An octagon has eight equal sides."
+msgstr "Një pesëkëndësh ka pesë anë."
 
 #. Title of tool selector (buttons down the left)
 msgid "Tools"
@@ -684,6 +693,13 @@ msgstr "Negativi"
 msgid "Click and move the mouse around to draw a negative."
 msgstr "Kliko dhe lëviz mausin rreth e qark për të krijuar një negativ."
 
+msgid "Ripples"
+msgstr ""
+
+#, fuzzy
+msgid "Click to make ripples appear over your picture."
+msgstr "Kliko dhe lëviz miun për t'a \"holluar\" foton."
+
 msgid "Rainbow"
 msgstr "Larmishme"
 
@@ -696,6 +712,13 @@ msgstr ""
 #, fuzzy
 msgid "Click and move the mouse around to smudge the picture."
 msgstr "Kliko dhe lëviz mausin nëpër pikturë për të krijuar dridhje."
+
+msgid "Sparkles"
+msgstr "Xixa"
+
+#, fuzzy
+msgid "Click and drag to draw glowing sparkles on your picture."
+msgstr "Kliko dhe lëviz miun për t'a \"holluar\" foton."
 
 #, fuzzy
 msgid "Tint"
@@ -721,9 +744,6 @@ msgstr ""
 #, fuzzy
 #~ msgid "Start a new picture?"
 #~ msgstr "Fshin këtë foto?"
-
-#~ msgid "Sparkles"
-#~ msgstr "Xixa"
 
 #~ msgid "Click and move to draw sparkles."
 #~ msgstr "Kliko dhe lëviz për të vizatuar spërkatje."

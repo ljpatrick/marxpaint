@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint 0.9.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-07-26 17:26-0700\n"
+"POT-Creation-Date: 2007-08-08 00:04-0700\n"
 "PO-Revision-Date: 2004-12-04 15:45-0800\n"
 "Last-Translator: Alberto Escudero <aep@it46.se>\n"
 "Language-Team: Swahili\n"
@@ -204,6 +204,11 @@ msgstr "Pembetano"
 msgid "Rhombus"
 msgstr ""
 
+#. Octagon shape tool (8 sides)
+#, fuzzy
+msgid "Octagon"
+msgstr "Pembetano"
+
 #. Description of a square
 #, fuzzy
 msgid "A square is a rectangle with four equal sides."
@@ -232,6 +237,10 @@ msgstr "Pembetano ina pande tano."
 
 msgid "A rhombus has four equal sides, and opposite sides are parallel."
 msgstr ""
+
+#, fuzzy
+msgid "An octagon has eight equal sides."
+msgstr "Pembetano ina pande tano."
 
 #. Title of tool selector (buttons down the left)
 msgid "Tools"
@@ -678,6 +687,13 @@ msgstr "Kinyume"
 msgid "Click and move the mouse around to draw a negative."
 msgstr "Bofya na sogea puku kuchora rangi za kinyume."
 
+msgid "Ripples"
+msgstr ""
+
+#, fuzzy
+msgid "Click to make ripples appear over your picture."
+msgstr "Bofya na sogea puku kupunguza upana wa picha."
+
 msgid "Rainbow"
 msgstr "Upinde wa mvua"
 
@@ -690,6 +706,13 @@ msgstr ""
 #, fuzzy
 msgid "Click and move the mouse around to smudge the picture."
 msgstr "Bofya na sogea puku kuweka ukungu."
+
+msgid "Sparkles"
+msgstr "Vimetameta"
+
+#, fuzzy
+msgid "Click and drag to draw glowing sparkles on your picture."
+msgstr "Bofya na sogea puku kupunguza upana wa picha."
 
 #, fuzzy
 msgid "Tint"
@@ -715,9 +738,6 @@ msgstr ""
 #, fuzzy
 #~ msgid "Start a new picture?"
 #~ msgstr "Futa picha hii?"
-
-#~ msgid "Sparkles"
-#~ msgstr "Vimetameta"
 
 #~ msgid "Click and move to draw sparkles."
 #~ msgstr "Bofya na sogea kuchora vimetameta."

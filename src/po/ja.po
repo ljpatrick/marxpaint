@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint 0.9.15\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-07-26 17:26-0700\n"
+"POT-Creation-Date: 2007-08-08 00:04-0700\n"
 "PO-Revision-Date: 2007-07-01 09:55+0900\n"
 "Last-Translator: TOYAMA Shin-ichi <shin1@wmail.plala.or.jp>\n"
 "Language-Team: japanese <shin1@wmail.plala.or.jp>\n"
@@ -200,6 +200,11 @@ msgstr "ごかっけい"
 msgid "Rhombus"
 msgstr "ダイヤ"
 
+#. Octagon shape tool (8 sides)
+#, fuzzy
+msgid "Octagon"
+msgstr "ごかっけい"
+
 #. Description of a square
 msgid "A square is a rectangle with four equal sides."
 msgstr "ましかくは ４つの「へん」が ぜんぶ おんなじ ながさの ながしかくだ"
@@ -231,6 +236,10 @@ msgid "A rhombus has four equal sides, and opposite sides are parallel."
 msgstr ""
 "「ダイヤ」は「ひしがた」とも いうよ。４つの「へん」が おなじながさで むかい"
 "あった「へん」が へいこうなんだ"
+
+#, fuzzy
+msgid "An octagon has eight equal sides."
+msgstr "ごかっけいには ５つの「へん」が あるんだ"
 
 #. Title of tool selector (buttons down the left)
 msgid "Tools"
@@ -674,6 +683,13 @@ msgstr "ネガ"
 msgid "Click and move the mouse around to draw a negative."
 msgstr "クリックしたまま マウスをうごかして ネガポジにしよう"
 
+msgid "Ripples"
+msgstr ""
+
+#, fuzzy
+msgid "Click to make ripples appear over your picture."
+msgstr "クリックしたまま マウスをうごかして えを ぼかそう"
+
 msgid "Rainbow"
 msgstr "にじ"
 
@@ -685,6 +701,13 @@ msgstr "よごす"
 
 msgid "Click and move the mouse around to smudge the picture."
 msgstr "クリックしたまま マウスをうごかして えを よごそう"
+
+msgid "Sparkles"
+msgstr "ひばな"
+
+#, fuzzy
+msgid "Click and drag to draw glowing sparkles on your picture."
+msgstr "クリックしたまま マウスをうごかして えを ぼかそう"
 
 msgid "Tint"
 msgstr "そめる"
@@ -711,9 +734,6 @@ msgstr ""
 
 #~ msgid "Yes, let's start fresh!"
 #~ msgstr "はい、さいしょから かきます！"
-
-#~ msgid "Sparkles"
-#~ msgstr "ひばな"
 
 #~ msgid "Click and move to draw sparkles."
 #~ msgstr "ひばなを かこう"

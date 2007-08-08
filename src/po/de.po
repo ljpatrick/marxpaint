@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-07-26 17:26-0700\n"
+"POT-Creation-Date: 2007-08-08 00:04-0700\n"
 "PO-Revision-Date: 2006-10-11 22:53+0200\n"
 "Last-Translator: Burkhard Lück <lueck@hube-lueck.de>\n"
 "Language-Team: Deutsch <kde-i18n-de@kde.org>\n"
@@ -204,6 +204,11 @@ msgstr "Fünfeck"
 msgid "Rhombus"
 msgstr "Raute"
 
+#. Octagon shape tool (8 sides)
+#, fuzzy
+msgid "Octagon"
+msgstr "Fünfeck"
+
 #. Description of a square
 msgid "A square is a rectangle with four equal sides."
 msgstr "Ein Quadrat ist ein Rechteck mit vier gleich langen Seiten."
@@ -235,6 +240,10 @@ msgid "A rhombus has four equal sides, and opposite sides are parallel."
 msgstr ""
 "Eine Raute hat vier gleich lange Seiten, gegenüberliegende Seiten sind "
 "parallel."
+
+#, fuzzy
+msgid "An octagon has eight equal sides."
+msgstr "Ein Fünfeck hat fünf Seiten."
 
 #. Title of tool selector (buttons down the left)
 msgid "Tools"
@@ -674,6 +683,13 @@ msgstr "Negativ"
 msgid "Click and move the mouse around to draw a negative."
 msgstr "Klick und bewege die Maus, um ein Negativ zu machen."
 
+msgid "Ripples"
+msgstr ""
+
+#, fuzzy
+msgid "Click to make ripples appear over your picture."
+msgstr "Klick und bewege die Maus, um das Bild unscharf zu machen."
+
 msgid "Rainbow"
 msgstr "Regenbogenfarbe"
 
@@ -685,6 +701,13 @@ msgstr "Verwischen"
 
 msgid "Click and move the mouse around to smudge the picture."
 msgstr "Klick und bewege die Maus, um das Bild zu verwischen."
+
+msgid "Sparkles"
+msgstr "Sterne"
+
+#, fuzzy
+msgid "Click and drag to draw glowing sparkles on your picture."
+msgstr "Klick und bewege die Maus, um das Bild unscharf zu machen."
 
 msgid "Tint"
 msgstr "Färben"
@@ -710,9 +733,6 @@ msgstr ""
 
 #~ msgid "Yes, let's start fresh!"
 #~ msgstr "Ja, ich möchte ein neues Bild malen!"
-
-#~ msgid "Sparkles"
-#~ msgstr "Sterne"
 
 #~ msgid "Click and move to draw sparkles."
 #~ msgstr "Klick und bewege die Maus, um Sterne funkeln zu lassen."

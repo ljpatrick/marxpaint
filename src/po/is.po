@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint-is 0.9.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-07-26 17:26-0700\n"
+"POT-Creation-Date: 2007-08-08 00:04-0700\n"
 "PO-Revision-Date: 2004-03-15 15:38GMT\n"
 "Last-Translator: Pjetur G. Hjaltason <pjetur@pjetur.net>\n"
 "Language-Team: Icelandic <kde-isl@molar.is>\n"
@@ -206,6 +206,11 @@ msgstr "Fimmhyrningur"
 msgid "Rhombus"
 msgstr ""
 
+#. Octagon shape tool (8 sides)
+#, fuzzy
+msgid "Octagon"
+msgstr "Fimmhyrningur"
+
 #. Description of a square
 #, fuzzy
 msgid "A square is a rectangle with four equal sides."
@@ -234,6 +239,10 @@ msgstr "Fimmhyrnigur hefur fimm hliðar."
 
 msgid "A rhombus has four equal sides, and opposite sides are parallel."
 msgstr ""
+
+#, fuzzy
+msgid "An octagon has eight equal sides."
+msgstr "Fimmhyrnigur hefur fimm hliðar."
 
 #. Title of tool selector (buttons down the left)
 msgid "Tools"
@@ -680,6 +689,13 @@ msgstr "Andhverfa"
 msgid "Click and move the mouse around to draw a negative."
 msgstr "Smelltu og hreyfðu músina til að teikna andhverfu-liti."
 
+msgid "Ripples"
+msgstr ""
+
+#, fuzzy
+msgid "Click to make ripples appear over your picture."
+msgstr "Smelltu og hreyfðu músina til að gera myndina þynnri."
+
 msgid "Rainbow"
 msgstr "Regnbogi"
 
@@ -692,6 +708,13 @@ msgstr ""
 #, fuzzy
 msgid "Click and move the mouse around to smudge the picture."
 msgstr "Smelltu og hreyfðu músina til að gera myndina óskýrari."
+
+msgid "Sparkles"
+msgstr "Neistar"
+
+#, fuzzy
+msgid "Click and drag to draw glowing sparkles on your picture."
+msgstr "Smelltu og hreyfðu músina til að gera myndina þynnri."
 
 #, fuzzy
 msgid "Tint"
@@ -717,9 +740,6 @@ msgstr ""
 #, fuzzy
 #~ msgid "Start a new picture?"
 #~ msgstr "Eyða myndinni?"
-
-#~ msgid "Sparkles"
-#~ msgstr "Neistar"
 
 #~ msgid "Click and move to draw sparkles."
 #~ msgstr "Smelltu og hreyfðu músina til að búa til neista."

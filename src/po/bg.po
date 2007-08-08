@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint 0.9.17\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-07-26 17:26-0700\n"
+"POT-Creation-Date: 2007-08-08 00:04-0700\n"
 "PO-Revision-Date: 2007-05-16 17:08+0300\n"
 "Last-Translator: Yavor Doganov <yavor@doganov.org>\n"
 "Language-Team: Bulgarian <dict@fsa-bg.org>\n"
@@ -201,6 +201,11 @@ msgstr "Петоъгълник"
 msgid "Rhombus"
 msgstr "Ромб"
 
+#. Octagon shape tool (8 sides)
+#, fuzzy
+msgid "Octagon"
+msgstr "Петоъгълник"
+
 #. Description of a square
 msgid "A square is a rectangle with four equal sides."
 msgstr "Квадратът е правоъгълник с четири равни страни."
@@ -229,6 +234,10 @@ msgstr "Петоъгълникът има пет страни."
 
 msgid "A rhombus has four equal sides, and opposite sides are parallel."
 msgstr "Ромбът има четири равни страни и срещуположните са успоредни."
+
+#, fuzzy
+msgid "An octagon has eight equal sides."
+msgstr "Петоъгълникът има пет страни."
 
 #. Title of tool selector (buttons down the left)
 msgid "Tools"
@@ -668,6 +677,13 @@ msgstr "Негатив"
 msgid "Click and move the mouse around to draw a negative."
 msgstr "Натиснете и движете мишката, за да нарисувате негатив."
 
+msgid "Ripples"
+msgstr ""
+
+#, fuzzy
+msgid "Click to make ripples appear over your picture."
+msgstr "Натиснете и движете мишката, за да размажете рисунката."
+
 msgid "Rainbow"
 msgstr "Дъга"
 
@@ -679,6 +695,13 @@ msgstr "Зацапване"
 
 msgid "Click and move the mouse around to smudge the picture."
 msgstr "Натиснете и движете мишката, за да зацапате рисунката."
+
+msgid "Sparkles"
+msgstr "Искри"
+
+#, fuzzy
+msgid "Click and drag to draw glowing sparkles on your picture."
+msgstr "Натиснете и движете мишката, за да размажете рисунката."
 
 msgid "Tint"
 msgstr "Окраска"
@@ -704,9 +727,6 @@ msgstr ""
 
 #~ msgid "Yes, let's start fresh!"
 #~ msgstr "Да, нека започнем на чисто!"
-
-#~ msgid "Sparkles"
-#~ msgstr "Искри"
 
 #~ msgid "Click and move to draw sparkles."
 #~ msgstr "Натиснете и движете мишката, за да рисувате искри."

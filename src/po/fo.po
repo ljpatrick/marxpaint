@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint 0.9.16\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-07-26 17:26-0700\n"
+"POT-Creation-Date: 2007-08-08 00:04-0700\n"
 "PO-Revision-Date: 2007-01-09 21:32-0000\n"
 "Last-Translator: Lis Gøthe í Jákupsstovu <morshus@morshus.com>\n"
 "Language-Team: Faroese <morshus@morshus.com>\n"
@@ -201,6 +201,11 @@ msgstr "Fimmkantur"
 msgid "Rhombus"
 msgstr "Romba"
 
+#. Octagon shape tool (8 sides)
+#, fuzzy
+msgid "Octagon"
+msgstr "Fimmkantur"
+
 #. Description of a square
 msgid "A square is a rectangle with four equal sides."
 msgstr "Ein ferningur er ein rætthyrningur við fýra líka langum síðum."
@@ -231,6 +236,10 @@ msgstr "Ein fimmkantur hevur fimm síður."
 msgid "A rhombus has four equal sides, and opposite sides are parallel."
 msgstr ""
 "Ein romba hevur fýra eins langar síður, og mótstandandi síður eru javnfjarar."
+
+#, fuzzy
+msgid "An octagon has eight equal sides."
+msgstr "Ein fimmkantur hevur fimm síður."
 
 #. Title of tool selector (buttons down the left)
 msgid "Tools"
@@ -666,6 +675,13 @@ msgstr "Negativ"
 msgid "Click and move the mouse around to draw a negative."
 msgstr "Trýst og flyt músina til at vísa negativ av myndini."
 
+msgid "Ripples"
+msgstr ""
+
+#, fuzzy
+msgid "Click to make ripples appear over your picture."
+msgstr "Trýst og flyt músina til at káma út okkurt á myndini."
+
 msgid "Rainbow"
 msgstr "Ælabogi"
 
@@ -677,6 +693,13 @@ msgstr "Klína"
 
 msgid "Click and move the mouse around to smudge the picture."
 msgstr "Trýst og flyt músina til at klína út okkurt á myndini."
+
+msgid "Sparkles"
+msgstr "Glitur"
+
+#, fuzzy
+msgid "Click and drag to draw glowing sparkles on your picture."
+msgstr "Trýst og flyt músina til at káma út okkurt á myndini."
 
 msgid "Tint"
 msgstr "Lita"
@@ -702,9 +725,6 @@ msgstr ""
 
 #~ msgid "Yes, let's start fresh!"
 #~ msgstr "Ja, byrja av nýggjum!"
-
-#~ msgid "Sparkles"
-#~ msgstr "Glitur"
 
 #~ msgid "Click and move to draw sparkles."
 #~ msgstr "Trýst og flyt til at gera glitur."

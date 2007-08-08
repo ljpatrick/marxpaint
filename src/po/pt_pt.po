@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint 0.9.17\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-07-26 17:26-0700\n"
+"POT-Creation-Date: 2007-08-08 00:04-0700\n"
 "PO-Revision-Date: 2007-05-15 23:29+0100\n"
 "Last-Translator: Helder Correia <helder.pereira.correia@gmail.com>\n"
 "Language-Team: Portuguese <translation-team-pt@lists.sourceforge.net>\n"
@@ -200,6 +200,11 @@ msgstr "Pentágono"
 msgid "Rhombus"
 msgstr "Trapézio"
 
+#. Octagon shape tool (8 sides)
+#, fuzzy
+msgid "Octagon"
+msgstr "Pentágono"
+
 #. Description of a square
 msgid "A square is a rectangle with four equal sides."
 msgstr "Um quadrado é um rectângulo com quatro lados iguais."
@@ -229,6 +234,10 @@ msgstr "Um pentágono tem cinco lados."
 
 msgid "A rhombus has four equal sides, and opposite sides are parallel."
 msgstr "Um trapézio tem quatro lados iguais e os lados opostos são paralelos."
+
+#, fuzzy
+msgid "An octagon has eight equal sides."
+msgstr "Um pentágono tem cinco lados."
 
 #. Title of tool selector (buttons down the left)
 msgid "Tools"
@@ -668,6 +677,13 @@ msgstr "Negativo"
 msgid "Click and move the mouse around to draw a negative."
 msgstr "Clica e move o rato para inverteres as cores do desenho (negativo)."
 
+msgid "Ripples"
+msgstr ""
+
+#, fuzzy
+msgid "Click to make ripples appear over your picture."
+msgstr "Clica e move o rato para embaciares o desenho."
+
 msgid "Rainbow"
 msgstr "Arco-íris"
 
@@ -679,6 +695,13 @@ msgstr "Borrar"
 
 msgid "Click and move the mouse around to smudge the picture."
 msgstr "Clica e move o rato para borrares o desenho."
+
+msgid "Sparkles"
+msgstr "Fagulhas"
+
+#, fuzzy
+msgid "Click and drag to draw glowing sparkles on your picture."
+msgstr "Clica e move o rato para embaciares o desenho."
 
 msgid "Tint"
 msgstr "Matiz"
@@ -704,9 +727,6 @@ msgstr ""
 
 #~ msgid "Yes, let's start fresh!"
 #~ msgstr "Sim, vamos começar de novo"
-
-#~ msgid "Sparkles"
-#~ msgstr "Fagulhas"
 
 #~ msgid "Click and move to draw sparkles."
 #~ msgstr "Clica e move o rato para desenhares fagulhas."

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint 0.9.15rc1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-07-26 17:26-0700\n"
+"POT-Creation-Date: 2007-08-08 00:04-0700\n"
 "PO-Revision-Date: 2006-01-22 15:49+0100\n"
 "Last-Translator: Gabor Kelemen <kelemeng@gnome.hu>\n"
 "Language-Team: Hungarian <translation-team-hu@lists.sourceforge.net>\n"
@@ -201,6 +201,11 @@ msgstr "Ötszög"
 msgid "Rhombus"
 msgstr "Rombusz"
 
+#. Octagon shape tool (8 sides)
+#, fuzzy
+msgid "Octagon"
+msgstr "Ötszög"
+
 #. Description of a square
 msgid "A square is a rectangle with four equal sides."
 msgstr "Egy téglalapnak négy egyenlő oldala van."
@@ -230,6 +235,10 @@ msgstr "Az ötszögnek öt oldala van."
 
 msgid "A rhombus has four equal sides, and opposite sides are parallel."
 msgstr "A rombusznak négy egyenlő oldala van és a szemközti oldalak egyenlőek."
+
+#, fuzzy
+msgid "An octagon has eight equal sides."
+msgstr "Az ötszögnek öt oldala van."
 
 #. Title of tool selector (buttons down the left)
 msgid "Tools"
@@ -675,6 +684,13 @@ msgstr "Színcsere"
 msgid "Click and move the mouse around to draw a negative."
 msgstr "Kattints oda a rajzodon, ahol fel szeretnéd cserélni a színeket."
 
+msgid "Ripples"
+msgstr ""
+
+#, fuzzy
+msgid "Click to make ripples appear over your picture."
+msgstr "Kattints oda a rajzodon, ahol maszatolni szeretnél."
+
 msgid "Rainbow"
 msgstr "Szivárvány"
 
@@ -686,6 +702,13 @@ msgstr "Piszok"
 
 msgid "Click and move the mouse around to smudge the picture."
 msgstr "Kattints oda a rajzodon, ahol piszkot szeretnél."
+
+msgid "Sparkles"
+msgstr "Festékszóró"
+
+#, fuzzy
+msgid "Click and drag to draw glowing sparkles on your picture."
+msgstr "Kattints oda a rajzodon, ahol maszatolni szeretnél."
 
 msgid "Tint"
 msgstr "Árnyalat"
@@ -709,9 +732,6 @@ msgstr ""
 #, fuzzy
 #~ msgid "Start a new picture?"
 #~ msgstr "Biztos törlöd ezt a rajzot?"
-
-#~ msgid "Sparkles"
-#~ msgstr "Festékszóró"
 
 #~ msgid "Click and move to draw sparkles."
 #~ msgstr "Kattints oda a rajzodon, ahol festékszóróval szeretnél rajzolni."

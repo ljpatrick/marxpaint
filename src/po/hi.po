@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint 0.9.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-07-26 17:26-0700\n"
+"POT-Creation-Date: 2007-08-08 00:04-0700\n"
 "PO-Revision-Date: 2004-05-26 08:44+0100\n"
 "Last-Translator: Ankit Malik <greatestankit@yahoo.co.in>\n"
 "Language-Team: Hindi\n"
@@ -203,6 +203,11 @@ msgstr "पेंण्टागन"
 msgid "Rhombus"
 msgstr ""
 
+#. Octagon shape tool (8 sides)
+#, fuzzy
+msgid "Octagon"
+msgstr "पेंण्टागन"
+
 #. Description of a square
 #, fuzzy
 msgid "A square is a rectangle with four equal sides."
@@ -231,6 +236,10 @@ msgstr "यह पेण्टागण है"
 
 msgid "A rhombus has four equal sides, and opposite sides are parallel."
 msgstr ""
+
+#, fuzzy
+msgid "An octagon has eight equal sides."
+msgstr "यह पेण्टागण है"
 
 #. Title of tool selector (buttons down the left)
 msgid "Tools"
@@ -673,6 +682,13 @@ msgstr "उल्टे रंग"
 msgid "Click and move the mouse around to draw a negative."
 msgstr "रंग उल्टे करो"
 
+msgid "Ripples"
+msgstr ""
+
+#, fuzzy
+msgid "Click to make ripples appear over your picture."
+msgstr "पतला करो"
+
 msgid "Rainbow"
 msgstr "सतरंगी"
 
@@ -685,6 +701,13 @@ msgstr ""
 #, fuzzy
 msgid "Click and move the mouse around to smudge the picture."
 msgstr "ड्रिप करो"
+
+msgid "Sparkles"
+msgstr "ग्लिटरस"
+
+#, fuzzy
+msgid "Click and drag to draw glowing sparkles on your picture."
+msgstr "पतला करो"
 
 #, fuzzy
 msgid "Tint"
@@ -710,9 +733,6 @@ msgstr ""
 #, fuzzy
 #~ msgid "Start a new picture?"
 #~ msgstr "नष्ट करू क्या ऋ"
-
-#~ msgid "Sparkles"
-#~ msgstr "ग्लिटरस"
 
 #~ msgid "Click and move to draw sparkles."
 #~ msgstr "ग्लिटरस करो"

@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Tux Paint 0.9.16\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-07-26 17:26-0700\n"
+"POT-Creation-Date: 2007-08-08 00:04-0700\n"
 "PO-Revision-Date: 2007-04-29 23:10-0400\n"
 "Last-Translator: Mark K. Kim <mkkim214@gmail.com>\n"
 "Language-Team: N/A\n"
@@ -203,6 +203,11 @@ msgstr "5각형"
 msgid "Rhombus"
 msgstr "마름모꼴"
 
+#. Octagon shape tool (8 sides)
+#, fuzzy
+msgid "Octagon"
+msgstr "5각형"
+
 #. Description of a square
 msgid "A square is a rectangle with four equal sides."
 msgstr "4개의 면이 다 똑같은 길이의 모양이 '정사각형' 입니다."
@@ -230,6 +235,10 @@ msgstr "5개의 면이 있는 모양이 '5각형' 입니다."
 
 msgid "A rhombus has four equal sides, and opposite sides are parallel."
 msgstr "마름모꼴은 사면의 길이가 같고, 반대의 두면이 평행선인 형을 말합니다."
+
+#, fuzzy
+msgid "An octagon has eight equal sides."
+msgstr "5개의 면이 있는 모양이 '5각형' 입니다."
 
 #. Title of tool selector (buttons down the left)
 msgid "Tools"
@@ -667,6 +676,13 @@ msgstr "음화"
 msgid "Click and move the mouse around to draw a negative."
 msgstr "마우스를 누르면 그림의 색이 뒤집어져요."
 
+msgid "Ripples"
+msgstr ""
+
+#, fuzzy
+msgid "Click to make ripples appear over your picture."
+msgstr "마우스를 누르면 그림을 흐리게 만들 수 있어요."
+
 msgid "Rainbow"
 msgstr "무지개"
 
@@ -678,6 +694,13 @@ msgstr "번지게"
 
 msgid "Click and move the mouse around to smudge the picture."
 msgstr "마우스를 누르면 그림을 번지게 만들 수 있어요."
+
+msgid "Sparkles"
+msgstr "불꽃"
+
+#, fuzzy
+msgid "Click and drag to draw glowing sparkles on your picture."
+msgstr "마우스를 누르면 그림을 흐리게 만들 수 있어요."
 
 msgid "Tint"
 msgstr "배합"
@@ -703,9 +726,6 @@ msgstr ""
 
 #~ msgid "Yes, let's start fresh!"
 #~ msgstr "네, 처음부터 시작해요!"
-
-#~ msgid "Sparkles"
-#~ msgstr "불꽃"
 
 #~ msgid "Click and move to draw sparkles."
 #~ msgstr "마우스를 누르면 불꽃이 터지는 것 같은 그림이 나와요."

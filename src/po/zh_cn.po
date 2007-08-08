@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint 0.9.11\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-07-26 17:26-0700\n"
+"POT-Creation-Date: 2007-08-08 00:04-0700\n"
 "PO-Revision-Date: 2004-07-18 13:50+0800\n"
 "Last-Translator: Wang Jian <lark@linux.net.cn>\n"
 "Language-Team: zh_CN <i18n-translation@lists.linux.net.cn>\n"
@@ -209,6 +209,11 @@ msgstr "五角形"
 msgid "Rhombus"
 msgstr ""
 
+#. Octagon shape tool (8 sides)
+#, fuzzy
+msgid "Octagon"
+msgstr "五角形"
+
 #. Description of a square
 #, fuzzy
 msgid "A square is a rectangle with four equal sides."
@@ -237,6 +242,10 @@ msgstr "五角形有五个边。"
 
 msgid "A rhombus has four equal sides, and opposite sides are parallel."
 msgstr ""
+
+#, fuzzy
+msgid "An octagon has eight equal sides."
+msgstr "五角形有五个边。"
 
 #. Title of tool selector (buttons down the left)
 msgid "Tools"
@@ -681,6 +690,13 @@ msgstr "底片"
 msgid "Click and move the mouse around to draw a negative."
 msgstr "单击然后移动鼠标来绘制相片底片。"
 
+msgid "Ripples"
+msgstr ""
+
+#, fuzzy
+msgid "Click to make ripples appear over your picture."
+msgstr "单击然后移动鼠标将图片变淡。"
+
 msgid "Rainbow"
 msgstr "彩虹"
 
@@ -693,6 +709,13 @@ msgstr ""
 #, fuzzy
 msgid "Click and move the mouse around to smudge the picture."
 msgstr "单击然后移动鼠标，将图片变模糊。"
+
+msgid "Sparkles"
+msgstr "火花"
+
+#, fuzzy
+msgid "Click and drag to draw glowing sparkles on your picture."
+msgstr "单击然后移动鼠标将图片变淡。"
 
 #, fuzzy
 msgid "Tint"
@@ -718,9 +741,6 @@ msgstr ""
 #, fuzzy
 #~ msgid "Start a new picture?"
 #~ msgstr "删除这个图片吗？"
-
-#~ msgid "Sparkles"
-#~ msgstr "火花"
 
 #~ msgid "Click and move to draw sparkles."
 #~ msgstr "单击然后移动来画火花。"

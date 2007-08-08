@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: fr\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-08-05 11:00+0200\n"
+"POT-Creation-Date: 2007-08-08 00:04-0700\n"
 "PO-Revision-Date: 2004-05-30 21:20-0700\n"
 "Last-Translator: jimmy <jacques.chion@wanadoo.fr>\n"
 "Language-Team:  <fr@li.org>\n"
@@ -331,7 +331,8 @@ msgstr "Choisis une image pour l'insérer dans ton dessin."
 
 #. Line tool instructions
 msgid "Click to start drawing a line. Let go to complete it."
-msgstr "Clique pour commencer à dessiner une ligne. Continue pour la compléter."
+msgstr ""
+"Clique pour commencer à dessiner une ligne. Continue pour la compléter."
 
 #. Shape tool instructions
 msgid ""
@@ -344,7 +345,8 @@ msgstr ""
 #. Text tool instructions
 msgid "Choose a style of text. Click on your drawing and you can start typing."
 msgstr ""
-"Choisis un style de texte. Clique sur ton dessin et commence à taper ton texte."
+"Choisis un style de texte. Clique sur ton dessin et commence à taper ton "
+"texte."
 
 #. Magic tool instruction
 msgid "Pick a magical effect to use on your drawing!"
@@ -586,7 +588,9 @@ msgid "Cartoon"
 msgstr "B.D."
 
 msgid "Click and move the mouse around to turn the picture into a cartoon."
-msgstr "Clique et déplace la souris pour transformer l'image comme une bande dessinée."
+msgstr ""
+"Clique et déplace la souris pour transformer l'image comme une bande "
+"dessinée."
 
 msgid "Emboss"
 msgstr "Flou"
@@ -624,7 +628,8 @@ msgstr "Mousse"
 
 msgid "Click and drag the mouse to cover an area with foamy bubbles."
 msgstr ""
-"Clique et fais glisser la souris pour remplir une surface avec des bulles de savon"
+"Clique et fais glisser la souris pour remplir une surface avec des bulles de "
+"savon"
 
 msgid "Glass Tile"
 msgstr "Carreau de verre"
@@ -674,6 +679,12 @@ msgstr "Négatif"
 msgid "Click and move the mouse around to draw a negative."
 msgstr "Clique et déplace la souris pour obtenir l'image en négatif."
 
+msgid "Ripples"
+msgstr "Ondes"
+
+msgid "Click to make ripples appear over your picture."
+msgstr "Clique pour faire apparaître des ronds dans l'eau."
+
 msgid "Rainbow"
 msgstr "Arc-en-ciel"
 
@@ -685,6 +696,12 @@ msgstr "Barbouiller"
 
 msgid "Click and move the mouse around to smudge the picture."
 msgstr "Clique et déplace la souris pour brouiller l'image."
+
+msgid "Sparkles"
+msgstr "Étincelles"
+
+msgid "Click and drag to draw glowing sparkles on your picture."
+msgstr "Clique et déplace la souris pour dessiner des étincelles."
 
 msgid "Tint"
 msgstr "Colorier"
@@ -703,19 +720,6 @@ msgstr ""
 "Clique pour avoir un effet vagué. Clique vers le haut pour de courtes "
 "vagues, vers le bas pour de longues vagues, à gauche pour diminuer "
 "l'amplitude et à droite pour augmenter l'amplitude."
-
-msgid "Ripples"
-msgstr "Ondes"
-
-msgid "Click to make ripples appear over your picture."
-msgstr "Clique pour faire apparaître des ronds dans l'eau."
-
-msgid "Sparkles"
-msgstr "Étincelles"
-
-msgid "Click and drag to draw glowing sparkles on your picture."
-msgstr "Clique et déplace la souris pour dessiner des étincelles."
-
 
 #~ msgid "You now have a blank sheet to draw on!"
 #~ msgstr "Tu as maintenant une feuille blanche pour dessiner !"

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Tuxpaint 0.9.9\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-07-26 17:26-0700\n"
+"POT-Creation-Date: 2007-08-08 00:04-0700\n"
 "PO-Revision-Date: 2004-12-10 18:11+0200\n"
 "Last-Translator: Gintaras Goštautas <gintaras@nes.lt>\n"
 "Language-Team: Lithuanian <komp_lt@konf.lt>\n"
@@ -204,6 +204,11 @@ msgstr "Penkiakampis"
 msgid "Rhombus"
 msgstr "Rombas"
 
+#. Octagon shape tool (8 sides)
+#, fuzzy
+msgid "Octagon"
+msgstr "Penkiakampis"
+
 #. Description of a square
 msgid "A square is a rectangle with four equal sides."
 msgstr "Kvadratas yra stačiakampis, kurio visos kraštinės yra lygios."
@@ -235,6 +240,10 @@ msgid "A rhombus has four equal sides, and opposite sides are parallel."
 msgstr ""
 "Rombas turi keturias lygias kraštines, o viena prieš kitą esančios kraštinės "
 "yra lygiagrečios."
+
+#, fuzzy
+msgid "An octagon has eight equal sides."
+msgstr "Penkiakampis turi penkias kraštines."
 
 #. Title of tool selector (buttons down the left)
 msgid "Tools"
@@ -670,6 +679,13 @@ msgstr "Negatyvas"
 msgid "Click and move the mouse around to draw a negative."
 msgstr "Spustelėkite ir judindami pelę invertuosite paveikslėlio spalvas."
 
+msgid "Ripples"
+msgstr ""
+
+#, fuzzy
+msgid "Click to make ripples appear over your picture."
+msgstr "Spustelėkite ir pele paploninsite piešinį."
+
 msgid "Rainbow"
 msgstr "Vaivorykštė"
 
@@ -681,6 +697,13 @@ msgstr "Sutepti"
 
 msgid "Click and move the mouse around to smudge the picture."
 msgstr "Spustelėkite ir judindami pelę sutepsite piešinį."
+
+msgid "Sparkles"
+msgstr "Žybsniai"
+
+#, fuzzy
+msgid "Click and drag to draw glowing sparkles on your picture."
+msgstr "Spustelėkite ir pele paploninsite piešinį."
 
 msgid "Tint"
 msgstr "Spalvinti"
@@ -706,9 +729,6 @@ msgstr ""
 
 #~ msgid "Yes, let's start fresh!"
 #~ msgstr "Taip, pradėkim iš naujo!"
-
-#~ msgid "Sparkles"
-#~ msgstr "Žybsniai"
 
 #~ msgid "Click and move to draw sparkles."
 #~ msgstr "Spustelėkite ir pieškite žybsnius."

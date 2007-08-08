@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint 0.9.17\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-07-26 17:26-0700\n"
+"POT-Creation-Date: 2007-08-08 00:04-0700\n"
 "PO-Revision-Date: 2007-07-02 11:25+0200\n"
 "Last-Translator: Freek de Kruijf <f.de.kruijf@hetnet.nl>\n"
 "Language-Team: Dutch <vertaling@vrijschrift.org>\n"
@@ -203,6 +203,11 @@ msgstr "Vijfhoek"
 msgid "Rhombus"
 msgstr "Ruit"
 
+#. Octagon shape tool (8 sides)
+#, fuzzy
+msgid "Octagon"
+msgstr "Vijfhoek"
+
 #. Description of a square
 msgid "A square is a rectangle with four equal sides."
 msgstr "Een vierkant is een rechthoek met vier gelijke zijden."
@@ -233,6 +238,10 @@ msgstr "Een vijfhoek heeft vijf zijden."
 msgid "A rhombus has four equal sides, and opposite sides are parallel."
 msgstr ""
 "Een ruit heeft vier gelijke zijden en tegenoverliggende zijden zijn parallel."
+
+#, fuzzy
+msgid "An octagon has eight equal sides."
+msgstr "Een vijfhoek heeft vijf zijden."
 
 #. Title of tool selector (buttons down the left)
 msgid "Tools"
@@ -670,6 +679,13 @@ msgstr "Negatief"
 msgid "Click and move the mouse around to draw a negative."
 msgstr "Klik en beweeg de muis in het rond om een negatief te maken."
 
+msgid "Ripples"
+msgstr ""
+
+#, fuzzy
+msgid "Click to make ripples appear over your picture."
+msgstr "Klik en beweeg de muis in het rond om de tekening te vervagen."
+
 msgid "Rainbow"
 msgstr "Regenboog"
 
@@ -681,6 +697,13 @@ msgstr "Doezelen"
 
 msgid "Click and move the mouse around to smudge the picture."
 msgstr "Klik en beweeg de muis in het rond om de tekening te doezelen!"
+
+msgid "Sparkles"
+msgstr "Sterretjes"
+
+#, fuzzy
+msgid "Click and drag to draw glowing sparkles on your picture."
+msgstr "Klik en beweeg de muis in het rond om de tekening te vervagen."
 
 msgid "Tint"
 msgstr "Tint"
@@ -707,9 +730,6 @@ msgstr ""
 
 #~ msgid "Yes, let's start fresh!"
 #~ msgstr "Ja, laten we opnieuw beginnen!"
-
-#~ msgid "Sparkles"
-#~ msgstr "Sterretjes"
 
 #~ msgid "Click and move to draw sparkles."
 #~ msgstr "Klik en beweeg om sterretjes te tekenen!"

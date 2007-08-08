@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pt_br\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-07-26 17:26-0700\n"
+"POT-Creation-Date: 2007-08-08 00:04-0700\n"
 "PO-Revision-Date: 2007-05-19 15:50-0300\n"
 "Last-Translator: Adorilson Bezerra <adorilson@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <pt@li.org>\n"
@@ -203,6 +203,11 @@ msgstr "Pentágono"
 msgid "Rhombus"
 msgstr "Losângulo"
 
+#. Octagon shape tool (8 sides)
+#, fuzzy
+msgid "Octagon"
+msgstr "Pentágono"
+
 #. Description of a square
 msgid "A square is a rectangle with four equal sides."
 msgstr "Um quadrado é um retângulo com os quatro lados iguais."
@@ -232,6 +237,10 @@ msgstr "Um pentágono tem cinco lados."
 msgid "A rhombus has four equal sides, and opposite sides are parallel."
 msgstr ""
 "Um losângulo tem os quatro lados iguais, e os lados opostos são paralelos."
+
+#, fuzzy
+msgid "An octagon has eight equal sides."
+msgstr "Um pentágono tem cinco lados."
 
 #. Title of tool selector (buttons down the left)
 msgid "Tools"
@@ -678,6 +687,13 @@ msgstr "Negativo"
 msgid "Click and move the mouse around to draw a negative."
 msgstr "Clique e mova o mouse para inverter as cores da imagem."
 
+msgid "Ripples"
+msgstr ""
+
+#, fuzzy
+msgid "Click to make ripples appear over your picture."
+msgstr "Clique e mova o mouse para borrar a imagem."
+
 msgid "Rainbow"
 msgstr "Arco-íris"
 
@@ -689,6 +705,13 @@ msgstr "sujar"
 
 msgid "Click and move the mouse around to smudge the picture."
 msgstr "Clique e mova o mouse para sujar a imagem."
+
+msgid "Sparkles"
+msgstr "Fagulhas"
+
+#, fuzzy
+msgid "Click and drag to draw glowing sparkles on your picture."
+msgstr "Clique e mova o mouse para borrar a imagem."
 
 #, fuzzy
 msgid "Tint"
@@ -713,9 +736,6 @@ msgstr ""
 #, fuzzy
 #~ msgid "Start a new picture?"
 #~ msgstr "Apagar este desenho?"
-
-#~ msgid "Sparkles"
-#~ msgstr "Fagulhas"
 
 #~ msgid "Click and move to draw sparkles."
 #~ msgstr "Clique e mova o mouse para desenhar fagulhas."

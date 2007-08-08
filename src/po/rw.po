@@ -16,7 +16,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint 0.9.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-07-26 17:26-0700\n"
+"POT-Creation-Date: 2007-08-08 00:04-0700\n"
 "PO-Revision-Date: 2005-04-04 10:55-0700\n"
 "Last-Translator: Steven Michael Murphy <murf@e-tools.com>\n"
 "Language-Team: Kinyarwanda <translation-team-rw@lists.sourceforge.net>\n"
@@ -226,6 +226,11 @@ msgstr "Ikinyampande5"
 msgid "Rhombus"
 msgstr ""
 
+#. Octagon shape tool (8 sides)
+#, fuzzy
+msgid "Octagon"
+msgstr "Ikinyampande5"
+
 #. Description of a square
 #, fuzzy
 msgid "A square is a rectangle with four equal sides."
@@ -256,6 +261,10 @@ msgstr "A Ikinyampande5"
 
 msgid "A rhombus has four equal sides, and opposite sides are parallel."
 msgstr ""
+
+#, fuzzy
+msgid "An octagon has eight equal sides."
+msgstr "A Ikinyampande5"
 
 #. Title of tool selector (buttons down the left)
 msgid "Tools"
@@ -730,6 +739,13 @@ msgstr ""
 msgid "Click and move the mouse around to draw a negative."
 msgstr "Na Kwimura i Imbeba Kuri Gushushanya a"
 
+msgid "Ripples"
+msgstr ""
+
+#, fuzzy
+msgid "Click to make ripples appear over your picture."
+msgstr "Na Kwimura i Imbeba Kuri kinanutse i() y'Ishusho"
+
 msgid "Rainbow"
 msgstr ""
 
@@ -743,6 +759,13 @@ msgstr ""
 #, fuzzy
 msgid "Click and move the mouse around to smudge the picture."
 msgstr "Na Kwimura i Imbeba Kuri i() y'Ishusho"
+
+msgid "Sparkles"
+msgstr ""
+
+#, fuzzy
+msgid "Click and drag to draw glowing sparkles on your picture."
+msgstr "Na Kwimura i Imbeba Kuri kinanutse i() y'Ishusho"
 
 #, fuzzy
 msgid "Tint"

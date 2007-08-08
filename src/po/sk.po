@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint 0.9.15rc1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-07-26 17:26-0700\n"
+"POT-Creation-Date: 2007-08-08 00:04-0700\n"
 "PO-Revision-Date: 2005-10-16 16:57+0200\n"
 "Last-Translator: Andrej Kacian <andrej@kacian.sk>\n"
 "Language-Team: Slovak <sk-i18n@lists.linux.sk>\n"
@@ -201,6 +201,11 @@ msgstr "Päťuholník"
 msgid "Rhombus"
 msgstr "Lichobežník"
 
+#. Octagon shape tool (8 sides)
+#, fuzzy
+msgid "Octagon"
+msgstr "Päťuholník"
+
 #. Description of a square
 msgid "A square is a rectangle with four equal sides."
 msgstr "Štvorec je vlastne obdĺžnik so všetkými stranami rovnakými."
@@ -230,6 +235,10 @@ msgid "A rhombus has four equal sides, and opposite sides are parallel."
 msgstr ""
 "Lichobežník má štyri rovnaké strany, pričom protiľahlé strany sú vždy "
 "rovnobežné."
+
+#, fuzzy
+msgid "An octagon has eight equal sides."
+msgstr "Päťuholník má päť strán."
 
 #. Title of tool selector (buttons down the left)
 msgid "Tools"
@@ -668,6 +677,13 @@ msgstr "Negatív"
 msgid "Click and move the mouse around to draw a negative."
 msgstr "Klikni a pohybuj myšou pre vykreslenie negatívu."
 
+msgid "Ripples"
+msgstr ""
+
+#, fuzzy
+msgid "Click to make ripples appear over your picture."
+msgstr "Klikni a pohybuj myšou pre rozmazanie obrázku."
+
 msgid "Rainbow"
 msgstr "Dúha"
 
@@ -678,6 +694,13 @@ msgid "Smudge"
 msgstr "Rozmazať"
 
 msgid "Click and move the mouse around to smudge the picture."
+msgstr "Klikni a pohybuj myšou pre rozmazanie obrázku."
+
+msgid "Sparkles"
+msgstr "Iskry"
+
+#, fuzzy
+msgid "Click and drag to draw glowing sparkles on your picture."
 msgstr "Klikni a pohybuj myšou pre rozmazanie obrázku."
 
 msgid "Tint"
@@ -702,9 +725,6 @@ msgstr ""
 #, fuzzy
 #~ msgid "Start a new picture?"
 #~ msgstr "Vymazať tento obrázok?"
-
-#~ msgid "Sparkles"
-#~ msgstr "Iskry"
 
 #~ msgid "Click and move to draw sparkles."
 #~ msgstr "Klikni a pohybuj myšou a budeš kresliť iskry."
