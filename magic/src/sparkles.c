@@ -23,7 +23,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  Last updated: August 7, 2007
+  Last updated: August 9, 2007
   $Id$
 */
 
@@ -34,11 +34,12 @@
 #include "SDL_image.h"
 #include "SDL_mixer.h"
 
+#include "math.h"
 
 /* Our globals: */
 
 Mix_Chunk * sparkles1_snd, * sparkles2_snd;
-Uint8 sparkles_r, sparkles_g, sparkles_b;
+float sparkles_h, sparkles_s, sparkles_v;
 
 
 Uint32 sparkles_api_version(void) { return(TP_MAGIC_API_VERSION); }
@@ -98,7 +99,8 @@ void do_sparkles(void * ptr, int which, SDL_Surface * canvas, SDL_Surface * last
   int xx, yy;
   Uint32 pix;
   Uint8 r, g, b;
-  int div;
+  float h, s, v, new_h, new_s, new_v;
+  float adj;
 
   for (yy = -8; yy < 8; yy++)
   {
@@ -110,13 +112,38 @@ void do_sparkles(void * ptr, int which, SDL_Surface * canvas, SDL_Surface * last
 
         SDL_GetRGB(pix, canvas->format, &r, &g, &b);
 
-        div = abs(xx * yy);
-        if (div == 0)
-          div = 1;
+        adj = (7.99 - sqrt(abs(xx * yy))) / 128.0;
 
-	r = min(255, r + (sparkles_r / div));
-	g = min(255, g + (sparkles_g / div));
-	b = min(255, b + (sparkles_b / div));
+        api->rgbtohsv(r, g, b, &h, &s, &v);
+
+        v = min(1.0, v + adj);
+
+        if (sparkles_h == -1 && h == -1)
+        {
+          new_h = -1;
+          new_s = 0;
+          new_v = v;
+        }
+        else if (sparkles_h == -1)
+        {
+          new_h = h;
+          new_s = max(0.0, s - adj / 2.0);
+          new_v = v;
+        }
+        else if (h == -1)
+        {
+          new_h = sparkles_h;
+          new_s = max(0.0, sparkles_s - adj / 2.0);
+          new_v = v;
+        }
+        else
+        {
+          new_h = (sparkles_h + h) / 2;
+          new_s = max(0.0, s - adj / 2.0);
+          new_v = v;
+        }
+
+        api->hsvtorgb(new_h, new_s, new_v, &r, &g, &b);
 
         api->putpixel(canvas, x + xx, y + yy,
                       SDL_MapRGB(canvas->format, r, g, b));
@@ -176,9 +203,7 @@ void sparkles_shutdown(magic_api * api)
 // Record the color from Tux Paint:
 void sparkles_set_color(magic_api * api, Uint8 r, Uint8 g, Uint8 b)
 {
-  sparkles_r = r + 10;
-  sparkles_g = g + 10;
-  sparkles_b = b + 10;
+  api->rgbtohsv(r, g, b, &sparkles_h, &sparkles_s, &sparkles_v);
 }
 
 // Use colors:
