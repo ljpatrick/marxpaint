@@ -7,7 +7,7 @@
 # Bill Kendrick
 # bill@newbreedsoftware.com
 # 
-# August 2, 2007 - August 2, 2007
+# August 2, 2007 - August 9, 2007
 # $Id$
 
 LINKS=links -dump -no-numbering -no-references
@@ -16,6 +16,7 @@ TXT_FILES= \
 	blocks.txt \
 	blur.txt \
 	bricks.txt \
+	calligraphy.txt \
 	cartoon.txt \
 	chalk.txt \
 	darken.txt \
@@ -29,13 +30,14 @@ TXT_FILES= \
 	glasstile.txt \
 	grass.txt \
 	kalidescope.txt \
+	light.txt \
 	metalpaint.txt \
 	mirror.txt \
 	negative.txt \
 	rainbow.txt \
 	ripples.txt \
+	shift.txt \
 	smudge.txt \
-	sparkles.txt \
 	tint.txt \
 	waves.txt
 
@@ -51,6 +53,9 @@ blur.txt: html/blur.html
 	@$(LINKS) $< > $@
 
 bricks.txt: html/bricks.html
+	@$(LINKS) $< > $@
+
+calligraphy.txt: html/calligraphy.html
 	@$(LINKS) $< > $@
 
 cartoon.txt: html/cartoon.html
@@ -110,7 +115,10 @@ ripples.txt: html/ripples.html
 smudge.txt: html/smudge.html
 	@$(LINKS) $< > $@
 
-sparkles.txt: html/sparkles.html
+light.txt: html/light.html
+	@$(LINKS) $< > $@
+
+shift.txt: html/shift.html
 	@$(LINKS) $< > $@
 
 tint.txt: html/tint.html

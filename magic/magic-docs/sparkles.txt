@@ -1,4 +1,0 @@
-                        Tux Paint "Magic" Tool: Sparkles
-
-   This draws glowing sparkles on the canvas, in the currently-selected
-   color.

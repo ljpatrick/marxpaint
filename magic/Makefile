@@ -6,7 +6,7 @@
 # bill@newbreedsoftware.com
 # http://www.tuxpaint.org/
 
-# July 2007 - July 24, 2007
+# July 2007 - August 9, 2007
 
 
 SO_TYPE=so
@@ -43,7 +43,9 @@ all:	negative.$(SO_TYPE) \
 	flower.$(SO_TYPE) \
 	foam.$(SO_TYPE) \
 	ripples.$(SO_TYPE) \
-	sparkles.$(SO_TYPE)
+	light.$(SO_TYPE) \
+	shift.$(SO_TYPE) \
+	calligraphy.$(SO_TYPE)
 	@strip *.$(SO_TYPE)
 
 install:
@@ -99,7 +101,7 @@ smudge.$(SO_TYPE):	src/smudge.c
 	@$(CC) $(CFLAGS) -shared -o $@ $<
 
 cartoon.$(SO_TYPE):	src/cartoon.c
-	@echo "Building Smudge magic tool"
+	@echo "Building Cartoon magic tool"
 	@$(CC) $(CFLAGS) -shared -o $@ $<
 
 bricks.$(SO_TYPE):	src/bricks.c
@@ -138,7 +140,14 @@ ripples.$(SO_TYPE):	src/ripples.c
 	@echo "Building Ripples magic tool"
 	@$(CC) $(CFLAGS) -shared -o $@ $<
 
-sparkles.$(SO_TYPE):	src/sparkles.c
-	@echo "Building Sparkles magic tool"
+light.$(SO_TYPE):	src/light.c
+	@echo "Building Light magic tool"
 	@$(CC) $(CFLAGS) -shared -o $@ $<
 
+shift.$(SO_TYPE):	src/shift.c
+	@echo "Building Shift magic tool"
+	@$(CC) $(CFLAGS) -shared -o $@ $<
+
+calligraphy.$(SO_TYPE):	src/calligraphy.c
+	@echo "Building Calligraphy magic tool"
+	@$(CC) $(CFLAGS) -shared -o $@ $<

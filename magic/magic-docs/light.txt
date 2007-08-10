@@ -1,0 +1,4 @@
+                         Tux Paint "Magic" Tool: Light
+
+   This draws a glowing beam on the canvas, in the currently-selected color.
+   The more you use it on one spot, the more white it becomes.
