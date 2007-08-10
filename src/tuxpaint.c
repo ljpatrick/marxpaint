@@ -22,7 +22,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
   
-  June 14, 2002 - August 7, 2007
+  June 14, 2002 - August 9, 2007
   $Id$
 */
 
@@ -4847,6 +4847,7 @@ static void show_version(int details)
 #endif
 
   printf("  Data directory (DATA_PREFIX) = %s\n", DATA_PREFIX);
+  printf("  Plugin directory (MAGIC_PREFIX) = %s\n", MAGIC_PREFIX);
   printf("  Doc directory (DOC_PREFIX) = %s\n", DOC_PREFIX);
   printf("  Locale directory (LOCALEDIR) = %s\n", LOCALEDIR);
   printf("  Input Method directory (IMDIR) = %s\n", IMDIR);

@@ -9,7 +9,7 @@ http://www.tuxpaint.org/
 $Id$
 
 
-2007.August.8 (0.9.18)
+2007.August.9 (0.9.18)
   * Interface Improvements:
     -----------------------
     * Improved 'New' and 'Open' interface:
@@ -109,17 +109,21 @@ $Id$
 
   * New Magic tools:
     ----------------
-    * Kaleidoscope
-    * Glass Tile
+    * Calligraphy
     * Emboss
-    * Metal Paint
-    * Waves
-    * Foam
-    * Ripples
     * Flower
-      (utilizes Bezier curve example code from Wikipedia.org)
-
-    (Glass Tile, Emboss, Flower and Ripples sounds based on sounds
+    * Foam
+    * Glass Tile
+    * Kaleidoscope
+    * Light
+    * Metal Paint
+    * Ripples
+    * Shift
+    * Waves
+   
+    (Flower and Calligraphy utilize Bezier curve example code from
+    Wikipedia.org)
+    (Glass Tile, Emboss, Flower, Light and Ripples sounds based on sounds
     from KDE 3.5.7; http://www.kde.org/ )
     (Metal Paint sound based on sound from Engima;
     http://www.nongnu.org/enigma/ )

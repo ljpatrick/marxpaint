@@ -21,12 +21,12 @@ tuxpaint.desktop.in
 ../magic/src/glasstile.c
 ../magic/src/grass.c
 ../magic/src/kalidescope.c
+../magic/src/light.c
 ../magic/src/metalpaint.c
 ../magic/src/mirror_flip.c
 ../magic/src/negative.c
 ../magic/src/ripples.c
 ../magic/src/rainbow.c
 ../magic/src/smudge.c
-../magic/src/sparkles.c
 ../magic/src/tint.c
 ../magic/src/waves.c
