@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TuxPaint \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-08-08 00:04-0700\n"
+"POT-Creation-Date: 2007-08-09 23:58-0700\n"
 "PO-Revision-Date: 2006-11-30 16:30+0200\n"
 "Last-Translator: Juan Irigoien <juanirigoien@gmail.com>\n"
 "Language-Team: basque <juanirigoien@gmail.com>\n"
@@ -556,14 +556,14 @@ msgstr "Klariona"
 msgid "Drip"
 msgstr "Busti"
 
+msgid "Click and move the mouse around to make the picture blocky."
+msgstr "Klik egin eta mugi ezazu sagua irudia laukitxotan marrazteko."
+
 msgid ""
 "Click and move the mouse around to turn the picture into a chalk drawing."
 msgstr ""
 "Klik egin eta mugi ezazu sagua irudia klarionez eginda balego bezala "
 "marrazteko."
-
-msgid "Click and move the mouse around to make the picture blocky."
-msgstr "Klik egin eta mugi ezazu sagua irudia laukitxotan marrazteko."
 
 msgid "Click and move the mouse around to make the picture drip."
 msgstr "Klik egin eta mugi ezazu sagua irudiari busti itxura emateko!"
@@ -583,6 +583,13 @@ msgstr "Egin klik eta mugi ezazu adreilu handiak marrazteko."
 
 msgid "Click and move to draw small bricks."
 msgstr "Egin klik eta mugi ezazu adreilu txikiak marrazteko."
+
+msgid "Calligraphy"
+msgstr ""
+
+#, fuzzy
+msgid "Click and move the mouse around to draw in calligraphy."
+msgstr "Klik egin eta mugi ezazu sagua irudiaren negatiboa marrazteko."
 
 msgid "Cartoon"
 msgstr "Cartoon"
@@ -650,6 +657,14 @@ msgid ""
 msgstr "Klik egin eta mugi ezazu sagua irudia loditzeko."
 
 #, fuzzy
+msgid "Light"
+msgstr "Argitu"
+
+#, fuzzy
+msgid "Click and drag to draw a beam of light on your picture."
+msgstr "Klik egin eta mugi ezazu sagua irudia mehetzeko."
+
+#, fuzzy
 msgid "Metal Paint"
 msgstr "Marraztu"
 
@@ -675,6 +690,12 @@ msgstr "Negatiboa"
 msgid "Click and move the mouse around to draw a negative."
 msgstr "Klik egin eta mugi ezazu sagua irudiaren negatiboa marrazteko."
 
+msgid "Rainbow"
+msgstr "Ostadarra"
+
+msgid "You can draw in rainbow colors!"
+msgstr "Marraz ezazu ostadarraren koloreekin!"
+
 msgid "Ripples"
 msgstr ""
 
@@ -682,24 +703,18 @@ msgstr ""
 msgid "Click to make ripples appear over your picture."
 msgstr "Klik egin eta mugi ezazu sagua irudia mehetzeko."
 
-msgid "Rainbow"
-msgstr "Ostadarra"
+msgid "Shift"
+msgstr ""
 
-msgid "You can draw in rainbow colors!"
-msgstr "Marraz ezazu ostadarraren koloreekin!"
+#, fuzzy
+msgid "Click and drag to shift your picture around on the canvas."
+msgstr "Klik egin eta mugi ezazu sagua irudia mehetzeko."
 
 msgid "Smudge"
 msgstr "Zirriborrotu"
 
 msgid "Click and move the mouse around to smudge the picture."
 msgstr "Klik egin eta mugi ezazu sagua irudia zirriborratzeko."
-
-msgid "Sparkles"
-msgstr "Txinpartak"
-
-#, fuzzy
-msgid "Click and drag to draw glowing sparkles on your picture."
-msgstr "Klik egin eta mugi ezazu sagua irudia mehetzeko."
 
 msgid "Tint"
 msgstr "Tindatu"
@@ -716,6 +731,9 @@ msgid ""
 "bottom for taller waves, the left for small waves, and the right for long "
 "waves."
 msgstr ""
+
+#~ msgid "Sparkles"
+#~ msgstr "Txinpartak"
 
 #~ msgid "You now have a blank sheet to draw on!"
 #~ msgstr "Hona hemen orri zuria marrazteko!"

@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Tux paint anns a' ghàidhlig\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-08-08 00:04-0700\n"
+"POT-Creation-Date: 2007-08-09 23:58-0700\n"
 "PO-Revision-Date: 2006-03-04 15:51-0000\n"
 "Last-Translator: Niall Tracey <internationiall@hotmail.com>\n"
 "Language-Team:  <internationiall@hotmail.com>\n"
@@ -639,11 +639,11 @@ msgstr "Cailc"
 msgid "Drip"
 msgstr ""
 
-msgid ""
-"Click and move the mouse around to turn the picture into a chalk drawing."
+msgid "Click and move the mouse around to make the picture blocky."
 msgstr ""
 
-msgid "Click and move the mouse around to make the picture blocky."
+msgid ""
+"Click and move the mouse around to turn the picture into a chalk drawing."
 msgstr ""
 
 msgid "Click and move the mouse around to make the picture drip."
@@ -668,6 +668,14 @@ msgstr "Briog agus slaod airson na breigichean móra a dhèanamh dealbh."
 # Gràmar?
 #, fuzzy
 msgid "Click and move to draw small bricks."
+msgstr "Briog agus slaod airson na breigichean beaga."
+
+msgid "Calligraphy"
+msgstr ""
+
+# Gràmar?
+#, fuzzy
+msgid "Click and move the mouse around to draw in calligraphy."
 msgstr "Briog agus slaod airson na breigichean beaga."
 
 msgid "Cartoon"
@@ -740,6 +748,15 @@ msgid ""
 "Click and drag the mouse to draw with symmetric brushes (a kaleidoscope)."
 msgstr "Briog anns a' dhealbh airson lìon le dath."
 
+msgid "Light"
+msgstr ""
+
+# Gràmar?
+# Is the word "lainnir" appropriate/common?
+#, fuzzy
+msgid "Click and drag to draw a beam of light on your picture."
+msgstr "Briog agus slaod airson lainnir a dhèanamh dealbh."
+
 # Teach Yourself Gaelic Dictionary: Boyd Robertson & Ian Taylor
 #, fuzzy
 msgid "Metal Paint"
@@ -772,12 +789,6 @@ msgstr ""
 msgid "Click and move the mouse around to draw a negative."
 msgstr ""
 
-msgid "Ripples"
-msgstr ""
-
-msgid "Click to make ripples appear over your picture."
-msgstr ""
-
 # Teach Yourself Gaelic Dictionary: Boyd Robertson & Ian Taylor
 msgid "Rainbow"
 msgstr "Bogha-froise"
@@ -786,24 +797,24 @@ msgstr "Bogha-froise"
 msgid "You can draw in rainbow colors!"
 msgstr "'S urrain dhuit a peantadh le uile dathan na bogha-froise!"
 
+msgid "Ripples"
+msgstr ""
+
+msgid "Click to make ripples appear over your picture."
+msgstr ""
+
+msgid "Shift"
+msgstr ""
+
+msgid "Click and drag to shift your picture around on the canvas."
+msgstr ""
+
 # Teach Yourself Gaelic Dictionary: Boyd Robertson & Ian Taylor
 msgid "Smudge"
 msgstr "Smalaich"
 
 msgid "Click and move the mouse around to smudge the picture."
 msgstr ""
-
-# Is this word appropriate/common?
-# Teach Yourself Gaelic Dictionary: Boyd Robertson & Ian Taylor
-#, fuzzy
-msgid "Sparkles"
-msgstr "Lainnir"
-
-# Gràmar?
-# Is the word "lainnir" appropriate/common?
-#, fuzzy
-msgid "Click and drag to draw glowing sparkles on your picture."
-msgstr "Briog agus slaod airson lainnir a dhèanamh dealbh."
 
 msgid "Tint"
 msgstr ""
@@ -819,3 +830,9 @@ msgid ""
 "bottom for taller waves, the left for small waves, and the right for long "
 "waves."
 msgstr ""
+
+# Is this word appropriate/common?
+# Teach Yourself Gaelic Dictionary: Boyd Robertson & Ian Taylor
+#, fuzzy
+#~ msgid "Sparkles"
+#~ msgstr "Lainnir"

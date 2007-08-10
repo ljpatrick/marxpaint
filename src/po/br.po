@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TuxPaint 0.0.1pre\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-08-08 00:04-0700\n"
+"POT-Creation-Date: 2007-08-09 23:58-0700\n"
 "PO-Revision-Date: 2005-01-09 14:49+0100\n"
 "Last-Translator: Gugusse <titi>\n"
 "Language-Team: Breton <drouizig@drouizig.org>\n"
@@ -558,13 +558,13 @@ msgstr "Kleiz"
 msgid "Drip"
 msgstr "Beradenn"
 
+msgid "Click and move the mouse around to make the picture blocky."
+msgstr "Klik ha fiñv al logodenn evit kaout bloc'hadoù bihan."
+
 msgid ""
 "Click and move the mouse around to turn the picture into a chalk drawing."
 msgstr ""
 "Klik ha fiñv al logodenn evit cheñch ar skeudenn en un dresadenn gleiz."
-
-msgid "Click and move the mouse around to make the picture blocky."
-msgstr "Klik ha fiñv al logodenn evit kaout bloc'hadoù bihan."
 
 msgid "Click and move the mouse around to make the picture drip."
 msgstr "Klik ha fiñv al logodenn evit lakaat ar skeudenn da c'hlebiañ."
@@ -584,6 +584,13 @@ msgstr "Klik ha fiñv al logodenn evit tresañ bloc'hadoù bras."
 
 msgid "Click and move to draw small bricks."
 msgstr "Klik ha fiñv al logodenn evit tresañ bloc'hadoù bihan."
+
+msgid "Calligraphy"
+msgstr ""
+
+#, fuzzy
+msgid "Click and move the mouse around to draw in calligraphy."
+msgstr "Klik ha fiñv al logodenn evit kaout ar rakluc'henn."
 
 msgid "Cartoon"
 msgstr "Tresadenn-vev"
@@ -653,6 +660,14 @@ msgid ""
 msgstr "Klik ha fiñv al logodenn evit lakaat al livioù da deñvalaat."
 
 #, fuzzy
+msgid "Light"
+msgstr "Gris sklaer !"
+
+#, fuzzy
+msgid "Click and drag to draw a beam of light on your picture."
+msgstr "Klik ha fiñv al logodenn evit displanaat ar skeudenn."
+
+#, fuzzy
 msgid "Metal Paint"
 msgstr "Livañ"
 
@@ -678,6 +693,12 @@ msgstr "Rakluc'henn"
 msgid "Click and move the mouse around to draw a negative."
 msgstr "Klik ha fiñv al logodenn evit kaout ar rakluc'henn."
 
+msgid "Rainbow"
+msgstr "Gwareg ar Glav"
+
+msgid "You can draw in rainbow colors!"
+msgstr "Gallout a rez tresañ gant livioù ar Garreg-ar-Glav !"
+
 msgid "Ripples"
 msgstr ""
 
@@ -685,23 +706,17 @@ msgstr ""
 msgid "Click to make ripples appear over your picture."
 msgstr "Klik ha fiñv al logodenn evit displanaat ar skeudenn."
 
-msgid "Rainbow"
-msgstr "Gwareg ar Glav"
+msgid "Shift"
+msgstr ""
 
-msgid "You can draw in rainbow colors!"
-msgstr "Gallout a rez tresañ gant livioù ar Garreg-ar-Glav !"
+#, fuzzy
+msgid "Click and drag to shift your picture around on the canvas."
+msgstr "Klik ha fiñv al logodenn evit displanaat ar skeudenn."
 
 msgid "Smudge"
 msgstr "Displanaat"
 
 msgid "Click and move the mouse around to smudge the picture."
-msgstr "Klik ha fiñv al logodenn evit displanaat ar skeudenn."
-
-msgid "Sparkles"
-msgstr "Fulennoù"
-
-#, fuzzy
-msgid "Click and drag to draw glowing sparkles on your picture."
 msgstr "Klik ha fiñv al logodenn evit displanaat ar skeudenn."
 
 msgid "Tint"
@@ -720,6 +735,9 @@ msgid ""
 "bottom for taller waves, the left for small waves, and the right for long "
 "waves."
 msgstr ""
+
+#~ msgid "Sparkles"
+#~ msgstr "Fulennoù"
 
 #~ msgid "You now have a blank sheet to draw on!"
 #~ msgstr "Setu ur folennad wenn evidout a-benn tresañ !"

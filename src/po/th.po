@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Thai tux paint\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-08-08 00:04-0700\n"
+"POT-Creation-Date: 2007-08-09 23:58-0700\n"
 "PO-Revision-Date: 2007-01-22 10:51+0700\n"
 "Last-Translator: Ouychai <Ae.translator@gmail.com>\n"
 "Language-Team: \n"
@@ -549,12 +549,12 @@ msgstr "ชอล์ก"
 msgid "Drip"
 msgstr "หยด"
 
+msgid "Click and move the mouse around to make the picture blocky."
+msgstr "คลิกแล้วลากเมาส์ไปมาเพื่อทำให้รูปมัวเป็นบล็อกๆ"
+
 msgid ""
 "Click and move the mouse around to turn the picture into a chalk drawing."
 msgstr "คลิกแล้วลากเมาส์ไปมาเพื่อทำให้รูปเป็นรูปเขียนด้วยชอล์ก"
-
-msgid "Click and move the mouse around to make the picture blocky."
-msgstr "คลิกแล้วลากเมาส์ไปมาเพื่อทำให้รูปมัวเป็นบล็อกๆ"
 
 msgid "Click and move the mouse around to make the picture drip."
 msgstr "คลิกแล้วลากเมาส์ไปมา เพื่อทำให้ขอบรูปแตกเป็นฝอยๆ"
@@ -574,6 +574,13 @@ msgstr "คลิกแล้วลากเพื่อวาดรูปอิ
 
 msgid "Click and move to draw small bricks."
 msgstr "คลิกแล้วลากเพื่อวาดรูปอิฐเล็ก"
+
+msgid "Calligraphy"
+msgstr ""
+
+#, fuzzy
+msgid "Click and move the mouse around to draw in calligraphy."
+msgstr "คลิกแล้วลากเมาส์ไปมาเพื่อกลับสีรูป"
 
 msgid "Cartoon"
 msgstr "การ์ตูน"
@@ -641,6 +648,14 @@ msgid ""
 msgstr "คลิกแล้วลากเพื่อทำให้สีมืดลง"
 
 #, fuzzy
+msgid "Light"
+msgstr "สว่าง"
+
+#, fuzzy
+msgid "Click and drag to draw a beam of light on your picture."
+msgstr "คลิกแล้วลากเมาส์ไปมาเพื่อทำให้รูปมัว"
+
+#, fuzzy
 msgid "Metal Paint"
 msgstr "วาดรูป"
 
@@ -666,6 +681,12 @@ msgstr "กลับสี"
 msgid "Click and move the mouse around to draw a negative."
 msgstr "คลิกแล้วลากเมาส์ไปมาเพื่อกลับสีรูป"
 
+msgid "Rainbow"
+msgstr "รุ้ง"
+
+msgid "You can draw in rainbow colors!"
+msgstr "เธอสามารถวาดสีรุ้งได้"
+
 msgid "Ripples"
 msgstr ""
 
@@ -673,24 +694,18 @@ msgstr ""
 msgid "Click to make ripples appear over your picture."
 msgstr "คลิกแล้วลากเมาส์ไปมาเพื่อทำให้รูปมัว"
 
-msgid "Rainbow"
-msgstr "รุ้ง"
+msgid "Shift"
+msgstr ""
 
-msgid "You can draw in rainbow colors!"
-msgstr "เธอสามารถวาดสีรุ้งได้"
+#, fuzzy
+msgid "Click and drag to shift your picture around on the canvas."
+msgstr "คลิกแล้วลากเมาส์ไปมาเพื่อทำให้รูปมัว"
 
 msgid "Smudge"
 msgstr "เกลี่ย"
 
 msgid "Click and move the mouse around to smudge the picture."
 msgstr "คลิกแล้วลากเมาส์ไปมาเพื่อเกลี่ยสีรูป"
-
-msgid "Sparkles"
-msgstr "ประกาย"
-
-#, fuzzy
-msgid "Click and drag to draw glowing sparkles on your picture."
-msgstr "คลิกแล้วลากเมาส์ไปมาเพื่อทำให้รูปมัว"
 
 msgid "Tint"
 msgstr "ทาสีจาง"
@@ -707,6 +722,9 @@ msgid ""
 "bottom for taller waves, the left for small waves, and the right for long "
 "waves."
 msgstr ""
+
+#~ msgid "Sparkles"
+#~ msgstr "ประกาย"
 
 #~ msgid "You now have a blank sheet to draw on!"
 #~ msgstr "สร้างกระดานเปล่าสำหรับวาดรูป!"

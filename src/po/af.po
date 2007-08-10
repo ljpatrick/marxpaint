@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint 0.9.16\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-08-08 00:04-0700\n"
+"POT-Creation-Date: 2007-08-09 23:58-0700\n"
 "PO-Revision-Date: 2006-09-28 09:04+0200\n"
 "Last-Translator: Petri Jooste <rkwjpj@puk.ac.za>\n"
 "Language-Team: Afrikaans <rkwjpj@puk.ac.za>\n"
@@ -558,13 +558,13 @@ msgstr "Bordkryt"
 msgid "Drip"
 msgstr "Drup"
 
+msgid "Click and move the mouse around to make the picture blocky."
+msgstr "Klik en beweeg die muis om die prent blokkerig te maak."
+
 msgid ""
 "Click and move the mouse around to turn the picture into a chalk drawing."
 msgstr ""
 "Klik en beweeg die muis om die prent te verander na 'n bordkryt-tekening."
-
-msgid "Click and move the mouse around to make the picture blocky."
-msgstr "Klik en beweeg die muis om die prent blokkerig te maak."
 
 msgid "Click and move the mouse around to make the picture drip."
 msgstr "Klik en beweeg die muis om die prent te laat afdrup!"
@@ -584,6 +584,13 @@ msgstr "Klik en beweeg om groot stene te teken."
 
 msgid "Click and move to draw small bricks."
 msgstr "Klik en beweeg om klein stene te teken."
+
+msgid "Calligraphy"
+msgstr ""
+
+#, fuzzy
+msgid "Click and move the mouse around to draw in calligraphy."
+msgstr "Klik en beweeg die muis om 'n negatief te maak."
 
 msgid "Cartoon"
 msgstr "Cartoon"
@@ -651,6 +658,14 @@ msgid ""
 msgstr "Klik en beweeg om die kleure donkerder te maak."
 
 #, fuzzy
+msgid "Light"
+msgstr "Maak ligter"
+
+#, fuzzy
+msgid "Click and drag to draw a beam of light on your picture."
+msgstr "Klik en beweeg die muis om die prent uit fokus te maak."
+
+#, fuzzy
 msgid "Metal Paint"
 msgstr "Verf"
 
@@ -676,6 +691,12 @@ msgstr "Negatief"
 msgid "Click and move the mouse around to draw a negative."
 msgstr "Klik en beweeg die muis om 'n negatief te maak."
 
+msgid "Rainbow"
+msgstr "Reënboog"
+
+msgid "You can draw in rainbow colors!"
+msgstr "Jy kan met reënboogkleure teken!"
+
 msgid "Ripples"
 msgstr ""
 
@@ -683,24 +704,18 @@ msgstr ""
 msgid "Click to make ripples appear over your picture."
 msgstr "Klik en beweeg die muis om die prent uit fokus te maak."
 
-msgid "Rainbow"
-msgstr "Reënboog"
+msgid "Shift"
+msgstr ""
 
-msgid "You can draw in rainbow colors!"
-msgstr "Jy kan met reënboogkleure teken!"
+#, fuzzy
+msgid "Click and drag to shift your picture around on the canvas."
+msgstr "Klik en beweeg die muis om die prent uit fokus te maak."
 
 msgid "Smudge"
 msgstr "Smeer"
 
 msgid "Click and move the mouse around to smudge the picture."
 msgstr "Klik en beweeg die muis om die prent te smeer."
-
-msgid "Sparkles"
-msgstr "Vonke"
-
-#, fuzzy
-msgid "Click and drag to draw glowing sparkles on your picture."
-msgstr "Klik en beweeg die muis om die prent uit fokus te maak."
 
 msgid "Tint"
 msgstr "Tint"
@@ -717,6 +732,9 @@ msgid ""
 "bottom for taller waves, the left for small waves, and the right for long "
 "waves."
 msgstr ""
+
+#~ msgid "Sparkles"
+#~ msgstr "Vonke"
 
 #~ msgid "You now have a blank sheet to draw on!"
 #~ msgstr "Jy het nou 'n skoon bladsy om op te teken!"

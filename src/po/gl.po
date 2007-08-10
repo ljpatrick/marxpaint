@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint-gl\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-08-08 00:04-0700\n"
+"POT-Creation-Date: 2007-08-09 23:58-0700\n"
 "PO-Revision-Date: 2006-05-12 13:47+0200\n"
 "Last-Translator: Leandro Regueiro <leandro.regueiro@gmail.com>\n"
 "Language-Team: Galician <gpul-traduccion@ceu.fi.udc.es>\n"
@@ -559,13 +559,13 @@ msgstr "Xiz"
 msgid "Drip"
 msgstr "Pingar"
 
+msgid "Click and move the mouse around to make the picture blocky."
+msgstr "Clica e move o rato para cuadricular o debuxo."
+
 msgid ""
 "Click and move the mouse around to turn the picture into a chalk drawing."
 msgstr ""
 "Clica e move o rato para para converter o debuxo nun debuxo feito con xiz."
-
-msgid "Click and move the mouse around to make the picture blocky."
-msgstr "Clica e move o rato para cuadricular o debuxo."
 
 msgid "Click and move the mouse around to make the picture drip."
 msgstr "Clica e move o rato para facer que o debuxo pingue."
@@ -585,6 +585,13 @@ msgstr "Clica e move para debuxar ladrillos grandes."
 
 msgid "Click and move to draw small bricks."
 msgstr "Clica e move para debuxar ladrillos pequenos."
+
+msgid "Calligraphy"
+msgstr ""
+
+#, fuzzy
+msgid "Click and move the mouse around to draw in calligraphy."
+msgstr "Clica e move o rato para debuxar o negativo do debuxo."
 
 msgid "Cartoon"
 msgstr "Cómic"
@@ -653,6 +660,14 @@ msgid ""
 msgstr "Clica e move para escurecer as cores."
 
 #, fuzzy
+msgid "Light"
+msgstr "Aclarar"
+
+#, fuzzy
+msgid "Click and drag to draw a beam of light on your picture."
+msgstr "Clica e move o rato para desenfocar o debuxo."
+
+#, fuzzy
 msgid "Metal Paint"
 msgstr "Pintar"
 
@@ -680,6 +695,12 @@ msgstr "Negativo"
 msgid "Click and move the mouse around to draw a negative."
 msgstr "Clica e move o rato para debuxar o negativo do debuxo."
 
+msgid "Rainbow"
+msgstr "Arco iris"
+
+msgid "You can draw in rainbow colors!"
+msgstr "Podes pintar cas cores do arco da vella!"
+
 msgid "Ripples"
 msgstr ""
 
@@ -687,24 +708,18 @@ msgstr ""
 msgid "Click to make ripples appear over your picture."
 msgstr "Clica e move o rato para desenfocar o debuxo."
 
-msgid "Rainbow"
-msgstr "Arco iris"
+msgid "Shift"
+msgstr ""
 
-msgid "You can draw in rainbow colors!"
-msgstr "Podes pintar cas cores do arco da vella!"
+#, fuzzy
+msgid "Click and drag to shift your picture around on the canvas."
+msgstr "Clica e move o rato para desenfocar o debuxo."
 
 msgid "Smudge"
 msgstr "Luxar"
 
 msgid "Click and move the mouse around to smudge the picture."
 msgstr "Clica e move o rato para luxar o debuxo."
-
-msgid "Sparkles"
-msgstr "Escintileos"
-
-#, fuzzy
-msgid "Click and drag to draw glowing sparkles on your picture."
-msgstr "Clica e move o rato para desenfocar o debuxo."
 
 msgid "Tint"
 msgstr "Tinguir"
@@ -721,6 +736,9 @@ msgid ""
 "bottom for taller waves, the left for small waves, and the right for long "
 "waves."
 msgstr ""
+
+#~ msgid "Sparkles"
+#~ msgstr "Escintileos"
 
 #~ msgid "You now have a blank sheet to draw on!"
 #~ msgstr "Agora xa tes unha folla en branco para debuxar!"

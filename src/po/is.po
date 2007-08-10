@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint-is 0.9.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-08-08 00:04-0700\n"
+"POT-Creation-Date: 2007-08-09 23:58-0700\n"
 "PO-Revision-Date: 2004-03-15 15:38GMT\n"
 "Last-Translator: Pjetur G. Hjaltason <pjetur@pjetur.net>\n"
 "Language-Team: Icelandic <kde-isl@molar.is>\n"
@@ -565,12 +565,12 @@ msgstr "Krít"
 msgid "Drip"
 msgstr "Leka"
 
+msgid "Click and move the mouse around to make the picture blocky."
+msgstr "Smelltu og hreyfðu músina til að gera myndina 'Kassa-lega'."
+
 msgid ""
 "Click and move the mouse around to turn the picture into a chalk drawing."
 msgstr "Smelltu og hreyfðu músina til að búa til krítarmynd!"
-
-msgid "Click and move the mouse around to make the picture blocky."
-msgstr "Smelltu og hreyfðu músina til að gera myndina 'Kassa-lega'."
 
 msgid "Click and move the mouse around to make the picture drip."
 msgstr "Smelltu og hreyfðu músina til að láta myndina leka."
@@ -593,6 +593,13 @@ msgstr "Smelltu og hreyfðu músina til að búa til neista."
 #, fuzzy
 msgid "Click and move to draw small bricks."
 msgstr "Smelltu og hreyfðu músina til að búa til neista."
+
+msgid "Calligraphy"
+msgstr ""
+
+#, fuzzy
+msgid "Click and move the mouse around to draw in calligraphy."
+msgstr "Smelltu og hreyfðu músina til að teikna andhverfu-liti."
 
 msgid "Cartoon"
 msgstr ""
@@ -663,6 +670,13 @@ msgid ""
 "Click and drag the mouse to draw with symmetric brushes (a kaleidoscope)."
 msgstr "Smelltu og hreyfðu músina til að gera myndina þykkari."
 
+msgid "Light"
+msgstr ""
+
+#, fuzzy
+msgid "Click and drag to draw a beam of light on your picture."
+msgstr "Smelltu og hreyfðu músina til að gera myndina þynnri."
+
 #, fuzzy
 msgid "Metal Paint"
 msgstr "Teikna"
@@ -689,6 +703,12 @@ msgstr "Andhverfa"
 msgid "Click and move the mouse around to draw a negative."
 msgstr "Smelltu og hreyfðu músina til að teikna andhverfu-liti."
 
+msgid "Rainbow"
+msgstr "Regnbogi"
+
+msgid "You can draw in rainbow colors!"
+msgstr "Þú getur teiknað með regnboga-litum!"
+
 msgid "Ripples"
 msgstr ""
 
@@ -696,11 +716,12 @@ msgstr ""
 msgid "Click to make ripples appear over your picture."
 msgstr "Smelltu og hreyfðu músina til að gera myndina þynnri."
 
-msgid "Rainbow"
-msgstr "Regnbogi"
+msgid "Shift"
+msgstr ""
 
-msgid "You can draw in rainbow colors!"
-msgstr "Þú getur teiknað með regnboga-litum!"
+#, fuzzy
+msgid "Click and drag to shift your picture around on the canvas."
+msgstr "Smelltu og hreyfðu músina til að gera myndina þynnri."
 
 msgid "Smudge"
 msgstr ""
@@ -708,13 +729,6 @@ msgstr ""
 #, fuzzy
 msgid "Click and move the mouse around to smudge the picture."
 msgstr "Smelltu og hreyfðu músina til að gera myndina óskýrari."
-
-msgid "Sparkles"
-msgstr "Neistar"
-
-#, fuzzy
-msgid "Click and drag to draw glowing sparkles on your picture."
-msgstr "Smelltu og hreyfðu músina til að gera myndina þynnri."
 
 #, fuzzy
 msgid "Tint"
@@ -733,6 +747,9 @@ msgid ""
 "bottom for taller waves, the left for small waves, and the right for long "
 "waves."
 msgstr ""
+
+#~ msgid "Sparkles"
+#~ msgstr "Neistar"
 
 #~ msgid "You now have a blank sheet to draw on!"
 #~ msgstr "Nú ertu með autt blað til að teikna á!"

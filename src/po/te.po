@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-08-08 00:04-0700\n"
+"POT-Creation-Date: 2007-08-09 23:58-0700\n"
 "PO-Revision-Date: 2007-03-15 17:27+0530\n"
 "Last-Translator: pavithran <pavithran.s@gmail.com>\n"
 "Language-Team: Telugu <indlinux-telugu@lists.sourceforge.net>\n"
@@ -549,11 +549,11 @@ msgstr "సుద్ద"
 msgid "Drip"
 msgstr "కార్చు"
 
-msgid ""
-"Click and move the mouse around to turn the picture into a chalk drawing."
+msgid "Click and move the mouse around to make the picture blocky."
 msgstr ""
 
-msgid "Click and move the mouse around to make the picture blocky."
+msgid ""
+"Click and move the mouse around to turn the picture into a chalk drawing."
 msgstr ""
 
 msgid "Click and move the mouse around to make the picture drip."
@@ -574,6 +574,13 @@ msgstr "పెద్ద ఇటికలు గీయటానికి క్ల
 
 msgid "Click and move to draw small bricks."
 msgstr " చిన్న ఇటికలు గీయటానికి క్లిక్ చేసి జరపండి"
+
+msgid "Calligraphy"
+msgstr ""
+
+#, fuzzy
+msgid "Click and move the mouse around to draw in calligraphy."
+msgstr "చిత్రానికి మఱక వేయడానికి క్లిక్ చేసి దాని చుట్టూ జరపండి"
 
 msgid "Cartoon"
 msgstr "వ్యంగ్య చిత్రం"
@@ -641,6 +648,14 @@ msgid ""
 msgstr "రంగుల  వాడిపోవటానికి క్లిక్ చేసి జరపండి"
 
 #, fuzzy
+msgid "Light"
+msgstr "ప్రకాశింపజేయు"
+
+#, fuzzy
+msgid "Click and drag to draw a beam of light on your picture."
+msgstr "చిత్రానికి మఱక వేయడానికి క్లిక్ చేసి దాని చుట్టూ జరపండి"
+
+#, fuzzy
 msgid "Metal Paint"
 msgstr "రంగు పూయండి"
 
@@ -666,6 +681,12 @@ msgstr "వ్యతిరేఖార్ధమైన"
 msgid "Click and move the mouse around to draw a negative."
 msgstr ""
 
+msgid "Rainbow"
+msgstr "ఇంద్ర ధనస్సు"
+
+msgid "You can draw in rainbow colors!"
+msgstr "మీరు ఇంద్రధనస్సు రంగుల లో గీయొచ్చు!"
+
 msgid "Ripples"
 msgstr ""
 
@@ -673,24 +694,18 @@ msgstr ""
 msgid "Click to make ripples appear over your picture."
 msgstr "చిత్రానికి మఱక వేయడానికి క్లిక్ చేసి దాని చుట్టూ జరపండి"
 
-msgid "Rainbow"
-msgstr "ఇంద్ర ధనస్సు"
+msgid "Shift"
+msgstr ""
 
-msgid "You can draw in rainbow colors!"
-msgstr "మీరు ఇంద్రధనస్సు రంగుల లో గీయొచ్చు!"
+#, fuzzy
+msgid "Click and drag to shift your picture around on the canvas."
+msgstr "చిత్రానికి మఱక వేయడానికి క్లిక్ చేసి దాని చుట్టూ జరపండి"
 
 msgid "Smudge"
 msgstr "మచ్చ"
 
 msgid "Click and move the mouse around to smudge the picture."
 msgstr "చిత్రానికి మచ్చ  వేయడానికి క్లిక్ చేసి దాని చుట్టూ జరపండి"
-
-msgid "Sparkles"
-msgstr "మెరుపులు"
-
-#, fuzzy
-msgid "Click and drag to draw glowing sparkles on your picture."
-msgstr "చిత్రానికి మఱక వేయడానికి క్లిక్ చేసి దాని చుట్టూ జరపండి"
 
 msgid "Tint"
 msgstr "లేత చాయ"
@@ -707,6 +722,9 @@ msgid ""
 "bottom for taller waves, the left for small waves, and the right for long "
 "waves."
 msgstr ""
+
+#~ msgid "Sparkles"
+#~ msgstr "మెరుపులు"
 
 #~ msgid "You now have a blank sheet to draw on!"
 #~ msgstr "మీకిప్పుడు బొమ్మ గీయటానికి వట్టి కాగితము "

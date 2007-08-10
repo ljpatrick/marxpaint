@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-08-08 00:04-0700\n"
+"POT-Creation-Date: 2007-08-09 23:58-0700\n"
 "PO-Revision-Date: 2006-10-11 23:27+0300\n"
 "Last-Translator: Doruk Fisek <dfisek@fisek.com.tr>\n"
 "Language-Team: Turkish <gnu-tr-u12a@lists.sourceforge.net>\n"
@@ -557,13 +557,13 @@ msgstr "Tebeşir"
 msgid "Drip"
 msgstr "Damla damla akıt"
 
+msgid "Click and move the mouse around to make the picture blocky."
+msgstr "Resmi tıknaz hale getirmek için tıkla ve fareyi etrafta gezdir."
+
 msgid ""
 "Click and move the mouse around to turn the picture into a chalk drawing."
 msgstr ""
 "Resmi bir tebeşir çizimine çevirmek için tıkla ve fareyi etrafta gezdir."
-
-msgid "Click and move the mouse around to make the picture blocky."
-msgstr "Resmi tıknaz hale getirmek için tıkla ve fareyi etrafta gezdir."
 
 msgid "Click and move the mouse around to make the picture drip."
 msgstr "Resmi damla damla akıtmak için tıkla ve fareyi etrafta gezdir."
@@ -583,6 +583,13 @@ msgstr "Büyük tuğlalar çizmek için tıkla ve fareyi hareket ettir."
 
 msgid "Click and move to draw small bricks."
 msgstr "Küçük tuğlalar çizmek için tıkla ve fareyi hareket ettir."
+
+msgid "Calligraphy"
+msgstr ""
+
+#, fuzzy
+msgid "Click and move the mouse around to draw in calligraphy."
+msgstr "Negatif elde etmek için tıkla ve fareyi etrafta gezdir."
 
 msgid "Cartoon"
 msgstr "Karikatür"
@@ -650,6 +657,14 @@ msgid ""
 msgstr "Renkleri koyulaştırmak için tıkla ve fareyi hareket ettir."
 
 #, fuzzy
+msgid "Light"
+msgstr "Rengini aç"
+
+#, fuzzy
+msgid "Click and drag to draw a beam of light on your picture."
+msgstr "Resmi bulanıklaştırmak için tıkla ve fareyi etrafta gezdir."
+
+#, fuzzy
 msgid "Metal Paint"
 msgstr "Boya"
 
@@ -675,6 +690,12 @@ msgstr "Negatif"
 msgid "Click and move the mouse around to draw a negative."
 msgstr "Negatif elde etmek için tıkla ve fareyi etrafta gezdir."
 
+msgid "Rainbow"
+msgstr "Gökkuşağı"
+
+msgid "You can draw in rainbow colors!"
+msgstr "Gökkuşağı renklerinde çizebilirsin!"
+
 msgid "Ripples"
 msgstr ""
 
@@ -682,24 +703,18 @@ msgstr ""
 msgid "Click to make ripples appear over your picture."
 msgstr "Resmi bulanıklaştırmak için tıkla ve fareyi etrafta gezdir."
 
-msgid "Rainbow"
-msgstr "Gökkuşağı"
+msgid "Shift"
+msgstr ""
 
-msgid "You can draw in rainbow colors!"
-msgstr "Gökkuşağı renklerinde çizebilirsin!"
+#, fuzzy
+msgid "Click and drag to shift your picture around on the canvas."
+msgstr "Resmi bulanıklaştırmak için tıkla ve fareyi etrafta gezdir."
 
 msgid "Smudge"
 msgstr "Tütsüle"
 
 msgid "Click and move the mouse around to smudge the picture."
 msgstr "Tütsülemek için tıkla ve fareyi etrafta gezdir."
-
-msgid "Sparkles"
-msgstr "Kıvılcımlar"
-
-#, fuzzy
-msgid "Click and drag to draw glowing sparkles on your picture."
-msgstr "Resmi bulanıklaştırmak için tıkla ve fareyi etrafta gezdir."
 
 msgid "Tint"
 msgstr "Tonla"
@@ -716,6 +731,9 @@ msgid ""
 "bottom for taller waves, the left for small waves, and the right for long "
 "waves."
 msgstr ""
+
+#~ msgid "Sparkles"
+#~ msgstr "Kıvılcımlar"
 
 #~ msgid "You now have a blank sheet to draw on!"
 #~ msgstr "Şimdi çizim yapmak için temiz bir sayfan var!"

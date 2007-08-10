@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint 0.9.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-08-08 00:04-0700\n"
+"POT-Creation-Date: 2007-08-09 23:58-0700\n"
 "PO-Revision-Date: 2004-03-30 17:24+0200\n"
 "Last-Translator: Pablo Saratxaga <pablo@walon.org>\n"
 "Language-Team: Walloon <linux-wa@walon.org>\n"
@@ -566,15 +566,15 @@ msgstr "Croye"
 msgid "Drip"
 msgstr "Gotes"
 
+msgid "Click and move the mouse around to make the picture blocky."
+msgstr ""
+"Clitchîz et s' bodjîz l' sori po mete des bokets d' l' imådje e ptits cwårés."
+
 msgid ""
 "Click and move the mouse around to turn the picture into a chalk drawing."
 msgstr ""
 "Clitchîz et s' bodjîz l' sori po mete des bokets d' l' imådje come dessinés "
 "al croye"
-
-msgid "Click and move the mouse around to make the picture blocky."
-msgstr ""
-"Clitchîz et s' bodjîz l' sori po mete des bokets d' l' imådje e ptits cwårés."
 
 msgid "Click and move the mouse around to make the picture drip."
 msgstr ""
@@ -599,6 +599,14 @@ msgstr "Clitchîz et s' bodjîz l' sori po dessiner des spitaedjes."
 #, fuzzy
 msgid "Click and move to draw small bricks."
 msgstr "Clitchîz et s' bodjîz l' sori po dessiner des spitaedjes."
+
+msgid "Calligraphy"
+msgstr ""
+
+#, fuzzy
+msgid "Click and move the mouse around to draw in calligraphy."
+msgstr ""
+"Clitchîz et s' bodjîz l' sori po mete des bokets d' l' imådje e negatif."
 
 msgid "Cartoon"
 msgstr ""
@@ -675,6 +683,14 @@ msgid ""
 msgstr ""
 "Clitchîz et s' bodjîz l' sori po mete des bokets d' l' imådje pus spès."
 
+msgid "Light"
+msgstr ""
+
+#, fuzzy
+msgid "Click and drag to draw a beam of light on your picture."
+msgstr ""
+"Clitchîz et s' bodjîz l' sori po mete des bokets d' l' imådje pus féns."
+
 #, fuzzy
 msgid "Metal Paint"
 msgstr "Ponde"
@@ -703,6 +719,12 @@ msgid "Click and move the mouse around to draw a negative."
 msgstr ""
 "Clitchîz et s' bodjîz l' sori po mete des bokets d' l' imådje e negatif."
 
+msgid "Rainbow"
+msgstr "Airdiè"
+
+msgid "You can draw in rainbow colors!"
+msgstr "Vos ploz dessiner avou les coleurs di l' airdiè!"
+
 msgid "Ripples"
 msgstr ""
 
@@ -711,11 +733,13 @@ msgid "Click to make ripples appear over your picture."
 msgstr ""
 "Clitchîz et s' bodjîz l' sori po mete des bokets d' l' imådje pus féns."
 
-msgid "Rainbow"
-msgstr "Airdiè"
+msgid "Shift"
+msgstr ""
 
-msgid "You can draw in rainbow colors!"
-msgstr "Vos ploz dessiner avou les coleurs di l' airdiè!"
+#, fuzzy
+msgid "Click and drag to shift your picture around on the canvas."
+msgstr ""
+"Clitchîz et s' bodjîz l' sori po mete des bokets d' l' imådje pus féns."
 
 msgid "Smudge"
 msgstr ""
@@ -723,14 +747,6 @@ msgstr ""
 #, fuzzy
 msgid "Click and move the mouse around to smudge the picture."
 msgstr "Clitchîz et s' bodjîz l' sori po-z adoûci des bokets d' l' imådje."
-
-msgid "Sparkles"
-msgstr "Sipites"
-
-#, fuzzy
-msgid "Click and drag to draw glowing sparkles on your picture."
-msgstr ""
-"Clitchîz et s' bodjîz l' sori po mete des bokets d' l' imådje pus féns."
 
 #, fuzzy
 msgid "Tint"
@@ -750,6 +766,9 @@ msgid ""
 "bottom for taller waves, the left for small waves, and the right for long "
 "waves."
 msgstr ""
+
+#~ msgid "Sparkles"
+#~ msgstr "Sipites"
 
 #~ msgid "You now have a blank sheet to draw on!"
 #~ msgstr "Asteure vos avoz ene blanke foye po dessiner dzeu!"

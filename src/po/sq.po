@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint 0.9.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-08-08 00:04-0700\n"
+"POT-Creation-Date: 2007-08-09 23:58-0700\n"
 "PO-Revision-Date: 2004-10-17 11:19+0200\n"
 "Last-Translator: Laurent Dhima <laurenti@alblinux.net>\n"
 "Language-Team: Albanian <translation-team-sq@lists.sourceforge.net>\n"
@@ -565,14 +565,14 @@ msgstr "Shkumës"
 msgid "Drip"
 msgstr "Shkrirje"
 
+msgid "Click and move the mouse around to make the picture blocky."
+msgstr "Kliko dhe lëviz përqark miun për të grupuar foton."
+
 msgid ""
 "Click and move the mouse around to turn the picture into a chalk drawing."
 msgstr ""
 "Kliko dhe lëvize miun përqark që të kthesh pikturën si të vizatuar me "
 "shkumës."
-
-msgid "Click and move the mouse around to make the picture blocky."
-msgstr "Kliko dhe lëviz përqark miun për të grupuar foton."
 
 msgid "Click and move the mouse around to make the picture drip."
 msgstr "Kliko dhe lëvize miun përqark që të krijosh efekt shiu."
@@ -595,6 +595,13 @@ msgstr "Kliko dhe lëviz për të vizatuar spërkatje."
 #, fuzzy
 msgid "Click and move to draw small bricks."
 msgstr "Kliko dhe lëviz për të vizatuar spërkatje."
+
+msgid "Calligraphy"
+msgstr ""
+
+#, fuzzy
+msgid "Click and move the mouse around to draw in calligraphy."
+msgstr "Kliko dhe lëviz mausin rreth e qark për të krijuar një negativ."
 
 msgid "Cartoon"
 msgstr ""
@@ -667,6 +674,13 @@ msgid ""
 "Click and drag the mouse to draw with symmetric brushes (a kaleidoscope)."
 msgstr "Kliko dhe lëviz miun për të \"trashur\" foton."
 
+msgid "Light"
+msgstr ""
+
+#, fuzzy
+msgid "Click and drag to draw a beam of light on your picture."
+msgstr "Kliko dhe lëviz miun për t'a \"holluar\" foton."
+
 #, fuzzy
 msgid "Metal Paint"
 msgstr "Bojë"
@@ -693,6 +707,12 @@ msgstr "Negativi"
 msgid "Click and move the mouse around to draw a negative."
 msgstr "Kliko dhe lëviz mausin rreth e qark për të krijuar një negativ."
 
+msgid "Rainbow"
+msgstr "Larmishme"
+
+msgid "You can draw in rainbow colors!"
+msgstr "Mund të vizatoni me ngjyrat e ylberit!"
+
 msgid "Ripples"
 msgstr ""
 
@@ -700,11 +720,12 @@ msgstr ""
 msgid "Click to make ripples appear over your picture."
 msgstr "Kliko dhe lëviz miun për t'a \"holluar\" foton."
 
-msgid "Rainbow"
-msgstr "Larmishme"
+msgid "Shift"
+msgstr ""
 
-msgid "You can draw in rainbow colors!"
-msgstr "Mund të vizatoni me ngjyrat e ylberit!"
+#, fuzzy
+msgid "Click and drag to shift your picture around on the canvas."
+msgstr "Kliko dhe lëviz miun për t'a \"holluar\" foton."
 
 msgid "Smudge"
 msgstr ""
@@ -712,13 +733,6 @@ msgstr ""
 #, fuzzy
 msgid "Click and move the mouse around to smudge the picture."
 msgstr "Kliko dhe lëviz mausin nëpër pikturë për të krijuar dridhje."
-
-msgid "Sparkles"
-msgstr "Xixa"
-
-#, fuzzy
-msgid "Click and drag to draw glowing sparkles on your picture."
-msgstr "Kliko dhe lëviz miun për t'a \"holluar\" foton."
 
 #, fuzzy
 msgid "Tint"
@@ -737,6 +751,9 @@ msgid ""
 "bottom for taller waves, the left for small waves, and the right for long "
 "waves."
 msgstr ""
+
+#~ msgid "Sparkles"
+#~ msgstr "Xixa"
 
 #~ msgid "You now have a blank sheet to draw on!"
 #~ msgstr "Tashmë keni një fletë bosh ku mund të vizatoni!"

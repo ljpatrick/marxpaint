@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-08-08 00:04-0700\n"
+"POT-Creation-Date: 2007-08-09 23:58-0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -553,11 +553,11 @@ msgstr "s.dkr."
 msgid "Drip"
 msgstr "[igs.p.rGYb.p."
 
-msgid ""
-"Click and move the mouse around to turn the picture into a chalk drawing."
+msgid "Click and move the mouse around to make the picture blocky."
 msgstr ""
 
-msgid "Click and move the mouse around to make the picture blocky."
+msgid ""
+"Click and move the mouse around to turn the picture into a chalk drawing."
 msgstr ""
 
 msgid "Click and move the mouse around to make the picture drip."
@@ -577,6 +577,12 @@ msgid "Click and move to draw large bricks."
 msgstr ""
 
 msgid "Click and move to draw small bricks."
+msgstr ""
+
+msgid "Calligraphy"
+msgstr ""
+
+msgid "Click and move the mouse around to draw in calligraphy."
 msgstr ""
 
 msgid "Cartoon"
@@ -641,6 +647,13 @@ msgid ""
 msgstr ""
 
 #, fuzzy
+msgid "Light"
+msgstr "aod.a\\+o.b."
+
+msgid "Click and drag to draw a beam of light on your picture."
+msgstr ""
+
+#, fuzzy
 msgid "Metal Paint"
 msgstr "]xon."
 
@@ -665,28 +678,28 @@ msgstr "dgg.sG+ai."
 msgid "Click and move the mouse around to draw a negative."
 msgstr ""
 
-msgid "Ripples"
-msgstr ""
-
-msgid "Click to make ripples appear over your picture."
-msgstr ""
-
 msgid "Rainbow"
 msgstr "aja."
 
 msgid "You can draw in rainbow colors!"
 msgstr ""
 
+msgid "Ripples"
+msgstr ""
+
+msgid "Click to make ripples appear over your picture."
+msgstr ""
+
+msgid "Shift"
+msgstr ""
+
+msgid "Click and drag to shift your picture around on the canvas."
+msgstr ""
+
 msgid "Smudge"
 msgstr "ng.nog."
 
 msgid "Click and move the mouse around to smudge the picture."
-msgstr ""
-
-msgid "Sparkles"
-msgstr "mi.cxg.a[or.b."
-
-msgid "Click and drag to draw glowing sparkles on your picture."
 msgstr ""
 
 msgid "Tint"
@@ -704,6 +717,9 @@ msgid ""
 "bottom for taller waves, the left for small waves, and the right for long "
 "waves."
 msgstr ""
+
+#~ msgid "Sparkles"
+#~ msgstr "mi.cxg.a[or.b."
 
 #~ msgid "Open?"
 #~ msgstr "q.\\Yed.b."

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Tuxpaint 0.9.9\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-08-08 00:04-0700\n"
+"POT-Creation-Date: 2007-08-09 23:58-0700\n"
 "PO-Revision-Date: 2004-12-10 18:11+0200\n"
 "Last-Translator: Gintaras Goštautas <gintaras@nes.lt>\n"
 "Language-Team: Lithuanian <komp_lt@konf.lt>\n"
@@ -562,12 +562,12 @@ msgstr "Kreida"
 msgid "Drip"
 msgstr "Varveklis"
 
+msgid "Click and move the mouse around to make the picture blocky."
+msgstr "Spustelėkite ir judindami pelę išskaidysite piešinį kvadratėliais."
+
 msgid ""
 "Click and move the mouse around to turn the picture into a chalk drawing."
 msgstr "Spustelėkite ir judinkite pelę ir piešinys taps panašus į kreida"
-
-msgid "Click and move the mouse around to make the picture blocky."
-msgstr "Spustelėkite ir judindami pelę išskaidysite piešinį kvadratėliais."
 
 msgid "Click and move the mouse around to make the picture drip."
 msgstr "Spustelėkite ir pele žymėkite aplink, kad piešinys nuvarvėtų."
@@ -587,6 +587,13 @@ msgstr "Spustelėkite ir pieškite dideles plytas."
 
 msgid "Click and move to draw small bricks."
 msgstr "Spustelėkite ir pieškite mažas plytas."
+
+msgid "Calligraphy"
+msgstr ""
+
+#, fuzzy
+msgid "Click and move the mouse around to draw in calligraphy."
+msgstr "Spustelėkite ir judindami pelę invertuosite paveikslėlio spalvas."
 
 msgid "Cartoon"
 msgstr ""
@@ -654,6 +661,14 @@ msgid ""
 msgstr "Spustelėkite ir pele pastorinsite piešinį."
 
 #, fuzzy
+msgid "Light"
+msgstr "Šviesinti"
+
+#, fuzzy
+msgid "Click and drag to draw a beam of light on your picture."
+msgstr "Spustelėkite ir pele paploninsite piešinį."
+
+#, fuzzy
 msgid "Metal Paint"
 msgstr "Tapyti"
 
@@ -679,6 +694,12 @@ msgstr "Negatyvas"
 msgid "Click and move the mouse around to draw a negative."
 msgstr "Spustelėkite ir judindami pelę invertuosite paveikslėlio spalvas."
 
+msgid "Rainbow"
+msgstr "Vaivorykštė"
+
+msgid "You can draw in rainbow colors!"
+msgstr "Jūs galite piešti vaivorykštės spalvomis!"
+
 msgid "Ripples"
 msgstr ""
 
@@ -686,24 +707,18 @@ msgstr ""
 msgid "Click to make ripples appear over your picture."
 msgstr "Spustelėkite ir pele paploninsite piešinį."
 
-msgid "Rainbow"
-msgstr "Vaivorykštė"
+msgid "Shift"
+msgstr ""
 
-msgid "You can draw in rainbow colors!"
-msgstr "Jūs galite piešti vaivorykštės spalvomis!"
+#, fuzzy
+msgid "Click and drag to shift your picture around on the canvas."
+msgstr "Spustelėkite ir pele paploninsite piešinį."
 
 msgid "Smudge"
 msgstr "Sutepti"
 
 msgid "Click and move the mouse around to smudge the picture."
 msgstr "Spustelėkite ir judindami pelę sutepsite piešinį."
-
-msgid "Sparkles"
-msgstr "Žybsniai"
-
-#, fuzzy
-msgid "Click and drag to draw glowing sparkles on your picture."
-msgstr "Spustelėkite ir pele paploninsite piešinį."
 
 msgid "Tint"
 msgstr "Spalvinti"
@@ -720,6 +735,9 @@ msgid ""
 "bottom for taller waves, the left for small waves, and the right for long "
 "waves."
 msgstr ""
+
+#~ msgid "Sparkles"
+#~ msgstr "Žybsniai"
 
 #~ msgid "You now have a blank sheet to draw on!"
 #~ msgstr "Dabar jūs turite tuščią lapą piešimui!"

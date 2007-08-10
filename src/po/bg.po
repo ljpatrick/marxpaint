@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint 0.9.17\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-08-08 00:04-0700\n"
+"POT-Creation-Date: 2007-08-09 23:58-0700\n"
 "PO-Revision-Date: 2007-05-16 17:08+0300\n"
 "Last-Translator: Yavor Doganov <yavor@doganov.org>\n"
 "Language-Team: Bulgarian <dict@fsa-bg.org>\n"
@@ -557,12 +557,12 @@ msgstr "Тебешир"
 msgid "Drip"
 msgstr "Стичане"
 
+msgid "Click and move the mouse around to make the picture blocky."
+msgstr "Натиснете и движете мишката, за да направите рисунката на квадратчета."
+
 msgid ""
 "Click and move the mouse around to turn the picture into a chalk drawing."
 msgstr "Натиснете и движете мишката, за да превърнете рисунката в тебеширена."
-
-msgid "Click and move the mouse around to make the picture blocky."
-msgstr "Натиснете и движете мишката, за да направите рисунката на квадратчета."
 
 msgid "Click and move the mouse around to make the picture drip."
 msgstr "Натиснете и движете мишката, за да направите рисунката да капе."
@@ -582,6 +582,13 @@ msgstr "Натиснете и движете мишката, за да рису�
 
 msgid "Click and move to draw small bricks."
 msgstr "Натиснете и движете мишката, за да рисувате малки тухли."
+
+msgid "Calligraphy"
+msgstr ""
+
+#, fuzzy
+msgid "Click and move the mouse around to draw in calligraphy."
+msgstr "Натиснете и движете мишката, за да нарисувате негатив."
 
 msgid "Cartoon"
 msgstr "Карикатура"
@@ -652,6 +659,14 @@ msgid ""
 msgstr "Натиснете и движете мишката, за да потъмнеят цветовете."
 
 #, fuzzy
+msgid "Light"
+msgstr "Избледняване"
+
+#, fuzzy
+msgid "Click and drag to draw a beam of light on your picture."
+msgstr "Натиснете и движете мишката, за да размажете рисунката."
+
+#, fuzzy
 msgid "Metal Paint"
 msgstr "Рисуване"
 
@@ -677,6 +692,12 @@ msgstr "Негатив"
 msgid "Click and move the mouse around to draw a negative."
 msgstr "Натиснете и движете мишката, за да нарисувате негатив."
 
+msgid "Rainbow"
+msgstr "Дъга"
+
+msgid "You can draw in rainbow colors!"
+msgstr "Може да рисувате в цветовете на дъгата!"
+
 msgid "Ripples"
 msgstr ""
 
@@ -684,24 +705,18 @@ msgstr ""
 msgid "Click to make ripples appear over your picture."
 msgstr "Натиснете и движете мишката, за да размажете рисунката."
 
-msgid "Rainbow"
-msgstr "Дъга"
+msgid "Shift"
+msgstr ""
 
-msgid "You can draw in rainbow colors!"
-msgstr "Може да рисувате в цветовете на дъгата!"
+#, fuzzy
+msgid "Click and drag to shift your picture around on the canvas."
+msgstr "Натиснете и движете мишката, за да размажете рисунката."
 
 msgid "Smudge"
 msgstr "Зацапване"
 
 msgid "Click and move the mouse around to smudge the picture."
 msgstr "Натиснете и движете мишката, за да зацапате рисунката."
-
-msgid "Sparkles"
-msgstr "Искри"
-
-#, fuzzy
-msgid "Click and drag to draw glowing sparkles on your picture."
-msgstr "Натиснете и движете мишката, за да размажете рисунката."
 
 msgid "Tint"
 msgstr "Окраска"
@@ -718,6 +733,9 @@ msgid ""
 "bottom for taller waves, the left for small waves, and the right for long "
 "waves."
 msgstr ""
+
+#~ msgid "Sparkles"
+#~ msgstr "Искри"
 
 #~ msgid "You now have a blank sheet to draw on!"
 #~ msgstr "Вече имате празно платно за рисуване!"

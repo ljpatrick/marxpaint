@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint 0.9.15rc1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-08-08 00:04-0700\n"
+"POT-Creation-Date: 2007-08-09 23:58-0700\n"
 "PO-Revision-Date: 2005-10-12 10:57+0100\n"
 "Last-Translator: Matej Urbančič <matej.urban@gmail.com>\n"
 "Language-Team: Slovenian <translation-team-sl@lists.sourceforge.net>\n"
@@ -561,12 +561,12 @@ msgstr "Kreda"
 msgid "Drip"
 msgstr "Pokapljati"
 
+msgid "Click and move the mouse around to make the picture blocky."
+msgstr "Klikni in premakni miško za kockanje slike."
+
 msgid ""
 "Click and move the mouse around to turn the picture into a chalk drawing."
 msgstr "Klikni in premakni miško za risanje s kredo."
-
-msgid "Click and move the mouse around to make the picture blocky."
-msgstr "Klikni in premakni miško za kockanje slike."
 
 msgid "Click and move the mouse around to make the picture drip."
 msgstr "Klikni in premakni miško za kapljanje po sliki."
@@ -586,6 +586,13 @@ msgstr "Klikni in premakni za risanje velikih opek."
 
 msgid "Click and move to draw small bricks."
 msgstr "Klikni in premakni za risanje malih opek."
+
+msgid "Calligraphy"
+msgstr ""
+
+#, fuzzy
+msgid "Click and move the mouse around to draw in calligraphy."
+msgstr "Klikni in premakni miško za risanje negativnih barv."
 
 msgid "Cartoon"
 msgstr "Karikatura"
@@ -653,6 +660,14 @@ msgid ""
 msgstr "Klikni in premakni miško za odebelitev slike."
 
 #, fuzzy
+msgid "Light"
+msgstr "Osvetlitev"
+
+#, fuzzy
+msgid "Click and drag to draw a beam of light on your picture."
+msgstr "Klikni in premakni miško za tanjšanje slike."
+
+#, fuzzy
 msgid "Metal Paint"
 msgstr "Risanje"
 
@@ -678,6 +693,12 @@ msgstr "Negative"
 msgid "Click and move the mouse around to draw a negative."
 msgstr "Klikni in premakni miško za risanje negativnih barv."
 
+msgid "Rainbow"
+msgstr "Mavrica"
+
+msgid "You can draw in rainbow colors!"
+msgstr "Lahko rišeš v barvah mavrice!"
+
 msgid "Ripples"
 msgstr ""
 
@@ -685,24 +706,18 @@ msgstr ""
 msgid "Click to make ripples appear over your picture."
 msgstr "Klikni in premakni miško za tanjšanje slike."
 
-msgid "Rainbow"
-msgstr "Mavrica"
+msgid "Shift"
+msgstr ""
 
-msgid "You can draw in rainbow colors!"
-msgstr "Lahko rišeš v barvah mavrice!"
+#, fuzzy
+msgid "Click and drag to shift your picture around on the canvas."
+msgstr "Klikni in premakni miško za tanjšanje slike."
 
 msgid "Smudge"
 msgstr "Razmaži"
 
 msgid "Click and move the mouse around to smudge the picture."
 msgstr "Klikni in premakni miško za risanje umazanih pack."
-
-msgid "Sparkles"
-msgstr "Iskrice"
-
-#, fuzzy
-msgid "Click and drag to draw glowing sparkles on your picture."
-msgstr "Klikni in premakni miško za tanjšanje slike."
 
 msgid "Tint"
 msgstr "Odtenek"
@@ -719,6 +734,9 @@ msgid ""
 "bottom for taller waves, the left for small waves, and the right for long "
 "waves."
 msgstr ""
+
+#~ msgid "Sparkles"
+#~ msgstr "Iskrice"
 
 #~ msgid "You now have a blank sheet to draw on!"
 #~ msgstr "Imaš prazno polo papirja za risanje!"

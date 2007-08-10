@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint 0.9.15rc1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-08-08 00:04-0700\n"
+"POT-Creation-Date: 2007-08-09 23:58-0700\n"
 "PO-Revision-Date: 2005-10-16 16:57+0200\n"
 "Last-Translator: Andrej Kacian <andrej@kacian.sk>\n"
 "Language-Team: Slovak <sk-i18n@lists.linux.sk>\n"
@@ -560,12 +560,12 @@ msgstr "Krieda"
 msgid "Drip"
 msgstr "Roztiecť"
 
+msgid "Click and move the mouse around to make the picture blocky."
+msgstr "Klikni a pohybuj myšou pre rozstvorcekovanie obrázku."
+
 msgid ""
 "Click and move the mouse around to turn the picture into a chalk drawing."
 msgstr "Klikni a pohybuj myšou pre prekreslenie obrázku kriedou."
-
-msgid "Click and move the mouse around to make the picture blocky."
-msgstr "Klikni a pohybuj myšou pre rozstvorcekovanie obrázku."
 
 msgid "Click and move the mouse around to make the picture drip."
 msgstr "Klikni a pohybuj myšou pre roztekanie obrázku."
@@ -585,6 +585,13 @@ msgstr "Klikni a pohybuj myšou, a budeš kresliť veľké tehly."
 
 msgid "Click and move to draw small bricks."
 msgstr "Klikni a pohybuj myšou, a budeš kresliť malé tehly."
+
+msgid "Calligraphy"
+msgstr ""
+
+#, fuzzy
+msgid "Click and move the mouse around to draw in calligraphy."
+msgstr "Klikni a pohybuj myšou pre vykreslenie negatívu."
 
 msgid "Cartoon"
 msgstr "Komiks"
@@ -652,6 +659,14 @@ msgid ""
 msgstr "Klikni a pohybuj myšou pre stmavenie farieb."
 
 #, fuzzy
+msgid "Light"
+msgstr "Zosvetliť"
+
+#, fuzzy
+msgid "Click and drag to draw a beam of light on your picture."
+msgstr "Klikni a pohybuj myšou pre rozmazanie obrázku."
+
+#, fuzzy
 msgid "Metal Paint"
 msgstr "Kresliť"
 
@@ -677,6 +692,12 @@ msgstr "Negatív"
 msgid "Click and move the mouse around to draw a negative."
 msgstr "Klikni a pohybuj myšou pre vykreslenie negatívu."
 
+msgid "Rainbow"
+msgstr "Dúha"
+
+msgid "You can draw in rainbow colors!"
+msgstr "Môžeš kresliť v dúhových farbách!"
+
 msgid "Ripples"
 msgstr ""
 
@@ -684,23 +705,17 @@ msgstr ""
 msgid "Click to make ripples appear over your picture."
 msgstr "Klikni a pohybuj myšou pre rozmazanie obrázku."
 
-msgid "Rainbow"
-msgstr "Dúha"
+msgid "Shift"
+msgstr ""
 
-msgid "You can draw in rainbow colors!"
-msgstr "Môžeš kresliť v dúhových farbách!"
+#, fuzzy
+msgid "Click and drag to shift your picture around on the canvas."
+msgstr "Klikni a pohybuj myšou pre rozmazanie obrázku."
 
 msgid "Smudge"
 msgstr "Rozmazať"
 
 msgid "Click and move the mouse around to smudge the picture."
-msgstr "Klikni a pohybuj myšou pre rozmazanie obrázku."
-
-msgid "Sparkles"
-msgstr "Iskry"
-
-#, fuzzy
-msgid "Click and drag to draw glowing sparkles on your picture."
 msgstr "Klikni a pohybuj myšou pre rozmazanie obrázku."
 
 msgid "Tint"
@@ -718,6 +733,9 @@ msgid ""
 "bottom for taller waves, the left for small waves, and the right for long "
 "waves."
 msgstr ""
+
+#~ msgid "Sparkles"
+#~ msgstr "Iskry"
 
 #~ msgid "You now have a blank sheet to draw on!"
 #~ msgstr "Máš teraz čistú plochu na kreslenie!"

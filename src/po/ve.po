@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TuxPaint 0.9.16\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-08-08 00:04-0700\n"
+"POT-Creation-Date: 2007-08-09 23:58-0700\n"
 "PO-Revision-Date: 2006-09-21 20:04+0200\n"
 "Last-Translator: Shumani Mercy Ṋevhulaudzi <nevhulaudzi@saps.org.za>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -561,15 +561,15 @@ msgstr "Tshoko"
 msgid "Drip"
 msgstr "Shotha"
 
+msgid "Click and move the mouse around to make the picture blocky."
+msgstr ""
+"Kiḽikani ni sudzuluse mausu umona u ita uri tshifanyiso tshivhe buḽoko."
+
 msgid ""
 "Click and move the mouse around to turn the picture into a chalk drawing."
 msgstr ""
 "Kiḽikani ni sudzuluse mausu u mona u rembulusa tshifanyiso nga u tou ola nga "
 "tshoko."
-
-msgid "Click and move the mouse around to make the picture blocky."
-msgstr ""
-"Kiḽikani ni sudzuluse mausu umona u ita uri tshifanyiso tshivhe buḽoko."
 
 msgid "Click and move the mouse around to make the picture drip."
 msgstr ""
@@ -591,6 +591,13 @@ msgstr "Kiḽikani ni sudzuluwe u ola zwidina zwihulwane."
 
 msgid "Click and move to draw small bricks."
 msgstr "Kiḽikani ni sudzuluwe uola zwidina zwiṱuku."
+
+msgid "Calligraphy"
+msgstr ""
+
+#, fuzzy
+msgid "Click and move the mouse around to draw in calligraphy."
+msgstr "Kiḽikani ni sudzuluse mausu u mona u ola murunzi."
 
 msgid "Cartoon"
 msgstr "Khathuni"
@@ -662,6 +669,15 @@ msgid ""
 msgstr "Kiḽikani ni sudzuluse u swifhadza mivhala."
 
 #, fuzzy
+msgid "Light"
+msgstr "Vhonadza"
+
+#, fuzzy
+msgid "Click and drag to draw a beam of light on your picture."
+msgstr ""
+"Kiḽikani ni sudzuluse mausu u mona u ita uri tshifanyiso tshi si vhonale."
+
+#, fuzzy
 msgid "Metal Paint"
 msgstr "Pennde"
 
@@ -687,6 +703,12 @@ msgstr "Murunzi"
 msgid "Click and move the mouse around to draw a negative."
 msgstr "Kiḽikani ni sudzuluse mausu u mona u ola murunzi."
 
+msgid "Rainbow"
+msgstr "Musengavhadzimu"
+
+msgid "You can draw in rainbow colors!"
+msgstr "Ni nga ola nga mivhala ya musingavhadzimu!"
+
 msgid "Ripples"
 msgstr ""
 
@@ -695,25 +717,19 @@ msgid "Click to make ripples appear over your picture."
 msgstr ""
 "Kiḽikani ni sudzuluse mausu u mona u ita uri tshifanyiso tshi si vhonale."
 
-msgid "Rainbow"
-msgstr "Musengavhadzimu"
+msgid "Shift"
+msgstr ""
 
-msgid "You can draw in rainbow colors!"
-msgstr "Ni nga ola nga mivhala ya musingavhadzimu!"
+#, fuzzy
+msgid "Click and drag to shift your picture around on the canvas."
+msgstr ""
+"Kiḽikani ni sudzuluse mausu u mona u ita uri tshifanyiso tshi si vhonale."
 
 msgid "Smudge"
 msgstr "Ḓodza"
 
 msgid "Click and move the mouse around to smudge the picture."
 msgstr "Kiḽikani ni sudzuluse mausu u mona u ḓodza tshifanyiso."
-
-msgid "Sparkles"
-msgstr "Ṱhase"
-
-#, fuzzy
-msgid "Click and drag to draw glowing sparkles on your picture."
-msgstr ""
-"Kiḽikani ni sudzuluse mausu u mona u ita uri tshifanyiso tshi si vhonale."
 
 msgid "Tint"
 msgstr "Muvhala"
@@ -731,6 +747,9 @@ msgid ""
 "bottom for taller waves, the left for small waves, and the right for long "
 "waves."
 msgstr ""
+
+#~ msgid "Sparkles"
+#~ msgstr "Ṱhase"
 
 #~ msgid "You now have a blank sheet to draw on!"
 #~ msgstr "Ni na bambiri ḽi sina tshithu ḽine na teya u ola khaḽo!"

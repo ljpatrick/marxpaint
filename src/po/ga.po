@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint 0.9.17\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-08-08 00:04-0700\n"
+"POT-Creation-Date: 2007-08-09 23:58-0700\n"
 "PO-Revision-Date: 2007-05-11 08:44+0100\n"
 "Last-Translator: Kevin Patrick Scannell <kscanne@gmail.com>\n"
 "Language-Team: Irish <gaeilge-gnulinux@lists.sourceforge.net>\n"
@@ -559,13 +559,13 @@ msgstr "Cailc"
 msgid "Drip"
 msgstr "Sil"
 
+msgid "Click and move the mouse around to make the picture blocky."
+msgstr "Cliceáil agus bog an luch le haghaidh maisíochta bloic."
+
 msgid ""
 "Click and move the mouse around to turn the picture into a chalk drawing."
 msgstr ""
 "Cliceáil agus bog an luch chun líníocht chailce a dhéanamh ón phictiúr."
-
-msgid "Click and move the mouse around to make the picture blocky."
-msgstr "Cliceáil agus bog an luch le haghaidh maisíochta bloic."
 
 msgid "Click and move the mouse around to make the picture drip."
 msgstr "Cliceáil agus bog an luch le haghaidh maisíochta silte."
@@ -585,6 +585,13 @@ msgstr "Cliceáil agus bog chun brící móra a dhearadh."
 
 msgid "Click and move to draw small bricks."
 msgstr "Cliceáil agus bog chun brící beaga a dhearadh."
+
+msgid "Calligraphy"
+msgstr ""
+
+#, fuzzy
+msgid "Click and move the mouse around to draw in calligraphy."
+msgstr "Cliceáil agus bog an luch chun dearadh diúltach."
 
 msgid "Cartoon"
 msgstr "Cartún"
@@ -653,6 +660,14 @@ msgid ""
 msgstr "Cliceáil agus bog an luch chun an pictiúr a thiúchan."
 
 #, fuzzy
+msgid "Light"
+msgstr "Sorchaigh"
+
+#, fuzzy
+msgid "Click and drag to draw a beam of light on your picture."
+msgstr "Cliceáil agus bog an luch chun an pictiúr a thanú."
+
+#, fuzzy
 msgid "Metal Paint"
 msgstr "Péint"
 
@@ -678,6 +693,12 @@ msgstr "Diúltach"
 msgid "Click and move the mouse around to draw a negative."
 msgstr "Cliceáil agus bog an luch chun dearadh diúltach."
 
+msgid "Rainbow"
+msgstr "Tua Cheatha"
+
+msgid "You can draw in rainbow colors!"
+msgstr "Is féidir leat dearadh le gach dath na tua cheatha!"
+
 msgid "Ripples"
 msgstr ""
 
@@ -685,24 +706,18 @@ msgstr ""
 msgid "Click to make ripples appear over your picture."
 msgstr "Cliceáil agus bog an luch chun an pictiúr a thanú."
 
-msgid "Rainbow"
-msgstr "Tua Cheatha"
+msgid "Shift"
+msgstr ""
 
-msgid "You can draw in rainbow colors!"
-msgstr "Is féidir leat dearadh le gach dath na tua cheatha!"
+#, fuzzy
+msgid "Click and drag to shift your picture around on the canvas."
+msgstr "Cliceáil agus bog an luch chun an pictiúr a thanú."
 
 msgid "Smudge"
 msgstr "Smálaigh"
 
 msgid "Click and move the mouse around to smudge the picture."
 msgstr "Cliceáil agus bog an luch chun an pictiúr a smálú."
-
-msgid "Sparkles"
-msgstr "Drithlí"
-
-#, fuzzy
-msgid "Click and drag to draw glowing sparkles on your picture."
-msgstr "Cliceáil agus bog an luch chun an pictiúr a thanú."
 
 msgid "Tint"
 msgstr "Imir"
@@ -719,6 +734,9 @@ msgid ""
 "bottom for taller waves, the left for small waves, and the right for long "
 "waves."
 msgstr ""
+
+#~ msgid "Sparkles"
+#~ msgstr "Drithlí"
 
 #~ msgid "You now have a blank sheet to draw on!"
 #~ msgstr "Tá leathanach bán agat chun dearadh air!"

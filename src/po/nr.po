@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-08-08 00:04-0700\n"
+"POT-Creation-Date: 2007-08-09 23:58-0700\n"
 "PO-Revision-Date: 2006-10-09 20:32+0200\n"
 "Last-Translator: Vincent Mahlangu <vmahlangu@parliament.gov.za>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -558,15 +558,15 @@ msgstr "Itjhogo"
 msgid "Drip"
 msgstr "Thondela"
 
+msgid "Click and move the mouse around to make the picture blocky."
+msgstr ""
+"Qhwarhaza udose njalo iKhondlwana uzungeleze wenze isithombe sibe bubhlogo."
+
 msgid ""
 "Click and move the mouse around to turn the picture into a chalk drawing."
 msgstr ""
 "Qhwarhaza udose njalo iKhondlwna uzungeleze ukuze uphendulele isithombe "
 "ukuba mudwebo wetjhogo."
-
-msgid "Click and move the mouse around to make the picture blocky."
-msgstr ""
-"Qhwarhaza udose njalo iKhondlwana uzungeleze wenze isithombe sibe bubhlogo."
 
 msgid "Click and move the mouse around to make the picture drip."
 msgstr ""
@@ -588,6 +588,13 @@ msgstr "Qhwarhaza bewudose njalo ukuze udwebe iintina ezikulu."
 
 msgid "Click and move to draw small bricks."
 msgstr "Qhwarhaza bewudose njalo ukuze udwebe iintina ezincani."
+
+msgid "Calligraphy"
+msgstr ""
+
+#, fuzzy
+msgid "Click and move the mouse around to draw in calligraphy."
+msgstr "Qhwarhaza udose njalo iKhondlwana uzungeleze ukudweba okuphikisako."
 
 msgid "Cartoon"
 msgstr "IKhathuni"
@@ -659,6 +666,15 @@ msgid ""
 msgstr "Qhwarhaza udose ufiphaze imibala."
 
 #, fuzzy
+msgid "Light"
+msgstr "Yenza kukhanye"
+
+#, fuzzy
+msgid "Click and drag to draw a beam of light on your picture."
+msgstr ""
+"Qhwarhaza bewudose njalo iKhondlwana ujikeleze ukuze ufiphaze isithombe."
+
+#, fuzzy
 msgid "Metal Paint"
 msgstr "Ipende"
 
@@ -684,6 +700,12 @@ msgstr "Iphikiso"
 msgid "Click and move the mouse around to draw a negative."
 msgstr "Qhwarhaza udose njalo iKhondlwana uzungeleze ukudweba okuphikisako."
 
+msgid "Rainbow"
+msgstr "Izungulekosi"
+
+msgid "You can draw in rainbow colors!"
+msgstr "Ungadweba ngaphakathi iimbala yezungelekosi!"
+
 msgid "Ripples"
 msgstr ""
 
@@ -692,25 +714,19 @@ msgid "Click to make ripples appear over your picture."
 msgstr ""
 "Qhwarhaza bewudose njalo iKhondlwana ujikeleze ukuze ufiphaze isithombe."
 
-msgid "Rainbow"
-msgstr "Izungulekosi"
+msgid "Shift"
+msgstr ""
 
-msgid "You can draw in rainbow colors!"
-msgstr "Ungadweba ngaphakathi iimbala yezungelekosi!"
+#, fuzzy
+msgid "Click and drag to shift your picture around on the canvas."
+msgstr ""
+"Qhwarhaza bewudose njalo iKhondlwana ujikeleze ukuze ufiphaze isithombe."
 
 msgid "Smudge"
 msgstr "Ninda"
 
 msgid "Click and move the mouse around to smudge the picture."
 msgstr "Qhwarhaza bewudose njalo iKhondlwana ujikeleze uwezese isithombe."
-
-msgid "Sparkles"
-msgstr "Iimbani"
-
-#, fuzzy
-msgid "Click and drag to draw glowing sparkles on your picture."
-msgstr ""
-"Qhwarhaza bewudose njalo iKhondlwana ujikeleze ukuze ufiphaze isithombe."
 
 msgid "Tint"
 msgstr "Umbala"
@@ -729,6 +745,9 @@ msgid ""
 "bottom for taller waves, the left for small waves, and the right for long "
 "waves."
 msgstr ""
+
+#~ msgid "Sparkles"
+#~ msgstr "Iimbani"
 
 #~ msgid "You now have a blank sheet to draw on!"
 #~ msgstr "Njeke sewunephepha elize ongadwebela kilo!"

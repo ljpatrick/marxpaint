@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint 0.9.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-08-08 00:04-0700\n"
+"POT-Creation-Date: 2007-08-09 23:58-0700\n"
 "PO-Revision-Date: 2005-07-26 01:30-0800\n"
 "Last-Translator: Bill Kendrick <bill@newbreedsoftware.com>\n"
 "Language-Team: \n"
@@ -562,13 +562,13 @@ msgstr "Kriet"
 msgid "Drip"
 msgstr "Drubbels"
 
+msgid "Click and move the mouse around to make the picture blocky."
+msgstr "Klik en beweeg de moes rond um dien tijken blokkeg te moaken."
+
 msgid ""
 "Click and move the mouse around to turn the picture into a chalk drawing."
 msgstr ""
 "Klik en beweeg de moes rond um dien tijken in n kriettijken umme te teuvern."
-
-msgid "Click and move the mouse around to make the picture blocky."
-msgstr "Klik en beweeg de moes rond um dien tijken blokkeg te moaken."
 
 msgid "Click and move the mouse around to make the picture drip."
 msgstr "Klik en beweeg de moes rond um dien tijken druppen te loaten."
@@ -591,6 +591,13 @@ msgstr "Klik en beweeg um sputters te tijken."
 #, fuzzy
 msgid "Click and move to draw small bricks."
 msgstr "Klik en beweeg um sputters te tijken."
+
+msgid "Calligraphy"
+msgstr ""
+
+#, fuzzy
+msgid "Click and move the mouse around to draw in calligraphy."
+msgstr "Klik en beweeg de moes um n negatief te tijken."
 
 msgid "Cartoon"
 msgstr ""
@@ -662,6 +669,13 @@ msgid ""
 "Click and drag the mouse to draw with symmetric brushes (a kaleidoscope)."
 msgstr "Klik en beweeg de moes um dien tijken dik te moaken."
 
+msgid "Light"
+msgstr ""
+
+#, fuzzy
+msgid "Click and drag to draw a beam of light on your picture."
+msgstr "Klik en beweeg de moes um dien tijken dun te moaken."
+
 #, fuzzy
 msgid "Metal Paint"
 msgstr "Vaarve"
@@ -688,6 +702,12 @@ msgstr "Negatief"
 msgid "Click and move the mouse around to draw a negative."
 msgstr "Klik en beweeg de moes um n negatief te tijken."
 
+msgid "Rainbow"
+msgstr "Regenboge"
+
+msgid "You can draw in rainbow colors!"
+msgstr "Doe kanst tijken in regenboogkleuren!"
+
 msgid "Ripples"
 msgstr ""
 
@@ -695,11 +715,12 @@ msgstr ""
 msgid "Click to make ripples appear over your picture."
 msgstr "Klik en beweeg de moes um dien tijken dun te moaken."
 
-msgid "Rainbow"
-msgstr "Regenboge"
+msgid "Shift"
+msgstr ""
 
-msgid "You can draw in rainbow colors!"
-msgstr "Doe kanst tijken in regenboogkleuren!"
+#, fuzzy
+msgid "Click and drag to shift your picture around on the canvas."
+msgstr "Klik en beweeg de moes um dien tijken dun te moaken."
 
 msgid "Smudge"
 msgstr ""
@@ -707,13 +728,6 @@ msgstr ""
 #, fuzzy
 msgid "Click and move the mouse around to smudge the picture."
 msgstr "Klik en beweeg de moes rond um dien tijken dokeg te moaken."
-
-msgid "Sparkles"
-msgstr "Sputters"
-
-#, fuzzy
-msgid "Click and drag to draw glowing sparkles on your picture."
-msgstr "Klik en beweeg de moes um dien tijken dun te moaken."
 
 #, fuzzy
 msgid "Tint"
@@ -732,6 +746,9 @@ msgid ""
 "bottom for taller waves, the left for small waves, and the right for long "
 "waves."
 msgstr ""
+
+#~ msgid "Sparkles"
+#~ msgstr "Sputters"
 
 #~ msgid "You now have a blank sheet to draw on!"
 #~ msgstr "Hest noe n wit blad um op te tijken!"

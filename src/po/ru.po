@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TuxPaint\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-08-08 00:04-0700\n"
+"POT-Creation-Date: 2007-08-09 23:58-0700\n"
 "PO-Revision-Date: 2007-04-04 20:05+0300\n"
 "Last-Translator: Сергей Попов <skein@rambler.ru>\n"
 "Language-Team: Dmitriy Ivanov <ace22b@myrealbox.com>\n"
@@ -556,13 +556,13 @@ msgstr "Мел"
 msgid "Drip"
 msgstr "Капанье"
 
+msgid "Click and move the mouse around to make the picture blocky."
+msgstr "Щёлкните и поводите по картинке, чтобы превратить её часть в мозаику."
+
 msgid ""
 "Click and move the mouse around to turn the picture into a chalk drawing."
 msgstr ""
 "Щёлкните и поводите по картинке, чтобы превратить её часть в рисунок мелом."
-
-msgid "Click and move the mouse around to make the picture blocky."
-msgstr "Щёлкните и поводите по картинке, чтобы превратить её часть в мозаику."
 
 msgid "Click and move the mouse around to make the picture drip."
 msgstr "Щёлкните и поводите по картинке, чтобы заставьте её капать."
@@ -582,6 +582,13 @@ msgstr "Щёлкните и поводите по картинке, чтобы �
 
 msgid "Click and move to draw small bricks."
 msgstr "Щёлкните и поводите по картинке, чтобы нарисовать маленькие кирпичи."
+
+msgid "Calligraphy"
+msgstr ""
+
+#, fuzzy
+msgid "Click and move the mouse around to draw in calligraphy."
+msgstr "Щёлкните и поводите по картинке, чтобы превратить её часть в негатив."
 
 msgid "Cartoon"
 msgstr "Мультфильм"
@@ -652,6 +659,14 @@ msgid ""
 msgstr "Щёлкните и поводите по картинке, чтобы сделать её часть более тёмной."
 
 #, fuzzy
+msgid "Light"
+msgstr "Светлее"
+
+#, fuzzy
+msgid "Click and drag to draw a beam of light on your picture."
+msgstr "Щёлкните и поводите по картинке, чтобы размыть её часть."
+
+#, fuzzy
 msgid "Metal Paint"
 msgstr "Краска"
 
@@ -677,6 +692,12 @@ msgstr "Негатив"
 msgid "Click and move the mouse around to draw a negative."
 msgstr "Щёлкните и поводите по картинке, чтобы превратить её часть в негатив."
 
+msgid "Rainbow"
+msgstr "Радуга"
+
+msgid "You can draw in rainbow colors!"
+msgstr "Вы можете рисовать цветами радуги!"
+
 msgid "Ripples"
 msgstr ""
 
@@ -684,24 +705,18 @@ msgstr ""
 msgid "Click to make ripples appear over your picture."
 msgstr "Щёлкните и поводите по картинке, чтобы размыть её часть."
 
-msgid "Rainbow"
-msgstr "Радуга"
+msgid "Shift"
+msgstr ""
 
-msgid "You can draw in rainbow colors!"
-msgstr "Вы можете рисовать цветами радуги!"
+#, fuzzy
+msgid "Click and drag to shift your picture around on the canvas."
+msgstr "Щёлкните и поводите по картинке, чтобы размыть её часть."
 
 msgid "Smudge"
 msgstr "Пятна"
 
 msgid "Click and move the mouse around to smudge the picture."
 msgstr "Щёлкните и поводите по картинке, чтобы испачкать её часть."
-
-msgid "Sparkles"
-msgstr "Искры"
-
-#, fuzzy
-msgid "Click and drag to draw glowing sparkles on your picture."
-msgstr "Щёлкните и поводите по картинке, чтобы размыть её часть."
 
 msgid "Tint"
 msgstr "Изменить цвет"
@@ -718,6 +733,9 @@ msgid ""
 "bottom for taller waves, the left for small waves, and the right for long "
 "waves."
 msgstr ""
+
+#~ msgid "Sparkles"
+#~ msgstr "Искры"
 
 #~ msgid "You now have a blank sheet to draw on!"
 #~ msgstr "Теперь у вас есть чистый лист!"
