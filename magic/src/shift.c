@@ -1,0 +1,255 @@
+/*
+  shift.c
+
+  Shift Magic Tool Plugin
+  Tux Paint - A simple drawing program for children.
+
+  Copyright (c) 2002-2007 by Bill Kendrick and others; see AUTHORS.txt
+  bill@newbreedsoftware.com
+  http://www.tuxpaint.org/
+
+  This program is free software; you can redistribute it and/or modify
+  it under the terms of the GNU General Public License as published by
+  the Free Software Foundation; either version 2 of the License, or
+  (at your option) any later version.
+
+  This program is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  GNU General Public License for more details.
+
+  You should have received a copy of the GNU General Public License
+  along with this program; if not, write to the Free Software
+  Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+  (See COPYING.txt)
+
+  Last updated: August 9, 2007
+  $Id$
+*/
+
+#include <stdio.h>
+#include <string.h>
+#include <libintl.h>
+#include "tp_magic_api.h"
+#include "SDL_image.h"
+#include "SDL_mixer.h"
+
+#include "math.h"
+
+/* Our globals: */
+
+int shift_x, shift_y;
+Mix_Chunk * shift_snd;
+
+
+Uint32 shift_api_version(void) { return(TP_MAGIC_API_VERSION); }
+
+
+// No setup required:
+int shift_init(magic_api * api)
+{
+  char fname[1024];
+
+  snprintf(fname, sizeof(fname), "%s/sounds/magic/shift.ogg",
+	    api->data_directory);
+  shift_snd = Mix_LoadWAV(fname);
+
+  return(1);
+}
+
+// We have multiple tools:
+int shift_get_tool_count(magic_api * api)
+{
+  return(1);
+}
+
+// Load our icons:
+SDL_Surface * shift_get_icon(magic_api * api, int which)
+{
+  char fname[1024];
+
+  snprintf(fname, sizeof(fname), "%s/images/magic/shift.png",
+	   api->data_directory);
+
+  return(IMG_Load(fname));
+}
+
+// Return our names, localized:
+char * shift_get_name(magic_api * api, int which)
+{
+  return(strdup(gettext("Shift")));
+}
+
+// Return our descriptions, localized:
+char * shift_get_description(magic_api * api, int which)
+{
+  return(strdup(gettext("Click and drag to shift your picture around on the canvas.")));
+}
+
+
+// Affect the canvas on drag:
+void shift_drag(magic_api * api, int which, SDL_Surface * canvas,
+	          SDL_Surface * last, int ox, int oy, int x, int y,
+		  SDL_Rect * update_rect)
+{
+  SDL_Rect dest;
+  int dx, dy;
+
+
+  if (ox == x && oy == y)
+    return; /* No-op */
+
+
+  dx = x - shift_x;
+  dy = y - shift_y;
+
+  while (dx < -canvas->w)
+    dx += canvas->w;
+  while (dx > canvas->w)
+    dx -= canvas->w;
+
+  while (dy < -canvas->h)
+    dy += canvas->h;
+  while (dy > canvas->h)
+    dy -= canvas->h;
+
+
+  /* Center */
+
+  dest.x = dx;
+  dest.y = dy;
+
+  SDL_BlitSurface(last, NULL, canvas, &dest);
+
+
+  if (dy > 0)
+  {
+    if (dx > 0)
+    {
+      /* Top Left */
+
+      dest.x = dx - canvas->w;
+      dest.y = dy - canvas->h;
+
+      SDL_BlitSurface(last, NULL, canvas, &dest);
+    }
+
+
+    /* Top */
+
+    dest.x = dx;
+    dest.y = dy - canvas->h;
+
+    SDL_BlitSurface(last, NULL, canvas, &dest);
+
+
+    if (dx < 0)
+    {
+      /* Top Right */
+
+      dest.x = dx + canvas->w;
+      dest.y = dy - canvas->h;
+
+      SDL_BlitSurface(last, NULL, canvas, &dest);
+    }
+  }
+
+
+  if (dx > 0)
+  {
+    /* Left */
+
+    dest.x = dx - canvas->w;
+    dest.y = dy;
+
+    SDL_BlitSurface(last, NULL, canvas, &dest);
+  }
+
+  if (dx < 0)
+  {
+    /* Right */
+
+    dest.x = dx + canvas->w;
+    dest.y = dy;
+
+    SDL_BlitSurface(last, NULL, canvas, &dest);
+  }
+
+
+  if (dy < 0)
+  {
+    if (dx > 0)
+    {
+      /* Bottom Left */
+
+      dest.x = dx - canvas->w;
+      dest.y = dy + canvas->h;
+
+      SDL_BlitSurface(last, NULL, canvas, &dest);
+    }
+
+
+    /* Bottom */
+
+    dest.x = dx;
+    dest.y = dy + canvas->h;
+
+    SDL_BlitSurface(last, NULL, canvas, &dest);
+
+
+    if (dx < 0)
+    {
+      /* Bottom Right */
+
+      dest.x = dx + canvas->w;
+      dest.y = dy + canvas->h;
+
+      SDL_BlitSurface(last, NULL, canvas, &dest);
+    }
+  }
+
+
+  /* Update everything! */
+
+  update_rect->x = 0;
+  update_rect->y = 0;
+  update_rect->w = canvas->w;
+  update_rect->h = canvas->h;
+
+  api->playsound(shift_snd, (x * 255) / canvas->w, 255);
+}
+
+// Affect the canvas on click:
+void shift_click(magic_api * api, int which,
+	           SDL_Surface * canvas, SDL_Surface * last,
+	           int x, int y, SDL_Rect * update_rect)
+{
+  shift_x = x;
+  shift_y = y;
+}
+
+// Affect the canvas on release:
+void shift_release(magic_api * api, int which,
+	           SDL_Surface * canvas, SDL_Surface * last,
+	           int x, int y, SDL_Rect * update_rect)
+{
+}
+
+// No setup happened:
+void shift_shutdown(magic_api * api)
+{
+  if (shift_snd != NULL)
+    Mix_FreeChunk(shift_snd);
+}
+
+// Record the color from Tux Paint:
+void shift_set_color(magic_api * api, Uint8 r, Uint8 g, Uint8 b)
+{
+}
+
+// Use colors:
+int shift_requires_colors(magic_api * api, int which)
+{
+  return 0;
+}
+
