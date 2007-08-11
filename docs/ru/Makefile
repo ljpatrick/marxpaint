@@ -12,15 +12,15 @@
 
 LINKS=links -dump -no-numbering -no-references
 
-all:	README.txt OPTIONS.txt EXTENDING.txt
-#	FAQ.txt ADVANCED-STAMPS-HOWTO.txt
+all:	README.txt OPTIONS.txt EXTENDING.txt FAQ.txt
+# ADVANCED-STAMPS-HOWTO.txt
 
 clean:
 	-rm README.txt
 	-rm OPTIONS.txt
-#	-rm FAQ.txt
+	-rm FAQ.txt
 	-rm EXTENDING.txt
-	-rm ADVANCED-STAMPS-HOWTO.txt
+#	-rm ADVANCED-STAMPS-HOWTO.txt
 
 README.txt:	html/README.html
 	$(LINKS) $< > $@
