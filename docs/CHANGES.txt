@@ -180,6 +180,13 @@ $Id$
     * Improved comments near gettext() calls in the source code, to provide
       useful descriptions of each string in the POT (translation template).
 
+  * Build System Improvements
+    -------------------------
+    * Removed old Microsoft Visual Studio C++ files (in 'visualc')
+
+    * Created a new "win32" folder with things from 'visualc' that are still
+      being used ('libdocs', 'resource.h', 'resources.rc' and 'tuxpaint.iss')
+
   * Bug Fixes
     ---------
     * PostScript scale and translation values were being localized
