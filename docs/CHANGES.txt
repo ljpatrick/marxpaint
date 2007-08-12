@@ -197,6 +197,16 @@ $Id$
       not print until after you've issued an [Alt]+'Print' at least once.
       SourceForge Bug #1748705.)
 
+    * Fixed the scaling problem when printing on Windows.
+      The image is scaled to fit whilst preserving the aspect ratio.
+      It is centered horizontally and vertically aligned at the top of the page.
+        (On Win9x/ME I'm getting a slight problem with the left and right
+        margins when printing to our samba/cups shared printer which is making
+        the Epson Stylus Color 860 emulate a post-script printer (I think).
+        If I print to a file and use the HP LaserJet 6P/6MP PostScript driver
+        it looks OK. I'm hoping it is a driver problem on my system.)
+      John Popplewell <john@johnnypops.demon.co.uk>
+
 
 2007.July.1 (0.9.17)
 
