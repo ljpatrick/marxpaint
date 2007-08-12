@@ -168,7 +168,7 @@ $Id$
     * Norwegian Bokmål translation
       Karl Ove Hufthammer <huftis@users.sourceforge.net>
 
-    * Russian EXTENDING, INSTALL and FAQ documentation
+    * Russian EXTENDING, INSTALL, PNG and FAQ documentation
       Sergei Popov <skein@rambler.ru>
 
     * South African English translation
