@@ -263,7 +263,6 @@ static HDC GetDefaultPrinterDC(void)
   return NULL;
 }
 
-
 static HDC GetPrinterDC(HWND hWnd, const char *printcfg, int show)
 {
   if (printcfg)
@@ -277,24 +276,13 @@ static HDC GetPrinterDC(HWND hWnd, const char *printcfg, int show)
 }
 
 
-static int IsBandingRequired(HDC hPrinter)
-{
-  OSVERSIONINFO osvi;
-  int indata = NEXTBAND;
-
-  osvi.dwOSVersionInfoSize = sizeof(OSVERSIONINFO);
-  if (GetVersionEx(&osvi) && (osvi.dwPlatformId != VER_PLATFORM_WIN32_NT))
-    return Escape(hPrinter, QUERYESCSUPPORT, sizeof(int), (LPCSTR) & indata,
-		  NULL);
-  return 0;
-}
-
-
 int IsPrinterAvailable(void)
 {
   return (GetDefaultPrinterStrings(NULL, NULL, NULL) != 0);
 }
 
+#define STRETCH_TO_FIT  0
+#define SCALE_TO_FIT    1
 
 const char *SurfacePrint(SDL_Surface * surf, const char *printcfg,
 			 int showdialog)
@@ -304,18 +292,16 @@ const char *SurfacePrint(SDL_Surface * surf, const char *printcfg,
   DOCINFO di;
   int nError;
   SDL_SysWMinfo wminfo;
-  HDC hDCwindow;
   HDC hDCprinter;
   BITMAPINFOHEADER bmih;
   SDL_Surface *surf24 = NULL;
-  RECT rc;
-  float fLogPelsX1, fLogPelsY1, fLogPelsX2, fLogPelsY2;
-  float fScaleX, fScaleY;
-  int cWidthPels, xLeft, yTop;
-  float subscaler, subscalerx, subscalery;
+  RECT rcDst;
+  float sX, sY;
+  int pageWidth, pageHeight;
   int hDCCaps;
   HBITMAP hbm = NULL;
   HDC hdcMem = NULL;
+  int scaling = SCALE_TO_FIT;
 
   SDL_VERSION(&wminfo.version);
   if (!SDL_GetWMInfo(&wminfo))
@@ -365,43 +351,65 @@ const char *SurfacePrint(SDL_Surface * surf, const char *printcfg,
   bmih.biWidth = surf24->w;
   bmih.biHeight = surf24->h;
 
-  GetClientRect(hWnd, &rc);
-  subscalerx = (float) rc.right / surf24->w;
-  subscalery = (float) rc.bottom / surf24->h;
-  subscaler = subscalery;
-  if (subscalerx < subscalery)
-    subscaler = subscalerx;
+  pageWidth  = GetDeviceCaps(hDCprinter, HORZRES);
+  pageHeight = GetDeviceCaps(hDCprinter, VERTRES);
+  sX  = GetDeviceCaps(hDCprinter, LOGPIXELSX);
+  sY  = GetDeviceCaps(hDCprinter, LOGPIXELSY);
 
-  hDCwindow = GetDC(hWnd);
-  if (!hDCwindow)
+  switch (scaling)
   {
-    res = "win32_print: failed to get window DC.";
-    goto error;
+    case STRETCH_TO_FIT:
+    {
+        /* stretches x and y dimensions independently to fit the page */
+        /* doesn't preserve image aspect-ratio */
+        rcDst.top = 0; rcDst.left = 0;
+        rcDst.bottom = pageHeight; rcDst.right = pageWidth;
+        break;
+    }
+    case SCALE_TO_FIT:
+    {
+        /* maximises image size on the page */
+        /* preserves aspect-ratio, alignment is top and center */
+        int width  = bmih.biWidth;
+        int height = bmih.biHeight;
+
+        if (width < pageWidth && height < pageHeight)
+        {
+            float   dW = (float)pageWidth  / width;
+            float   dH = (float)pageHeight / height;
+
+            if (dW < dH)
+            {
+                width  = pageWidth;
+                height = (int)((height * dW * (sY/sX)) + 0.5f);
+            }
+            else
+            {
+                width  = (int)((width  * dH * (sX/sY)) + 0.5f);
+                height = pageHeight;
+            }
+        }
+        if (width > pageWidth)
+        {
+            height= height*width/pageWidth;
+            width = pageWidth;
+        }
+        if (height > pageHeight)
+        {
+            width= width*height/pageHeight;
+            height = pageHeight;
+        }
+
+        rcDst.top = 0;
+        rcDst.left = (pageWidth-width)/2;
+        rcDst.bottom = rcDst.top+height;
+        rcDst.right  = rcDst.left+width;
+        break;
+    }
+    default:
+        res = "win32_print: invalid scaling option.";
+        goto error;
   }
-  fLogPelsX1 = GetDeviceCaps(hDCwindow, LOGPIXELSX);
-  fLogPelsY1 = GetDeviceCaps(hDCwindow, LOGPIXELSY);
-  ReleaseDC(hWnd, hDCwindow);
-
-  fLogPelsX2 = GetDeviceCaps(hDCprinter, LOGPIXELSX);
-  fLogPelsY2 = GetDeviceCaps(hDCprinter, LOGPIXELSY);
-
-  if (fLogPelsX1 > fLogPelsX2)
-    fScaleX = (fLogPelsX1 / fLogPelsX2);
-  else
-    fScaleX = (fLogPelsX2 / fLogPelsX1);
-
-  if (fLogPelsY1 > fLogPelsY2)
-    fScaleY = (fLogPelsY1 / fLogPelsY2);
-  else
-    fScaleY = (fLogPelsY2 / fLogPelsY1);
-
-  fScaleX *= subscaler;
-  fScaleY *= subscaler;
-
-  yTop = 0;
-  cWidthPels = GetDeviceCaps(hDCprinter, PHYSICALWIDTH);
-  xLeft = ((cWidthPels - ((int) (fScaleX * bmih.biWidth))) / 2) -
-    GetDeviceCaps(hDCprinter, PHYSICALOFFSETX);
 
   hDCCaps = GetDeviceCaps(hDCprinter, RASTERCAPS);
 
@@ -411,65 +419,26 @@ const char *SurfacePrint(SDL_Surface * surf, const char *printcfg,
     goto error;
   }
 
-  if (IsBandingRequired(hDCprinter))
+  if (hDCCaps & RC_STRETCHDIB)
   {
-    RECT rcBand = { 0, 0, 0, 0 };
-    RECT rcPrinter;
-    RECT rcImage;
+    SetStretchBltMode(hDCprinter, COLORONCOLOR);
 
-    SetRect(&rcPrinter, xLeft, yTop, (int) (fScaleX * bmih.biWidth),
-	    (int) (fScaleY * bmih.biHeight));
-    SetRect(&rcImage, 0, 0, bmih.biWidth, bmih.biHeight);
-
-    while (Escape(hDCprinter, NEXTBAND, 0, NULL, &rcBand))
+    nError = StretchDIBits(hDCprinter, rcDst.left, rcDst.top,
+      		     rcDst.right  - rcDst.left,
+                           rcDst.bottom - rcDst.top,
+      		     0, 0, bmih.biWidth, bmih.biHeight,
+      		     surf24->pixels, (BITMAPINFO *) & bmih,
+      		     DIB_RGB_COLORS, SRCCOPY);
+    if (nError == GDI_ERROR)
     {
-      if (IsRectEmpty(&rcBand))
-	break;
-      if (IntersectRect(&rcBand, &rcBand, &rcPrinter))
-      {
-	rcImage.top = (int) (0.5f + (float) rcBand.top / fScaleX);
-	rcImage.bottom = (int) (0.5f + (float) rcBand.bottom / fScaleX);
-
-	SetStretchBltMode(hDCprinter, COLORONCOLOR);
-	nError = StretchDIBits(hDCprinter, rcBand.left, rcBand.top,
-			       rcBand.right - rcBand.left,
-			       rcBand.bottom - rcBand.top,
-			       rcImage.left, rcImage.top,
-			       rcImage.right - rcImage.left,
-			       rcImage.bottom - rcImage.top,
-			       surf24->pixels, (BITMAPINFO *) & bmih,
-			       DIB_RGB_COLORS, SRCCOPY);
-	if (nError == GDI_ERROR)
-	{
-	  res = "win32_print: StretchDIBits() failed.";
-	  goto error;
-	}
-      }
+      res = "win32_print: StretchDIBits() failed.";
+      goto error;
     }
   }
   else
   {
-    if (hDCCaps & RC_STRETCHDIB)
-    {
-      SetStretchBltMode(hDCprinter, COLORONCOLOR);
-
-      nError = StretchDIBits(hDCprinter, xLeft, yTop,
-			     (int) (fScaleX * bmih.biWidth),
-			     (int) (fScaleY * bmih.biHeight),
-			     0, 0, bmih.biWidth, bmih.biHeight,
-			     surf24->pixels, (BITMAPINFO *) & bmih,
-			     DIB_RGB_COLORS, SRCCOPY);
-      if (nError == GDI_ERROR)
-      {
-	res = "win32_print: StretchDIBits() failed.";
-	goto error;
-      }
-    }
-    else
-    {
-      res = "win32_print: StretchDIBits() not available.";
-      goto error;
-    }
+    res = "win32_print: StretchDIBits() not available.";
+    goto error;
   }
 
 //////////////////////////////////////////////////////////////////////////////////////
