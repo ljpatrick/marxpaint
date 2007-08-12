@@ -16563,10 +16563,11 @@ void load_magic_plugins(void)
 
         if (f != NULL)
         {
-          if (f->d_type == DT_REG)
-          {
-	    snprintf(fname, sizeof(fname), "%s%s", place, f->d_name);
+          struct stat sbuf;
 
+	  snprintf(fname, sizeof(fname), "%s%s", place, f->d_name);
+          if (!stat(fname, &sbuf) && S_ISREG(sbuf.st_mode))
+          {
             /* Get just the name of the object (e.g., "negative"), w/o filename
                extension: */
 
