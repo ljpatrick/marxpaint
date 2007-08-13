@@ -6005,7 +6005,7 @@ static void setup(int argc, char *argv[])
   /* Windows */
 
   savedir = GetDefaultSaveDir("TuxPaint");
-  datadir = GetDefaultDataDir("TuxPaint");
+  datadir = GetDefaultSaveDir("TuxPaint");
 #elif __BEOS__
   /* BeOS */
 
@@ -6615,7 +6615,7 @@ static void setup(int argc, char *argv[])
 #ifndef WIN32
     lock_fname = get_fname("lockfile.dat", DIR_SAVE);
 #else
-    lock_fname = get_temp_fname("lockfile.dat", DIR_SAVE);
+    lock_fname = get_temp_fname("lockfile.dat");
 #endif
 
     fi = fopen(lock_fname, "r");
@@ -11728,7 +11728,7 @@ static void cleanup(void)
 #ifndef WIN32
     lock_fname = get_fname("lockfile.dat", DIR_SAVE);
 #else
-    lock_fname = get_temp_fname("lockfile.dat", DIR_SAVE);
+    lock_fname = get_temp_fname("lockfile.dat");
 #endif
 
     zero_time = (time_t) 0;
@@ -16823,6 +16823,8 @@ void load_magic_plugins(void)
   fflush(stdout);
 #endif
 }
+
+
 
 int magic_sort(const void * a, const void * b)
 {
