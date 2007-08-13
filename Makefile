@@ -16,7 +16,7 @@ VER_VERSION=0.9.18
 VER_DATE=`date +"%Y-%m-%d"`
 
 MAGIC_API_VERSION=0x00000001
-
+SO_TYPE=so
 
 # Where to install things:
 
@@ -127,6 +127,7 @@ SVG_CFLAGS=-I/usr/include/librsvg-2/librsvg \
 	-I/usr/include/cairo
 
 PAPER_LIB=-lpaper
+ARCH_LIBS=obj/postscript_print.o
 
 
 # The entire set of CFLAGS:
@@ -274,9 +275,12 @@ win32:
 		PREFIX=/usr/local \
 		BIN_PREFIX=$(PREFIX)/bin \
 		EXE_EXT=.exe \
+		SO_TYPE=dll \
 		DATA_PREFIX=$(PREFIX)/share/tuxpaint \
 		DOC_PREFIX=$(PREFIX)/share/doc/tuxpaint \
 		MAN_PREFIX=$(PREFIX)/share/man \
+		DEVDOC_PREFIX=$(PREFIX)/share/doc/tuxpaint-dev \
+		DEVMAN_PREFIX=$(PREFIX)/share/man \
 		ICON_PREFIX=. \
 		X11_ICON_PREFIX=. \
 		LOCALE_PREFIX=$(PREFIX)/share/locale \
@@ -288,7 +292,11 @@ win32:
 		SVG_CFLAGS=-I/usr/local/include/cairo \
 		SVG_LIB="-lcairo -lsvg -lsvg-cairo" \
 		OLDSVGFLAG=OLD_SVG \
-		PAPER_LIB= \
+		NOPANGOFLAG=NO_SDLPANGO SDL_PANGO_LIB= \
+		INCLUDE_PREFIX=$(PREFIX)/include \
+		MAGIC_PREFIX=$(PREFIX)/lib/tuxpaint/plugins \
+		TARGET_PASSTHRU=win32 \
+		PAPER_LIB=
 
 # "make nokia770" builds the program for the Nokia 770.
 
@@ -339,8 +347,8 @@ install-magic-plugins:
 	@echo
 	@echo "...Installing Magic Tool plug-ins..."
 	@install -d $(MAGIC_PREFIX)
-	@cp magic/*.so $(MAGIC_PREFIX)
-	@chmod a+r,g-w,o-w $(MAGIC_PREFIX)/*.so
+	@cp magic/*.$(SO_TYPE) $(MAGIC_PREFIX)
+	@chmod a+r,g-w,o-w $(MAGIC_PREFIX)/*.$(SO_TYPE)
 	@install -d $(DATA_PREFIX)/images/magic
 	@cp magic/icons/*.png $(DATA_PREFIX)/images/magic
 	@chmod a+r,g-w,o-w $(DATA_PREFIX)/images/magic/*.png
@@ -363,8 +371,10 @@ install-magic-plugin-dev:	src/tp_magic_api.h
 
 # Installs the various parts for the MinGW/MSYS development/testing environment.
 
+
 install-private-win32:	install-bin install-data install-man install-doc \
 		install-magic-plugins \
+		install-magic-plugin-dev \
 		install-gettext install-im install-importscript \
 		install-default-config install-example-stamps \
 		install-example-starters
@@ -426,11 +436,12 @@ install-beos:
 # "make install-win32" installs Tux Paint, but using MinGW/MSYS settings
 # Suitable for development/testing in the MinGW/MSYS environment.
 install-win32:
-	strip -s tuxpaint.exe
-	make install-private-win32 \
+	@strip -s tuxpaint.exe
+	@make install-private-win32 \
 		PREFIX=/usr/local \
 		BIN_PREFIX=$(PREFIX)/bin \
 		EXE_EXT=.exe \
+		SO_TYPE=dll \
 		DATA_PREFIX=$(PREFIX)/share/tuxpaint \
 		DOC_PREFIX=$(PREFIX)/share/doc/tuxpaint \
 		MAN_PREFIX=$(PREFIX)/share/man \
@@ -447,35 +458,46 @@ bdist-win32:
 	@-rm -f tuxpaint.exe
 	@-rm -f obj/*.o
 	make \
-		PREFIX=./visualc/bdist \
+		PREFIX=./win32/bdist \
 		BIN_PREFIX=$(PREFIX)/bin \
 		EXE_EXT=.exe \
+		SO_TYPE=dll \
 		DATA_PREFIX=data \
 		DOC_PREFIX=docs \
 		LOCALE_PREFIX=locale \
 		IM_PREFIX=im \
+		CONFDIR=. \
+		INCLUDE_PREFIX=plugins/include \
+		MAGIC_PREFIX=plugins \
+		TARGET_PASSTHRU=win32 \
 		ARCH_LINKS="-lintl -lpng12 -lwinspool -lshlwapi" \
 		ARCH_HEADERS="src/win32_print.h" \
 		ARCH_LIBS="obj/win32_print.o obj/resource.o" \
 		SVG_CFLAGS=-I/usr/local/include/cairo \
 		SVG_LIB="-lcairo -lsvg -lsvg-cairo" \
 		OLDSVGFLAG=OLD_SVG \
+		NOPANGOFLAG=NO_SDLPANGO SDL_PANGO_LIB= \
 		PAPER_LIB= 
 	strip -s tuxpaint.exe
 	make bdist-private-win32 \
-		PREFIX=./visualc/bdist \
-		BIN_PREFIX=./visualc/bdist \
+		PREFIX=./win32/bdist \
+		BIN_PREFIX=./win32/bdist \
 		EXE_EXT=.exe \
-		DATA_PREFIX=./visualc/bdist/data \
-		DOC_PREFIX=./visualc/bdist/docs \
-		LOCALE_PREFIX=./visualc/bdist/locale \
-		IM_PREFIX=./visualc/bdist/im \
+		SO_TYPE=dll \
+		DATA_PREFIX=./win32/bdist/data \
+		DOC_PREFIX=./win32/bdist/docs \
+		LOCALE_PREFIX=./win32/bdist/locale \
+		IM_PREFIX=./win32/bdist/im \
+		CONFDIR=./win32/bdist \
+		INCLUDE_PREFIX=./win32/bdist/plugins/include \
+		MAGIC_PREFIX=./win32/bdist/plugins \
+		TARGET_PASSTHRU=win32
 
 # "make bdist-clean" deletes the 'bdist' directory
 bdist-clean:
 	@echo
 	@echo "Cleaning up the 'bdist' directory! ($(PWD))"
-	@-rm -rf ./visualc/bdist
+	@-rm -rf ./win32/bdist
 	@echo
 
 # "make clean" deletes the program, the compiled objects and the
@@ -491,9 +513,12 @@ clean:
 	@-rm -f src/tp_magic_api.h
 	@-rm -f tp-magic-config
 	@if [ -d trans ]; then rmdir trans; fi
-	@cd magic ; make clean
+	@cd magic ; make clean$(TARGET_PASSTHRU)
 	@echo
 
+clean-win32:
+	@make clean\
+		TARGET_PASSTHRU=win32
 
 # "make uninstall" should remove the various parts from their
 # installation locations.  BE SURE the *PREFIX variables at the top
@@ -706,6 +731,7 @@ install-dlls:
 	@cp `which libvorbis-0.dll` $(BIN_PREFIX)
 	@cp `which libvorbisfile-3.dll` $(BIN_PREFIX)
 	@cp `which libcairo-2.dll` $(BIN_PREFIX)
+	@cp `which libfontconfig-1.dll` $(BIN_PREFIX)
 	@cp `which svg-cairo.dll` $(BIN_PREFIX)
 	@cp `which svg.dll` $(BIN_PREFIX)
 	@cp `which jpeg.dll` $(BIN_PREFIX)
@@ -781,7 +807,6 @@ install-man:
 tuxpaint:	obj/tuxpaint.o obj/i18n.o obj/im.o obj/cursor.o obj/pixels.o \
 		obj/rgblinear.o obj/playsound.o obj/fonts.o \
 		obj/progressbar.o obj/dirwalk.o obj/get_fname.o \
-		obj/postscript_print.o \
 		$(HQXX_O) $(ARCH_LIBS)
 	@echo
 	@echo "...Linking Tux Paint..."
@@ -895,35 +920,35 @@ obj/rgblinear.o:	src/rgblinear.c src/rgblinear.h \
 		-c src/rgblinear.c -o obj/rgblinear.o
 
 
-obj/BeOS_Print.o:	src/BeOS_Print.cpp obj src/BeOS_print.h
+obj/BeOS_Print.o:	src/BeOS_Print.cpp src/BeOS_print.h
 	@echo
 	@echo "...Compiling BeOS print support..."
 	@$(CC) $(CFLAGS) $(DEBUG_FLAGS) $(SDL_CFLAGS) $(DEFS) \
 		-c src/BeOS_print.cpp -o obj/BeOS_print.o
 
-obj/win32_print.o:	src/win32_print.c obj src/win32_print.h src/debug.h
+obj/win32_print.o:	src/win32_print.c src/win32_print.h src/debug.h
 	@echo
 	@echo "...Compiling win32 print support..."
 	@$(CC) $(CFLAGS) $(DEBUG_FLAGS) $(SDL_CFLAGS) $(DEFS) \
 		-c src/win32_print.c -o obj/win32_print.o
 
-obj/postscript_print.o:	src/postscript_print.c Makefile obj \
+obj/postscript_print.o:	src/postscript_print.c Makefile \
 			src/postscript_print.h src/debug.h
 	@echo
 	@echo "...Compiling PostScript print support..."
 	@$(CC) $(CFLAGS) $(DEBUG_FLAGS) $(SDL_CFLAGS) $(DEFS) \
 		-c src/postscript_print.c -o obj/postscript_print.o
 
-obj/resource.o:	visualc/resources.rc obj visualc/resource.h
+obj/resource.o:	win32/resources.rc win32/resource.h
 	@echo
 	@echo "...Compiling win32 resources..."
-	@windres -i visualc/resources.rc -o obj/resource.o
+	@windres -i win32/resources.rc -o obj/resource.o
 
 
 # Go into 'magic' subdirectory and buld magic plug-ins
 
 magic-plugins:	src/tp_magic_api.h
-	@cd magic ; make
+	@cd magic ; make $(TARGET_PASSTHRU)
 
 
 src/tp_magic_api.h:	src/tp_magic_api.h.in
@@ -948,4 +973,6 @@ tp-magic-config:	src/tp-magic-config.sh.in Makefile
 
 obj:
 	@mkdir obj
+
+.PHONY: win32
 
