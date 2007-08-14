@@ -1411,25 +1411,26 @@ static int do_prompt_image_flash(const char *const text,
 				 const char *const btn_yes,
 				 const char *const btn_no, SDL_Surface * img1,
 				 SDL_Surface * img2, SDL_Surface * img3,
-				 int animate);
+				 int animate, int ox, int oy);
 static int do_prompt_image_flash_snd(const char *const text,
 				     const char *const btn_yes,
 				     const char *const btn_no,
 				     SDL_Surface * img1, SDL_Surface * img2,
 				     SDL_Surface * img3, int animate,
-				     int snd);
+				     int snd, int ox, int oy);
 static int do_prompt_image(const char *const text, const char *const btn_yes,
 			   const char *const btn_no, SDL_Surface * img1,
-			   SDL_Surface * img2, SDL_Surface * img3);
+			   SDL_Surface * img2, SDL_Surface * img3,
+			   int ox, int oy);
 static int do_prompt_image_snd(const char *const text,
 			       const char *const btn_yes,
 			       const char *const btn_no, SDL_Surface * img1,
 			       SDL_Surface * img2, SDL_Surface * img3,
-			       int snd);
+			       int snd, int ox, int oy);
 static int do_prompt(const char *const text, const char *const btn_yes,
-		     const char *const btn_no);
+		     const char *const btn_no, int ox, int oy);
 static int do_prompt_snd(const char *const text, const char *const btn_yes,
-			 const char *const btn_no, int snd);
+			 const char *const btn_no, int snd, int ox, int oy);
 static void cleanup(void);
 static void free_surface(SDL_Surface ** surface_array);
 static void free_surface_array(SDL_Surface * surface_array[], int count);
@@ -2259,7 +2260,8 @@ static void mainloop(void)
 	  hide_blinking_cursor();
 	  do_prompt_image_flash(PROMPT_TIP_LEFTCLICK_TXT,
 				PROMPT_TIP_LEFTCLICK_YES,
-				"", img_mouse, img_mouse_click, NULL, 1);
+				"", img_mouse, img_mouse_click, NULL, 1,
+				event.button.x, event.button.y);
           if (cur_tool == TOOL_TEXT)
 	    do_render_cur_text(0);
           draw_tux_text(TUX_BORED, "", 0);
@@ -3095,12 +3097,17 @@ static void mainloop(void)
 	      else if (cur_tool == TOOL_ERASER)
 		draw_erasers();
 
+	      playsound(screen, 1, SND_BUBBLE, 1, SNDPOS_CENTER, SNDDIST_NEAR);
+
 	      SDL_Flip(screen);
 	    }
 	    else
+	    {
               draw_colors(COLORSEL_REFRESH);
 
-	    playsound(screen, 1, SND_BUBBLE, 1, event.button.x, SNDDIST_NEAR);
+	      playsound(screen, 1, SND_BUBBLE, 1, event.button.x, SNDDIST_NEAR);
+	    }
+
 	    render_brush();
 	    
 
@@ -5227,7 +5234,9 @@ static void set_active_stamp(void)
 
   memcpy(buf, sd->stampname, len);
 
+#ifdef DEBUG
   printf("\nset_active_stamp()\n");
+#endif
 
   /* Look for pre-mirrored and pre-flipped version: */
 
@@ -5238,7 +5247,9 @@ static void set_active_stamp(void)
   {
     /* Want mirrored and flipped, both */
    
+#ifdef DEBUG
     printf("want both mirrored & flipped\n");
+#endif
  
     if (!sd->no_premirrorflip)
     {
@@ -5257,7 +5268,9 @@ static void set_active_stamp(void)
 
     if (active_stamp != NULL)
     {
+#ifdef DEBUG
       printf("found a _mirror_flip!\n");
+#endif
 
       needs_mirror = 0;
       needs_flip = 0;
@@ -5267,7 +5280,9 @@ static void set_active_stamp(void)
       /* Couldn't get one that was both, look for _mirror then _flip and
          flip or mirror it: */
 
+#ifdef DEBUG
       printf("didn't find a _mirror_flip\n");
+#endif
 
       if (!sd->no_premirror)
       {
@@ -5285,7 +5300,9 @@ static void set_active_stamp(void)
 
       if (active_stamp != NULL)
       {
+#ifdef DEBUG
         printf("found a _mirror!\n");
+#endif
         needs_mirror = 0;
       }
       else
@@ -5293,7 +5310,9 @@ static void set_active_stamp(void)
         /* Couldn't get one that was just pre-mirrored, look for a
            pre-flipped */
 
+#ifdef DEBUG
         printf("didn't find a _mirror, either\n");
+#endif
 
         if (!sd->no_preflip)
         {
@@ -5311,11 +5330,17 @@ static void set_active_stamp(void)
 
         if (active_stamp != NULL)
         {
+#ifdef DEBUG
           printf("found a _flip!\n");
+#endif
           needs_flip = 0;
         }
         else
+	{
+#ifdef DEBUG
           printf("didn't find a _flip, either\n");
+#endif
+	}
       }
     }
   }
@@ -5323,7 +5348,9 @@ static void set_active_stamp(void)
   {
     /* Want flipped only */
 
+#ifdef DEBUG
     printf("want flipped only\n");
+#endif
 
 #ifndef NOSVG	  
     memcpy(buf + len, "_flip.svg", 10);
@@ -5338,17 +5365,25 @@ static void set_active_stamp(void)
     
     if (active_stamp != NULL)
     {
+#ifdef DEBUG
       printf("found a _flip!\n");
+#endif
       needs_flip = 0;
     }
     else
+    {
+#ifdef DEBUG
       printf("didn't find a _flip\n");
+#endif
+    }
   }
   else if (sd->mirrored && !sd->no_premirror)
   {
     /* Want mirrored only */
 
+#ifdef DEBUG
     printf("want mirrored only\n");
+#endif
 
 #ifndef NOSVG	  
     memcpy(buf + len, "_mirror.svg", 12);
@@ -5363,11 +5398,17 @@ static void set_active_stamp(void)
     
     if (active_stamp != NULL)
     {
+#ifdef DEBUG
       printf("found a _mirror!\n");
+#endif
       needs_mirror = 0;
     }
     else
+    {
+#ifdef DEBUG
       printf("didn't find a _mirror\n");
+#endif
+    }
   }
 
 
@@ -5376,7 +5417,9 @@ static void set_active_stamp(void)
 
   if (!active_stamp)
   {
+#ifdef DEBUG
     printf("loading normal\n");
+#endif
 
 #ifndef NOSVG
     memcpy(buf + len, ".svg", 5);
@@ -5402,17 +5445,23 @@ static void set_active_stamp(void)
 
   if (needs_mirror)
   {
+#ifdef DEBUG
     printf("mirroring\n");
+#endif
     active_stamp = mirror_surface(active_stamp);
   }
 
   if (needs_flip)
   {
+#ifdef DEBUG
     printf("flipping\n");
+#endif
     active_stamp = flip_surface(active_stamp);
   }
 
+#ifdef DEBUG
   printf("\n\n");
+#endif
 }
 
 static void get_stamp_thumb(stamp_type * sd)
@@ -5425,7 +5474,9 @@ static void get_stamp_thumb(stamp_type * sd)
   unsigned w;
   unsigned h;
 
+#ifdef DEBUG
   printf("\nget_stamp_thumb()\n");
+#endif
 
   memcpy(buf, sd->stampname, len);
 
@@ -5469,7 +5520,9 @@ static void get_stamp_thumb(stamp_type * sd)
   // first see if we can re-use an existing thumbnail
   if (sd->thumbnail)
   {
+#ifdef DEBUG
     printf("have an sd->thumbnail\n");
+#endif
 
     if (sd->thumb_mirrored_flipped == sd->flipped &&
         sd->thumb_mirrored_flipped == sd->mirrored &&
@@ -5477,7 +5530,11 @@ static void get_stamp_thumb(stamp_type * sd)
         sd->flipped == sd->thumb_flipped)
     {
       // It's already the way we want
+
+#ifdef DEBUG
       printf("mirrored == flipped == thumb_mirrored_flipped [bye]\n");
+#endif
+
       return;
     }
   }
@@ -5491,7 +5548,9 @@ static void get_stamp_thumb(stamp_type * sd)
 
   if (sd->mirrored && sd->flipped)
   {
+#ifdef DEBUG
     printf("want mirrored & flipped\n");
+#endif
 
     if (!sd->no_premirrorflip)
     {
@@ -5509,14 +5568,18 @@ static void get_stamp_thumb(stamp_type * sd)
 
     if (bigimg)
     {
+#ifdef DEBUG
       printf("found a _mirror_flip!\n");
+#endif
 
       need_mirror = 0;
       need_flip = 0;
     }
     else
     {
+#ifdef DEBUG
       printf("didn't find a mirror_flip\n");
+#endif
       sd->no_premirrorflip = 1;
 
       if (!sd->no_premirror)
@@ -5535,13 +5598,17 @@ static void get_stamp_thumb(stamp_type * sd)
 
       if (bigimg)
       {
+#ifdef DEBUG
         printf("found a _mirror\n");
+#endif
 
         need_mirror = 0;
       }
       else
       {
+#ifdef DEBUG
         printf("didn't find a mirror\n");
+#endif
 
         if (!sd->no_preflip)
         {
@@ -5559,7 +5626,9 @@ static void get_stamp_thumb(stamp_type * sd)
 
         if (bigimg)
         {
+#ifdef DEBUG
           printf("found a _flip\n");
+#endif
 
           need_flip = 0;
         }
@@ -5568,7 +5637,9 @@ static void get_stamp_thumb(stamp_type * sd)
   }
   else if (sd->mirrored && !sd->no_premirror)
   {
+#ifdef DEBUG
     printf("want mirrored only\n");
+#endif
 
     memcpy(buf + len, "_mirror.png", 12);
     bigimg = do_loadimage(buf, 0);
@@ -5583,18 +5654,24 @@ static void get_stamp_thumb(stamp_type * sd)
 
     if (bigimg)
     {
+#ifdef DEBUG
       printf("found a _mirror!\n");
+#endif
       need_mirror = 0;
     }
     else
     {
+#ifdef DEBUG
       printf("didn't find a mirror\n");
+#endif
       sd->no_premirror = 1;
     }
   }
   else if (sd->flipped && !sd->no_preflip)
   {
+#ifdef DEBUG
     printf("want flipped only\n");
+#endif
 
     memcpy(buf + len, "_flip.png", 10);
     bigimg = do_loadimage(buf, 0);
@@ -5609,12 +5686,16 @@ static void get_stamp_thumb(stamp_type * sd)
 
     if (bigimg)
     {
+#ifdef DEBUG
       printf("found a _flip!\n");
+#endif
       need_flip = 0;
     }
     else
     {
+#ifdef DEBUG
       printf("didn't find a flip\n");
+#endif
       sd->no_preflip = 1;
     }
   }
@@ -5624,7 +5705,9 @@ static void get_stamp_thumb(stamp_type * sd)
 
   if (!bigimg)
   {
+#ifdef DEBUG
     printf("loading normal...\n");
+#endif
 
     memcpy(buf + len, ".png", 5);
     bigimg = do_loadimage(buf, 0);
@@ -5664,13 +5747,17 @@ static void get_stamp_thumb(stamp_type * sd)
 
   if (need_mirror)
   {
+#ifdef DEBUG
     printf("mirroring\n");
+#endif
     sd->thumbnail = mirror_surface(sd->thumbnail);
   }
 
   if (need_flip)
   {
+#ifdef DEBUG
     printf("flipping\n");
+#endif
     sd->thumbnail = flip_surface(sd->thumbnail);
   }
 
@@ -5686,7 +5773,9 @@ static void get_stamp_thumb(stamp_type * sd)
   sd->thumb_mirrored = sd->mirrored;
   sd->thumb_flipped = sd->flipped;
 
+#ifdef DEBUG
   printf("\n\n");
+#endif
 
 
   /* Finish up, if we need to: */
@@ -11054,53 +11143,56 @@ static void save_current(void)
 /* Prompt the user with a yes/no question: */
 
 static int do_prompt(const char *const text, const char *const btn_yes,
-		     const char *const btn_no)
+		     const char *const btn_no, int ox, int oy)
 {
-  return (do_prompt_image(text, btn_yes, btn_no, NULL, NULL, NULL));
+  return (do_prompt_image(text, btn_yes, btn_no, NULL, NULL, NULL, ox, oy));
 }
 
 
 static int do_prompt_snd(const char *const text, const char *const btn_yes,
-			 const char *const btn_no, int snd)
+			 const char *const btn_no, int snd, int ox, int oy)
 {
   return (do_prompt_image_flash_snd
-	  (text, btn_yes, btn_no, NULL, NULL, NULL, 0, snd));
+	  (text, btn_yes, btn_no, NULL, NULL, NULL, 0, snd, ox, oy));
 }
 
 static int do_prompt_image(const char *const text, const char *const btn_yes,
 			   const char *const btn_no, SDL_Surface * img1,
-			   SDL_Surface * img2, SDL_Surface * img3)
+			   SDL_Surface * img2, SDL_Surface * img3,
+			   int ox, int oy)
 {
   return (do_prompt_image_snd
-	  (text, btn_yes, btn_no, img1, img2, img3, SND_NONE));
+	  (text, btn_yes, btn_no, img1, img2, img3, SND_NONE, ox, oy));
 }
 
 static int do_prompt_image_snd(const char *const text,
 			       const char *const btn_yes,
 			       const char *const btn_no, SDL_Surface * img1,
 			       SDL_Surface * img2, SDL_Surface * img3,
-			       int snd)
+			       int snd, int ox, int oy)
 {
   return (do_prompt_image_flash_snd
-	  (text, btn_yes, btn_no, img1, img2, img3, 0, snd));
+	  (text, btn_yes, btn_no, img1, img2, img3, 0, snd, ox, oy));
 }
 
 static int do_prompt_image_flash(const char *const text,
 				 const char *const btn_yes,
 				 const char *const btn_no, SDL_Surface * img1,
 				 SDL_Surface * img2, SDL_Surface * img3,
-				 int animate)
+				 int animate, int ox, int oy)
 {
   return (do_prompt_image_flash_snd
-	  (text, btn_yes, btn_no, img1, img2, img3, animate, SND_NONE));
+	  (text, btn_yes, btn_no, img1, img2, img3, animate, SND_NONE, ox, oy));
 }
 
 static int do_prompt_image_flash_snd(const char *const text,
 				     const char *const btn_yes,
 				     const char *const btn_no,
 				     SDL_Surface * img1, SDL_Surface * img2,
-				     SDL_Surface * img3, int animate, int snd)
+				     SDL_Surface * img3, int animate, int snd,
+				     int ox, int oy)
 {
+  int oox, ooy, nx, ny;
   SDL_Event event;
   SDL_Rect dest;
   int done, ans, w, counter;
@@ -11108,6 +11200,7 @@ static int do_prompt_image_flash_snd(const char *const text,
   SDLKey key;
   SDLKey key_y, key_n;
   char *keystr;
+  SDL_Surface * backup;
 #ifndef NO_PROMPT_SHADOWS
   int i;
   SDL_Surface *alpha_surf;
@@ -11147,17 +11240,40 @@ static int do_prompt_image_flash_snd(const char *const text,
 
   playsound(screen, 0, SND_PROMPT, 1, SNDPOS_CENTER, SNDDIST_NEAR);
 
-  for (w = 0; w <= 96; w = w + 4)
+  backup = SDL_CreateRGBSurface(screen->flags, screen->w, screen->h,
+				screen->format->BitsPerPixel,
+				screen->format->Rmask,
+				screen->format->Gmask,
+				screen->format->Bmask,
+				screen->format->Amask);
+
+  SDL_BlitSurface(screen, NULL, backup, NULL);
+
+  for (w = 0; w <= 96; w = w + 2)
   {
-    dest.x = 160 + 96 - w + PROMPTOFFSETX;
-    dest.y = 94 + 96 - w + PROMPTOFFSETY;
+    oox = ox - w;
+    ooy = oy - w;
+
+    nx = 160 + 96 - w + PROMPTOFFSETX;
+    ny = 94 + 96 - w + PROMPTOFFSETY;
+
+    dest.x = ((nx * w) + (oox * (96 - w))) / 96;
+    dest.y = ((ny * w) + (ooy * (96 - w))) / 96;
     dest.w = (320 - 96 * 2) + w * 2;
     dest.h = w * 2;
-    SDL_FillRect(screen, &dest, SDL_MapRGB(screen->format, 0, 0, 0));
+    SDL_FillRect(screen, &dest, SDL_MapRGB(screen->format, 224 - w, 224 - w, 244 -w));
 
     SDL_UpdateRect(screen, dest.x, dest.y, dest.w, dest.h);
-    SDL_Delay(10);
+
+    if ((w % 8) == 0)
+      SDL_Delay(10);
+
+    if (w == 94)
+      SDL_BlitSurface(backup, NULL, screen, NULL);
   }
+
+  SDL_FreeSurface(backup);
+
 
   playsound(screen, 1, snd, 1, SNDPOS_LEFT, SNDDIST_NEAR);
 
@@ -12103,7 +12219,9 @@ static int do_save(int tool, int dont_show_success_results)
       if (do_prompt_image_snd(PROMPT_SAVE_OVER_TXT,
 			      PROMPT_SAVE_OVER_YES,
 			      PROMPT_SAVE_OVER_NO,
-			      img_save_over, NULL, NULL, SND_AREYOUSURE) == 0)
+			      img_save_over, NULL, NULL, SND_AREYOUSURE,
+			      (TOOL_SAVE % 2) * 48 + 24,
+			      (TOOL_SAVE / 2) * 48 + 40 + 24) == 0)
       {
 	/* No - Let's save a new picture! */
 
@@ -12425,13 +12543,16 @@ static int do_quit(int tool)
   int done, tmp_tool;
 
   done = do_prompt_snd(PROMPT_QUIT_TXT,
-		       PROMPT_QUIT_YES, PROMPT_QUIT_NO, SND_AREYOUSURE);
+		       PROMPT_QUIT_YES, PROMPT_QUIT_NO, SND_AREYOUSURE,
+		       (TOOL_QUIT % 2) * 48 + 24,
+		       (TOOL_QUIT / 2) * 48 + 40 + 24);
 
   if (done && !been_saved && !disable_save)
   {
     if (autosave_on_quit ||
         do_prompt(PROMPT_QUIT_SAVE_TXT,
-		  PROMPT_QUIT_SAVE_YES, PROMPT_QUIT_SAVE_NO))
+		  PROMPT_QUIT_SAVE_YES, PROMPT_QUIT_SAVE_NO,
+		  screen->w / 2, screen->h / 2))
     {
       if (do_save(tool, 1))
       {
@@ -12816,7 +12937,8 @@ int do_open(void)
     if (num_files == 0)
     {
       do_prompt_snd(PROMPT_OPEN_NOFILES_TXT, PROMPT_OPEN_NOFILES_YES, "",
-          SND_YOUCANNOT);
+          SND_YOUCANNOT,
+          (TOOL_OPEN % 2) * 48 + 24, (TOOL_OPEN / 2) * 48 + 40 + 24);
     }
     else
     {
@@ -13287,7 +13409,9 @@ int do_open(void)
           if (do_prompt_image_snd(PROMPT_ERASE_TXT,
                 PROMPT_ERASE_YES, PROMPT_ERASE_NO,
                 thumbs[which],
-                img_popup_arrow, img_trash, SND_AREYOUSURE))
+                img_popup_arrow, img_trash, SND_AREYOUSURE,
+                WINDOW_WIDTH - 96 - 48 - 48 + 24,
+                48 * 7 + 40 + HEIGHTOFFSET - 48 + 24))
           {
             snprintf(fname, sizeof(fname), "saved/%s%s",
                 d_names[which], d_exts[which]);
@@ -13375,7 +13499,8 @@ int do_open(void)
               if (which < 0)
               {
                 do_prompt_snd(PROMPT_OPEN_NOFILES_TXT,
-                    PROMPT_OPEN_NOFILES_YES, "", SND_YOUCANNOT);
+                    PROMPT_OPEN_NOFILES_YES, "", SND_YOUCANNOT,
+		    screen->w / 2, screen->h / 2);
                 done = 1;
               }
             }
@@ -13383,7 +13508,7 @@ int do_open(void)
             {
               perror(rfname);
 
-              do_prompt_snd("CAN'T", "OK", "", SND_YOUCANNOT);
+              do_prompt_snd("CAN'T", "OK", "", SND_YOUCANNOT, 0, 0);
               update_list = 1;
             }
 
@@ -13413,7 +13538,7 @@ int do_open(void)
                   PROMPT_OPEN_SAVE_YES,
                   PROMPT_OPEN_SAVE_NO,
                   img_tools[TOOL_SAVE], NULL, NULL,
-                  SND_AREYOUSURE))
+                  SND_AREYOUSURE, screen->w / 2, screen->h / 2))
             {
               do_save(TOOL_OPEN, 1);
             }
@@ -13436,7 +13561,7 @@ int do_open(void)
                 "was:\n" "%s\n\n", fname, SDL_GetError());
 
             do_prompt(PROMPT_OPEN_UNOPENABLE_TXT,
-                PROMPT_OPEN_UNOPENABLE_YES, "");
+                PROMPT_OPEN_UNOPENABLE_YES, "", 0, 0);
           }
           else
           {
@@ -14351,7 +14476,6 @@ void play_slideshow(int * selected, int num_selected, char * dirname,
       dest.y = screen->h - img_openlabels_back->h;
       SDL_BlitSurface(img_openlabels_back, NULL, screen, &dest);
 
-
       /* "Next" button: */
 
       dest.x = 0;
@@ -14831,7 +14955,9 @@ static void print_image(void)
     if (do_prompt_image_snd(PROMPT_PRINT_NOW_TXT,
                             PROMPT_PRINT_NOW_YES,
                             PROMPT_PRINT_NOW_NO,
-                            img_printer, NULL, NULL, SND_AREYOUSURE))
+                            img_printer, NULL, NULL, SND_AREYOUSURE,
+			    (TOOL_PRINT % 2) * 48 + 24,
+			    (TOOL_PRINT / 2) * 48 + 40 + 24))
     {
       do_print();
         
@@ -14844,7 +14970,8 @@ static void print_image(void)
                         PROMPT_PRINT_TOO_SOON_YES,
                         "",
                         img_printer_wait, NULL, NULL,
-                        SND_YOUCANNOT);
+                        SND_YOUCANNOT,
+			0, screen->h);
   }
 }
 
@@ -14871,12 +14998,14 @@ void do_print(void)
   {
 #ifdef PRINTMETHOD_PNG_PNM_PS
     if (do_png_save(pi, pcmd, canvas))
-      do_prompt_snd(PROMPT_PRINT_TXT, PROMPT_PRINT_YES, "", SND_TUXOK);
+      do_prompt_snd(PROMPT_PRINT_TXT, PROMPT_PRINT_YES, "", SND_TUXOK,
+		    screen->w / 2, screen->h / 2);
 #elif defined(PRINTMETHOD_PNM_PS)
     // nothing here
 #elif defined(PRINTMETHOD_PS)
     if (do_ps_save(pi, pcmd, canvas, papersize))
-      do_prompt_snd(PROMPT_PRINT_TXT, PROMPT_PRINT_YES, "", SND_TUXOK);
+      do_prompt_snd(PROMPT_PRINT_TXT, PROMPT_PRINT_YES, "", SND_TUXOK,
+		    screen->w / 2, screen->h / 2);
 #else
 #error No print method defined!
 #endif
@@ -17851,7 +17980,8 @@ int do_new_dialog(void)
             PROMPT_OPEN_SAVE_YES,
             PROMPT_OPEN_SAVE_NO,
             img_tools[TOOL_SAVE], NULL, NULL,
-            SND_AREYOUSURE))
+            SND_AREYOUSURE,
+	    screen->w / 2, screen->h / 2))
       {
         do_save(TOOL_NEW, 1);
       }
@@ -17878,7 +18008,7 @@ int do_new_dialog(void)
             "was:\n" "%s\n\n", fname, SDL_GetError());
 
         do_prompt(PROMPT_OPEN_UNOPENABLE_TXT,
-            PROMPT_OPEN_UNOPENABLE_YES, "");
+            PROMPT_OPEN_UNOPENABLE_YES, "", 0 ,0);
       }
       else
       {
@@ -18063,6 +18193,7 @@ int do_color_picker(void)
 #endif
   SDL_Rect dest;
   int x, y, w;
+  int ox, oy, oox, ooy, nx, ny;
   SDL_Surface * tmp_btn_up, * tmp_btn_down;
   Uint32(*getpixel_tmp_btn_up) (SDL_Surface *, int, int);
   Uint32(*getpixel_tmp_btn_down) (SDL_Surface *, int, int);
@@ -18076,27 +18207,52 @@ int do_color_picker(void)
   int color_picker_left, color_picker_top;
   int back_left, back_top;
   SDL_Rect color_example_dest;
+  SDL_Surface * backup;
 
 
   hide_blinking_cursor();
 
   do_setcursor(cursor_hand);
 
+
   /* Draw button box: */
 
-  playsound(screen, 0, SND_PROMPT, 1, SNDPOS_CENTER, SNDDIST_NEAR);
+  playsound(screen, 0, SND_PROMPT, 1, SNDPOS_RIGHT, 128);
+
+  backup = SDL_CreateRGBSurface(screen->flags, screen->w, screen->h,
+				screen->format->BitsPerPixel,
+				screen->format->Rmask,
+				screen->format->Gmask,
+				screen->format->Bmask,
+				screen->format->Amask);
+
+  SDL_BlitSurface(screen, NULL, backup, NULL);
+
+  ox = screen->w;
+  oy = r_colors.y + r_colors.h / 2;
 
   for (w = 0; w <= 128 + 6 + 4; w = w + 4)
   {
-    dest.x = 160 + 96 - w + PROMPTOFFSETX;
-    dest.y = 94 + 96 - w + PROMPTOFFSETY;
+    oox = ox - w;
+    ooy = oy - w;
+
+    nx = 160 + 96 - w + PROMPTOFFSETX;
+    ny = 94 + 96 - w + PROMPTOFFSETY;
+
+    dest.x = ((nx * w) + (oox * (128 - w))) / 128;
+    dest.y = ((ny * w) + (ooy * (128 - w))) / 128;
+
     dest.w = (320 - 96 * 2) + w * 2;
     dest.h = w * 2;
-    SDL_FillRect(screen, &dest, SDL_MapRGB(screen->format, 0, 0, 0));
+    SDL_FillRect(screen, &dest, SDL_MapRGB(screen->format, 255 - w, 255 - w, 255 - w));
 
     SDL_UpdateRect(screen, dest.x, dest.y, dest.w, dest.h);
-    SDL_Delay(10);
+
+    if (w % 16 == 0)
+      SDL_Delay(10);
   }
+  
+  SDL_BlitSurface(backup, NULL, screen, NULL);
 
 #ifndef NO_PROMPT_SHADOWS
   alpha_surf = SDL_CreateRGBSurface(SDL_SWSURFACE | SDL_SRCALPHA,
