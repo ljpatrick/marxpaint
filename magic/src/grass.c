@@ -24,12 +24,13 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  Last updated: August 7, 2007
+  Last updated: August 18, 2007
   $Id$
 */
 
 #include <stdio.h>
 #include <string.h>
+#include <stdlib.h> /* for RAND_MAX */
 #include <libintl.h>
 #include "tp_magic_api.h"
 #include "SDL_image.h"
