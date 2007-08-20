@@ -23,7 +23,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  Last updated: August 9, 2007
+  Last updated: August 20, 2007
   $Id$
 */
 
@@ -40,6 +40,12 @@
 
 int shift_x, shift_y;
 Mix_Chunk * shift_snd;
+
+
+void shift_doit(magic_api * api, int which, SDL_Surface * canvas,
+	          SDL_Surface * last, int ox, int oy, int x, int y,
+		  SDL_Rect * update_rect, int crosshairs);
+
 
 
 Uint32 shift_api_version(void) { return(TP_MAGIC_API_VERSION); }
@@ -92,12 +98,19 @@ void shift_drag(magic_api * api, int which, SDL_Surface * canvas,
 	          SDL_Surface * last, int ox, int oy, int x, int y,
 		  SDL_Rect * update_rect)
 {
+  if (ox == x && oy == y)
+    return; /* No-op */
+
+  shift_doit(api, which, canvas, last, ox, oy, x, y, update_rect, 1);
+}
+
+void shift_doit(magic_api * api, int which, SDL_Surface * canvas,
+	          SDL_Surface * last, int ox, int oy, int x, int y,
+		  SDL_Rect * update_rect, int crosshairs)
+{
   SDL_Rect dest;
   int dx, dy;
 
-
-  if (ox == x && oy == y)
-    return; /* No-op */
 
 
   dx = x - shift_x;
@@ -209,6 +222,39 @@ void shift_drag(magic_api * api, int which, SDL_Surface * canvas,
   }
 
 
+  if (crosshairs)
+  {
+    dest.x = (canvas->w / 2) - 1;
+    dest.y = 0;
+    dest.w = 3;
+    dest.h = canvas->h;
+
+    SDL_FillRect(canvas, &dest, SDL_MapRGB(canvas->format, 255, 255, 255));
+
+    dest.x = 0;
+    dest.y = (canvas->h / 2) - 1;
+    dest.w = canvas->w;
+    dest.h = 3;
+
+    SDL_FillRect(canvas, &dest, SDL_MapRGB(canvas->format, 255, 255, 255));
+
+
+    dest.x = canvas->w / 2;
+    dest.y = 0;
+    dest.w = 1;
+    dest.h = canvas->h;
+
+    SDL_FillRect(canvas, &dest, SDL_MapRGB(canvas->format, 0, 0, 0));
+
+    dest.x = 0;
+    dest.y = canvas->h / 2;
+    dest.w = canvas->w;
+    dest.h = 1;
+
+    SDL_FillRect(canvas, &dest, SDL_MapRGB(canvas->format, 0, 0, 0));
+  }
+
+
   /* Update everything! */
 
   update_rect->x = 0;
@@ -226,6 +272,8 @@ void shift_click(magic_api * api, int which,
 {
   shift_x = x;
   shift_y = y;
+  
+  shift_doit(api, which, canvas, last, x, y, x, y, update_rect, 1);
 }
 
 // Affect the canvas on release:
@@ -233,7 +281,9 @@ void shift_release(magic_api * api, int which,
 	           SDL_Surface * canvas, SDL_Surface * last,
 	           int x, int y, SDL_Rect * update_rect)
 {
+  shift_doit(api, which, canvas, last, x, y, x, y, update_rect, 0);
 }
+
 
 // No setup happened:
 void shift_shutdown(magic_api * api)
