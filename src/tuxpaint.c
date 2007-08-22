@@ -17454,7 +17454,7 @@ int do_new_dialog(void)
                 img = IMG_Load(fname);
               }
 
-#ifndef NOG
+#ifndef NOSVG
               if (img == NULL)
               {
                 /* (Try SVG next) */
