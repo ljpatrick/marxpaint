@@ -9,7 +9,7 @@ http://www.tuxpaint.org/
 $Id$
 
 
-2007.August.11 (0.9.18)
+2007.August.27 (0.9.18)
   * Interface Improvements:
     -----------------------
     * Improved 'New' and 'Open' interface:
@@ -146,6 +146,9 @@ $Id$
 
   * Localization Updates:
     ---------------------
+    * Afrikaans
+      Petri Jooste <petri.jooste@nwu.ac.za>
+
     * British English translation
       Caroline Ford <caroline.ford.work@googlemail.com>
       Karl Ove Hufthammer <huftis@users.sourceforge.net>
@@ -155,6 +158,9 @@ $Id$
 
     * French translation
       Jacques Chion <Jacques.Chion@wanadoo.fr>
+
+    * German
+      Burkhard Lück <lueck@hube-lueck.de>
 
     * Gujarati translation
       Kartik Mistry <kartik.mistry@gmail.com>

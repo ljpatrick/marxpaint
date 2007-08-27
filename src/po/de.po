@@ -1,16 +1,16 @@
-# translation of de.po to Deutsch
+# translation of de1008.po to Deutsch
 # Tux Paint german messages.
-# Copyright (C) 2002, 2005, 2006 Free Software Foundation, Inc.
+# Copyright (C) 2002, 2005, 2006, 2007 Free Software Foundation, Inc.
 #
 # Fabian Franz <FabianFranz@gmx.de>, 2002.
 # Roland Illig <roland.illig@gmx.de>, 2004.
-# Burkhard Lück <lueck@hube-lueck.de>, 2005, 2006.
+# Burkhard Lück <lueck@hube-lueck.de>, 2005, 2006, 2007.
 msgid ""
 msgstr ""
-"Project-Id-Version: de\n"
+"Project-Id-Version: de1008\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2007-08-09 23:58-0700\n"
-"PO-Revision-Date: 2006-10-11 22:53+0200\n"
+"PO-Revision-Date: 2007-08-27 09:02+0200\n"
 "Last-Translator: Burkhard Lück <lueck@hube-lueck.de>\n"
 "Language-Team: Deutsch <kde-i18n-de@kde.org>\n"
 "MIME-Version: 1.0\n"
@@ -158,23 +158,23 @@ msgstr "Gute Arbeit!"
 
 #. Input Method: English mode
 msgid "English"
-msgstr ""
+msgstr "Englisch"
 
 #. Input Method: Japanese Romanized Hiragana mode
 msgid "Hiragana"
-msgstr ""
+msgstr "Hiragana"
 
 #. Input Method: Japanese Romanized Katakana mode
 msgid "Katakana"
-msgstr ""
+msgstr "Katakana"
 
 #. Input Method: Korean Hangul 2-Bul mode
 msgid "Hangul"
-msgstr ""
+msgstr "Hangul"
 
 #. Input Method: Thai mode
 msgid "Thai"
-msgstr ""
+msgstr "Thai"
 
 #. Square shape tool (4 equally-lengthed sides at right angles)
 msgid "Square"
@@ -205,9 +205,8 @@ msgid "Rhombus"
 msgstr "Raute"
 
 #. Octagon shape tool (8 sides)
-#, fuzzy
 msgid "Octagon"
-msgstr "Fünfeck"
+msgstr "Achteck"
 
 #. Description of a square
 msgid "A square is a rectangle with four equal sides."
@@ -217,9 +216,7 @@ msgstr "Ein Quadrat ist ein Rechteck mit vier gleich langen Seiten."
 msgid "A rectangle has four sides and four right angles."
 msgstr "Ein Rechteck hat vier Seiten und vier rechte Winkel."
 
-#, fuzzy
-msgid ""
-"A circle is a curve where all points have the same distance from the center."
+msgid "A circle is a curve where all points have the same distance from the center."
 msgstr ""
 "Ein Kreis ist eine Kurve, auf der alle Punkte den gleichen Abstand vom "
 "Mittelpunkt haben."
@@ -241,9 +238,8 @@ msgstr ""
 "Eine Raute hat vier gleich lange Seiten, gegenüberliegende Seiten sind "
 "parallel."
 
-#, fuzzy
 msgid "An octagon has eight equal sides."
-msgstr "Ein Fünfeck hat fünf Seiten."
+msgstr "Ein Achteckeck hat 8 gleich lange Seiten."
 
 #. Title of tool selector (buttons down the left)
 msgid "Tools"
@@ -373,9 +369,8 @@ msgid "Eraser!"
 msgstr "Radiergummi!"
 
 #. Response to 'start a new image' action
-#, fuzzy
 msgid "Pick a color or picture with which to start a new drawing."
-msgstr "Wähle ein Bild zum Stempeln."
+msgstr "Wähle eine Farbe oder ein Bild zum Malen einer neuen Zeichnung."
 
 #. Response to 'open' action (while file dialog is being constructed)
 msgid "Open…"
@@ -480,18 +475,18 @@ msgstr "Denke dran, die linke Maustaste zu benutzen!"
 
 #. Sound has been muted (silenced) via keyboard shortcut
 msgid "Sound muted."
-msgstr ""
+msgstr "Sound ausgeschaltet."
 
 #. Sound has been unmuted (unsilenced) via keyboard shortcut
 msgid "Sound unmuted."
-msgstr ""
+msgstr "Sound eingeschaltet."
 
 #. Wait while Text tool finishes loading fonts
 msgid "Please wait..."
 msgstr "Bitte warten..."
 
 msgid "Pick a color."
-msgstr ""
+msgstr "Wähle eine Farbe."
 
 #. Open dialog: 'Erase' button, to erase/deleted the selected picture
 msgid "Erase"
@@ -568,10 +563,8 @@ msgstr "Tropfen"
 msgid "Click and move the mouse around to make the picture blocky."
 msgstr "Klick und bewege die Maus, um das Bild pixelig zu machen."
 
-msgid ""
-"Click and move the mouse around to turn the picture into a chalk drawing."
-msgstr ""
-"Klick und bewege die Maus, um dein Bild in ein Kreidebild zu verwandeln!"
+msgid "Click and move the mouse around to turn the picture into a chalk drawing."
+msgstr "Klick und bewege die Maus, um dein Bild in ein Kreidebild zu verwandeln!"
 
 msgid "Click and move the mouse around to make the picture drip."
 msgstr "Klick und bewege die Maus, um das Bild tropfen zu lassen."
@@ -590,14 +583,13 @@ msgid "Click and move to draw large bricks."
 msgstr "Klick und bewege die Maus, um große Blöcke zu machen."
 
 msgid "Click and move to draw small bricks."
-msgstr "Klick und bewege die Maus, um kleine Blöcke zu machen."
+msgstr "Klick und bewege die Maus, um kleine Blöcke zu malen."
 
 msgid "Calligraphy"
-msgstr ""
+msgstr "Schönschrift"
 
-#, fuzzy
 msgid "Click and move the mouse around to draw in calligraphy."
-msgstr "Klick und bewege die Maus, um ein Negativ zu machen."
+msgstr "Klick und bewege die Maus, um Schönschrift zu malen."
 
 msgid "Cartoon"
 msgstr "Comic"
@@ -630,18 +622,18 @@ msgstr "Füllen"
 msgid "Click in the picture to fill that area with color."
 msgstr "Klick in das Bild, um einen Bereich mit Farbe auszufüllen."
 
+#, fuzzy
 msgid "Flower"
-msgstr ""
+msgstr "Blume"
 
 msgid "Click and drag to draw a flower stalk. Let go to finish the flower."
 msgstr ""
 
 msgid "Foam"
-msgstr ""
+msgstr "Schaum"
 
-#, fuzzy
 msgid "Click and drag the mouse to cover an area with foamy bubbles."
-msgstr "Klick in das Bild, um einen Bereich mit Farbe auszufüllen."
+msgstr "Klick und bewege die Maus, um Schaumblasen zu malen."
 
 msgid "Glass Tile"
 msgstr ""
@@ -657,24 +649,19 @@ msgid "Click and move to draw grass. Don’t forget the dirt!"
 msgstr "Klick und bewege die Maus, um Gras zu malen. Vergiss die Erde nicht!"
 
 msgid "Kaleidoscope"
-msgstr ""
+msgstr "Kaleidoskop"
 
-#, fuzzy
-msgid ""
-"Click and drag the mouse to draw with symmetric brushes (a kaleidoscope)."
-msgstr "Klick und bewege die Maus, um die Farben abzudunkeln!"
+msgid "Click and drag the mouse to draw with symmetric brushes (a kaleidoscope)."
+msgstr "Klick und bewege die Maus, um ein Kaleidoskop zu malen."
 
-#, fuzzy
 msgid "Light"
 msgstr "Aufhellen"
 
-#, fuzzy
 msgid "Click and drag to draw a beam of light on your picture."
-msgstr "Klick und bewege die Maus, um das Bild unscharf zu machen."
+msgstr "Klick und bewege die Maus, um helle Kreise auf das Bild zu malen."
 
-#, fuzzy
 msgid "Metal Paint"
-msgstr "Malen"
+msgstr "Metallfarbe"
 
 #, fuzzy
 msgid "Click and drag the mouse to paint with a metallic color."
@@ -704,19 +691,19 @@ msgstr "Regenbogenfarbe"
 msgid "You can draw in rainbow colors!"
 msgstr "Du kannst mit Regenbogenfarben malen!"
 
+#, fuzzy
 msgid "Ripples"
-msgstr ""
+msgstr "Wellen"
 
 #, fuzzy
 msgid "Click to make ripples appear over your picture."
 msgstr "Klick und bewege die Maus, um das Bild unscharf zu machen."
 
 msgid "Shift"
-msgstr ""
+msgstr "Schieben"
 
-#, fuzzy
 msgid "Click and drag to shift your picture around on the canvas."
-msgstr "Klick und bewege die Maus, um das Bild unscharf zu machen."
+msgstr "Klick und bewege die Maus, um das Bild zu verschieben."
 
 msgid "Smudge"
 msgstr "Verwischen"
@@ -754,3 +741,4 @@ msgstr ""
 
 #~ msgid "Click and move to draw sparkles."
 #~ msgstr "Klick und bewege die Maus, um Sterne funkeln zu lassen."
+

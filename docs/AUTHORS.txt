@@ -7,7 +7,7 @@ bill@newbreedsoftware.com
 http://www.tuxpaint.org/
 
 
-June 17, 2002 - August 6, 2007
+June 17, 2002 - August 27, 2007
 
 $Id$
 
@@ -182,7 +182,7 @@ $Id$
 * Translations
 
   * Afrikaans
-    Petri Jooste <rkwjpj@puk.ac.za>
+    Petri Jooste <petri.jooste@nwu.ac.za>
 
   * Albanian
     Ilir Rugova <ilirrugova@gmx.de>
