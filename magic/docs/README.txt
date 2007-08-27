@@ -6,7 +6,7 @@
                            bill@newbreedsoftware.com
                             http://www.tuxpaint.org/
 
-                         July 5, 2007 - August 7, 2007
+                         July 5, 2007 - August 23, 2007
 
    --------------------------------------------------------------------------
 
@@ -896,6 +896,14 @@ Glossary
        to a struct.
      * backquote: See "grave."
      * backtick: See "grave."
+     * bit: "Binary digit." Bits are the basic storage unit in a computer's
+       memory, disk, networking, etc. They represent either 0 or 1. (Compared
+       to a decimal digit, which can be anything between 0 and 9.) Just as a
+       series of decimal digits can represent a larger number (e.g., "1" and
+       "5" is fifteen (15)), so can bits (e.g., "1" and "0", is two). In
+       decimal, we go from right to left: ones place, tens place, hundreds
+       place, thousands place, etc. In binary, it is: ones place, twos place,
+       fours place, eights place, etc. (See also "byte.")
      * blue: See "RGBA"
      * boolean 'or': A mathematical operation that results in a true value if
        either operand is true. ("1 | 0", "0 | 1" and "1 | 1" all result in
@@ -906,20 +914,30 @@ Glossary
      * *: See "star"
      * byte: A unit of memory made up of 8 bits. As a signed value, it can
        represent -128 through 127. As an unsigned value, it can represent 0
-       through 255.
+       through 255. As a series of bits, for example, the byte "00001100"
+       represents the decimal value 12.
      * callback: TBD
-     * C enumeration: TBD
+     * C enumeration: A construct in C that allows you to label numeric
+       values (usually starting at 0 and incrementing by one). (e.g., "enum {
+       ONE, TWO, THREE };"
      * C function: TBD
      * C header file: TBD
      * channel: TBD
      * click: The action of pressing a button on a mouse.
-     * coordinates: TBD
+     * coordinates: A set of numbers corresponding to a physical position;
+       for example, in a two-dimensional (2D) image, "X" and "Y" coordinates
+       specify the position across (left-to-right) and down the image,
+       respectively. In SDL, the coordinates (0,0) is the top-leftmost pixel
+       of a surface.
      * C pointer: A variable that contains the location of a piece of memory;
        usually used to 'point' to another variable. Since C functions can
        only return one value as a result, pointers are often sent to
        functions to allow the function to change the values of multiple
        variables. (For example, Tux Paint's "rgbtohsv()" and "hsvtorgb()".)
-     * C structure: TBD
+     * C structure: A construct in C that allows you to declare a new
+       variable 'type' which may contain other types within. For example,
+       SDL's "SDL_Rect" contains four integer values, the coordinates of the
+       rectangle (X,Y), and its dimensions (width and height).
      * #define: A C statement that defines a substitution that can occur
        later in the code. Generally used for constant values (e.g.,
        "#define RADIUS 16"; all instances of "RADIUS" will be replaced with
@@ -953,7 +971,7 @@ Glossary
      * .h: See "C header file"
      * header: See "C header file"
      * header file: See "C header file"
-     * HSV: TBD
+     * HSV: Hue, Saturation and Value. TBD
      * hue: See "HSV"
      * IMG_Load(): An SDL_image function that loads an image file (e.g., a
        PNG) and returns it as an "SDL_Surface *".
@@ -963,7 +981,11 @@ Glossary
      * integer: TBD
      * libSDL: See "Simple DirectMedia Layer"
      * linear: TBD
-     * macro: TBD
+     * macro: A C construct that looks similar to a C function, but is simply
+       a #define that is expanded 'inline'. For example, if you declared the
+       macro "#define ADD(A,B) ((A)+(B))", and then used it with "c =
+       ADD(1,2);", that line of code would literally expand to "c = ((1) +
+       (2));", or more simply, "c = 1 + 2;".
      * magic_api: A C structure that is passed along to a plugin's functions
        that exposes data and functions within the running copy of Tux Paint.
      * make: A utility that automatically determines which pieces of a larger
@@ -1030,7 +1052,14 @@ Glossary
      * Simple DirectMedia Layer: A programming library that allows programs
        portable low level access to a video framebuffer, audio output, mouse,
        and keyboard. (See also: http://www.libsdl.org/)
-     * snprintf(): TBD (See also the "snprintf(3)" man page)
+     * snprintf(): A C function, related to "printf()", which takes a
+       'format' string and one or more additional arguments, and puts them
+       together. "snprintf()" takes the resulting output and stores it into a
+       string, making sure not to go beyond the string's buffer size (which
+       must also be supplied). For example, assume a string "char str[20];"
+       has been declared; "snprintf(str, 20, "Name: %s, Age: %d", "Bill",
+       "32");" will store "Name: Bill, Age: 32" into 'str'. (See also the
+       "snprintf(3)" man page)
      * .so: See "Shared Object"
      * sRBG: See "RGBA"
      * star: "*". A symbol in C that, when used in the declaration of
@@ -1059,9 +1088,23 @@ Glossary
        representing a pixel's color; i.e., RBGA value).
      * Uint8: An 8-bit, unsigned integer (defined by libSDL). In other words,
        a byte that can represent 0 through 255.
-     * unsigned: TBD
+     * unsigned: In C, a variable that can store a numeric value can be
+       declared as either "signed" (the default), or "unsigned". In the
+       former case, one bit of the value is used to denote the sign of the
+       value (either positive or negative). In the latter case, the value can
+       only be positive, but benefits from one extra bit of storage for the
+       number. A signed byte (8 bits), for example, can represent any number
+       between -128 and 127. An unsigned byte can go up to 255, but it cannot
+       go below 0. For the purposes of graphics in SDL, unsigned values
+       should be used for RGB values, since each channel (red, green and
+       blue) may be between 0 (off) and 255 (brightest).
      * value: See "HSV"
-     * variable: TBD
+     * variable: A construct in computer programming that contains a value
+       which can be referenced again later by referring to the variable's
+       name, and typically changed later. For example, a variable to hold
+       someone's age could be declared as an integer: "int a;". It can be
+       examined later: "if (a >= 18) { /* they are an adult */ } else { /*
+       they are not an adult */ }".
      * WAV: TBD (See also "Ogg Vorbis")
      * (w,h): See "Dimensions"
      * (x,y): See "Coordinates"

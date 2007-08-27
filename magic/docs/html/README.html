@@ -15,7 +15,7 @@ New Breed Software</p>
 <p><a href="mailto:bill@newbreedsoftware.com">bill@newbreedsoftware.com</a><br>
 <a href="http://www.tuxpaint.org/">http://www.tuxpaint.org/</a></p>
 
-<p>July 5, 2007 - August 7, 2007</p>
+<p>July 5, 2007 - August 23, 2007</p>
 </center>
 
 <hr size=2 noshade>
@@ -1162,22 +1162,23 @@ mailing lists:
 <li><b>arrow:</b> "<code>-&gt;</code>". A symbol in C that references an element within a pointer to a struct.
 <li><b>backquote:</b> See "grave."
 <li><b>backtick:</b> See "grave."
+<li><b>bit:</b> "Binary digit." Bits are the basic storage unit in a computer's memory, disk, networking, etc. They represent either 0 or 1. (Compared to a decimal digit, which can be anything between 0 and 9.) Just as a series of decimal digits can represent a larger number (e.g., "1" and "5" is fifteen (15)), so can bits (e.g., "1" and "0", is two). In decimal, we go from right to left: ones place, tens place, hundreds place, thousands place, etc. In binary, it is: ones place, twos place, fours place, eights place, etc. (See also "byte.")
 <li><b>blue:</b> See "RGBA"
 <li><b>boolean 'or':</b> A mathematical operation that results in a true value if either operand is true. ("1&nbsp;|&nbsp;0", "0&nbsp;|&nbsp;1" and "1&nbsp;|&nbsp;1" all result in "1". "0&nbsp;|&nbsp;0" results in "0".)
 <li><b>|:</b> See "boolean 'or'"
 <li><b>.:</b> See "dot"
 <li><b>`:</b> See "grave."
 <li><b>*:</b> See "star"
-<li><b>byte:</b> A unit of memory made up of 8 bits. As a signed value, it can represent -128 through 127. As an unsigned value, it can represent 0 through 255.
+<li><b>byte:</b> A unit of memory made up of 8 bits. As a signed value, it can represent -128 through 127. As an unsigned value, it can represent 0 through 255. As a series of bits, for example, the byte "00001100" represents the decimal value 12.
 <li><b>callback:</b> <i>TBD</i>
-<li><b>C enumeration:</b> <i>TBD</i>
+<li><b>C enumeration:</b> A construct in C that allows you to label numeric values (usually starting at 0 and incrementing by one). (e.g., "<code>enum { ONE, TWO, THREE };</code>"
 <li><b>C function:</b> <i>TBD</i>
 <li><b>C header file:</b> <i>TBD</i>
 <li><b>channel:</b> <i>TBD</i>
 <li><b>click:</b> The action of pressing a button on a mouse.
-<li><b>coordinates:</b> <i>TBD</i>
+<li><b>coordinates:</b> A set of numbers corresponding to a physical position; for example, in a two-dimensional (2D) image, "X" and "Y" coordinates specify the position across (left-to-right) and down the image, respectively. In SDL, the coordinates (0,0) is the top-leftmost pixel of a surface.
 <li><b>C pointer:</b> A variable that contains the location of a piece of memory; usually used to 'point' to another variable. Since C functions can only return one value as a result, pointers are often sent to functions to allow the function to change the values of multiple variables. (For example, Tux&nbsp;Paint's "<code>rgbtohsv()</code>" and "<code>hsvtorgb()</code>".)
-<li><b>C structure:</b> <i>TBD</i>
+<li><b>C structure:</b> A construct in C that allows you to declare a new variable 'type' which may contain other types within. For example, SDL's "<code>SDL_Rect</code>" contains four integer values, the coordinates of the rectangle (X,Y), and its dimensions (width and height).
 <li><b>#define:</b> A C statement that defines a substitution that can occur later in the code. Generally used for constant values (e.g., "<code>#define&nbsp;RADIUS&nbsp;16</code>"; all instances of "<code>RADIUS</code>" will be replaced with "<code>16</code>"), but can also be used to create macros. Typically placed within C header files.
 <li><b>dimensions:</b> The size of an object, in terms of its width (left to right) and height (top to bottom).
 <li><b>.dll:</b> See "Shared Object"
@@ -1198,7 +1199,7 @@ mailing lists:
 <li><b>.h:</b> See "C header file"
 <li><b>header:</b> See "C header file"
 <li><b>header file:</b> See "C header file"
-<li><b>HSV:</b> <i>TBD</i>
+<li><b>HSV:</b> Hue, Saturation and Value. <i>TBD</i>
 <li><b>hue:</b> See "HSV"
 <li><b>IMG_Load():</b> An SDL_image function that loads an image file (e.g., a PNG) and returns it as an "<code>SDL_Surface&nbsp;*</code>".
 <li><b>#include:</b> A C statement that asks the compiler to read the contents of another file (usually a header file).
@@ -1206,7 +1207,7 @@ mailing lists:
 <li><b>integer:</b> <i>TBD</i>
 <li><b>libSDL:</b> See "Simple DirectMedia Layer"
 <li><b>linear:</b> <i>TBD</i>
-<li><b>macro:</b> <i>TBD</i>
+<li><b>macro:</b> A C construct that looks similar to a C function, but is simply a #define that is expanded 'inline'. For example, if you declared the macro "<code>#define ADD(A,B) ((A)+(B))</code>", and then used it with "<code>c = ADD(1,2);</code>", that line of code would literally expand to "<code>c = ((1) + (2));</code>", or more simply, "<code>c = 1 + 2;</code>".
 <li><b>magic_api:</b> A C structure that is passed along to a plugin's functions that exposes data and functions within the running copy of Tux&nbsp;Paint.
 <li><b>make:</b> A utility that automatically determines which pieces of a larger program need to be recompiled, and issues the commands to recompile them. (See also "Makefile")
 <li><b>Makefile:</b> A text file used by the "make" utility; it describes the relationships among files in your program, and the commands for updating each file. (For example, to compile a human-readable source-code file into a computer-readable executable program file.)
@@ -1235,7 +1236,7 @@ mailing lists:
 <li><b>SDL_Surface&nbsp;*:</b> (A pointer to) a C structure defined by libSDL that contains a drawing surface. (See also the "<code>SDL_Surface(3)</code>" <i>man&nbsp;page</i>)
 <li><b>Shared Object:</b> A piece of code that's compiled separately from the main application, and loaded dynamically, at runtime.
 <li><b>Simple DirectMedia Layer:</b> A programming library that allows programs portable low level access to a video framebuffer, audio output, mouse, and keyboard. (See also: <a href="http://www.libsdl.org/">http://www.libsdl.org/</a>)
-<li><b>snprintf():</b> <i>TBD</i> (See also the "<code>snprintf(3)</code>" <i>man&nbsp;page</i>)
+<li><b>snprintf():</b> A C function, related to "printf()", which takes a 'format' string and one or more additional arguments, and puts them together. "snprintf()" takes the resulting output and stores it into a string, making sure not to go beyond the string's buffer size (which must also be supplied). For example, assume a string "char&nbsp;str[20];" has been declared; "snprintf(str, 20, "Name: %s, Age: %d", "Bill", "32");" will store "Name: Bill, Age: 32" into 'str'. (See also the "<code>snprintf(3)</code>" <i>man&nbsp;page</i>)
 <li><b>.so:</b> See "Shared Object"
 <li><b>sRBG:</b> See "RGBA"
 <li><b>star:</b> "<code>*</code>". A symbol in C that, when used in the declaration of variables (e.g., arguments to a function), denotes that the variable is a pointer. (For example, "<code>int&nbsp;*&nbsp;p;</code>" means that "<code>p</code>" is a <i>pointer</i> to an integer.) When used next to a pointer, it 'dereferences' the variable. (For example, later "<code>*p&nbsp;=&nbsp;50;</code>" assigns the value of 50 to the memory that "<code>p</code>" points to; it does not change the value of "<code>p</code>", which is still a pointer to an integer. In essence, it changed the integer that's being pointed to.)
@@ -1246,9 +1247,9 @@ mailing lists:
 <li><b>tp-magic-config:</b> A command-line program that provides information about the installed version of Tux&nbsp;Paint to plugin developers (such as what C compiler flags they should compile with, and where plugin shared objects and data files should be installed). (See also the "<code>tp-magic-config(3)</code>" <i>man&nbsp;page</i>.)
 <li><b>Uint32:</b> A 32-bit, unsigned integer (defined by libSDL). In other words, four bytes that can represent 0 through 4294967295. (Typically used to hold enough information to store three or four bytes representing a pixel's color; i.e., RBGA value).
 <li><b>Uint8:</b> An 8-bit, unsigned integer (defined by libSDL). In other words, a byte that can represent 0 through 255.
-<li><b>unsigned:</b> <i>TBD</i>
+<li><b>unsigned:</b> In C, a variable that can store a numeric value can be declared as either "signed" (the default), or "unsigned". In the former case, one bit of the value is used to denote the sign of the value (either positive or negative). In the latter case, the value can only be positive, but benefits from one extra bit of storage for the number. A signed byte (8 bits), for example, can represent any number between -128 and 127. An unsigned byte can go up to 255, but it cannot go below 0. For the purposes of graphics in SDL, unsigned values should be used for RGB values, since each channel (red, green and blue) may be between 0 (off) and 255 (brightest).
 <li><b>value:</b> See "HSV"
-<li><b>variable:</b> <i>TBD</i>
+<li><b>variable:</b> A construct in computer programming that contains a value which can be referenced again later by referring to the variable's name, and typically changed later. For example, a variable to hold someone's age could be declared as an integer: "int&nbsp;a;". It can be examined later: "if (a&nbsp;&gt;=&nbsp;18) { /* they are an adult */ } else { /* they are not an adult */ }".
 <li><b>WAV:</b> <i>TBD</i> (See also "Ogg Vorbis")
 <li><b>(w,h):</b> See "Dimensions"
 <li><b>(x,y):</b> See "Coordinates"
