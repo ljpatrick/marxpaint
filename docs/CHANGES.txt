@@ -9,7 +9,7 @@ http://www.tuxpaint.org/
 $Id$
 
 
-2007.August.27 (0.9.18)
+2007.August.29 (0.9.18)
   * Interface Improvements:
     -----------------------
     * Improved 'New' and 'Open' interface:
@@ -146,7 +146,7 @@ $Id$
 
   * Localization Updates:
     ---------------------
-    * Afrikaans
+    * Afrikaans translation
       Petri Jooste <petri.jooste@nwu.ac.za>
 
     * British English translation
@@ -159,7 +159,7 @@ $Id$
     * French translation
       Jacques Chion <Jacques.Chion@wanadoo.fr>
 
-    * German
+    * German translation
       Burkhard Lück <lueck@hube-lueck.de>
 
     * Gujarati translation
@@ -185,6 +185,9 @@ $Id$
 
     * Vietnamese translation
       Clytie Siddall <clytie@riverland.net.au>
+
+    * Walloon translation
+      Pablo Saratxaga <pablo@walon.org>
 
     * Improved comments near gettext() calls in the source code, to provide
       useful descriptions of each string in the POT (translation template).
