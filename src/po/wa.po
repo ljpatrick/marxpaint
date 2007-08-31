@@ -1,12 +1,13 @@
 # Translation of tuxpaint into the walloon language.
 # Copyright (C) 2003 THE PACKAGE'S COPYRIGHT HOLDER
-# Pablo Saratxaga <pablo@walon.org>, 2003, 2004.
+# Pablo Saratxaga <pablo@walon.org>, 2003, 2004, 2007.
+# Lucyin Mahin <lucyin@walon.org>, 2007.
 msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint 0.9.17\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2007-05-09 00:32-0700\n"
-"PO-Revision-Date: 2007-08-29 18:24+0200\n"
+"PO-Revision-Date: 2007-08-30 18:24+0200\n"
 "Last-Translator: Pablo Saratxaga <pablo@walon.org>\n"
 "Language-Team: Walloon <linux-wa@walon.org>\n"
 "MIME-Version: 1.0\n"
@@ -48,7 +49,7 @@ msgid "Blue!"
 msgstr "Bleu!"
 
 msgid "Lavender!"
-msgstr "Lavande!"
+msgstr "Måve såvaedje pilé!"
 
 msgid "Purple!"
 msgstr "Poûrpe!"
