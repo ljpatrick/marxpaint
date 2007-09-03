@@ -117,7 +117,7 @@ Root: HKLM; Subkey: "SOFTWARE\{#AppRegKey}"; Flags: uninsdeletekey; ValueName: "
 Root: HKCU; Subkey: "SOFTWARE\{#AppRegKey}"; Flags: uninsdeletekey; ValueName: "{#AppRegVersion}"; ValueType: string; ValueData: "{#AppVersion}"; Check: ThisUserOnly;
 
 [Run]
-Filename: "{app}\{#AppReadme}"; Description: "View the README file"; Flags: postinstall shellexec
+Filename: "{app}\{#AppReadme}"; Description: "View the README file"; Flags: postinstall shellexec skipifsilent
 Filename: "{app}\{#AppConfigExe}"; Description: "{cm:LaunchProgram,{#AppConfigName}}"; Flags: nowait postinstall skipifsilent
 
 [UninstallDelete]
