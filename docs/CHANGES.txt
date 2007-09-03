@@ -98,6 +98,9 @@ $Id$
       now be different.  Use "--datadir" option to override default data
       directory, similar to "--savedir" has been for overriding save directory.
 
+    * Windows installation (Innosetup .iss file) more silent, to help it
+      work with WPKG software deployment tool.  [SourceForge Bug #1787000]
+
   * New Brushes
     -----------
     * Sparkles (based on old Magic Tool)
