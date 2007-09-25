@@ -7491,10 +7491,6 @@ static void setup(int argc, char *argv[])
 
   locale_font = load_locale_font(medium_font, 18);
 
-#ifndef NO_SDLPANGO
-  if (need_right_to_left)
-    SDLPango_SetBaseDirection(locale_font->pango_context, SDLPANGO_DIRECTION_RTL);
-#endif
 
 
 #if 0
@@ -10036,7 +10032,7 @@ static void wordwrap_text_ex(const char *const str, SDL_Color color,
 
   if (strcmp(str, gettext(str)) == 0)
   {
-    /* String isn't translated!  Don't write right-to-left */
+    /* String isn't translated!  Don't write right-to-left, even if our locale is an RTOL language: */
     want_right_to_left = 0;
   }
 
@@ -10048,10 +10044,17 @@ static void wordwrap_text_ex(const char *const str, SDL_Color color,
 
   SDLPango_SetDefaultColor(myfont->pango_context, &pango_color);
   SDLPango_SetMinimumSize(myfont->pango_context, right - left, canvas->h - top);
-  if (want_right_to_left)
+  if (want_right_to_left && need_right_to_left)
+  {
+    SDLPango_SetBaseDirection(locale_font->pango_context, SDLPANGO_DIRECTION_RTL);
     SDLPango_SetText_GivenAlignment(myfont->pango_context, gettext(str), -1, SDLPANGO_ALIGN_RIGHT);
+  }
   else
-    SDLPango_SetText(myfont->pango_context, gettext(str), -1);
+  {
+    SDLPango_SetBaseDirection(locale_font->pango_context, SDLPANGO_DIRECTION_LTR);
+    SDLPango_SetText_GivenAlignment(myfont->pango_context, gettext(str), -1, SDLPANGO_ALIGN_LEFT);
+  }
+
   text = SDLPango_CreateSurfaceDraw(myfont->pango_context); 
 
   dest.x = left;
