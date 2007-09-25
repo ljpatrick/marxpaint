@@ -22,6 +22,9 @@ $Id$
     * Sped up prompt animations, and made them 'fly' from their sources
       (e.g., quit confirmation flies from Quit button), when possible.
 
+    * Center image of directional brushes shown.
+      (SourceForge.net Bug #1658697)
+
   * Tool Improvements:
     ------------------
     * Added a 'color picker' entry to the color palette; allows choosing
