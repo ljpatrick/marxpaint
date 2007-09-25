@@ -22,7 +22,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
   
-  June 14, 2002 - August 9, 2007
+  June 14, 2002 - September 25, 2007
   $Id$
 */
 
@@ -13211,6 +13211,8 @@ int do_open(void)
           {
             /* Picked an icon! */
 
+	    int old_which = which;
+
             which = ((event.button.x - 96) / (THUMB_W) +
                 (((event.button.y - 24) / THUMB_H) * 4)) + cur;
 
@@ -13233,6 +13235,8 @@ int do_open(void)
               last_click_time = SDL_GetTicks();
               last_click_button = event.button.button;
             }
+	    else
+	      which = old_which;
           }
           else if (event.button.x >= (WINDOW_WIDTH - img_scroll_up->w) / 2 &&
               event.button.x <= (WINDOW_WIDTH + img_scroll_up->w) / 2)

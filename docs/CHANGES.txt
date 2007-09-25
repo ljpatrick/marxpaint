@@ -9,7 +9,7 @@ http://www.tuxpaint.org/
 $Id$
 
 
-2007.September.8 (0.9.18)
+2007.September.25 (0.9.18)
   * Interface Improvements:
     -----------------------
     * Improved 'New' and 'Open' interface:
@@ -35,7 +35,7 @@ $Id$
       Use "_flip.png"/"_flip.svg" and "_mirror_flip.png"/"_mirror_flip.png",
       respectively.
 
-  * Documentation Imrpovements:
+  * Documentation Improvements:
     ---------------------------
     * Improved --usage output.
 
@@ -224,6 +224,11 @@ $Id$
         If I print to a file and use the HP LaserJet 6P/6MP PostScript driver
         it looks OK. I'm hoping it is a driver problem on my system.)
       John Popplewell <john@johnnypops.demon.co.uk>
+
+    * Prevented crash when clicking 'Open' or 'Erase' button in Open dialog
+      after clicking an empty file slot.
+      (SourceForge Bug #1787005)
+      Thanks to Tomasz Gloc for reporting and investigating this one.
 
 
 2007.July.1 (0.9.17)
