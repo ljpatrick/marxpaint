@@ -192,6 +192,9 @@ $Id$
     * South African English translation
       Caroline Ford <caroline.ford.work@googlemail.com>
 
+    * Slovenian translation
+      Matej Urban <matej.urban@gmail.com>
+
     * Spanish translation
       Gabriel Gazzan <ggabriel@internet.com.uy>
 
