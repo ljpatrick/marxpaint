@@ -9,7 +9,7 @@ http://www.tuxpaint.org/
 $Id$
 
 
-2007.September.25 (0.9.18)
+2007.October.5 (0.9.18)
   * Interface Improvements:
     -----------------------
     * Improved 'New' and 'Open' interface:
@@ -182,6 +182,9 @@ $Id$
 
     * Norwegian Bokmål translation
       Karl Ove Hufthammer <huftis@users.sourceforge.net>
+
+    * Polish translation
+      Andrzej M. Krzysztofowicz <ankry@mif.pg.gda.pl>
 
     * Russian EXTENDING, INSTALL, PNG and FAQ documentation
       Sergei Popov <skein@rambler.ru>
