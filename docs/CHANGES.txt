@@ -9,7 +9,7 @@ http://www.tuxpaint.org/
 $Id$
 
 
-2007.October.5 (0.9.18)
+2007.October.7 (0.9.18)
   * Interface Improvements:
     -----------------------
     * Improved 'New' and 'Open' interface:
@@ -158,6 +158,10 @@ $Id$
     * British English translation
       Caroline Ford <caroline.ford.work@googlemail.com>
       Karl Ove Hufthammer <huftis@users.sourceforge.net>
+
+    * Chinese README documentation
+      HackerGene <hackergene@gmail.com>
+      http://tuxpaint.cn/
 
     * Dutch translation
       Freek de Kruijf <f.de.kruijf@hetnet.nl>
