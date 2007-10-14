@@ -7,7 +7,7 @@ bill@newbreedsoftware.com
 http://www.tuxpaint.org/
 
 
-June 17, 2002 - October 7, 2007
+June 17, 2002 - October 14, 2007
 
 $Id$
 
@@ -32,7 +32,7 @@ $Id$
   Bilinear interpolation code based on an example by Christian Graus
   ( http://www.codeproject.com/cs/media/imageprocessing4.asp ).
 
-  Input Method (IM) Framework and Korean/Japanese IM implemented by:
+  Input Method (IM) Framework implemented by:
   Mark K. Kim <mkkim214@gmail.com>
 
   PostScript printing code based loosely on NetPBM's "pnmtops",
@@ -311,6 +311,10 @@ $Id$
   * Japanese
     TOYAMA Shin-ichi <shin1@wmail.plala.or.jp>
 
+  * Japanese Input Method
+    Mark K. Kim <mkkim214@gmail.com>
+    TOYAMA Shin-ichi <shin1@wmail.plala.or.jp>
+
   * Kinyarwanda
     Steve Murphy <murf@e-tools.com>
     (Based on translations by:
@@ -324,6 +328,9 @@ $Id$
     Antoine Bigirimana <antoine@e-tools.com>.)
 
   * Korean
+    Mark K. Kim <mkkim214@gmail.com>
+  
+  * Korean Input Method
     Mark K. Kim <mkkim214@gmail.com>
   
   * Kurdish
@@ -351,6 +358,9 @@ $Id$
 
   * Norwegian Nynorsk
     Karl Ove Hufthammer <karl@huftis.org>
+
+  * Ojibway
+    Ed Montgomery <edm@rocketmail.com>
 
   * Polish
     Arkadiusz Lipiec <alipiec@elka.pw.edu.pl>
@@ -424,6 +434,9 @@ $Id$
 
   * Thai
     Ouychai Chaita <ae.freeman@gmail.com>
+
+  * Thai input method
+    Ed Montgomery <edm@rocketmail.com>
 
   * Tibetan
     Dawa Dolma

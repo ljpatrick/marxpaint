@@ -111,6 +111,7 @@ const char *lang_prefixes[NUM_LANGS] = {
   "nl",
   "nn",
   "nr",
+  "oj",
   "pl",
   "pt_br",
   "pt_pt",
@@ -262,6 +263,7 @@ const language_to_locale_struct language_to_locale_array[] = {
   {"nynorsk", "nn_NO.UTF-8"},
   {"norsk", "nn_NO.UTF-8"},
   {"ndebele", "nr_ZA.UTF-8"},
+  {"ojibway", "oj_CA.UTF-8"},
   {"polish", "pl_PL.UTF-8"},
   {"polski", "pl_PL.UTF-8"},
   {"brazilian-portuguese", "pt_BR.UTF-8"},
@@ -468,6 +470,7 @@ void show_lang_usage(FILE * f, const char *const prg)
 	  "  mexican      mexican-spanish        espanol-mejicano\n"
 /* nr */ "  ndebele\n"
 /* nn */ "  norwegian    nynorsk                norsk\n"
+/* oj */ "  ojibway\n"
 /* pl */ "  polish       polski\n"
 /* pt_PT */ "  portuguese   portugues\n"
 /* ro */ "  romanian\n"
@@ -553,6 +556,7 @@ void show_locale_usage(FILE * f, const char *const prg)
 	  "  lt_LT   (Lithuanian   Lietuviu)\n"
           "  nr_ZA   (Ndebele)\n"
 	  "  nn_NO   (Norwegian    Nynorsk                Norsk)\n"
+	  "  oj_CA   (Ojibway)\n"
 	  "  pl_PL   (Polish       Polski)\n"
 	  "  pt_PT   (Portuguese   Portugues)\n"
 	  "  ro_RO   (Romanian)\n"

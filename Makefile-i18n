@@ -7,7 +7,7 @@
 # bill@newbreedsoftware.com
 # http://www.tuxpaint.org/
 
-# June 14, 2002 - July 14, 2007
+# June 14, 2002 - October 14, 2007
 
 
 # Locale files
@@ -71,6 +71,8 @@ uninstall-i18n:
 	-rm $(LOCALE_PREFIX)/nl/LC_MESSAGES/tuxpaint.mo
 	-rm $(LOCALE_PREFIX)/nb/LC_MESSAGES/tuxpaint.mo
 	-rm $(LOCALE_PREFIX)/nn/LC_MESSAGES/tuxpaint.mo
+	-rm $(LOCALE_PREFIX)/nr/LC_MESSAGES/tuxpaint.mo
+	-rm $(LOCALE_PREFIX)/oj/LC_MESSAGES/tuxpaint.mo
 	-rm $(LOCALE_PREFIX)/pl/LC_MESSAGES/tuxpaint.mo
 	-rm $(LOCALE_PREFIX)/pt_PT/LC_MESSAGES/tuxpaint.mo
 	-rm $(LOCALE_PREFIX)/pt_BR/LC_MESSAGES/tuxpaint.mo
@@ -335,6 +337,11 @@ install-gettext:
 	@cp trans/nr.mo $(LOCALE_PREFIX)/nr/LC_MESSAGES/tuxpaint.mo
 	@chmod 644 $(LOCALE_PREFIX)/nr/LC_MESSAGES/tuxpaint.mo
 	@#
+	@echo "   oj_CA ...Ojibway..."
+	@install -d $(LOCALE_PREFIX)/oj/LC_MESSAGES
+	@cp trans/oj.mo $(LOCALE_PREFIX)/oj/LC_MESSAGES/tuxpaint.mo
+	@chmod 644 $(LOCALE_PREFIX)/oj/LC_MESSAGES/tuxpaint.mo
+	@#
 	@echo "   pl_PL ...Polish..."
 	@install -d $(LOCALE_PREFIX)/pl/LC_MESSAGES
 	@cp trans/pl.mo $(LOCALE_PREFIX)/pl/LC_MESSAGES/tuxpaint.mo
@@ -541,6 +548,7 @@ translations: trans \
 	trans/nb.mo \
 	trans/nn.mo \
 	trans/nr.mo \
+	trans/oj.mo \
 	trans/pl.mo \
 	trans/pt_br.mo \
 	trans/pt_pt.mo \
@@ -757,6 +765,10 @@ trans/nn.mo:	src/po/nn.po
 trans/nr.mo:	src/po/nr.po
 	@echo "   nr_ZA ...Ndebele..."
 	@msgfmt -o trans/nr.mo src/po/nr.po
+
+trans/oj.mo:	src/po/oj.po
+	@echo "   oj_CA ...Ojibway..."
+	@msgfmt -o trans/oj.mo src/po/oj.po
 
 trans/pl.mo:	src/po/pl.po
 	@echo "   pl_PL ...Polish..."
