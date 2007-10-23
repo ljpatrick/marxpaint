@@ -9,7 +9,7 @@ http://www.tuxpaint.org/
 $Id$
 
 
-2007.October.14 (0.9.18)
+2007.October.23 (0.9.18)
   * Interface Improvements:
     -----------------------
     * Improved 'New' and 'Open' interface:
@@ -103,6 +103,8 @@ $Id$
 
     * Windows installation (Innosetup .iss file) more silent, to help it
       work with WPKG software deployment tool.  [SourceForge Bug #1787000]
+
+    * Lockfile can be disabled via options file ("nolockfile=yes") now, too.
 
   * New Brushes
     -----------

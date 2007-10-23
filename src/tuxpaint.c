@@ -22,7 +22,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
   
-  June 14, 2002 - September 25, 2007
+  June 14, 2002 - October 23, 2007
   $Id$
 */
 
@@ -6654,6 +6654,11 @@ static void setup(int argc, char *argv[])
     {
       debug("Not using lockfile");
       ok_to_use_lockfile = 0;
+    }
+    else if (strcmp(argv[i], "--lockfile") == 0)
+    {
+      debug("Using lockfile");
+      ok_to_use_lockfile = 1;
     }
     else
     {
@@ -15760,6 +15765,11 @@ static void parse_options(FILE * fi)
 #ifdef DEBUG
 	printf("datadir set to: %s\n", datadir);
 #endif
+      }
+      else if (strcmp(str, "nolockfile=yes") == 0 ||
+	       strcmp(str, "lockfile=no") == 0)
+      {
+	ok_to_use_lockfile = 0;
       }
     }
   }

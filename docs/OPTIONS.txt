@@ -9,7 +9,7 @@
                            bill@newbreedsoftware.com
                             http://www.tuxpaint.org/
 
-                                October 14, 2007
+                                October 23, 2007
 
    --------------------------------------------------------------------------
 
@@ -211,6 +211,22 @@ Windows Users
              b0, b1, b2 b3, b4, 10x14, 11x17, halfletter, halfexecutive,
              halfnote, folio, quarto, ledger, archA, archB, archC, archD,
              archE, flsa, flse, csheet, dsheet, esheet.
+
+     nolockfile=yes
+
+             By default, Tux Paint uses what's known as a 'lockfile' to
+             prevent it from being launched more than once in 30 seconds.
+             (This is to avoid accidentally running multiple copies; for
+             example, by double-clicking a single-click launcher, or simply
+             impatiently clicking the icon multiple times.)
+
+             To make Tux Paint ignore the lockfile, allowing it to run again,
+             even if it was just launched less than 30 seconds ago, enable
+             this setting in the configuration file, or run Tux Paint with
+             the '--nolockfile' option on the command-line.
+
+             By default, the lockfile is stored in "~/.tuxpaint/" under Linux
+             and Unix, and "userdata\" under Windows.
 
      simpleshapes=yes
              Disable the rotation step of the 'Shape' tool. Click, drag and
@@ -639,6 +655,7 @@ Windows Users
        --altprintnever
        --altprintalways
        --papersize=PAPERSIZE
+       --nolockfile
        --simpleshapes
        --uppercase
        --grab
@@ -676,6 +693,7 @@ Windows Users
        --printdelay=0
        --noprintcfg
        --altprintmod
+       --lockfile
        --complexshapes
        --mixedcase
        --dontgrab
@@ -717,22 +735,6 @@ Windows Users
 
                Only your own configuration file, "~/.tuxpaintrc", if it
                exists, will be used.
-
-       --nolockfile
-
-               By default, Tux Paint uses what's known as a 'lockfile' to
-               prevent it from being launched more than once in 30 seconds.
-               (This is to avoid accidentally running multiple copies; for
-               example, by double-clicking a single-click launcher, or simply
-               impatiently clicking the icon multiple times.)
-
-               To make Tux Paint ignore the lockfile, allowing it to run
-               again, even if it was just launched less than 30 seconds ago,
-               run Tux Paint with the '--nolockfile' option on the
-               command-line.
-
-               By default, the lockfile is stored in "~/.tuxpaint/" under
-               Linux and Unix, and "userdata\" under Windows.
 
    --------------------------------------------------------------------------
 
