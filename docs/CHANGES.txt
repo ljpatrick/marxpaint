@@ -9,7 +9,7 @@ http://www.tuxpaint.org/
 $Id$
 
 
-2007.October.23 (0.9.18)
+2007.October.24 (0.9.18)
   * Interface Improvements:
     -----------------------
     * Improved 'New' and 'Open' interface:
@@ -163,6 +163,9 @@ $Id$
     * British English translation
       Caroline Ford <caroline.ford.work@googlemail.com>
       Karl Ove Hufthammer <huftis@users.sourceforge.net>
+
+    * Catalan translation
+      Pere Pujal i Carabantes <pere@fornol.no-ip.org>
 
     * Chinese README documentation
       HackerGene <hackergene@gmail.com>
