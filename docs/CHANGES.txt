@@ -9,7 +9,7 @@ http://www.tuxpaint.org/
 $Id$
 
 
-2007.October.24 (0.9.18)
+2007.October.25 (0.9.18)
   * Interface Improvements:
     -----------------------
     * Improved 'New' and 'Open' interface:
@@ -37,6 +37,11 @@ $Id$
       (in addition to pre-mirrored).
       Use "_flip.png"/"_flip.svg" and "_mirror_flip.png"/"_mirror_flip.png",
       respectively.
+
+    * Any current text being written in the Text tool is applied to the
+      picture if 'Print' is clicked.
+      (Useful if kids are told to add their name to a picture when they're
+      done, right before printing, but they forget to hit [Enter].)
 
   * Documentation Improvements:
     ---------------------------
