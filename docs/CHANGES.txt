@@ -9,7 +9,7 @@ http://www.tuxpaint.org/
 $Id$
 
 
-2007.October.25 (0.9.18)
+2007.October.26 (0.9.18)
   * Interface Improvements:
     -----------------------
     * Improved 'New' and 'Open' interface:
@@ -42,6 +42,13 @@ $Id$
       picture if 'Print' is clicked.
       (Useful if kids are told to add their name to a picture when they're
       done, right before printing, but they forget to hit [Enter].)
+
+    * All stamps can be forced to start at a particular size
+      (on a scale of 0-10, corresponding to their minimum and maximum size,
+      which depends on the size of the stamp, and the size of the canvas).
+      Use the "--stampsize=..." command-line option or "stampsize=..." config.
+      file setting.  Use "default" to allow Tux Paint to decide (its standard
+      behavior).
 
   * Documentation Improvements:
     ---------------------------

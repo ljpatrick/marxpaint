@@ -22,7 +22,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
   
-  June 14, 2002 - October 25, 2007
+  June 14, 2002 - October 26, 2007
   $Id$
 */
 
@@ -846,7 +846,8 @@ static int fullscreen, native_screensize, disable_quit, simple_shapes,
   no_button_distinction,
   mirrorstamps, disable_stamp_controls, disable_save, ok_to_use_lockfile,
   alt_print_command_default, scrolling = 0,
-  start_blank, autosave_on_quit, rotate_orientation, button_down;
+  start_blank, autosave_on_quit, rotate_orientation, button_down,
+  stamp_size_override;
 static int want_alt_printcommand;
 static int starter_mirrored, starter_flipped, starter_personal;
 static Uint8 canvas_color_r, canvas_color_g, canvas_color_b;
@@ -4930,6 +4931,7 @@ static void show_usage(FILE * f, char *prg)
 	  "  %s [--sysfonts | --nosysfonts]\n"
 	  "  %s [--nostampcontrols | --stampcontrols]\n"
 	  "  %s [--mirrorstamps | --dontmirrorstamps]\n"
+	  "  %s [--stampsize=[0-10] | --stampsize=default]\n"
 	  "  %s [--saveoverask | --saveover | --saveovernew]\n"
 	  "  %s [--nosave | --save]\n"
           "  %s [--autosave | --noautosave]\n"
@@ -4963,7 +4965,7 @@ static void show_usage(FILE * f, char *prg)
 #if !defined(WIN32) && !defined(__APPLE__) && !defined(__BEOS__)
 	  blank,
 #endif
-	  blank, blank, blank, blank);
+	  blank, blank, blank, blank, blank);
 
   free(blank);
 }
@@ -5234,6 +5236,11 @@ static void loadstamp_finisher(stamp_type * sd, unsigned w, unsigned h,
   sd->min = lower;
   sd->size = mid;
   sd->max = upper;
+
+  if (stamp_size_override != -1)
+  {
+    sd->size = (((upper - lower) * stamp_size_override) / 10) + lower;
+  }
 }
 
 
@@ -6063,6 +6070,7 @@ static void setup(int argc, char *argv[])
   no_fancy_cursors = 0;
   hide_cursor = 0;
 #endif
+  stamp_size_override = -1;
   only_uppercase = 0;
   promptless_save = SAVE_OVER_PROMPT;
   autosave_on_quit = 0;
@@ -6593,6 +6601,16 @@ static void setup(int argc, char *argv[])
 	show_usage(stderr, (char *) getfilename(argv[0]));
 	exit(1);
       }
+    }
+    else if (strcmp(argv[i], "--stampsize=default") == 0)
+    {
+      stamp_size_override = -1;
+    }
+    else if (strstr(argv[i], "--stampsize=") == argv[i])
+    {
+      stamp_size_override = atoi(argv[i] + 12);
+      if (stamp_size_override > 10)
+	stamp_size_override = 10;
     }
     else if (strcmp(argv[i], "--record") == 0 ||
 	     strcmp(argv[i], "--playback") == 0)
@@ -15502,6 +15520,16 @@ static void parse_options(FILE * fi)
 	       strcmp(str, "dontmirrorstamps=yes") == 0)
       {
 	mirrorstamps = 0;
+      }
+      else if (strcmp(str, "stampsize=default") == 0)
+      {
+        stamp_size_override = -1;
+      }
+      else if (strstr(str, "stampsize=") == str)
+      {
+        stamp_size_override = atoi(str + 10);
+        if (stamp_size_override > 10)
+	  stamp_size_override = 10;
       }
       else if (strcmp(str, "noshortcuts=yes") == 0)
       {

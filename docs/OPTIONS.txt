@@ -9,7 +9,7 @@
                            bill@newbreedsoftware.com
                             http://www.tuxpaint.org/
 
-                                October 23, 2007
+                                October 26, 2007
 
    --------------------------------------------------------------------------
 
@@ -323,6 +323,17 @@ Windows Users
 
              This can be useful for people who prefer things right-to-left,
              rather than left-to-right.
+
+     stampsize=SIZE
+
+             Use this option to force Tux Paint to set the starting size of
+             all stamps. The SIZE value should be between 0 (smallest) and 10
+             (largest). The size is relative to the available sizes of the
+             stamp, which depends on the stamp itself, and Tux Paint's
+             current canvas size.
+
+             Specifc "default" to let Tux Paint decide (it's standard
+             behavior).
 
      keyboard=yes
 
@@ -669,6 +680,7 @@ Windows Users
        --nostampcontrols
        --sysfonts
        --mirrorstamps
+       --stampsize=SIZE
        --keyboard
        --savedir DIRECTORY
        --datadir DIRECTORY
@@ -707,6 +719,7 @@ Windows Users
        --stampcontrols
        --nosysfonts
        --dontmirrorstamps
+       --stampsize=default
        --mouse
        --saveoverask
        --save

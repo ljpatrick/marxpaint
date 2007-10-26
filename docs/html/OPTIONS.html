@@ -23,7 +23,7 @@ New Breed Software</p>
 <a href="http://www.tuxpaint.org/">http://www.tuxpaint.org/</a></p>
 
 
-<p>October 23, 2007</p>
+<p>October 26, 2007</p>
 
 
 </center>
@@ -405,6 +405,18 @@ New Breed Software</p>
 
     <p>This can be useful for people who prefer things right-to-left,
     rather than left-to-right.</p>
+  </dd>
+
+  <dt><code><b>stampsize=<b>SIZE</b></code></dt>
+  <dd>
+    <p>Use this option to force Tux&nbsp;Paint to set the starting size of
+    all stamps.  The <code>SIZE</code> value should be between 0 (smallest)
+    and 10 (largest).  The size is relative to the available sizes of the
+    stamp, which depends on the stamp itself, and Tux&nbsp;Paint's current
+    canvas size.</p>
+
+    <p>Specifc "<code>default</code>" to let Tux&nbsp;Paint decide
+    (it's standard behavior).</p>
   </dd>
 
   <dt><code><b>keyboard=yes</b></code></dt>
@@ -1016,6 +1028,7 @@ New Breed Software</p>
     --nostampcontrols<br>
     --sysfonts<br>
     --mirrorstamps<br>
+    --stampsize=<i>SIZE</i><br>
     --keyboard<br>
     --savedir&nbsp;<i>DIRECTORY</i><br>
     --datadir&nbsp;<i>DIRECTORY</i><br>
@@ -1057,6 +1070,7 @@ New Breed Software</p>
     --stampcontrols<br>
     --nosysfonts<br>
     --dontmirrorstamps<br>
+    --stampsize=default<br>
     --mouse<br>
     --saveoverask<br>
     --save<br>
