@@ -126,6 +126,7 @@ $Id$
   * New Magic tools:
     ----------------
     * Calligraphy
+    * Distortion
     * Emboss
     * Flower
     * Foam

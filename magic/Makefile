@@ -6,7 +6,7 @@
 # bill@newbreedsoftware.com
 # http://www.tuxpaint.org/
 
-# July 2007 - August 9, 2007
+# July 2007 - October 24, 2007
 
 
 SO_TYPE=so
@@ -47,7 +47,8 @@ all:	negative.$(SO_TYPE) \
 	ripples.$(SO_TYPE) \
 	light.$(SO_TYPE) \
 	shift.$(SO_TYPE) \
-	calligraphy.$(SO_TYPE)
+	calligraphy.$(SO_TYPE) \
+	distortion.$(SO_TYPE)
 	@strip *.$(SO_TYPE)
 
 install:
@@ -163,3 +164,8 @@ shift.$(SO_TYPE):	src/shift.c
 calligraphy.$(SO_TYPE):	src/calligraphy.c
 	@echo "Building Calligraphy magic tool"
 	@$(CC) $(CFLAGS) -shared -o $@ $< $(PLUGIN_LIBS)
+
+distortion.$(SO_TYPE):	src/distortion.c
+	@echo "Building Distortion magic tool"
+	@$(CC) $(CFLAGS) -shared -o $@ $< $(PLUGIN_LIBS)
+
