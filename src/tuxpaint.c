@@ -2376,7 +2376,7 @@ static void mainloop(void)
 		do_setcursor(cursor_watch);
 
                 // Wait while Text tool finishes loading fonts
-		draw_tux_text(TUX_WAIT, gettext("Please wait..."), 1);
+		draw_tux_text(TUX_WAIT, gettext("Please wait…"), 1);
 
 		waiting_for_fonts = 1;
 #ifdef FORKED_FONTS
