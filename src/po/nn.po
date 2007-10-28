@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: nn\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-08-09 23:58-0700\n"
+"POT-Creation-Date: 2007-10-28 19:15+0100\n"
 "PO-Revision-Date: 2007-07-19 20:34+0200\n"
 "Last-Translator: Karl Ove Hufthammer <karl@huftis.org>\n"
 "Language-Team: Norwegian Nynorsk <i18n-nn@lister.ping.uio.no>\n"
@@ -202,9 +202,8 @@ msgid "Rhombus"
 msgstr "Rombe"
 
 #. Octagon shape tool (8 sides)
-#, fuzzy
 msgid "Octagon"
-msgstr "Femkant"
+msgstr "Åttekant"
 
 #. Description of a square
 msgid "A square is a rectangle with four equal sides."
@@ -233,9 +232,8 @@ msgstr "Ein femkant har fem sider."
 msgid "A rhombus has four equal sides, and opposite sides are parallel."
 msgstr "Ein rombe har fire like lange sider og motståande sider er parallelle."
 
-#, fuzzy
 msgid "An octagon has eight equal sides."
-msgstr "Ein femkant har fem sider."
+msgstr "Ein åttekant har åtte sider."
 
 #. Title of tool selector (buttons down the left)
 msgid "Tools"
@@ -362,9 +360,8 @@ msgid "Eraser!"
 msgstr "Viskelêr!"
 
 #. Response to 'start a new image' action
-#, fuzzy
 msgid "Pick a color or picture with which to start a new drawing."
-msgstr "Vel kva du vil stempla teikninga med."
+msgstr "Vel fargen eller biletet du vil starta den nye teikninga med."
 
 #. Response to 'open' action (while file dialog is being constructed)
 msgid "Open…"
@@ -474,11 +471,11 @@ msgid "Sound unmuted."
 msgstr "Lyd slått på."
 
 #. Wait while Text tool finishes loading fonts
-msgid "Please wait..."
+msgid "Please wait…"
 msgstr "Vent litt …"
 
 msgid "Pick a color."
-msgstr ""
+msgstr "Vel ein farge."
 
 #. Open dialog: 'Erase' button, to erase/deleted the selected picture
 msgid "Erase"
@@ -581,11 +578,10 @@ msgid "Click and move to draw small bricks."
 msgstr "Hald inne knappen og flytt rundt for å teikna små mursteinar."
 
 msgid "Calligraphy"
-msgstr ""
+msgstr "Kalligrafi"
 
-#, fuzzy
 msgid "Click and move the mouse around to draw in calligraphy."
-msgstr "Hald inne knappen og flytt rundt for å byta om på fargane."
+msgstr "Hald inne knappen og flytt rundt for å teikna kalligrafisk."
 
 msgid "Cartoon"
 msgstr "Forsterk"
@@ -656,14 +652,11 @@ msgstr ""
 "Hald inne knappen og flytt rundt for å teikna med symmetrisk pensel (som i "
 "eit kaleidoskop)."
 
-#, fuzzy
 msgid "Light"
-msgstr "Lysare"
+msgstr "Lys"
 
-#, fuzzy
 msgid "Click and drag to draw a beam of light on your picture."
-msgstr ""
-"Hald inne knappen og flytt rundt for å leggja glasfliser over teikninga."
+msgstr "Hald inne knappen og flytt rundt for å teikna lysstrålar."
 
 msgid "Metal Paint"
 msgstr "Metallmåling"
@@ -696,19 +689,16 @@ msgid "You can draw in rainbow colors!"
 msgstr "Du kan teikna i alle regnbogens fargar!"
 
 msgid "Ripples"
-msgstr ""
+msgstr "Bølgjer"
 
-#, fuzzy
 msgid "Click to make ripples appear over your picture."
-msgstr ""
-"Hald inne knappen og flytt rundt for å leggja glasfliser over teikninga."
+msgstr "Hald inne knappen og flytt rundt for å laga bølgjer over teikninga."
 
 msgid "Shift"
-msgstr ""
+msgstr "Flytt"
 
-#, fuzzy
 msgid "Click and drag to shift your picture around on the canvas."
-msgstr "Hald inne knappen og flytt rundt for å gjera teikninga om til relieff."
+msgstr "Hald inne knappen og flytt rundt for å flytta på teikninga."
 
 msgid "Smudge"
 msgstr "Gni ut"
@@ -733,36 +723,3 @@ msgstr ""
 "Trykk for å gjera teikninga bølgjete. Trykk oppe for å laga låge bølgjer, "
 "nede for å laga høge bølgjer, til venstre for å laga korte bølgjer og til "
 "høgre for å laga lange bølgjer."
-
-#~ msgid "Sparkles"
-#~ msgstr "Gneistar"
-
-#~ msgid "You now have a blank sheet to draw on!"
-#~ msgstr "Du har no blanke ark og fargestiftar til!"
-
-#~ msgid "Start a new picture?"
-#~ msgstr "Vil du laga ei ny teikning?"
-
-#~ msgid "Yes, let's start fresh!"
-#~ msgstr "Ja, la oss starta på nytt!"
-
-#~ msgid "Click and move to draw sparkles."
-#~ msgstr "Hald inne knappen og flytt rundt for å teikna gneistar."
-
-#~ msgid "Starting a new picture will erase the current one!"
-#~ msgstr "Startar du på ei ny teikning, forsvinn ho du har."
-
-#~ msgid "That’s OK!"
-#~ msgstr "OK!"
-
-#~ msgid "Never mind!"
-#~ msgstr "Avbryt!"
-
-#~ msgid "jq"
-#~ msgstr "æÆ"
-
-#~ msgid "JQ"
-#~ msgstr "øØ"
-
-#~ msgid "Save over the older version of this picture?"
-#~ msgstr "Vil du lagra over den gamle versjonen av teikninga?"

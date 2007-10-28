@@ -17,7 +17,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Tuxpaint cvs 2007-10-23\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-08-09 23:58-0700\n"
+"POT-Creation-Date: 2007-10-28 19:15+0100\n"
 "PO-Revision-Date: 2007-10-24 23:41+0200\n"
 "Last-Translator: Pere Pujal i Carabantes <pere@fornol.no-ip.org>\n"
 "Language-Team: Català <linux-ca@chanae.alphanet.ch>\n"
@@ -225,7 +225,9 @@ msgstr "Un rectangle té quatre cares i quatre angles rectes."
 
 msgid ""
 "A circle is a curve where all points have the same distance from the center."
-msgstr "Un cercle és una corba que té tots els punts a la mateixa distància del centre."
+msgstr ""
+"Un cercle és una corba que té tots els punts a la mateixa distància del "
+"centre."
 
 #. Description of an ellipse
 msgid "An ellipse is a stretched circle."
@@ -339,7 +341,9 @@ msgstr "Trieu un segell per imprimir-lo sobre el vostre dibuix."
 
 #. Line tool instructions
 msgid "Click to start drawing a line. Let go to complete it."
-msgstr "Feu clic per començar a dibuixar una línia. Deixeu anar el botó per acabar-la."
+msgstr ""
+"Feu clic per començar a dibuixar una línia. Deixeu anar el botó per acabar-"
+"la."
 
 #. Shape tool instructions
 msgid ""
@@ -484,7 +488,7 @@ msgid "Sound unmuted."
 msgstr "S'ha activat el so."
 
 #. Wait while Text tool finishes loading fonts
-msgid "Please wait..."
+msgid "Please wait…"
 msgstr "Espereu, si us plau..."
 
 msgid "Pick a color."
@@ -629,7 +633,9 @@ msgid "Flower"
 msgstr "Flor."
 
 msgid "Click and drag to draw a flower stalk. Let go to finish the flower."
-msgstr "Cliqueu i arrossegueu per dibuixar el tall de la flor. Deixeu anar per acabar-la."
+msgstr ""
+"Cliqueu i arrossegueu per dibuixar el tall de la flor. Deixeu anar per "
+"acabar-la."
 
 msgid "Foam"
 msgstr "Escuma."
@@ -641,7 +647,8 @@ msgid "Glass Tile"
 msgstr "Blocs de vidre."
 
 msgid "Click and drag the mouse to put glass tile over your picture."
-msgstr "Feu clic i arrossegueu el ratolí per posar blocs de vidre en la imatge."
+msgstr ""
+"Feu clic i arrossegueu el ratolí per posar blocs de vidre en la imatge."
 
 msgid "Grass"
 msgstr "Herba"
@@ -654,7 +661,9 @@ msgstr "Cal·lidoscopi"
 
 msgid ""
 "Click and drag the mouse to draw with symmetric brushes (a kaleidoscope)."
-msgstr "Feu clic i moveu el ratolí per dibuixar amb pinzells simètrics (un cal·lidoscopi)."
+msgstr ""
+"Feu clic i moveu el ratolí per dibuixar amb pinzells simètrics (un "
+"cal·lidoscopi)."
 
 msgid "Light"
 msgstr "Llum"
@@ -696,7 +705,9 @@ msgid "Ripples"
 msgstr "Ondulacions"
 
 msgid "Click to make ripples appear over your picture."
-msgstr "Feu clic per provocar ondulacions en la imatge. (com gotes d'aigua sobre un llac)."
+msgstr ""
+"Feu clic per provocar ondulacions en la imatge. (com gotes d'aigua sobre un "
+"llac)."
 
 msgid "Shift"
 msgstr "Desplaça"
@@ -723,7 +734,9 @@ msgid ""
 "Click to make the picture wavy. Click toward the top for shorter waves, the "
 "bottom for taller waves, the left for small waves, and the right for long "
 "waves."
-msgstr "Feu clic dins la imatge per aplicar-hi ones. Clic a dalt fa ones curtes, a baix ones altes, a l'esquerra ones petites, a la dreta ones llargues."
+msgstr ""
+"Feu clic dins la imatge per aplicar-hi ones. Clic a dalt fa ones curtes, a "
+"baix ones altes, a l'esquerra ones petites, a la dreta ones llargues."
 
 #~ msgid "Sparkles"
 #~ msgstr "Espurnes"

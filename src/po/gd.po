@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Tux paint anns a' ghàidhlig\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-08-09 23:58-0700\n"
+"POT-Creation-Date: 2007-10-28 19:15+0100\n"
 "PO-Revision-Date: 2006-03-04 15:51-0000\n"
 "Last-Translator: Niall Tracey <internationiall@hotmail.com>\n"
 "Language-Team:  <internationiall@hotmail.com>\n"
@@ -551,7 +551,7 @@ msgid "Sound unmuted."
 msgstr ""
 
 #. Wait while Text tool finishes loading fonts
-msgid "Please wait..."
+msgid "Please wait…"
 msgstr "Fuirich mionaid..."
 
 msgid "Pick a color."

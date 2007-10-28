@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TuxPaint 0.9.17\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-08-09 23:58-0700\n"
+"POT-Creation-Date: 2007-10-28 19:15+0100\n"
 "PO-Revision-Date: 2007-07-26 22:36+0100\n"
 "Last-Translator: Flavio Pastore <ironbishop@gmail.com>\n"
 "Language-Team: Italian <it@li.org>\n"
@@ -513,7 +513,7 @@ msgid "Sound unmuted."
 msgstr "Audio attivato."
 
 #. Wait while Text tool finishes loading fonts
-msgid "Please wait..."
+msgid "Please wait…"
 msgstr "Attendi..."
 
 msgid "Pick a color."

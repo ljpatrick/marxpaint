@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: fr\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-08-09 23:58-0700\n"
+"POT-Creation-Date: 2007-10-28 19:15+0100\n"
 "PO-Revision-Date: 2004-05-30 21:20-0700\n"
 "Last-Translator: jimmy <jacques.chion@wanadoo.fr>\n"
 "Language-Team:  <fr@li.org>\n"
@@ -331,7 +331,8 @@ msgstr "Choisis une image pour l'insérer dans ton dessin."
 
 #. Line tool instructions
 msgid "Click to start drawing a line. Let go to complete it."
-msgstr "Clique pour commencer à dessiner une ligne. Continue pour la compléter."
+msgstr ""
+"Clique pour commencer à dessiner une ligne. Continue pour la compléter."
 
 #. Shape tool instructions
 msgid ""
@@ -343,7 +344,8 @@ msgstr ""
 
 #. Text tool instructions
 msgid "Choose a style of text. Click on your drawing and you can start typing."
-msgstr "Choisis un style de texte. Clique sur ton dessin et commence à taper ton "
+msgstr ""
+"Choisis un style de texte. Clique sur ton dessin et commence à taper ton "
 "texte."
 
 #. Magic tool instruction
@@ -364,7 +366,8 @@ msgstr "Effacer !"
 
 #. Response to 'start a new image' action
 msgid "Pick a color or picture with which to start a new drawing."
-msgstr "Choisis une image ou une couleur pour l'insérer dans un nouveau dessin."
+msgstr ""
+"Choisis une image ou une couleur pour l'insérer dans un nouveau dessin."
 
 #. Response to 'open' action (while file dialog is being constructed)
 msgid "Open…"
@@ -474,7 +477,7 @@ msgid "Sound unmuted."
 msgstr "Son activé."
 
 #. Wait while Text tool finishes loading fonts
-msgid "Please wait..."
+msgid "Please wait…"
 msgstr "Attends s'il te plaît ..."
 
 msgid "Pick a color."
@@ -553,7 +556,8 @@ msgid "Drip"
 msgstr "Goutte"
 
 msgid "Click and move the mouse around to make the picture blocky."
-msgstr "Clique et déplace la souris pour transformer l'image en un ensemble de "
+msgstr ""
+"Clique et déplace la souris pour transformer l'image en un ensemble de "
 "petits blocs."
 
 msgid ""
@@ -583,7 +587,6 @@ msgstr "Clique et déplace la souris pour dessiner des petites briques."
 msgid "Calligraphy"
 msgstr "Calligraphie"
 
-
 msgid "Click and move the mouse around to draw in calligraphy."
 msgstr "Clique et déplace la souris pour dessiner en calligraphie."
 
@@ -591,7 +594,8 @@ msgid "Cartoon"
 msgstr "B.D."
 
 msgid "Click and move the mouse around to turn the picture into a cartoon."
-msgstr "Clique et déplace la souris pour transformer l'image comme une bande "
+msgstr ""
+"Clique et déplace la souris pour transformer l'image comme une bande "
 "dessinée."
 
 msgid "Emboss"
@@ -622,26 +626,30 @@ msgid "Flower"
 msgstr "Fleur"
 
 msgid "Click and drag to draw a flower stalk. Let go to finish the flower."
-msgstr "Clique et déplace la souris pour dessiner une fleur. Relâche pour la finir."
+msgstr ""
+"Clique et déplace la souris pour dessiner une fleur. Relâche pour la finir."
 
 msgid "Foam"
 msgstr "Mousse"
 
 msgid "Click and drag the mouse to cover an area with foamy bubbles."
-msgstr "Clique et fais glisser la souris pour remplir une surface avec des bulles de "
+msgstr ""
+"Clique et fais glisser la souris pour remplir une surface avec des bulles de "
 "savon"
 
 msgid "Glass Tile"
 msgstr "Carreau de verre"
 
 msgid "Click and drag the mouse to put glass tile over your picture."
-msgstr "Clique et déplace la souris pour mettre des carreaux de verre sur ton dessin."
+msgstr ""
+"Clique et déplace la souris pour mettre des carreaux de verre sur ton dessin."
 
 msgid "Grass"
 msgstr "Herbe"
 
 msgid "Click and move to draw grass. Don’t forget the dirt!"
-msgstr "Clique et déplace la souris pour dessiner de l'herbe. N'oublie pas la "
+msgstr ""
+"Clique et déplace la souris pour dessiner de l'herbe. N'oublie pas la "
 "poussière !"
 
 msgid "Kaleidoscope"
