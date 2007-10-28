@@ -1,5 +1,5 @@
-.\" tuxpaint.1 - 2007.08.02
-.TH TUXPAINT 1 "2 August 2007" "0.9.18" "Tux Paint"
+.\" tuxpaint.1 - 2007.10.28
+.TH TUXPAINT 1 "28 October 2007" "0.9.18" "Tux Paint"
 .SH NAME
 tuxpaint -- "Tux Paint", a drawing program for young children.
 
@@ -56,6 +56,8 @@ tuxpaint -- "Tux Paint", a drawing program for young children.
 [\-\-nostampcontrols]
 .br
 [\-\-mirrorstamps]
+.br
+[\-\-stampsize=\fISIZE\fP]
 .br
 [\-\-keyboard]
 .br
@@ -120,6 +122,8 @@ tuxpaint -- "Tux Paint", a drawing program for young children.
 [\-\-stampcontrols]
 .br
 [\-\-dontmirrorstamps]
+.br
+[\-\-stampsize=default]
 .br
 [\-\-mouse]
 .br
@@ -324,6 +328,14 @@ in all ways.)
 With \fImirrorstamps\fP set, stamps which can be mirrored will appear
 mirrored by default.  This can be useful when used by people who prefer
 things right-to-left over left-to-right.
+
+.TB 8
+.B \-\-stampsize=\fIsize\fP \-\-stampsize=default
+Sets the default size of all stamps, relative to their possible sizes
+(determined by \fITux Paint\fP, based on the dimensions of both the stamps
+themselves, and the drawing canvas).  Valid values are from 0 (smallest)
+to 10 (largest).  Use \fIdefault\fP to let \fITux Paint\fP choose
+(this is the default setting).
 
 .TP 8
 .B \-\-keyboard \-\-mouse
@@ -549,6 +561,9 @@ ndebele
 .TP 2
 -
 norwegian | nynorsk
+.TP 2
+-
+ojibway
 .TP 2
 -
 polish | polski
