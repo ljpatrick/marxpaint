@@ -9,7 +9,7 @@ http://www.tuxpaint.org/
 $Id$
 
 
-2007.October.26 (0.9.18)
+2007.October.28 (0.9.18)
   * Interface Improvements:
     -----------------------
     * Improved 'New' and 'Open' interface:
@@ -198,6 +198,9 @@ $Id$
 
     * Italian translation
       Flavio "Iron Bishop" Pastore <ironbishop@fsfe.org>
+
+    * Japanese translation
+      TOYAMA Shin-ichi <shin1@wmail.plala.or.jp>
 
     * Mexican Spanish translation
       Ignacio Tike <itike0100@gmail.com>
