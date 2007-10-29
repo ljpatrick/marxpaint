@@ -7,15 +7,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: en_gb\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-10-29 08:53-0700\n"
-"PO-Revision-Date: 2007-07-19 20:35+0200\n"
-"Last-Translator: Karl Ove Hufthammer <karl@huftis.org>\n"
+"POT-Creation-Date: 2007-10-28 19:15+0100\n"
+"PO-Revision-Date: 2007-10-28 22:51+0100\n"
+"Last-Translator: Caroline Ford <caroline.ford.work@googlemail.com>\n"
 "Language-Team: Norwegian Nynorsk <i18n-nn@lister.ping.uio.no>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.11.4\n"
-"Plural-Forms:  nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #. Response to Black (0, 0, 0) color selected
 msgid "Black!"
@@ -203,9 +203,8 @@ msgid "Rhombus"
 msgstr "Rhombus"
 
 #. Octagon shape tool (8 sides)
-#, fuzzy
 msgid "Octagon"
-msgstr "Pentagon"
+msgstr "Octagon"
 
 #. Description of a square
 msgid "A square is a rectangle with four equal sides."
@@ -215,10 +214,8 @@ msgstr "A square is a rectangle with four equal sides."
 msgid "A rectangle has four sides and four right angles."
 msgstr "A rectangle has four sides and four right angles."
 
-msgid ""
-"A circle is a curve where all points have the same distance from the center."
-msgstr ""
-"A circle is a curve where all points have the same distance from the center."
+msgid "A circle is a curve where all points have the same distance from the center."
+msgstr "A circle is a curve where all points have the same distance from the center."
 
 #. Description of an ellipse
 msgid "An ellipse is a stretched circle."
@@ -235,9 +232,8 @@ msgstr "A pentagon has five sides."
 msgid "A rhombus has four equal sides, and opposite sides are parallel."
 msgstr "A rhombus has four equal sides, and opposite sides are parallel."
 
-#, fuzzy
 msgid "An octagon has eight equal sides."
-msgstr "A pentagon has five sides."
+msgstr "An octagon has eight equal sides."
 
 #. Title of tool selector (buttons down the left)
 msgid "Tools"
@@ -336,17 +332,12 @@ msgid "Click to start drawing a line. Let go to complete it."
 msgstr "Click to start drawing a line. Let go to complete it."
 
 #. Shape tool instructions
-msgid ""
-"Pick a shape. Click to pick the center, drag, then let go when it is the "
-"size you want. Move around to rotate it, and click to draw it."
-msgstr ""
-"Pick a shape. Click to pick the centre, drag, then let go when it is the "
-"size you want. Move around to rotate it, and click to draw it."
+msgid "Pick a shape. Click to pick the center, drag, then let go when it is the size you want. Move around to rotate it, and click to draw it."
+msgstr "Pick a shape. Click to pick the centre, drag, then let go when it is the size you want. Move around to rotate it, and click to draw it."
 
 #. Text tool instructions
 msgid "Choose a style of text. Click on your drawing and you can start typing."
-msgstr ""
-"Choose a style of text. Click on your drawing and you can start typing."
+msgstr "Choose a style of text. Click on your drawing and you can start typing."
 
 #. Magic tool instruction
 msgid "Pick a magical effect to use on your drawing!"
@@ -365,9 +356,8 @@ msgid "Eraser!"
 msgstr "Eraser!"
 
 #. Response to 'start a new image' action
-#, fuzzy
 msgid "Pick a color or picture with which to start a new drawing."
-msgstr "Pick a picture to stamp around your drawing."
+msgstr "Pick a colour or picture with which to start a new drawing."
 
 #. Response to 'open' action (while file dialog is being constructed)
 msgid "Open…"
@@ -481,7 +471,7 @@ msgid "Please wait…"
 msgstr "Please wait…"
 
 msgid "Pick a color."
-msgstr ""
+msgstr "Pick a colour."
 
 #. Open dialog: 'Erase' button, to erase/deleted the selected picture
 msgid "Erase"
@@ -558,10 +548,8 @@ msgstr "Drip"
 msgid "Click and move the mouse around to make the picture blocky."
 msgstr "Click and move the mouse around to make the picture blocky."
 
-msgid ""
-"Click and move the mouse around to turn the picture into a chalk drawing."
-msgstr ""
-"Click and move the mouse around to turn the picture into a chalk drawing."
+msgid "Click and move the mouse around to turn the picture into a chalk drawing."
+msgstr "Click and move the mouse around to turn the picture into a chalk drawing."
 
 msgid "Click and move the mouse around to make the picture drip."
 msgstr "Click and move the mouse around to make the picture drip."
@@ -583,24 +571,16 @@ msgid "Click and move to draw small bricks."
 msgstr "Click and move to draw small bricks."
 
 msgid "Calligraphy"
-msgstr ""
+msgstr "Calligraphy"
 
-#, fuzzy
 msgid "Click and move the mouse around to draw in calligraphy."
-msgstr "Click and move the mouse around to draw a negative."
+msgstr "Click and move the mouse around to draw in calligraphy."
 
 msgid "Cartoon"
 msgstr "Cartoon"
 
 msgid "Click and move the mouse around to turn the picture into a cartoon."
 msgstr "Click and move the mouse around to turn the picture into a cartoon."
-
-msgid "Distortion"
-msgstr ""
-
-#, fuzzy
-msgid "Click and drag the mouse to cause a distortion in your picture."
-msgstr "Click and drag the mouse to put glass tile over your picture."
 
 msgid "Emboss"
 msgstr "Emboss"
@@ -653,18 +633,14 @@ msgstr "Click and move to draw grass. Don’t forget the dirt!"
 msgid "Kaleidoscope"
 msgstr "Kaleidoscope"
 
-msgid ""
-"Click and drag the mouse to draw with symmetric brushes (a kaleidoscope)."
-msgstr ""
-"Click and drag the mouse to draw with symmetric brushes (a kaleidoscope)."
+msgid "Click and drag the mouse to draw with symmetric brushes (a kaleidoscope)."
+msgstr "Click and drag the mouse to draw with symmetric brushes (a kaleidoscope)."
 
-#, fuzzy
 msgid "Light"
-msgstr "Lighten"
+msgstr "Light"
 
-#, fuzzy
 msgid "Click and drag to draw a beam of light on your picture."
-msgstr "Click and drag the mouse to put glass tile over your picture."
+msgstr "Click and drag to draw a beam of light on your picture."
 
 msgid "Metal Paint"
 msgstr "Metal Paint"
@@ -697,18 +673,16 @@ msgid "You can draw in rainbow colors!"
 msgstr "You can draw in rainbow colours!"
 
 msgid "Ripples"
-msgstr ""
+msgstr "Ripples"
 
-#, fuzzy
 msgid "Click to make ripples appear over your picture."
-msgstr "Click and drag the mouse to put glass tile over your picture."
+msgstr "Click to make ripples appear over your picture."
 
 msgid "Shift"
-msgstr ""
+msgstr "Shift"
 
-#, fuzzy
 msgid "Click and drag to shift your picture around on the canvas."
-msgstr "Click and drag the mouse to emboss the picture."
+msgstr "Click and drag to move your picture around the canvas."
 
 msgid "Smudge"
 msgstr "Smudge"
@@ -725,68 +699,45 @@ msgstr "Click and move the mouse around to change the picture’s color."
 msgid "Waves"
 msgstr "Waves"
 
-msgid ""
-"Click to make the picture wavy. Click toward the top for shorter waves, the "
-"bottom for taller waves, the left for small waves, and the right for long "
-"waves."
-msgstr ""
-"Click to make the picture wavy. Click towards the top for shorter waves, the "
-"bottom for taller waves, the left for small waves, and the right for long "
-"waves."
+msgid "Click to make the picture wavy. Click toward the top for shorter waves, the bottom for taller waves, the left for small waves, and the right for long waves."
+msgstr "Click to make the picture wavy. Click towards the top for shorter waves, the bottom for taller waves, the left for small waves, and the right for long waves."
 
 #~ msgid "Sparkles"
 #~ msgstr "Sparkles"
-
 #~ msgid "You now have a blank sheet to draw on!"
 #~ msgstr "You now have a blank sheet to draw on!"
-
 #~ msgid "Start a new picture?"
 #~ msgstr "Start a new picture?"
-
 #~ msgid "Yes, let's start fresh!"
 #~ msgstr "Yes, let's start afresh!"
-
 #~ msgid "Click and move to draw sparkles."
 #~ msgstr "Click and move to draw sparkles."
-
 #~ msgid "Starting a new picture will erase the current one!"
 #~ msgstr "Starting a new picture will erase the current one!"
-
 #~ msgid "That’s OK!"
 #~ msgstr "That’s OK!"
-
 #~ msgid "Never mind!"
 #~ msgstr "Never mind!"
-
 #~ msgid "Save over the older version of this picture?"
 #~ msgstr "Save over the older version of this picture?"
-
 #~ msgid "Green!"
 #~ msgstr "Green!"
-
 #~ msgid "Fade"
 #~ msgstr "Fade"
-
 #~ msgid "Oval"
 #~ msgstr "Oval"
-
 #~ msgid "Diamond"
 #~ msgstr "Diamond"
-
 #~ msgid "A square has four sides, each the same length."
 #~ msgstr "A square has four sides, each the same length."
-
 #~ msgid "A circle is exactly round."
 #~ msgstr "A circle is exactly round."
-
 #~ msgid "A diamond is a square, turned around slightly."
 #~ msgstr "A diamond is a square, turned around slightly."
-
 #~ msgid "Lime!"
 #~ msgstr "Lime!"
-
 #~ msgid "Fuchsia!"
 #~ msgstr "Fuchsia!"
-
 #~ msgid "Silver!"
 #~ msgstr "Silver!"
+
