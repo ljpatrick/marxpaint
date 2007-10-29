@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint 0.9.15rc1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-10-28 19:15+0100\n"
+"POT-Creation-Date: 2007-10-29 08:53-0700\n"
 "PO-Revision-Date: 2006-01-22 15:49+0100\n"
 "Last-Translator: Gabor Kelemen <kelemeng@gnome.hu>\n"
 "Language-Team: Hungarian <translation-team-hu@lists.sourceforge.net>\n"
@@ -604,6 +604,13 @@ msgstr "Képregény"
 msgid "Click and move the mouse around to turn the picture into a cartoon."
 msgstr ""
 "Kattints oda a rajzodon, ahol a képet képregénnyé szeretnéd változtatni!"
+
+msgid "Distortion"
+msgstr ""
+
+#, fuzzy
+msgid "Click and drag the mouse to cause a distortion in your picture."
+msgstr "Kattints oda a rajzodon, ahol maszatolni szeretnél."
 
 msgid "Emboss"
 msgstr ""

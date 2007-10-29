@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Thai tux paint\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-10-28 19:15+0100\n"
+"POT-Creation-Date: 2007-10-29 08:53-0700\n"
 "PO-Revision-Date: 2007-01-22 10:51+0700\n"
 "Last-Translator: Ouychai <Ae.translator@gmail.com>\n"
 "Language-Team: \n"
@@ -587,6 +587,13 @@ msgstr "การ์ตูน"
 
 msgid "Click and move the mouse around to turn the picture into a cartoon."
 msgstr "คลิกแล้วลากเมาส์ไปมา เพื่อทำให้รูปเป็นรูปการ์ตูน"
+
+msgid "Distortion"
+msgstr ""
+
+#, fuzzy
+msgid "Click and drag the mouse to cause a distortion in your picture."
+msgstr "คลิกแล้วลากเมาส์ไปมาเพื่อทำให้รูปมัว"
 
 msgid "Emboss"
 msgstr ""

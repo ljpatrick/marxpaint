@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: et\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-10-28 19:15+0100\n"
+"POT-Creation-Date: 2007-10-29 08:53-0700\n"
 "PO-Revision-Date: 2007-03-18 20:26+0200\n"
 "Last-Translator: Lauri Jesmin <lauri.jesmin@nordtech.ee>\n"
 "Language-Team: Estonian <et@li.org>\n"
@@ -587,6 +587,13 @@ msgstr "Multikas"
 
 msgid "Click and move the mouse around to turn the picture into a cartoon."
 msgstr "Tee klõps ja liiguta hiirt, et muuta pilt multika sarnaseks."
+
+msgid "Distortion"
+msgstr ""
+
+#, fuzzy
+msgid "Click and drag the mouse to cause a distortion in your picture."
+msgstr "Tee klõps ja liiguta hiirt, et tekitada aknaruudustikku enda pildile."
 
 msgid "Emboss"
 msgstr "Kohruta"

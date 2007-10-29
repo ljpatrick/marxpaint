@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-10-28 19:15+0100\n"
+"POT-Creation-Date: 2007-10-29 08:53-0700\n"
 "PO-Revision-Date: 2007-07-04 11:24-0000\n"
 "Last-Translator: Haby Diallo <haby42@yahoo.fr>\n"
 "Language-Team: \n"
@@ -599,6 +599,13 @@ msgstr "Kartoŋ"
 
 msgid "Click and move the mouse around to turn the picture into a cartoon."
 msgstr "Bëssël te jalale ak jinax ngir sopi sa natal bi kess."
+
+msgid "Distortion"
+msgstr ""
+
+#, fuzzy
+msgid "Click and drag the mouse to cause a distortion in your picture."
+msgstr "Bëssël te jalale ak jinax bi so buge sa natal bi lëndëm."
 
 msgid "Emboss"
 msgstr ""

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint 0.9.17\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-10-28 19:15+0100\n"
+"POT-Creation-Date: 2007-10-29 08:53-0700\n"
 "PO-Revision-Date: 2007-05-11 08:44+0100\n"
 "Last-Translator: Kevin Patrick Scannell <kscanne@gmail.com>\n"
 "Language-Team: Irish <gaeilge-gnulinux@lists.sourceforge.net>\n"
@@ -598,6 +598,13 @@ msgstr "Cartún"
 
 msgid "Click and move the mouse around to turn the picture into a cartoon."
 msgstr "Cliceáil agus bog an luch chun cartún a dhéanamh ón phictiúr."
+
+msgid "Distortion"
+msgstr ""
+
+#, fuzzy
+msgid "Click and drag the mouse to cause a distortion in your picture."
+msgstr "Cliceáil agus bog an luch chun an pictiúr a thanú."
 
 msgid "Emboss"
 msgstr ""

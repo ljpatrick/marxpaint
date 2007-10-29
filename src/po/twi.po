@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-10-28 19:15+0100\n"
+"POT-Creation-Date: 2007-10-29 08:53-0700\n"
 "PO-Revision-Date: 2007-04-26 15:45+0200\n"
 "Last-Translator: Joana Portia Antwi-Danso <portnass2003@yahoo.com>\n"
 "MIME-Version: 1.0\n"
@@ -593,6 +593,13 @@ msgstr "Koliko"
 
 msgid "Click and move the mouse around to turn the picture into a cartoon."
 msgstr "Fa akura no fa mfoni no so ma no nnane koriko."
+
+msgid "Distortion"
+msgstr ""
+
+#, fuzzy
+msgid "Click and drag the mouse to cause a distortion in your picture."
+msgstr "Mia so na fa akura no to mfoni no so ma no nyɛ wisiwisi."
 
 msgid "Emboss"
 msgstr ""

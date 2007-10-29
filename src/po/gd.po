@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Tux paint anns a' ghàidhlig\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-10-28 19:15+0100\n"
+"POT-Creation-Date: 2007-10-29 08:53-0700\n"
 "PO-Revision-Date: 2006-03-04 15:51-0000\n"
 "Last-Translator: Niall Tracey <internationiall@hotmail.com>\n"
 "Language-Team:  <internationiall@hotmail.com>\n"
@@ -683,6 +683,15 @@ msgstr ""
 
 msgid "Click and move the mouse around to turn the picture into a cartoon."
 msgstr ""
+
+msgid "Distortion"
+msgstr ""
+
+# Gràmar?
+# Is the word "lainnir" appropriate/common?
+#, fuzzy
+msgid "Click and drag the mouse to cause a distortion in your picture."
+msgstr "Briog agus slaod airson lainnir a dhèanamh dealbh."
 
 msgid "Emboss"
 msgstr ""

@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint-gl\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-10-28 19:15+0100\n"
+"POT-Creation-Date: 2007-10-29 08:53-0700\n"
 "PO-Revision-Date: 2006-05-12 13:47+0200\n"
 "Last-Translator: Leandro Regueiro <leandro.regueiro@gmail.com>\n"
 "Language-Team: Galician <gpul-traduccion@ceu.fi.udc.es>\n"
@@ -599,6 +599,13 @@ msgstr "Cómic"
 msgid "Click and move the mouse around to turn the picture into a cartoon."
 msgstr ""
 "Clica e move o rato arredor para para converter o debuxo nun debuxo de cómic."
+
+msgid "Distortion"
+msgstr ""
+
+#, fuzzy
+msgid "Click and drag the mouse to cause a distortion in your picture."
+msgstr "Clica e move o rato para desenfocar o debuxo."
 
 msgid "Emboss"
 msgstr ""

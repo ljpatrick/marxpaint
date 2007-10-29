@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint 0.9.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-10-28 19:15+0100\n"
+"POT-Creation-Date: 2007-10-29 08:53-0700\n"
 "PO-Revision-Date: 2004-12-04 15:45-0800\n"
 "Last-Translator: Alberto Escudero <aep@it46.se>\n"
 "Language-Team: Swahili\n"
@@ -605,6 +605,13 @@ msgstr ""
 #, fuzzy
 msgid "Click and move the mouse around to turn the picture into a cartoon."
 msgstr "Bofya na sogea puku kuchua picha na chaki."
+
+msgid "Distortion"
+msgstr ""
+
+#, fuzzy
+msgid "Click and drag the mouse to cause a distortion in your picture."
+msgstr "Bofya na sogea puku kupunguza upana wa picha."
 
 msgid "Emboss"
 msgstr ""

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint 0.9.17\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-10-28 19:15+0100\n"
+"POT-Creation-Date: 2007-10-29 08:53-0700\n"
 "PO-Revision-Date: 2007-05-16 17:08+0300\n"
 "Last-Translator: Yavor Doganov <yavor@doganov.org>\n"
 "Language-Team: Bulgarian <dict@fsa-bg.org>\n"
@@ -595,6 +595,13 @@ msgstr "Карикатура"
 
 msgid "Click and move the mouse around to turn the picture into a cartoon."
 msgstr "Натиснете и движете мишката, за да превърнете рисунката в карикатура."
+
+msgid "Distortion"
+msgstr ""
+
+#, fuzzy
+msgid "Click and drag the mouse to cause a distortion in your picture."
+msgstr "Натиснете и движете мишката, за да размажете рисунката."
 
 msgid "Emboss"
 msgstr ""

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TuxPaint \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-10-28 19:15+0100\n"
+"POT-Creation-Date: 2007-10-29 08:53-0700\n"
 "PO-Revision-Date: 2006-11-30 16:30+0200\n"
 "Last-Translator: Juan Irigoien <juanirigoien@gmail.com>\n"
 "Language-Team: basque <juanirigoien@gmail.com>\n"
@@ -596,6 +596,13 @@ msgstr "Cartoon"
 
 msgid "Click and move the mouse around to turn the picture into a cartoon."
 msgstr "Klik egin eta mugi ezazu sagua irudia biñeta bihurtzeko."
+
+msgid "Distortion"
+msgstr ""
+
+#, fuzzy
+msgid "Click and drag the mouse to cause a distortion in your picture."
+msgstr "Klik egin eta mugi ezazu sagua irudia mehetzeko."
 
 msgid "Emboss"
 msgstr ""

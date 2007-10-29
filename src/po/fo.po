@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint 0.9.16\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-10-28 19:15+0100\n"
+"POT-Creation-Date: 2007-10-29 08:53-0700\n"
 "PO-Revision-Date: 2007-01-09 21:32-0000\n"
 "Last-Translator: Lis Gøthe í Jákupsstovu <morshus@morshus.com>\n"
 "Language-Team: Faroese <morshus@morshus.com>\n"
@@ -596,6 +596,13 @@ msgstr "Kantmynd"
 
 msgid "Click and move the mouse around to turn the picture into a cartoon."
 msgstr "Trýst og flyt músina til at fáa kantarnar meira fram á myndini."
+
+msgid "Distortion"
+msgstr ""
+
+#, fuzzy
+msgid "Click and drag the mouse to cause a distortion in your picture."
+msgstr "Trýst og flyt músina til at káma út okkurt á myndini."
 
 msgid "Emboss"
 msgstr ""

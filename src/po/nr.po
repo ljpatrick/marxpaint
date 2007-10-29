@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-10-28 19:15+0100\n"
+"POT-Creation-Date: 2007-10-29 08:53-0700\n"
 "PO-Revision-Date: 2006-10-09 20:32+0200\n"
 "Last-Translator: Vincent Mahlangu <vmahlangu@parliament.gov.za>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -603,6 +603,14 @@ msgid "Click and move the mouse around to turn the picture into a cartoon."
 msgstr ""
 "Qhwarhaza udose njalo iKhondlwana uzungeleze ukuze utjhugulule isithombe "
 "sibe yikhathuni."
+
+msgid "Distortion"
+msgstr ""
+
+#, fuzzy
+msgid "Click and drag the mouse to cause a distortion in your picture."
+msgstr ""
+"Qhwarhaza bewudose njalo iKhondlwana ujikeleze ukuze ufiphaze isithombe."
 
 msgid "Emboss"
 msgstr ""

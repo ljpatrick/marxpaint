@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Tuxpaint 0.9.2pre\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-10-28 19:15+0100\n"
+"POT-Creation-Date: 2007-10-29 08:53-0700\n"
 "PO-Revision-Date: 2003-01-03 21:32-0500\n"
 "Last-Translator: Laurentiu Buzdugan <buzdugan@voyager.net>\n"
 "Language-Team: Romanian <ro@li.org>\n"
@@ -626,6 +626,13 @@ msgstr ""
 msgid "Click and move the mouse around to turn the picture into a cartoon."
 msgstr ""
 "Clic ºi miºcã maus-ul pentru a schimba desenul într-un desen din cretã."
+
+msgid "Distortion"
+msgstr ""
+
+#, fuzzy
+msgid "Click and drag the mouse to cause a distortion in your picture."
+msgstr "Clic ºi miºcã maus-ul pentru a subþia desenul"
 
 msgid "Emboss"
 msgstr ""

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-10-28 19:15+0100\n"
+"POT-Creation-Date: 2007-10-29 08:53-0700\n"
 "PO-Revision-Date: 2007-03-15 17:27+0530\n"
 "Last-Translator: pavithran <pavithran.s@gmail.com>\n"
 "Language-Team: Telugu <indlinux-telugu@lists.sourceforge.net>\n"
@@ -587,6 +587,13 @@ msgstr "వ్యంగ్య చిత్రం"
 
 msgid "Click and move the mouse around to turn the picture into a cartoon."
 msgstr ""
+
+msgid "Distortion"
+msgstr ""
+
+#, fuzzy
+msgid "Click and drag the mouse to cause a distortion in your picture."
+msgstr "చిత్రానికి మఱక వేయడానికి క్లిక్ చేసి దాని చుట్టూ జరపండి"
 
 msgid "Emboss"
 msgstr ""

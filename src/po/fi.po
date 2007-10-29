@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: fi\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-10-28 19:15+0100\n"
+"POT-Creation-Date: 2007-10-29 08:53-0700\n"
 "PO-Revision-Date: 2006-05-14 12:35+0300\n"
 "Last-Translator: Niko Lewman <niko.lewman@edu.hel.fi>\n"
 "Language-Team: Finnisf\n"
@@ -609,6 +609,13 @@ msgstr "Sarjakuva"
 #, fuzzy
 msgid "Click and move the mouse around to turn the picture into a cartoon."
 msgstr "Muuta kuva hiilipiirrokseksi liikuttamalla hiirtä nappi pohjassa."
+
+msgid "Distortion"
+msgstr ""
+
+#, fuzzy
+msgid "Click and drag the mouse to cause a distortion in your picture."
+msgstr "Voit sumentaa kuvaa liikuttamalla hiirtä nappi pohjassa."
 
 msgid "Emboss"
 msgstr ""

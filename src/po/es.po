@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TuxPaint 0.9.17\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-10-28 19:15+0100\n"
+"POT-Creation-Date: 2007-10-29 08:53-0700\n"
 "PO-Revision-Date: 2007-08-29 23:33-0300\n"
 "Last-Translator: Gabriel Gazzán <ggabriel@internet.com.uy>\n"
 "Language-Team: Español <gablistas@gmail.com>\n"
@@ -589,6 +589,13 @@ msgstr "Dibujito"
 msgid "Click and move the mouse around to turn the picture into a cartoon."
 msgstr ""
 "Haz clic y arrastra el ratón para que la imagen se vea como los dibujitos."
+
+msgid "Distortion"
+msgstr ""
+
+#, fuzzy
+msgid "Click and drag the mouse to cause a distortion in your picture."
+msgstr "Haz clic y arrastra el ratón para colocar azulejos sobre tu imagen."
 
 msgid "Emboss"
 msgstr "Bajorrelieve"

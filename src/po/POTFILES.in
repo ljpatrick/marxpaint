@@ -14,6 +14,7 @@ tuxpaint.desktop.in
 ../magic/src/bricks.c
 ../magic/src/calligraphy.c
 ../magic/src/cartoon.c
+../magic/src/distortion.c
 ../magic/src/emboss.c
 ../magic/src/fade_darken.c
 ../magic/src/fill.c

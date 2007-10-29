@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint 0.9.17\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-10-28 19:15+0100\n"
+"POT-Creation-Date: 2007-10-29 08:53-0700\n"
 "PO-Revision-Date: 2007-10-01 09:55+0200\n"
 "Last-Translator: Andrzej M. Krzysztofowicz <ankry@mif.pg.gda.pl>\n"
 "Language-Team: Polish <translation-team-pl@lists.sourceforge.net>\n"
@@ -597,6 +597,13 @@ msgstr "Kontur"
 
 msgid "Click and move the mouse around to turn the picture into a cartoon."
 msgstr "Kliknij i przesuń myszką dookoła, aby obramować obrazek konturem."
+
+msgid "Distortion"
+msgstr ""
+
+#, fuzzy
+msgid "Click and drag the mouse to cause a distortion in your picture."
+msgstr "Kliknij i przesuń myszką dookoła, aby rozmazać obrazek."
 
 msgid "Emboss"
 msgstr ""

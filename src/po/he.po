@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: he\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-10-28 19:15+0100\n"
+"POT-Creation-Date: 2007-10-29 08:53-0700\n"
 "PO-Revision-Date: 2005-10-10 21:54+0200\n"
 "Last-Translator: dovix <dovix2003@yahoo.com>\n"
 "Language-Team: Hebrew <mdk-hebrew@iglu.org.il>\n"
@@ -604,6 +604,13 @@ msgstr "סרט מצוייר"
 
 msgid "Click and move the mouse around to turn the picture into a cartoon."
 msgstr "עליך ללחוץ ולהזיז את העכבר כדי להפוך את התמונה לסרט מצויר."
+
+msgid "Distortion"
+msgstr ""
+
+#, fuzzy
+msgid "Click and drag the mouse to cause a distortion in your picture."
+msgstr "עליך ללחוץ ולהזיז את העכבר מסביב כדי לטשטש את התמונה."
 
 msgid "Emboss"
 msgstr ""

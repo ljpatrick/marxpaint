@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TuxPaint 0.9.17\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-10-28 19:15+0100\n"
+"POT-Creation-Date: 2007-10-29 08:53-0700\n"
 "PO-Revision-Date: 2007-07-26 22:36+0100\n"
 "Last-Translator: Flavio Pastore <ironbishop@gmail.com>\n"
 "Language-Team: Italian <it@li.org>\n"
@@ -634,6 +634,13 @@ msgstr "Fumetto"
 
 msgid "Click and move the mouse around to turn the picture into a cartoon."
 msgstr "Fai click per ottenere un effetto “fumetto”."
+
+msgid "Distortion"
+msgstr ""
+
+#, fuzzy
+msgid "Click and drag the mouse to cause a distortion in your picture."
+msgstr "Fai click per coprire il disegno con tessere di vetro smerigliato."
 
 msgid "Emboss"
 msgstr "Rilievo"

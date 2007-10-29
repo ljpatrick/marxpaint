@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pt_br\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-10-28 19:15+0100\n"
+"POT-Creation-Date: 2007-10-29 08:53-0700\n"
 "PO-Revision-Date: 2007-05-19 15:50-0300\n"
 "Last-Translator: Adorilson Bezerra <adorilson@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <pt@li.org>\n"
@@ -608,6 +608,13 @@ msgstr "Desenho animado"
 
 msgid "Click and move the mouse around to turn the picture into a cartoon."
 msgstr "Clique e mova o mouse para transformar a imagem em desenho."
+
+msgid "Distortion"
+msgstr ""
+
+#, fuzzy
+msgid "Click and drag the mouse to cause a distortion in your picture."
+msgstr "Clique e mova o mouse para borrar a imagem."
 
 msgid "Emboss"
 msgstr ""

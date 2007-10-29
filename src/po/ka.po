@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TuxPaint\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-10-28 19:15+0100\n"
+"POT-Creation-Date: 2007-10-29 08:53-0700\n"
 "PO-Revision-Date: 2005-10-10 23:41+0300\n"
 "Last-Translator: Giasher <giasher@telenet.ge>\n"
 "Language-Team: Gia Shervashidze <giasher@telenet.ge>\n"
@@ -597,6 +597,13 @@ msgstr "კომიქსი"
 
 msgid "Click and move the mouse around to turn the picture into a cartoon."
 msgstr "დაწკაპეთ და გადაატარეთ ნახატს მისი კომიქსად გადასაქცევად."
+
+msgid "Distortion"
+msgstr ""
+
+#, fuzzy
+msgid "Click and drag the mouse to cause a distortion in your picture."
+msgstr "დაწკაპეთ და გადაატარეთ ნახატს მისი ნაწილის დასაწვრილებლად."
 
 msgid "Emboss"
 msgstr ""

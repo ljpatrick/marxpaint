@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TuxPaint\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-10-28 19:15+0100\n"
+"POT-Creation-Date: 2007-10-29 08:53-0700\n"
 "PO-Revision-Date: 2004-05-23 10:53+0100\n"
 "Last-Translator: Nedjeljko Jedbaj <jedvajn@netlane.com>\n"
 "Language-Team: \n"
@@ -603,6 +603,13 @@ msgstr ""
 #, fuzzy
 msgid "Click and move the mouse around to turn the picture into a cartoon."
 msgstr "Klikni i pomakni miša. Na crtežu će se izmješati boje."
+
+msgid "Distortion"
+msgstr ""
+
+#, fuzzy
+msgid "Click and drag the mouse to cause a distortion in your picture."
+msgstr "Klikni i pomakni miša. Crte će postati tanje."
 
 msgid "Emboss"
 msgstr ""

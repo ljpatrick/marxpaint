@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TuxPaint\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-10-28 19:15+0100\n"
+"POT-Creation-Date: 2007-10-29 08:53-0700\n"
 "PO-Revision-Date: 2004-07-06 12:00GMT\n"
 "Last-Translator: Eugene Zelenko <greendeath@mail.ru>\n"
 "Language-Team: Belarusian <kde-i18n-be@kde.org>\n"
@@ -586,6 +586,12 @@ msgid "Cartoon"
 msgstr ""
 
 msgid "Click and move the mouse around to turn the picture into a cartoon."
+msgstr ""
+
+msgid "Distortion"
+msgstr ""
+
+msgid "Click and drag the mouse to cause a distortion in your picture."
 msgstr ""
 
 msgid "Emboss"
