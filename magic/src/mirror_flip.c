@@ -23,7 +23,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  Last updated: August 7, 2007
+  Last updated: October 29, 2007
   $Id$
 */
 
@@ -104,10 +104,10 @@ char * mirror_flip_get_description(magic_api * api, int which)
 {
   if (which == TOOL_MIRROR)
     return(strdup(
-           gettext("Click to flip the picture upside-down.")));
+           gettext("Click to make a mirror image.")));
   else
     return(strdup(
-           gettext("Click to make a mirror image.")));
+           gettext("Click to flip the picture upside-down.")));
 
   return(NULL);
 }
