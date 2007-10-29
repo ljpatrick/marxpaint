@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: he\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-10-29 08:53-0700\n"
+"POT-Creation-Date: 2007-10-29 09:06-0700\n"
 "PO-Revision-Date: 2005-10-10 21:54+0200\n"
 "Last-Translator: dovix <dovix2003@yahoo.com>\n"
 "Language-Team: Hebrew <mdk-hebrew@iglu.org.il>\n"
@@ -694,11 +694,11 @@ msgstr "מראה"
 msgid "Flip"
 msgstr "היפוך"
 
-msgid "Click to flip the picture upside-down."
-msgstr "עליך ללחוץ כדי להפוך את התמונה מלמעלה למטה."
-
 msgid "Click to make a mirror image."
 msgstr "עליך ללחוץ כדי ליצור תמונת מראה."
+
+msgid "Click to flip the picture upside-down."
+msgstr "עליך ללחוץ כדי להפוך את התמונה מלמעלה למטה."
 
 msgid "Negative"
 msgstr "תשליל"

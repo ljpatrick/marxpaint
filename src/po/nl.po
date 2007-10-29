@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint 0.9.17\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-10-29 08:53-0700\n"
+"POT-Creation-Date: 2007-10-29 09:06-0700\n"
 "PO-Revision-Date: 2007-07-02 11:25+0200\n"
 "Last-Translator: Freek de Kruijf <f.de.kruijf@hetnet.nl>\n"
 "Language-Team: Dutch <vertaling@vrijschrift.org>\n"
@@ -689,11 +689,11 @@ msgstr "Spiegel"
 msgid "Flip"
 msgstr "Omkeren"
 
-msgid "Click to flip the picture upside-down."
-msgstr "Klik om de tekening ondersteboven te zetten!"
-
 msgid "Click to make a mirror image."
 msgstr "Klik om een spiegelbeeld te maken!"
+
+msgid "Click to flip the picture upside-down."
+msgstr "Klik om de tekening ondersteboven te zetten!"
 
 msgid "Negative"
 msgstr "Negatief"

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint 0.9.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-10-29 08:53-0700\n"
+"POT-Creation-Date: 2007-10-29 09:06-0700\n"
 "PO-Revision-Date: 2005-07-26 01:30-0800\n"
 "Last-Translator: Bill Kendrick <bill@newbreedsoftware.com>\n"
 "Language-Team: \n"
@@ -697,11 +697,11 @@ msgstr "Spijgel"
 msgid "Flip"
 msgstr "Ummekeren"
 
-msgid "Click to flip the picture upside-down."
-msgstr "Klik um dien tijken obbe kop te zetten."
-
 msgid "Click to make a mirror image."
 msgstr "Klik um n spijgelbeeld te moaken."
+
+msgid "Click to flip the picture upside-down."
+msgstr "Klik um dien tijken obbe kop te zetten."
 
 msgid "Negative"
 msgstr "Negatief"

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-10-29 08:53-0700\n"
+"POT-Creation-Date: 2007-10-29 09:06-0700\n"
 "PO-Revision-Date: 2006-04-23 00:58+0200\n"
 "Last-Translator: Amed Ç. Jiyan <amed@pckurd.net>\n"
 "Language-Team: KURDISH <LL@li.org>\n"
@@ -686,11 +686,11 @@ msgstr "Neynik"
 msgid "Flip"
 msgstr "Teqle"
 
-msgid "Click to flip the picture upside-down."
-msgstr "Ji bo ku wêneyê berevajî bikî bitikîne."
-
 msgid "Click to make a mirror image."
 msgstr "Ji bo çêkirina îmaja neynikê bitikîne."
+
+msgid "Click to flip the picture upside-down."
+msgstr "Ji bo ku wêneyê berevajî bikî bitikîne."
 
 msgid "Negative"
 msgstr "Negatîf"

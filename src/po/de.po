@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: de1008\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-10-29 08:53-0700\n"
+"POT-Creation-Date: 2007-10-29 09:06-0700\n"
 "PO-Revision-Date: 2007-08-27 09:02+0200\n"
 "Last-Translator: Burkhard Lück <lueck@hube-lueck.de>\n"
 "Language-Team: Deutsch <kde-i18n-de@kde.org>\n"
@@ -684,11 +684,11 @@ msgstr "Spiegel"
 msgid "Flip"
 msgstr "Umdrehen"
 
-msgid "Click to flip the picture upside-down."
-msgstr "Klicke, um das Bild auf den Kopf zu stellen."
-
 msgid "Click to make a mirror image."
 msgstr "Klicke, um das Bild zu spiegeln."
+
+msgid "Click to flip the picture upside-down."
+msgstr "Klicke, um das Bild auf den Kopf zu stellen."
 
 msgid "Negative"
 msgstr "Negativ"

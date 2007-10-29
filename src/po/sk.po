@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint 0.9.15rc1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-10-29 08:53-0700\n"
+"POT-Creation-Date: 2007-10-29 09:06-0700\n"
 "PO-Revision-Date: 2005-10-16 16:57+0200\n"
 "Last-Translator: Andrej Kacian <andrej@kacian.sk>\n"
 "Language-Team: Slovak <sk-i18n@lists.linux.sk>\n"
@@ -687,11 +687,11 @@ msgstr "Zrkadlo"
 msgid "Flip"
 msgstr "Otočiť hore hlavou"
 
-msgid "Click to flip the picture upside-down."
-msgstr "Klikni pre otočenie obrázku hlavou nadol."
-
 msgid "Click to make a mirror image."
 msgstr "Klikni pre zrkadlové otočenie obrázku."
+
+msgid "Click to flip the picture upside-down."
+msgstr "Klikni pre otočenie obrázku hlavou nadol."
 
 msgid "Negative"
 msgstr "Negatív"

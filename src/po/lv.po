@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: lv\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-10-29 08:53-0700\n"
+"POT-Creation-Date: 2007-10-29 09:06-0700\n"
 "PO-Revision-Date: 2007-05-14 18:13-0700\n"
 "Last-Translator: Raivis Strogonovs <raivucis@gmail.com>\n"
 "Language-Team: Valoda <raivucis@gmail.com>\n"
@@ -693,11 +693,11 @@ msgstr "Spogulis"
 msgid "Flip"
 msgstr "Apgriezt riņķī"
 
-msgid "Click to flip the picture upside-down."
-msgstr "Nospied peli uz zīmējuma lai to apgrieztu riņķī."
-
 msgid "Click to make a mirror image."
 msgstr "Nospied peli uz zīmējumu lai to pārvērstu spoguļskatā."
+
+msgid "Click to flip the picture upside-down."
+msgstr "Nospied peli uz zīmējuma lai to apgrieztu riņķī."
 
 msgid "Negative"
 msgstr "Negatīvs"

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: fi\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-10-29 08:53-0700\n"
+"POT-Creation-Date: 2007-10-29 09:06-0700\n"
 "PO-Revision-Date: 2006-05-14 12:35+0300\n"
 "Last-Translator: Niko Lewman <niko.lewman@edu.hel.fi>\n"
 "Language-Team: Finnisf\n"
@@ -701,11 +701,11 @@ msgstr "Peilikuva"
 msgid "Flip"
 msgstr "Käännä"
 
-msgid "Click to flip the picture upside-down."
-msgstr "Käännä kuva ylösalaisin napsauttamalla hiirtä."
-
 msgid "Click to make a mirror image."
 msgstr "Tee kuvasta peilikuva napsauttamalla hiirtä."
+
+msgid "Click to flip the picture upside-down."
+msgstr "Käännä kuva ylösalaisin napsauttamalla hiirtä."
 
 msgid "Negative"
 msgstr "Vastaväri"

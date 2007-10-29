@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-10-29 08:53-0700\n"
+"POT-Creation-Date: 2007-10-29 09:06-0700\n"
 "PO-Revision-Date: 2007-04-26 15:45+0200\n"
 "Last-Translator: Joana Portia Antwi-Danso <portnass2003@yahoo.com>\n"
 "MIME-Version: 1.0\n"
@@ -682,11 +682,11 @@ msgstr "Ahwehwɛ"
 msgid "Flip"
 msgstr "Si ne tiri ase"
 
-msgid "Click to flip the picture upside-down."
-msgstr "Mia so ma nfoni no nsi ne ti ase."
-
 msgid "Click to make a mirror image."
 msgstr "Mia akura no so ma mfoni no baako mmɛka ho."
+
+msgid "Click to flip the picture upside-down."
+msgstr "Mia so ma nfoni no nsi ne ti ase."
 
 msgid "Negative"
 msgstr "Ne sunsum"

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint 0.9.15rc1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-10-29 08:53-0700\n"
+"POT-Creation-Date: 2007-10-29 09:06-0700\n"
 "PO-Revision-Date: 2006-01-22 15:49+0100\n"
 "Last-Translator: Gabor Kelemen <kelemeng@gnome.hu>\n"
 "Language-Team: Hungarian <translation-team-hu@lists.sourceforge.net>\n"
@@ -694,11 +694,11 @@ msgstr "Tükör"
 msgid "Flip"
 msgstr "Megfordít"
 
-msgid "Click to flip the picture upside-down."
-msgstr "Kattints a rajzlapra, hogy fejjel-lefelé fordítsuk a rajzodat."
-
 msgid "Click to make a mirror image."
 msgstr "Kattints a rajzlapra, hogy tükrözzük a rajzodat."
+
+msgid "Click to flip the picture upside-down."
+msgstr "Kattints a rajzlapra, hogy fejjel-lefelé fordítsuk a rajzodat."
 
 msgid "Negative"
 msgstr "Színcsere"

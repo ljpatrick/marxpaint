@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint-is 0.9.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-10-29 08:53-0700\n"
+"POT-Creation-Date: 2007-10-29 09:06-0700\n"
 "PO-Revision-Date: 2004-03-15 15:38GMT\n"
 "Last-Translator: Pjetur G. Hjaltason <pjetur@pjetur.net>\n"
 "Language-Team: Icelandic <kde-isl@molar.is>\n"
@@ -698,11 +698,11 @@ msgstr "Spegla"
 msgid "Flip"
 msgstr "Hvolfa"
 
-msgid "Click to flip the picture upside-down."
-msgstr "Smelltu til að setja myndina á hvolf."
-
 msgid "Click to make a mirror image."
 msgstr "Smelltu til að gera spegilmynd."
+
+msgid "Click to flip the picture upside-down."
+msgstr "Smelltu til að setja myndina á hvolf."
 
 msgid "Negative"
 msgstr "Andhverfa"

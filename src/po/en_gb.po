@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: en_gb\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-10-28 19:15+0100\n"
+"POT-Creation-Date: 2007-10-29 09:06-0700\n"
 "PO-Revision-Date: 2007-10-28 22:51+0100\n"
 "Last-Translator: Caroline Ford <caroline.ford.work@googlemail.com>\n"
 "Language-Team: Norwegian Nynorsk <i18n-nn@lister.ping.uio.no>\n"
@@ -214,8 +214,10 @@ msgstr "A square is a rectangle with four equal sides."
 msgid "A rectangle has four sides and four right angles."
 msgstr "A rectangle has four sides and four right angles."
 
-msgid "A circle is a curve where all points have the same distance from the center."
-msgstr "A circle is a curve where all points have the same distance from the center."
+msgid ""
+"A circle is a curve where all points have the same distance from the center."
+msgstr ""
+"A circle is a curve where all points have the same distance from the center."
 
 #. Description of an ellipse
 msgid "An ellipse is a stretched circle."
@@ -332,12 +334,17 @@ msgid "Click to start drawing a line. Let go to complete it."
 msgstr "Click to start drawing a line. Let go to complete it."
 
 #. Shape tool instructions
-msgid "Pick a shape. Click to pick the center, drag, then let go when it is the size you want. Move around to rotate it, and click to draw it."
-msgstr "Pick a shape. Click to pick the centre, drag, then let go when it is the size you want. Move around to rotate it, and click to draw it."
+msgid ""
+"Pick a shape. Click to pick the center, drag, then let go when it is the "
+"size you want. Move around to rotate it, and click to draw it."
+msgstr ""
+"Pick a shape. Click to pick the centre, drag, then let go when it is the "
+"size you want. Move around to rotate it, and click to draw it."
 
 #. Text tool instructions
 msgid "Choose a style of text. Click on your drawing and you can start typing."
-msgstr "Choose a style of text. Click on your drawing and you can start typing."
+msgstr ""
+"Choose a style of text. Click on your drawing and you can start typing."
 
 #. Magic tool instruction
 msgid "Pick a magical effect to use on your drawing!"
@@ -548,8 +555,10 @@ msgstr "Drip"
 msgid "Click and move the mouse around to make the picture blocky."
 msgstr "Click and move the mouse around to make the picture blocky."
 
-msgid "Click and move the mouse around to turn the picture into a chalk drawing."
-msgstr "Click and move the mouse around to turn the picture into a chalk drawing."
+msgid ""
+"Click and move the mouse around to turn the picture into a chalk drawing."
+msgstr ""
+"Click and move the mouse around to turn the picture into a chalk drawing."
 
 msgid "Click and move the mouse around to make the picture drip."
 msgstr "Click and move the mouse around to make the picture drip."
@@ -581,6 +590,13 @@ msgstr "Cartoon"
 
 msgid "Click and move the mouse around to turn the picture into a cartoon."
 msgstr "Click and move the mouse around to turn the picture into a cartoon."
+
+msgid "Distortion"
+msgstr ""
+
+#, fuzzy
+msgid "Click and drag the mouse to cause a distortion in your picture."
+msgstr "Click and drag the mouse to put glass tile over your picture."
 
 msgid "Emboss"
 msgstr "Emboss"
@@ -633,8 +649,10 @@ msgstr "Click and move to draw grass. Don’t forget the dirt!"
 msgid "Kaleidoscope"
 msgstr "Kaleidoscope"
 
-msgid "Click and drag the mouse to draw with symmetric brushes (a kaleidoscope)."
-msgstr "Click and drag the mouse to draw with symmetric brushes (a kaleidoscope)."
+msgid ""
+"Click and drag the mouse to draw with symmetric brushes (a kaleidoscope)."
+msgstr ""
+"Click and drag the mouse to draw with symmetric brushes (a kaleidoscope)."
 
 msgid "Light"
 msgstr "Light"
@@ -654,11 +672,11 @@ msgstr "Mirror"
 msgid "Flip"
 msgstr "Flip"
 
-msgid "Click to flip the picture upside-down."
-msgstr "Click to flip the picture upside-down."
-
 msgid "Click to make a mirror image."
 msgstr "Click to make a mirror image."
+
+msgid "Click to flip the picture upside-down."
+msgstr "Click to flip the picture upside-down."
 
 msgid "Negative"
 msgstr "Negative"
@@ -699,45 +717,68 @@ msgstr "Click and move the mouse around to change the picture’s color."
 msgid "Waves"
 msgstr "Waves"
 
-msgid "Click to make the picture wavy. Click toward the top for shorter waves, the bottom for taller waves, the left for small waves, and the right for long waves."
-msgstr "Click to make the picture wavy. Click towards the top for shorter waves, the bottom for taller waves, the left for small waves, and the right for long waves."
+msgid ""
+"Click to make the picture wavy. Click toward the top for shorter waves, the "
+"bottom for taller waves, the left for small waves, and the right for long "
+"waves."
+msgstr ""
+"Click to make the picture wavy. Click towards the top for shorter waves, the "
+"bottom for taller waves, the left for small waves, and the right for long "
+"waves."
 
 #~ msgid "Sparkles"
 #~ msgstr "Sparkles"
+
 #~ msgid "You now have a blank sheet to draw on!"
 #~ msgstr "You now have a blank sheet to draw on!"
+
 #~ msgid "Start a new picture?"
 #~ msgstr "Start a new picture?"
+
 #~ msgid "Yes, let's start fresh!"
 #~ msgstr "Yes, let's start afresh!"
+
 #~ msgid "Click and move to draw sparkles."
 #~ msgstr "Click and move to draw sparkles."
+
 #~ msgid "Starting a new picture will erase the current one!"
 #~ msgstr "Starting a new picture will erase the current one!"
+
 #~ msgid "That’s OK!"
 #~ msgstr "That’s OK!"
+
 #~ msgid "Never mind!"
 #~ msgstr "Never mind!"
+
 #~ msgid "Save over the older version of this picture?"
 #~ msgstr "Save over the older version of this picture?"
+
 #~ msgid "Green!"
 #~ msgstr "Green!"
+
 #~ msgid "Fade"
 #~ msgstr "Fade"
+
 #~ msgid "Oval"
 #~ msgstr "Oval"
+
 #~ msgid "Diamond"
 #~ msgstr "Diamond"
+
 #~ msgid "A square has four sides, each the same length."
 #~ msgstr "A square has four sides, each the same length."
+
 #~ msgid "A circle is exactly round."
 #~ msgstr "A circle is exactly round."
+
 #~ msgid "A diamond is a square, turned around slightly."
 #~ msgstr "A diamond is a square, turned around slightly."
+
 #~ msgid "Lime!"
 #~ msgstr "Lime!"
+
 #~ msgid "Fuchsia!"
 #~ msgstr "Fuchsia!"
+
 #~ msgid "Silver!"
 #~ msgstr "Silver!"
-

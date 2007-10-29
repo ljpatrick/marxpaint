@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint 0.9.17\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-10-29 08:53-0700\n"
+"POT-Creation-Date: 2007-10-29 09:06-0700\n"
 "PO-Revision-Date: 2007-10-01 09:55+0200\n"
 "Last-Translator: Andrzej M. Krzysztofowicz <ankry@mif.pg.gda.pl>\n"
 "Language-Team: Polish <translation-team-pl@lists.sourceforge.net>\n"
@@ -684,11 +684,11 @@ msgstr "Lustro"
 msgid "Flip"
 msgstr "Odwróć"
 
-msgid "Click to flip the picture upside-down."
-msgstr "Kliknij, aby odwrócić obrazek do góry nogami."
-
 msgid "Click to make a mirror image."
 msgstr "Kliknij, aby zrobić odbicie obrazka jak w lusterku."
+
+msgid "Click to flip the picture upside-down."
+msgstr "Kliknij, aby odwrócić obrazek do góry nogami."
 
 msgid "Negative"
 msgstr "Negatyw"

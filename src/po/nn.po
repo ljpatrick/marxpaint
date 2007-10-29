@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: nn\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-10-29 08:53-0700\n"
+"POT-Creation-Date: 2007-10-29 09:06-0700\n"
 "PO-Revision-Date: 2007-07-19 20:34+0200\n"
 "Last-Translator: Karl Ove Hufthammer <karl@huftis.org>\n"
 "Language-Team: Norwegian Nynorsk <i18n-nn@lister.ping.uio.no>\n"
@@ -678,11 +678,11 @@ msgstr "Spegel"
 msgid "Flip"
 msgstr "Opp-ned"
 
-msgid "Click to flip the picture upside-down."
-msgstr "Trykk for å snu teikninga opp ned."
-
 msgid "Click to make a mirror image."
 msgstr "Trykk for å spegelvenda teikninga."
+
+msgid "Click to flip the picture upside-down."
+msgstr "Trykk for å snu teikninga opp ned."
 
 msgid "Negative"
 msgstr "Negativ"

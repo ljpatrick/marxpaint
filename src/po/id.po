@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: id\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-10-29 08:53-0700\n"
+"POT-Creation-Date: 2007-10-29 09:06-0700\n"
 "PO-Revision-Date: 2005-10-12 20:03+0700\n"
 "Last-Translator: Tedi Heriyanto <tedi_h@gmx.net>\n"
 "Language-Team: Indonesia <translation-team-id@lists.sourceforge.net>\n"
@@ -697,11 +697,11 @@ msgstr "Mirror"
 msgid "Flip"
 msgstr "Flip"
 
-msgid "Click to flip the picture upside-down."
-msgstr "Klik untuk membalik gambar."
-
 msgid "Click to make a mirror image."
 msgstr "Klik untuk membuat mirror gambar."
+
+msgid "Click to flip the picture upside-down."
+msgstr "Klik untuk membalik gambar."
 
 msgid "Negative"
 msgstr "Negatif"

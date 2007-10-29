@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint 0.9.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-10-29 08:53-0700\n"
+"POT-Creation-Date: 2007-10-29 09:06-0700\n"
 "PO-Revision-Date: 2004-10-17 11:19+0200\n"
 "Last-Translator: Laurent Dhima <laurenti@alblinux.net>\n"
 "Language-Team: Albanian <translation-team-sq@lists.sourceforge.net>\n"
@@ -702,11 +702,11 @@ msgstr "Pasqyra"
 msgid "Flip"
 msgstr "Vibrim"
 
-msgid "Click to flip the picture upside-down."
-msgstr "Kliko që të rrotullosh pikturën nga lart-poshtë."
-
 msgid "Click to make a mirror image."
 msgstr "Kliko që të krijosh një foto pasqyrë."
+
+msgid "Click to flip the picture upside-down."
+msgstr "Kliko që të rrotullosh pikturën nga lart-poshtë."
 
 msgid "Negative"
 msgstr "Negativi"

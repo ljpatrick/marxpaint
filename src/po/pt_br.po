@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pt_br\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-10-29 08:53-0700\n"
+"POT-Creation-Date: 2007-10-29 09:06-0700\n"
 "PO-Revision-Date: 2007-05-19 15:50-0300\n"
 "Last-Translator: Adorilson Bezerra <adorilson@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <pt@li.org>\n"
@@ -697,11 +697,11 @@ msgstr "Espelhar"
 msgid "Flip"
 msgstr "Girar"
 
-msgid "Click to flip the picture upside-down."
-msgstr "Clique para girar a imagem de cabeça pra baixo!"
-
 msgid "Click to make a mirror image."
 msgstr "Clique para espelhar a imagem."
+
+msgid "Click to flip the picture upside-down."
+msgstr "Clique para girar a imagem de cabeça pra baixo!"
 
 msgid "Negative"
 msgstr "Negativo"

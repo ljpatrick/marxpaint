@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-10-29 08:53-0700\n"
+"POT-Creation-Date: 2007-10-29 09:06-0700\n"
 "PO-Revision-Date: 2007-03-15 17:27+0530\n"
 "Last-Translator: pavithran <pavithran.s@gmail.com>\n"
 "Language-Team: Telugu <indlinux-telugu@lists.sourceforge.net>\n"
@@ -676,11 +676,11 @@ msgstr "అద్దం"
 msgid "Flip"
 msgstr ""
 
-msgid "Click to flip the picture upside-down."
-msgstr "చిత్రాన్ని తలక్రిందలు చేయటానికి క్లిక్ చేయండి"
-
 msgid "Click to make a mirror image."
 msgstr ""
+
+msgid "Click to flip the picture upside-down."
+msgstr "చిత్రాన్ని తలక్రిందలు చేయటానికి క్లిక్ చేయండి"
 
 msgid "Negative"
 msgstr "వ్యతిరేఖార్ధమైన"

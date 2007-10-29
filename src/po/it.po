@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TuxPaint 0.9.17\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-10-29 08:53-0700\n"
+"POT-Creation-Date: 2007-10-29 09:06-0700\n"
 "PO-Revision-Date: 2007-07-26 22:36+0100\n"
 "Last-Translator: Flavio Pastore <ironbishop@gmail.com>\n"
 "Language-Team: Italian <it@li.org>\n"
@@ -719,11 +719,11 @@ msgstr "Specchio"
 msgid "Flip"
 msgstr "Ribalta"
 
-msgid "Click to flip the picture upside-down."
-msgstr "Fai click per ribaltare il disegno."
-
 msgid "Click to make a mirror image."
 msgstr "Fai click per specchiare il disegno."
+
+msgid "Click to flip the picture upside-down."
+msgstr "Fai click per ribaltare il disegno."
 
 msgid "Negative"
 msgstr "Negativo"

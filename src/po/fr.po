@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: fr\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-10-29 08:53-0700\n"
+"POT-Creation-Date: 2007-10-29 09:06-0700\n"
 "PO-Revision-Date: 2004-05-30 21:20-0700\n"
 "Last-Translator: jimmy <jacques.chion@wanadoo.fr>\n"
 "Language-Team:  <fr@li.org>\n"
@@ -687,11 +687,11 @@ msgstr "Miroir"
 msgid "Flip"
 msgstr "Renverser"
 
-msgid "Click to flip the picture upside-down."
-msgstr "Clique pour faire basculer l'image de haut en bas."
-
 msgid "Click to make a mirror image."
 msgstr "Clique pour voir l'image dans un miroir."
+
+msgid "Click to flip the picture upside-down."
+msgstr "Clique pour faire basculer l'image de haut en bas."
 
 msgid "Negative"
 msgstr "Négatif"

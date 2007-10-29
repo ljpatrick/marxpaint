@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 0.9.16\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-10-29 08:53-0700\n"
+"POT-Creation-Date: 2007-10-29 09:06-0700\n"
 "PO-Revision-Date: 2006-09-22 01:42+0200\n"
 "Last-Translator: Dwayne Bailey <dwayne@translate.org.za>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -690,11 +690,11 @@ msgstr "Umfanekiso wesipili"
 msgid "Flip"
 msgstr "Guqula icala lomfanekiso"
 
-msgid "Click to flip the picture upside-down."
-msgstr "Nqomfa ukuze uguqule icala lomfanekiso lijonge ezantsi."
-
 msgid "Click to make a mirror image."
 msgstr "Nqomfa ukuze wenze umfuziselo wesipili."
+
+msgid "Click to flip the picture upside-down."
+msgstr "Nqomfa ukuze uguqule icala lomfanekiso lijonge ezantsi."
 
 msgid "Negative"
 msgstr "Isithunzi sombala"

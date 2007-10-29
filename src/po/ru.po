@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TuxPaint\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-10-29 08:53-0700\n"
+"POT-Creation-Date: 2007-10-29 09:06-0700\n"
 "PO-Revision-Date: 2007-04-04 20:05+0300\n"
 "Last-Translator: Сергей Попов <skein@rambler.ru>\n"
 "Language-Team: Dmitriy Ivanov <ace22b@myrealbox.com>\n"
@@ -687,11 +687,11 @@ msgstr "Зеркало"
 msgid "Flip"
 msgstr "Переворот"
 
-msgid "Click to flip the picture upside-down."
-msgstr "Щёлкните на картинку, чтобы перевернуть её вверх тормашками."
-
 msgid "Click to make a mirror image."
 msgstr "Щёлкните на картинку, чтобы превратить её в зеркальное отражение."
+
+msgid "Click to flip the picture upside-down."
+msgstr "Щёлкните на картинку, чтобы перевернуть её вверх тормашками."
 
 msgid "Negative"
 msgstr "Негатив"

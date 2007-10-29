@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Tuxpaint 0.9.2pre\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-10-29 08:53-0700\n"
+"POT-Creation-Date: 2007-10-29 09:06-0700\n"
 "PO-Revision-Date: 2006-09-07 14:30+0200\n"
 "Last-Translator: \n"
 "Language-Team: N/A <i18ngr@lists.hellug.gr>\n"
@@ -706,11 +706,11 @@ msgstr "Καθρέπτης"
 msgid "Flip"
 msgstr "Άνω-Κάτω"
 
-msgid "Click to flip the picture upside-down."
-msgstr "Κάνε κλικ για να γυρίσεις τη ζωγραφιά άνω-κάτω."
-
 msgid "Click to make a mirror image."
 msgstr "Κάνε κλικ για να φτιάξεις μια εικόνα-είδωλο."
+
+msgid "Click to flip the picture upside-down."
+msgstr "Κάνε κλικ για να γυρίσεις τη ζωγραφιά άνω-κάτω."
 
 msgid "Negative"
 msgstr "Αρνητικό"

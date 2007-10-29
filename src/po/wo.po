@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-10-29 08:53-0700\n"
+"POT-Creation-Date: 2007-10-29 09:06-0700\n"
 "PO-Revision-Date: 2007-07-04 11:24-0000\n"
 "Last-Translator: Haby Diallo <haby42@yahoo.fr>\n"
 "Language-Team: \n"
@@ -690,11 +690,11 @@ msgstr "Seetu"
 msgid "Flip"
 msgstr "Këpp"
 
-msgid "Click to flip the picture upside-down."
-msgstr "Bëssël ngir jalale natal bi ci kaw wala ci suuf."
-
 msgid "Click to make a mirror image."
 msgstr "Bëssël ngir guis natal bi ci setu."
+
+msgid "Click to flip the picture upside-down."
+msgstr "Bëssël ngir jalale natal bi ci kaw wala ci suuf."
 
 msgid "Negative"
 msgstr "Ludul nonu"

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: cs\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-10-29 08:53-0700\n"
+"POT-Creation-Date: 2007-10-29 09:06-0700\n"
 "PO-Revision-Date: 2006-06-21 12:50+0200\n"
 "Last-Translator: Václav Čermák <vaclav.cermak@gmail.com>\n"
 "Language-Team:  <cs@li.org>\n"
@@ -682,11 +682,11 @@ msgstr "Zrcadlit"
 msgid "Flip"
 msgstr "Převrátit"
 
-msgid "Click to flip the picture upside-down."
-msgstr "Klepni a obrázek se otočí nohama."
-
 msgid "Click to make a mirror image."
 msgstr "Klepni a vytvoříš zrcadlový odraz obrázku."
+
+msgid "Click to flip the picture upside-down."
+msgstr "Klepni a obrázek se otočí nohama."
 
 msgid "Negative"
 msgstr "Negativ"

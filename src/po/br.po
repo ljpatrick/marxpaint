@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TuxPaint 0.0.1pre\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-10-29 08:53-0700\n"
+"POT-Creation-Date: 2007-10-29 09:06-0700\n"
 "PO-Revision-Date: 2005-01-09 14:49+0100\n"
 "Last-Translator: Gugusse <titi>\n"
 "Language-Team: Breton <drouizig@drouizig.org>\n"
@@ -688,11 +688,11 @@ msgstr "Melezour"
 msgid "Flip"
 msgstr "Eilpennañ"
 
-msgid "Click to flip the picture upside-down."
-msgstr "Klik evit lakaat ar skeudenn war an tu gin."
-
 msgid "Click to make a mirror image."
 msgstr "Klik evit kaout ar skeudenn en ur melezour."
+
+msgid "Click to flip the picture upside-down."
+msgstr "Klik evit lakaat ar skeudenn war an tu gin."
 
 msgid "Negative"
 msgstr "Rakluc'henn"

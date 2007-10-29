@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint 0.9.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-10-29 08:53-0700\n"
+"POT-Creation-Date: 2007-10-29 09:06-0700\n"
 "PO-Revision-Date: 2004-05-26 08:44+0100\n"
 "Last-Translator: Ankit Malik <greatestankit@yahoo.co.in>\n"
 "Language-Team: Hindi\n"
@@ -691,11 +691,11 @@ msgstr "शीशा"
 msgid "Flip"
 msgstr "ऊल्टा"
 
-msgid "Click to flip the picture upside-down."
-msgstr "उल्टा करो"
-
 msgid "Click to make a mirror image."
 msgstr "शीशे मे देखो"
+
+msgid "Click to flip the picture upside-down."
+msgstr "उल्टा करो"
 
 msgid "Negative"
 msgstr "उल्टे रंग"

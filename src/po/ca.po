@@ -17,7 +17,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Tuxpaint cvs 2007-10-23\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-10-29 08:53-0700\n"
+"POT-Creation-Date: 2007-10-29 09:06-0700\n"
 "PO-Revision-Date: 2007-10-24 23:41+0200\n"
 "Last-Translator: Pere Pujal i Carabantes <pere@fornol.no-ip.org>\n"
 "Language-Team: Català <linux-ca@chanae.alphanet.ch>\n"
@@ -691,11 +691,11 @@ msgstr "Mirall"
 msgid "Flip"
 msgstr "Mirall vertical"
 
-msgid "Click to flip the picture upside-down."
-msgstr "Feu clic per invertir la imatge verticalment."
-
 msgid "Click to make a mirror image."
 msgstr "Feu clic per invertir la imatge horitzontalment."
+
+msgid "Click to flip the picture upside-down."
+msgstr "Feu clic per invertir la imatge verticalment."
 
 msgid "Negative"
 msgstr "Negatiu"

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TuxPaint \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-10-29 08:53-0700\n"
+"POT-Creation-Date: 2007-10-29 09:06-0700\n"
 "PO-Revision-Date: 2006-11-30 16:30+0200\n"
 "Last-Translator: Juan Irigoien <juanirigoien@gmail.com>\n"
 "Language-Team: basque <juanirigoien@gmail.com>\n"
@@ -685,11 +685,11 @@ msgstr "Islatu"
 msgid "Flip"
 msgstr "Irauli"
 
-msgid "Click to flip the picture upside-down."
-msgstr "Klik egin eta irudia goikoz-behera irauliko da!"
-
 msgid "Click to make a mirror image."
 msgstr "Egin klik irudiaren isla sortzeko!"
+
+msgid "Click to flip the picture upside-down."
+msgstr "Klik egin eta irudia goikoz-behera irauliko da!"
 
 msgid "Negative"
 msgstr "Negatiboa"

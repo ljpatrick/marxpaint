@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Tux Paint 0.9.16\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-10-29 08:53-0700\n"
+"POT-Creation-Date: 2007-10-29 09:06-0700\n"
 "PO-Revision-Date: 2007-04-29 23:10-0400\n"
 "Last-Translator: Mark K. Kim <mkkim214@gmail.com>\n"
 "Language-Team: N/A\n"
@@ -686,11 +686,11 @@ msgstr "거울"
 msgid "Flip"
 msgstr "뒤집기"
 
-msgid "Click to flip the picture upside-down."
-msgstr "마우스를 누르면 그림이 엎어져요."
-
 msgid "Click to make a mirror image."
 msgstr "마우스를 누르면 그림이 뒤집어져요."
+
+msgid "Click to flip the picture upside-down."
+msgstr "마우스를 누르면 그림이 엎어져요."
 
 msgid "Negative"
 msgstr "음화"

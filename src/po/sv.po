@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint 0.9.17\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-10-29 08:53-0700\n"
+"POT-Creation-Date: 2007-10-29 09:06-0700\n"
 "PO-Revision-Date: 2007-05-26 01:00+0100\n"
 "Last-Translator: Daniel Nylander <po@danielnylander.se>\n"
 "Language-Team: Swedish <tp-sv@listor.tp-sv.se>\n"
@@ -681,11 +681,11 @@ msgstr "Spegel"
 msgid "Flip"
 msgstr "Vänd"
 
-msgid "Click to flip the picture upside-down."
-msgstr "Klicka för att vända bilden upp och ner."
-
 msgid "Click to make a mirror image."
 msgstr "Klicka för att skapa en spegelbild."
+
+msgid "Click to flip the picture upside-down."
+msgstr "Klicka för att vända bilden upp och ner."
 
 msgid "Negative"
 msgstr "Negativ"

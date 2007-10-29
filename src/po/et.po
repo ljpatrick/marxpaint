@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: et\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-10-29 08:53-0700\n"
+"POT-Creation-Date: 2007-10-29 09:06-0700\n"
 "PO-Revision-Date: 2007-03-18 20:26+0200\n"
 "Last-Translator: Lauri Jesmin <lauri.jesmin@nordtech.ee>\n"
 "Language-Team: Estonian <et@li.org>\n"
@@ -670,11 +670,11 @@ msgstr "Peegelpilt"
 msgid "Flip"
 msgstr "Pea alaspidi"
 
-msgid "Click to flip the picture upside-down."
-msgstr "Tee klõps, et pöörata pilt pea alaspidi."
-
 msgid "Click to make a mirror image."
 msgstr "Tee klõps, et tekitada peegelpilt."
+
+msgid "Click to flip the picture upside-down."
+msgstr "Tee klõps, et pöörata pilt pea alaspidi."
 
 msgid "Negative"
 msgstr "Negatiiv"
