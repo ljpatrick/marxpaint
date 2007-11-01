@@ -12,20 +12,20 @@ alt="Tux&nbsp;Paint"><br>
 
 version
 
-0.9.16
+0.9.18
 
 </h2>
-<h4>一個兒童用的簡易繪圖程式</h4>
+<h4>兒童專用的簡易繪圖軟體</h4>
 
-<p>Copyright 2002-2006 by Bill Kendrick and others<br>
+<p>Copyright 2002-2007 by Bill Kendrick and others<br>
 New Breed Software</p>
 
 <p><a href="mailto:bill@newbreedsoftware.com">bill@newbreedsoftware.com</a><br>
-<a href="http://www.newbreedsoftware.com/tuxpaint/">http://www.newbreedsoftware.com/tuxpaint/</a><br>
-翻譯：Song Huang &lt;<a href="mailto:song@song.tw">song@song.tw</a>&gt;</p>
+<a href="http://www.tuxpaint.org/">http://www.tuxpaint.org/</a><br>
+翻譯：黃敏松 &lt;<a href="mailto:songhuang.tw@gmail.com">songhuang.tw@gmail.com</a>&gt;</p>
 
-<p> 6 月 14 日, 2002 - 9 月 9 日, 2006</p>
-</p>
+<p> 6 月 14 日, 2002 - 8 月 2 日 2007</p>
+
 
 <hr size=2 noshade>
 
@@ -276,19 +276,30 @@ New Breed Software</p>
         <p>圖章工具就像是橡皮圖章，或是貼海報，可以讓你印上預先畫好的圖形，
         或是現實的照片在圖紙上。(像是一張馬的圖形，或是一顆樹，或是月亮。)</p>
 
-        <p>當你移動滑鼠時會看到有一個框線跟著滑鼠移動，顯示出圖章會印在什麼地方。</p>
+        <p>當你在圖紙上移動滑鼠時會看到有一個框線跟著滑鼠移動，顯示出圖章會印在什麼地方，以及他有多大。</p>
 
-        <p>不同的圖章可以有不同的音效，有些圖章還可以著色。</p>
+	<p align=center><img src="../../html/images/ex_stamps.png" width=182 height=156
+		alt=""></p>
+
+	<img src="../../html/images/tool_stamp_categories.png" width=96 height=48 alt=""
+	     align=right>
+	<p>圖章的種類有好幾種 (例如：動物的，行星的，外太空的，汽車的，人的，等等)，
+	   可以使用左右方向鍵來瀏覽。</p>
+
+	<p>有的圖章可以有顏色或著色, 如果圖紙下方的調色盤可使用的話，你就可以在蓋圖章前先點選調色盤來改變圖章的色彩。</p>
 	
 	<p>圖章可以放大縮小，很多圖章還可以上下左右翻轉，都在右下方來控制。</p>
-	
+
+	<p align=center>
+	  <img src="../../html/images/tool_stamp_controls.png" width=96 height=96 alt="">
+	</p>
+
+	<img src="../../html/images/tool_sfx.png" width=48 height=24 alt="" align=right>
+	<p>不同的圖章可以有不同的音效和講解，在左下角的按鈕(靠近 Linux 的企鵝 Tux 的地方)可以讓你
+	   重覆目前圖章的音效和講解。</p>
+
 	<p>(註：如果設定了 "<code>nostampcontrols</code>" 選項的話，Tux&nbsp;Paint
 	就不會顯示出左右鏡射，上下翻轉，放大和縮小的控制鈕。請見「<a href="OPTIONS.html">選項</a>」文件。)</p>
-
-        <br clear=all>
-
-        <p align=center><img src="../../html/images/ex_stamps.png" width=182 height=156
-        alt=""></p>
 
         <hr size=1>
       </dd>
@@ -362,13 +373,37 @@ New Breed Software</p>
 	
 	<p>按下 <b>[Enter]</b> 鍵後英文字母就會畫到圖紙上，而游標會跳到下一行。</p>
 	
-	<p>一行輸入到一半時滑鼠在其他圖面上點一下，整行字母就會移過去。
-	而你可以繼續輸入。</p>
+	<p>另一個方式是，按下 <b>[Tab]</b> 鍵後文字就會畫到圖紙上，而游標則移到文字的右邊，
+	   而不是跳到下一行。(這可以用在同一行字有不同的顏色、文字、字型和大小，例如：
+	   <code>就像</code> <font color="#880000"><i><b>這樣</b></i></font>。)</p>
 
-        <br clear=all>
+	<p>當一行輸入到一半時滑鼠在其他圖面上點一下，整行文字就會移過去。
+	而你可以繼續輸入。</p>
 
         <p align=center><img src="../../html/images/ex_text.png" width=139 height=69
         alt=""></p>
+
+	<dl>
+	  <dt><b>各國文字輸入</b></dt>
+	  <dd>
+	    <p>Tux Paint 可以輸入不同語言的文字。大部份的拉丁文 (<i>A</i>-<i>Z</i>,
+	       <i>&ntilde;</i>, <i>&egrave;</i>, 等等.) 可以直接輸入。
+	       部份語言輸入前需要將 Tux&nbsp;Paint 切換到不同的輸入模式，而且部份文字必須使用組合鍵來輸入。</p>
+
+	    <p>當 Tux Paint 的地區設定為某一種語言時，就可以提供不同的輸入模式，
+	        同一個按鍵會在一般模組 (英文字母) 和特定地區模式中循環。</p>
+
+	    <p>目前有效輸入方式的地區支援，以及按鍵是切換式的或是循環式的方式，列示如下。
+	       <b>註</b> 很多的字型檔是不包括所有語言的所有文字的，所以有時候你需要改變字型來看你試著輸入的文字。
+	       <ul>
+	         <li>日文 &mdash; Romanized Hiragana and Romanized Katakana
+	             &mdash; <b>right&nbsp;[Alt]</b>
+	         <li>韓文 &mdash; Hangul 2-Bul
+	             &mdash; <b>right&nbsp;[Alt]</b> or <b>left&nbsp;[Alt]</b>
+	       </ul>
+	    </p>
+	  </dd>
+	</dl>
 
         <hr size=1>
       </dd>
@@ -378,91 +413,13 @@ New Breed Software</p>
       <dd>
         <img src="../../html/images/tool_magic.png" width=48 height=48 alt="" align=right>
 
-        <p>魔術工具包含了一組特殊工具。在右邊選擇一種魔術效果，然後在圖畫上來施展他。</p>
+	<p>魔術工具包含了一組特殊工具。在右邊選擇一種魔術效果，然後依照不同的工具，
+	   有些要按著在圖畫上來施展他，有些呢只要按一下就行了。</p>
 
-        <br clear=all>
+   	   <br clear=all>
 
-        <dl>
-	<dt><b>彩虹</b></dt>
-	<dd>
-	  這和繪圖工具很類似，但是當你按下滑鼠來移動時，他會畫出所有彩虹的顏色來。
-	</dd>
-
-	<dt><b>火花</b></dt>
-	<dd>
-	  這會畫出豔黃色的火花。
-	</dd>
-
-	<dt><b>左右鏡射</b></dt>
-	<dd>
-	  當你選擇了「左右鏡射」然後在圖畫上點一下，整張圖會左右相反過來，
-	  就像是照鏡子一樣。
-	</dd>
-	  
-	<dt><b>上下翻轉</b></dt>
-	<dd>
-	  和「左右鏡射」很類似，在圖上點一下整張圖會上下顛倒過來。
-	</dd>
-	  
-	<dt><b>模糊</b></dt>
-	<dd>
-	  這會讓按著滑鼠鍵拖過的地方變成模糊不清的。
-	</dd>
- 
-	<dt><b>塗污</b></dt>
-	<dd>
-	  這會讓滑鼠拖過的地方沾上顏色，就像用手指頭畫過還沒乾的顏料。
-	</dd>
-
-	<dt><b>褪色</b></dt>
-	<dd>
-	  這會讓按著滑鼠鍵拖過地方的顏色變淡。
-	  (在同一個地方重複作很多次的話，最後會褪成白色的。)
-	</dd>
-	
-	<dt><b>變暗</b></dt>
-	<dd>
-	  這會讓滑鼠拖過的地方的顏色變暗。
-	  (在同樣的地方使用很多次的話，就會變成黑色的。)
-	</dd>
-	
-	<dt><b>粉筆</b></dt>
-	<dd>
-	  這會讓按著滑鼠鍵拖過地方變成像是粉筆畫的一樣。
-	</dd>
-	
-	<dt><b>馬賽克</b></dt>
-	<dd>
-	  這會讓按著滑鼠鍵拖過的地方變成一格一格的。
-	</dd>
-
-	<dt><b>反相</b></dt>
-	<dd>
-	  這會讓按著滑鼠鍵拖過地方的顏色變相反。(如：白色變黑色。)
-	</dd>
-	
-	<dt><b>著色</b></dt>
-	<dd>
-	  這會使用挑選的顏色來改變圖畫。
-	</dd>
-	
-	<dt><b>水滴</b></dt>
-	<dd>
-	  這會讓按著滑鼠鍵拖過地方的顏色像是滴下來一樣。
-	</dd>
-	 	
-	<dt><b>卡通</b></dt>
-	<dd>
-	  這會使得滑鼠拖過的圖形看起來就會卡通一樣 - 在顏色外面再加上框線。
-	</dd>
-	 	
-	<dt><b>填滿</b></dt>
-	<dd>
-	  用顏色填滿一塊區域，這可以讓你很快的填滿一部份的圖形，
-	  好像在填著色簿那樣。
-	</dd>
-	</dl>
-
+	<p>每一個魔術工具的介紹都在 "<a href="../../../magic/docs/html/">magic-docs</a>" 目錄裡.</p>
+      
         <hr size=1>
       </dd>
 	
@@ -866,7 +823,7 @@ New Breed Software</p>
     <p>Windows, 麥金塔 OS X 及 BeOS 的使用者目前要手動的來轉換。</p>
 
     <p>開啟一個可以讀取你要轉換的圖檔格式，及寫入 PNG 格式的圖形處理程式。
-    (請參閱 "PNG.txt" 文件，有一些建議的軟體及參考。)</p>
+    (請參閱 "<a href="../PNG.txt">PNG.txt</a>" 文件，有一些建議的軟體及參考。)</p>
 
     <p>縮減圖形的尺寸讓他不要寬於 448 像素，不要高於 376 像素。
     (換句話說，最大的尺寸就是 448x376 像素。)</p>
@@ -906,6 +863,9 @@ New Breed Software</p>
   Tux Paint 其他的文件包括：(在 "<code>docs</code>" 目錄裡)
   
   <ul>
+  <li><a href="../../../magic/docs/html/">魔術工具文件</a><br>
+    每一個目前所安裝的魔術工具的文件
+
   <li><a href="../AUTHORS.txt">AUTHORS.txt</a><br>
     作者及貢獻者的名單
   
@@ -925,7 +885,10 @@ New Breed Software</p>
     詳細介紹命令列及規劃檔的選項，給不想或不能用 Tux Paint Config 的人
     
   <li><a href="../PNG.txt">PNG.txt</a><br>
-    說明建立給 Tux Paint 使用的 PNG 格式的圖檔
+    說明如何建立給 Tux Paint 使用的 PNG 格式的圖檔
+    
+  <li><a href="../SVG.txt">SVG.txt</a><br>
+    說明如何建立給 Tux Paint 使用的 SVG 格式的向量圖
 
   </ul>
 </blockquote>
@@ -945,7 +908,7 @@ New Breed Software</p>
   <p>你或許也想加入幾個 Tux&nbsp;Paint 的郵件論譠：</p>
 
   <blockquote>
-    <a href="http://www.newbreedsoftware.com/tuxpaint/lists/">http://www.newbreedsoftware.com/tuxpaint/lists/</a>
+    <a href="http://www.tuxpaint.org/lists/">http://www.tuxpaint.org/lists/</a>
   </blockquote>
 </blockquote>
 
