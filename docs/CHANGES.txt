@@ -9,7 +9,7 @@ http://www.tuxpaint.org/
 $Id$
 
 
-2007.November.1 (0.9.18)
+2007.November.2 (0.9.18)
   * Interface Improvements:
     -----------------------
     * Improved 'New' and 'Open' interface:
@@ -180,11 +180,14 @@ $Id$
     * Catalan translation
       Pere Pujal i Carabantes <pere@fornol.no-ip.org>
 
-    * Chinese README documentation
+    * Chinese (Simplified) README documentation
       HackerGene <hackergene@gmail.com>
       http://tuxpaint.cn/
 
     * Chinese (Traditional) README documentation
+      Song Huang <songhuang@users.sourceforge.net>
+
+    * Chinese (Traditional) OPTIONS documentation
       Song Huang <songhuang@users.sourceforge.net>
 
     * Dutch translation
