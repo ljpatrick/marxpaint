@@ -178,6 +178,10 @@ $Id$
   * Edited using Audacity
     http://www.audacity.org/
 
+  * Kaliedoscope & Shift tool sounds
+    Caroline Ford <caroline.ford.work@googlemail.com>
+    2007, released under GNU Free Documentation License
+
 
 * Translations
 

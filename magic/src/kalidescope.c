@@ -23,7 +23,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  Last updated: August 7, 2007
+  Last updated: November 6, 2007
   $Id$
 */
 
@@ -48,7 +48,7 @@ int kalidescope_init(magic_api * api)
 {
   char fname[1024];
 
-  snprintf(fname, sizeof(fname), "%s/sounds/magic/kalidescope.wav",
+  snprintf(fname, sizeof(fname), "%s/sounds/magic/kaleidoscope.ogg",
 	    api->data_directory);
   kalidescope_snd = Mix_LoadWAV(fname);
 

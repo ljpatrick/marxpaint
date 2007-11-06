@@ -153,6 +153,10 @@ $Id$
     http://www.nongnu.org/enigma/ )
     (Waves sound based on sound from Super Tux;
     http://supertux.berlios.de/ )
+    (Kaleidoscope sound based on water in a bathtub, by
+    Caroline Ford <caroline.ford.work@googlemail.com>, GFDL)
+    (Shift sound based on London Underground train, by
+    Caroline Ford <caroline.ford.work@googlemail.com>, GFDL)
 
   * New Localizations:
     ------------------
