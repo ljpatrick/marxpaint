@@ -7,7 +7,7 @@
 # bill@newbreedsoftware.com
 # http://www.tuxpaint.org/
 
-# June 14, 2002 - October 14, 2007
+# June 14, 2002 - November 6, 2007
 
 
 # Locale files
@@ -99,6 +99,7 @@ uninstall-i18n:
 	-rm $(IM_PREFIX)/ja.im
 	-rm $(IM_PREFIX)/ko.im
 	-rm $(IM_PREFIX)/th.im
+	-rm $(IM_PREFIX)/zh_tw.im
 
 
 # Install the translated text:
@@ -493,6 +494,10 @@ install-im:
 	@echo "   th ...Thai..."
 	@cp im/th.im $(IM_PREFIX)/th.im
 	@chmod 644 $(IM_PREFIX)/th.im
+	@#
+	@echo "   zh_tw ...Traditional Chinese..."
+	@cp im/zh_tw.im $(IM_PREFIX)/zh_tw.im
+	@chmod 644 $(IM_PREFIX)/zh_tw.im
 else
 install-im:
 	@echo
