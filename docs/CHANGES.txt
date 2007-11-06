@@ -205,6 +205,9 @@ $Id$
     * Gujarati translation
       Kartik Mistry <kartik.mistry@gmail.com>
 
+    * Hungarian
+      Gabor Kelemen <kelemeng@gnome.hu>
+
     * Italian translation
       Flavio "Iron Bishop" Pastore <ironbishop@fsfe.org>
 
