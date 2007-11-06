@@ -7,7 +7,7 @@ bill@newbreedsoftware.com
 http://www.tuxpaint.org/
 
 
-June 17, 2002 - October 14, 2007
+June 17, 2002 - November 6, 2007
 
 $Id$
 
@@ -214,12 +214,18 @@ $Id$
   * Chinese (Simplified)
     Wang Jian <lark@linux.net.cn>
 
-  * Chinese README documentation
+  * Chinese (Simplified) README documentation
     HackerGene <hackergene@gmail.com>, http://tuxpaint.cn/
 
   * Chinese (Traditional)
     Song Huang <song@song.idv.tw>
     Wei-Lun Chao <chaoweilun@gmail.com>
+
+  * Chinese (Traditional) documentation
+    Song Huang <song@song.idv.tw>
+
+  * Chinese (Traditional) input method
+    Song Huang <song@song.idv.tw>
 
   * Croatian
     Nedjeljko Jedvaj <jedvaj.nedeljko@lexunit.com>

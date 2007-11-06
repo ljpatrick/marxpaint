@@ -9,7 +9,7 @@ http://www.tuxpaint.org/
 $Id$
 
 
-2007.November.2 (0.9.18)
+2007.November.6 (0.9.18)
   * Interface Improvements:
     -----------------------
     * Improved 'New' and 'Open' interface:
@@ -158,6 +158,9 @@ $Id$
     ------------------
     * Esperanto translation
       Edmund GRIMLEY EVANS <edmundo@rano.org>
+
+    * Traditional Chinese input method
+      Song Huang <songhuang@users.sourceforge.net>
 
     * Ojibway translation
       Ed Montgomery <edm@rocketmail.com>
