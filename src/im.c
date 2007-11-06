@@ -83,7 +83,7 @@ static const char* const im_tip_text[NUM_IM_TIPS] =
   gettext_noop("Hangul"),
 
   // Input Method: Thai mode
-  gettext_noop("Thai")
+  gettext_noop("Thai"),
 
   // Input Method: Traditional Chinese mode
   gettext_noop("ZH_TW")
