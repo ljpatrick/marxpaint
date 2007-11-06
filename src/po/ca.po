@@ -15,10 +15,10 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Tuxpaint cvs 2007-10-23\n"
+"Project-Id-Version: Tuxpaint cvs 2007-10-30\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2007-10-29 09:06-0700\n"
-"PO-Revision-Date: 2007-10-24 23:41+0200\n"
+"PO-Revision-Date: 2007-10-30 17:54+0100\n"
 "Last-Translator: Pere Pujal i Carabantes <pere@fornol.no-ip.org>\n"
 "Language-Team: Català <linux-ca@chanae.alphanet.ch>\n"
 "MIME-Version: 1.0\n"
@@ -606,12 +606,10 @@ msgid "Click and move the mouse around to turn the picture into a cartoon."
 msgstr "Feu clic i moveu el ratolí per convertir la imatge a colors sólids."
 
 msgid "Distortion"
-msgstr ""
+msgstr "Distorsió"
 
-#, fuzzy
 msgid "Click and drag the mouse to cause a distortion in your picture."
-msgstr ""
-"Feu clic i arrossegueu el ratolí per posar blocs de vidre en la imatge."
+msgstr "Feu clic i arrossegueu el ratolí per provocar una distorsió en el dibuix."
 
 msgid "Emboss"
 msgstr "Relleu"
