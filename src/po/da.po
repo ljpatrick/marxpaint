@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint 0.9.15rc1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-10-29 09:06-0700\n"
+"POT-Creation-Date: 2007-11-11 11:20+0100\n"
 "PO-Revision-Date: 2007-02-18 22:30+0100\n"
 "Last-Translator: Mikkel Kirkgaard Nielsen <translation@mikini.dk>\n"
 "Language-Team: Danish <dansk@klid.dk>\n"
@@ -173,6 +173,10 @@ msgstr ""
 #, fuzzy
 msgid "Thai"
 msgstr "Tyk"
+
+#. Input Method: Traditional Chinese mode
+msgid "ZH_TW"
+msgstr ""
 
 #. Square shape tool (4 equally-lengthed sides at right angles)
 msgid "Square"

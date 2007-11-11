@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: nn\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-10-29 09:06-0700\n"
+"POT-Creation-Date: 2007-11-11 11:20+0100\n"
 "PO-Revision-Date: 2007-07-19 20:34+0200\n"
 "Last-Translator: Karl Ove Hufthammer <karl@huftis.org>\n"
 "Language-Team: Norwegian Nynorsk <i18n-nn@lister.ping.uio.no>\n"
@@ -173,6 +173,10 @@ msgstr "Hangul"
 msgid "Thai"
 msgstr "Thai"
 
+#. Input Method: Traditional Chinese mode
+msgid "ZH_TW"
+msgstr "ZH_TW"
+
 #. Square shape tool (4 equally-lengthed sides at right angles)
 msgid "Square"
 msgstr "Kvadrat"
@@ -213,8 +217,7 @@ msgstr "Eit kvadrat er eit rektangel med fire like sider."
 msgid "A rectangle has four sides and four right angles."
 msgstr "Eit rektangel har fire sider og fire rette vinklar."
 
-msgid ""
-"A circle is a curve where all points have the same distance from the center."
+msgid "A circle is a curve where all points have the same distance from the center."
 msgstr "Ein sirkel er ei kurve der alle punkta er like langt frå sentrum."
 
 #. Description of an ellipse
@@ -552,8 +555,7 @@ msgstr "Drypping"
 msgid "Click and move the mouse around to make the picture blocky."
 msgstr "Hald inne knappen og flytt rundt for å gjera teikninga «blokkete»."
 
-msgid ""
-"Click and move the mouse around to turn the picture into a chalk drawing."
+msgid "Click and move the mouse around to turn the picture into a chalk drawing."
 msgstr ""
 "Hald inne knappen og flytt rundt for å gjera teikninga om til ei "
 "kritteikning."
@@ -592,12 +594,10 @@ msgstr ""
 "tydelegare."
 
 msgid "Distortion"
-msgstr ""
+msgstr "Forstyrr"
 
-#, fuzzy
 msgid "Click and drag the mouse to cause a distortion in your picture."
-msgstr ""
-"Hald inne knappen og flytt rundt for å leggja glasfliser over teikninga."
+msgstr "Hald inne knappen og flytt rundt for å forstyrra teikninga."
 
 msgid "Emboss"
 msgstr "Relieff"
@@ -635,15 +635,13 @@ msgid "Foam"
 msgstr "Skum"
 
 msgid "Click and drag the mouse to cover an area with foamy bubbles."
-msgstr ""
-"Hald inne knappen og flytt rundt for å dekkja teikninga med såpebobler."
+msgstr "Hald inne knappen og flytt rundt for å dekkja teikninga med såpebobler."
 
 msgid "Glass Tile"
 msgstr "Glasfliser"
 
 msgid "Click and drag the mouse to put glass tile over your picture."
-msgstr ""
-"Hald inne knappen og flytt rundt for å leggja glasfliser over teikninga."
+msgstr "Hald inne knappen og flytt rundt for å leggja glasfliser over teikninga."
 
 msgid "Grass"
 msgstr "Gras"
@@ -654,8 +652,7 @@ msgstr "Hald inne knappen og flytt rundt for å teikna gras. Ikkje gløym jorda!
 msgid "Kaleidoscope"
 msgstr "Kaleidoskop"
 
-msgid ""
-"Click and drag the mouse to draw with symmetric brushes (a kaleidoscope)."
+msgid "Click and drag the mouse to draw with symmetric brushes (a kaleidoscope)."
 msgstr ""
 "Hald inne knappen og flytt rundt for å teikna med symmetrisk pensel (som i "
 "eit kaleidoskop)."
@@ -731,3 +728,4 @@ msgstr ""
 "Trykk for å gjera teikninga bølgjete. Trykk oppe for å laga låge bølgjer, "
 "nede for å laga høge bølgjer, til venstre for å laga korte bølgjer og til "
 "høgre for å laga lange bølgjer."
+

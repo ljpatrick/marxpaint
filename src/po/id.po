@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: id\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-10-29 09:06-0700\n"
+"POT-Creation-Date: 2007-11-11 11:20+0100\n"
 "PO-Revision-Date: 2005-10-12 20:03+0700\n"
 "Last-Translator: Tedi Heriyanto <tedi_h@gmx.net>\n"
 "Language-Team: Indonesia <translation-team-id@lists.sourceforge.net>\n"
@@ -177,6 +177,10 @@ msgstr ""
 
 #. Input Method: Thai mode
 msgid "Thai"
+msgstr ""
+
+#. Input Method: Traditional Chinese mode
+msgid "ZH_TW"
 msgstr ""
 
 #. Square shape tool (4 equally-lengthed sides at right angles)
