@@ -169,7 +169,7 @@ all:	tuxpaint translations magic-plugins tp-magic-config
 	@echo "Now run 'make install' with any options you ran 'make' with."
 	@echo "to install Tux Paint."
 	@echo
-	@echo "You may need superuser ('root') priveleges, depending on"
+	@echo "You may need superuser ('root') privileges, depending on"
 	@echo "where you're installing."
 	@echo "(Depending on your system, you either need to 'su' first,"
 	@echo "or run 'sudo make install'.)"
