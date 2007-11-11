@@ -83,16 +83,15 @@ Source: "{#BdistDir}\..\libdocs\*"; DestDir: "{app}\docs\libdocs"; Excludes: "CV
 ; NOTE: Don't use "Flags: ignoreversion" on any shared system files
 
 [INI]
-Filename: "{app}\{#AppName}.url"; Section: "InternetShortcut"; Key: "URL"; String: "{#PublisherURL}"
+Filename: "{code:MyGroupDir}\{groupname}\{cm:ProgramOnTheWeb,{#AppName}}.url"; Section: "InternetShortcut"; Key: "URL"; String: "{#PublisherURL}"
 
 [Icons]
-Name: "{code:MyGroupDir}\{#AppGroupName}\Configure {#AppName}"; Filename: "{app}\{#AppConfigExe}"; Comment: "{#AppConfigName}"
-Name: "{code:MyGroupDir}\{#AppGroupName}\{#AppName} (Full Screen)"; Filename: "{app}\{#AppExe}"; Parameters: "--fullscreen"; Comment: "Start {#AppName} in Fullscreen mode"
-Name: "{code:MyGroupDir}\{#AppGroupName}\{#AppName} (Windowed)"; Filename: "{app}\{#AppExe}"; Parameters: "--windowed"; Comment: "Start {#AppName} in a Window"
-Name: "{code:MyGroupDir}\{#AppGroupName}\Readme"; Filename: "{app}\{#AppReadme}"; Comment: "View ReadMe"
-Name: "{code:MyGroupDir}\{#AppGroupName}\Licence"; Filename: "{app}\{#AppLicence}"; Comment: "View License"
-Name: "{code:MyGroupDir}\{#AppGroupName}\{cm:ProgramOnTheWeb,{#AppName}}"; Filename: "{app}\{#AppName}.url"; Comment: "{cm:ProgramOnTheWeb,{#AppName}}"
-Name: "{code:MyGroupDir}\{#AppGroupName}\{cm:UninstallProgram,{#AppName}}"; Filename: "{uninstallexe}"; IconFilename: "{app}\data\images\tuxpaint-installer.ico"; Comment: "Remove {#AppName}"
+Name: "{code:MyGroupDir}\{groupname}\Configure {#AppName}"; Filename: "{app}\{#AppConfigExe}"; Comment: "{#AppConfigName}"
+Name: "{code:MyGroupDir}\{groupname}\{#AppName} (Full Screen)"; Filename: "{app}\{#AppExe}"; Parameters: "--fullscreen"; Comment: "Start {#AppName} in Fullscreen mode"
+Name: "{code:MyGroupDir}\{groupname}\{#AppName} (Windowed)"; Filename: "{app}\{#AppExe}"; Parameters: "--windowed"; Comment: "Start {#AppName} in a Window"
+Name: "{code:MyGroupDir}\{groupname}\Readme"; Filename: "{app}\{#AppReadme}"; Comment: "View ReadMe"
+Name: "{code:MyGroupDir}\{groupname}\Licence"; Filename: "{app}\{#AppLicence}"; Comment: "View License"
+Name: "{code:MyGroupDir}\{groupname}\{cm:UninstallProgram,{#AppName}}"; Filename: "{uninstallexe}"; IconFilename: "{app}\data\images\tuxpaint-installer.ico"; Comment: "Remove {#AppName}"
 Name: "{code:MyDesktopDir}\{#AppName}"; Filename: "{app}\{#AppExe}"; Tasks: desktopicon
 
 [Registry]
@@ -106,7 +105,7 @@ Filename: "{app}\{#AppReadme}"; Description: "View the README file"; Flags: post
 Filename: "{app}\{#AppConfigExe}"; Description: "{cm:LaunchProgram,{#AppConfigName}}"; Flags: nowait postinstall skipifsilent
 
 [UninstallDelete]
-Type: files; Name: "{app}\{#AppName}.url"
+Type: files; Name: "{code:MyGroupDir}\{groupname}\{cm:ProgramOnTheWeb,{#AppName}}.url"
 
 [code]
 const
