@@ -267,10 +267,39 @@ beos:
 		ARCH_HEADERS="src/BeOS_Print.h" \
 		ARCH_LIBS="obj/BeOS_print.o"
 
-# "make win32" builds the program for Windows using MinGW/MSYS.
+# "make win32" builds the program for Windows 2K/XP/Vista using MinGW/MSYS.
 # The DATA_, DOC_ and LOCALE_ prefixes are absolute paths.
 # Suitable for development/testing in the MinGW/MSYS environment.
 win32:
+	make \
+		PREFIX=/usr/local \
+		BIN_PREFIX=$(PREFIX)/bin \
+		EXE_EXT=.exe \
+		SO_TYPE=dll \
+		DATA_PREFIX=$(PREFIX)/share/tuxpaint \
+		DOC_PREFIX=$(PREFIX)/share/doc/tuxpaint \
+		MAN_PREFIX=$(PREFIX)/share/man \
+		DEVDOC_PREFIX=$(PREFIX)/share/doc/tuxpaint-dev \
+		DEVMAN_PREFIX=$(PREFIX)/share/man \
+		ICON_PREFIX=. \
+		X11_ICON_PREFIX=. \
+		LOCALE_PREFIX=$(PREFIX)/share/locale \
+		IM_PREFIX=$(PREFIX)/share/tuxpaint/im \
+		CONFDIR=$(PREFIX)/etc/tuxpaint \
+		ARCH_LINKS="-lintl -lpng12 -lwinspool -lshlwapi" \
+		ARCH_HEADERS="src/win32_print.h" \
+		ARCH_LIBS="obj/win32_print.o obj/resource.o" \
+		SVG_LIB="-lrsvg-2 -lcairo -lgobject-2.0" \
+		SVG_CFLAGS="-I/usr/local/include/librsvg-2/librsvg -I/usr/local/include/gtk-2.0 -I/usr/local/include/glib-2.0 -I/usr/local/lib/glib-2.0/include -I/usr/local/include/cairo" \
+		INCLUDE_PREFIX=$(PREFIX)/include \
+		MAGIC_PREFIX=$(PREFIX)/lib/tuxpaint/plugins \
+		TARGET_PASSTHRU=win32 \
+		PAPER_LIB=
+
+# "make win9x" builds the program for Windows 9x/ME using MinGW/MSYS.
+# The DATA_, DOC_ and LOCALE_ prefixes are absolute paths.
+# Suitable for development/testing in the MinGW/MSYS environment.
+win9x:
 	make \
 		PREFIX=/usr/local \
 		BIN_PREFIX=$(PREFIX)/bin \
@@ -467,16 +496,14 @@ bdist-win32:
 		LOCALE_PREFIX=locale \
 		IM_PREFIX=im \
 		CONFDIR=. \
-		INCLUDE_PREFIX=plugins/include \
-		MAGIC_PREFIX=plugins \
-		TARGET_PASSTHRU=win32 \
 		ARCH_LINKS="-lintl -lpng12 -lwinspool -lshlwapi" \
 		ARCH_HEADERS="src/win32_print.h" \
 		ARCH_LIBS="obj/win32_print.o obj/resource.o" \
-		SVG_CFLAGS=-I/usr/local/include/cairo \
-		SVG_LIB="-lcairo -lsvg -lsvg-cairo" \
-		OLDSVGFLAG=OLD_SVG \
-		NOPANGOFLAG=NO_SDLPANGO SDL_PANGO_LIB= \
+		SVG_LIB="-lrsvg-2 -lcairo -lgobject-2.0" \
+		SVG_CFLAGS="-I/usr/local/include/librsvg-2/librsvg -I/usr/local/include/gtk-2.0 -I/usr/local/include/glib-2.0 -I/usr/local/lib/glib-2.0/include -I/usr/local/include/cairo" \
+		INCLUDE_PREFIX=plugins/include \
+		MAGIC_PREFIX=plugins \
+		TARGET_PASSTHRU=win32 \
 		PAPER_LIB= 
 	strip -s tuxpaint.exe
 	make bdist-private-win32 \
@@ -730,13 +757,40 @@ install-dlls:
 	@cp `which libogg-0.dll` $(BIN_PREFIX)
 	@cp `which libvorbis-0.dll` $(BIN_PREFIX)
 	@cp `which libvorbisfile-3.dll` $(BIN_PREFIX)
-	@cp `which libcairo-2.dll` $(BIN_PREFIX)
-	@cp `which libfontconfig-1.dll` $(BIN_PREFIX)
-	@cp `which svg-cairo.dll` $(BIN_PREFIX)
-	@cp `which svg.dll` $(BIN_PREFIX)
 	@cp `which jpeg.dll` $(BIN_PREFIX)
 	@cp `which libxml2-2.dll` $(BIN_PREFIX)
+	@cp `which libcairo-2.dll` $(BIN_PREFIX)
+	@cp `which libfontconfig-1.dll` $(BIN_PREFIX)
+	@cp `which libSDL_Pango-1.dll` $(BIN_PREFIX)
+	@cp `which libgobject-2.0-0.dll` $(BIN_PREFIX)
+	@cp `which librsvg-2-2.dll` $(BIN_PREFIX)
+	@cp `which libcroco-0.6-3.dll` $(BIN_PREFIX)
+	@cp `which libgdk_pixbuf-2.0-0.dll` $(BIN_PREFIX)
+	@cp `which libglib-2.0-0.dll` $(BIN_PREFIX)
+	@cp `which libgsf-1-114.dll` $(BIN_PREFIX)
+	@cp `which libpango-1.0-0.dll` $(BIN_PREFIX)
+	@cp `which libpangocairo-1.0-0.dll` $(BIN_PREFIX)
+	@cp `which libpangoft2-1.0-0.dll` $(BIN_PREFIX)
+	@cp `which libgmodule-2.0-0.dll` $(BIN_PREFIX)
+	@cp `which libpangowin32-1.0-0.dll` $(BIN_PREFIX)
 	@strip -s $(BIN_PREFIX)/*.dll
+	@echo
+	@echo "...Installing Configuration Files..."
+	@cp -r win32/etc/ $(BIN_PREFIX)
+	@echo
+	@echo "...Installing Library Modules..."
+	@mkdir -p $(BIN_PREFIX)/lib/gtk-2.0/2.10.0/engines
+	@cp /usr/local/lib/gtk-2.0/2.10.0/engines/*.dll $(BIN_PREFIX)/lib/gtk-2.0/2.10.0/engines
+	@strip -s $(BIN_PREFIX)/lib/gtk-2.0/2.10.0/engines/*.dll
+	@mkdir -p $(BIN_PREFIX)/lib/gtk-2.0/2.10.0/immodules
+	@cp /usr/local/lib/gtk-2.0/2.10.0/immodules/*.dll $(BIN_PREFIX)/lib/gtk-2.0/2.10.0/immodules
+	@strip -s $(BIN_PREFIX)/lib/gtk-2.0/2.10.0/immodules/*.dll
+	@mkdir -p $(BIN_PREFIX)/lib/gtk-2.0/2.10.0/loaders
+	@cp /usr/local/lib/gtk-2.0/2.10.0/loaders/*.dll $(BIN_PREFIX)/lib/gtk-2.0/2.10.0/loaders
+	@strip -s $(BIN_PREFIX)/lib/gtk-2.0/2.10.0/loaders/*.dll
+	@mkdir -p $(BIN_PREFIX)/lib/pango/1.6.0/modules
+	@cp /usr/local/lib/pango/1.6.0/modules/*.dll $(BIN_PREFIX)/lib/pango/1.6.0/modules
+	@strip -s $(BIN_PREFIX)/lib/pango/1.6.0/modules/*.dll
 	
 # Install the import script:
 
