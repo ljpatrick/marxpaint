@@ -35,19 +35,7 @@
 #define GETHINST(hWnd)	((HINSTANCE)GetWindowLong(hWnd, GWL_HINSTANCE))
 #define MIR(id)	        (MAKEINTRESOURCE(id))
 
-
-static PRINTDLG global_pd = {
-  sizeof(PRINTDLG),
-  NULL, NULL, NULL, NULL,
-  PD_RETURNDC,
-  0xFFFF,
-  0xFFFF,
-  0xFFFF,
-  0xFFFF,
-  1,
-  0, 0, 0, 0, 0, 0, 0, 0,
-};
-
+static HDC hDCprinter = NULL;
 
 static SDL_Surface *make24bitDIB(SDL_Surface * surf)
 {
@@ -148,7 +136,7 @@ static HANDLE LoadCustomPrinterHDEVMODE(HWND hWnd, const char *filepath)
     goto err_exit;
 
   if (!OpenPrinter(device, &hPrinter, NULL))
-    return NULL;
+    goto err_exit;
 
   sizeof_devmode = (int) DocumentProperties(hWnd, hPrinter, device,
 					    NULL, NULL, 0);
@@ -220,36 +208,56 @@ static int SaveCustomPrinterHDEVMODE(HWND hWnd, const char *filepath,
   return 0;
 }
 
-
-static HDC GetCustomPrinterDC(HWND hWnd, const char *printcfg, int show)
+static int FileExists(const char *filepath)
 {
-  global_pd.hwndOwner = hWnd;
-  global_pd.hDC = NULL;
-  global_pd.hDevNames = NULL;
+    FILE *fp;
 
-  if (global_pd.hDevMode == NULL)
-  {
-    global_pd.hDevMode = LoadCustomPrinterHDEVMODE(hWnd, printcfg);
-  }
-
-  if (show)
-  {
-    if (PrintDlg(&global_pd))
+    if ((fp = fopen(filepath, "rb")) != NULL)
     {
-      SaveCustomPrinterHDEVMODE(hWnd, printcfg, global_pd.hDevMode);
-      return global_pd.hDC;
+      fclose(fp);
+      return 1;
     }
-    return NULL;
+    return 0;
+}
+
+static int GetCustomPrinterDC(HWND hWnd, const char *printcfg, int show)
+{
+  PRINTDLG pd = {
+    sizeof(PRINTDLG),
+    hWnd, NULL, NULL, NULL,
+    PD_RETURNDC,
+    0xFFFF,
+    0xFFFF,
+    0xFFFF,
+    0xFFFF,
+    1,
+    0, 0, 0, 0, 0, 0, 0, 0,
+  };
+
+  pd.hDevMode = LoadCustomPrinterHDEVMODE(hWnd, printcfg);
+
+  if (show || !FileExists(printcfg))
+  {
+    if (PrintDlg(&pd))
+    {
+      hDCprinter = pd.hDC;
+      SaveCustomPrinterHDEVMODE(hWnd, printcfg, pd.hDevMode);
+      GlobalFree(pd.hDevMode);
+      return 1;
+    }
+    GlobalFree(pd.hDevMode);
+    return 0;
   }
 
   {
-    DEVMODE *devmode = (DEVMODE *) GlobalLock(global_pd.hDevMode);
+    DEVMODE *devmode = (DEVMODE *) GlobalLock(pd.hDevMode);
 
-    global_pd.hDC =
+    hDCprinter =
       CreateDC(NULL, (const char *) devmode->dmDeviceName, NULL, devmode);
-    GlobalUnlock(global_pd.hDevMode);
+    GlobalUnlock(pd.hDevMode);
+    GlobalFree(pd.hDevMode);
   }
-  return global_pd.hDC;
+  return 1;
 }
 
 
@@ -263,16 +271,16 @@ static HDC GetDefaultPrinterDC(void)
   return NULL;
 }
 
-static HDC GetPrinterDC(HWND hWnd, const char *printcfg, int show)
+static int GetPrinterDC(HWND hWnd, const char *printcfg, int show)
 {
+  hDCprinter = NULL;
+
   if (printcfg)
   {
-    HDC   hdc = NULL;
-
-    if ((hdc = GetCustomPrinterDC(hWnd, printcfg, show)) != NULL)
-        return hdc;
+    return GetCustomPrinterDC(hWnd, printcfg, show);
   }
-  return GetDefaultPrinterDC();
+  hDCprinter = GetDefaultPrinterDC();
+  return 1;
 }
 
 
@@ -292,7 +300,6 @@ const char *SurfacePrint(SDL_Surface * surf, const char *printcfg,
   DOCINFO di;
   int nError;
   SDL_SysWMinfo wminfo;
-  HDC hDCprinter;
   BITMAPINFOHEADER bmih;
   SDL_Surface *surf24 = NULL;
   RECT rcDst;
@@ -308,7 +315,12 @@ const char *SurfacePrint(SDL_Surface * surf, const char *printcfg,
     return "win32_print: SDL_GetWMInfo() failed.";
 
   hWnd = wminfo.window;
-  hDCprinter = GetPrinterDC(hWnd, printcfg, showdialog);
+  if (!GetPrinterDC(hWnd, printcfg, showdialog))
+  {
+    ShowWindow(hWnd, SW_SHOWNORMAL);
+    return NULL;
+  }
+
   if (!hDCprinter)
     return "win32_print: GetPrinterDC() failed.";
 
@@ -461,6 +473,7 @@ error:
     SDL_FreeSurface(surf24);
 
   EnableWindow(hWnd, TRUE);
+  ShowWindow(hWnd, SW_SHOWNORMAL);
   DeleteDC(hDCprinter);
 
   return res;

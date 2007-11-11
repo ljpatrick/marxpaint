@@ -15062,7 +15062,7 @@ void do_print(void)
   /* Win32 */
 
   char f[512];
-  int show = (want_alt_printcommand && !fullscreen);
+  int show = want_alt_printcommand;
 
   snprintf(f, sizeof(f), "%s/%s", savedir, "print.cfg"); // FIXME
 
