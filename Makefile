@@ -745,6 +745,7 @@ install-dlls:
 	@echo
 	@echo "...Installing Windows DLLs..."
 	@install -d $(BIN_PREFIX)
+	@cp `which tuxpaint-config.exe` $(BIN_PREFIX)
 	@cp `which libintl-8.dll` $(BIN_PREFIX)
 	@cp `which libiconv-2.dll` $(BIN_PREFIX)
 	@cp `which libpng12.dll` $(BIN_PREFIX)
