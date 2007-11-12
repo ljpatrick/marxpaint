@@ -248,6 +248,9 @@ $Id$
     * Spanish translation
       Gabriel Gazzan <ggabriel@internet.com.uy>
 
+    * Swedish
+      Robin Rosenberg <robin.rosenberg@dewire.com>
+
     * Vietnamese translation
       Clytie Siddall <clytie@riverland.net.au>
 

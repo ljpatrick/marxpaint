@@ -1,19 +1,21 @@
-# Swedish translation of tuxpaint.
-# Copyright (C) 2006 Free Software Foundation, Inc.
-# Daniel Andersson <tuxpaint@septum.org>
+# translation of sv.po to
 # Daniel Nylander <po@danielnylander.se>, 2006.
+# Robin Rosenberg <robin.rosenberg@dewire.com>, 2007.
+# Swedish translation of tuxpaint.
+# Copyright (C) 2006, 2007 Free Software Foundation, Inc.
+# Daniel Andersson <tuxpaint@septum.org>
 msgid ""
 msgstr ""
-"Project-Id-Version: tuxpaint 0.9.17\n"
+"Project-Id-Version: sv\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-11-11 11:20+0100\n"
-"PO-Revision-Date: 2007-05-26 01:00+0100\n"
-"Last-Translator: Daniel Nylander <po@danielnylander.se>\n"
-"Language-Team: Swedish <tp-sv@listor.tp-sv.se>\n"
+"POT-Creation-Date: 2007-08-09 23:58-0700\n"
+"PO-Revision-Date: 2007-11-07 23:35+0100\n"
+"Last-Translator: Robin Rosenberg <robin.rosenberg@dewire.com>\n"
+"Language-Team:  <sv@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Textpad\n"
+"X-Generator: KBabel 1.11.4\n"
 
 #. Response to Black (0, 0, 0) color selected
 msgid "Black!"
@@ -77,7 +79,7 @@ msgstr "Brun!"
 
 #. Response to Tan (226, 189, 166) color selected
 msgid "Tan!"
-msgstr "Göra bränd!"
+msgstr "Solbränna!"
 
 #. Response to Beige (247, 228, 219) color selected
 msgid "Beige!"
@@ -96,10 +98,10 @@ msgstr "Beige!"
 #. code below (the best scores going to fonts that support both).
 #. Line X
 msgid "qx"
-msgstr "qx"
+msgstr "åäö"
 
 msgid "QX"
-msgstr "QX"
+msgstr "ÅÄÖ"
 
 #. Line Y
 msgid "qy"
@@ -114,7 +116,7 @@ msgstr "QY"
 #. Translators should do whatever is needed to put crummy fonts last.
 #. distinct uppercase and lowercase (e.g., 'o' vs. 'O')
 msgid "oO"
-msgstr "oO"
+msgstr "åÅäÄöÖéÈüÛ"
 
 #. uncommon punctuation (e.g., '@', '#', '*', etc.)
 msgid "`\\%_@$~#{}<>^&*"
@@ -169,17 +171,12 @@ msgid "Hangul"
 msgstr "Hangul"
 
 #. Input Method: Thai mode
-#, fuzzy
 msgid "Thai"
-msgstr "Tjock"
-
-#. Input Method: Traditional Chinese mode
-msgid "ZH_TW"
-msgstr ""
+msgstr "Thailändska"
 
 #. Square shape tool (4 equally-lengthed sides at right angles)
 msgid "Square"
-msgstr "Fyrkant"
+msgstr "Kvadrat"
 
 #. Rectangle shape tool (4 sides at right angles)
 msgid "Rectangle"
@@ -206,9 +203,8 @@ msgid "Rhombus"
 msgstr "Romb"
 
 #. Octagon shape tool (8 sides)
-#, fuzzy
 msgid "Octagon"
-msgstr "Femhörning"
+msgstr "Oktogon"
 
 #. Description of a square
 msgid "A square is a rectangle with four equal sides."
@@ -218,10 +214,8 @@ msgstr "En fyrkant är en rektangel med fyra lika sidor."
 msgid "A rectangle has four sides and four right angles."
 msgstr "En rektangel har fyra sidor och fyra lika vinklar."
 
-#, fuzzy
-msgid ""
-"A circle is a curve where all points have the same distance from the center."
-msgstr "En cirkel är en kurva där alla punkter har samma distans från centrum."
+msgid "A circle is a curve where all points have the same distance from the center."
+msgstr "En cirkel är en kurva där alla punkter har samma avstånd till mitten."
 
 #. Description of an ellipse
 msgid "An ellipse is a stretched circle."
@@ -238,9 +232,8 @@ msgstr "En femhörning har fem sidor."
 msgid "A rhombus has four equal sides, and opposite sides are parallel."
 msgstr "En romb har fyra lika sidor och motstående sidor är parallella."
 
-#, fuzzy
 msgid "An octagon has eight equal sides."
-msgstr "En femhörning har fem sidor."
+msgstr "En oktogon har åtta lika långa sidor"
 
 #. Title of tool selector (buttons down the left)
 msgid "Tools"
@@ -274,7 +267,7 @@ msgstr "Bokstäver"
 #. Title of magic tool selector (buttons down the right for magic (effect plugin) tool)
 #. "Magic" effects tools (blur, flip image, etc.)
 msgid "Magic"
-msgstr "Magik"
+msgstr "Magi"
 
 #. Freehand painting tool
 msgid "Paint"
@@ -368,9 +361,8 @@ msgid "Eraser!"
 msgstr "Suddgummi!"
 
 #. Response to 'start a new image' action
-#, fuzzy
 msgid "Pick a color or picture with which to start a new drawing."
-msgstr "Välj en bild att stämpla runt din bild."
+msgstr "Välj en färg eller bild som början på en ny teckning"
 
 #. Response to 'open' action (while file dialog is being constructed)
 msgid "Open…"
@@ -455,7 +447,7 @@ msgstr "Din bild har skrivits ut!"
 
 #. Notification that it's too soon to print again (--printdelay option is in effect)
 msgid "You can’t print yet!"
-msgstr "Du kan inte printa än!"
+msgstr "Du kan inte skriva ut än!"
 
 #. Prompt to confirm erasing a picture in the Open dialog
 msgid "Erase this picture?"
@@ -473,18 +465,18 @@ msgstr "Kom ihåg att använda vänster musknapp!"
 
 #. Sound has been muted (silenced) via keyboard shortcut
 msgid "Sound muted."
-msgstr ""
+msgstr "Tyst läge."
 
 #. Sound has been unmuted (unsilenced) via keyboard shortcut
 msgid "Sound unmuted."
-msgstr ""
+msgstr "Ljud på."
 
 #. Wait while Text tool finishes loading fonts
 msgid "Please wait…"
 msgstr "Vänta..."
 
 msgid "Pick a color."
-msgstr ""
+msgstr "Välj en färg."
 
 #. Open dialog: 'Erase' button, to erase/deleted the selected picture
 msgid "Erase"
@@ -492,7 +484,7 @@ msgstr "Sudda ut"
 
 #. Open dialog: 'Slides' button, to switch to slide show mode
 msgid "Slides"
-msgstr "Diabilder"
+msgstr "Bildspel"
 
 #. Open dialog: 'Back' button, to dismiss Open dialog without opening a picture
 msgid "Back"
@@ -559,11 +551,10 @@ msgid "Drip"
 msgstr "Droppa"
 
 msgid "Click and move the mouse around to make the picture blocky."
-msgstr "Klicka och rör musen runt för att göra bilden \"blockig\"."
+msgstr "Klicka och rör musen runt för att göra bilden kantig."
 
-msgid ""
-"Click and move the mouse around to turn the picture into a chalk drawing."
-msgstr "Klicka och rör musen runt för att omvandla bilden till krit-ritning!"
+msgid "Click and move the mouse around to turn the picture into a chalk drawing."
+msgstr "Klicka och rör musen runt för att omvandla bilden till kritteckning."
 
 msgid "Click and move the mouse around to make the picture drip."
 msgstr "Klicka och rör musen runt för att göra så att bilden \"droppar\"!"
@@ -572,7 +563,7 @@ msgid "Blur"
 msgstr "Suddig"
 
 msgid "Click and move the mouse around to blur the picture."
-msgstr "Klicka och rör musen för att göra den suddig."
+msgstr "Klicka och rör musen för att göra bilden suddig."
 
 #. Both are named "Bricks", at the moment:
 msgid "Bricks"
@@ -585,11 +576,10 @@ msgid "Click and move to draw small bricks."
 msgstr "Klicka och rör musen för att rita små tegelstenar."
 
 msgid "Calligraphy"
-msgstr ""
+msgstr "Kalligrafi"
 
-#, fuzzy
 msgid "Click and move the mouse around to draw in calligraphy."
-msgstr "Klicka och rör musen för att skapa ett negativ."
+msgstr "Klicka och rör musen för att rita med kalligrafipensel."
 
 msgid "Cartoon"
 msgstr "Seriefigur"
@@ -598,18 +588,16 @@ msgid "Click and move the mouse around to turn the picture into a cartoon."
 msgstr "Klicka och rör musen runt för att omvandla bilden till teckning!"
 
 msgid "Distortion"
-msgstr ""
+msgstr "Rör till"
 
-#, fuzzy
 msgid "Click and drag the mouse to cause a distortion in your picture."
-msgstr "Klicka och rör musen för att göra den suddig."
+msgstr "Klicka och rör musen för att röra till bilden"
 
 msgid "Emboss"
-msgstr ""
+msgstr "Relief"
 
-#, fuzzy
 msgid "Click and drag the mouse to emboss the picture."
-msgstr "Klicka och rör musen för att göra den suddig."
+msgstr "Klicka och rör musen för att göra bilden till en relief."
 
 msgid "Lighten"
 msgstr "Ljusare"
@@ -630,24 +618,22 @@ msgid "Click in the picture to fill that area with color."
 msgstr "Klicka på bilden för att fylla den delen med färg!"
 
 msgid "Flower"
-msgstr ""
+msgstr "Blomma"
 
 msgid "Click and drag to draw a flower stalk. Let go to finish the flower."
-msgstr ""
+msgstr "Klicka och dra musen för att rita blommans stjälk. Släpp för att göra färdigt blomman."
 
 msgid "Foam"
-msgstr ""
+msgstr "Skum"
 
-#, fuzzy
 msgid "Click and drag the mouse to cover an area with foamy bubbles."
-msgstr "Klicka och rör musen runt för att kladda ut bilden."
+msgstr "Klicka och rör musen för att täcka området med bubblor."
 
 msgid "Glass Tile"
-msgstr ""
+msgstr "Glasblock"
 
-#, fuzzy
 msgid "Click and drag the mouse to put glass tile over your picture."
-msgstr "Klicka och rör musen för att göra den suddig."
+msgstr "Klicka och dra musen för att täcka bilden med glasblock."
 
 msgid "Grass"
 msgstr "Gräs"
@@ -656,31 +642,25 @@ msgid "Click and move to draw grass. Don’t forget the dirt!"
 msgstr "Klicka och rör musen runt för att rita gräs. Glöm inte jorden!"
 
 msgid "Kaleidoscope"
-msgstr ""
+msgstr "Kaleidoskop"
 
-#, fuzzy
-msgid ""
-"Click and drag the mouse to draw with symmetric brushes (a kaleidoscope)."
-msgstr "Klicka och rör musen runt för att kladda ut bilden."
+msgid "Click and drag the mouse to draw with symmetric brushes (a kaleidoscope)."
+msgstr "Klicka och rör musen runt för att rita med symmetriska penslar (ett kaleidoskop)."
 
-#, fuzzy
 msgid "Light"
-msgstr "Ljusare"
+msgstr "Ljus"
 
-#, fuzzy
 msgid "Click and drag to draw a beam of light on your picture."
-msgstr "Klicka och rör musen för att göra den suddig."
+msgstr "Klicka och rör musen för att rita en ljusstråle på bilden."
 
-#, fuzzy
 msgid "Metal Paint"
-msgstr "Rita"
+msgstr "Metallic"
 
-#, fuzzy
 msgid "Click and drag the mouse to paint with a metallic color."
-msgstr "Klicka och rör musen för att göra den suddig."
+msgstr "Klicka och rör musen för att rita med metallic."
 
 msgid "Mirror"
-msgstr "Spegel"
+msgstr "Spegla"
 
 msgid "Flip"
 msgstr "Vänd"
@@ -704,21 +684,19 @@ msgid "You can draw in rainbow colors!"
 msgstr "Du kan rita i regnbågens färger!"
 
 msgid "Ripples"
-msgstr ""
+msgstr "Krusningar"
 
-#, fuzzy
 msgid "Click to make ripples appear over your picture."
-msgstr "Klicka och rör musen för att göra den suddig."
+msgstr "Klicka och rör musen för att skapa krusningar på bilden."
 
 msgid "Shift"
-msgstr ""
+msgstr "Flytta"
 
-#, fuzzy
 msgid "Click and drag to shift your picture around on the canvas."
-msgstr "Klicka och rör musen för att göra den suddig."
+msgstr "Klicka och dra musen för att flytta bilden."
 
 msgid "Smudge"
-msgstr "Kladda ut"
+msgstr "Kladda"
 
 msgid "Click and move the mouse around to smudge the picture."
 msgstr "Klicka och rör musen runt för att kladda ut bilden."
@@ -729,109 +707,12 @@ msgstr "Tona"
 msgid "Click and move the mouse around to change the picture’s color."
 msgstr "Klicka och rör musen runt för att ändra bildens färg."
 
-#, fuzzy
 msgid "Waves"
-msgstr "Spara"
+msgstr "Vågor"
 
 msgid ""
 "Click to make the picture wavy. Click toward the top for shorter waves, the "
 "bottom for taller waves, the left for small waves, and the right for long "
 "waves."
-msgstr ""
+msgstr "Klicka för att göra bilden vågig. Klicka  högt uppe för korta vågor, långt ner för långa vågor, till vänster för små vågor och till höger för långa vågor."
 
-#~ msgid "Sparkles"
-#~ msgstr "Gnistor"
-
-#~ msgid "You now have a blank sheet to draw on!"
-#~ msgstr "Du har nu en tom bild att rita på!"
-
-#~ msgid "Start a new picture?"
-#~ msgstr "Påbörja en ny bild?"
-
-#~ msgid "Yes, let's start fresh!"
-#~ msgstr "Ja, börja från början!"
-
-#~ msgid "Click and move to draw sparkles."
-#~ msgstr "Klicka och rör musen för att rita gnistor!"
-
-#~ msgid "Starting a new picture will erase the current one!"
-#~ msgstr "Att påbörja en ny bild kommer att radera den nuvarande bilden!"
-
-#~ msgid "That’s OK!"
-#~ msgstr "Det är bra!"
-
-#~ msgid "Never mind!"
-#~ msgstr "Det gör ingenting!"
-
-#~ msgid "jq"
-#~ msgstr "jq"
-
-#~ msgid "JQ"
-#~ msgstr "JQ"
-
-#~ msgid "Save over the older version of this picture?"
-#~ msgstr "Spara över den äldre versionen av den här bilden?"
-
-#~ msgid "Dark Gray!"
-#~ msgstr "Mörkgrå"
-
-#~ msgid "Light Grey!"
-#~ msgstr "Ljusgrå!"
-
-#~ msgid "Neon green!"
-#~ msgstr "Neongrön!"
-
-#~ msgid "Green!"
-#~ msgstr "Grön!"
-
-#~ msgid "Magenta!"
-#~ msgstr "Magenta!"
-
-#~ msgid "Fade"
-#~ msgstr "Blekna"
-
-#~ msgid "Oval"
-#~ msgstr "Oval"
-
-#~ msgid "Diamond"
-#~ msgstr "Romb"
-
-#~ msgid "A square has four sides, each the same length."
-#~ msgstr "En fyrkant har fyra sidor, alla är lika långa."
-
-#~ msgid "A circle is exactly round."
-#~ msgstr "En cirkel är helt rund."
-
-#~ msgid "A diamond is a square, turned around slightly."
-#~ msgstr "En romb är rund, lätt vänd."
-
-#, fuzzy
-#~ msgid "Lime!"
-#~ msgstr "Linjer"
-
-#~ msgid "Okay"
-#~ msgstr "Okej"
-
-#, fuzzy
-#~ msgid "Red"
-#~ msgstr "Göra om"
-
-#, fuzzy
-#~ msgid "Grey"
-#~ msgstr "Grå!"
-
-#~ msgid ""
-#~ "Pick a shape to draw.  Click once to pick the center of the shape, click "
-#~ "again to draw it."
-#~ msgstr ""
-#~ "Välj en form att rita. Klicka en gång för att välja mitten utav formen, "
-#~ "klicka igen för att rita med den."
-
-#~ msgid "Silver!"
-#~ msgstr "Silver!"
-
-#~ msgid "Light blue!"
-#~ msgstr "Ljusblå!"
-
-#~ msgid "Violet!"
-#~ msgstr "Lila!"
