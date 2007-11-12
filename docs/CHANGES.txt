@@ -9,7 +9,7 @@ http://www.tuxpaint.org/
 $Id$
 
 
-2007.November.6 (0.9.18)
+2007.November.12 (0.9.18)
   * Interface Improvements:
     -----------------------
     * Improved 'New' and 'Open' interface:
@@ -24,6 +24,12 @@ $Id$
 
     * Center image of directional brushes shown.
       (SourceForge.net Bug #1658697)
+
+    * Windows shows printer configuration dialog even when in fullscreen mode.
+      If no 'print.cfg' file is found, the dialog is shown.
+      Clicking "Cancel" in the printer config. dialog cancels Tux Paint's
+      print attempt.
+      John Popplewell <john@johnnypops.demon.co.uk>
 
   * Tool Improvements:
     ------------------
@@ -258,6 +264,13 @@ $Id$
     * Created a new "win32" folder with things from 'visualc' that are still
       being used ('libdocs', 'resource.h', 'resources.rc' and 'tuxpaint.iss')
 
+    * Windows build updates for building Tux Paint with Pango-support.
+      John Popplewell <john@johnnypops.demon.co.uk>
+
+    * Created a separate "win9x" target (for Windows95, Windows98 & WindowsME)
+      which will have reduced functionality compared to more modern Windowses.
+      John Popplewell <john@johnnypops.demon.co.uk>
+
   * Bug Fixes
     ---------
     * PostScript scale and translation values were being localized
@@ -282,6 +295,10 @@ $Id$
       after clicking an empty file slot.
       (SourceForge Bug #1787005)
       Thanks to Tomasz Gloc for reporting and investigating this one.
+
+    * Fixed installer 'groupname' bug and missing icon on 'Tux Paint on
+      the web' shortcut (on Windows XP).
+      John Popplewell <john@johnnypops.demon.co.uk>
 
 
 2007.July.1 (0.9.17)
