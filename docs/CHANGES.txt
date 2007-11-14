@@ -9,7 +9,7 @@ http://www.tuxpaint.org/
 $Id$
 
 
-2007.November.12 (0.9.18)
+2007.November.13 (0.9.18)
   * Interface Improvements:
     -----------------------
     * Improved 'New' and 'Open' interface:
