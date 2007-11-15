@@ -141,7 +141,7 @@ $Id$
 
 * Fonts
 
-  * Bitstream Vera from the DejaVu collection
+  * DejaVu Sans
     http://dejavu.sourceforge.net/
     Copyright 2003, Bitstream, Inc.
     (See "dejavu.txt")
