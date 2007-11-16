@@ -9,7 +9,7 @@ http://www.tuxpaint.org/
 $Id$
 
 
-2007.November.13 (0.9.18)
+2007.November.16 (0.9.18)
   * Interface Improvements:
     -----------------------
     * Improved 'New' and 'Open' interface:
@@ -185,6 +185,9 @@ $Id$
     ---------------------
     * Afrikaans translation
       Petri Jooste <petri.jooste@nwu.ac.za>
+
+    * Brazilian Portuguese
+      Frederico Goncalves Guimaraes <frederico@teia.bio.br>
 
     * British English translation
       Caroline Ford <caroline.ford.work@googlemail.com>

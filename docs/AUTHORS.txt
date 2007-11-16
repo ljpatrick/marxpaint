@@ -7,7 +7,7 @@ bill@newbreedsoftware.com
 http://www.tuxpaint.org/
 
 
-June 17, 2002 - November 6, 2007
+June 17, 2002 - November 16, 2007
 
 $Id$
 
@@ -385,6 +385,7 @@ $Id$
       - Dedicated to my beloved daughter Scarlet
     Silvio Faria <sirofa2003@yahoo.com.br>
     Adorilson Bezerra de Araujo <adorilson@gmail.com>
+    Frederico Goncalves Guimaraes <frederico@teia.bio.br>
  
   * Portuguese (Portugal)
     Ricardo Cruz <rpmcruz@clix.pt>
