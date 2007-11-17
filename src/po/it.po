@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: TuxPaint 0.9.17\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2007-11-11 11:20+0100\n"
-"PO-Revision-Date: 2007-07-26 22:36+0100\n"
+"PO-Revision-Date: 2007-11-17 21:26+0100\n"
 "Last-Translator: Flavio Pastore <ironbishop@gmail.com>\n"
 "Language-Team: Italian <it@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -193,7 +193,7 @@ msgstr "Thai"
 
 #. Input Method: Traditional Chinese mode
 msgid "ZH_TW"
-msgstr ""
+msgstr "ZH_TW"
 
 #. Square shape tool (4 equally-lengthed sides at right angles)
 msgid "Square"
@@ -224,9 +224,8 @@ msgid "Rhombus"
 msgstr "Rombo"
 
 #. Octagon shape tool (8 sides)
-#, fuzzy
 msgid "Octagon"
-msgstr "Pentagono"
+msgstr "Ottagono"
 
 #. Description of a square
 msgid "A square is a rectangle with four equal sides."
@@ -236,11 +235,8 @@ msgstr "Un quadrato è un rettangolo con i lati uguali."
 msgid "A rectangle has four sides and four right angles."
 msgstr "Un rettangolo ha quattro lati e quatto angoli retti."
 
-msgid ""
-"A circle is a curve where all points have the same distance from the center."
-msgstr ""
-"Un cerchio è una curva dove tutti i punti hanno la stessa distanza dal "
-"centro."
+msgid "A circle is a curve where all points have the same distance from the center."
+msgstr "Un cerchio è una curva dove tutti i punti hanno la stessa distanza dal centro."
 
 #. Description of an ellipse
 msgid "An ellipse is a stretched circle."
@@ -257,9 +253,8 @@ msgstr "Un pentagono ha cinque lati."
 msgid "A rhombus has four equal sides, and opposite sides are parallel."
 msgstr "Un rombo ha quattro lati e i lati opposti sono paralleli."
 
-#, fuzzy
 msgid "An octagon has eight equal sides."
-msgstr "Un pentagono ha cinque lati."
+msgstr "Un ottagono ha otto lati uguali."
 
 #. Title of tool selector (buttons down the left)
 msgid "Tools"
@@ -357,17 +352,11 @@ msgstr "Scegli un timbro da inserire nel disegno."
 
 #. Line tool instructions
 msgid "Click to start drawing a line. Let go to complete it."
-msgstr ""
-"Fai clic per iniziare una linea. Lascia andare il tasto per completarla."
+msgstr "Fai clic per iniziare una linea. Lascia andare il tasto per completarla."
 
 #. Shape tool instructions
-msgid ""
-"Pick a shape. Click to pick the center, drag, then let go when it is the "
-"size you want. Move around to rotate it, and click to draw it."
-msgstr ""
-"Scegli una forma. Fai click per il scegliere il centro, trascina, lascia "
-"andare il tasto per scegliere la grandezza. Muovi il mouse per ruotare la "
-"forma, fai click per disegnarla."
+msgid "Pick a shape. Click to pick the center, drag, then let go when it is the size you want. Move around to rotate it, and click to draw it."
+msgstr "Scegli una forma. Fai click per il scegliere il centro, trascina, lascia andare il tasto per scegliere la grandezza. Muovi il mouse per ruotare la forma, fai click per disegnarla."
 
 #. Text tool instructions
 msgid "Choose a style of text. Click on your drawing and you can start typing."
@@ -601,11 +590,10 @@ msgid "Drip"
 msgstr "Gocciola"
 
 msgid "Click and move the mouse around to make the picture blocky."
-msgstr "Fai click per ottenere un effetto “gessetto”."
+msgstr "Fai click per ottenere un effetto “a blocchi”."
 
-msgid ""
-"Click and move the mouse around to turn the picture into a chalk drawing."
-msgstr "Fai click per ottenere un effetto “blocchi”."
+msgid "Click and move the mouse around to turn the picture into a chalk drawing."
+msgstr "Fai click per ottenere un effetto “gessetto”."
 
 msgid "Click and move the mouse around to make the picture drip."
 msgstr "Fai click per ottenere un effetto “gocciolante”."
@@ -627,11 +615,10 @@ msgid "Click and move to draw small bricks."
 msgstr "Fai click per disegnare mattoni piccoli."
 
 msgid "Calligraphy"
-msgstr ""
+msgstr "Calligrafia"
 
-#, fuzzy
 msgid "Click and move the mouse around to draw in calligraphy."
-msgstr "Fai click per ottenere il negativo."
+msgstr "Fai click e muovi il mose per disegnare con un pennino."
 
 msgid "Cartoon"
 msgstr "Fumetto"
@@ -640,11 +627,10 @@ msgid "Click and move the mouse around to turn the picture into a cartoon."
 msgstr "Fai click per ottenere un effetto “fumetto”."
 
 msgid "Distortion"
-msgstr ""
+msgstr "Distorsione"
 
-#, fuzzy
 msgid "Click and drag the mouse to cause a distortion in your picture."
-msgstr "Fai click per coprire il disegno con tessere di vetro smerigliato."
+msgstr "Fai click per ottenere un effetto “distorsione”. "
 
 msgid "Emboss"
 msgstr "Rilievo"
@@ -674,9 +660,7 @@ msgid "Flower"
 msgstr "Fiore"
 
 msgid "Click and drag to draw a flower stalk. Let go to finish the flower."
-msgstr ""
-"Fai click e tieni premuto per disegnare il gambo di un fiore. Lascia andare "
-"il tasto per completarlo."
+msgstr "Fai click e tieni premuto per disegnare il gambo di un fiore. Lascia andare il tasto per completarlo."
 
 msgid "Foam"
 msgstr "Schiuma"
@@ -697,19 +681,16 @@ msgid "Click and move to draw grass. Don’t forget the dirt!"
 msgstr "Fai click per disegnare l'erba. Non dimenticare il terreno!"
 
 msgid "Kaleidoscope"
-msgstr "Caleidoscopio"
+msgstr "Caleido"
 
-msgid ""
-"Click and drag the mouse to draw with symmetric brushes (a kaleidoscope)."
+msgid "Click and drag the mouse to draw with symmetric brushes (a kaleidoscope)."
 msgstr "Fai click per disegnare con un caleidoscopio."
 
-#, fuzzy
 msgid "Light"
-msgstr "Schiarisci"
+msgstr "Luce"
 
-#, fuzzy
 msgid "Click and drag to draw a beam of light on your picture."
-msgstr "Fai click per coprire il disegno con tessere di vetro smerigliato."
+msgstr "Fai click per disegnare un raggio di luce nel tuo disegno."
 
 msgid "Metal Paint"
 msgstr "Tinta metallica"
@@ -742,18 +723,16 @@ msgid "You can draw in rainbow colors!"
 msgstr "Puoi disegnare con i colori dell'arcobaleno!"
 
 msgid "Ripples"
-msgstr ""
+msgstr "Increspa"
 
-#, fuzzy
 msgid "Click to make ripples appear over your picture."
-msgstr "Fai click per coprire il disegno con tessere di vetro smerigliato."
+msgstr "Fai click per inserire increspature nel disegno."
 
 msgid "Shift"
-msgstr ""
+msgstr "Sposta"
 
-#, fuzzy
 msgid "Click and drag to shift your picture around on the canvas."
-msgstr "Fai click per ottenere un effetto “bassorilievo”."
+msgstr "Fai click e muovi il mouse per spostare il disegno nella finestra."
 
 msgid "Smudge"
 msgstr "Acquarello"
@@ -770,11 +749,6 @@ msgstr "Fai click per cambiare la tinta del disegno."
 msgid "Waves"
 msgstr "Onde"
 
-msgid ""
-"Click to make the picture wavy. Click toward the top for shorter waves, the "
-"bottom for taller waves, the left for small waves, and the right for long "
-"waves."
-msgstr ""
-"Fai click per ottenere un effetto ondulato. Fai click nella parte superiore "
-"del foglio per onde basse, nell'inferiore per onde alte, verso sinistra per "
-"onde piccole e verso destra per onde lunghe."
+msgid "Click to make the picture wavy. Click toward the top for shorter waves, the bottom for taller waves, the left for small waves, and the right for long waves."
+msgstr "Fai click per ottenere un effetto ondulato. Fai click nella parte superiore del foglio per onde basse, nell'inferiore per onde alte, verso sinistra per onde piccole e verso destra per onde lunghe."
+
