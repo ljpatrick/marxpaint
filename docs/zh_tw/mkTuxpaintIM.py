@@ -27,9 +27,16 @@ if __name__ == '__main__':
     # °õ¦æ¿é¥X
     cinfile = copen(phonemap, "r", "utf8")
     (bopomofo, chinachar) = cinfile.readline().split()
+    bpmf_count = 0
+    bpmf_temp = bopomofo
     while bopomofo:
+        if bpmf_temp == bopomofo:
+            bpmf_count += 1
+        else:
+            bpmf_count = 1
+	    bpmf_temp  = bopomofo
         chinacharnum = str(hex(ord(chinachar)))[2:]
-        outfile.write("%s\t%s\t-\t# %s \n" % (chinacharnum, bopomofo, chinachar))
+        outfile.write("%s\t%s%s\t-\t# %s \n" % (chinacharnum, bopomofo, bpmf_count, chinachar))
 	try:
             (bopomofo, chinachar) = cinfile.readline().split()
 	except:
