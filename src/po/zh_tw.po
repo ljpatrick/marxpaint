@@ -7,17 +7,15 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint 0.9.17\n"
-"Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2007-11-11 11:20+0100\n"
-"PO-Revision-Date: 2007-05-16 19:56+0800\n"
-"Last-Translator: Wei-Lun Chao <chaoweilun@gmail.com>\n"
+"PO-Revision-Date: 2007-11-18 21:25+0800\n"
+"Last-Translator: 黃敏松 <songhuang.tw@gmail.com>\n"
 "Language-Team: Chinese (traditional) <zh-l10n@linux.org.tw>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=1; plural=0;\n"
 
-#. Response to Black (0, 0, 0) color selected
+#  Response to Black (0, 0, 0) color selected
 msgid "Black!"
 msgstr "黑色!"
 
@@ -170,13 +168,13 @@ msgstr "片假名"
 msgid "Hangul"
 msgstr "韓文"
 
-#. Input Method: Thai mode
+#  Input Method: Thai mode
 msgid "Thai"
-msgstr ""
+msgstr "泰文"
 
-#. Input Method: Traditional Chinese mode
+#  Input Method: Traditional Chinese mode
 msgid "ZH_TW"
-msgstr ""
+msgstr "繁體中文"
 
 #. Square shape tool (4 equally-lengthed sides at right angles)
 msgid "Square"
@@ -206,10 +204,9 @@ msgstr "五角形"
 msgid "Rhombus"
 msgstr "菱形"
 
-#. Octagon shape tool (8 sides)
-#, fuzzy
+#  Octagon shape tool (8 sides)
 msgid "Octagon"
-msgstr "五角形"
+msgstr "八角形"
 
 #. Description of a square
 msgid "A square is a rectangle with four equal sides."
@@ -219,12 +216,10 @@ msgstr "正方形是四邊一樣長的長方形。"
 msgid "A rectangle has four sides and four right angles."
 msgstr "長方形有四個邊和四個直角。"
 
-#, fuzzy
-msgid ""
-"A circle is a curve where all points have the same distance from the center."
+msgid "A circle is a curve where all points have the same distance from the center."
 msgstr "圓形是每一點都和圓心保持相同距離的曲線。"
 
-#. Description of an ellipse
+#  Description of an ellipse
 msgid "An ellipse is a stretched circle."
 msgstr "橢圓形是伸展開來的圓形。"
 
@@ -239,9 +234,8 @@ msgstr "五角形有五個邊。"
 msgid "A rhombus has four equal sides, and opposite sides are parallel."
 msgstr "菱形有四個相同的邊，而且和對面的邊是平行的。"
 
-#, fuzzy
 msgid "An octagon has eight equal sides."
-msgstr "五角形有五個邊。"
+msgstr "八角形有八個相等的邊。"
 
 #. Title of tool selector (buttons down the left)
 msgid "Tools"
@@ -323,7 +317,7 @@ msgstr "儲存"
 msgid "Print"
 msgstr "列印"
 
-#. Quit/exit Tux Paint application
+#  Quit/exit Tux Paint application
 msgid "Quit"
 msgstr "離開"
 
@@ -339,13 +333,9 @@ msgstr "挑選一個圖章來印在你的畫布上。"
 msgid "Click to start drawing a line. Let go to complete it."
 msgstr "按一下滑鼠就可以開始畫一條線. 讓我們來完成它吧!"
 
-#. Shape tool instructions
-msgid ""
-"Pick a shape. Click to pick the center, drag, then let go when it is the "
-"size you want. Move around to rotate it, and click to draw it."
-msgstr ""
-"挑選一個形狀。點一下來決定形狀的中心位置，然後持續拖拉它到你要的大小。繞著中"
-"心移動來旋轉它，然後點一下把它畫下來。"
+#  Shape tool instructions
+msgid "Pick a shape. Click to pick the center, drag, then let go when it is the size you want. Move around to rotate it, and click to draw it."
+msgstr "挑選一個形狀。點一下來決定形狀的中心位置，然後持續拖拉它到你要的大小。繞著中心移動來旋轉它，然後點一下把它畫下來。"
 
 #. Text tool instructions
 msgid "Choose a style of text. Click on your drawing and you can start typing."
@@ -367,10 +357,9 @@ msgstr "再做一次剛才的動作!"
 msgid "Eraser!"
 msgstr "用橡皮擦把圖畫擦掉!"
 
-#. Response to 'start a new image' action
-#, fuzzy
+#  Response to 'start a new image' action
 msgid "Pick a color or picture with which to start a new drawing."
-msgstr "挑選一個圖章來印在你的畫布上。"
+msgstr "挑選一個顏色或圖形的新畫布。"
 
 #. Response to 'open' action (while file dialog is being constructed)
 msgid "Open…"
@@ -400,7 +389,7 @@ msgstr "按住按鍵可以伸長這個形狀。"
 msgid "Move the mouse to rotate the shape. Click to draw it."
 msgstr "移動滑鼠可以旋轉這個形狀。點一下可以將它畫上去。"
 
-#. Notification that 'New' action was aborted (current image would have been lost)
+#  Notification that 'New' action was aborted (current image would have been lost)
 msgid "OK then… Let’s keep drawing this one!"
 msgstr "很好，讓我們繼續來畫這張圖吧!"
 
@@ -471,20 +460,20 @@ msgstr "不，別刪除它!"
 msgid "Remember to use the left mouse button!"
 msgstr "記得使用滑鼠的左邊按鍵!"
 
-#. Sound has been muted (silenced) via keyboard shortcut
+#  Sound has been muted (silenced) via keyboard shortcut
 msgid "Sound muted."
-msgstr ""
+msgstr "靜音"
 
-#. Sound has been unmuted (unsilenced) via keyboard shortcut
+#  Sound has been unmuted (unsilenced) via keyboard shortcut
 msgid "Sound unmuted."
-msgstr ""
+msgstr "取消靜音"
 
 #. Wait while Text tool finishes loading fonts
 msgid "Please wait…"
 msgstr "請等一下…"
 
 msgid "Pick a color."
-msgstr ""
+msgstr "挑選一個顏色"
 
 #. Open dialog: 'Erase' button, to erase/deleted the selected picture
 msgid "Erase"
@@ -561,8 +550,7 @@ msgstr "水滴"
 msgid "Click and move the mouse around to make the picture blocky."
 msgstr "按著並移動滑鼠來使圖畫有馬賽克效果。"
 
-msgid ""
-"Click and move the mouse around to turn the picture into a chalk drawing."
+msgid "Click and move the mouse around to turn the picture into a chalk drawing."
 msgstr "按著並移動滑鼠來產生粉筆的痕跡。"
 
 msgid "Click and move the mouse around to make the picture drip."
@@ -585,11 +573,10 @@ msgid "Click and move to draw small bricks."
 msgstr "按著並移動滑鼠來畫出小的磚塊。"
 
 msgid "Calligraphy"
-msgstr ""
+msgstr "書寫"
 
-#, fuzzy
 msgid "Click and move the mouse around to draw in calligraphy."
-msgstr "按著並移動滑鼠來畫出相反的顏色。"
+msgstr "按著並移動滑鼠來書寫。"
 
 msgid "Cartoon"
 msgstr "卡通"
@@ -598,18 +585,16 @@ msgid "Click and move the mouse around to turn the picture into a cartoon."
 msgstr "按著並移動滑鼠來將圖案變成卡通風格。"
 
 msgid "Distortion"
-msgstr ""
+msgstr "扭曲"
 
-#, fuzzy
 msgid "Click and drag the mouse to cause a distortion in your picture."
-msgstr "按著並移動滑鼠來使圖畫模糊。"
+msgstr "按著並移動滑鼠來使圖畫扭曲。"
 
 msgid "Emboss"
-msgstr ""
+msgstr "浮雕"
 
-#, fuzzy
 msgid "Click and drag the mouse to emboss the picture."
-msgstr "按著並移動滑鼠來使圖畫模糊。"
+msgstr "按著並移動滑鼠來使圖畫變成浮雕。"
 
 msgid "Lighten"
 msgstr "變淺"
@@ -630,24 +615,22 @@ msgid "Click in the picture to fill that area with color."
 msgstr "在圖案中按下滑鼠來用顏色填滿整個區域。"
 
 msgid "Flower"
-msgstr ""
+msgstr "花"
 
 msgid "Click and drag to draw a flower stalk. Let go to finish the flower."
-msgstr ""
+msgstr "按著並移動滑鼠來畫出花莖，讓我們來完成這朵花。"
 
 msgid "Foam"
-msgstr ""
+msgstr "泡泡"
 
-#, fuzzy
 msgid "Click and drag the mouse to cover an area with foamy bubbles."
-msgstr "在圖案中按下滑鼠來用顏色填滿整個區域。"
+msgstr "在圖案中按下滑鼠來用泡泡填滿整個區域。"
 
 msgid "Glass Tile"
-msgstr ""
+msgstr "玻璃磚"
 
-#, fuzzy
 msgid "Click and drag the mouse to put glass tile over your picture."
-msgstr "按著並移動滑鼠來使圖畫模糊。"
+msgstr "按著並移動滑鼠來使圖畫蓋上一層玻璃磚。"
 
 msgid "Grass"
 msgstr "青草"
@@ -656,28 +639,22 @@ msgid "Click and move to draw grass. Don’t forget the dirt!"
 msgstr "按著並移動滑鼠來畫出青草，別忘了泥土喔!"
 
 msgid "Kaleidoscope"
-msgstr ""
+msgstr "萬花筒"
 
-#, fuzzy
-msgid ""
-"Click and drag the mouse to draw with symmetric brushes (a kaleidoscope)."
-msgstr "按著並移動滑鼠來讓顏色變深。"
+msgid "Click and drag the mouse to draw with symmetric brushes (a kaleidoscope)."
+msgstr "按著並移動滑鼠來畫出對稱的筆刷(萬花筒)。"
 
-#, fuzzy
 msgid "Light"
 msgstr "變淺"
 
-#, fuzzy
 msgid "Click and drag to draw a beam of light on your picture."
-msgstr "按著並移動滑鼠來使圖畫模糊。"
+msgstr "按著並移動滑鼠畫一束光到你的圖上。"
 
-#, fuzzy
 msgid "Metal Paint"
-msgstr "色筆"
+msgstr "金屬筆"
 
-#, fuzzy
 msgid "Click and drag the mouse to paint with a metallic color."
-msgstr "按著並移動滑鼠來讓顏色變深。"
+msgstr "按著並移動滑鼠來畫出金屬的顏色。"
 
 msgid "Mirror"
 msgstr "左右對稱"
@@ -704,18 +681,16 @@ msgid "You can draw in rainbow colors!"
 msgstr "你可以畫出彩虹的顏色!"
 
 msgid "Ripples"
-msgstr ""
+msgstr "波浪"
 
-#, fuzzy
 msgid "Click to make ripples appear over your picture."
-msgstr "按著並移動滑鼠來使圖畫模糊。"
+msgstr "按下會讓你的圖出現一個旋渦。"
 
 msgid "Shift"
-msgstr ""
+msgstr "調整"
 
-#, fuzzy
 msgid "Click and drag to shift your picture around on the canvas."
-msgstr "按著並移動滑鼠來使圖畫模糊。"
+msgstr "按著並移動滑鼠來調整圖在圖紙上的位置。"
 
 msgid "Smudge"
 msgstr "塗抹"
@@ -729,27 +704,9 @@ msgstr "著色"
 msgid "Click and move the mouse around to change the picture’s color."
 msgstr "按著並移動滑鼠來改變圖畫的顏色。"
 
-#, fuzzy
 msgid "Waves"
-msgstr "儲存"
+msgstr "波浪"
 
-msgid ""
-"Click to make the picture wavy. Click toward the top for shorter waves, the "
-"bottom for taller waves, the left for small waves, and the right for long "
-"waves."
-msgstr ""
+msgid "Click to make the picture wavy. Click toward the top for shorter waves, the bottom for taller waves, the left for small waves, and the right for long waves."
+msgstr "在圖紙上按下滑鼠鍵會讓影像如波浪般的扭曲，按著往上是短的波浪，往下是長的波浪，往左是小的波浪，往右是大的波浪。"
 
-#~ msgid "Sparkles"
-#~ msgstr "火花"
-
-#~ msgid "You now have a blank sheet to draw on!"
-#~ msgstr "你現在可以在空白的畫布上畫圖!"
-
-#~ msgid "Start a new picture?"
-#~ msgstr "要打開一張新的圖畫嗎?"
-
-#~ msgid "Yes, let's start fresh!"
-#~ msgstr "好，讓我們從頭開始!"
-
-#~ msgid "Click and move to draw sparkles."
-#~ msgstr "按著並移動滑鼠來畫出火花。"
