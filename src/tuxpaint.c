@@ -904,6 +904,9 @@ static int num_magics;	// How many magic tools were loaded (note: shared objs ma
 enum {
   MAGIC_PLACE_GLOBAL,
   MAGIC_PLACE_LOCAL,
+#ifdef __APPLE__
+  MAGIC_PLACE_ALLUSERS,
+#endif
   NUM_MAGIC_PLACES
 };
 
@@ -6125,20 +6128,19 @@ static void setup(int argc, char *argv[])
 
   savedir = strdup("./userdata");
   datadir = strdup("./userdata");
+#elif __APPLE__
+  /* Mac OS X */
+  
+  savedir = strdup(macosx.preferencesPath);
+  datadir = strdup(macosx.preferencesPath);
 #else
-  /* Mac OS X & Linux */
+  /* Linux */
 
   if (getenv("HOME") != NULL)
   {
     char tmp[MAX_PATH];
 
-    snprintf(tmp, MAX_PATH, "%s/%s", getenv("HOME"),
-#ifdef __APPLE__
-             "Library/Application Support/TuxPaint"
-#else
-             ".tuxpaint"
-#endif
-            );
+    snprintf(tmp, MAX_PATH, "%s/%s", getenv("HOME"), ".tuxpaint");
 
     savedir = strdup(tmp);
     datadir = strdup(tmp);
@@ -6203,7 +6205,7 @@ static void setup(int argc, char *argv[])
 
 #elif defined(__APPLE__)
   /* Mac OS X: Use a "tuxpaint.cfg" file in the Tux Paint application support folder */
-  snprintf(str, sizeof(str), "%s/TuxPaint/tuxpaint.cfg", macosx.preferencesPath);
+  snprintf(str, sizeof(str), "%s/tuxpaint.cfg", macosx.preferencesPath);
 
 #else
   /* Linux and other Unixes:  Use 'rc' style (~/.tuxpaintrc) */
@@ -16703,6 +16705,10 @@ void load_magic_plugins(void)
       place = strdup(MAGIC_PREFIX);
     else if (plc == MAGIC_PLACE_LOCAL)
       place = get_fname("plugins/", DIR_DATA);
+#ifdef __APPLE__
+    else if (plc == MAGIC_PLACE_ALLUSERS)
+      place = strdup("/Library/Application Support/TuxPaint/plugins/");
+#endif
     else
       continue; // Huh?
 
@@ -16727,6 +16733,10 @@ void load_magic_plugins(void)
         magic_api_struct[plc]->data_directory = strdup(DATA_PREFIX);
       else if (plc == MAGIC_PLACE_LOCAL)
         magic_api_struct[plc]->data_directory = get_fname("plugins/data/", DIR_DATA);
+#ifdef __APPLE__
+      else if (plc == MAGIC_PLACE_ALLUSERS)
+        magic_api_struct[plc]->data_directory = strdup("/Library/Application Support/TuxPaint/plugins/data");
+#endif
       else
         magic_api_struct[plc]->data_directory = strdup("./");
 
