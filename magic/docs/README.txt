@@ -6,7 +6,7 @@
                            bill@newbreedsoftware.com
                             http://www.tuxpaint.org/
 
-                         July 5, 2007 - August 23, 2007
+                        July 5, 2007 - November 21, 2007
 
    --------------------------------------------------------------------------
 
@@ -460,6 +460,10 @@ Interfaces
              The 'pan' and 'dist' values can be used to simulate location and
              distance of the 'Magic' tool effect.
 
+           * void stopsound(void)
+             This function stops playing a sound played by playsound(). It is
+             useful to silence effects when the user stops using the tool (in
+             your 'release' function).
            * void special_notify(int flag)
              This function notifies Tux Paint of special events. Various
              values defined in "tp_magic_api.h" can be 'or'ed together (using

@@ -23,7 +23,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  Last updated: August 20, 2007
+  Last updated: November 21, 2007
   $Id$
 */
 
@@ -282,6 +282,7 @@ void shift_release(magic_api * api, int which,
 	           int x, int y, SDL_Rect * update_rect)
 {
   shift_doit(api, which, canvas, last, x, y, x, y, update_rect, 0);
+  api->stopsound();
 }
 
 

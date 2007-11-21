@@ -22,7 +22,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
   
-  June 14, 2002 - October 26, 2007
+  June 14, 2002 - November 21, 2007
   $Id$
 */
 
@@ -1501,6 +1501,7 @@ int magic_sort(const void * a, const void * b);
 
 Mix_Chunk * magic_current_snd_ptr;
 void magic_playsound(Mix_Chunk * snd, int left_right, int up_down);
+void magic_stopsound(void);
 void magic_line_func(void * mapi,
 		     int which, SDL_Surface * canvas, SDL_Surface * last,
                      int x1, int y1, int x2, int y2, int step,
@@ -16748,6 +16749,7 @@ void load_magic_plugins(void)
       magic_api_struct[plc]->putpixel = putpixels[canvas->format->BytesPerPixel];
       magic_api_struct[plc]->line = magic_line_func;
       magic_api_struct[plc]->playsound = magic_playsound;
+      magic_api_struct[plc]->stopsound = magic_stopsound;
       magic_api_struct[plc]->special_notify = special_notify;
       magic_api_struct[plc]->button_down = magic_button_down;
       magic_api_struct[plc]->rgbtohsv = rgbtohsv;
@@ -17174,6 +17176,13 @@ void special_notify(int flags)
     
     undo_starters[tmp_int] = UNDO_STARTER_FLIPPED;
   }
+}
+
+void magic_stopsound(void)
+{
+#ifndef NOSOUND
+ Mix_HaltChannel(0);
+#endif
 }
 
 void magic_playsound(Mix_Chunk * snd, int left_right, int up_down)

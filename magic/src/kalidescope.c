@@ -23,7 +23,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  Last updated: November 6, 2007
+  Last updated: November 21, 2007
   $Id$
 */
 
@@ -141,6 +141,7 @@ void kalidescope_release(magic_api * api, int which,
 	           SDL_Surface * canvas, SDL_Surface * last,
 	           int x, int y, SDL_Rect * update_rect)
 {
+  api->stopsound();
 }
 
 // No setup happened:
