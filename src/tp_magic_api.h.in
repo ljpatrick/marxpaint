@@ -89,6 +89,9 @@ typedef struct magic_api_t {
      loudest) */
   void (*playsound)(Mix_Chunk *, int, int);
 
+  /* Asks Tux Paint to stop playing the sound played by 'playsound()' */
+  void (*stopsound)(void);
+
   /* Asks Tux Paint to calculate a line between (x1,y1) and (x2,y2);
      every 'step' iterations, it will call your callback function
      (which must accept a 'magic_api *' Magic API pointer and 'which' integer
