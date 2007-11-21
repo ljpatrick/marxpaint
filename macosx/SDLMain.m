@@ -129,7 +129,7 @@ static NSString *getApplicationName(void)
 {
   NSString *path;
   
-  path = [@"~/Library/Application Support" stringByExpandingTildeInPath];
+  path = [@"~/Library/Application Support/TuxPaint" stringByExpandingTildeInPath];
   [path getCString:(macosx.preferencesPath)];
 }
 
