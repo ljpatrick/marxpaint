@@ -236,9 +236,9 @@ Compiling and Installation:
     ---------------------------------------------------------------------------
       To disable SVG support (e.g., if your system is not currently supported
       by the Cairo library or other SVG-related dependencies), you can
-      run "make" with "nosvg" as the 'target:
+      run "make" with "SVG_LIB= SVG_CFLAGS= NOSVGFLAG=NOSVG" added:
 
-        $ make nosvg
+        $ make SVG_LIB= SVG_CFLAGS= NOSVGFLAG=NOSVG
 
     Disabling Pango support (and hence Pango, Cairo, etc. dependencies):
     --------------------------------------------------------------------
@@ -246,23 +246,17 @@ Compiling and Installation:
       rendering text using TrueType Fonts.  Since 0.9.18, libSDL_Pango is
       used, as it has much greater support for internationalization.
       However, if you wish to disable the use of SDL_Pango, you may do so
-      running "make" with "nopango" as the 'target':
+      running "make" with "NOPANGOFLAG=NO_SDLPANGO SDL_PANGO_LIB=" added:
 
-        $ make nopango
+        $ make NOPANGOFLAG=NO_SDLPANGO SDL_PANGO_LIB=
 
     Disabling Sound at Compile-time:
     --------------------------------
       If you don't have a sound card, or would prefer to build the program
       with no sound support (and therefore without a the SDL_mixer dependency),
-      you can run "make" with "nosound" as the 'target':
+      you can run "make" with "SDL_MIXER_LIB= NOSOUNDFLAG=NOSOUND" added:
 
-        $ make nosound
-
-
-    NOTE: At the moment, the above options cannot be mixed and matched.
-    In the future, we may switch to using autoconf and autotools to make
-    these options more flexible.
-
+        $ make SDL_MIXER_LIB= NOSOUNDFLAG=NOSOUND
 
     If you get errors:
     ------------------
