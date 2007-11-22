@@ -540,7 +540,7 @@ clean:
 	@-rm -f src/tp_magic_api.h
 	@-rm -f tp-magic-config
 	@if [ -d trans ]; then rmdir trans; fi
-	@cd magic ; make clean$(TARGET_PASSTHRU)
+	@cd magic && make clean$(TARGET_PASSTHRU)
 	@echo
 
 clean-win32:
@@ -1003,7 +1003,7 @@ obj/resource.o:	win32/resources.rc win32/resource.h
 # Go into 'magic' subdirectory and buld magic plug-ins
 
 magic-plugins:	src/tp_magic_api.h
-	@cd magic ; make $(TARGET_PASSTHRU)
+	@cd magic && make $(TARGET_PASSTHRU)
 
 
 src/tp_magic_api.h:	src/tp_magic_api.h.in
