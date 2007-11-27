@@ -242,6 +242,7 @@ $Id$
     Vaclav Cermak <vaclav.cermak@gmail.com>
 
   * Danish
+    Joe Hansen <joedalton2@yahoo.dk>
     Rasmus Erik Voel Jensen <i18n@solsort.dk> [retired]
     Mogens Jæger <mogensjaeger@get2net.dk> 
     Mikkel Kirkgaard Nielsen <translation@mikini.dk>

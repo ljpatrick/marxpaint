@@ -1,16 +1,19 @@
 # translation of da.po to Danish
-# translation of tuxpaint-0.9.15rc1.po to Danish
+# translation of tuxpaint-0.9.18.po to Danish
 # Tux Paint Danish messages
 # Rasmus Erik Voel Jensen <i18n@solsort.dk>, 2002.
 # Mogens Jaeger <mogensjaeger@get2net.dk>, 2005.
+# Mikkel Kirkgaard Nielsen <translation@mikini.dk>, 2007.
+# Joe Hansen <joedalton2@yahoo.dk>, 2007.
+#
 msgid ""
 msgstr ""
-"Project-Id-Version: tuxpaint 0.9.15rc1\n"
+"Project-Id-Version: tuxpaint 0.9.18\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2007-11-11 11:20+0100\n"
-"PO-Revision-Date: 2007-02-18 22:30+0100\n"
-"Last-Translator: Mikkel Kirkgaard Nielsen <translation@mikini.dk>\n"
-"Language-Team: Danish <dansk@klid.dk>\n"
+"PO-Revision-Date: 2007-11-23 22:30+0100\n"
+"Last-Translator: Joe Hansen <joedalton2@yahoo.dk>\n"
+"Language-Team: Danish <dansk@dansk-gruppen.dk>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -97,17 +100,17 @@ msgstr "Beige!"
 #. code below (the best scores going to fonts that support both).
 #. Line X
 msgid "qx"
-msgstr ""
+msgstr "qx"
 
 msgid "QX"
-msgstr ""
+msgstr "QX"
 
 #. Line Y
 msgid "qy"
-msgstr ""
+msgstr "qy"
 
 msgid "QY"
-msgstr ""
+msgstr "QY"
 
 #. Now we score fonts to ensure that the best ones will be placed at
 #. the top of the list. The user will see them first. This sorting is
@@ -155,28 +158,27 @@ msgstr "Godt gået!"
 
 #. Input Method: English mode
 msgid "English"
-msgstr ""
+msgstr "Engelsk"
 
 #. Input Method: Japanese Romanized Hiragana mode
 msgid "Hiragana"
-msgstr ""
+msgstr "Hiragana"
 
 #. Input Method: Japanese Romanized Katakana mode
 msgid "Katakana"
-msgstr ""
+msgstr "Katakana"
 
 #. Input Method: Korean Hangul 2-Bul mode
 msgid "Hangul"
-msgstr ""
+msgstr "Hangul"
 
 #. Input Method: Thai mode
-#, fuzzy
 msgid "Thai"
-msgstr "Tyk"
+msgstr "Thai"
 
 #. Input Method: Traditional Chinese mode
 msgid "ZH_TW"
-msgstr ""
+msgstr "ZH_TW"
 
 #. Square shape tool (4 equally-lengthed sides at right angles)
 msgid "Square"
@@ -207,9 +209,8 @@ msgid "Rhombus"
 msgstr "Rombe"
 
 #. Octagon shape tool (8 sides)
-#, fuzzy
 msgid "Octagon"
-msgstr "Femkant"
+msgstr "Ottekant"
 
 #. Description of a square
 msgid "A square is a rectangle with four equal sides."
@@ -219,10 +220,10 @@ msgstr "Et kvadrat er en firkant hvor alle sider er lige lange."
 msgid "A rectangle has four sides and four right angles."
 msgstr "Et rektangel er en firkant hvor alle vinkler er 90 grader."
 
-#, fuzzy
 msgid ""
 "A circle is a curve where all points have the same distance from the center."
-msgstr "En cirkel er en kurve, hvor alle punkter er lige langt fra centrum."
+msgstr ""
+"En cirkel er en kurve, hvor alle punkter er lige langt fra centrum."
 
 #. Description of an ellipse
 msgid "An ellipse is a stretched circle."
@@ -234,14 +235,13 @@ msgstr "En trekant har tre sider."
 
 #. Description of a pentagon
 msgid "A pentagon has five sides."
-msgstr "En femkant har ... fem kanter :-)"
+msgstr "En femkant har … fem kanter :-)"
 
 msgid "A rhombus has four equal sides, and opposite sides are parallel."
 msgstr "En rombe har fire ens sider, de modstående sider er parallelle."
 
-#, fuzzy
 msgid "An octagon has eight equal sides."
-msgstr "En femkant har ... fem kanter :-)"
+msgstr "En ottekant har 8 lige store sider."
 
 #. Title of tool selector (buttons down the left)
 msgid "Tools"
@@ -338,8 +338,8 @@ msgstr "Vælg et billede eller en figur du vil bruge som stempel i din tegning."
 #. Line tool instructions
 msgid "Click to start drawing a line. Let go to complete it."
 msgstr ""
-"Klik og hold museknappen nede for at tegne en linie. Når du slipper ender "
-"linien."
+"Klik og hold museknappen nede for at tegne en linje. Når du slipper ender "
+"linjen."
 
 #. Shape tool instructions
 msgid ""
@@ -372,13 +372,12 @@ msgid "Eraser!"
 msgstr "Viskelæder!"
 
 #. Response to 'start a new image' action
-#, fuzzy
 msgid "Pick a color or picture with which to start a new drawing."
-msgstr "Vælg et billede eller en figur du vil bruge som stempel i din tegning."
+msgstr "Vælg en farve eller billede som du ønsker at påbegynde ny tegning med."
 
 #. Response to 'open' action (while file dialog is being constructed)
 msgid "Open…"
-msgstr "Åbn..."
+msgstr "Åbn…"
 
 #. Response to 'save' action
 msgid "Your image has been saved!"
@@ -386,7 +385,7 @@ msgstr "Dit billede er blevet gemt!"
 
 #. Response to 'print' action (while printing, or print dialog is being used)
 msgid "Printing…"
-msgstr "Udskriver..."
+msgstr "Udskriver…"
 
 #. Response to 'quit' (exit) action
 msgid "Bye bye!"
@@ -406,7 +405,7 @@ msgstr "Bevæg musen for at dreje figuren. Klik for at tegne den."
 
 #. Notification that 'New' action was aborted (current image would have been lost)
 msgid "OK then… Let’s keep drawing this one!"
-msgstr "O.k. da... fortsæt med denne tegning!"
+msgstr "O.k. da… fortsæt med denne tegning!"
 
 #. Prompt to confirm user wishes to quit
 msgid "Do you really want to quit?"
@@ -477,18 +476,18 @@ msgstr "Husk at bruge venstre musetaste!"
 
 #. Sound has been muted (silenced) via keyboard shortcut
 msgid "Sound muted."
-msgstr ""
+msgstr "Lyd slukket."
 
 #. Sound has been unmuted (unsilenced) via keyboard shortcut
 msgid "Sound unmuted."
-msgstr ""
+msgstr "Lyd tændt"
 
 #. Wait while Text tool finishes loading fonts
 msgid "Please wait…"
-msgstr "Vent venligst..."
+msgstr "Vent venligst…"
 
 msgid "Pick a color."
-msgstr ""
+msgstr "Vælg en farve."
 
 #. Open dialog: 'Erase' button, to erase/deleted the selected picture
 msgid "Erase"
@@ -537,12 +536,12 @@ msgid "No, save a new file!"
 msgstr "Nej, gem som et nyt billede!"
 
 msgid "Choose the picture you want, then click “Open”."
-msgstr "Vælg et billede og tryk på \"Åbn\"."
+msgstr "Vælg et billede og tryk på »Åbn«."
 
 #. Let user choose images:
 #. Instructions for Slideshow file dialog (FIXME: Make a #define)
 msgid "Choose the pictures you want, then click “Play”."
-msgstr "Vælg de ønskede billeder og tryk på \"Afspil\"."
+msgstr "Vælg de ønskede billeder og tryk på »Afspil«."
 
 msgid "A drawing program for children."
 msgstr "Et tegneprogram for børn."
@@ -590,31 +589,31 @@ msgid "Click and move to draw small bricks."
 msgstr "Klik og bevæg for at tegne små mursten."
 
 msgid "Calligraphy"
-msgstr ""
+msgstr "Kalligrafi"
 
-#, fuzzy
 msgid "Click and move the mouse around to draw in calligraphy."
-msgstr "Klik og bevæg musen rundt for at invertere billedet."
+msgstr "Klik og bevæg musen rundt for at tegne med kalligrafi."
 
 msgid "Cartoon"
-msgstr "Karrikatur"
+msgstr "Karikatur"
 
 msgid "Click and move the mouse around to turn the picture into a cartoon."
 msgstr "Klik og bevæg musen rundt for at karikere billedet."
 
+# Overvejelser: forvrængning, forvanskning, fordrejning 
 msgid "Distortion"
-msgstr ""
+msgstr "Forvrængning"
 
-#, fuzzy
 msgid "Click and drag the mouse to cause a distortion in your picture."
-msgstr "Klik og bevæg musen rundt, for at gøre billedet tyndere."
+msgstr "Klik og bevæg musen rundt, for at skabe en forvrængning i billedet."
 
+# Engelsk forklaring af ordet emboss: to raise or represent (surface designs) in relief. 
+# Kunne også være præget, drevet, presset (præg, driv, pres).
 msgid "Emboss"
-msgstr ""
+msgstr "Tydeliggør"
 
-#, fuzzy
 msgid "Click and drag the mouse to emboss the picture."
-msgstr "Klik og bevæg musen rundt, for at gøre billedet tyndere."
+msgstr "Klik og bevæg musen rundt, for at tydeliggøre billedet."
 
 msgid "Lighten"
 msgstr "Lysne"
@@ -635,24 +634,23 @@ msgid "Click in the picture to fill that area with color."
 msgstr "Klik i billedet for at fylde området med en farve."
 
 msgid "Flower"
-msgstr ""
+msgstr "Blomst"
 
+# stalk = stilk; stængel 
 msgid "Click and drag to draw a flower stalk. Let go to finish the flower."
-msgstr ""
+msgstr "Klik og træk for at tegne en blomsterstilk. Slip for at færdiggøre blomsten."
 
 msgid "Foam"
-msgstr ""
+msgstr "Skum"
 
-#, fuzzy
 msgid "Click and drag the mouse to cover an area with foamy bubbles."
-msgstr "Klik og bevæg musen rundt, for at gøre billedet tykkere."
+msgstr "Klik og bevæg musen rundt, for at dække et område med skumbobler."
 
 msgid "Glass Tile"
-msgstr ""
+msgstr "Glasfelt"
 
-#, fuzzy
 msgid "Click and drag the mouse to put glass tile over your picture."
-msgstr "Klik og bevæg musen rundt, for at gøre billedet tyndere."
+msgstr "Klik og bevæg musen rundt, for at sætte glasfelter over dit billede."
 
 msgid "Grass"
 msgstr "Græs"
@@ -661,28 +659,24 @@ msgid "Click and move to draw grass. Don’t forget the dirt!"
 msgstr "Klik og flyt for at tegne græs. Husk 'skidtet'!"
 
 msgid "Kaleidoscope"
-msgstr ""
+msgstr "Kalejdoskop"
 
-#, fuzzy
 msgid ""
 "Click and drag the mouse to draw with symmetric brushes (a kaleidoscope)."
-msgstr "Klik og bevæg musen rundt, for at gøre billedet tyndere."
+msgstr ""
+"Klik og bevæg musen rundt, for at tegne med symmetriske pensler (et kalejdoskop)."
 
-#, fuzzy
 msgid "Light"
-msgstr "Lysne"
+msgstr "Lys"
 
-#, fuzzy
 msgid "Click and drag to draw a beam of light on your picture."
-msgstr "Klik og bevæg musen rundt, for at gøre billedet tyndere."
+msgstr "Klik og bevæg musen rundt, for at tegne en lysstråle på dit billede."
 
-#, fuzzy
 msgid "Metal Paint"
-msgstr "Maling"
+msgstr "Metalfarve"
 
-#, fuzzy
 msgid "Click and drag the mouse to paint with a metallic color."
-msgstr "Klik og bevæg musen rundt, for at gøre billedet tyndere."
+msgstr "Klik og bevæg musen rundt, for at tegne med en metalfarve."
 
 msgid "Mirror"
 msgstr "Spejl"
@@ -708,19 +702,18 @@ msgstr "Regnbue"
 msgid "You can draw in rainbow colors!"
 msgstr "Du kan tegne i alle regnbuens farver!"
 
+# Ripple -> ring, bølge (i vand) 
 msgid "Ripples"
-msgstr ""
+msgstr "Ringe"
 
-#, fuzzy
 msgid "Click to make ripples appear over your picture."
-msgstr "Klik og bevæg musen rundt, for at gøre billedet tyndere."
+msgstr "Klik for at skabe ringe i dit billede."
 
 msgid "Shift"
-msgstr ""
+msgstr "Skift"
 
-#, fuzzy
 msgid "Click and drag to shift your picture around on the canvas."
-msgstr "Klik og bevæg musen rundt, for at gøre billedet tyndere."
+msgstr "Klik og bevæg musen rundt, for at flytte dit billede rundt på lærredet."
 
 msgid "Smudge"
 msgstr "Udtvære"
@@ -734,15 +727,16 @@ msgstr "Farve"
 msgid "Click and move the mouse around to change the picture’s color."
 msgstr "Klik og bevæg musen rundt for at ændre billedets farver."
 
-#, fuzzy
 msgid "Waves"
-msgstr "Gem"
+msgstr "Bølger"
 
 msgid ""
 "Click to make the picture wavy. Click toward the top for shorter waves, the "
 "bottom for taller waves, the left for small waves, and the right for long "
 "waves."
 msgstr ""
+"Klik for at indsætte bølger i billedet. Klik mod toppen for lave bølger, bunden "
+"for højere bølger, til venstre for små bølger og mod højre for lange bølger."
 
 #~ msgid "Sparkles"
 #~ msgstr "Gnister"

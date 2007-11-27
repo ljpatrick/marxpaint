@@ -9,6 +9,13 @@ http://www.tuxpaint.org/
 $Id$
 
 
+2007.November.27 (0.9.19)
+  * Localization Updates:
+    ---------------------
+    * Danish translation
+      Joe Hansen <joedalton2@yahoo.dk>
+
+
 2007.November.17 (0.9.18)
   * Interface Improvements:
     -----------------------
