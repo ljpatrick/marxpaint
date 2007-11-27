@@ -1,5 +1,5 @@
                                    Tux Paint
-                                 version 0.9.18
+                                 version 0.9.19
 
                              Options Documentation
 
@@ -9,7 +9,7 @@
                            bill@newbreedsoftware.com
                             http://www.tuxpaint.org/
 
-                                October 26, 2007
+                               November 27, 2007
 
    --------------------------------------------------------------------------
 
