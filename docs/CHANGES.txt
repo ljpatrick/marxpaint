@@ -9,11 +9,16 @@ http://www.tuxpaint.org/
 $Id$
 
 
-2007.November.27 (0.9.19)
+2007.December.1 (0.9.19)
   * Localization Updates:
     ---------------------
     * Danish translation
       Joe Hansen <joedalton2@yahoo.dk>
+
+  * Bug Fixes
+    ---------
+    * Corrected bug where Shift and Kaleidoscope magic tools would crash
+      when sound was disabled.
 
 
 2007.November.17 (0.9.18)

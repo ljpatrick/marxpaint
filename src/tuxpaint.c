@@ -22,7 +22,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
   
-  June 14, 2002 - November 21, 2007
+  June 14, 2002 - December 1, 2007
   $Id$
 */
 
@@ -17181,7 +17181,10 @@ void special_notify(int flags)
 void magic_stopsound(void)
 {
 #ifndef NOSOUND
- Mix_HaltChannel(0);
+  if (mute || !use_sound)
+    return;
+
+  Mix_HaltChannel(0);
 #endif
 }
 
