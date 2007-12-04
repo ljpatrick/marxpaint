@@ -1938,6 +1938,7 @@ static void mainloop(void)
 	}
 	else if (key == SDLK_s && (mod & KMOD_ALT))
 	{
+#ifndef NOSOUND
 	  if (use_sound)
 	  {
 	    mute = !mute;
@@ -1954,6 +1955,7 @@ static void mainloop(void)
 	      draw_tux_text(TUX_BORED, gettext("Sound unmuted."), 0);
             }
 	  }
+#endif
 	}
 	else if (key == SDLK_ESCAPE &&
 		 (mod & KMOD_SHIFT) && (mod & KMOD_CTRL))
@@ -3312,6 +3314,7 @@ static void mainloop(void)
 	{
 	  /* A sound player button on the lower left has been pressed! */
 
+#ifndef NOSOUND
 	  if (cur_tool == TOOL_STAMP && use_sound && !mute)
           {
 	    which = GRIDHIT_GD(r_sfx, gd_sfx);
@@ -3331,6 +3334,7 @@ static void mainloop(void)
 	      Mix_PlayChannel(2, stamp_data[stamp_group][cur_thing]->sdesc, 0);
 	    }
 	  }
+#endif
         }
       }
       else if (event.type == SDL_MOUSEBUTTONDOWN &&
@@ -3492,6 +3496,7 @@ static void mainloop(void)
 
 	  debug("Playing description sound...");
 
+#ifndef NOSOUND
 	  Mix_ChannelFinished(NULL);	// Kill the callback, so we don't get stuck in a loop!
 
 	  if (event.user.data1 != NULL)
@@ -3503,6 +3508,7 @@ static void mainloop(void)
 				0);
 	    }
 	  }
+#endif
 	}
       }
       else if (event.type == SDL_MOUSEBUTTONUP)

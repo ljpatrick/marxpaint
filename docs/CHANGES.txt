@@ -24,6 +24,9 @@ $Id$
     * Corrected bug where Shift and Kaleidoscope magic tools would crash
       when sound was disabled.
 
+    * Corrected issues that prevented building Tux Paint without sound
+      support (extraneous SDL_mixer library calls).
+
 
 2007.November.17 (0.9.18)
   * Interface Improvements:
