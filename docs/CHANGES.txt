@@ -19,6 +19,10 @@ $Id$
     ----------------------------
     * Removed unfinished, unused record and playback code.
 
+  * Build System Improvements
+    -------------------------
+    * Cleaned up some BeOS-related things; disabling SVG and Pango for BeOS.
+
   * Bug Fixes
     ---------
     * Corrected bug where Shift and Kaleidoscope magic tools would crash

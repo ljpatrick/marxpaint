@@ -7,7 +7,7 @@
 # bill@newbreedsoftware.com
 # http://www.tuxpaint.org/
 
-# June 14, 2002 - November 27, 2007
+# June 14, 2002 - December 4, 2007
 
 
 # The version number, for release:
@@ -260,11 +260,13 @@ beos:
 		X11_ICON_PREFIX=. \
 		LOCALE_PREFIX=/boot/home/config/share/locale \
 		IM_PREFIX=./src \
+		SVG_LIB= SVG_CFLAGS= NOSVGFLAG=NOSVG \
+		NOPANGOFLAG=NO_SDLPANGO SDL_PANGO_LIB= \
 		CFLAGS="-O1 -funroll-loops -fomit-frame-pointer -pipe -Wall" \
 		RSRC_CMD="xres -o tuxpaint tuxpaint.rsrc" \
 		MIMESET_CMD="mimeset -f tuxpaint" \
 		ARCH_LINKS="-lintl -lpng -lz -lbe" \
-		ARCH_HEADERS="src/BeOS_Print.h" \
+		ARCH_HEADERS="src/BeOS_print.h" \
 		ARCH_LIBS="obj/BeOS_print.o"
 
 # "make win32" builds the program for Windows 2K/XP/Vista using MinGW/MSYS.
@@ -455,11 +457,13 @@ install-beos:
 		X11_ICON_PREFIX=. \
 		LOCALE_PREFIX=/boot/home/config/share/locale \
 		IM_PREFIX=./src \
+		SVG_LIB= SVG_CFLAGS= NOSVGFLAG=NOSVG \
+		NOPANGOFLAG=NO_SDLPANGO SDL_PANGO_LIB= \
 		CFLAGS="-O1 -funroll-loops -fomit-frame-pointer -pipe -Wall" \
 		RSRC_CMD="xres -o tuxpaint tuxpaint.rsrc" \
 		MIMESET_CMD="mimeset -f tuxpaint" \
 		ARCH_LINKS="-lintl -lpng -lz -lbe" \
-		ARCH_HEADERS="src/BeOS_Print.h" \
+		ARCH_HEADERS="src/BeOS_print.h" \
 		ARCH_LIBS="obj/BeOS_print.o"
 
 # "make install-win32" installs Tux Paint, but using MinGW/MSYS settings
@@ -975,7 +979,7 @@ obj/rgblinear.o:	src/rgblinear.c src/rgblinear.h \
 		-c src/rgblinear.c -o obj/rgblinear.o
 
 
-obj/BeOS_Print.o:	src/BeOS_Print.cpp src/BeOS_print.h
+obj/BeOS_print.o:	src/BeOS_print.cpp src/BeOS_print.h
 	@echo
 	@echo "...Compiling BeOS print support..."
 	@$(CC) $(CFLAGS) $(DEBUG_FLAGS) $(SDL_CFLAGS) $(DEFS) \
