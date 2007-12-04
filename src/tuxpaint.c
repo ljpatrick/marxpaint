@@ -22,7 +22,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
   
-  June 14, 2002 - December 1, 2007
+  June 14, 2002 - December 4, 2007
   $Id$
 */
 
@@ -851,9 +851,6 @@ static int fullscreen, native_screensize, disable_quit, simple_shapes,
 static int want_alt_printcommand;
 static int starter_mirrored, starter_flipped, starter_personal;
 static Uint8 canvas_color_r, canvas_color_g, canvas_color_b;
-static int recording, playing;
-static char *playfile;
-static FILE *demofi;
 Uint8 * touched;
 
 
@@ -1485,8 +1482,6 @@ static char *remove_slash(char *path);
 static void anti_carriage_return(int left, int right, int cur_top,
 				 int new_top, int cur_bot, int line_width);
 #endif
-static int mySDL_WaitEvent(SDL_Event * event);
-static int mySDL_PollEvent(SDL_Event * event);
 static void load_starter_id(char *saved_id);
 static void load_starter(char *img_id);
 static SDL_Surface *duplicate_surface(SDL_Surface * orig);
@@ -1553,7 +1548,7 @@ static void do_wait(int counter)
 
   do
   {
-    while (mySDL_PollEvent(&event))
+    while (SDL_PollEvent(&event))
     {
       if (event.type == SDL_QUIT)
       {
@@ -1908,7 +1903,7 @@ static void mainloop(void)
     pre_event_time = SDL_GetTicks();
 
 
-    while (mySDL_PollEvent(&event))
+    while (SDL_PollEvent(&event))
     {
       current_event_time = SDL_GetTicks();
 
@@ -4953,7 +4948,6 @@ static void show_usage(FILE * f, char *prg)
 	  "  %s [--nosysconfig]\n"
           "  %s [--nolockfile]\n"
 	  "  %s [--colorfile FILE]\n"
-	  /* "  %s [--record FILE | --playback FILE]\n" */
 	  "\n",
 	  prg, prg,
 	  blank, blank, blank, blank,
@@ -6104,9 +6098,6 @@ static void setup(int argc, char *argv[])
   WINDOW_WIDTH = 1200;
   WINDOW_HEIGHT = 900;
 #endif
-  playfile = NULL;
-  recording = 0;
-  playing = 0;
   ok_to_use_lockfile = 1;
   start_blank = 0;
   colorfile[0] = '\0';
@@ -6614,29 +6605,6 @@ static void setup(int argc, char *argv[])
       stamp_size_override = atoi(argv[i] + 12);
       if (stamp_size_override > 10)
 	stamp_size_override = 10;
-    }
-    else if (strcmp(argv[i], "--record") == 0 ||
-	     strcmp(argv[i], "--playback") == 0)
-    {
-      if (i < argc - 1)
-      {
-	playfile = strdup(argv[i + 1]);
-
-	if (strcmp(argv[i], "--record") == 0)
-	  recording = 1;
-	else if (strcmp(argv[i], "--playback") == 0)
-	  playing = 1;
-
-	i++;
-      }
-      else
-      {
-	/* Forgot to specify the filename! */
-
-	fprintf(stderr, "%s takes an argument\n", argv[i]);
-	show_usage(stderr, (char *) getfilename(argv[0]));
-	exit(1);
-      }
     }
     else if (strcmp(argv[i], "--version") == 0 || strcmp(argv[i], "-v") == 0)
     {
@@ -7740,35 +7708,6 @@ static void setup(int argc, char *argv[])
 
   signal(SIGPIPE, signal_handler);
 #endif
-
-  /* Open demo recording or playback file: */
-
-  if (recording)
-  {
-    demofi = fopen(playfile, "w");
-
-    if (demofi == NULL)
-    {
-      fprintf(stderr, "Error: Cannot create recording file: %s\n"
-	      "%s\n\n", playfile, strerror(errno));
-      exit(1);
-    }
-  }
-  else if (playing)
-  {
-    demofi = fopen(playfile, "r");
-
-    if (demofi == NULL)
-    {
-      fprintf(stderr, "Error: Cannot open playback file: %s\n"
-	      "%s\n\n", playfile, strerror(errno));
-      exit(1);
-    }
-  }
-  else
-  {
-    demofi = NULL;
-  }
 }
 
 #ifndef WIN32
@@ -11489,7 +11428,7 @@ static int do_prompt_image_flash_snd(const char *const text,
 
   do
   {
-    while (mySDL_PollEvent(&event))
+    while (SDL_PollEvent(&event))
     {
       if (event.type == SDL_QUIT)
       {
@@ -11868,14 +11807,6 @@ static void cleanup(void)
   /* (Just in case...) */
 
   SDL_WM_GrabInput(SDL_GRAB_OFF);
-
-
-  /* Close recording or playback file: */
-
-  if (demofi != NULL)
-  {
-    fclose(demofi);
-  }
 
 
   /* If we're using a lockfile, we can 'clear' it when we quit
@@ -13142,7 +13073,7 @@ int do_open(void)
         }
 
 
-        mySDL_WaitEvent(&event);
+        SDL_WaitEvent(&event);
 
         if (event.type == SDL_QUIT)
         {
@@ -14141,7 +14072,7 @@ int do_slideshow(void)
     }
 
 
-    mySDL_WaitEvent(&event);
+    SDL_WaitEvent(&event);
 
     if (event.type == SDL_QUIT)
     {
@@ -15983,77 +15914,6 @@ static void anti_carriage_return(int left, int right, int cur_top,
 #endif
 
 
-static int mySDL_WaitEvent(SDL_Event * event)
-{
-  int ret;
-
-
-  if (playing)
-  {
-    if (!feof(demofi))
-    {
-      ret = 1;
-      fread(event, sizeof(SDL_Event), 1, demofi);
-    }
-    else
-    {
-      /* All done!  Back to normal! */
-
-      printf("(Done playing playback file '%s')\n", playfile);
-
-      ret = 0;
-      playing = 0;
-    }
-  }
-  else
-  {
-    ret = SDL_WaitEvent(event);
-
-    if (recording)
-    {
-      fwrite(event, sizeof(SDL_Event), 1, demofi);
-    }
-  }
-
-  return ret;
-}
-
-
-static int mySDL_PollEvent(SDL_Event * event)
-{
-  int ret;
-
-  if (playing)
-  {
-    if (!feof(demofi))
-    {
-      ret = 1;
-      fread(event, sizeof(SDL_Event), 1, demofi);
-    }
-    else
-    {
-      /* All done!  Back to normal! */
-
-      printf("(Done playing playback file '%s')\n", playfile);
-
-      ret = 0;
-      playing = 0;
-    }
-  }
-  else
-  {
-    ret = SDL_PollEvent(event); // BUGBUG: Conditional jump or move depends on uninitialised value(s)
-
-    if (recording && ret > 0)
-    {
-      fwrite(event, sizeof(SDL_Event), 1, demofi);
-    }
-  }
-
-  return ret;
-}
-
-
 static SDL_Surface *duplicate_surface(SDL_Surface * orig)
 {
   /*
@@ -17775,7 +17635,7 @@ int do_new_dialog(void)
     }
 
 
-    mySDL_WaitEvent(&event);
+    SDL_WaitEvent(&event);
 
     if (event.type == SDL_QUIT)
     {
@@ -18482,7 +18342,7 @@ int do_color_picker(void)
 
   do
   {
-    while (mySDL_PollEvent(&event))
+    while (SDL_PollEvent(&event))
     {
       if (event.type == SDL_QUIT)
       {

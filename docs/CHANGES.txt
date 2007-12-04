@@ -9,11 +9,15 @@ http://www.tuxpaint.org/
 $Id$
 
 
-2007.December.1 (0.9.19)
+2007.December.4 (0.9.19)
   * Localization Updates:
     ---------------------
     * Danish translation
       Joe Hansen <joedalton2@yahoo.dk>
+
+  * System-Related Improvements:
+    ----------------------------
+    * Removed unfinished, unused record and playback code.
 
   * Bug Fixes
     ---------
