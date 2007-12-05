@@ -9,7 +9,7 @@
                            bill@newbreedsoftware.com
                             http://www.tuxpaint.org/
 
-                       June 14, 2002 - November 27, 2007
+                        June 14, 2002 - December 4, 2007
 
    --------------------------------------------------------------------------
 
@@ -780,9 +780,17 @@ Doing it Manually
                      documentation file "PNG.txt" for a list of suggested
                      software, and other references.)
 
-                     Reduce the size of the image to no wider than 448 pixels
-                     across and no taller than 376 pixels tall. (i.e., the
-                     maximum size is 448 x 376 pixels)
+                     When Tux Paint loads an image that's not the same size
+                     as its drawing canvas, it scales (and sometimes smears
+                     the edges of) the image so that it fits within the
+                     canvas.
+
+                     To avoid having the image stretched or smeared, you can
+                     resize it to Tux Paint's canvas size. This size depends
+                     on the size of the Tux Paint window, or resolution at
+                     which Tux Paint is run, if in fullscreen. (Note: The
+                     default resolution is 800x600.) See "Calculating Image
+                     Dimensions", below.
 
                      Save the picture in PNG format. It is highly recommended
                      that you name the filename using the current date and
@@ -803,6 +811,37 @@ Doing it Manually
 
                      Place this PNG file in your Tux Paint 'saved' directory.
                      (See above.)
+
+  Calculating Image Dimensions
+
+                       The width of Tux Paint's canvas is simply the width of
+                       the window (e.g., 640, 800 or 1024 pixels), minus 192.
+
+                       Calculating the height of Tux Paint's canvas requires
+                       multiple steps:
+
+                         1. Take the height of the window (e.g, 480, 600 or
+                            768 pixels) and subtract 144
+                         2. Take the result of Step 1 and divide it by 48
+                         3. Take the result of Step 2 and round it down
+                            (e.g., 9.5 becomes simply 9)
+                         4. Take the result of Step 3 and multiply it by 48
+                         5. Finally, take the result of Step 4 and add 40
+
+                       Example: Tux Paint running at fullscreen on a 1440x900
+                       display.
+
+                          * The canvas width is simply 1440 - 192, or 1248.
+                          * The canvas height is calculated as:
+
+                              1. 900 - 144, or 756
+                              2. 756 / 48, or 15.75
+                              3. 15.75 rounded down, or 15
+                              4. 15 * 48, or 720
+                              5. 720 + 40, or 760
+
+                       So the canvas within a 1440x900 Tux Paint window is
+                       1248x760.
 
    --------------------------------------------------------------------------
 

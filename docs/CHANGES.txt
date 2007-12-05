@@ -19,6 +19,11 @@ $Id$
     ----------------------------
     * Removed unfinished, unused record and playback code.
 
+  * Documentation Improvements:
+    ---------------------------
+    * Brought documentation on Tux Paint canvas size up-to-date, for
+      importing photos/etc.
+
   * Build System Improvements
     -------------------------
     * Cleaned up some BeOS-related things; disabling SVG and Pango for BeOS.
