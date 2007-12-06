@@ -7,7 +7,7 @@
 # bill@newbreedsoftware.com
 # http://www.tuxpaint.org/
 
-# June 14, 2002 - December 4, 2007
+# June 14, 2002 - December 6, 2007
 
 
 # The version number, for release:
@@ -250,24 +250,32 @@ olpc:
 
 beos:
 	make \
-		PREFIX=/boot/develop/tools/gnupro \
+		PREFIX=./ \
 		BIN_PREFIX=./ \
 		DATA_PREFIX=./data \
 		DOC_PREFIX=./docs \
-		MAN_PREFIX=./src \
-		CONFDIR=./src/ \
+		MAN_PREFIX=./share/man \
+		CONFDIR=./share/conf \
 		ICON_PREFIX=. \
 		X11_ICON_PREFIX=. \
-		LOCALE_PREFIX=/boot/home/config/share/locale \
+		LOCALE_PREFIX=./share/locale \
+		NOSVGFLAG=NOSVG \
+		NOPANGOFLAG=NO_SDLPANGO \
+		SDL_PANGO_LIB= \
+		SVG_LIB= \
+		PAPER_LIB= \
 		IM_PREFIX=./src \
-		SVG_LIB= SVG_CFLAGS= NOSVGFLAG=NOSVG \
-		NOPANGOFLAG=NO_SDLPANGO SDL_PANGO_LIB= \
+		SDL_CFLAGS="$(shell sdl-config --cflags)" \
+		SDL_LIBS="$(shell sdl-config --libs) -lSDL -lSDL_image -lSDL_ttf $(SDL_MIXER_LIB)" \
+		SDL_MIXER_LIB=-lSDL_mixer \
 		CFLAGS="-O1 -funroll-loops -fomit-frame-pointer -pipe -Wall" \
-		RSRC_CMD="xres -o tuxpaint tuxpaint.rsrc" \
+		RSRC_CMD="xres -o tuxpaint src/tuxpaint.rsrc" \
 		MIMESET_CMD="mimeset -f tuxpaint" \
-		ARCH_LINKS="-lintl -lpng -lz -lbe" \
+		ARCH_LINKS="-L/boot/home/config/lib -lintl -lpng -lz -lbe -liconv" \
 		ARCH_HEADERS="src/BeOS_print.h" \
-		ARCH_LIBS="obj/BeOS_print.o"
+		ARCH_LIBS="obj/BeOS_print.o" \
+		MAGIC_PREFIX=./lib/tuxpaint/plugins \
+		TARGET_PASSTHRU=beos
 
 # "make win32" builds the program for Windows 2K/XP/Vista using MinGW/MSYS.
 # The DATA_, DOC_ and LOCALE_ prefixes are absolute paths.
