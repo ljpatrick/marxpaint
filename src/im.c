@@ -570,9 +570,12 @@ static int charmap_load(CHARMAP* cm, const char* path)
         if(charmap_add(cm, section, buf, unicode, flag)) {
           size_t i = 0;
 
+#ifndef __BEOS__
           fwprintf(stderr, L"Unable to add sequence '%ls', unicode ", buf);
           for(i = 0; i < wcslen(unicode); i++) fwprintf(stderr, L"%04X ", (int)unicode[i]);
           fwprintf(stderr, L"in section %d\n", section);
+#endif
+
           error_code = 1;
         }
     }

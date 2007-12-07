@@ -9,7 +9,7 @@ http://www.tuxpaint.org/
 $Id$
 
 
-2007.December.4 (0.9.19)
+2007.December.6 (0.9.19)
   * Localization Updates:
     ---------------------
     * Danish translation
@@ -26,7 +26,8 @@ $Id$
 
   * Build System Improvements
     -------------------------
-    * Cleaned up some BeOS-related things; disabling SVG and Pango for BeOS.
+    * Brought BeOS building up-to-date.
+      Begasus <Begasus@skynet.be>
 
   * Bug Fixes
     ---------

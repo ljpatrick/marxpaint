@@ -463,7 +463,7 @@ install-beos:
 		CONFDIR=./src/ \
 		ICON_PREFIX=. \
 		X11_ICON_PREFIX=. \
-		LOCALE_PREFIX=/boot/home/config/share/locale \
+		LOCALE_PREFIX=./build/share/locale \
 		IM_PREFIX=./src \
 		SVG_LIB= SVG_CFLAGS= NOSVGFLAG=NOSVG \
 		NOPANGOFLAG=NO_SDLPANGO SDL_PANGO_LIB= \
@@ -472,7 +472,8 @@ install-beos:
 		MIMESET_CMD="mimeset -f tuxpaint" \
 		ARCH_LINKS="-lintl -lpng -lz -lbe" \
 		ARCH_HEADERS="src/BeOS_print.h" \
-		ARCH_LIBS="obj/BeOS_print.o"
+		ARCH_LIBS="obj/BeOS_print.o" \
+		MAGIC_PREFIX=./build/lib/tuxpaint/plugins
 
 # "make install-win32" installs Tux Paint, but using MinGW/MSYS settings
 # Suitable for development/testing in the MinGW/MSYS environment.
@@ -885,7 +886,7 @@ tuxpaint:	obj/tuxpaint.o obj/i18n.o obj/im.o obj/cursor.o obj/pixels.o \
 		$(SDL_LIBS) \
 		$(SVG_LIB) \
 		$(PAPER_LIB) \
-		-lm $(ARCH_LINKS)
+		$(ARCH_LINKS)
 	@$(RSRC_CMD)
 	@$(MIMESET_CMD)
 

@@ -6,7 +6,7 @@
 # bill@newbreedsoftware.com
 # http://www.tuxpaint.org/
 
-# July 2007 - October 24, 2007
+# July 2007 - December 6, 2007
 
 
 SO_TYPE=so
@@ -58,6 +58,15 @@ clean:
 	@echo
 	@echo "Cleaning up the Magic plug-ins directory ($(PWD))"
 	@-rm -f *.$(SO_TYPE)
+
+
+# beos versions of the targets
+
+beos:
+	make \
+		SO_TYPE=so \
+		PLUGIN_LIBS="$(SDL_LIBS) $(ARCH_LINKS) $(SDL_CFLAGS) $(TP_MAGIC_CFLAGS)"
+
 
 # win32 versions of the targets
 

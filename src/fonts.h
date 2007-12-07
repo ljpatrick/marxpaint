@@ -8,7 +8,7 @@
 // plan to rip this out as soon as it is considered stable
 //#define THREADED_FONTS
 #define FORKED_FONTS
-#ifdef WIN32
+#if defined(WIN32) || defined(__BEOS__)
 #undef FORKED_FONTS
 #endif
 
