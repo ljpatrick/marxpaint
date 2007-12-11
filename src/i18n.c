@@ -54,7 +54,7 @@
 #define OLD_UPPERCASE_CODE
 #endif
 
-#ifdef OLD_UPPERCASE_CODE
+#ifndef OLD_UPPERCASE_CODE
 #include <wctype.h>
 #elif __BEOS__
 #include <wchar.h>

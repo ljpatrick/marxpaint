@@ -12,7 +12,7 @@
 
 # The version number, for release:
 
-VER_VERSION=0.9.19
+VER_VERSION=0.9.19-cvs-2007.12.11
 VER_DATE=`date +"%Y-%m-%d"`
 
 MAGIC_API_VERSION=0x00000001
