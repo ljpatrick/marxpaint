@@ -7,7 +7,7 @@
 # bill@newbreedsoftware.com
 # http://www.tuxpaint.org/
 
-# June 14, 2002 - December 6, 2007
+# June 14, 2002 - December 11, 2007
 
 
 # The version number, for release:
@@ -271,7 +271,7 @@ beos:
 		CFLAGS="-O1 -funroll-loops -fomit-frame-pointer -pipe -Wall" \
 		RSRC_CMD="xres -o tuxpaint src/tuxpaint.rsrc" \
 		MIMESET_CMD="mimeset -f tuxpaint" \
-		ARCH_LINKS="-L/boot/home/config/lib -lintl -lpng -lz -lbe -liconv" \
+		ARCH_LINKS="-lintl -lpng -lz -lbe -liconv" \
 		ARCH_HEADERS="src/BeOS_print.h" \
 		ARCH_LIBS="obj/BeOS_print.o" \
 		MAGIC_PREFIX=./lib/tuxpaint/plugins \

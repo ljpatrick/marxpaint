@@ -22,7 +22,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
   
-  June 14, 2002 - December 6, 2007
+  June 14, 2002 - December 11, 2007
   $Id$
 */
 
@@ -221,8 +221,10 @@ char *strcasestr(const char *haystack, const char *needle)
 
 #include <locale.h>
 
-#if !defined(OLD_UPPERCASE_CODE) || defined(__BEOS__)
+#ifdef OLD_UPPERCASE_CODE
 #include <wctype.h>
+#elif __BEOS__
+#include <wchar.h>
 #endif
 
 #include <libintl.h>

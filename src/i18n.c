@@ -25,7 +25,7 @@
 
   $Id$
 
-  June 14, 2002 - December 6, 2007
+  June 14, 2002 - December 11, 2007
 */
 
 #include <stdio.h>
@@ -54,8 +54,10 @@
 #define OLD_UPPERCASE_CODE
 #endif
 
-#if !defined(OLD_UPPERCASE_CODE) || defined(__BEOS__)
+#ifdef OLD_UPPERCASE_CODE
 #include <wctype.h>
+#elif __BEOS__
+#include <wchar.h>
 #endif
 
 
