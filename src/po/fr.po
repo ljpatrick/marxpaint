@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: fr\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-10-29 09:06-0700\n"
+"POT-Creation-Date: 2007-12-16 07:20+0100\n"
 "PO-Revision-Date: 2004-05-30 21:20-0700\n"
 "Last-Translator: jimmy <jacques.chion@wanadoo.fr>\n"
 "Language-Team:  <fr@li.org>\n"
@@ -171,6 +171,10 @@ msgstr ""
 
 #. Input Method: Thai mode
 msgid "Thai"
+msgstr ""
+
+#. Input Method: Traditional Chinese mode
+msgid "ZH_TW"
 msgstr ""
 
 #. Square shape tool (4 equally-lengthed sides at right angles)
@@ -594,7 +598,8 @@ msgid "Cartoon"
 msgstr "B.D."
 
 msgid "Click and move the mouse around to turn the picture into a cartoon."
-msgstr "Clique et déplace la souris pour transformer l'image comme une bande "
+msgstr ""
+"Clique et déplace la souris pour transformer l'image comme une bande "
 "dessinée."
 
 msgid "Distortion"
@@ -604,10 +609,10 @@ msgid "Click and drag the mouse to cause a distortion in your picture."
 msgstr "Clique et déplace la souris pour créer des déformations."
 
 msgid "Emboss"
-msgstr "Flou"
+msgstr "Relief"
 
 msgid "Click and drag the mouse to emboss the picture."
-msgstr "Clique et déplace la souris pour rendre l'image floue."
+msgstr "Clique et déplace la souris pour donner du relief à l'image."
 
 msgid "Lighten"
 msgstr "Éclaircir"
@@ -737,6 +742,9 @@ msgstr ""
 "Clique pour avoir un effet vagué. Clique vers le haut pour de courtes "
 "vagues, vers le bas pour de longues vagues, à gauche pour diminuer "
 "l'amplitude et à droite pour augmenter l'amplitude."
+
+#~ msgid "Relief"
+#~ msgstr "Flou"
 
 #~ msgid "Sparkles"
 #~ msgstr "Étincelles"

@@ -9,11 +9,14 @@ http://www.tuxpaint.org/
 $Id$
 
 
-2007.December.6 (0.9.19)
+2007.December.23 (0.9.19)
   * Localization Updates:
     ---------------------
     * Danish translation
       Joe Hansen <joedalton2@yahoo.dk>
+    
+    * French translation
+      Jacques Chion <Jacques.Chion@wanadoo.fr>
 
   * System-Related Improvements:
     ----------------------------
