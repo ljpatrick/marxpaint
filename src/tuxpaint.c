@@ -17019,7 +17019,8 @@ void special_notify(int flags)
 {
   int tmp_int;
 
-  tmp_int = (cur_undo - 1) % NUM_UNDO_BUFS;
+  tmp_int = cur_undo - 1;
+  if (tmp_int < 0) tmp_int = NUM_UNDO_BUFS - 1;
 
   if (flags & SPECIAL_MIRROR)
   {
