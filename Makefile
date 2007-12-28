@@ -243,7 +243,7 @@ olpc:
 	@echo
 	@echo "Building for an OLPC XO"
 	@echo
-	make SVG_LIB= SVG_CFLAGS= NOSVGFLAG=NOSVG OPTFLAGS='-O2 -fno-tree-pre -march=athlon -mtune=generic -mpreferred-stack-boundary=2 -mmmx -m3dnow -fomit-frame-pointer -falign-functions=0 -falign-jumps=0 -DOLPC_XO -DSUGAR'
+	make PREFIX=. SVG_LIB= SVG_CFLAGS= NOSVGFLAG=NOSVG OPTFLAGS='-O2 -fno-tree-pre -march=athlon -mtune=generic -mpreferred-stack-boundary=2 -mmmx -m3dnow -fomit-frame-pointer -falign-functions=0 -falign-jumps=0 -DOLPC_XO -DSUGAR'
 
 
 # "make beos" builds the program for BeOS
