@@ -9,7 +9,7 @@ http://www.tuxpaint.org/
 $Id$
 
 
-2007.December.23 (0.9.19)
+2007.December.29 (0.9.19)
   * Localization Updates:
     ---------------------
     * Danish translation
@@ -31,6 +31,11 @@ $Id$
     -------------------------
     * Brought BeOS building up-to-date.
       Begasus <Begasus@skynet.be>
+
+    * Sugar (One Laptop per Child XO-1) improvements.
+      Albert Cahalan <albert@users.sf.net>
+
+    * Magic plug-ins built with "-fpic" by default.
 
   * Bug Fixes
     ---------
