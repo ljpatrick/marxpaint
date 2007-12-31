@@ -11061,13 +11061,16 @@ static void load_current(void)
     {
       autoscale_copy_smear_free(tmp, canvas, SDL_BlitSurface);
       load_starter_id(file_id);
-      load_starter(starter_id);
-
-      if (starter_mirrored)
-	mirror_starter();
-
-      if (starter_flipped)
-	flip_starter();
+      if (starter_id[0] != '\0')
+      {
+        load_starter(starter_id);
+  
+        if (starter_mirrored)
+  	  mirror_starter();
+  
+        if (starter_flipped)
+  	  flip_starter();
+      }
     }
 
     free(fname);
