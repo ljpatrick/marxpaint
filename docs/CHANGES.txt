@@ -9,7 +9,7 @@ http://www.tuxpaint.org/
 $Id$
 
 
-2007.December.29 (0.9.19)
+2007.December.31 (0.9.19)
   * Localization Updates:
     ---------------------
     * Danish translation
@@ -44,6 +44,14 @@ $Id$
 
     * Corrected issues that prevented building Tux Paint without sound
       support (extraneous SDL_mixer library calls).
+
+    * Preventing crash when starter images could not be loaded
+      (when trying to flip or mirror them).
+      John Popplewell <john@johnnypops.demon.co.uk>
+
+    * Fixed bug on Windows that caused image's metadata file to become corrupt
+      after 40 flips or mirrors, which in turn caused a crash on startup.
+      John Popplewell <john@johnnypops.demon.co.uk>
 
 
 2007.November.17 (0.9.18)
