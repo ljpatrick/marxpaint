@@ -2,19 +2,22 @@ CHANGES.txt for Tux Paint
 
 Tux Paint - A simple drawing program for children.
 
-Copyright (c) 2002-2007 by Bill Kendrick and others
+Copyright (c) 2002-2008 by Bill Kendrick and others
 bill@newbreedsoftware.com
 http://www.tuxpaint.org/
 
 $Id$
 
 
-2007.December.31 (0.9.19)
+2008.January.3 (0.9.19)
   * Localization Updates:
     ---------------------
     * Danish translation
       Joe Hansen <joedalton2@yahoo.dk>
-    
+
+    * Finnish translation
+      Jorma Karvonen <karvjorm@users.sf.net>
+
     * French translation
       Jacques Chion <Jacques.Chion@wanadoo.fr>
 
