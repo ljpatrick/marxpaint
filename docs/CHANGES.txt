@@ -21,6 +21,9 @@ $Id$
     * French translation
       Jacques Chion <Jacques.Chion@wanadoo.fr>
 
+    * Gujarati translation
+      Kartik Mistry <kartik.mistry@gmail.com>
+
   * System-Related Improvements:
     ----------------------------
     * Removed unfinished, unused record and playback code.
