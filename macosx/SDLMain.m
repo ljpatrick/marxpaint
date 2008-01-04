@@ -11,6 +11,7 @@
 #import <unistd.h>
 
 #import "macosx_print.h"
+#import "message.h"
 #import "wrapperdata.h"
 
 /* For some reaon, Apple removed setAppleMenu from the headers in 10.4,
@@ -46,6 +47,7 @@ static BOOL   gFinderLaunch;
 static BOOL   gCalledAppMainline = FALSE;
 
 WrapperData macosx; 
+SDLMain *sdlMain;
 
 static NSString *getApplicationName(void)
 {
@@ -70,6 +72,11 @@ static NSString *getApplicationName(void)
 @end
 #endif
 
+/* Category for NSFileManager */
+@interface NSFileManager (CreateDirectoryRecursively)
+- (BOOL)createDirectoryRecursively:(NSString *)path attributes:(NSDictionary *)attributes;
+@end
+
 @interface SDLApplication : NSApplication
 @end
 
@@ -82,7 +89,9 @@ static NSString *getApplicationName(void)
 		if (NSKeyDown == [anEvent type] || NSKeyUp == [anEvent type])
 		{
 			if( ( [anEvent modifierFlags] & NSCommandKeyMask ) == 0 ) 
+            {
 				return;		// do not intercept keystrokes intended for SDL layer
+            }
 		}
 	}
 	[super sendEvent: anEvent];
@@ -131,6 +140,9 @@ static NSString *getApplicationName(void)
   
   path = [@"~/Library/Application Support/TuxPaint" stringByExpandingTildeInPath];
   [path getCString:(macosx.preferencesPath)];
+  
+  path = @"/Library/Application Support/TuxPaint";
+  [path getCString:(macosx.globalPreferencesPath)];
 }
 
 -(void) fontsPath;
@@ -147,21 +159,53 @@ static NSString *getApplicationName(void)
 /* The main class of the application, the application's delegate */
 @implementation SDLMain
 
+- (IBAction) onAbout:(id)sender
+{
+    NSBundle *mainBundle = [NSBundle mainBundle];
+    NSDictionary *bundleInfo = [mainBundle infoDictionary];
+    NSMutableString *string;
+    NSMutableAttributedString *attributedString;
+    NSMutableDictionary *attributes;
+    
+    /* string attributes */
+    NSMutableParagraphStyle *paragraphStyle = [[NSParagraphStyle defaultParagraphStyle] mutableCopy];
+    [paragraphStyle setAlignment:NSCenterTextAlignment];
+    attributes = [NSMutableDictionary dictionary];
+    [attributes setObject:[NSFont boldSystemFontOfSize:12] forKey:NSFontAttributeName];
+    [attributes setObject:paragraphStyle forKey:NSParagraphStyleAttributeName];
+    [paragraphStyle release];
+    
+    /* display Tux Paint */
+    string = [bundleInfo objectForKey:@"CFBundleName"];
+    attributedString = [[NSAttributedString alloc] initWithString:string attributes:attributes];
+    [appnameText setAttributedStringValue:attributedString];
+    [attributedString release];
+    
+    /* display version */
+    string = [NSMutableString stringWithString:@"Version "];
+    [string appendString:[bundleInfo objectForKey:@"CFBundleShortVersionString"]];
+    [string appendString:@" ("];
+    [string appendString:[bundleInfo objectForKey:@"CFBundleVersion"]];
+    [string appendString:@")"];
+    [versionText setStringValue:string];
+    
+    /* display credits */
+    NSString *filePath = [mainBundle pathForResource:@"credits" ofType:@"txt"];
+    string = [NSString stringWithContentsOfFile:filePath];
+    [attributes setObject:[NSFont systemFontOfSize:10] forKey:NSFontAttributeName];
+    attributedString = [[NSMutableAttributedString alloc] initWithString:string attributes:attributes];
+    [[acknowledgmentsText textStorage] setAttributedString:attributedString];
+    [attributedString release];
+    [acknowledgmentsText activateURLs];
+    [acknowledgmentsText setEditable:NO];
+
+    [aboutWindow makeKeyAndOrderFront:sender];
+}
+
+
 - (IBAction) onNew:(id)sender
 {
 	[self sendSDLControlKeystroke:SDLK_n];
-	/*
-	[NSApp beginSheet:nameWindow
-	   modalForWindow:[NSApp mainWindow]
-		modalDelegate:nil
-	   didEndSelector:nil
-		  contextInfo:nil];
-	
-	[NSApp runModalForWindow:nameWindow];
-	
-	[NSApp endSheet:nameWindow];
-	[nameWindow orderOut:self];
-	 */
 }
 
 - (IBAction) onOpen:(id)sender
@@ -246,6 +290,24 @@ static NSString *getApplicationName(void)
 	}	
 }
 
+- (void) displayMessage:(NSString*)message andStatus:(NSString*)status withProgressIndicator:(BOOL)progress
+{
+    [messageText setStringValue:message];
+    [messageStatus setStringValue:status];
+    [messagePanel makeKeyAndOrderFront:nil];   
+    if (progress)
+    {
+        [messageProgress setUsesThreadedAnimation:YES];
+        [messageProgress startAnimation:nil];
+    }
+}
+
+- (void) hideMessage
+{
+    [messageProgress stopAnimation:nil];
+    [messagePanel close];
+}
+
 #if SDL_USE_NIB_FILE
 
 /* Fix menu to contain the real app name instead of "SDL App" */
@@ -268,7 +330,7 @@ static NSString *getApplicationName(void)
         if ([menuItem hasSubmenu])
             [self fixMenu:[menuItem submenu] withAppName:appName];
     }
-    [ aMenu sizeToFit ];
+    [aMenu sizeToFit];
 }
 
 #else
@@ -419,6 +481,40 @@ static void CustomApplicationMain (argc, argv)
 	[bridge preferencesPath];
 }
 
+/* Install any required files from app bundle to destination */
+- (void) installFiles
+{
+    NSFileManager *fileManager = [NSFileManager defaultManager];
+    NSBundle *bundle = [NSBundle mainBundle];
+    BOOL fileExists = NO;
+    
+    NSString *globalPreferencesPath = [NSString stringWithCString:(macosx.globalPreferencesPath)];
+    NSString *fontsPath = [globalPreferencesPath stringByAppendingString:@"/fontconfig/fonts"];
+    NSString *cachePath = [globalPreferencesPath stringByAppendingString:@"/fontconfig/cache"];
+    NSString *fontsConfInstalledPath = [fontsPath stringByAppendingString:@"/fonts.conf"];
+    NSString *fontsDtdInstalledPath = [fontsPath stringByAppendingString:@"/fonts.dtd"];
+    NSString *fontsConfBundlePath = [bundle pathForResource:@"fonts" ofType:@"conf"];
+    NSString *fontsDtdBundlePath = [bundle pathForResource:@"fonts" ofType:@"dtd"];
+    
+    fileExists = [fileManager fileExistsAtPath:fontsConfInstalledPath];
+    if (!fileExists) {
+        [fileManager createDirectoryRecursively:fontsPath attributes:nil];
+        [fileManager copyPath:fontsConfBundlePath toPath:fontsConfInstalledPath handler:nil];
+    }
+    
+    fileExists = [fileManager fileExistsAtPath:fontsDtdInstalledPath];
+    if (!fileExists) {
+        [fileManager createDirectoryRecursively:fontsPath attributes:nil];
+        [fileManager copyPath:fontsDtdBundlePath toPath:fontsDtdInstalledPath handler:nil];
+    }
+    
+    fileExists = [fileManager fileExistsAtPath:cachePath];
+    if (fileExists)
+        macosx.buildingFontCache = 0;
+    else
+        macosx.buildingFontCache = 1;
+}
+
 /*
  * Catch document open requests...this lets us notice files when the app
  *  was launched by double-clicking a document, or when a document was
@@ -467,6 +563,13 @@ static void CustomApplicationMain (argc, argv)
     return TRUE;
 }
 
+- (BOOL)textView:(NSTextView*)textView clickedOnLink:(id)link atIndex:(unsigned)charIndex 
+{
+    BOOL success;
+    success = [[NSWorkspace sharedWorkspace] openURL: link];
+    return success;
+}
+
 /* Called when the internal event loop has just started running */
 - (void) applicationDidFinishLaunching: (NSNotification *) note
 {
@@ -477,6 +580,9 @@ static void CustomApplicationMain (argc, argv)
 	
 	/* Set up Cocoa to SDL bridge */
 	[self setupBridge];
+    
+    /* Install any required files */
+    [self installFiles];
 	
     /* Set the working directory to the .app's parent directory */
     [self setupWorkingDirectory:gFinderLaunch];
@@ -485,7 +591,8 @@ static void CustomApplicationMain (argc, argv)
     /* Set the main menu to contain the real app name instead of "SDL App" */
     [self fixMenu:[NSApp mainMenu] withAppName:getApplicationName()];
 #endif
-	
+	sdlMain = self;
+    
     /* Hand off to main application code */
     gCalledAppMainline = TRUE;
     status = SDL_main (gArgc, gArgv);
@@ -535,7 +642,35 @@ static void CustomApplicationMain (argc, argv)
 
 @end
 
+@implementation NSFileManager (CreateDirectoryRecursively)
 
+- (BOOL)createDirectoryRecursively:(NSString *)path attributes:(NSDictionary *)attributes
+{ 
+    BOOL isDir = TRUE; 
+    BOOL fileExists;
+    
+    fileExists = [self fileExistsAtPath:path isDirectory:&isDir]; 
+    if (isDir) {
+        if (fileExists) {
+            /* directory exists */
+            return TRUE; 
+        }
+        else
+        {
+            /* create directory */
+            NSString *parentDirectory = [path stringByDeletingLastPathComponent];
+            [self createDirectoryRecursively:parentDirectory attributes:attributes]; 
+            return [self createDirectoryAtPath:path attributes:attributes];
+        }
+    }
+    else
+    { 
+        /* desired directory path is blocked by a file */ 
+        return FALSE; 
+    }  
+} 
+
+@end
 
 #ifdef main
 #  undef main

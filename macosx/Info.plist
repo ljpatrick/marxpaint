@@ -12,12 +12,18 @@
 	<string>com.newbreedsoftware.tuxpaint</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
+    <key>CFBundleName</key>
+	<string>Tux Paint</string>
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
+    <key>CFBundleShortVersionString</key>
+	<string>0.9.18</string>
+    <key>CFBundleGetInfoString</key>
+    <string>0.9.18, Copyright 2007, Tux Paint Development Team</string>
 	<key>CFBundleSignature</key>
 	<string>TXPT</string>
 	<key>CFBundleVersion</key>
-	<string>2006-10-18</string>
+	<string>2007-12-17</string>
 	<key>NSMainNibFile</key>
 	<string>SDLMain</string>
 	<key>NSPrincipalClass</key>
