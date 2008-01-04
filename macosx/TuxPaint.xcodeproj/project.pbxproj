@@ -2024,8 +2024,8 @@
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "cd ../\nmake translations\nmake LOCALE_PREFIX=./locale install-gettext\n";
+			shellPath = /bin/zsh;
+			shellScript = "# set path to msgfmt command in MacPorts or Fink\nPATH=/opt/local/bin:/sw/bin/:$PATH\n\ncd ../\n{\n\tmake translations\n} always {\n\techo 'Did you get an error complaining that the msgfmt command was not found?  If so, please install the \"gettext\" package via MacPorts or Fink.'\n}\nmake LOCALE_PREFIX=./locale install-gettext";
 		};
 /* End PBXShellScriptBuildPhase section */
 
