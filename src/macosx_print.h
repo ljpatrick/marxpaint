@@ -3,7 +3,8 @@
 //  Tux Paint
 //
 //  Created by Darrell Walisser on Sat Mar 15 2003.
-//  Copyright (c) 2003 Darrell Walisser. All rights reserved.
+//  Modified by Martin Fuhrer 2007.
+//  Copyright (c) 2007 Darrell Walisser, Martin Fuhrer. All rights reserved.
 //  $Id$
 //
 //  This program is free software; you can redistribute it and/or modify
@@ -34,8 +35,7 @@ int DisplayPageSetup(const SDL_Surface *surface);
 	bool displayPrintSetupSheet;
 	bool displayPrintSheet;
 }
-
-- 
+-
 @end
 
 #endif OBJECTIVEC

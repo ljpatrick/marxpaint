@@ -3,7 +3,8 @@
 //  Tux Paint
 //
 //  Created by Darrell Walisser on Sat Mar 15 2003.
-//  Copyright (c) 2003 Darrell Walisser.
+//  Modified by Martin Fuhrer 2007.
+//  Copyright (c) 2007 Darrell Walisser, Martin Fuhrer.
 //
 //  This program is free software; you can redistribute it and/or modify
 //  it under the terms of the GNU General Public License as published by

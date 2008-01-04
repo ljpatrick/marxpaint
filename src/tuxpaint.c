@@ -279,6 +279,8 @@ typedef struct safer_dirent
 /* Apple */
 
 #include "macosx_print.h"
+#include "message.h"
+#include "speech.h"
 #include "wrapperdata.h"
 extern WrapperData macosx;
 
@@ -985,6 +987,11 @@ static SDL_Surface *render_text(TuxPaint_Font * restrict font,
     fflush(stdout);
     return NULL;
   }
+  
+#ifdef __APPLE__
+  if (macosx.buildingFontCache == 1)
+    displayMessage( MSG_FONT_CACHE );
+#endif  
 
 #ifndef NO_SDLPANGO
   if (font->typ == FONT_TYPE_PANGO)
@@ -998,10 +1005,18 @@ static SDL_Surface *render_text(TuxPaint_Font * restrict font,
 
     SDLPango_SetDefaultColor(font->pango_context, &pango_color);
     SDLPango_SetText(font->pango_context, str, -1);
-    ret = SDLPango_CreateSurfaceDraw(font->pango_context); 
+    ret = SDLPango_CreateSurfaceDraw(font->pango_context);     
   }
 #endif
 
+#ifdef __APPLE__
+  if (macosx.buildingFontCache = 1)
+  {
+    macosx.buildingFontCache = 0;
+    hideMessage();
+  }
+#endif
+  
   if (font->typ == FONT_TYPE_TTF)
   {
 #ifdef DEBUG
@@ -2196,6 +2211,12 @@ static void mainloop(void)
 	        cursor_y = min(cursor_y + font_height, canvas->h - font_height);
 
 	        playsound(screen, 0, SND_RETURN, 1, SNDPOS_RIGHT, SNDDIST_NEAR);
+#ifndef NOSOUND
+#ifdef __APPLE__
+            if (use_sound)
+              speak_string(texttool_str);
+#endif
+#endif
 		im_softreset(&im_data);
 	      }
 	      else if (*im_cp == L'\t')
@@ -2208,6 +2229,12 @@ static void mainloop(void)
 	          texttool_len = 0;
 	          cursor_textwidth = 0;
 	        }
+#ifndef NOSOUND
+#ifdef __APPLE__
+            if (use_sound)
+              speak_string(texttool_str);
+#endif
+#endif              
 		im_softreset(&im_data);
 	      }
 	      else if (iswprint(*im_cp))
