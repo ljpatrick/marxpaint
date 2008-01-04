@@ -4,6 +4,7 @@
         {
             ACTIONS = {
                 makeFullscreen = id; 
+                onAbout = id; 
                 onHelp = id; 
                 onNew = id; 
                 onOpen = id; 
@@ -16,8 +17,19 @@
             }; 
             CLASS = SDLMain; 
             LANGUAGE = ObjC; 
+            OUTLETS = {
+                aboutWindow = NSWindow; 
+                acknowledgmentsText = TransparentTextView; 
+                appnameText = NSTextField; 
+                messagePanel = NSPanel; 
+                messageProgress = NSProgressIndicator; 
+                messageStatus = NSTextField; 
+                messageText = NSTextField; 
+                versionText = NSTextField; 
+            }; 
             SUPERCLASS = NSObject; 
-        }
+        }, 
+        {CLASS = TransparentTextView; LANGUAGE = ObjC; SUPERCLASS = NSTextView; }
     ); 
     IBVersion = 1; 
 }
