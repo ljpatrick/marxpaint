@@ -9,7 +9,7 @@ http://www.tuxpaint.org/
 $Id$
 
 
-2008.January.3 (0.9.19)
+2008.January.4 (0.9.19)
   * Localization Updates:
     ---------------------
     * Danish translation
@@ -42,6 +42,12 @@ $Id$
       Albert Cahalan <albert@users.sf.net>
 
     * Magic plug-ins built with "-fpic" by default.
+
+    * Mac OS X XCode project brought up to date.
+      Martin Fuhrer <mfuhrer@users.sourceforge.net>
+      With assistance from:
+      Carlo Gandolfi <www.freesmug.org>
+      Douglas Barbieri <doug@dooglio.net>
 
   * Bug Fixes
     ---------
