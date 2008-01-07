@@ -7,7 +7,7 @@ bill@newbreedsoftware.com
 http://www.tuxpaint.org/
 
 
-June 17, 2002 - January 3, 2008
+June 17, 2002 - January 7, 2008
 
 $Id$
 
@@ -243,6 +243,8 @@ $Id$
 
   * Danish
     Joe Hansen <joedalton2@yahoo.dk>
+    Gruppen for Lokalisering af Frit Programmel til Dansk
+      <http://dansk-gruppen.dk>
     Rasmus Erik Voel Jensen <i18n@solsort.dk> [retired]
     Mogens Jæger <mogensjaeger@get2net.dk> 
     Mikkel Kirkgaard Nielsen <translation@mikini.dk>

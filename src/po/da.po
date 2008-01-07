@@ -403,9 +403,10 @@ msgstr "Hold knappen nede for at trække formen."
 msgid "Move the mouse to rotate the shape. Click to draw it."
 msgstr "Bevæg musen for at dreje figuren. Klik for at tegne den."
 
+# O.k. kunne godt være et lydord her, så stavningen skulle være Ok
 #. Notification that 'New' action was aborted (current image would have been lost)
 msgid "OK then… Let’s keep drawing this one!"
-msgstr "O.k. da… fortsæt med denne tegning!"
+msgstr "O.k. så… lad os fortsætte med denne tegning!"
 
 #. Prompt to confirm user wishes to quit
 msgid "Do you really want to quit?"
@@ -608,7 +609,7 @@ msgid "Click and drag the mouse to cause a distortion in your picture."
 msgstr "Klik og bevæg musen rundt, for at skabe en forvrængning i billedet."
 
 # Engelsk forklaring af ordet emboss: to raise or represent (surface designs) in relief. 
-# Kunne også være præget, drevet, presset (præg, driv, pres).
+# Kunne også være præget, drevet, presset (præg, driv, pres), fremhæv.
 msgid "Emboss"
 msgstr "Tydeliggør"
 
@@ -646,11 +647,13 @@ msgstr "Skum"
 msgid "Click and drag the mouse to cover an area with foamy bubbles."
 msgstr "Klik og bevæg musen rundt, for at dække et område med skumbobler."
 
+# kunne måske også være glasfelt, glasflise. Men er en knap hvor man gør 
+# billedet glasagtigt.
 msgid "Glass Tile"
-msgstr "Glasfelt"
+msgstr "Glasrude"
 
 msgid "Click and drag the mouse to put glass tile over your picture."
-msgstr "Klik og bevæg musen rundt, for at sætte glasfelter over dit billede."
+msgstr "Klik og bevæg musen rundt, for at sætte glasruder over dit billede."
 
 msgid "Grass"
 msgstr "Græs"
