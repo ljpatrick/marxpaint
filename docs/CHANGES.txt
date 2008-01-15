@@ -9,7 +9,7 @@ http://www.tuxpaint.org/
 $Id$
 
 
-2008.January.7 (0.9.19)
+2008.January.14 (0.9.19)
   * Localization Updates:
     ---------------------
     * Danish translation
@@ -25,6 +25,9 @@ $Id$
 
     * Gujarati translation
       Kartik Mistry <kartik.mistry@gmail.com>
+
+    * Russian translation
+      Sergei Popov <skein@rambler.ru>
 
   * System-Related Improvements:
     ----------------------------

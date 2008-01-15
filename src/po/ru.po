@@ -7,78 +7,95 @@ msgstr ""
 "Project-Id-Version: TuxPaint\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2007-11-11 11:20+0100\n"
-"PO-Revision-Date: 2007-04-04 20:05+0300\n"
-"Last-Translator: Сергей Попов <skein@rambler.ru>\n"
+"PO-Revision-Date: 2008-01-07 14:29+0300\n"
+"Last-Translator: Sergei Popov <skein@rambler.ru>\n"
 "Language-Team: Dmitriy Ivanov <ace22b@myrealbox.com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.3.1\n"
 
+# При выборе чёрного (0, 0, 0) цвета
 #. Response to Black (0, 0, 0) color selected
 msgid "Black!"
 msgstr "Чёрный!"
 
+# При выборе тёмно-серого (128, 128, 128) цвета
 #. Response to Dark grey (128, 128, 128) color selected
 msgid "Dark grey! Some people spell it “dark gray”."
 msgstr "Тёмно-серый!"
 
+# При выборе светло-серого (192, 192, 192) цвета
 #. Response to Light grey (192, 192, 192) color selected
 msgid "Light grey! Some people spell it “light gray”."
 msgstr "Светло-серый!"
 
+# При выборе белого (255, 255, 255) цвета
 #. Response to White (255, 255, 255) color selected
 msgid "White!"
 msgstr "Белый!"
 
+# При выборе красного (255, 0, 0) цвета
 #. Response to Red (255, 0, 0) color selected
 msgid "Red!"
 msgstr "Красный!"
 
+# При выборе оранжевого (255, 128, 0) цвета
 #. Response to Orange (255, 128, 0) color selected
 msgid "Orange!"
 msgstr "Оранжевый!"
 
+# При выборе жёлтого (255, 255, 0) цвета
 #. Response to Yellow (255, 255, 0) color selected
 msgid "Yellow!"
 msgstr "Жёлтый!"
 
+# При выборе светло-зелёного (160, 228, 128) цвета
 #. Response to Light green (160, 228, 128) color selected
 msgid "Light green!"
 msgstr "Светло-зелёный!"
 
+# При выборе тёмно-зелёного (33, 148, 70) цвета
 #. Response to Dark green (33, 148, 70) color selected
 msgid "Dark green!"
 msgstr "Тёмно-зелёный!"
 
+# При выборе голубого (138, 168, 205) цвета
 #. Response to "Sky" blue (138, 168, 205) color selected
 msgid "Sky blue!"
 msgstr "Голубой!"
 
+# При выборе синего (50, 100, 255) цвета
 #. Response to Blue (50, 100, 255) color selected
 msgid "Blue!"
 msgstr "Синий!"
 
+# При выборе сиреневого (186, 157, 255) цвета
 #. Response to Lavender (186, 157, 255) color selected
 msgid "Lavender!"
 msgstr "Сиреневый!"
 
+# При выборе пурпурного (128, 0, 128) цвета
 #. Response to Purple (128, 0, 128) color selected
 msgid "Purple!"
 msgstr "Пурпурный!"
 
+# При выборе розового (255, 165, 211) цвета
 #. Response to Pink (255, 165, 211) color selected
 msgid "Pink!"
 msgstr "Розовый!"
 
+# При выборе коричневого (128, 80, 0) цвета
 #. Response to Brown (128, 80, 0) color selected
 msgid "Brown!"
 msgstr "Коричневый!"
 
+# При выборе цвета загара (226, 189, 166)
 #. Response to Tan (226, 189, 166) color selected
 msgid "Tan!"
 msgstr "Загар!"
 
+# При выборе бежевого (247, 228, 219) цвета
 #. Response to Beige (247, 228, 219) color selected
 msgid "Beige!"
 msgstr "Бежевый!"
@@ -136,45 +153,55 @@ msgstr ""
 msgid "1Il|"
 msgstr ""
 
+# Поздравление №1
 #. Congratulations #1
 msgid "Great!"
 msgstr "Прекрасно!"
 
+# Поздравление №2
 #. Congratulations #2
 msgid "Cool!"
 msgstr "Здорово!"
 
+# Поздравление №3
 #. Congratulations #3
 msgid "Keep it up!"
 msgstr "Так и продолжай!"
 
+# Поздравление №4
 #. Congratulations #4
 msgid "Good job!"
 msgstr "Хорошая работа!"
 
+# Метод ввода: английский
 #. Input Method: English mode
 msgid "English"
-msgstr ""
+msgstr "Английский"
 
+# Метод ввода: японская романизированная хирагана
 #. Input Method: Japanese Romanized Hiragana mode
 msgid "Hiragana"
-msgstr ""
+msgstr "Хирагана"
 
+# Метод ввода: японская романизированная катакана
 #. Input Method: Japanese Romanized Katakana mode
 msgid "Katakana"
-msgstr ""
+msgstr "Катакана"
 
+# Метод ввода: корейский хангыль
 #. Input Method: Korean Hangul 2-Bul mode
 msgid "Hangul"
-msgstr ""
+msgstr "Хангыль"
 
+# Метод ввода: тайский
 #. Input Method: Thai mode
 msgid "Thai"
-msgstr ""
+msgstr "Тайский"
 
+# Метод ввода: традиционный китайский
 #. Input Method: Traditional Chinese mode
 msgid "ZH_TW"
-msgstr ""
+msgstr "Традиционный китайский"
 
 #. Square shape tool (4 equally-lengthed sides at right angles)
 msgid "Square"
@@ -205,9 +232,8 @@ msgid "Rhombus"
 msgstr "Ромб"
 
 #. Octagon shape tool (8 sides)
-#, fuzzy
 msgid "Octagon"
-msgstr "Пятиугольник"
+msgstr "Восьмиугольник"
 
 #. Description of a square
 msgid "A square is a rectangle with four equal sides."
@@ -217,12 +243,8 @@ msgstr "Квадрат - прямоугольник с четырьмя равн
 msgid "A rectangle has four sides and four right angles."
 msgstr "У прямоугольника четыре стороны и четыре прямых угла."
 
-#, fuzzy
-msgid ""
-"A circle is a curve where all points have the same distance from the center."
-msgstr ""
-"Окружность - это кривая, все точки которой удалены на равное расстояние от "
-"центра."
+msgid "A circle is a curve where all points have the same distance from the center."
+msgstr "Окружность - это кривая, все точки которой удалены на равное расстояние от центра."
 
 #. Description of an ellipse
 msgid "An ellipse is a stretched circle."
@@ -237,12 +259,10 @@ msgid "A pentagon has five sides."
 msgstr "А у пятиугольника пять сторон (и углов!)"
 
 msgid "A rhombus has four equal sides, and opposite sides are parallel."
-msgstr ""
-"У ромба все четыре стороны равны и противоположные стороны параллельны."
+msgstr "У ромба все четыре стороны равны и противоположные стороны параллельны."
 
-#, fuzzy
 msgid "An octagon has eight equal sides."
-msgstr "А у пятиугольника пять сторон (и углов!)"
+msgstr "А у восьмиугольника восемь сторон."
 
 #. Title of tool selector (buttons down the left)
 msgid "Tools"
@@ -338,16 +358,11 @@ msgstr "Выберите картину, чтобы поставить печа�
 
 #. Line tool instructions
 msgid "Click to start drawing a line. Let go to complete it."
-msgstr ""
-"Щёлкните, чтобы начать рисовать линию. Отпустите кнопку, чтобы закончить."
+msgstr "Щёлкните, чтобы начать рисовать линию. Отпустите кнопку, чтобы закончить."
 
 #. Shape tool instructions
-msgid ""
-"Pick a shape. Click to pick the center, drag, then let go when it is the "
-"size you want. Move around to rotate it, and click to draw it."
-msgstr ""
-"Выберите форму. Щёлкните для выбора центра, растяните до нужного размера, "
-"отпустите. Покрутите форму, затем щёлкните, чтобы нарисовать её."
+msgid "Pick a shape. Click to pick the center, drag, then let go when it is the size you want. Move around to rotate it, and click to draw it."
+msgstr "Выберите форму. Щёлкните для выбора центра, растяните до нужного размера, отпустите. Покрутите форму, затем щёлкните, чтобы нарисовать её."
 
 #. Text tool instructions
 msgid "Choose a style of text. Click on your drawing and you can start typing."
@@ -370,9 +385,8 @@ msgid "Eraser!"
 msgstr "Стереть!"
 
 #. Response to 'start a new image' action
-#, fuzzy
 msgid "Pick a color or picture with which to start a new drawing."
-msgstr "Выберите картину, чтобы поставить печать на вашем рисунке."
+msgstr "Выберите цвет или картинку, чтобы начать новый рисунок."
 
 #. Response to 'open' action (while file dialog is being constructed)
 msgid "Open…"
@@ -473,20 +487,22 @@ msgstr "Нет, не удалять!"
 msgid "Remember to use the left mouse button!"
 msgstr "Используйте только левую кнопку мыши!"
 
+# Звук можно заглушить, используя клавиатурное сокращение.
 #. Sound has been muted (silenced) via keyboard shortcut
 msgid "Sound muted."
-msgstr ""
+msgstr "Звук отключен."
 
+# Звук можно включить, используя клавиатурное сокращение.
 #. Sound has been unmuted (unsilenced) via keyboard shortcut
 msgid "Sound unmuted."
-msgstr ""
+msgstr "Звук включён."
 
 #. Wait while Text tool finishes loading fonts
 msgid "Please wait…"
 msgstr "Пожалуйста, подождите..."
 
 msgid "Pick a color."
-msgstr ""
+msgstr "Выберите цвет."
 
 #. Open dialog: 'Erase' button, to erase/deleted the selected picture
 msgid "Erase"
@@ -563,10 +579,8 @@ msgstr "Капанье"
 msgid "Click and move the mouse around to make the picture blocky."
 msgstr "Щёлкните и поводите по картинке, чтобы превратить её часть в мозаику."
 
-msgid ""
-"Click and move the mouse around to turn the picture into a chalk drawing."
-msgstr ""
-"Щёлкните и поводите по картинке, чтобы превратить её часть в рисунок мелом."
+msgid "Click and move the mouse around to turn the picture into a chalk drawing."
+msgstr "Щёлкните и поводите по картинке, чтобы превратить её часть в рисунок мелом."
 
 msgid "Click and move the mouse around to make the picture drip."
 msgstr "Щёлкните и поводите по картинке, чтобы заставьте её капать."
@@ -588,32 +602,28 @@ msgid "Click and move to draw small bricks."
 msgstr "Щёлкните и поводите по картинке, чтобы нарисовать маленькие кирпичи."
 
 msgid "Calligraphy"
-msgstr ""
+msgstr "Каллиграфия"
 
-#, fuzzy
 msgid "Click and move the mouse around to draw in calligraphy."
-msgstr "Щёлкните и поводите по картинке, чтобы превратить её часть в негатив."
+msgstr "Нажмите и ведите мышь, чтобы рисовать каллиграфической кистью."
 
 msgid "Cartoon"
 msgstr "Мультфильм"
 
 msgid "Click and move the mouse around to turn the picture into a cartoon."
-msgstr ""
-"Щёлкните и поводите по картинке, чтобы превратить её часть в мультфильм."
+msgstr "Щёлкните и поводите по картинке, чтобы превратить её часть в мультфильм."
 
 msgid "Distortion"
-msgstr ""
+msgstr "Искажение"
 
-#, fuzzy
 msgid "Click and drag the mouse to cause a distortion in your picture."
-msgstr "Щёлкните и поводите по картинке, чтобы размыть её часть."
+msgstr "Нажмите и ведите мышь, чтобы вызвать искажения в вашем рисунке."
 
 msgid "Emboss"
-msgstr ""
+msgstr "Рельеф"
 
-#, fuzzy
 msgid "Click and drag the mouse to emboss the picture."
-msgstr "Щёлкните и поводите по картинке, чтобы размыть её часть."
+msgstr "Нажмите и ведите мышь, чтобы сделать рисунок рельефным."
 
 msgid "Lighten"
 msgstr "Светлее"
@@ -634,56 +644,46 @@ msgid "Click in the picture to fill that area with color."
 msgstr "Щёлкните, чтобы заполнить эту область цветом."
 
 msgid "Flower"
-msgstr ""
+msgstr "Цветок"
 
 msgid "Click and drag to draw a flower stalk. Let go to finish the flower."
-msgstr ""
+msgstr "Нажмите и тяните, чтобы нарисовать стебель. Отпустите, чтобы завершить цветок."
 
 msgid "Foam"
-msgstr ""
+msgstr "Пузыри"
 
-#, fuzzy
 msgid "Click and drag the mouse to cover an area with foamy bubbles."
-msgstr "Щёлкните, чтобы заполнить эту область цветом."
+msgstr "Нажмите и ведите мышь, чтобы нарисовать мыльные пузыри."
 
 msgid "Glass Tile"
-msgstr ""
+msgstr "Стеклянная плитка"
 
-#, fuzzy
 msgid "Click and drag the mouse to put glass tile over your picture."
-msgstr "Щёлкните и поводите по картинке, чтобы размыть её часть."
+msgstr "Нажмите и ведите мышь, чтобы покрыть рисунок стеклянной плиткой."
 
 msgid "Grass"
 msgstr "Трава"
 
 msgid "Click and move to draw grass. Don’t forget the dirt!"
-msgstr ""
-"Щёлкните и поводите по картинке, чтобы нарисовать траву. Не забудьте про "
-"грязь!"
+msgstr "Щёлкните и поводите по картинке, чтобы нарисовать траву. Не забудьте про грязь!"
 
 msgid "Kaleidoscope"
-msgstr ""
+msgstr "Калейдоскоп"
 
-#, fuzzy
-msgid ""
-"Click and drag the mouse to draw with symmetric brushes (a kaleidoscope)."
-msgstr "Щёлкните и поводите по картинке, чтобы сделать её часть более тёмной."
+msgid "Click and drag the mouse to draw with symmetric brushes (a kaleidoscope)."
+msgstr "Нажмите и ведите мышь, чтобы рисовать симметричными кистями (калейдоскоп)."
 
-#, fuzzy
 msgid "Light"
-msgstr "Светлее"
+msgstr "Свет"
 
-#, fuzzy
 msgid "Click and drag to draw a beam of light on your picture."
-msgstr "Щёлкните и поводите по картинке, чтобы размыть её часть."
+msgstr "Нажмите и ведите мышь, чтобы нарисовать луч света."
 
-#, fuzzy
 msgid "Metal Paint"
-msgstr "Краска"
+msgstr "Металл"
 
-#, fuzzy
 msgid "Click and drag the mouse to paint with a metallic color."
-msgstr "Щёлкните и поводите по картинке, чтобы сделать её часть более тёмной."
+msgstr "Нажмите и ведите мышью, чтобы рисовать металлическим цветом."
 
 msgid "Mirror"
 msgstr "Зеркало"
@@ -701,7 +701,7 @@ msgid "Negative"
 msgstr "Негатив"
 
 msgid "Click and move the mouse around to draw a negative."
-msgstr "Щёлкните и поводите по картинке, чтобы превратить её часть в негатив."
+msgstr "Нажмите и поводите по картинке, чтобы превратить её часть в негатив."
 
 msgid "Rainbow"
 msgstr "Радуга"
@@ -710,24 +710,22 @@ msgid "You can draw in rainbow colors!"
 msgstr "Вы можете рисовать цветами радуги!"
 
 msgid "Ripples"
-msgstr ""
+msgstr "Круги на воде"
 
-#, fuzzy
 msgid "Click to make ripples appear over your picture."
 msgstr "Щёлкните и поводите по картинке, чтобы размыть её часть."
 
 msgid "Shift"
-msgstr ""
+msgstr "Сдвиг"
 
-#, fuzzy
 msgid "Click and drag to shift your picture around on the canvas."
-msgstr "Щёлкните и поводите по картинке, чтобы размыть её часть."
+msgstr "Нажмите и ведите мышь, чтобы сдвинуть рисунок относительно холста."
 
 msgid "Smudge"
-msgstr "Пятна"
+msgstr "Смазать"
 
 msgid "Click and move the mouse around to smudge the picture."
-msgstr "Щёлкните и поводите по картинке, чтобы испачкать её часть."
+msgstr "Щёлкните и поводите по картинке, чтобы смазать рисунок."
 
 msgid "Tint"
 msgstr "Изменить цвет"
@@ -735,69 +733,48 @@ msgstr "Изменить цвет"
 msgid "Click and move the mouse around to change the picture’s color."
 msgstr "Щёлкните и поводите по картинке, чтобы изменить цвет рисунка."
 
-#, fuzzy
 msgid "Waves"
-msgstr "Сохранить"
+msgstr "Волны"
 
-msgid ""
-"Click to make the picture wavy. Click toward the top for shorter waves, the "
-"bottom for taller waves, the left for small waves, and the right for long "
-"waves."
-msgstr ""
+msgid "Click to make the picture wavy. Click toward the top for shorter waves, the bottom for taller waves, the left for small waves, and the right for long waves."
+msgstr "Нажмите, чтобы сделать на рисунке волны. Двигайте вверх, чтобы сделать волны ниже, вниз - чтобы выше, налево - для коротких волн, направо - для длинных."
 
 #~ msgid "Sparkles"
 #~ msgstr "Искры"
-
 #~ msgid "You now have a blank sheet to draw on!"
 #~ msgstr "Теперь у вас есть чистый лист!"
-
 #~ msgid "Start a new picture?"
 #~ msgstr "Начнём новую картинку?"
-
 #~ msgid "Yes, let's start fresh!"
 #~ msgstr "Да, начнём заново!"
-
 #~ msgid "Click and move to draw sparkles."
 #~ msgstr "Щёлкните и поводите по картинке, чтобы нарисовать искры."
-
 #~ msgid "Starting a new picture will erase the current one!"
 #~ msgstr "Начиная новую картинку вы уничтожите текущую!"
-
 #~ msgid "That’s OK!"
 #~ msgstr "Хорошо!"
-
 #~ msgid "Never mind!"
 #~ msgstr "Нет!"
-
 #~ msgid "Save over the older version of this picture?"
 #~ msgstr "Сохранить поверх старой версии этой картинки?"
-
 #~ msgid "Dark Gray!"
 #~ msgstr "Тёмно-серый!"
-
 #~ msgid "Neon green!"
 #~ msgstr "Ярко-зеленый!"
-
 #~ msgid "Green!"
 #~ msgstr "Зелёный!"
-
 #~ msgid "Magenta!"
 #~ msgstr "Ярко-красный!"
-
 #~ msgid "Fade"
 #~ msgstr "Исчезновение"
-
 #~ msgid "Oval"
 #~ msgstr "Овал"
-
 #~ msgid "Diamond"
 #~ msgstr "Ромб"
-
 #~ msgid "A square has four sides, each the same length."
 #~ msgstr "У квадрата четыре стороны, все одной длины."
-
 #~ msgid "A circle is exactly round."
 #~ msgstr "А круг совершенно круглый :)"
-
 #~ msgid "A diamond is a square, turned around slightly."
 #~ msgstr "Ромб похож на квадрат, но с другими углами."
+
