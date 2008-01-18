@@ -9,13 +9,16 @@ http://www.tuxpaint.org/
 $Id$
 
 
-2008.January.14 (0.9.19)
+2008.January.18 (0.9.19)
   * Localization Updates:
     ---------------------
     * Danish translation
       Joe Hansen <joedalton2@yahoo.dk>
       Gruppen for Lokalisering af Frit Programmel til Dansk
       <http://dansk-gruppen.dk>
+
+    * Faroese translation
+      Lis Gøthe í Jákupsstovu <morshus@gmail.com>
 
     * Finnish translation
       Jorma Karvonen <karvjorm@users.sf.net>
