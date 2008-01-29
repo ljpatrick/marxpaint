@@ -1,13 +1,13 @@
 # Tux Paint: mesaĝoj en Esperanto.
 # Kopirajto (C) 2002 Free Software Foundation, Inc.
-# Edmund GRIMLEY EVANS <edmundo@rano.org>, 2007.
+# Edmund GRIMLEY EVANS <edmundo@rano.org>, 2007-2008.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: tuxpaint 0.9.17\n"
+"Project-Id-Version: tuxpaint 0.9.18\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2007-11-11 11:20+0100\n"
-"PO-Revision-Date: 2007-07-14 12:52+0100\n"
+"PO-Revision-Date: 2008-01-29 15:00+0000\n"
 "Last-Translator: Edmund GRIMLEY EVANS <edmundo@rano.org>\n"
 "Language-Team: Esperanto <translation-team-eo@lists.sourceforge.net>\n"
 "MIME-Version: 1.0\n"
@@ -169,11 +169,11 @@ msgstr "Korea alfabeto"
 
 #. Input Method: Thai mode
 msgid "Thai"
-msgstr ""
+msgstr "Taja"
 
 #. Input Method: Traditional Chinese mode
 msgid "ZH_TW"
-msgstr ""
+msgstr "ZH_TW (tradicia ĉina)"
 
 #. Square shape tool (4 equally-lengthed sides at right angles)
 msgid "Square"
@@ -204,9 +204,8 @@ msgid "Rhombus"
 msgstr "Rombo"
 
 #. Octagon shape tool (8 sides)
-#, fuzzy
 msgid "Octagon"
-msgstr "Kvinangulo"
+msgstr "Okangulo"
 
 #. Description of a square
 msgid "A square is a rectangle with four equal sides."
@@ -216,7 +215,6 @@ msgstr "Kvadrato estas ortangulo kun kvar egalaj flankoj."
 msgid "A rectangle has four sides and four right angles."
 msgstr "Ortangulo havas kvar flankojn kaj kvar ortajn angulojn."
 
-#, fuzzy
 msgid ""
 "A circle is a curve where all points have the same distance from the center."
 msgstr ""
@@ -238,9 +236,8 @@ msgid "A rhombus has four equal sides, and opposite sides are parallel."
 msgstr ""
 "Rombo havas kvar egalajn flankojn, kaj kontraŭaj flankoj estas paralelaj."
 
-#, fuzzy
 msgid "An octagon has eight equal sides."
-msgstr "Kvinangulo havas kvin flankojn."
+msgstr "Okangulo havas ok flankojn."
 
 #. Title of tool selector (buttons down the left)
 msgid "Tools"
@@ -332,7 +329,7 @@ msgstr "Elektu koloron kaj penikformon por desegni."
 
 #. Stamp tool instructions
 msgid "Pick a picture to stamp around your drawing."
-msgstr "Elektu bildon por stampi sur via bildo."
+msgstr "Elektu bildon por stampi sur via desegnaĵo."
 
 #. Line tool instructions
 msgid "Click to start drawing a line. Let go to complete it."
@@ -348,11 +345,11 @@ msgstr ""
 
 #. Text tool instructions
 msgid "Choose a style of text. Click on your drawing and you can start typing."
-msgstr "Elektu stilon de tekston. Alklaku la bildon, kaj vi povas ektajpi."
+msgstr "Elektu stilon de tekston. Alklaku vian desegnaĵon, kaj vi povas ektajpi."
 
 #. Magic tool instruction
 msgid "Pick a magical effect to use on your drawing!"
-msgstr "Elektu magian efekton por via bildo!"
+msgstr "Elektu magian efekton por via desegnaĵo!"
 
 #. Response to 'undo' action
 msgid "Undo!"
@@ -367,9 +364,8 @@ msgid "Eraser!"
 msgstr "Viŝilo!"
 
 #. Response to 'start a new image' action
-#, fuzzy
 msgid "Pick a color or picture with which to start a new drawing."
-msgstr "Elektu bildon por stampi sur via bildo."
+msgstr "Elektu koloron au bildon, per kiu vi komencos novan desegnaĵon."
 
 #. Response to 'open' action (while file dialog is being constructed)
 msgid "Open…"
@@ -397,7 +393,7 @@ msgstr "Tenu la butonon por streĉi la formon."
 
 #. Instruction while finishing Shape tool (after release, during rotation step before second click)
 msgid "Move the mouse to rotate the shape. Click to draw it."
-msgstr "Movu la muson por turni la formon. Klaku por fini ĝin."
+msgstr "Movu la muson por turni la formon. Alklaku por desegni ĝin."
 
 #. Notification that 'New' action was aborted (current image would have been lost)
 msgid "OK then… Let’s keep drawing this one!"
@@ -472,18 +468,18 @@ msgstr "Ne forgesu uzi la maldekstran musbutonon!"
 
 #. Sound has been muted (silenced) via keyboard shortcut
 msgid "Sound muted."
-msgstr ""
+msgstr "Sono malŝaltita."
 
 #. Sound has been unmuted (unsilenced) via keyboard shortcut
 msgid "Sound unmuted."
-msgstr ""
+msgstr "Sono ŝaltita."
 
 #. Wait while Text tool finishes loading fonts
 msgid "Please wait…"
 msgstr "Bonvolu atendi ..."
 
 msgid "Pick a color."
-msgstr ""
+msgstr "Elektu koloron."
 
 #. Open dialog: 'Erase' button, to erase/deleted the selected picture
 msgid "Erase"
@@ -562,7 +558,7 @@ msgstr "Alklaku kaj movu la muson por igi la bildon blokeca."
 
 msgid ""
 "Click and move the mouse around to turn the picture into a chalk drawing."
-msgstr "Alklaku kaj movu la muson por ŝanĝi la bildon en kretobildon."
+msgstr "Alklaku kaj movu la muson por ŝanĝi la bildon en kretodesegnaĵon."
 
 msgid "Click and move the mouse around to make the picture drip."
 msgstr "Alklaku kaj movu la muson por igi la bildon guti."
@@ -584,11 +580,10 @@ msgid "Click and move to draw small bricks."
 msgstr "Alklaku kaj movu por desegni malgrandajn brikojn."
 
 msgid "Calligraphy"
-msgstr ""
+msgstr "Kaligrafio"
 
-#, fuzzy
 msgid "Click and move the mouse around to draw in calligraphy."
-msgstr "Alklaku kaj movu la muson por fari negativon."
+msgstr "Alklaku kaj movu la muson por desegni kaligrafie."
 
 msgid "Cartoon"
 msgstr "Karikaturigi"
@@ -597,18 +592,16 @@ msgid "Click and move the mouse around to turn the picture into a cartoon."
 msgstr "Alklaku kaj movu la muson por ŝanĝi la bildon en karikaturon."
 
 msgid "Distortion"
-msgstr ""
+msgstr "Distordo"
 
-#, fuzzy
 msgid "Click and drag the mouse to cause a distortion in your picture."
-msgstr "Alklaku kaj movu la muson por malklarigi la bildon."
+msgstr "Alklaku kaj movu la muson por distordi vian bildon."
 
 msgid "Emboss"
-msgstr ""
+msgstr "Bosado"
 
-#, fuzzy
 msgid "Click and drag the mouse to emboss the picture."
-msgstr "Alklaku kaj movu la muson por malklarigi la bildon."
+msgstr "Alklaku kaj movu la muson por bosi la bildon."
 
 msgid "Lighten"
 msgstr "Heligi"
@@ -629,24 +622,22 @@ msgid "Click in the picture to fill that area with color."
 msgstr "Alklaku la bildon por plenigi regionon per koloro."
 
 msgid "Flower"
-msgstr ""
+msgstr "Floro"
 
 msgid "Click and drag to draw a flower stalk. Let go to finish the flower."
-msgstr ""
+msgstr "Alklaku kaj movu la muson por desegni la tigon de floro. Ellasu por fini la floron."
 
 msgid "Foam"
-msgstr ""
+msgstr "Ŝaŭmo"
 
-#, fuzzy
 msgid "Click and drag the mouse to cover an area with foamy bubbles."
-msgstr "Alklaku la bildon por plenigi regionon per koloro."
+msgstr "Alklaku kaj movu la muson por kovri areon per ŝaŭmaj bobeloj."
 
 msgid "Glass Tile"
-msgstr ""
+msgstr "Vitra Kahelo"
 
-#, fuzzy
 msgid "Click and drag the mouse to put glass tile over your picture."
-msgstr "Alklaku kaj movu la muson por malklarigi la bildon."
+msgstr "Alklaku kaj movu la muson por met vitrajn kahelojn sur vian bildon."
 
 msgid "Grass"
 msgstr "Herbo"
@@ -655,28 +646,23 @@ msgid "Click and move to draw grass. Don’t forget the dirt!"
 msgstr "Alklaku kaj movu la muson por desegni herbon. Ne forgesu la teron!"
 
 msgid "Kaleidoscope"
-msgstr ""
+msgstr "Kalejdoskopo"
 
-#, fuzzy
 msgid ""
 "Click and drag the mouse to draw with symmetric brushes (a kaleidoscope)."
-msgstr "Alklaku kaj movu por malheligi la kolorojn."
+msgstr "Alklaku kaj movu la muson por desegni per simetriaj penikoj (kalejdoskopo)."
 
-#, fuzzy
 msgid "Light"
-msgstr "Heligi"
+msgstr "Lumo"
 
-#, fuzzy
 msgid "Click and drag to draw a beam of light on your picture."
-msgstr "Alklaku kaj movu la muson por malklarigi la bildon."
+msgstr "Alklaku kaj movu la muson por desegni lumradion sur vian bildon."
 
-#, fuzzy
 msgid "Metal Paint"
-msgstr "Farbi"
+msgstr "Metala farbo."
 
-#, fuzzy
 msgid "Click and drag the mouse to paint with a metallic color."
-msgstr "Alklaku kaj movu por malheligi la kolorojn."
+msgstr "Alklaku kaj movu la muson por farbi per metaleca koloro."
 
 msgid "Mirror"
 msgstr "Spegulbildo"
@@ -700,21 +686,19 @@ msgid "Rainbow"
 msgstr "Ĉielarko"
 
 msgid "You can draw in rainbow colors!"
-msgstr "Vi povas farbi per ĉielarkaj koloroj!"
+msgstr "Vi povas desegni per ĉielarkaj koloroj!"
 
 msgid "Ripples"
-msgstr ""
+msgstr "Ondetoj"
 
-#, fuzzy
 msgid "Click to make ripples appear over your picture."
-msgstr "Alklaku kaj movu la muson por malklarigi la bildon."
+msgstr "Alklaku por aperigi ondetojn sur via bildo."
 
 msgid "Shift"
-msgstr ""
+msgstr "Ŝovi"
 
-#, fuzzy
 msgid "Click and drag to shift your picture around on the canvas."
-msgstr "Alklaku kaj movu la muson por malklarigi la bildon."
+msgstr "Alklaku kaj movu la muson por movi vian bildon sur la tolo."
 
 msgid "Smudge"
 msgstr "Miksi"
@@ -728,15 +712,14 @@ msgstr "Surfarbi"
 msgid "Click and move the mouse around to change the picture’s color."
 msgstr "Alklaku kaj movu la muson por ŝanĝi la koloron de la bildo."
 
-#, fuzzy
 msgid "Waves"
-msgstr "Skribi"
+msgstr "Ondoj"
 
 msgid ""
 "Click to make the picture wavy. Click toward the top for shorter waves, the "
 "bottom for taller waves, the left for small waves, and the right for long "
 "waves."
-msgstr ""
+msgstr "Alklaku por ondigi la bildon. Alklaku supre por mallongaj ondoj, sube por pli altaj ondoj, maldekstre por etaj ondoj, dekstre por longaj ondoj."
 
 #~ msgid "Sparkles"
 #~ msgstr "Steloj"
