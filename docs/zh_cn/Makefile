@@ -11,16 +11,15 @@
 
 LINKS=links -dump -no-numbering -no-references
 
-all:	README.txt
+all:	README.txt FAQ.txt
 # OPTIONS.txt
 # EXTENDING.txt
-# FAQ.txt
 # ADVANCED-STAMPS-HOWTO.txt
 
 clean:
 	-rm README.txt
+	-rm FAQ.txt
 #	-rm OPTIONS.txt
-#	-rm FAQ.txt
 #	-rm EXTENDING.txt
 #	-rm ADVANCED-STAMPS-HOWTO.txt
 

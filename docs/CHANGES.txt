@@ -12,6 +12,10 @@ $Id$
 2008.January.29 (0.9.19)
   * Localization Updates:
     ---------------------
+    * Chinese (Simplified) README and FAQ documentation
+      HackerGene <hackergene@gmail.com>
+      http://tuxpaint.cn/
+
     * Danish translation
       Joe Hansen <joedalton2@yahoo.dk>
       Gruppen for Lokalisering af Frit Programmel til Dansk

@@ -218,7 +218,7 @@ $Id$
   * Chinese (Simplified)
     Wang Jian <lark@linux.net.cn>
 
-  * Chinese (Simplified) README documentation
+  * Chinese (Simplified) README and FAQ documentation
     HackerGene <hackergene@gmail.com>, http://tuxpaint.cn/
 
   * Chinese (Traditional)
