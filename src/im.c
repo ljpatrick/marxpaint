@@ -40,7 +40,13 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+
+#ifndef __APPLE_10_2_8__
 #include <wchar.h>
+#else
+#define wchar_t char
+#endif
+
 #include "im.h"
 
 

@@ -987,12 +987,12 @@ static SDL_Surface *render_text(TuxPaint_Font * restrict font,
     fflush(stdout);
     return NULL;
   }
-  
+    
 #ifdef __APPLE__
   if (macosx.buildingFontCache == 1)
-    displayMessage( MSG_FONT_CACHE );
-#endif  
-
+    displayMessage(MSG_FONT_CACHE);
+#endif
+    
 #ifndef NO_SDLPANGO
   if (font->typ == FONT_TYPE_PANGO)
   {
@@ -1008,15 +1008,15 @@ static SDL_Surface *render_text(TuxPaint_Font * restrict font,
     ret = SDLPango_CreateSurfaceDraw(font->pango_context);     
   }
 #endif
-
+ 
 #ifdef __APPLE__
-  if (macosx.buildingFontCache = 1)
+  if (macosx.buildingFontCache == 1)
   {
-    macosx.buildingFontCache = 0;
-    hideMessage();
+      macosx.buildingFontCache = 0;
+      hideMessage();
   }
 #endif
-  
+    
   if (font->typ == FONT_TYPE_TTF)
   {
 #ifdef DEBUG
@@ -2211,7 +2211,7 @@ static void mainloop(void)
 	        cursor_y = min(cursor_y + font_height, canvas->h - font_height);
 
 	        playsound(screen, 0, SND_RETURN, 1, SNDPOS_RIGHT, SNDDIST_NEAR);
-#ifndef NOSOUND
+#ifdef SPEECH
 #ifdef __APPLE__
             if (use_sound)
               speak_string(texttool_str);
@@ -2229,7 +2229,7 @@ static void mainloop(void)
 	          texttool_len = 0;
 	          cursor_textwidth = 0;
 	        }
-#ifndef NOSOUND
+#ifdef SPEECH
 #ifdef __APPLE__
             if (use_sound)
               speak_string(texttool_str);
@@ -15054,12 +15054,13 @@ void do_print(void)
   int show = ( ( want_alt_printcommand || macosx.menuAction ) && !fullscreen);
 
   const char *error = SurfacePrint(canvas, show);
-/*
+
   if (error)
+  {
     fprintf(stderr, "Cannot print: %s\n", error);
-  else
-    do_prompt_snd(PROMPT_PRINT_TXT, PROMPT_PRINT_YES, "", SND_TUXOK);
-*/  
+    do_prompt_snd(error, PROMPT_PRINT_YES, "", SND_TUXOK, 0, 0);
+  }
+  
 #endif
 
 #endif

@@ -83,13 +83,10 @@ NSData* printData = nil;
 - (BOOL) wait
 {
     while (!_complete) {
-    
         NSEvent *event;
-         
         event = [ NSApp nextEventMatchingMask:NSAnyEventMask
                         untilDate:[ NSDate distantFuture ]
                         inMode: NSDefaultRunLoopMode dequeue:YES ];
-        
         [ NSApp sendEvent:event ];
     }
     
@@ -204,14 +201,10 @@ NSPrintInfo* LoadPrintInfo( const SDL_Surface *surface )
     standardUserDefaults = [ NSUserDefaults standardUserDefaults ];
     
     if( standardUserDefaults ) 
-    {
         printData = [ standardUserDefaults dataForKey:@"PrintInfo" ];
-    }
    
     if( printData )
-    {
         printInfo = (NSPrintInfo*)[ NSUnarchiver unarchiveObjectWithData:printData ]; 
-    }
     else
     {
         printInfo = [ NSPrintInfo sharedPrintInfo ];
@@ -234,9 +227,7 @@ void SavePrintInfo( NSPrintInfo* printInfo )
     standardUserDefaults = [ NSUserDefaults standardUserDefaults ];
     
     if( standardUserDefaults ) 
-    {
         [ standardUserDefaults setObject:printData forKey:@"PrintInfo" ];
-    }
 }
 
 int DisplayPageSetup( const SDL_Surface * surface )
@@ -275,12 +266,16 @@ const char* SurfacePrint( SDL_Surface *surface, int showDialog )
     NSPrintInfo*      printInfo;
     ModalDelegate*    delegate;
     BOOL              ok = YES;
-    const char*       error = NULL;
-	    
+
+    // check if printers are available
+    NSArray* printerNames = [NSPrinter printerNames];
+    if( [printerNames count] == 0 && !showDialog)
+        return "No printer is available.  Run Tux Paint in window mode (not fullscreen), and select File > Print... to choose a printer.";
+    
     // create image for surface
     image = CreateImage( surface );
     if( image == nil )
-        return "Could not create image";
+        return "Could not create a print image.";
 	
     // create print control objects
     printInfo = LoadPrintInfo( surface );
@@ -299,18 +294,15 @@ const char* SurfacePrint( SDL_Surface *surface, int showDialog )
 	
 	NSSize imageSize = pageSize;
 	if( pageRatio > surfaceRatio )   // wide page
-	{
 	    imageSize.width = surface->w * pageSize.height / surface->h;
-	}
 	else  // tall page
-	{
 		imageSize.height = surface->h * pageSize.width / surface->w;
-	}
-	
+    
 	// create print view
     printView = [ [ [ ImageView alloc ] initWithFrame: NSMakeRect( 0, 0, imageSize.width, imageSize.height ) ] autorelease ];
 	if (printView == nil)
-        return "Could not create print view";
+        return "Could not create a print view.";
+    
 	[ image setSize:imageSize ];
     [ printView setImage:image ];
 	
@@ -324,14 +316,12 @@ const char* SurfacePrint( SDL_Surface *surface, int showDialog )
         delegate:delegate didRunSelector:@selector(printDidRun:success:contextInfo:) contextInfo:nil ];
     
     ok = [ delegate wait ];
-    if (!ok)
-        error = "Canceled or error when printing";
         
     macosx.cocoaKeystrokes = 0;
     
     SavePrintInfo( printInfo );
     [ image release ];
 	    
-    return error;
+    return NULL;
 }
 

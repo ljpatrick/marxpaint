@@ -27,6 +27,7 @@
 
 void speak_string(const wchar_t *widecharString)
 {
+    #ifndef __APPLE_10_2_8__
     char multibyteString[1024];
     NSString *string = [NSString string];
     
@@ -48,4 +49,5 @@ void speak_string(const wchar_t *widecharString)
     [synthesizer setVoice:[voices objectAtIndex:rand()%[voices count]]];
     [synthesizer startSpeakingString:string];
     [synthesizer release];
+    #endif // !__APPLE_10_2_8__
 }

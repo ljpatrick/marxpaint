@@ -10,6 +10,10 @@
 #import <sys/param.h> /* for MAXPATHLEN */
 #import <unistd.h>
 
+#include <Security/Authorization.h>
+#include <Security/AuthorizationTags.h>
+#include <stdlib.h>
+
 #import "macosx_print.h"
 #import "message.h"
 #import "wrapperdata.h"
@@ -72,11 +76,6 @@ static NSString *getApplicationName(void)
 @end
 #endif
 
-/* Category for NSFileManager */
-@interface NSFileManager (CreateDirectoryRecursively)
-- (BOOL)createDirectoryRecursively:(NSString *)path attributes:(NSDictionary *)attributes;
-@end
-
 @interface SDLApplication : NSApplication
 @end
 
@@ -125,32 +124,32 @@ static NSString *getApplicationName(void)
 
 -(void) dataPath:(NSString *)directory;
 {
-  NSBundle *mainBundle;
-  NSString *path;
-  
-  mainBundle = [NSBundle mainBundle];
-  path = [mainBundle pathForResource:@"data" ofType:nil];
+    NSBundle *mainBundle;
+    NSString *path;
 
-  [path getCString:(macosx.dataPath)];
+    mainBundle = [NSBundle mainBundle];
+    path = [mainBundle pathForResource:@"data" ofType:nil];
+
+    [path getCString:(macosx.dataPath)];
 }
 
 -(void) preferencesPath;
 {
-  NSString *path;
-  
-  path = [@"~/Library/Application Support/TuxPaint" stringByExpandingTildeInPath];
-  [path getCString:(macosx.preferencesPath)];
-  
-  path = @"/Library/Application Support/TuxPaint";
-  [path getCString:(macosx.globalPreferencesPath)];
-}
+    NSString *path;
+
+    path = [@"~/Library/Application Support/TuxPaint" stringByExpandingTildeInPath];
+    [path getCString:(macosx.preferencesPath)];
+
+    path = @"/Library/Application Support/TuxPaint";
+    [path getCString:(macosx.globalPreferencesPath)];
+    }
 
 -(void) fontsPath;
 {
-  NSString *path;
-  
-  path = [@"~/Library/Fonts" stringByExpandingTildeInPath];
-  [path getCString:(macosx.fontsPath)];
+    NSString *path;
+
+    path = [@"~/Library/Fonts" stringByExpandingTildeInPath];
+    [path getCString:(macosx.fontsPath)];
 }
 
 @end
@@ -294,7 +293,7 @@ static NSString *getApplicationName(void)
 {
     [messageText setStringValue:message];
     [messageStatus setStringValue:status];
-    [messagePanel makeKeyAndOrderFront:nil];   
+    [messagePanel makeKeyAndOrderFront:nil]; 
     if (progress)
     {
         [messageProgress setUsesThreadedAnimation:YES];
@@ -481,35 +480,94 @@ static void CustomApplicationMain (argc, argv)
 	[bridge preferencesPath];
 }
 
-/* Install any required files from app bundle to destination */
-- (void) installFiles
+- (BOOL) installFontconfigFiles
 {
-    NSFileManager *fileManager = [NSFileManager defaultManager];
     NSBundle *bundle = [NSBundle mainBundle];
-    BOOL fileExists = NO;
+    NSString *executable = [bundle pathForAuxiliaryExecutable:@"fcinstaller"];
+    NSString *arguments = [NSString stringWithCString:(macosx.globalPreferencesPath)];
     
+    char command[4096];
+    sprintf(command, "\"%s\" \"%s\"", [executable cStringUsingEncoding:NSASCIIStringEncoding], [arguments cStringUsingEncoding:NSASCIIStringEncoding]);
+    
+    //displayMessage(MSG_FONT_CACHE);
+    int result = system(command);
+    //hideMessage();
+    
+    return (BOOL)result;
+}
+
+- (OSStatus) installFontconfigFilesWithAuthorization
+{
+    OSStatus status;
+    AuthorizationFlags flags = kAuthorizationFlagDefaults;
+    AuthorizationRef authorizationRef;
+    NSBundle *bundle = [NSBundle mainBundle];
+    
+    status = AuthorizationCreate(NULL, kAuthorizationEmptyEnvironment, flags, &authorizationRef);
+    if (status != errAuthorizationSuccess)
+        return status;
+
+    AuthorizationItem items = {kAuthorizationRightExecute, 0, NULL, 0};
+    AuthorizationRights rights = {1, &items};
+        
+    flags = kAuthorizationFlagDefaults | kAuthorizationFlagInteractionAllowed | kAuthorizationFlagPreAuthorize | kAuthorizationFlagExtendRights;
+    status = AuthorizationCopyRights(authorizationRef, &rights, NULL, flags, NULL);
+    
+    if (status == errAuthorizationSuccess)
+    
+    {
+        NSString *fcInstallerPath = [bundle pathForAuxiliaryExecutable:@"fcinstaller"];
+        
+        char executable[2048]; 
+        char *arguments[] = { "/Library/Application Support/TuxPaint", NULL };
+        FILE *communicationsPipe = NULL;
+        
+        strcpy(executable, [fcInstallerPath cStringUsingEncoding:NSASCIIStringEncoding]);
+        
+        flags = kAuthorizationFlagDefaults;
+        //displayMessage(MSG_FONT_CACHE);
+        status = AuthorizationExecuteWithPrivileges(authorizationRef, executable, flags, arguments, &communicationsPipe);
+        //hideMessage();
+    }
+    
+    AuthorizationFree(authorizationRef, kAuthorizationFlagDefaults);
+    return status; 
+}
+
+- (BOOL) fontconfigFilesAreInstalled
+{
     NSString *globalPreferencesPath = [NSString stringWithCString:(macosx.globalPreferencesPath)];
     NSString *fontsPath = [globalPreferencesPath stringByAppendingString:@"/fontconfig/fonts"];
-    NSString *cachePath = [globalPreferencesPath stringByAppendingString:@"/fontconfig/cache"];
     NSString *fontsConfInstalledPath = [fontsPath stringByAppendingString:@"/fonts.conf"];
     NSString *fontsDtdInstalledPath = [fontsPath stringByAppendingString:@"/fonts.dtd"];
-    NSString *fontsConfBundlePath = [bundle pathForResource:@"fonts" ofType:@"conf"];
-    NSString *fontsDtdBundlePath = [bundle pathForResource:@"fonts" ofType:@"dtd"];
+    BOOL filesExist = TRUE;
+ 
+    NSFileManager *fileManager = [NSFileManager defaultManager];
+    filesExist = [fileManager fileExistsAtPath:fontsConfInstalledPath] && [fileManager fileExistsAtPath:fontsDtdInstalledPath];
+    return filesExist;
+}
+
+/* Install files required by Fontconfig */
+- (void) installFontconfig
+{
+    NSFileManager *fileManager = [NSFileManager defaultManager];
+    BOOL filesExist = TRUE;
     
-    fileExists = [fileManager fileExistsAtPath:fontsConfInstalledPath];
-    if (!fileExists) {
-        [fileManager createDirectoryRecursively:fontsPath attributes:nil];
-        [fileManager copyPath:fontsConfBundlePath toPath:fontsConfInstalledPath handler:nil];
+    filesExist = [self fontconfigFilesAreInstalled];
+    if (!filesExist)
+    {
+        [self installFontconfigFiles];
+        filesExist = [self fontconfigFilesAreInstalled];
+        if (!filesExist)
+        {
+            [self installFontconfigFilesWithAuthorization];
+        }
     }
     
-    fileExists = [fileManager fileExistsAtPath:fontsDtdInstalledPath];
-    if (!fileExists) {
-        [fileManager createDirectoryRecursively:fontsPath attributes:nil];
-        [fileManager copyPath:fontsDtdBundlePath toPath:fontsDtdInstalledPath handler:nil];
-    }
-    
-    fileExists = [fileManager fileExistsAtPath:cachePath];
-    if (fileExists)
+    NSString *globalPreferencesPath = [NSString stringWithCString:(macosx.globalPreferencesPath)];
+    NSString *globalCachePath = [globalPreferencesPath stringByAppendingString:@"/fontconfig/cache"];
+    NSString *userCachePath = [[NSString stringWithString:@"~/.fontconfig"] stringByExpandingTildeInPath];
+    if ([fileManager fileExistsAtPath:globalCachePath] || [fileManager fileExistsAtPath:userCachePath])
         macosx.buildingFontCache = 0;
     else
         macosx.buildingFontCache = 1;
@@ -581,8 +639,8 @@ static void CustomApplicationMain (argc, argv)
 	/* Set up Cocoa to SDL bridge */
 	[self setupBridge];
     
-    /* Install any required files */
-    [self installFiles];
+    /* Install any files required by fontconfig */
+    [self installFontconfig];
 	
     /* Set the working directory to the .app's parent directory */
     [self setupWorkingDirectory:gFinderLaunch];
@@ -642,40 +700,9 @@ static void CustomApplicationMain (argc, argv)
 
 @end
 
-@implementation NSFileManager (CreateDirectoryRecursively)
-
-- (BOOL)createDirectoryRecursively:(NSString *)path attributes:(NSDictionary *)attributes
-{ 
-    BOOL isDir = TRUE; 
-    BOOL fileExists;
-    
-    fileExists = [self fileExistsAtPath:path isDirectory:&isDir]; 
-    if (isDir) {
-        if (fileExists) {
-            /* directory exists */
-            return TRUE; 
-        }
-        else
-        {
-            /* create directory */
-            NSString *parentDirectory = [path stringByDeletingLastPathComponent];
-            [self createDirectoryRecursively:parentDirectory attributes:attributes]; 
-            return [self createDirectoryAtPath:path attributes:attributes];
-        }
-    }
-    else
-    { 
-        /* desired directory path is blocked by a file */ 
-        return FALSE; 
-    }  
-} 
-
-@end
-
 #ifdef main
 #  undef main
 #endif
-
 
 /* Main entry point to executable - should *not* be SDL_main! */
 int main (int argc, char **argv)

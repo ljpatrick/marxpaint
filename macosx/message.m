@@ -37,7 +37,7 @@ void displayMessage( int msgId )
     switch( msgId )
     {
         case( MSG_FONT_CACHE ):
-            message = @"I'm currently fishing for fonts on your Mac.  This may take me a minute, as I'd  much rather be feeding on fish from the sea.";
+            message = @"I'm currently fishing for fonts on your Mac.  This may take me a minute, as I'd much rather be feeding on fish from the sea.";
             status = @"Status: Caching fonts (this only needs to be done once)...";
             [sdlMain displayMessage:message andStatus:status withProgressIndicator:YES];
             break;

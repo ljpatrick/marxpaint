@@ -17,13 +17,13 @@
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
     <key>CFBundleShortVersionString</key>
-	<string>0.9.18</string>
+	<string>0.9.19</string>
     <key>CFBundleGetInfoString</key>
-    <string>0.9.18, Copyright 2007, Tux Paint Development Team</string>
+    <string>0.9.19, Copyright 2008, Tux Paint Development Team</string>
 	<key>CFBundleSignature</key>
 	<string>TXPT</string>
 	<key>CFBundleVersion</key>
-	<string>2007-12-17</string>
+	<string>2008-02-05</string>
 	<key>NSMainNibFile</key>
 	<string>SDLMain</string>
 	<key>NSPrincipalClass</key>

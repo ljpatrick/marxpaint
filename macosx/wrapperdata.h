@@ -18,7 +18,7 @@ struct WrapperDataStruct
     char preferencesPath[2048];         // path to the user's Tux Paint preferences folder
     char globalPreferencesPath[2048];   // path to all users' Tux Paint preferences folder
     char fontsPath[2048];               // path to the user's fonts folder
-    int buildingFontCache;              // is the FontConfig font cache currently being built?
+    int buildingFontCache;              // is fontconfig cache being built?
     int foundSDL;                       // was SDL.framework found?
     int foundSDL_image;                 // was SDL_image.framework found?
     int foundSDL_mixer;                 // was SDL_mixer.framework found?
