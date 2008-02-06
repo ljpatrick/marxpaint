@@ -9,7 +9,7 @@ http://www.tuxpaint.org/
 $Id$
 
 
-2008.January.29 (0.9.19)
+2008.February.6 (0.9.19)
   * Localization Updates:
     ---------------------
     * Chinese (Simplified) README and FAQ documentation
@@ -66,6 +66,14 @@ $Id$
 
   * Bug Fixes
     ---------
+    * Added authorization code to permit Fontconfig files
+      to be installed on first launch from a non-admin account on Mac OS X.
+      Martin Fuhrer <mfuhrer@users.sourceforge.net>
+
+    * Fixed possible lockups in fullscreen mode when attempting to print
+      on Mac OS X.
+      Martin Fuhrer <mfuhrer@users.sourceforge.net>
+
     * Corrected bug where Shift and Kaleidoscope magic tools would crash
       when sound was disabled.
 
