@@ -31,6 +31,12 @@
 #ifdef __APPLE__
 #include "wrapperdata.h"
 extern WrapperData macosx;
+
+/* system fonts that cause TTF_OpenFont to crash */
+static const char* problemFonts[] = {
+  "/Library/Fonts//AppleMyungjo.ttf", 
+  NULL 
+};
 #endif
 
 #ifdef FORKED_FONTS
@@ -284,8 +290,18 @@ TuxPaint_Font * TuxPaint_Font_OpenFont(const char * pangodesc, const char * ttff
 
   if (ttffilename != NULL && ttffilename[0] != '\0')
   {
+    int i;
 #ifdef DEBUG
     printf("Opening TTF\n"); fflush(stdout);
+#endif
+      
+#ifdef __APPLE__
+    i = 0;
+    while (problemFonts[i] != NULL)
+    {
+      if (!strcmp(ttffilename, problemFonts[i++]))
+        return NULL;  /* bail on known problematic fonts that cause TTF_OpenFont to crash */
+    }
 #endif
 
     tpf = (TuxPaint_Font *) malloc(sizeof(TuxPaint_Font));
