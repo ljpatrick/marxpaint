@@ -9,7 +9,7 @@ http://www.tuxpaint.org/
 $Id$
 
 
-2008.February.6 (0.9.19)
+2008.February.7 (0.9.19)
   * Localization Updates:
     ---------------------
     * Chinese (Simplified) README and FAQ documentation
@@ -42,6 +42,16 @@ $Id$
   * System-Related Improvements:
     ----------------------------
     * Removed unfinished, unused record and playback code.
+
+    * Added authorization code to permit Fontconfig files to be installed
+      on first launch from a non-admin account on Mac OS X.
+      Martin Fuhrer <mfuhrer@users.sourceforge.net>
+
+    * Fixed possible lockups in fullscreen mode when attempting to print on Mac OS X.
+      Martin Fuhrer <mfuhrer@users.sourceforge.net>
+
+    * Skipping "AppleMyungjo.ttf" when loading fonts on Mac OS X to avoid TTF lib. crash.
+      Martin Fuhrer <mfuhrer@users.sourceforge.net>
 
   * Documentation Improvements:
     ---------------------------
