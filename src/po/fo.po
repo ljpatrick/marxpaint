@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Tux Paint 0.9.18\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-11-11 11:20+0100\n"
+"POT-Creation-Date: 2008-02-08 00:28-0800\n"
 "PO-Revision-Date: 2008-01-18 12:40-0000\n"
 "Last-Translator: Lis Gøthe í Jákupsstovu <morshus@morshus.com>\n"
 "Language-Team: Faroese <morshus@morshus.com>\n"
@@ -217,7 +217,8 @@ msgstr "Ein ferningur er ein rætthyrningur við fýra líka langum síðum."
 msgid "A rectangle has four sides and four right angles."
 msgstr "Ein rætthyningur hevur fýra síður og fýra rættar vinklar."
 
-msgid "A circle is a curve where all points have the same distance from the center."
+msgid ""
+"A circle is a curve where all points have the same distance from the center."
 msgstr "Ein sirkul er ein rás har øll punkt hava somu frástøðu frá miðjuni."
 
 #. Description of an ellipse
@@ -233,7 +234,8 @@ msgid "A pentagon has five sides."
 msgstr "Ein fimmkantur hevur fimm síður."
 
 msgid "A rhombus has four equal sides, and opposite sides are parallel."
-msgstr "Ein romba hevur fýra eins langar síður, og mótstandandi síður eru javnfjarar."
+msgstr ""
+"Ein romba hevur fýra eins langar síður, og mótstandandi síður eru javnfjarar."
 
 msgid "An octagon has eight equal sides."
 msgstr "Ein áttakantur hevur átta javnt stórar síður."
@@ -335,8 +337,12 @@ msgid "Click to start drawing a line. Let go to complete it."
 msgstr "Klikkja til at byrja eina striku. Slepp til at fullgera hana."
 
 #. Shape tool instructions
-msgid "Pick a shape. Click to pick the center, drag, then let go when it is the size you want. Move around to rotate it, and click to draw it."
-msgstr "Vel ein form. Klikkja til at velja miðjuna, drag, og slepp síðani tá ið hann hevur røttu stødd. Flyt runt til at snara, og klikkja til at tekna hann."
+msgid ""
+"Pick a shape. Click to pick the center, drag, then let go when it is the "
+"size you want. Move around to rotate it, and click to draw it."
+msgstr ""
+"Vel ein form. Klikkja til at velja miðjuna, drag, og slepp síðani tá ið hann "
+"hevur røttu stødd. Flyt runt til at snara, og klikkja til at tekna hann."
 
 #. Text tool instructions
 msgid "Choose a style of text. Click on your drawing and you can start typing."
@@ -551,7 +557,8 @@ msgstr "Drypp"
 msgid "Click and move the mouse around to make the picture blocky."
 msgstr "Klikkja og drag músina til at gera myndina kubbuta."
 
-msgid "Click and move the mouse around to turn the picture into a chalk drawing."
+msgid ""
+"Click and move the mouse around to turn the picture into a chalk drawing."
 msgstr "Klikkja og drag músina til at umgera myndina til eina kritmynd."
 
 msgid "Click and move the mouse around to make the picture drip."
@@ -595,7 +602,8 @@ msgid "Emboss"
 msgstr "Relief"
 
 msgid "Click and drag the mouse to emboss the picture."
-msgstr "Klikkja og drag músina til gera myndina um til relief (framskornir kantar)."
+msgstr ""
+"Klikkja og drag músina til gera myndina um til relief (framskornir kantar)."
 
 msgid "Lighten"
 msgstr "Ljósari"
@@ -619,7 +627,9 @@ msgid "Flower"
 msgstr "Blóma"
 
 msgid "Click and drag to draw a flower stalk. Let go to finish the flower."
-msgstr "Klikkja og drag músina til at tekna ein blómustelk. Slepp til at fullgera blómuna."
+msgstr ""
+"Klikkja og drag músina til at tekna ein blómustelk. Slepp til at fullgera "
+"blómuna."
 
 msgid "Foam"
 msgstr "Skúm"
@@ -642,8 +652,11 @@ msgstr "Klikkja og drag músina til at tekna gras. Gloym ikki moldina!"
 msgid "Kaleidoscope"
 msgstr "Kaleidoskop"
 
-msgid "Click and drag the mouse to draw with symmetric brushes (a kaleidoscope)."
-msgstr "Klikkja og drag músina til at tekna við symmetriskum penslum (eitt kaleidoskop)."
+msgid ""
+"Click and drag the mouse to draw with symmetric brushes (a kaleidoscope)."
+msgstr ""
+"Klikkja og drag músina til at tekna við symmetriskum penslum (eitt "
+"kaleidoskop)."
 
 msgid "Light"
 msgstr "Ljós"
@@ -708,16 +721,26 @@ msgstr "Klikkja og drag músina til at broyta litin á myndini."
 msgid "Waves"
 msgstr "Aldur"
 
-msgid "Click to make the picture wavy. Click toward the top for shorter waves, the bottom for taller waves, the left for small waves, and the right for long waves."
-msgstr "Klikkja og drag músina til at gera myndina alduta. Hála móti toppinum til at gera lægri aldur, móti botninum til at gera hægri, til vinstru til at gera smáar aldur og til høgru til at gera stórar."
+msgid ""
+"Click to make the picture wavy. Click toward the top for shorter waves, the "
+"bottom for taller waves, the left for small waves, and the right for long "
+"waves."
+msgstr ""
+"Klikkja og drag músina til at gera myndina alduta. Hála móti toppinum til at "
+"gera lægri aldur, móti botninum til at gera hægri, til vinstru til at gera "
+"smáar aldur og til høgru til at gera stórar."
 
 #~ msgid "Sparkles"
 #~ msgstr "Glitur"
+
 #~ msgid "You now have a blank sheet to draw on!"
 #~ msgstr "Tú hevur nú eitt blankt ark at tekna á!"
+
 #~ msgid "Start a new picture?"
 #~ msgstr "Byrja eina nýggja mynd?"
+
 #~ msgid "Yes, let's start fresh!"
 #~ msgstr "Ja, byrja av nýggjum!"
+
 #~ msgid "Click and move to draw sparkles."
 #~ msgstr "Trýst og flyt til at gera glitur."

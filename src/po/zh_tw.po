@@ -7,7 +7,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint 0.9.17\n"
-"POT-Creation-Date: 2007-11-11 11:20+0100\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2008-02-08 00:28-0800\n"
 "PO-Revision-Date: 2007-11-18 21:25+0800\n"
 "Last-Translator: 黃敏松 <songhuang.tw@gmail.com>\n"
 "Language-Team: Chinese (traditional) <zh-l10n@linux.org.tw>\n"
@@ -16,6 +17,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 #  Response to Black (0, 0, 0) color selected
+#. Response to Black (0, 0, 0) color selected
 msgid "Black!"
 msgstr "黑色!"
 
@@ -169,10 +171,12 @@ msgid "Hangul"
 msgstr "韓文"
 
 #  Input Method: Thai mode
+#. Input Method: Thai mode
 msgid "Thai"
 msgstr "泰文"
 
 #  Input Method: Traditional Chinese mode
+#. Input Method: Traditional Chinese mode
 msgid "ZH_TW"
 msgstr "繁體中文"
 
@@ -205,6 +209,7 @@ msgid "Rhombus"
 msgstr "菱形"
 
 #  Octagon shape tool (8 sides)
+#. Octagon shape tool (8 sides)
 msgid "Octagon"
 msgstr "八角形"
 
@@ -216,10 +221,12 @@ msgstr "正方形是四邊一樣長的長方形。"
 msgid "A rectangle has four sides and four right angles."
 msgstr "長方形有四個邊和四個直角。"
 
-msgid "A circle is a curve where all points have the same distance from the center."
+msgid ""
+"A circle is a curve where all points have the same distance from the center."
 msgstr "圓形是每一點都和圓心保持相同距離的曲線。"
 
 #  Description of an ellipse
+#. Description of an ellipse
 msgid "An ellipse is a stretched circle."
 msgstr "橢圓形是伸展開來的圓形。"
 
@@ -318,6 +325,7 @@ msgid "Print"
 msgstr "列印"
 
 #  Quit/exit Tux Paint application
+#. Quit/exit Tux Paint application
 msgid "Quit"
 msgstr "離開"
 
@@ -334,8 +342,13 @@ msgid "Click to start drawing a line. Let go to complete it."
 msgstr "按一下滑鼠就可以開始畫一條線. 讓我們來完成它吧!"
 
 #  Shape tool instructions
-msgid "Pick a shape. Click to pick the center, drag, then let go when it is the size you want. Move around to rotate it, and click to draw it."
-msgstr "挑選一個形狀。點一下來決定形狀的中心位置，然後持續拖拉它到你要的大小。繞著中心移動來旋轉它，然後點一下把它畫下來。"
+#. Shape tool instructions
+msgid ""
+"Pick a shape. Click to pick the center, drag, then let go when it is the "
+"size you want. Move around to rotate it, and click to draw it."
+msgstr ""
+"挑選一個形狀。點一下來決定形狀的中心位置，然後持續拖拉它到你要的大小。繞著中"
+"心移動來旋轉它，然後點一下把它畫下來。"
 
 #. Text tool instructions
 msgid "Choose a style of text. Click on your drawing and you can start typing."
@@ -358,6 +371,7 @@ msgid "Eraser!"
 msgstr "用橡皮擦把圖畫擦掉!"
 
 #  Response to 'start a new image' action
+#. Response to 'start a new image' action
 msgid "Pick a color or picture with which to start a new drawing."
 msgstr "挑選一個顏色或圖形的新畫布。"
 
@@ -390,6 +404,7 @@ msgid "Move the mouse to rotate the shape. Click to draw it."
 msgstr "移動滑鼠可以旋轉這個形狀。點一下可以將它畫上去。"
 
 #  Notification that 'New' action was aborted (current image would have been lost)
+#. Notification that 'New' action was aborted (current image would have been lost)
 msgid "OK then… Let’s keep drawing this one!"
 msgstr "很好，讓我們繼續來畫這張圖吧!"
 
@@ -461,10 +476,12 @@ msgid "Remember to use the left mouse button!"
 msgstr "記得使用滑鼠的左邊按鍵!"
 
 #  Sound has been muted (silenced) via keyboard shortcut
+#. Sound has been muted (silenced) via keyboard shortcut
 msgid "Sound muted."
 msgstr "靜音"
 
 #  Sound has been unmuted (unsilenced) via keyboard shortcut
+#. Sound has been unmuted (unsilenced) via keyboard shortcut
 msgid "Sound unmuted."
 msgstr "取消靜音"
 
@@ -550,7 +567,8 @@ msgstr "水滴"
 msgid "Click and move the mouse around to make the picture blocky."
 msgstr "按著並移動滑鼠來使圖畫有馬賽克效果。"
 
-msgid "Click and move the mouse around to turn the picture into a chalk drawing."
+msgid ""
+"Click and move the mouse around to turn the picture into a chalk drawing."
 msgstr "按著並移動滑鼠來產生粉筆的痕跡。"
 
 msgid "Click and move the mouse around to make the picture drip."
@@ -641,7 +659,8 @@ msgstr "按著並移動滑鼠來畫出青草，別忘了泥土喔!"
 msgid "Kaleidoscope"
 msgstr "萬花筒"
 
-msgid "Click and drag the mouse to draw with symmetric brushes (a kaleidoscope)."
+msgid ""
+"Click and drag the mouse to draw with symmetric brushes (a kaleidoscope)."
 msgstr "按著並移動滑鼠來畫出對稱的筆刷(萬花筒)。"
 
 msgid "Light"
@@ -707,6 +726,10 @@ msgstr "按著並移動滑鼠來改變圖畫的顏色。"
 msgid "Waves"
 msgstr "波浪"
 
-msgid "Click to make the picture wavy. Click toward the top for shorter waves, the bottom for taller waves, the left for small waves, and the right for long waves."
-msgstr "在圖紙上按下滑鼠鍵會讓影像如波浪般的扭曲，按著往上是短的波浪，往下是長的波浪，往左是小的波浪，往右是大的波浪。"
-
+msgid ""
+"Click to make the picture wavy. Click toward the top for shorter waves, the "
+"bottom for taller waves, the left for small waves, and the right for long "
+"waves."
+msgstr ""
+"在圖紙上按下滑鼠鍵會讓影像如波浪般的扭曲，按著往上是短的波浪，往下是長的波"
+"浪，往左是小的波浪，往右是大的波浪。"

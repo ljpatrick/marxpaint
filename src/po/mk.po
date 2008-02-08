@@ -6,8 +6,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint\n"
-"Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
-"POT-Creation-Date: 2007-05-09 00:32-0700\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2008-02-08 00:28-0800\n"
 "PO-Revision-Date: 2006-06-17 23:07+0000\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: Macedonian <mk@li.org>\n"
@@ -17,54 +17,71 @@ msgstr ""
 "X-Launchpad-Export-Date: 2008-02-06 12:24+0000\n"
 "X-Generator: Launchpad (build Unknown)\n"
 
+#. Response to Black (0, 0, 0) color selected
 msgid "Black!"
 msgstr "Црно!"
 
+#. Response to Dark grey (128, 128, 128) color selected
 msgid "Dark grey! Some people spell it “dark gray”."
 msgstr "Темно сиво!"
 
+#. Response to Light grey (192, 192, 192) color selected
 msgid "Light grey! Some people spell it “light gray”."
 msgstr "Светло сиво!"
 
+#. Response to White (255, 255, 255) color selected
 msgid "White!"
 msgstr "Бело!"
 
+#. Response to Red (255, 0, 0) color selected
 msgid "Red!"
 msgstr "Црвено!"
 
+#. Response to Orange (255, 128, 0) color selected
 msgid "Orange!"
 msgstr "Портокалово!"
 
+#. Response to Yellow (255, 255, 0) color selected
 msgid "Yellow!"
 msgstr "Жолто!"
 
+#. Response to Light green (160, 228, 128) color selected
 msgid "Light green!"
 msgstr "Светло зелено!"
 
+#. Response to Dark green (33, 148, 70) color selected
 msgid "Dark green!"
 msgstr "Темно зелено!"
 
+#. Response to "Sky" blue (138, 168, 205) color selected
 msgid "Sky blue!"
 msgstr "Небесно плаво!"
 
+#. Response to Blue (50, 100, 255) color selected
 msgid "Blue!"
 msgstr "Плаво!"
 
+#. Response to Lavender (186, 157, 255) color selected
 msgid "Lavender!"
 msgstr "Светло виолетово!"
 
+#. Response to Purple (128, 0, 128) color selected
 msgid "Purple!"
 msgstr "Виолетово!"
 
+#. Response to Pink (255, 165, 211) color selected
 msgid "Pink!"
 msgstr "Розово!"
 
+#. Response to Brown (128, 80, 0) color selected
 msgid "Brown!"
 msgstr "Кафеаво!"
 
+#. Response to Tan (226, 189, 166) color selected
 msgid "Tan!"
 msgstr "Цијан!"
 
+#. Response to Beige (247, 228, 219) color selected
 msgid "Beige!"
 msgstr "Беж!"
 
@@ -72,20 +89,21 @@ msgstr "Беж!"
 #. via bugs in the SDL_ttf library. We also test fonts to be sure that
 #. they have both uppercase and lowercase letters. Note that we do not
 #. test for "Aa", because it is OK if uppercase and lowercase are the
-#. same. (but not nice -- such fonts get a low score later)
-#. 
+#. same (but not nice -- such fonts get a low score later).
+#.
 #. We test the alphabet twice, to help with translation. If the users
-#. will be unable to type ASCII letters, then both lines should be
-#. translated. Otherwise, only Line X should be translated and the
-#. ASCII-only fonts should be given bad scores in the scoring code below.
-#. (the best scores going to fonts that support both)
+#. will be unable to type ASCII letters, then both Line X and Line Y
+#. should be translated. Otherwise, only Line X should be translated
+#. and the ASCII-only fonts should be given bad scores in the scoring
+#. code below (the best scores going to fonts that support both).
+#. Line X
 msgid "qx"
 msgstr ""
 
 msgid "QX"
 msgstr ""
 
-#. Line X
+#. Line Y
 msgid "qy"
 msgstr ""
 
@@ -96,280 +114,234 @@ msgstr ""
 #. the top of the list. The user will see them first. This sorting is
 #. especially important for users who have scroll buttons disabled.
 #. Translators should do whatever is needed to put crummy fonts last.
+#. distinct uppercase and lowercase (e.g., 'o' vs. 'O')
 msgid "oO"
 msgstr "oO"
 
-#. distinct uppercase and lowercase
+#. uncommon punctuation (e.g., '@', '#', '*', etc.)
 msgid "`\\%_@$~#{}<>^&*"
 msgstr "`\\%_@$~#{}<>^&*"
 
-#. uncommon punctuation
+#. common punctuation (e.g., '?', '!', '.', ',', etc.)
 msgid ",.?!"
 msgstr ",.?!"
 
-#. common punctuation
+#. digits (e.g., '0', '1' and '7')
 msgid "017"
 msgstr "017"
 
-#. digits
+#. distinct circle-like characters (e.g., 'O' (capital oh) vs. '0' (zero))
 msgid "O0"
 msgstr "O0"
 
-#. distinct circle-like characters
+#. distinct line-like characters (e.g., 'l' (lowercase elle) vs. '1' (one) vs. 'I' (capital aye))
 msgid "1Il|"
 msgstr "1Il|"
 
+#. Congratulations #1
 msgid "Great!"
 msgstr "Прекрасно!"
 
+#. Congratulations #2
 msgid "Cool!"
 msgstr "Чудесно!"
 
+#. Congratulations #3
 msgid "Keep it up!"
 msgstr "Продолжете така!"
 
+#. Congratulations #4
 msgid "Good job!"
 msgstr "Добро направено!"
 
+#. Input Method: English mode
 msgid "English"
 msgstr ""
 
+#. Input Method: Japanese Romanized Hiragana mode
 msgid "Hiragana"
 msgstr ""
 
+#. Input Method: Japanese Romanized Katakana mode
 msgid "Katakana"
 msgstr ""
 
+#. Input Method: Korean Hangul 2-Bul mode
 msgid "Hangul"
 msgstr ""
 
-msgid "Fill"
-msgstr "Пополни"
-
-msgid "Grass"
-msgstr "Трева"
-
-msgid "Bricks"
-msgstr "Цигли"
-
-msgid "Rainbow"
-msgstr "Виножито"
-
-msgid "Sparkles"
-msgstr "Искри"
-
-msgid "Blur"
-msgstr "Замати"
-
-msgid "Smudge"
-msgstr "Флека"
-
-msgid "Lighten"
-msgstr "Осветлување"
-
-msgid "Darken"
-msgstr "Затемнување"
-
-msgid "Chalk"
-msgstr "Креда"
-
-msgid "Blocks"
-msgstr "Блокови"
-
-msgid "Negative"
-msgstr "Негатив"
-
-msgid "Tint"
-msgstr "Боење"
-
-msgid "Drip"
-msgstr "Протекување"
-
-msgid "Cartoon"
-msgstr "Цртани"
-
-msgid "Mirror"
-msgstr "Огледало"
-
-msgid "Flip"
-msgstr "Преврти"
-
-msgid "Click in the picture to fill that area with color."
-msgstr "Кликнете на сликата за да ја пополните областа со боја."
-
-msgid "Click and move to draw grass. Don’t forget the dirt!"
-msgstr "Кликнете на глувчето и влечете за да цртате трева. Извалкајте малку!"
-
-msgid "Click and move to draw large bricks."
-msgstr "Кликнете на глувчето и влечете за да цртате големи цигли."
-
-msgid "Click and move to draw small bricks."
-msgstr "Кликнете на глувчето и влечете за да цртате мали цигли."
-
-msgid "You can draw in rainbow colors!"
-msgstr "Можете да цртате со боите на виножитото!"
-
-msgid "Click and move to draw sparkles."
-msgstr "Кликнете и движете го глувчето за да цртате искри."
-
-msgid "Click and move the mouse around to blur the picture."
-msgstr "Кликнете и движете го глувчето наоколу за да ја замаглите сликата."
-
-msgid "Click and move the mouse around to smudge the picture."
-msgstr "Кликнете и движете го глувчето наоколу за да ја размачкате сликата."
-
-msgid "Click and move to fade the colors."
-msgstr "Кликнете и движете го глувчето за да избледнеат боите."
-
-msgid "Click and move to darken the colors."
-msgstr "Кликнете и движете го глувчето за да потемнат боите."
-
-msgid ""
-"Click and move the mouse around to turn the picture into a chalk drawing."
+#. Input Method: Thai mode
+msgid "Thai"
 msgstr ""
-"Кликнете и движете го глувчето наоколу за да ја претворите сликата во цртеж "
-"со креда."
 
-msgid "Click and move the mouse around to make the picture blocky."
-msgstr "Кликнете на глувчето и движете го за добиете погруба слика."
-
-msgid "Click and move the mouse around to draw a negative."
-msgstr "Кликнете на глувчето и влечете го наоколу за да добиете негатив."
-
-msgid "Click and move the mouse around to change the picture’s color."
+#. Input Method: Traditional Chinese mode
+msgid "ZH_TW"
 msgstr ""
-"Кликнете на глувчето и влечете го наоколу за да ја промените бојата на "
-"сликата."
 
-msgid "Click and move the mouse around to make the picture drip."
-msgstr "Кликнете на глувчето и влечете го наоколу за боите  да протечат."
-
-msgid "Click and move the mouse around to turn the picture into a cartoon."
-msgstr ""
-"Кликнете на глувчето и влечете го наоколу за да ја претворите сликата во "
-"цртан."
-
-msgid "Click to make a mirror image."
-msgstr "Кликнете за да направите огледална слика."
-
-msgid "Click to flip the picture upside-down."
-msgstr "Кликнете за да ја превртите сликата наопаку."
-
+#. Square shape tool (4 equally-lengthed sides at right angles)
 msgid "Square"
 msgstr "Квадрат"
 
+#. Rectangle shape tool (4 sides at right angles)
 msgid "Rectangle"
 msgstr "Правоаголник"
 
+#. Circle shape tool (X radius and Y radius are the same)
 msgid "Circle"
 msgstr "Круг"
 
+#. Ellipse shape tool (X radius and Y radius may differ)
 msgid "Ellipse"
 msgstr "Елипса"
 
+#. Triangle shape tool (3 sides)
 msgid "Triangle"
 msgstr "Триаголник"
 
+#. Pentagone shape tool (5 sides)
 msgid "Pentagon"
 msgstr "Петоаголник"
 
+#. Rhombus shape tool (4 sides, not at right angles)
 msgid "Rhombus"
 msgstr "Ромб"
 
+#. Octagon shape tool (8 sides)
+#, fuzzy
+msgid "Octagon"
+msgstr "Петоаголник"
+
+#. Description of a square
 msgid "A square is a rectangle with four equal sides."
 msgstr "Квадратот е правоаголник со четири еднакви страни."
 
+#. Description of a rectangle
 msgid "A rectangle has four sides and four right angles."
 msgstr "Правоаголникот има четири страни  и четири прави агли."
 
+#, fuzzy
 msgid ""
-"A circle is a curve where all points have the same distance from the centre."
+"A circle is a curve where all points have the same distance from the center."
 msgstr "Кругот е крива од точки кои се на еднакво растојание од центарот."
 
+#. Description of an ellipse
 msgid "An ellipse is a stretched circle."
 msgstr "Елипсата е развлечен круг."
 
+#. Description of a triangle
 msgid "A triangle has three sides."
 msgstr "Триаголникот има три страни."
 
+#. Description of a pentagon
 msgid "A pentagon has five sides."
 msgstr "Петоаголникот има пет страни."
 
 msgid "A rhombus has four equal sides, and opposite sides are parallel."
 msgstr "Ромбот има четири еднакви страни, и спротивните страни се паралелни."
 
+#, fuzzy
+msgid "An octagon has eight equal sides."
+msgstr "Петоаголникот има пет страни."
+
+#. Title of tool selector (buttons down the left)
 msgid "Tools"
 msgstr "Алатки"
 
+#. Title of color palette (buttons across the bottom)
 msgid "Colors"
 msgstr "Бои"
 
+#. Title of brush selector (buttons down the right for paint and line tools)
 msgid "Brushes"
 msgstr "Четки"
 
+#. Title of eraser selector (buttons down the right for eraser tool)
 msgid "Erasers"
 msgstr "Гумички"
 
+#. Title of stamp selector (buttons down the right for stamps tool)
 msgid "Stamps"
 msgstr "Печати"
 
+#. Title of shape selector (buttons down the right for shapes tool)
+#. Shape creation tool (square, circle, etc.)
 msgid "Shapes"
 msgstr "Форми"
 
+#. Title of font selector (buttons down the right for text tool)
 msgid "Letters"
 msgstr "Букви"
 
+#. Title of magic tool selector (buttons down the right for magic (effect plugin) tool)
+#. "Magic" effects tools (blur, flip image, etc.)
 msgid "Magic"
 msgstr "Магија"
 
+#. Freehand painting tool
 msgid "Paint"
 msgstr "Цртање"
 
+#. Stamp tool (aka Rubber Stamps)
 msgid "Stamp"
 msgstr "Маркичка"
 
+#. Line drawing tool
 msgid "Lines"
 msgstr "Линии"
 
+#. Text tool
 msgid "Text"
 msgstr "Текст"
 
+#. Undo last action
 msgid "Undo"
 msgstr "Врати на предходно"
 
+#. Redo undone action
 msgid "Redo"
 msgstr "Повтори"
 
+#. Eraser tool
 msgid "Eraser"
 msgstr "Гума"
 
+#. Start a new picture
 msgid "New"
 msgstr "Нов"
 
+#. Open a saved picture
 #. buttons for the file open dialog
+#. Open dialog: 'Open' button, to load the selected picture
 msgid "Open"
 msgstr "Отвори"
 
+#. Save the current picture
 msgid "Save"
 msgstr "Зачувај"
 
+#. Print the current picture
 msgid "Print"
 msgstr "Печати"
 
+#. Quit/exit Tux Paint application
 msgid "Quit"
 msgstr "Откажи"
 
+#. Paint tool instructions
 msgid "Pick a color and a brush shape to draw with."
 msgstr "Избери боја и форма на четката за цртање."
 
+#. Stamp tool instructions
 msgid "Pick a picture to stamp around your drawing."
 msgstr "Избери слика за печат на цртежот."
 
+#. Line tool instructions
 msgid "Click to start drawing a line. Let go to complete it."
 msgstr ""
 "Кликнете на глувчето за да почнете линија. Поместете се до некоја крајна "
 "точка и кликнете за да ја завршите линијата."
 
+#. Shape tool instructions
 msgid ""
 "Pick a shape. Click to pick the center, drag, then let go when it is the "
 "size you want. Move around to rotate it, and click to draw it."
@@ -378,68 +350,77 @@ msgstr ""
 "постигнете саканата големина. Движете го глувчето за ротација, и кликнете за "
 "да се нацрта."
 
-msgid ""
-"Choose a style of text. Click on your drawing and you can start typing."
+#. Text tool instructions
+msgid "Choose a style of text. Click on your drawing and you can start typing."
 msgstr ""
 "Изберете го стилот на текстот. Кликнете на цртежот за да почнете да куцате."
 
+#. Magic tool instruction
 msgid "Pick a magical effect to use on your drawing!"
 msgstr "Изберете магичен ефект за својата слика!"
 
-#. Undo
+#. Response to 'undo' action
 msgid "Undo!"
 msgstr "Врати на предходно!"
 
-#. Redo
+#. Response to 'redo' action
 msgid "Redo!"
 msgstr "Повтори!"
 
-#. Eraser
+#. Eraser tool
 msgid "Eraser!"
 msgstr "Гума за бришење!"
 
-#. New
-msgid "You now have a blank sheet to draw on!"
-msgstr "Веќе имате празно платно за цртање!"
+#. Response to 'start a new image' action
+#, fuzzy
+msgid "Pick a color or picture with which to start a new drawing."
+msgstr "Избери слика за печат на цртежот."
 
-#. Open
+#. Response to 'open' action (while file dialog is being constructed)
 msgid "Open…"
 msgstr "Отвори..."
 
-#. Save
+#. Response to 'save' action
 msgid "Your image has been saved!"
 msgstr "Твојата слика е зачувана!"
 
-#. Print
+#. Response to 'print' action (while printing, or print dialog is being used)
 msgid "Printing…"
 msgstr "Печатење..."
 
-#. Quit
+#. Response to 'quit' (exit) action
 msgid "Bye bye!"
 msgstr "Догледање!"
 
+#. Instruction while using Line tool (after click, before release)
 msgid "Let go of the button to complete the line."
 msgstr "Отпуштете го копчето на глувчето за да ја завршите линијата."
 
+#. Instruction while using Shape tool (after first click, before release)
 msgid "Hold the button to stretch the shape."
 msgstr "Задржете го копчето за да ја растегнете формата."
 
+#. Instruction while finishing Shape tool (after release, during rotation step before second click)
 msgid "Move the mouse to rotate the shape. Click to draw it."
 msgstr "Движете го глувчето за да ротирате формата. Кликнете да ја нацртате."
 
+#. Notification that 'New' action was aborted (current image would have been lost)
 msgid "OK then… Let’s keep drawing this one!"
 msgstr "Добро тогаш... Да продолжиме со цртањето на оваа слика!"
 
-#. FIXME: Move elsewhere!!!
+#. Prompt to confirm user wishes to quit
 msgid "Do you really want to quit?"
 msgstr "Навистина ли сакате да ја прекинете со работа?"
 
+#. Quit prompt positive response (quit)
 msgid "Yes, I'm done!"
 msgstr ""
 
+#. Quit prompt negative response (don't quit)
 msgid "No, take me back!"
 msgstr ""
 
+#. Current picture is not saved; user is quitting
 msgid "If you quit, you’ll lose your picture! Save it?"
 msgstr "Ако ја прекинете со работа, ќе ја загубите сликата! Да се зачува ли?"
 
@@ -449,41 +430,38 @@ msgstr ""
 msgid "No, don't bother saving!"
 msgstr ""
 
+#. Current picture is not saved; user is opening another picture
 msgid "Save your picture first?"
 msgstr "Да се зачува ли предходно сликата?"
 
+#. Error opening picture
 msgid "Can’t open that picture!"
 msgstr "Таа слика не може да биде отворена!"
 
+#. Generic dialog dismissal
 msgid "OK"
 msgstr "Во ред"
 
-#. This will be replaced with a dialog allowing color choice and Starter
-#. picking, with a "Back" option to dismiss the "New" and return to
-#. the current picture.  But for now...  (bjk 2006.02.19)
-msgid "Start a new picture?"
-msgstr ""
-
-#. #define PROMPT_NEW_YES gettext_noop("That’s OK!")
-#. #define PROMPT_NEW_NO gettext_noop("Never mind!")
-msgid "Yes, let's start fresh!"
-msgstr ""
-
+#. Notification that 'Open' dialog has nothing to show
 msgid "There are no saved files!"
 msgstr "Нема зачувани датотеки!"
 
+#. Verification of print action
 msgid "Print your picture now?"
 msgstr "Да се печати ли сликата сега?"
 
 msgid "Yes, print it!"
 msgstr ""
 
+#. Confirmation of successful (we hope) printing
 msgid "Your picture has been printed!"
 msgstr "Вашата слика е испечатена!"
 
+#. Notification that it's too soon to print again (--printdelay option is in effect)
 msgid "You can’t print yet!"
 msgstr "Се уште не можете да печатите!"
 
+#. Prompt to confirm erasing a picture in the Open dialog
 msgid "Erase this picture?"
 msgstr "Да се избриша ли сликата?"
 
@@ -493,45 +471,68 @@ msgstr ""
 msgid "No, don't erase it!"
 msgstr ""
 
+#. Reminder that Mouse Button 1 is the button to use in Tux Paint
 msgid "Remember to use the left mouse button!"
 msgstr "Не заборавајте да го користите левото копче на глувчето!"
 
-msgid "Please wait..."
+#. Sound has been muted (silenced) via keyboard shortcut
+msgid "Sound muted."
 msgstr ""
 
+#. Sound has been unmuted (unsilenced) via keyboard shortcut
+msgid "Sound unmuted."
+msgstr ""
+
+#. Wait while Text tool finishes loading fonts
+msgid "Please wait…"
+msgstr ""
+
+msgid "Pick a color."
+msgstr ""
+
+#. Open dialog: 'Erase' button, to erase/deleted the selected picture
 msgid "Erase"
 msgstr "Бришење"
 
+#. Open dialog: 'Slides' button, to switch to slide show mode
 msgid "Slides"
 msgstr ""
 
+#. Open dialog: 'Back' button, to dismiss Open dialog without opening a picture
 msgid "Back"
 msgstr "Назад"
 
+#. Slideshow: 'Next' button, to load next slide (image)
 msgid "Next"
 msgstr ""
 
+#. Slideshow: 'Play' button, to begin a slideshow sequence
 msgid "Play"
 msgstr ""
 
+#. Label for 'Letters' buttons (font selector, down the right when the Text tool is being used); used to show the difference between font faces
 msgid "Aa"
 msgstr "Aa"
 
-#. FIXME: Move elsewhere! Or not?!
+#. Admittedly stupid way of determining which keys can be used for
+#. positive and negative responses in dialogs (e.g., [Y] (for 'yes') in English)
 msgid "Yes"
 msgstr "Да"
 
 msgid "No"
 msgstr "Не"
 
-#. FIXME: Move elsewhere!!!
-#. #define PROMPT_SAVE_OVER_TXT gettext_noop("Save over the older version of this picture?")
+#. Prompt to ask whether user wishes to save over old version of their file
 msgid "Replace the picture with your changes?"
 msgstr ""
 
+#. Positive response to saving over old version
+#. (like a 'File:Save' action in other applications)
 msgid "Yes, replace the old one!"
 msgstr ""
 
+#. Negative response to saving over old version (saves a new image)
+#. (like a 'File:Save As...' action in other applications)
 msgid "No, save a new file!"
 msgstr ""
 
@@ -539,6 +540,7 @@ msgid "Choose the picture you want, then click “Open”."
 msgstr "Изберете ја сликата која ја сакате, тогаш кликнете „Отвори“."
 
 #. Let user choose images:
+#. Instructions for Slideshow file dialog (FIXME: Make a #define)
 msgid "Choose the pictures you want, then click “Play”."
 msgstr ""
 
@@ -550,3 +552,206 @@ msgstr "Програм за цртање"
 
 msgid "Tux Paint"
 msgstr "Tux Боенка"
+
+msgid "Blocks"
+msgstr "Блокови"
+
+msgid "Chalk"
+msgstr "Креда"
+
+msgid "Drip"
+msgstr "Протекување"
+
+msgid "Click and move the mouse around to make the picture blocky."
+msgstr "Кликнете на глувчето и движете го за добиете погруба слика."
+
+msgid ""
+"Click and move the mouse around to turn the picture into a chalk drawing."
+msgstr ""
+"Кликнете и движете го глувчето наоколу за да ја претворите сликата во цртеж "
+"со креда."
+
+msgid "Click and move the mouse around to make the picture drip."
+msgstr "Кликнете на глувчето и влечете го наоколу за боите  да протечат."
+
+msgid "Blur"
+msgstr "Замати"
+
+msgid "Click and move the mouse around to blur the picture."
+msgstr "Кликнете и движете го глувчето наоколу за да ја замаглите сликата."
+
+#. Both are named "Bricks", at the moment:
+msgid "Bricks"
+msgstr "Цигли"
+
+msgid "Click and move to draw large bricks."
+msgstr "Кликнете на глувчето и влечете за да цртате големи цигли."
+
+msgid "Click and move to draw small bricks."
+msgstr "Кликнете на глувчето и влечете за да цртате мали цигли."
+
+msgid "Calligraphy"
+msgstr ""
+
+#, fuzzy
+msgid "Click and move the mouse around to draw in calligraphy."
+msgstr "Кликнете на глувчето и влечете го наоколу за да добиете негатив."
+
+msgid "Cartoon"
+msgstr "Цртани"
+
+msgid "Click and move the mouse around to turn the picture into a cartoon."
+msgstr ""
+"Кликнете на глувчето и влечете го наоколу за да ја претворите сликата во "
+"цртан."
+
+msgid "Distortion"
+msgstr ""
+
+#, fuzzy
+msgid "Click and drag the mouse to cause a distortion in your picture."
+msgstr "Кликнете и движете го глувчето наоколу за да ја замаглите сликата."
+
+msgid "Emboss"
+msgstr ""
+
+#, fuzzy
+msgid "Click and drag the mouse to emboss the picture."
+msgstr "Кликнете и движете го глувчето наоколу за да ја замаглите сликата."
+
+msgid "Lighten"
+msgstr "Осветлување"
+
+msgid "Darken"
+msgstr "Затемнување"
+
+msgid "Click and move to fade the colors."
+msgstr "Кликнете и движете го глувчето за да избледнеат боите."
+
+msgid "Click and move to darken the colors."
+msgstr "Кликнете и движете го глувчето за да потемнат боите."
+
+msgid "Fill"
+msgstr "Пополни"
+
+msgid "Click in the picture to fill that area with color."
+msgstr "Кликнете на сликата за да ја пополните областа со боја."
+
+msgid "Flower"
+msgstr ""
+
+msgid "Click and drag to draw a flower stalk. Let go to finish the flower."
+msgstr ""
+
+msgid "Foam"
+msgstr ""
+
+#, fuzzy
+msgid "Click and drag the mouse to cover an area with foamy bubbles."
+msgstr "Кликнете на сликата за да ја пополните областа со боја."
+
+msgid "Glass Tile"
+msgstr ""
+
+#, fuzzy
+msgid "Click and drag the mouse to put glass tile over your picture."
+msgstr "Кликнете и движете го глувчето наоколу за да ја замаглите сликата."
+
+msgid "Grass"
+msgstr "Трева"
+
+msgid "Click and move to draw grass. Don’t forget the dirt!"
+msgstr "Кликнете на глувчето и влечете за да цртате трева. Извалкајте малку!"
+
+msgid "Kaleidoscope"
+msgstr ""
+
+msgid ""
+"Click and drag the mouse to draw with symmetric brushes (a kaleidoscope)."
+msgstr ""
+
+#, fuzzy
+msgid "Light"
+msgstr "Осветлување"
+
+msgid "Click and drag to draw a beam of light on your picture."
+msgstr ""
+
+#, fuzzy
+msgid "Metal Paint"
+msgstr "Цртање"
+
+#, fuzzy
+msgid "Click and drag the mouse to paint with a metallic color."
+msgstr "Кликнете и движете го глувчето за да потемнат боите."
+
+msgid "Mirror"
+msgstr "Огледало"
+
+msgid "Flip"
+msgstr "Преврти"
+
+msgid "Click to make a mirror image."
+msgstr "Кликнете за да направите огледална слика."
+
+msgid "Click to flip the picture upside-down."
+msgstr "Кликнете за да ја превртите сликата наопаку."
+
+msgid "Negative"
+msgstr "Негатив"
+
+msgid "Click and move the mouse around to draw a negative."
+msgstr "Кликнете на глувчето и влечете го наоколу за да добиете негатив."
+
+msgid "Rainbow"
+msgstr "Виножито"
+
+msgid "You can draw in rainbow colors!"
+msgstr "Можете да цртате со боите на виножитото!"
+
+msgid "Ripples"
+msgstr ""
+
+#, fuzzy
+msgid "Click to make ripples appear over your picture."
+msgstr "Кликнете за да направите огледална слика."
+
+msgid "Shift"
+msgstr ""
+
+#, fuzzy
+msgid "Click and drag to shift your picture around on the canvas."
+msgstr "Кликнете и движете го глувчето наоколу за да ја замаглите сликата."
+
+msgid "Smudge"
+msgstr "Флека"
+
+msgid "Click and move the mouse around to smudge the picture."
+msgstr "Кликнете и движете го глувчето наоколу за да ја размачкате сликата."
+
+msgid "Tint"
+msgstr "Боење"
+
+msgid "Click and move the mouse around to change the picture’s color."
+msgstr ""
+"Кликнете на глувчето и влечете го наоколу за да ја промените бојата на "
+"сликата."
+
+#, fuzzy
+msgid "Waves"
+msgstr "Зачувај"
+
+msgid ""
+"Click to make the picture wavy. Click toward the top for shorter waves, the "
+"bottom for taller waves, the left for small waves, and the right for long "
+"waves."
+msgstr ""
+
+#~ msgid "Sparkles"
+#~ msgstr "Искри"
+
+#~ msgid "Click and move to draw sparkles."
+#~ msgstr "Кликнете и движете го глувчето за да цртате искри."
+
+#~ msgid "You now have a blank sheet to draw on!"
+#~ msgstr "Веќе имате празно платно за цртање!"

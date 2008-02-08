@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TuxPaint\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-11-11 11:20+0100\n"
+"POT-Creation-Date: 2008-02-08 00:28-0800\n"
 "PO-Revision-Date: 2008-01-07 14:29+0300\n"
 "Last-Translator: Sergei Popov <skein@rambler.ru>\n"
 "Language-Team: Dmitriy Ivanov <ace22b@myrealbox.com>\n"
@@ -243,8 +243,11 @@ msgstr "Квадрат - прямоугольник с четырьмя равн
 msgid "A rectangle has four sides and four right angles."
 msgstr "У прямоугольника четыре стороны и четыре прямых угла."
 
-msgid "A circle is a curve where all points have the same distance from the center."
-msgstr "Окружность - это кривая, все точки которой удалены на равное расстояние от центра."
+msgid ""
+"A circle is a curve where all points have the same distance from the center."
+msgstr ""
+"Окружность - это кривая, все точки которой удалены на равное расстояние от "
+"центра."
 
 #. Description of an ellipse
 msgid "An ellipse is a stretched circle."
@@ -259,7 +262,8 @@ msgid "A pentagon has five sides."
 msgstr "А у пятиугольника пять сторон (и углов!)"
 
 msgid "A rhombus has four equal sides, and opposite sides are parallel."
-msgstr "У ромба все четыре стороны равны и противоположные стороны параллельны."
+msgstr ""
+"У ромба все четыре стороны равны и противоположные стороны параллельны."
 
 msgid "An octagon has eight equal sides."
 msgstr "А у восьмиугольника восемь сторон."
@@ -358,11 +362,16 @@ msgstr "Выберите картину, чтобы поставить печа�
 
 #. Line tool instructions
 msgid "Click to start drawing a line. Let go to complete it."
-msgstr "Щёлкните, чтобы начать рисовать линию. Отпустите кнопку, чтобы закончить."
+msgstr ""
+"Щёлкните, чтобы начать рисовать линию. Отпустите кнопку, чтобы закончить."
 
 #. Shape tool instructions
-msgid "Pick a shape. Click to pick the center, drag, then let go when it is the size you want. Move around to rotate it, and click to draw it."
-msgstr "Выберите форму. Щёлкните для выбора центра, растяните до нужного размера, отпустите. Покрутите форму, затем щёлкните, чтобы нарисовать её."
+msgid ""
+"Pick a shape. Click to pick the center, drag, then let go when it is the "
+"size you want. Move around to rotate it, and click to draw it."
+msgstr ""
+"Выберите форму. Щёлкните для выбора центра, растяните до нужного размера, "
+"отпустите. Покрутите форму, затем щёлкните, чтобы нарисовать её."
 
 #. Text tool instructions
 msgid "Choose a style of text. Click on your drawing and you can start typing."
@@ -579,8 +588,10 @@ msgstr "Капанье"
 msgid "Click and move the mouse around to make the picture blocky."
 msgstr "Щёлкните и поводите по картинке, чтобы превратить её часть в мозаику."
 
-msgid "Click and move the mouse around to turn the picture into a chalk drawing."
-msgstr "Щёлкните и поводите по картинке, чтобы превратить её часть в рисунок мелом."
+msgid ""
+"Click and move the mouse around to turn the picture into a chalk drawing."
+msgstr ""
+"Щёлкните и поводите по картинке, чтобы превратить её часть в рисунок мелом."
 
 msgid "Click and move the mouse around to make the picture drip."
 msgstr "Щёлкните и поводите по картинке, чтобы заставьте её капать."
@@ -611,7 +622,8 @@ msgid "Cartoon"
 msgstr "Мультфильм"
 
 msgid "Click and move the mouse around to turn the picture into a cartoon."
-msgstr "Щёлкните и поводите по картинке, чтобы превратить её часть в мультфильм."
+msgstr ""
+"Щёлкните и поводите по картинке, чтобы превратить её часть в мультфильм."
 
 msgid "Distortion"
 msgstr "Искажение"
@@ -647,7 +659,9 @@ msgid "Flower"
 msgstr "Цветок"
 
 msgid "Click and drag to draw a flower stalk. Let go to finish the flower."
-msgstr "Нажмите и тяните, чтобы нарисовать стебель. Отпустите, чтобы завершить цветок."
+msgstr ""
+"Нажмите и тяните, чтобы нарисовать стебель. Отпустите, чтобы завершить "
+"цветок."
 
 msgid "Foam"
 msgstr "Пузыри"
@@ -665,13 +679,17 @@ msgid "Grass"
 msgstr "Трава"
 
 msgid "Click and move to draw grass. Don’t forget the dirt!"
-msgstr "Щёлкните и поводите по картинке, чтобы нарисовать траву. Не забудьте про грязь!"
+msgstr ""
+"Щёлкните и поводите по картинке, чтобы нарисовать траву. Не забудьте про "
+"грязь!"
 
 msgid "Kaleidoscope"
 msgstr "Калейдоскоп"
 
-msgid "Click and drag the mouse to draw with symmetric brushes (a kaleidoscope)."
-msgstr "Нажмите и ведите мышь, чтобы рисовать симметричными кистями (калейдоскоп)."
+msgid ""
+"Click and drag the mouse to draw with symmetric brushes (a kaleidoscope)."
+msgstr ""
+"Нажмите и ведите мышь, чтобы рисовать симметричными кистями (калейдоскоп)."
 
 msgid "Light"
 msgstr "Свет"
@@ -736,45 +754,67 @@ msgstr "Щёлкните и поводите по картинке, чтобы �
 msgid "Waves"
 msgstr "Волны"
 
-msgid "Click to make the picture wavy. Click toward the top for shorter waves, the bottom for taller waves, the left for small waves, and the right for long waves."
-msgstr "Нажмите, чтобы сделать на рисунке волны. Двигайте вверх, чтобы сделать волны ниже, вниз - чтобы выше, налево - для коротких волн, направо - для длинных."
+msgid ""
+"Click to make the picture wavy. Click toward the top for shorter waves, the "
+"bottom for taller waves, the left for small waves, and the right for long "
+"waves."
+msgstr ""
+"Нажмите, чтобы сделать на рисунке волны. Двигайте вверх, чтобы сделать волны "
+"ниже, вниз - чтобы выше, налево - для коротких волн, направо - для длинных."
 
 #~ msgid "Sparkles"
 #~ msgstr "Искры"
+
 #~ msgid "You now have a blank sheet to draw on!"
 #~ msgstr "Теперь у вас есть чистый лист!"
+
 #~ msgid "Start a new picture?"
 #~ msgstr "Начнём новую картинку?"
+
 #~ msgid "Yes, let's start fresh!"
 #~ msgstr "Да, начнём заново!"
+
 #~ msgid "Click and move to draw sparkles."
 #~ msgstr "Щёлкните и поводите по картинке, чтобы нарисовать искры."
+
 #~ msgid "Starting a new picture will erase the current one!"
 #~ msgstr "Начиная новую картинку вы уничтожите текущую!"
+
 #~ msgid "That’s OK!"
 #~ msgstr "Хорошо!"
+
 #~ msgid "Never mind!"
 #~ msgstr "Нет!"
+
 #~ msgid "Save over the older version of this picture?"
 #~ msgstr "Сохранить поверх старой версии этой картинки?"
+
 #~ msgid "Dark Gray!"
 #~ msgstr "Тёмно-серый!"
+
 #~ msgid "Neon green!"
 #~ msgstr "Ярко-зеленый!"
+
 #~ msgid "Green!"
 #~ msgstr "Зелёный!"
+
 #~ msgid "Magenta!"
 #~ msgstr "Ярко-красный!"
+
 #~ msgid "Fade"
 #~ msgstr "Исчезновение"
+
 #~ msgid "Oval"
 #~ msgstr "Овал"
+
 #~ msgid "Diamond"
 #~ msgstr "Ромб"
+
 #~ msgid "A square has four sides, each the same length."
 #~ msgstr "У квадрата четыре стороны, все одной длины."
+
 #~ msgid "A circle is exactly round."
 #~ msgstr "А круг совершенно круглый :)"
+
 #~ msgid "A diamond is a square, turned around slightly."
 #~ msgstr "Ромб похож на квадрат, но с другими углами."
-

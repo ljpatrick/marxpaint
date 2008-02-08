@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint 0.9.15\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-10-29 09:06-0700\n"
+"POT-Creation-Date: 2008-02-08 00:28-0800\n"
 "PO-Revision-Date: 2007-11-11 17:15+0900\n"
 "Last-Translator: TOYAMA Shin-ichi <shin1@wmail.plala.or.jp>\n"
 "Language-Team: japanese <shin1@wmail.plala.or.jp>\n"
@@ -172,6 +172,10 @@ msgstr "ハングル"
 msgid "Thai"
 msgstr "タイ"
 
+#. Input Method: Traditional Chinese mode
+msgid "ZH_TW"
+msgstr ""
+
 #. Square shape tool (4 equally-lengthed sides at right angles)
 msgid "Square"
 msgstr "ましかく"
@@ -212,8 +216,11 @@ msgstr "ましかくは ４つの「へん」が ぜんぶ おんなじ なが�
 msgid "A rectangle has four sides and four right angles."
 msgstr "ながしかくには ４つの「へん」と ４つの「ちょっかく」があるんだ"
 
-msgid "A circle is a curve where all points have the same distance from the center."
-msgstr "「まる」は「えん」とも いうよ。どの「てん」も ちゅうしんから おなじきょりだけ はなれているんだ"
+msgid ""
+"A circle is a curve where all points have the same distance from the center."
+msgstr ""
+"「まる」は「えん」とも いうよ。どの「てん」も ちゅうしんから おなじきょりだ"
+"け はなれているんだ"
 
 #. Description of an ellipse
 msgid "An ellipse is a stretched circle."
@@ -228,7 +235,9 @@ msgid "A pentagon has five sides."
 msgstr "ごかっけいには ５つの「へん」が あるんだ"
 
 msgid "A rhombus has four equal sides, and opposite sides are parallel."
-msgstr "「ダイヤ」は「ひしがた」とも いうよ。４つの「へん」が おなじながさで むかいあった「へん」が へいこうなんだ"
+msgstr ""
+"「ダイヤ」は「ひしがた」とも いうよ。４つの「へん」が おなじながさで むかい"
+"あった「へん」が へいこうなんだ"
 
 msgid "An octagon has eight equal sides."
 msgstr "はちかっけいには ８つの「へん」が あるんだ"
@@ -331,8 +340,12 @@ msgid "Click to start drawing a line. Let go to complete it."
 msgstr "クリックして せんを ひこう"
 
 #. Shape tool instructions
-msgid "Pick a shape. Click to pick the center, drag, then let go when it is the size you want. Move around to rotate it, and click to draw it."
-msgstr "かたちをえらんでクリックしたら、ドラッグして すきなおおきさにしよう。まわして、クリックしたら できあがり"
+msgid ""
+"Pick a shape. Click to pick the center, drag, then let go when it is the "
+"size you want. Move around to rotate it, and click to draw it."
+msgstr ""
+"かたちをえらんでクリックしたら、ドラッグして すきなおおきさにしよう。まわし"
+"て、クリックしたら できあがり"
 
 #. Text tool instructions
 msgid "Choose a style of text. Click on your drawing and you can start typing."
@@ -556,7 +569,8 @@ msgstr "ぬらす"
 msgid "Click and move the mouse around to make the picture blocky."
 msgstr "クリックしたまま マウスをうごかして モザイクにしよう"
 
-msgid "Click and move the mouse around to turn the picture into a chalk drawing."
+msgid ""
+"Click and move the mouse around to turn the picture into a chalk drawing."
 msgstr "クリックしたままマウスをうごかして チョークでかいたみたいに しよう"
 
 msgid "Click and move the mouse around to make the picture drip."
@@ -624,7 +638,9 @@ msgid "Flower"
 msgstr "はな"
 
 msgid "Click and drag to draw a flower stalk. Let go to finish the flower."
-msgstr "クリックしたままマウスをうごかして くきを かこう。 マウスを はなせば はなの できあがり"
+msgstr ""
+"クリックしたままマウスをうごかして くきを かこう。 マウスを はなせば はなの "
+"できあがり"
 
 msgid "Foam"
 msgstr "あわ"
@@ -647,20 +663,25 @@ msgstr "くさを かこう。つちもわすれずにね"
 msgid "Kaleidoscope"
 msgstr "まんげきょう"
 
-msgid "Click and drag the mouse to draw with symmetric brushes (a kaleidoscope)."
-msgstr "クリックしたまま マウスをうごかして まんげきょう みたいに たいしょうの えを かこう"
+msgid ""
+"Click and drag the mouse to draw with symmetric brushes (a kaleidoscope)."
+msgstr ""
+"クリックしたまま マウスをうごかして まんげきょう みたいに たいしょうの えを "
+"かこう"
 
 msgid "Light"
 msgstr "てらす"
 
 msgid "Click and drag to draw a beam of light on your picture."
-msgstr "クリックしたまま マウスをうごかして かいちゅうでんとうの あかりで てらそう"
+msgstr ""
+"クリックしたまま マウスをうごかして かいちゅうでんとうの あかりで てらそう"
 
 msgid "Metal Paint"
 msgstr "かなもの"
 
 msgid "Click and drag the mouse to paint with a metallic color."
-msgstr "クリックしたまま マウスをうごかして かなものの ような かんじで いろをぬろう"
+msgstr ""
+"クリックしたまま マウスをうごかして かなものの ような かんじで いろをぬろう"
 
 msgid "Mirror"
 msgstr "はんてん"
@@ -713,9 +734,15 @@ msgstr "クリックしたまま マウスをうごかして えのいろを か
 msgid "Waves"
 msgstr "なみ"
 
-msgid "Click to make the picture wavy. Click toward the top for shorter waves, the bottom for taller waves, the left for small waves, and the right for long waves."
-msgstr "クリックして えを なみうたせよう。 なみの ながさは　うえのほうを クリックすれば みじかく したのほうを クリックすれば ながくなるよ。それから なみの たかさは ひだりのほうを クリックすれば おおきく みぎのほうを クリックすれば ひくくなるよ"
+msgid ""
+"Click to make the picture wavy. Click toward the top for shorter waves, the "
+"bottom for taller waves, the left for small waves, and the right for long "
+"waves."
+msgstr ""
+"クリックして えを なみうたせよう。 なみの ながさは　うえのほうを クリックすれ"
+"ば みじかく したのほうを クリックすれば ながくなるよ。それから なみの たかさ"
+"は ひだりのほうを クリックすれば おおきく みぎのほうを クリックすれば ひくく"
+"なるよ"
 
 #~ msgid "Sparkles"
 #~ msgstr "ひばな"
-

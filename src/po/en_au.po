@@ -6,8 +6,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint\n"
-"Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
-"POT-Creation-Date: 2007-05-09 00:32-0700\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2008-02-08 00:28-0800\n"
 "PO-Revision-Date: 2006-05-28 05:44+0000\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: English (Australia) <en_AU@li.org>\n"
@@ -17,54 +17,71 @@ msgstr ""
 "X-Launchpad-Export-Date: 2008-02-06 15:24+0000\n"
 "X-Generator: Launchpad (build Unknown)\n"
 
+#. Response to Black (0, 0, 0) color selected
 msgid "Black!"
 msgstr "Black!"
 
+#. Response to Dark grey (128, 128, 128) color selected
 msgid "Dark grey! Some people spell it “dark gray”."
 msgstr "Dark grey! Some people spell it “dark gray”."
 
+#. Response to Light grey (192, 192, 192) color selected
 msgid "Light grey! Some people spell it “light gray”."
 msgstr "Light grey! Some people spell it “light gray”."
 
+#. Response to White (255, 255, 255) color selected
 msgid "White!"
 msgstr "White!"
 
+#. Response to Red (255, 0, 0) color selected
 msgid "Red!"
 msgstr "Red!"
 
+#. Response to Orange (255, 128, 0) color selected
 msgid "Orange!"
 msgstr "Orange!"
 
+#. Response to Yellow (255, 255, 0) color selected
 msgid "Yellow!"
 msgstr "Yellow!"
 
+#. Response to Light green (160, 228, 128) color selected
 msgid "Light green!"
 msgstr "Light green!"
 
+#. Response to Dark green (33, 148, 70) color selected
 msgid "Dark green!"
 msgstr "Dark green!"
 
+#. Response to "Sky" blue (138, 168, 205) color selected
 msgid "Sky blue!"
 msgstr "Sky blue!"
 
+#. Response to Blue (50, 100, 255) color selected
 msgid "Blue!"
 msgstr "Blue!"
 
+#. Response to Lavender (186, 157, 255) color selected
 msgid "Lavender!"
 msgstr "Lavender!"
 
+#. Response to Purple (128, 0, 128) color selected
 msgid "Purple!"
 msgstr "Purple!"
 
+#. Response to Pink (255, 165, 211) color selected
 msgid "Pink!"
 msgstr "Pink!"
 
+#. Response to Brown (128, 80, 0) color selected
 msgid "Brown!"
 msgstr "Brown!"
 
+#. Response to Tan (226, 189, 166) color selected
 msgid "Tan!"
 msgstr "Tan!"
 
+#. Response to Beige (247, 228, 219) color selected
 msgid "Beige!"
 msgstr "Beige!"
 
@@ -72,20 +89,21 @@ msgstr "Beige!"
 #. via bugs in the SDL_ttf library. We also test fonts to be sure that
 #. they have both uppercase and lowercase letters. Note that we do not
 #. test for "Aa", because it is OK if uppercase and lowercase are the
-#. same. (but not nice -- such fonts get a low score later)
-#. 
+#. same (but not nice -- such fonts get a low score later).
+#.
 #. We test the alphabet twice, to help with translation. If the users
-#. will be unable to type ASCII letters, then both lines should be
-#. translated. Otherwise, only Line X should be translated and the
-#. ASCII-only fonts should be given bad scores in the scoring code below.
-#. (the best scores going to fonts that support both)
+#. will be unable to type ASCII letters, then both Line X and Line Y
+#. should be translated. Otherwise, only Line X should be translated
+#. and the ASCII-only fonts should be given bad scores in the scoring
+#. code below (the best scores going to fonts that support both).
+#. Line X
 msgid "qx"
 msgstr ""
 
 msgid "QX"
 msgstr ""
 
-#. Line X
+#. Line Y
 msgid "qy"
 msgstr ""
 
@@ -96,274 +114,233 @@ msgstr ""
 #. the top of the list. The user will see them first. This sorting is
 #. especially important for users who have scroll buttons disabled.
 #. Translators should do whatever is needed to put crummy fonts last.
+#. distinct uppercase and lowercase (e.g., 'o' vs. 'O')
 msgid "oO"
 msgstr "oO"
 
-#. distinct uppercase and lowercase
+#. uncommon punctuation (e.g., '@', '#', '*', etc.)
 msgid "`\\%_@$~#{}<>^&*"
 msgstr "`\\%_@$~#{}<>^&*"
 
-#. uncommon punctuation
+#. common punctuation (e.g., '?', '!', '.', ',', etc.)
 msgid ",.?!"
 msgstr ",.?!"
 
-#. common punctuation
+#. digits (e.g., '0', '1' and '7')
 msgid "017"
 msgstr "017"
 
-#. digits
+#. distinct circle-like characters (e.g., 'O' (capital oh) vs. '0' (zero))
 msgid "O0"
 msgstr "O0"
 
-#. distinct circle-like characters
+#. distinct line-like characters (e.g., 'l' (lowercase elle) vs. '1' (one) vs. 'I' (capital aye))
 msgid "1Il|"
 msgstr "1Il|"
 
+#. Congratulations #1
 msgid "Great!"
 msgstr "Great!"
 
+#. Congratulations #2
 msgid "Cool!"
 msgstr "Cool!"
 
+#. Congratulations #3
 msgid "Keep it up!"
 msgstr "Keep it up!"
 
+#. Congratulations #4
 msgid "Good job!"
 msgstr "Good job!"
 
+#. Input Method: English mode
 msgid "English"
 msgstr ""
 
+#. Input Method: Japanese Romanized Hiragana mode
 msgid "Hiragana"
 msgstr ""
 
+#. Input Method: Japanese Romanized Katakana mode
 msgid "Katakana"
 msgstr ""
 
+#. Input Method: Korean Hangul 2-Bul mode
 msgid "Hangul"
 msgstr ""
 
-msgid "Fill"
-msgstr "Fill"
-
-msgid "Grass"
-msgstr "Grass"
-
-msgid "Bricks"
-msgstr "Bricks"
-
-msgid "Rainbow"
-msgstr "Rainbow"
-
-msgid "Sparkles"
-msgstr "Sparkles"
-
-msgid "Blur"
-msgstr "Blur"
-
-msgid "Smudge"
-msgstr "Smudge"
-
-msgid "Lighten"
-msgstr "Lighten"
-
-msgid "Darken"
-msgstr "Darken"
-
-msgid "Chalk"
-msgstr "Chalk"
-
-msgid "Blocks"
-msgstr "Blocks"
-
-msgid "Negative"
-msgstr "Negative"
-
-msgid "Tint"
-msgstr "Tint"
-
-msgid "Drip"
-msgstr "Drip"
-
-msgid "Cartoon"
-msgstr "Cartoon"
-
-msgid "Mirror"
-msgstr "Mirror"
-
-msgid "Flip"
-msgstr "Flip"
-
-msgid "Click in the picture to fill that area with color."
-msgstr "Click in the picture to fill that area with colour."
-
-msgid "Click and move to draw grass. Don’t forget the dirt!"
-msgstr "Click and move to draw grass. Don’t forget the dirt!"
-
-msgid "Click and move to draw large bricks."
-msgstr "Click and move to draw large bricks."
-
-msgid "Click and move to draw small bricks."
-msgstr "Click and move to draw small bricks."
-
-msgid "You can draw in rainbow colors!"
-msgstr "You can draw in rainbow colours!"
-
-msgid "Click and move to draw sparkles."
-msgstr "Click and move to draw sparkles."
-
-msgid "Click and move the mouse around to blur the picture."
-msgstr "Click and move the mouse around to blur the picture."
-
-msgid "Click and move the mouse around to smudge the picture."
-msgstr "Click and move the mouse around to smudge the picture."
-
-msgid "Click and move to fade the colors."
-msgstr "Click and move to fade the colours."
-
-msgid "Click and move to darken the colors."
-msgstr "Click and move to darken the colours."
-
-msgid ""
-"Click and move the mouse around to turn the picture into a chalk drawing."
+#. Input Method: Thai mode
+msgid "Thai"
 msgstr ""
-"Click and move the mouse around to turn the picture into a chalk drawing."
 
-msgid "Click and move the mouse around to make the picture blocky."
-msgstr "Click and move the mouse around to make the picture blocky."
+#. Input Method: Traditional Chinese mode
+msgid "ZH_TW"
+msgstr ""
 
-msgid "Click and move the mouse around to draw a negative."
-msgstr "Click and move the mouse around to draw a negative."
-
-msgid "Click and move the mouse around to change the picture’s color."
-msgstr "Click and move the mouse around to change the picture’s colour."
-
-msgid "Click and move the mouse around to make the picture drip."
-msgstr "Click and move the mouse around to make the picture drip."
-
-msgid "Click and move the mouse around to turn the picture into a cartoon."
-msgstr "Click and move the mouse around to turn the picture into a cartoon."
-
-msgid "Click to make a mirror image."
-msgstr "Click to make a mirror image."
-
-msgid "Click to flip the picture upside-down."
-msgstr "Click to flip the picture upside-down."
-
+#. Square shape tool (4 equally-lengthed sides at right angles)
 msgid "Square"
 msgstr "Square"
 
+#. Rectangle shape tool (4 sides at right angles)
 msgid "Rectangle"
 msgstr "Rectangle"
 
+#. Circle shape tool (X radius and Y radius are the same)
 msgid "Circle"
 msgstr "Circle"
 
+#. Ellipse shape tool (X radius and Y radius may differ)
 msgid "Ellipse"
 msgstr "Ellipse"
 
+#. Triangle shape tool (3 sides)
 msgid "Triangle"
 msgstr "Triangle"
 
+#. Pentagone shape tool (5 sides)
 msgid "Pentagon"
 msgstr "Pentagon"
 
+#. Rhombus shape tool (4 sides, not at right angles)
 msgid "Rhombus"
 msgstr "Rhombus"
 
+#. Octagon shape tool (8 sides)
+#, fuzzy
+msgid "Octagon"
+msgstr "Pentagon"
+
+#. Description of a square
 msgid "A square is a rectangle with four equal sides."
 msgstr "A square is a rectangle with four equal sides."
 
+#. Description of a rectangle
 msgid "A rectangle has four sides and four right angles."
 msgstr "A rectangle has four sides and four right angles."
 
+#, fuzzy
 msgid ""
-"A circle is a curve where all points have the same distance from the centre."
+"A circle is a curve where all points have the same distance from the center."
 msgstr ""
 "A circle is a curve where all points have the same distance from the centre."
 
+#. Description of an ellipse
 msgid "An ellipse is a stretched circle."
 msgstr "An ellipse is a stretched circle."
 
+#. Description of a triangle
 msgid "A triangle has three sides."
 msgstr "A triangle has three sides."
 
+#. Description of a pentagon
 msgid "A pentagon has five sides."
 msgstr "A pentagon has five sides."
 
 msgid "A rhombus has four equal sides, and opposite sides are parallel."
 msgstr "A rhombus has four equal sides, and opposite sides are parallel."
 
+#, fuzzy
+msgid "An octagon has eight equal sides."
+msgstr "A pentagon has five sides."
+
+#. Title of tool selector (buttons down the left)
 msgid "Tools"
 msgstr "Tools"
 
+#. Title of color palette (buttons across the bottom)
 msgid "Colors"
 msgstr "Colours"
 
+#. Title of brush selector (buttons down the right for paint and line tools)
 msgid "Brushes"
 msgstr "Brushes"
 
+#. Title of eraser selector (buttons down the right for eraser tool)
 msgid "Erasers"
 msgstr "Erasers"
 
+#. Title of stamp selector (buttons down the right for stamps tool)
 msgid "Stamps"
 msgstr "Stamps"
 
+#. Title of shape selector (buttons down the right for shapes tool)
+#. Shape creation tool (square, circle, etc.)
 msgid "Shapes"
 msgstr "Shapes"
 
+#. Title of font selector (buttons down the right for text tool)
 msgid "Letters"
 msgstr "Letters"
 
+#. Title of magic tool selector (buttons down the right for magic (effect plugin) tool)
+#. "Magic" effects tools (blur, flip image, etc.)
 msgid "Magic"
 msgstr "Magic"
 
+#. Freehand painting tool
 msgid "Paint"
 msgstr "Paint"
 
+#. Stamp tool (aka Rubber Stamps)
 msgid "Stamp"
 msgstr "Stamp"
 
+#. Line drawing tool
 msgid "Lines"
 msgstr "Lines"
 
+#. Text tool
 msgid "Text"
 msgstr "Text"
 
+#. Undo last action
 msgid "Undo"
 msgstr "Undo"
 
+#. Redo undone action
 msgid "Redo"
 msgstr "Redo"
 
+#. Eraser tool
 msgid "Eraser"
 msgstr "Eraser"
 
+#. Start a new picture
 msgid "New"
 msgstr "New"
 
+#. Open a saved picture
 #. buttons for the file open dialog
+#. Open dialog: 'Open' button, to load the selected picture
 msgid "Open"
 msgstr "Open"
 
+#. Save the current picture
 msgid "Save"
 msgstr "Save"
 
+#. Print the current picture
 msgid "Print"
 msgstr "Print"
 
+#. Quit/exit Tux Paint application
 msgid "Quit"
 msgstr "Quit"
 
+#. Paint tool instructions
 msgid "Pick a color and a brush shape to draw with."
 msgstr "Pick a colour and a brush shape to draw with."
 
+#. Stamp tool instructions
 msgid "Pick a picture to stamp around your drawing."
 msgstr "Pick a picture to stamp around your drawing."
 
+#. Line tool instructions
 msgid "Click to start drawing a line. Let go to complete it."
 msgstr "Click to start drawing a line. Let go to complete it."
 
+#. Shape tool instructions
 msgid ""
 "Pick a shape. Click to pick the center, drag, then let go when it is the "
 "size you want. Move around to rotate it, and click to draw it."
@@ -371,68 +348,77 @@ msgstr ""
 "Pick a shape. Click to pick the centre, drag, then let go when it is the "
 "size you want. Move around to rotate it, and click to draw it."
 
-msgid ""
-"Choose a style of text. Click on your drawing and you can start typing."
+#. Text tool instructions
+msgid "Choose a style of text. Click on your drawing and you can start typing."
 msgstr ""
 "Choose a style of text. Click on your drawing and you can start typing."
 
+#. Magic tool instruction
 msgid "Pick a magical effect to use on your drawing!"
 msgstr "Pick a magical effect to use on your drawing!"
 
-#. Undo
+#. Response to 'undo' action
 msgid "Undo!"
 msgstr "Undo!"
 
-#. Redo
+#. Response to 'redo' action
 msgid "Redo!"
 msgstr "Redo!"
 
-#. Eraser
+#. Eraser tool
 msgid "Eraser!"
 msgstr "Eraser!"
 
-#. New
-msgid "You now have a blank sheet to draw on!"
-msgstr "You now have a blank sheet to draw on!"
+#. Response to 'start a new image' action
+#, fuzzy
+msgid "Pick a color or picture with which to start a new drawing."
+msgstr "Pick a picture to stamp around your drawing."
 
-#. Open
+#. Response to 'open' action (while file dialog is being constructed)
 msgid "Open…"
 msgstr "Open…"
 
-#. Save
+#. Response to 'save' action
 msgid "Your image has been saved!"
 msgstr "Your image has been saved!"
 
-#. Print
+#. Response to 'print' action (while printing, or print dialog is being used)
 msgid "Printing…"
 msgstr "Printing…"
 
-#. Quit
+#. Response to 'quit' (exit) action
 msgid "Bye bye!"
 msgstr "Bye bye!"
 
+#. Instruction while using Line tool (after click, before release)
 msgid "Let go of the button to complete the line."
 msgstr "Let go of the button to complete the line."
 
+#. Instruction while using Shape tool (after first click, before release)
 msgid "Hold the button to stretch the shape."
 msgstr "Hold the button to stretch the shape."
 
+#. Instruction while finishing Shape tool (after release, during rotation step before second click)
 msgid "Move the mouse to rotate the shape. Click to draw it."
 msgstr "Move the mouse to rotate the shape. Click to draw it."
 
+#. Notification that 'New' action was aborted (current image would have been lost)
 msgid "OK then… Let’s keep drawing this one!"
 msgstr "OK then… Let’s keep drawing this one!"
 
-#. FIXME: Move elsewhere!!!
+#. Prompt to confirm user wishes to quit
 msgid "Do you really want to quit?"
 msgstr "Do you really want to quit?"
 
+#. Quit prompt positive response (quit)
 msgid "Yes, I'm done!"
 msgstr ""
 
+#. Quit prompt negative response (don't quit)
 msgid "No, take me back!"
 msgstr ""
 
+#. Current picture is not saved; user is quitting
 msgid "If you quit, you’ll lose your picture! Save it?"
 msgstr "If you quit, you’ll lose your picture! Save it?"
 
@@ -442,41 +428,38 @@ msgstr ""
 msgid "No, don't bother saving!"
 msgstr ""
 
+#. Current picture is not saved; user is opening another picture
 msgid "Save your picture first?"
 msgstr "Save your picture first?"
 
+#. Error opening picture
 msgid "Can’t open that picture!"
 msgstr "Can’t open that picture!"
 
+#. Generic dialog dismissal
 msgid "OK"
 msgstr "OK"
 
-#. This will be replaced with a dialog allowing color choice and Starter
-#. picking, with a "Back" option to dismiss the "New" and return to
-#. the current picture.  But for now...  (bjk 2006.02.19)
-msgid "Start a new picture?"
-msgstr ""
-
-#. #define PROMPT_NEW_YES gettext_noop("That’s OK!")
-#. #define PROMPT_NEW_NO gettext_noop("Never mind!")
-msgid "Yes, let's start fresh!"
-msgstr ""
-
+#. Notification that 'Open' dialog has nothing to show
 msgid "There are no saved files!"
 msgstr "There are no saved files!"
 
+#. Verification of print action
 msgid "Print your picture now?"
 msgstr "Print your picture now?"
 
 msgid "Yes, print it!"
 msgstr ""
 
+#. Confirmation of successful (we hope) printing
 msgid "Your picture has been printed!"
 msgstr "Your picture has been printed!"
 
+#. Notification that it's too soon to print again (--printdelay option is in effect)
 msgid "You can’t print yet!"
 msgstr "You can’t print yet!"
 
+#. Prompt to confirm erasing a picture in the Open dialog
 msgid "Erase this picture?"
 msgstr "Erase this picture?"
 
@@ -486,45 +469,68 @@ msgstr ""
 msgid "No, don't erase it!"
 msgstr ""
 
+#. Reminder that Mouse Button 1 is the button to use in Tux Paint
 msgid "Remember to use the left mouse button!"
 msgstr "Remember to use the left mouse button!"
 
-msgid "Please wait..."
+#. Sound has been muted (silenced) via keyboard shortcut
+msgid "Sound muted."
 msgstr ""
 
+#. Sound has been unmuted (unsilenced) via keyboard shortcut
+msgid "Sound unmuted."
+msgstr ""
+
+#. Wait while Text tool finishes loading fonts
+msgid "Please wait…"
+msgstr ""
+
+msgid "Pick a color."
+msgstr ""
+
+#. Open dialog: 'Erase' button, to erase/deleted the selected picture
 msgid "Erase"
 msgstr "Erase"
 
+#. Open dialog: 'Slides' button, to switch to slide show mode
 msgid "Slides"
 msgstr ""
 
+#. Open dialog: 'Back' button, to dismiss Open dialog without opening a picture
 msgid "Back"
 msgstr "Back"
 
+#. Slideshow: 'Next' button, to load next slide (image)
 msgid "Next"
 msgstr ""
 
+#. Slideshow: 'Play' button, to begin a slideshow sequence
 msgid "Play"
 msgstr ""
 
+#. Label for 'Letters' buttons (font selector, down the right when the Text tool is being used); used to show the difference between font faces
 msgid "Aa"
 msgstr "Aa"
 
-#. FIXME: Move elsewhere! Or not?!
+#. Admittedly stupid way of determining which keys can be used for
+#. positive and negative responses in dialogs (e.g., [Y] (for 'yes') in English)
 msgid "Yes"
 msgstr "Yes"
 
 msgid "No"
 msgstr "No"
 
-#. FIXME: Move elsewhere!!!
-#. #define PROMPT_SAVE_OVER_TXT gettext_noop("Save over the older version of this picture?")
+#. Prompt to ask whether user wishes to save over old version of their file
 msgid "Replace the picture with your changes?"
 msgstr ""
 
+#. Positive response to saving over old version
+#. (like a 'File:Save' action in other applications)
 msgid "Yes, replace the old one!"
 msgstr ""
 
+#. Negative response to saving over old version (saves a new image)
+#. (like a 'File:Save As...' action in other applications)
 msgid "No, save a new file!"
 msgstr ""
 
@@ -532,6 +538,7 @@ msgid "Choose the picture you want, then click “Open”."
 msgstr "Choose the picture you want, then click “Open”."
 
 #. Let user choose images:
+#. Instructions for Slideshow file dialog (FIXME: Make a #define)
 msgid "Choose the pictures you want, then click “Play”."
 msgstr ""
 
@@ -543,3 +550,201 @@ msgstr "Drawing program"
 
 msgid "Tux Paint"
 msgstr "Tux Paint"
+
+msgid "Blocks"
+msgstr "Blocks"
+
+msgid "Chalk"
+msgstr "Chalk"
+
+msgid "Drip"
+msgstr "Drip"
+
+msgid "Click and move the mouse around to make the picture blocky."
+msgstr "Click and move the mouse around to make the picture blocky."
+
+msgid ""
+"Click and move the mouse around to turn the picture into a chalk drawing."
+msgstr ""
+"Click and move the mouse around to turn the picture into a chalk drawing."
+
+msgid "Click and move the mouse around to make the picture drip."
+msgstr "Click and move the mouse around to make the picture drip."
+
+msgid "Blur"
+msgstr "Blur"
+
+msgid "Click and move the mouse around to blur the picture."
+msgstr "Click and move the mouse around to blur the picture."
+
+#. Both are named "Bricks", at the moment:
+msgid "Bricks"
+msgstr "Bricks"
+
+msgid "Click and move to draw large bricks."
+msgstr "Click and move to draw large bricks."
+
+msgid "Click and move to draw small bricks."
+msgstr "Click and move to draw small bricks."
+
+msgid "Calligraphy"
+msgstr ""
+
+#, fuzzy
+msgid "Click and move the mouse around to draw in calligraphy."
+msgstr "Click and move the mouse around to draw a negative."
+
+msgid "Cartoon"
+msgstr "Cartoon"
+
+msgid "Click and move the mouse around to turn the picture into a cartoon."
+msgstr "Click and move the mouse around to turn the picture into a cartoon."
+
+msgid "Distortion"
+msgstr ""
+
+#, fuzzy
+msgid "Click and drag the mouse to cause a distortion in your picture."
+msgstr "Click and move the mouse around to blur the picture."
+
+msgid "Emboss"
+msgstr ""
+
+#, fuzzy
+msgid "Click and drag the mouse to emboss the picture."
+msgstr "Click and move the mouse around to blur the picture."
+
+msgid "Lighten"
+msgstr "Lighten"
+
+msgid "Darken"
+msgstr "Darken"
+
+msgid "Click and move to fade the colors."
+msgstr "Click and move to fade the colours."
+
+msgid "Click and move to darken the colors."
+msgstr "Click and move to darken the colours."
+
+msgid "Fill"
+msgstr "Fill"
+
+msgid "Click in the picture to fill that area with color."
+msgstr "Click in the picture to fill that area with colour."
+
+msgid "Flower"
+msgstr ""
+
+msgid "Click and drag to draw a flower stalk. Let go to finish the flower."
+msgstr ""
+
+msgid "Foam"
+msgstr ""
+
+#, fuzzy
+msgid "Click and drag the mouse to cover an area with foamy bubbles."
+msgstr "Click in the picture to fill that area with colour."
+
+msgid "Glass Tile"
+msgstr ""
+
+#, fuzzy
+msgid "Click and drag the mouse to put glass tile over your picture."
+msgstr "Click and move the mouse around to blur the picture."
+
+msgid "Grass"
+msgstr "Grass"
+
+msgid "Click and move to draw grass. Don’t forget the dirt!"
+msgstr "Click and move to draw grass. Don’t forget the dirt!"
+
+msgid "Kaleidoscope"
+msgstr ""
+
+msgid ""
+"Click and drag the mouse to draw with symmetric brushes (a kaleidoscope)."
+msgstr ""
+
+#, fuzzy
+msgid "Light"
+msgstr "Lighten"
+
+msgid "Click and drag to draw a beam of light on your picture."
+msgstr ""
+
+#, fuzzy
+msgid "Metal Paint"
+msgstr "Paint"
+
+#, fuzzy
+msgid "Click and drag the mouse to paint with a metallic color."
+msgstr "Click and move to darken the colours."
+
+msgid "Mirror"
+msgstr "Mirror"
+
+msgid "Flip"
+msgstr "Flip"
+
+msgid "Click to make a mirror image."
+msgstr "Click to make a mirror image."
+
+msgid "Click to flip the picture upside-down."
+msgstr "Click to flip the picture upside-down."
+
+msgid "Negative"
+msgstr "Negative"
+
+msgid "Click and move the mouse around to draw a negative."
+msgstr "Click and move the mouse around to draw a negative."
+
+msgid "Rainbow"
+msgstr "Rainbow"
+
+msgid "You can draw in rainbow colors!"
+msgstr "You can draw in rainbow colours!"
+
+msgid "Ripples"
+msgstr ""
+
+#, fuzzy
+msgid "Click to make ripples appear over your picture."
+msgstr "Click to make a mirror image."
+
+msgid "Shift"
+msgstr ""
+
+#, fuzzy
+msgid "Click and drag to shift your picture around on the canvas."
+msgstr "Click and move the mouse around to blur the picture."
+
+msgid "Smudge"
+msgstr "Smudge"
+
+msgid "Click and move the mouse around to smudge the picture."
+msgstr "Click and move the mouse around to smudge the picture."
+
+msgid "Tint"
+msgstr "Tint"
+
+msgid "Click and move the mouse around to change the picture’s color."
+msgstr "Click and move the mouse around to change the picture’s colour."
+
+#, fuzzy
+msgid "Waves"
+msgstr "Save"
+
+msgid ""
+"Click to make the picture wavy. Click toward the top for shorter waves, the "
+"bottom for taller waves, the left for small waves, and the right for long "
+"waves."
+msgstr ""
+
+#~ msgid "Sparkles"
+#~ msgstr "Sparkles"
+
+#~ msgid "Click and move to draw sparkles."
+#~ msgstr "Click and move to draw sparkles."
+
+#~ msgid "You now have a blank sheet to draw on!"
+#~ msgstr "You now have a blank sheet to draw on!"
