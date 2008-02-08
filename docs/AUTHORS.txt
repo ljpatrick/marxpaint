@@ -7,7 +7,7 @@ bill@newbreedsoftware.com
 http://www.tuxpaint.org/
 
 
-June 17, 2002 - January 7, 2008
+June 17, 2002 - February 7, 2008
 
 $Id$
 
@@ -478,6 +478,9 @@ $Id$
 
   * Xhosa
     Dwayne Bailey <dwayne@translate.org.za>
+
+  * Zapoteco
+    Rodrigo Perez Ramirez and Indigenas Sin Fronteras <isf_mx@yahoo.com>
     
 
 * Ports and Packaging

@@ -3,17 +3,16 @@
 
 # Tux Paint - A simple drawing program for children.
 
-# Copyright (c) 2002-2007 by Bill Kendrick and others
+# Copyright (c) 2002-2008 by Bill Kendrick and others
 # bill@newbreedsoftware.com
 # http://www.tuxpaint.org/
 
-# June 14, 2002 - November 6, 2007
+# June 14, 2002 - February 7, 2008
 
 
 # Locale files
 
 LOCALE_PREFIX=$(PKG_ROOT)$(PREFIX)/share/locale
-# LOCALE_PREFIX=/usr/share/locale
 
 
 # IM files
@@ -96,6 +95,7 @@ uninstall-i18n:
 	-rm $(LOCALE_PREFIX)/xh/LC_MESSAGES/tuxpaint.mo
 	-rm $(LOCALE_PREFIX)/zh_CN/LC_MESSAGES/tuxpaint.mo
 	-rm $(LOCALE_PREFIX)/zh_TW/LC_MESSAGES/tuxpaint.mo
+	-rm $(LOCALE_PREFIX)/zw/LC_MESSAGES/tuxpaint.mo
 	-rm $(IM_PREFIX)/ja.im
 	-rm $(IM_PREFIX)/ko.im
 	-rm $(IM_PREFIX)/th.im
@@ -472,6 +472,11 @@ install-gettext:
 	@install -d $(LOCALE_PREFIX)/xh/LC_MESSAGES
 	@cp trans/xh.mo $(LOCALE_PREFIX)/xh/LC_MESSAGES/tuxpaint.mo
 	@chmod 644 $(LOCALE_PREFIX)/xh/LC_MESSAGES/tuxpaint.mo
+	@#
+	@echo "   zw_MX ...Zapoteco..."
+	@install -d $(LOCALE_PREFIX)/zw/LC_MESSAGES
+	@cp trans/zw.mo $(LOCALE_PREFIX)/zw/LC_MESSAGES/tuxpaint.mo
+	@chmod 644 $(LOCALE_PREFIX)/zw/LC_MESSAGES/tuxpaint.mo
 
 
 # Install the Input Method files:
@@ -580,7 +585,8 @@ translations: trans \
 	trans/wo.mo \
 	trans/xh.mo \
 	trans/zh_cn.mo \
-	trans/zh_tw.mo
+	trans/zh_tw.mo \
+	trans/zw.mo
 
 trans:
 	@echo
@@ -879,4 +885,7 @@ trans/zh_tw.mo:	src/po/zh_tw.po
 	@echo "   zh_TW ...Chinese (Traditional)..."
 	@msgfmt -o trans/zh_tw.mo src/po/zh_tw.po
 
+trans/zw.mo:	src/po/zw.po
+	@echo "   zw_MX ...Zapoteco..."
+	@msgfmt -o trans/zw.mo src/po/zw.po
 

@@ -4,13 +4,13 @@
   For Tux Paint
   Language-related functions
 
-  Copyright (c) 2002-2007 by Bill Kendrick and others
+  Copyright (c) 2002-2008 by Bill Kendrick and others
   bill@newbreedsoftware.com
   http://www.tuxpaint.org/
 
   $Id$
   
-  June 14, 2002 - December 6, 2007
+  June 14, 2002 - February 7, 2008
 */
 
 
@@ -98,6 +98,7 @@ enum
   LANG_XH,			/* Xhosa */
   LANG_ZH_CN,			/* Chinese (Simplified) */
   LANG_ZH_TW,			/* Chinese (Traditional) */
+  LANG_ZW,			/* Zapoteco */
   NUM_LANGS
 };
 

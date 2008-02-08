@@ -10,6 +10,11 @@ $Id$
 
 
 2008.February.7 (0.9.19)
+  * New Localizations:
+    ------------------
+    * Zapoteco
+      Rodrigo Perez Ramirez and Indigenas Sin Fronteras <isf_mx@yahoo.com>
+
   * Localization Updates:
     ---------------------
     * Chinese (Simplified) README and FAQ documentation
