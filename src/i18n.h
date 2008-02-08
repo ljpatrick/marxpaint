@@ -37,6 +37,8 @@ enum
   LANG_DE,			/* German */
   LANG_EL,			/* Greek */
   LANG_EN,			/* English (American) (DEFAULT) */
+  LANG_EN_AU,			/* English (Australian) */
+  LANG_EN_CA,			/* English (Canadian) */
   LANG_EN_GB,			/* English (British) */
   LANG_EN_ZA,			/* English (South African) */
   LANG_EO,			/* Esperanto */
@@ -66,11 +68,13 @@ enum
   LANG_KU,			/* Kurdish */
   LANG_LT,			/* Lithuanian */
   LANG_LV,			/* Latvian */
+  LANG_MK,			/* Macedonian */
   LANG_MS,			/* Malay */
   LANG_NB,			/* Norwegian Bokmal */
   LANG_NL,			/* Dutch */
   LANG_NN,			/* Norwegian Nynorsk */
   LANG_NR,                      /* Ndebele */
+  LANG_OC,			/* Occitan */
   LANG_OJ,			/* Ojibway */
   LANG_PL,			/* Polish */
   LANG_PT_BR,			/* Portuguese (Brazilian) */

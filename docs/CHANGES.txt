@@ -12,6 +12,22 @@ $Id$
 2008.February.7 (0.9.19)
   * New Localizations:
     ------------------
+    * Australian English
+      Chris Goerner, Canonical Ltd, and Rosetta Contributors
+      via Caroline Ford <caroline.ford.work@googlemail.com>
+
+    * Canadian English
+      Matthew Lange, Canonical Ltd, and Rosetta Contributors
+      via Caroline Ford <caroline.ford.work@googlemail.com>
+
+    * Macedonian
+      Kliment Simoncev and fleka, Canonical Ltd, and Rosetta Contributors
+      via Caroline Ford <caroline.ford.work@googlemail.com>
+
+    * Occitan
+      Yannig MARCHEGAY (Kokoyaya), Canonical Ltd, and Rosetta Contributors
+      via Caroline Ford <caroline.ford.work@googlemail.com>
+
     * Zapoteco
       Rodrigo Perez Ramirez and Indigenas Sin Fronteras <isf_mx@yahoo.com>
 

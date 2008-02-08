@@ -1,0 +1,540 @@
+# Occitan (post 1500) translation for tuxpaint
+# Copyright (c) (c) 2006 Canonical Ltd, and Rosetta Contributors 2006
+# This file is distributed under the same license as the tuxpaint package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2006.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: tuxpaint\n"
+"Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
+"POT-Creation-Date: 2007-05-09 00:32-0700\n"
+"PO-Revision-Date: 2007-09-30 15:27+0000\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: Occitan (post 1500) <oc@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Launchpad-Export-Date: 2008-02-06 14:36+0000\n"
+"X-Generator: Launchpad (build Unknown)\n"
+
+msgid "Black!"
+msgstr "Negre !"
+
+msgid "Dark grey! Some people spell it “dark gray”."
+msgstr ""
+
+msgid "Light grey! Some people spell it “light gray”."
+msgstr ""
+
+msgid "White!"
+msgstr "Blanc !"
+
+msgid "Red!"
+msgstr "Roge !"
+
+msgid "Orange!"
+msgstr "Irange !"
+
+msgid "Yellow!"
+msgstr "Jaune !"
+
+msgid "Light green!"
+msgstr ""
+
+msgid "Dark green!"
+msgstr ""
+
+msgid "Sky blue!"
+msgstr ""
+
+msgid "Blue!"
+msgstr "Blau !"
+
+msgid "Lavender!"
+msgstr "Espic !"
+
+msgid "Purple!"
+msgstr "Violet !"
+
+msgid "Pink!"
+msgstr "Ròse !"
+
+msgid "Brown!"
+msgstr "Marron !"
+
+msgid "Tan!"
+msgstr ""
+
+msgid "Beige!"
+msgstr "Burèl !"
+
+#. First, the blacklist. We list font families that can crash Tux Paint
+#. via bugs in the SDL_ttf library. We also test fonts to be sure that
+#. they have both uppercase and lowercase letters. Note that we do not
+#. test for "Aa", because it is OK if uppercase and lowercase are the
+#. same. (but not nice -- such fonts get a low score later)
+#. 
+#. We test the alphabet twice, to help with translation. If the users
+#. will be unable to type ASCII letters, then both lines should be
+#. translated. Otherwise, only Line X should be translated and the
+#. ASCII-only fonts should be given bad scores in the scoring code below.
+#. (the best scores going to fonts that support both)
+msgid "qx"
+msgstr ""
+
+msgid "QX"
+msgstr ""
+
+#. Line X
+msgid "qy"
+msgstr ""
+
+msgid "QY"
+msgstr ""
+
+#. Now we score fonts to ensure that the best ones will be placed at
+#. the top of the list. The user will see them first. This sorting is
+#. especially important for users who have scroll buttons disabled.
+#. Translators should do whatever is needed to put crummy fonts last.
+msgid "oO"
+msgstr "oO"
+
+#. distinct uppercase and lowercase
+msgid "`\\%_@$~#{}<>^&*"
+msgstr "`\\%_@$~#{}<>^&*"
+
+#. uncommon punctuation
+msgid ",.?!"
+msgstr ",.?!"
+
+#. common punctuation
+msgid "017"
+msgstr "017"
+
+#. digits
+msgid "O0"
+msgstr "O0"
+
+#. distinct circle-like characters
+msgid "1Il|"
+msgstr "1Il|"
+
+msgid "Great!"
+msgstr ""
+
+msgid "Cool!"
+msgstr ""
+
+msgid "Keep it up!"
+msgstr ""
+
+msgid "Good job!"
+msgstr ""
+
+msgid "English"
+msgstr "Anglès"
+
+msgid "Hiragana"
+msgstr ""
+
+msgid "Katakana"
+msgstr ""
+
+msgid "Hangul"
+msgstr ""
+
+msgid "Fill"
+msgstr "Emplenar"
+
+msgid "Grass"
+msgstr "Èrba"
+
+msgid "Bricks"
+msgstr ""
+
+msgid "Rainbow"
+msgstr ""
+
+msgid "Sparkles"
+msgstr ""
+
+msgid "Blur"
+msgstr ""
+
+msgid "Smudge"
+msgstr ""
+
+msgid "Lighten"
+msgstr ""
+
+msgid "Darken"
+msgstr ""
+
+msgid "Chalk"
+msgstr "Greda"
+
+msgid "Blocks"
+msgstr ""
+
+msgid "Negative"
+msgstr "Negatiu"
+
+msgid "Tint"
+msgstr ""
+
+msgid "Drip"
+msgstr ""
+
+msgid "Cartoon"
+msgstr ""
+
+msgid "Mirror"
+msgstr "Miralh"
+
+msgid "Flip"
+msgstr ""
+
+msgid "Click in the picture to fill that area with color."
+msgstr ""
+
+msgid "Click and move to draw grass. Don’t forget the dirt!"
+msgstr ""
+
+msgid "Click and move to draw large bricks."
+msgstr ""
+
+msgid "Click and move to draw small bricks."
+msgstr ""
+
+msgid "You can draw in rainbow colors!"
+msgstr ""
+
+msgid "Click and move to draw sparkles."
+msgstr ""
+
+msgid "Click and move the mouse around to blur the picture."
+msgstr ""
+
+msgid "Click and move the mouse around to smudge the picture."
+msgstr ""
+
+msgid "Click and move to fade the colors."
+msgstr ""
+
+msgid "Click and move to darken the colors."
+msgstr ""
+
+msgid ""
+"Click and move the mouse around to turn the picture into a chalk drawing."
+msgstr ""
+
+msgid "Click and move the mouse around to make the picture blocky."
+msgstr ""
+
+msgid "Click and move the mouse around to draw a negative."
+msgstr ""
+
+msgid "Click and move the mouse around to change the picture’s color."
+msgstr ""
+
+msgid "Click and move the mouse around to make the picture drip."
+msgstr ""
+
+msgid "Click and move the mouse around to turn the picture into a cartoon."
+msgstr ""
+
+msgid "Click to make a mirror image."
+msgstr ""
+
+msgid "Click to flip the picture upside-down."
+msgstr ""
+
+msgid "Square"
+msgstr "Carrat"
+
+msgid "Rectangle"
+msgstr "Rectangle"
+
+msgid "Circle"
+msgstr ""
+
+msgid "Ellipse"
+msgstr ""
+
+msgid "Triangle"
+msgstr "Triangle"
+
+msgid "Pentagon"
+msgstr "Pentagòn"
+
+msgid "Rhombus"
+msgstr ""
+
+msgid "A square is a rectangle with four equal sides."
+msgstr "Un carrat es un rectangle amb quatre costats egals."
+
+msgid "A rectangle has four sides and four right angles."
+msgstr "Un rectangle a quatre costats e quatre angles dreits."
+
+msgid ""
+"A circle is a curve where all points have the same distance from the centre."
+msgstr ""
+
+msgid "An ellipse is a stretched circle."
+msgstr ""
+
+msgid "A triangle has three sides."
+msgstr "Un triangle a tres costats."
+
+msgid "A pentagon has five sides."
+msgstr "Un pentagòn a cinc costats."
+
+msgid "A rhombus has four equal sides, and opposite sides are parallel."
+msgstr ""
+
+msgid "Tools"
+msgstr "Espleches"
+
+msgid "Colors"
+msgstr "Colors"
+
+msgid "Brushes"
+msgstr ""
+
+msgid "Erasers"
+msgstr ""
+
+msgid "Stamps"
+msgstr ""
+
+msgid "Shapes"
+msgstr ""
+
+msgid "Letters"
+msgstr ""
+
+msgid "Magic"
+msgstr ""
+
+msgid "Paint"
+msgstr ""
+
+msgid "Stamp"
+msgstr ""
+
+msgid "Lines"
+msgstr "Linhas"
+
+msgid "Text"
+msgstr "Tèxt"
+
+msgid "Undo"
+msgstr "Anullar"
+
+msgid "Redo"
+msgstr "Tornar far"
+
+msgid "Eraser"
+msgstr ""
+
+msgid "New"
+msgstr "Nòu"
+
+#. buttons for the file open dialog
+msgid "Open"
+msgstr "Dubrir"
+
+msgid "Save"
+msgstr "Enregistrar"
+
+msgid "Print"
+msgstr "Estampar"
+
+msgid "Quit"
+msgstr "Sortir"
+
+msgid "Pick a color and a brush shape to draw with."
+msgstr ""
+
+msgid "Pick a picture to stamp around your drawing."
+msgstr ""
+
+msgid "Click to start drawing a line. Let go to complete it."
+msgstr ""
+
+msgid ""
+"Pick a shape. Click to pick the center, drag, then let go when it is the "
+"size you want. Move around to rotate it, and click to draw it."
+msgstr ""
+
+msgid ""
+"Choose a style of text. Click on your drawing and you can start typing."
+msgstr ""
+
+msgid "Pick a magical effect to use on your drawing!"
+msgstr ""
+
+#. Undo
+msgid "Undo!"
+msgstr "Anullar !"
+
+#. Redo
+msgid "Redo!"
+msgstr "Tornar far !"
+
+#. Eraser
+msgid "Eraser!"
+msgstr ""
+
+#. New
+msgid "You now have a blank sheet to draw on!"
+msgstr "Ara, as una fuèlha blanca per dessenhar !"
+
+#. Open
+msgid "Open…"
+msgstr "Dubrir..."
+
+#. Save
+msgid "Your image has been saved!"
+msgstr ""
+
+#. Print
+msgid "Printing…"
+msgstr "Estampatge..."
+
+#. Quit
+msgid "Bye bye!"
+msgstr ""
+
+msgid "Let go of the button to complete the line."
+msgstr ""
+
+msgid "Hold the button to stretch the shape."
+msgstr ""
+
+msgid "Move the mouse to rotate the shape. Click to draw it."
+msgstr ""
+
+msgid "OK then… Let’s keep drawing this one!"
+msgstr ""
+
+#. FIXME: Move elsewhere!!!
+msgid "Do you really want to quit?"
+msgstr ""
+
+msgid "Yes, I'm done!"
+msgstr ""
+
+msgid "No, take me back!"
+msgstr ""
+
+msgid "If you quit, you’ll lose your picture! Save it?"
+msgstr ""
+
+msgid "Yes, save it!"
+msgstr ""
+
+msgid "No, don't bother saving!"
+msgstr ""
+
+msgid "Save your picture first?"
+msgstr ""
+
+msgid "Can’t open that picture!"
+msgstr ""
+
+msgid "OK"
+msgstr "Validar"
+
+#. This will be replaced with a dialog allowing color choice and Starter
+#. picking, with a "Back" option to dismiss the "New" and return to
+#. the current picture.  But for now...  (bjk 2006.02.19)
+msgid "Start a new picture?"
+msgstr ""
+
+#. #define PROMPT_NEW_YES gettext_noop("That’s OK!")
+#. #define PROMPT_NEW_NO gettext_noop("Never mind!")
+msgid "Yes, let's start fresh!"
+msgstr ""
+
+msgid "There are no saved files!"
+msgstr "I a pas de fichièr enregistrat !"
+
+msgid "Print your picture now?"
+msgstr ""
+
+msgid "Yes, print it!"
+msgstr ""
+
+msgid "Your picture has been printed!"
+msgstr ""
+
+msgid "You can’t print yet!"
+msgstr ""
+
+msgid "Erase this picture?"
+msgstr "Suprimir l'imatge ?"
+
+msgid "Yes, erase it!"
+msgstr ""
+
+msgid "No, don't erase it!"
+msgstr ""
+
+msgid "Remember to use the left mouse button!"
+msgstr ""
+
+msgid "Please wait..."
+msgstr ""
+
+msgid "Erase"
+msgstr ""
+
+msgid "Slides"
+msgstr ""
+
+msgid "Back"
+msgstr "Tornar"
+
+msgid "Next"
+msgstr ""
+
+msgid "Play"
+msgstr ""
+
+msgid "Aa"
+msgstr ""
+
+#. FIXME: Move elsewhere! Or not?!
+msgid "Yes"
+msgstr "Òc"
+
+msgid "No"
+msgstr "Non"
+
+#. FIXME: Move elsewhere!!!
+#. #define PROMPT_SAVE_OVER_TXT gettext_noop("Save over the older version of this picture?")
+msgid "Replace the picture with your changes?"
+msgstr ""
+
+msgid "Yes, replace the old one!"
+msgstr ""
+
+msgid "No, save a new file!"
+msgstr ""
+
+msgid "Choose the picture you want, then click “Open”."
+msgstr ""
+
+#. Let user choose images:
+msgid "Choose the pictures you want, then click “Play”."
+msgstr ""
+
+msgid "A drawing program for children."
+msgstr ""
+
+msgid "Drawing program"
+msgstr "Logicial de dessenh"
+
+msgid "Tux Paint"
+msgstr "Tux Paint"

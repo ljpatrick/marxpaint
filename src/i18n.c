@@ -79,6 +79,8 @@ const char *lang_prefixes[NUM_LANGS] = {
   "de",
   "el",
   "en",
+  "en_au",
+  "en_ca",
   "en_gb",
   "en_za",
   "eo",
@@ -108,11 +110,13 @@ const char *lang_prefixes[NUM_LANGS] = {
   "ku",
   "lt",
   "lv",
+  "mk",
   "ms",
   "nb",
   "nl",
   "nn",
   "nr",
+  "oc",
   "oj",
   "pl",
   "pt_br",
@@ -204,6 +208,8 @@ const language_to_locale_struct language_to_locale_array[] = {
   {"gujarati", "gu_IN.UTF-8"},
   {"british-english", "en_GB.UTF-8"},
   {"british", "en_GB.UTF-8"},
+  {"australian-english", "en_AU.UTF-8"},
+  {"canadian-english", "en_CA.UTF-8"},
   {"southafrican-english", "en_ZA.UTF-8"},
   {"esperanto", "eo.UTF-8"},
   {"spanish", "es_ES.UTF-8"},
@@ -259,6 +265,7 @@ const language_to_locale_struct language_to_locale_array[] = {
   {"lithuanian", "lt_LT.UTF-8"},
   {"lietuviu", "lt_LT.UTF-8"},
   {"latvian", "lv_LV.UTF-8"},
+  {"macedonian", "mk_MK.UTF-8"},
   {"malay", "ms_MY.UTF-8"},
   {"dutch", "nl_NL.UTF-8"},
   {"nederlands", "nl_NL.UTF-8"},
@@ -266,6 +273,7 @@ const language_to_locale_struct language_to_locale_array[] = {
   {"nynorsk", "nn_NO.UTF-8"},
   {"norsk", "nn_NO.UTF-8"},
   {"ndebele", "nr_ZA.UTF-8"},
+  {"occitan", "oc_FR.UTF-8"},
   {"ojibway", "oj_CA.UTF-8"},
   {"polish", "pl_PL.UTF-8"},
   {"polski", "pl_PL.UTF-8"},
@@ -429,6 +437,7 @@ void show_lang_usage(FILE * f, const char *const prg)
 /* af */ "  afrikaans\n"
 /* sq */ "  albanian\n"
 /* ar */ "  arabic\n"
+/* en_AU */ "  australian-english\n"
 /* eu */ "  basque       euskara\n"
 /* be */ "  belarusian   bielaruskaja\n"
 /* nb */ "  bokmal\n"
@@ -437,6 +446,7 @@ void show_lang_usage(FILE * f, const char *const prg)
 /* br */ "  breton       brezhoneg\n"
 /* en_GB */ "  british      british-english\n"
 /* bg_BG */ "  bulgarian\n"
+/* en_CA */ "  canadian-english\n"
 /* ca */ "  catalan      catala\n"
 /* zh_CN */ "  chinese      simplified-chinese\n"
 /* zh_TW */ "               traditional-chinese\n"
@@ -469,11 +479,13 @@ void show_lang_usage(FILE * f, const char *const prg)
 /* ku */ "  kurdish\n"
 /* lv */ "  latvian\n"
 /* lt */ "  lithuanian   lietuviu\n"
+/* mk */ "  macedonian\n"
 /* ms */ "  malay\n"
 /* es_MX */
 	  "  mexican      mexican-spanish        espanol-mejicano\n"
 /* nr */ "  ndebele\n"
 /* nn */ "  norwegian    nynorsk                norsk\n"
+/* oc */ "  occitan\n"
 /* oj */ "  ojibway\n"
 /* pl */ "  polish       polski\n"
 /* pt_PT */ "  portuguese   portugues\n"
@@ -523,6 +535,8 @@ void show_locale_usage(FILE * f, const char *const prg)
 	  "  nb_NO   (Bokmal)\n"
 	  "  pt_BR   (Brazilian    Brazilian Portuguese   Portugues Brazilian)\n"
 	  "  br_FR   (Breton       Brezhoneg)\n"
+	  "  en_AU   (Australian English)\n"
+	  "  en_CA   (Canadian English)\n"
 	  "  en_GB   (British      British English)\n"
 	  "  en_ZA   (South African English)\n"
 	  "  bg_BG   (Bulgarian)\n"
@@ -559,8 +573,10 @@ void show_locale_usage(FILE * f, const char *const prg)
 	  "  ms_MY   (Malay)\n"
 	  "  lv_LV   (Latvian)\n"
 	  "  lt_LT   (Lithuanian   Lietuviu)\n"
+	  "  mk_MK   (Macedonian)\n"
           "  nr_ZA   (Ndebele)\n"
 	  "  nn_NO   (Norwegian    Nynorsk                Norsk)\n"
+	  "  oc_FR   (Occitan)\n"
 	  "  oj_CA   (Ojibway)\n"
 	  "  pl_PL   (Polish       Polski)\n"
 	  "  pt_PT   (Portuguese   Portugues)\n"

@@ -40,7 +40,10 @@ uninstall-i18n:
 	-rm $(LOCALE_PREFIX)/de/LC_MESSAGES/tuxpaint.mo
 	-rm $(LOCALE_PREFIX)/et/LC_MESSAGES/tuxpaint.mo
 	-rm $(LOCALE_PREFIX)/el/LC_MESSAGES/tuxpaint.mo
+	-rm $(LOCALE_PREFIX)/en_AU/LC_MESSAGES/tuxpaint.mo
+	-rm $(LOCALE_PREFIX)/en_CA/LC_MESSAGES/tuxpaint.mo
 	-rm $(LOCALE_PREFIX)/en_GB/LC_MESSAGES/tuxpaint.mo
+	-rm $(LOCALE_PREFIX)/en_ZA/LC_MESSAGES/tuxpaint.mo
 	-rm $(LOCALE_PREFIX)/eo/LC_MESSAGES/tuxpaint.mo
 	-rm $(LOCALE_PREFIX)/es/LC_MESSAGES/tuxpaint.mo
 	-rm $(LOCALE_PREFIX)/es_MX/LC_MESSAGES/tuxpaint.mo
@@ -71,6 +74,7 @@ uninstall-i18n:
 	-rm $(LOCALE_PREFIX)/nb/LC_MESSAGES/tuxpaint.mo
 	-rm $(LOCALE_PREFIX)/nn/LC_MESSAGES/tuxpaint.mo
 	-rm $(LOCALE_PREFIX)/nr/LC_MESSAGES/tuxpaint.mo
+	-rm $(LOCALE_PREFIX)/oc/LC_MESSAGES/tuxpaint.mo
 	-rm $(LOCALE_PREFIX)/oj/LC_MESSAGES/tuxpaint.mo
 	-rm $(LOCALE_PREFIX)/pl/LC_MESSAGES/tuxpaint.mo
 	-rm $(LOCALE_PREFIX)/pt_PT/LC_MESSAGES/tuxpaint.mo
@@ -142,6 +146,16 @@ install-gettext:
 	@install -d $(LOCALE_PREFIX)/eu/LC_MESSAGES
 	@cp trans/eu.mo $(LOCALE_PREFIX)/eu/LC_MESSAGES/tuxpaint.mo
 	@chmod 644 $(LOCALE_PREFIX)/eu/LC_MESSAGES/tuxpaint.mo
+	@#
+	@echo "   en_AU ...Australian English..."
+	@install -d $(LOCALE_PREFIX)/en_AU/LC_MESSAGES
+	@cp trans/en_au.mo $(LOCALE_PREFIX)/en_AU/LC_MESSAGES/tuxpaint.mo
+	@chmod 644 $(LOCALE_PREFIX)/en_AU/LC_MESSAGES/tuxpaint.mo
+	@#
+	@echo "   en_CA ...Canadian English..."
+	@install -d $(LOCALE_PREFIX)/en_CA/LC_MESSAGES
+	@cp trans/en_ca.mo $(LOCALE_PREFIX)/en_CA/LC_MESSAGES/tuxpaint.mo
+	@chmod 644 $(LOCALE_PREFIX)/en_CA/LC_MESSAGES/tuxpaint.mo
 	@#
 	@echo "   en_GB ...British English..."
 	@install -d $(LOCALE_PREFIX)/en_GB/LC_MESSAGES
@@ -338,6 +352,11 @@ install-gettext:
 	@cp trans/nr.mo $(LOCALE_PREFIX)/nr/LC_MESSAGES/tuxpaint.mo
 	@chmod 644 $(LOCALE_PREFIX)/nr/LC_MESSAGES/tuxpaint.mo
 	@#
+	@echo "   oc_FR ...Occitan..."
+	@install -d $(LOCALE_PREFIX)/oc/LC_MESSAGES
+	@cp trans/oc.mo $(LOCALE_PREFIX)/oc/LC_MESSAGES/tuxpaint.mo
+	@chmod 644 $(LOCALE_PREFIX)/oc/LC_MESSAGES/tuxpaint.mo
+	@#
 	@echo "   oj_CA ...Ojibway..."
 	@install -d $(LOCALE_PREFIX)/oj/LC_MESSAGES
 	@cp trans/oj.mo $(LOCALE_PREFIX)/oj/LC_MESSAGES/tuxpaint.mo
@@ -526,6 +545,8 @@ translations: trans \
 	trans/de.mo \
 	trans/et.mo \
 	trans/el.mo \
+	trans/en_au.mo \
+	trans/en_ca.mo \
 	trans/en_gb.mo \
 	trans/en_za.mo \
 	trans/eo.mo \
@@ -558,6 +579,7 @@ translations: trans \
 	trans/nb.mo \
 	trans/nn.mo \
 	trans/nr.mo \
+	trans/oc.mo \
 	trans/oj.mo \
 	trans/pl.mo \
 	trans/pt_br.mo \
@@ -644,6 +666,14 @@ trans/et.mo:	src/po/et.po
 trans/el.mo:	src/po/el.po
 	@echo "   el_GR ...Greek..."
 	@msgfmt -o trans/el.mo src/po/el.po
+
+trans/en_au.mo:	src/po/en_au.po
+	@echo "   en_AU ...Australian English..."
+	@msgfmt -o trans/en_au.mo src/po/en_au.po
+
+trans/en_ca.mo:	src/po/en_ca.po
+	@echo "   en_CA ...Canadian English..."
+	@msgfmt -o trans/en_ca.mo src/po/en_ca.po
 
 trans/en_gb.mo:	src/po/en_gb.po
 	@echo "   en_GB ...British English..."
@@ -776,6 +806,10 @@ trans/nn.mo:	src/po/nn.po
 trans/nr.mo:	src/po/nr.po
 	@echo "   nr_ZA ...Ndebele..."
 	@msgfmt -o trans/nr.mo src/po/nr.po
+
+trans/oc.mo:	src/po/oc.po
+	@echo "   oc_FR ...Occitan..."
+	@msgfmt -o trans/oc.mo src/po/oc.po
 
 trans/oj.mo:	src/po/oj.po
 	@echo "   oj_CA ...Ojibway..."

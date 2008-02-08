@@ -196,6 +196,10 @@ $Id$
     Khaled Hosny <khaledhosny@eglug.org>
     Khalid Al Holan <alholan@gmail.com>
 
+  * Australian English
+    Chris Goerner, Canonical Ltd, and Rosetta Contributors
+    via Caroline Ford <caroline.ford.work@googlemail.com>
+
   * Basque
     Juan Irigoien <juanirigoien@yahoo.es>
 
@@ -211,6 +215,10 @@ $Id$
   * Bulgarian
     Martin Zhekov <mjekov@bginfo.net>
     Yavor Doganov <yavor@doganov.org>
+
+  * Canadian English
+    Matthew Lange, Canonical Ltd, and Rosetta Contributors
+    via Caroline Ford <caroline.ford.work@googlemail.com>
 
   * Catalan
     Pere Pujal Carabantes <ppujal@airtel.net>
@@ -358,6 +366,10 @@ $Id$
     Rita Verbauskaite
     Gintaras Go?tautas <gintaras@nes.lt>
 
+  * Macedonian
+    Kliment Simoncev and fleka, Canonical Ltd, and Rosetta Contributors
+    via Caroline Ford <caroline.ford.work@googlemail.com>
+
   * Malay
     Muhammad Najmi Ahmad Zabidi <mnajem@linuxmail.org>
 
@@ -372,6 +384,10 @@ $Id$
 
   * Norwegian Nynorsk
     Karl Ove Hufthammer <karl@huftis.org>
+
+  * Occitan
+    Yannig MARCHEGAY (Kokoyaya), Canonical Ltd, and Rosetta Contributors
+    via Caroline Ford <caroline.ford.work@googlemail.com>
 
   * Ojibway
     Ed Montgomery <edm@rocketmail.com>
