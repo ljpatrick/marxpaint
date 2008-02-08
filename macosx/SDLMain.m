@@ -496,7 +496,7 @@ static void CustomApplicationMain (argc, argv)
     return (BOOL)result;
 }
 
-- (OSStatus) installFontconfigFilesWithAuthorization
+- (BOOL) installFontconfigFilesWithAuthorization
 {
     OSStatus status;
     AuthorizationFlags flags = kAuthorizationFlagDefaults;
@@ -514,7 +514,6 @@ static void CustomApplicationMain (argc, argv)
     status = AuthorizationCopyRights(authorizationRef, &rights, NULL, flags, NULL);
     
     if (status == errAuthorizationSuccess)
-    
     {
         NSString *fcInstallerPath = [bundle pathForAuxiliaryExecutable:@"fcinstaller"];
         
@@ -531,7 +530,7 @@ static void CustomApplicationMain (argc, argv)
     }
     
     AuthorizationFree(authorizationRef, kAuthorizationFlagDefaults);
-    return status; 
+    return (status == errAuthorizationSuccess); 
 }
 
 - (BOOL) fontconfigFilesAreInstalled
@@ -561,6 +560,9 @@ static void CustomApplicationMain (argc, argv)
         if (!filesExist)
         {
             [self installFontconfigFilesWithAuthorization];
+            filesExist = [self fontconfigFilesAreInstalled];
+            if (!filesExist)
+                exit(-1);
         }
     }
     
