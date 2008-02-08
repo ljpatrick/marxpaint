@@ -1,7 +1,5 @@
-   ﻿
-
                                    Tux Paint
-                                 version 0.9.17
+                                 version 0.9.19
 
                    专为儿童设计的易用的绘图软件
 
