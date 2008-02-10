@@ -7,7 +7,7 @@
 # bill@newbreedsoftware.com
 # http://www.tuxpaint.org/
 
-# June 14, 2002 - February 7, 2008
+# June 14, 2002 - February 10, 2008
 
 
 # Locale files
@@ -29,6 +29,7 @@ all-i18n:
 uninstall-i18n:
 	-rm $(LOCALE_PREFIX)/af/LC_MESSAGES/tuxpaint.mo
 	-rm $(LOCALE_PREFIX)/ar/LC_MESSAGES/tuxpaint.mo
+	-rm $(LOCALE_PREFIX)/az/LC_MESSAGES/tuxpaint.mo
 	-rm $(LOCALE_PREFIX)/be/LC_MESSAGES/tuxpaint.mo
 	-rm $(LOCALE_PREFIX)/bg/LC_MESSAGES/tuxpaint.mo
 	-rm $(LOCALE_PREFIX)/bo/LC_MESSAGES/tuxpaint.mo
@@ -127,6 +128,11 @@ install-gettext:
 	@install -d $(LOCALE_PREFIX)/ar/LC_MESSAGES
 	@cp trans/ar.mo $(LOCALE_PREFIX)/ar/LC_MESSAGES/tuxpaint.mo
 	@chmod 644 $(LOCALE_PREFIX)/ar/LC_MESSAGES/tuxpaint.mo
+	@#
+	@echo "   az_AZ ...Azerbaijani..."
+	@install -d $(LOCALE_PREFIX)/az/LC_MESSAGES
+	@cp trans/az.mo $(LOCALE_PREFIX)/az/LC_MESSAGES/tuxpaint.mo
+	@chmod 644 $(LOCALE_PREFIX)/az/LC_MESSAGES/tuxpaint.mo
 	@#
 	@echo "   be_BY ...Belarusian..."
 	@install -d $(LOCALE_PREFIX)/be/LC_MESSAGES
@@ -540,6 +546,7 @@ endif
 translations: trans \
 	trans/af.mo \
 	trans/ar.mo \
+	trans/az.mo \
 	trans/be.mo \
 	trans/bg.mo \
 	trans/bo.mo \
@@ -629,6 +636,10 @@ trans/af.mo:	src/po/af.po
 trans/ar.mo:	src/po/ar.po
 	@echo "   ar_SA ...Arabic..."
 	@msgfmt -o trans/ar.mo src/po/ar.po
+
+trans/az.mo:	src/po/az.po
+	@echo "   az_AZ ...Azerbaijani..."
+	@msgfmt -o trans/az.mo src/po/az.po
 
 trans/be.mo:	src/po/be.po
 	@echo "   be_BY ...Belarusian..."

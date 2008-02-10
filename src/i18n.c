@@ -25,7 +25,7 @@
 
   $Id$
 
-  June 14, 2002 - February 7, 2008
+  June 14, 2002 - February 10, 2008
 */
 
 #include <stdio.h>
@@ -68,6 +68,7 @@ static int langint = LANG_EN;
 const char *lang_prefixes[NUM_LANGS] = {
   "af",
   "ar",
+  "az",
   "be",
   "bg",
   "bo",
@@ -189,6 +190,7 @@ const language_to_locale_struct language_to_locale_array[] = {
   {"english", "C"},
   {"american-english", "C"},
   {"arabic", "ar_SA.UTF-8"},
+  {"azerbaijani", "az_AZ.UTF-8"},
   {"croatian", "hr_HR.UTF-8"},
   {"hrvatski", "hr_HR.UTF-8"},
   {"catalan", "ca_ES.UTF-8"},
@@ -438,6 +440,7 @@ void show_lang_usage(FILE * f, const char *const prg)
 /* sq */ "  albanian\n"
 /* ar */ "  arabic\n"
 /* en_AU */ "  australian-english\n"
+/* az */ "  azerbaijani\n"
 /* eu */ "  basque       euskara\n"
 /* be */ "  belarusian   bielaruskaja\n"
 /* nb */ "  bokmal\n"
@@ -530,6 +533,7 @@ void show_locale_usage(FILE * f, const char *const prg)
 	  "  C       (English      American English)\n"
 	  "  af_ZA   (Afrikaans)\n"
 	  "  ar_SA   (Arabic)\n"
+	  "  az_AZ   (Azerbaijani)\n"
 	  "  eu_ES   (Basque       Euskara)\n"
 	  "  be_BY   (Belarusian   Bielaruskaja)\n"
 	  "  nb_NO   (Bokmal)\n"

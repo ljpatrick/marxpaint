@@ -9,12 +9,15 @@ http://www.tuxpaint.org/
 $Id$
 
 
-2008.February.7 (0.9.19)
+2008.February.10 (0.9.19)
   * New Localizations:
     ------------------
     * Australian English
       Chris Goerner, Canonical Ltd, and Rosetta Contributors
       via Caroline Ford <caroline.ford.work@googlemail.com>
+
+    * Azerbaijani
+      Jamil Farzana <jamil.farzana@gmail.com>
 
     * Canadian English
       Matthew Lange, Canonical Ltd, and Rosetta Contributors

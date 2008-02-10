@@ -7,7 +7,7 @@ bill@newbreedsoftware.com
 http://www.tuxpaint.org/
 
 
-June 17, 2002 - February 7, 2008
+June 17, 2002 - February 10, 2008
 
 $Id$
 
@@ -199,6 +199,9 @@ $Id$
   * Australian English
     Chris Goerner, Canonical Ltd, and Rosetta Contributors
     via Caroline Ford <caroline.ford.work@googlemail.com>
+
+  * Azerbaijani
+    Jamil Farzana <jamil.farzana@gmail.com>
 
   * Basque
     Juan Irigoien <juanirigoien@yahoo.es>
