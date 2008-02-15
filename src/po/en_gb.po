@@ -176,7 +176,7 @@ msgstr "Thai"
 
 #. Input Method: Traditional Chinese mode
 msgid "ZH_TW"
-msgstr ""
+msgstr "ZH_TW"
 
 #. Square shape tool (4 equally-lengthed sides at right angles)
 msgid "Square"
@@ -221,7 +221,7 @@ msgstr "A rectangle has four sides and four right angles."
 msgid ""
 "A circle is a curve where all points have the same distance from the center."
 msgstr ""
-"A circle is a curve where all points have the same distance from the center."
+"A circle is a curve where all points have the same distance from the centre."
 
 #. Description of an ellipse
 msgid "An ellipse is a stretched circle."
@@ -596,11 +596,11 @@ msgid "Click and move the mouse around to turn the picture into a cartoon."
 msgstr "Click and move the mouse around to turn the picture into a cartoon."
 
 msgid "Distortion"
-msgstr ""
+msgstr "Distortion"
 
 #, fuzzy
 msgid "Click and drag the mouse to cause a distortion in your picture."
-msgstr "Click and drag the mouse to put glass tile over your picture."
+msgstr "Click and drag the mouse to cause a distortion in your picture."
 
 msgid "Emboss"
 msgstr "Emboss"
@@ -716,7 +716,7 @@ msgid "Tint"
 msgstr "Tint"
 
 msgid "Click and move the mouse around to change the picture’s color."
-msgstr "Click and move the mouse around to change the picture’s color."
+msgstr "Click and move the mouse around to change the picture’s colour."
 
 msgid "Waves"
 msgstr "Waves"

@@ -9,7 +9,7 @@ http://www.tuxpaint.org/
 $Id$
 
 
-2008.February.10 (0.9.19)
+2008.February.15 (0.9.19)
   * New Localizations:
     ------------------
     * Australian English
@@ -36,6 +36,9 @@ $Id$
 
   * Localization Updates:
     ---------------------
+    * British English translation
+      Caroline Ford <caroline.ford.work@googlemail.com>
+
     * Chinese (Simplified) README and FAQ documentation
       HackerGene <hackergene@gmail.com>
       http://tuxpaint.cn/
