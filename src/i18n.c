@@ -25,7 +25,7 @@
 
   $Id$
 
-  June 14, 2002 - February 10, 2008
+  June 14, 2002 - February 17, 2008
 */
 
 #include <stdio.h>
@@ -107,6 +107,7 @@ const char *lang_prefixes[NUM_LANGS] = {
   "it",
   "ja",
   "ka",
+  "km",
   "ko",
   "ku",
   "lt",
@@ -307,7 +308,8 @@ const language_to_locale_struct language_to_locale_array[] = {
   {"chinese", "zh_CN.UTF-8"},
   {"simplified-chinese", "zh_CN.UTF-8"},
   {"traditional-chinese", "zh_TW.UTF-8"},
-  {"zapoteco", "zw_MX.UTF-8"}
+  {"zapoteco", "zw_MX.UTF-8"},
+  {"khmer", "km_KH.UTF-8"}
 };
 
 

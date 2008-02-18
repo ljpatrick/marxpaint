@@ -7,7 +7,7 @@ bill@newbreedsoftware.com
 http://www.tuxpaint.org/
 
 
-June 17, 2002 - February 10, 2008
+June 17, 2002 - February 17, 2008
 
 $Id$
 
@@ -339,6 +339,9 @@ $Id$
   * Japanese Input Method
     Mark K. Kim <mkkim214@gmail.com>
     TOYAMA Shin-ichi <shin1@wmail.plala.or.jp>
+
+  * Khmer
+    Khoem Sokhem <khoemsokhem@khmeros.info>
 
   * Kinyarwanda
     Steve Murphy <murf@e-tools.com>

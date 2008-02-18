@@ -7,7 +7,7 @@
 # bill@newbreedsoftware.com
 # http://www.tuxpaint.org/
 
-# June 14, 2002 - February 10, 2008
+# June 14, 2002 - February 17, 2008
 
 
 # Locale files
@@ -68,6 +68,7 @@ uninstall-i18n:
 	-rm $(LOCALE_PREFIX)/ja/LC_MESSAGES/tuxpaint.mo
 	-rm $(LOCALE_PREFIX)/ka/LC_MESSAGES/tuxpaint.mo
 	-rm $(LOCALE_PREFIX)/ko/LC_MESSAGES/tuxpaint.mo
+	-rm $(LOCALE_PREFIX)/km/LC_MESSAGES/tuxpaint.mo
 	-rm $(LOCALE_PREFIX)/ku/LC_MESSAGES/tuxpaint.mo
 	-rm $(LOCALE_PREFIX)/lt/LC_MESSAGES/tuxpaint.mo
 	-rm $(LOCALE_PREFIX)/mk/LC_MESSAGES/tuxpaint.mo
@@ -313,6 +314,11 @@ install-gettext:
 	@install -d $(LOCALE_PREFIX)/tlh/LC_MESSAGES
 	@cp trans/tlh.mo $(LOCALE_PREFIX)/tlh/LC_MESSAGES/tuxpaint.mo
 	@chmod 644 $(LOCALE_PREFIX)/tlh/LC_MESSAGES/tuxpaint.mo
+	@#
+	@echo "   km_KH ...Khmer..."
+	@install -d $(LOCALE_PREFIX)/km/LC_MESSAGES
+	@cp trans/km.mo $(LOCALE_PREFIX)/km/LC_MESSAGES/tuxpaint.mo
+	@chmod 644 $(LOCALE_PREFIX)/km/LC_MESSAGES/tuxpaint.mo
 	@#
 	@echo "   rw_RW ...Kinyarwanda..."
 	@install -d $(LOCALE_PREFIX)/rw/LC_MESSAGES
@@ -583,6 +589,7 @@ translations: trans \
 	trans/it.mo \
 	trans/ja.mo \
 	trans/ka.mo \
+	trans/km.mo \
 	trans/ko.mo \
 	trans/ku.mo \
 	trans/lt.mo \
@@ -788,6 +795,10 @@ trans/ja.mo:	src/po/ja.po
 trans/ka.mo:	src/po/ka.po
 	@echo "   ka_GE ...Georgian..."
 	@msgfmt -o trans/ka.mo src/po/ka.po
+
+trans/km.mo:	src/po/km.po
+	@echo "   km_KH ...Khmer..."
+	@msgfmt -o trans/km.mo src/po/km.po
 
 trans/ko.mo:	src/po/ko.po
 	@echo "   ko_KR ...Korean..."

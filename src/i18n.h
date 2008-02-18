@@ -10,7 +10,7 @@
 
   $Id$
   
-  June 14, 2002 - February 10, 2008
+  June 14, 2002 - February 17, 2008
 */
 
 
@@ -65,6 +65,7 @@ enum
   LANG_IT,			/* Italian */
   LANG_JA,			/* Japanese */
   LANG_KA,			/* Georgian */
+  LANG_KM,			/* Khmer */
   LANG_KO,			/* Korean */
   LANG_KU,			/* Kurdish */
   LANG_LT,			/* Lithuanian */

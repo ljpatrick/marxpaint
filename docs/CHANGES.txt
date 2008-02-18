@@ -9,7 +9,7 @@ http://www.tuxpaint.org/
 $Id$
 
 
-2008.February.15 (0.9.19)
+2008.February.17 (0.9.19)
   * New Localizations:
     ------------------
     * Australian English
@@ -22,6 +22,9 @@ $Id$
     * Canadian English
       Matthew Lange, Canonical Ltd, and Rosetta Contributors
       via Caroline Ford <caroline.ford.work@googlemail.com>
+
+    * Khmer
+      Khoem Sokhem <khoemsokhem@khmeros.info>
 
     * Macedonian
       Kliment Simoncev and fleka, Canonical Ltd, and Rosetta Contributors
