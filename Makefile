@@ -3,16 +3,16 @@
 
 # Tux Paint - A simple drawing program for children.
 
-# Copyright (c) 2002-2007 by Bill Kendrick and others
+# Copyright (c) 2002-2008 by Bill Kendrick and others
 # bill@newbreedsoftware.com
 # http://www.tuxpaint.org/
 
-# June 14, 2002 - December 11, 2007
+# June 14, 2002 - February 18, 2008
 
 
 # The version number, for release:
 
-VER_VERSION=0.9.19-cvs-2007.12.11
+VER_VERSION=0.9.19
 VER_DATE=`date +"%Y-%m-%d"`
 
 MAGIC_API_VERSION=0x00000001
