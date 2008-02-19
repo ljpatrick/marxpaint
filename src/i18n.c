@@ -25,7 +25,7 @@
 
   $Id$
 
-  June 14, 2002 - February 17, 2008
+  June 14, 2002 - February 19, 2008
 */
 
 #include <stdio.h>
@@ -178,6 +178,11 @@ int lang_use_right_to_left_word[] = {
   LANG_HE,
 #endif
   -1
+};
+
+int lang_y_nudge[][2] = {
+  {LANG_KM, 4},
+  {-1, -1}
 };
 
 
@@ -347,10 +352,13 @@ void ctype_utf8(void)
 
 /* Determine the current language/locale, and set the language string: */
 
-void set_current_language(void)
+int set_current_language(void)
 {
   char *loc;
   int i, found;
+  int y_nudge;
+
+  y_nudge = 0;
 
   bindtextdomain("tuxpaint", LOCALEDIR);
   /* Old version of glibc does not have bind_textdomain_codeset() */
@@ -365,11 +373,16 @@ void set_current_language(void)
 
 
 #ifndef WIN32
-  loc = setlocale(LC_MESSAGES, NULL);
+  loc = setlocale(LC_MESSAGES, NULL); // NULL: Used to direct setlocale() to query the current internationalised environment and return the name of the locale().
+
+  // FIXME: I'm getting back en_US.UTF-8 even after LC_ALL has been putenv()'d...?? -bjk 2008.02.19
+
   if (loc != NULL)
   {
     if (strstr(loc, "LC_MESSAGES") != NULL)
+    {
       loc = getenv("LANG");
+    }
   }
 #else
   bind_textdomain_codeset("tuxpaint", "UTF-8");
@@ -408,10 +421,23 @@ void set_current_language(void)
     }
   }
 
+
+  /* FIXME: These don't work because we have the wrong langint...!? -bjk 2008.02.19 */
+
   lang_prefix = lang_prefixes[langint];
   need_own_font = search_int_array(langint, lang_use_own_font);
   need_right_to_left = search_int_array(langint, lang_use_right_to_left);
   need_right_to_left_word = search_int_array(langint, lang_use_right_to_left_word);
+
+  for (i = 0; lang_y_nudge[i][0] != -1; i++)
+  {
+    printf("lang_y_nudge[%d][0] = %d\n", i, lang_y_nudge[i][0]);
+    if (lang_y_nudge[i][0] == langint)
+    {
+      y_nudge = lang_y_nudge[i][1];
+      printf("y_nudge = %d\n", y_nudge);
+    }
+  }
 
 #ifdef DEBUG
   fprintf(stderr, "DEBUG: Language is %s (%d) %s/%s\n",
@@ -421,6 +447,7 @@ void set_current_language(void)
   fflush(stderr);
 #endif
 
+  return(y_nudge);
 }
 
 
@@ -615,7 +642,7 @@ void show_locale_usage(FILE * f, const char *const prg)
 	  "\n", prg);
 }
 
-void setup_language(const char *const prg)
+void setup_language(const char *const prg, int * y_nudge)
 {
 
 // Justify this or delete it. It seems to make Tux Paint
@@ -676,13 +703,14 @@ void setup_language(const char *const prg)
       putenv(s);
     }
 
-    setlocale(LC_ALL, "");
+    setlocale(LC_ALL, ""); // Specifies an implementation-dependent native environment. For XSI-conformant systems, this corresponds to the value of the associated environment variables, LC_* and LANG
+
     ctype_utf8();
     free(langstr);
     langstr = NULL;
   }
 
-  set_current_language();
+  *y_nudge = set_current_language();
 }
 
 

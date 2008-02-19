@@ -10,7 +10,7 @@
 
   $Id$
   
-  June 14, 2002 - February 17, 2008
+  June 14, 2002 - February 18, 2008
 */
 
 
@@ -135,11 +135,11 @@ extern const language_to_locale_struct language_to_locale_array[];
 /* Function prototypes: */
 
 void set_langstr(const char *s);
-void set_current_language(void);
+int set_current_language(void);
 int get_current_language(void);
 void show_lang_usage(FILE * f, const char *const prg);
 void show_locale_usage(FILE * f, const char *const prg);
-void setup_language(const char *const prg);
+void setup_language(const char *const prg, int * y_nudge);
 void do_locale_option(const char *const arg);
 void ctype_utf8(void);
 

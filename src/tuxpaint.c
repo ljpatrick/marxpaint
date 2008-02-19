@@ -22,7 +22,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
   
-  June 14, 2002 - December 31, 2007
+  June 14, 2002 - February 18, 2008
   $Id$
 */
 
@@ -960,6 +960,8 @@ static SDL_Surface *img_title_on, *img_title_off,
   *img_title_large_on, *img_title_large_off;
 static SDL_Surface *img_title_names[NUM_TITLES];
 static SDL_Surface *img_tools[NUM_TOOLS], *img_tool_names[NUM_TOOLS];
+
+static int button_label_y_nudge;
 
 static SDL_Surface *thumbnail(SDL_Surface * src, int max_x, int max_y,
 			      int keep_aspect);
@@ -6709,7 +6711,7 @@ static void setup(int argc, char *argv[])
   }
 
   
-  setup_language(getfilename(argv[0]));
+  setup_language(getfilename(argv[0]), &button_label_y_nudge);
   im_init(&im_data, get_current_language());
 
 #ifndef NO_SDLPANGO
@@ -7771,7 +7773,7 @@ static SDL_Surface *do_render_button_label(const char *const label)
     myfont = locale_font;
   tmp_surf = render_text(myfont, upstr, black);
   free(upstr);
-  surf = thumbnail(tmp_surf, min(48, tmp_surf->w), tmp_surf->h, 0);
+  surf = thumbnail(tmp_surf, min(48, tmp_surf->w), min(18 + button_label_y_nudge, tmp_surf->h), 0);
   SDL_FreeSurface(tmp_surf);
 
   return surf;
@@ -8030,7 +8032,7 @@ static void draw_toolbar(void)
 
 
       dest.x = ((i % 2) * 48) + 4 + (40 - img_tool_names[i]->w) / 2;
-      dest.y = ((i / 2) * 48) + 40 + 2 + (44 - img_tool_names[i]->h);
+      dest.y = ((i / 2) * 48) + 40 + 2 + (44 + button_label_y_nudge - img_tool_names[i]->h);
 
       SDL_BlitSurface(img_tool_names[i], NULL, screen, &dest);
     }
