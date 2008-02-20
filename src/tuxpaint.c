@@ -990,11 +990,6 @@ static SDL_Surface *render_text(TuxPaint_Font * restrict font,
     return NULL;
   }
     
-#ifdef __APPLE__
-  if (macosx.buildingFontCache == 1)
-    displayMessage(MSG_FONT_CACHE);
-#endif
-    
 #ifndef NO_SDLPANGO
   if (font->typ == FONT_TYPE_PANGO)
   {
@@ -1008,14 +1003,6 @@ static SDL_Surface *render_text(TuxPaint_Font * restrict font,
     SDLPango_SetDefaultColor(font->pango_context, &pango_color);
     SDLPango_SetText(font->pango_context, str, -1);
     ret = SDLPango_CreateSurfaceDraw(font->pango_context);     
-  }
-#endif
- 
-#ifdef __APPLE__
-  if (macosx.buildingFontCache == 1)
-  {
-      macosx.buildingFontCache = 0;
-      hideMessage();
   }
 #endif
     
