@@ -25,7 +25,7 @@
 
   $Id$
 
-  June 14, 2002 - February 19, 2008
+  June 14, 2002 - February 20, 2008
 */
 
 #include <stdio.h>
@@ -431,7 +431,7 @@ int set_current_language(void)
 
   for (i = 0; lang_y_nudge[i][0] != -1; i++)
   {
-    printf("lang_y_nudge[%d][0] = %d\n", i, lang_y_nudge[i][0]);
+    // printf("lang_y_nudge[%d][0] = %d\n", i, lang_y_nudge[i][0]);
     if (lang_y_nudge[i][0] == langint)
     {
       y_nudge = lang_y_nudge[i][1];
