@@ -59,7 +59,7 @@
 				<key>appnameText</key>
 				<string>NSTextField</string>
 				<key>messagePanel</key>
-				<string>NSPanel</string>
+				<string>NSWindow</string>
 				<key>messageProgress</key>
 				<string>NSProgressIndicator</string>
 				<key>messageStatus</key>
