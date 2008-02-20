@@ -11,40 +11,14 @@
 		2202646707AC603500C3AEAB /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2202646607AC603500C3AEAB /* CoreFoundation.framework */; };
 		2214087F0D0D17F0009534C6 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8D1107310486CEB800E47090 /* Info.plist */; };
 		221408D00D0D1DC7009534C6 /* credits.txt in Resources */ = {isa = PBXBuildFile; fileRef = 221408CF0D0D1DC6009534C6 /* credits.txt */; };
-		22140ABD0D110600009534C6 /* TransparentTextView.h in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 22140ABB0D110600009534C6 /* TransparentTextView.h */; };
 		22140ABE0D110600009534C6 /* TransparentTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 22140ABC0D110600009534C6 /* TransparentTextView.m */; };
-		22140B9C0D1252E4009534C6 /* speech.h in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 22140B9A0D1252E4009534C6 /* speech.h */; };
 		22140B9D0D1252E5009534C6 /* speech.m in Sources */ = {isa = PBXBuildFile; fileRef = 22140B9B0D1252E4009534C6 /* speech.m */; };
 		221532C30C94825B00CDCB3B /* im.c in Sources */ = {isa = PBXBuildFile; fileRef = 221532C10C94825B00CDCB3B /* im.c */; };
 		221532E40C9499D100CDCB3B /* libsvg-cairo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 221532E10C9499D100CDCB3B /* libsvg-cairo.a */; };
 		221532E50C9499D100CDCB3B /* libsvg.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 221532E20C9499D100CDCB3B /* libsvg.a */; };
 		22153A600C94C0EE00CDCB3B /* images in Resources */ = {isa = PBXBuildFile; fileRef = 221539CA0C94C0EE00CDCB3B /* images */; };
 		22153A610C94C0EE00CDCB3B /* sounds in Resources */ = {isa = PBXBuildFile; fileRef = 22153A3F0C94C0EE00CDCB3B /* sounds */; };
-		222862BD0D0B48B100CA3F84 /* message.h in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 222862BB0D0B48B000CA3F84 /* message.h */; };
 		222862BE0D0B48B100CA3F84 /* message.m in Sources */ = {isa = PBXBuildFile; fileRef = 222862BC0D0B48B100CA3F84 /* message.m */; };
-		222862BF0D0B48DF00CA3F84 /* SDLMain.h in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 22C0EA9A0735B76F008555A2 /* SDLMain.h */; };
-		222862C00D0B48E200CA3F84 /* macosx_print.h in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 22C0EAAB0735B851008555A2 /* macosx_print.h */; };
-		222862C10D0B48E500CA3F84 /* wrapperdata.h in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 22C0EA9C0735B76F008555A2 /* wrapperdata.h */; };
-		222862C20D0B48EA00CA3F84 /* im.h in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 221532C20C94825B00CDCB3B /* im.h */; };
-		222862C30D0B490700CA3F84 /* compiler.h in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 225FCE100ADF277300466C53 /* compiler.h */; };
-		222862C40D0B490900CA3F84 /* cursor.h in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 225FCE120ADF277300466C53 /* cursor.h */; };
-		222862C50D0B491F00CA3F84 /* debug.h in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 225FCE130ADF277300466C53 /* debug.h */; };
-		222862C60D0B492300CA3F84 /* dirwalk.h in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 225FCE150ADF277300466C53 /* dirwalk.h */; };
-		222862C70D0B492600CA3F84 /* get_fname.h in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 225FCE1A0ADF277300466C53 /* get_fname.h */; };
-		222862C80D0B492700CA3F84 /* pixels.h in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 225FCE1C0ADF277300466C53 /* pixels.h */; };
-		222862C90D0B492B00CA3F84 /* playsound.h in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 225FCE1E0ADF277300466C53 /* playsound.h */; };
-		222862CA0D0B492F00CA3F84 /* progressbar.h in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 225FCE200ADF277300466C53 /* progressbar.h */; };
-		222862CB0D0B492F00CA3F84 /* rgblinear.h in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 225FCE220ADF277300466C53 /* rgblinear.h */; };
-		222862CC0D0B493200CA3F84 /* fonts.h in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 225FCE230ADF277300466C53 /* fonts.h */; };
-		222862CD0D0B493300CA3F84 /* i18n.h in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 225FCE240ADF277300466C53 /* i18n.h */; };
-		222862CE0D0B497700CA3F84 /* colors.h in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 22C0EAA30735B851008555A2 /* colors.h */; };
-		222862CF0D0B497B00CA3F84 /* great.h in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 22C0EAA40735B851008555A2 /* great.h */; };
-		222862D00D0B497C00CA3F84 /* shapes.h in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 22C0EAAE0735B851008555A2 /* shapes.h */; };
-		222862D10D0B497C00CA3F84 /* sounds.h in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 22C0EAAF0735B851008555A2 /* sounds.h */; };
-		222862D20D0B497D00CA3F84 /* tip_tux.h in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 22C0EAB00735B851008555A2 /* tip_tux.h */; };
-		222862D30D0B497D00CA3F84 /* titles.h in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 22C0EAB10735B851008555A2 /* titles.h */; };
-		222862D40D0B497E00CA3F84 /* tools.h in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 22C0EAB20735B851008555A2 /* tools.h */; };
-		222862D50D0B498800CA3F84 /* tp_magic_api.h in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 22F4616E0CE41B6E00DB7761 /* tp_magic_api.h */; };
 		2248FBE20CDEAC38004BC461 /* libSDL_Pango.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2248FBE10CDEAC38004BC461 /* libSDL_Pango.a */; };
 		2248FC0F0CDEEDDE004BC461 /* libpango-1.0.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2248FC0B0CDEEDDE004BC461 /* libpango-1.0.a */; };
 		2248FC3B0CDEF241004BC461 /* libcairo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2248FC330CDEF241004BC461 /* libcairo.a */; };
@@ -263,6 +237,7 @@
 		22ECE58C0CF0D71200D390B3 /* smudge.so in CopyFiles */ = {isa = PBXBuildFile; fileRef = 22ECE4950CF0CD6400D390B3 /* smudge.so */; };
 		22ECE58D0CF0D71200D390B3 /* waves.so in CopyFiles */ = {isa = PBXBuildFile; fileRef = 22ECE4A70CF0CD8600D390B3 /* waves.so */; };
 		22ECE58E0CF0D71200D390B3 /* tint.so in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2248FCE30CE2CA54004BC461 /* tint.so */; };
+		22F3EC9F0D5682620068DFB4 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22F3EC9E0D5682620068DFB4 /* Security.framework */; };
 		22F4616F0CE41B6E00DB7761 /* tp_magic_api.h in Headers */ = {isa = PBXBuildFile; fileRef = 22F4616E0CE41B6E00DB7761 /* tp_magic_api.h */; };
 		22F461770CE41CDE00DB7761 /* libintl.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2248FC390CDEF241004BC461 /* libintl.a */; };
 		8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C165CFE840E0CC02AAC07 /* InfoPlist.strings */; };
@@ -468,6 +443,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
+		22A0082D0D653729008B70C7 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 7;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		22D5D2A80738498300B67229 /* Copy Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -478,32 +462,6 @@
 				225FE6F00939891500F0B02F /* SDL_image.framework in Copy Frameworks */,
 				225FE6D20939890800F0B02F /* SDL.framework in Copy Frameworks */,
 				225789760CFAA0DC002EE819 /* SDL_ttf.framework in Copy Frameworks */,
-				222862BD0D0B48B100CA3F84 /* message.h in Copy Frameworks */,
-				222862BF0D0B48DF00CA3F84 /* SDLMain.h in Copy Frameworks */,
-				222862C00D0B48E200CA3F84 /* macosx_print.h in Copy Frameworks */,
-				222862C10D0B48E500CA3F84 /* wrapperdata.h in Copy Frameworks */,
-				222862C20D0B48EA00CA3F84 /* im.h in Copy Frameworks */,
-				222862C30D0B490700CA3F84 /* compiler.h in Copy Frameworks */,
-				222862C40D0B490900CA3F84 /* cursor.h in Copy Frameworks */,
-				222862C50D0B491F00CA3F84 /* debug.h in Copy Frameworks */,
-				222862C60D0B492300CA3F84 /* dirwalk.h in Copy Frameworks */,
-				222862C70D0B492600CA3F84 /* get_fname.h in Copy Frameworks */,
-				222862C80D0B492700CA3F84 /* pixels.h in Copy Frameworks */,
-				222862C90D0B492B00CA3F84 /* playsound.h in Copy Frameworks */,
-				222862CA0D0B492F00CA3F84 /* progressbar.h in Copy Frameworks */,
-				222862CB0D0B492F00CA3F84 /* rgblinear.h in Copy Frameworks */,
-				222862CC0D0B493200CA3F84 /* fonts.h in Copy Frameworks */,
-				222862CD0D0B493300CA3F84 /* i18n.h in Copy Frameworks */,
-				222862CE0D0B497700CA3F84 /* colors.h in Copy Frameworks */,
-				222862CF0D0B497B00CA3F84 /* great.h in Copy Frameworks */,
-				222862D00D0B497C00CA3F84 /* shapes.h in Copy Frameworks */,
-				222862D10D0B497C00CA3F84 /* sounds.h in Copy Frameworks */,
-				222862D20D0B497D00CA3F84 /* tip_tux.h in Copy Frameworks */,
-				222862D30D0B497D00CA3F84 /* titles.h in Copy Frameworks */,
-				222862D40D0B497E00CA3F84 /* tools.h in Copy Frameworks */,
-				222862D50D0B498800CA3F84 /* tp_magic_api.h in Copy Frameworks */,
-				22140ABD0D110600009534C6 /* TransparentTextView.h in Copy Frameworks */,
-				22140B9C0D1252E4009534C6 /* speech.h in Copy Frameworks */,
 			);
 			name = "Copy Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -538,6 +496,15 @@
 				22ECE58C0CF0D71200D390B3 /* smudge.so in CopyFiles */,
 				22ECE58D0CF0D71200D390B3 /* waves.so in CopyFiles */,
 				22ECE58E0CF0D71200D390B3 /* tint.so in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		22F3ECD10D5691BD0068DFB4 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 6;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -677,6 +644,7 @@
 		22ECE4B90CF0CDA500D390B3 /* grass.so */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = grass.so; sourceTree = BUILT_PRODUCTS_DIR; };
 		22ECE4CB0CF0CDE200D390B3 /* distortion.so */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = distortion.so; sourceTree = BUILT_PRODUCTS_DIR; };
 		22ECE4DD0CF0CE4A00D390B3 /* metalpaint.so */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = metalpaint.so; sourceTree = BUILT_PRODUCTS_DIR; };
+		22F3EC9E0D5682620068DFB4 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = /System/Library/Frameworks/Security.framework; sourceTree = "<absolute>"; };
 		22F45B110CE3FF4D00DB7761 /* Tux Paint.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Tux Paint.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		22F45E500CE3FFE100DB7761 /* distortion.c */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.c; name = distortion.c; path = ../magic/src/distortion.c; sourceTree = SOURCE_ROOT; };
 		22F45E530CE4015300DB7761 /* grass.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = grass.c; path = ../magic/src/grass.c; sourceTree = SOURCE_ROOT; };
@@ -974,6 +942,7 @@
 				2248FC4C0CDEF395004BC461 /* libexpat.a in Frameworks */,
 				2248FC5A0CE19305004BC461 /* libpangoft2-1.0.a in Frameworks */,
 				225789450CFAA093002EE819 /* SDL_ttf.framework in Frameworks */,
+				22F3EC9F0D5682620068DFB4 /* Security.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1001,6 +970,7 @@
 		1058C7A0FEA54F0111CA2CBB /* Linked Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				22F3EC9E0D5682620068DFB4 /* Security.framework */,
 				2202646607AC603500C3AEAB /* CoreFoundation.framework */,
 				2202639707AC5D3000C3AEAB /* ApplicationServices.framework */,
 				1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */,
@@ -1841,7 +1811,9 @@
 				8D11072E0486CEB800E47090 /* Frameworks */,
 				22D5D2A80738498300B67229 /* Copy Frameworks */,
 				22ECE5730CF0D6F000D390B3 /* CopyFiles */,
+				22F3ECD10D5691BD0068DFB4 /* CopyFiles */,
 				2217B7D50CD6F6C400DC1DA3 /* Update Library Install Paths */,
+				22A0082D0D653729008B70C7 /* CopyFiles */,
 			);
 			buildRules = (
 				225FD5360934EF5600F0B02F /* PBXBuildRule */,
@@ -2012,7 +1984,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "cd ..\nrsync -auv --cvs-exclude /Users/mfuhrer/Projects/Tux\\ Paint/tuxpaint-cvs/tuxpaint/magic/icons/ /Users/mfuhrer/Projects/Tux\\ Paint/tuxpaint-cvs/tuxpaint/data/images/magic\nrsync -auv --cvs-exclude /Users/mfuhrer/Projects/Tux\\ Paint/tuxpaint-cvs/tuxpaint/magic/sounds/ /Users/mfuhrer/Projects/Tux\\ Paint/tuxpaint-cvs/tuxpaint/data/sounds/magic";
+			shellScript = "cd ..\nrsync -auv --cvs-exclude \"${PROJECT_DIR}/../magic/icons/\"  \"${PROJECT_DIR}/../data/images/magic\"\nrsync -auv --cvs-exclude  \"${PROJECT_DIR}/../magic/sounds/\"  \"${PROJECT_DIR}/../data/sounds/magic\"";
 		};
 		EEDBBD40097A27A2004F0C27 /* Make Translations */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -2534,15 +2506,16 @@
 					HAVE_STRCASESTR,
 					"$(PREPROCESSOR_MACROS_$(CURRENT_ARCH))",
 				);
-				GCC_PREPROCESSOR_DEFINITIONS_QUOTED_1 = "VER_DATE=\\\"2007-12-28\\\"";
+				GCC_PREPROCESSOR_DEFINITIONS_QUOTED_1 = "VER_DATE=\\\"2008-02-21\\\"";
 				GCC_PREPROCESSOR_DEFINITIONS_QUOTED_2 = "DATA_PREFIX=\\\"Tux\\ Paint.app/Contents/Resources/\\\"";
 				GCC_PREPROCESSOR_DEFINITIONS_QUOTED_3 = "DOC_PREFIX=\\\"./share/doc/tuxpaint/\\\"";
 				GCC_PREPROCESSOR_DEFINITIONS_QUOTED_4 = "CONFDIR=\\\"$(HOME)/Library/Application\\ Support/TuxPaint/\\\"";
 				GCC_PREPROCESSOR_DEFINITIONS_QUOTED_5 = "LOCALEDIR=\\\"Tux\\ Paint.app/Contents/Resources/locale/\\\"";
-				GCC_PREPROCESSOR_DEFINITIONS_QUOTED_6 = "VER_VERSION=\\\"0.9.18\\\"";
+				GCC_PREPROCESSOR_DEFINITIONS_QUOTED_6 = "VER_VERSION=\\\"0.9.19\\\"";
 				GCC_PREPROCESSOR_DEFINITIONS_QUOTED_7 = "MAGIC_PREFIX=\\\"Tux\\ Paint.app/Contents/Resources/plugins/\\\"";
 				GCC_PREPROCESSOR_DEFINITIONS_QUOTED_8 = "IMDIR=\\\"Tux\\ Paint.app/Contents/Resources/im/\\\"";
 				HEADER_SEARCH_PATHS = (
+					"include/**",
 					/Users/Shared/tuxpaint/include,
 					/opt/local/include/cairo,
 					/opt/local/include,
@@ -2555,13 +2528,9 @@
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "$(HOME)/Applications";
 				LIBRARY_SEARCH_PATHS = (
-					/Users/Shared/tuxpaint/lib,
-					"$(LIBRARY_SEARCH_PATHS)",
 					"$(inherited)",
-					"$(LIBRARY_SEARCH_PATHS_QUOTED_2)",
+					/Users/Shared/tuxpaint/lib,
 				);
-				LIBRARY_SEARCH_PATHS_QUOTED_1 = "\"$(SRCROOT)/../../../../Libraries/tuxpaint/lib\"";
-				LIBRARY_SEARCH_PATHS_QUOTED_2 = "\"$(SRCROOT)/build/Development\"";
 				MACOSX_DEPLOYMENT_TARGET = 10.3;
 				OTHER_CFLAGS = "";
 				OTHER_CPLUSPLUSFLAGS = "";
@@ -2607,15 +2576,16 @@
 					HAVE_STRCASESTR,
 					"$(PREPROCESSOR_MACROS_$(CURRENT_ARCH))",
 				);
-				GCC_PREPROCESSOR_DEFINITIONS_QUOTED_1 = "VER_DATE=\\\"2007-12-28\\\"";
+				GCC_PREPROCESSOR_DEFINITIONS_QUOTED_1 = "VER_DATE=\\\"2008-02-21\\\"";
 				GCC_PREPROCESSOR_DEFINITIONS_QUOTED_2 = "DATA_PREFIX=\\\"Tux\\ Paint.app/Contents/Resources/\\\"";
 				GCC_PREPROCESSOR_DEFINITIONS_QUOTED_3 = "DOC_PREFIX=\\\"./share/doc/tuxpaint/\\\"";
 				GCC_PREPROCESSOR_DEFINITIONS_QUOTED_4 = "CONFDIR=\\\"$(HOME)/Library/Application\\ Support/TuxPaint/\\\"";
 				GCC_PREPROCESSOR_DEFINITIONS_QUOTED_5 = "LOCALEDIR=\\\"Tux\\ Paint.app/Contents/Resources/locale/\\\"";
-				GCC_PREPROCESSOR_DEFINITIONS_QUOTED_6 = "VER_VERSION=\\\"0.9.18\\\"";
+				GCC_PREPROCESSOR_DEFINITIONS_QUOTED_6 = "VER_VERSION=\\\"0.9.19\\\"";
 				GCC_PREPROCESSOR_DEFINITIONS_QUOTED_7 = "MAGIC_PREFIX=\\\"Tux\\ Paint.app/Contents/Resources/plugins/\\\"";
 				GCC_PREPROCESSOR_DEFINITIONS_QUOTED_8 = "IMDIR=\\\"Tux\\ Paint.app/Contents/Resources/im/\\\"";
 				HEADER_SEARCH_PATHS = (
+					"include/**",
 					/Users/Shared/tuxpaint/include,
 					/opt/local/include/cairo,
 					/opt/local/include,
@@ -2628,13 +2598,9 @@
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "$(HOME)/Applications";
 				LIBRARY_SEARCH_PATHS = (
-					/Users/Shared/tuxpaint/lib,
-					"$(LIBRARY_SEARCH_PATHS)",
 					"$(inherited)",
-					"$(LIBRARY_SEARCH_PATHS_QUOTED_2)",
+					/Users/Shared/tuxpaint/lib,
 				);
-				LIBRARY_SEARCH_PATHS_QUOTED_1 = "\"$(SRCROOT)/../../../../Libraries/tuxpaint/lib\"";
-				LIBRARY_SEARCH_PATHS_QUOTED_2 = "\"$(SRCROOT)/build/Development\"";
 				MACOSX_DEPLOYMENT_TARGET = 10.3;
 				OTHER_CFLAGS = "";
 				OTHER_CPLUSPLUSFLAGS = "";
@@ -2679,15 +2645,16 @@
 					HAVE_STRCASESTR,
 					"$(PREPROCESSOR_MACROS_$(CURRENT_ARCH))",
 				);
-				GCC_PREPROCESSOR_DEFINITIONS_QUOTED_1 = "VER_DATE=\\\"2007-12-28\\\"";
+				GCC_PREPROCESSOR_DEFINITIONS_QUOTED_1 = "VER_DATE=\\\"2008-02-21\\\"";
 				GCC_PREPROCESSOR_DEFINITIONS_QUOTED_2 = "DATA_PREFIX=\\\"Tux\\ Paint.app/Contents/Resources/\\\"";
 				GCC_PREPROCESSOR_DEFINITIONS_QUOTED_3 = "DOC_PREFIX=\\\"./share/doc/tuxpaint/\\\"";
 				GCC_PREPROCESSOR_DEFINITIONS_QUOTED_4 = "CONFDIR=\\\"$(HOME)/Library/Application\\ Support/TuxPaint/\\\"";
 				GCC_PREPROCESSOR_DEFINITIONS_QUOTED_5 = "LOCALEDIR=\\\"Tux\\ Paint.app/Contents/Resources/locale/\\\"";
-				GCC_PREPROCESSOR_DEFINITIONS_QUOTED_6 = "VER_VERSION=\\\"0.9.18\\\"";
+				GCC_PREPROCESSOR_DEFINITIONS_QUOTED_6 = "VER_VERSION=\\\"0.9.19\\\"";
 				GCC_PREPROCESSOR_DEFINITIONS_QUOTED_7 = "MAGIC_PREFIX=\\\"Tux\\ Paint.app/Contents/Resources/plugins/\\\"";
 				GCC_PREPROCESSOR_DEFINITIONS_QUOTED_8 = "IMDIR=\\\"Tux\\ Paint.app/Contents/Resources/im/\\\"";
 				HEADER_SEARCH_PATHS = (
+					"include/**",
 					/Users/Shared/tuxpaint/include,
 					/opt/local/include/cairo,
 					/opt/local/include,
@@ -2700,13 +2667,9 @@
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "$(HOME)/Applications";
 				LIBRARY_SEARCH_PATHS = (
-					/Users/Shared/tuxpaint/lib,
-					"$(LIBRARY_SEARCH_PATHS)",
 					"$(inherited)",
-					"$(LIBRARY_SEARCH_PATHS_QUOTED_2)",
+					/Users/Shared/tuxpaint/lib,
 				);
-				LIBRARY_SEARCH_PATHS_QUOTED_1 = "\"$(SRCROOT)/../../../../Libraries/tuxpaint/lib\"";
-				LIBRARY_SEARCH_PATHS_QUOTED_2 = "\"$(SRCROOT)/build/Development\"";
 				MACOSX_DEPLOYMENT_TARGET = 10.3;
 				OTHER_CFLAGS = "";
 				OTHER_CPLUSPLUSFLAGS = "";
@@ -2725,6 +2688,8 @@
 		224A35FC09339642005A3695 /* Development */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				HEADER_SEARCH_PATHS = include;
+				LIBRARY_SEARCH_PATHS = lib;
 				SDKROOT = /Developer/SDKs/MacOSX10.4u.sdk;
 			};
 			name = Development;
@@ -2732,6 +2697,8 @@
 		224A35FD09339642005A3695 /* Deployment */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				HEADER_SEARCH_PATHS = include;
+				LIBRARY_SEARCH_PATHS = lib;
 				SDKROOT = /Developer/SDKs/MacOSX10.4u.sdk;
 			};
 			name = Deployment;
@@ -2739,6 +2706,8 @@
 		224A35FE09339642005A3695 /* Default */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				HEADER_SEARCH_PATHS = include;
+				LIBRARY_SEARCH_PATHS = lib;
 				SDKROOT = /Developer/SDKs/MacOSX10.4u.sdk;
 			};
 			name = Default;
