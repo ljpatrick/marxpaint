@@ -12,6 +12,7 @@
 
 #include <Security/Authorization.h>
 #include <Security/AuthorizationTags.h>
+#include <fontconfig/fontconfig.h>
 #include <stdlib.h>
 
 #import "macosx_print.h"
@@ -142,7 +143,7 @@ static NSString *getApplicationName(void)
 
     path = @"/Library/Application Support/TuxPaint";
     [path getCString:(macosx.globalPreferencesPath)];
-    }
+}
 
 -(void) fontsPath;
 {
@@ -487,11 +488,9 @@ static void CustomApplicationMain (argc, argv)
     NSString *arguments = [NSString stringWithCString:(macosx.globalPreferencesPath)];
     
     char command[4096];
-    sprintf(command, "\"%s\" \"%s\"", [executable cStringUsingEncoding:NSASCIIStringEncoding], [arguments cStringUsingEncoding:NSASCIIStringEncoding]);
+    sprintf(command, "\"%s\" \"%s\"", [executable cString], [arguments cString]);
     
-    //displayMessage(MSG_FONT_CACHE);
     int result = system(command);
-    //hideMessage();
     
     return (BOOL)result;
 }
@@ -521,12 +520,10 @@ static void CustomApplicationMain (argc, argv)
         char *arguments[] = { "/Library/Application Support/TuxPaint", NULL };
         FILE *communicationsPipe = NULL;
         
-        strcpy(executable, [fcInstallerPath cStringUsingEncoding:NSASCIIStringEncoding]);
+        strcpy(executable, [fcInstallerPath cString]);
         
         flags = kAuthorizationFlagDefaults;
-        //displayMessage(MSG_FONT_CACHE);
         status = AuthorizationExecuteWithPrivileges(authorizationRef, executable, flags, arguments, &communicationsPipe);
-        //hideMessage();
     }
     
     AuthorizationFree(authorizationRef, kAuthorizationFlagDefaults);
@@ -546,13 +543,15 @@ static void CustomApplicationMain (argc, argv)
     return filesExist;
 }
 
-/* Install files required by Fontconfig */
-- (void) installFontconfig
+/* Set up Fontconfig */
+- (void) setupFontconfig
 {
-    NSFileManager *fileManager = [NSFileManager defaultManager];
-    BOOL filesExist = TRUE;
+    /* Tell Fontconfig to use font configuration file in application bundle */
+    setenv ("FONTCONFIG_PATH", [[[NSBundle mainBundle] resourcePath] cString], 1);
     
-    filesExist = [self fontconfigFilesAreInstalled];
+    /* Install font configuration file */
+    /*
+    BOOL filesExist = [self fontconfigFilesAreInstalled];
     if (!filesExist)
     {
         [self installFontconfigFiles];
@@ -565,14 +564,21 @@ static void CustomApplicationMain (argc, argv)
                 exit(-1);
         }
     }
-    
+    */
+  
+    /* Determine if Fontconfig cache needs to be built */
     NSString *globalPreferencesPath = [NSString stringWithCString:(macosx.globalPreferencesPath)];
     NSString *globalCachePath = [globalPreferencesPath stringByAppendingString:@"/fontconfig/cache"];
     NSString *userCachePath = [[NSString stringWithString:@"~/.fontconfig"] stringByExpandingTildeInPath];
-    if ([fileManager fileExistsAtPath:globalCachePath] || [fileManager fileExistsAtPath:userCachePath])
-        macosx.buildingFontCache = 0;
-    else
-        macosx.buildingFontCache = 1;
+    
+    NSFileManager *fileManager = [NSFileManager defaultManager];
+    if (![fileManager fileExistsAtPath:globalCachePath] && ![fileManager fileExistsAtPath:userCachePath])
+    {
+        /* Build Fontconfig cache */
+        displayMessage( MSG_FONT_CACHE );
+        FcBool initSuccess = FcInit();
+        hideMessage();
+    }
 }
 
 /*
@@ -634,6 +640,7 @@ static void CustomApplicationMain (argc, argv)
 - (void) applicationDidFinishLaunching: (NSNotification *) note
 {
     int status;
+    sdlMain = self;
 	
 	/* Allow Cocoa events to be processed */
 	setenv ("SDL_ENABLEAPPEVENTS", "1", 1);	
@@ -641,8 +648,8 @@ static void CustomApplicationMain (argc, argv)
 	/* Set up Cocoa to SDL bridge */
 	[self setupBridge];
     
-    /* Install any files required by fontconfig */
-    [self installFontconfig];
+    /* Set up Fontconfig */
+    [self setupFontconfig];
 	
     /* Set the working directory to the .app's parent directory */
     [self setupWorkingDirectory:gFinderLaunch];
@@ -651,7 +658,6 @@ static void CustomApplicationMain (argc, argv)
     /* Set the main menu to contain the real app name instead of "SDL App" */
     [self fixMenu:[NSApp mainMenu] withAppName:getApplicationName()];
 #endif
-	sdlMain = self;
     
     /* Hand off to main application code */
     gCalledAppMainline = TRUE;

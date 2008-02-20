@@ -14,7 +14,7 @@
 
 @interface SDLMain : NSObject
 {
-    IBOutlet NSPanel *messagePanel;
+    IBOutlet NSWindow *messagePanel;
     IBOutlet NSTextField *messageText;
     IBOutlet NSTextField *messageStatus;
     IBOutlet NSProgressIndicator *messageProgress;
