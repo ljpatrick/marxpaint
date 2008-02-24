@@ -23,7 +23,7 @@ New Breed Software</p>
 <a href="http://www.tuxpaint.org/">http://www.tuxpaint.org/</a></p>
 
 
-<p>February 17, 2008</p>
+<p>February 24, 2008</p>
 
 
 </center>
@@ -143,6 +143,15 @@ New Breed Software</p>
     <p>When running <i>Tux&nbsp;Paint</i> in fullscreen mode, this
     assumes the screen's current resolution (overriding any
     "<code>windowsize</code>" option), as set by the operating system.
+  </dd>
+
+  <dt><code><b>allowscreensaver=yes</b></code></dt>
+  <dd>
+    <p>By default, <i>Tux&nbsp;Paint</i> prevents your system's screensaver
+    from starting up. You can override this by using the "<code>allowscreensaver</code>"
+    option. Note: This requires version 1.2.12 or higher of the SDL library.
+    (You can also do this by setting the "<code>SDL_VIDEO_ALLOW_SCREENSAVER</code>"
+    environment variable on your system to "<code>1</code>".)
   </dd>
 
   <dt><code><b>nosound=yes</b></code></dt>
@@ -1040,6 +1049,7 @@ New Breed Software</p>
     --<i>WIDTH</i>x<i>HEIGHT</i><br>
     --orient=portrait<br>
     --native<br>
+    --allowscreensaver<br>
     --startblank<br>
     --nosound<br>
     --noquit<br>
@@ -1084,6 +1094,7 @@ New Breed Software</p>
     --windowed<br>
     --800x600<br>
     --orient=landscape<br>
+    --disablescreensaver<br>
     --startlast<br>
     --sound<br>
     --quit<br>

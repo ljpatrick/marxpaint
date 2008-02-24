@@ -9,7 +9,7 @@
                            bill@newbreedsoftware.com
                             http://www.tuxpaint.org/
 
-                               February 17, 2008
+                               February 24, 2008
 
    --------------------------------------------------------------------------
 
@@ -104,6 +104,15 @@ Windows Users
              When running Tux Paint in fullscreen mode, this assumes the
              screen's current resolution (overriding any "windowsize"
              option), as set by the operating system.
+
+     allowscreensaver=yes
+
+             By default, Tux Paint prevents your system's screensaver from
+             starting up. You can override this by using the
+             "allowscreensaver" option. Note: This requires version 1.2.12 or
+             higher of the SDL library. (You can also do this by setting the
+             "SDL_VIDEO_ALLOW_SCREENSAVER" environment variable on your
+             system to "1".)
 
      nosound=yes
              Disable sound effects. (Note: Pressing [Alt] + [S] cannot be
@@ -671,6 +680,7 @@ Windows Users
        --WIDTHxHEIGHT
        --orient=portrait
        --native
+       --allowscreensaver
        --startblank
        --nosound
        --noquit
@@ -712,6 +722,7 @@ Windows Users
        --windowed
        --800x600
        --orient=landscape
+       --disablescreensaver
        --startlast
        --sound
        --quit

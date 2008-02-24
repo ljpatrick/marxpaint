@@ -22,7 +22,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
   
-  June 14, 2002 - February 18, 2008
+  June 14, 2002 - February 24, 2008
   $Id$
 */
 
@@ -842,7 +842,7 @@ static void update_canvas(int x1, int y1, int x2, int y2)
 
 /* Globals: */
 
-static int fullscreen, native_screensize, disable_quit, simple_shapes,
+static int disable_screensaver, fullscreen, native_screensize, disable_quit, simple_shapes,
   disable_print, print_delay, only_uppercase, promptless_save, grab_input,
   wheely, keymouse, mouse_x, mouse_y,
   mousekey_up, mousekey_down, mousekey_left, mousekey_right,
@@ -4935,6 +4935,7 @@ static void show_usage(FILE * f, char *prg)
 	  "\n"
 	  "  %s [--windowed | --fullscreen]\n"
 	  "  %s [--WIDTHxHEIGHT | --native]\n"
+          "  %s [--disablescreensaver | --allowscreensaver ]\n"
           "  %s [--orient=landscape | --orient=portrait]\n"
 	  "  %s [--startblank | --startlast]\n"
 	  "  %s [--sound | --nosound]\n"
@@ -4975,7 +4976,7 @@ static void show_usage(FILE * f, char *prg)
 	  "\n",
 	  prg, prg,
 	  blank, blank, blank, blank,
-	  blank, blank, blank,
+	  blank, blank, blank, blank,
 	  blank, blank, blank,
 	  blank, blank, blank,
 	  blank, blank, blank,
@@ -6075,6 +6076,7 @@ static void setup(int argc, char *argv[])
 #else
   fullscreen = 0;
 #endif
+  disable_screensaver = 0;
   native_screensize = 0;
   rotate_orientation = 0;
   noshortcuts = 0;
@@ -6264,6 +6266,14 @@ static void setup(int argc, char *argv[])
     else if (strcmp(argv[i], "--windowed") == 0 || strcmp(argv[i], "-w") == 0)
     {
       fullscreen = 0;
+    }
+    else if (strcmp(argv[i], "--disablescreensaver") == 0)
+    {
+      disable_screensaver = 1;
+    }
+    else if (strcmp(argv[i], "--allowscreensaver") == 0)
+    {
+      disable_screensaver = 0;
     }
     else if (strcmp(argv[i], "--startblank") == 0 || strcmp(argv[i], "-b") == 0)
     {
@@ -6719,6 +6729,17 @@ static void setup(int argc, char *argv[])
 #ifndef WIN32
   putenv((char *) "SDL_VIDEO_X11_WMCLASS=TuxPaint.TuxPaint");
 #endif
+
+  if (disable_screensaver == 0)
+  {
+    putenv((char *) "SDL_VIDEO_ALLOW_SCREENSAVER=1");
+    if (SDL_MAJOR_VERSION < 1 ||
+        (SDL_MAJOR_VERSION >= 1 && SDL_MINOR_VERSION < 2) ||
+        (SDL_MAJOR_VERSION >= 1 && SDL_MINOR_VERSION >= 2 && SDL_PATCHLEVEL < 12))
+    {
+      fprintf(stderr, "Note: 'allowscreensaver' requires SDL 1.2.12 or higher\n");
+    }
+  }
 
   /* Test for lockfile, if we're using one: */
 
@@ -15442,6 +15463,15 @@ static void parse_options(FILE * fi)
       {
         fullscreen = 1;
         native_screensize = 1;
+      }
+      else if (strcmp(str, "disablescreensaver=yes") == 0)
+      {
+        disable_screensaver = 1;
+      }
+      else if (strcmp(str, "disablescreensaver=no") == 0 ||
+               strcmp(str, "allowscreensaver=yes") == 0)
+      {
+        disable_screensaver = 0;
       }
       else if (strcmp(str, "native=yes") == 0)
       {
