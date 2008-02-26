@@ -6035,6 +6035,7 @@ static void setup(int argc, char *argv[])
   Uint32(*getpixel_tmp_btn_up) (SDL_Surface *, int, int);
   Uint32(*getpixel_tmp_btn_down) (SDL_Surface *, int, int);
   Uint32(*getpixel_img_paintwell) (SDL_Surface *, int, int);
+  int big_title;
 
 
 
@@ -7165,9 +7166,19 @@ static void setup(int argc, char *argv[])
   ////////// quickly: title image, version, progress bar, and watch cursor
 
   img_title = loadimage(DATA_PREFIX "images/title.png");
-  img_title_tuxpaint = loadimage(DATA_PREFIX "images/title-tuxpaint.png");
   img_title_credits = loadimage(DATA_PREFIX "images/title-credits.png");
   img_progress = loadimage(DATA_PREFIX "images/ui/progress.png");
+
+  if (screen->w - img_title->w >= 410 && screen->h - img_progress->h - img_title_credits->h - 40) /* FIXME: Font */
+    big_title = 1;
+  else
+    big_title = 0;
+
+
+  if (big_title)
+    img_title_tuxpaint = loadimage(DATA_PREFIX "images/title-tuxpaint-2x.png");
+  else
+    img_title_tuxpaint = loadimage(DATA_PREFIX "images/title-tuxpaint.png");
 
   SDL_FillRect(screen, NULL, SDL_MapRGB(screen->format, 255, 255, 255));
 
@@ -7179,7 +7190,10 @@ static void setup(int argc, char *argv[])
   SDL_BlitSurface(img_title, NULL, screen, &dest);
 
   dest.x = 10;
-  dest.y = (WINDOW_HEIGHT - img_title->h) + img_title_tuxpaint->h * 0.8 + 7;
+  if (big_title)
+    dest.y = WINDOW_HEIGHT - img_title_tuxpaint->h - img_progress->h - 40;
+  else
+    dest.y = (WINDOW_HEIGHT - img_title->h) + img_title_tuxpaint->h * 0.8 + 7;
 
   SDL_BlitSurface(img_title_tuxpaint, NULL, screen, &dest);
 

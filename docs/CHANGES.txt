@@ -9,7 +9,7 @@ http://www.tuxpaint.org/
 $Id$
 
 
-2008.February.24 (0.9.19)
+2008.February.25 (0.9.19)
   * New Localizations:
     ------------------
     * Australian English
@@ -78,7 +78,8 @@ $Id$
     * Added "--allowscreensaver" option, which prevents Tux Paint from disabling
       the screensaver or monitor power management while running.
       (Requires SDL 1.2.12; can also be done by setting the
-      SDL_VIDEO_ALLOW_SCREENSAVER environment variable to '1' before running Tux Paint.)
+      SDL_VIDEO_ALLOW_SCREENSAVER environment variable to '1' before running
+      Tux Paint.)
 
     * Removed unfinished, unused record and playback code.
 
@@ -115,6 +116,13 @@ $Id$
       Carlo Gandolfi <www.freesmug.org>
       Douglas Barbieri <doug@dooglio.net>
 
+  * Other improvements:
+    -------------------
+    * Recreated "Tux Paint" title art using Inkscape (traced original bitmap).
+
+    * Larger "Tux Paint" title art displayed on larger screens.
+
+
   * Bug Fixes
     ---------
     * Added authorization code to permit Fontconfig files
@@ -139,7 +147,8 @@ $Id$
       after 40 flips or mirrors, which in turn caused a crash on startup.
       John Popplewell <john@johnnypops.demon.co.uk>
 
-    * Fixed bug that prevented rendering of some locales on Mac OS X (e.g. Arabic)
+    * Fixed bug that prevented rendering of some locales on Mac OS X
+      (e.g. Arabic)
       Martin Fuhrer <mfuhrer@users.sourceforge.net>
 
 
