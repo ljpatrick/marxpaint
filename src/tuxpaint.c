@@ -3,7 +3,7 @@
 
   Tux Paint - A simple drawing program for children.
   
-  Copyright (c) 2002-2007 by Bill Kendrick and others; see AUTHORS.txt
+  Copyright (c) 2002-2008 by Bill Kendrick and others; see AUTHORS.txt
   bill@newbreedsoftware.com
   http://www.tuxpaint.org/
 
@@ -22,7 +22,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
   
-  June 14, 2002 - February 24, 2008
+  June 14, 2002 - February 28, 2008
   $Id$
 */
 
@@ -7236,7 +7236,7 @@ static void setup(int argc, char *argv[])
   printf("%s\n", tmp_str);
 #endif
 
-  snprintf(tmp_str, sizeof(tmp_str), "© 2002–2007 Bill Kendrick et al.");
+  snprintf(tmp_str, sizeof(tmp_str), "© 2002–2008 Bill Kendrick et al.");
   tmp_surf = render_text(medium_font, tmp_str, black);
   dest.x = 10;
   dest.y = WINDOW_HEIGHT - img_progress->h - (tmp_surf->h * 2);
