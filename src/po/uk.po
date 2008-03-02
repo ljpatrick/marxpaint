@@ -1,20 +1,22 @@
 # Tux Pant Ukrainian messages
 # Copyright (C) 2003-2004
 # Translators: Serhij Dubyk <dubyk@lsl.lviv.ua>
-#            
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: TuxPaint\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2008-02-08 00:28-0800\n"
-"PO-Revision-Date: 2005-09-13 04:48+0200\n"
-"Last-Translator: Serhij Dubyk <dubyk@lsl.lviv.ua>\n"
-"Language-Team: Serhij Dubyk <dubyk@lsl.lviv.ua>\n"
+"PO-Revision-Date: 2008-03-01 01:41+0200\n"
+"Last-Translator: Serhij Dubyk <dubyk@library.lviv.ua>\n"
+"Language-Team: Serhij Dubyk <serhijdubyk@gmail.com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Poedit-Language: Ukrainian\n"
 "X-Poedit-Country: UKRAINE\n"
+"X-Poedit-SourceCharset: utf-8\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 
 #. Response to Black (0, 0, 0) color selected
 msgid "Black!"
@@ -45,19 +47,16 @@ msgid "Yellow!"
 msgstr "Жовтий!"
 
 #. Response to Light green (160, 228, 128) color selected
-#, fuzzy
 msgid "Light green!"
-msgstr "Білі та сірі клітинки"
+msgstr "Світло-зелений!"
 
 #. Response to Dark green (33, 148, 70) color selected
-#, fuzzy
 msgid "Dark green!"
-msgstr "Чорні та сірі клітинки"
+msgstr "Темно-зелений!"
 
 #. Response to "Sky" blue (138, 168, 205) color selected
-#, fuzzy
 msgid "Sky blue!"
-msgstr "Ча_стота синього:"
+msgstr "Блакитний!"
 
 #. Response to Blue (50, 100, 255) color selected
 msgid "Blue!"
@@ -80,9 +79,8 @@ msgid "Brown!"
 msgstr "Коричневий!"
 
 #. Response to Tan (226, 189, 166) color selected
-#, fuzzy
 msgid "Tan!"
-msgstr "Ціан!"
+msgstr "Колір засмаги!"
 
 #. Response to Beige (247, 228, 219) color selected
 msgid "Beige!"
@@ -101,17 +99,17 @@ msgstr "Беж!"
 #. code below (the best scores going to fonts that support both).
 #. Line X
 msgid "qx"
-msgstr ""
+msgstr "qx"
 
 msgid "QX"
-msgstr ""
+msgstr "QX"
 
 #. Line Y
 msgid "qy"
-msgstr ""
+msgstr "qy"
 
 msgid "QY"
-msgstr ""
+msgstr "QY"
 
 #. Now we score fonts to ensure that the best ones will be placed at
 #. the top of the list. The user will see them first. This sorting is
@@ -159,27 +157,27 @@ msgstr "Хороша робота!"
 
 #. Input Method: English mode
 msgid "English"
-msgstr ""
+msgstr "Англійська"
 
 #. Input Method: Japanese Romanized Hiragana mode
 msgid "Hiragana"
-msgstr ""
+msgstr "Хіраґана (японська абетка)"
 
 #. Input Method: Japanese Romanized Katakana mode
 msgid "Katakana"
-msgstr ""
+msgstr "Катакана (японська абетка)"
 
 #. Input Method: Korean Hangul 2-Bul mode
 msgid "Hangul"
-msgstr ""
+msgstr "Хангиль (корейська писемність)"
 
 #. Input Method: Thai mode
 msgid "Thai"
-msgstr ""
+msgstr "Тайська мова"
 
 #. Input Method: Traditional Chinese mode
 msgid "ZH_TW"
-msgstr ""
+msgstr "ZH_TW"
 
 #. Square shape tool (4 equally-lengthed sides at right angles)
 msgid "Square"
@@ -194,9 +192,8 @@ msgid "Circle"
 msgstr "Круг"
 
 #. Ellipse shape tool (X radius and Y radius may differ)
-#, fuzzy
 msgid "Ellipse"
-msgstr "Створити еліпс"
+msgstr "Еліпс"
 
 #. Triangle shape tool (3 sides)
 msgid "Triangle"
@@ -211,45 +208,37 @@ msgid "Rhombus"
 msgstr "Ромб"
 
 #. Octagon shape tool (8 sides)
-#, fuzzy
 msgid "Octagon"
-msgstr "П'ятикутник"
+msgstr "Восьмикутник"
 
 #. Description of a square
-#, fuzzy
 msgid "A square is a rectangle with four equal sides."
-msgstr "У прямокутника чотири сторони."
+msgstr "Квадрат - прямокутник з чотирма рівними сторонами."
 
 #. Description of a rectangle
-#, fuzzy
 msgid "A rectangle has four sides and four right angles."
-msgstr "У прямокутника чотири сторони."
+msgstr "У прямокутника чотири сторони і чотири прямих кути."
 
-#, fuzzy
-msgid ""
-"A circle is a curve where all points have the same distance from the center."
-msgstr "Коло - крива, у якоє всі крапки мають таку ж відстань від центру."
+msgid "A circle is a curve where all points have the same distance from the center."
+msgstr "Коло - крива, у якої усі крапки лежать на однаковій відстані від центру."
 
 #. Description of an ellipse
 msgid "An ellipse is a stretched circle."
 msgstr "Еліпс - витянуте коло."
 
 #. Description of a triangle
-#, fuzzy
 msgid "A triangle has three sides."
-msgstr "Кожен елемент має викривлені сторони"
+msgstr "У трикутника три сторони (і кути!)"
 
 #. Description of a pentagon
-#, fuzzy
 msgid "A pentagon has five sides."
-msgstr "Кожен елемент має викривлені сторони"
+msgstr "А у п'ятикутника п'ять сторін (і кутів!)"
 
 msgid "A rhombus has four equal sides, and opposite sides are parallel."
 msgstr "Ромб має чотири рівні сторони, і протилежні сторони паралельні."
 
-#, fuzzy
 msgid "An octagon has eight equal sides."
-msgstr "Кожен елемент має викривлені сторони"
+msgstr "Восьмикутник має вісім рівних сторін."
 
 #. Title of tool selector (buttons down the left)
 msgid "Tools"
@@ -264,9 +253,8 @@ msgid "Brushes"
 msgstr "Пензлі"
 
 #. Title of eraser selector (buttons down the right for eraser tool)
-#, fuzzy
 msgid "Erasers"
-msgstr "Гумка"
+msgstr "Гумки"
 
 #. Title of stamp selector (buttons down the right for stamps tool)
 msgid "Stamps"
@@ -338,38 +326,28 @@ msgid "Quit"
 msgstr "Вихід"
 
 #. Paint tool instructions
-#, fuzzy
 msgid "Pick a color and a brush shape to draw with."
-msgstr "Виберіть колір та форму пензлика, якою Ви хочете малювати."
+msgstr "Виберіть колір і форму пензлика, якими Ви хочете малювати."
 
 #. Stamp tool instructions
-#, fuzzy
 msgid "Pick a picture to stamp around your drawing."
-msgstr "Виберіть картинку, щоб поставити штамп на Вашому малюнку."
+msgstr "Виберіть зображення, щоб поставити штамп на Вашому малюнку."
 
 #. Line tool instructions
-#, fuzzy
 msgid "Click to start drawing a line. Let go to complete it."
-msgstr "Клацніть, щоб почати малювати лінію. Відпустіть кнопку, щоб закінчити."
+msgstr "Клацніть, щоб почати малювати лінію. Відпустіть кнопку, щоб завершити."
 
 #. Shape tool instructions
-#, fuzzy
-msgid ""
-"Pick a shape. Click to pick the center, drag, then let go when it is the "
-"size you want. Move around to rotate it, and click to draw it."
-msgstr ""
-"Виберіть форму. Клацніть для вибору центру, розтягніть до потрібного "
-"розміру, відпустіть. Покрутіть форму, потім клацніть, щоб намалювати її."
+msgid "Pick a shape. Click to pick the center, drag, then let go when it is the size you want. Move around to rotate it, and click to draw it."
+msgstr "Виберіть форму. Клацніть щоб вибрати центр, розтягніть до потрібного розміру, відпустіть. Покрутіть форму, потім клацніть, щоб намалювати її."
 
 #. Text tool instructions
-#, fuzzy
 msgid "Choose a style of text. Click on your drawing and you can start typing."
 msgstr "Виберіть стиль тексту. Клацніть на Вашому малюнку та друкуйте."
 
 #. Magic tool instruction
-#, fuzzy
 msgid "Pick a magical effect to use on your drawing!"
-msgstr "Виберіть чарівний ефект, щоб використовувати його на Вашому малюнку!"
+msgstr "Виберіть чарівний ефект, щоб застосувати його на Вашому малюнку!"
 
 #  Undo
 #. Response to 'undo' action
@@ -387,9 +365,8 @@ msgid "Eraser!"
 msgstr "Стерти!"
 
 #. Response to 'start a new image' action
-#, fuzzy
 msgid "Pick a color or picture with which to start a new drawing."
-msgstr "Виберіть картинку, щоб поставити штамп на Вашому малюнку."
+msgstr "Виберіть колір або картинку, з яких почати нове малювання."
 
 #. Response to 'open' action (while file dialog is being constructed)
 msgid "Open…"
@@ -432,21 +409,21 @@ msgstr "Ви дійсно хочете вийти?"
 
 #. Quit prompt positive response (quit)
 msgid "Yes, I'm done!"
-msgstr ""
+msgstr "Так, я завершив!"
 
 #. Quit prompt negative response (don't quit)
 msgid "No, take me back!"
-msgstr ""
+msgstr "Ні, хочу назад!"
 
 #. Current picture is not saved; user is quitting
 msgid "If you quit, you’ll lose your picture! Save it?"
 msgstr "Якщо Ви вийдете, Ви втратите Ваш малюнок! Зберегти?"
 
 msgid "Yes, save it!"
-msgstr ""
+msgstr "Так, зберегти!"
 
 msgid "No, don't bother saving!"
-msgstr ""
+msgstr "Ні, не потрібно зберігати!"
 
 #. Current picture is not saved; user is opening another picture
 msgid "Save your picture first?"
@@ -469,7 +446,7 @@ msgid "Print your picture now?"
 msgstr "Надрукувати Вашу малюнок?"
 
 msgid "Yes, print it!"
-msgstr ""
+msgstr "Так, роздрукувати!"
 
 #. Confirmation of successful (we hope) printing
 msgid "Your picture has been printed!"
@@ -481,13 +458,13 @@ msgstr "Ви поки не можете друкувати!"
 
 #. Prompt to confirm erasing a picture in the Open dialog
 msgid "Erase this picture?"
-msgstr "Видалити цей малюнок?"
+msgstr "Вилучити цей малюнок?"
 
 msgid "Yes, erase it!"
-msgstr ""
+msgstr "Так, вилучити!"
 
 msgid "No, don't erase it!"
-msgstr ""
+msgstr "Ні, не вилучати!"
 
 #. Reminder that Mouse Button 1 is the button to use in Tux Paint
 msgid "Remember to use the left mouse button!"
@@ -495,40 +472,39 @@ msgstr "Не забувайте про ліву клавішу миші!"
 
 #. Sound has been muted (silenced) via keyboard shortcut
 msgid "Sound muted."
-msgstr ""
+msgstr "Звук заглушено."
 
 #. Sound has been unmuted (unsilenced) via keyboard shortcut
 msgid "Sound unmuted."
-msgstr ""
+msgstr "Звук увімкнено."
 
 #. Wait while Text tool finishes loading fonts
 msgid "Please wait…"
-msgstr ""
+msgstr "Будь ласка, зачекайте..."
 
 msgid "Pick a color."
-msgstr ""
+msgstr "Виберіть колір."
 
 #  'Erase' label:
 #. Open dialog: 'Erase' button, to erase/deleted the selected picture
 msgid "Erase"
-msgstr "Видалити"
+msgstr "Вилучити"
 
 #. Open dialog: 'Slides' button, to switch to slide show mode
 msgid "Slides"
-msgstr ""
+msgstr "Слайди"
 
 #. Open dialog: 'Back' button, to dismiss Open dialog without opening a picture
 msgid "Back"
 msgstr "Назад"
 
 #. Slideshow: 'Next' button, to load next slide (image)
-#, fuzzy
 msgid "Next"
-msgstr "Текст"
+msgstr "Далі"
 
 #. Slideshow: 'Play' button, to begin a slideshow sequence
 msgid "Play"
-msgstr ""
+msgstr "Слайд-шоу"
 
 #. Label for 'Letters' buttons (font selector, down the right when the Text tool is being used); used to show the difference between font faces
 msgid "Aa"
@@ -544,29 +520,26 @@ msgstr "Ні"
 
 #. Prompt to ask whether user wishes to save over old version of their file
 msgid "Replace the picture with your changes?"
-msgstr ""
+msgstr "Замінити старий малюнок?"
 
 #. Positive response to saving over old version
 #. (like a 'File:Save' action in other applications)
 msgid "Yes, replace the old one!"
-msgstr ""
+msgstr "Так, замінити старий малюнок!"
 
 #. Negative response to saving over old version (saves a new image)
 #. (like a 'File:Save As...' action in other applications)
-#, fuzzy
 msgid "No, save a new file!"
-msgstr "Не вдається зберегти файл ресурсів: "
+msgstr "Ні, зберегти у новий файл!"
 
 msgid "Choose the picture you want, then click “Open”."
 msgstr "Виберіть бажаний малюнок, а потім клацніть «Відкрити»."
 
 #. Let user choose images:
 #. Instructions for Slideshow file dialog (FIXME: Make a #define)
-#, fuzzy
 msgid "Choose the pictures you want, then click “Play”."
-msgstr "Виберіть бажаний малюнок, а потім клацніть «Відкрити»."
+msgstr "Виберіть бажані малюнки, а потім натисніть \"Слайд-шоу\"."
 
-#, fuzzy
 msgid "A drawing program for children."
 msgstr "Дитяча програма для малювання."
 
@@ -588,10 +561,8 @@ msgstr "Капання"
 msgid "Click and move the mouse around to make the picture blocky."
 msgstr "Клацніть та поводіть по малюнку, щоб зробити мозаїку."
 
-#, fuzzy
-msgid ""
-"Click and move the mouse around to turn the picture into a chalk drawing."
-msgstr "Клацніть та поводіть по малюнку, щоб робити малюнок крейдою."
+msgid "Click and move the mouse around to turn the picture into a chalk drawing."
+msgstr "Клацніть та посовгайте по малюнку, щоб перетворити його частину на крейдування."
 
 msgid "Click and move the mouse around to make the picture drip."
 msgstr "Клацніть та поводіть по малюнку, щоб примусити його капати."
@@ -600,64 +571,53 @@ msgid "Blur"
 msgstr "Розмити"
 
 msgid "Click and move the mouse around to blur the picture."
-msgstr "Клацніть та поводіть по малюнку, щоб трохи порозмазувати його."
+msgstr "Клацніть та посовгайте по малюнку, щоб трохи порозмазувати його."
 
 #. Both are named "Bricks", at the moment:
-#, fuzzy
 msgid "Bricks"
-msgstr "Мозаїка"
+msgstr "Цегла"
 
-#, fuzzy
 msgid "Click and move to draw large bricks."
-msgstr "Клацніть та поводіть по малюнку, щоб намалювати іскри."
+msgstr "Клацніть та посовгайте по малюнку, щоб укласти великі цеглини."
 
-#, fuzzy
 msgid "Click and move to draw small bricks."
-msgstr "Клацніть та поводіть по малюнку, щоб намалювати іскри."
+msgstr "Клацніть та посовгайте по малюнку, щоб укласти маленькі цеглини."
 
 msgid "Calligraphy"
-msgstr ""
+msgstr "Каліграфія"
 
-#, fuzzy
 msgid "Click and move the mouse around to draw in calligraphy."
-msgstr "Клацніть та поводіть по малюнку, щоб зробити з того негатив."
+msgstr "Клацніть та напишіть щось на малюнку, щоб утворити каліграфію."
 
-#, fuzzy
 msgid "Cartoon"
-msgstr "_Картон"
+msgstr "Комікс"
 
-#, fuzzy
 msgid "Click and move the mouse around to turn the picture into a cartoon."
-msgstr "Клацніть та поводіть по малюнку, щоб робити малюнок крейдою."
+msgstr "Клацніть та посовгайте по малюнку, щоб перетворити його частину на комікс чи мультиплікацію."
 
 msgid "Distortion"
-msgstr ""
+msgstr "Спотворення"
 
-#, fuzzy
 msgid "Click and drag the mouse to cause a distortion in your picture."
-msgstr "Клацніть та поводіть по малюнку, щоб трохи порозмазувати його."
+msgstr "Клацніть та посовгайте по малюнку, щоб трохи спотворити його."
 
 msgid "Emboss"
-msgstr ""
+msgstr "Рельєф"
 
-#, fuzzy
 msgid "Click and drag the mouse to emboss the picture."
-msgstr "Клацніть та поводіть по малюнку, щоб трохи порозмазувати його."
+msgstr "Клацніть та посовгайте мишкою, щоб зробити малюнок рельєфнішим."
 
-#, fuzzy
 msgid "Lighten"
-msgstr "Лише світле"
+msgstr "Світліше"
 
-#, fuzzy
 msgid "Darken"
-msgstr "Темні краї:"
+msgstr "Темніше"
 
 msgid "Click and move to fade the colors."
 msgstr "Клацніть та поводіть по малюнку, щоб освітлити."
 
-#, fuzzy
 msgid "Click and move to darken the colors."
-msgstr "Клацніть та поводіть по малюнку, щоб освітлити."
+msgstr "Клацніть та посовгайте по малюнку, щоб зробити його частину темнішою."
 
 msgid "Fill"
 msgstr "Залити"
@@ -666,55 +626,46 @@ msgid "Click in the picture to fill that area with color."
 msgstr "Клацніть, щоб заповнити цю область кольором."
 
 msgid "Flower"
-msgstr ""
+msgstr "Квітка"
 
 msgid "Click and drag to draw a flower stalk. Let go to finish the flower."
-msgstr ""
+msgstr "Клацніть та протягніть, щоб виростити стебло для квітки. Відпустіть кнопку, щоб завершити квітку."
 
 msgid "Foam"
-msgstr ""
+msgstr "Піна"
 
-#, fuzzy
 msgid "Click and drag the mouse to cover an area with foamy bubbles."
-msgstr "Клацніть, щоб заповнити цю область кольором."
+msgstr "Клацніть та поводіть мишкою, щоб покрити область бульками піни."
 
 msgid "Glass Tile"
-msgstr ""
+msgstr "Вітраж"
 
-#, fuzzy
 msgid "Click and drag the mouse to put glass tile over your picture."
-msgstr "Клацніть та поводіть по малюнку, щоб трохи порозмазувати його."
+msgstr "Клацніть та протягніть мишкою, щоб встановити вітраж над Вашим малюнком."
 
 msgid "Grass"
 msgstr "Трава"
 
-#, fuzzy
 msgid "Click and move to draw grass. Don’t forget the dirt!"
-msgstr "Клацніть та поводіть по малюнку, щоб намалювати іскри."
+msgstr "Клацніть та посовгайте по малюнку, щоб намалювати траву. Не забудьте про ґрунт!"
 
 msgid "Kaleidoscope"
-msgstr ""
+msgstr "Калейдоскоп"
 
-#, fuzzy
-msgid ""
-"Click and drag the mouse to draw with symmetric brushes (a kaleidoscope)."
-msgstr "Клацніть та поводіть по малюнку, щоб освітлити."
+msgid "Click and drag the mouse to draw with symmetric brushes (a kaleidoscope)."
+msgstr "Клацніть та малюйте фігури 4-ма симетричними пензликами (калейдоскоп)."
 
-#, fuzzy
 msgid "Light"
-msgstr "Лише світле"
+msgstr "Ліхтар"
 
-#, fuzzy
 msgid "Click and drag to draw a beam of light on your picture."
-msgstr "Клацніть та поводіть по малюнку, щоб трохи порозмазувати його."
+msgstr "Клацніть та поводіть пучком світла по Вашому малюнку."
 
-#, fuzzy
 msgid "Metal Paint"
-msgstr "Пензель"
+msgstr "Метал"
 
-#, fuzzy
 msgid "Click and drag the mouse to paint with a metallic color."
-msgstr "Клацніть та поводіть по малюнку, щоб освітлити."
+msgstr "Клацніть та протягніть мишу, щоб фарбувати металевим кольором."
 
 msgid "Mirror"
 msgstr "Дзеркало"
@@ -722,9 +673,8 @@ msgstr "Дзеркало"
 msgid "Flip"
 msgstr "Переворот"
 
-#, fuzzy
 msgid "Click to make a mirror image."
-msgstr "Натисніть, щоб зробити цю точку кутовою."
+msgstr "Клацніть, щоб зробити зеркальне відображення малюнка."
 
 msgid "Click to flip the picture upside-down."
 msgstr "Клацніть на малюнку, щоб перевернути його догори ногами."
@@ -732,9 +682,8 @@ msgstr "Клацніть на малюнку, щоб перевернути йо
 msgid "Negative"
 msgstr "Негатив"
 
-#, fuzzy
 msgid "Click and move the mouse around to draw a negative."
-msgstr "Клацніть та поводіть по малюнку, щоб зробити з того негатив."
+msgstr "Клацніть та посовгайте по малюнку, щоб перетворити його частину на негатив."
 
 msgid "Rainbow"
 msgstr "Веселка"
@@ -743,74 +692,53 @@ msgid "You can draw in rainbow colors!"
 msgstr "Ви можете малювати барвами веселки!"
 
 msgid "Ripples"
-msgstr ""
+msgstr "Брижі"
 
-#, fuzzy
 msgid "Click to make ripples appear over your picture."
-msgstr "Клацніть та поводіть по малюнку, щоб трохи порозмазувати його."
+msgstr "Клацніть щоб утворити брижі поверха Вашого малюнку."
 
 msgid "Shift"
-msgstr ""
+msgstr "Зсув"
 
-#, fuzzy
 msgid "Click and drag to shift your picture around on the canvas."
-msgstr "Клацніть та поводіть по малюнку, щоб трохи порозмазувати його."
+msgstr "Клацніть та тягніть щоб зсунути Ваш малюнок відносно полотнини."
 
-#, fuzzy
 msgid "Smudge"
-msgstr "Палець"
+msgstr "Мазанина"
 
-#, fuzzy
 msgid "Click and move the mouse around to smudge the picture."
-msgstr "Клацніть та поводіть по малюнку, щоб трохи порозмазувати його."
+msgstr "Клацніть та посовгайте по малюнку, щоб помазати його частину."
 
-#, fuzzy
 msgid "Tint"
-msgstr "Тонке"
+msgstr "Барва"
 
-#, fuzzy
 msgid "Click and move the mouse around to change the picture’s color."
-msgstr "Клацніть та поводіть по малюнку, щоб зробити мозаїку."
+msgstr "Клацніть та посовгайте по малюнку, щоб змінити колір малюнка."
 
-#, fuzzy
 msgid "Waves"
-msgstr "Збережи"
+msgstr "Хвильки"
 
-msgid ""
-"Click to make the picture wavy. Click toward the top for shorter waves, the "
-"bottom for taller waves, the left for small waves, and the right for long "
-"waves."
-msgstr ""
+msgid "Click to make the picture wavy. Click toward the top for shorter waves, the bottom for taller waves, the left for small waves, and the right for long waves."
+msgstr "Клацніть, щоб зробити малюнок хвилястим. Щоб зробити коротші хвильки, клацніть ближче до верху, щоб були високі хвилі - тягніться до низу, зліва матимете маленькі хвильки, а  справа - довгі хвилі."
 
 #~ msgid "Sparkles"
 #~ msgstr "Іскри"
-
-#, fuzzy
 #~ msgid "You now have a blank sheet to draw on!"
-#~ msgstr "Тепер у Вас є чистий лист!"
-
-#, fuzzy
+#~ msgstr "Тепер у Вас є чистий листок, щоб малювати!"
 #~ msgid "Start a new picture?"
-#~ msgstr "Видалити цей малюнок?"
-
+#~ msgstr "Почнете малювати нову картину?"
 #~ msgid "Click and move to draw sparkles."
 #~ msgstr "Клацніть та поводіть по малюнку, щоб намалювати іскри."
-
-#, fuzzy
 #~ msgid "Starting a new picture will erase the current one!"
-#~ msgstr "Починаючи новий малюнок Ви знищите поточний!"
-
+#~ msgstr "Починаючи новий малюнок, Ви знищите поточний!"
 #~ msgid "That’s OK!"
 #~ msgstr "Це добре!"
-
 #~ msgid "Never mind!"
 #~ msgstr "Байдуже!"
-
 #~ msgid "jq"
 #~ msgstr "jq"
-
 #~ msgid "JQ"
 #~ msgstr "JQ"
-
 #~ msgid "Save over the older version of this picture?"
 #~ msgstr "Зберегти поверх старої версії цього малюнка?"
+
