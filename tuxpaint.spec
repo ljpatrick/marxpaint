@@ -24,6 +24,13 @@ very limited tool-set. However, it provides a much simpler
 interface, and has entertaining, child-oriented additions
 such as sound effects.
 
+%package devel
+Summary: development files for tuxpaint plugins.
+Group: Development/Libraries
+
+%description devel
+development files for tuxpaint plugins.
+
 %prep
 %setup -q
 
@@ -48,8 +55,7 @@ find $RPM_BUILD_ROOT -name tuxpaint.svg | sort | \
 find $RPM_BUILD_ROOT -name tuxpaint.xpm | sort | \
     sed -e "s@$RPM_BUILD_ROOT@@g" >> filelist.icons
 
-rm -rf $RPM_BUILD_ROOT/usr/share/doc/tuxpaint
-
+rm -rf $RPM_BUILD_ROOT/usr/share/doc/tuxpaint*
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -61,14 +67,28 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/tuxpaint/*
 
 %defattr(0755, root, root)
-%{_bindir}/*
+%{_bindir}/tuxpaint
+%{_bindir}/tuxpaint-import
+
+%{_prefix}/lib/tuxpaint/plugins/*.so
 
 %defattr(0644, root, root)
 %{_datadir}/locale/*/LC_MESSAGES/tuxpaint.mo
 %{_datadir}/man/man1/*
 %{_datadir}/man/*/man1/tuxpaint.1.gz
 
+%files devel
+%doc magic/docs/*
+%{_prefix}/include/tuxpaint/tp_magic_api.h
+%{_prefix}/bin/tp-magic-config
+
 %changelog
+* Sun Mar 02 2008 <shin1@wmail.plala.or.jp> -
+- 0.9.19
+- Requires SDL_Pango
+- Included magic tools
+- Separated devel package
+
 * Sat Jun 01 2007  <shin1@wmail.plala.or.jp> -
 - Requires librsvg2 and libpaper
 
