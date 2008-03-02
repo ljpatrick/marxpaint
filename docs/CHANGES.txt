@@ -27,6 +27,14 @@ $Id$
       - README.txt
       Serhij Dubyk <dubyk@ukr.net>
 
+  * Build System Improvements
+    -------------------------
+    * RPM spec updates:
+      + Plugin .so files were missing.
+      + Separated devel packages in RPM spec.
+      + Added dependency on SDL_Pango.
+      TOYAMA Shin-ichi <shin1@wmail.plala.or.jp>
+    
 
 2008.February.25 (0.9.19)
   * New Localizations:
