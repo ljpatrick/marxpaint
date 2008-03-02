@@ -7,7 +7,7 @@ bill@newbreedsoftware.com
 http://www.tuxpaint.org/
 
 
-June 17, 2002 - February 17, 2008
+June 17, 2002 - March 1, 2008
 
 $Id$
 
@@ -484,6 +484,9 @@ $Id$
   * Twi
     Joana Portia Antwi-Danso <portnass2003@yahoo.com>
     Samuel Sarpong <srnsam@yahoo.com>
+
+  * Ukranian / Urkanian documentation
+    Serhij Dubyk <dubyk@library.lviv.ua>
 
   * Venda
     Shumani Mercy Nehulaudzi <nevhulaudzi@saps.org.za>>
