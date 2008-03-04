@@ -22,7 +22,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
   
-  June 14, 2002 - February 28, 2008
+  June 14, 2002 - March 4, 2008
   $Id$
 */
 
@@ -10938,6 +10938,12 @@ static void load_starter_id(char *saved_id)
     }
 
     fclose(fi);
+  }
+  else
+  {
+    canvas_color_r = 255;
+    canvas_color_g = 255;
+    canvas_color_b = 255;
   }
 
   free(rname);

@@ -35,6 +35,13 @@ $Id$
       + Added dependency on SDL_Pango.
       TOYAMA Shin-ichi <shin1@wmail.plala.or.jp>
     
+  * Bug Fixes
+    ---------
+    * Legacy Tux Paint images (prior to Tux Paint supporting different
+      colored backgrounds) would end up with arbitrary Eraser colors.
+      Forcing it to always use white, which was the only background color
+      in early versions of Tux Paint.
+
 
 2008.February.25 (0.9.19)
   * New Localizations:
