@@ -148,6 +148,11 @@ Main Screen
 
                                    [(Canvas)]
 
+               Note: The size of the drawing canvas depends on the size of
+               Tux Paint. You can change the size of Tux Paint using the
+               Tux Paint Config. configuration tool, or by other means. See
+               the OPTIONS documentation for more details.
+
        Right Side: Selector
 
                Depending on the current tool, the selector shows different

@@ -35,6 +35,11 @@ $Id$
       + Added dependency on SDL_Pango.
       TOYAMA Shin-ichi <shin1@wmail.plala.or.jp>
     
+  * Documentation Improvements:
+    ---------------------------
+    * Mentioned that canvas size can be changed in README (so it's not
+      just hidden in OPTIONS).
+
   * Bug Fixes
     ---------
     * Legacy Tux Paint images (prior to Tux Paint supporting different
