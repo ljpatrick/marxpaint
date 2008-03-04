@@ -42,6 +42,9 @@ $Id$
       Forcing it to always use white, which was the only background color
       in early versions of Tux Paint.
 
+    * Brushes with large spacing wouldn't be spaced properly when drawn
+      from bottom-to-top using the line tool.  Fixed.
+      Pere Pujal i Carabantes <pere@fornol.no-ip.org>
 
 2008.February.25 (0.9.19)
   * New Localizations:

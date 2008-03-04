@@ -4090,13 +4090,14 @@ static void brush_draw(int x1, int y1, int x2, int y2, int update)
 
       if (y1 > y2)
       {
-	y = y1;
-	y1 = y2;
-	y2 = y;
+	for (y = y1; y >= y2; y--)
+	  blit_brush(x1, y, direction);
       }
-
-      for (y = y1; y <= y2; y++)
-	blit_brush(x1, y, direction);
+      else
+      {
+	for (y = y1; y <= y2; y++)
+	  blit_brush(x1, y, direction);
+      }
 
       x1 = x1 + dx;
     }
