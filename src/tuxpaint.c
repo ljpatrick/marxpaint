@@ -32,9 +32,9 @@
 
 /* Color depth for Tux Paint to run in, and store canvases in: */
 
-//#if defined(NOKIA_770)
-# define VIDEO_BPP 15
-//#endif
+#if defined(NOKIA_770)
+# define VIDEO_BPP 16
+#endif
 
 #if defined(OLPC_XO)
 # define VIDEO_BPP 15
@@ -573,6 +573,9 @@ static grid_dims gd_colors;	// was 17x1
 #define THUMB_H (((48 * 7 + 40 + HEIGHTOFFSET) - 72) / 4)
 
 static int WINDOW_WIDTH, WINDOW_HEIGHT;
+
+void magic_putpixel(SDL_Surface * surface, int x, int y, Uint32 pixel);
+Uint32 magic_getpixel(SDL_Surface * surface, int x, int y);
 
 
 static void setup_normal_screen_layout(void)
@@ -16719,8 +16722,8 @@ void load_magic_plugins(void)
       magic_api_struct[plc]->sRGB_to_linear = magic_sRGB_to_linear;
       magic_api_struct[plc]->linear_to_sRGB = magic_linear_to_sRGB;
       magic_api_struct[plc]->in_circle = in_circle_rad;
-      magic_api_struct[plc]->getpixel = getpixels[canvas->format->BytesPerPixel];
-      magic_api_struct[plc]->putpixel = putpixels[canvas->format->BytesPerPixel];
+      magic_api_struct[plc]->getpixel = magic_getpixel;
+      magic_api_struct[plc]->putpixel = magic_putpixel;
       magic_api_struct[plc]->line = magic_line_func;
       magic_api_struct[plc]->playsound = magic_playsound;
       magic_api_struct[plc]->stopsound = magic_stopsound;
@@ -18675,4 +18678,15 @@ int do_color_picker(void)
 
   return(chose);
 }
+
+void magic_putpixel(SDL_Surface * surface, int x, int y, Uint32 pixel)
+{
+  putpixels[surface->format->BytesPerPixel](surface, x, y, pixel);
+}
+
+Uint32 magic_getpixel(SDL_Surface * surface, int x, int y)
+{
+  return(getpixels[surface->format->BytesPerPixel](surface, x, y));
+}
+
 

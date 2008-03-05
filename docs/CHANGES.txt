@@ -52,6 +52,12 @@ $Id$
       Pere Pujal i Carabantes <pere@fornol.no-ip.org>
 
     * Fixed bug when zooming stamps in video depth other than 32bpp.
+      (Float to int casting; also removes compiler errors.)
+
+    * getpixel/putpixel function passed to Magic tools now pays attention
+      to the incoming surface, rather than always using the canvas surface,
+      to determine bitdepth.  (Fixes bug where some Magic tools, e.g., Grass,
+      didn't work right on video depths other than 32bpp.)
 
 
 2008.February.25 (0.9.19)
