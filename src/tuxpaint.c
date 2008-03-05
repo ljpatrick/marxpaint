@@ -32,9 +32,9 @@
 
 /* Color depth for Tux Paint to run in, and store canvases in: */
 
-#if defined(NOKIA_770)
+//#if defined(NOKIA_770)
 # define VIDEO_BPP 15
-#endif
+//#endif
 
 #if defined(OLPC_XO)
 # define VIDEO_BPP 15
@@ -9314,6 +9314,7 @@ static SDL_Surface *zoom(SDL_Surface * src, int new_w, int new_h)
       one_minus_x = 1.0 - fraction_x;
       one_minus_y = 1.0 - fraction_y;
 
+#if VIDEO_BPP==32
       SDL_GetRGBA(getpixel(src, floor_x, floor_y), src->format,
                   &r1, &g1, &b1, &a1);
       SDL_GetRGBA(getpixel(src, ceil_x,  floor_y), src->format,
@@ -9322,6 +9323,40 @@ static SDL_Surface *zoom(SDL_Surface * src, int new_w, int new_h)
                   &r3, &g3, &b3, &a3);
       SDL_GetRGBA(getpixel(src, ceil_x,  ceil_y),  src->format,
                   &r4, &g4, &b4, &a4);
+#else
+      {
+      Uint8 r, g, b, a;
+      r = g = b = a = 0; // Unused, bah!
+
+      SDL_GetRGBA(getpixel(src, floor_x, floor_y), src->format,
+                  &r, &g, &b, &a);
+      r1 = (float) r;
+      g1 = (float) g;
+      b1 = (float) b;
+      a1 = (float) a;
+
+      SDL_GetRGBA(getpixel(src, ceil_x,  floor_y), src->format,
+                  &r, &g, &b, &a);
+      r2 = (float) r;
+      g2 = (float) g;
+      b2 = (float) b;
+      a2 = (float) a;
+
+      SDL_GetRGBA(getpixel(src, floor_x, ceil_y),  src->format,
+                  &r, &g, &b, &a);
+      r3 = (float) r;
+      g3 = (float) g;
+      b3 = (float) b;
+      a3 = (float) a;
+
+      SDL_GetRGBA(getpixel(src, ceil_x,  ceil_y),  src->format,
+                  &r, &g, &b, &a);
+      r4 = (float) r;
+      g4 = (float) g;
+      b4 = (float) b;
+      a4 = (float) a;
+      }
+#endif
 
       n1 = (one_minus_x * r1 + fraction_x * r2);
       n2 = (one_minus_x * r3 + fraction_x * r4);

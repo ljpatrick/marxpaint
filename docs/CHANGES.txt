@@ -9,7 +9,7 @@ http://www.tuxpaint.org/
 $Id$
 
 
-2008.March.1 (0.9.20)
+2008.March.4 (0.9.20)
   * Localization Updates:
     ---------------------
     * German translation
@@ -50,6 +50,9 @@ $Id$
     * Brushes with large spacing wouldn't be spaced properly when drawn
       from bottom-to-top using the line tool.  Fixed.
       Pere Pujal i Carabantes <pere@fornol.no-ip.org>
+
+    * Fixed bug when zooming stamps in video depth other than 32bpp.
+
 
 2008.February.25 (0.9.19)
   * New Localizations:
