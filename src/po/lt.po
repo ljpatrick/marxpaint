@@ -211,7 +211,7 @@ msgstr "Rombas"
 #. Octagon shape tool (8 sides)
 #, fuzzy
 msgid "Octagon"
-msgstr "Penkiakampis"
+msgstr "Taisyklingasis aštuoniakampis"
 
 #. Description of a square
 msgid "A square is a rectangle with four equal sides."
@@ -230,7 +230,7 @@ msgstr ""
 
 #. Description of an ellipse
 msgid "An ellipse is a stretched circle."
-msgstr ""
+msgstr "Elipsė tai ištemptas apskritimas"
 
 #. Description of a triangle
 msgid "A triangle has three sides."
@@ -247,7 +247,7 @@ msgstr ""
 
 #, fuzzy
 msgid "An octagon has eight equal sides."
-msgstr "Penkiakampis turi penkias kraštines."
+msgstr "Taisyklingasis aštuoniakampis turi aštuonias lygias kraštines."
 
 #. Title of tool selector (buttons down the left)
 msgid "Tools"
@@ -301,11 +301,11 @@ msgstr "Tekstas"
 
 #. Undo last action
 msgid "Undo"
-msgstr "Atšaukti"
+msgstr "Atšaukti paskutinį veiksmą"
 
 #. Redo undone action
 msgid "Redo"
-msgstr "Grąžinti"
+msgstr "Sugrąžinti prieš tai atšauktą veiksmą"
 
 #. Eraser tool
 msgid "Eraser"
@@ -351,7 +351,7 @@ msgid ""
 "size you want. Move around to rotate it, and click to draw it."
 msgstr ""
 "Pasirinkite formą.  Spustelėkite į pasirinktą centrą, patraukite iki norimo "
-"dydžio. Pasukite ją ir pasirinkite nupiešti."
+"dydžio. Judinkite pele kad pasukti ją ir spustelėkite norėdami nupiešti."
 
 #. Text tool instructions
 msgid "Choose a style of text. Click on your drawing and you can start typing."
@@ -376,9 +376,9 @@ msgid "Eraser!"
 msgstr "Trintukas!"
 
 #. Response to 'start a new image' action
-#, fuzzy
+
 msgid "Pick a color or picture with which to start a new drawing."
-msgstr "Pasirinkite piešinėlį, kuriuo antspausduosite savo piešinyje."
+msgstr "Pasirinkite spalvą arba piešinėlį, kuriuo pradėsite naują piešinį"
 
 #. Response to 'open' action (while file dialog is being constructed)
 msgid "Open…"
@@ -410,7 +410,7 @@ msgstr "Judinkite pelę, kad pasukti formą. Spustelėkite, kad nupiešti ją."
 
 #. Notification that 'New' action was aborted (current image would have been lost)
 msgid "OK then… Let’s keep drawing this one!"
-msgstr "Gerai tuomet...Piešk toliau šitą!"
+msgstr "Gerai...Piešk toliau šitą!"
 
 #. Prompt to confirm user wishes to quit
 msgid "Do you really want to quit?"
@@ -481,18 +481,18 @@ msgstr "Nepamirškite naudoti kairiojo pelės klavišo!"
 
 #. Sound has been muted (silenced) via keyboard shortcut
 msgid "Sound muted."
-msgstr ""
+msgstr "Garsas išjungtas"
 
 #. Sound has been unmuted (unsilenced) via keyboard shortcut
 msgid "Sound unmuted."
-msgstr ""
+msgstr "Garsas įjungtas"
 
 #. Wait while Text tool finishes loading fonts
 msgid "Please wait…"
 msgstr "Palaukite..."
 
 msgid "Pick a color."
-msgstr ""
+msgstr "Pasirinkite spalvą"
 
 #. Open dialog: 'Erase' button, to erase/deleted the selected picture
 msgid "Erase"
@@ -593,31 +593,31 @@ msgid "Click and move to draw small bricks."
 msgstr "Spustelėkite ir pieškite mažas plytas."
 
 msgid "Calligraphy"
-msgstr ""
+msgstr "Kaligrafija"
 
 #, fuzzy
 msgid "Click and move the mouse around to draw in calligraphy."
-msgstr "Spustelėkite ir judindami pelę invertuosite paveikslėlio spalvas."
+msgstr "Spustelėkite ir judindami pelę padarysite piešinį panašų į kaligrafiją."
 
 msgid "Cartoon"
-msgstr ""
+msgstr "Karikatūra"
 
 msgid "Click and move the mouse around to turn the picture into a cartoon."
 msgstr "Spustelėkite ir judinkite pelę kol piešinys taps panašus į karikatūrą."
 
 msgid "Distortion"
-msgstr ""
+msgstr "Išsklaidymas"
 
 #, fuzzy
 msgid "Click and drag the mouse to cause a distortion in your picture."
-msgstr "Spustelėkite ir pele paploninsite piešinį."
+msgstr "Spustelėkite ir pele išsklaidykite piešinį."
 
 msgid "Emboss"
-msgstr ""
+msgstr "Reljefo efektas"
 
 #, fuzzy
 msgid "Click and drag the mouse to emboss the picture."
-msgstr "Spustelėkite ir pele paploninsite piešinį."
+msgstr "Spustelėkite ir pele pritaikykite reljefo efektą."
 
 msgid "Lighten"
 msgstr "Šviesinti"
@@ -638,24 +638,24 @@ msgid "Click in the picture to fill that area with color."
 msgstr "Spustelėkite piešinyje, norėdami tą plotą nuspalvinti."
 
 msgid "Flower"
-msgstr ""
+msgstr "Gelė"
 
 msgid "Click and drag to draw a flower stalk. Let go to finish the flower."
-msgstr ""
+msgstr "Spustelkite ir tempkite piešdami gelės stiebą. Paleiskite kad pabaigti gėlę"
 
 msgid "Foam"
-msgstr ""
+msgstr "Putos"
 
 #, fuzzy
 msgid "Click and drag the mouse to cover an area with foamy bubbles."
-msgstr "Spustelėkite ir pele pastorinsite piešinį."
+msgstr "Spustelėkite ir pele užpildykite plotą putomis."
 
 msgid "Glass Tile"
-msgstr ""
+msgstr "Stiklas"
 
 #, fuzzy
 msgid "Click and drag the mouse to put glass tile over your picture."
-msgstr "Spustelėkite ir pele paploninsite piešinį."
+msgstr "Spustelėkite ir pele uždėkite stiklą ant piešinio."
 
 msgid "Grass"
 msgstr "Žolė"
@@ -664,28 +664,28 @@ msgid "Click and move to draw grass. Don’t forget the dirt!"
 msgstr "Spustelėkite ir pieškite žolę. Nepamirškite žemių!"
 
 msgid "Kaleidoscope"
-msgstr ""
+msgstr "Kaleidoskopas"
 
 #, fuzzy
 msgid ""
 "Click and drag the mouse to draw with symmetric brushes (a kaleidoscope)."
-msgstr "Spustelėkite ir pele pastorinsite piešinį."
+msgstr "Spustelėkite ir pele pieškite simetriškais teptukais (kaleidoskopas)."
 
 #, fuzzy
 msgid "Light"
-msgstr "Šviesinti"
+msgstr "Šviesa"
 
 #, fuzzy
 msgid "Click and drag to draw a beam of light on your picture."
-msgstr "Spustelėkite ir pele paploninsite piešinį."
+msgstr "Spustelėkite ir pele pieškite šviesos spindulį."
 
 #, fuzzy
 msgid "Metal Paint"
-msgstr "Tapyti"
+msgstr "Metališki dažai"
 
 #, fuzzy
 msgid "Click and drag the mouse to paint with a metallic color."
-msgstr "Spustelėkite ir pele paploninsite piešinį."
+msgstr "Spustelėkite ir pele tapykite metališkais dažais."
 
 msgid "Mirror"
 msgstr "Veidrodis"
@@ -712,18 +712,18 @@ msgid "You can draw in rainbow colors!"
 msgstr "Jūs galite piešti vaivorykštės spalvomis!"
 
 msgid "Ripples"
-msgstr ""
+msgstr "Bangelės"
 
 #, fuzzy
 msgid "Click to make ripples appear over your picture."
-msgstr "Spustelėkite ir pele paploninsite piešinį."
+msgstr "Spustelėkite kad ant piešinio atsirastų bangelių."
 
 msgid "Shift"
-msgstr ""
+msgstr "Perkelti"
 
 #, fuzzy
 msgid "Click and drag to shift your picture around on the canvas."
-msgstr "Spustelėkite ir pele paploninsite piešinį."
+msgstr "Spustelėkite ir pele judinkite piešinį ant drobės."
 
 msgid "Smudge"
 msgstr "Sutepti"
@@ -739,13 +739,14 @@ msgstr "Spustelėkite ir judindami pelę pakeisite piešinio spalvas."
 
 #, fuzzy
 msgid "Waves"
-msgstr "Išsaugoti"
+msgstr "Bangos"
 
 msgid ""
 "Click to make the picture wavy. Click toward the top for shorter waves, the "
 "bottom for taller waves, the left for small waves, and the right for long "
 "waves."
-msgstr ""
+msgstr "Spustelkite kad subanguotumėte piešinį. Spustelkit link viršaus kad sumažintumėte bangas,"
+"link apačios, kad padidintumėte bangas, link karės, kad patrumpintumėte bangas, link dešnės, kad pailgintumėte"
 
 #~ msgid "Sparkles"
 #~ msgstr "Žybsniai"

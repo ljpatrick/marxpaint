@@ -7,7 +7,7 @@ bill@newbreedsoftware.com
 http://www.tuxpaint.org/
 
 
-June 17, 2002 - March 13, 2008
+June 17, 2002 - March 17, 2008
 
 $Id$
 
@@ -368,6 +368,7 @@ $Id$
     Raivis Strogonovs <raivucis@gmail.com>
 
   * Lithuanian
+    Alesis Novik <alesisnov@gmail.com>
     Mantas Kriauciunas <monte@mail.lt>
     Rita Verbauskaite
     Gintaras Go?tautas <gintaras@nes.lt>

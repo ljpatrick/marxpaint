@@ -9,11 +9,14 @@ http://www.tuxpaint.org/
 $Id$
 
 
-2008.March.13 (0.9.20)
+2008.March.17 (0.9.20)
   * Localization Updates:
     ---------------------
     * German translation
       Burkhard Lück <lueck@hube-lueck.de>
+
+    * Lithuanian translation
+      Alesis Novik <alesisnov@gmail.com>
 
     * Slovakian translation
       Peter Tuhársky <tuharsky@misbb.sk>
