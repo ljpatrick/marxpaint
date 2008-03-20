@@ -1,6 +1,6 @@
 Summary: A drawing program for young children
 Name: tuxpaint
-Version: 0.9.19
+Version: 0.9.20
 Release: 1
 License: GPL
 Group: Multimedia/Graphics
@@ -27,6 +27,9 @@ such as sound effects.
 %package devel
 Summary: development files for tuxpaint plugins.
 Group: Development/Libraries
+Requires: tuxpaint = %{version}
+Requires: SDL-devel >= 1.2.4 SDL_image-devel SDL_mixer-devel SDL_ttf-devel SDL_Pango-devel
+Requires: libpng-devel zlib-devel gettext, librsvg2-devel libpaper-devel
 
 %description devel
 development files for tuxpaint plugins.
@@ -75,7 +78,7 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(0644, root, root)
 %{_datadir}/locale/*/LC_MESSAGES/tuxpaint.mo
 %{_datadir}/man/man1/*
-%{_datadir}/man/*/man1/tuxpaint.1.gz
+%{_datadir}/man/*/man1/tuxpaint.1.*
 
 %files devel
 %doc magic/docs/*
@@ -83,6 +86,11 @@ rm -rf $RPM_BUILD_ROOT
 %{_prefix}/bin/tp-magic-config
 
 %changelog
+* Fri Mar 21 2008 <shin1@wmail.plala.or.jp> -
+- Set version number 0.9.20
+- Set Epoch number
+- Requirements added for -devel package.
+
 * Sun Mar 02 2008 <shin1@wmail.plala.or.jp> -
 - 0.9.19
 - Requires SDL_Pango
