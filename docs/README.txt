@@ -349,11 +349,12 @@ Available Tools
          Eraser
 
                  This tool is similar to the Paint Brush. Wherever you click
-                 (or click and drag), the picture will be erased either to
-                 white, or to the background picture, if you began the
-                 current drawing with a 'Starter' image.
+                 (or click and drag), the picture will be erased. (This may
+                 be white, some other color, or to a background picture,
+                 depending on the picture.)
 
-                 A number of eraser sizes are available.
+                 A number of eraser sizes are available, both round and
+                 square..
 
                  As you move the mouse around, a square outline follows the
                  pointer, showing what part of the picture will be erased to
@@ -391,11 +392,26 @@ Available Tools
 
          New
 
-                 Clicking the "New" button will start a new drawing. You will
-                 first be asked whether you really want to do this.
+                 Clicking the "New" button will start a new drawing. A dialog
+                 will appear where you may choose to start a new picture
+                 using a solid background color, or using a 'Starter' image
+                 (see below). You will first be asked whether you really want
+                 to do this.
 
                  Note: You can also press [Control]-[N] on the keyboard to
                  start a new drawing.
+
+                 'Starter' Images
+
+                   'Starters' can be like a page from a coloring book (a
+                   black-and-white outline of a picture, which you can then
+                   color in), or like a 3D photograph, where you draw the
+                   bits in between.
+
+                   When you load a 'Starter,' draw on it, and then click
+                   'Save,' it creates a new picture file (it doesn't
+                   overwrite the original 'Starter,' so you can use it again
+                   later).
 
    --------------------------------------------------------------------------
 
@@ -425,21 +441,6 @@ Available Tools
                       * Or click the red "Back" arrow button at the lower
                         right of the list to cancel and return to the picture
                         you were drawing.
-
-                 'Starter' Images
-
-                   Along with pictures you've created, Tux Paint can provided
-                   'Starter' images. Opening them is like creating a new
-                   picture, except that the picture isn't blank. 'Starters'
-                   can be like a page from a coloring book (a black-and-white
-                   outline of a picture, which you can then color in), or
-                   like a 3D photograph, where you draw the bits in between.
-
-                   'Starter' images have a green background in the 'Open'
-                   screen. (Normal images have a blue background.) When you
-                   load a 'Starter,' draw on it, and then click 'Save,' it
-                   creates a new picture (it doesn't overwrite the original
-                   'Starter,' so you can use it again later).
 
                  If choose to open a picture, and your current drawing hasn't
                  been saved, you will be prompted as to whether you want to

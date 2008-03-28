@@ -50,6 +50,8 @@ $Id$
       other clean-up, and now directs people to README for determining
       image sizes.)
 
+    * Moved "Starters" from the 'Open' section to 'New', in README.
+
   * Bug Fixes
     ---------
     * Legacy Tux Paint images (prior to Tux Paint supporting different
