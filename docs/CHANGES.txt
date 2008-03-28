@@ -9,7 +9,7 @@ http://www.tuxpaint.org/
 $Id$
 
 
-2008.March.17 (0.9.20)
+2008.March.24 (0.9.20)
   * Localization Updates:
     ---------------------
     * German translation
@@ -45,6 +45,10 @@ $Id$
     ---------------------------
     * Mentioned that canvas size can be changed in README (so it's not
       just hidden in OPTIONS).
+
+    * Starters section of EXTENDING documentation updated ("New" vs "Open",
+      other clean-up, and now directs people to README for determining
+      image sizes.)
 
   * Bug Fixes
     ---------

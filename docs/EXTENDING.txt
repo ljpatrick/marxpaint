@@ -8,7 +8,7 @@
                            bill@newbreedsoftware.com
                             http://www.tuxpaint.org/
 
-                       June 14, 2002 - February 28, 2008
+                         June 14, 2002 - March 27, 2008
 
    --------------------------------------------------------------------------
 
@@ -467,14 +467,14 @@ Fonts
 
 'Starters'
 
-     'Starter' images appear in the 'Open' dialog, along with pictures you've
-     created. They have a green button background, instead of blue.
+     'Starter' images appear in the 'New' dialog, along with solid color
+     background choices. (Note: In earlier versions of Tux Paint, they
+     appeared in the 'Open' dialog, together with saved drawings.)
 
-     Unlike your saved pictures, however, when you select and open a
-     'starter,' you're actually creating a new drawing. Instead of being
-     blank, though, the new drawing contains the contents of the 'starter.'
-     Additionally, as you edit your new picture, the contents of the original
-     'starter' affect it.
+     Unlike pictures drawn in Tux Paint by users and then opened later,
+     opening a 'starter' creates a new drawing. When you save, the 'starter'
+     image is not overwritten. Additionally, as you edit your new picture,
+     the contents of the original 'starter' affect it.
 
      Coloring-Book Style
 
@@ -489,6 +489,11 @@ Fonts
        (that will come out as white in Tux Paint), and save it as a PNG
        format file.
 
+       Note: A common mistake is to make the image black and white, rather
+       than black and transparent. Unless there are transparent zones in the
+       'starter' image, all drawing done by the user in Tux Paint will be
+       covered up by the 'starter'.
+
      Scene-Style
 
        Along with the 'coloring-book' style overlay, you can also provide a
@@ -497,8 +502,9 @@ Fonts
        tools. However, the background can be!
 
        When the 'Eraser' tool is used on a picture based on this kind of
-       'starter' image, rather than turning the canvas white, it returns that
-       part of the canvas to the original background picture.
+       'starter' image, rather than turning the canvas to a solid color, such
+       as white, it returns that part of the canvas to the original
+       background picture from the 'starter'.
 
        By creating both an overlay and a background, you can create a
        'starter' which simulates depth. Imagine a background that shows the
@@ -507,20 +513,21 @@ Fonts
        'in front of' the reef.
 
        To create this kind of 'starter' picture, simply create an overlay
-       (with alpha transparency) as described above, and save it as a PNG.
-       Then create another image (without transparency), and save it with the
-       same filename, but with "-back" appended to the name. (e.g.,
+       (with transparency) as described above, and save it as a PNG. Then
+       create another image (without transparency), and save it with the same
+       filename, but with "-back" appended to the name. (e.g.,
        "reef-back.png" would be the background ocean picture that corresponds
        to the "reef.png" overlay, or foreground.)
 
-     The 'starter' images should be the same size as Tux Paint's canvas. In
-     the default 640x480 mode, that is 448x376 pixels. If you're using
-     800x600 mode, it should be 608x496. (It should be 192 pixels less wide,
-     and 104 pixels less tall than the resolution.)
+     The 'starter' images should be the same size as Tux Paint's canvas. (See
+     the "Loading Other Pictures into Tux Paint" section of README for
+     details on sizing.) If they are not, they will be stretched, without
+     affecting the shape ("aspect ratio"); however some smudging may be
+     applied to the edges.
 
-     Place them in the "starters" directory. When the 'Open' dialog is
-     accessed in Tux Paint, the 'starter' images will appear at the beginning
-     of the list with a green background.
+     Place them in the "starters" directory. When the 'New' dialog is
+     accessed in Tux Paint, the 'starter' images will appear in the screen
+     that appears, after the various solid color choices.
 
      Note: 'Starters' can't be saved over from within Tux Paint, since
      loading a 'starter' is really like creating a new image. (Instead of
@@ -534,6 +541,8 @@ Fonts
      to affect the drawing even after Tux Paint has been quit, or another
      picture loaded or started. (In other words, if you base a drawing on a
      'starter' image, it will always be affected by it.)
+
+   --------------------------------------------------------------------------
 
 Translations
 

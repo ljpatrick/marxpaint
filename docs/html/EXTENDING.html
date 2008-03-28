@@ -23,7 +23,7 @@ New Breed Software</p>
 <p><a href="mailto:bill@newbreedsoftware.com">bill@newbreedsoftware.com</a><br>
 <a href="http://www.tuxpaint.org/">http://www.tuxpaint.org/</a></p>
 
-<p>June 14, 2002 - February 28, 2008</p>
+<p>June 14, 2002 - March 27, 2008</p>
 </center>
 
 <hr size=2 noshade>
@@ -613,14 +613,14 @@ effect.</p>
 <blockquote>
   <img src="images/open_open.png" width=48 height=48 alt="" align=right>
 
-  <p>'Starter' images appear in the 'Open' dialog, along with pictures
-  you've created.  They have a green button background, instead of blue.</p>
+  <p>'Starter' images appear in the 'New' dialog, along with solid
+  color background choices. (Note: In earlier versions of Tux&nbsp;Paint,
+  they appeared in the 'Open' dialog, together with saved drawings.)</p>
   
-  <p>Unlike your saved pictures, however, when you select and open a
-  'starter,' you're actually creating a new drawing.  Instead of being
-  blank, though, the new drawing contains the contents of the 'starter.'
-  Additionally, as you edit your new picture, the contents of the
-  original 'starter' affect it.</p>
+  <p>Unlike pictures drawn in Tux&nbsp;Paint by users and then opened
+  later, opening a 'starter' creates a new drawing.  When you save, the
+  'starter' image is not overwritten.  Additionally, as you edit your new
+  picture, the contents of the original 'starter' affect it.</p>
 
   <b>Coloring-Book Style</b>
   
@@ -635,6 +635,11 @@ effect.</p>
     picture in a paint program, make the rest of the graphic transparent
     (that will come out as white in Tux&nbsp;Paint), and save it as a
     PNG format file.</p>
+
+    <p><b>Note:</b> A common mistake is to make the image black and white,
+    rather than black and transparent.  Unless there are transparent zones
+    in the 'starter' image, <i>all</i> drawing done by the user in
+    Tux&nbsp;Paint will be covered up by the 'starter'.</p>
   </blockquote>
 
   <b>Scene-Style</b>
@@ -646,8 +651,9 @@ effect.</p>
     'Magic' tools.  However, the background can be!</p>
 
     <p>When the 'Eraser' tool is used on a picture based on this kind of
-    'starter' image, rather than turning the canvas white, it returns that
-    part of the canvas to the original background picture.</p>
+    'starter' image, rather than turning the canvas to a solid color,
+    such as white, it returns that part of the canvas to the original
+    background picture from the 'starter'.</p>
 
     <p>By creating both an overlay and a background, you can create a
     'starter' which simulates depth.  Imagine a background that shows
@@ -656,7 +662,7 @@ effect.</p>
     but never 'in front of' the reef.</p>
 
     <p>To create this kind of 'starter' picture, simply create an overlay
-    (with alpha transparency) as described above, and save it as a PNG.
+    (with transparency) as described above, and save it as a PNG.
     Then create another image (without transparency), and save it with
     the same filename, but with "<code>-back</code>" appended to the
     name.  (e.g., "<code>reef-back.png</code>" would be the background
@@ -665,13 +671,15 @@ effect.</p>
   </blockquote>
   
   <p>The 'starter' images should be the same size as Tux&nbsp;Paint's
-  canvas.  In the default 640x480 mode, that is 448x376 pixels.
-  If you're using 800x600 mode, it should be 608x496.  (It should be
-  192 pixels less wide, and 104 pixels less tall than the resolution.)</p>
+  canvas.  (See the "Loading Other Pictures into Tux&nbsp;Paint" section of
+  <a href="README.html">README</a> for details on sizing.)  If they are not,
+  they will be stretched, without affecting the shape ("aspect ratio");
+  however some smudging may be applied to the edges.</p>
   
   <p>Place them in the "<code><b>starters</b></code>" directory.
-  When the 'Open' dialog is accessed in Tux&nbsp;Paint, the 'starter'
-  images will appear at the beginning of the list with a green background.</p>
+  When the 'New' dialog is accessed in Tux&nbsp;Paint, the 'starter'
+  images will appear in the screen that appears, after the various solid color
+  choices.</p>
   
   <p><b>Note:</b> 'Starters' can't be saved over from within Tux&nbsp;Paint,
   since loading a 'starter' is really like creating a new image.
@@ -689,6 +697,9 @@ effect.</p>
 
   <br clear=all>
 </blockquote>
+
+<hr size=1 noshade>
+
 
 <h2>Translations</h2>
 <blockquote>
