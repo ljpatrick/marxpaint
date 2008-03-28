@@ -31,7 +31,22 @@ New Breed Software</p>
 
 <hr size=2 noshade>
 
-<h1>About</h1>
+<table border=2 cellspacing=0 cellpadding=2>
+<tr><th>Table of Contents</th></tr>
+<tr><td>
+<ul>
+<li><a href="#about">About</a>
+<li><a href="#using">Using Tux&nbsp;Paint</a>
+<li><a href="#loading_into">Loading Other Pictures into Tux&nbsp;Paint</a>
+<li><a href="#further">Further Reading</a>
+<li><a href="#help">How to Get Help</a>
+</ul>
+</td></tr>
+</table>
+
+<hr size=2 noshade>
+
+<h1><a name="about">About</a></h1>
 <blockquote>
 
   <h2>What Is 'Tux&nbsp;Paint?'</h2>
@@ -100,7 +115,7 @@ New Breed Software</p>
 <hr size=2 noshade>
 
 
-<h1>Using Tux&nbsp;Paint</h1>
+<h1><a name="using">Using Tux&nbsp;Paint</a></h1>
 <blockquote>
 
   <h2>Loading Tux&nbsp;Paint</h2>
@@ -691,10 +706,10 @@ New Breed Software</p>
 
         <p>Click this button and your picture will be printed!</p>
 	
-	<p>On most platforms, you can also hold the <b>[Alt]</b> key while
-	clicking the 'Print' button to get a printer dialog, as long
-	as you're not running Tux&nbsp;Paint in fullscreen mode.
-	See below.</p>
+	<p>On most platforms, you can also hold the <b>[Alt]</b> key
+        (called <b>[Option]</b> on Macs) while clicking the 'Print' button
+        to get a printer dialog.  Note that this may not work if you're
+	running Tux&nbsp;Paint in fullscreen mode.  See below.</p>
 
         <dl>
 	<dt>Disabling Printing</dt>
@@ -760,16 +775,16 @@ New Breed Software</p>
 
 	<dt>Printer Settings</dt>
 	<dd>
-	  <p><i>(Windows only)</i></p>
+	  <p><i>(Windows and Mac&nbsp;OS&nbsp;X)</i></p>
 
 	  <p>By default, Tux&nbsp;Paint simply prints to the default
 	  printer with default settings when the 'Print' button is
 	  pushed.</p>
 
-	  <p>However, if you hold the <b>[Alt]</b> key on the keyboard
-	  while pushing the button, as long as you're not in fullscreen mode,
-	  a Windows print dialog will appear, where you can change the
-	  settings.</p>
+	  <p>However, if you hold the <b>[Alt]</b> (or <b>[Option]</b>) key
+          on the keyboard while pushing the button, as long as you're
+          not in fullscreen mode, your operating system's printer dialog
+          will appear, where you can change the settings.</p>
 
 	  <p>You can have the printer configuration changes stored
 	  by using the "printcfg" option, either by using
@@ -790,15 +805,16 @@ New Breed Software</p>
 	<dd>
 	  <p>By default, Tux&nbsp;Paint only shows the printer dialog
 	  (or, on Linux/Unix, runs the "altprintcommand", e.g.,
-	  "kprinter" instead of "lpr") if the <b>[Alt]</b> key is held
-	  while clicking the 'Print' button.</p>
+	  "kprinter" instead of "lpr") if the <b>[Alt]</b>
+          (or <b>[Option]</b>) key is held while clicking the 'Print'
+          button.</p>
 
 	  <p>However, this behavior can be changed.  You can have the
 	  printer dialog always appear by using
 	  "<code>--altprintalways</code>" on the command-line, or
 	  "<code>altprint=always</code>" in Tux&nbsp;Paint's configuration
-	  file.  Or, you can prevent the <b>[Alt]</b> key from having any
-	  effect by using "<code>--altprintnever</code>", or
+	  file.  Or, you can prevent the <b>[Alt]</b>/<b>[Option]</b>
+          key from having any effect by using "<code>--altprintnever</code>", or
 	  "<code>altprint=never</code>".</p>
 	  
 	  <p>See the "<a href="OPTIONS.html"><i>Options</i></a>"
@@ -811,14 +827,13 @@ New Breed Software</p>
         <hr size=1>
       </dd>
 
-      <dt><a name="slides"><b>Slides</b></a></dt>
+      <dt><a name="slides"><b>Slides</b> (under "Open")</a></dt>
       <dd>
         <img src="images/open_slides.png" width=48 height=48 alt=""
         align=right>
 
         <p>The "Slides" button is available in the "Open" dialog.
-        It displays a list of your saved files, similar to the "Open" dialog,
-        but without listing 'Starter' images.</p>
+        It displays a list of your saved files, just like the "Open" dialog.</p>
 
         <p>Click each of the images you wish to display in a slideshow-style
         presentation, one by one.  A digit will appear over each image,
@@ -832,6 +847,10 @@ New Breed Software</p>
         to fastest.  Choose the leftmost setting to disable automatic
         advancement &mdash; you will need to press a key or click to go to
         the next slide (see below).</p>
+
+        <p><b>Note:</b> The slowest setting does not automatically advance
+        through the slides. Use it for when you want to step through them
+        manually.</p>
 
         <p>When you're ready, click the "Play" button to begin the slideshow.
         (Note: If you hadn't selected ANY images, then ALL images will be
@@ -900,7 +919,7 @@ New Breed Software</p>
 	with the "<code>--nosound</code>" command-line option),
 	the <b>[Alt]</b>&nbsp;+&nbsp;<b>[S]</b> key sequence has no
 	effect.  (i.e., it cannot be used to turn on sounds when the
-	parent/teach wants them disabled.)</p>
+	parent/teacher wants them disabled.)</p>
       </dl>
     </blockquote>
   </blockquote>
@@ -909,7 +928,7 @@ New Breed Software</p>
 <hr size=2 noshade>
 
 
-<h1>Loading Other Pictures into Tux&nbsp;Paint</h1>
+<h1><a name="loading_into">Loading Other Pictures into Tux&nbsp;Paint</a></h1>
 <blockquote>
   <p>Since Tux&nbsp;Paint's 'Open' dialog only displays pictures you created
   with Tux&nbsp;Paint, what if you want to load some other picture or
@@ -1058,7 +1077,7 @@ New Breed Software</p>
 <hr size=2 noshade>
 
 
-<h1>Further Reading</h1>
+<h1><a name="further">Further Reading</a></h1>
 <blockquote>
   Other documentation included with Tux&nbsp;Paint (in the "<code>docs</code>"
   folder/directory) include:
@@ -1100,7 +1119,7 @@ New Breed Software</p>
 <hr size=2 noshade>
 
 
-<h1>How to Get Help</h1>
+<h1><a name="help">How to Get Help</a></h1>
 <blockquote>
   <p>If you need help, feel free to contact New Breed Software:</p>
 

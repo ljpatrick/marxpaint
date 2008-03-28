@@ -52,6 +52,8 @@ $Id$
 
     * Moved "Starters" from the 'Open' section to 'New', in README.
 
+    * Other minor README improvements.  Added Table of Contents to README.
+
   * Bug Fixes
     ---------
     * Legacy Tux Paint images (prior to Tux Paint supporting different

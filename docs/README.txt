@@ -13,6 +13,18 @@
 
    --------------------------------------------------------------------------
 
+   +-------------------------------------------+
+   |             Table of Contents             |
+   |-------------------------------------------|
+   |  * About                                  |
+   |  * Using Tux Paint                        |
+   |  * Loading Other Pictures into Tux Paint  |
+   |  * Further Reading                        |
+   |  * How to Get Help                        |
+   +-------------------------------------------+
+
+   --------------------------------------------------------------------------
+
                                      About
 
 What Is 'Tux Paint?'
@@ -481,10 +493,10 @@ Available Tools
 
                  Click this button and your picture will be printed!
 
-                 On most platforms, you can also hold the [Alt] key while
-                 clicking the 'Print' button to get a printer dialog, as long
-                 as you're not running Tux Paint in fullscreen mode. See
-                 below.
+                 On most platforms, you can also hold the [Alt] key (called
+                 [Option] on Macs) while clicking the 'Print' button to get a
+                 printer dialog. Note that this may not work if you're
+                 running Tux Paint in fullscreen mode. See below.
 
                       Disabling Printing
 
@@ -541,17 +553,17 @@ Available Tools
 
                       Printer Settings
 
-                              (Windows only)
+                              (Windows and Mac OS X)
 
                               By default, Tux Paint simply prints to the
                               default printer with default settings when the
                               'Print' button is pushed.
 
-                              However, if you hold the [Alt] key on the
-                              keyboard while pushing the button, as long as
-                              you're not in fullscreen mode, a Windows print
-                              dialog will appear, where you can change the
-                              settings.
+                              However, if you hold the [Alt] (or [Option])
+                              key on the keyboard while pushing the button,
+                              as long as you're not in fullscreen mode, your
+                              operating system's printer dialog will appear,
+                              where you can change the settings.
 
                               You can have the printer configuration changes
                               stored by using the "printcfg" option, either
@@ -572,26 +584,26 @@ Available Tools
                               By default, Tux Paint only shows the printer
                               dialog (or, on Linux/Unix, runs the
                               "altprintcommand", e.g., "kprinter" instead of
-                              "lpr") if the [Alt] key is held while clicking
-                              the 'Print' button.
+                              "lpr") if the [Alt] (or [Option]) key is held
+                              while clicking the 'Print' button.
 
                               However, this behavior can be changed. You can
                               have the printer dialog always appear by using
                               "--altprintalways" on the command-line, or
                               "altprint=always" in Tux Paint's configuration
-                              file. Or, you can prevent the [Alt] key from
-                              having any effect by using "--altprintnever",
-                              or "altprint=never".
+                              file. Or, you can prevent the [Alt]/[Option]
+                              key from having any effect by using
+                              "--altprintnever", or "altprint=never".
 
                               See the "Options" documentation.)
 
    --------------------------------------------------------------------------
 
-         Slides
+         Slides (under "Open")
 
                  The "Slides" button is available in the "Open" dialog. It
-                 displays a list of your saved files, similar to the "Open"
-                 dialog, but without listing 'Starter' images.
+                 displays a list of your saved files, just like the "Open"
+                 dialog.
 
                  Click each of the images you wish to display in a
                  slideshow-style presentation, one by one. A digit will
@@ -606,6 +618,10 @@ Available Tools
                  slideshow, from slowest to fastest. Choose the leftmost
                  setting to disable automatic advancement -- you will need to
                  press a key or click to go to the next slide (see below).
+
+                 Note: The slowest setting does not automatically advance
+                 through the slides. Use it for when you want to step through
+                 them manually.
 
                  When you're ready, click the "Play" button to begin the
                  slideshow. (Note: If you hadn't selected ANY images, then
@@ -663,7 +679,7 @@ Available Tools
                  unselecting "Enable Sound Effects" in Tux Paint Config or
                  running Tux Paint with the "--nosound" command-line option),
                  the [Alt] + [S] key sequence has no effect. (i.e., it cannot
-                 be used to turn on sounds when the parent/teach wants them
+                 be used to turn on sounds when the parent/teacher wants them
                  disabled.)
 
    --------------------------------------------------------------------------
