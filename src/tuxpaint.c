@@ -1487,6 +1487,7 @@ static void draw_image_title(int t, SDL_Rect dest);
 static void handle_keymouse(SDLKey key, Uint8 updown);
 static void handle_active(SDL_Event * event);
 static char *remove_slash(char *path);
+static char *replace_tilde(const char* const path);
 #ifdef NO_SDLPANGO
 static void anti_carriage_return(int left, int right, int cur_top,
 				 int new_top, int cur_bot, int line_width);
@@ -6599,11 +6600,15 @@ static void setup(int argc, char *argv[])
     {
       if (i < argc - 1)
       {
+        char *dir;
+          
 	if (savedir != NULL)
 	  free(savedir);
 
-	savedir = strdup(argv[i + 1]);
-	remove_slash(savedir);
+	dir = strdup(argv[i + 1]);
+	remove_slash(dir);
+      savedir = replace_tilde(dir);
+      free(dir);
 	i++;
       }
       else
@@ -6619,11 +6624,15 @@ static void setup(int argc, char *argv[])
     {
       if (i < argc - 1)
       {
+        char *dir;
+          
 	if (datadir != NULL)
 	  free(datadir);
 
-	datadir = strdup(argv[i + 1]);
-	remove_slash(datadir);
+	dir = strdup(argv[i + 1]);
+	remove_slash(dir);
+      datadir = replace_tilde(dir);
+      free(dir);
 	i++;
       }
       else
@@ -15846,8 +15855,11 @@ static void parse_options(FILE * fi)
 #endif
       else if (strstr(str, "savedir=") == str)
       {
-	savedir = strdup(str + 8);
-	remove_slash(savedir);
+        char *dir;      
+	dir = strdup(str + 8);
+	remove_slash(dir);
+        savedir = replace_tilde(dir);  
+        free(dir);
 
 #ifdef DEBUG
 	printf("savedir set to: %s\n", savedir);
@@ -15855,8 +15867,11 @@ static void parse_options(FILE * fi)
       }
       else if (strstr(str, "datadir=") == str)
       {
-	datadir = strdup(str + 8);
-	remove_slash(datadir);
+        char *dir;
+	dir = strdup(str + 8);
+	remove_slash(dir);
+        datadir = replace_tilde(dir);
+        free(dir);
 
 #ifdef DEBUG
 	printf("datadir set to: %s\n", datadir);
@@ -15993,6 +16008,30 @@ static char *remove_slash(char *path)
     path[len - 1] = 0;
 
   return path;
+}
+
+/* replace '~' at the beginning of a path with home directory */
+
+static char *replace_tilde(const char* const path)
+{
+    char *newpath;
+    int newlen;
+
+    int len = strlen(path);
+    
+    if (!len)
+        return strdup("");
+    
+    if (path[0] == '~')
+    {
+        newlen = strlen(getenv("HOME")) + len;
+        newpath = malloc(sizeof(char)*newlen);
+        sprintf(newpath, "%s%s", getenv("HOME"), path+1);  
+    }
+    else
+        newpath = strdup(path);
+    
+    return newpath;
 }
 
 
