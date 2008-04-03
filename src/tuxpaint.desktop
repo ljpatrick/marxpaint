@@ -71,6 +71,7 @@ Type=Application
 Exec=tuxpaint
 Icon=tuxpaint
 Terminal=false
+Categories=Education; Art;
 GenericName=Drawing program
 GenericName[af]=Tekenprogram
 GenericName[ar]=برنامج رسم

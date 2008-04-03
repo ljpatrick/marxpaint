@@ -9,7 +9,7 @@ http://www.tuxpaint.org/
 $Id$
 
 
-2008.March.24 (0.9.20)
+2008.April.3 (0.9.20)
   * Localization Updates:
     ---------------------
     * German translation
@@ -40,6 +40,17 @@ $Id$
       + Separated devel packages in RPM spec.
       + Added dependency on SDL_Pango.
       TOYAMA Shin-ichi <shin1@wmail.plala.or.jp>
+
+    * Placing Tux Paint launcher icon ("tuxpaint.desktop") in
+      'applications', rather than 'gnome/apps/Graphics', per Freedesktop.org
+      standards.
+      (SourceForge Bug #1932808, via Ubuntu)
+
+    * Added "Categories" back to the 'tuxpaint.desktop' file
+      ("Education," and "Art").  NOTE: You need to edit 'tuxpaint.desktop.in',
+      otherwise changes will be overwritten the next time 'tuxpaint.desktop'
+      is generated!
+      (SourceForge Bug #1932808, via Ubuntu)
     
   * Documentation Improvements:
     ---------------------------

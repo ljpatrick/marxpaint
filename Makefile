@@ -7,7 +7,7 @@
 # bill@newbreedsoftware.com
 # http://www.tuxpaint.org/
 
-# June 14, 2002 - February 28, 2008
+# June 14, 2002 - April 3, 2008
 
 
 # The version number, for release:
@@ -566,10 +566,10 @@ clean-win32:
 
 uninstall:	uninstall-i18n
 	-if [ "x$(GNOME_PREFIX)" != "x" ]; then \
-	  rm $(GNOME_PREFIX)/share/gnome/apps/Graphics/tuxpaint.desktop; \
+	  rm $(GNOME_PREFIX)/share/applications/tuxpaint.desktop; \
 	  rm $(GNOME_PREFIX)/share/pixmaps/tuxpaint.png; \
 	else \
-	  rm /usr/share/gnome/apps/Graphics/tuxpaint.desktop; \
+	  rm /usr/share/applications/tuxpaint.desktop; \
 	  rm /usr/share/pixmaps/tuxpaint.png; \
 	fi
 	-if [ "x$(KDE_PREFIX)" != "x" ]; then \
@@ -633,7 +633,7 @@ install-example-starters:
 	@chmod -R a+rX,g-w,o-w $(DATA_PREFIX)/starters
 
 
-# Install a launcher icon in the Gnome menu, under "Graphics"
+# Install a launcher icon in the Gnome menu
 
 install-gnome:
 	@echo
@@ -642,9 +642,9 @@ install-gnome:
 	 install -d $(PKG_ROOT)$(GNOME_PREFIX)/share/pixmaps; \
 	 cp data/images/icon.png $(PKG_ROOT)/$(GNOME_PREFIX)/share/pixmaps/tuxpaint.png; \
 	 chmod 644 $(PKG_ROOT)$(GNOME_PREFIX)/share/pixmaps/tuxpaint.png; \
-	 install -d $(PKG_ROOT)$(GNOME_PREFIX)/share/gnome/apps/Graphics; \
-	 cp src/tuxpaint.desktop $(PKG_ROOT)$(GNOME_PREFIX)/share/gnome/apps/Graphics/; \
-	 chmod 644 $(PKG_ROOT)$(GNOME_PREFIX)/share/gnome/apps/Graphics/tuxpaint.desktop; \
+	 install -d $(PKG_ROOT)$(GNOME_PREFIX)/share/applications; \
+	 cp src/tuxpaint.desktop $(PKG_ROOT)$(GNOME_PREFIX)/share/applications/; \
+	 chmod 644 $(PKG_ROOT)$(GNOME_PREFIX)/share/applications/tuxpaint.desktop; \
 	fi
 
 
