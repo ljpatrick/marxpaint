@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Tuxpaint 0.9.9\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-02-08 00:28-0800\n"
+"POT-Creation-Date: 2008-04-03 09:49-0700\n"
 "PO-Revision-Date: 2004-12-10 18:11+0200\n"
 "Last-Translator: Gintaras Goštautas <gintaras@nes.lt>\n"
 "Language-Team: Lithuanian <komp_lt@konf.lt>\n"
@@ -376,7 +376,6 @@ msgid "Eraser!"
 msgstr "Trintukas!"
 
 #. Response to 'start a new image' action
-
 msgid "Pick a color or picture with which to start a new drawing."
 msgstr "Pasirinkite spalvą arba piešinėlį, kuriuo pradėsite naują piešinį"
 
@@ -597,7 +596,8 @@ msgstr "Kaligrafija"
 
 #, fuzzy
 msgid "Click and move the mouse around to draw in calligraphy."
-msgstr "Spustelėkite ir judindami pelę padarysite piešinį panašų į kaligrafiją."
+msgstr ""
+"Spustelėkite ir judindami pelę padarysite piešinį panašų į kaligrafiją."
 
 msgid "Cartoon"
 msgstr "Karikatūra"
@@ -641,7 +641,8 @@ msgid "Flower"
 msgstr "Gelė"
 
 msgid "Click and drag to draw a flower stalk. Let go to finish the flower."
-msgstr "Spustelkite ir tempkite piešdami gelės stiebą. Paleiskite kad pabaigti gėlę"
+msgstr ""
+"Spustelkite ir tempkite piešdami gelės stiebą. Paleiskite kad pabaigti gėlę"
 
 msgid "Foam"
 msgstr "Putos"
@@ -745,8 +746,10 @@ msgid ""
 "Click to make the picture wavy. Click toward the top for shorter waves, the "
 "bottom for taller waves, the left for small waves, and the right for long "
 "waves."
-msgstr "Spustelkite kad subanguotumėte piešinį. Spustelkit link viršaus kad sumažintumėte bangas,"
-"link apačios, kad padidintumėte bangas, link karės, kad patrumpintumėte bangas, link dešnės, kad pailgintumėte"
+msgstr ""
+"Spustelkite kad subanguotumėte piešinį. Spustelkit link viršaus kad "
+"sumažintumėte bangas,link apačios, kad padidintumėte bangas, link karės, kad "
+"patrumpintumėte bangas, link dešnės, kad pailgintumėte"
 
 #~ msgid "Sparkles"
 #~ msgstr "Žybsniai"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-02-08 00:28-0800\n"
+"POT-Creation-Date: 2008-04-03 09:49-0700\n"
 "PO-Revision-Date: 2008-02-10 19:28+0400\n"
 "Last-Translator: Jamil Farzana <jamil.farzana@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -216,7 +216,8 @@ msgstr "Dörd tərəfi bərabər olan düzbucaq."
 msgid "A rectangle has four sides and four right angles."
 msgstr "Düzbucağın dörd tərəfi və dörd düz bucağı olur."
 
-msgid "A circle is a curve where all points have the same distance from the center."
+msgid ""
+"A circle is a curve where all points have the same distance from the center."
 msgstr "İndi dairə çəkə bilərsən."
 
 #. Description of an ellipse
@@ -331,15 +332,23 @@ msgstr "Möhürün şəkilini seç."
 
 #. Line tool instructions
 msgid "Click to start drawing a line. Let go to complete it."
-msgstr "Xəttin çəkməsini başlamaq üçün mausun sol düyməsini bas və mausu hərəkətə gətir. Xətti çəkmək üçün mausun düyməsini burax."
+msgstr ""
+"Xəttin çəkməsini başlamaq üçün mausun sol düyməsini bas və mausu hərəkətə "
+"gətir. Xətti çəkmək üçün mausun düyməsini burax."
 
 #. Shape tool instructions
-msgid "Pick a shape. Click to pick the center, drag, then let go when it is the size you want. Move around to rotate it, and click to draw it."
-msgstr "Fiquru seç. Şəkilin istənilən yerində mausun sol düyməsini bas. Düyməni saxlayıb mausu hərəkətə gətir və fiqur dəyişəcək. Fiquru çəkmək üçün mausun düyməsini burax."
+msgid ""
+"Pick a shape. Click to pick the center, drag, then let go when it is the "
+"size you want. Move around to rotate it, and click to draw it."
+msgstr ""
+"Fiquru seç. Şəkilin istənilən yerində mausun sol düyməsini bas. Düyməni "
+"saxlayıb mausu hərəkətə gətir və fiqur dəyişəcək. Fiquru çəkmək üçün mausun "
+"düyməsini burax."
 
 #. Text tool instructions
 msgid "Choose a style of text. Click on your drawing and you can start typing."
-msgstr "Mətn yazmaq üçün şəkilin üzərində mausun sol düyməsini bas və mətni yaz."
+msgstr ""
+"Mətn yazmaq üçün şəkilin üzərində mausun sol düyməsini bas və mətni yaz."
 
 #. Magic tool instruction
 msgid "Pick a magical effect to use on your drawing!"
@@ -387,7 +396,9 @@ msgstr "Fiqurun ölçülqrini dəyişdirmək üçün mausun düyməsini saxla."
 
 #. Instruction while finishing Shape tool (after release, during rotation step before second click)
 msgid "Move the mouse to rotate the shape. Click to draw it."
-msgstr "Fiquru fırlatmaq üçün mausu tərpəd. Fiquru çəkmək üçün mausun sol düyməsini bas."
+msgstr ""
+"Fiquru fırlatmaq üçün mausu tərpəd. Fiquru çəkmək üçün mausun sol düyməsini "
+"bas."
 
 #. Notification that 'New' action was aborted (current image would have been lost)
 msgid "OK then… Let’s keep drawing this one!"
@@ -550,8 +561,11 @@ msgstr "Damcılamaq"
 msgid "Click and move the mouse around to make the picture blocky."
 msgstr "Kərpicləri düzmək üçün mausun düyməsini bas və mausu hərəkətə gətir."
 
-msgid "Click and move the mouse around to turn the picture into a chalk drawing."
-msgstr "Şəkili tabaşir ilə çəkmək üçün mausun sol düyməsini bas və mausu hərəkətə gətir."
+msgid ""
+"Click and move the mouse around to turn the picture into a chalk drawing."
+msgstr ""
+"Şəkili tabaşir ilə çəkmək üçün mausun sol düyməsini bas və mausu hərəkətə "
+"gətir."
 
 msgid "Click and move the mouse around to make the picture drip."
 msgstr "Şəkili sızmaq üçün mausun sol düyməsini bas və mausu hərəkətə gətir."
@@ -560,29 +574,37 @@ msgid "Blur"
 msgstr "Ləkə"
 
 msgid "Click and move the mouse around to blur the picture."
-msgstr "Şəkili ləkələmək üçün mausun sol düyməsini bas və mausu hərəkətə gətir."
+msgstr ""
+"Şəkili ləkələmək üçün mausun sol düyməsini bas və mausu hərəkətə gətir."
 
 #. Both are named "Bricks", at the moment:
 msgid "Bricks"
 msgstr "Kərpic"
 
 msgid "Click and move to draw large bricks."
-msgstr "Böyük kərpicləri düzmək üçün mausun sol düyməsini bas və mausu hərəkətə gətir."
+msgstr ""
+"Böyük kərpicləri düzmək üçün mausun sol düyməsini bas və mausu hərəkətə "
+"gətir."
 
 msgid "Click and move to draw small bricks."
-msgstr "Balaca kərpicləri düzmək üçün mausun sol düyməsini bas və mausu hərəkətə gətir."
+msgstr ""
+"Balaca kərpicləri düzmək üçün mausun sol düyməsini bas və mausu hərəkətə "
+"gətir."
 
 msgid "Calligraphy"
 msgstr "Gözəl xətlə yazma"
 
 msgid "Click and move the mouse around to draw in calligraphy."
-msgstr "Gözəl xətlə yazmaq üçün mausun sol düyməsini bas və mausu hərəkətə gətir."
+msgstr ""
+"Gözəl xətlə yazmaq üçün mausun sol düyməsini bas və mausu hərəkətə gətir."
 
 msgid "Cartoon"
 msgstr "Cizgi filmi"
 
 msgid "Click and move the mouse around to turn the picture into a cartoon."
-msgstr "Şəkili cizgi filminə çevirmək üçün mausun sol düyməsini bas və mausu hərəkətə gətir."
+msgstr ""
+"Şəkili cizgi filminə çevirmək üçün mausun sol düyməsini bas və mausu "
+"hərəkətə gətir."
 
 msgid "Distortion"
 msgstr "Əyilmə"
@@ -594,7 +616,8 @@ msgid "Emboss"
 msgstr "Relyef"
 
 msgid "Click and drag the mouse to emboss the picture."
-msgstr "Şəkili relyefli etmək üçün mausun sol düyməsini bas və mausu hərəkətə gətir."
+msgstr ""
+"Şəkili relyefli etmək üçün mausun sol düyməsini bas və mausu hərəkətə gətir."
 
 msgid "Lighten"
 msgstr "İşıqlandırmaq"
@@ -603,10 +626,12 @@ msgid "Darken"
 msgstr "Qaralmaq"
 
 msgid "Click and move to fade the colors."
-msgstr "Şəkili aydın etmək üçün mausun sol düyməsini bas və mausu hərəkətə gətir."
+msgstr ""
+"Şəkili aydın etmək üçün mausun sol düyməsini bas və mausu hərəkətə gətir."
 
 msgid "Click and move to darken the colors."
-msgstr "Şəkili qaraltmaq üçün mausun sol düyməsini bas və mausu hərəkətə gətir."
+msgstr ""
+"Şəkili qaraltmaq üçün mausun sol düyməsini bas və mausu hərəkətə gətir."
 
 msgid "Fill"
 msgstr "Doldurmaq"
@@ -618,19 +643,25 @@ msgid "Flower"
 msgstr "Çiçək"
 
 msgid "Click and drag to draw a flower stalk. Let go to finish the flower."
-msgstr "Çiçəyin gövdəni çəkmək üçün mausun sol düyməsini bas və mausu hərəkətə gətir. Çiçəyi çəkmək üçün mausun düyməsini burax."
+msgstr ""
+"Çiçəyin gövdəni çəkmək üçün mausun sol düyməsini bas və mausu hərəkətə "
+"gətir. Çiçəyi çəkmək üçün mausun düyməsini burax."
 
 msgid "Foam"
 msgstr "Köpük"
 
 msgid "Click and drag the mouse to cover an area with foamy bubbles."
-msgstr "Şəkili köpük ilə örtmək üçün  mausun sol düyməsini bas və mausu hərəkətə gətir."
+msgstr ""
+"Şəkili köpük ilə örtmək üçün  mausun sol düyməsini bas və mausu hərəkətə "
+"gətir."
 
 msgid "Glass Tile"
 msgstr "Mozaika"
 
 msgid "Click and drag the mouse to put glass tile over your picture."
-msgstr "Şəkili mozaika ilə örtmək üçün  mausun sol düyməsini bas və mausu hərəkətə gətir."
+msgstr ""
+"Şəkili mozaika ilə örtmək üçün  mausun sol düyməsini bas və mausu hərəkətə "
+"gətir."
 
 msgid "Grass"
 msgstr "Ot"
@@ -641,20 +672,26 @@ msgstr "Ot çəkmək üçün mausun sol düyməsini bas və mausu hərəkətə g
 msgid "Kaleidoscope"
 msgstr "Kaleydoskop"
 
-msgid "Click and drag the mouse to draw with symmetric brushes (a kaleidoscope)."
-msgstr "Şəkili kaleydoskopa çevirmək üçün mausun sol düyməsini bas və mausu hərəkətə gətir."
+msgid ""
+"Click and drag the mouse to draw with symmetric brushes (a kaleidoscope)."
+msgstr ""
+"Şəkili kaleydoskopa çevirmək üçün mausun sol düyməsini bas və mausu hərəkətə "
+"gətir."
 
 msgid "Light"
 msgstr "İşıq"
 
 msgid "Click and drag to draw a beam of light on your picture."
-msgstr "Şəkili işıqlandırmaq üçün mausun sol düyməsini bas və mausu hərəkətə gətir."
+msgstr ""
+"Şəkili işıqlandırmaq üçün mausun sol düyməsini bas və mausu hərəkətə gətir."
 
 msgid "Metal Paint"
 msgstr "Dəmir rəngləmə"
 
 msgid "Click and drag the mouse to paint with a metallic color."
-msgstr "Şəkili dəmir kimi rəngləmək üçün mausun sol düyməsini bas və mausu hərəkətə gətir."
+msgstr ""
+"Şəkili dəmir kimi rəngləmək üçün mausun sol düyməsini bas və mausu hərəkətə "
+"gətir."
 
 msgid "Mirror"
 msgstr "Güzgü"
@@ -690,23 +727,29 @@ msgid "Shift"
 msgstr "Hərəkət"
 
 msgid "Click and drag to shift your picture around on the canvas."
-msgstr "Şəkili yerindən çəkmək üçün mausun sol düyməsini bas və mausu hərəkətə gətir."
+msgstr ""
+"Şəkili yerindən çəkmək üçün mausun sol düyməsini bas və mausu hərəkətə gətir."
 
 msgid "Smudge"
 msgstr "Ləkələmək"
 
 msgid "Click and move the mouse around to smudge the picture."
-msgstr "Şəkili ləkələmək üçün mausun sol düyməsini bas və mausu hərəkətə gətir."
+msgstr ""
+"Şəkili ləkələmək üçün mausun sol düyməsini bas və mausu hərəkətə gətir."
 
 msgid "Tint"
 msgstr "Ton"
 
 msgid "Click and move the mouse around to change the picture’s color."
-msgstr "Şəkili azca rəngləmək  üçün mausun sol düyməsini bas və mausu hərəkətə gətir."
+msgstr ""
+"Şəkili azca rəngləmək  üçün mausun sol düyməsini bas və mausu hərəkətə gətir."
 
 msgid "Waves"
 msgstr "Dalğalar"
 
-msgid "Click to make the picture wavy. Click toward the top for shorter waves, the bottom for taller waves, the left for small waves, and the right for long waves."
-msgstr "Şəkili dalğalı etmək üçün mausun sol düyməsini bas və mausu hərəkətə gətir."
-
+msgid ""
+"Click to make the picture wavy. Click toward the top for shorter waves, the "
+"bottom for taller waves, the left for small waves, and the right for long "
+"waves."
+msgstr ""
+"Şəkili dalğalı etmək üçün mausun sol düyməsini bas və mausu hərəkətə gətir."

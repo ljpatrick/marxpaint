@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TuxPaint\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-02-08 00:28-0800\n"
+"POT-Creation-Date: 2008-04-03 09:49-0700\n"
 "PO-Revision-Date: 2008-03-01 01:41+0200\n"
 "Last-Translator: Serhij Dubyk <dubyk@library.lviv.ua>\n"
 "Language-Team: Serhij Dubyk <serhijdubyk@gmail.com>\n"
@@ -16,7 +16,8 @@ msgstr ""
 "X-Poedit-Language: Ukrainian\n"
 "X-Poedit-Country: UKRAINE\n"
 "X-Poedit-SourceCharset: utf-8\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%"
+"10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 
 #. Response to Black (0, 0, 0) color selected
 msgid "Black!"
@@ -219,8 +220,10 @@ msgstr "Квадрат - прямокутник з чотирма рівними
 msgid "A rectangle has four sides and four right angles."
 msgstr "У прямокутника чотири сторони і чотири прямих кути."
 
-msgid "A circle is a curve where all points have the same distance from the center."
-msgstr "Коло - крива, у якої усі крапки лежать на однаковій відстані від центру."
+msgid ""
+"A circle is a curve where all points have the same distance from the center."
+msgstr ""
+"Коло - крива, у якої усі крапки лежать на однаковій відстані від центру."
 
 #. Description of an ellipse
 msgid "An ellipse is a stretched circle."
@@ -338,8 +341,12 @@ msgid "Click to start drawing a line. Let go to complete it."
 msgstr "Клацніть, щоб почати малювати лінію. Відпустіть кнопку, щоб завершити."
 
 #. Shape tool instructions
-msgid "Pick a shape. Click to pick the center, drag, then let go when it is the size you want. Move around to rotate it, and click to draw it."
-msgstr "Виберіть форму. Клацніть щоб вибрати центр, розтягніть до потрібного розміру, відпустіть. Покрутіть форму, потім клацніть, щоб намалювати її."
+msgid ""
+"Pick a shape. Click to pick the center, drag, then let go when it is the "
+"size you want. Move around to rotate it, and click to draw it."
+msgstr ""
+"Виберіть форму. Клацніть щоб вибрати центр, розтягніть до потрібного "
+"розміру, відпустіть. Покрутіть форму, потім клацніть, щоб намалювати її."
 
 #. Text tool instructions
 msgid "Choose a style of text. Click on your drawing and you can start typing."
@@ -561,8 +568,11 @@ msgstr "Капання"
 msgid "Click and move the mouse around to make the picture blocky."
 msgstr "Клацніть та поводіть по малюнку, щоб зробити мозаїку."
 
-msgid "Click and move the mouse around to turn the picture into a chalk drawing."
-msgstr "Клацніть та посовгайте по малюнку, щоб перетворити його частину на крейдування."
+msgid ""
+"Click and move the mouse around to turn the picture into a chalk drawing."
+msgstr ""
+"Клацніть та посовгайте по малюнку, щоб перетворити його частину на "
+"крейдування."
 
 msgid "Click and move the mouse around to make the picture drip."
 msgstr "Клацніть та поводіть по малюнку, щоб примусити його капати."
@@ -593,7 +603,9 @@ msgid "Cartoon"
 msgstr "Комікс"
 
 msgid "Click and move the mouse around to turn the picture into a cartoon."
-msgstr "Клацніть та посовгайте по малюнку, щоб перетворити його частину на комікс чи мультиплікацію."
+msgstr ""
+"Клацніть та посовгайте по малюнку, щоб перетворити його частину на комікс чи "
+"мультиплікацію."
 
 msgid "Distortion"
 msgstr "Спотворення"
@@ -629,7 +641,9 @@ msgid "Flower"
 msgstr "Квітка"
 
 msgid "Click and drag to draw a flower stalk. Let go to finish the flower."
-msgstr "Клацніть та протягніть, щоб виростити стебло для квітки. Відпустіть кнопку, щоб завершити квітку."
+msgstr ""
+"Клацніть та протягніть, щоб виростити стебло для квітки. Відпустіть кнопку, "
+"щоб завершити квітку."
 
 msgid "Foam"
 msgstr "Піна"
@@ -641,18 +655,22 @@ msgid "Glass Tile"
 msgstr "Вітраж"
 
 msgid "Click and drag the mouse to put glass tile over your picture."
-msgstr "Клацніть та протягніть мишкою, щоб встановити вітраж над Вашим малюнком."
+msgstr ""
+"Клацніть та протягніть мишкою, щоб встановити вітраж над Вашим малюнком."
 
 msgid "Grass"
 msgstr "Трава"
 
 msgid "Click and move to draw grass. Don’t forget the dirt!"
-msgstr "Клацніть та посовгайте по малюнку, щоб намалювати траву. Не забудьте про ґрунт!"
+msgstr ""
+"Клацніть та посовгайте по малюнку, щоб намалювати траву. Не забудьте про "
+"ґрунт!"
 
 msgid "Kaleidoscope"
 msgstr "Калейдоскоп"
 
-msgid "Click and drag the mouse to draw with symmetric brushes (a kaleidoscope)."
+msgid ""
+"Click and drag the mouse to draw with symmetric brushes (a kaleidoscope)."
 msgstr "Клацніть та малюйте фігури 4-ма симетричними пензликами (калейдоскоп)."
 
 msgid "Light"
@@ -683,7 +701,8 @@ msgid "Negative"
 msgstr "Негатив"
 
 msgid "Click and move the mouse around to draw a negative."
-msgstr "Клацніть та посовгайте по малюнку, щоб перетворити його частину на негатив."
+msgstr ""
+"Клацніть та посовгайте по малюнку, щоб перетворити його частину на негатив."
 
 msgid "Rainbow"
 msgstr "Веселка"
@@ -718,27 +737,41 @@ msgstr "Клацніть та посовгайте по малюнку, щоб �
 msgid "Waves"
 msgstr "Хвильки"
 
-msgid "Click to make the picture wavy. Click toward the top for shorter waves, the bottom for taller waves, the left for small waves, and the right for long waves."
-msgstr "Клацніть, щоб зробити малюнок хвилястим. Щоб зробити коротші хвильки, клацніть ближче до верху, щоб були високі хвилі - тягніться до низу, зліва матимете маленькі хвильки, а  справа - довгі хвилі."
+msgid ""
+"Click to make the picture wavy. Click toward the top for shorter waves, the "
+"bottom for taller waves, the left for small waves, and the right for long "
+"waves."
+msgstr ""
+"Клацніть, щоб зробити малюнок хвилястим. Щоб зробити коротші хвильки, "
+"клацніть ближче до верху, щоб були високі хвилі - тягніться до низу, зліва "
+"матимете маленькі хвильки, а  справа - довгі хвилі."
 
 #~ msgid "Sparkles"
 #~ msgstr "Іскри"
+
 #~ msgid "You now have a blank sheet to draw on!"
 #~ msgstr "Тепер у Вас є чистий листок, щоб малювати!"
+
 #~ msgid "Start a new picture?"
 #~ msgstr "Почнете малювати нову картину?"
+
 #~ msgid "Click and move to draw sparkles."
 #~ msgstr "Клацніть та поводіть по малюнку, щоб намалювати іскри."
+
 #~ msgid "Starting a new picture will erase the current one!"
 #~ msgstr "Починаючи новий малюнок, Ви знищите поточний!"
+
 #~ msgid "That’s OK!"
 #~ msgstr "Це добре!"
+
 #~ msgid "Never mind!"
 #~ msgstr "Байдуже!"
+
 #~ msgid "jq"
 #~ msgstr "jq"
+
 #~ msgid "JQ"
 #~ msgstr "JQ"
+
 #~ msgid "Save over the older version of this picture?"
 #~ msgstr "Зберегти поверх старої версії цього малюнка?"
-

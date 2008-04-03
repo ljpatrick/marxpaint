@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-02-08 00:28-0800\n"
+"POT-Creation-Date: 2008-04-03 09:49-0700\n"
 "PO-Revision-Date: 2008-02-18 14:28+0700\n"
 "Last-Translator: Khoem Sokhem <khoemsokhem@khmeros.info>\n"
 "Language-Team: Khmer <en@li.org>\n"
@@ -218,7 +218,8 @@ msgstr ""
 msgid "A rectangle has four sides and four right angles."
 msgstr ""
 
-msgid "A circle is a curve where all points have the same distance from the center."
+msgid ""
+"A circle is a curve where all points have the same distance from the center."
 msgstr ""
 
 #. Description of an ellipse
@@ -554,7 +555,8 @@ msgstr ""
 msgid "Click and move the mouse around to make the picture blocky."
 msgstr ""
 
-msgid "Click and move the mouse around to turn the picture into a chalk drawing."
+msgid ""
+"Click and move the mouse around to turn the picture into a chalk drawing."
 msgstr ""
 
 msgid "Click and move the mouse around to make the picture drip."
@@ -645,7 +647,8 @@ msgstr ""
 msgid "Kaleidoscope"
 msgstr ""
 
-msgid "Click and drag the mouse to draw with symmetric brushes (a kaleidoscope)."
+msgid ""
+"Click and drag the mouse to draw with symmetric brushes (a kaleidoscope)."
 msgstr ""
 
 msgid "Light"
@@ -716,4 +719,3 @@ msgid ""
 "bottom for taller waves, the left for small waves, and the right for long "
 "waves."
 msgstr ""
-
