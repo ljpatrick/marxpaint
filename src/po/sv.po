@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: sv\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-04-03 09:49-0700\n"
+"POT-Creation-Date: 2008-04-06 18:38+0200\n"
 "PO-Revision-Date: 2007-11-07 23:35+0100\n"
 "Last-Translator: Robin Rosenberg <robin.rosenberg@dewire.com>\n"
 "Language-Team:  <sv@li.org>\n"
@@ -18,70 +18,87 @@ msgstr ""
 "X-Generator: KBabel 1.11.4\n"
 
 #. Response to Black (0, 0, 0) color selected
+#: ../colors.h:86
 msgid "Black!"
 msgstr "Svart!"
 
 #. Response to Dark grey (128, 128, 128) color selected
+#: ../colors.h:89
 msgid "Dark grey! Some people spell it “dark gray”."
 msgstr "Mörkgrå! Vissa personer stavar det \"mörk grå\"."
 
 #. Response to Light grey (192, 192, 192) color selected
+#: ../colors.h:92
 msgid "Light grey! Some people spell it “light gray”."
 msgstr "Ljusgrå! Vissa personer stavar det \"ljus grå\"."
 
 #. Response to White (255, 255, 255) color selected
+#: ../colors.h:95
 msgid "White!"
 msgstr "Vit!"
 
 #. Response to Red (255, 0, 0) color selected
+#: ../colors.h:98
 msgid "Red!"
 msgstr "Röd!"
 
 #. Response to Orange (255, 128, 0) color selected
+#: ../colors.h:101
 msgid "Orange!"
 msgstr "Orange!"
 
 #. Response to Yellow (255, 255, 0) color selected
+#: ../colors.h:104
 msgid "Yellow!"
 msgstr "Gul!"
 
 #. Response to Light green (160, 228, 128) color selected
+#: ../colors.h:107
 msgid "Light green!"
 msgstr "Ljusgrön!"
 
 #. Response to Dark green (33, 148, 70) color selected
+#: ../colors.h:110
 msgid "Dark green!"
 msgstr "Mörkgrön!"
 
 #. Response to "Sky" blue (138, 168, 205) color selected
+#: ../colors.h:113
 msgid "Sky blue!"
 msgstr "Himmelsblå!"
 
 #. Response to Blue (50, 100, 255) color selected
+#: ../colors.h:116
 msgid "Blue!"
 msgstr "Blå!"
 
 #. Response to Lavender (186, 157, 255) color selected
+#: ../colors.h:119
 msgid "Lavender!"
 msgstr "Lavendel!"
 
 #. Response to Purple (128, 0, 128) color selected
+#: ../colors.h:122
 msgid "Purple!"
 msgstr "Lila!"
 
 #. Response to Pink (255, 165, 211) color selected
+#: ../colors.h:125
 msgid "Pink!"
 msgstr "Rosa!"
 
 #. Response to Brown (128, 80, 0) color selected
+#: ../colors.h:128
 msgid "Brown!"
 msgstr "Brun!"
 
 #. Response to Tan (226, 189, 166) color selected
+#: ../colors.h:131
 msgid "Tan!"
 msgstr "Solbränna!"
 
 #. Response to Beige (247, 228, 219) color selected
+#: ../colors.h:134
 msgid "Beige!"
 msgstr "Beige!"
 
@@ -97,16 +114,20 @@ msgstr "Beige!"
 #. and the ASCII-only fonts should be given bad scores in the scoring
 #. code below (the best scores going to fonts that support both).
 #. Line X
+#: ../dirwalk.c:101
 msgid "qx"
 msgstr "åäö"
 
+#: ../dirwalk.c:101
 msgid "QX"
 msgstr "ÅÄÖ"
 
 #. Line Y
+#: ../dirwalk.c:104
 msgid "qy"
 msgstr "qy"
 
+#: ../dirwalk.c:104
 msgid "QY"
 msgstr "QY"
 
@@ -115,228 +136,284 @@ msgstr "QY"
 #. especially important for users who have scroll buttons disabled.
 #. Translators should do whatever is needed to put crummy fonts last.
 #. distinct uppercase and lowercase (e.g., 'o' vs. 'O')
+#: ../dirwalk.c:127
 msgid "oO"
 msgstr "åÅäÄöÖéÈüÛ"
 
 #. uncommon punctuation (e.g., '@', '#', '*', etc.)
+#: ../dirwalk.c:130
 msgid "`\\%_@$~#{}<>^&*"
 msgstr "`\\%_@$~#{}<>^&*"
 
 #. common punctuation (e.g., '?', '!', '.', ',', etc.)
+#: ../dirwalk.c:133
 msgid ",.?!"
 msgstr ",.?!"
 
 #. digits (e.g., '0', '1' and '7')
+#: ../dirwalk.c:136
 msgid "017"
 msgstr "017"
 
 #. distinct circle-like characters (e.g., 'O' (capital oh) vs. '0' (zero))
+#: ../dirwalk.c:139
 msgid "O0"
 msgstr "O0"
 
 #. distinct line-like characters (e.g., 'l' (lowercase elle) vs. '1' (one) vs. 'I' (capital aye))
+#: ../dirwalk.c:142
 msgid "1Il|"
 msgstr "1Il|"
 
 #. Congratulations #1
+#: ../great.h:37
 msgid "Great!"
 msgstr "Perfekt!"
 
 #. Congratulations #2
+#: ../great.h:40
 msgid "Cool!"
 msgstr "Snyggt!"
 
 #. Congratulations #3
+#: ../great.h:43
 msgid "Keep it up!"
 msgstr "Fortsätt så!"
 
 #. Congratulations #4
+#: ../great.h:46
 msgid "Good job!"
 msgstr "Bra jobb!"
 
 #. Input Method: English mode
+#: ../im.c:80
 msgid "English"
 msgstr "Engelska"
 
 #. Input Method: Japanese Romanized Hiragana mode
+#: ../im.c:83
 msgid "Hiragana"
 msgstr "Hiragana"
 
 #. Input Method: Japanese Romanized Katakana mode
+#: ../im.c:86
 msgid "Katakana"
 msgstr "Katakana"
 
 #. Input Method: Korean Hangul 2-Bul mode
+#: ../im.c:89
 msgid "Hangul"
 msgstr "Hangul"
 
 #. Input Method: Thai mode
+#: ../im.c:92
 msgid "Thai"
 msgstr "Thailändska"
 
 #. Input Method: Traditional Chinese mode
+#: ../im.c:95
 msgid "ZH_TW"
 msgstr ""
 
 #. Square shape tool (4 equally-lengthed sides at right angles)
+#: ../shapes.h:171 ../shapes.h:172
 msgid "Square"
 msgstr "Kvadrat"
 
 #. Rectangle shape tool (4 sides at right angles)
+#: ../shapes.h:175 ../shapes.h:176
 msgid "Rectangle"
 msgstr "Rektangel"
 
 #. Circle shape tool (X radius and Y radius are the same)
+#: ../shapes.h:179 ../shapes.h:180
 msgid "Circle"
 msgstr "Cirkel"
 
 #. Ellipse shape tool (X radius and Y radius may differ)
+#: ../shapes.h:183 ../shapes.h:184
 msgid "Ellipse"
 msgstr "Ellips"
 
 #. Triangle shape tool (3 sides)
+#: ../shapes.h:187 ../shapes.h:188
 msgid "Triangle"
 msgstr "Triangel"
 
 #. Pentagone shape tool (5 sides)
+#: ../shapes.h:191 ../shapes.h:192
 msgid "Pentagon"
 msgstr "Femhörning"
 
 #. Rhombus shape tool (4 sides, not at right angles)
+#: ../shapes.h:195 ../shapes.h:196
 msgid "Rhombus"
 msgstr "Romb"
 
 #. Octagon shape tool (8 sides)
+#: ../shapes.h:199 ../shapes.h:200
 msgid "Octagon"
 msgstr "Oktogon"
 
 #. Description of a square
+#: ../shapes.h:208 ../shapes.h:209
 msgid "A square is a rectangle with four equal sides."
 msgstr "En fyrkant är en rektangel med fyra lika sidor."
 
 #. Description of a rectangle
+#: ../shapes.h:212 ../shapes.h:213
 msgid "A rectangle has four sides and four right angles."
 msgstr "En rektangel har fyra sidor och fyra lika vinklar."
 
+#: ../shapes.h:217 ../shapes.h:219
 msgid ""
 "A circle is a curve where all points have the same distance from the center."
 msgstr "En cirkel är en kurva där alla punkter har samma avstånd till mitten."
 
 #. Description of an ellipse
+#: ../shapes.h:222 ../shapes.h:223
 msgid "An ellipse is a stretched circle."
 msgstr "En ellips är en utsträckt cirkel."
 
 #. Description of a triangle
+#: ../shapes.h:226 ../shapes.h:227
 msgid "A triangle has three sides."
 msgstr "En triangel har tre sidor."
 
 #. Description of a pentagon
+#: ../shapes.h:230 ../shapes.h:231
 msgid "A pentagon has five sides."
 msgstr "En femhörning har fem sidor."
 
+#: ../shapes.h:235 ../shapes.h:237
 msgid "A rhombus has four equal sides, and opposite sides are parallel."
 msgstr "En romb har fyra lika sidor och motstående sidor är parallella."
 
+#: ../shapes.h:241 ../shapes.h:243
 msgid "An octagon has eight equal sides."
 msgstr "En oktogon har åtta lika långa sidor"
 
 #. Title of tool selector (buttons down the left)
+#: ../titles.h:41
 msgid "Tools"
 msgstr "Verktyg"
 
 #. Title of color palette (buttons across the bottom)
+#: ../titles.h:44
 msgid "Colors"
 msgstr "Färger"
 
 #. Title of brush selector (buttons down the right for paint and line tools)
+#: ../titles.h:47
 msgid "Brushes"
 msgstr "Penslar"
 
 #. Title of eraser selector (buttons down the right for eraser tool)
+#: ../titles.h:50
 msgid "Erasers"
 msgstr "Suddgummin"
 
 #. Title of stamp selector (buttons down the right for stamps tool)
+#: ../titles.h:53
 msgid "Stamps"
 msgstr "Stämplar"
 
 #. Title of shape selector (buttons down the right for shapes tool)
 #. Shape creation tool (square, circle, etc.)
+#: ../titles.h:56 ../tools.h:54
 msgid "Shapes"
 msgstr "Former"
 
 #. Title of font selector (buttons down the right for text tool)
+#: ../titles.h:59
 msgid "Letters"
 msgstr "Bokstäver"
 
 #. Title of magic tool selector (buttons down the right for magic (effect plugin) tool)
 #. "Magic" effects tools (blur, flip image, etc.)
+#: ../titles.h:62 ../tools.h:60
 msgid "Magic"
 msgstr "Magi"
 
 #. Freehand painting tool
+#: ../tools.h:45
 msgid "Paint"
 msgstr "Rita"
 
 #. Stamp tool (aka Rubber Stamps)
+#: ../tools.h:48
 msgid "Stamp"
 msgstr "Stämpel"
 
 #. Line drawing tool
+#: ../tools.h:51
 msgid "Lines"
 msgstr "Linjer"
 
 #. Text tool
+#: ../tools.h:57
 msgid "Text"
 msgstr "Text"
 
 #. Undo last action
+#: ../tools.h:63
 msgid "Undo"
 msgstr "Ångra"
 
 #. Redo undone action
+#: ../tools.h:66
 msgid "Redo"
 msgstr "Göra om"
 
 #. Eraser tool
+#: ../tools.h:69
 msgid "Eraser"
 msgstr "Suddgummi"
 
 #. Start a new picture
+#: ../tools.h:72
 msgid "New"
 msgstr "Ny"
 
 #. Open a saved picture
 #. buttons for the file open dialog
 #. Open dialog: 'Open' button, to load the selected picture
+#: ../tools.h:75 ../tuxpaint.c:7833
 msgid "Open"
 msgstr "Öppna"
 
 #. Save the current picture
+#: ../tools.h:78
 msgid "Save"
 msgstr "Spara"
 
 #. Print the current picture
+#: ../tools.h:81
 msgid "Print"
 msgstr "Skriv ut"
 
 #. Quit/exit Tux Paint application
+#: ../tools.h:84
 msgid "Quit"
 msgstr "Avsluta"
 
 #. Paint tool instructions
+#: ../tools.h:92
 msgid "Pick a color and a brush shape to draw with."
 msgstr "Välj en färg och en borste att rita med."
 
 #. Stamp tool instructions
+#: ../tools.h:95
 msgid "Pick a picture to stamp around your drawing."
 msgstr "Välj en bild att stämpla runt din bild."
 
 #. Line tool instructions
+#: ../tools.h:98
 msgid "Click to start drawing a line. Let go to complete it."
 msgstr "Klicka för att börja rita en linje. Släpp för att avsluta den."
 
 #. Shape tool instructions
+#: ../tools.h:101
 msgid ""
 "Pick a shape. Click to pick the center, drag, then let go when it is the "
 "size you want. Move around to rotate it, and click to draw it."
@@ -346,381 +423,491 @@ msgstr ""
 "bestämma storleken."
 
 #. Text tool instructions
+#: ../tools.h:104
 msgid "Choose a style of text. Click on your drawing and you can start typing."
 msgstr "Välj stil på texten. Klicka på din bild och du kan börja skriva."
 
 #. Magic tool instruction
+#: ../tools.h:107
 msgid "Pick a magical effect to use on your drawing!"
 msgstr "Välj en magisk effekt som ska användas på din bild!"
 
 #. Response to 'undo' action
+#: ../tools.h:110
 msgid "Undo!"
 msgstr "Ångra!"
 
 #. Response to 'redo' action
+#: ../tools.h:113
 msgid "Redo!"
 msgstr "Gör om!"
 
 #. Eraser tool
+#: ../tools.h:116
 msgid "Eraser!"
 msgstr "Suddgummi!"
 
 #. Response to 'start a new image' action
+#: ../tools.h:119
 msgid "Pick a color or picture with which to start a new drawing."
 msgstr "Välj en färg eller bild som början på en ny teckning"
 
 #. Response to 'open' action (while file dialog is being constructed)
+#: ../tools.h:122
 msgid "Open…"
 msgstr "Öppna..."
 
 #. Response to 'save' action
+#: ../tools.h:125
 msgid "Your image has been saved!"
 msgstr "Din bild har sparats!"
 
 #. Response to 'print' action (while printing, or print dialog is being used)
+#: ../tools.h:128
 msgid "Printing…"
 msgstr "Skriver ut..."
 
 #. Response to 'quit' (exit) action
+#: ../tools.h:131
 msgid "Bye bye!"
 msgstr "Hej då!"
 
 #. Instruction while using Line tool (after click, before release)
+#: ../tools.h:135
 msgid "Let go of the button to complete the line."
 msgstr "Släpp knappen för att avsluta linjen."
 
 #. Instruction while using Shape tool (after first click, before release)
+#: ../tools.h:138
 msgid "Hold the button to stretch the shape."
 msgstr "Håll ner knappen för att sträcka ut formen."
 
 #. Instruction while finishing Shape tool (after release, during rotation step before second click)
+#: ../tools.h:141
 msgid "Move the mouse to rotate the shape. Click to draw it."
 msgstr "Flytta musen för att rotera formen. Klicka för att rita den."
 
 #. Notification that 'New' action was aborted (current image would have been lost)
+#: ../tools.h:144
 msgid "OK then… Let’s keep drawing this one!"
 msgstr "Okej.. Låt oss fortsätta rita den här!"
 
 #. Prompt to confirm user wishes to quit
+#: ../tuxpaint.c:1800
 msgid "Do you really want to quit?"
 msgstr "Vill du verkligen avsluta?"
 
 #. Quit prompt positive response (quit)
+#: ../tuxpaint.c:1803
 msgid "Yes, I'm done!"
 msgstr "Ja, jag är färdig!"
 
 #. Quit prompt negative response (don't quit)
+#: ../tuxpaint.c:1806 ../tuxpaint.c:1833
 msgid "No, take me back!"
 msgstr "Nej, ta mig tillbaka!"
 
 #. Current picture is not saved; user is quitting
+#: ../tuxpaint.c:1810
 msgid "If you quit, you’ll lose your picture! Save it?"
 msgstr "Om du avslutar, så kommer du att förlora bilden!Vill du spara den?"
 
+#: ../tuxpaint.c:1811 ../tuxpaint.c:1816
 msgid "Yes, save it!"
 msgstr "Ja, spara den!"
 
+#: ../tuxpaint.c:1812 ../tuxpaint.c:1817
 msgid "No, don't bother saving!"
 msgstr "Nej, spara inte!"
 
 #. Current picture is not saved; user is opening another picture
+#: ../tuxpaint.c:1815
 msgid "Save your picture first?"
 msgstr "Spara bilden först?"
 
 #. Error opening picture
+#: ../tuxpaint.c:1820
 msgid "Can’t open that picture!"
 msgstr "Kan inte öppna den här bilden!"
 
 #. Generic dialog dismissal
+#: ../tuxpaint.c:1823 ../tuxpaint.c:1828 ../tuxpaint.c:1837 ../tuxpaint.c:1841
+#: ../tuxpaint.c:1850
 msgid "OK"
 msgstr "OK"
 
 #. Notification that 'Open' dialog has nothing to show
+#: ../tuxpaint.c:1827
 msgid "There are no saved files!"
 msgstr "Det finns inga sparade filer!"
 
 #. Verification of print action
+#: ../tuxpaint.c:1831
 msgid "Print your picture now?"
 msgstr "Skriv ut bilden nu?"
 
+#: ../tuxpaint.c:1832
 msgid "Yes, print it!"
 msgstr "Ja, skriv ut den!"
 
 #. Confirmation of successful (we hope) printing
+#: ../tuxpaint.c:1836
 msgid "Your picture has been printed!"
 msgstr "Din bild har skrivits ut!"
 
 #. Notification that it's too soon to print again (--printdelay option is in effect)
+#: ../tuxpaint.c:1840
 msgid "You can’t print yet!"
 msgstr "Du kan inte skriva ut än!"
 
 #. Prompt to confirm erasing a picture in the Open dialog
+#: ../tuxpaint.c:1844
 msgid "Erase this picture?"
 msgstr "Radera den här bilden?"
 
+#: ../tuxpaint.c:1845
 msgid "Yes, erase it!"
 msgstr "Ja, ta bort den!"
 
+#: ../tuxpaint.c:1846
 msgid "No, don't erase it!"
 msgstr "Nej, ta inte bort den!"
 
 #. Reminder that Mouse Button 1 is the button to use in Tux Paint
+#: ../tuxpaint.c:1849
 msgid "Remember to use the left mouse button!"
 msgstr "Kom ihåg att använda vänster musknapp!"
 
 #. Sound has been muted (silenced) via keyboard shortcut
+#: ../tuxpaint.c:1960
 msgid "Sound muted."
 msgstr "Tyst läge."
 
 #. Sound has been unmuted (unsilenced) via keyboard shortcut
+#: ../tuxpaint.c:1965
 msgid "Sound unmuted."
 msgstr "Ljud på."
 
 #. Wait while Text tool finishes loading fonts
+#: ../tuxpaint.c:2402
 msgid "Please wait…"
 msgstr "Vänta..."
 
+#: ../tuxpaint.c:7059
 msgid "Pick a color."
 msgstr "Välj en färg."
 
 #. Open dialog: 'Erase' button, to erase/deleted the selected picture
+#: ../tuxpaint.c:7836
 msgid "Erase"
 msgstr "Sudda ut"
 
 #. Open dialog: 'Slides' button, to switch to slide show mode
+#: ../tuxpaint.c:7839
 msgid "Slides"
 msgstr "Bildspel"
 
 #. Open dialog: 'Back' button, to dismiss Open dialog without opening a picture
+#: ../tuxpaint.c:7842
 msgid "Back"
 msgstr "Bakåt"
 
 #. Slideshow: 'Next' button, to load next slide (image)
+#: ../tuxpaint.c:7845
 msgid "Next"
 msgstr "Nästa"
 
 #. Slideshow: 'Play' button, to begin a slideshow sequence
+#: ../tuxpaint.c:7848
 msgid "Play"
 msgstr "Spela"
 
 #. Label for 'Letters' buttons (font selector, down the right when the Text tool is being used); used to show the difference between font faces
+#: ../tuxpaint.c:8441
 msgid "Aa"
 msgstr "Aa"
 
 #. Admittedly stupid way of determining which keys can be used for
 #. positive and negative responses in dialogs (e.g., [Y] (for 'yes') in English)
+#: ../tuxpaint.c:11318
 msgid "Yes"
 msgstr "Ja"
 
+#: ../tuxpaint.c:11322
 msgid "No"
 msgstr "Nej"
 
 #. Prompt to ask whether user wishes to save over old version of their file
+#: ../tuxpaint.c:12271
 msgid "Replace the picture with your changes?"
 msgstr "Ersätt bilden med dina ändringar?"
 
 #. Positive response to saving over old version
 #. (like a 'File:Save' action in other applications)
+#: ../tuxpaint.c:12275
 msgid "Yes, replace the old one!"
 msgstr "Ja, ersätt den gamla!"
 
 #. Negative response to saving over old version (saves a new image)
 #. (like a 'File:Save As...' action in other applications)
+#: ../tuxpaint.c:12279
 msgid "No, save a new file!"
 msgstr "Nej, spara en ny fil!"
 
+#: ../tuxpaint.c:13042
 msgid "Choose the picture you want, then click “Open”."
 msgstr "Välj den bild som du vill ha, klicka sedan på \"Öppna.\""
 
 #. Let user choose images:
 #. Instructions for Slideshow file dialog (FIXME: Make a #define)
+#: ../tuxpaint.c:14029 ../tuxpaint.c:14343
 msgid "Choose the pictures you want, then click “Play”."
 msgstr "Välj de bilder som du vill ha, klicka sedan på \"Spela\"."
 
+#: ../tuxpaint.desktop.in.h:1
 msgid "A drawing program for children."
 msgstr "Ett ritprogram för barn."
 
+#: ../tuxpaint.desktop.in.h:2
 msgid "Drawing program"
 msgstr "Ritprogram"
 
+#: ../tuxpaint.desktop.in.h:3
 msgid "Tux Paint"
 msgstr "Tux Paint"
 
+#: ../../magic/src/blocks_chalk_drip.c:108
 msgid "Blocks"
 msgstr "Block"
 
+#: ../../magic/src/blocks_chalk_drip.c:110
 msgid "Chalk"
 msgstr "Krita"
 
+#: ../../magic/src/blocks_chalk_drip.c:112
 msgid "Drip"
 msgstr "Droppa"
 
+#: ../../magic/src/blocks_chalk_drip.c:122
 msgid "Click and move the mouse around to make the picture blocky."
 msgstr "Klicka och rör musen runt för att göra bilden kantig."
 
+#: ../../magic/src/blocks_chalk_drip.c:125
 msgid ""
 "Click and move the mouse around to turn the picture into a chalk drawing."
 msgstr "Klicka och rör musen runt för att omvandla bilden till kritteckning."
 
+#: ../../magic/src/blocks_chalk_drip.c:128
 msgid "Click and move the mouse around to make the picture drip."
 msgstr "Klicka och rör musen runt för att göra så att bilden \"droppar\"!"
 
+#: ../../magic/src/blur.c:77
 msgid "Blur"
 msgstr "Suddig"
 
+#: ../../magic/src/blur.c:84
 msgid "Click and move the mouse around to blur the picture."
 msgstr "Klicka och rör musen för att göra bilden suddig."
 
 #. Both are named "Bricks", at the moment:
+#: ../../magic/src/bricks.c:105
 msgid "Bricks"
 msgstr "Tegelstenar"
 
+#: ../../magic/src/bricks.c:112
 msgid "Click and move to draw large bricks."
 msgstr "Klicka och rör musen runt för att rita stora tegelstenar."
 
+#: ../../magic/src/bricks.c:114
 msgid "Click and move to draw small bricks."
 msgstr "Klicka och rör musen för att rita små tegelstenar."
 
+#: ../../magic/src/calligraphy.c:109
 msgid "Calligraphy"
 msgstr "Kalligrafi"
 
+#: ../../magic/src/calligraphy.c:116
 msgid "Click and move the mouse around to draw in calligraphy."
 msgstr "Klicka och rör musen för att rita med kalligrafipensel."
 
+#: ../../magic/src/cartoon.c:81
 msgid "Cartoon"
 msgstr "Seriefigur"
 
+#: ../../magic/src/cartoon.c:88
 msgid "Click and move the mouse around to turn the picture into a cartoon."
 msgstr "Klicka och rör musen runt för att omvandla bilden till teckning!"
 
+#: ../../magic/src/distortion.c:122
 msgid "Distortion"
 msgstr "Rör till"
 
+#: ../../magic/src/distortion.c:130
 msgid "Click and drag the mouse to cause a distortion in your picture."
 msgstr "Klicka och rör musen för att röra till bilden"
 
+#: ../../magic/src/emboss.c:77
 msgid "Emboss"
 msgstr "Relief"
 
+#: ../../magic/src/emboss.c:83
 msgid "Click and drag the mouse to emboss the picture."
 msgstr "Klicka och rör musen för att göra bilden till en relief."
 
+#: ../../magic/src/fade_darken.c:92
 msgid "Lighten"
 msgstr "Ljusare"
 
+#: ../../magic/src/fade_darken.c:94
 msgid "Darken"
 msgstr "Mörka"
 
+#: ../../magic/src/fade_darken.c:104
 msgid "Click and move to fade the colors."
 msgstr "Klicka och rör musen runt för att blekna färgerna!"
 
+#: ../../magic/src/fade_darken.c:107
 msgid "Click and move to darken the colors."
 msgstr "Klicka och rör musen runt för att mörka färgerna."
 
+#: ../../magic/src/fill.c:88
 msgid "Fill"
 msgstr "Fyll"
 
+#: ../../magic/src/fill.c:95
 msgid "Click in the picture to fill that area with color."
 msgstr "Klicka på bilden för att fylla den delen med färg!"
 
+#: ../../magic/src/flower.c:125
 msgid "Flower"
 msgstr "Blomma"
 
+#: ../../magic/src/flower.c:131
 msgid "Click and drag to draw a flower stalk. Let go to finish the flower."
 msgstr ""
 "Klicka och dra musen för att rita blommans stjälk. Släpp för att göra "
 "färdigt blomman."
 
+#: ../../magic/src/foam.c:105
 msgid "Foam"
 msgstr "Skum"
 
+#: ../../magic/src/foam.c:111
 msgid "Click and drag the mouse to cover an area with foamy bubbles."
 msgstr "Klicka och rör musen för att täcka området med bubblor."
 
+#: ../../magic/src/glasstile.c:84
 msgid "Glass Tile"
 msgstr "Glasblock"
 
+#: ../../magic/src/glasstile.c:90
 msgid "Click and drag the mouse to put glass tile over your picture."
 msgstr "Klicka och dra musen för att täcka bilden med glasblock."
 
+#: ../../magic/src/grass.c:93
 msgid "Grass"
 msgstr "Gräs"
 
+#: ../../magic/src/grass.c:99
 msgid "Click and move to draw grass. Don’t forget the dirt!"
 msgstr "Klicka och rör musen runt för att rita gräs. Glöm inte jorden!"
 
+#: ../../magic/src/kalidescope.c:78
 msgid "Kaleidoscope"
 msgstr "Kaleidoskop"
 
+#: ../../magic/src/kalidescope.c:84
 msgid ""
 "Click and drag the mouse to draw with symmetric brushes (a kaleidoscope)."
 msgstr ""
 "Klicka och rör musen runt för att rita med symmetriska penslar (ett "
 "kaleidoskop)."
 
+#: ../../magic/src/light.c:85
 msgid "Light"
 msgstr "Ljus"
 
+#: ../../magic/src/light.c:91
 msgid "Click and drag to draw a beam of light on your picture."
 msgstr "Klicka och rör musen för att rita en ljusstråle på bilden."
 
+#: ../../magic/src/metalpaint.c:78
 msgid "Metal Paint"
 msgstr "Metallic"
 
+#: ../../magic/src/metalpaint.c:84
 msgid "Click and drag the mouse to paint with a metallic color."
 msgstr "Klicka och rör musen för att rita med metallic."
 
+#: ../../magic/src/mirror_flip.c:95
 msgid "Mirror"
 msgstr "Spegla"
 
+#: ../../magic/src/mirror_flip.c:97
 msgid "Flip"
 msgstr "Vänd"
 
+#: ../../magic/src/mirror_flip.c:107
 msgid "Click to make a mirror image."
 msgstr "Klicka för att skapa en spegelbild."
 
+#: ../../magic/src/mirror_flip.c:110
 msgid "Click to flip the picture upside-down."
 msgstr "Klicka för att vända bilden upp och ner."
 
+#: ../../magic/src/negative.c:73
 msgid "Negative"
 msgstr "Negativ"
 
+#: ../../magic/src/negative.c:80
 msgid "Click and move the mouse around to draw a negative."
 msgstr "Klicka och rör musen för att skapa ett negativ."
 
+#: ../../magic/src/rainbow.c:108
 msgid "Rainbow"
 msgstr "Regnbåge"
 
+#: ../../magic/src/rainbow.c:115
 msgid "You can draw in rainbow colors!"
 msgstr "Du kan rita i regnbågens färger!"
 
+#: ../../magic/src/ripples.c:82
 msgid "Ripples"
 msgstr "Krusningar"
 
+#: ../../magic/src/ripples.c:88
 msgid "Click to make ripples appear over your picture."
 msgstr "Klicka och rör musen för att skapa krusningar på bilden."
 
+#: ../../magic/src/shift.c:86
 msgid "Shift"
 msgstr "Flytta"
 
+#: ../../magic/src/shift.c:92
 msgid "Click and drag to shift your picture around on the canvas."
 msgstr "Klicka och dra musen för att flytta bilden."
 
+#: ../../magic/src/smudge.c:78
 msgid "Smudge"
 msgstr "Kladda"
 
+#: ../../magic/src/smudge.c:85
 msgid "Click and move the mouse around to smudge the picture."
 msgstr "Klicka och rör musen runt för att kladda ut bilden."
 
+#: ../../magic/src/tint.c:78
 msgid "Tint"
 msgstr "Tona"
 
+#: ../../magic/src/tint.c:85
 msgid "Click and move the mouse around to change the picture’s color."
 msgstr "Klicka och rör musen runt för att ändra bildens färg."
 
+#: ../../magic/src/waves.c:79
 msgid "Waves"
 msgstr "Vågor"
 
+#: ../../magic/src/waves.c:85
 msgid ""
 "Click to make the picture wavy. Click toward the top for shorter waves, the "
 "bottom for taller waves, the left for small waves, and the right for long "

@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint 0.9.11\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-04-03 09:49-0700\n"
+"POT-Creation-Date: 2008-04-06 18:38+0200\n"
 "PO-Revision-Date: 2004-07-18 13:50+0800\n"
 "Last-Translator: Wang Jian <lark@linux.net.cn>\n"
 "Language-Team: zh_CN <i18n-translation@lists.linux.net.cn>\n"
@@ -22,72 +22,89 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 #. Response to Black (0, 0, 0) color selected
+#: ../colors.h:86
 msgid "Black!"
 msgstr "黑色！"
 
 #. Response to Dark grey (128, 128, 128) color selected
+#: ../colors.h:89
 msgid "Dark grey! Some people spell it “dark gray”."
 msgstr ""
 
 #. Response to Light grey (192, 192, 192) color selected
+#: ../colors.h:92
 msgid "Light grey! Some people spell it “light gray”."
 msgstr ""
 
 #. Response to White (255, 255, 255) color selected
+#: ../colors.h:95
 msgid "White!"
 msgstr "白色！"
 
 #. Response to Red (255, 0, 0) color selected
+#: ../colors.h:98
 msgid "Red!"
 msgstr "红色！"
 
 #. Response to Orange (255, 128, 0) color selected
+#: ../colors.h:101
 msgid "Orange!"
 msgstr "橙色！"
 
 #. Response to Yellow (255, 255, 0) color selected
+#: ../colors.h:104
 msgid "Yellow!"
 msgstr "黄色！"
 
 #. Response to Light green (160, 228, 128) color selected
+#: ../colors.h:107
 msgid "Light green!"
 msgstr ""
 
 #. Response to Dark green (33, 148, 70) color selected
+#: ../colors.h:110
 #, fuzzy
 msgid "Dark green!"
 msgstr "灰色！"
 
 #. Response to "Sky" blue (138, 168, 205) color selected
+#: ../colors.h:113
 msgid "Sky blue!"
 msgstr ""
 
 #. Response to Blue (50, 100, 255) color selected
+#: ../colors.h:116
 msgid "Blue!"
 msgstr "蓝色"
 
 #. Response to Lavender (186, 157, 255) color selected
+#: ../colors.h:119
 msgid "Lavender!"
 msgstr ""
 
 #. Response to Purple (128, 0, 128) color selected
+#: ../colors.h:122
 msgid "Purple!"
 msgstr "紫色！"
 
 #. Response to Pink (255, 165, 211) color selected
+#: ../colors.h:125
 msgid "Pink!"
 msgstr "粉红色！"
 
 #. Response to Brown (128, 80, 0) color selected
+#: ../colors.h:128
 msgid "Brown!"
 msgstr "棕色！"
 
 #. Response to Tan (226, 189, 166) color selected
+#: ../colors.h:131
 #, fuzzy
 msgid "Tan!"
 msgstr "青色！"
 
 #. Response to Beige (247, 228, 219) color selected
+#: ../colors.h:134
 msgid "Beige!"
 msgstr ""
 
@@ -103,16 +120,20 @@ msgstr ""
 #. and the ASCII-only fonts should be given bad scores in the scoring
 #. code below (the best scores going to fonts that support both).
 #. Line X
+#: ../dirwalk.c:101
 msgid "qx"
 msgstr ""
 
+#: ../dirwalk.c:101
 msgid "QX"
 msgstr ""
 
 #. Line Y
+#: ../dirwalk.c:104
 msgid "qy"
 msgstr ""
 
+#: ../dirwalk.c:104
 msgid "QY"
 msgstr ""
 
@@ -121,234 +142,290 @@ msgstr ""
 #. especially important for users who have scroll buttons disabled.
 #. Translators should do whatever is needed to put crummy fonts last.
 #. distinct uppercase and lowercase (e.g., 'o' vs. 'O')
+#: ../dirwalk.c:127
 msgid "oO"
 msgstr ""
 
 #. uncommon punctuation (e.g., '@', '#', '*', etc.)
+#: ../dirwalk.c:130
 msgid "`\\%_@$~#{}<>^&*"
 msgstr ""
 
 #. common punctuation (e.g., '?', '!', '.', ',', etc.)
+#: ../dirwalk.c:133
 msgid ",.?!"
 msgstr ""
 
 #. digits (e.g., '0', '1' and '7')
+#: ../dirwalk.c:136
 msgid "017"
 msgstr ""
 
 #. distinct circle-like characters (e.g., 'O' (capital oh) vs. '0' (zero))
+#: ../dirwalk.c:139
 msgid "O0"
 msgstr ""
 
 #. distinct line-like characters (e.g., 'l' (lowercase elle) vs. '1' (one) vs. 'I' (capital aye))
+#: ../dirwalk.c:142
 msgid "1Il|"
 msgstr ""
 
 #. Congratulations #1
+#: ../great.h:37
 msgid "Great!"
 msgstr "真不错！"
 
 #. Congratulations #2
+#: ../great.h:40
 msgid "Cool!"
 msgstr "真厉害！"
 
 #. Congratulations #3
+#: ../great.h:43
 msgid "Keep it up!"
 msgstr "继续呀！"
 
 #. Congratulations #4
+#: ../great.h:46
 msgid "Good job!"
 msgstr "干得好呀！"
 
 #. Input Method: English mode
+#: ../im.c:80
 msgid "English"
 msgstr ""
 
 #. Input Method: Japanese Romanized Hiragana mode
+#: ../im.c:83
 msgid "Hiragana"
 msgstr ""
 
 #. Input Method: Japanese Romanized Katakana mode
+#: ../im.c:86
 msgid "Katakana"
 msgstr ""
 
 #. Input Method: Korean Hangul 2-Bul mode
+#: ../im.c:89
 msgid "Hangul"
 msgstr ""
 
 #. Input Method: Thai mode
+#: ../im.c:92
 #, fuzzy
 msgid "Thai"
 msgstr "变浓"
 
 #. Input Method: Traditional Chinese mode
+#: ../im.c:95
 msgid "ZH_TW"
 msgstr ""
 
 #. Square shape tool (4 equally-lengthed sides at right angles)
+#: ../shapes.h:171 ../shapes.h:172
 msgid "Square"
 msgstr "正方形"
 
 #. Rectangle shape tool (4 sides at right angles)
+#: ../shapes.h:175 ../shapes.h:176
 msgid "Rectangle"
 msgstr "长方形"
 
 #. Circle shape tool (X radius and Y radius are the same)
+#: ../shapes.h:179 ../shapes.h:180
 msgid "Circle"
 msgstr "圆形"
 
 #. Ellipse shape tool (X radius and Y radius may differ)
+#: ../shapes.h:183 ../shapes.h:184
 msgid "Ellipse"
 msgstr ""
 
 #. Triangle shape tool (3 sides)
+#: ../shapes.h:187 ../shapes.h:188
 msgid "Triangle"
 msgstr "三角形"
 
 #. Pentagone shape tool (5 sides)
+#: ../shapes.h:191 ../shapes.h:192
 msgid "Pentagon"
 msgstr "五角形"
 
 #. Rhombus shape tool (4 sides, not at right angles)
+#: ../shapes.h:195 ../shapes.h:196
 msgid "Rhombus"
 msgstr ""
 
 #. Octagon shape tool (8 sides)
+#: ../shapes.h:199 ../shapes.h:200
 #, fuzzy
 msgid "Octagon"
 msgstr "五角形"
 
 #. Description of a square
+#: ../shapes.h:208 ../shapes.h:209
 #, fuzzy
 msgid "A square is a rectangle with four equal sides."
 msgstr "长方形有四个边。"
 
 #. Description of a rectangle
+#: ../shapes.h:212 ../shapes.h:213
 #, fuzzy
 msgid "A rectangle has four sides and four right angles."
 msgstr "长方形有四个边。"
 
+#: ../shapes.h:217 ../shapes.h:219
 msgid ""
 "A circle is a curve where all points have the same distance from the center."
 msgstr ""
 
 #. Description of an ellipse
+#: ../shapes.h:222 ../shapes.h:223
 msgid "An ellipse is a stretched circle."
 msgstr ""
 
 #. Description of a triangle
+#: ../shapes.h:226 ../shapes.h:227
 msgid "A triangle has three sides."
 msgstr "三角形有三个边。"
 
 #. Description of a pentagon
+#: ../shapes.h:230 ../shapes.h:231
 msgid "A pentagon has five sides."
 msgstr "五角形有五个边。"
 
+#: ../shapes.h:235 ../shapes.h:237
 msgid "A rhombus has four equal sides, and opposite sides are parallel."
 msgstr ""
 
+#: ../shapes.h:241 ../shapes.h:243
 #, fuzzy
 msgid "An octagon has eight equal sides."
 msgstr "五角形有五个边。"
 
 #. Title of tool selector (buttons down the left)
+#: ../titles.h:41
 msgid "Tools"
 msgstr "工具"
 
 #. Title of color palette (buttons across the bottom)
+#: ../titles.h:44
 msgid "Colors"
 msgstr "颜色"
 
 #. Title of brush selector (buttons down the right for paint and line tools)
+#: ../titles.h:47
 msgid "Brushes"
 msgstr "画笔"
 
 #. Title of eraser selector (buttons down the right for eraser tool)
+#: ../titles.h:50
 #, fuzzy
 msgid "Erasers"
 msgstr "橡皮擦"
 
 #. Title of stamp selector (buttons down the right for stamps tool)
+#: ../titles.h:53
 msgid "Stamps"
 msgstr "印记"
 
 #. Title of shape selector (buttons down the right for shapes tool)
 #. Shape creation tool (square, circle, etc.)
+#: ../titles.h:56 ../tools.h:54
 msgid "Shapes"
 msgstr "形状"
 
 #. Title of font selector (buttons down the right for text tool)
+#: ../titles.h:59
 msgid "Letters"
 msgstr "字母"
 
 #. Title of magic tool selector (buttons down the right for magic (effect plugin) tool)
 #. "Magic" effects tools (blur, flip image, etc.)
+#: ../titles.h:62 ../tools.h:60
 msgid "Magic"
 msgstr "奇特效果"
 
 #. Freehand painting tool
+#: ../tools.h:45
 msgid "Paint"
 msgstr "绘图"
 
 #. Stamp tool (aka Rubber Stamps)
+#: ../tools.h:48
 msgid "Stamp"
 msgstr "印记"
 
 #. Line drawing tool
+#: ../tools.h:51
 msgid "Lines"
 msgstr "线条"
 
 #. Text tool
+#: ../tools.h:57
 msgid "Text"
 msgstr "文本"
 
 #. Undo last action
+#: ../tools.h:63
 msgid "Undo"
 msgstr "取消"
 
 #. Redo undone action
+#: ../tools.h:66
 msgid "Redo"
 msgstr "重复"
 
 #. Eraser tool
+#: ../tools.h:69
 msgid "Eraser"
 msgstr "橡皮擦"
 
 #. Start a new picture
+#: ../tools.h:72
 msgid "New"
 msgstr "新建"
 
 #. Open a saved picture
 #. buttons for the file open dialog
 #. Open dialog: 'Open' button, to load the selected picture
+#: ../tools.h:75 ../tuxpaint.c:7833
 msgid "Open"
 msgstr "打开"
 
 #. Save the current picture
+#: ../tools.h:78
 msgid "Save"
 msgstr "保存"
 
 #. Print the current picture
+#: ../tools.h:81
 msgid "Print"
 msgstr "打印"
 
 #. Quit/exit Tux Paint application
+#: ../tools.h:84
 msgid "Quit"
 msgstr "退出"
 
 #. Paint tool instructions
+#: ../tools.h:92
 msgid "Pick a color and a brush shape to draw with."
 msgstr "选择一个颜色和一个形状的画笔。"
 
 #. Stamp tool instructions
+#: ../tools.h:95
 msgid "Pick a picture to stamp around your drawing."
 msgstr "选择印在画周围的图片。"
 
 #. Line tool instructions
+#: ../tools.h:98
 msgid "Click to start drawing a line. Let go to complete it."
 msgstr "点击开始画线。我们来完成它吧。"
 
 #. Shape tool instructions
+#: ../tools.h:101
 msgid ""
 "Pick a shape. Click to pick the center, drag, then let go when it is the "
 "size you want. Move around to rotate it, and click to draw it."
@@ -357,403 +434,513 @@ msgstr ""
 "可以旋转它，单击就绘制完成。"
 
 #. Text tool instructions
+#: ../tools.h:104
 msgid "Choose a style of text. Click on your drawing and you can start typing."
 msgstr "选择文字的样式。在绘制的图片上单击就可以开始输入文字。"
 
 #. Magic tool instruction
+#: ../tools.h:107
 msgid "Pick a magical effect to use on your drawing!"
 msgstr "选择一个可以用在你的图片上的魔术效果吧！"
 
 #. Response to 'undo' action
+#: ../tools.h:110
 msgid "Undo!"
 msgstr "取消！"
 
 #. Response to 'redo' action
+#: ../tools.h:113
 msgid "Redo!"
 msgstr "重复！"
 
 #. Eraser tool
+#: ../tools.h:116
 msgid "Eraser!"
 msgstr "橡皮擦！"
 
 #. Response to 'start a new image' action
+#: ../tools.h:119
 #, fuzzy
 msgid "Pick a color or picture with which to start a new drawing."
 msgstr "选择印在画周围的图片。"
 
 #. Response to 'open' action (while file dialog is being constructed)
+#: ../tools.h:122
 msgid "Open…"
 msgstr "打开..."
 
 #. Response to 'save' action
+#: ../tools.h:125
 msgid "Your image has been saved!"
 msgstr "你的图片被保存了！"
 
 #. Response to 'print' action (while printing, or print dialog is being used)
+#: ../tools.h:128
 msgid "Printing…"
 msgstr "正在打印哦..."
 
 #. Response to 'quit' (exit) action
+#: ../tools.h:131
 msgid "Bye bye!"
 msgstr "再见了！"
 
 #. Instruction while using Line tool (after click, before release)
+#: ../tools.h:135
 msgid "Let go of the button to complete the line."
 msgstr "我们按按钮来完成线条吧。"
 
 #. Instruction while using Shape tool (after first click, before release)
+#: ../tools.h:138
 msgid "Hold the button to stretch the shape."
 msgstr "按住按钮来缩放。"
 
 #. Instruction while finishing Shape tool (after release, during rotation step before second click)
+#: ../tools.h:141
 msgid "Move the mouse to rotate the shape. Click to draw it."
 msgstr "移动鼠标来旋转形状。单击就可以画出它。"
 
 #. Notification that 'New' action was aborted (current image would have been lost)
+#: ../tools.h:144
 msgid "OK then… Let’s keep drawing this one!"
 msgstr "好了... 我们继续画这个！"
 
 #. Prompt to confirm user wishes to quit
+#: ../tuxpaint.c:1800
 msgid "Do you really want to quit?"
 msgstr "你真的要退出吗？"
 
 #. Quit prompt positive response (quit)
+#: ../tuxpaint.c:1803
 msgid "Yes, I'm done!"
 msgstr ""
 
 #. Quit prompt negative response (don't quit)
+#: ../tuxpaint.c:1806 ../tuxpaint.c:1833
 msgid "No, take me back!"
 msgstr ""
 
 #. Current picture is not saved; user is quitting
+#: ../tuxpaint.c:1810
 msgid "If you quit, you’ll lose your picture! Save it?"
 msgstr "如果你退出了，你会丢掉你的图片！保存起来吗？"
 
+#: ../tuxpaint.c:1811 ../tuxpaint.c:1816
 msgid "Yes, save it!"
 msgstr ""
 
+#: ../tuxpaint.c:1812 ../tuxpaint.c:1817
 msgid "No, don't bother saving!"
 msgstr ""
 
 #. Current picture is not saved; user is opening another picture
+#: ../tuxpaint.c:1815
 msgid "Save your picture first?"
 msgstr "先保存你的图片？"
 
 #. Error opening picture
+#: ../tuxpaint.c:1820
 msgid "Can’t open that picture!"
 msgstr "打不开那个图片啊！"
 
 #. Generic dialog dismissal
+#: ../tuxpaint.c:1823 ../tuxpaint.c:1828 ../tuxpaint.c:1837 ../tuxpaint.c:1841
+#: ../tuxpaint.c:1850
 msgid "OK"
 msgstr "好的"
 
 #. Notification that 'Open' dialog has nothing to show
+#: ../tuxpaint.c:1827
 msgid "There are no saved files!"
 msgstr "没有保存过的文件啊！"
 
 #. Verification of print action
+#: ../tuxpaint.c:1831
 msgid "Print your picture now?"
 msgstr "现在打印你的图片吗？"
 
+#: ../tuxpaint.c:1832
 msgid "Yes, print it!"
 msgstr ""
 
 #. Confirmation of successful (we hope) printing
+#: ../tuxpaint.c:1836
 msgid "Your picture has been printed!"
 msgstr "你的图片被打印出来了！"
 
 #. Notification that it's too soon to print again (--printdelay option is in effect)
+#: ../tuxpaint.c:1840
 msgid "You can’t print yet!"
 msgstr "你还不能打印耶！"
 
 #. Prompt to confirm erasing a picture in the Open dialog
+#: ../tuxpaint.c:1844
 msgid "Erase this picture?"
 msgstr "删除这个图片吗？"
 
+#: ../tuxpaint.c:1845
 msgid "Yes, erase it!"
 msgstr ""
 
+#: ../tuxpaint.c:1846
 msgid "No, don't erase it!"
 msgstr ""
 
 #. Reminder that Mouse Button 1 is the button to use in Tux Paint
+#: ../tuxpaint.c:1849
 msgid "Remember to use the left mouse button!"
 msgstr ""
 
 #. Sound has been muted (silenced) via keyboard shortcut
+#: ../tuxpaint.c:1960
 msgid "Sound muted."
 msgstr ""
 
 #. Sound has been unmuted (unsilenced) via keyboard shortcut
+#: ../tuxpaint.c:1965
 msgid "Sound unmuted."
 msgstr ""
 
 #. Wait while Text tool finishes loading fonts
+#: ../tuxpaint.c:2402
 msgid "Please wait…"
 msgstr ""
 
+#: ../tuxpaint.c:7059
 msgid "Pick a color."
 msgstr ""
 
 #. Open dialog: 'Erase' button, to erase/deleted the selected picture
+#: ../tuxpaint.c:7836
 msgid "Erase"
 msgstr "删除"
 
 #. Open dialog: 'Slides' button, to switch to slide show mode
+#: ../tuxpaint.c:7839
 msgid "Slides"
 msgstr ""
 
 #. Open dialog: 'Back' button, to dismiss Open dialog without opening a picture
+#: ../tuxpaint.c:7842
 msgid "Back"
 msgstr "退回"
 
 #. Slideshow: 'Next' button, to load next slide (image)
+#: ../tuxpaint.c:7845
 #, fuzzy
 msgid "Next"
 msgstr "文本"
 
 #. Slideshow: 'Play' button, to begin a slideshow sequence
+#: ../tuxpaint.c:7848
 msgid "Play"
 msgstr ""
 
 #. Label for 'Letters' buttons (font selector, down the right when the Text tool is being used); used to show the difference between font faces
+#: ../tuxpaint.c:8441
 msgid "Aa"
 msgstr ""
 
 #. Admittedly stupid way of determining which keys can be used for
 #. positive and negative responses in dialogs (e.g., [Y] (for 'yes') in English)
+#: ../tuxpaint.c:11318
 msgid "Yes"
 msgstr "是的"
 
+#: ../tuxpaint.c:11322
 msgid "No"
 msgstr "不要"
 
 #. Prompt to ask whether user wishes to save over old version of their file
+#: ../tuxpaint.c:12271
 msgid "Replace the picture with your changes?"
 msgstr ""
 
 #. Positive response to saving over old version
 #. (like a 'File:Save' action in other applications)
+#: ../tuxpaint.c:12275
 msgid "Yes, replace the old one!"
 msgstr ""
 
 #. Negative response to saving over old version (saves a new image)
 #. (like a 'File:Save As...' action in other applications)
+#: ../tuxpaint.c:12279
 #, fuzzy
 msgid "No, save a new file!"
 msgstr "不，保存到新文件"
 
+#: ../tuxpaint.c:13042
 msgid "Choose the picture you want, then click “Open”."
 msgstr "选择你要打开的图片，然后点击“打开”。"
 
 #. Let user choose images:
 #. Instructions for Slideshow file dialog (FIXME: Make a #define)
+#: ../tuxpaint.c:14029 ../tuxpaint.c:14343
 #, fuzzy
 msgid "Choose the pictures you want, then click “Play”."
 msgstr "选择你要打开的图片，然后点击“打开”。"
 
+#: ../tuxpaint.desktop.in.h:1
 msgid "A drawing program for children."
 msgstr "孩子的绘图程序。"
 
+#: ../tuxpaint.desktop.in.h:2
 msgid "Drawing program"
 msgstr "绘图程序"
 
+#: ../tuxpaint.desktop.in.h:3
 msgid "Tux Paint"
 msgstr "Tux Paint"
 
+#: ../../magic/src/blocks_chalk_drip.c:108
 msgid "Blocks"
 msgstr "拼块"
 
+#: ../../magic/src/blocks_chalk_drip.c:110
 msgid "Chalk"
 msgstr "粉笔"
 
+#: ../../magic/src/blocks_chalk_drip.c:112
 msgid "Drip"
 msgstr "水滴"
 
+#: ../../magic/src/blocks_chalk_drip.c:122
 msgid "Click and move the mouse around to make the picture blocky."
 msgstr "单击然后移动鼠标将图片变成驳裂的效果。"
 
+#: ../../magic/src/blocks_chalk_drip.c:125
 msgid ""
 "Click and move the mouse around to turn the picture into a chalk drawing."
 msgstr "单击然后移动鼠标将图片变成粉笔画。"
 
+#: ../../magic/src/blocks_chalk_drip.c:128
 msgid "Click and move the mouse around to make the picture drip."
 msgstr "单击然后移动鼠标将图片变成水滴图。"
 
+#: ../../magic/src/blur.c:77
 msgid "Blur"
 msgstr "模糊"
 
+#: ../../magic/src/blur.c:84
 msgid "Click and move the mouse around to blur the picture."
 msgstr "单击然后移动鼠标，将图片变模糊。"
 
 #. Both are named "Bricks", at the moment:
+#: ../../magic/src/bricks.c:105
 #, fuzzy
 msgid "Bricks"
 msgstr "拼块"
 
+#: ../../magic/src/bricks.c:112
 #, fuzzy
 msgid "Click and move to draw large bricks."
 msgstr "单击然后移动来画火花。"
 
+#: ../../magic/src/bricks.c:114
 #, fuzzy
 msgid "Click and move to draw small bricks."
 msgstr "单击然后移动来画火花。"
 
+#: ../../magic/src/calligraphy.c:109
 msgid "Calligraphy"
 msgstr ""
 
+#: ../../magic/src/calligraphy.c:116
 #, fuzzy
 msgid "Click and move the mouse around to draw in calligraphy."
 msgstr "单击然后移动鼠标来绘制相片底片。"
 
+#: ../../magic/src/cartoon.c:81
 msgid "Cartoon"
 msgstr ""
 
+#: ../../magic/src/cartoon.c:88
 #, fuzzy
 msgid "Click and move the mouse around to turn the picture into a cartoon."
 msgstr "单击然后移动鼠标将图片变成粉笔画。"
 
+#: ../../magic/src/distortion.c:122
 msgid "Distortion"
 msgstr ""
 
+#: ../../magic/src/distortion.c:130
 #, fuzzy
 msgid "Click and drag the mouse to cause a distortion in your picture."
 msgstr "单击然后移动鼠标将图片变淡。"
 
+#: ../../magic/src/emboss.c:77
 msgid "Emboss"
 msgstr ""
 
+#: ../../magic/src/emboss.c:83
 #, fuzzy
 msgid "Click and drag the mouse to emboss the picture."
 msgstr "单击然后移动鼠标将图片变淡。"
 
+#: ../../magic/src/fade_darken.c:92
 msgid "Lighten"
 msgstr ""
 
+#: ../../magic/src/fade_darken.c:94
 msgid "Darken"
 msgstr ""
 
+#: ../../magic/src/fade_darken.c:104
 msgid "Click and move to fade the colors."
 msgstr "单击然后移动来将使颜色退色。"
 
+#: ../../magic/src/fade_darken.c:107
 #, fuzzy
 msgid "Click and move to darken the colors."
 msgstr "单击然后移动来将使颜色退色。"
 
+#: ../../magic/src/fill.c:88
 msgid "Fill"
 msgstr "填充"
 
+#: ../../magic/src/fill.c:95
 msgid "Click in the picture to fill that area with color."
 msgstr "单击图片用颜色填充区域。"
 
+#: ../../magic/src/flower.c:125
 msgid "Flower"
 msgstr ""
 
+#: ../../magic/src/flower.c:131
 msgid "Click and drag to draw a flower stalk. Let go to finish the flower."
 msgstr ""
 
+#: ../../magic/src/foam.c:105
 msgid "Foam"
 msgstr ""
 
+#: ../../magic/src/foam.c:111
 #, fuzzy
 msgid "Click and drag the mouse to cover an area with foamy bubbles."
 msgstr "单击然后移动鼠标将图片变浓。"
 
+#: ../../magic/src/glasstile.c:84
 msgid "Glass Tile"
 msgstr ""
 
+#: ../../magic/src/glasstile.c:90
 #, fuzzy
 msgid "Click and drag the mouse to put glass tile over your picture."
 msgstr "单击然后移动鼠标将图片变淡。"
 
+#: ../../magic/src/grass.c:93
 #, fuzzy
 msgid "Grass"
 msgstr "删除"
 
+#: ../../magic/src/grass.c:99
 #, fuzzy
 msgid "Click and move to draw grass. Don’t forget the dirt!"
 msgstr "单击然后移动来画火花。"
 
+#: ../../magic/src/kalidescope.c:78
 msgid "Kaleidoscope"
 msgstr ""
 
+#: ../../magic/src/kalidescope.c:84
 #, fuzzy
 msgid ""
 "Click and drag the mouse to draw with symmetric brushes (a kaleidoscope)."
 msgstr "单击然后移动鼠标将图片变浓。"
 
+#: ../../magic/src/light.c:85
 msgid "Light"
 msgstr ""
 
+#: ../../magic/src/light.c:91
 #, fuzzy
 msgid "Click and drag to draw a beam of light on your picture."
 msgstr "单击然后移动鼠标将图片变淡。"
 
+#: ../../magic/src/metalpaint.c:78
 #, fuzzy
 msgid "Metal Paint"
 msgstr "绘图"
 
+#: ../../magic/src/metalpaint.c:84
 #, fuzzy
 msgid "Click and drag the mouse to paint with a metallic color."
 msgstr "单击然后移动鼠标将图片变淡。"
 
+#: ../../magic/src/mirror_flip.c:95
 msgid "Mirror"
 msgstr "镜子"
 
+#: ../../magic/src/mirror_flip.c:97
 msgid "Flip"
 msgstr "翻转"
 
+#: ../../magic/src/mirror_flip.c:107
 msgid "Click to make a mirror image."
 msgstr "单击做出镜子中的效果。"
 
+#: ../../magic/src/mirror_flip.c:110
 msgid "Click to flip the picture upside-down."
 msgstr "单击将图片上下翻转。"
 
+#: ../../magic/src/negative.c:73
 msgid "Negative"
 msgstr "底片"
 
+#: ../../magic/src/negative.c:80
 msgid "Click and move the mouse around to draw a negative."
 msgstr "单击然后移动鼠标来绘制相片底片。"
 
+#: ../../magic/src/rainbow.c:108
 msgid "Rainbow"
 msgstr "彩虹"
 
+#: ../../magic/src/rainbow.c:115
 msgid "You can draw in rainbow colors!"
 msgstr "你可以用彩虹的颜色画图耶！"
 
+#: ../../magic/src/ripples.c:82
 msgid "Ripples"
 msgstr ""
 
+#: ../../magic/src/ripples.c:88
 #, fuzzy
 msgid "Click to make ripples appear over your picture."
 msgstr "单击然后移动鼠标将图片变淡。"
 
+#: ../../magic/src/shift.c:86
 msgid "Shift"
 msgstr ""
 
+#: ../../magic/src/shift.c:92
 #, fuzzy
 msgid "Click and drag to shift your picture around on the canvas."
 msgstr "单击然后移动鼠标将图片变淡。"
 
+#: ../../magic/src/smudge.c:78
 msgid "Smudge"
 msgstr ""
 
+#: ../../magic/src/smudge.c:85
 #, fuzzy
 msgid "Click and move the mouse around to smudge the picture."
 msgstr "单击然后移动鼠标，将图片变模糊。"
 
+#: ../../magic/src/tint.c:78
 #, fuzzy
 msgid "Tint"
 msgstr "变淡"
 
+#: ../../magic/src/tint.c:85
 #, fuzzy
 msgid "Click and move the mouse around to change the picture’s color."
 msgstr "单击然后移动鼠标将图片变成驳裂的效果。"
 
+#: ../../magic/src/waves.c:79
 #, fuzzy
 msgid "Waves"
 msgstr "保存"
 
+#: ../../magic/src/waves.c:85
 msgid ""
 "Click to make the picture wavy. Click toward the top for shorter waves, the "
 "bottom for taller waves, the left for small waves, and the right for long "

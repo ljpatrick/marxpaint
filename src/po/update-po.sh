@@ -1,7 +1,7 @@
 #!/bin/sh
 
 intltool-update --pot
-msguniq --no-location tuxpaint.pot > temp.tmp && mv -f temp.tmp tuxpaint.pot
+msguniq tuxpaint.pot > temp.tmp && mv -f temp.tmp tuxpaint.pot
 for i in *.po ; do
   echo $i
   msgmerge $i tuxpaint.pot > temp.tmp && mv -f temp.tmp $i

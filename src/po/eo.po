@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint 0.9.18\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-04-03 09:49-0700\n"
+"POT-Creation-Date: 2008-04-06 18:38+0200\n"
 "PO-Revision-Date: 2008-01-29 15:00+0000\n"
 "Last-Translator: Edmund GRIMLEY EVANS <edmundo@rano.org>\n"
 "Language-Team: Esperanto <translation-team-eo@lists.sourceforge.net>\n"
@@ -15,70 +15,87 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 #. Response to Black (0, 0, 0) color selected
+#: ../colors.h:86
 msgid "Black!"
 msgstr "Nigra!"
 
 #. Response to Dark grey (128, 128, 128) color selected
+#: ../colors.h:89
 msgid "Dark grey! Some people spell it “dark gray”."
 msgstr "Malhelgriza!"
 
 #. Response to Light grey (192, 192, 192) color selected
+#: ../colors.h:92
 msgid "Light grey! Some people spell it “light gray”."
 msgstr "Helgriza!"
 
 #. Response to White (255, 255, 255) color selected
+#: ../colors.h:95
 msgid "White!"
 msgstr "Blanka!"
 
 #. Response to Red (255, 0, 0) color selected
+#: ../colors.h:98
 msgid "Red!"
 msgstr "Ruĝa!"
 
 #. Response to Orange (255, 128, 0) color selected
+#: ../colors.h:101
 msgid "Orange!"
 msgstr "Oranĝa!"
 
 #. Response to Yellow (255, 255, 0) color selected
+#: ../colors.h:104
 msgid "Yellow!"
 msgstr "Flava!"
 
 #. Response to Light green (160, 228, 128) color selected
+#: ../colors.h:107
 msgid "Light green!"
 msgstr "Helverda!"
 
 #. Response to Dark green (33, 148, 70) color selected
+#: ../colors.h:110
 msgid "Dark green!"
 msgstr "Malhelverda!"
 
 #. Response to "Sky" blue (138, 168, 205) color selected
+#: ../colors.h:113
 msgid "Sky blue!"
 msgstr "Ĉielblua!"
 
 #. Response to Blue (50, 100, 255) color selected
+#: ../colors.h:116
 msgid "Blue!"
 msgstr "Blua!"
 
 #. Response to Lavender (186, 157, 255) color selected
+#: ../colors.h:119
 msgid "Lavender!"
 msgstr "Lila!"
 
 #. Response to Purple (128, 0, 128) color selected
+#: ../colors.h:122
 msgid "Purple!"
 msgstr "Viola!"
 
 #. Response to Pink (255, 165, 211) color selected
+#: ../colors.h:125
 msgid "Pink!"
 msgstr "Rozkolora!"
 
 #. Response to Brown (128, 80, 0) color selected
+#: ../colors.h:128
 msgid "Brown!"
 msgstr "Bruna!"
 
 #. Response to Tan (226, 189, 166) color selected
+#: ../colors.h:131
 msgid "Tan!"
 msgstr "Helbruna!"
 
 #. Response to Beige (247, 228, 219) color selected
+#: ../colors.h:134
 msgid "Beige!"
 msgstr "Helflava!"
 
@@ -94,16 +111,20 @@ msgstr "Helflava!"
 #. and the ASCII-only fonts should be given bad scores in the scoring
 #. code below (the best scores going to fonts that support both).
 #. Line X
+#: ../dirwalk.c:101
 msgid "qx"
 msgstr ""
 
+#: ../dirwalk.c:101
 msgid "QX"
 msgstr ""
 
 #. Line Y
+#: ../dirwalk.c:104
 msgid "qy"
 msgstr ""
 
+#: ../dirwalk.c:104
 msgid "QY"
 msgstr ""
 
@@ -112,230 +133,286 @@ msgstr ""
 #. especially important for users who have scroll buttons disabled.
 #. Translators should do whatever is needed to put crummy fonts last.
 #. distinct uppercase and lowercase (e.g., 'o' vs. 'O')
+#: ../dirwalk.c:127
 msgid "oO"
 msgstr ""
 
 #. uncommon punctuation (e.g., '@', '#', '*', etc.)
+#: ../dirwalk.c:130
 msgid "`\\%_@$~#{}<>^&*"
 msgstr ""
 
 #. common punctuation (e.g., '?', '!', '.', ',', etc.)
+#: ../dirwalk.c:133
 msgid ",.?!"
 msgstr ""
 
 #. digits (e.g., '0', '1' and '7')
+#: ../dirwalk.c:136
 msgid "017"
 msgstr ""
 
 #. distinct circle-like characters (e.g., 'O' (capital oh) vs. '0' (zero))
+#: ../dirwalk.c:139
 msgid "O0"
 msgstr ""
 
 #. distinct line-like characters (e.g., 'l' (lowercase elle) vs. '1' (one) vs. 'I' (capital aye))
+#: ../dirwalk.c:142
 msgid "1Il|"
 msgstr ""
 
 #. Congratulations #1
+#: ../great.h:37
 msgid "Great!"
 msgstr "Bonege!"
 
 #. Congratulations #2
+#: ../great.h:40
 msgid "Cool!"
 msgstr "Bone!"
 
 #. Congratulations #3
+#: ../great.h:43
 msgid "Keep it up!"
 msgstr "Faru plu!"
 
 #. Congratulations #4
+#: ../great.h:46
 msgid "Good job!"
 msgstr "Bona laboro!"
 
 #. Input Method: English mode
+#: ../im.c:80
 msgid "English"
 msgstr "Latina"
 
 #. Input Method: Japanese Romanized Hiragana mode
+#: ../im.c:83
 msgid "Hiragana"
 msgstr "Rondaj kanaoj"
 
 #. Input Method: Japanese Romanized Katakana mode
+#: ../im.c:86
 msgid "Katakana"
 msgstr "Strekaj kanaoj"
 
 #. Input Method: Korean Hangul 2-Bul mode
+#: ../im.c:89
 msgid "Hangul"
 msgstr "Korea alfabeto"
 
 #. Input Method: Thai mode
+#: ../im.c:92
 msgid "Thai"
 msgstr "Taja"
 
 #. Input Method: Traditional Chinese mode
+#: ../im.c:95
 msgid "ZH_TW"
 msgstr "ZH_TW (tradicia ĉina)"
 
 #. Square shape tool (4 equally-lengthed sides at right angles)
+#: ../shapes.h:171 ../shapes.h:172
 msgid "Square"
 msgstr "Kvadrato"
 
 #. Rectangle shape tool (4 sides at right angles)
+#: ../shapes.h:175 ../shapes.h:176
 msgid "Rectangle"
 msgstr "Ortangulo"
 
 #. Circle shape tool (X radius and Y radius are the same)
+#: ../shapes.h:179 ../shapes.h:180
 msgid "Circle"
 msgstr "Cirklo"
 
 #. Ellipse shape tool (X radius and Y radius may differ)
+#: ../shapes.h:183 ../shapes.h:184
 msgid "Ellipse"
 msgstr "Elipso"
 
 #. Triangle shape tool (3 sides)
+#: ../shapes.h:187 ../shapes.h:188
 msgid "Triangle"
 msgstr "Triangulo"
 
 #. Pentagone shape tool (5 sides)
+#: ../shapes.h:191 ../shapes.h:192
 msgid "Pentagon"
 msgstr "Kvinangulo"
 
 #. Rhombus shape tool (4 sides, not at right angles)
+#: ../shapes.h:195 ../shapes.h:196
 msgid "Rhombus"
 msgstr "Rombo"
 
 #. Octagon shape tool (8 sides)
+#: ../shapes.h:199 ../shapes.h:200
 msgid "Octagon"
 msgstr "Okangulo"
 
 #. Description of a square
+#: ../shapes.h:208 ../shapes.h:209
 msgid "A square is a rectangle with four equal sides."
 msgstr "Kvadrato estas ortangulo kun kvar egalaj flankoj."
 
 #. Description of a rectangle
+#: ../shapes.h:212 ../shapes.h:213
 msgid "A rectangle has four sides and four right angles."
 msgstr "Ortangulo havas kvar flankojn kaj kvar ortajn angulojn."
 
+#: ../shapes.h:217 ../shapes.h:219
 msgid ""
 "A circle is a curve where all points have the same distance from the center."
 msgstr ""
 "Cirklo estas kurbo, en kiu ĉiuj punktoj estas samdistancaj de la centro."
 
 #. Description of an ellipse
+#: ../shapes.h:222 ../shapes.h:223
 msgid "An ellipse is a stretched circle."
 msgstr "Elipso estas streĉita cirklo."
 
 #. Description of a triangle
+#: ../shapes.h:226 ../shapes.h:227
 msgid "A triangle has three sides."
 msgstr "Triangulo havas tri flankojn."
 
 #. Description of a pentagon
+#: ../shapes.h:230 ../shapes.h:231
 msgid "A pentagon has five sides."
 msgstr "Kvinangulo havas kvin flankojn."
 
+#: ../shapes.h:235 ../shapes.h:237
 msgid "A rhombus has four equal sides, and opposite sides are parallel."
 msgstr ""
 "Rombo havas kvar egalajn flankojn, kaj kontraŭaj flankoj estas paralelaj."
 
+#: ../shapes.h:241 ../shapes.h:243
 msgid "An octagon has eight equal sides."
 msgstr "Okangulo havas ok flankojn."
 
 #. Title of tool selector (buttons down the left)
+#: ../titles.h:41
 msgid "Tools"
 msgstr "Iloj"
 
 #. Title of color palette (buttons across the bottom)
+#: ../titles.h:44
 msgid "Colors"
 msgstr "Koloroj"
 
 #. Title of brush selector (buttons down the right for paint and line tools)
+#: ../titles.h:47
 msgid "Brushes"
 msgstr "Penikoj"
 
 #. Title of eraser selector (buttons down the right for eraser tool)
+#: ../titles.h:50
 msgid "Erasers"
 msgstr "Viŝiloj"
 
 #. Title of stamp selector (buttons down the right for stamps tool)
+#: ../titles.h:53
 msgid "Stamps"
 msgstr "Stampiloj"
 
 #. Title of shape selector (buttons down the right for shapes tool)
 #. Shape creation tool (square, circle, etc.)
+#: ../titles.h:56 ../tools.h:54
 msgid "Shapes"
 msgstr "Formoj"
 
 #. Title of font selector (buttons down the right for text tool)
+#: ../titles.h:59
 msgid "Letters"
 msgstr "Literoj"
 
 #. Title of magic tool selector (buttons down the right for magic (effect plugin) tool)
 #. "Magic" effects tools (blur, flip image, etc.)
+#: ../titles.h:62 ../tools.h:60
 msgid "Magic"
 msgstr "Magio"
 
 #. Freehand painting tool
+#: ../tools.h:45
 msgid "Paint"
 msgstr "Farbi"
 
 #. Stamp tool (aka Rubber Stamps)
+#: ../tools.h:48
 msgid "Stamp"
 msgstr "Stampi"
 
 #. Line drawing tool
+#: ../tools.h:51
 msgid "Lines"
 msgstr "Linioj"
 
 #. Text tool
+#: ../tools.h:57
 msgid "Text"
 msgstr "Teksto"
 
 #. Undo last action
+#: ../tools.h:63
 msgid "Undo"
 msgstr "Malfari"
 
 #. Redo undone action
+#: ../tools.h:66
 msgid "Redo"
 msgstr "Refari"
 
 #. Eraser tool
+#: ../tools.h:69
 msgid "Eraser"
 msgstr "Forviŝi"
 
 #. Start a new picture
+#: ../tools.h:72
 msgid "New"
 msgstr "Nova"
 
 #. Open a saved picture
 #. buttons for the file open dialog
 #. Open dialog: 'Open' button, to load the selected picture
+#: ../tools.h:75 ../tuxpaint.c:7833
 msgid "Open"
 msgstr "Malfermi"
 
 #. Save the current picture
+#: ../tools.h:78
 msgid "Save"
 msgstr "Skribi"
 
 #. Print the current picture
+#: ../tools.h:81
 msgid "Print"
 msgstr "Presi"
 
 #. Quit/exit Tux Paint application
+#: ../tools.h:84
 msgid "Quit"
 msgstr "Fini"
 
 #. Paint tool instructions
+#: ../tools.h:92
 msgid "Pick a color and a brush shape to draw with."
 msgstr "Elektu koloron kaj penikformon por desegni."
 
 #. Stamp tool instructions
+#: ../tools.h:95
 msgid "Pick a picture to stamp around your drawing."
 msgstr "Elektu bildon por stampi sur via desegnaĵo."
 
 #. Line tool instructions
+#: ../tools.h:98
 msgid "Click to start drawing a line. Let go to complete it."
 msgstr "Klaku kaj tenu la musbutonon por desegni linion."
 
 #. Shape tool instructions
+#: ../tools.h:101
 msgid ""
 "Pick a shape. Click to pick the center, drag, then let go when it is the "
 "size you want. Move around to rotate it, and click to draw it."
@@ -344,381 +421,491 @@ msgstr ""
 "la grandon, kiun vi volas. Movu por turni ĝin, kaj klaku por fini."
 
 #. Text tool instructions
+#: ../tools.h:104
 msgid "Choose a style of text. Click on your drawing and you can start typing."
 msgstr ""
 "Elektu stilon de tekston. Alklaku vian desegnaĵon, kaj vi povas ektajpi."
 
 #. Magic tool instruction
+#: ../tools.h:107
 msgid "Pick a magical effect to use on your drawing!"
 msgstr "Elektu magian efekton por via desegnaĵo!"
 
 #. Response to 'undo' action
+#: ../tools.h:110
 msgid "Undo!"
 msgstr "Malfari!"
 
 #. Response to 'redo' action
+#: ../tools.h:113
 msgid "Redo!"
 msgstr "Refari!"
 
 #. Eraser tool
+#: ../tools.h:116
 msgid "Eraser!"
 msgstr "Viŝilo!"
 
 #. Response to 'start a new image' action
+#: ../tools.h:119
 msgid "Pick a color or picture with which to start a new drawing."
 msgstr "Elektu koloron au bildon, per kiu vi komencos novan desegnaĵon."
 
 #. Response to 'open' action (while file dialog is being constructed)
+#: ../tools.h:122
 msgid "Open…"
 msgstr "Malfermi..."
 
 #. Response to 'save' action
+#: ../tools.h:125
 msgid "Your image has been saved!"
 msgstr "Via bildo estis skribita!"
 
 #. Response to 'print' action (while printing, or print dialog is being used)
+#: ../tools.h:128
 msgid "Printing…"
 msgstr "Presi ..."
 
 #. Response to 'quit' (exit) action
+#: ../tools.h:131
 msgid "Bye bye!"
 msgstr "Ĝis!"
 
 #. Instruction while using Line tool (after click, before release)
+#: ../tools.h:135
 msgid "Let go of the button to complete the line."
 msgstr "Ellasu la butonon por fini la linion."
 
 #. Instruction while using Shape tool (after first click, before release)
+#: ../tools.h:138
 msgid "Hold the button to stretch the shape."
 msgstr "Tenu la butonon por streĉi la formon."
 
 #. Instruction while finishing Shape tool (after release, during rotation step before second click)
+#: ../tools.h:141
 msgid "Move the mouse to rotate the shape. Click to draw it."
 msgstr "Movu la muson por turni la formon. Alklaku por desegni ĝin."
 
 #. Notification that 'New' action was aborted (current image would have been lost)
+#: ../tools.h:144
 msgid "OK then… Let’s keep drawing this one!"
 msgstr "Bone ... Ni plu desegnu ĝi tiun!"
 
 #. Prompt to confirm user wishes to quit
+#: ../tuxpaint.c:1800
 msgid "Do you really want to quit?"
 msgstr "Ĉu vi vere volas ĉesi?"
 
 #. Quit prompt positive response (quit)
+#: ../tuxpaint.c:1803
 msgid "Yes, I'm done!"
 msgstr "Jes, mi finis!"
 
 #. Quit prompt negative response (don't quit)
+#: ../tuxpaint.c:1806 ../tuxpaint.c:1833
 msgid "No, take me back!"
 msgstr "Ne, mi volas daŭrigi!"
 
 #. Current picture is not saved; user is quitting
+#: ../tuxpaint.c:1810
 msgid "If you quit, you’ll lose your picture! Save it?"
 msgstr "Se vi ĉesos, via bildo perdiĝos? Ĉu vi volas unue skribi ĝin?"
 
+#: ../tuxpaint.c:1811 ../tuxpaint.c:1816
 msgid "Yes, save it!"
 msgstr "Jes, skribu ĝin!"
 
+#: ../tuxpaint.c:1812 ../tuxpaint.c:1817
 msgid "No, don't bother saving!"
 msgstr "Ne, ne skribu ĝin!"
 
 #. Current picture is not saved; user is opening another picture
+#: ../tuxpaint.c:1815
 msgid "Save your picture first?"
 msgstr "Ĉu vi volas unu skribi vian nunan bildon?"
 
 #. Error opening picture
+#: ../tuxpaint.c:1820
 msgid "Can’t open that picture!"
 msgstr "Ne povas malfermi tiun bildon!"
 
 #. Generic dialog dismissal
+#: ../tuxpaint.c:1823 ../tuxpaint.c:1828 ../tuxpaint.c:1837 ../tuxpaint.c:1841
+#: ../tuxpaint.c:1850
 msgid "OK"
 msgstr "Bone"
 
 #. Notification that 'Open' dialog has nothing to show
+#: ../tuxpaint.c:1827
 msgid "There are no saved files!"
 msgstr "Ne estas skribitaj dosieroj!"
 
 #. Verification of print action
+#: ../tuxpaint.c:1831
 msgid "Print your picture now?"
 msgstr "Ĉu presi la bildon nun?"
 
+#: ../tuxpaint.c:1832
 msgid "Yes, print it!"
 msgstr "Jes, presu ĝin!"
 
 #. Confirmation of successful (we hope) printing
+#: ../tuxpaint.c:1836
 msgid "Your picture has been printed!"
 msgstr "Via bildo estis presita!"
 
 #. Notification that it's too soon to print again (--printdelay option is in effect)
+#: ../tuxpaint.c:1840
 msgid "You can’t print yet!"
 msgstr "Vi ankoraŭ ne povas presi!"
 
 #. Prompt to confirm erasing a picture in the Open dialog
+#: ../tuxpaint.c:1844
 msgid "Erase this picture?"
 msgstr "Ĉu forviŝi ĉi tiun bildon?"
 
+#: ../tuxpaint.c:1845
 msgid "Yes, erase it!"
 msgstr "Jes, forviŝu ĝin!"
 
+#: ../tuxpaint.c:1846
 msgid "No, don't erase it!"
 msgstr "Ne, ne forviŝu ĝin!"
 
 #. Reminder that Mouse Button 1 is the button to use in Tux Paint
+#: ../tuxpaint.c:1849
 msgid "Remember to use the left mouse button!"
 msgstr "Ne forgesu uzi la maldekstran musbutonon!"
 
 #. Sound has been muted (silenced) via keyboard shortcut
+#: ../tuxpaint.c:1960
 msgid "Sound muted."
 msgstr "Sono malŝaltita."
 
 #. Sound has been unmuted (unsilenced) via keyboard shortcut
+#: ../tuxpaint.c:1965
 msgid "Sound unmuted."
 msgstr "Sono ŝaltita."
 
 #. Wait while Text tool finishes loading fonts
+#: ../tuxpaint.c:2402
 msgid "Please wait…"
 msgstr "Bonvolu atendi ..."
 
+#: ../tuxpaint.c:7059
 msgid "Pick a color."
 msgstr "Elektu koloron."
 
 #. Open dialog: 'Erase' button, to erase/deleted the selected picture
+#: ../tuxpaint.c:7836
 msgid "Erase"
 msgstr "Forviŝi"
 
 #. Open dialog: 'Slides' button, to switch to slide show mode
+#: ../tuxpaint.c:7839
 msgid "Slides"
 msgstr "Lumbildoj"
 
 #. Open dialog: 'Back' button, to dismiss Open dialog without opening a picture
+#: ../tuxpaint.c:7842
 msgid "Back"
 msgstr "Reen"
 
 #. Slideshow: 'Next' button, to load next slide (image)
+#: ../tuxpaint.c:7845
 msgid "Next"
 msgstr "Sekva"
 
 #. Slideshow: 'Play' button, to begin a slideshow sequence
+#: ../tuxpaint.c:7848
 msgid "Play"
 msgstr "Ludi"
 
 #. Label for 'Letters' buttons (font selector, down the right when the Text tool is being used); used to show the difference between font faces
+#: ../tuxpaint.c:8441
 msgid "Aa"
 msgstr ""
 
 #. Admittedly stupid way of determining which keys can be used for
 #. positive and negative responses in dialogs (e.g., [Y] (for 'yes') in English)
+#: ../tuxpaint.c:11318
 msgid "Yes"
 msgstr "Jes"
 
+#: ../tuxpaint.c:11322
 msgid "No"
 msgstr "Ne"
 
 #. Prompt to ask whether user wishes to save over old version of their file
+#: ../tuxpaint.c:12271
 msgid "Replace the picture with your changes?"
 msgstr "Ĉu anstataŭigi la bildon per viaj ŝanĝoj?"
 
 #. Positive response to saving over old version
 #. (like a 'File:Save' action in other applications)
+#: ../tuxpaint.c:12275
 msgid "Yes, replace the old one!"
 msgstr "Jes, anstataŭigi la malnovan!"
 
 #. Negative response to saving over old version (saves a new image)
 #. (like a 'File:Save As...' action in other applications)
+#: ../tuxpaint.c:12279
 msgid "No, save a new file!"
 msgstr "Ne, skribu novan dosieron!"
 
+#: ../tuxpaint.c:13042
 msgid "Choose the picture you want, then click “Open”."
 msgstr "Elektu la bildon, kiun vi volas, kaj alklaku \"Malfermi\"."
 
 #. Let user choose images:
 #. Instructions for Slideshow file dialog (FIXME: Make a #define)
+#: ../tuxpaint.c:14029 ../tuxpaint.c:14343
 msgid "Choose the pictures you want, then click “Play”."
 msgstr "Elektu la bildon, kiun vi volas, kaj alklaku \"Ludi\"."
 
+#: ../tuxpaint.desktop.in.h:1
 msgid "A drawing program for children."
 msgstr "Desegnoprogramo por infanoj"
 
+#: ../tuxpaint.desktop.in.h:2
 msgid "Drawing program"
 msgstr "Desegnoprogramo"
 
+#: ../tuxpaint.desktop.in.h:3
 msgid "Tux Paint"
 msgstr "Tux-Desegnilo"
 
+#: ../../magic/src/blocks_chalk_drip.c:108
 msgid "Blocks"
 msgstr "Blokoj"
 
+#: ../../magic/src/blocks_chalk_drip.c:110
 msgid "Chalk"
 msgstr "Kreto"
 
+#: ../../magic/src/blocks_chalk_drip.c:112
 msgid "Drip"
 msgstr "Gutigi"
 
+#: ../../magic/src/blocks_chalk_drip.c:122
 msgid "Click and move the mouse around to make the picture blocky."
 msgstr "Alklaku kaj movu la muson por igi la bildon blokeca."
 
+#: ../../magic/src/blocks_chalk_drip.c:125
 msgid ""
 "Click and move the mouse around to turn the picture into a chalk drawing."
 msgstr "Alklaku kaj movu la muson por ŝanĝi la bildon en kretodesegnaĵon."
 
+#: ../../magic/src/blocks_chalk_drip.c:128
 msgid "Click and move the mouse around to make the picture drip."
 msgstr "Alklaku kaj movu la muson por igi la bildon guti."
 
+#: ../../magic/src/blur.c:77
 msgid "Blur"
 msgstr "Malklarigi"
 
+#: ../../magic/src/blur.c:84
 msgid "Click and move the mouse around to blur the picture."
 msgstr "Alklaku kaj movu la muson por malklarigi la bildon."
 
 #. Both are named "Bricks", at the moment:
+#: ../../magic/src/bricks.c:105
 msgid "Bricks"
 msgstr "Brikoj"
 
+#: ../../magic/src/bricks.c:112
 msgid "Click and move to draw large bricks."
 msgstr "Alklaku kaj movu por desegni grandajn brikojn."
 
+#: ../../magic/src/bricks.c:114
 msgid "Click and move to draw small bricks."
 msgstr "Alklaku kaj movu por desegni malgrandajn brikojn."
 
+#: ../../magic/src/calligraphy.c:109
 msgid "Calligraphy"
 msgstr "Kaligrafio"
 
+#: ../../magic/src/calligraphy.c:116
 msgid "Click and move the mouse around to draw in calligraphy."
 msgstr "Alklaku kaj movu la muson por desegni kaligrafie."
 
+#: ../../magic/src/cartoon.c:81
 msgid "Cartoon"
 msgstr "Karikaturigi"
 
+#: ../../magic/src/cartoon.c:88
 msgid "Click and move the mouse around to turn the picture into a cartoon."
 msgstr "Alklaku kaj movu la muson por ŝanĝi la bildon en karikaturon."
 
+#: ../../magic/src/distortion.c:122
 msgid "Distortion"
 msgstr "Distordo"
 
+#: ../../magic/src/distortion.c:130
 msgid "Click and drag the mouse to cause a distortion in your picture."
 msgstr "Alklaku kaj movu la muson por distordi vian bildon."
 
+#: ../../magic/src/emboss.c:77
 msgid "Emboss"
 msgstr "Bosado"
 
+#: ../../magic/src/emboss.c:83
 msgid "Click and drag the mouse to emboss the picture."
 msgstr "Alklaku kaj movu la muson por bosi la bildon."
 
+#: ../../magic/src/fade_darken.c:92
 msgid "Lighten"
 msgstr "Heligi"
 
+#: ../../magic/src/fade_darken.c:94
 msgid "Darken"
 msgstr "Malheligi"
 
+#: ../../magic/src/fade_darken.c:104
 msgid "Click and move to fade the colors."
 msgstr "Alklaku kaj movu por velkigi la kolorojn."
 
+#: ../../magic/src/fade_darken.c:107
 msgid "Click and move to darken the colors."
 msgstr "Alklaku kaj movu por malheligi la kolorojn."
 
+#: ../../magic/src/fill.c:88
 msgid "Fill"
 msgstr "Plenigi"
 
+#: ../../magic/src/fill.c:95
 msgid "Click in the picture to fill that area with color."
 msgstr "Alklaku la bildon por plenigi regionon per koloro."
 
+#: ../../magic/src/flower.c:125
 msgid "Flower"
 msgstr "Floro"
 
+#: ../../magic/src/flower.c:131
 msgid "Click and drag to draw a flower stalk. Let go to finish the flower."
 msgstr ""
 "Alklaku kaj movu la muson por desegni la tigon de floro. Ellasu por fini la "
 "floron."
 
+#: ../../magic/src/foam.c:105
 msgid "Foam"
 msgstr "Ŝaŭmo"
 
+#: ../../magic/src/foam.c:111
 msgid "Click and drag the mouse to cover an area with foamy bubbles."
 msgstr "Alklaku kaj movu la muson por kovri areon per ŝaŭmaj bobeloj."
 
+#: ../../magic/src/glasstile.c:84
 msgid "Glass Tile"
 msgstr "Vitra Kahelo"
 
+#: ../../magic/src/glasstile.c:90
 msgid "Click and drag the mouse to put glass tile over your picture."
 msgstr "Alklaku kaj movu la muson por met vitrajn kahelojn sur vian bildon."
 
+#: ../../magic/src/grass.c:93
 msgid "Grass"
 msgstr "Herbo"
 
+#: ../../magic/src/grass.c:99
 msgid "Click and move to draw grass. Don’t forget the dirt!"
 msgstr "Alklaku kaj movu la muson por desegni herbon. Ne forgesu la teron!"
 
+#: ../../magic/src/kalidescope.c:78
 msgid "Kaleidoscope"
 msgstr "Kalejdoskopo"
 
+#: ../../magic/src/kalidescope.c:84
 msgid ""
 "Click and drag the mouse to draw with symmetric brushes (a kaleidoscope)."
 msgstr ""
 "Alklaku kaj movu la muson por desegni per simetriaj penikoj (kalejdoskopo)."
 
+#: ../../magic/src/light.c:85
 msgid "Light"
 msgstr "Lumo"
 
+#: ../../magic/src/light.c:91
 msgid "Click and drag to draw a beam of light on your picture."
 msgstr "Alklaku kaj movu la muson por desegni lumradion sur vian bildon."
 
+#: ../../magic/src/metalpaint.c:78
 msgid "Metal Paint"
 msgstr "Metala farbo."
 
+#: ../../magic/src/metalpaint.c:84
 msgid "Click and drag the mouse to paint with a metallic color."
 msgstr "Alklaku kaj movu la muson por farbi per metaleca koloro."
 
+#: ../../magic/src/mirror_flip.c:95
 msgid "Mirror"
 msgstr "Spegulbildo"
 
+#: ../../magic/src/mirror_flip.c:97
 msgid "Flip"
 msgstr "Renversi"
 
+#: ../../magic/src/mirror_flip.c:107
 msgid "Click to make a mirror image."
 msgstr "Klaku por fari spegulbildon."
 
+#: ../../magic/src/mirror_flip.c:110
 msgid "Click to flip the picture upside-down."
 msgstr "Klaku por renversi la bildon."
 
+#: ../../magic/src/negative.c:73
 msgid "Negative"
 msgstr "Negative"
 
+#: ../../magic/src/negative.c:80
 msgid "Click and move the mouse around to draw a negative."
 msgstr "Alklaku kaj movu la muson por fari negativon."
 
+#: ../../magic/src/rainbow.c:108
 msgid "Rainbow"
 msgstr "Ĉielarko"
 
+#: ../../magic/src/rainbow.c:115
 msgid "You can draw in rainbow colors!"
 msgstr "Vi povas desegni per ĉielarkaj koloroj!"
 
+#: ../../magic/src/ripples.c:82
 msgid "Ripples"
 msgstr "Ondetoj"
 
+#: ../../magic/src/ripples.c:88
 msgid "Click to make ripples appear over your picture."
 msgstr "Alklaku por aperigi ondetojn sur via bildo."
 
+#: ../../magic/src/shift.c:86
 msgid "Shift"
 msgstr "Ŝovi"
 
+#: ../../magic/src/shift.c:92
 msgid "Click and drag to shift your picture around on the canvas."
 msgstr "Alklaku kaj movu la muson por movi vian bildon sur la tolo."
 
+#: ../../magic/src/smudge.c:78
 msgid "Smudge"
 msgstr "Miksi"
 
+#: ../../magic/src/smudge.c:85
 msgid "Click and move the mouse around to smudge the picture."
 msgstr "Alklaku kaj movu la muson por miksi la bildon."
 
+#: ../../magic/src/tint.c:78
 msgid "Tint"
 msgstr "Surfarbi"
 
+#: ../../magic/src/tint.c:85
 msgid "Click and move the mouse around to change the picture’s color."
 msgstr "Alklaku kaj movu la muson por ŝanĝi la koloron de la bildo."
 
+#: ../../magic/src/waves.c:79
 msgid "Waves"
 msgstr "Ondoj"
 
+#: ../../magic/src/waves.c:85
 msgid ""
 "Click to make the picture wavy. Click toward the top for shorter waves, the "
 "bottom for taller waves, the left for small waves, and the right for long "
