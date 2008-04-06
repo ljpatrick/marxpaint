@@ -4,7 +4,7 @@
   For Tux Paint
   Language-related functions
 
-  Copyright (c) 2002-2007 by Bill Kendrick and others
+  Copyright (c) 2002-2008 by Bill Kendrick and others
   bill@newbreedsoftware.com
   http://www.tuxpaint.org/
 
@@ -25,7 +25,7 @@
 
   $Id$
 
-  June 14, 2002 - February 20, 2008
+  June 14, 2002 - April 5, 2008
 */
 
 #include <stdio.h>
@@ -68,6 +68,7 @@ static int langint = LANG_EN;
 const char *lang_prefixes[NUM_LANGS] = {
   "af",
   "ar",
+  "ast",
   "az",
   "be",
   "bg",
@@ -196,6 +197,7 @@ const language_to_locale_struct language_to_locale_array[] = {
   {"english", "C"},
   {"american-english", "C"},
   {"arabic", "ar_SA.UTF-8"},
+  {"asturian", "ast_ES.UTF-8"},
   {"azerbaijani", "az_AZ.UTF-8"},
   {"croatian", "hr_HR.UTF-8"},
   {"hrvatski", "hr_HR.UTF-8"},
@@ -468,6 +470,7 @@ void show_lang_usage(FILE * f, const char *const prg)
 /* af */ "  afrikaans\n"
 /* sq */ "  albanian\n"
 /* ar */ "  arabic\n"
+/* ast */ "  asturian\n"
 /* en_AU */ "  australian-english\n"
 /* az */ "  azerbaijani\n"
 /* eu */ "  basque       euskara\n"
@@ -562,6 +565,7 @@ void show_locale_usage(FILE * f, const char *const prg)
 	  "  C       (English      American English)\n"
 	  "  af_ZA   (Afrikaans)\n"
 	  "  ar_SA   (Arabic)\n"
+	  "  ast_ES  (Asturian)\n"
 	  "  az_AZ   (Azerbaijani)\n"
 	  "  eu_ES   (Basque       Euskara)\n"
 	  "  be_BY   (Belarusian   Bielaruskaja)\n"

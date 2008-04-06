@@ -10,7 +10,7 @@
 
   $Id$
   
-  June 14, 2002 - February 18, 2008
+  June 14, 2002 - April 5, 2008
 */
 
 
@@ -26,6 +26,7 @@ enum
 {
   LANG_AF,			/* Afrikaans */
   LANG_AR,			/* Arabic */
+  LANG_AST,			/* Asturian */
   LANG_AZ,			/* Azerbaijani */
   LANG_BE,			/* Belarusian */
   LANG_BG,			/* Bulgarian */

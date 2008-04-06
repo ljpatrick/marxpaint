@@ -7,7 +7,7 @@ bill@newbreedsoftware.com
 http://www.tuxpaint.org/
 
 
-June 17, 2002 - March 17, 2008
+June 17, 2002 - April 5, 2008
 
 $Id$
 
@@ -195,6 +195,10 @@ $Id$
   * Arabic
     Khaled Hosny <khaledhosny@eglug.org>
     Khalid Al Holan <alholan@gmail.com>
+
+  * Asturian
+    Xandru Armesto <alarmes@wanadoo.es>
+    Mikel González <mikelisimu@yahoo.es>
 
   * Australian English
     Chris Goerner, Canonical Ltd, and Rosetta Contributors

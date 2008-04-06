@@ -9,7 +9,13 @@ http://www.tuxpaint.org/
 $Id$
 
 
-2008.April.3 (0.9.20)
+2008.April.5 (0.9.20)
+  * New translations:
+    -----------------
+    * Asturian
+      Xandru Armesto <alarmes@wanadoo.es>
+      Mikel González <mikelisimu@yahoo.es>
+
   * Localization Updates:
     ---------------------
     * German translation
