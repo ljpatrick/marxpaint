@@ -9,7 +9,7 @@ http://www.tuxpaint.org/
 $Id$
 
 
-2008.April.5 (0.9.20)
+2008.April.15 (0.9.20)
   * New translations:
     -----------------
     * Asturian
@@ -20,6 +20,9 @@ $Id$
     ---------------------
     * German translation
       Burkhard Lück <lueck@hube-lueck.de>
+
+    * Greek translation:
+      Yannis Papatzikos <papatzikos@yahoo.gr>
 
     * Lithuanian translation
       Alesis Novik <alesisnov@gmail.com>
