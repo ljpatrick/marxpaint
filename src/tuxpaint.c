@@ -3189,7 +3189,7 @@ static void mainloop(void)
 	    /* (Arbitrarily large, so we draw once now) */
 	    reset_brush_counter();
 
-	    brush_draw(old_x, old_y, old_x, old_y, 1);
+	    /* brush_draw(old_x, old_y, old_x, old_y, 1); fixes SF #1934883? */
 	    playsound(screen, 0, paintsound(img_cur_brush_w), 1,
 		      event.button.x, SNDDIST_NEAR);
 	  }
@@ -3221,7 +3221,7 @@ static void mainloop(void)
 	    /* (Arbitrarily large, so we draw once now) */
 	    reset_brush_counter();
 
-	    brush_draw(old_x, old_y, old_x, old_y, 1);
+	    /* brush_draw(old_x, old_y, old_x, old_y, 1); fixes sf #1934883? */
 
 	    playsound(screen, 1, SND_LINE_START, 1, event.button.x,
 		      SNDDIST_NEAR);
