@@ -7,7 +7,7 @@ bill@newbreedsoftware.com
 http://www.tuxpaint.org/
 
 
-June 17, 2002 - April 15, 2008
+June 17, 2002 - April 19, 2008
 
 $Id$
 
@@ -137,6 +137,10 @@ $Id$
   * Canada map
   * Japan map
     Ed Monty <edmonty@gmail.com>
+
+  * Spirograph
+    Using Inkscape's Spirograph effect
+    Caroline Ford <caroline.ford.work@googlemail.com>
 
 
 * Fonts

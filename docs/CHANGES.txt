@@ -9,7 +9,7 @@ http://www.tuxpaint.org/
 $Id$
 
 
-2008.April.15 (0.9.20)
+2008.April.19 (0.9.20)
   * New translations:
     -----------------
     * Asturian
@@ -92,6 +92,11 @@ $Id$
       to the incoming surface, rather than always using the canvas surface,
       to determine bitdepth.  (Fixes bug where some Magic tools, e.g., Grass,
       didn't work right on video depths other than 32bpp.)
+
+* New Starters:
+    -------------
+    * Spirograph
+      Caroline Ford <caroline.ford.work@googlemail.com>
 
 
 2008.February.25 (0.9.19)
