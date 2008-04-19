@@ -459,7 +459,7 @@ Fullscreen Mode Problems
        Or use Tux Paint Config. and make sure "Fullscreen" (under "Video &
        Sound") is not checked.
 
-Other Probelms
+Other Problems
 
      * Tux Paint won't run
 

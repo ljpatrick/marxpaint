@@ -85,7 +85,7 @@ Loading Tux Paint
 
   Linux/Unix Users
 
-         Tux Paint should have placed a laucher icon in your KDE and/or GNOME
+         Tux Paint should have placed a launcher icon in your KDE and/or GNOME
          menus, under 'Graphics.'
 
          Alternatively, you can run the following command at a shell prompt
