@@ -96,6 +96,7 @@ $Id$
 * New Starters:
     -------------
     * Spirograph
+    * Jigsaw
       Caroline Ford <caroline.ford.work@googlemail.com>
 
 
