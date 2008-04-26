@@ -12,136 +12,136 @@
 
 # The version number, for release:
 
-VER_VERSION=0.9.20
-VER_DATE=`date +"%Y-%m-%d"`
+VER_VERSION:=0.9.20
+VER_DATE:=`date +"%Y-%m-%d"`
 
-MAGIC_API_VERSION=0x00000001
-SO_TYPE=so
+MAGIC_API_VERSION:=0x00000001
+SO_TYPE:=so
 
 # Where to install things:
 
-PREFIX=/usr/local
+PREFIX:=/usr/local
 
 
 # Root directory to place files when creating packages.
 
-DESTDIR=$(PKG_ROOT)
+DESTDIR:=$(PKG_ROOT)
 
 
 # Program:
 
-BIN_PREFIX=$(DESTDIR)$(PREFIX)/bin
-EXE_EXT=
+BIN_PREFIX:=$(DESTDIR)$(PREFIX)/bin
+EXE_EXT:=
 
 
 # Data:
 
-DATA_PREFIX=$(DESTDIR)$(PREFIX)/share/tuxpaint
+DATA_PREFIX:=$(DESTDIR)$(PREFIX)/share/tuxpaint
 
 
 # Magic Tool plug-ins
 
-INCLUDE_PREFIX=$(DESTDIR)$(PREFIX)/include
-MAGIC_PREFIX=$(DESTDIR)$(PREFIX)/lib/tuxpaint/plugins
+INCLUDE_PREFIX:=$(DESTDIR)$(PREFIX)/include
+MAGIC_PREFIX:=$(DESTDIR)$(PREFIX)/lib/tuxpaint/plugins
 
 
 # Docs and man page:
 
-DOC_PREFIX=$(DESTDIR)$(PREFIX)/share/doc/tuxpaint
-DEVDOC_PREFIX=$(DESTDIR)$(PREFIX)/share/doc/tuxpaint-dev
-MAN_PREFIX=$(DESTDIR)$(PREFIX)/share/man
-DEVMAN_PREFIX=$(DESTDIR)$(PREFIX)/share/man
+DOC_PREFIX:=$(DESTDIR)$(PREFIX)/share/doc/tuxpaint
+DEVDOC_PREFIX:=$(DESTDIR)$(PREFIX)/share/doc/tuxpaint-dev
+MAN_PREFIX:=$(DESTDIR)$(PREFIX)/share/man
+DEVMAN_PREFIX:=$(DESTDIR)$(PREFIX)/share/man
 
 
 # 'System-wide' Config file:
 
 ifeq ($(PREFIX),/usr)
-  CONFDIR=$(DESTDIR)/etc/tuxpaint
+  CONFDIR:=$(DESTDIR)/etc/tuxpaint
 else
-  CONFDIR=$(DESTDIR)$(PREFIX)/etc/tuxpaint
+  CONFDIR:=$(DESTDIR)$(PREFIX)/etc/tuxpaint
 endif
 
 
 # Commands useful to other arch's (e.g., BeOS)
 
-RSRC_CMD=echo -n
-MIMESET_CMD=echo -n
+RSRC_CMD:=echo -n
+MIMESET_CMD:=echo -n
 
 
 # Icons and launchers:
 
-ICON_PREFIX=$(DESTDIR)$(PREFIX)/share/pixmaps
-X11_ICON_PREFIX=$(DESTDIR)$(PREFIX)/X11R6/include/X11/pixmaps
-GNOME_PREFIX=`gnome-config --prefix 2> /dev/null`
-KDE_PREFIX=`kde-config --install apps --expandvars 2> /dev/null`
-KDE_ICON_PREFIX=`kde-config --install icon --expandvars 2> /dev/null`
+ICON_PREFIX:=$(DESTDIR)$(PREFIX)/share/pixmaps
+X11_ICON_PREFIX:=$(DESTDIR)$(PREFIX)/X11R6/include/X11/pixmaps
+GNOME_PREFIX:=`gnome-config --prefix 2> /dev/null`
+KDE_PREFIX:=`kde-config --install apps --expandvars 2> /dev/null`
+KDE_ICON_PREFIX:=`kde-config --install icon --expandvars 2> /dev/null`
 
 
 # Built with sound by default  (override with "make nosound")
 
-NOSOUNDFLAG=__SOUND
+NOSOUNDFLAG:=__SOUND
 
 
 # Built with SVG support (via Cairo) by default  (override with "make nosvg")
 
-NOSVGFLAG=__SVG
+NOSVGFLAG:=__SVG
 
 
 # Built with SDL Pango support by default  (override with "make nopango")
 
-NOPANGOFLAG=___SDLPANGO
+NOPANGOFLAG:=___SDLPANGO
 
 
 # Built with libcairo2 support by default  (use libcairo1 with "make oldsvg")
 
-OLDSVGFLAG=__SVG
+OLDSVGFLAG:=__SVG
 
 
 # Maemo flag
 
-MAEMOFLAG=NO_MAEMOFLAG
+MAEMOFLAG:=NO_MAEMOFLAG
 
 
 # Where to find cursor shape XBMs
 
-MOUSEDIR=mouse
-CURSOR_SHAPES=LARGE
+MOUSEDIR:=mouse
+CURSOR_SHAPES:=LARGE
 
-# MOUSEDIR=mouse/16x16
-# CURSOR_SHAPES=SMALL
+# MOUSEDIR:=mouse/16x16
+# CURSOR_SHAPES:=SMALL
 
 
 # Libraries, paths, and flags:
 
-SDL_LIBS=$(shell sdl-config --libs) -lSDL_image -lSDL_ttf $(SDL_MIXER_LIB) $(SDL_PANGO_LIB)
-SDL_MIXER_LIB=-lSDL_mixer
-SDL_PANGO_LIB=-lSDL_Pango
-SDL_CFLAGS=$(shell sdl-config --cflags) $(SVG_CFLAGS)
+SDL_MIXER_LIB:=-lSDL_mixer
+SDL_PANGO_LIB:=-lSDL_Pango
+SDL_LIBS:=$(shell sdl-config --libs) -lSDL_image -lSDL_ttf $(SDL_MIXER_LIB) $(SDL_PANGO_LIB)
+SDL_CFLAGS:=$(shell sdl-config --cflags) $(SVG_CFLAGS)
 
 
-SVG_LIB=-lrsvg-2 -lcairo
-SVG_CFLAGS=-I/usr/include/librsvg-2/librsvg \
+SVG_LIB:=-lrsvg-2 -lcairo
+SVG_CFLAGS:=-I/usr/include/librsvg-2/librsvg \
 	-I/usr/include/gtk-2.0 \
 	-I/usr/include/glib-2.0 \
 	-I/usr/lib/glib-2.0/include \
 	-I/usr/include/cairo
 
-PAPER_LIB=-lpaper
-ARCH_LIBS=obj/postscript_print.o
+PAPER_LIB:=-lpaper
+ARCH_LIBS:=obj/postscript_print.o
 
 
 # The entire set of CFLAGS:
 
 #-ffast-math
-OPTFLAGS=-O2
-CFLAGS=$(OPTFLAGS) -W -Wall -fno-common -ffloat-store \
+OPTFLAGS:=-O2
+CFLAGS:=$(OPTFLAGS) -W -Wall -fno-common -ffloat-store \
 	-Wcast-align -Wredundant-decls \
 	-Wbad-function-cast -Wwrite-strings \
 	-Waggregate-return \
 	-Wstrict-prototypes -Wmissing-prototypes \
 	`src/test-option.sh -Wdeclaration-after-statement`
 
-DEFS=-DDATA_PREFIX=\"$(DATA_PREFIX)/\" \
+DEFS:=-DDATA_PREFIX=\"$(DATA_PREFIX)/\" \
 	-D$(NOSOUNDFLAG) -D$(NOSVGFLAG) -D$(OLDSVGFLAG) \
 	-D$(NOPANGOFLAG) \
 	-DDOC_PREFIX=\"$(DOC_PREFIX)/\" \
@@ -152,10 +152,10 @@ DEFS=-DDATA_PREFIX=\"$(DATA_PREFIX)/\" \
 	-DVER_DATE=\"$(VER_DATE)\" \
 	-D$(MAEMOFLAG)
 
-DEBUG_FLAGS=
-#DEBUG_FLAGS=-g
+DEBUG_FLAGS:=
+#DEBUG_FLAGS:=-g
 
-MOUSE_CFLAGS=-Isrc/$(MOUSEDIR) -D$(CURSOR_SHAPES)_CURSOR_SHAPES
+MOUSE_CFLAGS:=-Isrc/$(MOUSEDIR) -D$(CURSOR_SHAPES)_CURSOR_SHAPES
 
 
 # "make" with no arguments builds the program and man page from sources:
@@ -207,7 +207,7 @@ nosound:
 	@echo
 	@echo "Building with sound DISABLED"
 	@echo
-	make SDL_MIXER_LIB= NOSOUNDFLAG=NOSOUND
+	make SDL_MIXER_LIB:= NOSOUNDFLAG:=NOSOUND
 
 
 # "make nosvg" builds the program with SVG (Cairo2) support disabled:
@@ -216,7 +216,7 @@ nosvg:
 	@echo
 	@echo "Building with SVG DISABLED"
 	@echo
-	make SVG_LIB= SVG_CFLAGS= NOSVGFLAG=NOSVG
+	make SVG_LIB:= SVG_CFLAGS:= NOSVGFLAG:=NOSVG
 
 
 # "make nopango" builds the program with Pango support disabled:
@@ -225,7 +225,7 @@ nopango:
 	@echo
 	@echo "Building with Pango DISABLED"
 	@echo
-	make NOPANGOFLAG=NO_SDLPANGO SDL_PANGO_LIB=
+	make NOPANGOFLAG:=NO_SDLPANGO SDL_PANGO_LIB:=
 
 
 # "make oldsvg" builds the program using older SVG (Cairo1) libraries:
@@ -234,7 +234,7 @@ oldsvg:
 	@echo
 	@echo "Building with CAIRO1 SVG SUPPORT"
 	@echo
-	make SVG_LIB="-lcairo -lsvg -lsvg-cairo" OLDSVGFLAG=OLD_SVG
+	make SVG_LIB:="-lcairo -lsvg -lsvg-cairo" OLDSVGFLAG:=OLD_SVG
 
 
 # "make olpc" builds the program for an OLPC XO:
@@ -243,109 +243,109 @@ olpc:
 	@echo
 	@echo "Building for an OLPC XO"
 	@echo
-	make PREFIX=. SVG_LIB= SVG_CFLAGS= NOSVGFLAG=NOSVG OPTFLAGS='-O2 -fno-tree-pre -march=athlon -mtune=generic -mpreferred-stack-boundary=2 -mmmx -m3dnow -fomit-frame-pointer -falign-functions=0 -falign-jumps=0 -DOLPC_XO -DSUGAR'
+	make PREFIX:=. SVG_LIB:= SVG_CFLAGS:= NOSVGFLAG:=NOSVG OPTFLAGS:='-O2 -fno-tree-pre -march=athlon -mtune=generic -mpreferred-stack-boundary=2 -mmmx -m3dnow -fomit-frame-pointer -falign-functions=0 -falign-jumps=0 -DOLPC_XO -DSUGAR'
 
 
 # "make beos" builds the program for BeOS
 
 beos:
 	make \
-		PREFIX=./ \
-		BIN_PREFIX=./ \
-		DATA_PREFIX=./data \
-		DOC_PREFIX=./docs \
-		MAN_PREFIX=./share/man \
-		CONFDIR=./share/conf \
-		ICON_PREFIX=. \
-		X11_ICON_PREFIX=. \
-		LOCALE_PREFIX=./share/locale \
-		NOSVGFLAG=NOSVG \
-		NOPANGOFLAG=NO_SDLPANGO \
-		SDL_PANGO_LIB= \
-		SVG_LIB= \
-		PAPER_LIB= \
-		IM_PREFIX=./src \
-		SDL_CFLAGS="$(shell sdl-config --cflags)" \
-		SDL_LIBS="$(shell sdl-config --libs) -lSDL -lSDL_image -lSDL_ttf $(SDL_MIXER_LIB)" \
-		SDL_MIXER_LIB=-lSDL_mixer \
-		CFLAGS="-O1 -funroll-loops -fomit-frame-pointer -pipe -Wall" \
-		RSRC_CMD="xres -o tuxpaint src/tuxpaint.rsrc" \
-		MIMESET_CMD="mimeset -f tuxpaint" \
-		ARCH_LINKS="-lintl -lpng -lz -lbe -liconv" \
-		ARCH_HEADERS="src/BeOS_print.h" \
-		ARCH_LIBS="obj/BeOS_print.o" \
-		MAGIC_PREFIX=./lib/tuxpaint/plugins \
-		TARGET_PASSTHRU=beos
+		PREFIX:=./ \
+		BIN_PREFIX:=./ \
+		DATA_PREFIX:=./data \
+		DOC_PREFIX:=./docs \
+		MAN_PREFIX:=./share/man \
+		CONFDIR:=./share/conf \
+		ICON_PREFIX:=. \
+		X11_ICON_PREFIX:=. \
+		LOCALE_PREFIX:=./share/locale \
+		NOSVGFLAG:=NOSVG \
+		NOPANGOFLAG:=NO_SDLPANGO \
+		SDL_PANGO_LIB:= \
+		SVG_LIB:= \
+		PAPER_LIB:= \
+		IM_PREFIX:=./src \
+		SDL_CFLAGS:="$(shell sdl-config --cflags)" \
+		SDL_LIBS:="$(shell sdl-config --libs) -lSDL -lSDL_image -lSDL_ttf $(SDL_MIXER_LIB)" \
+		SDL_MIXER_LIB:=-lSDL_mixer \
+		CFLAGS:="-O1 -funroll-loops -fomit-frame-pointer -pipe -Wall" \
+		RSRC_CMD:="xres -o tuxpaint src/tuxpaint.rsrc" \
+		MIMESET_CMD:="mimeset -f tuxpaint" \
+		ARCH_LINKS:="-lintl -lpng -lz -lbe -liconv" \
+		ARCH_HEADERS:="src/BeOS_print.h" \
+		ARCH_LIBS:="obj/BeOS_print.o" \
+		MAGIC_PREFIX:=./lib/tuxpaint/plugins \
+		TARGET_PASSTHRU:=beos
 
 # "make win32" builds the program for Windows 2K/XP/Vista using MinGW/MSYS.
 # The DATA_, DOC_ and LOCALE_ prefixes are absolute paths.
 # Suitable for development/testing in the MinGW/MSYS environment.
 win32:
 	make \
-		PREFIX=/usr/local \
-		BIN_PREFIX=$(PREFIX)/bin \
-		EXE_EXT=.exe \
-		SO_TYPE=dll \
-		DATA_PREFIX=$(PREFIX)/share/tuxpaint \
-		DOC_PREFIX=$(PREFIX)/share/doc/tuxpaint \
-		MAN_PREFIX=$(PREFIX)/share/man \
-		DEVDOC_PREFIX=$(PREFIX)/share/doc/tuxpaint-dev \
-		DEVMAN_PREFIX=$(PREFIX)/share/man \
-		ICON_PREFIX=. \
-		X11_ICON_PREFIX=. \
-		LOCALE_PREFIX=$(PREFIX)/share/locale \
-		IM_PREFIX=$(PREFIX)/share/tuxpaint/im \
-		CONFDIR=$(PREFIX)/etc/tuxpaint \
-		ARCH_LINKS="-lintl -lpng12 -lwinspool -lshlwapi" \
-		ARCH_HEADERS="src/win32_print.h" \
-		ARCH_LIBS="obj/win32_print.o obj/resource.o" \
-		SVG_LIB="-lrsvg-2 -lcairo -lgobject-2.0" \
-		SVG_CFLAGS="-I/usr/local/include/librsvg-2/librsvg -I/usr/local/include/gtk-2.0 -I/usr/local/include/glib-2.0 -I/usr/local/lib/glib-2.0/include -I/usr/local/include/cairo" \
-		INCLUDE_PREFIX=$(PREFIX)/include \
-		MAGIC_PREFIX=$(PREFIX)/lib/tuxpaint/plugins \
-		TARGET_PASSTHRU=win32 \
-		PAPER_LIB=
+		PREFIX:=/usr/local \
+		BIN_PREFIX:=$(PREFIX)/bin \
+		EXE_EXT:=.exe \
+		SO_TYPE:=dll \
+		DATA_PREFIX:=$(PREFIX)/share/tuxpaint \
+		DOC_PREFIX:=$(PREFIX)/share/doc/tuxpaint \
+		MAN_PREFIX:=$(PREFIX)/share/man \
+		DEVDOC_PREFIX:=$(PREFIX)/share/doc/tuxpaint-dev \
+		DEVMAN_PREFIX:=$(PREFIX)/share/man \
+		ICON_PREFIX:=. \
+		X11_ICON_PREFIX:=. \
+		LOCALE_PREFIX:=$(PREFIX)/share/locale \
+		IM_PREFIX:=$(PREFIX)/share/tuxpaint/im \
+		CONFDIR:=$(PREFIX)/etc/tuxpaint \
+		ARCH_LINKS:="-lintl -lpng12 -lwinspool -lshlwapi" \
+		ARCH_HEADERS:="src/win32_print.h" \
+		ARCH_LIBS:="obj/win32_print.o obj/resource.o" \
+		SVG_LIB:="-lrsvg-2 -lcairo -lgobject-2.0" \
+		SVG_CFLAGS:="-I/usr/local/include/librsvg-2/librsvg -I/usr/local/include/gtk-2.0 -I/usr/local/include/glib-2.0 -I/usr/local/lib/glib-2.0/include -I/usr/local/include/cairo" \
+		INCLUDE_PREFIX:=$(PREFIX)/include \
+		MAGIC_PREFIX:=$(PREFIX)/lib/tuxpaint/plugins \
+		TARGET_PASSTHRU:=win32 \
+		PAPER_LIB:=
 
 # "make win9x" builds the program for Windows 9x/ME using MinGW/MSYS.
 # The DATA_, DOC_ and LOCALE_ prefixes are absolute paths.
 # Suitable for development/testing in the MinGW/MSYS environment.
 win9x:
 	make \
-		PREFIX=/usr/local \
-		BIN_PREFIX=$(PREFIX)/bin \
-		EXE_EXT=.exe \
-		SO_TYPE=dll \
-		DATA_PREFIX=$(PREFIX)/share/tuxpaint \
-		DOC_PREFIX=$(PREFIX)/share/doc/tuxpaint \
-		MAN_PREFIX=$(PREFIX)/share/man \
-		DEVDOC_PREFIX=$(PREFIX)/share/doc/tuxpaint-dev \
-		DEVMAN_PREFIX=$(PREFIX)/share/man \
-		ICON_PREFIX=. \
-		X11_ICON_PREFIX=. \
-		LOCALE_PREFIX=$(PREFIX)/share/locale \
-		IM_PREFIX=$(PREFIX)/share/tuxpaint/im \
-		CONFDIR=$(PREFIX)/etc/tuxpaint \
-		ARCH_LINKS="-lintl -lpng12 -lwinspool -lshlwapi" \
-		ARCH_HEADERS="src/win32_print.h" \
-		ARCH_LIBS="obj/win32_print.o obj/resource.o" \
-		SVG_CFLAGS=-I/usr/local/include/cairo \
-		SVG_LIB="-lcairo -lsvg -lsvg-cairo" \
-		OLDSVGFLAG=OLD_SVG \
-		NOPANGOFLAG=NO_SDLPANGO SDL_PANGO_LIB= \
-		INCLUDE_PREFIX=$(PREFIX)/include \
-		MAGIC_PREFIX=$(PREFIX)/lib/tuxpaint/plugins \
-		TARGET_PASSTHRU=win32 \
-		PAPER_LIB=
+		PREFIX:=/usr/local \
+		BIN_PREFIX:=$(PREFIX)/bin \
+		EXE_EXT:=.exe \
+		SO_TYPE:=dll \
+		DATA_PREFIX:=$(PREFIX)/share/tuxpaint \
+		DOC_PREFIX:=$(PREFIX)/share/doc/tuxpaint \
+		MAN_PREFIX:=$(PREFIX)/share/man \
+		DEVDOC_PREFIX:=$(PREFIX)/share/doc/tuxpaint-dev \
+		DEVMAN_PREFIX:=$(PREFIX)/share/man \
+		ICON_PREFIX:=. \
+		X11_ICON_PREFIX:=. \
+		LOCALE_PREFIX:=$(PREFIX)/share/locale \
+		IM_PREFIX:=$(PREFIX)/share/tuxpaint/im \
+		CONFDIR:=$(PREFIX)/etc/tuxpaint \
+		ARCH_LINKS:="-lintl -lpng12 -lwinspool -lshlwapi" \
+		ARCH_HEADERS:="src/win32_print.h" \
+		ARCH_LIBS:="obj/win32_print.o obj/resource.o" \
+		SVG_CFLAGS:=-I/usr/local/include/cairo \
+		SVG_LIB:="-lcairo -lsvg -lsvg-cairo" \
+		OLDSVGFLAG:=OLD_SVG \
+		NOPANGOFLAG:=NO_SDLPANGO SDL_PANGO_LIB:= \
+		INCLUDE_PREFIX:=$(PREFIX)/include \
+		MAGIC_PREFIX:=$(PREFIX)/lib/tuxpaint/plugins \
+		TARGET_PASSTHRU:=win32 \
+		PAPER_LIB:=
 
 # "make nokia770" builds the program for the Nokia 770.
 
 nokia770:
 	make \
-		DATA_PREFIX=/usr/share/tuxpaint \
-		SVG_LIB= SVG_CFLAGS= NOSVGFLAG=NOSVG \
-		MAEMOFLAG=NOKIA_770 \
-		LOCALE_PREFIX=$(PREFIX)/share/locale \
-		CONFDIR=/etc/tuxpaint
+		DATA_PREFIX:=/usr/share/tuxpaint \
+		SVG_LIB:= SVG_CFLAGS:= NOSVGFLAG:=NOSVG \
+		MAEMOFLAG:=NOKIA_770 \
+		LOCALE_PREFIX:=$(PREFIX)/share/locale \
+		CONFDIR:=/etc/tuxpaint
 
 
 # Include the i18n stuff (moved out of main Makefile -bjk 2007.05.02)
@@ -455,43 +455,43 @@ bdist-private-win32:	install-bin install-data install-doc \
 
 install-beos:
 	make install \
-		PREFIX=/boot/develop/tools/gnupro \
-		BIN_PREFIX=./ \
-		DATA_PREFIX=./data \
-		DOC_PREFIX=./docs \
-		MAN_PREFIX=./src \
-		CONFDIR=./src/ \
-		ICON_PREFIX=. \
-		X11_ICON_PREFIX=. \
-		LOCALE_PREFIX=./build/share/locale \
-		IM_PREFIX=./src \
-		SVG_LIB= SVG_CFLAGS= NOSVGFLAG=NOSVG \
-		NOPANGOFLAG=NO_SDLPANGO SDL_PANGO_LIB= \
-		CFLAGS="-O1 -funroll-loops -fomit-frame-pointer -pipe -Wall" \
-		RSRC_CMD="xres -o tuxpaint tuxpaint.rsrc" \
-		MIMESET_CMD="mimeset -f tuxpaint" \
-		ARCH_LINKS="-lintl -lpng -lz -lbe" \
-		ARCH_HEADERS="src/BeOS_print.h" \
-		ARCH_LIBS="obj/BeOS_print.o" \
-		MAGIC_PREFIX=./build/lib/tuxpaint/plugins
+		PREFIX:=/boot/develop/tools/gnupro \
+		BIN_PREFIX:=./ \
+		DATA_PREFIX:=./data \
+		DOC_PREFIX:=./docs \
+		MAN_PREFIX:=./src \
+		CONFDIR:=./src/ \
+		ICON_PREFIX:=. \
+		X11_ICON_PREFIX:=. \
+		LOCALE_PREFIX:=./build/share/locale \
+		IM_PREFIX:=./src \
+		SVG_LIB:= SVG_CFLAGS:= NOSVGFLAG:=NOSVG \
+		NOPANGOFLAG:=NO_SDLPANGO SDL_PANGO_LIB:= \
+		CFLAGS:="-O1 -funroll-loops -fomit-frame-pointer -pipe -Wall" \
+		RSRC_CMD:="xres -o tuxpaint tuxpaint.rsrc" \
+		MIMESET_CMD:="mimeset -f tuxpaint" \
+		ARCH_LINKS:="-lintl -lpng -lz -lbe" \
+		ARCH_HEADERS:="src/BeOS_print.h" \
+		ARCH_LIBS:="obj/BeOS_print.o" \
+		MAGIC_PREFIX:=./build/lib/tuxpaint/plugins
 
 # "make install-win32" installs Tux Paint, but using MinGW/MSYS settings
 # Suitable for development/testing in the MinGW/MSYS environment.
 install-win32:
 	@strip -s tuxpaint.exe
 	@make install-private-win32 \
-		PREFIX=/usr/local \
-		BIN_PREFIX=$(PREFIX)/bin \
-		EXE_EXT=.exe \
-		SO_TYPE=dll \
-		DATA_PREFIX=$(PREFIX)/share/tuxpaint \
-		DOC_PREFIX=$(PREFIX)/share/doc/tuxpaint \
-		MAN_PREFIX=$(PREFIX)/share/man \
-		ICON_PREFIX=. \
-		X11_ICON_PREFIX=. \
-		LOCALE_PREFIX=$(PREFIX)/share/locale \
-		IM_PREFIX=$(PREFIX)/share/tuxpaint/im \
-		CONFDIR=$(PREFIX)/etc/tuxpaint \
+		PREFIX:=/usr/local \
+		BIN_PREFIX:=$(PREFIX)/bin \
+		EXE_EXT:=.exe \
+		SO_TYPE:=dll \
+		DATA_PREFIX:=$(PREFIX)/share/tuxpaint \
+		DOC_PREFIX:=$(PREFIX)/share/doc/tuxpaint \
+		MAN_PREFIX:=$(PREFIX)/share/man \
+		ICON_PREFIX:=. \
+		X11_ICON_PREFIX:=. \
+		LOCALE_PREFIX:=$(PREFIX)/share/locale \
+		IM_PREFIX:=$(PREFIX)/share/tuxpaint/im \
+		CONFDIR:=$(PREFIX)/etc/tuxpaint \
 
 # "make bdist-win32" recompiles Tux Paint to work with executable-relative
 # data, docs and locale directories. Also copies all files, including DLLs,
@@ -500,38 +500,38 @@ bdist-win32:
 	@-rm -f tuxpaint.exe
 	@-rm -f obj/*.o
 	make \
-		PREFIX=./win32/bdist \
-		BIN_PREFIX=$(PREFIX)/bin \
-		EXE_EXT=.exe \
-		SO_TYPE=dll \
-		DATA_PREFIX=data \
-		DOC_PREFIX=docs \
-		LOCALE_PREFIX=locale \
-		IM_PREFIX=im \
-		CONFDIR=. \
-		ARCH_LINKS="-lintl -lpng12 -lwinspool -lshlwapi" \
-		ARCH_HEADERS="src/win32_print.h" \
-		ARCH_LIBS="obj/win32_print.o obj/resource.o" \
-		SVG_LIB="-lrsvg-2 -lcairo -lgobject-2.0" \
-		SVG_CFLAGS="-I/usr/local/include/librsvg-2/librsvg -I/usr/local/include/gtk-2.0 -I/usr/local/include/glib-2.0 -I/usr/local/lib/glib-2.0/include -I/usr/local/include/cairo" \
-		INCLUDE_PREFIX=plugins/include \
-		MAGIC_PREFIX=plugins \
-		TARGET_PASSTHRU=win32 \
-		PAPER_LIB= 
+		PREFIX:=./win32/bdist \
+		BIN_PREFIX:=$(PREFIX)/bin \
+		EXE_EXT:=.exe \
+		SO_TYPE:=dll \
+		DATA_PREFIX:=data \
+		DOC_PREFIX:=docs \
+		LOCALE_PREFIX:=locale \
+		IM_PREFIX:=im \
+		CONFDIR:=. \
+		ARCH_LINKS:="-lintl -lpng12 -lwinspool -lshlwapi" \
+		ARCH_HEADERS:="src/win32_print.h" \
+		ARCH_LIBS:="obj/win32_print.o obj/resource.o" \
+		SVG_LIB:="-lrsvg-2 -lcairo -lgobject-2.0" \
+		SVG_CFLAGS:="-I/usr/local/include/librsvg-2/librsvg -I/usr/local/include/gtk-2.0 -I/usr/local/include/glib-2.0 -I/usr/local/lib/glib-2.0/include -I/usr/local/include/cairo" \
+		INCLUDE_PREFIX:=plugins/include \
+		MAGIC_PREFIX:=plugins \
+		TARGET_PASSTHRU:=win32 \
+		PAPER_LIB:= 
 	strip -s tuxpaint.exe
 	make bdist-private-win32 \
-		PREFIX=./win32/bdist \
-		BIN_PREFIX=./win32/bdist \
-		EXE_EXT=.exe \
-		SO_TYPE=dll \
-		DATA_PREFIX=./win32/bdist/data \
-		DOC_PREFIX=./win32/bdist/docs \
-		LOCALE_PREFIX=./win32/bdist/locale \
-		IM_PREFIX=./win32/bdist/im \
-		CONFDIR=./win32/bdist \
-		INCLUDE_PREFIX=./win32/bdist/plugins/include \
-		MAGIC_PREFIX=./win32/bdist/plugins \
-		TARGET_PASSTHRU=win32
+		PREFIX:=./win32/bdist \
+		BIN_PREFIX:=./win32/bdist \
+		EXE_EXT:=.exe \
+		SO_TYPE:=dll \
+		DATA_PREFIX:=./win32/bdist/data \
+		DOC_PREFIX:=./win32/bdist/docs \
+		LOCALE_PREFIX:=./win32/bdist/locale \
+		IM_PREFIX:=./win32/bdist/im \
+		CONFDIR:=./win32/bdist \
+		INCLUDE_PREFIX:=./win32/bdist/plugins/include \
+		MAGIC_PREFIX:=./win32/bdist/plugins \
+		TARGET_PASSTHRU:=win32
 
 # "make bdist-clean" deletes the 'bdist' directory
 bdist-clean:
@@ -558,7 +558,7 @@ clean:
 
 clean-win32:
 	@make clean\
-		TARGET_PASSTHRU=win32
+		TARGET_PASSTHRU:=win32
 
 # "make uninstall" should remove the various parts from their
 # installation locations.  BE SURE the *PREFIX variables at the top
@@ -878,7 +878,7 @@ tuxpaint:	obj/tuxpaint.o obj/i18n.o obj/im.o obj/cursor.o obj/pixels.o \
 		$(HQXX_O) $(ARCH_LIBS)
 	@echo
 	@echo "...Linking Tux Paint..."
-	@$(CC) $(CFLAGS) $(DEBUG_FLAGS) $(SDL_CFLAGS) $(PAPER_CFLAGS) \
+	$(CC) $(CFLAGS) $(DEBUG_FLAGS) $(SDL_CFLAGS) $(PAPER_CFLAGS) \
 		$(DEFS) \
 		-o tuxpaint \
 		$^ \
