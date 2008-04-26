@@ -10,7 +10,7 @@
 # Sept. 4, 2005 - March 8, 2006
 # $Id$
 
-LINKS=links -dump -no-numbering -no-references
+LINKS:=links -dump -no-numbering -no-references
 
 all:	README.txt OPTIONS.txt FAQ.txt EXTENDING.txt ADVANCED-STAMPS-HOWTO.txt
 

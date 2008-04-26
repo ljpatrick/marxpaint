@@ -9,22 +9,22 @@
 # July 2007 - December 29, 2007
 
 
-SO_TYPE=so
+SO_TYPE:=so
 
 # Places to pick up Tux Paint Magic Plugin Dev header and SDL headers
 # (can't assume plugin dev stuff has been installed yet, since we're
 # part of Tux Paint base, so "install-plugin-dev" probably hasn't
 # been run yet; hence "-I../src/" to find 'tp_magic_api.h')
 
-TP_MAGIC_CFLAGS=$(shell if [ -x tp-magic-config ] ; then tp-magic-config --cflags ; else echo -I../src/ ; fi)
+TP_MAGIC_CFLAGS:=$(shell if [ -x tp-magic-config ] ; then tp-magic-config --cflags ; else echo -I../src/ ; fi)
 
-SDL_CFLAGS=$(shell sdl-config --cflags)
-CFLAGS=-g -Wall $(SDL_CFLAGS) $(TP_MAGIC_CFLAGS)
-SHARED_FLAGS=-shared -fpic
+SDL_CFLAGS:=$(shell sdl-config --cflags)
+CFLAGS:=-g -Wall $(SDL_CFLAGS) $(TP_MAGIC_CFLAGS)
+SHARED_FLAGS:=-shared -fpic
 
-SDL_LIBS=-L/usr/local/lib -lmingw32 -lSDL -lSDL_image -lSDL_ttf $(SDL_MIXER_LIB)
-SDL_MIXER_LIB=-lSDL_mixer
-ARCH_LINKS=-lintl -lpng12
+SDL_MIXER_LIB:=-lSDL_mixer
+ARCH_LINKS:=-lintl -lpng12
+SDL_LIBS:=-L/usr/local/lib -lmingw32 -lSDL -lSDL_image -lSDL_ttf $(SDL_MIXER_LIB)
 
 all:	negative.$(SO_TYPE) \
 	fade_darken.$(SO_TYPE) \
@@ -65,20 +65,20 @@ clean:
 
 beos:
 	make \
-		SO_TYPE=so \
-		PLUGIN_LIBS="$(SDL_LIBS) $(ARCH_LINKS) $(SDL_CFLAGS) $(TP_MAGIC_CFLAGS)"
+		SO_TYPE:=so \
+		PLUGIN_LIBS:="$(SDL_LIBS) $(ARCH_LINKS) $(SDL_CFLAGS) $(TP_MAGIC_CFLAGS)"
 
 
 # win32 versions of the targets
 
 cleanwin32:
 	make clean \
-		SO_TYPE=dll
+		SO_TYPE:=dll
 
 win32:
 	make \
-		SO_TYPE=dll \
-		PLUGIN_LIBS="$(SDL_LIBS) $(ARCH_LINKS)" \
+		SO_TYPE:=dll \
+		PLUGIN_LIBS:="$(SDL_LIBS) $(ARCH_LINKS)" \
 
 # Shared objects:
 # ---------------

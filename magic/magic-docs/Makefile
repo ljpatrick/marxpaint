@@ -10,9 +10,9 @@
 # August 2, 2007 - August 9, 2007
 # $Id$
 
-LINKS=links -dump -no-numbering -no-references
+LINKS:=links -dump -no-numbering -no-references
 
-TXT_FILES= \
+TXT_FILES:= \
 	blocks.txt \
 	blur.txt \
 	bricks.txt \

@@ -9,7 +9,7 @@
 # 
 # Sept. 4, 2005 - October 24, 2005
 
-LINKS=links -dump -no-numbering -no-references
+LINKS:=links -dump -no-numbering -no-references
 
 all:	README1.txt README2.txt OPTIONS.txt FAQ.txt PNG.txt
 

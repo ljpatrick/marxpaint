@@ -9,7 +9,7 @@
 # 
 # $Id$
 
-LINKS=links -dump -no-numbering -no-references
+LINKS:=links -dump -no-numbering -no-references
 
 all:	README.txt FAQ.txt
 # OPTIONS.txt

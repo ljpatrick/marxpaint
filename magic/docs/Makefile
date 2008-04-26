@@ -10,7 +10,7 @@
 # July 6, 2007 - July 6, 2007
 # $Id$
 
-LINKS=links -dump -no-numbering -no-references
+LINKS:=links -dump -no-numbering -no-references
 
 all:	README.txt
 
