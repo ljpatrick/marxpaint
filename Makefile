@@ -25,40 +25,40 @@ PREFIX=/usr/local
 
 # Root directory to place files when creating packages.
 
-PKG_ROOT=
+DESTDIR=$(PKG_ROOT)
 
 
 # Program:
 
-BIN_PREFIX=$(PKG_ROOT)$(PREFIX)/bin
+BIN_PREFIX=$(DESTDIR)$(PREFIX)/bin
 EXE_EXT=
 
 
 # Data:
 
-DATA_PREFIX=$(PKG_ROOT)$(PREFIX)/share/tuxpaint
+DATA_PREFIX=$(DESTDIR)$(PREFIX)/share/tuxpaint
 
 
 # Magic Tool plug-ins
 
-INCLUDE_PREFIX=$(PKG_ROOT)$(PREFIX)/include
-MAGIC_PREFIX=$(PKG_ROOT)$(PREFIX)/lib/tuxpaint/plugins
+INCLUDE_PREFIX=$(DESTDIR)$(PREFIX)/include
+MAGIC_PREFIX=$(DESTDIR)$(PREFIX)/lib/tuxpaint/plugins
 
 
 # Docs and man page:
 
-DOC_PREFIX=$(PKG_ROOT)$(PREFIX)/share/doc/tuxpaint
-DEVDOC_PREFIX=$(PKG_ROOT)$(PREFIX)/share/doc/tuxpaint-dev
-MAN_PREFIX=$(PKG_ROOT)$(PREFIX)/share/man
-DEVMAN_PREFIX=$(PKG_ROOT)$(PREFIX)/share/man
+DOC_PREFIX=$(DESTDIR)$(PREFIX)/share/doc/tuxpaint
+DEVDOC_PREFIX=$(DESTDIR)$(PREFIX)/share/doc/tuxpaint-dev
+MAN_PREFIX=$(DESTDIR)$(PREFIX)/share/man
+DEVMAN_PREFIX=$(DESTDIR)$(PREFIX)/share/man
 
 
 # 'System-wide' Config file:
 
 ifeq ($(PREFIX),/usr)
-  CONFDIR=$(PKG_ROOT)/etc/tuxpaint
+  CONFDIR=$(DESTDIR)/etc/tuxpaint
 else
-  CONFDIR=$(PKG_ROOT)$(PREFIX)/etc/tuxpaint
+  CONFDIR=$(DESTDIR)$(PREFIX)/etc/tuxpaint
 endif
 
 
@@ -70,8 +70,8 @@ MIMESET_CMD=echo -n
 
 # Icons and launchers:
 
-ICON_PREFIX=$(PKG_ROOT)$(PREFIX)/share/pixmaps
-X11_ICON_PREFIX=$(PKG_ROOT)$(PREFIX)/X11R6/include/X11/pixmaps
+ICON_PREFIX=$(DESTDIR)$(PREFIX)/share/pixmaps
+X11_ICON_PREFIX=$(DESTDIR)$(PREFIX)/X11R6/include/X11/pixmaps
 GNOME_PREFIX=`gnome-config --prefix 2> /dev/null`
 KDE_PREFIX=`kde-config --install apps --expandvars 2> /dev/null`
 KDE_ICON_PREFIX=`kde-config --install icon --expandvars 2> /dev/null`
@@ -639,12 +639,12 @@ install-gnome:
 	@echo
 	@echo "...Installing launcher icon into GNOME..."
 	@if [ "x$(GNOME_PREFIX)" != "x" ]; then \
-	 install -d $(PKG_ROOT)$(GNOME_PREFIX)/share/pixmaps; \
-	 cp data/images/icon.png $(PKG_ROOT)/$(GNOME_PREFIX)/share/pixmaps/tuxpaint.png; \
-	 chmod 644 $(PKG_ROOT)$(GNOME_PREFIX)/share/pixmaps/tuxpaint.png; \
-	 install -d $(PKG_ROOT)$(GNOME_PREFIX)/share/applications; \
-	 cp src/tuxpaint.desktop $(PKG_ROOT)$(GNOME_PREFIX)/share/applications/; \
-	 chmod 644 $(PKG_ROOT)$(GNOME_PREFIX)/share/applications/tuxpaint.desktop; \
+	 install -d $(DESTDIR)$(GNOME_PREFIX)/share/pixmaps; \
+	 cp data/images/icon.png $(DESTDIR)/$(GNOME_PREFIX)/share/pixmaps/tuxpaint.png; \
+	 chmod 644 $(DESTDIR)$(GNOME_PREFIX)/share/pixmaps/tuxpaint.png; \
+	 install -d $(DESTDIR)$(GNOME_PREFIX)/share/applications; \
+	 cp src/tuxpaint.desktop $(DESTDIR)$(GNOME_PREFIX)/share/applications/; \
+	 chmod 644 $(DESTDIR)$(GNOME_PREFIX)/share/applications/tuxpaint.desktop; \
 	fi
 
 
@@ -654,22 +654,22 @@ install-nokia770:
 	@echo
 	@echo "...Installing launcher icon into the Nokia 770..."
 	@if [ "x$(NOKIA770_PREFIX)" != "x" ]; then \
-	 install -d $(PKG_ROOT)$(NOKIA770_PREFIX)/share/pixmaps; \
-	 cp data/images/icon.png $(PKG_ROOT)$(NOKIA770_PREFIX)/share/pixmaps/tuxpaint.png; \
-	 chmod 644 $(PKG_ROOT)$(NOKIA770_PREFIX)/share/pixmaps/tuxpaint.png; \
-	 cp hildon/tuxpaint.xpm $(PKG_ROOT)/$(NOKIA770_PREFIX)/share/pixmaps/tuxpaint.xpm; \
-	 chmod 644 $(PKG_ROOT)$(NOKIA770_PREFIX)/share/pixmaps/tuxpaint.xpm; \
-	 install -d $(PKG_ROOT)$(NOKIA770_PREFIX)/share/applications/hildon; \
-	 cp hildon/tuxpaint.desktop $(PKG_ROOT)$(NOKIA770_PREFIX)/share/applications/hildon/; \
-	 chmod 644 $(PKG_ROOT)$(NOKIA770_PREFIX)/share/applications/hildon/tuxpaint.desktop; \
-	 install -d $(PKG_ROOT)/etc/tuxpaint; \
-	 cp hildon/tuxpaint.conf $(PKG_ROOT)/etc/tuxpaint; \
-	 chmod 644 $(PKG_ROOT)/etc/tuxpaint/tuxpaint.conf; \
-	 rm -rf $(PKG_ROOT)$(NOKIA770_PREFIX)/X11R6; \
-	 rm -rf $(PKG_ROOT)$(NOKIA770_PREFIX)/share/doc; \
-	 rm -rf $(PKG_ROOT)$(NOKIA770_PREFIX)/share/man; \
+	 install -d $(DESTDIR)$(NOKIA770_PREFIX)/share/pixmaps; \
+	 cp data/images/icon.png $(DESTDIR)$(NOKIA770_PREFIX)/share/pixmaps/tuxpaint.png; \
+	 chmod 644 $(DESTDIR)$(NOKIA770_PREFIX)/share/pixmaps/tuxpaint.png; \
+	 cp hildon/tuxpaint.xpm $(DESTDIR)/$(NOKIA770_PREFIX)/share/pixmaps/tuxpaint.xpm; \
+	 chmod 644 $(DESTDIR)$(NOKIA770_PREFIX)/share/pixmaps/tuxpaint.xpm; \
+	 install -d $(DESTDIR)$(NOKIA770_PREFIX)/share/applications/hildon; \
+	 cp hildon/tuxpaint.desktop $(DESTDIR)$(NOKIA770_PREFIX)/share/applications/hildon/; \
+	 chmod 644 $(DESTDIR)$(NOKIA770_PREFIX)/share/applications/hildon/tuxpaint.desktop; \
+	 install -d $(DESTDIR)/etc/tuxpaint; \
+	 cp hildon/tuxpaint.conf $(DESTDIR)/etc/tuxpaint; \
+	 chmod 644 $(DESTDIR)/etc/tuxpaint/tuxpaint.conf; \
+	 rm -rf $(DESTDIR)$(NOKIA770_PREFIX)/X11R6; \
+	 rm -rf $(DESTDIR)$(NOKIA770_PREFIX)/share/doc; \
+	 rm -rf $(DESTDIR)$(NOKIA770_PREFIX)/share/man; \
 	fi
-	@-find $(PKG_ROOT)$(NOKIA770_PREFIX) -name CVS -type d -exec rm -rf \{\} \;
+	@-find $(DESTDIR)$(NOKIA770_PREFIX) -name CVS -type d -exec rm -rf \{\} \;
 
 
 
@@ -679,58 +679,58 @@ install-kde:
 	@echo
 	@echo "...Installing launcher icon into KDE..."
 	@if [ "x$(KDE_PREFIX)" != "x" ]; then \
-	  install -d $(PKG_ROOT)$(KDE_PREFIX)/Graphics; \
-	  cp src/tuxpaint.desktop $(PKG_ROOT)$(KDE_PREFIX)/Graphics/; \
-	  chmod 644 $(PKG_ROOT)$(KDE_PREFIX)/Graphics/tuxpaint.desktop; \
+	  install -d $(DESTDIR)$(KDE_PREFIX)/Graphics; \
+	  cp src/tuxpaint.desktop $(DESTDIR)$(KDE_PREFIX)/Graphics/; \
+	  chmod 644 $(DESTDIR)$(KDE_PREFIX)/Graphics/tuxpaint.desktop; \
 	fi
 
 
 install-kde-icons:
 	@echo "...Installing launcher icon graphics into KDE..."
 	@if [ "x$(KDE_ICON_PREFIX)" != "x" ]; then \
-	  install -d $(PKG_ROOT)$(KDE_ICON_PREFIX)/hicolor/scalable/apps/; \
-	  install -d $(PKG_ROOT)$(KDE_ICON_PREFIX)/hicolor/192x192/apps/; \
-	  install -d $(PKG_ROOT)$(KDE_ICON_PREFIX)/hicolor/128x128/apps/; \
-	  install -d $(PKG_ROOT)$(KDE_ICON_PREFIX)/hicolor/96x96/apps/; \
-	  install -d $(PKG_ROOT)$(KDE_ICON_PREFIX)/hicolor/64x64/apps/; \
-	  install -d $(PKG_ROOT)$(KDE_ICON_PREFIX)/hicolor/48x48/apps/; \
-	  install -d $(PKG_ROOT)$(KDE_ICON_PREFIX)/hicolor/32x32/apps/; \
-	  install -d $(PKG_ROOT)$(KDE_ICON_PREFIX)/hicolor/22x22/apps/; \
-	  install -d $(PKG_ROOT)$(KDE_ICON_PREFIX)/hicolor/16x16/apps/; \
+	  install -d $(DESTDIR)$(KDE_ICON_PREFIX)/hicolor/scalable/apps/; \
+	  install -d $(DESTDIR)$(KDE_ICON_PREFIX)/hicolor/192x192/apps/; \
+	  install -d $(DESTDIR)$(KDE_ICON_PREFIX)/hicolor/128x128/apps/; \
+	  install -d $(DESTDIR)$(KDE_ICON_PREFIX)/hicolor/96x96/apps/; \
+	  install -d $(DESTDIR)$(KDE_ICON_PREFIX)/hicolor/64x64/apps/; \
+	  install -d $(DESTDIR)$(KDE_ICON_PREFIX)/hicolor/48x48/apps/; \
+	  install -d $(DESTDIR)$(KDE_ICON_PREFIX)/hicolor/32x32/apps/; \
+	  install -d $(DESTDIR)$(KDE_ICON_PREFIX)/hicolor/22x22/apps/; \
+	  install -d $(DESTDIR)$(KDE_ICON_PREFIX)/hicolor/16x16/apps/; \
 	  cp data/images/tuxpaint-icon.svg \
-		$(PKG_ROOT)$(KDE_ICON_PREFIX)/hicolor/scalable/apps/tuxpaint.svg; \
-          chmod 644 $(PKG_ROOT)$(KDE_ICON_PREFIX)/hicolor/scalable/apps/tuxpaint.svg; \
+		$(DESTDIR)$(KDE_ICON_PREFIX)/hicolor/scalable/apps/tuxpaint.svg; \
+          chmod 644 $(DESTDIR)$(KDE_ICON_PREFIX)/hicolor/scalable/apps/tuxpaint.svg; \
 	  cp data/images/icon192x192.png \
-		$(PKG_ROOT)$(KDE_ICON_PREFIX)/hicolor/192x192/apps/tuxpaint.png; \
-          chmod 644 $(PKG_ROOT)$(KDE_ICON_PREFIX)/hicolor/192x192/apps/tuxpaint.png; \
+		$(DESTDIR)$(KDE_ICON_PREFIX)/hicolor/192x192/apps/tuxpaint.png; \
+          chmod 644 $(DESTDIR)$(KDE_ICON_PREFIX)/hicolor/192x192/apps/tuxpaint.png; \
 	  cp data/images/icon128x128.png \
-		$(PKG_ROOT)$(KDE_ICON_PREFIX)/hicolor/128x128/apps/tuxpaint.png; \
-          chmod 644 $(PKG_ROOT)$(KDE_ICON_PREFIX)/hicolor/128x128/apps/tuxpaint.png; \
+		$(DESTDIR)$(KDE_ICON_PREFIX)/hicolor/128x128/apps/tuxpaint.png; \
+          chmod 644 $(DESTDIR)$(KDE_ICON_PREFIX)/hicolor/128x128/apps/tuxpaint.png; \
 	  cp data/images/icon96x96.png \
-		$(PKG_ROOT)$(KDE_ICON_PREFIX)/hicolor/96x96/apps/tuxpaint.png; \
-          chmod 644 $(PKG_ROOT)$(KDE_ICON_PREFIX)/hicolor/96x96/apps/tuxpaint.png; \
+		$(DESTDIR)$(KDE_ICON_PREFIX)/hicolor/96x96/apps/tuxpaint.png; \
+          chmod 644 $(DESTDIR)$(KDE_ICON_PREFIX)/hicolor/96x96/apps/tuxpaint.png; \
 	  cp data/images/icon64x64.png \
-		$(PKG_ROOT)$(KDE_ICON_PREFIX)/hicolor/64x64/apps/tuxpaint.png; \
-          chmod 644 $(PKG_ROOT)$(KDE_ICON_PREFIX)/hicolor/64x64/apps/tuxpaint.png; \
+		$(DESTDIR)$(KDE_ICON_PREFIX)/hicolor/64x64/apps/tuxpaint.png; \
+          chmod 644 $(DESTDIR)$(KDE_ICON_PREFIX)/hicolor/64x64/apps/tuxpaint.png; \
 	  cp data/images/icon48x48.png \
-		$(PKG_ROOT)$(KDE_ICON_PREFIX)/hicolor/48x48/apps/tuxpaint.png; \
-          chmod 644 $(PKG_ROOT)$(KDE_ICON_PREFIX)/hicolor/48x48/apps/tuxpaint.png; \
+		$(DESTDIR)$(KDE_ICON_PREFIX)/hicolor/48x48/apps/tuxpaint.png; \
+          chmod 644 $(DESTDIR)$(KDE_ICON_PREFIX)/hicolor/48x48/apps/tuxpaint.png; \
 	  cp data/images/icon32x32.png \
-		$(PKG_ROOT)$(KDE_ICON_PREFIX)/hicolor/32x32/apps/tuxpaint.png; \
-          chmod 644 $(PKG_ROOT)$(KDE_ICON_PREFIX)/hicolor/32x32/apps/tuxpaint.png; \
+		$(DESTDIR)$(KDE_ICON_PREFIX)/hicolor/32x32/apps/tuxpaint.png; \
+          chmod 644 $(DESTDIR)$(KDE_ICON_PREFIX)/hicolor/32x32/apps/tuxpaint.png; \
 	  cp data/images/icon22x22.png \
-		$(PKG_ROOT)$(KDE_ICON_PREFIX)/hicolor/22x22/apps/tuxpaint.png; \
-          chmod 644 $(PKG_ROOT)$(KDE_ICON_PREFIX)/hicolor/22x22/apps/tuxpaint.png; \
+		$(DESTDIR)$(KDE_ICON_PREFIX)/hicolor/22x22/apps/tuxpaint.png; \
+          chmod 644 $(DESTDIR)$(KDE_ICON_PREFIX)/hicolor/22x22/apps/tuxpaint.png; \
 	  cp data/images/icon16x16.png \
-		$(PKG_ROOT)$(KDE_ICON_PREFIX)/hicolor/16x16/apps/tuxpaint.png; \
-          chmod 644 $(PKG_ROOT)$(KDE_ICON_PREFIX)/hicolor/16x16/apps/tuxpaint.png; \
+		$(DESTDIR)$(KDE_ICON_PREFIX)/hicolor/16x16/apps/tuxpaint.png; \
+          chmod 644 $(DESTDIR)$(KDE_ICON_PREFIX)/hicolor/16x16/apps/tuxpaint.png; \
 	fi
 
 
 # Install the PNG icon (for GNOME, KDE, etc.)
 # and the 24-color 32x32 XPM (for other Window managers):
 
-# FIXME: Should this also use $(PKG_ROOT)?
+# FIXME: Should this also use $(DESTDIR)?
 
 install-icon:
 	@echo

@@ -47,7 +47,7 @@ mkdir -p $RPM_BUILD_ROOT/%{_bindir}
 mkdir -p $RPM_BUILD_ROOT/%{_datadir}
 mkdir -p $RPM_BUILD_ROOT/%{_mandir}
 
-make PREFIX=%{_prefix} PKG_ROOT=$RPM_BUILD_ROOT install
+make PREFIX=%{_prefix} DESTDIR=$RPM_BUILD_ROOT install
 
 find $RPM_BUILD_ROOT -name tuxpaint.desktop | sort | \
     sed -e "s@$RPM_BUILD_ROOT@@g" > filelist.icons

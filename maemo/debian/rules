@@ -35,7 +35,7 @@ build-stamp: configure-stamp
 	dh_testdir
 
 	# Add here commands to compile the package.
-	$(MAKE) nokia770 PKG_ROOT=$(CURDIR)/debian/tuxpaint PREFIX=/usr
+	$(MAKE) nokia770 DESTDIR=$(CURDIR)/debian/tuxpaint PREFIX=/usr
 	#docbook-to-man debian/tuxpaint.sgml > tuxpaint.1
 
 	touch build-stamp
@@ -57,8 +57,8 @@ install: build
 	dh_installdirs
 
 	# Add here commands to install the package into debian/tuxpaint.
-	$(MAKE) install PKG_ROOT=$(CURDIR)/debian/tuxpaint PREFIX=/usr
-	$(MAKE) install-nokia770 PKG_ROOT=$(CURDIR)/debian/tuxpaint NOKIA770_PREFIX=/usr
+	$(MAKE) install DESTDIR=$(CURDIR)/debian/tuxpaint PREFIX=/usr
+	$(MAKE) install-nokia770 DESTDIR=$(CURDIR)/debian/tuxpaint NOKIA770_PREFIX=/usr
 
 
 # Build architecture-independent files here.
