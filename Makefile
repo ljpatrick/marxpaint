@@ -875,14 +875,13 @@ install-man:
 tuxpaint:	obj/tuxpaint.o obj/i18n.o obj/im.o obj/cursor.o obj/pixels.o \
 		obj/rgblinear.o obj/playsound.o obj/fonts.o \
 		obj/progressbar.o obj/dirwalk.o obj/get_fname.o \
-		$(HQXX_O) $(ARCH_LIBS)
+		$(ARCH_LIBS)
 	@echo
 	@echo "...Linking Tux Paint..."
 	$(CC) $(CFLAGS) $(DEBUG_FLAGS) $(SDL_CFLAGS) $(PAPER_CFLAGS) \
 		$(DEFS) \
 		-o tuxpaint \
 		$^ \
-		$(HQXX_O) \
 		$(SDL_LIBS) \
 		$(SVG_LIB) \
 		$(PAPER_LIB) \
@@ -901,7 +900,6 @@ obj/tuxpaint.o:	src/tuxpaint.c \
 		src/tools.h src/titles.h src/colors.h src/shapes.h \
 		src/sounds.h src/tip_tux.h src/great.h \
 		src/tp_magic_api.h \
-		$(HQXX_H) \
 		src/$(MOUSEDIR)/arrow.xbm src/$(MOUSEDIR)/arrow-mask.xbm \
 		src/$(MOUSEDIR)/hand.xbm src/$(MOUSEDIR)/hand-mask.xbm \
 		src/$(MOUSEDIR)/insertion.xbm \
