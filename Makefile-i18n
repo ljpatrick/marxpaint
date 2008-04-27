@@ -12,12 +12,12 @@
 
 # Locale files
 
-LOCALE_PREFIX=$(PKG_ROOT)$(PREFIX)/share/locale
+LOCALE_PREFIX=$(DESTDIR)$(PREFIX)/share/locale
 
 
 # IM files
 
-IM_PREFIX=$(PKG_ROOT)$(PREFIX)/share/tuxpaint/im
+IM_PREFIX=$(DESTDIR)$(PREFIX)/share/tuxpaint/im
 
 
 # A default target, in case someone tries using this makefile directly...
