@@ -914,7 +914,7 @@ enum {
   NUM_MAGIC_PLACES
 };
 
-magic_api * magic_api_struct[NUM_MAGIC_PLACES];	// Pointer to our internal functions; passed to shared object's functions when we call them
+magic_api *magic_api_struct; // Pointer to our internal functions; passed to shared object's functions when we call them
 
 
 #if !defined(WIN32) && !defined(__APPLE__) && !defined(__BEOS__)
@@ -2445,7 +2445,7 @@ static void mainloop(void)
 	      draw_colors(magics[cur_magic].colors);
 	      if (magics[cur_magic].colors)
 	        magic_funcs[magics[cur_magic].handle_idx].set_color(
-						magic_api_struct[magics[cur_magic].place],
+						magic_api_struct,
 						color_hexes[cur_color][0],
 						color_hexes[cur_color][1],
 						color_hexes[cur_color][2]);
@@ -3078,7 +3078,7 @@ static void mainloop(void)
               
                 if (magics[cur_magic].colors)
 	          magic_funcs[magics[cur_magic].handle_idx].set_color(
-						magic_api_struct[magics[cur_magic].place],
+						magic_api_struct,
 						color_hexes[cur_color][0],
 						color_hexes[cur_color][1],
 						color_hexes[cur_color][2]);
@@ -3156,7 +3156,7 @@ static void mainloop(void)
 	      do_render_cur_text(0);
             else if (cur_tool == TOOL_MAGIC)
               magic_funcs[magics[cur_magic].handle_idx].set_color(
-						magic_api_struct[magics[cur_magic].place],
+						magic_api_struct,
 						color_hexes[cur_color][0],
 						color_hexes[cur_color][1],
 						color_hexes[cur_color][2]);
@@ -3287,7 +3287,7 @@ static void mainloop(void)
 
 	    reset_touched();
 
-	    magic_funcs[magics[cur_magic].handle_idx].click(magic_api_struct[magics[cur_magic].place],
+	    magic_funcs[magics[cur_magic].handle_idx].click(magic_api_struct,
 					                   magics[cur_magic].idx,
 					                   canvas, last,
 							   old_x, old_y,
@@ -3639,7 +3639,7 @@ static void mainloop(void)
             update_rect.w = 0;
             update_rect.h = 0;
 
-	    magic_funcs[magics[cur_magic].handle_idx].release(magic_api_struct[magics[cur_magic].place],
+	    magic_funcs[magics[cur_magic].handle_idx].release(magic_api_struct,
 					                   magics[cur_magic].idx,
 					                   canvas, last,
 							   old_x, old_y,
@@ -3875,7 +3875,7 @@ static void mainloop(void)
             update_rect.w = 0;
             update_rect.h = 0;
 
-	    magic_funcs[magics[cur_magic].handle_idx].drag(magic_api_struct[magics[cur_magic].place],
+	    magic_funcs[magics[cur_magic].handle_idx].drag(magic_api_struct,
 							  magics[cur_magic].idx,
 							  canvas, last,
 							  old_x, old_y,
@@ -11897,7 +11897,7 @@ static void cleanup(void)
 #endif
 
   for (i = 0; i < num_plugin_files; i++)
-    magic_funcs[i].shutdown(magic_api_struct[magics[cur_magic].place]);
+    magic_funcs[i].shutdown(magic_api_struct);
 
   free_cursor(&cursor_hand);
   free_cursor(&cursor_arrow);
@@ -16743,37 +16743,37 @@ void load_magic_plugins(void)
     {
       /* Set magic API hooks: */
 
-      magic_api_struct[plc] = (magic_api *) malloc(sizeof(magic_api));
-      magic_api_struct[plc]->tp_version = strdup(VER_VERSION);
+      magic_api_struct = (magic_api *) malloc(sizeof(magic_api));
+      magic_api_struct->tp_version = strdup(VER_VERSION);
 
       if (plc == MAGIC_PLACE_GLOBAL)
-        magic_api_struct[plc]->data_directory = strdup(DATA_PREFIX);
+        magic_api_struct->data_directory = strdup(DATA_PREFIX);
       else if (plc == MAGIC_PLACE_LOCAL)
-        magic_api_struct[plc]->data_directory = get_fname("plugins/data/", DIR_DATA);
+        magic_api_struct->data_directory = get_fname("plugins/data/", DIR_DATA);
 #ifdef __APPLE__
       else if (plc == MAGIC_PLACE_ALLUSERS)
-        magic_api_struct[plc]->data_directory = strdup("/Library/Application Support/TuxPaint/plugins/data");
+        magic_api_struct->data_directory = strdup("/Library/Application Support/TuxPaint/plugins/data");
 #endif
       else
-        magic_api_struct[plc]->data_directory = strdup("./");
+        magic_api_struct->data_directory = strdup("./");
 
-      magic_api_struct[plc]->update_progress_bar = update_progress_bar;
-      magic_api_struct[plc]->sRGB_to_linear = magic_sRGB_to_linear;
-      magic_api_struct[plc]->linear_to_sRGB = magic_linear_to_sRGB;
-      magic_api_struct[plc]->in_circle = in_circle_rad;
-      magic_api_struct[plc]->getpixel = magic_getpixel;
-      magic_api_struct[plc]->putpixel = magic_putpixel;
-      magic_api_struct[plc]->line = magic_line_func;
-      magic_api_struct[plc]->playsound = magic_playsound;
-      magic_api_struct[plc]->stopsound = magic_stopsound;
-      magic_api_struct[plc]->special_notify = special_notify;
-      magic_api_struct[plc]->button_down = magic_button_down;
-      magic_api_struct[plc]->rgbtohsv = rgbtohsv;
-      magic_api_struct[plc]->hsvtorgb = hsvtorgb;
-      magic_api_struct[plc]->canvas_w = canvas->w;
-      magic_api_struct[plc]->canvas_h = canvas->h;
-      magic_api_struct[plc]->scale = magic_scale;
-      magic_api_struct[plc]->touched = magic_touched;
+      magic_api_struct->update_progress_bar = update_progress_bar;
+      magic_api_struct->sRGB_to_linear = magic_sRGB_to_linear;
+      magic_api_struct->linear_to_sRGB = magic_linear_to_sRGB;
+      magic_api_struct->in_circle = in_circle_rad;
+      magic_api_struct->getpixel = magic_getpixel;
+      magic_api_struct->putpixel = magic_putpixel;
+      magic_api_struct->line = magic_line_func;
+      magic_api_struct->playsound = magic_playsound;
+      magic_api_struct->stopsound = magic_stopsound;
+      magic_api_struct->special_notify = special_notify;
+      magic_api_struct->button_down = magic_button_down;
+      magic_api_struct->rgbtohsv = rgbtohsv;
+      magic_api_struct->hsvtorgb = hsvtorgb;
+      magic_api_struct->canvas_w = canvas->w;
+      magic_api_struct->canvas_h = canvas->h;
+      magic_api_struct->scale = magic_scale;
+      magic_api_struct->touched = magic_touched;
 
 
       do
@@ -16977,13 +16977,13 @@ void load_magic_plugins(void)
 	      }
               else
 	      {
-	        res = magic_funcs[num_plugin_files].init(magic_api_struct[plc]);
+	        res = magic_funcs[num_plugin_files].init(magic_api_struct);
 
                 if (res != 0)
-	          n = magic_funcs[num_plugin_files].get_tool_count(magic_api_struct[plc]);
+	          n = magic_funcs[num_plugin_files].get_tool_count(magic_api_struct);
                 else
                 {
-                  magic_funcs[num_plugin_files].shutdown(magic_api_struct[plc]);
+                  magic_funcs[num_plugin_files].shutdown(magic_api_struct);
                   n = 0;
                 }
 
@@ -17001,11 +17001,11 @@ void load_magic_plugins(void)
 		    magics[num_magics].idx = i;
 		    magics[num_magics].place = plc;
 		    magics[num_magics].handle_idx = num_plugin_files;
-		    magics[num_magics].name = magic_funcs[num_plugin_files].get_name(magic_api_struct[plc], i);
-		    magics[num_magics].tip = magic_funcs[num_plugin_files].get_description(magic_api_struct[plc], i);
-		    magics[num_magics].colors = magic_funcs[num_plugin_files].requires_colors(magic_api_struct[plc], i);
+		    magics[num_magics].name = magic_funcs[num_plugin_files].get_name(magic_api_struct, i);
+		    magics[num_magics].tip = magic_funcs[num_plugin_files].get_description(magic_api_struct, i);
+		    magics[num_magics].colors = magic_funcs[num_plugin_files].requires_colors(magic_api_struct, i);
 
-		    magics[num_magics].img_icon = magic_funcs[num_plugin_files].get_icon(magic_api_struct[plc], i);
+		    magics[num_magics].img_icon = magic_funcs[num_plugin_files].get_icon(magic_api_struct, i);
 
 #ifdef DEBUG
 		    printf("-- %s\n", magics[num_magics].name);
