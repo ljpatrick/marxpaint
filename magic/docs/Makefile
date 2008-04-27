@@ -12,8 +12,10 @@
 
 LINKS:=links -dump -no-numbering -no-references
 
+.PHONY: all
 all:	README.txt
 
+.PHONY: clean
 clean:
 	-rm README.txt
 

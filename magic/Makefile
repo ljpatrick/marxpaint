@@ -26,6 +26,7 @@ SDL_MIXER_LIB:=-lSDL_mixer
 ARCH_LINKS:=-lintl -lpng12
 SDL_LIBS:=-L/usr/local/lib -lmingw32 -lSDL -lSDL_image -lSDL_ttf $(SDL_MIXER_LIB)
 
+.PHONY: all
 all:	negative.$(SO_TYPE) \
 	fade_darken.$(SO_TYPE) \
 	mirror_flip.$(SO_TYPE) \
@@ -52,9 +53,11 @@ all:	negative.$(SO_TYPE) \
 	distortion.$(SO_TYPE)
 	@strip *.$(SO_TYPE)
 
+.PHONY: install
 install:
 	cd .. ; make install-magic-plugins
 
+.PHONY: clean
 clean:
 	@echo
 	@echo "Cleaning up the Magic plug-ins directory ($(PWD))"
@@ -62,7 +65,7 @@ clean:
 
 
 # beos versions of the targets
-
+.PHONY: beos
 beos:
 	make \
 		SO_TYPE:=so \
@@ -70,11 +73,12 @@ beos:
 
 
 # win32 versions of the targets
-
+.PHONY: cleanwin32
 cleanwin32:
 	make clean \
 		SO_TYPE:=dll
 
+.PHONY: win32
 win32:
 	make \
 		SO_TYPE:=dll \

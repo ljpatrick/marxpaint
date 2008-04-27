@@ -157,9 +157,15 @@ DEBUG_FLAGS:=
 
 MOUSE_CFLAGS:=-Isrc/$(MOUSEDIR) -D$(CURSOR_SHAPES)_CURSOR_SHAPES
 
+.SUFFIXES
 
+#############################################################################
+#############################################################################
+#############################################################################
+#
 # "make" with no arguments builds the program and man page from sources:
-
+#
+.PHONY: all
 all:	tuxpaint translations magic-plugins tp-magic-config
 	@echo
 	@echo "--------------------------------------------------------------"
@@ -175,6 +181,7 @@ all:	tuxpaint translations magic-plugins tp-magic-config
 	@echo "or run 'sudo make install'.)"
 	@echo
 
+.PHONY: releaseclean
 releaseclean:
 	@echo
 	@echo "Cleaning release directory"
@@ -182,7 +189,9 @@ releaseclean:
 	@rm -rf "build/tuxpaint-$(VER_VERSION)" "build/tuxpaint-$(VER_VERSION).tar.gz"
 	@-if [ -d build ] ; then rmdir build ; fi
 
+.PHONY: releasedir
 releasedir: build/tuxpaint-$(VER_VERSION)
+
 
 build/tuxpaint-$(VER_VERSION):
 	@echo
@@ -193,6 +202,7 @@ build/tuxpaint-$(VER_VERSION):
 	     \( -wholename '*/CVS' -o -name .cvsignore -o -name 'build' -o -name '.#*' \) \
 	     -prune -o -type f -exec cp --parents -vdp \{\} build/tuxpaint-$(VER_VERSION)/ \;
 
+.PHONY: release
 release: releasedir
 	@echo
 	@echo "Creating release tarball"
@@ -202,7 +212,7 @@ release: releasedir
 
 
 # "make nosound" builds the program with sound disabled:
-
+.PHONY: nosound
 nosound:
 	@echo
 	@echo "Building with sound DISABLED"
@@ -211,7 +221,7 @@ nosound:
 
 
 # "make nosvg" builds the program with SVG (Cairo2) support disabled:
-
+.PHONY: nosvg
 nosvg:
 	@echo
 	@echo "Building with SVG DISABLED"
@@ -220,7 +230,7 @@ nosvg:
 
 
 # "make nopango" builds the program with Pango support disabled:
-
+.PHONY: nopango
 nopango:
 	@echo
 	@echo "Building with Pango DISABLED"
@@ -229,7 +239,7 @@ nopango:
 
 
 # "make oldsvg" builds the program using older SVG (Cairo1) libraries:
-
+.PHONY: oldsvg
 oldsvg:
 	@echo
 	@echo "Building with CAIRO1 SVG SUPPORT"
@@ -238,7 +248,7 @@ oldsvg:
 
 
 # "make olpc" builds the program for an OLPC XO:
-
+.PHONY: olpc
 olpc:
 	@echo
 	@echo "Building for an OLPC XO"
@@ -247,7 +257,7 @@ olpc:
 
 
 # "make beos" builds the program for BeOS
-
+.PHONY: beos
 beos:
 	make \
 		PREFIX:=./ \
@@ -280,6 +290,7 @@ beos:
 # "make win32" builds the program for Windows 2K/XP/Vista using MinGW/MSYS.
 # The DATA_, DOC_ and LOCALE_ prefixes are absolute paths.
 # Suitable for development/testing in the MinGW/MSYS environment.
+.PHONY: win32
 win32:
 	make \
 		PREFIX:=/usr/local \
@@ -309,6 +320,7 @@ win32:
 # "make win9x" builds the program for Windows 9x/ME using MinGW/MSYS.
 # The DATA_, DOC_ and LOCALE_ prefixes are absolute paths.
 # Suitable for development/testing in the MinGW/MSYS environment.
+.PHONY: win9x
 win9x:
 	make \
 		PREFIX:=/usr/local \
@@ -338,7 +350,7 @@ win9x:
 		PAPER_LIB:=
 
 # "make nokia770" builds the program for the Nokia 770.
-
+.PHONY: nokia770
 nokia770:
 	make \
 		DATA_PREFIX:=/usr/share/tuxpaint \
@@ -356,7 +368,7 @@ include Makefile-i18n
 # "make install" installs all of the various parts
 # (depending on the *PREFIX variables at the top, you probably need
 # to do this as superuser ("root"))
-
+.PHONY: install
 install:	install-bin install-data install-man install-doc \
 		install-magic-plugins \
 		install-magic-plugin-dev \
@@ -381,7 +393,7 @@ install:	install-bin install-data install-man install-doc \
 	@echo "Enjoy!"
 	@echo
 
-
+.PHONY: install-magic-plugins
 install-magic-plugins:
 	@echo
 	@echo "...Installing Magic Tool plug-ins..."
@@ -396,6 +408,7 @@ install-magic-plugins:
 	@chmod a+r,g-w,o-w $(DATA_PREFIX)/sounds/magic/*.wav \
 			$(DATA_PREFIX)/sounds/magic/*.ogg
 
+.PHONY: install-magic-plugins
 install-magic-plugin-dev:	src/tp_magic_api.h
 	@echo
 	@echo "...Installing Magic Tool plug-in development files and docs..."
@@ -410,7 +423,7 @@ install-magic-plugin-dev:	src/tp_magic_api.h
 
 # Installs the various parts for the MinGW/MSYS development/testing environment.
 
-
+.PHONY: install-private-win32
 install-private-win32:	install-bin install-data install-man install-doc \
 		install-magic-plugins \
 		install-magic-plugin-dev \
@@ -436,7 +449,7 @@ install-private-win32:	install-bin install-data install-man install-doc \
 
 
 # Installs the various parts for the MinGW/MSYS development/testing environment.
-
+.PHONY: bdist-private-win32
 bdist-private-win32:	install-bin install-data install-doc \
 		install-magic-plugins \
 		install-gettext install-im install-dlls\
@@ -452,7 +465,7 @@ bdist-private-win32:	install-bin install-data install-doc \
 
 
 # "make install-beos" installs Tux Paint, but using BeOS settings
-
+.PHONY: install-beos
 install-beos:
 	make install \
 		PREFIX:=/boot/develop/tools/gnupro \
@@ -477,6 +490,7 @@ install-beos:
 
 # "make install-win32" installs Tux Paint, but using MinGW/MSYS settings
 # Suitable for development/testing in the MinGW/MSYS environment.
+.PHONY: install-win32
 install-win32:
 	@strip -s tuxpaint.exe
 	@make install-private-win32 \
@@ -496,6 +510,7 @@ install-win32:
 # "make bdist-win32" recompiles Tux Paint to work with executable-relative
 # data, docs and locale directories. Also copies all files, including DLLs,
 # into a 'bdist' output directory ready for processing by an installer script.
+.PHONY: bdist-win32
 bdist-win32:
 	@-rm -f tuxpaint.exe
 	@-rm -f obj/*.o
@@ -534,6 +549,7 @@ bdist-win32:
 		TARGET_PASSTHRU:=win32
 
 # "make bdist-clean" deletes the 'bdist' directory
+.PHONY: bdist-clean
 bdist-clean:
 	@echo
 	@echo "Cleaning up the 'bdist' directory! ($(PWD))"
@@ -542,7 +558,7 @@ bdist-clean:
 
 # "make clean" deletes the program, the compiled objects and the
 # built man page (returns to factory archive, pretty much...)
-
+.PHONY: clean
 clean:
 	@echo
 	@echo "Cleaning up the build directory! ($(PWD))"
@@ -556,6 +572,7 @@ clean:
 	@cd magic && make clean$(TARGET_PASSTHRU)
 	@echo
 
+.PHONY: clean-win32
 clean-win32:
 	@make clean\
 		TARGET_PASSTHRU:=win32
@@ -563,7 +580,7 @@ clean-win32:
 # "make uninstall" should remove the various parts from their
 # installation locations.  BE SURE the *PREFIX variables at the top
 # are the same as they were when you installed, of course!!!
-
+.PHONY: uninstall
 uninstall:	uninstall-i18n
 	-if [ "x$(GNOME_PREFIX)" != "x" ]; then \
 	  rm $(GNOME_PREFIX)/share/applications/tuxpaint.desktop; \
@@ -604,7 +621,7 @@ uninstall:	uninstall-i18n
 
 
 # Install default config file:
-
+.PHONY: install-default-config
 install-default-config:
 	@echo
 	@echo "...Installing default config file..."
@@ -614,7 +631,7 @@ install-default-config:
 
 
 # Install example stamps
-
+.PHONY: install-example-stamps
 install-example-stamps:
 	@echo
 	@echo "...Installing example stamps..."
@@ -624,7 +641,7 @@ install-example-stamps:
 
 
 # Install example starters
-
+.PHONY: install-example-starters
 install-example-starters:
 	@echo
 	@echo "...Installing example starter images..."
@@ -634,7 +651,7 @@ install-example-starters:
 
 
 # Install a launcher icon in the Gnome menu
-
+.PHONY: install-gnome
 install-gnome:
 	@echo
 	@echo "...Installing launcher icon into GNOME..."
@@ -649,7 +666,7 @@ install-gnome:
 
 
 # Install a launcher icon for the Nokia 770.
-
+.PHONY: install-nokia770
 install-nokia770:
 	@echo
 	@echo "...Installing launcher icon into the Nokia 770..."
@@ -674,7 +691,7 @@ install-nokia770:
 
 
 # Install a launcher icon in the KDE menu...
-
+.PHONY: install-kde
 install-kde:
 	@echo
 	@echo "...Installing launcher icon into KDE..."
@@ -684,7 +701,7 @@ install-kde:
 	  chmod 644 $(DESTDIR)$(KDE_PREFIX)/Graphics/tuxpaint.desktop; \
 	fi
 
-
+.PHONY: install-kde-icons
 install-kde-icons:
 	@echo "...Installing launcher icon graphics into KDE..."
 	@if [ "x$(KDE_ICON_PREFIX)" != "x" ]; then \
@@ -731,7 +748,7 @@ install-kde-icons:
 # and the 24-color 32x32 XPM (for other Window managers):
 
 # FIXME: Should this also use $(DESTDIR)?
-
+.PHONY: install-icon
 install-icon:
 	@echo
 	@echo "...Installing launcher icon graphics..."
@@ -744,7 +761,7 @@ install-icon:
 
 
 # Install the program:
-
+.PHONY: install-bin
 install-bin:
 	@echo
 	@echo "...Installing program itself..."
@@ -753,7 +770,7 @@ install-bin:
 	@chmod a+rx,g-w,o-w $(BIN_PREFIX)/tuxpaint$(EXE_EXT)
 
 # Install the required Windows DLLs into the 'bdist' directory
-
+.PHONY: install-dlls
 install-dlls:
 	@echo
 	@echo "...Installing Windows DLLs..."
@@ -807,7 +824,7 @@ install-dlls:
 	@strip -s $(BIN_PREFIX)/lib/pango/1.6.0/modules/*.dll
 	
 # Install the import script:
-
+.PHONY: install-importscript
 install-importscript:
 	@echo
 	@echo "...Installing 'tuxpaint-import' script..."
@@ -816,7 +833,7 @@ install-importscript:
 
 
 # Install the data (sound, graphics, fonts):
-
+.PHONY: install-data
 install-data:
 	@echo
 	@echo "...Installing data files..."
@@ -832,7 +849,7 @@ install-data:
 
 
 # Install the text documentation:
-
+.PHONY: install-doc
 install-doc:
 	@echo
 	@echo "...Installing documentation..."
@@ -843,7 +860,7 @@ install-doc:
 
 
 # Install the man page:
-
+.PHONY: install-man
 install-man:
 	@echo
 	@echo "...Installing man pages..."
@@ -1012,7 +1029,7 @@ obj/resource.o:	win32/resources.rc win32/resource.h
 
 
 # Go into 'magic' subdirectory and buld magic plug-ins
-
+.PHONY: magic-plugins
 magic-plugins:	src/tp_magic_api.h
 	@cd magic && make $(TARGET_PASSTHRU)
 
@@ -1039,6 +1056,3 @@ tp-magic-config:	src/tp-magic-config.sh.in Makefile
 
 obj:
 	@mkdir obj
-
-.PHONY: win32
-

@@ -41,8 +41,10 @@ TXT_FILES:= \
 	tint.txt \
 	waves.txt
 
+.PHONY: all
 all:	$(TXT_FILES)
 
+.PHONY: clean
 clean:
 	@-rm $(TXT_FILES)
 

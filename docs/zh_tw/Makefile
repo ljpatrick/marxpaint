@@ -11,12 +11,14 @@
 
 LINKS:=links -dump -no-numbering -no-references
 
+.PHONY: all
 all:	README.txt \
 	OPTIONS.txt
 	# FAQ.txt \
 	# EXTENDING.txt \
 	# ADVANCED-STAMPS-HOWTO.txt
 
+.PHONY: clean
 clean:
 	-rm README.txt
 	-rm OPTIONS.txt

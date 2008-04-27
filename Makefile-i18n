@@ -21,7 +21,7 @@ IM_PREFIX=$(DESTDIR)$(PREFIX)/share/tuxpaint/im
 
 
 # A default target, in case someone tries using this makefile directly...
-
+.PHONY: all-i18n
 all-i18n:
 	@echo "This is Makefile-i18n; don't use it directly, it's used by Makefile"
 
@@ -32,6 +32,7 @@ INSTALLED_MOFILES:=$(patsubst trans/%.mo,$(LOCALE_PREFIX)/%/LC_MESSAGES/tuxpaint
 $(INSTALLED_MOFILES): $(LOCALE_PREFIX)/%/LC_MESSAGES/tuxpaint.mo: trans/%.mo
 	install -D -m 644 $< $@
 
+.PHONY: uninstall-i18n
 uninstall-i18n:
 	-rm $(LOCALE_PREFIX)/*/LC_MESSAGES/tuxpaint.mo
 	-rm $(IM_PREFIX)/ja.im
@@ -41,12 +42,12 @@ uninstall-i18n:
 
 
 # Install the translated text:
-
+.PHONY: install-gettext
 install-gettext: $(INSTALLED_MOFILES)
 
 
 # Install the Input Method files:
-
+.PHONY: install-im
 ifneq ($(IM_PREFIX),)
 install-im:
 	@echo
@@ -81,6 +82,7 @@ endif
 $(MOFILES): trans/%.mo: src/po/%.po  
 	msgfmt -o $@ $<
 
+.PHONY: translations
 translations: trans $(MOFILES)
 
 trans:

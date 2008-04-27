@@ -11,8 +11,10 @@
 
 LINKS:=links -dump -no-numbering -no-references
 
+.PHONY: all
 all:	README1.txt README2.txt OPTIONS.txt FAQ.txt PNG.txt
 
+.PHONY: clean
 clean:
 	-rm README1.txt
 	-rm README2.txt
