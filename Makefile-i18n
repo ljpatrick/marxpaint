@@ -30,10 +30,7 @@ MOFILES:=$(patsubst src/po/%.po,trans/%.mo,$(POFILES))
 INSTALLED_MOFILES:=$(patsubst trans/%.mo,$(LOCALE_PREFIX)/%/LC_MESSAGES/tuxpaint.mo,$(MOFILES))
 
 $(INSTALLED_MOFILES): $(LOCALE_PREFIX)/%/LC_MESSAGES/tuxpaint.mo: trans/%.mo
-	mkdir -p $(@D)
-	cp $< $@
-	chmod 644 $@
-
+	install -D -m 644 $< $@
 
 uninstall-i18n:
 	-rm $(LOCALE_PREFIX)/*/LC_MESSAGES/tuxpaint.mo

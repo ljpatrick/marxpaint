@@ -790,7 +790,7 @@ install-dlls:
 	@strip -s $(BIN_PREFIX)/*.dll
 	@echo
 	@echo "...Installing Configuration Files..."
-	@cp -r win32/etc/ $(BIN_PREFIX)
+	@cp -R win32/etc/ $(BIN_PREFIX)
 	@echo
 	@echo "...Installing Library Modules..."
 	@mkdir -p $(BIN_PREFIX)/lib/gtk-2.0/2.10.0/engines
