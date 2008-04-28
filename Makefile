@@ -116,7 +116,6 @@ CURSOR_SHAPES:=LARGE
 SDL_MIXER_LIB:=-lSDL_mixer
 SDL_PANGO_LIB:=-lSDL_Pango
 SDL_LIBS:=$(shell sdl-config --libs) -lSDL_image -lSDL_ttf $(SDL_MIXER_LIB) $(SDL_PANGO_LIB)
-SDL_CFLAGS:=$(shell sdl-config --cflags) $(SVG_CFLAGS)
 
 
 SVG_LIB:=-lrsvg-2 -lcairo
@@ -125,6 +124,8 @@ SVG_CFLAGS:=-I/usr/include/librsvg-2/librsvg \
 	-I/usr/include/glib-2.0 \
 	-I/usr/lib/glib-2.0/include \
 	-I/usr/include/cairo
+
+SDL_CFLAGS:=$(shell sdl-config --cflags) $(SVG_CFLAGS)
 
 PAPER_LIB:=-lpaper
 ARCH_LIBS:=obj/postscript_print.o
