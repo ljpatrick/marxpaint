@@ -60,7 +60,10 @@ $Id$
       otherwise changes will be overwritten the next time 'tuxpaint.desktop'
       is generated!
       (SourceForge Bug #1932808, via Ubuntu)
-    
+
+    * Makefile improvements.
+      Albert Cahalan <albert@users.sf.net>
+
   * Documentation Improvements:
     ---------------------------
     * Mentioned that canvas size can be changed in README (so it's not
