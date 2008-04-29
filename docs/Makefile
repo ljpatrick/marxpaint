@@ -7,10 +7,12 @@
 # Bill Kendrick
 # bill@newbreedsoftware.com
 # 
-# Sept. 4, 2005 - March 8, 2006
+# Sept. 4, 2005 - March 28, 2008
 # $Id$
 
-LINKS:=links -dump -no-numbering -no-references
+# Bah, "-no-numbering" and "-no-references" went away recently!? -bjk 2008.04.28
+LINKS_OPTIONS:=-dump
+LINKS:=links $(LINKS_OPTIONS)
 
 .PHONY: all
 all:	README.txt OPTIONS.txt FAQ.txt EXTENDING.txt ADVANCED-STAMPS-HOWTO.txt

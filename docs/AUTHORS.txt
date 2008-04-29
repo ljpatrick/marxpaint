@@ -7,7 +7,7 @@ bill@newbreedsoftware.com
 http://www.tuxpaint.org/
 
 
-June 17, 2002 - April 19, 2008
+June 17, 2002 - April 28, 2008
 
 $Id$
 
@@ -411,7 +411,7 @@ $Id$
     Yannig MARCHEGAY (Kokoyaya), Canonical Ltd, and Rosetta Contributors
     via Caroline Ford <caroline.ford.work@googlemail.com>
 
-  * Ojibway
+  * Ojibwe
     Ed Montgomery <edm@rocketmail.com>
 
   * Polish

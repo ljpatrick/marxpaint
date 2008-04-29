@@ -25,7 +25,7 @@
 
   $Id$
 
-  June 14, 2002 - April 5, 2008
+  June 14, 2002 - April 28, 2008
 */
 
 #include <stdio.h>
@@ -284,7 +284,8 @@ const language_to_locale_struct language_to_locale_array[] = {
   {"norsk", "nn_NO.UTF-8"},
   {"ndebele", "nr_ZA.UTF-8"},
   {"occitan", "oc_FR.UTF-8"},
-  {"ojibway", "oj_CA.UTF-8"},
+  {"ojibwe", "oj_CA.UTF-8"}, // Proper spelling
+  {"ojibway", "oj_CA.UTF-8"}, // For compatibility
   {"polish", "pl_PL.UTF-8"},
   {"polski", "pl_PL.UTF-8"},
   {"brazilian-portuguese", "pt_BR.UTF-8"},
@@ -521,7 +522,7 @@ void show_lang_usage(FILE * f, const char *const prg)
 /* nr */ "  ndebele\n"
 /* nn */ "  norwegian    nynorsk                norsk\n"
 /* oc */ "  occitan\n"
-/* oj */ "  ojibway\n"
+/* oj */ "  ojibwe       ojibway\n"
 /* pl */ "  polish       polski\n"
 /* pt_PT */ "  portuguese   portugues\n"
 /* ro */ "  romanian\n"

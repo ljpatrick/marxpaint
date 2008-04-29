@@ -96,6 +96,9 @@ $Id$
       to determine bitdepth.  (Fixes bug where some Magic tools, e.g., Grass,
       didn't work right on video depths other than 32bpp.)
 
+    * "Ojibwe" is the proper spelling of the language, accepting that as
+      a "--lang" option, too.
+
 * New Starters:
     -------------
     * Spirograph
