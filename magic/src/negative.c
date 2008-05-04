@@ -34,7 +34,7 @@
 #include "SDL_image.h"
 #include "SDL_mixer.h"
 
-Mix_Chunk * negative_snd;
+static Mix_Chunk * negative_snd;
 
 // No setup required:
 int negative_init(magic_api * api)
@@ -81,7 +81,7 @@ char * negative_get_description(magic_api * api, int which)
 }
 
 // Callback that does the negative color effect on a circle centered around x,y
-void do_negative(void * ptr, int which,
+static void do_negative(void * ptr, int which,
 	         SDL_Surface * canvas, SDL_Surface * last,
 	         int x, int y)
 {

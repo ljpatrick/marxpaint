@@ -38,7 +38,7 @@
 
 #define NUM_RAINBOW_COLORS 23
 
-const int rainbow_hexes[NUM_RAINBOW_COLORS][3] = {
+static const int rainbow_hexes[NUM_RAINBOW_COLORS][3] = {
   {255, 0, 0},
   {255, 64, 0},
   {255, 128, 0},
@@ -64,9 +64,9 @@ const int rainbow_hexes[NUM_RAINBOW_COLORS][3] = {
   {255, 0, 64}
 };
 
-int rainbow_color;
-Uint32 rainbow_rgb;
-Mix_Chunk * rainbow_snd;
+static int rainbow_color;
+static Uint32 rainbow_rgb;
+static Mix_Chunk * rainbow_snd;
 
 // Load our sfx:
 int rainbow_init(magic_api * api)
@@ -117,7 +117,7 @@ char * rainbow_get_description(magic_api * api, int which)
 
 // Do the effect:
 
-void rainbow_linecb(void * ptr, int which,
+static void rainbow_linecb(void * ptr, int which,
 		    SDL_Surface * canvas, SDL_Surface * last,
                     int x, int y)
 {

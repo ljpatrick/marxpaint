@@ -40,7 +40,7 @@ enum {
   NUM_TOOLS
 };
 
-Mix_Chunk * snd_effects[NUM_TOOLS];
+static Mix_Chunk * snd_effects[NUM_TOOLS];
 
 
 int fade_darken_init(magic_api * api)
@@ -110,7 +110,7 @@ char * fade_darken_get_description(magic_api * api, int which)
 }
 
 // Callback that does the fade_darken color effect on a circle centered around x,y
-void do_fade_darken(void * ptr, int which,
+static void do_fade_darken(void * ptr, int which,
 	         SDL_Surface * canvas, SDL_Surface * last,
 	         int x, int y)
 {

@@ -39,7 +39,7 @@
 
 /* Our globals: */
 
-Mix_Chunk * cartoon_snd;
+static Mix_Chunk * cartoon_snd;
 
 #define OUTLINE_THRESH 48
 
@@ -90,7 +90,7 @@ char * cartoon_get_description(magic_api * api, int which)
 
 // Do the effect:
 
-void do_cartoon(void * ptr, int which, SDL_Surface * canvas, SDL_Surface * last,
+static void do_cartoon(void * ptr, int which, SDL_Surface * canvas, SDL_Surface * last,
                 int x, int y)
 {
   magic_api * api = (magic_api *) ptr;

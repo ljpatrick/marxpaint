@@ -46,7 +46,7 @@ enum {
 
 /* Our globals: */
 
-Mix_Chunk * snd_effect[NUM_TOOLS];
+static Mix_Chunk * snd_effect[NUM_TOOLS];
 
 
 int blocks_chalk_drip_init(magic_api * api)
@@ -132,7 +132,7 @@ char * blocks_chalk_drip_get_description(magic_api * api, int which)
 
 // Do the effect:
 
-void blocks_chalk_drip_linecb(void * ptr, int which,
+static void blocks_chalk_drip_linecb(void * ptr, int which,
 			      SDL_Surface * canvas, SDL_Surface * last,
 	                      int x, int y)
 {

@@ -39,7 +39,7 @@
 
 /* Our globals: */
 
-Mix_Chunk * blur_snd;
+static Mix_Chunk * blur_snd;
 
 
 int blur_init(magic_api * api)
@@ -86,7 +86,7 @@ char * blur_get_description(magic_api * api, int which)
 
 // Do the effect:
 
-void do_blur(void * ptr, int which, SDL_Surface * canvas, SDL_Surface * last,
+static void do_blur(void * ptr, int which, SDL_Surface * canvas, SDL_Surface * last,
              int x, int y)
 {
   magic_api * api = (magic_api *) ptr;

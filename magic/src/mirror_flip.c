@@ -42,7 +42,7 @@ enum {
   NUM_TOOLS
 };
 
-Mix_Chunk * snd_effects[NUM_TOOLS];
+static Mix_Chunk * snd_effects[NUM_TOOLS];
 
 
 // No setup required:

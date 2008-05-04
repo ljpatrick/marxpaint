@@ -38,7 +38,7 @@
 
 /* Our globals: */
 
-Mix_Chunk * waves_snd;
+static Mix_Chunk * waves_snd;
 
 
 Uint32 waves_api_version(void) { return(TP_MAGIC_API_VERSION); }

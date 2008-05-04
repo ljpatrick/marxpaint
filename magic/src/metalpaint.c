@@ -36,8 +36,8 @@
 
 /* Our globals: */
 
-Mix_Chunk * metalpaint_snd;
-Uint8 metalpaint_r, metalpaint_g, metalpaint_b;
+static Mix_Chunk * metalpaint_snd;
+static Uint8 metalpaint_r, metalpaint_g, metalpaint_b;
 
 
 Uint32 metalpaint_api_version(void) { return(TP_MAGIC_API_VERSION); }
@@ -88,7 +88,7 @@ char * metalpaint_get_description(magic_api * api, int which)
 
 /* Based on 'Golden' gradient in The GIMP: */
 
-int metalpaint_gradient[METALPAINT_CYCLE] = {
+static int metalpaint_gradient[METALPAINT_CYCLE] = {
    56,  64,  73,  83,  93, 102, 113, 123,
   139, 154, 168, 180, 185, 189, 183, 174,
   164, 152, 142, 135, 129, 138, 149, 158,
@@ -97,7 +97,7 @@ int metalpaint_gradient[METALPAINT_CYCLE] = {
 
 // Do the effect:
 
-void do_metalpaint(void * ptr, int which, SDL_Surface * canvas, SDL_Surface * last,
+static void do_metalpaint(void * ptr, int which, SDL_Surface * canvas, SDL_Surface * last,
                 int x, int y)
 {
   magic_api * api = (magic_api *) ptr;

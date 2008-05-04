@@ -42,17 +42,17 @@ typedef struct
   float x, y;
 } Point2D;
 
-Mix_Chunk * calligraphy_snd;
-Point2D calligraphy_control_points[4];
-int calligraphy_r, calligraphy_g, calligraphy_b;
-int calligraphy_old_thick;
-Uint32 calligraphy_last_time;
-SDL_Surface * calligraphy_brush, * calligraphy_colored_brush;
+static Mix_Chunk * calligraphy_snd;
+static Point2D calligraphy_control_points[4];
+static int calligraphy_r, calligraphy_g, calligraphy_b;
+static int calligraphy_old_thick;
+static Uint32 calligraphy_last_time;
+static SDL_Surface * calligraphy_brush, * calligraphy_colored_brush;
 
 
-Point2D calligraphy_PointOnCubicBezier(Point2D* cp, float t);
-void calligraphy_ComputeBezier(Point2D* cp, int numberOfPoints, Point2D* curve);
-float calligraphy_dist(float x1, float y1, float x2, float y2);
+static Point2D calligraphy_PointOnCubicBezier(Point2D* cp, float t);
+static void calligraphy_ComputeBezier(Point2D* cp, int numberOfPoints, Point2D* curve);
+static float calligraphy_dist(float x1, float y1, float x2, float y2);
 
 
 
@@ -366,7 +366,7 @@ cp[3] is the end point, or P3 in the above diagram
 t is the parameter value, 0 <= t <= 1
 */
 
-Point2D calligraphy_PointOnCubicBezier( Point2D* cp, float t )
+static Point2D calligraphy_PointOnCubicBezier( Point2D* cp, float t )
 {
     float   ax, bx, cx;
     float   ay, by, cy;
@@ -402,7 +402,7 @@ Point2D calligraphy_PointOnCubicBezier( Point2D* cp, float t )
  <sizeof(Point2D) numberOfPoints>
 */
 
-void calligraphy_ComputeBezier(Point2D* cp, int numberOfPoints, Point2D* curve)
+static void calligraphy_ComputeBezier(Point2D* cp, int numberOfPoints, Point2D* curve)
 {
     float   dt;
     int   i;
@@ -413,7 +413,7 @@ void calligraphy_ComputeBezier(Point2D* cp, int numberOfPoints, Point2D* curve)
         curve[i] = calligraphy_PointOnCubicBezier( cp, i*dt );
 }
 
-float calligraphy_dist(float x1, float y1, float x2, float y2)
+static float calligraphy_dist(float x1, float y1, float x2, float y2)
 {
   float d;
   d = (sqrt((x2 - x1) * (x2 - x1) + (y2 - y1) * (y2 - y1)));

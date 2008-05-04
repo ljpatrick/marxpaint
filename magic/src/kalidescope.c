@@ -36,8 +36,8 @@
 
 /* Our globals: */
 
-Mix_Chunk * kalidescope_snd;
-Uint8 kalidescope_r, kalidescope_g, kalidescope_b;
+static Mix_Chunk * kalidescope_snd;
+static Uint8 kalidescope_r, kalidescope_g, kalidescope_b;
 
 
 Uint32 kalidescope_api_version(void) { return(TP_MAGIC_API_VERSION); }
@@ -86,7 +86,7 @@ char * kalidescope_get_description(magic_api * api, int which)
 
 // Do the effect:
 
-void do_kalidescope(void * ptr, int which, SDL_Surface * canvas, SDL_Surface * last,
+static void do_kalidescope(void * ptr, int which, SDL_Surface * canvas, SDL_Surface * last,
                 int x, int y)
 {
   magic_api * api = (magic_api *) ptr;

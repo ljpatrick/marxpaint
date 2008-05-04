@@ -40,14 +40,14 @@
 
 /* Our globals: */
 
-Mix_Chunk * fill_snd;
-Uint8 fill_r, fill_g, fill_b;
+static Mix_Chunk * fill_snd;
+static Uint8 fill_r, fill_g, fill_b;
 
 /* Local function prototypes: */
 
-static int colors_close(magic_api * api, SDL_Surface * canvas,
+static static int colors_close(magic_api * api, SDL_Surface * canvas,
 			Uint32 c1, Uint32 c2);
-void do_flood_fill(magic_api * api, SDL_Surface * canvas, int x, int y,
+static void do_flood_fill(magic_api * api, SDL_Surface * canvas, int x, int y,
                    Uint32 cur_colr, Uint32 old_colr);
 
 
@@ -178,7 +178,7 @@ static int colors_close(magic_api * api, SDL_Surface * canvas,
 }
 
 
-void do_flood_fill(magic_api * api, SDL_Surface * canvas, int x, int y,
+static void do_flood_fill(magic_api * api, SDL_Surface * canvas, int x, int y,
                    Uint32 cur_colr, Uint32 old_colr)
 {
   int fillL, fillR, i, in_line;

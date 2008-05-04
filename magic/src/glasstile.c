@@ -37,13 +37,13 @@
 
 /* Our globals: */
 
-Mix_Chunk * glasstile_snd;
+static Mix_Chunk * glasstile_snd;
 
 Uint32 glasstile_api_version(void) { return(TP_MAGIC_API_VERSION); }
 
-int * * glasstile_hit;
-int glasstile_hit_xsize;
-int glasstile_hit_ysize;
+static int * * glasstile_hit;
+static int glasstile_hit_xsize;
+static int glasstile_hit_ysize;
 
 
 // No setup required:
@@ -92,7 +92,7 @@ char * glasstile_get_description(magic_api * api, int which)
 
 // Do the effect:
 
-void do_glasstile(void * ptr, int which, SDL_Surface * canvas, SDL_Surface * last,
+static void do_glasstile(void * ptr, int which, SDL_Surface * canvas, SDL_Surface * last,
                 int x, int y)
 {
   magic_api * api = (magic_api *) ptr;

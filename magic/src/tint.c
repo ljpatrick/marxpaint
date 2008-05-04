@@ -37,8 +37,8 @@
 
 /* Our globals: */
 
-Mix_Chunk * tint_snd;
-Uint8 tint_r, tint_g, tint_b;
+static Mix_Chunk * tint_snd;
+static Uint8 tint_r, tint_g, tint_b;
 
 
 // No setup required:
@@ -87,7 +87,7 @@ char * tint_get_description(magic_api * api, int which)
 
 // Do the effect:
 
-void do_tint(void * ptr, int which, SDL_Surface * canvas, SDL_Surface * last,
+static void do_tint(void * ptr, int which, SDL_Surface * canvas, SDL_Surface * last,
                 int x, int y)
 {
   magic_api * api = (magic_api *) ptr;

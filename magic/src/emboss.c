@@ -36,7 +36,7 @@
 
 /* Our globals: */
 
-Mix_Chunk * emboss_snd;
+static Mix_Chunk * emboss_snd;
 
 
 Uint32 emboss_api_version(void) { return(TP_MAGIC_API_VERSION); }
@@ -85,7 +85,7 @@ char * emboss_get_description(magic_api * api, int which)
 
 // Do the effect:
 
-void do_emboss(void * ptr, int which, SDL_Surface * canvas, SDL_Surface * last,
+static void do_emboss(void * ptr, int which, SDL_Surface * canvas, SDL_Surface * last,
                 int x, int y)
 {
   magic_api * api = (magic_api *) ptr;

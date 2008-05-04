@@ -39,8 +39,8 @@
 
 /* Our globals: */
 
-Mix_Chunk * light1_snd, * light2_snd;
-float light_h, light_s, light_v;
+static Mix_Chunk * light1_snd, * light2_snd;
+static float light_h, light_s, light_v;
 
 
 Uint32 light_api_version(void) { return(TP_MAGIC_API_VERSION); }
@@ -93,7 +93,7 @@ char * light_get_description(magic_api * api, int which)
 
 // Do the effect:
 
-void do_light(void * ptr, int which, SDL_Surface * canvas, SDL_Surface * last,
+static void do_light(void * ptr, int which, SDL_Surface * canvas, SDL_Surface * last,
                 int x, int y)
 {
   magic_api * api = (magic_api *) ptr;

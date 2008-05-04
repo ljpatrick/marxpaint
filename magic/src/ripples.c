@@ -38,9 +38,9 @@
 
 /* Our globals: */
 
-Mix_Chunk * ripples_snd;
+static Mix_Chunk * ripples_snd;
 
-int ripples_z, ripples_brite;
+static int ripples_z, ripples_brite;
 
 Uint32 ripples_api_version(void) { return(TP_MAGIC_API_VERSION); }
 
@@ -95,7 +95,7 @@ void ripples_drag(magic_api * api, int which, SDL_Surface * canvas,
 {
 }
 
-void ripples_linecb(void * ptr, int which,
+static void ripples_linecb(void * ptr, int which,
                     SDL_Surface * canvas, SDL_Surface * last,
                     int x, int y)
 {

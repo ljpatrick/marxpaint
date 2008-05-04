@@ -37,11 +37,11 @@
 
 /* Our globals: */
 
-Mix_Chunk * foam_snd;
-Uint8 foam_r, foam_g, foam_b;
-int foam_mask_w, foam_mask_h;
-int * foam_mask, * foam_mask_tmp;
-SDL_Surface * foam_7, * foam_5, * foam_3, * foam_1;
+static Mix_Chunk * foam_snd;
+static Uint8 foam_r, foam_g, foam_b;
+static int foam_mask_w, foam_mask_h;
+static int * foam_mask, * foam_mask_tmp;
+static SDL_Surface * foam_7, * foam_5, * foam_3, * foam_1;
 
 void foam_release(magic_api * api, int which,
 	           SDL_Surface * canvas, SDL_Surface * last,
@@ -113,7 +113,7 @@ char * foam_get_description(magic_api * api, int which)
 
 // Do the effect:
 
-void do_foam(void * ptr, int which, SDL_Surface * canvas, SDL_Surface * last,
+static void do_foam(void * ptr, int which, SDL_Surface * canvas, SDL_Surface * last,
                 int x, int y)
 {
   magic_api * api = (magic_api *) ptr;
@@ -183,7 +183,7 @@ void foam_click(magic_api * api, int which,
   foam_drag(api, which, canvas, last, x, y, x, y, update_rect);
 }
 
-int foam_mask_test(int r, int x, int y)
+static int foam_mask_test(int r, int x, int y)
 {
   int xx, yy;
   int tot, bub_r;

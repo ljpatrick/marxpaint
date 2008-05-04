@@ -38,14 +38,14 @@
 
 /* Our globals: */
 
-Mix_Chunk * grass_snd;
-Uint8 grass_r, grass_g, grass_b;
-SDL_Surface * img_grass;
+static Mix_Chunk * grass_snd;
+static Uint8 grass_r, grass_g, grass_b;
+static SDL_Surface * img_grass;
 
 
 /* Local prototypes: */
 
-void do_grass(void * ptr, int which,
+static void do_grass(void * ptr, int which,
 	      SDL_Surface * canvas, SDL_Surface * last,
 	      int x, int y);
 
@@ -154,7 +154,7 @@ int grass_requires_colors(magic_api * api, int which)
   return 1;
 }
 
-void do_grass(void * ptr, int which,
+static void do_grass(void * ptr, int which,
 	      SDL_Surface * canvas, SDL_Surface * last,
 	      int x, int y)
 {

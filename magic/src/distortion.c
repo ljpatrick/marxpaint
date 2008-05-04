@@ -44,7 +44,7 @@
 /* --------------------- */
 
 /* Sound effects: */
-Mix_Chunk * snd_effect;
+static Mix_Chunk * snd_effect;
 
 
 /* Our local function prototypes: */
@@ -59,7 +59,7 @@ void distortion_drag(magic_api * api, int which, SDL_Surface * canvas,
 	          SDL_Surface * snapshot, int ox, int oy, int x, int y,
 		  SDL_Rect * update_rect);
 
-void distortion_line_callback(void * ptr, int which,
+static void distortion_line_callback(void * ptr, int which,
                            SDL_Surface * canvas, SDL_Surface * snapshot,
                            int x, int y);
 
@@ -201,7 +201,7 @@ void distortion_set_color(magic_api * api, Uint8 r, Uint8 g, Uint8 b)
 
 // Our "callback" function
 
-void distortion_line_callback(void * ptr, int which,
+static void distortion_line_callback(void * ptr, int which,
                            SDL_Surface * canvas, SDL_Surface * snapshot,
                            int x, int y)
 {

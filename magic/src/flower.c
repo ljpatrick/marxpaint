@@ -43,12 +43,12 @@ enum { LEAFSIDE_RIGHT_DOWN,
        LEAFSIDE_RIGHT_UP,
        LEAFSIDE_LEFT_UP };
 
-Mix_Chunk * flower_click_snd, * flower_release_snd;
-Uint8 flower_r, flower_g, flower_b;
-int flower_min_x, flower_max_x, flower_bottom_x, flower_bottom_y;
-int flower_side_first;
-int flower_side_decided;
-SDL_Surface * flower_base, * flower_leaf, * flower_petals,
+static Mix_Chunk * flower_click_snd, * flower_release_snd;
+static Uint8 flower_r, flower_g, flower_b;
+static int flower_min_x, flower_max_x, flower_bottom_x, flower_bottom_y;
+static int flower_side_first;
+static int flower_side_decided;
+static SDL_Surface * flower_base, * flower_leaf, * flower_petals,
   * flower_petals_colorized;
 
 /* Local function prototypes: */
@@ -58,16 +58,16 @@ typedef struct
   float x, y;
 } Point2D;
 
-void flower_predrag(magic_api * api, SDL_Surface * canvas,
+static void flower_predrag(magic_api * api, SDL_Surface * canvas,
 	          SDL_Surface * last, int ox, int oy, int x, int y);
-void flower_drawbase(magic_api * api, SDL_Surface * canvas);
-void flower_drawstalk(magic_api * api, SDL_Surface * canvas,
+static void flower_drawbase(magic_api * api, SDL_Surface * canvas);
+static void flower_drawstalk(magic_api * api, SDL_Surface * canvas,
 		      int top_x, int top_y, int minx, int maxx,
 		      int bottom_x, int bottom_y, int final);
-void flower_drawflower(magic_api * api, SDL_Surface * canvas, int x, int y);
-Point2D flower_PointOnCubicBezier(Point2D* cp, float t);
-void flower_ComputeBezier(Point2D* cp, int numberOfPoints, Point2D* curve);
-void flower_colorize_petals(magic_api * api);
+static void flower_drawflower(magic_api * api, SDL_Surface * canvas, int x, int y);
+static Point2D flower_PointOnCubicBezier(Point2D* cp, float t);
+static void flower_ComputeBezier(Point2D* cp, int numberOfPoints, Point2D* curve);
+static void flower_colorize_petals(magic_api * api);
 
 
 
@@ -132,7 +132,7 @@ char * flower_get_description(magic_api * api, int which)
 }
 
 // Affect the canvas on drag:
-void flower_predrag(magic_api * api, SDL_Surface * canvas,
+static void flower_predrag(magic_api * api, SDL_Surface * canvas,
 	          SDL_Surface * last, int ox, int oy, int x, int y)
 {
   if (x < flower_min_x)
@@ -251,7 +251,7 @@ void flower_release(magic_api * api, int which,
 }
 
 
-void flower_drawflower(magic_api * api, SDL_Surface * canvas, int x, int y)
+static void flower_drawflower(magic_api * api, SDL_Surface * canvas, int x, int y)
 {
   SDL_Rect dest;
 
@@ -261,7 +261,7 @@ void flower_drawflower(magic_api * api, SDL_Surface * canvas, int x, int y)
   SDL_BlitSurface(flower_petals_colorized, NULL, canvas, &dest);
 }
 
-void flower_drawbase(magic_api * api, SDL_Surface * canvas)
+static void flower_drawbase(magic_api * api, SDL_Surface * canvas)
 {
   SDL_Rect dest;
 
@@ -271,7 +271,7 @@ void flower_drawbase(magic_api * api, SDL_Surface * canvas)
   SDL_BlitSurface(flower_base, NULL, canvas, &dest);
 }
 
-void flower_drawstalk(magic_api * api, SDL_Surface * canvas,
+static void flower_drawstalk(magic_api * api, SDL_Surface * canvas,
 		      int top_x, int top_y, int minx, int maxx,
 		      int bottom_x, int bottom_y, int final)
 {
@@ -493,7 +493,7 @@ cp[3] is the end point, or P3 in the above diagram
 t is the parameter value, 0 <= t <= 1
 */
 
-Point2D flower_PointOnCubicBezier( Point2D* cp, float t )
+static Point2D flower_PointOnCubicBezier( Point2D* cp, float t )
 {
     float   ax, bx, cx;
     float   ay, by, cy;
@@ -528,7 +528,7 @@ Point2D flower_PointOnCubicBezier( Point2D* cp, float t )
  <sizeof(Point2D) numberOfPoints>
 */
 
-void flower_ComputeBezier( Point2D* cp, int numberOfPoints, Point2D* curve )
+static void flower_ComputeBezier( Point2D* cp, int numberOfPoints, Point2D* curve )
 {
     float   dt;
     int   i;
@@ -540,7 +540,7 @@ void flower_ComputeBezier( Point2D* cp, int numberOfPoints, Point2D* curve )
 }
 
 
-void flower_colorize_petals(magic_api * api)
+static void flower_colorize_petals(magic_api * api)
 {
   Uint32 amask;
   int x, y;

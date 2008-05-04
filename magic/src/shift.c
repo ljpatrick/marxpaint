@@ -38,11 +38,11 @@
 
 /* Our globals: */
 
-int shift_x, shift_y;
-Mix_Chunk * shift_snd;
+static int shift_x, shift_y;
+static Mix_Chunk * shift_snd;
 
 
-void shift_doit(magic_api * api, int which, SDL_Surface * canvas,
+static void shift_doit(magic_api * api, int which, SDL_Surface * canvas,
 	          SDL_Surface * last, int ox, int oy, int x, int y,
 		  SDL_Rect * update_rect, int crosshairs);
 
@@ -104,7 +104,7 @@ void shift_drag(magic_api * api, int which, SDL_Surface * canvas,
   shift_doit(api, which, canvas, last, ox, oy, x, y, update_rect, 1);
 }
 
-void shift_doit(magic_api * api, int which, SDL_Surface * canvas,
+static void shift_doit(magic_api * api, int which, SDL_Surface * canvas,
 	          SDL_Surface * last, int ox, int oy, int x, int y,
 		  SDL_Rect * update_rect, int crosshairs)
 {

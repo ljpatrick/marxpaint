@@ -48,13 +48,13 @@ enum {
 
 /* Our globals: */
 
-Mix_Chunk * brick_snd;
-Uint8 bricks_r, bricks_g, bricks_b;
+static Mix_Chunk * brick_snd;
+static Uint8 bricks_r, bricks_g, bricks_b;
 
 
 /* Local function prototype: */
 
-void do_brick(magic_api * api, SDL_Surface * canvas,
+static void do_brick(magic_api * api, SDL_Surface * canvas,
               int x, int y, int w, int h);
 
 
@@ -118,7 +118,7 @@ char * bricks_get_description(magic_api * api, int which)
 
 // Do the effect:
 
-void do_bricks(void * ptr, int which, SDL_Surface * canvas, SDL_Surface * last,
+static void do_bricks(void * ptr, int which, SDL_Surface * canvas, SDL_Surface * last,
                 int x, int y)
 {
   magic_api * api = (magic_api *) ptr;
@@ -259,7 +259,7 @@ int bricks_requires_colors(magic_api * api, int which)
   return 1;
 }
 
-void do_brick(magic_api * api, SDL_Surface * canvas,
+static void do_brick(magic_api * api, SDL_Surface * canvas,
               int x, int y, int w, int h)
 {
   SDL_Rect dest;

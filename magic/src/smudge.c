@@ -37,7 +37,7 @@
 
 /* Our globals: */
 
-Mix_Chunk * smudge_snd;
+static Mix_Chunk * smudge_snd;
 
 
 
@@ -87,7 +87,7 @@ char * smudge_get_description(magic_api * api, int which)
 
 // Do the effect:
 
-void do_smudge(void * ptr, int which, SDL_Surface * canvas, SDL_Surface * last,
+static void do_smudge(void * ptr, int which, SDL_Surface * canvas, SDL_Surface * last,
                 int x, int y)
 {
   magic_api * api = (magic_api *) ptr;
