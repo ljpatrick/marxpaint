@@ -26,32 +26,19 @@ SDL_MIXER_LIB:=-lSDL_mixer
 ARCH_LINKS:=-lintl -lpng12
 SDL_LIBS:=-L/usr/local/lib -lmingw32 -lSDL -lSDL_image -lSDL_ttf $(SDL_MIXER_LIB)
 
+
+MAGIC_C:=$(wildcard src/*.c)
+MAGIC_SO:=$(patsubst src/%.c,%.$(SO_TYPE),$(MAGIC_C))
+
 .PHONY: all
-all:	negative.$(SO_TYPE) \
-	fade_darken.$(SO_TYPE) \
-	mirror_flip.$(SO_TYPE) \
-	rainbow.$(SO_TYPE) \
-	blocks_chalk_drip.$(SO_TYPE) \
-	fill.$(SO_TYPE) \
-	blur.$(SO_TYPE) \
-	grass.$(SO_TYPE) \
-	tint.$(SO_TYPE) \
-	smudge.$(SO_TYPE) \
-	cartoon.$(SO_TYPE) \
-	bricks.$(SO_TYPE) \
-	kalidescope.$(SO_TYPE) \
-	glasstile.$(SO_TYPE) \
-	emboss.$(SO_TYPE) \
-	metalpaint.$(SO_TYPE) \
-	waves.$(SO_TYPE) \
-	flower.$(SO_TYPE) \
-	foam.$(SO_TYPE) \
-	ripples.$(SO_TYPE) \
-	light.$(SO_TYPE) \
-	shift.$(SO_TYPE) \
-	calligraphy.$(SO_TYPE) \
-	distortion.$(SO_TYPE)
-	@strip *.$(SO_TYPE)
+all: $(MAGIC_SO)
+
+$(MAGIC_SO): %.$(SO_TYPE): src/%.c  
+	$(CC) $(CFLAGS) $(SHARED_FLAGS) -o $@ $< $(PLUGIN_LIBS)
+# Probably should separate the various flags like the following, or at least
+# split plug-in CFLAGS from normal CFLAGS.
+#	$(CC) $(PLUG_CPPFLAGS) $(PLUG_CFLAGS) $(PLUG_LDFLAGS) -o $@ $< $(PLUG_LIBS)
+
 
 .PHONY: install
 install:
@@ -83,103 +70,4 @@ win32:
 	make \
 		SO_TYPE:=dll \
 		PLUGIN_LIBS:="$(SDL_LIBS) $(ARCH_LINKS)" \
-
-# Shared objects:
-# ---------------
-
-negative.$(SO_TYPE):	src/negative.c
-	@echo "Building Negative magic tool"
-	@$(CC) $(CFLAGS) $(SHARED_FLAGS) -o $@ $< $(PLUGIN_LIBS)
-
-fade_darken.$(SO_TYPE):	src/fade_darken.c
-	@echo "Building Fade and Darken magic tools"
-	@$(CC) $(CFLAGS) $(SHARED_FLAGS) -o $@ $< $(PLUGIN_LIBS)
-
-mirror_flip.$(SO_TYPE):	src/mirror_flip.c
-	@echo "Building Mirror and Flip magic tools"
-	@$(CC) $(CFLAGS) $(SHARED_FLAGS) -o $@ $< $(PLUGIN_LIBS)
-
-rainbow.$(SO_TYPE):	src/rainbow.c
-	@echo "Building Rainbow magic tool"
-	@$(CC) $(CFLAGS) $(SHARED_FLAGS) -o $@ $< $(PLUGIN_LIBS)
-
-blocks_chalk_drip.$(SO_TYPE):	src/blocks_chalk_drip.c
-	@echo "Building Blocks, Chalk and Drip magic tools"
-	@$(CC) $(CFLAGS) $(SHARED_FLAGS) -o $@ $< $(PLUGIN_LIBS)
-
-fill.$(SO_TYPE):	src/fill.c
-	@echo "Building Fill magic tool"
-	@$(CC) $(CFLAGS) $(SHARED_FLAGS) -o $@ $< $(PLUGIN_LIBS)
-
-blur.$(SO_TYPE):	src/blur.c
-	@echo "Building Blur magic tool"
-	@$(CC) $(CFLAGS) $(SHARED_FLAGS) -o $@ $< $(PLUGIN_LIBS)
-
-grass.$(SO_TYPE):	src/grass.c
-	@echo "Building Grass magic tool"
-	@$(CC) $(CFLAGS) $(SHARED_FLAGS) -o $@ $< $(PLUGIN_LIBS)
-
-tint.$(SO_TYPE):	src/tint.c
-	@echo "Building Tint magic tool"
-	@$(CC) $(CFLAGS) $(SHARED_FLAGS) -o $@ $< $(PLUGIN_LIBS)
-
-smudge.$(SO_TYPE):	src/smudge.c
-	@echo "Building Smudge magic tool"
-	@$(CC) $(CFLAGS) $(SHARED_FLAGS) -o $@ $< $(PLUGIN_LIBS)
-
-cartoon.$(SO_TYPE):	src/cartoon.c
-	@echo "Building Cartoon magic tool"
-	@$(CC) $(CFLAGS) $(SHARED_FLAGS) -o $@ $< $(PLUGIN_LIBS)
-
-bricks.$(SO_TYPE):	src/bricks.c
-	@echo "Building Large Bricks and Small Bricks magic tools"
-	@$(CC) $(CFLAGS) $(SHARED_FLAGS) -o $@ $< $(PLUGIN_LIBS)
-
-kalidescope.$(SO_TYPE):	src/kalidescope.c
-	@echo "Building Kaleidoscope magic tool"
-	@$(CC) $(CFLAGS) $(SHARED_FLAGS) -o $@ $< $(PLUGIN_LIBS)
-
-glasstile.$(SO_TYPE):	src/glasstile.c
-	@echo "Building Glass Tile magic tool"
-	@$(CC) $(CFLAGS) $(SHARED_FLAGS) -o $@ $< $(PLUGIN_LIBS)
-
-emboss.$(SO_TYPE):	src/emboss.c
-	@echo "Building Emboss magic tool"
-	@$(CC) $(CFLAGS) $(SHARED_FLAGS) -o $@ $< $(PLUGIN_LIBS)
-
-metalpaint.$(SO_TYPE):	src/metalpaint.c
-	@echo "Building Metal Paint magic tool"
-	@$(CC) $(CFLAGS) $(SHARED_FLAGS) -o $@ $< $(PLUGIN_LIBS)
-
-waves.$(SO_TYPE):	src/waves.c
-	@echo "Building Waves magic tool"
-	@$(CC) $(CFLAGS) $(SHARED_FLAGS) -o $@ $< $(PLUGIN_LIBS)
-
-flower.$(SO_TYPE):	src/flower.c
-	@echo "Building Flower magic tool"
-	@$(CC) $(CFLAGS) $(SHARED_FLAGS) -o $@ $< $(PLUGIN_LIBS)
-
-foam.$(SO_TYPE):	src/foam.c
-	@echo "Building Foam magic tool"
-	@$(CC) $(CFLAGS) $(SHARED_FLAGS) -o $@ $< $(PLUGIN_LIBS)
-
-ripples.$(SO_TYPE):	src/ripples.c
-	@echo "Building Ripples magic tool"
-	@$(CC) $(CFLAGS) $(SHARED_FLAGS) -o $@ $< $(PLUGIN_LIBS)
-
-light.$(SO_TYPE):	src/light.c
-	@echo "Building Light magic tool"
-	@$(CC) $(CFLAGS) $(SHARED_FLAGS) -o $@ $< $(PLUGIN_LIBS)
-
-shift.$(SO_TYPE):	src/shift.c
-	@echo "Building Shift magic tool"
-	@$(CC) $(CFLAGS) $(SHARED_FLAGS) -o $@ $< $(PLUGIN_LIBS)
-
-calligraphy.$(SO_TYPE):	src/calligraphy.c
-	@echo "Building Calligraphy magic tool"
-	@$(CC) $(CFLAGS) $(SHARED_FLAGS) -o $@ $< $(PLUGIN_LIBS)
-
-distortion.$(SO_TYPE):	src/distortion.c
-	@echo "Building Distortion magic tool"
-	@$(CC) $(CFLAGS) $(SHARED_FLAGS) -o $@ $< $(PLUGIN_LIBS)
 
