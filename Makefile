@@ -36,10 +36,10 @@ windows_SO_TYPE:=dll
 osx_SO_TYPE:=bundle
 beos_SO_TYPE:=so
 linux_SO_TYPE:=so
-SO_TYPE:=$(OS)_SO_TYPE
+SO_TYPE:=$($(OS)_SO_TYPE)
 
 windows_EXE_EXT:=.exe
-EXE_EXT:=$(OS)_EXE_EXT
+EXE_EXT:=$($(OS)_EXE_EXT)
 
 # Where to install things:
 
@@ -47,7 +47,7 @@ windows_PREFIX:=/usr/local
 osx_PREFIX:=/usr/local
 beos_PREFIX:=./
 linux_PREFIX:=/usr/local
-PREFIX:=$(OS)_PREFIX
+PREFIX:=$($(OS)_PREFIX)
 
 
 # Root directory to place files when creating packages.
