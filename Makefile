@@ -14,13 +14,40 @@
 
 VER_VERSION:=0.9.20
 VER_DATE:=`date +"%Y-%m-%d"`
-
 MAGIC_API_VERSION:=0x00000001
-SO_TYPE:=so
+
+# Need to know the OS
+
+ifneq ($(SystemDrive),)
+OS:=windows
+else
+SYSNAME:=$(shell uname -s)
+ifeq ($(SYSNAME),Darwin)
+OS:=osx
+else ifeq ($(SYSNAME),BeOS)
+OS:=beos
+else ifeq ($(SYSNAME),Haiku)
+OS:=beos
+else
+OS:=linux
+endif
+
+windows_SO_TYPE:=dll
+osx_SO_TYPE:=bundle
+beos_SO_TYPE:=so
+linux_SO_TYPE:=so
+SO_TYPE:=$(OS)_SO_TYPE
+
+windows_EXE_EXT:=.exe
+EXE_EXT:=$(OS)_EXE_EXT
 
 # Where to install things:
 
-PREFIX:=/usr/local
+windows_PREFIX:=/usr/local
+osx_PREFIX:=/usr/local
+beos_PREFIX:=./
+linux_PREFIX:=/usr/local
+PREFIX:=$(OS)_PREFIX
 
 
 # Root directory to place files when creating packages.
@@ -31,8 +58,6 @@ DESTDIR:=$(PKG_ROOT)
 # Program:
 
 BIN_PREFIX:=$(DESTDIR)$(PREFIX)/bin
-EXE_EXT:=
-
 
 # Data:
 
