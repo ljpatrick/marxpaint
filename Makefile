@@ -31,6 +31,7 @@ OS:=beos
 else
 OS:=linux
 endif
+endif
 
 windows_SO_TYPE:=dll
 osx_SO_TYPE:=bundle
@@ -158,9 +159,13 @@ ARCH_LIBS:=obj/postscript_print.o
 
 # The entire set of CFLAGS:
 
+# FIXME: src/test-option.sh runs every time
+# FIXME: -Wstrict-aliasing=2 not used
+
 #-ffast-math
 OPTFLAGS:=-O2
 CFLAGS:=$(OPTFLAGS) -W -Wall -fno-common -ffloat-store \
+	-fvisibility=hidden \
 	-Wcast-align -Wredundant-decls \
 	-Wbad-function-cast -Wwrite-strings \
 	-Waggregate-return \

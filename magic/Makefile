@@ -19,7 +19,7 @@ SO_TYPE:=so
 TP_MAGIC_CFLAGS:=$(shell if [ -x tp-magic-config ] ; then tp-magic-config --cflags ; else echo -I../src/ ; fi)
 
 SDL_CFLAGS:=$(shell sdl-config --cflags)
-CFLAGS:=-g3 -O2 -W -Wstrict-prototypes -Wmissing-prototypes -Wall $(SDL_CFLAGS) $(TP_MAGIC_CFLAGS)
+CFLAGS:=-g3 -O2 -fvisibility=hidden -fno-common -W -Wstrict-prototypes -Wmissing-prototypes -Wall $(SDL_CFLAGS) $(TP_MAGIC_CFLAGS)
 SHARED_FLAGS:=-shared -fpic
 
 SDL_MIXER_LIB:=-lSDL_mixer
