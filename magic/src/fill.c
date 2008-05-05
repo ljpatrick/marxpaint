@@ -45,7 +45,7 @@ static Uint8 fill_r, fill_g, fill_b;
 
 /* Local function prototypes: */
 
-static static int colors_close(magic_api * api, SDL_Surface * canvas,
+static int colors_close(magic_api * api, SDL_Surface * canvas,
 			Uint32 c1, Uint32 c2);
 static void do_flood_fill(magic_api * api, SDL_Surface * canvas, int x, int y,
                    Uint32 cur_colr, Uint32 old_colr);
