@@ -134,5 +134,9 @@ typedef struct magic_api_t {
 
 #define TP_MAGIC_API_VERSION __APIVERSION__
 
+#ifndef ATTRIBUTE_UNUSED
+#define ATTRIBUTE_UNUSED __attribute__ ((__unused__))
+#endif /* ATTRIBUTE_UNUSED */
+
 #endif
 

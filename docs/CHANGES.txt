@@ -64,6 +64,8 @@ $Id$
     * Makefile improvements.
       Albert Cahalan <albert@users.sf.net>
 
+    * Making Magic Tool source throw less compiler warnings.
+
   * Documentation Improvements:
     ---------------------------
     * Mentioned that canvas size can be changed in README (so it's not

@@ -4,7 +4,7 @@
   Blocks, Chalk and Drip Magic Tools Plugin
   Tux Paint - A simple drawing program for children.
 
-  Copyright (c) 2002-2007 by Bill Kendrick and others; see AUTHORS.txt
+  Copyright (c) 2002-2008 by Bill Kendrick and others; see AUTHORS.txt
   bill@newbreedsoftware.com
   http://www.tuxpaint.org/
 
@@ -23,7 +23,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  Last updated: August 21, 2007
+  Last updated: May 6, 2008
   $Id$
 */
 
@@ -49,6 +49,31 @@ enum {
 static Mix_Chunk * snd_effect[NUM_TOOLS];
 
 
+/* Our function prototypes: */
+
+int blocks_chalk_drip_init(magic_api * api);
+Uint32 blocks_chalk_drip_api_version(void);
+int blocks_chalk_drip_get_tool_count(magic_api * api);
+SDL_Surface * blocks_chalk_drip_get_icon(magic_api * api, int which);
+char * blocks_chalk_drip_get_name(magic_api * api, int which);
+char * blocks_chalk_drip_get_description(magic_api * api, int which);
+static void blocks_chalk_drip_linecb(void * ptr, int which,
+			      SDL_Surface * canvas, SDL_Surface * last,
+	                      int x, int y);
+void blocks_chalk_drip_drag(magic_api * api, int which, SDL_Surface * canvas,
+	          SDL_Surface * last, int ox, int oy, int x, int y,
+		  SDL_Rect * update_rect);
+void blocks_chalk_drip_click(magic_api * api, int which,
+	           SDL_Surface * canvas, SDL_Surface * last,
+	           int x, int y, SDL_Rect * update_rect);
+void blocks_chalk_drip_release(magic_api * api, int which,
+	           SDL_Surface * canvas, SDL_Surface * last,
+	           int x, int y, SDL_Rect * update_rect);
+void blocks_chalk_drip_shutdown(magic_api * api);
+void blocks_chalk_drip_set_color(magic_api * api, Uint8 r, Uint8 g, Uint8 b);
+int blocks_chalk_drip_requires_colors(magic_api * api, int which);
+
+
 int blocks_chalk_drip_init(magic_api * api)
 {
   char fname[1024];
@@ -72,7 +97,7 @@ Uint32 blocks_chalk_drip_api_version(void) { return(TP_MAGIC_API_VERSION); }
 
 
 // We have multiple tools:
-int blocks_chalk_drip_get_tool_count(magic_api * api)
+int blocks_chalk_drip_get_tool_count(magic_api * api ATTRIBUTE_UNUSED)
 {
   return(NUM_TOOLS);
 }
@@ -102,7 +127,7 @@ SDL_Surface * blocks_chalk_drip_get_icon(magic_api * api, int which)
 }
 
 // Return our names, localized:
-char * blocks_chalk_drip_get_name(magic_api * api, int which)
+char * blocks_chalk_drip_get_name(magic_api * api ATTRIBUTE_UNUSED, int which)
 {
   if (which == TOOL_BLOCKS)
     return(strdup(gettext("Blocks")));
@@ -115,7 +140,7 @@ char * blocks_chalk_drip_get_name(magic_api * api, int which)
 }
 
 // Return our descriptions, localized:
-char * blocks_chalk_drip_get_description(magic_api * api, int which)
+char * blocks_chalk_drip_get_description(magic_api * api ATTRIBUTE_UNUSED, int which)
 {
   if (which == TOOL_BLOCKS)
     return(strdup(gettext(
@@ -269,14 +294,14 @@ void blocks_chalk_drip_click(magic_api * api, int which,
 }
 
 // Affect the canvas on release:
-void blocks_chalk_drip_release(magic_api * api, int which,
-	           SDL_Surface * canvas, SDL_Surface * last,
-	           int x, int y, SDL_Rect * update_rect)
+void blocks_chalk_drip_release(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED,
+	           SDL_Surface * canvas ATTRIBUTE_UNUSED, SDL_Surface * last ATTRIBUTE_UNUSED,
+	           int x ATTRIBUTE_UNUSED, int y ATTRIBUTE_UNUSED, SDL_Rect * update_rect ATTRIBUTE_UNUSED)
 {
 }
 
 // No setup happened:
-void blocks_chalk_drip_shutdown(magic_api * api)
+void blocks_chalk_drip_shutdown(magic_api * api ATTRIBUTE_UNUSED)
 {
   if (snd_effect[0] != NULL)
     Mix_FreeChunk(snd_effect[0]);
@@ -286,13 +311,13 @@ void blocks_chalk_drip_shutdown(magic_api * api)
 }
 
 // Record the color from Tux Paint:
-void blocks_chalk_drip_set_color(magic_api * api, Uint8 r, Uint8 g, Uint8 b)
+void blocks_chalk_drip_set_color(magic_api * api ATTRIBUTE_UNUSED,
+				Uint8 r ATTRIBUTE_UNUSED, Uint8 g ATTRIBUTE_UNUSED, Uint8 b ATTRIBUTE_UNUSED)
 {
 }
 
 // Use colors:
-int blocks_chalk_drip_requires_colors(magic_api * api, int which)
+int blocks_chalk_drip_requires_colors(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED)
 {
   return 0;
 }
-
