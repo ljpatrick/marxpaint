@@ -23,7 +23,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  Last updated: August 7, 2007
+  Last updated: May 6, 2008
   $Id$
 */
 
@@ -41,6 +41,31 @@ enum {
 };
 
 static Mix_Chunk * snd_effects[NUM_TOOLS];
+
+
+/* Local function prototypes: */
+
+int fade_darken_init(magic_api * api);
+Uint32 fade_darken_api_version(void);
+int fade_darken_get_tool_count(magic_api * api);
+SDL_Surface * fade_darken_get_icon(magic_api * api, int which);
+char * fade_darken_get_name(magic_api * api, int which);
+char * fade_darken_get_description(magic_api * api, int which);
+static void do_fade_darken(void * ptr, int which,
+	         SDL_Surface * canvas, SDL_Surface * last,
+	         int x, int y);
+void fade_darken_drag(magic_api * api, int which, SDL_Surface * canvas,
+	           SDL_Surface * last, int ox, int oy, int x, int y,
+                   SDL_Rect * update_rect);
+void fade_darken_click(magic_api * api, int which,
+	            SDL_Surface * canvas, SDL_Surface * last,
+	            int x, int y, SDL_Rect * update_rect);
+void fade_darken_release(magic_api * api, int which,
+	            SDL_Surface * canvas, SDL_Surface * last,
+	            int x, int y, SDL_Rect * update_rect);
+void fade_darken_shutdown(magic_api * api);
+void fade_darken_set_color(magic_api * api, Uint8 r, Uint8 g, Uint8 b);
+int fade_darken_requires_colors(magic_api * api, int which);
 
 
 int fade_darken_init(magic_api * api)
@@ -61,7 +86,7 @@ int fade_darken_init(magic_api * api)
 Uint32 fade_darken_api_version(void) { return(TP_MAGIC_API_VERSION); }
 
 // Multiple tools:
-int fade_darken_get_tool_count(magic_api * api)
+int fade_darken_get_tool_count(magic_api * api ATTRIBUTE_UNUSED)
 {
   return(NUM_TOOLS);
 }
@@ -86,7 +111,7 @@ SDL_Surface * fade_darken_get_icon(magic_api * api, int which)
 }
 
 // Return our name, localized:
-char * fade_darken_get_name(magic_api * api, int which)
+char * fade_darken_get_name(magic_api * api ATTRIBUTE_UNUSED, int which)
 {
   if (which == TOOL_FADE)
     return(strdup(gettext("Lighten")));
@@ -97,7 +122,7 @@ char * fade_darken_get_name(magic_api * api, int which)
 }
 
 // Return our description, localized:
-char * fade_darken_get_description(magic_api * api, int which)
+char * fade_darken_get_description(magic_api * api ATTRIBUTE_UNUSED, int which)
 {
   if (which == TOOL_FADE)
     return(strdup(
@@ -179,15 +204,15 @@ void fade_darken_click(magic_api * api, int which,
 }
 
 // Release
-void fade_darken_release(magic_api * api, int which,
-	            SDL_Surface * canvas, SDL_Surface * last,
-	            int x, int y, SDL_Rect * update_rect)
+void fade_darken_release(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED,
+	            SDL_Surface * canvas ATTRIBUTE_UNUSED, SDL_Surface * last ATTRIBUTE_UNUSED,
+	            int x ATTRIBUTE_UNUSED, int y ATTRIBUTE_UNUSED, SDL_Rect * update_rect ATTRIBUTE_UNUSED)
 {
 }
 
 
 // No setup happened:
-void fade_darken_shutdown(magic_api * api)
+void fade_darken_shutdown(magic_api * api ATTRIBUTE_UNUSED)
 {
   if (snd_effects[0] != NULL)
     Mix_FreeChunk(snd_effects[0]);
@@ -196,13 +221,13 @@ void fade_darken_shutdown(magic_api * api)
 }
 
 // We don't use colors
-void fade_darken_set_color(magic_api * api, Uint8 r, Uint8 g, Uint8 b)
+void fade_darken_set_color(magic_api * api ATTRIBUTE_UNUSED,
+			   Uint8 r ATTRIBUTE_UNUSED, Uint8 g ATTRIBUTE_UNUSED, Uint8 b ATTRIBUTE_UNUSED)
 {
 }
 
 // We don't use colors
-int fade_darken_requires_colors(magic_api * api, int which)
+int fade_darken_requires_colors(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED)
 {
   return 0;
 }
-
