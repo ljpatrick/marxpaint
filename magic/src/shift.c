@@ -42,10 +42,29 @@ static int shift_x, shift_y;
 static Mix_Chunk * shift_snd;
 
 
+/* Local function prototypes: */
+
 static void shift_doit(magic_api * api, int which, SDL_Surface * canvas,
 	          SDL_Surface * last, int ox, int oy, int x, int y,
 		  SDL_Rect * update_rect, int crosshairs);
-
+Uint32 shift_api_version(void);
+int shift_init(magic_api * api);
+int shift_get_tool_count(magic_api * api);
+SDL_Surface * shift_get_icon(magic_api * api, int which);
+char * shift_get_name(magic_api * api, int which);
+char * shift_get_description(magic_api * api, int which);
+void shift_drag(magic_api * api, int which, SDL_Surface * canvas,
+	          SDL_Surface * last, int ox, int oy, int x, int y,
+		  SDL_Rect * update_rect);
+void shift_click(magic_api * api, int which,
+	           SDL_Surface * canvas, SDL_Surface * last,
+	           int x, int y, SDL_Rect * update_rect);
+void shift_release(magic_api * api, int which,
+	           SDL_Surface * canvas, SDL_Surface * last,
+	           int x, int y, SDL_Rect * update_rect);
+void shift_shutdown(magic_api * api);
+void shift_set_color(magic_api * api, Uint8 r, Uint8 g, Uint8 b);
+int shift_requires_colors(magic_api * api, int which);
 
 
 Uint32 shift_api_version(void) { return(TP_MAGIC_API_VERSION); }
@@ -64,13 +83,13 @@ int shift_init(magic_api * api)
 }
 
 // We have multiple tools:
-int shift_get_tool_count(magic_api * api)
+int shift_get_tool_count(magic_api * api ATTRIBUTE_UNUSED)
 {
   return(1);
 }
 
 // Load our icons:
-SDL_Surface * shift_get_icon(magic_api * api, int which)
+SDL_Surface * shift_get_icon(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED)
 {
   char fname[1024];
 
@@ -81,13 +100,13 @@ SDL_Surface * shift_get_icon(magic_api * api, int which)
 }
 
 // Return our names, localized:
-char * shift_get_name(magic_api * api, int which)
+char * shift_get_name(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED)
 {
   return(strdup(gettext("Shift")));
 }
 
 // Return our descriptions, localized:
-char * shift_get_description(magic_api * api, int which)
+char * shift_get_description(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED)
 {
   return(strdup(gettext("Click and drag to shift your picture around on the canvas.")));
 }
@@ -104,8 +123,8 @@ void shift_drag(magic_api * api, int which, SDL_Surface * canvas,
   shift_doit(api, which, canvas, last, ox, oy, x, y, update_rect, 1);
 }
 
-static void shift_doit(magic_api * api, int which, SDL_Surface * canvas,
-	          SDL_Surface * last, int ox, int oy, int x, int y,
+static void shift_doit(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED, SDL_Surface * canvas,
+	          SDL_Surface * last, int ox ATTRIBUTE_UNUSED, int oy ATTRIBUTE_UNUSED, int x, int y,
 		  SDL_Rect * update_rect, int crosshairs)
 {
   SDL_Rect dest;
@@ -287,20 +306,20 @@ void shift_release(magic_api * api, int which,
 
 
 // No setup happened:
-void shift_shutdown(magic_api * api)
+void shift_shutdown(magic_api * api ATTRIBUTE_UNUSED)
 {
   if (shift_snd != NULL)
     Mix_FreeChunk(shift_snd);
 }
 
 // Record the color from Tux Paint:
-void shift_set_color(magic_api * api, Uint8 r, Uint8 g, Uint8 b)
+void shift_set_color(magic_api * api ATTRIBUTE_UNUSED,
+		     Uint8 r ATTRIBUTE_UNUSED, Uint8 g ATTRIBUTE_UNUSED, Uint8 b ATTRIBUTE_UNUSED)
 {
 }
 
 // Use colors:
-int shift_requires_colors(magic_api * api, int which)
+int shift_requires_colors(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED)
 {
   return 0;
 }
-
