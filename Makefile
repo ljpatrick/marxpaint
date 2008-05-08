@@ -65,6 +65,11 @@ BIN_PREFIX:=$(DESTDIR)$(PREFIX)/bin
 DATA_PREFIX:=$(DESTDIR)$(PREFIX)/share/tuxpaint
 
 
+# Locale Prefix (dup'd from Makefile-i18n; needed by src/i18n.c to set path
+# to our specific tuxpaint.mo files! -bjk 2008.05.08)
+LOCALE_PREFIX:=$(DESTDIR)$(PREFIX)/share/locale
+
+
 # Magic Tool plug-ins
 
 INCLUDE_PREFIX:=$(DESTDIR)$(PREFIX)/include
