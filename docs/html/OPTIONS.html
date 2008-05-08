@@ -1757,7 +1757,14 @@ New Breed Software</p>
       then running the program "<code>locale-gen</code>" as root.</p>
     
       <p><i>Note: Debian users may be able to simply run the command
-      "<code>dpkg-reconfigure&nbsp;locales</code>".</i></p>
+      "<code>dpkg-reconfigure&nbsp;locales</code>" as root to bring up a
+      configuration dialog.  Ubuntu users may be able to run
+      "<code>sudo&nbsp;dpkg-reconfigure&nbsp;localeconf</code>"
+      (the "localeconf" package may need to be installed first), or
+      may need to edit the file
+      "<code>/var/lib/locales/supported.d/local</code>"
+      first, and add locales they want, from the list found in
+      "<code>/usr/share/i18n/SUPPORTED</code>".</i></p>
     
       <p>Then, before running Tux&nbsp;Paint, set your "<code>$LANG</code>"
       environment variable to one of the locales listed above.  (If you

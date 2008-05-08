@@ -1018,7 +1018,12 @@ Setting Your Environment's Locale
          "locale-gen" as root.
 
          Note: Debian users may be able to simply run the command
-         "dpkg-reconfigure locales".
+         "dpkg-reconfigure locales" as root to bring up a configuration
+         dialog. Ubuntu users may be able to run
+         "sudo dpkg-reconfigure localeconf" (the "localeconf" package may
+         need to be installed first), or may need to edit the file
+         "/var/lib/locales/supported.d/local" first, and add locales they
+         want, from the list found in "/usr/share/i18n/SUPPORTED".
 
          Then, before running Tux Paint, set your "$LANG" environment
          variable to one of the locales listed above. (If you want all
