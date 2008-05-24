@@ -8,8 +8,33 @@
 
 # July 2007 - December 29, 2007
 
+ifneq ($(SystemDrive),)
+OS:=windows
+else
+SYSNAME:=$(shell uname -s)
+ifeq ($(SYSNAME),Darwin)
+OS:=osx
+else ifeq ($(SYSNAME),BeOS)
+OS:=beos
+else ifeq ($(SYSNAME),Haiku)
+OS:=beos
+else
+OS:=linux
+endif
+endif
 
-SO_TYPE:=so
+windows_SO_TYPE:=dll
+osx_SO_TYPE:=bundle
+beos_SO_TYPE:=so
+linux_SO_TYPE:=so
+SO_TYPE:=$($(OS)_SO_TYPE)
+
+windows_PLUGIN_LIBS:="$(SDL_LIBS) $(ARCH_LINKS)"
+osx_PLUGIN_LIBS:=
+beos_PLUGIN_LIBS:="$(SDL_LIBS) $(ARCH_LINKS) $(SDL_CFLAGS) $(TP_MAGIC_CFLAGS)"
+linux_PLUGIN_LIBS:=
+PLUGIN_LIBS:=$($(OS)_PLUGIN_LIBS)
+
 
 # Places to pick up Tux Paint Magic Plugin Dev header and SDL headers
 # (can't assume plugin dev stuff has been installed yet, since we're
@@ -45,23 +70,3 @@ buildmagic-clean:
 	@echo
 	@echo "Cleaning up the Magic plug-ins directory ($(PWD))"
 	@-rm -f *.$(SO_TYPE)
-
-# beos versions of the targets
-.PHONY: buildmagic-beos
-buildmagic-beos:
-	make buildmagic-all \
-		SO_TYPE:=so \
-		PLUGIN_LIBS:="$(SDL_LIBS) $(ARCH_LINKS) $(SDL_CFLAGS) $(TP_MAGIC_CFLAGS)"
-
-
-# win32 versions of the targets
-.PHONY: buildmagic-cleanwin32
-buildmagic-cleanwin32:
-	make buildmagic-clean \
-		SO_TYPE:=dll
-
-.PHONY: buildmagic-win32
-buildmagic-win32:
-	make buildmagic-all \
-		SO_TYPE:=dll \
-		PLUGIN_LIBS:="$(SDL_LIBS) $(ARCH_LINKS)" \

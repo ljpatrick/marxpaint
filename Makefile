@@ -295,8 +295,7 @@ beos:
 		ARCH_LINKS:="-lintl -lpng -lz -lbe -liconv" \
 		ARCH_HEADERS:="src/BeOS_print.h" \
 		ARCH_LIBS:="obj/BeOS_print.o" \
-		MAGIC_PREFIX:=./lib/tuxpaint/plugins \
-		TARGET_PASSTHRU:=beos
+		MAGIC_PREFIX:=./lib/tuxpaint/plugins
 
 # "make win32" builds the program for Windows 2K/XP/Vista using MinGW/MSYS.
 # The DATA_, DOC_ and LOCALE_ prefixes are absolute paths.
@@ -325,7 +324,6 @@ win32:
 		SVG_CFLAGS:="-I/usr/local/include/librsvg-2/librsvg -I/usr/local/include/gtk-2.0 -I/usr/local/include/glib-2.0 -I/usr/local/lib/glib-2.0/include -I/usr/local/include/cairo" \
 		INCLUDE_PREFIX:=$(PREFIX)/include \
 		MAGIC_PREFIX:=$(PREFIX)/lib/tuxpaint/plugins \
-		TARGET_PASSTHRU:=win32 \
 		PAPER_LIB:=
 
 # "make win9x" builds the program for Windows 9x/ME using MinGW/MSYS.
@@ -357,7 +355,6 @@ win9x:
 		NOPANGOFLAG:=NO_SDLPANGO SDL_PANGO_LIB:= \
 		INCLUDE_PREFIX:=$(PREFIX)/include \
 		MAGIC_PREFIX:=$(PREFIX)/lib/tuxpaint/plugins \
-		TARGET_PASSTHRU:=win32 \
 		PAPER_LIB:=
 
 # "make nokia770" builds the program for the Nokia 770.
@@ -606,7 +603,6 @@ bdist-win32:
 		SVG_CFLAGS:="-I/usr/local/include/librsvg-2/librsvg -I/usr/local/include/gtk-2.0 -I/usr/local/include/glib-2.0 -I/usr/local/lib/glib-2.0/include -I/usr/local/include/cairo" \
 		INCLUDE_PREFIX:=plugins/include \
 		MAGIC_PREFIX:=plugins \
-		TARGET_PASSTHRU:=win32 \
 		PAPER_LIB:= 
 	strip -s tuxpaint.exe
 	make bdist-private-win32 \
@@ -620,8 +616,7 @@ bdist-win32:
 		IM_PREFIX:=./win32/bdist/im \
 		CONFDIR:=./win32/bdist \
 		INCLUDE_PREFIX:=./win32/bdist/plugins/include \
-		MAGIC_PREFIX:=./win32/bdist/plugins \
-		TARGET_PASSTHRU:=win32
+		MAGIC_PREFIX:=./win32/bdist/plugins
 
 # "make bdist-clean" deletes the 'bdist' directory
 .PHONY: bdist-clean
@@ -644,13 +639,12 @@ clean:
 	@-rm -f src/tp_magic_api.h
 	@-rm -f tp-magic-config
 	@if [ -d trans ]; then rmdir trans; fi
-	@cd magic && make buildmagic-clean$(TARGET_PASSTHRU)
+	@cd magic && make buildmagic-clean
 	@echo
 
 .PHONY: clean-win32
 clean-win32:
-	@make clean\
-		TARGET_PASSTHRU:=win32
+	@make clean
 
 # "make uninstall" should remove the various parts from their
 # installation locations.  BE SURE the *PREFIX variables at the top
@@ -1106,7 +1100,7 @@ obj/resource.o:	win32/resources.rc win32/resource.h
 # Go into 'magic' subdirectory and buld magic plug-ins
 .PHONY: magic-plugins
 magic-plugins:	src/tp_magic_api.h
-	@cd magic && make buildmagic-$(TARGET_PASSTHRU)
+	@cd magic && make buildmagic
 
 
 src/tp_magic_api.h:	src/tp_magic_api.h.in
