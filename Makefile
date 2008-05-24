@@ -33,6 +33,12 @@ OS:=linux
 endif
 endif
 
+beos_RSRC_CMD:="xres -o tuxpaint tuxpaint.rsrc"
+RSRC_CMD:=$($(OS)_RSRC_CMD)
+
+beos_MIMESET_CMD:="mimeset -f tuxpaint"
+MIMESET_CMD:=$($(OS)_MIMESET_CMD)
+
 windows_SO_TYPE:=dll
 osx_SO_TYPE:=bundle
 beos_SO_TYPE:=so
@@ -60,8 +66,7 @@ beos_ARCH_HEADERS:=src/BeOS_print.h
 linux_ARCH_HEADERS:=
 ARCH_HEADERS:=$($(OS)_ARCH_HEADERS)
 
-# Where to install things:
-
+# Where things will go when ultimately installed:
 windows_PREFIX:=/usr/local
 osx_PREFIX:=/usr/local
 beos_PREFIX:=./
@@ -70,6 +75,7 @@ PREFIX:=$($(OS)_PREFIX)
 
 
 # Root directory to place files when creating packages.
+# (PKG_ROOT is the old name for this, and should be undefined)
 DESTDIR:=$(PKG_ROOT)
 
 # Program:
@@ -102,12 +108,6 @@ ifeq ($(PREFIX),/usr)
 else
   CONFDIR:=$(DESTDIR)$(PREFIX)/etc/tuxpaint
 endif
-
-
-# Commands useful to other arch's (e.g., BeOS)
-RSRC_CMD:=echo -n
-MIMESET_CMD:=echo -n
-
 
 # Icons and launchers:
 ICON_PREFIX:=$(DESTDIR)$(PREFIX)/share/pixmaps
@@ -306,8 +306,6 @@ beos:
 		SDL_LIBS:="$(shell sdl-config --libs) -lSDL -lSDL_image -lSDL_ttf $(SDL_MIXER_LIB)" \
 		SDL_MIXER_LIB:=-lSDL_mixer \
 		CFLAGS:="-O1 -funroll-loops -fomit-frame-pointer -pipe -Wall" \
-		RSRC_CMD:="xres -o tuxpaint src/tuxpaint.rsrc" \
-		MIMESET_CMD:="mimeset -f tuxpaint" \
 		MAGIC_PREFIX:=./lib/tuxpaint/plugins
 
 # "make win32" builds the program for Windows 2K/XP/Vista using MinGW/MSYS.
@@ -556,8 +554,6 @@ install-beos:
 		SVG_LIB:= SVG_CFLAGS:= NOSVGFLAG:=NOSVG \
 		NOPANGOFLAG:=NO_SDLPANGO SDL_PANGO_LIB:= \
 		CFLAGS:="-O1 -funroll-loops -fomit-frame-pointer -pipe -Wall" \
-		RSRC_CMD:="xres -o tuxpaint tuxpaint.rsrc" \
-		MIMESET_CMD:="mimeset -f tuxpaint" \
 		MAGIC_PREFIX:=./build/lib/tuxpaint/plugins
 
 # "make install-win32" installs Tux Paint, but using MinGW/MSYS settings
