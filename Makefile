@@ -619,7 +619,7 @@ bdist-clean:
 # "make clean" deletes the program, the compiled objects and the
 # built man page (returns to factory archive, pretty much...)
 .PHONY: clean
-clean:
+clean: buildmagic-clean
 	@echo
 	@echo "Cleaning up the build directory! ($(PWD))"
 	@-rm -f tuxpaint
@@ -629,7 +629,6 @@ clean:
 	@-rm -f src/tp_magic_api.h
 	@-rm -f tp-magic-config
 	@if [ -d trans ]; then rmdir trans; fi
-	@cd magic && make buildmagic-clean
 	@echo
 
 .PHONY: clean-win32
@@ -1089,8 +1088,7 @@ obj/resource.o:	win32/resources.rc win32/resource.h
 
 # Go into 'magic' subdirectory and buld magic plug-ins
 .PHONY: magic-plugins
-magic-plugins:	src/tp_magic_api.h
-	@cd magic && make buildmagic
+magic-plugins:	src/tp_magic_api.h buildmagic
 
 
 src/tp_magic_api.h:	src/tp_magic_api.h.in
@@ -1115,3 +1113,36 @@ tp-magic-config:	src/tp-magic-config.sh.in Makefile
 
 obj:
 	@mkdir obj
+
+######
+
+MAGIC_SDL_CFLAGS:=$(shell sdl-config --cflags)
+MAGIC_ARCH_LINKS:=-lintl -lpng12
+MAGIC_SDL_LIBS:=-L/usr/local/lib -lmingw32 -lSDL -lSDL_image -lSDL_ttf $(SDL_MIXER_LIB)
+
+windows_PLUGIN_LIBS:="$(MAGIC_SDL_LIBS) $(MAGIC_ARCH_LINKS)"
+osx_PLUGIN_LIBS:=
+beos_PLUGIN_LIBS:="$(MAGIC_SDL_LIBS) $(MAGIC_ARCH_LINKS) $(MAGIC_SDL_CFLAGS)"
+linux_PLUGIN_LIBS:=
+PLUGIN_LIBS:=$($(OS)_PLUGIN_LIBS)
+
+#MAGIC_CFLAGS:=-g3 -O2 -fvisibility=hidden -fno-common -W -Wstrict-prototypes -Wmissing-prototypes -Wall $(MAGIC_SDL_CFLAGS) -Isrc/
+MAGIC_CFLAGS:=-g3 -O2 -fno-common -W -Wstrict-prototypes -Wmissing-prototypes -Wall $(MAGIC_SDL_CFLAGS) -Isrc/
+SHARED_FLAGS:=-shared -fpic
+
+MAGIC_C:=$(wildcard magic/src/*.c)
+MAGIC_SO:=$(patsubst magic/src/%.c,magic/%.$(SO_TYPE),$(MAGIC_C))
+
+.PHONY: buildmagic
+buildmagic: $(MAGIC_SO)
+
+$(MAGIC_SO): magic/%.$(SO_TYPE): magic/src/%.c  
+	$(CC) $(MAGIC_CFLAGS) $(SHARED_FLAGS) -o $@ $< $(PLUGIN_LIBS)
+# Probably should separate the various flags like the following:
+#	$(CC) $(PLUG_CPPFLAGS) $(PLUG_CFLAGS) $(PLUG_LDFLAGS) -o $@ $< $(PLUG_LIBS)
+
+.PHONY: buildmagic-clean
+buildmagic-clean:
+	@echo
+	@echo "Cleaning up the Magic plug-ins directory ($(PWD))"
+	@-rm -f magic/*.$(SO_TYPE)
