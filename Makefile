@@ -13,7 +13,7 @@
 # The version number, for release:
 
 VER_VERSION:=0.9.20
-VER_DATE:=`date +"%Y-%m-%d"`
+VER_DATE:=$(shell date +"%Y-%m-%d")
 MAGIC_API_VERSION:=0x00000001
 
 # Need to know the OS
@@ -112,9 +112,9 @@ endif
 # Icons and launchers:
 ICON_PREFIX:=$(DESTDIR)$(PREFIX)/share/pixmaps
 X11_ICON_PREFIX:=$(DESTDIR)$(PREFIX)/X11R6/include/X11/pixmaps
-GNOME_PREFIX:=`gnome-config --prefix 2> /dev/null`
-KDE_PREFIX:=`kde-config --install apps --expandvars 2> /dev/null`
-KDE_ICON_PREFIX:=`kde-config --install icon --expandvars 2> /dev/null`
+GNOME_PREFIX:=$(shell gnome-config --prefix 2> /dev/null)
+KDE_PREFIX:=$(shell kde-config --install apps --expandvars 2> /dev/null)
+KDE_ICON_PREFIX:=$(shell kde-config --install icon --expandvars 2> /dev/null)
 
 # Built with sound by default  (override with "make nosound")
 NOSOUNDFLAG:=__SOUND
@@ -167,7 +167,7 @@ CFLAGS:=$(OPTFLAGS) -W -Wall -fno-common -ffloat-store \
 	-Wbad-function-cast -Wwrite-strings \
 	-Waggregate-return \
 	-Wstrict-prototypes -Wmissing-prototypes \
-	`src/test-option.sh -Wstrict-aliasing=2`
+	$(shell src/test-option.sh -Wstrict-aliasing=2)
 
 DEFS:=-DDATA_PREFIX=\"$(DATA_PREFIX)/\" \
 	-D$(NOSOUNDFLAG) -D$(NOSVGFLAG) -D$(OLDSVGFLAG) \
