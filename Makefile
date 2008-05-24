@@ -644,7 +644,7 @@ clean:
 	@-rm -f src/tp_magic_api.h
 	@-rm -f tp-magic-config
 	@if [ -d trans ]; then rmdir trans; fi
-	@cd magic && make clean$(TARGET_PASSTHRU)
+	@cd magic && make buildmagic-clean$(TARGET_PASSTHRU)
 	@echo
 
 .PHONY: clean-win32
@@ -1106,7 +1106,7 @@ obj/resource.o:	win32/resources.rc win32/resource.h
 # Go into 'magic' subdirectory and buld magic plug-ins
 .PHONY: magic-plugins
 magic-plugins:	src/tp_magic_api.h
-	@cd magic && make $(TARGET_PASSTHRU)
+	@cd magic && make buildmagic-$(TARGET_PASSTHRU)
 
 
 src/tp_magic_api.h:	src/tp_magic_api.h.in

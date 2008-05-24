@@ -31,8 +31,8 @@ SDL_LIBS:=-L/usr/local/lib -lmingw32 -lSDL -lSDL_image -lSDL_ttf $(SDL_MIXER_LIB
 MAGIC_C:=$(wildcard src/*.c)
 MAGIC_SO:=$(patsubst src/%.c,%.$(SO_TYPE),$(MAGIC_C))
 
-.PHONY: all
-all: $(MAGIC_SO)
+.PHONY: buildmagic-all
+buildmagic-all: $(MAGIC_SO)
 
 $(MAGIC_SO): %.$(SO_TYPE): src/%.c  
 	$(CC) $(CFLAGS) $(SHARED_FLAGS) -o $@ $< $(PLUGIN_LIBS)
@@ -40,35 +40,28 @@ $(MAGIC_SO): %.$(SO_TYPE): src/%.c
 # split plug-in CFLAGS from normal CFLAGS.
 #	$(CC) $(PLUG_CPPFLAGS) $(PLUG_CFLAGS) $(PLUG_LDFLAGS) -o $@ $< $(PLUG_LIBS)
 
-
-.PHONY: install
-install:
-	cd .. ; make install-magic-plugins
-
-.PHONY: clean
-clean:
+.PHONY: buildmagic-clean
+buildmagic-clean:
 	@echo
 	@echo "Cleaning up the Magic plug-ins directory ($(PWD))"
 	@-rm -f *.$(SO_TYPE)
 
-
 # beos versions of the targets
-.PHONY: beos
-beos:
-	make \
+.PHONY: buildmagic-beos
+buildmagic-beos:
+	make buildmagic-all \
 		SO_TYPE:=so \
 		PLUGIN_LIBS:="$(SDL_LIBS) $(ARCH_LINKS) $(SDL_CFLAGS) $(TP_MAGIC_CFLAGS)"
 
 
 # win32 versions of the targets
-.PHONY: cleanwin32
-cleanwin32:
-	make clean \
+.PHONY: buildmagic-cleanwin32
+buildmagic-cleanwin32:
+	make buildmagic-clean \
 		SO_TYPE:=dll
 
-.PHONY: win32
-win32:
-	make \
+.PHONY: buildmagic-win32
+buildmagic-win32:
+	make buildmagic-all \
 		SO_TYPE:=dll \
 		PLUGIN_LIBS:="$(SDL_LIBS) $(ARCH_LINKS)" \
-
