@@ -222,7 +222,6 @@ release: releasedir
 	@cd build ; \
 	    tar -czvf tuxpaint-$(VER_VERSION).tar.gz tuxpaint-$(VER_VERSION)
 
-
 # "make nosound" builds the program with sound disabled:
 .PHONY: nosound
 nosound:

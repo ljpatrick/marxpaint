@@ -14,30 +14,15 @@
 LINKS_OPTIONS:=-dump
 LINKS:=links $(LINKS_OPTIONS)
 
+HTMLFILES:=$(wildcard html/*.html)
+TEXTFILES:=$(patsubst html/%.html,%.txt,$(HTMLFILES))
+
 .PHONY: all
-all:	README.txt OPTIONS.txt FAQ.txt EXTENDING.txt ADVANCED-STAMPS-HOWTO.txt
+all:	$(TEXTFILES)
 
 .PHONY: clean
 clean:
-	-rm README.txt
-	-rm OPTIONS.txt
-	-rm FAQ.txt
-	-rm EXTENDING.txt
-	-rm ADVANCED-STAMPS-HOWTO.txt
+	-rm $(TEXTFILES)
 
-README.txt:	html/README.html
+$(TEXTFILES): %.txt: html/%.html  
 	$(LINKS) $< > $@
-
-OPTIONS.txt:	html/OPTIONS.html
-	$(LINKS) $< > $@
-
-FAQ.txt:	html/FAQ.html
-	$(LINKS) $< > $@
-
-EXTENDING.txt:	html/EXTENDING.html
-	$(LINKS) $< > $@
-
-ADVANCED-STAMPS-HOWTO.txt:	html/ADVANCED-STAMPS-HOWTO.html
-	$(LINKS) $< > $@
-
-
