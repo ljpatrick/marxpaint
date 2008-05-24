@@ -29,29 +29,20 @@ beos_SO_TYPE:=so
 linux_SO_TYPE:=so
 SO_TYPE:=$($(OS)_SO_TYPE)
 
-windows_PLUGIN_LIBS:="$(SDL_LIBS) $(ARCH_LINKS)"
-osx_PLUGIN_LIBS:=
-beos_PLUGIN_LIBS:="$(SDL_LIBS) $(ARCH_LINKS) $(SDL_CFLAGS) $(TP_MAGIC_CFLAGS)"
-linux_PLUGIN_LIBS:=
-PLUGIN_LIBS:=$($(OS)_PLUGIN_LIBS)
-
-
-# Places to pick up Tux Paint Magic Plugin Dev header and SDL headers
-# (can't assume plugin dev stuff has been installed yet, since we're
-# part of Tux Paint base, so "install-plugin-dev" probably hasn't
-# been run yet; hence "-I../src/" to find 'tp_magic_api.h')
-
-TP_MAGIC_CFLAGS:=$(shell if [ -x tp-magic-config ] ; then tp-magic-config --cflags ; else echo -I../src/ ; fi)
-
 SDL_CFLAGS:=$(shell sdl-config --cflags)
-#CFLAGS:=-g3 -O2 -fvisibility=hidden -fno-common -W -Wstrict-prototypes -Wmissing-prototypes -Wall $(SDL_CFLAGS) $(TP_MAGIC_CFLAGS)
-CFLAGS:=-g3 -O2 -fno-common -W -Wstrict-prototypes -Wmissing-prototypes -Wall $(SDL_CFLAGS) $(TP_MAGIC_CFLAGS)
-SHARED_FLAGS:=-shared -fpic
-
 SDL_MIXER_LIB:=-lSDL_mixer
 ARCH_LINKS:=-lintl -lpng12
 SDL_LIBS:=-L/usr/local/lib -lmingw32 -lSDL -lSDL_image -lSDL_ttf $(SDL_MIXER_LIB)
 
+windows_PLUGIN_LIBS:="$(SDL_LIBS) $(ARCH_LINKS)"
+osx_PLUGIN_LIBS:=
+beos_PLUGIN_LIBS:="$(SDL_LIBS) $(ARCH_LINKS) $(SDL_CFLAGS)"
+linux_PLUGIN_LIBS:=
+PLUGIN_LIBS:=$($(OS)_PLUGIN_LIBS)
+
+#CFLAGS:=-g3 -O2 -fvisibility=hidden -fno-common -W -Wstrict-prototypes -Wmissing-prototypes -Wall $(SDL_CFLAGS) -I../src/
+CFLAGS:=-g3 -O2 -fno-common -W -Wstrict-prototypes -Wmissing-prototypes -Wall $(SDL_CFLAGS) -I../src/
+SHARED_FLAGS:=-shared -fpic
 
 MAGIC_C:=$(wildcard src/*.c)
 MAGIC_SO:=$(patsubst src/%.c,%.$(SO_TYPE),$(MAGIC_C))
