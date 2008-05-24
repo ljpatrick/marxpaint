@@ -47,8 +47,8 @@ SHARED_FLAGS:=-shared -fpic
 MAGIC_C:=$(wildcard src/*.c)
 MAGIC_SO:=$(patsubst src/%.c,%.$(SO_TYPE),$(MAGIC_C))
 
-.PHONY: buildmagic-all
-buildmagic-all: $(MAGIC_SO)
+.PHONY: buildmagic
+buildmagic: $(MAGIC_SO)
 
 $(MAGIC_SO): %.$(SO_TYPE): src/%.c  
 	$(CC) $(CFLAGS) $(SHARED_FLAGS) -o $@ $< $(PLUGIN_LIBS)
