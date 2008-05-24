@@ -42,6 +42,24 @@ SO_TYPE:=$($(OS)_SO_TYPE)
 windows_EXE_EXT:=.exe
 EXE_EXT:=$($(OS)_EXE_EXT)
 
+windows_ARCH_LIBS:=obj/win32_print.o obj/resource.o
+osx_ARCH_LIBS:=obj/postscript_print.o
+beos_ARCH_LIBS:=obj/BeOS_print.o
+linux_ARCH_LIBS:=obj/postscript_print.o
+ARCH_LIBS:=$($(OS)_ARCH_LIBS)
+
+windows_ARCH_LINKS:="-lintl -lpng12 -lwinspool -lshlwapi"
+osx_ARCH_LINKS:=
+beos_ARCH_LINKS:="-lintl -lpng -lz -lbe -liconv"
+linux_ARCH_LINKS:=
+ARCH_LINKS:=$($(OS)_ARCH_LINKS)
+
+windows_ARCH_HEADERS:=src/win32_print.h
+osx_ARCH_HEADERS:=
+beos_ARCH_HEADERS:=src/BeOS_print.h
+linux_ARCH_HEADERS:=
+ARCH_HEADERS:=$($(OS)_ARCH_HEADERS)
+
 # Where to install things:
 
 windows_PREFIX:=/usr/local
@@ -138,8 +156,6 @@ SVG_CFLAGS:=-I/usr/include/librsvg-2/librsvg \
 SDL_CFLAGS:=$(shell sdl-config --cflags) $(SVG_CFLAGS)
 
 PAPER_LIB:=-lpaper
-ARCH_LIBS:=obj/postscript_print.o
-
 
 # The entire set of CFLAGS:
 
@@ -292,9 +308,6 @@ beos:
 		CFLAGS:="-O1 -funroll-loops -fomit-frame-pointer -pipe -Wall" \
 		RSRC_CMD:="xres -o tuxpaint src/tuxpaint.rsrc" \
 		MIMESET_CMD:="mimeset -f tuxpaint" \
-		ARCH_LINKS:="-lintl -lpng -lz -lbe -liconv" \
-		ARCH_HEADERS:="src/BeOS_print.h" \
-		ARCH_LIBS:="obj/BeOS_print.o" \
 		MAGIC_PREFIX:=./lib/tuxpaint/plugins
 
 # "make win32" builds the program for Windows 2K/XP/Vista using MinGW/MSYS.
@@ -315,9 +328,6 @@ win32:
 		LOCALE_PREFIX:=$(PREFIX)/share/locale \
 		IM_PREFIX:=$(PREFIX)/share/tuxpaint/im \
 		CONFDIR:=$(PREFIX)/etc/tuxpaint \
-		ARCH_LINKS:="-lintl -lpng12 -lwinspool -lshlwapi" \
-		ARCH_HEADERS:="src/win32_print.h" \
-		ARCH_LIBS:="obj/win32_print.o obj/resource.o" \
 		SVG_LIB:="-lrsvg-2 -lcairo -lgobject-2.0" \
 		SVG_CFLAGS:="-I/usr/local/include/librsvg-2/librsvg -I/usr/local/include/gtk-2.0 -I/usr/local/include/glib-2.0 -I/usr/local/lib/glib-2.0/include -I/usr/local/include/cairo" \
 		INCLUDE_PREFIX:=$(PREFIX)/include \
@@ -342,9 +352,6 @@ win9x:
 		LOCALE_PREFIX:=$(PREFIX)/share/locale \
 		IM_PREFIX:=$(PREFIX)/share/tuxpaint/im \
 		CONFDIR:=$(PREFIX)/etc/tuxpaint \
-		ARCH_LINKS:="-lintl -lpng12 -lwinspool -lshlwapi" \
-		ARCH_HEADERS:="src/win32_print.h" \
-		ARCH_LIBS:="obj/win32_print.o obj/resource.o" \
 		SVG_CFLAGS:=-I/usr/local/include/cairo \
 		SVG_LIB:="-lcairo -lsvg -lsvg-cairo" \
 		OLDSVGFLAG:=OLD_SVG \
@@ -551,9 +558,6 @@ install-beos:
 		CFLAGS:="-O1 -funroll-loops -fomit-frame-pointer -pipe -Wall" \
 		RSRC_CMD:="xres -o tuxpaint tuxpaint.rsrc" \
 		MIMESET_CMD:="mimeset -f tuxpaint" \
-		ARCH_LINKS:="-lintl -lpng -lz -lbe" \
-		ARCH_HEADERS:="src/BeOS_print.h" \
-		ARCH_LIBS:="obj/BeOS_print.o" \
 		MAGIC_PREFIX:=./build/lib/tuxpaint/plugins
 
 # "make install-win32" installs Tux Paint, but using MinGW/MSYS settings
@@ -588,9 +592,6 @@ bdist-win32:
 		LOCALE_PREFIX:=locale \
 		IM_PREFIX:=im \
 		CONFDIR:=. \
-		ARCH_LINKS:="-lintl -lpng12 -lwinspool -lshlwapi" \
-		ARCH_HEADERS:="src/win32_print.h" \
-		ARCH_LIBS:="obj/win32_print.o obj/resource.o" \
 		SVG_LIB:="-lrsvg-2 -lcairo -lgobject-2.0" \
 		SVG_CFLAGS:="-I/usr/local/include/librsvg-2/librsvg -I/usr/local/include/gtk-2.0 -I/usr/local/include/glib-2.0 -I/usr/local/lib/glib-2.0/include -I/usr/local/include/cairo" \
 		INCLUDE_PREFIX:=plugins/include \
