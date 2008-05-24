@@ -305,8 +305,6 @@ win32:
 	make \
 		PREFIX:=/usr/local \
 		BIN_PREFIX:=$(PREFIX)/bin \
-		EXE_EXT:=.exe \
-		SO_TYPE:=dll \
 		DATA_PREFIX:=$(PREFIX)/share/tuxpaint \
 		DOC_PREFIX:=$(PREFIX)/share/doc/tuxpaint \
 		MAN_PREFIX:=$(PREFIX)/share/man \
@@ -334,8 +332,6 @@ win9x:
 	make \
 		PREFIX:=/usr/local \
 		BIN_PREFIX:=$(PREFIX)/bin \
-		EXE_EXT:=.exe \
-		SO_TYPE:=dll \
 		DATA_PREFIX:=$(PREFIX)/share/tuxpaint \
 		DOC_PREFIX:=$(PREFIX)/share/doc/tuxpaint \
 		MAN_PREFIX:=$(PREFIX)/share/man \
@@ -568,8 +564,6 @@ install-win32:
 	@make install-private-win32 \
 		PREFIX:=/usr/local \
 		BIN_PREFIX:=$(PREFIX)/bin \
-		EXE_EXT:=.exe \
-		SO_TYPE:=dll \
 		DATA_PREFIX:=$(PREFIX)/share/tuxpaint \
 		DOC_PREFIX:=$(PREFIX)/share/doc/tuxpaint \
 		MAN_PREFIX:=$(PREFIX)/share/man \
@@ -589,8 +583,6 @@ bdist-win32:
 	make \
 		PREFIX:=./win32/bdist \
 		BIN_PREFIX:=$(PREFIX)/bin \
-		EXE_EXT:=.exe \
-		SO_TYPE:=dll \
 		DATA_PREFIX:=data \
 		DOC_PREFIX:=docs \
 		LOCALE_PREFIX:=locale \
@@ -608,8 +600,6 @@ bdist-win32:
 	make bdist-private-win32 \
 		PREFIX:=./win32/bdist \
 		BIN_PREFIX:=./win32/bdist \
-		EXE_EXT:=.exe \
-		SO_TYPE:=dll \
 		DATA_PREFIX:=./win32/bdist/data \
 		DOC_PREFIX:=./win32/bdist/docs \
 		LOCALE_PREFIX:=./win32/bdist/locale \
