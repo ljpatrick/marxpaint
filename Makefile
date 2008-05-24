@@ -616,9 +616,10 @@ bdist-clean:
 # "make clean" deletes the program, the compiled objects and the
 # built man page (returns to factory archive, pretty much...)
 .PHONY: clean
-clean: buildmagic-clean
+clean:
 	@echo
 	@echo "Cleaning up the build directory! ($(PWD))"
+	@-rm -f magic/*.$(SO_TYPE)
 	@-rm -f tuxpaint
 	@-rm -f obj/*.o
 	@#if [ -d obj ]; then rmdir obj; fi
@@ -877,7 +878,7 @@ install-dlls:
 	@mkdir -p $(BIN_PREFIX)/lib/pango/1.6.0/modules
 	@cp /usr/local/lib/pango/1.6.0/modules/*.dll $(BIN_PREFIX)/lib/pango/1.6.0/modules
 	@strip -s $(BIN_PREFIX)/lib/pango/1.6.0/modules/*.dll
-	
+
 # Install the import script:
 .PHONY: install-importscript
 install-importscript:
@@ -1083,11 +1084,6 @@ obj/resource.o:	win32/resources.rc win32/resource.h
 	@windres -i win32/resources.rc -o obj/resource.o
 
 
-# Go into 'magic' subdirectory and buld magic plug-ins
-.PHONY: magic-plugins
-magic-plugins:	src/tp_magic_api.h buildmagic
-
-
 src/tp_magic_api.h:	src/tp_magic_api.h.in
 	@echo
 	@echo "...Generating 'Magic' tool API development header file..."
@@ -1130,16 +1126,10 @@ SHARED_FLAGS:=-shared -fpic
 MAGIC_C:=$(wildcard magic/src/*.c)
 MAGIC_SO:=$(patsubst magic/src/%.c,magic/%.$(SO_TYPE),$(MAGIC_C))
 
-.PHONY: buildmagic
-buildmagic: $(MAGIC_SO)
-
 $(MAGIC_SO): magic/%.$(SO_TYPE): magic/src/%.c  
 	$(CC) $(MAGIC_CFLAGS) $(SHARED_FLAGS) -o $@ $< $(PLUGIN_LIBS)
 # Probably should separate the various flags like the following:
 #	$(CC) $(PLUG_CPPFLAGS) $(PLUG_CFLAGS) $(PLUG_LDFLAGS) -o $@ $< $(PLUG_LIBS)
 
-.PHONY: buildmagic-clean
-buildmagic-clean:
-	@echo
-	@echo "Cleaning up the Magic plug-ins directory ($(PWD))"
-	@-rm -f magic/*.$(SO_TYPE)
+.PHONY: magic-plugins
+magic-plugins:	src/tp_magic_api.h $(MAGIC_SO)
