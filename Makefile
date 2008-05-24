@@ -52,32 +52,26 @@ PREFIX:=$($(OS)_PREFIX)
 
 
 # Root directory to place files when creating packages.
-
 DESTDIR:=$(PKG_ROOT)
 
-
 # Program:
-
 BIN_PREFIX:=$(DESTDIR)$(PREFIX)/bin
 
 # Data:
-
 DATA_PREFIX:=$(DESTDIR)$(PREFIX)/share/tuxpaint
 
+# Locale files
+LOCALE_PREFIX=$(DESTDIR)$(PREFIX)/share/locale
 
-# Locale Prefix (dup'd from Makefile-i18n; needed by src/i18n.c to set path
-# to our specific tuxpaint.mo files! -bjk 2008.05.08)
-LOCALE_PREFIX:=$(DESTDIR)$(PREFIX)/share/locale
-
+# IM files
+IM_PREFIX=$(DESTDIR)$(PREFIX)/share/tuxpaint/im
 
 # Magic Tool plug-ins
-
 INCLUDE_PREFIX:=$(DESTDIR)$(PREFIX)/include
 MAGIC_PREFIX:=$(DESTDIR)$(PREFIX)/lib/tuxpaint/plugins
 
 
 # Docs and man page:
-
 DOC_PREFIX:=$(DESTDIR)$(PREFIX)/share/doc/tuxpaint
 DEVDOC_PREFIX:=$(DESTDIR)$(PREFIX)/share/doc/tuxpaint-dev
 MAN_PREFIX:=$(DESTDIR)$(PREFIX)/share/man
@@ -85,7 +79,6 @@ DEVMAN_PREFIX:=$(DESTDIR)$(PREFIX)/share/man
 
 
 # 'System-wide' Config file:
-
 ifeq ($(PREFIX),/usr)
   CONFDIR:=$(DESTDIR)/etc/tuxpaint
 else
@@ -94,42 +87,30 @@ endif
 
 
 # Commands useful to other arch's (e.g., BeOS)
-
 RSRC_CMD:=echo -n
 MIMESET_CMD:=echo -n
 
 
 # Icons and launchers:
-
 ICON_PREFIX:=$(DESTDIR)$(PREFIX)/share/pixmaps
 X11_ICON_PREFIX:=$(DESTDIR)$(PREFIX)/X11R6/include/X11/pixmaps
 GNOME_PREFIX:=`gnome-config --prefix 2> /dev/null`
 KDE_PREFIX:=`kde-config --install apps --expandvars 2> /dev/null`
 KDE_ICON_PREFIX:=`kde-config --install icon --expandvars 2> /dev/null`
 
-
 # Built with sound by default  (override with "make nosound")
-
 NOSOUNDFLAG:=__SOUND
 
-
 # Built with SVG support (via Cairo) by default  (override with "make nosvg")
-
 NOSVGFLAG:=__SVG
 
-
 # Built with SDL Pango support by default  (override with "make nopango")
-
 NOPANGOFLAG:=___SDLPANGO
 
-
 # Built with libcairo2 support by default  (use libcairo1 with "make oldsvg")
-
 OLDSVGFLAG:=__SVG
 
-
 # Maemo flag
-
 MAEMOFLAG:=NO_MAEMOFLAG
 
 
@@ -137,13 +118,11 @@ MAEMOFLAG:=NO_MAEMOFLAG
 
 MOUSEDIR:=mouse
 CURSOR_SHAPES:=LARGE
-
 # MOUSEDIR:=mouse/16x16
 # CURSOR_SHAPES:=SMALL
 
 
 # Libraries, paths, and flags:
-
 SDL_MIXER_LIB:=-lSDL_mixer
 SDL_PANGO_LIB:=-lSDL_Pango
 SDL_LIBS:=$(shell sdl-config --libs) -lSDL_image -lSDL_ttf $(SDL_MIXER_LIB) $(SDL_PANGO_LIB)
@@ -164,9 +143,6 @@ ARCH_LIBS:=obj/postscript_print.o
 
 # The entire set of CFLAGS:
 
-# FIXME: src/test-option.sh runs every time
-# FIXME: -Wstrict-aliasing=2 not used
-
 #-ffast-math
 OPTFLAGS:=-O2
 CFLAGS:=$(OPTFLAGS) -W -Wall -fno-common -ffloat-store \
@@ -175,7 +151,7 @@ CFLAGS:=$(OPTFLAGS) -W -Wall -fno-common -ffloat-store \
 	-Wbad-function-cast -Wwrite-strings \
 	-Waggregate-return \
 	-Wstrict-prototypes -Wmissing-prototypes \
-	`src/test-option.sh -Wdeclaration-after-statement`
+	`src/test-option.sh -Wstrict-aliasing=2`
 
 DEFS:=-DDATA_PREFIX=\"$(DATA_PREFIX)/\" \
 	-D$(NOSOUNDFLAG) -D$(NOSVGFLAG) -D$(OLDSVGFLAG) \
@@ -395,10 +371,74 @@ nokia770:
 		LOCALE_PREFIX:=$(PREFIX)/share/locale \
 		CONFDIR:=/etc/tuxpaint
 
+##### i18n stuff
 
-# Include the i18n stuff (moved out of main Makefile -bjk 2007.05.02)
-#
-include Makefile-i18n
+POFILES:=$(wildcard src/po/*.po)
+MOFILES:=$(patsubst src/po/%.po,trans/%.mo,$(POFILES))
+INSTALLED_MOFILES:=$(patsubst trans/%.mo,$(LOCALE_PREFIX)/%/LC_MESSAGES/tuxpaint.mo,$(MOFILES))
+
+$(INSTALLED_MOFILES): $(LOCALE_PREFIX)/%/LC_MESSAGES/tuxpaint.mo: trans/%.mo
+	install -D -m 644 $< $@
+
+.PHONY: uninstall-i18n
+uninstall-i18n:
+	-rm $(LOCALE_PREFIX)/*/LC_MESSAGES/tuxpaint.mo
+	-rm $(IM_PREFIX)/ja.im
+	-rm $(IM_PREFIX)/ko.im
+	-rm $(IM_PREFIX)/th.im
+	-rm $(IM_PREFIX)/zh_tw.im
+
+
+# Install the translated text:
+.PHONY: install-gettext
+install-gettext: $(INSTALLED_MOFILES)
+
+
+# Install the Input Method files:
+.PHONY: install-im
+ifneq ($(IM_PREFIX),)
+install-im:
+	@echo
+	@echo "...Installing Input Method files..."
+	@#
+	@install -d $(IM_PREFIX)
+	@#
+	@echo "   ja ...Japanese..."
+	@cp im/ja.im $(IM_PREFIX)/ja.im
+	@chmod 644 $(IM_PREFIX)/ja.im
+	@#
+	@echo "   ko ...Korean..."
+	@cp im/ko.im $(IM_PREFIX)/ko.im
+	@chmod 644 $(IM_PREFIX)/ko.im
+	@#
+	@echo "   th ...Thai..."
+	@cp im/th.im $(IM_PREFIX)/th.im
+	@chmod 644 $(IM_PREFIX)/th.im
+	@#
+	@echo "   zh_tw ...Traditional Chinese..."
+	@cp im/zh_tw.im $(IM_PREFIX)/zh_tw.im
+	@chmod 644 $(IM_PREFIX)/zh_tw.im
+else
+install-im:
+	@echo
+	@echo "...Not Installing Input Method files (no IM_PREFIX defined)..."
+endif
+
+
+# Build the translation files for gettext
+
+$(MOFILES): trans/%.mo: src/po/%.po  
+	msgfmt -o $@ $<
+
+.PHONY: translations
+translations: trans $(MOFILES)
+
+trans:
+	@echo
+	@echo "...Preparing translation files..."
+	@mkdir trans
+
+######
 
 
 # "make install" installs all of the various parts
