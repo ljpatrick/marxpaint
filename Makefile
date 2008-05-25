@@ -161,16 +161,16 @@ SDL_CFLAGS:=$(shell sdl-config --cflags)
 
 
 # SVG support (via Cairo) enabled by __SVG
-NOSVGFLAG:=$(if $(SVG_LIB),__SVG,)
+NOSVGFLAG:=$(if $(SVG_LIB),,-DNOSVG)
 
 # SVG support (use libcairo1) enabled by __SVG; see "make oldsvg"
-OLDSVGFLAG:=$(if $(SVG_LIB),__SVG,)
+OLDSVGFLAG:=$(if $(SVG_LIB),,-DOLD_SVG)
 
 # SDL Pango support enabled by ___SDLPANGO
-NOPANGOFLAG:=$(if $(SDL_PANGO_LIB),___SDLPANGO,)
+NOPANGOFLAG:=$(if $(SDL_PANGO_LIB),,-DNO_SDLPANGO)
 
 # Built with sound if -lSDL_Mixer worked
-NOSOUNDFLAG:=$(if $(SDL_MIXER_LIB),__SOUND,)
+NOSOUNDFLAG:=$(if $(SDL_MIXER_LIB),,-DNOSOUND)
 
 
 # The entire set of CFLAGS:
@@ -186,8 +186,7 @@ CFLAGS:=$(OPTFLAGS) -W -Wall -fno-common -ffloat-store \
 	$(shell src/test-option.sh -Wstrict-aliasing=2)
 
 DEFS:=-DDATA_PREFIX=\"$(DATA_PREFIX)/\" \
-	-D$(NOSOUNDFLAG) -D$(NOSVGFLAG) -D$(OLDSVGFLAG) \
-	-D$(NOPANGOFLAG) \
+	$(NOSOUNDFLAG) $(NOSVGFLAG) $(OLDSVGFLAG) $(NOPANGOFLAG) \
 	-DDOC_PREFIX=\"$(DOC_PREFIX)/\" \
 	-DLOCALEDIR=\"$(LOCALE_PREFIX)/\" -DIMDIR=\"$(IM_PREFIX)/\" \
 	-DCONFDIR=\"$(CONFDIR)/\" \
