@@ -339,7 +339,7 @@ extern WrapperData macosx;
 #error "---------------------------------------------------"
 #endif
 
-/*
+
 #ifndef NO_SDLPANGO
 
 #include "SDL_Pango.h"
@@ -352,7 +352,7 @@ extern WrapperData macosx;
 #endif
 
 #endif
-*/
+
 
 #ifndef NOSOUND
 #include "SDL_mixer.h"
@@ -919,6 +919,13 @@ magic_api *magic_api_struct; // Pointer to our internal functions; passed to sha
 
 #if !defined(WIN32) && !defined(__APPLE__) && !defined(__BEOS__)
 #include <paper.h>
+#if !defined(PAPER_H)
+#error "---------------------------------------------------"
+#error "If you installed libpaper from a package, be sure"
+#error "to get the development package, as well!"
+#error "(eg., 'libpaper-dev_1.1.21.deb')"
+#error "---------------------------------------------------"
+#endif
 static const char *printcommand = PRINTCOMMAND;
 static const char *altprintcommand = ALTPRINTCOMMAND;
 char *papersize = NULL;

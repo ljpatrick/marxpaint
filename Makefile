@@ -387,8 +387,24 @@ uninstall-i18n:
 
 
 # Install the translated text:
+# We can install *.mo files if they were already generated, or if it can be
+# generated from the *.po files.  The *.mo files can be generated from the
+# *.po files if we have the converter program, msgfmt, installed in the
+# system.  So we test for both and install them if either case is found
+# to be true.  If neither case is found to be true, we'll just install
+# Tux Paint without the translation files.
 .PHONY: install-gettext
+ifeq "$(wildcard trans/*.mo)$(shell msgfmt -h)" ""
+install-gettext:
+	@echo
+	@echo "--------------------------------------------------------------"
+	@echo "Cannot install translation files because no translation files"
+	@echo "were found (trans/*.mo) and the 'msgfmt' program is not installed."
+	@echo "You will not be able to run Tux Paint in non-U.S. English modes."
+	@echo "--------------------------------------------------------------"
+else
 install-gettext: $(INSTALLED_MOFILES)
+endif
 
 
 # Install the Input Method files:
@@ -428,7 +444,16 @@ $(MOFILES): trans/%.mo: src/po/%.po
 	msgfmt -o $@ $<
 
 .PHONY: translations
+ifeq "$(shell msgfmt -h)" ""
+translations: trans
+	@echo "--------------------------------------------------------------"
+	@echo "Cannot find program 'msgfmt'!"
+	@echo "No translation files will be prepared."
+	@echo "Install gettext to run Tux Paint in non-U.S. English modes."
+	@echo "--------------------------------------------------------------"
+else
 translations: trans $(MOFILES)
+endif
 
 trans:
 	@echo

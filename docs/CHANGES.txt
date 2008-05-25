@@ -64,6 +64,11 @@ $Id$
     * Makefile improvements.
       Albert Cahalan <albert@users.sf.net>
 
+    * Makefile edited so that tuxpaint can be installed in the absence
+      of gettext in the system.
+      Arunodai Vudem <arunvudem@gmail.com>
+      Mark K. Kim <mkkim214@gmail.com>
+
     * Making Magic Tool source throw less compiler warnings.
 
   * Documentation Improvements:
@@ -100,6 +105,13 @@ $Id$
 
     * "Ojibwe" is the proper spelling of the language, accepting that as
       a "--lang" option, too.
+
+    * The variables not declared as extern in SDL_Pango.h have been 
+      renamed in dirwalk.c and fonts.c. SDL_Pango.h no longer needs to be
+      shipped along with tuxpaint code. Inclusion error message has been added
+      for missing libpaper.
+      Arunodai Vudem <arunvudem@gmail.com>
+      Mark K. Kim <mkkim214@gmail.com>
 
 * New Starters:
     -------------
