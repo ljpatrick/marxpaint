@@ -455,14 +455,11 @@ bdist-win32:
 	@-rm -f obj/*.o
 	make \
 		PREFIX:=./win32/bdist \
-		BIN_PREFIX:=$(PREFIX)/bin \
 		DATA_PREFIX:=data \
 		DOC_PREFIX:=docs \
 		LOCALE_PREFIX:=locale \
 		IM_PREFIX:=im \
 		CONFDIR:=. \
-		SVG_LIB:="-lrsvg-2 -lcairo -lgobject-2.0" \
-		SVG_CFLAGS:="-I/usr/local/include/librsvg-2/librsvg -I/usr/local/include/gtk-2.0 -I/usr/local/include/glib-2.0 -I/usr/local/lib/glib-2.0/include -I/usr/local/include/cairo" \
 		INCLUDE_PREFIX:=plugins/include \
 		MAGIC_PREFIX:=plugins
 	strip -s tuxpaint.exe

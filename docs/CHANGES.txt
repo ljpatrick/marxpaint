@@ -9,7 +9,7 @@ http://www.tuxpaint.org/
 $Id$
 
 
-2008.April.19 (0.9.20)
+2008.May.25 (0.9.20)
   * New translations:
     -----------------
     * Asturian
@@ -69,7 +69,7 @@ $Id$
       Arunodai Vudem <arunvudem@gmail.com>
       Mark K. Kim <mkkim214@gmail.com>
 
-    * Making Magic Tool source throw less compiler warnings.
+    * Making Magic Tool source throw fewer compiler warnings.
 
   * Documentation Improvements:
     ---------------------------
