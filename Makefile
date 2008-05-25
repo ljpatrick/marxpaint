@@ -73,14 +73,19 @@ ARCH_HEADERS:=$($(OS)_ARCH_HEADERS)
 # Where things will go when ultimately installed:
 windows_PREFIX:=/usr/local
 osx_PREFIX:=/usr/local
-beos_PREFIX:=./
+beos_PREFIX:=/boot/apps/Games
 linux_PREFIX:=/usr/local
 PREFIX:=$($(OS)_PREFIX)
 
 
 # Root directory to place files when creating packages.
-# (PKG_ROOT is the old name for this, and should be undefined)
+# PKG_ROOT is the old name for this, and should be undefined.
+# "TuxPaint-1" is the OLPC XO name. Installing to ./ is bad!
+ifeq ($(PREFIX),./)
+DESTDIR:=TuxPaint-1
+else
 DESTDIR:=$(PKG_ROOT)
+endif
 
 # Program:
 BIN_PREFIX:=$(DESTDIR)$(PREFIX)/bin
@@ -123,14 +128,26 @@ KDE_ICON_PREFIX:=$(shell kde-config --install icon --expandvars 2> /dev/null)
 # Built with sound by default  (override with "make nosound")
 NOSOUNDFLAG:=__SOUND
 
-# Built with SVG support (via Cairo) by default  (override with "make nosvg")
-NOSVGFLAG:=__SVG
+# SVG support (via Cairo) enabled by __SVG
+windows_NOSVGFLAG:=__SVG
+osx_NOSVGFLAG:=__SVG
+beos_NOSVGFLAG:=
+linux_NOSVGFLAG:=__SVG
+NOSVGFLAG:=$($(OS)_NOSVGFLAG)
 
-# Built with SDL Pango support by default  (override with "make nopango")
-NOPANGOFLAG:=___SDLPANGO
+# SVG support (use libcairo1) enabled by __SVG; see "make oldsvg"
+windows_OLDSVGFLAG:=__SVG
+osx_OLDSVGFLAG:=__SVG
+beos_OLDSVGFLAG:=
+linux_OLDSVGFLAG:=__SVG
+OLDSVGFLAG:=$($(OS)_OLDSVGFLAG)
 
-# Built with libcairo2 support by default  (use libcairo1 with "make oldsvg")
-OLDSVGFLAG:=__SVG
+# SDL Pango support enabled by ___SDLPANGO
+windows_NOPANGOFLAG:=___SDLPANGO
+osx_NOPANGOFLAG:=___SDLPANGO
+beos_NOPANGOFLAG:=
+linux_NOPANGOFLAG:=___SDLPANGO
+NOPANGOFLAG:=$($(OS)_NOPANGOFLAG)
 
 # Maemo flag
 MAEMOFLAG:=NO_MAEMOFLAG
@@ -143,19 +160,22 @@ CURSOR_SHAPES:=LARGE
 # MOUSEDIR:=mouse/16x16
 # CURSOR_SHAPES:=SMALL
 
+linktest = $(shell if $(CC) $(CPPFLAGS) $(CFLAGS) dummy.c $(LDFLAGS) $(2) $(1) -o /dev/null > /dev/null 2>&1; \
+	then \
+		echo "$(1)"; \
+	fi ;)
 
 # Libraries, paths, and flags:
-SDL_MIXER_LIB:=-lSDL_mixer
-SDL_PANGO_LIB:=-lSDL_Pango
-SDL_LIBS:=$(shell sdl-config --libs) -lSDL_image -lSDL_ttf $(SDL_MIXER_LIB) $(SDL_PANGO_LIB)
+SDL_LIBS:=$(shell sdl-config --libs) -lSDL_image -lSDL_ttf
+SDL_MIXER_LIB:=$(call linktest,-lSDL_mixer,$(SDL_LIBS))
+SDL_PANGO_LIB:=$(call linktest,-lSDL_Pango,$(SDL_LIBS))
+SDL_LIBS+=$(SDL_MIXER_LIB) $(SDL_PANGO_LIB)
 
+# -lrsvg-2 -lcairo
+SVG_LIB:=$(shell pkg-config --libs librsvg-2.0 cairo)
 
-SVG_LIB:=-lrsvg-2 -lcairo
-SVG_CFLAGS:=-I/usr/include/librsvg-2/librsvg \
-	-I/usr/include/gtk-2.0 \
-	-I/usr/include/glib-2.0 \
-	-I/usr/lib/glib-2.0/include \
-	-I/usr/include/cairo
+# lots of -I things, so really should be SVG_CPPFLAGS
+SVG_CFLAGS:=$(pkg-config --cflags librsvg-2.0 cairo)
 
 SDL_CFLAGS:=$(shell sdl-config --cflags) $(SVG_CFLAGS)
 
@@ -283,31 +303,6 @@ olpc:
 	@echo "Building for an OLPC XO"
 	@echo
 	make PREFIX:=. SVG_LIB:= SVG_CFLAGS:= NOSVGFLAG:=NOSVG OPTFLAGS:='-O2 -fno-tree-pre -march=athlon -mtune=generic -mpreferred-stack-boundary=2 -mmmx -m3dnow -fomit-frame-pointer -falign-functions=0 -falign-jumps=0 -DOLPC_XO -DSUGAR'
-
-
-# "make beos" builds the program for BeOS
-.PHONY: beos
-beos:
-	make \
-		PREFIX:=./ \
-		BIN_PREFIX:=./ \
-		DATA_PREFIX:=./data \
-		DOC_PREFIX:=./docs \
-		MAN_PREFIX:=./share/man \
-		CONFDIR:=./share/conf \
-		ICON_PREFIX:=. \
-		X11_ICON_PREFIX:=. \
-		LOCALE_PREFIX:=./share/locale \
-		NOSVGFLAG:=NOSVG \
-		NOPANGOFLAG:=NO_SDLPANGO \
-		SDL_PANGO_LIB:= \
-		SVG_LIB:= \
-		IM_PREFIX:=./src \
-		SDL_CFLAGS:="$(shell sdl-config --cflags)" \
-		SDL_LIBS:="$(shell sdl-config --libs) -lSDL -lSDL_image -lSDL_ttf $(SDL_MIXER_LIB)" \
-		SDL_MIXER_LIB:=-lSDL_mixer \
-		CFLAGS:="-O1 -funroll-loops -fomit-frame-pointer -pipe -Wall" \
-		MAGIC_PREFIX:=./lib/tuxpaint/plugins
 
 # "make win32" builds the program for Windows 2K/XP/Vista using MinGW/MSYS.
 # The DATA_, DOC_ and LOCALE_ prefixes are absolute paths.
