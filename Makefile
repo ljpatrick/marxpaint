@@ -31,6 +31,8 @@ else
 OS:=linux
 endif
 endif
+endif
+endif
 
 beos_RSRC_CMD:=xres -o tuxpaint src/tuxpaint.rsrc
 RSRC_CMD:=$($(OS)_RSRC_CMD)
@@ -125,30 +127,6 @@ GNOME_PREFIX:=$(shell gnome-config --prefix 2> /dev/null)
 KDE_PREFIX:=$(shell kde-config --install apps --expandvars 2> /dev/null)
 KDE_ICON_PREFIX:=$(shell kde-config --install icon --expandvars 2> /dev/null)
 
-# Built with sound by default  (override with "make nosound")
-NOSOUNDFLAG:=__SOUND
-
-# SVG support (via Cairo) enabled by __SVG
-windows_NOSVGFLAG:=__SVG
-osx_NOSVGFLAG:=__SVG
-beos_NOSVGFLAG:=
-linux_NOSVGFLAG:=__SVG
-NOSVGFLAG:=$($(OS)_NOSVGFLAG)
-
-# SVG support (use libcairo1) enabled by __SVG; see "make oldsvg"
-windows_OLDSVGFLAG:=__SVG
-osx_OLDSVGFLAG:=__SVG
-beos_OLDSVGFLAG:=
-linux_OLDSVGFLAG:=__SVG
-OLDSVGFLAG:=$($(OS)_OLDSVGFLAG)
-
-# SDL Pango support enabled by ___SDLPANGO
-windows_NOPANGOFLAG:=___SDLPANGO
-osx_NOPANGOFLAG:=___SDLPANGO
-beos_NOPANGOFLAG:=
-linux_NOPANGOFLAG:=___SDLPANGO
-NOPANGOFLAG:=$($(OS)_NOPANGOFLAG)
-
 # Maemo flag
 MAEMOFLAG:=NO_MAEMOFLAG
 
@@ -165,19 +143,35 @@ linktest = $(shell if $(CC) $(CPPFLAGS) $(CFLAGS) dummy.c $(LDFLAGS) $(2) $(1) -
 		echo "$(1)"; \
 	fi ;)
 
+
 # Libraries, paths, and flags:
 SDL_LIBS:=$(shell sdl-config --libs) -lSDL_image -lSDL_ttf
 SDL_MIXER_LIB:=$(call linktest,-lSDL_mixer,$(SDL_LIBS))
 SDL_PANGO_LIB:=$(call linktest,-lSDL_Pango,$(SDL_LIBS))
 SDL_LIBS+=$(SDL_MIXER_LIB) $(SDL_PANGO_LIB)
 
-# -lrsvg-2 -lcairo
+# New one: -lrsvg-2 -lcairo
+# Old one: -lcairo -lsvg -lsvg-cairo
 SVG_LIB:=$(shell pkg-config --libs librsvg-2.0 cairo)
 
 # lots of -I things, so really should be SVG_CPPFLAGS
 SVG_CFLAGS:=$(pkg-config --cflags librsvg-2.0 cairo)
 
 SDL_CFLAGS:=$(shell sdl-config --cflags) $(SVG_CFLAGS)
+
+
+# SVG support (via Cairo) enabled by __SVG
+NOSVGFLAG:=$(if $(SVG_LIB),__SVG,)
+
+# SVG support (use libcairo1) enabled by __SVG; see "make oldsvg"
+OLDSVGFLAG:=$(if $(SVG_LIB),__SVG,)
+
+# SDL Pango support enabled by ___SDLPANGO
+NOPANGOFLAG:=$(if $(SDL_PANGO_LIB),___SDLPANGO,)
+
+# Built with sound if -lSDL_Mixer worked
+NOSOUNDFLAG:=$(if $(SDL_MIXER_LIB),__SOUND,)
+
 
 # The entire set of CFLAGS:
 
@@ -260,15 +254,6 @@ release: releasedir
 	@cd build ; \
 	    tar -czvf tuxpaint-$(VER_VERSION).tar.gz tuxpaint-$(VER_VERSION)
 
-# "make nosound" builds the program with sound disabled:
-.PHONY: nosound
-nosound:
-	@echo
-	@echo "Building with sound DISABLED"
-	@echo
-	make SDL_MIXER_LIB:= NOSOUNDFLAG:=NOSOUND
-
-
 # "make nosvg" builds the program with SVG (Cairo2) support disabled:
 .PHONY: nosvg
 nosvg:
@@ -276,16 +261,6 @@ nosvg:
 	@echo "Building with SVG DISABLED"
 	@echo
 	make SVG_LIB:= SVG_CFLAGS:= NOSVGFLAG:=NOSVG
-
-
-# "make nopango" builds the program with Pango support disabled:
-.PHONY: nopango
-nopango:
-	@echo
-	@echo "Building with Pango DISABLED"
-	@echo
-	make NOPANGOFLAG:=NO_SDLPANGO SDL_PANGO_LIB:=
-
 
 # "make oldsvg" builds the program using older SVG (Cairo1) libraries:
 .PHONY: oldsvg
