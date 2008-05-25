@@ -32,7 +32,7 @@ OS:=linux
 endif
 endif
 
-beos_RSRC_CMD:=xres -o tuxpaint tuxpaint.rsrc
+beos_RSRC_CMD:=xres -o tuxpaint src/tuxpaint.rsrc
 RSRC_CMD:=$($(OS)_RSRC_CMD)
 
 beos_MIMESET_CMD:=mimeset -f tuxpaint
