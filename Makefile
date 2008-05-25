@@ -555,26 +555,6 @@ bdist-private-win32:	install-bin install-data install-doc \
 	@echo "Try compiling the InnoSetup installer script 'tuxpaint.iss'."
 	@echo
 
-
-# "make install-beos" installs Tux Paint, but using BeOS settings
-.PHONY: install-beos
-install-beos:
-	make install \
-		PREFIX:=/boot/develop/tools/gnupro \
-		BIN_PREFIX:=./ \
-		DATA_PREFIX:=./data \
-		DOC_PREFIX:=./docs \
-		MAN_PREFIX:=./src \
-		CONFDIR:=./src/ \
-		ICON_PREFIX:=. \
-		X11_ICON_PREFIX:=. \
-		LOCALE_PREFIX:=./build/share/locale \
-		IM_PREFIX:=./src \
-		SVG_LIB:= SVG_CFLAGS:= NOSVGFLAG:=NOSVG \
-		NOPANGOFLAG:=NO_SDLPANGO SDL_PANGO_LIB:= \
-		CFLAGS:="-O1 -funroll-loops -fomit-frame-pointer -pipe -Wall" \
-		MAGIC_PREFIX:=./build/lib/tuxpaint/plugins
-
 # "make install-win32" installs Tux Paint, but using MinGW/MSYS settings
 # Suitable for development/testing in the MinGW/MSYS environment.
 .PHONY: install-win32
