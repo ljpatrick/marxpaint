@@ -21,19 +21,21 @@ else
 SYSNAME:=$(shell uname -s)
 ifeq ($(SYSNAME),Darwin)
 OS:=osx
-else ifeq ($(SYSNAME),BeOS)
+else
+ifeq ($(SYSNAME),BeOS)
 OS:=beos
-else ifeq ($(SYSNAME),Haiku)
+else
+ifeq ($(SYSNAME),Haiku)
 OS:=beos
 else
 OS:=linux
 endif
 endif
 
-beos_RSRC_CMD:="xres -o tuxpaint tuxpaint.rsrc"
+beos_RSRC_CMD:=xres -o tuxpaint tuxpaint.rsrc
 RSRC_CMD:=$($(OS)_RSRC_CMD)
 
-beos_MIMESET_CMD:="mimeset -f tuxpaint"
+beos_MIMESET_CMD:=mimeset -f tuxpaint
 MIMESET_CMD:=$($(OS)_MIMESET_CMD)
 
 windows_SO_TYPE:=dll
