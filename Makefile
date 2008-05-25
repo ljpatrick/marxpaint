@@ -138,7 +138,12 @@ CURSOR_SHAPES:=LARGE
 # MOUSEDIR:=mouse/16x16
 # CURSOR_SHAPES:=SMALL
 
-linktest = $(shell if $(CC) $(CPPFLAGS) $(CFLAGS) dummy.c $(LDFLAGS) $(2) $(1) -o /dev/null > /dev/null 2>&1; \
+linktest = $(shell if $(CC) $(CPPFLAGS) $(CFLAGS) -o dummy.o dummy.c $(LDFLAGS) $(1) $(2) > /dev/null 2>&1; \
+	then \
+		echo "$(1)"; \
+	fi ;)
+
+linktestdebug = $(shell if $(CC) $(CPPFLAGS) $(CFLAGS) -o dummy.o dummy.c $(LDFLAGS) $(1) $(2) 1>&2; \
 	then \
 		echo "$(1)"; \
 	fi ;)
@@ -172,6 +177,18 @@ NOPANGOFLAG:=$(if $(SDL_PANGO_LIB),,-DNO_SDLPANGO)
 # Built with sound if -lSDL_Mixer worked
 NOSOUNDFLAG:=$(if $(SDL_MIXER_LIB),,-DNOSOUND)
 
+ifeq ($(hack),1)
+hack:
+	@echo 'SDL_PANGO_LIB is' $(SDL_PANGO_LIB)
+	@echo 'SDL_MIXER_LIB is' $(SDL_MIXER_LIB)
+	@echo 'SVG_LIB       is' $(SVG_LIB)
+	@echo 'SDL_LIBS      is' $(SDL_LIBS)
+	@echo 'SDL_CFLAGS    is' $(SDL_CFLAGS)
+	@echo 'SVG_CFLAGS    is' $(SVG_CFLAGS)
+	@echo 'LDFLAGS       is' $(LDFLAGS)
+	@echo 'CFLAGS        is' $(CFLAGS)
+	@echo 'CPPFLAGS      is' $(CPPFLAGS)
+endif
 
 # The entire set of CFLAGS:
 
