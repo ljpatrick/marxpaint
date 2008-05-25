@@ -276,55 +276,7 @@ olpc:
 	@echo
 	@echo "Building for an OLPC XO"
 	@echo
-	make PREFIX:=. SVG_LIB:= SVG_CFLAGS:= NOSVGFLAG:=NOSVG OPTFLAGS:='-O2 -fno-tree-pre -march=athlon -mtune=generic -mpreferred-stack-boundary=2 -mmmx -m3dnow -fomit-frame-pointer -falign-functions=0 -falign-jumps=0 -DOLPC_XO -DSUGAR'
-
-# "make win32" builds the program for Windows 2K/XP/Vista using MinGW/MSYS.
-# The DATA_, DOC_ and LOCALE_ prefixes are absolute paths.
-# Suitable for development/testing in the MinGW/MSYS environment.
-.PHONY: win32
-win32:
-	make \
-		PREFIX:=/usr/local \
-		BIN_PREFIX:=$(PREFIX)/bin \
-		DATA_PREFIX:=$(PREFIX)/share/tuxpaint \
-		DOC_PREFIX:=$(PREFIX)/share/doc/tuxpaint \
-		MAN_PREFIX:=$(PREFIX)/share/man \
-		DEVDOC_PREFIX:=$(PREFIX)/share/doc/tuxpaint-dev \
-		DEVMAN_PREFIX:=$(PREFIX)/share/man \
-		ICON_PREFIX:=. \
-		X11_ICON_PREFIX:=. \
-		LOCALE_PREFIX:=$(PREFIX)/share/locale \
-		IM_PREFIX:=$(PREFIX)/share/tuxpaint/im \
-		CONFDIR:=$(PREFIX)/etc/tuxpaint \
-		SVG_LIB:="-lrsvg-2 -lcairo -lgobject-2.0" \
-		SVG_CFLAGS:="-I/usr/local/include/librsvg-2/librsvg -I/usr/local/include/gtk-2.0 -I/usr/local/include/glib-2.0 -I/usr/local/lib/glib-2.0/include -I/usr/local/include/cairo" \
-		INCLUDE_PREFIX:=$(PREFIX)/include \
-		MAGIC_PREFIX:=$(PREFIX)/lib/tuxpaint/plugins
-
-# "make win9x" builds the program for Windows 9x/ME using MinGW/MSYS.
-# The DATA_, DOC_ and LOCALE_ prefixes are absolute paths.
-# Suitable for development/testing in the MinGW/MSYS environment.
-.PHONY: win9x
-win9x:
-	make \
-		PREFIX:=/usr/local \
-		BIN_PREFIX:=$(PREFIX)/bin \
-		DATA_PREFIX:=$(PREFIX)/share/tuxpaint \
-		DOC_PREFIX:=$(PREFIX)/share/doc/tuxpaint \
-		MAN_PREFIX:=$(PREFIX)/share/man \
-		DEVDOC_PREFIX:=$(PREFIX)/share/doc/tuxpaint-dev \
-		DEVMAN_PREFIX:=$(PREFIX)/share/man \
-		ICON_PREFIX:=. \
-		X11_ICON_PREFIX:=. \
-		LOCALE_PREFIX:=$(PREFIX)/share/locale \
-		IM_PREFIX:=$(PREFIX)/share/tuxpaint/im \
-		CONFDIR:=$(PREFIX)/etc/tuxpaint \
-		SVG_CFLAGS:=-I/usr/local/include/cairo \
-		SVG_LIB:="-lcairo -lsvg -lsvg-cairo" \
-		OLDSVGFLAG:=OLD_SVG \
-		NOPANGOFLAG:=NO_SDLPANGO SDL_PANGO_LIB:= \
-		INCLUDE_PREFIX:=$(PREFIX)/include \
-		MAGIC_PREFIX:=$(PREFIX)/lib/tuxpaint/plugins
+	make PREFIX:=. OPTFLAGS:='-O2 -fno-tree-pre -march=athlon -mtune=generic -mpreferred-stack-boundary=2 -mmmx -m3dnow -fomit-frame-pointer -falign-functions=0 -falign-jumps=0 -DOLPC_XO -DSUGAR'
 
 # "make nokia770" builds the program for the Nokia 770.
 .PHONY: nokia770
@@ -430,6 +382,11 @@ trans:
 
 ######
 
+windows_ARCH_INSTALL:=install-dlls
+osx_ARCH_INSTALL:=
+beos_ARCH_INSTALL:=
+linux_ARCH_INSTALL:=install-gnome install-kde install-kde-icons
+ARCH_INSTALL:=$($(OS)_ARCH_INSTALL)
 
 # "make install" installs all of the various parts
 # (depending on the *PREFIX variables at the top, you probably need
@@ -441,7 +398,7 @@ install:	install-bin install-data install-man install-doc \
 		install-icon install-gettext install-im install-importscript \
 		install-default-config install-example-stamps \
 		install-example-starters \
-		install-gnome install-kde install-kde-icons
+		$(ARCH_INSTALL)
 	@echo
 	@echo "--------------------------------------------------------------"
 	@echo
@@ -488,63 +445,6 @@ install-magic-plugin-dev:	src/tp_magic_api.h
 	@chmod a=rX,g=rX,u=rwX $(DEVDOC_PREFIX)
 
 # Installs the various parts for the MinGW/MSYS development/testing environment.
-
-.PHONY: install-private-win32
-install-private-win32:	install-bin install-data install-man install-doc \
-		install-magic-plugins \
-		install-magic-plugin-dev \
-		install-gettext install-im install-importscript \
-		install-default-config install-example-stamps \
-		install-example-starters
-	@echo
-	@echo "--------------------------------------------------------------"
-	@echo
-	@echo "All done!"
-	@echo "Now you can type the command 'tuxpaint' to run the program!!!"
-	@echo
-	@echo "For more information, see the 'tuxpaint' man page,"
-	@echo "run 'tuxpaint --usage' or see $(DOC_PREFIX)/README.txt"
-	@echo
-	@echo "Visit Tux Paint's home page for more information, updates"
-	@echo "and to learn how you can help out!"
-	@echo
-	@echo "  http://www.tuxpaint.org/"
-	@echo
-	@echo "Enjoy!"
-	@echo
-
-
-# Installs the various parts for the MinGW/MSYS development/testing environment.
-.PHONY: bdist-private-win32
-bdist-private-win32:	install-bin install-data install-doc \
-		install-magic-plugins \
-		install-gettext install-im install-dlls\
-		install-example-stamps install-example-starters
-	@echo
-	@echo "--------------------------------------------------------------"
-	@echo
-	@echo "A binary distribution suitable for running on Windows systems"
-	@echo "other than this one is now available in $(PREFIX)."
-	@echo
-	@echo "Try compiling the InnoSetup installer script 'tuxpaint.iss'."
-	@echo
-
-# "make install-win32" installs Tux Paint, but using MinGW/MSYS settings
-# Suitable for development/testing in the MinGW/MSYS environment.
-.PHONY: install-win32
-install-win32:
-	@strip -s tuxpaint.exe
-	@make install-private-win32 \
-		PREFIX:=/usr/local \
-		BIN_PREFIX:=$(PREFIX)/bin \
-		DATA_PREFIX:=$(PREFIX)/share/tuxpaint \
-		DOC_PREFIX:=$(PREFIX)/share/doc/tuxpaint \
-		MAN_PREFIX:=$(PREFIX)/share/man \
-		ICON_PREFIX:=. \
-		X11_ICON_PREFIX:=. \
-		LOCALE_PREFIX:=$(PREFIX)/share/locale \
-		IM_PREFIX:=$(PREFIX)/share/tuxpaint/im \
-		CONFDIR:=$(PREFIX)/etc/tuxpaint \
 
 # "make bdist-win32" recompiles Tux Paint to work with executable-relative
 # data, docs and locale directories. Also copies all files, including DLLs,
@@ -600,10 +500,6 @@ clean:
 	@-rm -f tp-magic-config
 	@if [ -d trans ]; then rmdir trans; fi
 	@echo
-
-.PHONY: clean-win32
-clean-win32:
-	@make clean
 
 # "make uninstall" should remove the various parts from their
 # installation locations.  BE SURE the *PREFIX variables at the top
