@@ -270,23 +270,6 @@ release: releasedir
 	@cd build ; \
 	    tar -czvf tuxpaint-$(VER_VERSION).tar.gz tuxpaint-$(VER_VERSION)
 
-# "make nosvg" builds the program with SVG (Cairo2) support disabled:
-.PHONY: nosvg
-nosvg:
-	@echo
-	@echo "Building with SVG DISABLED"
-	@echo
-	make SVG_LIB:= SVG_CFLAGS:= NOSVGFLAG:=NOSVG
-
-# "make oldsvg" builds the program using older SVG (Cairo1) libraries:
-.PHONY: oldsvg
-oldsvg:
-	@echo
-	@echo "Building with CAIRO1 SVG SUPPORT"
-	@echo
-	make SVG_LIB:="-lcairo -lsvg -lsvg-cairo" OLDSVGFLAG:=OLD_SVG
-
-
 # "make olpc" builds the program for an OLPC XO:
 .PHONY: olpc
 olpc:
