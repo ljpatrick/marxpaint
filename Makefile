@@ -1,6 +1,3 @@
-
-# $Id$
-
 # Tux Paint - A simple drawing program for children.
 
 # Copyright (c) 2002-2008 by Bill Kendrick and others
@@ -45,6 +42,9 @@ beos_SO_TYPE:=so
 linux_SO_TYPE:=so
 SO_TYPE:=$($(OS)_SO_TYPE)
 
+windows_LIBMINGW:=-lmingw32
+LIBMINGW:=$($(OS)_LIBMINGW)
+
 windows_EXE_EXT:=.exe
 EXE_EXT:=$($(OS)_EXE_EXT)
 
@@ -54,10 +54,12 @@ beos_ARCH_LIBS:=obj/BeOS_print.o
 linux_ARCH_LIBS:=obj/postscript_print.o
 ARCH_LIBS:=$($(OS)_ARCH_LIBS)
 
+PAPER_LIB:=-lpaper
+
 windows_ARCH_LINKS:="-lintl -lpng12 -lwinspool -lshlwapi"
-osx_ARCH_LINKS:=
+osx_ARCH_LINKS:=$(PAPER_LIB)
 beos_ARCH_LINKS:="-lintl -lpng -lz -lbe -liconv"
-linux_ARCH_LINKS:=
+linux_ARCH_LINKS:=$(PAPER_LIB)
 ARCH_LINKS:=$($(OS)_ARCH_LINKS)
 
 windows_ARCH_HEADERS:=src/win32_print.h
@@ -154,8 +156,6 @@ SVG_CFLAGS:=-I/usr/include/librsvg-2/librsvg \
 	-I/usr/include/cairo
 
 SDL_CFLAGS:=$(shell sdl-config --cflags) $(SVG_CFLAGS)
-
-PAPER_LIB:=-lpaper
 
 # The entire set of CFLAGS:
 
@@ -300,7 +300,6 @@ beos:
 		NOPANGOFLAG:=NO_SDLPANGO \
 		SDL_PANGO_LIB:= \
 		SVG_LIB:= \
-		PAPER_LIB:= \
 		IM_PREFIX:=./src \
 		SDL_CFLAGS:="$(shell sdl-config --cflags)" \
 		SDL_LIBS:="$(shell sdl-config --libs) -lSDL -lSDL_image -lSDL_ttf $(SDL_MIXER_LIB)" \
@@ -329,8 +328,7 @@ win32:
 		SVG_LIB:="-lrsvg-2 -lcairo -lgobject-2.0" \
 		SVG_CFLAGS:="-I/usr/local/include/librsvg-2/librsvg -I/usr/local/include/gtk-2.0 -I/usr/local/include/glib-2.0 -I/usr/local/lib/glib-2.0/include -I/usr/local/include/cairo" \
 		INCLUDE_PREFIX:=$(PREFIX)/include \
-		MAGIC_PREFIX:=$(PREFIX)/lib/tuxpaint/plugins \
-		PAPER_LIB:=
+		MAGIC_PREFIX:=$(PREFIX)/lib/tuxpaint/plugins
 
 # "make win9x" builds the program for Windows 9x/ME using MinGW/MSYS.
 # The DATA_, DOC_ and LOCALE_ prefixes are absolute paths.
@@ -355,8 +353,7 @@ win9x:
 		OLDSVGFLAG:=OLD_SVG \
 		NOPANGOFLAG:=NO_SDLPANGO SDL_PANGO_LIB:= \
 		INCLUDE_PREFIX:=$(PREFIX)/include \
-		MAGIC_PREFIX:=$(PREFIX)/lib/tuxpaint/plugins \
-		PAPER_LIB:=
+		MAGIC_PREFIX:=$(PREFIX)/lib/tuxpaint/plugins
 
 # "make nokia770" builds the program for the Nokia 770.
 .PHONY: nokia770
@@ -616,8 +613,7 @@ bdist-win32:
 		SVG_LIB:="-lrsvg-2 -lcairo -lgobject-2.0" \
 		SVG_CFLAGS:="-I/usr/local/include/librsvg-2/librsvg -I/usr/local/include/gtk-2.0 -I/usr/local/include/glib-2.0 -I/usr/local/lib/glib-2.0/include -I/usr/local/include/cairo" \
 		INCLUDE_PREFIX:=plugins/include \
-		MAGIC_PREFIX:=plugins \
-		PAPER_LIB:= 
+		MAGIC_PREFIX:=plugins
 	strip -s tuxpaint.exe
 	make bdist-private-win32 \
 		PREFIX:=./win32/bdist \
@@ -721,14 +717,15 @@ install-example-stamps:
 	@chmod -R a+rX,g-w,o-w $(DATA_PREFIX)/stamps
 
 
+STARTERS:=$(wildcard starters/*.*)
+INSTALLED_STARTERS:=$(patsubst %,$(DATA_PREFIX)/%,$(STARTERS))
+
+$(INSTALLED_STARTERS): $(DATA_PREFIX)/%: %
+	install -D -m 644 $< $@
+
 # Install example starters
 .PHONY: install-example-starters
-install-example-starters:
-	@echo
-	@echo "...Installing example starter images..."
-	@install -d $(DATA_PREFIX)/starters
-	@cp -R starters/* $(DATA_PREFIX)/starters
-	@chmod -R a+rX,g-w,o-w $(DATA_PREFIX)/starters
+install-example-starters: $(INSTALLED_STARTERS)
 
 
 # Install a launcher icon in the Gnome menu
@@ -976,14 +973,9 @@ tuxpaint:	obj/tuxpaint.o obj/i18n.o obj/im.o obj/cursor.o obj/pixels.o \
 		$(ARCH_LIBS)
 	@echo
 	@echo "...Linking Tux Paint..."
-	$(CC) $(CFLAGS) $(DEBUG_FLAGS) $(SDL_CFLAGS) $(PAPER_CFLAGS) \
-		$(DEFS) \
-		-o tuxpaint \
-		$^ \
-		$(SDL_LIBS) \
-		$(SVG_LIB) \
-		$(PAPER_LIB) \
-		$(ARCH_LINKS)
+	$(CC) $(CFLAGS) $(DEBUG_FLAGS) $(SDL_CFLAGS) $(DEFS) \
+		-o tuxpaint $^ \
+		$(SDL_LIBS) $(SVG_LIB) $(ARCH_LINKS)
 	@$(RSRC_CMD)
 	@$(MIMESET_CMD)
 
@@ -1134,18 +1126,18 @@ obj:
 
 ######
 
-MAGIC_SDL_CFLAGS:=$(shell sdl-config --cflags)
+MAGIC_SDL_CPPFLAGS:=$(shell sdl-config --cflags)
+MAGIC_SDL_LIBS:=-L/usr/local/lib $(LIBMINGW) $(shell sdl-config --libs) -lSDL_image -lSDL_ttf $(SDL_MIXER_LIB)
 MAGIC_ARCH_LINKS:=-lintl -lpng12
-MAGIC_SDL_LIBS:=-L/usr/local/lib -lmingw32 -lSDL -lSDL_image -lSDL_ttf $(SDL_MIXER_LIB)
 
 windows_PLUGIN_LIBS:="$(MAGIC_SDL_LIBS) $(MAGIC_ARCH_LINKS)"
 osx_PLUGIN_LIBS:=
-beos_PLUGIN_LIBS:="$(MAGIC_SDL_LIBS) $(MAGIC_ARCH_LINKS) $(MAGIC_SDL_CFLAGS)"
+beos_PLUGIN_LIBS:="$(MAGIC_SDL_LIBS) $(MAGIC_ARCH_LINKS) $(MAGIC_SDL_CPPFLAGS)"
 linux_PLUGIN_LIBS:=
 PLUGIN_LIBS:=$($(OS)_PLUGIN_LIBS)
 
-#MAGIC_CFLAGS:=-g3 -O2 -fvisibility=hidden -fno-common -W -Wstrict-prototypes -Wmissing-prototypes -Wall $(MAGIC_SDL_CFLAGS) -Isrc/
-MAGIC_CFLAGS:=-g3 -O2 -fno-common -W -Wstrict-prototypes -Wmissing-prototypes -Wall $(MAGIC_SDL_CFLAGS) -Isrc/
+#MAGIC_CFLAGS:=-g3 -O2 -fvisibility=hidden -fno-common -W -Wstrict-prototypes -Wmissing-prototypes -Wall $(MAGIC_SDL_CPPFLAGS) -Isrc/
+MAGIC_CFLAGS:=-g3 -O2 -fno-common -W -Wstrict-prototypes -Wmissing-prototypes -Wall $(MAGIC_SDL_CPPFLAGS) -Isrc/
 SHARED_FLAGS:=-shared -fpic
 
 MAGIC_C:=$(wildcard magic/src/*.c)
