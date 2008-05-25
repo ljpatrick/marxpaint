@@ -155,9 +155,9 @@ SDL_LIBS+=$(SDL_MIXER_LIB) $(SDL_PANGO_LIB)
 SVG_LIB:=$(shell pkg-config --libs librsvg-2.0 cairo)
 
 # lots of -I things, so really should be SVG_CPPFLAGS
-SVG_CFLAGS:=$(pkg-config --cflags librsvg-2.0 cairo)
+SVG_CFLAGS:=$(shell pkg-config --cflags librsvg-2.0 cairo)
 
-SDL_CFLAGS:=$(shell sdl-config --cflags) $(SVG_CFLAGS)
+SDL_CFLAGS:=$(shell sdl-config --cflags)
 
 
 # SVG support (via Cairo) enabled by __SVG
@@ -959,7 +959,7 @@ obj/tuxpaint.o:	src/tuxpaint.c \
 		Makefile
 	@echo
 	@echo "...Compiling Tux Paint from source..."
-	@$(CC) $(CFLAGS) $(DEBUG_FLAGS) $(SDL_CFLAGS) $(MOUSE_CFLAGS) $(DEFS) \
+	$(CC) $(CFLAGS) $(DEBUG_FLAGS) $(SDL_CFLAGS) $(SVG_CFLAGS) $(MOUSE_CFLAGS) $(DEFS) \
 		-c src/tuxpaint.c -o obj/tuxpaint.o
 
 obj/i18n.o:	src/i18n.c src/i18n.h src/debug.h

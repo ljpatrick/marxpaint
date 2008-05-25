@@ -381,8 +381,10 @@ extern WrapperData macosx;
 
 #else
 
-#include "rsvg.h"
-#include "rsvg-cairo.h"
+#include <librsvg/rsvg.h>
+#include <librsvg/rsvg-cairo.h>
+//#include "rsvg.h"
+//#include "rsvg-cairo.h"
 #if !defined(RSVG_H) || !defined(RSVG_CAIRO_H)
 #error "---------------------------------------------------"
 #error "If you installed libRSVG from packages, be sure"
