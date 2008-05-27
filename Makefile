@@ -34,6 +34,16 @@ endif
 endif
 endif
 
+linktest = $(shell if $(CC) $(CPPFLAGS) $(CFLAGS) -o dummy.o dummy.c $(LDFLAGS) $(1) $(2) > /dev/null 2>&1; \
+	then \
+		echo "$(1)"; \
+	fi ;)
+
+linktestdebug = $(shell if $(CC) $(CPPFLAGS) $(CFLAGS) -o dummy.o dummy.c $(LDFLAGS) $(1) $(2) 1>&2; \
+	then \
+		echo "$(1)"; \
+	fi ;)
+
 beos_RSRC_CMD:=xres -o tuxpaint src/tuxpaint.rsrc
 RSRC_CMD:=$($(OS)_RSRC_CMD)
 
@@ -58,11 +68,13 @@ beos_ARCH_LIBS:=obj/BeOS_print.o
 linux_ARCH_LIBS:=obj/postscript_print.o
 ARCH_LIBS:=$($(OS)_ARCH_LIBS)
 
-PAPER_LIB:=-lpaper
+PAPER_LIB:=$(call linktest,-lpaper,)
+PNG:=$(call linktest,-lpng,)
+PNG:=$(if $(PNG),$(PNG),$(call linktest,-lpng12,))
 
-windows_ARCH_LINKS:="-lintl -lpng12 -lwinspool -lshlwapi"
+windows_ARCH_LINKS:="-lintl $(PNG) -lwinspool -lshlwapi"
 osx_ARCH_LINKS:=$(PAPER_LIB)
-beos_ARCH_LINKS:="-lintl -lpng -lz -lbe -liconv"
+beos_ARCH_LINKS:="-lintl $(PNG) -lz -lbe -liconv"
 linux_ARCH_LINKS:=$(PAPER_LIB)
 ARCH_LINKS:=$($(OS)_ARCH_LINKS)
 
@@ -137,17 +149,6 @@ MOUSEDIR:=mouse
 CURSOR_SHAPES:=LARGE
 # MOUSEDIR:=mouse/16x16
 # CURSOR_SHAPES:=SMALL
-
-linktest = $(shell if $(CC) $(CPPFLAGS) $(CFLAGS) -o dummy.o dummy.c $(LDFLAGS) $(1) $(2) > /dev/null 2>&1; \
-	then \
-		echo "$(1)"; \
-	fi ;)
-
-linktestdebug = $(shell if $(CC) $(CPPFLAGS) $(CFLAGS) -o dummy.o dummy.c $(LDFLAGS) $(1) $(2) 1>&2; \
-	then \
-		echo "$(1)"; \
-	fi ;)
-
 
 # Libraries, paths, and flags:
 SDL_LIBS:=$(shell sdl-config --libs) -lSDL_image -lSDL_ttf
@@ -972,7 +973,7 @@ obj:
 
 MAGIC_SDL_CPPFLAGS:=$(shell sdl-config --cflags)
 MAGIC_SDL_LIBS:=-L/usr/local/lib $(LIBMINGW) $(shell sdl-config --libs) -lSDL_image -lSDL_ttf $(SDL_MIXER_LIB)
-MAGIC_ARCH_LINKS:=-lintl -lpng12
+MAGIC_ARCH_LINKS:=-lintl $(PNG)
 
 windows_PLUGIN_LIBS:="$(MAGIC_SDL_LIBS) $(MAGIC_ARCH_LINKS)"
 osx_PLUGIN_LIBS:=
