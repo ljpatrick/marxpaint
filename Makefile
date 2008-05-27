@@ -4,7 +4,7 @@
 # bill@newbreedsoftware.com
 # http://www.tuxpaint.org/
 
-# June 14, 2002 - April 3, 2008
+# June 14, 2002 - May 27, 2008
 
 
 # The version number, for release:
@@ -87,7 +87,7 @@ ARCH_HEADERS:=$($(OS)_ARCH_HEADERS)
 # Where things will go when ultimately installed:
 windows_PREFIX:=/usr/local
 osx_PREFIX:=/usr/local
-beos_PREFIX:=/boot/apps/Games
+beos_PREFIX:=/boot/apps/Games/TuxPaint
 linux_PREFIX:=/usr/local
 PREFIX:=$($(OS)_PREFIX)
 
