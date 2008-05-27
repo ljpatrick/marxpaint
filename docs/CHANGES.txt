@@ -9,7 +9,7 @@ http://www.tuxpaint.org/
 $Id$
 
 
-2008.May.25 (0.9.20)
+2008.May.26 (0.9.20)
   * New translations:
     -----------------
     * Asturian
@@ -61,10 +61,18 @@ $Id$
       is generated!
       (SourceForge Bug #1932808, via Ubuntu)
 
-    * Makefile improvements.
+    * Numerous Makefile improvements:
+      + Automated i18n creation; merged back to Makefile, removed Makefile-i18n
+      + Support for generic targets; removed beos- & most win32-related targets;
+        use of "ARCH_" variables
+      + Automated Magic plugin creation; merged back to Makefile,
+        removed magic/Makefile
+      + Other misc. updates and efficiency improvements
+      + Automatic testing for SVG, SDL_Pango and SDL_Mixer libraries;
+        'oldsvg' and 'nosvg' targets removed
       Albert Cahalan <albert@users.sf.net>
 
-    * Makefile edited so that tuxpaint can be installed in the absence
+    * Makefile edited so that Tux Paint can be installed in the absence
       of gettext in the system.
       Arunodai Vudem <arunvudem@gmail.com>
       Mark K. Kim <mkkim214@gmail.com>
