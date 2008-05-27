@@ -140,7 +140,7 @@ KDE_PREFIX:=$(shell kde-config --install apps --expandvars 2> /dev/null)
 KDE_ICON_PREFIX:=$(shell kde-config --install icon --expandvars 2> /dev/null)
 
 # Maemo flag
-MAEMOFLAG:=NO_MAEMOFLAG
+MAEMOFLAG:=
 
 
 # Where to find cursor shape XBMs
@@ -214,7 +214,7 @@ DEFS:=-DVER_DATE=\"$(VER_DATE)\" -DVER_VERSION=\"$(VER_VERSION)\" \
 	-DCONFDIR=\"$(patsubst $(DESTDIR)%,%,$(CONFDIR))/\" \
 	-DMAGIC_PREFIX=\"$(patsubst $(DESTDIR)%,%,$(MAGIC_PREFIX))/\" \
 	$(NOSOUNDFLAG) $(NOSVGFLAG) $(OLDSVGFLAG) $(NOPANGOFLAG) \
-	-D$(MAEMOFLAG)
+	$(MAEMOFLAG)
 
 DEBUG_FLAGS:=
 #DEBUG_FLAGS:=-g
@@ -287,8 +287,7 @@ olpc:
 nokia770:
 	make \
 		DATA_PREFIX:=/usr/share/tuxpaint \
-		SVG_LIB:= SVG_CFLAGS:= NOSVGFLAG:=NOSVG \
-		MAEMOFLAG:=NOKIA_770 \
+		MAEMOFLAG:=-DNOKIA_770 \
 		LOCALE_PREFIX:=$(PREFIX)/share/locale \
 		CONFDIR:=/etc/tuxpaint
 
