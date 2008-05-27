@@ -150,33 +150,36 @@ CURSOR_SHAPES:=LARGE
 # MOUSEDIR:=mouse/16x16
 # CURSOR_SHAPES:=SMALL
 
+
 # Libraries, paths, and flags:
 SDL_LIBS:=$(shell sdl-config --libs) -lSDL_image -lSDL_ttf
+
+# Sound support
 SDL_MIXER_LIB:=$(call linktest,-lSDL_mixer,$(SDL_LIBS))
+NOSOUNDFLAG:=$(if $(SDL_MIXER_LIB),,-DNOSOUND$(warning -lSDL_Mixer failed, no sound for you!))
+
+# SDL Pango is needed to render complex scripts like Thai and Arabic
 SDL_PANGO_LIB:=$(call linktest,-lSDL_Pango,$(SDL_LIBS))
+NOPANGOFLAG:=$(if $(SDL_PANGO_LIB),,-DNO_SDLPANGO$(warning -lSDL_Pango failed, no scripts for you!))
+
 SDL_LIBS+=$(SDL_MIXER_LIB) $(SDL_PANGO_LIB)
-
-# New one: -lrsvg-2 -lcairo
-# Old one: -lcairo -lsvg -lsvg-cairo
-SVG_LIB:=$(shell pkg-config --libs librsvg-2.0 cairo)
-
-# lots of -I things, so really should be SVG_CPPFLAGS
-SVG_CFLAGS:=$(shell pkg-config --cflags librsvg-2.0 cairo)
 
 SDL_CFLAGS:=$(shell sdl-config --cflags)
 
 
-# SVG support (via Cairo) enabled by __SVG
-NOSVGFLAG:=$(if $(SVG_LIB),,-DNOSVG)
+# New one: -lrsvg-2 -lcairo
+# Old one: -lcairo -lsvg -lsvg-cairo
+SVG_LIB:=$(shell pkg-config --libs librsvg-2.0 cairo || pkg-config --libs libsvg-cairo)
 
-# SVG support (use libcairo1) enabled by __SVG; see "make oldsvg"
-OLDSVGFLAG:=$(if $(SVG_LIB),,-DOLD_SVG)
+# lots of -I things, so really should be SVG_CPPFLAGS
+SVG_CFLAGS:=$(shell pkg-config --cflags librsvg-2.0 cairo || pkg-config --cflags libsvg-cairo)
 
-# SDL Pango support enabled by ___SDLPANGO
-NOPANGOFLAG:=$(if $(SDL_PANGO_LIB),,-DNO_SDLPANGO)
+# SVG support via Cairo
+NOSVGFLAG:=$(if $(SVG_LIB),,-DNOSVG$(warning No SVG for you!))
 
-# Built with sound if -lSDL_Mixer worked
-NOSOUNDFLAG:=$(if $(SDL_MIXER_LIB),,-DNOSOUND)
+# SVG support uses libcairo1
+OLDSVGFLAG:=$(if $(filter -lsvg-cairo,$(SVG_LIB)),-DOLD_SVG,)
+
 
 ifeq ($(hack),1)
 hack:
