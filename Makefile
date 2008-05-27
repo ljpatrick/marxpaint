@@ -203,14 +203,14 @@ CFLAGS:=$(OPTFLAGS) -W -Wall -fno-common -ffloat-store \
 	-Wstrict-prototypes -Wmissing-prototypes \
 	$(shell src/test-option.sh -Wstrict-aliasing=2)
 
-DEFS:=-DDATA_PREFIX=\"$(DATA_PREFIX)/\" \
+DEFS:=-DVER_DATE=\"$(VER_DATE)\" -DVER_VERSION=\"$(VER_VERSION)\" \
+	-DDATA_PREFIX=\"$(patsubst $(DESTDIR)%,%,$(DATA_PREFIX))/\" \
+	-DDOC_PREFIX=\"$(patsubst $(DESTDIR)%,%,$(DOC_PREFIX))/\" \
+	-DLOCALEDIR=\"$(patsubst $(DESTDIR)%,%,$(LOCALE_PREFIX))/\" \
+	-DIMDIR=\"$(patsubst $(DESTDIR)%,%,$(IM_PREFIX))/\" \
+	-DCONFDIR=\"$(patsubst $(DESTDIR)%,%,$(CONFDIR))/\" \
+	-DMAGIC_PREFIX=\"$(patsubst $(DESTDIR)%,%,$(MAGIC_PREFIX))/\" \
 	$(NOSOUNDFLAG) $(NOSVGFLAG) $(OLDSVGFLAG) $(NOPANGOFLAG) \
-	-DDOC_PREFIX=\"$(DOC_PREFIX)/\" \
-	-DLOCALEDIR=\"$(LOCALE_PREFIX)/\" -DIMDIR=\"$(IM_PREFIX)/\" \
-	-DCONFDIR=\"$(CONFDIR)/\" \
-	-DMAGIC_PREFIX=\"$(MAGIC_PREFIX)/\" \
-	-DVER_VERSION=\"$(VER_VERSION)\" \
-	-DVER_DATE=\"$(VER_DATE)\" \
 	-D$(MAEMOFLAG)
 
 DEBUG_FLAGS:=
