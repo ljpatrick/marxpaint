@@ -9,7 +9,7 @@ http://www.tuxpaint.org/
 $Id$
 
 
-2008.May.26 (0.9.20)
+2008.May.27 (0.9.20)
   * New translations:
     -----------------
     * Asturian
@@ -79,6 +79,9 @@ $Id$
       Mark K. Kim <mkkim214@gmail.com>
 
     * Making Magic Tool source throw fewer compiler warnings.
+
+    * Removed "_APPLE_10_2_8_"-related #include work-arounds, since 10.2.8 support is unlikely
+      right now. (With Martin F's blessings)
 
   * Documentation Improvements:
     ---------------------------

@@ -22,7 +22,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
   
-  June 14, 2002 - May 27, 2008
+  June 14, 2002 - May 28, 2008
   $Id$
 */
 
@@ -199,20 +199,8 @@ char *strcasestr(const char *haystack, const char *needle)
 
 #endif
 
-/* kludge; 2006.01.15 */
-//#define __APPLE_10_2_8__
 
-/* (Trouble building this for 10.2.8 target; bjk & mf 2006.01.14) */
-#ifndef __APPLE_10_2_8__
 #include <wchar.h>
-#else
-#undef FORKED_FONTS
-#define wchar_t char
-#define wcslen strlen
-#define towupper toupper
-#define iswprint isprint
-#define OLD_UPPERCASE_CODE
-#endif
 
 // math.h makes y1 an obscure function!
 #define y1 evil_y1
@@ -225,7 +213,7 @@ char *strcasestr(const char *haystack, const char *needle)
 #include <wctype.h>
 #else
 #if defined (__BEOS__) && !defined (__HAIKU__)
-#include <wchar.h>
+#include <wchar.h> // FIXME - Going to happen anway, due to #include above! -bjk 2008.05.28
 #endif
 #endif
 
@@ -4854,9 +4842,6 @@ static void show_version(int details)
 
 #ifdef __APPLE__
   printf("  Built for Mac OS X  (__APPLE__)\n");
-  #ifdef __APPLE_10_2_8_
-    printf("  Built for OS X 10.2.8  (__APPLE_10_2_8_)\n");
-  #endif
 #elif WIN32
   printf("  Built for Windows  (WIN32)\n");
 #elif __BEOS__

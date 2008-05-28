@@ -25,7 +25,7 @@
 
   $Id$
 
-  June 14, 2002 - May 27, 2008
+  June 14, 2002 - May 28, 2008
 */
 
 #include <stdio.h>
@@ -42,17 +42,7 @@
 #endif
 
 
-/* (Trouble building this for 10.2.8 target; bjk & mf 2006.01.14) */
-#ifndef __APPLE_10_2_8__
 #include <wchar.h>
-#else
-#undef FORKED_FONTS
-#define wchar_t char
-#define wcslen strlen
-#define towupper toupper
-#define iswprint isprint
-#define OLD_UPPERCASE_CODE
-#endif
 
 #ifndef OLD_UPPERCASE_CODE
 #include <wctype.h>
