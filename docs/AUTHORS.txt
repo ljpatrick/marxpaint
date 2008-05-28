@@ -7,7 +7,7 @@ bill@newbreedsoftware.com
 http://www.tuxpaint.org/
 
 
-June 17, 2002 - April 28, 2008
+June 17, 2002 - May 27, 2008
 
 $Id$
 
@@ -538,7 +538,8 @@ $Id$
     Alessandro Pasotti <apasotti@gmail.com>
 
   * BeOS coding and builds
-    Marcin 'Shard' Konicki <shard at beosjournal.org>
+    Luc 'Begasus' Schrijvers <Begasus@skynet.be>
+    Marcin 'Shard' Konicki <shard at beosjournal.org>  [retired]
 
   * Debian Linux packages
     Ben Armstrong <synrg@sanctuary.nslug.ns.ca>
