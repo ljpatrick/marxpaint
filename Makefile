@@ -34,12 +34,14 @@ endif
 endif
 endif
 
+# test if a library can be linked
 linktest = $(shell if $(CC) $(CPPFLAGS) $(CFLAGS) -o dummy.o dummy.c $(LDFLAGS) $(1) $(2) > /dev/null 2>&1; \
 	then \
 		echo "$(1)"; \
 	fi ;)
 
-linktestdebug = $(shell if $(CC) $(CPPFLAGS) $(CFLAGS) -o dummy.o dummy.c $(LDFLAGS) $(1) $(2) 1>&2; \
+# test compiler options
+comptest = $(shell if $(CC) $(CPPFLAGS) $(CFLAGS) $(1) $(2) -o dummy.o dummy.c $(LDFLAGS) > /dev/null 2>&1; \
 	then \
 		echo "$(1)"; \
 	fi ;)
@@ -199,7 +201,7 @@ endif
 #-ffast-math
 OPTFLAGS:=-O2
 CFLAGS:=$(OPTFLAGS) -W -Wall -fno-common -ffloat-store \
-	-fvisibility=hidden \
+	$(call comptest,-fvisibility=hidden,) \
 	-Wcast-align -Wredundant-decls \
 	-Wbad-function-cast -Wwrite-strings \
 	-Waggregate-return \
