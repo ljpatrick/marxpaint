@@ -4,7 +4,7 @@
 # bill@newbreedsoftware.com
 # http://www.tuxpaint.org/
 
-# June 14, 2002 - May 27, 2008
+# June 14, 2002 - May 28, 2008
 
 
 # The version number, for release:
@@ -496,6 +496,7 @@ clean:
 	@-rm -f magic/*.$(SO_TYPE)
 	@-rm -f tuxpaint
 	@-rm -f obj/*.o
+	@-rm -f dummy.o
 	@#if [ -d obj ]; then rmdir obj; fi
 	@-rm -f trans/*.mo
 	@-rm -f src/tp_magic_api.h
