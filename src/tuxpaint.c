@@ -10120,12 +10120,26 @@ static void wordwrap_text_ex(const char *const str, SDL_Color color,
   if (want_right_to_left && need_right_to_left)
   {
     SDLPango_SetBaseDirection(locale_font->pango_context, SDLPANGO_DIRECTION_RTL);
-    SDLPango_SetText_GivenAlignment(myfont->pango_context, gettext(str), -1, SDLPANGO_ALIGN_RIGHT);
+    if (only_uppercase)
+    {
+      char * upper_str = uppercase(gettext(str));
+      SDLPango_SetText_GivenAlignment(myfont->pango_context, upper_str, -1, SDLPANGO_ALIGN_RIGHT);
+      free(upper_str);
+    }
+    else
+      SDLPango_SetText_GivenAlignment(myfont->pango_context, gettext(str), -1, SDLPANGO_ALIGN_RIGHT);
   }
   else
   {
     SDLPango_SetBaseDirection(locale_font->pango_context, SDLPANGO_DIRECTION_LTR);
-    SDLPango_SetText_GivenAlignment(myfont->pango_context, gettext(str), -1, SDLPANGO_ALIGN_LEFT);
+    if (only_uppercase)
+    {
+      char * upper_str = uppercase(gettext(str));
+      SDLPango_SetText_GivenAlignment(myfont->pango_context, upper_str, -1, SDLPANGO_ALIGN_LEFT);
+      free(upper_str);
+    }
+    else
+      SDLPango_SetText_GivenAlignment(myfont->pango_context, gettext(str), -1, SDLPANGO_ALIGN_LEFT);
   }
 
   text = SDLPango_CreateSurfaceDraw(myfont->pango_context); 
@@ -10175,7 +10189,14 @@ static void wordwrap_text_ex(const char *const str, SDL_Color color,
 
 	if (locale_str[i] == ' ' || locale_str[i] == '\0')
 	{
-	  text = render_text(myfont, (char *) utf8_str, color);
+          if (only_uppercase)
+          {
+            wchar * upper_utf8_str = uppercase_w(utf8_str);
+	    text = render_text(myfont, (char *) upper_utf8_str, color);
+            free(upper_utf8_str);
+          }
+          else
+	    text = render_text(myfont, (char *) utf8_str, color);
 
 	  if (!text)
 	    continue;		/* Didn't render anything... */
@@ -10376,7 +10397,14 @@ static void wordwrap_text_ex(const char *const str, SDL_Color color,
       /* Render the word for display... */
 
 
-      text = render_text(myfont, substr, color);
+      if (only_uppercase)
+      {
+        char uppercase_substr = uppercase(substr);
+        text = render_text(myfont, uppercase_substr, color);
+        free(uppercase_substr);
+      }
+      else
+        text = render_text(myfont, substr, color);
 
 
       /* If it won't fit on this line, move to the next! */

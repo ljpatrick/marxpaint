@@ -128,6 +128,9 @@ $Id$
       Arunodai Vudem <arunvudem@gmail.com>
       Mark K. Kim <mkkim214@gmail.com>
 
+    * "Uppercase only" option support for builds that use Pango to render text.
+      (Note: Needs help in some/many? locales.)
+
 * New Starters:
     -------------
     * Spirograph
