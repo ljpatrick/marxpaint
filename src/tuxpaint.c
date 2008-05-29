@@ -10191,7 +10191,7 @@ static void wordwrap_text_ex(const char *const str, SDL_Color color,
 	{
           if (only_uppercase)
           {
-            wchar * upper_utf8_str = uppercase_w(utf8_str);
+            char * upper_utf8_str = uppercase((char *) utf8_str);
 	    text = render_text(myfont, (char *) upper_utf8_str, color);
             free(upper_utf8_str);
           }
@@ -10399,7 +10399,7 @@ static void wordwrap_text_ex(const char *const str, SDL_Color color,
 
       if (only_uppercase)
       {
-        char uppercase_substr = uppercase(substr);
+        char * uppercase_substr = uppercase(substr);
         text = render_text(myfont, uppercase_substr, color);
         free(uppercase_substr);
       }
