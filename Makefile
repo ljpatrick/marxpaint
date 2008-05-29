@@ -162,11 +162,7 @@ NOSOUNDFLAG:=$(if $(SDL_MIXER_LIB),,-DNOSOUND$(warning -lSDL_Mixer failed, no so
 
 # SDL Pango is needed to render complex scripts like Thai and Arabic
 SDL_PANGO_LIB:=$(call linktest,-lSDL_Pango,$(SDL_LIBS))
-NOPANGOFLAG:=$(if $(SDL_PANGO_LIB),,-DNO_SDLPANGO)
-
-# Unnecessary to die, I think... INSTALL.txt says we can disable! -bjk 2008.05.29
-# $(warning -lSDL_Pango failed, no scripts for you!))
-
+NOPANGOFLAG:=$(if $(SDL_PANGO_LIB),,-DNO_SDLPANGO$(warning -lSDL_Pango failed, no scripts for you!))
 
 SDL_LIBS+=$(SDL_MIXER_LIB) $(SDL_PANGO_LIB)
 
