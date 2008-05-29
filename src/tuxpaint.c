@@ -206,12 +206,8 @@ char *strcasestr(const char *haystack, const char *needle)
 #undef y1
 
 #include <locale.h>
-
 #include <wchar.h>
-
-#ifndef OLD_UPPERCASE_CODE
 #include <wctype.h>
-#endif
 
 #include <libintl.h>
 #ifndef gettext_noop
@@ -4885,10 +4881,6 @@ static void show_version(int details)
 
 #ifdef OLD_STAMP_GROW_SHRINK
   printf("  Old-style stamp size UI  (OLD_STAMP_GROW_SHRINK)\n");
-#endif
-
-#ifdef OLD_UPPERCASE_CODE
-  printf("  Old-style --uppercase support  (OLD_UPPERCASE_CODE)\n");
 #endif
 
   printf("  Data directory (DATA_PREFIX) = %s\n", DATA_PREFIX);
@@ -15278,29 +15270,6 @@ static void do_render_cur_text(int do_blit)
 
 /* Return string as uppercase if that option is set: */
 
-#ifdef OLD_UPPERCASE_CODE
-
-static char *uppercase(const char *restrict const str)
-{
-  char *ustr = strdup(str);
-
-  if (only_uppercase)
-  {
-    unsigned i = 0;
-    do{
-      ustr[i] = toupper(ustr[i]);
-    while(ustr[i++]);
-  }
-
-#ifdef DEBUG
-  printf(" ORIGINAL: %s\n" "UPPERCASE: %s\n\n", str, ustr);
-#endif
-
-  return ustr;
-}
-
-#else
-
 static char *uppercase(const char *restrict const str)
 {
   unsigned int i, n;
@@ -15328,8 +15297,6 @@ static char *uppercase(const char *restrict const str)
 #endif
   return ustr;
 }
-
-#endif
 
 static wchar_t *uppercase_w(const wchar_t *restrict const str)
 {

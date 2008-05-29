@@ -25,7 +25,7 @@
 
   $Id$
 
-  June 14, 2002 - May 28, 2008
+  June 14, 2002 - May 29, 2008
 */
 
 #include <stdio.h>
@@ -36,17 +36,12 @@
 #include "i18n.h"
 #include "debug.h"
 
-
 #ifdef WIN32
 #include <sys/types.h>
 #endif
 
-
 #include <wchar.h>
-
-#ifndef OLD_UPPERCASE_CODE
 #include <wctype.h>
-#endif
 
 
 /* Globals: */

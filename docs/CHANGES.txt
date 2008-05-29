@@ -80,8 +80,11 @@ $Id$
 
     * Making Magic Tool source throw fewer compiler warnings.
 
-    * Removed "_APPLE_10_2_8_"-related #include work-arounds, since 10.2.8 support is unlikely
-      right now. (With Martin F's blessings)
+    * Removed "_APPLE_10_2_8_"-related #include work-arounds, since 10.2.8
+      support is unlikely right now. (With Martin F's blessings)
+
+    * Removed "OLD_UPPERCASE_CODE"-based work-arounds, since no longer
+      necessary. (With Luc S's blessings on BeOS.)
 
   * Documentation Improvements:
     ---------------------------
