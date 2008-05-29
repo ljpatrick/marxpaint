@@ -46,11 +46,6 @@
 
 #ifndef OLD_UPPERCASE_CODE
 #include <wctype.h>
-#else
-#if defined (__BEOS__) && !defined (__HAIKU__)
-#include <wchar.h>
-#else
-#endif
 #endif
 
 

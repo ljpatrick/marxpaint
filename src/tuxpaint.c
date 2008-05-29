@@ -200,8 +200,6 @@ char *strcasestr(const char *haystack, const char *needle)
 #endif
 
 
-#include <wchar.h>
-
 // math.h makes y1 an obscure function!
 #define y1 evil_y1
 #include <math.h>
@@ -209,12 +207,10 @@ char *strcasestr(const char *haystack, const char *needle)
 
 #include <locale.h>
 
+#include <wchar.h>
+
 #ifndef OLD_UPPERCASE_CODE
 #include <wctype.h>
-#else
-#if defined (__BEOS__) && !defined (__HAIKU__)
-#include <wchar.h> // FIXME - Going to happen anway, due to #include above! -bjk 2008.05.28
-#endif
 #endif
 
 #include <libintl.h>
