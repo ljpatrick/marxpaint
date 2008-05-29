@@ -1468,8 +1468,8 @@ static void print_image(void);
 static void do_print(void);
 static void strip_trailing_whitespace(char *buf);
 static void do_render_cur_text(int do_blit);
-static char *uppercase(char *str);
-static wchar_t *uppercase_w(wchar_t * str);
+static char *uppercase(const char *restrict const str);
+static wchar_t *uppercase_w(const wchar_t *restrict const str);
 static char *textdir(const char *const str);
 static SDL_Surface *do_render_button_label(const char *const label);
 static void create_button_labels(void);
@@ -15280,88 +15280,72 @@ static void do_render_cur_text(int do_blit)
 
 #ifdef OLD_UPPERCASE_CODE
 
-static char *uppercase(char *str)
+static char *uppercase(const char *restrict const str)
 {
-  char *ustr;
-  int i;
-
-  ustr = strdup(str);
+  char *ustr = strdup(str);
 
   if (only_uppercase)
   {
-    for (i = 0; i < strlen(ustr); i++)
+    unsigned i = 0;
+    do{
       ustr[i] = toupper(ustr[i]);
+    while(ustr[i++]);
   }
 
 #ifdef DEBUG
   printf(" ORIGINAL: %s\n" "UPPERCASE: %s\n\n", str, ustr);
 #endif
 
-  return (ustr);
+  return ustr;
 }
 
 #else
 
-static char *uppercase(char *str)
+static char *uppercase(const char *restrict const str)
 {
-  unsigned int i, sz;
+  unsigned int i, n;
   wchar_t *dest;
   char *ustr;
 
-  if (only_uppercase)
-  {
-    sz = sizeof(wchar_t) * (strlen(str) + 1);
+  if (!only_uppercase)
+    return strdup(str);
 
-    dest = (wchar_t *) malloc(sz);
-    // FIXME: uppercase chars may need extra bytes
-    ustr = malloc(strlen(str) + 1);
+  // watch out: uppercase chars may need extra bytes!
+  // http://en.wikipedia.org/wiki/Turkish_dotted_and_dotless_I
+  n = strlen(str) + 1;
+  dest = alloca(sizeof(wchar_t)*n);
+  ustr = malloc(n*2); // use *2 in case 'i' becomes U+0131
 
-    if (dest != NULL)
-    {
-      mbstowcs(dest, str, sz);
-
-      for (i = 0; i < strlen(str); i++)
-      {
-	dest[i] = towupper(dest[i]);
-      }
-
-      wcstombs(ustr, dest, sizeof(char) * (strlen(str) + 1));
-
-      free(dest);
-    }
+  mbstowcs(dest, str, sizeof(wchar_t)*n); // at most n wchar_t written
+  i = 0;
+  do{
+    dest[i] = towupper(dest[i]);
+  }while(dest[i++]);
+  wcstombs(ustr, dest, n); // at most n bytes written
 
 #ifdef DEBUG
-    printf(" ORIGINAL: %s\n" "UPPERCASE: %s\n\n", str, ustr);
+  printf(" ORIGINAL: %s\n" "UPPERCASE: %s\n\n", str, ustr);
 #endif
-  }
-  else
-  {
-    ustr = strdup(str);
-  }
-
-  return (ustr);
+  return ustr;
 }
 
 #endif
 
-static wchar_t *uppercase_w(wchar_t * str)
+static wchar_t *uppercase_w(const wchar_t *restrict const str)
 {
-  wchar_t *ustr;
-  unsigned int i;
+  unsigned n = wcslen(str) + 1;
+  wchar_t *ustr = malloc(sizeof(wchar_t) * n);
+  memcpy(ustr,str,sizeof(wchar_t) * n);
 
-  ustr = (wchar_t *) malloc(sizeof(wchar_t) * (wcslen(str) + 1));
-
-  if (ustr != NULL)
+  if (only_uppercase)
   {
-    wcscpy(ustr, str);
-    if (only_uppercase)
-    {
-      for (i = 0; i < wcslen(ustr); i++)
-	ustr[i] = towupper(ustr[i]);
-    }
+    unsigned i = 0;
+    do{
+      ustr[i] = towupper(ustr[i]);
+    }while(ustr[i++]);
   }
 
-  return (ustr);
+  return ustr;
 }
 
 
