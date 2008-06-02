@@ -829,17 +829,30 @@ static void update_canvas(int x1, int y1, int x2, int y2)
 
 /* Globals: */
 
-static int disable_screensaver, fullscreen, native_screensize, disable_quit, simple_shapes,
-  disable_print, print_delay, only_uppercase, promptless_save, grab_input,
+static int
+  disable_screensaver, fullscreen, native_screensize, grab_input,
+  rotate_orientation,
+
+  disable_print, print_delay, use_print_config, alt_print_command_default,
+  want_alt_printcommand,
+
   wheely, keymouse, mouse_x, mouse_y,
-  mousekey_up, mousekey_down, mousekey_left, mousekey_right,
-  dont_do_xor, use_print_config, dont_load_stamps, noshortcuts,
   no_button_distinction,
-  mirrorstamps, disable_stamp_controls, disable_save, ok_to_use_lockfile,
-  alt_print_command_default, scrolling = 0,
-  start_blank, autosave_on_quit, rotate_orientation, button_down,
-  stamp_size_override;
-static int want_alt_printcommand;
+  mousekey_up, mousekey_down, mousekey_left, mousekey_right,
+  button_down,
+  scrolling,
+
+  promptless_save, disable_quit,
+
+  noshortcuts,
+  disable_save, ok_to_use_lockfile,
+  start_blank, autosave_on_quit,
+
+  dont_do_xor, dont_load_stamps, mirrorstamps, disable_stamp_controls,
+  stamp_size_override,
+
+  simple_shapes, only_uppercase;
+
 static int starter_mirrored, starter_flipped, starter_personal;
 static Uint8 canvas_color_r, canvas_color_g, canvas_color_b;
 Uint8 * touched;
@@ -939,8 +952,8 @@ static SDL_Surface *img_yes, *img_no;
 static SDL_Surface *img_sfx, *img_speak;
 static SDL_Surface *img_open, *img_erase, *img_back, *img_trash;
 static SDL_Surface *img_slideshow, *img_play, *img_select_digits;
-static SDL_Surface *img_printer, *img_printer_wait, *img_save_over;
-static SDL_Surface *img_popup_arrow;
+static SDL_Surface *img_printer, *img_printer_wait;
+static SDL_Surface *img_save_over, *img_popup_arrow;
 static SDL_Surface *img_cursor_up, *img_cursor_down;
 static SDL_Surface *img_cursor_starter_up, *img_cursor_starter_down;
 static SDL_Surface *img_scroll_up, *img_scroll_down;
@@ -6086,16 +6099,16 @@ static void setup(int argc, char *argv[])
 #endif
   stamp_size_override = -1;
   only_uppercase = 0;
-  promptless_save = SAVE_OVER_PROMPT;
-  autosave_on_quit = 0;
   alt_print_command_default = ALTPRINT_MOD;
-  disable_quit = 0;
-  disable_save = 0;
-  disable_print = 0;
-  dont_load_stamps = 0;
-  no_system_fonts = 1;
   print_delay = 0;
   use_print_config = 1;
+  disable_print = 0;
+  disable_quit = 0;
+  disable_save = 0;
+  promptless_save = SAVE_OVER_PROMPT;
+  autosave_on_quit = 0;
+  dont_load_stamps = 0;
+  no_system_fonts = 1;
   mirrorstamps = 0;
   disable_stamp_controls = 0;
 
