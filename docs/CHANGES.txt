@@ -9,7 +9,7 @@ http://www.tuxpaint.org/
 $Id$
 
 
-2008.May.27 (0.9.20)
+2008.June.11 (0.9.20)
   * New translations:
     -----------------
     * Asturian
@@ -23,6 +23,10 @@ $Id$
 
     * Greek translation:
       Yannis Papatzikos <papatzikos@yahoo.gr>
+
+    * Khmer
+      Khoem Sokhem <khoemsokhem@khmeros.info>
+      Auk Piseth <piseth_dv@khmeros.info>
 
     * Lithuanian translation
       Alesis Novik <alesisnov@gmail.com>
