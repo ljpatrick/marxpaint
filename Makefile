@@ -15,10 +15,10 @@ MAGIC_API_VERSION:=0x00000001
 
 # Need to know the OS
 
-ifneq ($(SystemDrive),)
+SYSNAME:=$(shell uname -s)
+ifeq ($(SYSNAME),MINGW32_NT-5.0)
 OS:=windows
 else
-SYSNAME:=$(shell uname -s)
 ifeq ($(SYSNAME),Darwin)
 OS:=osx
 else
@@ -74,7 +74,7 @@ PAPER_LIB:=$(call linktest,-lpaper,)
 PNG:=$(call linktest,-lpng,)
 PNG:=$(if $(PNG),$(PNG),$(call linktest,-lpng12,))
 
-windows_ARCH_LINKS:="-lintl $(PNG) -lwinspool -lshlwapi"
+windows_ARCH_LINKS:=-lintl $(PNG) -lwinspool -lshlwapi
 osx_ARCH_LINKS:=$(PAPER_LIB)
 beos_ARCH_LINKS:="-lintl $(PNG) -lz -lbe -liconv"
 linux_ARCH_LINKS:=$(PAPER_LIB)
@@ -387,7 +387,7 @@ trans:
 
 ######
 
-windows_ARCH_INSTALL:=install-dlls
+windows_ARCH_INSTALL:=
 osx_ARCH_INSTALL:=
 beos_ARCH_INSTALL:=
 linux_ARCH_INSTALL:=install-gnome install-kde install-kde-icons
@@ -468,7 +468,7 @@ bdist-win32:
 		INCLUDE_PREFIX:=plugins/include \
 		MAGIC_PREFIX:=plugins
 	strip -s tuxpaint.exe
-	make bdist-private-win32 \
+	make install \
 		PREFIX:=./win32/bdist \
 		BIN_PREFIX:=./win32/bdist \
 		DATA_PREFIX:=./win32/bdist/data \
@@ -477,7 +477,8 @@ bdist-win32:
 		IM_PREFIX:=./win32/bdist/im \
 		CONFDIR:=./win32/bdist \
 		INCLUDE_PREFIX:=./win32/bdist/plugins/include \
-		MAGIC_PREFIX:=./win32/bdist/plugins
+		MAGIC_PREFIX:=./win32/bdist/plugins \
+		windows_ARCH_INSTALL:=install-dlls
 
 # "make bdist-clean" deletes the 'bdist' directory
 .PHONY: bdist-clean
@@ -980,7 +981,7 @@ MAGIC_SDL_CPPFLAGS:=$(shell sdl-config --cflags)
 MAGIC_SDL_LIBS:=-L/usr/local/lib $(LIBMINGW) $(shell sdl-config --libs) -lSDL_image -lSDL_ttf $(SDL_MIXER_LIB)
 MAGIC_ARCH_LINKS:=-lintl $(PNG)
 
-windows_PLUGIN_LIBS:="$(MAGIC_SDL_LIBS) $(MAGIC_ARCH_LINKS)"
+windows_PLUGIN_LIBS:=$(MAGIC_SDL_LIBS) $(MAGIC_ARCH_LINKS)
 osx_PLUGIN_LIBS:=
 beos_PLUGIN_LIBS:="$(MAGIC_SDL_LIBS) $(MAGIC_ARCH_LINKS) $(MAGIC_SDL_CPPFLAGS)"
 linux_PLUGIN_LIBS:=
