@@ -9,7 +9,7 @@ http://www.tuxpaint.org/
 $Id$
 
 
-2008.June.11 (0.9.20)
+2008.June.15 (0.9.20)
   * New translations:
     -----------------
     * Asturian

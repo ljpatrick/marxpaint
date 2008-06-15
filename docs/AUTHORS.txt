@@ -7,7 +7,7 @@ bill@newbreedsoftware.com
 http://www.tuxpaint.org/
 
 
-June 17, 2002 - June 11, 2008
+June 17, 2002 - June 15, 2008
 
 $Id$
 
@@ -302,7 +302,7 @@ $Id$
   * Galician
     Leandro Regueiro <leandro.regueiro@gmail.com>
 
-  * Georgian
+  * Georgian and Georgian TrueType Font (GPL)
     Gia Shervashidze <giasher@telenet.ge>
     
   * German
