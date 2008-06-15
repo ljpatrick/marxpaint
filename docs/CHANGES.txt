@@ -46,6 +46,9 @@ $Id$
       - README.txt
       Serhij Dubyk <dubyk@ukr.net>
 
+    * Vietnamese font removed, until a suitable replacement is found
+      (licensing issue)
+
   * Build System Improvements
     -------------------------
     * RPM spec updates:
