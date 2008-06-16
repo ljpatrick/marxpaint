@@ -258,7 +258,7 @@ msgstr "Oktogon"
 #. Description of a square
 #: ../shapes.h:208 ../shapes.h:209
 msgid "A square is a rectangle with four equal sides."
-msgstr "En fyrkant är en rektangel med fyra lika sidor."
+msgstr "En kvadrat är en rektangel med fyra lika sidor."
 
 #. Description of a rectangle
 #: ../shapes.h:212 ../shapes.h:213

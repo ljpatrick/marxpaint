@@ -9,7 +9,7 @@ http://www.tuxpaint.org/
 $Id$
 
 
-2008.June.15 (0.9.20)
+2008.June.16 (0.9.20)
   * New translations:
     -----------------
     * Asturian
@@ -33,6 +33,9 @@ $Id$
 
     * Slovakian translation
       Peter Tuhársky <tuharsky@misbb.sk>
+
+    * Swedish
+      Robin Rosenberg <robin.rosenberg@dewire.com>
 
     * Ukranian translation
       Serhij Dubyk <dubyk@ukr.net>
