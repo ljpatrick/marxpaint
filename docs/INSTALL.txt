@@ -139,11 +139,17 @@ Compiling and Installation:
       includes support for building on a Windows system using MinGW/MSYS.
       ( http://www.mingw.org/ )
       
-      After building and installing all the dependencies, use these commands,
-      in MSYS, to build, install and run:
-      
-        $ export set CPATH=/usr/local/include
-	$ export set LIBRARY_PATH=/usr/local/bin:/usr/local/lib
+      After configuring the environment and building and installing all the 
+      dependencies, use these commands, in MSYS, to build, install and run:
+
+      Prior to version 0.9.20:
+
+	$ make win32
+	$ make install-win32
+	$ tuxpaint
+
+      Version 0.9.20 and beyond:
+
 	$ make
 	$ make install
 	$ tuxpaint
@@ -153,9 +159,10 @@ Compiling and Installation:
 
         $ make bdist-win32
 
-      Before either of these will work, you need to build or install the
-      libraries that Tux Paint depends upon.  John Popplewell put together some
-      instructions for doing that here:
+      Before any of the above will work, you need to configure the 
+      environment and build or install the libraries that Tux Paint depends
+      upon.  John Popplewell put together some instructions for doing that 
+      here:
 
         http://johnnypops.demon.co.uk/mingw/index.html
       
