@@ -154,10 +154,14 @@ Compiling and Installation:
 	$ make install
 	$ tuxpaint
 
-      Or use the following command to build a version suitable for
+      Use the following command to build a version suitable for
       redistribution with the installer or in a zip-file:
 
         $ make bdist-win32
+
+      Or if building for Win9x/ME:
+
+        $ BDIST_WIN9X=1 make bdist-win32
 
       Before any of the above will work, you need to configure the 
       environment and build or install the libraries that Tux Paint depends
@@ -166,6 +170,7 @@ Compiling and Installation:
 
         http://johnnypops.demon.co.uk/mingw/index.html
       
+      Read the relevant notes if building for Win9X/ME.
 
     Installer:
     ----------
