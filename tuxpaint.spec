@@ -2,6 +2,7 @@ Summary: A drawing program for young children
 Name: tuxpaint
 Version: 0.9.20
 Release: 1
+Epoch: 1
 License: GPL
 Group: Multimedia/Graphics
 URL: http://www.tuxpaint.org/
@@ -86,6 +87,12 @@ rm -rf $RPM_BUILD_ROOT
 %{_prefix}/bin/tp-magic-config
 
 %changelog
+* Tue Jun 17 2008 <shin1@wmail.plala.or.jp> -
+- Actually set Epoch number
+
+* Sat Apr 26 2008 <acahalan@gmail.com> -
+- DESTDIR is the standard name, not PKG_ROOT
+
 * Fri Mar 21 2008 <shin1@wmail.plala.or.jp> -
 - Set version number 0.9.20
 - Set Epoch number
