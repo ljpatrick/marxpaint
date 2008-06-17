@@ -718,39 +718,43 @@ install-dlls:
 	@cp `which libvorbis-0.dll` $(BIN_PREFIX)
 	@cp `which libvorbisfile-3.dll` $(BIN_PREFIX)
 	@cp `which jpeg.dll` $(BIN_PREFIX)
-	@cp `which libxml2-2.dll` $(BIN_PREFIX)
-	@cp `which libcairo-2.dll` $(BIN_PREFIX)
-	@cp `which libfontconfig-1.dll` $(BIN_PREFIX)
-	@cp `which libSDL_Pango-1.dll` $(BIN_PREFIX)
-	@cp `which libgobject-2.0-0.dll` $(BIN_PREFIX)
-	@cp `which librsvg-2-2.dll` $(BIN_PREFIX)
-	@cp `which libcroco-0.6-3.dll` $(BIN_PREFIX)
-	@cp `which libgdk_pixbuf-2.0-0.dll` $(BIN_PREFIX)
-	@cp `which libglib-2.0-0.dll` $(BIN_PREFIX)
-	@cp `which libgsf-1-114.dll` $(BIN_PREFIX)
-	@cp `which libpango-1.0-0.dll` $(BIN_PREFIX)
-	@cp `which libpangocairo-1.0-0.dll` $(BIN_PREFIX)
-	@cp `which libpangoft2-1.0-0.dll` $(BIN_PREFIX)
-	@cp `which libgmodule-2.0-0.dll` $(BIN_PREFIX)
-	@cp `which libpangowin32-1.0-0.dll` $(BIN_PREFIX)
+	@if [ "x$(BDIST_WIN9X)" == "x" ]; then \
+	  cp `which libxml2-2.dll` $(BIN_PREFIX); \
+	  cp `which libcairo-2.dll` $(BIN_PREFIX); \
+	  cp `which libfontconfig-1.dll` $(BIN_PREFIX); \
+	  cp `which libSDL_Pango-1.dll` $(BIN_PREFIX); \
+	  cp `which libgobject-2.0-0.dll` $(BIN_PREFIX); \
+	  cp `which librsvg-2-2.dll` $(BIN_PREFIX); \
+	  cp `which libcroco-0.6-3.dll` $(BIN_PREFIX); \
+	  cp `which libgdk_pixbuf-2.0-0.dll` $(BIN_PREFIX); \
+	  cp `which libglib-2.0-0.dll` $(BIN_PREFIX); \
+	  cp `which libgsf-1-114.dll` $(BIN_PREFIX); \
+	  cp `which libpango-1.0-0.dll` $(BIN_PREFIX); \
+	  cp `which libpangocairo-1.0-0.dll` $(BIN_PREFIX); \
+	  cp `which libpangoft2-1.0-0.dll` $(BIN_PREFIX); \
+	  cp `which libgmodule-2.0-0.dll` $(BIN_PREFIX); \
+	  cp `which libpangowin32-1.0-0.dll` $(BIN_PREFIX); \
+	fi
 	@strip -s $(BIN_PREFIX)/*.dll
-	@echo
-	@echo "...Installing Configuration Files..."
-	@cp -R win32/etc/ $(BIN_PREFIX)
-	@echo
-	@echo "...Installing Library Modules..."
-	@mkdir -p $(BIN_PREFIX)/lib/gtk-2.0/2.10.0/engines
-	@cp /usr/local/lib/gtk-2.0/2.10.0/engines/*.dll $(BIN_PREFIX)/lib/gtk-2.0/2.10.0/engines
-	@strip -s $(BIN_PREFIX)/lib/gtk-2.0/2.10.0/engines/*.dll
-	@mkdir -p $(BIN_PREFIX)/lib/gtk-2.0/2.10.0/immodules
-	@cp /usr/local/lib/gtk-2.0/2.10.0/immodules/*.dll $(BIN_PREFIX)/lib/gtk-2.0/2.10.0/immodules
-	@strip -s $(BIN_PREFIX)/lib/gtk-2.0/2.10.0/immodules/*.dll
-	@mkdir -p $(BIN_PREFIX)/lib/gtk-2.0/2.10.0/loaders
-	@cp /usr/local/lib/gtk-2.0/2.10.0/loaders/*.dll $(BIN_PREFIX)/lib/gtk-2.0/2.10.0/loaders
-	@strip -s $(BIN_PREFIX)/lib/gtk-2.0/2.10.0/loaders/*.dll
-	@mkdir -p $(BIN_PREFIX)/lib/pango/1.6.0/modules
-	@cp /usr/local/lib/pango/1.6.0/modules/*.dll $(BIN_PREFIX)/lib/pango/1.6.0/modules
-	@strip -s $(BIN_PREFIX)/lib/pango/1.6.0/modules/*.dll
+	@if [ "x$(BDIST_WIN9X)" == "x" ]; then \
+	  echo; \
+	  echo "...Installing Configuration Files..."; \
+	  cp -R win32/etc/ $(BIN_PREFIX); \
+	  echo; \
+	  echo "...Installing Library Modules..."; \
+	  mkdir -p $(BIN_PREFIX)/lib/gtk-2.0/2.10.0/engines; \
+	  cp /usr/local/lib/gtk-2.0/2.10.0/engines/*.dll $(BIN_PREFIX)/lib/gtk-2.0/2.10.0/engines; \
+	  strip -s $(BIN_PREFIX)/lib/gtk-2.0/2.10.0/engines/*.dll; \
+	  mkdir -p $(BIN_PREFIX)/lib/gtk-2.0/2.10.0/immodules; \
+	  cp /usr/local/lib/gtk-2.0/2.10.0/immodules/*.dll $(BIN_PREFIX)/lib/gtk-2.0/2.10.0/immodules; \
+	  strip -s $(BIN_PREFIX)/lib/gtk-2.0/2.10.0/immodules/*.dll; \
+	  mkdir -p $(BIN_PREFIX)/lib/gtk-2.0/2.10.0/loaders; \
+	  cp /usr/local/lib/gtk-2.0/2.10.0/loaders/*.dll $(BIN_PREFIX)/lib/gtk-2.0/2.10.0/loaders; \
+	  strip -s $(BIN_PREFIX)/lib/gtk-2.0/2.10.0/loaders/*.dll; \
+	  mkdir -p $(BIN_PREFIX)/lib/pango/1.6.0/modules; \
+	  cp /usr/local/lib/pango/1.6.0/modules/*.dll $(BIN_PREFIX)/lib/pango/1.6.0/modules; \
+	  strip -s $(BIN_PREFIX)/lib/pango/1.6.0/modules/*.dll; \
+	fi
 
 # Install the import script:
 .PHONY: install-importscript
