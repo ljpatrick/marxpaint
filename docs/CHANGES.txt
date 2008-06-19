@@ -9,7 +9,7 @@ http://www.tuxpaint.org/
 $Id$
 
 
-2008.June.17 (0.9.20)
+2008.June.19 (0.9.20)
   * New translations:
     -----------------
     * Asturian
@@ -18,6 +18,9 @@ $Id$
 
   * Localization Updates:
     ---------------------
+    * Afrikaans translation
+      Samuel Murray (Groenkloof) <samuel@translate.org.za>
+
     * German translation
       Burkhard Lück <lueck@hube-lueck.de>
 

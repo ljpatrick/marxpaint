@@ -1,21 +1,18 @@
-# tuxpaint 0.9.14
-# Copyright (C) 2004 Free Software Foundation, Inc.
-# This file is distributed under the same license as the PACKAGE package.
-# Petri Jooste <rkwjpj@puk.ac.za>, 2004.
-#
+# Translation of Tux Paint to Afrikaans
+# Petri Jooste <rkwjpj@puk.ac.za>, 2004, 2007.
+# Samuel Murray (Groenkloof) <samuel@translate.org.za>, 2008.
 msgid ""
 msgstr ""
-"Project-Id-Version: tuxpaint 0.9.17\n"
+"Project-Id-Version: af\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2008-04-06 18:38+0200\n"
-"PO-Revision-Date: 2007-08-27 16:17+0200\n"
-"Last-Translator: Petri Jooste <rkwjpj@puk.ac.za>\n"
-"Language-Team: Afrikaans <petri.jooste@nwu.ac.za>\n"
+"PO-Revision-Date: 2008-06-19 13:24-0700\n"
+"Last-Translator: Samuel Murray (Groenkloof) <samuel@translate.org.za>\n"
+"Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Poedit-Language: Afrikaans\n"
-"X-Poedit-Country: SOUTH AFRICA\n"
+"X-Generator: Translate Toolkit 1.1.1\n"
 
 #. Response to Black (0, 0, 0) color selected
 #: ../colors.h:86
@@ -25,12 +22,12 @@ msgstr "Swart!"
 #. Response to Dark grey (128, 128, 128) color selected
 #: ../colors.h:89
 msgid "Dark grey! Some people spell it “dark gray”."
-msgstr "Donkergrys"
+msgstr "Donkergrys!"
 
 #. Response to Light grey (192, 192, 192) color selected
 #: ../colors.h:92
 msgid "Light grey! Some people spell it “light gray”."
-msgstr "Ligte grys"
+msgstr "Ligte grys!"
 
 #. Response to White (255, 255, 255) color selected
 #: ../colors.h:95
@@ -75,7 +72,7 @@ msgstr "Blou!"
 #. Response to Lavender (186, 157, 255) color selected
 #: ../colors.h:119
 msgid "Lavender!"
-msgstr "Laventel"
+msgstr "Laventel!"
 
 #. Response to Purple (128, 0, 128) color selected
 #: ../colors.h:122
@@ -168,7 +165,7 @@ msgstr "1Il|"
 #. Congratulations #1
 #: ../great.h:37
 msgid "Great!"
-msgstr "Wonderlik!"
+msgstr "Groot!"
 
 #. Congratulations #2
 #: ../great.h:40
@@ -208,22 +205,22 @@ msgstr "Hangul"
 #. Input Method: Thai mode
 #: ../im.c:92
 msgid "Thai"
-msgstr "Thai"
+msgstr "Thaise"
 
 #. Input Method: Traditional Chinese mode
 #: ../im.c:95
 msgid "ZH_TW"
-msgstr ""
+msgstr "ZH_TW"
 
 #. Square shape tool (4 equally-lengthed sides at right angles)
 #: ../shapes.h:171 ../shapes.h:172
 msgid "Square"
-msgstr "Vierkant"
+msgstr "Kwadraat"
 
 #. Rectangle shape tool (4 sides at right angles)
 #: ../shapes.h:175 ../shapes.h:176
 msgid "Rectangle"
-msgstr "Reghoek"
+msgstr "Driehoek"
 
 #. Circle shape tool (X radius and Y radius are the same)
 #: ../shapes.h:179 ../shapes.h:180
@@ -233,7 +230,7 @@ msgstr "Sirkel"
 #. Ellipse shape tool (X radius and Y radius may differ)
 #: ../shapes.h:183 ../shapes.h:184
 msgid "Ellipse"
-msgstr "Ellips"
+msgstr "Elipse"
 
 #. Triangle shape tool (3 sides)
 #: ../shapes.h:187 ../shapes.h:188
@@ -298,7 +295,7 @@ msgstr "'n Oktagon het agt kante."
 #. Title of tool selector (buttons down the left)
 #: ../titles.h:41
 msgid "Tools"
-msgstr "Nutsgoed"
+msgstr "Gereedskap"
 
 #. Title of color palette (buttons across the bottom)
 #: ../titles.h:44
@@ -360,12 +357,12 @@ msgstr "Teks"
 #. Undo last action
 #: ../tools.h:63
 msgid "Undo"
-msgstr "Ontdoen"
+msgstr "Herstel"
 
 #. Redo undone action
 #: ../tools.h:66
 msgid "Redo"
-msgstr "Herdoen"
+msgstr "Herstel herroep"
 
 #. Eraser tool
 #: ../tools.h:69
@@ -397,7 +394,7 @@ msgstr "Druk"
 #. Quit/exit Tux Paint application
 #: ../tools.h:84
 msgid "Quit"
-msgstr "Verlaat"
+msgstr "Gaan uit"
 
 #. Paint tool instructions
 #: ../tools.h:92
@@ -412,8 +409,7 @@ msgstr "Kies 'n prentjie om as 'n stempel te gebruik op jou tekening."
 #. Line tool instructions
 #: ../tools.h:98
 msgid "Click to start drawing a line. Let go to complete it."
-msgstr ""
-"Klik-en-hou om 'n lyn te begin teken en laat los om die lyn te voltooi."
+msgstr "Klik-en-hou om 'n lyn te begin teken en laat los om die lyn te voltooi."
 
 #. Shape tool instructions
 #: ../tools.h:101
@@ -498,7 +494,7 @@ msgstr "Goed dan... Kom ons teken verder op hierdie een!"
 #. Prompt to confirm user wishes to quit
 #: ../tuxpaint.c:1800
 msgid "Do you really want to quit?"
-msgstr "Wil jy regtig ophou teken?"
+msgstr "Wil jy werklik afsluit?"
 
 #. Quit prompt positive response (quit)
 #: ../tuxpaint.c:1803
@@ -594,7 +590,7 @@ msgstr "Klank aan."
 #. Wait while Text tool finishes loading fonts
 #: ../tuxpaint.c:2402
 msgid "Please wait…"
-msgstr "Wag asseblief ..."
+msgstr "Wag asseblief..."
 
 #: ../tuxpaint.c:7059
 msgid "Pick a color."
@@ -707,7 +703,7 @@ msgstr "Klik en beweeg die muis om die prent te laat afdrup!"
 
 #: ../../magic/src/blur.c:77
 msgid "Blur"
-msgstr "Uit fokus"
+msgstr "Verwaas"
 
 #: ../../magic/src/blur.c:84
 msgid "Click and move the mouse around to blur the picture."
@@ -716,7 +712,7 @@ msgstr "Klik en beweeg die muis om die prent uit fokus te maak."
 #. Both are named "Bricks", at the moment:
 #: ../../magic/src/bricks.c:105
 msgid "Bricks"
-msgstr "Stene"
+msgstr "Bakstene"
 
 #: ../../magic/src/bricks.c:112
 msgid "Click and move to draw large bricks."
@@ -744,12 +740,11 @@ msgstr "Klik en beweeg die muis om die prent te verander na 'n cartoon."
 
 #: ../../magic/src/distortion.c:122
 msgid "Distortion"
-msgstr ""
+msgstr "Distorsie"
 
 #: ../../magic/src/distortion.c:130
-#, fuzzy
 msgid "Click and drag the mouse to cause a distortion in your picture."
-msgstr "Klik en beweeg die muis om glasteëls oor jou prent te plaas."
+msgstr "Klik en beweeg die muis om 'n distorsie in jou prent te veroorsaak."
 
 #: ../../magic/src/emboss.c:77
 msgid "Emboss"
@@ -777,7 +772,7 @@ msgstr "Klik en beweeg om die kleure donkerder te maak."
 
 #: ../../magic/src/fill.c:88
 msgid "Fill"
-msgstr "Vul"
+msgstr "Opvul"
 
 #: ../../magic/src/fill.c:95
 msgid "Click in the picture to fill that area with color."
@@ -828,7 +823,7 @@ msgstr ""
 
 #: ../../magic/src/light.c:85
 msgid "Light"
-msgstr "Lig"
+msgstr "liggies"
 
 #: ../../magic/src/light.c:91
 msgid "Click and drag to draw a beam of light on your picture."
@@ -848,7 +843,7 @@ msgstr "Spieël"
 
 #: ../../magic/src/mirror_flip.c:97
 msgid "Flip"
-msgstr "Flip"
+msgstr "Draai oor"
 
 #: ../../magic/src/mirror_flip.c:107
 msgid "Click to make a mirror image."
@@ -884,7 +879,7 @@ msgstr "Klik met muis om rimpels oor jou prent te maak."
 
 #: ../../magic/src/shift.c:86
 msgid "Shift"
-msgstr "Skuif"
+msgstr "Shift"
 
 #: ../../magic/src/shift.c:92
 msgid "Click and drag to shift your picture around on the canvas."
@@ -918,36 +913,3 @@ msgid ""
 msgstr ""
 "Klik om die prent te laat golf. Klik nader aan bo vir korter golfwe, onder "
 "vir hoë golwe, links vir klein golfies en regs vir lang golwe."
-
-#~ msgid "Sparkles"
-#~ msgstr "Vonke"
-
-#~ msgid "You now have a blank sheet to draw on!"
-#~ msgstr "Jy het nou 'n skoon bladsy om op te teken!"
-
-#~ msgid "Start a new picture?"
-#~ msgstr "Begin 'n nuwe prent?"
-
-#~ msgid "Yes, let's start fresh!"
-#~ msgstr "Ja, kom ons begin oor!"
-
-#~ msgid "Click and move to draw sparkles."
-#~ msgstr "Klik en beweeg om vonke te teken."
-
-#~ msgid "Starting a new picture will erase the current one!"
-#~ msgstr "As jy 'n nuwe prent begin word hierdie een uitgevee!"
-
-#~ msgid "That’s OK!"
-#~ msgstr "Dis goed so."
-
-#~ msgid "Never mind!"
-#~ msgstr "Toemaar!"
-
-#~ msgid "jq"
-#~ msgstr "jq"
-
-#~ msgid "JQ"
-#~ msgstr "JQ"
-
-#~ msgid "Save over the older version of this picture?"
-#~ msgstr "Moet dit die ouer weergawe van hierdie prent vervang?"

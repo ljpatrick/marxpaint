@@ -7,7 +7,7 @@ bill@newbreedsoftware.com
 http://www.tuxpaint.org/
 
 
-June 17, 2002 - June 15, 2008
+June 17, 2002 - June 19, 2008
 
 $Id$
 
@@ -196,6 +196,7 @@ $Id$
 * Translations
 
   * Afrikaans
+    Samuel Murray (Groenkloof) <samuel@translate.org.za>
     Petri Jooste <petri.jooste@nwu.ac.za>
 
   * Albanian
