@@ -16,7 +16,7 @@ MAGIC_API_VERSION:=0x00000001
 # Need to know the OS
 
 SYSNAME:=$(shell uname -s)
-ifeq ($(SYSNAME),MINGW32_NT-5.0)
+ifeq ($(findstring MINGW32, $(SYSNAME)),MINGW32)
 OS:=windows
 else
 ifeq ($(SYSNAME),Darwin)
