@@ -7,8 +7,8 @@ msgstr ""
 "Project-Id-Version: TuxPaint\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2008-04-06 18:38+0200\n"
-"PO-Revision-Date: 2008-03-01 01:41+0200\n"
-"Last-Translator: Serhij Dubyk <dubyk@library.lviv.ua>\n"
+"PO-Revision-Date: 2008-06-17 04:01+0300\n"
+"Last-Translator: Serhij Dubyk <serhijdubyk@gmail.com>\n"
 "Language-Team: Serhij Dubyk <serhijdubyk@gmail.com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -16,8 +16,7 @@ msgstr ""
 "X-Poedit-Language: Ukrainian\n"
 "X-Poedit-Country: UKRAINE\n"
 "X-Poedit-SourceCharset: utf-8\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%"
-"10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 
 #. Response to Black (0, 0, 0) color selected
 #: ../colors.h:86
@@ -218,81 +217,95 @@ msgid "ZH_TW"
 msgstr "ZH_TW"
 
 #. Square shape tool (4 equally-lengthed sides at right angles)
-#: ../shapes.h:171 ../shapes.h:172
+#: ../shapes.h:171
+#: ../shapes.h:172
 msgid "Square"
 msgstr "Квадрат"
 
 #. Rectangle shape tool (4 sides at right angles)
-#: ../shapes.h:175 ../shapes.h:176
+#: ../shapes.h:175
+#: ../shapes.h:176
 msgid "Rectangle"
 msgstr "Прямокутник"
 
 #. Circle shape tool (X radius and Y radius are the same)
-#: ../shapes.h:179 ../shapes.h:180
+#: ../shapes.h:179
+#: ../shapes.h:180
 msgid "Circle"
 msgstr "Круг"
 
 #. Ellipse shape tool (X radius and Y radius may differ)
-#: ../shapes.h:183 ../shapes.h:184
+#: ../shapes.h:183
+#: ../shapes.h:184
 msgid "Ellipse"
 msgstr "Еліпс"
 
 #. Triangle shape tool (3 sides)
-#: ../shapes.h:187 ../shapes.h:188
+#: ../shapes.h:187
+#: ../shapes.h:188
 msgid "Triangle"
 msgstr "Трикутник"
 
 #. Pentagone shape tool (5 sides)
-#: ../shapes.h:191 ../shapes.h:192
+#: ../shapes.h:191
+#: ../shapes.h:192
 msgid "Pentagon"
 msgstr "П'ятикутник"
 
 #. Rhombus shape tool (4 sides, not at right angles)
-#: ../shapes.h:195 ../shapes.h:196
+#: ../shapes.h:195
+#: ../shapes.h:196
 msgid "Rhombus"
 msgstr "Ромб"
 
 #. Octagon shape tool (8 sides)
-#: ../shapes.h:199 ../shapes.h:200
+#: ../shapes.h:199
+#: ../shapes.h:200
 msgid "Octagon"
 msgstr "Восьмикутник"
 
 #. Description of a square
-#: ../shapes.h:208 ../shapes.h:209
+#: ../shapes.h:208
+#: ../shapes.h:209
 msgid "A square is a rectangle with four equal sides."
 msgstr "Квадрат - прямокутник з чотирма рівними сторонами."
 
 #. Description of a rectangle
-#: ../shapes.h:212 ../shapes.h:213
+#: ../shapes.h:212
+#: ../shapes.h:213
 msgid "A rectangle has four sides and four right angles."
 msgstr "У прямокутника чотири сторони і чотири прямих кути."
 
-#: ../shapes.h:217 ../shapes.h:219
-msgid ""
-"A circle is a curve where all points have the same distance from the center."
-msgstr ""
-"Коло - крива, у якої усі крапки лежать на однаковій відстані від центру."
+#: ../shapes.h:217
+#: ../shapes.h:219
+msgid "A circle is a curve where all points have the same distance from the center."
+msgstr "Коло - крива, у якої усі крапки лежать на однаковій відстані від центру."
 
 #. Description of an ellipse
-#: ../shapes.h:222 ../shapes.h:223
+#: ../shapes.h:222
+#: ../shapes.h:223
 msgid "An ellipse is a stretched circle."
 msgstr "Еліпс - витянуте коло."
 
 #. Description of a triangle
-#: ../shapes.h:226 ../shapes.h:227
+#: ../shapes.h:226
+#: ../shapes.h:227
 msgid "A triangle has three sides."
 msgstr "У трикутника три сторони (і кути!)"
 
 #. Description of a pentagon
-#: ../shapes.h:230 ../shapes.h:231
+#: ../shapes.h:230
+#: ../shapes.h:231
 msgid "A pentagon has five sides."
 msgstr "А у п'ятикутника п'ять сторін (і кутів!)"
 
-#: ../shapes.h:235 ../shapes.h:237
+#: ../shapes.h:235
+#: ../shapes.h:237
 msgid "A rhombus has four equal sides, and opposite sides are parallel."
 msgstr "Ромб має чотири рівні сторони, і протилежні сторони паралельні."
 
-#: ../shapes.h:241 ../shapes.h:243
+#: ../shapes.h:241
+#: ../shapes.h:243
 msgid "An octagon has eight equal sides."
 msgstr "Восьмикутник має вісім рівних сторін."
 
@@ -323,7 +336,8 @@ msgstr "Штампи"
 
 #. Title of shape selector (buttons down the right for shapes tool)
 #. Shape creation tool (square, circle, etc.)
-#: ../titles.h:56 ../tools.h:54
+#: ../titles.h:56
+#: ../tools.h:54
 msgid "Shapes"
 msgstr "Форми"
 
@@ -334,7 +348,8 @@ msgstr "Букви"
 
 #. Title of magic tool selector (buttons down the right for magic (effect plugin) tool)
 #. "Magic" effects tools (blur, flip image, etc.)
-#: ../titles.h:62 ../tools.h:60
+#: ../titles.h:62
+#: ../tools.h:60
 msgid "Magic"
 msgstr "Магія"
 
@@ -382,7 +397,8 @@ msgstr "Новий"
 #. Open a saved picture
 #. buttons for the file open dialog
 #. Open dialog: 'Open' button, to load the selected picture
-#: ../tools.h:75 ../tuxpaint.c:7833
+#: ../tools.h:75
+#: ../tuxpaint.c:7833
 msgid "Open"
 msgstr "Відкрий"
 
@@ -418,12 +434,8 @@ msgstr "Клацніть, щоб почати малювати лінію. Ві�
 
 #. Shape tool instructions
 #: ../tools.h:101
-msgid ""
-"Pick a shape. Click to pick the center, drag, then let go when it is the "
-"size you want. Move around to rotate it, and click to draw it."
-msgstr ""
-"Виберіть форму. Клацніть щоб вибрати центр, розтягніть до потрібного "
-"розміру, відпустіть. Покрутіть форму, потім клацніть, щоб намалювати її."
+msgid "Pick a shape. Click to pick the center, drag, then let go when it is the size you want. Move around to rotate it, and click to draw it."
+msgstr "Виберіть форму. Клацніть щоб вибрати центр, розтягніть до потрібного розміру, відпустіть. Покрутіть форму, потім клацніть, щоб намалювати її."
 
 #. Text tool instructions
 #: ../tools.h:104
@@ -512,7 +524,8 @@ msgid "Yes, I'm done!"
 msgstr "Так, я завершив!"
 
 #. Quit prompt negative response (don't quit)
-#: ../tuxpaint.c:1806 ../tuxpaint.c:1833
+#: ../tuxpaint.c:1806
+#: ../tuxpaint.c:1833
 msgid "No, take me back!"
 msgstr "Ні, хочу назад!"
 
@@ -521,11 +534,13 @@ msgstr "Ні, хочу назад!"
 msgid "If you quit, you’ll lose your picture! Save it?"
 msgstr "Якщо Ви вийдете, Ви втратите Ваш малюнок! Зберегти?"
 
-#: ../tuxpaint.c:1811 ../tuxpaint.c:1816
+#: ../tuxpaint.c:1811
+#: ../tuxpaint.c:1816
 msgid "Yes, save it!"
 msgstr "Так, зберегти!"
 
-#: ../tuxpaint.c:1812 ../tuxpaint.c:1817
+#: ../tuxpaint.c:1812
+#: ../tuxpaint.c:1817
 msgid "No, don't bother saving!"
 msgstr "Ні, не потрібно зберігати!"
 
@@ -540,7 +555,10 @@ msgid "Can’t open that picture!"
 msgstr "Не можу відкрити цей малюнок!"
 
 #. Generic dialog dismissal
-#: ../tuxpaint.c:1823 ../tuxpaint.c:1828 ../tuxpaint.c:1837 ../tuxpaint.c:1841
+#: ../tuxpaint.c:1823
+#: ../tuxpaint.c:1828
+#: ../tuxpaint.c:1837
+#: ../tuxpaint.c:1841
 #: ../tuxpaint.c:1850
 msgid "OK"
 msgstr "Гаразд"
@@ -670,7 +688,8 @@ msgstr "Виберіть бажаний малюнок, а потім клацн
 
 #. Let user choose images:
 #. Instructions for Slideshow file dialog (FIXME: Make a #define)
-#: ../tuxpaint.c:14029 ../tuxpaint.c:14343
+#: ../tuxpaint.c:14029
+#: ../tuxpaint.c:14343
 msgid "Choose the pictures you want, then click “Play”."
 msgstr "Виберіть бажані малюнки, а потім натисніть \"Слайд-шоу\"."
 
@@ -703,11 +722,8 @@ msgid "Click and move the mouse around to make the picture blocky."
 msgstr "Клацніть та поводіть по малюнку, щоб зробити мозаїку."
 
 #: ../../magic/src/blocks_chalk_drip.c:125
-msgid ""
-"Click and move the mouse around to turn the picture into a chalk drawing."
-msgstr ""
-"Клацніть та посовгайте по малюнку, щоб перетворити його частину на "
-"крейдування."
+msgid "Click and move the mouse around to turn the picture into a chalk drawing."
+msgstr "Клацніть та посовгайте по малюнку, щоб перетворити його частину на крейдування."
 
 #: ../../magic/src/blocks_chalk_drip.c:128
 msgid "Click and move the mouse around to make the picture drip."
@@ -748,9 +764,7 @@ msgstr "Комікс"
 
 #: ../../magic/src/cartoon.c:88
 msgid "Click and move the mouse around to turn the picture into a cartoon."
-msgstr ""
-"Клацніть та посовгайте по малюнку, щоб перетворити його частину на комікс чи "
-"мультиплікацію."
+msgstr "Клацніть та посовгайте по малюнку, щоб перетворити його частину на комікс чи мультиплікацію."
 
 #: ../../magic/src/distortion.c:122
 msgid "Distortion"
@@ -798,9 +812,7 @@ msgstr "Квітка"
 
 #: ../../magic/src/flower.c:131
 msgid "Click and drag to draw a flower stalk. Let go to finish the flower."
-msgstr ""
-"Клацніть та протягніть, щоб виростити стебло для квітки. Відпустіть кнопку, "
-"щоб завершити квітку."
+msgstr "Клацніть та протягніть, щоб виростити стебло для квітки. Відпустіть кнопку, щоб завершити квітку."
 
 #: ../../magic/src/foam.c:105
 msgid "Foam"
@@ -816,8 +828,7 @@ msgstr "Вітраж"
 
 #: ../../magic/src/glasstile.c:90
 msgid "Click and drag the mouse to put glass tile over your picture."
-msgstr ""
-"Клацніть та протягніть мишкою, щоб встановити вітраж над Вашим малюнком."
+msgstr "Клацніть та протягніть мишкою, щоб встановити вітраж над Вашим малюнком."
 
 #: ../../magic/src/grass.c:93
 msgid "Grass"
@@ -825,17 +836,14 @@ msgstr "Трава"
 
 #: ../../magic/src/grass.c:99
 msgid "Click and move to draw grass. Don’t forget the dirt!"
-msgstr ""
-"Клацніть та посовгайте по малюнку, щоб намалювати траву. Не забудьте про "
-"ґрунт!"
+msgstr "Клацніть та посовгайте по малюнку, щоб намалювати траву. Не забудьте про ґрунт!"
 
 #: ../../magic/src/kalidescope.c:78
 msgid "Kaleidoscope"
 msgstr "Калейдоскоп"
 
 #: ../../magic/src/kalidescope.c:84
-msgid ""
-"Click and drag the mouse to draw with symmetric brushes (a kaleidoscope)."
+msgid "Click and drag the mouse to draw with symmetric brushes (a kaleidoscope)."
 msgstr "Клацніть та малюйте фігури 4-ма симетричними пензликами (калейдоскоп)."
 
 #: ../../magic/src/light.c:85
@@ -876,8 +884,7 @@ msgstr "Негатив"
 
 #: ../../magic/src/negative.c:80
 msgid "Click and move the mouse around to draw a negative."
-msgstr ""
-"Клацніть та посовгайте по малюнку, щоб перетворити його частину на негатив."
+msgstr "Клацніть та посовгайте по малюнку, щоб перетворити його частину на негатив."
 
 #: ../../magic/src/rainbow.c:108
 msgid "Rainbow"
@@ -924,41 +931,27 @@ msgid "Waves"
 msgstr "Хвильки"
 
 #: ../../magic/src/waves.c:85
-msgid ""
-"Click to make the picture wavy. Click toward the top for shorter waves, the "
-"bottom for taller waves, the left for small waves, and the right for long "
-"waves."
-msgstr ""
-"Клацніть, щоб зробити малюнок хвилястим. Щоб зробити коротші хвильки, "
-"клацніть ближче до верху, щоб були високі хвилі - тягніться до низу, зліва "
-"матимете маленькі хвильки, а  справа - довгі хвилі."
+msgid "Click to make the picture wavy. Click toward the top for shorter waves, the bottom for taller waves, the left for small waves, and the right for long waves."
+msgstr "Клацніть, щоб зробити малюнок хвилястим. Щоб зробити коротші хвильки, клацніть ближче до верху, щоб були високі хвилі - тягніться до низу, зліва матимете маленькі хвильки, а  справа - довгі хвилі."
 
 #~ msgid "Sparkles"
 #~ msgstr "Іскри"
-
 #~ msgid "You now have a blank sheet to draw on!"
 #~ msgstr "Тепер у Вас є чистий листок, щоб малювати!"
-
 #~ msgid "Start a new picture?"
 #~ msgstr "Почнете малювати нову картину?"
-
 #~ msgid "Click and move to draw sparkles."
 #~ msgstr "Клацніть та поводіть по малюнку, щоб намалювати іскри."
-
 #~ msgid "Starting a new picture will erase the current one!"
 #~ msgstr "Починаючи новий малюнок, Ви знищите поточний!"
-
 #~ msgid "That’s OK!"
 #~ msgstr "Це добре!"
-
 #~ msgid "Never mind!"
 #~ msgstr "Байдуже!"
-
 #~ msgid "jq"
 #~ msgstr "jq"
-
 #~ msgid "JQ"
 #~ msgstr "JQ"
-
 #~ msgid "Save over the older version of this picture?"
 #~ msgstr "Зберегти поверх старої версії цього малюнка?"
+
