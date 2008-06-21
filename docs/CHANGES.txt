@@ -9,7 +9,7 @@ http://www.tuxpaint.org/
 $Id$
 
 
-2008.June.20 (0.9.20)
+2008.June.21 (0.9.20)
   * New translations:
     -----------------
     * Asturian
@@ -44,7 +44,7 @@ $Id$
       Robin Rosenberg <robin.rosenberg@dewire.com>
 
     * Ukranian translation
-      Serhij Dubyk <dubyk@ukr.net>
+      Serhij Dubyk <serhijdubyk@gmail.com>
 
     * Ukranian documentation
       - EXTENDING.txt
@@ -53,7 +53,7 @@ $Id$
       - OPTIONS.txt
       - PNG.txt
       - README.txt
-      Serhij Dubyk <dubyk@ukr.net>
+      Serhij Dubyk <serhijdubyk@gmail.com>
 
     * Vietnamese font removed, until a suitable replacement is found
       (licensing issue)

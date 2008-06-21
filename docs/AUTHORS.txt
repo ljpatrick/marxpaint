@@ -7,7 +7,7 @@ bill@newbreedsoftware.com
 http://www.tuxpaint.org/
 
 
-June 17, 2002 - June 19, 2008
+June 17, 2002 - June 21, 2008
 
 $Id$
 
@@ -505,7 +505,7 @@ $Id$
     Samuel Sarpong <srnsam@yahoo.com>
 
   * Ukranian / Urkanian documentation
-    Serhij Dubyk <dubyk@library.lviv.ua>
+    Serhij Dubyk <serhijdubyk@gmail.com>
 
   * Venda
     Shumani Mercy Nehulaudzi <nevhulaudzi@saps.org.za>>
