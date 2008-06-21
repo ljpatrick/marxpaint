@@ -1,6 +1,6 @@
 # Tux Pant Ukrainian messages
-# Copyright (C) 2003-2004
-# Translators: Serhij Dubyk <dubyk@lsl.lviv.ua>
+# Copyright (C) 2003-2008
+# Translators: Serhij Dubyk <serhijdubyk@gmail.com>
 #
 msgid ""
 msgstr ""
