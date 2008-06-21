@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: nn\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-04-06 18:38+0200\n"
+"POT-Creation-Date: 2008-06-21 10:24-0700\n"
 "PO-Revision-Date: 2007-07-19 20:34+0200\n"
 "Last-Translator: Karl Ove Hufthammer <karl@huftis.org>\n"
 "Language-Team: Norwegian Nynorsk <i18n-nn@lister.ping.uio.no>\n"
@@ -113,20 +113,20 @@ msgstr "Beige!"
 #. and the ASCII-only fonts should be given bad scores in the scoring
 #. code below (the best scores going to fonts that support both).
 #. Line X
-#: ../dirwalk.c:101
+#: ../dirwalk.c:121
 msgid "qx"
 msgstr "æøå"
 
-#: ../dirwalk.c:101
+#: ../dirwalk.c:121
 msgid "QX"
 msgstr "ÆØÅ"
 
 #. Line Y
-#: ../dirwalk.c:104
+#: ../dirwalk.c:124
 msgid "qy"
 msgstr "æé"
 
-#: ../dirwalk.c:104
+#: ../dirwalk.c:124
 msgid "QY"
 msgstr "ÆÉ"
 
@@ -135,32 +135,32 @@ msgstr "ÆÉ"
 #. especially important for users who have scroll buttons disabled.
 #. Translators should do whatever is needed to put crummy fonts last.
 #. distinct uppercase and lowercase (e.g., 'o' vs. 'O')
-#: ../dirwalk.c:127
+#: ../dirwalk.c:147
 msgid "oO"
 msgstr "oO"
 
 #. uncommon punctuation (e.g., '@', '#', '*', etc.)
-#: ../dirwalk.c:130
+#: ../dirwalk.c:150
 msgid "`\\%_@$~#{}<>^&*"
 msgstr "`\\%_@$~#{}<>^&*"
 
 #. common punctuation (e.g., '?', '!', '.', ',', etc.)
-#: ../dirwalk.c:133
+#: ../dirwalk.c:153
 msgid ",.?!"
 msgstr ",.?!:;-"
 
 #. digits (e.g., '0', '1' and '7')
-#: ../dirwalk.c:136
+#: ../dirwalk.c:156
 msgid "017"
 msgstr "017"
 
 #. distinct circle-like characters (e.g., 'O' (capital oh) vs. '0' (zero))
-#: ../dirwalk.c:139
+#: ../dirwalk.c:159
 msgid "O0"
 msgstr "O0"
 
 #. distinct line-like characters (e.g., 'l' (lowercase elle) vs. '1' (one) vs. 'I' (capital aye))
-#: ../dirwalk.c:142
+#: ../dirwalk.c:162
 msgid "1Il|"
 msgstr "1Il|"
 
@@ -185,32 +185,32 @@ msgid "Good job!"
 msgstr "Godt jobba!"
 
 #. Input Method: English mode
-#: ../im.c:80
+#: ../im.c:75
 msgid "English"
 msgstr "Engelsk"
 
 #. Input Method: Japanese Romanized Hiragana mode
-#: ../im.c:83
+#: ../im.c:78
 msgid "Hiragana"
 msgstr "Hiragana"
 
 #. Input Method: Japanese Romanized Katakana mode
-#: ../im.c:86
+#: ../im.c:81
 msgid "Katakana"
 msgstr "Katakana"
 
 #. Input Method: Korean Hangul 2-Bul mode
-#: ../im.c:89
+#: ../im.c:84
 msgid "Hangul"
 msgstr "Hangul"
 
 #. Input Method: Thai mode
-#: ../im.c:92
+#: ../im.c:87
 msgid "Thai"
 msgstr "Thai"
 
 #. Input Method: Traditional Chinese mode
-#: ../im.c:95
+#: ../im.c:90
 msgid "ZH_TW"
 msgstr "ZH_TW"
 
@@ -377,7 +377,7 @@ msgstr "Ny"
 #. Open a saved picture
 #. buttons for the file open dialog
 #. Open dialog: 'Open' button, to load the selected picture
-#: ../tools.h:75 ../tuxpaint.c:7833
+#: ../tools.h:75 ../tuxpaint.c:7830
 msgid "Open"
 msgstr "Opna"
 
@@ -491,174 +491,174 @@ msgid "OK then… Let’s keep drawing this one!"
 msgstr "Greitt! Då held me heller fram med denne teikninga."
 
 #. Prompt to confirm user wishes to quit
-#: ../tuxpaint.c:1800
+#: ../tuxpaint.c:1804
 msgid "Do you really want to quit?"
 msgstr "Er du sikker på at du vil avslutta?"
 
 #. Quit prompt positive response (quit)
-#: ../tuxpaint.c:1803
+#: ../tuxpaint.c:1807
 msgid "Yes, I'm done!"
 msgstr "Ja, eg er ferdig!"
 
 #. Quit prompt negative response (don't quit)
-#: ../tuxpaint.c:1806 ../tuxpaint.c:1833
+#: ../tuxpaint.c:1810 ../tuxpaint.c:1837
 msgid "No, take me back!"
 msgstr "Nei, eg vil teikna meir!"
 
 #. Current picture is not saved; user is quitting
-#: ../tuxpaint.c:1810
+#: ../tuxpaint.c:1814
 msgid "If you quit, you’ll lose your picture! Save it?"
 msgstr "Du mistar teikninga viss du avsluttar. Vil du lagra ho først?"
 
-#: ../tuxpaint.c:1811 ../tuxpaint.c:1816
+#: ../tuxpaint.c:1815 ../tuxpaint.c:1820
 msgid "Yes, save it!"
 msgstr "Ja, lagra ho!"
 
-#: ../tuxpaint.c:1812 ../tuxpaint.c:1817
+#: ../tuxpaint.c:1816 ../tuxpaint.c:1821
 msgid "No, don't bother saving!"
 msgstr "Nei, ikkje lagra ho!"
 
 #. Current picture is not saved; user is opening another picture
-#: ../tuxpaint.c:1815
+#: ../tuxpaint.c:1819
 msgid "Save your picture first?"
 msgstr "Vil du lagra teikninga først?"
 
 #. Error opening picture
-#: ../tuxpaint.c:1820
+#: ../tuxpaint.c:1824
 msgid "Can’t open that picture!"
 msgstr "Klarte ikkje opna teikninga."
 
 #. Generic dialog dismissal
-#: ../tuxpaint.c:1823 ../tuxpaint.c:1828 ../tuxpaint.c:1837 ../tuxpaint.c:1841
-#: ../tuxpaint.c:1850
+#: ../tuxpaint.c:1827 ../tuxpaint.c:1832 ../tuxpaint.c:1841 ../tuxpaint.c:1845
+#: ../tuxpaint.c:1854
 msgid "OK"
 msgstr "OK"
 
 #. Notification that 'Open' dialog has nothing to show
-#: ../tuxpaint.c:1827
+#: ../tuxpaint.c:1831
 msgid "There are no saved files!"
 msgstr "Det finst ingen lagra teikningar."
 
 #. Verification of print action
-#: ../tuxpaint.c:1831
+#: ../tuxpaint.c:1835
 msgid "Print your picture now?"
 msgstr "Er du sikker på at du vil skriva ut teikninga?"
 
-#: ../tuxpaint.c:1832
+#: ../tuxpaint.c:1836
 msgid "Yes, print it!"
 msgstr "Ja, skriv ho ut!"
 
 #. Confirmation of successful (we hope) printing
-#: ../tuxpaint.c:1836
+#: ../tuxpaint.c:1840
 msgid "Your picture has been printed!"
 msgstr "Teikninga er skriven ut."
 
 #. Notification that it's too soon to print again (--printdelay option is in effect)
-#: ../tuxpaint.c:1840
+#: ../tuxpaint.c:1844
 msgid "You can’t print yet!"
 msgstr "Du kan ikkje skriva ut enno."
 
 #. Prompt to confirm erasing a picture in the Open dialog
-#: ../tuxpaint.c:1844
+#: ../tuxpaint.c:1848
 msgid "Erase this picture?"
 msgstr "Vil du verkeleg sletta teikninga?"
 
-#: ../tuxpaint.c:1845
+#: ../tuxpaint.c:1849
 msgid "Yes, erase it!"
 msgstr "Ja, slett ho!"
 
-#: ../tuxpaint.c:1846
+#: ../tuxpaint.c:1850
 msgid "No, don't erase it!"
 msgstr "Nei, ikkje slett ho!"
 
 #. Reminder that Mouse Button 1 is the button to use in Tux Paint
-#: ../tuxpaint.c:1849
+#: ../tuxpaint.c:1853
 msgid "Remember to use the left mouse button!"
 msgstr "Hugs å bruka venstre museknapp!"
 
 #. Sound has been muted (silenced) via keyboard shortcut
-#: ../tuxpaint.c:1960
+#: ../tuxpaint.c:1964
 msgid "Sound muted."
 msgstr "Lyd slått av."
 
 #. Sound has been unmuted (unsilenced) via keyboard shortcut
-#: ../tuxpaint.c:1965
+#: ../tuxpaint.c:1969
 msgid "Sound unmuted."
 msgstr "Lyd slått på."
 
 #. Wait while Text tool finishes loading fonts
-#: ../tuxpaint.c:2402
+#: ../tuxpaint.c:2406
 msgid "Please wait…"
 msgstr "Vent litt …"
 
-#: ../tuxpaint.c:7059
+#: ../tuxpaint.c:7056
 msgid "Pick a color."
 msgstr "Vel ein farge."
 
 #. Open dialog: 'Erase' button, to erase/deleted the selected picture
-#: ../tuxpaint.c:7836
+#: ../tuxpaint.c:7833
 msgid "Erase"
 msgstr "Slett"
 
 #. Open dialog: 'Slides' button, to switch to slide show mode
-#: ../tuxpaint.c:7839
+#: ../tuxpaint.c:7836
 msgid "Slides"
 msgstr "Lysbilete"
 
 #. Open dialog: 'Back' button, to dismiss Open dialog without opening a picture
-#: ../tuxpaint.c:7842
+#: ../tuxpaint.c:7839
 msgid "Back"
 msgstr "Tilbake"
 
 #. Slideshow: 'Next' button, to load next slide (image)
-#: ../tuxpaint.c:7845
+#: ../tuxpaint.c:7842
 msgid "Next"
 msgstr "Neste"
 
 #. Slideshow: 'Play' button, to begin a slideshow sequence
-#: ../tuxpaint.c:7848
+#: ../tuxpaint.c:7845
 msgid "Play"
 msgstr "Køyr"
 
 #. Label for 'Letters' buttons (font selector, down the right when the Text tool is being used); used to show the difference between font faces
-#: ../tuxpaint.c:8441
+#: ../tuxpaint.c:8438
 msgid "Aa"
 msgstr "Aa"
 
 #. Admittedly stupid way of determining which keys can be used for
 #. positive and negative responses in dialogs (e.g., [Y] (for 'yes') in English)
-#: ../tuxpaint.c:11318
+#: ../tuxpaint.c:11343
 msgid "Yes"
 msgstr "Ja!"
 
-#: ../tuxpaint.c:11322
+#: ../tuxpaint.c:11347
 msgid "No"
 msgstr "Nei!"
 
 #. Prompt to ask whether user wishes to save over old version of their file
-#: ../tuxpaint.c:12271
+#: ../tuxpaint.c:12296
 msgid "Replace the picture with your changes?"
 msgstr "Vil du byta ut den gamle teikninga med den nye?"
 
 #. Positive response to saving over old version
 #. (like a 'File:Save' action in other applications)
-#: ../tuxpaint.c:12275
+#: ../tuxpaint.c:12300
 msgid "Yes, replace the old one!"
 msgstr "Ja, byt ut den gamle!"
 
 #. Negative response to saving over old version (saves a new image)
 #. (like a 'File:Save As...' action in other applications)
-#: ../tuxpaint.c:12279
+#: ../tuxpaint.c:12304
 msgid "No, save a new file!"
 msgstr "Nei, lagra som ei ny teikning!"
 
-#: ../tuxpaint.c:13042
+#: ../tuxpaint.c:13067
 msgid "Choose the picture you want, then click “Open”."
 msgstr "Vel ei teikning og trykk «Opna»."
 
 #. Let user choose images:
 #. Instructions for Slideshow file dialog (FIXME: Make a #define)
-#: ../tuxpaint.c:14029 ../tuxpaint.c:14343
+#: ../tuxpaint.c:14054 ../tuxpaint.c:14368
 msgid "Choose the pictures you want, then click “Play”."
 msgstr "Vel teikningane du vil ha, og trykk så på «Køyr»."
 
@@ -674,30 +674,30 @@ msgstr "Teikneprogram"
 msgid "Tux Paint"
 msgstr "Tux Paint"
 
-#: ../../magic/src/blocks_chalk_drip.c:108
+#: ../../magic/src/blocks_chalk_drip.c:133
 msgid "Blocks"
 msgstr "Blokk"
 
-#: ../../magic/src/blocks_chalk_drip.c:110
+#: ../../magic/src/blocks_chalk_drip.c:135
 msgid "Chalk"
 msgstr "Krit"
 
-#: ../../magic/src/blocks_chalk_drip.c:112
+#: ../../magic/src/blocks_chalk_drip.c:137
 msgid "Drip"
 msgstr "Drypping"
 
-#: ../../magic/src/blocks_chalk_drip.c:122
+#: ../../magic/src/blocks_chalk_drip.c:147
 msgid "Click and move the mouse around to make the picture blocky."
 msgstr "Hald inne knappen og flytt rundt for å gjera teikninga «blokkete»."
 
-#: ../../magic/src/blocks_chalk_drip.c:125
+#: ../../magic/src/blocks_chalk_drip.c:150
 msgid ""
 "Click and move the mouse around to turn the picture into a chalk drawing."
 msgstr ""
 "Hald inne knappen og flytt rundt for å gjera teikninga om til ei "
 "kritteikning."
 
-#: ../../magic/src/blocks_chalk_drip.c:128
+#: ../../magic/src/blocks_chalk_drip.c:153
 msgid "Click and move the mouse around to make the picture drip."
 msgstr "Hald inne knappen og flytt rundt for å gjera teikninga dryppande."
 
@@ -756,19 +756,19 @@ msgstr "Relieff"
 msgid "Click and drag the mouse to emboss the picture."
 msgstr "Hald inne knappen og flytt rundt for å gjera teikninga om til relieff."
 
-#: ../../magic/src/fade_darken.c:92
+#: ../../magic/src/fade_darken.c:117
 msgid "Lighten"
 msgstr "Lysare"
 
-#: ../../magic/src/fade_darken.c:94
+#: ../../magic/src/fade_darken.c:119
 msgid "Darken"
 msgstr "Mørkare"
 
-#: ../../magic/src/fade_darken.c:104
+#: ../../magic/src/fade_darken.c:129
 msgid "Click and move to fade the colors."
 msgstr "Hald inne knappen og flytt rundt for å gjera fargane lysare."
 
-#: ../../magic/src/fade_darken.c:107
+#: ../../magic/src/fade_darken.c:132
 msgid "Click and move to darken the colors."
 msgstr "Hald inne knappen og flytt rundt for å gjera fargane mørkare."
 
@@ -883,11 +883,11 @@ msgstr "Bølgjer"
 msgid "Click to make ripples appear over your picture."
 msgstr "Hald inne knappen og flytt rundt for å laga bølgjer over teikninga."
 
-#: ../../magic/src/shift.c:86
+#: ../../magic/src/shift.c:105
 msgid "Shift"
 msgstr "Flytt"
 
-#: ../../magic/src/shift.c:92
+#: ../../magic/src/shift.c:111
 msgid "Click and drag to shift your picture around on the canvas."
 msgstr "Hald inne knappen og flytt rundt for å flytta på teikninga."
 

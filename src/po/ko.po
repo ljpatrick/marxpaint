@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Tux Paint 0.9.16\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-04-06 18:38+0200\n"
+"POT-Creation-Date: 2008-06-21 10:24-0700\n"
 "PO-Revision-Date: 2007-04-29 23:10-0400\n"
 "Last-Translator: Mark K. Kim <mkkim214@gmail.com>\n"
 "Language-Team: N/A\n"
@@ -115,20 +115,20 @@ msgstr "낙타색!"
 #. and the ASCII-only fonts should be given bad scores in the scoring
 #. code below (the best scores going to fonts that support both).
 #. Line X
-#: ../dirwalk.c:101
+#: ../dirwalk.c:121
 msgid "qx"
 msgstr "ㄱㅎ"
 
-#: ../dirwalk.c:101
+#: ../dirwalk.c:121
 msgid "QX"
 msgstr "ㄲㅍ"
 
 #. Line Y
-#: ../dirwalk.c:104
+#: ../dirwalk.c:124
 msgid "qy"
 msgstr ""
 
-#: ../dirwalk.c:104
+#: ../dirwalk.c:124
 msgid "QY"
 msgstr ""
 
@@ -137,32 +137,32 @@ msgstr ""
 #. especially important for users who have scroll buttons disabled.
 #. Translators should do whatever is needed to put crummy fonts last.
 #. distinct uppercase and lowercase (e.g., 'o' vs. 'O')
-#: ../dirwalk.c:127
+#: ../dirwalk.c:147
 msgid "oO"
 msgstr "ㄱㄴ"
 
 #. uncommon punctuation (e.g., '@', '#', '*', etc.)
-#: ../dirwalk.c:130
+#: ../dirwalk.c:150
 msgid "`\\%_@$~#{}<>^&*"
 msgstr "`\\%_@$~#{}<>^&*"
 
 #. common punctuation (e.g., '?', '!', '.', ',', etc.)
-#: ../dirwalk.c:133
+#: ../dirwalk.c:153
 msgid ",.?!"
 msgstr ",.?!"
 
 #. digits (e.g., '0', '1' and '7')
-#: ../dirwalk.c:136
+#: ../dirwalk.c:156
 msgid "017"
 msgstr "017"
 
 #. distinct circle-like characters (e.g., 'O' (capital oh) vs. '0' (zero))
-#: ../dirwalk.c:139
+#: ../dirwalk.c:159
 msgid "O0"
 msgstr "O0ㅇ"
 
 #. distinct line-like characters (e.g., 'l' (lowercase elle) vs. '1' (one) vs. 'I' (capital aye))
-#: ../dirwalk.c:142
+#: ../dirwalk.c:162
 msgid "1Il|"
 msgstr "1Il|ㅣ"
 
@@ -187,32 +187,32 @@ msgid "Good job!"
 msgstr "잘했어요!"
 
 #. Input Method: English mode
-#: ../im.c:80
+#: ../im.c:75
 msgid "English"
 msgstr ""
 
 #. Input Method: Japanese Romanized Hiragana mode
-#: ../im.c:83
+#: ../im.c:78
 msgid "Hiragana"
 msgstr ""
 
 #. Input Method: Japanese Romanized Katakana mode
-#: ../im.c:86
+#: ../im.c:81
 msgid "Katakana"
 msgstr ""
 
 #. Input Method: Korean Hangul 2-Bul mode
-#: ../im.c:89
+#: ../im.c:84
 msgid "Hangul"
 msgstr ""
 
 #. Input Method: Thai mode
-#: ../im.c:92
+#: ../im.c:87
 msgid "Thai"
 msgstr ""
 
 #. Input Method: Traditional Chinese mode
-#: ../im.c:95
+#: ../im.c:90
 msgid "ZH_TW"
 msgstr ""
 
@@ -382,7 +382,7 @@ msgstr "새 그림"
 #. Open a saved picture
 #. buttons for the file open dialog
 #. Open dialog: 'Open' button, to load the selected picture
-#: ../tools.h:75 ../tuxpaint.c:7833
+#: ../tools.h:75 ../tuxpaint.c:7830
 msgid "Open"
 msgstr "열기"
 
@@ -499,175 +499,175 @@ msgid "OK then… Let’s keep drawing this one!"
 msgstr "그럼, 계속 그림을 그리세요!"
 
 #. Prompt to confirm user wishes to quit
-#: ../tuxpaint.c:1800
+#: ../tuxpaint.c:1804
 msgid "Do you really want to quit?"
 msgstr "프로그램을 끝 마칠까요?"
 
 #. Quit prompt positive response (quit)
-#: ../tuxpaint.c:1803
+#: ../tuxpaint.c:1807
 msgid "Yes, I'm done!"
 msgstr "네, 끝마쳐요!"
 
 #. Quit prompt negative response (don't quit)
-#: ../tuxpaint.c:1806 ../tuxpaint.c:1833
+#: ../tuxpaint.c:1810 ../tuxpaint.c:1837
 msgid "No, take me back!"
 msgstr "아니요, 전 화면으로 돌아가요!"
 
 #. Current picture is not saved; user is quitting
-#: ../tuxpaint.c:1810
+#: ../tuxpaint.c:1814
 msgid "If you quit, you’ll lose your picture! Save it?"
 msgstr "그림을 저장않하고 종료 하면 그림이 없어져요! 저장할까요?"
 
-#: ../tuxpaint.c:1811 ../tuxpaint.c:1816
+#: ../tuxpaint.c:1815 ../tuxpaint.c:1820
 msgid "Yes, save it!"
 msgstr "네, 저장하세요!"
 
-#: ../tuxpaint.c:1812 ../tuxpaint.c:1817
+#: ../tuxpaint.c:1816 ../tuxpaint.c:1821
 msgid "No, don't bother saving!"
 msgstr "아니요, 저장하지 마세요!"
 
 #. Current picture is not saved; user is opening another picture
-#: ../tuxpaint.c:1815
+#: ../tuxpaint.c:1819
 msgid "Save your picture first?"
 msgstr "먼저, 그림을 저장할까요?"
 
 #. Error opening picture
-#: ../tuxpaint.c:1820
+#: ../tuxpaint.c:1824
 msgid "Can’t open that picture!"
 msgstr "그 그림은 열지 못합니다!"
 
 #. Generic dialog dismissal
-#: ../tuxpaint.c:1823 ../tuxpaint.c:1828 ../tuxpaint.c:1837 ../tuxpaint.c:1841
-#: ../tuxpaint.c:1850
+#: ../tuxpaint.c:1827 ../tuxpaint.c:1832 ../tuxpaint.c:1841 ../tuxpaint.c:1845
+#: ../tuxpaint.c:1854
 msgid "OK"
 msgstr "네"
 
 #. Notification that 'Open' dialog has nothing to show
-#: ../tuxpaint.c:1827
+#: ../tuxpaint.c:1831
 msgid "There are no saved files!"
 msgstr "저장된 파일이 없네요!"
 
 #. Verification of print action
-#: ../tuxpaint.c:1831
+#: ../tuxpaint.c:1835
 msgid "Print your picture now?"
 msgstr "그림을 인쇄 할까요?"
 
-#: ../tuxpaint.c:1832
+#: ../tuxpaint.c:1836
 msgid "Yes, print it!"
 msgstr "네, 인쇄하세요!"
 
 #. Confirmation of successful (we hope) printing
-#: ../tuxpaint.c:1836
+#: ../tuxpaint.c:1840
 msgid "Your picture has been printed!"
 msgstr "그림을 인쇄 했습니다!"
 
 #. Notification that it's too soon to print again (--printdelay option is in effect)
-#: ../tuxpaint.c:1840
+#: ../tuxpaint.c:1844
 msgid "You can’t print yet!"
 msgstr "아직 인쇄 하지 못합니다!"
 
 #. Prompt to confirm erasing a picture in the Open dialog
-#: ../tuxpaint.c:1844
+#: ../tuxpaint.c:1848
 msgid "Erase this picture?"
 msgstr "이 그림을 지울까요?"
 
-#: ../tuxpaint.c:1845
+#: ../tuxpaint.c:1849
 msgid "Yes, erase it!"
 msgstr "네, 지우세요!"
 
-#: ../tuxpaint.c:1846
+#: ../tuxpaint.c:1850
 msgid "No, don't erase it!"
 msgstr "아니요, 지우지 마세요!"
 
 #. Reminder that Mouse Button 1 is the button to use in Tux Paint
-#: ../tuxpaint.c:1849
+#: ../tuxpaint.c:1853
 msgid "Remember to use the left mouse button!"
 msgstr "왼쪽 마우스버튼을 사용하는걸 잊지 마세요!"
 
 #. Sound has been muted (silenced) via keyboard shortcut
-#: ../tuxpaint.c:1960
+#: ../tuxpaint.c:1964
 msgid "Sound muted."
 msgstr ""
 
 #. Sound has been unmuted (unsilenced) via keyboard shortcut
-#: ../tuxpaint.c:1965
+#: ../tuxpaint.c:1969
 msgid "Sound unmuted."
 msgstr ""
 
 #. Wait while Text tool finishes loading fonts
-#: ../tuxpaint.c:2402
+#: ../tuxpaint.c:2406
 msgid "Please wait…"
 msgstr "잠깐만 기다려 주세요..."
 
-#: ../tuxpaint.c:7059
+#: ../tuxpaint.c:7056
 msgid "Pick a color."
 msgstr ""
 
 #. Open dialog: 'Erase' button, to erase/deleted the selected picture
-#: ../tuxpaint.c:7836
+#: ../tuxpaint.c:7833
 msgid "Erase"
 msgstr "지우기"
 
 #. Open dialog: 'Slides' button, to switch to slide show mode
-#: ../tuxpaint.c:7839
+#: ../tuxpaint.c:7836
 msgid "Slides"
 msgstr ""
 
 #. Open dialog: 'Back' button, to dismiss Open dialog without opening a picture
-#: ../tuxpaint.c:7842
+#: ../tuxpaint.c:7839
 msgid "Back"
 msgstr "되 돌아가기"
 
 #. Slideshow: 'Next' button, to load next slide (image)
-#: ../tuxpaint.c:7845
+#: ../tuxpaint.c:7842
 #, fuzzy
 msgid "Next"
 msgstr "글"
 
 #. Slideshow: 'Play' button, to begin a slideshow sequence
-#: ../tuxpaint.c:7848
+#: ../tuxpaint.c:7845
 msgid "Play"
 msgstr ""
 
 #. Label for 'Letters' buttons (font selector, down the right when the Text tool is being used); used to show the difference between font faces
-#: ../tuxpaint.c:8441
+#: ../tuxpaint.c:8438
 msgid "Aa"
 msgstr "A가"
 
 #. Admittedly stupid way of determining which keys can be used for
 #. positive and negative responses in dialogs (e.g., [Y] (for 'yes') in English)
-#: ../tuxpaint.c:11318
+#: ../tuxpaint.c:11343
 msgid "Yes"
 msgstr "네"
 
-#: ../tuxpaint.c:11322
+#: ../tuxpaint.c:11347
 msgid "No"
 msgstr "아니요"
 
 #. Prompt to ask whether user wishes to save over old version of their file
-#: ../tuxpaint.c:12271
+#: ../tuxpaint.c:12296
 msgid "Replace the picture with your changes?"
 msgstr "전그림에 덮어쓸까요? 전그림은 없어집니다."
 
 #. Positive response to saving over old version
 #. (like a 'File:Save' action in other applications)
-#: ../tuxpaint.c:12275
+#: ../tuxpaint.c:12300
 msgid "Yes, replace the old one!"
 msgstr "네, 전그림을 덮어쓰세요!"
 
 #. Negative response to saving over old version (saves a new image)
 #. (like a 'File:Save As...' action in other applications)
-#: ../tuxpaint.c:12279
+#: ../tuxpaint.c:12304
 msgid "No, save a new file!"
 msgstr "아니요, 새로운 파일로 저장하죠"
 
-#: ../tuxpaint.c:13042
+#: ../tuxpaint.c:13067
 msgid "Choose the picture you want, then click “Open”."
 msgstr "원하는 그림을 고른후 「열기」버튼을 눌러주세요."
 
 #. Let user choose images:
 #. Instructions for Slideshow file dialog (FIXME: Make a #define)
-#: ../tuxpaint.c:14029 ../tuxpaint.c:14343
+#: ../tuxpaint.c:14054 ../tuxpaint.c:14368
 #, fuzzy
 msgid "Choose the pictures you want, then click “Play”."
 msgstr "원하는 그림을 고른후 「열기」버튼을 눌러주세요."
@@ -684,28 +684,28 @@ msgstr "미술 프로그램"
 msgid "Tux Paint"
 msgstr "턱스페인트"
 
-#: ../../magic/src/blocks_chalk_drip.c:108
+#: ../../magic/src/blocks_chalk_drip.c:133
 msgid "Blocks"
 msgstr "네모나게"
 
-#: ../../magic/src/blocks_chalk_drip.c:110
+#: ../../magic/src/blocks_chalk_drip.c:135
 msgid "Chalk"
 msgstr "분필"
 
-#: ../../magic/src/blocks_chalk_drip.c:112
+#: ../../magic/src/blocks_chalk_drip.c:137
 msgid "Drip"
 msgstr "흘리게"
 
-#: ../../magic/src/blocks_chalk_drip.c:122
+#: ../../magic/src/blocks_chalk_drip.c:147
 msgid "Click and move the mouse around to make the picture blocky."
 msgstr "마우스를 누르면 그림이 네모나게 되어요."
 
-#: ../../magic/src/blocks_chalk_drip.c:125
+#: ../../magic/src/blocks_chalk_drip.c:150
 msgid ""
 "Click and move the mouse around to turn the picture into a chalk drawing."
 msgstr "마우스를 누르면 그림이 분필로 만든 것 같이 되어요."
 
-#: ../../magic/src/blocks_chalk_drip.c:128
+#: ../../magic/src/blocks_chalk_drip.c:153
 msgid "Click and move the mouse around to make the picture drip."
 msgstr "마우스를 누르면 그림이 흐르는 것 같이 되어요."
 
@@ -765,19 +765,19 @@ msgstr ""
 msgid "Click and drag the mouse to emboss the picture."
 msgstr "마우스를 누르면 그림을 흐리게 만들 수 있어요."
 
-#: ../../magic/src/fade_darken.c:92
+#: ../../magic/src/fade_darken.c:117
 msgid "Lighten"
 msgstr "사라지게"
 
-#: ../../magic/src/fade_darken.c:94
+#: ../../magic/src/fade_darken.c:119
 msgid "Darken"
 msgstr "어둡게"
 
-#: ../../magic/src/fade_darken.c:104
+#: ../../magic/src/fade_darken.c:129
 msgid "Click and move to fade the colors."
 msgstr "마우스를 누르면 그림을 희미하게 만들 수 있어요."
 
-#: ../../magic/src/fade_darken.c:107
+#: ../../magic/src/fade_darken.c:132
 msgid "Click and move to darken the colors."
 msgstr "마우스를 누르면 그림을 어둡게 만들 수 있어요."
 
@@ -894,11 +894,11 @@ msgstr ""
 msgid "Click to make ripples appear over your picture."
 msgstr "마우스를 누르면 그림을 흐리게 만들 수 있어요."
 
-#: ../../magic/src/shift.c:86
+#: ../../magic/src/shift.c:105
 msgid "Shift"
 msgstr ""
 
-#: ../../magic/src/shift.c:92
+#: ../../magic/src/shift.c:111
 #, fuzzy
 msgid "Click and drag to shift your picture around on the canvas."
 msgstr "마우스를 누르면 그림을 흐리게 만들 수 있어요."
