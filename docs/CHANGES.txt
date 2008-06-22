@@ -9,7 +9,7 @@ http://www.tuxpaint.org/
 $Id$
 
 
-2008.June.21 (0.9.20)
+2008.June.22 (0.9.20)
   * New translations:
     -----------------
     * Asturian
@@ -88,6 +88,9 @@ $Id$
         libraries; 'oldsvg' and 'nosvg' targets removed; new means for building
 	without sound, etc.
       Albert Cahalan <albert@users.sf.net>
+
+    * Made sure Makefile works with NetBSD again.
+      Thomas Klausner <tk@giga.or.at>
 
     * Makefile edited so that Tux Paint can be installed in the absence
       of gettext in the system.

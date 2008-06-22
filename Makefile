@@ -4,7 +4,7 @@
 # bill@newbreedsoftware.com
 # http://www.tuxpaint.org/
 
-# June 14, 2002 - May 29, 2008
+# June 14, 2002 - June 22, 2008
 
 
 # The version number, for release:
@@ -200,7 +200,7 @@ endif
 
 #-ffast-math
 OPTFLAGS:=-O2
-CFLAGS:=$(OPTFLAGS) -W -Wall -fno-common -ffloat-store \
+CFLAGS:=$(CPPFLAGS) $(OPTFLAGS) -W -Wall -fno-common -ffloat-store \
 	$(call comptest,-fvisibility=hidden,) \
 	-Wcast-align -Wredundant-decls \
 	-Wbad-function-cast -Wwrite-strings \
@@ -965,12 +965,13 @@ src/tp_magic_api.h:	src/tp_magic_api.h.in
 tp-magic-config:	src/tp-magic-config.sh.in Makefile
 	@echo
 	@echo "...Generating 'Magic' tool API configuration script..."
-	@sed src/tp-magic-config.sh.in -e s/__VERSION__/$(VER_VERSION)/ \
+	@sed -e s/__VERSION__/$(VER_VERSION)/ \
 		-e s/__APIVERSION__/$(MAGIC_API_VERSION)/ \
 		-e s=__INCLUDE__=$(INCLUDE_PREFIX)/tuxpaint= \
 		-e s=__DATAPREFIX__=$(DATA_PREFIX)= \
 		-e s=__PLUGINPREFIX__=$(MAGIC_PREFIX)= \
 		-e s=__PLUGINDOCPREFIX__=$(DOC_PREFIX)/magic-docs= \
+		src/tp-magic-config.sh.in \
 		> tp-magic-config
 
 # Make the "obj" directory to throw the object(s) into:
