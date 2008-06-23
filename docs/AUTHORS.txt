@@ -7,7 +7,7 @@ bill@newbreedsoftware.com
 http://www.tuxpaint.org/
 
 
-June 17, 2002 - June 21, 2008
+June 17, 2002 - June 23, 2008
 
 $Id$
 
@@ -555,6 +555,15 @@ $Id$
 
   * NetBSD packages
     Thomas Klausner <wiz@danbala.ifoer.tuwien.ac.at>
+
+  * FreeBSD packages
+    Alejandro Pulver <alejandro@varnet.biz>
+
+  * Sharp Zaurus PDA packages
+    ONO Tetsu <ono_tetsu@ybb.ne.jp>
+
+  * OLPC XO-1 laptop
+    Albert Cahalan <albert@users.sf.net>
 
 
 * Support / Testers
