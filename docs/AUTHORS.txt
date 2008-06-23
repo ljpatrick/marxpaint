@@ -548,7 +548,7 @@ $Id$
 
   * RedHat Linux / Fedora Core packages and RPM spec file
     TOYAMA Shin-ichi <shin1@wmail.plala.or.jp>
-    Richard June <rjune[AT]lumensoftware.com>
+    Richard June <rjune@bravegnuworld.com>  [backup]
 
   * Slackware Linux packages
     Torsten Giebl <wizard@turricane.org>
