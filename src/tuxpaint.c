@@ -206,8 +206,13 @@ char *strcasestr(const char *haystack, const char *needle)
 #undef y1
 
 #include <locale.h>
+
+#ifdef __BEOS__
+#include <wchar.h>
+#else
 #include <wchar.h>
 #include <wctype.h>
+#endif
 
 #include <libintl.h>
 #ifndef gettext_noop

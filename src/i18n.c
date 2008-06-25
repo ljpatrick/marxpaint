@@ -40,8 +40,12 @@
 #include <sys/types.h>
 #endif
 
+#ifdef __BEOS__
+#include <wchar.h>
+#else
 #include <wchar.h>
 #include <wctype.h>
+#endif
 
 
 /* Globals: */
