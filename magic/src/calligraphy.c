@@ -29,7 +29,6 @@
 
 #include <stdio.h>
 #include <string.h>
-#include <libintl.h>
 #include <stdlib.h>
 #include "tp_magic_api.h"
 #include "SDL_image.h"
@@ -106,14 +105,14 @@ SDL_Surface * calligraphy_get_icon(magic_api * api, int which)
 // Return our name, localized:
 char * calligraphy_get_name(magic_api * api, int which)
 {
-  return(strdup(gettext("Calligraphy")));
+  return(strdup(gettext_noop("Calligraphy")));
 }
 
 // Return our description, localized:
 char * calligraphy_get_description(magic_api * api, int which)
 {
   return(strdup(
-         gettext("Click and move the mouse around to draw in calligraphy.")));
+         gettext_noop("Click and move the mouse around to draw in calligraphy.")));
 }
 
 

@@ -29,7 +29,6 @@
 
 #include <stdio.h>
 #include <string.h>
-#include <libintl.h>
 #include "tp_magic_api.h"
 #include "SDL_image.h"
 #include "SDL_mixer.h"
@@ -75,13 +74,13 @@ SDL_Surface * tint_get_icon(magic_api * api, int which)
 // Return our names, localized:
 char * tint_get_name(magic_api * api, int which)
 {
-  return(strdup(gettext("Tint")));
+  return(strdup(gettext_noop("Tint")));
 }
 
 // Return our descriptions, localized:
 char * tint_get_description(magic_api * api, int which)
 {
-  return(strdup(gettext(
+  return(strdup(gettext_noop(
 "Click and move the mouse around to change the picture’s color.")));
 }
 

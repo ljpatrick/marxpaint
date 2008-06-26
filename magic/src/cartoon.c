@@ -29,7 +29,6 @@
 
 #include <stdio.h>
 #include <string.h>
-#include <libintl.h>
 #include <stdlib.h>
 #include <math.h>
 #include "tp_magic_api.h"
@@ -78,13 +77,13 @@ SDL_Surface * cartoon_get_icon(magic_api * api, int which)
 // Return our names, localized:
 char * cartoon_get_name(magic_api * api, int which)
 {
-  return(strdup(gettext("Cartoon")));
+  return(strdup(gettext_noop("Cartoon")));
 }
 
 // Return our descriptions, localized:
 char * cartoon_get_description(magic_api * api, int which)
 {
-  return(strdup(gettext(
+  return(strdup(gettext_noop(
 "Click and move the mouse around to turn the picture into a cartoon.")));
 }
 

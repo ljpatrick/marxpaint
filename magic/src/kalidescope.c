@@ -29,7 +29,6 @@
 
 #include <stdio.h>
 #include <string.h>
-#include <libintl.h>
 #include "tp_magic_api.h"
 #include "SDL_image.h"
 #include "SDL_mixer.h"
@@ -75,13 +74,13 @@ SDL_Surface * kalidescope_get_icon(magic_api * api, int which)
 // Return our names, localized:
 char * kalidescope_get_name(magic_api * api, int which)
 {
-  return(strdup(gettext("Kaleidoscope")));
+  return(strdup(gettext_noop("Kaleidoscope")));
 }
 
 // Return our descriptions, localized:
 char * kalidescope_get_description(magic_api * api, int which)
 {
-  return(strdup(gettext("Click and drag the mouse to draw with symmetric brushes (a kaleidoscope).")));
+  return(strdup(gettext_noop("Click and drag the mouse to draw with symmetric brushes (a kaleidoscope).")));
 }
 
 // Do the effect:

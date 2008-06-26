@@ -31,7 +31,6 @@
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h> /* for RAND_MAX */
-#include <libintl.h>
 #include "tp_magic_api.h"
 #include "SDL_image.h"
 #include "SDL_mixer.h"
@@ -90,13 +89,13 @@ SDL_Surface * grass_get_icon(magic_api * api, int which)
 // Return our names, localized:
 char * grass_get_name(magic_api * api, int which)
 {
-  return(strdup(gettext("Grass")));
+  return(strdup(gettext_noop("Grass")));
 }
 
 // Return our descriptions, localized:
 char * grass_get_description(magic_api * api, int which)
 {
-  return(strdup(gettext("Click and move to draw grass. Don’t forget the dirt!")));
+  return(strdup(gettext_noop("Click and move to draw grass. Don’t forget the dirt!")));
 }
 
 

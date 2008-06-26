@@ -29,7 +29,6 @@
 
 #include <stdio.h>
 #include <string.h>
-#include <libintl.h>
 #include <stdlib.h>
 #include "tp_magic_api.h"
 #include "SDL_image.h"
@@ -82,13 +81,13 @@ SDL_Surface * light_get_icon(magic_api * api, int which)
 // Return our names, localized:
 char * light_get_name(magic_api * api, int which)
 {
-  return(strdup(gettext("Light")));
+  return(strdup(gettext_noop("Light")));
 }
 
 // Return our descriptions, localized:
 char * light_get_description(magic_api * api, int which)
 {
-  return(strdup(gettext("Click and drag to draw a beam of light on your picture.")));
+  return(strdup(gettext_noop("Click and drag to draw a beam of light on your picture.")));
 }
 
 // Do the effect:

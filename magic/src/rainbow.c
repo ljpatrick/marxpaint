@@ -29,7 +29,6 @@
 
 #include <stdio.h>
 #include <string.h>
-#include <libintl.h>
 #include "tp_magic_api.h"
 #include "SDL_image.h"
 #include "SDL_mixer.h"
@@ -105,14 +104,14 @@ SDL_Surface * rainbow_get_icon(magic_api * api, int which)
 // Return our names, localized:
 char * rainbow_get_name(magic_api * api, int which)
 {
-  return(strdup(gettext("Rainbow")));
+  return(strdup(gettext_noop("Rainbow")));
 }
 
 // Return our descriptions, localized:
 char * rainbow_get_description(magic_api * api, int which)
 {
   return(strdup(
-	   gettext("You can draw in rainbow colors!")));
+	   gettext_noop("You can draw in rainbow colors!")));
 }
 
 // Do the effect:

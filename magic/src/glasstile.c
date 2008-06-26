@@ -29,7 +29,6 @@
 
 #include <stdio.h>
 #include <string.h>
-#include <libintl.h>
 #include <stdlib.h>
 #include "tp_magic_api.h"
 #include "SDL_image.h"
@@ -81,13 +80,13 @@ SDL_Surface * glasstile_get_icon(magic_api * api, int which)
 // Return our names, localized:
 char * glasstile_get_name(magic_api * api, int which)
 {
-  return(strdup(gettext("Glass Tile")));
+  return(strdup(gettext_noop("Glass Tile")));
 }
 
 // Return our descriptions, localized:
 char * glasstile_get_description(magic_api * api, int which)
 {
-  return(strdup(gettext("Click and drag the mouse to put glass tile over your picture.")));
+  return(strdup(gettext_noop("Click and drag the mouse to put glass tile over your picture.")));
 }
 
 // Do the effect:

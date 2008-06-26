@@ -33,7 +33,6 @@
 
 #include <stdio.h>
 #include <string.h>
-#include <libintl.h>
 #include "tp_magic_api.h"
 #include "SDL_image.h"
 
@@ -85,13 +84,13 @@ SDL_Surface * fill_get_icon(magic_api * api, int which)
 // Return our names, localized:
 char * fill_get_name(magic_api * api, int which)
 {
-  return(strdup(gettext("Fill")));
+  return(strdup(gettext_noop("Fill")));
 }
 
 // Return our descriptions, localized:
 char * fill_get_description(magic_api * api, int which)
 {
-  return(strdup(gettext(
+  return(strdup(gettext_noop(
 "Click in the picture to fill that area with color.")));
 }
 

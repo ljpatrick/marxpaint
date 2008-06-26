@@ -29,7 +29,6 @@
 
 #include <stdio.h>
 #include <string.h>
-#include <libintl.h>
 #include <stdlib.h>
 #include "tp_magic_api.h"
 #include "SDL_image.h"
@@ -102,13 +101,13 @@ SDL_Surface * foam_get_icon(magic_api * api, int which)
 // Return our names, localized:
 char * foam_get_name(magic_api * api, int which)
 {
-  return(strdup(gettext("Foam")));
+  return(strdup(gettext_noop("Foam")));
 }
 
 // Return our descriptions, localized:
 char * foam_get_description(magic_api * api, int which)
 {
-  return(strdup(gettext("Click and drag the mouse to cover an area with foamy bubbles.")));
+  return(strdup(gettext_noop("Click and drag the mouse to cover an area with foamy bubbles.")));
 }
 
 // Do the effect:

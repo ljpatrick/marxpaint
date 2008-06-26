@@ -29,7 +29,6 @@
 
 #include <stdio.h>
 #include <string.h>
-#include <libintl.h>
 #include <stdlib.h>
 #include "tp_magic_api.h"
 #include "SDL_image.h"
@@ -130,11 +129,11 @@ SDL_Surface * blocks_chalk_drip_get_icon(magic_api * api, int which)
 char * blocks_chalk_drip_get_name(magic_api * api ATTRIBUTE_UNUSED, int which)
 {
   if (which == TOOL_BLOCKS)
-    return(strdup(gettext("Blocks")));
+    return(strdup(gettext_noop("Blocks")));
   else if (which == TOOL_CHALK)
-    return(strdup(gettext("Chalk")));
+    return(strdup(gettext_noop("Chalk")));
   else if (which == TOOL_DRIP)
-    return(strdup(gettext("Drip")));
+    return(strdup(gettext_noop("Drip")));
 
   return(NULL);
 }
@@ -143,13 +142,13 @@ char * blocks_chalk_drip_get_name(magic_api * api ATTRIBUTE_UNUSED, int which)
 char * blocks_chalk_drip_get_description(magic_api * api ATTRIBUTE_UNUSED, int which)
 {
   if (which == TOOL_BLOCKS)
-    return(strdup(gettext(
+    return(strdup(gettext_noop(
 "Click and move the mouse around to make the picture blocky.")));
   else if (which == TOOL_CHALK)
-    return(strdup(gettext(
+    return(strdup(gettext_noop(
 "Click and move the mouse around to turn the picture into a chalk drawing.")));
   else if (which == TOOL_DRIP)
-    return(strdup(gettext(
+    return(strdup(gettext_noop(
 "Click and move the mouse around to make the picture drip.")));
 
   return(NULL);

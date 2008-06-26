@@ -29,7 +29,6 @@
 
 #include <stdio.h>
 #include <string.h>
-#include <libintl.h>
 #include "tp_magic_api.h"
 #include "SDL_image.h"
 #include "SDL_mixer.h"
@@ -75,13 +74,13 @@ SDL_Surface * metalpaint_get_icon(magic_api * api, int which)
 // Return our names, localized:
 char * metalpaint_get_name(magic_api * api, int which)
 {
-  return(strdup(gettext("Metal Paint")));
+  return(strdup(gettext_noop("Metal Paint")));
 }
 
 // Return our descriptions, localized:
 char * metalpaint_get_description(magic_api * api, int which)
 {
-  return(strdup(gettext("Click and drag the mouse to paint with a metallic color.")));
+  return(strdup(gettext_noop("Click and drag the mouse to paint with a metallic color.")));
 }
 
 #define METALPAINT_CYCLE 32

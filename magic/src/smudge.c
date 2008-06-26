@@ -30,7 +30,6 @@
 
 #include <stdio.h>
 #include <string.h>
-#include <libintl.h>
 #include "tp_magic_api.h"
 #include "SDL_image.h"
 #include "SDL_mixer.h"
@@ -75,13 +74,13 @@ SDL_Surface * smudge_get_icon(magic_api * api, int which)
 // Return our names, localized:
 char * smudge_get_name(magic_api * api, int which)
 {
-  return(strdup(gettext("Smudge")));
+  return(strdup(gettext_noop("Smudge")));
 }
 
 // Return our descriptions, localized:
 char * smudge_get_description(magic_api * api, int which)
 {
-  return(strdup(gettext(
+  return(strdup(gettext_noop(
 "Click and move the mouse around to smudge the picture.")));
 }
 

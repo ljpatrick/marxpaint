@@ -29,7 +29,6 @@
 
 #include <stdio.h>
 #include <string.h>
-#include <libintl.h>
 #include "tp_magic_api.h"
 #include "SDL_image.h"
 #include "SDL_mixer.h"
@@ -70,14 +69,14 @@ SDL_Surface * negative_get_icon(magic_api * api, int which)
 // Return our name, localized:
 char * negative_get_name(magic_api * api, int which)
 {
-  return(strdup(gettext("Negative")));
+  return(strdup(gettext_noop("Negative")));
 }
 
 // Return our description, localized:
 char * negative_get_description(magic_api * api, int which)
 {
   return(strdup(
-         gettext("Click and move the mouse around to draw a negative.")));
+         gettext_noop("Click and move the mouse around to draw a negative.")));
 }
 
 // Callback that does the negative color effect on a circle centered around x,y

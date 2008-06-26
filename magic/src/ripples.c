@@ -29,7 +29,6 @@
 
 #include <stdio.h>
 #include <string.h>
-#include <libintl.h>
 #include "tp_magic_api.h"
 #include "SDL_image.h"
 #include "SDL_mixer.h"
@@ -79,13 +78,13 @@ SDL_Surface * ripples_get_icon(magic_api * api, int which)
 // Return our names, localized:
 char * ripples_get_name(magic_api * api, int which)
 {
-  return(strdup(gettext("Ripples")));
+  return(strdup(gettext_noop("Ripples")));
 }
 
 // Return our descriptions, localized:
 char * ripples_get_description(magic_api * api, int which)
 {
-  return(strdup(gettext("Click to make ripples appear over your picture.")));
+  return(strdup(gettext_noop("Click to make ripples appear over your picture.")));
 }
 
 // Affect the canvas on drag:

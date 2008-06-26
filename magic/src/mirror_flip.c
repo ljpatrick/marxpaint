@@ -29,7 +29,6 @@
 
 #include <stdio.h>
 #include <string.h>
-#include <libintl.h>
 #include "tp_magic_api.h"
 #include "SDL_image.h"
 #include "SDL_mixer.h"
@@ -92,9 +91,9 @@ SDL_Surface * mirror_flip_get_icon(magic_api * api, int which)
 char * mirror_flip_get_name(magic_api * api, int which)
 {
   if (which == TOOL_MIRROR)
-    return(strdup(gettext("Mirror")));
+    return(strdup(gettext_noop("Mirror")));
   else if (which == TOOL_FLIP)
-    return(strdup(gettext("Flip")));
+    return(strdup(gettext_noop("Flip")));
 
   return(NULL);
 }
@@ -104,10 +103,10 @@ char * mirror_flip_get_description(magic_api * api, int which)
 {
   if (which == TOOL_MIRROR)
     return(strdup(
-           gettext("Click to make a mirror image.")));
+           gettext_noop("Click to make a mirror image.")));
   else
     return(strdup(
-           gettext("Click to flip the picture upside-down.")));
+           gettext_noop("Click to flip the picture upside-down.")));
 
   return(NULL);
 }

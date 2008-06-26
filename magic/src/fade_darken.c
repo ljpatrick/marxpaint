@@ -29,7 +29,6 @@
 
 #include <stdio.h>
 #include <string.h>
-#include <libintl.h>
 #include "tp_magic_api.h"
 #include "SDL_image.h"
 #include "SDL_mixer.h"
@@ -114,9 +113,9 @@ SDL_Surface * fade_darken_get_icon(magic_api * api, int which)
 char * fade_darken_get_name(magic_api * api ATTRIBUTE_UNUSED, int which)
 {
   if (which == TOOL_FADE)
-    return(strdup(gettext("Lighten")));
+    return(strdup(gettext_noop("Lighten")));
   else if (which == TOOL_DARKEN)
-    return(strdup(gettext("Darken")));
+    return(strdup(gettext_noop("Darken")));
 
   return(NULL);
 }
@@ -126,10 +125,10 @@ char * fade_darken_get_description(magic_api * api ATTRIBUTE_UNUSED, int which)
 {
   if (which == TOOL_FADE)
     return(strdup(
-           gettext("Click and move to fade the colors.")));
+           gettext_noop("Click and move to fade the colors.")));
   else if (which == TOOL_DARKEN)
     return(strdup(
-           gettext("Click and move to darken the colors.")));
+           gettext_noop("Click and move to darken the colors.")));
 
   return(NULL);
 }

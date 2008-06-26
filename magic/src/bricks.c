@@ -32,7 +32,6 @@
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h> /* For RAND_MAX */
-#include <libintl.h>
 #include "tp_magic_api.h"
 #include "SDL_image.h"
 #include "SDL_mixer.h"
@@ -102,16 +101,16 @@ char * bricks_get_name(magic_api * api, int which)
 {
   /* Both are named "Bricks", at the moment: */
 
-  return(strdup(gettext("Bricks")));
+  return(strdup(gettext_noop("Bricks")));
 }
 
 // Return our descriptions, localized:
 char * bricks_get_description(magic_api * api, int which)
 {
   if (which == TOOL_LARGEBRICKS)
-    return(strdup(gettext("Click and move to draw large bricks.")));
+    return(strdup(gettext_noop("Click and move to draw large bricks.")));
   else if (which == TOOL_SMALLBRICKS)
-    return(strdup(gettext("Click and move to draw small bricks.")));
+    return(strdup(gettext_noop("Click and move to draw small bricks.")));
 
   return(NULL);
 }

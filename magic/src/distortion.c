@@ -32,7 +32,6 @@
 
 #include <stdio.h>
 #include <string.h>  // For "strdup()"
-#include <libintl.h>  // For "gettext()"
 
 #include "tp_magic_api.h"  // Tux Paint "Magic" tool API header
 #include "SDL_image.h"  // For IMG_Load(), to load our PNG icon
@@ -119,7 +118,7 @@ SDL_Surface * distortion_get_icon(magic_api * api, int which)
 
 char * distortion_get_name(magic_api * api, int which)
 {
-  return(strdup(gettext("Distortion")));
+  return(strdup(gettext_noop("Distortion")));
 }
 
 
@@ -127,7 +126,7 @@ char * distortion_get_name(magic_api * api, int which)
 
 char * distortion_get_description(magic_api * api, int which)
 {
-  return(strdup(gettext("Click and drag the mouse to cause a distortion in your picture.")));
+  return(strdup(gettext_noop("Click and drag the mouse to cause a distortion in your picture.")));
 }
 
 // Report whether we accept colors

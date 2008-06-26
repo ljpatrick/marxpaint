@@ -29,7 +29,6 @@
 
 #include <stdio.h>
 #include <string.h>
-#include <libintl.h>
 #include "tp_magic_api.h"
 #include "SDL_image.h"
 #include "SDL_mixer.h"
@@ -74,13 +73,13 @@ SDL_Surface * emboss_get_icon(magic_api * api, int which)
 // Return our names, localized:
 char * emboss_get_name(magic_api * api, int which)
 {
-  return(strdup(gettext("Emboss")));
+  return(strdup(gettext_noop("Emboss")));
 }
 
 // Return our descriptions, localized:
 char * emboss_get_description(magic_api * api, int which)
 {
-  return(strdup(gettext("Click and drag the mouse to emboss the picture.")));
+  return(strdup(gettext_noop("Click and drag the mouse to emboss the picture.")));
 }
 
 // Do the effect:

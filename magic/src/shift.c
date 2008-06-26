@@ -29,7 +29,6 @@
 
 #include <stdio.h>
 #include <string.h>
-#include <libintl.h>
 #include "tp_magic_api.h"
 #include "SDL_image.h"
 #include "SDL_mixer.h"
@@ -102,13 +101,13 @@ SDL_Surface * shift_get_icon(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBU
 // Return our names, localized:
 char * shift_get_name(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED)
 {
-  return(strdup(gettext("Shift")));
+  return(strdup(gettext_noop("Shift")));
 }
 
 // Return our descriptions, localized:
 char * shift_get_description(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED)
 {
-  return(strdup(gettext("Click and drag to shift your picture around on the canvas.")));
+  return(strdup(gettext_noop("Click and drag to shift your picture around on the canvas.")));
 }
 
 
