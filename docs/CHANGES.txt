@@ -9,7 +9,7 @@ http://www.tuxpaint.org/
 $Id$
 
 
-2008.June.22 (0.9.20)
+2008.June.26 (0.9.20)
   * New translations:
     -----------------
     * Asturian
@@ -149,6 +149,10 @@ $Id$
 
     * "Uppercase only" option support for builds that use Pango to render text.
       (Note: Needs help in some/many? locales.)
+
+    * Fixed issues where some strings not appearing under 'nopango'
+      (at least on older Fedora CORE and RedHat).
+      TOYAMA Shin-ichi <shin1@wmail.plala.or.jp>
 
 * New Starters:
     -------------
