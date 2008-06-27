@@ -58,6 +58,9 @@ $Id$
     * Vietnamese font removed, until a suitable replacement is found
       (licensing issue)
 
+    * Using proper case in PO filenames (e.g., zh_TW.po instead of zh_tw.po)
+      to solve MO installation problem caused by Makefile simplification.
+
   * Build System Improvements
     -------------------------
     * RPM spec updates:
