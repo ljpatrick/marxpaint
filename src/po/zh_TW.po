@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint 0.9.17\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-06-21 10:24-0700\n"
+"POT-Creation-Date: 2008-06-27 13:15-0700\n"
 "PO-Revision-Date: 2007-11-18 21:25+0800\n"
 "Last-Translator: 黃敏松 <songhuang.tw@gmail.com>\n"
 "Language-Team: Chinese (traditional) <zh-l10n@linux.org.tw>\n"
@@ -382,7 +382,7 @@ msgstr "新圖"
 #. Open a saved picture
 #. buttons for the file open dialog
 #. Open dialog: 'Open' button, to load the selected picture
-#: ../tools.h:75 ../tuxpaint.c:7830
+#: ../tools.h:75 ../tuxpaint.c:7835
 msgid "Open"
 msgstr "打開"
 
@@ -500,176 +500,176 @@ msgid "OK then… Let’s keep drawing this one!"
 msgstr "很好，讓我們繼續來畫這張圖吧!"
 
 #. Prompt to confirm user wishes to quit
-#: ../tuxpaint.c:1804
+#: ../tuxpaint.c:1809
 msgid "Do you really want to quit?"
 msgstr "你確定要離開嗎?"
 
 #. Quit prompt positive response (quit)
-#: ../tuxpaint.c:1807
+#: ../tuxpaint.c:1812
 msgid "Yes, I'm done!"
 msgstr "好，我做完了!"
 
 #. Quit prompt negative response (don't quit)
-#: ../tuxpaint.c:1810 ../tuxpaint.c:1837
+#: ../tuxpaint.c:1815 ../tuxpaint.c:1842
 msgid "No, take me back!"
 msgstr "不，讓我回去!"
 
 #. Current picture is not saved; user is quitting
-#: ../tuxpaint.c:1814
+#: ../tuxpaint.c:1819
 msgid "If you quit, you’ll lose your picture! Save it?"
 msgstr "如果離開，將會丟掉你的圖畫喔! 要先存檔嗎?"
 
-#: ../tuxpaint.c:1815 ../tuxpaint.c:1820
+#: ../tuxpaint.c:1820 ../tuxpaint.c:1825
 msgid "Yes, save it!"
 msgstr "好，把它存起來!"
 
-#: ../tuxpaint.c:1816 ../tuxpaint.c:1821
+#: ../tuxpaint.c:1821 ../tuxpaint.c:1826
 msgid "No, don't bother saving!"
 msgstr "不，別存了!"
 
 #. Current picture is not saved; user is opening another picture
-#: ../tuxpaint.c:1819
+#: ../tuxpaint.c:1824
 msgid "Save your picture first?"
 msgstr "要先儲存你的圖畫嗎?"
 
 #. Error opening picture
-#: ../tuxpaint.c:1824
+#: ../tuxpaint.c:1829
 msgid "Can’t open that picture!"
 msgstr "沒辦法打開這個圖畫!"
 
 #. Generic dialog dismissal
-#: ../tuxpaint.c:1827 ../tuxpaint.c:1832 ../tuxpaint.c:1841 ../tuxpaint.c:1845
-#: ../tuxpaint.c:1854
+#: ../tuxpaint.c:1832 ../tuxpaint.c:1837 ../tuxpaint.c:1846 ../tuxpaint.c:1850
+#: ../tuxpaint.c:1859
 msgid "OK"
 msgstr "好的"
 
 #. Notification that 'Open' dialog has nothing to show
-#: ../tuxpaint.c:1831
+#: ../tuxpaint.c:1836
 msgid "There are no saved files!"
 msgstr "沒有已經儲存的檔案!"
 
 #. Verification of print action
-#: ../tuxpaint.c:1835
+#: ../tuxpaint.c:1840
 msgid "Print your picture now?"
 msgstr "現在要列印你的圖畫嗎?"
 
-#: ../tuxpaint.c:1836
+#: ../tuxpaint.c:1841
 msgid "Yes, print it!"
 msgstr "好，印出它來!"
 
 #. Confirmation of successful (we hope) printing
-#: ../tuxpaint.c:1840
+#: ../tuxpaint.c:1845
 msgid "Your picture has been printed!"
 msgstr "你的圖畫已經印出來了!"
 
 #. Notification that it's too soon to print again (--printdelay option is in effect)
-#: ../tuxpaint.c:1844
+#: ../tuxpaint.c:1849
 msgid "You can’t print yet!"
 msgstr "你還沒辦法列印喔!"
 
 #. Prompt to confirm erasing a picture in the Open dialog
-#: ../tuxpaint.c:1848
+#: ../tuxpaint.c:1853
 msgid "Erase this picture?"
 msgstr "要刪除這張圖畫嗎?"
 
-#: ../tuxpaint.c:1849
+#: ../tuxpaint.c:1854
 msgid "Yes, erase it!"
 msgstr "好，刪除它吧!"
 
-#: ../tuxpaint.c:1850
+#: ../tuxpaint.c:1855
 msgid "No, don't erase it!"
 msgstr "不，別刪除它!"
 
 #. Reminder that Mouse Button 1 is the button to use in Tux Paint
-#: ../tuxpaint.c:1853
+#: ../tuxpaint.c:1858
 msgid "Remember to use the left mouse button!"
 msgstr "記得使用滑鼠的左邊按鍵!"
 
 #  Sound has been muted (silenced) via keyboard shortcut
 #. Sound has been muted (silenced) via keyboard shortcut
-#: ../tuxpaint.c:1964
+#: ../tuxpaint.c:1969
 msgid "Sound muted."
 msgstr "靜音"
 
 #  Sound has been unmuted (unsilenced) via keyboard shortcut
 #. Sound has been unmuted (unsilenced) via keyboard shortcut
-#: ../tuxpaint.c:1969
+#: ../tuxpaint.c:1974
 msgid "Sound unmuted."
 msgstr "取消靜音"
 
 #. Wait while Text tool finishes loading fonts
-#: ../tuxpaint.c:2406
+#: ../tuxpaint.c:2411
 msgid "Please wait…"
 msgstr "請等一下…"
 
-#: ../tuxpaint.c:7056
+#: ../tuxpaint.c:7061
 msgid "Pick a color."
 msgstr "挑選一個顏色"
 
 #. Open dialog: 'Erase' button, to erase/deleted the selected picture
-#: ../tuxpaint.c:7833
+#: ../tuxpaint.c:7838
 msgid "Erase"
 msgstr "刪除"
 
 #. Open dialog: 'Slides' button, to switch to slide show mode
-#: ../tuxpaint.c:7836
+#: ../tuxpaint.c:7841
 msgid "Slides"
 msgstr "投影片"
 
 #. Open dialog: 'Back' button, to dismiss Open dialog without opening a picture
-#: ../tuxpaint.c:7839
+#: ../tuxpaint.c:7844
 msgid "Back"
 msgstr "上一個"
 
 #. Slideshow: 'Next' button, to load next slide (image)
-#: ../tuxpaint.c:7842
+#: ../tuxpaint.c:7847
 msgid "Next"
 msgstr "下一個"
 
 #. Slideshow: 'Play' button, to begin a slideshow sequence
-#: ../tuxpaint.c:7845
+#: ../tuxpaint.c:7850
 msgid "Play"
 msgstr "播放"
 
 #. Label for 'Letters' buttons (font selector, down the right when the Text tool is being used); used to show the difference between font faces
-#: ../tuxpaint.c:8438
+#: ../tuxpaint.c:8443
 msgid "Aa"
 msgstr "Aa"
 
 #. Admittedly stupid way of determining which keys can be used for
 #. positive and negative responses in dialogs (e.g., [Y] (for 'yes') in English)
-#: ../tuxpaint.c:11343
+#: ../tuxpaint.c:11348
 msgid "Yes"
 msgstr "好"
 
-#: ../tuxpaint.c:11347
+#: ../tuxpaint.c:11352
 msgid "No"
 msgstr "不"
 
 #. Prompt to ask whether user wishes to save over old version of their file
-#: ../tuxpaint.c:12296
+#: ../tuxpaint.c:12301
 msgid "Replace the picture with your changes?"
 msgstr "用你所做的改變來取代圖畫嗎?"
 
 #. Positive response to saving over old version
 #. (like a 'File:Save' action in other applications)
-#: ../tuxpaint.c:12300
+#: ../tuxpaint.c:12305
 msgid "Yes, replace the old one!"
 msgstr "好，取代舊的!"
 
 #. Negative response to saving over old version (saves a new image)
 #. (like a 'File:Save As...' action in other applications)
-#: ../tuxpaint.c:12304
+#: ../tuxpaint.c:12309
 msgid "No, save a new file!"
 msgstr "不，另外存一個新的檔案!"
 
-#: ../tuxpaint.c:13067
+#: ../tuxpaint.c:13072
 msgid "Choose the picture you want, then click “Open”."
 msgstr "選擇你想要的圖畫，然後按一下「打開」。"
 
 #. Let user choose images:
 #. Instructions for Slideshow file dialog (FIXME: Make a #define)
-#: ../tuxpaint.c:14054 ../tuxpaint.c:14368
+#: ../tuxpaint.c:14059 ../tuxpaint.c:14373
 msgid "Choose the pictures you want, then click “Play”."
 msgstr "選擇你要的一些圖畫，然後按一下「播放」。"
 
@@ -685,234 +685,234 @@ msgstr "畫圖程式"
 msgid "Tux Paint"
 msgstr "企鵝小畫家"
 
-#: ../../magic/src/blocks_chalk_drip.c:133
+#: ../../magic/src/blocks_chalk_drip.c:132
 msgid "Blocks"
 msgstr "馬賽克"
 
-#: ../../magic/src/blocks_chalk_drip.c:135
+#: ../../magic/src/blocks_chalk_drip.c:134
 msgid "Chalk"
 msgstr "粉筆"
 
-#: ../../magic/src/blocks_chalk_drip.c:137
+#: ../../magic/src/blocks_chalk_drip.c:136
 msgid "Drip"
 msgstr "水滴"
 
-#: ../../magic/src/blocks_chalk_drip.c:147
+#: ../../magic/src/blocks_chalk_drip.c:146
 msgid "Click and move the mouse around to make the picture blocky."
 msgstr "按著並移動滑鼠來使圖畫有馬賽克效果。"
 
-#: ../../magic/src/blocks_chalk_drip.c:150
+#: ../../magic/src/blocks_chalk_drip.c:149
 msgid ""
 "Click and move the mouse around to turn the picture into a chalk drawing."
 msgstr "按著並移動滑鼠來產生粉筆的痕跡。"
 
-#: ../../magic/src/blocks_chalk_drip.c:153
+#: ../../magic/src/blocks_chalk_drip.c:152
 msgid "Click and move the mouse around to make the picture drip."
 msgstr "按著並移動滑鼠來產生水滴的效果。"
 
-#: ../../magic/src/blur.c:77
+#: ../../magic/src/blur.c:76
 msgid "Blur"
 msgstr "模糊"
 
-#: ../../magic/src/blur.c:84
+#: ../../magic/src/blur.c:83
 msgid "Click and move the mouse around to blur the picture."
 msgstr "按著並移動滑鼠來使圖畫模糊。"
 
 #. Both are named "Bricks", at the moment:
-#: ../../magic/src/bricks.c:105
+#: ../../magic/src/bricks.c:104
 msgid "Bricks"
 msgstr "磚塊"
 
-#: ../../magic/src/bricks.c:112
+#: ../../magic/src/bricks.c:111
 msgid "Click and move to draw large bricks."
 msgstr "按著並移動滑鼠來畫出大的磚塊。"
 
-#: ../../magic/src/bricks.c:114
+#: ../../magic/src/bricks.c:113
 msgid "Click and move to draw small bricks."
 msgstr "按著並移動滑鼠來畫出小的磚塊。"
 
-#: ../../magic/src/calligraphy.c:109
+#: ../../magic/src/calligraphy.c:108
 msgid "Calligraphy"
 msgstr "書寫"
 
-#: ../../magic/src/calligraphy.c:116
+#: ../../magic/src/calligraphy.c:115
 msgid "Click and move the mouse around to draw in calligraphy."
 msgstr "按著並移動滑鼠來書寫。"
 
-#: ../../magic/src/cartoon.c:81
+#: ../../magic/src/cartoon.c:80
 msgid "Cartoon"
 msgstr "卡通"
 
-#: ../../magic/src/cartoon.c:88
+#: ../../magic/src/cartoon.c:87
 msgid "Click and move the mouse around to turn the picture into a cartoon."
 msgstr "按著並移動滑鼠來將圖案變成卡通風格。"
 
-#: ../../magic/src/distortion.c:122
+#: ../../magic/src/distortion.c:121
 msgid "Distortion"
 msgstr "扭曲"
 
-#: ../../magic/src/distortion.c:130
+#: ../../magic/src/distortion.c:129
 msgid "Click and drag the mouse to cause a distortion in your picture."
 msgstr "按著並移動滑鼠來使圖畫扭曲。"
 
-#: ../../magic/src/emboss.c:77
+#: ../../magic/src/emboss.c:76
 msgid "Emboss"
 msgstr "浮雕"
 
-#: ../../magic/src/emboss.c:83
+#: ../../magic/src/emboss.c:82
 msgid "Click and drag the mouse to emboss the picture."
 msgstr "按著並移動滑鼠來使圖畫變成浮雕。"
 
-#: ../../magic/src/fade_darken.c:117
+#: ../../magic/src/fade_darken.c:116
 msgid "Lighten"
 msgstr "變淺"
 
-#: ../../magic/src/fade_darken.c:119
+#: ../../magic/src/fade_darken.c:118
 msgid "Darken"
 msgstr "變深"
 
-#: ../../magic/src/fade_darken.c:129
+#: ../../magic/src/fade_darken.c:128
 msgid "Click and move to fade the colors."
 msgstr "按著並移動滑鼠來讓顏色變淺。"
 
-#: ../../magic/src/fade_darken.c:132
+#: ../../magic/src/fade_darken.c:131
 msgid "Click and move to darken the colors."
 msgstr "按著並移動滑鼠來讓顏色變深。"
 
-#: ../../magic/src/fill.c:88
+#: ../../magic/src/fill.c:87
 msgid "Fill"
 msgstr "填滿"
 
-#: ../../magic/src/fill.c:95
+#: ../../magic/src/fill.c:94
 msgid "Click in the picture to fill that area with color."
 msgstr "在圖案中按下滑鼠來用顏色填滿整個區域。"
 
-#: ../../magic/src/flower.c:125
+#: ../../magic/src/flower.c:124
 msgid "Flower"
 msgstr "花"
 
-#: ../../magic/src/flower.c:131
+#: ../../magic/src/flower.c:130
 msgid "Click and drag to draw a flower stalk. Let go to finish the flower."
 msgstr "按著並移動滑鼠來畫出花莖，讓我們來完成這朵花。"
 
-#: ../../magic/src/foam.c:105
+#: ../../magic/src/foam.c:104
 msgid "Foam"
 msgstr "泡泡"
 
-#: ../../magic/src/foam.c:111
+#: ../../magic/src/foam.c:110
 msgid "Click and drag the mouse to cover an area with foamy bubbles."
 msgstr "在圖案中按下滑鼠來用泡泡填滿整個區域。"
 
-#: ../../magic/src/glasstile.c:84
+#: ../../magic/src/glasstile.c:83
 msgid "Glass Tile"
 msgstr "玻璃磚"
 
-#: ../../magic/src/glasstile.c:90
+#: ../../magic/src/glasstile.c:89
 msgid "Click and drag the mouse to put glass tile over your picture."
 msgstr "按著並移動滑鼠來使圖畫蓋上一層玻璃磚。"
 
-#: ../../magic/src/grass.c:93
+#: ../../magic/src/grass.c:92
 msgid "Grass"
 msgstr "青草"
 
-#: ../../magic/src/grass.c:99
+#: ../../magic/src/grass.c:98
 msgid "Click and move to draw grass. Don’t forget the dirt!"
 msgstr "按著並移動滑鼠來畫出青草，別忘了泥土喔!"
 
-#: ../../magic/src/kalidescope.c:78
+#: ../../magic/src/kalidescope.c:77
 msgid "Kaleidoscope"
 msgstr "萬花筒"
 
-#: ../../magic/src/kalidescope.c:84
+#: ../../magic/src/kalidescope.c:83
 msgid ""
 "Click and drag the mouse to draw with symmetric brushes (a kaleidoscope)."
 msgstr "按著並移動滑鼠來畫出對稱的筆刷(萬花筒)。"
 
-#: ../../magic/src/light.c:85
+#: ../../magic/src/light.c:84
 msgid "Light"
 msgstr "變淺"
 
-#: ../../magic/src/light.c:91
+#: ../../magic/src/light.c:90
 msgid "Click and drag to draw a beam of light on your picture."
 msgstr "按著並移動滑鼠畫一束光到你的圖上。"
 
-#: ../../magic/src/metalpaint.c:78
+#: ../../magic/src/metalpaint.c:77
 msgid "Metal Paint"
 msgstr "金屬筆"
 
-#: ../../magic/src/metalpaint.c:84
+#: ../../magic/src/metalpaint.c:83
 msgid "Click and drag the mouse to paint with a metallic color."
 msgstr "按著並移動滑鼠來畫出金屬的顏色。"
 
-#: ../../magic/src/mirror_flip.c:95
+#: ../../magic/src/mirror_flip.c:94
 msgid "Mirror"
 msgstr "左右對稱"
 
-#: ../../magic/src/mirror_flip.c:97
+#: ../../magic/src/mirror_flip.c:96
 msgid "Flip"
 msgstr "上下翻轉"
 
-#: ../../magic/src/mirror_flip.c:107
+#: ../../magic/src/mirror_flip.c:106
 msgid "Click to make a mirror image."
 msgstr "按一下可以產生左右對稱的圖畫。"
 
-#: ../../magic/src/mirror_flip.c:110
+#: ../../magic/src/mirror_flip.c:109
 msgid "Click to flip the picture upside-down."
 msgstr "按一下可以產生上下顛倒的圖畫。"
 
-#: ../../magic/src/negative.c:73
+#: ../../magic/src/negative.c:72
 msgid "Negative"
 msgstr "相反"
 
-#: ../../magic/src/negative.c:80
+#: ../../magic/src/negative.c:79
 msgid "Click and move the mouse around to draw a negative."
 msgstr "按著並移動滑鼠來畫出相反的顏色。"
 
-#: ../../magic/src/rainbow.c:108
+#: ../../magic/src/rainbow.c:107
 msgid "Rainbow"
 msgstr "彩虹"
 
-#: ../../magic/src/rainbow.c:115
+#: ../../magic/src/rainbow.c:114
 msgid "You can draw in rainbow colors!"
 msgstr "你可以畫出彩虹的顏色!"
 
-#: ../../magic/src/ripples.c:82
+#: ../../magic/src/ripples.c:81
 msgid "Ripples"
 msgstr "波浪"
 
-#: ../../magic/src/ripples.c:88
+#: ../../magic/src/ripples.c:87
 msgid "Click to make ripples appear over your picture."
 msgstr "按下會讓你的圖出現一個旋渦。"
 
-#: ../../magic/src/shift.c:105
+#: ../../magic/src/shift.c:104
 msgid "Shift"
 msgstr "調整"
 
-#: ../../magic/src/shift.c:111
+#: ../../magic/src/shift.c:110
 msgid "Click and drag to shift your picture around on the canvas."
 msgstr "按著並移動滑鼠來調整圖在圖紙上的位置。"
 
-#: ../../magic/src/smudge.c:78
+#: ../../magic/src/smudge.c:77
 msgid "Smudge"
 msgstr "塗抹"
 
-#: ../../magic/src/smudge.c:85
+#: ../../magic/src/smudge.c:84
 msgid "Click and move the mouse around to smudge the picture."
 msgstr "按著並移動滑鼠來使圖畫有塗抹效果。"
 
-#: ../../magic/src/tint.c:78
+#: ../../magic/src/tint.c:77
 msgid "Tint"
 msgstr "著色"
 
-#: ../../magic/src/tint.c:85
+#: ../../magic/src/tint.c:84
 msgid "Click and move the mouse around to change the picture’s color."
 msgstr "按著並移動滑鼠來改變圖畫的顏色。"
 
-#: ../../magic/src/waves.c:79
+#: ../../magic/src/waves.c:78
 msgid "Waves"
 msgstr "波浪"
 
-#: ../../magic/src/waves.c:85
+#: ../../magic/src/waves.c:84
 msgid ""
 "Click to make the picture wavy. Click toward the top for shorter waves, the "
 "bottom for taller waves, the left for small waves, and the right for long "

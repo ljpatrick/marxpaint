@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint 0.9.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-06-21 10:24-0700\n"
+"POT-Creation-Date: 2008-06-27 13:15-0700\n"
 "PO-Revision-Date: 2005-07-26 01:30-0800\n"
 "Last-Translator: Bill Kendrick <bill@newbreedsoftware.com>\n"
 "Language-Team: \n"
@@ -383,7 +383,7 @@ msgstr "Nij"
 #. Open a saved picture
 #. buttons for the file open dialog
 #. Open dialog: 'Open' button, to load the selected picture
-#: ../tools.h:75 ../tuxpaint.c:7830
+#: ../tools.h:75 ../tuxpaint.c:7835
 msgid "Open"
 msgstr "Lösdoun"
 
@@ -500,176 +500,176 @@ msgid "OK then… Let’s keep drawing this one!"
 msgstr "Na goud din... Loawwe dizze mor tijken blieven!"
 
 #. Prompt to confirm user wishes to quit
-#: ../tuxpaint.c:1804
+#: ../tuxpaint.c:1809
 msgid "Do you really want to quit?"
 msgstr "Wilst dr echt uut?"
 
 #. Quit prompt positive response (quit)
-#: ../tuxpaint.c:1807
+#: ../tuxpaint.c:1812
 msgid "Yes, I'm done!"
 msgstr ""
 
 #. Quit prompt negative response (don't quit)
-#: ../tuxpaint.c:1810 ../tuxpaint.c:1837
+#: ../tuxpaint.c:1815 ../tuxpaint.c:1842
 msgid "No, take me back!"
 msgstr ""
 
 #. Current picture is not saved; user is quitting
-#: ../tuxpaint.c:1814
+#: ../tuxpaint.c:1819
 msgid "If you quit, you’ll lose your picture! Save it?"
 msgstr "Ast dr uut gest, bust dien ploatje kwiet! Bewoaren?"
 
-#: ../tuxpaint.c:1815 ../tuxpaint.c:1820
+#: ../tuxpaint.c:1820 ../tuxpaint.c:1825
 msgid "Yes, save it!"
 msgstr ""
 
-#: ../tuxpaint.c:1816 ../tuxpaint.c:1821
+#: ../tuxpaint.c:1821 ../tuxpaint.c:1826
 msgid "No, don't bother saving!"
 msgstr ""
 
 #. Current picture is not saved; user is opening another picture
-#: ../tuxpaint.c:1819
+#: ../tuxpaint.c:1824
 msgid "Save your picture first?"
 msgstr "Eerst dien tijken bewoaren?"
 
 #. Error opening picture
-#: ../tuxpaint.c:1824
+#: ../tuxpaint.c:1829
 msgid "Can’t open that picture!"
 msgstr "Krieg dij tijken nie lös!"
 
 #. Generic dialog dismissal
-#: ../tuxpaint.c:1827 ../tuxpaint.c:1832 ../tuxpaint.c:1841 ../tuxpaint.c:1845
-#: ../tuxpaint.c:1854
+#: ../tuxpaint.c:1832 ../tuxpaint.c:1837 ../tuxpaint.c:1846 ../tuxpaint.c:1850
+#: ../tuxpaint.c:1859
 msgid "OK"
 msgstr "Goud"
 
 #. Notification that 'Open' dialog has nothing to show
-#: ../tuxpaint.c:1831
+#: ../tuxpaint.c:1836
 msgid "There are no saved files!"
 msgstr "Dr bunnen gien bewoarde bestanden!"
 
 #. Verification of print action
-#: ../tuxpaint.c:1835
+#: ../tuxpaint.c:1840
 msgid "Print your picture now?"
 msgstr "Dien tijken noe ófdrukken!"
 
-#: ../tuxpaint.c:1836
+#: ../tuxpaint.c:1841
 msgid "Yes, print it!"
 msgstr ""
 
 #. Confirmation of successful (we hope) printing
-#: ../tuxpaint.c:1840
+#: ../tuxpaint.c:1845
 msgid "Your picture has been printed!"
 msgstr "Dien tijken is ófdrukt!"
 
 #. Notification that it's too soon to print again (--printdelay option is in effect)
-#: ../tuxpaint.c:1844
+#: ../tuxpaint.c:1849
 msgid "You can’t print yet!"
 msgstr "Kanst noe nog nait ófdrukken!"
 
 #. Prompt to confirm erasing a picture in the Open dialog
-#: ../tuxpaint.c:1848
+#: ../tuxpaint.c:1853
 msgid "Erase this picture?"
 msgstr "Dizze tijken votsmieten?"
 
-#: ../tuxpaint.c:1849
+#: ../tuxpaint.c:1854
 msgid "Yes, erase it!"
 msgstr ""
 
-#: ../tuxpaint.c:1850
+#: ../tuxpaint.c:1855
 msgid "No, don't erase it!"
 msgstr ""
 
 #. Reminder that Mouse Button 1 is the button to use in Tux Paint
-#: ../tuxpaint.c:1853
+#: ../tuxpaint.c:1858
 msgid "Remember to use the left mouse button!"
 msgstr ""
 
 #. Sound has been muted (silenced) via keyboard shortcut
-#: ../tuxpaint.c:1964
+#: ../tuxpaint.c:1969
 msgid "Sound muted."
 msgstr ""
 
 #. Sound has been unmuted (unsilenced) via keyboard shortcut
-#: ../tuxpaint.c:1969
+#: ../tuxpaint.c:1974
 msgid "Sound unmuted."
 msgstr ""
 
 #. Wait while Text tool finishes loading fonts
-#: ../tuxpaint.c:2406
+#: ../tuxpaint.c:2411
 msgid "Please wait…"
 msgstr ""
 
-#: ../tuxpaint.c:7056
+#: ../tuxpaint.c:7061
 msgid "Pick a color."
 msgstr ""
 
 #. Open dialog: 'Erase' button, to erase/deleted the selected picture
-#: ../tuxpaint.c:7833
+#: ../tuxpaint.c:7838
 msgid "Erase"
 msgstr "Votsmieten"
 
 #. Open dialog: 'Slides' button, to switch to slide show mode
-#: ../tuxpaint.c:7836
+#: ../tuxpaint.c:7841
 msgid "Slides"
 msgstr ""
 
 #. Open dialog: 'Back' button, to dismiss Open dialog without opening a picture
-#: ../tuxpaint.c:7839
+#: ../tuxpaint.c:7844
 msgid "Back"
 msgstr "Weerumme"
 
 #. Slideshow: 'Next' button, to load next slide (image)
-#: ../tuxpaint.c:7842
+#: ../tuxpaint.c:7847
 #, fuzzy
 msgid "Next"
 msgstr "Tekst"
 
 #. Slideshow: 'Play' button, to begin a slideshow sequence
-#: ../tuxpaint.c:7845
+#: ../tuxpaint.c:7850
 msgid "Play"
 msgstr ""
 
 #. Label for 'Letters' buttons (font selector, down the right when the Text tool is being used); used to show the difference between font faces
-#: ../tuxpaint.c:8438
+#: ../tuxpaint.c:8443
 msgid "Aa"
 msgstr ""
 
 #. Admittedly stupid way of determining which keys can be used for
 #. positive and negative responses in dialogs (e.g., [Y] (for 'yes') in English)
-#: ../tuxpaint.c:11343
+#: ../tuxpaint.c:11348
 msgid "Yes"
 msgstr "Ja"
 
-#: ../tuxpaint.c:11347
+#: ../tuxpaint.c:11352
 msgid "No"
 msgstr "Nee"
 
 #. Prompt to ask whether user wishes to save over old version of their file
-#: ../tuxpaint.c:12296
+#: ../tuxpaint.c:12301
 msgid "Replace the picture with your changes?"
 msgstr ""
 
 #. Positive response to saving over old version
 #. (like a 'File:Save' action in other applications)
-#: ../tuxpaint.c:12300
+#: ../tuxpaint.c:12305
 msgid "Yes, replace the old one!"
 msgstr ""
 
 #. Negative response to saving over old version (saves a new image)
 #. (like a 'File:Save As...' action in other applications)
-#: ../tuxpaint.c:12304
+#: ../tuxpaint.c:12309
 #, fuzzy
 msgid "No, save a new file!"
 msgstr "Nee, n nij bestaand bewoaren"
 
-#: ../tuxpaint.c:13067
+#: ../tuxpaint.c:13072
 msgid "Choose the picture you want, then click “Open”."
 msgstr "Kijs de tijken dijst wilst, klik din op \"Lösdoun\"."
 
 #. Let user choose images:
 #. Instructions for Slideshow file dialog (FIXME: Make a #define)
-#: ../tuxpaint.c:14054 ../tuxpaint.c:14368
+#: ../tuxpaint.c:14059 ../tuxpaint.c:14373
 #, fuzzy
 msgid "Choose the pictures you want, then click “Play”."
 msgstr "Kijs de tijken dijst wilst, klik din op \"Lösdoun\"."
@@ -687,258 +687,258 @@ msgstr ""
 msgid "Tux Paint"
 msgstr "Vaarve"
 
-#: ../../magic/src/blocks_chalk_drip.c:133
+#: ../../magic/src/blocks_chalk_drip.c:132
 msgid "Blocks"
 msgstr "Blokken"
 
-#: ../../magic/src/blocks_chalk_drip.c:135
+#: ../../magic/src/blocks_chalk_drip.c:134
 msgid "Chalk"
 msgstr "Kriet"
 
-#: ../../magic/src/blocks_chalk_drip.c:137
+#: ../../magic/src/blocks_chalk_drip.c:136
 msgid "Drip"
 msgstr "Drubbels"
 
-#: ../../magic/src/blocks_chalk_drip.c:147
+#: ../../magic/src/blocks_chalk_drip.c:146
 msgid "Click and move the mouse around to make the picture blocky."
 msgstr "Klik en beweeg de moes rond um dien tijken blokkeg te moaken."
 
-#: ../../magic/src/blocks_chalk_drip.c:150
+#: ../../magic/src/blocks_chalk_drip.c:149
 msgid ""
 "Click and move the mouse around to turn the picture into a chalk drawing."
 msgstr ""
 "Klik en beweeg de moes rond um dien tijken in n kriettijken umme te teuvern."
 
-#: ../../magic/src/blocks_chalk_drip.c:153
+#: ../../magic/src/blocks_chalk_drip.c:152
 msgid "Click and move the mouse around to make the picture drip."
 msgstr "Klik en beweeg de moes rond um dien tijken druppen te loaten."
 
-#: ../../magic/src/blur.c:77
+#: ../../magic/src/blur.c:76
 msgid "Blur"
 msgstr "Dook"
 
-#: ../../magic/src/blur.c:84
+#: ../../magic/src/blur.c:83
 msgid "Click and move the mouse around to blur the picture."
 msgstr "Klik en beweeg de moes rond um dien tijken dokeg te moaken."
 
 #. Both are named "Bricks", at the moment:
-#: ../../magic/src/bricks.c:105
+#: ../../magic/src/bricks.c:104
 #, fuzzy
 msgid "Bricks"
 msgstr "Blokken"
 
-#: ../../magic/src/bricks.c:112
+#: ../../magic/src/bricks.c:111
 #, fuzzy
 msgid "Click and move to draw large bricks."
 msgstr "Klik en beweeg um sputters te tijken."
 
-#: ../../magic/src/bricks.c:114
+#: ../../magic/src/bricks.c:113
 #, fuzzy
 msgid "Click and move to draw small bricks."
 msgstr "Klik en beweeg um sputters te tijken."
 
-#: ../../magic/src/calligraphy.c:109
+#: ../../magic/src/calligraphy.c:108
 msgid "Calligraphy"
 msgstr ""
 
-#: ../../magic/src/calligraphy.c:116
+#: ../../magic/src/calligraphy.c:115
 #, fuzzy
 msgid "Click and move the mouse around to draw in calligraphy."
 msgstr "Klik en beweeg de moes um n negatief te tijken."
 
-#: ../../magic/src/cartoon.c:81
+#: ../../magic/src/cartoon.c:80
 msgid "Cartoon"
 msgstr ""
 
-#: ../../magic/src/cartoon.c:88
+#: ../../magic/src/cartoon.c:87
 #, fuzzy
 msgid "Click and move the mouse around to turn the picture into a cartoon."
 msgstr ""
 "Klik en beweeg de moes rond um dien tijken in n kriettijken umme te teuvern."
 
-#: ../../magic/src/distortion.c:122
+#: ../../magic/src/distortion.c:121
 msgid "Distortion"
 msgstr ""
 
-#: ../../magic/src/distortion.c:130
+#: ../../magic/src/distortion.c:129
 #, fuzzy
 msgid "Click and drag the mouse to cause a distortion in your picture."
 msgstr "Klik en beweeg de moes um dien tijken dun te moaken."
 
-#: ../../magic/src/emboss.c:77
+#: ../../magic/src/emboss.c:76
 msgid "Emboss"
 msgstr ""
 
-#: ../../magic/src/emboss.c:83
+#: ../../magic/src/emboss.c:82
 #, fuzzy
 msgid "Click and drag the mouse to emboss the picture."
 msgstr "Klik en beweeg de moes um dien tijken dun te moaken."
 
-#: ../../magic/src/fade_darken.c:117
+#: ../../magic/src/fade_darken.c:116
 msgid "Lighten"
 msgstr ""
 
-#: ../../magic/src/fade_darken.c:119
+#: ../../magic/src/fade_darken.c:118
 msgid "Darken"
 msgstr ""
 
-#: ../../magic/src/fade_darken.c:129
+#: ../../magic/src/fade_darken.c:128
 msgid "Click and move to fade the colors."
 msgstr "Klik en beweeg um de kleuren uut te smeren."
 
-#: ../../magic/src/fade_darken.c:132
+#: ../../magic/src/fade_darken.c:131
 #, fuzzy
 msgid "Click and move to darken the colors."
 msgstr "Klik en beweeg um de kleuren uut te smeren."
 
-#: ../../magic/src/fill.c:88
+#: ../../magic/src/fill.c:87
 msgid "Fill"
 msgstr "Opvullen"
 
-#: ../../magic/src/fill.c:95
+#: ../../magic/src/fill.c:94
 msgid "Click in the picture to fill that area with color."
 msgstr "Klik in dien tijken um dat dijl mit kleur te vullen."
 
-#: ../../magic/src/flower.c:125
+#: ../../magic/src/flower.c:124
 msgid "Flower"
 msgstr ""
 
-#: ../../magic/src/flower.c:131
+#: ../../magic/src/flower.c:130
 msgid "Click and drag to draw a flower stalk. Let go to finish the flower."
 msgstr ""
 
-#: ../../magic/src/foam.c:105
+#: ../../magic/src/foam.c:104
 msgid "Foam"
 msgstr ""
 
-#: ../../magic/src/foam.c:111
+#: ../../magic/src/foam.c:110
 #, fuzzy
 msgid "Click and drag the mouse to cover an area with foamy bubbles."
 msgstr "Klik en beweeg de moes um dien tijken dik te moaken."
 
-#: ../../magic/src/glasstile.c:84
+#: ../../magic/src/glasstile.c:83
 msgid "Glass Tile"
 msgstr ""
 
-#: ../../magic/src/glasstile.c:90
+#: ../../magic/src/glasstile.c:89
 #, fuzzy
 msgid "Click and drag the mouse to put glass tile over your picture."
 msgstr "Klik en beweeg de moes um dien tijken dun te moaken."
 
-#: ../../magic/src/grass.c:93
+#: ../../magic/src/grass.c:92
 #, fuzzy
 msgid "Grass"
 msgstr "Gries"
 
-#: ../../magic/src/grass.c:99
+#: ../../magic/src/grass.c:98
 #, fuzzy
 msgid "Click and move to draw grass. Don’t forget the dirt!"
 msgstr "Klik en beweeg um sputters te tijken."
 
-#: ../../magic/src/kalidescope.c:78
+#: ../../magic/src/kalidescope.c:77
 msgid "Kaleidoscope"
 msgstr ""
 
-#: ../../magic/src/kalidescope.c:84
+#: ../../magic/src/kalidescope.c:83
 #, fuzzy
 msgid ""
 "Click and drag the mouse to draw with symmetric brushes (a kaleidoscope)."
 msgstr "Klik en beweeg de moes um dien tijken dik te moaken."
 
-#: ../../magic/src/light.c:85
+#: ../../magic/src/light.c:84
 msgid "Light"
 msgstr ""
 
-#: ../../magic/src/light.c:91
+#: ../../magic/src/light.c:90
 #, fuzzy
 msgid "Click and drag to draw a beam of light on your picture."
 msgstr "Klik en beweeg de moes um dien tijken dun te moaken."
 
-#: ../../magic/src/metalpaint.c:78
+#: ../../magic/src/metalpaint.c:77
 #, fuzzy
 msgid "Metal Paint"
 msgstr "Vaarve"
 
-#: ../../magic/src/metalpaint.c:84
+#: ../../magic/src/metalpaint.c:83
 #, fuzzy
 msgid "Click and drag the mouse to paint with a metallic color."
 msgstr "Klik en beweeg de moes um dien tijken dun te moaken."
 
-#: ../../magic/src/mirror_flip.c:95
+#: ../../magic/src/mirror_flip.c:94
 msgid "Mirror"
 msgstr "Spijgel"
 
-#: ../../magic/src/mirror_flip.c:97
+#: ../../magic/src/mirror_flip.c:96
 msgid "Flip"
 msgstr "Ummekeren"
 
-#: ../../magic/src/mirror_flip.c:107
+#: ../../magic/src/mirror_flip.c:106
 msgid "Click to make a mirror image."
 msgstr "Klik um n spijgelbeeld te moaken."
 
-#: ../../magic/src/mirror_flip.c:110
+#: ../../magic/src/mirror_flip.c:109
 msgid "Click to flip the picture upside-down."
 msgstr "Klik um dien tijken obbe kop te zetten."
 
-#: ../../magic/src/negative.c:73
+#: ../../magic/src/negative.c:72
 msgid "Negative"
 msgstr "Negatief"
 
-#: ../../magic/src/negative.c:80
+#: ../../magic/src/negative.c:79
 msgid "Click and move the mouse around to draw a negative."
 msgstr "Klik en beweeg de moes um n negatief te tijken."
 
-#: ../../magic/src/rainbow.c:108
+#: ../../magic/src/rainbow.c:107
 msgid "Rainbow"
 msgstr "Regenboge"
 
-#: ../../magic/src/rainbow.c:115
+#: ../../magic/src/rainbow.c:114
 msgid "You can draw in rainbow colors!"
 msgstr "Doe kanst tijken in regenboogkleuren!"
 
-#: ../../magic/src/ripples.c:82
+#: ../../magic/src/ripples.c:81
 msgid "Ripples"
 msgstr ""
 
-#: ../../magic/src/ripples.c:88
+#: ../../magic/src/ripples.c:87
 #, fuzzy
 msgid "Click to make ripples appear over your picture."
 msgstr "Klik en beweeg de moes um dien tijken dun te moaken."
 
-#: ../../magic/src/shift.c:105
+#: ../../magic/src/shift.c:104
 msgid "Shift"
 msgstr ""
 
-#: ../../magic/src/shift.c:111
+#: ../../magic/src/shift.c:110
 #, fuzzy
 msgid "Click and drag to shift your picture around on the canvas."
 msgstr "Klik en beweeg de moes um dien tijken dun te moaken."
 
-#: ../../magic/src/smudge.c:78
+#: ../../magic/src/smudge.c:77
 msgid "Smudge"
 msgstr ""
 
-#: ../../magic/src/smudge.c:85
+#: ../../magic/src/smudge.c:84
 #, fuzzy
 msgid "Click and move the mouse around to smudge the picture."
 msgstr "Klik en beweeg de moes rond um dien tijken dokeg te moaken."
 
-#: ../../magic/src/tint.c:78
+#: ../../magic/src/tint.c:77
 #, fuzzy
 msgid "Tint"
 msgstr "Dun"
 
-#: ../../magic/src/tint.c:85
+#: ../../magic/src/tint.c:84
 #, fuzzy
 msgid "Click and move the mouse around to change the picture’s color."
 msgstr "Klik en beweeg de moes rond um dien tijken blokkeg te moaken."
 
-#: ../../magic/src/waves.c:79
+#: ../../magic/src/waves.c:78
 #, fuzzy
 msgid "Waves"
 msgstr "Bewoaren"
 
-#: ../../magic/src/waves.c:85
+#: ../../magic/src/waves.c:84
 msgid ""
 "Click to make the picture wavy. Click toward the top for shorter waves, the "
 "bottom for taller waves, the left for small waves, and the right for long "

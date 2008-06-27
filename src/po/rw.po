@@ -16,7 +16,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint 0.9.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-06-21 10:24-0700\n"
+"POT-Creation-Date: 2008-06-27 13:15-0700\n"
 "PO-Revision-Date: 2005-04-04 10:55-0700\n"
 "Last-Translator: Steven Michael Murphy <murf@e-tools.com>\n"
 "Language-Team: Kinyarwanda <translation-team-rw@lists.sourceforge.net>\n"
@@ -408,7 +408,7 @@ msgstr "Gishya"
 #. Open a saved picture
 #. buttons for the file open dialog
 #. Open dialog: 'Open' button, to load the selected picture
-#: ../tools.h:75 ../tuxpaint.c:7830
+#: ../tools.h:75 ../tuxpaint.c:7835
 msgid "Open"
 msgstr "Gufungura"
 
@@ -536,186 +536,186 @@ msgid "OK then… Let’s keep drawing this one!"
 msgstr "Gumana: Igishushanyo iyi"
 
 #. Prompt to confirm user wishes to quit
-#: ../tuxpaint.c:1804
+#: ../tuxpaint.c:1809
 #, fuzzy
 msgid "Do you really want to quit?"
 msgstr "Kuri Kuvamo"
 
 #. Quit prompt positive response (quit)
-#: ../tuxpaint.c:1807
+#: ../tuxpaint.c:1812
 msgid "Yes, I'm done!"
 msgstr ""
 
 #. Quit prompt negative response (don't quit)
-#: ../tuxpaint.c:1810 ../tuxpaint.c:1837
+#: ../tuxpaint.c:1815 ../tuxpaint.c:1842
 msgid "No, take me back!"
 msgstr ""
 
 #. Current picture is not saved; user is quitting
-#: ../tuxpaint.c:1814
+#: ../tuxpaint.c:1819
 #, fuzzy
 msgid "If you quit, you’ll lose your picture! Save it?"
 msgstr "Kuvamo() y'Ishusho Kubika"
 
-#: ../tuxpaint.c:1815 ../tuxpaint.c:1820
+#: ../tuxpaint.c:1820 ../tuxpaint.c:1825
 msgid "Yes, save it!"
 msgstr ""
 
-#: ../tuxpaint.c:1816 ../tuxpaint.c:1821
+#: ../tuxpaint.c:1821 ../tuxpaint.c:1826
 msgid "No, don't bother saving!"
 msgstr ""
 
 #. Current picture is not saved; user is opening another picture
-#: ../tuxpaint.c:1819
+#: ../tuxpaint.c:1824
 #, fuzzy
 msgid "Save your picture first?"
 msgstr "Kubika() y'Ishusho Itangira"
 
 #. Error opening picture
-#: ../tuxpaint.c:1824
+#: ../tuxpaint.c:1829
 #, fuzzy
 msgid "Can’t open that picture!"
 msgstr "Gufungura() y'Ishusho"
 
 #. Generic dialog dismissal
-#: ../tuxpaint.c:1827 ../tuxpaint.c:1832 ../tuxpaint.c:1841 ../tuxpaint.c:1845
-#: ../tuxpaint.c:1854
+#: ../tuxpaint.c:1832 ../tuxpaint.c:1837 ../tuxpaint.c:1846 ../tuxpaint.c:1850
+#: ../tuxpaint.c:1859
 msgid "OK"
 msgstr "OKE"
 
 #. Notification that 'Open' dialog has nothing to show
-#: ../tuxpaint.c:1831
+#: ../tuxpaint.c:1836
 #, fuzzy
 msgid "There are no saved files!"
 msgstr "Oya Idosiye"
 
 #. Verification of print action
-#: ../tuxpaint.c:1835
+#: ../tuxpaint.c:1840
 #, fuzzy
 msgid "Print your picture now?"
 msgstr "y'Ishusho NONEAHA"
 
-#: ../tuxpaint.c:1836
+#: ../tuxpaint.c:1841
 msgid "Yes, print it!"
 msgstr ""
 
 #. Confirmation of successful (we hope) printing
-#: ../tuxpaint.c:1840
+#: ../tuxpaint.c:1845
 #, fuzzy
 msgid "Your picture has been printed!"
 msgstr "y'Ishusho Byacapwe"
 
 #. Notification that it's too soon to print again (--printdelay option is in effect)
-#: ../tuxpaint.c:1844
+#: ../tuxpaint.c:1849
 #, fuzzy
 msgid "You can’t print yet!"
 msgstr "Gucapa"
 
 #. Prompt to confirm erasing a picture in the Open dialog
-#: ../tuxpaint.c:1848
+#: ../tuxpaint.c:1853
 #, fuzzy
 msgid "Erase this picture?"
 msgstr "iyi() y'Ishusho"
 
-#: ../tuxpaint.c:1849
+#: ../tuxpaint.c:1854
 msgid "Yes, erase it!"
 msgstr ""
 
-#: ../tuxpaint.c:1850
+#: ../tuxpaint.c:1855
 msgid "No, don't erase it!"
 msgstr ""
 
 #. Reminder that Mouse Button 1 is the button to use in Tux Paint
-#: ../tuxpaint.c:1853
+#: ../tuxpaint.c:1858
 msgid "Remember to use the left mouse button!"
 msgstr ""
 
 #. Sound has been muted (silenced) via keyboard shortcut
-#: ../tuxpaint.c:1964
+#: ../tuxpaint.c:1969
 msgid "Sound muted."
 msgstr ""
 
 #. Sound has been unmuted (unsilenced) via keyboard shortcut
-#: ../tuxpaint.c:1969
+#: ../tuxpaint.c:1974
 msgid "Sound unmuted."
 msgstr ""
 
 #. Wait while Text tool finishes loading fonts
-#: ../tuxpaint.c:2406
+#: ../tuxpaint.c:2411
 msgid "Please wait…"
 msgstr ""
 
-#: ../tuxpaint.c:7056
+#: ../tuxpaint.c:7061
 msgid "Pick a color."
 msgstr ""
 
 #. Open dialog: 'Erase' button, to erase/deleted the selected picture
-#: ../tuxpaint.c:7833
+#: ../tuxpaint.c:7838
 msgid "Erase"
 msgstr ""
 
 #. Open dialog: 'Slides' button, to switch to slide show mode
-#: ../tuxpaint.c:7836
+#: ../tuxpaint.c:7841
 msgid "Slides"
 msgstr ""
 
 #. Open dialog: 'Back' button, to dismiss Open dialog without opening a picture
-#: ../tuxpaint.c:7839
+#: ../tuxpaint.c:7844
 msgid "Back"
 msgstr "Inyuma"
 
 #. Slideshow: 'Next' button, to load next slide (image)
-#: ../tuxpaint.c:7842
+#: ../tuxpaint.c:7847
 #, fuzzy
 msgid "Next"
 msgstr "Umwandiko"
 
 #. Slideshow: 'Play' button, to begin a slideshow sequence
-#: ../tuxpaint.c:7845
+#: ../tuxpaint.c:7850
 msgid "Play"
 msgstr ""
 
 #. Label for 'Letters' buttons (font selector, down the right when the Text tool is being used); used to show the difference between font faces
-#: ../tuxpaint.c:8438
+#: ../tuxpaint.c:8443
 msgid "Aa"
 msgstr ""
 
 #. Admittedly stupid way of determining which keys can be used for
 #. positive and negative responses in dialogs (e.g., [Y] (for 'yes') in English)
-#: ../tuxpaint.c:11343
+#: ../tuxpaint.c:11348
 msgid "Yes"
 msgstr "Yego"
 
-#: ../tuxpaint.c:11347
+#: ../tuxpaint.c:11352
 msgid "No"
 msgstr "Oya"
 
 #. Prompt to ask whether user wishes to save over old version of their file
-#: ../tuxpaint.c:12296
+#: ../tuxpaint.c:12301
 msgid "Replace the picture with your changes?"
 msgstr ""
 
 #. Positive response to saving over old version
 #. (like a 'File:Save' action in other applications)
-#: ../tuxpaint.c:12300
+#: ../tuxpaint.c:12305
 msgid "Yes, replace the old one!"
 msgstr ""
 
 #. Negative response to saving over old version (saves a new image)
 #. (like a 'File:Save As...' action in other applications)
-#: ../tuxpaint.c:12304
+#: ../tuxpaint.c:12309
 #, fuzzy
 msgid "No, save a new file!"
 msgstr "Kubika a Gishya IDOSIYE"
 
-#: ../tuxpaint.c:13067
+#: ../tuxpaint.c:13072
 #, fuzzy
 msgid "Choose the picture you want, then click “Open”."
 msgstr "i() y'Ishusho Hanyuma Kanda"
 
 #. Let user choose images:
 #. Instructions for Slideshow file dialog (FIXME: Make a #define)
-#: ../tuxpaint.c:14054 ../tuxpaint.c:14368
+#: ../tuxpaint.c:14059 ../tuxpaint.c:14373
 #, fuzzy
 msgid "Choose the pictures you want, then click “Play”."
 msgstr "i() y'Ishusho Hanyuma Kanda"
@@ -732,265 +732,265 @@ msgstr ""
 msgid "Tux Paint"
 msgstr ""
 
-#: ../../magic/src/blocks_chalk_drip.c:133
+#: ../../magic/src/blocks_chalk_drip.c:132
 msgid "Blocks"
 msgstr ""
 
-#: ../../magic/src/blocks_chalk_drip.c:135
+#: ../../magic/src/blocks_chalk_drip.c:134
 msgid "Chalk"
 msgstr ""
 
-#: ../../magic/src/blocks_chalk_drip.c:137
+#: ../../magic/src/blocks_chalk_drip.c:136
 msgid "Drip"
 msgstr ""
 
-#: ../../magic/src/blocks_chalk_drip.c:147
+#: ../../magic/src/blocks_chalk_drip.c:146
 #, fuzzy
 msgid "Click and move the mouse around to make the picture blocky."
 msgstr "Na Kwimura i Imbeba Kuri Ubwoko i() y'Ishusho"
 
-#: ../../magic/src/blocks_chalk_drip.c:150
+#: ../../magic/src/blocks_chalk_drip.c:149
 #, fuzzy
 msgid ""
 "Click and move the mouse around to turn the picture into a chalk drawing."
 msgstr "Na Kwimura i Imbeba Kuri i() y'Ishusho a Igishushanyo"
 
-#: ../../magic/src/blocks_chalk_drip.c:153
+#: ../../magic/src/blocks_chalk_drip.c:152
 #, fuzzy
 msgid "Click and move the mouse around to make the picture drip."
 msgstr "Na Kwimura i Imbeba Kuri Ubwoko i() y'Ishusho"
 
-#: ../../magic/src/blur.c:77
+#: ../../magic/src/blur.c:76
 msgid "Blur"
 msgstr ""
 
-#: ../../magic/src/blur.c:84
+#: ../../magic/src/blur.c:83
 #, fuzzy
 msgid "Click and move the mouse around to blur the picture."
 msgstr "Na Kwimura i Imbeba Kuri i() y'Ishusho"
 
 #. Both are named "Bricks", at the moment:
-#: ../../magic/src/bricks.c:105
+#: ../../magic/src/bricks.c:104
 #, fuzzy
 msgid "Bricks"
 msgstr "Inyuma"
 
-#: ../../magic/src/bricks.c:112
+#: ../../magic/src/bricks.c:111
 #, fuzzy
 msgid "Click and move to draw large bricks."
 msgstr "Na Kwimura Kuri Gushushanya"
 
-#: ../../magic/src/bricks.c:114
+#: ../../magic/src/bricks.c:113
 #, fuzzy
 msgid "Click and move to draw small bricks."
 msgstr "Na Kwimura Kuri Gushushanya"
 
-#: ../../magic/src/calligraphy.c:109
+#: ../../magic/src/calligraphy.c:108
 msgid "Calligraphy"
 msgstr ""
 
-#: ../../magic/src/calligraphy.c:116
+#: ../../magic/src/calligraphy.c:115
 #, fuzzy
 msgid "Click and move the mouse around to draw in calligraphy."
 msgstr "Na Kwimura i Imbeba Kuri Gushushanya a"
 
-#: ../../magic/src/cartoon.c:81
+#: ../../magic/src/cartoon.c:80
 msgid "Cartoon"
 msgstr ""
 
-#: ../../magic/src/cartoon.c:88
+#: ../../magic/src/cartoon.c:87
 #, fuzzy
 msgid "Click and move the mouse around to turn the picture into a cartoon."
 msgstr "Na Kwimura i Imbeba Kuri i() y'Ishusho a Igishushanyo"
 
-#: ../../magic/src/distortion.c:122
+#: ../../magic/src/distortion.c:121
 msgid "Distortion"
 msgstr ""
 
-#: ../../magic/src/distortion.c:130
+#: ../../magic/src/distortion.c:129
 #, fuzzy
 msgid "Click and drag the mouse to cause a distortion in your picture."
 msgstr "Na Kwimura i Imbeba Kuri kinanutse i() y'Ishusho"
 
-#: ../../magic/src/emboss.c:77
+#: ../../magic/src/emboss.c:76
 msgid "Emboss"
 msgstr ""
 
-#: ../../magic/src/emboss.c:83
+#: ../../magic/src/emboss.c:82
 #, fuzzy
 msgid "Click and drag the mouse to emboss the picture."
 msgstr "Na Kwimura i Imbeba Kuri kinanutse i() y'Ishusho"
 
-#: ../../magic/src/fade_darken.c:117
+#: ../../magic/src/fade_darken.c:116
 msgid "Lighten"
 msgstr ""
 
-#: ../../magic/src/fade_darken.c:119
+#: ../../magic/src/fade_darken.c:118
 msgid "Darken"
 msgstr ""
 
-#: ../../magic/src/fade_darken.c:129
+#: ../../magic/src/fade_darken.c:128
 #, fuzzy
 msgid "Click and move to fade the colors."
 msgstr "Na Kwimura Kuri Kwijima i Amabara"
 
-#: ../../magic/src/fade_darken.c:132
+#: ../../magic/src/fade_darken.c:131
 #, fuzzy
 msgid "Click and move to darken the colors."
 msgstr "Na Kwimura Kuri Kwijima i Amabara"
 
-#: ../../magic/src/fill.c:88
+#: ../../magic/src/fill.c:87
 msgid "Fill"
 msgstr "Kuzuza"
 
-#: ../../magic/src/fill.c:95
+#: ../../magic/src/fill.c:94
 #, fuzzy
 msgid "Click in the picture to fill that area with color."
 msgstr "in i() y'Ishusho Kuri Kuzuza Ubuso Na: Ibara"
 
-#: ../../magic/src/flower.c:125
+#: ../../magic/src/flower.c:124
 msgid "Flower"
 msgstr ""
 
-#: ../../magic/src/flower.c:131
+#: ../../magic/src/flower.c:130
 msgid "Click and drag to draw a flower stalk. Let go to finish the flower."
 msgstr ""
 
-#: ../../magic/src/foam.c:105
+#: ../../magic/src/foam.c:104
 msgid "Foam"
 msgstr ""
 
-#: ../../magic/src/foam.c:111
+#: ../../magic/src/foam.c:110
 #, fuzzy
 msgid "Click and drag the mouse to cover an area with foamy bubbles."
 msgstr "Na Kwimura i Imbeba Kuri i() y'Ishusho"
 
-#: ../../magic/src/glasstile.c:84
+#: ../../magic/src/glasstile.c:83
 msgid "Glass Tile"
 msgstr ""
 
-#: ../../magic/src/glasstile.c:90
+#: ../../magic/src/glasstile.c:89
 #, fuzzy
 msgid "Click and drag the mouse to put glass tile over your picture."
 msgstr "Na Kwimura i Imbeba Kuri kinanutse i() y'Ishusho"
 
-#: ../../magic/src/grass.c:93
+#: ../../magic/src/grass.c:92
 #, fuzzy
 msgid "Grass"
 msgstr "Ikigina"
 
-#: ../../magic/src/grass.c:99
+#: ../../magic/src/grass.c:98
 #, fuzzy
 msgid "Click and move to draw grass. Don’t forget the dirt!"
 msgstr "Na Kwimura Kuri Gushushanya"
 
-#: ../../magic/src/kalidescope.c:78
+#: ../../magic/src/kalidescope.c:77
 msgid "Kaleidoscope"
 msgstr ""
 
-#: ../../magic/src/kalidescope.c:84
+#: ../../magic/src/kalidescope.c:83
 #, fuzzy
 msgid ""
 "Click and drag the mouse to draw with symmetric brushes (a kaleidoscope)."
 msgstr "Na Kwimura i Imbeba Kuri i() y'Ishusho"
 
-#: ../../magic/src/light.c:85
+#: ../../magic/src/light.c:84
 msgid "Light"
 msgstr ""
 
-#: ../../magic/src/light.c:91
+#: ../../magic/src/light.c:90
 #, fuzzy
 msgid "Click and drag to draw a beam of light on your picture."
 msgstr "Na Kwimura i Imbeba Kuri kinanutse i() y'Ishusho"
 
-#: ../../magic/src/metalpaint.c:78
+#: ../../magic/src/metalpaint.c:77
 msgid "Metal Paint"
 msgstr ""
 
-#: ../../magic/src/metalpaint.c:84
+#: ../../magic/src/metalpaint.c:83
 #, fuzzy
 msgid "Click and drag the mouse to paint with a metallic color."
 msgstr "Na Kwimura i Imbeba Kuri kinanutse i() y'Ishusho"
 
-#: ../../magic/src/mirror_flip.c:95
+#: ../../magic/src/mirror_flip.c:94
 msgid "Mirror"
 msgstr ""
 
-#: ../../magic/src/mirror_flip.c:97
+#: ../../magic/src/mirror_flip.c:96
 msgid "Flip"
 msgstr "Guhindukiza"
 
-#: ../../magic/src/mirror_flip.c:107
+#: ../../magic/src/mirror_flip.c:106
 #, fuzzy
 msgid "Click to make a mirror image."
 msgstr "Kuri Ubwoko a Ishusho"
 
-#: ../../magic/src/mirror_flip.c:110
+#: ../../magic/src/mirror_flip.c:109
 #, fuzzy
 msgid "Click to flip the picture upside-down."
 msgstr "Kuri Guhindukiza i() y'Ishusho Hasi"
 
-#: ../../magic/src/negative.c:73
+#: ../../magic/src/negative.c:72
 msgid "Negative"
 msgstr ""
 
-#: ../../magic/src/negative.c:80
+#: ../../magic/src/negative.c:79
 #, fuzzy
 msgid "Click and move the mouse around to draw a negative."
 msgstr "Na Kwimura i Imbeba Kuri Gushushanya a"
 
-#: ../../magic/src/rainbow.c:108
+#: ../../magic/src/rainbow.c:107
 msgid "Rainbow"
 msgstr ""
 
-#: ../../magic/src/rainbow.c:115
+#: ../../magic/src/rainbow.c:114
 #, fuzzy
 msgid "You can draw in rainbow colors!"
 msgstr "Gushushanya in Amabara"
 
-#: ../../magic/src/ripples.c:82
+#: ../../magic/src/ripples.c:81
 msgid "Ripples"
 msgstr ""
 
-#: ../../magic/src/ripples.c:88
+#: ../../magic/src/ripples.c:87
 #, fuzzy
 msgid "Click to make ripples appear over your picture."
 msgstr "Na Kwimura i Imbeba Kuri kinanutse i() y'Ishusho"
 
-#: ../../magic/src/shift.c:105
+#: ../../magic/src/shift.c:104
 msgid "Shift"
 msgstr ""
 
-#: ../../magic/src/shift.c:111
+#: ../../magic/src/shift.c:110
 #, fuzzy
 msgid "Click and drag to shift your picture around on the canvas."
 msgstr "Na Kwimura i Imbeba Kuri kinanutse i() y'Ishusho"
 
-#: ../../magic/src/smudge.c:78
+#: ../../magic/src/smudge.c:77
 msgid "Smudge"
 msgstr ""
 
-#: ../../magic/src/smudge.c:85
+#: ../../magic/src/smudge.c:84
 #, fuzzy
 msgid "Click and move the mouse around to smudge the picture."
 msgstr "Na Kwimura i Imbeba Kuri i() y'Ishusho"
 
-#: ../../magic/src/tint.c:78
+#: ../../magic/src/tint.c:77
 #, fuzzy
 msgid "Tint"
 msgstr "Kinanutse"
 
-#: ../../magic/src/tint.c:85
+#: ../../magic/src/tint.c:84
 #, fuzzy
 msgid "Click and move the mouse around to change the picture’s color."
 msgstr "Na Kwimura i Imbeba Kuri Ubwoko i() y'Ishusho"
 
-#: ../../magic/src/waves.c:79
+#: ../../magic/src/waves.c:78
 #, fuzzy
 msgid "Waves"
 msgstr "Kubika"
 
-#: ../../magic/src/waves.c:85
+#: ../../magic/src/waves.c:84
 msgid ""
 "Click to make the picture wavy. Click toward the top for shorter waves, the "
 "bottom for taller waves, the left for small waves, and the right for long "

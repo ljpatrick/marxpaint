@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Tuxpaint 0.9.2pre\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-06-21 10:24-0700\n"
+"POT-Creation-Date: 2008-06-27 13:15-0700\n"
 "PO-Revision-Date: 2008-04-14 21:14+0200\n"
 "Last-Translator: yannis\n"
 "Language-Team: N/A <i18ngr@lists.hellug.gr>\n"
@@ -385,7 +385,7 @@ msgstr "Νέο"
 #. Open a saved picture
 #. buttons for the file open dialog
 #. Open dialog: 'Open' button, to load the selected picture
-#: ../tools.h:75 ../tuxpaint.c:7830
+#: ../tools.h:75 ../tuxpaint.c:7835
 msgid "Open"
 msgstr "Άνοιγμα"
 
@@ -506,174 +506,174 @@ msgid "OK then… Let’s keep drawing this one!"
 msgstr "Εντάξει λοιπόν… Ας συνεχίσουμε τη σχεδίαση του ίδιου!"
 
 #. Prompt to confirm user wishes to quit
-#: ../tuxpaint.c:1804
+#: ../tuxpaint.c:1809
 msgid "Do you really want to quit?"
 msgstr "Σίγουρα θέλεις να βγεις από το πρόγραμμα;"
 
 #. Quit prompt positive response (quit)
-#: ../tuxpaint.c:1807
+#: ../tuxpaint.c:1812
 msgid "Yes, I'm done!"
 msgstr "Ναι είμαι έτοιμος!"
 
 #. Quit prompt negative response (don't quit)
-#: ../tuxpaint.c:1810 ../tuxpaint.c:1837
+#: ../tuxpaint.c:1815 ../tuxpaint.c:1842
 msgid "No, take me back!"
 msgstr "Όχι δεν έχω τελειώσει ακόμα!"
 
 #. Current picture is not saved; user is quitting
-#: ../tuxpaint.c:1814
+#: ../tuxpaint.c:1819
 msgid "If you quit, you’ll lose your picture! Save it?"
 msgstr "Αν βγεις από το πρόγραμμα, θα χαθεί η εικόνα σου! Να σωθεί;"
 
-#: ../tuxpaint.c:1815 ../tuxpaint.c:1820
+#: ../tuxpaint.c:1820 ../tuxpaint.c:1825
 msgid "Yes, save it!"
 msgstr "Ναι, αποθήκευσέ το"
 
-#: ../tuxpaint.c:1816 ../tuxpaint.c:1821
+#: ../tuxpaint.c:1821 ../tuxpaint.c:1826
 msgid "No, don't bother saving!"
 msgstr "Όχι μην την σώσεις!"
 
 #. Current picture is not saved; user is opening another picture
-#: ../tuxpaint.c:1819
+#: ../tuxpaint.c:1824
 msgid "Save your picture first?"
 msgstr "Να σωθεί η εικόνα σου πρώτα;"
 
 #. Error opening picture
-#: ../tuxpaint.c:1824
+#: ../tuxpaint.c:1829
 msgid "Can’t open that picture!"
 msgstr "Δεν μπορώ να ανοίξω αυτή τη ζωγραφιά!"
 
 #. Generic dialog dismissal
-#: ../tuxpaint.c:1827 ../tuxpaint.c:1832 ../tuxpaint.c:1841 ../tuxpaint.c:1845
-#: ../tuxpaint.c:1854
+#: ../tuxpaint.c:1832 ../tuxpaint.c:1837 ../tuxpaint.c:1846 ../tuxpaint.c:1850
+#: ../tuxpaint.c:1859
 msgid "OK"
 msgstr "Εντάξει"
 
 #. Notification that 'Open' dialog has nothing to show
-#: ../tuxpaint.c:1831
+#: ../tuxpaint.c:1836
 msgid "There are no saved files!"
 msgstr "Δεν υπάρχουν αποθηκευμένα αρχεία!"
 
 #. Verification of print action
-#: ../tuxpaint.c:1835
+#: ../tuxpaint.c:1840
 msgid "Print your picture now?"
 msgstr "Να εκτυπώσω την ζωγραφιά σου;"
 
-#: ../tuxpaint.c:1836
+#: ../tuxpaint.c:1841
 msgid "Yes, print it!"
 msgstr "Ναι, τύπωσέ το!"
 
 #. Confirmation of successful (we hope) printing
-#: ../tuxpaint.c:1840
+#: ../tuxpaint.c:1845
 msgid "Your picture has been printed!"
 msgstr "Η εικόνα σου εκτυπώθηκε!"
 
 #. Notification that it's too soon to print again (--printdelay option is in effect)
-#: ../tuxpaint.c:1844
+#: ../tuxpaint.c:1849
 msgid "You can’t print yet!"
 msgstr "Δεν μπορείς να τυπώσεις ακόμη!"
 
 #. Prompt to confirm erasing a picture in the Open dialog
-#: ../tuxpaint.c:1848
+#: ../tuxpaint.c:1853
 msgid "Erase this picture?"
 msgstr "Να σβήσω αυτήν την εικόνα;"
 
-#: ../tuxpaint.c:1849
+#: ../tuxpaint.c:1854
 msgid "Yes, erase it!"
 msgstr "Ναι, σβήστο!"
 
-#: ../tuxpaint.c:1850
+#: ../tuxpaint.c:1855
 msgid "No, don't erase it!"
 msgstr "Όχι, μην το σβήσεις!"
 
 #. Reminder that Mouse Button 1 is the button to use in Tux Paint
-#: ../tuxpaint.c:1853
+#: ../tuxpaint.c:1858
 msgid "Remember to use the left mouse button!"
 msgstr "Προσοχή, πρέπει να χρησιμοποιείς το αριστερό πλήκτρο του ποντικιού!"
 
 #. Sound has been muted (silenced) via keyboard shortcut
-#: ../tuxpaint.c:1964
+#: ../tuxpaint.c:1969
 msgid "Sound muted."
 msgstr "Χωρίς ήχο."
 
 #. Sound has been unmuted (unsilenced) via keyboard shortcut
-#: ../tuxpaint.c:1969
+#: ../tuxpaint.c:1974
 msgid "Sound unmuted."
 msgstr "Με ήχο."
 
 #. Wait while Text tool finishes loading fonts
-#: ../tuxpaint.c:2406
+#: ../tuxpaint.c:2411
 msgid "Please wait…"
 msgstr "Παρακαλώ περιμένετε..."
 
-#: ../tuxpaint.c:7056
+#: ../tuxpaint.c:7061
 msgid "Pick a color."
 msgstr "Δάλεξε ένα χρώμα."
 
 #. Open dialog: 'Erase' button, to erase/deleted the selected picture
-#: ../tuxpaint.c:7833
+#: ../tuxpaint.c:7838
 msgid "Erase"
 msgstr "Σβήσιμο"
 
 #. Open dialog: 'Slides' button, to switch to slide show mode
-#: ../tuxpaint.c:7836
+#: ../tuxpaint.c:7841
 msgid "Slides"
 msgstr "Προβολή διαφανειών."
 
 #. Open dialog: 'Back' button, to dismiss Open dialog without opening a picture
-#: ../tuxpaint.c:7839
+#: ../tuxpaint.c:7844
 msgid "Back"
 msgstr "Προηγούμενο"
 
 #. Slideshow: 'Next' button, to load next slide (image)
-#: ../tuxpaint.c:7842
+#: ../tuxpaint.c:7847
 msgid "Next"
 msgstr "Επόμενο."
 
 #. Slideshow: 'Play' button, to begin a slideshow sequence
-#: ../tuxpaint.c:7845
+#: ../tuxpaint.c:7850
 msgid "Play"
 msgstr "Άνοιγμα."
 
 #. Label for 'Letters' buttons (font selector, down the right when the Text tool is being used); used to show the difference between font faces
-#: ../tuxpaint.c:8438
+#: ../tuxpaint.c:8443
 msgid "Aa"
 msgstr "Αα"
 
 #. Admittedly stupid way of determining which keys can be used for
 #. positive and negative responses in dialogs (e.g., [Y] (for 'yes') in English)
-#: ../tuxpaint.c:11343
+#: ../tuxpaint.c:11348
 msgid "Yes"
 msgstr "Ναι"
 
-#: ../tuxpaint.c:11347
+#: ../tuxpaint.c:11352
 msgid "No"
 msgstr "Όχι"
 
 #. Prompt to ask whether user wishes to save over old version of their file
-#: ../tuxpaint.c:12296
+#: ../tuxpaint.c:12301
 msgid "Replace the picture with your changes?"
 msgstr "Να αντικαταστήσω την ζωγραφιά με τις αλλαγές που έκανες;"
 
 #. Positive response to saving over old version
 #. (like a 'File:Save' action in other applications)
-#: ../tuxpaint.c:12300
+#: ../tuxpaint.c:12305
 msgid "Yes, replace the old one!"
 msgstr "Ναι, αντικατέστησε την παλιά ζωγραφιά!"
 
 #. Negative response to saving over old version (saves a new image)
 #. (like a 'File:Save As...' action in other applications)
-#: ../tuxpaint.c:12304
+#: ../tuxpaint.c:12309
 msgid "No, save a new file!"
 msgstr "Όχι, αποθήκευση σε νέο αρχείο!"
 
-#: ../tuxpaint.c:13067
+#: ../tuxpaint.c:13072
 msgid "Choose the picture you want, then click “Open”."
 msgstr "Επέλεξε την ζωγραφιά που θέλεις, και μετά πάτησε “Άνοιγμα”."
 
 #. Let user choose images:
 #. Instructions for Slideshow file dialog (FIXME: Make a #define)
-#: ../tuxpaint.c:14054 ../tuxpaint.c:14368
+#: ../tuxpaint.c:14059 ../tuxpaint.c:14373
 msgid "Choose the pictures you want, then click “Play”."
 msgstr "Επέλεξε την ζωγραφιά που θέλεις, και μετά πάτησε \"Ανοιγμα”."
 
@@ -689,250 +689,250 @@ msgstr "Πρόγραμμα ζωγραφικής"
 msgid "Tux Paint"
 msgstr "Tux Paint"
 
-#: ../../magic/src/blocks_chalk_drip.c:133
+#: ../../magic/src/blocks_chalk_drip.c:132
 msgid "Blocks"
 msgstr "Κομματάκια"
 
-#: ../../magic/src/blocks_chalk_drip.c:135
+#: ../../magic/src/blocks_chalk_drip.c:134
 msgid "Chalk"
 msgstr "Κιμωλία"
 
-#: ../../magic/src/blocks_chalk_drip.c:137
+#: ../../magic/src/blocks_chalk_drip.c:136
 msgid "Drip"
 msgstr "Στάξιμο."
 
-#: ../../magic/src/blocks_chalk_drip.c:147
+#: ../../magic/src/blocks_chalk_drip.c:146
 msgid "Click and move the mouse around to make the picture blocky."
 msgstr "Κάνε κλικ και κίνησε το ποντίκι για να κάνεις τη ζωγραφιά κομματάκια."
 
-#: ../../magic/src/blocks_chalk_drip.c:150
+#: ../../magic/src/blocks_chalk_drip.c:149
 msgid ""
 "Click and move the mouse around to turn the picture into a chalk drawing."
 msgstr ""
 "Κάνε κλικ και κίνησε το ποντίκι για να μετατρέψεις την εικόνα σε σχέδιο με "
 "κιμωλία."
 
-#: ../../magic/src/blocks_chalk_drip.c:153
+#: ../../magic/src/blocks_chalk_drip.c:152
 msgid "Click and move the mouse around to make the picture drip."
 msgstr "Κάνε κλικ και κίνησε το ποντίκι για να κάνεις τη ζωγραφιά να στάζει."
 
-#: ../../magic/src/blur.c:77
+#: ../../magic/src/blur.c:76
 msgid "Blur"
 msgstr "Θάμπωμα"
 
-#: ../../magic/src/blur.c:84
+#: ../../magic/src/blur.c:83
 msgid "Click and move the mouse around to blur the picture."
 msgstr "Κάνε κλικ και κίνησε το ποντίκι για να θαμπώσεις τη ζωγραφιά."
 
 #. Both are named "Bricks", at the moment:
-#: ../../magic/src/bricks.c:105
+#: ../../magic/src/bricks.c:104
 msgid "Bricks"
 msgstr "Τουβλάκια"
 
-#: ../../magic/src/bricks.c:112
+#: ../../magic/src/bricks.c:111
 msgid "Click and move to draw large bricks."
 msgstr "Κάνε κλικ και κίνησε το ποντίκι για να ζωγραφίσεις μεγάλα τούβλα."
 
-#: ../../magic/src/bricks.c:114
+#: ../../magic/src/bricks.c:113
 msgid "Click and move to draw small bricks."
 msgstr "Κάνε κλικ και και κίνησε το ποντίκι για να ζωγραφίσεις μικρά τούβλα."
 
-#: ../../magic/src/calligraphy.c:109
+#: ../../magic/src/calligraphy.c:108
 msgid "Calligraphy"
 msgstr "Καλλιγραφία."
 
-#: ../../magic/src/calligraphy.c:116
+#: ../../magic/src/calligraphy.c:115
 msgid "Click and move the mouse around to draw in calligraphy."
 msgstr "Κάνε κλικ και κίνησε το ποντίκι για να σχεδιάσεις καλλιγραφικά."
 
-#: ../../magic/src/cartoon.c:81
+#: ../../magic/src/cartoon.c:80
 msgid "Cartoon"
 msgstr "Καρτούν"
 
-#: ../../magic/src/cartoon.c:88
+#: ../../magic/src/cartoon.c:87
 msgid "Click and move the mouse around to turn the picture into a cartoon."
 msgstr ""
 "Κάνε κλικ και κίνησε το ποντίκι για να κάνεις τη ζωγραφιά να μοιάζει με "
 "καρτούν."
 
-#: ../../magic/src/distortion.c:122
+#: ../../magic/src/distortion.c:121
 msgid "Distortion"
 msgstr "Παραμόρφωση."
 
-#: ../../magic/src/distortion.c:130
+#: ../../magic/src/distortion.c:129
 msgid "Click and drag the mouse to cause a distortion in your picture."
 msgstr "Κάνε κλικ και σύρε το ποντίκι για να παραμορφώσεις την εικόνα σου."
 
-#: ../../magic/src/emboss.c:77
+#: ../../magic/src/emboss.c:76
 msgid "Emboss"
 msgstr "Ανάγλυφο."
 
-#: ../../magic/src/emboss.c:83
+#: ../../magic/src/emboss.c:82
 msgid "Click and drag the mouse to emboss the picture."
 msgstr "Κάνε κλικ και σύρε το ποντίκι για να κάνεις την εικόνα ανάγλυφη."
 
-#: ../../magic/src/fade_darken.c:117
+#: ../../magic/src/fade_darken.c:116
 msgid "Lighten"
 msgstr "Ελαφρύνω"
 
-#: ../../magic/src/fade_darken.c:119
+#: ../../magic/src/fade_darken.c:118
 msgid "Darken"
 msgstr "Σκουραίνω"
 
-#: ../../magic/src/fade_darken.c:129
+#: ../../magic/src/fade_darken.c:128
 msgid "Click and move to fade the colors."
 msgstr "Κάνε κλικ και  κίνησε το ποντίκι για να ξεθωριάσεις τα χρώματα."
 
-#: ../../magic/src/fade_darken.c:132
+#: ../../magic/src/fade_darken.c:131
 msgid "Click and move to darken the colors."
 msgstr "Κάνε κλικ και και κίνησε το ποντίκι για να σκουρίνεις τα χρώματα."
 
-#: ../../magic/src/fill.c:88
+#: ../../magic/src/fill.c:87
 msgid "Fill"
 msgstr "Γέμισμα"
 
-#: ../../magic/src/fill.c:95
+#: ../../magic/src/fill.c:94
 msgid "Click in the picture to fill that area with color."
 msgstr "Κάνε κλικ και κίνησε το ποντίκι για να γεμίσεις την περιοχή με χρώμα."
 
-#: ../../magic/src/flower.c:125
+#: ../../magic/src/flower.c:124
 msgid "Flower"
 msgstr "Λουλούδι."
 
-#: ../../magic/src/flower.c:131
+#: ../../magic/src/flower.c:130
 msgid "Click and drag to draw a flower stalk. Let go to finish the flower."
 msgstr ""
 "Κάνε κλικ και σύρε το ποντίκι για να σχεδιάσεις ένα λουλούδι με κοτσάνι."
 
-#: ../../magic/src/foam.c:105
+#: ../../magic/src/foam.c:104
 msgid "Foam"
 msgstr "Αφρός."
 
-#: ../../magic/src/foam.c:111
+#: ../../magic/src/foam.c:110
 msgid "Click and drag the mouse to cover an area with foamy bubbles."
 msgstr ""
 "Κάνε κλικ και σύρε το ποντίκι για να καλύψεις την περιοχή με φούσκες αφρού."
 
-#: ../../magic/src/glasstile.c:84
+#: ../../magic/src/glasstile.c:83
 msgid "Glass Tile"
 msgstr "Υαλότουβλο."
 
-#: ../../magic/src/glasstile.c:90
+#: ../../magic/src/glasstile.c:89
 msgid "Click and drag the mouse to put glass tile over your picture."
 msgstr ""
 "Κάνε κλικ και σύρε το ποντίκι για να βάλεις μια δέσμη φωτός στην εικόνα σου."
 
-#: ../../magic/src/grass.c:93
+#: ../../magic/src/grass.c:92
 msgid "Grass"
 msgstr "Γρασίδι"
 
-#: ../../magic/src/grass.c:99
+#: ../../magic/src/grass.c:98
 msgid "Click and move to draw grass. Don’t forget the dirt!"
 msgstr ""
 "Κάνε κλικ και κούνα το ποντίκι για να ζωγραφίσεις το γρασίδι. Προσοχή μην "
 "ξεχάσεις το χώμα!"
 
-#: ../../magic/src/kalidescope.c:78
+#: ../../magic/src/kalidescope.c:77
 msgid "Kaleidoscope"
 msgstr "Καλειδοσκόπιο."
 
-#: ../../magic/src/kalidescope.c:84
+#: ../../magic/src/kalidescope.c:83
 msgid ""
 "Click and drag the mouse to draw with symmetric brushes (a kaleidoscope)."
 msgstr ""
 "Κάνε κλικ και σύρε το ποντίκι για να σχεδιάσεις με συμμετρικές βούρτσες "
 "(καλειδοσκόπιο)."
 
-#: ../../magic/src/light.c:85
+#: ../../magic/src/light.c:84
 msgid "Light"
 msgstr "Φως."
 
-#: ../../magic/src/light.c:91
+#: ../../magic/src/light.c:90
 msgid "Click and drag to draw a beam of light on your picture."
 msgstr ""
 "Κάνε κλικ και σύρε το ποντίκι για να βάλεις μια δέσμη φωτός στην εικόνα σου."
 
-#: ../../magic/src/metalpaint.c:78
+#: ../../magic/src/metalpaint.c:77
 msgid "Metal Paint"
 msgstr "Μεταλλική μπογιά."
 
-#: ../../magic/src/metalpaint.c:84
+#: ../../magic/src/metalpaint.c:83
 msgid "Click and drag the mouse to paint with a metallic color."
 msgstr "Κάνε κλικ και σύρε το ποντίκι για να βάψεις με μεταλλικό χρώμα."
 
-#: ../../magic/src/mirror_flip.c:95
+#: ../../magic/src/mirror_flip.c:94
 msgid "Mirror"
 msgstr "Καθρέπτης"
 
-#: ../../magic/src/mirror_flip.c:97
+#: ../../magic/src/mirror_flip.c:96
 msgid "Flip"
 msgstr "Άνω-Κάτω"
 
-#: ../../magic/src/mirror_flip.c:107
+#: ../../magic/src/mirror_flip.c:106
 msgid "Click to make a mirror image."
 msgstr "Κάνε κλικ για να φτιάξεις μια εικόνα-είδωλο."
 
-#: ../../magic/src/mirror_flip.c:110
+#: ../../magic/src/mirror_flip.c:109
 msgid "Click to flip the picture upside-down."
 msgstr "Κάνε κλικ για να γυρίσεις τη ζωγραφιά άνω-κάτω."
 
-#: ../../magic/src/negative.c:73
+#: ../../magic/src/negative.c:72
 msgid "Negative"
 msgstr "Αρνητικό"
 
-#: ../../magic/src/negative.c:80
+#: ../../magic/src/negative.c:79
 msgid "Click and move the mouse around to draw a negative."
 msgstr ""
 "Κάνε κλικ και κίνησε το ποντίκι για να κάνεις τη ζωγραφιά να μοιάζει με "
 "αρνητικό φωτογραφίας."
 
-#: ../../magic/src/rainbow.c:108
+#: ../../magic/src/rainbow.c:107
 msgid "Rainbow"
 msgstr "Ουράνιο Τόξο"
 
-#: ../../magic/src/rainbow.c:115
+#: ../../magic/src/rainbow.c:114
 msgid "You can draw in rainbow colors!"
 msgstr "Μπορείς να ζωγραφίσεις με τα χρώματα του ουράνιου τόξου!"
 
-#: ../../magic/src/ripples.c:82
+#: ../../magic/src/ripples.c:81
 msgid "Ripples"
 msgstr "Κυματάκια."
 
-#: ../../magic/src/ripples.c:88
+#: ../../magic/src/ripples.c:87
 msgid "Click to make ripples appear over your picture."
 msgstr "Κάνε κλικ για να εμφανιστούν κυματάκια στην εικόνα σου."
 
-#: ../../magic/src/shift.c:105
+#: ../../magic/src/shift.c:104
 msgid "Shift"
 msgstr "Μετακίνηση."
 
-#: ../../magic/src/shift.c:111
+#: ../../magic/src/shift.c:110
 msgid "Click and drag to shift your picture around on the canvas."
 msgstr ""
 "Κάνε κλικ και σύρε το ποντίκι για να μετακινήσεις την εικόνα πάνω στον καμβά."
 
-#: ../../magic/src/smudge.c:78
+#: ../../magic/src/smudge.c:77
 msgid "Smudge"
 msgstr "Μουτζούρα"
 
-#: ../../magic/src/smudge.c:85
+#: ../../magic/src/smudge.c:84
 msgid "Click and move the mouse around to smudge the picture."
 msgstr "Κάνε κλικ και κίνησε το ποντίκι για να μουτζουρώσεις τη ζωγραφιά."
 
-#: ../../magic/src/tint.c:78
+#: ../../magic/src/tint.c:77
 msgid "Tint"
 msgstr "Απόχρωση"
 
-#: ../../magic/src/tint.c:85
+#: ../../magic/src/tint.c:84
 msgid "Click and move the mouse around to change the picture’s color."
 msgstr ""
 "Κάνε κλικ και κίνησε το ποντίκι για να αλλάξεις τα χρώματα της εικόνας."
 
-#: ../../magic/src/waves.c:79
+#: ../../magic/src/waves.c:78
 msgid "Waves"
 msgstr "Κύματα."
 
-#: ../../magic/src/waves.c:85
+#: ../../magic/src/waves.c:84
 msgid ""
 "Click to make the picture wavy. Click toward the top for shorter waves, the "
 "bottom for taller waves, the left for small waves, and the right for long "

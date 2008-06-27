@@ -25,7 +25,7 @@
 
   $Id$
 
-  June 14, 2002 - May 29, 2008
+  June 14, 2002 - June 27, 2008
 */
 
 #include <stdio.h>
@@ -68,13 +68,13 @@ const char *lang_prefixes[NUM_LANGS] = {
   "de",
   "el",
   "en",
-  "en_au",
-  "en_ca",
-  "en_gb",
-  "en_za",
+  "en_AU",
+  "en_CA",
+  "en_GB",
+  "en_ZA",
   "eo",
   "es",
-  "es_mx",
+  "es_MX",
   "et",
   "eu",
   "fi",
@@ -109,8 +109,8 @@ const char *lang_prefixes[NUM_LANGS] = {
   "oc",
   "oj",
   "pl",
-  "pt_br",
-  "pt_pt",
+  "pt_BR",
+  "pt_PT",
   "ro",
   "ru",
   "rw",
@@ -132,8 +132,8 @@ const char *lang_prefixes[NUM_LANGS] = {
   "wa",
   "wo",
   "xh",
-  "zh_cn",
-  "zh_tw",
+  "zh_CN",
+  "zh_TW",
   "zw"
 };
 
