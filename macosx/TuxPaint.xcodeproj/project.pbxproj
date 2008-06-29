@@ -1411,6 +1411,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 22ECE2B30CEFE00900D390B3 /* Build configuration list for PBXNativeTarget "blocks_chalk_drip" */;
 			buildPhases = (
+				220D35E70E15A45000D0EFD5 /* Make Magic API */,
 				22ECE2AB0CEFE00200D390B3 /* Headers */,
 				22ECE2AC0CEFE00200D390B3 /* Sources */,
 				22ECE2AD0CEFE00200D390B3 /* Frameworks */,
@@ -1930,6 +1931,22 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		220D35E70E15A45000D0EFD5 /* Make Magic API */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/../src/tp_magic_api.h.in",
+			);
+			name = "Make Magic API";
+			outputPaths = (
+				"$(SRCROOT)/../src/tp_magic_api.h",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "cd ..\nmake src/tp_magic_api.h";
+		};
 		2217B7D50CD6F6C400DC1DA3 /* Update Library Install Paths */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -1999,7 +2016,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/zsh;
-			shellScript = "# set path to msgfmt command in MacPorts or Fink\nPATH=/opt/local/bin:/sw/bin/:$PATH\n\ncd ../\n{\n\tmake translations\n} always {\n\techo 'Did you get an error complaining that the msgfmt command was not found?  If so, please install the \"gettext\" package via MacPorts or Fink.'\n}\nmake LOCALE_PREFIX=./locale install-gettext";
+			shellScript = "# set path to msgfmt command in MacPorts or Fink\nPATH=/opt/local/bin:/sw/bin/:$PATH\n\ncd ..\n{\n\tmake translations\n} always {\n\techo 'Did you get an error complaining that the msgfmt command was not found?  If so, please install the \"gettext\" package via MacPorts or Fink.'\n}\nmake LOCALE_PREFIX=./locale install-gettext";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -2506,12 +2523,12 @@
 					HAVE_STRCASESTR,
 					"$(PREPROCESSOR_MACROS_$(CURRENT_ARCH))",
 				);
-				GCC_PREPROCESSOR_DEFINITIONS_QUOTED_1 = "VER_DATE=\\\"2008-02-21\\\"";
+				GCC_PREPROCESSOR_DEFINITIONS_QUOTED_1 = "VER_DATE=\\\"2008-06-28\\\"";
 				GCC_PREPROCESSOR_DEFINITIONS_QUOTED_2 = "DATA_PREFIX=\\\"Tux\\ Paint.app/Contents/Resources/\\\"";
 				GCC_PREPROCESSOR_DEFINITIONS_QUOTED_3 = "DOC_PREFIX=\\\"./share/doc/tuxpaint/\\\"";
 				GCC_PREPROCESSOR_DEFINITIONS_QUOTED_4 = "CONFDIR=\\\"$(HOME)/Library/Application\\ Support/TuxPaint/\\\"";
 				GCC_PREPROCESSOR_DEFINITIONS_QUOTED_5 = "LOCALEDIR=\\\"Tux\\ Paint.app/Contents/Resources/locale/\\\"";
-				GCC_PREPROCESSOR_DEFINITIONS_QUOTED_6 = "VER_VERSION=\\\"0.9.19\\\"";
+				GCC_PREPROCESSOR_DEFINITIONS_QUOTED_6 = "VER_VERSION=\\\"0.9.20\\\"";
 				GCC_PREPROCESSOR_DEFINITIONS_QUOTED_7 = "MAGIC_PREFIX=\\\"Tux\\ Paint.app/Contents/Resources/plugins/\\\"";
 				GCC_PREPROCESSOR_DEFINITIONS_QUOTED_8 = "IMDIR=\\\"Tux\\ Paint.app/Contents/Resources/im/\\\"";
 				HEADER_SEARCH_PATHS = (
@@ -2576,12 +2593,12 @@
 					HAVE_STRCASESTR,
 					"$(PREPROCESSOR_MACROS_$(CURRENT_ARCH))",
 				);
-				GCC_PREPROCESSOR_DEFINITIONS_QUOTED_1 = "VER_DATE=\\\"2008-02-21\\\"";
+				GCC_PREPROCESSOR_DEFINITIONS_QUOTED_1 = "VER_DATE=\\\"2008-06-28\\\"";
 				GCC_PREPROCESSOR_DEFINITIONS_QUOTED_2 = "DATA_PREFIX=\\\"Tux\\ Paint.app/Contents/Resources/\\\"";
 				GCC_PREPROCESSOR_DEFINITIONS_QUOTED_3 = "DOC_PREFIX=\\\"./share/doc/tuxpaint/\\\"";
 				GCC_PREPROCESSOR_DEFINITIONS_QUOTED_4 = "CONFDIR=\\\"$(HOME)/Library/Application\\ Support/TuxPaint/\\\"";
 				GCC_PREPROCESSOR_DEFINITIONS_QUOTED_5 = "LOCALEDIR=\\\"Tux\\ Paint.app/Contents/Resources/locale/\\\"";
-				GCC_PREPROCESSOR_DEFINITIONS_QUOTED_6 = "VER_VERSION=\\\"0.9.19\\\"";
+				GCC_PREPROCESSOR_DEFINITIONS_QUOTED_6 = "VER_VERSION=\\\"0.9.20\\\"";
 				GCC_PREPROCESSOR_DEFINITIONS_QUOTED_7 = "MAGIC_PREFIX=\\\"Tux\\ Paint.app/Contents/Resources/plugins/\\\"";
 				GCC_PREPROCESSOR_DEFINITIONS_QUOTED_8 = "IMDIR=\\\"Tux\\ Paint.app/Contents/Resources/im/\\\"";
 				HEADER_SEARCH_PATHS = (
@@ -2645,12 +2662,12 @@
 					HAVE_STRCASESTR,
 					"$(PREPROCESSOR_MACROS_$(CURRENT_ARCH))",
 				);
-				GCC_PREPROCESSOR_DEFINITIONS_QUOTED_1 = "VER_DATE=\\\"2008-02-21\\\"";
+				GCC_PREPROCESSOR_DEFINITIONS_QUOTED_1 = "VER_DATE=\\\"2008-06-28\\\"";
 				GCC_PREPROCESSOR_DEFINITIONS_QUOTED_2 = "DATA_PREFIX=\\\"Tux\\ Paint.app/Contents/Resources/\\\"";
 				GCC_PREPROCESSOR_DEFINITIONS_QUOTED_3 = "DOC_PREFIX=\\\"./share/doc/tuxpaint/\\\"";
 				GCC_PREPROCESSOR_DEFINITIONS_QUOTED_4 = "CONFDIR=\\\"$(HOME)/Library/Application\\ Support/TuxPaint/\\\"";
 				GCC_PREPROCESSOR_DEFINITIONS_QUOTED_5 = "LOCALEDIR=\\\"Tux\\ Paint.app/Contents/Resources/locale/\\\"";
-				GCC_PREPROCESSOR_DEFINITIONS_QUOTED_6 = "VER_VERSION=\\\"0.9.19\\\"";
+				GCC_PREPROCESSOR_DEFINITIONS_QUOTED_6 = "VER_VERSION=\\\"0.9.20\\\"";
 				GCC_PREPROCESSOR_DEFINITIONS_QUOTED_7 = "MAGIC_PREFIX=\\\"Tux\\ Paint.app/Contents/Resources/plugins/\\\"";
 				GCC_PREPROCESSOR_DEFINITIONS_QUOTED_8 = "IMDIR=\\\"Tux\\ Paint.app/Contents/Resources/im/\\\"";
 				HEADER_SEARCH_PATHS = (
