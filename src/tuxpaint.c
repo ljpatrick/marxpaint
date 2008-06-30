@@ -329,6 +329,25 @@ extern WrapperData macosx;
 
 #ifndef NO_SDLPANGO
 
+/*
+ The following section renames global variables defined in SDL_Pango.h to avoid errors during linking.
+ It is okay to rename these variables because they are constants.
+ SDL_Pango.h is included by tuxpaint.c.  
+ */
+#define _MATRIX_WHITE_BACK _MATRIX_WHITE_BACK0
+#define MATRIX_WHITE_BACK MATRIX_WHITE_BACK0
+#define _MATRIX_BLACK_BACK _MATRIX_BLACK_BACK0
+#define MATRIX_BLACK_BACK MATRIX_BLACK_BACK0
+#define _MATRIX_TRANSPARENT_BACK_BLACK_LETTER _MATRIX_TRANSPARENT_BACK_BLACK_LETTER0
+#define MATRIX_TRANSPARENT_BACK_BLACK_LETTER MATRIX_TRANSPARENT_BACK_BLACK_LETTER0
+#define _MATRIX_TRANSPARENT_BACK_WHITE_LETTER _MATRIX_TRANSPARENT_BACK_WHITE_LETTER0
+#define MATRIX_TRANSPARENT_BACK_WHITE_LETTER MATRIX_TRANSPARENT_BACK_WHITE_LETTER0
+#define _MATRIX_TRANSPARENT_BACK_TRANSPARENT_LETTER _MATRIX_TRANSPARENT_BACK_TRANSPARENT_LETTER0
+#define MATRIX_TRANSPARENT_BACK_TRANSPARENT_LETTER MATRIX_TRANSPARENT_BACK_TRANSPARENT_LETTER0
+/*
+ The renaming ends here.
+ */
+
 #include "SDL_Pango.h"
 #if !defined(SDL_PANGO_H)
 #error "---------------------------------------------------"
