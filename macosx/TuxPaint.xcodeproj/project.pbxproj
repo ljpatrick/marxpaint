@@ -648,7 +648,7 @@
 		22F45B110CE3FF4D00DB7761 /* Tux Paint.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Tux Paint.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		22F45E500CE3FFE100DB7761 /* distortion.c */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.c; name = distortion.c; path = ../magic/src/distortion.c; sourceTree = SOURCE_ROOT; };
 		22F45E530CE4015300DB7761 /* grass.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = grass.c; path = ../magic/src/grass.c; sourceTree = SOURCE_ROOT; };
-		22F4616E0CE41B6E00DB7761 /* tp_magic_api.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = tp_magic_api.h; sourceTree = SOURCE_ROOT; };
+		22F4616E0CE41B6E00DB7761 /* tp_magic_api.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = tp_magic_api.h; path = ../src/tp_magic_api.h; sourceTree = SOURCE_ROOT; };
 		8D1107310486CEB800E47090 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
