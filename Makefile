@@ -265,7 +265,7 @@ build/tuxpaint-$(VER_VERSION):
 	@echo
 	@mkdir -p build/tuxpaint-$(VER_VERSION)
 	@find . -follow \
-	     \( -wholename '*/CVS' -o -name .cvsignore -o -name 'build' -o -name '.#*' \) \
+	     \( -wholename '*/CVS' -o -name .cvsignore -o -name 'dummy.o' -o -name 'build' -o -name '.#*' \) \
 	     -prune -o -type f -exec cp --parents -vdp \{\} build/tuxpaint-$(VER_VERSION)/ \;
 
 .PHONY: release
