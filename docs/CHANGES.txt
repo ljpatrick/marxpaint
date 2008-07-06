@@ -8,6 +8,11 @@ http://www.tuxpaint.org/
 
 $Id$
 
+2008.July.06 (0.9.21)
+  * New Starters:
+    -------------
+    * Silver Frame
+      Caroline Ford <caroline.ford.work@googlemail.com>
 
 2008.June.26 (0.9.20)
   * New translations:

@@ -7,7 +7,7 @@ bill@newbreedsoftware.com
 http://www.tuxpaint.org/
 
 
-June 17, 2002 - June 23, 2008
+June 17, 2002 - July 6, 2008
 
 $Id$
 
@@ -148,6 +148,9 @@ $Id$
     Creator: Wikipedia user Amada44
     Processed by into a tuxpaint starter by: 
     Caroline Ford <caroline.ford.work@googlemail.com>
+
+  * Silver Frame
+    Original is by Nicu Buculei and taken from Open Clip Art. Prepared by Caroline Ford <caroline.ford.work@googlemail.com>
 
 * Fonts
 
