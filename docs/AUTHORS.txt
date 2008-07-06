@@ -45,6 +45,9 @@ $Id$
     documentation.  This software is provided "as is" without express or
     implied warranty.
 
+  Some magic tools by:
+  Andrew Corcoran <akanewbie@gmail.com>
+
 
 * Graphics
 
