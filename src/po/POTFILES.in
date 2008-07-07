@@ -9,7 +9,9 @@ titles.h
 tools.h
 tuxpaint.c
 tuxpaint.desktop.in
+../magic/src/blackAndWhite.c
 ../magic/src/blocks_chalk_drip.c
+../magic/src/blurAll.c
 ../magic/src/blur.c
 ../magic/src/bricks.c
 ../magic/src/calligraphy.c
@@ -29,6 +31,7 @@ tuxpaint.desktop.in
 ../magic/src/negative.c
 ../magic/src/rainbow.c
 ../magic/src/ripples.c
+../magic/src/sharpen.c
 ../magic/src/shift.c
 ../magic/src/smudge.c
 ../magic/src/tint.c

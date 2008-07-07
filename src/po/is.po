@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint-is 0.9.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-06-27 13:15-0700\n"
+"POT-Creation-Date: 2008-07-07 07:22-0700\n"
 "PO-Revision-Date: 2004-03-15 15:38GMT\n"
 "Last-Translator: Pjetur G. Hjaltason <pjetur@pjetur.net>\n"
 "Language-Team: Icelandic <kde-isl@molar.is>\n"
@@ -387,7 +387,7 @@ msgstr "Ný"
 #. Open a saved picture
 #. buttons for the file open dialog
 #. Open dialog: 'Open' button, to load the selected picture
-#: ../tools.h:75 ../tuxpaint.c:7835
+#: ../tools.h:75 ../tuxpaint.c:7854
 msgid "Open"
 msgstr "Opna"
 
@@ -503,176 +503,176 @@ msgid "OK then… Let’s keep drawing this one!"
 msgstr "Allt í lagi... Höldum þá áfram með þessa!"
 
 #. Prompt to confirm user wishes to quit
-#: ../tuxpaint.c:1809
+#: ../tuxpaint.c:1828
 msgid "Do you really want to quit?"
 msgstr "Viltu í alvöru hætta?"
 
 #. Quit prompt positive response (quit)
-#: ../tuxpaint.c:1812
+#: ../tuxpaint.c:1831
 msgid "Yes, I'm done!"
 msgstr ""
 
 #. Quit prompt negative response (don't quit)
-#: ../tuxpaint.c:1815 ../tuxpaint.c:1842
+#: ../tuxpaint.c:1834 ../tuxpaint.c:1861
 msgid "No, take me back!"
 msgstr ""
 
 #. Current picture is not saved; user is quitting
-#: ../tuxpaint.c:1819
+#: ../tuxpaint.c:1838
 msgid "If you quit, you’ll lose your picture! Save it?"
 msgstr "Ef þú hættir tapast myndin! Viltu geyma hana?"
 
-#: ../tuxpaint.c:1820 ../tuxpaint.c:1825
+#: ../tuxpaint.c:1839 ../tuxpaint.c:1844
 msgid "Yes, save it!"
 msgstr ""
 
-#: ../tuxpaint.c:1821 ../tuxpaint.c:1826
+#: ../tuxpaint.c:1840 ../tuxpaint.c:1845
 msgid "No, don't bother saving!"
 msgstr ""
 
 #. Current picture is not saved; user is opening another picture
-#: ../tuxpaint.c:1824
+#: ../tuxpaint.c:1843
 msgid "Save your picture first?"
 msgstr "Geyma myndina fyrst?"
 
 #. Error opening picture
-#: ../tuxpaint.c:1829
+#: ../tuxpaint.c:1848
 msgid "Can’t open that picture!"
 msgstr "Get ekki opnað þessa mynd?"
 
 #. Generic dialog dismissal
-#: ../tuxpaint.c:1832 ../tuxpaint.c:1837 ../tuxpaint.c:1846 ../tuxpaint.c:1850
-#: ../tuxpaint.c:1859
+#: ../tuxpaint.c:1851 ../tuxpaint.c:1856 ../tuxpaint.c:1865 ../tuxpaint.c:1869
+#: ../tuxpaint.c:1878
 msgid "OK"
 msgstr "Í lagi"
 
 #. Notification that 'Open' dialog has nothing to show
-#: ../tuxpaint.c:1836
+#: ../tuxpaint.c:1855
 msgid "There are no saved files!"
 msgstr "Fann engar geymdar myndir!"
 
 #. Verification of print action
-#: ../tuxpaint.c:1840
+#: ../tuxpaint.c:1859
 msgid "Print your picture now?"
 msgstr "Prenta myndina núna?"
 
-#: ../tuxpaint.c:1841
+#: ../tuxpaint.c:1860
 msgid "Yes, print it!"
 msgstr ""
 
 #. Confirmation of successful (we hope) printing
-#: ../tuxpaint.c:1845
+#: ../tuxpaint.c:1864
 msgid "Your picture has been printed!"
 msgstr "Búið að prenta myndina þína!"
 
 #. Notification that it's too soon to print again (--printdelay option is in effect)
-#: ../tuxpaint.c:1849
+#: ../tuxpaint.c:1868
 msgid "You can’t print yet!"
 msgstr "Þú getur ekki prentað strax!"
 
 #. Prompt to confirm erasing a picture in the Open dialog
-#: ../tuxpaint.c:1853
+#: ../tuxpaint.c:1872
 msgid "Erase this picture?"
 msgstr "Eyða myndinni?"
 
-#: ../tuxpaint.c:1854
+#: ../tuxpaint.c:1873
 msgid "Yes, erase it!"
 msgstr ""
 
-#: ../tuxpaint.c:1855
+#: ../tuxpaint.c:1874
 msgid "No, don't erase it!"
 msgstr ""
 
 #. Reminder that Mouse Button 1 is the button to use in Tux Paint
-#: ../tuxpaint.c:1858
+#: ../tuxpaint.c:1877
 msgid "Remember to use the left mouse button!"
 msgstr ""
 
 #. Sound has been muted (silenced) via keyboard shortcut
-#: ../tuxpaint.c:1969
+#: ../tuxpaint.c:1988
 msgid "Sound muted."
 msgstr ""
 
 #. Sound has been unmuted (unsilenced) via keyboard shortcut
-#: ../tuxpaint.c:1974
+#: ../tuxpaint.c:1993
 msgid "Sound unmuted."
 msgstr ""
 
 #. Wait while Text tool finishes loading fonts
-#: ../tuxpaint.c:2411
+#: ../tuxpaint.c:2430
 msgid "Please wait…"
 msgstr ""
 
-#: ../tuxpaint.c:7061
+#: ../tuxpaint.c:7080
 msgid "Pick a color."
 msgstr ""
 
 #. Open dialog: 'Erase' button, to erase/deleted the selected picture
-#: ../tuxpaint.c:7838
+#: ../tuxpaint.c:7857
 msgid "Erase"
 msgstr "Eyða"
 
 #. Open dialog: 'Slides' button, to switch to slide show mode
-#: ../tuxpaint.c:7841
+#: ../tuxpaint.c:7860
 msgid "Slides"
 msgstr ""
 
 #. Open dialog: 'Back' button, to dismiss Open dialog without opening a picture
-#: ../tuxpaint.c:7844
+#: ../tuxpaint.c:7863
 msgid "Back"
 msgstr "Til baka"
 
 #. Slideshow: 'Next' button, to load next slide (image)
-#: ../tuxpaint.c:7847
+#: ../tuxpaint.c:7866
 #, fuzzy
 msgid "Next"
 msgstr "Texti"
 
 #. Slideshow: 'Play' button, to begin a slideshow sequence
-#: ../tuxpaint.c:7850
+#: ../tuxpaint.c:7869
 msgid "Play"
 msgstr ""
 
 #. Label for 'Letters' buttons (font selector, down the right when the Text tool is being used); used to show the difference between font faces
-#: ../tuxpaint.c:8443
+#: ../tuxpaint.c:8462
 msgid "Aa"
 msgstr ""
 
 #. Admittedly stupid way of determining which keys can be used for
 #. positive and negative responses in dialogs (e.g., [Y] (for 'yes') in English)
-#: ../tuxpaint.c:11348
+#: ../tuxpaint.c:11367
 msgid "Yes"
 msgstr "Já"
 
-#: ../tuxpaint.c:11352
+#: ../tuxpaint.c:11371
 msgid "No"
 msgstr "Nei"
 
 #. Prompt to ask whether user wishes to save over old version of their file
-#: ../tuxpaint.c:12301
+#: ../tuxpaint.c:12320
 msgid "Replace the picture with your changes?"
 msgstr ""
 
 #. Positive response to saving over old version
 #. (like a 'File:Save' action in other applications)
-#: ../tuxpaint.c:12305
+#: ../tuxpaint.c:12324
 msgid "Yes, replace the old one!"
 msgstr ""
 
 #. Negative response to saving over old version (saves a new image)
 #. (like a 'File:Save As...' action in other applications)
-#: ../tuxpaint.c:12309
+#: ../tuxpaint.c:12328
 #, fuzzy
 msgid "No, save a new file!"
 msgstr "Nei, geyma nýja mynd!"
 
-#: ../tuxpaint.c:13072
+#: ../tuxpaint.c:13091
 msgid "Choose the picture you want, then click “Open”."
 msgstr "Veldu teikningu, og smelltu svo á 'Opna'."
 
 #. Let user choose images:
 #. Instructions for Slideshow file dialog (FIXME: Make a #define)
-#: ../tuxpaint.c:14059 ../tuxpaint.c:14373
+#: ../tuxpaint.c:14078 ../tuxpaint.c:14392
 #, fuzzy
 msgid "Choose the pictures you want, then click “Play”."
 msgstr "Veldu teikningu, og smelltu svo á 'Opna'."
@@ -689,6 +689,22 @@ msgstr "Teikniforrit"
 #, fuzzy
 msgid "Tux Paint"
 msgstr "Teikna"
+
+#: ../../magic/src/blackAndWhite.c:60
+msgid "Black & White"
+msgstr ""
+
+#: ../../magic/src/blackAndWhite.c:61
+msgid "Threshold"
+msgstr ""
+
+#: ../../magic/src/blackAndWhite.c:64
+msgid "Click to convert the image to greyscale."
+msgstr ""
+
+#: ../../magic/src/blackAndWhite.c:65
+msgid "Click to threshold the image into black and white regions."
+msgstr ""
 
 #: ../../magic/src/blocks_chalk_drip.c:132
 msgid "Blocks"
@@ -714,6 +730,16 @@ msgstr "Smelltu og hreyfðu músina til að búa til krítarmynd!"
 #: ../../magic/src/blocks_chalk_drip.c:152
 msgid "Click and move the mouse around to make the picture drip."
 msgstr "Smelltu og hreyfðu músina til að láta myndina leka."
+
+#: ../../magic/src/blurAll.c:57
+#, fuzzy
+msgid "Blur All"
+msgstr "Óskýr"
+
+#: ../../magic/src/blurAll.c:60
+#, fuzzy
+msgid "Click to blur the whole image."
+msgstr "Smelltu til að gera spegilmynd."
 
 #: ../../magic/src/blur.c:76
 msgid "Blur"
@@ -905,6 +931,32 @@ msgstr ""
 #, fuzzy
 msgid "Click to make ripples appear over your picture."
 msgstr "Smelltu og hreyfðu músina til að gera myndina þynnri."
+
+#: ../../magic/src/sharpen.c:72
+msgid "Trace Contour"
+msgstr ""
+
+#: ../../magic/src/sharpen.c:73
+#, fuzzy
+msgid "Sharpen"
+msgstr "Form"
+
+#: ../../magic/src/sharpen.c:74
+msgid "Silhouette"
+msgstr ""
+
+#: ../../magic/src/sharpen.c:77
+msgid "Click to trace the edges of objects in the image."
+msgstr ""
+
+#: ../../magic/src/sharpen.c:78
+#, fuzzy
+msgid "Click to sharpen the image."
+msgstr "Smelltu til að gera spegilmynd."
+
+#: ../../magic/src/sharpen.c:79
+msgid "Click to create a black and white silhouette of the image."
+msgstr ""
 
 #: ../../magic/src/shift.c:104
 msgid "Shift"
