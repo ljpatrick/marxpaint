@@ -1,10 +1,9 @@
 [Desktop Entry]
-Encoding=UTF-8
 _Name=Tux Paint
 Type=Application
 Exec=tuxpaint
 Icon=tuxpaint
 Terminal=false
-Categories=Education; Art;
+Categories=Education;Art;
 _GenericName=Drawing program
 _Comment=A drawing program for children.

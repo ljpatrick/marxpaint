@@ -19,6 +19,10 @@ $Id$
     * BlurAll, Sharpen and BlackandWhite
        Andrew Corcoran <akanewbie@gmail.com>
 
+  * Build System Improvements
+    -------------------------
+    * Adhering to Debian & FreeDesktop.org standards regarding .desktop file.
+
 2008.June.26 (0.9.20)
   * New translations:
     -----------------
