@@ -1,5 +1,4 @@
 [Desktop Entry]
-Encoding=UTF-8
 Name=Tux Paint
 Name[af]=Tux Verf
 Name[ar]=رسم توكس
@@ -74,7 +73,7 @@ Type=Application
 Exec=tuxpaint
 Icon=tuxpaint
 Terminal=false
-Categories=Education; Art;
+Categories=Education;Art;
 GenericName=Drawing program
 GenericName[af]=Tekenprogram
 GenericName[ar]=برنامج رسم
