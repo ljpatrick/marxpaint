@@ -1,6 +1,7 @@
 /* tp_magic_example.c
 
    An example of a "Magic" tool plugin for Tux Paint
+   Last modified: 2008.07.07
 */
 
 
@@ -479,5 +480,36 @@ void example_line_callback(void * ptr, int which,
       }
     }
   }
+}
+
+// Switch-In event
+//
+// This happens whenever a Magic tool is enabled, either because the
+// user just selected it, or they just came back to "Magic" after using
+// another tool (e.g., Brush or Text), and this was the most-recently
+// selected Magic tool.  (This also applies to momentary tools, like
+// Undo and Redo, and image-changing tools such as New and Open.)
+// 
+// Our example doesn't do anything when we switch to, or away from, our
+// Magic tools, so we just do nothing here.
+
+void example_switchin(magic_api * api, int which, SDL_Surface * canvas)
+{
+}
+
+// Switch-Out event
+//
+// This happens whenever a Magic tool is disabled, either because the
+// user selected a different Magic tool, or they selected a completely
+// different tool (e.g., Brush or Text).
+// (This also applies to momentary tools, like Undo and Redo, and
+// image-changing tools such as New and Open, in which case the
+// switchin() function will be called moments later.)
+// 
+// Our example doesn't do anything when we switch to, or away from, our
+// Magic tools, so we just do nothing here.
+
+void example_switchout(magic_api * api, int which, SDL_Surface * canvas)
+{
 }
 

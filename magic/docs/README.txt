@@ -1,14 +1,14 @@
                      Creating Tux Paint Magic Tool Plugins
 
-                Copyright 2007-2007 by Bill Kendrick and others
+                Copyright 2007-2008 by Bill Kendrick and others
                                New Breed Software
 
                            bill@newbreedsoftware.com
                             http://www.tuxpaint.org/
 
-                        July 5, 2007 - November 21, 2007
+                          July 5, 2007 - July 7, 2008
 
-   --------------------------------------------------------------------------
+     ----------------------------------------------------------------------
 
 Overview
 
@@ -22,50 +22,39 @@ Overview
      graphics tools, such as The GIMP, should be familiar with this plugin
      concept.)
 
-   --------------------------------------------------------------------------
+     ----------------------------------------------------------------------
 
 Table of Contents
 
      * Prequisites
      * Interfaces
-
           * 'Magic' tool plugin functions
-
                * Common arguments to plugin functions
                * Required Plugin Functions
-
                     * Plugin "housekeeping" functions
                     * Plugin event functions
-
           * Tux Paint Functions and Data
-
                * Pixel Manipulations
                * Helper Functions
                * Informational
                * Tux Paint System Calls
                * Color Conversions
-
           * Helper Macros in "tp_magic_api.h"
           * Constant Definitions in "tp_magic_api.h"
-
      * Compiling
-
           * Linux and other Unix-like Platforms
           * Windows
           * Mac OS X
-
      * Installing
-
           * Linux and other Unix-like Platforms
           * Windows
           * Mac OS X
-
      * Creating plugins with multiple effects
      * Example Code
      * Getting Help
      * Glossary
 
-   --------------------------------------------------------------------------
+     ----------------------------------------------------------------------
 
 Prerequisites
 
@@ -76,7 +65,7 @@ Prerequisites
      Familiarity with the SDL API is highly recommended, but some basic SDL
      concepts will be covered in this document.
 
-   --------------------------------------------------------------------------
+     ----------------------------------------------------------------------
 
 Interfaces
 
@@ -101,7 +90,7 @@ Interfaces
      header files) for building a plugin. (See "Compiling", below.)
 
      The C header file and command-line tool mentioned above are included
-     with Tux Paint -- or in some cases, as part of a "Tux Paint 'Magic' Tool
+     with Tux Paint - or in some cases, as part of a "Tux Paint 'Magic' Tool
      Plugin Development package".
 
   'Magic' tool plugin functions
@@ -117,7 +106,6 @@ Interfaces
 
        Here is a description of arguments that many of your plugin's
        functions will need to accept.
-
          * magic_api * api
            Pointer to a C structure containing pointers to Tux Paint
            functions and other data that the plugin can (and sometimes
@@ -257,6 +245,40 @@ Interfaces
              Note: This function is called once, when Tux Paint exits.
 
       Plugin event functions:
+
+           * void switchin(magic_api * api, int which,
+             SDL_Surface * snapshot, SDL_Surface * canvas)
+             void switchout(magic_api * api, int which,
+             SDL_Surface * snapshot, SDL_Surface * canvas)
+             switchin() is called whenever one of the plugin's Magic tools
+             becomes active, and switchout() is called whenever one becomes
+             inactive. This can be because the user just clicked a specific
+             Magic tool (the current one is switched-out, and a new one is
+             switched-in).
+
+             It can also happen when user leaves/returns from the selection
+             of "Magic" tools when doing some other activity (i.e., using a
+             different tool, such as "Text" or "Brush", activating a
+             momentary tool, such as "Undo" and "Redo", or returning from a
+             dialog - possibly with a new picture when it switches back -
+             such as "Open", "New" or "Quit"). In this case, the same Magic
+             tool is first 'switched-out', and then 'switched-back-in',
+             usually moments later.
+
+             These functions allow users to interact in complicated was with
+             Magic tools (for example, a tool that lets the user draw
+             multiple freehand strokes, and then uses that as input such as
+             handwriting - normally, the user could click somewhere in the
+             canvas to tell the Magic tool they are 'finished', but if they
+             switch to another tool, the Magic tool may want to undo any
+             temporary changes to the canvas).
+
+             These functions could also be used to streamline certain
+             effects; a behind-the-scenes copy of the entire canvas could be
+             altered in some way when the user first switches to the canvas,
+             and then pieces of that copy could be drawn on the canvas when
+             they draw with the Magic tool.
+             Note: Added to Tux Paint 0.9.21; Magic API version '0x00000002'
 
            * void set_color(magic_api * api, Uint8 r, Uint8 g, Uint8 g)
              Tux Paint will call this function to inform the plugin of the
@@ -468,8 +490,7 @@ Interfaces
              This function notifies Tux Paint of special events. Various
              values defined in "tp_magic_api.h" can be 'or'ed together (using
              C's boolean 'or': "|") and sent to this function.
-
-                * SPECIAL_FLIP -- The contents of the canvas has been flipped
+                * SPECIAL_FLIP - The contents of the canvas has been flipped
                   vertically.
 
                   If a 'Starter' image was used as the basis of this image,
@@ -479,7 +500,7 @@ Interfaces
                   (or unflipped) should be recorded on disk when the current
                   drawing is saved.
 
-                * SPECIAL_MIRROR -- Similar to SPECIAL_FLIP, but for magic
+                * SPECIAL_MIRROR - Similar to SPECIAL_FLIP, but for magic
                   tools that mirror the contents of the canvas horizontally.
 
     Color Conversions
@@ -559,7 +580,7 @@ Interfaces
            These are flags for Tux Paint's "special_notify()" helper
            function. They are described above.
 
-   --------------------------------------------------------------------------
+     ----------------------------------------------------------------------
 
 Compiling
 
@@ -570,9 +591,9 @@ Compiling
        source code.
 
        Use the "tp-magic-config --cflags" command, supplied as part of
-       Tux Paint -- or in some cases, as part of a "Tux Paint 'Magic' Tool
-       Plugin Development package" -- to provide additional command-line
-       flags to your C compiler that will help it build your plugin.
+       Tux Paint - or in some cases, as part of a "Tux Paint 'Magic' Tool
+       Plugin Development package" - to provide additional command-line flags
+       to your C compiler that will help it build your plugin.
 
     Command-Line Example
 
@@ -658,15 +679,15 @@ Compiling
 
        TBD
 
-   --------------------------------------------------------------------------
+     ----------------------------------------------------------------------
 
 Installing
 
   Linux and other Unix-like Platforms
 
        Use the "tp-magic-config" command-line tool, supplied as part of
-       Tux Paint -- or in some cases, as part of a "Tux Paint 'Magic' Tool
-       Plugin Development package" -- to determine where your plugins' files
+       Tux Paint - or in some cases, as part of a "Tux Paint 'Magic' Tool
+       Plugin Development package" - to determine where your plugins' files
        should go.
 
     Shared Object
@@ -803,7 +824,7 @@ Installing
 
        TBD
 
-   --------------------------------------------------------------------------
+     ----------------------------------------------------------------------
 
 Creating plugins with multiple effects
 
@@ -842,7 +863,7 @@ Creating plugins with multiple effects
            {
              /* Becomes, for example,
            "/usr/share/tuxpaint/sounds/magic/one.ogg" */
-
+             
              snprintf(fname, sizeof(fname), "%s/sounds/magic/%s",
                  api->data_prefix, my_plugin_snd_filenames[i];
 
@@ -865,14 +886,14 @@ Creating plugins with multiple effects
      an effect with little effort. ("NUM_TOOLS" will simply be '1', your
      arrays will be of length '1', etc.)
 
-   --------------------------------------------------------------------------
+     ----------------------------------------------------------------------
 
 Example Code
 
      The C source file "tp_magic_example.c" contains a complete example of a
      plugin with multiple simple effects.
 
-   --------------------------------------------------------------------------
+     ----------------------------------------------------------------------
 
 Getting Help
 
@@ -884,7 +905,7 @@ Getting Help
      "tuxpaint-devel" and "tuxpaint-users" mailing lists:
      http://www.tuxpaint.org/lists/.
 
-   --------------------------------------------------------------------------
+     ----------------------------------------------------------------------
 
 Glossary
 

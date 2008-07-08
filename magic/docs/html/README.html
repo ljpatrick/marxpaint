@@ -9,13 +9,13 @@ alink="#FF00FF">
 <center>
 <h1>Creating Tux Paint Magic Tool Plugins</h1>
 
-<p>Copyright 2007-2007 by Bill Kendrick and others<br>
+<p>Copyright 2007-2008 by Bill Kendrick and others<br>
 New Breed Software</p>
 
 <p><a href="mailto:bill@newbreedsoftware.com">bill@newbreedsoftware.com</a><br>
 <a href="http://www.tuxpaint.org/">http://www.tuxpaint.org/</a></p>
 
-<p>July 5, 2007 - November 21, 2007</p>
+<p>July 5, 2007 - July 7, 2008</p>
 </center>
 
 <hr size=2 noshade>
@@ -319,6 +319,45 @@ then the names of your functions must begin with "<code><b>zoom_</b></code>"
 <h5><a name="eventfuncs">Plugin event functions:</a></h5>
 
 <ul>
+<li><code><b>void switchin(magic_api&nbsp;*&nbsp;api,
+  int&nbsp;which,
+  SDL_Surface&nbsp;*&nbsp;snapshot, SDL_Surface&nbsp;*&nbsp;canvas)
+  </b></code><br>
+  <code><b>void switchout(magic_api&nbsp;*&nbsp;api,
+  int&nbsp;which,
+  SDL_Surface&nbsp;*&nbsp;snapshot, SDL_Surface&nbsp;*&nbsp;canvas)
+  </b></code><br>
+  <code>switchin()</code> is called whenever one of the plugin's Magic
+  tools becomes active, and <code>switchout()</code> is called whenever
+  one becomes inactive.  This can be because the user just clicked a
+  specific Magic tool (the current one is switched-out, and a new one
+  is switched-in).<br>
+  <br>
+  It can also happen when user leaves/returns
+  from the selection of "Magic" tools when doing some other activity
+  (i.e., using a different tool, such as "Text" or "Brush", activating
+  a momentary tool, such as "Undo" and "Redo", or returning from a
+  dialog &mdash; possibly with a new picture when it switches back
+  &mdash; such as "Open", "New" or "Quit").  In this case, the same
+  Magic tool is first 'switched-out', and then 'switched-back-in', usually
+  moments later.<br>
+  <br>
+  These functions allow users to interact in complicated was with Magic
+  tools (for example, a tool that lets the user draw <i>multiple</i>
+  freehand strokes, and then uses that as input such as handwriting &mdash;
+  normally, the user could click somewhere in the canvas to tell the
+  Magic tool they are 'finished', but if they switch to another tool, the
+  Magic tool may want to undo any temporary changes to the canvas).<br>
+  <br>
+  These functions could also be used to streamline certain effects;
+  a behind-the-scenes copy of the entire canvas could be altered in some
+  way when the user first switches to the canvas, and then pieces of that
+  copy could be drawn on the canvas when they draw with the Magic tool.
+  <br>
+  <i>Note: Added to Tux&nbsp;Paint 0.9.21; Magic API version
+  '0x00000002'</i><br>
+  <br>
+
 <li><code><b>void set_color(magic_api&nbsp;*&nbsp;api,
   Uint8&nbsp;r, Uint8&nbsp;g, Uint8&nbsp;g)
   </b></code><br>

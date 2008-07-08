@@ -1550,6 +1550,9 @@ SDL_Surface * magic_scale(SDL_Surface * surf, int w, int h, int aspect);
 void reset_touched(void);
 Uint8 magic_touched(int x, int y);
 
+void magic_switchin(SDL_Surface * last);
+void magic_switchout(SDL_Surface * last);
+
 #ifdef DEBUG
 static char *debug_gettext(const char *str);
 static int charsize(Uint16 c);
@@ -1953,7 +1956,9 @@ static void mainloop(void)
 
       if (event.type == SDL_QUIT)
       {
+        magic_switchout(canvas);
 	done = do_quit(cur_tool);
+        magic_switchin(canvas);
       }
       else if (event.type == SDL_ACTIVEEVENT)
       {
@@ -1974,7 +1979,9 @@ static void mainloop(void)
 
 	if (key == SDLK_ESCAPE && !disable_quit)
 	{
+          magic_switchout(canvas);
 	  done = do_quit(cur_tool);
+          magic_switchin(canvas);
 	}
 	else if (key == SDLK_s && (mod & KMOD_ALT))
 	{
@@ -2000,17 +2007,23 @@ static void mainloop(void)
 	else if (key == SDLK_ESCAPE &&
 		 (mod & KMOD_SHIFT) && (mod & KMOD_CTRL))
 	{
+          magic_switchout(canvas);
 	  done = do_quit(cur_tool);
+          magic_switchin(canvas);
 	}
 #ifdef WIN32
 	else if (key == SDLK_F4 && (mod & KMOD_ALT))
 	{
+          magic_switchout(canvas);
 	  done = do_quit(cur_tool);
+          magic_switchin(canvas);
 	}
 #endif
 	else if (key == SDLK_z && (mod & KMOD_CTRL) && !noshortcuts)
 	{
 	  /* Ctrl-Z - Undo */
+
+          magic_switchout(canvas);
 
 	  if (tool_avail[TOOL_UNDO])
 	  {
@@ -2024,10 +2037,14 @@ static void mainloop(void)
 	    update_screen_rect(&r_tools);
 	    shape_tool_mode = SHAPE_TOOL_MODE_DONE;
 	  }
+
+          magic_switchin(canvas);
 	}
 	else if (key == SDLK_r && (mod & KMOD_CTRL) && !noshortcuts)
 	{
 	  /* Ctrl-R - Redo */
+
+	  magic_switchout(canvas);
 
 	  if (tool_avail[TOOL_REDO])
 	  {
@@ -2036,10 +2053,14 @@ static void mainloop(void)
 	    update_screen_rect(&r_tools);
 	    shape_tool_mode = SHAPE_TOOL_MODE_DONE;
 	  }
+	  
+          magic_switchin(canvas);
 	}
 	else if (key == SDLK_o && (mod & KMOD_CTRL) && !noshortcuts)
 	{
 	  /* Ctrl-O - Open */
+
+          magic_switchout(canvas);
 
 	  disable_avail_tools();
 	  draw_toolbar();
@@ -2075,10 +2096,14 @@ static void mainloop(void)
 
 	  /* FIXME: Make delay configurable: */
 	  control_drawtext_timer(1000, tool_tips[cur_tool], 0);
+          
+	  magic_switchin(canvas);
 	}
 	else if ((key == SDLK_n && (mod & KMOD_CTRL)) && !noshortcuts)
 	{
 	  /* Ctrl-N - New */
+
+          magic_switchout(canvas);
 
 	  hide_blinking_cursor();
   	  shape_tool_mode = SHAPE_TOOL_MODE_DONE;
@@ -2114,10 +2139,14 @@ static void mainloop(void)
 	    draw_shapes();
 	  else if (cur_tool == TOOL_ERASER)
 	    draw_erasers();
+          
+	  magic_switchin(canvas);
 	}
 	else if (key == SDLK_s && (mod & KMOD_CTRL) && !noshortcuts)
 	{
 	  /* Ctrl-S - Save */
+
+          magic_switchout(canvas);
 
 	  hide_blinking_cursor();
 	  if (do_save(cur_tool, 0))
@@ -2131,6 +2160,8 @@ static void mainloop(void)
 	  /* cur_tool = old_tool; */
 	  draw_toolbar();
 	  update_screen_rect(&r_tools);
+          
+          magic_switchin(canvas);
 	}
 #ifdef __APPLE__
     else if (key == SDLK_p && (mod & KMOD_CTRL) && (mod & KMOD_SHIFT) &&
@@ -2339,6 +2370,8 @@ static void mainloop(void)
 	{
 	  /* A tool on the left has been pressed! */
 
+          magic_switchout(canvas);
+
 	  which = GRIDHIT_GD(r_tools, gd_tools);
 
 	  if (which < NUM_TOOLS && tool_avail[which] &&
@@ -2367,7 +2400,6 @@ static void mainloop(void)
 		}
 	      }
 	    }
-
 
 	    old_tool = cur_tool;
 	    cur_tool = which;
@@ -2473,6 +2505,7 @@ static void mainloop(void)
               magic_current_snd_ptr = NULL;
 	      draw_magic();
 	      draw_colors(magics[cur_magic].colors);
+
 	      if (magics[cur_magic].colors)
 	        magic_funcs[magics[cur_magic].handle_idx].set_color(
 						magic_api_struct,
@@ -2638,6 +2671,8 @@ static void mainloop(void)
 	    update_screen_rect(&r_toolopt);
 	    update_screen_rect(&r_ttoolopt);
 	  }
+
+          magic_switchin(canvas);
 	}
 	else if (HIT(r_toolopt) && valid_click(event.button.button))
 	{
@@ -3101,6 +3136,8 @@ static void mainloop(void)
 	    }
 	    else if (cur_tool == TOOL_MAGIC)
 	    {
+              magic_switchout(canvas);
+
 	      if (cur_thing != cur_magic)
 	      {
 		cur_magic = cur_thing;
@@ -3118,6 +3155,8 @@ static void mainloop(void)
 
 	      if (do_draw)
 		draw_magic();
+              
+              magic_switchin(canvas);
 	    }
 
 	    /* Update the screen: */
@@ -18765,3 +18804,18 @@ Uint32 magic_getpixel(SDL_Surface * surface, int x, int y)
 }
 
 
+void magic_switchout(SDL_Surface * last)
+{
+  if (cur_tool == TOOL_MAGIC)
+    magic_funcs[magics[cur_magic].handle_idx].switchout(magic_api_struct,
+					                magics[cur_magic].idx,
+					                canvas, last);
+}
+
+void magic_switchin(SDL_Surface * last)
+{
+  if (cur_tool == TOOL_MAGIC)
+    magic_funcs[magics[cur_magic].handle_idx].switchin(magic_api_struct,
+					               magics[cur_magic].idx,
+					               canvas, last);
+}
