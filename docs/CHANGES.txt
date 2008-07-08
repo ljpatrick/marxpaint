@@ -28,6 +28,12 @@ $Id$
     -------------------------
     * Adhering to Debian & FreeDesktop.org standards regarding .desktop file.
 
+  * Bug Fixes
+    ---------
+    * [Ctrl]+[P] keyboard shortcut for printing was not complying with
+      option to disable printing capability (e.g., "--noprint")! Fixed.
+
+
 2008.June.26 (0.9.20)
   * New translations:
     -----------------

@@ -22,7 +22,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
   
-  June 14, 2002 - July 7, 2008
+  June 14, 2002 - July 8, 2008
   $Id$
 */
 
@@ -2167,15 +2167,18 @@ static void mainloop(void)
     else if (key == SDLK_p && (mod & KMOD_CTRL) && (mod & KMOD_SHIFT) &&
 !noshortcuts) {
         /* Ctrl-Shft-P - Page Setup */
-        DisplayPageSetup(canvas);
+        if (!disable_print)
+          DisplayPageSetup(canvas);
     }
 #endif
     else if (key == SDLK_p && (mod & KMOD_CTRL) && !noshortcuts)
     {
       /* Ctrl-P - Print */
 
-      /* If they haven't hit [Enter], but clicked 'Print', add their text now -bjk 2007.10.25 */
-      if (cur_tool == TOOL_TEXT && texttool_len > 0)
+      if (!disable_print)
+      {
+        /* If they haven't hit [Enter], but clicked 'Print', add their text now -bjk 2007.10.25 */
+        if (cur_tool == TOOL_TEXT && texttool_len > 0)
         {
           rec_undo_buffer();
           do_render_cur_text(1);
@@ -2183,10 +2186,11 @@ static void mainloop(void)
           cursor_textwidth = 0;
         }
 
-      print_image(); 
-      draw_toolbar();
-      draw_tux_text(TUX_BORED, "", 0);
-      update_screen_rect(&r_tools);        
+        print_image(); 
+        draw_toolbar();
+        draw_tux_text(TUX_BORED, "", 0);
+        update_screen_rect(&r_tools);        
+      }
     }
 	else
 	{
