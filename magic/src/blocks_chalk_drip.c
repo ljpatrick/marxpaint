@@ -23,7 +23,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  Last updated: May 6, 2008
+  Last updated: July 7, 2008
   $Id$
 */
 
@@ -320,3 +320,12 @@ int blocks_chalk_drip_requires_colors(magic_api * api ATTRIBUTE_UNUSED, int whic
 {
   return 0;
 }
+
+void blocks_chalk_drip_switchin(magic_api * api, int which, SDL_Surface * canvas)
+{
+}
+
+void blocks_chalk_drip_switchout(magic_api * api, int which, SDL_Surface * canvas)
+{
+}
+

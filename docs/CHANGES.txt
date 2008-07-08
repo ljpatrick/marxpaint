@@ -19,6 +19,11 @@ $Id$
     * BlurAll, Sharpen and BlackandWhite
        Andrew Corcoran <akanewbie@gmail.com>
 
+  * Magic Tool Plug-in API Updates:
+    -------------------------------
+    * Added "_switchin()" and "_switchout()" functions, to tell Magic tools
+      when they are selected or deselected.
+
   * Build System Improvements
     -------------------------
     * Adhering to Debian & FreeDesktop.org standards regarding .desktop file.

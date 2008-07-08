@@ -4,7 +4,7 @@
   Sharpen, Trace Contour and Silhouette Magic Tool Plugin
   Tux Paint - A simple drawing program for children.
 
-  Copyright (c) 2002-2007 by Bill Kendrick and others; see AUTHORS.txt
+  Copyright (c) 2002-2008 by Bill Kendrick and others; see AUTHORS.txt
   bill@newbreedsoftware.com
   http://www.tuxpaint.org/
 
@@ -23,7 +23,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  Last updated: June 6, 2008
+  Last updated: July 7, 2008
   $Id$
 */
 
@@ -264,5 +264,13 @@ void sharpen_set_color(magic_api * api, Uint8 r, Uint8 g, Uint8 b)
 int sharpen_requires_colors(magic_api * api, int which)
 {
   return 0;
+}
+
+void sharpen_switchin(magic_api * api, int which, SDL_Surface * canvas)
+{
+}
+
+void sharpen_switchout(magic_api * api, int which, SDL_Surface * canvas)
+{
 }
 

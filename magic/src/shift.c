@@ -4,7 +4,7 @@
   Shift Magic Tool Plugin
   Tux Paint - A simple drawing program for children.
 
-  Copyright (c) 2002-2007 by Bill Kendrick and others; see AUTHORS.txt
+  Copyright (c) 2002-2008 by Bill Kendrick and others; see AUTHORS.txt
   bill@newbreedsoftware.com
   http://www.tuxpaint.org/
 
@@ -23,7 +23,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  Last updated: November 21, 2007
+  Last updated: July 7, 2008
   $Id$
 */
 
@@ -322,3 +322,12 @@ int shift_requires_colors(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_
 {
   return 0;
 }
+
+void shift_switchin(magic_api * api, int which, SDL_Surface * canvas)
+{
+}
+
+void shift_switchout(magic_api * api, int which, SDL_Surface * canvas)
+{
+}
+

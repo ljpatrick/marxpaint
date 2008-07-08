@@ -22,7 +22,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
   
-  June 14, 2002 - May 28, 2008
+  June 14, 2002 - July 7, 2008
   $Id$
 */
 
@@ -902,6 +902,8 @@ typedef struct magic_funcs_s {
   void (*click)(magic_api *, int, SDL_Surface *, SDL_Surface *, int, int, SDL_Rect *);
   void (*drag)(magic_api *, int, SDL_Surface *, SDL_Surface *, int, int, int, int, SDL_Rect *);
   void (*release)(magic_api *, int, SDL_Surface *, SDL_Surface *, int, int, SDL_Rect *);
+  void (*switchin)(magic_api *, int, SDL_Surface *, SDL_Surface *);
+  void (*switchout)(magic_api *, int, SDL_Surface *, SDL_Surface *);
 } magic_funcs_t;
 
 
@@ -16871,6 +16873,16 @@ void load_magic_plugins(void)
 	      magic_funcs[num_plugin_files].release =
 	        SDL_LoadFunction(magic_handle[num_plugin_files], funcname);
 
+              snprintf(funcname, sizeof(funcname), "%s_%s", objname,
+			       "switchin");
+	      magic_funcs[num_plugin_files].switchin =
+	        SDL_LoadFunction(magic_handle[num_plugin_files], funcname);
+
+              snprintf(funcname, sizeof(funcname), "%s_%s", objname,
+			       "switchout");
+	      magic_funcs[num_plugin_files].switchout =
+	        SDL_LoadFunction(magic_handle[num_plugin_files], funcname);
+
 #ifdef DEBUG
 	      printf("get_tool_count = 0x%x\n",
 		   (int) magic_funcs[num_plugin_files].get_tool_count);
@@ -16896,6 +16908,10 @@ void load_magic_plugins(void)
 		   (int) magic_funcs[num_plugin_files].drag);
 	      printf("release = 0x%x\n",
 		   (int) magic_funcs[num_plugin_files].release);
+	      printf("switchin = 0x%x\n",
+		   (int) magic_funcs[num_plugin_files].switchin);
+	      printf("switchout = 0x%x\n",
+		   (int) magic_funcs[num_plugin_files].switchout);
 #endif
 
 	      err = 0;
@@ -16957,6 +16973,18 @@ void load_magic_plugins(void)
 	      if (magic_funcs[num_plugin_files].release == NULL)
 	      {
 	        fprintf(stderr, "Error: plugin %s is missing release\n",
+		      fname);
+                err = 1;
+	      }
+	      if (magic_funcs[num_plugin_files].switchin == NULL)
+	      {
+	        fprintf(stderr, "Error: plugin %s is missing switchin\n",
+		      fname);
+                err = 1;
+	      }
+	      if (magic_funcs[num_plugin_files].switchout == NULL)
+	      {
+	        fprintf(stderr, "Error: plugin %s is missing switchout\n",
 		      fname);
                 err = 1;
 	      }

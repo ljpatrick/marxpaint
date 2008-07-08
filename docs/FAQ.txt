@@ -1,5 +1,5 @@
                                    Tux Paint
-                                 version 0.9.20
+                                 version 0.9.21
                            Frequently Asked Questions
 
                 Copyright 2002-2008 by Bill Kendrick and others
@@ -8,7 +8,7 @@
                            bill@newbreedsoftware.com
                             http://www.tuxpaint.org/
 
-                     September 14, 2002 - February 28, 2008
+                       September 14, 2002 - July 7, 2008
 
 Drawing-related
 
@@ -132,7 +132,6 @@ Interface Problems
        to my language", below.
 
      * Tux Paint won't switch to my language
-
           * Linux and Unix users: Make sure the locale is available
 
             Make sure the locale you want is available. Check your
@@ -318,9 +317,7 @@ Saving
 Audio Problems
 
      * There's no sound!
-
           * First, check the obvious:
-
                * Are your speakers connected and turned on?
                * Is the volume turned up on your speakers?
                * Is the volume turned up in your Operating System's "mixer?"
@@ -333,7 +330,6 @@ Audio Problems
                  "export SDL_AUDIODRIVER=arts"). Or, run Tux Paint through
                  the system's rerouter (e.g., run "artsdsp tuxpaint" or
                  "esddsp tuxpaint", instead of simply "tuxpaint").
-
           * Is sound disabled in Tux Paint?
 
             If sound seems to work otherwise (and you're sure no other
@@ -385,7 +381,6 @@ Audio Problems
           * Press [Alt] + [S] while in Tux Paint to temporarily disable
             sounds. (Press that key sequence again to re-enable sounds.)
           * Run Tux Paint with the "no sound" option:
-
                * Use Tux Paint Config to uncheck the "Enable Sound Effects"
                  option (under "Video & Sound").
                * Edit Tux Paint's configuration file (see OPTIONS for
@@ -394,7 +389,6 @@ Audio Problems
                  or desktop icon.
                * Recompile Tux Paint with sound support disabled. (See above
                  and INSTALL.txt.)
-
      * The sound effects sound strange
 
        This could have to do with how SDL and SDL_mixer were initialized.
@@ -459,7 +453,7 @@ Fullscreen Mode Problems
        Or use Tux Paint Config. and make sure "Fullscreen" (under "Video &
        Sound") is not checked.
 
-Other Problems
+Other Probelms
 
      * Tux Paint won't run
 

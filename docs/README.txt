@@ -1,7 +1,7 @@
                                    Tux Paint
-                                 version 0.9.20
+                                 version 0.9.21
 
-                     A simple drawing program for children
+  A simple drawing program for children
 
                 Copyright 2002-2008 by Bill Kendrick and others
                                New Breed Software
@@ -9,9 +9,9 @@
                            bill@newbreedsoftware.com
                             http://www.tuxpaint.org/
 
-                         June 14, 2002 - March 27, 2008
+                          June 14, 2002 - July 7, 2008
 
-   --------------------------------------------------------------------------
+     ----------------------------------------------------------------------
 
    +-------------------------------------------+
    |             Table of Contents             |
@@ -23,7 +23,7 @@
    |  * How to Get Help                        |
    +-------------------------------------------+
 
-   --------------------------------------------------------------------------
+     ----------------------------------------------------------------------
 
                                      About
 
@@ -77,7 +77,7 @@ Objectives:
                is done by selecting it from a collection of thumbnails.
                Access to other files on the computer is restricted.
 
-   --------------------------------------------------------------------------
+     ----------------------------------------------------------------------
 
                                 Using Tux Paint
 
@@ -85,7 +85,7 @@ Loading Tux Paint
 
   Linux/Unix Users
 
-         Tux Paint should have placed a launcher icon in your KDE and/or GNOME
+         Tux Paint should have placed a laucher icon in your KDE and/or GNOME
          menus, under 'Graphics.'
 
          Alternatively, you can run the following command at a shell prompt
@@ -96,12 +96,12 @@ Loading Tux Paint
          If any errors occur, they will be displayed on the terminal (to
          "stderr").
 
-   --------------------------------------------------------------------------
+     ----------------------------------------------------------------------
 
   Windows Users
 
-                                                                    [Icon]
-                                                                   Tux Paint
+                                                                    [Icon]    
+                                                                   Tux Paint  
 
          If you installed Tux Paint on your computer using the
          'Tux Paint Installer,' it will have asked you whether you wanted a
@@ -122,13 +122,13 @@ Loading Tux Paint
          If you used the 'ZIP-file' download, Tux Paint's folder will be
          wherever you put it when you unzipped the ZIP file.
 
-   --------------------------------------------------------------------------
+     ----------------------------------------------------------------------
 
   Mac OS X Users
 
          Simply double-click the "Tux Paint" icon.
 
-   --------------------------------------------------------------------------
+     ----------------------------------------------------------------------
 
 Title Screen
 
@@ -140,7 +140,7 @@ Title Screen
        continue. (Or, after about 30 seconds, the title screen will go away
        automatically.)
 
-   --------------------------------------------------------------------------
+     ----------------------------------------------------------------------
 
 Main Screen
 
@@ -150,8 +150,8 @@ Main Screen
 
                The toolbar contains the drawing and editing controls.
 
-[Tools: Paint, Stamp, Lines, Shapes, Text, Magic, Undo, Redo, Eraser, New, Open,
-                               Save, Print, Quit]
+[Tools: Paint, Stamp, Lines, Shapes, Text, Magic, Undo, Redo,       Eraser, New,
+                            Open, Save, Print, Quit]
 
        Middle: Drawing Canvas
 
@@ -179,8 +179,8 @@ Main Screen
                A palette of available colors are shown near the bottom of the
                screen.
 
- [Colors - Black, White, Red, Pink, Orange, Yellow, Green, Cyan, Blue, Purple,
-                                  Brown, Grey]
+  [Colors - Black, White, Red, Pink, Orange, Yellow, Green, Cyan,       Blue,
+                              Purple, Brown, Grey]
 
                (NOTE: You can define your own colors for Tux Paint. See the
                "Options" documentation.)
@@ -190,10 +190,11 @@ Main Screen
                At the very bottom of the screen, Tux, the Linux Penguin,
                provides tips and other information while you draw.
 
-(For example: 'Pick a shape. Click to pick the center, drag, then let go when it
-     is the size you want. Move around to rotate it, and click to draw it.)
+ (For example: 'Pick a shape. Click to pick the center, drag, then       let go
+when it is the size you want.  Move around to rotate it, and       click to draw
+                                      it.)
 
-   --------------------------------------------------------------------------
+     ----------------------------------------------------------------------
 
 Available Tools
 
@@ -211,7 +212,7 @@ Available Tools
                  As you draw, a sound is played. The bigger the brush, the
                  lower the pitch.
 
-   --------------------------------------------------------------------------
+     ----------------------------------------------------------------------
 
          Stamp (Rubber Stamp)
 
@@ -246,7 +247,7 @@ Available Tools
                  won't display the Mirror, Flip, Shrink and Grow controls for
                  stamps. See the "Options" documentation.)
 
-   --------------------------------------------------------------------------
+     ----------------------------------------------------------------------
 
          Lines
 
@@ -260,7 +261,7 @@ Available Tools
                  Let go of the mouse to complete the line. A "sproing!" sound
                  will play.
 
-   --------------------------------------------------------------------------
+     ----------------------------------------------------------------------
 
          Shapes
 
@@ -291,7 +292,7 @@ Available Tools
                               drawn on the canvas when you let go of the
                               mouse button. (There's no rotation step.)
 
-   --------------------------------------------------------------------------
+     ----------------------------------------------------------------------
 
          Text
 
@@ -334,16 +335,15 @@ Available Tools
                               not include all characters for all languages,
                               so sometimes you'll need to change fonts to see
                               the characters you're trying to type.
-
-                                 * Japanese -- Romanized Hiragana and
-                                   Romanized Katakana -- right [Alt]
-                                 * Korean -- Hangul 2-Bul -- right [Alt] or
+                                 * Japanese - Romanized Hiragana and
+                                   Romanized Katakana - right [Alt]
+                                 * Korean - Hangul 2-Bul - right [Alt] or
                                    left [Alt]
-                                 * Traditional Chinese -- right [Alt] or
+                                 * Traditional Chinese - right [Alt] or
                                    left [Alt]
-                                 * Thai -- right [Alt]
+                                 * Thai - right [Alt]
 
-   --------------------------------------------------------------------------
+     ----------------------------------------------------------------------
 
          Magic (Special Effects)
 
@@ -356,7 +356,7 @@ Available Tools
                  Each 'Magic' tool's instructions are contained within the
                  "magic-docs" folder.
 
-   --------------------------------------------------------------------------
+     ----------------------------------------------------------------------
 
          Eraser
 
@@ -375,7 +375,7 @@ Available Tools
                  As you erase, a "squeaky clean" eraser/wiping sound is
                  played.
 
-   --------------------------------------------------------------------------
+     ----------------------------------------------------------------------
 
   Other Controls
 
@@ -387,7 +387,7 @@ Available Tools
                  Note: You can also press [Control]-[Z] on the keyboard to
                  undo.
 
-   --------------------------------------------------------------------------
+     ----------------------------------------------------------------------
 
          Redo
 
@@ -400,7 +400,7 @@ Available Tools
                  Note: You can also press [Control]-[R] on the keyboard to
                  redo.
 
-   --------------------------------------------------------------------------
+     ----------------------------------------------------------------------
 
          New
 
@@ -425,7 +425,7 @@ Available Tools
                    overwrite the original 'Starter,' so you can use it again
                    later).
 
-   --------------------------------------------------------------------------
+     ----------------------------------------------------------------------
 
          Open
 
@@ -461,7 +461,7 @@ Available Tools
                  Note: You can also press [Control]-[O] on the keyboard to
                  get the 'Open' dialog.
 
-   --------------------------------------------------------------------------
+     ----------------------------------------------------------------------
 
          Save
 
@@ -487,7 +487,7 @@ Available Tools
                  Note: You can also press [Control]-[S] on the keyboard to
                  save.
 
-   --------------------------------------------------------------------------
+     ----------------------------------------------------------------------
 
          Print
 
@@ -597,7 +597,7 @@ Available Tools
 
                               See the "Options" documentation.)
 
-   --------------------------------------------------------------------------
+     ----------------------------------------------------------------------
 
          Slides (under "Open")
 
@@ -616,7 +616,7 @@ Available Tools
                  A sliding scale at the lower left of the screen (next to the
                  "Play" button) can be used to adjust the speed of the
                  slideshow, from slowest to fastest. Choose the leftmost
-                 setting to disable automatic advancement -- you will need to
+                 setting to disable automatic advancement - you will need to
                  press a key or click to go to the next slide (see below).
 
                  Note: The slowest setting does not automatically advance
@@ -682,7 +682,7 @@ Available Tools
                  be used to turn on sounds when the parent/teacher wants them
                  disabled.)
 
-   --------------------------------------------------------------------------
+     ----------------------------------------------------------------------
 
                      Loading Other Pictures into Tux Paint
 
@@ -784,7 +784,6 @@ Doing it Manually
 
          Calculating the height of Tux Paint's canvas requires multiple
          steps:
-
           1. Take the height of the window (e.g, 480, 600 or 768 pixels) and
              subtract 144
           2. Take the result of Step 1 and divide it by 48
@@ -794,25 +793,21 @@ Doing it Manually
           5. Finally, take the result of Step 4 and add 40
 
          Example: Tux Paint running at fullscreen on a 1440x900 display.
-
            * The canvas width is simply 1440 - 192, or 1248.
            * The canvas height is calculated as:
-
                1. 900 - 144, or 756
                2. 756 / 48, or 15.75
                3. 15.75 rounded down, or 15
                4. 15 * 48, or 720
                5. 720 + 40, or 760
-
          So the canvas within a 1440x900 Tux Paint window is 1248x760.
 
-   --------------------------------------------------------------------------
+     ----------------------------------------------------------------------
 
                                 Further Reading
 
      Other documentation included with Tux Paint (in the "docs"
      folder/directory) include:
-
        * "Magic" Tool Documentation ("magic-docs")
          Documentation for each of the currently-installed "Magic" tools.
        * AUTHORS.txt
@@ -834,7 +829,7 @@ Doing it Manually
        * SVG.txt
          Notes on creating SVG format vector images for use in Tux Paint.
 
-   --------------------------------------------------------------------------
+     ----------------------------------------------------------------------
 
                                 How to Get Help
 

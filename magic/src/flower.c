@@ -4,7 +4,7 @@
   Flower Magic Tool Plugin
   Tux Paint - A simple drawing program for children.
 
-  Copyright (c) 2002-2007 by Bill Kendrick and others; see AUTHORS.txt
+  Copyright (c) 2002-2008 by Bill Kendrick and others; see AUTHORS.txt
   bill@newbreedsoftware.com
   http://www.tuxpaint.org/
 
@@ -23,7 +23,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  Last updated: August 21, 2007
+  Last updated: July 7, 2008
   $Id$
 */
 
@@ -592,5 +592,13 @@ static void flower_colorize_petals(magic_api * api)
 
   SDL_UnlockSurface(flower_petals_colorized);
   SDL_UnlockSurface(flower_petals);
+}
+
+void flower_switchin(magic_api * api, int which, SDL_Surface * canvas)
+{
+}
+
+void flower_switchout(magic_api * api, int which, SDL_Surface * canvas)
+{
 }
 
