@@ -18982,5 +18982,7 @@ int magic_modeint(int mode)
     return 0;
   else if (mode == MODE_FULLSCREEN)
     return 1;
+  else
+    return 0;
 }
 
