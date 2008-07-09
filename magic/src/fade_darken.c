@@ -23,7 +23,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  Last updated: July 7, 2008
+  Last updated: July 8, 2008
   $Id$
 */
 
@@ -56,7 +56,7 @@ static void do_fade_darken(void * ptr, int which,
 void fade_darken_drag(magic_api * api, int which, SDL_Surface * canvas,
 	           SDL_Surface * last, int ox, int oy, int x, int y,
                    SDL_Rect * update_rect);
-void fade_darken_click(magic_api * api, int which,
+void fade_darken_click(magic_api * api, int which, int mode,
 	            SDL_Surface * canvas, SDL_Surface * last,
 	            int x, int y, SDL_Rect * update_rect);
 void fade_darken_release(magic_api * api, int which,
@@ -195,7 +195,7 @@ void fade_darken_drag(magic_api * api, int which, SDL_Surface * canvas,
 }
 
 // Ask Tux Paint to call our 'do_fade_darken()' callback at a single point
-void fade_darken_click(magic_api * api, int which,
+void fade_darken_click(magic_api * api, int which, int mode,
 	            SDL_Surface * canvas, SDL_Surface * last,
 	            int x, int y, SDL_Rect * update_rect)
 {
@@ -239,3 +239,7 @@ void fade_darken_switchout(magic_api * api, int which, SDL_Surface * canvas)
 {
 }
 
+int fade_darken_modes(magic_api * api, int which)
+{
+  return(MODE_PAINT); /* FIXME - Can also be turned into a full-image effect */
+}

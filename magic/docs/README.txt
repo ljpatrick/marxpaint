@@ -6,7 +6,7 @@
                            bill@newbreedsoftware.com
                             http://www.tuxpaint.org/
 
-                          July 5, 2007 - July 7, 2008
+                          July 5, 2007 - July 8, 2008
 
      ----------------------------------------------------------------------
 
@@ -235,6 +235,24 @@ Interfaces
 
              Note: Called once for each Magic tool your plugin claims to
              contain (by your "get_tool_count()").
+
+           * int modes(magic_api * api, int which)
+             This lets you tell Tux Paint what modes your tool can be used in
+             (either as a tool the user can paint with, or a tool that
+             affects the entire drawing at once)
+
+             You must return a value that's some combination of one or more
+             of available modes:
+                * MODE_PAINT
+                * MODE_FULLSCREEN
+             e.g., if your tool is only one that the user can paint with,
+             return "MODE_PAINT". If the user can do both, return
+             "MODE_PAINT | MODE_FULLSCREEN" to tell Tux Paint it can do both.
+
+             Note: Called once for each Magic tool your plugin claims to
+             contain (by your "get_tool_count()").
+
+             Note: Added to Tux Paint 0.9.21; Magic API version '0x00000002'
 
            * void shutdown(magic_api * api)
              The plugin should do any cleanup here. If you allocated any

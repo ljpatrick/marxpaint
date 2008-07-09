@@ -1,7 +1,7 @@
 /* tp_magic_example.c
 
    An example of a "Magic" tool plugin for Tux Paint
-   Last modified: 2008.07.07
+   Last modified: 2008.07.08
 */
 
 
@@ -279,6 +279,17 @@ int example_requires_colors(magic_api * api, int which)
   // Both of our tools accept colors, so we're always returning '1' (for "true")
 
   return 1;
+}
+
+
+// Report what modes we work in
+
+int example_modes(magic_api * api, int which)
+{
+  // Both of our tools are painted (neither affect the full-screen),
+  // so we're always returning 'MODE_PAINT'
+
+  return MODE_PAINT;
 }
 
 

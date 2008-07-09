@@ -19,10 +19,18 @@ $Id$
     * BlurAll, Sharpen and BlackandWhite
        Andrew Corcoran <akanewbie@gmail.com>
 
-  * Magic Tool Plug-in API Updates:
-    -------------------------------
-    * Added "_switchin()" and "_switchout()" functions, to tell Magic tools
-      when they are selected or deselected.
+  * Magic Tool Improvememnts:
+    --------------------------
+    * Added "_switchin()" and "_switchout()" functions to Magic tool API,
+      to tell Magic tools when they are selected or deselected.
+
+    * Added "_modes()" function to Magic tool API, so Magic tool plugins
+      can tell Tux Paint what modes it accepts, 'paint' or 'fullscreen'.
+
+    * "Paint" and "Fullscreen" control buttons added to Magic tool
+      selector UI.  Can be disabled with "--nomagiccontrols".
+
+    * "Negative" tool can now affect the entire image.
 
   * Build System Improvements
     -------------------------

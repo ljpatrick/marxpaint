@@ -39,12 +39,17 @@
 
 /* The image has been mirrored (so starter should be, too) */
 /* (as of API version 0x00000001) */
-
 #define SPECIAL_MIRROR	0x0001
 
 /* The image has been flipped (so starter should be, too) */
 /* (as of API version 0x00000001) */
 #define SPECIAL_FLIP	0x0002
+
+
+/* Flags you return when asked what modes you work in */
+/* (as of API version 0x00000002) */
+#define MODE_PAINT      0x0001  /* User can paint the tool, freehand */
+#define MODE_FULLSCREEN 0x0002  /* User can apply effect to entire canvas at once */
 
 
 typedef struct magic_api_t {

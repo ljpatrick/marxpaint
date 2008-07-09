@@ -1,5 +1,5 @@
-.\" tuxpaint.1 - 2008.06.19
-.TH TUXPAINT 1 "19 June 2008" "0.9.20" "Tux Paint"
+.\" tuxpaint.1 - 2008.07.08
+.TH TUXPAINT 1 "8 July 2008" "0.9.21" "Tux Paint"
 .SH NAME
 tuxpaint -- "Tux Paint", a drawing program for young children.
 
@@ -54,6 +54,8 @@ tuxpaint -- "Tux Paint", a drawing program for young children.
 [\-\-nostamps]
 .br
 [\-\-nostampcontrols]
+.br
+[\-\-nomagiccontrols]
 .br
 [\-\-mirrorstamps]
 .br
@@ -120,6 +122,8 @@ tuxpaint -- "Tux Paint", a drawing program for young children.
 [\-\-stamps]
 .br
 [\-\-stampcontrols]
+.br
+[\-\-magiccontrols]
 .br
 [\-\-dontmirrorstamps]
 .br
@@ -322,6 +326,13 @@ the time Tux Paint takes to load, and reduce the amount of RAM it requires.
 Disable or enable (default) buttons to control stamps.  Controls include
 mirror, flip, shrink and grow.  (Note: Not all stamps will be controllable
 in all ways.)
+
+.TP 8
+.B \-\-nomagiccontrols \-\-magiccontrols
+Disable or enable (default) buttons to control Magic tools.  Controls include
+controlling whether a Magic tool is used like a paint brush, or if it
+affects the entire image at once.  (Note: Not all Magic tools will be
+controllable.)
 
 .TP 8
 .B \-\-mirrorstamps \-\-dontmirrorstamps

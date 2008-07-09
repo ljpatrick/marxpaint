@@ -23,7 +23,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  Last updated: July 7, 2008
+  Last updated: July 8, 2008
   $Id$
 */
 
@@ -55,7 +55,7 @@ char * shift_get_description(magic_api * api, int which);
 void shift_drag(magic_api * api, int which, SDL_Surface * canvas,
 	          SDL_Surface * last, int ox, int oy, int x, int y,
 		  SDL_Rect * update_rect);
-void shift_click(magic_api * api, int which,
+void shift_click(magic_api * api, int which, int mode,
 	           SDL_Surface * canvas, SDL_Surface * last,
 	           int x, int y, SDL_Rect * update_rect);
 void shift_release(magic_api * api, int which,
@@ -284,7 +284,7 @@ static void shift_doit(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNU
 }
 
 // Affect the canvas on click:
-void shift_click(magic_api * api, int which,
+void shift_click(magic_api * api, int which, int mode,
 	           SDL_Surface * canvas, SDL_Surface * last,
 	           int x, int y, SDL_Rect * update_rect)
 {
@@ -331,3 +331,7 @@ void shift_switchout(magic_api * api, int which, SDL_Surface * canvas)
 {
 }
 
+int shift_modes(magic_api * api, int which)
+{
+  return(MODE_FULLSCREEN);
+}

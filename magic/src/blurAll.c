@@ -4,6 +4,8 @@
   blurAll, Blur the whole image
   Tux Paint - A simple drawing program for children.
 
+  FIXME: Credits
+
   Copyright (c) 2002-2008 by Bill Kendrick and others; see AUTHORS.txt
   bill@newbreedsoftware.com
   http://www.tuxpaint.org/
@@ -23,7 +25,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  Last updated: July 7, 2008
+  Last updated: July 8, 2008
   $Id$
 */
 
@@ -145,7 +147,7 @@ void blurAll_drag(magic_api * api, int which, SDL_Surface * canvas,
 }
 
 // Affect the canvas on click:
-void blurAll_click(magic_api * api, int which,
+void blurAll_click(magic_api * api, int which, int mode,
 	           SDL_Surface * canvas, SDL_Surface * last,
 	           int x, int y, SDL_Rect * update_rect){
   update_rect->x = 0;
@@ -194,3 +196,7 @@ void blurAll_switchout(magic_api * api, int which, SDL_Surface * canvas)
 {
 }
 
+int blurAll_modes(magic_api * api, int which)
+{
+  return(MODE_FULLSCREEN); /* FIXME - Can also be turned into a painted effect */ /* FIXME: Merge with blur */
+}

@@ -25,7 +25,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  Last updated: July 7, 2008
+  Last updated: July 8, 2008
   $Id$
 */
 
@@ -224,7 +224,7 @@ void bricks_drag(magic_api * api, int which, SDL_Surface * canvas,
 }
 
 // Affect the canvas on click:
-void bricks_click(magic_api * api, int which,
+void bricks_click(magic_api * api, int which, int mode,
 	           SDL_Surface * canvas, SDL_Surface * last,
 	           int x, int y, SDL_Rect * update_rect)
 {
@@ -302,3 +302,7 @@ void bricks_switchout(magic_api * api, int which, SDL_Surface * canvas)
 {
 }
 
+int bricks_modes(magic_api * api, int which)
+{
+  return(MODE_PAINT);
+}

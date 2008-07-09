@@ -875,7 +875,9 @@ static int
   dont_do_xor, dont_load_stamps, mirrorstamps, disable_stamp_controls,
   stamp_size_override,
 
-  simple_shapes, only_uppercase;
+  simple_shapes, only_uppercase,
+
+  disable_magic_controls;
 
 static int starter_mirrored, starter_flipped, starter_personal;
 static Uint8 canvas_color_r, canvas_color_g, canvas_color_b;
@@ -895,11 +897,12 @@ typedef struct magic_funcs_s {
   SDL_Surface * (*get_icon)(magic_api *, int);
   char * (*get_description)(magic_api *, int);
   int (*requires_colors)(magic_api *, int);
+  int (*modes)(magic_api *, int);
   void (*set_color)(magic_api *, Uint8, Uint8, Uint8);
   int (*init)(magic_api *);
   Uint32 (*api_version)(void);
   void (*shutdown)(magic_api *);
-  void (*click)(magic_api *, int, SDL_Surface *, SDL_Surface *, int, int, SDL_Rect *);
+  void (*click)(magic_api *, int, int, SDL_Surface *, SDL_Surface *, int, int, SDL_Rect *);
   void (*drag)(magic_api *, int, SDL_Surface *, SDL_Surface *, int, int, int, int, SDL_Rect *);
   void (*release)(magic_api *, int, SDL_Surface *, SDL_Surface *, int, int, SDL_Rect *);
   void (*switchin)(magic_api *, int, SDL_Surface *, SDL_Surface *);
@@ -911,6 +914,8 @@ typedef struct magic_s {
   int place;
   int handle_idx;	// Index to magic funcs for each magic tool (shared objs may report more than 1 tool)
   int idx;	// Index to magic tools within shared objects (shared objs may report more than 1 tool)
+  int mode;	// Current mode (paint or fullscreen)
+  int avail_modes;	// Available modes (paint &/or fullscreen)
   int colors;	// Whether magic tool accepts colors
   char * name;	// Name of magic tool
   char * tip;	// Description of magic tool
@@ -985,6 +990,7 @@ static SDL_Surface *img_cursor_starter_up, *img_cursor_starter_down;
 static SDL_Surface *img_scroll_up, *img_scroll_down;
 static SDL_Surface *img_scroll_up_off, *img_scroll_down_off;
 static SDL_Surface *img_grow, *img_shrink;
+static SDL_Surface *img_magic_paint, *img_magic_fullscreen;
 static SDL_Surface *img_bold, *img_italic;
 static SDL_Surface *img_color_picker, *img_color_picker_thumb, *img_paintwell;
 int color_picker_x, color_picker_y;
@@ -2720,6 +2726,13 @@ static void mainloop(void)
 	      {
 	      2, 2};
 	    }
+            else if (cur_tool == TOOL_MAGIC)
+            {
+              if (!disable_magic_controls)
+                gd_controls = (grid_dims)
+              {
+              1, 2};
+            }
 
 	    // number of whole or partial rows that will be needed
 	    // (can make this per-tool if variable columns needed)
@@ -2886,7 +2899,24 @@ static void mainloop(void)
 		  update_stamp_xor();
 		}
 	      }
-	      else		// not TOOL_STAMP, so must be TOOL_TEXT
+	      else if (cur_tool == TOOL_MAGIC)
+	      {
+		/* Magic controls! */
+                if (which == 1 && magics[cur_magic].avail_modes & MODE_FULLSCREEN)
+                {
+		  magics[cur_magic].mode = MODE_FULLSCREEN;
+		  draw_magic();
+	          update_screen_rect(&r_toolopt);
+                }
+                else if (which == 0 && magics[cur_magic].avail_modes & MODE_PAINT)
+                {
+		  magics[cur_magic].mode = MODE_PAINT;
+		  draw_magic();
+	          update_screen_rect(&r_toolopt);
+                }
+		/* FIXME: Sfx */
+              }
+	      else if (cur_tool == TOOL_TEXT)
 	      {
 		/* Text controls! */
 		int control_sound = -1;
@@ -3362,6 +3392,7 @@ static void mainloop(void)
 
 	    magic_funcs[magics[cur_magic].handle_idx].click(magic_api_struct,
 					                   magics[cur_magic].idx,
+							   magics[cur_magic].mode,
 					                   canvas, last,
 							   old_x, old_y,
 							   &update_rect);
@@ -3473,6 +3504,13 @@ static void mainloop(void)
 	    {
 	    2, 2};
 	  }
+          else if (cur_tool == TOOL_MAGIC)
+          {
+            if (!disable_magic_controls)
+              gd_controls = (grid_dims)
+            {
+            1, 2};
+          }
 
 	  // number of whole or partial rows that will be needed
 	  // (can make this per-tool if variable columns needed)
@@ -3798,6 +3836,8 @@ static void mainloop(void)
 	    max = 8; // was 10 before left/right group buttons -bjk 2007.05.03
 	  if (cur_tool == TOOL_TEXT && !disable_stamp_controls)
 	    max = 10;
+          if (cur_tool == TOOL_MAGIC && !disable_magic_controls)
+            max = 12;
 
 
 	  if (num_things > max + TOOLOFFSET)
@@ -5025,6 +5065,7 @@ static void show_usage(FILE * f, char *prg)
           "  %s [--stamps | --nostamps]\n"
 	  "  %s [--sysfonts | --nosysfonts]\n"
 	  "  %s [--nostampcontrols | --stampcontrols]\n"
+	  "  %s [--nomagiccontrols | --magiccontrols]\n"
 	  "  %s [--mirrorstamps | --dontmirrorstamps]\n"
 	  "  %s [--stampsize=[0-10] | --stampsize=default]\n"
 	  "  %s [--saveoverask | --saveover | --saveovernew]\n"
@@ -6180,6 +6221,7 @@ static void setup(int argc, char *argv[])
   no_system_fonts = 1;
   mirrorstamps = 0;
   disable_stamp_controls = 0;
+  disable_magic_controls = 0;
 
 #ifndef WINDOW_WIDTH
   WINDOW_WIDTH = 800;
@@ -6370,6 +6412,14 @@ static void setup(int argc, char *argv[])
     else if (strcmp(argv[i], "--stampcontrols") == 0)
     {
       disable_stamp_controls = 0;
+    }
+    else if (strcmp(argv[i], "--nomagiccontrols") == 0)
+    {
+      disable_magic_controls = 1;
+    }
+    else if (strcmp(argv[i], "--magiccontrols") == 0)
+    {
+      disable_magic_controls = 0;
     }
     else if (strcmp(argv[i], "--noshortcuts") == 0)
     {
@@ -7543,6 +7593,9 @@ static void setup(int argc, char *argv[])
   img_grow = loadimage(DATA_PREFIX "images/ui/grow.png");
   img_shrink = loadimage(DATA_PREFIX "images/ui/shrink.png");
 
+  img_magic_paint = loadimage(DATA_PREFIX "images/ui/magic_paint.png");
+  img_magic_fullscreen = loadimage(DATA_PREFIX "images/ui/magic_fullscreen.png");
+
   img_bold = loadimage(DATA_PREFIX "images/ui/bold.png");
   img_italic = loadimage(DATA_PREFIX "images/ui/italic.png");
 
@@ -8151,14 +8204,21 @@ static void draw_magic(void)
 {
   int magic, i, max, off_y;
   SDL_Rect dest;
+  int most;
 
 
   draw_image_title(TITLE_MAGIC, r_ttoolopt);
 
-  if (num_magics > 14 + TOOLOFFSET)
+  /* How many can we show? */
+
+  most = 12;
+  if (disable_magic_controls)
+    most = 14;
+
+  if (num_magics > most + TOOLOFFSET)
   {
     off_y = 24;
-    max = 12 + TOOLOFFSET;
+    max = (most - 2) + TOOLOFFSET;
 
     dest.x = WINDOW_WIDTH - 96;
     dest.y = 40;
@@ -8173,9 +8233,9 @@ static void draw_magic(void)
     }
 
     dest.x = WINDOW_WIDTH - 96;
-    dest.y = 40 + 24 + ((6 + TOOLOFFSET / 2) * 48);
+    dest.y = 40 + 24 + ((((most - 2) / 2) + TOOLOFFSET / 2) * 48);
 
-    if (magic_scroll < num_magics - 12 - TOOLOFFSET)
+    if (magic_scroll < num_magics - (most - 2) - TOOLOFFSET)
     {
       SDL_BlitSurface(img_scroll_down, NULL, screen, &dest);
     }
@@ -8187,7 +8247,7 @@ static void draw_magic(void)
   else
   {
     off_y = 0;
-    max = 14 + TOOLOFFSET;
+    max = most + TOOLOFFSET;
   }
 
 
@@ -8226,6 +8286,53 @@ static void draw_magic(void)
     {
       SDL_BlitSurface(img_btn_off, NULL, screen, &dest);
     }
+  }
+
+
+  /* Draw text controls: */
+
+  if (!disable_magic_controls)
+  {
+    SDL_Surface *button_color;
+
+    /* Show paint button: */
+
+    if (magics[cur_magic].mode == MODE_PAINT)
+      button_color = img_btn_down; // Active
+    else if (magics[cur_magic].avail_modes & MODE_PAINT)
+      button_color = img_btn_up; // Available, but not active
+    else
+      button_color = img_btn_off; // Unavailable
+
+    dest.x = WINDOW_WIDTH - 96;
+    dest.y = 40 + ((6 + TOOLOFFSET / 2) * 48);
+
+    SDL_BlitSurface(button_color, NULL, screen, &dest);
+
+    dest.x = WINDOW_WIDTH - 96 + (48 - img_magic_paint->w) / 2;
+    dest.y = (40 + ((6 + TOOLOFFSET / 2) * 48) + (48 - img_magic_paint->h) / 2);
+
+    SDL_BlitSurface(img_magic_paint, NULL, screen, &dest);
+
+
+    /* Show fullscreen button: */
+
+    if (magics[cur_magic].mode == MODE_FULLSCREEN)
+      button_color = img_btn_down; // Active
+    else if (magics[cur_magic].avail_modes & MODE_FULLSCREEN)
+      button_color = img_btn_up; // Available, but not active
+    else
+      button_color = img_btn_off; // Unavailable
+
+    dest.x = WINDOW_WIDTH - 48;
+    dest.y = 40 + ((6 + TOOLOFFSET / 2) * 48);
+
+    SDL_BlitSurface(button_color, NULL, screen, &dest);
+
+    dest.x = WINDOW_WIDTH - 48 + (48 - img_magic_fullscreen->w) / 2;
+    dest.y = (40 + ((6 + TOOLOFFSET / 2) * 48) + (48 - img_magic_fullscreen->h) / 2);
+
+    SDL_BlitSurface(img_magic_fullscreen, NULL, screen, &dest);
   }
 }
 
@@ -11905,6 +12012,9 @@ static void cleanup(void)
 
   free_surface(&img_grow);
   free_surface(&img_shrink);
+
+  free_surface(&img_magic_paint);
+  free_surface(&img_magic_fullscreen);
 
   free_surface(&img_bold);
   free_surface(&img_italic);
@@ -15625,6 +15735,15 @@ static void parse_options(FILE * fi)
       {
 	disable_stamp_controls = 0;
       }
+      else if (strcmp(str, "nomagiccontrols=yes") == 0)
+      {
+	disable_magic_controls = 1;
+      }
+      else if (strcmp(str, "nomagiccontrols=no") == 0 ||
+	       strcmp(str, "magiccontrols=yes") == 0)
+      {
+	disable_magic_controls = 0;
+      }
       else if (strcmp(str, "mirrorstamps=yes") == 0)
       {
 	mirrorstamps = 1;
@@ -16882,6 +17001,11 @@ void load_magic_plugins(void)
 	        SDL_LoadFunction(magic_handle[num_plugin_files], funcname);
 
               snprintf(funcname, sizeof(funcname), "%s_%s", objname,
+			         "modes");
+	      magic_funcs[num_plugin_files].modes=
+	        SDL_LoadFunction(magic_handle[num_plugin_files], funcname);
+
+              snprintf(funcname, sizeof(funcname), "%s_%s", objname,
 			       "set_color");
 	      magic_funcs[num_plugin_files].set_color =
 	        SDL_LoadFunction(magic_handle[num_plugin_files], funcname);
@@ -16937,6 +17061,8 @@ void load_magic_plugins(void)
 		   (int) magic_funcs[num_plugin_files].get_description);
 	      printf("requires_colors = 0x%x\n",
 		   (int) magic_funcs[num_plugin_files].requires_colors);
+	      printf("modes = 0x%x\n",
+		   (int) magic_funcs[num_plugin_files].modes);
 	      printf("set_color = 0x%x\n",
 		   (int) magic_funcs[num_plugin_files].set_color);
 	      printf("init = 0x%x\n",
@@ -16986,6 +17112,12 @@ void load_magic_plugins(void)
 	      if (magic_funcs[num_plugin_files].requires_colors == NULL)
 	      {
 	        fprintf(stderr, "Error: plugin %s is missing requires_colors\n",
+		      fname);
+                err = 1;
+	      }
+	      if (magic_funcs[num_plugin_files].modes == NULL)
+	      {
+	        fprintf(stderr, "Error: plugin %s is missing modes\n",
 		      fname);
                 err = 1;
 	      }
@@ -17083,11 +17215,17 @@ void load_magic_plugins(void)
 		    magics[num_magics].name = magic_funcs[num_plugin_files].get_name(magic_api_struct, i);
 		    magics[num_magics].tip = magic_funcs[num_plugin_files].get_description(magic_api_struct, i);
 		    magics[num_magics].colors = magic_funcs[num_plugin_files].requires_colors(magic_api_struct, i);
+		    magics[num_magics].avail_modes = magic_funcs[num_plugin_files].modes(magic_api_struct, i);
+		    if (magics[num_magics].avail_modes & MODE_PAINT)
+		    	magics[num_magics].mode = MODE_PAINT;
+		    else
+		    	magics[num_magics].mode = MODE_FULLSCREEN;
 
 		    magics[num_magics].img_icon = magic_funcs[num_plugin_files].get_icon(magic_api_struct, i);
 
 #ifdef DEBUG
 		    printf("-- %s\n", magics[num_magics].name);
+		    printf("avail_modes = %d\n", magics[num_magics].avail_modes);
 #endif
 
 		    num_magics++;

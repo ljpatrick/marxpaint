@@ -9,7 +9,7 @@ Options Documentation
                            bill@newbreedsoftware.com
                             http://www.tuxpaint.org/
 
-                                  July 7, 2008
+                                  July 8, 2008
 
      ----------------------------------------------------------------------
 
@@ -323,6 +323,12 @@ Windows Users
              Some images in the Stamps tool can be mirrored, flipped, and/or
              have their size changed. This option disables the controls, and
              only provides the basic stamps.
+
+     nomagiccontrols=yes
+             Some Magic tools have the option of acting like a paintbrush, or
+             affecting the entire canvas at once. This option disables the
+             controls, and only provides the default functionality (usually
+             paint-mode).
 
      mirrorstamps=yes
 
@@ -701,6 +707,7 @@ Windows Users
        --nooutlines
        --nostamps
        --nostampcontrols
+       --nomagiccontrols
        --sysfonts
        --mirrorstamps
        --stampsize=SIZE
@@ -741,6 +748,7 @@ Windows Users
        --outlines
        --stamps
        --stampcontrols
+       --magiccontrols
        --nosysfonts
        --dontmirrorstamps
        --stampsize=default

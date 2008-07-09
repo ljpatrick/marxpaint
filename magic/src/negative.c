@@ -23,7 +23,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  Last updated: July 7, 2008
+  Last updated: July 8, 2008
   $Id$
 */
 
@@ -125,17 +125,43 @@ void negative_drag(magic_api * api, int which, SDL_Surface * canvas,
   update_rect->h = (y + 16) - update_rect->h;
 
   api->playsound(negative_snd, (x * 255) / canvas->w, 255);
-  
+
+
   SDL_UnlockSurface(canvas);
   SDL_UnlockSurface(last);
 }
 
 // Ask Tux Paint to call our 'do_negative()' callback at a single point
-void negative_click(magic_api * api, int which,
+void negative_click(magic_api * api, int which, int mode,
 	            SDL_Surface * canvas, SDL_Surface * last,
 	            int x, int y, SDL_Rect * update_rect)
 {
-  negative_drag(api, which, canvas, last, x, y, x, y, update_rect);
+  if (mode == MODE_PAINT)
+    negative_drag(api, which, canvas, last, x, y, x, y, update_rect);
+  else
+  {
+    int xx, yy;
+    Uint8 r, g, b;
+
+    for (yy = 0; yy < canvas->h; yy++)
+    {
+      for (xx = 0; xx < canvas->w; xx++)
+      {
+        SDL_GetRGB(api->getpixel(last, xx, yy), last->format, &r, &g, &b);
+
+        r = 0xFF - r;
+        g = 0xFF - g;
+        b = 0xFF - b;
+
+        api->putpixel(canvas, xx, yy, SDL_MapRGB(canvas->format, r, g, b));
+      }
+    }
+
+    update_rect->x = 0;
+    update_rect->y = 0;
+    update_rect->w = canvas->w;
+    update_rect->h = canvas->h;
+  }
 }
 
 
@@ -171,3 +197,7 @@ void negative_switchout(magic_api * api, int which, SDL_Surface * canvas)
 {
 }
 
+int negative_modes(magic_api * api, int which)
+{
+  return(MODE_PAINT | MODE_FULLSCREEN);
+}

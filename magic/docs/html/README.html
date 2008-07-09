@@ -15,7 +15,7 @@ New Breed Software</p>
 <p><a href="mailto:bill@newbreedsoftware.com">bill@newbreedsoftware.com</a><br>
 <a href="http://www.tuxpaint.org/">http://www.tuxpaint.org/</a></p>
 
-<p>July 5, 2007 - July 7, 2008</p>
+<p>July 5, 2007 - July 8, 2008</p>
 </center>
 
 <hr size=2 noshade>
@@ -303,6 +303,30 @@ then the names of your functions must begin with "<code><b>zoom_</b></code>"
   <br>
   <b>Note:</b> Called once for each Magic tool your plugin claims to
   contain (by your "<code>get_tool_count()</code>").<br>
+  <br>
+
+<li><code><b>int modes(magic_api&nbsp;*&nbsp;api,
+  int&nbsp;which)</b></code><br>
+  This lets you tell Tux&nbsp;Paint what modes your tool can be used in
+  (either as a tool the user can paint with, or a tool that affects
+  the entire drawing at once)<br>
+  <br>
+  You must return a value that's some combination of one or more of
+  available modes:
+  <ul>
+  <li><code>MODE_PAINT</code>
+  <li><code>MODE_FULLSCREEN</code>
+  </ul>
+  e.g., if your tool is only one that the user can paint with,
+  return "<code>MODE_PAINT</code>".  If the user can do both,
+  return "<code>MODE_PAINT&nbsp;|&nbsp;MODE_FULLSCREEN</code>"
+  to tell Tux&nbsp;Paint it can do both.<br>
+  <br>
+  <b>Note:</b> Called once for each Magic tool your plugin claims to
+  contain (by your "<code>get_tool_count()</code>").<br>
+  <br>
+  <i>Note: Added to Tux&nbsp;Paint 0.9.21; Magic API version
+  '0x00000002'</i><br>
   <br>
 
 <li><code><b>void shutdown(magic_api&nbsp;*&nbsp;api)</b></code><br>
