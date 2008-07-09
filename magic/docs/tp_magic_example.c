@@ -1,7 +1,7 @@
 /* tp_magic_example.c
 
    An example of a "Magic" tool plugin for Tux Paint
-   Last modified: 2008.07.08
+   Last modified: 2008.07.09
 */
 
 
@@ -42,18 +42,9 @@ const char * icon_filenames[NUM_TOOLS] = {
 };
 
 
-// Below, we define a macro called "gettext_noop()" that does nothing in our
-// code when compiled (it simply disappears; e.g., 'gettext_noop("foo")'
-// becomes simply "foo"), but is useful because the gettext localization
-// tools will look for it and create a catalog of strings that should be
-// translated into other languages.
-
-#ifndef gettext_noop
-#define gettext_noop(String) String
-#endif
-
-// We'll use this macro below, in some arrays of strings (char *'s) that
-// hold the names and descriptions of our "Magic" tools.
+// NOTE: We use a macro called "gettext_noop()" below in some arrays of
+// strings (char *'s) that hold the names and descriptions of our "Magic"
+// tools.  This allows the strings to be localized into other languages.
 
 
 /* A list of names for the tools */
