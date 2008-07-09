@@ -27,6 +27,14 @@ $Id$
     * Added "_modes()" function to Magic tool API, so Magic tool plugins
       can tell Tux Paint what modes it accepts, 'paint' or 'fullscreen'.
 
+    * "_click()" function is now given a 'mode' value, corresponding to the
+      mode the current tool is in.
+
+    * "_get_description()" function is now given a 'mode' value, and is
+      called once for each mode a particular tool claims to support.
+      (e.g., "which=0,mode=MODE_PAINT", then "which=1,mode=MODE_PAINT",
+      then "which=1,mode=MODE_FULLSCREEN")
+
     * "Paint" and "Fullscreen" control buttons added to Magic tool
       selector UI.  Can be disabled with "--nomagiccontrols".
 

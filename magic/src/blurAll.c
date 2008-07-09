@@ -94,7 +94,7 @@ char * blurAll_get_name(magic_api * api, int which){
 }
 
 // Return our descriptions, localized:
-char * blurAll_get_description(magic_api * api, int which){
+char * blurAll_get_description(magic_api * api, int which, int mode){
   return(strdup(gettext(blurAll_descs[which])));
 }
 

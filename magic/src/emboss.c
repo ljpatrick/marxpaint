@@ -77,7 +77,7 @@ char * emboss_get_name(magic_api * api, int which)
 }
 
 // Return our descriptions, localized:
-char * emboss_get_description(magic_api * api, int which)
+char * emboss_get_description(magic_api * api, int which, int mode)
 {
   return(strdup(gettext_noop("Click and drag the mouse to emboss the picture.")));
 }

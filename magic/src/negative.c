@@ -73,10 +73,16 @@ char * negative_get_name(magic_api * api, int which)
 }
 
 // Return our description, localized:
-char * negative_get_description(magic_api * api, int which)
+char * negative_get_description(magic_api * api, int which, int mode)
 {
-  return(strdup(
-         gettext_noop("Click and move the mouse around to draw a negative.")));
+  if (mode == MODE_PAINT)
+    return(strdup(
+           gettext_noop("Click and move the mouse around to draw a negative."))); /* FIXME: This barely makes sense */
+  else if (mode == MODE_FULLSCREEN)
+    return(strdup(
+           gettext_noop("Click to turn the image into its negative.")));
+  else
+    return(NULL);
 }
 
 // Callback that does the negative color effect on a circle centered around x,y

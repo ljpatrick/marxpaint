@@ -99,7 +99,7 @@ char * mirror_flip_get_name(magic_api * api, int which)
 }
 
 // Return our descriptions, localized:
-char * mirror_flip_get_description(magic_api * api, int which)
+char * mirror_flip_get_description(magic_api * api, int which, int mode)
 {
   if (which == TOOL_MIRROR)
     return(strdup(

@@ -78,7 +78,7 @@ char * smudge_get_name(magic_api * api, int which)
 }
 
 // Return our descriptions, localized:
-char * smudge_get_description(magic_api * api, int which)
+char * smudge_get_description(magic_api * api, int which, int mode)
 {
   return(strdup(gettext_noop(
 "Click and move the mouse around to smudge the picture.")));

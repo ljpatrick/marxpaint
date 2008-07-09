@@ -93,7 +93,7 @@ char * grass_get_name(magic_api * api, int which)
 }
 
 // Return our descriptions, localized:
-char * grass_get_description(magic_api * api, int which)
+char * grass_get_description(magic_api * api, int which, int mode)
 {
   return(strdup(gettext_noop("Click and move to draw grass. Don’t forget the dirt!")));
 }

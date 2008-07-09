@@ -108,7 +108,7 @@ char * rainbow_get_name(magic_api * api, int which)
 }
 
 // Return our descriptions, localized:
-char * rainbow_get_description(magic_api * api, int which)
+char * rainbow_get_description(magic_api * api, int which, int mode)
 {
   return(strdup(
 	   gettext_noop("You can draw in rainbow colors!")));

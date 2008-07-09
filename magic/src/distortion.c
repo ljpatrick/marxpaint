@@ -124,7 +124,7 @@ char * distortion_get_name(magic_api * api, int which)
 
 // Report our "Magic" tool descriptions
 
-char * distortion_get_description(magic_api * api, int which)
+char * distortion_get_description(magic_api * api, int which, int mode)
 {
   return(strdup(gettext_noop("Click and drag the mouse to cause a distortion in your picture.")));
 }

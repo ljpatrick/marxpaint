@@ -77,7 +77,7 @@ char * blur_get_name(magic_api * api, int which)
 }
 
 // Return our descriptions, localized:
-char * blur_get_description(magic_api * api, int which)
+char * blur_get_description(magic_api * api, int which, int mode)
 {
   return(strdup(gettext_noop(
 "Click and move the mouse around to blur the picture.")));

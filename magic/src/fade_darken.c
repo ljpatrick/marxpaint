@@ -49,7 +49,7 @@ Uint32 fade_darken_api_version(void);
 int fade_darken_get_tool_count(magic_api * api);
 SDL_Surface * fade_darken_get_icon(magic_api * api, int which);
 char * fade_darken_get_name(magic_api * api, int which);
-char * fade_darken_get_description(magic_api * api, int which);
+char * fade_darken_get_description(magic_api * api, int which, int mode);
 static void do_fade_darken(void * ptr, int which,
 	         SDL_Surface * canvas, SDL_Surface * last,
 	         int x, int y);
@@ -121,7 +121,7 @@ char * fade_darken_get_name(magic_api * api ATTRIBUTE_UNUSED, int which)
 }
 
 // Return our description, localized:
-char * fade_darken_get_description(magic_api * api ATTRIBUTE_UNUSED, int which)
+char * fade_darken_get_description(magic_api * api ATTRIBUTE_UNUSED, int which, int mode)
 {
   if (which == TOOL_FADE)
     return(strdup(

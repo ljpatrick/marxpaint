@@ -284,16 +284,24 @@ then the names of your functions must begin with "<code><b>zoom_</b></code>"
   <br>
 
 <li><code><b>char * get_description(magic_api&nbsp;*&nbsp;api,
-  int&nbsp;which)</b></code><br>
-  This should return a string containing the description of a magic tool.
+  int&nbsp;which, int&nbsp;mode)</b></code><br>
+  This should return a string containing the description of how to
+  use a particular magic tool.
   This will appear as a help tip, explained by Tux the Penguin, within
   Tux&nbsp;Paint.<br>
   <br>
   Tux Paint will <code>free()</code> the string upon exit, so you should
   wrap it in a C <code>strdup()</code> call.<br>
   <br>
-  <b>Note:</b> Called once for each Magic tool your plugin claims to
-  contain (by your "<code>get_tool_count()</code>").<br>
+  <b>Note:</b> For each Magic tool your plugin claims to
+  contain (reported by your "<code>get_tool_count()</code>" function),
+  this function will be called for each mode the tool claims to support
+  (reported by your "<code>modes()</code>" function).<br>
+  <br>
+  In other words, if your plugin contains two tools, one which works in
+  paint mode only, and the other that works in both paint mode and
+  full-image mode, your plugin's "<code>get_description()</code>" will be
+  called three times.<br>
   <br>
 
 <li><code><b>int requires_colors(magic_api&nbsp;*&nbsp;api,

@@ -50,7 +50,7 @@
 /* (as of API version 0x00000002) */
 #define MODE_PAINT      0x0001  /* User can paint the tool, freehand */
 #define MODE_FULLSCREEN 0x0002  /* User can apply effect to entire canvas at once */
-
+#define MAX_MODES 2
 
 typedef struct magic_api_t {
   /* A string containing the current version of Tux Paint (e.g., "0.9.18") */

@@ -82,7 +82,7 @@ char * ripples_get_name(magic_api * api, int which)
 }
 
 // Return our descriptions, localized:
-char * ripples_get_description(magic_api * api, int which)
+char * ripples_get_description(magic_api * api, int which, int mode)
 {
   return(strdup(gettext_noop("Click to make ripples appear over your picture.")));
 }

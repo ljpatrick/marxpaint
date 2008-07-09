@@ -55,7 +55,7 @@ Uint32 blocks_chalk_drip_api_version(void);
 int blocks_chalk_drip_get_tool_count(magic_api * api);
 SDL_Surface * blocks_chalk_drip_get_icon(magic_api * api, int which);
 char * blocks_chalk_drip_get_name(magic_api * api, int which);
-char * blocks_chalk_drip_get_description(magic_api * api, int which);
+char * blocks_chalk_drip_get_description(magic_api * api, int which, int mode);
 static void blocks_chalk_drip_linecb(void * ptr, int which,
 			      SDL_Surface * canvas, SDL_Surface * last,
 	                      int x, int y);
@@ -139,7 +139,7 @@ char * blocks_chalk_drip_get_name(magic_api * api ATTRIBUTE_UNUSED, int which)
 }
 
 // Return our descriptions, localized:
-char * blocks_chalk_drip_get_description(magic_api * api ATTRIBUTE_UNUSED, int which)
+char * blocks_chalk_drip_get_description(magic_api * api ATTRIBUTE_UNUSED, int which, int mode)
 {
   if (which == TOOL_BLOCKS)
     return(strdup(gettext_noop(

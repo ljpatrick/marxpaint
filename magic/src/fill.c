@@ -88,7 +88,7 @@ char * fill_get_name(magic_api * api, int which)
 }
 
 // Return our descriptions, localized:
-char * fill_get_description(magic_api * api, int which)
+char * fill_get_description(magic_api * api, int which, int mode)
 {
   return(strdup(gettext_noop(
 "Click in the picture to fill that area with color.")));

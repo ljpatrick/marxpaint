@@ -218,16 +218,23 @@ Interfaces
              Note: Called once for each Magic tool your plugin claims to
              contain (by your "get_tool_count()").
 
-           * char * get_description(magic_api * api, int which)
-             This should return a string containing the description of a
-             magic tool. This will appear as a help tip, explained by Tux the
-             Penguin, within Tux Paint.
+           * char * get_description(magic_api * api, int which, int mode)
+             This should return a string containing the description of how to
+             use a particular magic tool. This will appear as a help tip,
+             explained by Tux the Penguin, within Tux Paint.
 
              Tux Paint will free() the string upon exit, so you should wrap
              it in a C strdup() call.
 
-             Note: Called once for each Magic tool your plugin claims to
-             contain (by your "get_tool_count()").
+             Note: For each Magic tool your plugin claims to contain
+             (reported by your "get_tool_count()" function), this function
+             will be called for each mode the tool claims to support
+             (reported by your "modes()" function).
+
+             In other words, if your plugin contains two tools, one which
+             works in paint mode only, and the other that works in both paint
+             mode and full-image mode, your plugin's "get_description()" will
+             be called three times.
 
            * int requires_colors(magic_api * api, int which)
              Return a '1' if the 'Magic' tool accepts colors (the 'Colors'

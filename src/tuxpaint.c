@@ -895,7 +895,7 @@ typedef struct magic_funcs_s {
   int (*get_tool_count)(magic_api *);
   char * (*get_name)(magic_api *, int);
   SDL_Surface * (*get_icon)(magic_api *, int);
-  char * (*get_description)(magic_api *, int);
+  char * (*get_description)(magic_api *, int, int);
   int (*requires_colors)(magic_api *, int);
   int (*modes)(magic_api *, int);
   void (*set_color)(magic_api *, Uint8, Uint8, Uint8);
@@ -918,7 +918,7 @@ typedef struct magic_s {
   int avail_modes;	// Available modes (paint &/or fullscreen)
   int colors;	// Whether magic tool accepts colors
   char * name;	// Name of magic tool
-  char * tip;	// Description of magic tool
+  char * tip[MAX_MODES];	// Description of magic tool, in each possible mode
   SDL_Surface * img_icon;
   SDL_Surface * img_name;
 } magic_t;
@@ -1558,6 +1558,7 @@ Uint8 magic_touched(int x, int y);
 
 void magic_switchin(SDL_Surface * last);
 void magic_switchout(SDL_Surface * last);
+int magic_modeint(int mode);
 
 #ifdef DEBUG
 static char *debug_gettext(const char *str);
@@ -3185,7 +3186,7 @@ static void mainloop(void)
 						color_hexes[cur_color][2]);
 	      }
 
-	      draw_tux_text(TUX_GREAT, magics[cur_magic].tip, 1);
+	      draw_tux_text(TUX_GREAT, magics[cur_magic].tip[magic_modeint(magics[cur_magic].mode)], 1);
 
 	      if (do_draw)
 		draw_magic();
@@ -3397,7 +3398,7 @@ static void mainloop(void)
 							   old_x, old_y,
 							   &update_rect);
 	    
-	    draw_tux_text(TUX_GREAT, magics[cur_magic].tip, 1);
+	    draw_tux_text(TUX_GREAT, magics[cur_magic].tip[magic_modeint(magics[cur_magic].mode)], 1);
 
   	    update_canvas(update_rect.x, update_rect.y,
 			  update_rect.x + update_rect.w,
@@ -3756,7 +3757,7 @@ static void mainloop(void)
 							   old_x, old_y,
 							   &update_rect);
 	    
-	    draw_tux_text(TUX_GREAT, magics[cur_magic].tip, 1);
+	    draw_tux_text(TUX_GREAT, magics[cur_magic].tip[magic_modeint(magics[cur_magic].mode)], 1);
 
   	    update_canvas(update_rect.x, update_rect.y,
 			  update_rect.x + update_rect.w,
@@ -17207,15 +17208,28 @@ void load_magic_plugins(void)
                 }
                 else
                 {
+                  int j, bit;
+
 		  for (i = 0; i < n; i++)
 		  {
 		    magics[num_magics].idx = i;
 		    magics[num_magics].place = plc;
 		    magics[num_magics].handle_idx = num_plugin_files;
 		    magics[num_magics].name = magic_funcs[num_plugin_files].get_name(magic_api_struct, i);
-		    magics[num_magics].tip = magic_funcs[num_plugin_files].get_description(magic_api_struct, i);
-		    magics[num_magics].colors = magic_funcs[num_plugin_files].requires_colors(magic_api_struct, i);
+
 		    magics[num_magics].avail_modes = magic_funcs[num_plugin_files].modes(magic_api_struct, i);
+
+                    bit = 1;
+                    for (j = 0; j < MAX_MODES; j++)
+		    {
+                      if (magics[num_magics].avail_modes & bit)
+		        magics[num_magics].tip[j] = magic_funcs[num_plugin_files].get_description(magic_api_struct, i, bit);
+                      else
+		        magics[num_magics].tip[j] = NULL;
+                      bit *= 2;
+		    }
+
+		    magics[num_magics].colors = magic_funcs[num_plugin_files].requires_colors(magic_api_struct, i);
 		    if (magics[num_magics].avail_modes & MODE_PAINT)
 		    	magics[num_magics].mode = MODE_PAINT;
 		    else
@@ -18961,3 +18975,12 @@ void magic_switchin(SDL_Surface * last)
 					               magics[cur_magic].idx,
 					               canvas, last);
 }
+
+int magic_modeint(int mode)
+{
+  if (mode == MODE_PAINT)
+    return 0;
+  else if (mode == MODE_FULLSCREEN)
+    return 1;
+}
+

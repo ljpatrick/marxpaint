@@ -78,7 +78,7 @@ char * metalpaint_get_name(magic_api * api, int which)
 }
 
 // Return our descriptions, localized:
-char * metalpaint_get_description(magic_api * api, int which)
+char * metalpaint_get_description(magic_api * api, int which, int mode)
 {
   return(strdup(gettext_noop("Click and drag the mouse to paint with a metallic color.")));
 }
