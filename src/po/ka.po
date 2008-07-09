@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TuxPaint\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-07-08 21:42-0700\n"
+"POT-Creation-Date: 2008-07-09 13:17-0700\n"
 "PO-Revision-Date: 2005-10-10 23:41+0300\n"
 "Last-Translator: Giasher <giasher@telenet.ge>\n"
 "Language-Team: Gia Shervashidze <giasher@telenet.ge>\n"
@@ -973,7 +973,14 @@ msgid "Tint"
 msgstr "ფერის შეცვლა"
 
 #: ../../magic/src/tint.c:84
-msgid "Click and move the mouse around to change the picture’s color."
+#, fuzzy
+msgid ""
+"Click and move the mouse around to change the color of parts of the picture."
+msgstr "დაწკაპეთ და გადაატარეთ ნახატს მისი ნაწილის გასადღაბნად."
+
+#: ../../magic/src/tint.c:86
+#, fuzzy
+msgid "Click to change the entire picture’s color."
 msgstr "დაწკაპეთ და გადაატარეთ ნახატის ფერების შესაცვლელად."
 
 #: ../../magic/src/waves.c:78

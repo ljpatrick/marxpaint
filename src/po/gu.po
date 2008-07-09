@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-07-08 21:42-0700\n"
+"POT-Creation-Date: 2008-07-09 13:17-0700\n"
 "PO-Revision-Date: 2007-05-29 11:29+0530\n"
 "Last-Translator: Kartik Mistry <kartik.mistry@gmail.com>\n"
 "Language-Team: Gujarati <team@utkarsh.org>\n"
@@ -950,7 +950,14 @@ msgid "Tint"
 msgstr "આછો રંગ"
 
 #: ../../magic/src/tint.c:84
-msgid "Click and move the mouse around to change the picture’s color."
+#, fuzzy
+msgid ""
+"Click and move the mouse around to change the color of parts of the picture."
+msgstr "ચિત્રને ઝાંખું કરવા માટે માઉસને ક્લિક કરો અને આજુ-બાજુ ખસેડો."
+
+#: ../../magic/src/tint.c:86
+#, fuzzy
+msgid "Click to change the entire picture’s color."
 msgstr "ચિત્રનો રંગ બદલવા માટે ક્લિક કરો અને માઉસ આજુબાજુ ખસેડો."
 
 #: ../../magic/src/waves.c:78

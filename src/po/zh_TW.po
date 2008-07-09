@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint 0.9.17\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-07-08 21:42-0700\n"
+"POT-Creation-Date: 2008-07-09 13:17-0700\n"
 "PO-Revision-Date: 2007-11-18 21:25+0800\n"
 "Last-Translator: 黃敏松 <songhuang.tw@gmail.com>\n"
 "Language-Team: Chinese (traditional) <zh-l10n@linux.org.tw>\n"
@@ -962,7 +962,14 @@ msgid "Tint"
 msgstr "著色"
 
 #: ../../magic/src/tint.c:84
-msgid "Click and move the mouse around to change the picture’s color."
+#, fuzzy
+msgid ""
+"Click and move the mouse around to change the color of parts of the picture."
+msgstr "按著並移動滑鼠來使圖畫模糊。"
+
+#: ../../magic/src/tint.c:86
+#, fuzzy
+msgid "Click to change the entire picture’s color."
 msgstr "按著並移動滑鼠來改變圖畫的顏色。"
 
 #: ../../magic/src/waves.c:78

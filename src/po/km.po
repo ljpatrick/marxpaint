@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-07-08 21:42-0700\n"
+"POT-Creation-Date: 2008-07-09 13:17-0700\n"
 "PO-Revision-Date: 2008-05-30 15:41+0700\n"
 "Last-Translator: Khoem Sokhem <khoemsokhem@khmeros.info>\n"
 "Language-Team: Khmer <support@khmeros.info>\n"
@@ -953,7 +953,14 @@ msgid "Tint"
 msgstr "ពណ៌​ព្រឿងៗ"
 
 #: ../../magic/src/tint.c:84
-msgid "Click and move the mouse around to change the picture’s color."
+#, fuzzy
+msgid ""
+"Click and move the mouse around to change the color of parts of the picture."
+msgstr "ចុច ហើយ​ផ្លាស់ទី​កណ្ដុរ ដើម្បី​ធ្វើ​ឲ្យ​រូបភាព​ព្រិល ។"
+
+#: ../../magic/src/tint.c:86
+#, fuzzy
+msgid "Click to change the entire picture’s color."
 msgstr "ចុច ហើយ​ផ្លាស់ទី​កណ្ដុរ ដើម្បី​ផ្លាស់ប្ដូរ​ពណ៌​រូបភាព ។"
 
 #: ../../magic/src/waves.c:78

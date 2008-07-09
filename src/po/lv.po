@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: lv\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-07-08 21:42-0700\n"
+"POT-Creation-Date: 2008-07-09 13:17-0700\n"
 "PO-Revision-Date: 2007-05-14 18:13-0700\n"
 "Last-Translator: Raivis Strogonovs <raivucis@gmail.com>\n"
 "Language-Team: Valoda <raivucis@gmail.com>\n"
@@ -983,7 +983,15 @@ msgid "Tint"
 msgstr "Tinte"
 
 #: ../../magic/src/tint.c:84
-msgid "Click and move the mouse around to change the picture’s color."
+#, fuzzy
+msgid ""
+"Click and move the mouse around to change the color of parts of the picture."
+msgstr ""
+"Nospied, pieturi peles pogu un velc peli lai bildi padarītu miglaināku."
+
+#: ../../magic/src/tint.c:86
+#, fuzzy
+msgid "Click to change the entire picture’s color."
 msgstr "Nospied, pieturi peles pogu un velc peli lai zīmējumā mainītu krāsas."
 
 #: ../../magic/src/waves.c:78

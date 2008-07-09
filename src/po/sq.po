@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint 0.9.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-07-08 21:42-0700\n"
+"POT-Creation-Date: 2008-07-09 13:17-0700\n"
 "PO-Revision-Date: 2004-10-17 11:19+0200\n"
 "Last-Translator: Laurent Dhima <laurenti@alblinux.net>\n"
 "Language-Team: Albanian <translation-team-sq@lists.sourceforge.net>\n"
@@ -992,7 +992,13 @@ msgstr "Hollim"
 
 #: ../../magic/src/tint.c:84
 #, fuzzy
-msgid "Click and move the mouse around to change the picture’s color."
+msgid ""
+"Click and move the mouse around to change the color of parts of the picture."
+msgstr "Kliko dhe lëviz mausin nëpër pikturë për të krijuar dridhje."
+
+#: ../../magic/src/tint.c:86
+#, fuzzy
+msgid "Click to change the entire picture’s color."
 msgstr "Kliko dhe lëviz përqark miun për të grupuar foton."
 
 #: ../../magic/src/waves.c:78

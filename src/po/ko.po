@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Tux Paint 0.9.16\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-07-08 21:42-0700\n"
+"POT-Creation-Date: 2008-07-09 13:17-0700\n"
 "PO-Revision-Date: 2007-04-29 23:10-0400\n"
 "Last-Translator: Mark K. Kim <mkkim214@gmail.com>\n"
 "Language-Team: N/A\n"
@@ -973,7 +973,14 @@ msgid "Tint"
 msgstr "배합"
 
 #: ../../magic/src/tint.c:84
-msgid "Click and move the mouse around to change the picture’s color."
+#, fuzzy
+msgid ""
+"Click and move the mouse around to change the color of parts of the picture."
+msgstr "마우스를 누르면 그림을 흐리게 만들 수 있어요."
+
+#: ../../magic/src/tint.c:86
+#, fuzzy
+msgid "Click to change the entire picture’s color."
 msgstr "마우스를 누르면 그림이 색이 변화돼요."
 
 #: ../../magic/src/waves.c:78

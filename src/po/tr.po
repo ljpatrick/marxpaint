@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-07-08 21:42-0700\n"
+"POT-Creation-Date: 2008-07-09 13:17-0700\n"
 "PO-Revision-Date: 2006-10-11 23:27+0300\n"
 "Last-Translator: Doruk Fisek <dfisek@fisek.com.tr>\n"
 "Language-Team: Turkish <gnu-tr-u12a@lists.sourceforge.net>\n"
@@ -972,7 +972,14 @@ msgid "Tint"
 msgstr "Tonla"
 
 #: ../../magic/src/tint.c:84
-msgid "Click and move the mouse around to change the picture’s color."
+#, fuzzy
+msgid ""
+"Click and move the mouse around to change the color of parts of the picture."
+msgstr "Resmi bulanıklaştırmak için tıkla ve fareyi etrafta gezdir."
+
+#: ../../magic/src/tint.c:86
+#, fuzzy
+msgid "Click to change the entire picture’s color."
 msgstr "Resmin rengini değiştirmek için tıkla ve fareyi etrafta gezdir."
 
 #: ../../magic/src/waves.c:78

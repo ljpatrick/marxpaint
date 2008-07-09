@@ -16,7 +16,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint 0.9.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-07-08 21:42-0700\n"
+"POT-Creation-Date: 2008-07-09 13:17-0700\n"
 "PO-Revision-Date: 2005-04-04 10:55-0700\n"
 "Last-Translator: Steven Michael Murphy <murf@e-tools.com>\n"
 "Language-Team: Kinyarwanda <translation-team-rw@lists.sourceforge.net>\n"
@@ -1038,7 +1038,13 @@ msgstr "Kinanutse"
 
 #: ../../magic/src/tint.c:84
 #, fuzzy
-msgid "Click and move the mouse around to change the picture’s color."
+msgid ""
+"Click and move the mouse around to change the color of parts of the picture."
+msgstr "Na Kwimura i Imbeba Kuri i() y'Ishusho"
+
+#: ../../magic/src/tint.c:86
+#, fuzzy
+msgid "Click to change the entire picture’s color."
 msgstr "Na Kwimura i Imbeba Kuri Ubwoko i() y'Ishusho"
 
 #: ../../magic/src/waves.c:78

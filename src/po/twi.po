@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-07-08 21:42-0700\n"
+"POT-Creation-Date: 2008-07-09 13:17-0700\n"
 "PO-Revision-Date: 2007-04-26 15:45+0200\n"
 "Last-Translator: Joana Portia Antwi-Danso <portnass2003@yahoo.com>\n"
 "MIME-Version: 1.0\n"
@@ -969,7 +969,14 @@ msgid "Tint"
 msgstr "Dumm"
 
 #: ../../magic/src/tint.c:84
-msgid "Click and move the mouse around to change the picture’s color."
+#, fuzzy
+msgid ""
+"Click and move the mouse around to change the color of parts of the picture."
+msgstr "Mia so na fa akura no to mfoni no so ma no nyɛ wisiwisi."
+
+#: ../../magic/src/tint.c:86
+#, fuzzy
+msgid "Click to change the entire picture’s color."
 msgstr "Fa akura no fa mfoni no so na sesa n'ahosuo no."
 
 #: ../../magic/src/waves.c:78

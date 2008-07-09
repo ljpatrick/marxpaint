@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-07-08 21:42-0700\n"
+"POT-Creation-Date: 2008-07-09 13:17-0700\n"
 "PO-Revision-Date: 2007-07-04 11:24-0000\n"
 "Last-Translator: Haby Diallo <haby42@yahoo.fr>\n"
 "Language-Team: \n"
@@ -978,7 +978,13 @@ msgstr "Pentur"
 
 #: ../../magic/src/tint.c:84
 #, fuzzy
-msgid "Click and move the mouse around to change the picture’s color."
+msgid ""
+"Click and move the mouse around to change the color of parts of the picture."
+msgstr "Bëssël te jalale ak jinax bi so buge sa natal bi lëndëm."
+
+#: ../../magic/src/tint.c:86
+#, fuzzy
+msgid "Click to change the entire picture’s color."
 msgstr "Bëssël te jalale ak jinax ngir sopi so kuloru natal bi."
 
 #: ../../magic/src/waves.c:78

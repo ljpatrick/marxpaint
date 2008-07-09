@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-07-08 21:42-0700\n"
+"POT-Creation-Date: 2008-07-09 13:17-0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -954,7 +954,12 @@ msgid "Tint"
 msgstr "m]xon.mdvs."
 
 #: ../../magic/src/tint.c:84
-msgid "Click and move the mouse around to change the picture’s color."
+msgid ""
+"Click and move the mouse around to change the color of parts of the picture."
+msgstr ""
+
+#: ../../magic/src/tint.c:86
+msgid "Click to change the entire picture’s color."
 msgstr ""
 
 #: ../../magic/src/waves.c:78

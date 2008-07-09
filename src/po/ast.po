@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TuxPaint 0.9.18\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-07-08 21:42-0700\n"
+"POT-Creation-Date: 2008-07-09 13:17-0700\n"
 "PO-Revision-Date: 2008-04-05 15:29+0100\n"
 "Last-Translator: Mikel González <mikelisimu@yahoo.es>\n"
 "Language-Team: Asturian\n"
@@ -955,7 +955,14 @@ msgid "Tint"
 msgstr "Tiñir"
 
 #: ../../magic/src/tint.c:84
-msgid "Click and move the mouse around to change the picture’s color."
+#, fuzzy
+msgid ""
+"Click and move the mouse around to change the color of parts of the picture."
+msgstr "Fai clic y arrastra'l ratón pa desenfocar la imaxe."
+
+#: ../../magic/src/tint.c:86
+#, fuzzy
+msgid "Click to change the entire picture’s color."
 msgstr "Fai clic y arrastra'l ratón pa camudar el color de la imaxe."
 
 #: ../../magic/src/waves.c:78

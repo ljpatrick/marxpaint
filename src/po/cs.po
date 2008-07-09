@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: cs\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-07-08 21:42-0700\n"
+"POT-Creation-Date: 2008-07-09 13:17-0700\n"
 "PO-Revision-Date: 2006-06-21 12:50+0200\n"
 "Last-Translator: Václav Čermák <vaclav.cermak@gmail.com>\n"
 "Language-Team:  <cs@li.org>\n"
@@ -969,7 +969,14 @@ msgid "Tint"
 msgstr "Obarvit"
 
 #: ../../magic/src/tint.c:84
-msgid "Click and move the mouse around to change the picture’s color."
+#, fuzzy
+msgid ""
+"Click and move the mouse around to change the color of parts of the picture."
+msgstr "Klepni a pohybuj myší - rozostříš obrázek."
+
+#: ../../magic/src/tint.c:86
+#, fuzzy
+msgid "Click to change the entire picture’s color."
 msgstr "Klepni a pohybuj myší - změníš barvy obrázku."
 
 #: ../../magic/src/waves.c:78

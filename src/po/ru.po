@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TuxPaint\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-07-08 21:42-0700\n"
+"POT-Creation-Date: 2008-07-09 13:17-0700\n"
 "PO-Revision-Date: 2008-01-07 14:29+0300\n"
 "Last-Translator: Sergei Popov <skein@rambler.ru>\n"
 "Language-Team: Dmitriy Ivanov <ace22b@myrealbox.com>\n"
@@ -990,7 +990,14 @@ msgid "Tint"
 msgstr "Изменить цвет"
 
 #: ../../magic/src/tint.c:84
-msgid "Click and move the mouse around to change the picture’s color."
+#, fuzzy
+msgid ""
+"Click and move the mouse around to change the color of parts of the picture."
+msgstr "Щёлкните и поводите по картинке, чтобы размыть её часть."
+
+#: ../../magic/src/tint.c:86
+#, fuzzy
+msgid "Click to change the entire picture’s color."
 msgstr "Щёлкните и поводите по картинке, чтобы изменить цвет рисунка."
 
 #: ../../magic/src/waves.c:78

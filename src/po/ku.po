@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-07-08 21:42-0700\n"
+"POT-Creation-Date: 2008-07-09 13:17-0700\n"
 "PO-Revision-Date: 2006-04-23 00:58+0200\n"
 "Last-Translator: Amed Ç. Jiyan <amed@pckurd.net>\n"
 "Language-Team: KURDISH <LL@li.org>\n"
@@ -973,7 +973,14 @@ msgid "Tint"
 msgstr "Berê"
 
 #: ../../magic/src/tint.c:84
-msgid "Click and move the mouse around to change the picture’s color."
+#, fuzzy
+msgid ""
+"Click and move the mouse around to change the color of parts of the picture."
+msgstr "Mişkî li dora reşahiya wêneyê bitikîne û rake."
+
+#: ../../magic/src/tint.c:86
+#, fuzzy
+msgid "Click to change the entire picture’s color."
 msgstr "Ji bo guherandina rengê wêneyê bitikîne mişkî li dorê bigerîne."
 
 #: ../../magic/src/waves.c:78

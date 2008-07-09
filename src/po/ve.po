@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TuxPaint 0.9.16\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-07-08 21:42-0700\n"
+"POT-Creation-Date: 2008-07-09 13:17-0700\n"
 "PO-Revision-Date: 2006-09-21 20:04+0200\n"
 "Last-Translator: Shumani Mercy Ṋevhulaudzi <nevhulaudzi@saps.org.za>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -988,7 +988,15 @@ msgid "Tint"
 msgstr "Muvhala"
 
 #: ../../magic/src/tint.c:84
-msgid "Click and move the mouse around to change the picture’s color."
+#, fuzzy
+msgid ""
+"Click and move the mouse around to change the color of parts of the picture."
+msgstr ""
+"Kiḽikani ni sudzuluse mausu u mona u ita uri tshifanyiso tshi si vhonale."
+
+#: ../../magic/src/tint.c:86
+#, fuzzy
+msgid "Click to change the entire picture’s color."
 msgstr ""
 "Kiḽikani ni sudzuluse mausu u mona u shandukisa muvhala wa tshifanyiso."
 

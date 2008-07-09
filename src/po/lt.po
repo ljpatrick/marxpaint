@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Tuxpaint 0.9.9\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-07-08 21:42-0700\n"
+"POT-Creation-Date: 2008-07-09 13:17-0700\n"
 "PO-Revision-Date: 2004-12-10 18:11+0200\n"
 "Last-Translator: Gintaras Goštautas <gintaras@nes.lt>\n"
 "Language-Team: Lithuanian <komp_lt@konf.lt>\n"
@@ -977,7 +977,14 @@ msgid "Tint"
 msgstr "Spalvinti"
 
 #: ../../magic/src/tint.c:84
-msgid "Click and move the mouse around to change the picture’s color."
+#, fuzzy
+msgid ""
+"Click and move the mouse around to change the color of parts of the picture."
+msgstr "Spustelėkite ir judindami pelę suliesite piešinį."
+
+#: ../../magic/src/tint.c:86
+#, fuzzy
+msgid "Click to change the entire picture’s color."
 msgstr "Spustelėkite ir judindami pelę pakeisite piešinio spalvas."
 
 #: ../../magic/src/waves.c:78

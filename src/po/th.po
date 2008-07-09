@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Thai tux paint\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-07-08 21:42-0700\n"
+"POT-Creation-Date: 2008-07-09 13:17-0700\n"
 "PO-Revision-Date: 2007-01-22 10:51+0700\n"
 "Last-Translator: Ouychai <Ae.translator@gmail.com>\n"
 "Language-Team: \n"
@@ -963,7 +963,14 @@ msgid "Tint"
 msgstr "ทาสีจาง"
 
 #: ../../magic/src/tint.c:84
-msgid "Click and move the mouse around to change the picture’s color."
+#, fuzzy
+msgid ""
+"Click and move the mouse around to change the color of parts of the picture."
+msgstr "คลิกแล้วลากเมาส์ไปมาเพื่อทำให้รูปมัว"
+
+#: ../../magic/src/tint.c:86
+#, fuzzy
+msgid "Click to change the entire picture’s color."
 msgstr "คลิกแล้วลากเมาส์ไปมาเพื่อเปลี่ยนสีรูป"
 
 #: ../../magic/src/waves.c:78

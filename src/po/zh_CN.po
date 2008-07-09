@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint 0.9.11\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-07-08 21:42-0700\n"
+"POT-Creation-Date: 2008-07-09 13:17-0700\n"
 "PO-Revision-Date: 2004-07-18 13:50+0800\n"
 "Last-Translator: Wang Jian <lark@linux.net.cn>\n"
 "Language-Team: zh_CN <i18n-translation@lists.linux.net.cn>\n"
@@ -989,7 +989,13 @@ msgstr "变淡"
 
 #: ../../magic/src/tint.c:84
 #, fuzzy
-msgid "Click and move the mouse around to change the picture’s color."
+msgid ""
+"Click and move the mouse around to change the color of parts of the picture."
+msgstr "单击然后移动鼠标，将图片变模糊。"
+
+#: ../../magic/src/tint.c:86
+#, fuzzy
+msgid "Click to change the entire picture’s color."
 msgstr "单击然后移动鼠标将图片变成驳裂的效果。"
 
 #: ../../magic/src/waves.c:78

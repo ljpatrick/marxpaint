@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Tux paint anns a' ghàidhlig\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-07-08 21:42-0700\n"
+"POT-Creation-Date: 2008-07-09 13:17-0700\n"
 "PO-Revision-Date: 2006-03-04 15:51-0000\n"
 "Last-Translator: Niall Tracey <internationiall@hotmail.com>\n"
 "Language-Team:  <internationiall@hotmail.com>\n"
@@ -1070,8 +1070,15 @@ msgstr ""
 msgid "Tint"
 msgstr ""
 
+# Gràmar?
 #: ../../magic/src/tint.c:84
-msgid "Click and move the mouse around to change the picture’s color."
+#, fuzzy
+msgid ""
+"Click and move the mouse around to change the color of parts of the picture."
+msgstr "Briog agus slaod airson na breigichean beaga."
+
+#: ../../magic/src/tint.c:86
+msgid "Click to change the entire picture’s color."
 msgstr ""
 
 #: ../../magic/src/waves.c:78

@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TuxPaint 0.0.1pre\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-07-08 21:42-0700\n"
+"POT-Creation-Date: 2008-07-09 13:17-0700\n"
 "PO-Revision-Date: 2005-01-09 14:49+0100\n"
 "Last-Translator: Gugusse <titi>\n"
 "Language-Team: Breton <drouizig@drouizig.org>\n"
@@ -976,7 +976,13 @@ msgstr "Livaj"
 
 #: ../../magic/src/tint.c:84
 #, fuzzy
-msgid "Click and move the mouse around to change the picture’s color."
+msgid ""
+"Click and move the mouse around to change the color of parts of the picture."
+msgstr "Klik ha fiñv al logodenn evit displanaat ar skeudenn."
+
+#: ../../magic/src/tint.c:86
+#, fuzzy
+msgid "Click to change the entire picture’s color."
 msgstr "Klik ha fiñv al logodenn evit cheñch liv an dresadenn."
 
 #: ../../magic/src/waves.c:78

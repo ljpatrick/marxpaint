@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: af\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-07-08 21:42-0700\n"
+"POT-Creation-Date: 2008-07-09 13:17-0700\n"
 "PO-Revision-Date: 2008-06-19 13:24-0700\n"
 "Last-Translator: Samuel Murray (Groenkloof) <samuel@translate.org.za>\n"
 "Language-Team: \n"
@@ -956,7 +956,14 @@ msgid "Tint"
 msgstr "Tint"
 
 #: ../../magic/src/tint.c:84
-msgid "Click and move the mouse around to change the picture’s color."
+#, fuzzy
+msgid ""
+"Click and move the mouse around to change the color of parts of the picture."
+msgstr "Klik en beweeg die muis om die prent uit fokus te maak."
+
+#: ../../magic/src/tint.c:86
+#, fuzzy
+msgid "Click to change the entire picture’s color."
 msgstr "Klik en beweeg die muis rond om die prent se kleur te verander."
 
 #: ../../magic/src/waves.c:78

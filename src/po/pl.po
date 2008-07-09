@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint 0.9.17\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-07-08 21:42-0700\n"
+"POT-Creation-Date: 2008-07-09 13:17-0700\n"
 "PO-Revision-Date: 2007-10-01 09:55+0200\n"
 "Last-Translator: Andrzej M. Krzysztofowicz <ankry@mif.pg.gda.pl>\n"
 "Language-Team: Polish <translation-team-pl@lists.sourceforge.net>\n"
@@ -971,7 +971,14 @@ msgid "Tint"
 msgstr "Zabarwienie"
 
 #: ../../magic/src/tint.c:84
-msgid "Click and move the mouse around to change the picture’s color."
+#, fuzzy
+msgid ""
+"Click and move the mouse around to change the color of parts of the picture."
+msgstr "Kliknij i przesuń myszką dookoła, aby rozmazać obrazek."
+
+#: ../../magic/src/tint.c:86
+#, fuzzy
+msgid "Click to change the entire picture’s color."
 msgstr "Kliknij i przesuń myszką dookoła, aby zmienić kolor obrazka."
 
 #: ../../magic/src/waves.c:78

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TuxPaint\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-07-08 21:42-0700\n"
+"POT-Creation-Date: 2008-07-09 13:17-0700\n"
 "PO-Revision-Date: 2004-05-23 10:53+0100\n"
 "Last-Translator: Nedjeljko Jedbaj <jedvajn@netlane.com>\n"
 "Language-Team: \n"
@@ -984,7 +984,13 @@ msgstr "Istanji"
 
 #: ../../magic/src/tint.c:84
 #, fuzzy
-msgid "Click and move the mouse around to change the picture’s color."
+msgid ""
+"Click and move the mouse around to change the color of parts of the picture."
+msgstr "Klikni i pomakni miša. Zamutiti ćeš crtež."
+
+#: ../../magic/src/tint.c:86
+#, fuzzy
+msgid "Click to change the entire picture’s color."
 msgstr "Klikni i pomakni miša. Crtež ćeš pretvoriti u kvadratiće."
 
 #: ../../magic/src/waves.c:78

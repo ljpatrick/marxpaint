@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint 0.9.15\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-07-08 21:42-0700\n"
+"POT-Creation-Date: 2008-07-09 13:17-0700\n"
 "PO-Revision-Date: 2007-11-11 17:15+0900\n"
 "Last-Translator: TOYAMA Shin-ichi <shin1@wmail.plala.or.jp>\n"
 "Language-Team: japanese <shin1@wmail.plala.or.jp>\n"
@@ -970,7 +970,14 @@ msgid "Tint"
 msgstr "そめる"
 
 #: ../../magic/src/tint.c:84
-msgid "Click and move the mouse around to change the picture’s color."
+#, fuzzy
+msgid ""
+"Click and move the mouse around to change the color of parts of the picture."
+msgstr "クリックしたまま マウスをうごかして えを ぼかそう"
+
+#: ../../magic/src/tint.c:86
+#, fuzzy
+msgid "Click to change the entire picture’s color."
 msgstr "クリックしたまま マウスをうごかして えのいろを かえよう．"
 
 #: ../../magic/src/waves.c:78
