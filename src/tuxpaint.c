@@ -3731,7 +3731,7 @@ static void mainloop(void)
 	      }
 	    }
 	  }
-	  else if (cur_tool == TOOL_MAGIC)
+	  else if (cur_tool == TOOL_MAGIC && magics[cur_magic].mode == MODE_PAINT)
 	  {
 	    int undo_ctr;
             SDL_Surface * last;
@@ -3969,7 +3969,7 @@ static void mainloop(void)
 	      SDL_Flip(screen);
 	    }
 	  }
-	  else if (cur_tool == TOOL_MAGIC)
+	  else if (cur_tool == TOOL_MAGIC && magics[cur_magic].mode == MODE_PAINT)
 	  {
 	    int undo_ctr;
             SDL_Surface * last;
@@ -5089,7 +5089,7 @@ static void show_usage(FILE * f, char *prg)
 	  prg, prg,
 	  blank, blank, blank, blank,
 	  blank, blank, blank, blank,
-	  blank, blank, blank,
+	  blank, blank, blank, blank,
 	  blank, blank, blank,
 	  blank, blank, blank,
 	  blank, blank, blank, blank, blank, blank, blank, blank, blank,
