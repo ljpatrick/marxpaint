@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint 0.9.17\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-07-09 13:17-0700\n"
+"POT-Creation-Date: 2008-07-09 13:31-0700\n"
 "PO-Revision-Date: 2008-03-12 14:01+0100\n"
 "Last-Translator: Peter Tuhársky <tuharsky@misbb.sk>\n"
 "Language-Team: Slovak <sk-i18n@lists.linux.sk>\n"
@@ -789,21 +789,33 @@ msgstr "Rozmazanie"
 msgid "Click and drag the mouse to emboss the picture."
 msgstr "Keď klikneš a pohýbeš myšou, rozmažeš obrázok."
 
-#: ../../magic/src/fade_darken.c:116
+#: ../../magic/src/fade_darken.c:119
 msgid "Lighten"
 msgstr "Zosvetli"
 
-#: ../../magic/src/fade_darken.c:118
+#: ../../magic/src/fade_darken.c:121
 msgid "Darken"
 msgstr "Stmav"
 
-#: ../../magic/src/fade_darken.c:128
-msgid "Click and move to fade the colors."
-msgstr "Klikni a pohybuj myšou, farby budú blednúť."
+#: ../../magic/src/fade_darken.c:132
+#, fuzzy
+msgid "Click and move the mouse to lighten parts of your picture."
+msgstr "Klikni a pohybuj myšou, obrázok sa rozmaže."
 
-#: ../../magic/src/fade_darken.c:131
-msgid "Click and move to darken the colors."
-msgstr "Klikni a pohybuj myšou, farby budú tmavnúť."
+#: ../../magic/src/fade_darken.c:134
+#, fuzzy
+msgid "Click to lighten your entire picture."
+msgstr "Klikni a pohybuj myšou pre zmenu farby obrázku."
+
+#: ../../magic/src/fade_darken.c:139
+#, fuzzy
+msgid "Click and move the mouse to darken parts of your picture."
+msgstr "Klikni a pohybuj myšou, obrázok sa rozmaže."
+
+#: ../../magic/src/fade_darken.c:141
+#, fuzzy
+msgid "Click to darken your entire picture."
+msgstr "Klikni a pohybuj myšou pre zmenu farby obrázku."
 
 #: ../../magic/src/fill.c:87
 msgid "Fill"
@@ -834,9 +846,14 @@ msgstr "Keď klikneš a pohýbeš myšou, zakryješ oblasť penovými bublinkami
 msgid "Glass Tile"
 msgstr "Sklenené dlaždice"
 
-#: ../../magic/src/glasstile.c:89
+#: ../../magic/src/glasstile.c:90
 msgid "Click and drag the mouse to put glass tile over your picture."
 msgstr "Keď klikneš a pohýbeš myšou, položíš na obrázok sklenené dlaždice."
+
+#: ../../magic/src/glasstile.c:92
+#, fuzzy
+msgid "Click to cover your entire picture in glass tiles."
+msgstr "Klikni a pohybuj myšou pre zmenu farby obrázku."
 
 #: ../../magic/src/grass.c:92
 msgid "Grass"
@@ -989,6 +1006,12 @@ msgstr ""
 "Keď klikneš, obrázok sa zvlní. Ak klikneš smerom nahor, vlny budú kratšie. "
 "Ak klikneš smerom nadol, vlny budú vyššie, ak doľava, budú menšie a doprava "
 "budú dlhšie."
+
+#~ msgid "Click and move to fade the colors."
+#~ msgstr "Klikni a pohybuj myšou, farby budú blednúť."
+
+#~ msgid "Click and move to darken the colors."
+#~ msgstr "Klikni a pohybuj myšou, farby budú tmavnúť."
 
 #~ msgid "Sparkles"
 #~ msgstr "Iskry"

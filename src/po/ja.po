@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint 0.9.15\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-07-09 13:17-0700\n"
+"POT-Creation-Date: 2008-07-09 13:31-0700\n"
 "PO-Revision-Date: 2007-11-11 17:15+0900\n"
 "Last-Translator: TOYAMA Shin-ichi <shin1@wmail.plala.or.jp>\n"
 "Language-Team: japanese <shin1@wmail.plala.or.jp>\n"
@@ -791,21 +791,33 @@ msgstr "うきぼり"
 msgid "Click and drag the mouse to emboss the picture."
 msgstr "クリックしたまま マウスをうごかして えを うきぼりに しよう"
 
-#: ../../magic/src/fade_darken.c:116
+#: ../../magic/src/fade_darken.c:119
 msgid "Lighten"
 msgstr "うすく"
 
-#: ../../magic/src/fade_darken.c:118
+#: ../../magic/src/fade_darken.c:121
 msgid "Darken"
 msgstr "こく"
 
-#: ../../magic/src/fade_darken.c:128
-msgid "Click and move to fade the colors."
-msgstr "クリックしたまま マウスをうごかして いろを うすく しよう"
+#: ../../magic/src/fade_darken.c:132
+#, fuzzy
+msgid "Click and move the mouse to lighten parts of your picture."
+msgstr "クリックしたまま マウスをうごかして えを ぼかそう"
 
-#: ../../magic/src/fade_darken.c:131
-msgid "Click and move to darken the colors."
-msgstr "クリックしたまま マウスをうごかして いろを こく しよう．"
+#: ../../magic/src/fade_darken.c:134
+#, fuzzy
+msgid "Click to lighten your entire picture."
+msgstr "クリックしたまま マウスをうごかして えのいろを かえよう．"
+
+#: ../../magic/src/fade_darken.c:139
+#, fuzzy
+msgid "Click and move the mouse to darken parts of your picture."
+msgstr "クリックしたまま マウスをうごかして えを ぼかそう"
+
+#: ../../magic/src/fade_darken.c:141
+#, fuzzy
+msgid "Click to darken your entire picture."
+msgstr "クリックしたまま マウスをうごかして えのいろを かえよう．"
 
 #: ../../magic/src/fill.c:87
 msgid "Fill"
@@ -837,9 +849,14 @@ msgstr "クリックしたまま マウスを うごかして あわを かこ�
 msgid "Glass Tile"
 msgstr "ガラス タイル"
 
-#: ../../magic/src/glasstile.c:89
+#: ../../magic/src/glasstile.c:90
 msgid "Click and drag the mouse to put glass tile over your picture."
 msgstr "クリックしたまま マウスをうごかして えに ガラスの タイルを かぶせよう"
+
+#: ../../magic/src/glasstile.c:92
+#, fuzzy
+msgid "Click to cover your entire picture in glass tiles."
+msgstr "クリックしたまま マウスをうごかして えのいろを かえよう．"
 
 #: ../../magic/src/grass.c:92
 msgid "Grass"
@@ -994,6 +1011,12 @@ msgstr ""
 "ば みじかく したのほうを クリックすれば ながくなるよ。それから なみの たかさ"
 "は ひだりのほうを クリックすれば おおきく みぎのほうを クリックすれば ひくく"
 "なるよ"
+
+#~ msgid "Click and move to fade the colors."
+#~ msgstr "クリックしたまま マウスをうごかして いろを うすく しよう"
+
+#~ msgid "Click and move to darken the colors."
+#~ msgstr "クリックしたまま マウスをうごかして いろを こく しよう．"
 
 #~ msgid "Sparkles"
 #~ msgstr "ひばな"

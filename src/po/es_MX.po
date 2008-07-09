@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TuxPaint 0.9.2\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-07-09 13:17-0700\n"
+"POT-Creation-Date: 2008-07-09 13:31-0700\n"
 "PO-Revision-Date: 2007-08-05 19:22-0400\n"
 "Last-Translator: Ignacio Tike <itike17@yahoo.com>\n"
 "Language-Team: Español <ggabriel@internet.com.uy>\n"
@@ -791,21 +791,35 @@ msgid "Click and drag the mouse to emboss the picture."
 msgstr ""
 "Haz clic y arrastra el ratón para crear un grabado en relieve de la imagen."
 
-#: ../../magic/src/fade_darken.c:116
+#: ../../magic/src/fade_darken.c:119
 msgid "Lighten"
 msgstr "Aclarar"
 
-#: ../../magic/src/fade_darken.c:118
+#: ../../magic/src/fade_darken.c:121
 msgid "Darken"
 msgstr "Oscurecer"
 
-#: ../../magic/src/fade_darken.c:128
-msgid "Click and move to fade the colors."
-msgstr "Haz clic y arrastra para desvanecer los colores."
+#: ../../magic/src/fade_darken.c:132
+#, fuzzy
+msgid "Click and move the mouse to lighten parts of your picture."
+msgstr "Haz clic y arrastra el ratón para desenfocar la imagen."
 
-#: ../../magic/src/fade_darken.c:131
-msgid "Click and move to darken the colors."
-msgstr "Haz clic y arrastra para oscurecer los colores."
+#: ../../magic/src/fade_darken.c:134
+#, fuzzy
+msgid "Click to lighten your entire picture."
+msgstr ""
+"Haz clic y arrastra el ratón alrededor para cambiar el color de la imagen."
+
+#: ../../magic/src/fade_darken.c:139
+#, fuzzy
+msgid "Click and move the mouse to darken parts of your picture."
+msgstr "Haz clic y arrastra el ratón para desenfocar la imagen."
+
+#: ../../magic/src/fade_darken.c:141
+#, fuzzy
+msgid "Click to darken your entire picture."
+msgstr ""
+"Haz clic y arrastra el ratón alrededor para cambiar el color de la imagen."
 
 #: ../../magic/src/fill.c:87
 msgid "Fill"
@@ -840,10 +854,16 @@ msgstr "Haz clic y arrastra el ratón para cubrir un área con burbujas."
 msgid "Glass Tile"
 msgstr "Azulejo de vidrio"
 
-#: ../../magic/src/glasstile.c:89
+#: ../../magic/src/glasstile.c:90
 msgid "Click and drag the mouse to put glass tile over your picture."
 msgstr ""
 "Haz clic y arrastra el ratón para poner azulejos de vidrio sobre tu imagen."
+
+#: ../../magic/src/glasstile.c:92
+#, fuzzy
+msgid "Click to cover your entire picture in glass tiles."
+msgstr ""
+"Haz clic y arrastra el ratón alrededor para cambiar el color de la imagen."
 
 #: ../../magic/src/grass.c:92
 msgid "Grass"
@@ -1003,6 +1023,12 @@ msgstr ""
 "Haz clic para ondular la imagen. Al hacer clic cerca de la parte superior "
 "crearás ondas más bajas, cerca de la parte inferior para ondas más altas, "
 "hacia la izquierda para ondas cortas, y hacia la derecha para ondas largas."
+
+#~ msgid "Click and move to fade the colors."
+#~ msgstr "Haz clic y arrastra para desvanecer los colores."
+
+#~ msgid "Click and move to darken the colors."
+#~ msgstr "Haz clic y arrastra para oscurecer los colores."
 
 #~ msgid "Sparkles"
 #~ msgstr "Chispas"

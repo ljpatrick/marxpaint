@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TuxPaint 0.0.1pre\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-07-09 13:17-0700\n"
+"POT-Creation-Date: 2008-07-09 13:31-0700\n"
 "PO-Revision-Date: 2005-01-09 14:49+0100\n"
 "Last-Translator: Gugusse <titi>\n"
 "Language-Team: Breton <drouizig@drouizig.org>\n"
@@ -791,22 +791,34 @@ msgstr ""
 msgid "Click and drag the mouse to emboss the picture."
 msgstr "Klik ha fiñv al logodenn evit displanaat ar skeudenn."
 
-#: ../../magic/src/fade_darken.c:116
+#: ../../magic/src/fade_darken.c:119
 #, fuzzy
 msgid "Lighten"
 msgstr "Gris sklaer !"
 
-#: ../../magic/src/fade_darken.c:118
+#: ../../magic/src/fade_darken.c:121
 msgid "Darken"
 msgstr "Teñvaloc'h"
 
-#: ../../magic/src/fade_darken.c:128
-msgid "Click and move to fade the colors."
-msgstr "Klik ha fiñv al logodenn evit lakaat al livioù da zislivañ."
+#: ../../magic/src/fade_darken.c:132
+#, fuzzy
+msgid "Click and move the mouse to lighten parts of your picture."
+msgstr "Klik ha fiñv al logodenn evit displanaat ar skeudenn."
 
-#: ../../magic/src/fade_darken.c:131
-msgid "Click and move to darken the colors."
-msgstr "Klik ha fiñv al logodenn evit lakaat al livioù da deñvalaat."
+#: ../../magic/src/fade_darken.c:134
+#, fuzzy
+msgid "Click to lighten your entire picture."
+msgstr "Klik ha fiñv al logodenn evit cheñch liv an dresadenn."
+
+#: ../../magic/src/fade_darken.c:139
+#, fuzzy
+msgid "Click and move the mouse to darken parts of your picture."
+msgstr "Klik ha fiñv al logodenn evit displanaat ar skeudenn."
+
+#: ../../magic/src/fade_darken.c:141
+#, fuzzy
+msgid "Click to darken your entire picture."
+msgstr "Klik ha fiñv al logodenn evit cheñch liv an dresadenn."
 
 #: ../../magic/src/fill.c:87
 msgid "Fill"
@@ -837,10 +849,15 @@ msgstr "Klik war ar skeudenn evit leuniañ al leur-se gant ul liv."
 msgid "Glass Tile"
 msgstr ""
 
-#: ../../magic/src/glasstile.c:89
+#: ../../magic/src/glasstile.c:90
 #, fuzzy
 msgid "Click and drag the mouse to put glass tile over your picture."
 msgstr "Klik ha fiñv al logodenn evit displanaat ar skeudenn."
+
+#: ../../magic/src/glasstile.c:92
+#, fuzzy
+msgid "Click to cover your entire picture in glass tiles."
+msgstr "Klik ha fiñv al logodenn evit cheñch liv an dresadenn."
 
 #: ../../magic/src/grass.c:92
 msgid "Grass"
@@ -996,6 +1013,12 @@ msgid ""
 "bottom for taller waves, the left for small waves, and the right for long "
 "waves."
 msgstr ""
+
+#~ msgid "Click and move to fade the colors."
+#~ msgstr "Klik ha fiñv al logodenn evit lakaat al livioù da zislivañ."
+
+#~ msgid "Click and move to darken the colors."
+#~ msgstr "Klik ha fiñv al logodenn evit lakaat al livioù da deñvalaat."
 
 #~ msgid "Sparkles"
 #~ msgstr "Fulennoù"

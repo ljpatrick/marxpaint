@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-07-09 13:17-0700\n"
+"POT-Creation-Date: 2008-07-09 13:31-0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -779,20 +779,28 @@ msgstr ""
 msgid "Click and drag the mouse to emboss the picture."
 msgstr ""
 
-#: ../../magic/src/fade_darken.c:116
+#: ../../magic/src/fade_darken.c:119
 msgid "Lighten"
 msgstr "Paliwanagin"
 
-#: ../../magic/src/fade_darken.c:118
+#: ../../magic/src/fade_darken.c:121
 msgid "Darken"
 msgstr "Padilimin"
 
-#: ../../magic/src/fade_darken.c:128
-msgid "Click and move to fade the colors."
+#: ../../magic/src/fade_darken.c:132
+msgid "Click and move the mouse to lighten parts of your picture."
 msgstr ""
 
-#: ../../magic/src/fade_darken.c:131
-msgid "Click and move to darken the colors."
+#: ../../magic/src/fade_darken.c:134
+msgid "Click to lighten your entire picture."
+msgstr ""
+
+#: ../../magic/src/fade_darken.c:139
+msgid "Click and move the mouse to darken parts of your picture."
+msgstr ""
+
+#: ../../magic/src/fade_darken.c:141
+msgid "Click to darken your entire picture."
 msgstr ""
 
 #: ../../magic/src/fill.c:87
@@ -823,8 +831,12 @@ msgstr ""
 msgid "Glass Tile"
 msgstr ""
 
-#: ../../magic/src/glasstile.c:89
+#: ../../magic/src/glasstile.c:90
 msgid "Click and drag the mouse to put glass tile over your picture."
+msgstr ""
+
+#: ../../magic/src/glasstile.c:92
+msgid "Click to cover your entire picture in glass tiles."
 msgstr ""
 
 #: ../../magic/src/grass.c:92

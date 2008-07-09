@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-07-09 13:17-0700\n"
+"POT-Creation-Date: 2008-07-09 13:31-0700\n"
 "PO-Revision-Date: 2007-07-04 11:24-0000\n"
 "Last-Translator: Haby Diallo <haby42@yahoo.fr>\n"
 "Language-Team: \n"
@@ -793,21 +793,33 @@ msgstr ""
 msgid "Click and drag the mouse to emboss the picture."
 msgstr "Bëssël te jalale ak jinax bi so buge sa natal bi lëndëm."
 
-#: ../../magic/src/fade_darken.c:116
+#: ../../magic/src/fade_darken.c:119
 msgid "Lighten"
 msgstr "Leral"
 
-#: ../../magic/src/fade_darken.c:118
+#: ../../magic/src/fade_darken.c:121
 msgid "Darken"
 msgstr "Lëndëmal"
 
-#: ../../magic/src/fade_darken.c:128
-msgid "Click and move to fade the colors."
-msgstr "Bëssël te jalale ak jinax bi ngir wañi lerayu kulor yi."
+#: ../../magic/src/fade_darken.c:132
+#, fuzzy
+msgid "Click and move the mouse to lighten parts of your picture."
+msgstr "Bëssël te jalale ak jinax bi so buge sa natal bi lëndëm."
 
-#: ../../magic/src/fade_darken.c:131
-msgid "Click and move to darken the colors."
-msgstr "Bëssël te jalale ak jinax bi ngir wañi lerayu culor yi."
+#: ../../magic/src/fade_darken.c:134
+#, fuzzy
+msgid "Click to lighten your entire picture."
+msgstr "Bëssël te jalale ak jinax ngir sopi so kuloru natal bi."
+
+#: ../../magic/src/fade_darken.c:139
+#, fuzzy
+msgid "Click and move the mouse to darken parts of your picture."
+msgstr "Bëssël te jalale ak jinax bi so buge sa natal bi lëndëm."
+
+#: ../../magic/src/fade_darken.c:141
+#, fuzzy
+msgid "Click to darken your entire picture."
+msgstr "Bëssël te jalale ak jinax ngir sopi so kuloru natal bi."
 
 #: ../../magic/src/fill.c:87
 msgid "Fill"
@@ -838,10 +850,15 @@ msgstr "Bëssël ci natal bi soko bëge pentur fi nga tan ak kulor bi."
 msgid "Glass Tile"
 msgstr ""
 
-#: ../../magic/src/glasstile.c:89
+#: ../../magic/src/glasstile.c:90
 #, fuzzy
 msgid "Click and drag the mouse to put glass tile over your picture."
 msgstr "Bëssël te jalale ak jinax bi so buge sa natal bi lëndëm."
+
+#: ../../magic/src/glasstile.c:92
+#, fuzzy
+msgid "Click to cover your entire picture in glass tiles."
+msgstr "Bëssël te jalale ak jinax ngir sopi so kuloru natal bi."
 
 #: ../../magic/src/grass.c:92
 msgid "Grass"
@@ -998,6 +1015,12 @@ msgid ""
 "bottom for taller waves, the left for small waves, and the right for long "
 "waves."
 msgstr ""
+
+#~ msgid "Click and move to fade the colors."
+#~ msgstr "Bëssël te jalale ak jinax bi ngir wañi lerayu kulor yi."
+
+#~ msgid "Click and move to darken the colors."
+#~ msgstr "Bëssël te jalale ak jinax bi ngir wañi lerayu culor yi."
 
 #~ msgid "Sparkles"
 #~ msgstr "Ferñent"

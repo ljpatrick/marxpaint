@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint 0.9.18\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-07-09 13:17-0700\n"
+"POT-Creation-Date: 2008-07-09 13:31-0700\n"
 "PO-Revision-Date: 2008-01-29 15:00+0000\n"
 "Last-Translator: Edmund GRIMLEY EVANS <edmundo@rano.org>\n"
 "Language-Team: Esperanto <translation-team-eo@lists.sourceforge.net>\n"
@@ -779,21 +779,33 @@ msgstr "Bosado"
 msgid "Click and drag the mouse to emboss the picture."
 msgstr "Alklaku kaj movu la muson por bosi la bildon."
 
-#: ../../magic/src/fade_darken.c:116
+#: ../../magic/src/fade_darken.c:119
 msgid "Lighten"
 msgstr "Heligi"
 
-#: ../../magic/src/fade_darken.c:118
+#: ../../magic/src/fade_darken.c:121
 msgid "Darken"
 msgstr "Malheligi"
 
-#: ../../magic/src/fade_darken.c:128
-msgid "Click and move to fade the colors."
-msgstr "Alklaku kaj movu por velkigi la kolorojn."
+#: ../../magic/src/fade_darken.c:132
+#, fuzzy
+msgid "Click and move the mouse to lighten parts of your picture."
+msgstr "Alklaku kaj movu la muson por malklarigi la bildon."
 
-#: ../../magic/src/fade_darken.c:131
-msgid "Click and move to darken the colors."
-msgstr "Alklaku kaj movu por malheligi la kolorojn."
+#: ../../magic/src/fade_darken.c:134
+#, fuzzy
+msgid "Click to lighten your entire picture."
+msgstr "Alklaku kaj movu la muson por ŝanĝi la koloron de la bildo."
+
+#: ../../magic/src/fade_darken.c:139
+#, fuzzy
+msgid "Click and move the mouse to darken parts of your picture."
+msgstr "Alklaku kaj movu la muson por malklarigi la bildon."
+
+#: ../../magic/src/fade_darken.c:141
+#, fuzzy
+msgid "Click to darken your entire picture."
+msgstr "Alklaku kaj movu la muson por ŝanĝi la koloron de la bildo."
 
 #: ../../magic/src/fill.c:87
 msgid "Fill"
@@ -825,9 +837,14 @@ msgstr "Alklaku kaj movu la muson por kovri areon per ŝaŭmaj bobeloj."
 msgid "Glass Tile"
 msgstr "Vitra Kahelo"
 
-#: ../../magic/src/glasstile.c:89
+#: ../../magic/src/glasstile.c:90
 msgid "Click and drag the mouse to put glass tile over your picture."
 msgstr "Alklaku kaj movu la muson por met vitrajn kahelojn sur vian bildon."
+
+#: ../../magic/src/glasstile.c:92
+#, fuzzy
+msgid "Click to cover your entire picture in glass tiles."
+msgstr "Alklaku kaj movu la muson por ŝanĝi la koloron de la bildo."
 
 #: ../../magic/src/grass.c:92
 msgid "Grass"
@@ -977,6 +994,12 @@ msgid ""
 msgstr ""
 "Alklaku por ondigi la bildon. Alklaku supre por mallongaj ondoj, sube por "
 "pli altaj ondoj, maldekstre por etaj ondoj, dekstre por longaj ondoj."
+
+#~ msgid "Click and move to fade the colors."
+#~ msgstr "Alklaku kaj movu por velkigi la kolorojn."
+
+#~ msgid "Click and move to darken the colors."
+#~ msgstr "Alklaku kaj movu por malheligi la kolorojn."
 
 #~ msgid "Sparkles"
 #~ msgstr "Steloj"

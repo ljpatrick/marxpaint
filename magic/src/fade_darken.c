@@ -23,7 +23,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  Last updated: July 8, 2008
+  Last updated: July 9, 2008
   $Id$
 */
 
@@ -53,6 +53,9 @@ char * fade_darken_get_description(magic_api * api, int which, int mode);
 static void do_fade_darken(void * ptr, int which,
 	         SDL_Surface * canvas, SDL_Surface * last,
 	         int x, int y);
+static void do_fade_darken_paint(void * ptr, int which,
+	         SDL_Surface * canvas, SDL_Surface * last,
+	         int x, int y);
 void fade_darken_drag(magic_api * api, int which, SDL_Surface * canvas,
 	           SDL_Surface * last, int ox, int oy, int x, int y,
                    SDL_Rect * update_rect);
@@ -73,11 +76,11 @@ int fade_darken_init(magic_api * api)
 
   snprintf(fname, sizeof(fname), "%s/sounds/magic/fade.wav",
 	   api->data_directory);
-  snd_effects[TOOL_FADE] = Mix_LoadWAV(fname);  
+  snd_effects[TOOL_FADE] = Mix_LoadWAV(fname);
 
   snprintf(fname, sizeof(fname), "%s/sounds/magic/darken.wav",
 	   api->data_directory);
-  snd_effects[TOOL_DARKEN] = Mix_LoadWAV(fname);  
+  snd_effects[TOOL_DARKEN] = Mix_LoadWAV(fname);
 
   return(1);
 }
@@ -124,22 +127,54 @@ char * fade_darken_get_name(magic_api * api ATTRIBUTE_UNUSED, int which)
 char * fade_darken_get_description(magic_api * api ATTRIBUTE_UNUSED, int which, int mode)
 {
   if (which == TOOL_FADE)
-    return(strdup(
-           gettext_noop("Click and move to fade the colors.")));
+  {
+    if (mode == MODE_PAINT)
+      return(strdup(gettext_noop("Click and move the mouse to lighten parts of your picture.")));
+    else if (mode == MODE_FULLSCREEN)
+      return(strdup(gettext_noop("Click to lighten your entire picture.")));
+  }
   else if (which == TOOL_DARKEN)
-    return(strdup(
-           gettext_noop("Click and move to darken the colors.")));
+  {
+    if (mode == MODE_PAINT)
+      return(strdup(gettext_noop("Click and move the mouse to darken parts of your picture.")));
+    else if (mode == MODE_FULLSCREEN)
+      return(strdup(gettext_noop("Click to darken your entire picture.")));
+  }
 
   return(NULL);
 }
 
-// Callback that does the fade_darken color effect on a circle centered around x,y
 static void do_fade_darken(void * ptr, int which,
 	         SDL_Surface * canvas, SDL_Surface * last,
 	         int x, int y)
 {
-  int xx, yy;
   Uint8 r, g, b;
+  magic_api * api = (magic_api *) ptr;
+
+  SDL_GetRGB(api->getpixel(last, x, y), last->format, &r, &g, &b);
+
+  if (which == TOOL_FADE)
+  {
+    r = min(r + 48, 255);
+    g = min(g + 48, 255);
+    b = min(b + 48, 255);
+  }
+  else if (which == TOOL_DARKEN)
+  {
+    r = max(r - 48, 0);
+    g = max(g - 48, 0);
+    b = max(b - 48, 0);
+  }
+
+  api->putpixel(canvas, x, y, SDL_MapRGB(canvas->format, r, g, b));
+}
+
+// Callback that does the fade_darken color effect on a circle centered around x,y
+static void do_fade_darken_paint(void * ptr, int which,
+	         SDL_Surface * canvas, SDL_Surface * last,
+	         int x, int y)
+{
+  int xx, yy;
   magic_api * api = (magic_api *) ptr;
 
   for (yy = y - 16; yy < y + 16; yy++)
@@ -149,28 +184,13 @@ static void do_fade_darken(void * ptr, int which,
       if (api->in_circle(xx - x, yy - y, 16) &&
 	  !api->touched(xx, yy))
       {
-        SDL_GetRGB(api->getpixel(last, xx, yy), last->format, &r, &g, &b);
-
-        if (which == TOOL_FADE)
-        {
-          r = min(r + 48, 255);
-          g = min(g + 48, 255);
-          b = min(b + 48, 255);
-        }
-        else if (which == TOOL_DARKEN)
-        {
-          r = max(r - 48, 0);
-          g = max(g - 48, 0);
-          b = max(b - 48, 0);
-        }
-
-        api->putpixel(canvas, xx, yy, SDL_MapRGB(canvas->format, r, g, b));
+        do_fade_darken(api, which, canvas, last, xx, yy);
       }
     }
   }
 }
 
-// Ask Tux Paint to call our 'do_fade_darken()' callback over a line
+// Ask Tux Paint to call our 'do_fade_darken_paint()' callback over a line
 void fade_darken_drag(magic_api * api, int which, SDL_Surface * canvas,
 	           SDL_Surface * last, int ox, int oy, int x, int y,
                    SDL_Rect * update_rect)
@@ -178,7 +198,7 @@ void fade_darken_drag(magic_api * api, int which, SDL_Surface * canvas,
   SDL_LockSurface(last);
   SDL_LockSurface(canvas);
 
-  api->line((void *) api, which, canvas, last, ox, oy, x, y, 1, do_fade_darken);
+  api->line((void *) api, which, canvas, last, ox, oy, x, y, 1, do_fade_darken_paint);
   
   SDL_UnlockSurface(canvas);
   SDL_UnlockSurface(last);
@@ -194,12 +214,29 @@ void fade_darken_drag(magic_api * api, int which, SDL_Surface * canvas,
   update_rect->h = (y + 16) - update_rect->y;
 }
 
-// Ask Tux Paint to call our 'do_fade_darken()' callback at a single point
+// Ask Tux Paint to call our 'do_fade_darken_paint()' callback at a single point,
+// or 'do_fade_darken()' on the entire image
 void fade_darken_click(magic_api * api, int which, int mode,
 	            SDL_Surface * canvas, SDL_Surface * last,
 	            int x, int y, SDL_Rect * update_rect)
 {
-  fade_darken_drag(api, which, canvas, last, x, y, x, y, update_rect);
+  if (mode == MODE_PAINT)
+    fade_darken_drag(api, which, canvas, last, x, y, x, y, update_rect);
+  else
+  {
+    int xx, yy;
+
+    for (yy = 0; yy < canvas->h; yy++)
+      for (xx = 0; xx < canvas->w; xx++)
+        do_fade_darken(api, which, canvas, last, xx, yy);
+
+    update_rect->x = 0;
+    update_rect->y = 0;
+    update_rect->w = canvas->w;
+    update_rect->h = canvas->h;
+
+    /* FIXME: Play sfx */
+  }
 }
 
 // Release
@@ -241,5 +278,5 @@ void fade_darken_switchout(magic_api * api, int which, SDL_Surface * canvas)
 
 int fade_darken_modes(magic_api * api, int which)
 {
-  return(MODE_PAINT); /* FIXME - Can also be turned into a full-image effect */
+  return(MODE_PAINT | MODE_FULLSCREEN);
 }

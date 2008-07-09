@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pt_br\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-07-09 13:17-0700\n"
+"POT-Creation-Date: 2008-07-09 13:31-0700\n"
 "PO-Revision-Date: 2007-11-15 22:14-0300\n"
 "Last-Translator: Frederico Goncalves Guimaraes <frederico@teia.bio.br>\n"
 "Language-Team: Português do Brasil\n"
@@ -788,21 +788,33 @@ msgstr "Relevo"
 msgid "Click and drag the mouse to emboss the picture."
 msgstr "Clique e mova o mouse para aplicar relevo à imagem."
 
-#: ../../magic/src/fade_darken.c:116
+#: ../../magic/src/fade_darken.c:119
 msgid "Lighten"
 msgstr "Clarear"
 
-#: ../../magic/src/fade_darken.c:118
+#: ../../magic/src/fade_darken.c:121
 msgid "Darken"
 msgstr "Escurecer"
 
-#: ../../magic/src/fade_darken.c:128
-msgid "Click and move to fade the colors."
-msgstr "Clique e mova o mouse para desbotar as cores."
+#: ../../magic/src/fade_darken.c:132
+#, fuzzy
+msgid "Click and move the mouse to lighten parts of your picture."
+msgstr "Clique e mova o mouse para borrar a imagem."
 
-#: ../../magic/src/fade_darken.c:131
-msgid "Click and move to darken the colors."
-msgstr "Clique e mova o mouse para escurecer as cores."
+#: ../../magic/src/fade_darken.c:134
+#, fuzzy
+msgid "Click to lighten your entire picture."
+msgstr "Clique e mova o mouse para mudar as cores da figura."
+
+#: ../../magic/src/fade_darken.c:139
+#, fuzzy
+msgid "Click and move the mouse to darken parts of your picture."
+msgstr "Clique e mova o mouse para borrar a imagem."
+
+#: ../../magic/src/fade_darken.c:141
+#, fuzzy
+msgid "Click to darken your entire picture."
+msgstr "Clique e mova o mouse para mudar as cores da figura."
 
 #: ../../magic/src/fill.c:87
 msgid "Fill"
@@ -834,9 +846,14 @@ msgstr "Clique e mova o mouse para cobrir uma área com bolhas de espuma."
 msgid "Glass Tile"
 msgstr "Tijolo de vidro"
 
-#: ../../magic/src/glasstile.c:89
+#: ../../magic/src/glasstile.c:90
 msgid "Click and drag the mouse to put glass tile over your picture."
 msgstr "Clique e mova o mouse para colocar tijolos de vidro sobre a imagem."
+
+#: ../../magic/src/glasstile.c:92
+#, fuzzy
+msgid "Click to cover your entire picture in glass tiles."
+msgstr "Clique e mova o mouse para mudar as cores da figura."
 
 #: ../../magic/src/grass.c:92
 msgid "Grass"
@@ -989,3 +1006,9 @@ msgstr ""
 "Clique para tornar a imagem ondulada. Movimente para o alto para ondas mais "
 "curtas, para baixo para ondas mais altas, para a esquerda para ondas "
 "pequenas e para a direita para ondas grandes."
+
+#~ msgid "Click and move to fade the colors."
+#~ msgstr "Clique e mova o mouse para desbotar as cores."
+
+#~ msgid "Click and move to darken the colors."
+#~ msgstr "Clique e mova o mouse para escurecer as cores."

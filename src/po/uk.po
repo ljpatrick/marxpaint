@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TuxPaint\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-07-09 13:17-0700\n"
+"POT-Creation-Date: 2008-07-09 13:31-0700\n"
 "PO-Revision-Date: 2008-06-17 04:01+0300\n"
 "Last-Translator: Serhij Dubyk <serhijdubyk@gmail.com>\n"
 "Language-Team: Serhij Dubyk <serhijdubyk@gmail.com>\n"
@@ -794,21 +794,33 @@ msgstr "Рельєф"
 msgid "Click and drag the mouse to emboss the picture."
 msgstr "Клацніть та посовгайте мишкою, щоб зробити малюнок рельєфнішим."
 
-#: ../../magic/src/fade_darken.c:116
+#: ../../magic/src/fade_darken.c:119
 msgid "Lighten"
 msgstr "Світліше"
 
-#: ../../magic/src/fade_darken.c:118
+#: ../../magic/src/fade_darken.c:121
 msgid "Darken"
 msgstr "Темніше"
 
-#: ../../magic/src/fade_darken.c:128
-msgid "Click and move to fade the colors."
-msgstr "Клацніть та поводіть по малюнку, щоб освітлити."
+#: ../../magic/src/fade_darken.c:132
+#, fuzzy
+msgid "Click and move the mouse to lighten parts of your picture."
+msgstr "Клацніть та посовгайте по малюнку, щоб трохи порозмазувати його."
 
-#: ../../magic/src/fade_darken.c:131
-msgid "Click and move to darken the colors."
-msgstr "Клацніть та посовгайте по малюнку, щоб зробити його частину темнішою."
+#: ../../magic/src/fade_darken.c:134
+#, fuzzy
+msgid "Click to lighten your entire picture."
+msgstr "Клацніть та посовгайте по малюнку, щоб змінити колір малюнка."
+
+#: ../../magic/src/fade_darken.c:139
+#, fuzzy
+msgid "Click and move the mouse to darken parts of your picture."
+msgstr "Клацніть та посовгайте по малюнку, щоб трохи порозмазувати його."
+
+#: ../../magic/src/fade_darken.c:141
+#, fuzzy
+msgid "Click to darken your entire picture."
+msgstr "Клацніть та посовгайте по малюнку, щоб змінити колір малюнка."
 
 #: ../../magic/src/fill.c:87
 msgid "Fill"
@@ -840,10 +852,15 @@ msgstr "Клацніть та поводіть мишкою, щоб покрит
 msgid "Glass Tile"
 msgstr "Вітраж"
 
-#: ../../magic/src/glasstile.c:89
+#: ../../magic/src/glasstile.c:90
 msgid "Click and drag the mouse to put glass tile over your picture."
 msgstr ""
 "Клацніть та протягніть мишкою, щоб встановити вітраж над Вашим малюнком."
+
+#: ../../magic/src/glasstile.c:92
+#, fuzzy
+msgid "Click to cover your entire picture in glass tiles."
+msgstr "Клацніть та посовгайте по малюнку, щоб змінити колір малюнка."
 
 #: ../../magic/src/grass.c:92
 msgid "Grass"
@@ -996,6 +1013,13 @@ msgstr ""
 "Клацніть, щоб зробити малюнок хвилястим. Щоб зробити коротші хвильки, "
 "клацніть ближче до верху, щоб були високі хвилі - тягніться до низу, зліва "
 "матимете маленькі хвильки, а  справа - довгі хвилі."
+
+#~ msgid "Click and move to fade the colors."
+#~ msgstr "Клацніть та поводіть по малюнку, щоб освітлити."
+
+#~ msgid "Click and move to darken the colors."
+#~ msgstr ""
+#~ "Клацніть та посовгайте по малюнку, щоб зробити його частину темнішою."
 
 #~ msgid "Sparkles"
 #~ msgstr "Іскри"

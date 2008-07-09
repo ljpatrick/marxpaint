@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Tuxpaint 0.9.9\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-07-09 13:17-0700\n"
+"POT-Creation-Date: 2008-07-09 13:31-0700\n"
 "PO-Revision-Date: 2004-12-10 18:11+0200\n"
 "Last-Translator: Gintaras Goštautas <gintaras@nes.lt>\n"
 "Language-Team: Lithuanian <komp_lt@konf.lt>\n"
@@ -794,21 +794,33 @@ msgstr "Reljefo efektas"
 msgid "Click and drag the mouse to emboss the picture."
 msgstr "Spustelėkite ir pele pritaikykite reljefo efektą."
 
-#: ../../magic/src/fade_darken.c:116
+#: ../../magic/src/fade_darken.c:119
 msgid "Lighten"
 msgstr "Šviesinti"
 
-#: ../../magic/src/fade_darken.c:118
+#: ../../magic/src/fade_darken.c:121
 msgid "Darken"
 msgstr "Tamsinti"
 
-#: ../../magic/src/fade_darken.c:128
-msgid "Click and move to fade the colors."
-msgstr "Spustelėkite ir judindami pelę išblukinkite piešinio spalvas."
+#: ../../magic/src/fade_darken.c:132
+#, fuzzy
+msgid "Click and move the mouse to lighten parts of your picture."
+msgstr "Spustelėkite ir judindami pelę suliesite piešinį."
 
-#: ../../magic/src/fade_darken.c:131
-msgid "Click and move to darken the colors."
-msgstr "Spustelėkite ir judindami pelę patamsinkite piešinio spalvas."
+#: ../../magic/src/fade_darken.c:134
+#, fuzzy
+msgid "Click to lighten your entire picture."
+msgstr "Spustelėkite ir judindami pelę pakeisite piešinio spalvas."
+
+#: ../../magic/src/fade_darken.c:139
+#, fuzzy
+msgid "Click and move the mouse to darken parts of your picture."
+msgstr "Spustelėkite ir judindami pelę suliesite piešinį."
+
+#: ../../magic/src/fade_darken.c:141
+#, fuzzy
+msgid "Click to darken your entire picture."
+msgstr "Spustelėkite ir judindami pelę pakeisite piešinio spalvas."
 
 #: ../../magic/src/fill.c:87
 msgid "Fill"
@@ -840,10 +852,15 @@ msgstr "Spustelėkite ir pele užpildykite plotą putomis."
 msgid "Glass Tile"
 msgstr "Stiklas"
 
-#: ../../magic/src/glasstile.c:89
+#: ../../magic/src/glasstile.c:90
 #, fuzzy
 msgid "Click and drag the mouse to put glass tile over your picture."
 msgstr "Spustelėkite ir pele uždėkite stiklą ant piešinio."
+
+#: ../../magic/src/glasstile.c:92
+#, fuzzy
+msgid "Click to cover your entire picture in glass tiles."
+msgstr "Spustelėkite ir judindami pelę pakeisite piešinio spalvas."
 
 #: ../../magic/src/grass.c:92
 msgid "Grass"
@@ -1001,6 +1018,12 @@ msgstr ""
 "Spustelkite kad subanguotumėte piešinį. Spustelkit link viršaus kad "
 "sumažintumėte bangas,link apačios, kad padidintumėte bangas, link karės, kad "
 "patrumpintumėte bangas, link dešnės, kad pailgintumėte"
+
+#~ msgid "Click and move to fade the colors."
+#~ msgstr "Spustelėkite ir judindami pelę išblukinkite piešinio spalvas."
+
+#~ msgid "Click and move to darken the colors."
+#~ msgstr "Spustelėkite ir judindami pelę patamsinkite piešinio spalvas."
 
 #~ msgid "Sparkles"
 #~ msgstr "Žybsniai"

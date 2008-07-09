@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Tux Paint 0.9.16\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-07-09 13:17-0700\n"
+"POT-Creation-Date: 2008-07-09 13:31-0700\n"
 "PO-Revision-Date: 2007-04-29 23:10-0400\n"
 "Last-Translator: Mark K. Kim <mkkim214@gmail.com>\n"
 "Language-Team: N/A\n"
@@ -791,21 +791,33 @@ msgstr ""
 msgid "Click and drag the mouse to emboss the picture."
 msgstr "마우스를 누르면 그림을 흐리게 만들 수 있어요."
 
-#: ../../magic/src/fade_darken.c:116
+#: ../../magic/src/fade_darken.c:119
 msgid "Lighten"
 msgstr "사라지게"
 
-#: ../../magic/src/fade_darken.c:118
+#: ../../magic/src/fade_darken.c:121
 msgid "Darken"
 msgstr "어둡게"
 
-#: ../../magic/src/fade_darken.c:128
-msgid "Click and move to fade the colors."
-msgstr "마우스를 누르면 그림을 희미하게 만들 수 있어요."
+#: ../../magic/src/fade_darken.c:132
+#, fuzzy
+msgid "Click and move the mouse to lighten parts of your picture."
+msgstr "마우스를 누르면 그림을 흐리게 만들 수 있어요."
 
-#: ../../magic/src/fade_darken.c:131
-msgid "Click and move to darken the colors."
-msgstr "마우스를 누르면 그림을 어둡게 만들 수 있어요."
+#: ../../magic/src/fade_darken.c:134
+#, fuzzy
+msgid "Click to lighten your entire picture."
+msgstr "마우스를 누르면 그림이 색이 변화돼요."
+
+#: ../../magic/src/fade_darken.c:139
+#, fuzzy
+msgid "Click and move the mouse to darken parts of your picture."
+msgstr "마우스를 누르면 그림을 흐리게 만들 수 있어요."
+
+#: ../../magic/src/fade_darken.c:141
+#, fuzzy
+msgid "Click to darken your entire picture."
+msgstr "마우스를 누르면 그림이 색이 변화돼요."
 
 #: ../../magic/src/fill.c:87
 msgid "Fill"
@@ -836,10 +848,15 @@ msgstr "마우스를 누르면 물통을 엎을 수 있어요!"
 msgid "Glass Tile"
 msgstr ""
 
-#: ../../magic/src/glasstile.c:89
+#: ../../magic/src/glasstile.c:90
 #, fuzzy
 msgid "Click and drag the mouse to put glass tile over your picture."
 msgstr "마우스를 누르면 그림을 흐리게 만들 수 있어요."
+
+#: ../../magic/src/glasstile.c:92
+#, fuzzy
+msgid "Click to cover your entire picture in glass tiles."
+msgstr "마우스를 누르면 그림이 색이 변화돼요."
 
 #: ../../magic/src/grass.c:92
 msgid "Grass"
@@ -994,6 +1011,12 @@ msgid ""
 "bottom for taller waves, the left for small waves, and the right for long "
 "waves."
 msgstr ""
+
+#~ msgid "Click and move to fade the colors."
+#~ msgstr "마우스를 누르면 그림을 희미하게 만들 수 있어요."
+
+#~ msgid "Click and move to darken the colors."
+#~ msgstr "마우스를 누르면 그림을 어둡게 만들 수 있어요."
 
 #~ msgid "Sparkles"
 #~ msgstr "불꽃"

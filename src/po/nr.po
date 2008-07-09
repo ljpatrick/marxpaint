@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-07-09 13:17-0700\n"
+"POT-Creation-Date: 2008-07-09 13:31-0700\n"
 "PO-Revision-Date: 2006-10-09 20:32+0200\n"
 "Last-Translator: Vincent Mahlangu <vmahlangu@parliament.gov.za>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -799,21 +799,39 @@ msgid "Click and drag the mouse to emboss the picture."
 msgstr ""
 "Qhwarhaza bewudose njalo iKhondlwana ujikeleze ukuze ufiphaze isithombe."
 
-#: ../../magic/src/fade_darken.c:116
+#: ../../magic/src/fade_darken.c:119
 msgid "Lighten"
 msgstr "Yenza kukhanye"
 
-#: ../../magic/src/fade_darken.c:118
+#: ../../magic/src/fade_darken.c:121
 msgid "Darken"
 msgstr "Yenza kube nzinyana"
 
-#: ../../magic/src/fade_darken.c:128
-msgid "Click and move to fade the colors."
-msgstr "Qhwarhaza udose ukuza uvanitjhe imibala."
+#: ../../magic/src/fade_darken.c:132
+#, fuzzy
+msgid "Click and move the mouse to lighten parts of your picture."
+msgstr ""
+"Qhwarhaza bewudose njalo iKhondlwana ujikeleze ukuze ufiphaze isithombe."
 
-#: ../../magic/src/fade_darken.c:131
-msgid "Click and move to darken the colors."
-msgstr "Qhwarhaza udose ufiphaze imibala."
+#: ../../magic/src/fade_darken.c:134
+#, fuzzy
+msgid "Click to lighten your entire picture."
+msgstr ""
+"Qhwarhaza udose njalo iKhondlwana uzungeleze ukuze utjhugulule umbala "
+"weithombe. "
+
+#: ../../magic/src/fade_darken.c:139
+#, fuzzy
+msgid "Click and move the mouse to darken parts of your picture."
+msgstr ""
+"Qhwarhaza bewudose njalo iKhondlwana ujikeleze ukuze ufiphaze isithombe."
+
+#: ../../magic/src/fade_darken.c:141
+#, fuzzy
+msgid "Click to darken your entire picture."
+msgstr ""
+"Qhwarhaza udose njalo iKhondlwana uzungeleze ukuze utjhugulule umbala "
+"weithombe. "
 
 #: ../../magic/src/fill.c:87
 msgid "Fill"
@@ -844,11 +862,18 @@ msgstr "Qhwarhaza esithombeni ukuze ugcwalise ngombala."
 msgid "Glass Tile"
 msgstr ""
 
-#: ../../magic/src/glasstile.c:89
+#: ../../magic/src/glasstile.c:90
 #, fuzzy
 msgid "Click and drag the mouse to put glass tile over your picture."
 msgstr ""
 "Qhwarhaza bewudose njalo iKhondlwana ujikeleze ukuze ufiphaze isithombe."
+
+#: ../../magic/src/glasstile.c:92
+#, fuzzy
+msgid "Click to cover your entire picture in glass tiles."
+msgstr ""
+"Qhwarhaza udose njalo iKhondlwana uzungeleze ukuze utjhugulule umbala "
+"weithombe. "
 
 #: ../../magic/src/grass.c:92
 msgid "Grass"
@@ -1009,6 +1034,12 @@ msgid ""
 "bottom for taller waves, the left for small waves, and the right for long "
 "waves."
 msgstr ""
+
+#~ msgid "Click and move to fade the colors."
+#~ msgstr "Qhwarhaza udose ukuza uvanitjhe imibala."
+
+#~ msgid "Click and move to darken the colors."
+#~ msgstr "Qhwarhaza udose ufiphaze imibala."
 
 #~ msgid "Sparkles"
 #~ msgstr "Iimbani"

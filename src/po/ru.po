@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TuxPaint\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-07-09 13:17-0700\n"
+"POT-Creation-Date: 2008-07-09 13:31-0700\n"
 "PO-Revision-Date: 2008-01-07 14:29+0300\n"
 "Last-Translator: Sergei Popov <skein@rambler.ru>\n"
 "Language-Team: Dmitriy Ivanov <ace22b@myrealbox.com>\n"
@@ -812,21 +812,33 @@ msgstr "Рельеф"
 msgid "Click and drag the mouse to emboss the picture."
 msgstr "Нажмите и ведите мышь, чтобы сделать рисунок рельефным."
 
-#: ../../magic/src/fade_darken.c:116
+#: ../../magic/src/fade_darken.c:119
 msgid "Lighten"
 msgstr "Светлее"
 
-#: ../../magic/src/fade_darken.c:118
+#: ../../magic/src/fade_darken.c:121
 msgid "Darken"
 msgstr "Темнее"
 
-#: ../../magic/src/fade_darken.c:128
-msgid "Click and move to fade the colors."
-msgstr "Щёлкните и поводите по картинке, чтобы сделать её часть более светлой."
+#: ../../magic/src/fade_darken.c:132
+#, fuzzy
+msgid "Click and move the mouse to lighten parts of your picture."
+msgstr "Щёлкните и поводите по картинке, чтобы размыть её часть."
 
-#: ../../magic/src/fade_darken.c:131
-msgid "Click and move to darken the colors."
-msgstr "Щёлкните и поводите по картинке, чтобы сделать её часть более тёмной."
+#: ../../magic/src/fade_darken.c:134
+#, fuzzy
+msgid "Click to lighten your entire picture."
+msgstr "Щёлкните и поводите по картинке, чтобы изменить цвет рисунка."
+
+#: ../../magic/src/fade_darken.c:139
+#, fuzzy
+msgid "Click and move the mouse to darken parts of your picture."
+msgstr "Щёлкните и поводите по картинке, чтобы размыть её часть."
+
+#: ../../magic/src/fade_darken.c:141
+#, fuzzy
+msgid "Click to darken your entire picture."
+msgstr "Щёлкните и поводите по картинке, чтобы изменить цвет рисунка."
 
 #: ../../magic/src/fill.c:87
 msgid "Fill"
@@ -858,9 +870,14 @@ msgstr "Нажмите и ведите мышь, чтобы нарисовать
 msgid "Glass Tile"
 msgstr "Стеклянная плитка"
 
-#: ../../magic/src/glasstile.c:89
+#: ../../magic/src/glasstile.c:90
 msgid "Click and drag the mouse to put glass tile over your picture."
 msgstr "Нажмите и ведите мышь, чтобы покрыть рисунок стеклянной плиткой."
+
+#: ../../magic/src/glasstile.c:92
+#, fuzzy
+msgid "Click to cover your entire picture in glass tiles."
+msgstr "Щёлкните и поводите по картинке, чтобы изменить цвет рисунка."
 
 #: ../../magic/src/grass.c:92
 msgid "Grass"
@@ -1012,6 +1029,14 @@ msgid ""
 msgstr ""
 "Нажмите, чтобы сделать на рисунке волны. Двигайте вверх, чтобы сделать волны "
 "ниже, вниз - чтобы выше, налево - для коротких волн, направо - для длинных."
+
+#~ msgid "Click and move to fade the colors."
+#~ msgstr ""
+#~ "Щёлкните и поводите по картинке, чтобы сделать её часть более светлой."
+
+#~ msgid "Click and move to darken the colors."
+#~ msgstr ""
+#~ "Щёлкните и поводите по картинке, чтобы сделать её часть более тёмной."
 
 #~ msgid "Sparkles"
 #~ msgstr "Искры"

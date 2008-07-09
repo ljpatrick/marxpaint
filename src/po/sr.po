@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint 0.9.15rc1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-07-09 13:17-0700\n"
+"POT-Creation-Date: 2008-07-09 13:31-0700\n"
 "PO-Revision-Date: 2006-09-04 20:03-0400\n"
 "Last-Translator: Aleksandar Jelenak <jelenak@verizon.net>\n"
 "Language-Team: Serbian <gnu@prevod.org>\n"
@@ -885,23 +885,37 @@ msgstr ""
 msgid "Click and drag the mouse to emboss the picture."
 msgstr "Кликни и мрдај мишем да би замаглио слику."
 
-#: ../../magic/src/fade_darken.c:116
+#: ../../magic/src/fade_darken.c:119
 msgid "Lighten"
 msgstr "Посветли"
 
-#: ../../magic/src/fade_darken.c:118
+#: ../../magic/src/fade_darken.c:121
 msgid "Darken"
 msgstr "Потамни"
 
 #
-#: ../../magic/src/fade_darken.c:128
-msgid "Click and move to fade the colors."
-msgstr "Кликни и померај да би изблеђивао боје."
+#: ../../magic/src/fade_darken.c:132
+#, fuzzy
+msgid "Click and move the mouse to lighten parts of your picture."
+msgstr "Кликни и мрдај мишем да би замаглио слику."
 
 #
-#: ../../magic/src/fade_darken.c:131
-msgid "Click and move to darken the colors."
-msgstr "Кликни и померај да би затамнио боје."
+#: ../../magic/src/fade_darken.c:134
+#, fuzzy
+msgid "Click to lighten your entire picture."
+msgstr "Кликни и померај миша да би мењао боју слику."
+
+#
+#: ../../magic/src/fade_darken.c:139
+#, fuzzy
+msgid "Click and move the mouse to darken parts of your picture."
+msgstr "Кликни и мрдај мишем да би замаглио слику."
+
+#
+#: ../../magic/src/fade_darken.c:141
+#, fuzzy
+msgid "Click to darken your entire picture."
+msgstr "Кликни и померај миша да би мењао боју слику."
 
 #
 #: ../../magic/src/fill.c:87
@@ -936,10 +950,16 @@ msgid "Glass Tile"
 msgstr ""
 
 #
-#: ../../magic/src/glasstile.c:89
+#: ../../magic/src/glasstile.c:90
 #, fuzzy
 msgid "Click and drag the mouse to put glass tile over your picture."
 msgstr "Кликни и мрдај мишем да би замаглио слику."
+
+#
+#: ../../magic/src/glasstile.c:92
+#, fuzzy
+msgid "Click to cover your entire picture in glass tiles."
+msgstr "Кликни и померај миша да би мењао боју слику."
 
 #
 #: ../../magic/src/grass.c:92
@@ -1118,6 +1138,14 @@ msgid ""
 "bottom for taller waves, the left for small waves, and the right for long "
 "waves."
 msgstr ""
+
+#
+#~ msgid "Click and move to fade the colors."
+#~ msgstr "Кликни и померај да би изблеђивао боје."
+
+#
+#~ msgid "Click and move to darken the colors."
+#~ msgstr "Кликни и померај да би затамнио боје."
 
 #
 #~ msgid "Sparkles"

@@ -23,7 +23,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  Last updated: July 8, 2008
+  Last updated: July 9, 2008
   $Id$
 */
 
@@ -86,7 +86,10 @@ char * glasstile_get_name(magic_api * api, int which)
 // Return our descriptions, localized:
 char * glasstile_get_description(magic_api * api, int which, int mode)
 {
-  return(strdup(gettext_noop("Click and drag the mouse to put glass tile over your picture.")));
+  if (mode == MODE_PAINT)
+    return(strdup(gettext_noop("Click and drag the mouse to put glass tile over your picture.")));
+  else
+    return(strdup(gettext_noop("Click to cover your entire picture in glass tiles.")));
 }
 
 // Do the effect:
@@ -239,7 +242,21 @@ void glasstile_click(magic_api * api, int which, int mode,
     for (xx = 0; xx < glasstile_hit_xsize; xx++)
       glasstile_hit[yy][xx] = 0;
 
-  glasstile_drag(api, which, canvas, last, x, y, x, y, update_rect);
+  if (mode == MODE_PAINT)
+    glasstile_drag(api, which, canvas, last, x, y, x, y, update_rect);
+  else if (mode == MODE_FULLSCREEN)
+  {
+    for (y = 0; y < canvas->h; y = y + GT_SIZE)
+      for (x = 0; x < canvas->w; x = x + GT_SIZE)
+        do_glasstile(api, which, canvas, last, x, y);
+
+    update_rect->x = 0;
+    update_rect->y = 0;
+    update_rect->w = canvas->w;
+    update_rect->h = canvas->h;
+
+    /* FIXME: Play sfx */
+  }
 }
 
 // Affect the canvas on release:
@@ -289,5 +306,5 @@ void glasstile_switchout(magic_api * api, int which, SDL_Surface * canvas)
 
 int glasstile_modes(magic_api * api, int which)
 {
-  return(MODE_PAINT); /* FIXME - Can also be turned into a full-image effect */
+  return(MODE_PAINT | MODE_FULLSCREEN);
 }

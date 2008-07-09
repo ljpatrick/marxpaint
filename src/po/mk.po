@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-07-09 13:17-0700\n"
+"POT-Creation-Date: 2008-07-09 13:31-0700\n"
 "PO-Revision-Date: 2006-06-17 23:07+0000\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: Macedonian <mk@li.org>\n"
@@ -794,21 +794,37 @@ msgstr ""
 msgid "Click and drag the mouse to emboss the picture."
 msgstr "Кликнете и движете го глувчето наоколу за да ја замаглите сликата."
 
-#: ../../magic/src/fade_darken.c:116
+#: ../../magic/src/fade_darken.c:119
 msgid "Lighten"
 msgstr "Осветлување"
 
-#: ../../magic/src/fade_darken.c:118
+#: ../../magic/src/fade_darken.c:121
 msgid "Darken"
 msgstr "Затемнување"
 
-#: ../../magic/src/fade_darken.c:128
-msgid "Click and move to fade the colors."
-msgstr "Кликнете и движете го глувчето за да избледнеат боите."
+#: ../../magic/src/fade_darken.c:132
+#, fuzzy
+msgid "Click and move the mouse to lighten parts of your picture."
+msgstr "Кликнете и движете го глувчето наоколу за да ја замаглите сликата."
 
-#: ../../magic/src/fade_darken.c:131
-msgid "Click and move to darken the colors."
-msgstr "Кликнете и движете го глувчето за да потемнат боите."
+#: ../../magic/src/fade_darken.c:134
+#, fuzzy
+msgid "Click to lighten your entire picture."
+msgstr ""
+"Кликнете на глувчето и влечете го наоколу за да ја промените бојата на "
+"сликата."
+
+#: ../../magic/src/fade_darken.c:139
+#, fuzzy
+msgid "Click and move the mouse to darken parts of your picture."
+msgstr "Кликнете и движете го глувчето наоколу за да ја замаглите сликата."
+
+#: ../../magic/src/fade_darken.c:141
+#, fuzzy
+msgid "Click to darken your entire picture."
+msgstr ""
+"Кликнете на глувчето и влечете го наоколу за да ја промените бојата на "
+"сликата."
 
 #: ../../magic/src/fill.c:87
 msgid "Fill"
@@ -839,10 +855,17 @@ msgstr "Кликнете на сликата за да ја пополните �
 msgid "Glass Tile"
 msgstr ""
 
-#: ../../magic/src/glasstile.c:89
+#: ../../magic/src/glasstile.c:90
 #, fuzzy
 msgid "Click and drag the mouse to put glass tile over your picture."
 msgstr "Кликнете и движете го глувчето наоколу за да ја замаглите сликата."
+
+#: ../../magic/src/glasstile.c:92
+#, fuzzy
+msgid "Click to cover your entire picture in glass tiles."
+msgstr ""
+"Кликнете на глувчето и влечете го наоколу за да ја промените бојата на "
+"сликата."
 
 #: ../../magic/src/grass.c:92
 msgid "Grass"
@@ -997,6 +1020,12 @@ msgid ""
 "bottom for taller waves, the left for small waves, and the right for long "
 "waves."
 msgstr ""
+
+#~ msgid "Click and move to fade the colors."
+#~ msgstr "Кликнете и движете го глувчето за да избледнеат боите."
+
+#~ msgid "Click and move to darken the colors."
+#~ msgstr "Кликнете и движете го глувчето за да потемнат боите."
 
 #~ msgid "Sparkles"
 #~ msgstr "Искри"

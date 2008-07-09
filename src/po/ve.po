@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TuxPaint 0.9.16\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-07-09 13:17-0700\n"
+"POT-Creation-Date: 2008-07-09 13:31-0700\n"
 "PO-Revision-Date: 2006-09-21 20:04+0200\n"
 "Last-Translator: Shumani Mercy Ṋevhulaudzi <nevhulaudzi@saps.org.za>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -802,21 +802,37 @@ msgid "Click and drag the mouse to emboss the picture."
 msgstr ""
 "Kiḽikani ni sudzuluse mausu u mona u ita uri tshifanyiso tshi si vhonale."
 
-#: ../../magic/src/fade_darken.c:116
+#: ../../magic/src/fade_darken.c:119
 msgid "Lighten"
 msgstr "Vhonadza"
 
-#: ../../magic/src/fade_darken.c:118
+#: ../../magic/src/fade_darken.c:121
 msgid "Darken"
 msgstr "Swifhadza"
 
-#: ../../magic/src/fade_darken.c:128
-msgid "Click and move to fade the colors."
-msgstr "Kiḽikani ni sudzuluse u ita uri mivhala i si vhonale."
+#: ../../magic/src/fade_darken.c:132
+#, fuzzy
+msgid "Click and move the mouse to lighten parts of your picture."
+msgstr ""
+"Kiḽikani ni sudzuluse mausu u mona u ita uri tshifanyiso tshi si vhonale."
 
-#: ../../magic/src/fade_darken.c:131
-msgid "Click and move to darken the colors."
-msgstr "Kiḽikani ni sudzuluse u swifhadza mivhala."
+#: ../../magic/src/fade_darken.c:134
+#, fuzzy
+msgid "Click to lighten your entire picture."
+msgstr ""
+"Kiḽikani ni sudzuluse mausu u mona u shandukisa muvhala wa tshifanyiso."
+
+#: ../../magic/src/fade_darken.c:139
+#, fuzzy
+msgid "Click and move the mouse to darken parts of your picture."
+msgstr ""
+"Kiḽikani ni sudzuluse mausu u mona u ita uri tshifanyiso tshi si vhonale."
+
+#: ../../magic/src/fade_darken.c:141
+#, fuzzy
+msgid "Click to darken your entire picture."
+msgstr ""
+"Kiḽikani ni sudzuluse mausu u mona u shandukisa muvhala wa tshifanyiso."
 
 #: ../../magic/src/fill.c:87
 msgid "Fill"
@@ -847,11 +863,17 @@ msgstr "Kiḽikani kha tshifanyiso u ḓadza muvhala wonoyo nga muvhala."
 msgid "Glass Tile"
 msgstr ""
 
-#: ../../magic/src/glasstile.c:89
+#: ../../magic/src/glasstile.c:90
 #, fuzzy
 msgid "Click and drag the mouse to put glass tile over your picture."
 msgstr ""
 "Kiḽikani ni sudzuluse mausu u mona u ita uri tshifanyiso tshi si vhonale."
+
+#: ../../magic/src/glasstile.c:92
+#, fuzzy
+msgid "Click to cover your entire picture in glass tiles."
+msgstr ""
+"Kiḽikani ni sudzuluse mausu u mona u shandukisa muvhala wa tshifanyiso."
 
 #: ../../magic/src/grass.c:92
 msgid "Grass"
@@ -1011,6 +1033,12 @@ msgid ""
 "bottom for taller waves, the left for small waves, and the right for long "
 "waves."
 msgstr ""
+
+#~ msgid "Click and move to fade the colors."
+#~ msgstr "Kiḽikani ni sudzuluse u ita uri mivhala i si vhonale."
+
+#~ msgid "Click and move to darken the colors."
+#~ msgstr "Kiḽikani ni sudzuluse u swifhadza mivhala."
 
 #~ msgid "Sparkles"
 #~ msgstr "Ṱhase"

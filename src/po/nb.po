@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: nb\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-07-09 13:17-0700\n"
+"POT-Creation-Date: 2008-07-09 13:31-0700\n"
 "PO-Revision-Date: 2007-07-19 20:37+0200\n"
 "Last-Translator: Karl Ove Hufthammer <karl@huftis.org>\n"
 "Language-Team: Norwegian Nynorsk <i18n-nn@lister.ping.uio.no>\n"
@@ -784,21 +784,33 @@ msgstr "Relieff"
 msgid "Click and drag the mouse to emboss the picture."
 msgstr "Hold inne knappen og flytt rundt for å gjøre tegningen om til relieff."
 
-#: ../../magic/src/fade_darken.c:116
+#: ../../magic/src/fade_darken.c:119
 msgid "Lighten"
 msgstr "Lysere"
 
-#: ../../magic/src/fade_darken.c:118
+#: ../../magic/src/fade_darken.c:121
 msgid "Darken"
 msgstr "Mørkere"
 
-#: ../../magic/src/fade_darken.c:128
-msgid "Click and move to fade the colors."
-msgstr "Hold inne knappen og flytt rundt for å bleke fargene."
+#: ../../magic/src/fade_darken.c:132
+#, fuzzy
+msgid "Click and move the mouse to lighten parts of your picture."
+msgstr "Hold inne knappen og flytt rundt for å gjøre tegningen uskarp."
 
-#: ../../magic/src/fade_darken.c:131
-msgid "Click and move to darken the colors."
-msgstr "Hold inne knappen og flytt rundt for å gjøre fargene mørkere."
+#: ../../magic/src/fade_darken.c:134
+#, fuzzy
+msgid "Click to lighten your entire picture."
+msgstr "Hold inne knappen og flytt rundt for å forandre fargene på tegningen."
+
+#: ../../magic/src/fade_darken.c:139
+#, fuzzy
+msgid "Click and move the mouse to darken parts of your picture."
+msgstr "Hold inne knappen og flytt rundt for å gjøre tegningen uskarp."
+
+#: ../../magic/src/fade_darken.c:141
+#, fuzzy
+msgid "Click to darken your entire picture."
+msgstr "Hold inne knappen og flytt rundt for å forandre fargene på tegningen."
 
 #: ../../magic/src/fill.c:87
 msgid "Fill"
@@ -830,10 +842,15 @@ msgstr "Hold inne knappen og flytt rundt for å dekke tegningen med såpebobler.
 msgid "Glass Tile"
 msgstr "Glassfliser"
 
-#: ../../magic/src/glasstile.c:89
+#: ../../magic/src/glasstile.c:90
 msgid "Click and drag the mouse to put glass tile over your picture."
 msgstr ""
 "Hold inne knappen og flytt rundt for å legge glassfliser over tegningen."
+
+#: ../../magic/src/glasstile.c:92
+#, fuzzy
+msgid "Click to cover your entire picture in glass tiles."
+msgstr "Hold inne knappen og flytt rundt for å forandre fargene på tegningen."
 
 #: ../../magic/src/grass.c:92
 msgid "Grass"
@@ -985,3 +1002,9 @@ msgstr ""
 "Trykk for å gjøre tegningen bølgete. Trykk oppe for å lage lave bølger, nede "
 "for å lage høye bølger, til venstre for å lage korte bølger og til høyre for "
 "å lage lange bølger."
+
+#~ msgid "Click and move to fade the colors."
+#~ msgstr "Hold inne knappen og flytt rundt for å bleke fargene."
+
+#~ msgid "Click and move to darken the colors."
+#~ msgstr "Hold inne knappen og flytt rundt for å gjøre fargene mørkere."

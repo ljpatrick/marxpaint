@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-07-09 13:17-0700\n"
+"POT-Creation-Date: 2008-07-09 13:31-0700\n"
 "PO-Revision-Date: 2007-05-29 11:29+0530\n"
 "Last-Translator: Kartik Mistry <kartik.mistry@gmail.com>\n"
 "Language-Team: Gujarati <team@utkarsh.org>\n"
@@ -777,21 +777,33 @@ msgstr "ઉપસેલ"
 msgid "Click and drag the mouse to emboss the picture."
 msgstr "ચિત્રને ઉપસેલું કરવા માટે માઉસને ક્લિક કરો અને આજુ-બાજુ ખસેડો."
 
-#: ../../magic/src/fade_darken.c:116
+#: ../../magic/src/fade_darken.c:119
 msgid "Lighten"
 msgstr "આછું"
 
-#: ../../magic/src/fade_darken.c:118
+#: ../../magic/src/fade_darken.c:121
 msgid "Darken"
 msgstr "ઘેરું"
 
-#: ../../magic/src/fade_darken.c:128
-msgid "Click and move to fade the colors."
-msgstr "રંગોને ઝાંખાં કરવાં ક્લિક કરો અને ખસેડો."
+#: ../../magic/src/fade_darken.c:132
+#, fuzzy
+msgid "Click and move the mouse to lighten parts of your picture."
+msgstr "ચિત્રને ઝાંખું કરવા માટે માઉસને ક્લિક કરો અને આજુ-બાજુ ખસેડો."
 
-#: ../../magic/src/fade_darken.c:131
-msgid "Click and move to darken the colors."
-msgstr "રંગોને ઘેરાં કરવાં ક્લિક કરો અને ખસેડો."
+#: ../../magic/src/fade_darken.c:134
+#, fuzzy
+msgid "Click to lighten your entire picture."
+msgstr "ચિત્રનો રંગ બદલવા માટે ક્લિક કરો અને માઉસ આજુબાજુ ખસેડો."
+
+#: ../../magic/src/fade_darken.c:139
+#, fuzzy
+msgid "Click and move the mouse to darken parts of your picture."
+msgstr "ચિત્રને ઝાંખું કરવા માટે માઉસને ક્લિક કરો અને આજુ-બાજુ ખસેડો."
+
+#: ../../magic/src/fade_darken.c:141
+#, fuzzy
+msgid "Click to darken your entire picture."
+msgstr "ચિત્રનો રંગ બદલવા માટે ક્લિક કરો અને માઉસ આજુબાજુ ખસેડો."
 
 #: ../../magic/src/fill.c:87
 msgid "Fill"
@@ -821,9 +833,14 @@ msgstr "વિસ્તારને ફોમ પરપોટાંથી ભર
 msgid "Glass Tile"
 msgstr "કાચ તકતી"
 
-#: ../../magic/src/glasstile.c:89
+#: ../../magic/src/glasstile.c:90
 msgid "Click and drag the mouse to put glass tile over your picture."
 msgstr "વિસ્તારને કાચ તકતીથી ભરવા માટે માઉસને ક્લિક કરીને ખેંચો."
+
+#: ../../magic/src/glasstile.c:92
+#, fuzzy
+msgid "Click to cover your entire picture in glass tiles."
+msgstr "ચિત્રનો રંગ બદલવા માટે ક્લિક કરો અને માઉસ આજુબાજુ ખસેડો."
 
 #: ../../magic/src/grass.c:92
 msgid "Grass"
@@ -973,6 +990,12 @@ msgstr ""
 "ચિત્રને મોજાંઓ વાળું બનાવવા માટે ક્લિક કરો. ઉપરની તરફ ક્લિક કરતાં મોજાં ટૂંકા થશે; નીચેની "
 "તરફ કરતાં લાંબા થશે. ડાબી બાજુ ક્લિક કરતાં મોજા નાનાં થશે; જ્યારે જમણી બાજુ ક્લિક કરતાં "
 "મોજાં પહોળા થશે."
+
+#~ msgid "Click and move to fade the colors."
+#~ msgstr "રંગોને ઝાંખાં કરવાં ક્લિક કરો અને ખસેડો."
+
+#~ msgid "Click and move to darken the colors."
+#~ msgstr "રંગોને ઘેરાં કરવાં ક્લિક કરો અને ખસેડો."
 
 #~ msgid "Sparkles"
 #~ msgstr "ચમકારાઓ"

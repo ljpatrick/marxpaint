@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint 0.9.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-07-09 13:17-0700\n"
+"POT-Creation-Date: 2008-07-09 13:31-0700\n"
 "PO-Revision-Date: 2004-05-26 08:44+0100\n"
 "Last-Translator: Ankit Malik <greatestankit@yahoo.co.in>\n"
 "Language-Team: Hindi\n"
@@ -794,22 +794,33 @@ msgstr ""
 msgid "Click and drag the mouse to emboss the picture."
 msgstr "पतला करो"
 
-#: ../../magic/src/fade_darken.c:116
+#: ../../magic/src/fade_darken.c:119
 msgid "Lighten"
 msgstr ""
 
-#: ../../magic/src/fade_darken.c:118
+#: ../../magic/src/fade_darken.c:121
 msgid "Darken"
 msgstr ""
 
-#: ../../magic/src/fade_darken.c:128
-msgid "Click and move to fade the colors."
-msgstr "फेड करो"
-
-#: ../../magic/src/fade_darken.c:131
+#: ../../magic/src/fade_darken.c:132
 #, fuzzy
-msgid "Click and move to darken the colors."
-msgstr "फेड करो"
+msgid "Click and move the mouse to lighten parts of your picture."
+msgstr "ब्लाकस करो।"
+
+#: ../../magic/src/fade_darken.c:134
+#, fuzzy
+msgid "Click to lighten your entire picture."
+msgstr "ब्लाकस करो।"
+
+#: ../../magic/src/fade_darken.c:139
+#, fuzzy
+msgid "Click and move the mouse to darken parts of your picture."
+msgstr "ड्रिप करो"
+
+#: ../../magic/src/fade_darken.c:141
+#, fuzzy
+msgid "Click to darken your entire picture."
+msgstr "ब्लाकस करो।"
 
 #: ../../magic/src/fill.c:87
 msgid "Fill"
@@ -840,10 +851,15 @@ msgstr "मोटा करो"
 msgid "Glass Tile"
 msgstr ""
 
-#: ../../magic/src/glasstile.c:89
+#: ../../magic/src/glasstile.c:90
 #, fuzzy
 msgid "Click and drag the mouse to put glass tile over your picture."
 msgstr "पतला करो"
+
+#: ../../magic/src/glasstile.c:92
+#, fuzzy
+msgid "Click to cover your entire picture in glass tiles."
+msgstr "ब्लाकस करो।"
 
 #: ../../magic/src/grass.c:92
 #, fuzzy
@@ -1001,6 +1017,13 @@ msgid ""
 "bottom for taller waves, the left for small waves, and the right for long "
 "waves."
 msgstr ""
+
+#~ msgid "Click and move to fade the colors."
+#~ msgstr "फेड करो"
+
+#, fuzzy
+#~ msgid "Click and move to darken the colors."
+#~ msgstr "फेड करो"
 
 #~ msgid "Sparkles"
 #~ msgstr "ग्लिटरस"

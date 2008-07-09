@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-07-09 13:17-0700\n"
+"POT-Creation-Date: 2008-07-09 13:31-0700\n"
 "PO-Revision-Date: 2008-05-30 15:41+0700\n"
 "Last-Translator: Khoem Sokhem <khoemsokhem@khmeros.info>\n"
 "Language-Team: Khmer <support@khmeros.info>\n"
@@ -780,21 +780,33 @@ msgstr "ផុស"
 msgid "Click and drag the mouse to emboss the picture."
 msgstr "ចុច ហើយ​អូស​កណ្ដុរ ដើម្បី​ធ្វើ​រូបភាព​ឲ្យ​ផុស ។"
 
-#: ../../magic/src/fade_darken.c:116
+#: ../../magic/src/fade_darken.c:119
 msgid "Lighten"
 msgstr "ភ្លឺ"
 
-#: ../../magic/src/fade_darken.c:118
+#: ../../magic/src/fade_darken.c:121
 msgid "Darken"
 msgstr "ងងឹត"
 
-#: ../../magic/src/fade_darken.c:128
-msgid "Click and move to fade the colors."
-msgstr "ចុច ហើយ​ផ្លាស់ទី​កណ្ដុរ ដើម្បី​ធ្វើ​ឲ្យ​ហើរ​ពណ៌ ។"
+#: ../../magic/src/fade_darken.c:132
+#, fuzzy
+msgid "Click and move the mouse to lighten parts of your picture."
+msgstr "ចុច ហើយ​ផ្លាស់ទី​កណ្ដុរ ដើម្បី​ធ្វើ​ឲ្យ​រូបភាព​ព្រិល ។"
 
-#: ../../magic/src/fade_darken.c:131
-msgid "Click and move to darken the colors."
-msgstr "ចុច ហើយ​ផ្លាស់ទី​កណ្ដុរ ដើម្បី​ធ្វើ​ឲ្យ​ពណ៌​កាន់​តែ​ងងឹត ។"
+#: ../../magic/src/fade_darken.c:134
+#, fuzzy
+msgid "Click to lighten your entire picture."
+msgstr "ចុច ហើយ​ផ្លាស់ទី​កណ្ដុរ ដើម្បី​ផ្លាស់ប្ដូរ​ពណ៌​រូបភាព ។"
+
+#: ../../magic/src/fade_darken.c:139
+#, fuzzy
+msgid "Click and move the mouse to darken parts of your picture."
+msgstr "ចុច ហើយ​ផ្លាស់ទី​កណ្ដុរ ដើម្បី​ធ្វើ​ឲ្យ​រូបភាព​ព្រិល ។"
+
+#: ../../magic/src/fade_darken.c:141
+#, fuzzy
+msgid "Click to darken your entire picture."
+msgstr "ចុច ហើយ​ផ្លាស់ទី​កណ្ដុរ ដើម្បី​ផ្លាស់ប្ដូរ​ពណ៌​រូបភាព ។"
 
 #: ../../magic/src/fill.c:87
 msgid "Fill"
@@ -824,9 +836,14 @@ msgstr "ចុច ហើយ​អូស​កណ្ដុរ ដើម្បី�
 msgid "Glass Tile"
 msgstr "ក្រឡា​ក្បឿង​កញ្ចក់"
 
-#: ../../magic/src/glasstile.c:89
+#: ../../magic/src/glasstile.c:90
 msgid "Click and drag the mouse to put glass tile over your picture."
 msgstr "ចុច ហើយ​អូស​កណ្ដុរ ដើម្បី​ដាក់​ក្រឡា​ក្បឿង​កញ្ចក់​លើ​រូបភាព ។"
+
+#: ../../magic/src/glasstile.c:92
+#, fuzzy
+msgid "Click to cover your entire picture in glass tiles."
+msgstr "ចុច ហើយ​ផ្លាស់ទី​កណ្ដុរ ដើម្បី​ផ្លាស់ប្ដូរ​ពណ៌​រូបភាព ។"
 
 #: ../../magic/src/grass.c:92
 msgid "Grass"
@@ -975,3 +992,9 @@ msgid ""
 msgstr ""
 "ចុច ដើម្បី​ធ្វើ​រូបភាព​ឲ្យ​រលក ។ ចុច​រុញ​ទៅ​លើ ដើម្បី​បាន​រលក​ខ្លីៗ រុញ​ទៅ​ក្រោម ដើម្បី​បាន​រលក​វែងៗ រុញ​ទៅ​"
 "ឆ្វេង ដើម្បី​បាន​រលក​តូចៗ និង​រុញ​ទៅ​ស្ដាំ ដើម្បី​បាន​រលក​ធំៗ ។"
+
+#~ msgid "Click and move to fade the colors."
+#~ msgstr "ចុច ហើយ​ផ្លាស់ទី​កណ្ដុរ ដើម្បី​ធ្វើ​ឲ្យ​ហើរ​ពណ៌ ។"
+
+#~ msgid "Click and move to darken the colors."
+#~ msgstr "ចុច ហើយ​ផ្លាស់ទី​កណ្ដុរ ដើម្បី​ធ្វើ​ឲ្យ​ពណ៌​កាន់​តែ​ងងឹត ។"

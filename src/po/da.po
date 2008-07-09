@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint 0.9.18\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-07-09 13:17-0700\n"
+"POT-Creation-Date: 2008-07-09 13:31-0700\n"
 "PO-Revision-Date: 2007-11-23 22:30+0100\n"
 "Last-Translator: Joe Hansen <joedalton2@yahoo.dk>\n"
 "Language-Team: Danish <dansk@dansk-gruppen.dk>\n"
@@ -790,21 +790,33 @@ msgstr "Tydeliggør"
 msgid "Click and drag the mouse to emboss the picture."
 msgstr "Klik og bevæg musen rundt, for at tydeliggøre billedet."
 
-#: ../../magic/src/fade_darken.c:116
+#: ../../magic/src/fade_darken.c:119
 msgid "Lighten"
 msgstr "Lysne"
 
-#: ../../magic/src/fade_darken.c:118
+#: ../../magic/src/fade_darken.c:121
 msgid "Darken"
 msgstr "Mørkne"
 
-#: ../../magic/src/fade_darken.c:128
-msgid "Click and move to fade the colors."
-msgstr "Klik og bevæg musen rundt for at blege farverne."
+#: ../../magic/src/fade_darken.c:132
+#, fuzzy
+msgid "Click and move the mouse to lighten parts of your picture."
+msgstr "Klik og bevæg musen rundt for at sløre billedet."
 
-#: ../../magic/src/fade_darken.c:131
-msgid "Click and move to darken the colors."
-msgstr "Klik og bevæg musen rundt for at mørkne farverne."
+#: ../../magic/src/fade_darken.c:134
+#, fuzzy
+msgid "Click to lighten your entire picture."
+msgstr "Klik og bevæg musen rundt for at ændre billedets farver."
+
+#: ../../magic/src/fade_darken.c:139
+#, fuzzy
+msgid "Click and move the mouse to darken parts of your picture."
+msgstr "Klik og bevæg musen rundt for at sløre billedet."
+
+#: ../../magic/src/fade_darken.c:141
+#, fuzzy
+msgid "Click to darken your entire picture."
+msgstr "Klik og bevæg musen rundt for at ændre billedets farver."
 
 #: ../../magic/src/fill.c:87
 msgid "Fill"
@@ -838,9 +850,14 @@ msgstr "Klik og bevæg musen rundt, for at dække et område med skumbobler."
 msgid "Glass Tile"
 msgstr "Glasrude"
 
-#: ../../magic/src/glasstile.c:89
+#: ../../magic/src/glasstile.c:90
 msgid "Click and drag the mouse to put glass tile over your picture."
 msgstr "Klik og bevæg musen rundt, for at sætte glasruder over dit billede."
+
+#: ../../magic/src/glasstile.c:92
+#, fuzzy
+msgid "Click to cover your entire picture in glass tiles."
+msgstr "Klik og bevæg musen rundt for at ændre billedets farver."
 
 #: ../../magic/src/grass.c:92
 msgid "Grass"
@@ -994,6 +1011,12 @@ msgstr ""
 "Klik for at indsætte bølger i billedet. Klik mod toppen for lave bølger, "
 "bunden for højere bølger, til venstre for små bølger og mod højre for lange "
 "bølger."
+
+#~ msgid "Click and move to fade the colors."
+#~ msgstr "Klik og bevæg musen rundt for at blege farverne."
+
+#~ msgid "Click and move to darken the colors."
+#~ msgstr "Klik og bevæg musen rundt for at mørkne farverne."
 
 #~ msgid "Sparkles"
 #~ msgstr "Gnister"

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint 0.9.17\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-07-09 13:17-0700\n"
+"POT-Creation-Date: 2008-07-09 13:31-0700\n"
 "PO-Revision-Date: 2007-08-30 18:24+0200\n"
 "Last-Translator: Pablo Saratxaga <pablo@walon.org>\n"
 "Language-Team: Walloon <linux-wa@walon.org>\n"
@@ -804,21 +804,33 @@ msgid "Click and drag the mouse to emboss the picture."
 msgstr ""
 "Clitchîz et s' bodjîz l' sori po mete des bokets d' l' imådje pus féns."
 
-#: ../../magic/src/fade_darken.c:116
+#: ../../magic/src/fade_darken.c:119
 msgid "Lighten"
 msgstr "Aclairi"
 
-#: ../../magic/src/fade_darken.c:118
+#: ../../magic/src/fade_darken.c:121
 msgid "Darken"
 msgstr "Noeri"
 
-#: ../../magic/src/fade_darken.c:128
-msgid "Click and move to fade the colors."
-msgstr "Clitchîz et s' bodjîz l' sori po blanki des bokets d' l' imådje."
+#: ../../magic/src/fade_darken.c:132
+#, fuzzy
+msgid "Click and move the mouse to lighten parts of your picture."
+msgstr "Clitchîz et s' bodjîz l' sori po-z adoûci des bokets d' l' imådje."
 
-#: ../../magic/src/fade_darken.c:131
-msgid "Click and move to darken the colors."
-msgstr "Clitchîz et s' bodjîz l' sori po noeri des bokets d' l' imådje."
+#: ../../magic/src/fade_darken.c:134
+#, fuzzy
+msgid "Click to lighten your entire picture."
+msgstr "Clitchîz et s' bodjîz l' sori po candjî les coleurs di l' imådje."
+
+#: ../../magic/src/fade_darken.c:139
+#, fuzzy
+msgid "Click and move the mouse to darken parts of your picture."
+msgstr "Clitchîz et s' bodjîz l' sori po-z adoûci des bokets d' l' imådje."
+
+#: ../../magic/src/fade_darken.c:141
+#, fuzzy
+msgid "Click to darken your entire picture."
+msgstr "Clitchîz et s' bodjîz l' sori po candjî les coleurs di l' imådje."
 
 #: ../../magic/src/fill.c:87
 msgid "Fill"
@@ -850,11 +862,16 @@ msgstr ""
 msgid "Glass Tile"
 msgstr ""
 
-#: ../../magic/src/glasstile.c:89
+#: ../../magic/src/glasstile.c:90
 #, fuzzy
 msgid "Click and drag the mouse to put glass tile over your picture."
 msgstr ""
 "Clitchîz et s' bodjîz l' sori po mete des bokets d' l' imådje pus féns."
+
+#: ../../magic/src/glasstile.c:92
+#, fuzzy
+msgid "Click to cover your entire picture in glass tiles."
+msgstr "Clitchîz et s' bodjîz l' sori po candjî les coleurs di l' imådje."
 
 #: ../../magic/src/grass.c:92
 msgid "Grass"
@@ -1011,6 +1028,12 @@ msgid ""
 "bottom for taller waves, the left for small waves, and the right for long "
 "waves."
 msgstr ""
+
+#~ msgid "Click and move to fade the colors."
+#~ msgstr "Clitchîz et s' bodjîz l' sori po blanki des bokets d' l' imådje."
+
+#~ msgid "Click and move to darken the colors."
+#~ msgstr "Clitchîz et s' bodjîz l' sori po noeri des bokets d' l' imådje."
 
 #~ msgid "Sparkles"
 #~ msgstr "Sipites"

@@ -38,9 +38,8 @@ $Id$
     * "Paint" and "Fullscreen" control buttons added to Magic tool
       selector UI.  Can be disabled with "--nomagiccontrols".
 
-    * "Negative" tool can now affect the entire image.
-
-    * "Tint" tool can now affect the entire image.
+    * "Negative", "Tint", "Glass Tile", "Darken" and "Lighten" tools
+      can all now affect the entire image.
 
   * Build System Improvements
     -------------------------

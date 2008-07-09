@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint 0.9.17\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-07-09 13:17-0700\n"
+"POT-Creation-Date: 2008-07-09 13:31-0700\n"
 "PO-Revision-Date: 2007-05-11 08:44+0100\n"
 "Last-Translator: Kevin Patrick Scannell <kscanne@gmail.com>\n"
 "Language-Team: Irish <gaeilge-gnulinux@lists.sourceforge.net>\n"
@@ -792,21 +792,33 @@ msgstr ""
 msgid "Click and drag the mouse to emboss the picture."
 msgstr "Cliceáil agus bog an luch chun an pictiúr a thanú."
 
-#: ../../magic/src/fade_darken.c:116
+#: ../../magic/src/fade_darken.c:119
 msgid "Lighten"
 msgstr "Sorchaigh"
 
-#: ../../magic/src/fade_darken.c:118
+#: ../../magic/src/fade_darken.c:121
 msgid "Darken"
 msgstr "Dorchaigh"
 
-#: ../../magic/src/fade_darken.c:128
-msgid "Click and move to fade the colors."
-msgstr "Cliceáil agus bog chun na dathanna a liathadh."
+#: ../../magic/src/fade_darken.c:132
+#, fuzzy
+msgid "Click and move the mouse to lighten parts of your picture."
+msgstr "Cliceáil agus bog an luch chun an pictiúr a gheamhú."
 
-#: ../../magic/src/fade_darken.c:131
-msgid "Click and move to darken the colors."
-msgstr "Cliceáil agus bog chun na dathanna a dhorchú."
+#: ../../magic/src/fade_darken.c:134
+#, fuzzy
+msgid "Click to lighten your entire picture."
+msgstr "Cliceáil agus bog an luch chun dath an phictiúir a athrú."
+
+#: ../../magic/src/fade_darken.c:139
+#, fuzzy
+msgid "Click and move the mouse to darken parts of your picture."
+msgstr "Cliceáil agus bog an luch chun an pictiúr a gheamhú."
+
+#: ../../magic/src/fade_darken.c:141
+#, fuzzy
+msgid "Click to darken your entire picture."
+msgstr "Cliceáil agus bog an luch chun dath an phictiúir a athrú."
 
 #: ../../magic/src/fill.c:87
 msgid "Fill"
@@ -838,10 +850,15 @@ msgstr "Cliceáil agus bog an luch chun an pictiúr a thiúchan."
 msgid "Glass Tile"
 msgstr ""
 
-#: ../../magic/src/glasstile.c:89
+#: ../../magic/src/glasstile.c:90
 #, fuzzy
 msgid "Click and drag the mouse to put glass tile over your picture."
 msgstr "Cliceáil agus bog an luch chun an pictiúr a thanú."
+
+#: ../../magic/src/glasstile.c:92
+#, fuzzy
+msgid "Click to cover your entire picture in glass tiles."
+msgstr "Cliceáil agus bog an luch chun dath an phictiúir a athrú."
 
 #: ../../magic/src/grass.c:92
 msgid "Grass"
@@ -996,6 +1013,12 @@ msgid ""
 "bottom for taller waves, the left for small waves, and the right for long "
 "waves."
 msgstr ""
+
+#~ msgid "Click and move to fade the colors."
+#~ msgstr "Cliceáil agus bog chun na dathanna a liathadh."
+
+#~ msgid "Click and move to darken the colors."
+#~ msgstr "Cliceáil agus bog chun na dathanna a dhorchú."
 
 #~ msgid "Sparkles"
 #~ msgstr "Drithlí"

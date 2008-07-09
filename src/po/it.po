@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TuxPaint 0.9.17\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-07-09 13:17-0700\n"
+"POT-Creation-Date: 2008-07-09 13:31-0700\n"
 "PO-Revision-Date: 2007-11-17 21:26+0100\n"
 "Last-Translator: Flavio Pastore <ironbishop@gmail.com>\n"
 "Language-Team: Italian <it@li.org>\n"
@@ -823,21 +823,33 @@ msgstr "Rilievo"
 msgid "Click and drag the mouse to emboss the picture."
 msgstr "Fai click per ottenere un effetto “bassorilievo”."
 
-#: ../../magic/src/fade_darken.c:116
+#: ../../magic/src/fade_darken.c:119
 msgid "Lighten"
 msgstr "Schiarisci"
 
-#: ../../magic/src/fade_darken.c:118
+#: ../../magic/src/fade_darken.c:121
 msgid "Darken"
 msgstr "Scurisci"
 
-#: ../../magic/src/fade_darken.c:128
-msgid "Click and move to fade the colors."
-msgstr "Fai click per schiarire il disegno."
+#: ../../magic/src/fade_darken.c:132
+#, fuzzy
+msgid "Click and move the mouse to lighten parts of your picture."
+msgstr "Fai click per ottenere un effetto “sfumato”."
 
-#: ../../magic/src/fade_darken.c:131
-msgid "Click and move to darken the colors."
-msgstr "Fai click per scurire il disegno."
+#: ../../magic/src/fade_darken.c:134
+#, fuzzy
+msgid "Click to lighten your entire picture."
+msgstr "Fai click per cambiare la tinta del disegno."
+
+#: ../../magic/src/fade_darken.c:139
+#, fuzzy
+msgid "Click and move the mouse to darken parts of your picture."
+msgstr "Fai click per ottenere un effetto “sfumato”."
+
+#: ../../magic/src/fade_darken.c:141
+#, fuzzy
+msgid "Click to darken your entire picture."
+msgstr "Fai click per cambiare la tinta del disegno."
 
 #: ../../magic/src/fill.c:87
 msgid "Fill"
@@ -869,9 +881,14 @@ msgstr "Fai click per coprire l'area di bolle schiumose."
 msgid "Glass Tile"
 msgstr "Vetro"
 
-#: ../../magic/src/glasstile.c:89
+#: ../../magic/src/glasstile.c:90
 msgid "Click and drag the mouse to put glass tile over your picture."
 msgstr "Fai click per coprire il disegno con tessere di vetro smerigliato."
+
+#: ../../magic/src/glasstile.c:92
+#, fuzzy
+msgid "Click to cover your entire picture in glass tiles."
+msgstr "Fai click per cambiare la tinta del disegno."
 
 #: ../../magic/src/grass.c:92
 msgid "Grass"
@@ -1021,3 +1038,9 @@ msgstr ""
 "Fai click per ottenere un effetto ondulato. Fai click nella parte superiore "
 "del foglio per onde basse, nell'inferiore per onde alte, verso sinistra per "
 "onde piccole e verso destra per onde lunghe."
+
+#~ msgid "Click and move to fade the colors."
+#~ msgstr "Fai click per schiarire il disegno."
+
+#~ msgid "Click and move to darken the colors."
+#~ msgstr "Fai click per scurire il disegno."

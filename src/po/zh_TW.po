@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint 0.9.17\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-07-09 13:17-0700\n"
+"POT-Creation-Date: 2008-07-09 13:31-0700\n"
 "PO-Revision-Date: 2007-11-18 21:25+0800\n"
 "Last-Translator: 黃敏松 <songhuang.tw@gmail.com>\n"
 "Language-Team: Chinese (traditional) <zh-l10n@linux.org.tw>\n"
@@ -789,21 +789,33 @@ msgstr "浮雕"
 msgid "Click and drag the mouse to emboss the picture."
 msgstr "按著並移動滑鼠來使圖畫變成浮雕。"
 
-#: ../../magic/src/fade_darken.c:116
+#: ../../magic/src/fade_darken.c:119
 msgid "Lighten"
 msgstr "變淺"
 
-#: ../../magic/src/fade_darken.c:118
+#: ../../magic/src/fade_darken.c:121
 msgid "Darken"
 msgstr "變深"
 
-#: ../../magic/src/fade_darken.c:128
-msgid "Click and move to fade the colors."
-msgstr "按著並移動滑鼠來讓顏色變淺。"
+#: ../../magic/src/fade_darken.c:132
+#, fuzzy
+msgid "Click and move the mouse to lighten parts of your picture."
+msgstr "按著並移動滑鼠來使圖畫模糊。"
 
-#: ../../magic/src/fade_darken.c:131
-msgid "Click and move to darken the colors."
-msgstr "按著並移動滑鼠來讓顏色變深。"
+#: ../../magic/src/fade_darken.c:134
+#, fuzzy
+msgid "Click to lighten your entire picture."
+msgstr "按著並移動滑鼠來改變圖畫的顏色。"
+
+#: ../../magic/src/fade_darken.c:139
+#, fuzzy
+msgid "Click and move the mouse to darken parts of your picture."
+msgstr "按著並移動滑鼠來使圖畫模糊。"
+
+#: ../../magic/src/fade_darken.c:141
+#, fuzzy
+msgid "Click to darken your entire picture."
+msgstr "按著並移動滑鼠來改變圖畫的顏色。"
 
 #: ../../magic/src/fill.c:87
 msgid "Fill"
@@ -833,9 +845,14 @@ msgstr "在圖案中按下滑鼠來用泡泡填滿整個區域。"
 msgid "Glass Tile"
 msgstr "玻璃磚"
 
-#: ../../magic/src/glasstile.c:89
+#: ../../magic/src/glasstile.c:90
 msgid "Click and drag the mouse to put glass tile over your picture."
 msgstr "按著並移動滑鼠來使圖畫蓋上一層玻璃磚。"
+
+#: ../../magic/src/glasstile.c:92
+#, fuzzy
+msgid "Click to cover your entire picture in glass tiles."
+msgstr "按著並移動滑鼠來改變圖畫的顏色。"
 
 #: ../../magic/src/grass.c:92
 msgid "Grass"
@@ -984,3 +1001,9 @@ msgid ""
 msgstr ""
 "在圖紙上按下滑鼠鍵會讓影像如波浪般的扭曲，按著往上是短的波浪，往下是長的波"
 "浪，往左是小的波浪，往右是大的波浪。"
+
+#~ msgid "Click and move to fade the colors."
+#~ msgstr "按著並移動滑鼠來讓顏色變淺。"
+
+#~ msgid "Click and move to darken the colors."
+#~ msgstr "按著並移動滑鼠來讓顏色變深。"

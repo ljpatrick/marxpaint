@@ -17,7 +17,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Tuxpaint cvs 2008-06-17\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-07-09 13:17-0700\n"
+"POT-Creation-Date: 2008-07-09 13:31-0700\n"
 "PO-Revision-Date: 2008-06-17 01:17+0200\n"
 "Last-Translator: Pere Pujal i Carabantes <pere@fornol.no-ip.org>\n"
 "Language-Team: Català <linux-ca@chanae.alphanet.ch>\n"
@@ -797,21 +797,33 @@ msgstr "Relleu"
 msgid "Click and drag the mouse to emboss the picture."
 msgstr "Feu clic i moveu el ratolí per obtenir un relleu de la imatge."
 
-#: ../../magic/src/fade_darken.c:116
+#: ../../magic/src/fade_darken.c:119
 msgid "Lighten"
 msgstr "Aclarir"
 
-#: ../../magic/src/fade_darken.c:118
+#: ../../magic/src/fade_darken.c:121
 msgid "Darken"
 msgstr "Enfosquir"
 
-#: ../../magic/src/fade_darken.c:128
-msgid "Click and move to fade the colors."
-msgstr "Feu clic i moveu per esvair els colors."
+#: ../../magic/src/fade_darken.c:132
+#, fuzzy
+msgid "Click and move the mouse to lighten parts of your picture."
+msgstr "Feu clic i moveu el ratolí per difuminar el dibuix."
 
-#: ../../magic/src/fade_darken.c:131
-msgid "Click and move to darken the colors."
-msgstr "Feu clic i moveu per enfosquir els colors."
+#: ../../magic/src/fade_darken.c:134
+#, fuzzy
+msgid "Click to lighten your entire picture."
+msgstr "Feu clic i moveu el ratolí per canviar el color de la imatge."
+
+#: ../../magic/src/fade_darken.c:139
+#, fuzzy
+msgid "Click and move the mouse to darken parts of your picture."
+msgstr "Feu clic i moveu el ratolí per difuminar el dibuix."
+
+#: ../../magic/src/fade_darken.c:141
+#, fuzzy
+msgid "Click to darken your entire picture."
+msgstr "Feu clic i moveu el ratolí per canviar el color de la imatge."
 
 #: ../../magic/src/fill.c:87
 msgid "Fill"
@@ -843,10 +855,15 @@ msgstr "Feu clic i moveu el ratolí per cobrir la imatge d'escuma."
 msgid "Glass Tile"
 msgstr "Blocs de vidre."
 
-#: ../../magic/src/glasstile.c:89
+#: ../../magic/src/glasstile.c:90
 msgid "Click and drag the mouse to put glass tile over your picture."
 msgstr ""
 "Feu clic i arrossegueu el ratolí per posar blocs de vidre en la imatge."
+
+#: ../../magic/src/glasstile.c:92
+#, fuzzy
+msgid "Click to cover your entire picture in glass tiles."
+msgstr "Feu clic i moveu el ratolí per canviar el color de la imatge."
 
 #: ../../magic/src/grass.c:92
 msgid "Grass"
@@ -999,6 +1016,12 @@ msgid ""
 msgstr ""
 "Feu clic dins la imatge per aplicar-hi ones. Clic a dalt fa ones curtes, a "
 "baix ones altes, a l'esquerra ones petites, a la dreta ones llargues."
+
+#~ msgid "Click and move to fade the colors."
+#~ msgstr "Feu clic i moveu per esvair els colors."
+
+#~ msgid "Click and move to darken the colors."
+#~ msgstr "Feu clic i moveu per enfosquir els colors."
 
 #~ msgid "Sparkles"
 #~ msgstr "Espurnes"

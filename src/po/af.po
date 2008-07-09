@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: af\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-07-09 13:17-0700\n"
+"POT-Creation-Date: 2008-07-09 13:31-0700\n"
 "PO-Revision-Date: 2008-06-19 13:24-0700\n"
 "Last-Translator: Samuel Murray (Groenkloof) <samuel@translate.org.za>\n"
 "Language-Team: \n"
@@ -781,21 +781,33 @@ msgstr "Embosseer"
 msgid "Click and drag the mouse to emboss the picture."
 msgstr "Klik en beweeg die muis om die prent te embosseer."
 
-#: ../../magic/src/fade_darken.c:116
+#: ../../magic/src/fade_darken.c:119
 msgid "Lighten"
 msgstr "Maak ligter"
 
-#: ../../magic/src/fade_darken.c:118
+#: ../../magic/src/fade_darken.c:121
 msgid "Darken"
 msgstr "Maak donkerder"
 
-#: ../../magic/src/fade_darken.c:128
-msgid "Click and move to fade the colors."
-msgstr "Klik en beweeg om die kleure te verdof"
+#: ../../magic/src/fade_darken.c:132
+#, fuzzy
+msgid "Click and move the mouse to lighten parts of your picture."
+msgstr "Klik en beweeg die muis om die prent uit fokus te maak."
 
-#: ../../magic/src/fade_darken.c:131
-msgid "Click and move to darken the colors."
-msgstr "Klik en beweeg om die kleure donkerder te maak."
+#: ../../magic/src/fade_darken.c:134
+#, fuzzy
+msgid "Click to lighten your entire picture."
+msgstr "Klik en beweeg die muis rond om die prent se kleur te verander."
+
+#: ../../magic/src/fade_darken.c:139
+#, fuzzy
+msgid "Click and move the mouse to darken parts of your picture."
+msgstr "Klik en beweeg die muis om die prent uit fokus te maak."
+
+#: ../../magic/src/fade_darken.c:141
+#, fuzzy
+msgid "Click to darken your entire picture."
+msgstr "Klik en beweeg die muis rond om die prent se kleur te verander."
 
 #: ../../magic/src/fill.c:87
 msgid "Fill"
@@ -826,9 +838,14 @@ msgstr "Klik en beweeg die muis om in te kleur met seepborrels."
 msgid "Glass Tile"
 msgstr "Glasteël"
 
-#: ../../magic/src/glasstile.c:89
+#: ../../magic/src/glasstile.c:90
 msgid "Click and drag the mouse to put glass tile over your picture."
 msgstr "Klik en beweeg die muis om glasteëls oor jou prent te plaas."
+
+#: ../../magic/src/glasstile.c:92
+#, fuzzy
+msgid "Click to cover your entire picture in glass tiles."
+msgstr "Klik en beweeg die muis rond om die prent se kleur te verander."
 
 #: ../../magic/src/grass.c:92
 msgid "Grass"
@@ -978,3 +995,9 @@ msgid ""
 msgstr ""
 "Klik om die prent te laat golf. Klik nader aan bo vir korter golfwe, onder "
 "vir hoë golwe, links vir klein golfies en regs vir lang golwe."
+
+#~ msgid "Click and move to fade the colors."
+#~ msgstr "Klik en beweeg om die kleure te verdof"
+
+#~ msgid "Click and move to darken the colors."
+#~ msgstr "Klik en beweeg om die kleure donkerder te maak."

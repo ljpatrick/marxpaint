@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Tux paint anns a' ghàidhlig\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-07-09 13:17-0700\n"
+"POT-Creation-Date: 2008-07-09 13:31-0700\n"
 "PO-Revision-Date: 2006-03-04 15:51-0000\n"
 "Last-Translator: Niall Tracey <internationiall@hotmail.com>\n"
 "Language-Team:  <internationiall@hotmail.com>\n"
@@ -876,20 +876,36 @@ msgstr ""
 msgid "Click and drag the mouse to emboss the picture."
 msgstr ""
 
-#: ../../magic/src/fade_darken.c:116
+#: ../../magic/src/fade_darken.c:119
 msgid "Lighten"
 msgstr ""
 
-#: ../../magic/src/fade_darken.c:118
+#: ../../magic/src/fade_darken.c:121
 msgid "Darken"
 msgstr ""
 
-#: ../../magic/src/fade_darken.c:128
-msgid "Click and move to fade the colors."
-msgstr ""
+# Gràmar?
+#: ../../magic/src/fade_darken.c:132
+#, fuzzy
+msgid "Click and move the mouse to lighten parts of your picture."
+msgstr "Briog agus slaod airson na breigichean beaga."
 
-#: ../../magic/src/fade_darken.c:131
-msgid "Click and move to darken the colors."
+# Gràmar?
+# Is the word "lainnir" appropriate/common?
+#: ../../magic/src/fade_darken.c:134
+#, fuzzy
+msgid "Click to lighten your entire picture."
+msgstr "Briog agus slaod airson lainnir a dhèanamh dealbh."
+
+# Gràmar?
+# Is the word "lainnir" appropriate/common?
+#: ../../magic/src/fade_darken.c:139
+#, fuzzy
+msgid "Click and move the mouse to darken parts of your picture."
+msgstr "Briog agus slaod airson lainnir a dhèanamh dealbh."
+
+#: ../../magic/src/fade_darken.c:141
+msgid "Click to darken your entire picture."
 msgstr ""
 
 #: ../../magic/src/fill.c:87
@@ -924,8 +940,12 @@ msgstr "Briog anns a' dhealbh airson lìon le dath."
 msgid "Glass Tile"
 msgstr ""
 
-#: ../../magic/src/glasstile.c:89
+#: ../../magic/src/glasstile.c:90
 msgid "Click and drag the mouse to put glass tile over your picture."
+msgstr ""
+
+#: ../../magic/src/glasstile.c:92
+msgid "Click to cover your entire picture in glass tiles."
 msgstr ""
 
 # Teach Yourself Gaelic Dictionary: Boyd Robertson & Ian Taylor
