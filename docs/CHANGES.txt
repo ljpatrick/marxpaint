@@ -8,7 +8,7 @@ http://www.tuxpaint.org/
 
 $Id$
 
-2008.July.06 (0.9.21)
+2008.July.09 (0.9.21)
   * New Starters:
     -------------
     * Silver Frame
@@ -39,6 +39,8 @@ $Id$
       selector UI.  Can be disabled with "--nomagiccontrols".
 
     * "Negative" tool can now affect the entire image.
+
+    * "Tint" tool can now affect the entire image.
 
   * Build System Improvements
     -------------------------

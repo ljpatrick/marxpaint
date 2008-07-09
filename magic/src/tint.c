@@ -23,7 +23,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  Last updated: July 8, 2008
+  Last updated: July 9, 2008
   $Id$
 */
 
@@ -80,13 +80,15 @@ char * tint_get_name(magic_api * api, int which)
 // Return our descriptions, localized:
 char * tint_get_description(magic_api * api, int which, int mode)
 {
-  return(strdup(gettext_noop(
-"Click and move the mouse around to change the picture’s color.")));
+  if (mode == MODE_PAINT)
+    return(strdup(gettext_noop("Click and move the mouse around to change the color of parts of the picture.")));
+  else
+    return(strdup(gettext_noop("Click to change the entire picture’s color.")));
 }
 
 // Do the effect:
 
-static void do_tint(void * ptr, int which, SDL_Surface * canvas, SDL_Surface * last,
+static void do_tint(void * ptr, SDL_Surface * canvas, SDL_Surface * last,
                 int x, int y)
 {
   magic_api * api = (magic_api *) ptr;
@@ -94,8 +96,29 @@ static void do_tint(void * ptr, int which, SDL_Surface * canvas, SDL_Surface * l
   double gd = api->sRGB_to_linear(tint_g);
   double bd = api->sRGB_to_linear(tint_b);
   double old;
-  int xx, yy;
   Uint8 r, g, b;
+
+  /* Get original pixel: */
+
+  SDL_GetRGB(api->getpixel(last, x, y), last->format, &r, &g, &b);
+
+  old = api->sRGB_to_linear(r) * 0.2126 +
+  api->sRGB_to_linear(g) * 0.7152 +
+  api->sRGB_to_linear(b) * 0.0722;
+
+  api->putpixel(canvas, x, y,
+		SDL_MapRGB(canvas->format,
+			api->linear_to_sRGB(rd * old),
+			api->linear_to_sRGB(gd * old),
+			api->linear_to_sRGB(bd * old)));
+}
+
+
+static void do_tint_paint(void * ptr, int which, SDL_Surface * canvas, SDL_Surface * last,
+                int x, int y)
+{
+  magic_api * api = (magic_api *) ptr;
+  int xx, yy;
 
   for (yy = y - 16; yy < y + 16; yy++)
   {
@@ -105,19 +128,7 @@ static void do_tint(void * ptr, int which, SDL_Surface * canvas, SDL_Surface * l
       {
         if (!api->touched(xx, yy))
         {
-          /* Get original pixel: */
-
-          SDL_GetRGB(api->getpixel(last, xx, yy), last->format, &r, &g, &b);
-
-          old = api->sRGB_to_linear(r) * 0.2126 +
-            api->sRGB_to_linear(g) * 0.7152 +
-            api->sRGB_to_linear(b) * 0.0722;
-
-          api->putpixel(canvas, xx, yy,
-                 SDL_MapRGB(canvas->format,
-                            api->linear_to_sRGB(rd * old),
-                            api->linear_to_sRGB(gd * old),
-                            api->linear_to_sRGB(bd * old)));
+          do_tint(ptr, canvas, last, xx, yy);
         }
       }
     }
@@ -129,7 +140,7 @@ void tint_drag(magic_api * api, int which, SDL_Surface * canvas,
 	          SDL_Surface * last, int ox, int oy, int x, int y,
 		  SDL_Rect * update_rect)
 {
-  api->line((void *) api, which, canvas, last, ox, oy, x, y, 1, do_tint);
+  api->line((void *) api, which, canvas, last, ox, oy, x, y, 1, do_tint_paint);
 
   if (ox > x) { int tmp = ox; ox = x; x = tmp; }
   if (oy > y) { int tmp = oy; oy = y; y = tmp; }
@@ -147,7 +158,23 @@ void tint_click(magic_api * api, int which, int mode,
 	           SDL_Surface * canvas, SDL_Surface * last,
 	           int x, int y, SDL_Rect * update_rect)
 {
-  tint_drag(api, which, canvas, last, x, y, x, y, update_rect);
+  if (mode == MODE_PAINT)
+    tint_drag(api, which, canvas, last, x, y, x, y, update_rect);
+  else
+  {
+    int xx, yy;
+
+    for (yy = 0; yy < canvas->h; yy++)
+      for (xx = 0; xx < canvas->w; xx++)
+        do_tint(api, canvas, last, xx, yy);
+
+    update_rect->x = 0;
+    update_rect->y = 0;
+    update_rect->w = canvas->w;
+    update_rect->h = canvas->h;
+
+    /* FIXME: Play sfx */
+  }
 }
 
 
@@ -157,7 +184,6 @@ void tint_release(magic_api * api, int which,
 {
 }
 
-// No setup happened:
 void tint_shutdown(magic_api * api)
 {
   if (tint_snd != NULL)
@@ -188,5 +214,5 @@ void tint_switchout(magic_api * api, int which, SDL_Surface * canvas)
 
 int tint_modes(magic_api * api, int which)
 {
-  return(MODE_PAINT); /* FIXME - Can also be turned into a full-image effect */
+  return(MODE_PAINT | MODE_FULLSCREEN);
 }
