@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-07-07 16:20-0700\n"
+"POT-Creation-Date: 2008-07-08 21:42-0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -379,7 +379,7 @@ msgstr "Panibago"
 #. Open a saved picture
 #. buttons for the file open dialog
 #. Open dialog: 'Open' button, to load the selected picture
-#: ../tools.h:75 ../tuxpaint.c:7854
+#: ../tools.h:75 ../tuxpaint.c:7953
 msgid "Open"
 msgstr "Buksan"
 
@@ -491,175 +491,175 @@ msgid "OK then… Let’s keep drawing this one!"
 msgstr ""
 
 #. Prompt to confirm user wishes to quit
-#: ../tuxpaint.c:1828
+#: ../tuxpaint.c:1840
 msgid "Do you really want to quit?"
 msgstr "Gusto mo ba talagang umalis?"
 
 #. Quit prompt positive response (quit)
-#: ../tuxpaint.c:1831
+#: ../tuxpaint.c:1843
 msgid "Yes, I'm done!"
 msgstr "Oo. Tapos na ako!"
 
 #. Quit prompt negative response (don't quit)
-#: ../tuxpaint.c:1834 ../tuxpaint.c:1861
+#: ../tuxpaint.c:1846 ../tuxpaint.c:1873
 msgid "No, take me back!"
 msgstr "Hindi. Ibalik mo ako!"
 
 #. Current picture is not saved; user is quitting
-#: ../tuxpaint.c:1838
+#: ../tuxpaint.c:1850
 msgid "If you quit, you’ll lose your picture! Save it?"
 msgstr "Kapag umalis. Mawawala ang larawan! I-save ito?"
 
-#: ../tuxpaint.c:1839 ../tuxpaint.c:1844
+#: ../tuxpaint.c:1851 ../tuxpaint.c:1856
 msgid "Yes, save it!"
 msgstr "Oo. i-save!"
 
-#: ../tuxpaint.c:1840 ../tuxpaint.c:1845
+#: ../tuxpaint.c:1852 ../tuxpaint.c:1857
 msgid "No, don't bother saving!"
 msgstr "Hindi. huwag i-save!"
 
 #. Current picture is not saved; user is opening another picture
-#: ../tuxpaint.c:1843
+#: ../tuxpaint.c:1855
 msgid "Save your picture first?"
 msgstr "I-save muna ang larawan?"
 
 #. Error opening picture
-#: ../tuxpaint.c:1848
+#: ../tuxpaint.c:1860
 msgid "Can’t open that picture!"
 msgstr "Hindi Mabuksan ang larawan!"
 
 #. Generic dialog dismissal
-#: ../tuxpaint.c:1851 ../tuxpaint.c:1856 ../tuxpaint.c:1865 ../tuxpaint.c:1869
-#: ../tuxpaint.c:1878
+#: ../tuxpaint.c:1863 ../tuxpaint.c:1868 ../tuxpaint.c:1877 ../tuxpaint.c:1881
+#: ../tuxpaint.c:1890
 msgid "OK"
 msgstr ""
 
 #. Notification that 'Open' dialog has nothing to show
-#: ../tuxpaint.c:1855
+#: ../tuxpaint.c:1867
 msgid "There are no saved files!"
 msgstr "Walang nakasave na dokumento!"
 
 #. Verification of print action
-#: ../tuxpaint.c:1859
+#: ../tuxpaint.c:1871
 msgid "Print your picture now?"
 msgstr "Gusto mo bang ilimbag ang larawan?"
 
-#: ../tuxpaint.c:1860
+#: ../tuxpaint.c:1872
 msgid "Yes, print it!"
 msgstr "Oo. Ilimbag ito!"
 
 #. Confirmation of successful (we hope) printing
-#: ../tuxpaint.c:1864
+#: ../tuxpaint.c:1876
 msgid "Your picture has been printed!"
 msgstr "Nailimbag na ang larawan!"
 
 #. Notification that it's too soon to print again (--printdelay option is in effect)
-#: ../tuxpaint.c:1868
+#: ../tuxpaint.c:1880
 msgid "You can’t print yet!"
 msgstr "Hindi pa puwedeng ilimbag!"
 
 #. Prompt to confirm erasing a picture in the Open dialog
-#: ../tuxpaint.c:1872
+#: ../tuxpaint.c:1884
 msgid "Erase this picture?"
 msgstr "Burahin ang larawan?"
 
-#: ../tuxpaint.c:1873
+#: ../tuxpaint.c:1885
 msgid "Yes, erase it!"
 msgstr "Oo. Burahin ito!"
 
-#: ../tuxpaint.c:1874
+#: ../tuxpaint.c:1886
 msgid "No, don't erase it!"
 msgstr "Hindi. Huwag itong burahin!"
 
 #. Reminder that Mouse Button 1 is the button to use in Tux Paint
-#: ../tuxpaint.c:1877
+#: ../tuxpaint.c:1889
 msgid "Remember to use the left mouse button!"
 msgstr "Alalahaning gamitin ang kaliwang mouse button!"
 
 #. Sound has been muted (silenced) via keyboard shortcut
-#: ../tuxpaint.c:1988
+#: ../tuxpaint.c:2004
 msgid "Sound muted."
 msgstr ""
 
 #. Sound has been unmuted (unsilenced) via keyboard shortcut
-#: ../tuxpaint.c:1993
+#: ../tuxpaint.c:2009
 msgid "Sound unmuted."
 msgstr ""
 
 #. Wait while Text tool finishes loading fonts
-#: ../tuxpaint.c:2430
+#: ../tuxpaint.c:2475
 msgid "Please wait…"
 msgstr "Mahintay Sandali..."
 
-#: ../tuxpaint.c:7080
+#: ../tuxpaint.c:7176
 msgid "Pick a color."
 msgstr ""
 
 #. Open dialog: 'Erase' button, to erase/deleted the selected picture
-#: ../tuxpaint.c:7857
+#: ../tuxpaint.c:7956
 msgid "Erase"
 msgstr "Burahin"
 
 #. Open dialog: 'Slides' button, to switch to slide show mode
-#: ../tuxpaint.c:7860
+#: ../tuxpaint.c:7959
 msgid "Slides"
 msgstr ""
 
 #. Open dialog: 'Back' button, to dismiss Open dialog without opening a picture
-#: ../tuxpaint.c:7863
+#: ../tuxpaint.c:7962
 msgid "Back"
 msgstr "Bumalik"
 
 #. Slideshow: 'Next' button, to load next slide (image)
-#: ../tuxpaint.c:7866
+#: ../tuxpaint.c:7965
 #, fuzzy
 msgid "Next"
 msgstr "Letra"
 
 #. Slideshow: 'Play' button, to begin a slideshow sequence
-#: ../tuxpaint.c:7869
+#: ../tuxpaint.c:7968
 msgid "Play"
 msgstr ""
 
 #. Label for 'Letters' buttons (font selector, down the right when the Text tool is being used); used to show the difference between font faces
-#: ../tuxpaint.c:8462
+#: ../tuxpaint.c:8615
 msgid "Aa"
 msgstr ""
 
 #. Admittedly stupid way of determining which keys can be used for
 #. positive and negative responses in dialogs (e.g., [Y] (for 'yes') in English)
-#: ../tuxpaint.c:11367
+#: ../tuxpaint.c:11520
 msgid "Yes"
 msgstr "Oo"
 
-#: ../tuxpaint.c:11371
+#: ../tuxpaint.c:11524
 msgid "No"
 msgstr "Hindi"
 
 #. Prompt to ask whether user wishes to save over old version of their file
-#: ../tuxpaint.c:12320
+#: ../tuxpaint.c:12476
 msgid "Replace the picture with your changes?"
 msgstr "Palitan ang larawan ng mga nagawang pagbabago?"
 
 #. Positive response to saving over old version
 #. (like a 'File:Save' action in other applications)
-#: ../tuxpaint.c:12324
+#: ../tuxpaint.c:12480
 msgid "Yes, replace the old one!"
 msgstr "Oo. Palitan ng bago!"
 
 #. Negative response to saving over old version (saves a new image)
 #. (like a 'File:Save As...' action in other applications)
-#: ../tuxpaint.c:12328
+#: ../tuxpaint.c:12484
 msgid "No, save a new file!"
 msgstr "Hindi. i-save ang dokumento!"
 
-#: ../tuxpaint.c:13091
+#: ../tuxpaint.c:13247
 msgid "Choose the picture you want, then click “Open”."
 msgstr "Pumili ng larawang gusto. at i-klik ang buksan."
 
 #. Let user choose images:
 #. Instructions for Slideshow file dialog (FIXME: Make a #define)
-#: ../tuxpaint.c:14078 ../tuxpaint.c:14392
+#: ../tuxpaint.c:14234 ../tuxpaint.c:14548
 #, fuzzy
 msgid "Choose the pictures you want, then click “Play”."
 msgstr "Pumili ng larawang gusto. at i-klik ang buksan."
@@ -676,19 +676,19 @@ msgstr ""
 msgid "Tux Paint"
 msgstr ""
 
-#: ../../magic/src/blackAndWhite.c:60
+#: ../../magic/src/blackAndWhite.c:62
 msgid "Black & White"
 msgstr ""
 
-#: ../../magic/src/blackAndWhite.c:61
+#: ../../magic/src/blackAndWhite.c:63
 msgid "Threshold"
 msgstr ""
 
-#: ../../magic/src/blackAndWhite.c:64
+#: ../../magic/src/blackAndWhite.c:66
 msgid "Click to convert the image to greyscale."
 msgstr ""
 
-#: ../../magic/src/blackAndWhite.c:65
+#: ../../magic/src/blackAndWhite.c:67
 msgid "Click to threshold the image into black and white regions."
 msgstr ""
 
@@ -717,12 +717,12 @@ msgstr ""
 msgid "Click and move the mouse around to make the picture drip."
 msgstr ""
 
-#: ../../magic/src/blurAll.c:57
+#: ../../magic/src/blurAll.c:59
 #, fuzzy
 msgid "Blur All"
 msgstr "Gawing malabo"
 
-#: ../../magic/src/blurAll.c:60
+#: ../../magic/src/blurAll.c:62
 msgid "Click to blur the whole image."
 msgstr ""
 
@@ -882,8 +882,12 @@ msgstr ""
 msgid "Negative"
 msgstr "Negatibo"
 
-#: ../../magic/src/negative.c:79
+#: ../../magic/src/negative.c:80
 msgid "Click and move the mouse around to draw a negative."
+msgstr ""
+
+#: ../../magic/src/negative.c:83
+msgid "Click to turn the image into its negative."
 msgstr ""
 
 #: ../../magic/src/rainbow.c:107
@@ -902,28 +906,28 @@ msgstr ""
 msgid "Click to make ripples appear over your picture."
 msgstr ""
 
-#: ../../magic/src/sharpen.c:72
+#: ../../magic/src/sharpen.c:74
 msgid "Trace Contour"
 msgstr ""
 
-#: ../../magic/src/sharpen.c:73
+#: ../../magic/src/sharpen.c:75
 #, fuzzy
 msgid "Sharpen"
 msgstr "Mga Hugis"
 
-#: ../../magic/src/sharpen.c:74
+#: ../../magic/src/sharpen.c:76
 msgid "Silhouette"
 msgstr ""
 
-#: ../../magic/src/sharpen.c:77
+#: ../../magic/src/sharpen.c:79
 msgid "Click to trace the edges of objects in the image."
 msgstr ""
 
-#: ../../magic/src/sharpen.c:78
+#: ../../magic/src/sharpen.c:80
 msgid "Click to sharpen the image."
 msgstr ""
 
-#: ../../magic/src/sharpen.c:79
+#: ../../magic/src/sharpen.c:81
 msgid "Click to create a black and white silhouette of the image."
 msgstr ""
 
