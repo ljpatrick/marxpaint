@@ -16,7 +16,7 @@ $Id$
 
   * New Magic Tools:
     ----------------
-    * + BlurAll - Blurs entire image
+    * + Blur (entire image mode) - Blurs entire image
       + Sharpen - Sharpens entire image
       + Trace Contour - Traces the edges of the image, over a white background.
       + Silhouette - Creates an outline of the image, over a black background.

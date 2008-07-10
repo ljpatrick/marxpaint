@@ -45,11 +45,12 @@ $Id$
     documentation.  This software is provided "as is" without express or
     implied warranty.
 
-  BlurAll, Sharpen, Trace Contour, Silhouette, Black & White and Threshold
-  Magic tools by Andrew 'akanewbie' Corcoran <akanewbie@gmail.com>
+  Blur ('entire image' mode), Sharpen, Trace Contour, Silhouette,
+  Black & White and Threshold Magic tools.
+  by Andrew 'akanewbie' Corcoran <akanewbie@gmail.com>
   Contributed as part of Google Summer of Code, 2008.
 
-  Confetti and Fold Magic Tools
+  Confetti and Fold Magic Tools.
   by Adam 'foo-script' Rakowski <foo-script@o2.pl>
   Contributed as part of Google Summer of Code, 2008.
 
