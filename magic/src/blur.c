@@ -1,14 +1,14 @@
 /*
   blur.c
 
-  Blur Magic Tool Plugin
+  blur, Blur tool
   Tux Paint - A simple drawing program for children.
+
+  Credits: Bill Kendrick<bill@newbreedsoftware.com> & Andrew Corcoran <akanewbie@gmail.com>
 
   Copyright (c) 2002-2008 by Bill Kendrick and others; see AUTHORS.txt
   bill@newbreedsoftware.com
   http://www.tuxpaint.org/
-
-  Major improvements by Albert Cahalan <albert@users.sf.net>
 
   This program is free software; you can redistribute it and/or modify
   it under the terms of the GNU General Public License as published by
@@ -31,154 +31,165 @@
 
 #include <stdio.h>
 #include <string.h>
+#include <libintl.h>
 #include "tp_magic_api.h"
 #include "SDL_image.h"
 #include "SDL_mixer.h"
+#include <math.h>
+#include <limits.h>
 
+enum {
+	TOOL_blur,
+	blur_NUM_TOOLS
+};
 
-/* Our globals: */
+const int blur_RADIUS = 16;
 
-static Mix_Chunk * blur_snd;
+static Mix_Chunk * blur_snd_effect[blur_NUM_TOOLS];
 
-
-int blur_init(magic_api * api)
-{
-  char fname[1024];
-
-  snprintf(fname, sizeof(fname), "%s/sounds/magic/blur.wav",
-	    api->data_directory);
-  blur_snd = Mix_LoadWAV(fname);
-
-  return(1);
-}
+const char *blur_snd_filenames[blur_NUM_TOOLS] = {
+  "blur.wav",
+};
+const char * blur_icon_filenames[blur_NUM_TOOLS] = {
+  "blur.png",
+};
+const char * blur_names[blur_NUM_TOOLS] = {
+  gettext_noop("Blur"),
+};
+const char * blur_descs[blur_NUM_TOOLS][2] = {
+  {gettext_noop("Click and move the mouse around to blur the image."), gettext_noop("Click to blur the whole image.")},
+};
 
 Uint32 blur_api_version(void) { return(TP_MAGIC_API_VERSION); }
 
-int blur_get_tool_count(magic_api * api)
-{
+//Load sounds
+int blur_init(magic_api * api){
+
+  int i;
+  char fname[1024];
+
+  for (i = 0; i < blur_NUM_TOOLS; i++){
+    snprintf(fname, sizeof(fname), "%s/sounds/magic/%s", api->data_directory, blur_snd_filenames[i]);
+    blur_snd_effect[i] = Mix_LoadWAV(fname);
+  }
   return(1);
 }
 
+int blur_get_tool_count(magic_api * api){
+  return(blur_NUM_TOOLS);
+}
+
 // Load our icons:
-SDL_Surface * blur_get_icon(magic_api * api, int which)
-{
+SDL_Surface * blur_get_icon(magic_api * api, int which){
   char fname[1024];
-
-  snprintf(fname, sizeof(fname), "%s/images/magic/blur.png",
-	   api->data_directory);
-
+  snprintf(fname, sizeof(fname), "%simages/magic/%s", api->data_directory, blur_icon_filenames[which]);
   return(IMG_Load(fname));
 }
 
 // Return our names, localized:
-char * blur_get_name(magic_api * api, int which)
-{
-  return(strdup(gettext_noop("Blur")));
+char * blur_get_name(magic_api * api, int which){
+    return(strdup(gettext(blur_names[which])));
 }
 
 // Return our descriptions, localized:
-char * blur_get_description(magic_api * api, int which, int mode)
-{
-  return(strdup(gettext_noop(
-"Click and move the mouse around to blur the picture.")));
+char * blur_get_description(magic_api * api, int which, int mode){
+  return(strdup(gettext(blur_descs[which][mode-1])));
 }
 
-// Do the effect:
-
-static void do_blur(void * ptr, int which, SDL_Surface * canvas, SDL_Surface * last,
-             int x, int y)
-{
+//Do the effect for one pixel
+static void do_blur_pixel(void * ptr, int which,
+	         SDL_Surface * canvas, SDL_Surface * last,
+	         int x, int y){
   magic_api * api = (magic_api *) ptr;
-  double state[32][32][3];
-  unsigned i;
-  Uint8 r, g, b;
+  int i,j,k;
+	Uint8 temp[3];
+  double blurValue[3];
 
-  i = 32 * 32;
-
-  while (i--)
-  {
-    int iy = i >> 5;
-    int ix = i & 0x1f;
-    // is it not on the circle of radius sqrt(220) at location 16,16?
-    if ((ix - 16) * (ix - 16) + (iy - 16) * (iy - 16) > 220)
-      continue;
-    // it is on the circle, so grab it
-
-    SDL_GetRGB(api->getpixel(canvas, x + ix - 16, y + iy - 16),
-               last->format, &r, &g, &b);
-    state[ix][iy][0] = api->sRGB_to_linear(r);
-    state[ix][iy][1] = api->sRGB_to_linear(g);
-    state[ix][iy][2] = api->sRGB_to_linear(b);
+  //5x5 gaussiann weighting window
+  const int weight[5][5] = {  {1,4,7,4,1},
+                              {4,16,26,16,4},
+                              {7,26,41,26,7},
+                              {4,16,26,16,4},
+                              {1,4,7,4,1}};
+      for (i=-2;i<3;i++){
+        for (j=-2;j<3;j++){
+          //Add the pixels around the current one wieghted 
+			    SDL_GetRGB(api->getpixel(last, x + i, y + j), last->format, &temp[0], &temp[1], &temp[2]);
+          for (k =0;k<3;k++){
+			      blurValue[k] += temp[k]* weight[i+2][j+2];
+          }
+        }
+      }
+  for (k =0;k<3;k++){
+    blurValue[k] /=273;
   }
+	api->putpixel(canvas, x, y, SDL_MapRGB(canvas->format, blurValue[0], blurValue[1], blurValue[2]));
+}
 
-  i = 32 * 32;
-  while (i--)
+// Do the effect for the full image
+static void do_blur_full(void * ptr,SDL_Surface * canvas, SDL_Surface * last, int which){
+
+	magic_api * api = (magic_api *) ptr;
+
+	int x,y;
+
+	for (y = 0; y < last->h; y++){
+		for (x=0; x < last->w; x++){
+      do_blur_pixel(ptr, which, canvas, last, x, y);
+	  }
+  }
+}
+
+//do the effect for the brush
+static void do_blur_brush(void * ptr, int which, SDL_Surface * canvas, SDL_Surface * last, int x, int y){
+  int xx, yy;
+  magic_api * api = (magic_api *) ptr;
+
+  for (yy = y - blur_RADIUS; yy < y + blur_RADIUS; yy++)
   {
-    double lr, lg, lb;      // linear red,green,blue
-    double weight;
-    int iy = i >> 5;
-    int ix = i & 0x1f;
-    int r2 = (ix - 16) * (ix - 16) + (iy - 16) * (iy - 16); // radius squared
-
-    // is it not on the circle of radius sqrt(140) at location 16,16?
-    if (r2 > 140)
-      continue;
-
-    // It is on the circle, but how strongly will it be affected?
-    // This is lame; we should use something like a gaussian or cosine
-    // via a lookup table. (inverted, because this is the center weight)
-    weight = r2 / 16.0 + 3.0;
-
-    // Sampling more points would be good too, though it'd be slower.
-
-    lr = state[ix][iy - 1][0]
-      + state[ix - 1][iy][0] + state[ix][iy][0] * weight + state[ix +
-                                                                 1][iy][0]
-      + state[ix][iy + 1][0];
-
-    lg = state[ix][iy - 1][1]
-      + state[ix - 1][iy][1] + state[ix][iy][1] * weight + state[ix +
-                                                                 1][iy][1]
-      + state[ix][iy + 1][1];
-
-    lb = state[ix][iy - 1][2]
-      + state[ix - 1][iy][2] + state[ix][iy][2] * weight + state[ix +
-                                                                 1][iy][2]
-      + state[ix][iy + 1][2];
-
-    lr /= weight + 4.0;
-    lg /= weight + 4.0;
-    lb /= weight + 4.0;
-    api->putpixel(canvas, x + ix - 16, y + iy - 16,
-             SDL_MapRGB(canvas->format, api->linear_to_sRGB(lr),
-                        api->linear_to_sRGB(lg), api->linear_to_sRGB(lb)));
+    for (xx = x - blur_RADIUS; xx < x + blur_RADIUS; xx++)
+    {
+      if (api->in_circle(xx - x, yy - y, blur_RADIUS) &&
+	  !api->touched(xx, yy))
+      {
+        do_blur_pixel(api, which, canvas, last, xx, yy);
+      }
+    }
   }
 }
 
 // Affect the canvas on drag:
 void blur_drag(magic_api * api, int which, SDL_Surface * canvas,
 	          SDL_Surface * last, int ox, int oy, int x, int y,
-		  SDL_Rect * update_rect)
-{
-  api->line((void *) api, which, canvas, last, ox, oy, x, y, 1, do_blur);
+		  SDL_Rect * update_rect){
+
+  api->line((void *) api, which, canvas, last, ox, oy, x, y, 1, do_blur_brush);
+
+  api->playsound(blur_snd_effect[which], (x * 255) / canvas->w, 255);
 
   if (ox > x) { int tmp = ox; ox = x; x = tmp; }
   if (oy > y) { int tmp = oy; oy = y; y = tmp; }
 
-  update_rect->x = ox - 16;
-  update_rect->y = oy - 16;
-  update_rect->w = (x + 16) - update_rect->x;
-  update_rect->h = (y + 16) - update_rect->y;
-
-  api->playsound(blur_snd, (x * 255) / canvas->w, 255);
+  update_rect->x = ox - blur_RADIUS;
+  update_rect->y = oy - blur_RADIUS;
+  update_rect->w = (x + blur_RADIUS) - update_rect->x;
+  update_rect->h = (y + blur_RADIUS) - update_rect->y;
 }
 
 // Affect the canvas on click:
 void blur_click(magic_api * api, int which, int mode,
-	           SDL_Surface * canvas, SDL_Surface * last,
-	           int x, int y, SDL_Rect * update_rect)
-{
-  blur_drag(api, which, canvas, last, x, y, x, y, update_rect);
+	            SDL_Surface * canvas, SDL_Surface * last,
+	            int x, int y, SDL_Rect * update_rect){
+  if (mode == MODE_PAINT)
+    blur_drag(api, which, canvas, last, x, y, x, y, update_rect);
+  else{
+    update_rect->x = 0;
+    update_rect->y = 0;
+    update_rect->w = canvas->w;
+    update_rect->h = canvas->h;
+    do_blur_full(api, canvas,  last, which);
+    api->playsound(blur_snd_effect[which], 128, 255);
+  }
 }
 
 // Affect the canvas on release:
@@ -188,10 +199,16 @@ void blur_release(magic_api * api, int which,
 {
 }
 
+// No setup happened:
 void blur_shutdown(magic_api * api)
 {
-  if (blur_snd != NULL)
-    Mix_FreeChunk(blur_snd);
+	//Clean up sounds
+	int i;
+	for(i=0; i<blur_NUM_TOOLS; i++){
+		if(blur_snd_effect[i] != NULL){
+			Mix_FreeChunk(blur_snd_effect[i]);
+		}
+	}
 }
 
 // Record the color from Tux Paint:
@@ -215,5 +232,5 @@ void blur_switchout(magic_api * api, int which, SDL_Surface * canvas)
 
 int blur_modes(magic_api * api, int which)
 {
-  return(MODE_PAINT); /* FIXME - Can also be turned into a full-image effect */ /* FIXME: Merge with blurAll */
+  return(MODE_FULLSCREEN|MODE_PAINT);
 }
