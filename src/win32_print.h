@@ -24,4 +24,9 @@ extern char *GetDefaultSaveDir(const char *suffix);
 extern char *GetSystemFontDir(void);
 extern char *get_temp_fname(const char *const name);
 
+/* keyboard hooking functions */
+extern int  InstallKeyboardHook(void);
+extern int  RemoveKeyboardHook(void);
+extern void SetActivationState(int state);
+
 #endif

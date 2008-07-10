@@ -589,3 +589,56 @@ char *get_temp_fname(const char *const name)
   return strdup(f);
 }
 
+/*
+ * Nasty low-level hook into the keyboard. 2K/XP/Vista only.
+ */
+
+static HHOOK g_hKeyboardHook = NULL;
+static int   g_bWindowActive = 0;
+
+LRESULT CALLBACK LowLevelKeyboardProc(int nCode, WPARAM wParam, LPARAM lParam)
+{
+  int bEatKeystroke = 0;
+  KBDLLHOOKSTRUCT *p = (KBDLLHOOKSTRUCT*)lParam;
+
+  if (nCode < 0 || nCode != HC_ACTION)
+    return CallNextHookEx(g_hKeyboardHook, nCode, wParam, lParam); 
+ 
+  switch (wParam) 
+  {
+    case WM_KEYDOWN:  
+    case WM_KEYUP:    
+    {
+      bEatKeystroke = g_bWindowActive && ((p->vkCode == VK_LWIN) || (p->vkCode == VK_RWIN));
+      break;
+    }
+  }
+ 
+  if(bEatKeystroke)
+    return 1;
+  return CallNextHookEx(g_hKeyboardHook, nCode, wParam, lParam);
+}
+
+int InstallKeyboardHook(void)
+{
+  if (g_hKeyboardHook)
+    return -1;
+  g_hKeyboardHook = SetWindowsHookEx(WH_KEYBOARD_LL, LowLevelKeyboardProc, GetModuleHandle(NULL), 0);
+  return g_hKeyboardHook ? 0 : -2;
+}
+
+int RemoveKeyboardHook(void)
+{
+  if (!g_hKeyboardHook)
+    return -1;
+  UnhookWindowsHookEx(g_hKeyboardHook);
+  g_hKeyboardHook = NULL;
+  return 0;
+}
+
+void SetActivationState(int state)
+{
+  g_bWindowActive = state;
+}
+
+

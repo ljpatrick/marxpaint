@@ -6842,6 +6842,14 @@ static void setup(int argc, char *argv[])
     }
   }
 
+#ifdef _WIN32
+  if (fullscreen)
+  {
+    InstallKeyboardHook();
+    SetActivationState(1);
+  }
+#endif
+
   
   setup_language(getfilename(argv[0]), &button_label_y_nudge);
   im_init(&im_data, get_current_language());
@@ -14812,6 +14820,10 @@ void play_slideshow(int * selected, int num_selected, char * dirname,
 	    next = 1;
 	    done = 1;
 	  }
+          else if (event.type == SDL_ACTIVEEVENT)
+          {
+            handle_active(&event);
+          }
 	  else if (event.type == SDL_KEYDOWN)
 	  {
 	    key = event.key.keysym.sym;
@@ -16169,6 +16181,12 @@ static void handle_active(SDL_Event * event)
 	SDL_Flip(screen);
     }
   }
+#ifdef _WIN32
+  if (event->active.state & SDL_APPINPUTFOCUS|SDL_APPACTIVE)
+  {
+    SetActivationState(event->active.gain);
+  }
+#endif
 }
 
 
