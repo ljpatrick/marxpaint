@@ -401,12 +401,15 @@ then the names of your functions must begin with "<code><b>zoom_</b></code>"
   <br>
 
 <li><code><b>void click(magic_api&nbsp;*&nbsp;api, int&nbsp;which,
+  int&nbsp;mode,
   SDL_Surface&nbsp;*&nbsp;snapshot, SDL_Surface&nbsp;*&nbsp;canvas,
   int&nbsp;x, int&nbsp;y, SDL_Rect&nbsp;*&nbsp;update_rect)
   </b></code><br>
   The plugin should apply the appropriate 'Magic' tool on the
   '<code>canvas</code>' surface.  The (x,y) coordinates are where the
-  mouse was (within the canvas) when the mouse button was clicked.<br>
+  mouse was (within the canvas) when the mouse button was clicked, and
+  you are told which 'mode' your tool is in (i.e.,
+  '<code>MODE_PAINT</code>' or '<code>MODE_FULLSCREEN</code>).<br>
   <br>
   The plugin should report back what part of the canvas was affected, by
   filling in the (x,y) and (w,h) elements of '<code>update_rect</code>'.<br>

@@ -313,11 +313,14 @@ Interfaces
              whenever the user picks a new color while such a tool is
              currently active.)
 
-           * void click(magic_api * api, int which, SDL_Surface * snapshot,
-             SDL_Surface * canvas, int x, int y, SDL_Rect * update_rect)
+           * void click(magic_api * api, int which, int mode,
+             SDL_Surface * snapshot, SDL_Surface * canvas, int x, int y,
+             SDL_Rect * update_rect)
              The plugin should apply the appropriate 'Magic' tool on the
              'canvas' surface. The (x,y) coordinates are where the mouse was
-             (within the canvas) when the mouse button was clicked.
+             (within the canvas) when the mouse button was clicked, and you
+             are told which 'mode' your tool is in (i.e., 'MODE_PAINT' or
+             'MODE_FULLSCREEN).
 
              The plugin should report back what part of the canvas was
              affected, by filling in the (x,y) and (w,h) elements of
