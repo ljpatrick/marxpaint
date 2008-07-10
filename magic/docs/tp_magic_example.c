@@ -235,7 +235,7 @@ char * example_get_name(magic_api * api, int which)
 // When Tux Paint is starting up and loading plugins, it asks us to
 // provide names (labels) for the "Magic" tool buttons.
 
-char * example_get_description(magic_api * api, int which)
+char * example_get_description(magic_api * api, int which, int mode)
 {
   const char * our_desc_english;
   const char * our_desc_localized;
@@ -308,7 +308,7 @@ void example_shutdown(magic_api * api)
 
 // Affect the canvas on click:
 
-void example_click(magic_api * api, int which,
+void example_click(magic_api * api, int which, int mode,
 	           SDL_Surface * canvas, SDL_Surface * snapshot,
 	           int x, int y, SDL_Rect * update_rect)
 {
