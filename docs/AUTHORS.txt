@@ -7,7 +7,7 @@ bill@newbreedsoftware.com
 http://www.tuxpaint.org/
 
 
-June 17, 2002 - July 6, 2008
+June 17, 2002 - July 10, 2008
 
 $Id$
 
@@ -45,8 +45,13 @@ $Id$
     documentation.  This software is provided "as is" without express or
     implied warranty.
 
-  Some magic tools by:
-  Andrew Corcoran <akanewbie@gmail.com>
+  BlurAll, Sharpen, Trace Contour, Silhouette, Black & White and Threshold
+  Magic tools by Andrew 'akanewbie' Corcoran <akanewbie@gmail.com>
+  Contributed as part of Google Summer of Code, 2008.
+
+  Confetti and Fold Magic Tools
+  by Adam 'foo-script' Rakowski <foo-script@o2.pl>
+  Contributed as part of Google Summer of Code, 2008.
 
 
 * Graphics
