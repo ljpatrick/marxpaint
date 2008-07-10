@@ -8,7 +8,7 @@ http://www.tuxpaint.org/
 
 $Id$
 
-2008.July.09 (0.9.21)
+2008.July.10 (0.9.21)
   * New Starters:
     -------------
     * Silver Frame
@@ -16,8 +16,19 @@ $Id$
 
   * New Magic Tools:
     ----------------
-    * BlurAll, Sharpen and BlackandWhite
-       Andrew Corcoran <akanewbie@gmail.com>
+    * + BlurAll - Blurs entire image
+      + Sharpen - Sharpens entire image
+      + Trace Contour - Traces the edges of the image, over a white background.
+      + Silhouette - Creates an outline of the image, over a black background.
+      + Black & White - Removes all color from the image (turns it greyscale).
+      + Threshold - Turns image pure black & pure white (no grey or color).
+      By Andrew 'akanewbie' Corcoran <akanewbie@gmail.com>
+      (Part of Tux4Kids' participation in Google Summer of Code 2008)
+
+    * + Confetti - Paints random confetti bits on the canvas.
+      + Fold - Folds the corners of the image up, like a piece of paper.
+      By Adam 'foo-script' Rakowski <foo-script@o2.pl>
+      (Part of Tux4Kids' participation in Google Summer of Code 2008)
 
   * Magic Tool Improvememnts:
     --------------------------
