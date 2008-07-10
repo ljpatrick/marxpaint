@@ -33,7 +33,8 @@ $Id$
   * Magic Tool Improvememnts:
     --------------------------
     * Added "_switchin()" and "_switchout()" functions to Magic tool API,
-      to tell Magic tools when they are selected or deselected.
+      to tell Magic tools when they are selected or deselected, or when
+      their mode changes..
 
     * Added "_modes()" function to Magic tool API, so Magic tool plugins
       can tell Tux Paint what modes it accepts, 'paint' or 'fullscreen'.

@@ -172,14 +172,12 @@ void confetti_drag(magic_api * api, int which, SDL_Surface * canvas,
 	confetti_click(api, which, MODE_PAINT, canvas, snapshot, x, y, update_rect);
 }
 
-void confetti_switchin(magic_api * api, int which, SDL_Surface * canvas)
+void confetti_switchin(magic_api * api, int which, int mode, SDL_Surface * canvas)
 {
-	
 }
 
-void confetti_switchout(magic_api * api, int which, SDL_Surface * canvas)
+void confetti_switchout(magic_api * api, int which, int mode, SDL_Surface * canvas)
 {
-	
 }
 
 int confetti_modes(magic_api * api, int which)

@@ -294,11 +294,11 @@ static void do_brick(magic_api * api, SDL_Surface * canvas,
   api->playsound(brick_snd, (x * 255) / canvas->w, 255);
 }
 
-void bricks_switchin(magic_api * api, int which, SDL_Surface * canvas)
+void bricks_switchin(magic_api * api, int which, int mode, SDL_Surface * canvas)
 {
 }
 
-void bricks_switchout(magic_api * api, int which, SDL_Surface * canvas)
+void bricks_switchout(magic_api * api, int which, int mode, SDL_Surface * canvas)
 {
 }
 

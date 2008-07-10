@@ -207,11 +207,11 @@ int light_requires_colors(magic_api * api, int which)
   return 1;
 }
 
-void light_switchin(magic_api * api, int which, SDL_Surface * canvas)
+void light_switchin(magic_api * api, int which, int mode, SDL_Surface * canvas)
 {
 }
 
-void light_switchout(magic_api * api, int which, SDL_Surface * canvas)
+void light_switchout(magic_api * api, int which, int mode, SDL_Surface * canvas)
 {
 }
 

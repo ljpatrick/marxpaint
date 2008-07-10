@@ -417,11 +417,11 @@ int foam_requires_colors(magic_api * api, int which)
   return 0;  /* FIXME: Would be nice to tint the bubbles */
 }
 
-void foam_switchin(magic_api * api, int which, SDL_Surface * canvas)
+void foam_switchin(magic_api * api, int which, int mode, SDL_Surface * canvas)
 {
 }
 
-void foam_switchout(magic_api * api, int which, SDL_Surface * canvas)
+void foam_switchout(magic_api * api, int which, int mode, SDL_Surface * canvas)
 {
 }
 

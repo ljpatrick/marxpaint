@@ -244,11 +244,11 @@ static int log2int(int x)
   return y;
 }
 
-void grass_switchin(magic_api * api, int which, SDL_Surface * canvas)
+void grass_switchin(magic_api * api, int which, int mode, SDL_Surface * canvas)
 {
 }
 
-void grass_switchout(magic_api * api, int which, SDL_Surface * canvas)
+void grass_switchout(magic_api * api, int which, int mode, SDL_Surface * canvas)
 {
 }
 

@@ -22,7 +22,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
   
-  June 14, 2002 - July 8, 2008
+  June 14, 2002 - July 10, 2008
   $Id$
 */
 
@@ -905,8 +905,8 @@ typedef struct magic_funcs_s {
   void (*click)(magic_api *, int, int, SDL_Surface *, SDL_Surface *, int, int, SDL_Rect *);
   void (*drag)(magic_api *, int, SDL_Surface *, SDL_Surface *, int, int, int, int, SDL_Rect *);
   void (*release)(magic_api *, int, SDL_Surface *, SDL_Surface *, int, int, SDL_Rect *);
-  void (*switchin)(magic_api *, int, SDL_Surface *, SDL_Surface *);
-  void (*switchout)(magic_api *, int, SDL_Surface *, SDL_Surface *);
+  void (*switchin)(magic_api *, int, int, SDL_Surface *, SDL_Surface *);
+  void (*switchout)(magic_api *, int, int, SDL_Surface *, SDL_Surface *);
 } magic_funcs_t;
 
 
@@ -2905,13 +2905,17 @@ static void mainloop(void)
 		/* Magic controls! */
                 if (which == 1 && magics[cur_magic].avail_modes & MODE_FULLSCREEN)
                 {
-		  magics[cur_magic].mode = MODE_FULLSCREEN;
+		  magic_switchout(canvas);
+                  magics[cur_magic].mode = MODE_FULLSCREEN;
+		  magic_switchin(canvas);
 		  draw_magic();
 	          update_screen_rect(&r_toolopt);
                 }
                 else if (which == 0 && magics[cur_magic].avail_modes & MODE_PAINT)
                 {
+		  magic_switchout(canvas);
 		  magics[cur_magic].mode = MODE_PAINT;
+		  magic_switchin(canvas);
 		  draw_magic();
 	          update_screen_rect(&r_toolopt);
                 }
@@ -3171,10 +3175,10 @@ static void mainloop(void)
 	    }
 	    else if (cur_tool == TOOL_MAGIC)
 	    {
-              magic_switchout(canvas);
-
 	      if (cur_thing != cur_magic)
 	      {
+                magic_switchout(canvas);
+
 		cur_magic = cur_thing;
 		draw_colors(magics[cur_magic].colors);
               
@@ -3184,14 +3188,14 @@ static void mainloop(void)
 						color_hexes[cur_color][0],
 						color_hexes[cur_color][1],
 						color_hexes[cur_color][2]);
+              
+                magic_switchin(canvas);
 	      }
 
 	      draw_tux_text(TUX_GREAT, magics[cur_magic].tip[magic_modeint(magics[cur_magic].mode)], 1);
 
 	      if (do_draw)
 		draw_magic();
-              
-              magic_switchin(canvas);
 	    }
 
 	    /* Update the screen: */
@@ -18965,6 +18969,7 @@ void magic_switchout(SDL_Surface * last)
   if (cur_tool == TOOL_MAGIC)
     magic_funcs[magics[cur_magic].handle_idx].switchout(magic_api_struct,
 					                magics[cur_magic].idx,
+					                magics[cur_magic].mode,
 					                canvas, last);
 }
 
@@ -18973,6 +18978,7 @@ void magic_switchin(SDL_Surface * last)
   if (cur_tool == TOOL_MAGIC)
     magic_funcs[magics[cur_magic].handle_idx].switchin(magic_api_struct,
 					               magics[cur_magic].idx,
+					               magics[cur_magic].mode,
 					               canvas, last);
 }
 

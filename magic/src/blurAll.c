@@ -188,11 +188,11 @@ int blurAll_requires_colors(magic_api * api, int which)
   return 0;
 }
 
-void blurAll_switchin(magic_api * api, int which, SDL_Surface * canvas)
+void blurAll_switchin(magic_api * api, int which, int mode, SDL_Surface * canvas)
 {
 }
 
-void blurAll_switchout(magic_api * api, int which, SDL_Surface * canvas)
+void blurAll_switchout(magic_api * api, int which, int mode, SDL_Surface * canvas)
 {
 }
 

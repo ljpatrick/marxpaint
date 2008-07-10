@@ -321,11 +321,11 @@ int blocks_chalk_drip_requires_colors(magic_api * api ATTRIBUTE_UNUSED, int whic
   return 0;
 }
 
-void blocks_chalk_drip_switchin(magic_api * api, int which, SDL_Surface * canvas)
+void blocks_chalk_drip_switchin(magic_api * api, int which, int mode, SDL_Surface * canvas)
 {
 }
 
-void blocks_chalk_drip_switchout(magic_api * api, int which, SDL_Surface * canvas)
+void blocks_chalk_drip_switchout(magic_api * api, int which, int mode, SDL_Surface * canvas)
 {
 }
 

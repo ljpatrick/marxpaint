@@ -268,11 +268,11 @@ int fade_darken_requires_colors(magic_api * api ATTRIBUTE_UNUSED, int which ATTR
   return 0;
 }
 
-void fade_darken_switchin(magic_api * api, int which, SDL_Surface * canvas)
+void fade_darken_switchin(magic_api * api, int which, int mode, SDL_Surface * canvas)
 {
 }
 
-void fade_darken_switchout(magic_api * api, int which, SDL_Surface * canvas)
+void fade_darken_switchout(magic_api * api, int which, int mode, SDL_Surface * canvas)
 {
 }
 

@@ -6,7 +6,7 @@
                            bill@newbreedsoftware.com
                             http://www.tuxpaint.org/
 
-                          July 5, 2007 - July 8, 2008
+                          July 5, 2007 - July 10, 2008
 
      ----------------------------------------------------------------------
 
@@ -271,9 +271,9 @@ Interfaces
 
       Plugin event functions:
 
-           * void switchin(magic_api * api, int which,
+           * void switchin(magic_api * api, int which, int mode,
              SDL_Surface * snapshot, SDL_Surface * canvas)
-             void switchout(magic_api * api, int which,
+             void switchout(magic_api * api, int which, int mode,
              SDL_Surface * snapshot, SDL_Surface * canvas)
              switchin() is called whenever one of the plugin's Magic tools
              becomes active, and switchout() is called whenever one becomes
@@ -289,6 +289,11 @@ Interfaces
              such as "Open", "New" or "Quit"). In this case, the same Magic
              tool is first 'switched-out', and then 'switched-back-in',
              usually moments later.
+
+             Finally, it can also happen when the user changes the 'mode' of
+             a tool (i.e., from paint mode to full-image mode). First
+             switchout() is called for the old mode, then switchin() is
+             called for the new mode.
 
              These functions allow users to interact in complicated was with
              Magic tools (for example, a tool that lets the user draw

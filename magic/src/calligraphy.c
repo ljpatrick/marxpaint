@@ -420,11 +420,11 @@ static float calligraphy_dist(float x1, float y1, float x2, float y2)
   return d;
 }
 
-void calligraphy_switchin(magic_api * api, int which, SDL_Surface * canvas)
+void calligraphy_switchin(magic_api * api, int which, int mode, SDL_Surface * canvas)
 {
 }
 
-void calligraphy_switchout(magic_api * api, int which, SDL_Surface * canvas)
+void calligraphy_switchout(magic_api * api, int which, int mode, SDL_Surface * canvas)
 {
 }
 

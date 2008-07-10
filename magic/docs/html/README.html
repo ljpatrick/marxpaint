@@ -15,7 +15,7 @@ New Breed Software</p>
 <p><a href="mailto:bill@newbreedsoftware.com">bill@newbreedsoftware.com</a><br>
 <a href="http://www.tuxpaint.org/">http://www.tuxpaint.org/</a></p>
 
-<p>July 5, 2007 - July 8, 2008</p>
+<p>July 5, 2007 - July 10, 2008</p>
 </center>
 
 <hr size=2 noshade>
@@ -352,11 +352,11 @@ then the names of your functions must begin with "<code><b>zoom_</b></code>"
 
 <ul>
 <li><code><b>void switchin(magic_api&nbsp;*&nbsp;api,
-  int&nbsp;which,
+  int&nbsp;which, int&nbsp;mode,
   SDL_Surface&nbsp;*&nbsp;snapshot, SDL_Surface&nbsp;*&nbsp;canvas)
   </b></code><br>
   <code><b>void switchout(magic_api&nbsp;*&nbsp;api,
-  int&nbsp;which,
+  int&nbsp;which, int&nbsp;mode,
   SDL_Surface&nbsp;*&nbsp;snapshot, SDL_Surface&nbsp;*&nbsp;canvas)
   </b></code><br>
   <code>switchin()</code> is called whenever one of the plugin's Magic
@@ -373,6 +373,11 @@ then the names of your functions must begin with "<code><b>zoom_</b></code>"
   &mdash; such as "Open", "New" or "Quit").  In this case, the same
   Magic tool is first 'switched-out', and then 'switched-back-in', usually
   moments later.<br>
+  <br>
+  Finally, it can also happen when the user changes the 'mode' of a tool
+  (i.e., from paint mode to full-image mode).  First
+  <code>switchout()</code> is called for the old mode, then
+  <code>switchin()</code> is called for the new mode.<br>
   <br>
   These functions allow users to interact in complicated was with Magic
   tools (for example, a tool that lets the user draw <i>multiple</i>

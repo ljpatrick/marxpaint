@@ -173,11 +173,11 @@ int metalpaint_requires_colors(magic_api * api, int which)
   return 1;
 }
 
-void metalpaint_switchin(magic_api * api, int which, SDL_Surface * canvas)
+void metalpaint_switchin(magic_api * api, int which, int mode, SDL_Surface * canvas)
 {
 }
 
-void metalpaint_switchout(magic_api * api, int which, SDL_Surface * canvas)
+void metalpaint_switchout(magic_api * api, int which, int mode, SDL_Surface * canvas)
 {
 }
 

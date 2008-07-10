@@ -594,11 +594,11 @@ static void flower_colorize_petals(magic_api * api)
   SDL_UnlockSurface(flower_petals);
 }
 
-void flower_switchin(magic_api * api, int which, SDL_Surface * canvas)
+void flower_switchin(magic_api * api, int which, int mode, SDL_Surface * canvas)
 {
 }
 
-void flower_switchout(magic_api * api, int which, SDL_Surface * canvas)
+void flower_switchout(magic_api * api, int which, int mode, SDL_Surface * canvas)
 {
 }
 

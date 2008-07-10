@@ -246,11 +246,11 @@ static void do_flood_fill(magic_api * api, SDL_Surface * canvas, int x, int y,
   }
 }
 
-void fill_switchin(magic_api * api, int which, SDL_Surface * canvas)
+void fill_switchin(magic_api * api, int which, int mode, SDL_Surface * canvas)
 {
 }
 
-void fill_switchout(magic_api * api, int which, SDL_Surface * canvas)
+void fill_switchout(magic_api * api, int which, int mode, SDL_Surface * canvas)
 {
 }
 

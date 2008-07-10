@@ -323,11 +323,11 @@ int shift_requires_colors(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_
   return 0;
 }
 
-void shift_switchin(magic_api * api, int which, SDL_Surface * canvas)
+void shift_switchin(magic_api * api, int which, int mode, SDL_Surface * canvas)
 {
 }
 
-void shift_switchout(magic_api * api, int which, SDL_Surface * canvas)
+void shift_switchout(magic_api * api, int which, int mode, SDL_Surface * canvas)
 {
 }
 
