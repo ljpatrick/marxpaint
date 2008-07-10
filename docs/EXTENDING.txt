@@ -263,7 +263,7 @@ Stamps
          running in a different locale (like French or Spanish).
 
          The beginning of the line should correspond to the language code of
-         the language in question (e.g., "fr" for French, and "zh_tw" for
+         the language in question (e.g., "fr" for French, and "zh_TW" for
          Traditional Chinese), followed by ".utf8=" and the translated
          description (encoded in UTF-8).
 
@@ -297,8 +297,8 @@ Stamps
          filename, in the form: "STAMP_LOCALE.EXT"
 
          "picture.png"'s sound effect, when Tux Paint is run in Spanish mode,
-         would be "picture_es.wav". In French mode, "picture_fr.wav". And so
-         on...
+         would be "picture_es.wav". In French mode, "picture_fr.wav". In
+         Brazilian Portuguese mode, "picture_pt_BR.wav". And so on...
 
          If no localized sound effect can be loaded, Tux Paint will attempt
          to load the 'default' sound file. (e.g., "picture.wav")
@@ -555,7 +555,7 @@ Translations
      file, "tuxpaint.pot" (found in Tux Paint's source code, in the folder
      "src/po/"). Rename the copy as a ".po" file, with an appropriate name
      for the locale you're translating to (e.g., "es.po" for Spanish; or
-     "pt_br.po" for Brazilian Portuguese, versus "pt.po" or "pt_pt.po" for
+     "pt_BR.po" for Brazilian Portuguese, versus "pt.po" or "pt_PT.po" for
      Portuguese spoken in Portugal.)
 
      Open the newly-created ".po" file - you can edit in a plain text edtior,
