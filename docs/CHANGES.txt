@@ -8,7 +8,7 @@ http://www.tuxpaint.org/
 
 $Id$
 
-2008.July.10 (0.9.21)
+2008.July.11 (0.9.21)
   * New Starters:
     -------------
     * Silver Frame
@@ -61,6 +61,14 @@ $Id$
     ---------
     * [Ctrl]+[P] keyboard shortcut for printing was not complying with
       option to disable printing capability (e.g., "--noprint")! Fixed.
+
+    * Preventing Tux Paint from dropping out of Fullscreen mode when
+      pressing either left or right [Windows] keys
+      Note: Works on Windows XP, 2000 and Vista only.
+      (If Tux Paint is deliberately switched to the background,
+      e.g. using [Alt]+[Tab], the [Windows] keys function as normal until
+      Tux Paint is the active application again.)
+      John Popplewell <john@johnnypops.demon.co.uk>
 
 
 2008.June.26 (0.9.20)
