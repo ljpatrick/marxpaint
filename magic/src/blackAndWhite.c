@@ -4,7 +4,7 @@
   blackAndWhite, Convert the image to greyscale or threshold it into pure black and pure white
   Tux Paint - A simple drawing program for children.
 
-  FIXME: Credits
+  Credits: Andrew Corcoran <akanewbie@gmail.com>
 
   Copyright (c) 2002-2008 by Bill Kendrick and others; see AUTHORS.txt
   bill@newbreedsoftware.com
