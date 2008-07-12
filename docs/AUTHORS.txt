@@ -46,7 +46,7 @@ $Id$
     implied warranty.
 
   Blur ('entire image' mode), Sharpen, Trace Contour, Silhouette,
-  Black & White and Threshold Magic tools.
+  Snow Flake, Snow Ball, Jigsaw, Black & White and Threshold Magic tools.
   by Andrew 'akanewbie' Corcoran <akanewbie@gmail.com>
   Contributed as part of Google Summer of Code, 2008.
 

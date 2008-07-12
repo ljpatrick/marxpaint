@@ -22,6 +22,9 @@ $Id$
       + Silhouette - Creates an outline of the image, over a black background.
       + Black & White - Removes all color from the image (turns it greyscale).
       + Threshold - Turns image pure black & pure white (no grey or color).
+      + Jigsaw - Applys a jigsaw template to the image.
+      + Snow Ball - Places random snow balls over the image.
+      + Snow Flake - Places random snow flakes over the image.
       By Andrew 'akanewbie' Corcoran <akanewbie@gmail.com>
       (Part of Tux4Kids' participation in Google Summer of Code 2008)
 
