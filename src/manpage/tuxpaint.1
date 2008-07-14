@@ -1,5 +1,5 @@
-.\" tuxpaint.1 - 2008.07.10
-.TH TUXPAINT 1 "10 July 2008" "0.9.21" "Tux Paint"
+.\" tuxpaint.1 - 2008.07.14
+.TH TUXPAINT 1 "14 July 2008" "0.9.21" "Tux Paint"
 .SH NAME
 tuxpaint -- "Tux Paint", a drawing program for young children.
 
@@ -10,6 +10,8 @@ tuxpaint -- "Tux Paint", a drawing program for young children.
 .TP 9
 .B tuxpaint
 [\-\-fullscreen]
+.br
+[\-\-allowscreensaver]
 .br
 [\-\-WIDTHxHEIGHT]
 .br
@@ -82,6 +84,8 @@ tuxpaint -- "Tux Paint", a drawing program for young children.
 .TP 9
 .B tuxpaint (defaults)
 [\-\-windowed]
+.br
+[\-\-disablescreensaver]
 .br
 [\-\-800x600]
 .br
@@ -190,6 +194,11 @@ configuration files. (See below.)
 .TP 8
 .B \-\-fullscreen \-\-windowed
 Run \fITux Paint\fP in full-screen mode, or in a window (default).
+
+.TP 8
+.B \-\-allowscreensaver \-\-disablescreensaver
+Normally, \fItuxpaint\fP disables your screensaver. Use \-\-allowscreensaver
+to prevent this from happening.
 
 .TP 8
 .B \-\-native
