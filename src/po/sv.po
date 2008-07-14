@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: sv\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-07-10 12:03-0700\n"
+"POT-Creation-Date: 2008-07-13 17:29-0700\n"
 "PO-Revision-Date: 2007-11-07 23:35+0100\n"
 "Last-Translator: Robin Rosenberg <robin.rosenberg@dewire.com>\n"
 "Language-Team:  <sv@li.org>\n"
@@ -378,7 +378,7 @@ msgstr "Ny"
 #. Open a saved picture
 #. buttons for the file open dialog
 #. Open dialog: 'Open' button, to load the selected picture
-#: ../tools.h:75 ../tuxpaint.c:7953
+#: ../tools.h:75 ../tuxpaint.c:7965
 msgid "Open"
 msgstr "Öppna"
 
@@ -593,74 +593,74 @@ msgstr "Ljud på."
 msgid "Please wait…"
 msgstr "Vänta..."
 
-#: ../tuxpaint.c:7176
+#: ../tuxpaint.c:7188
 msgid "Pick a color."
 msgstr "Välj en färg."
 
 #. Open dialog: 'Erase' button, to erase/deleted the selected picture
-#: ../tuxpaint.c:7956
+#: ../tuxpaint.c:7968
 msgid "Erase"
 msgstr "Sudda ut"
 
 #. Open dialog: 'Slides' button, to switch to slide show mode
-#: ../tuxpaint.c:7959
+#: ../tuxpaint.c:7971
 msgid "Slides"
 msgstr "Bildspel"
 
 #. Open dialog: 'Back' button, to dismiss Open dialog without opening a picture
-#: ../tuxpaint.c:7962
+#: ../tuxpaint.c:7974
 msgid "Back"
 msgstr "Bakåt"
 
 #. Slideshow: 'Next' button, to load next slide (image)
-#: ../tuxpaint.c:7965
+#: ../tuxpaint.c:7977
 msgid "Next"
 msgstr "Nästa"
 
 #. Slideshow: 'Play' button, to begin a slideshow sequence
-#: ../tuxpaint.c:7968
+#: ../tuxpaint.c:7980
 msgid "Play"
 msgstr "Spela"
 
 #. Label for 'Letters' buttons (font selector, down the right when the Text tool is being used); used to show the difference between font faces
-#: ../tuxpaint.c:8615
+#: ../tuxpaint.c:8627
 msgid "Aa"
 msgstr "Aa"
 
 #. Admittedly stupid way of determining which keys can be used for
 #. positive and negative responses in dialogs (e.g., [Y] (for 'yes') in English)
-#: ../tuxpaint.c:11520
+#: ../tuxpaint.c:11532
 msgid "Yes"
 msgstr "Ja"
 
-#: ../tuxpaint.c:11524
+#: ../tuxpaint.c:11536
 msgid "No"
 msgstr "Nej"
 
 #. Prompt to ask whether user wishes to save over old version of their file
-#: ../tuxpaint.c:12476
+#: ../tuxpaint.c:12488
 msgid "Replace the picture with your changes?"
 msgstr "Ersätt bilden med dina ändringar?"
 
 #. Positive response to saving over old version
 #. (like a 'File:Save' action in other applications)
-#: ../tuxpaint.c:12480
+#: ../tuxpaint.c:12492
 msgid "Yes, replace the old one!"
 msgstr "Ja, ersätt den gamla!"
 
 #. Negative response to saving over old version (saves a new image)
 #. (like a 'File:Save As...' action in other applications)
-#: ../tuxpaint.c:12484
+#: ../tuxpaint.c:12496
 msgid "No, save a new file!"
 msgstr "Nej, spara en ny fil!"
 
-#: ../tuxpaint.c:13247
+#: ../tuxpaint.c:13259
 msgid "Choose the picture you want, then click “Open”."
 msgstr "Välj den bild som du vill ha, klicka sedan på \"Öppna.\""
 
 #. Let user choose images:
 #. Instructions for Slideshow file dialog (FIXME: Make a #define)
-#: ../tuxpaint.c:14234 ../tuxpaint.c:14548
+#: ../tuxpaint.c:14246 ../tuxpaint.c:14560
 msgid "Choose the pictures you want, then click “Play”."
 msgstr "Välj de bilder som du vill ha, klicka sedan på \"Spela\"."
 
@@ -676,19 +676,31 @@ msgstr "Ritprogram"
 msgid "Tux Paint"
 msgstr "Tux Paint"
 
-#: ../../magic/src/blackAndWhite.c:62
+#: ../../magic/src/blackAndWhite.c:67
 msgid "Black & White"
 msgstr ""
 
-#: ../../magic/src/blackAndWhite.c:63
+#: ../../magic/src/blackAndWhite.c:68
 msgid "Threshold"
 msgstr ""
 
-#: ../../magic/src/blackAndWhite.c:66
+#: ../../magic/src/blackAndWhite.c:71
+#, fuzzy
+msgid "Click and move the mouse around convert the image to greyscale."
+msgstr "Klicka och rör musen för att göra bilden suddig."
+
+#: ../../magic/src/blackAndWhite.c:72
 msgid "Click to convert the image to greyscale."
 msgstr ""
 
-#: ../../magic/src/blackAndWhite.c:67
+#: ../../magic/src/blackAndWhite.c:73
+#, fuzzy
+msgid ""
+"Click and move the mouse around to threshold the image into black and white "
+"regions."
+msgstr "Klicka och rör musen runt för att omvandla bilden till teckning!"
+
+#: ../../magic/src/blackAndWhite.c:74
 msgid "Click to threshold the image into black and white regions."
 msgstr ""
 
@@ -717,23 +729,19 @@ msgstr "Klicka och rör musen runt för att omvandla bilden till kritteckning."
 msgid "Click and move the mouse around to make the picture drip."
 msgstr "Klicka och rör musen runt för att göra så att bilden \"droppar\"!"
 
-#: ../../magic/src/blurAll.c:59
-#, fuzzy
-msgid "Blur All"
-msgstr "Suddig"
-
-#: ../../magic/src/blurAll.c:62
-#, fuzzy
-msgid "Click to blur the whole image."
-msgstr "Klicka för att skapa en spegelbild."
-
-#: ../../magic/src/blur.c:76
+#: ../../magic/src/blur.c:57
 msgid "Blur"
 msgstr "Suddig"
 
-#: ../../magic/src/blur.c:83
-msgid "Click and move the mouse around to blur the picture."
+#: ../../magic/src/blur.c:60
+#, fuzzy
+msgid "Click and move the mouse around to blur the image."
 msgstr "Klicka och rör musen för att göra bilden suddig."
+
+#: ../../magic/src/blur.c:60
+#, fuzzy
+msgid "Click to blur the whole image."
+msgstr "Klicka för att skapa en spegelbild."
 
 #. Both are named "Bricks", at the moment:
 #: ../../magic/src/bricks.c:104
@@ -855,6 +863,16 @@ msgstr "Gräs"
 msgid "Click and move to draw grass. Don’t forget the dirt!"
 msgstr "Klicka och rör musen runt för att rita gräs. Glöm inte jorden!"
 
+#: ../../magic/src/jigsaw.c:62
+msgid "Jigsaw"
+msgstr ""
+
+#: ../../magic/src/jigsaw.c:65
+msgid ""
+"Click to make your picture into a jigsaw which you can print and cut out, "
+"make sure to ask an adult for help."
+msgstr ""
+
 #: ../../magic/src/kalidescope.c:77
 msgid "Kaleidoscope"
 msgstr "Kaleidoskop"
@@ -910,6 +928,16 @@ msgstr "Klicka och rör musen för att skapa ett negativ."
 #, fuzzy
 msgid "Click to turn the image into its negative."
 msgstr "Klicka för att skapa en spegelbild."
+
+#: ../../magic/src/rails.c:74
+#, fuzzy
+msgid "Rails"
+msgstr "Krusningar"
+
+#: ../../magic/src/rails.c:76
+#, fuzzy
+msgid "Click and drag to draw train track rails on your picture."
+msgstr "Klicka och rör musen för att rita en ljusstråle på bilden."
 
 #: ../../magic/src/rainbow.c:107
 msgid "Rainbow"
@@ -969,6 +997,19 @@ msgstr "Kladda"
 msgid "Click and move the mouse around to smudge the picture."
 msgstr "Klicka och rör musen runt för att kladda ut bilden."
 
+#: ../../magic/src/snow.c:68
+msgid "Snow Ball"
+msgstr ""
+
+#: ../../magic/src/snow.c:69
+msgid "Snow Flake"
+msgstr ""
+
+#: ../../magic/src/snow.c:72 ../../magic/src/snow.c:73
+#, fuzzy
+msgid "Click to add snow to the image."
+msgstr "Klicka för att skapa en spegelbild."
+
 #: ../../magic/src/tint.c:77
 msgid "Tint"
 msgstr "Tona"
@@ -997,6 +1038,10 @@ msgstr ""
 "Klicka för att göra bilden vågig. Klicka  högt uppe för korta vågor, långt "
 "ner för långa vågor, till vänster för små vågor och till höger för långa "
 "vågor."
+
+#, fuzzy
+#~ msgid "Blur All"
+#~ msgstr "Suddig"
 
 #~ msgid "Click and move to fade the colors."
 #~ msgstr "Klicka och rör musen runt för att blekna färgerna!"

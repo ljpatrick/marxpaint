@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint 0.9.18\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-07-10 12:03-0700\n"
+"POT-Creation-Date: 2008-07-13 17:29-0700\n"
 "PO-Revision-Date: 2008-01-29 15:00+0000\n"
 "Last-Translator: Edmund GRIMLEY EVANS <edmundo@rano.org>\n"
 "Language-Team: Esperanto <translation-team-eo@lists.sourceforge.net>\n"
@@ -377,7 +377,7 @@ msgstr "Nova"
 #. Open a saved picture
 #. buttons for the file open dialog
 #. Open dialog: 'Open' button, to load the selected picture
-#: ../tools.h:75 ../tuxpaint.c:7953
+#: ../tools.h:75 ../tuxpaint.c:7965
 msgid "Open"
 msgstr "Malfermi"
 
@@ -592,74 +592,74 @@ msgstr "Sono ŝaltita."
 msgid "Please wait…"
 msgstr "Bonvolu atendi ..."
 
-#: ../tuxpaint.c:7176
+#: ../tuxpaint.c:7188
 msgid "Pick a color."
 msgstr "Elektu koloron."
 
 #. Open dialog: 'Erase' button, to erase/deleted the selected picture
-#: ../tuxpaint.c:7956
+#: ../tuxpaint.c:7968
 msgid "Erase"
 msgstr "Forviŝi"
 
 #. Open dialog: 'Slides' button, to switch to slide show mode
-#: ../tuxpaint.c:7959
+#: ../tuxpaint.c:7971
 msgid "Slides"
 msgstr "Lumbildoj"
 
 #. Open dialog: 'Back' button, to dismiss Open dialog without opening a picture
-#: ../tuxpaint.c:7962
+#: ../tuxpaint.c:7974
 msgid "Back"
 msgstr "Reen"
 
 #. Slideshow: 'Next' button, to load next slide (image)
-#: ../tuxpaint.c:7965
+#: ../tuxpaint.c:7977
 msgid "Next"
 msgstr "Sekva"
 
 #. Slideshow: 'Play' button, to begin a slideshow sequence
-#: ../tuxpaint.c:7968
+#: ../tuxpaint.c:7980
 msgid "Play"
 msgstr "Ludi"
 
 #. Label for 'Letters' buttons (font selector, down the right when the Text tool is being used); used to show the difference between font faces
-#: ../tuxpaint.c:8615
+#: ../tuxpaint.c:8627
 msgid "Aa"
 msgstr ""
 
 #. Admittedly stupid way of determining which keys can be used for
 #. positive and negative responses in dialogs (e.g., [Y] (for 'yes') in English)
-#: ../tuxpaint.c:11520
+#: ../tuxpaint.c:11532
 msgid "Yes"
 msgstr "Jes"
 
-#: ../tuxpaint.c:11524
+#: ../tuxpaint.c:11536
 msgid "No"
 msgstr "Ne"
 
 #. Prompt to ask whether user wishes to save over old version of their file
-#: ../tuxpaint.c:12476
+#: ../tuxpaint.c:12488
 msgid "Replace the picture with your changes?"
 msgstr "Ĉu anstataŭigi la bildon per viaj ŝanĝoj?"
 
 #. Positive response to saving over old version
 #. (like a 'File:Save' action in other applications)
-#: ../tuxpaint.c:12480
+#: ../tuxpaint.c:12492
 msgid "Yes, replace the old one!"
 msgstr "Jes, anstataŭigi la malnovan!"
 
 #. Negative response to saving over old version (saves a new image)
 #. (like a 'File:Save As...' action in other applications)
-#: ../tuxpaint.c:12484
+#: ../tuxpaint.c:12496
 msgid "No, save a new file!"
 msgstr "Ne, skribu novan dosieron!"
 
-#: ../tuxpaint.c:13247
+#: ../tuxpaint.c:13259
 msgid "Choose the picture you want, then click “Open”."
 msgstr "Elektu la bildon, kiun vi volas, kaj alklaku \"Malfermi\"."
 
 #. Let user choose images:
 #. Instructions for Slideshow file dialog (FIXME: Make a #define)
-#: ../tuxpaint.c:14234 ../tuxpaint.c:14548
+#: ../tuxpaint.c:14246 ../tuxpaint.c:14560
 msgid "Choose the pictures you want, then click “Play”."
 msgstr "Elektu la bildon, kiun vi volas, kaj alklaku \"Ludi\"."
 
@@ -675,19 +675,31 @@ msgstr "Desegnoprogramo"
 msgid "Tux Paint"
 msgstr "Tux-Desegnilo"
 
-#: ../../magic/src/blackAndWhite.c:62
+#: ../../magic/src/blackAndWhite.c:67
 msgid "Black & White"
 msgstr ""
 
-#: ../../magic/src/blackAndWhite.c:63
+#: ../../magic/src/blackAndWhite.c:68
 msgid "Threshold"
 msgstr ""
 
-#: ../../magic/src/blackAndWhite.c:66
+#: ../../magic/src/blackAndWhite.c:71
+#, fuzzy
+msgid "Click and move the mouse around convert the image to greyscale."
+msgstr "Alklaku kaj movu la muson por malklarigi la bildon."
+
+#: ../../magic/src/blackAndWhite.c:72
 msgid "Click to convert the image to greyscale."
 msgstr ""
 
-#: ../../magic/src/blackAndWhite.c:67
+#: ../../magic/src/blackAndWhite.c:73
+#, fuzzy
+msgid ""
+"Click and move the mouse around to threshold the image into black and white "
+"regions."
+msgstr "Alklaku kaj movu la muson por ŝanĝi la bildon en karikaturon."
+
+#: ../../magic/src/blackAndWhite.c:74
 msgid "Click to threshold the image into black and white regions."
 msgstr ""
 
@@ -716,23 +728,19 @@ msgstr "Alklaku kaj movu la muson por ŝanĝi la bildon en kretodesegnaĵon."
 msgid "Click and move the mouse around to make the picture drip."
 msgstr "Alklaku kaj movu la muson por igi la bildon guti."
 
-#: ../../magic/src/blurAll.c:59
-#, fuzzy
-msgid "Blur All"
-msgstr "Malklarigi"
-
-#: ../../magic/src/blurAll.c:62
-#, fuzzy
-msgid "Click to blur the whole image."
-msgstr "Klaku por fari spegulbildon."
-
-#: ../../magic/src/blur.c:76
+#: ../../magic/src/blur.c:57
 msgid "Blur"
 msgstr "Malklarigi"
 
-#: ../../magic/src/blur.c:83
-msgid "Click and move the mouse around to blur the picture."
+#: ../../magic/src/blur.c:60
+#, fuzzy
+msgid "Click and move the mouse around to blur the image."
 msgstr "Alklaku kaj movu la muson por malklarigi la bildon."
+
+#: ../../magic/src/blur.c:60
+#, fuzzy
+msgid "Click to blur the whole image."
+msgstr "Klaku por fari spegulbildon."
 
 #. Both are named "Bricks", at the moment:
 #: ../../magic/src/bricks.c:104
@@ -854,6 +862,16 @@ msgstr "Herbo"
 msgid "Click and move to draw grass. Don’t forget the dirt!"
 msgstr "Alklaku kaj movu la muson por desegni herbon. Ne forgesu la teron!"
 
+#: ../../magic/src/jigsaw.c:62
+msgid "Jigsaw"
+msgstr ""
+
+#: ../../magic/src/jigsaw.c:65
+msgid ""
+"Click to make your picture into a jigsaw which you can print and cut out, "
+"make sure to ask an adult for help."
+msgstr ""
+
 #: ../../magic/src/kalidescope.c:77
 msgid "Kaleidoscope"
 msgstr "Kalejdoskopo"
@@ -908,6 +926,16 @@ msgstr "Alklaku kaj movu la muson por fari negativon."
 #, fuzzy
 msgid "Click to turn the image into its negative."
 msgstr "Klaku por fari spegulbildon."
+
+#: ../../magic/src/rails.c:74
+#, fuzzy
+msgid "Rails"
+msgstr "Ondetoj"
+
+#: ../../magic/src/rails.c:76
+#, fuzzy
+msgid "Click and drag to draw train track rails on your picture."
+msgstr "Alklaku kaj movu la muson por desegni lumradion sur vian bildon."
 
 #: ../../magic/src/rainbow.c:107
 msgid "Rainbow"
@@ -967,6 +995,19 @@ msgstr "Miksi"
 msgid "Click and move the mouse around to smudge the picture."
 msgstr "Alklaku kaj movu la muson por miksi la bildon."
 
+#: ../../magic/src/snow.c:68
+msgid "Snow Ball"
+msgstr ""
+
+#: ../../magic/src/snow.c:69
+msgid "Snow Flake"
+msgstr ""
+
+#: ../../magic/src/snow.c:72 ../../magic/src/snow.c:73
+#, fuzzy
+msgid "Click to add snow to the image."
+msgstr "Klaku por fari spegulbildon."
+
 #: ../../magic/src/tint.c:77
 msgid "Tint"
 msgstr "Surfarbi"
@@ -994,6 +1035,10 @@ msgid ""
 msgstr ""
 "Alklaku por ondigi la bildon. Alklaku supre por mallongaj ondoj, sube por "
 "pli altaj ondoj, maldekstre por etaj ondoj, dekstre por longaj ondoj."
+
+#, fuzzy
+#~ msgid "Blur All"
+#~ msgstr "Malklarigi"
 
 #~ msgid "Click and move to fade the colors."
 #~ msgstr "Alklaku kaj movu por velkigi la kolorojn."

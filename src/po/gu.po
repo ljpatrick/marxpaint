@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-07-10 12:03-0700\n"
+"POT-Creation-Date: 2008-07-13 17:29-0700\n"
 "PO-Revision-Date: 2007-05-29 11:29+0530\n"
 "Last-Translator: Kartik Mistry <kartik.mistry@gmail.com>\n"
 "Language-Team: Gujarati <team@utkarsh.org>\n"
@@ -376,7 +376,7 @@ msgstr "નવું"
 #. Open a saved picture
 #. buttons for the file open dialog
 #. Open dialog: 'Open' button, to load the selected picture
-#: ../tools.h:75 ../tuxpaint.c:7953
+#: ../tools.h:75 ../tuxpaint.c:7965
 msgid "Open"
 msgstr "ખોલો"
 
@@ -590,74 +590,74 @@ msgstr "અવાજ શરુ કરેલ છે."
 msgid "Please wait…"
 msgstr "મહેરબાની કરી રાહ જુઓ..."
 
-#: ../tuxpaint.c:7176
+#: ../tuxpaint.c:7188
 msgid "Pick a color."
 msgstr "રંગ પસંદ કરો."
 
 #. Open dialog: 'Erase' button, to erase/deleted the selected picture
-#: ../tuxpaint.c:7956
+#: ../tuxpaint.c:7968
 msgid "Erase"
 msgstr "ભૂંસો"
 
 #. Open dialog: 'Slides' button, to switch to slide show mode
-#: ../tuxpaint.c:7959
+#: ../tuxpaint.c:7971
 msgid "Slides"
 msgstr "સ્લાઇડો"
 
 #. Open dialog: 'Back' button, to dismiss Open dialog without opening a picture
-#: ../tuxpaint.c:7962
+#: ../tuxpaint.c:7974
 msgid "Back"
 msgstr "પાછા"
 
 #. Slideshow: 'Next' button, to load next slide (image)
-#: ../tuxpaint.c:7965
+#: ../tuxpaint.c:7977
 msgid "Next"
 msgstr "આગળ"
 
 #. Slideshow: 'Play' button, to begin a slideshow sequence
-#: ../tuxpaint.c:7968
+#: ../tuxpaint.c:7980
 msgid "Play"
 msgstr "ચાલુ"
 
 #. Label for 'Letters' buttons (font selector, down the right when the Text tool is being used); used to show the difference between font faces
-#: ../tuxpaint.c:8615
+#: ../tuxpaint.c:8627
 msgid "Aa"
 msgstr "આ"
 
 #. Admittedly stupid way of determining which keys can be used for
 #. positive and negative responses in dialogs (e.g., [Y] (for 'yes') in English)
-#: ../tuxpaint.c:11520
+#: ../tuxpaint.c:11532
 msgid "Yes"
 msgstr "હા"
 
-#: ../tuxpaint.c:11524
+#: ../tuxpaint.c:11536
 msgid "No"
 msgstr "ના"
 
 #. Prompt to ask whether user wishes to save over old version of their file
-#: ../tuxpaint.c:12476
+#: ../tuxpaint.c:12488
 msgid "Replace the picture with your changes?"
 msgstr "ચિત્રને તમે કરેલા ફેરફારો સાથે બદલશો?"
 
 #. Positive response to saving over old version
 #. (like a 'File:Save' action in other applications)
-#: ../tuxpaint.c:12480
+#: ../tuxpaint.c:12492
 msgid "Yes, replace the old one!"
 msgstr "હા, જુની ફાઇલને બદલો!"
 
 #. Negative response to saving over old version (saves a new image)
 #. (like a 'File:Save As...' action in other applications)
-#: ../tuxpaint.c:12484
+#: ../tuxpaint.c:12496
 msgid "No, save a new file!"
 msgstr "ના, નવી ફાઇલને સાચવો!"
 
-#: ../tuxpaint.c:13247
+#: ../tuxpaint.c:13259
 msgid "Choose the picture you want, then click “Open”."
 msgstr "તમારે જોઇતું ચિત્ર પસંદ કરો, અને “ખોલો” પર ક્લિક કરો."
 
 #. Let user choose images:
 #. Instructions for Slideshow file dialog (FIXME: Make a #define)
-#: ../tuxpaint.c:14234 ../tuxpaint.c:14548
+#: ../tuxpaint.c:14246 ../tuxpaint.c:14560
 msgid "Choose the pictures you want, then click “Play”."
 msgstr "તમારે જોઇતું ચિત્ર પસંદ કરો, અને “ચાલુ” પર ક્લિક કરો."
 
@@ -673,19 +673,31 @@ msgstr "ચિત્ર કાર્યક્રમ"
 msgid "Tux Paint"
 msgstr "ટક્સ પેન્ટ"
 
-#: ../../magic/src/blackAndWhite.c:62
+#: ../../magic/src/blackAndWhite.c:67
 msgid "Black & White"
 msgstr ""
 
-#: ../../magic/src/blackAndWhite.c:63
+#: ../../magic/src/blackAndWhite.c:68
 msgid "Threshold"
 msgstr ""
 
-#: ../../magic/src/blackAndWhite.c:66
+#: ../../magic/src/blackAndWhite.c:71
+#, fuzzy
+msgid "Click and move the mouse around convert the image to greyscale."
+msgstr "ચિત્રને ઝાંખું કરવા માટે માઉસને ક્લિક કરો અને આજુ-બાજુ ખસેડો."
+
+#: ../../magic/src/blackAndWhite.c:72
 msgid "Click to convert the image to greyscale."
 msgstr ""
 
-#: ../../magic/src/blackAndWhite.c:67
+#: ../../magic/src/blackAndWhite.c:73
+#, fuzzy
+msgid ""
+"Click and move the mouse around to threshold the image into black and white "
+"regions."
+msgstr "ચિત્રને કાર્ટૂનમાં ફેરવવા માટે ક્લિક કરો અને માઉસ આજુબાજુ ખસેડો."
+
+#: ../../magic/src/blackAndWhite.c:74
 msgid "Click to threshold the image into black and white regions."
 msgstr ""
 
@@ -714,23 +726,19 @@ msgstr "ચિત્રને ચોક ચિત્રમાં ફેરવવ
 msgid "Click and move the mouse around to make the picture drip."
 msgstr "ચિત્રમાં ટીપાં બનાવવા માટે ક્લિક કરો અને માઉસ આજુબાજુ ખસેડો."
 
-#: ../../magic/src/blurAll.c:59
-#, fuzzy
-msgid "Blur All"
-msgstr "ઝાંખુ"
-
-#: ../../magic/src/blurAll.c:62
-#, fuzzy
-msgid "Click to blur the whole image."
-msgstr "અરીસા ચિત્ર બનાવવા ક્લિક કરો."
-
-#: ../../magic/src/blur.c:76
+#: ../../magic/src/blur.c:57
 msgid "Blur"
 msgstr "ઝાંખુ"
 
-#: ../../magic/src/blur.c:83
-msgid "Click and move the mouse around to blur the picture."
+#: ../../magic/src/blur.c:60
+#, fuzzy
+msgid "Click and move the mouse around to blur the image."
 msgstr "ચિત્રને ઝાંખું કરવા માટે માઉસને ક્લિક કરો અને આજુ-બાજુ ખસેડો."
+
+#: ../../magic/src/blur.c:60
+#, fuzzy
+msgid "Click to blur the whole image."
+msgstr "અરીસા ચિત્ર બનાવવા ક્લિક કરો."
 
 #. Both are named "Bricks", at the moment:
 #: ../../magic/src/bricks.c:104
@@ -850,6 +858,16 @@ msgstr "ઘાસ"
 msgid "Click and move to draw grass. Don’t forget the dirt!"
 msgstr "ઘાસ દોરવા માટે ક્લિક કરો અને ખસેડો. ધૂળને ભૂલશો નહી!"
 
+#: ../../magic/src/jigsaw.c:62
+msgid "Jigsaw"
+msgstr ""
+
+#: ../../magic/src/jigsaw.c:65
+msgid ""
+"Click to make your picture into a jigsaw which you can print and cut out, "
+"make sure to ask an adult for help."
+msgstr ""
+
 #: ../../magic/src/kalidescope.c:77
 msgid "Kaleidoscope"
 msgstr "કેલિડોસ્કોપ"
@@ -903,6 +921,16 @@ msgstr "ઋણ ચિત્ર બનાવવા માટે ક્લિક �
 #, fuzzy
 msgid "Click to turn the image into its negative."
 msgstr "અરીસા ચિત્ર બનાવવા ક્લિક કરો."
+
+#: ../../magic/src/rails.c:74
+#, fuzzy
+msgid "Rails"
+msgstr "તરંગો"
+
+#: ../../magic/src/rails.c:76
+#, fuzzy
+msgid "Click and drag to draw train track rails on your picture."
+msgstr "તમારા ચિત્રકામમાં પ્રકાશનું કિરણ દોરવા માટે માઉસને ક્લિક કરીને ખેંચો."
 
 #: ../../magic/src/rainbow.c:107
 msgid "Rainbow"
@@ -962,6 +990,19 @@ msgstr "ધબ્બો"
 msgid "Click and move the mouse around to smudge the picture."
 msgstr "ચિત્રમાં ધબ્બાઓ ઉમેરવા માઉસને ક્લિક કરો અને આજુ-બાજુ ખસેડો."
 
+#: ../../magic/src/snow.c:68
+msgid "Snow Ball"
+msgstr ""
+
+#: ../../magic/src/snow.c:69
+msgid "Snow Flake"
+msgstr ""
+
+#: ../../magic/src/snow.c:72 ../../magic/src/snow.c:73
+#, fuzzy
+msgid "Click to add snow to the image."
+msgstr "અરીસા ચિત્ર બનાવવા ક્લિક કરો."
+
 #: ../../magic/src/tint.c:77
 msgid "Tint"
 msgstr "આછો રંગ"
@@ -990,6 +1031,10 @@ msgstr ""
 "ચિત્રને મોજાંઓ વાળું બનાવવા માટે ક્લિક કરો. ઉપરની તરફ ક્લિક કરતાં મોજાં ટૂંકા થશે; નીચેની "
 "તરફ કરતાં લાંબા થશે. ડાબી બાજુ ક્લિક કરતાં મોજા નાનાં થશે; જ્યારે જમણી બાજુ ક્લિક કરતાં "
 "મોજાં પહોળા થશે."
+
+#, fuzzy
+#~ msgid "Blur All"
+#~ msgstr "ઝાંખુ"
 
 #~ msgid "Click and move to fade the colors."
 #~ msgstr "રંગોને ઝાંખાં કરવાં ક્લિક કરો અને ખસેડો."

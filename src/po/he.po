@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: he\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-07-10 12:03-0700\n"
+"POT-Creation-Date: 2008-07-13 17:29-0700\n"
 "PO-Revision-Date: 2005-10-10 21:54+0200\n"
 "Last-Translator: dovix <dovix2003@yahoo.com>\n"
 "Language-Team: Hebrew <mdk-hebrew@iglu.org.il>\n"
@@ -388,7 +388,7 @@ msgstr "חדש"
 #. Open a saved picture
 #. buttons for the file open dialog
 #. Open dialog: 'Open' button, to load the selected picture
-#: ../tools.h:75 ../tuxpaint.c:7953
+#: ../tools.h:75 ../tuxpaint.c:7965
 msgid "Open"
 msgstr "פתיחה"
 
@@ -603,76 +603,76 @@ msgstr ""
 msgid "Please wait…"
 msgstr ""
 
-#: ../tuxpaint.c:7176
+#: ../tuxpaint.c:7188
 msgid "Pick a color."
 msgstr ""
 
 #. Open dialog: 'Erase' button, to erase/deleted the selected picture
-#: ../tuxpaint.c:7956
+#: ../tuxpaint.c:7968
 msgid "Erase"
 msgstr "מחק"
 
 #. Open dialog: 'Slides' button, to switch to slide show mode
-#: ../tuxpaint.c:7959
+#: ../tuxpaint.c:7971
 msgid "Slides"
 msgstr ""
 
 #. Open dialog: 'Back' button, to dismiss Open dialog without opening a picture
-#: ../tuxpaint.c:7962
+#: ../tuxpaint.c:7974
 msgid "Back"
 msgstr "חזרה"
 
 #. Slideshow: 'Next' button, to load next slide (image)
-#: ../tuxpaint.c:7965
+#: ../tuxpaint.c:7977
 #, fuzzy
 msgid "Next"
 msgstr "טקסט"
 
 #. Slideshow: 'Play' button, to begin a slideshow sequence
-#: ../tuxpaint.c:7968
+#: ../tuxpaint.c:7980
 msgid "Play"
 msgstr ""
 
 #. Label for 'Letters' buttons (font selector, down the right when the Text tool is being used); used to show the difference between font faces
-#: ../tuxpaint.c:8615
+#: ../tuxpaint.c:8627
 msgid "Aa"
 msgstr "Aa"
 
 #. Admittedly stupid way of determining which keys can be used for
 #. positive and negative responses in dialogs (e.g., [Y] (for 'yes') in English)
-#: ../tuxpaint.c:11520
+#: ../tuxpaint.c:11532
 msgid "Yes"
 msgstr "כן"
 
-#: ../tuxpaint.c:11524
+#: ../tuxpaint.c:11536
 msgid "No"
 msgstr "לא"
 
 #. Prompt to ask whether user wishes to save over old version of their file
-#: ../tuxpaint.c:12476
+#: ../tuxpaint.c:12488
 msgid "Replace the picture with your changes?"
 msgstr ""
 
 #. Positive response to saving over old version
 #. (like a 'File:Save' action in other applications)
-#: ../tuxpaint.c:12480
+#: ../tuxpaint.c:12492
 msgid "Yes, replace the old one!"
 msgstr ""
 
 #. Negative response to saving over old version (saves a new image)
 #. (like a 'File:Save As...' action in other applications)
-#: ../tuxpaint.c:12484
+#: ../tuxpaint.c:12496
 #, fuzzy
 msgid "No, save a new file!"
 msgstr "לא, שמור בקובץ חדש"
 
-#: ../tuxpaint.c:13247
+#: ../tuxpaint.c:13259
 msgid "Choose the picture you want, then click “Open”."
 msgstr "עליך לבחור את התמונה הרצויה, ואז ללחוץ על 'פתיחה'"
 
 #. Let user choose images:
 #. Instructions for Slideshow file dialog (FIXME: Make a #define)
-#: ../tuxpaint.c:14234 ../tuxpaint.c:14548
+#: ../tuxpaint.c:14246 ../tuxpaint.c:14560
 #, fuzzy
 msgid "Choose the pictures you want, then click “Play”."
 msgstr "עליך לבחור את התמונה הרצויה, ואז ללחוץ על 'פתיחה'"
@@ -689,19 +689,31 @@ msgstr "תוכנת ציור"
 msgid "Tux Paint"
 msgstr "Tux Paint"
 
-#: ../../magic/src/blackAndWhite.c:62
+#: ../../magic/src/blackAndWhite.c:67
 msgid "Black & White"
 msgstr ""
 
-#: ../../magic/src/blackAndWhite.c:63
+#: ../../magic/src/blackAndWhite.c:68
 msgid "Threshold"
 msgstr ""
 
-#: ../../magic/src/blackAndWhite.c:66
+#: ../../magic/src/blackAndWhite.c:71
+#, fuzzy
+msgid "Click and move the mouse around convert the image to greyscale."
+msgstr "עליך ללחוץ ולהזיז את העכבר מסביב כדי לטשטש את התמונה."
+
+#: ../../magic/src/blackAndWhite.c:72
 msgid "Click to convert the image to greyscale."
 msgstr ""
 
-#: ../../magic/src/blackAndWhite.c:67
+#: ../../magic/src/blackAndWhite.c:73
+#, fuzzy
+msgid ""
+"Click and move the mouse around to threshold the image into black and white "
+"regions."
+msgstr "עליך ללחוץ ולהזיז את העכבר כדי להפוך את התמונה לסרט מצויר."
+
+#: ../../magic/src/blackAndWhite.c:74
 msgid "Click to threshold the image into black and white regions."
 msgstr ""
 
@@ -731,23 +743,19 @@ msgstr "עליך ללחוץ ולהזיז את העכבר כדי ליצור אפ�
 msgid "Click and move the mouse around to make the picture drip."
 msgstr "עליך ללחוץ ולהזיז את העכבר כדי לגרום לתמונה שלך לטפטף."
 
-#: ../../magic/src/blurAll.c:59
-#, fuzzy
-msgid "Blur All"
-msgstr "טשטוש"
-
-#: ../../magic/src/blurAll.c:62
-#, fuzzy
-msgid "Click to blur the whole image."
-msgstr "עליך ללחוץ כדי ליצור תמונת מראה."
-
-#: ../../magic/src/blur.c:76
+#: ../../magic/src/blur.c:57
 msgid "Blur"
 msgstr "טשטוש"
 
-#: ../../magic/src/blur.c:83
-msgid "Click and move the mouse around to blur the picture."
+#: ../../magic/src/blur.c:60
+#, fuzzy
+msgid "Click and move the mouse around to blur the image."
 msgstr "עליך ללחוץ ולהזיז את העכבר מסביב כדי לטשטש את התמונה."
+
+#: ../../magic/src/blur.c:60
+#, fuzzy
+msgid "Click to blur the whole image."
+msgstr "עליך ללחוץ כדי ליצור תמונת מראה."
 
 # There is little distinction between 'block' and 'brick' in Hebrew.
 #. Both are named "Bricks", at the moment:
@@ -874,6 +882,16 @@ msgstr "דשא"
 msgid "Click and move to draw grass. Don’t forget the dirt!"
 msgstr "עליך ללחוץ ולהזיז כדי לצייר דשא. לא לשכוח לשים עפר!"
 
+#: ../../magic/src/jigsaw.c:62
+msgid "Jigsaw"
+msgstr ""
+
+#: ../../magic/src/jigsaw.c:65
+msgid ""
+"Click to make your picture into a jigsaw which you can print and cut out, "
+"make sure to ask an adult for help."
+msgstr ""
+
 #: ../../magic/src/kalidescope.c:77
 msgid "Kaleidoscope"
 msgstr ""
@@ -932,6 +950,15 @@ msgstr "עליך ללחוץ ולהזיז את העכבר כדי להפוך את 
 #, fuzzy
 msgid "Click to turn the image into its negative."
 msgstr "עליך ללחוץ כדי ליצור תמונת מראה."
+
+#: ../../magic/src/rails.c:74
+msgid "Rails"
+msgstr ""
+
+#: ../../magic/src/rails.c:76
+#, fuzzy
+msgid "Click and drag to draw train track rails on your picture."
+msgstr "עליך ללחוץ ולהזיז את העכבר מסביב כדי לטשטש את התמונה."
 
 #: ../../magic/src/rainbow.c:107
 msgid "Rainbow"
@@ -993,6 +1020,19 @@ msgstr "כתם"
 msgid "Click and move the mouse around to smudge the picture."
 msgstr "עליך ללחוץ ולהזיז את העכבר מסביב כדי להכתים את התמונה."
 
+#: ../../magic/src/snow.c:68
+msgid "Snow Ball"
+msgstr ""
+
+#: ../../magic/src/snow.c:69
+msgid "Snow Flake"
+msgstr ""
+
+#: ../../magic/src/snow.c:72 ../../magic/src/snow.c:73
+#, fuzzy
+msgid "Click to add snow to the image."
+msgstr "עליך ללחוץ כדי ליצור תמונת מראה."
+
 #: ../../magic/src/tint.c:77
 msgid "Tint"
 msgstr "גוון"
@@ -1019,6 +1059,10 @@ msgid ""
 "bottom for taller waves, the left for small waves, and the right for long "
 "waves."
 msgstr ""
+
+#, fuzzy
+#~ msgid "Blur All"
+#~ msgstr "טשטוש"
 
 #~ msgid "Click and move to fade the colors."
 #~ msgstr "עליך ללחוץ ולהזיז כדי לעמעם את הצבעים."

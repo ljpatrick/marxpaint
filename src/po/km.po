@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-07-10 12:03-0700\n"
+"POT-Creation-Date: 2008-07-13 17:29-0700\n"
 "PO-Revision-Date: 2008-05-30 15:41+0700\n"
 "Last-Translator: Khoem Sokhem <khoemsokhem@khmeros.info>\n"
 "Language-Team: Khmer <support@khmeros.info>\n"
@@ -379,7 +379,7 @@ msgstr "ថ្មី"
 #. Open a saved picture
 #. buttons for the file open dialog
 #. Open dialog: 'Open' button, to load the selected picture
-#: ../tools.h:75 ../tuxpaint.c:7953
+#: ../tools.h:75 ../tuxpaint.c:7965
 msgid "Open"
 msgstr "បើក"
 
@@ -593,74 +593,74 @@ msgstr "បាន​បើក​សំឡេង ។"
 msgid "Please wait…"
 msgstr "សូម​រង់ចាំ..."
 
-#: ../tuxpaint.c:7176
+#: ../tuxpaint.c:7188
 msgid "Pick a color."
 msgstr "ជ្រើស​ពណ៌ ។"
 
 #. Open dialog: 'Erase' button, to erase/deleted the selected picture
-#: ../tuxpaint.c:7956
+#: ../tuxpaint.c:7968
 msgid "Erase"
 msgstr "លុប"
 
 #. Open dialog: 'Slides' button, to switch to slide show mode
-#: ../tuxpaint.c:7959
+#: ../tuxpaint.c:7971
 msgid "Slides"
 msgstr "ស្លាយ"
 
 #. Open dialog: 'Back' button, to dismiss Open dialog without opening a picture
-#: ../tuxpaint.c:7962
+#: ../tuxpaint.c:7974
 msgid "Back"
 msgstr "ថយក្រោយ"
 
 #. Slideshow: 'Next' button, to load next slide (image)
-#: ../tuxpaint.c:7965
+#: ../tuxpaint.c:7977
 msgid "Next"
 msgstr "បន្ទាប់"
 
 #. Slideshow: 'Play' button, to begin a slideshow sequence
-#: ../tuxpaint.c:7968
+#: ../tuxpaint.c:7980
 msgid "Play"
 msgstr "ចាក់"
 
 #. Label for 'Letters' buttons (font selector, down the right when the Text tool is being used); used to show the difference between font faces
-#: ../tuxpaint.c:8615
+#: ../tuxpaint.c:8627
 msgid "Aa"
 msgstr "កខគ"
 
 #. Admittedly stupid way of determining which keys can be used for
 #. positive and negative responses in dialogs (e.g., [Y] (for 'yes') in English)
-#: ../tuxpaint.c:11520
+#: ../tuxpaint.c:11532
 msgid "Yes"
 msgstr "បាទ/​ចាស"
 
-#: ../tuxpaint.c:11524
+#: ../tuxpaint.c:11536
 msgid "No"
 msgstr "ទេ"
 
 #. Prompt to ask whether user wishes to save over old version of their file
-#: ../tuxpaint.c:12476
+#: ../tuxpaint.c:12488
 msgid "Replace the picture with your changes?"
 msgstr "ជំនួស​រូបភាព ដោយ​ការ​ផ្លាស់ប្ដូរ​របស់​អ្នក ?"
 
 #. Positive response to saving over old version
 #. (like a 'File:Save' action in other applications)
-#: ../tuxpaint.c:12480
+#: ../tuxpaint.c:12492
 msgid "Yes, replace the old one!"
 msgstr "បាទ​/​ចាស ជំនួស​លើ​ឯកសារ​ចាស់ !"
 
 #. Negative response to saving over old version (saves a new image)
 #. (like a 'File:Save As...' action in other applications)
-#: ../tuxpaint.c:12484
+#: ../tuxpaint.c:12496
 msgid "No, save a new file!"
 msgstr "ទេ រក្សាទុក​ជា​ឯកសារ​ថ្មី !"
 
-#: ../tuxpaint.c:13247
+#: ../tuxpaint.c:13259
 msgid "Choose the picture you want, then click “Open”."
 msgstr "ជ្រើស​រូបភាព​ដែល​អ្នក​​ចង់​បាន រួច​ហើយ “បើក” ។"
 
 #. Let user choose images:
 #. Instructions for Slideshow file dialog (FIXME: Make a #define)
-#: ../tuxpaint.c:14234 ../tuxpaint.c:14548
+#: ../tuxpaint.c:14246 ../tuxpaint.c:14560
 msgid "Choose the pictures you want, then click “Play”."
 msgstr "ជ្រើស​រូបភាព​ដែល​ចង់បាន រួច​ចុច “ចាក់” ។"
 
@@ -676,19 +676,31 @@ msgstr "កម្មវិធី​គំនូរ"
 msgid "Tux Paint"
 msgstr "Tux Paint"
 
-#: ../../magic/src/blackAndWhite.c:62
+#: ../../magic/src/blackAndWhite.c:67
 msgid "Black & White"
 msgstr ""
 
-#: ../../magic/src/blackAndWhite.c:63
+#: ../../magic/src/blackAndWhite.c:68
 msgid "Threshold"
 msgstr ""
 
-#: ../../magic/src/blackAndWhite.c:66
+#: ../../magic/src/blackAndWhite.c:71
+#, fuzzy
+msgid "Click and move the mouse around convert the image to greyscale."
+msgstr "ចុច ហើយ​ផ្លាស់ទី​កណ្ដុរ ដើម្បី​ធ្វើ​ឲ្យ​រូបភាព​ព្រិល ។"
+
+#: ../../magic/src/blackAndWhite.c:72
 msgid "Click to convert the image to greyscale."
 msgstr ""
 
-#: ../../magic/src/blackAndWhite.c:67
+#: ../../magic/src/blackAndWhite.c:73
+#, fuzzy
+msgid ""
+"Click and move the mouse around to threshold the image into black and white "
+"regions."
+msgstr "ចុច ហើយ​ផ្លាស់ទី​កណ្ដុរ ដើម្បី​ធ្វើ​រូបភាព​ឲ្យ​ទៅ​ជា​រូប​តុក្កតា ។"
+
+#: ../../magic/src/blackAndWhite.c:74
 msgid "Click to threshold the image into black and white regions."
 msgstr ""
 
@@ -717,23 +729,19 @@ msgstr "ចុច ហើយ​ផ្លាស់ទី​កណ្ដុរ ដ�
 msgid "Click and move the mouse around to make the picture drip."
 msgstr "ចុច ហើយ​ផ្លាស់ទី​កណ្ដុរ ដើម្បី​ធ្វើ​ឲ្យ​រូបភាព​ដូច​មាន​ដំណក់​ស្រក់ ។"
 
-#: ../../magic/src/blurAll.c:59
-#, fuzzy
-msgid "Blur All"
-msgstr "ព្រិល"
-
-#: ../../magic/src/blurAll.c:62
-#, fuzzy
-msgid "Click to blur the whole image."
-msgstr "ចុច ដើម្បី​ចាំង​ឆ្លុះ​រូបភាព ។"
-
-#: ../../magic/src/blur.c:76
+#: ../../magic/src/blur.c:57
 msgid "Blur"
 msgstr "ព្រិល"
 
-#: ../../magic/src/blur.c:83
-msgid "Click and move the mouse around to blur the picture."
+#: ../../magic/src/blur.c:60
+#, fuzzy
+msgid "Click and move the mouse around to blur the image."
 msgstr "ចុច ហើយ​ផ្លាស់ទី​កណ្ដុរ ដើម្បី​ធ្វើ​ឲ្យ​រូបភាព​ព្រិល ។"
+
+#: ../../magic/src/blur.c:60
+#, fuzzy
+msgid "Click to blur the whole image."
+msgstr "ចុច ដើម្បី​ចាំង​ឆ្លុះ​រូបភាព ។"
 
 #. Both are named "Bricks", at the moment:
 #: ../../magic/src/bricks.c:104
@@ -853,6 +861,16 @@ msgstr "ស្មៅ"
 msgid "Click and move to draw grass. Don’t forget the dirt!"
 msgstr "ចុច ហើយ​ផ្លាស់ទី​កណ្ដុរ ដើម្បី​គូរ​ស្មៅ ។ កុំភ្លេច​គូរ​ដី​ផង !"
 
+#: ../../magic/src/jigsaw.c:62
+msgid "Jigsaw"
+msgstr ""
+
+#: ../../magic/src/jigsaw.c:65
+msgid ""
+"Click to make your picture into a jigsaw which you can print and cut out, "
+"make sure to ask an adult for help."
+msgstr ""
+
 #: ../../magic/src/kalidescope.c:77
 msgid "Kaleidoscope"
 msgstr "បំពង់​កញ្ចក់​​ឆ្លុះ"
@@ -906,6 +924,16 @@ msgstr "ចុច ហើយ​ផ្លាស់ទី​កណ្ដុរ ដ�
 #, fuzzy
 msgid "Click to turn the image into its negative."
 msgstr "ចុច ដើម្បី​ចាំង​ឆ្លុះ​រូបភាព ។"
+
+#: ../../magic/src/rails.c:74
+#, fuzzy
+msgid "Rails"
+msgstr "គួច"
+
+#: ../../magic/src/rails.c:76
+#, fuzzy
+msgid "Click and drag to draw train track rails on your picture."
+msgstr "ចុច ហើយ​អូស ដើម្បី​គូរ​​ភ្លើងហ្វា​នៅលើ​រូបភាព​របស់​អ្នក ។"
 
 #: ../../magic/src/rainbow.c:107
 msgid "Rainbow"
@@ -965,6 +993,19 @@ msgstr "ស្នាម​ប្រឡាក់"
 msgid "Click and move the mouse around to smudge the picture."
 msgstr "ចុច ហើយ​ផ្លាស់ទី​កណ្ដុរ ដើម្បី​ធ្វើ​ឲ្យ​រូបភាព​ប្រឡាក់ ។"
 
+#: ../../magic/src/snow.c:68
+msgid "Snow Ball"
+msgstr ""
+
+#: ../../magic/src/snow.c:69
+msgid "Snow Flake"
+msgstr ""
+
+#: ../../magic/src/snow.c:72 ../../magic/src/snow.c:73
+#, fuzzy
+msgid "Click to add snow to the image."
+msgstr "ចុច ដើម្បី​ចាំង​ឆ្លុះ​រូបភាព ។"
+
 #: ../../magic/src/tint.c:77
 msgid "Tint"
 msgstr "ពណ៌​ព្រឿងៗ"
@@ -992,6 +1033,10 @@ msgid ""
 msgstr ""
 "ចុច ដើម្បី​ធ្វើ​រូបភាព​ឲ្យ​រលក ។ ចុច​រុញ​ទៅ​លើ ដើម្បី​បាន​រលក​ខ្លីៗ រុញ​ទៅ​ក្រោម ដើម្បី​បាន​រលក​វែងៗ រុញ​ទៅ​"
 "ឆ្វេង ដើម្បី​បាន​រលក​តូចៗ និង​រុញ​ទៅ​ស្ដាំ ដើម្បី​បាន​រលក​ធំៗ ។"
+
+#, fuzzy
+#~ msgid "Blur All"
+#~ msgstr "ព្រិល"
 
 #~ msgid "Click and move to fade the colors."
 #~ msgstr "ចុច ហើយ​ផ្លាស់ទី​កណ្ដុរ ដើម្បី​ធ្វើ​ឲ្យ​ហើរ​ពណ៌ ។"

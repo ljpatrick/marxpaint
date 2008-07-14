@@ -8,7 +8,7 @@ http://www.tuxpaint.org/
 
 $Id$
 
-2008.July.11 (0.9.21)
+2008.July.13 (0.9.21)
   * New Starters:
     -------------
     * Silver Frame
@@ -30,6 +30,7 @@ $Id$
 
     * + Confetti - Paints random confetti bits on the canvas.
       + Fold - Folds the corners of the image up, like a piece of paper.
+      + Rails - Draws train tracks / rails over the image.
       By Adam 'foo-script' Rakowski <foo-script@o2.pl>
       (Part of Tux4Kids' participation in Google Summer of Code 2008)
 
