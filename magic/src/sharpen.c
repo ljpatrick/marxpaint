@@ -4,7 +4,7 @@
   Sharpen, Trace Contour and Silhouette Magic Tool Plugin
   Tux Paint - A simple drawing program for children.
 
-  FIXME: Credits
+  Credits: Andrew Corcoran <akanewbie@gmail.com>
 
   Copyright (c) 2002-2008 by Bill Kendrick and others; see AUTHORS.txt
   bill@newbreedsoftware.com
@@ -53,8 +53,12 @@ enum {
 
 //Holder for the unnormalised edge values
 double* sharpen_temp;
+double sharpen_min=INT_MAX;
+double sharpen_max=0;
 
 const int THRESHOLD = 50;
+
+const int sharpen_RADIUS = 16;
 
 const double SHARPEN = 0.5;
 
@@ -75,10 +79,13 @@ const char * sharpen_names[sharpen_NUM_TOOLS] = {
   gettext_noop("Sharpen"),
   gettext_noop("Silhouette")
 };
-const char * sharpen_descs[sharpen_NUM_TOOLS] = {
-  gettext_noop("Click to trace the edges of objects in the image."),
-  gettext_noop("Click to sharpen the image."),
-  gettext_noop("Click to create a black and white silhouette of the image.")
+const char * sharpen_descs[sharpen_NUM_TOOLS][2] = {
+  {gettext_noop("Click and move the mouse to trace the edges of objects in the image."),
+    gettext_noop("Click to trace the edges of objects in the image."),},
+  {gettext_noop("Click and move the mouse to sharpen the image."),
+    gettext_noop("Click to sharpen the image."),},
+  {gettext_noop("Click and move the mouse to create a black and white silhouette of the image."),
+    gettext_noop("Click to create a black and white silhouette of the image.")},
 };
 
 Uint32 sharpen_api_version(void) { return(TP_MAGIC_API_VERSION); }
@@ -94,6 +101,9 @@ int sharpen_init(magic_api * api){
     snprintf(fname, sizeof(fname), "%s/sounds/magic/%s", api->data_directory, sharpen_snd_filenames[i]);
     sharpen_snd_effect[i] = Mix_LoadWAV(fname);
   }
+
+  sharpen_temp = (double*)malloc(api->canvas_w*api->canvas_h*sizeof(double));
+
   return(1);
 }
 
@@ -117,7 +127,7 @@ char * sharpen_get_name(magic_api * api, int which){
 
 // Return our descriptions, localized:
 char * sharpen_get_description(magic_api * api, int which, int mode){
-  return(strdup(gettext(sharpen_descs[which])));
+  return(strdup(gettext(sharpen_descs[which][mode-1])));
 }
 
 //Calculates the grey scale value for a rgb pixel
@@ -126,10 +136,140 @@ static int sharpen_grey(Uint8 r1,Uint8 g1,Uint8 b1){
 }
 
 // Do the effect:
-static void do_sharpen(void * ptr,SDL_Surface * canvas, SDL_Surface * last, int which)
-{
+static void do_sharpen_pixel(void * ptr, int which,
+	         SDL_Surface * canvas, SDL_Surface * last,
+	         int x, int y){
 	magic_api * api = (magic_api *) ptr;
-  sharpen_temp = (double*)malloc(api->canvas_w*api->canvas_h*sizeof(double));
+	Uint8 r1, g1, b1;
+
+	//apply normalisation
+	sharpen_temp[x*(canvas->h-1) + y]= ((sharpen_temp[x*(canvas->h-1) + y]-sharpen_min)/(sharpen_max-sharpen_min))*255.0;
+
+	// set image to white where edge value is below THRESHOLD
+	if (which == TOOL_TRACE){
+		if (sharpen_temp[x*(canvas->h-1) + y]<THRESHOLD)
+		{
+			api->putpixel(canvas, x, y, SDL_MapRGB(canvas->format, 255, 255, 255));
+		}
+		
+	}
+	//Simply display the edge values - provides a nice black and white silhouette image
+	else if (which == TOOL_SILHOUETTE){
+	  api->putpixel(canvas, x, y, SDL_MapRGB(canvas->format, 	sharpen_temp[x*(canvas->h-1) + y], 
+														sharpen_temp[x*(canvas->h-1) + y], 
+														sharpen_temp[x*(canvas->h-1) + y]));
+	}
+	//Add the edge values to the original image, creating a more distinct jump in contrast at edges
+	else if(which == TOOL_SHARPEN){
+		SDL_GetRGB(api->getpixel(last, x, y), last->format, &r1, &g1, &b1);
+		api->putpixel(canvas, x, y, SDL_MapRGB(canvas->format, clamp(0.0, r1 + SHARPEN * sharpen_temp[x*(canvas->h-1) + y], 255.0), 
+													clamp(0.0, g1 + SHARPEN * sharpen_temp[x*(canvas->h-1) + y], 255.0), 
+													clamp(0.0, b1 + SHARPEN * sharpen_temp[x*(canvas->h-1) + y], 255.0)));
+	}
+}
+
+// Do the effect for the full image
+static void do_sharpen_full(void * ptr,SDL_Surface * canvas, SDL_Surface * last, int which){
+
+	magic_api * api = (magic_api *) ptr;
+
+	int x,y;
+
+	for (y = 0; y < last->h; y++){
+		for (x=0; x < last->w; x++){
+      do_sharpen_pixel(ptr, which, canvas, last, x, y);
+	  }
+  }
+}
+
+//do the effect for the brush
+static void do_sharpen_brush(void * ptr, int which, SDL_Surface * canvas, SDL_Surface * last, int x, int y){
+  int xx, yy;
+  magic_api * api = (magic_api *) ptr;
+
+  for (yy = y - sharpen_RADIUS; yy < y + sharpen_RADIUS; yy++)
+  {
+    for (xx = x - sharpen_RADIUS; xx < x + sharpen_RADIUS; xx++)
+    {
+      if (api->in_circle(xx - x, yy - y, sharpen_RADIUS) &&
+	  !api->touched(xx, yy))
+      {
+        do_sharpen_pixel(api, which, canvas, last, xx, yy);
+      }
+    }
+  }
+}
+
+// Affect the canvas on drag:
+void sharpen_drag(magic_api * api, int which, SDL_Surface * canvas,
+	          SDL_Surface * last, int ox, int oy, int x, int y,
+		  SDL_Rect * update_rect){
+
+  api->line((void *) api, which, canvas, last, ox, oy, x, y, 1, do_sharpen_brush);
+
+  api->playsound(sharpen_snd_effect[which], (x * 255) / canvas->w, 255);
+
+  if (ox > x) { int tmp = ox; ox = x; x = tmp; }
+  if (oy > y) { int tmp = oy; oy = y; y = tmp; }
+
+  update_rect->x = ox - sharpen_RADIUS;
+  update_rect->y = oy - sharpen_RADIUS;
+  update_rect->w = (x + sharpen_RADIUS) - update_rect->x;
+  update_rect->h = (y + sharpen_RADIUS) - update_rect->y;
+}
+
+// Affect the canvas on click:
+void sharpen_click(magic_api * api, int which, int mode,
+	            SDL_Surface * canvas, SDL_Surface * last,
+	            int x, int y, SDL_Rect * update_rect){
+  if (mode == MODE_PAINT)
+    sharpen_drag(api, which, canvas, last, x, y, x, y, update_rect);
+  else{
+    update_rect->x = 0;
+    update_rect->y = 0;
+    update_rect->w = canvas->w;
+    update_rect->h = canvas->h;
+    do_sharpen_full(api, canvas,  last, which);
+    api->playsound(sharpen_snd_effect[which], 128, 255);
+  }
+}
+
+// Affect the canvas on release:
+void sharpen_release(magic_api * api, int which,
+	           SDL_Surface * canvas, SDL_Surface * last,
+	           int x, int y, SDL_Rect * update_rect)
+{
+}
+
+// No setup happened:
+void sharpen_shutdown(magic_api * api)
+{
+	//Clean up sounds
+	int i;
+	for(i=0; i<sharpen_NUM_TOOLS; i++){
+		if(sharpen_snd_effect[i] != NULL){
+			Mix_FreeChunk(sharpen_snd_effect[i]);
+		}
+	}
+  
+  if (sharpen_temp != NULL){
+    free(sharpen_temp);
+  }
+}
+
+// Record the color from Tux Paint:
+void sharpen_set_color(magic_api * api, Uint8 r, Uint8 g, Uint8 b)
+{
+}
+
+// Use colors:
+int sharpen_requires_colors(magic_api * api, int which)
+{
+  return 0;
+}
+
+void sharpen_switchin(magic_api * api, int which, int mode, SDL_Surface * canvas)
+{
 	int x, y;
 	int grey;
 	Uint8 r1, g1, b1;
@@ -160,7 +300,7 @@ static void do_sharpen(void * ptr,SDL_Surface * canvas, SDL_Surface * last, int 
 			for (i=-1;i<2;i++){
 				for(j=-1; j<2; j++){
 					//No need to check if inside canvas, getpixel does it for us.
-					SDL_GetRGB(api->getpixel(last, x+i, y+j), last->format, &r1, &g1, &b1);
+					SDL_GetRGB(api->getpixel(canvas, x+i, y+j), canvas->format, &r1, &g1, &b1);
 					grey = sharpen_grey(r1,g1,b1);
 					sobel_1 += grey * sobel_weights_1[i+1][j+1];
 					sobel_2 += grey * sobel_weights_2[i+1][j+1];
@@ -172,104 +312,14 @@ static void do_sharpen(void * ptr,SDL_Surface * canvas, SDL_Surface * last, int 
 			sharpen_temp[x*(canvas->h-1) + y] = sqrt(sobel_1*sobel_1 + sobel_2*sobel_2);
 
 			//Calculate normalisation
-			if (sharpen_temp[x*(canvas->h-1) + y]<min){
-				min=sharpen_temp[x*(canvas->h-1) + y];
+			if (sharpen_temp[x*(canvas->h-1) + y]<sharpen_min){
+				sharpen_min=sharpen_temp[x*(canvas->h-1) + y];
 			}
-			if(sharpen_temp[x*(canvas->h-1) + y]>max){
-				max=sharpen_temp[x*(canvas->h-1) + y];
-			}
-		}
-	}
-
-	for (y = 0; y < canvas->h; y++){
-		for (x=0; x < canvas->w; x++){
-
-			//apply normalisation
-			sharpen_temp[x*(canvas->h-1) + y]= ((sharpen_temp[x*(canvas->h-1) + y]-min)/(max-min))*255.0;
-
-			// set image to white where edge value is below THRESHOLD
-			if (which == TOOL_TRACE){
-				if (sharpen_temp[x*(canvas->h-1) + y]<THRESHOLD)
-				{
-					api->putpixel(canvas, x, y, SDL_MapRGB(canvas->format, 255, 255, 255));
-				}
-		
-			}
-			//Simply display the edge values - provides a nice black and white silhouette image
-			else if (which == TOOL_SILHOUETTE){
-				api->putpixel(canvas, x, y, SDL_MapRGB(canvas->format, 	sharpen_temp[x*(canvas->h-1) + y], 
-																sharpen_temp[x*(canvas->h-1) + y], 
-																sharpen_temp[x*(canvas->h-1) + y]));
-			}
-			//Add the edge values to the original image, creating a more distinct jump in contrast at edges
-			else if(which == TOOL_SHARPEN){
-				SDL_GetRGB(api->getpixel(last, x, y), last->format, &r1, &g1, &b1);
-				api->putpixel(canvas, x, y, SDL_MapRGB(canvas->format, clamp(0.0, r1 + SHARPEN * sharpen_temp[x*(canvas->h-1) + y], 255.0), 
-															clamp(0.0, g1 + SHARPEN * sharpen_temp[x*(canvas->h-1) + y], 255.0), 
-															clamp(0.0, b1 + SHARPEN * sharpen_temp[x*(canvas->h-1) + y], 255.0)));
+			if(sharpen_temp[x*(canvas->h-1) + y]>sharpen_max){
+				sharpen_max=sharpen_temp[x*(canvas->h-1) + y];
 			}
 		}
 	}
-  //Clean up temp variable
-	if (sharpen_temp != NULL){
-		free(sharpen_temp);
-	}
-}
-
-// Affect the canvas on drag:
-void sharpen_drag(magic_api * api, int which, SDL_Surface * canvas,
-	          SDL_Surface * last, int ox, int oy, int x, int y,
-		  SDL_Rect * update_rect)
-{
-   // No-op
-}
-
-// Affect the canvas on click:
-void sharpen_click(magic_api * api, int which, int mode,
-	           SDL_Surface * canvas, SDL_Surface * last,
-	           int x, int y, SDL_Rect * update_rect)
-{
-  update_rect->x = 0;
-  update_rect->y = 0;
-  update_rect->w = canvas->w;
-  update_rect->h = canvas->h;
-  do_sharpen(api, canvas,  last, which);
-  //play sound
-	api->playsound(sharpen_snd_effect[which], 128, 255);
-}
-
-// Affect the canvas on release:
-void sharpen_release(magic_api * api, int which,
-	           SDL_Surface * canvas, SDL_Surface * last,
-	           int x, int y, SDL_Rect * update_rect)
-{
-}
-
-// No setup happened:
-void sharpen_shutdown(magic_api * api)
-{
-	//Clean up sounds
-	int i;
-	for(i=0; i<sharpen_NUM_TOOLS; i++){
-		if(sharpen_snd_effect[i] != NULL){
-			Mix_FreeChunk(sharpen_snd_effect[i]);
-		}
-	}
-}
-
-// Record the color from Tux Paint:
-void sharpen_set_color(magic_api * api, Uint8 r, Uint8 g, Uint8 b)
-{
-}
-
-// Use colors:
-int sharpen_requires_colors(magic_api * api, int which)
-{
-  return 0;
-}
-
-void sharpen_switchin(magic_api * api, int which, int mode, SDL_Surface * canvas)
-{
 }
 
 void sharpen_switchout(magic_api * api, int which, int mode, SDL_Surface * canvas)
@@ -278,5 +328,5 @@ void sharpen_switchout(magic_api * api, int which, int mode, SDL_Surface * canva
 
 int sharpen_modes(magic_api * api, int which)
 {
-  return(MODE_FULLSCREEN); /* FIXME - Can also be turned into a painted effect */
+  return(MODE_FULLSCREEN|MODE_PAINT);
 }
