@@ -14,6 +14,9 @@ $Id$
     * Silver Frame
       Caroline Ford <caroline.ford.work@googlemail.com>
 
+    * Jigsaw 3x3 & 5x5
+      Andrew 'akanewbie' Corcoran <akanewbie@gmail.com>
+
   * New Magic Tools:
     ----------------
     * + Blur (entire image mode) - Blurs entire image
