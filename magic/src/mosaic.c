@@ -37,9 +37,10 @@
 #include <math.h>
 #include <limits.h>
 #include <time.h>
-#include "noise.c"
-#include "sharpen.c"
-#include "blur.c"
+//#include "noise.c"
+//#include "sharpen.c"
+//#include "blur.c"
+
 
 #ifndef gettext_noop
 #define gettext_noop(String) String
@@ -81,8 +82,6 @@ int mosaic_init(magic_api * api){
     snprintf(fname, sizeof(fname), "%s/sounds/magic/%s", api->data_directory, mosaic_snd_filenames[i]);
     mosaic_snd_effect[i] = Mix_LoadWAV(fname);
   }
-  
-  sharpen_init(api);
 
   return(1);
 }
@@ -109,16 +108,118 @@ char * mosaic_get_description(magic_api * api, int which){
 }
 
 //Do the effect for one pixel
+static void mosaic_do_noise_pixel(void * ptr, int which,
+	         SDL_Surface * canvas, SDL_Surface * last,
+	         int x, int y){
+	magic_api * api = (magic_api *) ptr;
+
+  Uint8 temp[3];
+  double temp2[3];
+
+  const int noise_AMOUNT = 100.0;
+
+	SDL_GetRGB(api->getpixel(canvas,x, y), canvas->format, &temp[0], &temp[1], &temp[2]);
+  int k;
+  for (k =0;k<3;k++){
+		temp2[k] = clamp(0.0, (int)temp[k] - (rand()%noise_AMOUNT) + noise_AMOUNT/2.0, 255.0);
+  }
+	api->putpixel(canvas, x, y, SDL_MapRGB(canvas->format, temp2[0], temp2[1], temp2[2]));
+
+}
+
+//Do the effect for one pixel
+static void mosaic_do_blur_pixel(void * ptr, int which,
+	         SDL_Surface * canvas, SDL_Surface * last,
+	         int x, int y){
+  magic_api * api = (magic_api *) ptr;
+  int i,j,k;
+	Uint8 temp[3];
+  double blurValue[3];
+
+  for (k =0;k<3;k++){
+		blurValue[k] = 0;
+  }
+
+  //5x5 gaussiann weighting window
+  const int weight[5][5] = {  {1,4,7,4,1},
+                              {4,16,26,16,4},
+                              {7,26,41,26,7},
+                              {4,16,26,16,4},
+                              {1,4,7,4,1}};
+  for (i=-2;i<3;i++){
+    for (j=-2;j<3;j++){
+      //Add the pixels around the current one wieghted 
+			SDL_GetRGB(api->getpixel(canvas, x + i, y + j), canvas->format, &temp[0], &temp[1], &temp[2]);
+      for (k =0;k<3;k++){
+			  blurValue[k] += temp[k]* weight[i+2][j+2];
+      }
+    }
+  }
+  for (k =0;k<3;k++){
+    blurValue[k] /= 273;
+  }
+	api->putpixel(canvas, x, y, SDL_MapRGB(canvas->format, blurValue[0], blurValue[1], blurValue[2]));
+}
+
+//Calculates the grey scale value for a rgb pixel
+static int mosaic_grey(Uint8 r1,Uint8 g1,Uint8 b1){
+	return 0.3*r1+.59*g1+0.11*b1;
+}
+
+// Do the effect:
+static void mosaic_do_sharpen_pixel(void * ptr, int which,
+	         SDL_Surface * canvas, SDL_Surface * last,
+	         int x, int y){
+
+	magic_api * api = (magic_api *) ptr;
+
+	Uint8 r1, g1, b1;
+ 	int grey;
+	int i,j;
+	double sobel_1=0,sobel_2=0;
+  const double SHARPEN = 0.5;
+
+  	//Sobel weighting masks
+	const int sobel_weights_1[3][3] = {	{1,2,1},
+                                      {0,0,0},
+                                      {-1,-2,-1}};
+	const int sobel_weights_2[3][3] = {	{-1,0,1},
+                                      {-2,0,2},
+                                      {-1,0,1}};
+
+			sobel_1=0;
+			sobel_2=0;
+			for (i=-1;i<2;i++){
+				for(j=-1; j<2; j++){
+					//No need to check if inside canvas, getpixel does it for us.
+					SDL_GetRGB(api->getpixel(canvas, x+i, y+j), canvas->format, &r1, &g1, &b1);
+					grey = mosaic_grey(r1,g1,b1);
+					sobel_1 += grey * sobel_weights_1[i+1][j+1];
+					sobel_2 += grey * sobel_weights_2[i+1][j+1];
+				}
+			}
+  
+  double temp = sqrt(sobel_1*sobel_1 + sobel_2*sobel_2);
+  temp = (temp/1443)*255.0;
+
+	SDL_GetRGB(api->getpixel(canvas, x, y), canvas->format, &r1, &g1, &b1);
+	api->putpixel(canvas, x, y, SDL_MapRGB(canvas->format, clamp(0.0, r1 + SHARPEN * temp, 255.0), 
+													clamp(0.0, g1 + SHARPEN * temp, 255.0), 
+													clamp(0.0, b1 + SHARPEN * temp, 255.0)));
+	
+}
+
+//Do the effect for one pixel
 static void do_mosaic_pixel(void * ptr, int which,
 	         SDL_Surface * canvas, SDL_Surface * last,
 	         int x, int y){
   magic_api * api = (magic_api *) ptr;
   int i;
   for (i=0;i<3;i++){
-    do_noise_pixel(ptr, 0, canvas, last, x, y);
+    mosaic_do_noise_pixel(ptr, 0, canvas, canvas, x, y);
   }
-  do_blur_pixel(ptr, 0, canvas, last, x, y);
-  do_sharpen_pixel(ptr, 1, canvas, canvas, x, y); 
+  mosaic_do_blur_pixel(ptr, 0, canvas, canvas, x, y);
+  //mosaic_do_sharpen_pixel(ptr, 0, canvas, last, x, y); 
 }
 
 // Do the effect for the full image
@@ -205,7 +306,6 @@ void mosaic_shutdown(magic_api * api)
 			Mix_FreeChunk(mosaic_snd_effect[i]);
 		}
 	}
-  sharpen_shutdown(api);
 }
 
 // Record the color from Tux Paint:
