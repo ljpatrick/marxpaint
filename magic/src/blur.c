@@ -105,23 +105,27 @@ static void do_blur_pixel(void * ptr, int which,
 	Uint8 temp[3];
   double blurValue[3];
 
+  for (k =0;k<3;k++){
+		blurValue[k] = 0;
+  }
+
   //5x5 gaussiann weighting window
   const int weight[5][5] = {  {1,4,7,4,1},
                               {4,16,26,16,4},
                               {7,26,41,26,7},
                               {4,16,26,16,4},
                               {1,4,7,4,1}};
-      for (i=-2;i<3;i++){
-        for (j=-2;j<3;j++){
-          //Add the pixels around the current one wieghted 
-			    SDL_GetRGB(api->getpixel(last, x + i, y + j), last->format, &temp[0], &temp[1], &temp[2]);
-          for (k =0;k<3;k++){
-			      blurValue[k] += temp[k]* weight[i+2][j+2];
-          }
-        }
+  for (i=-2;i<3;i++){
+    for (j=-2;j<3;j++){
+      //Add the pixels around the current one wieghted 
+			SDL_GetRGB(api->getpixel(canvas, x + i, y + j), canvas->format, &temp[0], &temp[1], &temp[2]);
+      for (k =0;k<3;k++){
+			  blurValue[k] += temp[k]* weight[i+2][j+2];
       }
+    }
+  }
   for (k =0;k<3;k++){
-    blurValue[k] /=273;
+    blurValue[k] /= 273;
   }
 	api->putpixel(canvas, x, y, SDL_MapRGB(canvas->format, blurValue[0], blurValue[1], blurValue[2]));
 }

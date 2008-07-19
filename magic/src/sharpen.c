@@ -51,11 +51,6 @@ enum {
 	sharpen_NUM_TOOLS
 };
 
-//Holder for the unnormalised edge values
-double* sharpen_temp;
-double sharpen_min=INT_MAX;
-double sharpen_max=0;
-
 const int THRESHOLD = 50;
 
 const int sharpen_RADIUS = 16;
@@ -102,8 +97,6 @@ int sharpen_init(magic_api * api){
     sharpen_snd_effect[i] = Mix_LoadWAV(fname);
   }
 
-  sharpen_temp = (double*)malloc(api->canvas_w*api->canvas_h*sizeof(double));
-
   return(1);
 }
 
@@ -139,32 +132,53 @@ static int sharpen_grey(Uint8 r1,Uint8 g1,Uint8 b1){
 static void do_sharpen_pixel(void * ptr, int which,
 	         SDL_Surface * canvas, SDL_Surface * last,
 	         int x, int y){
-	magic_api * api = (magic_api *) ptr;
-	Uint8 r1, g1, b1;
 
-	//apply normalisation
-	sharpen_temp[x*(canvas->h-1) + y]= ((sharpen_temp[x*(canvas->h-1) + y]-sharpen_min)/(sharpen_max-sharpen_min))*255.0;
+	magic_api * api = (magic_api *) ptr;
+
+	Uint8 r1, g1, b1;
+ 	int grey;
+	int i,j;
+	double sobel_1=0,sobel_2=0;
+
+  	//Sobel weighting masks
+	const int sobel_weights_1[3][3] = {	{1,2,1},
+                                      {0,0,0},
+                                      {-1,-2,-1}};
+	const int sobel_weights_2[3][3] = {	{-1,0,1},
+                                      {-2,0,2},
+                                      {-1,0,1}};
+
+			sobel_1=0;
+			sobel_2=0;
+			for (i=-1;i<2;i++){
+				for(j=-1; j<2; j++){
+					//No need to check if inside canvas, getpixel does it for us.
+					SDL_GetRGB(api->getpixel(canvas, x+i, y+j), canvas->format, &r1, &g1, &b1);
+					grey = sharpen_grey(r1,g1,b1);
+					sobel_1 += grey * sobel_weights_1[i+1][j+1];
+					sobel_2 += grey * sobel_weights_2[i+1][j+1];
+				}
+			}
+  
+  double temp = sqrt(sobel_1*sobel_1 + sobel_2*sobel_2);
+  temp = (temp/1443)*255.0;
 
 	// set image to white where edge value is below THRESHOLD
 	if (which == TOOL_TRACE){
-		if (sharpen_temp[x*(canvas->h-1) + y]<THRESHOLD)
-		{
+		if (temp<THRESHOLD){
 			api->putpixel(canvas, x, y, SDL_MapRGB(canvas->format, 255, 255, 255));
 		}
-		
 	}
 	//Simply display the edge values - provides a nice black and white silhouette image
 	else if (which == TOOL_SILHOUETTE){
-	  api->putpixel(canvas, x, y, SDL_MapRGB(canvas->format, 	sharpen_temp[x*(canvas->h-1) + y], 
-														sharpen_temp[x*(canvas->h-1) + y], 
-														sharpen_temp[x*(canvas->h-1) + y]));
+	  api->putpixel(canvas, x, y, SDL_MapRGB(canvas->format, temp, temp, temp));
 	}
 	//Add the edge values to the original image, creating a more distinct jump in contrast at edges
 	else if(which == TOOL_SHARPEN){
-		SDL_GetRGB(api->getpixel(last, x, y), last->format, &r1, &g1, &b1);
-		api->putpixel(canvas, x, y, SDL_MapRGB(canvas->format, clamp(0.0, r1 + SHARPEN * sharpen_temp[x*(canvas->h-1) + y], 255.0), 
-													clamp(0.0, g1 + SHARPEN * sharpen_temp[x*(canvas->h-1) + y], 255.0), 
-													clamp(0.0, b1 + SHARPEN * sharpen_temp[x*(canvas->h-1) + y], 255.0)));
+		SDL_GetRGB(api->getpixel(canvas, x, y), canvas->format, &r1, &g1, &b1);
+		api->putpixel(canvas, x, y, SDL_MapRGB(canvas->format, clamp(0.0, r1 + SHARPEN * temp, 255.0), 
+													clamp(0.0, g1 + SHARPEN * temp, 255.0), 
+													clamp(0.0, b1 + SHARPEN * temp, 255.0)));
 	}
 }
 
@@ -251,10 +265,6 @@ void sharpen_shutdown(magic_api * api)
 			Mix_FreeChunk(sharpen_snd_effect[i]);
 		}
 	}
-  
-  if (sharpen_temp != NULL){
-    free(sharpen_temp);
-  }
 }
 
 // Record the color from Tux Paint:
@@ -270,56 +280,6 @@ int sharpen_requires_colors(magic_api * api, int which)
 
 void sharpen_switchin(magic_api * api, int which, int mode, SDL_Surface * canvas)
 {
-	int x, y;
-	int grey;
-	Uint8 r1, g1, b1;
-
-	//For sobel calculation
-	int i,j;
-	int sobel_1,sobel_2;
-
-	//For normalisation
-	double min=INT_MAX;
-	double max=0;
-
-
-	//Sobel weighting masks
-	const int sobel_weights_1[3][3] = {	{1,2,1},
-                                      {0,0,0},
-                                      {-1,-2,-1}};
-	const int sobel_weights_2[3][3] = {	{-1,0,1},
-                                      {-2,0,2},
-                                      {-1,0,1}};
-
-	for (y = 0; y < canvas->h; y++){
-		for (x=0; x < canvas->w; x++){
-			//Calculate Sobel edge values
-
-			sobel_1=0;
-			sobel_2=0;
-			for (i=-1;i<2;i++){
-				for(j=-1; j<2; j++){
-					//No need to check if inside canvas, getpixel does it for us.
-					SDL_GetRGB(api->getpixel(canvas, x+i, y+j), canvas->format, &r1, &g1, &b1);
-					grey = sharpen_grey(r1,g1,b1);
-					sobel_1 += grey * sobel_weights_1[i+1][j+1];
-					sobel_2 += grey * sobel_weights_2[i+1][j+1];
-				}
-			}
-
-			//And store in temp variable
-			//Cant just write to surface as they may not be 0-255 and surface will clamp them and lose data
-			sharpen_temp[x*(canvas->h-1) + y] = sqrt(sobel_1*sobel_1 + sobel_2*sobel_2);
-
-			//Calculate normalisation
-			if (sharpen_temp[x*(canvas->h-1) + y]<sharpen_min){
-				sharpen_min=sharpen_temp[x*(canvas->h-1) + y];
-			}
-			if(sharpen_temp[x*(canvas->h-1) + y]>sharpen_max){
-				sharpen_max=sharpen_temp[x*(canvas->h-1) + y];
-			}
-		}
-	}
 }
 
 void sharpen_switchout(magic_api * api, int which, int mode, SDL_Surface * canvas)
