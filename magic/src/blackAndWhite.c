@@ -121,6 +121,7 @@ static void do_blackAndWhite_pixel(void * ptr, int which,
   Uint8 r1,g1,b1;
 
   SDL_GetRGB(api->getpixel(last, x, y), last->format, &r1, &g1, &b1);
+  {
   int greyValue = blackAndWhite_grey(r1,g1,b1);
 
   if (which == TOOL_BANDW){
@@ -132,6 +133,7 @@ static void do_blackAndWhite_pixel(void * ptr, int which,
 		}else{
 			api->putpixel(canvas, x, y, SDL_MapRGB(canvas->format, 255, 255, 255));
 		}
+  }
   }
 }
 
@@ -237,13 +239,15 @@ void blackAndWhite_switchin(magic_api * api, int which, int mode, SDL_Surface * 
   for (y = 0; y < canvas->h; y++){
 		for (x=0; x < canvas->w; x++){
       SDL_GetRGB(api->getpixel(canvas, x, y), canvas->format, &r1, &g1, &b1);
+		{
 			int greyValue = blackAndWhite_grey(r1,g1,b1);
 		  if (greyValue<bandw_min){
 				bandw_min=greyValue;
 		  }
 			if (greyValue>bandw_max){
 				bandw_max=greyValue;
-			}		
+			}
+		}		
 		}
 	}
 }
