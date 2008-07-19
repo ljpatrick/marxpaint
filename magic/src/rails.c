@@ -1,6 +1,7 @@
 #include "tp_magic_api.h"
 #include "SDL_image.h"
 #include "SDL_mixer.h"
+#include <stdbool.h>
 
 Mix_Chunk * rails_snd;
 unsigned int rails_segments_x, rails_segments_y;	//how many segments do we have?
