@@ -22,7 +22,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
   
-  June 14, 2002 - July 10, 2008
+  June 14, 2002 - July 20, 2008
   $Id$
 */
 
@@ -1433,6 +1433,7 @@ static void disable_avail_tools(void);
 static void enable_avail_tools(void);
 static void reset_avail_tools(void);
 static int compare_dirent2s(struct dirent2 *f1, struct dirent2 *f2);
+static void redraw_tux_text(void);
 static void draw_tux_text(int which_tux, const char *const str,
 			  int want_right_to_left);
 static void draw_tux_text_ex(int which_tux, const char *const str,
@@ -10184,6 +10185,16 @@ static void draw_tux_text(int which_tux, const char *const str,
   draw_tux_text_ex(which_tux, str, want_right_to_left, 0);
 }
 
+int latest_tux;
+const char * latest_tux_text;
+int latest_r2l;
+Uint8 latest_locale_text;
+
+static void redraw_tux_text(void)
+{
+  draw_tux_text_ex(latest_tux, latest_tux_text, latest_r2l, latest_locale_text);
+}
+
 static void draw_tux_text_ex(int which_tux, const char *const str,
 			     int want_right_to_left, Uint8 locale_text)
 {
@@ -10191,6 +10202,11 @@ static void draw_tux_text_ex(int which_tux, const char *const str,
   SDL_Color black = { 0, 0, 0, 0 };
   int w;
   SDL_Surface * btn;
+
+  latest_tux = which_tux;
+  latest_tux_text = str;
+  latest_r2l = want_right_to_left;
+  latest_locale_text = locale_text;
 
 
   /* Remove any text-changing timer if one is running: */
@@ -18994,10 +19010,17 @@ void magic_switchout(SDL_Surface * last)
 void magic_switchin(SDL_Surface * last)
 {
   if (cur_tool == TOOL_MAGIC)
+  {
     magic_funcs[magics[cur_magic].handle_idx].switchin(magic_api_struct,
 					               magics[cur_magic].idx,
 					               magics[cur_magic].mode,
 					               canvas, last);
+
+    /* In case the Magic tool's switchin() called update_progress_bar(),
+       let's put the old Tux text back: */
+
+    redraw_tux_text();
+  }
 }
 
 int magic_modeint(int mode)
