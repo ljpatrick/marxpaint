@@ -1,8 +1,10 @@
 /*
   tint.c
 
-  Tint Magic Tool Plugin
+  tint, Tin the image into one colour or threshold it into pure colour and white
   Tux Paint - A simple drawing program for children.
+
+  Credits: Andrew Corcoran <akanewbie@gmail.com>
 
   Copyright (c) 2002-2008 by Bill Kendrick and others; see AUTHORS.txt
   bill@newbreedsoftware.com
@@ -23,113 +25,148 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  Last updated: July 9, 2008
+  Last updated: July 8, 2008
   $Id$
 */
 
 #include <stdio.h>
 #include <string.h>
+#include <libintl.h>
 #include "tp_magic_api.h"
 #include "SDL_image.h"
 #include "SDL_mixer.h"
+#include <math.h>
+#include <limits.h>
 
+#ifndef gettext_noop
+#define gettext_noop(String) String
+#endif
 
-/* Our globals: */
-
-static Mix_Chunk * tint_snd;
+enum {
+	TOOL_TINT,
+	TOOL_THRESHOLD,
+	tint_NUM_TOOLS
+};
 static Uint8 tint_r, tint_g, tint_b;
+static int tint_min = INT_MAX;
+static int tint_max = 0;
 
+static const int tint_RADIUS =16;
 
-// No setup required:
-int tint_init(magic_api * api)
-{
-  char fname[1024];
+static Mix_Chunk * tint_snd_effect[tint_NUM_TOOLS];
 
-  snprintf(fname, sizeof(fname), "%s/sounds/magic/tint.wav",
-	    api->data_directory);
-  tint_snd = Mix_LoadWAV(fname);
-
-  return(1);
-}
+const char * tint_snd_filenames[tint_NUM_TOOLS] = {
+  "tint.wav",
+  "flip.wav"
+};
+const char * tint_icon_filenames[tint_NUM_TOOLS] = {
+  "tint.png",
+  "flip.png"
+};
+const char * tint_names[tint_NUM_TOOLS] = {
+  gettext_noop("Tint"),
+  gettext_noop("Threshold")
+};
+const char * tint_descs[tint_NUM_TOOLS][2] = {
+  {gettext_noop("Click and move the mouse around to change the color of parts of the picture."),
+    gettext_noop("Click to change the entire picture’s color."),},
+  {gettext_noop("Click and move the mouse around to threshold the image into pure colour and white regions."),
+    gettext_noop("Click to threshold the image into pure colour and white regions.")}
+};
 
 Uint32 tint_api_version(void) { return(TP_MAGIC_API_VERSION); }
 
-// We have multiple tools:
-int tint_get_tool_count(magic_api * api)
-{
+//Load sounds
+int tint_init(magic_api * api){
+  int i;
+  char fname[1024];
+
+  for (i = 0; i < tint_NUM_TOOLS; i++){
+    snprintf(fname, sizeof(fname), "%s/sounds/magic/%s", api->data_directory, tint_snd_filenames[i]);
+    tint_snd_effect[i] = Mix_LoadWAV(fname);
+  }
   return(1);
 }
 
+int tint_get_tool_count(magic_api * api){
+  return(tint_NUM_TOOLS);
+}
+
 // Load our icons:
-SDL_Surface * tint_get_icon(magic_api * api, int which)
-{
+SDL_Surface * tint_get_icon(magic_api * api, int which){
   char fname[1024];
-
-  snprintf(fname, sizeof(fname), "%s/images/magic/tint.png",
-	   api->data_directory);
-
+  snprintf(fname, sizeof(fname), "%simages/magic/%s", api->data_directory, tint_icon_filenames[which]);
   return(IMG_Load(fname));
 }
 
 // Return our names, localized:
-char * tint_get_name(magic_api * api, int which)
-{
-  return(strdup(gettext_noop("Tint")));
+char * tint_get_name(magic_api * api, int which){
+    return(strdup(gettext(tint_names[which])));
 }
 
 // Return our descriptions, localized:
-char * tint_get_description(magic_api * api, int which, int mode)
-{
-  if (mode == MODE_PAINT)
-    return(strdup(gettext_noop("Click and move the mouse around to change the color of parts of the picture.")));
-  else
-    return(strdup(gettext_noop("Click to change the entire picture’s color.")));
+char * tint_get_description(magic_api * api, int which, int mode){
+  return(strdup(gettext(tint_descs[which][mode-1])));
+}
+
+//Calculates the grey scale value for a rgb pixel
+static int tint_grey(Uint8 r1,Uint8 g1,Uint8 b1){
+	return 0.3*r1+.59*g1+0.11*b1;
+}
+
+static void do_tint_pixel(void * ptr, int which,
+	         SDL_Surface * canvas, SDL_Surface * last,
+	         int x, int y){
+
+	magic_api * api = (magic_api *) ptr;
+  Uint8 r,g,b;
+  float h,s,v;
+
+  SDL_GetRGB(api->getpixel(last, x, y), last->format, &r, &g, &b);
+  {
+
+  int greyValue = tint_grey(r,g,b);
+
+  if (which == TOOL_TINT){
+    api->rgbtohsv(tint_r, tint_g, tint_b, &h, &s, &v);
+    api->hsvtorgb(h, s, greyValue/255.0, &r, &g, &b);
+    api->putpixel(canvas, x, y, SDL_MapRGB(canvas->format, r, g, b));
+  }else if (which == TOOL_THRESHOLD){
+    int thresholdValue = (tint_max-tint_min)/2;
+		if (greyValue < thresholdValue){
+			api->putpixel(canvas, x, y, SDL_MapRGB(canvas->format, tint_r, tint_g, tint_b));
+		}else{
+			api->putpixel(canvas, x, y, SDL_MapRGB(canvas->format, 255, 255, 255));
+		}
+  }
+  }
 }
 
 // Do the effect:
+static void do_tint_full(void * ptr,SDL_Surface * canvas, SDL_Surface * last, int which){
 
-static void do_tint(void * ptr, SDL_Surface * canvas, SDL_Surface * last,
-                int x, int y)
-{
-  magic_api * api = (magic_api *) ptr;
-  double rd = api->sRGB_to_linear(tint_r);
-  double gd = api->sRGB_to_linear(tint_g);
-  double bd = api->sRGB_to_linear(tint_b);
-  double old;
-  Uint8 r, g, b;
+	magic_api * api = (magic_api *) ptr;
 
-  /* Get original pixel: */
-
-  SDL_GetRGB(api->getpixel(last, x, y), last->format, &r, &g, &b);
-
-  old = api->sRGB_to_linear(r) * 0.2126 +
-  api->sRGB_to_linear(g) * 0.7152 +
-  api->sRGB_to_linear(b) * 0.0722;
-
-  api->putpixel(canvas, x, y,
-		SDL_MapRGB(canvas->format,
-			api->linear_to_sRGB(rd * old),
-			api->linear_to_sRGB(gd * old),
-			api->linear_to_sRGB(bd * old)));
+	int x,y;
+	for (y = 0; y < last->h; y++){
+		for (x=0; x < last->w; x++){
+      do_tint_pixel(ptr, which, canvas, last, x, y);
+    }
+  }
 }
 
-
-static void do_tint_paint(void * ptr, int which, SDL_Surface * canvas, SDL_Surface * last,
-                int x, int y)
-{
-  magic_api * api = (magic_api *) ptr;
+static void do_tint_brush(void * ptr, int which, SDL_Surface * canvas, SDL_Surface * last, int x, int y){
   int xx, yy;
+  magic_api * api = (magic_api *) ptr;
 
-  for (yy = y - 16; yy < y + 16; yy++)
+  for (yy = y - tint_RADIUS; yy < y + tint_RADIUS; yy++)
   {
-    for (xx = x - 16; xx < x + 16; xx++)
+    for (xx = x - tint_RADIUS; xx < x + tint_RADIUS; xx++)
     {
-      if (api->in_circle(xx - x, yy - y, 16))
+      if (api->in_circle(xx - x, yy - y, tint_RADIUS) &&
+	    !api->touched(xx, yy))
       {
-        if (!api->touched(xx, yy))
-        {
-          do_tint(ptr, canvas, last, xx, yy);
-        }
+        do_tint_pixel(api, which, canvas, last, xx, yy);
       }
     }
   }
@@ -138,56 +175,54 @@ static void do_tint_paint(void * ptr, int which, SDL_Surface * canvas, SDL_Surfa
 // Affect the canvas on drag:
 void tint_drag(magic_api * api, int which, SDL_Surface * canvas,
 	          SDL_Surface * last, int ox, int oy, int x, int y,
-		  SDL_Rect * update_rect)
-{
-  api->line((void *) api, which, canvas, last, ox, oy, x, y, 1, do_tint_paint);
+		  SDL_Rect * update_rect){
+
+  api->line((void *) api, which, canvas, last, ox, oy, x, y, 1, do_tint_brush);
+
+  api->playsound(tint_snd_effect[which], (x * 255) / canvas->w, 255);
 
   if (ox > x) { int tmp = ox; ox = x; x = tmp; }
   if (oy > y) { int tmp = oy; oy = y; y = tmp; }
 
-  update_rect->x = ox - 16;
-  update_rect->y = oy - 16;
-  update_rect->w = (x + 16) - update_rect->x;
-  update_rect->h = (y + 16) - update_rect->y;
-
-  api->playsound(tint_snd, (x * 255) / canvas->w, 255);
+  update_rect->x = ox - tint_RADIUS;
+  update_rect->y = oy - tint_RADIUS;
+  update_rect->w = (x + tint_RADIUS) - update_rect->x;
+  update_rect->h = (y + tint_RADIUS) - update_rect->y;
 }
 
 // Affect the canvas on click:
 void tint_click(magic_api * api, int which, int mode,
 	           SDL_Surface * canvas, SDL_Surface * last,
-	           int x, int y, SDL_Rect * update_rect)
-{
+	           int x, int y, SDL_Rect * update_rect){
   if (mode == MODE_PAINT)
     tint_drag(api, which, canvas, last, x, y, x, y, update_rect);
-  else
-  {
-    int xx, yy;
-
-    for (yy = 0; yy < canvas->h; yy++)
-      for (xx = 0; xx < canvas->w; xx++)
-        do_tint(api, canvas, last, xx, yy);
-
+  else{
     update_rect->x = 0;
     update_rect->y = 0;
     update_rect->w = canvas->w;
     update_rect->h = canvas->h;
-
-    /* FIXME: Play sfx */
+    do_tint_full(api, canvas,  last, which);
+    api->playsound(tint_snd_effect[which], 128, 255);
   }
 }
 
-
+// Affect the canvas on release:
 void tint_release(magic_api * api, int which,
 	           SDL_Surface * canvas, SDL_Surface * last,
 	           int x, int y, SDL_Rect * update_rect)
 {
 }
 
+// No setup happened:
 void tint_shutdown(magic_api * api)
 {
-  if (tint_snd != NULL)
-    Mix_FreeChunk(tint_snd);
+	//Clean up sounds
+	int i;
+	for(i=0; i<tint_NUM_TOOLS; i++){
+		if(tint_snd_effect[i] != NULL){
+			Mix_FreeChunk(tint_snd_effect[i]);
+		}
+	}
 }
 
 // Record the color from Tux Paint:
@@ -204,8 +239,25 @@ int tint_requires_colors(magic_api * api, int which)
   return 1;
 }
 
-void tint_switchin(magic_api * api, int which, int mode, SDL_Surface * canvas)
-{
+void tint_switchin(magic_api * api, int which, int mode, SDL_Surface * canvas){
+
+	int x,y;
+	Uint8 r1,g1,b1;
+
+  for (y = 0; y < canvas->h; y++){
+		for (x=0; x < canvas->w; x++){
+      SDL_GetRGB(api->getpixel(canvas, x, y), canvas->format, &r1, &g1, &b1);
+		{
+			int greyValue = tint_grey(r1,g1,b1);
+		  if (greyValue<tint_min){
+				tint_min=greyValue;
+		  }
+			if (greyValue>tint_max){
+				tint_max=greyValue;
+			}
+		}		
+		}
+	}
 }
 
 void tint_switchout(magic_api * api, int which, int mode, SDL_Surface * canvas)
@@ -214,5 +266,5 @@ void tint_switchout(magic_api * api, int which, int mode, SDL_Surface * canvas)
 
 int tint_modes(magic_api * api, int which)
 {
-  return(MODE_PAINT | MODE_FULLSCREEN);
+  return(MODE_FULLSCREEN|MODE_PAINT);
 }

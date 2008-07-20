@@ -5,6 +5,8 @@
   Requires the mosaicAll sharpen and noise tools.
   Tux Paint - A simple drawing program for children.
 
+  Credits: Andrew Corcoran <akanewbie@gmail.com>
+
   Copyright (c) 2002-2007 by Bill Kendrick and others; see AUTHORS.txt
   bill@newbreedsoftware.com
   http://www.tuxpaint.org/
@@ -37,9 +39,6 @@
 #include <math.h>
 #include <limits.h>
 #include <time.h>
-//#include "noise.c"
-//#include "sharpen.c"
-//#include "blur.c"
 
 
 #ifndef gettext_noop
@@ -371,7 +370,7 @@ void mosaic_switchin(magic_api * api, int which, int mode, SDL_Surface * canvas)
   //Sharpen the temp surface
   for (y = 0; y < canvas->h; y++){ 
 		for (x=0; x < canvas->w; x++){
-      //We dont want pixels to be affected by already blurred nearby pixels so we require two surfaces
+      //We dont want pixels to be affected by already sharpened pixels so we require two surfaces
       mosaic_sharpen_pixel(api, mosaic_final, mosaic_temp, x, y);
     }
   }

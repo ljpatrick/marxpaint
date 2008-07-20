@@ -4,6 +4,8 @@
   noise,Add noise the whole image.
   Tux Paint - A simple drawing program for children.
 
+  Credits: Andrew Corcoran <akanewbie@gmail.com>
+
   Copyright (c) 2002-2007 by Bill Kendrick and others; see AUTHORS.txt
   bill@newbreedsoftware.com
   http://www.tuxpaint.org/

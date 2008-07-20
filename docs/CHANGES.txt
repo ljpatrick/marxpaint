@@ -23,10 +23,11 @@ $Id$
       + Sharpen - Sharpens entire image
       + Trace Contour - Traces the edges of the image, over a white background.
       + Silhouette - Creates an outline of the image, over a black background.
-      + Black & White - Removes all color from the image (turns it greyscale).
-      + Threshold - Turns image pure black & pure white (no grey or color).
+      + Threshold - Turns image pure colour & pure white (no grey or color).
       + Snow Ball - Places random snow balls over the image.
       + Snow Flake - Places random snow flakes over the image.
+      + Noise - Adds random noise to the image.
+      + Mosaic - Gives the image a mosaic effect.
       By Andrew 'akanewbie' Corcoran <akanewbie@gmail.com>
       (Part of Tux4Kids' participation in Google Summer of Code 2008)
 
