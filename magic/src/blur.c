@@ -118,7 +118,7 @@ static void do_blur_pixel(void * ptr, int which,
   for (i=-2;i<3;i++){
     for (j=-2;j<3;j++){
       //Add the pixels around the current one wieghted 
-			SDL_GetRGB(api->getpixel(canvas, x + i, y + j), canvas->format, &temp[0], &temp[1], &temp[2]);
+			SDL_GetRGB(api->getpixel(last, x + i, y + j), last->format, &temp[0], &temp[1], &temp[2]);
       for (k =0;k<3;k++){
 			  blurValue[k] += temp[k]* weight[i+2][j+2];
       }

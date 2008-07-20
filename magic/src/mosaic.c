@@ -47,8 +47,13 @@
 #endif
 
 
-double mosaic_AMOUNT= 30.0;
+const int mosaic_AMOUNT= 300;
 const int mosaic_RADIUS = 16;
+const double mosaic_SHARPEN = 1.0;
+
+//Holder for the pre calulated pixel values
+SDL_Surface * mosaic_temp;
+SDL_Surface * mosaic_final;
 
 enum {
 	TOOL_MOSAIC,
@@ -107,106 +112,15 @@ char * mosaic_get_description(magic_api * api, int which){
   return(strdup(gettext(mosaic_descs[which])));
 }
 
-//Do the effect for one pixel
-static void mosaic_do_noise_pixel(void * ptr, int which,
-	         SDL_Surface * canvas, SDL_Surface * last,
-	         int x, int y){
-	magic_api * api = (magic_api *) ptr;
-
-  Uint8 temp[3];
-  double temp2[3];
-
-  const int noise_AMOUNT = 100.0;
-
-	SDL_GetRGB(api->getpixel(canvas,x, y), canvas->format, &temp[0], &temp[1], &temp[2]);
-  int k;
-  for (k =0;k<3;k++){
-		temp2[k] = clamp(0.0, (int)temp[k] - (rand()%noise_AMOUNT) + noise_AMOUNT/2.0, 255.0);
-  }
-	api->putpixel(canvas, x, y, SDL_MapRGB(canvas->format, temp2[0], temp2[1], temp2[2]));
-
-}
-
-//Do the effect for one pixel
-static void mosaic_do_blur_pixel(void * ptr, int which,
-	         SDL_Surface * canvas, SDL_Surface * last,
-	         int x, int y){
-  magic_api * api = (magic_api *) ptr;
-  int i,j,k;
-	Uint8 temp[3];
-  double blurValue[3];
-
-  for (k =0;k<3;k++){
-		blurValue[k] = 0;
-  }
-
-  //5x5 gaussiann weighting window
-  const int weight[5][5] = {  {1,4,7,4,1},
-                              {4,16,26,16,4},
-                              {7,26,41,26,7},
-                              {4,16,26,16,4},
-                              {1,4,7,4,1}};
-  for (i=-2;i<3;i++){
-    for (j=-2;j<3;j++){
-      //Add the pixels around the current one wieghted 
-			SDL_GetRGB(api->getpixel(canvas, x + i, y + j), canvas->format, &temp[0], &temp[1], &temp[2]);
-      for (k =0;k<3;k++){
-			  blurValue[k] += temp[k]* weight[i+2][j+2];
-      }
-    }
-  }
-  for (k =0;k<3;k++){
-    blurValue[k] /= 273;
-  }
-	api->putpixel(canvas, x, y, SDL_MapRGB(canvas->format, blurValue[0], blurValue[1], blurValue[2]));
-}
-
 //Calculates the grey scale value for a rgb pixel
 static int mosaic_grey(Uint8 r1,Uint8 g1,Uint8 b1){
 	return 0.3*r1+.59*g1+0.11*b1;
 }
 
-// Do the effect:
-static void mosaic_do_sharpen_pixel(void * ptr, int which,
-	         SDL_Surface * canvas, SDL_Surface * last,
-	         int x, int y){
+//Do the effect for one pixel
+static void mosaic_do_noise_pixel(magic_api * api, SDL_Surface * canvas, SDL_Surface * last, int x, int y){
 
-	magic_api * api = (magic_api *) ptr;
 
-	Uint8 r1, g1, b1;
- 	int grey;
-	int i,j;
-	double sobel_1=0,sobel_2=0;
-  const double SHARPEN = 0.5;
-
-  	//Sobel weighting masks
-	const int sobel_weights_1[3][3] = {	{1,2,1},
-                                      {0,0,0},
-                                      {-1,-2,-1}};
-	const int sobel_weights_2[3][3] = {	{-1,0,1},
-                                      {-2,0,2},
-                                      {-1,0,1}};
-
-			sobel_1=0;
-			sobel_2=0;
-			for (i=-1;i<2;i++){
-				for(j=-1; j<2; j++){
-					//No need to check if inside canvas, getpixel does it for us.
-					SDL_GetRGB(api->getpixel(canvas, x+i, y+j), canvas->format, &r1, &g1, &b1);
-					grey = mosaic_grey(r1,g1,b1);
-					sobel_1 += grey * sobel_weights_1[i+1][j+1];
-					sobel_2 += grey * sobel_weights_2[i+1][j+1];
-				}
-			}
-  
-  double temp = sqrt(sobel_1*sobel_1 + sobel_2*sobel_2);
-  temp = (temp/1443)*255.0;
-
-	SDL_GetRGB(api->getpixel(canvas, x, y), canvas->format, &r1, &g1, &b1);
-	api->putpixel(canvas, x, y, SDL_MapRGB(canvas->format, clamp(0.0, r1 + SHARPEN * temp, 255.0), 
-													clamp(0.0, g1 + SHARPEN * temp, 255.0), 
-													clamp(0.0, b1 + SHARPEN * temp, 255.0)));
-	
 }
 
 //Do the effect for one pixel
@@ -214,12 +128,10 @@ static void do_mosaic_pixel(void * ptr, int which,
 	         SDL_Surface * canvas, SDL_Surface * last,
 	         int x, int y){
   magic_api * api = (magic_api *) ptr;
-  int i;
-  for (i=0;i<3;i++){
-    mosaic_do_noise_pixel(ptr, 0, canvas, canvas, x, y);
-  }
-  mosaic_do_blur_pixel(ptr, 0, canvas, canvas, x, y);
-  //mosaic_do_sharpen_pixel(ptr, 0, canvas, last, x, y); 
+
+  Uint8 r1,g1,b1;
+  SDL_GetRGB(api->getpixel(mosaic_final, x, y), mosaic_final->format, &r1, &g1, &b1);
+  api->putpixel(canvas, x, y, SDL_MapRGB(canvas->format, r1, g1, b1));
 }
 
 // Do the effect for the full image
@@ -229,8 +141,8 @@ static void do_mosaic_full(void * ptr, SDL_Surface * canvas, SDL_Surface * last,
 
 	int x,y;
 
-	for (y = 0; y < last->h; y++){ 
-		for (x=0; x < last->w; x++){
+	for (y = 0; y < canvas->h; y++){ 
+		for (x=0; x < canvas->w; x++){
       do_mosaic_pixel(ptr, which, canvas, last, x, y);
 	  }
   }
@@ -319,12 +231,157 @@ int mosaic_requires_colors(magic_api * api, int which)
   return 0;
 }
 
+//Add noise to a pixel
+static void mosaic_noise_pixel(void * ptr, SDL_Surface * canvas, int noise_AMOUNT, int x, int y){
+	magic_api * api = (magic_api *) ptr;
+
+  Uint8 temp[3];
+  double temp2[3];
+
+	SDL_GetRGB(api->getpixel(canvas,x, y), canvas->format, &temp[0], &temp[1], &temp[2]);
+  int k;
+  for (k =0;k<3;k++){
+		temp2[k] = clamp(0.0, (int)temp[k] - (rand()%noise_AMOUNT) + noise_AMOUNT/2.0, 255.0);
+  }
+  api->putpixel(canvas, x, y, SDL_MapRGB(canvas->format, temp2[0], temp2[1], temp2[2]));
+}
+
+//Blur a pixel
+static void mosaic_blur_pixel(void * ptr, SDL_Surface * canvas, SDL_Surface * last, int x, int y){
+  magic_api * api = (magic_api *) ptr;
+  int i,j,k;
+	Uint8 temp[3];
+  double blurValue[3];
+
+  for (k =0;k<3;k++){
+		blurValue[k] = 0;
+  }
+
+  //5x5 gaussiann weighting window
+  const int weight[5][5] = {  {1,4,7,4,1},
+                              {4,16,26,16,4},
+                              {7,26,41,26,7},
+                              {4,16,26,16,4},
+                              {1,4,7,4,1}};
+  for (i=-2;i<3;i++){
+    for (j=-2;j<3;j++){
+      //Add the pixels around the current one wieghted 
+			SDL_GetRGB(api->getpixel(last, x + i, y + j), last->format, &temp[0], &temp[1], &temp[2]);
+      for (k =0;k<3;k++){
+			  blurValue[k] += temp[k]* weight[i+2][j+2];
+      }
+    }
+  }
+  for (k =0;k<3;k++){
+    blurValue[k] /= 273;
+  }
+	api->putpixel(canvas, x, y, SDL_MapRGB(canvas->format, blurValue[0], blurValue[1], blurValue[2]));
+}
+
+//Sharpen a pixel
+static void mosaic_sharpen_pixel(void * ptr,
+	         SDL_Surface * canvas, SDL_Surface * last,
+	         int x, int y){
+
+	magic_api * api = (magic_api *) ptr;
+
+	Uint8 r1, g1, b1;
+ 	int grey;
+	int i,j;
+	double sobel_1=0,sobel_2=0;
+
+  	//Sobel weighting masks
+	const int sobel_weights_1[3][3] = {	{1,2,1},
+                                      {0,0,0},
+                                      {-1,-2,-1}};
+	const int sobel_weights_2[3][3] = {	{-1,0,1},
+                                      {-2,0,2},
+                                      {-1,0,1}};
+
+			sobel_1=0;
+			sobel_2=0;
+			for (i=-1;i<2;i++){
+				for(j=-1; j<2; j++){
+					//No need to check if inside canvas, getpixel does it for us.
+					SDL_GetRGB(api->getpixel(last, x+i, y+j), last->format, &r1, &g1, &b1);
+					grey = mosaic_grey(r1,g1,b1);
+					sobel_1 += grey * sobel_weights_1[i+1][j+1];
+					sobel_2 += grey * sobel_weights_2[i+1][j+1];
+				}
+			}
+  
+  double temp = sqrt(sobel_1*sobel_1 + sobel_2*sobel_2);
+  temp = (temp/1443)*255.0;
+
+  SDL_GetRGB(api->getpixel(last, x, y), last->format, &r1, &g1, &b1);
+	api->putpixel(canvas, x, y, SDL_MapRGB(canvas->format, clamp(0.0, r1 + mosaic_SHARPEN * temp, 255.0), 
+													clamp(0.0, g1 + mosaic_SHARPEN * temp, 255.0), 
+													clamp(0.0, b1 + mosaic_SHARPEN * temp, 255.0)));
+	
+}
+
 void mosaic_switchin(magic_api * api, int which, int mode, SDL_Surface * canvas)
 {
+
+  //Create two temp surfaces to store the calculated pixel values
+  Uint32 amask = ~(canvas->format->Rmask |
+            canvas->format->Gmask |
+            canvas->format->Bmask);
+  mosaic_temp =
+    SDL_CreateRGBSurface(SDL_SWSURFACE,
+                         canvas->w,
+                         canvas->h,
+                         canvas->format->BitsPerPixel,
+                         canvas->format->Rmask,
+                         canvas->format->Gmask,
+                         canvas->format->Bmask, amask);
+  mosaic_final =
+    SDL_CreateRGBSurface(SDL_SWSURFACE,
+                         canvas->w,
+                         canvas->h,
+                         canvas->format->BitsPerPixel,
+                         canvas->format->Rmask,
+                         canvas->format->Gmask,
+                         canvas->format->Bmask, amask);
+
+  //Copy the canvas to the temp surface
+  SDL_BlitSurface(canvas, NULL, mosaic_final, NULL);
+
+  int x,y;
+
+  //Add noise to the temp surface
+  for (y = 0; y < canvas->h; y++){ 
+		for (x=0; x < canvas->w; x++){
+      mosaic_noise_pixel(api, mosaic_final, mosaic_AMOUNT, x, y);
+    }
+  }
+
+  api->update_progress_bar();
+
+  //Blur the temp surface
+  for (y = 0; y < canvas->h; y++){ 
+		for (x=0; x < canvas->w; x++){
+      //We dont want pixels to be affected by already blurred nearby pixels so we require two surfaces
+      mosaic_blur_pixel(api, mosaic_temp, mosaic_final, x, y);
+    }
+  }
+  
+  api->update_progress_bar();
+  
+  //Sharpen the temp surface
+  for (y = 0; y < canvas->h; y++){ 
+		for (x=0; x < canvas->w; x++){
+      //We dont want pixels to be affected by already blurred nearby pixels so we require two surfaces
+      mosaic_sharpen_pixel(api, mosaic_final, mosaic_temp, x, y);
+    }
+  }
+
 }
 
 void mosaic_switchout(magic_api * api, int which, int mode, SDL_Surface * canvas)
 {
+  SDL_FreeSurface(mosaic_temp);
+  SDL_FreeSurface(mosaic_final);
 }
 
 int mosaic_modes(magic_api * api, int which)

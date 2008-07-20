@@ -153,7 +153,7 @@ static void do_sharpen_pixel(void * ptr, int which,
 			for (i=-1;i<2;i++){
 				for(j=-1; j<2; j++){
 					//No need to check if inside canvas, getpixel does it for us.
-					SDL_GetRGB(api->getpixel(canvas, x+i, y+j), canvas->format, &r1, &g1, &b1);
+					SDL_GetRGB(api->getpixel(last, x+i, y+j), last->format, &r1, &g1, &b1);
 					grey = sharpen_grey(r1,g1,b1);
 					sobel_1 += grey * sobel_weights_1[i+1][j+1];
 					sobel_2 += grey * sobel_weights_2[i+1][j+1];
@@ -175,7 +175,7 @@ static void do_sharpen_pixel(void * ptr, int which,
 	}
 	//Add the edge values to the original image, creating a more distinct jump in contrast at edges
 	else if(which == TOOL_SHARPEN){
-		SDL_GetRGB(api->getpixel(canvas, x, y), canvas->format, &r1, &g1, &b1);
+		SDL_GetRGB(api->getpixel(last, x, y), last->format, &r1, &g1, &b1);
 		api->putpixel(canvas, x, y, SDL_MapRGB(canvas->format, clamp(0.0, r1 + SHARPEN * temp, 255.0), 
 													clamp(0.0, g1 + SHARPEN * temp, 255.0), 
 													clamp(0.0, b1 + SHARPEN * temp, 255.0)));
