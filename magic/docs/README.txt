@@ -6,7 +6,7 @@
                            bill@newbreedsoftware.com
                             http://www.tuxpaint.org/
 
-                          July 5, 2007 - July 10, 2008
+                          July 5, 2007 - July 19, 2008
 
      ----------------------------------------------------------------------
 
@@ -493,7 +493,7 @@ Interfaces
 
     Tux Paint System Calls
 
-           * void show_progress_bar(void)
+           * void update_progress_bar(void)
              Asks Tux Paint to animate and draw one frame of its progress bar
              (at the bottom of the screen). Useful for routines that may take
              a long time, to provide feedback to the user that Tux Paint has
