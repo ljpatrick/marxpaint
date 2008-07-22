@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint 0.9.17\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-07-13 17:29-0700\n"
+"POT-Creation-Date: 2008-07-22 00:15-0700\n"
 "PO-Revision-Date: 2007-05-11 08:44+0100\n"
 "Last-Translator: Kevin Patrick Scannell <kscanne@gmail.com>\n"
 "Language-Team: Irish <gaeilge-gnulinux@lists.sourceforge.net>\n"
@@ -382,7 +382,7 @@ msgstr "Nua"
 #. Open a saved picture
 #. buttons for the file open dialog
 #. Open dialog: 'Open' button, to load the selected picture
-#: ../tools.h:75 ../tuxpaint.c:7965
+#: ../tools.h:75 ../tuxpaint.c:7966
 msgid "Open"
 msgstr "Oscail"
 
@@ -499,175 +499,175 @@ msgid "OK then… Let’s keep drawing this one!"
 msgstr "OK… Bímis ag dearadh an cheann seo!"
 
 #. Prompt to confirm user wishes to quit
-#: ../tuxpaint.c:1840
+#: ../tuxpaint.c:1841
 msgid "Do you really want to quit?"
 msgstr "An bhfuil tú cinnte gur mhaith leat scor?"
 
 #. Quit prompt positive response (quit)
-#: ../tuxpaint.c:1843
+#: ../tuxpaint.c:1844
 msgid "Yes, I'm done!"
 msgstr "Tá, táim críochnaithe!"
 
 #. Quit prompt negative response (don't quit)
-#: ../tuxpaint.c:1846 ../tuxpaint.c:1873
+#: ../tuxpaint.c:1847 ../tuxpaint.c:1874
 msgid "No, take me back!"
 msgstr "Níl, ba mhaith liom dul ar ais!"
 
 #. Current picture is not saved; user is quitting
-#: ../tuxpaint.c:1850
+#: ../tuxpaint.c:1851
 msgid "If you quit, you’ll lose your picture! Save it?"
 msgstr "Má scoireann tú, caillfidh tú an pictiúr atá agatsa! Sábháil?"
 
-#: ../tuxpaint.c:1851 ../tuxpaint.c:1856
+#: ../tuxpaint.c:1852 ../tuxpaint.c:1857
 msgid "Yes, save it!"
 msgstr "Sábhail!"
 
-#: ../tuxpaint.c:1852 ../tuxpaint.c:1857
+#: ../tuxpaint.c:1853 ../tuxpaint.c:1858
 msgid "No, don't bother saving!"
 msgstr "Ná sábhail!"
 
 #. Current picture is not saved; user is opening another picture
-#: ../tuxpaint.c:1855
+#: ../tuxpaint.c:1856
 msgid "Save your picture first?"
 msgstr "Sábháil ar dtús?"
 
 #. Error opening picture
-#: ../tuxpaint.c:1860
+#: ../tuxpaint.c:1861
 msgid "Can’t open that picture!"
 msgstr "Ní féidir an pictiúr sin a oscailt!"
 
 #. Generic dialog dismissal
-#: ../tuxpaint.c:1863 ../tuxpaint.c:1868 ../tuxpaint.c:1877 ../tuxpaint.c:1881
-#: ../tuxpaint.c:1890
+#: ../tuxpaint.c:1864 ../tuxpaint.c:1869 ../tuxpaint.c:1878 ../tuxpaint.c:1882
+#: ../tuxpaint.c:1891
 msgid "OK"
 msgstr "OK"
 
 #. Notification that 'Open' dialog has nothing to show
-#: ../tuxpaint.c:1867
+#: ../tuxpaint.c:1868
 msgid "There are no saved files!"
 msgstr "Níl aon chomhad sábháilte ann!"
 
 #. Verification of print action
-#: ../tuxpaint.c:1871
+#: ../tuxpaint.c:1872
 msgid "Print your picture now?"
 msgstr "Priontáil an pictiúr anois?"
 
-#: ../tuxpaint.c:1872
+#: ../tuxpaint.c:1873
 msgid "Yes, print it!"
 msgstr "Priontáil!"
 
 #. Confirmation of successful (we hope) printing
-#: ../tuxpaint.c:1876
+#: ../tuxpaint.c:1877
 msgid "Your picture has been printed!"
 msgstr "Priontáladh an pictiúr agatsa!"
 
 #. Notification that it's too soon to print again (--printdelay option is in effect)
-#: ../tuxpaint.c:1880
+#: ../tuxpaint.c:1881
 msgid "You can’t print yet!"
 msgstr "Ní féidir leat priontáil fós!"
 
 #. Prompt to confirm erasing a picture in the Open dialog
-#: ../tuxpaint.c:1884
+#: ../tuxpaint.c:1885
 msgid "Erase this picture?"
 msgstr "Léirscrios an pictiúr seo?"
 
-#: ../tuxpaint.c:1885
+#: ../tuxpaint.c:1886
 msgid "Yes, erase it!"
 msgstr "Léirscrios!"
 
-#: ../tuxpaint.c:1886
+#: ../tuxpaint.c:1887
 msgid "No, don't erase it!"
 msgstr "Ná léirscrios!"
 
 #. Reminder that Mouse Button 1 is the button to use in Tux Paint
-#: ../tuxpaint.c:1889
+#: ../tuxpaint.c:1890
 msgid "Remember to use the left mouse button!"
 msgstr "Bí cinnte an cnaipe ar chlé a úsáid!"
 
 #. Sound has been muted (silenced) via keyboard shortcut
-#: ../tuxpaint.c:2004
+#: ../tuxpaint.c:2005
 msgid "Sound muted."
 msgstr ""
 
 #. Sound has been unmuted (unsilenced) via keyboard shortcut
-#: ../tuxpaint.c:2009
+#: ../tuxpaint.c:2010
 msgid "Sound unmuted."
 msgstr ""
 
 #. Wait while Text tool finishes loading fonts
-#: ../tuxpaint.c:2475
+#: ../tuxpaint.c:2476
 msgid "Please wait…"
 msgstr "Fan go fóill..."
 
-#: ../tuxpaint.c:7188
+#: ../tuxpaint.c:7189
 msgid "Pick a color."
 msgstr ""
 
 #. Open dialog: 'Erase' button, to erase/deleted the selected picture
-#: ../tuxpaint.c:7968
+#: ../tuxpaint.c:7969
 msgid "Erase"
 msgstr "Léirscrios"
 
 #. Open dialog: 'Slides' button, to switch to slide show mode
-#: ../tuxpaint.c:7971
+#: ../tuxpaint.c:7972
 msgid "Slides"
 msgstr "Sleamhnáin"
 
 #. Open dialog: 'Back' button, to dismiss Open dialog without opening a picture
-#: ../tuxpaint.c:7974
+#: ../tuxpaint.c:7975
 msgid "Back"
 msgstr "Siar"
 
 #. Slideshow: 'Next' button, to load next slide (image)
-#: ../tuxpaint.c:7977
+#: ../tuxpaint.c:7978
 msgid "Next"
 msgstr "Ar Aghaidh"
 
 #. Slideshow: 'Play' button, to begin a slideshow sequence
-#: ../tuxpaint.c:7980
+#: ../tuxpaint.c:7981
 msgid "Play"
 msgstr "Seinn"
 
 #. Label for 'Letters' buttons (font selector, down the right when the Text tool is being used); used to show the difference between font faces
-#: ../tuxpaint.c:8627
+#: ../tuxpaint.c:8628
 msgid "Aa"
 msgstr "Aa"
 
 #. Admittedly stupid way of determining which keys can be used for
 #. positive and negative responses in dialogs (e.g., [Y] (for 'yes') in English)
-#: ../tuxpaint.c:11532
+#: ../tuxpaint.c:11548
 msgid "Yes"
 msgstr "Tá"
 
-#: ../tuxpaint.c:11536
+#: ../tuxpaint.c:11552
 msgid "No"
 msgstr "Níl"
 
 #. Prompt to ask whether user wishes to save over old version of their file
-#: ../tuxpaint.c:12488
+#: ../tuxpaint.c:12504
 msgid "Replace the picture with your changes?"
 msgstr "Forscríobh an pictiúr le do chuid athruithe?"
 
 #. Positive response to saving over old version
 #. (like a 'File:Save' action in other applications)
-#: ../tuxpaint.c:12492
+#: ../tuxpaint.c:12508
 msgid "Yes, replace the old one!"
 msgstr "Forscríobh é!"
 
 #. Negative response to saving over old version (saves a new image)
 #. (like a 'File:Save As...' action in other applications)
-#: ../tuxpaint.c:12496
+#: ../tuxpaint.c:12512
 msgid "No, save a new file!"
 msgstr "Ná forscríobh, sábháil i gcomhad nua!"
 
-#: ../tuxpaint.c:13259
+#: ../tuxpaint.c:13275
 msgid "Choose the picture you want, then click “Open”."
 msgstr ""
 "Roghnaigh an pictiúr is mian leat a oscailt, agus ansin cliceáil “Oscail”."
 
 #. Let user choose images:
 #. Instructions for Slideshow file dialog (FIXME: Make a #define)
-#: ../tuxpaint.c:14246 ../tuxpaint.c:14560
+#: ../tuxpaint.c:14262 ../tuxpaint.c:14576
 msgid "Choose the pictures you want, then click “Play”."
 msgstr ""
 "Roghnaigh na pictiúir is mian leat a oscailt, agus ansin cliceáil “Seinn”."
@@ -782,6 +782,14 @@ msgstr "Cartún"
 msgid "Click and move the mouse around to turn the picture into a cartoon."
 msgstr "Cliceáil agus bog an luch chun cartún a dhéanamh ón phictiúr."
 
+#: ../../magic/src/confetti.c:63
+msgid "Confetti"
+msgstr ""
+
+#: ../../magic/src/confetti.c:65
+msgid "Click to throw a confetti!"
+msgstr ""
+
 #: ../../magic/src/distortion.c:121
 msgid "Distortion"
 msgstr ""
@@ -854,6 +862,10 @@ msgstr ""
 msgid "Click and drag the mouse to cover an area with foamy bubbles."
 msgstr "Cliceáil agus bog an luch chun an pictiúr a thiúchan."
 
+#: ../../magic/src/fold.c:62
+msgid "Choose a background color and click to turn the corner of the page over"
+msgstr ""
+
 #: ../../magic/src/glasstile.c:83
 msgid "Glass Tile"
 msgstr ""
@@ -875,16 +887,6 @@ msgstr "Féar"
 #: ../../magic/src/grass.c:98
 msgid "Click and move to draw grass. Don’t forget the dirt!"
 msgstr "Cliceáil agus bog chun féar a dhearadh. Ná déan dearmad ar an ithir!"
-
-#: ../../magic/src/jigsaw.c:62
-msgid "Jigsaw"
-msgstr ""
-
-#: ../../magic/src/jigsaw.c:65
-msgid ""
-"Click to make your picture into a jigsaw which you can print and cut out, "
-"make sure to ask an adult for help."
-msgstr ""
 
 #: ../../magic/src/kalidescope.c:77
 msgid "Kaleidoscope"
@@ -932,6 +934,16 @@ msgstr "Cliceáil le haghaidh íomhá scáthánach."
 msgid "Click to flip the picture upside-down."
 msgstr "Cliceáil chun an pictiúr a chur bunoscionn."
 
+#: ../../magic/src/mosaic.c:72
+#, fuzzy
+msgid "Mosaic"
+msgstr "Draíocht"
+
+#: ../../magic/src/mosaic.c:75
+#, fuzzy
+msgid "Click to add a mosaic effect to the image."
+msgstr "Cliceáil le haghaidh íomhá scáthánach."
+
 #: ../../magic/src/negative.c:72
 msgid "Negative"
 msgstr "Diúltach"
@@ -945,11 +957,20 @@ msgstr "Cliceáil agus bog an luch chun dearadh diúltach."
 msgid "Click to turn the image into its negative."
 msgstr "Cliceáil le haghaidh íomhá scáthánach."
 
-#: ../../magic/src/rails.c:74
+#: ../../magic/src/noise.c:61
+msgid "Noise"
+msgstr ""
+
+#: ../../magic/src/noise.c:64
+#, fuzzy
+msgid "Click to add noise to the image."
+msgstr "Cliceáil le haghaidh íomhá scáthánach."
+
+#: ../../magic/src/rails.c:75
 msgid "Rails"
 msgstr ""
 
-#: ../../magic/src/rails.c:76
+#: ../../magic/src/rails.c:77
 #, fuzzy
 msgid "Click and drag to draw train track rails on your picture."
 msgstr "Cliceáil agus bog an luch chun an pictiúr a thanú."
@@ -971,18 +992,23 @@ msgstr ""
 msgid "Click to make ripples appear over your picture."
 msgstr "Cliceáil agus bog an luch chun an pictiúr a thanú."
 
-#: ../../magic/src/sharpen.c:74
+#: ../../magic/src/sharpen.c:73
 msgid "Trace Contour"
 msgstr ""
 
-#: ../../magic/src/sharpen.c:75
+#: ../../magic/src/sharpen.c:74
 #, fuzzy
 msgid "Sharpen"
 msgstr "Cruthanna"
 
-#: ../../magic/src/sharpen.c:76
+#: ../../magic/src/sharpen.c:75
 msgid "Silhouette"
 msgstr ""
+
+#: ../../magic/src/sharpen.c:78
+#, fuzzy
+msgid "Click and move the mouse to trace the edges of objects in the image."
+msgstr "Cliceáil agus bog an luch chun an pictiúr a gheamhú."
 
 #: ../../magic/src/sharpen.c:79
 msgid "Click to trace the edges of objects in the image."
@@ -990,10 +1016,21 @@ msgstr ""
 
 #: ../../magic/src/sharpen.c:80
 #, fuzzy
+msgid "Click and move the mouse to sharpen the image."
+msgstr "Cliceáil agus bog an luch chun an pictiúr a gheamhú."
+
+#: ../../magic/src/sharpen.c:81
+#, fuzzy
 msgid "Click to sharpen the image."
 msgstr "Cliceáil le haghaidh íomhá scáthánach."
 
-#: ../../magic/src/sharpen.c:81
+#: ../../magic/src/sharpen.c:82
+#, fuzzy
+msgid ""
+"Click and move the mouse to create a black and white silhouette of the image."
+msgstr "Cliceáil agus bog an luch chun an pictiúr a gheamhú."
+
+#: ../../magic/src/sharpen.c:83
 msgid "Click to create a black and white silhouette of the image."
 msgstr ""
 

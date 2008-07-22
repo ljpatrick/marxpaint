@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint 0.9.17\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-07-13 17:29-0700\n"
+"POT-Creation-Date: 2008-07-22 00:15-0700\n"
 "PO-Revision-Date: 2007-11-18 21:25+0800\n"
 "Last-Translator: 黃敏松 <songhuang.tw@gmail.com>\n"
 "Language-Team: Chinese (traditional) <zh-l10n@linux.org.tw>\n"
@@ -382,7 +382,7 @@ msgstr "新圖"
 #. Open a saved picture
 #. buttons for the file open dialog
 #. Open dialog: 'Open' button, to load the selected picture
-#: ../tools.h:75 ../tuxpaint.c:7965
+#: ../tools.h:75 ../tuxpaint.c:7966
 msgid "Open"
 msgstr "打開"
 
@@ -500,176 +500,176 @@ msgid "OK then… Let’s keep drawing this one!"
 msgstr "很好，讓我們繼續來畫這張圖吧!"
 
 #. Prompt to confirm user wishes to quit
-#: ../tuxpaint.c:1840
+#: ../tuxpaint.c:1841
 msgid "Do you really want to quit?"
 msgstr "你確定要離開嗎?"
 
 #. Quit prompt positive response (quit)
-#: ../tuxpaint.c:1843
+#: ../tuxpaint.c:1844
 msgid "Yes, I'm done!"
 msgstr "好，我做完了!"
 
 #. Quit prompt negative response (don't quit)
-#: ../tuxpaint.c:1846 ../tuxpaint.c:1873
+#: ../tuxpaint.c:1847 ../tuxpaint.c:1874
 msgid "No, take me back!"
 msgstr "不，讓我回去!"
 
 #. Current picture is not saved; user is quitting
-#: ../tuxpaint.c:1850
+#: ../tuxpaint.c:1851
 msgid "If you quit, you’ll lose your picture! Save it?"
 msgstr "如果離開，將會丟掉你的圖畫喔! 要先存檔嗎?"
 
-#: ../tuxpaint.c:1851 ../tuxpaint.c:1856
+#: ../tuxpaint.c:1852 ../tuxpaint.c:1857
 msgid "Yes, save it!"
 msgstr "好，把它存起來!"
 
-#: ../tuxpaint.c:1852 ../tuxpaint.c:1857
+#: ../tuxpaint.c:1853 ../tuxpaint.c:1858
 msgid "No, don't bother saving!"
 msgstr "不，別存了!"
 
 #. Current picture is not saved; user is opening another picture
-#: ../tuxpaint.c:1855
+#: ../tuxpaint.c:1856
 msgid "Save your picture first?"
 msgstr "要先儲存你的圖畫嗎?"
 
 #. Error opening picture
-#: ../tuxpaint.c:1860
+#: ../tuxpaint.c:1861
 msgid "Can’t open that picture!"
 msgstr "沒辦法打開這個圖畫!"
 
 #. Generic dialog dismissal
-#: ../tuxpaint.c:1863 ../tuxpaint.c:1868 ../tuxpaint.c:1877 ../tuxpaint.c:1881
-#: ../tuxpaint.c:1890
+#: ../tuxpaint.c:1864 ../tuxpaint.c:1869 ../tuxpaint.c:1878 ../tuxpaint.c:1882
+#: ../tuxpaint.c:1891
 msgid "OK"
 msgstr "好的"
 
 #. Notification that 'Open' dialog has nothing to show
-#: ../tuxpaint.c:1867
+#: ../tuxpaint.c:1868
 msgid "There are no saved files!"
 msgstr "沒有已經儲存的檔案!"
 
 #. Verification of print action
-#: ../tuxpaint.c:1871
+#: ../tuxpaint.c:1872
 msgid "Print your picture now?"
 msgstr "現在要列印你的圖畫嗎?"
 
-#: ../tuxpaint.c:1872
+#: ../tuxpaint.c:1873
 msgid "Yes, print it!"
 msgstr "好，印出它來!"
 
 #. Confirmation of successful (we hope) printing
-#: ../tuxpaint.c:1876
+#: ../tuxpaint.c:1877
 msgid "Your picture has been printed!"
 msgstr "你的圖畫已經印出來了!"
 
 #. Notification that it's too soon to print again (--printdelay option is in effect)
-#: ../tuxpaint.c:1880
+#: ../tuxpaint.c:1881
 msgid "You can’t print yet!"
 msgstr "你還沒辦法列印喔!"
 
 #. Prompt to confirm erasing a picture in the Open dialog
-#: ../tuxpaint.c:1884
+#: ../tuxpaint.c:1885
 msgid "Erase this picture?"
 msgstr "要刪除這張圖畫嗎?"
 
-#: ../tuxpaint.c:1885
+#: ../tuxpaint.c:1886
 msgid "Yes, erase it!"
 msgstr "好，刪除它吧!"
 
-#: ../tuxpaint.c:1886
+#: ../tuxpaint.c:1887
 msgid "No, don't erase it!"
 msgstr "不，別刪除它!"
 
 #. Reminder that Mouse Button 1 is the button to use in Tux Paint
-#: ../tuxpaint.c:1889
+#: ../tuxpaint.c:1890
 msgid "Remember to use the left mouse button!"
 msgstr "記得使用滑鼠的左邊按鍵!"
 
 #  Sound has been muted (silenced) via keyboard shortcut
 #. Sound has been muted (silenced) via keyboard shortcut
-#: ../tuxpaint.c:2004
+#: ../tuxpaint.c:2005
 msgid "Sound muted."
 msgstr "靜音"
 
 #  Sound has been unmuted (unsilenced) via keyboard shortcut
 #. Sound has been unmuted (unsilenced) via keyboard shortcut
-#: ../tuxpaint.c:2009
+#: ../tuxpaint.c:2010
 msgid "Sound unmuted."
 msgstr "取消靜音"
 
 #. Wait while Text tool finishes loading fonts
-#: ../tuxpaint.c:2475
+#: ../tuxpaint.c:2476
 msgid "Please wait…"
 msgstr "請等一下…"
 
-#: ../tuxpaint.c:7188
+#: ../tuxpaint.c:7189
 msgid "Pick a color."
 msgstr "挑選一個顏色"
 
 #. Open dialog: 'Erase' button, to erase/deleted the selected picture
-#: ../tuxpaint.c:7968
+#: ../tuxpaint.c:7969
 msgid "Erase"
 msgstr "刪除"
 
 #. Open dialog: 'Slides' button, to switch to slide show mode
-#: ../tuxpaint.c:7971
+#: ../tuxpaint.c:7972
 msgid "Slides"
 msgstr "投影片"
 
 #. Open dialog: 'Back' button, to dismiss Open dialog without opening a picture
-#: ../tuxpaint.c:7974
+#: ../tuxpaint.c:7975
 msgid "Back"
 msgstr "上一個"
 
 #. Slideshow: 'Next' button, to load next slide (image)
-#: ../tuxpaint.c:7977
+#: ../tuxpaint.c:7978
 msgid "Next"
 msgstr "下一個"
 
 #. Slideshow: 'Play' button, to begin a slideshow sequence
-#: ../tuxpaint.c:7980
+#: ../tuxpaint.c:7981
 msgid "Play"
 msgstr "播放"
 
 #. Label for 'Letters' buttons (font selector, down the right when the Text tool is being used); used to show the difference between font faces
-#: ../tuxpaint.c:8627
+#: ../tuxpaint.c:8628
 msgid "Aa"
 msgstr "Aa"
 
 #. Admittedly stupid way of determining which keys can be used for
 #. positive and negative responses in dialogs (e.g., [Y] (for 'yes') in English)
-#: ../tuxpaint.c:11532
+#: ../tuxpaint.c:11548
 msgid "Yes"
 msgstr "好"
 
-#: ../tuxpaint.c:11536
+#: ../tuxpaint.c:11552
 msgid "No"
 msgstr "不"
 
 #. Prompt to ask whether user wishes to save over old version of their file
-#: ../tuxpaint.c:12488
+#: ../tuxpaint.c:12504
 msgid "Replace the picture with your changes?"
 msgstr "用你所做的改變來取代圖畫嗎?"
 
 #. Positive response to saving over old version
 #. (like a 'File:Save' action in other applications)
-#: ../tuxpaint.c:12492
+#: ../tuxpaint.c:12508
 msgid "Yes, replace the old one!"
 msgstr "好，取代舊的!"
 
 #. Negative response to saving over old version (saves a new image)
 #. (like a 'File:Save As...' action in other applications)
-#: ../tuxpaint.c:12496
+#: ../tuxpaint.c:12512
 msgid "No, save a new file!"
 msgstr "不，另外存一個新的檔案!"
 
-#: ../tuxpaint.c:13259
+#: ../tuxpaint.c:13275
 msgid "Choose the picture you want, then click “Open”."
 msgstr "選擇你想要的圖畫，然後按一下「打開」。"
 
 #. Let user choose images:
 #. Instructions for Slideshow file dialog (FIXME: Make a #define)
-#: ../tuxpaint.c:14246 ../tuxpaint.c:14560
+#: ../tuxpaint.c:14262 ../tuxpaint.c:14576
 msgid "Choose the pictures you want, then click “Play”."
 msgstr "選擇你要的一些圖畫，然後按一下「播放」。"
 
@@ -781,6 +781,14 @@ msgstr "卡通"
 msgid "Click and move the mouse around to turn the picture into a cartoon."
 msgstr "按著並移動滑鼠來將圖案變成卡通風格。"
 
+#: ../../magic/src/confetti.c:63
+msgid "Confetti"
+msgstr ""
+
+#: ../../magic/src/confetti.c:65
+msgid "Click to throw a confetti!"
+msgstr ""
+
 #: ../../magic/src/distortion.c:121
 msgid "Distortion"
 msgstr "扭曲"
@@ -849,6 +857,10 @@ msgstr "泡泡"
 msgid "Click and drag the mouse to cover an area with foamy bubbles."
 msgstr "在圖案中按下滑鼠來用泡泡填滿整個區域。"
 
+#: ../../magic/src/fold.c:62
+msgid "Choose a background color and click to turn the corner of the page over"
+msgstr ""
+
 #: ../../magic/src/glasstile.c:83
 msgid "Glass Tile"
 msgstr "玻璃磚"
@@ -869,16 +881,6 @@ msgstr "青草"
 #: ../../magic/src/grass.c:98
 msgid "Click and move to draw grass. Don’t forget the dirt!"
 msgstr "按著並移動滑鼠來畫出青草，別忘了泥土喔!"
-
-#: ../../magic/src/jigsaw.c:62
-msgid "Jigsaw"
-msgstr ""
-
-#: ../../magic/src/jigsaw.c:65
-msgid ""
-"Click to make your picture into a jigsaw which you can print and cut out, "
-"make sure to ask an adult for help."
-msgstr ""
 
 #: ../../magic/src/kalidescope.c:77
 msgid "Kaleidoscope"
@@ -921,6 +923,16 @@ msgstr "按一下可以產生左右對稱的圖畫。"
 msgid "Click to flip the picture upside-down."
 msgstr "按一下可以產生上下顛倒的圖畫。"
 
+#: ../../magic/src/mosaic.c:72
+#, fuzzy
+msgid "Mosaic"
+msgstr "魔法"
+
+#: ../../magic/src/mosaic.c:75
+#, fuzzy
+msgid "Click to add a mosaic effect to the image."
+msgstr "按一下可以產生左右對稱的圖畫。"
+
 #: ../../magic/src/negative.c:72
 msgid "Negative"
 msgstr "相反"
@@ -934,12 +946,21 @@ msgstr "按著並移動滑鼠來畫出相反的顏色。"
 msgid "Click to turn the image into its negative."
 msgstr "按一下可以產生左右對稱的圖畫。"
 
-#: ../../magic/src/rails.c:74
+#: ../../magic/src/noise.c:61
+msgid "Noise"
+msgstr ""
+
+#: ../../magic/src/noise.c:64
+#, fuzzy
+msgid "Click to add noise to the image."
+msgstr "按一下可以產生左右對稱的圖畫。"
+
+#: ../../magic/src/rails.c:75
 #, fuzzy
 msgid "Rails"
 msgstr "波浪"
 
-#: ../../magic/src/rails.c:76
+#: ../../magic/src/rails.c:77
 #, fuzzy
 msgid "Click and drag to draw train track rails on your picture."
 msgstr "按著並移動滑鼠畫一束光到你的圖上。"
@@ -960,18 +981,23 @@ msgstr "波浪"
 msgid "Click to make ripples appear over your picture."
 msgstr "按下會讓你的圖出現一個旋渦。"
 
-#: ../../magic/src/sharpen.c:74
+#: ../../magic/src/sharpen.c:73
 msgid "Trace Contour"
 msgstr ""
 
-#: ../../magic/src/sharpen.c:75
+#: ../../magic/src/sharpen.c:74
 #, fuzzy
 msgid "Sharpen"
 msgstr "形狀"
 
-#: ../../magic/src/sharpen.c:76
+#: ../../magic/src/sharpen.c:75
 msgid "Silhouette"
 msgstr ""
+
+#: ../../magic/src/sharpen.c:78
+#, fuzzy
+msgid "Click and move the mouse to trace the edges of objects in the image."
+msgstr "按著並移動滑鼠來使圖畫模糊。"
 
 #: ../../magic/src/sharpen.c:79
 msgid "Click to trace the edges of objects in the image."
@@ -979,10 +1005,21 @@ msgstr ""
 
 #: ../../magic/src/sharpen.c:80
 #, fuzzy
+msgid "Click and move the mouse to sharpen the image."
+msgstr "按著並移動滑鼠來使圖畫模糊。"
+
+#: ../../magic/src/sharpen.c:81
+#, fuzzy
 msgid "Click to sharpen the image."
 msgstr "按一下可以產生左右對稱的圖畫。"
 
-#: ../../magic/src/sharpen.c:81
+#: ../../magic/src/sharpen.c:82
+#, fuzzy
+msgid ""
+"Click and move the mouse to create a black and white silhouette of the image."
+msgstr "按著並移動滑鼠來使圖畫模糊。"
+
+#: ../../magic/src/sharpen.c:83
 msgid "Click to create a black and white silhouette of the image."
 msgstr ""
 

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-07-13 17:29-0700\n"
+"POT-Creation-Date: 2008-07-22 00:15-0700\n"
 "PO-Revision-Date: 2008-02-10 19:28+0400\n"
 "Last-Translator: Jamil Farzana <jamil.farzana@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -376,7 +376,7 @@ msgstr "Yeni"
 #. Open a saved picture
 #. buttons for the file open dialog
 #. Open dialog: 'Open' button, to load the selected picture
-#: ../tools.h:75 ../tuxpaint.c:7965
+#: ../tools.h:75 ../tuxpaint.c:7966
 msgid "Open"
 msgstr "Açmaq"
 
@@ -496,174 +496,174 @@ msgid "OK then… Let’s keep drawing this one!"
 msgstr "Yaxşı... Onda bu şəkil ilə davam edək!"
 
 #. Prompt to confirm user wishes to quit
-#: ../tuxpaint.c:1840
+#: ../tuxpaint.c:1841
 msgid "Do you really want to quit?"
 msgstr "Sən doğrudan da çıxmaq istəyirsən?"
 
 #. Quit prompt positive response (quit)
-#: ../tuxpaint.c:1843
+#: ../tuxpaint.c:1844
 msgid "Yes, I'm done!"
 msgstr "Bəli, çıxmaq istəyirəm!"
 
 #. Quit prompt negative response (don't quit)
-#: ../tuxpaint.c:1846 ../tuxpaint.c:1873
+#: ../tuxpaint.c:1847 ../tuxpaint.c:1874
 msgid "No, take me back!"
 msgstr "Yox, məni geriyə qaytar!"
 
 #. Current picture is not saved; user is quitting
-#: ../tuxpaint.c:1850
+#: ../tuxpaint.c:1851
 msgid "If you quit, you’ll lose your picture! Save it?"
 msgstr "Əqər çıxsan şəkil yaddaşa salınmayacaq! Mən onu yaddaşa salım?"
 
-#: ../tuxpaint.c:1851 ../tuxpaint.c:1856
+#: ../tuxpaint.c:1852 ../tuxpaint.c:1857
 msgid "Yes, save it!"
 msgstr "Bəli, yaddaşa sal!"
 
-#: ../tuxpaint.c:1852 ../tuxpaint.c:1857
+#: ../tuxpaint.c:1853 ../tuxpaint.c:1858
 msgid "No, don't bother saving!"
 msgstr "Yox!"
 
 #. Current picture is not saved; user is opening another picture
-#: ../tuxpaint.c:1855
+#: ../tuxpaint.c:1856
 msgid "Save your picture first?"
 msgstr "Şəkili yaddaşa salım?"
 
 #. Error opening picture
-#: ../tuxpaint.c:1860
+#: ../tuxpaint.c:1861
 msgid "Can’t open that picture!"
 msgstr "Bu şəkili aça bilmirəm!"
 
 #. Generic dialog dismissal
-#: ../tuxpaint.c:1863 ../tuxpaint.c:1868 ../tuxpaint.c:1877 ../tuxpaint.c:1881
-#: ../tuxpaint.c:1890
+#: ../tuxpaint.c:1864 ../tuxpaint.c:1869 ../tuxpaint.c:1878 ../tuxpaint.c:1882
+#: ../tuxpaint.c:1891
 msgid "OK"
 msgstr "OK"
 
 #. Notification that 'Open' dialog has nothing to show
-#: ../tuxpaint.c:1867
+#: ../tuxpaint.c:1868
 msgid "There are no saved files!"
 msgstr "Burada yaddaşda olan heç bir şəkil yoxdur!"
 
 #. Verification of print action
-#: ../tuxpaint.c:1871
+#: ../tuxpaint.c:1872
 msgid "Print your picture now?"
 msgstr "Sənin səkilini indi çap edim?"
 
-#: ../tuxpaint.c:1872
+#: ../tuxpaint.c:1873
 msgid "Yes, print it!"
 msgstr "Bəli, çap et!"
 
 #. Confirmation of successful (we hope) printing
-#: ../tuxpaint.c:1876
+#: ../tuxpaint.c:1877
 msgid "Your picture has been printed!"
 msgstr "Şəkilin çap edilib!"
 
 #. Notification that it's too soon to print again (--printdelay option is in effect)
-#: ../tuxpaint.c:1880
+#: ../tuxpaint.c:1881
 msgid "You can’t print yet!"
 msgstr "Çap edə bilmirəm!"
 
 #. Prompt to confirm erasing a picture in the Open dialog
-#: ../tuxpaint.c:1884
+#: ../tuxpaint.c:1885
 msgid "Erase this picture?"
 msgstr "Şəkili pozum?"
 
-#: ../tuxpaint.c:1885
+#: ../tuxpaint.c:1886
 msgid "Yes, erase it!"
 msgstr "Bəli, poz!"
 
-#: ../tuxpaint.c:1886
+#: ../tuxpaint.c:1887
 msgid "No, don't erase it!"
 msgstr "Yox, pozma"
 
 #. Reminder that Mouse Button 1 is the button to use in Tux Paint
-#: ../tuxpaint.c:1889
+#: ../tuxpaint.c:1890
 msgid "Remember to use the left mouse button!"
 msgstr "Mausun sol düyməsindən istifadə et!"
 
 #. Sound has been muted (silenced) via keyboard shortcut
-#: ../tuxpaint.c:2004
+#: ../tuxpaint.c:2005
 msgid "Sound muted."
 msgstr "Səs söndürülüb."
 
 #. Sound has been unmuted (unsilenced) via keyboard shortcut
-#: ../tuxpaint.c:2009
+#: ../tuxpaint.c:2010
 msgid "Sound unmuted."
 msgstr "Səs icazə olunub."
 
 #. Wait while Text tool finishes loading fonts
-#: ../tuxpaint.c:2475
+#: ../tuxpaint.c:2476
 msgid "Please wait…"
 msgstr "Bir az gözlə..."
 
-#: ../tuxpaint.c:7188
+#: ../tuxpaint.c:7189
 msgid "Pick a color."
 msgstr "Rəngi seç."
 
 #. Open dialog: 'Erase' button, to erase/deleted the selected picture
-#: ../tuxpaint.c:7968
+#: ../tuxpaint.c:7969
 msgid "Erase"
 msgstr "Poz"
 
 #. Open dialog: 'Slides' button, to switch to slide show mode
-#: ../tuxpaint.c:7971
+#: ../tuxpaint.c:7972
 msgid "Slides"
 msgstr "Cizgi filmi"
 
 #. Open dialog: 'Back' button, to dismiss Open dialog without opening a picture
-#: ../tuxpaint.c:7974
+#: ../tuxpaint.c:7975
 msgid "Back"
 msgstr "Geri"
 
 #. Slideshow: 'Next' button, to load next slide (image)
-#: ../tuxpaint.c:7977
+#: ../tuxpaint.c:7978
 msgid "Next"
 msgstr "İrəli"
 
 #. Slideshow: 'Play' button, to begin a slideshow sequence
-#: ../tuxpaint.c:7980
+#: ../tuxpaint.c:7981
 msgid "Play"
 msgstr "Oyna"
 
 #. Label for 'Letters' buttons (font selector, down the right when the Text tool is being used); used to show the difference between font faces
-#: ../tuxpaint.c:8627
+#: ../tuxpaint.c:8628
 msgid "Aa"
 msgstr "Aa"
 
 #. Admittedly stupid way of determining which keys can be used for
 #. positive and negative responses in dialogs (e.g., [Y] (for 'yes') in English)
-#: ../tuxpaint.c:11532
+#: ../tuxpaint.c:11548
 msgid "Yes"
 msgstr "Bəli"
 
-#: ../tuxpaint.c:11536
+#: ../tuxpaint.c:11552
 msgid "No"
 msgstr "Yox"
 
 #. Prompt to ask whether user wishes to save over old version of their file
-#: ../tuxpaint.c:12488
+#: ../tuxpaint.c:12504
 msgid "Replace the picture with your changes?"
 msgstr "Əvvəlki şəkili əvəz edim?"
 
 #. Positive response to saving over old version
 #. (like a 'File:Save' action in other applications)
-#: ../tuxpaint.c:12492
+#: ../tuxpaint.c:12508
 msgid "Yes, replace the old one!"
 msgstr "Bəli, əvəz et!"
 
 #. Negative response to saving over old version (saves a new image)
 #. (like a 'File:Save As...' action in other applications)
-#: ../tuxpaint.c:12496
+#: ../tuxpaint.c:12512
 msgid "No, save a new file!"
 msgstr "Yox, yeni şəkil kimi yaddaşa sal!"
 
-#: ../tuxpaint.c:13259
+#: ../tuxpaint.c:13275
 msgid "Choose the picture you want, then click “Open”."
 msgstr "İstədiyin şəkili şeç və \"Aç\" düyməsini bas."
 
 #. Let user choose images:
 #. Instructions for Slideshow file dialog (FIXME: Make a #define)
-#: ../tuxpaint.c:14246 ../tuxpaint.c:14560
+#: ../tuxpaint.c:14262 ../tuxpaint.c:14576
 msgid "Choose the pictures you want, then click “Play”."
 msgstr "İstədiyin şəkilləri şeç və \"Oyna\" düyməsini bas."
 
@@ -788,6 +788,14 @@ msgstr ""
 "Şəkili cizgi filminə çevirmək üçün mausun sol düyməsini bas və mausu "
 "hərəkətə gətir."
 
+#: ../../magic/src/confetti.c:63
+msgid "Confetti"
+msgstr ""
+
+#: ../../magic/src/confetti.c:65
+msgid "Click to throw a confetti!"
+msgstr ""
+
 #: ../../magic/src/distortion.c:121
 msgid "Distortion"
 msgstr "Əyilmə"
@@ -865,6 +873,10 @@ msgstr ""
 "Şəkili köpük ilə örtmək üçün  mausun sol düyməsini bas və mausu hərəkətə "
 "gətir."
 
+#: ../../magic/src/fold.c:62
+msgid "Choose a background color and click to turn the corner of the page over"
+msgstr ""
+
 #: ../../magic/src/glasstile.c:83
 msgid "Glass Tile"
 msgstr "Mozaika"
@@ -888,16 +900,6 @@ msgstr "Ot"
 #: ../../magic/src/grass.c:98
 msgid "Click and move to draw grass. Don’t forget the dirt!"
 msgstr "Ot çəkmək üçün mausun sol düyməsini bas və mausu hərəkətə gətir."
-
-#: ../../magic/src/jigsaw.c:62
-msgid "Jigsaw"
-msgstr ""
-
-#: ../../magic/src/jigsaw.c:65
-msgid ""
-"Click to make your picture into a jigsaw which you can print and cut out, "
-"make sure to ask an adult for help."
-msgstr ""
 
 #: ../../magic/src/kalidescope.c:77
 msgid "Kaleidoscope"
@@ -945,6 +947,16 @@ msgstr "Şəkili güzgüdəki kimi görmək üçün mausun sol düyməsini bas."
 msgid "Click to flip the picture upside-down."
 msgstr "Şəkili çevirmək üçün mausun sol düyməsini bas."
 
+#: ../../magic/src/mosaic.c:72
+#, fuzzy
+msgid "Mosaic"
+msgstr "Möcüzə"
+
+#: ../../magic/src/mosaic.c:75
+#, fuzzy
+msgid "Click to add a mosaic effect to the image."
+msgstr "Şəkili güzgüdəki kimi görmək üçün mausun sol düyməsini bas."
+
 #: ../../magic/src/negative.c:72
 msgid "Negative"
 msgstr "Neqativ"
@@ -958,12 +970,21 @@ msgstr "Şəkili neqativdə görmək üçün mausun sol düyməsini bas."
 msgid "Click to turn the image into its negative."
 msgstr "Şəkili güzgüdəki kimi görmək üçün mausun sol düyməsini bas."
 
-#: ../../magic/src/rails.c:74
+#: ../../magic/src/noise.c:61
+msgid "Noise"
+msgstr ""
+
+#: ../../magic/src/noise.c:64
+#, fuzzy
+msgid "Click to add noise to the image."
+msgstr "Şəkili güzgüdəki kimi görmək üçün mausun sol düyməsini bas."
+
+#: ../../magic/src/rails.c:75
 #, fuzzy
 msgid "Rails"
 msgstr "Zərif dalğalar"
 
-#: ../../magic/src/rails.c:76
+#: ../../magic/src/rails.c:77
 #, fuzzy
 msgid "Click and drag to draw train track rails on your picture."
 msgstr ""
@@ -985,18 +1006,24 @@ msgstr "Zərif dalğalar"
 msgid "Click to make ripples appear over your picture."
 msgstr "Zərif dalğalar çəkmək üçün mausun sol düyməsini bas."
 
-#: ../../magic/src/sharpen.c:74
+#: ../../magic/src/sharpen.c:73
 msgid "Trace Contour"
 msgstr ""
 
-#: ../../magic/src/sharpen.c:75
+#: ../../magic/src/sharpen.c:74
 #, fuzzy
 msgid "Sharpen"
 msgstr "Fiqurlar"
 
-#: ../../magic/src/sharpen.c:76
+#: ../../magic/src/sharpen.c:75
 msgid "Silhouette"
 msgstr ""
+
+#: ../../magic/src/sharpen.c:78
+#, fuzzy
+msgid "Click and move the mouse to trace the edges of objects in the image."
+msgstr ""
+"Şəkili ləkələmək üçün mausun sol düyməsini bas və mausu hərəkətə gətir."
 
 #: ../../magic/src/sharpen.c:79
 msgid "Click to trace the edges of objects in the image."
@@ -1004,10 +1031,23 @@ msgstr ""
 
 #: ../../magic/src/sharpen.c:80
 #, fuzzy
+msgid "Click and move the mouse to sharpen the image."
+msgstr ""
+"Şəkili ləkələmək üçün mausun sol düyməsini bas və mausu hərəkətə gətir."
+
+#: ../../magic/src/sharpen.c:81
+#, fuzzy
 msgid "Click to sharpen the image."
 msgstr "Şəkili güzgüdəki kimi görmək üçün mausun sol düyməsini bas."
 
-#: ../../magic/src/sharpen.c:81
+#: ../../magic/src/sharpen.c:82
+#, fuzzy
+msgid ""
+"Click and move the mouse to create a black and white silhouette of the image."
+msgstr ""
+"Şəkili ləkələmək üçün mausun sol düyməsini bas və mausu hərəkətə gətir."
+
+#: ../../magic/src/sharpen.c:83
 msgid "Click to create a black and white silhouette of the image."
 msgstr ""
 

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: et\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-07-13 17:29-0700\n"
+"POT-Creation-Date: 2008-07-22 00:15-0700\n"
 "PO-Revision-Date: 2007-03-18 20:26+0200\n"
 "Last-Translator: Lauri Jesmin <lauri.jesmin@nordtech.ee>\n"
 "Language-Team: Estonian <et@li.org>\n"
@@ -377,7 +377,7 @@ msgstr "Uus"
 #. Open a saved picture
 #. buttons for the file open dialog
 #. Open dialog: 'Open' button, to load the selected picture
-#: ../tools.h:75 ../tuxpaint.c:7965
+#: ../tools.h:75 ../tuxpaint.c:7966
 msgid "Open"
 msgstr "Ava"
 
@@ -492,174 +492,174 @@ msgid "OK then… Let’s keep drawing this one!"
 msgstr "Olgu nii, joonistame seda pilti edasi!"
 
 #. Prompt to confirm user wishes to quit
-#: ../tuxpaint.c:1840
+#: ../tuxpaint.c:1841
 msgid "Do you really want to quit?"
 msgstr "Kas sa tõesti tahad väljuda?"
 
 #. Quit prompt positive response (quit)
-#: ../tuxpaint.c:1843
+#: ../tuxpaint.c:1844
 msgid "Yes, I'm done!"
 msgstr "Jah, ma olen lõpetanud!"
 
 #. Quit prompt negative response (don't quit)
-#: ../tuxpaint.c:1846 ../tuxpaint.c:1873
+#: ../tuxpaint.c:1847 ../tuxpaint.c:1874
 msgid "No, take me back!"
 msgstr "Ei, vii mind tagasi!"
 
 #. Current picture is not saved; user is quitting
-#: ../tuxpaint.c:1850
+#: ../tuxpaint.c:1851
 msgid "If you quit, you’ll lose your picture! Save it?"
 msgstr "Kui sa praegu väljud, kaotad sa oma pildi ära! Kas salvestame?"
 
-#: ../tuxpaint.c:1851 ../tuxpaint.c:1856
+#: ../tuxpaint.c:1852 ../tuxpaint.c:1857
 msgid "Yes, save it!"
 msgstr "Jah, salvesta!"
 
-#: ../tuxpaint.c:1852 ../tuxpaint.c:1857
+#: ../tuxpaint.c:1853 ../tuxpaint.c:1858
 msgid "No, don't bother saving!"
 msgstr "Ei, ma ei soovi seda pilti salvestada!"
 
 #. Current picture is not saved; user is opening another picture
-#: ../tuxpaint.c:1855
+#: ../tuxpaint.c:1856
 msgid "Save your picture first?"
 msgstr "Salvestame selle pildi enne ära?"
 
 #. Error opening picture
-#: ../tuxpaint.c:1860
+#: ../tuxpaint.c:1861
 msgid "Can’t open that picture!"
 msgstr "Selle pildi avamine ei ole võimalik!"
 
 #. Generic dialog dismissal
-#: ../tuxpaint.c:1863 ../tuxpaint.c:1868 ../tuxpaint.c:1877 ../tuxpaint.c:1881
-#: ../tuxpaint.c:1890
+#: ../tuxpaint.c:1864 ../tuxpaint.c:1869 ../tuxpaint.c:1878 ../tuxpaint.c:1882
+#: ../tuxpaint.c:1891
 msgid "OK"
 msgstr "Selge"
 
 #. Notification that 'Open' dialog has nothing to show
-#: ../tuxpaint.c:1867
+#: ../tuxpaint.c:1868
 msgid "There are no saved files!"
 msgstr "Salvestatud pilte ei ole!"
 
 #. Verification of print action
-#: ../tuxpaint.c:1871
+#: ../tuxpaint.c:1872
 msgid "Print your picture now?"
 msgstr "Kas trükin sinu pildi välja?"
 
-#: ../tuxpaint.c:1872
+#: ../tuxpaint.c:1873
 msgid "Yes, print it!"
 msgstr "Jah, trüki!"
 
 #. Confirmation of successful (we hope) printing
-#: ../tuxpaint.c:1876
+#: ../tuxpaint.c:1877
 msgid "Your picture has been printed!"
 msgstr "Sinu pilt on välja trükitud!"
 
 #. Notification that it's too soon to print again (--printdelay option is in effect)
-#: ../tuxpaint.c:1880
+#: ../tuxpaint.c:1881
 msgid "You can’t print yet!"
 msgstr "Ei saa veel välja trükkida!"
 
 #. Prompt to confirm erasing a picture in the Open dialog
-#: ../tuxpaint.c:1884
+#: ../tuxpaint.c:1885
 msgid "Erase this picture?"
 msgstr "Kas kustutan selle pildi?"
 
-#: ../tuxpaint.c:1885
+#: ../tuxpaint.c:1886
 msgid "Yes, erase it!"
 msgstr "Jah, kustuta!"
 
-#: ../tuxpaint.c:1886
+#: ../tuxpaint.c:1887
 msgid "No, don't erase it!"
 msgstr "Ei, ära kustuta!"
 
 #. Reminder that Mouse Button 1 is the button to use in Tux Paint
-#: ../tuxpaint.c:1889
+#: ../tuxpaint.c:1890
 msgid "Remember to use the left mouse button!"
 msgstr "Ära unusta kasutamast vasakut hiire nuppu!"
 
 #. Sound has been muted (silenced) via keyboard shortcut
-#: ../tuxpaint.c:2004
+#: ../tuxpaint.c:2005
 msgid "Sound muted."
 msgstr "Heli summutatud."
 
 #. Sound has been unmuted (unsilenced) via keyboard shortcut
-#: ../tuxpaint.c:2009
+#: ../tuxpaint.c:2010
 msgid "Sound unmuted."
 msgstr "Heli taastatud."
 
 #. Wait while Text tool finishes loading fonts
-#: ../tuxpaint.c:2475
+#: ../tuxpaint.c:2476
 msgid "Please wait…"
 msgstr "Palun oota..."
 
-#: ../tuxpaint.c:7188
+#: ../tuxpaint.c:7189
 msgid "Pick a color."
 msgstr "Vali värv."
 
 #. Open dialog: 'Erase' button, to erase/deleted the selected picture
-#: ../tuxpaint.c:7968
+#: ../tuxpaint.c:7969
 msgid "Erase"
 msgstr "Kustuta"
 
 #. Open dialog: 'Slides' button, to switch to slide show mode
-#: ../tuxpaint.c:7971
+#: ../tuxpaint.c:7972
 msgid "Slides"
 msgstr "Slaidid"
 
 #. Open dialog: 'Back' button, to dismiss Open dialog without opening a picture
-#: ../tuxpaint.c:7974
+#: ../tuxpaint.c:7975
 msgid "Back"
 msgstr "Tagasi"
 
 #. Slideshow: 'Next' button, to load next slide (image)
-#: ../tuxpaint.c:7977
+#: ../tuxpaint.c:7978
 msgid "Next"
 msgstr "Edasi"
 
 #. Slideshow: 'Play' button, to begin a slideshow sequence
-#: ../tuxpaint.c:7980
+#: ../tuxpaint.c:7981
 msgid "Play"
 msgstr "Esita"
 
 #. Label for 'Letters' buttons (font selector, down the right when the Text tool is being used); used to show the difference between font faces
-#: ../tuxpaint.c:8627
+#: ../tuxpaint.c:8628
 msgid "Aa"
 msgstr "Aa"
 
 #. Admittedly stupid way of determining which keys can be used for
 #. positive and negative responses in dialogs (e.g., [Y] (for 'yes') in English)
-#: ../tuxpaint.c:11532
+#: ../tuxpaint.c:11548
 msgid "Yes"
 msgstr "Jah"
 
-#: ../tuxpaint.c:11536
+#: ../tuxpaint.c:11552
 msgid "No"
 msgstr "Ei"
 
 #. Prompt to ask whether user wishes to save over old version of their file
-#: ../tuxpaint.c:12488
+#: ../tuxpaint.c:12504
 msgid "Replace the picture with your changes?"
 msgstr "Asenda pilt koos tehtud muudatustega?"
 
 #. Positive response to saving over old version
 #. (like a 'File:Save' action in other applications)
-#: ../tuxpaint.c:12492
+#: ../tuxpaint.c:12508
 msgid "Yes, replace the old one!"
 msgstr "Jah, vaheta vana pilt välja!"
 
 #. Negative response to saving over old version (saves a new image)
 #. (like a 'File:Save As...' action in other applications)
-#: ../tuxpaint.c:12496
+#: ../tuxpaint.c:12512
 msgid "No, save a new file!"
 msgstr "Ei, salvestame uude faili!"
 
-#: ../tuxpaint.c:13259
+#: ../tuxpaint.c:13275
 msgid "Choose the picture you want, then click “Open”."
 msgstr "Vali pilt ja klõpsa nupul  \"Ava\""
 
 #. Let user choose images:
 #. Instructions for Slideshow file dialog (FIXME: Make a #define)
-#: ../tuxpaint.c:14246 ../tuxpaint.c:14560
+#: ../tuxpaint.c:14262 ../tuxpaint.c:14576
 msgid "Choose the pictures you want, then click “Play”."
 msgstr "Vali pilt ja klõpsa nupul  \"Esita\""
 
@@ -771,6 +771,14 @@ msgstr "Multikas"
 msgid "Click and move the mouse around to turn the picture into a cartoon."
 msgstr "Tee klõps ja liiguta hiirt, et muuta pilt multika sarnaseks."
 
+#: ../../magic/src/confetti.c:63
+msgid "Confetti"
+msgstr ""
+
+#: ../../magic/src/confetti.c:65
+msgid "Click to throw a confetti!"
+msgstr ""
+
 #: ../../magic/src/distortion.c:121
 msgid "Distortion"
 msgstr ""
@@ -840,6 +848,10 @@ msgstr "Svamm"
 msgid "Click and drag the mouse to cover an area with foamy bubbles."
 msgstr "Klõpsa pildil, et täita see ala kohevate mullidega."
 
+#: ../../magic/src/fold.c:62
+msgid "Choose a background color and click to turn the corner of the page over"
+msgstr ""
+
 #: ../../magic/src/glasstile.c:83
 msgid "Glass Tile"
 msgstr "Aknaruudustik"
@@ -860,16 +872,6 @@ msgstr "Muru"
 #: ../../magic/src/grass.c:98
 msgid "Click and move to draw grass. Don’t forget the dirt!"
 msgstr "Tee klõps ja liiguta hiirt,et joonistada muru. Ära unusta pori!"
-
-#: ../../magic/src/jigsaw.c:62
-msgid "Jigsaw"
-msgstr ""
-
-#: ../../magic/src/jigsaw.c:65
-msgid ""
-"Click to make your picture into a jigsaw which you can print and cut out, "
-"make sure to ask an adult for help."
-msgstr ""
 
 #: ../../magic/src/kalidescope.c:77
 msgid "Kaleidoscope"
@@ -914,6 +916,16 @@ msgstr "Tee klõps, et tekitada peegelpilt."
 msgid "Click to flip the picture upside-down."
 msgstr "Tee klõps, et pöörata pilt pea alaspidi."
 
+#: ../../magic/src/mosaic.c:72
+#, fuzzy
+msgid "Mosaic"
+msgstr "Maagia"
+
+#: ../../magic/src/mosaic.c:75
+#, fuzzy
+msgid "Click to add a mosaic effect to the image."
+msgstr "Tee klõps, et tekitada peegelpilt."
+
 #: ../../magic/src/negative.c:72
 msgid "Negative"
 msgstr "Negatiiv"
@@ -927,12 +939,21 @@ msgstr "Tee klõps ja liiguta hiirt, et tekitada negatiiv."
 msgid "Click to turn the image into its negative."
 msgstr "Tee klõps, et tekitada peegelpilt."
 
-#: ../../magic/src/rails.c:74
+#: ../../magic/src/noise.c:61
+msgid "Noise"
+msgstr ""
+
+#: ../../magic/src/noise.c:64
+#, fuzzy
+msgid "Click to add noise to the image."
+msgstr "Tee klõps, et tekitada peegelpilt."
+
+#: ../../magic/src/rails.c:75
 #, fuzzy
 msgid "Rails"
 msgstr "Virvendused"
 
-#: ../../magic/src/rails.c:76
+#: ../../magic/src/rails.c:77
 #, fuzzy
 msgid "Click and drag to draw train track rails on your picture."
 msgstr "Tee klõps ja liiguta hiirt, et tekitada valguskiiri."
@@ -953,18 +974,23 @@ msgstr "Virvendused"
 msgid "Click to make ripples appear over your picture."
 msgstr "Tee klõps ja liiguta hiirt pildi ähmasemaks muutmiseks."
 
-#: ../../magic/src/sharpen.c:74
+#: ../../magic/src/sharpen.c:73
 msgid "Trace Contour"
 msgstr ""
 
-#: ../../magic/src/sharpen.c:75
+#: ../../magic/src/sharpen.c:74
 #, fuzzy
 msgid "Sharpen"
 msgstr "Kujundid"
 
-#: ../../magic/src/sharpen.c:76
+#: ../../magic/src/sharpen.c:75
 msgid "Silhouette"
 msgstr ""
+
+#: ../../magic/src/sharpen.c:78
+#, fuzzy
+msgid "Click and move the mouse to trace the edges of objects in the image."
+msgstr "Tee klõps ja liiguta hiirt, et teha pilt ähmasemaks."
 
 #: ../../magic/src/sharpen.c:79
 msgid "Click to trace the edges of objects in the image."
@@ -972,10 +998,21 @@ msgstr ""
 
 #: ../../magic/src/sharpen.c:80
 #, fuzzy
+msgid "Click and move the mouse to sharpen the image."
+msgstr "Tee klõps ja liiguta hiirt, et teha pilt ähmasemaks."
+
+#: ../../magic/src/sharpen.c:81
+#, fuzzy
 msgid "Click to sharpen the image."
 msgstr "Tee klõps, et tekitada peegelpilt."
 
-#: ../../magic/src/sharpen.c:81
+#: ../../magic/src/sharpen.c:82
+#, fuzzy
+msgid ""
+"Click and move the mouse to create a black and white silhouette of the image."
+msgstr "Tee klõps ja liiguta hiirt, et teha pilt ähmasemaks."
+
+#: ../../magic/src/sharpen.c:83
 msgid "Click to create a black and white silhouette of the image."
 msgstr ""
 
