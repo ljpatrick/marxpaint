@@ -47,8 +47,8 @@ $Id$
 
   Blur ('entire image' mode), Sharpen, Trace Contour, Silhouette,
   Snow Flake, Snow Ball, Black & White, Threshold,
-  Tint, Noise and Mosaic Magic Tools
-  Jigsaw 3x3 and Jigsaw 5x5 starter images
+  Tint ('Brush' mode), Noise, Rain and Mosaic Magic Tools.
+  Jigsaw 3x3 and Jigsaw 5x5 starter images.
   by Andrew 'akanewbie' Corcoran <akanewbie@gmail.com>
   Contributed as part of Google Summer of Code, 2008.
 

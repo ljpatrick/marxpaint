@@ -28,6 +28,7 @@ $Id$
       + Snow Flake - Places random snow flakes over the image.
       + Noise - Adds random noise to the image.
       + Mosaic - Gives the image a mosaic effect.
+      + Rain - Adds rain drops to the image.
       By Andrew 'akanewbie' Corcoran <akanewbie@gmail.com>
       (Part of Tux4Kids' participation in Google Summer of Code 2008)
 

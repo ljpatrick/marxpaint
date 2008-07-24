@@ -1,0 +1,223 @@
+/*
+  rain.c
+
+  rain, Add a rain effect to the image
+  Tux Paint - A simple drawing program for children.
+
+  Credits: Andrew Corcoran <akanewbie@gmail.com>
+
+  Copyright (c) 2002-2007 by Bill Kendrick and others; see AUTHORS.txt
+  bill@newbreedsoftware.com
+  http://www.tuxpaint.org/
+
+  This program is free software; you can redistribute it and/or modify
+  it under the terms of the GNU General Public License as published by
+  the Free Software Foundation; either version 2 of the License, or
+  (at your option) any later version.
+
+  This program is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  GNU General Public License for more details.
+
+  You should have received a copy of the GNU General Public License
+  along with this program; if not, write to the Free Software
+  Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+  (See COPYING.txt)
+
+  Last updated: June 6, 2008
+  $Id$
+*/
+
+#include <stdio.h>
+#include <string.h>
+#include <libintl.h>
+#include "tp_magic_api.h"
+#include "SDL_image.h"
+#include "SDL_mixer.h"
+#include <math.h>
+#include <limits.h>
+#include <time.h>
+
+#ifndef gettext_noop
+#define gettext_noop(String) String
+#endif
+
+
+static const int rain_SIZE = 30;
+static const int rain_AMOUNT = 200;
+
+enum {
+	TOOL_rain,
+	rain_NUM_TOOLS
+};
+
+static Mix_Chunk * rain_snd_effect[rain_NUM_TOOLS];
+
+const char * rain_snd_filenames[rain_NUM_TOOLS] = {
+  "flip.wav",
+};
+const char * rain_icon_filenames[rain_NUM_TOOLS] = {
+  "flip.png",
+};
+const char * rain_names[rain_NUM_TOOLS] = {
+  gettext_noop("Rain"),
+};
+const char * rain_descs[rain_NUM_TOOLS][2] = {
+  {gettext_noop("Click to place a rain drop onto the image."),
+    gettext_noop("Click to cover the image with rain drops."),},
+};
+
+
+Uint32 rain_api_version(void) { return(TP_MAGIC_API_VERSION); }
+
+//Checks if a a pixel is inside a raindrop shape centered on the origin
+static int rain_inRainShape(double x, double y, double r){
+  if ( sqrt( x*x + y*y ) < ( r * pow( cos( atan2(x,y) ), 10.0) ) ){
+    return 1;
+  }
+  return 0;
+}
+
+int rain_init(magic_api * api){
+
+  int i;
+  char fname[1024];
+  //Load sounds
+  for (i = 0; i < rain_NUM_TOOLS; i++){
+    snprintf(fname, sizeof(fname), "%s/sounds/magic/%s", api->data_directory, rain_snd_filenames[i]);
+    rain_snd_effect[i] = Mix_LoadWAV(fname);
+    if (rain_snd_effect[i] == NULL){
+      return(0);
+    }
+  }
+
+  return(1);
+}
+
+int rain_get_tool_count(magic_api * api){
+  return(rain_NUM_TOOLS);
+}
+
+// Load our icons:
+SDL_Surface * rain_get_icon(magic_api * api, int which){
+  char fname[1024];
+  snprintf(fname, sizeof(fname), "%simages/magic/%s", api->data_directory, rain_icon_filenames[which]);
+  return(IMG_Load(fname));
+}
+
+// Return our names, localized:
+char * rain_get_name(magic_api * api, int which){
+    return(strdup(gettext(rain_names[which])));
+}
+
+// Return our descriptions, localized:
+char * rain_get_description(magic_api * api, int which, int mode){
+  return(strdup(gettext(rain_descs[which][mode-1])));
+}
+
+// Do the effect:
+static void do_rain_drop(void * ptr, int which, SDL_Surface * canvas, SDL_Surface * last,
+                int x, int y){
+  magic_api * api = (magic_api *) ptr;
+
+  int xx, yy;
+  Uint8 r,g,b;
+
+  for (yy = y - rain_SIZE/2; yy < y + rain_SIZE/2; yy++){
+    for (xx = x - rain_SIZE; xx < x + rain_SIZE; xx++){
+      if (rain_inRainShape(xx - x, yy - y + rain_SIZE/2, rain_SIZE)){
+        //api->rgbtohsv(rain_r, rain_g, rain_b, &h, &s, &v);
+        //api->hsvtorgb(h, s, rain_weights[(yy-y)*((rain_SIZE*2) -1)+(xx-x)], &r, &g, &b);
+        SDL_GetRGB(api->getpixel(last, xx , yy), last->format, &r, &g, &b);
+        api->putpixel(canvas, xx, yy, SDL_MapRGB(canvas->format,  clamp(0, r - 50, 255), 
+                                                                  clamp(0, g - 50, 255), 
+                                                                  clamp(0, b + 200, 255)));
+      }
+    }
+  }
+
+}
+
+// Affect the canvas on drag:
+void rain_drag(magic_api * api, int which, SDL_Surface * canvas,
+	          SDL_Surface * last, int ox, int oy, int x, int y,
+		  SDL_Rect * update_rect){
+//noop
+}
+
+// Affect the canvas on click:
+void rain_click(magic_api * api, int which, int mode,
+	           SDL_Surface * canvas, SDL_Surface * last,
+	           int x, int y, SDL_Rect * update_rect){
+
+  if (mode == MODE_PAINT){
+    do_rain_drop(api, which, canvas, last, x, y);
+
+    update_rect->x = x - rain_SIZE;
+    update_rect->y = y - rain_SIZE;
+    update_rect->w = rain_SIZE * 2;
+    update_rect->h = rain_SIZE * 2;
+
+    api->playsound(rain_snd_effect[which], (x * 255) / canvas->w, 255);
+  }else{
+
+    int i;
+    for(i=0; i<rain_AMOUNT; i++){
+      do_rain_drop(api, which, canvas, last, rand() % canvas->w, rand() % canvas->h);
+    }
+
+    update_rect->x = 0;
+    update_rect->y = 0;
+    update_rect->w = canvas->w;
+    update_rect->h = canvas->h;
+
+    api->playsound(rain_snd_effect[which], 128, 255);
+  }
+}
+
+// Affect the canvas on release:
+void rain_release(magic_api * api, int which,
+	           SDL_Surface * canvas, SDL_Surface * last,
+	           int x, int y, SDL_Rect * update_rect)
+{
+}
+
+// No setup happened:
+void rain_shutdown(magic_api * api)
+{
+	//Clean up sounds
+	int i;
+	for(i=0; i<rain_NUM_TOOLS; i++){
+		if(rain_snd_effect[i] != NULL){
+			Mix_FreeChunk(rain_snd_effect[i]);
+		}
+	}
+}
+
+// Record the color from Tux Paint:
+void rain_set_color(magic_api * api, Uint8 r, Uint8 g, Uint8 b)
+{
+}
+
+// Use colors:
+int rain_requires_colors(magic_api * api, int which)
+{
+  return 0;
+}
+
+
+void rain_switchin(magic_api * api, int which, int mode, SDL_Surface * canvas)
+{
+}
+
+void rain_switchout(magic_api * api, int which, int mode, SDL_Surface * canvas)
+{
+}
+
+int rain_modes(magic_api * api, int which)
+{
+  return(MODE_FULLSCREEN|MODE_PAINT);
+}
+
+

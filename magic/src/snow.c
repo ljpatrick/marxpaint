@@ -43,8 +43,8 @@
 #define gettext_noop(String) String
 #endif
 
-const int snow_AMOUNT = 400;
-const int snow_RADIUS = 5;
+static const int snow_AMOUNT = 400;
+static const int snow_RADIUS = 5;
 static SDL_Surface * snow_flake1;
 static SDL_Surface * snow_flake2;
 
@@ -84,15 +84,23 @@ int snow_init(magic_api * api){
 
   snprintf(fname, sizeof(fname), "%s/images/magic/Snow_flake4.png", api->data_directory);
   snow_flake1 = IMG_Load(fname);
-
-
+  if (snow_flake1==NULL){
+    return(0);
+  }
 
   snprintf(fname, sizeof(fname), "%s/images/magic/Snow_flake5.png", api->data_directory);
   snow_flake2 = IMG_Load(fname);
+  if (snow_flake2==NULL){
+    return(0);
+  }
+
   if (snow_flake2==NULL){printf("meh\n");}
   for (i = 0; i < snow_NUM_TOOLS; i++){
     snprintf(fname, sizeof(fname), "%s/sounds/magic/%s", api->data_directory, snow_snd_filenames[i]);
     snow_snd_effect[i] = Mix_LoadWAV(fname);
+    if (snow_snd_effect[i]==NULL){
+      return(0);
+    }
   }
   return(1);
 }

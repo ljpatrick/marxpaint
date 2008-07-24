@@ -51,11 +51,11 @@ enum {
 	sharpen_NUM_TOOLS
 };
 
-const int THRESHOLD = 50;
+static const int THRESHOLD = 50;
 
-const int sharpen_RADIUS = 16;
+static const int sharpen_RADIUS = 16;
 
-const double SHARPEN = 0.5;
+static const double SHARPEN = 0.5;
 
 static Mix_Chunk * sharpen_snd_effect[sharpen_NUM_TOOLS];
 
@@ -95,6 +95,9 @@ int sharpen_init(magic_api * api){
   for (i = 0; i < sharpen_NUM_TOOLS; i++){
     snprintf(fname, sizeof(fname), "%s/sounds/magic/%s", api->data_directory, sharpen_snd_filenames[i]);
     sharpen_snd_effect[i] = Mix_LoadWAV(fname);
+    if (sharpen_snd_effect[i]==NULL){
+      return(0);
+    }
   }
 
   return(1);

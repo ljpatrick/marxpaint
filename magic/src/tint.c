@@ -84,6 +84,9 @@ int tint_init(magic_api * api){
   for (i = 0; i < tint_NUM_TOOLS; i++){
     snprintf(fname, sizeof(fname), "%s/sounds/magic/%s", api->data_directory, tint_snd_filenames[i]);
     tint_snd_effect[i] = Mix_LoadWAV(fname);
+    if (tint_snd_effect[i] == NULL){
+      return(0);
+    }
   }
   return(1);
 }
