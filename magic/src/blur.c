@@ -57,7 +57,8 @@ const char * blur_names[blur_NUM_TOOLS] = {
   gettext_noop("Blur"),
 };
 const char * blur_descs[blur_NUM_TOOLS][2] = {
-  {gettext_noop("Click and move the mouse around to blur the image."), gettext_noop("Click to blur the whole image.")},
+  {gettext_noop("Click and move the mouse around to blur the image."), 
+    gettext_noop("Click to blur the entire image.")},
 };
 
 Uint32 blur_api_version(void) { return(TP_MAGIC_API_VERSION); }

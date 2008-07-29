@@ -78,9 +78,9 @@ const char * sharpen_descs[sharpen_NUM_TOOLS][2] = {
   {gettext_noop("Click and move the mouse to trace the edges of objects in the image."),
     gettext_noop("Click to trace the edges of objects in the image."),},
   {gettext_noop("Click and move the mouse to sharpen the image."),
-    gettext_noop("Click to sharpen the image."),},
+    gettext_noop("Click to sharpen the entire image."),},
   {gettext_noop("Click and move the mouse to create a black and white silhouette of the image."),
-    gettext_noop("Click to create a black and white silhouette of the image.")},
+    gettext_noop("Click to create a black and white silhouette of the entire image.")},
 };
 
 Uint32 sharpen_api_version(void) { return(TP_MAGIC_API_VERSION); }

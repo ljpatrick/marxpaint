@@ -62,8 +62,9 @@ const char * noise_icon_filenames[noise_NUM_TOOLS] = {
 const char * noise_names[noise_NUM_TOOLS] = {
   gettext_noop("Noise"),
 };
-const char * noise_descs[noise_NUM_TOOLS] = {
-  gettext_noop("Click to add noise to the image."),
+const char * noise_descs[noise_NUM_TOOLS][2] = {
+  {gettext_noop("Click and move the mouse to add noise to the image."),
+    gettext_noop("Click to add noise to the entire image."),},
 };
 
 Uint32 noise_api_version(void) { return(TP_MAGIC_API_VERSION); }
@@ -102,8 +103,8 @@ char * noise_get_name(magic_api * api, int which){
 }
 
 // Return our descriptions, localized:
-char * noise_get_description(magic_api * api, int which){
-  return(strdup(gettext(noise_descs[which])));
+char * noise_get_description(magic_api * api, int which, int mode){
+  return(strdup(gettext(noise_descs[which][mode-1])));
 }
 
 //Do the effect for one pixel

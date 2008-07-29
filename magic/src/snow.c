@@ -69,8 +69,8 @@ const char * snow_names[snow_NUM_TOOLS] = {
   gettext_noop("Snow Flake"),
 };
 const char * snow_descs[snow_NUM_TOOLS] = {
-  gettext_noop("Click to add snow to the image."),
-  gettext_noop("Click to add snow to the image."),
+  gettext_noop("Click to add snow to the entire image."),
+  gettext_noop("Click to add snow to the entire image."),
 };
 
 Uint32 snow_api_version(void) { return(TP_MAGIC_API_VERSION); }

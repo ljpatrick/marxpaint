@@ -69,9 +69,9 @@ const char * tint_names[tint_NUM_TOOLS] = {
 };
 const char * tint_descs[tint_NUM_TOOLS][2] = {
   {gettext_noop("Click and move the mouse around to change the color of parts of the picture."),
-    gettext_noop("Click to change the entire picture’s color."),},
+    gettext_noop("Click to change the colour of the entire image."),},
   {gettext_noop("Click and move the mouse around to threshold the image into pure colour and white regions."),
-    gettext_noop("Click to threshold the image into pure colour and white regions.")}
+    gettext_noop("Click to threshold the entire image into pure colour and white regions.")}
 };
 
 Uint32 tint_api_version(void) { return(TP_MAGIC_API_VERSION); }

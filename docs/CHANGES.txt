@@ -20,6 +20,7 @@ $Id$
   * New Magic Tools:
     ----------------
     * + Blur (entire image mode) - Blurs entire image
+      + Alien - Modifies the colours in the image to give an "alien" apperance.
       + Sharpen - Sharpens entire image
       + Trace Contour - Traces the edges of the image, over a white background.
       + Silhouette - Creates an outline of the image, over a black background.
