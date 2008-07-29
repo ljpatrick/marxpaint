@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-07-22 00:15-0700\n"
+"POT-Creation-Date: 2008-07-29 15:15-0700\n"
 "PO-Revision-Date: 2008-02-27 11:34+0100\n"
 "Last-Translator: Burkhard Lück <lueck@hube-lueck.de>\n"
 "Language-Team: Deutsch <kde-i18n-de@kde.org>\n"
@@ -686,32 +686,17 @@ msgstr "Malprogramm"
 msgid "Tux Paint"
 msgstr "Tux Paint"
 
-#: ../../magic/src/blackAndWhite.c:67
-msgid "Black & White"
+#: ../../magic/src/alien.c:64
+msgid "Alien"
 msgstr ""
 
-#: ../../magic/src/blackAndWhite.c:68
-msgid "Threshold"
-msgstr ""
-
-#: ../../magic/src/blackAndWhite.c:71
+#: ../../magic/src/alien.c:67
 #, fuzzy
-msgid "Click and move the mouse around convert the image to greyscale."
+msgid "Click and move the mouse to give the image an \"alien\" appearance."
 msgstr "Klick und bewege die Maus, um das Bild unscharf zu machen."
 
-#: ../../magic/src/blackAndWhite.c:72
-msgid "Click to convert the image to greyscale."
-msgstr ""
-
-#: ../../magic/src/blackAndWhite.c:73
-#, fuzzy
-msgid ""
-"Click and move the mouse around to threshold the image into black and white "
-"regions."
-msgstr "Klick und bewege die Maus, um dein Bild in einen Comic zu verwandeln!"
-
-#: ../../magic/src/blackAndWhite.c:74
-msgid "Click to threshold the image into black and white regions."
+#: ../../magic/src/alien.c:68
+msgid "Click to give the entire image an \"alien\" appearance."
 msgstr ""
 
 #: ../../magic/src/blocks_chalk_drip.c:132
@@ -749,9 +734,9 @@ msgstr "Unscharf"
 msgid "Click and move the mouse around to blur the image."
 msgstr "Klick und bewege die Maus, um das Bild unscharf zu machen."
 
-#: ../../magic/src/blur.c:60
+#: ../../magic/src/blur.c:61
 #, fuzzy
-msgid "Click to blur the whole image."
+msgid "Click to blur the entire image."
 msgstr "Klicke, um das Bild zu spiegeln."
 
 #. Both are named "Bricks", at the moment:
@@ -928,14 +913,19 @@ msgstr "Klicke, um das Bild zu spiegeln."
 msgid "Click to flip the picture upside-down."
 msgstr "Klicke, um das Bild auf den Kopf zu stellen."
 
-#: ../../magic/src/mosaic.c:72
+#: ../../magic/src/mosaic.c:71
 #, fuzzy
 msgid "Mosaic"
 msgstr "Magie"
 
+#: ../../magic/src/mosaic.c:74
+#, fuzzy
+msgid "Click and move the mouse to add a mosaic effect to the image."
+msgstr "Klicke, um das Bild zu spiegeln."
+
 #: ../../magic/src/mosaic.c:75
 #, fuzzy
-msgid "Click to add a mosaic effect to the image."
+msgid "Click to add a mosaic effect to the entire image."
 msgstr "Klicke, um das Bild zu spiegeln."
 
 #: ../../magic/src/negative.c:72
@@ -951,13 +941,18 @@ msgstr "Klick und bewege die Maus, um ein Negativ zu machen."
 msgid "Click to turn the image into its negative."
 msgstr "Klicke, um das Bild zu spiegeln."
 
-#: ../../magic/src/noise.c:61
+#: ../../magic/src/noise.c:63
 msgid "Noise"
 msgstr ""
 
-#: ../../magic/src/noise.c:64
+#: ../../magic/src/noise.c:66
 #, fuzzy
-msgid "Click to add noise to the image."
+msgid "Click and move the mouse to add noise to the image."
+msgstr "Klick und bewege die Maus, um das Bild unscharf zu machen."
+
+#: ../../magic/src/noise.c:67
+#, fuzzy
+msgid "Click to add noise to the entire image."
 msgstr "Klicke, um das Bild zu spiegeln."
 
 #: ../../magic/src/rails.c:75
@@ -1015,7 +1010,7 @@ msgstr "Klick und bewege die Maus, um das Bild unscharf zu machen."
 
 #: ../../magic/src/sharpen.c:81
 #, fuzzy
-msgid "Click to sharpen the image."
+msgid "Click to sharpen the entire image."
 msgstr "Klicke, um das Bild zu spiegeln."
 
 #: ../../magic/src/sharpen.c:82
@@ -1025,8 +1020,9 @@ msgid ""
 msgstr "Klick und bewege die Maus, um das Bild unscharf zu machen."
 
 #: ../../magic/src/sharpen.c:83
-msgid "Click to create a black and white silhouette of the image."
-msgstr ""
+#, fuzzy
+msgid "Click to create a black and white silhouette of the entire image."
+msgstr "Klick und bewege die Maus, um das Bild unscharf zu machen."
 
 #: ../../magic/src/shift.c:104
 msgid "Shift"
@@ -1054,23 +1050,39 @@ msgstr ""
 
 #: ../../magic/src/snow.c:72 ../../magic/src/snow.c:73
 #, fuzzy
-msgid "Click to add snow to the image."
+msgid "Click to add snow to the entire image."
 msgstr "Klicke, um das Bild zu spiegeln."
 
-#: ../../magic/src/tint.c:77
+#: ../../magic/src/tint.c:67
 msgid "Tint"
 msgstr "Färben"
 
-#: ../../magic/src/tint.c:84
+#: ../../magic/src/tint.c:68
+msgid "Threshold"
+msgstr ""
+
+#: ../../magic/src/tint.c:71
 #, fuzzy
 msgid ""
 "Click and move the mouse around to change the color of parts of the picture."
 msgstr "Klick und bewege die Maus, um das Bild unscharf zu machen."
 
-#: ../../magic/src/tint.c:86
+#: ../../magic/src/tint.c:72
 #, fuzzy
-msgid "Click to change the entire picture’s color."
-msgstr "Klick und bewege die Maus, um die Farben des Bildes zu ändern."
+msgid "Click to change the colour of the entire image."
+msgstr "Klick und bewege die Maus, um das Bild unscharf zu machen."
+
+#: ../../magic/src/tint.c:73
+#, fuzzy
+msgid ""
+"Click and move the mouse around to threshold the image into pure colour and "
+"white regions."
+msgstr "Klick und bewege die Maus, um dein Bild in einen Comic zu verwandeln!"
+
+#: ../../magic/src/tint.c:74
+#, fuzzy
+msgid "Click to threshold the entire image into pure colour and white regions."
+msgstr "Klick und bewege die Maus, um dein Bild in einen Comic zu verwandeln!"
 
 #: ../../magic/src/waves.c:78
 msgid "Waves"
@@ -1085,6 +1097,14 @@ msgstr ""
 "Klicke, um das Bild wellig zu machen. Klicke nach oben für niedrige Wellen, "
 "nach unten für hohe Wellen, nach links für kurze Wellen und nach rechts für "
 "lange Wellen."
+
+#, fuzzy
+#~ msgid "Click and move the mouse around convert the image to greyscale."
+#~ msgstr "Klick und bewege die Maus, um das Bild unscharf zu machen."
+
+#, fuzzy
+#~ msgid "Click to change the entire picture’s color."
+#~ msgstr "Klick und bewege die Maus, um die Farben des Bildes zu ändern."
 
 #, fuzzy
 #~ msgid "Blur All"

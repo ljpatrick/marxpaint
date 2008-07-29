@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint 0.9.17\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-07-22 00:15-0700\n"
+"POT-Creation-Date: 2008-07-29 15:15-0700\n"
 "PO-Revision-Date: 2008-03-12 14:01+0100\n"
 "Last-Translator: Peter Tuhársky <tuharsky@misbb.sk>\n"
 "Language-Team: Slovak <sk-i18n@lists.linux.sk>\n"
@@ -684,32 +684,17 @@ msgstr "Kresliaci program"
 msgid "Tux Paint"
 msgstr "Kreslenie s Tuxom"
 
-#: ../../magic/src/blackAndWhite.c:67
-msgid "Black & White"
+#: ../../magic/src/alien.c:64
+msgid "Alien"
 msgstr ""
 
-#: ../../magic/src/blackAndWhite.c:68
-msgid "Threshold"
-msgstr ""
-
-#: ../../magic/src/blackAndWhite.c:71
+#: ../../magic/src/alien.c:67
 #, fuzzy
-msgid "Click and move the mouse around convert the image to greyscale."
+msgid "Click and move the mouse to give the image an \"alien\" appearance."
 msgstr "Klikni a pohybuj myšou, obrázok sa rozmaže."
 
-#: ../../magic/src/blackAndWhite.c:72
-msgid "Click to convert the image to greyscale."
-msgstr ""
-
-#: ../../magic/src/blackAndWhite.c:73
-#, fuzzy
-msgid ""
-"Click and move the mouse around to threshold the image into black and white "
-"regions."
-msgstr "Klikni a pohybuj myšou, obrázok sa prekreslí na komiks."
-
-#: ../../magic/src/blackAndWhite.c:74
-msgid "Click to threshold the image into black and white regions."
+#: ../../magic/src/alien.c:68
+msgid "Click to give the entire image an \"alien\" appearance."
 msgstr ""
 
 #: ../../magic/src/blocks_chalk_drip.c:132
@@ -746,9 +731,9 @@ msgstr "Rozmazať"
 msgid "Click and move the mouse around to blur the image."
 msgstr "Klikni a pohybuj myšou, obrázok sa rozmaže."
 
-#: ../../magic/src/blur.c:60
+#: ../../magic/src/blur.c:61
 #, fuzzy
-msgid "Click to blur the whole image."
+msgid "Click to blur the entire image."
 msgstr "Keď klikneš, obrázok zrkadlovo otočíš."
 
 #. Both are named "Bricks", at the moment:
@@ -926,14 +911,19 @@ msgstr "Keď klikneš, obrázok zrkadlovo otočíš."
 msgid "Click to flip the picture upside-down."
 msgstr "Keď klikneš, otočíš obrázok dole hlavou."
 
-#: ../../magic/src/mosaic.c:72
+#: ../../magic/src/mosaic.c:71
 #, fuzzy
 msgid "Mosaic"
 msgstr "Kúzla"
 
+#: ../../magic/src/mosaic.c:74
+#, fuzzy
+msgid "Click and move the mouse to add a mosaic effect to the image."
+msgstr "Keď klikneš, obrázok zrkadlovo otočíš."
+
 #: ../../magic/src/mosaic.c:75
 #, fuzzy
-msgid "Click to add a mosaic effect to the image."
+msgid "Click to add a mosaic effect to the entire image."
 msgstr "Keď klikneš, obrázok zrkadlovo otočíš."
 
 #: ../../magic/src/negative.c:72
@@ -949,13 +939,18 @@ msgstr "Klikni a pohybuj myšou, vykreslíš negatív."
 msgid "Click to turn the image into its negative."
 msgstr "Keď klikneš, obrázok zrkadlovo otočíš."
 
-#: ../../magic/src/noise.c:61
+#: ../../magic/src/noise.c:63
 msgid "Noise"
 msgstr ""
 
-#: ../../magic/src/noise.c:64
+#: ../../magic/src/noise.c:66
 #, fuzzy
-msgid "Click to add noise to the image."
+msgid "Click and move the mouse to add noise to the image."
+msgstr "Klikni a pohybuj myšou, obrázok sa rozmaže."
+
+#: ../../magic/src/noise.c:67
+#, fuzzy
+msgid "Click to add noise to the entire image."
 msgstr "Keď klikneš, obrázok zrkadlovo otočíš."
 
 #: ../../magic/src/rails.c:75
@@ -1013,7 +1008,7 @@ msgstr "Klikni a pohybuj myšou, obrázok sa rozmaže."
 
 #: ../../magic/src/sharpen.c:81
 #, fuzzy
-msgid "Click to sharpen the image."
+msgid "Click to sharpen the entire image."
 msgstr "Keď klikneš, obrázok zrkadlovo otočíš."
 
 #: ../../magic/src/sharpen.c:82
@@ -1023,8 +1018,9 @@ msgid ""
 msgstr "Klikni a pohybuj myšou, obrázok sa rozmaže."
 
 #: ../../magic/src/sharpen.c:83
-msgid "Click to create a black and white silhouette of the image."
-msgstr ""
+#, fuzzy
+msgid "Click to create a black and white silhouette of the entire image."
+msgstr "Klikni a pohybuj myšou, obrázok sa rozmaže."
 
 #: ../../magic/src/shift.c:104
 msgid "Shift"
@@ -1053,23 +1049,39 @@ msgstr ""
 
 #: ../../magic/src/snow.c:72 ../../magic/src/snow.c:73
 #, fuzzy
-msgid "Click to add snow to the image."
+msgid "Click to add snow to the entire image."
 msgstr "Keď klikneš, obrázok zrkadlovo otočíš."
 
-#: ../../magic/src/tint.c:77
+#: ../../magic/src/tint.c:67
 msgid "Tint"
 msgstr "Sfarbenie"
 
-#: ../../magic/src/tint.c:84
+#: ../../magic/src/tint.c:68
+msgid "Threshold"
+msgstr ""
+
+#: ../../magic/src/tint.c:71
 #, fuzzy
 msgid ""
 "Click and move the mouse around to change the color of parts of the picture."
 msgstr "Klikni a pohybuj myšou, obrázok sa rozmaže."
 
-#: ../../magic/src/tint.c:86
+#: ../../magic/src/tint.c:72
 #, fuzzy
-msgid "Click to change the entire picture’s color."
-msgstr "Klikni a pohybuj myšou pre zmenu farby obrázku."
+msgid "Click to change the colour of the entire image."
+msgstr "Klikni a pohybuj myšou, obrázok sa rozmaže."
+
+#: ../../magic/src/tint.c:73
+#, fuzzy
+msgid ""
+"Click and move the mouse around to threshold the image into pure colour and "
+"white regions."
+msgstr "Klikni a pohybuj myšou, obrázok sa prekreslí na komiks."
+
+#: ../../magic/src/tint.c:74
+#, fuzzy
+msgid "Click to threshold the entire image into pure colour and white regions."
+msgstr "Klikni a pohybuj myšou, obrázok sa prekreslí na komiks."
 
 #: ../../magic/src/waves.c:78
 msgid "Waves"
@@ -1084,6 +1096,14 @@ msgstr ""
 "Keď klikneš, obrázok sa zvlní. Ak klikneš smerom nahor, vlny budú kratšie. "
 "Ak klikneš smerom nadol, vlny budú vyššie, ak doľava, budú menšie a doprava "
 "budú dlhšie."
+
+#, fuzzy
+#~ msgid "Click and move the mouse around convert the image to greyscale."
+#~ msgstr "Klikni a pohybuj myšou, obrázok sa rozmaže."
+
+#, fuzzy
+#~ msgid "Click to change the entire picture’s color."
+#~ msgstr "Klikni a pohybuj myšou pre zmenu farby obrázku."
 
 #, fuzzy
 #~ msgid "Blur All"

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint 0.9.17\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-07-22 00:15-0700\n"
+"POT-Creation-Date: 2008-07-29 15:15-0700\n"
 "PO-Revision-Date: 2007-11-18 21:25+0800\n"
 "Last-Translator: 黃敏松 <songhuang.tw@gmail.com>\n"
 "Language-Team: Chinese (traditional) <zh-l10n@linux.org.tw>\n"
@@ -685,32 +685,17 @@ msgstr "畫圖程式"
 msgid "Tux Paint"
 msgstr "企鵝小畫家"
 
-#: ../../magic/src/blackAndWhite.c:67
-msgid "Black & White"
+#: ../../magic/src/alien.c:64
+msgid "Alien"
 msgstr ""
 
-#: ../../magic/src/blackAndWhite.c:68
-msgid "Threshold"
-msgstr ""
-
-#: ../../magic/src/blackAndWhite.c:71
+#: ../../magic/src/alien.c:67
 #, fuzzy
-msgid "Click and move the mouse around convert the image to greyscale."
+msgid "Click and move the mouse to give the image an \"alien\" appearance."
 msgstr "按著並移動滑鼠來使圖畫模糊。"
 
-#: ../../magic/src/blackAndWhite.c:72
-msgid "Click to convert the image to greyscale."
-msgstr ""
-
-#: ../../magic/src/blackAndWhite.c:73
-#, fuzzy
-msgid ""
-"Click and move the mouse around to threshold the image into black and white "
-"regions."
-msgstr "按著並移動滑鼠來將圖案變成卡通風格。"
-
-#: ../../magic/src/blackAndWhite.c:74
-msgid "Click to threshold the image into black and white regions."
+#: ../../magic/src/alien.c:68
+msgid "Click to give the entire image an \"alien\" appearance."
 msgstr ""
 
 #: ../../magic/src/blocks_chalk_drip.c:132
@@ -747,9 +732,9 @@ msgstr "模糊"
 msgid "Click and move the mouse around to blur the image."
 msgstr "按著並移動滑鼠來使圖畫模糊。"
 
-#: ../../magic/src/blur.c:60
+#: ../../magic/src/blur.c:61
 #, fuzzy
-msgid "Click to blur the whole image."
+msgid "Click to blur the entire image."
 msgstr "按一下可以產生左右對稱的圖畫。"
 
 #. Both are named "Bricks", at the moment:
@@ -923,14 +908,19 @@ msgstr "按一下可以產生左右對稱的圖畫。"
 msgid "Click to flip the picture upside-down."
 msgstr "按一下可以產生上下顛倒的圖畫。"
 
-#: ../../magic/src/mosaic.c:72
+#: ../../magic/src/mosaic.c:71
 #, fuzzy
 msgid "Mosaic"
 msgstr "魔法"
 
+#: ../../magic/src/mosaic.c:74
+#, fuzzy
+msgid "Click and move the mouse to add a mosaic effect to the image."
+msgstr "按一下可以產生左右對稱的圖畫。"
+
 #: ../../magic/src/mosaic.c:75
 #, fuzzy
-msgid "Click to add a mosaic effect to the image."
+msgid "Click to add a mosaic effect to the entire image."
 msgstr "按一下可以產生左右對稱的圖畫。"
 
 #: ../../magic/src/negative.c:72
@@ -946,13 +936,18 @@ msgstr "按著並移動滑鼠來畫出相反的顏色。"
 msgid "Click to turn the image into its negative."
 msgstr "按一下可以產生左右對稱的圖畫。"
 
-#: ../../magic/src/noise.c:61
+#: ../../magic/src/noise.c:63
 msgid "Noise"
 msgstr ""
 
-#: ../../magic/src/noise.c:64
+#: ../../magic/src/noise.c:66
 #, fuzzy
-msgid "Click to add noise to the image."
+msgid "Click and move the mouse to add noise to the image."
+msgstr "按著並移動滑鼠來使圖畫模糊。"
+
+#: ../../magic/src/noise.c:67
+#, fuzzy
+msgid "Click to add noise to the entire image."
 msgstr "按一下可以產生左右對稱的圖畫。"
 
 #: ../../magic/src/rails.c:75
@@ -1010,7 +1005,7 @@ msgstr "按著並移動滑鼠來使圖畫模糊。"
 
 #: ../../magic/src/sharpen.c:81
 #, fuzzy
-msgid "Click to sharpen the image."
+msgid "Click to sharpen the entire image."
 msgstr "按一下可以產生左右對稱的圖畫。"
 
 #: ../../magic/src/sharpen.c:82
@@ -1020,8 +1015,9 @@ msgid ""
 msgstr "按著並移動滑鼠來使圖畫模糊。"
 
 #: ../../magic/src/sharpen.c:83
-msgid "Click to create a black and white silhouette of the image."
-msgstr ""
+#, fuzzy
+msgid "Click to create a black and white silhouette of the entire image."
+msgstr "按著並移動滑鼠來使圖畫模糊。"
 
 #: ../../magic/src/shift.c:104
 msgid "Shift"
@@ -1049,23 +1045,39 @@ msgstr ""
 
 #: ../../magic/src/snow.c:72 ../../magic/src/snow.c:73
 #, fuzzy
-msgid "Click to add snow to the image."
+msgid "Click to add snow to the entire image."
 msgstr "按一下可以產生左右對稱的圖畫。"
 
-#: ../../magic/src/tint.c:77
+#: ../../magic/src/tint.c:67
 msgid "Tint"
 msgstr "著色"
 
-#: ../../magic/src/tint.c:84
+#: ../../magic/src/tint.c:68
+msgid "Threshold"
+msgstr ""
+
+#: ../../magic/src/tint.c:71
 #, fuzzy
 msgid ""
 "Click and move the mouse around to change the color of parts of the picture."
 msgstr "按著並移動滑鼠來使圖畫模糊。"
 
-#: ../../magic/src/tint.c:86
+#: ../../magic/src/tint.c:72
 #, fuzzy
-msgid "Click to change the entire picture’s color."
-msgstr "按著並移動滑鼠來改變圖畫的顏色。"
+msgid "Click to change the colour of the entire image."
+msgstr "按著並移動滑鼠來使圖畫模糊。"
+
+#: ../../magic/src/tint.c:73
+#, fuzzy
+msgid ""
+"Click and move the mouse around to threshold the image into pure colour and "
+"white regions."
+msgstr "按著並移動滑鼠來將圖案變成卡通風格。"
+
+#: ../../magic/src/tint.c:74
+#, fuzzy
+msgid "Click to threshold the entire image into pure colour and white regions."
+msgstr "按著並移動滑鼠來將圖案變成卡通風格。"
 
 #: ../../magic/src/waves.c:78
 msgid "Waves"
@@ -1079,6 +1091,14 @@ msgid ""
 msgstr ""
 "在圖紙上按下滑鼠鍵會讓影像如波浪般的扭曲，按著往上是短的波浪，往下是長的波"
 "浪，往左是小的波浪，往右是大的波浪。"
+
+#, fuzzy
+#~ msgid "Click and move the mouse around convert the image to greyscale."
+#~ msgstr "按著並移動滑鼠來使圖畫模糊。"
+
+#, fuzzy
+#~ msgid "Click to change the entire picture’s color."
+#~ msgstr "按著並移動滑鼠來改變圖畫的顏色。"
 
 #, fuzzy
 #~ msgid "Blur All"

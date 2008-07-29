@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-07-22 00:15-0700\n"
+"POT-Creation-Date: 2008-07-29 15:15-0700\n"
 "PO-Revision-Date: 2008-02-10 19:28+0400\n"
 "Last-Translator: Jamil Farzana <jamil.farzana@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -679,35 +679,18 @@ msgstr "Rəsm proqramı"
 msgid "Tux Paint"
 msgstr "Tuks ilə şəkil çək."
 
-#: ../../magic/src/blackAndWhite.c:67
-msgid "Black & White"
+#: ../../magic/src/alien.c:64
+msgid "Alien"
 msgstr ""
 
-#: ../../magic/src/blackAndWhite.c:68
-msgid "Threshold"
-msgstr ""
-
-#: ../../magic/src/blackAndWhite.c:71
+#: ../../magic/src/alien.c:67
 #, fuzzy
-msgid "Click and move the mouse around convert the image to greyscale."
+msgid "Click and move the mouse to give the image an \"alien\" appearance."
 msgstr ""
 "Şəkili ləkələmək üçün mausun sol düyməsini bas və mausu hərəkətə gətir."
 
-#: ../../magic/src/blackAndWhite.c:72
-msgid "Click to convert the image to greyscale."
-msgstr ""
-
-#: ../../magic/src/blackAndWhite.c:73
-#, fuzzy
-msgid ""
-"Click and move the mouse around to threshold the image into black and white "
-"regions."
-msgstr ""
-"Şəkili cizgi filminə çevirmək üçün mausun sol düyməsini bas və mausu "
-"hərəkətə gətir."
-
-#: ../../magic/src/blackAndWhite.c:74
-msgid "Click to threshold the image into black and white regions."
+#: ../../magic/src/alien.c:68
+msgid "Click to give the entire image an \"alien\" appearance."
 msgstr ""
 
 #: ../../magic/src/blocks_chalk_drip.c:132
@@ -747,9 +730,9 @@ msgid "Click and move the mouse around to blur the image."
 msgstr ""
 "Şəkili ləkələmək üçün mausun sol düyməsini bas və mausu hərəkətə gətir."
 
-#: ../../magic/src/blur.c:60
+#: ../../magic/src/blur.c:61
 #, fuzzy
-msgid "Click to blur the whole image."
+msgid "Click to blur the entire image."
 msgstr "Şəkili güzgüdəki kimi görmək üçün mausun sol düyməsini bas."
 
 #. Both are named "Bricks", at the moment:
@@ -947,14 +930,19 @@ msgstr "Şəkili güzgüdəki kimi görmək üçün mausun sol düyməsini bas."
 msgid "Click to flip the picture upside-down."
 msgstr "Şəkili çevirmək üçün mausun sol düyməsini bas."
 
-#: ../../magic/src/mosaic.c:72
+#: ../../magic/src/mosaic.c:71
 #, fuzzy
 msgid "Mosaic"
 msgstr "Möcüzə"
 
+#: ../../magic/src/mosaic.c:74
+#, fuzzy
+msgid "Click and move the mouse to add a mosaic effect to the image."
+msgstr "Şəkili güzgüdəki kimi görmək üçün mausun sol düyməsini bas."
+
 #: ../../magic/src/mosaic.c:75
 #, fuzzy
-msgid "Click to add a mosaic effect to the image."
+msgid "Click to add a mosaic effect to the entire image."
 msgstr "Şəkili güzgüdəki kimi görmək üçün mausun sol düyməsini bas."
 
 #: ../../magic/src/negative.c:72
@@ -970,13 +958,19 @@ msgstr "Şəkili neqativdə görmək üçün mausun sol düyməsini bas."
 msgid "Click to turn the image into its negative."
 msgstr "Şəkili güzgüdəki kimi görmək üçün mausun sol düyməsini bas."
 
-#: ../../magic/src/noise.c:61
+#: ../../magic/src/noise.c:63
 msgid "Noise"
 msgstr ""
 
-#: ../../magic/src/noise.c:64
+#: ../../magic/src/noise.c:66
 #, fuzzy
-msgid "Click to add noise to the image."
+msgid "Click and move the mouse to add noise to the image."
+msgstr ""
+"Şəkili ləkələmək üçün mausun sol düyməsini bas və mausu hərəkətə gətir."
+
+#: ../../magic/src/noise.c:67
+#, fuzzy
+msgid "Click to add noise to the entire image."
 msgstr "Şəkili güzgüdəki kimi görmək üçün mausun sol düyməsini bas."
 
 #: ../../magic/src/rails.c:75
@@ -1037,7 +1031,7 @@ msgstr ""
 
 #: ../../magic/src/sharpen.c:81
 #, fuzzy
-msgid "Click to sharpen the image."
+msgid "Click to sharpen the entire image."
 msgstr "Şəkili güzgüdəki kimi görmək üçün mausun sol düyməsini bas."
 
 #: ../../magic/src/sharpen.c:82
@@ -1048,8 +1042,10 @@ msgstr ""
 "Şəkili ləkələmək üçün mausun sol düyməsini bas və mausu hərəkətə gətir."
 
 #: ../../magic/src/sharpen.c:83
-msgid "Click to create a black and white silhouette of the image."
+#, fuzzy
+msgid "Click to create a black and white silhouette of the entire image."
 msgstr ""
+"Şəkili ləkələmək üçün mausun sol düyməsini bas və mausu hərəkətə gətir."
 
 #: ../../magic/src/shift.c:104
 msgid "Shift"
@@ -1079,25 +1075,45 @@ msgstr ""
 
 #: ../../magic/src/snow.c:72 ../../magic/src/snow.c:73
 #, fuzzy
-msgid "Click to add snow to the image."
+msgid "Click to add snow to the entire image."
 msgstr "Şəkili güzgüdəki kimi görmək üçün mausun sol düyməsini bas."
 
-#: ../../magic/src/tint.c:77
+#: ../../magic/src/tint.c:67
 msgid "Tint"
 msgstr "Ton"
 
-#: ../../magic/src/tint.c:84
+#: ../../magic/src/tint.c:68
+msgid "Threshold"
+msgstr ""
+
+#: ../../magic/src/tint.c:71
 #, fuzzy
 msgid ""
 "Click and move the mouse around to change the color of parts of the picture."
 msgstr ""
 "Şəkili ləkələmək üçün mausun sol düyməsini bas və mausu hərəkətə gətir."
 
-#: ../../magic/src/tint.c:86
+#: ../../magic/src/tint.c:72
 #, fuzzy
-msgid "Click to change the entire picture’s color."
+msgid "Click to change the colour of the entire image."
 msgstr ""
-"Şəkili azca rəngləmək  üçün mausun sol düyməsini bas və mausu hərəkətə gətir."
+"Şəkili ləkələmək üçün mausun sol düyməsini bas və mausu hərəkətə gətir."
+
+#: ../../magic/src/tint.c:73
+#, fuzzy
+msgid ""
+"Click and move the mouse around to threshold the image into pure colour and "
+"white regions."
+msgstr ""
+"Şəkili cizgi filminə çevirmək üçün mausun sol düyməsini bas və mausu "
+"hərəkətə gətir."
+
+#: ../../magic/src/tint.c:74
+#, fuzzy
+msgid "Click to threshold the entire image into pure colour and white regions."
+msgstr ""
+"Şəkili cizgi filminə çevirmək üçün mausun sol düyməsini bas və mausu "
+"hərəkətə gətir."
 
 #: ../../magic/src/waves.c:78
 msgid "Waves"
@@ -1110,6 +1126,17 @@ msgid ""
 "waves."
 msgstr ""
 "Şəkili dalğalı etmək üçün mausun sol düyməsini bas və mausu hərəkətə gətir."
+
+#, fuzzy
+#~ msgid "Click and move the mouse around convert the image to greyscale."
+#~ msgstr ""
+#~ "Şəkili ləkələmək üçün mausun sol düyməsini bas və mausu hərəkətə gətir."
+
+#, fuzzy
+#~ msgid "Click to change the entire picture’s color."
+#~ msgstr ""
+#~ "Şəkili azca rəngləmək  üçün mausun sol düyməsini bas və mausu hərəkətə "
+#~ "gətir."
 
 #, fuzzy
 #~ msgid "Blur All"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-07-22 00:15-0700\n"
+"POT-Creation-Date: 2008-07-29 15:15-0700\n"
 "PO-Revision-Date: 2006-05-12 19:14+0000\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: English (Canada) <en_CA@li.org>\n"
@@ -681,32 +681,17 @@ msgstr "Drawing program"
 msgid "Tux Paint"
 msgstr "Tux Paint"
 
-#: ../../magic/src/blackAndWhite.c:67
-msgid "Black & White"
+#: ../../magic/src/alien.c:64
+msgid "Alien"
 msgstr ""
 
-#: ../../magic/src/blackAndWhite.c:68
-msgid "Threshold"
-msgstr ""
-
-#: ../../magic/src/blackAndWhite.c:71
+#: ../../magic/src/alien.c:67
 #, fuzzy
-msgid "Click and move the mouse around convert the image to greyscale."
+msgid "Click and move the mouse to give the image an \"alien\" appearance."
 msgstr "Click and move the mouse around to blur the picture."
 
-#: ../../magic/src/blackAndWhite.c:72
-msgid "Click to convert the image to greyscale."
-msgstr ""
-
-#: ../../magic/src/blackAndWhite.c:73
-#, fuzzy
-msgid ""
-"Click and move the mouse around to threshold the image into black and white "
-"regions."
-msgstr "Click and move the mouse around to turn the picture into a cartoon."
-
-#: ../../magic/src/blackAndWhite.c:74
-msgid "Click to threshold the image into black and white regions."
+#: ../../magic/src/alien.c:68
+msgid "Click to give the entire image an \"alien\" appearance."
 msgstr ""
 
 #: ../../magic/src/blocks_chalk_drip.c:132
@@ -744,9 +729,9 @@ msgstr "Blur"
 msgid "Click and move the mouse around to blur the image."
 msgstr "Click and move the mouse around to blur the picture."
 
-#: ../../magic/src/blur.c:60
+#: ../../magic/src/blur.c:61
 #, fuzzy
-msgid "Click to blur the whole image."
+msgid "Click to blur the entire image."
 msgstr "Click to make a mirror image."
 
 #. Both are named "Bricks", at the moment:
@@ -928,14 +913,19 @@ msgstr "Click to make a mirror image."
 msgid "Click to flip the picture upside-down."
 msgstr "Click to flip the picture upside-down."
 
-#: ../../magic/src/mosaic.c:72
+#: ../../magic/src/mosaic.c:71
 #, fuzzy
 msgid "Mosaic"
 msgstr "Magic"
 
+#: ../../magic/src/mosaic.c:74
+#, fuzzy
+msgid "Click and move the mouse to add a mosaic effect to the image."
+msgstr "Click to make a mirror image."
+
 #: ../../magic/src/mosaic.c:75
 #, fuzzy
-msgid "Click to add a mosaic effect to the image."
+msgid "Click to add a mosaic effect to the entire image."
 msgstr "Click to make a mirror image."
 
 #: ../../magic/src/negative.c:72
@@ -951,13 +941,18 @@ msgstr "Click and move the mouse around to draw a negative."
 msgid "Click to turn the image into its negative."
 msgstr "Click to make a mirror image."
 
-#: ../../magic/src/noise.c:61
+#: ../../magic/src/noise.c:63
 msgid "Noise"
 msgstr ""
 
-#: ../../magic/src/noise.c:64
+#: ../../magic/src/noise.c:66
 #, fuzzy
-msgid "Click to add noise to the image."
+msgid "Click and move the mouse to add noise to the image."
+msgstr "Click and move the mouse around to blur the picture."
+
+#: ../../magic/src/noise.c:67
+#, fuzzy
+msgid "Click to add noise to the entire image."
 msgstr "Click to make a mirror image."
 
 #: ../../magic/src/rails.c:75
@@ -1015,7 +1010,7 @@ msgstr "Click and move the mouse around to blur the picture."
 
 #: ../../magic/src/sharpen.c:81
 #, fuzzy
-msgid "Click to sharpen the image."
+msgid "Click to sharpen the entire image."
 msgstr "Click to make a mirror image."
 
 #: ../../magic/src/sharpen.c:82
@@ -1025,8 +1020,9 @@ msgid ""
 msgstr "Click and move the mouse around to blur the picture."
 
 #: ../../magic/src/sharpen.c:83
-msgid "Click to create a black and white silhouette of the image."
-msgstr ""
+#, fuzzy
+msgid "Click to create a black and white silhouette of the entire image."
+msgstr "Click and move the mouse around to blur the picture."
 
 #: ../../magic/src/shift.c:104
 msgid "Shift"
@@ -1055,23 +1051,39 @@ msgstr ""
 
 #: ../../magic/src/snow.c:72 ../../magic/src/snow.c:73
 #, fuzzy
-msgid "Click to add snow to the image."
+msgid "Click to add snow to the entire image."
 msgstr "Click to make a mirror image."
 
-#: ../../magic/src/tint.c:77
+#: ../../magic/src/tint.c:67
 msgid "Tint"
 msgstr "Tint"
 
-#: ../../magic/src/tint.c:84
+#: ../../magic/src/tint.c:68
+msgid "Threshold"
+msgstr ""
+
+#: ../../magic/src/tint.c:71
 #, fuzzy
 msgid ""
 "Click and move the mouse around to change the color of parts of the picture."
 msgstr "Click and move the mouse around to blur the picture."
 
-#: ../../magic/src/tint.c:86
+#: ../../magic/src/tint.c:72
 #, fuzzy
-msgid "Click to change the entire picture’s color."
-msgstr "Click and move the mouse around to change the picture’s colour."
+msgid "Click to change the colour of the entire image."
+msgstr "Click and move the mouse around to blur the picture."
+
+#: ../../magic/src/tint.c:73
+#, fuzzy
+msgid ""
+"Click and move the mouse around to threshold the image into pure colour and "
+"white regions."
+msgstr "Click and move the mouse around to turn the picture into a cartoon."
+
+#: ../../magic/src/tint.c:74
+#, fuzzy
+msgid "Click to threshold the entire image into pure colour and white regions."
+msgstr "Click and move the mouse around to turn the picture into a cartoon."
 
 #: ../../magic/src/waves.c:78
 #, fuzzy
@@ -1084,6 +1096,14 @@ msgid ""
 "bottom for taller waves, the left for small waves, and the right for long "
 "waves."
 msgstr ""
+
+#, fuzzy
+#~ msgid "Click and move the mouse around convert the image to greyscale."
+#~ msgstr "Click and move the mouse around to blur the picture."
+
+#, fuzzy
+#~ msgid "Click to change the entire picture’s color."
+#~ msgstr "Click and move the mouse around to change the picture’s colour."
 
 #, fuzzy
 #~ msgid "Blur All"

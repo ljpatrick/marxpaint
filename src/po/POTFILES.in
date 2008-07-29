@@ -9,7 +9,7 @@ titles.h
 tools.h
 tuxpaint.c
 tuxpaint.desktop.in
-../magic/src/blackAndWhite.c
+../magic/src/alien.c
 ../magic/src/blocks_chalk_drip.c
 ../magic/src/blur.c
 ../magic/src/bricks.c

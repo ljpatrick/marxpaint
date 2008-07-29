@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: he\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-07-22 00:15-0700\n"
+"POT-Creation-Date: 2008-07-29 15:15-0700\n"
 "PO-Revision-Date: 2005-10-10 21:54+0200\n"
 "Last-Translator: dovix <dovix2003@yahoo.com>\n"
 "Language-Team: Hebrew <mdk-hebrew@iglu.org.il>\n"
@@ -689,32 +689,17 @@ msgstr "תוכנת ציור"
 msgid "Tux Paint"
 msgstr "Tux Paint"
 
-#: ../../magic/src/blackAndWhite.c:67
-msgid "Black & White"
+#: ../../magic/src/alien.c:64
+msgid "Alien"
 msgstr ""
 
-#: ../../magic/src/blackAndWhite.c:68
-msgid "Threshold"
-msgstr ""
-
-#: ../../magic/src/blackAndWhite.c:71
+#: ../../magic/src/alien.c:67
 #, fuzzy
-msgid "Click and move the mouse around convert the image to greyscale."
+msgid "Click and move the mouse to give the image an \"alien\" appearance."
 msgstr "עליך ללחוץ ולהזיז את העכבר מסביב כדי לטשטש את התמונה."
 
-#: ../../magic/src/blackAndWhite.c:72
-msgid "Click to convert the image to greyscale."
-msgstr ""
-
-#: ../../magic/src/blackAndWhite.c:73
-#, fuzzy
-msgid ""
-"Click and move the mouse around to threshold the image into black and white "
-"regions."
-msgstr "עליך ללחוץ ולהזיז את העכבר כדי להפוך את התמונה לסרט מצויר."
-
-#: ../../magic/src/blackAndWhite.c:74
-msgid "Click to threshold the image into black and white regions."
+#: ../../magic/src/alien.c:68
+msgid "Click to give the entire image an \"alien\" appearance."
 msgstr ""
 
 #: ../../magic/src/blocks_chalk_drip.c:132
@@ -752,9 +737,9 @@ msgstr "טשטוש"
 msgid "Click and move the mouse around to blur the image."
 msgstr "עליך ללחוץ ולהזיז את העכבר מסביב כדי לטשטש את התמונה."
 
-#: ../../magic/src/blur.c:60
+#: ../../magic/src/blur.c:61
 #, fuzzy
-msgid "Click to blur the whole image."
+msgid "Click to blur the entire image."
 msgstr "עליך ללחוץ כדי ליצור תמונת מראה."
 
 # There is little distinction between 'block' and 'brick' in Hebrew.
@@ -940,14 +925,19 @@ msgstr "עליך ללחוץ כדי ליצור תמונת מראה."
 msgid "Click to flip the picture upside-down."
 msgstr "עליך ללחוץ כדי להפוך את התמונה מלמעלה למטה."
 
-#: ../../magic/src/mosaic.c:72
+#: ../../magic/src/mosaic.c:71
 #, fuzzy
 msgid "Mosaic"
 msgstr "קסמים"
 
+#: ../../magic/src/mosaic.c:74
+#, fuzzy
+msgid "Click and move the mouse to add a mosaic effect to the image."
+msgstr "עליך ללחוץ כדי ליצור תמונת מראה."
+
 #: ../../magic/src/mosaic.c:75
 #, fuzzy
-msgid "Click to add a mosaic effect to the image."
+msgid "Click to add a mosaic effect to the entire image."
 msgstr "עליך ללחוץ כדי ליצור תמונת מראה."
 
 #: ../../magic/src/negative.c:72
@@ -963,13 +953,18 @@ msgstr "עליך ללחוץ ולהזיז את העכבר כדי להפוך את 
 msgid "Click to turn the image into its negative."
 msgstr "עליך ללחוץ כדי ליצור תמונת מראה."
 
-#: ../../magic/src/noise.c:61
+#: ../../magic/src/noise.c:63
 msgid "Noise"
 msgstr ""
 
-#: ../../magic/src/noise.c:64
+#: ../../magic/src/noise.c:66
 #, fuzzy
-msgid "Click to add noise to the image."
+msgid "Click and move the mouse to add noise to the image."
+msgstr "עליך ללחוץ ולהזיז את העכבר מסביב כדי לטשטש את התמונה."
+
+#: ../../magic/src/noise.c:67
+#, fuzzy
+msgid "Click to add noise to the entire image."
 msgstr "עליך ללחוץ כדי ליצור תמונת מראה."
 
 #: ../../magic/src/rails.c:75
@@ -1027,7 +1022,7 @@ msgstr "עליך ללחוץ ולהזיז את העכבר מסביב כדי לט�
 
 #: ../../magic/src/sharpen.c:81
 #, fuzzy
-msgid "Click to sharpen the image."
+msgid "Click to sharpen the entire image."
 msgstr "עליך ללחוץ כדי ליצור תמונת מראה."
 
 #: ../../magic/src/sharpen.c:82
@@ -1037,8 +1032,9 @@ msgid ""
 msgstr "עליך ללחוץ ולהזיז את העכבר מסביב כדי לטשטש את התמונה."
 
 #: ../../magic/src/sharpen.c:83
-msgid "Click to create a black and white silhouette of the image."
-msgstr ""
+#, fuzzy
+msgid "Click to create a black and white silhouette of the entire image."
+msgstr "עליך ללחוץ ולהזיז את העכבר מסביב כדי לטשטש את התמונה."
 
 #: ../../magic/src/shift.c:104
 msgid "Shift"
@@ -1067,23 +1063,39 @@ msgstr ""
 
 #: ../../magic/src/snow.c:72 ../../magic/src/snow.c:73
 #, fuzzy
-msgid "Click to add snow to the image."
+msgid "Click to add snow to the entire image."
 msgstr "עליך ללחוץ כדי ליצור תמונת מראה."
 
-#: ../../magic/src/tint.c:77
+#: ../../magic/src/tint.c:67
 msgid "Tint"
 msgstr "גוון"
 
-#: ../../magic/src/tint.c:84
+#: ../../magic/src/tint.c:68
+msgid "Threshold"
+msgstr ""
+
+#: ../../magic/src/tint.c:71
 #, fuzzy
 msgid ""
 "Click and move the mouse around to change the color of parts of the picture."
 msgstr "עליך ללחוץ ולהזיז את העכבר מסביב כדי לטשטש את התמונה."
 
-#: ../../magic/src/tint.c:86
+#: ../../magic/src/tint.c:72
 #, fuzzy
-msgid "Click to change the entire picture’s color."
-msgstr "עליך ללחוץ ולהזיז את העכבר כדי לשנות את צבע התמונה."
+msgid "Click to change the colour of the entire image."
+msgstr "עליך ללחוץ ולהזיז את העכבר מסביב כדי לטשטש את התמונה."
+
+#: ../../magic/src/tint.c:73
+#, fuzzy
+msgid ""
+"Click and move the mouse around to threshold the image into pure colour and "
+"white regions."
+msgstr "עליך ללחוץ ולהזיז את העכבר כדי להפוך את התמונה לסרט מצויר."
+
+#: ../../magic/src/tint.c:74
+#, fuzzy
+msgid "Click to threshold the entire image into pure colour and white regions."
+msgstr "עליך ללחוץ ולהזיז את העכבר כדי להפוך את התמונה לסרט מצויר."
 
 #: ../../magic/src/waves.c:78
 #, fuzzy
@@ -1096,6 +1108,14 @@ msgid ""
 "bottom for taller waves, the left for small waves, and the right for long "
 "waves."
 msgstr ""
+
+#, fuzzy
+#~ msgid "Click and move the mouse around convert the image to greyscale."
+#~ msgstr "עליך ללחוץ ולהזיז את העכבר מסביב כדי לטשטש את התמונה."
+
+#, fuzzy
+#~ msgid "Click to change the entire picture’s color."
+#~ msgstr "עליך ללחוץ ולהזיז את העכבר כדי לשנות את צבע התמונה."
 
 #, fuzzy
 #~ msgid "Blur All"
