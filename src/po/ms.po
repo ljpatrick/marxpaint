@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ms\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-07-29 15:15-0700\n"
+"POT-Creation-Date: 2008-08-01 14:11-0700\n"
 "PO-Revision-Date: 2004-08-23 16:06+0800\n"
 "Last-Translator: Muhammad Najmi bin Ahmad Zabidi <md_najmi@yahoo.com>\n"
 "Language-Team: Malay <kedidiemas@yahoogroups.com>\n"
@@ -858,6 +858,10 @@ msgstr ""
 #, fuzzy
 msgid "Click and drag the mouse to cover an area with foamy bubbles."
 msgstr "Klik dan gerakkan tetikus di sekeliling untuk menebalkan gambar."
+
+#: ../../magic/src/fold.c:60
+msgid "Fold"
+msgstr ""
 
 #: ../../magic/src/fold.c:62
 msgid "Choose a background color and click to turn the corner of the page over"

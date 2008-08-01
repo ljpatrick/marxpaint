@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Tuxpaint 0.9.2pre\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-07-29 15:15-0700\n"
+"POT-Creation-Date: 2008-08-01 14:11-0700\n"
 "PO-Revision-Date: 2008-04-14 21:14+0200\n"
 "Last-Translator: yannis\n"
 "Language-Team: N/A <i18ngr@lists.hellug.gr>\n"
@@ -853,6 +853,10 @@ msgstr "Αφρός."
 msgid "Click and drag the mouse to cover an area with foamy bubbles."
 msgstr ""
 "Κάνε κλικ και σύρε το ποντίκι για να καλύψεις την περιοχή με φούσκες αφρού."
+
+#: ../../magic/src/fold.c:60
+msgid "Fold"
+msgstr ""
 
 #: ../../magic/src/fold.c:62
 msgid "Choose a background color and click to turn the corner of the page over"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-07-29 15:15-0700\n"
+"POT-Creation-Date: 2008-08-01 14:11-0700\n"
 "PO-Revision-Date: 2008-02-10 19:28+0400\n"
 "Last-Translator: Jamil Farzana <jamil.farzana@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -855,6 +855,10 @@ msgid "Click and drag the mouse to cover an area with foamy bubbles."
 msgstr ""
 "Şəkili köpük ilə örtmək üçün  mausun sol düyməsini bas və mausu hərəkətə "
 "gətir."
+
+#: ../../magic/src/fold.c:60
+msgid "Fold"
+msgstr ""
 
 #: ../../magic/src/fold.c:62
 msgid "Choose a background color and click to turn the corner of the page over"
