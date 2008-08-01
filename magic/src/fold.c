@@ -57,7 +57,7 @@ SDL_Surface * fold_get_icon(magic_api * api, int which)
   return(IMG_Load(fname));
 }
 
-char * fold_get_name(magic_api * api, int which) { return(strdup("Fold")); }
+char * fold_get_name(magic_api * api, int which) { return(gettext_noop("Fold")); }
 
 char * fold_get_description(magic_api * api, int which, int mode) { return strdup(gettext_noop("Choose a background color and click to turn the corner of the page over")); }
 
