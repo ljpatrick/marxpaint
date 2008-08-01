@@ -1,9 +1,9 @@
 # Tuxpaint catalan translation.
 # Traducció al català del Tuxpaint.
-# Copyright (C) 2002-2006
+# Copyright (C) 2002-2008
 # This file is distributed under the same license as the Tuxpaint package.
 # Aquest fitxer és distribueix amb la mateixa llicència que el Tuxpaint.
-# Pere Pujal i Carabantes <ppujal@airtel.net>, 2002-2006.
+# Pere Pujal i Carabantes <ppujal@airtel.net>, 2002-2008.
 #
 #
 # Nota per futures traduccions/actualitzacions:
@@ -15,10 +15,10 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Tuxpaint cvs 2008-06-17\n"
+"Project-Id-Version: Tuxpaint cvs 2008-08-02\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-08-01 14:11-0700\n"
-"PO-Revision-Date: 2008-06-17 01:17+0200\n"
+"POT-Creation-Date: 2008-08-02 00:18+0200\n"
+"PO-Revision-Date: 2008-08-02 00:18+0200\n"
 "Last-Translator: Pere Pujal i Carabantes <pere@fornol.no-ip.org>\n"
 "Language-Team: Català <linux-ca@chanae.alphanet.ch>\n"
 "MIME-Version: 1.0\n"
@@ -693,16 +693,15 @@ msgstr "Tux Paint"
 
 #: ../../magic/src/alien.c:64
 msgid "Alien"
-msgstr ""
+msgstr "Alien"
 
 #: ../../magic/src/alien.c:67
-#, fuzzy
 msgid "Click and move the mouse to give the image an \"alien\" appearance."
-msgstr "Feu clic i moveu el ratolí per difuminar el dibuix."
+msgstr "Cliqueu i moveu el ratolí per donar una aparença estranya a la imatge."
 
 #: ../../magic/src/alien.c:68
 msgid "Click to give the entire image an \"alien\" appearance."
-msgstr ""
+msgstr "Cliqueu per donar una aparença estranya a la imatge."
 
 #: ../../magic/src/blocks_chalk_drip.c:132
 msgid "Blocks"
@@ -735,14 +734,12 @@ msgid "Blur"
 msgstr "Difumina"
 
 #: ../../magic/src/blur.c:60
-#, fuzzy
 msgid "Click and move the mouse around to blur the image."
 msgstr "Feu clic i moveu el ratolí per difuminar el dibuix."
 
 #: ../../magic/src/blur.c:61
-#, fuzzy
 msgid "Click to blur the entire image."
-msgstr "Feu clic per invertir la imatge horitzontalment."
+msgstr "Cliqueu per difuminar el dibuix."
 
 #. Both are named "Bricks", at the moment:
 #: ../../magic/src/bricks.c:104
@@ -775,11 +772,11 @@ msgstr "Feu clic i moveu el ratolí per convertir la imatge a colors sólids."
 
 #: ../../magic/src/confetti.c:63
 msgid "Confetti"
-msgstr ""
+msgstr "Confeti"
 
 #: ../../magic/src/confetti.c:65
 msgid "Click to throw a confetti!"
-msgstr ""
+msgstr "Cliqueu per lençar paperets!"
 
 #: ../../magic/src/distortion.c:121
 msgid "Distortion"
@@ -807,24 +804,20 @@ msgid "Darken"
 msgstr "Enfosquir"
 
 #: ../../magic/src/fade_darken.c:132
-#, fuzzy
 msgid "Click and move the mouse to lighten parts of your picture."
-msgstr "Feu clic i moveu el ratolí per difuminar el dibuix."
+msgstr "Cliqueu i moveu el ratolí per il·luminar parts del dibuix."
 
 #: ../../magic/src/fade_darken.c:134
-#, fuzzy
 msgid "Click to lighten your entire picture."
-msgstr "Feu clic i moveu el ratolí per canviar el color de la imatge."
+msgstr "Cliqueu per il·luminar el dibuix."
 
 #: ../../magic/src/fade_darken.c:139
-#, fuzzy
 msgid "Click and move the mouse to darken parts of your picture."
-msgstr "Feu clic i moveu el ratolí per difuminar el dibuix."
+msgstr "Cliqueu i moveu el ratolí per enfosquir parts del dibuix."
 
 #: ../../magic/src/fade_darken.c:141
-#, fuzzy
 msgid "Click to darken your entire picture."
-msgstr "Feu clic i moveu el ratolí per canviar el color de la imatge."
+msgstr "Cliqueu per enfosquir el dibuix."
 
 #: ../../magic/src/fill.c:87
 msgid "Fill"
@@ -852,13 +845,9 @@ msgstr "Escuma."
 msgid "Click and drag the mouse to cover an area with foamy bubbles."
 msgstr "Feu clic i moveu el ratolí per cobrir la imatge d'escuma."
 
-#: ../../magic/src/fold.c:60
-msgid "Fold"
-msgstr ""
-
 #: ../../magic/src/fold.c:62
 msgid "Choose a background color and click to turn the corner of the page over"
-msgstr ""
+msgstr "Trieu un color de fons i cliqueu per aixecar la cantonada."
 
 #: ../../magic/src/glasstile.c:83
 msgid "Glass Tile"
@@ -870,9 +859,8 @@ msgstr ""
 "Feu clic i arrossegueu el ratolí per posar blocs de vidre en la imatge."
 
 #: ../../magic/src/glasstile.c:92
-#, fuzzy
 msgid "Click to cover your entire picture in glass tiles."
-msgstr "Feu clic i moveu el ratolí per canviar el color de la imatge."
+msgstr "Feu clic per dibuixar blocs de vidre."
 
 #: ../../magic/src/grass.c:92
 msgid "Grass"
@@ -926,19 +914,16 @@ msgid "Click to flip the picture upside-down."
 msgstr "Feu clic per invertir la imatge verticalment."
 
 #: ../../magic/src/mosaic.c:71
-#, fuzzy
 msgid "Mosaic"
-msgstr "Màgic"
+msgstr "Mosaic"
 
 #: ../../magic/src/mosaic.c:74
-#, fuzzy
 msgid "Click and move the mouse to add a mosaic effect to the image."
-msgstr "Feu clic per invertir la imatge horitzontalment."
+msgstr "Cliqueu i moveu el ratolí per afegir un efecte de mosaic al dibuix."
 
 #: ../../magic/src/mosaic.c:75
-#, fuzzy
 msgid "Click to add a mosaic effect to the entire image."
-msgstr "Feu clic per invertir la imatge horitzontalment."
+msgstr "Cliqueu per afegir un efecte de mosaic al dibuix."
 
 #: ../../magic/src/negative.c:72
 msgid "Negative"
@@ -949,33 +934,28 @@ msgid "Click and move the mouse around to draw a negative."
 msgstr "Feu clic i moveu el ratolí per fer un negatiu."
 
 #: ../../magic/src/negative.c:83
-#, fuzzy
 msgid "Click to turn the image into its negative."
-msgstr "Feu clic per invertir la imatge horitzontalment."
+msgstr "Cliqueu per fer el negatiu de la imatge."
 
 #: ../../magic/src/noise.c:63
 msgid "Noise"
-msgstr ""
+msgstr "Soroll"
 
 #: ../../magic/src/noise.c:66
-#, fuzzy
 msgid "Click and move the mouse to add noise to the image."
-msgstr "Feu clic i moveu el ratolí per difuminar el dibuix."
+msgstr "Cliqueu i arrossegueu el ratolí per afegir soroll a la imatge."
 
 #: ../../magic/src/noise.c:67
-#, fuzzy
 msgid "Click to add noise to the entire image."
-msgstr "Feu clic per invertir la imatge horitzontalment."
+msgstr "Cliqueu per afegir soroll a la imatge."
 
 #: ../../magic/src/rails.c:75
-#, fuzzy
 msgid "Rails"
-msgstr "Ondulacions"
+msgstr "Rails"
 
 #: ../../magic/src/rails.c:77
-#, fuzzy
 msgid "Click and drag to draw train track rails on your picture."
-msgstr "Cliqueu i arrossegueu per dibuixar un camí de llum en la imatge."
+msgstr "Cliqueu i arrossegueu per dibuixar una via de tren."
 
 #: ../../magic/src/rainbow.c:107
 msgid "Rainbow"
@@ -997,46 +977,40 @@ msgstr ""
 
 #: ../../magic/src/sharpen.c:73
 msgid "Trace Contour"
-msgstr ""
+msgstr "Vora"
 
 #: ../../magic/src/sharpen.c:74
-#, fuzzy
 msgid "Sharpen"
-msgstr "Formes"
+msgstr "Afila"
 
 #: ../../magic/src/sharpen.c:75
 msgid "Silhouette"
-msgstr ""
+msgstr "Silueta"
 
 #: ../../magic/src/sharpen.c:78
-#, fuzzy
 msgid "Click and move the mouse to trace the edges of objects in the image."
-msgstr "Feu clic i moveu el ratolí per difuminar el dibuix."
+msgstr "Cliqueu i arrossegueu el ratolí per traçar la vora dels objectes."
 
 #: ../../magic/src/sharpen.c:79
 msgid "Click to trace the edges of objects in the image."
-msgstr ""
+msgstr "Cliqueu per traçar la vora dels objectes."
 
 #: ../../magic/src/sharpen.c:80
-#, fuzzy
 msgid "Click and move the mouse to sharpen the image."
-msgstr "Feu clic i moveu el ratolí per difuminar el dibuix."
+msgstr "Cliqueu i arrossegueu el ratolí per afilar la imatge."
 
 #: ../../magic/src/sharpen.c:81
-#, fuzzy
 msgid "Click to sharpen the entire image."
-msgstr "Feu clic per invertir la imatge horitzontalment."
+msgstr "Cliqueu per afilar la imatge."
 
 #: ../../magic/src/sharpen.c:82
-#, fuzzy
 msgid ""
 "Click and move the mouse to create a black and white silhouette of the image."
-msgstr "Feu clic i moveu el ratolí per difuminar el dibuix."
+msgstr "Cliqueu i moveu el ratolí per traçar les vores en blanc i negre."
 
 #: ../../magic/src/sharpen.c:83
-#, fuzzy
 msgid "Click to create a black and white silhouette of the entire image."
-msgstr "Feu clic i moveu el ratolí per difuminar el dibuix."
+msgstr "Cliqueu per crear una silueta de la imatge en blanc i negre."
 
 #: ../../magic/src/shift.c:104
 msgid "Shift"
@@ -1056,16 +1030,15 @@ msgstr "Feu clic i moveu el ratolí per passar el dit pel dibuix."
 
 #: ../../magic/src/snow.c:68
 msgid "Snow Ball"
-msgstr ""
+msgstr "Boles de neu"
 
 #: ../../magic/src/snow.c:69
 msgid "Snow Flake"
-msgstr ""
+msgstr "Flocs de neu"
 
 #: ../../magic/src/snow.c:72 ../../magic/src/snow.c:73
-#, fuzzy
 msgid "Click to add snow to the entire image."
-msgstr "Feu clic per invertir la imatge horitzontalment."
+msgstr "Cliqueu per afegir neu a la imatge."
 
 #: ../../magic/src/tint.c:67
 msgid "Tint"
@@ -1073,30 +1046,26 @@ msgstr "Entinta"
 
 #: ../../magic/src/tint.c:68
 msgid "Threshold"
-msgstr ""
+msgstr "Llindar"
 
 #: ../../magic/src/tint.c:71
-#, fuzzy
 msgid ""
 "Click and move the mouse around to change the color of parts of the picture."
-msgstr "Feu clic i moveu el ratolí per difuminar el dibuix."
+msgstr "Feu clic i moveu el ratolí per canviar el color de parts del dibuix."
 
 #: ../../magic/src/tint.c:72
-#, fuzzy
 msgid "Click to change the colour of the entire image."
-msgstr "Feu clic i moveu el ratolí per difuminar el dibuix."
+msgstr "Cliqueu per canviar els colors de la imatge."
 
 #: ../../magic/src/tint.c:73
-#, fuzzy
 msgid ""
 "Click and move the mouse around to threshold the image into pure colour and "
 "white regions."
-msgstr "Feu clic i moveu el ratolí per convertir la imatge a colors sólids."
+msgstr "Cliqueu i moveu el ratolí per convertir a blanc i negre."
 
 #: ../../magic/src/tint.c:74
-#, fuzzy
 msgid "Click to threshold the entire image into pure colour and white regions."
-msgstr "Feu clic i moveu el ratolí per convertir la imatge a colors sólids."
+msgstr "Cliqueu per convertir la imatge a blanc i negre."
 
 #: ../../magic/src/waves.c:78
 msgid "Waves"
@@ -1111,17 +1080,17 @@ msgstr ""
 "Feu clic dins la imatge per aplicar-hi ones. Clic a dalt fa ones curtes, a "
 "baix ones altes, a l'esquerra ones petites, a la dreta ones llargues."
 
-#, fuzzy
+#~ msgid "Black & White"
+#~ msgstr "Blanc i negre"
+
 #~ msgid "Click and move the mouse around convert the image to greyscale."
-#~ msgstr "Feu clic i moveu el ratolí per difuminar el dibuix."
+#~ msgstr "Cliqueu i moveu el ratolí per convertir a escala de grisos."
 
-#, fuzzy
+#~ msgid "Click to convert the image to greyscale."
+#~ msgstr "Clique per convertir la imatge a escala de grisos."
+
 #~ msgid "Click to change the entire picture’s color."
-#~ msgstr "Feu clic i moveu el ratolí per canviar el color de la imatge."
-
-#, fuzzy
-#~ msgid "Blur All"
-#~ msgstr "Difumina"
+#~ msgstr "Cliqueu per canviar el color del dibuix."
 
 #~ msgid "Click and move to fade the colors."
 #~ msgstr "Feu clic i moveu per esvair els colors."
