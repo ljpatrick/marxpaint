@@ -33,6 +33,7 @@ tuxpaint.desktop.in
 ../magic/src/negative.c
 ../magic/src/noise.c
 ../magic/src/rails.c
+../magic/src/rain.c
 ../magic/src/rainbow.c
 ../magic/src/ripples.c
 ../magic/src/sharpen.c
