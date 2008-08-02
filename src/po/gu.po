@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-08-01 14:11-0700\n"
+"POT-Creation-Date: 2008-08-01 17:34-0700\n"
 "PO-Revision-Date: 2008-07-14 12:17+0530\n"
 "Last-Translator: Kartik Mistry <kartik.mistry@gmail.com>\n"
 "Language-Team: Gujarati <team@utkarsh.org>\n"
@@ -943,6 +943,21 @@ msgstr "પાટાઓ"
 msgid "Click and drag to draw train track rails on your picture."
 msgstr "તમારા ચિત્રમાં રેલ્વેનાં પાટાઓ દોરવા માટે માઉસને ક્લિક કરીને ખેંચો."
 
+#: ../../magic/src/rain.c:64
+#, fuzzy
+msgid "Rain"
+msgstr "મેઘધનુષ"
+
+#: ../../magic/src/rain.c:67
+#, fuzzy
+msgid "Click to place a rain drop onto the image."
+msgstr "અરીસા ચિત્ર બનાવવા ક્લિક કરો."
+
+#: ../../magic/src/rain.c:68
+#, fuzzy
+msgid "Click to cover the image with rain drops."
+msgstr "ચિત્રને ભૂખરું બનાવવા માટે ક્લિક કરો."
+
 #: ../../magic/src/rainbow.c:107
 msgid "Rainbow"
 msgstr "મેઘધનુષ"
@@ -1080,9 +1095,6 @@ msgstr ""
 
 #~ msgid "Click and move the mouse around convert the image to greyscale."
 #~ msgstr "ચિત્રને ભૂખરાં રંગનાં ચિત્રમાં ફેરવવા માટે માઉસને ક્લિક કરો અને આજુ-બાજુ ખસેડો."
-
-#~ msgid "Click to convert the image to greyscale."
-#~ msgstr "ચિત્રને ભૂખરું બનાવવા માટે ક્લિક કરો."
 
 #~ msgid "Click to change the entire picture’s color."
 #~ msgstr "સંપૂર્ણ ચિત્રનો રંગ બદલવા માટે ક્લિક કરો."

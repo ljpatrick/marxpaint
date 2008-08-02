@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint-0.9.17\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-08-01 14:11-0700\n"
+"POT-Creation-Date: 2008-08-01 17:34-0700\n"
 "PO-Revision-Date: 2007-11-06 10:55+0100\n"
 "Last-Translator: Gabor Kelemen <kelemeng@gnome.hu>\n"
 "Language-Team: Hungarian <translation-team-hu@lists.sourceforge.net>\n"
@@ -975,6 +975,21 @@ msgstr ""
 #, fuzzy
 msgid "Click and drag to draw train track rails on your picture."
 msgstr "Kattints oda a rajzodon, ahol maszatolni szeretnél."
+
+#: ../../magic/src/rain.c:64
+#, fuzzy
+msgid "Rain"
+msgstr "Szivárvány"
+
+#: ../../magic/src/rain.c:67
+#, fuzzy
+msgid "Click to place a rain drop onto the image."
+msgstr "Kattints a rajzlapra, hogy tükrözzük a rajzodat."
+
+#: ../../magic/src/rain.c:68
+#, fuzzy
+msgid "Click to cover the image with rain drops."
+msgstr "Kattints a rajzlapra, hogy tükrözzük a rajzodat."
 
 #: ../../magic/src/rainbow.c:107
 msgid "Rainbow"

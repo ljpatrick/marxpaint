@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint 0.9.17\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-08-01 14:11-0700\n"
+"POT-Creation-Date: 2008-08-01 17:34-0700\n"
 "PO-Revision-Date: 2007-05-16 17:08+0300\n"
 "Last-Translator: Yavor Doganov <yavor@doganov.org>\n"
 "Language-Team: Bulgarian <dict@fsa-bg.org>\n"
@@ -972,6 +972,21 @@ msgstr ""
 #, fuzzy
 msgid "Click and drag to draw train track rails on your picture."
 msgstr "Натиснете и движете мишката, за да размажете рисунката."
+
+#: ../../magic/src/rain.c:64
+#, fuzzy
+msgid "Rain"
+msgstr "Дъга"
+
+#: ../../magic/src/rain.c:67
+#, fuzzy
+msgid "Click to place a rain drop onto the image."
+msgstr "Натиснете, за направите огледален образ."
+
+#: ../../magic/src/rain.c:68
+#, fuzzy
+msgid "Click to cover the image with rain drops."
+msgstr "Натиснете, за направите огледален образ."
 
 #: ../../magic/src/rainbow.c:107
 msgid "Rainbow"

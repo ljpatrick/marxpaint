@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: sv\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-08-01 14:11-0700\n"
+"POT-Creation-Date: 2008-08-01 17:34-0700\n"
 "PO-Revision-Date: 2007-11-07 23:35+0100\n"
 "Last-Translator: Robin Rosenberg <robin.rosenberg@dewire.com>\n"
 "Language-Team:  <sv@li.org>\n"
@@ -958,6 +958,21 @@ msgstr "Krusningar"
 #, fuzzy
 msgid "Click and drag to draw train track rails on your picture."
 msgstr "Klicka och rör musen för att rita en ljusstråle på bilden."
+
+#: ../../magic/src/rain.c:64
+#, fuzzy
+msgid "Rain"
+msgstr "Regnbåge"
+
+#: ../../magic/src/rain.c:67
+#, fuzzy
+msgid "Click to place a rain drop onto the image."
+msgstr "Klicka för att skapa en spegelbild."
+
+#: ../../magic/src/rain.c:68
+#, fuzzy
+msgid "Click to cover the image with rain drops."
+msgstr "Klicka för att skapa en spegelbild."
 
 #: ../../magic/src/rainbow.c:107
 msgid "Rainbow"

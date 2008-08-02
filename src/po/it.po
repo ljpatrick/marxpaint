@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TuxPaint 0.9.17\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-08-01 14:11-0700\n"
+"POT-Creation-Date: 2008-08-01 17:34-0700\n"
 "PO-Revision-Date: 2007-11-17 21:26+0100\n"
 "Last-Translator: Flavio Pastore <ironbishop@gmail.com>\n"
 "Language-Team: Italian <it@li.org>\n"
@@ -999,6 +999,21 @@ msgstr "Increspa"
 #, fuzzy
 msgid "Click and drag to draw train track rails on your picture."
 msgstr "Fai click per disegnare un raggio di luce nel tuo disegno."
+
+#: ../../magic/src/rain.c:64
+#, fuzzy
+msgid "Rain"
+msgstr "Arcobaleno"
+
+#: ../../magic/src/rain.c:67
+#, fuzzy
+msgid "Click to place a rain drop onto the image."
+msgstr "Fai click per specchiare il disegno."
+
+#: ../../magic/src/rain.c:68
+#, fuzzy
+msgid "Click to cover the image with rain drops."
+msgstr "Fai click per specchiare il disegno."
 
 #: ../../magic/src/rainbow.c:107
 msgid "Rainbow"

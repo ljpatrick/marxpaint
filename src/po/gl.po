@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint-gl\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-08-01 14:11-0700\n"
+"POT-Creation-Date: 2008-08-01 17:34-0700\n"
 "PO-Revision-Date: 2006-05-12 13:47+0200\n"
 "Last-Translator: Leandro Regueiro <leandro.regueiro@gmail.com>\n"
 "Language-Team: Galician <gpul-traduccion@ceu.fi.udc.es>\n"
@@ -975,6 +975,21 @@ msgstr ""
 #, fuzzy
 msgid "Click and drag to draw train track rails on your picture."
 msgstr "Clica e move o rato para desenfocar o debuxo."
+
+#: ../../magic/src/rain.c:64
+#, fuzzy
+msgid "Rain"
+msgstr "Arco iris"
+
+#: ../../magic/src/rain.c:67
+#, fuzzy
+msgid "Click to place a rain drop onto the image."
+msgstr "Clica para espellar o debuxo."
+
+#: ../../magic/src/rain.c:68
+#, fuzzy
+msgid "Click to cover the image with rain drops."
+msgstr "Clica para espellar o debuxo."
 
 #: ../../magic/src/rainbow.c:107
 msgid "Rainbow"

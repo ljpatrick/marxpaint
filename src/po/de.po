@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-08-01 14:11-0700\n"
+"POT-Creation-Date: 2008-08-01 17:34-0700\n"
 "PO-Revision-Date: 2008-02-27 11:34+0100\n"
 "Last-Translator: Burkhard Lück <lueck@hube-lueck.de>\n"
 "Language-Team: Deutsch <kde-i18n-de@kde.org>\n"
@@ -968,6 +968,21 @@ msgstr "Kräuseln"
 #, fuzzy
 msgid "Click and drag to draw train track rails on your picture."
 msgstr "Klick und bewege die Maus, um helle Kreise auf das Bild zu malen."
+
+#: ../../magic/src/rain.c:64
+#, fuzzy
+msgid "Rain"
+msgstr "Regenbogenfarbe"
+
+#: ../../magic/src/rain.c:67
+#, fuzzy
+msgid "Click to place a rain drop onto the image."
+msgstr "Klicke, um das Bild zu spiegeln."
+
+#: ../../magic/src/rain.c:68
+#, fuzzy
+msgid "Click to cover the image with rain drops."
+msgstr "Klicke, um das Bild zu spiegeln."
 
 #: ../../magic/src/rainbow.c:107
 msgid "Rainbow"

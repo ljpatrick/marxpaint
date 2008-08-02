@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-08-01 14:11-0700\n"
+"POT-Creation-Date: 2008-08-01 17:34-0700\n"
 "PO-Revision-Date: 2007-07-04 11:24-0000\n"
 "Last-Translator: Haby Diallo <haby42@yahoo.fr>\n"
 "Language-Team: \n"
@@ -975,6 +975,21 @@ msgstr ""
 #, fuzzy
 msgid "Click and drag to draw train track rails on your picture."
 msgstr "Bëssël te jalale ak jinax bi so buge sa natal bi lëndëm."
+
+#: ../../magic/src/rain.c:64
+#, fuzzy
+msgid "Rain"
+msgstr "Xonn"
+
+#: ../../magic/src/rain.c:67
+#, fuzzy
+msgid "Click to place a rain drop onto the image."
+msgstr "Bëssël ngir guis natal bi ci setu."
+
+#: ../../magic/src/rain.c:68
+#, fuzzy
+msgid "Click to cover the image with rain drops."
+msgstr "Bëssël ngir guis natal bi ci setu."
 
 #: ../../magic/src/rainbow.c:107
 msgid "Rainbow"

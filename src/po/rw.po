@@ -16,7 +16,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint 0.9.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-08-01 14:11-0700\n"
+"POT-Creation-Date: 2008-08-01 17:34-0700\n"
 "PO-Revision-Date: 2005-04-04 10:55-0700\n"
 "Last-Translator: Steven Michael Murphy <murf@e-tools.com>\n"
 "Language-Team: Kinyarwanda <translation-team-rw@lists.sourceforge.net>\n"
@@ -1029,6 +1029,20 @@ msgstr ""
 #, fuzzy
 msgid "Click and drag to draw train track rails on your picture."
 msgstr "Na Kwimura i Imbeba Kuri kinanutse i() y'Ishusho"
+
+#: ../../magic/src/rain.c:64
+msgid "Rain"
+msgstr ""
+
+#: ../../magic/src/rain.c:67
+#, fuzzy
+msgid "Click to place a rain drop onto the image."
+msgstr "Kuri Ubwoko a Ishusho"
+
+#: ../../magic/src/rain.c:68
+#, fuzzy
+msgid "Click to cover the image with rain drops."
+msgstr "Kuri Ubwoko a Ishusho"
 
 #: ../../magic/src/rainbow.c:107
 msgid "Rainbow"

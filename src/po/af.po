@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: af\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-08-01 14:11-0700\n"
+"POT-Creation-Date: 2008-08-01 17:34-0700\n"
 "PO-Revision-Date: 2008-06-19 13:24-0700\n"
 "Last-Translator: Samuel Murray (Groenkloof) <samuel@translate.org.za>\n"
 "Language-Team: \n"
@@ -957,6 +957,21 @@ msgstr "Rimpels"
 #, fuzzy
 msgid "Click and drag to draw train track rails on your picture."
 msgstr "Klik en beweeg om 'n ligstraal te teken."
+
+#: ../../magic/src/rain.c:64
+#, fuzzy
+msgid "Rain"
+msgstr "Reënboog"
+
+#: ../../magic/src/rain.c:67
+#, fuzzy
+msgid "Click to place a rain drop onto the image."
+msgstr "Klik om 'n spieëlbeeld te maak!"
+
+#: ../../magic/src/rain.c:68
+#, fuzzy
+msgid "Click to cover the image with rain drops."
+msgstr "Klik om 'n spieëlbeeld te maak!"
 
 #: ../../magic/src/rainbow.c:107
 msgid "Rainbow"

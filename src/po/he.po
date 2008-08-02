@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: he\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-08-01 14:11-0700\n"
+"POT-Creation-Date: 2008-08-01 17:34-0700\n"
 "PO-Revision-Date: 2005-10-10 21:54+0200\n"
 "Last-Translator: dovix <dovix2003@yahoo.com>\n"
 "Language-Team: Hebrew <mdk-hebrew@iglu.org.il>\n"
@@ -979,6 +979,21 @@ msgstr ""
 #, fuzzy
 msgid "Click and drag to draw train track rails on your picture."
 msgstr "עליך ללחוץ ולהזיז את העכבר מסביב כדי לטשטש את התמונה."
+
+#: ../../magic/src/rain.c:64
+#, fuzzy
+msgid "Rain"
+msgstr "קשת בענן"
+
+#: ../../magic/src/rain.c:67
+#, fuzzy
+msgid "Click to place a rain drop onto the image."
+msgstr "עליך ללחוץ כדי ליצור תמונת מראה."
+
+#: ../../magic/src/rain.c:68
+#, fuzzy
+msgid "Click to cover the image with rain drops."
+msgstr "עליך ללחוץ כדי ליצור תמונת מראה."
 
 #: ../../magic/src/rainbow.c:107
 msgid "Rainbow"

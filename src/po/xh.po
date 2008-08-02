@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 0.9.16\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-08-01 14:11-0700\n"
+"POT-Creation-Date: 2008-08-01 17:34-0700\n"
 "PO-Revision-Date: 2006-09-22 01:42+0200\n"
 "Last-Translator: Dwayne Bailey <dwayne@translate.org.za>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -974,6 +974,21 @@ msgstr ""
 #, fuzzy
 msgid "Click and drag to draw train track rails on your picture."
 msgstr "Nqomfa ushenxashenxise impuku ukuze udyobhe umfanekiso."
+
+#: ../../magic/src/rain.c:64
+#, fuzzy
+msgid "Rain"
+msgstr "Umnyama"
+
+#: ../../magic/src/rain.c:67
+#, fuzzy
+msgid "Click to place a rain drop onto the image."
+msgstr "Nqomfa ukuze wenze umfuziselo wesipili."
+
+#: ../../magic/src/rain.c:68
+#, fuzzy
+msgid "Click to cover the image with rain drops."
+msgstr "Nqomfa ukuze wenze umfuziselo wesipili."
 
 #: ../../magic/src/rainbow.c:107
 msgid "Rainbow"

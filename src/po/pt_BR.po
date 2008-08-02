@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pt_br\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-08-01 14:11-0700\n"
+"POT-Creation-Date: 2008-08-01 17:34-0700\n"
 "PO-Revision-Date: 2007-11-15 22:14-0300\n"
 "Last-Translator: Frederico Goncalves Guimaraes <frederico@teia.bio.br>\n"
 "Language-Team: Português do Brasil\n"
@@ -966,6 +966,21 @@ msgstr "Ondulações"
 #, fuzzy
 msgid "Click and drag to draw train track rails on your picture."
 msgstr "Clique e mova o mouse para desenhar um raio de luz na sua imagem."
+
+#: ../../magic/src/rain.c:64
+#, fuzzy
+msgid "Rain"
+msgstr "Arco-íris"
+
+#: ../../magic/src/rain.c:67
+#, fuzzy
+msgid "Click to place a rain drop onto the image."
+msgstr "Clique para espelhar a imagem."
+
+#: ../../magic/src/rain.c:68
+#, fuzzy
+msgid "Click to cover the image with rain drops."
+msgstr "Clique para espelhar a imagem."
 
 #: ../../magic/src/rainbow.c:107
 msgid "Rainbow"

@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint-is 0.9.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-08-01 14:11-0700\n"
+"POT-Creation-Date: 2008-08-01 17:34-0700\n"
 "PO-Revision-Date: 2004-03-15 15:38GMT\n"
 "Last-Translator: Pjetur G. Hjaltason <pjetur@pjetur.net>\n"
 "Language-Team: Icelandic <kde-isl@molar.is>\n"
@@ -982,6 +982,21 @@ msgstr ""
 #, fuzzy
 msgid "Click and drag to draw train track rails on your picture."
 msgstr "Smelltu og hreyfðu músina til að gera myndina þynnri."
+
+#: ../../magic/src/rain.c:64
+#, fuzzy
+msgid "Rain"
+msgstr "Regnbogi"
+
+#: ../../magic/src/rain.c:67
+#, fuzzy
+msgid "Click to place a rain drop onto the image."
+msgstr "Smelltu til að gera spegilmynd."
+
+#: ../../magic/src/rain.c:68
+#, fuzzy
+msgid "Click to cover the image with rain drops."
+msgstr "Smelltu til að gera spegilmynd."
 
 #: ../../magic/src/rainbow.c:107
 msgid "Rainbow"

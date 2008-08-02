@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: lv\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-08-01 14:11-0700\n"
+"POT-Creation-Date: 2008-08-01 17:34-0700\n"
 "PO-Revision-Date: 2007-05-14 18:13-0700\n"
 "Last-Translator: Raivis Strogonovs <raivucis@gmail.com>\n"
 "Language-Team: Valoda <raivucis@gmail.com>\n"
@@ -984,6 +984,21 @@ msgstr ""
 msgid "Click and drag to draw train track rails on your picture."
 msgstr ""
 "Nospied, pieturi peles pogu un velc peli lai bildi padarītu miglaināku."
+
+#: ../../magic/src/rain.c:64
+#, fuzzy
+msgid "Rain"
+msgstr "Varavīksne"
+
+#: ../../magic/src/rain.c:67
+#, fuzzy
+msgid "Click to place a rain drop onto the image."
+msgstr "Nospied peli uz zīmējumu lai to pārvērstu spoguļskatā."
+
+#: ../../magic/src/rain.c:68
+#, fuzzy
+msgid "Click to cover the image with rain drops."
+msgstr "Nospied peli uz zīmējumu lai to pārvērstu spoguļskatā."
 
 #: ../../magic/src/rainbow.c:107
 msgid "Rainbow"

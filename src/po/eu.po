@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TuxPaint \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-08-01 14:11-0700\n"
+"POT-Creation-Date: 2008-08-01 17:34-0700\n"
 "PO-Revision-Date: 2006-11-30 16:30+0200\n"
 "Last-Translator: Juan Irigoien <juanirigoien@gmail.com>\n"
 "Language-Team: basque <juanirigoien@gmail.com>\n"
@@ -970,6 +970,21 @@ msgstr ""
 #, fuzzy
 msgid "Click and drag to draw train track rails on your picture."
 msgstr "Klik egin eta mugi ezazu sagua irudia mehetzeko."
+
+#: ../../magic/src/rain.c:64
+#, fuzzy
+msgid "Rain"
+msgstr "Ostadarra"
+
+#: ../../magic/src/rain.c:67
+#, fuzzy
+msgid "Click to place a rain drop onto the image."
+msgstr "Egin klik irudiaren isla sortzeko!"
+
+#: ../../magic/src/rain.c:68
+#, fuzzy
+msgid "Click to cover the image with rain drops."
+msgstr "Egin klik irudiaren isla sortzeko!"
 
 #: ../../magic/src/rainbow.c:107
 msgid "Rainbow"

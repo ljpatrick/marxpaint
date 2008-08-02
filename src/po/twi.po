@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-08-01 14:11-0700\n"
+"POT-Creation-Date: 2008-08-01 17:34-0700\n"
 "PO-Revision-Date: 2007-04-26 15:45+0200\n"
 "Last-Translator: Joana Portia Antwi-Danso <portnass2003@yahoo.com>\n"
 "MIME-Version: 1.0\n"
@@ -967,6 +967,21 @@ msgstr ""
 #, fuzzy
 msgid "Click and drag to draw train track rails on your picture."
 msgstr "Mia so na fa akura no to mfoni no so ma no nyɛ wisiwisi."
+
+#: ../../magic/src/rain.c:64
+#, fuzzy
+msgid "Rain"
+msgstr "Nyankontɔn"
+
+#: ../../magic/src/rain.c:67
+#, fuzzy
+msgid "Click to place a rain drop onto the image."
+msgstr "Mia akura no so ma mfoni no baako mmɛka ho."
+
+#: ../../magic/src/rain.c:68
+#, fuzzy
+msgid "Click to cover the image with rain drops."
+msgstr "Mia akura no so ma mfoni no baako mmɛka ho."
 
 #: ../../magic/src/rainbow.c:107
 msgid "Rainbow"

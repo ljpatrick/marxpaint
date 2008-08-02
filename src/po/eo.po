@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint 0.9.18\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-08-01 14:11-0700\n"
+"POT-Creation-Date: 2008-08-01 17:34-0700\n"
 "PO-Revision-Date: 2008-01-29 15:00+0000\n"
 "Last-Translator: Edmund GRIMLEY EVANS <edmundo@rano.org>\n"
 "Language-Team: Esperanto <translation-team-eo@lists.sourceforge.net>\n"
@@ -956,6 +956,21 @@ msgstr "Ondetoj"
 #, fuzzy
 msgid "Click and drag to draw train track rails on your picture."
 msgstr "Alklaku kaj movu la muson por desegni lumradion sur vian bildon."
+
+#: ../../magic/src/rain.c:64
+#, fuzzy
+msgid "Rain"
+msgstr "Ĉielarko"
+
+#: ../../magic/src/rain.c:67
+#, fuzzy
+msgid "Click to place a rain drop onto the image."
+msgstr "Klaku por fari spegulbildon."
+
+#: ../../magic/src/rain.c:68
+#, fuzzy
+msgid "Click to cover the image with rain drops."
+msgstr "Klaku por fari spegulbildon."
 
 #: ../../magic/src/rainbow.c:107
 msgid "Rainbow"

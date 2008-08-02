@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint 0.9.17\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-08-01 14:11-0700\n"
+"POT-Creation-Date: 2008-08-01 17:34-0700\n"
 "PO-Revision-Date: 2007-08-30 18:24+0200\n"
 "Last-Translator: Pablo Saratxaga <pablo@walon.org>\n"
 "Language-Team: Walloon <linux-wa@walon.org>\n"
@@ -989,6 +989,21 @@ msgstr ""
 msgid "Click and drag to draw train track rails on your picture."
 msgstr ""
 "Clitchîz et s' bodjîz l' sori po mete des bokets d' l' imådje pus féns."
+
+#: ../../magic/src/rain.c:64
+#, fuzzy
+msgid "Rain"
+msgstr "Airdiè"
+
+#: ../../magic/src/rain.c:67
+#, fuzzy
+msgid "Click to place a rain drop onto the image."
+msgstr "Clitchîz po mete l' imådje come dins on muroe."
+
+#: ../../magic/src/rain.c:68
+#, fuzzy
+msgid "Click to cover the image with rain drops."
+msgstr "Clitchîz po mete l' imådje come dins on muroe."
 
 #: ../../magic/src/rainbow.c:107
 msgid "Rainbow"

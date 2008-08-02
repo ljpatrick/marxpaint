@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Tuxpaint 0.9.9\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-08-01 14:11-0700\n"
+"POT-Creation-Date: 2008-08-01 17:34-0700\n"
 "PO-Revision-Date: 2004-12-10 18:11+0200\n"
 "Last-Translator: Gintaras Goštautas <gintaras@nes.lt>\n"
 "Language-Team: Lithuanian <komp_lt@konf.lt>\n"
@@ -976,6 +976,21 @@ msgstr "Bangelės"
 #, fuzzy
 msgid "Click and drag to draw train track rails on your picture."
 msgstr "Spustelėkite ir pele pieškite šviesos spindulį."
+
+#: ../../magic/src/rain.c:64
+#, fuzzy
+msgid "Rain"
+msgstr "Vaivorykštė"
+
+#: ../../magic/src/rain.c:67
+#, fuzzy
+msgid "Click to place a rain drop onto the image."
+msgstr "Spustelėkite ir gausite veidrodinį atspindį."
+
+#: ../../magic/src/rain.c:68
+#, fuzzy
+msgid "Click to cover the image with rain drops."
+msgstr "Spustelėkite ir gausite veidrodinį atspindį."
 
 #: ../../magic/src/rainbow.c:107
 msgid "Rainbow"

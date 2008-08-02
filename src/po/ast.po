@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TuxPaint 0.9.18\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-08-01 14:11-0700\n"
+"POT-Creation-Date: 2008-08-01 17:34-0700\n"
 "PO-Revision-Date: 2008-04-05 15:29+0100\n"
 "Last-Translator: Mikel González <mikelisimu@yahoo.es>\n"
 "Language-Team: Asturian\n"
@@ -956,6 +956,21 @@ msgstr "Ondes"
 #, fuzzy
 msgid "Click and drag to draw train track rails on your picture."
 msgstr "Fai clic y arrastra pa dibuxar un rayu de lluz nel to dibuxu."
+
+#: ../../magic/src/rain.c:64
+#, fuzzy
+msgid "Rain"
+msgstr "Arcu la vieya"
+
+#: ../../magic/src/rain.c:67
+#, fuzzy
+msgid "Click to place a rain drop onto the image."
+msgstr "Fai clic pa facer una imaxe a espeyu."
+
+#: ../../magic/src/rain.c:68
+#, fuzzy
+msgid "Click to cover the image with rain drops."
+msgstr "Fai clic pa facer una imaxe a espeyu."
 
 #: ../../magic/src/rainbow.c:107
 msgid "Rainbow"

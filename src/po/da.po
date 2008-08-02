@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint 0.9.18\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-08-01 14:11-0700\n"
+"POT-Creation-Date: 2008-08-01 17:34-0700\n"
 "PO-Revision-Date: 2007-11-23 22:30+0100\n"
 "Last-Translator: Joe Hansen <joedalton2@yahoo.dk>\n"
 "Language-Team: Danish <dansk@dansk-gruppen.dk>\n"
@@ -971,6 +971,21 @@ msgstr "Ringe"
 #, fuzzy
 msgid "Click and drag to draw train track rails on your picture."
 msgstr "Klik og bevæg musen rundt, for at tegne en lysstråle på dit billede."
+
+#: ../../magic/src/rain.c:64
+#, fuzzy
+msgid "Rain"
+msgstr "Regnbue"
+
+#: ../../magic/src/rain.c:67
+#, fuzzy
+msgid "Click to place a rain drop onto the image."
+msgstr "Klik på billedet for at spejlvende det."
+
+#: ../../magic/src/rain.c:68
+#, fuzzy
+msgid "Click to cover the image with rain drops."
+msgstr "Klik på billedet for at spejlvende det."
 
 #: ../../magic/src/rainbow.c:107
 msgid "Rainbow"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-08-01 14:11-0700\n"
+"POT-Creation-Date: 2008-08-01 17:34-0700\n"
 "PO-Revision-Date: 2006-10-09 20:32+0200\n"
 "Last-Translator: Vincent Mahlangu <vmahlangu@parliament.gov.za>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -992,6 +992,21 @@ msgstr ""
 msgid "Click and drag to draw train track rails on your picture."
 msgstr ""
 "Qhwarhaza bewudose njalo iKhondlwana ujikeleze ukuze ufiphaze isithombe."
+
+#: ../../magic/src/rain.c:64
+#, fuzzy
+msgid "Rain"
+msgstr "Izungulekosi"
+
+#: ../../magic/src/rain.c:67
+#, fuzzy
+msgid "Click to place a rain drop onto the image."
+msgstr "Qhwarhaza wenze umfanekiso osasiboniboni."
+
+#: ../../magic/src/rain.c:68
+#, fuzzy
+msgid "Click to cover the image with rain drops."
+msgstr "Qhwarhaza wenze umfanekiso osasiboniboni."
 
 #: ../../magic/src/rainbow.c:107
 msgid "Rainbow"

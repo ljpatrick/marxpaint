@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Tux Paint 0.9.18\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-08-01 14:11-0700\n"
+"POT-Creation-Date: 2008-08-01 17:34-0700\n"
 "PO-Revision-Date: 2008-01-18 12:40-0000\n"
 "Last-Translator: Lis Gøthe í Jákupsstovu <morshus@morshus.com>\n"
 "Language-Team: Faroese <morshus@morshus.com>\n"
@@ -958,6 +958,21 @@ msgstr "Aldur"
 #, fuzzy
 msgid "Click and drag to draw train track rails on your picture."
 msgstr "Klikkja og drag músina til at tekna eina ljósstrálu á myndina."
+
+#: ../../magic/src/rain.c:64
+#, fuzzy
+msgid "Rain"
+msgstr "Ælabogi"
+
+#: ../../magic/src/rain.c:67
+#, fuzzy
+msgid "Click to place a rain drop onto the image."
+msgstr "Klikkja til at gera eina spegilsmynd."
+
+#: ../../magic/src/rain.c:68
+#, fuzzy
+msgid "Click to cover the image with rain drops."
+msgstr "Klikkja til at gera eina spegilsmynd."
 
 #: ../../magic/src/rainbow.c:107
 msgid "Rainbow"
