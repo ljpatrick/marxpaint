@@ -9,7 +9,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2008-08-01 17:34-0700\n"
 "PO-Revision-Date: 2004-05-30 21:20-0700\n"
-"Last-Translator: jimmy <jacques.chion@wanadoo.fr>\n"
+"Last-Translator: jimmy <jacques.chion@orange.fr>\n"
 "Language-Team:  <fr@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -262,7 +262,7 @@ msgstr "Un carré est un rectangle qui a quatre côtés égaux."
 #. Description of a rectangle
 #: ../shapes.h:212 ../shapes.h:213
 msgid "A rectangle has four sides and four right angles."
-msgstr "Un rectangle a quatre côtés et quatre angles droits."
+msgstr "Un rectangle possède quatre côtés et quatre angles droits."
 
 #: ../shapes.h:217 ../shapes.h:219
 msgid ""
@@ -334,7 +334,7 @@ msgstr "Lettres"
 #. "Magic" effects tools (blur, flip image, etc.)
 #: ../titles.h:62 ../tools.h:60
 msgid "Magic"
-msgstr "Magique"
+msgstr "Magie"
 
 #. Freehand painting tool
 #: ../tools.h:45
@@ -595,7 +595,7 @@ msgstr "Son activé."
 #. Wait while Text tool finishes loading fonts
 #: ../tuxpaint.c:2476
 msgid "Please wait…"
-msgstr "Attends s'il te plaît ..."
+msgstr "Attends s'il te plaît .."
 
 #: ../tuxpaint.c:7189
 msgid "Pick a color."
@@ -666,7 +666,7 @@ msgstr "Choisis une image, et clique ensuite sur “Ouvrir”"
 #. Instructions for Slideshow file dialog (FIXME: Make a #define)
 #: ../tuxpaint.c:14262 ../tuxpaint.c:14576
 msgid "Choose the pictures you want, then click “Play”."
-msgstr "Choisis les images que tu veux, puis clique sur ``Départ''"
+msgstr "Choisis les images que tu veux, puis clique sur “Départ”"
 
 #: ../tuxpaint.desktop.in.h:1
 msgid "A drawing program for children."
@@ -682,17 +682,17 @@ msgstr "Tux Paint"
 
 #: ../../magic/src/alien.c:64
 msgid "Alien"
-msgstr "E.T."
+msgstr "Étrange"
 
 #: ../../magic/src/alien.c:67
 msgid "Click and move the mouse to give the image an \"alien\" appearance."
 msgstr ""
-"Clique et déplace la souris pour donner à l'image une apparence "
-"\"extraterrestre\"."
+"Clique et déplace la souris pour ajouter à l'image une apparence "
+"“étrange”."
 
 #: ../../magic/src/alien.c:68
 msgid "Click to give the entire image an \"alien\" appearance."
-msgstr "Clique pour donner à l'image entière une apparence \"extraterrestre\"."
+msgstr "Clique pour donner à l'image entière une apparence “étrange”."
 
 #: ../../magic/src/blocks_chalk_drip.c:132
 msgid "Blocks"
@@ -734,7 +734,7 @@ msgstr "Clique et déplace la souris pour rendre l'image floue."
 #
 #: ../../magic/src/blur.c:61
 msgid "Click to blur the entire image."
-msgstr "Clique pour brouiller l'image en entier."
+msgstr "Clique pour rendre floue toute l'image."
 
 #. Both are named "Bricks", at the moment:
 #: ../../magic/src/bricks.c:104
@@ -807,7 +807,7 @@ msgstr "Clique et déplace la souris pour éclaircir une partie de l'image."
 #
 #: ../../magic/src/fade_darken.c:134
 msgid "Click to lighten your entire picture."
-msgstr "Clique pour éclircir la totalité de l'image."
+msgstr "Clique pour éclaircir la totalité de l'image."
 
 #
 #: ../../magic/src/fade_darken.c:139
@@ -848,7 +848,7 @@ msgstr ""
 
 #: ../../magic/src/fold.c:60
 msgid "Fold"
-msgstr ""
+msgstr "Plier"
 
 #: ../../magic/src/fold.c:62
 msgid "Choose a background color and click to turn the corner of the page over"
@@ -929,12 +929,12 @@ msgstr "Mosaïque"
 #
 #: ../../magic/src/mosaic.c:74
 msgid "Click and move the mouse to add a mosaic effect to the image."
-msgstr "Clique et déplace la souris pour ajouter un effet mosaïque."
+msgstr "Clique et déplace la souris pour ajouter un effet de mosaïque."
 
 #
 #: ../../magic/src/mosaic.c:75
 msgid "Click to add a mosaic effect to the entire image."
-msgstr "Clique pour avoir un effet mosaïque sur toute l'image."
+msgstr "Clique pour avoir un effet de mosaïque sur toute l'image."
 
 #: ../../magic/src/negative.c:72
 msgid "Negative"
@@ -947,7 +947,7 @@ msgstr "Clique et déplace la souris pour obtenir l'image en négatif."
 #
 #: ../../magic/src/negative.c:83
 msgid "Click to turn the image into its negative."
-msgstr "Clique pour voir l'image en négatif."
+msgstr "Clique pour voir toute l'image en négatif."
 
 #: ../../magic/src/noise.c:63
 msgid "Noise"
@@ -974,20 +974,20 @@ msgid "Click and drag to draw train track rails on your picture."
 msgstr "Clique et déplace la souris pour dessiner des rails."
 
 #: ../../magic/src/rain.c:64
-#, fuzzy
+#
 msgid "Rain"
-msgstr "Arc-en-ciel"
+msgstr "Pluie"
 
 #: ../../magic/src/rain.c:67
-#, fuzzy
+#
 msgid "Click to place a rain drop onto the image."
-msgstr "Clique pour voir l'image dans un miroir."
+msgstr "Clique pour placet une goutte de pluie sur le dessin.."
 
 #
 #: ../../magic/src/rain.c:68
-#, fuzzy
+#
 msgid "Click to cover the image with rain drops."
-msgstr "Clique pour voir l'image en négatif."
+msgstr "Clique pour remplir le dessin avec des gouttes de pluie."
 
 #: ../../magic/src/rainbow.c:107
 msgid "Rainbow"
@@ -1058,11 +1058,11 @@ msgstr "Clique et déplace la souris pour déplacer ton image dans le cadre."
 
 #: ../../magic/src/smudge.c:77
 msgid "Smudge"
-msgstr "Barbouiller"
+msgstr "Salir"
 
 #: ../../magic/src/smudge.c:84
 msgid "Click and move the mouse around to smudge the picture."
-msgstr "Clique et déplace la souris pour brouiller l'image."
+msgstr "Clique et déplace la souris pour salir l'image."
 
 #: ../../magic/src/snow.c:68
 msgid "Snow Ball"
@@ -1108,7 +1108,7 @@ msgstr ""
 #: ../../magic/src/tint.c:74
 msgid "Click to threshold the entire image into pure colour and white regions."
 msgstr ""
-"Clique pour obtenir une image en blanc et une seule couleur, que tu as "
+"Clique pour obtenir une image en blanc et une seule couleur que tu as "
 "choisie. "
 
 #: ../../magic/src/waves.c:78
