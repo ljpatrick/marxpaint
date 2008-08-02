@@ -18,7 +18,7 @@ msgstr ""
 "Project-Id-Version: Tuxpaint cvs 2008-08-02\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2008-08-01 17:34-0700\n"
-"PO-Revision-Date: 2008-08-02 00:18+0200\n"
+"PO-Revision-Date: 2008-08-02 16:12+0200\n"
 "Last-Translator: Pere Pujal i Carabantes <pere@fornol.no-ip.org>\n"
 "Language-Team: Català <linux-ca@chanae.alphanet.ch>\n"
 "MIME-Version: 1.0\n"
@@ -430,10 +430,7 @@ msgstr ""
 msgid ""
 "Pick a shape. Click to pick the center, drag, then let go when it is the "
 "size you want. Move around to rotate it, and click to draw it."
-msgstr ""
-"Trieu una figura. Feu clic per sel·leccionar el centre, arrossegueu, llavors "
-"deixeu anar el botó quan sigui de la mida que voleu. Moveu el ratolí per "
-"girar-lo i feu clic per dibuixar-lo."
+msgstr "Trieu una figura. Feu clic per sel·leccionar el centre, arrossegueu, llavors deixeu anar el botó quan sigui de la mida que voleu. Moveu el ratolí per girar-la i feu clic per dibuixar-la."
 
 #. Text tool instructions
 #: ../tools.h:104
@@ -470,7 +467,7 @@ msgstr "Trieu un color o dibuix per començar de nou."
 #. Response to 'open' action (while file dialog is being constructed)
 #: ../tools.h:122
 msgid "Open…"
-msgstr "Obrir..."
+msgstr "Obrir…"
 
 #. Response to 'save' action
 #: ../tools.h:125
@@ -480,7 +477,7 @@ msgstr "El vostre dibuix s'ha desat!"
 #. Response to 'print' action (while printing, or print dialog is being used)
 #: ../tools.h:128
 msgid "Printing…"
-msgstr "S'està imprimint..."
+msgstr "S'està imprimint…"
 
 #. Response to 'quit' (exit) action
 #: ../tools.h:131
@@ -505,7 +502,7 @@ msgstr "Moveu el ratolí per girar la figura. Feu clic per dibuixar-la."
 #. Notification that 'New' action was aborted (current image would have been lost)
 #: ../tools.h:144
 msgid "OK then… Let’s keep drawing this one!"
-msgstr "D'acord, llavors... Seguirem dibuixant en aquest!"
+msgstr "D'acord, llavors… Seguirem dibuixant en aquest!"
 
 #. Prompt to confirm user wishes to quit
 #: ../tuxpaint.c:1841
@@ -606,7 +603,7 @@ msgstr "S'ha activat el so."
 #. Wait while Text tool finishes loading fonts
 #: ../tuxpaint.c:2476
 msgid "Please wait…"
-msgstr "Espereu, si us plau..."
+msgstr "Espereu, si us plau…"
 
 #: ../tuxpaint.c:7189
 msgid "Pick a color."
@@ -667,7 +664,7 @@ msgstr "Sí, reemplaça l'antic!"
 #. (like a 'File:Save As...' action in other applications)
 #: ../tuxpaint.c:12512
 msgid "No, save a new file!"
-msgstr "No, desa en un fitxer nou"
+msgstr "No, desa en un fitxer nou!"
 
 #: ../tuxpaint.c:13275
 msgid "Choose the picture you want, then click “Open”."
@@ -697,7 +694,7 @@ msgstr "Alien"
 
 #: ../../magic/src/alien.c:67
 msgid "Click and move the mouse to give the image an \"alien\" appearance."
-msgstr "Cliqueu i moveu el ratolí per donar una aparença estranya a la imatge."
+msgstr "Cliqueu i moveu el ratolí per crear una aparença estranya."
 
 #: ../../magic/src/alien.c:68
 msgid "Click to give the entire image an \"alien\" appearance."
@@ -735,7 +732,7 @@ msgstr "Difumina"
 
 #: ../../magic/src/blur.c:60
 msgid "Click and move the mouse around to blur the image."
-msgstr "Feu clic i moveu el ratolí per difuminar el dibuix."
+msgstr "Feu clic i moveu el ratolí per difuminar parts del dibuix."
 
 #: ../../magic/src/blur.c:61
 msgid "Click to blur the entire image."
@@ -760,7 +757,7 @@ msgstr "Cal·ligrafia."
 
 #: ../../magic/src/calligraphy.c:115
 msgid "Click and move the mouse around to draw in calligraphy."
-msgstr "Feu clic i moveu el ratolí per fer escriptura cal·ligràfica.."
+msgstr "Feu clic i moveu el ratolí per fer escriptura cal·ligràfica."
 
 #: ../../magic/src/cartoon.c:80
 msgid "Cartoon"
@@ -776,7 +773,7 @@ msgstr "Confeti"
 
 #: ../../magic/src/confetti.c:65
 msgid "Click to throw a confetti!"
-msgstr "Cliqueu per lençar paperets!"
+msgstr "Cliqueu per llançar paperets!"
 
 #: ../../magic/src/distortion.c:121
 msgid "Distortion"
@@ -847,7 +844,7 @@ msgstr "Feu clic i moveu el ratolí per cobrir la imatge d'escuma."
 
 #: ../../magic/src/fold.c:60
 msgid "Fold"
-msgstr ""
+msgstr "Full"
 
 #: ../../magic/src/fold.c:62
 msgid "Choose a background color and click to turn the corner of the page over"
@@ -864,7 +861,7 @@ msgstr ""
 
 #: ../../magic/src/glasstile.c:92
 msgid "Click to cover your entire picture in glass tiles."
-msgstr "Feu clic per dibuixar blocs de vidre."
+msgstr "Feu clic per omplir la imatge amb blocs de vidre."
 
 #: ../../magic/src/grass.c:92
 msgid "Grass"
@@ -947,7 +944,7 @@ msgstr "Soroll"
 
 #: ../../magic/src/noise.c:66
 msgid "Click and move the mouse to add noise to the image."
-msgstr "Cliqueu i arrossegueu el ratolí per afegir soroll a la imatge."
+msgstr "Cliqueu i arrossegueu el ratolí per afegir soroll a parts de la imatge."
 
 #: ../../magic/src/noise.c:67
 msgid "Click to add noise to the entire image."
@@ -962,19 +959,16 @@ msgid "Click and drag to draw train track rails on your picture."
 msgstr "Cliqueu i arrossegueu per dibuixar una via de tren."
 
 #: ../../magic/src/rain.c:64
-#, fuzzy
 msgid "Rain"
-msgstr "Arc de Sant Martí"
+msgstr "Pluja"
 
 #: ../../magic/src/rain.c:67
-#, fuzzy
 msgid "Click to place a rain drop onto the image."
-msgstr "Feu clic per invertir la imatge horitzontalment."
+msgstr "Cliqueu per dibuixar una gota de pluja."
 
 #: ../../magic/src/rain.c:68
-#, fuzzy
 msgid "Click to cover the image with rain drops."
-msgstr "Clique per convertir la imatge a escala de grisos."
+msgstr "Cliqueu per cobrir de pluja la imatge."
 
 #: ../../magic/src/rainbow.c:107
 msgid "Rainbow"
@@ -1016,7 +1010,7 @@ msgstr "Cliqueu per traçar la vora dels objectes."
 
 #: ../../magic/src/sharpen.c:80
 msgid "Click and move the mouse to sharpen the image."
-msgstr "Cliqueu i arrossegueu el ratolí per afilar la imatge."
+msgstr "Cliqueu i arrossegueu el ratolí per afilar parts de la imatge."
 
 #: ../../magic/src/sharpen.c:81
 msgid "Click to sharpen the entire image."
@@ -1080,11 +1074,11 @@ msgstr "Cliqueu per canviar els colors de la imatge."
 msgid ""
 "Click and move the mouse around to threshold the image into pure colour and "
 "white regions."
-msgstr "Cliqueu i moveu el ratolí per convertir a blanc i negre."
+msgstr "Cliqueu i moveu el ratolí per convertir parts del dibuix a color/blanc."
 
 #: ../../magic/src/tint.c:74
 msgid "Click to threshold the entire image into pure colour and white regions."
-msgstr "Cliqueu per convertir la imatge a blanc i negre."
+msgstr "Cliqueu per convertir la imatge a color/blanc."
 
 #: ../../magic/src/waves.c:78
 msgid "Waves"
