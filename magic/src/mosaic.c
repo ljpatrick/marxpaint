@@ -45,14 +45,13 @@
 #define gettext_noop(String) String
 #endif
 
+static void mosaic_noise_pixel(void * ptr, SDL_Surface * canvas, int noise_AMOUNT, int x, int y);
+static void mosaic_blur_pixel(void * ptr, SDL_Surface * canvas, SDL_Surface * last, int x, int y);
+static void mosaic_sharpen_pixel(void * ptr, SDL_Surface * canvas, SDL_Surface * last, int x, int y);
 
 static const int mosaic_AMOUNT= 300;
 static const int mosaic_RADIUS = 16;
 static const double mosaic_SHARPEN = 1.0;
-
-//Holder for the pre calulated pixel values
-static SDL_Surface * mosaic_temp;
-static SDL_Surface * mosaic_final;
 
 enum {
 	TOOL_MOSAIC,
@@ -117,88 +116,69 @@ static int mosaic_grey(Uint8 r1,Uint8 g1,Uint8 b1){
 	return 0.3*r1+.59*g1+0.11*b1;
 }
 
-//Do the effect for one pixel
-static void mosaic_do_noise_pixel(magic_api * api, SDL_Surface * canvas, SDL_Surface * last, int x, int y){
-
-
-}
-
-//Do the effect for one pixel
-static void do_mosaic_pixel(void * ptr, int which,
-	         SDL_Surface * canvas, SDL_Surface * last,
-	         int x, int y){
-  magic_api * api = (magic_api *) ptr;
-
-  Uint8 r1,g1,b1;
-  SDL_GetRGB(api->getpixel(mosaic_final, x, y), mosaic_final->format, &r1, &g1, &b1);
-  api->putpixel(canvas, x, y, SDL_MapRGB(canvas->format, r1, g1, b1));
-}
-
 // Do the effect for the full image
 static void do_mosaic_full(void * ptr, SDL_Surface * canvas, SDL_Surface * last, int which){
 
 	magic_api * api = (magic_api *) ptr;
 
-	int x,y;
+  Uint32 amask = ~(canvas->format->Rmask |
+            canvas->format->Gmask |
+            canvas->format->Bmask);
+  SDL_Surface * mosaic_temp = 
+    SDL_CreateRGBSurface(SDL_SWSURFACE,
+                         canvas->w,
+                         canvas->h,
+                         canvas->format->BitsPerPixel,
+                         canvas->format->Rmask,
+                         canvas->format->Gmask,
+                         canvas->format->Bmask, amask);
 
-	for (y = 0; y < canvas->h; y++){ 
+  int x,y;
+  api->update_progress_bar();
+
+  for (y = 0; y < canvas->h; y++){ 
 		for (x=0; x < canvas->w; x++){
-      do_mosaic_pixel(ptr, which, canvas, last, x, y);
-	  }
-  }
-}
-
-//do the effect for the brush
-static void do_mosaic_brush(void * ptr, int which, SDL_Surface * canvas, SDL_Surface * last, int x, int y){
-  int xx, yy;
-  magic_api * api = (magic_api *) ptr;
-
-  for (yy = y - mosaic_RADIUS; yy < y + mosaic_RADIUS; yy++)
-  {
-    for (xx = x - mosaic_RADIUS; xx < x + mosaic_RADIUS; xx++)
-    {
-      if (api->in_circle(xx - x, yy - y, mosaic_RADIUS) &&
-	  !api->touched(xx, yy))
-      {
-        do_mosaic_pixel(api, which, canvas, last, xx, yy);
-      }
+      mosaic_noise_pixel(api, canvas, mosaic_AMOUNT, x, y);
     }
   }
+
+  api->update_progress_bar();
+
+  for (y = 0; y < canvas->h; y++){ 
+		for (x=0; x < canvas->w; x++){
+      mosaic_blur_pixel(api, mosaic_temp, canvas, x, y);
+    }
+  }
+  
+  api->update_progress_bar();
+  
+  for (y = 0; y < canvas->h; y++){ 
+		for (x=0; x < canvas->w; x++){
+      mosaic_sharpen_pixel(api, canvas, mosaic_temp, x, y);
+    }
+  }
+  SDL_FreeSurface(mosaic_temp);
 }
 
 // Affect the canvas on drag:
 void mosaic_drag(magic_api * api, int which, SDL_Surface * canvas,
 	          SDL_Surface * last, int ox, int oy, int x, int y,
 		  SDL_Rect * update_rect){
-
-  api->line((void *) api, which, canvas, last, ox, oy, x, y, 1, do_mosaic_brush);
-
-  api->playsound(mosaic_snd_effect[which], (x * 255) / canvas->w, 255);
-
-  if (ox > x) { int tmp = ox; ox = x; x = tmp; }
-  if (oy > y) { int tmp = oy; oy = y; y = tmp; }
-
-  update_rect->x = ox - mosaic_RADIUS;
-  update_rect->y = oy - mosaic_RADIUS;
-  update_rect->w = (x + mosaic_RADIUS) - update_rect->x;
-  update_rect->h = (y + mosaic_RADIUS) - update_rect->y;
+  //no-op
 }
 
 // Affect the canvas on click:
 void mosaic_click(magic_api * api, int which, int mode,
 	            SDL_Surface * canvas, SDL_Surface * last,
 	            int x, int y, SDL_Rect * update_rect){
-  if (mode == MODE_PAINT){
-    mosaic_drag(api, which, canvas, last, x, y, x, y, update_rect);
-  }
-  else{
+
     update_rect->x = 0;
     update_rect->y = 0;
     update_rect->w = canvas->w;
     update_rect->h = canvas->h;
     do_mosaic_full(api, canvas,  last, which);
     api->playsound(mosaic_snd_effect[which], 128, 255);
-  }
+
 }
 
 // Affect the canvas on release:
@@ -322,71 +302,16 @@ static void mosaic_sharpen_pixel(void * ptr,
 
 void mosaic_switchin(magic_api * api, int which, int mode, SDL_Surface * canvas)
 {
-
-  //Create two temp surfaces to store the calculated pixel values
-  Uint32 amask = ~(canvas->format->Rmask |
-            canvas->format->Gmask |
-            canvas->format->Bmask);
-  mosaic_temp =
-    SDL_CreateRGBSurface(SDL_SWSURFACE,
-                         canvas->w,
-                         canvas->h,
-                         canvas->format->BitsPerPixel,
-                         canvas->format->Rmask,
-                         canvas->format->Gmask,
-                         canvas->format->Bmask, amask);
-  mosaic_final =
-    SDL_CreateRGBSurface(SDL_SWSURFACE,
-                         canvas->w,
-                         canvas->h,
-                         canvas->format->BitsPerPixel,
-                         canvas->format->Rmask,
-                         canvas->format->Gmask,
-                         canvas->format->Bmask, amask);
-
-  //Copy the canvas to the temp surface
-  SDL_BlitSurface(canvas, NULL, mosaic_final, NULL);
-
-  int x,y;
-
-  //Add noise to the temp surface
-  for (y = 0; y < canvas->h; y++){ 
-		for (x=0; x < canvas->w; x++){
-      mosaic_noise_pixel(api, mosaic_final, mosaic_AMOUNT, x, y);
-    }
-  }
-
-  api->update_progress_bar();
-
-  //Blur the temp surface
-  for (y = 0; y < canvas->h; y++){ 
-		for (x=0; x < canvas->w; x++){
-      //We dont want pixels to be affected by already blurred nearby pixels so we require two surfaces
-      mosaic_blur_pixel(api, mosaic_temp, mosaic_final, x, y);
-    }
-  }
-  
-  api->update_progress_bar();
-  
-  //Sharpen the temp surface
-  for (y = 0; y < canvas->h; y++){ 
-		for (x=0; x < canvas->w; x++){
-      //We dont want pixels to be affected by already sharpened pixels so we require two surfaces
-      mosaic_sharpen_pixel(api, mosaic_final, mosaic_temp, x, y);
-    }
-  }
-
+ 
 }
 
 void mosaic_switchout(magic_api * api, int which, int mode, SDL_Surface * canvas)
 {
-  SDL_FreeSurface(mosaic_temp);
-  SDL_FreeSurface(mosaic_final);
 }
 
 int mosaic_modes(magic_api * api, int which)
 {
-  return(MODE_FULLSCREEN|MODE_PAINT);
+  return(MODE_FULLSCREEN);
 }
 
 
