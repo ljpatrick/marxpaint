@@ -72,9 +72,6 @@ int blur_init(magic_api * api){
   for (i = 0; i < blur_NUM_TOOLS; i++){
     snprintf(fname, sizeof(fname), "%s/sounds/magic/%s", api->data_directory, blur_snd_filenames[i]);
     blur_snd_effect[i] = Mix_LoadWAV(fname);
-    if (blur_snd_effect[i]==NULL){
-      return(0);
-    }
   }
   return(1);
 }

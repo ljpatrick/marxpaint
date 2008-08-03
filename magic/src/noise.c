@@ -79,9 +79,6 @@ int noise_init(magic_api * api){
   for (i = 0; i < noise_NUM_TOOLS; i++){
     snprintf(fname, sizeof(fname), "%s/sounds/magic/%s", api->data_directory, noise_snd_filenames[i]);
     noise_snd_effect[i] = Mix_LoadWAV(fname);
-    if (noise_snd_effect[i]==NULL){
-      return(0);
-    }
   }
   return(1);
 }

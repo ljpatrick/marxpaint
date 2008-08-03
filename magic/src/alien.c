@@ -80,9 +80,6 @@ int alien_init(magic_api * api){
   for (i = 0; i < alien_NUM_TOOLS; i++){
     snprintf(fname, sizeof(fname), "%s/sounds/magic/%s", api->data_directory, alien_snd_filenames[i]);
     alien_snd_effect[i] = Mix_LoadWAV(fname);
-    if (alien_snd_effect[i]==NULL){
-      return(0);
-    }
   }
   return(1);
 }
@@ -174,6 +171,16 @@ void alien_drag(magic_api * api, int which, SDL_Surface * canvas,
   update_rect->y = oy - alien_RADIUS;
   update_rect->w = (x + alien_RADIUS) - update_rect->x;
   update_rect->h = (y + alien_RADIUS) - update_rect->y;
+}
+
+int use_sound = 1;
+
+Mix_Chunk * magic_loadsound(char* file){
+  if (!use_sound){
+    return (Mix_Chunk*)-1;
+  }
+  Mix_Chunk * temp = Mix_LoadWAV(file);
+  return temp;
 }
 
 // Affect the canvas on click:

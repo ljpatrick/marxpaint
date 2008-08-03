@@ -87,9 +87,6 @@ int rain_init(magic_api * api){
   for (i = 0; i < rain_NUM_TOOLS; i++){
     snprintf(fname, sizeof(fname), "%s/sounds/magic/%s", api->data_directory, rain_snd_filenames[i]);
     rain_snd_effect[i] = Mix_LoadWAV(fname);
-    if (rain_snd_effect[i] == NULL){
-      return(0);
-    }
   }
 
   return(1);

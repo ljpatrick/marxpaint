@@ -98,9 +98,6 @@ int snow_init(magic_api * api){
   for (i = 0; i < snow_NUM_TOOLS; i++){
     snprintf(fname, sizeof(fname), "%s/sounds/magic/%s", api->data_directory, snow_snd_filenames[i]);
     snow_snd_effect[i] = Mix_LoadWAV(fname);
-    if (snow_snd_effect[i]==NULL){
-      return(0);
-    }
   }
   return(1);
 }

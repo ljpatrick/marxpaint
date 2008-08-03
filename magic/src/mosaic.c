@@ -86,9 +86,6 @@ int mosaic_init(magic_api * api){
   for (i = 0; i < mosaic_NUM_TOOLS; i++){
     snprintf(fname, sizeof(fname), "%s/sounds/magic/%s", api->data_directory, mosaic_snd_filenames[i]);
     mosaic_snd_effect[i] = Mix_LoadWAV(fname);
-    if (mosaic_snd_effect[i]==NULL){
-      return(0);
-    }
   }
 
   return(1);
