@@ -86,6 +86,20 @@ void rails_release(magic_api * api, int which,
 
 void rails_shutdown(magic_api * api)
 {
+#if 0
+
+// FIXME -- commented out because a leak is better than a crash
+//
+// *** glibc detected *** /tmp/dd/usr/bin/tuxpaint: munmap_chunk(): invalid pointer
+// : 0x108bd098 ***
+// ======= Backtrace: =========
+// /lib/libc.so.6[0xf9373a8]
+// /usr/lib/tuxpaint/plugins/rails.so(rails_shutdown+0xac)[0xe7cf67c]
+// /tmp/dd/usr/bin/tuxpaint[0x1000882c]
+// /tmp/dd/usr/bin/tuxpaint[0x10021900]
+// /lib/libc.so.6[0xf8d6b10]
+// /lib/libc.so.6[0xf8d6cd0]
+
 	Uint8 i;
 	
 	if (rails_snd!=NULL)
@@ -99,6 +113,7 @@ void rails_shutdown(magic_api * api)
 		free(rails_images[i]);
 	free(rails_images);
 	free(rails_status_of_segments);
+#endif
 }
 
 void rails_switchin(magic_api * api, int which, int mode, SDL_Surface * canvas)
