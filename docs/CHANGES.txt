@@ -30,6 +30,7 @@ $Id$
       + Noise - Adds random noise to the image.
       + Mosaic - Gives the image a mosaic effect.
       + Rain - Adds rain drops to the image.
+      + Toothpaste - Squirts "toothpaste" on to the image.
       By Andrew 'akanewbie' Corcoran <akanewbie@gmail.com>
       (Part of Tux4Kids' participation in Google Summer of Code 2008)
 

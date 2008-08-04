@@ -46,7 +46,7 @@ $Id$
     implied warranty.
 
   Blur ('entire image' mode), Sharpen, Trace Contour, Silhouette,
-  Snow Flake, Snow Ball, Black & White, Threshold, Alien,
+  Snow Flake, Snow Ball, Black & White, Threshold, Alien, Toothpaste,
   Tint ('Brush' mode), Noise, Rain and Mosaic Magic Tools.
   Jigsaw 3x3 and Jigsaw 5x5 starter images.
   by Andrew 'akanewbie' Corcoran <akanewbie@gmail.com>
