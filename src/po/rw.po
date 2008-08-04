@@ -16,7 +16,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint 0.9.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-08-01 17:34-0700\n"
+"POT-Creation-Date: 2008-08-04 12:39-0700\n"
 "PO-Revision-Date: 2005-04-04 10:55-0700\n"
 "Last-Translator: Steven Michael Murphy <murf@e-tools.com>\n"
 "Language-Team: Kinyarwanda <translation-team-rw@lists.sourceforge.net>\n"
@@ -979,16 +979,16 @@ msgstr "Kuri Ubwoko a Ishusho"
 msgid "Click to flip the picture upside-down."
 msgstr "Kuri Guhindukiza i() y'Ishusho Hasi"
 
-#: ../../magic/src/mosaic.c:71
+#: ../../magic/src/mosaic.c:70
 msgid "Mosaic"
 msgstr ""
 
-#: ../../magic/src/mosaic.c:74
+#: ../../magic/src/mosaic.c:73
 #, fuzzy
 msgid "Click and move the mouse to add a mosaic effect to the image."
 msgstr "Kuri Ubwoko a Ishusho"
 
-#: ../../magic/src/mosaic.c:75
+#: ../../magic/src/mosaic.c:74
 #, fuzzy
 msgid "Click to add a mosaic effect to the entire image."
 msgstr "Kuri Ubwoko a Ishusho"
@@ -1167,6 +1167,15 @@ msgstr "Na Kwimura i Imbeba Kuri i() y'Ishusho a Igishushanyo"
 #, fuzzy
 msgid "Click to threshold the entire image into pure colour and white regions."
 msgstr "Na Kwimura i Imbeba Kuri i() y'Ishusho a Igishushanyo"
+
+#: ../../magic/src/toothpaste.c:65
+msgid "Toothpaste"
+msgstr ""
+
+#: ../../magic/src/toothpaste.c:68
+#, fuzzy
+msgid "Click and drag to squirt toothpaste onto the image."
+msgstr "Na Kwimura i Imbeba Kuri kinanutse i() y'Ishusho"
 
 #: ../../magic/src/waves.c:78
 #, fuzzy

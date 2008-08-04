@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Tux Paint 0.9.16\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-08-01 17:34-0700\n"
+"POT-Creation-Date: 2008-08-04 12:39-0700\n"
 "PO-Revision-Date: 2007-04-29 23:10-0400\n"
 "Last-Translator: Mark K. Kim <mkkim214@gmail.com>\n"
 "Language-Team: N/A\n"
@@ -921,17 +921,17 @@ msgstr "마우스를 누르면 그림이 뒤집어져요."
 msgid "Click to flip the picture upside-down."
 msgstr "마우스를 누르면 그림이 엎어져요."
 
-#: ../../magic/src/mosaic.c:71
+#: ../../magic/src/mosaic.c:70
 #, fuzzy
 msgid "Mosaic"
 msgstr "효과"
 
-#: ../../magic/src/mosaic.c:74
+#: ../../magic/src/mosaic.c:73
 #, fuzzy
 msgid "Click and move the mouse to add a mosaic effect to the image."
 msgstr "마우스를 누르면 그림이 뒤집어져요."
 
-#: ../../magic/src/mosaic.c:75
+#: ../../magic/src/mosaic.c:74
 #, fuzzy
 msgid "Click to add a mosaic effect to the entire image."
 msgstr "마우스를 누르면 그림이 뒤집어져요."
@@ -1107,6 +1107,15 @@ msgstr "마우스를 누르면 그림이 만화 같이 변화돼요."
 #, fuzzy
 msgid "Click to threshold the entire image into pure colour and white regions."
 msgstr "마우스를 누르면 그림이 만화 같이 변화돼요."
+
+#: ../../magic/src/toothpaste.c:65
+msgid "Toothpaste"
+msgstr ""
+
+#: ../../magic/src/toothpaste.c:68
+#, fuzzy
+msgid "Click and drag to squirt toothpaste onto the image."
+msgstr "마우스를 누르면 그림을 흐리게 만들 수 있어요."
 
 #: ../../magic/src/waves.c:78
 #, fuzzy

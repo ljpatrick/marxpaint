@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-08-01 17:34-0700\n"
+"POT-Creation-Date: 2008-08-04 12:39-0700\n"
 "PO-Revision-Date: 2008-02-10 19:28+0400\n"
 "Last-Translator: Jamil Farzana <jamil.farzana@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -934,17 +934,17 @@ msgstr "Şəkili güzgüdəki kimi görmək üçün mausun sol düyməsini bas."
 msgid "Click to flip the picture upside-down."
 msgstr "Şəkili çevirmək üçün mausun sol düyməsini bas."
 
-#: ../../magic/src/mosaic.c:71
+#: ../../magic/src/mosaic.c:70
 #, fuzzy
 msgid "Mosaic"
 msgstr "Möcüzə"
 
-#: ../../magic/src/mosaic.c:74
+#: ../../magic/src/mosaic.c:73
 #, fuzzy
 msgid "Click and move the mouse to add a mosaic effect to the image."
 msgstr "Şəkili güzgüdəki kimi görmək üçün mausun sol düyməsini bas."
 
-#: ../../magic/src/mosaic.c:75
+#: ../../magic/src/mosaic.c:74
 #, fuzzy
 msgid "Click to add a mosaic effect to the entire image."
 msgstr "Şəkili güzgüdəki kimi görmək üçün mausun sol düyməsini bas."
@@ -1133,6 +1133,16 @@ msgid "Click to threshold the entire image into pure colour and white regions."
 msgstr ""
 "Şəkili cizgi filminə çevirmək üçün mausun sol düyməsini bas və mausu "
 "hərəkətə gətir."
+
+#: ../../magic/src/toothpaste.c:65
+msgid "Toothpaste"
+msgstr ""
+
+#: ../../magic/src/toothpaste.c:68
+#, fuzzy
+msgid "Click and drag to squirt toothpaste onto the image."
+msgstr ""
+"Şəkili yerindən çəkmək üçün mausun sol düyməsini bas və mausu hərəkətə gətir."
 
 #: ../../magic/src/waves.c:78
 msgid "Waves"

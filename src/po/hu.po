@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint-0.9.17\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-08-01 17:34-0700\n"
+"POT-Creation-Date: 2008-08-04 12:39-0700\n"
 "PO-Revision-Date: 2007-11-06 10:55+0100\n"
 "Last-Translator: Gabor Kelemen <kelemeng@gnome.hu>\n"
 "Language-Team: Hungarian <translation-team-hu@lists.sourceforge.net>\n"
@@ -925,17 +925,17 @@ msgstr "Kattints a rajzlapra, hogy tükrözzük a rajzodat."
 msgid "Click to flip the picture upside-down."
 msgstr "Kattints a rajzlapra, hogy fejjel-lefelé fordítsuk a rajzodat."
 
-#: ../../magic/src/mosaic.c:71
+#: ../../magic/src/mosaic.c:70
 #, fuzzy
 msgid "Mosaic"
 msgstr "Varázs"
 
-#: ../../magic/src/mosaic.c:74
+#: ../../magic/src/mosaic.c:73
 #, fuzzy
 msgid "Click and move the mouse to add a mosaic effect to the image."
 msgstr "Kattints a rajzlapra, hogy tükrözzük a rajzodat."
 
-#: ../../magic/src/mosaic.c:75
+#: ../../magic/src/mosaic.c:74
 #, fuzzy
 msgid "Click to add a mosaic effect to the entire image."
 msgstr "Kattints a rajzlapra, hogy tükrözzük a rajzodat."
@@ -1113,6 +1113,15 @@ msgstr ""
 msgid "Click to threshold the entire image into pure colour and white regions."
 msgstr ""
 "Kattints oda a rajzodon, ahol a képet képregénnyé szeretnéd változtatni!"
+
+#: ../../magic/src/toothpaste.c:65
+msgid "Toothpaste"
+msgstr ""
+
+#: ../../magic/src/toothpaste.c:68
+#, fuzzy
+msgid "Click and drag to squirt toothpaste onto the image."
+msgstr "Kattints oda a rajzodon, ahol maszatolni szeretnél."
 
 #: ../../magic/src/waves.c:78
 #, fuzzy

@@ -17,7 +17,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Tuxpaint cvs 2008-08-02\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-08-01 17:34-0700\n"
+"POT-Creation-Date: 2008-08-04 12:39-0700\n"
 "PO-Revision-Date: 2008-08-02 16:12+0200\n"
 "Last-Translator: Pere Pujal i Carabantes <pere@fornol.no-ip.org>\n"
 "Language-Team: Català <linux-ca@chanae.alphanet.ch>\n"
@@ -430,7 +430,10 @@ msgstr ""
 msgid ""
 "Pick a shape. Click to pick the center, drag, then let go when it is the "
 "size you want. Move around to rotate it, and click to draw it."
-msgstr "Trieu una figura. Feu clic per sel·leccionar el centre, arrossegueu, llavors deixeu anar el botó quan sigui de la mida que voleu. Moveu el ratolí per girar-la i feu clic per dibuixar-la."
+msgstr ""
+"Trieu una figura. Feu clic per sel·leccionar el centre, arrossegueu, llavors "
+"deixeu anar el botó quan sigui de la mida que voleu. Moveu el ratolí per "
+"girar-la i feu clic per dibuixar-la."
 
 #. Text tool instructions
 #: ../tools.h:104
@@ -914,15 +917,15 @@ msgstr "Feu clic per invertir la imatge horitzontalment."
 msgid "Click to flip the picture upside-down."
 msgstr "Feu clic per invertir la imatge verticalment."
 
-#: ../../magic/src/mosaic.c:71
+#: ../../magic/src/mosaic.c:70
 msgid "Mosaic"
 msgstr "Mosaic"
 
-#: ../../magic/src/mosaic.c:74
+#: ../../magic/src/mosaic.c:73
 msgid "Click and move the mouse to add a mosaic effect to the image."
 msgstr "Cliqueu i moveu el ratolí per afegir un efecte de mosaic al dibuix."
 
-#: ../../magic/src/mosaic.c:75
+#: ../../magic/src/mosaic.c:74
 msgid "Click to add a mosaic effect to the entire image."
 msgstr "Cliqueu per afegir un efecte de mosaic al dibuix."
 
@@ -944,7 +947,8 @@ msgstr "Soroll"
 
 #: ../../magic/src/noise.c:66
 msgid "Click and move the mouse to add noise to the image."
-msgstr "Cliqueu i arrossegueu el ratolí per afegir soroll a parts de la imatge."
+msgstr ""
+"Cliqueu i arrossegueu el ratolí per afegir soroll a parts de la imatge."
 
 #: ../../magic/src/noise.c:67
 msgid "Click to add noise to the entire image."
@@ -1074,11 +1078,21 @@ msgstr "Cliqueu per canviar els colors de la imatge."
 msgid ""
 "Click and move the mouse around to threshold the image into pure colour and "
 "white regions."
-msgstr "Cliqueu i moveu el ratolí per convertir parts del dibuix a color/blanc."
+msgstr ""
+"Cliqueu i moveu el ratolí per convertir parts del dibuix a color/blanc."
 
 #: ../../magic/src/tint.c:74
 msgid "Click to threshold the entire image into pure colour and white regions."
 msgstr "Cliqueu per convertir la imatge a color/blanc."
+
+#: ../../magic/src/toothpaste.c:65
+msgid "Toothpaste"
+msgstr ""
+
+#: ../../magic/src/toothpaste.c:68
+#, fuzzy
+msgid "Click and drag to squirt toothpaste onto the image."
+msgstr "Feu clic i moveu el ratolí per fer desplaçar la imatge."
 
 #: ../../magic/src/waves.c:78
 msgid "Waves"

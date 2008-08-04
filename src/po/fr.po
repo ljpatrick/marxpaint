@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: fr\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-08-01 17:34-0700\n"
+"POT-Creation-Date: 2008-08-04 12:39-0700\n"
 "PO-Revision-Date: 2004-05-30 21:20-0700\n"
 "Last-Translator: jimmy <jacques.chion@orange.fr>\n"
 "Language-Team:  <fr@li.org>\n"
@@ -687,8 +687,7 @@ msgstr "Étrange"
 #: ../../magic/src/alien.c:67
 msgid "Click and move the mouse to give the image an \"alien\" appearance."
 msgstr ""
-"Clique et déplace la souris pour ajouter à l'image une apparence "
-"“étrange”."
+"Clique et déplace la souris pour ajouter à l'image une apparence “étrange”."
 
 #: ../../magic/src/alien.c:68
 msgid "Click to give the entire image an \"alien\" appearance."
@@ -922,17 +921,17 @@ msgid "Click to flip the picture upside-down."
 msgstr "Clique pour faire basculer l'image de haut en bas."
 
 #
-#: ../../magic/src/mosaic.c:71
+#: ../../magic/src/mosaic.c:70
 msgid "Mosaic"
 msgstr "Mosaïque"
 
 #
-#: ../../magic/src/mosaic.c:74
+#: ../../magic/src/mosaic.c:73
 msgid "Click and move the mouse to add a mosaic effect to the image."
 msgstr "Clique et déplace la souris pour ajouter un effet de mosaïque."
 
 #
-#: ../../magic/src/mosaic.c:75
+#: ../../magic/src/mosaic.c:74
 msgid "Click to add a mosaic effect to the entire image."
 msgstr "Clique pour avoir un effet de mosaïque sur toute l'image."
 
@@ -973,19 +972,19 @@ msgstr "Rails"
 msgid "Click and drag to draw train track rails on your picture."
 msgstr "Clique et déplace la souris pour dessiner des rails."
 
-#: ../../magic/src/rain.c:64
 #
+#: ../../magic/src/rain.c:64
 msgid "Rain"
 msgstr "Pluie"
 
-#: ../../magic/src/rain.c:67
 #
+#: ../../magic/src/rain.c:67
 msgid "Click to place a rain drop onto the image."
 msgstr "Clique pour placet une goutte de pluie sur le dessin.."
 
 #
-#: ../../magic/src/rain.c:68
 #
+#: ../../magic/src/rain.c:68
 msgid "Click to cover the image with rain drops."
 msgstr "Clique pour remplir le dessin avec des gouttes de pluie."
 
@@ -1110,6 +1109,15 @@ msgid "Click to threshold the entire image into pure colour and white regions."
 msgstr ""
 "Clique pour obtenir une image en blanc et une seule couleur que tu as "
 "choisie. "
+
+#: ../../magic/src/toothpaste.c:65
+msgid "Toothpaste"
+msgstr ""
+
+#: ../../magic/src/toothpaste.c:68
+#, fuzzy
+msgid "Click and drag to squirt toothpaste onto the image."
+msgstr "Clique et déplace la souris pour déplacer ton image dans le cadre."
 
 #: ../../magic/src/waves.c:78
 msgid "Waves"

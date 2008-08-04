@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint 0.9.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-08-01 17:34-0700\n"
+"POT-Creation-Date: 2008-08-04 12:39-0700\n"
 "PO-Revision-Date: 2004-10-17 11:19+0200\n"
 "Last-Translator: Laurent Dhima <laurenti@alblinux.net>\n"
 "Language-Team: Albanian <translation-team-sq@lists.sourceforge.net>\n"
@@ -936,17 +936,17 @@ msgstr "Kliko që të krijosh një foto pasqyrë."
 msgid "Click to flip the picture upside-down."
 msgstr "Kliko që të rrotullosh pikturën nga lart-poshtë."
 
-#: ../../magic/src/mosaic.c:71
+#: ../../magic/src/mosaic.c:70
 #, fuzzy
 msgid "Mosaic"
 msgstr "Magjik"
 
-#: ../../magic/src/mosaic.c:74
+#: ../../magic/src/mosaic.c:73
 #, fuzzy
 msgid "Click and move the mouse to add a mosaic effect to the image."
 msgstr "Kliko që të krijosh një foto pasqyrë."
 
-#: ../../magic/src/mosaic.c:75
+#: ../../magic/src/mosaic.c:74
 #, fuzzy
 msgid "Click to add a mosaic effect to the entire image."
 msgstr "Kliko që të krijosh një foto pasqyrë."
@@ -1128,6 +1128,15 @@ msgid "Click to threshold the entire image into pure colour and white regions."
 msgstr ""
 "Kliko dhe lëvize miun përqark që të kthesh pikturën si të vizatuar me "
 "shkumës."
+
+#: ../../magic/src/toothpaste.c:65
+msgid "Toothpaste"
+msgstr ""
+
+#: ../../magic/src/toothpaste.c:68
+#, fuzzy
+msgid "Click and drag to squirt toothpaste onto the image."
+msgstr "Kliko dhe lëviz miun për t'a \"holluar\" foton."
 
 #: ../../magic/src/waves.c:78
 #, fuzzy

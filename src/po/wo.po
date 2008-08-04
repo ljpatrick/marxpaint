@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-08-01 17:34-0700\n"
+"POT-Creation-Date: 2008-08-04 12:39-0700\n"
 "PO-Revision-Date: 2007-07-04 11:24-0000\n"
 "Last-Translator: Haby Diallo <haby42@yahoo.fr>\n"
 "Language-Team: \n"
@@ -925,17 +925,17 @@ msgstr "Bëssël ngir guis natal bi ci setu."
 msgid "Click to flip the picture upside-down."
 msgstr "Bëssël ngir jalale natal bi ci kaw wala ci suuf."
 
-#: ../../magic/src/mosaic.c:71
+#: ../../magic/src/mosaic.c:70
 #, fuzzy
 msgid "Mosaic"
 msgstr "Yeeme"
 
-#: ../../magic/src/mosaic.c:74
+#: ../../magic/src/mosaic.c:73
 #, fuzzy
 msgid "Click and move the mouse to add a mosaic effect to the image."
 msgstr "Bëssël ngir guis natal bi ci setu."
 
-#: ../../magic/src/mosaic.c:75
+#: ../../magic/src/mosaic.c:74
 #, fuzzy
 msgid "Click to add a mosaic effect to the entire image."
 msgstr "Bëssël ngir guis natal bi ci setu."
@@ -1111,6 +1111,15 @@ msgstr "Bëssël te jalale ak jinax ngir sopi sa natal bi kess."
 #, fuzzy
 msgid "Click to threshold the entire image into pure colour and white regions."
 msgstr "Bëssël te jalale ak jinax ngir sopi sa natal bi kess."
+
+#: ../../magic/src/toothpaste.c:65
+msgid "Toothpaste"
+msgstr ""
+
+#: ../../magic/src/toothpaste.c:68
+#, fuzzy
+msgid "Click and drag to squirt toothpaste onto the image."
+msgstr "Bëssël te jalale ak jinax bi so buge sa natal bi lëndëm."
 
 #: ../../magic/src/waves.c:78
 #, fuzzy

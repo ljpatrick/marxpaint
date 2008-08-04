@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Thai tux paint\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-08-01 17:34-0700\n"
+"POT-Creation-Date: 2008-08-04 12:39-0700\n"
 "PO-Revision-Date: 2007-01-22 10:51+0700\n"
 "Last-Translator: Ouychai <Ae.translator@gmail.com>\n"
 "Language-Team: \n"
@@ -911,17 +911,17 @@ msgstr "คลิกเพื่อกลับรูปซ้ายขวา"
 msgid "Click to flip the picture upside-down."
 msgstr "คลิกเพื่อกลับรูปจากบนลงล่าง"
 
-#: ../../magic/src/mosaic.c:71
+#: ../../magic/src/mosaic.c:70
 #, fuzzy
 msgid "Mosaic"
 msgstr "เวทมนตร์"
 
-#: ../../magic/src/mosaic.c:74
+#: ../../magic/src/mosaic.c:73
 #, fuzzy
 msgid "Click and move the mouse to add a mosaic effect to the image."
 msgstr "คลิกเพื่อกลับรูปซ้ายขวา"
 
-#: ../../magic/src/mosaic.c:75
+#: ../../magic/src/mosaic.c:74
 #, fuzzy
 msgid "Click to add a mosaic effect to the entire image."
 msgstr "คลิกเพื่อกลับรูปซ้ายขวา"
@@ -1097,6 +1097,15 @@ msgstr "คลิกแล้วลากเมาส์ไปมา เพื�
 #, fuzzy
 msgid "Click to threshold the entire image into pure colour and white regions."
 msgstr "คลิกแล้วลากเมาส์ไปมา เพื่อทำให้รูปเป็นรูปการ์ตูน"
+
+#: ../../magic/src/toothpaste.c:65
+msgid "Toothpaste"
+msgstr ""
+
+#: ../../magic/src/toothpaste.c:68
+#, fuzzy
+msgid "Click and drag to squirt toothpaste onto the image."
+msgstr "คลิกแล้วลากเมาส์ไปมาเพื่อทำให้รูปมัว"
 
 #: ../../magic/src/waves.c:78
 #, fuzzy

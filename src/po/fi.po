@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint 0.9.17\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-08-01 17:34-0700\n"
+"POT-Creation-Date: 2008-08-04 12:39-0700\n"
 "PO-Revision-Date: 2008-01-03 00:41+0200\n"
 "Last-Translator: Jorma Karvonen <karvjorm@users.sf.net>\n"
 "Language-Team: Finnish <translation-team-fi@lists.sourceforge.net>\n"
@@ -933,17 +933,17 @@ msgstr "Tee kuvasta peilikuva painamalla hiiren painiketta."
 msgid "Click to flip the picture upside-down."
 msgstr "Käännä kuva ylösalaisin painamalla hiiren painiketta."
 
-#: ../../magic/src/mosaic.c:71
+#: ../../magic/src/mosaic.c:70
 #, fuzzy
 msgid "Mosaic"
 msgstr "Taiat"
 
-#: ../../magic/src/mosaic.c:74
+#: ../../magic/src/mosaic.c:73
 #, fuzzy
 msgid "Click and move the mouse to add a mosaic effect to the image."
 msgstr "Tee kuvasta peilikuva painamalla hiiren painiketta."
 
-#: ../../magic/src/mosaic.c:75
+#: ../../magic/src/mosaic.c:74
 #, fuzzy
 msgid "Click to add a mosaic effect to the entire image."
 msgstr "Tee kuvasta peilikuva painamalla hiiren painiketta."
@@ -1123,6 +1123,15 @@ msgid "Click to threshold the entire image into pure colour and white regions."
 msgstr ""
 "Muuta kuva ääriviivapiirrokseksi painamalla hiiren painiketta ja piirtämällä "
 "kuvan ympäri."
+
+#: ../../magic/src/toothpaste.c:65
+msgid "Toothpaste"
+msgstr ""
+
+#: ../../magic/src/toothpaste.c:68
+#, fuzzy
+msgid "Click and drag to squirt toothpaste onto the image."
+msgstr "Sumenna maalausta painamalla hiiren painiketta."
 
 #: ../../magic/src/waves.c:78
 #, fuzzy

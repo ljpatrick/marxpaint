@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: cs\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-08-01 17:34-0700\n"
+"POT-Creation-Date: 2008-08-04 12:39-0700\n"
 "PO-Revision-Date: 2006-06-21 12:50+0200\n"
 "Last-Translator: Václav Čermák <vaclav.cermak@gmail.com>\n"
 "Language-Team:  <cs@li.org>\n"
@@ -917,17 +917,17 @@ msgstr "Klepni a vytvoříš zrcadlový odraz obrázku."
 msgid "Click to flip the picture upside-down."
 msgstr "Klepni a obrázek se otočí nohama."
 
-#: ../../magic/src/mosaic.c:71
+#: ../../magic/src/mosaic.c:70
 #, fuzzy
 msgid "Mosaic"
 msgstr "Magie"
 
-#: ../../magic/src/mosaic.c:74
+#: ../../magic/src/mosaic.c:73
 #, fuzzy
 msgid "Click and move the mouse to add a mosaic effect to the image."
 msgstr "Klepni a vytvoříš zrcadlový odraz obrázku."
 
-#: ../../magic/src/mosaic.c:75
+#: ../../magic/src/mosaic.c:74
 #, fuzzy
 msgid "Click to add a mosaic effect to the entire image."
 msgstr "Klepni a vytvoříš zrcadlový odraz obrázku."
@@ -1103,6 +1103,15 @@ msgstr "Klepni a pohybuj myší - obrázek získá komiksový vzhled."
 #, fuzzy
 msgid "Click to threshold the entire image into pure colour and white regions."
 msgstr "Klepni a pohybuj myší - obrázek získá komiksový vzhled."
+
+#: ../../magic/src/toothpaste.c:65
+msgid "Toothpaste"
+msgstr ""
+
+#: ../../magic/src/toothpaste.c:68
+#, fuzzy
+msgid "Click and drag to squirt toothpaste onto the image."
+msgstr "Klepni a pohybuj myší - rozostříš obrázek."
 
 #: ../../magic/src/waves.c:78
 #, fuzzy

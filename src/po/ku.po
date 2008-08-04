@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-08-01 17:34-0700\n"
+"POT-Creation-Date: 2008-08-04 12:39-0700\n"
 "PO-Revision-Date: 2006-04-23 00:58+0200\n"
 "Last-Translator: Amed Ç. Jiyan <amed@pckurd.net>\n"
 "Language-Team: KURDISH <LL@li.org>\n"
@@ -921,17 +921,17 @@ msgstr "Ji bo çêkirina îmaja neynikê bitikîne."
 msgid "Click to flip the picture upside-down."
 msgstr "Ji bo ku wêneyê berevajî bikî bitikîne."
 
-#: ../../magic/src/mosaic.c:71
+#: ../../magic/src/mosaic.c:70
 #, fuzzy
 msgid "Mosaic"
 msgstr "Sêr"
 
-#: ../../magic/src/mosaic.c:74
+#: ../../magic/src/mosaic.c:73
 #, fuzzy
 msgid "Click and move the mouse to add a mosaic effect to the image."
 msgstr "Ji bo çêkirina îmaja neynikê bitikîne."
 
-#: ../../magic/src/mosaic.c:75
+#: ../../magic/src/mosaic.c:74
 #, fuzzy
 msgid "Click to add a mosaic effect to the entire image."
 msgstr "Ji bo çêkirina îmaja neynikê bitikîne."
@@ -1109,6 +1109,15 @@ msgstr ""
 msgid "Click to threshold the entire image into pure colour and white regions."
 msgstr ""
 "Ji bo ku wêneyê çêkî wêneyekî kartok bitikîne û mişkî li dorê bigerîne."
+
+#: ../../magic/src/toothpaste.c:65
+msgid "Toothpaste"
+msgstr ""
+
+#: ../../magic/src/toothpaste.c:68
+#, fuzzy
+msgid "Click and drag to squirt toothpaste onto the image."
+msgstr "Mişkî li dora reşahiya wêneyê bitikîne û rake."
 
 #: ../../magic/src/waves.c:78
 #, fuzzy

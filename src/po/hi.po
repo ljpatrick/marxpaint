@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint 0.9.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-08-01 17:34-0700\n"
+"POT-Creation-Date: 2008-08-04 12:39-0700\n"
 "PO-Revision-Date: 2004-05-26 08:44+0100\n"
 "Last-Translator: Ankit Malik <greatestankit@yahoo.co.in>\n"
 "Language-Team: Hindi\n"
@@ -925,17 +925,17 @@ msgstr "शीशे मे देखो"
 msgid "Click to flip the picture upside-down."
 msgstr "उल्टा करो"
 
-#: ../../magic/src/mosaic.c:71
+#: ../../magic/src/mosaic.c:70
 #, fuzzy
 msgid "Mosaic"
 msgstr "जादू"
 
-#: ../../magic/src/mosaic.c:74
+#: ../../magic/src/mosaic.c:73
 #, fuzzy
 msgid "Click and move the mouse to add a mosaic effect to the image."
 msgstr "शीशे मे देखो"
 
-#: ../../magic/src/mosaic.c:75
+#: ../../magic/src/mosaic.c:74
 #, fuzzy
 msgid "Click to add a mosaic effect to the entire image."
 msgstr "शीशे मे देखो"
@@ -1113,6 +1113,15 @@ msgstr "चाक करो।"
 #, fuzzy
 msgid "Click to threshold the entire image into pure colour and white regions."
 msgstr "चाक करो।"
+
+#: ../../magic/src/toothpaste.c:65
+msgid "Toothpaste"
+msgstr ""
+
+#: ../../magic/src/toothpaste.c:68
+#, fuzzy
+msgid "Click and drag to squirt toothpaste onto the image."
+msgstr "पतला करो"
 
 #: ../../magic/src/waves.c:78
 #, fuzzy

@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: nb\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-08-01 17:34-0700\n"
+"POT-Creation-Date: 2008-08-04 12:39-0700\n"
 "PO-Revision-Date: 2007-07-19 20:37+0200\n"
 "Last-Translator: Karl Ove Hufthammer <karl@huftis.org>\n"
 "Language-Team: Norwegian Nynorsk <i18n-nn@lister.ping.uio.no>\n"
@@ -912,17 +912,17 @@ msgstr "Trykk for å speilvende tegningen!"
 msgid "Click to flip the picture upside-down."
 msgstr "Trykk for å snu tegningen opp ned."
 
-#: ../../magic/src/mosaic.c:71
+#: ../../magic/src/mosaic.c:70
 #, fuzzy
 msgid "Mosaic"
 msgstr "Magi"
 
-#: ../../magic/src/mosaic.c:74
+#: ../../magic/src/mosaic.c:73
 #, fuzzy
 msgid "Click and move the mouse to add a mosaic effect to the image."
 msgstr "Trykk for å speilvende tegningen!"
 
-#: ../../magic/src/mosaic.c:75
+#: ../../magic/src/mosaic.c:74
 #, fuzzy
 msgid "Click to add a mosaic effect to the entire image."
 msgstr "Trykk for å speilvende tegningen!"
@@ -1101,6 +1101,15 @@ msgid "Click to threshold the entire image into pure colour and white regions."
 msgstr ""
 "Hold inne knappen og flytt rundt for å gjøre fargene klarere og strekene "
 "tydeligere."
+
+#: ../../magic/src/toothpaste.c:65
+msgid "Toothpaste"
+msgstr ""
+
+#: ../../magic/src/toothpaste.c:68
+#, fuzzy
+msgid "Click and drag to squirt toothpaste onto the image."
+msgstr "Hold inne knappen og flytt rundt for å flytte på tegningen."
 
 #: ../../magic/src/waves.c:78
 msgid "Waves"

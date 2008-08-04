@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TuxPaint 0.9.16\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-08-01 17:34-0700\n"
+"POT-Creation-Date: 2008-08-04 12:39-0700\n"
 "PO-Revision-Date: 2006-09-21 20:04+0200\n"
 "Last-Translator: Shumani Mercy Ṋevhulaudzi <nevhulaudzi@saps.org.za>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -940,17 +940,17 @@ msgstr "Kiḽikani u ita tshifanyiso."
 msgid "Click to flip the picture upside-down."
 msgstr "Kiḽikani u monisa tshifanyiso tshiye nṱha na fhasi."
 
-#: ../../magic/src/mosaic.c:71
+#: ../../magic/src/mosaic.c:70
 #, fuzzy
 msgid "Mosaic"
 msgstr "Madzhiki"
 
-#: ../../magic/src/mosaic.c:74
+#: ../../magic/src/mosaic.c:73
 #, fuzzy
 msgid "Click and move the mouse to add a mosaic effect to the image."
 msgstr "Kiḽikani u ita tshifanyiso."
 
-#: ../../magic/src/mosaic.c:75
+#: ../../magic/src/mosaic.c:74
 #, fuzzy
 msgid "Click to add a mosaic effect to the entire image."
 msgstr "Kiḽikani u ita tshifanyiso."
@@ -1140,6 +1140,16 @@ msgid "Click to threshold the entire image into pure colour and white regions."
 msgstr ""
 "Kiḽikani ni sudzuluse mausu u mona u shandukisa tshifanyiso tsha vha "
 "khathuni."
+
+#: ../../magic/src/toothpaste.c:65
+msgid "Toothpaste"
+msgstr ""
+
+#: ../../magic/src/toothpaste.c:68
+#, fuzzy
+msgid "Click and drag to squirt toothpaste onto the image."
+msgstr ""
+"Kiḽikani ni sudzuluse mausu u mona u ita uri tshifanyiso tshi si vhonale."
 
 #: ../../magic/src/waves.c:78
 #, fuzzy

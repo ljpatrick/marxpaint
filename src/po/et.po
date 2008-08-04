@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: et\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-08-01 17:34-0700\n"
+"POT-Creation-Date: 2008-08-04 12:39-0700\n"
 "PO-Revision-Date: 2007-03-18 20:26+0200\n"
 "Last-Translator: Lauri Jesmin <lauri.jesmin@nordtech.ee>\n"
 "Language-Team: Estonian <et@li.org>\n"
@@ -905,17 +905,17 @@ msgstr "Tee klõps, et tekitada peegelpilt."
 msgid "Click to flip the picture upside-down."
 msgstr "Tee klõps, et pöörata pilt pea alaspidi."
 
-#: ../../magic/src/mosaic.c:71
+#: ../../magic/src/mosaic.c:70
 #, fuzzy
 msgid "Mosaic"
 msgstr "Maagia"
 
-#: ../../magic/src/mosaic.c:74
+#: ../../magic/src/mosaic.c:73
 #, fuzzy
 msgid "Click and move the mouse to add a mosaic effect to the image."
 msgstr "Tee klõps, et tekitada peegelpilt."
 
-#: ../../magic/src/mosaic.c:75
+#: ../../magic/src/mosaic.c:74
 #, fuzzy
 msgid "Click to add a mosaic effect to the entire image."
 msgstr "Tee klõps, et tekitada peegelpilt."
@@ -1090,6 +1090,15 @@ msgstr "Tee klõps ja liiguta hiirt, et muuta pilt multika sarnaseks."
 #, fuzzy
 msgid "Click to threshold the entire image into pure colour and white regions."
 msgstr "Tee klõps ja liiguta hiirt, et muuta pilt multika sarnaseks."
+
+#: ../../magic/src/toothpaste.c:65
+msgid "Toothpaste"
+msgstr ""
+
+#: ../../magic/src/toothpaste.c:68
+#, fuzzy
+msgid "Click and drag to squirt toothpaste onto the image."
+msgstr "Tee klõps ja liiguta hiirt oma pildi liigutamiseks lõuendil."
 
 #: ../../magic/src/waves.c:78
 msgid "Waves"

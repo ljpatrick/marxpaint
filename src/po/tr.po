@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-08-01 17:34-0700\n"
+"POT-Creation-Date: 2008-08-04 12:39-0700\n"
 "PO-Revision-Date: 2006-10-11 23:27+0300\n"
 "Last-Translator: Doruk Fisek <dfisek@fisek.com.tr>\n"
 "Language-Team: Turkish <gnu-tr-u12a@lists.sourceforge.net>\n"
@@ -920,17 +920,17 @@ msgstr "Bir ayna görüntüsü oluşturmak için tıkla."
 msgid "Click to flip the picture upside-down."
 msgstr "Resmi başaşağı çevirmek için tıkla."
 
-#: ../../magic/src/mosaic.c:71
+#: ../../magic/src/mosaic.c:70
 #, fuzzy
 msgid "Mosaic"
 msgstr "Büyü"
 
-#: ../../magic/src/mosaic.c:74
+#: ../../magic/src/mosaic.c:73
 #, fuzzy
 msgid "Click and move the mouse to add a mosaic effect to the image."
 msgstr "Bir ayna görüntüsü oluşturmak için tıkla."
 
-#: ../../magic/src/mosaic.c:75
+#: ../../magic/src/mosaic.c:74
 #, fuzzy
 msgid "Click to add a mosaic effect to the entire image."
 msgstr "Bir ayna görüntüsü oluşturmak için tıkla."
@@ -1106,6 +1106,15 @@ msgstr "Resmi bir karikatüre çevirmek için tıkla ve fareyi etrafta gezdir."
 #, fuzzy
 msgid "Click to threshold the entire image into pure colour and white regions."
 msgstr "Resmi bir karikatüre çevirmek için tıkla ve fareyi etrafta gezdir."
+
+#: ../../magic/src/toothpaste.c:65
+msgid "Toothpaste"
+msgstr ""
+
+#: ../../magic/src/toothpaste.c:68
+#, fuzzy
+msgid "Click and drag to squirt toothpaste onto the image."
+msgstr "Resmi bulanıklaştırmak için tıkla ve fareyi etrafta gezdir."
 
 #: ../../magic/src/waves.c:78
 #, fuzzy

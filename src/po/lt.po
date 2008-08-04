@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Tuxpaint 0.9.9\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-08-01 17:34-0700\n"
+"POT-Creation-Date: 2008-08-04 12:39-0700\n"
 "PO-Revision-Date: 2004-12-10 18:11+0200\n"
 "Last-Translator: Gintaras Goštautas <gintaras@nes.lt>\n"
 "Language-Team: Lithuanian <komp_lt@konf.lt>\n"
@@ -925,17 +925,17 @@ msgstr "Spustelėkite ir gausite veidrodinį atspindį."
 msgid "Click to flip the picture upside-down."
 msgstr "Spustelėkite, jei norite apversti piešinį aukštyn kojom."
 
-#: ../../magic/src/mosaic.c:71
+#: ../../magic/src/mosaic.c:70
 #, fuzzy
 msgid "Mosaic"
 msgstr "Magija"
 
-#: ../../magic/src/mosaic.c:74
+#: ../../magic/src/mosaic.c:73
 #, fuzzy
 msgid "Click and move the mouse to add a mosaic effect to the image."
 msgstr "Spustelėkite ir gausite veidrodinį atspindį."
 
-#: ../../magic/src/mosaic.c:75
+#: ../../magic/src/mosaic.c:74
 #, fuzzy
 msgid "Click to add a mosaic effect to the entire image."
 msgstr "Spustelėkite ir gausite veidrodinį atspindį."
@@ -1112,6 +1112,15 @@ msgstr "Spustelėkite ir judinkite pelę kol piešinys taps panašus į karikat�
 #, fuzzy
 msgid "Click to threshold the entire image into pure colour and white regions."
 msgstr "Spustelėkite ir judinkite pelę kol piešinys taps panašus į karikatūrą."
+
+#: ../../magic/src/toothpaste.c:65
+msgid "Toothpaste"
+msgstr ""
+
+#: ../../magic/src/toothpaste.c:68
+#, fuzzy
+msgid "Click and drag to squirt toothpaste onto the image."
+msgstr "Spustelėkite ir pele judinkite piešinį ant drobės."
 
 #: ../../magic/src/waves.c:78
 #, fuzzy

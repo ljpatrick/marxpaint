@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint 0.9.11\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-08-01 17:34-0700\n"
+"POT-Creation-Date: 2008-08-04 12:39-0700\n"
 "PO-Revision-Date: 2004-07-18 13:50+0800\n"
 "Last-Translator: Wang Jian <lark@linux.net.cn>\n"
 "Language-Team: zh_CN <i18n-translation@lists.linux.net.cn>\n"
@@ -933,17 +933,17 @@ msgstr "单击做出镜子中的效果。"
 msgid "Click to flip the picture upside-down."
 msgstr "单击将图片上下翻转。"
 
-#: ../../magic/src/mosaic.c:71
+#: ../../magic/src/mosaic.c:70
 #, fuzzy
 msgid "Mosaic"
 msgstr "奇特效果"
 
-#: ../../magic/src/mosaic.c:74
+#: ../../magic/src/mosaic.c:73
 #, fuzzy
 msgid "Click and move the mouse to add a mosaic effect to the image."
 msgstr "单击做出镜子中的效果。"
 
-#: ../../magic/src/mosaic.c:75
+#: ../../magic/src/mosaic.c:74
 #, fuzzy
 msgid "Click to add a mosaic effect to the entire image."
 msgstr "单击做出镜子中的效果。"
@@ -1121,6 +1121,15 @@ msgstr "单击然后移动鼠标将图片变成粉笔画。"
 #, fuzzy
 msgid "Click to threshold the entire image into pure colour and white regions."
 msgstr "单击然后移动鼠标将图片变成粉笔画。"
+
+#: ../../magic/src/toothpaste.c:65
+msgid "Toothpaste"
+msgstr ""
+
+#: ../../magic/src/toothpaste.c:68
+#, fuzzy
+msgid "Click and drag to squirt toothpaste onto the image."
+msgstr "单击然后移动鼠标将图片变淡。"
 
 #: ../../magic/src/waves.c:78
 #, fuzzy

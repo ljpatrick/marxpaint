@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint-is 0.9.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-08-01 17:34-0700\n"
+"POT-Creation-Date: 2008-08-04 12:39-0700\n"
 "PO-Revision-Date: 2004-03-15 15:38GMT\n"
 "Last-Translator: Pjetur G. Hjaltason <pjetur@pjetur.net>\n"
 "Language-Team: Icelandic <kde-isl@molar.is>\n"
@@ -932,17 +932,17 @@ msgstr "Smelltu til að gera spegilmynd."
 msgid "Click to flip the picture upside-down."
 msgstr "Smelltu til að setja myndina á hvolf."
 
-#: ../../magic/src/mosaic.c:71
+#: ../../magic/src/mosaic.c:70
 #, fuzzy
 msgid "Mosaic"
 msgstr "Töfrar"
 
-#: ../../magic/src/mosaic.c:74
+#: ../../magic/src/mosaic.c:73
 #, fuzzy
 msgid "Click and move the mouse to add a mosaic effect to the image."
 msgstr "Smelltu til að gera spegilmynd."
 
-#: ../../magic/src/mosaic.c:75
+#: ../../magic/src/mosaic.c:74
 #, fuzzy
 msgid "Click to add a mosaic effect to the entire image."
 msgstr "Smelltu til að gera spegilmynd."
@@ -1120,6 +1120,15 @@ msgstr "Smelltu og hreyfðu músina til að búa til krítarmynd!"
 #, fuzzy
 msgid "Click to threshold the entire image into pure colour and white regions."
 msgstr "Smelltu og hreyfðu músina til að búa til krítarmynd!"
+
+#: ../../magic/src/toothpaste.c:65
+msgid "Toothpaste"
+msgstr ""
+
+#: ../../magic/src/toothpaste.c:68
+#, fuzzy
+msgid "Click and drag to squirt toothpaste onto the image."
+msgstr "Smelltu og hreyfðu músina til að gera myndina þynnri."
 
 #: ../../magic/src/waves.c:78
 #, fuzzy

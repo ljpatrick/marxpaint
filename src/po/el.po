@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Tuxpaint 0.9.2pre\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-08-01 17:34-0700\n"
+"POT-Creation-Date: 2008-08-04 12:39-0700\n"
 "PO-Revision-Date: 2008-04-14 21:14+0200\n"
 "Last-Translator: yannis\n"
 "Language-Team: N/A <i18ngr@lists.hellug.gr>\n"
@@ -931,17 +931,17 @@ msgstr "Κάνε κλικ για να φτιάξεις μια εικόνα-εί�
 msgid "Click to flip the picture upside-down."
 msgstr "Κάνε κλικ για να γυρίσεις τη ζωγραφιά άνω-κάτω."
 
-#: ../../magic/src/mosaic.c:71
+#: ../../magic/src/mosaic.c:70
 #, fuzzy
 msgid "Mosaic"
 msgstr "Μαγικά"
 
-#: ../../magic/src/mosaic.c:74
+#: ../../magic/src/mosaic.c:73
 #, fuzzy
 msgid "Click and move the mouse to add a mosaic effect to the image."
 msgstr "Κάνε κλικ για να φτιάξεις μια εικόνα-είδωλο."
 
-#: ../../magic/src/mosaic.c:75
+#: ../../magic/src/mosaic.c:74
 #, fuzzy
 msgid "Click to add a mosaic effect to the entire image."
 msgstr "Κάνε κλικ για να φτιάξεις μια εικόνα-είδωλο."
@@ -1124,6 +1124,16 @@ msgid "Click to threshold the entire image into pure colour and white regions."
 msgstr ""
 "Κάνε κλικ και κίνησε το ποντίκι για να κάνεις τη ζωγραφιά να μοιάζει με "
 "καρτούν."
+
+#: ../../magic/src/toothpaste.c:65
+msgid "Toothpaste"
+msgstr ""
+
+#: ../../magic/src/toothpaste.c:68
+#, fuzzy
+msgid "Click and drag to squirt toothpaste onto the image."
+msgstr ""
+"Κάνε κλικ και σύρε το ποντίκι για να μετακινήσεις την εικόνα πάνω στον καμβά."
 
 #: ../../magic/src/waves.c:78
 msgid "Waves"

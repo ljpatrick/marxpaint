@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint-0.9.17\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-08-01 17:34-0700\n"
+"POT-Creation-Date: 2008-08-04 12:39-0700\n"
 "PO-Revision-Date: 2007-07-11 23:28+0930\n"
 "Last-Translator: Clytie Siddall <clytie@riverland.net.au>\n"
 "Language-Team: Vietnamese <vi-VN@googlegroups.com>\n"
@@ -919,17 +919,17 @@ msgstr "Nhắp để tạo một hình phản chiếu."
 msgid "Click to flip the picture upside-down."
 msgstr "Nhắp để quay hình lộn ngược."
 
-#: ../../magic/src/mosaic.c:71
+#: ../../magic/src/mosaic.c:70
 #, fuzzy
 msgid "Mosaic"
 msgstr "Thuật"
 
-#: ../../magic/src/mosaic.c:74
+#: ../../magic/src/mosaic.c:73
 #, fuzzy
 msgid "Click and move the mouse to add a mosaic effect to the image."
 msgstr "Nhắp để tạo một hình phản chiếu."
 
-#: ../../magic/src/mosaic.c:75
+#: ../../magic/src/mosaic.c:74
 #, fuzzy
 msgid "Click to add a mosaic effect to the entire image."
 msgstr "Nhắp để tạo một hình phản chiếu."
@@ -1105,6 +1105,15 @@ msgstr "Nhắp và di chuột vòng quanh để đổi hình này thành hoạt 
 #, fuzzy
 msgid "Click to threshold the entire image into pure colour and white regions."
 msgstr "Nhắp và di chuột vòng quanh để đổi hình này thành hoạt hình."
+
+#: ../../magic/src/toothpaste.c:65
+msgid "Toothpaste"
+msgstr ""
+
+#: ../../magic/src/toothpaste.c:68
+#, fuzzy
+msgid "Click and drag to squirt toothpaste onto the image."
+msgstr "Nhắp và di chuột vòng quanh để làm mờ hình."
 
 #: ../../magic/src/waves.c:78
 #, fuzzy

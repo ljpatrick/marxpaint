@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TuxPaint\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-08-01 17:34-0700\n"
+"POT-Creation-Date: 2008-08-04 12:39-0700\n"
 "PO-Revision-Date: 2008-01-07 14:29+0300\n"
 "Last-Translator: Sergei Popov <skein@rambler.ru>\n"
 "Language-Team: Dmitriy Ivanov <ace22b@myrealbox.com>\n"
@@ -940,17 +940,17 @@ msgstr "Щёлкните на картинку, чтобы превратить 
 msgid "Click to flip the picture upside-down."
 msgstr "Щёлкните на картинку, чтобы перевернуть её вверх тормашками."
 
-#: ../../magic/src/mosaic.c:71
+#: ../../magic/src/mosaic.c:70
 #, fuzzy
 msgid "Mosaic"
 msgstr "Магия"
 
-#: ../../magic/src/mosaic.c:74
+#: ../../magic/src/mosaic.c:73
 #, fuzzy
 msgid "Click and move the mouse to add a mosaic effect to the image."
 msgstr "Щёлкните на картинку, чтобы превратить её в зеркальное отражение."
 
-#: ../../magic/src/mosaic.c:75
+#: ../../magic/src/mosaic.c:74
 #, fuzzy
 msgid "Click to add a mosaic effect to the entire image."
 msgstr "Щёлкните на картинку, чтобы превратить её в зеркальное отражение."
@@ -1127,6 +1127,15 @@ msgstr ""
 msgid "Click to threshold the entire image into pure colour and white regions."
 msgstr ""
 "Щёлкните и поводите по картинке, чтобы превратить её часть в мультфильм."
+
+#: ../../magic/src/toothpaste.c:65
+msgid "Toothpaste"
+msgstr ""
+
+#: ../../magic/src/toothpaste.c:68
+#, fuzzy
+msgid "Click and drag to squirt toothpaste onto the image."
+msgstr "Нажмите и ведите мышь, чтобы сдвинуть рисунок относительно холста."
 
 #: ../../magic/src/waves.c:78
 msgid "Waves"

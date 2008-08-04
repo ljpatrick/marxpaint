@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pt_br\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-08-01 17:34-0700\n"
+"POT-Creation-Date: 2008-08-04 12:39-0700\n"
 "PO-Revision-Date: 2007-11-15 22:14-0300\n"
 "Last-Translator: Frederico Goncalves Guimaraes <frederico@teia.bio.br>\n"
 "Language-Team: Português do Brasil\n"
@@ -915,17 +915,17 @@ msgstr "Clique para espelhar a imagem."
 msgid "Click to flip the picture upside-down."
 msgstr "Clique para virar a imagem de cabeça pra baixo."
 
-#: ../../magic/src/mosaic.c:71
+#: ../../magic/src/mosaic.c:70
 #, fuzzy
 msgid "Mosaic"
 msgstr "Mágicas"
 
-#: ../../magic/src/mosaic.c:74
+#: ../../magic/src/mosaic.c:73
 #, fuzzy
 msgid "Click and move the mouse to add a mosaic effect to the image."
 msgstr "Clique para espelhar a imagem."
 
-#: ../../magic/src/mosaic.c:75
+#: ../../magic/src/mosaic.c:74
 #, fuzzy
 msgid "Click to add a mosaic effect to the entire image."
 msgstr "Clique para espelhar a imagem."
@@ -1101,6 +1101,15 @@ msgstr "Clique e mova o mouse para destacar alguns contornos da imagem."
 #, fuzzy
 msgid "Click to threshold the entire image into pure colour and white regions."
 msgstr "Clique e mova o mouse para destacar alguns contornos da imagem."
+
+#: ../../magic/src/toothpaste.c:65
+msgid "Toothpaste"
+msgstr ""
+
+#: ../../magic/src/toothpaste.c:68
+#, fuzzy
+msgid "Click and drag to squirt toothpaste onto the image."
+msgstr "Clique e mova o mouse para deslocar sua imagem pela moldura."
 
 #: ../../magic/src/waves.c:78
 msgid "Waves"

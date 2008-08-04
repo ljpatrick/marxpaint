@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TuxPaint \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-08-01 17:34-0700\n"
+"POT-Creation-Date: 2008-08-04 12:39-0700\n"
 "PO-Revision-Date: 2006-11-30 16:30+0200\n"
 "Last-Translator: Juan Irigoien <juanirigoien@gmail.com>\n"
 "Language-Team: basque <juanirigoien@gmail.com>\n"
@@ -920,17 +920,17 @@ msgstr "Egin klik irudiaren isla sortzeko!"
 msgid "Click to flip the picture upside-down."
 msgstr "Klik egin eta irudia goikoz-behera irauliko da!"
 
-#: ../../magic/src/mosaic.c:71
+#: ../../magic/src/mosaic.c:70
 #, fuzzy
 msgid "Mosaic"
 msgstr "Magikoak"
 
-#: ../../magic/src/mosaic.c:74
+#: ../../magic/src/mosaic.c:73
 #, fuzzy
 msgid "Click and move the mouse to add a mosaic effect to the image."
 msgstr "Egin klik irudiaren isla sortzeko!"
 
-#: ../../magic/src/mosaic.c:75
+#: ../../magic/src/mosaic.c:74
 #, fuzzy
 msgid "Click to add a mosaic effect to the entire image."
 msgstr "Egin klik irudiaren isla sortzeko!"
@@ -1106,6 +1106,15 @@ msgstr "Klik egin eta mugi ezazu sagua irudia biñeta bihurtzeko."
 #, fuzzy
 msgid "Click to threshold the entire image into pure colour and white regions."
 msgstr "Klik egin eta mugi ezazu sagua irudia biñeta bihurtzeko."
+
+#: ../../magic/src/toothpaste.c:65
+msgid "Toothpaste"
+msgstr ""
+
+#: ../../magic/src/toothpaste.c:68
+#, fuzzy
+msgid "Click and drag to squirt toothpaste onto the image."
+msgstr "Klik egin eta mugi ezazu sagua irudia mehetzeko."
 
 #: ../../magic/src/waves.c:78
 #, fuzzy

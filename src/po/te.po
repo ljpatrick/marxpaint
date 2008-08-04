@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-08-01 17:34-0700\n"
+"POT-Creation-Date: 2008-08-04 12:39-0700\n"
 "PO-Revision-Date: 2007-03-15 17:27+0530\n"
 "Last-Translator: pavithran <pavithran.s@gmail.com>\n"
 "Language-Team: Telugu <indlinux-telugu@lists.sourceforge.net>\n"
@@ -910,17 +910,17 @@ msgstr ""
 msgid "Click to flip the picture upside-down."
 msgstr "చిత్రాన్ని తలక్రిందలు చేయటానికి క్లిక్ చేయండి"
 
-#: ../../magic/src/mosaic.c:71
+#: ../../magic/src/mosaic.c:70
 #, fuzzy
 msgid "Mosaic"
 msgstr "మాయాజాలము"
 
-#: ../../magic/src/mosaic.c:74
+#: ../../magic/src/mosaic.c:73
 #, fuzzy
 msgid "Click and move the mouse to add a mosaic effect to the image."
 msgstr "చిత్రానికి మఱక వేయడానికి క్లిక్ చేసి దాని చుట్టూ జరపండి"
 
-#: ../../magic/src/mosaic.c:75
+#: ../../magic/src/mosaic.c:74
 #, fuzzy
 msgid "Click to add a mosaic effect to the entire image."
 msgstr "చిత్రానికి మఱక వేయడానికి క్లిక్ చేసి దాని చుట్టూ జరపండి"
@@ -1094,6 +1094,15 @@ msgstr "చిత్రానికి మచ్చ  వేయడానికి
 #, fuzzy
 msgid "Click to threshold the entire image into pure colour and white regions."
 msgstr "చిత్రానికి మచ్చ  వేయడానికి క్లిక్ చేసి దాని చుట్టూ జరపండి"
+
+#: ../../magic/src/toothpaste.c:65
+msgid "Toothpaste"
+msgstr ""
+
+#: ../../magic/src/toothpaste.c:68
+#, fuzzy
+msgid "Click and drag to squirt toothpaste onto the image."
+msgstr "చిత్రానికి మఱక వేయడానికి క్లిక్ చేసి దాని చుట్టూ జరపండి"
 
 #: ../../magic/src/waves.c:78
 #, fuzzy

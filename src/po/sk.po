@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint 0.9.17\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-08-01 17:34-0700\n"
+"POT-Creation-Date: 2008-08-04 12:39-0700\n"
 "PO-Revision-Date: 2008-03-12 14:01+0100\n"
 "Last-Translator: Peter Tuhársky <tuharsky@misbb.sk>\n"
 "Language-Team: Slovak <sk-i18n@lists.linux.sk>\n"
@@ -915,17 +915,17 @@ msgstr "Keď klikneš, obrázok zrkadlovo otočíš."
 msgid "Click to flip the picture upside-down."
 msgstr "Keď klikneš, otočíš obrázok dole hlavou."
 
-#: ../../magic/src/mosaic.c:71
+#: ../../magic/src/mosaic.c:70
 #, fuzzy
 msgid "Mosaic"
 msgstr "Kúzla"
 
-#: ../../magic/src/mosaic.c:74
+#: ../../magic/src/mosaic.c:73
 #, fuzzy
 msgid "Click and move the mouse to add a mosaic effect to the image."
 msgstr "Keď klikneš, obrázok zrkadlovo otočíš."
 
-#: ../../magic/src/mosaic.c:75
+#: ../../magic/src/mosaic.c:74
 #, fuzzy
 msgid "Click to add a mosaic effect to the entire image."
 msgstr "Keď klikneš, obrázok zrkadlovo otočíš."
@@ -1101,6 +1101,15 @@ msgstr "Klikni a pohybuj myšou, obrázok sa prekreslí na komiks."
 #, fuzzy
 msgid "Click to threshold the entire image into pure colour and white regions."
 msgstr "Klikni a pohybuj myšou, obrázok sa prekreslí na komiks."
+
+#: ../../magic/src/toothpaste.c:65
+msgid "Toothpaste"
+msgstr ""
+
+#: ../../magic/src/toothpaste.c:68
+#, fuzzy
+msgid "Click and drag to squirt toothpaste onto the image."
+msgstr "Keď klikneš a pohýbeš myšou, rozmažeš obrázok."
 
 #: ../../magic/src/waves.c:78
 msgid "Waves"

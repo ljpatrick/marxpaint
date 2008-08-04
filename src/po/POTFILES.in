@@ -41,4 +41,5 @@ tuxpaint.desktop.in
 ../magic/src/smudge.c
 ../magic/src/snow.c
 ../magic/src/tint.c
+../magic/src/toothpaste.c
 ../magic/src/waves.c

@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: af\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-08-01 17:34-0700\n"
+"POT-Creation-Date: 2008-08-04 12:39-0700\n"
 "PO-Revision-Date: 2008-06-19 13:24-0700\n"
 "Last-Translator: Samuel Murray (Groenkloof) <samuel@translate.org.za>\n"
 "Language-Team: \n"
@@ -906,17 +906,17 @@ msgstr "Klik om 'n spieëlbeeld te maak!"
 msgid "Click to flip the picture upside-down."
 msgstr "Klik om die prent onderstebo te swaai!"
 
-#: ../../magic/src/mosaic.c:71
+#: ../../magic/src/mosaic.c:70
 #, fuzzy
 msgid "Mosaic"
 msgstr "Towergoed"
 
-#: ../../magic/src/mosaic.c:74
+#: ../../magic/src/mosaic.c:73
 #, fuzzy
 msgid "Click and move the mouse to add a mosaic effect to the image."
 msgstr "Klik om 'n spieëlbeeld te maak!"
 
-#: ../../magic/src/mosaic.c:75
+#: ../../magic/src/mosaic.c:74
 #, fuzzy
 msgid "Click to add a mosaic effect to the entire image."
 msgstr "Klik om 'n spieëlbeeld te maak!"
@@ -1091,6 +1091,15 @@ msgstr "Klik en beweeg die muis om die prent te verander na 'n cartoon."
 #, fuzzy
 msgid "Click to threshold the entire image into pure colour and white regions."
 msgstr "Klik en beweeg die muis om die prent te verander na 'n cartoon."
+
+#: ../../magic/src/toothpaste.c:65
+msgid "Toothpaste"
+msgstr ""
+
+#: ../../magic/src/toothpaste.c:68
+#, fuzzy
+msgid "Click and drag to squirt toothpaste onto the image."
+msgstr "Klik en beweeg die muis om die prent rond te skuif op die verfdoek."
 
 #: ../../magic/src/waves.c:78
 msgid "Waves"

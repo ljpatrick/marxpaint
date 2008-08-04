@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Tux paint anns a' ghàidhlig\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-08-01 17:34-0700\n"
+"POT-Creation-Date: 2008-08-04 12:39-0700\n"
 "PO-Revision-Date: 2006-03-04 15:51-0000\n"
 "Last-Translator: Niall Tracey <internationiall@hotmail.com>\n"
 "Language-Team:  <internationiall@hotmail.com>\n"
@@ -1028,18 +1028,18 @@ msgstr ""
 msgid "Click to flip the picture upside-down."
 msgstr ""
 
-#: ../../magic/src/mosaic.c:71
+#: ../../magic/src/mosaic.c:70
 msgid "Mosaic"
 msgstr ""
 
 # Gràmar?
-#: ../../magic/src/mosaic.c:74
+#: ../../magic/src/mosaic.c:73
 #, fuzzy
 msgid "Click and move the mouse to add a mosaic effect to the image."
 msgstr "Briog agus slaod airson na breigichean beaga."
 
 # Gràmar?
-#: ../../magic/src/mosaic.c:75
+#: ../../magic/src/mosaic.c:74
 #, fuzzy
 msgid "Click to add a mosaic effect to the entire image."
 msgstr "Briog agus slaod airson na breigichean beaga."
@@ -1230,6 +1230,16 @@ msgstr "Briog agus slaod airson na breigichean beaga."
 #: ../../magic/src/tint.c:74
 #, fuzzy
 msgid "Click to threshold the entire image into pure colour and white regions."
+msgstr "Briog agus slaod airson na breigichean beaga."
+
+#: ../../magic/src/toothpaste.c:65
+msgid "Toothpaste"
+msgstr ""
+
+# Gràmar?
+#: ../../magic/src/toothpaste.c:68
+#, fuzzy
+msgid "Click and drag to squirt toothpaste onto the image."
 msgstr "Briog agus slaod airson na breigichean beaga."
 
 #: ../../magic/src/waves.c:78

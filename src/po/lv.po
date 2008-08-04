@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: lv\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-08-01 17:34-0700\n"
+"POT-Creation-Date: 2008-08-04 12:39-0700\n"
 "PO-Revision-Date: 2007-05-14 18:13-0700\n"
 "Last-Translator: Raivis Strogonovs <raivucis@gmail.com>\n"
 "Language-Team: Valoda <raivucis@gmail.com>\n"
@@ -931,17 +931,17 @@ msgstr "Nospied peli uz zīmējumu lai to pārvērstu spoguļskatā."
 msgid "Click to flip the picture upside-down."
 msgstr "Nospied peli uz zīmējuma lai to apgrieztu riņķī."
 
-#: ../../magic/src/mosaic.c:71
+#: ../../magic/src/mosaic.c:70
 #, fuzzy
 msgid "Mosaic"
 msgstr "Maģija"
 
-#: ../../magic/src/mosaic.c:74
+#: ../../magic/src/mosaic.c:73
 #, fuzzy
 msgid "Click and move the mouse to add a mosaic effect to the image."
 msgstr "Nospied peli uz zīmējumu lai to pārvērstu spoguļskatā."
 
-#: ../../magic/src/mosaic.c:75
+#: ../../magic/src/mosaic.c:74
 #, fuzzy
 msgid "Click to add a mosaic effect to the entire image."
 msgstr "Nospied peli uz zīmējumu lai to pārvērstu spoguļskatā."
@@ -1130,6 +1130,16 @@ msgstr ""
 msgid "Click to threshold the entire image into pure colour and white regions."
 msgstr ""
 "Nospied, pieturi peles pogu un velc peli lai zīmējums izskatitos kā multene."
+
+#: ../../magic/src/toothpaste.c:65
+msgid "Toothpaste"
+msgstr ""
+
+#: ../../magic/src/toothpaste.c:68
+#, fuzzy
+msgid "Click and drag to squirt toothpaste onto the image."
+msgstr ""
+"Nospied, pieturi peles pogu un velc peli lai bildi padarītu miglaināku."
 
 #: ../../magic/src/waves.c:78
 #, fuzzy

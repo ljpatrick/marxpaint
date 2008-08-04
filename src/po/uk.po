@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TuxPaint\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-08-01 17:34-0700\n"
+"POT-Creation-Date: 2008-08-04 12:39-0700\n"
 "PO-Revision-Date: 2008-06-17 04:01+0300\n"
 "Last-Translator: Serhij Dubyk <serhijdubyk@gmail.com>\n"
 "Language-Team: Serhij Dubyk <serhijdubyk@gmail.com>\n"
@@ -922,17 +922,17 @@ msgstr "Клацніть, щоб зробити зеркальне відобр�
 msgid "Click to flip the picture upside-down."
 msgstr "Клацніть на малюнку, щоб перевернути його догори ногами."
 
-#: ../../magic/src/mosaic.c:71
+#: ../../magic/src/mosaic.c:70
 #, fuzzy
 msgid "Mosaic"
 msgstr "Магія"
 
-#: ../../magic/src/mosaic.c:74
+#: ../../magic/src/mosaic.c:73
 #, fuzzy
 msgid "Click and move the mouse to add a mosaic effect to the image."
 msgstr "Клацніть, щоб зробити зеркальне відображення малюнка."
 
-#: ../../magic/src/mosaic.c:75
+#: ../../magic/src/mosaic.c:74
 #, fuzzy
 msgid "Click to add a mosaic effect to the entire image."
 msgstr "Клацніть, щоб зробити зеркальне відображення малюнка."
@@ -1112,6 +1112,15 @@ msgid "Click to threshold the entire image into pure colour and white regions."
 msgstr ""
 "Клацніть та посовгайте по малюнку, щоб перетворити його частину на комікс чи "
 "мультиплікацію."
+
+#: ../../magic/src/toothpaste.c:65
+msgid "Toothpaste"
+msgstr ""
+
+#: ../../magic/src/toothpaste.c:68
+#, fuzzy
+msgid "Click and drag to squirt toothpaste onto the image."
+msgstr "Клацніть та тягніть щоб зсунути Ваш малюнок відносно полотнини."
 
 #: ../../magic/src/waves.c:78
 msgid "Waves"

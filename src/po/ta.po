@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TuxPaint 0.9.13\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-08-01 17:34-0700\n"
+"POT-Creation-Date: 2008-08-04 12:39-0700\n"
 "PO-Revision-Date: 2004-07-15 00:25+0800\n"
 "Last-Translator: Muguntharaj <mugunth@thamizha.com>\n"
 "Language-Team: \n"
@@ -930,17 +930,17 @@ msgstr "¾ðÊÉ¡ø À¼õ ¸ñ½¡Ê À¢õÀÁ¡¸ Á¡Úõ."
 msgid "Click to flip the picture upside-down."
 msgstr "¾ðÊÉ¡ø À¼õ ¾¨Ä¸£Æ¡¸ Á¡Úõ."
 
-#: ../../magic/src/mosaic.c:71
+#: ../../magic/src/mosaic.c:70
 #, fuzzy
 msgid "Mosaic"
 msgstr "Á¡Â¡ƒ¡Äõ"
 
-#: ../../magic/src/mosaic.c:74
+#: ../../magic/src/mosaic.c:73
 #, fuzzy
 msgid "Click and move the mouse to add a mosaic effect to the image."
 msgstr "¾ðÊÉ¡ø À¼õ ¸ñ½¡Ê À¢õÀÁ¡¸ Á¡Úõ."
 
-#: ../../magic/src/mosaic.c:75
+#: ../../magic/src/mosaic.c:74
 #, fuzzy
 msgid "Click to add a mosaic effect to the entire image."
 msgstr "¾ðÊÉ¡ø À¼õ ¸ñ½¡Ê À¢õÀÁ¡¸ Á¡Úõ."
@@ -1118,6 +1118,15 @@ msgstr "þó¾ À¼ò¨¾ Á¡ì¸ðÊÂ¡ø Å¨Ãó¾Ð §À¡ø ¬ì¸, ±Ä�
 #, fuzzy
 msgid "Click to threshold the entire image into pure colour and white regions."
 msgstr "þó¾ À¼ò¨¾ Á¡ì¸ðÊÂ¡ø Å¨Ãó¾Ð §À¡ø ¬ì¸, ±Ä¢¨Â ¦º¡Îì¸¢ ¿¸÷ò¾×õ"
+
+#: ../../magic/src/toothpaste.c:65
+msgid "Toothpaste"
+msgstr ""
+
+#: ../../magic/src/toothpaste.c:68
+#, fuzzy
+msgid "Click and drag to squirt toothpaste onto the image."
+msgstr "±Ä¢¨Â ¦º¡Îì¸¢ ¿¸÷ò¾¢É¡ø, þó¾ À¼õ ¦ÁøÄ¢Â¾¡¸ Á¡Úõ"
 
 #: ../../magic/src/waves.c:78
 #, fuzzy

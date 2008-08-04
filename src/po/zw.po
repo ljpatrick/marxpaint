@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TuxPaint 0.9.17\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-08-01 17:34-0700\n"
+"POT-Creation-Date: 2008-08-04 12:39-0700\n"
 "PO-Revision-Date: 2008-02-04 14:24-0600\n"
 "Last-Translator: Rodrigo Perez <rodpera@yahoo.com>\n"
 "Language-Team: Español <gablistas@gmail.com>\n"
@@ -908,17 +908,17 @@ msgstr "Gaás ha par toób luú mon reveés ."
 msgid "Click to flip the picture upside-down."
 msgstr "Gaás ha par toób luú mon de yeec."
 
-#: ../../magic/src/mosaic.c:71
+#: ../../magic/src/mosaic.c:70
 #, fuzzy
 msgid "Mosaic"
 msgstr "Chaán bruj"
 
-#: ../../magic/src/mosaic.c:74
+#: ../../magic/src/mosaic.c:73
 #, fuzzy
 msgid "Click and move the mouse to add a mosaic effect to the image."
 msgstr "Gaás ha par toób luú mon reveés ."
 
-#: ../../magic/src/mosaic.c:75
+#: ../../magic/src/mosaic.c:74
 #, fuzzy
 msgid "Click to add a mosaic effect to the entire image."
 msgstr "Gaás ha par toób luú mon reveés ."
@@ -1095,6 +1095,15 @@ msgstr ""
 msgid "Click to threshold the entire image into pure colour and white regions."
 msgstr ""
 "Haz clic y arrastra el ratón para que la imagen se vea como los dibujitos."
+
+#: ../../magic/src/toothpaste.c:65
+msgid "Toothpaste"
+msgstr ""
+
+#: ../../magic/src/toothpaste.c:68
+#, fuzzy
+msgid "Click and drag to squirt toothpaste onto the image."
+msgstr "Haz clic y arrastra para desplazar tu dibujo sobre la tela."
 
 #: ../../magic/src/waves.c:78
 msgid "Waves"

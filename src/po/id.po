@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: id\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-08-01 17:34-0700\n"
+"POT-Creation-Date: 2008-08-04 12:39-0700\n"
 "PO-Revision-Date: 2005-10-12 20:03+0700\n"
 "Last-Translator: Tedi Heriyanto <tedi_h@gmx.net>\n"
 "Language-Team: Indonesia <translation-team-id@lists.sourceforge.net>\n"
@@ -932,17 +932,17 @@ msgstr "Klik untuk membuat mirror gambar."
 msgid "Click to flip the picture upside-down."
 msgstr "Klik untuk membalik gambar."
 
-#: ../../magic/src/mosaic.c:71
+#: ../../magic/src/mosaic.c:70
 #, fuzzy
 msgid "Mosaic"
 msgstr "Magic"
 
-#: ../../magic/src/mosaic.c:74
+#: ../../magic/src/mosaic.c:73
 #, fuzzy
 msgid "Click and move the mouse to add a mosaic effect to the image."
 msgstr "Klik untuk membuat mirror gambar."
 
-#: ../../magic/src/mosaic.c:75
+#: ../../magic/src/mosaic.c:74
 #, fuzzy
 msgid "Click to add a mosaic effect to the entire image."
 msgstr "Klik untuk membuat mirror gambar."
@@ -1120,6 +1120,15 @@ msgstr ""
 msgid "Click to threshold the entire image into pure colour and white regions."
 msgstr ""
 "Klik dan pindahkan mouse ke sekitar untuk mengubah gambar ke sebuah kartun."
+
+#: ../../magic/src/toothpaste.c:65
+msgid "Toothpaste"
+msgstr ""
+
+#: ../../magic/src/toothpaste.c:68
+#, fuzzy
+msgid "Click and drag to squirt toothpaste onto the image."
+msgstr "Klik dan pindahkan mouse ke sekitar untuk mengaburkan gambar."
 
 #: ../../magic/src/waves.c:78
 #, fuzzy

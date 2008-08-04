@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TuxPaint\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-08-01 17:34-0700\n"
+"POT-Creation-Date: 2008-08-04 12:39-0700\n"
 "PO-Revision-Date: 2004-05-23 10:53+0100\n"
 "Last-Translator: Nedjeljko Jedbaj <jedvajn@netlane.com>\n"
 "Language-Team: \n"
@@ -928,17 +928,17 @@ msgstr "Klikni i načini crtež kao u ogledalu."
 msgid "Click to flip the picture upside-down."
 msgstr "Klikni i okreni crtež naopako."
 
-#: ../../magic/src/mosaic.c:71
+#: ../../magic/src/mosaic.c:70
 #, fuzzy
 msgid "Mosaic"
 msgstr "Čarolija"
 
-#: ../../magic/src/mosaic.c:74
+#: ../../magic/src/mosaic.c:73
 #, fuzzy
 msgid "Click and move the mouse to add a mosaic effect to the image."
 msgstr "Klikni i načini crtež kao u ogledalu."
 
-#: ../../magic/src/mosaic.c:75
+#: ../../magic/src/mosaic.c:74
 #, fuzzy
 msgid "Click to add a mosaic effect to the entire image."
 msgstr "Klikni i načini crtež kao u ogledalu."
@@ -1116,6 +1116,15 @@ msgstr "Klikni i pomakni miša. Na crtežu će se izmješati boje."
 #, fuzzy
 msgid "Click to threshold the entire image into pure colour and white regions."
 msgstr "Klikni i pomakni miša. Na crtežu će se izmješati boje."
+
+#: ../../magic/src/toothpaste.c:65
+msgid "Toothpaste"
+msgstr ""
+
+#: ../../magic/src/toothpaste.c:68
+#, fuzzy
+msgid "Click and drag to squirt toothpaste onto the image."
+msgstr "Klikni i pomakni miša. Crte će postati tanje."
 
 #: ../../magic/src/waves.c:78
 #, fuzzy

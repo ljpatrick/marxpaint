@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-08-01 17:34-0700\n"
+"POT-Creation-Date: 2008-08-04 12:39-0700\n"
 "PO-Revision-Date: 2008-05-30 15:41+0700\n"
 "Last-Translator: Khoem Sokhem <khoemsokhem@khmeros.info>\n"
 "Language-Team: Khmer <support@khmeros.info>\n"
@@ -903,17 +903,17 @@ msgstr "ចុច ដើម្បី​ចាំង​ឆ្លុះ​រូ�
 msgid "Click to flip the picture upside-down."
 msgstr "ចុច ដើម្បី​ត្រឡប់​រូបភាព​ពី​លើ​ចុះក្រោម ។"
 
-#: ../../magic/src/mosaic.c:71
+#: ../../magic/src/mosaic.c:70
 #, fuzzy
 msgid "Mosaic"
 msgstr "វេទមន្ដ"
 
-#: ../../magic/src/mosaic.c:74
+#: ../../magic/src/mosaic.c:73
 #, fuzzy
 msgid "Click and move the mouse to add a mosaic effect to the image."
 msgstr "ចុច ដើម្បី​ចាំង​ឆ្លុះ​រូបភាព ។"
 
-#: ../../magic/src/mosaic.c:75
+#: ../../magic/src/mosaic.c:74
 #, fuzzy
 msgid "Click to add a mosaic effect to the entire image."
 msgstr "ចុច ដើម្បី​ចាំង​ឆ្លុះ​រូបភាព ។"
@@ -1088,6 +1088,15 @@ msgstr "ចុច ហើយ​ផ្លាស់ទី​កណ្ដុរ ដ�
 #, fuzzy
 msgid "Click to threshold the entire image into pure colour and white regions."
 msgstr "ចុច ហើយ​ផ្លាស់ទី​កណ្ដុរ ដើម្បី​ធ្វើ​រូបភាព​ឲ្យ​ទៅ​ជា​រូប​តុក្កតា ។"
+
+#: ../../magic/src/toothpaste.c:65
+msgid "Toothpaste"
+msgstr ""
+
+#: ../../magic/src/toothpaste.c:68
+#, fuzzy
+msgid "Click and drag to squirt toothpaste onto the image."
+msgstr "ចុច ហើយ​អូស ដើម្បី​ផ្លាស់ប្ដូរ​រូបភាព​របស់​អ្នក​នៅលើ​ផ្ទាំង​ក្រណាត់ ។"
 
 #: ../../magic/src/waves.c:78
 msgid "Waves"

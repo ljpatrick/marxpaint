@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TuxPaint 0.0.1pre\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-08-01 17:34-0700\n"
+"POT-Creation-Date: 2008-08-04 12:39-0700\n"
 "PO-Revision-Date: 2005-01-09 14:49+0100\n"
 "Last-Translator: Gugusse <titi>\n"
 "Language-Team: Breton <drouizig@drouizig.org>\n"
@@ -923,17 +923,17 @@ msgstr "Klik evit kaout ar skeudenn en ur melezour."
 msgid "Click to flip the picture upside-down."
 msgstr "Klik evit lakaat ar skeudenn war an tu gin."
 
-#: ../../magic/src/mosaic.c:71
+#: ../../magic/src/mosaic.c:70
 #, fuzzy
 msgid "Mosaic"
 msgstr "Strobinellus"
 
-#: ../../magic/src/mosaic.c:74
+#: ../../magic/src/mosaic.c:73
 #, fuzzy
 msgid "Click and move the mouse to add a mosaic effect to the image."
 msgstr "Klik evit kaout ar skeudenn en ur melezour."
 
-#: ../../magic/src/mosaic.c:75
+#: ../../magic/src/mosaic.c:74
 #, fuzzy
 msgid "Click to add a mosaic effect to the entire image."
 msgstr "Klik evit kaout ar skeudenn en ur melezour."
@@ -1109,6 +1109,15 @@ msgstr "Klik ha fiñv al logodenn evit cheñch ar skeudenn en un dresadenn-vev."
 #, fuzzy
 msgid "Click to threshold the entire image into pure colour and white regions."
 msgstr "Klik ha fiñv al logodenn evit cheñch ar skeudenn en un dresadenn-vev."
+
+#: ../../magic/src/toothpaste.c:65
+msgid "Toothpaste"
+msgstr ""
+
+#: ../../magic/src/toothpaste.c:68
+#, fuzzy
+msgid "Click and drag to squirt toothpaste onto the image."
+msgstr "Klik ha fiñv al logodenn evit displanaat ar skeudenn."
 
 #: ../../magic/src/waves.c:78
 #, fuzzy

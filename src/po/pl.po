@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint 0.9.17\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-08-01 17:34-0700\n"
+"POT-Creation-Date: 2008-08-04 12:39-0700\n"
 "PO-Revision-Date: 2007-10-01 09:55+0200\n"
 "Last-Translator: Andrzej M. Krzysztofowicz <ankry@mif.pg.gda.pl>\n"
 "Language-Team: Polish <translation-team-pl@lists.sourceforge.net>\n"
@@ -919,17 +919,17 @@ msgstr "Kliknij, aby zrobić odbicie obrazka jak w lusterku."
 msgid "Click to flip the picture upside-down."
 msgstr "Kliknij, aby odwrócić obrazek do góry nogami."
 
-#: ../../magic/src/mosaic.c:71
+#: ../../magic/src/mosaic.c:70
 #, fuzzy
 msgid "Mosaic"
 msgstr "Magia"
 
-#: ../../magic/src/mosaic.c:74
+#: ../../magic/src/mosaic.c:73
 #, fuzzy
 msgid "Click and move the mouse to add a mosaic effect to the image."
 msgstr "Kliknij, aby zrobić odbicie obrazka jak w lusterku."
 
-#: ../../magic/src/mosaic.c:75
+#: ../../magic/src/mosaic.c:74
 #, fuzzy
 msgid "Click to add a mosaic effect to the entire image."
 msgstr "Kliknij, aby zrobić odbicie obrazka jak w lusterku."
@@ -1105,6 +1105,15 @@ msgstr "Kliknij i przesuń myszką dookoła, aby obramować obrazek konturem."
 #, fuzzy
 msgid "Click to threshold the entire image into pure colour and white regions."
 msgstr "Kliknij i przesuń myszką dookoła, aby obramować obrazek konturem."
+
+#: ../../magic/src/toothpaste.c:65
+msgid "Toothpaste"
+msgstr ""
+
+#: ../../magic/src/toothpaste.c:68
+#, fuzzy
+msgid "Click and drag to squirt toothpaste onto the image."
+msgstr "Kliknij i przesuń myszką dookoła, aby rozmazać obrazek."
 
 #: ../../magic/src/waves.c:78
 #, fuzzy

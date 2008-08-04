@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TuxPaint 0.9.17\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-08-01 17:34-0700\n"
+"POT-Creation-Date: 2008-08-04 12:39-0700\n"
 "PO-Revision-Date: 2007-11-17 21:26+0100\n"
 "Last-Translator: Flavio Pastore <ironbishop@gmail.com>\n"
 "Language-Team: Italian <it@li.org>\n"
@@ -948,17 +948,17 @@ msgstr "Fai click per specchiare il disegno."
 msgid "Click to flip the picture upside-down."
 msgstr "Fai click per ribaltare il disegno."
 
-#: ../../magic/src/mosaic.c:71
+#: ../../magic/src/mosaic.c:70
 #, fuzzy
 msgid "Mosaic"
 msgstr "Magie"
 
-#: ../../magic/src/mosaic.c:74
+#: ../../magic/src/mosaic.c:73
 #, fuzzy
 msgid "Click and move the mouse to add a mosaic effect to the image."
 msgstr "Fai click per specchiare il disegno."
 
-#: ../../magic/src/mosaic.c:75
+#: ../../magic/src/mosaic.c:74
 #, fuzzy
 msgid "Click to add a mosaic effect to the entire image."
 msgstr "Fai click per specchiare il disegno."
@@ -1133,6 +1133,15 @@ msgstr "Fai click per ottenere un effetto “fumetto”."
 #, fuzzy
 msgid "Click to threshold the entire image into pure colour and white regions."
 msgstr "Fai click per ottenere un effetto “fumetto”."
+
+#: ../../magic/src/toothpaste.c:65
+msgid "Toothpaste"
+msgstr ""
+
+#: ../../magic/src/toothpaste.c:68
+#, fuzzy
+msgid "Click and drag to squirt toothpaste onto the image."
+msgstr "Fai click e muovi il mouse per spostare il disegno nella finestra."
 
 #: ../../magic/src/waves.c:78
 msgid "Waves"
