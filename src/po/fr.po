@@ -1112,12 +1112,11 @@ msgstr ""
 
 #: ../../magic/src/toothpaste.c:65
 msgid "Toothpaste"
-msgstr ""
+msgstr "Dentifrice"
 
 #: ../../magic/src/toothpaste.c:68
-#, fuzzy
 msgid "Click and drag to squirt toothpaste onto the image."
-msgstr "Clique et déplace la souris pour déplacer ton image dans le cadre."
+msgstr "Clique et déplace la souris pour faire gicler du dentifrice sur le dessin."
 
 #: ../../magic/src/waves.c:78
 msgid "Waves"
@@ -1133,56 +1132,4 @@ msgstr ""
 "vagues, vers le bas pour de longues vagues, à gauche pour diminuer "
 "l'amplitude et à droite pour augmenter l'amplitude."
 
-#, fuzzy
-#~ msgid "Click and move the mouse around convert the image to greyscale."
-#~ msgstr "Clique et déplace la souris pour rendre l'image floue."
 
-#, fuzzy
-#~ msgid "Click to change the entire picture’s color."
-#~ msgstr "Clique et déplace la souris pour changer la couleur de l'image."
-
-#, fuzzy
-#~ msgid "Blur All"
-#~ msgstr "Brouiller"
-
-#~ msgid "Click and move to fade the colors."
-#~ msgstr "Clique et déplace la souris pour faire pâlir les couleurs."
-
-#~ msgid "Click and move to darken the colors."
-#~ msgstr "Clique et déplace la souris pour assombrir les couleurs."
-
-#~ msgid "Relief"
-#~ msgstr "Flou"
-
-#~ msgid "Sparkles"
-#~ msgstr "Étincelles"
-
-#~ msgid "You now have a blank sheet to draw on!"
-#~ msgstr "Tu as maintenant une feuille blanche pour dessiner !"
-
-#~ msgid "Start a new picture?"
-#~ msgstr "On fait une nouvelle image ?"
-
-#~ msgid "Yes, let's start fresh!"
-#~ msgstr "Oui, on en fait une nouvelle !"
-
-#~ msgid "Click and move to draw sparkles."
-#~ msgstr "Clique et déplace la souris pour dessiner des étincelles."
-
-#~ msgid "Starting a new picture will erase the current one!"
-#~ msgstr "Commencer une nouvelle image effacera celle qui est en cours !"
-
-#~ msgid "That’s OK!"
-#~ msgstr "C'est d'accord !"
-
-#~ msgid "Never mind!"
-#~ msgstr "Ne fais rien !"
-
-#~ msgid "jq"
-#~ msgstr "jq"
-
-#~ msgid "JQ"
-#~ msgstr "JQ"
-
-#~ msgid "Save over the older version of this picture?"
-#~ msgstr "Remplacer l'ancienne version de ce dessin ?"
