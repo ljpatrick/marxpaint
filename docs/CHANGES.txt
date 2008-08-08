@@ -8,7 +8,7 @@ http://www.tuxpaint.org/
 
 $Id$
 
-2008.August.1 (0.9.21)
+2008.August.8 (0.9.21)
   * New Starters:
     -------------
     * Silver Frame
@@ -71,6 +71,9 @@ $Id$
     ---------------------
     * French translation
       Jacques Chion <Jacques.Chion@wanadoo.fr>
+
+    * Hebrew translation
+      Guy Hed <guy.hed@weizmann.ac.il>
 
   * Bug Fixes
     ---------

@@ -7,7 +7,7 @@ bill@newbreedsoftware.com
 http://www.tuxpaint.org/
 
 
-June 17, 2002 - July 13, 2008
+June 17, 2002 - August 8, 2008
 
 $Id$
 
@@ -338,6 +338,7 @@ $Id$
     Kartik Mistry <kartik.mistry@gmail.com>
 
   * Hebrew
+    Guy Hed <guy.hed@weizmann.ac.il>
     Dovix <dovix2003@yahoo.com>
     Koby <kobybo@hotmail.com>
     Itai <Itais@newmail.net>
