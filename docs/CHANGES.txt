@@ -8,7 +8,7 @@ http://www.tuxpaint.org/
 
 $Id$
 
-2008.August.8 (0.9.21)
+2008.August.14 (0.9.21)
   * New Starters:
     -------------
     * Silver Frame
@@ -87,6 +87,11 @@ $Id$
       e.g. using [Alt]+[Tab], the [Windows] keys function as normal until
       Tux Paint is the active application again.)
       John Popplewell <john@johnnypops.demon.co.uk>
+
+    * Directional brushes used to always begin with middle image;
+      now this only happens if you click and release, with dragging.
+      Jason Ward <nyad55@gmail.com>
+      Pere Pujal i Carabantes <pere@fornol.no-ip.org>
 
 
 2008.June.26 (0.9.20)

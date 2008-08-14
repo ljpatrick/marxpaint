@@ -3666,7 +3666,12 @@ static void mainloop(void)
 
 	if (button_down)
 	{
-	  if (cur_tool == TOOL_LINES)
+          if (cur_tool == TOOL_BRUSH)
+          {
+            /* (Drawing on mouse release to fix single click issue) */
+            brush_draw(old_x, old_y, old_x, old_y, 1);
+          }
+          else if (cur_tool == TOOL_LINES)
 	  {
 	    /* (Arbitrarily large, so we draw once now) */
 	    reset_brush_counter();
