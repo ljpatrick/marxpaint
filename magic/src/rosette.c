@@ -92,7 +92,7 @@ char * rosette_get_name(magic_api * api, int which) { if (!which) return strdup(
 char * rosette_get_description(magic_api * api, int which, int mode)
 {
 	if (!which)
-		return strdup(gettext_noop("Click and start drawing your rosette")); 
+		return strdup(gettext_noop("Click and start drawing your rosette.")); 
 	else
 		return strdup(gettext_noop("You can draw just like Picasso!"));
 }

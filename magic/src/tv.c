@@ -71,7 +71,7 @@ SDL_Surface * tv_get_icon(magic_api * api, int which)
 
 char * tv_get_name(magic_api * api, int which) { return strdup(gettext_noop("TV")); }
 
-char * tv_get_description(magic_api * api, int which, int mode) { return strdup(gettext_noop("Your picture will look like in television")); }
+char * tv_get_description(magic_api * api, int which, int mode) { return strdup(gettext_noop("Click to make your picture look like it's on television.")); }
 
 int tv_requires_colors(magic_api * api, int which) { return 0; }
 

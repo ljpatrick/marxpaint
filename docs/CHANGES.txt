@@ -39,6 +39,7 @@ $Id$
       + Rails - Draws train tracks / rails over the image.
       + TV - Adds television (CRT) interlacing lines over the image.
       + Rosette - Paints at 3 points on the screen, in a rosette shape.
+      + Picasso - Paints at 3 points, in a "Picasso" art style.
       By Adam 'foo-script' Rakowski <foo-script@o2.pl>
       (Part of Tux4Kids' participation in Google Summer of Code 2008)
 
