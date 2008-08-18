@@ -36,10 +36,12 @@ tuxpaint.desktop.in
 ../magic/src/rain.c
 ../magic/src/rainbow.c
 ../magic/src/ripples.c
+../magic/src/rosette.c
 ../magic/src/sharpen.c
 ../magic/src/shift.c
 ../magic/src/smudge.c
 ../magic/src/snow.c
 ../magic/src/tint.c
+../magic/src/tv.c
 ../magic/src/toothpaste.c
 ../magic/src/waves.c
