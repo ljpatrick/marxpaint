@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ojibwaytuxpaint\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-08-04 12:39-0700\n"
+"POT-Creation-Date: 2008-08-18 15:03-0700\n"
 "PO-Revision-Date: 2007-10-08 18:19-0500\n"
 "Last-Translator: Ed Montgomery <edm@rocketmail.com>\n"
 "Language-Team: Ed <edm@rocketmail.com>\n"
@@ -374,7 +374,7 @@ msgstr "Oshki"
 #. Open a saved picture
 #. buttons for the file open dialog
 #. Open dialog: 'Open' button, to load the selected picture
-#: ../tools.h:75 ../tuxpaint.c:7966
+#: ../tools.h:75 ../tuxpaint.c:7971
 msgid "Open"
 msgstr "Nasaakose"
 
@@ -586,74 +586,74 @@ msgstr "Madwewechigewin"
 msgid "Please wait…"
 msgstr "Bekaa akawe"
 
-#: ../tuxpaint.c:7189
+#: ../tuxpaint.c:7194
 msgid "Pick a color."
 msgstr "Onaabandan"
 
 #. Open dialog: 'Erase' button, to erase/deleted the selected picture
-#: ../tuxpaint.c:7969
+#: ../tuxpaint.c:7974
 msgid "Erase"
 msgstr "Gaasiibii'an"
 
 #. Open dialog: 'Slides' button, to switch to slide show mode
-#: ../tuxpaint.c:7972
+#: ../tuxpaint.c:7977
 msgid "Slides"
 msgstr ""
 
 #. Open dialog: 'Back' button, to dismiss Open dialog without opening a picture
-#: ../tuxpaint.c:7975
+#: ../tuxpaint.c:7980
 msgid "Back"
 msgstr "Neyaab"
 
 #. Slideshow: 'Next' button, to load next slide (image)
-#: ../tuxpaint.c:7978
+#: ../tuxpaint.c:7983
 msgid "Next"
 msgstr "Mii dash"
 
 #. Slideshow: 'Play' button, to begin a slideshow sequence
-#: ../tuxpaint.c:7981
+#: ../tuxpaint.c:7986
 msgid "Play"
 msgstr "Mamaanjinojin"
 
 #. Label for 'Letters' buttons (font selector, down the right when the Text tool is being used); used to show the difference between font faces
-#: ../tuxpaint.c:8628
+#: ../tuxpaint.c:8633
 msgid "Aa"
 msgstr ""
 
 #. Admittedly stupid way of determining which keys can be used for
 #. positive and negative responses in dialogs (e.g., [Y] (for 'yes') in English)
-#: ../tuxpaint.c:11548
+#: ../tuxpaint.c:11553
 msgid "Yes"
 msgstr "Haaw"
 
-#: ../tuxpaint.c:11552
+#: ../tuxpaint.c:11557
 msgid "No"
 msgstr "Gaawin"
 
 #. Prompt to ask whether user wishes to save over old version of their file
-#: ../tuxpaint.c:12504
+#: ../tuxpaint.c:12509
 msgid "Replace the picture with your changes?"
 msgstr "Naabishkaw"
 
 #. Positive response to saving over old version
 #. (like a 'File:Save' action in other applications)
-#: ../tuxpaint.c:12508
+#: ../tuxpaint.c:12513
 msgid "Yes, replace the old one!"
 msgstr "Haaw, naabishkaw"
 
 #. Negative response to saving over old version (saves a new image)
 #. (like a 'File:Save As...' action in other applications)
-#: ../tuxpaint.c:12512
+#: ../tuxpaint.c:12517
 msgid "No, save a new file!"
 msgstr "Gaawin, oshki!"
 
-#: ../tuxpaint.c:13275
+#: ../tuxpaint.c:13280
 msgid "Choose the picture you want, then click “Open”."
 msgstr ""
 
 #. Let user choose images:
 #. Instructions for Slideshow file dialog (FIXME: Make a #define)
-#: ../tuxpaint.c:14262 ../tuxpaint.c:14576
+#: ../tuxpaint.c:14267 ../tuxpaint.c:14581
 msgid "Choose the pictures you want, then click “Play”."
 msgstr ""
 
@@ -978,6 +978,23 @@ msgstr "Zaasijiwan"
 msgid "Click to make ripples appear over your picture."
 msgstr ""
 
+#: ../../magic/src/rosette.c:90
+msgid "Rosette"
+msgstr ""
+
+#: ../../magic/src/rosette.c:90
+msgid "Picasso"
+msgstr ""
+
+#: ../../magic/src/rosette.c:95
+#, fuzzy
+msgid "Click and start drawing your rosette."
+msgstr "Waabimoojichaagwaazo"
+
+#: ../../magic/src/rosette.c:97
+msgid "You can draw just like Picasso!"
+msgstr ""
+
 #: ../../magic/src/sharpen.c:73
 msgid "Trace Contour"
 msgstr ""
@@ -1080,6 +1097,14 @@ msgstr "Waabizo"
 #, fuzzy
 msgid "Click to threshold the entire image into pure colour and white regions."
 msgstr "Waabizo"
+
+#: ../../magic/src/tv.c:72
+msgid "TV"
+msgstr ""
+
+#: ../../magic/src/tv.c:74
+msgid "Click to make your picture look like it's on television."
+msgstr ""
 
 #: ../../magic/src/toothpaste.c:65
 msgid "Toothpaste"

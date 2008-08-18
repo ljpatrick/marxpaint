@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: fr\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-08-04 12:39-0700\n"
+"POT-Creation-Date: 2008-08-18 15:03-0700\n"
 "PO-Revision-Date: 2004-05-30 21:20-0700\n"
 "Last-Translator: jimmy <jacques.chion@orange.fr>\n"
 "Language-Team:  <fr@li.org>\n"
@@ -379,7 +379,7 @@ msgstr "Nouveau"
 #. Open a saved picture
 #. buttons for the file open dialog
 #. Open dialog: 'Open' button, to load the selected picture
-#: ../tools.h:75 ../tuxpaint.c:7966
+#: ../tools.h:75 ../tuxpaint.c:7971
 msgid "Open"
 msgstr "Ouvrir"
 
@@ -597,74 +597,74 @@ msgstr "Son activé."
 msgid "Please wait…"
 msgstr "Attends s'il te plaît .."
 
-#: ../tuxpaint.c:7189
+#: ../tuxpaint.c:7194
 msgid "Pick a color."
 msgstr "Choisis une couleur."
 
 #. Open dialog: 'Erase' button, to erase/deleted the selected picture
-#: ../tuxpaint.c:7969
+#: ../tuxpaint.c:7974
 msgid "Erase"
 msgstr "Effacer"
 
 #. Open dialog: 'Slides' button, to switch to slide show mode
-#: ../tuxpaint.c:7972
+#: ../tuxpaint.c:7977
 msgid "Slides"
 msgstr "Diapos"
 
 #. Open dialog: 'Back' button, to dismiss Open dialog without opening a picture
-#: ../tuxpaint.c:7975
+#: ../tuxpaint.c:7980
 msgid "Back"
 msgstr "Retour"
 
 #. Slideshow: 'Next' button, to load next slide (image)
-#: ../tuxpaint.c:7978
+#: ../tuxpaint.c:7983
 msgid "Next"
 msgstr "Suite"
 
 #. Slideshow: 'Play' button, to begin a slideshow sequence
-#: ../tuxpaint.c:7981
+#: ../tuxpaint.c:7986
 msgid "Play"
 msgstr "Départ"
 
 #. Label for 'Letters' buttons (font selector, down the right when the Text tool is being used); used to show the difference between font faces
-#: ../tuxpaint.c:8628
+#: ../tuxpaint.c:8633
 msgid "Aa"
 msgstr "Aa"
 
 #. Admittedly stupid way of determining which keys can be used for
 #. positive and negative responses in dialogs (e.g., [Y] (for 'yes') in English)
-#: ../tuxpaint.c:11548
+#: ../tuxpaint.c:11553
 msgid "Yes"
 msgstr "Oui"
 
-#: ../tuxpaint.c:11552
+#: ../tuxpaint.c:11557
 msgid "No"
 msgstr "Non"
 
 #. Prompt to ask whether user wishes to save over old version of their file
-#: ../tuxpaint.c:12504
+#: ../tuxpaint.c:12509
 msgid "Replace the picture with your changes?"
 msgstr "Enregistrer l'image avec tes changements ?"
 
 #. Positive response to saving over old version
 #. (like a 'File:Save' action in other applications)
-#: ../tuxpaint.c:12508
+#: ../tuxpaint.c:12513
 msgid "Yes, replace the old one!"
 msgstr "Oui, remplace l'ancienne !"
 
 #. Negative response to saving over old version (saves a new image)
 #. (like a 'File:Save As...' action in other applications)
-#: ../tuxpaint.c:12512
+#: ../tuxpaint.c:12517
 msgid "No, save a new file!"
 msgstr "Non, c'est une nouvelle image !"
 
-#: ../tuxpaint.c:13275
+#: ../tuxpaint.c:13280
 msgid "Choose the picture you want, then click “Open”."
 msgstr "Choisis une image, et clique ensuite sur “Ouvrir”"
 
 #. Let user choose images:
 #. Instructions for Slideshow file dialog (FIXME: Make a #define)
-#: ../tuxpaint.c:14262 ../tuxpaint.c:14576
+#: ../tuxpaint.c:14267 ../tuxpaint.c:14581
 msgid "Choose the pictures you want, then click “Play”."
 msgstr "Choisis les images que tu veux, puis clique sur “Départ”"
 
@@ -1004,6 +1004,25 @@ msgstr "Ondes"
 msgid "Click to make ripples appear over your picture."
 msgstr "Clique pour faire apparaître des ronds dans l'eau."
 
+#: ../../magic/src/rosette.c:90
+msgid "Rosette"
+msgstr ""
+
+#: ../../magic/src/rosette.c:90
+msgid "Picasso"
+msgstr ""
+
+#: ../../magic/src/rosette.c:95
+#, fuzzy
+msgid "Click and start drawing your rosette."
+msgstr ""
+"Clique pour commencer à dessiner une ligne. Continue pour la compléter."
+
+#: ../../magic/src/rosette.c:97
+#, fuzzy
+msgid "You can draw just like Picasso!"
+msgstr "Tu peux dessiner avec les couleurs de l'arc-en-ciel !"
+
 #: ../../magic/src/sharpen.c:73
 msgid "Trace Contour"
 msgstr "Contour"
@@ -1110,13 +1129,24 @@ msgstr ""
 "Clique pour obtenir une image en blanc et une seule couleur que tu as "
 "choisie. "
 
+#: ../../magic/src/tv.c:72
+msgid "TV"
+msgstr ""
+
+#
+#: ../../magic/src/tv.c:74
+#, fuzzy
+msgid "Click to make your picture look like it's on television."
+msgstr "Clique pour ajouter des carreaux de verre sur toute l'image."
+
 #: ../../magic/src/toothpaste.c:65
 msgid "Toothpaste"
 msgstr "Dentifrice"
 
 #: ../../magic/src/toothpaste.c:68
 msgid "Click and drag to squirt toothpaste onto the image."
-msgstr "Clique et déplace la souris pour faire gicler du dentifrice sur le dessin."
+msgstr ""
+"Clique et déplace la souris pour faire gicler du dentifrice sur le dessin."
 
 #: ../../magic/src/waves.c:78
 msgid "Waves"
@@ -1131,5 +1161,3 @@ msgstr ""
 "Clique pour avoir un effet vagué. Clique vers le haut pour de courtes "
 "vagues, vers le bas pour de longues vagues, à gauche pour diminuer "
 "l'amplitude et à droite pour augmenter l'amplitude."
-
-

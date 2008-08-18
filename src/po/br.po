@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TuxPaint 0.0.1pre\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-08-04 12:39-0700\n"
+"POT-Creation-Date: 2008-08-18 15:03-0700\n"
 "PO-Revision-Date: 2005-01-09 14:49+0100\n"
 "Last-Translator: Gugusse <titi>\n"
 "Language-Team: Breton <drouizig@drouizig.org>\n"
@@ -380,7 +380,7 @@ msgstr "Nevez"
 #. Open a saved picture
 #. buttons for the file open dialog
 #. Open dialog: 'Open' button, to load the selected picture
-#: ../tools.h:75 ../tuxpaint.c:7966
+#: ../tools.h:75 ../tuxpaint.c:7971
 msgid "Open"
 msgstr "Digeriñ"
 
@@ -597,76 +597,76 @@ msgstr ""
 msgid "Please wait…"
 msgstr ""
 
-#: ../tuxpaint.c:7189
+#: ../tuxpaint.c:7194
 msgid "Pick a color."
 msgstr ""
 
 #. Open dialog: 'Erase' button, to erase/deleted the selected picture
-#: ../tuxpaint.c:7969
+#: ../tuxpaint.c:7974
 msgid "Erase"
 msgstr "Diverkañ"
 
 #. Open dialog: 'Slides' button, to switch to slide show mode
-#: ../tuxpaint.c:7972
+#: ../tuxpaint.c:7977
 msgid "Slides"
 msgstr ""
 
 #. Open dialog: 'Back' button, to dismiss Open dialog without opening a picture
-#: ../tuxpaint.c:7975
+#: ../tuxpaint.c:7980
 msgid "Back"
 msgstr "Distro"
 
 #. Slideshow: 'Next' button, to load next slide (image)
-#: ../tuxpaint.c:7978
+#: ../tuxpaint.c:7983
 #, fuzzy
 msgid "Next"
 msgstr "Testenn"
 
 #. Slideshow: 'Play' button, to begin a slideshow sequence
-#: ../tuxpaint.c:7981
+#: ../tuxpaint.c:7986
 msgid "Play"
 msgstr ""
 
 #. Label for 'Letters' buttons (font selector, down the right when the Text tool is being used); used to show the difference between font faces
-#: ../tuxpaint.c:8628
+#: ../tuxpaint.c:8633
 msgid "Aa"
 msgstr "As"
 
 #. Admittedly stupid way of determining which keys can be used for
 #. positive and negative responses in dialogs (e.g., [Y] (for 'yes') in English)
-#: ../tuxpaint.c:11548
+#: ../tuxpaint.c:11553
 msgid "Yes"
 msgstr "Ya"
 
-#: ../tuxpaint.c:11552
+#: ../tuxpaint.c:11557
 msgid "No"
 msgstr "Ne ra ket"
 
 #. Prompt to ask whether user wishes to save over old version of their file
-#: ../tuxpaint.c:12504
+#: ../tuxpaint.c:12509
 msgid "Replace the picture with your changes?"
 msgstr ""
 
 #. Positive response to saving over old version
 #. (like a 'File:Save' action in other applications)
-#: ../tuxpaint.c:12508
+#: ../tuxpaint.c:12513
 msgid "Yes, replace the old one!"
 msgstr ""
 
 #. Negative response to saving over old version (saves a new image)
 #. (like a 'File:Save As...' action in other applications)
-#: ../tuxpaint.c:12512
+#: ../tuxpaint.c:12517
 #, fuzzy
 msgid "No, save a new file!"
 msgstr "Ket, gwarediñ dindan un anv nevez"
 
-#: ../tuxpaint.c:13275
+#: ../tuxpaint.c:13280
 msgid "Choose the picture you want, then click “Open”."
 msgstr "Diuz ur skeudenn ha klik war 'digeriñ' neuze."
 
 #. Let user choose images:
 #. Instructions for Slideshow file dialog (FIXME: Make a #define)
-#: ../tuxpaint.c:14262 ../tuxpaint.c:14576
+#: ../tuxpaint.c:14267 ../tuxpaint.c:14581
 #, fuzzy
 msgid "Choose the pictures you want, then click “Play”."
 msgstr "Diuz ur skeudenn ha klik war 'digeriñ' neuze."
@@ -1006,6 +1006,24 @@ msgstr ""
 msgid "Click to make ripples appear over your picture."
 msgstr "Klik ha fiñv al logodenn evit displanaat ar skeudenn."
 
+#: ../../magic/src/rosette.c:90
+msgid "Rosette"
+msgstr ""
+
+#: ../../magic/src/rosette.c:90
+msgid "Picasso"
+msgstr ""
+
+#: ../../magic/src/rosette.c:95
+#, fuzzy
+msgid "Click and start drawing your rosette."
+msgstr "Klik evit kregiñ da dresañ ul linenn."
+
+#: ../../magic/src/rosette.c:97
+#, fuzzy
+msgid "You can draw just like Picasso!"
+msgstr "Gallout a rez tresañ gant livioù ar Garreg-ar-Glav !"
+
 #: ../../magic/src/sharpen.c:73
 msgid "Trace Contour"
 msgstr ""
@@ -1109,6 +1127,15 @@ msgstr "Klik ha fiñv al logodenn evit cheñch ar skeudenn en un dresadenn-vev."
 #, fuzzy
 msgid "Click to threshold the entire image into pure colour and white regions."
 msgstr "Klik ha fiñv al logodenn evit cheñch ar skeudenn en un dresadenn-vev."
+
+#: ../../magic/src/tv.c:72
+msgid "TV"
+msgstr ""
+
+#: ../../magic/src/tv.c:74
+#, fuzzy
+msgid "Click to make your picture look like it's on television."
+msgstr "Klik ha fiñv al logodenn evit cheñch liv an dresadenn."
 
 #: ../../magic/src/toothpaste.c:65
 msgid "Toothpaste"
