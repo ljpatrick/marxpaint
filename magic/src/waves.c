@@ -1,6 +1,6 @@
 /*
   waves.c
-
+  Credits: Bill Kendrick <bill@newbreedsoftware.com> (idea & Waves tool), Adam Rakowski <foo-script@o2.pl> (Wavelets tool)
   Waves Magic Tool Plugin
   Tux Paint - A simple drawing program for children.
 
@@ -22,9 +22,6 @@
   along with this program; if not, write to the Free Software
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
-
-  Last updated: July 8, 2008
-  $Id$
 */
 
 #include <stdio.h>
@@ -58,7 +55,7 @@ int waves_init(magic_api * api)
 // We have multiple tools:
 int waves_get_tool_count(magic_api * api)
 {
-  return(1);
+  return 2;
 }
 
 // Load our icons:
@@ -66,8 +63,8 @@ SDL_Surface * waves_get_icon(magic_api * api, int which)
 {
   char fname[1024];
 
-  snprintf(fname, sizeof(fname), "%s/images/magic/waves.png",
-	   api->data_directory);
+  if (!which) snprintf(fname, sizeof(fname), "%s/images/magic/waves.png", api->data_directory);
+  else snprintf(fname, sizeof(fname), "%s/images/magic/waves-v.png", api->data_directory);
 
   return(IMG_Load(fname));
 }
@@ -75,14 +72,17 @@ SDL_Surface * waves_get_icon(magic_api * api, int which)
 // Return our names, localized:
 char * waves_get_name(magic_api * api, int which)
 {
-  return(strdup(gettext_noop("Waves")));
+  if (!which) return(strdup(gettext_noop("Waves")));
+  else return strdup(gettext_noop("Wavelets"));
 }
 
 // Return our descriptions, localized:
 char * waves_get_description(magic_api * api, int which, int mode)
 {
-  return(strdup(gettext_noop("Click to make the picture wavy. Click toward the top for shorter waves, the bottom for taller waves, the left for small waves, and the right for long waves.")));
-}
+  if (!which)
+	return(strdup(gettext_noop("Click to make the picture horizontally wavy. Click toward the top for shorter waves, the bottom for taller waves, the left for small waves, and the right for long waves.")));
+  return strdup(gettext_noop("Click to make the picture vertically wavy. Click toward the top for shorter waves, the bottom for taller waves, the left for small waves, and the right for long waves."));
+}	
 
 
 void waves_drag(magic_api * api, int which, SDL_Surface * canvas,
@@ -95,25 +95,48 @@ void waves_drag(magic_api * api, int which, SDL_Surface * canvas,
   int height;
 
   SDL_BlitSurface(last, NULL, canvas, NULL);
-
-  width = ((x * 10) / canvas->w) + 10;
-  height = ((canvas->h - y) / 10) + 1;
-  
-  for (yy = 0; yy < canvas->h; yy++)
+ 
+  if (which==0)
   {
-    xx = sin((yy * height) * M_PI / 180.0) * width;
+	  //waves effect
+	  width = ((x * 10) / canvas->w) + 10;
+	  height = ((canvas->h - y) / 10) + 1;
+	  
+	  for (yy = 0; yy < canvas->h; yy++)
+	  {
+	    xx = sin((yy * height) * M_PI / 180.0) * width; 
 
-    src.x = 0;
-    src.y = yy;
-    src.w = canvas->w;
-    src.h = 1;
+	    src.x = 0;
+	    src.y = yy;
+	    src.w = canvas->w;
+	    src.h = 1;
 
-    dest.x = xx;
-    dest.y = yy;
+	    dest.x = xx;
+	    dest.y = yy;
 
-    SDL_BlitSurface(last, &src, canvas, &dest);
+	    SDL_BlitSurface(last, &src, canvas, &dest);
+	  }
   }
+  else
+  {
+	  width = ((x * 10) / canvas->w) + 10;
+	  height = ((canvas->h - y) / 10) + 1;
+	  
+	  for (xx = 0; xx < canvas->w; xx++)
+	  {
+	    yy = sin((xx * height) * M_PI / 180.0) * width; 
 
+	    src.x = xx;
+	    src.y = 0;
+	    src.w = 1;
+	    src.h = canvas->h;
+
+	    dest.x = xx;
+	    dest.y = yy;
+
+	    SDL_BlitSurface(last, &src, canvas, &dest);
+	  }
+  }
   update_rect->x = 0;
   update_rect->y = 0;
   update_rect->w = canvas->w;
