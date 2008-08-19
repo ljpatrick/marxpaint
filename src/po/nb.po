@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: nb\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-08-18 15:03-0700\n"
+"POT-Creation-Date: 2008-08-19 11:51-0700\n"
 "PO-Revision-Date: 2007-07-19 20:37+0200\n"
 "Last-Translator: Karl Ove Hufthammer <karl@huftis.org>\n"
 "Language-Team: Norwegian Nynorsk <i18n-nn@lister.ping.uio.no>\n"
@@ -821,6 +821,14 @@ msgstr "Bøtte"
 msgid "Click in the picture to fill that area with color."
 msgstr "Trykk på tegningen for å fylle området med fargen fra malingbøtta."
 
+#: ../../magic/src/fisheye.c:77
+msgid "Fisheye"
+msgstr ""
+
+#: ../../magic/src/fisheye.c:79
+msgid "Select an area of the image to create fisheye effect"
+msgstr ""
+
 #: ../../magic/src/flower.c:124
 msgid "Flower"
 msgstr "Blomst"
@@ -954,6 +962,20 @@ msgstr "Hold inne knappen og flytt rundt for å gjøre tegningen uskarp."
 msgid "Click to add noise to the entire image."
 msgstr "Trykk for å speilvende tegningen!"
 
+#: ../../magic/src/puzzle.c:77
+#, fuzzy
+msgid "Puzzle"
+msgstr "Fiolett!"
+
+#: ../../magic/src/puzzle.c:84
+msgid "Select the area of image where would you like to make a mosaic"
+msgstr ""
+
+#: ../../magic/src/puzzle.c:85
+#, fuzzy
+msgid "Click to make mosaic in fullscreen mode"
+msgstr "Trykk for å speilvende tegningen!"
+
 #: ../../magic/src/rails.c:75
 #, fuzzy
 msgid "Rails"
@@ -963,6 +985,14 @@ msgstr "Bølger"
 #, fuzzy
 msgid "Click and drag to draw train track rails on your picture."
 msgstr "Hold inne knappen og flytt rundt for å tegne lysstråler."
+
+#: ../../magic/src/rainbow.c:107
+msgid "Rainbow"
+msgstr "Regnbue"
+
+#: ../../magic/src/rainbow.c:114
+msgid "You can draw in rainbow colors!"
+msgstr "Du kan tegne i alle regnbuens farger!"
 
 #: ../../magic/src/rain.c:64
 #, fuzzy
@@ -978,14 +1008,6 @@ msgstr "Trykk for å speilvende tegningen!"
 #, fuzzy
 msgid "Click to cover the image with rain drops."
 msgstr "Trykk for å speilvende tegningen!"
-
-#: ../../magic/src/rainbow.c:107
-msgid "Rainbow"
-msgstr "Regnbue"
-
-#: ../../magic/src/rainbow.c:114
-msgid "You can draw in rainbow colors!"
-msgstr "Du kan tegne i alle regnbuens farger!"
 
 #: ../../magic/src/ripples.c:81
 msgid "Ripples"
@@ -1120,15 +1142,6 @@ msgstr ""
 "Hold inne knappen og flytt rundt for å gjøre fargene klarere og strekene "
 "tydeligere."
 
-#: ../../magic/src/tv.c:72
-msgid "TV"
-msgstr ""
-
-#: ../../magic/src/tv.c:74
-#, fuzzy
-msgid "Click to make your picture look like it's on television."
-msgstr "Hold inne knappen og flytt rundt for å forandre fargene på tegningen."
-
 #: ../../magic/src/toothpaste.c:65
 msgid "Toothpaste"
 msgstr ""
@@ -1138,15 +1151,41 @@ msgstr ""
 msgid "Click and drag to squirt toothpaste onto the image."
 msgstr "Hold inne knappen og flytt rundt for å flytte på tegningen."
 
-#: ../../magic/src/waves.c:78
+#: ../../magic/src/tv.c:72
+msgid "TV"
+msgstr ""
+
+#: ../../magic/src/tv.c:74
+#, fuzzy
+msgid "Click to make your picture look like it's on television."
+msgstr "Hold inne knappen og flytt rundt for å forandre fargene på tegningen."
+
+#: ../../magic/src/waves.c:75
 msgid "Waves"
 msgstr "Bølger"
 
-#: ../../magic/src/waves.c:84
+#: ../../magic/src/waves.c:76
+#, fuzzy
+msgid "Wavelets"
+msgstr "Bølger"
+
+#: ../../magic/src/waves.c:83
+#, fuzzy
 msgid ""
-"Click to make the picture wavy. Click toward the top for shorter waves, the "
-"bottom for taller waves, the left for small waves, and the right for long "
-"waves."
+"Click to make the picture horizontally wavy. Click toward the top for "
+"shorter waves, the bottom for taller waves, the left for small waves, and "
+"the right for long waves."
+msgstr ""
+"Trykk for å gjøre tegningen bølgete. Trykk oppe for å lage lave bølger, nede "
+"for å lage høye bølger, til venstre for å lage korte bølger og til høyre for "
+"å lage lange bølger."
+
+#: ../../magic/src/waves.c:84
+#, fuzzy
+msgid ""
+"Click to make the picture vertically wavy. Click toward the top for shorter "
+"waves, the bottom for taller waves, the left for small waves, and the right "
+"for long waves."
 msgstr ""
 "Trykk for å gjøre tegningen bølgete. Trykk oppe for å lage lave bølger, nede "
 "for å lage høye bølger, til venstre for å lage korte bølger og til høyre for "

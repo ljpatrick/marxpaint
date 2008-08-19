@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint-is 0.9.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-08-18 15:03-0700\n"
+"POT-Creation-Date: 2008-08-19 11:51-0700\n"
 "PO-Revision-Date: 2004-03-15 15:38GMT\n"
 "Last-Translator: Pjetur G. Hjaltason <pjetur@pjetur.net>\n"
 "Language-Team: Icelandic <kde-isl@molar.is>\n"
@@ -838,6 +838,14 @@ msgstr "Fylla"
 msgid "Click in the picture to fill that area with color."
 msgstr "Smelltu og hreyfðu músina til að fylla svæðið með lit."
 
+#: ../../magic/src/fisheye.c:77
+msgid "Fisheye"
+msgstr ""
+
+#: ../../magic/src/fisheye.c:79
+msgid "Select an area of the image to create fisheye effect"
+msgstr ""
+
 #: ../../magic/src/flower.c:124
 msgid "Flower"
 msgstr ""
@@ -974,6 +982,20 @@ msgstr "Smelltu og hreyfðu músina til að gera myndina óskýrari."
 msgid "Click to add noise to the entire image."
 msgstr "Smelltu til að gera spegilmynd."
 
+#: ../../magic/src/puzzle.c:77
+#, fuzzy
+msgid "Puzzle"
+msgstr "Fjólublátt!"
+
+#: ../../magic/src/puzzle.c:84
+msgid "Select the area of image where would you like to make a mosaic"
+msgstr ""
+
+#: ../../magic/src/puzzle.c:85
+#, fuzzy
+msgid "Click to make mosaic in fullscreen mode"
+msgstr "Smelltu til að gera spegilmynd."
+
 #: ../../magic/src/rails.c:75
 msgid "Rails"
 msgstr ""
@@ -982,6 +1004,14 @@ msgstr ""
 #, fuzzy
 msgid "Click and drag to draw train track rails on your picture."
 msgstr "Smelltu og hreyfðu músina til að gera myndina þynnri."
+
+#: ../../magic/src/rainbow.c:107
+msgid "Rainbow"
+msgstr "Regnbogi"
+
+#: ../../magic/src/rainbow.c:114
+msgid "You can draw in rainbow colors!"
+msgstr "Þú getur teiknað með regnboga-litum!"
 
 #: ../../magic/src/rain.c:64
 #, fuzzy
@@ -997,14 +1027,6 @@ msgstr "Smelltu til að gera spegilmynd."
 #, fuzzy
 msgid "Click to cover the image with rain drops."
 msgstr "Smelltu til að gera spegilmynd."
-
-#: ../../magic/src/rainbow.c:107
-msgid "Rainbow"
-msgstr "Regnbogi"
-
-#: ../../magic/src/rainbow.c:114
-msgid "You can draw in rainbow colors!"
-msgstr "Þú getur teiknað með regnboga-litum!"
 
 #: ../../magic/src/ripples.c:81
 msgid "Ripples"
@@ -1139,15 +1161,6 @@ msgstr "Smelltu og hreyfðu músina til að búa til krítarmynd!"
 msgid "Click to threshold the entire image into pure colour and white regions."
 msgstr "Smelltu og hreyfðu músina til að búa til krítarmynd!"
 
-#: ../../magic/src/tv.c:72
-msgid "TV"
-msgstr ""
-
-#: ../../magic/src/tv.c:74
-#, fuzzy
-msgid "Click to make your picture look like it's on television."
-msgstr "Smelltu og hreyfðu músina til að gera myndina 'Kassa-lega'."
-
 #: ../../magic/src/toothpaste.c:65
 msgid "Toothpaste"
 msgstr ""
@@ -1157,16 +1170,37 @@ msgstr ""
 msgid "Click and drag to squirt toothpaste onto the image."
 msgstr "Smelltu og hreyfðu músina til að gera myndina þynnri."
 
-#: ../../magic/src/waves.c:78
+#: ../../magic/src/tv.c:72
+msgid "TV"
+msgstr ""
+
+#: ../../magic/src/tv.c:74
+#, fuzzy
+msgid "Click to make your picture look like it's on television."
+msgstr "Smelltu og hreyfðu músina til að gera myndina 'Kassa-lega'."
+
+#: ../../magic/src/waves.c:75
 #, fuzzy
 msgid "Waves"
 msgstr "Geyma"
 
+#: ../../magic/src/waves.c:76
+#, fuzzy
+msgid "Wavelets"
+msgstr "Geyma"
+
+#: ../../magic/src/waves.c:83
+msgid ""
+"Click to make the picture horizontally wavy. Click toward the top for "
+"shorter waves, the bottom for taller waves, the left for small waves, and "
+"the right for long waves."
+msgstr ""
+
 #: ../../magic/src/waves.c:84
 msgid ""
-"Click to make the picture wavy. Click toward the top for shorter waves, the "
-"bottom for taller waves, the left for small waves, and the right for long "
-"waves."
+"Click to make the picture vertically wavy. Click toward the top for shorter "
+"waves, the bottom for taller waves, the left for small waves, and the right "
+"for long waves."
 msgstr ""
 
 #, fuzzy

@@ -20,6 +20,7 @@ tuxpaint.desktop.in
 ../magic/src/emboss.c
 ../magic/src/fade_darken.c
 ../magic/src/fill.c
+../magic/src/fisheye.c
 ../magic/src/flower.c
 ../magic/src/foam.c
 ../magic/src/fold.c
@@ -32,9 +33,10 @@ tuxpaint.desktop.in
 ../magic/src/mosaic.c
 ../magic/src/negative.c
 ../magic/src/noise.c
+../magic/src/puzzle.c
 ../magic/src/rails.c
-../magic/src/rain.c
 ../magic/src/rainbow.c
+../magic/src/rain.c
 ../magic/src/ripples.c
 ../magic/src/rosette.c
 ../magic/src/sharpen.c
@@ -42,6 +44,6 @@ tuxpaint.desktop.in
 ../magic/src/smudge.c
 ../magic/src/snow.c
 ../magic/src/tint.c
-../magic/src/tv.c
 ../magic/src/toothpaste.c
+../magic/src/tv.c
 ../magic/src/waves.c

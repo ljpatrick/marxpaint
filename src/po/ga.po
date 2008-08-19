@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint 0.9.17\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-08-18 15:03-0700\n"
+"POT-Creation-Date: 2008-08-19 11:51-0700\n"
 "PO-Revision-Date: 2007-05-11 08:44+0100\n"
 "Last-Translator: Kevin Patrick Scannell <kscanne@gmail.com>\n"
 "Language-Team: Irish <gaeilge-gnulinux@lists.sourceforge.net>\n"
@@ -830,6 +830,14 @@ msgid "Click in the picture to fill that area with color."
 msgstr ""
 "Cliceáil sa phictiúr chun an limistéar roghnaithe agat a líonadh le dath."
 
+#: ../../magic/src/fisheye.c:77
+msgid "Fisheye"
+msgstr ""
+
+#: ../../magic/src/fisheye.c:79
+msgid "Select an area of the image to create fisheye effect"
+msgstr ""
+
 #: ../../magic/src/flower.c:124
 msgid "Flower"
 msgstr ""
@@ -965,6 +973,20 @@ msgstr "Cliceáil agus bog an luch chun an pictiúr a gheamhú."
 msgid "Click to add noise to the entire image."
 msgstr "Cliceáil le haghaidh íomhá scáthánach."
 
+#: ../../magic/src/puzzle.c:77
+#, fuzzy
+msgid "Puzzle"
+msgstr "Corcairdhearg!"
+
+#: ../../magic/src/puzzle.c:84
+msgid "Select the area of image where would you like to make a mosaic"
+msgstr ""
+
+#: ../../magic/src/puzzle.c:85
+#, fuzzy
+msgid "Click to make mosaic in fullscreen mode"
+msgstr "Cliceáil le haghaidh íomhá scáthánach."
+
 #: ../../magic/src/rails.c:75
 msgid "Rails"
 msgstr ""
@@ -973,6 +995,14 @@ msgstr ""
 #, fuzzy
 msgid "Click and drag to draw train track rails on your picture."
 msgstr "Cliceáil agus bog an luch chun an pictiúr a thanú."
+
+#: ../../magic/src/rainbow.c:107
+msgid "Rainbow"
+msgstr "Tua Cheatha"
+
+#: ../../magic/src/rainbow.c:114
+msgid "You can draw in rainbow colors!"
+msgstr "Is féidir leat dearadh le gach dath na tua cheatha!"
 
 #: ../../magic/src/rain.c:64
 #, fuzzy
@@ -988,14 +1018,6 @@ msgstr "Cliceáil le haghaidh íomhá scáthánach."
 #, fuzzy
 msgid "Click to cover the image with rain drops."
 msgstr "Cliceáil le haghaidh íomhá scáthánach."
-
-#: ../../magic/src/rainbow.c:107
-msgid "Rainbow"
-msgstr "Tua Cheatha"
-
-#: ../../magic/src/rainbow.c:114
-msgid "You can draw in rainbow colors!"
-msgstr "Is féidir leat dearadh le gach dath na tua cheatha!"
 
 #: ../../magic/src/ripples.c:81
 msgid "Ripples"
@@ -1128,15 +1150,6 @@ msgstr "Cliceáil agus bog an luch chun cartún a dhéanamh ón phictiúr."
 msgid "Click to threshold the entire image into pure colour and white regions."
 msgstr "Cliceáil agus bog an luch chun cartún a dhéanamh ón phictiúr."
 
-#: ../../magic/src/tv.c:72
-msgid "TV"
-msgstr ""
-
-#: ../../magic/src/tv.c:74
-#, fuzzy
-msgid "Click to make your picture look like it's on television."
-msgstr "Cliceáil agus bog an luch chun dath an phictiúir a athrú."
-
 #: ../../magic/src/toothpaste.c:65
 msgid "Toothpaste"
 msgstr ""
@@ -1146,16 +1159,37 @@ msgstr ""
 msgid "Click and drag to squirt toothpaste onto the image."
 msgstr "Cliceáil agus bog an luch chun an pictiúr a thanú."
 
-#: ../../magic/src/waves.c:78
+#: ../../magic/src/tv.c:72
+msgid "TV"
+msgstr ""
+
+#: ../../magic/src/tv.c:74
+#, fuzzy
+msgid "Click to make your picture look like it's on television."
+msgstr "Cliceáil agus bog an luch chun dath an phictiúir a athrú."
+
+#: ../../magic/src/waves.c:75
 #, fuzzy
 msgid "Waves"
 msgstr "Sábháil"
 
+#: ../../magic/src/waves.c:76
+#, fuzzy
+msgid "Wavelets"
+msgstr "Sábháil"
+
+#: ../../magic/src/waves.c:83
+msgid ""
+"Click to make the picture horizontally wavy. Click toward the top for "
+"shorter waves, the bottom for taller waves, the left for small waves, and "
+"the right for long waves."
+msgstr ""
+
 #: ../../magic/src/waves.c:84
 msgid ""
-"Click to make the picture wavy. Click toward the top for shorter waves, the "
-"bottom for taller waves, the left for small waves, and the right for long "
-"waves."
+"Click to make the picture vertically wavy. Click toward the top for shorter "
+"waves, the bottom for taller waves, the left for small waves, and the right "
+"for long waves."
 msgstr ""
 
 #, fuzzy

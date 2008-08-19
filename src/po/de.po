@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-08-18 15:03-0700\n"
+"POT-Creation-Date: 2008-08-19 11:51-0700\n"
 "PO-Revision-Date: 2008-02-27 11:34+0100\n"
 "Last-Translator: Burkhard Lück <lueck@hube-lueck.de>\n"
 "Language-Team: Deutsch <kde-i18n-de@kde.org>\n"
@@ -830,6 +830,14 @@ msgstr "Füllen"
 msgid "Click in the picture to fill that area with color."
 msgstr "Klick in das Bild, um einen Bereich mit Farbe auszufüllen."
 
+#: ../../magic/src/fisheye.c:77
+msgid "Fisheye"
+msgstr ""
+
+#: ../../magic/src/fisheye.c:79
+msgid "Select an area of the image to create fisheye effect"
+msgstr ""
+
 #: ../../magic/src/flower.c:124
 msgid "Flower"
 msgstr "Blume"
@@ -959,6 +967,20 @@ msgstr "Klick und bewege die Maus, um das Bild unscharf zu machen."
 msgid "Click to add noise to the entire image."
 msgstr "Klicke, um das Bild zu spiegeln."
 
+#: ../../magic/src/puzzle.c:77
+#, fuzzy
+msgid "Puzzle"
+msgstr "Lila!"
+
+#: ../../magic/src/puzzle.c:84
+msgid "Select the area of image where would you like to make a mosaic"
+msgstr ""
+
+#: ../../magic/src/puzzle.c:85
+#, fuzzy
+msgid "Click to make mosaic in fullscreen mode"
+msgstr "Klicke, um das Bild zu spiegeln."
+
 #: ../../magic/src/rails.c:75
 #, fuzzy
 msgid "Rails"
@@ -968,6 +990,14 @@ msgstr "Kräuseln"
 #, fuzzy
 msgid "Click and drag to draw train track rails on your picture."
 msgstr "Klick und bewege die Maus, um helle Kreise auf das Bild zu malen."
+
+#: ../../magic/src/rainbow.c:107
+msgid "Rainbow"
+msgstr "Regenbogenfarbe"
+
+#: ../../magic/src/rainbow.c:114
+msgid "You can draw in rainbow colors!"
+msgstr "Du kannst mit Regenbogenfarben malen!"
 
 #: ../../magic/src/rain.c:64
 #, fuzzy
@@ -983,14 +1013,6 @@ msgstr "Klicke, um das Bild zu spiegeln."
 #, fuzzy
 msgid "Click to cover the image with rain drops."
 msgstr "Klicke, um das Bild zu spiegeln."
-
-#: ../../magic/src/rainbow.c:107
-msgid "Rainbow"
-msgstr "Regenbogenfarbe"
-
-#: ../../magic/src/rainbow.c:114
-msgid "You can draw in rainbow colors!"
-msgstr "Du kannst mit Regenbogenfarben malen!"
 
 #: ../../magic/src/ripples.c:81
 msgid "Ripples"
@@ -1121,15 +1143,6 @@ msgstr "Klick und bewege die Maus, um dein Bild in einen Comic zu verwandeln!"
 msgid "Click to threshold the entire image into pure colour and white regions."
 msgstr "Klick und bewege die Maus, um dein Bild in einen Comic zu verwandeln!"
 
-#: ../../magic/src/tv.c:72
-msgid "TV"
-msgstr ""
-
-#: ../../magic/src/tv.c:74
-#, fuzzy
-msgid "Click to make your picture look like it's on television."
-msgstr "Klick und bewege die Maus, um die Farben des Bildes zu ändern."
-
 #: ../../magic/src/toothpaste.c:65
 msgid "Toothpaste"
 msgstr ""
@@ -1139,15 +1152,41 @@ msgstr ""
 msgid "Click and drag to squirt toothpaste onto the image."
 msgstr "Klick und bewege die Maus, um das Bild zu verschieben."
 
-#: ../../magic/src/waves.c:78
+#: ../../magic/src/tv.c:72
+msgid "TV"
+msgstr ""
+
+#: ../../magic/src/tv.c:74
+#, fuzzy
+msgid "Click to make your picture look like it's on television."
+msgstr "Klick und bewege die Maus, um die Farben des Bildes zu ändern."
+
+#: ../../magic/src/waves.c:75
 msgid "Waves"
 msgstr "Wellen"
 
-#: ../../magic/src/waves.c:84
+#: ../../magic/src/waves.c:76
+#, fuzzy
+msgid "Wavelets"
+msgstr "Wellen"
+
+#: ../../magic/src/waves.c:83
+#, fuzzy
 msgid ""
-"Click to make the picture wavy. Click toward the top for shorter waves, the "
-"bottom for taller waves, the left for small waves, and the right for long "
-"waves."
+"Click to make the picture horizontally wavy. Click toward the top for "
+"shorter waves, the bottom for taller waves, the left for small waves, and "
+"the right for long waves."
+msgstr ""
+"Klicke, um das Bild wellig zu machen. Klicke nach oben für niedrige Wellen, "
+"nach unten für hohe Wellen, nach links für kurze Wellen und nach rechts für "
+"lange Wellen."
+
+#: ../../magic/src/waves.c:84
+#, fuzzy
+msgid ""
+"Click to make the picture vertically wavy. Click toward the top for shorter "
+"waves, the bottom for taller waves, the left for small waves, and the right "
+"for long waves."
 msgstr ""
 "Klicke, um das Bild wellig zu machen. Klicke nach oben für niedrige Wellen, "
 "nach unten für hohe Wellen, nach links für kurze Wellen und nach rechts für "

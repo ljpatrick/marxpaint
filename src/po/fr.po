@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: fr\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-08-18 15:03-0700\n"
+"POT-Creation-Date: 2008-08-19 11:51-0700\n"
 "PO-Revision-Date: 2004-05-30 21:20-0700\n"
 "Last-Translator: jimmy <jacques.chion@orange.fr>\n"
 "Language-Team:  <fr@li.org>\n"
@@ -826,6 +826,14 @@ msgstr "Remplir"
 msgid "Click in the picture to fill that area with color."
 msgstr "Clique sur l'image pour remplir cette surface avec une couleur."
 
+#: ../../magic/src/fisheye.c:77
+msgid "Fisheye"
+msgstr ""
+
+#: ../../magic/src/fisheye.c:79
+msgid "Select an area of the image to create fisheye effect"
+msgstr ""
+
 #: ../../magic/src/flower.c:124
 msgid "Flower"
 msgstr "Fleur"
@@ -962,6 +970,20 @@ msgstr "Clique et déplace la souris pour ajouter des parasites à l'image."
 msgid "Click to add noise to the entire image."
 msgstr "Clique pour ajouter des parasites à toute l'image."
 
+#: ../../magic/src/puzzle.c:77
+#, fuzzy
+msgid "Puzzle"
+msgstr "Pourpre !"
+
+#: ../../magic/src/puzzle.c:84
+msgid "Select the area of image where would you like to make a mosaic"
+msgstr ""
+
+#: ../../magic/src/puzzle.c:85
+#, fuzzy
+msgid "Click to make mosaic in fullscreen mode"
+msgstr "Clique pour voir l'image dans un miroir."
+
 #
 #: ../../magic/src/rails.c:75
 msgid "Rails"
@@ -971,6 +993,14 @@ msgstr "Rails"
 #: ../../magic/src/rails.c:77
 msgid "Click and drag to draw train track rails on your picture."
 msgstr "Clique et déplace la souris pour dessiner des rails."
+
+#: ../../magic/src/rainbow.c:107
+msgid "Rainbow"
+msgstr "Arc-en-ciel"
+
+#: ../../magic/src/rainbow.c:114
+msgid "You can draw in rainbow colors!"
+msgstr "Tu peux dessiner avec les couleurs de l'arc-en-ciel !"
 
 #
 #: ../../magic/src/rain.c:64
@@ -987,14 +1017,6 @@ msgstr "Clique pour placet une goutte de pluie sur le dessin.."
 #: ../../magic/src/rain.c:68
 msgid "Click to cover the image with rain drops."
 msgstr "Clique pour remplir le dessin avec des gouttes de pluie."
-
-#: ../../magic/src/rainbow.c:107
-msgid "Rainbow"
-msgstr "Arc-en-ciel"
-
-#: ../../magic/src/rainbow.c:114
-msgid "You can draw in rainbow colors!"
-msgstr "Tu peux dessiner avec les couleurs de l'arc-en-ciel !"
 
 #: ../../magic/src/ripples.c:81
 msgid "Ripples"
@@ -1129,6 +1151,15 @@ msgstr ""
 "Clique pour obtenir une image en blanc et une seule couleur que tu as "
 "choisie. "
 
+#: ../../magic/src/toothpaste.c:65
+msgid "Toothpaste"
+msgstr "Dentifrice"
+
+#: ../../magic/src/toothpaste.c:68
+msgid "Click and drag to squirt toothpaste onto the image."
+msgstr ""
+"Clique et déplace la souris pour faire gicler du dentifrice sur le dessin."
+
 #: ../../magic/src/tv.c:72
 msgid "TV"
 msgstr ""
@@ -1139,24 +1170,32 @@ msgstr ""
 msgid "Click to make your picture look like it's on television."
 msgstr "Clique pour ajouter des carreaux de verre sur toute l'image."
 
-#: ../../magic/src/toothpaste.c:65
-msgid "Toothpaste"
-msgstr "Dentifrice"
-
-#: ../../magic/src/toothpaste.c:68
-msgid "Click and drag to squirt toothpaste onto the image."
-msgstr ""
-"Clique et déplace la souris pour faire gicler du dentifrice sur le dessin."
-
-#: ../../magic/src/waves.c:78
+#: ../../magic/src/waves.c:75
 msgid "Waves"
 msgstr "Vagues"
 
-#: ../../magic/src/waves.c:84
+#: ../../magic/src/waves.c:76
+#, fuzzy
+msgid "Wavelets"
+msgstr "Vagues"
+
+#: ../../magic/src/waves.c:83
+#, fuzzy
 msgid ""
-"Click to make the picture wavy. Click toward the top for shorter waves, the "
-"bottom for taller waves, the left for small waves, and the right for long "
-"waves."
+"Click to make the picture horizontally wavy. Click toward the top for "
+"shorter waves, the bottom for taller waves, the left for small waves, and "
+"the right for long waves."
+msgstr ""
+"Clique pour avoir un effet vagué. Clique vers le haut pour de courtes "
+"vagues, vers le bas pour de longues vagues, à gauche pour diminuer "
+"l'amplitude et à droite pour augmenter l'amplitude."
+
+#: ../../magic/src/waves.c:84
+#, fuzzy
+msgid ""
+"Click to make the picture vertically wavy. Click toward the top for shorter "
+"waves, the bottom for taller waves, the left for small waves, and the right "
+"for long waves."
 msgstr ""
 "Clique pour avoir un effet vagué. Clique vers le haut pour de courtes "
 "vagues, vers le bas pour de longues vagues, à gauche pour diminuer "

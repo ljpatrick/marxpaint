@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Thai tux paint\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-08-18 15:03-0700\n"
+"POT-Creation-Date: 2008-08-19 11:51-0700\n"
 "PO-Revision-Date: 2007-01-22 10:51+0700\n"
 "Last-Translator: Ouychai <Ae.translator@gmail.com>\n"
 "Language-Team: \n"
@@ -818,6 +818,14 @@ msgstr "เติม"
 msgid "Click in the picture to fill that area with color."
 msgstr "คลิกที่รูปเพื่อเติมสีลงไป"
 
+#: ../../magic/src/fisheye.c:77
+msgid "Fisheye"
+msgstr ""
+
+#: ../../magic/src/fisheye.c:79
+msgid "Select an area of the image to create fisheye effect"
+msgstr ""
+
 #: ../../magic/src/flower.c:124
 msgid "Flower"
 msgstr ""
@@ -953,6 +961,20 @@ msgstr "คลิกแล้วลากเมาส์ไปมาเพื่
 msgid "Click to add noise to the entire image."
 msgstr "คลิกเพื่อกลับรูปซ้ายขวา"
 
+#: ../../magic/src/puzzle.c:77
+#, fuzzy
+msgid "Puzzle"
+msgstr "ม่วง"
+
+#: ../../magic/src/puzzle.c:84
+msgid "Select the area of image where would you like to make a mosaic"
+msgstr ""
+
+#: ../../magic/src/puzzle.c:85
+#, fuzzy
+msgid "Click to make mosaic in fullscreen mode"
+msgstr "คลิกเพื่อกลับรูปซ้ายขวา"
+
 #: ../../magic/src/rails.c:75
 msgid "Rails"
 msgstr ""
@@ -961,6 +983,14 @@ msgstr ""
 #, fuzzy
 msgid "Click and drag to draw train track rails on your picture."
 msgstr "คลิกแล้วลากเมาส์ไปมาเพื่อทำให้รูปมัว"
+
+#: ../../magic/src/rainbow.c:107
+msgid "Rainbow"
+msgstr "รุ้ง"
+
+#: ../../magic/src/rainbow.c:114
+msgid "You can draw in rainbow colors!"
+msgstr "เธอสามารถวาดสีรุ้งได้"
 
 #: ../../magic/src/rain.c:64
 #, fuzzy
@@ -976,14 +1006,6 @@ msgstr "คลิกเพื่อกลับรูปซ้ายขวา"
 #, fuzzy
 msgid "Click to cover the image with rain drops."
 msgstr "คลิกเพื่อกลับรูปซ้ายขวา"
-
-#: ../../magic/src/rainbow.c:107
-msgid "Rainbow"
-msgstr "รุ้ง"
-
-#: ../../magic/src/rainbow.c:114
-msgid "You can draw in rainbow colors!"
-msgstr "เธอสามารถวาดสีรุ้งได้"
 
 #: ../../magic/src/ripples.c:81
 msgid "Ripples"
@@ -1116,15 +1138,6 @@ msgstr "คลิกแล้วลากเมาส์ไปมา เพื�
 msgid "Click to threshold the entire image into pure colour and white regions."
 msgstr "คลิกแล้วลากเมาส์ไปมา เพื่อทำให้รูปเป็นรูปการ์ตูน"
 
-#: ../../magic/src/tv.c:72
-msgid "TV"
-msgstr ""
-
-#: ../../magic/src/tv.c:74
-#, fuzzy
-msgid "Click to make your picture look like it's on television."
-msgstr "คลิกแล้วลากเมาส์ไปมาเพื่อเปลี่ยนสีรูป"
-
 #: ../../magic/src/toothpaste.c:65
 msgid "Toothpaste"
 msgstr ""
@@ -1134,16 +1147,37 @@ msgstr ""
 msgid "Click and drag to squirt toothpaste onto the image."
 msgstr "คลิกแล้วลากเมาส์ไปมาเพื่อทำให้รูปมัว"
 
-#: ../../magic/src/waves.c:78
+#: ../../magic/src/tv.c:72
+msgid "TV"
+msgstr ""
+
+#: ../../magic/src/tv.c:74
+#, fuzzy
+msgid "Click to make your picture look like it's on television."
+msgstr "คลิกแล้วลากเมาส์ไปมาเพื่อเปลี่ยนสีรูป"
+
+#: ../../magic/src/waves.c:75
 #, fuzzy
 msgid "Waves"
 msgstr "บันทึก"
 
+#: ../../magic/src/waves.c:76
+#, fuzzy
+msgid "Wavelets"
+msgstr "บันทึก"
+
+#: ../../magic/src/waves.c:83
+msgid ""
+"Click to make the picture horizontally wavy. Click toward the top for "
+"shorter waves, the bottom for taller waves, the left for small waves, and "
+"the right for long waves."
+msgstr ""
+
 #: ../../magic/src/waves.c:84
 msgid ""
-"Click to make the picture wavy. Click toward the top for shorter waves, the "
-"bottom for taller waves, the left for small waves, and the right for long "
-"waves."
+"Click to make the picture vertically wavy. Click toward the top for shorter "
+"waves, the bottom for taller waves, the left for small waves, and the right "
+"for long waves."
 msgstr ""
 
 #, fuzzy

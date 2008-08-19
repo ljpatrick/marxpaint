@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TuxPaint\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-08-18 15:03-0700\n"
+"POT-Creation-Date: 2008-08-19 11:51-0700\n"
 "PO-Revision-Date: 2008-01-07 14:29+0300\n"
 "Last-Translator: Sergei Popov <skein@rambler.ru>\n"
 "Language-Team: Dmitriy Ivanov <ace22b@myrealbox.com>\n"
@@ -849,6 +849,14 @@ msgstr "Заполнить"
 msgid "Click in the picture to fill that area with color."
 msgstr "Щёлкните, чтобы заполнить эту область цветом."
 
+#: ../../magic/src/fisheye.c:77
+msgid "Fisheye"
+msgstr ""
+
+#: ../../magic/src/fisheye.c:79
+msgid "Select an area of the image to create fisheye effect"
+msgstr ""
+
 #: ../../magic/src/flower.c:124
 msgid "Flower"
 msgstr "Цветок"
@@ -982,6 +990,21 @@ msgstr "Щёлкните и поводите по картинке, чтобы �
 msgid "Click to add noise to the entire image."
 msgstr "Щёлкните на картинку, чтобы превратить её в зеркальное отражение."
 
+# При выборе пурпурного (128, 0, 128) цвета
+#: ../../magic/src/puzzle.c:77
+#, fuzzy
+msgid "Puzzle"
+msgstr "Пурпурный!"
+
+#: ../../magic/src/puzzle.c:84
+msgid "Select the area of image where would you like to make a mosaic"
+msgstr ""
+
+#: ../../magic/src/puzzle.c:85
+#, fuzzy
+msgid "Click to make mosaic in fullscreen mode"
+msgstr "Щёлкните на картинку, чтобы превратить её в зеркальное отражение."
+
 #: ../../magic/src/rails.c:75
 #, fuzzy
 msgid "Rails"
@@ -991,6 +1014,14 @@ msgstr "Круги на воде"
 #, fuzzy
 msgid "Click and drag to draw train track rails on your picture."
 msgstr "Нажмите и ведите мышь, чтобы нарисовать луч света."
+
+#: ../../magic/src/rainbow.c:107
+msgid "Rainbow"
+msgstr "Радуга"
+
+#: ../../magic/src/rainbow.c:114
+msgid "You can draw in rainbow colors!"
+msgstr "Вы можете рисовать цветами радуги!"
 
 #: ../../magic/src/rain.c:64
 #, fuzzy
@@ -1006,14 +1037,6 @@ msgstr "Щёлкните на картинку, чтобы превратить 
 #, fuzzy
 msgid "Click to cover the image with rain drops."
 msgstr "Щёлкните на картинку, чтобы превратить её в зеркальное отражение."
-
-#: ../../magic/src/rainbow.c:107
-msgid "Rainbow"
-msgstr "Радуга"
-
-#: ../../magic/src/rainbow.c:114
-msgid "You can draw in rainbow colors!"
-msgstr "Вы можете рисовать цветами радуги!"
 
 #: ../../magic/src/ripples.c:81
 msgid "Ripples"
@@ -1147,15 +1170,6 @@ msgid "Click to threshold the entire image into pure colour and white regions."
 msgstr ""
 "Щёлкните и поводите по картинке, чтобы превратить её часть в мультфильм."
 
-#: ../../magic/src/tv.c:72
-msgid "TV"
-msgstr ""
-
-#: ../../magic/src/tv.c:74
-#, fuzzy
-msgid "Click to make your picture look like it's on television."
-msgstr "Щёлкните и поводите по картинке, чтобы изменить цвет рисунка."
-
 #: ../../magic/src/toothpaste.c:65
 msgid "Toothpaste"
 msgstr ""
@@ -1165,15 +1179,40 @@ msgstr ""
 msgid "Click and drag to squirt toothpaste onto the image."
 msgstr "Нажмите и ведите мышь, чтобы сдвинуть рисунок относительно холста."
 
-#: ../../magic/src/waves.c:78
+#: ../../magic/src/tv.c:72
+msgid "TV"
+msgstr ""
+
+#: ../../magic/src/tv.c:74
+#, fuzzy
+msgid "Click to make your picture look like it's on television."
+msgstr "Щёлкните и поводите по картинке, чтобы изменить цвет рисунка."
+
+#: ../../magic/src/waves.c:75
 msgid "Waves"
 msgstr "Волны"
 
-#: ../../magic/src/waves.c:84
+#: ../../magic/src/waves.c:76
+#, fuzzy
+msgid "Wavelets"
+msgstr "Волны"
+
+#: ../../magic/src/waves.c:83
+#, fuzzy
 msgid ""
-"Click to make the picture wavy. Click toward the top for shorter waves, the "
-"bottom for taller waves, the left for small waves, and the right for long "
-"waves."
+"Click to make the picture horizontally wavy. Click toward the top for "
+"shorter waves, the bottom for taller waves, the left for small waves, and "
+"the right for long waves."
+msgstr ""
+"Нажмите, чтобы сделать на рисунке волны. Двигайте вверх, чтобы сделать волны "
+"ниже, вниз - чтобы выше, налево - для коротких волн, направо - для длинных."
+
+#: ../../magic/src/waves.c:84
+#, fuzzy
+msgid ""
+"Click to make the picture vertically wavy. Click toward the top for shorter "
+"waves, the bottom for taller waves, the left for small waves, and the right "
+"for long waves."
 msgstr ""
 "Нажмите, чтобы сделать на рисунке волны. Двигайте вверх, чтобы сделать волны "
 "ниже, вниз - чтобы выше, налево - для коротких волн, направо - для длинных."

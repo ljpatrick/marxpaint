@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: sv\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-08-18 15:03-0700\n"
+"POT-Creation-Date: 2008-08-19 11:51-0700\n"
 "PO-Revision-Date: 2007-11-07 23:35+0100\n"
 "Last-Translator: Robin Rosenberg <robin.rosenberg@dewire.com>\n"
 "Language-Team:  <sv@li.org>\n"
@@ -817,6 +817,14 @@ msgstr "Fyll"
 msgid "Click in the picture to fill that area with color."
 msgstr "Klicka på bilden för att fylla den delen med färg!"
 
+#: ../../magic/src/fisheye.c:77
+msgid "Fisheye"
+msgstr ""
+
+#: ../../magic/src/fisheye.c:79
+msgid "Select an area of the image to create fisheye effect"
+msgstr ""
+
 #: ../../magic/src/flower.c:124
 msgid "Flower"
 msgstr "Blomma"
@@ -949,6 +957,20 @@ msgstr "Klicka och rör musen för att göra bilden suddig."
 msgid "Click to add noise to the entire image."
 msgstr "Klicka för att skapa en spegelbild."
 
+#: ../../magic/src/puzzle.c:77
+#, fuzzy
+msgid "Puzzle"
+msgstr "Lila!"
+
+#: ../../magic/src/puzzle.c:84
+msgid "Select the area of image where would you like to make a mosaic"
+msgstr ""
+
+#: ../../magic/src/puzzle.c:85
+#, fuzzy
+msgid "Click to make mosaic in fullscreen mode"
+msgstr "Klicka för att skapa en spegelbild."
+
 #: ../../magic/src/rails.c:75
 #, fuzzy
 msgid "Rails"
@@ -958,6 +980,14 @@ msgstr "Krusningar"
 #, fuzzy
 msgid "Click and drag to draw train track rails on your picture."
 msgstr "Klicka och rör musen för att rita en ljusstråle på bilden."
+
+#: ../../magic/src/rainbow.c:107
+msgid "Rainbow"
+msgstr "Regnbåge"
+
+#: ../../magic/src/rainbow.c:114
+msgid "You can draw in rainbow colors!"
+msgstr "Du kan rita i regnbågens färger!"
 
 #: ../../magic/src/rain.c:64
 #, fuzzy
@@ -973,14 +1003,6 @@ msgstr "Klicka för att skapa en spegelbild."
 #, fuzzy
 msgid "Click to cover the image with rain drops."
 msgstr "Klicka för att skapa en spegelbild."
-
-#: ../../magic/src/rainbow.c:107
-msgid "Rainbow"
-msgstr "Regnbåge"
-
-#: ../../magic/src/rainbow.c:114
-msgid "You can draw in rainbow colors!"
-msgstr "Du kan rita i regnbågens färger!"
 
 #: ../../magic/src/ripples.c:81
 msgid "Ripples"
@@ -1111,15 +1133,6 @@ msgstr "Klicka och rör musen runt för att omvandla bilden till teckning!"
 msgid "Click to threshold the entire image into pure colour and white regions."
 msgstr "Klicka och rör musen runt för att omvandla bilden till teckning!"
 
-#: ../../magic/src/tv.c:72
-msgid "TV"
-msgstr ""
-
-#: ../../magic/src/tv.c:74
-#, fuzzy
-msgid "Click to make your picture look like it's on television."
-msgstr "Klicka och rör musen runt för att ändra bildens färg."
-
 #: ../../magic/src/toothpaste.c:65
 msgid "Toothpaste"
 msgstr ""
@@ -1129,15 +1142,41 @@ msgstr ""
 msgid "Click and drag to squirt toothpaste onto the image."
 msgstr "Klicka och dra musen för att flytta bilden."
 
-#: ../../magic/src/waves.c:78
+#: ../../magic/src/tv.c:72
+msgid "TV"
+msgstr ""
+
+#: ../../magic/src/tv.c:74
+#, fuzzy
+msgid "Click to make your picture look like it's on television."
+msgstr "Klicka och rör musen runt för att ändra bildens färg."
+
+#: ../../magic/src/waves.c:75
 msgid "Waves"
 msgstr "Vågor"
 
-#: ../../magic/src/waves.c:84
+#: ../../magic/src/waves.c:76
+#, fuzzy
+msgid "Wavelets"
+msgstr "Vågor"
+
+#: ../../magic/src/waves.c:83
+#, fuzzy
 msgid ""
-"Click to make the picture wavy. Click toward the top for shorter waves, the "
-"bottom for taller waves, the left for small waves, and the right for long "
-"waves."
+"Click to make the picture horizontally wavy. Click toward the top for "
+"shorter waves, the bottom for taller waves, the left for small waves, and "
+"the right for long waves."
+msgstr ""
+"Klicka för att göra bilden vågig. Klicka  högt uppe för korta vågor, långt "
+"ner för långa vågor, till vänster för små vågor och till höger för långa "
+"vågor."
+
+#: ../../magic/src/waves.c:84
+#, fuzzy
+msgid ""
+"Click to make the picture vertically wavy. Click toward the top for shorter "
+"waves, the bottom for taller waves, the left for small waves, and the right "
+"for long waves."
 msgstr ""
 "Klicka för att göra bilden vågig. Klicka  högt uppe för korta vågor, långt "
 "ner för långa vågor, till vänster för små vågor och till höger för långa "

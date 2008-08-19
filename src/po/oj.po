@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ojibwaytuxpaint\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-08-18 15:03-0700\n"
+"POT-Creation-Date: 2008-08-19 11:51-0700\n"
 "PO-Revision-Date: 2007-10-08 18:19-0500\n"
 "Last-Translator: Ed Montgomery <edm@rocketmail.com>\n"
 "Language-Team: Ed <edm@rocketmail.com>\n"
@@ -810,6 +810,14 @@ msgstr "Mooshkinebadoon"
 msgid "Click in the picture to fill that area with color."
 msgstr ""
 
+#: ../../magic/src/fisheye.c:77
+msgid "Fisheye"
+msgstr ""
+
+#: ../../magic/src/fisheye.c:79
+msgid "Select an area of the image to create fisheye effect"
+msgstr ""
+
 #: ../../magic/src/flower.c:124
 msgid "Flower"
 msgstr "Waabigwan"
@@ -937,6 +945,20 @@ msgstr "Waabizo"
 msgid "Click to add noise to the entire image."
 msgstr "Waabimoojichaagwaazo"
 
+#: ../../magic/src/puzzle.c:77
+#, fuzzy
+msgid "Puzzle"
+msgstr "Miining-izinaagazozi"
+
+#: ../../magic/src/puzzle.c:84
+msgid "Select the area of image where would you like to make a mosaic"
+msgstr ""
+
+#: ../../magic/src/puzzle.c:85
+#, fuzzy
+msgid "Click to make mosaic in fullscreen mode"
+msgstr "Waabimoojichaagwaazo"
+
 #: ../../magic/src/rails.c:75
 #, fuzzy
 msgid "Rails"
@@ -946,6 +968,14 @@ msgstr "Zaasijiwan"
 #, fuzzy
 msgid "Click and drag to draw train track rails on your picture."
 msgstr "Waabizo"
+
+#: ../../magic/src/rainbow.c:107
+msgid "Rainbow"
+msgstr "Nagweyaab"
+
+#: ../../magic/src/rainbow.c:114
+msgid "You can draw in rainbow colors!"
+msgstr ""
 
 #: ../../magic/src/rain.c:64
 #, fuzzy
@@ -961,14 +991,6 @@ msgstr "Waabimoojichaagwaazo"
 #, fuzzy
 msgid "Click to cover the image with rain drops."
 msgstr "Waabimoojichaagwaazo"
-
-#: ../../magic/src/rainbow.c:107
-msgid "Rainbow"
-msgstr "Nagweyaab"
-
-#: ../../magic/src/rainbow.c:114
-msgid "You can draw in rainbow colors!"
-msgstr ""
 
 #: ../../magic/src/ripples.c:81
 msgid "Ripples"
@@ -1098,14 +1120,6 @@ msgstr "Waabizo"
 msgid "Click to threshold the entire image into pure colour and white regions."
 msgstr "Waabizo"
 
-#: ../../magic/src/tv.c:72
-msgid "TV"
-msgstr ""
-
-#: ../../magic/src/tv.c:74
-msgid "Click to make your picture look like it's on television."
-msgstr ""
-
 #: ../../magic/src/toothpaste.c:65
 msgid "Toothpaste"
 msgstr ""
@@ -1115,15 +1129,35 @@ msgstr ""
 msgid "Click and drag to squirt toothpaste onto the image."
 msgstr "Waabizo"
 
-#: ../../magic/src/waves.c:78
+#: ../../magic/src/tv.c:72
+msgid "TV"
+msgstr ""
+
+#: ../../magic/src/tv.c:74
+msgid "Click to make your picture look like it's on television."
+msgstr ""
+
+#: ../../magic/src/waves.c:75
 msgid "Waves"
 msgstr "Bikwaashkaa"
 
+#: ../../magic/src/waves.c:76
+#, fuzzy
+msgid "Wavelets"
+msgstr "Bikwaashkaa"
+
+#: ../../magic/src/waves.c:83
+msgid ""
+"Click to make the picture horizontally wavy. Click toward the top for "
+"shorter waves, the bottom for taller waves, the left for small waves, and "
+"the right for long waves."
+msgstr ""
+
 #: ../../magic/src/waves.c:84
 msgid ""
-"Click to make the picture wavy. Click toward the top for shorter waves, the "
-"bottom for taller waves, the left for small waves, and the right for long "
-"waves."
+"Click to make the picture vertically wavy. Click toward the top for shorter "
+"waves, the bottom for taller waves, the left for small waves, and the right "
+"for long waves."
 msgstr ""
 
 #, fuzzy

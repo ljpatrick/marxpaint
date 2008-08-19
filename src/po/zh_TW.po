@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint 0.9.17\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-08-18 15:03-0700\n"
+"POT-Creation-Date: 2008-08-19 11:51-0700\n"
 "PO-Revision-Date: 2007-11-18 21:25+0800\n"
 "Last-Translator: 黃敏松 <songhuang.tw@gmail.com>\n"
 "Language-Team: Chinese (traditional) <zh-l10n@linux.org.tw>\n"
@@ -826,6 +826,14 @@ msgstr "填滿"
 msgid "Click in the picture to fill that area with color."
 msgstr "在圖案中按下滑鼠來用顏色填滿整個區域。"
 
+#: ../../magic/src/fisheye.c:77
+msgid "Fisheye"
+msgstr ""
+
+#: ../../magic/src/fisheye.c:79
+msgid "Select an area of the image to create fisheye effect"
+msgstr ""
+
 #: ../../magic/src/flower.c:124
 msgid "Flower"
 msgstr "花"
@@ -954,6 +962,20 @@ msgstr "按著並移動滑鼠來使圖畫模糊。"
 msgid "Click to add noise to the entire image."
 msgstr "按一下可以產生左右對稱的圖畫。"
 
+#: ../../magic/src/puzzle.c:77
+#, fuzzy
+msgid "Puzzle"
+msgstr "紫色!"
+
+#: ../../magic/src/puzzle.c:84
+msgid "Select the area of image where would you like to make a mosaic"
+msgstr ""
+
+#: ../../magic/src/puzzle.c:85
+#, fuzzy
+msgid "Click to make mosaic in fullscreen mode"
+msgstr "按一下可以產生左右對稱的圖畫。"
+
 #: ../../magic/src/rails.c:75
 #, fuzzy
 msgid "Rails"
@@ -963,6 +985,14 @@ msgstr "波浪"
 #, fuzzy
 msgid "Click and drag to draw train track rails on your picture."
 msgstr "按著並移動滑鼠畫一束光到你的圖上。"
+
+#: ../../magic/src/rainbow.c:107
+msgid "Rainbow"
+msgstr "彩虹"
+
+#: ../../magic/src/rainbow.c:114
+msgid "You can draw in rainbow colors!"
+msgstr "你可以畫出彩虹的顏色!"
 
 #: ../../magic/src/rain.c:64
 #, fuzzy
@@ -978,14 +1008,6 @@ msgstr "按一下可以產生左右對稱的圖畫。"
 #, fuzzy
 msgid "Click to cover the image with rain drops."
 msgstr "按一下可以產生左右對稱的圖畫。"
-
-#: ../../magic/src/rainbow.c:107
-msgid "Rainbow"
-msgstr "彩虹"
-
-#: ../../magic/src/rainbow.c:114
-msgid "You can draw in rainbow colors!"
-msgstr "你可以畫出彩虹的顏色!"
 
 #: ../../magic/src/ripples.c:81
 msgid "Ripples"
@@ -1116,15 +1138,6 @@ msgstr "按著並移動滑鼠來將圖案變成卡通風格。"
 msgid "Click to threshold the entire image into pure colour and white regions."
 msgstr "按著並移動滑鼠來將圖案變成卡通風格。"
 
-#: ../../magic/src/tv.c:72
-msgid "TV"
-msgstr ""
-
-#: ../../magic/src/tv.c:74
-#, fuzzy
-msgid "Click to make your picture look like it's on television."
-msgstr "按著並移動滑鼠來改變圖畫的顏色。"
-
 #: ../../magic/src/toothpaste.c:65
 msgid "Toothpaste"
 msgstr ""
@@ -1134,15 +1147,40 @@ msgstr ""
 msgid "Click and drag to squirt toothpaste onto the image."
 msgstr "按著並移動滑鼠來調整圖在圖紙上的位置。"
 
-#: ../../magic/src/waves.c:78
+#: ../../magic/src/tv.c:72
+msgid "TV"
+msgstr ""
+
+#: ../../magic/src/tv.c:74
+#, fuzzy
+msgid "Click to make your picture look like it's on television."
+msgstr "按著並移動滑鼠來改變圖畫的顏色。"
+
+#: ../../magic/src/waves.c:75
 msgid "Waves"
 msgstr "波浪"
 
-#: ../../magic/src/waves.c:84
+#: ../../magic/src/waves.c:76
+#, fuzzy
+msgid "Wavelets"
+msgstr "波浪"
+
+#: ../../magic/src/waves.c:83
+#, fuzzy
 msgid ""
-"Click to make the picture wavy. Click toward the top for shorter waves, the "
-"bottom for taller waves, the left for small waves, and the right for long "
-"waves."
+"Click to make the picture horizontally wavy. Click toward the top for "
+"shorter waves, the bottom for taller waves, the left for small waves, and "
+"the right for long waves."
+msgstr ""
+"在圖紙上按下滑鼠鍵會讓影像如波浪般的扭曲，按著往上是短的波浪，往下是長的波"
+"浪，往左是小的波浪，往右是大的波浪。"
+
+#: ../../magic/src/waves.c:84
+#, fuzzy
+msgid ""
+"Click to make the picture vertically wavy. Click toward the top for shorter "
+"waves, the bottom for taller waves, the left for small waves, and the right "
+"for long waves."
 msgstr ""
 "在圖紙上按下滑鼠鍵會讓影像如波浪般的扭曲，按著往上是短的波浪，往下是長的波"
 "浪，往左是小的波浪，往右是大的波浪。"

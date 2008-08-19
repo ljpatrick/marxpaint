@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-08-18 15:03-0700\n"
+"POT-Creation-Date: 2008-08-19 11:51-0700\n"
 "PO-Revision-Date: 2008-02-10 19:28+0400\n"
 "Last-Translator: Jamil Farzana <jamil.farzana@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -836,6 +836,14 @@ msgstr "Doldurmaq"
 msgid "Click in the picture to fill that area with color."
 msgstr "İstədiyin sahəni doldurmaq üçün mausun düyməsini bas."
 
+#: ../../magic/src/fisheye.c:77
+msgid "Fisheye"
+msgstr ""
+
+#: ../../magic/src/fisheye.c:79
+msgid "Select an area of the image to create fisheye effect"
+msgstr ""
+
 #: ../../magic/src/flower.c:124
 msgid "Flower"
 msgstr "Çiçək"
@@ -977,6 +985,20 @@ msgstr ""
 msgid "Click to add noise to the entire image."
 msgstr "Şəkili güzgüdəki kimi görmək üçün mausun sol düyməsini bas."
 
+#: ../../magic/src/puzzle.c:77
+#, fuzzy
+msgid "Puzzle"
+msgstr "Tünd qırmızı!"
+
+#: ../../magic/src/puzzle.c:84
+msgid "Select the area of image where would you like to make a mosaic"
+msgstr ""
+
+#: ../../magic/src/puzzle.c:85
+#, fuzzy
+msgid "Click to make mosaic in fullscreen mode"
+msgstr "Şəkili güzgüdəki kimi görmək üçün mausun sol düyməsini bas."
+
 #: ../../magic/src/rails.c:75
 #, fuzzy
 msgid "Rails"
@@ -987,6 +1009,14 @@ msgstr "Zərif dalğalar"
 msgid "Click and drag to draw train track rails on your picture."
 msgstr ""
 "Şəkili işıqlandırmaq üçün mausun sol düyməsini bas və mausu hərəkətə gətir."
+
+#: ../../magic/src/rainbow.c:107
+msgid "Rainbow"
+msgstr "Göy qurşağı"
+
+#: ../../magic/src/rainbow.c:114
+msgid "You can draw in rainbow colors!"
+msgstr "Sən göy qurşağını çəkə bilərsən!"
 
 #: ../../magic/src/rain.c:64
 #, fuzzy
@@ -1002,14 +1032,6 @@ msgstr "Şəkili güzgüdəki kimi görmək üçün mausun sol düyməsini bas."
 #, fuzzy
 msgid "Click to cover the image with rain drops."
 msgstr "Şəkili güzgüdəki kimi görmək üçün mausun sol düyməsini bas."
-
-#: ../../magic/src/rainbow.c:107
-msgid "Rainbow"
-msgstr "Göy qurşağı"
-
-#: ../../magic/src/rainbow.c:114
-msgid "You can draw in rainbow colors!"
-msgstr "Sən göy qurşağını çəkə bilərsən!"
 
 #: ../../magic/src/ripples.c:81
 msgid "Ripples"
@@ -1154,16 +1176,6 @@ msgstr ""
 "Şəkili cizgi filminə çevirmək üçün mausun sol düyməsini bas və mausu "
 "hərəkətə gətir."
 
-#: ../../magic/src/tv.c:72
-msgid "TV"
-msgstr ""
-
-#: ../../magic/src/tv.c:74
-#, fuzzy
-msgid "Click to make your picture look like it's on television."
-msgstr ""
-"Şəkili azca rəngləmək  üçün mausun sol düyməsini bas və mausu hərəkətə gətir."
-
 #: ../../magic/src/toothpaste.c:65
 msgid "Toothpaste"
 msgstr ""
@@ -1174,15 +1186,40 @@ msgid "Click and drag to squirt toothpaste onto the image."
 msgstr ""
 "Şəkili yerindən çəkmək üçün mausun sol düyməsini bas və mausu hərəkətə gətir."
 
-#: ../../magic/src/waves.c:78
+#: ../../magic/src/tv.c:72
+msgid "TV"
+msgstr ""
+
+#: ../../magic/src/tv.c:74
+#, fuzzy
+msgid "Click to make your picture look like it's on television."
+msgstr ""
+"Şəkili azca rəngləmək  üçün mausun sol düyməsini bas və mausu hərəkətə gətir."
+
+#: ../../magic/src/waves.c:75
 msgid "Waves"
 msgstr "Dalğalar"
 
-#: ../../magic/src/waves.c:84
+#: ../../magic/src/waves.c:76
+#, fuzzy
+msgid "Wavelets"
+msgstr "Dalğalar"
+
+#: ../../magic/src/waves.c:83
+#, fuzzy
 msgid ""
-"Click to make the picture wavy. Click toward the top for shorter waves, the "
-"bottom for taller waves, the left for small waves, and the right for long "
-"waves."
+"Click to make the picture horizontally wavy. Click toward the top for "
+"shorter waves, the bottom for taller waves, the left for small waves, and "
+"the right for long waves."
+msgstr ""
+"Şəkili dalğalı etmək üçün mausun sol düyməsini bas və mausu hərəkətə gətir."
+
+#: ../../magic/src/waves.c:84
+#, fuzzy
+msgid ""
+"Click to make the picture vertically wavy. Click toward the top for shorter "
+"waves, the bottom for taller waves, the left for small waves, and the right "
+"for long waves."
 msgstr ""
 "Şəkili dalğalı etmək üçün mausun sol düyməsini bas və mausu hərəkətə gətir."
 

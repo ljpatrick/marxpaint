@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint 0.9.17\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-08-18 15:03-0700\n"
+"POT-Creation-Date: 2008-08-19 11:51-0700\n"
 "PO-Revision-Date: 2008-03-12 14:01+0100\n"
 "Last-Translator: Peter Tuhársky <tuharsky@misbb.sk>\n"
 "Language-Team: Slovak <sk-i18n@lists.linux.sk>\n"
@@ -826,6 +826,14 @@ msgstr "Vyplň"
 msgid "Click in the picture to fill that area with color."
 msgstr "Klikni do obrázku -kde klikneš, oblasť sa vyplní farbou."
 
+#: ../../magic/src/fisheye.c:77
+msgid "Fisheye"
+msgstr ""
+
+#: ../../magic/src/fisheye.c:79
+msgid "Select an area of the image to create fisheye effect"
+msgstr ""
+
 #: ../../magic/src/flower.c:124
 msgid "Flower"
 msgstr "Kvet"
@@ -957,6 +965,20 @@ msgstr "Klikni a pohybuj myšou, obrázok sa rozmaže."
 msgid "Click to add noise to the entire image."
 msgstr "Keď klikneš, obrázok zrkadlovo otočíš."
 
+#: ../../magic/src/puzzle.c:77
+#, fuzzy
+msgid "Puzzle"
+msgstr "Fialová!"
+
+#: ../../magic/src/puzzle.c:84
+msgid "Select the area of image where would you like to make a mosaic"
+msgstr ""
+
+#: ../../magic/src/puzzle.c:85
+#, fuzzy
+msgid "Click to make mosaic in fullscreen mode"
+msgstr "Keď klikneš, obrázok zrkadlovo otočíš."
+
 #: ../../magic/src/rails.c:75
 #, fuzzy
 msgid "Rails"
@@ -966,6 +988,14 @@ msgstr "Vlnky"
 #, fuzzy
 msgid "Click and drag to draw train track rails on your picture."
 msgstr "Keď klikneš a pohýbeš myšou, obrázok rozmažeš."
+
+#: ../../magic/src/rainbow.c:107
+msgid "Rainbow"
+msgstr "Dúha"
+
+#: ../../magic/src/rainbow.c:114
+msgid "You can draw in rainbow colors!"
+msgstr "Môžeš kresliť v dúhových farbách!"
 
 #: ../../magic/src/rain.c:64
 #, fuzzy
@@ -981,14 +1011,6 @@ msgstr "Keď klikneš, obrázok zrkadlovo otočíš."
 #, fuzzy
 msgid "Click to cover the image with rain drops."
 msgstr "Keď klikneš, obrázok zrkadlovo otočíš."
-
-#: ../../magic/src/rainbow.c:107
-msgid "Rainbow"
-msgstr "Dúha"
-
-#: ../../magic/src/rainbow.c:114
-msgid "You can draw in rainbow colors!"
-msgstr "Môžeš kresliť v dúhových farbách!"
 
 #: ../../magic/src/ripples.c:81
 msgid "Ripples"
@@ -1122,15 +1144,6 @@ msgstr "Klikni a pohybuj myšou, obrázok sa prekreslí na komiks."
 msgid "Click to threshold the entire image into pure colour and white regions."
 msgstr "Klikni a pohybuj myšou, obrázok sa prekreslí na komiks."
 
-#: ../../magic/src/tv.c:72
-msgid "TV"
-msgstr ""
-
-#: ../../magic/src/tv.c:74
-#, fuzzy
-msgid "Click to make your picture look like it's on television."
-msgstr "Klikni a pohybuj myšou pre zmenu farby obrázku."
-
 #: ../../magic/src/toothpaste.c:65
 msgid "Toothpaste"
 msgstr ""
@@ -1140,15 +1153,41 @@ msgstr ""
 msgid "Click and drag to squirt toothpaste onto the image."
 msgstr "Keď klikneš a pohýbeš myšou, rozmažeš obrázok."
 
-#: ../../magic/src/waves.c:78
+#: ../../magic/src/tv.c:72
+msgid "TV"
+msgstr ""
+
+#: ../../magic/src/tv.c:74
+#, fuzzy
+msgid "Click to make your picture look like it's on television."
+msgstr "Klikni a pohybuj myšou pre zmenu farby obrázku."
+
+#: ../../magic/src/waves.c:75
 msgid "Waves"
 msgstr "Vlny"
 
-#: ../../magic/src/waves.c:84
+#: ../../magic/src/waves.c:76
+#, fuzzy
+msgid "Wavelets"
+msgstr "Vlny"
+
+#: ../../magic/src/waves.c:83
+#, fuzzy
 msgid ""
-"Click to make the picture wavy. Click toward the top for shorter waves, the "
-"bottom for taller waves, the left for small waves, and the right for long "
-"waves."
+"Click to make the picture horizontally wavy. Click toward the top for "
+"shorter waves, the bottom for taller waves, the left for small waves, and "
+"the right for long waves."
+msgstr ""
+"Keď klikneš, obrázok sa zvlní. Ak klikneš smerom nahor, vlny budú kratšie. "
+"Ak klikneš smerom nadol, vlny budú vyššie, ak doľava, budú menšie a doprava "
+"budú dlhšie."
+
+#: ../../magic/src/waves.c:84
+#, fuzzy
+msgid ""
+"Click to make the picture vertically wavy. Click toward the top for shorter "
+"waves, the bottom for taller waves, the left for small waves, and the right "
+"for long waves."
 msgstr ""
 "Keď klikneš, obrázok sa zvlní. Ak klikneš smerom nahor, vlny budú kratšie. "
 "Ak klikneš smerom nadol, vlny budú vyššie, ak doľava, budú menšie a doprava "

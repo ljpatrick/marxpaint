@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-08-18 15:03-0700\n"
+"POT-Creation-Date: 2008-08-19 11:51-0700\n"
 "PO-Revision-Date: 2008-07-14 12:17+0530\n"
 "Last-Translator: Kartik Mistry <kartik.mistry@gmail.com>\n"
 "Language-Team: Gujarati <team@utkarsh.org>\n"
@@ -809,6 +809,14 @@ msgstr "ભરો"
 msgid "Click in the picture to fill that area with color."
 msgstr "તે વિસ્તારને રંગથી ભરવાં માટે ચિત્રમાં ક્લિક કરો."
 
+#: ../../magic/src/fisheye.c:77
+msgid "Fisheye"
+msgstr ""
+
+#: ../../magic/src/fisheye.c:79
+msgid "Select an area of the image to create fisheye effect"
+msgstr ""
+
 #: ../../magic/src/flower.c:124
 msgid "Flower"
 msgstr "ફૂલ"
@@ -935,6 +943,20 @@ msgstr "ચિત્રને અસ્પષ્ટ કરવા માટે �
 msgid "Click to add noise to the entire image."
 msgstr "ચિત્રમાં બરફ ઉમેરવા માટે ક્લિક કરો."
 
+#: ../../magic/src/puzzle.c:77
+#, fuzzy
+msgid "Puzzle"
+msgstr "જાંબલી"
+
+#: ../../magic/src/puzzle.c:84
+msgid "Select the area of image where would you like to make a mosaic"
+msgstr ""
+
+#: ../../magic/src/puzzle.c:85
+#, fuzzy
+msgid "Click to make mosaic in fullscreen mode"
+msgstr "અરીસા ચિત્ર બનાવવા ક્લિક કરો."
+
 #: ../../magic/src/rails.c:75
 msgid "Rails"
 msgstr "પાટાઓ"
@@ -942,6 +964,14 @@ msgstr "પાટાઓ"
 #: ../../magic/src/rails.c:77
 msgid "Click and drag to draw train track rails on your picture."
 msgstr "તમારા ચિત્રમાં રેલ્વેનાં પાટાઓ દોરવા માટે માઉસને ક્લિક કરીને ખેંચો."
+
+#: ../../magic/src/rainbow.c:107
+msgid "Rainbow"
+msgstr "મેઘધનુષ"
+
+#: ../../magic/src/rainbow.c:114
+msgid "You can draw in rainbow colors!"
+msgstr "તમે મેઘધનુષ રંગોમાં દોરી શકો છો!"
 
 #: ../../magic/src/rain.c:64
 #, fuzzy
@@ -957,14 +987,6 @@ msgstr "અરીસા ચિત્ર બનાવવા ક્લિક ક�
 #, fuzzy
 msgid "Click to cover the image with rain drops."
 msgstr "ચિત્રને ભૂખરું બનાવવા માટે ક્લિક કરો."
-
-#: ../../magic/src/rainbow.c:107
-msgid "Rainbow"
-msgstr "મેઘધનુષ"
-
-#: ../../magic/src/rainbow.c:114
-msgid "You can draw in rainbow colors!"
-msgstr "તમે મેઘધનુષ રંગોમાં દોરી શકો છો!"
 
 #: ../../magic/src/ripples.c:81
 msgid "Ripples"
@@ -1094,15 +1116,6 @@ msgstr ""
 msgid "Click to threshold the entire image into pure colour and white regions."
 msgstr "ચિત્રને કાળાં અને સફેદ વિસ્તારોની મર્યાદામાં ફેરવવા ક્લિક કરો."
 
-#: ../../magic/src/tv.c:72
-msgid "TV"
-msgstr ""
-
-#: ../../magic/src/tv.c:74
-#, fuzzy
-msgid "Click to make your picture look like it's on television."
-msgstr "તમારા સમગ્ર ચિત્રને કાચની તકતીઓ વડે ઢાંકી દેવા માટે ક્લિક કરો."
-
 #: ../../magic/src/toothpaste.c:65
 msgid "Toothpaste"
 msgstr ""
@@ -1112,15 +1125,41 @@ msgstr ""
 msgid "Click and drag to squirt toothpaste onto the image."
 msgstr "તમારા ચિત્રને ખસેડવા માટે માઉસને ક્લિક કરો અને આજુ-બાજુ ખસેડો."
 
-#: ../../magic/src/waves.c:78
+#: ../../magic/src/tv.c:72
+msgid "TV"
+msgstr ""
+
+#: ../../magic/src/tv.c:74
+#, fuzzy
+msgid "Click to make your picture look like it's on television."
+msgstr "તમારા સમગ્ર ચિત્રને કાચની તકતીઓ વડે ઢાંકી દેવા માટે ક્લિક કરો."
+
+#: ../../magic/src/waves.c:75
 msgid "Waves"
 msgstr "મોજાઓ"
 
-#: ../../magic/src/waves.c:84
+#: ../../magic/src/waves.c:76
+#, fuzzy
+msgid "Wavelets"
+msgstr "મોજાઓ"
+
+#: ../../magic/src/waves.c:83
+#, fuzzy
 msgid ""
-"Click to make the picture wavy. Click toward the top for shorter waves, the "
-"bottom for taller waves, the left for small waves, and the right for long "
-"waves."
+"Click to make the picture horizontally wavy. Click toward the top for "
+"shorter waves, the bottom for taller waves, the left for small waves, and "
+"the right for long waves."
+msgstr ""
+"ચિત્રને મોજાંઓ વાળું બનાવવા માટે ક્લિક કરો. ઉપરની તરફ ક્લિક કરતાં મોજાં ટૂંકા થશે; નીચેની "
+"તરફ કરતાં લાંબા થશે. ડાબી બાજુ ક્લિક કરતાં મોજા નાનાં થશે; જ્યારે જમણી બાજુ ક્લિક કરતાં "
+"મોજાં પહોળા થશે."
+
+#: ../../magic/src/waves.c:84
+#, fuzzy
+msgid ""
+"Click to make the picture vertically wavy. Click toward the top for shorter "
+"waves, the bottom for taller waves, the left for small waves, and the right "
+"for long waves."
 msgstr ""
 "ચિત્રને મોજાંઓ વાળું બનાવવા માટે ક્લિક કરો. ઉપરની તરફ ક્લિક કરતાં મોજાં ટૂંકા થશે; નીચેની "
 "તરફ કરતાં લાંબા થશે. ડાબી બાજુ ક્લિક કરતાં મોજા નાનાં થશે; જ્યારે જમણી બાજુ ક્લિક કરતાં "

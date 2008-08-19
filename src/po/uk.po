@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TuxPaint\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-08-18 15:03-0700\n"
+"POT-Creation-Date: 2008-08-19 11:51-0700\n"
 "PO-Revision-Date: 2008-06-17 04:01+0300\n"
 "Last-Translator: Serhij Dubyk <serhijdubyk@gmail.com>\n"
 "Language-Team: Serhij Dubyk <serhijdubyk@gmail.com>\n"
@@ -831,6 +831,14 @@ msgstr "Залити"
 msgid "Click in the picture to fill that area with color."
 msgstr "Клацніть, щоб заповнити цю область кольором."
 
+#: ../../magic/src/fisheye.c:77
+msgid "Fisheye"
+msgstr ""
+
+#: ../../magic/src/fisheye.c:79
+msgid "Select an area of the image to create fisheye effect"
+msgstr ""
+
 #: ../../magic/src/flower.c:124
 msgid "Flower"
 msgstr "Квітка"
@@ -965,6 +973,20 @@ msgstr "Клацніть та посовгайте по малюнку, щоб �
 msgid "Click to add noise to the entire image."
 msgstr "Клацніть, щоб зробити зеркальне відображення малюнка."
 
+#: ../../magic/src/puzzle.c:77
+#, fuzzy
+msgid "Puzzle"
+msgstr "Пурпурний!"
+
+#: ../../magic/src/puzzle.c:84
+msgid "Select the area of image where would you like to make a mosaic"
+msgstr ""
+
+#: ../../magic/src/puzzle.c:85
+#, fuzzy
+msgid "Click to make mosaic in fullscreen mode"
+msgstr "Клацніть, щоб зробити зеркальне відображення малюнка."
+
 #: ../../magic/src/rails.c:75
 #, fuzzy
 msgid "Rails"
@@ -974,6 +996,14 @@ msgstr "Брижі"
 #, fuzzy
 msgid "Click and drag to draw train track rails on your picture."
 msgstr "Клацніть та поводіть пучком світла по Вашому малюнку."
+
+#: ../../magic/src/rainbow.c:107
+msgid "Rainbow"
+msgstr "Веселка"
+
+#: ../../magic/src/rainbow.c:114
+msgid "You can draw in rainbow colors!"
+msgstr "Ви можете малювати барвами веселки!"
 
 #: ../../magic/src/rain.c:64
 #, fuzzy
@@ -989,14 +1019,6 @@ msgstr "Клацніть, щоб зробити зеркальне відобр�
 #, fuzzy
 msgid "Click to cover the image with rain drops."
 msgstr "Клацніть, щоб зробити зеркальне відображення малюнка."
-
-#: ../../magic/src/rainbow.c:107
-msgid "Rainbow"
-msgstr "Веселка"
-
-#: ../../magic/src/rainbow.c:114
-msgid "You can draw in rainbow colors!"
-msgstr "Ви можете малювати барвами веселки!"
 
 #: ../../magic/src/ripples.c:81
 msgid "Ripples"
@@ -1131,15 +1153,6 @@ msgstr ""
 "Клацніть та посовгайте по малюнку, щоб перетворити його частину на комікс чи "
 "мультиплікацію."
 
-#: ../../magic/src/tv.c:72
-msgid "TV"
-msgstr ""
-
-#: ../../magic/src/tv.c:74
-#, fuzzy
-msgid "Click to make your picture look like it's on television."
-msgstr "Клацніть та посовгайте по малюнку, щоб змінити колір малюнка."
-
 #: ../../magic/src/toothpaste.c:65
 msgid "Toothpaste"
 msgstr ""
@@ -1149,15 +1162,41 @@ msgstr ""
 msgid "Click and drag to squirt toothpaste onto the image."
 msgstr "Клацніть та тягніть щоб зсунути Ваш малюнок відносно полотнини."
 
-#: ../../magic/src/waves.c:78
+#: ../../magic/src/tv.c:72
+msgid "TV"
+msgstr ""
+
+#: ../../magic/src/tv.c:74
+#, fuzzy
+msgid "Click to make your picture look like it's on television."
+msgstr "Клацніть та посовгайте по малюнку, щоб змінити колір малюнка."
+
+#: ../../magic/src/waves.c:75
 msgid "Waves"
 msgstr "Хвильки"
 
-#: ../../magic/src/waves.c:84
+#: ../../magic/src/waves.c:76
+#, fuzzy
+msgid "Wavelets"
+msgstr "Хвильки"
+
+#: ../../magic/src/waves.c:83
+#, fuzzy
 msgid ""
-"Click to make the picture wavy. Click toward the top for shorter waves, the "
-"bottom for taller waves, the left for small waves, and the right for long "
-"waves."
+"Click to make the picture horizontally wavy. Click toward the top for "
+"shorter waves, the bottom for taller waves, the left for small waves, and "
+"the right for long waves."
+msgstr ""
+"Клацніть, щоб зробити малюнок хвилястим. Щоб зробити коротші хвильки, "
+"клацніть ближче до верху, щоб були високі хвилі - тягніться до низу, зліва "
+"матимете маленькі хвильки, а  справа - довгі хвилі."
+
+#: ../../magic/src/waves.c:84
+#, fuzzy
+msgid ""
+"Click to make the picture vertically wavy. Click toward the top for shorter "
+"waves, the bottom for taller waves, the left for small waves, and the right "
+"for long waves."
 msgstr ""
 "Клацніть, щоб зробити малюнок хвилястим. Щоб зробити коротші хвильки, "
 "клацніть ближче до верху, щоб були високі хвилі - тягніться до низу, зліва "

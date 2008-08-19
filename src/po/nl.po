@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint 0.9.17\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-08-18 15:03-0700\n"
+"POT-Creation-Date: 2008-08-19 11:51-0700\n"
 "PO-Revision-Date: 2007-07-02 11:25+0200\n"
 "Last-Translator: Freek de Kruijf <f.de.kruijf@hetnet.nl>\n"
 "Language-Team: Dutch <vertaling@vrijschrift.org>\n"
@@ -833,6 +833,14 @@ msgstr "Opvullen"
 msgid "Click in the picture to fill that area with color."
 msgstr "Klik in de tekening om dat gebied met kleur te vullen."
 
+#: ../../magic/src/fisheye.c:77
+msgid "Fisheye"
+msgstr ""
+
+#: ../../magic/src/fisheye.c:79
+msgid "Select an area of the image to create fisheye effect"
+msgstr ""
+
 #: ../../magic/src/flower.c:124
 msgid "Flower"
 msgstr ""
@@ -969,6 +977,20 @@ msgstr "Klik en beweeg de muis in het rond om de tekening te vervagen."
 msgid "Click to add noise to the entire image."
 msgstr "Klik om een spiegelbeeld te maken!"
 
+#: ../../magic/src/puzzle.c:77
+#, fuzzy
+msgid "Puzzle"
+msgstr "Paars!"
+
+#: ../../magic/src/puzzle.c:84
+msgid "Select the area of image where would you like to make a mosaic"
+msgstr ""
+
+#: ../../magic/src/puzzle.c:85
+#, fuzzy
+msgid "Click to make mosaic in fullscreen mode"
+msgstr "Klik om een spiegelbeeld te maken!"
+
 #: ../../magic/src/rails.c:75
 msgid "Rails"
 msgstr ""
@@ -977,6 +999,14 @@ msgstr ""
 #, fuzzy
 msgid "Click and drag to draw train track rails on your picture."
 msgstr "Klik en beweeg de muis in het rond om de tekening te vervagen."
+
+#: ../../magic/src/rainbow.c:107
+msgid "Rainbow"
+msgstr "Regenboog"
+
+#: ../../magic/src/rainbow.c:114
+msgid "You can draw in rainbow colors!"
+msgstr "Je kan in regenboog-kleuren tekenen!"
 
 #: ../../magic/src/rain.c:64
 #, fuzzy
@@ -992,14 +1022,6 @@ msgstr "Klik om een spiegelbeeld te maken!"
 #, fuzzy
 msgid "Click to cover the image with rain drops."
 msgstr "Klik om een spiegelbeeld te maken!"
-
-#: ../../magic/src/rainbow.c:107
-msgid "Rainbow"
-msgstr "Regenboog"
-
-#: ../../magic/src/rainbow.c:114
-msgid "You can draw in rainbow colors!"
-msgstr "Je kan in regenboog-kleuren tekenen!"
 
 #: ../../magic/src/ripples.c:81
 msgid "Ripples"
@@ -1134,6 +1156,15 @@ msgid "Click to threshold the entire image into pure colour and white regions."
 msgstr ""
 "Klik en beweeg de muis in het rond om de tekening te veranderen in een strip."
 
+#: ../../magic/src/toothpaste.c:65
+msgid "Toothpaste"
+msgstr ""
+
+#: ../../magic/src/toothpaste.c:68
+#, fuzzy
+msgid "Click and drag to squirt toothpaste onto the image."
+msgstr "Klik en beweeg de muis in het rond om de tekening te vervagen."
+
 #: ../../magic/src/tv.c:72
 msgid "TV"
 msgstr ""
@@ -1144,25 +1175,28 @@ msgid "Click to make your picture look like it's on television."
 msgstr ""
 "Klik en beweeg de muis in het rond om de kleur van de tekening te veranderen."
 
-#: ../../magic/src/toothpaste.c:65
-msgid "Toothpaste"
-msgstr ""
-
-#: ../../magic/src/toothpaste.c:68
-#, fuzzy
-msgid "Click and drag to squirt toothpaste onto the image."
-msgstr "Klik en beweeg de muis in het rond om de tekening te vervagen."
-
-#: ../../magic/src/waves.c:78
+#: ../../magic/src/waves.c:75
 #, fuzzy
 msgid "Waves"
 msgstr "Opslaan"
 
+#: ../../magic/src/waves.c:76
+#, fuzzy
+msgid "Wavelets"
+msgstr "Opslaan"
+
+#: ../../magic/src/waves.c:83
+msgid ""
+"Click to make the picture horizontally wavy. Click toward the top for "
+"shorter waves, the bottom for taller waves, the left for small waves, and "
+"the right for long waves."
+msgstr ""
+
 #: ../../magic/src/waves.c:84
 msgid ""
-"Click to make the picture wavy. Click toward the top for shorter waves, the "
-"bottom for taller waves, the left for small waves, and the right for long "
-"waves."
+"Click to make the picture vertically wavy. Click toward the top for shorter "
+"waves, the bottom for taller waves, the left for small waves, and the right "
+"for long waves."
 msgstr ""
 
 #, fuzzy

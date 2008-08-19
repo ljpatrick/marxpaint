@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: cy\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-08-18 15:03-0700\n"
+"POT-Creation-Date: 2008-08-19 11:51-0700\n"
 "PO-Revision-Date: 2004-09-21 14:28+0100\n"
 "Last-Translator: Kyfieithu <kyfieithu@dotmon.com>\n"
 "Language-Team: Cymraeg <cy@li.org>\n"
@@ -839,6 +839,14 @@ msgstr "Llenwi"
 msgid "Click in the picture to fill that area with color."
 msgstr "Clicia yn y llun i lenwi'r ardal yno efo lliw."
 
+#: ../../magic/src/fisheye.c:77
+msgid "Fisheye"
+msgstr ""
+
+#: ../../magic/src/fisheye.c:79
+msgid "Select an area of the image to create fisheye effect"
+msgstr ""
+
 #: ../../magic/src/flower.c:124
 msgid "Flower"
 msgstr ""
@@ -975,6 +983,20 @@ msgstr "Clicia a symuda'r llygoden o gwmpas i bylu'r llun."
 msgid "Click to add noise to the entire image."
 msgstr "Clicia i adlewyrchu'r llun."
 
+#: ../../magic/src/puzzle.c:77
+#, fuzzy
+msgid "Puzzle"
+msgstr "Piws!"
+
+#: ../../magic/src/puzzle.c:84
+msgid "Select the area of image where would you like to make a mosaic"
+msgstr ""
+
+#: ../../magic/src/puzzle.c:85
+#, fuzzy
+msgid "Click to make mosaic in fullscreen mode"
+msgstr "Clicia i adlewyrchu'r llun."
+
 #: ../../magic/src/rails.c:75
 msgid "Rails"
 msgstr ""
@@ -983,6 +1005,14 @@ msgstr ""
 #, fuzzy
 msgid "Click and drag to draw train track rails on your picture."
 msgstr "Clicia a symuda'r llygoden i deneuo'r llun."
+
+#: ../../magic/src/rainbow.c:107
+msgid "Rainbow"
+msgstr "Enfys!"
+
+#: ../../magic/src/rainbow.c:114
+msgid "You can draw in rainbow colors!"
+msgstr "Mi alli di dynnu llun yn lliwiau'r enfys!"
 
 #: ../../magic/src/rain.c:64
 #, fuzzy
@@ -998,14 +1028,6 @@ msgstr "Clicia i adlewyrchu'r llun."
 #, fuzzy
 msgid "Click to cover the image with rain drops."
 msgstr "Clicia i adlewyrchu'r llun."
-
-#: ../../magic/src/rainbow.c:107
-msgid "Rainbow"
-msgstr "Enfys!"
-
-#: ../../magic/src/rainbow.c:114
-msgid "You can draw in rainbow colors!"
-msgstr "Mi alli di dynnu llun yn lliwiau'r enfys!"
 
 #: ../../magic/src/ripples.c:81
 msgid "Ripples"
@@ -1142,15 +1164,6 @@ msgid "Click to threshold the entire image into pure colour and white regions."
 msgstr ""
 "Clicia a symuda'r llygoden o gwmpas i dro'i llun i mewn i ddarlun sialc."
 
-#: ../../magic/src/tv.c:72
-msgid "TV"
-msgstr ""
-
-#: ../../magic/src/tv.c:74
-#, fuzzy
-msgid "Click to make your picture look like it's on television."
-msgstr "Clicia a symuda'r llygoden o gwmpas i wneud blociau ar liwiau'r llun."
-
 #: ../../magic/src/toothpaste.c:65
 msgid "Toothpaste"
 msgstr ""
@@ -1160,16 +1173,37 @@ msgstr ""
 msgid "Click and drag to squirt toothpaste onto the image."
 msgstr "Clicia a symuda'r llygoden i deneuo'r llun."
 
-#: ../../magic/src/waves.c:78
+#: ../../magic/src/tv.c:72
+msgid "TV"
+msgstr ""
+
+#: ../../magic/src/tv.c:74
+#, fuzzy
+msgid "Click to make your picture look like it's on television."
+msgstr "Clicia a symuda'r llygoden o gwmpas i wneud blociau ar liwiau'r llun."
+
+#: ../../magic/src/waves.c:75
 #, fuzzy
 msgid "Waves"
 msgstr "Cadw"
 
+#: ../../magic/src/waves.c:76
+#, fuzzy
+msgid "Wavelets"
+msgstr "Cadw"
+
+#: ../../magic/src/waves.c:83
+msgid ""
+"Click to make the picture horizontally wavy. Click toward the top for "
+"shorter waves, the bottom for taller waves, the left for small waves, and "
+"the right for long waves."
+msgstr ""
+
 #: ../../magic/src/waves.c:84
 msgid ""
-"Click to make the picture wavy. Click toward the top for shorter waves, the "
-"bottom for taller waves, the left for small waves, and the right for long "
-"waves."
+"Click to make the picture vertically wavy. Click toward the top for shorter "
+"waves, the bottom for taller waves, the left for small waves, and the right "
+"for long waves."
 msgstr ""
 
 #, fuzzy

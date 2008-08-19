@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 0.9.16\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-08-18 15:03-0700\n"
+"POT-Creation-Date: 2008-08-19 11:51-0700\n"
 "PO-Revision-Date: 2006-09-22 01:42+0200\n"
 "Last-Translator: Dwayne Bailey <dwayne@translate.org.za>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -831,6 +831,14 @@ msgstr "Zalisa"
 msgid "Click in the picture to fill that area with color."
 msgstr "Nqomfa emfanekisweni ukuzalisa indawo ngombala."
 
+#: ../../magic/src/fisheye.c:77
+msgid "Fisheye"
+msgstr ""
+
+#: ../../magic/src/fisheye.c:79
+msgid "Select an area of the image to create fisheye effect"
+msgstr ""
+
 #: ../../magic/src/flower.c:124
 msgid "Flower"
 msgstr ""
@@ -966,6 +974,20 @@ msgstr "Nqomfa ushenxashenxise impuku ukuze udyobhe umfanekiso."
 msgid "Click to add noise to the entire image."
 msgstr "Nqomfa ukuze wenze umfuziselo wesipili."
 
+#: ../../magic/src/puzzle.c:77
+#, fuzzy
+msgid "Puzzle"
+msgstr "Bumfusa!"
+
+#: ../../magic/src/puzzle.c:84
+msgid "Select the area of image where would you like to make a mosaic"
+msgstr ""
+
+#: ../../magic/src/puzzle.c:85
+#, fuzzy
+msgid "Click to make mosaic in fullscreen mode"
+msgstr "Nqomfa ukuze wenze umfuziselo wesipili."
+
 #: ../../magic/src/rails.c:75
 msgid "Rails"
 msgstr ""
@@ -974,6 +996,14 @@ msgstr ""
 #, fuzzy
 msgid "Click and drag to draw train track rails on your picture."
 msgstr "Nqomfa ushenxashenxise impuku ukuze udyobhe umfanekiso."
+
+#: ../../magic/src/rainbow.c:107
+msgid "Rainbow"
+msgstr "Umnyama"
+
+#: ../../magic/src/rainbow.c:114
+msgid "You can draw in rainbow colors!"
+msgstr "Ungazoba ngemibala yomnyama!"
 
 #: ../../magic/src/rain.c:64
 #, fuzzy
@@ -989,14 +1019,6 @@ msgstr "Nqomfa ukuze wenze umfuziselo wesipili."
 #, fuzzy
 msgid "Click to cover the image with rain drops."
 msgstr "Nqomfa ukuze wenze umfuziselo wesipili."
-
-#: ../../magic/src/rainbow.c:107
-msgid "Rainbow"
-msgstr "Umnyama"
-
-#: ../../magic/src/rainbow.c:114
-msgid "You can draw in rainbow colors!"
-msgstr "Ungazoba ngemibala yomnyama!"
 
 #: ../../magic/src/ripples.c:81
 msgid "Ripples"
@@ -1131,15 +1153,6 @@ msgid "Click to threshold the entire image into pure colour and white regions."
 msgstr ""
 "Nqomfa ushenxashenxise impuku ukuze uguqule umfanekiso ufane noyiliweyo."
 
-#: ../../magic/src/tv.c:72
-msgid "TV"
-msgstr ""
-
-#: ../../magic/src/tv.c:74
-#, fuzzy
-msgid "Click to make your picture look like it's on television."
-msgstr "Nqomfa ushenxashenxise impuku ukuze uguqule umbala womfanekiso."
-
 #: ../../magic/src/toothpaste.c:65
 msgid "Toothpaste"
 msgstr ""
@@ -1149,16 +1162,37 @@ msgstr ""
 msgid "Click and drag to squirt toothpaste onto the image."
 msgstr "Nqomfa ushenxashenxise impuku ukuze udyobhe umfanekiso."
 
-#: ../../magic/src/waves.c:78
+#: ../../magic/src/tv.c:72
+msgid "TV"
+msgstr ""
+
+#: ../../magic/src/tv.c:74
+#, fuzzy
+msgid "Click to make your picture look like it's on television."
+msgstr "Nqomfa ushenxashenxise impuku ukuze uguqule umbala womfanekiso."
+
+#: ../../magic/src/waves.c:75
 #, fuzzy
 msgid "Waves"
 msgstr "Gcina"
 
+#: ../../magic/src/waves.c:76
+#, fuzzy
+msgid "Wavelets"
+msgstr "Gcina"
+
+#: ../../magic/src/waves.c:83
+msgid ""
+"Click to make the picture horizontally wavy. Click toward the top for "
+"shorter waves, the bottom for taller waves, the left for small waves, and "
+"the right for long waves."
+msgstr ""
+
 #: ../../magic/src/waves.c:84
 msgid ""
-"Click to make the picture wavy. Click toward the top for shorter waves, the "
-"bottom for taller waves, the left for small waves, and the right for long "
-"waves."
+"Click to make the picture vertically wavy. Click toward the top for shorter "
+"waves, the bottom for taller waves, the left for small waves, and the right "
+"for long waves."
 msgstr ""
 
 #, fuzzy
