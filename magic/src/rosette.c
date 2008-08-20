@@ -204,3 +204,4 @@ int rosette_modes(magic_api * api, int which)
 {
   return(MODE_PAINT);
 }
+
