@@ -62,7 +62,7 @@ SDL_Surface * confetti_get_icon(magic_api * api, int which)
 
 char * confetti_get_name(magic_api * api, int which) { return strdup(gettext_noop("Confetti")); }
 
-char * confetti_get_description(magic_api * api, int which, int mode) { return strdup(gettext_noop("Click to throw a confetti!")); }
+char * confetti_get_description(magic_api * api, int which, int mode) { return strdup(gettext_noop("Click to throw confetti!")); }
 
 int confetti_requires_colors(magic_api * api, int which) { return 1; }
 
