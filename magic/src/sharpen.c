@@ -70,7 +70,7 @@ const char * sharpen_icon_filenames[sharpen_NUM_TOOLS] = {
   "flip.png"
 };
 const char * sharpen_names[sharpen_NUM_TOOLS] = {
-  gettext_noop("Trace Contour"),
+  gettext_noop("Edges"),
   gettext_noop("Sharpen"),
   gettext_noop("Silhouette")
 };
