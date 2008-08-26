@@ -1,7 +1,7 @@
 /*
   tint.c
 
-  tint, Tin the image into one colour or threshold it into pure colour and white
+  tint, Tint the image into one color or threshold it into pure color and white
   Tux Paint - A simple drawing program for children.
 
   Credits: Andrew Corcoran <akanewbie@gmail.com>
@@ -69,9 +69,9 @@ const char * tint_names[tint_NUM_TOOLS] = {
 };
 const char * tint_descs[tint_NUM_TOOLS][2] = {
   {gettext_noop("Click and move the mouse around to change the color of parts of the picture."),
-    gettext_noop("Click to change the colour of the entire image."),},
-  {gettext_noop("Click and move the mouse around to threshold the image into pure colour and white regions."),
-    gettext_noop("Click to threshold the entire image into pure colour and white regions.")}
+    gettext_noop("Click to change the color of the entire image."),},
+  {gettext_noop("Click and move the mouse around to turn the image into pure color and white regions."),
+    gettext_noop("Click to turn the entire image into pure color and white regions.")}
 };
 
 Uint32 tint_api_version(void) { return(TP_MAGIC_API_VERSION); }
