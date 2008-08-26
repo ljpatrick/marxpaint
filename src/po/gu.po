@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-08-19 11:51-0700\n"
+"POT-Creation-Date: 2008-08-26 05:12+0100\n"
 "PO-Revision-Date: 2008-07-14 12:17+0530\n"
 "Last-Translator: Kartik Mistry <kartik.mistry@gmail.com>\n"
 "Language-Team: Gujarati <team@utkarsh.org>\n"
@@ -758,7 +758,7 @@ msgid "Confetti"
 msgstr ""
 
 #: ../../magic/src/confetti.c:65
-msgid "Click to throw a confetti!"
+msgid "Click to throw confetti!"
 msgstr ""
 
 #: ../../magic/src/distortion.c:121
@@ -766,7 +766,8 @@ msgid "Distortion"
 msgstr "અસ્તવ્યસ્ત"
 
 #: ../../magic/src/distortion.c:129
-msgid "Click and drag the mouse to cause a distortion in your picture."
+#, fuzzy
+msgid "Click and drag the mouse to cause distortion in your picture."
 msgstr "તમારા ચિત્રમાં અસ્તવ્યસ્તતા લાવવા માટે માઉસને ક્લિક કરીને ખેંચો."
 
 #: ../../magic/src/emboss.c:76
@@ -814,7 +815,7 @@ msgid "Fisheye"
 msgstr ""
 
 #: ../../magic/src/fisheye.c:79
-msgid "Select an area of the image to create fisheye effect"
+msgid "Select an area of the image to create the fisheye effect"
 msgstr ""
 
 #: ../../magic/src/flower.c:124
@@ -1015,8 +1016,8 @@ msgid "You can draw just like Picasso!"
 msgstr "તમે મેઘધનુષ રંગોમાં દોરી શકો છો!"
 
 #: ../../magic/src/sharpen.c:73
-msgid "Trace Contour"
-msgstr "કોન્ટુરને શોધો"
+msgid "Edges"
+msgstr ""
 
 #: ../../magic/src/sharpen.c:74
 msgid "Sharpen"
@@ -1100,20 +1101,20 @@ msgstr "ચિત્રનાં રંગનાં ભાગોમાં ફે
 
 #: ../../magic/src/tint.c:72
 #, fuzzy
-msgid "Click to change the colour of the entire image."
+msgid "Click to change the color of the entire image."
 msgstr "ચિત્રમાં રહેલ વસ્તુઓનાં ખૂણાઓ શોધવા ક્લિક કરો."
 
 #: ../../magic/src/tint.c:73
 #, fuzzy
 msgid ""
-"Click and move the mouse around to threshold the image into pure colour and "
-"white regions."
+"Click and move the mouse around to turn the image into pure color and white "
+"regions."
 msgstr ""
 "ચિત્રને કાળાં અને સફેદ વિસ્તારોની મર્યાદામાં ફેરવવા માટે ક્લિક કરો અને માઉસ આજુબાજુ ખસેડો."
 
 #: ../../magic/src/tint.c:74
 #, fuzzy
-msgid "Click to threshold the entire image into pure colour and white regions."
+msgid "Click to turn the entire image into pure color and white regions."
 msgstr "ચિત્રને કાળાં અને સફેદ વિસ્તારોની મર્યાદામાં ફેરવવા ક્લિક કરો."
 
 #: ../../magic/src/toothpaste.c:65
@@ -1164,6 +1165,9 @@ msgstr ""
 "ચિત્રને મોજાંઓ વાળું બનાવવા માટે ક્લિક કરો. ઉપરની તરફ ક્લિક કરતાં મોજાં ટૂંકા થશે; નીચેની "
 "તરફ કરતાં લાંબા થશે. ડાબી બાજુ ક્લિક કરતાં મોજા નાનાં થશે; જ્યારે જમણી બાજુ ક્લિક કરતાં "
 "મોજાં પહોળા થશે."
+
+#~ msgid "Trace Contour"
+#~ msgstr "કોન્ટુરને શોધો"
 
 #~ msgid "Black & White"
 #~ msgstr "કાળું અને ધોળું"

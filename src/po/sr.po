@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint 0.9.15rc1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-08-19 11:51-0700\n"
+"POT-Creation-Date: 2008-08-26 05:12+0100\n"
 "PO-Revision-Date: 2006-09-04 20:03-0400\n"
 "Last-Translator: Aleksandar Jelenak <jelenak@verizon.net>\n"
 "Language-Team: Serbian <gnu@prevod.org>\n"
@@ -863,7 +863,7 @@ msgid "Confetti"
 msgstr ""
 
 #: ../../magic/src/confetti.c:65
-msgid "Click to throw a confetti!"
+msgid "Click to throw confetti!"
 msgstr ""
 
 #: ../../magic/src/distortion.c:121
@@ -873,7 +873,7 @@ msgstr ""
 #
 #: ../../magic/src/distortion.c:129
 #, fuzzy
-msgid "Click and drag the mouse to cause a distortion in your picture."
+msgid "Click and drag the mouse to cause distortion in your picture."
 msgstr "Кликни и мрдај мишем да би замаглио слику."
 
 #: ../../magic/src/emboss.c:76
@@ -933,7 +933,7 @@ msgid "Fisheye"
 msgstr ""
 
 #: ../../magic/src/fisheye.c:79
-msgid "Select an area of the image to create fisheye effect"
+msgid "Select an area of the image to create the fisheye effect"
 msgstr ""
 
 #: ../../magic/src/flower.c:124
@@ -1177,7 +1177,7 @@ msgid "You can draw just like Picasso!"
 msgstr "Можеш цртати у дугиним бојама!"
 
 #: ../../magic/src/sharpen.c:73
-msgid "Trace Contour"
+msgid "Edges"
 msgstr ""
 
 #
@@ -1277,21 +1277,21 @@ msgstr "Кликни и мрдај мишем да би замаглио сли�
 #
 #: ../../magic/src/tint.c:72
 #, fuzzy
-msgid "Click to change the colour of the entire image."
+msgid "Click to change the color of the entire image."
 msgstr "Кликни и мрдај мишем да би замаглио слику."
 
 #
 #: ../../magic/src/tint.c:73
 #, fuzzy
 msgid ""
-"Click and move the mouse around to threshold the image into pure colour and "
-"white regions."
+"Click and move the mouse around to turn the image into pure color and white "
+"regions."
 msgstr "Кликни и шетај миша да би претворио слику у цртеж."
 
 #
 #: ../../magic/src/tint.c:74
 #, fuzzy
-msgid "Click to threshold the entire image into pure colour and white regions."
+msgid "Click to turn the entire image into pure color and white regions."
 msgstr "Кликни и шетај миша да би претворио слику у цртеж."
 
 #: ../../magic/src/toothpaste.c:65

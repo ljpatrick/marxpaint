@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Tuxpaint 0.9.2pre\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-08-19 11:51-0700\n"
+"POT-Creation-Date: 2008-08-26 05:12+0100\n"
 "PO-Revision-Date: 2003-01-03 21:32-0500\n"
 "Last-Translator: Laurentiu Buzdugan <buzdugan@voyager.net>\n"
 "Language-Team: Romanian <ro@li.org>\n"
@@ -799,7 +799,7 @@ msgid "Confetti"
 msgstr ""
 
 #: ../../magic/src/confetti.c:65
-msgid "Click to throw a confetti!"
+msgid "Click to throw confetti!"
 msgstr ""
 
 #: ../../magic/src/distortion.c:121
@@ -808,7 +808,7 @@ msgstr ""
 
 #: ../../magic/src/distortion.c:129
 #, fuzzy
-msgid "Click and drag the mouse to cause a distortion in your picture."
+msgid "Click and drag the mouse to cause distortion in your picture."
 msgstr "Clic ºi miºcã maus-ul pentru a subþia desenul"
 
 #: ../../magic/src/emboss.c:76
@@ -862,7 +862,7 @@ msgid "Fisheye"
 msgstr ""
 
 #: ../../magic/src/fisheye.c:79
-msgid "Select an area of the image to create fisheye effect"
+msgid "Select an area of the image to create the fisheye effect"
 msgstr ""
 
 #: ../../magic/src/flower.c:124
@@ -1079,7 +1079,7 @@ msgid "You can draw just like Picasso!"
 msgstr "Poþi desena în culorile curcubeului!"
 
 #: ../../magic/src/sharpen.c:73
-msgid "Trace Contour"
+msgid "Edges"
 msgstr ""
 
 #: ../../magic/src/sharpen.c:74
@@ -1169,20 +1169,20 @@ msgstr "Clic ºi miºcã maus-ul pentru a face imaginea neclarã"
 
 #: ../../magic/src/tint.c:72
 #, fuzzy
-msgid "Click to change the colour of the entire image."
+msgid "Click to change the color of the entire image."
 msgstr "Clic ºi miºcã maus-ul pentru a face imaginea neclarã"
 
 #: ../../magic/src/tint.c:73
 #, fuzzy
 msgid ""
-"Click and move the mouse around to threshold the image into pure colour and "
-"white regions."
+"Click and move the mouse around to turn the image into pure color and white "
+"regions."
 msgstr ""
 "Clic ºi miºcã maus-ul pentru a schimba desenul într-un desen din cretã."
 
 #: ../../magic/src/tint.c:74
 #, fuzzy
-msgid "Click to threshold the entire image into pure colour and white regions."
+msgid "Click to turn the entire image into pure color and white regions."
 msgstr ""
 "Clic ºi miºcã maus-ul pentru a schimba desenul într-un desen din cretã."
 

@@ -17,7 +17,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Tuxpaint cvs 2008-08-02\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-08-19 11:51-0700\n"
+"POT-Creation-Date: 2008-08-26 05:12+0100\n"
 "PO-Revision-Date: 2008-08-02 16:12+0200\n"
 "Last-Translator: Pere Pujal i Carabantes <pere@fornol.no-ip.org>\n"
 "Language-Team: Català <linux-ca@chanae.alphanet.ch>\n"
@@ -775,7 +775,8 @@ msgid "Confetti"
 msgstr "Confeti"
 
 #: ../../magic/src/confetti.c:65
-msgid "Click to throw a confetti!"
+#, fuzzy
+msgid "Click to throw confetti!"
 msgstr "Cliqueu per llançar paperets!"
 
 #: ../../magic/src/distortion.c:121
@@ -783,7 +784,8 @@ msgid "Distortion"
 msgstr "Distorsió"
 
 #: ../../magic/src/distortion.c:129
-msgid "Click and drag the mouse to cause a distortion in your picture."
+#, fuzzy
+msgid "Click and drag the mouse to cause distortion in your picture."
 msgstr ""
 "Feu clic i arrossegueu el ratolí per provocar una distorsió en el dibuix."
 
@@ -832,7 +834,7 @@ msgid "Fisheye"
 msgstr ""
 
 #: ../../magic/src/fisheye.c:79
-msgid "Select an area of the image to create fisheye effect"
+msgid "Select an area of the image to create the fisheye effect"
 msgstr ""
 
 #: ../../magic/src/flower.c:124
@@ -1035,8 +1037,8 @@ msgid "You can draw just like Picasso!"
 msgstr "Podeu pintar amb els colors de l'arc de Sant Martí!"
 
 #: ../../magic/src/sharpen.c:73
-msgid "Trace Contour"
-msgstr "Vora"
+msgid "Edges"
+msgstr ""
 
 #: ../../magic/src/sharpen.c:74
 msgid "Sharpen"
@@ -1113,18 +1115,21 @@ msgid ""
 msgstr "Feu clic i moveu el ratolí per canviar el color de parts del dibuix."
 
 #: ../../magic/src/tint.c:72
-msgid "Click to change the colour of the entire image."
+#, fuzzy
+msgid "Click to change the color of the entire image."
 msgstr "Cliqueu per canviar els colors de la imatge."
 
 #: ../../magic/src/tint.c:73
+#, fuzzy
 msgid ""
-"Click and move the mouse around to threshold the image into pure colour and "
-"white regions."
+"Click and move the mouse around to turn the image into pure color and white "
+"regions."
 msgstr ""
 "Cliqueu i moveu el ratolí per convertir parts del dibuix a color/blanc."
 
 #: ../../magic/src/tint.c:74
-msgid "Click to threshold the entire image into pure colour and white regions."
+#, fuzzy
+msgid "Click to turn the entire image into pure color and white regions."
 msgstr "Cliqueu per convertir la imatge a color/blanc."
 
 #: ../../magic/src/toothpaste.c:65
@@ -1173,6 +1178,9 @@ msgid ""
 msgstr ""
 "Feu clic dins la imatge per aplicar-hi ones. Clic a dalt fa ones curtes, a "
 "baix ones altes, a l'esquerra ones petites, a la dreta ones llargues."
+
+#~ msgid "Trace Contour"
+#~ msgstr "Vora"
 
 #~ msgid "Black & White"
 #~ msgstr "Blanc i negre"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: fr\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-08-19 11:51-0700\n"
+"POT-Creation-Date: 2008-08-26 05:12+0100\n"
 "PO-Revision-Date: 2004-05-30 21:20-0700\n"
 "Last-Translator: jimmy <jacques.chion@orange.fr>\n"
 "Language-Team:  <fr@li.org>\n"
@@ -771,7 +771,8 @@ msgid "Confetti"
 msgstr "Confettis"
 
 #: ../../magic/src/confetti.c:65
-msgid "Click to throw a confetti!"
+#, fuzzy
+msgid "Click to throw confetti!"
 msgstr "Clique pour lancer des confettis !"
 
 #: ../../magic/src/distortion.c:121
@@ -779,7 +780,8 @@ msgid "Distortion"
 msgstr "Distorsion"
 
 #: ../../magic/src/distortion.c:129
-msgid "Click and drag the mouse to cause a distortion in your picture."
+#, fuzzy
+msgid "Click and drag the mouse to cause distortion in your picture."
 msgstr "Clique et déplace la souris pour créer des déformations."
 
 #: ../../magic/src/emboss.c:76
@@ -831,7 +833,7 @@ msgid "Fisheye"
 msgstr ""
 
 #: ../../magic/src/fisheye.c:79
-msgid "Select an area of the image to create fisheye effect"
+msgid "Select an area of the image to create the fisheye effect"
 msgstr ""
 
 #: ../../magic/src/flower.c:124
@@ -1046,8 +1048,8 @@ msgid "You can draw just like Picasso!"
 msgstr "Tu peux dessiner avec les couleurs de l'arc-en-ciel !"
 
 #: ../../magic/src/sharpen.c:73
-msgid "Trace Contour"
-msgstr "Contour"
+msgid "Edges"
+msgstr ""
 
 #
 #: ../../magic/src/sharpen.c:74
@@ -1133,20 +1135,23 @@ msgstr "Clique et déplace la souris pour changer la couleur localement."
 
 #
 #: ../../magic/src/tint.c:72
-msgid "Click to change the colour of the entire image."
+#, fuzzy
+msgid "Click to change the color of the entire image."
 msgstr "Clique pour changer la couleur de toute l'image."
 
 #
 #: ../../magic/src/tint.c:73
+#, fuzzy
 msgid ""
-"Click and move the mouse around to threshold the image into pure colour and "
-"white regions."
+"Click and move the mouse around to turn the image into pure color and white "
+"regions."
 msgstr ""
 "Clique et déplace la souris pour obtenir une image en blanc et une seule "
 "couleur que tu as choisie. "
 
 #: ../../magic/src/tint.c:74
-msgid "Click to threshold the entire image into pure colour and white regions."
+#, fuzzy
+msgid "Click to turn the entire image into pure color and white regions."
 msgstr ""
 "Clique pour obtenir une image en blanc et une seule couleur que tu as "
 "choisie. "
@@ -1200,3 +1205,6 @@ msgstr ""
 "Clique pour avoir un effet vagué. Clique vers le haut pour de courtes "
 "vagues, vers le bas pour de longues vagues, à gauche pour diminuer "
 "l'amplitude et à droite pour augmenter l'amplitude."
+
+#~ msgid "Trace Contour"
+#~ msgstr "Contour"

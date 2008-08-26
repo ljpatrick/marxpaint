@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-08-19 11:51-0700\n"
+"POT-Creation-Date: 2008-08-26 05:12+0100\n"
 "PO-Revision-Date: 2006-05-28 05:44+0000\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: English (Australia) <en_AU@li.org>\n"
@@ -769,7 +769,7 @@ msgid "Confetti"
 msgstr ""
 
 #: ../../magic/src/confetti.c:65
-msgid "Click to throw a confetti!"
+msgid "Click to throw confetti!"
 msgstr ""
 
 #: ../../magic/src/distortion.c:121
@@ -778,7 +778,7 @@ msgstr ""
 
 #: ../../magic/src/distortion.c:129
 #, fuzzy
-msgid "Click and drag the mouse to cause a distortion in your picture."
+msgid "Click and drag the mouse to cause distortion in your picture."
 msgstr "Click and move the mouse around to blur the picture."
 
 #: ../../magic/src/emboss.c:76
@@ -831,7 +831,7 @@ msgid "Fisheye"
 msgstr ""
 
 #: ../../magic/src/fisheye.c:79
-msgid "Select an area of the image to create fisheye effect"
+msgid "Select an area of the image to create the fisheye effect"
 msgstr ""
 
 #: ../../magic/src/flower.c:124
@@ -1041,7 +1041,7 @@ msgid "You can draw just like Picasso!"
 msgstr "You can draw in rainbow colours!"
 
 #: ../../magic/src/sharpen.c:73
-msgid "Trace Contour"
+msgid "Edges"
 msgstr ""
 
 #: ../../magic/src/sharpen.c:74
@@ -1129,19 +1129,19 @@ msgstr "Click and move the mouse around to blur the picture."
 
 #: ../../magic/src/tint.c:72
 #, fuzzy
-msgid "Click to change the colour of the entire image."
+msgid "Click to change the color of the entire image."
 msgstr "Click and move the mouse around to blur the picture."
 
 #: ../../magic/src/tint.c:73
 #, fuzzy
 msgid ""
-"Click and move the mouse around to threshold the image into pure colour and "
-"white regions."
+"Click and move the mouse around to turn the image into pure color and white "
+"regions."
 msgstr "Click and move the mouse around to turn the picture into a cartoon."
 
 #: ../../magic/src/tint.c:74
 #, fuzzy
-msgid "Click to threshold the entire image into pure colour and white regions."
+msgid "Click to turn the entire image into pure color and white regions."
 msgstr "Click and move the mouse around to turn the picture into a cartoon."
 
 #: ../../magic/src/toothpaste.c:65

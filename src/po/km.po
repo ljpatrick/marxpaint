@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-08-19 11:51-0700\n"
+"POT-Creation-Date: 2008-08-26 05:12+0100\n"
 "PO-Revision-Date: 2008-05-30 15:41+0700\n"
 "Last-Translator: Khoem Sokhem <khoemsokhem@khmeros.info>\n"
 "Language-Team: Khmer <support@khmeros.info>\n"
@@ -762,7 +762,7 @@ msgid "Confetti"
 msgstr ""
 
 #: ../../magic/src/confetti.c:65
-msgid "Click to throw a confetti!"
+msgid "Click to throw confetti!"
 msgstr ""
 
 #: ../../magic/src/distortion.c:121
@@ -770,7 +770,8 @@ msgid "Distortion"
 msgstr "បង្ខូច​ទ្រង់ទ្រាយ"
 
 #: ../../magic/src/distortion.c:129
-msgid "Click and drag the mouse to cause a distortion in your picture."
+#, fuzzy
+msgid "Click and drag the mouse to cause distortion in your picture."
 msgstr "ចុច ហើយ​អូស​កណ្ដុរ ដើម្បី​បង្ខូច​ទ្រង់ទ្រាយ​ក្នុង​រូបភាព​របស់​អ្នក ។"
 
 #: ../../magic/src/emboss.c:76
@@ -822,7 +823,7 @@ msgid "Fisheye"
 msgstr ""
 
 #: ../../magic/src/fisheye.c:79
-msgid "Select an area of the image to create fisheye effect"
+msgid "Select an area of the image to create the fisheye effect"
 msgstr ""
 
 #: ../../magic/src/flower.c:124
@@ -1027,7 +1028,7 @@ msgid "You can draw just like Picasso!"
 msgstr "អ្នក​អាច​គូរ​ជា​ពណ៌​ឥន្ទធនូ !"
 
 #: ../../magic/src/sharpen.c:73
-msgid "Trace Contour"
+msgid "Edges"
 msgstr ""
 
 #: ../../magic/src/sharpen.c:74
@@ -1114,19 +1115,19 @@ msgstr "ចុច ហើយ​ផ្លាស់ទី​កណ្ដុរ ដ�
 
 #: ../../magic/src/tint.c:72
 #, fuzzy
-msgid "Click to change the colour of the entire image."
+msgid "Click to change the color of the entire image."
 msgstr "ចុច ហើយ​ផ្លាស់ទី​កណ្ដុរ ដើម្បី​ធ្វើ​ឲ្យ​រូបភាព​ព្រិល ។"
 
 #: ../../magic/src/tint.c:73
 #, fuzzy
 msgid ""
-"Click and move the mouse around to threshold the image into pure colour and "
-"white regions."
+"Click and move the mouse around to turn the image into pure color and white "
+"regions."
 msgstr "ចុច ហើយ​ផ្លាស់ទី​កណ្ដុរ ដើម្បី​ធ្វើ​រូបភាព​ឲ្យ​ទៅ​ជា​រូប​តុក្កតា ។"
 
 #: ../../magic/src/tint.c:74
 #, fuzzy
-msgid "Click to threshold the entire image into pure colour and white regions."
+msgid "Click to turn the entire image into pure color and white regions."
 msgstr "ចុច ហើយ​ផ្លាស់ទី​កណ្ដុរ ដើម្បី​ធ្វើ​រូបភាព​ឲ្យ​ទៅ​ជា​រូប​តុក្កតា ។"
 
 #: ../../magic/src/toothpaste.c:65

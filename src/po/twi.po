@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-08-19 11:51-0700\n"
+"POT-Creation-Date: 2008-08-26 05:12+0100\n"
 "PO-Revision-Date: 2007-04-26 15:45+0200\n"
 "Last-Translator: Joana Portia Antwi-Danso <portnass2003@yahoo.com>\n"
 "MIME-Version: 1.0\n"
@@ -767,7 +767,7 @@ msgid "Confetti"
 msgstr ""
 
 #: ../../magic/src/confetti.c:65
-msgid "Click to throw a confetti!"
+msgid "Click to throw confetti!"
 msgstr ""
 
 #: ../../magic/src/distortion.c:121
@@ -776,7 +776,7 @@ msgstr ""
 
 #: ../../magic/src/distortion.c:129
 #, fuzzy
-msgid "Click and drag the mouse to cause a distortion in your picture."
+msgid "Click and drag the mouse to cause distortion in your picture."
 msgstr "Mia so na fa akura no to mfoni no so ma no nyɛ wisiwisi."
 
 #: ../../magic/src/emboss.c:76
@@ -829,7 +829,7 @@ msgid "Fisheye"
 msgstr ""
 
 #: ../../magic/src/fisheye.c:79
-msgid "Select an area of the image to create fisheye effect"
+msgid "Select an area of the image to create the fisheye effect"
 msgstr ""
 
 #: ../../magic/src/flower.c:124
@@ -1041,7 +1041,7 @@ msgid "You can draw just like Picasso!"
 msgstr "Wobɛtumi adorom nyankontɔn ahosuo!"
 
 #: ../../magic/src/sharpen.c:73
-msgid "Trace Contour"
+msgid "Edges"
 msgstr ""
 
 #: ../../magic/src/sharpen.c:74
@@ -1129,19 +1129,19 @@ msgstr "Mia so na fa akura no to mfoni no so ma no nyɛ wisiwisi."
 
 #: ../../magic/src/tint.c:72
 #, fuzzy
-msgid "Click to change the colour of the entire image."
+msgid "Click to change the color of the entire image."
 msgstr "Mia so na fa akura no to mfoni no so ma no nyɛ wisiwisi."
 
 #: ../../magic/src/tint.c:73
 #, fuzzy
 msgid ""
-"Click and move the mouse around to threshold the image into pure colour and "
-"white regions."
+"Click and move the mouse around to turn the image into pure color and white "
+"regions."
 msgstr "Fa akura no fa mfoni no so ma no nnane koriko."
 
 #: ../../magic/src/tint.c:74
 #, fuzzy
-msgid "Click to threshold the entire image into pure colour and white regions."
+msgid "Click to turn the entire image into pure color and white regions."
 msgstr "Fa akura no fa mfoni no so ma no nnane koriko."
 
 #: ../../magic/src/toothpaste.c:65
