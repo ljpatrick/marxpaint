@@ -295,7 +295,7 @@ Interfaces
              switchout() is called for the old mode, then switchin() is
              called for the new mode.
 
-             These functions allow users to interact in complicated was with
+             These functions allow users to interact in complicated ways with
              Magic tools (for example, a tool that lets the user draw
              multiple freehand strokes, and then uses that as input such as
              handwriting - normally, the user could click somewhere in the

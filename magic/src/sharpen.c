@@ -65,7 +65,7 @@ const char * sharpen_snd_filenames[sharpen_NUM_TOOLS] = {
   "flip.wav"
 };
 const char * sharpen_icon_filenames[sharpen_NUM_TOOLS] = {
-  "flip.png",
+  "edges.png",
   "flip.png",
   "flip.png"
 };

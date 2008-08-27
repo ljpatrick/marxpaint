@@ -58,7 +58,7 @@ const char * alien_snd_filenames[alien_NUM_TOOLS] = {
   "flip.wav",
 };
 const char * alien_icon_filenames[alien_NUM_TOOLS] = {
-  "flip.png",
+  "alien.png",
 };
 const char * alien_names[alien_NUM_TOOLS] = {
   gettext_noop("Alien"),

@@ -61,8 +61,8 @@ const char * snow_snd_filenames[snow_NUM_TOOLS] = {
   "flip.wav",
 };
 const char * snow_icon_filenames[snow_NUM_TOOLS] = {
-  "flip.png",
-  "flip.png",
+  "snowball.png",
+  "snowflake.png",
 };
 const char * snow_names[snow_NUM_TOOLS] = {
   gettext_noop("Snow Ball"),

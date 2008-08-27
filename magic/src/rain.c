@@ -58,7 +58,7 @@ const char * rain_snd_filenames[rain_NUM_TOOLS] = {
   "flip.wav",
 };
 const char * rain_icon_filenames[rain_NUM_TOOLS] = {
-  "flip.png",
+  "rain.png",
 };
 const char * rain_names[rain_NUM_TOOLS] = {
   gettext_noop("Rain"),
