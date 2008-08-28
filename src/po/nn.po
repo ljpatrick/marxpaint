@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: nn\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-08-26 05:12+0100\n"
+"POT-Creation-Date: 2008-08-28 23:15+0100\n"
 "PO-Revision-Date: 2007-07-19 20:34+0200\n"
 "Last-Translator: Karl Ove Hufthammer <karl@huftis.org>\n"
 "Language-Team: Norwegian Nynorsk <i18n-nn@lister.ping.uio.no>\n"
@@ -680,12 +680,15 @@ msgstr ""
 
 #: ../../magic/src/alien.c:67
 #, fuzzy
-msgid "Click and move the mouse to give the image an \"alien\" appearance."
+msgid ""
+"Click and move the mouse to give parts of your picture an \"alien\" "
+"appearance."
 msgstr "Hald inne knappen og flytt rundt for å gjera teikninga uskarp."
 
 #: ../../magic/src/alien.c:68
-msgid "Click to give the entire image an \"alien\" appearance."
-msgstr ""
+#, fuzzy
+msgid "Click to give your entire picture an \"alien\" appearance."
+msgstr "Hald inne knappen og flytt rundt for å endra fargane på teikninga."
 
 #: ../../magic/src/blocks_chalk_drip.c:132
 msgid "Blocks"
@@ -927,12 +930,13 @@ msgstr "Magi"
 
 #: ../../magic/src/mosaic.c:73
 #, fuzzy
-msgid "Click and move the mouse to add a mosaic effect to the image."
+msgid ""
+"Click and move the mouse to add a mosaic effect to parts of your picture."
 msgstr "Trykk for å spegelvenda teikninga."
 
 #: ../../magic/src/mosaic.c:74
 #, fuzzy
-msgid "Click to add a mosaic effect to the entire image."
+msgid "Click to add a mosaic effect to your entire picture."
 msgstr "Trykk for å spegelvenda teikninga."
 
 #: ../../magic/src/negative.c:72
@@ -954,13 +958,13 @@ msgstr ""
 
 #: ../../magic/src/noise.c:66
 #, fuzzy
-msgid "Click and move the mouse to add noise to the image."
+msgid "Click and move the mouse to add noise to parts of your picture."
 msgstr "Hald inne knappen og flytt rundt for å gjera teikninga uskarp."
 
 #: ../../magic/src/noise.c:67
 #, fuzzy
-msgid "Click to add noise to the entire image."
-msgstr "Trykk for å spegelvenda teikninga."
+msgid "Click to add noise to your entire picture."
+msgstr "Hald inne knappen og flytt rundt for å endra fargane på teikninga."
 
 #: ../../magic/src/puzzle.c:77
 #, fuzzy
@@ -968,12 +972,12 @@ msgid "Puzzle"
 msgstr "Lilla!"
 
 #: ../../magic/src/puzzle.c:84
-msgid "Select the area of image where would you like to make a mosaic"
+msgid "Select the area of the image where would you like to make a puzzle"
 msgstr ""
 
 #: ../../magic/src/puzzle.c:85
 #, fuzzy
-msgid "Click to make mosaic in fullscreen mode"
+msgid "Click to make a puzzle in fullscreen mode"
 msgstr "Trykk for å spegelvenda teikninga."
 
 #: ../../magic/src/rails.c:75
@@ -1001,12 +1005,12 @@ msgstr "Regnboge"
 
 #: ../../magic/src/rain.c:67
 #, fuzzy
-msgid "Click to place a rain drop onto the image."
+msgid "Click to place a rain drop onto your picture."
 msgstr "Trykk for å spegelvenda teikninga."
 
 #: ../../magic/src/rain.c:68
 #, fuzzy
-msgid "Click to cover the image with rain drops."
+msgid "Click to cover your picture with rain drops."
 msgstr "Trykk for å spegelvenda teikninga."
 
 #: ../../magic/src/ripples.c:81
@@ -1050,32 +1054,32 @@ msgstr ""
 
 #: ../../magic/src/sharpen.c:78
 #, fuzzy
-msgid "Click and move the mouse to trace the edges of objects in the image."
+msgid "Click and move the mouse to trace edges in parts of your picture."
 msgstr "Hald inne knappen og flytt rundt for å gjera teikninga uskarp."
 
 #: ../../magic/src/sharpen.c:79
-msgid "Click to trace the edges of objects in the image."
-msgstr ""
+#, fuzzy
+msgid "Click to trace edges in your entire picture."
+msgstr "Hald inne knappen og flytt rundt for å endra fargane på teikninga."
 
 #: ../../magic/src/sharpen.c:80
 #, fuzzy
-msgid "Click and move the mouse to sharpen the image."
+msgid "Click and move the mouse to sharpen parts of your picture."
 msgstr "Hald inne knappen og flytt rundt for å gjera teikninga uskarp."
 
 #: ../../magic/src/sharpen.c:81
 #, fuzzy
-msgid "Click to sharpen the entire image."
+msgid "Click to sharpen the entire picture."
 msgstr "Trykk for å spegelvenda teikninga."
 
 #: ../../magic/src/sharpen.c:82
 #, fuzzy
-msgid ""
-"Click and move the mouse to create a black and white silhouette of the image."
+msgid "Click and move the mouse to create a black and white silhouette."
 msgstr "Hald inne knappen og flytt rundt for å gjera teikninga uskarp."
 
 #: ../../magic/src/sharpen.c:83
 #, fuzzy
-msgid "Click to create a black and white silhouette of the entire image."
+msgid "Click to create a black and white silhouette of your entire picture."
 msgstr "Hald inne knappen og flytt rundt for å gjera teikninga uskarp."
 
 #: ../../magic/src/shift.c:104
@@ -1102,10 +1106,15 @@ msgstr ""
 msgid "Snow Flake"
 msgstr ""
 
-#: ../../magic/src/snow.c:72 ../../magic/src/snow.c:73
+#: ../../magic/src/snow.c:72
 #, fuzzy
-msgid "Click to add snow to the entire image."
-msgstr "Trykk for å spegelvenda teikninga."
+msgid "Click to add snow balls to your picture."
+msgstr "Hald inne knappen og flytt rundt for å laga bølgjer over teikninga."
+
+#: ../../magic/src/snow.c:73
+#, fuzzy
+msgid "Click to add snow flakes to your picture."
+msgstr "Hald inne knappen og flytt rundt for å laga bølgjer over teikninga."
 
 #: ../../magic/src/tint.c:67
 msgid "Tint"
@@ -1118,26 +1127,26 @@ msgstr ""
 #: ../../magic/src/tint.c:71
 #, fuzzy
 msgid ""
-"Click and move the mouse around to change the color of parts of the picture."
+"Click and move the mouse around to change the color of parts of your picture."
 msgstr "Hald inne knappen og flytt rundt for å gjera teikninga uskarp."
 
 #: ../../magic/src/tint.c:72
 #, fuzzy
-msgid "Click to change the color of the entire image."
+msgid "Click to change the color of your entire picture."
 msgstr "Hald inne knappen og flytt rundt for å gjera teikninga uskarp."
 
 #: ../../magic/src/tint.c:73
 #, fuzzy
 msgid ""
-"Click and move the mouse around to turn the image into pure color and white "
-"regions."
+"Click and move the mouse around to turn parts of your picture into color and "
+"white."
 msgstr ""
 "Hald inne knappen og flytt rundt for å gjera fargane klarare og strekane "
 "tydelegare."
 
 #: ../../magic/src/tint.c:74
 #, fuzzy
-msgid "Click to turn the entire image into pure color and white regions."
+msgid "Click to turn your entire picture into color and white."
 msgstr ""
 "Hald inne knappen og flytt rundt for å gjera fargane klarare og strekane "
 "tydelegare."
@@ -1148,7 +1157,7 @@ msgstr ""
 
 #: ../../magic/src/toothpaste.c:68
 #, fuzzy
-msgid "Click and drag to squirt toothpaste onto the image."
+msgid "Click and drag to squirt toothpaste onto your picture."
 msgstr "Hald inne knappen og flytt rundt for å flytta på teikninga."
 
 #: ../../magic/src/tv.c:72
@@ -1190,6 +1199,34 @@ msgstr ""
 "Trykk for å gjera teikninga bølgjete. Trykk oppe for å laga låge bølgjer, "
 "nede for å laga høge bølgjer, til venstre for å laga korte bølgjer og til "
 "høgre for å laga lange bølgjer."
+
+#, fuzzy
+#~ msgid "Click and move the mouse to add noise to the image."
+#~ msgstr "Hald inne knappen og flytt rundt for å gjera teikninga uskarp."
+
+#, fuzzy
+#~ msgid "Click to add noise to the entire image."
+#~ msgstr "Trykk for å spegelvenda teikninga."
+
+#, fuzzy
+#~ msgid "Click and move the mouse to trace the edges of objects in the image."
+#~ msgstr "Hald inne knappen og flytt rundt for å gjera teikninga uskarp."
+
+#, fuzzy
+#~ msgid "Click and move the mouse to sharpen the image."
+#~ msgstr "Hald inne knappen og flytt rundt for å gjera teikninga uskarp."
+
+#, fuzzy
+#~ msgid "Click to add snow to the entire image."
+#~ msgstr "Trykk for å spegelvenda teikninga."
+
+#, fuzzy
+#~ msgid ""
+#~ "Click and move the mouse around to turn the image into pure color and "
+#~ "white regions."
+#~ msgstr ""
+#~ "Hald inne knappen og flytt rundt for å gjera fargane klarare og strekane "
+#~ "tydelegare."
 
 #, fuzzy
 #~ msgid "Click and move the mouse around convert the image to greyscale."

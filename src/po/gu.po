@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-08-26 05:12+0100\n"
+"POT-Creation-Date: 2008-08-28 23:15+0100\n"
 "PO-Revision-Date: 2008-07-14 12:17+0530\n"
 "Last-Translator: Kartik Mistry <kartik.mistry@gmail.com>\n"
 "Language-Team: Gujarati <team@utkarsh.org>\n"
@@ -679,12 +679,15 @@ msgstr ""
 
 #: ../../magic/src/alien.c:67
 #, fuzzy
-msgid "Click and move the mouse to give the image an \"alien\" appearance."
+msgid ""
+"Click and move the mouse to give parts of your picture an \"alien\" "
+"appearance."
 msgstr "ચિત્રને અસ્પષ્ટ કરવા માટે ક્લિક કરો અને આજુ-બાજુ ખસેડો."
 
 #: ../../magic/src/alien.c:68
-msgid "Click to give the entire image an \"alien\" appearance."
-msgstr ""
+#, fuzzy
+msgid "Click to give your entire picture an \"alien\" appearance."
+msgstr "તમારા સમગ્ર ચિત્રને કાચની તકતીઓ વડે ઢાંકી દેવા માટે ક્લિક કરો."
 
 #: ../../magic/src/blocks_chalk_drip.c:132
 msgid "Blocks"
@@ -910,12 +913,13 @@ msgstr "જાદુ"
 
 #: ../../magic/src/mosaic.c:73
 #, fuzzy
-msgid "Click and move the mouse to add a mosaic effect to the image."
+msgid ""
+"Click and move the mouse to add a mosaic effect to parts of your picture."
 msgstr "ચિત્રમાં બરફ ઉમેરવા માટે ક્લિક કરો."
 
 #: ../../magic/src/mosaic.c:74
 #, fuzzy
-msgid "Click to add a mosaic effect to the entire image."
+msgid "Click to add a mosaic effect to your entire picture."
 msgstr "ચિત્રમાં બરફ ઉમેરવા માટે ક્લિક કરો."
 
 #: ../../magic/src/negative.c:72
@@ -936,13 +940,13 @@ msgstr ""
 
 #: ../../magic/src/noise.c:66
 #, fuzzy
-msgid "Click and move the mouse to add noise to the image."
-msgstr "ચિત્રને અસ્પષ્ટ કરવા માટે ક્લિક કરો અને આજુ-બાજુ ખસેડો."
+msgid "Click and move the mouse to add noise to parts of your picture."
+msgstr "તમારા ચિત્રનાં ભાગોને ઘાટાં કરવા માટે ક્લિક કરો અને આજુ-બાજુ ખસેડો."
 
 #: ../../magic/src/noise.c:67
 #, fuzzy
-msgid "Click to add noise to the entire image."
-msgstr "ચિત્રમાં બરફ ઉમેરવા માટે ક્લિક કરો."
+msgid "Click to add noise to your entire picture."
+msgstr "તમારા સમગ્ર ચિત્રને ઘાટું કરવા માટે ક્લિક કરો."
 
 #: ../../magic/src/puzzle.c:77
 #, fuzzy
@@ -950,12 +954,12 @@ msgid "Puzzle"
 msgstr "જાંબલી"
 
 #: ../../magic/src/puzzle.c:84
-msgid "Select the area of image where would you like to make a mosaic"
+msgid "Select the area of the image where would you like to make a puzzle"
 msgstr ""
 
 #: ../../magic/src/puzzle.c:85
 #, fuzzy
-msgid "Click to make mosaic in fullscreen mode"
+msgid "Click to make a puzzle in fullscreen mode"
 msgstr "અરીસા ચિત્ર બનાવવા ક્લિક કરો."
 
 #: ../../magic/src/rails.c:75
@@ -981,12 +985,12 @@ msgstr "મેઘધનુષ"
 
 #: ../../magic/src/rain.c:67
 #, fuzzy
-msgid "Click to place a rain drop onto the image."
+msgid "Click to place a rain drop onto your picture."
 msgstr "અરીસા ચિત્ર બનાવવા ક્લિક કરો."
 
 #: ../../magic/src/rain.c:68
 #, fuzzy
-msgid "Click to cover the image with rain drops."
+msgid "Click to cover your picture with rain drops."
 msgstr "ચિત્રને ભૂખરું બનાવવા માટે ક્લિક કરો."
 
 #: ../../magic/src/ripples.c:81
@@ -1029,32 +1033,32 @@ msgstr "છાયાચિત્ર"
 
 #: ../../magic/src/sharpen.c:78
 #, fuzzy
-msgid "Click and move the mouse to trace the edges of objects in the image."
-msgstr "ચિત્રમાં રહેલ વસ્તુઓનાં ખૂણાઓ શોધવા ક્લિક કરો."
+msgid "Click and move the mouse to trace edges in parts of your picture."
+msgstr "તમારા ચિત્રનાં ભાગોને ઘાટાં કરવા માટે ક્લિક કરો અને આજુ-બાજુ ખસેડો."
 
 #: ../../magic/src/sharpen.c:79
-msgid "Click to trace the edges of objects in the image."
-msgstr "ચિત્રમાં રહેલ વસ્તુઓનાં ખૂણાઓ શોધવા ક્લિક કરો."
+#, fuzzy
+msgid "Click to trace edges in your entire picture."
+msgstr "તમારા સમગ્ર ચિત્રને ઘાટું કરવા માટે ક્લિક કરો."
 
 #: ../../magic/src/sharpen.c:80
 #, fuzzy
-msgid "Click and move the mouse to sharpen the image."
-msgstr "ચિત્રને અસ્પષ્ટ કરવા માટે ક્લિક કરો અને આજુ-બાજુ ખસેડો."
+msgid "Click and move the mouse to sharpen parts of your picture."
+msgstr "તમારા ચિત્રનાં ભાગોને ઘાટાં કરવા માટે ક્લિક કરો અને આજુ-બાજુ ખસેડો."
 
 #: ../../magic/src/sharpen.c:81
 #, fuzzy
-msgid "Click to sharpen the entire image."
+msgid "Click to sharpen the entire picture."
 msgstr "ચિત્રને તીક્ષ્ણ બનાવવા ક્લિક કરો."
 
 #: ../../magic/src/sharpen.c:82
 #, fuzzy
-msgid ""
-"Click and move the mouse to create a black and white silhouette of the image."
+msgid "Click and move the mouse to create a black and white silhouette."
 msgstr "ચિત્રનું કાળું અને સફેદ છાયાચિત્ર બનાવવા માટે ક્લિક કરો."
 
 #: ../../magic/src/sharpen.c:83
 #, fuzzy
-msgid "Click to create a black and white silhouette of the entire image."
+msgid "Click to create a black and white silhouette of your entire picture."
 msgstr "ચિત્રનું કાળું અને સફેદ છાયાચિત્ર બનાવવા માટે ક્લિક કરો."
 
 #: ../../magic/src/shift.c:104
@@ -1081,10 +1085,15 @@ msgstr "દડો બતાવો"
 msgid "Snow Flake"
 msgstr "બરફનું પડ"
 
-#: ../../magic/src/snow.c:72 ../../magic/src/snow.c:73
+#: ../../magic/src/snow.c:72
 #, fuzzy
-msgid "Click to add snow to the entire image."
-msgstr "ચિત્રમાં બરફ ઉમેરવા માટે ક્લિક કરો."
+msgid "Click to add snow balls to your picture."
+msgstr "તમારા ચિત્રકામમાં તરંગો બનાવવા માટે માઉસને ક્લિક કરીને ખેંચો."
+
+#: ../../magic/src/snow.c:73
+#, fuzzy
+msgid "Click to add snow flakes to your picture."
+msgstr "તમારા ચિત્રકામમાં તરંગો બનાવવા માટે માઉસને ક્લિક કરીને ખેંચો."
 
 #: ../../magic/src/tint.c:67
 msgid "Tint"
@@ -1095,26 +1104,26 @@ msgid "Threshold"
 msgstr "મર્યાદા"
 
 #: ../../magic/src/tint.c:71
+#, fuzzy
 msgid ""
-"Click and move the mouse around to change the color of parts of the picture."
+"Click and move the mouse around to change the color of parts of your picture."
 msgstr "ચિત્રનાં રંગનાં ભાગોમાં ફેરફાર કરવા માઉસને ક્લિક કરો અને આજુ-બાજુ ખસેડો."
 
 #: ../../magic/src/tint.c:72
 #, fuzzy
-msgid "Click to change the color of the entire image."
+msgid "Click to change the color of your entire picture."
 msgstr "ચિત્રમાં રહેલ વસ્તુઓનાં ખૂણાઓ શોધવા ક્લિક કરો."
 
 #: ../../magic/src/tint.c:73
 #, fuzzy
 msgid ""
-"Click and move the mouse around to turn the image into pure color and white "
-"regions."
-msgstr ""
-"ચિત્રને કાળાં અને સફેદ વિસ્તારોની મર્યાદામાં ફેરવવા માટે ક્લિક કરો અને માઉસ આજુબાજુ ખસેડો."
+"Click and move the mouse around to turn parts of your picture into color and "
+"white."
+msgstr "ચિત્રને કાર્ટૂનમાં ફેરવવા માટે ક્લિક કરો અને માઉસ આજુબાજુ ખસેડો."
 
 #: ../../magic/src/tint.c:74
 #, fuzzy
-msgid "Click to turn the entire image into pure color and white regions."
+msgid "Click to turn your entire picture into color and white."
 msgstr "ચિત્રને કાળાં અને સફેદ વિસ્તારોની મર્યાદામાં ફેરવવા ક્લિક કરો."
 
 #: ../../magic/src/toothpaste.c:65
@@ -1123,7 +1132,7 @@ msgstr ""
 
 #: ../../magic/src/toothpaste.c:68
 #, fuzzy
-msgid "Click and drag to squirt toothpaste onto the image."
+msgid "Click and drag to squirt toothpaste onto your picture."
 msgstr "તમારા ચિત્રને ખસેડવા માટે માઉસને ક્લિક કરો અને આજુ-બાજુ ખસેડો."
 
 #: ../../magic/src/tv.c:72
@@ -1165,6 +1174,37 @@ msgstr ""
 "ચિત્રને મોજાંઓ વાળું બનાવવા માટે ક્લિક કરો. ઉપરની તરફ ક્લિક કરતાં મોજાં ટૂંકા થશે; નીચેની "
 "તરફ કરતાં લાંબા થશે. ડાબી બાજુ ક્લિક કરતાં મોજા નાનાં થશે; જ્યારે જમણી બાજુ ક્લિક કરતાં "
 "મોજાં પહોળા થશે."
+
+#, fuzzy
+#~ msgid "Click and move the mouse to add noise to the image."
+#~ msgstr "ચિત્રને અસ્પષ્ટ કરવા માટે ક્લિક કરો અને આજુ-બાજુ ખસેડો."
+
+#, fuzzy
+#~ msgid "Click to add noise to the entire image."
+#~ msgstr "ચિત્રમાં બરફ ઉમેરવા માટે ક્લિક કરો."
+
+#, fuzzy
+#~ msgid "Click and move the mouse to trace the edges of objects in the image."
+#~ msgstr "ચિત્રમાં રહેલ વસ્તુઓનાં ખૂણાઓ શોધવા ક્લિક કરો."
+
+#~ msgid "Click to trace the edges of objects in the image."
+#~ msgstr "ચિત્રમાં રહેલ વસ્તુઓનાં ખૂણાઓ શોધવા ક્લિક કરો."
+
+#, fuzzy
+#~ msgid "Click and move the mouse to sharpen the image."
+#~ msgstr "ચિત્રને અસ્પષ્ટ કરવા માટે ક્લિક કરો અને આજુ-બાજુ ખસેડો."
+
+#, fuzzy
+#~ msgid "Click to add snow to the entire image."
+#~ msgstr "ચિત્રમાં બરફ ઉમેરવા માટે ક્લિક કરો."
+
+#, fuzzy
+#~ msgid ""
+#~ "Click and move the mouse around to turn the image into pure color and "
+#~ "white regions."
+#~ msgstr ""
+#~ "ચિત્રને કાળાં અને સફેદ વિસ્તારોની મર્યાદામાં ફેરવવા માટે ક્લિક કરો અને માઉસ આજુબાજુ "
+#~ "ખસેડો."
 
 #~ msgid "Trace Contour"
 #~ msgstr "કોન્ટુરને શોધો"

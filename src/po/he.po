@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: he\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-08-26 05:12+0100\n"
+"POT-Creation-Date: 2008-08-28 23:15+0100\n"
 "PO-Revision-Date: 2008-08-08 16:02+0200\n"
 "Last-Translator: Guy Hed <guy.hed@weizmann.ac.il>\n"
 "Language-Team: Hebrew <mdk-hebrew@iglu.org.il>\n"
@@ -687,11 +687,15 @@ msgid "Alien"
 msgstr "חיזר"
 
 #: ../../magic/src/alien.c:67
-msgid "Click and move the mouse to give the image an \"alien\" appearance."
+#, fuzzy
+msgid ""
+"Click and move the mouse to give parts of your picture an \"alien\" "
+"appearance."
 msgstr "\"לחצי והזיזי את העכבר מסביב כדי לתת לתמונה מראה \"חיזרי."
 
 #: ../../magic/src/alien.c:68
-msgid "Click to give the entire image an \"alien\" appearance."
+#, fuzzy
+msgid "Click to give your entire picture an \"alien\" appearance."
 msgstr "\"הקישי כדי לתת לכל התמונה הופעה \"חיזרית."
 
 #: ../../magic/src/blocks_chalk_drip.c:132
@@ -919,11 +923,14 @@ msgid "Mosaic"
 msgstr "פסיפס"
 
 #: ../../magic/src/mosaic.c:73
-msgid "Click and move the mouse to add a mosaic effect to the image."
+#, fuzzy
+msgid ""
+"Click and move the mouse to add a mosaic effect to parts of your picture."
 msgstr "לחצי והזיזי את העכבר להוספת מראה פסיפס לתמונה."
 
 #: ../../magic/src/mosaic.c:74
-msgid "Click to add a mosaic effect to the entire image."
+#, fuzzy
+msgid "Click to add a mosaic effect to your entire picture."
 msgstr "לחצי להוספת מראה פסיפס לכל התמונה."
 
 #: ../../magic/src/negative.c:72
@@ -943,12 +950,14 @@ msgid "Noise"
 msgstr "רעש"
 
 #: ../../magic/src/noise.c:66
-msgid "Click and move the mouse to add noise to the image."
-msgstr "לחצי והזיזי את העכבר להוספת רעש לתמונה."
+#, fuzzy
+msgid "Click and move the mouse to add noise to parts of your picture."
+msgstr "לחצי והזיזי את העכבר להאפלת חלקים בתמונה."
 
 #: ../../magic/src/noise.c:67
-msgid "Click to add noise to the entire image."
-msgstr ".לחצי להוספת רעש לכל התמונה"
+#, fuzzy
+msgid "Click to add noise to your entire picture."
+msgstr "לחצי להאפלת כל התמונה."
 
 #: ../../magic/src/puzzle.c:77
 #, fuzzy
@@ -956,12 +965,12 @@ msgid "Puzzle"
 msgstr "סגול!"
 
 #: ../../magic/src/puzzle.c:84
-msgid "Select the area of image where would you like to make a mosaic"
+msgid "Select the area of the image where would you like to make a puzzle"
 msgstr ""
 
 #: ../../magic/src/puzzle.c:85
 #, fuzzy
-msgid "Click to make mosaic in fullscreen mode"
+msgid "Click to make a puzzle in fullscreen mode"
 msgstr "לחצי ליצירת תמונת מראה."
 
 #: ../../magic/src/rails.c:75
@@ -985,11 +994,13 @@ msgid "Rain"
 msgstr "גשם"
 
 #: ../../magic/src/rain.c:67
-msgid "Click to place a rain drop onto the image."
+#, fuzzy
+msgid "Click to place a rain drop onto your picture."
 msgstr "לחצי לטיפטוף טיפת גשם על התמונה."
 
 #: ../../magic/src/rain.c:68
-msgid "Click to cover the image with rain drops."
+#, fuzzy
+msgid "Click to cover your picture with rain drops."
 msgstr "לחצי לכיסוי התמונה בטיפות גשם."
 
 #: ../../magic/src/ripples.c:81
@@ -1031,28 +1042,33 @@ msgid "Silhouette"
 msgstr "צללית"
 
 #: ../../magic/src/sharpen.c:78
-msgid "Click and move the mouse to trace the edges of objects in the image."
-msgstr "לחצי והזיזי את העכבר לאיתור הקצוות של עצם או דמות."
+#, fuzzy
+msgid "Click and move the mouse to trace edges in parts of your picture."
+msgstr "לחצי והזיזי את העכבר להאפלת חלקים בתמונה."
 
 #: ../../magic/src/sharpen.c:79
-msgid "Click to trace the edges of objects in the image."
-msgstr "לחצי לאיתור הקצוות של עצם או דמות."
+#, fuzzy
+msgid "Click to trace edges in your entire picture."
+msgstr "לחצי להאפלת כל התמונה."
 
 #: ../../magic/src/sharpen.c:80
-msgid "Click and move the mouse to sharpen the image."
-msgstr "לחצי והזיזי את העכבר לחידוד התמונה."
+#, fuzzy
+msgid "Click and move the mouse to sharpen parts of your picture."
+msgstr "לחצי והזיזי את העכבר להאפלת חלקים בתמונה."
 
 #: ../../magic/src/sharpen.c:81
-msgid "Click to sharpen the entire image."
+#, fuzzy
+msgid "Click to sharpen the entire picture."
 msgstr "לחצי לחידוד התמונה כולה."
 
 #: ../../magic/src/sharpen.c:82
-msgid ""
-"Click and move the mouse to create a black and white silhouette of the image."
+#, fuzzy
+msgid "Click and move the mouse to create a black and white silhouette."
 msgstr "לחצי והזיזי את העכבר ליצירת צללית בשחור ולבן של התמונה."
 
 #: ../../magic/src/sharpen.c:83
-msgid "Click to create a black and white silhouette of the entire image."
+#, fuzzy
+msgid "Click to create a black and white silhouette of your entire picture."
 msgstr "לחצי ליצירת צללית בשחור ולבן של כל התמונה."
 
 #: ../../magic/src/shift.c:104
@@ -1079,9 +1095,15 @@ msgstr "כדור שלג"
 msgid "Snow Flake"
 msgstr "פתית שלג"
 
-#: ../../magic/src/snow.c:72 ../../magic/src/snow.c:73
-msgid "Click to add snow to the entire image."
-msgstr "לחצי להוספת שלג לכל התמונה."
+#: ../../magic/src/snow.c:72
+#, fuzzy
+msgid "Click to add snow balls to your picture."
+msgstr "לחצי להופעת אדוות על התמונה."
+
+#: ../../magic/src/snow.c:73
+#, fuzzy
+msgid "Click to add snow flakes to your picture."
+msgstr "לחצי להופעת אדוות על התמונה."
 
 #: ../../magic/src/tint.c:67
 msgid "Tint"
@@ -1092,26 +1114,26 @@ msgid "Threshold"
 msgstr "סף"
 
 #: ../../magic/src/tint.c:71
+#, fuzzy
 msgid ""
-"Click and move the mouse around to change the color of parts of the picture."
+"Click and move the mouse around to change the color of parts of your picture."
 msgstr "לחצי והזיזי את העכבר לשינוי הצבע של חלקים מהתמונה."
 
 #: ../../magic/src/tint.c:72
 #, fuzzy
-msgid "Click to change the color of the entire image."
+msgid "Click to change the color of your entire picture."
 msgstr "לחצי לשינוי הצבע של כל התמונה."
 
 #: ../../magic/src/tint.c:73
 #, fuzzy
 msgid ""
-"Click and move the mouse around to turn the image into pure color and white "
-"regions."
-msgstr ""
-"לחצי והזיזי את העכבר לקביעת סף לתמונה, והפיכתה לצבע טהור ואזורים לבנים."
+"Click and move the mouse around to turn parts of your picture into color and "
+"white."
+msgstr "לחצי והזיזי את העכבר כדי להפוך את התמונה לסרט מצויר."
 
 #: ../../magic/src/tint.c:74
 #, fuzzy
-msgid "Click to turn the entire image into pure color and white regions."
+msgid "Click to turn your entire picture into color and white."
 msgstr "לחצי לקביעת סף לתמונה כולה, והפיכתה לצבע טהור ואזורים לבנים."
 
 #: ../../magic/src/toothpaste.c:65
@@ -1120,7 +1142,7 @@ msgstr ""
 
 #: ../../magic/src/toothpaste.c:68
 #, fuzzy
-msgid "Click and drag to squirt toothpaste onto the image."
+msgid "Click and drag to squirt toothpaste onto your picture."
 msgstr "לחצי וגררי להזזת התמונה על בד הציור."
 
 #: ../../magic/src/tv.c:72
@@ -1160,6 +1182,31 @@ msgid ""
 msgstr ""
 "לחצי ליצירת תמונה גלית. לחצי כלפי מעלה לגלים יותר קצרים, כלפי מטה לגלים יותר "
 "גבוהים, שמאלה לגלים קטנים וימינה לגלים ארוכים."
+
+#~ msgid "Click and move the mouse to add noise to the image."
+#~ msgstr "לחצי והזיזי את העכבר להוספת רעש לתמונה."
+
+#~ msgid "Click to add noise to the entire image."
+#~ msgstr ".לחצי להוספת רעש לכל התמונה"
+
+#~ msgid "Click and move the mouse to trace the edges of objects in the image."
+#~ msgstr "לחצי והזיזי את העכבר לאיתור הקצוות של עצם או דמות."
+
+#~ msgid "Click to trace the edges of objects in the image."
+#~ msgstr "לחצי לאיתור הקצוות של עצם או דמות."
+
+#~ msgid "Click and move the mouse to sharpen the image."
+#~ msgstr "לחצי והזיזי את העכבר לחידוד התמונה."
+
+#~ msgid "Click to add snow to the entire image."
+#~ msgstr "לחצי להוספת שלג לכל התמונה."
+
+#, fuzzy
+#~ msgid ""
+#~ "Click and move the mouse around to turn the image into pure color and "
+#~ "white regions."
+#~ msgstr ""
+#~ "לחצי והזיזי את העכבר לקביעת סף לתמונה, והפיכתה לצבע טהור ואזורים לבנים."
 
 #~ msgid "Trace Contour"
 #~ msgstr "קוי מתאר"

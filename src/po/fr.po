@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: fr\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-08-26 05:12+0100\n"
+"POT-Creation-Date: 2008-08-28 23:15+0100\n"
 "PO-Revision-Date: 2004-05-30 21:20-0700\n"
 "Last-Translator: jimmy <jacques.chion@orange.fr>\n"
 "Language-Team:  <fr@li.org>\n"
@@ -685,12 +685,16 @@ msgid "Alien"
 msgstr "Étrange"
 
 #: ../../magic/src/alien.c:67
-msgid "Click and move the mouse to give the image an \"alien\" appearance."
+#, fuzzy
+msgid ""
+"Click and move the mouse to give parts of your picture an \"alien\" "
+"appearance."
 msgstr ""
 "Clique et déplace la souris pour ajouter à l'image une apparence “étrange”."
 
 #: ../../magic/src/alien.c:68
-msgid "Click to give the entire image an \"alien\" appearance."
+#, fuzzy
+msgid "Click to give your entire picture an \"alien\" appearance."
 msgstr "Clique pour donner à l'image entière une apparence “étrange”."
 
 #: ../../magic/src/blocks_chalk_drip.c:132
@@ -937,12 +941,15 @@ msgstr "Mosaïque"
 
 #
 #: ../../magic/src/mosaic.c:73
-msgid "Click and move the mouse to add a mosaic effect to the image."
+#, fuzzy
+msgid ""
+"Click and move the mouse to add a mosaic effect to parts of your picture."
 msgstr "Clique et déplace la souris pour ajouter un effet de mosaïque."
 
 #
 #: ../../magic/src/mosaic.c:74
-msgid "Click to add a mosaic effect to the entire image."
+#, fuzzy
+msgid "Click to add a mosaic effect to your entire picture."
 msgstr "Clique pour avoir un effet de mosaïque sur toute l'image."
 
 #: ../../magic/src/negative.c:72
@@ -964,13 +971,15 @@ msgstr "Parasites"
 
 #
 #: ../../magic/src/noise.c:66
-msgid "Click and move the mouse to add noise to the image."
-msgstr "Clique et déplace la souris pour ajouter des parasites à l'image."
+#, fuzzy
+msgid "Click and move the mouse to add noise to parts of your picture."
+msgstr "Clique et déplace la souris pour assombrir une partie de l'image."
 
 #
 #: ../../magic/src/noise.c:67
-msgid "Click to add noise to the entire image."
-msgstr "Clique pour ajouter des parasites à toute l'image."
+#, fuzzy
+msgid "Click to add noise to your entire picture."
+msgstr "Clique pour assombrir la totalité de l'image."
 
 #: ../../magic/src/puzzle.c:77
 #, fuzzy
@@ -978,12 +987,12 @@ msgid "Puzzle"
 msgstr "Pourpre !"
 
 #: ../../magic/src/puzzle.c:84
-msgid "Select the area of image where would you like to make a mosaic"
+msgid "Select the area of the image where would you like to make a puzzle"
 msgstr ""
 
 #: ../../magic/src/puzzle.c:85
 #, fuzzy
-msgid "Click to make mosaic in fullscreen mode"
+msgid "Click to make a puzzle in fullscreen mode"
 msgstr "Clique pour voir l'image dans un miroir."
 
 #
@@ -1011,13 +1020,15 @@ msgstr "Pluie"
 
 #
 #: ../../magic/src/rain.c:67
-msgid "Click to place a rain drop onto the image."
+#, fuzzy
+msgid "Click to place a rain drop onto your picture."
 msgstr "Clique pour placet une goutte de pluie sur le dessin.."
 
 #
 #
 #: ../../magic/src/rain.c:68
-msgid "Click to cover the image with rain drops."
+#, fuzzy
+msgid "Click to cover your picture with rain drops."
 msgstr "Clique pour remplir le dessin avec des gouttes de pluie."
 
 #: ../../magic/src/ripples.c:81
@@ -1062,32 +1073,38 @@ msgstr ""
 
 #
 #: ../../magic/src/sharpen.c:78
-msgid "Click and move the mouse to trace the edges of objects in the image."
-msgstr "Clique et déplace la souris pour avoir le contour d'objets de l'image."
+#, fuzzy
+msgid "Click and move the mouse to trace edges in parts of your picture."
+msgstr "Clique et déplace la souris pour assombrir une partie de l'image."
 
+#
 #: ../../magic/src/sharpen.c:79
-msgid "Click to trace the edges of objects in the image."
-msgstr "Clique pour avoir le contour de tous les objets de l'image."
+#, fuzzy
+msgid "Click to trace edges in your entire picture."
+msgstr "Clique pour assombrir la totalité de l'image."
 
 #
 #: ../../magic/src/sharpen.c:80
-msgid "Click and move the mouse to sharpen the image."
-msgstr "Clique et déplace la souris pour affiner l'image."
+#, fuzzy
+msgid "Click and move the mouse to sharpen parts of your picture."
+msgstr "Clique et déplace la souris pour assombrir une partie de l'image."
 
 #
 #: ../../magic/src/sharpen.c:81
-msgid "Click to sharpen the entire image."
+#, fuzzy
+msgid "Click to sharpen the entire picture."
 msgstr "Clique pour affiner l'image entière."
 
 #
 #: ../../magic/src/sharpen.c:82
-msgid ""
-"Click and move the mouse to create a black and white silhouette of the image."
+#, fuzzy
+msgid "Click and move the mouse to create a black and white silhouette."
 msgstr "Clique et déplace la souris pour avoir une image en noir et blanc."
 
 #
 #: ../../magic/src/sharpen.c:83
-msgid "Click to create a black and white silhouette of the entire image."
+#, fuzzy
+msgid "Click to create a black and white silhouette of your entire picture."
 msgstr "Clique pour avoir toute l'image en noir et blanc."
 
 #: ../../magic/src/shift.c:104
@@ -1114,10 +1131,15 @@ msgstr "Boule de neige"
 msgid "Snow Flake"
 msgstr "Flocon de neige"
 
-#
-#: ../../magic/src/snow.c:72 ../../magic/src/snow.c:73
-msgid "Click to add snow to the entire image."
-msgstr "Clique pour obtenir de la neige sur toute l'image."
+#: ../../magic/src/snow.c:72
+#, fuzzy
+msgid "Click to add snow balls to your picture."
+msgstr "Clique pour faire apparaître des ronds dans l'eau."
+
+#: ../../magic/src/snow.c:73
+#, fuzzy
+msgid "Click to add snow flakes to your picture."
+msgstr "Clique pour faire apparaître des ronds dans l'eau."
 
 #: ../../magic/src/tint.c:67
 msgid "Tint"
@@ -1129,29 +1151,29 @@ msgstr "Seuil"
 
 #
 #: ../../magic/src/tint.c:71
+#, fuzzy
 msgid ""
-"Click and move the mouse around to change the color of parts of the picture."
+"Click and move the mouse around to change the color of parts of your picture."
 msgstr "Clique et déplace la souris pour changer la couleur localement."
 
 #
 #: ../../magic/src/tint.c:72
 #, fuzzy
-msgid "Click to change the color of the entire image."
+msgid "Click to change the color of your entire picture."
 msgstr "Clique pour changer la couleur de toute l'image."
 
-#
 #: ../../magic/src/tint.c:73
 #, fuzzy
 msgid ""
-"Click and move the mouse around to turn the image into pure color and white "
-"regions."
+"Click and move the mouse around to turn parts of your picture into color and "
+"white."
 msgstr ""
-"Clique et déplace la souris pour obtenir une image en blanc et une seule "
-"couleur que tu as choisie. "
+"Clique et déplace la souris pour transformer l'image comme une bande "
+"dessinée."
 
 #: ../../magic/src/tint.c:74
 #, fuzzy
-msgid "Click to turn the entire image into pure color and white regions."
+msgid "Click to turn your entire picture into color and white."
 msgstr ""
 "Clique pour obtenir une image en blanc et une seule couleur que tu as "
 "choisie. "
@@ -1161,7 +1183,8 @@ msgid "Toothpaste"
 msgstr "Dentifrice"
 
 #: ../../magic/src/toothpaste.c:68
-msgid "Click and drag to squirt toothpaste onto the image."
+#, fuzzy
+msgid "Click and drag to squirt toothpaste onto your picture."
 msgstr ""
 "Clique et déplace la souris pour faire gicler du dentifrice sur le dessin."
 
@@ -1205,6 +1228,39 @@ msgstr ""
 "Clique pour avoir un effet vagué. Clique vers le haut pour de courtes "
 "vagues, vers le bas pour de longues vagues, à gauche pour diminuer "
 "l'amplitude et à droite pour augmenter l'amplitude."
+
+#
+#~ msgid "Click and move the mouse to add noise to the image."
+#~ msgstr "Clique et déplace la souris pour ajouter des parasites à l'image."
+
+#
+#~ msgid "Click to add noise to the entire image."
+#~ msgstr "Clique pour ajouter des parasites à toute l'image."
+
+#
+#~ msgid "Click and move the mouse to trace the edges of objects in the image."
+#~ msgstr ""
+#~ "Clique et déplace la souris pour avoir le contour d'objets de l'image."
+
+#~ msgid "Click to trace the edges of objects in the image."
+#~ msgstr "Clique pour avoir le contour de tous les objets de l'image."
+
+#
+#~ msgid "Click and move the mouse to sharpen the image."
+#~ msgstr "Clique et déplace la souris pour affiner l'image."
+
+#
+#~ msgid "Click to add snow to the entire image."
+#~ msgstr "Clique pour obtenir de la neige sur toute l'image."
+
+#
+#, fuzzy
+#~ msgid ""
+#~ "Click and move the mouse around to turn the image into pure color and "
+#~ "white regions."
+#~ msgstr ""
+#~ "Clique et déplace la souris pour obtenir une image en blanc et une seule "
+#~ "couleur que tu as choisie. "
 
 #~ msgid "Trace Contour"
 #~ msgstr "Contour"

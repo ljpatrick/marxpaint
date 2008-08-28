@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Tux paint anns a' ghàidhlig\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-08-26 05:12+0100\n"
+"POT-Creation-Date: 2008-08-28 23:15+0100\n"
 "PO-Revision-Date: 2006-03-04 15:51-0000\n"
 "Last-Translator: Niall Tracey <internationiall@hotmail.com>\n"
 "Language-Team:  <internationiall@hotmail.com>\n"
@@ -769,12 +769,16 @@ msgstr ""
 # Gràmar?
 #: ../../magic/src/alien.c:67
 #, fuzzy
-msgid "Click and move the mouse to give the image an \"alien\" appearance."
+msgid ""
+"Click and move the mouse to give parts of your picture an \"alien\" "
+"appearance."
 msgstr "Briog agus slaod airson na breigichean beaga."
 
+# Gràmar?
 #: ../../magic/src/alien.c:68
-msgid "Click to give the entire image an \"alien\" appearance."
-msgstr ""
+#, fuzzy
+msgid "Click to give your entire picture an \"alien\" appearance."
+msgstr "Briog agus slaod airson na breigichean beaga."
 
 # Teach Yourself Gaelic Dictionary: Boyd Robertson & Ian Taylor
 #: ../../magic/src/blocks_chalk_drip.c:132
@@ -1043,13 +1047,14 @@ msgstr ""
 # Gràmar?
 #: ../../magic/src/mosaic.c:73
 #, fuzzy
-msgid "Click and move the mouse to add a mosaic effect to the image."
+msgid ""
+"Click and move the mouse to add a mosaic effect to parts of your picture."
 msgstr "Briog agus slaod airson na breigichean beaga."
 
 # Gràmar?
 #: ../../magic/src/mosaic.c:74
 #, fuzzy
-msgid "Click to add a mosaic effect to the entire image."
+msgid "Click to add a mosaic effect to your entire picture."
 msgstr "Briog agus slaod airson na breigichean beaga."
 
 #: ../../magic/src/negative.c:72
@@ -1069,15 +1074,16 @@ msgid "Noise"
 msgstr ""
 
 # Gràmar?
+# Is the word "lainnir" appropriate/common?
 #: ../../magic/src/noise.c:66
 #, fuzzy
-msgid "Click and move the mouse to add noise to the image."
-msgstr "Briog agus slaod airson na breigichean beaga."
+msgid "Click and move the mouse to add noise to parts of your picture."
+msgstr "Briog agus slaod airson lainnir a dhèanamh dealbh."
 
 # Gràmar?
 #: ../../magic/src/noise.c:67
 #, fuzzy
-msgid "Click to add noise to the entire image."
+msgid "Click to add noise to your entire picture."
 msgstr "Briog agus slaod airson na breigichean beaga."
 
 # Teach Yourself Gaelic Dictionary: Boyd Robertson & Ian Taylor
@@ -1087,11 +1093,11 @@ msgid "Puzzle"
 msgstr "Purpaidh!"
 
 #: ../../magic/src/puzzle.c:84
-msgid "Select the area of image where would you like to make a mosaic"
+msgid "Select the area of the image where would you like to make a puzzle"
 msgstr ""
 
 #: ../../magic/src/puzzle.c:85
-msgid "Click to make mosaic in fullscreen mode"
+msgid "Click to make a puzzle in fullscreen mode"
 msgstr ""
 
 #: ../../magic/src/rails.c:75
@@ -1124,11 +1130,11 @@ msgstr "Bogha-froise"
 # Gràmar?
 #: ../../magic/src/rain.c:67
 #, fuzzy
-msgid "Click to place a rain drop onto the image."
+msgid "Click to place a rain drop onto your picture."
 msgstr "Briog agus slaod airson na breigichean beaga."
 
 #: ../../magic/src/rain.c:68
-msgid "Click to cover the image with rain drops."
+msgid "Click to cover your picture with rain drops."
 msgstr ""
 
 #: ../../magic/src/ripples.c:81
@@ -1175,38 +1181,42 @@ msgid "Silhouette"
 msgstr ""
 
 # Gràmar?
+# Is the word "lainnir" appropriate/common?
 #: ../../magic/src/sharpen.c:78
 #, fuzzy
-msgid "Click and move the mouse to trace the edges of objects in the image."
-msgstr "Briog agus slaod airson na breigichean beaga."
-
-#: ../../magic/src/sharpen.c:79
-msgid "Click to trace the edges of objects in the image."
-msgstr ""
+msgid "Click and move the mouse to trace edges in parts of your picture."
+msgstr "Briog agus slaod airson lainnir a dhèanamh dealbh."
 
 # Gràmar?
+# Is the word "lainnir" appropriate/common?
+#: ../../magic/src/sharpen.c:79
+#, fuzzy
+msgid "Click to trace edges in your entire picture."
+msgstr "Briog agus slaod airson lainnir a dhèanamh dealbh."
+
+# Gràmar?
+# Is the word "lainnir" appropriate/common?
 #: ../../magic/src/sharpen.c:80
 #, fuzzy
-msgid "Click and move the mouse to sharpen the image."
-msgstr "Briog agus slaod airson na breigichean beaga."
+msgid "Click and move the mouse to sharpen parts of your picture."
+msgstr "Briog agus slaod airson lainnir a dhèanamh dealbh."
 
 # Gràmar?
 #: ../../magic/src/sharpen.c:81
 #, fuzzy
-msgid "Click to sharpen the entire image."
+msgid "Click to sharpen the entire picture."
 msgstr "Briog agus slaod airson na breigichean beaga."
 
 # Gràmar?
 #: ../../magic/src/sharpen.c:82
 #, fuzzy
-msgid ""
-"Click and move the mouse to create a black and white silhouette of the image."
+msgid "Click and move the mouse to create a black and white silhouette."
 msgstr "Briog agus slaod airson na breigichean beaga."
 
 # Gràmar?
 #: ../../magic/src/sharpen.c:83
 #, fuzzy
-msgid "Click to create a black and white silhouette of the entire image."
+msgid "Click to create a black and white silhouette of your entire picture."
 msgstr "Briog agus slaod airson na breigichean beaga."
 
 #: ../../magic/src/shift.c:104
@@ -1235,10 +1245,18 @@ msgid "Snow Flake"
 msgstr ""
 
 # Gràmar?
-#: ../../magic/src/snow.c:72 ../../magic/src/snow.c:73
+# Is the word "lainnir" appropriate/common?
+#: ../../magic/src/snow.c:72
 #, fuzzy
-msgid "Click to add snow to the entire image."
-msgstr "Briog agus slaod airson na breigichean beaga."
+msgid "Click to add snow balls to your picture."
+msgstr "Briog agus slaod airson lainnir a dhèanamh dealbh."
+
+# Gràmar?
+# Is the word "lainnir" appropriate/common?
+#: ../../magic/src/snow.c:73
+#, fuzzy
+msgid "Click to add snow flakes to your picture."
+msgstr "Briog agus slaod airson lainnir a dhèanamh dealbh."
 
 #: ../../magic/src/tint.c:67
 msgid "Tint"
@@ -1252,27 +1270,27 @@ msgstr ""
 #: ../../magic/src/tint.c:71
 #, fuzzy
 msgid ""
-"Click and move the mouse around to change the color of parts of the picture."
+"Click and move the mouse around to change the color of parts of your picture."
 msgstr "Briog agus slaod airson na breigichean beaga."
 
 # Gràmar?
 #: ../../magic/src/tint.c:72
 #, fuzzy
-msgid "Click to change the color of the entire image."
+msgid "Click to change the color of your entire picture."
 msgstr "Briog agus slaod airson na breigichean beaga."
 
 # Gràmar?
 #: ../../magic/src/tint.c:73
 #, fuzzy
 msgid ""
-"Click and move the mouse around to turn the image into pure color and white "
-"regions."
+"Click and move the mouse around to turn parts of your picture into color and "
+"white."
 msgstr "Briog agus slaod airson na breigichean beaga."
 
 # Gràmar?
 #: ../../magic/src/tint.c:74
 #, fuzzy
-msgid "Click to turn the entire image into pure color and white regions."
+msgid "Click to turn your entire picture into color and white."
 msgstr "Briog agus slaod airson na breigichean beaga."
 
 #: ../../magic/src/toothpaste.c:65
@@ -1282,7 +1300,7 @@ msgstr ""
 # Gràmar?
 #: ../../magic/src/toothpaste.c:68
 #, fuzzy
-msgid "Click and drag to squirt toothpaste onto the image."
+msgid "Click and drag to squirt toothpaste onto your picture."
 msgstr "Briog agus slaod airson na breigichean beaga."
 
 #: ../../magic/src/tv.c:72
@@ -1314,6 +1332,26 @@ msgid ""
 "waves, the bottom for taller waves, the left for small waves, and the right "
 "for long waves."
 msgstr ""
+
+# Gràmar?
+#, fuzzy
+#~ msgid "Click and move the mouse to add noise to the image."
+#~ msgstr "Briog agus slaod airson na breigichean beaga."
+
+# Gràmar?
+#, fuzzy
+#~ msgid "Click and move the mouse to trace the edges of objects in the image."
+#~ msgstr "Briog agus slaod airson na breigichean beaga."
+
+# Gràmar?
+#, fuzzy
+#~ msgid "Click and move the mouse to sharpen the image."
+#~ msgstr "Briog agus slaod airson na breigichean beaga."
+
+# Gràmar?
+#, fuzzy
+#~ msgid "Click to add snow to the entire image."
+#~ msgstr "Briog agus slaod airson na breigichean beaga."
 
 # Gràmar?
 #, fuzzy

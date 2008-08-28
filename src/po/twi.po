@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-08-26 05:12+0100\n"
+"POT-Creation-Date: 2008-08-28 23:15+0100\n"
 "PO-Revision-Date: 2007-04-26 15:45+0200\n"
 "Last-Translator: Joana Portia Antwi-Danso <portnass2003@yahoo.com>\n"
 "MIME-Version: 1.0\n"
@@ -686,12 +686,15 @@ msgstr ""
 
 #: ../../magic/src/alien.c:67
 #, fuzzy
-msgid "Click and move the mouse to give the image an \"alien\" appearance."
+msgid ""
+"Click and move the mouse to give parts of your picture an \"alien\" "
+"appearance."
 msgstr "Mia so na fa akura no to mfoni no so ma no nyɛ wisiwisi."
 
 #: ../../magic/src/alien.c:68
-msgid "Click to give the entire image an \"alien\" appearance."
-msgstr ""
+#, fuzzy
+msgid "Click to give your entire picture an \"alien\" appearance."
+msgstr "Fa akura no fa mfoni no so na sesa n'ahosuo no."
 
 #: ../../magic/src/blocks_chalk_drip.c:132
 msgid "Blocks"
@@ -932,12 +935,13 @@ msgstr "Nkonyaa"
 
 #: ../../magic/src/mosaic.c:73
 #, fuzzy
-msgid "Click and move the mouse to add a mosaic effect to the image."
+msgid ""
+"Click and move the mouse to add a mosaic effect to parts of your picture."
 msgstr "Mia akura no so ma mfoni no baako mmɛka ho."
 
 #: ../../magic/src/mosaic.c:74
 #, fuzzy
-msgid "Click to add a mosaic effect to the entire image."
+msgid "Click to add a mosaic effect to your entire picture."
 msgstr "Mia akura no so ma mfoni no baako mmɛka ho."
 
 #: ../../magic/src/negative.c:72
@@ -959,13 +963,13 @@ msgstr ""
 
 #: ../../magic/src/noise.c:66
 #, fuzzy
-msgid "Click and move the mouse to add noise to the image."
+msgid "Click and move the mouse to add noise to parts of your picture."
 msgstr "Mia so na fa akura no to mfoni no so ma no nyɛ wisiwisi."
 
 #: ../../magic/src/noise.c:67
 #, fuzzy
-msgid "Click to add noise to the entire image."
-msgstr "Mia akura no so ma mfoni no baako mmɛka ho."
+msgid "Click to add noise to your entire picture."
+msgstr "Fa akura no fa mfoni no so na sesa n'ahosuo no."
 
 #: ../../magic/src/puzzle.c:77
 #, fuzzy
@@ -973,12 +977,12 @@ msgid "Puzzle"
 msgstr "Bibiri a kɔkɔɔ wɔ mu!"
 
 #: ../../magic/src/puzzle.c:84
-msgid "Select the area of image where would you like to make a mosaic"
+msgid "Select the area of the image where would you like to make a puzzle"
 msgstr ""
 
 #: ../../magic/src/puzzle.c:85
 #, fuzzy
-msgid "Click to make mosaic in fullscreen mode"
+msgid "Click to make a puzzle in fullscreen mode"
 msgstr "Mia akura no so ma mfoni no baako mmɛka ho."
 
 #: ../../magic/src/rails.c:75
@@ -1005,12 +1009,12 @@ msgstr "Nyankontɔn"
 
 #: ../../magic/src/rain.c:67
 #, fuzzy
-msgid "Click to place a rain drop onto the image."
+msgid "Click to place a rain drop onto your picture."
 msgstr "Mia akura no so ma mfoni no baako mmɛka ho."
 
 #: ../../magic/src/rain.c:68
 #, fuzzy
-msgid "Click to cover the image with rain drops."
+msgid "Click to cover your picture with rain drops."
 msgstr "Mia akura no so ma mfoni no baako mmɛka ho."
 
 #: ../../magic/src/ripples.c:81
@@ -1055,32 +1059,32 @@ msgstr ""
 
 #: ../../magic/src/sharpen.c:78
 #, fuzzy
-msgid "Click and move the mouse to trace the edges of objects in the image."
+msgid "Click and move the mouse to trace edges in parts of your picture."
 msgstr "Mia so na fa akura no to mfoni no so ma no nyɛ wisiwisi."
 
 #: ../../magic/src/sharpen.c:79
-msgid "Click to trace the edges of objects in the image."
-msgstr ""
+#, fuzzy
+msgid "Click to trace edges in your entire picture."
+msgstr "Fa akura no fa mfoni no so na sesa n'ahosuo no."
 
 #: ../../magic/src/sharpen.c:80
 #, fuzzy
-msgid "Click and move the mouse to sharpen the image."
+msgid "Click and move the mouse to sharpen parts of your picture."
 msgstr "Mia so na fa akura no to mfoni no so ma no nyɛ wisiwisi."
 
 #: ../../magic/src/sharpen.c:81
 #, fuzzy
-msgid "Click to sharpen the entire image."
+msgid "Click to sharpen the entire picture."
 msgstr "Mia akura no so ma mfoni no baako mmɛka ho."
 
 #: ../../magic/src/sharpen.c:82
 #, fuzzy
-msgid ""
-"Click and move the mouse to create a black and white silhouette of the image."
+msgid "Click and move the mouse to create a black and white silhouette."
 msgstr "Mia so na fa akura no to mfoni no so ma no nyɛ wisiwisi."
 
 #: ../../magic/src/sharpen.c:83
 #, fuzzy
-msgid "Click to create a black and white silhouette of the entire image."
+msgid "Click to create a black and white silhouette of your entire picture."
 msgstr "Mia so na fa akura no to mfoni no so ma no nyɛ wisiwisi."
 
 #: ../../magic/src/shift.c:104
@@ -1108,10 +1112,15 @@ msgstr ""
 msgid "Snow Flake"
 msgstr ""
 
-#: ../../magic/src/snow.c:72 ../../magic/src/snow.c:73
+#: ../../magic/src/snow.c:72
 #, fuzzy
-msgid "Click to add snow to the entire image."
-msgstr "Mia akura no so ma mfoni no baako mmɛka ho."
+msgid "Click to add snow balls to your picture."
+msgstr "Mia so na fa akura no to mfoni no so ma no nyɛ wisiwisi."
+
+#: ../../magic/src/snow.c:73
+#, fuzzy
+msgid "Click to add snow flakes to your picture."
+msgstr "Mia so na fa akura no to mfoni no so ma no nyɛ wisiwisi."
 
 #: ../../magic/src/tint.c:67
 msgid "Tint"
@@ -1124,24 +1133,24 @@ msgstr ""
 #: ../../magic/src/tint.c:71
 #, fuzzy
 msgid ""
-"Click and move the mouse around to change the color of parts of the picture."
+"Click and move the mouse around to change the color of parts of your picture."
 msgstr "Mia so na fa akura no to mfoni no so ma no nyɛ wisiwisi."
 
 #: ../../magic/src/tint.c:72
 #, fuzzy
-msgid "Click to change the color of the entire image."
+msgid "Click to change the color of your entire picture."
 msgstr "Mia so na fa akura no to mfoni no so ma no nyɛ wisiwisi."
 
 #: ../../magic/src/tint.c:73
 #, fuzzy
 msgid ""
-"Click and move the mouse around to turn the image into pure color and white "
-"regions."
+"Click and move the mouse around to turn parts of your picture into color and "
+"white."
 msgstr "Fa akura no fa mfoni no so ma no nnane koriko."
 
 #: ../../magic/src/tint.c:74
 #, fuzzy
-msgid "Click to turn the entire image into pure color and white regions."
+msgid "Click to turn your entire picture into color and white."
 msgstr "Fa akura no fa mfoni no so ma no nnane koriko."
 
 #: ../../magic/src/toothpaste.c:65
@@ -1150,7 +1159,7 @@ msgstr ""
 
 #: ../../magic/src/toothpaste.c:68
 #, fuzzy
-msgid "Click and drag to squirt toothpaste onto the image."
+msgid "Click and drag to squirt toothpaste onto your picture."
 msgstr "Mia so na fa akura no to mfoni no so ma no nyɛ wisiwisi."
 
 #: ../../magic/src/tv.c:72
@@ -1185,6 +1194,32 @@ msgid ""
 "waves, the bottom for taller waves, the left for small waves, and the right "
 "for long waves."
 msgstr ""
+
+#, fuzzy
+#~ msgid "Click and move the mouse to add noise to the image."
+#~ msgstr "Mia so na fa akura no to mfoni no so ma no nyɛ wisiwisi."
+
+#, fuzzy
+#~ msgid "Click to add noise to the entire image."
+#~ msgstr "Mia akura no so ma mfoni no baako mmɛka ho."
+
+#, fuzzy
+#~ msgid "Click and move the mouse to trace the edges of objects in the image."
+#~ msgstr "Mia so na fa akura no to mfoni no so ma no nyɛ wisiwisi."
+
+#, fuzzy
+#~ msgid "Click and move the mouse to sharpen the image."
+#~ msgstr "Mia so na fa akura no to mfoni no so ma no nyɛ wisiwisi."
+
+#, fuzzy
+#~ msgid "Click to add snow to the entire image."
+#~ msgstr "Mia akura no so ma mfoni no baako mmɛka ho."
+
+#, fuzzy
+#~ msgid ""
+#~ "Click and move the mouse around to turn the image into pure color and "
+#~ "white regions."
+#~ msgstr "Fa akura no fa mfoni no so ma no nnane koriko."
 
 #, fuzzy
 #~ msgid "Click and move the mouse around convert the image to greyscale."
