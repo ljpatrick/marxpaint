@@ -64,8 +64,8 @@ const char * rain_names[rain_NUM_TOOLS] = {
   gettext_noop("Rain"),
 };
 const char * rain_descs[rain_NUM_TOOLS][2] = {
-  {gettext_noop("Click to place a rain drop onto the image."),
-    gettext_noop("Click to cover the image with rain drops."),},
+  {gettext_noop("Click to place a rain drop onto your picture."),
+    gettext_noop("Click to cover your picture with rain drops."),},
 };
 
 

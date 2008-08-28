@@ -65,7 +65,7 @@ const char * toothpaste_names[toothpaste_NUM_TOOLS] = {
   gettext_noop("Toothpaste"),
 };
 const char * toothpaste_descs[toothpaste_NUM_TOOLS] = {
-  gettext_noop("Click and drag to squirt toothpaste onto the image."),
+  gettext_noop("Click and drag to squirt toothpaste onto your picture."),
 };
 
 Uint32 toothpaste_api_version(void) { return(TP_MAGIC_API_VERSION); }

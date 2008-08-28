@@ -64,8 +64,8 @@ const char * alien_names[alien_NUM_TOOLS] = {
   gettext_noop("Alien"),
 };
 const char * alien_descs[alien_NUM_TOOLS][2] = {
-  {gettext_noop("Click and move the mouse to give the image an \"alien\" appearance."),
-    gettext_noop("Click to give the entire image an \"alien\" appearance."),},
+  {gettext_noop("Click and move the mouse to give parts of your picture an \"alien\" appearance."),
+    gettext_noop("Click to give your entire picture an \"alien\" appearance."),},
 };
 
 Uint32 alien_api_version(void) { return(TP_MAGIC_API_VERSION); }
