@@ -99,6 +99,10 @@ $Id$
       Jason Ward <nyad55@gmail.com>
       Pere Pujal i Carabantes <pere@fornol.no-ip.org>
 
+    * Corrected bug in postscript printing: images scaled up onto a large
+      canvas printed small, compared to when they're printed at the size
+      they were drawn.
+      Pere Pujal i Carabantes <pere@fornol.no-ip.org>
 
 2008.June.26 (0.9.20)
   * New translations:

@@ -6,7 +6,7 @@
   (for non-Windows, non-Mac OS X, non-BeOS platforms, e.g. Linux)
   (moved from tuxpaint.c in 0.9.17)
 
-  Copyright (c) 2007 by Bill Kendrick and others
+  Copyright (c) 2008 by Bill Kendrick and others
   bill@newbreedsoftware.com
   http://www.tuxpaint.org/
 
@@ -36,7 +36,7 @@
     implied warranty.
 
 
-  June 24, 2007 - July 17, 2007
+  June 24, 2007 - August 28, 2008
   $Id$
 */
 
@@ -219,8 +219,8 @@ int do_ps_save(FILE * fi,
 
   fprintf(fi, "%%%%BoundingBox: %d %d %d %d\n",
 	      (int) tlate_x, (int) tlate_y,
-	      (int) (tlate_x + r_img_w + 0.5),
-	      (int) (tlate_y + r_img_h + 0.5));
+	      (int) (tlate_x + printed_img_w + 0.5),
+	      (int) (tlate_y + printed_img_h + 0.5));
 
   fprintf(fi, "%%%%EndComments\n");
 
@@ -255,8 +255,8 @@ int do_ps_save(FILE * fi,
   x and y axes, leaving the origin location and the orientation of the
   axes unchanged. */
   fprintf(fi, "%d.%02d %d.%02d scale\n",
-          f2int(printed_img_w * scale), f2dec(printed_img_w * scale),
-          f2int(printed_img_h * scale), f2dec(printed_img_h * scale));
+          f2int(printed_img_w), f2dec(printed_img_w),
+          f2int(printed_img_h), f2dec(printed_img_h));
 
   /* Rotate the image */
   if (rotate)
