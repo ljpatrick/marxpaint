@@ -54,7 +54,7 @@ enum {
 static Mix_Chunk * noise_snd_effect[noise_NUM_TOOLS];
 
 const char * noise_snd_filenames[noise_NUM_TOOLS] = {
-  "flip.wav",
+  "noise.ogg",
 };
 const char * noise_icon_filenames[noise_NUM_TOOLS] = {
   "flip.png",

@@ -206,6 +206,11 @@ $Id$
     Caroline Ford <caroline.ford.work@googlemail.com>
     2007, released under GNU Free Documentation License
 
+  * Noise tool sound
+    Caroline Ford <caroline.ford.work@googlemail.com> 2008 based on 
+    Pink noise.ogg by User:Omegatron http://commons.wikimedia.org/wiki/Image:Pink_noise.ogg
+    Dual licensed CC-BY-SA and GFDL. 
+
 
 * Translations
 
