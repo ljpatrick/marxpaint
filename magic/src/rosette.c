@@ -92,9 +92,9 @@ char * rosette_get_name(magic_api * api, int which) { if (!which) return strdup(
 char * rosette_get_description(magic_api * api, int which, int mode)
 {
 	if (!which)
-		return strdup(gettext_noop("Click and start drawing your rosette.")); 
+		return strdup(gettext_noop("Click and start drawing your rosette.")); //just k'scope with 3 bits?  
 	else
-		return strdup(gettext_noop("You can draw just like Picasso!"));
+		return strdup(gettext_noop("You can draw just like Picasso!")); //what is this actually doing?
 }
 
 int rosette_requires_colors(magic_api * api, int which) { return 1; }

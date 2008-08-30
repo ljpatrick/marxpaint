@@ -65,13 +65,13 @@ const char * tint_icon_filenames[tint_NUM_TOOLS] = {
 };
 const char * tint_names[tint_NUM_TOOLS] = {
   gettext_noop("Tint"),
-  gettext_noop("Threshold") // We must be able to come up with a better name than this.
+  gettext_noop("Black and White") // It does more than this but more intuitive than threshold.
 };
 const char * tint_descs[tint_NUM_TOOLS][2] = {
   {gettext_noop("Click and move the mouse around to change the color of parts of your picture."),
     gettext_noop("Click to change the color of your entire picture."),},
-  {gettext_noop("Click and move the mouse around to turn parts of your picture into color and white."),
-    gettext_noop("Click to turn your entire picture into color and white.")}
+  {gettext_noop("Click and move the mouse around to turn parts of your picture into black and white."),
+    gettext_noop("Click to turn your entire picture into black and white.")}
 };
 
 Uint32 tint_api_version(void) { return(TP_MAGIC_API_VERSION); }
