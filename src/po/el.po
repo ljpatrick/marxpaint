@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Tuxpaint 0.9.2pre\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-08-31 01:28+0100\n"
+"POT-Creation-Date: 2008-08-31 04:11+0100\n"
 "PO-Revision-Date: 2008-04-14 21:14+0200\n"
 "Last-Translator: yannis\n"
 "Language-Team: N/A <i18ngr@lists.hellug.gr>\n"
@@ -1151,7 +1151,7 @@ msgid "Tint"
 msgstr "Απόχρωση"
 
 #: ../../magic/src/tint.c:68
-msgid "Black and White"
+msgid "Separate Colors"
 msgstr ""
 
 #: ../../magic/src/tint.c:71
@@ -1168,15 +1168,15 @@ msgstr "Κάνε κλικ και κίνησε το ποντίκι για να θ
 #: ../../magic/src/tint.c:73
 #, fuzzy
 msgid ""
-"Click and move the mouse around to turn parts of your picture into black and "
-"white."
+"Click and move the mouse around to turn parts of your picture into separate "
+"colors."
 msgstr ""
 "Κάνε κλικ και κίνησε το ποντίκι για να κάνεις τη ζωγραφιά να μοιάζει με "
 "καρτούν."
 
 #: ../../magic/src/tint.c:74
 #, fuzzy
-msgid "Click to turn your entire picture into black and white."
+msgid "Click to turn your entire picture into separate colors."
 msgstr ""
 "Κάνε κλικ και κίνησε το ποντίκι για να κάνεις τη ζωγραφιά να μοιάζει με "
 "καρτούν."

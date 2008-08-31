@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: cy\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-08-31 01:28+0100\n"
+"POT-Creation-Date: 2008-08-31 04:11+0100\n"
 "PO-Revision-Date: 2004-09-21 14:28+0100\n"
 "Last-Translator: Kyfieithu <kyfieithu@dotmon.com>\n"
 "Language-Team: Cymraeg <cy@li.org>\n"
@@ -1146,7 +1146,7 @@ msgid "Tint"
 msgstr "Tenau"
 
 #: ../../magic/src/tint.c:68
-msgid "Black and White"
+msgid "Separate Colors"
 msgstr ""
 
 #: ../../magic/src/tint.c:71
@@ -1163,14 +1163,14 @@ msgstr "Clicia a symuda'r llygoden o gwmpas i bylu'r llun."
 #: ../../magic/src/tint.c:73
 #, fuzzy
 msgid ""
-"Click and move the mouse around to turn parts of your picture into black and "
-"white."
+"Click and move the mouse around to turn parts of your picture into separate "
+"colors."
 msgstr ""
 "Clicia a symuda'r llygoden o gwmpas i dro'i llun i mewn i ddarlun sialc."
 
 #: ../../magic/src/tint.c:74
 #, fuzzy
-msgid "Click to turn your entire picture into black and white."
+msgid "Click to turn your entire picture into separate colors."
 msgstr ""
 "Clicia a symuda'r llygoden o gwmpas i dro'i llun i mewn i ddarlun sialc."
 

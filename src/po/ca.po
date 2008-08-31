@@ -17,7 +17,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Tuxpaint cvs 2008-08-02\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-08-31 01:28+0100\n"
+"POT-Creation-Date: 2008-08-31 04:11+0100\n"
 "PO-Revision-Date: 2008-08-02 16:12+0200\n"
 "Last-Translator: Pere Pujal i Carabantes <pere@fornol.no-ip.org>\n"
 "Language-Team: Català <linux-ca@chanae.alphanet.ch>\n"
@@ -1132,9 +1132,8 @@ msgid "Tint"
 msgstr "Entinta"
 
 #: ../../magic/src/tint.c:68
-#, fuzzy
-msgid "Black and White"
-msgstr "Blanc i negre"
+msgid "Separate Colors"
+msgstr ""
 
 #: ../../magic/src/tint.c:71
 #, fuzzy
@@ -1150,13 +1149,13 @@ msgstr "Cliqueu per canviar els colors de la imatge."
 #: ../../magic/src/tint.c:73
 #, fuzzy
 msgid ""
-"Click and move the mouse around to turn parts of your picture into black and "
-"white."
+"Click and move the mouse around to turn parts of your picture into separate "
+"colors."
 msgstr "Feu clic i moveu el ratolí per convertir la imatge a colors sólids."
 
 #: ../../magic/src/tint.c:74
 #, fuzzy
-msgid "Click to turn your entire picture into black and white."
+msgid "Click to turn your entire picture into separate colors."
 msgstr "Cliqueu per convertir la imatge a color/blanc."
 
 #: ../../magic/src/toothpaste.c:65
@@ -1205,6 +1204,10 @@ msgid ""
 msgstr ""
 "Feu clic dins la imatge per aplicar-hi ones. Clic a dalt fa ones curtes, a "
 "baix ones altes, a l'esquerra ones petites, a la dreta ones llargues."
+
+#, fuzzy
+#~ msgid "Black and White"
+#~ msgstr "Blanc i negre"
 
 #~ msgid "Threshold"
 #~ msgstr "Llindar"

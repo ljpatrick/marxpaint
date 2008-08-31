@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint 0.9.15rc1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-08-31 01:28+0100\n"
+"POT-Creation-Date: 2008-08-31 04:11+0100\n"
 "PO-Revision-Date: 2006-09-04 20:03-0400\n"
 "Last-Translator: Aleksandar Jelenak <jelenak@verizon.net>\n"
 "Language-Team: Serbian <gnu@prevod.org>\n"
@@ -1277,7 +1277,7 @@ msgid "Tint"
 msgstr "Осенчај"
 
 #: ../../magic/src/tint.c:68
-msgid "Black and White"
+msgid "Separate Colors"
 msgstr ""
 
 #
@@ -1297,14 +1297,14 @@ msgstr "Кликни и мрдај мишем да би замаглио сли�
 #: ../../magic/src/tint.c:73
 #, fuzzy
 msgid ""
-"Click and move the mouse around to turn parts of your picture into black and "
-"white."
+"Click and move the mouse around to turn parts of your picture into separate "
+"colors."
 msgstr "Кликни и шетај миша да би претворио слику у цртеж."
 
 #
 #: ../../magic/src/tint.c:74
 #, fuzzy
-msgid "Click to turn your entire picture into black and white."
+msgid "Click to turn your entire picture into separate colors."
 msgstr "Кликни и шетај миша да би претворио слику у цртеж."
 
 #: ../../magic/src/toothpaste.c:65

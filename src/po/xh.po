@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 0.9.16\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-08-31 01:28+0100\n"
+"POT-Creation-Date: 2008-08-31 04:11+0100\n"
 "PO-Revision-Date: 2006-09-22 01:42+0200\n"
 "Last-Translator: Dwayne Bailey <dwayne@translate.org.za>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -1135,7 +1135,7 @@ msgid "Tint"
 msgstr "Krweca ngombala"
 
 #: ../../magic/src/tint.c:68
-msgid "Black and White"
+msgid "Separate Colors"
 msgstr ""
 
 #: ../../magic/src/tint.c:71
@@ -1152,14 +1152,14 @@ msgstr "Nqomfa ushenxashenxise impuku ukuze udyobhe umfanekiso."
 #: ../../magic/src/tint.c:73
 #, fuzzy
 msgid ""
-"Click and move the mouse around to turn parts of your picture into black and "
-"white."
+"Click and move the mouse around to turn parts of your picture into separate "
+"colors."
 msgstr ""
 "Nqomfa ushenxashenxise impuku ukuze uguqule umfanekiso ufane noyiliweyo."
 
 #: ../../magic/src/tint.c:74
 #, fuzzy
-msgid "Click to turn your entire picture into black and white."
+msgid "Click to turn your entire picture into separate colors."
 msgstr ""
 "Nqomfa ushenxashenxise impuku ukuze uguqule umfanekiso ufane noyiliweyo."
 

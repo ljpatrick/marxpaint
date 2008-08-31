@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-08-31 01:28+0100\n"
+"POT-Creation-Date: 2008-08-31 04:11+0100\n"
 "PO-Revision-Date: 2008-07-14 12:17+0530\n"
 "Last-Translator: Kartik Mistry <kartik.mistry@gmail.com>\n"
 "Language-Team: Gujarati <team@utkarsh.org>\n"
@@ -1101,9 +1101,8 @@ msgid "Tint"
 msgstr "આછો રંગ"
 
 #: ../../magic/src/tint.c:68
-#, fuzzy
-msgid "Black and White"
-msgstr "કાળું અને ધોળું"
+msgid "Separate Colors"
+msgstr ""
 
 #: ../../magic/src/tint.c:71
 #, fuzzy
@@ -1119,13 +1118,13 @@ msgstr "ચિત્રમાં રહેલ વસ્તુઓનાં ખૂ
 #: ../../magic/src/tint.c:73
 #, fuzzy
 msgid ""
-"Click and move the mouse around to turn parts of your picture into black and "
-"white."
+"Click and move the mouse around to turn parts of your picture into separate "
+"colors."
 msgstr "ચિત્રને કાર્ટૂનમાં ફેરવવા માટે ક્લિક કરો અને માઉસ આજુબાજુ ખસેડો."
 
 #: ../../magic/src/tint.c:74
 #, fuzzy
-msgid "Click to turn your entire picture into black and white."
+msgid "Click to turn your entire picture into separate colors."
 msgstr "ચિત્રને કાળાં અને સફેદ વિસ્તારોની મર્યાદામાં ફેરવવા ક્લિક કરો."
 
 #: ../../magic/src/toothpaste.c:65
@@ -1176,6 +1175,10 @@ msgstr ""
 "ચિત્રને મોજાંઓ વાળું બનાવવા માટે ક્લિક કરો. ઉપરની તરફ ક્લિક કરતાં મોજાં ટૂંકા થશે; નીચેની "
 "તરફ કરતાં લાંબા થશે. ડાબી બાજુ ક્લિક કરતાં મોજા નાનાં થશે; જ્યારે જમણી બાજુ ક્લિક કરતાં "
 "મોજાં પહોળા થશે."
+
+#, fuzzy
+#~ msgid "Black and White"
+#~ msgstr "કાળું અને ધોળું"
 
 #~ msgid "Threshold"
 #~ msgstr "મર્યાદા"
