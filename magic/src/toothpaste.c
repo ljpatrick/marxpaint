@@ -59,7 +59,7 @@ const char * toothpaste_snd_filenames[toothpaste_NUM_TOOLS] = {
   "flip.wav",
 };
 const char * toothpaste_icon_filenames[toothpaste_NUM_TOOLS] = {
-  "flip.png",
+  "toothpaste.png",
 };
 const char * toothpaste_names[toothpaste_NUM_TOOLS] = {
   gettext_noop("Toothpaste"),

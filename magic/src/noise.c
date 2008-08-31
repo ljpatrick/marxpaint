@@ -57,7 +57,7 @@ const char * noise_snd_filenames[noise_NUM_TOOLS] = {
   "noise.ogg",
 };
 const char * noise_icon_filenames[noise_NUM_TOOLS] = {
-  "flip.png",
+  "noise.png",
 };
 const char * noise_names[noise_NUM_TOOLS] = {
   gettext_noop("Noise"),
