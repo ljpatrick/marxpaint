@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-08-28 23:15+0100\n"
+"POT-Creation-Date: 2008-08-31 01:28+0100\n"
 "PO-Revision-Date: 2008-05-30 15:41+0700\n"
 "Last-Translator: Khoem Sokhem <khoemsokhem@khmeros.info>\n"
 "Language-Team: Khmer <support@khmeros.info>\n"
@@ -825,6 +825,7 @@ msgstr "ចុច​ក្នុង​រូបភាព ដើម្បី​�
 msgid "Fisheye"
 msgstr ""
 
+#. Needs better name
 #: ../../magic/src/fisheye.c:79
 msgid "Select an area of the image to create the fisheye effect"
 msgstr ""
@@ -1113,7 +1114,7 @@ msgid "Tint"
 msgstr "ពណ៌​ព្រឿងៗ"
 
 #: ../../magic/src/tint.c:68
-msgid "Threshold"
+msgid "Black and White"
 msgstr ""
 
 #: ../../magic/src/tint.c:71
@@ -1130,13 +1131,13 @@ msgstr "ចុច ហើយ​ផ្លាស់ទី​កណ្ដុរ ដ�
 #: ../../magic/src/tint.c:73
 #, fuzzy
 msgid ""
-"Click and move the mouse around to turn parts of your picture into color and "
+"Click and move the mouse around to turn parts of your picture into black and "
 "white."
 msgstr "ចុច ហើយ​ផ្លាស់ទី​កណ្ដុរ ដើម្បី​ធ្វើ​រូបភាព​ឲ្យ​ទៅ​ជា​រូប​តុក្កតា ។"
 
 #: ../../magic/src/tint.c:74
 #, fuzzy
-msgid "Click to turn your entire picture into color and white."
+msgid "Click to turn your entire picture into black and white."
 msgstr "ចុច ហើយ​ផ្លាស់ទី​កណ្ដុរ ដើម្បី​ធ្វើ​រូបភាព​ឲ្យ​ទៅ​ជា​រូប​តុក្កតា ។"
 
 #: ../../magic/src/toothpaste.c:65

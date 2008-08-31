@@ -16,7 +16,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint 0.9.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-08-28 23:15+0100\n"
+"POT-Creation-Date: 2008-08-31 01:28+0100\n"
 "PO-Revision-Date: 2005-04-04 10:55-0700\n"
 "Last-Translator: Steven Michael Murphy <murf@e-tools.com>\n"
 "Language-Team: Kinyarwanda <translation-team-rw@lists.sourceforge.net>\n"
@@ -891,6 +891,7 @@ msgstr "in i() y'Ishusho Kuri Kuzuza Ubuso Na: Ibara"
 msgid "Fisheye"
 msgstr ""
 
+#. Needs better name
 #: ../../magic/src/fisheye.c:79
 msgid "Select an area of the image to create the fisheye effect"
 msgstr ""
@@ -1190,7 +1191,7 @@ msgid "Tint"
 msgstr "Kinanutse"
 
 #: ../../magic/src/tint.c:68
-msgid "Threshold"
+msgid "Black and White"
 msgstr ""
 
 #: ../../magic/src/tint.c:71
@@ -1207,13 +1208,13 @@ msgstr "Na Kwimura i Imbeba Kuri i() y'Ishusho"
 #: ../../magic/src/tint.c:73
 #, fuzzy
 msgid ""
-"Click and move the mouse around to turn parts of your picture into color and "
+"Click and move the mouse around to turn parts of your picture into black and "
 "white."
 msgstr "Na Kwimura i Imbeba Kuri i() y'Ishusho a Igishushanyo"
 
 #: ../../magic/src/tint.c:74
 #, fuzzy
-msgid "Click to turn your entire picture into color and white."
+msgid "Click to turn your entire picture into black and white."
 msgstr "Na Kwimura i Imbeba Kuri i() y'Ishusho a Igishushanyo"
 
 #: ../../magic/src/toothpaste.c:65

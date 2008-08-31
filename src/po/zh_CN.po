@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint 0.9.11\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-08-28 23:15+0100\n"
+"POT-Creation-Date: 2008-08-31 01:28+0100\n"
 "PO-Revision-Date: 2004-07-18 13:50+0800\n"
 "Last-Translator: Wang Jian <lark@linux.net.cn>\n"
 "Language-Team: zh_CN <i18n-translation@lists.linux.net.cn>\n"
@@ -846,6 +846,7 @@ msgstr "单击图片用颜色填充区域。"
 msgid "Fisheye"
 msgstr ""
 
+#. Needs better name
 #: ../../magic/src/fisheye.c:79
 msgid "Select an area of the image to create the fisheye effect"
 msgstr ""
@@ -1145,7 +1146,7 @@ msgid "Tint"
 msgstr "变淡"
 
 #: ../../magic/src/tint.c:68
-msgid "Threshold"
+msgid "Black and White"
 msgstr ""
 
 #: ../../magic/src/tint.c:71
@@ -1162,13 +1163,13 @@ msgstr "单击然后移动鼠标，将图片变模糊。"
 #: ../../magic/src/tint.c:73
 #, fuzzy
 msgid ""
-"Click and move the mouse around to turn parts of your picture into color and "
+"Click and move the mouse around to turn parts of your picture into black and "
 "white."
 msgstr "单击然后移动鼠标将图片变成粉笔画。"
 
 #: ../../magic/src/tint.c:74
 #, fuzzy
-msgid "Click to turn your entire picture into color and white."
+msgid "Click to turn your entire picture into black and white."
 msgstr "单击然后移动鼠标将图片变成粉笔画。"
 
 #: ../../magic/src/toothpaste.c:65

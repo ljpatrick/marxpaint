@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Tux Paint 0.9.16\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-08-28 23:15+0100\n"
+"POT-Creation-Date: 2008-08-31 01:28+0100\n"
 "PO-Revision-Date: 2007-04-29 23:10-0400\n"
 "Last-Translator: Mark K. Kim <mkkim214@gmail.com>\n"
 "Language-Team: N/A\n"
@@ -835,6 +835,7 @@ msgstr "마우스를 누르면 물통을 엎을 수 있어요!"
 msgid "Fisheye"
 msgstr ""
 
+#. Needs better name
 #: ../../magic/src/fisheye.c:79
 msgid "Select an area of the image to create the fisheye effect"
 msgstr ""
@@ -1133,7 +1134,7 @@ msgid "Tint"
 msgstr "배합"
 
 #: ../../magic/src/tint.c:68
-msgid "Threshold"
+msgid "Black and White"
 msgstr ""
 
 #: ../../magic/src/tint.c:71
@@ -1150,13 +1151,13 @@ msgstr "마우스를 누르면 그림을 흐리게 만들 수 있어요."
 #: ../../magic/src/tint.c:73
 #, fuzzy
 msgid ""
-"Click and move the mouse around to turn parts of your picture into color and "
+"Click and move the mouse around to turn parts of your picture into black and "
 "white."
 msgstr "마우스를 누르면 그림이 만화 같이 변화돼요."
 
 #: ../../magic/src/tint.c:74
 #, fuzzy
-msgid "Click to turn your entire picture into color and white."
+msgid "Click to turn your entire picture into black and white."
 msgstr "마우스를 누르면 그림이 만화 같이 변화돼요."
 
 #: ../../magic/src/toothpaste.c:65

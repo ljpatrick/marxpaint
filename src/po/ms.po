@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ms\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-08-28 23:15+0100\n"
+"POT-Creation-Date: 2008-08-31 01:28+0100\n"
 "PO-Revision-Date: 2004-08-23 16:06+0800\n"
 "Last-Translator: Muhammad Najmi bin Ahmad Zabidi <md_najmi@yahoo.com>\n"
 "Language-Team: Malay <kedidiemas@yahoogroups.com>\n"
@@ -850,6 +850,7 @@ msgstr ""
 msgid "Fisheye"
 msgstr ""
 
+#. Needs better name
 #: ../../magic/src/fisheye.c:79
 msgid "Select an area of the image to create the fisheye effect"
 msgstr ""
@@ -1152,7 +1153,7 @@ msgid "Tint"
 msgstr "Nipis"
 
 #: ../../magic/src/tint.c:68
-msgid "Threshold"
+msgid "Black and White"
 msgstr ""
 
 #: ../../magic/src/tint.c:71
@@ -1169,13 +1170,13 @@ msgstr "Klik dan gerakkan tetikus di sekeliling untuk mengaburkan gambar."
 #: ../../magic/src/tint.c:73
 #, fuzzy
 msgid ""
-"Click and move the mouse around to turn parts of your picture into color and "
+"Click and move the mouse around to turn parts of your picture into black and "
 "white."
 msgstr "Klik dan alihkan tetikus di sekeliling untuk membuat lukisan kapur."
 
 #: ../../magic/src/tint.c:74
 #, fuzzy
-msgid "Click to turn your entire picture into color and white."
+msgid "Click to turn your entire picture into black and white."
 msgstr "Klik dan alihkan tetikus di sekeliling untuk membuat lukisan kapur."
 
 #: ../../magic/src/toothpaste.c:65

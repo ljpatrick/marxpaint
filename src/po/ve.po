@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TuxPaint 0.9.16\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-08-28 23:15+0100\n"
+"POT-Creation-Date: 2008-08-31 01:28+0100\n"
 "PO-Revision-Date: 2006-09-21 20:04+0200\n"
 "Last-Translator: Shumani Mercy Ṋevhulaudzi <nevhulaudzi@saps.org.za>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -852,6 +852,7 @@ msgstr "Kiḽikani kha tshifanyiso u ḓadza muvhala wonoyo nga muvhala."
 msgid "Fisheye"
 msgstr ""
 
+#. Needs better name
 #: ../../magic/src/fisheye.c:79
 msgid "Select an area of the image to create the fisheye effect"
 msgstr ""
@@ -1163,7 +1164,7 @@ msgid "Tint"
 msgstr "Muvhala"
 
 #: ../../magic/src/tint.c:68
-msgid "Threshold"
+msgid "Black and White"
 msgstr ""
 
 #: ../../magic/src/tint.c:71
@@ -1182,7 +1183,7 @@ msgstr ""
 #: ../../magic/src/tint.c:73
 #, fuzzy
 msgid ""
-"Click and move the mouse around to turn parts of your picture into color and "
+"Click and move the mouse around to turn parts of your picture into black and "
 "white."
 msgstr ""
 "Kiḽikani ni sudzuluse mausu u mona u shandukisa tshifanyiso tsha vha "
@@ -1190,7 +1191,7 @@ msgstr ""
 
 #: ../../magic/src/tint.c:74
 #, fuzzy
-msgid "Click to turn your entire picture into color and white."
+msgid "Click to turn your entire picture into black and white."
 msgstr ""
 "Kiḽikani ni sudzuluse mausu u mona u shandukisa tshifanyiso tsha vha "
 "khathuni."

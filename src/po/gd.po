@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Tux paint anns a' ghàidhlig\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-08-28 23:15+0100\n"
+"POT-Creation-Date: 2008-08-31 01:28+0100\n"
 "PO-Revision-Date: 2006-03-04 15:51-0000\n"
 "Last-Translator: Niall Tracey <internationiall@hotmail.com>\n"
 "Language-Team:  <internationiall@hotmail.com>\n"
@@ -933,6 +933,7 @@ msgstr "Briog anns a' dhealbh airson lìon le dath."
 msgid "Fisheye"
 msgstr ""
 
+#. Needs better name
 #: ../../magic/src/fisheye.c:79
 msgid "Select an area of the image to create the fisheye effect"
 msgstr ""
@@ -1263,7 +1264,7 @@ msgid "Tint"
 msgstr ""
 
 #: ../../magic/src/tint.c:68
-msgid "Threshold"
+msgid "Black and White"
 msgstr ""
 
 # Gràmar?
@@ -1283,14 +1284,14 @@ msgstr "Briog agus slaod airson na breigichean beaga."
 #: ../../magic/src/tint.c:73
 #, fuzzy
 msgid ""
-"Click and move the mouse around to turn parts of your picture into color and "
+"Click and move the mouse around to turn parts of your picture into black and "
 "white."
 msgstr "Briog agus slaod airson na breigichean beaga."
 
 # Gràmar?
 #: ../../magic/src/tint.c:74
 #, fuzzy
-msgid "Click to turn your entire picture into color and white."
+msgid "Click to turn your entire picture into black and white."
 msgstr "Briog agus slaod airson na breigichean beaga."
 
 #: ../../magic/src/toothpaste.c:65

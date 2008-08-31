@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: en_gb\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-08-28 23:15+0100\n"
+"POT-Creation-Date: 2008-08-31 01:28+0100\n"
 "PO-Revision-Date: 2008-08-26 05:17+0100\n"
 "Last-Translator: Caroline Ford <caroline.ford.work@googlemail.com>\n"
 "Language-Team: Norwegian Nynorsk <i18n-nn@lister.ping.uio.no>\n"
@@ -821,6 +821,7 @@ msgstr "Click in the picture to fill that area with colour."
 msgid "Fisheye"
 msgstr "Fisheye"
 
+#. Needs better name
 #: ../../magic/src/fisheye.c:79
 msgid "Select an area of the image to create the fisheye effect"
 msgstr "Select an area of the image to create the fisheye effect"
@@ -1103,8 +1104,8 @@ msgid "Tint"
 msgstr "Tint"
 
 #: ../../magic/src/tint.c:68
-msgid "Threshold"
-msgstr "Threshold"
+msgid "Black and White"
+msgstr ""
 
 #: ../../magic/src/tint.c:71
 #, fuzzy
@@ -1121,13 +1122,13 @@ msgstr "Click to change the colour of the entire image."
 #: ../../magic/src/tint.c:73
 #, fuzzy
 msgid ""
-"Click and move the mouse around to turn parts of your picture into color and "
+"Click and move the mouse around to turn parts of your picture into black and "
 "white."
 msgstr "Click and move the mouse around to turn the picture into a cartoon."
 
 #: ../../magic/src/tint.c:74
 #, fuzzy
-msgid "Click to turn your entire picture into color and white."
+msgid "Click to turn your entire picture into black and white."
 msgstr "Click to turn the entire image into pure colour and white regions."
 
 #: ../../magic/src/toothpaste.c:65
@@ -1174,6 +1175,9 @@ msgstr ""
 "Click to make the picture vertically wavy. Click toward the top for shorter "
 "waves, the bottom for taller waves, the left for small waves, and the right "
 "for long waves."
+
+#~ msgid "Threshold"
+#~ msgstr "Threshold"
 
 #~ msgid "Click and move the mouse to add noise to the image."
 #~ msgstr "Click and move the mouse to add noise to the image."

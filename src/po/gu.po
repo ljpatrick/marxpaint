@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-08-28 23:15+0100\n"
+"POT-Creation-Date: 2008-08-31 01:28+0100\n"
 "PO-Revision-Date: 2008-07-14 12:17+0530\n"
 "Last-Translator: Kartik Mistry <kartik.mistry@gmail.com>\n"
 "Language-Team: Gujarati <team@utkarsh.org>\n"
@@ -817,6 +817,7 @@ msgstr "તે વિસ્તારને રંગથી ભરવાં મ�
 msgid "Fisheye"
 msgstr ""
 
+#. Needs better name
 #: ../../magic/src/fisheye.c:79
 msgid "Select an area of the image to create the fisheye effect"
 msgstr ""
@@ -1100,8 +1101,9 @@ msgid "Tint"
 msgstr "આછો રંગ"
 
 #: ../../magic/src/tint.c:68
-msgid "Threshold"
-msgstr "મર્યાદા"
+#, fuzzy
+msgid "Black and White"
+msgstr "કાળું અને ધોળું"
 
 #: ../../magic/src/tint.c:71
 #, fuzzy
@@ -1117,13 +1119,13 @@ msgstr "ચિત્રમાં રહેલ વસ્તુઓનાં ખૂ
 #: ../../magic/src/tint.c:73
 #, fuzzy
 msgid ""
-"Click and move the mouse around to turn parts of your picture into color and "
+"Click and move the mouse around to turn parts of your picture into black and "
 "white."
 msgstr "ચિત્રને કાર્ટૂનમાં ફેરવવા માટે ક્લિક કરો અને માઉસ આજુબાજુ ખસેડો."
 
 #: ../../magic/src/tint.c:74
 #, fuzzy
-msgid "Click to turn your entire picture into color and white."
+msgid "Click to turn your entire picture into black and white."
 msgstr "ચિત્રને કાળાં અને સફેદ વિસ્તારોની મર્યાદામાં ફેરવવા ક્લિક કરો."
 
 #: ../../magic/src/toothpaste.c:65
@@ -1175,6 +1177,9 @@ msgstr ""
 "તરફ કરતાં લાંબા થશે. ડાબી બાજુ ક્લિક કરતાં મોજા નાનાં થશે; જ્યારે જમણી બાજુ ક્લિક કરતાં "
 "મોજાં પહોળા થશે."
 
+#~ msgid "Threshold"
+#~ msgstr "મર્યાદા"
+
 #, fuzzy
 #~ msgid "Click and move the mouse to add noise to the image."
 #~ msgstr "ચિત્રને અસ્પષ્ટ કરવા માટે ક્લિક કરો અને આજુ-બાજુ ખસેડો."
@@ -1208,9 +1213,6 @@ msgstr ""
 
 #~ msgid "Trace Contour"
 #~ msgstr "કોન્ટુરને શોધો"
-
-#~ msgid "Black & White"
-#~ msgstr "કાળું અને ધોળું"
 
 #~ msgid "Click and move the mouse around convert the image to greyscale."
 #~ msgstr "ચિત્રને ભૂખરાં રંગનાં ચિત્રમાં ફેરવવા માટે માઉસને ક્લિક કરો અને આજુ-બાજુ ખસેડો."

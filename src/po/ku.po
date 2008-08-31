@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-08-28 23:15+0100\n"
+"POT-Creation-Date: 2008-08-31 01:28+0100\n"
 "PO-Revision-Date: 2006-04-23 00:58+0200\n"
 "Last-Translator: Amed Ç. Jiyan <amed@pckurd.net>\n"
 "Language-Team: KURDISH <LL@li.org>\n"
@@ -835,6 +835,7 @@ msgstr "Ji bo ku vê derê bi rengekî tije bikî, li ser wêneyê bitikîne."
 msgid "Fisheye"
 msgstr ""
 
+#. Needs better name
 #: ../../magic/src/fisheye.c:79
 msgid "Select an area of the image to create the fisheye effect"
 msgstr ""
@@ -1131,7 +1132,7 @@ msgid "Tint"
 msgstr "Berê"
 
 #: ../../magic/src/tint.c:68
-msgid "Threshold"
+msgid "Black and White"
 msgstr ""
 
 #: ../../magic/src/tint.c:71
@@ -1148,14 +1149,14 @@ msgstr "Mişkî li dora reşahiya wêneyê bitikîne û rake."
 #: ../../magic/src/tint.c:73
 #, fuzzy
 msgid ""
-"Click and move the mouse around to turn parts of your picture into color and "
+"Click and move the mouse around to turn parts of your picture into black and "
 "white."
 msgstr ""
 "Ji bo ku wêneyê çêkî wêneyekî kartok bitikîne û mişkî li dorê bigerîne."
 
 #: ../../magic/src/tint.c:74
 #, fuzzy
-msgid "Click to turn your entire picture into color and white."
+msgid "Click to turn your entire picture into black and white."
 msgstr ""
 "Ji bo ku wêneyê çêkî wêneyekî kartok bitikîne û mişkî li dorê bigerîne."
 
