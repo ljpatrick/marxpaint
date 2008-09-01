@@ -8,7 +8,7 @@ http://www.tuxpaint.org/
 
 $Id$
 
-2008.August.19 (0.9.21)
+2008.September.1 (0.9.21)
   * New Starters:
     -------------
     * Silver Frame
@@ -103,6 +103,9 @@ $Id$
       canvas printed small, compared to when they're printed at the size
       they were drawn.
       Pere Pujal i Carabantes <pere@fornol.no-ip.org>
+
+    * Corrected 'oval' brush shape so that colors came out right.
+      (Thanks to Andrei Skoogarev)
 
 2008.June.26 (0.9.20)
   * New translations:
