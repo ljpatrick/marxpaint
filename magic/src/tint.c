@@ -1,7 +1,11 @@
 /*
   tint.c
 
-  tint, Tint the image into one color or threshold it into pure color and white
+  Tint, Convert the image into differant shades of a user specified colour.
+
+  Seperate Colours, Convert the image into white and the user specified colour. 
+    This does not use differant shades of the user colour like tint does.
+
   Tux Paint - A simple drawing program for children.
 
   Credits: Andrew Corcoran <akanewbie@gmail.com>
