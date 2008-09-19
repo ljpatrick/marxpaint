@@ -8,7 +8,7 @@
                            bill@newbreedsoftware.com
                             http://www.tuxpaint.org/
 
-                       September 14, 2002 - July 7, 2008
+                    September 14, 2002 - September 18, 2008
 
 Drawing-related
 
@@ -249,16 +249,24 @@ Saving
        'savedir' option), Tux Paint saves into a standard location on your
        local drive:
 
-          * Windows
-            In the user's "Application Data" folder:
-            e.g., C:\Documents and Settings\Username\Application
-            Data\TuxPaint\saved
-          * Mac OS X
-            In the user's "Application Support" folder:
-            e.g., /Users/Username/Library/Applicaton Support/TuxPaint/saved/
-          * Linux / Unix
-            In the user's $HOME directory, under a ".tuxpaint" subfolder:
-            e.g., /home/username/.tuxpaint/saved/
+            Windows Vista
+                    In the user's "AppData" folder:
+                    e.g., C:\Users\Username\AppData\Roaming\TuxPaint\saved
+
+            Windows 95, 98, ME, 2000, XP
+                    In the user's "Application Data" folder:
+                    e.g., C:\Documents and Settings\Username\Application
+                    Data\TuxPaint\saved
+
+            Mac OS X
+                    In the user's "Application Support" folder:
+                    e.g., /Users/Username/Library/Applicaton
+                    Support/TuxPaint/saved/
+
+            Linux / Unix
+                    In the user's $HOME directory, under a ".tuxpaint"
+                    subfolder:
+                    e.g., /home/username/.tuxpaint/saved/
 
        The images are stored as PNG bitmaps, which most modern programs
        should be able to load (image editors, word processors, web browsers,
