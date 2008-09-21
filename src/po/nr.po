@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-08-31 04:11+0100\n"
+"POT-Creation-Date: 2008-09-21 17:26+0200\n"
 "PO-Revision-Date: 2006-10-09 20:32+0200\n"
 "Last-Translator: Vincent Mahlangu <vmahlangu@parliament.gov.za>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -854,7 +854,7 @@ msgstr ""
 
 #. Needs better name
 #: ../../magic/src/fisheye.c:79
-msgid "Select an area of the image to create the fisheye effect"
+msgid "Select an area of the image to create the fisheye effect."
 msgstr ""
 
 #: ../../magic/src/flower.c:124
@@ -879,7 +879,8 @@ msgid "Fold"
 msgstr ""
 
 #: ../../magic/src/fold.c:62
-msgid "Choose a background color and click to turn the corner of the page over"
+msgid ""
+"Choose a background color and click to turn the corner of the page over."
 msgstr ""
 
 #: ../../magic/src/glasstile.c:83
@@ -1006,12 +1007,12 @@ msgid "Puzzle"
 msgstr "Phephuli!"
 
 #: ../../magic/src/puzzle.c:84
-msgid "Select the area of the image where would you like to make a puzzle"
+msgid "Select the area of the image where would you like to make a puzzle."
 msgstr ""
 
 #: ../../magic/src/puzzle.c:85
 #, fuzzy
-msgid "Click to make a puzzle in fullscreen mode"
+msgid "Click to make a puzzle in fullscreen mode."
 msgstr "Qhwarhaza wenze umfanekiso osasiboniboni."
 
 #: ../../magic/src/rails.c:75
@@ -1162,28 +1163,28 @@ msgid "Click to add snow flakes to your picture."
 msgstr ""
 "Qhwarhaza bewudose njalo iKhondlwana ujikeleze ukuze ufiphaze isithombe."
 
-#: ../../magic/src/tint.c:67
+#: ../../magic/src/tint.c:71
 msgid "Tint"
 msgstr "Umbala"
 
-#: ../../magic/src/tint.c:68
+#: ../../magic/src/tint.c:72
 msgid "Separate Colors"
 msgstr ""
 
-#: ../../magic/src/tint.c:71
+#: ../../magic/src/tint.c:75
 #, fuzzy
 msgid ""
 "Click and move the mouse around to change the color of parts of your picture."
 msgstr ""
 "Qhwarhaza bewudose njalo iKhondlwana ujikeleze ukuze ufiphaze isithombe."
 
-#: ../../magic/src/tint.c:72
+#: ../../magic/src/tint.c:76
 #, fuzzy
 msgid "Click to change the color of your entire picture."
 msgstr ""
 "Qhwarhaza bewudose njalo iKhondlwana ujikeleze ukuze ufiphaze isithombe."
 
-#: ../../magic/src/tint.c:73
+#: ../../magic/src/tint.c:77
 #, fuzzy
 msgid ""
 "Click and move the mouse around to turn parts of your picture into separate "
@@ -1192,7 +1193,7 @@ msgstr ""
 "Qhwarhaza udose njalo iKhondlwana uzungeleze ukuze utjhugulule isithombe "
 "sibe yikhathuni."
 
-#: ../../magic/src/tint.c:74
+#: ../../magic/src/tint.c:78
 #, fuzzy
 msgid "Click to turn your entire picture into separate colors."
 msgstr ""

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-08-31 04:11+0100\n"
+"POT-Creation-Date: 2008-09-21 17:26+0200\n"
 "PO-Revision-Date: 2007-04-26 15:45+0200\n"
 "Last-Translator: Joana Portia Antwi-Danso <portnass2003@yahoo.com>\n"
 "MIME-Version: 1.0\n"
@@ -833,7 +833,7 @@ msgstr ""
 
 #. Needs better name
 #: ../../magic/src/fisheye.c:79
-msgid "Select an area of the image to create the fisheye effect"
+msgid "Select an area of the image to create the fisheye effect."
 msgstr ""
 
 #: ../../magic/src/flower.c:124
@@ -858,7 +858,8 @@ msgid "Fold"
 msgstr ""
 
 #: ../../magic/src/fold.c:62
-msgid "Choose a background color and click to turn the corner of the page over"
+msgid ""
+"Choose a background color and click to turn the corner of the page over."
 msgstr ""
 
 #: ../../magic/src/glasstile.c:83
@@ -978,12 +979,12 @@ msgid "Puzzle"
 msgstr "Bibiri a kɔkɔɔ wɔ mu!"
 
 #: ../../magic/src/puzzle.c:84
-msgid "Select the area of the image where would you like to make a puzzle"
+msgid "Select the area of the image where would you like to make a puzzle."
 msgstr ""
 
 #: ../../magic/src/puzzle.c:85
 #, fuzzy
-msgid "Click to make a puzzle in fullscreen mode"
+msgid "Click to make a puzzle in fullscreen mode."
 msgstr "Mia akura no so ma mfoni no baako mmɛka ho."
 
 #: ../../magic/src/rails.c:75
@@ -1123,33 +1124,33 @@ msgstr "Mia so na fa akura no to mfoni no so ma no nyɛ wisiwisi."
 msgid "Click to add snow flakes to your picture."
 msgstr "Mia so na fa akura no to mfoni no so ma no nyɛ wisiwisi."
 
-#: ../../magic/src/tint.c:67
+#: ../../magic/src/tint.c:71
 msgid "Tint"
 msgstr "Dumm"
 
-#: ../../magic/src/tint.c:68
+#: ../../magic/src/tint.c:72
 msgid "Separate Colors"
 msgstr ""
 
-#: ../../magic/src/tint.c:71
+#: ../../magic/src/tint.c:75
 #, fuzzy
 msgid ""
 "Click and move the mouse around to change the color of parts of your picture."
 msgstr "Mia so na fa akura no to mfoni no so ma no nyɛ wisiwisi."
 
-#: ../../magic/src/tint.c:72
+#: ../../magic/src/tint.c:76
 #, fuzzy
 msgid "Click to change the color of your entire picture."
 msgstr "Mia so na fa akura no to mfoni no so ma no nyɛ wisiwisi."
 
-#: ../../magic/src/tint.c:73
+#: ../../magic/src/tint.c:77
 #, fuzzy
 msgid ""
 "Click and move the mouse around to turn parts of your picture into separate "
 "colors."
 msgstr "Fa akura no fa mfoni no so ma no nnane koriko."
 
-#: ../../magic/src/tint.c:74
+#: ../../magic/src/tint.c:78
 #, fuzzy
 msgid "Click to turn your entire picture into separate colors."
 msgstr "Fa akura no fa mfoni no so ma no nnane koriko."
