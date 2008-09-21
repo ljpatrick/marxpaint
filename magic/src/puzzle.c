@@ -81,8 +81,8 @@ char * puzzle_get_name(magic_api * api, int which)
 char * puzzle_get_description(magic_api * api, int which, int mode)
 {
   if (mode==MODE_PAINT)
-	return strdup(gettext_noop("Select the area of the image where would you like to make a puzzle"));
-  return strdup(gettext_noop("Click to make a puzzle in fullscreen mode"));
+	return strdup(gettext_noop("Select the area of the image where would you like to make a puzzle."));
+  return strdup(gettext_noop("Click to make a puzzle in fullscreen mode."));
 }
 
 void puzzle_release(magic_api * api, int which,

@@ -59,7 +59,7 @@ SDL_Surface * fold_get_icon(magic_api * api, int which)
 
 char * fold_get_name(magic_api * api, int which) { return(gettext_noop("Fold")); }
 
-char * fold_get_description(magic_api * api, int which, int mode) { return strdup(gettext_noop("Choose a background color and click to turn the corner of the page over")); }
+char * fold_get_description(magic_api * api, int which, int mode) { return strdup(gettext_noop("Choose a background color and click to turn the corner of the page over.")); }
 
 int fold_requires_colors(magic_api * api, int which) { return 1; }		//selected color will be a "backpage" color
 

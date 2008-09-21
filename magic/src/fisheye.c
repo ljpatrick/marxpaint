@@ -76,7 +76,7 @@ SDL_Surface * fisheye_get_icon(magic_api * api, int which)
 
 char * fisheye_get_name(magic_api * api, int which) { return strdup(gettext_noop("Fisheye")); } //Needs better name
 
-char * fisheye_get_description(magic_api * api, int which, int mode) { return strdup(gettext_noop("Select an area of the image to create the fisheye effect")); }
+char * fisheye_get_description(magic_api * api, int which, int mode) { return strdup(gettext_noop("Select an area of the image to create the fisheye effect.")); }
 
 int fisheye_requires_colors(magic_api * api, int which) { return 0; }
 
