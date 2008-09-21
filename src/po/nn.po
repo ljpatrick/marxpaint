@@ -1,19 +1,19 @@
 # Translation of nn to Norwegian Nynorsk
-# Karl Ove Hufthammer <karl@huftis.org>, 2003-2004, 2005, 2006, 2007.
 # Omsetjing av Tux Paint til nynorsk.
 # Copyright © 2004 Karl Ove Hufthammer.
+# Karl Ove Hufthammer <karl@huftis.org>, 2003-2004, 2005, 2006, 2007, 2008.
 msgid ""
 msgstr ""
 "Project-Id-Version: nn\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-08-31 04:11+0100\n"
-"PO-Revision-Date: 2007-07-19 20:34+0200\n"
+"POT-Creation-Date: 2008-09-21 17:27+0200\n"
+"PO-Revision-Date: 2008-09-21 17:26+0200\n"
 "Last-Translator: Karl Ove Hufthammer <karl@huftis.org>\n"
 "Language-Team: Norwegian Nynorsk <i18n-nn@lister.ping.uio.no>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: KBabel 1.11.4\n"
+"X-Generator: Lokalize 0.2\n"
 "Plural-Forms:  nplurals=2; plural=(n != 1);\n"
 
 #. Response to Black (0, 0, 0) color selected
@@ -676,19 +676,20 @@ msgstr "Tux Paint"
 
 #: ../../magic/src/alien.c:64
 msgid "Alien"
-msgstr ""
+msgstr "Verdsrom"
 
 #: ../../magic/src/alien.c:67
-#, fuzzy
 msgid ""
 "Click and move the mouse to give parts of your picture an \"alien\" "
 "appearance."
-msgstr "Hald inne knappen og flytt rundt for å gjera teikninga uskarp."
+msgstr ""
+"Hald inne knappen og flytt rundt for å få delar av teikninga til å sjå ut "
+"som dei kom frå verdsrommet."
 
 #: ../../magic/src/alien.c:68
-#, fuzzy
 msgid "Click to give your entire picture an \"alien\" appearance."
-msgstr "Hald inne knappen og flytt rundt for å endra fargane på teikninga."
+msgstr ""
+"Trykk for å få heile teikninga til å sjå ut som ho kom frå verdsrommet."
 
 #: ../../magic/src/blocks_chalk_drip.c:132
 msgid "Blocks"
@@ -722,14 +723,12 @@ msgid "Blur"
 msgstr "Uskarp"
 
 #: ../../magic/src/blur.c:60
-#, fuzzy
 msgid "Click and move the mouse around to blur the image."
 msgstr "Hald inne knappen og flytt rundt for å gjera teikninga uskarp."
 
 #: ../../magic/src/blur.c:61
-#, fuzzy
 msgid "Click to blur the entire image."
-msgstr "Trykk for å spegelvenda teikninga."
+msgstr "Trykk for å gjera heile teikninga uskarp."
 
 #. Both are named "Bricks", at the moment:
 #: ../../magic/src/bricks.c:104
@@ -764,18 +763,17 @@ msgstr ""
 
 #: ../../magic/src/confetti.c:63
 msgid "Confetti"
-msgstr ""
+msgstr "Konfetti"
 
 #: ../../magic/src/confetti.c:65
 msgid "Click to throw confetti!"
-msgstr ""
+msgstr "Trykk for å kasta konfetti!"
 
 #: ../../magic/src/distortion.c:121
 msgid "Distortion"
 msgstr "Forstyrr"
 
 #: ../../magic/src/distortion.c:129
-#, fuzzy
 msgid "Click and drag the mouse to cause distortion in your picture."
 msgstr "Hald inne knappen og flytt rundt for å forstyrra teikninga."
 
@@ -796,24 +794,22 @@ msgid "Darken"
 msgstr "Mørkare"
 
 #: ../../magic/src/fade_darken.c:132
-#, fuzzy
 msgid "Click and move the mouse to lighten parts of your picture."
-msgstr "Hald inne knappen og flytt rundt for å gjera teikninga uskarp."
+msgstr ""
+"Hald inne knappen og flytt rundt for å gjera delar av teikninga lysare."
 
 #: ../../magic/src/fade_darken.c:134
-#, fuzzy
 msgid "Click to lighten your entire picture."
-msgstr "Hald inne knappen og flytt rundt for å endra fargane på teikninga."
+msgstr "Trykk for å gjera heile teikninga lysare."
 
 #: ../../magic/src/fade_darken.c:139
-#, fuzzy
 msgid "Click and move the mouse to darken parts of your picture."
-msgstr "Hald inne knappen og flytt rundt for å gjera teikninga uskarp."
+msgstr ""
+"Hald inne knappen og flytt rundt for å gjera delar av teikninga mørkare."
 
 #: ../../magic/src/fade_darken.c:141
-#, fuzzy
 msgid "Click to darken your entire picture."
-msgstr "Hald inne knappen og flytt rundt for å endra fargane på teikninga."
+msgstr "Trykk for å gjera heile teikninga mørkare."
 
 #: ../../magic/src/fill.c:87
 msgid "Fill"
@@ -825,12 +821,12 @@ msgstr "Trykk på teikninga for å fylla området med fargen frå målingbøtta.
 
 #: ../../magic/src/fisheye.c:77
 msgid "Fisheye"
-msgstr ""
+msgstr "Fiskeauge"
 
 #. Needs better name
 #: ../../magic/src/fisheye.c:79
-msgid "Select an area of the image to create the fisheye effect"
-msgstr ""
+msgid "Select an area of the image to create the fisheye effect."
+msgstr "Vel eit område av teikninga du vil sjå gjennom ei fiskeaugelinse."
 
 #: ../../magic/src/flower.c:124
 msgid "Flower"
@@ -853,11 +849,13 @@ msgstr ""
 
 #: ../../magic/src/fold.c:60
 msgid "Fold"
-msgstr ""
+msgstr "Brett"
 
 #: ../../magic/src/fold.c:62
-msgid "Choose a background color and click to turn the corner of the page over"
+msgid ""
+"Choose a background color and click to turn the corner of the page over."
 msgstr ""
+"Vel ein bakgrunnsfarge, og trykk så for å bretta hjørnet på teiknearket."
 
 #: ../../magic/src/glasstile.c:83
 msgid "Glass Tile"
@@ -869,9 +867,8 @@ msgstr ""
 "Hald inne knappen og flytt rundt for å leggja glasfliser over teikninga."
 
 #: ../../magic/src/glasstile.c:92
-#, fuzzy
 msgid "Click to cover your entire picture in glass tiles."
-msgstr "Hald inne knappen og flytt rundt for å endra fargane på teikninga."
+msgstr "Trykk for å dekkja heile teikninga med glasfliser."
 
 #: ../../magic/src/grass.c:92
 msgid "Grass"
@@ -925,20 +922,19 @@ msgid "Click to flip the picture upside-down."
 msgstr "Trykk for å snu teikninga opp ned."
 
 #: ../../magic/src/mosaic.c:70
-#, fuzzy
 msgid "Mosaic"
-msgstr "Magi"
+msgstr "Mosaikk"
 
 #: ../../magic/src/mosaic.c:73
-#, fuzzy
 msgid ""
 "Click and move the mouse to add a mosaic effect to parts of your picture."
-msgstr "Trykk for å spegelvenda teikninga."
+msgstr ""
+"Hald inne knappen og flytt rundt for å leggja ein mosaikk på delar av "
+"teikninga."
 
 #: ../../magic/src/mosaic.c:74
-#, fuzzy
 msgid "Click to add a mosaic effect to your entire picture."
-msgstr "Trykk for å spegelvenda teikninga."
+msgstr "Trykk for å leggja ein mosaikk på heile teikninga."
 
 #: ../../magic/src/negative.c:72
 msgid "Negative"
@@ -949,47 +945,40 @@ msgid "Click and move the mouse around to draw a negative."
 msgstr "Hald inne knappen og flytt rundt for å byta om på fargane."
 
 #: ../../magic/src/negative.c:83
-#, fuzzy
 msgid "Click to turn the image into its negative."
-msgstr "Trykk for å spegelvenda teikninga."
+msgstr "Trykk for å snu fargane på teikninga."
 
 #: ../../magic/src/noise.c:63
 msgid "Noise"
-msgstr ""
+msgstr "Støy"
 
 #: ../../magic/src/noise.c:66
-#, fuzzy
 msgid "Click and move the mouse to add noise to parts of your picture."
-msgstr "Hald inne knappen og flytt rundt for å gjera teikninga uskarp."
+msgstr "Hald inne knappen og flytt rundt for å leggja støy på teikninga."
 
 #: ../../magic/src/noise.c:67
-#, fuzzy
 msgid "Click to add noise to your entire picture."
-msgstr "Hald inne knappen og flytt rundt for å endra fargane på teikninga."
+msgstr "Trykk for å leggja støy på heile teikninga."
 
 #: ../../magic/src/puzzle.c:77
-#, fuzzy
 msgid "Puzzle"
-msgstr "Lilla!"
+msgstr "Puslespel"
 
 #: ../../magic/src/puzzle.c:84
-msgid "Select the area of the image where would you like to make a puzzle"
-msgstr ""
+msgid "Select the area of the image where would you like to make a puzzle."
+msgstr "Vel eit område av teikninga du vil gjera om til puslespel."
 
 #: ../../magic/src/puzzle.c:85
-#, fuzzy
-msgid "Click to make a puzzle in fullscreen mode"
-msgstr "Trykk for å spegelvenda teikninga."
+msgid "Click to make a puzzle in fullscreen mode."
+msgstr "Trykk for å gjera heile teikninga om til eit puslespel."
 
 #: ../../magic/src/rails.c:75
-#, fuzzy
 msgid "Rails"
-msgstr "Bølgjer"
+msgstr "Jarnbane"
 
 #: ../../magic/src/rails.c:77
-#, fuzzy
 msgid "Click and drag to draw train track rails on your picture."
-msgstr "Hald inne knappen og flytt rundt for å teikna lysstrålar."
+msgstr "Hald inne knappen og flytt rundt for å teikna jarnbanelinjer."
 
 #: ../../magic/src/rainbow.c:107
 msgid "Rainbow"
@@ -1000,19 +989,16 @@ msgid "You can draw in rainbow colors!"
 msgstr "Du kan teikna i alle regnbogens fargar!"
 
 #: ../../magic/src/rain.c:64
-#, fuzzy
 msgid "Rain"
-msgstr "Regnboge"
+msgstr "Regn"
 
 #: ../../magic/src/rain.c:67
-#, fuzzy
 msgid "Click to place a rain drop onto your picture."
-msgstr "Trykk for å spegelvenda teikninga."
+msgstr "Trykk for å sleppa ein regndrope på teikninga."
 
 #: ../../magic/src/rain.c:68
-#, fuzzy
 msgid "Click to cover your picture with rain drops."
-msgstr "Trykk for å spegelvenda teikninga."
+msgstr "Trykk for å dekkja teikninga med regndropar."
 
 #: ../../magic/src/ripples.c:81
 msgid "Ripples"
@@ -1024,64 +1010,58 @@ msgstr "Hald inne knappen og flytt rundt for å laga bølgjer over teikninga."
 
 #: ../../magic/src/rosette.c:90
 msgid "Rosette"
-msgstr ""
+msgstr "Rosett"
 
 #: ../../magic/src/rosette.c:90
 msgid "Picasso"
-msgstr ""
+msgstr "Picasso"
 
 #: ../../magic/src/rosette.c:95
-#, fuzzy
 msgid "Click and start drawing your rosette."
-msgstr "Trykk for å starta på ei linje, og slepp for å fullføra ho."
+msgstr "Trykk for å starta å teikna ein rosett."
 
 #: ../../magic/src/rosette.c:97
-#, fuzzy
 msgid "You can draw just like Picasso!"
-msgstr "Du kan teikna i alle regnbogens fargar!"
+msgstr "Du kan måla slik Picasso gjorde!"
 
 #: ../../magic/src/sharpen.c:73
 msgid "Edges"
-msgstr ""
+msgstr "Kantar"
 
 #: ../../magic/src/sharpen.c:74
-#, fuzzy
 msgid "Sharpen"
-msgstr "Figurar"
+msgstr "Skarp"
 
 #: ../../magic/src/sharpen.c:75
 msgid "Silhouette"
-msgstr ""
+msgstr "Silhuett"
 
 #: ../../magic/src/sharpen.c:78
-#, fuzzy
 msgid "Click and move the mouse to trace edges in parts of your picture."
-msgstr "Hald inne knappen og flytt rundt for å gjera teikninga uskarp."
+msgstr "Hald inne knappen og flytt rundt for å markera kantane i teikninga."
 
 #: ../../magic/src/sharpen.c:79
-#, fuzzy
 msgid "Click to trace edges in your entire picture."
-msgstr "Hald inne knappen og flytt rundt for å endra fargane på teikninga."
+msgstr "Trykk for å markera kantane på heile teikninga."
 
 #: ../../magic/src/sharpen.c:80
-#, fuzzy
 msgid "Click and move the mouse to sharpen parts of your picture."
-msgstr "Hald inne knappen og flytt rundt for å gjera teikninga uskarp."
+msgstr "Hald inne knappen og flytt rundt for å gjera teikninga skarpare."
 
 #: ../../magic/src/sharpen.c:81
-#, fuzzy
 msgid "Click to sharpen the entire picture."
-msgstr "Trykk for å spegelvenda teikninga."
+msgstr "Trykk for å gjera heile teikninga skarpare."
 
 #: ../../magic/src/sharpen.c:82
-#, fuzzy
 msgid "Click and move the mouse to create a black and white silhouette."
-msgstr "Hald inne knappen og flytt rundt for å gjera teikninga uskarp."
+msgstr ""
+"Hald inne knappen og flytt rundt for å laga ein silhuett i svart og kvitt."
 
 #: ../../magic/src/sharpen.c:83
-#, fuzzy
 msgid "Click to create a black and white silhouette of your entire picture."
-msgstr "Hald inne knappen og flytt rundt for å gjera teikninga uskarp."
+msgstr ""
+"Hald inne knappen og flytt rundt for å laga ein silhuett i svart og kvitt av "
+"heile teikninga."
 
 #: ../../magic/src/shift.c:104
 msgid "Shift"
@@ -1101,105 +1081,92 @@ msgstr "Hald inne knappen og flytt rundt for å gni teikninga utover."
 
 #: ../../magic/src/snow.c:68
 msgid "Snow Ball"
-msgstr ""
+msgstr "Snøball"
 
 #: ../../magic/src/snow.c:69
 msgid "Snow Flake"
-msgstr ""
+msgstr "Snøflak"
 
 #: ../../magic/src/snow.c:72
-#, fuzzy
 msgid "Click to add snow balls to your picture."
-msgstr "Hald inne knappen og flytt rundt for å laga bølgjer over teikninga."
+msgstr "Trykk for å kasta snøballar på teikninga."
 
 #: ../../magic/src/snow.c:73
-#, fuzzy
 msgid "Click to add snow flakes to your picture."
-msgstr "Hald inne knappen og flytt rundt for å laga bølgjer over teikninga."
+msgstr "Trykk for å dryssa snøflak på teikninga."
 
-#: ../../magic/src/tint.c:67
+#: ../../magic/src/tint.c:71
 msgid "Tint"
 msgstr "Fargelegg"
 
-#: ../../magic/src/tint.c:68
+#: ../../magic/src/tint.c:72
 msgid "Separate Colors"
-msgstr ""
+msgstr "Skil fargar"
 
-#: ../../magic/src/tint.c:71
-#, fuzzy
+#: ../../magic/src/tint.c:75
 msgid ""
 "Click and move the mouse around to change the color of parts of your picture."
-msgstr "Hald inne knappen og flytt rundt for å gjera teikninga uskarp."
+msgstr ""
+"Hald inne knappen og flytt rundt for å endra fargane på delar av teikninga."
 
-#: ../../magic/src/tint.c:72
-#, fuzzy
+#: ../../magic/src/tint.c:76
 msgid "Click to change the color of your entire picture."
-msgstr "Hald inne knappen og flytt rundt for å gjera teikninga uskarp."
+msgstr "Trykk for å endra fargane på heile teikninga."
 
-#: ../../magic/src/tint.c:73
-#, fuzzy
+#: ../../magic/src/tint.c:77
 msgid ""
 "Click and move the mouse around to turn parts of your picture into separate "
 "colors."
 msgstr ""
-"Hald inne knappen og flytt rundt for å gjera fargane klarare og strekane "
-"tydelegare."
+"Hald inne knappen og flytt rundt for å skilja fargane på delar av teikninga."
 
-#: ../../magic/src/tint.c:74
-#, fuzzy
+#: ../../magic/src/tint.c:78
 msgid "Click to turn your entire picture into separate colors."
-msgstr ""
-"Hald inne knappen og flytt rundt for å gjera fargane klarare og strekane "
-"tydelegare."
+msgstr "Trykk for å skilja fargane på heile teikninga."
 
 #: ../../magic/src/toothpaste.c:65
 msgid "Toothpaste"
-msgstr ""
+msgstr "Tannkrem"
 
 #: ../../magic/src/toothpaste.c:68
-#, fuzzy
 msgid "Click and drag to squirt toothpaste onto your picture."
-msgstr "Hald inne knappen og flytt rundt for å flytta på teikninga."
+msgstr "Hald inne knappen og flytt rundt for å spruta tannkrem på teikninga."
 
 #: ../../magic/src/tv.c:72
 msgid "TV"
-msgstr ""
+msgstr "Fjernsyn"
 
 #: ../../magic/src/tv.c:74
-#, fuzzy
 msgid "Click to make your picture look like it's on television."
-msgstr "Hald inne knappen og flytt rundt for å endra fargane på teikninga."
+msgstr "Trykk for å få teikninga til å sjå ut som ho vert vist på TV."
 
 #: ../../magic/src/waves.c:75
 msgid "Waves"
 msgstr "Bølgjer"
 
 #: ../../magic/src/waves.c:76
-#, fuzzy
 msgid "Wavelets"
 msgstr "Bølgjer"
 
 #: ../../magic/src/waves.c:83
-#, fuzzy
 msgid ""
 "Click to make the picture horizontally wavy. Click toward the top for "
 "shorter waves, the bottom for taller waves, the left for small waves, and "
 "the right for long waves."
 msgstr ""
-"Trykk for å gjera teikninga bølgjete. Trykk oppe for å laga låge bølgjer, "
-"nede for å laga høge bølgjer, til venstre for å laga korte bølgjer og til "
-"høgre for å laga lange bølgjer."
+"Trykk for å gjera teikninga bølgjete bortover. Trykk oppe for å laga låge "
+"bølgjer, nede for å laga høge bølgjer, til venstre for å laga korte bølgjer "
+"og til høgre for å laga lange bølgjer."
 
 #: ../../magic/src/waves.c:84
-#, fuzzy
 msgid ""
 "Click to make the picture vertically wavy. Click toward the top for shorter "
 "waves, the bottom for taller waves, the left for small waves, and the right "
 "for long waves."
 msgstr ""
-"Trykk for å gjera teikninga bølgjete. Trykk oppe for å laga låge bølgjer, "
-"nede for å laga høge bølgjer, til venstre for å laga korte bølgjer og til "
-"høgre for å laga lange bølgjer."
+"Trykk for å gjera teikninga bølgjete oppover. Trykk oppe for å laga låge "
+"bølgjer, nede for å laga høge bølgjer, til venstre for å laga korte bølgjer "
+"og til høgre for å laga lange bølgjer."
 
 #, fuzzy
 #~ msgid "Click and move the mouse to add noise to the image."
