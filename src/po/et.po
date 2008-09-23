@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: et\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-09-21 17:26+0200\n"
+"POT-Creation-Date: 2008-09-23 21:41+0100\n"
 "PO-Revision-Date: 2007-03-18 20:26+0200\n"
 "Last-Translator: Lauri Jesmin <lauri.jesmin@nordtech.ee>\n"
 "Language-Team: Estonian <et@li.org>\n"
@@ -628,38 +628,38 @@ msgstr "Aa"
 
 #. Admittedly stupid way of determining which keys can be used for
 #. positive and negative responses in dialogs (e.g., [Y] (for 'yes') in English)
-#: ../tuxpaint.c:11553
+#: ../tuxpaint.c:11576
 msgid "Yes"
 msgstr "Jah"
 
-#: ../tuxpaint.c:11557
+#: ../tuxpaint.c:11580
 msgid "No"
 msgstr "Ei"
 
 #. Prompt to ask whether user wishes to save over old version of their file
-#: ../tuxpaint.c:12509
+#: ../tuxpaint.c:12532
 msgid "Replace the picture with your changes?"
 msgstr "Asenda pilt koos tehtud muudatustega?"
 
 #. Positive response to saving over old version
 #. (like a 'File:Save' action in other applications)
-#: ../tuxpaint.c:12513
+#: ../tuxpaint.c:12536
 msgid "Yes, replace the old one!"
 msgstr "Jah, vaheta vana pilt välja!"
 
 #. Negative response to saving over old version (saves a new image)
 #. (like a 'File:Save As...' action in other applications)
-#: ../tuxpaint.c:12517
+#: ../tuxpaint.c:12540
 msgid "No, save a new file!"
 msgstr "Ei, salvestame uude faili!"
 
-#: ../tuxpaint.c:13280
+#: ../tuxpaint.c:13303
 msgid "Choose the picture you want, then click “Open”."
 msgstr "Vali pilt ja klõpsa nupul  \"Ava\""
 
 #. Let user choose images:
 #. Instructions for Slideshow file dialog (FIXME: Make a #define)
-#: ../tuxpaint.c:14267 ../tuxpaint.c:14581
+#: ../tuxpaint.c:14290 ../tuxpaint.c:14604
 msgid "Choose the pictures you want, then click “Play”."
 msgstr "Vali pilt ja klõpsa nupul  \"Esita\""
 
@@ -826,8 +826,10 @@ msgstr ""
 
 #. Needs better name
 #: ../../magic/src/fisheye.c:79
-msgid "Select an area of the image to create the fisheye effect."
-msgstr ""
+#, fuzzy
+#| msgid "Click and drag to shift your picture around on the canvas."
+msgid "Click on part of your picture to create a fisheye effect."
+msgstr "Tee klõps ja liiguta hiirt oma pildi liigutamiseks lõuendil."
 
 #: ../../magic/src/flower.c:124
 msgid "Flower"
@@ -961,16 +963,18 @@ msgstr "Tee klõps ja liiguta hiirt, et teha pilt ähmasemaks."
 msgid "Click to add noise to your entire picture."
 msgstr "Tee klõps ja liiguta hiirt ringi värvide muutmiseks."
 
-#: ../../magic/src/puzzle.c:77
+#: ../../magic/src/puzzle.c:78
 #, fuzzy
 msgid "Puzzle"
 msgstr "Lilla!"
 
-#: ../../magic/src/puzzle.c:84
-msgid "Select the area of the image where would you like to make a puzzle."
-msgstr ""
-
 #: ../../magic/src/puzzle.c:85
+#, fuzzy
+#| msgid "Click and drag to shift your picture around on the canvas."
+msgid "Click the part of your picture where would you like a puzzle."
+msgstr "Tee klõps ja liiguta hiirt oma pildi liigutamiseks lõuendil."
+
+#: ../../magic/src/puzzle.c:86
 #, fuzzy
 msgid "Click to make a puzzle in fullscreen mode."
 msgstr "Tee klõps, et tekitada peegelpilt."
@@ -1116,7 +1120,7 @@ msgid "Tint"
 msgstr "Toonimine"
 
 #: ../../magic/src/tint.c:72
-msgid "Separate Colors"
+msgid "Color & White"
 msgstr ""
 
 #: ../../magic/src/tint.c:75
@@ -1133,13 +1137,13 @@ msgstr "Tee klõps ja liiguta hiirt, et teha pilt ähmasemaks."
 #: ../../magic/src/tint.c:77
 #, fuzzy
 msgid ""
-"Click and move the mouse around to turn parts of your picture into separate "
-"colors."
+"Click and move the mouse around to turn parts of your picture into white and "
+"a color you choose."
 msgstr "Tee klõps ja liiguta hiirt, et muuta pilt multika sarnaseks."
 
 #: ../../magic/src/tint.c:78
 #, fuzzy
-msgid "Click to turn your entire picture into separate colors."
+msgid "Click to turn your entire picture into white and a color you choose."
 msgstr "Tee klõps ja liiguta hiirt, et muuta pilt multika sarnaseks."
 
 #: ../../magic/src/toothpaste.c:65

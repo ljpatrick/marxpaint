@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TuxPaint 0.9.20\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-09-21 17:26+0200\n"
+"POT-Creation-Date: 2008-09-23 21:41+0100\n"
 "PO-Revision-Date: 2008-06-17 02:31-0300\n"
 "Last-Translator: Gabriel Gazzán <ggabriel@internet.com.uy>\n"
 "Language-Team: Español <gablistas@gmail.com>\n"
@@ -628,38 +628,38 @@ msgstr "Aa"
 
 #. Admittedly stupid way of determining which keys can be used for
 #. positive and negative responses in dialogs (e.g., [Y] (for 'yes') in English)
-#: ../tuxpaint.c:11553
+#: ../tuxpaint.c:11576
 msgid "Yes"
 msgstr "Sí"
 
-#: ../tuxpaint.c:11557
+#: ../tuxpaint.c:11580
 msgid "No"
 msgstr "No"
 
 #. Prompt to ask whether user wishes to save over old version of their file
-#: ../tuxpaint.c:12509
+#: ../tuxpaint.c:12532
 msgid "Replace the picture with your changes?"
 msgstr "¿Reemplazar la imagen con la nueva?"
 
 #. Positive response to saving over old version
 #. (like a 'File:Save' action in other applications)
-#: ../tuxpaint.c:12513
+#: ../tuxpaint.c:12536
 msgid "Yes, replace the old one!"
 msgstr "¡Si, remplazarla!"
 
 #. Negative response to saving over old version (saves a new image)
 #. (like a 'File:Save As...' action in other applications)
-#: ../tuxpaint.c:12517
+#: ../tuxpaint.c:12540
 msgid "No, save a new file!"
 msgstr "¡No, guardar en un nuevo archivo!"
 
-#: ../tuxpaint.c:13280
+#: ../tuxpaint.c:13303
 msgid "Choose the picture you want, then click “Open”."
 msgstr "Escoge la imagen que quieras, luego haz clic en “Abrir”."
 
 #. Let user choose images:
 #. Instructions for Slideshow file dialog (FIXME: Make a #define)
-#: ../tuxpaint.c:14267 ../tuxpaint.c:14581
+#: ../tuxpaint.c:14290 ../tuxpaint.c:14604
 msgid "Choose the pictures you want, then click “Play”."
 msgstr "Escoge las imágenes que quieras, luego haz clic en “Reproducir”."
 
@@ -828,8 +828,10 @@ msgstr ""
 
 #. Needs better name
 #: ../../magic/src/fisheye.c:79
-msgid "Select an area of the image to create the fisheye effect."
-msgstr ""
+#, fuzzy
+#| msgid "Click and drag to shift your picture around on the canvas."
+msgid "Click on part of your picture to create a fisheye effect."
+msgstr "Haz clic y arrastra para desplazar tu dibujo sobre la tela."
 
 #: ../../magic/src/flower.c:124
 msgid "Flower"
@@ -965,16 +967,18 @@ msgstr "Haz clic y arrastra el ratón para desenfocar la imagen."
 msgid "Click to add noise to your entire picture."
 msgstr "Haz clic y arrastra el ratón para cambiar el color de la imagen."
 
-#: ../../magic/src/puzzle.c:77
+#: ../../magic/src/puzzle.c:78
 #, fuzzy
 msgid "Puzzle"
 msgstr "¡Púrpura!"
 
-#: ../../magic/src/puzzle.c:84
-msgid "Select the area of the image where would you like to make a puzzle."
-msgstr ""
-
 #: ../../magic/src/puzzle.c:85
+#, fuzzy
+#| msgid "Click and drag to shift your picture around on the canvas."
+msgid "Click the part of your picture where would you like a puzzle."
+msgstr "Haz clic y arrastra para desplazar tu dibujo sobre la tela."
+
+#: ../../magic/src/puzzle.c:86
 #, fuzzy
 msgid "Click to make a puzzle in fullscreen mode."
 msgstr "Haz clic para hacer una imagen a espejo."
@@ -1121,7 +1125,7 @@ msgid "Tint"
 msgstr "Teñir"
 
 #: ../../magic/src/tint.c:72
-msgid "Separate Colors"
+msgid "Color & White"
 msgstr ""
 
 #: ../../magic/src/tint.c:75
@@ -1138,14 +1142,14 @@ msgstr "Haz clic y arrastra el ratón para desenfocar la imagen."
 #: ../../magic/src/tint.c:77
 #, fuzzy
 msgid ""
-"Click and move the mouse around to turn parts of your picture into separate "
-"colors."
+"Click and move the mouse around to turn parts of your picture into white and "
+"a color you choose."
 msgstr ""
 "Haz clic y arrastra el ratón para que la imagen se vea como los dibujitos."
 
 #: ../../magic/src/tint.c:78
 #, fuzzy
-msgid "Click to turn your entire picture into separate colors."
+msgid "Click to turn your entire picture into white and a color you choose."
 msgstr ""
 "Haz clic y arrastra el ratón para que la imagen se vea como los dibujitos."
 

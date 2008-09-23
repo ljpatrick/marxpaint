@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint 0.9.11\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-09-21 17:26+0200\n"
+"POT-Creation-Date: 2008-09-23 21:41+0100\n"
 "PO-Revision-Date: 2004-07-18 13:50+0800\n"
 "Last-Translator: Wang Jian <lark@linux.net.cn>\n"
 "Language-Team: zh_CN <i18n-translation@lists.linux.net.cn>\n"
@@ -642,39 +642,39 @@ msgstr ""
 
 #. Admittedly stupid way of determining which keys can be used for
 #. positive and negative responses in dialogs (e.g., [Y] (for 'yes') in English)
-#: ../tuxpaint.c:11553
+#: ../tuxpaint.c:11576
 msgid "Yes"
 msgstr "是的"
 
-#: ../tuxpaint.c:11557
+#: ../tuxpaint.c:11580
 msgid "No"
 msgstr "不要"
 
 #. Prompt to ask whether user wishes to save over old version of their file
-#: ../tuxpaint.c:12509
+#: ../tuxpaint.c:12532
 msgid "Replace the picture with your changes?"
 msgstr ""
 
 #. Positive response to saving over old version
 #. (like a 'File:Save' action in other applications)
-#: ../tuxpaint.c:12513
+#: ../tuxpaint.c:12536
 msgid "Yes, replace the old one!"
 msgstr ""
 
 #. Negative response to saving over old version (saves a new image)
 #. (like a 'File:Save As...' action in other applications)
-#: ../tuxpaint.c:12517
+#: ../tuxpaint.c:12540
 #, fuzzy
 msgid "No, save a new file!"
 msgstr "不，保存到新文件"
 
-#: ../tuxpaint.c:13280
+#: ../tuxpaint.c:13303
 msgid "Choose the picture you want, then click “Open”."
 msgstr "选择你要打开的图片，然后点击“打开”。"
 
 #. Let user choose images:
 #. Instructions for Slideshow file dialog (FIXME: Make a #define)
-#: ../tuxpaint.c:14267 ../tuxpaint.c:14581
+#: ../tuxpaint.c:14290 ../tuxpaint.c:14604
 #, fuzzy
 msgid "Choose the pictures you want, then click “Play”."
 msgstr "选择你要打开的图片，然后点击“打开”。"
@@ -848,8 +848,9 @@ msgstr ""
 
 #. Needs better name
 #: ../../magic/src/fisheye.c:79
-msgid "Select an area of the image to create the fisheye effect."
-msgstr ""
+#, fuzzy
+msgid "Click on part of your picture to create a fisheye effect."
+msgstr "单击然后移动鼠标将图片变淡。"
 
 #: ../../magic/src/flower.c:124
 msgid "Flower"
@@ -989,16 +990,17 @@ msgstr "单击然后移动鼠标，将图片变模糊。"
 msgid "Click to add noise to your entire picture."
 msgstr "单击然后移动鼠标将图片变成驳裂的效果。"
 
-#: ../../magic/src/puzzle.c:77
+#: ../../magic/src/puzzle.c:78
 #, fuzzy
 msgid "Puzzle"
 msgstr "紫色！"
 
-#: ../../magic/src/puzzle.c:84
-msgid "Select the area of the image where would you like to make a puzzle."
-msgstr ""
-
 #: ../../magic/src/puzzle.c:85
+#, fuzzy
+msgid "Click the part of your picture where would you like a puzzle."
+msgstr "单击然后移动鼠标将图片变淡。"
+
+#: ../../magic/src/puzzle.c:86
 #, fuzzy
 msgid "Click to make a puzzle in fullscreen mode."
 msgstr "单击做出镜子中的效果。"
@@ -1147,7 +1149,7 @@ msgid "Tint"
 msgstr "变淡"
 
 #: ../../magic/src/tint.c:72
-msgid "Separate Colors"
+msgid "Color & White"
 msgstr ""
 
 #: ../../magic/src/tint.c:75
@@ -1164,13 +1166,13 @@ msgstr "单击然后移动鼠标，将图片变模糊。"
 #: ../../magic/src/tint.c:77
 #, fuzzy
 msgid ""
-"Click and move the mouse around to turn parts of your picture into separate "
-"colors."
+"Click and move the mouse around to turn parts of your picture into white and "
+"a color you choose."
 msgstr "单击然后移动鼠标将图片变成粉笔画。"
 
 #: ../../magic/src/tint.c:78
 #, fuzzy
-msgid "Click to turn your entire picture into separate colors."
+msgid "Click to turn your entire picture into white and a color you choose."
 msgstr "单击然后移动鼠标将图片变成粉笔画。"
 
 #: ../../magic/src/toothpaste.c:65

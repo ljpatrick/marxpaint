@@ -14,3 +14,5 @@ file's strings get put into the ".desktop" file.
 
 Thanks to Karl Ove Hufthammer for explaining these steps.
 
+-----------
+Both steps are the same? Do we ever run create_pot.sh?

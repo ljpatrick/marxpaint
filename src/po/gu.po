@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-09-21 17:26+0200\n"
+"POT-Creation-Date: 2008-09-23 21:41+0100\n"
 "PO-Revision-Date: 2008-07-14 12:17+0530\n"
 "Last-Translator: Kartik Mistry <kartik.mistry@gmail.com>\n"
 "Language-Team: Gujarati <team@utkarsh.org>\n"
@@ -626,38 +626,38 @@ msgstr "આ"
 
 #. Admittedly stupid way of determining which keys can be used for
 #. positive and negative responses in dialogs (e.g., [Y] (for 'yes') in English)
-#: ../tuxpaint.c:11553
+#: ../tuxpaint.c:11576
 msgid "Yes"
 msgstr "હા"
 
-#: ../tuxpaint.c:11557
+#: ../tuxpaint.c:11580
 msgid "No"
 msgstr "ના"
 
 #. Prompt to ask whether user wishes to save over old version of their file
-#: ../tuxpaint.c:12509
+#: ../tuxpaint.c:12532
 msgid "Replace the picture with your changes?"
 msgstr "ચિત્રને તમે કરેલા ફેરફારો સાથે બદલશો?"
 
 #. Positive response to saving over old version
 #. (like a 'File:Save' action in other applications)
-#: ../tuxpaint.c:12513
+#: ../tuxpaint.c:12536
 msgid "Yes, replace the old one!"
 msgstr "હા, જુની ફાઇલને બદલો!"
 
 #. Negative response to saving over old version (saves a new image)
 #. (like a 'File:Save As...' action in other applications)
-#: ../tuxpaint.c:12517
+#: ../tuxpaint.c:12540
 msgid "No, save a new file!"
 msgstr "ના, નવી ફાઇલને સાચવો!"
 
-#: ../tuxpaint.c:13280
+#: ../tuxpaint.c:13303
 msgid "Choose the picture you want, then click “Open”."
 msgstr "તમારે જોઇતું ચિત્ર પસંદ કરો, અને “ખોલો” પર ક્લિક કરો."
 
 #. Let user choose images:
 #. Instructions for Slideshow file dialog (FIXME: Make a #define)
-#: ../tuxpaint.c:14267 ../tuxpaint.c:14581
+#: ../tuxpaint.c:14290 ../tuxpaint.c:14604
 msgid "Choose the pictures you want, then click “Play”."
 msgstr "તમારે જોઇતું ચિત્ર પસંદ કરો, અને “ચાલુ” પર ક્લિક કરો."
 
@@ -819,8 +819,10 @@ msgstr ""
 
 #. Needs better name
 #: ../../magic/src/fisheye.c:79
-msgid "Select an area of the image to create the fisheye effect."
-msgstr ""
+#, fuzzy
+#| msgid "Click and drag to shift your picture around on the canvas."
+msgid "Click on part of your picture to create a fisheye effect."
+msgstr "તમારા ચિત્રને ખસેડવા માટે માઉસને ક્લિક કરો અને આજુ-બાજુ ખસેડો."
 
 #: ../../magic/src/flower.c:124
 msgid "Flower"
@@ -950,16 +952,18 @@ msgstr "તમારા ચિત્રનાં ભાગોને ઘાટા
 msgid "Click to add noise to your entire picture."
 msgstr "તમારા સમગ્ર ચિત્રને ઘાટું કરવા માટે ક્લિક કરો."
 
-#: ../../magic/src/puzzle.c:77
+#: ../../magic/src/puzzle.c:78
 #, fuzzy
 msgid "Puzzle"
 msgstr "જાંબલી"
 
-#: ../../magic/src/puzzle.c:84
-msgid "Select the area of the image where would you like to make a puzzle."
-msgstr ""
-
 #: ../../magic/src/puzzle.c:85
+#, fuzzy
+#| msgid "Click and drag to shift your picture around on the canvas."
+msgid "Click the part of your picture where would you like a puzzle."
+msgstr "તમારા ચિત્રને ખસેડવા માટે માઉસને ક્લિક કરો અને આજુ-બાજુ ખસેડો."
+
+#: ../../magic/src/puzzle.c:86
 #, fuzzy
 msgid "Click to make a puzzle in fullscreen mode."
 msgstr "અરીસા ચિત્ર બનાવવા ક્લિક કરો."
@@ -1102,7 +1106,7 @@ msgid "Tint"
 msgstr "આછો રંગ"
 
 #: ../../magic/src/tint.c:72
-msgid "Separate Colors"
+msgid "Color & White"
 msgstr ""
 
 #: ../../magic/src/tint.c:75
@@ -1119,13 +1123,13 @@ msgstr "ચિત્રમાં રહેલ વસ્તુઓનાં ખૂ
 #: ../../magic/src/tint.c:77
 #, fuzzy
 msgid ""
-"Click and move the mouse around to turn parts of your picture into separate "
-"colors."
+"Click and move the mouse around to turn parts of your picture into white and "
+"a color you choose."
 msgstr "ચિત્રને કાર્ટૂનમાં ફેરવવા માટે ક્લિક કરો અને માઉસ આજુબાજુ ખસેડો."
 
 #: ../../magic/src/tint.c:78
 #, fuzzy
-msgid "Click to turn your entire picture into separate colors."
+msgid "Click to turn your entire picture into white and a color you choose."
 msgstr "ચિત્રને કાળાં અને સફેદ વિસ્તારોની મર્યાદામાં ફેરવવા ક્લિક કરો."
 
 #: ../../magic/src/toothpaste.c:65

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-09-21 17:26+0200\n"
+"POT-Creation-Date: 2008-09-23 21:41+0100\n"
 "PO-Revision-Date: 2007-03-15 17:27+0530\n"
 "Last-Translator: pavithran <pavithran.s@gmail.com>\n"
 "Language-Team: Telugu <indlinux-telugu@lists.sourceforge.net>\n"
@@ -627,38 +627,38 @@ msgstr ""
 
 #. Admittedly stupid way of determining which keys can be used for
 #. positive and negative responses in dialogs (e.g., [Y] (for 'yes') in English)
-#: ../tuxpaint.c:11553
+#: ../tuxpaint.c:11576
 msgid "Yes"
 msgstr "అవును"
 
-#: ../tuxpaint.c:11557
+#: ../tuxpaint.c:11580
 msgid "No"
 msgstr "కాదు"
 
 #. Prompt to ask whether user wishes to save over old version of their file
-#: ../tuxpaint.c:12509
+#: ../tuxpaint.c:12532
 msgid "Replace the picture with your changes?"
 msgstr ""
 
 #. Positive response to saving over old version
 #. (like a 'File:Save' action in other applications)
-#: ../tuxpaint.c:12513
+#: ../tuxpaint.c:12536
 msgid "Yes, replace the old one!"
 msgstr ""
 
 #. Negative response to saving over old version (saves a new image)
 #. (like a 'File:Save As...' action in other applications)
-#: ../tuxpaint.c:12517
+#: ../tuxpaint.c:12540
 msgid "No, save a new file!"
 msgstr "ఒద్దు కొత్త దస్త్రాన్ని దాయండి"
 
-#: ../tuxpaint.c:13280
+#: ../tuxpaint.c:13303
 msgid "Choose the picture you want, then click “Open”."
 msgstr ""
 
 #. Let user choose images:
 #. Instructions for Slideshow file dialog (FIXME: Make a #define)
-#: ../tuxpaint.c:14267 ../tuxpaint.c:14581
+#: ../tuxpaint.c:14290 ../tuxpaint.c:14604
 msgid "Choose the pictures you want, then click “Play”."
 msgstr ""
 
@@ -827,8 +827,9 @@ msgstr ""
 
 #. Needs better name
 #: ../../magic/src/fisheye.c:79
-msgid "Select an area of the image to create the fisheye effect."
-msgstr ""
+#, fuzzy
+msgid "Click on part of your picture to create a fisheye effect."
+msgstr "చిత్రానికి మఱక వేయడానికి క్లిక్ చేసి దాని చుట్టూ జరపండి"
 
 #: ../../magic/src/flower.c:124
 msgid "Flower"
@@ -965,16 +966,17 @@ msgstr "చిత్రానికి మఱక వేయడానికి క
 msgid "Click to add noise to your entire picture."
 msgstr "చిత్రానికి మఱక వేయడానికి క్లిక్ చేసి దాని చుట్టూ జరపండి"
 
-#: ../../magic/src/puzzle.c:77
+#: ../../magic/src/puzzle.c:78
 #, fuzzy
 msgid "Puzzle"
 msgstr "రక్త వర్ణము గల"
 
-#: ../../magic/src/puzzle.c:84
-msgid "Select the area of the image where would you like to make a puzzle."
-msgstr ""
-
 #: ../../magic/src/puzzle.c:85
+#, fuzzy
+msgid "Click the part of your picture where would you like a puzzle."
+msgstr "చిత్రానికి మఱక వేయడానికి క్లిక్ చేసి దాని చుట్టూ జరపండి"
+
+#: ../../magic/src/puzzle.c:86
 msgid "Click to make a puzzle in fullscreen mode."
 msgstr ""
 
@@ -1120,7 +1122,7 @@ msgid "Tint"
 msgstr "లేత చాయ"
 
 #: ../../magic/src/tint.c:72
-msgid "Separate Colors"
+msgid "Color & White"
 msgstr ""
 
 #: ../../magic/src/tint.c:75
@@ -1137,13 +1139,13 @@ msgstr "చిత్రానికి మఱక వేయడానికి క
 #: ../../magic/src/tint.c:77
 #, fuzzy
 msgid ""
-"Click and move the mouse around to turn parts of your picture into separate "
-"colors."
+"Click and move the mouse around to turn parts of your picture into white and "
+"a color you choose."
 msgstr "చిత్రానికి మచ్చ  వేయడానికి క్లిక్ చేసి దాని చుట్టూ జరపండి"
 
 #: ../../magic/src/tint.c:78
 #, fuzzy
-msgid "Click to turn your entire picture into separate colors."
+msgid "Click to turn your entire picture into white and a color you choose."
 msgstr "చిత్రానికి మచ్చ  వేయడానికి క్లిక్ చేసి దాని చుట్టూ జరపండి"
 
 #: ../../magic/src/toothpaste.c:65

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: nn\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-09-21 17:27+0200\n"
+"POT-Creation-Date: 2008-09-23 21:41+0100\n"
 "PO-Revision-Date: 2008-09-21 17:26+0200\n"
 "Last-Translator: Karl Ove Hufthammer <karl@huftis.org>\n"
 "Language-Team: Norwegian Nynorsk <i18n-nn@lister.ping.uio.no>\n"
@@ -627,38 +627,38 @@ msgstr "Aa"
 
 #. Admittedly stupid way of determining which keys can be used for
 #. positive and negative responses in dialogs (e.g., [Y] (for 'yes') in English)
-#: ../tuxpaint.c:11553
+#: ../tuxpaint.c:11576
 msgid "Yes"
 msgstr "Ja!"
 
-#: ../tuxpaint.c:11557
+#: ../tuxpaint.c:11580
 msgid "No"
 msgstr "Nei!"
 
 #. Prompt to ask whether user wishes to save over old version of their file
-#: ../tuxpaint.c:12509
+#: ../tuxpaint.c:12532
 msgid "Replace the picture with your changes?"
 msgstr "Vil du byta ut den gamle teikninga med den nye?"
 
 #. Positive response to saving over old version
 #. (like a 'File:Save' action in other applications)
-#: ../tuxpaint.c:12513
+#: ../tuxpaint.c:12536
 msgid "Yes, replace the old one!"
 msgstr "Ja, byt ut den gamle!"
 
 #. Negative response to saving over old version (saves a new image)
 #. (like a 'File:Save As...' action in other applications)
-#: ../tuxpaint.c:12517
+#: ../tuxpaint.c:12540
 msgid "No, save a new file!"
 msgstr "Nei, lagra som ei ny teikning!"
 
-#: ../tuxpaint.c:13280
+#: ../tuxpaint.c:13303
 msgid "Choose the picture you want, then click “Open”."
 msgstr "Vel ei teikning og trykk «Opna»."
 
 #. Let user choose images:
 #. Instructions for Slideshow file dialog (FIXME: Make a #define)
-#: ../tuxpaint.c:14267 ../tuxpaint.c:14581
+#: ../tuxpaint.c:14290 ../tuxpaint.c:14604
 msgid "Choose the pictures you want, then click “Play”."
 msgstr "Vel teikningane du vil ha, og trykk så på «Køyr»."
 
@@ -825,7 +825,9 @@ msgstr "Fiskeauge"
 
 #. Needs better name
 #: ../../magic/src/fisheye.c:79
-msgid "Select an area of the image to create the fisheye effect."
+#, fuzzy
+#| msgid "Select an area of the image to create the fisheye effect."
+msgid "Click on part of your picture to create a fisheye effect."
 msgstr "Vel eit område av teikninga du vil sjå gjennom ei fiskeaugelinse."
 
 #: ../../magic/src/flower.c:124
@@ -960,15 +962,17 @@ msgstr "Hald inne knappen og flytt rundt for å leggja støy på teikninga."
 msgid "Click to add noise to your entire picture."
 msgstr "Trykk for å leggja støy på heile teikninga."
 
-#: ../../magic/src/puzzle.c:77
+#: ../../magic/src/puzzle.c:78
 msgid "Puzzle"
 msgstr "Puslespel"
 
-#: ../../magic/src/puzzle.c:84
-msgid "Select the area of the image where would you like to make a puzzle."
+#: ../../magic/src/puzzle.c:85
+#, fuzzy
+#| msgid "Select the area of the image where would you like to make a puzzle."
+msgid "Click the part of your picture where would you like a puzzle."
 msgstr "Vel eit område av teikninga du vil gjera om til puslespel."
 
-#: ../../magic/src/puzzle.c:85
+#: ../../magic/src/puzzle.c:86
 msgid "Click to make a puzzle in fullscreen mode."
 msgstr "Trykk for å gjera heile teikninga om til eit puslespel."
 
@@ -1100,8 +1104,8 @@ msgid "Tint"
 msgstr "Fargelegg"
 
 #: ../../magic/src/tint.c:72
-msgid "Separate Colors"
-msgstr "Skil fargar"
+msgid "Color & White"
+msgstr ""
 
 #: ../../magic/src/tint.c:75
 msgid ""
@@ -1114,14 +1118,20 @@ msgid "Click to change the color of your entire picture."
 msgstr "Trykk for å endra fargane på heile teikninga."
 
 #: ../../magic/src/tint.c:77
+#, fuzzy
+#| msgid ""
+#| "Click and move the mouse around to turn parts of your picture into "
+#| "separate colors."
 msgid ""
-"Click and move the mouse around to turn parts of your picture into separate "
-"colors."
+"Click and move the mouse around to turn parts of your picture into white and "
+"a color you choose."
 msgstr ""
 "Hald inne knappen og flytt rundt for å skilja fargane på delar av teikninga."
 
 #: ../../magic/src/tint.c:78
-msgid "Click to turn your entire picture into separate colors."
+#, fuzzy
+#| msgid "Click to turn your entire picture into separate colors."
+msgid "Click to turn your entire picture into white and a color you choose."
 msgstr "Trykk for å skilja fargane på heile teikninga."
 
 #: ../../magic/src/toothpaste.c:65
@@ -1167,6 +1177,9 @@ msgstr ""
 "Trykk for å gjera teikninga bølgjete oppover. Trykk oppe for å laga låge "
 "bølgjer, nede for å laga høge bølgjer, til venstre for å laga korte bølgjer "
 "og til høgre for å laga lange bølgjer."
+
+#~ msgid "Separate Colors"
+#~ msgstr "Skil fargar"
 
 #, fuzzy
 #~ msgid "Click and move the mouse to add noise to the image."
