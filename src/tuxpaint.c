@@ -22,7 +22,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
   
-  June 14, 2002 - July 20, 2008
+  June 14, 2002 - September 22, 2008
   $Id$
 */
 
@@ -10743,7 +10743,6 @@ static Mix_Chunk *loadsound_extra(const char *const fname, const char *extra)
     return (NULL);
   }
 
-
   /* First, check for localized version of sound: */
 
   snd_fname = malloc(strlen(fname) + strlen(lang_prefix) + 16);
@@ -10768,26 +10767,50 @@ static Mix_Chunk *loadsound_extra(const char *const fname, const char *extra)
     {
       debug("...No local version of sound (WAV)!");
 
-      /* Now, check for default sound: */
+      /* Check for non-country-code locale */
 
       strcpy(snd_fname, fname);
-      snprintf(tmp_str, sizeof(tmp_str), "%s.ogg", extra);
+      snprintf(tmp_str, sizeof(tmp_str), "%s_%s.ogg", extra, short_lang_prefix);
       strcpy((char *) strcasestr(snd_fname, ext), tmp_str);
       debug(snd_fname);
       tmp_snd = Mix_LoadWAV(snd_fname);
 
       if (tmp_snd == NULL)
       {
-	debug("...No default version of sound (OGG)!");
+        debug("...No short local version of sound (OGG)!");
 
-	strcpy(snd_fname, fname);
-	snprintf(tmp_str, sizeof(tmp_str), "%s.wav", extra);
-	strcpy((char *) strcasestr(snd_fname, ext), tmp_str);
-	debug(snd_fname);
-	tmp_snd = Mix_LoadWAV(snd_fname);
+        strcpy(snd_fname, fname);
+        snprintf(tmp_str, sizeof(tmp_str), "%s_%s.wav", extra, short_lang_prefix);
+        strcpy((char *) strcasestr(snd_fname, ext), tmp_str);
+        debug(snd_fname);
+        tmp_snd = Mix_LoadWAV(snd_fname);
 
-	if (tmp_snd == NULL)
-	  debug("...No default version of sound (WAV)!");
+        if (tmp_snd == NULL)
+        {
+          /* Now, check for default sound: */
+      
+          debug("...No short local version of sound (WAV)!");
+
+          strcpy(snd_fname, fname);
+          snprintf(tmp_str, sizeof(tmp_str), "%s.ogg", extra);
+          strcpy((char *) strcasestr(snd_fname, ext), tmp_str);
+          debug(snd_fname);
+          tmp_snd = Mix_LoadWAV(snd_fname);
+
+          if (tmp_snd == NULL)
+          {
+            debug("...No default version of sound (OGG)!");
+
+            strcpy(snd_fname, fname);
+            snprintf(tmp_str, sizeof(tmp_str), "%s.wav", extra);
+            strcpy((char *) strcasestr(snd_fname, ext), tmp_str);
+            debug(snd_fname);
+            tmp_snd = Mix_LoadWAV(snd_fname);
+
+            if (tmp_snd == NULL)
+              debug("...No default version of sound (WAV)!");
+          }
+        }
       }
     }
   }

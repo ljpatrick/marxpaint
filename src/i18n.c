@@ -25,7 +25,7 @@
 
   $Id$
 
-  June 14, 2002 - June 27, 2008
+  June 14, 2002 - September 22, 2008
 */
 
 #include <stdio.h>
@@ -178,7 +178,7 @@ char *langstr;
 int need_own_font;
 int need_right_to_left;
 int need_right_to_left_word;
-const char *lang_prefix;
+const char *lang_prefix, *short_lang_prefix;
 
 const language_to_locale_struct language_to_locale_array[] = {
   {"english", "C"},
@@ -344,7 +344,7 @@ void ctype_utf8(void)
 
 int set_current_language(void)
 {
-  char *loc;
+  char *loc, *baseloc;
   int i, found;
   int y_nudge;
 
@@ -396,9 +396,25 @@ int set_current_language(void)
 
   if (loc != NULL)
   {
+    baseloc = strdup(loc);
+    if (strchr(baseloc, '.') != NULL)
+      strcpy(strchr(baseloc, '.'), "\0");
+
+
     /* Which, if any, of the locales is it? */
 
     found = 0;
+
+    for (i = 0; i < NUM_LANGS && found == 0; i++)
+    {
+      // Case-insensitive (both "pt_BR" and "pt_br" work, etc.)
+      if (strlen(baseloc) == strlen(lang_prefixes[i]) &&
+          strncasecmp(baseloc, lang_prefixes[i], strlen(lang_prefixes[i])) == 0)
+      {
+	langint = i;
+	found = 1;
+      }
+    }
 
     for (i = 0; i < NUM_LANGS && found == 0; i++)
     {
@@ -411,10 +427,15 @@ int set_current_language(void)
     }
   }
 
-
   /* FIXME: These don't work because we have the wrong langint...!? -bjk 2008.02.19 */
 
   lang_prefix = lang_prefixes[langint];
+
+  short_lang_prefix = strdup(lang_prefix);
+  /* When in doubt, cut off country code */
+  if (strchr(short_lang_prefix, '_') != NULL)
+    strcpy(strchr(short_lang_prefix, '_'), "\0");
+
   need_own_font = search_int_array(langint, lang_use_own_font);
   need_right_to_left = search_int_array(langint, lang_use_right_to_left);
   need_right_to_left_word = search_int_array(langint, lang_use_right_to_left_word);
@@ -425,7 +446,7 @@ int set_current_language(void)
     if (lang_y_nudge[i][0] == langint)
     {
       y_nudge = lang_y_nudge[i][1];
-      printf("y_nudge = %d\n", y_nudge);
+      //printf("y_nudge = %d\n", y_nudge);
     }
   }
 

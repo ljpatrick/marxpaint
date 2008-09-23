@@ -8,7 +8,7 @@ http://www.tuxpaint.org/
 
 $Id$
 
-2008.September.1 (0.9.21)
+2008.September.22 (0.9.21)
   * New Starters:
     -------------
     * Silver Frame
@@ -106,6 +106,9 @@ $Id$
 
     * Corrected 'oval' brush shape so that colors came out right.
       (Thanks to Andrei Skoogarev)
+
+    * Improved support for localized Stamp sound effects (e.g., "en_GB" for
+      British English now works; only "en" would have worked before).
 
 2008.June.26 (0.9.20)
   * New translations:
