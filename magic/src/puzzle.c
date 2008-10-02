@@ -41,8 +41,7 @@
 
 static Mix_Chunk * puzzle_snd;
 static int puzzle_gcd=0;		//length of side of each rectangle; 0 is temporary value.
-static int puzzle_rect_q=4;		//quantity of rectangles when using paint mode. Must be an odd value - but 
-it's even!
+static int puzzle_rect_q=4;		//quantity of rectangles when using paint mode. Must be an odd value - but it's even!
 static int rects_w, rects_h;
 
 Uint32 puzzle_api_version(void) { return(TP_MAGIC_API_VERSION); }
