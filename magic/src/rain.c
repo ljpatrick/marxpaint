@@ -25,7 +25,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  Last updated: June 6, 2008
+  Last updated: October 4, 2008
   $Id$
 */
 
@@ -126,7 +126,7 @@ static void do_rain_drop(void * ptr, int which, SDL_Surface * canvas, SDL_Surfac
       if (rain_inRainShape(xx - x, yy - y + rain_SIZE/2, rain_SIZE)){
         //api->rgbtohsv(rain_r, rain_g, rain_b, &h, &s, &v);
         //api->hsvtorgb(h, s, rain_weights[(yy-y)*((rain_SIZE*2) -1)+(xx-x)], &r, &g, &b);
-        SDL_GetRGB(api->getpixel(last, xx , yy), last->format, &r, &g, &b);
+        SDL_GetRGB(api->getpixel(canvas, xx , yy), canvas->format, &r, &g, &b);
         api->putpixel(canvas, xx, yy, SDL_MapRGB(canvas->format,  clamp(0, r - 50, 255), 
                                                                   clamp(0, g - 50, 255), 
                                                                   clamp(0, b + 200, 255)));
@@ -136,11 +136,34 @@ static void do_rain_drop(void * ptr, int which, SDL_Surface * canvas, SDL_Surfac
 
 }
 
+static void rain_linecb(void * ptr, int which,
+                        SDL_Surface * canvas, SDL_Surface * last,
+                        int x, int y)
+{
+  magic_api * api = (magic_api *) ptr;
+  SDL_Rect rect;
+
+  if (rand() % 10 == 0) {
+    rain_click(api, which, MODE_PAINT, canvas, last,
+               x + (rand() % rain_SIZE * 2) - rain_SIZE,
+               y + (rand() % rain_SIZE * 2) - rain_SIZE,
+               &rect);
+  }
+}
+
 // Affect the canvas on drag:
 void rain_drag(magic_api * api, int which, SDL_Surface * canvas,
 	          SDL_Surface * last, int ox, int oy, int x, int y,
 		  SDL_Rect * update_rect){
-//noop
+  api->line((void *) api, which, canvas, last, ox, oy, x, y, 1, rain_linecb);
+
+  if (ox > x) { int tmp = ox; ox = x; x = tmp; }
+  if (oy > y) { int tmp = oy; oy = y; y = tmp; }
+
+  update_rect->x = ox - rain_SIZE * 2;
+  update_rect->y = oy - rain_SIZE * 2;
+  update_rect->w = rain_SIZE * 4;
+  update_rect->h = rain_SIZE * 4;
 }
 
 // Affect the canvas on click:
