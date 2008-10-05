@@ -26,6 +26,7 @@
   (See COPYING.txt)
 */
 
+/*
 #include <time.h>	//for time()
 #include "tp_magic_api.h"
 #include "SDL_image.h"
@@ -140,7 +141,11 @@ static void puzzle_draw(void * ptr, int which_tool,
   SDL_Rect rect_this, rect_that;
 
   SDL_BlitSurface(canvas, NULL, snapshot, NULL);
-  if (!api->touched(x,y))
+
+  x = (x / puzzle_gcd) * puzzle_gcd;
+  y = (y / puzzle_gcd) * puzzle_gcd;
+
+  if (!api->touched(x, y))
   {
 	  srand(rand());
 		
@@ -205,3 +210,4 @@ void puzzle_click(magic_api * api, int which, int mode,
 {
 	puzzle_drag(api, which, canvas, last, x, y, x, y, update_rect);
 }
+*/

@@ -8,7 +8,7 @@ http://www.tuxpaint.org/
 
 $Id$
 
-2008.September.22 (0.9.21)
+2008.October.4 (0.9.21)
   * New Starters:
     -------------
     * Silver Frame
@@ -41,7 +41,6 @@ $Id$
       + TV - Adds television (CRT) interlacing lines over the image.
       + Rosette - Paints at 3 points on the screen, in a rosette shape.
       + Picasso - Paints at 3 points, in a "Picasso" art style.
-      + Puzzle - Scramble the picture, like a sliding puzzle.
       + Wavelets - Waves that go up and down.
       By Adam 'foo-script' Rakowski <foo-script@o2.pl>
       (Part of Tux4Kids' participation in Google Summer of Code 2008)
