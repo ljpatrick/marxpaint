@@ -7,7 +7,7 @@ bill@newbreedsoftware.com
 http://www.tuxpaint.org/
 
 
-June 17, 2002 - August 8, 2008
+June 17, 2002 - October 7, 2008
 
 $Id$
 
@@ -223,6 +223,7 @@ $Id$
     Laurent Dhima <laurenti@alblinux.net>
 
   * Arabic
+    Tilo <Drfortilo@gmail.com>
     Khaled Hosny <khaledhosny@eglug.org>
     Khalid Al Holan <alholan@gmail.com>
 
