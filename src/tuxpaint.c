@@ -22,7 +22,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
   
-  June 14, 2002 - September 22, 2008
+  June 14, 2002 - October 8, 2008
   $Id$
 */
 
@@ -41,21 +41,21 @@
 #endif
 
 #ifndef VIDEO_BPP
-//# define VIDEO_BPP 15 // saves memory
-//# define VIDEO_BPP 16 // causes discoloration
-//# define VIDEO_BPP 24 // compromise
-# define VIDEO_BPP 32		// might be fastest, if conversion funcs removed
+/*# define VIDEO_BPP 15 */ /* saves memory */
+/*# define VIDEO_BPP 16 */ /* causes discoloration */
+/*# define VIDEO_BPP 24 */ /* compromise */
+# define VIDEO_BPP 32 /* might be fastest, if conversion funcs removed */
 #endif
 
 
-//#define CORNER_SHAPES     /* need major work! */
+/* #define CORNER_SHAPES */    /* need major work! */
 
 
 /* Method for printing images: */
 
 #define PRINTMETHOD_PS		/* Direct to PostScript */
-//#define PRINTMETHOD_PNM_PS       /* Output PNM, assuming it gets printed */
-//#define PRINTMETHOD_PNG_PNM_PS   /* Output PNG, assuming it gets printed */
+/*#define PRINTMETHOD_PNM_PS*/       /* Output PNM, assuming it gets printed */
+/*#define PRINTMETHOD_PNG_PNM_PS*/   /* Output PNG, assuming it gets printed */
 
 
 #define MAX_PATH 256
@@ -83,71 +83,70 @@
 /* Disable fancy cursors in fullscreen mode, to avoid SDL bug: */
 /* (This bug is still around, as of SDL 1.2.9, October 2005) */
 /* (Is it still in SDL 1.2.11 in May 2007, though!? -bjk) */
-//#define LARGE_CURSOR_FULLSCREEN_BUG
+/* #define LARGE_CURSOR_FULLSCREEN_BUG */
 
-// control the color selector
-#define COLORSEL_DISABLE 0	// disable and draw the (greyed out) colors
-#define COLORSEL_ENABLE  1	// enable and draw the colors
-#define COLORSEL_CLOBBER 2	// colors get scribbled over
-#define COLORSEL_REFRESH 4	// redraw the colors, either on or off
-#define COLORSEL_CLOBBER_WIPE 8 // draw the (greyed out) colors, but don't disable
-#define COLORSEL_FORCE_REDRAW 16 // enable, and force redraw (to make color picker work)
+/* control the color selector */
+#define COLORSEL_DISABLE 0	/* disable and draw the (greyed out) colors */
+#define COLORSEL_ENABLE  1	/* enable and draw the colors */
+#define COLORSEL_CLOBBER 2	/* colors get scribbled over */
+#define COLORSEL_REFRESH 4	/* redraw the colors, either on or off */
+#define COLORSEL_CLOBBER_WIPE 8 /* draw the (greyed out) colors, but don't disable */
+#define COLORSEL_FORCE_REDRAW 16 /* enable, and force redraw (to make color picker work) */
 
 static unsigned draw_colors(unsigned action);
 
-/////////////////////////////////////////////////////////////////////
-// hide all scale-related values here
+/* hide all scale-related values here */
 typedef struct scaleparams
 {
   unsigned numer, denom;
 } scaleparams;
+
 static scaleparams scaletable[] = {
-  {1, 256},			//  0.00390625
-  {3, 512},			//  0.005859375
-  {1, 128},			//  0.0078125
-  {3, 256},			//  0.01171875
-  {1, 64},			//  0.015625
-  {3, 128},			//  0.0234375
-  {1, 32},			//  0.03125
-  {3, 64},			//  0.046875
-  {1, 16},			//  0.0625
-  {3, 32},			//  0.09375
-  {1, 8},			//  0.125
-  {3, 16},			//  0.1875
-  {1, 4},			//  0.25
-  {3, 8},			//  0.375
-  {1, 2},			//  0.5
-  {3, 4},			//  0.75
-  {1, 1},			//  1
-  {3, 2},			//  1.5
-  {2, 1},			//  2
-  {3, 1},			//  3
-  {4, 1},			//  4
-  {6, 1},			//  6
-  {8, 1},			//  8
-  {12, 1},			// 12
-  {16, 1},			// 16
-  {24, 1},			// 24
-  {32, 1},			// 32
-  {48, 1},			// 48
+  {1, 256},			/*  0.00390625 */
+  {3, 512},			/*  0.005859375 */
+  {1, 128},			/*  0.0078125 */
+  {3, 256},			/*  0.01171875 */
+  {1, 64},			/*  0.015625 */
+  {3, 128},			/*  0.0234375 */
+  {1, 32},			/*  0.03125 */
+  {3, 64},			/*  0.046875 */
+  {1, 16},			/*  0.0625 */
+  {3, 32},			/*  0.09375 */
+  {1, 8},			/*  0.125 */
+  {3, 16},			/*  0.1875 */
+  {1, 4},			/*  0.25 */
+  {3, 8},			/*  0.375 */
+  {1, 2},			/*  0.5 */
+  {3, 4},			/*  0.75 */
+  {1, 1},			/*  1 */
+  {3, 2},			/*  1.5 */
+  {2, 1},			/*  2 */
+  {3, 1},			/*  3 */
+  {4, 1},			/*  4 */
+  {6, 1},			/*  6 */
+  {8, 1},			/*  8 */
+  {12, 1},			/* 12 */
+  {16, 1},			/* 16 */
+  {24, 1},			/* 24 */
+  {32, 1},			/* 32 */
+  {48, 1},			/* 48 */
 };
 
 
 /* Macros: */
 
-#define HARD_MIN_STAMP_SIZE 0	// bottom of scaletable
+#define HARD_MIN_STAMP_SIZE 0	/* bottom of scaletable */
 #define HARD_MAX_STAMP_SIZE (sizeof scaletable / sizeof scaletable[0] - 1)
 
 #define MIN_STAMP_SIZE (stamp_data[stamp_group][cur_stamp[stamp_group]]->min)
 #define MAX_STAMP_SIZE (stamp_data[stamp_group][cur_stamp[stamp_group]]->max)
 
-// to scale some offset, in pixels, like the current stamp is scaled
+/* to scale some offset, in pixels, like the current stamp is scaled */
 #define SCALE_LIKE_STAMP(x) ( ((x) * scaletable[stamp_data[stamp_group][cur_stamp[stamp_group]]->size].numer + scaletable[stamp_data[stamp_group][cur_stamp[stamp_group]]->size].denom-1) / scaletable[stamp_data[stamp_group][cur_stamp[stamp_group]]->size].denom )
-// pixel dimensions of the current stamp, as scaled
+
+/* pixel dimensions of the current stamp, as scaled */
 #define CUR_STAMP_W SCALE_LIKE_STAMP(active_stamp->w)
 #define CUR_STAMP_H SCALE_LIKE_STAMP(active_stamp->h)
-
-///////////////////////////////////////////////////////////////////////////////
 
 
 #define REPEAT_SPEED 300	/* Initial repeat speed for scrollbars */
@@ -163,6 +162,12 @@ static scaleparams scaletable[] = {
 #include <string.h>
 #include <ctype.h>
 #include <time.h>
+
+/* On Linux, we can use 'wordexp()' to expand env. vars. in settings
+   pulled from config. files */
+#ifdef __linux__
+#include <wordexp.h>
+#endif
 
 
 /* Check if features.h did its 'magic', in which case strcasestr() is
@@ -200,7 +205,7 @@ char *strcasestr(const char *haystack, const char *needle)
 #endif
 
 
-// math.h makes y1 an obscure function!
+/* math.h makes y1 an obscure function! */
 #define y1 evil_y1
 #include <math.h>
 #undef y1
@@ -245,7 +250,8 @@ char *strcasestr(const char *haystack, const char *needle)
 /* BeOS */
 
 #include "BeOS_print.h"
-// workaround dirent handling bug in TuxPaint code
+
+/* workaround dirent handling bug in TuxPaint code */
 typedef struct safer_dirent
 {
   dev_t d_dev;
@@ -389,8 +395,8 @@ extern WrapperData macosx;
 
 #include <librsvg/rsvg.h>
 #include <librsvg/rsvg-cairo.h>
-//#include "rsvg.h"
-//#include "rsvg-cairo.h"
+/* #include "rsvg.h" */
+/* #include "rsvg-cairo.h" */
 #if !defined(RSVG_H) || !defined(RSVG_CAIRO_H)
 #error "---------------------------------------------------"
 #error "If you installed libRSVG from packages, be sure"
@@ -531,46 +537,45 @@ static const char *getfilename(const char *path)
 }
 
 
-///////////////////////////////////////////////////////////////////
-// sizing
+/* sizing */
 
-// The old Tux Paint:
-// 640x480 screen
-// 448x376 canvas
-//  40x96  titles near the top
-//  48x48  button tiles
-//  ??x56  tux area
-//  room for 2x7 button tile grids
+/* The old Tux Paint:
+   640x480 screen
+   448x376 canvas
+    40x96  titles near the top
+    48x48  button tiles
+    ??x56  tux area
+    room for 2x7 button tile grids */
 
 typedef struct
 {
   Uint8 rows, cols;
 } grid_dims;
 
-//static SDL_Rect r_screen; // was 640x480 @ 0,0  -- but this isn't so useful
-static SDL_Rect r_canvas;	// was 448x376 @ 96,0
-static SDL_Rect r_tools;	// was 96x336 @ 0,40
+/* static SDL_Rect r_screen; */ /* was 640x480 @ 0,0  -- but this isn't so useful */
+static SDL_Rect r_canvas;	/* was 448x376 @ 96,0 */
+static SDL_Rect r_tools;	/* was 96x336 @ 0,40 */
 static SDL_Rect r_sfx;
-static SDL_Rect r_toolopt;	// was 96x336 @ 544,40
-static SDL_Rect r_colors;	// was 544x48 @ 96,376
-static SDL_Rect r_ttools;	// was 96x40 @ 0,0  (title for tools, "Tools")
-static SDL_Rect r_tcolors;	// was 96x48 @ 0,376 (title for colors, "Colors")
-static SDL_Rect r_ttoolopt;	// was 96x40 @ 544,0 (title for tool options)
-static SDL_Rect r_tuxarea;	// was 640x56
+static SDL_Rect r_toolopt;	/* was 96x336 @ 544,40 */
+static SDL_Rect r_colors;	/* was 544x48 @ 96,376 */
+static SDL_Rect r_ttools;	/* was 96x40 @ 0,0  (title for tools, "Tools") */
+static SDL_Rect r_tcolors;	/* was 96x48 @ 0,376 (title for colors, "Colors") */
+static SDL_Rect r_ttoolopt;	/* was 96x40 @ 544,0 (title for tool options) */
+static SDL_Rect r_tuxarea;	/* was 640x56 */
 
-static int button_w;		// was 48
-static int button_h;		// was 48
+static int button_w;		/* was 48 */
+static int button_h;		/* was 48 */
 
-static int color_button_w;	// was 32
-static int color_button_h;	// was 48
+static int color_button_w;	/* was 32 */
+static int color_button_h;	/* was 48 */
 
-// Define button grid dimensions. (in button units)
-// These are the maximum slots -- some may be unused.
-static grid_dims gd_tools;	// was 2x7
+/* Define button grid dimensions. (in button units) */
+/* These are the maximum slots -- some may be unused. */
+static grid_dims gd_tools;	/* was 2x7 */
 static grid_dims gd_sfx;
-static grid_dims gd_toolopt;	// was 2x7
-//static grid_dims gd_open;    // was 4x4
-static grid_dims gd_colors;	// was 17x1
+static grid_dims gd_toolopt;	/* was 2x7 */
+/* static grid_dims gd_open; */   /* was 4x4 */
+static grid_dims gd_colors;	/* was 17x1 */
 
 #define HEIGHTOFFSET (((WINDOW_HEIGHT - 480) / 48) * 48)
 #define TOOLOFFSET (HEIGHTOFFSET / 48 * 2)
@@ -620,9 +625,9 @@ static void setup_normal_screen_layout(void)
 
   color_button_w = r_colors.w / gd_colors.cols;
 
-  // This would make it contain _just_ the color spots,
-  // without any leftover bit on the end. Hmmm...
-  // r_colors.w = color_button_w * gd_colors.cols;
+  /* This would make it contain _just_ the color spots,
+     without any leftover bit on the end. Hmmm... */
+  /* r_colors.w = color_button_w * gd_colors.cols; */
 
   r_canvas.x = gd_tools.cols * button_w;
   r_canvas.y = 0;
@@ -631,7 +636,7 @@ static void setup_normal_screen_layout(void)
   r_tuxarea.x = 0;
   r_tuxarea.w = WINDOW_WIDTH;
 
-  // need 56 minimum for the Tux area
+  /* need 56 minimum for the Tux area */
   buttons_tall = (WINDOW_HEIGHT - r_ttoolopt.h - 56 - r_colors.h) / button_h;
   gd_tools.rows = buttons_tall;
   gd_toolopt.rows = buttons_tall;
@@ -646,8 +651,8 @@ static void setup_normal_screen_layout(void)
 
   r_sfx.x = r_tuxarea.x;
   r_sfx.y = r_tuxarea.y;
-  r_sfx.w = button_w;      // Two half-sized buttons across
-  r_sfx.h = button_h >> 1; // One half-sized button down
+  r_sfx.w = button_w;      /* Two half-sized buttons across */
+  r_sfx.h = button_h >> 1; /* One half-sized button down */
 
   gd_sfx.rows = 1;
   gd_sfx.cols = 2;
@@ -662,7 +667,7 @@ static void setup_normal_screen_layout(void)
   r_toolopt.x = WINDOW_WIDTH - r_ttoolopt.w;
   r_toolopt.y = r_ttoolopt.h + r_ttoolopt.y;
 
-  // TODO: dialog boxes
+  /* TODO: dialog boxes */
 
 }
 
@@ -705,7 +710,7 @@ static void print_layout(void)
 
 static void setup_screen_layout(void)
 {
-  // can do right-to-left, colors at the top, extra tool option columns, etc.
+  /* can do right-to-left, colors at the top, extra tool option columns, etc. */
   setup_normal_screen_layout();
 #ifdef DEBUG
   print_layout();
@@ -770,7 +775,7 @@ static void update_screen_rect(SDL_Rect * r)
 
 static int hit_test(const SDL_Rect * const r, unsigned x, unsigned y)
 {
-  // note the use of unsigned math: no need to check for negative
+  /* note the use of unsigned math: no need to check for negative */
   return x - r->x < r->w && y - r->y < r->h;
 }
 
@@ -781,27 +786,27 @@ static int hit_test(const SDL_Rect * const r, unsigned x, unsigned y)
 
 #if 0
 
-// x,y are pixel-wise screen-relative (mouse location), not grid-wise
-// w,h are the size of a grid item
-// Return the grid box.
-// NOTE: grid items must fill full SDL_Rect width exactly
+/* x,y are pixel-wise screen-relative (mouse location), not grid-wise
+   w,h are the size of a grid item
+   Return the grid box.
+   NOTE: grid items must fill full SDL_Rect width exactly */
 static int grid_hit_wh(const SDL_Rect * const r, unsigned x, unsigned y,
 		       unsigned w, unsigned h)
 {
   return (x - r->x) / w + (y - r->y) / h * (r->w / w);
 }
 
-// test an SDL_Rect r containing an array of WxH items for a grid location
+/* test an SDL_Rect r containing an array of WxH items for a grid location */
 #define GRIDHIT_WH(r,W,H) grid_hit_wh(&(r), event.button.x, event.button.y, W,H)
 
 #endif
 
-// test an SDL_Rect r containing an array of SDL_Surface surf for a grid location
+/* test an SDL_Rect r containing an array of SDL_Surface surf for a grid location */
 #define GRIDHIT_SURF(r,surf) grid_hit_wh(&(r), event.button.x, event.button.y, (surf)->w, (surf)->h)
 
-// x,y are pixel-wise screen-relative (mouse location), not grid-wise
-// Return the grid box.
-// NOTE: returns -1 if hit is below or to the right of the grid
+/* x,y are pixel-wise screen-relative (mouse location), not grid-wise
+   Return the grid box.
+   NOTE: returns -1 if hit is below or to the right of the grid */
 static int grid_hit_gd(const SDL_Rect * const r, unsigned x, unsigned y,
 		       grid_dims * gd)
 {
@@ -818,7 +823,7 @@ static int grid_hit_gd(const SDL_Rect * const r, unsigned x, unsigned y,
   return col + row * gd->cols;
 }
 
-// test an SDL_Rect r for a grid location, based on a grid_dims gd
+/* test an SDL_Rect r for a grid location, based on a grid_dims gd */
 #define GRIDHIT_GD(r,gd) grid_hit_gd(&(r), event.button.x, event.button.y, &(gd))
 
 /* Update the screen with the new canvas: */
@@ -848,8 +853,6 @@ static void update_canvas(int x1, int y1, int x2, int y2)
   update_screen(x1 + 96, y1, x2 + 96, y2);
 }
 
-
-///////////////////////////////////////////////////////////////////
 
 /* Globals: */
 
@@ -912,26 +915,26 @@ typedef struct magic_funcs_s {
 
 typedef struct magic_s {
   int place;
-  int handle_idx;	// Index to magic funcs for each magic tool (shared objs may report more than 1 tool)
-  int idx;	// Index to magic tools within shared objects (shared objs may report more than 1 tool)
-  int mode;	// Current mode (paint or fullscreen)
-  int avail_modes;	// Available modes (paint &/or fullscreen)
-  int colors;	// Whether magic tool accepts colors
-  char * name;	// Name of magic tool
-  char * tip[MAX_MODES];	// Description of magic tool, in each possible mode
+  int handle_idx;	/* Index to magic funcs for each magic tool (shared objs may report more than 1 tool) */
+  int idx;	/* Index to magic tools within shared objects (shared objs may report more than 1 tool) */
+  int mode;	/* Current mode (paint or fullscreen) */
+  int avail_modes;	/* Available modes (paint &/or fullscreen) */
+  int colors;	/* Whether magic tool accepts colors */
+  char * name;	/* Name of magic tool */
+  char * tip[MAX_MODES];	/* Description of magic tool, in each possible mode */
   SDL_Surface * img_icon;
   SDL_Surface * img_name;
 } magic_t;
 
 
-// FIXME: Drop the 512 constants :^P
+/* FIXME: Drop the 512 constants :^P */
 
-static int num_plugin_files;	// How many shared object files we went through
-void * magic_handle[512];	// Handle to shared object (to be unloaded later) // FIXME: Unload them!
-magic_funcs_t magic_funcs[512];	// Pointer to shared objects' functions
+static int num_plugin_files;	/* How many shared object files we went through */
+void * magic_handle[512];	/* Handle to shared object (to be unloaded later) */ /* FIXME: Unload them! */
+magic_funcs_t magic_funcs[512];	/* Pointer to shared objects' functions */
 
 magic_t magics[512];
-static int num_magics;	// How many magic tools were loaded (note: shared objs may report more than 1 tool)
+static int num_magics;	/* How many magic tools were loaded (note: shared objs may report more than 1 tool) */
 
 enum {
   MAGIC_PLACE_GLOBAL,
@@ -942,7 +945,7 @@ enum {
   NUM_MAGIC_PLACES
 };
 
-magic_api *magic_api_struct; // Pointer to our internal functions; passed to shared object's functions when we call them
+magic_api *magic_api_struct; /* Pointer to our internal functions; passed to shared object's functions when we call them */
 
 
 #if !defined(WIN32) && !defined(__APPLE__) && !defined(__BEOS__)
@@ -1058,9 +1061,9 @@ static SDL_Surface *render_text(TuxPaint_Font * restrict font,
   if (ret)
     return ret;
 
-  // Sometimes a font will be missing a character we need. Sometimes the library
-  // will substitute a rectangle without telling us. Sometimes it returns NULL.
-  // Probably we should use FreeType directly. For now though...
+  /* Sometimes a font will be missing a character we need. Sometimes the library
+     will substitute a rectangle without telling us. Sometimes it returns NULL.
+     Probably we should use FreeType directly. For now though... */
   
   height = 2;
 
@@ -1068,10 +1071,10 @@ static SDL_Surface *render_text(TuxPaint_Font * restrict font,
 }
 
 
-// This conversion is required on platforms where Uint16 doesn't match wchar_t.
-// On Windows, wchar_t is 16-bit, elsewhere it is 32-bit.
-// Mismatch caused by the use of Uint16 for unicode characters by SDL, SDL_ttf.
-// I guess wchar_t is really only suitable for internal use ...
+/* This conversion is required on platforms where Uint16 doesn't match wchar_t.
+   On Windows, wchar_t is 16-bit, elsewhere it is 32-bit.
+   Mismatch caused by the use of Uint16 for unicode characters by SDL, SDL_ttf.
+   I guess wchar_t is really only suitable for internal use ... */
 static Uint16 *wcstou16(const wchar_t * str)
 {
   unsigned int i, len = wcslen(str);
@@ -1079,9 +1082,9 @@ static Uint16 *wcstou16(const wchar_t * str)
 
   for (i = 0; i < len + 1; ++i)
   {
-    // This is a bodge, but it seems unlikely that a case-conversion
-    // will cause a change from one utf16 character into two....
-    // (though at least UTF-8 suffers from this problem)
+    /* This is a bodge, but it seems unlikely that a case-conversion
+       will cause a change from one utf16 character into two....
+       (though at least UTF-8 suffers from this problem) */
     res[i] = (Uint16) str[i];
   }
 
@@ -1189,16 +1192,14 @@ static SDL_Surface *render_text_w(TuxPaint_Font * restrict font,
   if (ret)
     return ret;
 
-  // Sometimes a font will be missing a character we need. Sometimes the library
-  // will substitute a rectangle without telling us. Sometimes it returns NULL.
-  // Probably we should use FreeType directly. For now though...
+  /* Sometimes a font will be missing a character we need. Sometimes the library
+     will substitute a rectangle without telling us. Sometimes it returns NULL.
+     Probably we should use FreeType directly. For now though... */
  
   height = 2; 
   return thumbnail(img_title_large_off, height * wcslen(str) / 2, height, 0);
 }
 
-
-////////////////////////////////////////////////////////////////////
 
 typedef struct stamp_type
 {
@@ -1218,12 +1219,12 @@ typedef struct stamp_type
   unsigned no_preflip:1;
   unsigned no_premirrorflip:1;
 
-  unsigned processed:1;		// got *.dat, computed size limits, etc.
+  unsigned processed:1;		/* got *.dat, computed size limits, etc. */
 
   unsigned no_sound:1;
   unsigned no_descsound:1;
   unsigned no_txt:1;
-//  unsigned no_local_sound : 1;  // to remember, if code written to discard sound
+/*  unsigned no_local_sound : 1;  */ /* to remember, if code written to discard sound */
 
   unsigned tinter:3;
   unsigned colorable:1;
@@ -1240,7 +1241,7 @@ typedef struct stamp_type
 
 #define MAX_STAMP_GROUPS 256
 
-static unsigned int stamp_group_dir_depth = 1; // How deep (how many slashes in a subdirectory path) we think a new stamp group should be
+static unsigned int stamp_group_dir_depth = 1; /* How deep (how many slashes in a subdirectory path) we think a new stamp group should be */
 
 static int stamp_group = 0;
 
@@ -1321,14 +1322,14 @@ static int cur_tool, cur_brush;
 static int cur_stamp[MAX_STAMP_GROUPS];
 static int cur_shape, cur_magic;
 static int cur_font, cur_eraser;
-static int cursor_left, cursor_x, cursor_y, cursor_textwidth;	// canvas-relative
+static int cursor_left, cursor_x, cursor_y, cursor_textwidth;	/* canvas-relative */
 static int been_saved;
 static char file_id[32];
 static char starter_id[32];
 static int brush_scroll;
 static int stamp_scroll[MAX_STAMP_GROUPS];
 static int font_scroll, magic_scroll;
-static int eraser_scroll, shape_scroll;	// dummy variables for now
+static int eraser_scroll, shape_scroll;	/* dummy variables for now */
 
 static int eraser_sound;
 
@@ -1481,8 +1482,8 @@ static int do_prompt_snd(const char *const text, const char *const btn_yes,
 static void cleanup(void);
 static void free_surface(SDL_Surface ** surface_array);
 static void free_surface_array(SDL_Surface * surface_array[], int count);
-//static void update_shape(int cx, int ox1, int ox2, int cy, int oy1, int oy2,
-//                int fixed);
+/*static void update_shape(int cx, int ox1, int ox2, int cy, int oy1, int oy2,
+                          int fixed); */
 static void do_shape(int cx, int cy, int ox, int oy, int rotn, int use_brush);
 static int rotation(int ctr_x, int ctr_y, int ox, int oy);
 static int do_save(int tool, int dont_show_success_results);
@@ -1524,7 +1525,7 @@ static void draw_image_title(int t, SDL_Rect dest);
 static void handle_keymouse(SDLKey key, Uint8 updown);
 static void handle_active(SDL_Event * event);
 static char *remove_slash(char *path);
-static char *replace_tilde(const char* const path);
+/*static char *replace_tilde(const char* const path);*/
 #ifdef NO_SDLPANGO
 static void anti_carriage_return(int left, int right, int cur_top,
 				 int new_top, int cur_bot, int line_width);
@@ -1585,8 +1586,8 @@ float pick_best_scape(unsigned int orig_w, unsigned int orig_h,
 
 static int bypass_splash_wait;
 
-// Wait for a keypress or mouse click
-// counter is in 1/10 second units
+/* Wait for a keypress or mouse click.
+   counter is in 1/10 second units */
 static void do_wait(int counter)
 {
   SDL_Event event;
@@ -1629,9 +1630,9 @@ static void do_wait(int counter)
 }
 
 
-// This lets us exit quickly; perhaps the system is swapping to death
-// or the user started Tux Paint by accident. It also lets the user
-// more easily bypass the splash screen wait.
+/* This lets us exit quickly; perhaps the system is swapping to death
+   or the user started Tux Paint by accident. It also lets the user
+   more easily bypass the splash screen wait. */
 
 /* Was used in progressbar.c, but is currently commented out!
    -bjk 2006.06.02 */
@@ -1646,7 +1647,7 @@ static void eat_sdl_events(void)
     if (event.type == SDL_QUIT)
     {
       SDL_Quit();
-      exit(0);			// can't safely use do_quit during start-up
+      exit(0);			/* can't safely use do_quit during start-up */
     }
     else if (event.type == SDL_ACTIVEEVENT)
       handle_active(&event);
@@ -1667,7 +1668,7 @@ static void eat_sdl_events(void)
 	printf("Aborting font load!\n");
 
 	font_thread_aborted = 1;
-	//waiting_for_fonts = 0;
+	/* waiting_for_fonts = 0; */
       }
       else
 	bypass_splash_wait = 1;
@@ -1710,8 +1711,8 @@ int main(int argc, char *argv[])
 #if 0
   while (!font_thread_done)
   {
-    // FIXME: should respond to quit events
-    // FIXME: should have a read-depends memory barrier around here
+    /* FIXME: should respond to quit events
+       FIXME: should have a read-depends memory barrier around here */
     show_progress_bar();
     SDL_Delay(20);
   }
@@ -1724,7 +1725,7 @@ int main(int argc, char *argv[])
   printf("Start-up time: %.3f\n", (double) (time2 - time1) / CLOCK_SPEED);
 #endif
 
-  // Let the user know we're (nearly) ready now
+  /* Let the user know we're (nearly) ready now */
 
   dest.x = 0;
   dest.y = WINDOW_HEIGHT - img_progress->h;
@@ -1745,12 +1746,12 @@ int main(int argc, char *argv[])
   SDL_FreeSurface(img_title_tuxpaint);
 
   dest.x = 0;
-  dest.w = WINDOW_WIDTH;	// SDL mangles this! So, do repairs.
+  dest.w = WINDOW_WIDTH;	/* SDL mangles this! So, do repairs. */
   update_screen_rect(&dest);
 
   do_setcursor(cursor_arrow);
   playsound(screen, 0, SND_HARP, 1, SNDPOS_CENTER, SNDDIST_NEAR);
-  do_wait(50);			// about 5 seconds
+  do_wait(50);			/* about 5 seconds */
 
 
   /* Set defaults! */
@@ -1791,7 +1792,7 @@ int main(int argc, char *argv[])
   brush_scroll = 0;
   for (i = 0; i < MAX_STAMP_GROUPS; i++)
     stamp_scroll[i] = 0;
-  stamp_group = 0;  // reset!
+  stamp_group = 0;  /* reset! */
   font_scroll = 0;
   magic_scroll = 0;
 
@@ -1837,56 +1838,56 @@ int main(int argc, char *argv[])
 }
 
 
-// Prompt to confirm user wishes to quit
+/* Prompt to confirm user wishes to quit */
 #define PROMPT_QUIT_TXT gettext_noop("Do you really want to quit?")
 
-// Quit prompt positive response (quit)
+/* Quit prompt positive response (quit) */
 #define PROMPT_QUIT_YES gettext_noop("Yes, I'm done!")
 
-// Quit prompt negative response (don't quit)
+/* Quit prompt negative response (don't quit) */
 #define PROMPT_QUIT_NO  gettext_noop("No, take me back!")
 
 
-// Current picture is not saved; user is quitting
+/* Current picture is not saved; user is quitting */
 #define PROMPT_QUIT_SAVE_TXT gettext_noop("If you quit, you’ll lose your picture! Save it?")
 #define PROMPT_QUIT_SAVE_YES gettext_noop("Yes, save it!")
 #define PROMPT_QUIT_SAVE_NO gettext_noop("No, don't bother saving!")
 
-// Current picture is not saved; user is opening another picture
+/* Current picture is not saved; user is opening another picture */
 #define PROMPT_OPEN_SAVE_TXT gettext_noop("Save your picture first?")
 #define PROMPT_OPEN_SAVE_YES gettext_noop("Yes, save it!")
 #define PROMPT_OPEN_SAVE_NO gettext_noop("No, don't bother saving!")
 
-// Error opening picture
+/* Error opening picture */
 #define PROMPT_OPEN_UNOPENABLE_TXT gettext_noop("Can’t open that picture!")
 
-// Generic dialog dismissal
+/* Generic dialog dismissal */
 #define PROMPT_OPEN_UNOPENABLE_YES gettext_noop("OK")
 
 
-// Notification that 'Open' dialog has nothing to show
+/* Notification that 'Open' dialog has nothing to show */
 #define PROMPT_OPEN_NOFILES_TXT gettext_noop("There are no saved files!")
 #define PROMPT_OPEN_NOFILES_YES gettext_noop("OK")
 
-// Verification of print action
+/* Verification of print action */
 #define PROMPT_PRINT_NOW_TXT gettext_noop("Print your picture now?")
 #define PROMPT_PRINT_NOW_YES gettext_noop("Yes, print it!")
 #define PROMPT_PRINT_NOW_NO gettext_noop("No, take me back!")
 
-// Confirmation of successful (we hope) printing
+/* Confirmation of successful (we hope) printing */
 #define PROMPT_PRINT_TXT gettext_noop("Your picture has been printed!")
 #define PROMPT_PRINT_YES gettext_noop("OK")
 
-// Notification that it's too soon to print again (--printdelay option is in effect)
+/* Notification that it's too soon to print again (--printdelay option is in effect) */
 #define PROMPT_PRINT_TOO_SOON_TXT gettext_noop("You can’t print yet!")
 #define PROMPT_PRINT_TOO_SOON_YES gettext_noop("OK")
 
-// Prompt to confirm erasing a picture in the Open dialog
+/* Prompt to confirm erasing a picture in the Open dialog */
 #define PROMPT_ERASE_TXT gettext_noop("Erase this picture?")
 #define PROMPT_ERASE_YES gettext_noop("Yes, erase it!")
 #define PROMPT_ERASE_NO gettext_noop("No, don't erase it!")
 
-// Reminder that Mouse Button 1 is the button to use in Tux Paint
+/* Reminder that Mouse Button 1 is the button to use in Tux Paint */
 #define PROMPT_TIP_LEFTCLICK_TXT gettext_noop("Remember to use the left mouse button!")
 #define PROMPT_TIP_LEFTCLICK_YES gettext_noop("OK")
 
@@ -2001,12 +2002,12 @@ static void mainloop(void)
 
 	    if (mute)
             {
-              // Sound has been muted (silenced) via keyboard shortcut
+              /* Sound has been muted (silenced) via keyboard shortcut */
 	      draw_tux_text(TUX_BORED, gettext("Sound muted."), 0);
             }
 	    else
             {
-              // Sound has been unmuted (unsilenced) via keyboard shortcut
+              /* Sound has been unmuted (unsilenced) via keyboard shortcut */
 	      draw_tux_text(TUX_BORED, gettext("Sound unmuted."), 0);
             }
 	  }
@@ -2223,7 +2224,7 @@ static void mainloop(void)
               (unsigned)key_down
             );
 #if 0
-            // this doesn't work for some reason
+            /* this doesn't work for some reason */
 	    wprintf(
 	      L"character 0x%04x %d <%lc> is %d pixels, %lsprintable, key_down 0x%x\n",
 	      event.key.keysym.unicode,
@@ -2420,7 +2421,7 @@ static void mainloop(void)
 
 	    playsound(screen, 1, SND_CLICK, 0, SNDPOS_LEFT, SNDDIST_NEAR);
 
-	    // FIXME: this "if" is just plain gross
+	    /* FIXME: this "if" is just plain gross */
 	    if (cur_tool != TOOL_TEXT)
 	      draw_tux_text(tool_tux[cur_tool], tool_tips[cur_tool], 1);
 
@@ -2472,7 +2473,7 @@ static void mainloop(void)
 		update_screen_rect(&r_ttoolopt);
 		do_setcursor(cursor_watch);
 
-                // Wait while Text tool finishes loading fonts
+                /* Wait while Text tool finishes loading fonts */
 		draw_tux_text(TUX_WAIT, gettext("Please wait…"), 1);
 
 		waiting_for_fonts = 1;
@@ -2481,11 +2482,11 @@ static void mainloop(void)
 #else
 		while (!font_thread_done && !font_thread_aborted)
 		{
-		  // FIXME: should have a read-depends memory barrier around here
+		  /* FIXME: should have a read-depends memory barrier around here */
 		  show_progress_bar(screen);
 		  SDL_Delay(20);
 		}
-		// FIXME: should kill this in any case
+		/* FIXME: should kill this in any case */
 		SDL_WaitThread(font_thread, NULL);
 #endif
 		do_setcursor(cursor_arrow);
@@ -2665,7 +2666,7 @@ static void mainloop(void)
                 cursor_textwidth = 0;
               }
 
-          // original print code was here
+          /* original print code was here */
           print_image();
             
           cur_tool = old_tool;
@@ -2688,9 +2689,9 @@ static void mainloop(void)
 	}
 	else if (HIT(r_toolopt) && valid_click(event.button.button))
 	{
-	  // Options on the right
-	  // WARNING: this must be kept in sync with the mouse-move
-	  // code (for cursor changes) and mouse-scroll code.
+	  /* Options on the right
+	     WARNING: this must be kept in sync with the mouse-move
+	     code (for cursor changes) and mouse-scroll code. */
 
 	  if (cur_tool == TOOL_BRUSH || cur_tool == TOOL_STAMP ||
 	      cur_tool == TOOL_SHAPES || cur_tool == TOOL_LINES ||
@@ -2701,11 +2702,11 @@ static void mainloop(void)
 	    int num_rows_needed;
 	    SDL_Rect r_controls;
 	    SDL_Rect r_notcontrols;
-	    SDL_Rect r_items;	// = r_notcontrols;
+	    SDL_Rect r_items;	/* = r_notcontrols; */
 	    int toolopt_changed;
 
-	    grid_dims gd_controls = { 0, 0 };	// might become 2-by-2
-	    grid_dims gd_items = { 2, 2 };	// generally becoming 2-by-whatever
+	    grid_dims gd_controls = { 0, 0 };	/* might become 2-by-2 */
+	    grid_dims gd_items = { 2, 2 };	/* generally becoming 2-by-whatever */
 
 	    /* Note set of things we're dealing with */
 	    /* (stamps, brushes, etc.) */
@@ -2715,11 +2716,11 @@ static void mainloop(void)
 	      if (!disable_stamp_controls)
 		gd_controls = (grid_dims)
 	      {
-	      3, 2}; // was 2,2 before adding left/right stamp group buttons -bjk 2007.05.15
+	      3, 2}; /* was 2,2 before adding left/right stamp group buttons -bjk 2007.05.15 */
               else
 		gd_controls = (grid_dims)
 	      {
-	      1, 2};  // was left 0,0 before adding left/right stamp group buttons -bjk 2007.05.03
+	      1, 2};  /* was left 0,0 before adding left/right stamp group buttons -bjk 2007.05.03 */
 	    }
 	    else if (cur_tool == TOOL_TEXT)
 	    {
@@ -2736,8 +2737,8 @@ static void mainloop(void)
               1, 2};
             }
 
-	    // number of whole or partial rows that will be needed
-	    // (can make this per-tool if variable columns needed)
+	    /* number of whole or partial rows that will be needed
+	       (can make this per-tool if variable columns needed) */
 	    num_rows_needed =
 	      (num_things + gd_items.cols - 1) / gd_items.cols;
 
@@ -2760,7 +2761,7 @@ static void mainloop(void)
 
 	    if (num_rows_needed * button_h > r_items.h)
 	    {
-	      // too many; we'll need scroll buttons
+	      /* too many; we'll need scroll buttons */
 	      r_items.h -= button_h;
 	      r_items.y += button_h / 2;
 	    }
@@ -2991,9 +2992,9 @@ static void mainloop(void)
 			    SNDDIST_NEAR);
 
 
-		  if (cur_tool == TOOL_TEXT)	// Huh? It had better be!
+		  if (cur_tool == TOOL_TEXT)	/* Huh? It had better be! */
 		  {
-		    // need to invalidate all the cached user fonts, causing reload on demand
+		    /* need to invalidate all the cached user fonts, causing reload on demand */
 
 		    int i;
 		    for (i = 0; i < num_font_families; i++)
@@ -3013,10 +3014,10 @@ static void mainloop(void)
 	    }
 	    else
 	    {
-	      // scroll button
+	      /* scroll button */
 	      int is_upper = event.button.y < r_toolopt.y + button_h / 2;
-	      if ((is_upper && *thing_scroll > 0)	// upper arrow
-		  || (!is_upper && *thing_scroll / gd_items.cols < num_rows_needed - gd_items.rows)	// lower arrow
+	      if ((is_upper && *thing_scroll > 0)	/* upper arrow */
+		  || (!is_upper && *thing_scroll / gd_items.cols < num_rows_needed - gd_items.rows)	/* lower arrow */
 		)
 	      {
 		*thing_scroll += is_upper ? -gd_items.cols : gd_items.cols;
@@ -3032,7 +3033,7 @@ static void mainloop(void)
 
 		if (!scrolling && event.type == SDL_MOUSEBUTTONDOWN)
 		{
-		  //printf("Starting scrolling\n");
+		  /* printf("Starting scrolling\n"); */
 		  memcpy(&scrolltimer_event, &event, sizeof(SDL_Event));
 		  scrolltimer_event.type = TP_SDL_MOUSEBUTTONSCROLL;
 
@@ -3044,7 +3045,7 @@ static void mainloop(void)
 		}
 		else
 		{
-		  //printf("Continuing scrolling\n");
+		  /* printf("Continuing scrolling\n"); */
 		  scrolltimer =
 		    SDL_AddTimer(REPEAT_SPEED / 3, scrolltimer_callback,
 				 (void *) &scrolltimer_event);
@@ -3102,25 +3103,25 @@ static void mainloop(void)
 		draw_fonts();
 
 
-	      // Only rerender when picking a different font
+	      /* Only rerender when picking a different font */
 	      if (toolopt_changed)
 		do_render_cur_text(0);
 	    }
 	    else if (cur_tool == TOOL_STAMP)
 	    {
 #ifndef NOSOUND
-	      // Only play when picking a different stamp
+	      /* Only play when picking a different stamp */
 	      if (toolopt_changed && !mute)
 	      {
-		// If there's an SFX, play it!
+		/* If there's an SFX, play it! */
 
 		if (stamp_data[stamp_group][cur_thing]->ssnd != NULL)
 		{
-		  Mix_ChannelFinished(NULL);	// Prevents multiple clicks from toggling between SFX and desc sound, rather than always playing SFX first, then desc sound...
+		  Mix_ChannelFinished(NULL);	/* Prevents multiple clicks from toggling between SFX and desc sound, rather than always playing SFX first, then desc sound... */
 
 		  Mix_PlayChannel(2, stamp_data[stamp_group][cur_thing]->ssnd, 0);
 
-		  // If there's a description sound, play it after the SFX!
+		  /* If there's a description sound, play it after the SFX! */
 
 		  if (stamp_data[stamp_group][cur_thing]->sdesc != NULL)
 		  {
@@ -3129,7 +3130,7 @@ static void mainloop(void)
 		}
 		else
 		{
-		  // No SFX?  If there's a description sound, play it now!
+		  /* No SFX?  If there's a description sound, play it now! */
 
 		  if (stamp_data[stamp_group][cur_thing]->sdesc != NULL)
 		  {
@@ -3475,19 +3476,19 @@ static void mainloop(void)
 	int num_rows_needed;
 	SDL_Rect r_controls;
 	SDL_Rect r_notcontrols;
-	SDL_Rect r_items;	// = r_notcontrols;
+	SDL_Rect r_items;	/* = r_notcontrols; */
 
-	// Scroll wheel code.
-	// WARNING: this must be kept in sync with the mouse-move
-	// code (for cursor changes) and mouse-click code.
+	/* Scroll wheel code.
+	   WARNING: this must be kept in sync with the mouse-move
+	   code (for cursor changes) and mouse-click code. */
 
 	if (cur_tool == TOOL_BRUSH || cur_tool == TOOL_STAMP ||
 	    cur_tool == TOOL_SHAPES || cur_tool == TOOL_LINES ||
 	    cur_tool == TOOL_MAGIC || cur_tool == TOOL_TEXT ||
 	    cur_tool == TOOL_ERASER)
 	{
-	  grid_dims gd_controls = { 0, 0 };	// might become 2-by-2
-	  grid_dims gd_items = { 2, 2 };	// generally becoming 2-by-whatever
+	  grid_dims gd_controls = { 0, 0 };	/* might become 2-by-2 */
+	  grid_dims gd_items = { 2, 2 };	/* generally becoming 2-by-whatever */
 
 	  /* Note set of things we're dealing with */
 	  /* (stamps, brushes, etc.) */
@@ -3497,11 +3498,11 @@ static void mainloop(void)
             if (!disable_stamp_controls)
               gd_controls = (grid_dims)
             {
-            3, 2}; // was 2,2 before adding left/right stamp group buttons -bjk 2007.05.15
+            3, 2}; /* was 2,2 before adding left/right stamp group buttons -bjk 2007.05.15 */
             else
               gd_controls = (grid_dims)
             {
-            1, 2};  // was left 0,0 before adding left/right stamp group buttons -bjk 2007.05.03
+            1, 2};  /* was left 0,0 before adding left/right stamp group buttons -bjk 2007.05.03 */
           }
 	  else if (cur_tool == TOOL_TEXT)
 	  {
@@ -3518,8 +3519,8 @@ static void mainloop(void)
             1, 2};
           }
 
-	  // number of whole or partial rows that will be needed
-	  // (can make this per-tool if variable columns needed)
+	  /* number of whole or partial rows that will be needed
+	     (can make this per-tool if variable columns needed) */
 	  num_rows_needed = (num_things + gd_items.cols - 1) / gd_items.cols;
 
 	  do_draw = 0;
@@ -3541,7 +3542,7 @@ static void mainloop(void)
 
 	  if (num_rows_needed * button_h > r_items.h)
 	  {
-	    // too many; we'll need scroll buttons
+	    /* too many; we'll need scroll buttons */
 	    r_items.h -= button_h;
 	    r_items.y += button_h / 2;
 	  }
@@ -3552,10 +3553,10 @@ static void mainloop(void)
 	  }
 	  else
 	  {
-	    // scroll button
+	    /* scroll button */
 	    int is_upper = (event.button.button == 4);
-	    if ((is_upper && *thing_scroll > 0)	// upper arrow
-		|| (!is_upper && *thing_scroll / gd_items.cols < num_rows_needed - gd_items.rows)	// lower arrow
+	    if ((is_upper && *thing_scroll > 0)	/* upper arrow */
+		|| (!is_upper && *thing_scroll / gd_items.cols < num_rows_needed - gd_items.rows)	/* lower arrow */
 	      )
 	    {
 	      *thing_scroll += is_upper ? -gd_items.cols : gd_items.cols;
@@ -3636,11 +3637,11 @@ static void mainloop(void)
 	  debug("Playing description sound...");
 
 #ifndef NOSOUND
-	  Mix_ChannelFinished(NULL);	// Kill the callback, so we don't get stuck in a loop!
+	  Mix_ChannelFinished(NULL);	/* Kill the callback, so we don't get stuck in a loop! */
 
 	  if (event.user.data1 != NULL)
 	  {
-	    if ((int) event.user.data1 == cur_stamp[stamp_group])	// Don't play old stamp's sound...
+	    if ((int) event.user.data1 == cur_stamp[stamp_group])	/* Don't play old stamp's sound... */
 	    {
 	      if (!mute && stamp_data[stamp_group][(int) event.user.data1]->sdesc != NULL)
 		Mix_PlayChannel(2, stamp_data[stamp_group][(int) event.user.data1]->sdesc,
@@ -3661,7 +3662,7 @@ static void mainloop(void)
 	  }
 	  scrolling = 0;
 
-	  //printf("Killing scrolling\n");
+	  /* printf("Killing scrolling\n"); */
 	}
 
 	if (button_down)
@@ -3828,9 +3829,9 @@ static void mainloop(void)
 	}
 	else if (HIT(r_toolopt))
 	{
-	  // mouse cursor code
-	  // WARNING: this must be kept in sync with the mouse-click
-	  // and mouse-click code. (it isn't, currently!)
+	  /* mouse cursor code
+	     WARNING: this must be kept in sync with the mouse-click
+	     and mouse-click code. (it isn't, currently!) */
 
 	  /* Note set of things we're dealing with */
 	  /* (stamps, brushes, etc.) */
@@ -3844,7 +3845,7 @@ static void mainloop(void)
 
 	  max = 14;
 	  if (cur_tool == TOOL_STAMP && !disable_stamp_controls)
-	    max = 8; // was 10 before left/right group buttons -bjk 2007.05.03
+	    max = 8; /* was 10 before left/right group buttons -bjk 2007.05.03 */
 	  if (cur_tool == TOOL_TEXT && !disable_stamp_controls)
 	    max = 10;
           if (cur_tool == TOOL_MAGIC && !disable_magic_controls)
@@ -4357,19 +4358,18 @@ static void blit_brush(int x, int y, int direction)
 }
 
 
-//////////////////////////////////////////////////////////////////////////
-// stamp tinter
+/* stamp tinter */
 
-#define TINTER_ANYHUE 0		// like normal, but remaps all hues in the stamp
-#define TINTER_NARROW 1		// like normal, but narrow hue angle
-#define TINTER_NORMAL 2		// normal
-#define TINTER_VECTOR 3		// map black->white to black->destination
+#define TINTER_ANYHUE 0	/* like normal, but remaps all hues in the stamp */
+#define TINTER_NARROW 1	/* like normal, but narrow hue angle */
+#define TINTER_NORMAL 2	/* normal */
+#define TINTER_VECTOR 3	/* map black->white to black->destination */
 
 
 typedef struct multichan
 {
-  double L, hue, sat;		// L,a,b would be better -- 2-way formula unknown
-  unsigned char or, og, ob, alpha;	// old 8-bit values
+  double L, hue, sat;	/* L,a,b would be better -- 2-way formula unknown */
+  unsigned char or, og, ob, alpha;	/* old 8-bit values */
 } multichan;
 
 #define X0 ((double)0.9505)
@@ -4389,12 +4389,12 @@ static void fill_multichan(multichan * mc, double *up, double *vp)
   double g = sRGB_to_linear_table[mc->og];
   double b = sRGB_to_linear_table[mc->ob];
 
-  // coordinate change, RGB --> XYZ
+  /* coordinate change, RGB --> XYZ */
   X = 0.4124 * r + 0.3576 * g + 0.1805 * b;
   Y = 0.2126 * r + 0.7152 * g + 0.0722 * b;
   Z = 0.0193 * r + 0.1192 * g + 0.9505 * b;
 
-  // XYZ --> Luv
+  /* XYZ --> Luv */
   Y_norm = Y / Y0;
   fract = 1.0 / (X + 15.0 * Y + 3.0 * Z);
   u_prime = 4.0 * X * fract;
@@ -4430,15 +4430,15 @@ static double tint_part_1(multichan * work, SDL_Surface * in)
     for (xx = 0; xx < in->w; xx++)
     {
       multichan *mc = work + yy * in->w + xx;
-      // put pixels into a more tolerable form
+      /* put pixels into a more tolerable form */
       SDL_GetRGBA(getpixel(in, xx, yy),
 		  in->format, &mc->or, &mc->og, &mc->ob, &mc->alpha);
 
       fill_multichan(mc, &u, &v);
 
-      // average out u and v, giving more weight to opaque
-      // high-saturation pixels
-      // (this is to take an initial guess at the primary hue)
+      /* average out u and v, giving more weight to opaque
+         high-saturation pixels
+         (this is to take an initial guess at the primary hue) */
 
       u_total += mc->alpha * u * mc->sat;
       v_total += mc->alpha * v * mc->sat;
@@ -4476,9 +4476,9 @@ static void change_colors(SDL_Surface * out, multichan * work,
   double r, g, b;
 
 
-  // prepare source and destination color info
-  // should reset hue_range or not? won't bother for now
-  multichan key_color = *key_color_ptr;	// want to work from a copy, for safety
+  /* prepare source and destination color info
+     should reset hue_range or not? won't bother for now*/
+  multichan key_color = *key_color_ptr;	/* want to work from a copy, for safety */
   lower_hue_1 = key_color.hue - hue_range;
   upper_hue_1 = key_color.hue + hue_range;
   if (lower_hue_1 < -M_PI)
@@ -4492,7 +4492,7 @@ static void change_colors(SDL_Surface * out, multichan * work,
     upper_hue_2 = upper_hue_1 - 2 * M_PI;
   }
 
-  // get the destination color set up
+  /* get the destination color set up */
   dst.or = color_hexes[cur_color][0];
   dst.og = color_hexes[cur_color][1];
   dst.ob = color_hexes[cur_color][2];
@@ -4510,8 +4510,8 @@ static void change_colors(SDL_Surface * out, multichan * work,
       multichan *mc = work + yy * out->w + xx;
       double oldhue = mc->hue;
 
-      // if not in the first range, and not in the second range, skip this one
-      // (really should alpha-blend as a function of hue angle difference)
+      /* if not in the first range, and not in the second range, skip this one
+         (really should alpha-blend as a function of hue angle difference) */
       if ((oldhue < lower_hue_1 || oldhue > upper_hue_1)
 	  && (oldhue < lower_hue_2 || oldhue > upper_hue_2))
       {
@@ -4520,22 +4520,22 @@ static void change_colors(SDL_Surface * out, multichan * work,
 	continue;
       }
 
-      // Modify the pixel
+      /* Modify the pixel */
       old_sat = mc->sat;
       newsat = old_sat * satratio;
       L = mc->L;
       if (dst.sat > 0)
-	L += newsat * slope;	// not greyscale destination
+	L += newsat * slope;	/* not greyscale destination */
       else
 	L += old_sat * (dst.L - key_color.L) / key_color.sat;
 
-      // convert from L,u,v all the way back to sRGB with 8-bit channels
+      /* convert from L,u,v all the way back to sRGB with 8-bit channels */
       tries = 3;
     trysat:;
       u = newsat * sin(dst.hue);
       v = newsat * cos(dst.hue);
 
-      // Luv to XYZ
+      /* Luv to XYZ */
       u_prime = u / (13.0 * L) + u0_prime;
       v_prime = v / (13.0 * L) + v0_prime;
       Y =
@@ -4544,13 +4544,13 @@ static void change_colors(SDL_Surface * out, multichan * work,
       X = 2.25 * Y * u_prime / v_prime;
       Z = (3.0 * Y - 0.75 * Y * u_prime) / v_prime - 5.0 * Y;
 
-      // coordinate change: XYZ to RGB
+      /* coordinate change: XYZ to RGB */
       r = 3.2410 * X + -1.5374 * Y + -0.4986 * Z;
       g = -0.9692 * X + 1.8760 * Y + 0.0416 * Z;
       b = 0.0556 * X + -0.2040 * Y + 1.0570 * Z;
 
-      // If it is out of gamut, try to de-saturate it a few times before truncating.
-      // (the linear_to_sRGB function will truncate)
+      /* If it is out of gamut, try to de-saturate it a few times before truncating.
+         (the linear_to_sRGB function will truncate) */
       if ((r <= -0.5 || g <= -0.5 || b <= -0.5 || r >= 255.5 || g >= 255.5
 	   || b >= 255.5) && tries--)
       {
@@ -4570,7 +4570,7 @@ static void change_colors(SDL_Surface * out, multichan * work,
 static multichan *find_most_saturated(double initial_hue, multichan * work,
 				      unsigned num, double *hue_range_ptr)
 {
-  // find the most saturated pixel near the initial hue guess
+  /* find the most saturated pixel near the initial hue guess */
   multichan *key_color_ptr = NULL;
   double hue_range;
   unsigned i;
@@ -4585,13 +4585,13 @@ static multichan *find_most_saturated(double initial_hue, multichan * work,
   {
   default:
   case TINTER_NORMAL:
-    hue_range = 18 * M_PI / 180.0;	// plus or minus 18 degrees search, 27 replace
+    hue_range = 18 * M_PI / 180.0;	/* plus or minus 18 degrees search, 27 replace */
     break;
   case TINTER_NARROW:
-    hue_range = 6 * M_PI / 180.0;	// plus or minus 6 degrees search, 9 replace
+    hue_range = 6 * M_PI / 180.0;	/* plus or minus 6 degrees search, 9 replace */
     break;
   case TINTER_ANYHUE:
-    hue_range = M_PI;		// plus or minus 180 degrees
+    hue_range = M_PI;		/* plus or minus 180 degrees */
     break;
   }
 
@@ -4617,8 +4617,7 @@ hue_range_retry:;
   {
     mc = work + i;
 
-    // if not in the first range, and not in the second range, skip this one
-    //
+    /* if not in the first range, and not in the second range, skip this one */
     if ((mc->hue < lower_hue_1 || mc->hue > upper_hue_1) &&
 	(mc->hue < lower_hue_2 || mc->hue > upper_hue_2))
       continue;
@@ -4665,7 +4664,7 @@ static void vector_tint_surface(SDL_Surface * out, SDL_Surface * in)
       double old;
 
       SDL_GetRGBA(getpixel(in, xx, yy), in->format, &r8, &g8, &b8, &a8);
-      // get the linear greyscale value
+      /* get the linear greyscale value */
       old =
 	sRGB_to_linear_table[r8] * 0.2126 +
 	sRGB_to_linear_table[g8] * 0.7152 + sRGB_to_linear_table[b8] * 0.0722;
@@ -4709,7 +4708,7 @@ static void tint_surface(SDL_Surface * tmp_surf, SDL_Surface * surf_ptr)
 
     if (key_color_ptr)
     {
-      // wider for processing than for searching
+      /* wider for processing than for searching */
       hue_range *= 1.5;
 
       change_colors(tmp_surf, work, hue_range, key_color_ptr);
@@ -4734,7 +4733,6 @@ static void tint_surface(SDL_Surface * tmp_surf, SDL_Surface * surf_ptr)
 }
 
 
-//////////////////////////////////////////////////////////////////////
 
 /* Draw using the current stamp: */
 
@@ -4850,7 +4848,7 @@ static void stamp_draw(int x, int y)
   /* And blit it! */
   dest.x = base_x;
   dest.y = base_y;
-  SDL_BlitSurface(final_surf, NULL, canvas, &dest); // BUGBUG: Conditional jump or move depends on uninitialised value(s)
+  SDL_BlitSurface(final_surf, NULL, canvas, &dest); /* BUGBUG: Conditional jump or move depends on uninitialised value(s) /
 
   update_canvas(x - (CUR_STAMP_W + 1) / 2,
 		y - (CUR_STAMP_H + 1) / 2,
@@ -5117,12 +5115,12 @@ static void show_usage(FILE * f, char *prg)
 }
 
 
-// The original Tux Paint canvas was 448x376. The canvas can be
-// other sizes now, but many old stamps are sized for the small
-// canvas. So, with larger canvases, we must choose a good scale
-// factor to compensate. As the canvas size grows, the user will
-// want a balance of "more stamps on the screen" and "stamps not
-// getting tiny". This will calculate the needed scale factor.
+/* The original Tux Paint canvas was 448x376. The canvas can be
+   other sizes now, but many old stamps are sized for the small
+   canvas. So, with larger canvases, we must choose a good scale
+   factor to compensate. As the canvas size grows, the user will
+   want a balance of "more stamps on the screen" and "stamps not
+   getting tiny". This will calculate the needed scale factor. */
 static unsigned compute_default_scale_factor(double ratio)
 {
   double old_diag = sqrt(448 * 448 + 376 * 376);
@@ -5147,7 +5145,7 @@ static unsigned compute_default_scale_factor(double ratio)
 }
 
 
-// directory walking...
+/* directory walking... */
 
 static void loadbrush_callback(SDL_Surface * screen,
 			       const char *restrict const dir,
@@ -5336,12 +5334,12 @@ static void loadstamp_finisher(stamp_type * sd, unsigned w, unsigned h,
   do
   {
     scaleparams *s = &scaletable[upper];
-    int pw, ph;			// proposed width and height
+    int pw, ph;			/* proposed width and height */
 
     pw = (w * s->numer + s->denom - 1) / s->denom;
     ph = (h * s->numer + s->denom - 1) / s->denom;
 
-    // OK to let a stamp stick off the sides in one direction, not two
+    /* OK to let a stamp stick off the sides in one direction, not two */
     if (pw < canvas->w * 2 && ph < canvas->h * 1)
       break;
     if (pw < canvas->w * 1 && ph < canvas->h * 2)
@@ -5352,7 +5350,7 @@ static void loadstamp_finisher(stamp_type * sd, unsigned w, unsigned h,
   do
   {
     scaleparams *s = &scaletable[lower];
-    int pw, ph;			// proposed width and height
+    int pw, ph;			/* proposed width and height */
 
     pw = (w * s->numer + s->denom - 1) / s->denom;
     ph = (h * s->numer + s->denom - 1) / s->denom;
@@ -5364,7 +5362,7 @@ static void loadstamp_finisher(stamp_type * sd, unsigned w, unsigned h,
 
   if (upper < lower)
   {
-    // this, if it ever happens, is very bad
+    /* this, if it ever happens, is very bad */
     upper = (upper + lower) / 2;
     lower = upper;
   }
@@ -5390,7 +5388,7 @@ static void loadstamp_finisher(stamp_type * sd, unsigned w, unsigned h,
 }
 
 
-// Note: must have read the *.dat file before calling this
+/* Note: must have read the *.dat file before calling this */
 static void set_active_stamp(void)
 {
   stamp_type *sd = stamp_data[stamp_group][cur_stamp[stamp_group]];
@@ -5607,7 +5605,7 @@ static void set_active_stamp(void)
   /* Never allow a NULL image! */
 
   if (!active_stamp)
-    active_stamp = thumbnail(img_dead40x40, 40, 40, 1);	// copy it
+    active_stamp = thumbnail(img_dead40x40, 40, 40, 1);	/* copy it */
 
 
   /* If we wanted mirrored or flipped, and didn't get something pre-rendered,
@@ -5659,19 +5657,19 @@ static void get_stamp_thumb(stamp_type * sd)
     ratio = 1.0;
 
 #ifndef NOSOUND
-  // good time to load the sound
+  /* good time to load the sound */
   if (!sd->no_sound && !sd->ssnd && use_sound)
   {
-    // damn thing wants a .png extension; give it one
+    /* damn thing wants a .png extension; give it one */
     memcpy(buf + len, ".png", 5);
     sd->ssnd = loadsound(buf);
     sd->no_sound = !sd->ssnd;
   }
 
-  // ...and the description
+  /* ...and the description */
   if (!sd->no_descsound && !sd->sdesc && use_sound)
   {
-    // damn thing wants a .png extension; give it one
+    /* damn thing wants a .png extension; give it one */
     memcpy(buf + len, ".png", 5);
     sd->sdesc = loaddescsound(buf);
     sd->no_descsound = !sd->sdesc;
@@ -5680,14 +5678,14 @@ static void get_stamp_thumb(stamp_type * sd)
 
   if (!sd->no_txt && !sd->stxt)
   {
-    // damn thing wants a .png extension; give it one
+    /* damn thing wants a .png extension; give it one */
     memcpy(buf + len, ".png", 5);
     sd->stxt = loaddesc(buf, &(sd->locale_text));
     sd->no_txt = !sd->stxt;
   }
 
 
-  // first see if we can re-use an existing thumbnail
+  /* first see if we can re-use an existing thumbnail */
   if (sd->thumbnail)
   {
 #ifdef DEBUG
@@ -5699,7 +5697,7 @@ static void get_stamp_thumb(stamp_type * sd)
         sd->mirrored == sd->thumb_mirrored &&
         sd->flipped == sd->thumb_flipped)
     {
-      // It's already the way we want
+      /* It's already the way we want */
 
 #ifdef DEBUG
       printf("mirrored == flipped == thumb_mirrored_flipped [bye]\n");
@@ -5710,7 +5708,7 @@ static void get_stamp_thumb(stamp_type * sd)
   }
 
 
-  // nope, see if there's a pre-rendered one we can use
+  /* nope, see if there's a pre-rendered one we can use */
 
   need_mirror = sd->mirrored;
   need_flip = sd->flipped;
@@ -5903,7 +5901,7 @@ static void get_stamp_thumb(stamp_type * sd)
   }
 
   if (!bigimg)
-    sd->thumbnail = thumbnail(img_dead40x40, 40, 40, 1);	// copy
+    sd->thumbnail = thumbnail(img_dead40x40, 40, 40, 1);	/* copy */
   else if (bigimg->w > 40 || bigimg->h > 40)
   {
     sd->thumbnail = thumbnail(bigimg, 40, 40, 1);
@@ -5953,7 +5951,7 @@ static void get_stamp_thumb(stamp_type * sd)
   if (sd->processed)
     return;
 
-  sd->processed = 1;		// not really, but on the next line...
+  sd->processed = 1;		/* not really, but on the next line... */
   loadstamp_finisher(sd, w, h, ratio);
 }
 
@@ -6043,7 +6041,7 @@ static void loadstamp_callback(SDL_Surface * screen,
         debug("\n");
 
         fclose(fi);
-        continue;  // ugh, i hate continues
+        continue;  /* ugh, i hate continues */
       }
     }
 #endif
@@ -6131,7 +6129,6 @@ static int load_user_fonts_stub(void *vp)
 		    ((c) >= 'A' && (c) <= 'F') ? ((c) - 'A' + 10) : \
 		    ((c) >= 'a' && (c) <= 'f') ? ((c) - 'a' + 10) : 0)
 
-////////////////////////////////////////////////////////////////////////////////
 /* Setup: */
 
 static void setup(int argc, char *argv[])
@@ -6245,7 +6242,7 @@ static void setup(int argc, char *argv[])
 #endif
 
 #ifdef OLPC_XO
-  // ideally we'd support rotation and 2x scaling
+  /* ideally we'd support rotation and 2x scaling */
   WINDOW_WIDTH = 1200;
   WINDOW_HEIGHT = 900;
 #endif
@@ -6464,7 +6461,7 @@ static void setup(int argc, char *argv[])
       int w, h;
       w = strtoul(argv[i] + 2, &endp1, 10);
       h = strtoul(endp1 + 1, &endp2, 10);
-      // sanity check it
+      /* sanity check it */
       if (argv[i] + 2 == endp1 || endp1 + 1 == endp2 || *endp1 != 'x'
 	  || *endp2 || w < 500 || h < 480 || h > w * 3 || w > h * 4)
       {
@@ -6727,15 +6724,10 @@ static void setup(int argc, char *argv[])
     {
       if (i < argc - 1)
       {
-        char *dir;
-          
 	if (savedir != NULL)
 	  free(savedir);
 
-	dir = strdup(argv[i + 1]);
-	remove_slash(dir);
-      savedir = replace_tilde(dir);
-      free(dir);
+	savedir = strdup(argv[i + 1]);
 	i++;
       }
       else
@@ -6751,15 +6743,10 @@ static void setup(int argc, char *argv[])
     {
       if (i < argc - 1)
       {
-        char *dir;
-          
 	if (datadir != NULL)
 	  free(datadir);
 
-	dir = strdup(argv[i + 1]);
-	remove_slash(dir);
-      datadir = replace_tilde(dir);
-      free(dir);
+	datadir = strdup(argv[i + 1]);
 	i++;
       }
       else
@@ -6974,7 +6961,7 @@ static void setup(int argc, char *argv[])
   if (use_sound)
     init_flags |= SDL_INIT_AUDIO;
   if (!fullscreen)
-    init_flags |= SDL_INIT_NOPARACHUTE;	// allow debugger to catch crash
+    init_flags |= SDL_INIT_NOPARACHUTE;	/* allow debugger to catch crash */
 
   /* Init SDL */
   if (SDL_Init(init_flags) < 0)
@@ -6985,7 +6972,7 @@ static void setup(int argc, char *argv[])
     init_flags &= ~SDL_INIT_AUDIO;
     if (SDL_Init(init_flags) >= 0)
     {
-      // worked, w/o sound
+      /* worked, w/o sound */
       fprintf(stderr,
 	      "\nWarning: I could not initialize audio!\n"
 	      "The Simple DirectMedia Layer error that occurred was:\n"
@@ -7311,7 +7298,7 @@ static void setup(int argc, char *argv[])
   setup_screen_layout();
 
 
-  ////////// quickly: title image, version, progress bar, and watch cursor
+  /* quickly: title image, version, progress bar, and watch cursor */
 
   img_title = loadimage(DATA_PREFIX "images/title.png");
   img_title_credits = loadimage(DATA_PREFIX "images/title-credits.png");
@@ -7415,10 +7402,10 @@ static void setup(int argc, char *argv[])
 #endif
   
 #ifdef __APPLE__
-  cursor_arrow = SDL_GetCursor();		// use standard system cursor
+  cursor_arrow = SDL_GetCursor();		/* use standard system cursor */
 #endif
 
-  // this one first, because we need it yesterday
+  /* this one first, because we need it yesterday */
   cursor_watch = get_cursor(watch_bits, watch_mask_bits,
 			    watch_width, watch_height,
 			    14 / scale, 14 / scale);
@@ -7432,7 +7419,7 @@ static void setup(int argc, char *argv[])
   font_thread = SDL_CreateThread(load_user_fonts_stub, NULL);
 #endif
 
-  // continuing on with the rest of the cursors...
+  /* continuing on with the rest of the cursors... */
 
 
 #ifndef __APPLE__
@@ -7715,7 +7702,7 @@ static void setup(int argc, char *argv[])
 
 
 #if 0
-  // put elsewhere for THREADED_FONTS
+  /* put elsewhere for THREADED_FONTS */
   /* Load user fonts, for the text tool */
   load_user_fonts();
 #endif
@@ -7965,24 +7952,24 @@ static void create_button_labels(void)
   for (i = 0; i < NUM_SHAPES; i++)
     img_shape_names[i] = do_render_button_label(shape_names[i]);
 
-  // buttons for the file open dialog
+  /* buttons for the file open dialog */
   
-  // Open dialog: 'Open' button, to load the selected picture
+  /* Open dialog: 'Open' button, to load the selected picture */
   img_openlabels_open = do_render_button_label(gettext_noop("Open"));
 
-  // Open dialog: 'Erase' button, to erase/deleted the selected picture
+  /* Open dialog: 'Erase' button, to erase/deleted the selected picture */
   img_openlabels_erase = do_render_button_label(gettext_noop("Erase"));
 
-  // Open dialog: 'Slides' button, to switch to slide show mode
+  /* Open dialog: 'Slides' button, to switch to slide show mode */
   img_openlabels_slideshow = do_render_button_label(gettext_noop("Slides"));
 
-  // Open dialog: 'Back' button, to dismiss Open dialog without opening a picture
+  /* Open dialog: 'Back' button, to dismiss Open dialog without opening a picture */
   img_openlabels_back = do_render_button_label(gettext_noop("Back"));
 
-  // Slideshow: 'Next' button, to load next slide (image)
+  /* Slideshow: 'Next' button, to load next slide (image) */
   img_openlabels_next = do_render_button_label(gettext_noop("Next"));
 
-  // Slideshow: 'Play' button, to begin a slideshow sequence
+  /* Slideshow: 'Play' button, to begin a slideshow sequence */
   img_openlabels_play = do_render_button_label(gettext_noop("Play"));
 }
 
@@ -8317,11 +8304,11 @@ static void draw_magic(void)
     /* Show paint button: */
 
     if (magics[cur_magic].mode == MODE_PAINT)
-      button_color = img_btn_down; // Active
+      button_color = img_btn_down; /* Active */
     else if (magics[cur_magic].avail_modes & MODE_PAINT)
-      button_color = img_btn_up; // Available, but not active
+      button_color = img_btn_up; /* Available, but not active */
     else
-      button_color = img_btn_off; // Unavailable
+      button_color = img_btn_off; /* Unavailable */
 
     dest.x = WINDOW_WIDTH - 96;
     dest.y = 40 + ((6 + TOOLOFFSET / 2) * 48);
@@ -8337,11 +8324,11 @@ static void draw_magic(void)
     /* Show fullscreen button: */
 
     if (magics[cur_magic].mode == MODE_FULLSCREEN)
-      button_color = img_btn_down; // Active
+      button_color = img_btn_down; /* Active */
     else if (magics[cur_magic].avail_modes & MODE_FULLSCREEN)
-      button_color = img_btn_up; // Available, but not active
+      button_color = img_btn_up; /* Available, but not active */
     else
-      button_color = img_btn_off; // Unavailable
+      button_color = img_btn_off; /* Unavailable */
 
     dest.x = WINDOW_WIDTH - 48;
     dest.y = 40 + ((6 + TOOLOFFSET / 2) * 48);
@@ -8419,7 +8406,7 @@ static unsigned draw_colors(unsigned action)
   }
   update_screen_rect(&r_colors);
 
-  // if only the color changed, no need to draw the title
+  /* if only the color changed, no need to draw the title */
   if (colors_state == old_colors_state)
     return old_colors_state;
 
@@ -8629,7 +8616,7 @@ static void draw_fonts(void)
     {
       SDL_Surface *tmp_surf_1;
 
-      // Label for 'Letters' buttons (font selector, down the right when the Text tool is being used); used to show the difference between font faces
+      /* Label for 'Letters' buttons (font selector, down the right when the Text tool is being used); used to show the difference between font faces */
       tmp_surf_1 = render_text(getfonthandle(font), gettext("Aa"), black);
 
       if (tmp_surf_1 == NULL)
@@ -8789,7 +8776,7 @@ static void draw_stamps(void)
 
   /* How many can we show? */
 
-  most = 8;  // was 10 and 14, before left/right controls -bjk 2007.05.03
+  most = 8;  /* was 10 and 14, before left/right controls -bjk 2007.05.03 */
   if (disable_stamp_controls)
     most = 12;
 
@@ -8815,7 +8802,7 @@ static void draw_stamps(void)
 
 
     dest.x = WINDOW_WIDTH - 96;
-    dest.y = 40 + 24 + ((5 + TOOLOFFSET / 2) * 48); // was 6, before left/right controls -bjk 2007.05.03
+    dest.y = 40 + 24 + ((5 + TOOLOFFSET / 2) * 48); /* was 6, before left/right controls -bjk 2007.05.03 */
 
     if (!disable_stamp_controls)
       dest.y = dest.y - (48 * 2);
@@ -9530,7 +9517,7 @@ static SDL_Surface *zoom(SDL_Surface * src, int new_w, int new_h)
 #else
       {
       Uint8 r, g, b, a;
-      r = g = b = a = 0; // Unused, bah!
+      r = g = b = a = 0; /* Unused, bah! */
 
       SDL_GetRGBA(getpixel(src, floor_x, floor_y), src->format,
                   &r, &g, &b, &a);
@@ -9591,32 +9578,32 @@ static SDL_Surface *zoom(SDL_Surface * src, int new_w, int new_h)
 #endif
 
 
-// XOR must show up on black, white, 0x7f grey, and 0x80 grey.
-// XOR must be exactly 100% perfectly reversable.
+/* XOR must show up on black, white, 0x7f grey, and 0x80 grey.
+  XOR must be exactly 100% perfectly reversable. */
 static void xorpixel(int x, int y)
 {
   Uint8 *p;
   int BytesPerPixel;
 
-  // if outside the canvas, return
+  /* if outside the canvas, return */
   if ((unsigned) x >= (unsigned) canvas->w
       || (unsigned) y >= (unsigned) canvas->h)
     return;
-  // now switch to screen coordinates
+  /* now switch to screen coordinates */
   x += r_canvas.x;
   y += r_canvas.y;
 
-  // Always 4, except 3 when loading a saved image.
+  /* Always 4, except 3 when loading a saved image. */
   BytesPerPixel = screen->format->BytesPerPixel;
 
-  // Set a pointer to the exact location in memory of the pixel
+  /* Set a pointer to the exact location in memory of the pixel */
   p = (Uint8 *) (((Uint8 *) screen->pixels) +	/* Start: beginning of RAM */
 		 (y * screen->pitch) +	/* Go down Y lines */
 		 (x * BytesPerPixel));	/* Go in X pixels */
 
-  // XOR the (correctly-sized) piece of data in the screen's RAM
+  /* XOR the (correctly-sized) piece of data in the screen's RAM */
   if (likely(BytesPerPixel == 4))
-    *(Uint32 *) p ^= 0x80808080u;	// 32-bit display
+    *(Uint32 *) p ^= 0x80808080u;	/* 32-bit display */
   else if (BytesPerPixel == 1)
     *p ^= 0x80;
   else if (BytesPerPixel == 2)
@@ -9855,7 +9842,7 @@ static void line_xor(int x1, int y1, int x2, int y2)
 
   /* Kludgey, but it works: */
 
-  //SDL_LockSurface(screen);
+  /* SDL_LockSurface(screen); */
 
   dx = x2 - x1;
   dy = y2 - y1;
@@ -9919,7 +9906,7 @@ static void line_xor(int x1, int y1, int x2, int y2)
     }
   }
 
-  //SDL_UnlockSurface(screen);
+  /* SDL_UnlockSurface(screen); */
 }
 
 
@@ -10224,11 +10211,11 @@ static void draw_tux_text_ex(int which_tux, const char *const str,
   dest.x = r_tuxarea.x;
   dest.y = r_tuxarea.y + r_tuxarea.h - img_tux[which_tux]->h;
 
-  // if he's too tall to fit, go off the bottom (not top) edge
+  /* if he's too tall to fit, go off the bottom (not top) edge */
   if (dest.y < r_tuxarea.y)
     dest.y = r_tuxarea.y;
 
-  // Don't let sfx and speak buttons cover the top of Tux, either:
+  /* Don't let sfx and speak buttons cover the top of Tux, either: */
   if (cur_tool == TOOL_STAMP && use_sound && !mute)
   {
     if (dest.y < r_sfx.y + r_sfx.h)
@@ -10237,8 +10224,7 @@ static void draw_tux_text_ex(int which_tux, const char *const str,
 
   SDL_BlitSurface(img_tux[which_tux], NULL, screen, &dest);
 
-  // Wide enough for Tux, or two stamp sound buttons (whichever's wider) */
-  
+  /* Wide enough for Tux, or two stamp sound buttons (whichever's wider) */
   w = max(img_tux[which_tux]->w, img_btnsm_up->w) + 5;
 
   wordwrap_text_ex(str, black,
@@ -10321,7 +10307,7 @@ static void wordwrap_text_ex(const char *const str, SDL_Color color,
 
 
   if (str == NULL || str[0] == '\0')
-    return; // No-op!
+    return; /* No-op! */
 
   if (need_own_font && (strcmp(gettext(str), str) || locale_text))
     myfont = locale_font;
@@ -10706,7 +10692,7 @@ static void playstampdesc(int chan)
 {
   static SDL_Event playsound_event;
 
-  if (chan == 2)		// Only do this when the channel playing the stamp sfx has ended!
+  if (chan == 2) /* Only do this when the channel playing the stamp sfx has ended! */
   {
     debug("Stamp SFX ended. Pushing event to play description sound...");
 
@@ -10852,7 +10838,7 @@ static void strip_trailing_whitespace(char *buf)
 static char *loaddesc(const char *const fname, Uint8 * locale_text)
 {
   char *txt_fname, *extptr;
-  char buf[512], def_buf[512];  // doubled to 512 per TOYAMA Shin-Ichi's requested; -bjk 2007.05.10
+  char buf[512], def_buf[512];  /* doubled to 512 per TOYAMA Shin-Ichi's requested; -bjk 2007.05.10 */
   int found, got_first;
   FILE *fi;
 
@@ -11042,7 +11028,7 @@ static double loadinfo(const char *const fname, stamp_type * inf)
 	  debug(cp);
 	}
 
-	//printf("tinter=%d\n", inf->tinter);
+	/* printf("tinter=%d\n", inf->tinter); */
       }
       else if (strcmp(buf, "nomirror") == 0)
 	inf->mirrorable = 0;
@@ -11120,7 +11106,7 @@ static int SDLCALL NondefectiveBlit(SDL_Surface * src, SDL_Rect * srcrect,
 }
 
 
-// For the 3rd arg, pass either NondefectiveBlit or SDL_BlitSurface.
+/* For the 3rd arg, pass either NondefectiveBlit or SDL_BlitSurface. */
 static void autoscale_copy_smear_free(SDL_Surface * src, SDL_Surface * dst,
 				      int SDLCALL(*blit) (SDL_Surface * src,
 							  SDL_Rect * srcrect,
@@ -11129,10 +11115,10 @@ static void autoscale_copy_smear_free(SDL_Surface * src, SDL_Surface * dst,
 {
   SDL_Surface *src1;
   SDL_Rect dest;
-  // What to do when in 640x480 mode, and loading an
-  // 800x600 (or larger) image!? Scale it. Starters must
-  // be scaled too. Keep the pixels square though, filling
-  // in the gaps via a smear.
+  /* What to do when in 640x480 mode, and loading an
+     800x600 (or larger) image!? Scale it. Starters must
+     be scaled too. Keep the pixels square though, filling
+     in the gaps via a smear. */
   if (src->w != dst->w || src->h != dst->h)
   {
     if (src->w / (float) dst->w > src->h / (float) dst->h)
@@ -11149,7 +11135,7 @@ static void autoscale_copy_smear_free(SDL_Surface * src, SDL_Surface * dst,
 
   if (src->w != dst->w)
   {
-    // we know that the heights match, and src is narrower
+    /* we know that the heights match, and src is narrower */
     SDL_Rect sour;
     int i = (dst->w - src->w) / 2;
     sour.w = 1;
@@ -11172,7 +11158,7 @@ static void autoscale_copy_smear_free(SDL_Surface * src, SDL_Surface * dst,
 
   if (src->h != dst->h)
   {
-    // we know that the widths match, and src is shorter
+    /* we know that the widths match, and src is shorter */
     SDL_Rect sour;
     int i = (dst->h - src->h) / 2;
     sour.w = src->w;
@@ -11307,7 +11293,7 @@ static void load_starter(char *img_id)
 				       tmp_surf->format->Bmask,
 				       tmp_surf->format->Amask);
 
-    // 3rd arg ignored for RGBA surfaces
+    /* 3rd arg ignored for RGBA surfaces */
     SDL_SetAlpha(tmp_surf, SDL_RLEACCEL, SDL_ALPHA_OPAQUE);
     autoscale_copy_smear_free(tmp_surf, img_starter, NondefectiveBlit);
     SDL_SetAlpha(img_starter, SDL_RLEACCEL | SDL_SRCALPHA, SDL_ALPHA_OPAQUE);
@@ -11571,8 +11557,8 @@ static int do_prompt_image_flash_snd(const char *const text,
   hide_blinking_cursor();
 
 
-  // Admittedly stupid way of determining which keys can be used for
-  // positive and negative responses in dialogs (e.g., [Y] (for 'yes') in English)
+  /* Admittedly stupid way of determining which keys can be used for
+     positive and negative responses in dialogs (e.g., [Y] (for 'yes') in English) */
   keystr = textdir(gettext("Yes"));
   key_y = tolower(keystr[0]);
   free(keystr);
@@ -11758,7 +11744,7 @@ static int do_prompt_image_flash_snd(const char *const text,
 
       SDL_BlitSurface(img3, NULL, screen, &dest);
 
-      img_y = img_y + img3->h + 4;	// unnecessary
+      img_y = img_y + img3->h + 4;	/* unnecessary */
     }
   }
 
@@ -12116,7 +12102,7 @@ static void cleanup(void)
   }
 
 #ifdef FORKED_FONTS
-  free(user_font_families);	// we'll leak the bodies... oh well
+  free(user_font_families);	/* we'll leak the bodies... oh well */
 #else
   for (i = 0; i < num_font_families; i++)
   {
@@ -12262,7 +12248,7 @@ static void free_surface_array(SDL_Surface * surface_array[], int count)
 
 /* Update screen where shape is/was: */
 
-// FIXME: unused
+/* FIXME: unused */
 /*
 static void update_shape(int cx, int ox1, int ox2, int cy, int oy1, int oy2, int fix)
 {
@@ -12528,15 +12514,15 @@ static int rotation(int ctr_x, int ctr_y, int ox, int oy)
 }
 
 
-// Prompt to ask whether user wishes to save over old version of their file
+/* Prompt to ask whether user wishes to save over old version of their file */
 #define PROMPT_SAVE_OVER_TXT gettext_noop("Replace the picture with your changes?")
 
-// Positive response to saving over old version
-// (like a 'File:Save' action in other applications)
+/* Positive response to saving over old version
+   (like a 'File:Save' action in other applications) */
 #define PROMPT_SAVE_OVER_YES gettext_noop("Yes, replace the old one!")
 
-// Negative response to saving over old version (saves a new image)
-// (like a 'File:Save As...' action in other applications)
+/* Negative response to saving over old version (saves a new image)
+   (like a 'File:Save As...' action in other applications) */
 #define PROMPT_SAVE_OVER_NO  gettext_noop("No, save a new file!")
 
 
@@ -12804,7 +12790,7 @@ static int do_png_save(FILE * fi, const char *const fname, SDL_Surface * surf)
 	info_ptr->bit_depth = 8;
 	info_ptr->color_type = PNG_COLOR_TYPE_RGB;
 	info_ptr->interlace_type = 1;
-	info_ptr->valid = 0;	// will be updated by various png_set_FOO() functions
+	info_ptr->valid = 0;	/* will be updated by various png_set_FOO() functions */
 
 	png_set_sRGB_gAMA_and_cHRM(png_ptr, info_ptr,
 				   PNG_sRGB_INTENT_PERCEPTUAL);
@@ -12910,8 +12896,8 @@ static int do_quit(int tool)
     {
       if (do_save(tool, 1))
       {
-        // Don't bug user about successful save when quitting -bjk 2007.05.15
-	// do_prompt(tool_tips[TOOL_SAVE], "OK", "");
+        /* Don't bug user about successful save when quitting -bjk 2007.05.15 */
+	/* do_prompt(tool_tips[TOOL_SAVE], "OK", ""); */
       }
       else
       {
@@ -13049,7 +13035,7 @@ int do_open(void)
             {
               things_alloced = things_alloced + 32;
 
-	      // FIXME: Valgrind says this is leaked -bjk 2007.07.19
+	      /* FIXME: Valgrind says this is leaked -bjk 2007.07.19 */
               fs = (struct dirent2 *) realloc(fs,
                   sizeof(struct dirent2) *
                   things_alloced);
@@ -13160,8 +13146,8 @@ int do_open(void)
               img1 = SDL_DisplayFormat(img);
               SDL_FreeSurface(img);
 
-              // if too big, or too small in both dimensions, rescale it
-              // ( for now: using old thumbnail as source for high speed, low quality)
+              /* if too big, or too small in both dimensions, rescale it
+                 (for now: using old thumbnail as source for high speed, low quality) */
               if (img1->w > THUMB_W - 20 || img1->h > THUMB_H - 20
                   || (img1->w < THUMB_W - 20 && img1->h < THUMB_H - 20))
               {
@@ -13298,7 +13284,7 @@ int do_open(void)
     {
       /* Let user choose an image: */
 
-      // Instructions for 'Open' file dialog
+      /* Instructions for 'Open' file dialog */
       char *freeme =
         textdir(gettext_noop("Choose the picture you want, "
               "then click “Open”."));
@@ -14172,8 +14158,8 @@ int do_slideshow(void)
 
 	    if (img1 != NULL)
 	    {
-	      // if too big, or too small in both dimensions, rescale it
-	      // ( for now: using old thumbnail as source for high speed, low quality)
+	      /* if too big, or too small in both dimensions, rescale it
+	         (for now: using old thumbnail as source for high speed, low quality) */
 	      if (img1->w > THUMB_W - 20 || img1->h > THUMB_H - 20
 		  || (img1->w < THUMB_W - 20 && img1->h < THUMB_H - 20))
 	      {
@@ -14286,7 +14272,7 @@ int do_slideshow(void)
 #endif
   /* Let user choose images: */
 
-  // Instructions for Slideshow file dialog (FIXME: Make a #define)
+  /* Instructions for Slideshow file dialog (FIXME: Make a #define) */
   freeme = textdir(gettext_noop("Choose the pictures you want, "
 				"then click “Play”."));
   draw_tux_text(TUX_BORED, freeme, 1);
@@ -14300,7 +14286,7 @@ int do_slideshow(void)
   go_back = 0;
   done = 0;
 
-  // FIXME: Make these global, so it sticks between views?
+  /* FIXME: Make these global, so it sticks between views? */
   num_selected = 0;
   speed = 5;
 
@@ -14600,7 +14586,7 @@ int do_slideshow(void)
         draw_colors(COLORSEL_CLOBBER_WIPE);
 	draw_none();
 
-  	// Instructions for Slideshow file dialog (FIXME: Make a #define)
+  	/* Instructions for Slideshow file dialog (FIXME: Make a #define) */
 	freeme = textdir(gettext_noop("Choose the pictures you want, "
 				      "then click “Play”."));
 	draw_tux_text(TUX_BORED, freeme, 1);
@@ -15037,8 +15023,7 @@ static void wait_for_sfx(void)
 }
 
 
-////////////////////////////////////////////////////////////
-// stamp outline
+/* stamp outline */
 #ifndef LOW_QUALITY_STAMP_OUTLINE
 /* XOR-based outline of rubber stamp shapes
    (unused if LOW_QUALITY_STAMP_OUTLINE is #defined) */
@@ -15086,7 +15071,7 @@ static void update_stamp_xor(void)
 
   src = active_stamp;
 
-  // start by scaling
+  /* start by scaling */
   src = thumbnail(src, CUR_STAMP_W, CUR_STAMP_H, 0);
 
   getpixel = getpixels[src->format->BytesPerPixel];
@@ -15171,7 +15156,7 @@ static void stamp_xor(int x, int y)
   {
     for (xx = 0; xx < stamp_outline_w; xx++)
     {
-      if (!stamp_outline_data[xx + yy * stamp_outline_w]) // BUGBUG: Conditional jump or move depends on uninitialised value(s)
+      if (!stamp_outline_data[xx + yy * stamp_outline_w]) /* BUGBUG: Conditional jump or move depends on uninitialised value(s) */
 	continue;
       sx = x + xx - stamp_outline_w / 2;
       sy = y + yy - stamp_outline_h / 2;
@@ -15184,7 +15169,6 @@ static void stamp_xor(int x, int y)
 }
 
 #endif
-///////////////////////////////////////////////////
 
 static void rgbtohsv(Uint8 r8, Uint8 g8, Uint8 b8, float *h, float *s,
 		     float *v)
@@ -15363,7 +15347,7 @@ void do_print(void)
       do_prompt_snd(PROMPT_PRINT_TXT, PROMPT_PRINT_YES, "", SND_TUXOK,
 		    screen->w / 2, screen->h / 2);
 #elif defined(PRINTMETHOD_PNM_PS)
-    // nothing here
+    /* nothing here */
 #elif defined(PRINTMETHOD_PS)
     if (do_ps_save(pi, pcmd, canvas, papersize))
       do_prompt_snd(PROMPT_PRINT_TXT, PROMPT_PRINT_YES, "", SND_TUXOK,
@@ -15379,7 +15363,7 @@ void do_print(void)
   char f[512];
   int show = want_alt_printcommand;
 
-  snprintf(f, sizeof(f), "%s/%s", savedir, "print.cfg"); // FIXME
+  snprintf(f, sizeof(f), "%s/%s", savedir, "print.cfg"); /* FIXME */
 
   {
     const char *error =
@@ -15560,18 +15544,18 @@ static char *uppercase(const char *restrict const str)
   if (!only_uppercase)
     return strdup(str);
 
-  // watch out: uppercase chars may need extra bytes!
-  // http://en.wikipedia.org/wiki/Turkish_dotted_and_dotless_I
+  /* watch out: uppercase chars may need extra bytes!
+     http://en.wikipedia.org/wiki/Turkish_dotted_and_dotless_I */
   n = strlen(str) + 1;
   dest = alloca(sizeof(wchar_t)*n);
-  ustr = malloc(n*2); // use *2 in case 'i' becomes U+0131
+  ustr = malloc(n*2); /* use *2 in case 'i' becomes U+0131 */
 
-  mbstowcs(dest, str, sizeof(wchar_t)*n); // at most n wchar_t written
+  mbstowcs(dest, str, sizeof(wchar_t)*n); /* at most n wchar_t written */
   i = 0;
   do{
     dest[i] = towupper(dest[i]);
   }while(dest[i++]);
-  wcstombs(ustr, dest, n); // at most n bytes written
+  wcstombs(ustr, dest, n); /* at most n bytes written */
 
 #ifdef DEBUG
   printf(" ORIGINAL: %s\n" "UPPERCASE: %s\n\n", str, ustr);
@@ -15668,16 +15652,16 @@ static char *textdir(const char *const str)
 
 static Uint32 scrolltimer_callback(Uint32 interval, void *param)
 {
-  //printf("scrolltimer_callback(%d) -- ", interval);
+  /* printf("scrolltimer_callback(%d) -- ", interval); */
   if (scrolling)
   {
-    //printf("(Still scrolling)\n");
+    /* printf("(Still scrolling)\n"); */
     SDL_PushEvent((SDL_Event *) param);
     return interval;
   }
   else
   {
-    //printf("(all done)\n");
+    /* printf("(all done)\n"); */
     return 0;
   }
 }
@@ -15840,13 +15824,13 @@ static void parse_options(FILE * fi)
 	int w, h;
 	w = strtoul(str + 11, &endp1, 10);
 	h = strtoul(endp1 + 1, &endp2, 10);
-	// sanity check it
+	/* sanity check it */
 	if (str + 11 == endp1 || endp1 + 1 == endp2 || *endp1 != 'x' || *endp2
 	    || w < 500 || h < 480 || h > w * 3 || w > h * 4)
 	{
-	  // Oddly, config files have no error checking.
-	  //show_usage(stderr, (char *) getfilename(argv[0]));
-	  //exit(1);
+	  /* Oddly, config files have no error checking. */
+	  /* show_usage(stderr, (char *) getfilename(argv[0])); */
+	  /* exit(1); */
 	}
 	else
 	{
@@ -15854,18 +15838,18 @@ static void parse_options(FILE * fi)
 	  WINDOW_HEIGHT = h;
 	}
       }
-      // to handle old config files
       else if (strcmp(str, "800x600=yes") == 0 ||
 	       strcmp(str, "windowsize=800x600") == 0)
       {
+        /* to handle old config files */
 	WINDOW_WIDTH = 800;
 	WINDOW_HEIGHT = 600;
       }
-      // also for old config files
       else if (strcmp(str, "800x600=no") == 0 ||
 	       strcmp(str, "640x480=yes") == 0 ||
 	       strcmp(str, "windowsize=640x480") == 0)
       {
+        /* also for old config files */
 	WINDOW_WIDTH = 640;
 	WINDOW_HEIGHT = 480;
       }
@@ -16002,8 +15986,8 @@ static void parse_options(FILE * fi)
       {
 	simple_shapes = 1;
       }
-      // Should "locale=" be here as well???
-      // Comments welcome ... bill@newbreedsoftware.com
+      /* Should "locale=" be here as well??? */
+      /* Comments welcome ... bill@newbreedsoftware.com */
       else if (strstr(str, "lang=") == str)
       {
 	set_langstr(str + 5);
@@ -16037,11 +16021,33 @@ static void parse_options(FILE * fi)
 #if !defined(WIN32) && !defined(__APPLE__) && !defined(__BEOS__)
       else if (strstr(str, "printcommand=") == str)
       {
-	printcommand = strdup(str + 13);
+#ifdef __linux__
+        wordexp_t result;
+        char * dir = strdup(str + 13);
+
+        wordexp(dir, &result, 0);
+        free(dir);
+
+        printcommand = strdup(result.we_wordv[0]);
+        wordfree(&result);
+#else
+        printcommand = strdup(str + 13);
+#endif
       }
       else if (strstr(str, "altprintcommand=") == str)
       {
-	altprintcommand = strdup(str + 16);
+#ifdef __linux__
+        wordexp_t result;
+        char * dir = strdup(str + 16);
+
+        wordexp(dir, &result, 0);
+        free(dir);
+
+        altprintcommand = strdup(result.we_wordv[0]);
+        wordfree(&result);
+#else
+        altprintcommand = strdup(str + 16);
+#endif
       }
 #endif
       else if (strcmp(str, "saveover=yes") == 0)
@@ -16088,11 +16094,19 @@ static void parse_options(FILE * fi)
 #endif
       else if (strstr(str, "savedir=") == str)
       {
-        char *dir;      
-	dir = strdup(str + 8);
-	remove_slash(dir);
-        savedir = replace_tilde(dir);  
+#ifdef __linux__
+        wordexp_t result;
+        char * dir = strdup(str + 8);
+
+        wordexp(dir, &result, 0);
         free(dir);
+
+        savedir = strdup(result.we_wordv[0]);
+        wordfree(&result);
+#else
+        savedir = strdup(str + 8);
+#endif
+        remove_slash(savedir);
 
 #ifdef DEBUG
 	printf("savedir set to: %s\n", savedir);
@@ -16100,11 +16114,19 @@ static void parse_options(FILE * fi)
       }
       else if (strstr(str, "datadir=") == str)
       {
-        char *dir;
-	dir = strdup(str + 8);
-	remove_slash(dir);
-        datadir = replace_tilde(dir);
+#ifdef __linux__
+        wordexp_t result;
+        char * dir = strdup(str + 8);
+
+        wordexp(dir, &result, 0);
         free(dir);
+
+        datadir = strdup(result.we_wordv[0]);
+        wordfree(&result);
+#else
+        datadir = strdup(str + 8);
+#endif
+        remove_slash(datadir);
 
 #ifdef DEBUG
 	printf("datadir set to: %s\n", datadir);
@@ -16250,7 +16272,7 @@ static char *remove_slash(char *path)
 }
 
 /* replace '~' at the beginning of a path with home directory */
-
+/*
 static char *replace_tilde(const char* const path)
 {
     char *newpath;
@@ -16272,7 +16294,7 @@ static char *replace_tilde(const char* const path)
     
     return newpath;
 }
-
+*/
 
 /* For right-to-left languages, when word-wrapping, we need to
    make sure the text doesn't end up going from bottom-to-top, too! */
@@ -16502,8 +16524,9 @@ int paintsound(int size)
 
 #ifdef OLD_SVG
 
-// Old libcairo1, svg and svg-cairo based code
-// Based on cairo-demo/sdl/main.c from Cairo (GPL'd, (c) 2004 Eric Windisch):
+/* Old libcairo1, svg and svg-cairo based code
+   Based on cairo-demo/sdl/main.c from Cairo (GPL'd, (c) 2004 Eric Windisch):
+*/
 
 SDL_Surface * load_svg(char * file)
 {
@@ -16524,7 +16547,7 @@ SDL_Surface * load_svg(char * file)
   printf("Attempting to load \"%s\" as an SVG\n", file);
 #endif
 
-  // Create the SVG cairo stuff:
+  /* Create the SVG cairo stuff: */
   if (svg_cairo_create(&scr) != SVG_CAIRO_STATUS_SUCCESS)
   {
 #ifdef DEBUG
@@ -16533,7 +16556,7 @@ SDL_Surface * load_svg(char * file)
     return(NULL);
   }
 
-  // Parse the SVG file:
+  /* Parse the SVG file: */
   if (svg_cairo_parse(scr, file) != SVG_CAIRO_STATUS_SUCCESS)
   {
     svg_cairo_destroy(scr);
@@ -16543,7 +16566,7 @@ SDL_Surface * load_svg(char * file)
     return(NULL);
   }
 
-  // Get the natural size of the SVG
+  /* Get the natural size of the SVG */
   svg_cairo_get_size(scr, &rwidth, &rheight);
 #ifdef DEBUG
   printf("svg_get_size(): %d x %d\n", rwidth, rheight);
@@ -16558,14 +16581,14 @@ SDL_Surface * load_svg(char * file)
     return(NULL);
   }
 
-  // We will create a CAIRO_FORMAT_ARGB32 surface. We don't need to match
-  // the screen SDL format, but we are interested in the alpha bit...
+  /* We will create a CAIRO_FORMAT_ARGB32 surface. We don't need to match
+     the screen SDL format, but we are interested in the alpha bit... */
   bpp = 32;
   btpp = 4;
 
-  // We want to render at full Tux Paint canvas size, so that the stamp
-  // at its largest scale remains highest quality (no pixelization):
-  // (but not messing up the aspect ratio)
+  /* We want to render at full Tux Paint canvas size, so that the stamp
+    at its largest scale remains highest quality (no pixelization):
+    (but not messing up the aspect ratio) */
 
   scale = pick_best_scape(rwidth, rheight, r_canvas.w, r_canvas.h);
 
@@ -16576,17 +16599,17 @@ SDL_Surface * load_svg(char * file)
   printf("scaling to %d x %d (%f scale)\n", width, height, scale);
 #endif
 
-  // scanline width
+  /* scanline width */
   stride = width * btpp;
 
-  // Allocate space for an image:
+  /* Allocate space for an image: */
   image = calloc(stride * height, 1);
 
 #ifdef DEBUG
   printf("calling cairo_image_surface_create_for_data(..., CAIRO_FORMAT_ARGB32, %d(w), %d(h), %d(stride))\n", width, height, stride);
 #endif
 
-  // Create the cairo surface with the adjusted width and height
+  /* Create the cairo surface with the adjusted width and height */
 
   cairo_surface = cairo_image_surface_create_for_data(image,
                                                       CAIRO_FORMAT_ARGB32,
@@ -16601,13 +16624,13 @@ SDL_Surface * load_svg(char * file)
     return(NULL);
   }
 
-  // Scale it (proportionally)
-  cairo_scale(cr, scale, scale);  // no return value :(
+  /* Scale it (proportionally) */
+  cairo_scale(cr, scale, scale);  /* no return value :( */
 
-  // Render SVG to our surface:
+  /* Render SVG to our surface: */
   res = svg_cairo_render(scr, cr);
 
-  // Clean up:
+  /* Clean up: */
   cairo_surface_destroy(cairo_surface);
   cairo_destroy(cr);
   svg_cairo_destroy(scr);
@@ -16621,14 +16644,14 @@ SDL_Surface * load_svg(char * file)
   }
 
 
-  // Adjust the SDL surface to match the cairo surface created
-  // (surface mask of ARGB)  NOTE: Is this endian-agnostic? -bjk 2006.10.25
+  /* Adjust the SDL surface to match the cairo surface created
+     (surface mask of ARGB)  NOTE: Is this endian-agnostic? -bjk 2006.10.25 */
   rmask = 0x00ff0000;
   gmask = 0x0000ff00;
   bmask = 0x000000ff;
   amask = 0xff000000;
 
-  // Create the SDL surface using the pixel data stored:
+  /* Create the SDL surface using the pixel data stored: */
   sdl_surface_tmp = SDL_CreateRGBSurfaceFrom((void *) image, width, height,
                                              bpp, stride,
                                              rmask, gmask, bmask, amask);
@@ -16642,7 +16665,7 @@ SDL_Surface * load_svg(char * file)
   }
 
 
-  // Convert the SDL surface to the display format, for faster blitting:
+  /* Convert the SDL surface to the display format, for faster blitting: */
   sdl_surface = SDL_DisplayFormatAlpha(sdl_surface_tmp);
   SDL_FreeSurface(sdl_surface_tmp);
 
@@ -16664,7 +16687,7 @@ SDL_Surface * load_svg(char * file)
 
 #else
 
-// New libcairo2, rsvg and rsvg-cairo based code
+/* New libcairo2, rsvg and rsvg-cairo based code */
 SDL_Surface * load_svg(char * file)
 {
   cairo_surface_t * cairo_surf;
@@ -16708,7 +16731,7 @@ SDL_Surface * load_svg(char * file)
 #endif
 
 
-  // Pick best scale to render to (for the canvas in this instance of Tux Paint)
+  /* Pick best scale to render to (for the canvas in this instance of Tux Paint) */
   
   scale = pick_best_scape(rwidth, rheight, r_canvas.w, r_canvas.h);
 
@@ -16723,10 +16746,10 @@ SDL_Surface * load_svg(char * file)
   printf("scaling to %d x %d (%f scale)\n", width, height, scale);
 #endif
 
-  // scanline width
+  /* scanline width */
   stride = width * btpp;
 
-  // Allocate space for an image:
+  /* Allocate space for an image: */
   image = calloc(stride * height, 1);
   if (image == NULL)
   {
@@ -16782,14 +16805,14 @@ SDL_Surface * load_svg(char * file)
   cairo_surface_finish(cairo_surf);
 
   
-  // Adjust the SDL surface to match the cairo surface created
-  // (surface mask of ARGB)  NOTE: Is this endian-agnostic? -bjk 2006.10.25
+  /* Adjust the SDL surface to match the cairo surface created
+    (surface mask of ARGB)  NOTE: Is this endian-agnostic? -bjk 2006.10.25 */
   rmask = 0x00ff0000;
   gmask = 0x0000ff00;
   bmask = 0x000000ff;
   amask = 0xff000000;
 
-  // Create the SDL surface using the pixel data stored:
+  /* Create the SDL surface using the pixel data stored: */
   sdl_surface_tmp = SDL_CreateRGBSurfaceFrom((void *) image, width, height,
                                              bpp, stride,
                                              rmask, gmask, bmask, amask);
@@ -16806,7 +16829,7 @@ SDL_Surface * load_svg(char * file)
     return(NULL);
   }
 
-  // Convert the SDL surface to the display format, for faster blitting:
+  /* Convert the SDL surface to the display format, for faster blitting: */
   sdl_surface = SDL_DisplayFormatAlpha(sdl_surface_tmp);
   SDL_FreeSurface(sdl_surface_tmp);
 
@@ -16845,9 +16868,9 @@ SDL_Surface * load_svg(char * file)
 
 
 
-// Load an image; call load_svg() (above, to call Cairo and SVG-Cairo funcs)
-// if we notice it's an SVG file,
-// otherwise call SDL_Image lib's IMG_Load() (for PNGs, JPEGs, BMPs, etc.)
+/* Load an image; call load_svg() (above, to call Cairo and SVG-Cairo funcs)
+   if we notice it's an SVG file,
+   otherwise call SDL_Image lib's IMG_Load() (for PNGs, JPEGs, BMPs, etc.) */
 SDL_Surface * myIMG_Load(char * file)
 {
   if (strlen(file) > 4 && strcasecmp(file + strlen(file) - 4, ".svg") == 0)
@@ -16879,7 +16902,7 @@ float pick_best_scape(unsigned int orig_w, unsigned int orig_h,
 
   if (aspect >= 1)
   {
-    // Image is wider-than-tall (or square)
+    /* Image is wider-than-tall (or square) */
 
     scale = wscale;
 
@@ -16904,7 +16927,7 @@ float pick_best_scape(unsigned int orig_w, unsigned int orig_h,
   }
   else
   {
-    // Taller-than-wide
+    /* Taller-than-wide */
 
     scale = hscale;
 
@@ -16966,7 +16989,7 @@ void load_magic_plugins(void)
       place = strdup("/Library/Application Support/TuxPaint/plugins/");
 #endif
     else
-      continue; // Huh?
+      continue; /* Huh? */
 
 #ifdef DEBUG
     printf("\n");
@@ -17509,14 +17532,14 @@ void magic_playsound(Mix_Chunk * snd, int left_right, int up_down)
   int left, dist;
 
 
-  // Don't play if sound is disabled (nosound), or sound is temporarily
-  // muted (Alt+S), or sound ptr is NULL
+  /* Don't play if sound is disabled (nosound), or sound is temporarily
+     muted (Alt+S), or sound ptr is NULL */
   
   if (mute || !use_sound || snd == NULL)
     return;
 
 
-  // Don't override the same sound, if it's already playing
+  /* Don't override the same sound, if it's already playing */
   
   if (!Mix_Playing(0) || magic_current_snd_ptr != snd)
     Mix_PlayChannel(0, snd, 0);
@@ -17524,7 +17547,7 @@ void magic_playsound(Mix_Chunk * snd, int left_right, int up_down)
   magic_current_snd_ptr = snd;
 
 
-  // Adjust panning
+  /* Adjust panning */
   
   if (up_down < 0)
     up_down = 0;
@@ -17793,8 +17816,9 @@ int do_new_dialog(void)
             img1 = SDL_DisplayFormat(img);
             SDL_FreeSurface(img);
 
-            // if too big, or too small in both dimensions, rescale it
-            // ( for now: using old thumbnail as source for high speed, low quality)
+            /* if too big, or too small in both dimensions, rescale it
+               (for now: using old thumbnail as source for high speed,
+               low quality) */
             if (img1->w > THUMB_W - 20 || img1->h > THUMB_H - 20
                 || (img1->w < THUMB_W - 20 && img1->h < THUMB_H - 20))
             {
@@ -17965,7 +17989,7 @@ int do_new_dialog(void)
 
   /* Let user choose a color or image: */
 
-  // Instructions for 'New' file/color dialog
+  /* Instructions for 'New' file/color dialog */
   draw_tux_text(TUX_BORED, tool_tips[TOOL_NEW], 1);
 
   /* NOTE: cur is now set above; if file_id'th file is found, it's

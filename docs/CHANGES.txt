@@ -8,7 +8,7 @@ http://www.tuxpaint.org/
 
 $Id$
 
-2008.October.7 (0.9.21)
+2008.October.8 (0.9.21)
   * New Starters:
     -------------
     * Silver Frame
@@ -67,6 +67,14 @@ $Id$
 
     * "Negative", "Tint", "Glass Tile", "Darken" and "Lighten" tools
       can all now affect the entire image.
+
+  * System-Related Improvements:
+    ----------------------------
+    * 'savedir', 'datadir', 'printcommand' and 'altprintcommand' options in
+      configuration files (e.g., ~/.tuxpaintrc) now expand environment
+      variables and tildes (e.g., "~" for $HOME, or "~username" for 'username's
+      home directory) on Linux.  (Using 'wordexp()')
+      NOTE: Environment variable expansion not yet supported on other platforms.
 
   * Build System Improvements
     -------------------------
