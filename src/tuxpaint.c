@@ -4848,7 +4848,7 @@ static void stamp_draw(int x, int y)
   /* And blit it! */
   dest.x = base_x;
   dest.y = base_y;
-  SDL_BlitSurface(final_surf, NULL, canvas, &dest); /* BUGBUG: Conditional jump or move depends on uninitialised value(s) /
+  SDL_BlitSurface(final_surf, NULL, canvas, &dest); /* FIXME: Conditional jump or move depends on uninitialised value(s) */
 
   update_canvas(x - (CUR_STAMP_W + 1) / 2,
 		y - (CUR_STAMP_H + 1) / 2,
@@ -15156,7 +15156,7 @@ static void stamp_xor(int x, int y)
   {
     for (xx = 0; xx < stamp_outline_w; xx++)
     {
-      if (!stamp_outline_data[xx + yy * stamp_outline_w]) /* BUGBUG: Conditional jump or move depends on uninitialised value(s) */
+      if (!stamp_outline_data[xx + yy * stamp_outline_w]) /* FIXME: Conditional jump or move depends on uninitialised value(s) */
 	continue;
       sx = x + xx - stamp_outline_w / 2;
       sy = y + yy - stamp_outline_h / 2;
