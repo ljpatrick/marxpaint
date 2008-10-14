@@ -16021,6 +16021,8 @@ static void parse_options(FILE * fi)
 #if !defined(WIN32) && !defined(__APPLE__) && !defined(__BEOS__)
       else if (strstr(str, "printcommand=") == str)
       {
+/* FIXME: This would need to be done one argument (space-delim'd) at a time */
+/*
 #ifdef __linux__
         wordexp_t result;
         char * dir = strdup(str + 13);
@@ -16031,11 +16033,16 @@ static void parse_options(FILE * fi)
         printcommand = strdup(result.we_wordv[0]);
         wordfree(&result);
 #else
+*/
         printcommand = strdup(str + 13);
+/*
 #endif
+*/
       }
       else if (strstr(str, "altprintcommand=") == str)
       {
+/* FIXME: This would need to be done one argument (space-delim'd) at a time */
+/*
 #ifdef __linux__
         wordexp_t result;
         char * dir = strdup(str + 16);
@@ -16046,8 +16053,11 @@ static void parse_options(FILE * fi)
         altprintcommand = strdup(result.we_wordv[0]);
         wordfree(&result);
 #else
+*/
         altprintcommand = strdup(str + 16);
+/*
 #endif
+*/
       }
 #endif
       else if (strcmp(str, "saveover=yes") == 0)

@@ -70,11 +70,14 @@ $Id$
 
   * System-Related Improvements:
     ----------------------------
-    * 'savedir', 'datadir', 'printcommand' and 'altprintcommand' options in
-      configuration files (e.g., ~/.tuxpaintrc) now expand environment
-      variables and tildes (e.g., "~" for $HOME, or "~username" for 'username's
-      home directory) on Linux.  (Using 'wordexp()')
-      NOTE: Environment variable expansion not yet supported on other platforms.
+    * 'savedir' and 'datadir' paths given in configuration files
+      (e.g., ~/.tuxpaintrc) now have any environment variables and tildes
+      (e.g., "~" for $HOME, or "~username" for 'username's home directory)
+      expanded.
+      NOTE: Environment variable expansion via 'wordexp()' -- currently
+      Linux-only.
+      NOTE: 'printcommand' and 'altprintcommand' options not currently parsed
+      for env. vars.
 
   * Build System Improvements
     -------------------------
