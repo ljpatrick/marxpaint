@@ -7,7 +7,7 @@ bill@newbreedsoftware.com
 http://www.tuxpaint.org/
 
 
-June 17, 2002 - October 7, 2008
+June 17, 2002 - October 13, 2008
 
 $Id$
 
@@ -262,6 +262,7 @@ $Id$
     Pere Pujal Carabantes <ppujal@airtel.net>
 
   * Chinese (Simplified)
+    Huang Zuzhen <zuzhenhuang@vip.sina.com>
     Wang Jian <lark@linux.net.cn>
 
   * Chinese (Simplified) README and FAQ documentation
