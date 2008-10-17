@@ -7,7 +7,7 @@ bill@newbreedsoftware.com
 http://www.tuxpaint.org/
 
 
-June 17, 2002 - October 13, 2008
+June 17, 2002 - October 17, 2008
 
 $Id$
 
@@ -479,6 +479,10 @@ $Id$
     Urska Colner <urska.colner@agenda.si>
     Ines Kovacevic <ines@agenda.si>
     Matej Urban <matej.urban@gmail.com>
+
+  * Songhay
+    Abdoul Cisse <abdoulseydou@hotmail.com>
+    Mohomodou Houssouba <mh@bollag-areal.ch>
 
   * Spanish
     Gabriel Gazzan <ggabriel@internet.com.uy>

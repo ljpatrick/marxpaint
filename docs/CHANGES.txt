@@ -8,7 +8,7 @@ http://www.tuxpaint.org/
 
 $Id$
 
-2008.October.16 (0.9.21)
+2008.October.17 (0.9.21)
   * New Starters:
     -------------
     * Silver Frame
@@ -82,6 +82,12 @@ $Id$
   * Build System Improvements
     -------------------------
     * Adhering to Debian & FreeDesktop.org standards regarding .desktop file.
+
+  * New localizations:
+    ------------------
+    * Songhay translation
+      Abdoul Cisse <abdoulseydou@hotmail.com>
+      Mohomodou Houssouba <mh@bollag-areal.ch>
 
   * Localization Updates:
     ---------------------

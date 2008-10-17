@@ -10,7 +10,7 @@
 
   $Id$
   
-  June 14, 2002 - September 22, 2008
+  June 14, 2002 - October 17, 2008
 */
 
 
@@ -87,6 +87,7 @@ enum
   LANG_RW,			/* Kinyarwanda */
   LANG_SK,			/* Slovak */
   LANG_SL,			/* Slovenian */
+  LANG_SON,                     /* Songhay */
   LANG_SQ,			/* Albanian */
   LANG_SR,			/* Serbian */
   LANG_SV,			/* Swedish */
