@@ -325,7 +325,7 @@ $Id$
     Leandro Regueiro <leandro.regueiro@gmail.com>
 
   * Georgian and Georgian TrueType Font (GPL)
-    Gia Shervashidze <giasher@telenet.ge>
+    Gia Shervashidze <giasher@gmail.com>
     
   * German
     Fabian Franz <FabianFranz@gmx.de>

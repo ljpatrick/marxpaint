@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: TuxPaint\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2008-09-23 21:41+0100\n"
-"PO-Revision-Date: 2005-10-10 23:41+0300\n"
-"Last-Translator: Giasher <giasher@telenet.ge>\n"
+"PO-Revision-Date: 2008-10-05 18:31+0300\n"
+"Last-Translator: Giasher <giasher@gmail.com>\n"
 "Language-Team: Gia Shervashidze <giasher@telenet.ge>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -117,20 +117,20 @@ msgstr "ბეჟი!"
 #. Line X
 #: ../dirwalk.c:121
 msgid "qx"
-msgstr ""
+msgstr "qx"
 
 #: ../dirwalk.c:121
 msgid "QX"
-msgstr ""
+msgstr "QX"
 
 #. Line Y
 #: ../dirwalk.c:124
 msgid "qy"
-msgstr ""
+msgstr "qy"
 
 #: ../dirwalk.c:124
 msgid "QY"
-msgstr ""
+msgstr "QY"
 
 #. Now we score fonts to ensure that the best ones will be placed at
 #. the top of the list. The user will see them first. This sorting is
@@ -189,114 +189,125 @@ msgstr "ყოჩაღ!"
 #. Input Method: English mode
 #: ../im.c:75
 msgid "English"
-msgstr ""
+msgstr "ინგლისური"
 
 #. Input Method: Japanese Romanized Hiragana mode
 #: ../im.c:78
 msgid "Hiragana"
-msgstr ""
+msgstr "ჰირაგანა"
 
 #. Input Method: Japanese Romanized Katakana mode
 #: ../im.c:81
 msgid "Katakana"
-msgstr ""
+msgstr "კატაკანა"
 
 #. Input Method: Korean Hangul 2-Bul mode
 #: ../im.c:84
 msgid "Hangul"
-msgstr ""
+msgstr "ჰანგული"
 
 #. Input Method: Thai mode
 #: ../im.c:87
-#, fuzzy
 msgid "Thai"
-msgstr "მსხვილი"
+msgstr "ტაილანდური"
 
 #. Input Method: Traditional Chinese mode
 #: ../im.c:90
 msgid "ZH_TW"
-msgstr ""
+msgstr "ZH_TW"
 
 #. Square shape tool (4 equally-lengthed sides at right angles)
-#: ../shapes.h:171 ../shapes.h:172
+#: ../shapes.h:171
+#: ../shapes.h:172
 msgid "Square"
 msgstr "კვადრატი"
 
 #. Rectangle shape tool (4 sides at right angles)
-#: ../shapes.h:175 ../shapes.h:176
+#: ../shapes.h:175
+#: ../shapes.h:176
 msgid "Rectangle"
 msgstr "მართკუთხედი"
 
 #. Circle shape tool (X radius and Y radius are the same)
-#: ../shapes.h:179 ../shapes.h:180
+#: ../shapes.h:179
+#: ../shapes.h:180
 msgid "Circle"
 msgstr "წრე"
 
 #. Ellipse shape tool (X radius and Y radius may differ)
-#: ../shapes.h:183 ../shapes.h:184
+#: ../shapes.h:183
+#: ../shapes.h:184
 msgid "Ellipse"
 msgstr "ელიფსი"
 
 #. Triangle shape tool (3 sides)
-#: ../shapes.h:187 ../shapes.h:188
+#: ../shapes.h:187
+#: ../shapes.h:188
 msgid "Triangle"
 msgstr "სამკუთხედი"
 
 #. Pentagone shape tool (5 sides)
-#: ../shapes.h:191 ../shapes.h:192
+#: ../shapes.h:191
+#: ../shapes.h:192
 msgid "Pentagon"
 msgstr "ხუთკუთხედი"
 
 #. Rhombus shape tool (4 sides, not at right angles)
-#: ../shapes.h:195 ../shapes.h:196
+#: ../shapes.h:195
+#: ../shapes.h:196
 msgid "Rhombus"
 msgstr "რომბი"
 
 #. Octagon shape tool (8 sides)
-#: ../shapes.h:199 ../shapes.h:200
-#, fuzzy
+#: ../shapes.h:199
+#: ../shapes.h:200
 msgid "Octagon"
-msgstr "ხუთკუთხედი"
+msgstr "რვაკუთხედი"
 
 #. Description of a square
-#: ../shapes.h:208 ../shapes.h:209
+#: ../shapes.h:208
+#: ../shapes.h:209
 msgid "A square is a rectangle with four equal sides."
 msgstr "კვადრათი მართკუთხედედია ოთხივე ტოლი გვერდით."
 
 #. Description of a rectangle
-#: ../shapes.h:212 ../shapes.h:213
+#: ../shapes.h:212
+#: ../shapes.h:213
 msgid "A rectangle has four sides and four right angles."
 msgstr "მართკუთხედს ოთხი გვერდი და ოთხი მართი კუთხე აქვს."
 
-#: ../shapes.h:217 ../shapes.h:219
-#, fuzzy
-msgid ""
-"A circle is a curve where all points have the same distance from the center."
+#: ../shapes.h:217
+#: ../shapes.h:219
+msgid "A circle is a curve where all points have the same distance from the center."
 msgstr "წრეწირი მრუდია, რომლის ყველა წერტილი ცენტრიდან თანაბრადაა დაცილებული."
 
 #. Description of an ellipse
-#: ../shapes.h:222 ../shapes.h:223
+#: ../shapes.h:222
+#: ../shapes.h:223
 msgid "An ellipse is a stretched circle."
 msgstr "ელიფსი გაჭიმული წრეა."
 
 #. Description of a triangle
-#: ../shapes.h:226 ../shapes.h:227
+#: ../shapes.h:226
+#: ../shapes.h:227
 msgid "A triangle has three sides."
 msgstr "სამკუთხედს სამი გვერდი (და კუთხე!) აქვს"
 
 #. Description of a pentagon
-#: ../shapes.h:230 ../shapes.h:231
+#: ../shapes.h:230
+#: ../shapes.h:231
 msgid "A pentagon has five sides."
 msgstr "ხუთკუთხედს ხუთი გვერდი (და კუთხე!) აქვს"
 
-#: ../shapes.h:235 ../shapes.h:237
+#: ../shapes.h:235
+#: ../shapes.h:237
 msgid "A rhombus has four equal sides, and opposite sides are parallel."
 msgstr "რომბს ოთხი ტოლი გვერდი აქვს და საპირისპირო გვერდები პარალელურია."
 
-#: ../shapes.h:241 ../shapes.h:243
-#, fuzzy
+#: ../shapes.h:241
+#: ../shapes.h:243
 msgid "An octagon has eight equal sides."
-msgstr "ხუთკუთხედს ხუთი გვერდი (და კუთხე!) აქვს"
+msgstr "რვაკუთხედს რვა თანაბარი გვერდი აქვს"
 
 #. Title of tool selector (buttons down the left)
 #: ../titles.h:41
@@ -325,7 +336,8 @@ msgstr "დამღა"
 
 #. Title of shape selector (buttons down the right for shapes tool)
 #. Shape creation tool (square, circle, etc.)
-#: ../titles.h:56 ../tools.h:54
+#: ../titles.h:56
+#: ../tools.h:54
 msgid "Shapes"
 msgstr "ფორმები"
 
@@ -336,7 +348,8 @@ msgstr "ასოები"
 
 #. Title of magic tool selector (buttons down the right for magic (effect plugin) tool)
 #. "Magic" effects tools (blur, flip image, etc.)
-#: ../titles.h:62 ../tools.h:60
+#: ../titles.h:62
+#: ../tools.h:60
 msgid "Magic"
 msgstr "მაგია"
 
@@ -383,7 +396,8 @@ msgstr "ახალი"
 #. Open a saved picture
 #. buttons for the file open dialog
 #. Open dialog: 'Open' button, to load the selected picture
-#: ../tools.h:75 ../tuxpaint.c:7971
+#: ../tools.h:75
+#: ../tuxpaint.c:7971
 msgid "Open"
 msgstr "გახსნა"
 
@@ -419,12 +433,8 @@ msgstr "დაწკაპეთ ხაზის დასაწყებად.
 
 #. Shape tool instructions
 #: ../tools.h:101
-msgid ""
-"Pick a shape. Click to pick the center, drag, then let go when it is the "
-"size you want. Move around to rotate it, and click to draw it."
-msgstr ""
-"აირჩიეთ ფორმა. დაწკაპეთ ცენტრის ასარჩევად, გაჭიმეთ საჭირო ზომამდე, აუშვით. "
-"დაატრიალეთ ფორმა და შემდეგ დაწკაპეთ მის დასახატად."
+msgid "Pick a shape. Click to pick the center, drag, then let go when it is the size you want. Move around to rotate it, and click to draw it."
+msgstr "აირჩიეთ ფორმა. დაწკაპეთ ცენტრის ასარჩევად, გაჭიმეთ საჭირო ზომამდე, აუშვით. დაატრიალეთ ფორმა და შემდეგ დაწკაპეთ მის დასახატად."
 
 #. Text tool instructions
 #: ../tools.h:104
@@ -453,9 +463,8 @@ msgstr "წაშლა!"
 
 #. Response to 'start a new image' action
 #: ../tools.h:119
-#, fuzzy
 msgid "Pick a color or picture with which to start a new drawing."
-msgstr "შეარჩიეთ ნახატი რომლის დამღაც გინდათ დაასვათ თქვენს ნახატს."
+msgstr "შეარჩიეთ ნახატი ან ფერი რომლითაც ახალი ნახატის დაწყება გსურთ."
 
 #. Response to 'open' action (while file dialog is being constructed)
 #: ../tools.h:122
@@ -505,25 +514,28 @@ msgstr "ნამდვილად გინდათ გასვლა?"
 #. Quit prompt positive response (quit)
 #: ../tuxpaint.c:1844
 msgid "Yes, I'm done!"
-msgstr ""
+msgstr "დიახ, დავასრულე!"
 
 #. Quit prompt negative response (don't quit)
-#: ../tuxpaint.c:1847 ../tuxpaint.c:1874
+#: ../tuxpaint.c:1847
+#: ../tuxpaint.c:1874
 msgid "No, take me back!"
-msgstr ""
+msgstr "არა, უკან დამაბრუნე!"
 
 #. Current picture is not saved; user is quitting
 #: ../tuxpaint.c:1851
 msgid "If you quit, you’ll lose your picture! Save it?"
 msgstr "თუ გახვალთ თქვენი ნახატი დაიკარგება! შევინახო?"
 
-#: ../tuxpaint.c:1852 ../tuxpaint.c:1857
+#: ../tuxpaint.c:1852
+#: ../tuxpaint.c:1857
 msgid "Yes, save it!"
-msgstr ""
+msgstr "დიახ, შეინახე!"
 
-#: ../tuxpaint.c:1853 ../tuxpaint.c:1858
+#: ../tuxpaint.c:1853
+#: ../tuxpaint.c:1858
 msgid "No, don't bother saving!"
-msgstr ""
+msgstr "არა, ნუ შეწუხდები!"
 
 #. Current picture is not saved; user is opening another picture
 #: ../tuxpaint.c:1856
@@ -536,7 +548,10 @@ msgid "Can’t open that picture!"
 msgstr "ამ ნახატს ვერ ვხსნი!"
 
 #. Generic dialog dismissal
-#: ../tuxpaint.c:1864 ../tuxpaint.c:1869 ../tuxpaint.c:1878 ../tuxpaint.c:1882
+#: ../tuxpaint.c:1864
+#: ../tuxpaint.c:1869
+#: ../tuxpaint.c:1878
+#: ../tuxpaint.c:1882
 #: ../tuxpaint.c:1891
 msgid "OK"
 msgstr "კარგი"
@@ -553,7 +568,7 @@ msgstr "დავბეჭდო თქვენი ნახატი?"
 
 #: ../tuxpaint.c:1873
 msgid "Yes, print it!"
-msgstr ""
+msgstr "დიახ, ამობეჭდე!"
 
 #. Confirmation of successful (we hope) printing
 #: ../tuxpaint.c:1877
@@ -572,11 +587,11 @@ msgstr "წავშალო ეს ნახატი?"
 
 #: ../tuxpaint.c:1886
 msgid "Yes, erase it!"
-msgstr ""
+msgstr "დიახ, წაშალე!"
 
 #: ../tuxpaint.c:1887
 msgid "No, don't erase it!"
-msgstr ""
+msgstr "არა, არ წაშალო!"
 
 #. Reminder that Mouse Button 1 is the button to use in Tux Paint
 #: ../tuxpaint.c:1890
@@ -586,21 +601,21 @@ msgstr "არ დაგავიწყდეთ თაგუნას მარ
 #. Sound has been muted (silenced) via keyboard shortcut
 #: ../tuxpaint.c:2005
 msgid "Sound muted."
-msgstr ""
+msgstr "ხმა ამორთულია."
 
 #. Sound has been unmuted (unsilenced) via keyboard shortcut
 #: ../tuxpaint.c:2010
 msgid "Sound unmuted."
-msgstr ""
+msgstr "ხმა ჩართულია."
 
 #. Wait while Text tool finishes loading fonts
 #: ../tuxpaint.c:2476
 msgid "Please wait…"
-msgstr ""
+msgstr "გთხოვთ დაიცადოთ..."
 
 #: ../tuxpaint.c:7194
 msgid "Pick a color."
-msgstr ""
+msgstr "შეარჩიეთ ფერი"
 
 #. Open dialog: 'Erase' button, to erase/deleted the selected picture
 #: ../tuxpaint.c:7974
@@ -610,7 +625,7 @@ msgstr "წაშლა"
 #. Open dialog: 'Slides' button, to switch to slide show mode
 #: ../tuxpaint.c:7977
 msgid "Slides"
-msgstr ""
+msgstr "სლაიდები"
 
 #. Open dialog: 'Back' button, to dismiss Open dialog without opening a picture
 #: ../tuxpaint.c:7980
@@ -619,14 +634,13 @@ msgstr "უკან"
 
 #. Slideshow: 'Next' button, to load next slide (image)
 #: ../tuxpaint.c:7983
-#, fuzzy
 msgid "Next"
-msgstr "ტექსტი"
+msgstr "შემდეგ"
 
 #. Slideshow: 'Play' button, to begin a slideshow sequence
 #: ../tuxpaint.c:7986
 msgid "Play"
-msgstr ""
+msgstr "დაკვრა"
 
 #. Label for 'Letters' buttons (font selector, down the right when the Text tool is being used); used to show the difference between font faces
 #: ../tuxpaint.c:8633
@@ -646,20 +660,19 @@ msgstr "არა"
 #. Prompt to ask whether user wishes to save over old version of their file
 #: ../tuxpaint.c:12532
 msgid "Replace the picture with your changes?"
-msgstr ""
+msgstr "ჩავანაცვლო ნახატი თქვენი ცვლილებებით?"
 
 #. Positive response to saving over old version
 #. (like a 'File:Save' action in other applications)
 #: ../tuxpaint.c:12536
 msgid "Yes, replace the old one!"
-msgstr ""
+msgstr "დიახ, ჩაანაცვლე ძველი ახლით!"
 
 #. Negative response to saving over old version (saves a new image)
 #. (like a 'File:Save As...' action in other applications)
 #: ../tuxpaint.c:12540
-#, fuzzy
 msgid "No, save a new file!"
-msgstr "არა, შეინახე ახალ ფაილში"
+msgstr "არა, შეინახე ახალ ფაილში!"
 
 #: ../tuxpaint.c:13303
 msgid "Choose the picture you want, then click “Open”."
@@ -667,10 +680,10 @@ msgstr "აირჩიეთ ნახატი და დაწკაპეთ
 
 #. Let user choose images:
 #. Instructions for Slideshow file dialog (FIXME: Make a #define)
-#: ../tuxpaint.c:14290 ../tuxpaint.c:14604
-#, fuzzy
+#: ../tuxpaint.c:14290
+#: ../tuxpaint.c:14604
 msgid "Choose the pictures you want, then click “Play”."
-msgstr "აირჩიეთ ნახატი და დაწკაპეთ „გახსნა”."
+msgstr "აირჩიეთ ნახატი და დაწკაპეთ „დაკვრა”."
 
 #: ../tuxpaint.desktop.in.h:1
 msgid "A drawing program for children."
@@ -686,19 +699,15 @@ msgstr "თხუპნია!"
 
 #: ../../magic/src/alien.c:64
 msgid "Alien"
-msgstr ""
+msgstr "უცხოპლანეტელი"
 
 #: ../../magic/src/alien.c:67
-#, fuzzy
-msgid ""
-"Click and move the mouse to give parts of your picture an \"alien\" "
-"appearance."
-msgstr "დაწკაპეთ და გადაატარეთ ნახატს მისი ნაწილის გასადღაბნად."
+msgid "Click and move the mouse to give parts of your picture an \"alien\" appearance."
+msgstr "დაწკაპეთ და გადაატარეთ თაგუნა ნახატის ნაწილებისთვის \"უცხოპლანეტელის\" იერის მისაცემად."
 
 #: ../../magic/src/alien.c:68
-#, fuzzy
 msgid "Click to give your entire picture an \"alien\" appearance."
-msgstr "დაწკაპეთ და გადაატარეთ ნახატის ფერების შესაცვლელად."
+msgstr "დაწკაპეთ მთელი ნახატისთვის \"უცხოპლანეტელის\" იერის მისაცემად."
 
 #: ../../magic/src/blocks_chalk_drip.c:132
 msgid "Blocks"
@@ -717,8 +726,7 @@ msgid "Click and move the mouse around to make the picture blocky."
 msgstr "დაწკაპეთ და გადაატარეთ ნახატს მისი ნაწილის მოზაიკად გადასაქცევად."
 
 #: ../../magic/src/blocks_chalk_drip.c:149
-msgid ""
-"Click and move the mouse around to turn the picture into a chalk drawing."
+msgid "Click and move the mouse around to turn the picture into a chalk drawing."
 msgstr "დაწკაპეთ და გადაატარეთ ნახატს მისი ცარცით დახატულად გადასაქცევად."
 
 #: ../../magic/src/blocks_chalk_drip.c:152
@@ -730,14 +738,12 @@ msgid "Blur"
 msgstr "გადღაბნა"
 
 #: ../../magic/src/blur.c:60
-#, fuzzy
 msgid "Click and move the mouse around to blur the image."
-msgstr "დაწკაპეთ და გადაატარეთ ნახატს მისი ნაწილის გასადღაბნად."
+msgstr "დაწკაპეთ და ამოძრავეთ ნახატის ნაწილების გასადღაბნად."
 
 #: ../../magic/src/blur.c:61
-#, fuzzy
 msgid "Click to blur the entire image."
-msgstr "დაწკაპეთ ნახატი მისი სარკისებრი ანარეკლის მისაღებად."
+msgstr "დაწკაპეთ მთიანი ნახატის გასადღაბნად."
 
 #. Both are named "Bricks", at the moment:
 #: ../../magic/src/bricks.c:104
@@ -754,12 +760,11 @@ msgstr "დაწკაპეთ და გადაატარეთ პატ
 
 #: ../../magic/src/calligraphy.c:108
 msgid "Calligraphy"
-msgstr ""
+msgstr "ხელნაწერი"
 
 #: ../../magic/src/calligraphy.c:115
-#, fuzzy
 msgid "Click and move the mouse around to draw in calligraphy."
-msgstr "დაწკაპეთ და გადაატარეთ ნახატს მისი ნაწილის ნეგატივად გადასაქცევად."
+msgstr "დაწკაპეთ და ამოძრავეთ კალმით სახატავად."
 
 #: ../../magic/src/cartoon.c:80
 msgid "Cartoon"
@@ -771,57 +776,51 @@ msgstr "დაწკაპეთ და გადაატარეთ ნახ
 
 #: ../../magic/src/confetti.c:63
 msgid "Confetti"
-msgstr ""
+msgstr "კონფეტი"
 
 #: ../../magic/src/confetti.c:65
 msgid "Click to throw confetti!"
-msgstr ""
+msgstr "დაწკაპეთ კონფეტის გასაბნევად"
 
 #: ../../magic/src/distortion.c:121
 msgid "Distortion"
-msgstr ""
+msgstr "დაჭმუჭვნა"
 
 #: ../../magic/src/distortion.c:129
-#, fuzzy
 msgid "Click and drag the mouse to cause distortion in your picture."
-msgstr "დაწკაპეთ და გადაატარეთ ნახატს მისი ნაწილის დასაწვრილებლად."
+msgstr "დაწკაპეთ და გადაატარეთ ნახატს დასაჭმუჭნად."
 
 #: ../../magic/src/emboss.c:76
 msgid "Emboss"
-msgstr ""
+msgstr "რელიეფი"
 
 #: ../../magic/src/emboss.c:82
-#, fuzzy
 msgid "Click and drag the mouse to emboss the picture."
-msgstr "დაწკაპეთ და გადაატარეთ ნახატს მისი ნაწილის დასაწვრილებლად."
+msgstr "დაწკაპეთ და გადაატარეთ ნახატს ამოსაბურცად."
 
 #: ../../magic/src/fade_darken.c:119
 msgid "Lighten"
-msgstr "ღია"
+msgstr "გაღიავება"
 
 #: ../../magic/src/fade_darken.c:121
 msgid "Darken"
-msgstr "მუქი"
+msgstr "ჩამუქება"
 
 #: ../../magic/src/fade_darken.c:132
-#, fuzzy
 msgid "Click and move the mouse to lighten parts of your picture."
-msgstr "დაწკაპეთ და გადაატარეთ ნახატს მისი ნაწილის გასადღაბნად."
+msgstr "დაწკაპეთ და გადაატარეთ ნახატს მისი ნაწილების გასაღიავებლად."
 
 #: ../../magic/src/fade_darken.c:134
-#, fuzzy
 msgid "Click to lighten your entire picture."
-msgstr "დაწკაპეთ და გადაატარეთ ნახატის ფერების შესაცვლელად."
+msgstr "დაწკაპეთ მთლიანი ნახატის გასაღიავებლად."
 
 #: ../../magic/src/fade_darken.c:139
-#, fuzzy
 msgid "Click and move the mouse to darken parts of your picture."
-msgstr "დაწკაპეთ და გადაატარეთ ნახატს მისი ნაწილის გასადღაბნად."
+msgstr "დაწკაპეთ და გადაატარეთ ნახატს მისი ნაწილების გასამუქებლად."
 
 #: ../../magic/src/fade_darken.c:141
-#, fuzzy
 msgid "Click to darken your entire picture."
-msgstr "დაწკაპეთ და გადაატარეთ ნახატის ფერების შესაცვლელად."
+msgstr "დაწკაპეთ მთლიანი ნახატის გასამუქებლად."
 
 #: ../../magic/src/fill.c:87
 msgid "Fill"
@@ -833,53 +832,48 @@ msgstr "დაწკაპეთ ამ არეში ფერის ჩა�
 
 #: ../../magic/src/fisheye.c:77
 msgid "Fisheye"
-msgstr ""
+msgstr "თევზის თვალი"
 
 #. Needs better name
 #: ../../magic/src/fisheye.c:79
-#, fuzzy
 msgid "Click on part of your picture to create a fisheye effect."
-msgstr "დაწკაპეთ და გადაატარეთ ნახატს მისი ნაწილის დასაწვრილებლად."
+msgstr "დაწკაპეთ ნახატს ნაწილი თევზის თვალის ეფექტის დასამატებლად."
 
 #: ../../magic/src/flower.c:124
 msgid "Flower"
-msgstr ""
+msgstr "ყვავილი"
 
 #: ../../magic/src/flower.c:130
 msgid "Click and drag to draw a flower stalk. Let go to finish the flower."
-msgstr ""
+msgstr "დაწკაპეთ და გადაათრიეთ ყვავილის ღერო."
 
 #: ../../magic/src/foam.c:104
 msgid "Foam"
-msgstr ""
+msgstr "ბუშტები"
 
 #: ../../magic/src/foam.c:110
-#, fuzzy
 msgid "Click and drag the mouse to cover an area with foamy bubbles."
-msgstr "დაწკაპეთ და გადაატარეთ ნახატს მისი ნაწილის გასასქელებლად."
+msgstr "დაწკაპეთ და გადაატარეთ ნახატს საპნის ბუშტების ჩასამატებლად."
 
 #: ../../magic/src/fold.c:60
 msgid "Fold"
-msgstr ""
+msgstr "დაკეცვა"
 
 #: ../../magic/src/fold.c:62
-msgid ""
-"Choose a background color and click to turn the corner of the page over."
-msgstr ""
+msgid "Choose a background color and click to turn the corner of the page over."
+msgstr "შეარჩიეთ ფონის ფერი და დაწკაპეთ გვერდის კუთხის გადასაფურცლად."
 
 #: ../../magic/src/glasstile.c:83
 msgid "Glass Tile"
-msgstr ""
+msgstr "მინა"
 
 #: ../../magic/src/glasstile.c:90
-#, fuzzy
 msgid "Click and drag the mouse to put glass tile over your picture."
-msgstr "დაწკაპეთ და გადაატარეთ ნახატს მისი ნაწილის დასაწვრილებლად."
+msgstr "დაწკაპეთ და გადაატარეთ ნახატის მინის ვიტრაჟით დასაფარად."
 
 #: ../../magic/src/glasstile.c:92
-#, fuzzy
 msgid "Click to cover your entire picture in glass tiles."
-msgstr "დაწკაპეთ და გადაატარეთ ნახატის ფერების შესაცვლელად."
+msgstr "დაწკაპეთ თქვენი მთლიანი ნახატის მინის ვიტრაჟით დასაფარად."
 
 #: ../../magic/src/grass.c:92
 msgid "Grass"
@@ -891,33 +885,27 @@ msgstr "დაწკაპეთ და გადაატარეთ ბალ
 
 #: ../../magic/src/kalidescope.c:77
 msgid "Kaleidoscope"
-msgstr ""
+msgstr "კალეიდოსკოპი"
 
 #: ../../magic/src/kalidescope.c:83
-#, fuzzy
-msgid ""
-"Click and drag the mouse to draw with symmetric brushes (a kaleidoscope)."
-msgstr "დაწკაპეთ და გადაატარეთ ნახატს მისი ნაწილის გასასქელებლად."
+msgid "Click and drag the mouse to draw with symmetric brushes (a kaleidoscope)."
+msgstr "დაწკაპეთ და გადაატარეთ ნახატს სიმეტრიული ორნამენტებისთვის (კალეიდოსკოპი)."
 
 #: ../../magic/src/light.c:84
-#, fuzzy
 msgid "Light"
-msgstr "ღია"
+msgstr "სინათლე"
 
 #: ../../magic/src/light.c:90
-#, fuzzy
 msgid "Click and drag to draw a beam of light on your picture."
-msgstr "დაწკაპეთ და გადაატარეთ ნახატს მისი ნაწილის დასაწვრილებლად."
+msgstr "დაწკაპეთ და გადაატარეთ ნახატს სინათლის სხივის ჩასამატებლად."
 
 #: ../../magic/src/metalpaint.c:77
-#, fuzzy
 msgid "Metal Paint"
-msgstr "ხატვა"
+msgstr "მეტალიკა"
 
 #: ../../magic/src/metalpaint.c:83
-#, fuzzy
 msgid "Click and drag the mouse to paint with a metallic color."
-msgstr "დაწკაპეთ და გადაატარეთ ნახატს მისი ნაწილის დასაწვრილებლად."
+msgstr "დაწკაპეთ და გადაატარეთ ნახატს მეტალის ფაქტურის ჩასამატებლად."
 
 #: ../../magic/src/mirror_flip.c:94
 msgid "Mirror"
@@ -936,20 +924,16 @@ msgid "Click to flip the picture upside-down."
 msgstr "დაწკაპეთ ნახატი მის თავდაყირა გადმოსატრიალებლად."
 
 #: ../../magic/src/mosaic.c:70
-#, fuzzy
 msgid "Mosaic"
-msgstr "მაგია"
+msgstr "მოზაიკა"
 
 #: ../../magic/src/mosaic.c:73
-#, fuzzy
-msgid ""
-"Click and move the mouse to add a mosaic effect to parts of your picture."
-msgstr "დაწკაპეთ ნახატი მისი სარკისებრი ანარეკლის მისაღებად."
+msgid "Click and move the mouse to add a mosaic effect to parts of your picture."
+msgstr "დაწკაპეთ და გადაატარეთ ნახატის ნაწილებზე მოზაიკის ეფექტის მისაღებად."
 
 #: ../../magic/src/mosaic.c:74
-#, fuzzy
 msgid "Click to add a mosaic effect to your entire picture."
-msgstr "დაწკაპეთ ნახატი მისი სარკისებრი ანარეკლის მისაღებად."
+msgstr "დაწკაპეთ მთლიანი ნახატისთვის მოზაიკის ეფექტის მისაღებად."
 
 #: ../../magic/src/negative.c:72
 msgid "Negative"
@@ -960,47 +944,40 @@ msgid "Click and move the mouse around to draw a negative."
 msgstr "დაწკაპეთ და გადაატარეთ ნახატს მისი ნაწილის ნეგატივად გადასაქცევად."
 
 #: ../../magic/src/negative.c:83
-#, fuzzy
 msgid "Click to turn the image into its negative."
-msgstr "დაწკაპეთ ნახატი მისი სარკისებრი ანარეკლის მისაღებად."
+msgstr "დაწკაპეთ ნახატის ნეგატივის მისაღებად."
 
 #: ../../magic/src/noise.c:63
 msgid "Noise"
-msgstr ""
+msgstr "ხმაური"
 
 #: ../../magic/src/noise.c:66
-#, fuzzy
 msgid "Click and move the mouse to add noise to parts of your picture."
-msgstr "დაწკაპეთ და გადაატარეთ ნახატს მისი ნაწილის გასადღაბნად."
+msgstr "დაწკაპეთ და გადაატარეთ ნახატის ნაწილებზე ხმაურის დასამატებლად."
 
 #: ../../magic/src/noise.c:67
-#, fuzzy
 msgid "Click to add noise to your entire picture."
-msgstr "დაწკაპეთ და გადაატარეთ ნახატის ფერების შესაცვლელად."
+msgstr "დაწკაპეთ მთლიანი ნახატისთვის ხმაურის დასამატებლად."
 
 #: ../../magic/src/puzzle.c:78
-#, fuzzy
 msgid "Puzzle"
-msgstr "მეწამული!"
+msgstr "თავსატეხი"
 
 #: ../../magic/src/puzzle.c:85
-#, fuzzy
 msgid "Click the part of your picture where would you like a puzzle."
-msgstr "დაწკაპეთ და გადაატარეთ ნახატს მისი ნაწილის დასაწვრილებლად."
+msgstr "დაწკაპეთ ნახატის ნაწილი თავსატეხის შესაქმნელად."
 
 #: ../../magic/src/puzzle.c:86
-#, fuzzy
 msgid "Click to make a puzzle in fullscreen mode."
-msgstr "დაწკაპეთ ნახატი მისი სარკისებრი ანარეკლის მისაღებად."
+msgstr "დაწკაპეთ სრულეკრანოვანი თავსატეხის შესაქმნელად."
 
 #: ../../magic/src/rails.c:75
 msgid "Rails"
-msgstr ""
+msgstr "ლიანდაგები"
 
 #: ../../magic/src/rails.c:77
-#, fuzzy
 msgid "Click and drag to draw train track rails on your picture."
-msgstr "დაწკაპეთ და გადაატარეთ ნახატს მისი ნაწილის დასაწვრილებლად."
+msgstr "დაწკაპეთ და გადაატარეთ ლიანდაგების დასამატებლად."
 
 #: ../../magic/src/rainbow.c:107
 msgid "Rainbow"
@@ -1011,98 +988,84 @@ msgid "You can draw in rainbow colors!"
 msgstr "შეგიძლიათ ცისარტყელას ფერებით ხატოთ!"
 
 #: ../../magic/src/rain.c:64
-#, fuzzy
 msgid "Rain"
-msgstr "ცისარტყელა"
+msgstr "წვიმა"
 
 #: ../../magic/src/rain.c:67
-#, fuzzy
 msgid "Click to place a rain drop onto your picture."
-msgstr "დაწკაპეთ ნახატი მისი სარკისებრი ანარეკლის მისაღებად."
+msgstr "დაწკაპეთ ნახატზე წვიმის წვეთების დასამატებლად."
 
 #: ../../magic/src/rain.c:68
-#, fuzzy
 msgid "Click to cover your picture with rain drops."
-msgstr "დაწკაპეთ ნახატი მისი სარკისებრი ანარეკლის მისაღებად."
+msgstr "დაწკაპეთ ნახატი წვიმის წვეთებით დასაფარად."
 
 #: ../../magic/src/ripples.c:81
 msgid "Ripples"
-msgstr ""
+msgstr "წვეთები"
 
 #: ../../magic/src/ripples.c:87
-#, fuzzy
 msgid "Click to make ripples appear over your picture."
-msgstr "დაწკაპეთ და გადაატარეთ ნახატს მისი ნაწილის დასაწვრილებლად."
+msgstr "დაწკაპეთ ნახატზე წვეთების დასამატებლად."
 
 #: ../../magic/src/rosette.c:90
 msgid "Rosette"
-msgstr ""
+msgstr "ვარდულა"
 
 #: ../../magic/src/rosette.c:90
 msgid "Picasso"
-msgstr ""
+msgstr "პიკასო"
 
 #: ../../magic/src/rosette.c:95
-#, fuzzy
 msgid "Click and start drawing your rosette."
-msgstr "დაწკაპეთ ხაზის დასაწყებად. აუშვით ღილაკი დასამთავრებლად."
+msgstr "დაწკაპეთ და დაიწყეთ თქვენი ვარდულას ხატვა."
 
 #: ../../magic/src/rosette.c:97
-#, fuzzy
 msgid "You can draw just like Picasso!"
-msgstr "შეგიძლიათ ცისარტყელას ფერებით ხატოთ!"
+msgstr "მაგარია, პიკასოსავით ხატავთ!"
 
 #: ../../magic/src/sharpen.c:73
 msgid "Edges"
-msgstr ""
+msgstr "კიდეები"
 
 #: ../../magic/src/sharpen.c:74
-#, fuzzy
 msgid "Sharpen"
-msgstr "ფორმები"
+msgstr "სიმკვეთრე"
 
 #: ../../magic/src/sharpen.c:75
 msgid "Silhouette"
-msgstr ""
+msgstr "სილუეტი"
 
 #: ../../magic/src/sharpen.c:78
-#, fuzzy
 msgid "Click and move the mouse to trace edges in parts of your picture."
-msgstr "დაწკაპეთ და გადაატარეთ ნახატს მისი ნაწილის გასადღაბნად."
+msgstr "დაწკაპეთ და გადაატარეთ ნახატს მისი ნაწილების კიდეების მოსანიშნად."
 
 #: ../../magic/src/sharpen.c:79
-#, fuzzy
 msgid "Click to trace edges in your entire picture."
-msgstr "დაწკაპეთ და გადაატარეთ ნახატის ფერების შესაცვლელად."
+msgstr "დაწკაპეთ და მთლიანი ნახატის კიდეების მოსანიშნად."
 
 #: ../../magic/src/sharpen.c:80
-#, fuzzy
 msgid "Click and move the mouse to sharpen parts of your picture."
-msgstr "დაწკაპეთ და გადაატარეთ ნახატს მისი ნაწილის გასადღაბნად."
+msgstr "დაწკაპეთ და გადაატარეთ თქვენს ნახატს მისი ნაწილების გასამკვეთრებლად."
 
 #: ../../magic/src/sharpen.c:81
-#, fuzzy
 msgid "Click to sharpen the entire picture."
-msgstr "დაწკაპეთ ნახატი მისი სარკისებრი ანარეკლის მისაღებად."
+msgstr "დაწკაპეთ თქვენი მთლიანი ნახატის გასამკვეთრებლად."
 
 #: ../../magic/src/sharpen.c:82
-#, fuzzy
 msgid "Click and move the mouse to create a black and white silhouette."
-msgstr "დაწკაპეთ და გადაატარეთ ნახატს მისი ნაწილის გასადღაბნად."
+msgstr "დაწკაპეთ და გადაატარეთ ნახატს შავ-თეთრი სილუეტის შესაქმნელად."
 
 #: ../../magic/src/sharpen.c:83
-#, fuzzy
 msgid "Click to create a black and white silhouette of your entire picture."
-msgstr "დაწკაპეთ და გადაატარეთ ნახატს მისი ნაწილის გასადღაბნად."
+msgstr "დაწკაპეთ თქვენი მთლიანი ნახატის შავ-თეთრი სილუეტის შესაქმნელად."
 
 #: ../../magic/src/shift.c:104
 msgid "Shift"
-msgstr ""
+msgstr "წანაცვლება"
 
 #: ../../magic/src/shift.c:110
-#, fuzzy
 msgid "Click and drag to shift your picture around on the canvas."
-msgstr "დაწკაპეთ და გადაატარეთ ნახატს მისი ნაწილის დასაწვრილებლად."
+msgstr "დაწკაპეთ და გადაათრიეთ ნახატის წასანაცვლებლად."
 
 #: ../../magic/src/smudge.c:77
 msgid "Smudge"
@@ -1114,21 +1077,19 @@ msgstr "დაწკაპეთ და შემოატარეთ ნახ
 
 #: ../../magic/src/snow.c:68
 msgid "Snow Ball"
-msgstr ""
+msgstr "გუნდა"
 
 #: ../../magic/src/snow.c:69
 msgid "Snow Flake"
-msgstr ""
+msgstr "ფიფქი"
 
 #: ../../magic/src/snow.c:72
-#, fuzzy
 msgid "Click to add snow balls to your picture."
-msgstr "დაწკაპეთ და გადაატარეთ ნახატს მისი ნაწილის დასაწვრილებლად."
+msgstr "დაწკაპეთ თქვენს ნახატზე გუნდების დასამატებლად."
 
 #: ../../magic/src/snow.c:73
-#, fuzzy
 msgid "Click to add snow flakes to your picture."
-msgstr "დაწკაპეთ და გადაატარეთ ნახატს მისი ნაწილის დასაწვრილებლად."
+msgstr "დაწკაპეთ თქვენს ნახატზე ფიფქების დასამატებლად."
 
 #: ../../magic/src/tint.c:71
 msgid "Tint"
@@ -1136,72 +1097,55 @@ msgstr "ფერის შეცვლა"
 
 #: ../../magic/src/tint.c:72
 msgid "Color & White"
-msgstr ""
+msgstr "ფერი და თეთრი"
 
 #: ../../magic/src/tint.c:75
-#, fuzzy
-msgid ""
-"Click and move the mouse around to change the color of parts of your picture."
-msgstr "დაწკაპეთ და გადაატარეთ ნახატს მისი ნაწილის გასადღაბნად."
+msgid "Click and move the mouse around to change the color of parts of your picture."
+msgstr "დაწკაპეთ და გადაატარეთ ნახატს მისი ნაწილების ფერის შესაცვლელად."
 
 #: ../../magic/src/tint.c:76
-#, fuzzy
 msgid "Click to change the color of your entire picture."
-msgstr "დაწკაპეთ და გადაატარეთ ნახატს მისი ნაწილის გასადღაბნად."
+msgstr "დაწკაპეთ მთლიანი ნახატის ფერის შესაცვლელად."
 
 #: ../../magic/src/tint.c:77
-#, fuzzy
-msgid ""
-"Click and move the mouse around to turn parts of your picture into white and "
-"a color you choose."
-msgstr "დაწკაპეთ და გადაატარეთ ნახატს მისი კომიქსად გადასაქცევად."
+msgid "Click and move the mouse around to turn parts of your picture into white and a color you choose."
+msgstr "დაწკაპეთ და გადაატარეთ ნახატის ნაწილს თეთრ და შერჩეულ ფერად გადასაღებად."
 
 #: ../../magic/src/tint.c:78
-#, fuzzy
 msgid "Click to turn your entire picture into white and a color you choose."
-msgstr "დაწკაპეთ და გადაატარეთ ნახატს მისი კომიქსად გადასაქცევად."
+msgstr "დაწკაპეთ თქვენი ნახატის თეთრ და შერჩეულ ფერად გადასაღებად."
 
 #: ../../magic/src/toothpaste.c:65
 msgid "Toothpaste"
-msgstr ""
+msgstr "კბილის პასტა"
 
 #: ../../magic/src/toothpaste.c:68
-#, fuzzy
 msgid "Click and drag to squirt toothpaste onto your picture."
-msgstr "დაწკაპეთ და გადაატარეთ ნახატს მისი ნაწილის დასაწვრილებლად."
+msgstr "დაწკაპეთ და გადაატარეთ თქვენი ნახატის კბილის პასტით დასაფარად."
 
 #: ../../magic/src/tv.c:72
 msgid "TV"
-msgstr ""
+msgstr "ტელევიზორი"
 
 #: ../../magic/src/tv.c:74
-#, fuzzy
 msgid "Click to make your picture look like it's on television."
-msgstr "დაწკაპეთ და გადაატარეთ ნახატის ფერების შესაცვლელად."
+msgstr "დაწკაპეთ თქვენი ნახატის ტელევიზორით გადასაცემად."
 
 #: ../../magic/src/waves.c:75
-#, fuzzy
 msgid "Waves"
-msgstr "შენახვა"
+msgstr "ტალღები"
 
 #: ../../magic/src/waves.c:76
-#, fuzzy
 msgid "Wavelets"
-msgstr "შენახვა"
+msgstr "ტალღები"
 
 #: ../../magic/src/waves.c:83
-msgid ""
-"Click to make the picture horizontally wavy. Click toward the top for "
-"shorter waves, the bottom for taller waves, the left for small waves, and "
-"the right for long waves."
-msgstr ""
+msgid "Click to make the picture horizontally wavy. Click toward the top for shorter waves, the bottom for taller waves, the left for small waves, and the right for long waves."
+msgstr "დაწკაპეთ ნახატის განივად დატალღვისთვის. ზემოთ - დაბალი ტალღებისთვის, ქვემოთ - მაღალი ტალღებისთვის, მარცხნივ - პატარა ტალღებისთვის, მარჯვნივ - მოზრდილი ტალღებისთვის."
 
 #: ../../magic/src/waves.c:84
-msgid ""
-"Click to make the picture vertically wavy. Click toward the top for shorter "
-"waves, the bottom for taller waves, the left for small waves, and the right "
-"for long waves."
-msgstr ""
+msgid "Click to make the picture vertically wavy. Click toward the top for shorter waves, the bottom for taller waves, the left for small waves, and the right for long waves."
+msgstr "დაწკაპეთ ნახატის მართობულად დატალღვისთვის. ზემოთ - დაბალი ტალღებისთვის, ქვემოთ - მაღალი ტალღებისთვის, მარცხნივ - პატარა ტალღებისთვის, მარჯვნივ - მოზრდილი ტალღებისთვის."
 
 #, fuzzy
 #~ msgid "Click and move the mouse to add noise to the image."
@@ -1240,64 +1184,46 @@ msgstr ""
 #, fuzzy
 #~ msgid "Blur All"
 #~ msgstr "გადღაბნა"
-
 #~ msgid "Click and move to fade the colors."
 #~ msgstr "დაწკაპეთ და გადაატარეთ ნახატს მისი ნაწილის გასაუფერულებლად."
-
 #~ msgid "Click and move to darken the colors."
 #~ msgstr "დაწკაპეთ და გადაატარეთ ფერების გასამუქებლად."
-
 #~ msgid "Sparkles"
 #~ msgstr "შხეფები"
-
 #~ msgid "You now have a blank sheet to draw on!"
 #~ msgstr "ახლა თქვენ სუფთა ფურცელი გაქვთ!"
 
 #, fuzzy
 #~ msgid "Start a new picture?"
 #~ msgstr "წავშალო ეს ნახატი?"
-
 #~ msgid "Click and move to draw sparkles."
 #~ msgstr "დაწკაპეთ და გადაატარეთ ნახატს შხეფების მისახატად."
-
 #~ msgid "Starting a new picture will erase the current one!"
 #~ msgstr "ახალი ნახატის დაწყებით ძველს გაანადგურებთ!"
-
 #~ msgid "That’s OK!"
 #~ msgstr "კარგი!"
-
 #~ msgid "Never mind!"
 #~ msgstr "არც იფიქრო!"
-
 #~ msgid "Save over the older version of this picture?"
 #~ msgstr "გადავაწერო ამ ნახატის წინა ვერსიას?"
-
 #~ msgid "A circle is exactly round."
 #~ msgstr "წრე სრულიად მრგვალია :)"
-
 #~ msgid "A diamond is a square, turned around slightly."
 #~ msgstr "რომბი კვადრატს ჰგავს, მაგრამ კუთხეებით განსხვავდება."
-
 #~ msgid "A square has four sides, each the same length."
 #~ msgstr "კვადრატის ყველა გვერდი ერთმანეთის ტოლია."
-
 #~ msgid "Diamond"
 #~ msgstr "რომბი"
-
 #~ msgid "Fade"
 #~ msgstr "ჩაქრობა"
-
 #~ msgid "Fuchsia!"
 #~ msgstr "ფუქსია!"
-
 #~ msgid "Green!"
 #~ msgstr "მწვანე!"
-
 #~ msgid "Lime!"
 #~ msgstr "ღია მწვანე!"
-
 #~ msgid "Oval"
 #~ msgstr "ოვალი"
-
 #~ msgid "Silver!"
 #~ msgstr "ვერცხლისფერი!"
+
