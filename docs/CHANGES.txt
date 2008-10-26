@@ -85,6 +85,9 @@ $Id$
 
   * New localizations:
     ------------------
+    * Shuswap (Secwepemctín) translation
+      Neskie Manuel <neskiem@gmail.com>
+
     * Songhay translation
       Abdoul Cisse <abdoulseydou@hotmail.com>
       Mohomodou Houssouba <mh@bollag-areal.ch>
@@ -105,9 +108,6 @@ $Id$
 
     * Hebrew translation
       Guy Hed <guy.hed@weizmann.ac.il>
-
-    * Shuswap (Secwepemctín) translation
-      Neskie Manuel <neskiem@gmail.com>
 
     * Swedish
       Daniel Nylander <po@danielnylander.se>
