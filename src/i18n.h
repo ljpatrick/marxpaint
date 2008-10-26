@@ -10,7 +10,7 @@
 
   $Id$
   
-  June 14, 2002 - October 17, 2008
+  June 14, 2002 - October 26, 2008
 */
 
 
@@ -85,6 +85,7 @@ enum
   LANG_RO,			/* Romanian */
   LANG_RU,			/* Russian */
   LANG_RW,			/* Kinyarwanda */
+  LANG_SHS,			/* Shuswap */
   LANG_SK,			/* Slovak */
   LANG_SL,			/* Slovenian */
   LANG_SON,                     /* Songhay */

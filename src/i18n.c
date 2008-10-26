@@ -25,7 +25,7 @@
 
   $Id$
 
-  June 14, 2002 - October 17, 2008
+  June 14, 2002 - October 26, 2008
 */
 
 #include <stdio.h>
@@ -114,6 +114,7 @@ const char *lang_prefixes[NUM_LANGS] = {
   "ro",
   "ru",
   "rw",
+  "shs",
   "sk",
   "sl",
   "son",
@@ -285,6 +286,8 @@ const language_to_locale_struct language_to_locale_array[] = {
   {"russian", "ru_RU.UTF-8"},
   {"russkiy", "ru_RU.UTF-8"},
   {"serbian", "sr_YU.UTF-8"},
+  {"shuswap", "shs_CA.UTF-8"},
+  {"secwepemctin", "shs_CA.UTF-8"},
   {"slovak", "sk_SK.UTF-8"},
   {"slovenian", "sl_SI.UTF-8"},
   {"slovensko", "sl_SI.UTF-8"},
@@ -539,6 +542,7 @@ void show_lang_usage(FILE * f, const char *const prg)
 /* ru */ "  russian      russkiy\n"
 /* gd */ "  scottish     scottish-gaelic        ghaidhlig\n"
 /* sr */ "  serbian\n"
+/* shs */ "  shuswap      secwepemctin\n"
 /* sk */ "  slovak\n"
 /* sl */ "  slovenian    slovensko\n"
 /* en_ZA */ "  southafrican-english\n"
@@ -632,6 +636,7 @@ void show_locale_usage(FILE * f, const char *const prg)
 	  "  ro_RO   (Romanian)\n"
 	  "  ru_RU   (Russian      Russkiy)\n"
 	  "  rw_RW   (Kinyarwanda)\n"
+          "  shs_CA  (Shuswap      Secwepemctin)\n"
 	  "  sk_SK   (Slovak)\n"
 	  "  sl_SI   (Slovenian)\n"
           "  son     (Songhay)\n"

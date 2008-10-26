@@ -1,0 +1,711 @@
+# Tuxpaint Secwepemctsín translation.
+# Copyright (C) 2002-2005 
+# This file is distributed under the same license as the tuxpaint package.
+# Neskie Manuel <neskiem@gmail.com>, 2008.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: tuxpaint 0.9.17\n"
+"Report-Msgid-Bugs-To: tuxpaint-i18n@lists.sourceforge.net\n"
+"POT-Creation-Date: 2008-10-20 09:16-0700\n"
+"PO-Revision-Date: 2008-10-20 09:16-0700\n"
+"Last-Translator: Neskie Manuel <neskiem@gmail.com>\n"
+"Language-Team: Ubuntu Secwepemc Translators <ubuntu-l10n-shs@lists.ubuntu.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../colors.h:85
+msgid "Black!"
+msgstr ""
+
+#: ../colors.h:86
+msgid "Dark grey! Some people spell it “dark gray”."
+msgstr ""
+
+#, fuzzy
+#: ../colors.h:87
+msgid "Light grey! Some people spell it “light gray”."
+msgstr "Pegpégt!"
+
+#: ../colors.h:88
+msgid "White!"
+msgstr "Piq!"
+
+#: ../colors.h:89
+msgid "Red!"
+msgstr "Tsqiw!"
+
+#, fuzzy
+#: ../colors.h:90
+msgid "Orange!"
+msgstr "Tkwelkwlólse!"
+
+#: ../colors.h:91
+msgid "Yellow!"
+msgstr "Kwalt!"
+
+#: ../colors.h:92
+msgid "Light green!"
+msgstr ""
+
+#: ../colors.h:93
+msgid "Dark green!"
+msgstr ""
+
+#: ../colors.h:94
+msgid "Sky blue!"
+msgstr ""
+
+#: ../colors.h:95
+msgid "Blue!"
+msgstr "Qwiqwíyt"
+
+#: ../colors.h:96
+msgid "Lavender!"
+msgstr ""
+
+#: ../colors.h:97
+msgid "Purple!"
+msgstr "Qwiqwíyt"
+
+#: ../colors.h:98
+msgid "Pink!"
+msgstr "Tsitsqw!"
+
+#: ../colors.h:99
+msgid "Brown!"
+msgstr "Megmégt!"
+
+#: ../colors.h:100
+msgid "Tan!"
+msgstr ""
+
+#: ../colors.h:101
+msgid "Beige!"
+msgstr ""
+
+#. First, the blacklist. We list font families that can crash Tux Paint
+#. via bugs in the SDL_ttf library. We also test fonts to be sure that
+#. they have both uppercase and lowercase letters. Note that we do not
+#. test for "Aa", because it is OK if uppercase and lowercase are the
+#. same. (but not nice -- such fonts get a low score later)
+#.
+#. We test the alphabet twice, to help with translation. If the users
+#. will be unable to type ASCII letters, then both lines should be
+#. translated. Otherwise, only Line X should be translated and the
+#. ASCII-only fonts should be given bad scores in the scoring code below.
+#. (the best scores going to fonts that support both)
+#: ../dirwalk.c:97
+msgid "qx"
+msgstr ""
+
+#: ../dirwalk.c:97
+msgid "QX"
+msgstr ""
+
+#. Line X
+#: ../dirwalk.c:98
+msgid "qy"
+msgstr ""
+
+#: ../dirwalk.c:98
+msgid "QY"
+msgstr ""
+
+#. Now we score fonts to ensure that the best ones will be placed at
+#. the top of the list. The user will see them first. This sorting is
+#. especially important for users who have scroll buttons disabled.
+#. Translators should do whatever is needed to put crummy fonts last.
+#: ../dirwalk.c:118
+msgid "oO"
+msgstr ""
+
+#. distinct uppercase and lowercase
+#: ../dirwalk.c:119
+msgid "`\\%_@$~#{}<>^&*"
+msgstr ""
+
+#. uncommon punctuation
+#: ../dirwalk.c:120
+msgid ",.?!"
+msgstr ""
+
+#. common punctuation
+#: ../dirwalk.c:121
+msgid "017"
+msgstr ""
+
+#. digits
+#: ../dirwalk.c:122
+msgid "O0"
+msgstr ""
+
+#. distinct circle-like characters
+#: ../dirwalk.c:123
+msgid "1Il|"
+msgstr ""
+
+#: ../great.h:36
+msgid "Great!"
+msgstr "Le7"
+
+#: ../great.h:37
+msgid "Cool!"
+msgstr ""
+
+#: ../great.h:38
+msgid "Keep it up!"
+msgstr ""
+
+#, fuzzy
+#: ../great.h:39
+msgid "Good job!"
+msgstr "Mestentsút"
+
+#: ../im.c:70
+msgid "English"
+msgstr "Seme7tsín"
+
+#: ../im.c:71
+msgid "Hiragana"
+msgstr ""
+
+#: ../im.c:72
+msgid "Katakana"
+msgstr ""
+
+#: ../im.c:73
+msgid "Hangul"
+msgstr ""
+
+#: ../magic.h:100
+msgid "Fill"
+msgstr ""
+
+#: ../magic.h:101
+msgid "Grass"
+msgstr "Kwlékwle"
+
+#: ../magic.h:103 ../magic.h:104
+msgid "Bricks"
+msgstr ""
+
+#: ../magic.h:106
+msgid "Rainbow"
+msgstr "Sk̓úlenst"
+
+#: ../magic.h:107
+msgid "Sparkles"
+msgstr ""
+
+#, fuzzy
+#: ../magic.h:109
+msgid "Blur"
+msgstr "Stqwegqwégs"
+
+#, fuzzy
+#: ../magic.h:110
+msgid "Smudge"
+msgstr "Pelpálem"
+
+#: ../magic.h:112
+msgid "Lighten"
+msgstr ""
+
+#: ../magic.h:113
+msgid "Darken"
+msgstr ""
+
+#: ../magic.h:115
+msgid "Chalk"
+msgstr ""
+
+#: ../magic.h:116
+msgid "Blocks"
+msgstr ""
+
+#: ../magic.h:118
+msgid "Negative"
+msgstr ""
+
+#: ../magic.h:119
+msgid "Tint"
+msgstr ""
+
+#: ../magic.h:121
+msgid "Drip"
+msgstr ""
+
+#: ../magic.h:122
+msgid "Cartoon"
+msgstr ""
+
+#: ../magic.h:124
+msgid "Mirror"
+msgstr "ts'exmín̓"
+
+#: ../magic.h:125
+msgid "Flip"
+msgstr ""
+
+#: ../magic.h:132
+msgid "Click in the picture to fill that area with color."
+msgstr ""
+
+#: ../magic.h:133
+msgid "Click and move to draw grass. Don’t forget the dirt!"
+msgstr ""
+
+#: ../magic.h:135
+msgid "Click and move to draw large bricks."
+msgstr ""
+
+#: ../magic.h:136
+msgid "Click and move to draw small bricks."
+msgstr ""
+
+#: ../magic.h:138
+msgid "You can draw in rainbow colors!"
+msgstr ""
+
+#: ../magic.h:139
+msgid "Click and move to draw sparkles."
+msgstr ""
+
+#: ../magic.h:141
+msgid "Click and move the mouse around to blur the picture."
+msgstr ""
+
+#: ../magic.h:142
+msgid "Click and move the mouse around to smudge the picture."
+msgstr ""
+
+#: ../magic.h:144
+msgid "Click and move to fade the colors."
+msgstr ""
+
+#: ../magic.h:145
+msgid "Click and move to darken the colors."
+msgstr ""
+
+#: ../magic.h:148
+msgid ""
+"Click and move the mouse around to turn the picture into a chalk drawing."
+msgstr ""
+
+#: ../magic.h:149
+msgid "Click and move the mouse around to make the picture blocky."
+msgstr ""
+
+#: ../magic.h:151
+msgid "Click and move the mouse around to draw a negative."
+msgstr ""
+
+#: ../magic.h:153
+msgid "Click and move the mouse around to change the picture’s color."
+msgstr ""
+
+#: ../magic.h:155
+msgid "Click and move the mouse around to make the picture drip."
+msgstr ""
+
+#: ../magic.h:157
+msgid "Click and move the mouse around to turn the picture into a cartoon."
+msgstr ""
+
+#: ../magic.h:159
+msgid "Click to make a mirror image."
+msgstr ""
+
+#: ../magic.h:160
+msgid "Click to flip the picture upside-down."
+msgstr ""
+
+#: ../shapes.h:158 ../shapes.h:159
+msgid "Square"
+msgstr ""
+
+#: ../shapes.h:160 ../shapes.h:161
+msgid "Rectangle"
+msgstr "Mestk̓emqín̓cen"
+
+#: ../shapes.h:162 ../shapes.h:163
+msgid "Circle"
+msgstr ""
+
+#: ../shapes.h:164 ../shapes.h:165
+msgid "Ellipse"
+msgstr ""
+
+#: ../shapes.h:166 ../shapes.h:167
+msgid "Triangle"
+msgstr "Kelltk̓emqín̓cen."
+
+#: ../shapes.h:168 ../shapes.h:169
+msgid "Pentagon"
+msgstr ""
+
+#: ../shapes.h:170 ../shapes.h:171
+msgid "Rhombus"
+msgstr ""
+
+#: ../shapes.h:178 ../shapes.h:179
+msgid "A square is a rectangle with four equal sides."
+msgstr ""
+
+#: ../shapes.h:180 ../shapes.h:181
+msgid "A rectangle has four sides and four right angles."
+msgstr ""
+
+#: ../shapes.h:183 ../shapes.h:185
+msgid ""
+"A circle is a curve where all points have the same distance from the centre."
+msgstr ""
+
+#: ../shapes.h:186 ../shapes.h:187
+msgid "An ellipse is a stretched circle."
+msgstr ""
+
+#: ../shapes.h:188 ../shapes.h:189
+msgid "A triangle has three sides."
+msgstr ""
+
+#: ../shapes.h:190 ../shapes.h:191
+msgid "A pentagon has five sides."
+msgstr ""
+
+#: ../shapes.h:193 ../shapes.h:195
+msgid "A rhombus has four equal sides, and opposite sides are parallel."
+msgstr ""
+
+#: ../titles.h:40
+msgid "Tools"
+msgstr ""
+
+#: ../titles.h:41
+msgid "Colors"
+msgstr ""
+
+#: ../titles.h:42
+msgid "Brushes"
+msgstr ""
+
+#: ../titles.h:43
+msgid "Erasers"
+msgstr ""
+
+#: ../titles.h:44
+msgid "Stamps"
+msgstr ""
+
+#: ../titles.h:45 ../tools.h:47
+msgid "Shapes"
+msgstr ""
+
+#: ../titles.h:46
+msgid "Letters"
+msgstr ""
+
+#: ../titles.h:47 ../tools.h:49
+msgid "Magic"
+msgstr ""
+
+#: ../tools.h:44
+msgid "Paint"
+msgstr ""
+
+#: ../tools.h:45
+msgid "Stamp"
+msgstr ""
+
+#: ../tools.h:46
+msgid "Lines"
+msgstr ""
+
+#: ../tools.h:48
+msgid "Text"
+msgstr ""
+
+#: ../tools.h:50
+msgid "Undo"
+msgstr ""
+
+#: ../tools.h:51
+msgid "Redo"
+msgstr ""
+
+#: ../tools.h:52
+msgid "Eraser"
+msgstr ""
+
+#: ../tools.h:53
+msgid "New"
+msgstr "Tsítsle"
+
+#. buttons for the file open dialog
+#: ../tools.h:54 ../tuxpaint.c:7906
+msgid "Open"
+msgstr "Ckelltsinte"
+
+#: ../tools.h:55
+msgid "Save"
+msgstr "Élk̓wete"
+
+#: ../tools.h:56
+msgid "Print"
+msgstr "Q̓i7eteke"
+
+#: ../tools.h:57
+msgid "Quit"
+msgstr "Est̓íl"
+
+#: ../tools.h:64
+msgid "Pick a color and a brush shape to draw with."
+msgstr ""
+
+#: ../tools.h:65
+msgid "Pick a picture to stamp around your drawing."
+msgstr ""
+
+#: ../tools.h:66
+msgid "Click to start drawing a line. Let go to complete it."
+msgstr ""
+
+#: ../tools.h:68
+msgid ""
+"Pick a shape. Click to pick the center, drag, then let go when it is the "
+"size you want. Move around to rotate it, and click to draw it."
+msgstr ""
+
+#: ../tools.h:70
+msgid "Choose a style of text. Click on your drawing and you can start typing."
+msgstr ""
+
+#: ../tools.h:71
+msgid "Pick a magical effect to use on your drawing!"
+msgstr ""
+
+#, fuzzy
+#. Undo
+#: ../tools.h:72
+msgid "Undo!"
+msgstr "tswéxwens"
+
+#. Redo
+#: ../tools.h:73
+msgid "Redo!"
+msgstr ""
+
+#. Eraser
+#: ../tools.h:74
+msgid "Eraser!"
+msgstr "Ep̓ete"
+
+#. New
+#: ../tools.h:75
+msgid "You now have a blank sheet to draw on!"
+msgstr ""
+
+#. Open
+#: ../tools.h:76
+msgid "Open…"
+msgstr "Ckelltsinte..."
+
+#. Save
+#: ../tools.h:77
+msgid "Your image has been saved!"
+msgstr ""
+
+#. Print
+#: ../tools.h:78
+msgid "Printing…"
+msgstr ""
+
+#. Quit
+#: ../tools.h:79
+msgid "Bye bye!"
+msgstr "Putucw!"
+
+#: ../tools.h:82
+msgid "Let go of the button to complete the line."
+msgstr ""
+
+#: ../tools.h:83
+msgid "Hold the button to stretch the shape."
+msgstr ""
+
+#: ../tools.h:84
+msgid "Move the mouse to rotate the shape. Click to draw it."
+msgstr ""
+
+#: ../tools.h:85
+msgid "OK then… Let’s keep drawing this one!"
+msgstr ""
+
+#. FIXME: Move elsewhere!!!
+#: ../tuxpaint.c:1582
+msgid "Do you really want to quit?"
+msgstr ""
+
+#: ../tuxpaint.c:1583
+msgid "Yes, I'm done!"
+msgstr "Mé7e, Yeri Tsucws!"
+
+#: ../tuxpaint.c:1584 ../tuxpaint.c:1604 ../tuxpaint.c:1611
+msgid "No, take me back!"
+msgstr "Tá7a, take me back!"
+
+#: ../tuxpaint.c:1586
+msgid "If you quit, you’ll lose your picture! Save it?"
+msgstr ""
+
+#: ../tuxpaint.c:1587 ../tuxpaint.c:1591
+msgid "Yes, save it!"
+msgstr "Mé7e, élk̓wete!"
+
+#: ../tuxpaint.c:1588 ../tuxpaint.c:1592
+msgid "No, don't bother saving!"
+msgstr ""
+
+#: ../tuxpaint.c:1590
+msgid "Save your picture first?"
+msgstr ""
+
+#: ../tuxpaint.c:1594
+msgid "Can’t open that picture!"
+msgstr ""
+
+#: ../tuxpaint.c:1595 ../tuxpaint.c:1607 ../tuxpaint.c:1614 ../tuxpaint.c:1617
+#: ../tuxpaint.c:1624
+msgid "OK"
+msgstr ""
+
+#. This will be replaced with a dialog allowing color choice and Starter
+#. picking, with a "Back" option to dismiss the "New" and return to
+#. the current picture.  But for now...  (bjk 2006.02.19)
+#: ../tuxpaint.c:1600
+msgid "Start a new picture?"
+msgstr ""
+
+#. #define PROMPT_NEW_YES gettext_noop("That’s OK!")
+#. #define PROMPT_NEW_NO gettext_noop("Never mind!")
+#: ../tuxpaint.c:1603
+msgid "Yes, let's start fresh!"
+msgstr "Mé7e, let's start fresh!"
+
+#: ../tuxpaint.c:1606
+msgid "There are no saved files!"
+msgstr ""
+
+#: ../tuxpaint.c:1609
+msgid "Print your picture now?"
+msgstr ""
+
+#: ../tuxpaint.c:1610
+msgid "Yes, print it!"
+msgstr "Mé7e, Q̓i7eteke!"
+
+#: ../tuxpaint.c:1613
+msgid "Your picture has been printed!"
+msgstr ""
+
+#: ../tuxpaint.c:1616
+msgid "You can’t print yet!"
+msgstr ""
+
+#: ../tuxpaint.c:1619
+msgid "Erase this picture?"
+msgstr ""
+
+#: ../tuxpaint.c:1620
+msgid "Yes, erase it!"
+msgstr "Mé7e, ep̓ete"
+
+#: ../tuxpaint.c:1621
+msgid "No, don't erase it!"
+msgstr "Tá7a, don't erase it!"
+
+#: ../tuxpaint.c:1623
+msgid "Remember to use the left mouse button!"
+msgstr ""
+
+#: ../tuxpaint.c:1730
+msgid "Sound muted."
+msgstr ""
+
+#: ../tuxpaint.c:1732
+msgid "Sound unmuted."
+msgstr ""
+
+#: ../tuxpaint.c:2139
+msgid "Please wait..."
+msgstr ""
+
+#: ../tuxpaint.c:7907
+msgid "Erase"
+msgstr ""
+
+#: ../tuxpaint.c:7908
+msgid "Slides"
+msgstr ""
+
+#: ../tuxpaint.c:7909
+msgid "Back"
+msgstr ""
+
+#: ../tuxpaint.c:7910
+msgid "Next"
+msgstr ""
+
+#: ../tuxpaint.c:7911
+msgid "Play"
+msgstr ""
+
+#: ../tuxpaint.c:8501
+msgid "Aa"
+msgstr ""
+
+#. FIXME: Move elsewhere! Or not?!
+#: ../tuxpaint.c:11280
+msgid "Yes"
+msgstr "Mé7e"
+
+#: ../tuxpaint.c:11284
+msgid "No"
+msgstr "Tá7a"
+
+#. FIXME: Move elsewhere!!!
+#. #define PROMPT_SAVE_OVER_TXT gettext_noop("Save over the older version of this picture?")
+#: ../tuxpaint.c:12208
+msgid "Replace the picture with your changes?"
+msgstr ""
+
+#: ../tuxpaint.c:12209
+msgid "Yes, replace the old one!"
+msgstr "Mé7e, replace the old one!"
+
+#: ../tuxpaint.c:12210
+msgid "No, save a new file!"
+msgstr "Tá7a, save a new file!"
+
+#: ../tuxpaint.c:13085
+msgid "Choose the picture you want, then click “Open”."
+msgstr ""
+
+#. Let user choose images:
+#: ../tuxpaint.c:14125 ../tuxpaint.c:14438
+msgid "Choose the pictures you want, then click “Play”."
+msgstr ""
+
+#: ../tuxpaint.desktop.in.h:1
+msgid "A drawing program for children."
+msgstr ""
+
+#: ../tuxpaint.desktop.in.h:2
+msgid "Drawing program"
+msgstr ""
+
+#: ../tuxpaint.desktop.in.h:3
+msgid "Tux Paint"
+msgstr ""
