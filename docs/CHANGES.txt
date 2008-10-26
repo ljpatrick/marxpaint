@@ -8,7 +8,7 @@ http://www.tuxpaint.org/
 
 $Id$
 
-2008.October.21 (0.9.21)
+2008.October.26 (0.9.21)
   * New Starters:
     -------------
     * Silver Frame
@@ -105,6 +105,9 @@ $Id$
 
     * Hebrew translation
       Guy Hed <guy.hed@weizmann.ac.il>
+
+    * Shuswap (Secwepemctín) translation
+      Neskie Manuel <neskiem@gmail.com>
 
     * Swedish
       Daniel Nylander <po@danielnylander.se>

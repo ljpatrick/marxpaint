@@ -7,7 +7,7 @@ bill@newbreedsoftware.com
 http://www.tuxpaint.org/
 
 
-June 17, 2002 - October 17, 2008
+June 17, 2002 - October 26, 2008
 
 $Id$
 
@@ -470,6 +470,9 @@ $Id$
   * Serbian
     Aleksandar Jelenak <jelenak@verizon.net>
   
+  * Shuswap (Secwepemctín)
+    Neskie Manuel <neskiem@gmail.com>
+
   * Slovak
     Peter Tuhársky <tuharsky@misbb.sk>
     Milan Plzik <mmp@golem.gymzv.sk> [retired?]
