@@ -11324,18 +11324,42 @@ static void load_starter(char *img_id)
       putpixels[img_starter->format->BytesPerPixel];
     Uint32 p;
     Uint8 r, g, b, a;
+    int any_transparency;
 
-    for (y = 0; y < img_starter->h; y++)
+    any_transparency = 0;
+
+    for (y = 0; y < img_starter->h && !any_transparency; y++)
     {
-      for (x = 0; x < img_starter->w; x++)
+      for (x = 0; x < img_starter->w && !any_transparency; x++)
       {
         p = getpixel(img_starter, x, y);
         SDL_GetRGBA(p, img_starter->format, &r, &g, &b, &a);
-        if (abs(r - g) < 16 && abs(r - b) < 16 && abs(b - g) < 16)
-          a = 255 - ((r + g + b) / 3);
 
-        p = SDL_MapRGBA(img_starter->format, r, g, b, a);
-        putpixel(img_starter, x, y, p);
+        if (a < 255)
+          any_transparency = 1;
+      }
+    }
+
+    if (!any_transparency)
+    {
+      /* No transparency found!  We MUST check for white pixels to save
+         the day! */
+
+      for (y = 0; y < img_starter->h; y++)
+      {
+        for (x = 0; x < img_starter->w; x++)
+        {
+          p = getpixel(img_starter, x, y);
+          SDL_GetRGBA(p, img_starter->format, &r, &g, &b, &a);
+
+          if (abs(r - g) < 16 && abs(r - b) < 16 && abs(b - g) < 16)
+          {
+            a = 255 - ((r + g + b) / 3);
+          }
+
+          p = SDL_MapRGBA(img_starter->format, r, g, b, a);
+          putpixel(img_starter, x, y, p);
+        }
       }
     }
   }
