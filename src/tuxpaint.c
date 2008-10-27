@@ -22,7 +22,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
   
-  June 14, 2002 - October 8, 2008
+  June 14, 2002 - October 26, 2008
   $Id$
 */
 
@@ -11280,25 +11280,6 @@ static void load_starter(char *img_id)
     SDL_FreeSurface(tmp_surf);
   }
 
-  if (img_starter != NULL &&
-      (img_starter->w != canvas->w || img_starter->h != canvas->h))
-  {
-    tmp_surf = img_starter;
-
-    img_starter = SDL_CreateRGBSurface(canvas->flags,
-				       canvas->w, canvas->h,
-				       tmp_surf->format->BitsPerPixel,
-				       tmp_surf->format->Rmask,
-				       tmp_surf->format->Gmask,
-				       tmp_surf->format->Bmask,
-				       tmp_surf->format->Amask);
-
-    /* 3rd arg ignored for RGBA surfaces */
-    SDL_SetAlpha(tmp_surf, SDL_RLEACCEL, SDL_ALPHA_OPAQUE);
-    autoscale_copy_smear_free(tmp_surf, img_starter, NondefectiveBlit);
-    SDL_SetAlpha(img_starter, SDL_RLEACCEL | SDL_SRCALPHA, SDL_ALPHA_OPAQUE);
-  }
-
   /* Try to load the a background image: */
 
   /* FIXME: Also support .jpg extension? -bjk 2007.03.22 */
@@ -11328,6 +11309,59 @@ static void load_starter(char *img_id)
     img_starter_bkgd = SDL_DisplayFormat(tmp_surf);
     SDL_FreeSurface(tmp_surf);
   }
+
+
+  /* If no background, let's try to remove all white
+     (so we don't have to _REQUIRE_ users create Starters with
+     transparency, if they're simple black-and-white outlines */
+
+  if (img_starter != NULL && img_starter_bkgd == NULL)
+  {
+    int x, y;
+    Uint32(*getpixel) (SDL_Surface *, int, int) =
+      getpixels[img_starter->format->BytesPerPixel];
+    void (*putpixel) (SDL_Surface *, int, int, Uint32) =
+      putpixels[img_starter->format->BytesPerPixel];
+    Uint32 p;
+    Uint8 r, g, b, a;
+
+    for (y = 0; y < img_starter->h; y++)
+    {
+      for (x = 0; x < img_starter->w; x++)
+      {
+        p = getpixel(img_starter, x, y);
+        SDL_GetRGBA(p, img_starter->format, &r, &g, &b, &a);
+        if (abs(r - g) < 16 && abs(r - b) < 16 && abs(b - g) < 16)
+          a = 255 - ((r + g + b) / 3);
+
+        p = SDL_MapRGBA(img_starter->format, r, g, b, a);
+        putpixel(img_starter, x, y, p);
+      }
+    }
+  }
+
+
+  /* Scale if needed... */
+
+  if (img_starter != NULL &&
+      (img_starter->w != canvas->w || img_starter->h != canvas->h))
+  {
+    tmp_surf = img_starter;
+
+    img_starter = SDL_CreateRGBSurface(canvas->flags,
+				       canvas->w, canvas->h,
+				       tmp_surf->format->BitsPerPixel,
+				       tmp_surf->format->Rmask,
+				       tmp_surf->format->Gmask,
+				       tmp_surf->format->Bmask,
+				       tmp_surf->format->Amask);
+
+    /* 3rd arg ignored for RGBA surfaces */
+    SDL_SetAlpha(tmp_surf, SDL_RLEACCEL, SDL_ALPHA_OPAQUE);
+    autoscale_copy_smear_free(tmp_surf, img_starter, NondefectiveBlit);
+    SDL_SetAlpha(img_starter, SDL_RLEACCEL | SDL_SRCALPHA, SDL_ALPHA_OPAQUE);
+  }
+
 
   if (img_starter_bkgd != NULL &&
       (img_starter_bkgd->w != canvas->w || img_starter_bkgd->h != canvas->h))

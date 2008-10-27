@@ -79,9 +79,14 @@ $Id$
       NOTE: 'printcommand' and 'altprintcommand' options not currently parsed
       for env. vars.
 
-  * Build System Improvements
-    -------------------------
+  * Build System Improvements:
+    --------------------------
     * Adhering to Debian & FreeDesktop.org standards regarding .desktop file.
+
+  * Other Improvements:
+    -------------------
+    * Starter images no longer need to be created with alpha transparency.
+      Any solid white will be removed automatically by Tux Paint.
 
   * New localizations:
     ------------------
