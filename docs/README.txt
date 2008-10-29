@@ -9,7 +9,7 @@
                            bill@newbreedsoftware.com
                             http://www.tuxpaint.org/
 
-                          June 14, 2002 - July 7, 2008
+                        June 14, 2002 - October 29, 2008
 
      ----------------------------------------------------------------------
 
@@ -694,7 +694,11 @@ Available Tools
      Network Graphic) image file, and place it in Tux Paint's "saved"
      directory:
 
-     Windows
+     Windows Vista
+             Inside the user's "AppData" folder, e.g.:
+             "C:\Users\(user name)\AppData\Roaming\TuxPaint\saved\"
+
+     Windows 95, 98, ME, 2000, XP
              Inside the user's "Application Data" folder, e.g.: "C:\Documents
              and Settings\(user name)\Application Data\TuxPaint\saved\"
 
@@ -706,6 +710,9 @@ Available Tools
      Linux/Unix
              Inside a hidden ".tuxpaint" directory, in the user's home
              directory: "$(HOME)/.tuxpaint/saved/"
+
+     Note: It is from this folder that you can copy or open pictures drawn in
+     Tux Paint using other applications.
 
 Using 'tuxpaint-import'
 
