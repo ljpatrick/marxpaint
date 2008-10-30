@@ -301,6 +301,7 @@ $Id$
     Herman Bruyninckx <Herman.Bruyninckx@mech.kuleuven.ac.be>
     Geert Stams <geertstams@wanadoo.nl>
     Michael de Rooij <micr@zeelandnet.nl>
+    Bert Saal <bertsaal@gmail.com>
 
   * Esperanto
     Edmund GRIMLEY EVANS <edmundo@rano.org>

@@ -105,6 +105,9 @@ $Id$
     * Chinese (Simplified)
       Huang Zuzhen <zuzhenhuang@vip.sina.com>
 
+    * Dutch
+      Bert Saal <bertsaal@gmail.com>
+
     * French translation
       Jacques Chion <Jacques.Chion@wanadoo.fr>
 
