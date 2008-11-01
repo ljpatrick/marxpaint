@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint-HEAD\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-09-23 21:41+0100\n"
+"POT-Creation-Date: 2008-11-01 21:57+0000\n"
 "PO-Revision-Date: 2008-10-07 14:54+0200\n"
 "Last-Translator: Tilo <Drfortilo@gmail.com>\n"
 "Language-Team: Arabic <doc@arabeyes.org>\n"
@@ -15,7 +15,8 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.11.4\n"
-"Plural-Forms: nplurals=4; plural=n==1 ? 0 : n==2 ? 1 : n>=3 && n<=10 ? 2 : 3\n"
+"Plural-Forms: nplurals=4; plural=n==1 ? 0 : n==2 ? 1 : n>=3 && n<=10 ? 2 : "
+"3\n"
 
 #. Response to Black (0, 0, 0) color selected
 #: ../colors.h:86
@@ -225,95 +226,80 @@ msgid "ZH_TW"
 msgstr ""
 
 #. Square shape tool (4 equally-lengthed sides at right angles)
-#: ../shapes.h:171
-#: ../shapes.h:172
+#: ../shapes.h:171 ../shapes.h:172
 msgid "Square"
 msgstr "مربع"
 
 #. Rectangle shape tool (4 sides at right angles)
-#: ../shapes.h:175
-#: ../shapes.h:176
+#: ../shapes.h:175 ../shapes.h:176
 msgid "Rectangle"
 msgstr "مستطيل"
 
 #. Circle shape tool (X radius and Y radius are the same)
-#: ../shapes.h:179
-#: ../shapes.h:180
+#: ../shapes.h:179 ../shapes.h:180
 msgid "Circle"
 msgstr "دائرة"
 
 #. Ellipse shape tool (X radius and Y radius may differ)
-#: ../shapes.h:183
-#: ../shapes.h:184
+#: ../shapes.h:183 ../shapes.h:184
 msgid "Ellipse"
 msgstr "بيضاوي ,القطع الناقص"
 
 #. Triangle shape tool (3 sides)
-#: ../shapes.h:187
-#: ../shapes.h:188
+#: ../shapes.h:187 ../shapes.h:188
 msgid "Triangle"
 msgstr "مثلث"
 
 #. Pentagone shape tool (5 sides)
-#: ../shapes.h:191
-#: ../shapes.h:192
+#: ../shapes.h:191 ../shapes.h:192
 msgid "Pentagon"
 msgstr "خماسي"
 
 #. Rhombus shape tool (4 sides, not at right angles)
-#: ../shapes.h:195
-#: ../shapes.h:196
+#: ../shapes.h:195 ../shapes.h:196
 msgid "Rhombus"
 msgstr "معيّن"
 
 #. Octagon shape tool (8 sides)
-#: ../shapes.h:199
-#: ../shapes.h:200
+#: ../shapes.h:199 ../shapes.h:200
 msgid "Octagon"
 msgstr "مثمن, مثمن الزوايا والأضلاع"
 
 #. Description of a square
-#: ../shapes.h:208
-#: ../shapes.h:209
+#: ../shapes.h:208 ../shapes.h:209
 msgid "A square is a rectangle with four equal sides."
 msgstr "المربع هو مستطيل بأربعة اضلاع متساويةِ."
 
 #. Description of a rectangle
-#: ../shapes.h:212
-#: ../shapes.h:213
+#: ../shapes.h:212 ../shapes.h:213
 msgid "A rectangle has four sides and four right angles."
 msgstr "المستطيل لَهُ أربعة اضلاع وأربع زوايا قائمةِ."
 
-#: ../shapes.h:217
-#: ../shapes.h:219
-msgid "A circle is a curve where all points have the same distance from the center."
+#: ../shapes.h:217 ../shapes.h:219
+msgid ""
+"A circle is a curve where all points have the same distance from the center."
 msgstr "الدائرة هي منحنى حيث كُلّ النقاط لَها نفس البعد عنْ المركزِ."
 
 #. Description of an ellipse
-#: ../shapes.h:222
-#: ../shapes.h:223
+#: ../shapes.h:222 ../shapes.h:223
 msgid "An ellipse is a stretched circle."
 msgstr "الشكل البيضاوي هو دائرة ممطوطة."
 
 #. Description of a triangle
-#: ../shapes.h:226
-#: ../shapes.h:227
+#: ../shapes.h:226 ../shapes.h:227
 msgid "A triangle has three sides."
 msgstr "المثلث لَهُ ثلاثة اضلاع."
 
 #. Description of a pentagon
-#: ../shapes.h:230
-#: ../shapes.h:231
+#: ../shapes.h:230 ../shapes.h:231
 msgid "A pentagon has five sides."
 msgstr "الخماسي لَهُ خمسة اضلاع."
 
-#: ../shapes.h:235
-#: ../shapes.h:237
+#: ../shapes.h:235 ../shapes.h:237
 msgid "A rhombus has four equal sides, and opposite sides are parallel."
 msgstr "المعين لَهُ أربعة اضلاع متساويةِ، واضلاعه المتقابلة متوازية."
 
-#: ../shapes.h:241
-#: ../shapes.h:243
+#: ../shapes.h:241 ../shapes.h:243
 msgid "An octagon has eight equal sides."
 msgstr "المثمن لَهُ ثمانيه اضلاع متساويه."
 
@@ -344,8 +330,7 @@ msgstr "أختام"
 
 #. Title of shape selector (buttons down the right for shapes tool)
 #. Shape creation tool (square, circle, etc.)
-#: ../titles.h:56
-#: ../tools.h:54
+#: ../titles.h:56 ../tools.h:54
 msgid "Shapes"
 msgstr "أشكال"
 
@@ -356,8 +341,7 @@ msgstr "حروف"
 
 #. Title of magic tool selector (buttons down the right for magic (effect plugin) tool)
 #. "Magic" effects tools (blur, flip image, etc.)
-#: ../titles.h:62
-#: ../tools.h:60
+#: ../titles.h:62 ../tools.h:60
 msgid "Magic"
 msgstr "سحر"
 
@@ -405,8 +389,7 @@ msgstr "جديد"
 #. Open a saved picture
 #. buttons for the file open dialog
 #. Open dialog: 'Open' button, to load the selected picture
-#: ../tools.h:75
-#: ../tuxpaint.c:7971
+#: ../tools.h:75 ../tuxpaint.c:7958
 msgid "Open"
 msgstr "افتح"
 
@@ -442,8 +425,12 @@ msgstr "انقرْ للبَدْء برَسْم خط. ثم اتركْ لإكْم�
 
 #. Shape tool instructions
 #: ../tools.h:101
-msgid "Pick a shape. Click to pick the center, drag, then let go when it is the size you want. Move around to rotate it, and click to draw it."
-msgstr "اختر شكلاً. انقرْ لالتِقاط المركزِ، اسحب، ثم اترك عندما تصل للحجم الذي تريد. تحرّكْ بسهولة لإدَارَته، وانقرْ لرسمه.."
+msgid ""
+"Pick a shape. Click to pick the center, drag, then let go when it is the "
+"size you want. Move around to rotate it, and click to draw it."
+msgstr ""
+"اختر شكلاً. انقرْ لالتِقاط المركزِ، اسحب، ثم اترك عندما تصل للحجم الذي تريد. "
+"تحرّكْ بسهولة لإدَارَته، وانقرْ لرسمه.."
 
 #. Text tool instructions
 #: ../tools.h:104
@@ -517,183 +504,176 @@ msgstr "إذن …  دعنا نَستمرُّ برسَم هذا الشكل"
 
 # FIXME: تحرّكُ الي مكان آخر! ! !
 #. Prompt to confirm user wishes to quit
-#: ../tuxpaint.c:1841
+#: ../tuxpaint.c:1842
 msgid "Do you really want to quit?"
 msgstr "أتُريدُ حقاً الخروج؟"
 
 #. Quit prompt positive response (quit)
-#: ../tuxpaint.c:1844
+#: ../tuxpaint.c:1845
 msgid "Yes, I'm done!"
 msgstr "نعم، لقد انتهيت"
 
 #. Quit prompt negative response (don't quit)
-#: ../tuxpaint.c:1847
-#: ../tuxpaint.c:1874
+#: ../tuxpaint.c:1848 ../tuxpaint.c:1875
 msgid "No, take me back!"
 msgstr "لا، عُد بي ثانية"
 
 #. Current picture is not saved; user is quitting
-#: ../tuxpaint.c:1851
+#: ../tuxpaint.c:1852
 msgid "If you quit, you’ll lose your picture! Save it?"
 msgstr "إذا خرجت الآن، ستفقد صورتك أتريد حفظها؟"
 
-#: ../tuxpaint.c:1852
-#: ../tuxpaint.c:1857
+#: ../tuxpaint.c:1853 ../tuxpaint.c:1858
 msgid "Yes, save it!"
 msgstr "نعم، احفظها الآن"
 
-#: ../tuxpaint.c:1853
-#: ../tuxpaint.c:1858
+#: ../tuxpaint.c:1854 ../tuxpaint.c:1859
 msgid "No, don't bother saving!"
 msgstr "لا، لا تهتم بحفظها"
 
 #. Current picture is not saved; user is opening another picture
-#: ../tuxpaint.c:1856
+#: ../tuxpaint.c:1857
 msgid "Save your picture first?"
 msgstr "أأحفظ صورتك أولاً؟"
 
 #. Error opening picture
-#: ../tuxpaint.c:1861
+#: ../tuxpaint.c:1862
 msgid "Can’t open that picture!"
 msgstr "لايمكن فتح هذه الصورة"
 
 #. Generic dialog dismissal
-#: ../tuxpaint.c:1864
-#: ../tuxpaint.c:1869
-#: ../tuxpaint.c:1878
-#: ../tuxpaint.c:1882
-#: ../tuxpaint.c:1891
+#: ../tuxpaint.c:1865 ../tuxpaint.c:1870 ../tuxpaint.c:1879 ../tuxpaint.c:1883
+#: ../tuxpaint.c:1892
 msgid "OK"
 msgstr "موافق"
 
 #. Notification that 'Open' dialog has nothing to show
-#: ../tuxpaint.c:1868
+#: ../tuxpaint.c:1869
 msgid "There are no saved files!"
 msgstr "لايوجد أي ملف محفوظ"
 
 #. Verification of print action
-#: ../tuxpaint.c:1872
+#: ../tuxpaint.c:1873
 msgid "Print your picture now?"
 msgstr "أأطبع صورتك الآن؟"
 
-#: ../tuxpaint.c:1873
+#: ../tuxpaint.c:1874
 msgid "Yes, print it!"
 msgstr "نعم، اطبع الصورة"
 
 #. Confirmation of successful (we hope) printing
-#: ../tuxpaint.c:1877
+#: ../tuxpaint.c:1878
 msgid "Your picture has been printed!"
 msgstr "لقد طُبِعت صورتك"
 
 #. Notification that it's too soon to print again (--printdelay option is in effect)
-#: ../tuxpaint.c:1881
+#: ../tuxpaint.c:1882
 msgid "You can’t print yet!"
 msgstr "لا يمكنك الطبع الآن"
 
 #. Prompt to confirm erasing a picture in the Open dialog
-#: ../tuxpaint.c:1885
+#: ../tuxpaint.c:1886
 msgid "Erase this picture?"
 msgstr "أتريد مسح هذه الصورة؟"
 
-#: ../tuxpaint.c:1886
+#: ../tuxpaint.c:1887
 msgid "Yes, erase it!"
 msgstr "نعم، امسحه"
 
-#: ../tuxpaint.c:1887
+#: ../tuxpaint.c:1888
 msgid "No, don't erase it!"
 msgstr "لا، لاتمسحه"
 
 #. Reminder that Mouse Button 1 is the button to use in Tux Paint
-#: ../tuxpaint.c:1890
+#: ../tuxpaint.c:1891
 msgid "Remember to use the left mouse button!"
 msgstr "تذكر استخدام زر الفأرة الأيسر"
 
 #. Sound has been muted (silenced) via keyboard shortcut
-#: ../tuxpaint.c:2005
+#: ../tuxpaint.c:2006
 msgid "Sound muted."
 msgstr "بلا صوت"
 
 #. Sound has been unmuted (unsilenced) via keyboard shortcut
-#: ../tuxpaint.c:2010
+#: ../tuxpaint.c:2011
 msgid "Sound unmuted."
 msgstr "شغل الصوت"
 
 #. Wait while Text tool finishes loading fonts
-#: ../tuxpaint.c:2476
+#: ../tuxpaint.c:2477
 msgid "Please wait…"
 msgstr "من فضلك انتظر..."
 
-#: ../tuxpaint.c:7194
+#: ../tuxpaint.c:7181
 msgid "Pick a color."
 msgstr "اختر لون"
 
 #. Open dialog: 'Erase' button, to erase/deleted the selected picture
-#: ../tuxpaint.c:7974
+#: ../tuxpaint.c:7961
 msgid "Erase"
 msgstr "امسح"
 
 #. Open dialog: 'Slides' button, to switch to slide show mode
-#: ../tuxpaint.c:7977
+#: ../tuxpaint.c:7964
 msgid "Slides"
 msgstr "شرائح"
 
 #. Open dialog: 'Back' button, to dismiss Open dialog without opening a picture
-#: ../tuxpaint.c:7980
+#: ../tuxpaint.c:7967
 msgid "Back"
 msgstr "الخلف"
 
 #. Slideshow: 'Next' button, to load next slide (image)
-#: ../tuxpaint.c:7983
+#: ../tuxpaint.c:7970
 msgid "Next"
 msgstr "التالي"
 
 #. Slideshow: 'Play' button, to begin a slideshow sequence
-#: ../tuxpaint.c:7986
+#: ../tuxpaint.c:7973
 msgid "Play"
 msgstr "شغّل"
 
 #. Label for 'Letters' buttons (font selector, down the right when the Text tool is being used); used to show the difference between font faces
-#: ../tuxpaint.c:8633
+#: ../tuxpaint.c:8620
 msgid "Aa"
 msgstr "انتبه"
 
 # FIXME: Move elsewhere! Or not?!
 #. Admittedly stupid way of determining which keys can be used for
 #. positive and negative responses in dialogs (e.g., [Y] (for 'yes') in English)
-#: ../tuxpaint.c:11576
+#: ../tuxpaint.c:11620
 msgid "Yes"
 msgstr "نعم"
 
-#: ../tuxpaint.c:11580
+#: ../tuxpaint.c:11624
 msgid "No"
 msgstr "لا"
 
 # #define PROMPT_SAVE_OVER_TXT gettext_noop("Save over the older version of this picture?")
 #. Prompt to ask whether user wishes to save over old version of their file
-#: ../tuxpaint.c:12532
+#: ../tuxpaint.c:12576
 msgid "Replace the picture with your changes?"
 msgstr "أأستبدل الصورة بتعديلاتك؟"
 
 #. Positive response to saving over old version
 #. (like a 'File:Save' action in other applications)
-#: ../tuxpaint.c:12536
+#: ../tuxpaint.c:12580
 msgid "Yes, replace the old one!"
 msgstr "نعم، استبدل الملف القديم"
 
 #. Negative response to saving over old version (saves a new image)
 #. (like a 'File:Save As...' action in other applications)
-#: ../tuxpaint.c:12540
+#: ../tuxpaint.c:12584
 msgid "No, save a new file!"
 msgstr "لا، احفظ باسم جديد"
 
-#: ../tuxpaint.c:13303
+#: ../tuxpaint.c:13347
 msgid "Choose the picture you want, then click “Open”."
 msgstr "اختر الصورة التي تريد، ثم انقر على ”فتح“."
 
 #. Let user choose images:
 #. Instructions for Slideshow file dialog (FIXME: Make a #define)
-#: ../tuxpaint.c:14290
-#: ../tuxpaint.c:14604
+#: ../tuxpaint.c:14334 ../tuxpaint.c:14648
 msgid "Choose the pictures you want, then click “Play”."
 msgstr "اختر الصورة التي تريد، ثم انقر ”شغّل“."
 
@@ -710,16 +690,24 @@ msgid "Tux Paint"
 msgstr "رسم توكس"
 
 #: ../../magic/src/alien.c:64
-msgid "Alien"
-msgstr "مخالف, دخيل"
+#, fuzzy
+#| msgid "Color & White"
+msgid "Color Shift"
+msgstr "الابيض و الالوان"
 
 #: ../../magic/src/alien.c:67
-msgid "Click and move the mouse to give parts of your picture an \"alien\" appearance."
-msgstr "انقر وحرّكُ الفأرة على اجزاء من الصورة لتمويهها بشكل مختلف."
+#, fuzzy
+#| msgid ""
+#| "Click and move the mouse around to change the color of parts of your "
+#| "picture."
+msgid "Click and move the mouse to change the colors in parts of your picture."
+msgstr "انقر وحرك الفأره  لتغيير لون أجزاء من صورتك"
 
 #: ../../magic/src/alien.c:68
-msgid "Click to give your entire picture an \"alien\" appearance."
-msgstr "انقر  الفأرة على الصورة لتغيير مظهر الصوره."
+#, fuzzy
+#| msgid "Click to change the color of your entire picture."
+msgid "Click to change the colors in your entire picture."
+msgstr "انقر لتغير لون كل الصوره"
 
 #: ../../magic/src/blocks_chalk_drip.c:132
 msgid "Blocks"
@@ -738,7 +726,8 @@ msgid "Click and move the mouse around to make the picture blocky."
 msgstr "انقر وحرّكُ الفأرة على الصورة لتقسيمها إلى قطع."
 
 #: ../../magic/src/blocks_chalk_drip.c:149
-msgid "Click and move the mouse around to turn the picture into a chalk drawing."
+msgid ""
+"Click and move the mouse around to turn the picture into a chalk drawing."
 msgstr "انقر وحرّكُ الفأرة على الصورة لتحويلها إلى رسمة طبشورية."
 
 #: ../../magic/src/blocks_chalk_drip.c:152
@@ -857,7 +846,9 @@ msgstr "زهر"
 
 #: ../../magic/src/flower.c:130
 msgid "Click and drag to draw a flower stalk. Let go to finish the flower."
-msgstr "انقر واسحب الفأره  لرسم ساق زهرة  و توقف عن السحب و النقر ليتم اكمال شكل الزهره. ."
+msgstr ""
+"انقر واسحب الفأره  لرسم ساق زهرة  و توقف عن السحب و النقر ليتم اكمال شكل "
+"الزهره. ."
 
 #: ../../magic/src/foam.c:104
 msgid "Foam"
@@ -872,7 +863,8 @@ msgid "Fold"
 msgstr "اثنى"
 
 #: ../../magic/src/fold.c:62
-msgid "Choose a background color and click to turn the corner of the page over."
+msgid ""
+"Choose a background color and click to turn the corner of the page over."
 msgstr "اختر لون الخلفية وانقر لتغير الصفحة"
 
 #: ../../magic/src/glasstile.c:83
@@ -900,7 +892,8 @@ msgid "Kaleidoscope"
 msgstr "مشكال رسم متغير الألوان"
 
 #: ../../magic/src/kalidescope.c:83
-msgid "Click and drag the mouse to draw with symmetric brushes (a kaleidoscope)."
+msgid ""
+"Click and drag the mouse to draw with symmetric brushes (a kaleidoscope)."
 msgstr "انقر واسحب الفأره للرسم بفرش متناسقه  (مشكال."
 
 #: ../../magic/src/light.c:84
@@ -940,7 +933,8 @@ msgid "Mosaic"
 msgstr "صورة مرسومة بالفسيسفاء, فسيفساء"
 
 #: ../../magic/src/mosaic.c:73
-msgid "Click and move the mouse to add a mosaic effect to parts of your picture."
+msgid ""
+"Click and move the mouse to add a mosaic effect to parts of your picture."
 msgstr "انقر وحرك الفأره لإضافة تأثير الفسيفساء لأجزاء من صورتك."
 
 #: ../../magic/src/mosaic.c:74
@@ -952,11 +946,15 @@ msgid "Negative"
 msgstr "سالب"
 
 #: ../../magic/src/negative.c:80
-msgid "Click and move the mouse around to draw a negative."
+#, fuzzy
+#| msgid "Click and move the mouse around to draw a negative."
+msgid "Click and move the mouse around to make your painting negative."
 msgstr "انقر وحرّكُ الفأرة على الصورة لتحويلها إلى رسمة سلبيه."
 
 #: ../../magic/src/negative.c:83
-msgid "Click to turn the image into its negative."
+#, fuzzy
+#| msgid "Click to turn the image into its negative."
+msgid "Click to turn your painting into its negative."
 msgstr "انقر لتحويل الصورة إلى نسخه سلبية."
 
 #: ../../magic/src/noise.c:63
@@ -970,18 +968,6 @@ msgstr "انقر الفأره لإضافة تأثير التشويش لأجزا�
 #: ../../magic/src/noise.c:67
 msgid "Click to add noise to your entire picture."
 msgstr "انقر الفأره لإضافة تأثير التشويش على صورتك."
-
-#: ../../magic/src/puzzle.c:78
-msgid "Puzzle"
-msgstr "لغز, أحجية, شىء مربك"
-
-#: ../../magic/src/puzzle.c:85
-msgid "Click the part of your picture where would you like a puzzle."
-msgstr "انقر فوق جزء من صورتك حيث تريد لغزا محيرا."
-
-#: ../../magic/src/puzzle.c:86
-msgid "Click to make a puzzle in fullscreen mode."
-msgstr "انقر فوق صورتك لتكون لغزا محيرا من كل الصوره ملء الشاشه ."
 
 #: ../../magic/src/rails.c:75
 msgid "Rails"
@@ -1112,7 +1098,8 @@ msgid "Color & White"
 msgstr "الابيض و الالوان"
 
 #: ../../magic/src/tint.c:75
-msgid "Click and move the mouse around to change the color of parts of your picture."
+msgid ""
+"Click and move the mouse around to change the color of parts of your picture."
 msgstr "انقر وحرك الفأره  لتغيير لون أجزاء من صورتك"
 
 #: ../../magic/src/tint.c:76
@@ -1120,8 +1107,12 @@ msgid "Click to change the color of your entire picture."
 msgstr "انقر لتغير لون كل الصوره"
 
 #: ../../magic/src/tint.c:77
-msgid "Click and move the mouse around to turn parts of your picture into white and a color you choose."
-msgstr "انقر وحرك الفأره نحو لتحويل الأجزاءالتي تختاره من صورتك إلى اللون الأبيض و لون تختاره ."
+msgid ""
+"Click and move the mouse around to turn parts of your picture into white and "
+"a color you choose."
+msgstr ""
+"انقر وحرك الفأره نحو لتحويل الأجزاءالتي تختاره من صورتك إلى اللون الأبيض و "
+"لون تختاره ."
 
 #: ../../magic/src/tint.c:78
 msgid "Click to turn your entire picture into white and a color you choose."
@@ -1152,12 +1143,42 @@ msgid "Wavelets"
 msgstr ""
 
 #: ../../magic/src/waves.c:83
-msgid "Click to make the picture horizontally wavy. Click toward the top for shorter waves, the bottom for taller waves, the left for small waves, and the right for long waves."
-msgstr "انقر لجعل الصورة متموجة أفقيا.انقر على نحو الأعلى لموجات قصيره.نحو الاسفل من اجل موجات متوسطه. و الى اليمين من اجل الموجات الطويله    "
+msgid ""
+"Click to make the picture horizontally wavy. Click toward the top for "
+"shorter waves, the bottom for taller waves, the left for small waves, and "
+"the right for long waves."
+msgstr ""
+"انقر لجعل الصورة متموجة أفقيا.انقر على نحو الأعلى لموجات قصيره.نحو الاسفل من "
+"اجل موجات متوسطه. و الى اليمين من اجل الموجات الطويله    "
 
 #: ../../magic/src/waves.c:84
-msgid "Click to make the picture vertically wavy. Click toward the top for shorter waves, the bottom for taller waves, the left for small waves, and the right for long waves."
-msgstr "انقر لجعل الصورة متموجة رأسيا.انقر على نحو الأعلى لموجات قصيره.نحو الاسفل من اجل موجات متوسطه. و الى اليمين من اجل الموجات الطويله    "
+msgid ""
+"Click to make the picture vertically wavy. Click toward the top for shorter "
+"waves, the bottom for taller waves, the left for small waves, and the right "
+"for long waves."
+msgstr ""
+"انقر لجعل الصورة متموجة رأسيا.انقر على نحو الأعلى لموجات قصيره.نحو الاسفل من "
+"اجل موجات متوسطه. و الى اليمين من اجل الموجات الطويله    "
+
+#~ msgid "Alien"
+#~ msgstr "مخالف, دخيل"
+
+#~ msgid ""
+#~ "Click and move the mouse to give parts of your picture an \"alien\" "
+#~ "appearance."
+#~ msgstr "انقر وحرّكُ الفأرة على اجزاء من الصورة لتمويهها بشكل مختلف."
+
+#~ msgid "Click to give your entire picture an \"alien\" appearance."
+#~ msgstr "انقر  الفأرة على الصورة لتغيير مظهر الصوره."
+
+#~ msgid "Puzzle"
+#~ msgstr "لغز, أحجية, شىء مربك"
+
+#~ msgid "Click the part of your picture where would you like a puzzle."
+#~ msgstr "انقر فوق جزء من صورتك حيث تريد لغزا محيرا."
+
+#~ msgid "Click to make a puzzle in fullscreen mode."
+#~ msgstr "انقر فوق صورتك لتكون لغزا محيرا من كل الصوره ملء الشاشه ."
 
 #, fuzzy
 #~ msgid "Click and move the mouse to add noise to the image."
@@ -1196,12 +1217,15 @@ msgstr "انقر لجعل الصورة متموجة رأسيا.انقر على �
 #, fuzzy
 #~ msgid "Blur All"
 #~ msgstr "تمويه"
+
 #~ msgid "Click and move to fade the colors."
 #~ msgstr "انقر وحرّكُ الفأرة على الألوان لتصبح باهتة."
+
 #~ msgid "Click and move to darken the colors."
 #~ msgstr "انقر وحرّكُ الفأرة على الألوان لتصبح داكنة."
+
 #~ msgid "Sparkles"
 #~ msgstr "بريق"
+
 #~ msgid "You now have a blank sheet to draw on!"
 #~ msgstr "لديك الآن صفحة نظيفة لترسم عليها"
-

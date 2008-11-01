@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: fr\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-09-23 21:41+0100\n"
+"POT-Creation-Date: 2008-11-01 21:57+0000\n"
 "PO-Revision-Date: 2004-05-30 21:20-0700\n"
 "Last-Translator: jimmy <jacques.chion@orange.fr>\n"
 "Language-Team:  <fr@li.org>\n"
@@ -379,7 +379,7 @@ msgstr "Nouveau"
 #. Open a saved picture
 #. buttons for the file open dialog
 #. Open dialog: 'Open' button, to load the selected picture
-#: ../tools.h:75 ../tuxpaint.c:7971
+#: ../tools.h:75 ../tuxpaint.c:7958
 msgid "Open"
 msgstr "Ouvrir"
 
@@ -497,174 +497,174 @@ msgid "OK then… Let’s keep drawing this one!"
 msgstr "Bien ! Continuons donc ce dessin !"
 
 #. Prompt to confirm user wishes to quit
-#: ../tuxpaint.c:1841
+#: ../tuxpaint.c:1842
 msgid "Do you really want to quit?"
 msgstr "Veux-tu vraiment quitter ?"
 
 #. Quit prompt positive response (quit)
-#: ../tuxpaint.c:1844
+#: ../tuxpaint.c:1845
 msgid "Yes, I'm done!"
 msgstr "Oui, j'ai fini !"
 
 #. Quit prompt negative response (don't quit)
-#: ../tuxpaint.c:1847 ../tuxpaint.c:1874
+#: ../tuxpaint.c:1848 ../tuxpaint.c:1875
 msgid "No, take me back!"
 msgstr "Non, on revient !"
 
 #. Current picture is not saved; user is quitting
-#: ../tuxpaint.c:1851
+#: ../tuxpaint.c:1852
 msgid "If you quit, you’ll lose your picture! Save it?"
 msgstr "Si tu quittes, ton image sera perdue ! Tu sauvegardes ?"
 
-#: ../tuxpaint.c:1852 ../tuxpaint.c:1857
+#: ../tuxpaint.c:1853 ../tuxpaint.c:1858
 msgid "Yes, save it!"
 msgstr "Oui, on sauvegarde !"
 
-#: ../tuxpaint.c:1853 ../tuxpaint.c:1858
+#: ../tuxpaint.c:1854 ../tuxpaint.c:1859
 msgid "No, don't bother saving!"
 msgstr "Non, ce n'est pas la peine !"
 
 #. Current picture is not saved; user is opening another picture
-#: ../tuxpaint.c:1856
+#: ../tuxpaint.c:1857
 msgid "Save your picture first?"
 msgstr "Sauvegarder tout d'abord ton image ?"
 
 #. Error opening picture
-#: ../tuxpaint.c:1861
+#: ../tuxpaint.c:1862
 msgid "Can’t open that picture!"
 msgstr "Je ne peux pas ouvrir cette image !"
 
 #. Generic dialog dismissal
-#: ../tuxpaint.c:1864 ../tuxpaint.c:1869 ../tuxpaint.c:1878 ../tuxpaint.c:1882
-#: ../tuxpaint.c:1891
+#: ../tuxpaint.c:1865 ../tuxpaint.c:1870 ../tuxpaint.c:1879 ../tuxpaint.c:1883
+#: ../tuxpaint.c:1892
 msgid "OK"
 msgstr "D'accord"
 
 #. Notification that 'Open' dialog has nothing to show
-#: ../tuxpaint.c:1868
+#: ../tuxpaint.c:1869
 msgid "There are no saved files!"
 msgstr "Il n'y a pas de fichiers sauvegardés !"
 
 #. Verification of print action
-#: ../tuxpaint.c:1872
+#: ../tuxpaint.c:1873
 msgid "Print your picture now?"
 msgstr "Imprimer l'image ?"
 
-#: ../tuxpaint.c:1873
+#: ../tuxpaint.c:1874
 msgid "Yes, print it!"
 msgstr "Oui, imprime !"
 
 #. Confirmation of successful (we hope) printing
-#: ../tuxpaint.c:1877
+#: ../tuxpaint.c:1878
 msgid "Your picture has been printed!"
 msgstr "Ton image a été imprimée !"
 
 #. Notification that it's too soon to print again (--printdelay option is in effect)
-#: ../tuxpaint.c:1881
+#: ../tuxpaint.c:1882
 msgid "You can’t print yet!"
 msgstr "Tu ne peux pas imprimer maintenant !"
 
 #. Prompt to confirm erasing a picture in the Open dialog
-#: ../tuxpaint.c:1885
+#: ../tuxpaint.c:1886
 msgid "Erase this picture?"
 msgstr "Effacer cette image ?"
 
-#: ../tuxpaint.c:1886
+#: ../tuxpaint.c:1887
 msgid "Yes, erase it!"
 msgstr "Oui, efface-la !"
 
-#: ../tuxpaint.c:1887
+#: ../tuxpaint.c:1888
 msgid "No, don't erase it!"
 msgstr "Non, ne l'efface pas !"
 
 #. Reminder that Mouse Button 1 is the button to use in Tux Paint
-#: ../tuxpaint.c:1890
+#: ../tuxpaint.c:1891
 msgid "Remember to use the left mouse button!"
 msgstr "N'oublie pas d'utiliser le bouton gauche de la souris !"
 
 #. Sound has been muted (silenced) via keyboard shortcut
-#: ../tuxpaint.c:2005
+#: ../tuxpaint.c:2006
 msgid "Sound muted."
 msgstr "Son désactivé."
 
 #. Sound has been unmuted (unsilenced) via keyboard shortcut
-#: ../tuxpaint.c:2010
+#: ../tuxpaint.c:2011
 msgid "Sound unmuted."
 msgstr "Son activé."
 
 #. Wait while Text tool finishes loading fonts
-#: ../tuxpaint.c:2476
+#: ../tuxpaint.c:2477
 msgid "Please wait…"
 msgstr "Attends s'il te plaît .."
 
-#: ../tuxpaint.c:7194
+#: ../tuxpaint.c:7181
 msgid "Pick a color."
 msgstr "Choisis une couleur."
 
 #. Open dialog: 'Erase' button, to erase/deleted the selected picture
-#: ../tuxpaint.c:7974
+#: ../tuxpaint.c:7961
 msgid "Erase"
 msgstr "Effacer"
 
 #. Open dialog: 'Slides' button, to switch to slide show mode
-#: ../tuxpaint.c:7977
+#: ../tuxpaint.c:7964
 msgid "Slides"
 msgstr "Diapos"
 
 #. Open dialog: 'Back' button, to dismiss Open dialog without opening a picture
-#: ../tuxpaint.c:7980
+#: ../tuxpaint.c:7967
 msgid "Back"
 msgstr "Retour"
 
 #. Slideshow: 'Next' button, to load next slide (image)
-#: ../tuxpaint.c:7983
+#: ../tuxpaint.c:7970
 msgid "Next"
 msgstr "Suite"
 
 #. Slideshow: 'Play' button, to begin a slideshow sequence
-#: ../tuxpaint.c:7986
+#: ../tuxpaint.c:7973
 msgid "Play"
 msgstr "Départ"
 
 #. Label for 'Letters' buttons (font selector, down the right when the Text tool is being used); used to show the difference between font faces
-#: ../tuxpaint.c:8633
+#: ../tuxpaint.c:8620
 msgid "Aa"
 msgstr "Aa"
 
 #. Admittedly stupid way of determining which keys can be used for
 #. positive and negative responses in dialogs (e.g., [Y] (for 'yes') in English)
-#: ../tuxpaint.c:11576
+#: ../tuxpaint.c:11620
 msgid "Yes"
 msgstr "Oui"
 
-#: ../tuxpaint.c:11580
+#: ../tuxpaint.c:11624
 msgid "No"
 msgstr "Non"
 
 #. Prompt to ask whether user wishes to save over old version of their file
-#: ../tuxpaint.c:12532
+#: ../tuxpaint.c:12576
 msgid "Replace the picture with your changes?"
 msgstr "Enregistrer l'image avec tes changements ?"
 
 #. Positive response to saving over old version
 #. (like a 'File:Save' action in other applications)
-#: ../tuxpaint.c:12536
+#: ../tuxpaint.c:12580
 msgid "Yes, replace the old one!"
 msgstr "Oui, remplace l'ancienne !"
 
 #. Negative response to saving over old version (saves a new image)
 #. (like a 'File:Save As...' action in other applications)
-#: ../tuxpaint.c:12540
+#: ../tuxpaint.c:12584
 msgid "No, save a new file!"
 msgstr "Non, c'est une nouvelle image !"
 
-#: ../tuxpaint.c:13303
+#: ../tuxpaint.c:13347
 msgid "Choose the picture you want, then click “Open”."
 msgstr "Choisis une image, et clique ensuite sur “Ouvrir”"
 
 #. Let user choose images:
 #. Instructions for Slideshow file dialog (FIXME: Make a #define)
-#: ../tuxpaint.c:14290 ../tuxpaint.c:14604
+#: ../tuxpaint.c:14334 ../tuxpaint.c:14648
 msgid "Choose the pictures you want, then click “Play”."
 msgstr "Choisis les images que tu veux, puis clique sur “Départ”"
 
@@ -681,19 +681,26 @@ msgid "Tux Paint"
 msgstr "Tux Paint"
 
 #: ../../magic/src/alien.c:64
-msgid "Alien"
-msgstr "Étrange"
+#, fuzzy
+#| msgid "Color & White"
+msgid "Color Shift"
+msgstr "Couleur+Blanc"
 
+#
 #: ../../magic/src/alien.c:67
-msgid ""
-"Click and move the mouse to give parts of your picture an \"alien\" "
-"appearance."
-msgstr ""
-"Clique et déplace la souris pour ajouter à l'image une apparence “étrange”."
+#, fuzzy
+#| msgid ""
+#| "Click and move the mouse around to change the color of parts of your "
+#| "picture."
+msgid "Click and move the mouse to change the colors in parts of your picture."
+msgstr "Clique et déplace la souris pour changer la couleur localement."
 
+#
 #: ../../magic/src/alien.c:68
-msgid "Click to give your entire picture an \"alien\" appearance."
-msgstr "Clique pour donner une apparence “étrange” à toute l'image."
+#, fuzzy
+#| msgid "Click to change the color of your entire picture."
+msgid "Click to change the colors in your entire picture."
+msgstr "Clique pour changer la couleur de tout le dessin."
 
 #: ../../magic/src/blocks_chalk_drip.c:132
 msgid "Blocks"
@@ -953,12 +960,16 @@ msgid "Negative"
 msgstr "Négatif"
 
 #: ../../magic/src/negative.c:80
-msgid "Click and move the mouse around to draw a negative."
+#, fuzzy
+#| msgid "Click and move the mouse around to draw a negative."
+msgid "Click and move the mouse around to make your painting negative."
 msgstr "Clique et déplace la souris pour obtenir le dessin en négatif."
 
 #
 #: ../../magic/src/negative.c:83
-msgid "Click to turn the image into its negative."
+#, fuzzy
+#| msgid "Click to turn the image into its negative."
+msgid "Click to turn your painting into its negative."
 msgstr "Clique pour voir tout le dessin en négatif."
 
 #: ../../magic/src/noise.c:63
@@ -968,25 +979,12 @@ msgstr "Parasites"
 #
 #: ../../magic/src/noise.c:66
 msgid "Click and move the mouse to add noise to parts of your picture."
-msgstr ""
-"Clique et déplace la souris pour ajouter des parasites localement."
+msgstr "Clique et déplace la souris pour ajouter des parasites localement."
 
 #
 #: ../../magic/src/noise.c:67
 msgid "Click to add noise to your entire picture."
 msgstr "Clique pour ajouter des parasites sur la totalité du dessin."
-
-#: ../../magic/src/puzzle.c:78
-msgid "Puzzle"
-msgstr ""
-
-#: ../../magic/src/puzzle.c:85
-msgid "Click the part of your picture where would you like a puzzle."
-msgstr "Choisis une partie du dessin où tu voudrais faire un puzzle."
-
-#: ../../magic/src/puzzle.c:86
-msgid "Click to make a puzzle in fullscreen mode."
-msgstr "Clique pour fabriquer un puzzle à partir de l'ensembble du dessin."
 
 #
 #: ../../magic/src/rails.c:75
@@ -1148,11 +1146,14 @@ msgid ""
 "Click and move the mouse around to turn parts of your picture into white and "
 "a color you choose."
 msgstr ""
-"Clique et déplace la souris pour obtenir localement du blanc et une couleur que tu as choisie."
+"Clique et déplace la souris pour obtenir localement du blanc et une couleur "
+"que tu as choisie."
 
 #: ../../magic/src/tint.c:78
 msgid "Click to turn your entire picture into white and a color you choose."
-msgstr "Clique pour obtenir toute l'image en blanc et une seule couleur que tu as choisie."
+msgstr ""
+"Clique pour obtenir toute l'image en blanc et une seule couleur que tu as "
+"choisie."
 
 #: ../../magic/src/toothpaste.c:65
 msgid "Toothpaste"
@@ -1200,6 +1201,25 @@ msgstr ""
 "Clique pour avoir un effet vagué verticalement. Clique vers le haut pour de "
 "courtes vagues, vers le bas pour de longues vagues, à gauche pour diminuer "
 "l'amplitude et à droite pour augmenter l'amplitude."
+
+#~ msgid "Alien"
+#~ msgstr "Étrange"
+
+#~ msgid ""
+#~ "Click and move the mouse to give parts of your picture an \"alien\" "
+#~ "appearance."
+#~ msgstr ""
+#~ "Clique et déplace la souris pour ajouter à l'image une apparence "
+#~ "“étrange”."
+
+#~ msgid "Click to give your entire picture an \"alien\" appearance."
+#~ msgstr "Clique pour donner une apparence “étrange” à toute l'image."
+
+#~ msgid "Click the part of your picture where would you like a puzzle."
+#~ msgstr "Choisis une partie du dessin où tu voudrais faire un puzzle."
+
+#~ msgid "Click to make a puzzle in fullscreen mode."
+#~ msgstr "Clique pour fabriquer un puzzle à partir de l'ensembble du dessin."
 
 #~ msgid "Separate Colors"
 #~ msgstr "Couleurs distinctes"

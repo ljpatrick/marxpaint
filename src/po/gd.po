@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Tux paint anns a' ghàidhlig\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-09-23 21:41+0100\n"
+"POT-Creation-Date: 2008-11-01 21:57+0000\n"
 "PO-Revision-Date: 2006-03-04 15:51-0000\n"
 "Last-Translator: Niall Tracey <internationiall@hotmail.com>\n"
 "Language-Team:  <internationiall@hotmail.com>\n"
@@ -416,7 +416,7 @@ msgstr ""
 #. Open a saved picture
 #. buttons for the file open dialog
 #. Open dialog: 'Open' button, to load the selected picture
-#: ../tools.h:75 ../tuxpaint.c:7971
+#: ../tools.h:75 ../tuxpaint.c:7958
 msgid "Open"
 msgstr ""
 
@@ -546,57 +546,57 @@ msgstr ""
 # Gràmar?
 # Is this an appropriate form to use?
 #. Prompt to confirm user wishes to quit
-#: ../tuxpaint.c:1841
+#: ../tuxpaint.c:1842
 #, fuzzy
 msgid "Do you really want to quit?"
 msgstr "A bheil thu ag iarraidh a falbh?"
 
 # Neo-choileanta. (but functional)
 #. Quit prompt positive response (quit)
-#: ../tuxpaint.c:1844
+#: ../tuxpaint.c:1845
 #, fuzzy
 msgid "Yes, I'm done!"
 msgstr "Tha."
 
 # Neo-choileanta. (but functional)
 #. Quit prompt negative response (don't quit)
-#: ../tuxpaint.c:1847 ../tuxpaint.c:1874
+#: ../tuxpaint.c:1848 ../tuxpaint.c:1875
 #, fuzzy
 msgid "No, take me back!"
 msgstr "Chan eil."
 
 #. Current picture is not saved; user is quitting
-#: ../tuxpaint.c:1851
+#: ../tuxpaint.c:1852
 msgid "If you quit, you’ll lose your picture! Save it?"
 msgstr ""
 
-#: ../tuxpaint.c:1852 ../tuxpaint.c:1857
+#: ../tuxpaint.c:1853 ../tuxpaint.c:1858
 msgid "Yes, save it!"
 msgstr ""
 
-#: ../tuxpaint.c:1853 ../tuxpaint.c:1858
+#: ../tuxpaint.c:1854 ../tuxpaint.c:1859
 msgid "No, don't bother saving!"
 msgstr ""
 
 #. Current picture is not saved; user is opening another picture
-#: ../tuxpaint.c:1856
+#: ../tuxpaint.c:1857
 msgid "Save your picture first?"
 msgstr ""
 
 #. Error opening picture
-#: ../tuxpaint.c:1861
+#: ../tuxpaint.c:1862
 msgid "Can’t open that picture!"
 msgstr ""
 
 # Opera anns a' ghàidhlig
 #. Generic dialog dismissal
-#: ../tuxpaint.c:1864 ../tuxpaint.c:1869 ../tuxpaint.c:1878 ../tuxpaint.c:1882
-#: ../tuxpaint.c:1891
+#: ../tuxpaint.c:1865 ../tuxpaint.c:1870 ../tuxpaint.c:1879 ../tuxpaint.c:1883
+#: ../tuxpaint.c:1892
 msgid "OK"
 msgstr "Ceart ma-thà"
 
 #. Notification that 'Open' dialog has nothing to show
-#: ../tuxpaint.c:1868
+#: ../tuxpaint.c:1869
 msgid "There are no saved files!"
 msgstr ""
 
@@ -606,7 +606,7 @@ msgstr ""
 # Stòr-dàta (SMO)
 # Opera anns a' ghàidhlig
 #. Verification of print action
-#: ../tuxpaint.c:1872
+#: ../tuxpaint.c:1873
 #, fuzzy
 msgid "Print your picture now?"
 msgstr "An clò-bhuail mi an dealbh?"
@@ -615,7 +615,7 @@ msgstr "An clò-bhuail mi an dealbh?"
 # Verb from:
 # Stòr-dàta (SMO)
 # Opera anns a' ghàidhlig
-#: ../tuxpaint.c:1873
+#: ../tuxpaint.c:1874
 #, fuzzy
 msgid "Yes, print it!"
 msgstr "Clò-bhuail!"
@@ -626,7 +626,7 @@ msgstr "Clò-bhuail!"
 # Stòr-dàta (SMO)
 # Opera anns a' ghàidhlig
 #. Confirmation of successful (we hope) printing
-#: ../tuxpaint.c:1877
+#: ../tuxpaint.c:1878
 #, fuzzy
 msgid "Your picture has been printed!"
 msgstr "Chlò-bhuail mi an dealbh agad!"
@@ -634,114 +634,114 @@ msgstr "Chlò-bhuail mi an dealbh agad!"
 # Gràmar?
 # I think that this message is only seen when you try to print a blank page. Am I right in thinking an-dràsta is a more suitable idiomatic translation than fhathast?
 #. Notification that it's too soon to print again (--printdelay option is in effect)
-#: ../tuxpaint.c:1881
+#: ../tuxpaint.c:1882
 msgid "You can’t print yet!"
 msgstr "Chan urrain dhuit a chlò-bhualadh an-dràstah!"
 
 #. Prompt to confirm erasing a picture in the Open dialog
-#: ../tuxpaint.c:1885
+#: ../tuxpaint.c:1886
 msgid "Erase this picture?"
 msgstr ""
 
-#: ../tuxpaint.c:1886
+#: ../tuxpaint.c:1887
 msgid "Yes, erase it!"
 msgstr ""
 
-#: ../tuxpaint.c:1887
+#: ../tuxpaint.c:1888
 msgid "No, don't erase it!"
 msgstr ""
 
 #. Reminder that Mouse Button 1 is the button to use in Tux Paint
-#: ../tuxpaint.c:1890
+#: ../tuxpaint.c:1891
 msgid "Remember to use the left mouse button!"
 msgstr ""
 
 #. Sound has been muted (silenced) via keyboard shortcut
-#: ../tuxpaint.c:2005
+#: ../tuxpaint.c:2006
 msgid "Sound muted."
 msgstr ""
 
 #. Sound has been unmuted (unsilenced) via keyboard shortcut
-#: ../tuxpaint.c:2010
+#: ../tuxpaint.c:2011
 msgid "Sound unmuted."
 msgstr ""
 
 #. Wait while Text tool finishes loading fonts
-#: ../tuxpaint.c:2476
+#: ../tuxpaint.c:2477
 msgid "Please wait…"
 msgstr "Fuirich mionaid..."
 
-#: ../tuxpaint.c:7194
+#: ../tuxpaint.c:7181
 msgid "Pick a color."
 msgstr ""
 
 #. Open dialog: 'Erase' button, to erase/deleted the selected picture
-#: ../tuxpaint.c:7974
+#: ../tuxpaint.c:7961
 msgid "Erase"
 msgstr ""
 
 #. Open dialog: 'Slides' button, to switch to slide show mode
-#: ../tuxpaint.c:7977
+#: ../tuxpaint.c:7964
 msgid "Slides"
 msgstr ""
 
 #. Open dialog: 'Back' button, to dismiss Open dialog without opening a picture
-#: ../tuxpaint.c:7980
+#: ../tuxpaint.c:7967
 msgid "Back"
 msgstr ""
 
 # Teach Yourself Gaelic Dictionary: Boyd Robertson & Ian Taylor
 # Opera anns a' Ghàidhlig
 #. Slideshow: 'Next' button, to load next slide (image)
-#: ../tuxpaint.c:7983
+#: ../tuxpaint.c:7970
 #, fuzzy
 msgid "Next"
 msgstr "Teacsa"
 
 #. Slideshow: 'Play' button, to begin a slideshow sequence
-#: ../tuxpaint.c:7986
+#: ../tuxpaint.c:7973
 msgid "Play"
 msgstr ""
 
 #. Label for 'Letters' buttons (font selector, down the right when the Text tool is being used); used to show the difference between font faces
-#: ../tuxpaint.c:8633
+#: ../tuxpaint.c:8620
 msgid "Aa"
 msgstr ""
 
 #. Admittedly stupid way of determining which keys can be used for
 #. positive and negative responses in dialogs (e.g., [Y] (for 'yes') in English)
-#: ../tuxpaint.c:11576
+#: ../tuxpaint.c:11620
 msgid "Yes"
 msgstr ""
 
-#: ../tuxpaint.c:11580
+#: ../tuxpaint.c:11624
 msgid "No"
 msgstr ""
 
 #. Prompt to ask whether user wishes to save over old version of their file
-#: ../tuxpaint.c:12532
+#: ../tuxpaint.c:12576
 msgid "Replace the picture with your changes?"
 msgstr ""
 
 #. Positive response to saving over old version
 #. (like a 'File:Save' action in other applications)
-#: ../tuxpaint.c:12536
+#: ../tuxpaint.c:12580
 msgid "Yes, replace the old one!"
 msgstr ""
 
 #. Negative response to saving over old version (saves a new image)
 #. (like a 'File:Save As...' action in other applications)
-#: ../tuxpaint.c:12540
+#: ../tuxpaint.c:12584
 msgid "No, save a new file!"
 msgstr ""
 
-#: ../tuxpaint.c:13303
+#: ../tuxpaint.c:13347
 msgid "Choose the picture you want, then click “Open”."
 msgstr ""
 
 #. Let user choose images:
 #. Instructions for Slideshow file dialog (FIXME: Make a #define)
-#: ../tuxpaint.c:14290 ../tuxpaint.c:14604
+#: ../tuxpaint.c:14334 ../tuxpaint.c:14648
 msgid "Choose the pictures you want, then click “Play”."
 msgstr ""
 
@@ -763,21 +763,19 @@ msgid "Tux Paint"
 msgstr ""
 
 #: ../../magic/src/alien.c:64
-msgid "Alien"
+msgid "Color Shift"
 msgstr ""
 
 # Gràmar?
 #: ../../magic/src/alien.c:67
 #, fuzzy
-msgid ""
-"Click and move the mouse to give parts of your picture an \"alien\" "
-"appearance."
+msgid "Click and move the mouse to change the colors in parts of your picture."
 msgstr "Briog agus slaod airson na breigichean beaga."
 
 # Gràmar?
 #: ../../magic/src/alien.c:68
 #, fuzzy
-msgid "Click to give your entire picture an \"alien\" appearance."
+msgid "Click to change the colors in your entire picture."
 msgstr "Briog agus slaod airson na breigichean beaga."
 
 # Teach Yourself Gaelic Dictionary: Boyd Robertson & Ian Taylor
@@ -1063,13 +1061,17 @@ msgstr "Briog agus slaod airson na breigichean beaga."
 msgid "Negative"
 msgstr ""
 
+# Gràmar?
 #: ../../magic/src/negative.c:80
-msgid "Click and move the mouse around to draw a negative."
-msgstr ""
+#, fuzzy
+msgid "Click and move the mouse around to make your painting negative."
+msgstr "Briog agus slaod airson na breigichean beaga."
 
+# Gràmar?
 #: ../../magic/src/negative.c:83
-msgid "Click to turn the image into its negative."
-msgstr ""
+#, fuzzy
+msgid "Click to turn your painting into its negative."
+msgstr "Briog agus slaod airson na breigichean beaga."
 
 #: ../../magic/src/noise.c:63
 msgid "Noise"
@@ -1087,20 +1089,6 @@ msgstr "Briog agus slaod airson lainnir a dhèanamh dealbh."
 #, fuzzy
 msgid "Click to add noise to your entire picture."
 msgstr "Briog agus slaod airson na breigichean beaga."
-
-# Teach Yourself Gaelic Dictionary: Boyd Robertson & Ian Taylor
-#: ../../magic/src/puzzle.c:78
-#, fuzzy
-msgid "Puzzle"
-msgstr "Purpaidh!"
-
-#: ../../magic/src/puzzle.c:85
-msgid "Click the part of your picture where would you like a puzzle."
-msgstr ""
-
-#: ../../magic/src/puzzle.c:86
-msgid "Click to make a puzzle in fullscreen mode."
-msgstr ""
 
 #: ../../magic/src/rails.c:75
 msgid "Rails"
@@ -1334,6 +1322,23 @@ msgid ""
 "waves, the bottom for taller waves, the left for small waves, and the right "
 "for long waves."
 msgstr ""
+
+# Gràmar?
+#, fuzzy
+#~ msgid ""
+#~ "Click and move the mouse to give parts of your picture an \"alien\" "
+#~ "appearance."
+#~ msgstr "Briog agus slaod airson na breigichean beaga."
+
+# Gràmar?
+#, fuzzy
+#~ msgid "Click to give your entire picture an \"alien\" appearance."
+#~ msgstr "Briog agus slaod airson na breigichean beaga."
+
+# Teach Yourself Gaelic Dictionary: Boyd Robertson & Ian Taylor
+#, fuzzy
+#~ msgid "Puzzle"
+#~ msgstr "Purpaidh!"
 
 # Gràmar?
 #, fuzzy
