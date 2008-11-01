@@ -60,7 +60,7 @@ static const double SHARPEN = 0.5;
 static Mix_Chunk * sharpen_snd_effect[sharpen_NUM_TOOLS];
 
 const char * sharpen_snd_filenames[sharpen_NUM_TOOLS] = {
-  "flip.wav",
+  "edges.ogg",
   "sharpen.ogg",
   "flip.wav"
 };
