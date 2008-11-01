@@ -211,6 +211,12 @@ $Id$
     Pink noise.ogg by User:Omegatron http://commons.wikimedia.org/wiki/Image:Pink_noise.ogg
     Dual licensed CC-BY-SA and GFDL. 
 
+  * Sharpen tool sound
+    caroline Ford <caroline.ford.work@googlemail.com> 2008 based on
+    FD pip socandecho call.ogg (bat noises!) by User:CountPierre
+    http://commons.wikimedia.org/wiki/Image:FD_pip_socandecho_call.ogg
+    Dual licensed CC-BY-SA and GFDL.
+
 
 * Translations
 

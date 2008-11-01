@@ -61,7 +61,7 @@ static Mix_Chunk * sharpen_snd_effect[sharpen_NUM_TOOLS];
 
 const char * sharpen_snd_filenames[sharpen_NUM_TOOLS] = {
   "flip.wav",
-  "flip.wav",
+  "sharpen.ogg",
   "flip.wav"
 };
 const char * sharpen_icon_filenames[sharpen_NUM_TOOLS] = {
