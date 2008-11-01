@@ -66,7 +66,7 @@ const char * sharpen_snd_filenames[sharpen_NUM_TOOLS] = {
 };
 const char * sharpen_icon_filenames[sharpen_NUM_TOOLS] = {
   "edges.png",
-  "flip.png",
+  "sharpen.png",
   "flip.png"
 };
 const char * sharpen_names[sharpen_NUM_TOOLS] = {
