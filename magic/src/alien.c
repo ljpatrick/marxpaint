@@ -55,7 +55,7 @@ enum {
 static Mix_Chunk * alien_snd_effect[alien_NUM_TOOLS];
 
 const char * alien_snd_filenames[alien_NUM_TOOLS] = {
-  "flip.wav",
+  "alien.ogg",
 };
 const char * alien_icon_filenames[alien_NUM_TOOLS] = {
   "alien.png",

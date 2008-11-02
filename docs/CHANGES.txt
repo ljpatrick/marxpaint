@@ -68,9 +68,6 @@ $Id$
     * "Negative", "Tint", "Glass Tile", "Darken" and "Lighten" tools
       can all now affect the entire image.
 
-    * Sharpen.ogg is taken from http://commons.wikimedia.org/wiki/Image:FD_pip_socandecho_call.ogg 
-      by CountPierre under CC-BY-SA and the GFDL. Editing in audacity by C Ford.
-
   * System-Related Improvements:
     ----------------------------
     * 'savedir' and 'datadir' paths given in configuration files
