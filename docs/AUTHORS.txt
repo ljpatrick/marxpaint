@@ -7,7 +7,7 @@ bill@newbreedsoftware.com
 http://www.tuxpaint.org/
 
 
-June 17, 2002 - October 26, 2008
+June 17, 2002 - November 5, 2008
 
 $Id$
 
@@ -470,6 +470,7 @@ $Id$
     Helder Correia <helder.pereira.correia@gmail.com>
     
   * Romanian
+    Sorin Paliga <sorin.paliga@gmail.com>
     Laurentiu Buzdugan
 
   * Russian
