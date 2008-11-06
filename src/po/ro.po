@@ -532,7 +532,7 @@ msgstr "Nu, du‑mă înapoi"
 
 #. Current picture is not saved; user is quitting
 #: ../tuxpaint.c:1852
-msgid "If you quit, you'll lose your picture! Save it?"
+msgid "If you quit, you’ll lose your picture! Save it?"
 msgstr "Dacă închizi, vei pierde imaginea! Vrei să o salvezi?"
 
 #: ../tuxpaint.c:1853 ../tuxpaint.c:1858
