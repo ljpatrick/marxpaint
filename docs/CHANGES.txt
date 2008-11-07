@@ -8,7 +8,7 @@ http://www.tuxpaint.org/
 
 $Id$
 
-2008.November.5 (0.9.21)
+2008.November.7 (0.9.21)
   * New Starters:
     -------------
     * Silver Frame
@@ -116,6 +116,9 @@ $Id$
 
     * Hebrew translation
       Guy Hed <guy.hed@weizmann.ac.il>
+
+    * Italian translation
+      Simona Riva <simona.riva@tiscali.it>
 
     * Romanian
       Sorin Paliga <sorin.paliga@gmail.com>

@@ -7,7 +7,7 @@ bill@newbreedsoftware.com
 http://www.tuxpaint.org/
 
 
-June 17, 2002 - November 5, 2008
+June 17, 2002 - November 7, 2008
 
 $Id$
 
@@ -380,6 +380,7 @@ $Id$
     Kevin Patrick Scannell <kscanne@gmail.com>
 
   * Italian
+    Simona Riva <simona.riva@tiscali.it>
     Marco Milanesi <kpanic@pavia.linux.it>
     Flavio Pastor <flavio.pastore@zonaitalia.it>
   
