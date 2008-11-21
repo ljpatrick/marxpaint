@@ -43,6 +43,7 @@
 #define gettext_noop(String) String
 #endif
 
+void rain_click(magic_api *, int, int, SDL_Surface *, SDL_Surface *, int, int, SDL_Rect *);
 
 static const int rain_SIZE = 30;
 static const int rain_AMOUNT = 200;
