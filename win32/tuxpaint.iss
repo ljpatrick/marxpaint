@@ -61,11 +61,12 @@ Name: "slo"; MessagesFile: "compiler:Languages\Slovenian.isl"
 Name: "esp"; MessagesFile: "compiler:Languages\Spanish.isl"; LicenseFile: {#BdistDir}\docs\es\COPIADO.txt;
 
 ; Additional, Candidate official translations
-Name: "chs"; MessagesFile: "compiler:Languages\ChineseSimp-11-5.1.0.isl"
+Name: "chs"; MessagesFile: "compiler:Languages\ChineseSimp-12-5.1.11.isl"
 
 ; Additional, Unofficial translations
 Name: "gal"; MessagesFile: "compiler:Languages\Galician-2-5.1.11.isl"
 Name: "cht"; MessagesFile: "compiler:Languages\ChineseTrad-2-5.1.11.isl"
+Name: "jpn"; MessagesFile: "compiler:Languages\Japanese-5-5.1.11.isl"
 
 [Tasks]
 Name: "desktopicon"; Description: "{cm:CreateDesktopIcon}"; GroupDescription: "{cm:AdditionalIcons}";
