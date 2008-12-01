@@ -22,7 +22,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
   
-  June 14, 2002 - October 26, 2008
+  June 14, 2002 - December 1, 2008
   $Id$
 */
 
@@ -17681,6 +17681,8 @@ int do_new_dialog(void)
   int places_to_look;
   int tot;
   int first_starter;
+  int added;
+  Uint8 r, g, b;
 
   
   do_setcursor(cursor_watch);
@@ -17780,26 +17782,42 @@ int do_new_dialog(void)
 
   /* Throw the color palette at the beginning: */
 
-  for (j = 0; j < NUM_COLORS; j++)
+  for (j = -1; j < NUM_COLORS; j++)
   {
+    added = 0;
+
     if (j < NUM_COLORS - 1)
     {
-      /* Palette colors: */
-
-      thumbs[num_files] = SDL_CreateRGBSurface(screen->flags,
-                                             THUMB_W - 20, THUMB_H - 20,
-                                screen->format->BitsPerPixel,
-                                screen->format->Rmask,
-                                screen->format->Gmask,
-                                screen->format->Bmask, 0);
-
-      if (thumbs[num_files] != NULL)
+      if (j == -1 || /* (short circuit) */
+          color_hexes[j][0] != 255 || /* Ignore white, we'll have already added it */
+          color_hexes[j][1] != 255 ||
+          color_hexes[j][2] != 255)
       {
-        SDL_FillRect(thumbs[num_files], NULL,
-                     SDL_MapRGB(thumbs[num_files]->format,
-                                color_hexes[j][0],
-                                color_hexes[j][1],
-                                color_hexes[j][2]));
+        /* Palette colors: */
+
+        thumbs[num_files] = SDL_CreateRGBSurface(screen->flags,
+                                                 THUMB_W - 20, THUMB_H - 20,
+                                  screen->format->BitsPerPixel,
+                                  screen->format->Rmask,
+                                  screen->format->Gmask,
+                                  screen->format->Bmask, 0);
+
+        if (thumbs[num_files] != NULL)
+        {
+          if (j == -1)
+          {
+            r = g = b = 255; /* White */
+          }
+          else
+          {
+            r = color_hexes[j][0];
+            g = color_hexes[j][1];
+            b = color_hexes[j][2];
+          }
+          SDL_FillRect(thumbs[num_files], NULL,
+                       SDL_MapRGB(thumbs[num_files]->format, r, g, b));
+          added = 1;
+        }
       }
     }
     else
@@ -17807,13 +17825,17 @@ int do_new_dialog(void)
       /* Color picker: */
 
       thumbs[num_files] = thumbnail(img_color_picker, THUMB_W - 20, THUMB_H - 20, 0);
+      added = 1;
     }
 
-    d_places[num_files] = PLACE_COLOR_PALETTE;
-    d_names[num_files] = NULL;
-    d_exts[num_files] = NULL;
+    if (added)
+    {
+      d_places[num_files] = PLACE_COLOR_PALETTE;
+      d_names[num_files] = NULL;
+      d_exts[num_files] = NULL;
 
-    num_files++;
+      num_files++;
+    }
   }
 
   first_starter = num_files;
