@@ -74,11 +74,12 @@ PAPER_LIB:=$(call linktest,-lpaper,)
 PNG:=$(call linktest,-lpng,)
 PNG:=$(if $(PNG),$(PNG),$(call linktest,-lpng12,))
 
-FRIBIDI_LIB:=-lfribidi
+FRIBIDI_LIB:=$(shell fribidi-config --libs)
+FRIBIDI_CFLAGS:=$(shell fribidi-config --cflags)
 
 windows_ARCH_LINKS:=-lintl $(PNG) -lwinspool -lshlwapi $(FRIBIDI_LIB)
 osx_ARCH_LINKS:=$(PAPER_LIB) $(FRIBIDI_LIB)
-beos_ARCH_LINKS:="-lintl $(PNG) -lz -lbe -liconv"
+beos_ARCH_LINKS:="-lintl $(PNG) -lz -lbe -liconv $(FRIBIDI_LIB)"
 linux_ARCH_LINKS:=$(PAPER_LIB) $(FRIBIDI_LIB)
 ARCH_LINKS:=$($(OS)_ARCH_LINKS)
 
@@ -830,7 +831,7 @@ tuxpaint:	obj/tuxpaint.o obj/i18n.o obj/im.o obj/cursor.o obj/pixels.o \
 		$(ARCH_LIBS)
 	@echo
 	@echo "...Linking Tux Paint..."
-	$(CC) $(CFLAGS) $(DEBUG_FLAGS) $(SDL_CFLAGS) $(DEFS) \
+	$(CC) $(CFLAGS) $(DEBUG_FLAGS) $(SDL_CFLAGS) $(FRIBIDI_CFLAGS) $(DEFS) \
 		-o tuxpaint $^ \
 		$(SDL_LIBS) $(SVG_LIB) $(ARCH_LINKS)
 	@$(RSRC_CMD)
@@ -864,7 +865,7 @@ obj/tuxpaint.o:	src/tuxpaint.c \
 		Makefile
 	@echo
 	@echo "...Compiling Tux Paint from source..."
-	$(CC) $(CFLAGS) $(DEBUG_FLAGS) $(SDL_CFLAGS) $(SVG_CFLAGS) $(MOUSE_CFLAGS) $(DEFS) \
+	$(CC) $(CFLAGS) $(DEBUG_FLAGS) $(SDL_CFLAGS) $(FRIBIDI_CFLAGS) $(SVG_CFLAGS) $(MOUSE_CFLAGS) $(DEFS) \
 		-c src/tuxpaint.c -o obj/tuxpaint.o
 
 obj/i18n.o:	src/i18n.c src/i18n.h src/debug.h
