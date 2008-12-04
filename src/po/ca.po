@@ -18,7 +18,7 @@ msgstr ""
 "Project-Id-Version: Tuxpaint cvs 2008-11-01\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2008-11-01 21:57+0000\n"
-"PO-Revision-Date: 2008-11-03 19:00+0100\n"
+"PO-Revision-Date: 2008-12-04 12:57+0100\n"
 "Last-Translator: Pere Pujal i Carabantes <pere@fornol.no-ip.org>\n"
 "Language-Team: Català <linux-ca@chanae.alphanet.ch>\n"
 "MIME-Version: 1.0\n"
@@ -1089,7 +1089,7 @@ msgstr "Cliqueu per afegir flocs de neu al dibuix."
 
 #: ../../magic/src/tint.c:71
 msgid "Tint"
-msgstr "Entinta"
+msgstr "Tenyeix"
 
 #: ../../magic/src/tint.c:72
 msgid "Color & White"
