@@ -4,7 +4,7 @@
 # bill@newbreedsoftware.com
 # http://www.tuxpaint.org/
 
-# June 14, 2002 - July 7, 2008
+# June 14, 2002 - December 3, 2008
 
 
 # The version number, for release:
@@ -74,10 +74,12 @@ PAPER_LIB:=$(call linktest,-lpaper,)
 PNG:=$(call linktest,-lpng,)
 PNG:=$(if $(PNG),$(PNG),$(call linktest,-lpng12,))
 
-windows_ARCH_LINKS:=-lintl $(PNG) -lwinspool -lshlwapi
-osx_ARCH_LINKS:=$(PAPER_LIB)
+FRIBIDI_LIB:=-lfribidi
+
+windows_ARCH_LINKS:=-lintl $(PNG) -lwinspool -lshlwapi $(FRIBIDI_LIB)
+osx_ARCH_LINKS:=$(PAPER_LIB) $(FRIBIDI_LIB)
 beos_ARCH_LINKS:="-lintl $(PNG) -lz -lbe -liconv"
-linux_ARCH_LINKS:=$(PAPER_LIB)
+linux_ARCH_LINKS:=$(PAPER_LIB) $(FRIBIDI_LIB)
 ARCH_LINKS:=$($(OS)_ARCH_LINKS)
 
 windows_ARCH_HEADERS:=src/win32_print.h

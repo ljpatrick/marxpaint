@@ -8,7 +8,7 @@ http://www.tuxpaint.org/
 
 $Id$
 
-2008.December.1 (0.9.21)
+2008.December.3 (0.9.21)
   * New Starters:
     -------------
     * Silver Frame
@@ -90,6 +90,10 @@ $Id$
 
     * White always appears as the first color in the "New" dialog,
       regardless of its position (or even existence) in the color palette.
+
+    * Text tool uses FriBidi to determine when right-to-left characters have
+      been typed (e.g., Hebrew) so that they are drawn in the right direction.
+      (Mixing RtoL and LtoR works (e.g., Hebrew with numerals))
 
   * New localizations:
     ------------------

@@ -963,6 +963,19 @@ char *papersize = NULL;
 #endif
 
 
+#if 1 /* FIXME: ifdef for platforms that lack fribidi? */
+#include <fribidi/fribidi.h>
+#if !defined(FRIBIDI_H)
+#error "---------------------------------------------------"
+#error "If you installed libfribidi from a package, be sure"
+#error "to get the development package, as well!"
+#error "(eg., 'libfribidi-dev')"
+#error "---------------------------------------------------"
+#endif
+#else
+/* FIXME: define a noop function */
+#endif
+
 enum
 {
   UNDO_STARTER_NONE,
@@ -15479,7 +15492,34 @@ static void do_render_cur_text(int do_blit)
 
   if (texttool_len > 0)
   {
-    str = uppercase_w(texttool_str);
+    #ifdef FRIBIDI_H
+      FriBidiCharType baseDir = FRIBIDI_TYPE_LTR;
+      FriBidiChar *unicodeIn, *unicodeOut;
+      unsigned int i;
+
+      unicodeIn = (FriBidiChar *) malloc(sizeof(FriBidiChar) * (texttool_len + 1));
+      unicodeOut = (FriBidiChar *) malloc(sizeof(FriBidiChar) * (texttool_len + 1));
+
+      str = (wchar_t *) malloc(sizeof(wchar_t) * (texttool_len + 1));
+
+      for (i = 0; i < texttool_len; i++)
+        unicodeIn[i] = (FriBidiChar) texttool_str[i];
+
+      fribidi_log2vis(unicodeIn, texttool_len, &baseDir, unicodeOut, 0, 0, 0);
+
+      /* FIXME: If we determine that some new text was RtoL, we should
+         reposition the text */
+
+      for (i = 0; i < texttool_len; i++)
+        str[i] = (long) unicodeOut[i];
+
+      str[texttool_len] = L'\0';
+
+      free(unicodeIn);
+      free(unicodeOut);
+    #else
+      str = uppercase_w(texttool_str);
+    #endif
 
     tmp_surf = render_text_w(getfonthandle(cur_font), str, color);
 
