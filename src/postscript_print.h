@@ -7,7 +7,7 @@
   (for non-Windows, non-Mac OS X, non-BeOS platforms, e.g. Linux)
   (moved from tuxpaint.c in 0.9.17)
 
-  Copyright (c) 2007 by Bill Kendrick and others
+  Copyright (c) 2008 by Bill Kendrick and others
   bill@newbreedsoftware.com
   http://www.tuxpaint.org/
 
@@ -26,7 +26,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  June 24, 2007 - June 25, 2007
+  June 24, 2007 - December 7, 2008
   $Id$
 */
 
@@ -80,7 +80,8 @@ int do_ps_save(FILE * fi,
 		// const char *restrict const fname,
 		const char *fname,
 		SDL_Surface * surf,
-	        char * pprsize);
+	        char * pprsize,
+                int is_pipe);
 
 #endif
 

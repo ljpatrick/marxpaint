@@ -8,7 +8,7 @@ http://www.tuxpaint.org/
 
 $Id$
 
-2008.December.3 (0.9.21)
+2008.December.7 (0.9.21)
   * New Starters:
     -------------
     * Silver Frame
@@ -78,6 +78,11 @@ $Id$
       Linux-only.
       NOTE: 'printcommand' and 'altprintcommand' options not currently parsed
       for env. vars.
+
+    * On systems that use postscript_print (Linux and other Unix-likes),
+      errors when attempting to issue a print command (e.g., trying to use
+      "lpr", but that command is not available) should appear in Tux Paint.
+      (SourceForge bug #2205528)
 
   * Build System Improvements:
     --------------------------

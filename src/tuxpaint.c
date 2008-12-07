@@ -22,7 +22,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
   
-  June 14, 2002 - December 1, 2008
+  June 14, 2002 - December 7, 2008
   $Id$
 */
 
@@ -1890,6 +1890,9 @@ int main(int argc, char *argv[])
 /* Confirmation of successful (we hope) printing */
 #define PROMPT_PRINT_TXT gettext_noop("Your picture has been printed!")
 #define PROMPT_PRINT_YES gettext_noop("OK")
+
+/* We got an error printing */
+#define PROMPT_PRINT_FAILED_TXT gettext_noop("Sorry! Your picture could not be printed!")
 
 /* Notification that it's too soon to print again (--printdelay option is in effect) */
 #define PROMPT_PRINT_TOO_SOON_TXT gettext_noop("You can’t print yet!")
@@ -15420,8 +15423,11 @@ void do_print(void)
 #elif defined(PRINTMETHOD_PNM_PS)
     /* nothing here */
 #elif defined(PRINTMETHOD_PS)
-    if (do_ps_save(pi, pcmd, canvas, papersize))
+    if (do_ps_save(pi, pcmd, canvas, papersize, 1))
       do_prompt_snd(PROMPT_PRINT_TXT, PROMPT_PRINT_YES, "", SND_TUXOK,
+		    screen->w / 2, screen->h / 2);
+    else
+      do_prompt_snd(PROMPT_PRINT_FAILED_TXT, PROMPT_PRINT_YES, "", SND_YOUCANNOT,
 		    screen->w / 2, screen->h / 2);
 #else
 #error No print method defined!

@@ -36,7 +36,7 @@
     implied warranty.
 
 
-  June 24, 2007 - August 28, 2008
+  June 24, 2007 - December 7, 2008
   $Id$
 */
 
@@ -50,6 +50,7 @@
 #include <time.h>
 #include <paper.h>
 #include <math.h>
+#include <errno.h>
 
 #ifndef PAPER_H
 #error "---------------------------------------------------"
@@ -81,7 +82,8 @@ int do_ps_save(FILE * fi,
 		// const char *restrict const fname,
 		const char * fname,
 		SDL_Surface * surf,
-		char * pprsize)
+		char * pprsize,
+                int is_pipe)
 {
   const struct paper * ppr;
   int img_w = surf->w;
@@ -300,8 +302,55 @@ int do_ps_save(FILE * fi,
   fprintf(fi, "%%%%Trailer\n");
   fprintf(fi, "%%%%EOF\n");
 
-  fclose(fi);
-  return 1;
+  if (!is_pipe)
+  {
+    fclose(fi);
+    return 1;
+  }
+  else
+  {
+    pid_t child_pid, w;
+    int status;
+
+    child_pid = pclose(fi);
+
+/* debug */
+/*
+    printf("pclose returned %d\n", child_pid); fflush(stdout);
+    printf("errno = %d\n", errno); fflush(stdout);
+*/
+
+    if (child_pid < 0 || (errno != 0 && errno != EAGAIN)) { /* FIXME: This right? */
+      return 0;
+    } else if (child_pid == 0) {
+      return 1;
+    }
+
+    do
+    {
+      w = waitpid(child_pid, &status, 0);
+
+/* debug */
+/*
+            if (w == -1) { perror("waitpid"); exit(EXIT_FAILURE); }
+            if (WIFEXITED(status)) {
+                printf("exited, status=%d\n", WEXITSTATUS(status));
+            } else if (WIFSIGNALED(status)) {
+                printf("killed by signal %d\n", WTERMSIG(status));
+            } else if (WIFSTOPPED(status)) {
+                printf("stopped by signal %d\n", WSTOPSIG(status));
+            } else if (WIFCONTINUED(status)) {
+                printf("continued\n");
+            }
+*/
+    }
+    while (w != -1 && !WIFEXITED(status) && !WIFSIGNALED(status));
+
+    if (WIFEXITED(status) && WEXITSTATUS(status) != 0) /* Not happy exit */
+      return 0;
+
+    return 1;
+  }
 }
 
 #endif
