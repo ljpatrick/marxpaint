@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: fr\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-11-01 21:57+0000\n"
+"POT-Creation-Date: 2008-12-07 19:03-0800\n"
 "PO-Revision-Date: 2004-05-30 21:20-0700\n"
 "Last-Translator: jimmy <jacques.chion@orange.fr>\n"
 "Language-Team:  <fr@li.org>\n"
@@ -380,7 +380,7 @@ msgstr "Nouveau"
 #. Open a saved picture
 #. buttons for the file open dialog
 #. Open dialog: 'Open' button, to load the selected picture
-#: ../tools.h:75 ../tuxpaint.c:7958
+#: ../tools.h:75 ../tuxpaint.c:7974
 msgid "Open"
 msgstr "Ouvrir"
 
@@ -412,8 +412,8 @@ msgstr "Choisis une figurine pour l'insérer dans ton dessin."
 #. Line tool instructions
 #: ../tools.h:98
 msgid "Click to start drawing a line. Let go to complete it."
-msgstr "Clique pour commencer à dessiner une ligne."
-       "Puis continue pour la compléter."
+msgstr ""
+"Clique pour commencer à dessiner une ligne.Puis continue pour la compléter."
 
 #. Shape tool instructions
 #: ../tools.h:101
@@ -427,7 +427,8 @@ msgstr ""
 #. Text tool instructions
 #: ../tools.h:104
 msgid "Choose a style of text. Click on your drawing and you can start typing."
-msgstr "Choisis un style de texte. Clique sur ton dessin et commence à taper ton "
+msgstr ""
+"Choisis un style de texte. Clique sur ton dessin et commence à taper ton "
 "texte."
 
 #. Magic tool instruction
@@ -453,7 +454,8 @@ msgstr "Effacer !"
 #. Response to 'start a new image' action
 #: ../tools.h:119
 msgid "Pick a color or picture with which to start a new drawing."
-msgstr "Choisis une image ou une couleur pour l'insérer dans un nouveau dessin."
+msgstr ""
+"Choisis une image ou une couleur pour l'insérer dans un nouveau dessin."
 
 #. Response to 'open' action (while file dialog is being constructed)
 #: ../tools.h:122
@@ -496,174 +498,181 @@ msgid "OK then… Let’s keep drawing this one!"
 msgstr "Bien ! Continuons donc ce dessin !"
 
 #. Prompt to confirm user wishes to quit
-#: ../tuxpaint.c:1842
+#: ../tuxpaint.c:1855
 msgid "Do you really want to quit?"
 msgstr "Veux-tu vraiment quitter ?"
 
 #. Quit prompt positive response (quit)
-#: ../tuxpaint.c:1845
+#: ../tuxpaint.c:1858
 msgid "Yes, I'm done!"
 msgstr "Oui, j'ai fini !"
 
 #. Quit prompt negative response (don't quit)
-#: ../tuxpaint.c:1848 ../tuxpaint.c:1875
+#: ../tuxpaint.c:1861 ../tuxpaint.c:1888
 msgid "No, take me back!"
 msgstr "Non, on revient !"
 
 #. Current picture is not saved; user is quitting
-#: ../tuxpaint.c:1852
+#: ../tuxpaint.c:1865
 msgid "If you quit, you’ll lose your picture! Save it?"
 msgstr "Si tu quittes, ton image sera perdue ! Tu sauvegardes ?"
 
-#: ../tuxpaint.c:1853 ../tuxpaint.c:1858
+#: ../tuxpaint.c:1866 ../tuxpaint.c:1871
 msgid "Yes, save it!"
 msgstr "Oui, on sauvegarde !"
 
-#: ../tuxpaint.c:1854 ../tuxpaint.c:1859
+#: ../tuxpaint.c:1867 ../tuxpaint.c:1872
 msgid "No, don't bother saving!"
 msgstr "Non, ce n'est pas la peine !"
 
 #. Current picture is not saved; user is opening another picture
-#: ../tuxpaint.c:1857
+#: ../tuxpaint.c:1870
 msgid "Save your picture first?"
 msgstr "Sauvegarder tout d'abord ton image ?"
 
 #. Error opening picture
-#: ../tuxpaint.c:1862
+#: ../tuxpaint.c:1875
 msgid "Can’t open that picture!"
 msgstr "Je ne peux pas ouvrir cette image !"
 
 #. Generic dialog dismissal
-#: ../tuxpaint.c:1865 ../tuxpaint.c:1870 ../tuxpaint.c:1879 ../tuxpaint.c:1883
-#: ../tuxpaint.c:1892
+#: ../tuxpaint.c:1878 ../tuxpaint.c:1883 ../tuxpaint.c:1892 ../tuxpaint.c:1899
+#: ../tuxpaint.c:1908
 msgid "OK"
 msgstr "D'accord"
 
 #. Notification that 'Open' dialog has nothing to show
-#: ../tuxpaint.c:1869
+#: ../tuxpaint.c:1882
 msgid "There are no saved files!"
 msgstr "Il n'y a pas de fichiers sauvegardés !"
 
 #. Verification of print action
-#: ../tuxpaint.c:1873
+#: ../tuxpaint.c:1886
 msgid "Print your picture now?"
 msgstr "Imprimer l'image ?"
 
-#: ../tuxpaint.c:1874
+#: ../tuxpaint.c:1887
 msgid "Yes, print it!"
 msgstr "Oui, imprime !"
 
 #. Confirmation of successful (we hope) printing
-#: ../tuxpaint.c:1878
+#: ../tuxpaint.c:1891
 msgid "Your picture has been printed!"
 msgstr "Ton image a été imprimée !"
 
+#. We got an error printing
+#: ../tuxpaint.c:1895
+#, fuzzy
+#| msgid "Your picture has been printed!"
+msgid "Sorry! Your picture could not be printed!"
+msgstr "Ton image a été imprimée !"
+
 #. Notification that it's too soon to print again (--printdelay option is in effect)
-#: ../tuxpaint.c:1882
+#: ../tuxpaint.c:1898
 msgid "You can’t print yet!"
 msgstr "Tu ne peux pas imprimer maintenant !"
 
 #. Prompt to confirm erasing a picture in the Open dialog
-#: ../tuxpaint.c:1886
+#: ../tuxpaint.c:1902
 msgid "Erase this picture?"
 msgstr "Effacer cette image ?"
 
-#: ../tuxpaint.c:1887
+#: ../tuxpaint.c:1903
 msgid "Yes, erase it!"
 msgstr "Oui, efface-la !"
 
-#: ../tuxpaint.c:1888
+#: ../tuxpaint.c:1904
 msgid "No, don't erase it!"
 msgstr "Non, ne l'efface pas !"
 
 #. Reminder that Mouse Button 1 is the button to use in Tux Paint
-#: ../tuxpaint.c:1891
+#: ../tuxpaint.c:1907
 msgid "Remember to use the left mouse button!"
 msgstr "N'oublie pas d'utiliser le bouton gauche de la souris !"
 
 #. Sound has been muted (silenced) via keyboard shortcut
-#: ../tuxpaint.c:2006
+#: ../tuxpaint.c:2022
 msgid "Sound muted."
 msgstr "Son désactivé."
 
 #. Sound has been unmuted (unsilenced) via keyboard shortcut
-#: ../tuxpaint.c:2011
+#: ../tuxpaint.c:2027
 msgid "Sound unmuted."
 msgstr "Son activé."
 
 #. Wait while Text tool finishes loading fonts
-#: ../tuxpaint.c:2477
+#: ../tuxpaint.c:2493
 msgid "Please wait…"
 msgstr "Attends s'il te plaît .."
 
-#: ../tuxpaint.c:7181
+#: ../tuxpaint.c:7197
 msgid "Pick a color."
 msgstr "Choisis une couleur."
 
 #. Open dialog: 'Erase' button, to erase/deleted the selected picture
-#: ../tuxpaint.c:7961
+#: ../tuxpaint.c:7977
 msgid "Erase"
 msgstr "Effacer"
 
 #. Open dialog: 'Slides' button, to switch to slide show mode
-#: ../tuxpaint.c:7964
+#: ../tuxpaint.c:7980
 msgid "Slides"
 msgstr "Diapos"
 
 #. Open dialog: 'Back' button, to dismiss Open dialog without opening a picture
-#: ../tuxpaint.c:7967
+#: ../tuxpaint.c:7983
 msgid "Back"
 msgstr "Retour"
 
 #. Slideshow: 'Next' button, to load next slide (image)
-#: ../tuxpaint.c:7970
+#: ../tuxpaint.c:7986
 msgid "Next"
 msgstr "Suite"
 
 #. Slideshow: 'Play' button, to begin a slideshow sequence
-#: ../tuxpaint.c:7973
+#: ../tuxpaint.c:7989
 msgid "Play"
 msgstr "Départ"
 
 #. Label for 'Letters' buttons (font selector, down the right when the Text tool is being used); used to show the difference between font faces
-#: ../tuxpaint.c:8620
+#: ../tuxpaint.c:8636
 msgid "Aa"
 msgstr "Aa"
 
 #. Admittedly stupid way of determining which keys can be used for
 #. positive and negative responses in dialogs (e.g., [Y] (for 'yes') in English)
-#: ../tuxpaint.c:11620
+#: ../tuxpaint.c:11636
 msgid "Yes"
 msgstr "Oui"
 
-#: ../tuxpaint.c:11624
+#: ../tuxpaint.c:11640
 msgid "No"
 msgstr "Non"
 
 #. Prompt to ask whether user wishes to save over old version of their file
-#: ../tuxpaint.c:12576
+#: ../tuxpaint.c:12592
 msgid "Replace the picture with your changes?"
 msgstr "Enregistrer l'image avec tes changements ?"
 
 #. Positive response to saving over old version
 #. (like a 'File:Save' action in other applications)
-#: ../tuxpaint.c:12580
+#: ../tuxpaint.c:12596
 msgid "Yes, replace the old one!"
 msgstr "Oui, remplace l'ancienne !"
 
 #. Negative response to saving over old version (saves a new image)
 #. (like a 'File:Save As...' action in other applications)
-#: ../tuxpaint.c:12584
+#: ../tuxpaint.c:12600
 msgid "No, save a new file!"
 msgstr "Non, c'est une nouvelle image !"
 
-#: ../tuxpaint.c:13347
+#: ../tuxpaint.c:13363
 msgid "Choose the picture you want, then click “Open”."
 msgstr "Choisis une image, et clique ensuite sur “Ouvrir”"
 
 #. Let user choose images:
 #. Instructions for Slideshow file dialog (FIXME: Make a #define)
-#: ../tuxpaint.c:14334 ../tuxpaint.c:14648
+#: ../tuxpaint.c:14350 ../tuxpaint.c:14664
 msgid "Choose the pictures you want, then click “Play”."
 msgstr "Choisis les images que tu veux, puis clique sur “Départ”"
 
@@ -707,7 +716,8 @@ msgstr "Goutte"
 
 #: ../../magic/src/blocks_chalk_drip.c:146
 msgid "Click and move the mouse around to make the picture blocky."
-msgstr "Clique et déplace la souris pour transformer l'image en un ensemble de "
+msgstr ""
+"Clique et déplace la souris pour transformer l'image en un ensemble de "
 "petits blocs."
 
 #: ../../magic/src/blocks_chalk_drip.c:149
@@ -761,7 +771,8 @@ msgstr "B.D."
 
 #: ../../magic/src/cartoon.c:87
 msgid "Click and move the mouse around to turn the picture into a cartoon."
-msgstr "Clique et déplace la souris pour que ton dessin ressemble à une bande "
+msgstr ""
+"Clique et déplace la souris pour que ton dessin ressemble à une bande "
 "dessinée."
 
 #: ../../magic/src/confetti.c:63
@@ -839,7 +850,8 @@ msgstr "Fleur"
 
 #: ../../magic/src/flower.c:130
 msgid "Click and drag to draw a flower stalk. Let go to finish the flower."
-msgstr "Clique et déplace la souris pour dessiner une fleur. Relâche pour la finir."
+msgstr ""
+"Clique et déplace la souris pour dessiner une fleur. Relâche pour la finir."
 
 #: ../../magic/src/foam.c:104
 msgid "Foam"
@@ -847,7 +859,8 @@ msgstr "Mousse"
 
 #: ../../magic/src/foam.c:110
 msgid "Click and drag the mouse to cover an area with foamy bubbles."
-msgstr "Clique et fais glisser la souris pour remplir une surface avec des bulles de "
+msgstr ""
+"Clique et fais glisser la souris pour remplir une surface avec des bulles de "
 "savon."
 
 #: ../../magic/src/fold.c:60
@@ -866,7 +879,8 @@ msgstr "Carreau de verre"
 
 #: ../../magic/src/glasstile.c:90
 msgid "Click and drag the mouse to put glass tile over your picture."
-msgstr "Clique et déplace la souris pour mettre des carreaux de verre par endroits."
+msgstr ""
+"Clique et déplace la souris pour mettre des carreaux de verre par endroits."
 
 #
 #: ../../magic/src/glasstile.c:92
@@ -879,7 +893,8 @@ msgstr "Herbe"
 
 #: ../../magic/src/grass.c:98
 msgid "Click and move to draw grass. Don’t forget the dirt!"
-msgstr "Clique et déplace la souris pour dessiner de l'herbe. N'oublie pas la "
+msgstr ""
+"Clique et déplace la souris pour dessiner de l'herbe. N'oublie pas la "
 "poussière !"
 
 #: ../../magic/src/kalidescope.c:77
@@ -948,7 +963,8 @@ msgstr "Négatif"
 
 #: ../../magic/src/negative.c:80
 msgid "Click and move the mouse around to make your painting negative."
-msgstr "Clique et déplace la souris pour obtenir, par endroits, le dessin en négatif."
+msgstr ""
+"Clique et déplace la souris pour obtenir, par endroits, le dessin en négatif."
 
 #
 #: ../../magic/src/negative.c:83
@@ -988,18 +1004,18 @@ msgid "You can draw in rainbow colors!"
 msgstr "Tu peux dessiner avec les couleurs de l'arc-en-ciel !"
 
 #
-#: ../../magic/src/rain.c:64
+#: ../../magic/src/rain.c:65
 msgid "Rain"
 msgstr "Pluie"
 
 #
-#: ../../magic/src/rain.c:67
+#: ../../magic/src/rain.c:68
 msgid "Click to place a rain drop onto your picture."
 msgstr "Clique pour déposer une goutte de pluie sur le dessin.."
 
 #
 #
-#: ../../magic/src/rain.c:68
+#: ../../magic/src/rain.c:69
 msgid "Click to cover your picture with rain drops."
 msgstr "Clique pour remplir le dessin avec des gouttes de pluie."
 
@@ -1043,7 +1059,9 @@ msgstr ""
 #
 #: ../../magic/src/sharpen.c:78
 msgid "Click and move the mouse to trace edges in parts of your picture."
-msgstr "Clique et déplace la souris pour avoir localement le contour des objets dessinés."
+msgstr ""
+"Clique et déplace la souris pour avoir localement le contour des objets "
+"dessinés."
 
 #
 #: ../../magic/src/sharpen.c:79
@@ -1063,7 +1081,8 @@ msgstr "Clique pour affiner tout le dessin."
 #
 #: ../../magic/src/sharpen.c:82
 msgid "Click and move the mouse to create a black and white silhouette."
-msgstr "Clique et déplace la souris pour avoir localement le dessin en noir et blanc."
+msgstr ""
+"Clique et déplace la souris pour avoir localement le dessin en noir et blanc."
 
 #
 #: ../../magic/src/sharpen.c:83
@@ -1114,8 +1133,7 @@ msgstr "Couleur+Blanc"
 #: ../../magic/src/tint.c:75
 msgid ""
 "Click and move the mouse around to change the color of parts of your picture."
-msgstr ""
-"Clique et déplace la souris pour changer la couleur localement."
+msgstr "Clique et déplace la souris pour changer la couleur localement."
 
 #
 #: ../../magic/src/tint.c:76
@@ -1132,7 +1150,8 @@ msgstr ""
 
 #: ../../magic/src/tint.c:78
 msgid "Click to turn your entire picture into white and a color you choose."
-msgstr "Clique pour obtenir toute l'image en blanc et une seule couleur que tu as "
+msgstr ""
+"Clique pour obtenir toute l'image en blanc et une seule couleur que tu as "
 "choisie."
 
 #: ../../magic/src/toothpaste.c:65
@@ -1141,7 +1160,8 @@ msgstr "Dentifrice"
 
 #: ../../magic/src/toothpaste.c:68
 msgid "Click and drag to squirt toothpaste onto your picture."
-msgstr "Clique et déplace la souris pour faire gicler du dentifrice sur le dessin."
+msgstr ""
+"Clique et déplace la souris pour faire gicler du dentifrice sur le dessin."
 
 #: ../../magic/src/tv.c:72
 msgid "TV"
@@ -1150,7 +1170,8 @@ msgstr ""
 #
 #: ../../magic/src/tv.c:74
 msgid "Click to make your picture look like it's on television."
-msgstr "Clique, et tu verras ton dessin comme s'il apparaissait à la télévision."
+msgstr ""
+"Clique, et tu verras ton dessin comme s'il apparaissait à la télévision."
 
 #: ../../magic/src/waves.c:75
 msgid "Waves"

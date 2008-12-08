@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: he\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-11-01 21:57+0000\n"
+"POT-Creation-Date: 2008-12-07 19:03-0800\n"
 "PO-Revision-Date: 2008-08-08 16:02+0200\n"
 "Last-Translator: Guy Hed <guy.hed@weizmann.ac.il>\n"
 "Language-Team: Hebrew <mdk-hebrew@iglu.org.il>\n"
@@ -385,7 +385,7 @@ msgstr "חדש"
 #. Open a saved picture
 #. buttons for the file open dialog
 #. Open dialog: 'Open' button, to load the selected picture
-#: ../tools.h:75 ../tuxpaint.c:7958
+#: ../tools.h:75 ../tuxpaint.c:7974
 msgid "Open"
 msgstr "פתיחה"
 
@@ -499,174 +499,181 @@ msgid "OK then… Let’s keep drawing this one!"
 msgstr "בסדר... נמשיך לצייר את התמונה הזאת!"
 
 #. Prompt to confirm user wishes to quit
-#: ../tuxpaint.c:1842
+#: ../tuxpaint.c:1855
 msgid "Do you really want to quit?"
 msgstr "האם ברצונך לצאת?"
 
 #. Quit prompt positive response (quit)
-#: ../tuxpaint.c:1845
+#: ../tuxpaint.c:1858
 msgid "Yes, I'm done!"
 msgstr "כן, אני סיימתי!"
 
 #. Quit prompt negative response (don't quit)
-#: ../tuxpaint.c:1848 ../tuxpaint.c:1875
+#: ../tuxpaint.c:1861 ../tuxpaint.c:1888
 msgid "No, take me back!"
 msgstr "לא, תחזיר אותי!"
 
 #. Current picture is not saved; user is quitting
-#: ../tuxpaint.c:1852
+#: ../tuxpaint.c:1865
 msgid "If you quit, you’ll lose your picture! Save it?"
 msgstr "יציאה ללא שמירה תגרום לאיבוד הציור שלך! האם לשמור אותו?"
 
-#: ../tuxpaint.c:1853 ../tuxpaint.c:1858
+#: ../tuxpaint.c:1866 ../tuxpaint.c:1871
 msgid "Yes, save it!"
 msgstr "כן, שמור אותו!"
 
-#: ../tuxpaint.c:1854 ../tuxpaint.c:1859
+#: ../tuxpaint.c:1867 ../tuxpaint.c:1872
 msgid "No, don't bother saving!"
 msgstr "לא, אל תטרח לשמור!"
 
 #. Current picture is not saved; user is opening another picture
-#: ../tuxpaint.c:1857
+#: ../tuxpaint.c:1870
 msgid "Save your picture first?"
 msgstr "האם קודם לשמור את התמונה שלך?"
 
 #. Error opening picture
-#: ../tuxpaint.c:1862
+#: ../tuxpaint.c:1875
 msgid "Can’t open that picture!"
 msgstr "לא ניתן לפתוח תמונה זו!"
 
 #. Generic dialog dismissal
-#: ../tuxpaint.c:1865 ../tuxpaint.c:1870 ../tuxpaint.c:1879 ../tuxpaint.c:1883
-#: ../tuxpaint.c:1892
+#: ../tuxpaint.c:1878 ../tuxpaint.c:1883 ../tuxpaint.c:1892 ../tuxpaint.c:1899
+#: ../tuxpaint.c:1908
 msgid "OK"
 msgstr "בסדר"
 
 #. Notification that 'Open' dialog has nothing to show
-#: ../tuxpaint.c:1869
+#: ../tuxpaint.c:1882
 msgid "There are no saved files!"
 msgstr "אין קבצים שמורים!"
 
 #. Verification of print action
-#: ../tuxpaint.c:1873
+#: ../tuxpaint.c:1886
 msgid "Print your picture now?"
 msgstr "האם להדפיס את הציור עכשיו?"
 
-#: ../tuxpaint.c:1874
+#: ../tuxpaint.c:1887
 msgid "Yes, print it!"
 msgstr "כן, הדפס אותו!"
 
 #. Confirmation of successful (we hope) printing
-#: ../tuxpaint.c:1878
+#: ../tuxpaint.c:1891
 msgid "Your picture has been printed!"
 msgstr "הציור שלך הודפס!"
 
+#. We got an error printing
+#: ../tuxpaint.c:1895
+#, fuzzy
+#| msgid "Your picture has been printed!"
+msgid "Sorry! Your picture could not be printed!"
+msgstr "הציור שלך הודפס!"
+
 #. Notification that it's too soon to print again (--printdelay option is in effect)
-#: ../tuxpaint.c:1882
+#: ../tuxpaint.c:1898
 msgid "You can’t print yet!"
 msgstr "עדיין אין באפשרותך להדפיס!"
 
 #. Prompt to confirm erasing a picture in the Open dialog
-#: ../tuxpaint.c:1886
+#: ../tuxpaint.c:1902
 msgid "Erase this picture?"
 msgstr "למחוק ציור זה?"
 
-#: ../tuxpaint.c:1887
+#: ../tuxpaint.c:1903
 msgid "Yes, erase it!"
 msgstr "כן, מחק אותו!"
 
-#: ../tuxpaint.c:1888
+#: ../tuxpaint.c:1904
 msgid "No, don't erase it!"
 msgstr "לא, אל תמחק אותו!"
 
 #. Reminder that Mouse Button 1 is the button to use in Tux Paint
-#: ../tuxpaint.c:1891
+#: ../tuxpaint.c:1907
 msgid "Remember to use the left mouse button!"
 msgstr "זכרי להשתמש בכפתור השמאלי של העכבר!"
 
 #. Sound has been muted (silenced) via keyboard shortcut
-#: ../tuxpaint.c:2006
+#: ../tuxpaint.c:2022
 msgid "Sound muted."
 msgstr "קול מושתק."
 
 #. Sound has been unmuted (unsilenced) via keyboard shortcut
-#: ../tuxpaint.c:2011
+#: ../tuxpaint.c:2027
 msgid "Sound unmuted."
 msgstr "קול לא מושתק."
 
 #. Wait while Text tool finishes loading fonts
-#: ../tuxpaint.c:2477
+#: ../tuxpaint.c:2493
 msgid "Please wait…"
 msgstr "אנא חכה..."
 
-#: ../tuxpaint.c:7181
+#: ../tuxpaint.c:7197
 msgid "Pick a color."
 msgstr "בחרי צבע."
 
 #. Open dialog: 'Erase' button, to erase/deleted the selected picture
-#: ../tuxpaint.c:7961
+#: ../tuxpaint.c:7977
 msgid "Erase"
 msgstr "מחק"
 
 #. Open dialog: 'Slides' button, to switch to slide show mode
-#: ../tuxpaint.c:7964
+#: ../tuxpaint.c:7980
 msgid "Slides"
 msgstr "שקופיות"
 
 #. Open dialog: 'Back' button, to dismiss Open dialog without opening a picture
-#: ../tuxpaint.c:7967
+#: ../tuxpaint.c:7983
 msgid "Back"
 msgstr "חזרה"
 
 #. Slideshow: 'Next' button, to load next slide (image)
-#: ../tuxpaint.c:7970
+#: ../tuxpaint.c:7986
 msgid "Next"
 msgstr "הבא"
 
 #. Slideshow: 'Play' button, to begin a slideshow sequence
-#: ../tuxpaint.c:7973
+#: ../tuxpaint.c:7989
 msgid "Play"
 msgstr "הצג"
 
 #. Label for 'Letters' buttons (font selector, down the right when the Text tool is being used); used to show the difference between font faces
-#: ../tuxpaint.c:8620
+#: ../tuxpaint.c:8636
 msgid "Aa"
 msgstr "Aa"
 
 #. Admittedly stupid way of determining which keys can be used for
 #. positive and negative responses in dialogs (e.g., [Y] (for 'yes') in English)
-#: ../tuxpaint.c:11620
+#: ../tuxpaint.c:11636
 msgid "Yes"
 msgstr "כן"
 
-#: ../tuxpaint.c:11624
+#: ../tuxpaint.c:11640
 msgid "No"
 msgstr "לא"
 
 #. Prompt to ask whether user wishes to save over old version of their file
-#: ../tuxpaint.c:12576
+#: ../tuxpaint.c:12592
 msgid "Replace the picture with your changes?"
 msgstr "החלף תמונה עם השינויים שעשית?"
 
 #. Positive response to saving over old version
 #. (like a 'File:Save' action in other applications)
-#: ../tuxpaint.c:12580
+#: ../tuxpaint.c:12596
 msgid "Yes, replace the old one!"
 msgstr "כן, החלף את הישנה!"
 
 #. Negative response to saving over old version (saves a new image)
 #. (like a 'File:Save As...' action in other applications)
-#: ../tuxpaint.c:12584
+#: ../tuxpaint.c:12600
 msgid "No, save a new file!"
 msgstr "לא, שמור בקובץ חדש!"
 
-#: ../tuxpaint.c:13347
+#: ../tuxpaint.c:13363
 msgid "Choose the picture you want, then click “Open”."
 msgstr "בחרי תמונה, ואז לחצי \"פתיחה\"."
 
 #. Let user choose images:
 #. Instructions for Slideshow file dialog (FIXME: Make a #define)
-#: ../tuxpaint.c:14334 ../tuxpaint.c:14648
+#: ../tuxpaint.c:14350 ../tuxpaint.c:14664
 msgid "Choose the pictures you want, then click “Play”."
 msgstr "בחרי תמונה, ואז לחצי \"הצג\"."
 
@@ -986,16 +993,16 @@ msgstr "קשת בענן"
 msgid "You can draw in rainbow colors!"
 msgstr "יש באפשרותך לצייר בצבעי הקשת!"
 
-#: ../../magic/src/rain.c:64
+#: ../../magic/src/rain.c:65
 msgid "Rain"
 msgstr "גשם"
 
-#: ../../magic/src/rain.c:67
+#: ../../magic/src/rain.c:68
 #, fuzzy
 msgid "Click to place a rain drop onto your picture."
 msgstr "לחצי לטיפטוף טיפת גשם על התמונה."
 
-#: ../../magic/src/rain.c:68
+#: ../../magic/src/rain.c:69
 #, fuzzy
 msgid "Click to cover your picture with rain drops."
 msgstr "לחצי לכיסוי התמונה בטיפות גשם."

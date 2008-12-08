@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Tuxpaint 0.9.9\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-11-01 21:57+0000\n"
+"POT-Creation-Date: 2008-12-07 19:03-0800\n"
 "PO-Revision-Date: 2004-12-10 18:11+0200\n"
 "Last-Translator: Gintaras Goštautas <gintaras@nes.lt>\n"
 "Language-Team: Lithuanian <komp_lt@konf.lt>\n"
@@ -387,7 +387,7 @@ msgstr "Naujas"
 #. Open a saved picture
 #. buttons for the file open dialog
 #. Open dialog: 'Open' button, to load the selected picture
-#: ../tools.h:75 ../tuxpaint.c:7958
+#: ../tools.h:75 ../tuxpaint.c:7974
 msgid "Open"
 msgstr "Atidaryti"
 
@@ -503,174 +503,181 @@ msgid "OK then… Let’s keep drawing this one!"
 msgstr "Gerai...Piešk toliau šitą!"
 
 #. Prompt to confirm user wishes to quit
-#: ../tuxpaint.c:1842
+#: ../tuxpaint.c:1855
 msgid "Do you really want to quit?"
 msgstr "Ar tikrai norite išeiti?"
 
 #. Quit prompt positive response (quit)
-#: ../tuxpaint.c:1845
+#: ../tuxpaint.c:1858
 msgid "Yes, I'm done!"
 msgstr "Taip, aš baigiau!"
 
 #. Quit prompt negative response (don't quit)
-#: ../tuxpaint.c:1848 ../tuxpaint.c:1875
+#: ../tuxpaint.c:1861 ../tuxpaint.c:1888
 msgid "No, take me back!"
 msgstr "Ne, grąžinkite mane atgal!"
 
 #. Current picture is not saved; user is quitting
-#: ../tuxpaint.c:1852
+#: ../tuxpaint.c:1865
 msgid "If you quit, you’ll lose your picture! Save it?"
 msgstr "Jeigu išeisite, prarasite savo piešinį! Ar išsaugoti jį?"
 
-#: ../tuxpaint.c:1853 ../tuxpaint.c:1858
+#: ../tuxpaint.c:1866 ../tuxpaint.c:1871
 msgid "Yes, save it!"
 msgstr "Taip, išsaugoti!"
 
-#: ../tuxpaint.c:1854 ../tuxpaint.c:1859
+#: ../tuxpaint.c:1867 ../tuxpaint.c:1872
 msgid "No, don't bother saving!"
 msgstr "Ne, nereikia!"
 
 #. Current picture is not saved; user is opening another picture
-#: ../tuxpaint.c:1857
+#: ../tuxpaint.c:1870
 msgid "Save your picture first?"
 msgstr "Ar prieš tai išsaugoti jūsų piešinį?"
 
 #. Error opening picture
-#: ../tuxpaint.c:1862
+#: ../tuxpaint.c:1875
 msgid "Can’t open that picture!"
 msgstr "Negalima atidaryti šio piešinio!"
 
 #. Generic dialog dismissal
-#: ../tuxpaint.c:1865 ../tuxpaint.c:1870 ../tuxpaint.c:1879 ../tuxpaint.c:1883
-#: ../tuxpaint.c:1892
+#: ../tuxpaint.c:1878 ../tuxpaint.c:1883 ../tuxpaint.c:1892 ../tuxpaint.c:1899
+#: ../tuxpaint.c:1908
 msgid "OK"
 msgstr "Gerai"
 
 #. Notification that 'Open' dialog has nothing to show
-#: ../tuxpaint.c:1869
+#: ../tuxpaint.c:1882
 msgid "There are no saved files!"
 msgstr "Nėra išsaugotų bylų!"
 
 #. Verification of print action
-#: ../tuxpaint.c:1873
+#: ../tuxpaint.c:1886
 msgid "Print your picture now?"
 msgstr "Ar spausdinti jūsų piešinį dabar?"
 
-#: ../tuxpaint.c:1874
+#: ../tuxpaint.c:1887
 msgid "Yes, print it!"
 msgstr "Taip, atspaudinti!"
 
 #. Confirmation of successful (we hope) printing
-#: ../tuxpaint.c:1878
+#: ../tuxpaint.c:1891
 msgid "Your picture has been printed!"
 msgstr "Jūsų piešinys buvo atspausdintas!"
 
+#. We got an error printing
+#: ../tuxpaint.c:1895
+#, fuzzy
+#| msgid "Your picture has been printed!"
+msgid "Sorry! Your picture could not be printed!"
+msgstr "Jūsų piešinys buvo atspausdintas!"
+
 #. Notification that it's too soon to print again (--printdelay option is in effect)
-#: ../tuxpaint.c:1882
+#: ../tuxpaint.c:1898
 msgid "You can’t print yet!"
 msgstr "Jūs dar negalite spausdinti!"
 
 #. Prompt to confirm erasing a picture in the Open dialog
-#: ../tuxpaint.c:1886
+#: ../tuxpaint.c:1902
 msgid "Erase this picture?"
 msgstr "Ar ištrinti šį piešinį?"
 
-#: ../tuxpaint.c:1887
+#: ../tuxpaint.c:1903
 msgid "Yes, erase it!"
 msgstr "Taip, ištrinti!"
 
-#: ../tuxpaint.c:1888
+#: ../tuxpaint.c:1904
 msgid "No, don't erase it!"
 msgstr "Ne, neištrinti!"
 
 #. Reminder that Mouse Button 1 is the button to use in Tux Paint
-#: ../tuxpaint.c:1891
+#: ../tuxpaint.c:1907
 msgid "Remember to use the left mouse button!"
 msgstr "Nepamirškite naudoti kairiojo pelės klavišo!"
 
 #. Sound has been muted (silenced) via keyboard shortcut
-#: ../tuxpaint.c:2006
+#: ../tuxpaint.c:2022
 msgid "Sound muted."
 msgstr "Garsas išjungtas"
 
 #. Sound has been unmuted (unsilenced) via keyboard shortcut
-#: ../tuxpaint.c:2011
+#: ../tuxpaint.c:2027
 msgid "Sound unmuted."
 msgstr "Garsas įjungtas"
 
 #. Wait while Text tool finishes loading fonts
-#: ../tuxpaint.c:2477
+#: ../tuxpaint.c:2493
 msgid "Please wait…"
 msgstr "Palaukite..."
 
-#: ../tuxpaint.c:7181
+#: ../tuxpaint.c:7197
 msgid "Pick a color."
 msgstr "Pasirinkite spalvą"
 
 #. Open dialog: 'Erase' button, to erase/deleted the selected picture
-#: ../tuxpaint.c:7961
+#: ../tuxpaint.c:7977
 msgid "Erase"
 msgstr "Ištrinti"
 
 #. Open dialog: 'Slides' button, to switch to slide show mode
-#: ../tuxpaint.c:7964
+#: ../tuxpaint.c:7980
 msgid "Slides"
 msgstr "Skaidrės"
 
 #. Open dialog: 'Back' button, to dismiss Open dialog without opening a picture
-#: ../tuxpaint.c:7967
+#: ../tuxpaint.c:7983
 msgid "Back"
 msgstr "Grįžti atgal"
 
 #. Slideshow: 'Next' button, to load next slide (image)
-#: ../tuxpaint.c:7970
+#: ../tuxpaint.c:7986
 msgid "Next"
 msgstr "Toliau"
 
 #. Slideshow: 'Play' button, to begin a slideshow sequence
-#: ../tuxpaint.c:7973
+#: ../tuxpaint.c:7989
 msgid "Play"
 msgstr "Pradėti"
 
 #. Label for 'Letters' buttons (font selector, down the right when the Text tool is being used); used to show the difference between font faces
-#: ../tuxpaint.c:8620
+#: ../tuxpaint.c:8636
 msgid "Aa"
 msgstr "Aa"
 
 #. Admittedly stupid way of determining which keys can be used for
 #. positive and negative responses in dialogs (e.g., [Y] (for 'yes') in English)
-#: ../tuxpaint.c:11620
+#: ../tuxpaint.c:11636
 msgid "Yes"
 msgstr "Taip"
 
-#: ../tuxpaint.c:11624
+#: ../tuxpaint.c:11640
 msgid "No"
 msgstr "Ne"
 
 #. Prompt to ask whether user wishes to save over old version of their file
-#: ../tuxpaint.c:12576
+#: ../tuxpaint.c:12592
 msgid "Replace the picture with your changes?"
 msgstr "Ar perrašyti paveikslėlį su Jūsų pakeitimais?"
 
 #. Positive response to saving over old version
 #. (like a 'File:Save' action in other applications)
-#: ../tuxpaint.c:12580
+#: ../tuxpaint.c:12596
 msgid "Yes, replace the old one!"
 msgstr "Taip, perrašykim senąjį!"
 
 #. Negative response to saving over old version (saves a new image)
 #. (like a 'File:Save As...' action in other applications)
-#: ../tuxpaint.c:12584
+#: ../tuxpaint.c:12600
 msgid "No, save a new file!"
 msgstr "Ne, išsaugokim į naują bylą!"
 
-#: ../tuxpaint.c:13347
+#: ../tuxpaint.c:13363
 msgid "Choose the picture you want, then click “Open”."
 msgstr "Išsirinkite norimą piešinį, po to Spustelėkite 'Open'."
 
 #. Let user choose images:
 #. Instructions for Slideshow file dialog (FIXME: Make a #define)
-#: ../tuxpaint.c:14334 ../tuxpaint.c:14648
+#: ../tuxpaint.c:14350 ../tuxpaint.c:14664
 msgid "Choose the pictures you want, then click “Play”."
 msgstr "Išsirinkite norimus paveikslėlius, po to Spustelėkite “Pradėti”."
 
@@ -1002,17 +1009,17 @@ msgstr "Vaivorykštė"
 msgid "You can draw in rainbow colors!"
 msgstr "Jūs galite piešti vaivorykštės spalvomis!"
 
-#: ../../magic/src/rain.c:64
+#: ../../magic/src/rain.c:65
 #, fuzzy
 msgid "Rain"
 msgstr "Vaivorykštė"
 
-#: ../../magic/src/rain.c:67
+#: ../../magic/src/rain.c:68
 #, fuzzy
 msgid "Click to place a rain drop onto your picture."
 msgstr "Spustelėkite ir gausite veidrodinį atspindį."
 
-#: ../../magic/src/rain.c:68
+#: ../../magic/src/rain.c:69
 #, fuzzy
 msgid "Click to cover your picture with rain drops."
 msgstr "Spustelėkite ir gausite veidrodinį atspindį."
