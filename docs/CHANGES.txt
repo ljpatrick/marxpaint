@@ -126,8 +126,14 @@ $Id$
     * Georgian translation created.
       Gia Shervashidze <giasher@gmail.com>
 
+    * Gujarati translation
+      Kartik Mistry <kartik.mistry@gmail.com>
+
     * Hebrew translation
       Guy Hed <guy.hed@weizmann.ac.il>
+
+    * Irish Gaelic
+      Kevin Patrick Scannell <kscanne@gmail.com>
 
     * Italian translation
       Simona Riva <simona.riva@tiscali.it>
