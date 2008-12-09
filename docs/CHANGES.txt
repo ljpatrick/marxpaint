@@ -100,6 +100,8 @@ $Id$
       been typed (e.g., Hebrew) so that they are drawn in the right direction.
       (Mixing RtoL and LtoR works (e.g., Hebrew with numerals))
 
+    * Updated to the latest version (2.27) of DejaVu Sans Regular for UI font.
+
   * New localizations:
     ------------------
     * Shuswap (Secwepemctín) translation
