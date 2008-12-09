@@ -412,8 +412,7 @@ msgstr "Choisis une figurine pour l'insérer dans ton dessin."
 #. Line tool instructions
 #: ../tools.h:98
 msgid "Click to start drawing a line. Let go to complete it."
-msgstr ""
-"Clique pour commencer à dessiner une ligne.Puis continue pour la compléter."
+msgstr "Clique pour commencer à dessiner une ligne. Puis continue pour la compléter."
 
 #. Shape tool instructions
 #: ../tools.h:101
@@ -427,8 +426,7 @@ msgstr ""
 #. Text tool instructions
 #: ../tools.h:104
 msgid "Choose a style of text. Click on your drawing and you can start typing."
-msgstr ""
-"Choisis un style de texte. Clique sur ton dessin et commence à taper ton "
+msgstr "Choisis un style de texte. Clique sur ton dessin et commence à taper ton "
 "texte."
 
 #. Magic tool instruction
@@ -454,8 +452,7 @@ msgstr "Effacer !"
 #. Response to 'start a new image' action
 #: ../tools.h:119
 msgid "Pick a color or picture with which to start a new drawing."
-msgstr ""
-"Choisis une image ou une couleur pour l'insérer dans un nouveau dessin."
+msgstr "Choisis une image ou une couleur pour l'insérer dans un nouveau dessin."
 
 #. Response to 'open' action (while file dialog is being constructed)
 #: ../tools.h:122
@@ -562,10 +559,8 @@ msgstr "Ton image a été imprimée !"
 
 #. We got an error printing
 #: ../tuxpaint.c:1895
-#, fuzzy
-#| msgid "Your picture has been printed!"
 msgid "Sorry! Your picture could not be printed!"
-msgstr "Ton image a été imprimée !"
+msgstr "Désolé, ton image n'a pas pu être imprimée !"
 
 #. Notification that it's too soon to print again (--printdelay option is in effect)
 #: ../tuxpaint.c:1898
@@ -716,8 +711,7 @@ msgstr "Goutte"
 
 #: ../../magic/src/blocks_chalk_drip.c:146
 msgid "Click and move the mouse around to make the picture blocky."
-msgstr ""
-"Clique et déplace la souris pour transformer l'image en un ensemble de "
+msgstr "Clique et déplace la souris pour transformer l'image en un ensemble de "
 "petits blocs."
 
 #: ../../magic/src/blocks_chalk_drip.c:149
@@ -771,8 +765,7 @@ msgstr "B.D."
 
 #: ../../magic/src/cartoon.c:87
 msgid "Click and move the mouse around to turn the picture into a cartoon."
-msgstr ""
-"Clique et déplace la souris pour que ton dessin ressemble à une bande "
+msgstr "Clique et déplace la souris pour que ton dessin ressemble à une bande "
 "dessinée."
 
 #: ../../magic/src/confetti.c:63
@@ -850,8 +843,7 @@ msgstr "Fleur"
 
 #: ../../magic/src/flower.c:130
 msgid "Click and drag to draw a flower stalk. Let go to finish the flower."
-msgstr ""
-"Clique et déplace la souris pour dessiner une fleur. Relâche pour la finir."
+msgstr "Clique et déplace la souris pour dessiner une fleur. Relâche pour la finir."
 
 #: ../../magic/src/foam.c:104
 msgid "Foam"
@@ -859,8 +851,7 @@ msgstr "Mousse"
 
 #: ../../magic/src/foam.c:110
 msgid "Click and drag the mouse to cover an area with foamy bubbles."
-msgstr ""
-"Clique et fais glisser la souris pour remplir une surface avec des bulles de "
+msgstr "Clique et fais glisser la souris pour remplir une surface avec des bulles de "
 "savon."
 
 #: ../../magic/src/fold.c:60
@@ -879,8 +870,7 @@ msgstr "Carreau de verre"
 
 #: ../../magic/src/glasstile.c:90
 msgid "Click and drag the mouse to put glass tile over your picture."
-msgstr ""
-"Clique et déplace la souris pour mettre des carreaux de verre par endroits."
+msgstr "Clique et déplace la souris pour mettre des carreaux de verre par endroits."
 
 #
 #: ../../magic/src/glasstile.c:92
@@ -893,8 +883,7 @@ msgstr "Herbe"
 
 #: ../../magic/src/grass.c:98
 msgid "Click and move to draw grass. Don’t forget the dirt!"
-msgstr ""
-"Clique et déplace la souris pour dessiner de l'herbe. N'oublie pas la "
+msgstr "Clique et déplace la souris pour dessiner de l'herbe. N'oublie pas la "
 "poussière !"
 
 #: ../../magic/src/kalidescope.c:77
@@ -963,8 +952,7 @@ msgstr "Négatif"
 
 #: ../../magic/src/negative.c:80
 msgid "Click and move the mouse around to make your painting negative."
-msgstr ""
-"Clique et déplace la souris pour obtenir, par endroits, le dessin en négatif."
+msgstr "Clique et déplace la souris pour obtenir, par endroits, le dessin en négatif."
 
 #
 #: ../../magic/src/negative.c:83
@@ -1033,7 +1021,7 @@ msgstr "Rosace"
 
 #: ../../magic/src/rosette.c:90
 msgid "Picasso"
-msgstr ""
+msgstr "Picasso"
 
 #: ../../magic/src/rosette.c:95
 msgid "Click and start drawing your rosette."
@@ -1054,13 +1042,12 @@ msgstr "Affiner"
 
 #: ../../magic/src/sharpen.c:75
 msgid "Silhouette"
-msgstr ""
+msgstr "Silhouette"
 
 #
 #: ../../magic/src/sharpen.c:78
 msgid "Click and move the mouse to trace edges in parts of your picture."
-msgstr ""
-"Clique et déplace la souris pour avoir localement le contour des objets "
+msgstr "Clique et déplace la souris pour avoir localement le contour des objets "
 "dessinés."
 
 #
@@ -1081,8 +1068,7 @@ msgstr "Clique pour affiner tout le dessin."
 #
 #: ../../magic/src/sharpen.c:82
 msgid "Click and move the mouse to create a black and white silhouette."
-msgstr ""
-"Clique et déplace la souris pour avoir localement le dessin en noir et blanc."
+msgstr "Clique et déplace la souris pour avoir localement le dessin en noir et blanc."
 
 #
 #: ../../magic/src/sharpen.c:83
@@ -1133,7 +1119,8 @@ msgstr "Couleur+Blanc"
 #: ../../magic/src/tint.c:75
 msgid ""
 "Click and move the mouse around to change the color of parts of your picture."
-msgstr "Clique et déplace la souris pour changer la couleur localement."
+msgstr ""
+"Clique et déplace la souris pour changer la couleur localement."
 
 #
 #: ../../magic/src/tint.c:76
@@ -1150,8 +1137,7 @@ msgstr ""
 
 #: ../../magic/src/tint.c:78
 msgid "Click to turn your entire picture into white and a color you choose."
-msgstr ""
-"Clique pour obtenir toute l'image en blanc et une seule couleur que tu as "
+msgstr "Clique pour obtenir toute l'image en blanc et une seule couleur que tu as "
 "choisie."
 
 #: ../../magic/src/toothpaste.c:65
@@ -1160,18 +1146,16 @@ msgstr "Dentifrice"
 
 #: ../../magic/src/toothpaste.c:68
 msgid "Click and drag to squirt toothpaste onto your picture."
-msgstr ""
-"Clique et déplace la souris pour faire gicler du dentifrice sur le dessin."
+msgstr "Clique et déplace la souris pour faire gicler du dentifrice sur le dessin."
 
 #: ../../magic/src/tv.c:72
 msgid "TV"
-msgstr ""
+msgstr "TV"
 
 #
 #: ../../magic/src/tv.c:74
 msgid "Click to make your picture look like it's on television."
-msgstr ""
-"Clique, et tu verras ton dessin comme s'il apparaissait à la télévision."
+msgstr "Clique, et tu verras ton dessin comme s'il apparaissait à la télévision."
 
 #: ../../magic/src/waves.c:75
 msgid "Waves"
