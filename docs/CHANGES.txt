@@ -8,7 +8,7 @@ http://www.tuxpaint.org/
 
 $Id$
 
-2008.December.8 (0.9.21)
+2008.December.10 (0.9.21)
   * New Starters:
     -------------
     * Silver Frame
@@ -115,6 +115,9 @@ $Id$
     ---------------------
     * Arabic translation
       Tilo <Drfortilo@gmail.com>
+
+    * Basque
+      Juan Irigoien <juanirigoien@gmail.com>
 
     * Chinese (Simplified)
       Huang Zuzhen <zuzhenhuang@vip.sina.com>
