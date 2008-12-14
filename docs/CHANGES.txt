@@ -88,6 +88,10 @@ $Id$
     --------------------------
     * Adhering to Debian & FreeDesktop.org standards regarding .desktop file.
 
+  * Documentation Improvements:
+    ---------------------------
+    * Corrected location of config files for Mac OS X in OPTIONS docs.
+
   * Other Improvements:
     -------------------
     * Starter images no longer need to be created with alpha transparency.

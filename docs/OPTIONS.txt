@@ -9,7 +9,7 @@ Options Documentation
                            bill@newbreedsoftware.com
                             http://www.tuxpaint.org/
 
-                                October 26, 2008
+                               December 13, 2008
 
      ----------------------------------------------------------------------
 
@@ -30,7 +30,7 @@ Options Documentation
      The file is simply a plain text file containing the options you want
      enabled:
 
-Linux, Unix and Mac OS X Users
+Linux and Unix Users
 
        The file you should create is called ".tuxpaintrc" and it should be
        placed in your home directory. (a.k.a. "~/.tuxpaintrc" or
@@ -50,6 +50,11 @@ Linux, Unix and Mac OS X Users
          command-line option:
 
            --nosysconfig
+
+Mac OS X Users
+
+       The file you should create is called "tuxpaint.cfg" and it should be
+       placed in ... FIXME
 
 Windows Users
 
