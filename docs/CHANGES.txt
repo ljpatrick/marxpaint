@@ -8,7 +8,7 @@ http://www.tuxpaint.org/
 
 $Id$
 
-2008.December.10 (0.9.21)
+2008.December.15 (0.9.21)
   * New Starters:
     -------------
     * Silver Frame
@@ -122,6 +122,9 @@ $Id$
 
     * Basque
       Juan Irigoien <juanirigoien@gmail.com>
+
+    * Brazilian Portuguese
+      Frederico Goncalves Guimaraes <frederico@teia.bio.br>
 
     * Chinese (Simplified)
       Huang Zuzhen <zuzhenhuang@vip.sina.com>
