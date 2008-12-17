@@ -126,6 +126,9 @@ $Id$
     * Brazilian Portuguese
       Frederico Goncalves Guimaraes <frederico@teia.bio.br>
 
+    * Catalan translation
+      Pere Pujal i Carabantes <pere@fornol.no-ip.org>
+
     * Chinese (Simplified)
       Huang Zuzhen <zuzhenhuang@vip.sina.com>
 
