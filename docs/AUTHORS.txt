@@ -7,7 +7,7 @@ bill@newbreedsoftware.com
 http://www.tuxpaint.org/
 
 
-June 17, 2002 - November 7, 2008
+June 17, 2002 - December 17, 2008
 
 $Id$
 
@@ -467,6 +467,7 @@ $Id$
     Frederico Goncalves Guimaraes <frederico@teia.bio.br>
  
   * Portuguese (Portugal)
+    Sergio Marques <smarquespt@gmail.com>
     Ricardo Cruz <rpmcruz@clix.pt>
     Helder Correia <helder.pereira.correia@gmail.com>
     

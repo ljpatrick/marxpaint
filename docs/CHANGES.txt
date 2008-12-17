@@ -8,7 +8,7 @@ http://www.tuxpaint.org/
 
 $Id$
 
-2008.December.15 (0.9.21)
+2008.December.17 (0.9.21)
   * New Starters:
     -------------
     * Silver Frame
@@ -149,6 +149,9 @@ $Id$
 
     * Italian translation
       Simona Riva <simona.riva@tiscali.it>
+
+    * Portuguese
+      Sergio Marques <smarquespt@gmail.com>
 
     * Romanian
       Sorin Paliga <sorin.paliga@gmail.com>
