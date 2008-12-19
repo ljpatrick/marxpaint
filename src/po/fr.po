@@ -1085,11 +1085,11 @@ msgstr "Clique et déplace la souris pour déplacer ton image dans le cadre."
 
 #: ../../magic/src/smudge.c:77
 msgid "Smudge"
-msgstr "Salir"
+msgstr "Baver"
 
 #: ../../magic/src/smudge.c:84
 msgid "Click and move the mouse around to smudge the picture."
-msgstr "Clique et déplace la souris pour salir l'image."
+msgstr "Clique et déplace la souris pour faire baver l'image."
 
 #: ../../magic/src/snow.c:68
 msgid "Snow Ball"
