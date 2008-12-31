@@ -924,7 +924,7 @@ msgstr "Spegel"
 
 #: ../../magic/src/mirror_flip.c:96
 msgid "Flip"
-msgstr "Opp-ned"
+msgstr "Opp ned"
 
 #: ../../magic/src/mirror_flip.c:106
 msgid "Click to make a mirror image."
@@ -1007,11 +1007,11 @@ msgstr "Trykk for å dekkja teikninga med regndropar."
 
 #: ../../magic/src/ripples.c:81
 msgid "Ripples"
-msgstr "Bølgjer"
+msgstr "Vassringar"
 
 #: ../../magic/src/ripples.c:87
 msgid "Click to make ripples appear over your picture."
-msgstr "Hald inne knappen og flytt rundt for å laga bølgjer over teikninga."
+msgstr "Hald inne knappen og flytt rundt for å laga ringar av vatn over teikninga."
 
 #: ../../magic/src/rosette.c:90
 msgid "Rosette"
