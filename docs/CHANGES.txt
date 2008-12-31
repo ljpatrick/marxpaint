@@ -8,7 +8,7 @@ http://www.tuxpaint.org/
 
 $Id$
 
-2008.December.24 (0.9.21)
+2008.December.31 (0.9.21)
   * New Starters:
     -------------
     * Silver Frame
