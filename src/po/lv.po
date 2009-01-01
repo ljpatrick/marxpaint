@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: lv\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-12-07 19:03-0800\n"
+"POT-Creation-Date: 2008-12-31 16:59-0800\n"
 "PO-Revision-Date: 2007-05-14 18:13-0700\n"
 "Last-Translator: Raivis Strogonovs <raivucis@gmail.com>\n"
 "Language-Team: Valoda <raivucis@gmail.com>\n"
@@ -503,7 +503,9 @@ msgstr "Vai tu tiešām gribi ziet :( ?"
 
 #. Quit prompt positive response (quit)
 #: ../tuxpaint.c:1858
-msgid "Yes, I'm done!"
+#, fuzzy
+#| msgid "Yes, I'm done!"
+msgid "Yes, I’m done!"
 msgstr "Jā, esmu beidzis!"
 
 #. Quit prompt negative response (don't quit)
@@ -521,7 +523,9 @@ msgid "Yes, save it!"
 msgstr "Ja, saglabāt!"
 
 #: ../tuxpaint.c:1867 ../tuxpaint.c:1872
-msgid "No, don't bother saving!"
+#, fuzzy
+#| msgid "No, don't bother saving!"
+msgid "No, don’t bother saving!"
 msgstr "Nē, nesaglabāšanu!"
 
 #. Current picture is not saved; user is opening another picture
@@ -581,7 +585,9 @@ msgid "Yes, erase it!"
 msgstr "Jā, dzēs to!"
 
 #: ../tuxpaint.c:1904
-msgid "No, don't erase it!"
+#, fuzzy
+#| msgid "No, don't erase it!"
+msgid "No, don’t erase it!"
 msgstr "Nē, nedzēs, traks vai?!"
 
 #. Reminder that Mouse Button 1 is the button to use in Tux Paint
@@ -999,11 +1005,11 @@ msgstr ""
 msgid "Click to add noise to your entire picture."
 msgstr "Nospied, pieturi peles pogu un velc peli lai zīmējumā mainītu krāsas."
 
-#: ../../magic/src/rails.c:75
+#: ../../magic/src/rails.c:100
 msgid "Rails"
 msgstr ""
 
-#: ../../magic/src/rails.c:77
+#: ../../magic/src/rails.c:102
 #, fuzzy
 msgid "Click and drag to draw train track rails on your picture."
 msgstr ""

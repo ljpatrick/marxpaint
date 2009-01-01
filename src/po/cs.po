@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: cs\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-12-07 19:03-0800\n"
+"POT-Creation-Date: 2008-12-31 16:59-0800\n"
 "PO-Revision-Date: 2006-06-21 12:50+0200\n"
 "Last-Translator: Václav Čermák <vaclav.cermak@gmail.com>\n"
 "Language-Team:  <cs@li.org>\n"
@@ -503,7 +503,9 @@ msgstr "Opravdu chceš malování ukončit?"
 
 #. Quit prompt positive response (quit)
 #: ../tuxpaint.c:1858
-msgid "Yes, I'm done!"
+#, fuzzy
+#| msgid "Yes, I'm done!"
+msgid "Yes, I’m done!"
 msgstr "Ano, jsem hotov!"
 
 #. Quit prompt negative response (don't quit)
@@ -521,7 +523,9 @@ msgid "Yes, save it!"
 msgstr "Ano, uložit!"
 
 #: ../tuxpaint.c:1867 ../tuxpaint.c:1872
-msgid "No, don't bother saving!"
+#, fuzzy
+#| msgid "No, don't bother saving!"
+msgid "No, don’t bother saving!"
 msgstr "Ne, nebudeme ho ukládat!"
 
 #. Current picture is not saved; user is opening another picture
@@ -581,7 +585,9 @@ msgid "Yes, erase it!"
 msgstr "Ano smazat!"
 
 #: ../tuxpaint.c:1904
-msgid "No, don't erase it!"
+#, fuzzy
+#| msgid "No, don't erase it!"
+msgid "No, don’t erase it!"
 msgstr "Ne, nemazat!"
 
 #. Reminder that Mouse Button 1 is the button to use in Tux Paint
@@ -981,11 +987,11 @@ msgstr "Klepni a pohybuj myší - rozostříš obrázek."
 msgid "Click to add noise to your entire picture."
 msgstr "Klepni a pohybuj myší - změníš barvy obrázku."
 
-#: ../../magic/src/rails.c:75
+#: ../../magic/src/rails.c:100
 msgid "Rails"
 msgstr ""
 
-#: ../../magic/src/rails.c:77
+#: ../../magic/src/rails.c:102
 #, fuzzy
 msgid "Click and drag to draw train track rails on your picture."
 msgstr "Klepni a pohybuj myší - rozostříš obrázek."

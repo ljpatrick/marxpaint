@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint 0.9.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-12-07 19:03-0800\n"
+"POT-Creation-Date: 2008-12-31 16:59-0800\n"
 "PO-Revision-Date: 2004-12-04 15:45-0800\n"
 "Last-Translator: Alberto Escudero <aep@it46.se>\n"
 "Language-Team: Swahili\n"
@@ -508,7 +508,7 @@ msgstr "Unataka kuagana kweli?"
 
 #. Quit prompt positive response (quit)
 #: ../tuxpaint.c:1858
-msgid "Yes, I'm done!"
+msgid "Yes, I’m done!"
 msgstr ""
 
 #. Quit prompt negative response (don't quit)
@@ -526,7 +526,7 @@ msgid "Yes, save it!"
 msgstr ""
 
 #: ../tuxpaint.c:1867 ../tuxpaint.c:1872
-msgid "No, don't bother saving!"
+msgid "No, don’t bother saving!"
 msgstr ""
 
 #. Current picture is not saved; user is opening another picture
@@ -586,7 +586,7 @@ msgid "Yes, erase it!"
 msgstr ""
 
 #: ../tuxpaint.c:1904
-msgid "No, don't erase it!"
+msgid "No, don’t erase it!"
 msgstr ""
 
 #. Reminder that Mouse Button 1 is the button to use in Tux Paint
@@ -994,11 +994,11 @@ msgstr "Bofya na sogea puku kuweka ukungu."
 msgid "Click to add noise to your entire picture."
 msgstr "Bofya na sogea puku kuweka miraba midogo kwenye picha."
 
-#: ../../magic/src/rails.c:75
+#: ../../magic/src/rails.c:100
 msgid "Rails"
 msgstr ""
 
-#: ../../magic/src/rails.c:77
+#: ../../magic/src/rails.c:102
 #, fuzzy
 msgid "Click and drag to draw train track rails on your picture."
 msgstr "Bofya na sogea puku kupunguza upana wa picha."

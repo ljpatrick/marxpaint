@@ -16,7 +16,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint 0.9.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-12-07 19:03-0800\n"
+"POT-Creation-Date: 2008-12-31 16:59-0800\n"
 "PO-Revision-Date: 2005-04-04 10:55-0700\n"
 "Last-Translator: Steven Michael Murphy <murf@e-tools.com>\n"
 "Language-Team: Kinyarwanda <translation-team-rw@lists.sourceforge.net>\n"
@@ -543,7 +543,7 @@ msgstr "Kuri Kuvamo"
 
 #. Quit prompt positive response (quit)
 #: ../tuxpaint.c:1858
-msgid "Yes, I'm done!"
+msgid "Yes, I’m done!"
 msgstr ""
 
 #. Quit prompt negative response (don't quit)
@@ -562,7 +562,7 @@ msgid "Yes, save it!"
 msgstr ""
 
 #: ../tuxpaint.c:1867 ../tuxpaint.c:1872
-msgid "No, don't bother saving!"
+msgid "No, don’t bother saving!"
 msgstr ""
 
 #. Current picture is not saved; user is opening another picture
@@ -628,7 +628,7 @@ msgid "Yes, erase it!"
 msgstr ""
 
 #: ../tuxpaint.c:1904
-msgid "No, don't erase it!"
+msgid "No, don’t erase it!"
 msgstr ""
 
 #. Reminder that Mouse Button 1 is the button to use in Tux Paint
@@ -1040,11 +1040,11 @@ msgstr "Na Kwimura i Imbeba Kuri i() y'Ishusho"
 msgid "Click to add noise to your entire picture."
 msgstr "Na Kwimura i Imbeba Kuri Ubwoko i() y'Ishusho"
 
-#: ../../magic/src/rails.c:75
+#: ../../magic/src/rails.c:100
 msgid "Rails"
 msgstr ""
 
-#: ../../magic/src/rails.c:77
+#: ../../magic/src/rails.c:102
 #, fuzzy
 msgid "Click and drag to draw train track rails on your picture."
 msgstr "Na Kwimura i Imbeba Kuri kinanutse i() y'Ishusho"

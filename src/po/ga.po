@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint 081207\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-12-07 19:03-0800\n"
+"POT-Creation-Date: 2008-12-31 16:59-0800\n"
 "PO-Revision-Date: 2008-12-08 14:06-0500\n"
 "Last-Translator: Kevin Scannell <kscanne@gmail.com>\n"
 "Language-Team: Irish <gaeilge-gnulinux@lists.sourceforge.net>\n"
@@ -256,7 +256,8 @@ msgstr "Ochtagán"
 #. Description of a square
 #: ../shapes.h:208 ../shapes.h:209
 msgid "A square is a rectangle with four equal sides."
-msgstr "Is éard atá i gcearnóg ná dronuilleog a bhfuil ceithre thaobh chothroma aige."
+msgstr ""
+"Is éard atá i gcearnóg ná dronuilleog a bhfuil ceithre thaobh chothroma aige."
 
 #. Description of a rectangle
 #: ../shapes.h:212 ../shapes.h:213
@@ -415,8 +416,8 @@ msgstr "Cliceáil chun líne a thosú. Scaoil an cnaipe chun é a chríochnú."
 #. Shape tool instructions
 #: ../tools.h:101
 msgid ""
-"Pick a shape. Click to pick the center, drag, then let go when it is the size "
-"you want. Move around to rotate it, and click to draw it."
+"Pick a shape. Click to pick the center, drag, then let go when it is the "
+"size you want. Move around to rotate it, and click to draw it."
 msgstr ""
 "Roghnaigh cruth. Cliceáil chun an lár a roghnú, tarraing, ansin scaoil an "
 "cnaipe nuair atá an méid socraithe agat.  Bog chun é a rothlú, agus cliceáil "
@@ -425,7 +426,8 @@ msgstr ""
 #. Text tool instructions
 #: ../tools.h:104
 msgid "Choose a style of text. Click on your drawing and you can start typing."
-msgstr "Roghnaigh stíl an téacs. Cliceáil ar do líníocht agus ansin clóscríobh."
+msgstr ""
+"Roghnaigh stíl an téacs. Cliceáil ar do líníocht agus ansin clóscríobh."
 
 #. Magic tool instruction
 #: ../tools.h:107
@@ -499,7 +501,9 @@ msgstr "An bhfuil tú cinnte gur mhaith leat scor?"
 
 #. Quit prompt positive response (quit)
 #: ../tuxpaint.c:1858
-msgid "Yes, I'm done!"
+#, fuzzy
+#| msgid "Yes, I'm done!"
+msgid "Yes, I’m done!"
 msgstr "Tá, táim críochnaithe!"
 
 #. Quit prompt negative response (don't quit)
@@ -517,7 +521,9 @@ msgid "Yes, save it!"
 msgstr "Sábháil!"
 
 #: ../tuxpaint.c:1867 ../tuxpaint.c:1872
-msgid "No, don't bother saving!"
+#, fuzzy
+#| msgid "No, don't bother saving!"
+msgid "No, don’t bother saving!"
 msgstr "Ná sábháil!"
 
 #. Current picture is not saved; user is opening another picture
@@ -575,7 +581,9 @@ msgid "Yes, erase it!"
 msgstr "Léirscrios!"
 
 #: ../tuxpaint.c:1904
-msgid "No, don't erase it!"
+#, fuzzy
+#| msgid "No, don't erase it!"
+msgid "No, don’t erase it!"
 msgstr "Ná léirscrios!"
 
 #. Reminder that Mouse Button 1 is the button to use in Tux Paint
@@ -715,7 +723,8 @@ msgstr "Cliceáil agus bog an luch le haghaidh maisíochta bloic."
 #: ../../magic/src/blocks_chalk_drip.c:149
 msgid ""
 "Click and move the mouse around to turn the picture into a chalk drawing."
-msgstr "Cliceáil agus bog an luch chun líníocht chailce a dhéanamh ón phictiúr."
+msgstr ""
+"Cliceáil agus bog an luch chun líníocht chailce a dhéanamh ón phictiúr."
 
 #: ../../magic/src/blocks_chalk_drip.c:152
 msgid "Click and move the mouse around to make the picture drip."
@@ -855,9 +864,11 @@ msgid "Fold"
 msgstr "Fill"
 
 #: ../../magic/src/fold.c:62
-msgid "Choose a background color and click to turn the corner of the page over."
+msgid ""
+"Choose a background color and click to turn the corner of the page over."
 msgstr ""
-"Roghnaigh dath an chúlra agus cliceáil chun cúinne an leathanaigh a fhilleadh."
+"Roghnaigh dath an chúlra agus cliceáil chun cúinne an leathanaigh a "
+"fhilleadh."
 
 #: ../../magic/src/glasstile.c:83
 msgid "Glass Tile"
@@ -961,11 +972,11 @@ msgstr "Cliceáil agus bog an luch chun torann a chur le cuid den phictiúr."
 msgid "Click to add noise to your entire picture."
 msgstr "Cliceáil chun torann a chur leis an bpictiúr iomlán."
 
-#: ../../magic/src/rails.c:75
+#: ../../magic/src/rails.c:100
 msgid "Rails"
 msgstr "Ráillí"
 
-#: ../../magic/src/rails.c:77
+#: ../../magic/src/rails.c:102
 msgid "Click and drag to draw train track rails on your picture."
 msgstr "Cliceáil agus tarraing chun ráillí traenach a dhearadh ar do phictiúr."
 
@@ -1057,7 +1068,8 @@ msgstr "Aistrigh"
 
 #: ../../magic/src/shift.c:110
 msgid "Click and drag to shift your picture around on the canvas."
-msgstr "Cliceáil agus tarraing chun an pictiúr a aistriú timpeall an chanbháis."
+msgstr ""
+"Cliceáil agus tarraing chun an pictiúr a aistriú timpeall an chanbháis."
 
 #: ../../magic/src/smudge.c:77
 msgid "Smudge"
@@ -1136,9 +1148,9 @@ msgstr "Tonnáin"
 
 #: ../../magic/src/waves.c:83
 msgid ""
-"Click to make the picture horizontally wavy. Click toward the top for shorter "
-"waves, the bottom for taller waves, the left for small waves, and the right "
-"for long waves."
+"Click to make the picture horizontally wavy. Click toward the top for "
+"shorter waves, the bottom for taller waves, the left for small waves, and "
+"the right for long waves."
 msgstr ""
 
 #: ../../magic/src/waves.c:84

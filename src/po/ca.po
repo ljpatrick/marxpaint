@@ -16,7 +16,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Tuxpaint cvs 2008-11-01\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-12-07 19:03-0800\n"
+"POT-Creation-Date: 2008-12-31 16:59-0800\n"
 "PO-Revision-Date: 2008-12-17 23:13+0100\n"
 "Last-Translator: Pere Pujal i Carabantes <pere@fornol.no-ip.org>\n"
 "Language-Team: Català <linux-ca@chanae.alphanet.ch>\n"
@@ -513,7 +513,9 @@ msgstr "De veres voleu sortir?"
 
 #. Quit prompt positive response (quit)
 #: ../tuxpaint.c:1858
-msgid "Yes, I'm done!"
+#, fuzzy
+#| msgid "Yes, I'm done!"
+msgid "Yes, I’m done!"
 msgstr "Sí, ja he acabat!"
 
 #. Quit prompt negative response (don't quit)
@@ -531,7 +533,9 @@ msgid "Yes, save it!"
 msgstr "Sí, desa'l!"
 
 #: ../tuxpaint.c:1867 ../tuxpaint.c:1872
-msgid "No, don't bother saving!"
+#, fuzzy
+#| msgid "No, don't bother saving!"
+msgid "No, don’t bother saving!"
 msgstr "No, no cal que el desis!"
 
 #. Current picture is not saved; user is opening another picture
@@ -589,7 +593,9 @@ msgid "Yes, erase it!"
 msgstr "Sí, esborra'l!"
 
 #: ../tuxpaint.c:1904
-msgid "No, don't erase it!"
+#, fuzzy
+#| msgid "No, don't erase it!"
+msgid "No, don’t erase it!"
 msgstr "No, no l'esborris!"
 
 #. Reminder that Mouse Button 1 is the button to use in Tux Paint
@@ -969,11 +975,11 @@ msgstr "Feu clic i moveu el ratolí per afegir soroll a parts del dibuix."
 msgid "Click to add noise to your entire picture."
 msgstr "Feu clic per afegir soroll al dibuix."
 
-#: ../../magic/src/rails.c:75
+#: ../../magic/src/rails.c:100
 msgid "Rails"
 msgstr "Rails"
 
-#: ../../magic/src/rails.c:77
+#: ../../magic/src/rails.c:102
 msgid "Click and drag to draw train track rails on your picture."
 msgstr "Feu clic i arrossegueu per dibuixar una via de tren."
 

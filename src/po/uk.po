@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TuxPaint\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-12-07 19:03-0800\n"
+"POT-Creation-Date: 2008-12-31 16:59-0800\n"
 "PO-Revision-Date: 2008-06-17 04:01+0300\n"
 "Last-Translator: Serhij Dubyk <serhijdubyk@gmail.com>\n"
 "Language-Team: Serhij Dubyk <serhijdubyk@gmail.com>\n"
@@ -508,7 +508,9 @@ msgstr "Ви дійсно хочете вийти?"
 
 #. Quit prompt positive response (quit)
 #: ../tuxpaint.c:1858
-msgid "Yes, I'm done!"
+#, fuzzy
+#| msgid "Yes, I'm done!"
+msgid "Yes, I’m done!"
 msgstr "Так, я завершив!"
 
 #. Quit prompt negative response (don't quit)
@@ -526,7 +528,9 @@ msgid "Yes, save it!"
 msgstr "Так, зберегти!"
 
 #: ../tuxpaint.c:1867 ../tuxpaint.c:1872
-msgid "No, don't bother saving!"
+#, fuzzy
+#| msgid "No, don't bother saving!"
+msgid "No, don’t bother saving!"
 msgstr "Ні, не потрібно зберігати!"
 
 #. Current picture is not saved; user is opening another picture
@@ -586,7 +590,9 @@ msgid "Yes, erase it!"
 msgstr "Так, вилучити!"
 
 #: ../tuxpaint.c:1904
-msgid "No, don't erase it!"
+#, fuzzy
+#| msgid "No, don't erase it!"
+msgid "No, don’t erase it!"
 msgstr "Ні, не вилучати!"
 
 #. Reminder that Mouse Button 1 is the button to use in Tux Paint
@@ -991,12 +997,12 @@ msgstr "Клацніть та посовгайте по малюнку, щоб �
 msgid "Click to add noise to your entire picture."
 msgstr "Клацніть та посовгайте по малюнку, щоб змінити колір малюнка."
 
-#: ../../magic/src/rails.c:75
+#: ../../magic/src/rails.c:100
 #, fuzzy
 msgid "Rails"
 msgstr "Брижі"
 
-#: ../../magic/src/rails.c:77
+#: ../../magic/src/rails.c:102
 #, fuzzy
 msgid "Click and drag to draw train track rails on your picture."
 msgstr "Клацніть та поводіть пучком світла по Вашому малюнку."

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint 0.9.17\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-12-07 19:03-0800\n"
+"POT-Creation-Date: 2008-12-31 16:59-0800\n"
 "PO-Revision-Date: 2008-01-03 00:41+0200\n"
 "Last-Translator: Jorma Karvonen <karvjorm@users.sf.net>\n"
 "Language-Team: Finnish <translation-team-fi@lists.sourceforge.net>\n"
@@ -513,7 +513,9 @@ msgstr "Haluatko varmasti lopettaa?"
 
 #. Quit prompt positive response (quit)
 #: ../tuxpaint.c:1858
-msgid "Yes, I'm done!"
+#, fuzzy
+#| msgid "Yes, I'm done!"
+msgid "Yes, I’m done!"
 msgstr "Kyllä, valmista on!"
 
 #. Quit prompt negative response (don't quit)
@@ -531,7 +533,9 @@ msgid "Yes, save it!"
 msgstr "Kyllä, tallenna se!"
 
 #: ../tuxpaint.c:1867 ../tuxpaint.c:1872
-msgid "No, don't bother saving!"
+#, fuzzy
+#| msgid "No, don't bother saving!"
+msgid "No, don’t bother saving!"
 msgstr "Ei, älä vaivaudu!"
 
 #. Current picture is not saved; user is opening another picture
@@ -591,7 +595,9 @@ msgid "Yes, erase it!"
 msgstr "Kyllä, poista se!"
 
 #: ../tuxpaint.c:1904
-msgid "No, don't erase it!"
+#, fuzzy
+#| msgid "No, don't erase it!"
+msgid "No, don’t erase it!"
 msgstr "Ei, älä poista sitä!"
 
 #. Reminder that Mouse Button 1 is the button to use in Tux Paint
@@ -997,11 +1003,11 @@ msgstr "Sumenna maalausta painamalla hiiren painiketta."
 msgid "Click to add noise to your entire picture."
 msgstr "Vaihda maalauksen väri painamalla hiiren painiketta."
 
-#: ../../magic/src/rails.c:75
+#: ../../magic/src/rails.c:100
 msgid "Rails"
 msgstr ""
 
-#: ../../magic/src/rails.c:77
+#: ../../magic/src/rails.c:102
 #, fuzzy
 msgid "Click and drag to draw train track rails on your picture."
 msgstr "Voit sumentaa kuvaa liikuttamalla hiirtä nappi pohjassa."

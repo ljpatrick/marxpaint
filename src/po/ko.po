@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Tux Paint 0.9.16\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-12-07 19:03-0800\n"
+"POT-Creation-Date: 2008-12-31 16:59-0800\n"
 "PO-Revision-Date: 2007-04-29 23:10-0400\n"
 "Last-Translator: Mark K. Kim <mkkim214@gmail.com>\n"
 "Language-Team: N/A\n"
@@ -505,7 +505,9 @@ msgstr "프로그램을 끝 마칠까요?"
 
 #. Quit prompt positive response (quit)
 #: ../tuxpaint.c:1858
-msgid "Yes, I'm done!"
+#, fuzzy
+#| msgid "Yes, I'm done!"
+msgid "Yes, I’m done!"
 msgstr "네, 끝마쳐요!"
 
 #. Quit prompt negative response (don't quit)
@@ -523,7 +525,9 @@ msgid "Yes, save it!"
 msgstr "네, 저장하세요!"
 
 #: ../tuxpaint.c:1867 ../tuxpaint.c:1872
-msgid "No, don't bother saving!"
+#, fuzzy
+#| msgid "No, don't bother saving!"
+msgid "No, don’t bother saving!"
 msgstr "아니요, 저장하지 마세요!"
 
 #. Current picture is not saved; user is opening another picture
@@ -583,7 +587,9 @@ msgid "Yes, erase it!"
 msgstr "네, 지우세요!"
 
 #: ../tuxpaint.c:1904
-msgid "No, don't erase it!"
+#, fuzzy
+#| msgid "No, don't erase it!"
+msgid "No, don’t erase it!"
 msgstr "아니요, 지우지 마세요!"
 
 #. Reminder that Mouse Button 1 is the button to use in Tux Paint
@@ -985,11 +991,11 @@ msgstr "마우스를 누르면 그림을 흐리게 만들 수 있어요."
 msgid "Click to add noise to your entire picture."
 msgstr "마우스를 누르면 그림이 색이 변화돼요."
 
-#: ../../magic/src/rails.c:75
+#: ../../magic/src/rails.c:100
 msgid "Rails"
 msgstr ""
 
-#: ../../magic/src/rails.c:77
+#: ../../magic/src/rails.c:102
 #, fuzzy
 msgid "Click and drag to draw train track rails on your picture."
 msgstr "마우스를 누르면 그림을 흐리게 만들 수 있어요."

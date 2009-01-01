@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: nb\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-12-07 19:03-0800\n"
+"POT-Creation-Date: 2008-12-31 16:59-0800\n"
 "PO-Revision-Date: 2007-07-19 20:37+0200\n"
 "Last-Translator: Karl Ove Hufthammer <karl@huftis.org>\n"
 "Language-Team: Norwegian Nynorsk <i18n-nn@lister.ping.uio.no>\n"
@@ -500,7 +500,9 @@ msgstr "Er du sikker på at du vil avslutte?"
 
 #. Quit prompt positive response (quit)
 #: ../tuxpaint.c:1858
-msgid "Yes, I'm done!"
+#, fuzzy
+#| msgid "Yes, I'm done!"
+msgid "Yes, I’m done!"
 msgstr "Ja, jeg er ferdig!"
 
 #. Quit prompt negative response (don't quit)
@@ -518,7 +520,9 @@ msgid "Yes, save it!"
 msgstr "Ja, lagra den!"
 
 #: ../tuxpaint.c:1867 ../tuxpaint.c:1872
-msgid "No, don't bother saving!"
+#, fuzzy
+#| msgid "No, don't bother saving!"
+msgid "No, don’t bother saving!"
 msgstr "Nei, ikke lagra den!"
 
 #. Current picture is not saved; user is opening another picture
@@ -578,7 +582,9 @@ msgid "Yes, erase it!"
 msgstr "Ja, slett den!"
 
 #: ../tuxpaint.c:1904
-msgid "No, don't erase it!"
+#, fuzzy
+#| msgid "No, don't erase it!"
+msgid "No, don’t erase it!"
 msgstr "Nei, ikke slett den!"
 
 #. Reminder that Mouse Button 1 is the button to use in Tux Paint
@@ -980,12 +986,12 @@ msgstr "Hold inne knappen og flytt rundt for å gjøre tegningen uskarp."
 msgid "Click to add noise to your entire picture."
 msgstr "Hold inne knappen og flytt rundt for å forandre fargene på tegningen."
 
-#: ../../magic/src/rails.c:75
+#: ../../magic/src/rails.c:100
 #, fuzzy
 msgid "Rails"
 msgstr "Bølger"
 
-#: ../../magic/src/rails.c:77
+#: ../../magic/src/rails.c:102
 #, fuzzy
 msgid "Click and drag to draw train track rails on your picture."
 msgstr "Hold inne knappen og flytt rundt for å tegne lysstråler."
@@ -1019,7 +1025,8 @@ msgstr "Vannringer"
 
 #: ../../magic/src/ripples.c:87
 msgid "Click to make ripples appear over your picture."
-msgstr "Hold inne knappen og flytt rundt for å lage ringer av vann over tegningen."
+msgstr ""
+"Hold inne knappen og flytt rundt for å lage ringer av vann over tegningen."
 
 #: ../../magic/src/rosette.c:90
 msgid "Rosette"

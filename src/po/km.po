@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-12-07 19:03-0800\n"
+"POT-Creation-Date: 2008-12-31 16:59-0800\n"
 "PO-Revision-Date: 2008-05-30 15:41+0700\n"
 "Last-Translator: Khoem Sokhem <khoemsokhem@khmeros.info>\n"
 "Language-Team: Khmer <support@khmeros.info>\n"
@@ -499,7 +499,9 @@ msgstr "តើ​អ្នក​ពិត​ជា​ចង់​ចេញ​ឬ
 
 #. Quit prompt positive response (quit)
 #: ../tuxpaint.c:1858
-msgid "Yes, I'm done!"
+#, fuzzy
+#| msgid "Yes, I'm done!"
+msgid "Yes, I’m done!"
 msgstr "បាទ/ចាស ខ្ញុំ​ធ្វើ​រួច​ហើយ !"
 
 #. Quit prompt negative response (don't quit)
@@ -517,7 +519,9 @@ msgid "Yes, save it!"
 msgstr "បាទ/​ចាស រក្សាទុក​វា !"
 
 #: ../tuxpaint.c:1867 ../tuxpaint.c:1872
-msgid "No, don't bother saving!"
+#, fuzzy
+#| msgid "No, don't bother saving!"
+msgid "No, don’t bother saving!"
 msgstr "ទេ មិន​រក្សាទុក​ទេ !"
 
 #. Current picture is not saved; user is opening another picture
@@ -577,7 +581,9 @@ msgid "Yes, erase it!"
 msgstr "បាទ​/​ចាស លុប !"
 
 #: ../tuxpaint.c:1904
-msgid "No, don't erase it!"
+#, fuzzy
+#| msgid "No, don't erase it!"
+msgid "No, don’t erase it!"
 msgstr "ទេ មិន​លុប​ទេ !"
 
 #. Reminder that Mouse Button 1 is the button to use in Tux Paint
@@ -971,12 +977,12 @@ msgstr "ចុច ហើយ​ផ្លាស់ទី​កណ្ដុរ ដ�
 msgid "Click to add noise to your entire picture."
 msgstr "ចុច ហើយ​ផ្លាស់ទី​កណ្ដុរ ដើម្បី​ផ្លាស់ប្ដូរ​ពណ៌​រូបភាព ។"
 
-#: ../../magic/src/rails.c:75
+#: ../../magic/src/rails.c:100
 #, fuzzy
 msgid "Rails"
 msgstr "គួច"
 
-#: ../../magic/src/rails.c:77
+#: ../../magic/src/rails.c:102
 #, fuzzy
 msgid "Click and drag to draw train track rails on your picture."
 msgstr "ចុច ហើយ​អូស ដើម្បី​គូរ​​ភ្លើងហ្វា​នៅលើ​រូបភាព​របស់​អ្នក ។"

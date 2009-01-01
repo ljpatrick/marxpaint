@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eu\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-12-07 19:03-0800\n"
+"POT-Creation-Date: 2008-12-31 16:59-0800\n"
 "PO-Revision-Date: 2008-12-10 22:38+0100\n"
 "Last-Translator: juanillo <juanirigoien@gmail.com>\n"
 "Language-Team: Basque <es@li.org>\n"
@@ -266,7 +266,8 @@ msgid "A rectangle has four sides and four right angles."
 msgstr "Lauki zuzenak lau alde eta lau angelu zuzen ditu."
 
 #: ../shapes.h:217 ../shapes.h:219
-msgid "A circle is a curve where all points have the same distance from the center."
+msgid ""
+"A circle is a curve where all points have the same distance from the center."
 msgstr "Zirkuluaren puntu guztiek distatzia berdina daukate erdiraino."
 
 #. Description of an ellipse
@@ -419,13 +420,14 @@ msgid ""
 "Pick a shape. Click to pick the center, drag, then let go when it is the "
 "size you want. Move around to rotate it, and click to draw it."
 msgstr ""
-"Aukeratu irudia. Egin klik erdia markatzeko, arrastatu, eta, nahi "
-"duzun tamainua duenean, askatu. Mugitu biratzeko eta klikatu marrazteko."
+"Aukeratu irudia. Egin klik erdia markatzeko, arrastatu, eta, nahi duzun "
+"tamainua duenean, askatu. Mugitu biratzeko eta klikatu marrazteko."
 
 #. Text tool instructions
 #: ../tools.h:104
 msgid "Choose a style of text. Click on your drawing and you can start typing."
-msgstr "Aukera ezazu letra mota bat. Egin klik zure irudian eta has zaitez idazten."
+msgstr ""
+"Aukera ezazu letra mota bat. Egin klik zure irudian eta has zaitez idazten."
 
 #. Magic tool instruction
 #: ../tools.h:107
@@ -499,7 +501,9 @@ msgstr "Irten nahi al duzu, benetan?"
 
 #. Quit prompt positive response (quit)
 #: ../tuxpaint.c:1858
-msgid "Yes, I'm done!"
+#, fuzzy
+#| msgid "Yes, I'm done!"
+msgid "Yes, I’m done!"
 msgstr "Bai, amaitu dut!"
 
 #. Quit prompt negative response (don't quit)
@@ -517,7 +521,9 @@ msgid "Yes, save it!"
 msgstr "Bai, gorde!"
 
 #: ../tuxpaint.c:1867 ../tuxpaint.c:1872
-msgid "No, don't bother saving!"
+#, fuzzy
+#| msgid "No, don't bother saving!"
+msgid "No, don’t bother saving!"
 msgstr "Ez, ez gorde!"
 
 #. Current picture is not saved; user is opening another picture
@@ -557,7 +563,6 @@ msgstr "Zure irudia inprimatua izan da!"
 
 #. We got an error printing
 #: ../tuxpaint.c:1895
-#| msgid "Your picture has been printed!"
 msgid "Sorry! Your picture could not be printed!"
 msgstr "Parkatu! Zure irudia ezin da inprimatu!"
 
@@ -576,7 +581,9 @@ msgid "Yes, erase it!"
 msgstr "Bai, ezabatu!"
 
 #: ../tuxpaint.c:1904
-msgid "No, don't erase it!"
+#, fuzzy
+#| msgid "No, don't erase it!"
+msgid "No, don’t erase it!"
 msgstr "Ez, ez ezabatu"
 
 #. Reminder that Mouse Button 1 is the button to use in Tux Paint
@@ -662,7 +669,8 @@ msgstr "Ez, artxibo berria gorde"
 
 #: ../tuxpaint.c:13363
 msgid "Choose the picture you want, then click “Open”."
-msgstr "Aukera ezazu ireki nahi duzun irudia. Ondoren klik egin ‘Ireki’ botoian"
+msgstr ""
+"Aukera ezazu ireki nahi duzun irudia. Ondoren klik egin ‘Ireki’ botoian"
 
 #. Let user choose images:
 #. Instructions for Slideshow file dialog (FIXME: Make a #define)
@@ -688,7 +696,8 @@ msgstr "Kolore aldaketa"
 
 #: ../../magic/src/alien.c:67
 msgid "Click and move the mouse to change the colors in parts of your picture."
-msgstr "Klik egin eta mugi ezazu sagua irudiaren parte batzuetako koloreak aldatzeko"
+msgstr ""
+"Klik egin eta mugi ezazu sagua irudiaren parte batzuetako koloreak aldatzeko"
 
 #: ../../magic/src/alien.c:68
 msgid "Click to change the colors in your entire picture."
@@ -711,7 +720,8 @@ msgid "Click and move the mouse around to make the picture blocky."
 msgstr "Klik egin eta mugi ezazu sagua irudia laukitxotan marrazteko."
 
 #: ../../magic/src/blocks_chalk_drip.c:149
-msgid "Click and move the mouse around to turn the picture into a chalk drawing."
+msgid ""
+"Click and move the mouse around to turn the picture into a chalk drawing."
 msgstr ""
 "Klik egin eta mugi ezazu sagua irudia klarionez eginda balego bezala "
 "marrazteko."
@@ -832,7 +842,9 @@ msgstr "Lorea"
 
 #: ../../magic/src/flower.c:130
 msgid "Click and drag to draw a flower stalk. Let go to finish the flower."
-msgstr "Klik egin eta arrastatu lore zuirton bat marrazteko. Jarraitu lorea amaitu arte"
+msgstr ""
+"Klik egin eta arrastatu lore zuirton bat marrazteko. Jarraitu lorea amaitu "
+"arte"
 
 #: ../../magic/src/foam.c:104
 msgid "Foam"
@@ -840,15 +852,18 @@ msgstr "Bitza"
 
 #: ../../magic/src/foam.c:110
 msgid "Click and drag the mouse to cover an area with foamy bubbles."
-msgstr "Klik egin eta mugi ezazu sagua irudiaren eremu bat bitz burbuilez estaltzeko."
+msgstr ""
+"Klik egin eta mugi ezazu sagua irudiaren eremu bat bitz burbuilez estaltzeko."
 
 #: ../../magic/src/fold.c:60
 msgid "Fold"
 msgstr "Tolestu"
 
 #: ../../magic/src/fold.c:62
-msgid "Choose a background color and click to turn the corner of the page over."
-msgstr "Hautatu atzeko-planoaren kolorea eta klik egin orrialdearen txokoa tolesteko"
+msgid ""
+"Choose a background color and click to turn the corner of the page over."
+msgstr ""
+"Hautatu atzeko-planoaren kolorea eta klik egin orrialdearen txokoa tolesteko"
 
 #: ../../magic/src/glasstile.c:83
 msgid "Glass Tile"
@@ -856,7 +871,9 @@ msgstr "Kristalezko lauzak"
 
 #: ../../magic/src/glasstile.c:90
 msgid "Click and drag the mouse to put glass tile over your picture."
-msgstr "Klik egin eta mugi ezazu sagua irudiaren gainean kristalezko lauzak ipintzeko."
+msgstr ""
+"Klik egin eta mugi ezazu sagua irudiaren gainean kristalezko lauzak "
+"ipintzeko."
 
 #: ../../magic/src/glasstile.c:92
 msgid "Click to cover your entire picture in glass tiles."
@@ -875,8 +892,10 @@ msgid "Kaleidoscope"
 msgstr "Kaleidoskopioa"
 
 #: ../../magic/src/kalidescope.c:83
-msgid "Click and drag the mouse to draw with symmetric brushes (a kaleidoscope)."
-msgstr "Klik egin eta mugitu sagua pintzel simetrikoekin marrazteko (kaleidoskopioa)."
+msgid ""
+"Click and drag the mouse to draw with symmetric brushes (a kaleidoscope)."
+msgstr ""
+"Klik egin eta mugitu sagua pintzel simetrikoekin marrazteko (kaleidoskopioa)."
 
 #: ../../magic/src/light.c:84
 msgid "Light"
@@ -915,8 +934,11 @@ msgid "Mosaic"
 msgstr "Mosaikoa"
 
 #: ../../magic/src/mosaic.c:73
-msgid "Click and move the mouse to add a mosaic effect to parts of your picture."
-msgstr "Klik egin eta mugitu sagua zure irudiaren parte batzuei mosaiko efektua emateko."
+msgid ""
+"Click and move the mouse to add a mosaic effect to parts of your picture."
+msgstr ""
+"Klik egin eta mugitu sagua zure irudiaren parte batzuei mosaiko efektua "
+"emateko."
 
 #: ../../magic/src/mosaic.c:74
 msgid "Click to add a mosaic effect to your entire picture."
@@ -927,7 +949,6 @@ msgid "Negative"
 msgstr "Negatiboa"
 
 #: ../../magic/src/negative.c:80
-#| msgid "Click and move the mouse around to draw a negative."
 msgid "Click and move the mouse around to make your painting negative."
 msgstr "Klik egin eta mugi ezazu sagua irudiaren negatiboa marrazteko."
 
@@ -941,17 +962,18 @@ msgstr "Zarata"
 
 #: ../../magic/src/noise.c:66
 msgid "Click and move the mouse to add noise to parts of your picture."
-msgstr "Klik egin eta mugi ezazu sagua irudiaren parte batzuei zarata gehitzeko."
+msgstr ""
+"Klik egin eta mugi ezazu sagua irudiaren parte batzuei zarata gehitzeko."
 
 #: ../../magic/src/noise.c:67
 msgid "Click to add noise to your entire picture."
 msgstr "Klik egin irudi osoari zarata gehitzeko."
 
-#: ../../magic/src/rails.c:75
+#: ../../magic/src/rails.c:100
 msgid "Rails"
 msgstr "Trenbidea"
 
-#: ../../magic/src/rails.c:77
+#: ../../magic/src/rails.c:102
 msgid "Click and drag to draw train track rails on your picture."
 msgstr "Klik egin eta mugitu irudiaren gainean trenbidea marrazteko"
 
@@ -1013,7 +1035,8 @@ msgstr "Silueta"
 
 #: ../../magic/src/sharpen.c:78
 msgid "Click and move the mouse to trace edges in parts of your picture."
-msgstr "Klik egin eta mugitu sagua irudiaren eremu batzuetan ertzak marrazteko."
+msgstr ""
+"Klik egin eta mugitu sagua irudiaren eremu batzuetan ertzak marrazteko."
 
 #: ../../magic/src/sharpen.c:79
 msgid "Click to trace edges in your entire picture."
@@ -1076,7 +1099,8 @@ msgid "Color & White"
 msgstr "Kolorea & Zuria"
 
 #: ../../magic/src/tint.c:75
-msgid "Click and move the mouse around to change the color of parts of your picture."
+msgid ""
+"Click and move the mouse around to change the color of parts of your picture."
 msgstr "Klik egin eta mugitu sagua irudiaren unadetako kolorea aldatzeko"
 
 #: ../../magic/src/tint.c:76
@@ -1087,7 +1111,9 @@ msgstr "Klik egin irudi osoaren kolorea aldatzeko."
 msgid ""
 "Click and move the mouse around to turn parts of your picture into white and "
 "a color you choose."
-msgstr "Klik egin eta mugitu sagua irudiaren eremu batzuk zuk hautatzen duzun kolorez eta zuriz margotzeko."
+msgstr ""
+"Klik egin eta mugitu sagua irudiaren eremu batzuk zuk hautatzen duzun "
+"kolorez eta zuriz margotzeko."
 
 #: ../../magic/src/tint.c:78
 msgid "Click to turn your entire picture into white and a color you choose."
@@ -1122,12 +1148,17 @@ msgid ""
 "Click to make the picture horizontally wavy. Click toward the top for "
 "shorter waves, the bottom for taller waves, the left for small waves, and "
 "the right for long waves."
-msgstr "Klik egin irudian uhin horizontalak ipintzeko. Klik gorantz uhinak laburtzeko, beherantz uhinak handitzeko, ezkerretara uhin txikiak egiteko eta eskuina luzeak egiteko."
+msgstr ""
+"Klik egin irudian uhin horizontalak ipintzeko. Klik gorantz uhinak "
+"laburtzeko, beherantz uhinak handitzeko, ezkerretara uhin txikiak egiteko "
+"eta eskuina luzeak egiteko."
 
 #: ../../magic/src/waves.c:84
 msgid ""
 "Click to make the picture vertically wavy. Click toward the top for shorter "
 "waves, the bottom for taller waves, the left for small waves, and the right "
 "for long waves."
-msgstr "Klik egin irudian uhin bertikalak ipintzeko. Klik gorantz uhinak laburtzeko, beherantz uhinak handitzeko, ezkerretara uhin txikiak egiteko eta eskuina luzeak egiteko."
-
+msgstr ""
+"Klik egin irudian uhin bertikalak ipintzeko. Klik gorantz uhinak laburtzeko, "
+"beherantz uhinak handitzeko, ezkerretara uhin txikiak egiteko eta eskuina "
+"luzeak egiteko."

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ms\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-12-07 19:03-0800\n"
+"POT-Creation-Date: 2008-12-31 16:59-0800\n"
 "PO-Revision-Date: 2004-08-23 16:06+0800\n"
 "Last-Translator: Muhammad Najmi bin Ahmad Zabidi <md_najmi@yahoo.com>\n"
 "Language-Team: Malay <kedidiemas@yahoogroups.com>\n"
@@ -507,7 +507,7 @@ msgstr "Anda pasti mahu keluar?"
 
 #. Quit prompt positive response (quit)
 #: ../tuxpaint.c:1858
-msgid "Yes, I'm done!"
+msgid "Yes, I’m done!"
 msgstr ""
 
 #. Quit prompt negative response (don't quit)
@@ -525,7 +525,7 @@ msgid "Yes, save it!"
 msgstr ""
 
 #: ../tuxpaint.c:1867 ../tuxpaint.c:1872
-msgid "No, don't bother saving!"
+msgid "No, don’t bother saving!"
 msgstr ""
 
 #. Current picture is not saved; user is opening another picture
@@ -585,7 +585,7 @@ msgid "Yes, erase it!"
 msgstr ""
 
 #: ../tuxpaint.c:1904
-msgid "No, don't erase it!"
+msgid "No, don’t erase it!"
 msgstr ""
 
 #. Reminder that Mouse Button 1 is the button to use in Tux Paint
@@ -1002,11 +1002,11 @@ msgid "Click to add noise to your entire picture."
 msgstr ""
 "Klik dan gerakkan tetikus di sekeliling untuk menjadikan gambar berblok."
 
-#: ../../magic/src/rails.c:75
+#: ../../magic/src/rails.c:100
 msgid "Rails"
 msgstr ""
 
-#: ../../magic/src/rails.c:77
+#: ../../magic/src/rails.c:102
 #, fuzzy
 msgid "Click and drag to draw train track rails on your picture."
 msgstr "Klik dan gerakkan tetikus di sekeliling untuk menipiskan gambar."

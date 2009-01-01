@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint 0.9.17\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-12-07 19:03-0800\n"
+"POT-Creation-Date: 2008-12-31 16:59-0800\n"
 "PO-Revision-Date: 2008-10-20 09:16-0700\n"
 "Last-Translator: Neskie Manuel <neskiem@gmail.com>\n"
 "Language-Team: Ubuntu Secwepemc Translators <ubuntu-l10n-shs@lists.ubuntu."
@@ -499,7 +499,9 @@ msgstr ""
 
 #. Quit prompt positive response (quit)
 #: ../tuxpaint.c:1858
-msgid "Yes, I'm done!"
+#, fuzzy
+#| msgid "Yes, I'm done!"
+msgid "Yes, I’m done!"
 msgstr "Mé7e, Yeri Tsucws!"
 
 #. Quit prompt negative response (don't quit)
@@ -517,8 +519,10 @@ msgid "Yes, save it!"
 msgstr "Mé7e, élk̓wete!"
 
 #: ../tuxpaint.c:1867 ../tuxpaint.c:1872
-msgid "No, don't bother saving!"
-msgstr ""
+#, fuzzy
+#| msgid "No, don't erase it!"
+msgid "No, don’t bother saving!"
+msgstr "Tá7a, don't erase it!"
 
 #. Current picture is not saved; user is opening another picture
 #: ../tuxpaint.c:1870
@@ -575,7 +579,9 @@ msgid "Yes, erase it!"
 msgstr "Mé7e, ep̓ete"
 
 #: ../tuxpaint.c:1904
-msgid "No, don't erase it!"
+#, fuzzy
+#| msgid "No, don't erase it!"
+msgid "No, don’t erase it!"
 msgstr "Tá7a, don't erase it!"
 
 #. Reminder that Mouse Button 1 is the button to use in Tux Paint
@@ -948,11 +954,11 @@ msgstr ""
 msgid "Click to add noise to your entire picture."
 msgstr ""
 
-#: ../../magic/src/rails.c:75
+#: ../../magic/src/rails.c:100
 msgid "Rails"
 msgstr ""
 
-#: ../../magic/src/rails.c:77
+#: ../../magic/src/rails.c:102
 msgid "Click and drag to draw train track rails on your picture."
 msgstr ""
 
