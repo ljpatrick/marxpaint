@@ -64,6 +64,7 @@
 		2271100F0AE5DEAD00FC7FCF /* OPTIONS.txt in Resources */ = {isa = PBXBuildFile; fileRef = 22710E920AE5DEAC00FC7FCF /* OPTIONS.txt */; };
 		227110170AE5DEAD00FC7FCF /* PNG.txt in Resources */ = {isa = PBXBuildFile; fileRef = 22710E9B0AE5DEAC00FC7FCF /* PNG.txt */; };
 		227111800AE5EC6E00FC7FCF /* fonts in Resources */ = {isa = PBXBuildFile; fileRef = 2271114E0AE5EC6E00FC7FCF /* fonts */; };
+		228437C40EF5DE5F002A13FD /* libfribidi.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 228437C30EF5DE5F002A13FD /* libfribidi.a */; };
 		2286F34F0740B3FC001164FE /* SDLMain.nib in Resources */ = {isa = PBXBuildFile; fileRef = 2286F34D0740B3FC001164FE /* SDLMain.nib */; };
 		22C005D40736650D008555A2 /* tuxpaint.icns in Resources */ = {isa = PBXBuildFile; fileRef = 22C005D30736650D008555A2 /* tuxpaint.icns */; };
 		22C0EA9E0735B76F008555A2 /* SDLMain.m in Sources */ = {isa = PBXBuildFile; fileRef = 22C0EA9B0735B76F008555A2 /* SDLMain.m */; };
@@ -600,6 +601,7 @@
 		22710E920AE5DEAC00FC7FCF /* OPTIONS.txt */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text; name = OPTIONS.txt; path = ../docs/OPTIONS.txt; sourceTree = SOURCE_ROOT; };
 		22710E9B0AE5DEAC00FC7FCF /* PNG.txt */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text; name = PNG.txt; path = ../docs/PNG.txt; sourceTree = SOURCE_ROOT; };
 		2271114E0AE5EC6E00FC7FCF /* fonts */ = {isa = PBXFileReference; lastKnownFileType = folder; name = fonts; path = ../fonts; sourceTree = SOURCE_ROOT; };
+		228437C30EF5DE5F002A13FD /* libfribidi.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libfribidi.a; path = /Volumes/Users/Shared/tuxpaint/lib/libfribidi.a; sourceTree = "<absolute>"; };
 		2286F34E0740B3FC001164FE /* English */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = English; path = English.lproj/SDLMain.nib; sourceTree = "<group>"; };
 		22C005D30736650D008555A2 /* tuxpaint.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = tuxpaint.icns; sourceTree = SOURCE_ROOT; };
 		22C0EA9A0735B76F008555A2 /* SDLMain.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = SDLMain.h; sourceTree = SOURCE_ROOT; };
@@ -943,6 +945,7 @@
 				2248FC5A0CE19305004BC461 /* libpangoft2-1.0.a in Frameworks */,
 				225789450CFAA093002EE819 /* SDL_ttf.framework in Frameworks */,
 				22F3EC9F0D5682620068DFB4 /* Security.framework in Frameworks */,
+				228437C40EF5DE5F002A13FD /* libfribidi.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1071,6 +1074,7 @@
 		225FE714093AC50C00F0B02F /* Archives */ = {
 			isa = PBXGroup;
 			children = (
+				228437C30EF5DE5F002A13FD /* libfribidi.a */,
 				2248FC390CDEF241004BC461 /* libintl.a */,
 				2248FC3A0CDEF241004BC461 /* libpng.a */,
 				2248FC4B0CDEF395004BC461 /* libexpat.a */,
@@ -2547,7 +2551,9 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					/Users/Shared/tuxpaint/lib,
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_1)",
 				);
+				LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_1 = "\"$(SRCROOT)/../../../../../../Shared/tuxpaint/lib\"";
 				MACOSX_DEPLOYMENT_TARGET = 10.3;
 				OTHER_CFLAGS = "";
 				OTHER_CPLUSPLUSFLAGS = "";
@@ -2617,7 +2623,9 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					/Users/Shared/tuxpaint/lib,
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_1)",
 				);
+				LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_1 = "\"$(SRCROOT)/../../../../../../Shared/tuxpaint/lib\"";
 				MACOSX_DEPLOYMENT_TARGET = 10.3;
 				OTHER_CFLAGS = "";
 				OTHER_CPLUSPLUSFLAGS = "";
@@ -2686,7 +2694,9 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					/Users/Shared/tuxpaint/lib,
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_1)",
 				);
+				LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_1 = "\"$(SRCROOT)/../../../../../../Shared/tuxpaint/lib\"";
 				MACOSX_DEPLOYMENT_TARGET = 10.3;
 				OTHER_CFLAGS = "";
 				OTHER_CPLUSPLUSFLAGS = "";
