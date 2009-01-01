@@ -1855,7 +1855,7 @@ int main(int argc, char *argv[])
 #define PROMPT_QUIT_TXT gettext_noop("Do you really want to quit?")
 
 /* Quit prompt positive response (quit) */
-#define PROMPT_QUIT_YES gettext_noop("Yes, I'm done!")
+#define PROMPT_QUIT_YES gettext_noop("Yes, I’m done!")
 
 /* Quit prompt negative response (don't quit) */
 #define PROMPT_QUIT_NO  gettext_noop("No, take me back!")
@@ -1864,12 +1864,12 @@ int main(int argc, char *argv[])
 /* Current picture is not saved; user is quitting */
 #define PROMPT_QUIT_SAVE_TXT gettext_noop("If you quit, you’ll lose your picture! Save it?")
 #define PROMPT_QUIT_SAVE_YES gettext_noop("Yes, save it!")
-#define PROMPT_QUIT_SAVE_NO gettext_noop("No, don't bother saving!")
+#define PROMPT_QUIT_SAVE_NO gettext_noop("No, don’t bother saving!")
 
 /* Current picture is not saved; user is opening another picture */
 #define PROMPT_OPEN_SAVE_TXT gettext_noop("Save your picture first?")
 #define PROMPT_OPEN_SAVE_YES gettext_noop("Yes, save it!")
-#define PROMPT_OPEN_SAVE_NO gettext_noop("No, don't bother saving!")
+#define PROMPT_OPEN_SAVE_NO gettext_noop("No, don’t bother saving!")
 
 /* Error opening picture */
 #define PROMPT_OPEN_UNOPENABLE_TXT gettext_noop("Can’t open that picture!")
@@ -1901,7 +1901,7 @@ int main(int argc, char *argv[])
 /* Prompt to confirm erasing a picture in the Open dialog */
 #define PROMPT_ERASE_TXT gettext_noop("Erase this picture?")
 #define PROMPT_ERASE_YES gettext_noop("Yes, erase it!")
-#define PROMPT_ERASE_NO gettext_noop("No, don't erase it!")
+#define PROMPT_ERASE_NO gettext_noop("No, don’t erase it!")
 
 /* Reminder that Mouse Button 1 is the button to use in Tux Paint */
 #define PROMPT_TIP_LEFTCLICK_TXT gettext_noop("Remember to use the left mouse button!")
