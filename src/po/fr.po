@@ -504,8 +504,6 @@ msgstr "Veux-tu vraiment quitter ?"
 
 #. Quit prompt positive response (quit)
 #: ../tuxpaint.c:1858
-#, fuzzy
-#| msgid "Yes, I'm done!"
 msgid "Yes, I’m done!"
 msgstr "Oui, j'ai fini !"
 
@@ -524,8 +522,6 @@ msgid "Yes, save it!"
 msgstr "Oui, on sauvegarde !"
 
 #: ../tuxpaint.c:1867 ../tuxpaint.c:1872
-#, fuzzy
-#| msgid "No, don't bother saving!"
 msgid "No, don’t bother saving!"
 msgstr "Non, ce n'est pas la peine !"
 
@@ -584,8 +580,6 @@ msgid "Yes, erase it!"
 msgstr "Oui, efface-la !"
 
 #: ../tuxpaint.c:1904
-#, fuzzy
-#| msgid "No, don't erase it!"
 msgid "No, don’t erase it!"
 msgstr "Non, ne l'efface pas !"
 
