@@ -1,20 +1,20 @@
 # Translation of nn to Norwegian Nynorsk
 # Omsetjing av Tux Paint til nynorsk.
 # Copyright © 2004 Karl Ove Hufthammer.
-# Karl Ove Hufthammer <karl@huftis.org>, 2003-2004, 2005, 2006, 2007, 2008.
+# Karl Ove Hufthammer <karl@huftis.org>, 2003-2004, 2005, 2006, 2007, 2008, 2009.
 msgid ""
 msgstr ""
 "Project-Id-Version: nn\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-12-07 19:03-0800\n"
-"PO-Revision-Date: 2008-09-21 17:26+0200\n"
+"POT-Creation-Date: 2009-01-01 01:15+0100\n"
+"PO-Revision-Date: 2009-01-01 01:17+0100\n"
 "Last-Translator: Karl Ove Hufthammer <karl@huftis.org>\n"
 "Language-Team: Norwegian Nynorsk <i18n-nn@lister.ping.uio.no>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Lokalize 0.2\n"
-"Plural-Forms:  nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #. Response to Black (0, 0, 0) color selected
 #: ../colors.h:86
@@ -265,8 +265,7 @@ msgid "A rectangle has four sides and four right angles."
 msgstr "Eit rektangel har fire sider og fire rette vinklar."
 
 #: ../shapes.h:217 ../shapes.h:219
-msgid ""
-"A circle is a curve where all points have the same distance from the center."
+msgid "A circle is a curve where all points have the same distance from the center."
 msgstr "Ein sirkel er ei kurve der alle punkta er like langt frå sentrum."
 
 #. Description of an ellipse
@@ -497,7 +496,7 @@ msgstr "Er du sikker på at du vil avslutta?"
 
 #. Quit prompt positive response (quit)
 #: ../tuxpaint.c:1858
-msgid "Yes, I'm done!"
+msgid "Yes, I’m done!"
 msgstr "Ja, eg er ferdig!"
 
 #. Quit prompt negative response (don't quit)
@@ -515,7 +514,7 @@ msgid "Yes, save it!"
 msgstr "Ja, lagra ho!"
 
 #: ../tuxpaint.c:1867 ../tuxpaint.c:1872
-msgid "No, don't bother saving!"
+msgid "No, don’t bother saving!"
 msgstr "Nei, ikkje lagra ho!"
 
 #. Current picture is not saved; user is opening another picture
@@ -555,10 +554,8 @@ msgstr "Teikninga er skriven ut."
 
 #. We got an error printing
 #: ../tuxpaint.c:1895
-#, fuzzy
-#| msgid "Your picture has been printed!"
 msgid "Sorry! Your picture could not be printed!"
-msgstr "Teikninga er skriven ut."
+msgstr "Klarte ikkje skriva ut teikninga."
 
 #. Notification that it's too soon to print again (--printdelay option is in effect)
 #: ../tuxpaint.c:1898
@@ -575,7 +572,7 @@ msgid "Yes, erase it!"
 msgstr "Ja, slett ho!"
 
 #: ../tuxpaint.c:1904
-msgid "No, don't erase it!"
+msgid "No, don’t erase it!"
 msgstr "Nei, ikkje slett ho!"
 
 #. Reminder that Mouse Button 1 is the button to use in Tux Paint
@@ -682,22 +679,17 @@ msgid "Tux Paint"
 msgstr "Tux Paint"
 
 #: ../../magic/src/alien.c:64
-#, fuzzy
-#| msgid "Shift"
 msgid "Color Shift"
-msgstr "Flytt"
+msgstr "Fargeskift"
 
 #: ../../magic/src/alien.c:67
-#, fuzzy
 #| msgid ""
 #| "Click and move the mouse around to change the color of parts of your "
 #| "picture."
 msgid "Click and move the mouse to change the colors in parts of your picture."
-msgstr ""
-"Hald inne knappen og flytt rundt for å endra fargane på delar av teikninga."
+msgstr "Hald inne knappen og flytt rundt for å endra fargane på delar av teikninga."
 
 #: ../../magic/src/alien.c:68
-#, fuzzy
 #| msgid "Click to change the color of your entire picture."
 msgid "Click to change the colors in your entire picture."
 msgstr "Trykk for å endra fargane på heile teikninga."
@@ -719,8 +711,7 @@ msgid "Click and move the mouse around to make the picture blocky."
 msgstr "Hald inne knappen og flytt rundt for å gjera teikninga «blokkete»."
 
 #: ../../magic/src/blocks_chalk_drip.c:149
-msgid ""
-"Click and move the mouse around to turn the picture into a chalk drawing."
+msgid "Click and move the mouse around to turn the picture into a chalk drawing."
 msgstr ""
 "Hald inne knappen og flytt rundt for å gjera teikninga om til ei "
 "kritteikning."
@@ -806,8 +797,7 @@ msgstr "Mørkare"
 
 #: ../../magic/src/fade_darken.c:132
 msgid "Click and move the mouse to lighten parts of your picture."
-msgstr ""
-"Hald inne knappen og flytt rundt for å gjera delar av teikninga lysare."
+msgstr "Hald inne knappen og flytt rundt for å gjera delar av teikninga lysare."
 
 #: ../../magic/src/fade_darken.c:134
 msgid "Click to lighten your entire picture."
@@ -815,8 +805,7 @@ msgstr "Trykk for å gjera heile teikninga lysare."
 
 #: ../../magic/src/fade_darken.c:139
 msgid "Click and move the mouse to darken parts of your picture."
-msgstr ""
-"Hald inne knappen og flytt rundt for å gjera delar av teikninga mørkare."
+msgstr "Hald inne knappen og flytt rundt for å gjera delar av teikninga mørkare."
 
 #: ../../magic/src/fade_darken.c:141
 msgid "Click to darken your entire picture."
@@ -836,10 +825,9 @@ msgstr "Fiskeauge"
 
 #. Needs better name
 #: ../../magic/src/fisheye.c:79
-#, fuzzy
 #| msgid "Select an area of the image to create the fisheye effect."
 msgid "Click on part of your picture to create a fisheye effect."
-msgstr "Vel eit område av teikninga du vil sjå gjennom ei fiskeaugelinse."
+msgstr "Trykk på delar av teikninga for å sjå ho gjennom ei fiskeaugelinse."
 
 #: ../../magic/src/flower.c:124
 msgid "Flower"
@@ -857,18 +845,15 @@ msgstr "Skum"
 
 #: ../../magic/src/foam.c:110
 msgid "Click and drag the mouse to cover an area with foamy bubbles."
-msgstr ""
-"Hald inne knappen og flytt rundt for å dekkja teikninga med såpebobler."
+msgstr "Hald inne knappen og flytt rundt for å dekkja teikninga med såpebobler."
 
 #: ../../magic/src/fold.c:60
 msgid "Fold"
 msgstr "Brett"
 
 #: ../../magic/src/fold.c:62
-msgid ""
-"Choose a background color and click to turn the corner of the page over."
-msgstr ""
-"Vel ein bakgrunnsfarge, og trykk så for å bretta hjørnet på teiknearket."
+msgid "Choose a background color and click to turn the corner of the page over."
+msgstr "Vel ein bakgrunnsfarge, og trykk så for å bretta hjørnet på teiknearket."
 
 #: ../../magic/src/glasstile.c:83
 msgid "Glass Tile"
@@ -876,8 +861,7 @@ msgstr "Glasfliser"
 
 #: ../../magic/src/glasstile.c:90
 msgid "Click and drag the mouse to put glass tile over your picture."
-msgstr ""
-"Hald inne knappen og flytt rundt for å leggja glasfliser over teikninga."
+msgstr "Hald inne knappen og flytt rundt for å leggja glasfliser over teikninga."
 
 #: ../../magic/src/glasstile.c:92
 msgid "Click to cover your entire picture in glass tiles."
@@ -896,8 +880,7 @@ msgid "Kaleidoscope"
 msgstr "Kaleidoskop"
 
 #: ../../magic/src/kalidescope.c:83
-msgid ""
-"Click and drag the mouse to draw with symmetric brushes (a kaleidoscope)."
+msgid "Click and drag the mouse to draw with symmetric brushes (a kaleidoscope)."
 msgstr ""
 "Hald inne knappen og flytt rundt for å teikna med symmetrisk pensel (som i "
 "eit kaleidoskop)."
@@ -939,8 +922,7 @@ msgid "Mosaic"
 msgstr "Mosaikk"
 
 #: ../../magic/src/mosaic.c:73
-msgid ""
-"Click and move the mouse to add a mosaic effect to parts of your picture."
+msgid "Click and move the mouse to add a mosaic effect to parts of your picture."
 msgstr ""
 "Hald inne knappen og flytt rundt for å leggja ein mosaikk på delar av "
 "teikninga."
@@ -954,13 +936,11 @@ msgid "Negative"
 msgstr "Negativ"
 
 #: ../../magic/src/negative.c:80
-#, fuzzy
 #| msgid "Click and move the mouse around to draw a negative."
 msgid "Click and move the mouse around to make your painting negative."
 msgstr "Hald inne knappen og flytt rundt for å byta om på fargane."
 
 #: ../../magic/src/negative.c:83
-#, fuzzy
 #| msgid "Click to turn the image into its negative."
 msgid "Click to turn your painting into its negative."
 msgstr "Trykk for å snu fargane på teikninga."
@@ -977,11 +957,11 @@ msgstr "Hald inne knappen og flytt rundt for å leggja støy på teikninga."
 msgid "Click to add noise to your entire picture."
 msgstr "Trykk for å leggja støy på heile teikninga."
 
-#: ../../magic/src/rails.c:75
+#: ../../magic/src/rails.c:100
 msgid "Rails"
 msgstr "Jarnbane"
 
-#: ../../magic/src/rails.c:77
+#: ../../magic/src/rails.c:102
 msgid "Click and drag to draw train track rails on your picture."
 msgstr "Hald inne knappen og flytt rundt for å teikna jarnbanelinjer."
 
@@ -1059,8 +1039,7 @@ msgstr "Trykk for å gjera heile teikninga skarpare."
 
 #: ../../magic/src/sharpen.c:82
 msgid "Click and move the mouse to create a black and white silhouette."
-msgstr ""
-"Hald inne knappen og flytt rundt for å laga ein silhuett i svart og kvitt."
+msgstr "Hald inne knappen og flytt rundt for å laga ein silhuett i svart og kvitt."
 
 #: ../../magic/src/sharpen.c:83
 msgid "Click to create a black and white silhouette of your entire picture."
@@ -1106,34 +1085,29 @@ msgstr "Fargelegg"
 
 #: ../../magic/src/tint.c:72
 msgid "Color & White"
-msgstr ""
+msgstr "Farge og kvit"
 
 #: ../../magic/src/tint.c:75
-msgid ""
-"Click and move the mouse around to change the color of parts of your picture."
-msgstr ""
-"Hald inne knappen og flytt rundt for å endra fargane på delar av teikninga."
+msgid "Click and move the mouse around to change the color of parts of your picture."
+msgstr "Hald inne knappen og flytt rundt for å endra fargane på delar av teikninga."
 
 #: ../../magic/src/tint.c:76
 msgid "Click to change the color of your entire picture."
 msgstr "Trykk for å endra fargane på heile teikninga."
 
 #: ../../magic/src/tint.c:77
-#, fuzzy
 #| msgid ""
 #| "Click and move the mouse around to turn parts of your picture into "
 #| "separate colors."
 msgid ""
 "Click and move the mouse around to turn parts of your picture into white and "
 "a color you choose."
-msgstr ""
-"Hald inne knappen og flytt rundt for å skilja fargane på delar av teikninga."
+msgstr "Hald inne knappen og flytt rundt for å gjera delar av teikninga kvit og ein farge du vel."
 
 #: ../../magic/src/tint.c:78
-#, fuzzy
 #| msgid "Click to turn your entire picture into separate colors."
 msgid "Click to turn your entire picture into white and a color you choose."
-msgstr "Trykk for å skilja fargane på heile teikninga."
+msgstr "Trykk for å gjera heile teikninga kvit og ein farge du vel."
 
 #: ../../magic/src/toothpaste.c:65
 msgid "Toothpaste"
@@ -1252,3 +1226,4 @@ msgstr ""
 
 #~ msgid "Click and move to darken the colors."
 #~ msgstr "Hald inne knappen og flytt rundt for å gjera fargane mørkare."
+
