@@ -22,7 +22,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
   
-  June 14, 2002 - December 7, 2008
+  June 14, 2002 - January 2, 2009
   $Id$
 */
 
@@ -965,7 +965,7 @@ char *papersize = NULL;
 
 #if 1 /* FIXME: ifdef for platforms that lack fribidi? */
 #include <fribidi/fribidi.h>
-#if !defined(FRIBIDI_H)
+#if !defined(_FRIBIDI_H) && !defined(FRIBIDI_H)
 #error "---------------------------------------------------"
 #error "If you installed libfribidi from a package, be sure"
 #error "to get the development package, as well!"
@@ -15498,7 +15498,7 @@ static void do_render_cur_text(int do_blit)
 
   if (texttool_len > 0)
   {
-    #ifdef FRIBIDI_H
+    #if defined(_FRIBIDI_H) || defined(FRIBIDI_H)
       FriBidiCharType baseDir = FRIBIDI_TYPE_LTR;
       FriBidiChar *unicodeIn, *unicodeOut;
       unsigned int i;

@@ -4,7 +4,7 @@
 # bill@newbreedsoftware.com
 # http://www.tuxpaint.org/
 
-# June 14, 2002 - December 3, 2008
+# June 14, 2002 - January 2, 2009
 
 
 # The version number, for release:
@@ -74,8 +74,8 @@ PAPER_LIB:=$(call linktest,-lpaper,)
 PNG:=$(call linktest,-lpng,)
 PNG:=$(if $(PNG),$(PNG),$(call linktest,-lpng12,))
 
-FRIBIDI_LIB:=$(shell fribidi-config --libs)
-FRIBIDI_CFLAGS:=$(shell fribidi-config --cflags)
+FRIBIDI_LIB:=$(shell pkg-config --libs fribidi)
+FRIBIDI_CFLAGS:=$(shell pkg-config --cflags fribidi)
 
 windows_ARCH_LINKS:=-lintl $(PNG) -lwinspool -lshlwapi $(FRIBIDI_LIB)
 osx_ARCH_LINKS:=$(PAPER_LIB) $(FRIBIDI_LIB)
