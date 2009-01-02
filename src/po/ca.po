@@ -1,23 +1,23 @@
 # Tuxpaint catalan translation.
 # Traducció al català del Tuxpaint.
-# Copyright (C) 2002-2008
+# Copyright (C) 2002-2009
 # This file is distributed under the same license as the Tuxpaint package.
 # Aquest fitxer és distribueix amb la mateixa llicència que el Tuxpaint.
-# Pere Pujal i Carabantes <ppujal@airtel.net>, 2002-2008.
+# Pere Pujal i Carabantes <pere@fornol.no-ip.org>, 2002-2009.
 #
 #
 # Nota per futures traduccions/actualitzacions:
 #
 # L'estil que he intentat aplicar en aquesta traducció és el que regia a SoftCatalà quant hi col·laborava.
 # Aixó impicava que quan el programa s'adreça a l'usuari, l'havia de tractar de vos.
-# Ara ja és opcional el tracte de tu pels programes adreçats als nens.(2008)
+# Ara (2008) ja és opcional el tracte de tu pels programes adreçats als nens.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Tuxpaint cvs 2008-11-01\n"
+"Project-Id-Version: Tuxpaint cvs 2009-01-01\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2008-12-31 16:59-0800\n"
-"PO-Revision-Date: 2008-12-17 23:13+0100\n"
+"PO-Revision-Date: 2009-01-01 23:26+0100\n"
 "Last-Translator: Pere Pujal i Carabantes <pere@fornol.no-ip.org>\n"
 "Language-Team: Català <linux-ca@chanae.alphanet.ch>\n"
 "MIME-Version: 1.0\n"
@@ -166,7 +166,7 @@ msgstr "017"
 #. distinct circle-like characters (e.g., 'O' (capital oh) vs. '0' (zero))
 #: ../dirwalk.c:159
 msgid "O0"
-msgstr "O0"
+msgstr "O0Q"
 
 #. distinct line-like characters (e.g., 'l' (lowercase elle) vs. '1' (one) vs. 'I' (capital aye))
 #: ../dirwalk.c:162
@@ -513,8 +513,6 @@ msgstr "De veres voleu sortir?"
 
 #. Quit prompt positive response (quit)
 #: ../tuxpaint.c:1858
-#, fuzzy
-#| msgid "Yes, I'm done!"
 msgid "Yes, I’m done!"
 msgstr "Sí, ja he acabat!"
 
@@ -533,8 +531,6 @@ msgid "Yes, save it!"
 msgstr "Sí, desa'l!"
 
 #: ../tuxpaint.c:1867 ../tuxpaint.c:1872
-#, fuzzy
-#| msgid "No, don't bother saving!"
 msgid "No, don’t bother saving!"
 msgstr "No, no cal que el desis!"
 
@@ -593,8 +589,6 @@ msgid "Yes, erase it!"
 msgstr "Sí, esborra'l!"
 
 #: ../tuxpaint.c:1904
-#, fuzzy
-#| msgid "No, don't erase it!"
 msgid "No, don’t erase it!"
 msgstr "No, no l'esborris!"
 
