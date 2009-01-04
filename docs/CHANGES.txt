@@ -2,13 +2,13 @@ CHANGES.txt for Tux Paint
 
 Tux Paint - A simple drawing program for children.
 
-Copyright (c) 2002-2008 by Bill Kendrick and others
+Copyright (c) 2002-2009 by Bill Kendrick and others
 bill@newbreedsoftware.com
 http://www.tuxpaint.org/
 
 $Id$
 
-2008.December.31 (0.9.21)
+2009.January.4 (0.9.21)
   * New Starters:
     -------------
     * Silver Frame
@@ -131,6 +131,9 @@ $Id$
 
     * Chinese (Simplified)
       Huang Zuzhen <zuzhenhuang@vip.sina.com>
+
+    * Chinese (Traditional)
+      Song Huang <songhuang@users.sourceforge.net>
 
     * Dutch
       Bert Saal <bertsaal@gmail.com>
