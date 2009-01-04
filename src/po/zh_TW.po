@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint 0.9.17\n"
 "POT-Creation-Date: 2008-12-31 16:59-0800\n"
-"PO-Revision-Date: 2009-01-03 20:42+0800\n"
+"PO-Revision-Date: 2009-01-04 08:51+0800\n"
 "Last-Translator: 黃敏松 <songhuang.tw@gmail.com>\n"
 "Language-Team: Chinese (traditional) <zh-l10n@linux.org.tw>\n"
 "MIME-Version: 1.0\n"
@@ -295,7 +295,7 @@ msgstr "橢圓形是伸展開來的圓形。"
 msgid "A triangle has three sides."
 msgstr "三角形有三個邊。"
 
-#. Description of a pentagon
+#  Description of a pentagon
 #: ../shapes.h:230
 #: ../shapes.h:231
 msgid "A pentagon has five sides."
@@ -520,7 +520,6 @@ msgstr "你確定要離開嗎?"
 #  Quit prompt positive response (quit)
 #  msgid "Yes, I'm done!"
 #: ../tuxpaint.c:1858
-#, fuzzy
 msgid "Yes, I’m done!"
 msgstr "好，我做完了!"
 
@@ -543,7 +542,6 @@ msgstr "好，把它存起來!"
 #  msgid "No, don't bother saving!"
 #: ../tuxpaint.c:1867
 #: ../tuxpaint.c:1872
-#, fuzzy
 msgid "No, don’t bother saving!"
 msgstr "不，別存了!"
 
@@ -607,7 +605,6 @@ msgstr "好，刪除它吧!"
 
 #  msgid "No, don't erase it!"
 #: ../tuxpaint.c:1904
-#, fuzzy
 msgid "No, don’t erase it!"
 msgstr "不，別刪除它!"
 
@@ -759,7 +756,6 @@ msgid "Blur"
 msgstr "模糊"
 
 #: ../../magic/src/blur.c:60
-#, fuzzy
 msgid "Click and move the mouse around to blur the image."
 msgstr "按著並移動滑鼠來使圖畫模糊。"
 
@@ -798,18 +794,17 @@ msgstr "按著並移動滑鼠來將圖案變成卡通風格。"
 
 #: ../../magic/src/confetti.c:63
 msgid "Confetti"
-msgstr ""
+msgstr "紙花"
 
 #: ../../magic/src/confetti.c:65
 msgid "Click to throw confetti!"
-msgstr ""
+msgstr "按一下來拋出紙花"
 
 #: ../../magic/src/distortion.c:121
 msgid "Distortion"
 msgstr "扭曲"
 
 #: ../../magic/src/distortion.c:129
-#, fuzzy
 msgid "Click and drag the mouse to cause distortion in your picture."
 msgstr "按著並移動滑鼠來使圖畫扭曲。"
 
@@ -855,7 +850,7 @@ msgstr "在圖案中按下滑鼠來用顏色填滿整個區域。"
 
 #: ../../magic/src/fisheye.c:77
 msgid "Fisheye"
-msgstr ""
+msgstr "魚眼"
 
 #  Needs better name
 #  msgid "Click and drag to shift your picture around on the canvas."
@@ -881,11 +876,11 @@ msgstr "在圖案中按下滑鼠來用泡泡填滿整個區域。"
 
 #: ../../magic/src/fold.c:60
 msgid "Fold"
-msgstr ""
+msgstr "摺疊"
 
 #: ../../magic/src/fold.c:62
 msgid "Choose a background color and click to turn the corner of the page over."
-msgstr ""
+msgstr "挑選一個背景色，並按一下圖紙的角落讓他翻起來。"
 
 #: ../../magic/src/glasstile.c:83
 msgid "Glass Tile"
@@ -974,7 +969,7 @@ msgstr "按一下來使畫筆的顏色轉變成相反顏色。"
 
 #: ../../magic/src/noise.c:63
 msgid "Noise"
-msgstr ""
+msgstr "雜訊"
 
 #: ../../magic/src/noise.c:66
 msgid "Click and move the mouse to add noise to parts of your picture."
@@ -1022,11 +1017,11 @@ msgstr "按下會讓你的圖出現一個旋渦。"
 
 #: ../../magic/src/rosette.c:90
 msgid "Rosette"
-msgstr ""
+msgstr "玫瑰花形"
 
 #: ../../magic/src/rosette.c:90
 msgid "Picasso"
-msgstr ""
+msgstr "畢卡索"
 
 #: ../../magic/src/rosette.c:95
 msgid "Click and start drawing your rosette."
@@ -1038,7 +1033,7 @@ msgstr "你可以畫的和畢卡索一樣!"
 
 #: ../../magic/src/sharpen.c:73
 msgid "Edges"
-msgstr ""
+msgstr "邊緣"
 
 #: ../../magic/src/sharpen.c:74
 msgid "Sharpen"
@@ -1046,7 +1041,7 @@ msgstr "清晰"
 
 #: ../../magic/src/sharpen.c:75
 msgid "Silhouette"
-msgstr ""
+msgstr "剪影"
 
 #: ../../magic/src/sharpen.c:78
 msgid "Click and move the mouse to trace edges in parts of your picture."
@@ -1090,11 +1085,11 @@ msgstr "按著並移動滑鼠來使圖畫有塗抹效果。"
 
 #: ../../magic/src/snow.c:68
 msgid "Snow Ball"
-msgstr ""
+msgstr "雪球"
 
 #: ../../magic/src/snow.c:69
 msgid "Snow Flake"
-msgstr ""
+msgstr "雪花"
 
 #: ../../magic/src/snow.c:72
 msgid "Click to add snow balls to your picture."
@@ -1110,7 +1105,7 @@ msgstr "著色"
 
 #: ../../magic/src/tint.c:72
 msgid "Color & White"
-msgstr ""
+msgstr "彩色和白色"
 
 #: ../../magic/src/tint.c:75
 msgid "Click and move the mouse around to change the color of parts of your picture."
@@ -1121,49 +1116,42 @@ msgid "Click to change the color of your entire picture."
 msgstr "按一下來使整張圖畫顏色改變。"
 
 #: ../../magic/src/tint.c:77
-#, fuzzy
 msgid "Click and move the mouse around to turn parts of your picture into white and a color you choose."
-msgstr "按著並移動滑鼠來將圖案變成卡通風格。"
+msgstr "按著並移動滑鼠來將經過的圖案變成白色和你挑選的顏色。"
 
 #: ../../magic/src/tint.c:78
-#, fuzzy
 msgid "Click to turn your entire picture into white and a color you choose."
-msgstr "按著並移動滑鼠來將圖案變成卡通風格。"
+msgstr "按一下來使整張圖案變成白色和你挑選的顏色。"
 
 #: ../../magic/src/toothpaste.c:65
 msgid "Toothpaste"
-msgstr ""
+msgstr "牙膏"
 
 #: ../../magic/src/toothpaste.c:68
-#, fuzzy
 msgid "Click and drag to squirt toothpaste onto your picture."
-msgstr "按著並移動滑鼠來調整圖在圖紙上的位置。"
+msgstr "按著並移動滑鼠來噴出牙膏在圖紙上。"
 
 #: ../../magic/src/tv.c:72
 msgid "TV"
-msgstr ""
+msgstr "電視"
 
 #: ../../magic/src/tv.c:74
-#, fuzzy
 msgid "Click to make your picture look like it's on television."
-msgstr "按著並移動滑鼠來改變圖畫的顏色。"
+msgstr "按一下來使圖畫像是在電視裡面。"
 
 #: ../../magic/src/waves.c:75
 msgid "Waves"
 msgstr "波浪"
 
 #: ../../magic/src/waves.c:76
-#, fuzzy
 msgid "Wavelets"
-msgstr "波浪"
+msgstr "漣漪"
 
 #: ../../magic/src/waves.c:83
-#, fuzzy
 msgid "Click to make the picture horizontally wavy. Click toward the top for shorter waves, the bottom for taller waves, the left for small waves, and the right for long waves."
-msgstr "在圖紙上按下滑鼠鍵會讓影像如波浪般的扭曲，按著往上是短的波浪，往下是長的波浪，往左是小的波浪，往右是大的波浪。"
+msgstr "在圖紙上按下滑鼠鍵會讓圖畫如水平波浪般的扭曲，按著往上是短的波浪，往下是長的波浪，往左是小的波浪，往右是大的波浪。"
 
 #: ../../magic/src/waves.c:84
-#, fuzzy
 msgid "Click to make the picture vertically wavy. Click toward the top for shorter waves, the bottom for taller waves, the left for small waves, and the right for long waves."
-msgstr "在圖紙上按下滑鼠鍵會讓影像如波浪般的扭曲，按著往上是短的波浪，往下是長的波浪，往左是小的波浪，往右是大的波浪。"
+msgstr "在圖紙上按下滑鼠鍵會讓圖畫如垂直波浪般的扭曲，按著往上是短的波浪，往下是長的波浪，往左是小的波浪，往右是大的波浪。"
 
