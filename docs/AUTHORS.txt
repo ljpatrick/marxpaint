@@ -2,12 +2,12 @@ AUTHORS.txt for Tux Paint
 
 Tux Paint - A simple drawing program for children.
 
-Copyright (c) 2002-2008 by Bill Kendrick and others
+Copyright (c) 2002-2009 by Bill Kendrick and others
 bill@newbreedsoftware.com
 http://www.tuxpaint.org/
 
 
-June 17, 2002 - December 17, 2008
+June 17, 2002 - January 8, 2009
 
 $Id$
 
@@ -489,6 +489,7 @@ $Id$
     Neskie Manuel <neskiem@gmail.com>
 
   * Slovak
+    Jaroslav Rynik <jrynik@yahoo.co.uk>
     Peter Tuhársky <tuharsky@misbb.sk>
     Milan Plzik <mmp@golem.gymzv.sk> [retired?]
     Andrej Kacian <andrej@kacian.sk>
