@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2008-12-31 16:59-0800\n"
-"PO-Revision-Date: 2008-10-16 HO:MI+ZONE\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Abdoul Cisse <abdoulseydou@hotmail.com>\n"
 "Language-Team: Songhoy<songhoy@bagoundie.net>\n"
 "MIME-Version: 1.0\n"
@@ -23,17 +23,17 @@ msgstr "Bibi!"
 #. Response to Dark grey (128, 128, 128) color selected
 #: ../colors.h:89
 msgid "Dark grey! Some people spell it “dark gray”."
-msgstr "Labu diini ! Some people spell it “dark gray”."
+msgstr "Boosu-boosu-bibi ! Some people spell it “dark gray”."
 
 #. Response to Light grey (192, 192, 192) color selected
 #: ../colors.h:92
 msgid "Light grey! Some people spell it “light gray”."
-msgstr "Pura ! Some people spell it “light gray”."
+msgstr "Boosu-boosu-kaaray ! Some people spell it “light gray”."
 
 #. Response to White (255, 255, 255) color selected
 #: ../colors.h:95
 msgid "White!"
-msgstr "Kaarey !"
+msgstr "Kaaray !"
 
 #. Response to Red (255, 0, 0) color selected
 #: ../colors.h:98
@@ -43,7 +43,7 @@ msgstr "Ciray !"
 #. Response to Orange (255, 128, 0) color selected
 #: ../colors.h:101
 msgid "Orange!"
-msgstr "Wanzata !"
+msgstr " Konkoma !"
 
 #. Response to Yellow (255, 255, 0) color selected
 #: ../colors.h:104
@@ -53,17 +53,17 @@ msgstr "Woole !"
 #. Response to Light green (160, 228, 128) color selected
 #: ../colors.h:107
 msgid "Light green!"
-msgstr "Firzi kaarey !"
+msgstr "Firzi kaaray !"
 
 #. Response to Dark green (33, 148, 70) color selected
 #: ../colors.h:110
 msgid "Dark green!"
-msgstr "Firzi gaabante !"
+msgstr "Wanzata !"
 
 #. Response to "Sky" blue (138, 168, 205) color selected
 #: ../colors.h:113
 msgid "Sky blue!"
-msgstr "Tay !"
+msgstr "Bula kaaray !"
 
 #. Response to Blue (50, 100, 255) color selected
 #: ../colors.h:116
@@ -73,7 +73,7 @@ msgstr "Bula !"
 #. Response to Lavender (186, 157, 255) color selected
 #: ../colors.h:119
 msgid "Lavender!"
-msgstr "Saabay !"
+msgstr "Dawrayboosu !"
 
 #. Response to Purple (128, 0, 128) color selected
 #: ../colors.h:122
@@ -83,12 +83,12 @@ msgstr "Boy !"
 #. Response to Pink (255, 165, 211) color selected
 #: ../colors.h:125
 msgid "Pink!"
-msgstr "Talhanna boosu !"
+msgstr "Talhannaboosu !"
 
 #. Response to Brown (128, 80, 0) color selected
 #: ../colors.h:128
 msgid "Brown!"
-msgstr "Kangaw !"
+msgstr "Kangawhari !"
 
 #. Response to Tan (226, 189, 166) color selected
 #: ../colors.h:131
@@ -171,7 +171,7 @@ msgstr "Hoyhoy !"
 #. Congratulations #2
 #: ../great.h:40
 msgid "Cool!"
-msgstr "A boori !"
+msgstr "A hansa ka boori ! "
 
 #. Congratulations #3
 #: ../great.h:43
@@ -181,12 +181,12 @@ msgstr "Gaabandi !"
 #. Congratulations #4
 #: ../great.h:46
 msgid "Good job!"
-msgstr "Goy boryo !"
+msgstr "Woo ti goy boryo ! "
 
 #. Input Method: English mode
 #: ../im.c:75
 msgid "English"
-msgstr "Angele"
+msgstr "Ingiliši"
 
 #. Input Method: Japanese Romanized Hiragana mode
 #: ../im.c:78
@@ -206,7 +206,7 @@ msgstr "Hangul"
 #. Input Method: Thai mode
 #: ../im.c:87
 msgid "Thai"
-msgstr "Thai"
+msgstr "Tay"
 
 #. Input Method: Traditional Chinese mode
 #: ../im.c:90
@@ -226,12 +226,12 @@ msgstr "Muulubii"
 #. Circle shape tool (X radius and Y radius are the same)
 #: ../shapes.h:179 ../shapes.h:180
 msgid "Circle"
-msgstr "Windila"
+msgstr "Windira"
 
 #. Ellipse shape tool (X radius and Y radius may differ)
 #: ../shapes.h:183 ../shapes.h:184
 msgid "Ellipse"
-msgstr "Windilahayante"
+msgstr "Windirayobante"
 
 #. Triangle shape tool (3 sides)
 #: ../shapes.h:187 ../shapes.h:188
@@ -256,40 +256,36 @@ msgstr "Kanjeyaaha "
 #. Description of a square
 #: ../shapes.h:208 ../shapes.h:209
 msgid "A square is a rectangle with four equal sides."
-msgstr "Kaare manti kala muulubii kaŋ bara nda ceraw taaci kaŋ kul ga sawa."
+msgstr "Kaare, muulubii no kaŋ ceraw taacaa ga sawa."
 
 #. Description of a rectangle
 #: ../shapes.h:212 ../shapes.h:213
 msgid "A rectangle has four sides and four right angles."
-msgstr "Muulubii goo nda ceraw taaci nda kanje taaci."
+msgstr "Muulubii goo nda ceraw taaci kaŋ ga sawa ihinka-hinka nda kanje goranta taaci."
 
 #: ../shapes.h:217 ../shapes.h:219
 msgid ""
 "A circle is a curve where all points have the same distance from the center."
-msgstr ""
-"Windila manti kala golbu kaŋ tonbi foo kul si mooru ceroo ka hun gamtonboo "
-"ga."
+msgstr "Windira ti golbu daabanta kaŋ tonbey kul mooruyanoo ka hun gamtonboo ga ga sawa. "
 
 #. Description of an ellipse
 #: ../shapes.h:222 ../shapes.h:223
 msgid "An ellipse is a stretched circle."
-msgstr "Windilahayante manti windila kaŋ i n'a cendi."
+msgstr "Windirayobante, windira no kaŋ i n'a cendi."
 
 #. Description of a triangle
 #: ../shapes.h:226 ../shapes.h:227
 msgid "A triangle has three sides."
-msgstr "Kanje hinza goo nda ceraw hinza."
+msgstr "Kanjehinza, bii no kaŋ goo nda ceraw hinza."
 
 #. Description of a pentagon
 #: ../shapes.h:230 ../shapes.h:231
 msgid "A pentagon has five sides."
-msgstr "Kanjeguu goo nda ceraw guu."
+msgstr "Kanjeguu, bii no kaŋ goo nda ceraw guu."
 
 #: ../shapes.h:235 ../shapes.h:237
 msgid "A rhombus has four equal sides, and opposite sides are parallel."
-msgstr ""
-"Kaarekuwante goo nda ceraw taaci kaŋ kuurey ga sawa, woo din banda ga "
-"cerawey kaŋ ga cere hoo kul ga tenji nda cere."
+msgstr "Sunbii, kaare yobante no kaŋ goo nda ceraw  sawanta taaci, wey kaŋ ga tenji ga ceesi cere se. "
 
 #: ../shapes.h:241 ../shapes.h:243
 msgid "An octagon has eight equal sides."
@@ -308,12 +304,12 @@ msgstr "Noonawey"
 #. Title of brush selector (buttons down the right for paint and line tools)
 #: ../titles.h:47
 msgid "Brushes"
-msgstr "Kalamey"
+msgstr "Caaraykalamey"
 
 #. Title of eraser selector (buttons down the right for eraser tool)
 #: ../titles.h:50
 msgid "Erasers"
-msgstr "Tuusuhaye"
+msgstr "Tuusujey"
 
 #. Title of stamp selector (buttons down the right for stamps tool)
 #: ../titles.h:53
@@ -324,18 +320,18 @@ msgstr "Tanpoŋey"
 #. Shape creation tool (square, circle, etc.)
 #: ../titles.h:56 ../tools.h:54
 msgid "Shapes"
-msgstr "Alhaley"
+msgstr "Takarey"
 
 #. Title of font selector (buttons down the right for text tool)
 #: ../titles.h:59
 msgid "Letters"
-msgstr "Sigirawey"
+msgstr "Harfey"
 
 #. Title of magic tool selector (buttons down the right for magic (effect plugin) tool)
 #. "Magic" effects tools (blur, flip image, etc.)
 #: ../titles.h:62 ../tools.h:60
 msgid "Magic"
-msgstr "Alhiilahaya"
+msgstr "Kayfihaya"
 
 #. Freehand painting tool
 #: ../tools.h:45
@@ -355,22 +351,22 @@ msgstr "Žeerey"
 #. Text tool
 #: ../tools.h:57
 msgid "Text"
-msgstr "Kalima-ɲaa kuru"
+msgstr "Cawhaya"
 
 #. Undo last action
 #: ../tools.h:63
 msgid "Undo"
-msgstr "Taafeeri"
+msgstr "Taafeeri "
 
 #. Redo undone action
 #: ../tools.h:66
 msgid "Redo"
-msgstr "Tee taaga"
+msgstr "Tee koyne"
 
 #. Eraser tool
 #: ../tools.h:69
 msgid "Eraser"
-msgstr "Tuusuhaya"
+msgstr "Tuusuji"
 
 #. Start a new picture
 #: ../tools.h:72
@@ -392,7 +388,7 @@ msgstr "Gaabu"
 #. Print the current picture
 #: ../tools.h:81
 msgid "Print"
-msgstr "Hantumandi"
+msgstr "Kar"
 
 #. Quit/exit Tux Paint application
 #: ../tools.h:84
@@ -402,12 +398,12 @@ msgstr "Fatta"
 #. Paint tool instructions
 #: ../tools.h:92
 msgid "Pick a color and a brush shape to draw with."
-msgstr "Noone nda caaray-kalam suuba k'i ka žeeri."
+msgstr "Noone nda caaraykalam suuba k'i ka goy."
 
 #. Stamp tool instructions
 #: ../tools.h:95
 msgid "Pick a picture to stamp around your drawing."
-msgstr "Bii foo suuba k'a daŋ ni žeerihaya ra,"
+msgstr "Bii foo suuba k'a daŋ ni biyoo kaŋ n'  n'a tee ra."
 
 #. Line tool instructions
 #: ../tools.h:98
@@ -419,9 +415,7 @@ msgstr "Naagu nee ka žeeri foo sintin.  Naŋ zaa n ben."
 msgid ""
 "Pick a shape. Click to pick the center, drag, then let go when it is the "
 "size you want. Move around to rotate it, and click to draw it."
-msgstr ""
-"Alhaali foo suuba. Naagu ka gamoo zaa, dogoo nda dimmaa suuba. Gaabu k'a "
-"naagu nda n g'a kuubi. Ka ben a žeeri.  "
+msgstr "Alhaali foo suuba. Naagu ka gamoo zaa, dogoo nda dimmaa suuba. Gaabu k'a naagu nda n g'a kuubi. Ka ben a žeeri.  "
 
 #. Text tool instructions
 #: ../tools.h:104
@@ -431,7 +425,7 @@ msgstr "Hantum-ɲaa dumi suuba.  Ni žeeroo naagu ka ni hantum-ɲaaŋoo sintin. 
 #. Magic tool instruction
 #: ../tools.h:107
 msgid "Pick a magical effect to use on your drawing!"
-msgstr "Alhiilataka alhaali suuba ka ni žeeroo barmay !"
+msgstr "Kayfihaya suuba ka biyoo kaŋ n' n'a tee barmay"
 
 #. Response to 'undo' action
 #: ../tools.h:110
@@ -441,17 +435,17 @@ msgstr "Taafeeri !"
 #. Response to 'redo' action
 #: ../tools.h:113
 msgid "Redo!"
-msgstr "Tee taaga !"
+msgstr "Tee koyne !"
 
 #. Eraser tool
 #: ../tools.h:116
 msgid "Eraser!"
-msgstr "Tuusuhaya !"
+msgstr "Tuusuji !"
 
 #. Response to 'start a new image' action
 #: ../tools.h:119
 msgid "Pick a color or picture with which to start a new drawing."
-msgstr " Bii wala noone foo suba k'a daŋ ni žeeroo ra."
+msgstr "Bii wala noone foo suuba k'a daŋ bii taagaa ra."
 
 #. Response to 'open' action (while file dialog is being constructed)
 #: ../tools.h:122
@@ -461,12 +455,12 @@ msgstr "Feeri..."
 #. Response to 'save' action
 #: ../tools.h:125
 msgid "Your image has been saved!"
-msgstr "Ni žeeroo gaabandi !"
+msgstr "Ni biyoo kaŋ n, n'a tee cindi !"
 
 #. Response to 'print' action (while printing, or print dialog is being used)
 #: ../tools.h:128
 msgid "Printing…"
-msgstr "Ga hantumandi... "
+msgstr "Karyaŋ..."
 
 #. Response to 'quit' (exit) action
 #: ../tools.h:131
@@ -481,7 +475,7 @@ msgstr "Butoŋoo naŋ ka žeeroo timmandi."
 #. Instruction while using Shape tool (after first click, before release)
 #: ../tools.h:138
 msgid "Hold the button to stretch the shape."
-msgstr "Butoŋoo dii ganda ka alhaaloo cendi."
+msgstr "Butoŋoo naagu ka biyoo cendi."
 
 #. Instruction while finishing Shape tool (after release, during rotation step before second click)
 #: ../tools.h:141
@@ -491,24 +485,22 @@ msgstr "Ncaŋoo naagu k'alhaaloo woo kuubi. Naagu k'a žeeri."
 #. Notification that 'New' action was aborted (current image would have been lost)
 #: ../tools.h:144
 msgid "OK then… Let’s keep drawing this one!"
-msgstr "A boori... Gaabandi žeeriyan ga."
+msgstr "A boori! Ir ma gaabandi ka biyoo woo tee !"
 
 #. Prompt to confirm user wishes to quit
 #: ../tuxpaint.c:1855
 msgid "Do you really want to quit?"
-msgstr "N ga baa ma fatta ka ben ?"
+msgstr "Nga baa ma fatta wala ?"
 
 #. Quit prompt positive response (quit)
 #: ../tuxpaint.c:1858
-#, fuzzy
-#| msgid "Yes, I'm done!"
 msgid "Yes, I’m done!"
 msgstr "Ayyo, ay ben !"
 
 #. Quit prompt negative response (don't quit)
 #: ../tuxpaint.c:1861 ../tuxpaint.c:1888
 msgid "No, take me back!"
-msgstr "Kala, ir ga willi ka kaa !"
+msgstr "Kala, ir ma will'a ga !"
 
 #. Current picture is not saved; user is quitting
 #: ../tuxpaint.c:1865
@@ -520,8 +512,6 @@ msgid "Yes, save it!"
 msgstr "Ayyo, a gaabu !"
 
 #: ../tuxpaint.c:1867 ../tuxpaint.c:1872
-#, fuzzy
-#| msgid "No, don't bother saving!"
 msgid "No, don’t bother saving!"
 msgstr "Kala, ma si a gaabu !"
 
@@ -533,10 +523,10 @@ msgstr "Ka biyoo gaabu jina ?"
 #. Error opening picture
 #: ../tuxpaint.c:1875
 msgid "Can’t open that picture!"
-msgstr "Si hin ka biyoo feeri !"
+msgstr "Ay si hin ka biyoo woo feeri !"
 
 #. Generic dialog dismissal
-#: ../tuxpaint.c:1878 ../tuxpaint.c:1883 ../tuxpaint.c:1892 ../tuxpaint.c:1899
+#: ../tuxpaint.c:1878 ../tuxpaint.c:1883 ../tuxpaint.c:1892 ./tuxpaint.c:1899
 #: ../tuxpaint.c:1908
 msgid "OK"
 msgstr "Ay yadda"
@@ -544,33 +534,31 @@ msgstr "Ay yadda"
 #. Notification that 'Open' dialog has nothing to show
 #: ../tuxpaint.c:1882
 msgid "There are no saved files!"
-msgstr "Tiira kul mana gaabandi !"
+msgstr "Tiira kul mana jisandi  !"
 
 #. Verification of print action
 #: ../tuxpaint.c:1886
 msgid "Print your picture now?"
-msgstr "Biyoo hantumandi ?"
+msgstr "Biyoo kar sohõ ?"
 
 #: ../tuxpaint.c:1887
 msgid "Yes, print it!"
-msgstr "Ayyo, a hantumandi !"
+msgstr "Ayyo, a kar !"
 
 #. Confirmation of successful (we hope) printing
 #: ../tuxpaint.c:1891
 msgid "Your picture has been printed!"
-msgstr "Ni biyoo hantumandi!"
+msgstr "Ni biyoo karandi !"
 
 #. We got an error printing
 #: ../tuxpaint.c:1895
-#, fuzzy
-#| msgid "Your picture has been printed!"
 msgid "Sorry! Your picture could not be printed!"
-msgstr "Ni biyoo hantumandi!"
+msgstr "Alhaa naŋ ! Ni biyoo mana hin ka karandi !"
 
 #. Notification that it's too soon to print again (--printdelay option is in effect)
 #: ../tuxpaint.c:1898
 msgid "You can’t print yet!"
-msgstr "A si hin ka hantumandi sohõo da !"
+msgstr "N si hin ka karandi sohõ da !"
 
 #. Prompt to confirm erasing a picture in the Open dialog
 #: ../tuxpaint.c:1902
@@ -582,8 +570,6 @@ msgid "Yes, erase it!"
 msgstr " Ayyo, a tuusu !"
 
 #: ../tuxpaint.c:1904
-#, fuzzy
-#| msgid "No, don't erase it!"
 msgid "No, don’t erase it!"
 msgstr "Kala, ma si a tuusu !"
 
@@ -595,12 +581,12 @@ msgstr "Ma si dirŋa ka ncaŋoo butoŋ wowaa naagu !"
 #. Sound has been muted (silenced) via keyboard shortcut
 #: ../tuxpaint.c:2022
 msgid "Sound muted."
-msgstr "Jinde si a ra."
+msgstr "Jindoo daaba."
 
 #. Sound has been unmuted (unsilenced) via keyboard shortcut
 #: ../tuxpaint.c:2027
 msgid "Sound unmuted."
-msgstr "Jinde g'a ra."
+msgstr "Jindoo feera. "
 
 #. Wait while Text tool finishes loading fonts
 #: ../tuxpaint.c:2493
@@ -624,7 +610,7 @@ msgstr "Cebebiyey"
 #. Open dialog: 'Back' button, to dismiss Open dialog without opening a picture
 #: ../tuxpaint.c:7983
 msgid "Back"
-msgstr "Banda"
+msgstr "Foobanda"
 
 #. Slideshow: 'Next' button, to load next slide (image)
 #: ../tuxpaint.c:7986
@@ -634,7 +620,7 @@ msgstr "Jine"
 #. Slideshow: 'Play' button, to begin a slideshow sequence
 #: ../tuxpaint.c:7989
 msgid "Play"
-msgstr "Hooray"
+msgstr "Sintin"
 
 #. Label for 'Letters' buttons (font selector, down the right when the Text tool is being used); used to show the difference between font faces
 #: ../tuxpaint.c:8636
@@ -654,69 +640,61 @@ msgstr "Kala"
 #. Prompt to ask whether user wishes to save over old version of their file
 #: ../tuxpaint.c:12592
 msgid "Replace the picture with your changes?"
-msgstr "Biyoo saajaw nda barmawey ?"
+msgstr "Ka biyoo nda ni barmawey kaŋ n' n'i tee zaa ?"
 
 #. Positive response to saving over old version
 #. (like a 'File:Save' action in other applications)
 #: ../tuxpaint.c:12596
 msgid "Yes, replace the old one!"
-msgstr "Ayyo, ižeena barmay !"
+msgstr "Ayyo, ižeenaa barmay !"
 
 #. Negative response to saving over old version (saves a new image)
 #. (like a 'File:Save As...' action in other applications)
 #: ../tuxpaint.c:12600
 msgid "No, save a new file!"
-msgstr "Kala, bii taaga gaabu ! "
+msgstr "Kala, bii taaga no !"
 
 #: ../tuxpaint.c:13363
 msgid "Choose the picture you want, then click “Open”."
-msgstr "Biyoo kaŋ n ga baga suuba, jina ma \"Feeri\" naagu."
+msgstr "Bii foo suuba, ma \"Feeri \" naagu. "
 
 #. Let user choose images:
 #. Instructions for Slideshow file dialog (FIXME: Make a #define)
 #: ../tuxpaint.c:14350 ../tuxpaint.c:14664
 msgid "Choose the pictures you want, then click “Play”."
-msgstr "Biyey kaŋ n ga baa suuba, jina ma \"Hooray\" naagu."
+msgstr "Biyey kaŋ n ga bag'ey suuba, de ma ''Sintin'' naagu"
 
 #: ../tuxpaint.desktop.in.h:1
 msgid "A drawing program for children."
-msgstr "Zanka se žeeriyan programu."
+msgstr "Biiteeyan porogaram zankey se."
 
 #: ../tuxpaint.desktop.in.h:2
 msgid "Drawing program"
-msgstr "Žeeriyan programu"
+msgstr "Biiteeyan porogaram"
 
 #: ../tuxpaint.desktop.in.h:3
 msgid "Tux Paint"
-msgstr "Tux Paint"
+msgstr "TuxPaint"
 
 #: ../../magic/src/alien.c:64
-#, fuzzy
-#| msgid "Shift"
 msgid "Color Shift"
-msgstr "Nor"
+msgstr "Noonaa barmay"
 
 #: ../../magic/src/alien.c:67
-#, fuzzy
-#| msgid ""
-#| "Click and move the mouse around to change the color of parts of the "
-#| "picture."
 msgid "Click and move the mouse to change the colors in parts of your picture."
-msgstr "Naagu ka ncaŋoo nor ka ni biyoo jaroo noona barmay."
+msgstr "Naagu ka ncaŋoo nor ka ni biyoo jeroo noonaa barmay."
 
 #: ../../magic/src/alien.c:68
-#, fuzzy
-#| msgid "Click to change the colour of the entire image."
 msgid "Click to change the colors in your entire picture."
-msgstr "Naagu ka biyoo kul noona barmay."
+msgstr "Naagu ka biyoo kul noonaa barmay."
 
 #: ../../magic/src/blocks_chalk_drip.c:132
 msgid "Blocks"
-msgstr "Ferawize"
+msgstr "Gurunbey"
 
 #: ../../magic/src/blocks_chalk_drip.c:134
 msgid "Chalk"
-msgstr "Alhor"
+msgstr "Dooru"
 
 #: ../../magic/src/blocks_chalk_drip.c:136
 msgid "Drip"
@@ -724,41 +702,41 @@ msgstr "Loti"
 
 #: ../../magic/src/blocks_chalk_drip.c:146
 msgid "Click and move the mouse around to make the picture blocky."
-msgstr "Naagu ka ncaŋoo nor ka biyoo tee feraw alhaali."
+msgstr "Naagu, ma ncaŋoo nor ka biyoo bere k'a tee feraw-izeyaŋ."
 
 #: ../../magic/src/blocks_chalk_drip.c:149
 msgid ""
 "Click and move the mouse around to turn the picture into a chalk drawing."
-msgstr "Naagu ka ncaŋoo nor ka biyoo bere k'a tee margari foo nda kanandiyan."
+msgstr "Naagu, ma ncaŋoo nor ka biyoo bere k'a tee dooru-hantum-bii."
 
 #: ../../magic/src/blocks_chalk_drip.c:152
 msgid "Click and move the mouse around to make the picture drip."
-msgstr "Naagu ka ncaŋoo nor ka biyoo morru. "
+msgstr "Naagu, ma ncaŋoo nor ka biyoo morro. "
 
 #: ../../magic/src/blur.c:57
 msgid "Blur"
-msgstr "Kubandi"
+msgstr "Kokoorandi"
 
 #: ../../magic/src/blur.c:60
 msgid "Click and move the mouse around to blur the image."
-msgstr "Naagu ka ncaŋoo nor ka biyoo kubandi."
+msgstr "Naagu ka ncaŋoo nor ka biyoo kokoorandi."
 
 #: ../../magic/src/blur.c:61
 msgid "Click to blur the entire image."
-msgstr "Naagu ka biyoo kul kubandi."
+msgstr "Naagu ka biyoo kul kokoorandi."
 
 #. Both are named "Bricks", at the moment:
 #: ../../magic/src/bricks.c:104
 msgid "Bricks"
-msgstr "Ferawizey"
+msgstr "Feraw-izey"
 
 #: ../../magic/src/bricks.c:111
 msgid "Click and move to draw large bricks."
-msgstr "Naagu ka ncaŋoo nor ka feraw beeriyan žeeri. "
+msgstr "Naagu, ma ncaŋoo nor ka feraw beeri biiyaŋ tee. "
 
 #: ../../magic/src/bricks.c:113
 msgid "Click and move to draw small bricks."
-msgstr "Naagu ka ncaŋoo nor ka feraw kaynayan žeeri."
+msgstr "Naagu, ma ncaŋoo nor ka feraw kaccu biyaŋ  tee."
 
 #: ../../magic/src/calligraphy.c:108
 msgid "Calligraphy"
@@ -766,43 +744,39 @@ msgstr "Kalamhantum"
 
 #: ../../magic/src/calligraphy.c:115
 msgid "Click and move the mouse around to draw in calligraphy."
-msgstr "Naagu ka ncaŋoo nor ka žeeri  kalamhantum ra."
+msgstr "Naagu, ma ncaŋoo nor ka kalamhantum biiyan tee"
 
 #: ../../magic/src/cartoon.c:80
 msgid "Cartoon"
-msgstr "Tiira žeerante."
+msgstr "Biifeelaga"
 
 #: ../../magic/src/cartoon.c:87
 msgid "Click and move the mouse around to turn the picture into a cartoon."
-msgstr "Naagu ka ncaŋoo nor ka biyoo tee tiira žeerante. "
+msgstr "Naagu, ma ncaŋoo nor ka biyoo bere k'a tee biifeelaga."
 
 #: ../../magic/src/confetti.c:63
 msgid "Confetti"
 msgstr "Kaddasu buuna"
 
 #: ../../magic/src/confetti.c:65
-#, fuzzy
-#| msgid "Click to throw a confetti!"
 msgid "Click to throw confetti!"
 msgstr "Naagu ka kaddasu buuna warra !"
 
 #: ../../magic/src/distortion.c:121
 msgid "Distortion"
-msgstr "Žeerikayri"
+msgstr "Golbandiyan"
 
 #: ../../magic/src/distortion.c:129
-#, fuzzy
-#| msgid "Click and drag the mouse to cause a distortion in your picture."
 msgid "Click and drag the mouse to cause distortion in your picture."
 msgstr "Naagu ka ncaŋoo nor ka ni biyoo golbandi. "
 
 #: ../../magic/src/emboss.c:76
 msgid "Emboss"
-msgstr "Žeeri warga"
+msgstr "Wargandi"
 
 #: ../../magic/src/emboss.c:82
 msgid "Click and drag the mouse to emboss the picture."
-msgstr "Naagu ka ncaŋoo nor ka ni žeero wargandi."
+msgstr "Naagu, ma ncaŋoo nor ka biyoo wargandi."
 
 #: ../../magic/src/fade_darken.c:119
 msgid "Lighten"
@@ -810,11 +784,11 @@ msgstr "Henanandi"
 
 #: ../../magic/src/fade_darken.c:121
 msgid "Darken"
-msgstr "Kokoorandi"
+msgstr "Kubandi"
 
 #: ../../magic/src/fade_darken.c:132
 msgid "Click and move the mouse to lighten parts of your picture."
-msgstr "Naagu ka ncaŋoo nor ka ni biyoo jaroo henanandi."
+msgstr "Naagu ka ncaŋoo nor ka ni biyoo jeroo henanandi."
 
 #: ../../magic/src/fade_darken.c:134
 msgid "Click to lighten your entire picture."
@@ -822,7 +796,7 @@ msgstr "Naagu ka biyoo kul henanandi."
 
 #: ../../magic/src/fade_darken.c:139
 msgid "Click and move the mouse to darken parts of your picture."
-msgstr "Naagu ka ncaŋoo nor ka ni biyoo jaroo kubandi."
+msgstr "Naagu ka ncaŋoo nor ka ni biyoo jeroo kubandi."
 
 #: ../../magic/src/fade_darken.c:141
 msgid "Click to darken your entire picture."
@@ -834,7 +808,7 @@ msgstr "Toonandi"
 
 #: ../../magic/src/fill.c:94
 msgid "Click in the picture to fill that area with color."
-msgstr "Biyoo naagu ka nungoo woo too nda noone foo."
+msgstr "Biyoo zaa m'a nga noonaa barmay."
 
 #: ../../magic/src/fisheye.c:77
 msgid "Fisheye"
@@ -842,14 +816,12 @@ msgstr "Hamiisamoɲe"
 
 #. Needs better name
 #: ../../magic/src/fisheye.c:79
-#, fuzzy
-#| msgid "Select an area of the image to create fisheye effect"
 msgid "Click on part of your picture to create a fisheye effect."
 msgstr "Nungu suuba biyoo ra k'a tee hamiisamoɲe."
 
 #: ../../magic/src/flower.c:124
 msgid "Flower"
-msgstr "Zayra boosu"
+msgstr "Boosu"
 
 #: ../../magic/src/flower.c:130
 msgid "Click and drag to draw a flower stalk. Let go to finish the flower."
@@ -861,31 +833,28 @@ msgstr "Kufu"
 
 #: ../../magic/src/foam.c:110
 msgid "Click and drag the mouse to cover an area with foamy bubbles."
-msgstr "Naagu ka ncaŋoo cendi ka nungoo toonandi nda saafun bulbulyan."
+msgstr "Naagu, ma ncaŋoo tansandi ka nungoo too nda saafun kufu."
 
 #: ../../magic/src/fold.c:60
 msgid "Fold"
 msgstr "Taabu"
 
 #: ../../magic/src/fold.c:62
-#, fuzzy
-#| msgid ""
-#| "Choose a background color and click to turn the corner of the page over"
 msgid ""
 "Choose a background color and click to turn the corner of the page over."
-msgstr "Bandafaari noona suuba dee ma naagu ka tiira kanjey bere"
+msgstr "Bandafaari noona suuba dee m'a naagu ka tiiraa kanjey bere."
 
 #: ../../magic/src/glasstile.c:83
 msgid "Glass Tile"
-msgstr "Luulu cenbu."
+msgstr "Luulucenbu"
 
 #: ../../magic/src/glasstile.c:90
 msgid "Click and drag the mouse to put glass tile over your picture."
-msgstr "Naagu ka ncaŋoo nor ka luulu cenbuyan fur ni žeeriyaŋoo boŋ."
+msgstr "Naagu, ma ncaŋoo nor ka ni biyoo taalam nda luulucenbuyaŋ."
 
 #: ../../magic/src/glasstile.c:92
 msgid "Click to cover your entire picture in glass tiles."
-msgstr "Naagu ka luulu cenbu daŋ biyoo kul ra."
+msgstr "Naagu ka luulucenbu daŋ biyoo kul ra."
 
 #: ../../magic/src/grass.c:92
 msgid "Grass"
@@ -897,30 +866,28 @@ msgstr "Naagu ka ncaŋoo nor ka subu žeeri.  Ma si dirŋa kusaa ! "
 
 #: ../../magic/src/kalidescope.c:77
 msgid "Kaleidoscope"
-msgstr "Nooneberediji"
+msgstr "Noonay-bere-diji"
 
 #: ../../magic/src/kalidescope.c:83
 msgid ""
 "Click and drag the mouse to draw with symmetric brushes (a kaleidoscope)."
-msgstr ""
-"Naagu ka ncaŋoo nor ka žeeri nda kalam tenjante hinka (sanda nda "
-"nooneberediji).  "
+msgstr "Naagu, ma ncaŋoo nor ka bii tee nda kalam tenjante hinka (sanda nda noonay-bere-diji)."
 
 #: ../../magic/src/light.c:84
 msgid "Light"
-msgstr "Gaay"
+msgstr "Gaayay"
 
 #: ../../magic/src/light.c:90
 msgid "Click and drag to draw a beam of light on your picture."
-msgstr "Naagu ka ncaŋoo nor ka gaayize tee."
+msgstr "Naagu, ma ncaŋoo nor ka waynawcindi tee."
 
 #: ../../magic/src/metalpaint.c:77
 msgid "Metal Paint"
-msgstr "Guuru caarayan"
+msgstr "Guuru caarayyan"
 
 #: ../../magic/src/metalpaint.c:83
 msgid "Click and drag the mouse to paint with a metallic color."
-msgstr "Naagu ka ncaŋoo nor ka guuru noone foo ka caaray. "
+msgstr "Naagu ka ncaŋoo nor ka guuru noone foo ka caaray."
 
 #: ../../magic/src/mirror_flip.c:94
 msgid "Mirror"
@@ -928,7 +895,7 @@ msgstr "Diji"
 
 #: ../../magic/src/mirror_flip.c:96
 msgid "Flip"
-msgstr "Kuubi"
+msgstr "Bere"
 
 #: ../../magic/src/mirror_flip.c:106
 msgid "Click to make a mirror image."
@@ -936,22 +903,18 @@ msgstr "Naagu ka dii biyoo dijoo ra."
 
 #: ../../magic/src/mirror_flip.c:109
 msgid "Click to flip the picture upside-down."
-msgstr "Naagu ka biyoo sanbu beene ka zunbu ganda."
+msgstr "Naagu ka biyoo zumandi."
 
 #: ../../magic/src/mosaic.c:70
 msgid "Mosaic"
 msgstr "Tarma"
 
 #: ../../magic/src/mosaic.c:73
-#, fuzzy
-#| msgid "Click and move the mouse to add a mosaic effect to the image."
 msgid ""
 "Click and move the mouse to add a mosaic effect to parts of your picture."
 msgstr "Naagu ka ncaŋoo nor ka tarma takari tonton biyoo ga."
 
 #: ../../magic/src/mosaic.c:74
-#, fuzzy
-#| msgid "Click to add a mosaic effect to the entire image."
 msgid "Click to add a mosaic effect to your entire picture."
 msgstr "Naagu ka biyoo kul tee tarma takari."
 
@@ -960,14 +923,10 @@ msgid "Negative"
 msgstr "Bii-biyya"
 
 #: ../../magic/src/negative.c:80
-#, fuzzy
-#| msgid "Click and move the mouse around to draw a negative."
 msgid "Click and move the mouse around to make your painting negative."
-msgstr "Naagu ka ncaŋoo nor ka duu bii-biyya."
+msgstr "Naagu, ma ncaŋoo nor ka biyoo bere k'a tee feraw-izeyaŋ."
 
 #: ../../magic/src/negative.c:83
-#, fuzzy
-#| msgid "Click to turn the image into its negative."
 msgid "Click to turn your painting into its negative."
 msgstr "Naagu ka biyoo bere k'a tee bii-biyya."
 
@@ -976,16 +935,12 @@ msgid "Noise"
 msgstr "Jinde"
 
 #: ../../magic/src/noise.c:66
-#, fuzzy
-#| msgid "Click and move the mouse to darken parts of your picture."
 msgid "Click and move the mouse to add noise to parts of your picture."
-msgstr "Naagu ka ncaŋoo nor ka ni biyoo jaroo kubandi."
+msgstr "Naagu ka ncaŋoo nor ka jinde tonton biyoo ga."
 
 #: ../../magic/src/noise.c:67
-#, fuzzy
-#| msgid "Click to darken your entire picture."
 msgid "Click to add noise to your entire picture."
-msgstr "Naagu ka biyoo kul kubandi."
+msgstr "Naagu ka jinde tonton biyoo kul ga."
 
 #: ../../magic/src/rails.c:100
 msgid "Rails"
@@ -997,35 +952,31 @@ msgstr "Naagu ka ncaŋoo nor ka  zirji fondo tee."
 
 #: ../../magic/src/rainbow.c:107
 msgid "Rainbow"
-msgstr "Woyhenney dobaa"
+msgstr "Woyhenney-dobaa"
 
 #: ../../magic/src/rainbow.c:114
 msgid "You can draw in rainbow colors!"
-msgstr "N ga hinka noonawey ka woyhenna dobo tee !"
+msgstr "N ga hin ka woyhenney-dobaa noonawey ka bii tee "
 
 #: ../../magic/src/rain.c:65
 msgid "Rain"
-msgstr "N'cirɲi"
+msgstr "Ncirɲi"
 
 #: ../../magic/src/rain.c:68
-#, fuzzy
-#| msgid "Click to place a rain drop onto the image."
 msgid "Click to place a rain drop onto your picture."
-msgstr "Naagu ka n'cirɲi tolli biyoo ra."
+msgstr "Naagu ka ncirɲi loti-loti biyoo ra."
 
 #: ../../magic/src/rain.c:69
-#, fuzzy
-#| msgid "Click to cover the image with rain drops."
 msgid "Click to cover your picture with rain drops."
-msgstr "Naagu ka n'cirɲi tolli  biyoo kul ra."
+msgstr "Naagu ka ncirɲi loti-loti biyoo kul ra."
 
 #: ../../magic/src/ripples.c:81
 msgid "Ripples"
-msgstr "Bondayzey"
+msgstr "Bonday-izey."
 
 #: ../../magic/src/ripples.c:87
 msgid "Click to make ripples appear over your picture."
-msgstr "Naagu ka bonday tee biyoo ra."
+msgstr "Naagu, ma bondayyaŋ tunandi haroo boŋ "
 
 #: ../../magic/src/rosette.c:90
 msgid "Rosette"
@@ -1045,7 +996,7 @@ msgstr "N ga hin ka bii tee sanda Picasso !"
 
 #: ../../magic/src/sharpen.c:73
 msgid "Edges"
-msgstr ""
+msgstr "Hirrey"
 
 #: ../../magic/src/sharpen.c:74
 msgid "Sharpen"
@@ -1053,45 +1004,31 @@ msgstr "Yanta"
 
 #: ../../magic/src/sharpen.c:75
 msgid "Silhouette"
-msgstr "Azati"
+msgstr "Azzaati"
 
 #: ../../magic/src/sharpen.c:78
-#, fuzzy
-#| msgid "Click and move the mouse to darken parts of your picture."
 msgid "Click and move the mouse to trace edges in parts of your picture."
-msgstr "Naagu ka ncaŋoo nor ka ni biyoo jaroo kubandi."
+msgstr "Naagu ka ncaŋoo nor ka hirri tonton biyoo ga."
 
 #: ../../magic/src/sharpen.c:79
-#, fuzzy
-#| msgid "Click to darken your entire picture."
 msgid "Click to trace edges in your entire picture."
-msgstr "Naagu ka biyoo kul kubandi."
+msgstr "Naagu ka biyoo kul noonaa barmay."
 
 #: ../../magic/src/sharpen.c:80
-#, fuzzy
-#| msgid "Click and move the mouse to darken parts of your picture."
 msgid "Click and move the mouse to sharpen parts of your picture."
-msgstr "Naagu ka ncaŋoo nor ka ni biyoo jaroo kubandi."
+msgstr "Naagu ka ncaŋoo nor ka ni biyoo yanta"
 
 #: ../../magic/src/sharpen.c:81
-#, fuzzy
-#| msgid "Click to sharpen the entire image."
 msgid "Click to sharpen the entire picture."
 msgstr "Naagu ka biyoo kul yanta."
 
 #: ../../magic/src/sharpen.c:82
-#, fuzzy
-#| msgid ""
-#| "Click and move the mouse to create a black and white silhouette of the "
-#| "image."
 msgid "Click and move the mouse to create a black and white silhouette."
-msgstr "Naagu ka ncaŋoo nor ka azati bibi nda i kaarey tee biyoo se."
+msgstr "Naagu ka ncaŋoo nor ka azzaati bibi nda i kaarey tee biyoo se."
 
 #: ../../magic/src/sharpen.c:83
-#, fuzzy
-#| msgid "Click to create a black and white silhouette of the entire image."
 msgid "Click to create a black and white silhouette of your entire picture."
-msgstr "Naagu ka ncaŋoo nor ka azati bibi nda i kaarey tee biyoo kul se."
+msgstr "Naagu ka ncaŋoo nor ka azzaati bibi nda i kaaray tee biyoo kul se."
 
 #: ../../magic/src/shift.c:104
 msgid "Shift"
@@ -1099,15 +1036,15 @@ msgstr "Nor"
 
 #: ../../magic/src/shift.c:110
 msgid "Click and drag to shift your picture around on the canvas."
-msgstr "Ncaŋoo naagu k'a nor  ka ni biyoo daŋ kungaa ra. "
+msgstr "Ncaŋoo naagu m'a nor  ka ni biyoo daŋ kaloo ra. "
 
 #: ../../magic/src/smudge.c:77
 msgid "Smudge"
-msgstr "Zinji"
+msgstr "Kusawandi"
 
 #: ../../magic/src/smudge.c:84
 msgid "Click and move the mouse around to smudge the picture."
-msgstr "Ncaŋoo naagu k'a nor  ka biyoo zinji."
+msgstr "Naagu ma ncaŋoo nor ka biyoo kusawandi. "
 
 #: ../../magic/src/snow.c:68
 msgid "Snow Ball"
@@ -1118,16 +1055,12 @@ msgid "Snow Flake"
 msgstr "Než hamni"
 
 #: ../../magic/src/snow.c:72
-#, fuzzy
-#| msgid "Click to make ripples appear over your picture."
 msgid "Click to add snow balls to your picture."
-msgstr "Naagu ka bonday tee biyoo ra."
+msgstr "Naagu ka než hamni tonton biyoo ga."
 
 #: ../../magic/src/snow.c:73
-#, fuzzy
-#| msgid "Click to make ripples appear over your picture."
 msgid "Click to add snow flakes to your picture."
-msgstr "Naagu ka bonday tee biyoo ra."
+msgstr "Naagu ka než hamni tonton biyoo ga."
 
 #: ../../magic/src/tint.c:71
 msgid "Tint"
@@ -1135,130 +1068,61 @@ msgstr "Caaray"
 
 #: ../../magic/src/tint.c:72
 msgid "Color & White"
-msgstr ""
+msgstr "Bibi nda I kaaray"
 
 #: ../../magic/src/tint.c:75
-#, fuzzy
-#| msgid ""
-#| "Click and move the mouse around to change the color of parts of the "
-#| "picture."
 msgid ""
 "Click and move the mouse around to change the color of parts of your picture."
-msgstr "Naagu ka ncaŋoo nor ka ni biyoo jaroo noona barmay."
+msgstr "Naagu ka ncaŋoo nor ka ni biyoo jarey noona barmay."
 
 #: ../../magic/src/tint.c:76
-#, fuzzy
-#| msgid "Click to change the colour of the entire image."
 msgid "Click to change the color of your entire picture."
-msgstr "Naagu ka biyoo kul noona barmay."
+msgstr "Naagu ka biyoo kul noonaa barmay."
 
 #: ../../magic/src/tint.c:77
-#, fuzzy
-#| msgid "Click and move the mouse around to turn the picture into a cartoon."
 msgid ""
 "Click and move the mouse around to turn parts of your picture into white and "
 "a color you choose."
-msgstr "Naagu ka ncaŋoo nor ka biyoo tee tiira žeerante. "
+msgstr "Naagu, ma ncaŋoo nor ka biyoo jerey bere k'i tee i kaaray nda noona kaŋ n' na suuba."
 
 #: ../../magic/src/tint.c:78
-#, fuzzy
-#| msgid "Click to cover your entire picture in glass tiles."
 msgid "Click to turn your entire picture into white and a color you choose."
-msgstr "Naagu ka luulu cenbu daŋ biyoo kul ra."
+msgstr "Naagu, ma ncaŋoo nor ka biyoo kul bere k'a tee i kaaray nda noona kaŋ n' na suuba."
 
 #: ../../magic/src/toothpaste.c:65
 msgid "Toothpaste"
 msgstr "kossi doonu"
 
 #: ../../magic/src/toothpaste.c:68
-#, fuzzy
-#| msgid "Click and drag to squirt toothpaste onto the image."
 msgid "Click and drag to squirt toothpaste onto your picture."
 msgstr "Naagu ka ncaŋoo nor ka kossi doonu firzi biyoo ra."
 
 #: ../../magic/src/tv.c:72
 msgid "TV"
-msgstr "TV"
+msgstr "Telewižoŋ"
 
 #: ../../magic/src/tv.c:74
 msgid "Click to make your picture look like it's on television."
-msgstr "Naagu ka biyoo himandi ka bara televisoŋ ra."
+msgstr "Naagu ka biyoo himandi sanda televisoŋ ra."
 
 #: ../../magic/src/waves.c:75
 msgid "Waves"
-msgstr "Bondawey"
+msgstr "Bondaway"
 
 #: ../../magic/src/waves.c:76
 msgid "Wavelets"
-msgstr "Bonday-ize"
+msgstr "Bonday-izey"
 
 #: ../../magic/src/waves.c:83
 msgid ""
 "Click to make the picture horizontally wavy. Click toward the top for "
 "shorter waves, the bottom for taller waves, the left for small waves, and "
 "the right for long waves."
-msgstr ""
-"Naagu ka bonday-taka bii zumantee tee. Naagu beene here ka bonday kaacuyan "
-"tee. Ganda here ibeeriyan se. Kanbe wowaa ga ka kaa gandoo ra, kanbe guma ga "
-"ka tonton gandoo ra. "
+msgstr "Naagu ka bonday-taka bii zumantee tee. Naagu beene here ka bonday kaccuyan tee. Ganda here ibeeriyan se. Kanbe wowaa ga ka kaa gandoo ra, kanbe guma ga ka tonton gandoo ra. Naagu beene here ka bonday kaccuyan tee. Ganda here ibeeriyan se. Kanbe wowaa ga ka kaa gandoo ra, kanbe guma ga ka tonton gandoo ra. "
 
 #: ../../magic/src/waves.c:84
 msgid ""
 "Click to make the picture vertically wavy. Click toward the top for shorter "
 "waves, the bottom for taller waves, the left for small waves, and the right "
 "for long waves."
-msgstr ""
-"Naagu ka bonday-taka bii kayante tee. Naagu beene here ka bonday kaacuyan "
-"tee. Ganda here ibeeriyan se. Kanbe wowaa ga ka kaa gandoo ra, kanbe guma ga "
-"ka tonton gandoo ra. "
-
-#~ msgid "Alien"
-#~ msgstr "Alaabiina"
-
-#~ msgid "Click and move the mouse to give the image an \"alien\" appearance."
-#~ msgstr "Naagu ka ncaŋoo nor ka biyoo tee kayfi alhaali."
-
-#~ msgid "Click to give the entire image an \"alien\" appearance."
-#~ msgstr "Naagu ka biyoo tee kayfi alhaali."
-
-#~ msgid "Click and move the mouse to add noise to the image."
-#~ msgstr "Naagu ka ncaŋoo nor ka jinde tonton biyoo ga. "
-
-#~ msgid "Click to add noise to the entire image."
-#~ msgstr "Naagu ka jinde tonton biyoo kul ga."
-
-#~ msgid "Puzzle"
-#~ msgstr "Boŋhawey"
-
-#~ msgid "Select the area of image where would you like to make a mosaic"
-#~ msgstr "Nungu suuba biyoo ra k'a tee tarma takari."
-
-#~ msgid "Click to make mosaic in fullscreen mode"
-#~ msgstr "Naagu ka dijoo kul tee tarma takari"
-
-#~ msgid "Trace Contour"
-#~ msgstr "Windi žeeri"
-
-#~ msgid "Click and move the mouse to trace the edges of objects in the image."
-#~ msgstr "Naagu ka ncaɲoo nor ka hirri tee biyoo jinawey se. "
-
-#~ msgid "Click to trace the edges of objects in the image."
-#~ msgstr "Naagu ka hirri tee biyoo jinawey se."
-
-#~ msgid "Click and move the mouse to sharpen the image."
-#~ msgstr "Naagu ka ncaŋoo nor ka biyoo yanta."
-
-#~ msgid "Click to add snow to the entire image."
-#~ msgstr "Naagu ka než tonton biyoo kul ra."
-
-#~ msgid "Threshold"
-#~ msgstr "Hirri"
-
-#~ msgid ""
-#~ "Click and move the mouse around to threshold the image into pure colour "
-#~ "and white regions."
-#~ msgstr "Naagu ka ncaŋoo nor ka biyoo hirri nda noona."
-
-#~ msgid ""
-#~ "Click to threshold the entire image into pure colour and white regions."
-#~ msgstr "Naagu ka ncaŋoo nor ka biyoo kul hirri nda noona."
+msgstr "Naagu ka bonday-taka bii kayante tee. Naagu beene here ka bonday kaccuyan tee. Ganda here ibeeriyan se. Kanbe wowaa ga ka kaa gandoo ra, kanbe guma ga ka tonton gandoo ra. Naagu beene here ka bonday kaccuyan tee. Ganda here ibeeriyan se. Kanbe wowaa ga ka kaa gandoo ra, kanbe guma ga ka tonton gandoo ra. "
