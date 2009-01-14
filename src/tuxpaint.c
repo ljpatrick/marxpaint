@@ -15499,7 +15499,8 @@ static void do_render_cur_text(int do_blit)
   if (texttool_len > 0)
   {
     #if defined(_FRIBIDI_H) || defined(FRIBIDI_H)
-      FriBidiCharType baseDir = FRIBIDI_TYPE_LTR;
+      //FriBidiCharType baseDir = FRIBIDI_TYPE_LTR;
+      FriBidiCharType baseDir = FRIBIDI_TYPE_WL; /* Per: Shai Ayal <shaiay@gmail.com>, 2009-01-14 */
       FriBidiChar *unicodeIn, *unicodeOut;
       unsigned int i;
 
