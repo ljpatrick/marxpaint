@@ -737,6 +737,7 @@ install-dlls:
 	  cp `which libpangoft2-1.0-0.dll` $(BIN_PREFIX); \
 	  cp `which libgmodule-2.0-0.dll` $(BIN_PREFIX); \
 	  cp `which libpangowin32-1.0-0.dll` $(BIN_PREFIX); \
+	  cp `which libfribidi-0.dll` $(BIN_PREFIX); \
 	fi
 	@strip -s $(BIN_PREFIX)/*.dll
 	@if [ "x$(BDIST_WIN9X)" == "x" ]; then \
