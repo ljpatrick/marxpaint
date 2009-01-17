@@ -8,7 +8,7 @@ http://www.tuxpaint.org/
 
 $Id$
 
-2009.January.11 (0.9.21)
+2009.January.17 (0.9.21)
   * New Starters:
     -------------
     * Silver Frame
@@ -167,6 +167,9 @@ $Id$
 
     * Swedish
       Daniel Nylander <po@danielnylander.se>
+
+    * Tamil
+      Ravishankar Ayyakkannu <ravishankar.ayyakkannu@gmail.com>
 
   * Bug Fixes
     ---------

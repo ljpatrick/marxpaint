@@ -7,7 +7,7 @@ bill@newbreedsoftware.com
 http://www.tuxpaint.org/
 
 
-June 17, 2002 - January 8, 2009
+June 17, 2002 - January 11, 2009
 
 $Id$
 
@@ -528,6 +528,7 @@ $Id$
     Technical assistance by Ed Montgomery <edmontgomery@hotmail.com>
 
   * Tamil
+    Ravishankar Ayyakkannu <ravishankar.ayyakkannu@gmail.com>
     Mugunth <mugunth@thamizha.com>
 
   * Telugu
