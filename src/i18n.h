@@ -10,7 +10,7 @@
 
   $Id$
   
-  June 14, 2002 - October 26, 2008
+  June 14, 2002 - January 23, 2009
 */
 
 
@@ -107,7 +107,7 @@ enum
   LANG_XH,			/* Xhosa */
   LANG_ZH_CN,			/* Chinese (Simplified) */
   LANG_ZH_TW,			/* Chinese (Traditional) */
-  LANG_ZW,			/* Zapoteco */
+  LANG_ZAM,			/* Zapotec (Miahuatlan) */
   NUM_LANGS
 };
 

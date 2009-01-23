@@ -308,7 +308,8 @@ const language_to_locale_struct language_to_locale_array[] = {
   {"chinese", "zh_CN.UTF-8"},
   {"simplified-chinese", "zh_CN.UTF-8"},
   {"traditional-chinese", "zh_TW.UTF-8"},
-  {"zapoteco", "zw_MX.UTF-8"},
+  {"zapotec", "zam.UTF-8"},
+  {"miahuatlan-zapotec", "zam.UTF-8"},
   {"khmer", "km_KH.UTF-8"}
 };
 
@@ -564,7 +565,7 @@ void show_lang_usage(FILE * f, const char *const prg)
 /* wo */ "  wolof\n"
 /* cy */ "  welsh        cymraeg\n"
 /* xh */ "  xhosa\n"
-/* zw */ "  zapoteco\n"
+/* zam */"  zapotec      miahuatlan-zapotec\n"
 	  "\n", prg);
 }
 
@@ -660,7 +661,7 @@ void show_locale_usage(FILE * f, const char *const prg)
 	  "  wo_SN   (Wolof)\n"
 	  "  cy_GB   (Welsh        Cymraeg)\n"
 	  "  xh_ZA   (Xhosa)\n"
-	  "  zw_MX   (Zapoteco)\n"
+	  "  zam     (Zapoteco-Miahuatlan)\n"
 	  "\n", prg);
 }
 
