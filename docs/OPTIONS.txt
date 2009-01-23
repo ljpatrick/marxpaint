@@ -3,13 +3,13 @@
 
 Options Documentation
 
-                Copyright 2002-2008 by Bill Kendrick and others
+                Copyright 2002-2009 by Bill Kendrick and others
                                New Breed Software
 
                            bill@newbreedsoftware.com
                             http://www.tuxpaint.org/
 
-                               December 13, 2008
+                                January 23, 2009
 
      ----------------------------------------------------------------------
 
@@ -672,7 +672,7 @@ Windows Users
                  |--------------------+---------------------+---------------|
                  |xhosa               |                     |               |
                  |--------------------+---------------------+---------------|
-                 |zapoteco            |                     |               |
+                 |miahuatlan-zapotec  |                     |zapotec        |
                  +----------------------------------------------------------+
 
      ----------------------------------------------------------------------
@@ -1025,7 +1025,8 @@ Available Languages
          |zh_TW (*)|                   |Chinese          |                  |
          |         |                   |(Traditional)    |                  |
          |---------+-------------------+-----------------+------------------|
-         |zw_MX    |                   |Zapoteco         |                  |
+         |zam      |                   |Zapotec          |                  |
+         |         |                   |(Miahuatlan)     |                  |
          +------------------------------------------------------------------+
 
          (*) - These languages require their own fonts, since they are not

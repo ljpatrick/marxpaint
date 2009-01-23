@@ -8,7 +8,7 @@ http://www.tuxpaint.org/
 
 $Id$
 
-2009.January.17 (0.9.21)
+2009.January.23 (0.9.21)
   * New Starters:
     -------------
     * Silver Frame
@@ -170,6 +170,8 @@ $Id$
 
     * Tamil
       Ravishankar Ayyakkannu <ravishankar.ayyakkannu@gmail.com>
+
+    * Zapotec (Miahuatlan dialect) name and locale code correction
 
   * Bug Fixes
     ---------
