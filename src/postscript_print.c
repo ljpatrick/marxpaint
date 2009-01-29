@@ -6,7 +6,7 @@
   (for non-Windows, non-Mac OS X, non-BeOS platforms, e.g. Linux)
   (moved from tuxpaint.c in 0.9.17)
 
-  Copyright (c) 2008 by Bill Kendrick and others
+  Copyright (c) 2009 by Bill Kendrick and others
   bill@newbreedsoftware.com
   http://www.tuxpaint.org/
 
@@ -36,7 +36,7 @@
     implied warranty.
 
 
-  June 24, 2007 - December 7, 2008
+  June 24, 2007 - January 29, 2009
   $Id$
 */
 
@@ -61,6 +61,8 @@
 #endif
 
 #include "pixels.h"
+
+#define MARGIN 36 /* Margin to put around image, in points (inch/72) (36pt = 0.5") */
 
 #define my_min(x,y) ((x < y) ? (x) : (y))
 
@@ -185,8 +187,8 @@ int do_ps_save(FILE * fi,
 
   /* Determine scale: */
 
-  scale = my_min(((float) ppr_w / (float) r_img_w),
-		 ((float) ppr_h / (float) r_img_h)) * (72.0 / 100.0);
+  scale = my_min(((float) (ppr_w - (MARGIN * 2)) / (float) r_img_w),
+         ((float) (ppr_h - (MARGIN * 2)) / (float) r_img_h));
 
   printed_img_w = r_img_w * scale;
   printed_img_h = r_img_h * scale;
@@ -219,10 +221,8 @@ int do_ps_save(FILE * fi,
 
   fprintf(fi, "%%%%Pages: 1\n");
 
-  fprintf(fi, "%%%%BoundingBox: %d %d %d %d\n",
-	      (int) tlate_x, (int) tlate_y,
-	      (int) (tlate_x + printed_img_w + 0.5),
-	      (int) (tlate_y + printed_img_h + 0.5));
+  fprintf(fi, "%%%%BoundingBox: 0 0 %d %d\n", (int) (ppr_w + 0.5), (int)
+(ppr_h + 0.5));
 
   fprintf(fi, "%%%%EndComments\n");
 
