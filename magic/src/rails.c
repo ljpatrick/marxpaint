@@ -29,6 +29,8 @@ static int rails_math_ceil(int x, int y);	//ceil() in cstdlib returns float and 
 static Uint8 * rails_status_of_segments;	//a place to store an info about bitmap used for selected segment
 static char ** rails_images;	//the pathes to all the images needed
 static unsigned int rails_segment_modified;		//which segment was modified this time?
+static unsigned int rails_segment_modified_last =0;     //which segment was last modified
+static unsigned int rails_segment_to_add =0;            //a segment that should be added to solve corner joints
 static SDL_Rect modification_rect;
 static SDL_Surface * canvas_backup;
 //				Housekeeping functions
@@ -66,7 +68,7 @@ int rails_init(magic_api * api)
 	snprintf(rails_images[0], 1024*sizeof(char), "%s/images/magic/rails_one.png", api->data_directory);
 	snprintf(rails_images[1], 1024*sizeof(char), "%s/images/magic/rails_three.png", api->data_directory);
 	snprintf(rails_images[2], 1024*sizeof(char), "%s/images/magic/rails_four.png", api->data_directory);
-	snprintf(rails_images[3], 1024*sizeof(char), "%s/images/magic/rails_three.png", api->data_directory);
+	snprintf(rails_images[3], 1024*sizeof(char), "%s/images/magic/rails_corner.png", api->data_directory);
 
 	rails_one=IMG_Load(rails_images[0]);
     rails_three=IMG_Load(rails_images[1]);
@@ -111,7 +113,9 @@ void rails_release(magic_api * api, int which,
 
 void rails_shutdown(magic_api * api)
 {
-#if 0
+  //#if 0
+  // Activating to test after avoiding to write out of rails_status_of_segments
+  // let's see if it works...
 
 // FIXME -- commented out because a leak is better than a crash
 //
@@ -139,7 +143,7 @@ void rails_shutdown(magic_api * api)
 		free(rails_images[i]);
 	free(rails_images);
 	free(rails_status_of_segments);
-#endif
+	//#endif
 }
 
 void rails_switchin(magic_api * api, int which, int mode, SDL_Surface * canvas)
@@ -152,7 +156,8 @@ void rails_switchin(magic_api * api, int which, int mode, SDL_Surface * canvas)
 	SDL_BlitSurface(canvas, NULL, canvas_backup, NULL);
 	rails_segments_x=rails_math_ceil(canvas->w,img_w);
 	rails_segments_y=rails_math_ceil(canvas->h,img_h);
-	rails_status_of_segments=(Uint8 *)calloc(rails_segments_x*rails_segments_y,sizeof(Uint8));
+	//status_of_segments[0] will not be used, we write in rails_status_of_segments[1 to segments_x*segments_y]
+	rails_status_of_segments=(Uint8 *)calloc(rails_segments_x*rails_segments_y + 1, sizeof(Uint8));
 }
 
 void rails_switchout(magic_api * api, int which, int mode, SDL_Surface * canvas)
@@ -200,6 +205,14 @@ static void rails_flip(void * ptr, SDL_Surface * dest, SDL_Surface * src)
 		for (y=0; y<dest->h; y++)
 			api->putpixel(dest, x, y, api->getpixel(src, x, src->h-y));
 }
+static void rails_flip_flop(void * ptr, SDL_Surface * dest, SDL_Surface * src)
+{
+  magic_api * api = (magic_api *) ptr;
+  Sint16 x, y;
+  for (x=0; x<dest->w; x++)
+    for (y=0; y<dest->h; y++)
+      api->putpixel(dest, x, y, api->getpixel(src, y, x));
+}
 
 static void rails_rotate (void * ptr, SDL_Surface * dest, SDL_Surface * src, _Bool direction)
 //src and dest must have same size
@@ -226,20 +239,69 @@ void rails_click(magic_api * api, int which, int mode,
            SDL_Surface * canvas, SDL_Surface * snapshot,
            int x, int y, SDL_Rect * update_rect)
 {
+        rails_segment_modified_last = 0;
 	rails_drag(api, which, canvas, snapshot, x, y, x, y, update_rect);
 }
 
-static Uint8 rails_select_image(Uint8 segment)
+static Uint8 rails_select_image(Uint16 segment)
 {
 	int take_up, take_down, take_left, take_right;
 	int val_up, val_down, val_left, val_right;
+	int from_top=0, from_bottom=0, from_left = 0, from_right = 0;
+	int from_top_right=0, from_top_left=0, from_bottom_right=0, from_bottom_left = 0;
+	int TOP=0, BOTTOM=0, LEFT=0, RIGHT = 0;
+	
+	//Checking from were we come...
+	if (rails_segment_modified_last>0)
+	  {
+	    if (segment == rails_segment_modified_last + 1)
+	      from_left = 1;
+
+	    if (segment == rails_segment_modified_last - 1)
+	      from_right = 1;
+
+	    if (segment == rails_segment_modified_last - rails_segments_x)
+	      from_bottom = 1;
+
+	    if (segment == rails_segment_modified_last + rails_segments_x)
+	      from_top = 1;
+
+	    // Segments are joining by the corner
+	    // We need to add a new segment to join by side, adding clockwise
+	    if (segment == rails_segment_modified_last + rails_segments_x + 1)
+	      {
+		from_top_left = 1;
+		rails_segment_to_add = segment - rails_segments_x;
+	      }
+
+	    if (segment == rails_segment_modified_last + rails_segments_x - 1)
+	      {
+		from_top_right = 1;
+		rails_segment_to_add = segment + 1;
+	      }
+
+	    if (segment == rails_segment_modified_last - rails_segments_x - 1)
+	      {
+		from_bottom_right = 1;
+		rails_segment_to_add = segment + rails_segments_x;
+	      }
+	    if (segment == rails_segment_modified_last - rails_segments_x + 1)
+	      {
+		from_bottom_left = 1;
+		rails_segment_to_add = segment -1;
+	      }
+	      }
+
+
+		
+
 
 	take_up=segment-rails_segments_x;	
 	if (take_up<=0) val_up = SEG_NONE;
         else val_up = rails_status_of_segments[take_up];
 
 	take_down=segment+rails_segments_x;
-	if (take_down>rails_segments_x*rails_segments_y) val_down = SEG_NONE;
+	if (take_down>(signed)(rails_segments_x*rails_segments_y)) val_down = SEG_NONE;
 	else val_down = rails_status_of_segments[take_down];
 	
 	if ((segment%rails_segments_x)==1) val_left=SEG_NONE;
@@ -248,34 +310,49 @@ static Uint8 rails_select_image(Uint8 segment)
 	if ((segment%rails_segments_x)==0) val_right=SEG_NONE;
 	else val_right = rails_status_of_segments[segment+1];
 
-	if (	(val_left & SEG_RIGHT) && (val_right & SEG_LEFT) &&
-		(val_up & SEG_BOTTOM) && (val_down & SEG_TOP))
-			return SEG_LEFT_RIGHT_TOP_BOTTOM;
-		
-	if (	(val_left & SEG_RIGHT) && (val_right & SEG_LEFT) &&
-                 (val_up & SEG_BOTTOM))
-			return SEG_LEFT_RIGHT_TOP;
+	if ( from_left || (val_left & SEG_RIGHT) || from_bottom_left)
+	  {
+	  LEFT = 1;}
+	if ( from_right || (val_right & SEG_LEFT) || from_top_right)
+	  RIGHT=1;
+	if ( from_top || (val_up & SEG_BOTTOM) || from_top_left)
+	  TOP=1;
+	if (from_bottom || (val_down & SEG_TOP) || from_bottom_right)
+	  BOTTOM=1;
 
-	if (	(val_left & SEG_RIGHT) && (val_right & SEG_LEFT) &&
-                 (val_down & SEG_TOP))
-			return SEG_LEFT_RIGHT_BOTTOM;
-		
-	if (	(val_right & SEG_LEFT) &&
-                 (val_down & SEG_TOP) && (val_up & SEG_BOTTOM) )
-			return SEG_LEFT_TOP_BOTTOM;
-		
-	if (	(val_right & SEG_LEFT) &&
-                 (val_down & SEG_TOP) && (val_up & SEG_BOTTOM) )
-			return SEG_RIGHT_TOP_BOTTOM;
 
-	if (	(val_right & SEG_LEFT) && (val_left & SEG_RIGHT))
-			return SEG_LEFT_RIGHT;
+	if (TOP && BOTTOM && LEFT && RIGHT)
+	  return SEG_LEFT_RIGHT_TOP_BOTTOM;
+	if (LEFT && RIGHT && TOP)
+	  return SEG_LEFT_RIGHT_TOP;
+	if (LEFT && RIGHT && BOTTOM)
+	  return SEG_LEFT_RIGHT_BOTTOM;
+	if (TOP && BOTTOM && LEFT)
+	  return SEG_LEFT_TOP_BOTTOM;
+	if (TOP && BOTTOM && RIGHT)
+	  return SEG_RIGHT_TOP_BOTTOM;
+	if (LEFT &&RIGHT)
+	  return SEG_LEFT_RIGHT;
+	if (TOP&&BOTTOM)
+	  return SEG_TOP_BOTTOM;
+	if (LEFT&&TOP)
+	  return SEG_LEFT_TOP;
+	if (LEFT&&BOTTOM)
+	  return SEG_LEFT_BOTTOM;
+	if (RIGHT&&TOP)
+	  return SEG_RIGHT_TOP;
+	if (RIGHT&&BOTTOM)
+	  return SEG_RIGHT_BOTTOM;
+	if (LEFT|RIGHT)
+	  return SEG_LEFT_RIGHT;
+	return SEG_TOP_BOTTOM;
 
-        return SEG_TOP_BOTTOM;
+
+
 }
 
 static void rails_draw(void * ptr, int which, SDL_Surface * canvas, SDL_Surface * last,
-                int x, int y)
+                int x, int y, unsigned int segment)
 {
 	magic_api * api = (magic_api *) ptr;
 	SDL_Surface * result, * temp;
@@ -283,19 +360,19 @@ static void rails_draw(void * ptr, int which, SDL_Surface * canvas, SDL_Surface 
 	_Bool use_temp;
 	
 	use_temp=0;
-	rails_segment_modified=rails_get_segment(x,y);
-	
+	if (segment>rails_segments_x*rails_segments_y)
+	  return;	
 	//modification_rect.x and modification_rect.y are set by function
-	rails_extract_coords_from_segment(rails_segment_modified, &modification_rect.x, &modification_rect.y);
+	rails_extract_coords_from_segment(segment, &modification_rect.x, &modification_rect.y);
 	modification_rect.h=img_w;
 	modification_rect.w=img_h;
 	
-	image=rails_select_image(rails_segment_modified);		//select the image to display
+	image=rails_select_image(segment);		//select the image to display
 
-        if (rails_status_of_segments[rails_segment_modified] == image)
+        if (rails_status_of_segments[segment] == image)
           return;
 
-	rails_status_of_segments[rails_segment_modified]=image;	//and write it to global table
+	rails_status_of_segments[segment]=image;	//and write it to global table
 	
 
 	result=SDL_CreateRGBSurface(SDL_ANYFORMAT, img_w, img_h, rails_one->format->BitsPerPixel,
@@ -360,7 +437,7 @@ static void rails_draw(void * ptr, int which, SDL_Surface * canvas, SDL_Surface 
                 break;
 
                 case SEG_LEFT_BOTTOM:
-			rails_rotate(api, temp, rails_corner, 0);
+			rails_flip_flop(api, temp, rails_corner);
 			use_temp=1;
                 break;
 	}
@@ -374,14 +451,57 @@ static void rails_draw(void * ptr, int which, SDL_Surface * canvas, SDL_Surface 
 	api->playsound(rails_snd, (x * 255) / canvas->w, 255);
 }
 
+static void rails_draw_wrapper(void * ptr, int which, SDL_Surface * canvas, SDL_Surface * last,
+				  int x, int y)
+{
+  rails_segment_modified=rails_get_segment(x,y);
+  
+  
+  if ( (rails_segment_modified == rails_segment_modified_last))
+    return;
+if (rails_segment_modified>0)
+  {
+  rails_draw((void *) ptr, which, canvas, last, x, y, rails_segment_modified);
+  }
+  if (rails_segment_modified_last>0)
+    rails_draw((void *) ptr, which, canvas, last, x, y, rails_segment_modified_last);
+
+  if (rails_segment_to_add>0)
+    { 
+      rails_draw((void *) ptr, which, canvas, last, x, y, rails_segment_to_add);
+      rails_draw((void *) ptr, which, canvas, last, x, y, rails_segment_modified_last);
+      rails_segment_to_add=0;
+    }
+if (rails_segment_modified>0)
+  rails_segment_modified_last=rails_segment_modified;
+}
+
 void rails_drag(magic_api * api, int which, SDL_Surface * canvas,
 	          SDL_Surface * snapshot, int ox, int oy, int x, int y,
 		  SDL_Rect * update_rect)
 { 
-	api->line((void *) api, which, canvas, snapshot, ox, oy, x, y, 1, rails_draw);
+  int start_x, end_x, start_y, end_y, segment_start, segment_end, w, h;
+  // avoiding to write out of the canvas
+  if ((x<canvas->w)&&(y<canvas->h)&&(ox<canvas->w)&&(oy<canvas->h)&&((signed)x>0)&&((signed)y>0)&&((signed)ox>0)&&((signed)oy>0))
+    {
+      api->line((void *) api, which, canvas, snapshot, ox, oy, x, y, img_w/2, rails_draw_wrapper);
+      
+      start_x=min(ox,x);
+      end_x=max(ox,x);
+      start_y=min(oy,y);
+      end_y=max(oy,y);
 
-	update_rect->x=modification_rect.x;
-	update_rect->y=modification_rect.y;
-	update_rect->w=modification_rect.w;
-	update_rect->h=modification_rect.h;
+      segment_start=rails_get_segment(start_x-img_w, start_y-img_h);
+      segment_end=rails_get_segment(end_x+img_w,end_y+img_h);
+
+      x=((segment_start%rails_segments_x)-1)*img_w;
+      y=(int)(segment_start/rails_segments_x)*img_h;
+      w=((segment_end%rails_segments_x)-1)*img_w-x+img_w;
+      h=(int)(segment_end/rails_segments_x)*img_h-y+img_h;
+
+      update_rect->x=x;
+      update_rect->y=y;
+      update_rect->w=w;
+      update_rect->h=h;}
+
 }

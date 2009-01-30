@@ -7,7 +7,7 @@ bill@newbreedsoftware.com
 http://www.tuxpaint.org/
 
 
-June 17, 2002 - January 11, 2009
+June 17, 2002 - January 30, 2009
 
 $Id$
 
@@ -57,9 +57,14 @@ $Id$
   by Andrew 'akanewbie' Corcoran <akanewbie@gmail.com>
   Contributed as part of Google Summer of Code, 2008.
 
-  Confetti, Fold and Rails Magic Tools.
+  Confetti, Fold, Fisheye, TV, Rosette, Picasso and Wavelets Magic Tools.
   by Adam 'foo-script' Rakowski <foo-script@o2.pl>
   Contributed as part of Google Summer of Code, 2008.
+
+  Rails Magic Tool
+  by Adam 'foo-script' Rakowski <foo-script@o2.pl> (part of GSOC 2008)
+  with modifications by Bill Kendrick
+  and Pere Pujal i Carabantes <pere@fornol.no-ip.org>
 
 
 * Graphics
