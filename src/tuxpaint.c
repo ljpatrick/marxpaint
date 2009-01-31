@@ -17730,6 +17730,7 @@ int do_new_dialog(void)
   int first_starter;
   int added;
   Uint8 r, g, b;
+  int white_in_palette;
 
   
   do_setcursor(cursor_watch);
@@ -17829,6 +17830,8 @@ int do_new_dialog(void)
 
   /* Throw the color palette at the beginning: */
 
+  white_in_palette = -1;
+
   for (j = -1; j < NUM_COLORS; j++)
   {
     added = 0;
@@ -17865,6 +17868,10 @@ int do_new_dialog(void)
                        SDL_MapRGB(thumbs[num_files]->format, r, g, b));
           added = 1;
         }
+      }
+      else
+      {
+        white_in_palette = j;
       }
     }
     else
@@ -18630,10 +18637,23 @@ int do_new_dialog(void)
       /* FIXME: Don't do anything and go back to Open dialog if they
          hit BACK in color picker! */
 
-      canvas_color_r = color_hexes[which][0];
-      canvas_color_g = color_hexes[which][1];
-      canvas_color_b = color_hexes[which][2];
- 
+      if (which == 0) /* White */
+      {
+        canvas_color_r = canvas_color_g = canvas_color_b = 255;
+      }
+      else if (which <= white_in_palette) /* One of the colors before white in the pallete */
+      {
+        canvas_color_r = color_hexes[which - 1][0];
+        canvas_color_g = color_hexes[which - 1][1];
+        canvas_color_b = color_hexes[which - 1][2];
+      }
+      else
+      {
+        canvas_color_r = color_hexes[which][0];
+        canvas_color_g = color_hexes[which][1];
+        canvas_color_b = color_hexes[which][2];
+      }
+
       SDL_FillRect(canvas, NULL, SDL_MapRGB(canvas->format,
     		                canvas_color_r,
     				canvas_color_g,
