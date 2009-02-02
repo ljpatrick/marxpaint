@@ -203,7 +203,7 @@ static void rails_flip(void * ptr, SDL_Surface * dest, SDL_Surface * src)
 
 	for (x=0; x<dest->w; x++)
 		for (y=0; y<dest->h; y++)
-			api->putpixel(dest, x, y, api->getpixel(src, x, src->h-y));
+			api->putpixel(dest, x, y, api->getpixel(src, x, src->h-y-1));
 }
 static void rails_flip_flop(void * ptr, SDL_Surface * dest, SDL_Surface * src)
 {
@@ -224,13 +224,13 @@ static void rails_rotate (void * ptr, SDL_Surface * dest, SDL_Surface * src, _Bo
 	{
 		for (x = 0; x<dest->w; x++)
 			for (y =0; y<dest->h; y++)
-				api->putpixel(dest, x, y, api->getpixel(src, y, src->w-x));
+				api->putpixel(dest, x, y, api->getpixel(src, y, src->w-x-1));
 	}
 	else			//rotate +90 degs
 	{
 		for (x=0; x<dest->w; x++)
 			for (y=0; y<dest->h; y++)
-				api->putpixel(dest,x,y,api->getpixel(src,src->h-y,x));
+				api->putpixel(dest,x,y,api->getpixel(src,src->h-y-1,x));
 	}
 	
 }
