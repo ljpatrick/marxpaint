@@ -8,7 +8,7 @@ http://www.tuxpaint.org/
 
 $Id$
 
-2009.February.2 (0.9.21)
+2009.February.14 (0.9.21)
   * New Starters:
     -------------
     * Silver Frame
@@ -141,6 +141,9 @@ $Id$
 
     * Chinese (Traditional)
       Song Huang <songhuang@users.sourceforge.net>
+
+    * Danish translation
+      Joe Dalton <joedalton2@yahoo.dk>
 
     * Dutch
       Bert Saal <bertsaal@gmail.com>
