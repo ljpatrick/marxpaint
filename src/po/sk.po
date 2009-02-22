@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint 0.9.17\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-12-31 16:59-0800\n"
+"POT-Creation-Date: 2009-02-21 16:17-0800\n"
 "PO-Revision-Date: 2009-02-02 19:20+0100\n"
 "Last-Translator: Jaroslav Ryník <jrynik at yahoo dot co dot uk>, \n"
 "Language-Team: Slovak <sk-i18n@lists.linux.sk>\n"
@@ -220,95 +220,83 @@ msgid "ZH_TW"
 msgstr "Tradičnou čínštinou"
 
 #. Square shape tool (4 equally-lengthed sides at right angles)
-#: ../shapes.h:171
-#: ../shapes.h:172
+#: ../shapes.h:171 ../shapes.h:172
 msgid "Square"
 msgstr "Štvorec"
 
 #. Rectangle shape tool (4 sides at right angles)
-#: ../shapes.h:175
-#: ../shapes.h:176
+#: ../shapes.h:175 ../shapes.h:176
 msgid "Rectangle"
 msgstr "Obdĺžnik"
 
 #. Circle shape tool (X radius and Y radius are the same)
-#: ../shapes.h:179
-#: ../shapes.h:180
+#: ../shapes.h:179 ../shapes.h:180
 msgid "Circle"
 msgstr "Kruh"
 
 #. Ellipse shape tool (X radius and Y radius may differ)
-#: ../shapes.h:183
-#: ../shapes.h:184
+#: ../shapes.h:183 ../shapes.h:184
 msgid "Ellipse"
 msgstr "Elipsa"
 
 #. Triangle shape tool (3 sides)
-#: ../shapes.h:187
-#: ../shapes.h:188
+#: ../shapes.h:187 ../shapes.h:188
 msgid "Triangle"
 msgstr "Trojuholník"
 
 #. Pentagone shape tool (5 sides)
-#: ../shapes.h:191
-#: ../shapes.h:192
+#: ../shapes.h:191 ../shapes.h:192
 msgid "Pentagon"
 msgstr "Päťuholník"
 
 #. Rhombus shape tool (4 sides, not at right angles)
-#: ../shapes.h:195
-#: ../shapes.h:196
+#: ../shapes.h:195 ../shapes.h:196
 msgid "Rhombus"
 msgstr "Kosoštvorec"
 
 #. Octagon shape tool (8 sides)
-#: ../shapes.h:199
-#: ../shapes.h:200
+#: ../shapes.h:199 ../shapes.h:200
 msgid "Octagon"
 msgstr "Osemuholník"
 
 #. Description of a square
-#: ../shapes.h:208
-#: ../shapes.h:209
+#: ../shapes.h:208 ../shapes.h:209
 msgid "A square is a rectangle with four equal sides."
 msgstr "Štvorec je vlastne obdĺžnik, ktorý má všetky štyri strany rovnaké."
 
 #. Description of a rectangle
-#: ../shapes.h:212
-#: ../shapes.h:213
+#: ../shapes.h:212 ../shapes.h:213
 msgid "A rectangle has four sides and four right angles."
 msgstr "Obdĺžnik má štyri strany a štyri pravé uhly."
 
-#: ../shapes.h:217
-#: ../shapes.h:219
-msgid "A circle is a curve where all points have the same distance from the center."
-msgstr "Kružnica je krivka, ktorej všetky body majú rovnakú vzdialenosť od stredu."
+#: ../shapes.h:217 ../shapes.h:219
+msgid ""
+"A circle is a curve where all points have the same distance from the center."
+msgstr ""
+"Kružnica je krivka, ktorej všetky body majú rovnakú vzdialenosť od stredu."
 
 #. Description of an ellipse
-#: ../shapes.h:222
-#: ../shapes.h:223
+#: ../shapes.h:222 ../shapes.h:223
 msgid "An ellipse is a stretched circle."
 msgstr "Elipsa je roztiahnutý kruh."
 
 #. Description of a triangle
-#: ../shapes.h:226
-#: ../shapes.h:227
+#: ../shapes.h:226 ../shapes.h:227
 msgid "A triangle has three sides."
 msgstr "Trojuholník má tri strany."
 
 #. Description of a pentagon
-#: ../shapes.h:230
-#: ../shapes.h:231
+#: ../shapes.h:230 ../shapes.h:231
 msgid "A pentagon has five sides."
 msgstr "Päťuholník má päť strán."
 
-#: ../shapes.h:235
-#: ../shapes.h:237
+#: ../shapes.h:235 ../shapes.h:237
 msgid "A rhombus has four equal sides, and opposite sides are parallel."
-msgstr "Kosoštvorec má štyri rovnaké strany, pričom protiľahlé strany sú vždy rovnobežné."
+msgstr ""
+"Kosoštvorec má štyri rovnaké strany, pričom protiľahlé strany sú vždy "
+"rovnobežné."
 
-#: ../shapes.h:241
-#: ../shapes.h:243
+#: ../shapes.h:241 ../shapes.h:243
 msgid "An octagon has eight equal sides."
 msgstr "Pravidelný osemuholník má osem rovnako dlhých strán."
 
@@ -339,8 +327,7 @@ msgstr "Pečiatky"
 
 #. Title of shape selector (buttons down the right for shapes tool)
 #. Shape creation tool (square, circle, etc.)
-#: ../titles.h:56
-#: ../tools.h:54
+#: ../titles.h:56 ../tools.h:54
 msgid "Shapes"
 msgstr "Geometrické útvary"
 
@@ -351,8 +338,7 @@ msgstr "Text"
 
 #. Title of magic tool selector (buttons down the right for magic (effect plugin) tool)
 #. "Magic" effects tools (blur, flip image, etc.)
-#: ../titles.h:62
-#: ../tools.h:60
+#: ../titles.h:62 ../tools.h:60
 msgid "Magic"
 msgstr "Čary"
 
@@ -399,8 +385,7 @@ msgstr "Nový"
 #. Open a saved picture
 #. buttons for the file open dialog
 #. Open dialog: 'Open' button, to load the selected picture
-#: ../tools.h:75
-#: ../tuxpaint.c:7974
+#: ../tools.h:75 ../tuxpaint.c:7974
 msgid "Open"
 msgstr "Otvoriť"
 
@@ -432,17 +417,26 @@ msgstr "Vyber si obrázok, ktorým chceš opečiatkovať svoj obrázok."
 #. Line tool instructions
 #: ../tools.h:98
 msgid "Click to start drawing a line. Let go to complete it."
-msgstr "Stlač ľavé tlačidlo myši, pohybuj ňou a nakreslíš čiaru. Keď je dosť dlhá, pusti tlačidlo a čiara sa dokončí."
+msgstr ""
+"Stlač ľavé tlačidlo myši, pohybuj ňou a nakreslíš čiaru. Keď je dosť dlhá, "
+"pusti tlačidlo a čiara sa dokončí."
 
 #. Shape tool instructions
 #: ../tools.h:101
-msgid "Pick a shape. Click to pick the center, drag, then let go when it is the size you want. Move around to rotate it, and click to draw it."
-msgstr "Vyber si geometrický útvar. Tam, kde klikneš myšou, bude jeho stred a potom ťahaj myšou do rohu, až kým nie je dosť veľký. Pohybom myši ho môžeš otáčať a ďalším kliknutím nakresliť ďalší rovnaký geometrický útvar."
+msgid ""
+"Pick a shape. Click to pick the center, drag, then let go when it is the "
+"size you want. Move around to rotate it, and click to draw it."
+msgstr ""
+"Vyber si geometrický útvar. Tam, kde klikneš myšou, bude jeho stred a potom "
+"ťahaj myšou do rohu, až kým nie je dosť veľký. Pohybom myši ho môžeš otáčať "
+"a ďalším kliknutím nakresliť ďalší rovnaký geometrický útvar."
 
 #. Text tool instructions
 #: ../tools.h:104
 msgid "Choose a style of text. Click on your drawing and you can start typing."
-msgstr "Vyber si druh písma. Klikni na miesto, kde chceš, aby text bol a môžeš začať písať."
+msgstr ""
+"Vyber si druh písma. Klikni na miesto, kde chceš, aby text bol a môžeš začať "
+"písať."
 
 #. Magic tool instruction
 #: ../tools.h:107
@@ -467,7 +461,9 @@ msgstr "Guma."
 #. Response to 'start a new image' action
 #: ../tools.h:119
 msgid "Pick a color or picture with which to start a new drawing."
-msgstr "Vyber si farbu pozadia, na ktorom chceš kresliš alebo obrázok, s ktorým chceš začať novú kresbu."
+msgstr ""
+"Vyber si farbu pozadia, na ktorom chceš kresliš alebo obrázok, s ktorým "
+"chceš začať novú kresbu."
 
 #. Response to 'open' action (while file dialog is being constructed)
 #: ../tools.h:122
@@ -516,12 +512,13 @@ msgstr "Naozaj chceš skončiť?"
 
 #. Quit prompt positive response (quit)
 #: ../tuxpaint.c:1858
-msgid "Yes, I'm done!"
+#, fuzzy
+#| msgid "Yes, I'm done!"
+msgid "Yes, I’m done!"
 msgstr "Áno, už som skončil(a)!"
 
 #. Quit prompt negative response (don't quit)
-#: ../tuxpaint.c:1861
-#: ../tuxpaint.c:1888
+#: ../tuxpaint.c:1861 ../tuxpaint.c:1888
 msgid "No, take me back!"
 msgstr "Nie, chcem pokračovať!"
 
@@ -530,14 +527,11 @@ msgstr "Nie, chcem pokračovať!"
 msgid "If you quit, you’ll lose your picture! Save it?"
 msgstr "Ak skončíš, stratíš svoj obrázok. Mám ho uložiť?"
 
-#: ../tuxpaint.c:1866
-#: ../tuxpaint.c:1871
+#: ../tuxpaint.c:1866 ../tuxpaint.c:1871
 msgid "Yes, save it!"
 msgstr "Áno, ulož mi to!"
 
-#: ../tuxpaint.c:1867
-#: ../tuxpaint.c:1872
-#| msgid "No, don't bother saving!"
+#: ../tuxpaint.c:1867 ../tuxpaint.c:1872
 msgid "No, don’t bother saving!"
 msgstr "Nie, netreba!"
 
@@ -552,10 +546,7 @@ msgid "Can’t open that picture!"
 msgstr "Neviem otvoriť tento obrázok!"
 
 #. Generic dialog dismissal
-#: ../tuxpaint.c:1878
-#: ../tuxpaint.c:1883
-#: ../tuxpaint.c:1892
-#: ../tuxpaint.c:1899
+#: ../tuxpaint.c:1878 ../tuxpaint.c:1883 ../tuxpaint.c:1892 ../tuxpaint.c:1899
 #: ../tuxpaint.c:1908
 msgid "OK"
 msgstr "OK"
@@ -581,7 +572,6 @@ msgstr "Tvoj obrázok je vytlačený!"
 
 #. We got an error printing
 #: ../tuxpaint.c:1895
-#| msgid "Your picture has been printed!"
 msgid "Sorry! Your picture could not be printed!"
 msgstr "Tvoj obrázok sa nedal vytlačiť!"
 
@@ -600,7 +590,6 @@ msgid "Yes, erase it!"
 msgstr "Áno, vymaž ho!"
 
 #: ../tuxpaint.c:1904
-#| msgid "No, don't erase it!"
 msgid "No, don’t erase it!"
 msgstr "Nie, nemaž ho!"
 
@@ -633,7 +622,6 @@ msgstr "Vyber si farbu."
 msgid "Erase"
 msgstr "Guma"
 
-#. Pekný preklad
 #. Open dialog: 'Slides' button, to switch to slide show mode
 #: ../tuxpaint.c:7980
 msgid "Slides"
@@ -692,10 +680,10 @@ msgstr "Vyber si obrázok, ktorý chceš, a potom klikni na „Otvor”."
 
 #. Let user choose images:
 #. Instructions for Slideshow file dialog (FIXME: Make a #define)
-#: ../tuxpaint.c:14350
-#: ../tuxpaint.c:14664
+#: ../tuxpaint.c:14350 ../tuxpaint.c:14664
 msgid "Choose the pictures you want, then click “Play”."
-msgstr "Klikni na obrázky, ktoré chceš vidieť, a potom klikni na tlačidlo „Začni”."
+msgstr ""
+"Klikni na obrázky, ktoré chceš vidieť, a potom klikni na tlačidlo „Začni”."
 
 #: ../tuxpaint.desktop.in.h:1
 msgid "A drawing program for children."
@@ -735,10 +723,12 @@ msgstr "Nechať roztiecť"
 
 #: ../../magic/src/blocks_chalk_drip.c:146
 msgid "Click and move the mouse around to make the picture blocky."
-msgstr "Drž tlačidlo myši, pohybuj ňou po obrázku a urobíš na ňom malé štvorčeky."
+msgstr ""
+"Drž tlačidlo myši, pohybuj ňou po obrázku a urobíš na ňom malé štvorčeky."
 
 #: ../../magic/src/blocks_chalk_drip.c:149
-msgid "Click and move the mouse around to turn the picture into a chalk drawing."
+msgid ""
+"Click and move the mouse around to turn the picture into a chalk drawing."
 msgstr "Kliknutím a pohybom myši prekreslíš obrázok kriedou."
 
 #: ../../magic/src/blocks_chalk_drip.c:152
@@ -849,7 +839,9 @@ msgstr "Pod mikroskopom"
 #. Needs better name
 #: ../../magic/src/fisheye.c:79
 msgid "Click on part of your picture to create a fisheye effect."
-msgstr "Klikni na časť obrázka myšou a uvidíš ju tak, akoby si sa na ňu pozeral(a) mikroskopom."
+msgstr ""
+"Klikni na časť obrázka myšou a uvidíš ju tak, akoby si sa na ňu pozeral(a) "
+"mikroskopom."
 
 #: ../../magic/src/flower.c:124
 msgid "Flower"
@@ -857,7 +849,9 @@ msgstr "Kvet"
 
 #: ../../magic/src/flower.c:130
 msgid "Click and drag to draw a flower stalk. Let go to finish the flower."
-msgstr "Stlač tlačidlo myši, pohybuj ňou a nakreslíš stonku kvetu. Keď myš pustíš, kvet sa dokončí."
+msgstr ""
+"Stlač tlačidlo myši, pohybuj ňou a nakreslíš stonku kvetu. Keď myš pustíš, "
+"kvet sa dokončí."
 
 #: ../../magic/src/foam.c:104
 msgid "Foam"
@@ -872,7 +866,8 @@ msgid "Fold"
 msgstr "Zohnúť"
 
 #: ../../magic/src/fold.c:62
-msgid "Choose a background color and click to turn the corner of the page over."
+msgid ""
+"Choose a background color and click to turn the corner of the page over."
 msgstr "Vyber si farbu pozadia. Potom klikni myšou a roh strany sa zohne."
 
 #: ../../magic/src/glasstile.c:83
@@ -893,15 +888,20 @@ msgstr "Tráva"
 
 #: ../../magic/src/grass.c:98
 msgid "Click and move to draw grass. Don’t forget the dirt!"
-msgstr "Stlač tlačidlo myši, pohybuj ňou a nakreslíš trávu. Nezabudni na hlinu!"
+msgstr ""
+"Stlač tlačidlo myši, pohybuj ňou a nakreslíš trávu. Nezabudni na hlinu!"
 
 #: ../../magic/src/kalidescope.c:77
 msgid "Kaleidoscope"
 msgstr "Kaleidoskop"
 
 #: ../../magic/src/kalidescope.c:83
-msgid "Click and drag the mouse to draw with symmetric brushes (a kaleidoscope)."
-msgstr "Keď klikneš a budeš pohybovať  myšou, budeš kresliť úplne rovnako v rôznych uhloch štyrmi štetcami naraz (bude to vyzerať ako keď sa na niečo pozeráš v kaleidoskope)."
+msgid ""
+"Click and drag the mouse to draw with symmetric brushes (a kaleidoscope)."
+msgstr ""
+"Keď klikneš a budeš pohybovať  myšou, budeš kresliť úplne rovnako v rôznych "
+"uhloch štyrmi štetcami naraz (bude to vyzerať ako keď sa na niečo pozeráš v "
+"kaleidoskope)."
 
 #: ../../magic/src/light.c:84
 msgid "Light"
@@ -940,7 +940,8 @@ msgid "Mosaic"
 msgstr "Čary"
 
 #: ../../magic/src/mosaic.c:73
-msgid "Click and move the mouse to add a mosaic effect to parts of your picture."
+msgid ""
+"Click and move the mouse to add a mosaic effect to parts of your picture."
 msgstr "Keď klikneš myšou, urobíš z časti obrázka mozaiku."
 
 #: ../../magic/src/mosaic.c:74
@@ -952,7 +953,6 @@ msgid "Negative"
 msgstr "Negatív"
 
 #: ../../magic/src/negative.c:80
-#| msgid "Click and move the mouse around to draw a negative."
 msgid "Click and move the mouse around to make your painting negative."
 msgstr "Drž tlačidlo myši, pohybuj ňou a urobíš negatív obrázka."
 
@@ -972,13 +972,14 @@ msgstr "Kliknutím a pohybom myši pridáš do obrázku viac zrnitosti."
 msgid "Click to add noise to your entire picture."
 msgstr "Drž myš, pohybuj ňou a obrázok sa prekryje farbou."
 
-#: ../../magic/src/rails.c:100
+#: ../../magic/src/rails.c:102
 msgid "Rails"
 msgstr "Koľajnice"
 
-#: ../../magic/src/rails.c:102
+#: ../../magic/src/rails.c:104
 msgid "Click and drag to draw train track rails on your picture."
-msgstr "Kliknutím a pohybom myši môžeš na obrázok nakresliť koľajnice pre vlak."
+msgstr ""
+"Kliknutím a pohybom myši môžeš na obrázok nakresliť koľajnice pre vlak."
 
 #: ../../magic/src/rainbow.c:107
 msgid "Rainbow"
@@ -1066,7 +1067,9 @@ msgstr "Presunúť"
 
 #: ../../magic/src/shift.c:110
 msgid "Click and drag to shift your picture around on the canvas."
-msgstr "Klikním a pohybom myši presunieš to, čo si nakreslil(a) do inej časti obrázka."
+msgstr ""
+"Klikním a pohybom myši presunieš to, čo si nakreslil(a) do inej časti "
+"obrázka."
 
 #: ../../magic/src/smudge.c:77
 msgid "Smudge"
@@ -1092,6 +1095,37 @@ msgstr "Klikni a do obrázka pridáš snehové gule."
 msgid "Click to add snow flakes to your picture."
 msgstr "Klikni a do obrázka pridáš snehové vločky."
 
+#: ../../magic/src/string.c:121
+msgid "String edges"
+msgstr ""
+
+#: ../../magic/src/string.c:124
+msgid "String corner"
+msgstr ""
+
+#: ../../magic/src/string.c:127
+msgid "String 'V'"
+msgstr ""
+
+#: ../../magic/src/string.c:135
+msgid ""
+"Click and drag to draw string art. Drag top-bottom to draw less or more "
+"lines, to the center to approach the lines to center."
+msgstr ""
+
+#: ../../magic/src/string.c:138
+#, fuzzy
+#| msgid "Click and drag to draw train track rails on your picture."
+msgid "Click and drag to draw string art aligned to the edges."
+msgstr ""
+"Kliknutím a pohybom myši môžeš na obrázok nakresliť koľajnice pre vlak."
+
+#: ../../magic/src/string.c:141
+msgid ""
+"Draw string art with free angles. Click and drag a V: drag to the vertex, "
+"drag backwards a little to the start, then drag to the end."
+msgstr ""
+
 #: ../../magic/src/tint.c:71
 msgid "Tint"
 msgstr "Farba"
@@ -1101,7 +1135,8 @@ msgid "Color & White"
 msgstr "Biela a ďalšia farba"
 
 #: ../../magic/src/tint.c:75
-msgid "Click and move the mouse around to change the color of parts of your picture."
+msgid ""
+"Click and move the mouse around to change the color of parts of your picture."
 msgstr "Klikním a pohybom myši zmeníš farbu častí svojho obrázka."
 
 #: ../../magic/src/tint.c:76
@@ -1109,12 +1144,18 @@ msgid "Click to change the color of your entire picture."
 msgstr "Klikním a pohybom myši zmeníš farbu celého obrázka."
 
 #: ../../magic/src/tint.c:77
-msgid "Click and move the mouse around to turn parts of your picture into white and a color you choose."
-msgstr "Kliknutím a pohybom myši zmeníš farbu častí obrázka na bielu a na farbu, ktorú si vyberieš."
+msgid ""
+"Click and move the mouse around to turn parts of your picture into white and "
+"a color you choose."
+msgstr ""
+"Kliknutím a pohybom myši zmeníš farbu častí obrázka na bielu a na farbu, "
+"ktorú si vyberieš."
 
 #: ../../magic/src/tint.c:78
 msgid "Click to turn your entire picture into white and a color you choose."
-msgstr "Klikním a pohybom myši sa farba celého obrázka zmení na bielu a na farbu, ktorú si vyberieš."
+msgstr ""
+"Klikním a pohybom myši sa farba celého obrázka zmení na bielu a na farbu, "
+"ktorú si vyberieš."
 
 #: ../../magic/src/toothpaste.c:65
 msgid "Toothpaste"
@@ -1141,12 +1182,24 @@ msgid "Wavelets"
 msgstr "Vlnky"
 
 #: ../../magic/src/waves.c:83
-msgid "Click to make the picture horizontally wavy. Click toward the top for shorter waves, the bottom for taller waves, the left for small waves, and the right for long waves."
-msgstr "Keď klikneš myšou, obrázok sa zvlní vodorovne. Ak pohneš myšou nahor, vlny budú kratšie. Ak pohneš myšou smerom nadol, vlny budú vyššie, ak doľava, budú menšie, a ak doprava, tak budú dlhšie."
+msgid ""
+"Click to make the picture horizontally wavy. Click toward the top for "
+"shorter waves, the bottom for taller waves, the left for small waves, and "
+"the right for long waves."
+msgstr ""
+"Keď klikneš myšou, obrázok sa zvlní vodorovne. Ak pohneš myšou nahor, vlny "
+"budú kratšie. Ak pohneš myšou smerom nadol, vlny budú vyššie, ak doľava, "
+"budú menšie, a ak doprava, tak budú dlhšie."
 
 #: ../../magic/src/waves.c:84
-msgid "Click to make the picture vertically wavy. Click toward the top for shorter waves, the bottom for taller waves, the left for small waves, and the right for long waves."
-msgstr "Keď klikneš, obrázok sa zvlní zvislo. Ak pohneš myšou smerom nahor, vlny budú kratšie. Ak pohneš myšou smerom nadol, vlny budú vyššie, ak doľava, budú menšie, a ak doprava, tak budú dlhšie."
+msgid ""
+"Click to make the picture vertically wavy. Click toward the top for shorter "
+"waves, the bottom for taller waves, the left for small waves, and the right "
+"for long waves."
+msgstr ""
+"Keď klikneš, obrázok sa zvlní zvislo. Ak pohneš myšou smerom nahor, vlny "
+"budú kratšie. Ak pohneš myšou smerom nadol, vlny budú vyššie, ak doľava, "
+"budú menšie, a ak doprava, tak budú dlhšie."
 
 #, fuzzy
 #~ msgid ""
@@ -1207,30 +1260,40 @@ msgstr "Keď klikneš, obrázok sa zvlní zvislo. Ak pohneš myšou smerom nahor
 #, fuzzy
 #~ msgid "Blur All"
 #~ msgstr "Rozmazať"
+
 #~ msgid "Click and move to fade the colors."
 #~ msgstr "Klikni a pohybuj myšou, farby budú blednúť."
+
 #~ msgid "Click and move to darken the colors."
 #~ msgstr "Klikni a pohybuj myšou, farby budú tmavnúť."
+
 #~ msgid "Sparkles"
 #~ msgstr "Iskry"
+
 #~ msgid "Click and move to draw sparkles."
 #~ msgstr "Klikni a pohybuj myšou a budeš kresliť iskry."
+
 #~ msgid "You now have a blank sheet to draw on!"
 #~ msgstr "Máš teraz čistú plochu na kreslenie!"
 
 #, fuzzy
 #~ msgid "Start a new picture?"
 #~ msgstr "Vymazať tento obrázok?"
+
 #~ msgid "Starting a new picture will erase the current one!"
 #~ msgstr "Vytvorením nového obrázku vymažeš tento!"
+
 #~ msgid "That’s OK!"
 #~ msgstr "To je v poriadku!"
+
 #~ msgid "Never mind!"
 #~ msgstr "Radšej nie!"
+
 #~ msgid "jq"
 #~ msgstr "jq"
+
 #~ msgid "JQ"
 #~ msgstr "JQ"
+
 #~ msgid "Save over the older version of this picture?"
 #~ msgstr "Chces prepísať starší obrázok týmto?"
-

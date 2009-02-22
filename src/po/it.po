@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TuxPaint 0.9.17\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-12-31 16:59-0800\n"
+"POT-Creation-Date: 2009-02-21 16:17-0800\n"
 "PO-Revision-Date: 2008-12-23 11:19+0100\n"
 "Last-Translator: Simona Riva <simona.riva@tiscali.it>\n"
 "Language-Team: Italian <it@li.org>\n"
@@ -1012,11 +1012,11 @@ msgstr ""
 msgid "Click to add noise to your entire picture."
 msgstr "Fai clic per aggiungere un rumore a tutto il disegno."
 
-#: ../../magic/src/rails.c:100
+#: ../../magic/src/rails.c:102
 msgid "Rails"
 msgstr "Rotaie"
 
-#: ../../magic/src/rails.c:102
+#: ../../magic/src/rails.c:104
 msgid "Click and drag to draw train track rails on your picture."
 msgstr "Fai clic e trascina il mouse per disegnare le rotaie del treno."
 
@@ -1131,6 +1131,36 @@ msgstr "Fai clic per aggiungere delle palle di neve al disegno."
 #: ../../magic/src/snow.c:73
 msgid "Click to add snow flakes to your picture."
 msgstr "Fai clic per aggiungere dei fiocchi di neve al disegno."
+
+#: ../../magic/src/string.c:121
+msgid "String edges"
+msgstr ""
+
+#: ../../magic/src/string.c:124
+msgid "String corner"
+msgstr ""
+
+#: ../../magic/src/string.c:127
+msgid "String 'V'"
+msgstr ""
+
+#: ../../magic/src/string.c:135
+msgid ""
+"Click and drag to draw string art. Drag top-bottom to draw less or more "
+"lines, to the center to approach the lines to center."
+msgstr ""
+
+#: ../../magic/src/string.c:138
+#, fuzzy
+#| msgid "Click and drag to draw train track rails on your picture."
+msgid "Click and drag to draw string art aligned to the edges."
+msgstr "Fai clic e trascina il mouse per disegnare le rotaie del treno."
+
+#: ../../magic/src/string.c:141
+msgid ""
+"Draw string art with free angles. Click and drag a V: drag to the vertex, "
+"drag backwards a little to the start, then drag to the end."
+msgstr ""
 
 #: ../../magic/src/tint.c:71
 msgid "Tint"

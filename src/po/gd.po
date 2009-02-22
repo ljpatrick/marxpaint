@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Tux paint anns a' ghàidhlig\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-12-31 16:59-0800\n"
+"POT-Creation-Date: 2009-02-21 16:17-0800\n"
 "PO-Revision-Date: 2006-03-04 15:51-0000\n"
 "Last-Translator: Niall Tracey <internationiall@hotmail.com>\n"
 "Language-Team:  <internationiall@hotmail.com>\n"
@@ -1101,13 +1101,13 @@ msgstr "Briog agus slaod airson lainnir a dhèanamh dealbh."
 msgid "Click to add noise to your entire picture."
 msgstr "Briog agus slaod airson na breigichean beaga."
 
-#: ../../magic/src/rails.c:100
+#: ../../magic/src/rails.c:102
 msgid "Rails"
 msgstr ""
 
 # Gràmar?
 # Is the word "lainnir" appropriate/common?
-#: ../../magic/src/rails.c:102
+#: ../../magic/src/rails.c:104
 #, fuzzy
 msgid "Click and drag to draw train track rails on your picture."
 msgstr "Briog agus slaod airson lainnir a dhèanamh dealbh."
@@ -1258,6 +1258,37 @@ msgstr "Briog agus slaod airson lainnir a dhèanamh dealbh."
 #, fuzzy
 msgid "Click to add snow flakes to your picture."
 msgstr "Briog agus slaod airson lainnir a dhèanamh dealbh."
+
+#: ../../magic/src/string.c:121
+msgid "String edges"
+msgstr ""
+
+#: ../../magic/src/string.c:124
+msgid "String corner"
+msgstr ""
+
+#: ../../magic/src/string.c:127
+msgid "String 'V'"
+msgstr ""
+
+#: ../../magic/src/string.c:135
+msgid ""
+"Click and drag to draw string art. Drag top-bottom to draw less or more "
+"lines, to the center to approach the lines to center."
+msgstr ""
+
+# Gràmar?
+# Is the word "lainnir" appropriate/common?
+#: ../../magic/src/string.c:138
+#, fuzzy
+msgid "Click and drag to draw string art aligned to the edges."
+msgstr "Briog agus slaod airson lainnir a dhèanamh dealbh."
+
+#: ../../magic/src/string.c:141
+msgid ""
+"Draw string art with free angles. Click and drag a V: drag to the vertex, "
+"drag backwards a little to the start, then drag to the end."
+msgstr ""
 
 #: ../../magic/src/tint.c:71
 msgid "Tint"

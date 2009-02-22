@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint 0.9.17\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-12-31 16:59-0800\n"
+"POT-Creation-Date: 2009-02-21 16:17-0800\n"
 "PO-Revision-Date: 2007-10-01 09:47+0100\n"
 "Last-Translator: Matej Urbančič <matej.urban@gmail.com>\n"
 "Language-Team: Slovenian <translation-team-sl@lists.sourceforge.net>\n"
@@ -988,11 +988,11 @@ msgstr "Klikni in premakni miško za megljenje slike."
 msgid "Click to add noise to your entire picture."
 msgstr "Klikni in premakni miško za spreminjanje barv slike."
 
-#: ../../magic/src/rails.c:100
+#: ../../magic/src/rails.c:102
 msgid "Rails"
 msgstr ""
 
-#: ../../magic/src/rails.c:102
+#: ../../magic/src/rails.c:104
 #, fuzzy
 msgid "Click and drag to draw train track rails on your picture."
 msgstr "Klikni in premakni miško za tanjšanje slike."
@@ -1124,6 +1124,35 @@ msgstr "Klikni da ustvariš zrcalno sliko."
 #, fuzzy
 msgid "Click to add snow flakes to your picture."
 msgstr "Klikni da ustvariš zrcalno sliko."
+
+#: ../../magic/src/string.c:121
+msgid "String edges"
+msgstr ""
+
+#: ../../magic/src/string.c:124
+msgid "String corner"
+msgstr ""
+
+#: ../../magic/src/string.c:127
+msgid "String 'V'"
+msgstr ""
+
+#: ../../magic/src/string.c:135
+msgid ""
+"Click and drag to draw string art. Drag top-bottom to draw less or more "
+"lines, to the center to approach the lines to center."
+msgstr ""
+
+#: ../../magic/src/string.c:138
+#, fuzzy
+msgid "Click and drag to draw string art aligned to the edges."
+msgstr "Klikni in premakni miško za tanjšanje slike."
+
+#: ../../magic/src/string.c:141
+msgid ""
+"Draw string art with free angles. Click and drag a V: drag to the vertex, "
+"drag backwards a little to the start, then drag to the end."
+msgstr ""
 
 #: ../../magic/src/tint.c:71
 msgid "Tint"

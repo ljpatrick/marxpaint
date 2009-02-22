@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-12-31 16:59-0800\n"
+"POT-Creation-Date: 2009-02-21 16:17-0800\n"
 "PO-Revision-Date: 2008-02-27 11:34+0100\n"
 "Last-Translator: Burkhard Lück <lueck@hube-lueck.de>\n"
 "Language-Team: Deutsch <kde-i18n-de@kde.org>\n"
@@ -991,12 +991,12 @@ msgstr "Klick und bewege die Maus, um das Bild unscharf zu machen."
 msgid "Click to add noise to your entire picture."
 msgstr "Klick und bewege die Maus, um die Farben des Bildes zu ändern."
 
-#: ../../magic/src/rails.c:100
+#: ../../magic/src/rails.c:102
 #, fuzzy
 msgid "Rails"
 msgstr "Kräuseln"
 
-#: ../../magic/src/rails.c:102
+#: ../../magic/src/rails.c:104
 #, fuzzy
 msgid "Click and drag to draw train track rails on your picture."
 msgstr "Klick und bewege die Maus, um helle Kreise auf das Bild zu malen."
@@ -1126,6 +1126,35 @@ msgstr "Klick und bewege die Maus, um das Bild kräuselig zu machen."
 #, fuzzy
 msgid "Click to add snow flakes to your picture."
 msgstr "Klick und bewege die Maus, um das Bild kräuselig zu machen."
+
+#: ../../magic/src/string.c:121
+msgid "String edges"
+msgstr ""
+
+#: ../../magic/src/string.c:124
+msgid "String corner"
+msgstr ""
+
+#: ../../magic/src/string.c:127
+msgid "String 'V'"
+msgstr ""
+
+#: ../../magic/src/string.c:135
+msgid ""
+"Click and drag to draw string art. Drag top-bottom to draw less or more "
+"lines, to the center to approach the lines to center."
+msgstr ""
+
+#: ../../magic/src/string.c:138
+#, fuzzy
+msgid "Click and drag to draw string art aligned to the edges."
+msgstr "Klick und bewege die Maus, um helle Kreise auf das Bild zu malen."
+
+#: ../../magic/src/string.c:141
+msgid ""
+"Draw string art with free angles. Click and drag a V: drag to the vertex, "
+"drag backwards a little to the start, then drag to the end."
+msgstr ""
 
 #: ../../magic/src/tint.c:71
 msgid "Tint"

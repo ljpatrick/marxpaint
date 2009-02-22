@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Tux Paint\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-12-31 16:59-0800\n"
+"POT-Creation-Date: 2009-02-21 16:17-0800\n"
 "PO-Revision-Date: 2009-02-14 22:30+0100\n"
 "Last-Translator: Joe Hansen <joedalton2@yahoo.dk>\n"
 "Language-Team: Danish <dansk@dansk-gruppen.dk>\n"
@@ -862,8 +862,7 @@ msgstr "Fold"
 #: ../../magic/src/fold.c:62
 msgid ""
 "Choose a background color and click to turn the corner of the page over."
-msgstr ""
-"Vælg en baggrundsfarve og klik for at vende hjørnet af siden."
+msgstr "Vælg en baggrundsfarve og klik for at vende hjørnet af siden."
 
 # kunne måske også være glasfelt, glasflise. Men er en knap hvor man gør 
 # billedet glasagtigt.
@@ -969,11 +968,11 @@ msgstr "Klik og bevæg musen rundt for at tilføje støj til dele af dit billede
 msgid "Click to add noise to your entire picture."
 msgstr "Klik for at tilføje støj til hele dit billede."
 
-#: ../../magic/src/rails.c:100
+#: ../../magic/src/rails.c:102
 msgid "Rails"
 msgstr "Togspor"
 
-#: ../../magic/src/rails.c:102
+#: ../../magic/src/rails.c:104
 msgid "Click and drag to draw train track rails on your picture."
 msgstr "Klik og bevæg musen rundt for at tegne togspor på dit billede."
 
@@ -1094,6 +1093,36 @@ msgstr "Klik for at tilføje snebolde i dit billede."
 msgid "Click to add snow flakes to your picture."
 msgstr "Klik for at tilføje snefnug i dit billede."
 
+#: ../../magic/src/string.c:121
+msgid "String edges"
+msgstr ""
+
+#: ../../magic/src/string.c:124
+msgid "String corner"
+msgstr ""
+
+#: ../../magic/src/string.c:127
+msgid "String 'V'"
+msgstr ""
+
+#: ../../magic/src/string.c:135
+msgid ""
+"Click and drag to draw string art. Drag top-bottom to draw less or more "
+"lines, to the center to approach the lines to center."
+msgstr ""
+
+#: ../../magic/src/string.c:138
+#, fuzzy
+#| msgid "Click and drag to draw train track rails on your picture."
+msgid "Click and drag to draw string art aligned to the edges."
+msgstr "Klik og bevæg musen rundt for at tegne togspor på dit billede."
+
+#: ../../magic/src/string.c:141
+msgid ""
+"Draw string art with free angles. Click and drag a V: drag to the vertex, "
+"drag backwards a little to the start, then drag to the end."
+msgstr ""
+
 #: ../../magic/src/tint.c:71
 msgid "Tint"
 msgstr "Farve"
@@ -1105,8 +1134,7 @@ msgstr "Farve & hvid"
 #: ../../magic/src/tint.c:75
 msgid ""
 "Click and move the mouse around to change the color of parts of your picture."
-msgstr ""
-"Klik og bevæg musen rundt for at ændre farven i dele af dit billede."
+msgstr "Klik og bevæg musen rundt for at ændre farven i dele af dit billede."
 
 #: ../../magic/src/tint.c:76
 msgid "Click to change the color of your entire picture."
@@ -1117,8 +1145,8 @@ msgid ""
 "Click and move the mouse around to turn parts of your picture into white and "
 "a color you choose."
 msgstr ""
-"Klik og bevæg musen rundt for at lave dele af dit billede hvidt og i en farve "
-"efter dit valg."
+"Klik og bevæg musen rundt for at lave dele af dit billede hvidt og i en "
+"farve efter dit valg."
 
 #: ../../magic/src/tint.c:78
 msgid "Click to turn your entire picture into white and a color you choose."
@@ -1154,9 +1182,9 @@ msgid ""
 "shorter waves, the bottom for taller waves, the left for small waves, and "
 "the right for long waves."
 msgstr ""
-"Klik for at indsætte bølger horisontalt i billedet. Klik mod toppen for "
-"lave bølger, bunden for højere bølger, til venstre for små bølger og "
-"mod højre for lange bølger."
+"Klik for at indsætte bølger horisontalt i billedet. Klik mod toppen for lave "
+"bølger, bunden for højere bølger, til venstre for små bølger og mod højre "
+"for lange bølger."
 
 #: ../../magic/src/waves.c:84
 msgid ""
@@ -1167,5 +1195,3 @@ msgstr ""
 "Klik for at indsætte bølger vertikalt i billedet. Klik mod toppen for lave "
 "bølger, bunden for højere bølger, til venstre for små bølger og mod højre "
 "for lange bølger."
-
-

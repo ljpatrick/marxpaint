@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TuxPaint 0.9.17\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-12-31 16:59-0800\n"
+"POT-Creation-Date: 2009-02-21 16:17-0800\n"
 "PO-Revision-Date: 2008-02-04 14:24-0600\n"
 "Last-Translator: Rodrigo Perez <rodpera@yahoo.com>\n"
 "Language-Team: Español <gablistas@gmail.com>\n"
@@ -981,12 +981,12 @@ msgstr "Haz clic y arrastra el ratón para desenfocar la imagen."
 msgid "Click to add noise to your entire picture."
 msgstr "Haz clic y arrastra el ratón para cambiar el color de la imagen."
 
-#: ../../magic/src/rails.c:100
+#: ../../magic/src/rails.c:102
 #, fuzzy
 msgid "Rails"
 msgstr "Ondas"
 
-#: ../../magic/src/rails.c:102
+#: ../../magic/src/rails.c:104
 #, fuzzy
 msgid "Click and drag to draw train track rails on your picture."
 msgstr "Gaás ha neér kuin naá paar toób luú diíf beél tií loó moón naá luú."
@@ -1117,6 +1117,35 @@ msgstr "Haz clic para que aparezcan ondas sobre tu dibujo."
 #, fuzzy
 msgid "Click to add snow flakes to your picture."
 msgstr "Haz clic para que aparezcan ondas sobre tu dibujo."
+
+#: ../../magic/src/string.c:121
+msgid "String edges"
+msgstr ""
+
+#: ../../magic/src/string.c:124
+msgid "String corner"
+msgstr ""
+
+#: ../../magic/src/string.c:127
+msgid "String 'V'"
+msgstr ""
+
+#: ../../magic/src/string.c:135
+msgid ""
+"Click and drag to draw string art. Drag top-bottom to draw less or more "
+"lines, to the center to approach the lines to center."
+msgstr ""
+
+#: ../../magic/src/string.c:138
+#, fuzzy
+msgid "Click and drag to draw string art aligned to the edges."
+msgstr "Gaás ha neér kuin naá paar toób luú diíf beél tií loó moón naá luú."
+
+#: ../../magic/src/string.c:141
+msgid ""
+"Draw string art with free angles. Click and drag a V: drag to the vertex, "
+"drag backwards a little to the start, then drag to the end."
+msgstr ""
 
 #: ../../magic/src/tint.c:71
 msgid "Tint"

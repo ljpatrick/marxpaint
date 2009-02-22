@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TuxPaint 0.9.13\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-12-07 19:03-0800\n"
+"POT-Creation-Date: 2009-02-21 16:17-0800\n"
 "PO-Revision-Date: 2009-01-18 00:06+0530\n"
 "Last-Translator: ravishankar <ravidreams@gmail.com>\n"
 "Language-Team: A. Ravishankar <ravishankar.ayyakkannu@gmail.com>\n"
@@ -211,95 +211,84 @@ msgid "ZH_TW"
 msgstr "ZH_TW"
 
 #. Square shape tool (4 equally-lengthed sides at right angles)
-#: ../shapes.h:171
-#: ../shapes.h:172
+#: ../shapes.h:171 ../shapes.h:172
 msgid "Square"
 msgstr "சதுரம்"
 
 #. Rectangle shape tool (4 sides at right angles)
-#: ../shapes.h:175
-#: ../shapes.h:176
+#: ../shapes.h:175 ../shapes.h:176
 msgid "Rectangle"
 msgstr "செவ்வகம்"
 
 #. Circle shape tool (X radius and Y radius are the same)
-#: ../shapes.h:179
-#: ../shapes.h:180
+#: ../shapes.h:179 ../shapes.h:180
 msgid "Circle"
 msgstr "வட்டம்"
 
 #. Ellipse shape tool (X radius and Y radius may differ)
-#: ../shapes.h:183
-#: ../shapes.h:184
+#: ../shapes.h:183 ../shapes.h:184
 msgid "Ellipse"
 msgstr "நீள் வட்டம்"
 
 #. Triangle shape tool (3 sides)
-#: ../shapes.h:187
-#: ../shapes.h:188
+#: ../shapes.h:187 ../shapes.h:188
 msgid "Triangle"
 msgstr "முக்கோணம்"
 
 #. Pentagone shape tool (5 sides)
-#: ../shapes.h:191
-#: ../shapes.h:192
+#: ../shapes.h:191 ../shapes.h:192
 msgid "Pentagon"
 msgstr "ஐங்கோணம்"
 
 #. Rhombus shape tool (4 sides, not at right angles)
-#: ../shapes.h:195
-#: ../shapes.h:196
+#: ../shapes.h:195 ../shapes.h:196
 msgid "Rhombus"
 msgstr "சாய்சதுரம்"
 
 #. Octagon shape tool (8 sides)
-#: ../shapes.h:199
-#: ../shapes.h:200
+#: ../shapes.h:199 ../shapes.h:200
 msgid "Octagon"
 msgstr "எண்கோணம்"
 
 #. Description of a square
-#: ../shapes.h:208
-#: ../shapes.h:209
+#: ../shapes.h:208 ../shapes.h:209
 msgid "A square is a rectangle with four equal sides."
 msgstr "சதுரம் என்பது நான்கு ஈடான பக்கங்களை உடைய ஒரு செவ்வகம்."
 
 #. Description of a rectangle
-#: ../shapes.h:212
-#: ../shapes.h:213
+#: ../shapes.h:212 ../shapes.h:213
 msgid "A rectangle has four sides and four right angles."
 msgstr "ஒரு செவ்வகத்தில் நான்கு பக்கங்களும் நான்கு செங்கோணங்களும் இருக்கும்."
 
-#: ../shapes.h:217
-#: ../shapes.h:219
-msgid "A circle is a curve where all points have the same distance from the center."
-msgstr "ஒரு வட்டம் என்பது ஒரு நடுப்புள்ளியில் இருந்து ஒரே தொலைவில் உள்ள புள்ளிகளை உடைய வளைவு ஆகும்."
+#: ../shapes.h:217 ../shapes.h:219
+msgid ""
+"A circle is a curve where all points have the same distance from the center."
+msgstr ""
+"ஒரு வட்டம் என்பது ஒரு நடுப்புள்ளியில் இருந்து ஒரே தொலைவில் உள்ள புள்ளிகளை உடைய வளைவு "
+"ஆகும்."
 
 #. Description of an ellipse
-#: ../shapes.h:222
-#: ../shapes.h:223
+#: ../shapes.h:222 ../shapes.h:223
 msgid "An ellipse is a stretched circle."
 msgstr "நீள்வட்டம் என்பது நீட்டிய வட்டம்."
 
 #. Description of a triangle
-#: ../shapes.h:226
-#: ../shapes.h:227
+#: ../shapes.h:226 ../shapes.h:227
 msgid "A triangle has three sides."
 msgstr "முக்கோணத்துக்கு மூன்று பக்கங்கள் உண்டு."
 
 #. Description of a pentagon
-#: ../shapes.h:230
-#: ../shapes.h:231
+#: ../shapes.h:230 ../shapes.h:231
 msgid "A pentagon has five sides."
 msgstr "ஐங்கோணத்துக்கு ஐந்து பக்கங்கள் உண்டு."
 
-#: ../shapes.h:235
-#: ../shapes.h:237
+#: ../shapes.h:235 ../shapes.h:237
 msgid "A rhombus has four equal sides, and opposite sides are parallel."
-msgstr "ஒரு சாய்சதுரத்தில் நான்கு ஈடான பக்கங்கள் இருக்கும். எதிர்ப்பக்கங்கள் ஒன்றுக்கு ஒன்று இணையாக இருக்கும்."
+msgstr ""
+"ஒரு சாய்சதுரத்தில் நான்கு ஈடான பக்கங்கள் இருக்கும். எதிர்ப்பக்கங்கள் ஒன்றுக்கு ஒன்று இணையாக "
+"இருக்கும்."
 
-#: ../shapes.h:241
-#: ../shapes.h:243
+#: ../shapes.h:241 ../shapes.h:243
 msgid "An octagon has eight equal sides."
 msgstr "ஒரு எண்கோணத்துக்கு எட்டு ஈடான பக்கங்கள் உண்டு."
 
@@ -330,8 +319,7 @@ msgstr "முத்திரைகள்"
 
 #. Title of shape selector (buttons down the right for shapes tool)
 #. Shape creation tool (square, circle, etc.)
-#: ../titles.h:56
-#: ../tools.h:54
+#: ../titles.h:56 ../tools.h:54
 msgid "Shapes"
 msgstr "வடிவம்"
 
@@ -342,8 +330,7 @@ msgstr "எழுத்துகள்"
 
 #. Title of magic tool selector (buttons down the right for magic (effect plugin) tool)
 #. "Magic" effects tools (blur, flip image, etc.)
-#: ../titles.h:62
-#: ../tools.h:60
+#: ../titles.h:62 ../tools.h:60
 msgid "Magic"
 msgstr "வித்தை"
 
@@ -390,8 +377,7 @@ msgstr "புதிது"
 #. Open a saved picture
 #. buttons for the file open dialog
 #. Open dialog: 'Open' button, to load the selected picture
-#: ../tools.h:75
-#: ../tuxpaint.c:7974
+#: ../tools.h:75 ../tuxpaint.c:7974
 msgid "Open"
 msgstr "திற"
 
@@ -423,17 +409,23 @@ msgstr "முத்திரை இடுவதற்கான படத்த�
 #. Line tool instructions
 #: ../tools.h:98
 msgid "Click to start drawing a line. Let go to complete it."
-msgstr "சொடுக்கினால், கோட்டை வரையத் தொடங்கலாம். சொடுக்கி விடும் போது கோடு முழுமை அடையும்."
+msgstr ""
+"சொடுக்கினால், கோட்டை வரையத் தொடங்கலாம். சொடுக்கி விடும் போது கோடு முழுமை அடையும்."
 
 #. Shape tool instructions
 #: ../tools.h:101
-msgid "Pick a shape. Click to pick the center, drag, then let go when it is the size you want. Move around to rotate it, and click to draw it."
-msgstr "ஒரு வடிவத்தைத் தேர்ந்தெடுங்க. சொடுக்கி இழுத்து விட்டால், வேண்டிய அளவு கிடைக்கும். நகர்த்தினால் வடிவத்தைச் சுழற்றலாம். சொடுக்கினால் படத்தை வரையலாம்."
+msgid ""
+"Pick a shape. Click to pick the center, drag, then let go when it is the "
+"size you want. Move around to rotate it, and click to draw it."
+msgstr ""
+"ஒரு வடிவத்தைத் தேர்ந்தெடுங்க. சொடுக்கி இழுத்து விட்டால், வேண்டிய அளவு கிடைக்கும். "
+"நகர்த்தினால் வடிவத்தைச் சுழற்றலாம். சொடுக்கினால் படத்தை வரையலாம்."
 
 #. Text tool instructions
 #: ../tools.h:104
 msgid "Choose a style of text. Click on your drawing and you can start typing."
-msgstr "விரும்பிய எழுத்து வடிவத்தைத் தேர்ந்து எடுங்க. பிறகு, படத்தில் சொடுக்கி எழுதத் தொடங்கலாம்."
+msgstr ""
+"விரும்பிய எழுத்து வடிவத்தைத் தேர்ந்து எடுங்க. பிறகு, படத்தில் சொடுக்கி எழுதத் தொடங்கலாம்."
 
 #. Magic tool instruction
 #: ../tools.h:107
@@ -507,12 +499,13 @@ msgstr "உண்மையிலேயே வெளியேற வேண்ட�
 
 #. Quit prompt positive response (quit)
 #: ../tuxpaint.c:1858
-msgid "Yes, I'm done!"
+#, fuzzy
+#| msgid "Yes, I'm done!"
+msgid "Yes, I’m done!"
 msgstr "ஆம், வேலை முடிந்தது!"
 
 #. Quit prompt negative response (don't quit)
-#: ../tuxpaint.c:1861
-#: ../tuxpaint.c:1888
+#: ../tuxpaint.c:1861 ../tuxpaint.c:1888
 msgid "No, take me back!"
 msgstr "இல்லை, முன் பக்கத்துக்கு கொண்டு செல்!"
 
@@ -521,14 +514,14 @@ msgstr "இல்லை, முன் பக்கத்துக்கு க�
 msgid "If you quit, you’ll lose your picture! Save it?"
 msgstr "நீங்கள் வெளியேறினால், படத்தை இழக்க நேரிடும்! படத்தைச் சேமிக்கவா?"
 
-#: ../tuxpaint.c:1866
-#: ../tuxpaint.c:1871
+#: ../tuxpaint.c:1866 ../tuxpaint.c:1871
 msgid "Yes, save it!"
 msgstr "ஆம், சேமி!"
 
-#: ../tuxpaint.c:1867
-#: ../tuxpaint.c:1872
-msgid "No, don't bother saving!"
+#: ../tuxpaint.c:1867 ../tuxpaint.c:1872
+#, fuzzy
+#| msgid "No, don't bother saving!"
+msgid "No, don’t bother saving!"
 msgstr "இல்லை, சேமிக்க வேண்டாம்!"
 
 #. Current picture is not saved; user is opening another picture
@@ -542,10 +535,7 @@ msgid "Can’t open that picture!"
 msgstr "அந்தப் படத்தைத் திறக்க இயலவில்லை!"
 
 #. Generic dialog dismissal
-#: ../tuxpaint.c:1878
-#: ../tuxpaint.c:1883
-#: ../tuxpaint.c:1892
-#: ../tuxpaint.c:1899
+#: ../tuxpaint.c:1878 ../tuxpaint.c:1883 ../tuxpaint.c:1892 ../tuxpaint.c:1899
 #: ../tuxpaint.c:1908
 msgid "OK"
 msgstr "சரி"
@@ -571,7 +561,6 @@ msgstr "உங்கள் படத்தை அச்சிட்டு வி
 
 #. We got an error printing
 #: ../tuxpaint.c:1895
-#| msgid "Your picture has been printed!"
 msgid "Sorry! Your picture could not be printed!"
 msgstr "மன்னிக்கவும், உங்கள் படத்தை அச்சிட இயலவில்லை!"
 
@@ -590,7 +579,9 @@ msgid "Yes, erase it!"
 msgstr "ஆம், அழிக்கவும்!"
 
 #: ../tuxpaint.c:1904
-msgid "No, don't erase it!"
+#, fuzzy
+#| msgid "No, don't erase it!"
+msgid "No, don’t erase it!"
 msgstr "இல்லை, அழிக்க வேண்டாம்!"
 
 #. Reminder that Mouse Button 1 is the button to use in Tux Paint
@@ -682,8 +673,7 @@ msgstr "வேண்டிய படத்தைத் தெரிவு செ
 
 #. Let user choose images:
 #. Instructions for Slideshow file dialog (FIXME: Make a #define)
-#: ../tuxpaint.c:14350
-#: ../tuxpaint.c:14664
+#: ../tuxpaint.c:14350 ../tuxpaint.c:14664
 msgid "Choose the pictures you want, then click “Play”."
 msgstr "வேண்டிய படங்களைத் தெரிவு செய்த பிறகு, \"காட்டு\" பொத்தானை அழுத்துங்க."
 
@@ -728,8 +718,11 @@ msgid "Click and move the mouse around to make the picture blocky."
 msgstr "சொடுக்கி நகர்த்தினால், படத்தைக் கட்டம் கட்டமாக மாற்றலாம்."
 
 #: ../../magic/src/blocks_chalk_drip.c:149
-msgid "Click and move the mouse around to turn the picture into a chalk drawing."
-msgstr "ஏதேனும் ஒரு இடத்தில் சொடுக்கி இழுத்தால், படம் சுண்ணாம்புக் கட்டி கொண்டு வரைந்தது போல் மாறும்."
+msgid ""
+"Click and move the mouse around to turn the picture into a chalk drawing."
+msgstr ""
+"ஏதேனும் ஒரு இடத்தில் சொடுக்கி இழுத்தால், படம் சுண்ணாம்புக் கட்டி கொண்டு வரைந்தது போல் "
+"மாறும்."
 
 #: ../../magic/src/blocks_chalk_drip.c:152
 msgid "Click and move the mouse around to make the picture drip."
@@ -862,8 +855,10 @@ msgid "Fold"
 msgstr "மடிப்பு"
 
 #: ../../magic/src/fold.c:62
-msgid "Choose a background color and click to turn the corner of the page over."
-msgstr "பின்னணி வண்ணம் ஒன்றைத் தெரிவுசெய்த பின் சொடுக்கினால், பக்கத்தின் மூலையைத் திருப்பலாம்."
+msgid ""
+"Choose a background color and click to turn the corner of the page over."
+msgstr ""
+"பின்னணி வண்ணம் ஒன்றைத் தெரிவுசெய்த பின் சொடுக்கினால், பக்கத்தின் மூலையைத் திருப்பலாம்."
 
 #: ../../magic/src/glasstile.c:83
 msgid "Glass Tile"
@@ -891,7 +886,8 @@ msgid "Kaleidoscope"
 msgstr "Kaleidoscope"
 
 #: ../../magic/src/kalidescope.c:83
-msgid "Click and drag the mouse to draw with symmetric brushes (a kaleidoscope)."
+msgid ""
+"Click and drag the mouse to draw with symmetric brushes (a kaleidoscope)."
 msgstr "சொடுக்கி இழுத்தால், சமச்சீர் தூரிகைகளைக் கொண்டு வரையலாம் (a kaleidoscope)."
 
 #: ../../magic/src/light.c:84
@@ -931,7 +927,8 @@ msgid "Mosaic"
 msgstr "Mosaic"
 
 #: ../../magic/src/mosaic.c:73
-msgid "Click and move the mouse to add a mosaic effect to parts of your picture."
+msgid ""
+"Click and move the mouse to add a mosaic effect to parts of your picture."
 msgstr "சொடுக்கி நகர்த்தினால், படத்தில் mosais விளைவு சேர்க்கலாம்."
 
 #: ../../magic/src/mosaic.c:74
@@ -943,7 +940,6 @@ msgid "Negative"
 msgstr "எதிர்வண்ணம்"
 
 #: ../../magic/src/negative.c:80
-#| msgid "Click and move the mouse around to draw a negative."
 msgid "Click and move the mouse around to make your painting negative."
 msgstr "சொடுக்கி நகர்த்தினால், படத்தை எதிர் வண்ணத்துக்கு மாற்றலாம்."
 
@@ -963,11 +959,11 @@ msgstr "சொடுக்கி நகர்த்தினால், படத
 msgid "Click to add noise to your entire picture."
 msgstr "சொடுக்கினால், படத்தில் இரைச்சலைச் சேர்க்கலாம்."
 
-#: ../../magic/src/rails.c:75
+#: ../../magic/src/rails.c:102
 msgid "Rails"
 msgstr "இருப்புப் பாதைகள்"
 
-#: ../../magic/src/rails.c:77
+#: ../../magic/src/rails.c:104
 msgid "Click and drag to draw train track rails on your picture."
 msgstr "சொடுக்கி இழுத்தால், படத்தில் தொடர்வண்டி இருப்புப் பாதைகளை வரையலாம்."
 
@@ -1083,6 +1079,36 @@ msgstr "சொடுக்கினால், பணிப்பந்துக�
 msgid "Click to add snow flakes to your picture."
 msgstr "சொடுக்கினால், படத்தில் பனிக்கீற்றுகளைச் சேர்க்கலாம்."
 
+#: ../../magic/src/string.c:121
+msgid "String edges"
+msgstr ""
+
+#: ../../magic/src/string.c:124
+msgid "String corner"
+msgstr ""
+
+#: ../../magic/src/string.c:127
+msgid "String 'V'"
+msgstr ""
+
+#: ../../magic/src/string.c:135
+msgid ""
+"Click and drag to draw string art. Drag top-bottom to draw less or more "
+"lines, to the center to approach the lines to center."
+msgstr ""
+
+#: ../../magic/src/string.c:138
+#, fuzzy
+#| msgid "Click and drag to draw train track rails on your picture."
+msgid "Click and drag to draw string art aligned to the edges."
+msgstr "சொடுக்கி இழுத்தால், படத்தில் தொடர்வண்டி இருப்புப் பாதைகளை வரையலாம்."
+
+#: ../../magic/src/string.c:141
+msgid ""
+"Draw string art with free angles. Click and drag a V: drag to the vertex, "
+"drag backwards a little to the start, then drag to the end."
+msgstr ""
+
 #: ../../magic/src/tint.c:71
 msgid "Tint"
 msgstr "சாயல்"
@@ -1092,7 +1118,8 @@ msgid "Color & White"
 msgstr "வண்ணமும் வெள்ளையும்"
 
 #: ../../magic/src/tint.c:75
-msgid "Click and move the mouse around to change the color of parts of your picture."
+msgid ""
+"Click and move the mouse around to change the color of parts of your picture."
 msgstr "சொடுக்கி நகர்த்தினால், படத்தின் பகுதிகளில் வண்ணத்தை மாற்றலாம்."
 
 #: ../../magic/src/tint.c:76
@@ -1100,12 +1127,15 @@ msgid "Click to change the color of your entire picture."
 msgstr "சொடுக்கினால், முழுப்படத்தின் வண்ணமும் மாறும்."
 
 #: ../../magic/src/tint.c:77
-msgid "Click and move the mouse around to turn parts of your picture into white and a color you choose."
+msgid ""
+"Click and move the mouse around to turn parts of your picture into white and "
+"a color you choose."
 msgstr "சொடுக்கி நகர்த்தினால், படத்தை வெள்ளை, விரும்பிய வண்ணம் ஒன்றாக மாற்றலாம்."
 
 #: ../../magic/src/tint.c:78
 msgid "Click to turn your entire picture into white and a color you choose."
-msgstr "சொடுக்கினால், முழுப்படமும் வெள்ளையும் நீங்கள் தேர்ந்தெடுக்கும் இன்னொரு வண்ணமுமாக மாறும்."
+msgstr ""
+"சொடுக்கினால், முழுப்படமும் வெள்ளையும் நீங்கள் தேர்ந்தெடுக்கும் இன்னொரு வண்ணமுமாக மாறும்."
 
 #: ../../magic/src/toothpaste.c:65
 msgid "Toothpaste"
@@ -1132,12 +1162,24 @@ msgid "Wavelets"
 msgstr "சிறிய அலைகள்"
 
 #: ../../magic/src/waves.c:83
-msgid "Click to make the picture horizontally wavy. Click toward the top for shorter waves, the bottom for taller waves, the left for small waves, and the right for long waves."
-msgstr "சொடுக்கினால், படம் கிடைமட்டமாக அலை பாயும். மேலே சொடுக்கினால் தாழ்ந்த அலைகளும், கீழே சொடுக்கினால் உயர்ந்த அலைகளும், இடப்பக்கம் சொடுக்கினால் சிறிய அலைகளும் வலப்பக்கம் சொடுக்கினால் பெரிய அலைகளும் கிடைக்கும்."
+msgid ""
+"Click to make the picture horizontally wavy. Click toward the top for "
+"shorter waves, the bottom for taller waves, the left for small waves, and "
+"the right for long waves."
+msgstr ""
+"சொடுக்கினால், படம் கிடைமட்டமாக அலை பாயும். மேலே சொடுக்கினால் தாழ்ந்த அலைகளும், கீழே "
+"சொடுக்கினால் உயர்ந்த அலைகளும், இடப்பக்கம் சொடுக்கினால் சிறிய அலைகளும் வலப்பக்கம் "
+"சொடுக்கினால் பெரிய அலைகளும் கிடைக்கும்."
 
 #: ../../magic/src/waves.c:84
-msgid "Click to make the picture vertically wavy. Click toward the top for shorter waves, the bottom for taller waves, the left for small waves, and the right for long waves."
-msgstr "சொடுக்கினால், படம் நெடுக்குவாட்டில் அலை பாயும். மேலே சொடுக்கினால் தாழ்ந்த அலைகளும், கீழே சொடுக்கினால் உயர்ந்த அலைகளும், இடப்பக்கம் சொடுக்கினால் சிறிய அலைகளும் வலப்பக்கம் சொடுக்கினால் பெரிய அலைகளும் கிடைக்கும்."
+msgid ""
+"Click to make the picture vertically wavy. Click toward the top for shorter "
+"waves, the bottom for taller waves, the left for small waves, and the right "
+"for long waves."
+msgstr ""
+"சொடுக்கினால், படம் நெடுக்குவாட்டில் அலை பாயும். மேலே சொடுக்கினால் தாழ்ந்த அலைகளும், கீழே "
+"சொடுக்கினால் உயர்ந்த அலைகளும், இடப்பக்கம் சொடுக்கினால் சிறிய அலைகளும் வலப்பக்கம் "
+"சொடுக்கினால் பெரிய அலைகளும் கிடைக்கும்."
 
 #, fuzzy
 #~ msgid ""
@@ -1198,24 +1240,30 @@ msgstr "சொடுக்கினால், படம் நெடுக்க
 #, fuzzy
 #~ msgid "Blur All"
 #~ msgstr "ÁíÌ"
+
 #~ msgid "Click and move to fade the colors."
 #~ msgstr "¿¢Èí¸¨Ç Áí¸Ä¡ì¸ ¾ðÊÅ¢ðÎ ¿¸÷ò¾×õ"
 
 #, fuzzy
 #~ msgid "Click and move to darken the colors."
 #~ msgstr "¿¢Èí¸¨Ç Áí¸Ä¡ì¸ ¾ðÊÅ¢ðÎ ¿¸÷ò¾×õ"
+
 #~ msgid "Sparkles"
 #~ msgstr "´Ç¢÷×"
+
 #~ msgid "You now have a blank sheet to draw on!"
 #~ msgstr "þô§À¡Ð ¿£í¸û Å¨ÃÂ ´Õ ¦ÅüÚ ¾¡û ¸¢¨¼òÐÅ¢ð¼Ð!"
 
 #, fuzzy
 #~ msgid "Start a new picture?"
 #~ msgstr "À¼ò¨¾ «Æ¢òÐÅ¢¼Ä¡Á¡?"
+
 #~ msgid "Click and move to draw sparkles."
 #~ msgstr "¾ðÊÅ¢ðÎ ±Ä¢¨Â ¿¸÷ò¾¢É¡ø ´Ç¢ÕõÀ¼õ Å¨ÃÂÄ¡õ."
+
 #~ msgid "Starting a new picture will erase the current one!"
 #~ msgstr "Ò¾¢Â À¼ò¨¾ ¾¢Èó¾¡ø þô§À¡Ð þÕìÌõ À¼õ «Æ¢óÐÅ¢Î§Á!"
+
 #~ msgid "That’s OK!"
 #~ msgstr "ÀÃÅ¡Â¢ø¨Ä!"
 
@@ -1227,22 +1275,30 @@ msgstr "சொடுக்கினால், படம் நெடுக்க
 #, fuzzy
 #~ msgid "Save over the older version of this picture?"
 #~ msgstr "þó¾ À¼ò¾¢ý À¨ÆÂ À¾¢ôÒ §Á§Ä§Â þ¨¾ §ºÁ¢ì¸Ä¡Á¡?"
+
 #~ msgid "Green!"
 #~ msgstr "Àî¨º!"
+
 #~ msgid "Fade"
 #~ msgstr "Áí¸Ä¡ìÌ"
+
 #~ msgid "Oval"
 #~ msgstr "¿£ûÅð¼õ"
+
 #~ msgid "Diamond"
 #~ msgstr "¨ÅÃÅÊÅõ"
+
 #~ msgid "A square has four sides, each the same length."
 #~ msgstr "ºÐÃò¾¢üÌ ¿¡ýÌ Àì¸í¸û ¯ñÎ. «¨ÉòÐôÀì¸í¸Ùõ ºÁ «Ç× ¯¨¼ÂÐ."
+
 #~ msgid "A circle is exactly round."
 #~ msgstr "Åð¼õ ºÃ¢Â¡¸ ¯Õñ¨¼ §À¡ø þÕìÌõ"
+
 #~ msgid "A diamond is a square, turned around slightly."
 #~ msgstr "¨ÅÃÅÊÅõ ±ýÀÐ, ºüÚ ¾¢ÕõôÀð¼ ´Õ ºÐÃõ."
+
 #~ msgid "Lime!"
 #~ msgstr "þÇõÀî¨º!"
+
 #~ msgid "Silver!"
 #~ msgstr "¦ÅûÇ¢!"
-

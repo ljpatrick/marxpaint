@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint 0.9.21\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-12-31 16:59-0800\n"
+"POT-Creation-Date: 2009-02-21 16:17-0800\n"
 "PO-Revision-Date: 2009-01-11 20:39:59-0800\n"
 "Last-Translator: Abdoul Cisse <abdoulseydou@hotmail.com>\n"
 "Language-Team: Songhoy <songhoy@bagoundie.net>\n"
@@ -261,12 +261,16 @@ msgstr "Kaare, muulubii no kaŋ ceraw taacaa ga sawa."
 #. Description of a rectangle
 #: ../shapes.h:212 ../shapes.h:213
 msgid "A rectangle has four sides and four right angles."
-msgstr "Muulubii goo nda ceraw taaci kaŋ ga sawa ihinka-hinka nda kanje goranta taaci."
+msgstr ""
+"Muulubii goo nda ceraw taaci kaŋ ga sawa ihinka-hinka nda kanje goranta "
+"taaci."
 
 #: ../shapes.h:217 ../shapes.h:219
 msgid ""
 "A circle is a curve where all points have the same distance from the center."
-msgstr "Windira ti golbu daabanta kaŋ tonbey kul mooruyanoo ka hun gamtonboo ga ga sawa. "
+msgstr ""
+"Windira ti golbu daabanta kaŋ tonbey kul mooruyanoo ka hun gamtonboo ga ga "
+"sawa. "
 
 #. Description of an ellipse
 #: ../shapes.h:222 ../shapes.h:223
@@ -285,7 +289,9 @@ msgstr "Kanjeguu, bii no kaŋ goo nda ceraw guu."
 
 #: ../shapes.h:235 ../shapes.h:237
 msgid "A rhombus has four equal sides, and opposite sides are parallel."
-msgstr "Sunbii, kaare yobante no kaŋ goo nda ceraw  sawanta taaci, wey kaŋ ga tenji ga ceesi cere se. "
+msgstr ""
+"Sunbii, kaare yobante no kaŋ goo nda ceraw  sawanta taaci, wey kaŋ ga tenji "
+"ga ceesi cere se. "
 
 #: ../shapes.h:241 ../shapes.h:243
 msgid "An octagon has eight equal sides."
@@ -415,7 +421,9 @@ msgstr "Naagu nee ka žeeri foo sintin.  Naŋ zaa n ben."
 msgid ""
 "Pick a shape. Click to pick the center, drag, then let go when it is the "
 "size you want. Move around to rotate it, and click to draw it."
-msgstr "Alhaali foo suuba. Naagu ka gamoo zaa, dogoo nda dimmaa suuba. Gaabu k'a naagu nda n g'a kuubi. Ka ben a žeeri.  "
+msgstr ""
+"Alhaali foo suuba. Naagu ka gamoo zaa, dogoo nda dimmaa suuba. Gaabu k'a "
+"naagu nda n g'a kuubi. Ka ben a žeeri.  "
 
 #. Text tool instructions
 #: ../tools.h:104
@@ -526,7 +534,7 @@ msgid "Can’t open that picture!"
 msgstr "Ay si hin ka biyoo woo feeri !"
 
 #. Generic dialog dismissal
-#: ../tuxpaint.c:1878 ../tuxpaint.c:1883 ../tuxpaint.c:1892 ./tuxpaint.c:1899
+#: ../tuxpaint.c:1878 ../tuxpaint.c:1883 ../tuxpaint.c:1892 ../tuxpaint.c:1899
 #: ../tuxpaint.c:1908
 msgid "OK"
 msgstr "Ay yadda"
@@ -871,7 +879,9 @@ msgstr "Noonay-bere-diji"
 #: ../../magic/src/kalidescope.c:83
 msgid ""
 "Click and drag the mouse to draw with symmetric brushes (a kaleidoscope)."
-msgstr "Naagu, ma ncaŋoo nor ka bii tee nda kalam tenjante hinka (sanda nda noonay-bere-diji)."
+msgstr ""
+"Naagu, ma ncaŋoo nor ka bii tee nda kalam tenjante hinka (sanda nda noonay-"
+"bere-diji)."
 
 #: ../../magic/src/light.c:84
 msgid "Light"
@@ -942,11 +952,11 @@ msgstr "Naagu ka ncaŋoo nor ka jinde tonton biyoo ga."
 msgid "Click to add noise to your entire picture."
 msgstr "Naagu ka jinde tonton biyoo kul ga."
 
-#: ../../magic/src/rails.c:100
+#: ../../magic/src/rails.c:102
 msgid "Rails"
 msgstr "Zirji fondo"
 
-#: ../../magic/src/rails.c:102
+#: ../../magic/src/rails.c:104
 msgid "Click and drag to draw train track rails on your picture."
 msgstr "Naagu ka ncaŋoo nor ka  zirji fondo tee."
 
@@ -1062,6 +1072,36 @@ msgstr "Naagu ka než hamni tonton biyoo ga."
 msgid "Click to add snow flakes to your picture."
 msgstr "Naagu ka než hamni tonton biyoo ga."
 
+#: ../../magic/src/string.c:121
+msgid "String edges"
+msgstr ""
+
+#: ../../magic/src/string.c:124
+msgid "String corner"
+msgstr ""
+
+#: ../../magic/src/string.c:127
+msgid "String 'V'"
+msgstr ""
+
+#: ../../magic/src/string.c:135
+msgid ""
+"Click and drag to draw string art. Drag top-bottom to draw less or more "
+"lines, to the center to approach the lines to center."
+msgstr ""
+
+#: ../../magic/src/string.c:138
+#, fuzzy
+#| msgid "Click and drag to draw train track rails on your picture."
+msgid "Click and drag to draw string art aligned to the edges."
+msgstr "Naagu ka ncaŋoo nor ka  zirji fondo tee."
+
+#: ../../magic/src/string.c:141
+msgid ""
+"Draw string art with free angles. Click and drag a V: drag to the vertex, "
+"drag backwards a little to the start, then drag to the end."
+msgstr ""
+
 #: ../../magic/src/tint.c:71
 msgid "Tint"
 msgstr "Caaray"
@@ -1083,11 +1123,15 @@ msgstr "Naagu ka biyoo kul noonaa barmay."
 msgid ""
 "Click and move the mouse around to turn parts of your picture into white and "
 "a color you choose."
-msgstr "Naagu, ma ncaŋoo nor ka biyoo jerey bere k'i tee i kaaray nda noona kaŋ n' na suuba."
+msgstr ""
+"Naagu, ma ncaŋoo nor ka biyoo jerey bere k'i tee i kaaray nda noona kaŋ n' "
+"na suuba."
 
 #: ../../magic/src/tint.c:78
 msgid "Click to turn your entire picture into white and a color you choose."
-msgstr "Naagu, ma ncaŋoo nor ka biyoo kul bere k'a tee i kaaray nda noona kaŋ n' na suuba."
+msgstr ""
+"Naagu, ma ncaŋoo nor ka biyoo kul bere k'a tee i kaaray nda noona kaŋ n' na "
+"suuba."
 
 #: ../../magic/src/toothpaste.c:65
 msgid "Toothpaste"
@@ -1118,11 +1162,21 @@ msgid ""
 "Click to make the picture horizontally wavy. Click toward the top for "
 "shorter waves, the bottom for taller waves, the left for small waves, and "
 "the right for long waves."
-msgstr "Naagu ka bonday-taka bii zumantee tee. Naagu beene here ka bonday kaccuyan tee. Ganda here ibeeriyan se. Kanbe wowaa ga ka kaa gandoo ra, kanbe guma ga ka tonton gandoo ra. Naagu beene here ka bonday kaccuyan tee. Ganda here ibeeriyan se. Kanbe wowaa ga ka kaa gandoo ra, kanbe guma ga ka tonton gandoo ra. "
+msgstr ""
+"Naagu ka bonday-taka bii zumantee tee. Naagu beene here ka bonday kaccuyan "
+"tee. Ganda here ibeeriyan se. Kanbe wowaa ga ka kaa gandoo ra, kanbe guma ga "
+"ka tonton gandoo ra. Naagu beene here ka bonday kaccuyan tee. Ganda here "
+"ibeeriyan se. Kanbe wowaa ga ka kaa gandoo ra, kanbe guma ga ka tonton "
+"gandoo ra. "
 
 #: ../../magic/src/waves.c:84
 msgid ""
 "Click to make the picture vertically wavy. Click toward the top for shorter "
 "waves, the bottom for taller waves, the left for small waves, and the right "
 "for long waves."
-msgstr "Naagu ka bonday-taka bii kayante tee. Naagu beene here ka bonday kaccuyan tee. Ganda here ibeeriyan se. Kanbe wowaa ga ka kaa gandoo ra, kanbe guma ga ka tonton gandoo ra. Naagu beene here ka bonday kaccuyan tee. Ganda here ibeeriyan se. Kanbe wowaa ga ka kaa gandoo ra, kanbe guma ga ka tonton gandoo ra. "
+msgstr ""
+"Naagu ka bonday-taka bii kayante tee. Naagu beene here ka bonday kaccuyan "
+"tee. Ganda here ibeeriyan se. Kanbe wowaa ga ka kaa gandoo ra, kanbe guma ga "
+"ka tonton gandoo ra. Naagu beene here ka bonday kaccuyan tee. Ganda here "
+"ibeeriyan se. Kanbe wowaa ga ka kaa gandoo ra, kanbe guma ga ka tonton "
+"gandoo ra. "
