@@ -22,7 +22,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
   
-  June 14, 2002 - January 2, 2009
+  June 14, 2002 - February 22, 2009
   $Id$
 */
 
@@ -1983,7 +1983,8 @@ static void mainloop(void)
       {
         magic_switchout(canvas);
 	done = do_quit(cur_tool);
-        magic_switchin(canvas);
+        if (!done)
+          magic_switchin(canvas);
       }
       else if (event.type == SDL_ACTIVEEVENT)
       {
@@ -2006,7 +2007,8 @@ static void mainloop(void)
 	{
           magic_switchout(canvas);
 	  done = do_quit(cur_tool);
-          magic_switchin(canvas);
+          if (!done)
+            magic_switchin(canvas);
 	}
 	else if (key == SDLK_s && (mod & KMOD_ALT))
 	{
@@ -2034,14 +2036,16 @@ static void mainloop(void)
 	{
           magic_switchout(canvas);
 	  done = do_quit(cur_tool);
-          magic_switchin(canvas);
+          if (!done)
+            magic_switchin(canvas);
 	}
 #ifdef WIN32
 	else if (key == SDLK_F4 && (mod & KMOD_ALT))
 	{
           magic_switchout(canvas);
 	  done = do_quit(cur_tool);
-          magic_switchin(canvas);
+          if (!done)
+            magic_switchin(canvas);
 	}
 #endif
 	else if (key == SDLK_z && (mod & KMOD_CTRL) && !noshortcuts)
@@ -2701,7 +2705,8 @@ static void mainloop(void)
 	    update_screen_rect(&r_ttoolopt);
 	  }
 
-          magic_switchin(canvas);
+          if (!done)
+            magic_switchin(canvas);
 	}
 	else if (HIT(r_toolopt) && valid_click(event.button.button))
 	{

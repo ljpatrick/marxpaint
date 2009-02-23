@@ -8,7 +8,7 @@ http://www.tuxpaint.org/
 
 $Id$
 
-2009.February.21 (0.9.21)
+2009.February.22 (0.9.21)
   * New Starters:
     -------------
     * Silver Frame
@@ -117,6 +117,11 @@ $Id$
       (Mixing RtoL and LtoR works (e.g., Hebrew with numerals))
 
     * Updated to the latest version (2.27) of DejaVu Sans Regular for UI font.
+
+  * Bug Fixes:
+    ----------
+    * Was inadvertently calling "magic_switchin()" on Quit. Fixed.
+      Dan Shields <d4ndeveloper@gmail.com>
 
   * New localizations:
     ------------------
