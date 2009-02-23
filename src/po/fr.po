@@ -1,7 +1,6 @@
 # translation of fr.po to 
 # Tux Paint french messages.
-# Comment : Fixed fuzzy and some corrections
-# Copyright (C) 2008.
+# Copyright (C) 2009.
 # Jacques Chion <Jacques.Chion_at_orange.fr>,2008
 # Charles Vidal <vidalc@club-internet.fr>, 2002.
 msgid ""
@@ -1121,34 +1120,35 @@ msgstr "Clique pour faire ajouter des flocons de neige."
 
 #: ../../magic/src/string.c:121
 msgid "String edges"
-msgstr ""
+msgstr "Ficelles (3)"
 
 #: ../../magic/src/string.c:124
 msgid "String corner"
-msgstr ""
+msgstr "Ficelles (2)"
 
 #: ../../magic/src/string.c:127
 msgid "String 'V'"
-msgstr ""
+msgstr "Ficelles (1)"
 
 #: ../../magic/src/string.c:135
 msgid ""
 "Click and drag to draw string art. Drag top-bottom to draw less or more "
 "lines, to the center to approach the lines to center."
-msgstr ""
+msgstr "Clique et déplace la souris pour obtenir un dessin géométrique. Plus tu vas vers le centre, "
+"plus tu augmentes le nombre de lignes."
 
 #
 #: ../../magic/src/string.c:138
-#, fuzzy
-#| msgid "Click and drag to draw train track rails on your picture."
 msgid "Click and drag to draw string art aligned to the edges."
-msgstr "Clique et déplace la souris pour dessiner des rails."
+msgstr "Clique et déplace la souris pour dessiner un dessin géométrique à partir d'un angle droit."
 
 #: ../../magic/src/string.c:141
 msgid ""
 "Draw string art with free angles. Click and drag a V: drag to the vertex, "
 "drag backwards a little to the start, then drag to the end."
-msgstr ""
+msgstr "Dessine un dessin géométrique avec un angle quelconque. Clique et bouge la souris "
+"pour faire un V. Tu continues à déplacer la souris jusquà obtenir l'angle désiré puis relâche le bouton "
+"pour voir le résultat."
 
 #: ../../magic/src/tint.c:71
 msgid "Tint"
