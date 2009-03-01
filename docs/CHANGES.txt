@@ -8,7 +8,7 @@ http://www.tuxpaint.org/
 
 $Id$
 
-2009.February.22 (0.9.21)
+2009.March.1 (0.9.21)
   * New Starters:
     -------------
     * Silver Frame
@@ -35,7 +35,6 @@ $Id$
       (Part of Tux4Kids' participation in Google Summer of Code 2008)
 
     * + Confetti - Paints random confetti bits on the canvas.
-      + Fold - Folds the corners of the image up, like a piece of paper.
       + Fisheye - Warps part of the picture, as though seen through a fisheye.
       + TV - Adds television (CRT) interlacing lines over the image.
       + Rosette - Paints at 3 points on the screen, in a rosette shape.
@@ -44,7 +43,8 @@ $Id$
       By Adam 'foo-script' Rakowski <foo-script@o2.pl>
       (Part of Tux4Kids' participation in Google Summer of Code 2008)
 
-    * Rails - Draws train tracks / rails over the image.
+    * + Rails - Draws train tracks / rails over the image.
+      + Fold - Folds the corners of the image up, like a piece of paper.
       By Adam 'foo-script' Rakowski <foo-script@o2.pl> (GSOC 2008),
       with modifications by Bill Kendrick
       and Pere Pujal i Carabantes <pere@fornol.no-ip.org>
