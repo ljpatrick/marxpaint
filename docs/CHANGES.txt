@@ -8,7 +8,7 @@ http://www.tuxpaint.org/
 
 $Id$
 
-2009.March.1 (0.9.21)
+2009.March.6 (0.9.21)
   * New Starters:
     -------------
     * Silver Frame
@@ -168,6 +168,7 @@ $Id$
       Kartik Mistry <kartik.mistry@gmail.com>
 
     * Hebrew translation
+      Jorge Mariano <mjminfo@mjminformatique.com>
       Guy Hed <guy.hed@weizmann.ac.il>
 
     * Irish Gaelic

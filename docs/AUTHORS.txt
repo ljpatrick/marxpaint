@@ -7,7 +7,7 @@ bill@newbreedsoftware.com
 http://www.tuxpaint.org/
 
 
-June 17, 2002 - March 1, 2009
+June 17, 2002 - March 6, 2009
 
 $Id$
 
@@ -367,6 +367,7 @@ $Id$
     Kartik Mistry <kartik.mistry@gmail.com>
 
   * Hebrew
+    Jorge Mariano <mjminfo@mjminformatique.com>
     Guy Hed <guy.hed@weizmann.ac.il>
     Dovix <dovix2003@yahoo.com>
     Koby <kobybo@hotmail.com>
