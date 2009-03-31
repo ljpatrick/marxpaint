@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: tuxpaint 0.9.20b\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2009-02-21 16:17-0800\n"
-"PO-Revision-Date: 2008-12-30 12:02-0000\n"
+"PO-Revision-Date: 2009-03-31 12:07-0000\n"
 "Last-Translator: Sérgio Marques <smarquespt@gmail.com>\n"
 "Language-Team: Portuguese <translation-team-pt@lists.sourceforge.net>\n"
 "MIME-Version: 1.0\n"
@@ -26,12 +26,12 @@ msgstr "Preto!"
 #. Response to Dark grey (128, 128, 128) color selected
 #: ../colors.h:89
 msgid "Dark grey! Some people spell it “dark gray”."
-msgstr "Cinzento-escuro!"
+msgstr "Cinzento escuro!"
 
 #. Response to Light grey (192, 192, 192) color selected
 #: ../colors.h:92
 msgid "Light grey! Some people spell it “light gray”."
-msgstr "Cinzento-claro!"
+msgstr "Cinzento claro!"
 
 #. Response to White (255, 255, 255) color selected
 #: ../colors.h:95
@@ -56,17 +56,17 @@ msgstr "Amarelo!"
 #. Response to Light green (160, 228, 128) color selected
 #: ../colors.h:107
 msgid "Light green!"
-msgstr "Verde-claro!"
+msgstr "Verde claro!"
 
 #. Response to Dark green (33, 148, 70) color selected
 #: ../colors.h:110
 msgid "Dark green!"
-msgstr "Verde-escuro!"
+msgstr "Verde escuro!"
 
 #. Response to "Sky" blue (138, 168, 205) color selected
 #: ../colors.h:113
 msgid "Sky blue!"
-msgstr "Azul-celeste!"
+msgstr "Azul celeste!"
 
 #. Response to Blue (50, 100, 255) color selected
 #: ../colors.h:116
@@ -217,82 +217,95 @@ msgid "ZH_TW"
 msgstr "ZH_TW"
 
 #. Square shape tool (4 equally-lengthed sides at right angles)
-#: ../shapes.h:171 ../shapes.h:172
+#: ../shapes.h:171
+#: ../shapes.h:172
 msgid "Square"
 msgstr "Quadrado"
 
 #. Rectangle shape tool (4 sides at right angles)
-#: ../shapes.h:175 ../shapes.h:176
+#: ../shapes.h:175
+#: ../shapes.h:176
 msgid "Rectangle"
 msgstr "Rectângulo"
 
 #. Circle shape tool (X radius and Y radius are the same)
-#: ../shapes.h:179 ../shapes.h:180
+#: ../shapes.h:179
+#: ../shapes.h:180
 msgid "Circle"
 msgstr "Círculo"
 
 #. Ellipse shape tool (X radius and Y radius may differ)
-#: ../shapes.h:183 ../shapes.h:184
+#: ../shapes.h:183
+#: ../shapes.h:184
 msgid "Ellipse"
 msgstr "Elipse"
 
 #. Triangle shape tool (3 sides)
-#: ../shapes.h:187 ../shapes.h:188
+#: ../shapes.h:187
+#: ../shapes.h:188
 msgid "Triangle"
 msgstr "Triângulo"
 
 #. Pentagone shape tool (5 sides)
-#: ../shapes.h:191 ../shapes.h:192
+#: ../shapes.h:191
+#: ../shapes.h:192
 msgid "Pentagon"
 msgstr "Pentágono"
 
 #. Rhombus shape tool (4 sides, not at right angles)
-#: ../shapes.h:195 ../shapes.h:196
+#: ../shapes.h:195
+#: ../shapes.h:196
 msgid "Rhombus"
 msgstr "Losango"
 
 #. Octagon shape tool (8 sides)
-#: ../shapes.h:199 ../shapes.h:200
+#: ../shapes.h:199
+#: ../shapes.h:200
 msgid "Octagon"
 msgstr "Octógono"
 
 #. Description of a square
-#: ../shapes.h:208 ../shapes.h:209
+#: ../shapes.h:208
+#: ../shapes.h:209
 msgid "A square is a rectangle with four equal sides."
 msgstr "Um quadrado é um rectângulo com quatro lados iguais."
 
 #. Description of a rectangle
-#: ../shapes.h:212 ../shapes.h:213
+#: ../shapes.h:212
+#: ../shapes.h:213
 msgid "A rectangle has four sides and four right angles."
 msgstr "Um rectângulo tem quatro lados e quatro ângulos rectos."
 
-#: ../shapes.h:217 ../shapes.h:219
-msgid ""
-"A circle is a curve where all points have the same distance from the center."
-msgstr ""
-"Um círculo é uma curva em que todos os pontos estão à mesma distância do "
-"centro."
+#: ../shapes.h:217
+#: ../shapes.h:219
+msgid "A circle is a curve where all points have the same distance from the center."
+msgstr "Um círculo é uma curva em que todos os pontos estão à mesma distância do centro."
 
 #. Description of an ellipse
-#: ../shapes.h:222 ../shapes.h:223
+#: ../shapes.h:222
+#: ../shapes.h:223
 msgid "An ellipse is a stretched circle."
 msgstr "Uma elipse é um círculo esticado."
 
 #. Description of a triangle
-#: ../shapes.h:226 ../shapes.h:227
+#: ../shapes.h:226
+#: ../shapes.h:227
 msgid "A triangle has three sides."
 msgstr "Um triângulo tem três lados."
 
 #. Description of a pentagon
-#: ../shapes.h:230 ../shapes.h:231
+#: ../shapes.h:230
+#: ../shapes.h:231
 msgid "A pentagon has five sides."
 msgstr "Um pentágono tem cinco lados."
 
-#: ../shapes.h:235 ../shapes.h:237
+#: ../shapes.h:235
+#: ../shapes.h:237
 msgid "A rhombus has four equal sides, and opposite sides are parallel."
 msgstr "Um losango tem quatro lados iguais e os lados opostos são paralelos."
 
-#: ../shapes.h:241 ../shapes.h:243
+#: ../shapes.h:241
+#: ../shapes.h:243
 msgid "An octagon has eight equal sides."
 msgstr "Um octágono tem oito lados iguais."
 
@@ -323,7 +336,8 @@ msgstr "Carimbos"
 
 #. Title of shape selector (buttons down the right for shapes tool)
 #. Shape creation tool (square, circle, etc.)
-#: ../titles.h:56 ../tools.h:54
+#: ../titles.h:56
+#: ../tools.h:54
 msgid "Shapes"
 msgstr "Formas"
 
@@ -334,7 +348,8 @@ msgstr "Letras"
 
 #. Title of magic tool selector (buttons down the right for magic (effect plugin) tool)
 #. "Magic" effects tools (blur, flip image, etc.)
-#: ../titles.h:62 ../tools.h:60
+#: ../titles.h:62
+#: ../tools.h:60
 msgid "Magic"
 msgstr "Mágico"
 
@@ -381,7 +396,8 @@ msgstr "Novo"
 #. Open a saved picture
 #. buttons for the file open dialog
 #. Open dialog: 'Open' button, to load the selected picture
-#: ../tools.h:75 ../tuxpaint.c:7974
+#: ../tools.h:75
+#: ../tuxpaint.c:7974
 msgid "Open"
 msgstr "Abrir"
 
@@ -413,27 +429,20 @@ msgstr "Escolhe uma imagem para estampar em volta do desenho."
 #. Line tool instructions
 #: ../tools.h:98
 msgid "Click to start drawing a line. Let go to complete it."
-msgstr ""
-"Clica para começares a desenhar uma linha. Solta o botão quando terminares."
+msgstr "Clica para começares a desenhar uma linha. Solta o botão quando terminares."
 
 # #: tools.h:65
 # msgid "Pick a shape to draw.  Click once to pick the center of the shape, #click again to draw it."
 # msgstr "Escolha uma forma para desenhar. Clique uma vez para definir o centro da imagem. Clique de novo para desenhá-la."
 #. Shape tool instructions
 #: ../tools.h:101
-msgid ""
-"Pick a shape. Click to pick the center, drag, then let go when it is the "
-"size you want. Move around to rotate it, and click to draw it."
-msgstr ""
-"Escolhe uma forma. Clica para pores o centro, arrasta, e larga quando "
-"estiver do tamanho que queres. Move o rato para a rodares e clica para "
-"desenhar."
+msgid "Pick a shape. Click to pick the center, drag, then let go when it is the size you want. Move around to rotate it, and click to draw it."
+msgstr "Escolhe uma forma. Clica para pores o centro, arrasta, e larga quando estiver do tamanho que queres. Move o rato para a rodares e clica para desenhar."
 
 #. Text tool instructions
 #: ../tools.h:104
 msgid "Choose a style of text. Click on your drawing and you can start typing."
-msgstr ""
-"Escolhe um estilo de texto. Clica no desenho e podes começar a escrever."
+msgstr "Escolhe um estilo de texto. Clica no desenho e podes começar a escrever."
 
 #. Magic tool instruction
 #: ../tools.h:107
@@ -507,30 +516,29 @@ msgstr "Queres mesmo sair?"
 
 #. Quit prompt positive response (quit)
 #: ../tuxpaint.c:1858
-#, fuzzy
-#| msgid "Yes, I'm done!"
 msgid "Yes, I’m done!"
-msgstr "Sim, terminei!"
+msgstr "Sim, terminei !"
 
 #. Quit prompt negative response (don't quit)
-#: ../tuxpaint.c:1861 ../tuxpaint.c:1888
+#: ../tuxpaint.c:1861
+#: ../tuxpaint.c:1888
 msgid "No, take me back!"
 msgstr "Não, quero continuar!"
 
 #. Current picture is not saved; user is quitting
 #: ../tuxpaint.c:1865
 msgid "If you quit, you’ll lose your picture! Save it?"
-msgstr "Se saíres, vais perder o desenho! Queres guardá-lo?"
+msgstr "Se saires, vais perder o desenho! Queres guardá-lo?"
 
-#: ../tuxpaint.c:1866 ../tuxpaint.c:1871
+#: ../tuxpaint.c:1866
+#: ../tuxpaint.c:1871
 msgid "Yes, save it!"
 msgstr "Sim, guardar!"
 
-#: ../tuxpaint.c:1867 ../tuxpaint.c:1872
-#, fuzzy
-#| msgid "No, don't bother saving!"
+#: ../tuxpaint.c:1867
+#: ../tuxpaint.c:1872
 msgid "No, don’t bother saving!"
-msgstr "Não, não é preciso!"
+msgstr "Não, não é preciso !"
 
 #. Current picture is not saved; user is opening another picture
 #: ../tuxpaint.c:1870
@@ -543,7 +551,10 @@ msgid "Can’t open that picture!"
 msgstr "Não consigo abrir esse desenho!"
 
 #. Generic dialog dismissal
-#: ../tuxpaint.c:1878 ../tuxpaint.c:1883 ../tuxpaint.c:1892 ../tuxpaint.c:1899
+#: ../tuxpaint.c:1878
+#: ../tuxpaint.c:1883
+#: ../tuxpaint.c:1892
+#: ../tuxpaint.c:1899
 #: ../tuxpaint.c:1908
 msgid "OK"
 msgstr "Está bem"
@@ -587,10 +598,8 @@ msgid "Yes, erase it!"
 msgstr "Sim, apaga-o!"
 
 #: ../tuxpaint.c:1904
-#, fuzzy
-#| msgid "No, don't erase it!"
 msgid "No, don’t erase it!"
-msgstr "Não, não o apagues!"
+msgstr "Não, não quero apagar !"
 
 #. Reminder that Mouse Button 1 is the button to use in Tux Paint
 #: ../tuxpaint.c:1907
@@ -679,7 +688,8 @@ msgstr "Escolhe o desenho que queres e clica em “Abrir”."
 
 #. Let user choose images:
 #. Instructions for Slideshow file dialog (FIXME: Make a #define)
-#: ../tuxpaint.c:14350 ../tuxpaint.c:14664
+#: ../tuxpaint.c:14350
+#: ../tuxpaint.c:14664
 msgid "Choose the pictures you want, then click “Play”."
 msgstr "Escolhe as imagens que queres e clica em “Mostrar”."
 
@@ -724,8 +734,7 @@ msgid "Click and move the mouse around to make the picture blocky."
 msgstr "Clica e move o rato para transformares o desenho em blocos."
 
 #: ../../magic/src/blocks_chalk_drip.c:149
-msgid ""
-"Click and move the mouse around to turn the picture into a chalk drawing."
+msgid "Click and move the mouse around to turn the picture into a chalk drawing."
 msgstr "Clica e move o rato para transformares o desenho num desenho de giz."
 
 #: ../../magic/src/blocks_chalk_drip.c:152
@@ -859,10 +868,8 @@ msgid "Fold"
 msgstr "Dobra"
 
 #: ../../magic/src/fold.c:62
-msgid ""
-"Choose a background color and click to turn the corner of the page over."
-msgstr ""
-"Escolhe uma cor de fundo e clica para virar o canto da página por cima."
+msgid "Choose a background color and click to turn the corner of the page over."
+msgstr "Escolhe uma cor de fundo e clica para virar o canto da página por cima."
 
 #: ../../magic/src/glasstile.c:83
 msgid "Glass Tile"
@@ -889,10 +896,8 @@ msgid "Kaleidoscope"
 msgstr "Caleidoscópio"
 
 #: ../../magic/src/kalidescope.c:83
-msgid ""
-"Click and drag the mouse to draw with symmetric brushes (a kaleidoscope)."
-msgstr ""
-"Clica e arrasta o rato para desenhar com pincéis simétricos (caleidoscópio)."
+msgid "Click and drag the mouse to draw with symmetric brushes (a kaleidoscope)."
+msgstr "Clica e arrasta o rato para desenhar com pincéis simétricos (caleidoscópio)."
 
 #: ../../magic/src/light.c:84
 msgid "Light"
@@ -931,10 +936,8 @@ msgid "Mosaic"
 msgstr "Mosaico"
 
 #: ../../magic/src/mosaic.c:73
-msgid ""
-"Click and move the mouse to add a mosaic effect to parts of your picture."
-msgstr ""
-"Clica e move o rato para adicionar um efeito de mosaico, parcial, ao desenho."
+msgid "Click and move the mouse to add a mosaic effect to parts of your picture."
+msgstr "Clica e move o rato para adicionar um efeito de mosaico, parcial, ao desenho."
 
 #: ../../magic/src/mosaic.c:74
 msgid "Click to add a mosaic effect to your entire picture."
@@ -1050,8 +1053,7 @@ msgstr "Clica e move o rato para criar silhuetas a preto e branco."
 
 #: ../../magic/src/sharpen.c:83
 msgid "Click to create a black and white silhouette of your entire picture."
-msgstr ""
-"Clica e move o rato para criar silhuetas a preto e branco em todo o desenho."
+msgstr "Clica e move o rato para criar silhuetas a preto e branco em todo o desenho."
 
 #: ../../magic/src/shift.c:104
 msgid "Shift"
@@ -1087,33 +1089,27 @@ msgstr "Clica para adicionar flocos de neve no desenho."
 
 #: ../../magic/src/string.c:121
 msgid "String edges"
-msgstr ""
+msgstr "Margens das linhas"
 
 #: ../../magic/src/string.c:124
 msgid "String corner"
-msgstr ""
+msgstr "Margens dos cantos"
 
 #: ../../magic/src/string.c:127
 msgid "String 'V'"
-msgstr ""
+msgstr "Linhas em V"
 
 #: ../../magic/src/string.c:135
-msgid ""
-"Click and drag to draw string art. Drag top-bottom to draw less or more "
-"lines, to the center to approach the lines to center."
-msgstr ""
+msgid "Click and drag to draw string art. Drag top-bottom to draw less or more lines, to the center to approach the lines to center."
+msgstr "Clica e arrasta para desenhar linhas em cadeia. Arrasta superior-inferior para desenhar menos ou mais linhas, para o centro para aproximar as linhas ao centro."
 
 #: ../../magic/src/string.c:138
-#, fuzzy
-#| msgid "Click and drag to draw train track rails on your picture."
 msgid "Click and drag to draw string art aligned to the edges."
-msgstr "Clica e arrasta para desenhar carris no desenho"
+msgstr "Clica e arrasta para desenhar linhas em cadeia alinhadas ás margens."
 
 #: ../../magic/src/string.c:141
-msgid ""
-"Draw string art with free angles. Click and drag a V: drag to the vertex, "
-"drag backwards a little to the start, then drag to the end."
-msgstr ""
+msgid "Draw string art with free angles. Click and drag a V: drag to the vertex, drag backwards a little to the start, then drag to the end."
+msgstr "Desenhar linhas em cadeia com ângulos livres. Clica e arrasta em V: arrasta para o vértice, arrasta um pouco para trás para iniciar e em seguida arrasta para o fim"
 
 #: ../../magic/src/tint.c:71
 msgid "Tint"
@@ -1124,8 +1120,7 @@ msgid "Color & White"
 msgstr "Cor & Branco"
 
 #: ../../magic/src/tint.c:75
-msgid ""
-"Click and move the mouse around to change the color of parts of your picture."
+msgid "Click and move the mouse around to change the color of parts of your picture."
 msgstr "Clica e move o rato para alterar as cores, parcialmente, do desenho."
 
 #: ../../magic/src/tint.c:76
@@ -1133,18 +1128,12 @@ msgid "Click to change the color of your entire picture."
 msgstr "Clica para alterar as cores de todo o desenho."
 
 #: ../../magic/src/tint.c:77
-msgid ""
-"Click and move the mouse around to turn parts of your picture into white and "
-"a color you choose."
-msgstr ""
-"Clica e move o rato para transformar partes do teu desenho em branco e outra "
-"cor à tua escolha."
+msgid "Click and move the mouse around to turn parts of your picture into white and a color you choose."
+msgstr "Clica e move o rato para transformar partes do teu desenho em branco e outra cor à tua escolha."
 
 #: ../../magic/src/tint.c:78
 msgid "Click to turn your entire picture into white and a color you choose."
-msgstr ""
-"Clica para transformar todo o teu desenho em branco e outra cor à tua "
-"escolha."
+msgstr "Clica para transformar todo o teu desenho em branco e outra cor à tua escolha."
 
 #: ../../magic/src/toothpaste.c:65
 msgid "Toothpaste"
@@ -1171,24 +1160,12 @@ msgid "Wavelets"
 msgstr "Ondulação leve"
 
 #: ../../magic/src/waves.c:83
-msgid ""
-"Click to make the picture horizontally wavy. Click toward the top for "
-"shorter waves, the bottom for taller waves, the left for small waves, and "
-"the right for long waves."
-msgstr ""
-"Clica para fazer ondulações horizontais no desenho. Clica em direcção ao "
-"topo para ondas curtas, para baixo para ondas altas, para a esquerda para "
-"ondas pequenas e para a direita para ondas compridas."
+msgid "Click to make the picture horizontally wavy. Click toward the top for shorter waves, the bottom for taller waves, the left for small waves, and the right for long waves."
+msgstr "Clica para fazer ondulações horizontais no desenho. Clica em direcção ao topo para ondas curtas, para baixo para ondas altas, para a esquerda para ondas pequenas e para a direita para ondas compridas."
 
 #: ../../magic/src/waves.c:84
-msgid ""
-"Click to make the picture vertically wavy. Click toward the top for shorter "
-"waves, the bottom for taller waves, the left for small waves, and the right "
-"for long waves."
-msgstr ""
-"Clica para fazer ondulações horizontais no desenho. Clica em direcção ao "
-"topo para ondas curtas, para baixo para ondas altas, para a esquerda para "
-"ondas pequenas e para a direita para ondas compridas."
+msgid "Click to make the picture vertically wavy. Click toward the top for shorter waves, the bottom for taller waves, the left for small waves, and the right for long waves."
+msgstr "Clica para fazer ondulações horizontais no desenho. Clica em direcção ao topo para ondas curtas, para baixo para ondas altas, para a esquerda para ondas pequenas e para a direita para ondas compridas."
 
 #, fuzzy
 #~ msgid ""
@@ -1250,24 +1227,18 @@ msgstr ""
 #, fuzzy
 #~ msgid "Blur All"
 #~ msgstr "Embaciar"
-
 #~ msgid "Click and move to fade the colors."
 #~ msgstr "Clica e move o rato para desbotares as cores."
-
 #~ msgid "Click and move to darken the colors."
 #~ msgstr "Clica e move o rato para escurecer as cores."
-
 #~ msgid "Sparkles"
 #~ msgstr "Fagulhas"
-
 #~ msgid "You now have a blank sheet to draw on!"
 #~ msgstr "Agora tens uma folha nova para desenhares!"
-
 #~ msgid "Start a new picture?"
 #~ msgstr "Começar um novo desenho?"
-
 #~ msgid "Yes, let's start fresh!"
 #~ msgstr "Sim, vamos começar de novo"
-
 #~ msgid "Click and move to draw sparkles."
 #~ msgstr "Clica e move o rato para desenhares fagulhas."
+
