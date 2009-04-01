@@ -1926,17 +1926,19 @@ static void mainloop(void)
     old_stamp_group;
   int num_things;
   int *thing_scroll;
-  int cur_thing, do_draw, old_tool, tmp_int, max;
+  int cur_thing, do_draw, old_tool, max;
   int ignoring_motion;
   SDL_TimerID scrolltimer = NULL;
   SDL_Event event;
-  SDLKey key, key_down;
-  Uint16 key_unicode;
+  SDLKey key;
   SDLMod mod;
   Uint32 last_cursor_blink, cur_cursor_blink,
     pre_event_time, current_event_time;
   SDL_Rect update_rect;
-
+#ifdef DEBUG
+  Uint16 key_unicode;
+  SDLKey key_down;
+#endif
 
   num_things = num_brushes;
   thing_scroll = &brush_scroll;
@@ -1944,8 +1946,6 @@ static void mainloop(void)
   do_draw = 0;
   old_x = 0;
   old_y = 0;
-  new_x = 0;
-  new_y = 0;
   line_start_x = 0;
   line_start_y = 0;
   shape_ctr_x = 0;
@@ -1958,8 +1958,6 @@ static void mainloop(void)
   texttool_len = 0;
   scrolling = 0;
   scrolltimer = 0;
-  key_down = SDLK_LAST;
-  key_unicode = 0;
 
 
   done = 0;
@@ -2230,10 +2228,9 @@ static void mainloop(void)
 	    static int redraw = 0;
 	    wchar_t* im_cp = im_data.s;
 
+#ifdef DEBUG
 	    key_down = key;
 	    key_unicode = event.key.keysym.unicode;
-
-#ifdef DEBUG
 	    printf(
 	      "character 0x%04x %d <%c> is %d pixels, %sprintable, key_down 0x%x\n",
 	      (unsigned)event.key.keysym.unicode,
@@ -2719,7 +2716,6 @@ static void mainloop(void)
 	      cur_tool == TOOL_MAGIC || cur_tool == TOOL_TEXT ||
 	      cur_tool == TOOL_ERASER)
 	  {
-	    int old_thing;
 	    int num_rows_needed;
 	    SDL_Rect r_controls;
 	    SDL_Rect r_notcontrols;
@@ -2804,7 +2800,6 @@ static void mainloop(void)
 			    SNDDIST_NEAR);
 		}
 #endif
-		old_thing = cur_thing;
 		cur_thing = which;
 		do_draw = 1;
 	      }
@@ -3401,7 +3396,6 @@ static void mainloop(void)
 
 	    /* Start doing magic! */
 
-	    tmp_int = cur_undo;
 	    rec_undo_buffer();
 
             if (cur_undo > 0)
@@ -17506,16 +17500,8 @@ void magic_line_func(void * mapi,
 				int, int))
 {
   int dx, dy, y;
-  int orig_x1, orig_y1, orig_x2, orig_y2, tmp;
   float m, b;
   int cnt;
-
-  orig_x1 = x1;
-  orig_y1 = y1;
-
-  orig_x2 = x2;
-  orig_y2 = y2;
-
 
   dx = x2 - x1;
   dy = y2 - y1;
@@ -17580,20 +17566,6 @@ void magic_line_func(void * mapi,
           cb((void *) mapi, which, canvas, last, x1, y);
       }
     }
-  }
-
-  if (orig_x1 > orig_x2)
-  {
-    tmp = orig_x1;
-    orig_x1 = orig_x2;
-    orig_x2 = tmp;
-  }
-
-  if (orig_y1 > orig_y2)
-  {
-    tmp = orig_y1;
-    orig_y1 = orig_y2;
-    orig_y2 = tmp;
   }
 
   /* FIXME: Set and return an update rect? */
@@ -17750,9 +17722,6 @@ int do_new_dialog(void)
   cur = 0;
   which = 0;
   num_files_in_dirs = 0;
-
-
-  first_starter = 0;
 
 
   /* Open directories of images: */
