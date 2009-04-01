@@ -8,7 +8,7 @@ http://www.tuxpaint.org/
 
 $Id$
 
-2009.March.31 (0.9.21)
+2009.April.1 (0.9.21)
   * New Starters:
     -------------
     * Silver Frame
@@ -182,6 +182,9 @@ $Id$
 
     * Romanian
       Sorin Paliga <sorin.paliga@gmail.com>
+
+    * Russian
+      Nikolay Parukhin <parukhin@gmail.com>
 
     * Slovak
       Jaroslav Rynik <jrynik@yahoo.co.uk>

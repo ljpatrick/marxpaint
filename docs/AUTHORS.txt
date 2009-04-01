@@ -7,7 +7,7 @@ bill@newbreedsoftware.com
 http://www.tuxpaint.org/
 
 
-June 17, 2002 - March 6, 2009
+June 17, 2002 - April 1, 2009
 
 $Id$
 
@@ -487,8 +487,9 @@ $Id$
     Laurentiu Buzdugan
 
   * Russian
-    Dmitriy Ivanov <ace22b@myrealbox.com>
+    Nikolay Parukhin <parukhin@gmail.com>
     Sergei Popov <skein@rambler.ru>
+    Dmitriy Ivanov <ace22b@myrealbox.com>
 
   * Scottish Gaelic
     Niall Tracey <internationiall@hotmail.com>
