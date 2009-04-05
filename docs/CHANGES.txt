@@ -8,7 +8,7 @@ http://www.tuxpaint.org/
 
 $Id$
 
-2009.April.1 (0.9.21)
+2009.April.5 (0.9.21)
   * New Starters:
     -------------
     * Silver Frame
@@ -48,6 +48,15 @@ $Id$
       By Adam 'foo-script' Rakowski <foo-script@o2.pl> (GSOC 2008),
       with modifications by Bill Kendrick
       and Pere Pujal i Carabantes <pere@fornol.no-ip.org>
+
+    * Real Rainbow - Draw an arc-shaped, photorealistic rainbow.
+      By Bill Kendrick
+      with math help from Jeff Newmiller <jdnewmil@dcn.davis.ca.us>
+      Rainbow colors/alpha based on photo from
+      http://www.flickr.com/photos/nicholas_t/281820290/
+      photo by Flickr user "Nicholas_T"
+      Creative Commons Attribution 2.0 Generic
+      http://creativecommons.org/licenses/by/2.0/deed.en
 
     * String Edges - Draw string-like patters around the screen.
       String Corner - Draw aligned string-like patterns.

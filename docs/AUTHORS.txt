@@ -7,7 +7,7 @@ bill@newbreedsoftware.com
 http://www.tuxpaint.org/
 
 
-June 17, 2002 - April 1, 2009
+June 17, 2002 - April 5, 2009
 
 $Id$
 
@@ -66,6 +66,9 @@ $Id$
   with modifications by Bill Kendrick
   and Pere Pujal i Carabantes <pere@fornol.no-ip.org>
 
+  Math for arc used by Real Rainbow provided by
+  Jeff Newmiller <jdnewmil@dcn.davis.ca.us>
+
 
 * Graphics
 
@@ -83,6 +86,12 @@ $Id$
     by Bill Kendrick
 
   * Neko cat brushes based on XNeko by Masayuki Koba
+
+  * Real Rainbow colors/alpha based on:
+    http://www.flickr.com/photos/nicholas_t/281820290/
+    photo by Flickr user "Nicholas_T"
+    Creative Commons Attribution 2.0 Generic
+    http://creativecommons.org/licenses/by/2.0/deed.en
 
   * More brushes created using Inkscape
     by Caroline Ford <caroline.ford.work@googlemail.com>
