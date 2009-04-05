@@ -7,6 +7,13 @@
   Math assistence by Jeff Newmiller <jdnewmil@dcn.davis.ca.us>
 
   2009.04.02 - 2009.04.05
+
+FIXME:
+* Needs icon.
+* Needs sound effect.
+* Rect update needs fixing (leaving dirt).
+* Color/alpha art needs improvement.
+* Pixel gaps appear in lines sometimes (esp. larger rainbows).
 */
 
 #include <stdio.h>
@@ -189,7 +196,7 @@ void realrainbow_switchout(magic_api * api, int which, int mode, SDL_Surface * c
 void realrainbow_arc(magic_api * api, SDL_Surface * canvas, SDL_Surface * last, int x1, int y1, int x2, int y2, int fulldraw, SDL_Rect * update_rect)
 {
   int lowx, lowy, hix, hiy, xm, ym, xc, yc, r, a1, atan2_a, atan2_b;
-  int a, ox, oy, nx, ny, step, thick, rr, done;
+  int a, oa, ox, oy, nx, ny, step, thick, rr, done;
   float slope, theta;
   int colorindex;
 
@@ -252,29 +259,32 @@ void realrainbow_arc(magic_api * api, SDL_Surface * canvas, SDL_Surface * last, 
   if (fulldraw)
   {
     step = 1;
-    thick = (r / 5);
+    /* thick = (r / 5); */
   }
   else
   {
-    step = 10;
-    thick = 1;
+    step = 30;
+    /* thick = 1; */
   }
+  thick = (r / 5);
 
   if (theta < a1)
     step = -step;
   done = 0;
 
-  for (a = (a1 + step); !done; a = a + step)
+  oa = a1;
+
+  for (a = (a1 + step); done < 2; a = a + step)
   {
     for (rr = r - (thick / 2); rr <= r + (thick / 2); rr++)
     {
-      ox = (rr * cos((a - step) * M_PI / 180.0)) + xc;
-      oy = (rr * sin((a - step) * M_PI / 180.0)) + yc;
+      ox = (rr * cos(oa * M_PI / 180.0)) + xc;
+      oy = (rr * sin(oa * M_PI / 180.0)) + yc;
 
       nx = (rr * cos(a * M_PI / 180.0)) + xc;
       ny = (rr * sin(a * M_PI / 180.0)) + yc;
 
-      if (fulldraw)
+/*    if (fulldraw) */
       {
         colorindex = realrainbow_colors->h - 1 - (((rr - r + (thick / 2)) * realrainbow_colors->h) / thick);
 
@@ -283,17 +293,27 @@ void realrainbow_arc(magic_api * api, SDL_Surface * canvas, SDL_Surface * last, 
 
         api->line((void *) api, 0, canvas, last, ox, oy, nx, ny, 1, realrainbow_linecb);
       }
+/*
       else
       {
         api->putpixel(canvas, ox, oy,
                       SDL_MapRGB(canvas->format, rand() % 256, rand() % 256, rand() % 256));
       }
+*/
     }
 
+    oa = a;
+
     if (step > 0 && a + step > theta)
-      done = 1;
+    {
+      done++;
+      a = theta - step;
+    }
     else if (step < 0 && a - step < theta)
-      done = 1;
+    {
+      done++;
+      a = theta + step;
+    }
   }
 
   update_rect->y = yc - r - thick - 2;
