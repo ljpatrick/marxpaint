@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint 0.9.17\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-02-21 16:17-0800\n"
+"POT-Creation-Date: 2009-04-06 04:05-0700\n"
 "PO-Revision-Date: 2009-01-04 08:51+0800\n"
 "Last-Translator: 黃敏松 <songhuang.tw@gmail.com>\n"
 "Language-Team: Chinese (traditional) <zh-l10n@linux.org.tw>\n"
@@ -391,7 +391,7 @@ msgstr "新圖"
 #. Open a saved picture
 #. buttons for the file open dialog
 #. Open dialog: 'Open' button, to load the selected picture
-#: ../tools.h:75 ../tuxpaint.c:7974
+#: ../tools.h:75 ../tuxpaint.c:7973
 msgid "Open"
 msgstr "打開"
 
@@ -618,78 +618,78 @@ msgid "Sound unmuted."
 msgstr "取消靜音"
 
 #. Wait while Text tool finishes loading fonts
-#: ../tuxpaint.c:2493
+#: ../tuxpaint.c:2494
 msgid "Please wait…"
 msgstr "請等一下…"
 
-#: ../tuxpaint.c:7197
+#: ../tuxpaint.c:7196
 msgid "Pick a color."
 msgstr "挑選一個顏色"
 
 #. Open dialog: 'Erase' button, to erase/deleted the selected picture
-#: ../tuxpaint.c:7977
+#: ../tuxpaint.c:7976
 msgid "Erase"
 msgstr "刪除"
 
 #. Open dialog: 'Slides' button, to switch to slide show mode
-#: ../tuxpaint.c:7980
+#: ../tuxpaint.c:7979
 msgid "Slides"
 msgstr "投影片"
 
 #. Open dialog: 'Back' button, to dismiss Open dialog without opening a picture
-#: ../tuxpaint.c:7983
+#: ../tuxpaint.c:7982
 msgid "Back"
 msgstr "上一個"
 
 #. Slideshow: 'Next' button, to load next slide (image)
-#: ../tuxpaint.c:7986
+#: ../tuxpaint.c:7985
 msgid "Next"
 msgstr "下一個"
 
 #. Slideshow: 'Play' button, to begin a slideshow sequence
-#: ../tuxpaint.c:7989
+#: ../tuxpaint.c:7988
 msgid "Play"
 msgstr "播放"
 
 #. Label for 'Letters' buttons (font selector, down the right when the Text tool is being used); used to show the difference between font faces
-#: ../tuxpaint.c:8636
+#: ../tuxpaint.c:8635
 msgid "Aa"
 msgstr "Aa"
 
 #. Admittedly stupid way of determining which keys can be used for
 #. positive and negative responses in dialogs (e.g., [Y] (for 'yes') in English)
-#: ../tuxpaint.c:11636
+#: ../tuxpaint.c:11635
 msgid "Yes"
 msgstr "好"
 
-#: ../tuxpaint.c:11640
+#: ../tuxpaint.c:11639
 msgid "No"
 msgstr "不"
 
 #. Prompt to ask whether user wishes to save over old version of their file
-#: ../tuxpaint.c:12592
+#: ../tuxpaint.c:12591
 msgid "Replace the picture with your changes?"
 msgstr "用你所做的改變來取代圖畫嗎?"
 
 #. Positive response to saving over old version
 #. (like a 'File:Save' action in other applications)
-#: ../tuxpaint.c:12596
+#: ../tuxpaint.c:12595
 msgid "Yes, replace the old one!"
 msgstr "好，取代舊的!"
 
 #. Negative response to saving over old version (saves a new image)
 #. (like a 'File:Save As...' action in other applications)
-#: ../tuxpaint.c:12600
+#: ../tuxpaint.c:12599
 msgid "No, save a new file!"
 msgstr "不，另外存一個新的檔案!"
 
-#: ../tuxpaint.c:13363
+#: ../tuxpaint.c:13362
 msgid "Choose the picture you want, then click “Open”."
 msgstr "選擇你想要的圖畫，然後按一下「打開」。"
 
 #. Let user choose images:
 #. Instructions for Slideshow file dialog (FIXME: Make a #define)
-#: ../tuxpaint.c:14350 ../tuxpaint.c:14664
+#: ../tuxpaint.c:14349 ../tuxpaint.c:14663
 msgid "Choose the pictures you want, then click “Play”."
 msgstr "選擇你要的一些圖畫，然後按一下「播放」。"
 
@@ -867,11 +867,11 @@ msgstr "泡泡"
 msgid "Click and drag the mouse to cover an area with foamy bubbles."
 msgstr "在圖案中按下滑鼠來用泡泡填滿整個區域。"
 
-#: ../../magic/src/fold.c:60
+#: ../../magic/src/fold.c:82
 msgid "Fold"
 msgstr "摺疊"
 
-#: ../../magic/src/fold.c:62
+#: ../../magic/src/fold.c:84
 msgid ""
 "Choose a background color and click to turn the corner of the page over."
 msgstr "挑選一個背景色，並按一下圖紙的角落讓他翻起來。"
@@ -1002,6 +1002,18 @@ msgstr "按一下來使雨滴到你的圖上。"
 #: ../../magic/src/rain.c:69
 msgid "Click to cover your picture with rain drops."
 msgstr "按一下來使整張圖畫布滿雨滴。"
+
+#: ../../magic/src/realrainbow.c:70
+#, fuzzy
+#| msgid "Rainbow"
+msgid "Real Rainbow"
+msgstr "彩虹"
+
+#: ../../magic/src/realrainbow.c:75
+msgid ""
+"Click where you want your rainbow to start, drag to where you want it to "
+"end, and then let go to draw a rainbow."
+msgstr ""
 
 #: ../../magic/src/ripples.c:81
 msgid "Ripples"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: fr\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-02-21 16:17-0800\n"
+"POT-Creation-Date: 2009-04-06 04:05-0700\n"
 "PO-Revision-Date: 2004-05-30 21:20-0700\n"
 "Last-Translator: jimmy <jacques.chion@orange.fr>\n"
 "Language-Team:  <fr@li.org>\n"
@@ -379,7 +379,7 @@ msgstr "Nouveau"
 #. Open a saved picture
 #. buttons for the file open dialog
 #. Open dialog: 'Open' button, to load the selected picture
-#: ../tools.h:75 ../tuxpaint.c:7974
+#: ../tools.h:75 ../tuxpaint.c:7973
 msgid "Open"
 msgstr "Ouvrir"
 
@@ -598,78 +598,78 @@ msgid "Sound unmuted."
 msgstr "Son activé."
 
 #. Wait while Text tool finishes loading fonts
-#: ../tuxpaint.c:2493
+#: ../tuxpaint.c:2494
 msgid "Please wait…"
 msgstr "Attends s'il te plaît .."
 
-#: ../tuxpaint.c:7197
+#: ../tuxpaint.c:7196
 msgid "Pick a color."
 msgstr "Choisis une couleur."
 
 #. Open dialog: 'Erase' button, to erase/deleted the selected picture
-#: ../tuxpaint.c:7977
+#: ../tuxpaint.c:7976
 msgid "Erase"
 msgstr "Effacer"
 
 #. Open dialog: 'Slides' button, to switch to slide show mode
-#: ../tuxpaint.c:7980
+#: ../tuxpaint.c:7979
 msgid "Slides"
 msgstr "Diapos"
 
 #. Open dialog: 'Back' button, to dismiss Open dialog without opening a picture
-#: ../tuxpaint.c:7983
+#: ../tuxpaint.c:7982
 msgid "Back"
 msgstr "Retour"
 
 #. Slideshow: 'Next' button, to load next slide (image)
-#: ../tuxpaint.c:7986
+#: ../tuxpaint.c:7985
 msgid "Next"
 msgstr "Suite"
 
 #. Slideshow: 'Play' button, to begin a slideshow sequence
-#: ../tuxpaint.c:7989
+#: ../tuxpaint.c:7988
 msgid "Play"
 msgstr "Départ"
 
 #. Label for 'Letters' buttons (font selector, down the right when the Text tool is being used); used to show the difference between font faces
-#: ../tuxpaint.c:8636
+#: ../tuxpaint.c:8635
 msgid "Aa"
 msgstr "Aa"
 
 #. Admittedly stupid way of determining which keys can be used for
 #. positive and negative responses in dialogs (e.g., [Y] (for 'yes') in English)
-#: ../tuxpaint.c:11636
+#: ../tuxpaint.c:11635
 msgid "Yes"
 msgstr "Oui"
 
-#: ../tuxpaint.c:11640
+#: ../tuxpaint.c:11639
 msgid "No"
 msgstr "Non"
 
 #. Prompt to ask whether user wishes to save over old version of their file
-#: ../tuxpaint.c:12592
+#: ../tuxpaint.c:12591
 msgid "Replace the picture with your changes?"
 msgstr "Enregistrer l'image avec tes changements ?"
 
 #. Positive response to saving over old version
 #. (like a 'File:Save' action in other applications)
-#: ../tuxpaint.c:12596
+#: ../tuxpaint.c:12595
 msgid "Yes, replace the old one!"
 msgstr "Oui, remplace l'ancienne !"
 
 #. Negative response to saving over old version (saves a new image)
 #. (like a 'File:Save As...' action in other applications)
-#: ../tuxpaint.c:12600
+#: ../tuxpaint.c:12599
 msgid "No, save a new file!"
 msgstr "Non, c'est une nouvelle image !"
 
-#: ../tuxpaint.c:13363
+#: ../tuxpaint.c:13362
 msgid "Choose the picture you want, then click “Open”."
 msgstr "Choisis une image, et clique ensuite sur “Ouvrir”"
 
 #. Let user choose images:
 #. Instructions for Slideshow file dialog (FIXME: Make a #define)
-#: ../tuxpaint.c:14350 ../tuxpaint.c:14664
+#: ../tuxpaint.c:14349 ../tuxpaint.c:14663
 msgid "Choose the pictures you want, then click “Play”."
 msgstr "Choisis les images que tu veux, puis clique sur “Départ”"
 
@@ -860,11 +860,11 @@ msgstr ""
 "Clique et fais glisser la souris pour remplir une surface avec des bulles de "
 "savon."
 
-#: ../../magic/src/fold.c:60
+#: ../../magic/src/fold.c:82
 msgid "Fold"
 msgstr "Plier"
 
-#: ../../magic/src/fold.c:62
+#: ../../magic/src/fold.c:84
 msgid ""
 "Choose a background color and click to turn the corner of the page over."
 msgstr ""
@@ -1016,6 +1016,18 @@ msgstr "Clique pour déposer une goutte de pluie sur le dessin.."
 msgid "Click to cover your picture with rain drops."
 msgstr "Clique pour remplir le dessin avec des gouttes de pluie."
 
+#: ../../magic/src/realrainbow.c:70
+#, fuzzy
+#| msgid "Rainbow"
+msgid "Real Rainbow"
+msgstr "Arc-en-ciel"
+
+#: ../../magic/src/realrainbow.c:75
+msgid ""
+"Click where you want your rainbow to start, drag to where you want it to "
+"end, and then let go to draw a rainbow."
+msgstr ""
+
 #: ../../magic/src/ripples.c:81
 msgid "Ripples"
 msgstr "Ondes"
@@ -1134,21 +1146,25 @@ msgstr "Ficelles (1)"
 msgid ""
 "Click and drag to draw string art. Drag top-bottom to draw less or more "
 "lines, to the center to approach the lines to center."
-msgstr "Clique et déplace la souris pour obtenir un dessin géométrique. Plus tu vas vers le centre, "
-"plus tu augmentes le nombre de lignes."
+msgstr ""
+"Clique et déplace la souris pour obtenir un dessin géométrique. Plus tu vas "
+"vers le centre, plus tu augmentes le nombre de lignes."
 
 #
 #: ../../magic/src/string.c:138
 msgid "Click and drag to draw string art aligned to the edges."
-msgstr "Clique et déplace la souris pour dessiner un dessin géométrique à partir d'un angle droit."
+msgstr ""
+"Clique et déplace la souris pour dessiner un dessin géométrique à partir "
+"d'un angle droit."
 
 #: ../../magic/src/string.c:141
 msgid ""
 "Draw string art with free angles. Click and drag a V: drag to the vertex, "
 "drag backwards a little to the start, then drag to the end."
-msgstr "Dessine un dessin géométrique avec un angle quelconque. Clique et bouge la souris "
-"pour faire un V. Tu continues à déplacer la souris jusquà obtenir l'angle désiré puis relâche le bouton "
-"pour voir le résultat."
+msgstr ""
+"Dessine un dessin géométrique avec un angle quelconque. Clique et bouge la "
+"souris pour faire un V. Tu continues à déplacer la souris jusquà obtenir "
+"l'angle désiré puis relâche le bouton pour voir le résultat."
 
 #: ../../magic/src/tint.c:71
 msgid "Tint"

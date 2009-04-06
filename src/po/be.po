@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TuxPaint\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-02-21 16:17-0800\n"
+"POT-Creation-Date: 2009-04-06 04:05-0700\n"
 "PO-Revision-Date: 2004-07-06 12:00GMT\n"
 "Last-Translator: Eugene Zelenko <greendeath@mail.ru>\n"
 "Language-Team: Belarusian <kde-i18n-be@kde.org>\n"
@@ -379,7 +379,7 @@ msgstr "Новы"
 #. Open a saved picture
 #. buttons for the file open dialog
 #. Open dialog: 'Open' button, to load the selected picture
-#: ../tools.h:75 ../tuxpaint.c:7974
+#: ../tools.h:75 ../tuxpaint.c:7973
 msgid "Open"
 msgstr "Адчыніць"
 
@@ -592,79 +592,79 @@ msgid "Sound unmuted."
 msgstr ""
 
 #. Wait while Text tool finishes loading fonts
-#: ../tuxpaint.c:2493
+#: ../tuxpaint.c:2494
 msgid "Please wait…"
 msgstr ""
 
-#: ../tuxpaint.c:7197
+#: ../tuxpaint.c:7196
 msgid "Pick a color."
 msgstr ""
 
 #. Open dialog: 'Erase' button, to erase/deleted the selected picture
-#: ../tuxpaint.c:7977
+#: ../tuxpaint.c:7976
 msgid "Erase"
 msgstr ""
 
 #. Open dialog: 'Slides' button, to switch to slide show mode
-#: ../tuxpaint.c:7980
+#: ../tuxpaint.c:7979
 msgid "Slides"
 msgstr ""
 
 #. Open dialog: 'Back' button, to dismiss Open dialog without opening a picture
-#: ../tuxpaint.c:7983
+#: ../tuxpaint.c:7982
 msgid "Back"
 msgstr ""
 
 #. Slideshow: 'Next' button, to load next slide (image)
-#: ../tuxpaint.c:7986
+#: ../tuxpaint.c:7985
 #, fuzzy
 msgid "Next"
 msgstr "Тэкст"
 
 #. Slideshow: 'Play' button, to begin a slideshow sequence
-#: ../tuxpaint.c:7989
+#: ../tuxpaint.c:7988
 msgid "Play"
 msgstr ""
 
 #. Label for 'Letters' buttons (font selector, down the right when the Text tool is being used); used to show the difference between font faces
-#: ../tuxpaint.c:8636
+#: ../tuxpaint.c:8635
 msgid "Aa"
 msgstr ""
 
 #. Admittedly stupid way of determining which keys can be used for
 #. positive and negative responses in dialogs (e.g., [Y] (for 'yes') in English)
-#: ../tuxpaint.c:11636
+#: ../tuxpaint.c:11635
 msgid "Yes"
 msgstr "Так"
 
-#: ../tuxpaint.c:11640
+#: ../tuxpaint.c:11639
 msgid "No"
 msgstr "Не"
 
 #. Prompt to ask whether user wishes to save over old version of their file
-#: ../tuxpaint.c:12592
+#: ../tuxpaint.c:12591
 msgid "Replace the picture with your changes?"
 msgstr ""
 
 #. Positive response to saving over old version
 #. (like a 'File:Save' action in other applications)
-#: ../tuxpaint.c:12596
+#: ../tuxpaint.c:12595
 msgid "Yes, replace the old one!"
 msgstr ""
 
 #. Negative response to saving over old version (saves a new image)
 #. (like a 'File:Save As...' action in other applications)
-#: ../tuxpaint.c:12600
+#: ../tuxpaint.c:12599
 msgid "No, save a new file!"
 msgstr ""
 
-#: ../tuxpaint.c:13363
+#: ../tuxpaint.c:13362
 msgid "Choose the picture you want, then click “Open”."
 msgstr ""
 
 #. Let user choose images:
 #. Instructions for Slideshow file dialog (FIXME: Make a #define)
-#: ../tuxpaint.c:14350 ../tuxpaint.c:14664
+#: ../tuxpaint.c:14349 ../tuxpaint.c:14663
 msgid "Choose the pictures you want, then click “Play”."
 msgstr ""
 
@@ -839,11 +839,11 @@ msgstr ""
 msgid "Click and drag the mouse to cover an area with foamy bubbles."
 msgstr ""
 
-#: ../../magic/src/fold.c:60
+#: ../../magic/src/fold.c:82
 msgid "Fold"
 msgstr ""
 
-#: ../../magic/src/fold.c:62
+#: ../../magic/src/fold.c:84
 msgid ""
 "Choose a background color and click to turn the corner of the page over."
 msgstr ""
@@ -975,6 +975,18 @@ msgstr ""
 
 #: ../../magic/src/rain.c:69
 msgid "Click to cover your picture with rain drops."
+msgstr ""
+
+#: ../../magic/src/realrainbow.c:70
+#, fuzzy
+#| msgid "Rainbow"
+msgid "Real Rainbow"
+msgstr "Вясёлка"
+
+#: ../../magic/src/realrainbow.c:75
+msgid ""
+"Click where you want your rainbow to start, drag to where you want it to "
+"end, and then let go to draw a rainbow."
 msgstr ""
 
 #: ../../magic/src/ripples.c:81

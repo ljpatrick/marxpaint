@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TuxPaint\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-02-21 16:17-0800\n"
+"POT-Creation-Date: 2009-04-06 04:05-0700\n"
 "PO-Revision-Date: 2009-03-30 12:55+0300\n"
 "Last-Translator: Nikolay Parukhin <nik@sevpinro.ru>\n"
 "Language-Team: Dmitriy Ivanov <ace22b@myrealbox.com>\n"
@@ -243,95 +243,83 @@ msgid "ZH_TW"
 msgstr "Традиционный китайский"
 
 #. Square shape tool (4 equally-lengthed sides at right angles)
-#: ../shapes.h:171
-#: ../shapes.h:172
+#: ../shapes.h:171 ../shapes.h:172
 msgid "Square"
 msgstr "Квадрат"
 
 #. Rectangle shape tool (4 sides at right angles)
-#: ../shapes.h:175
-#: ../shapes.h:176
+#: ../shapes.h:175 ../shapes.h:176
 msgid "Rectangle"
 msgstr "Прямоугольник"
 
 #. Circle shape tool (X radius and Y radius are the same)
-#: ../shapes.h:179
-#: ../shapes.h:180
+#: ../shapes.h:179 ../shapes.h:180
 msgid "Circle"
 msgstr "Круг"
 
 #. Ellipse shape tool (X radius and Y radius may differ)
-#: ../shapes.h:183
-#: ../shapes.h:184
+#: ../shapes.h:183 ../shapes.h:184
 msgid "Ellipse"
 msgstr "Эллипс"
 
 #. Triangle shape tool (3 sides)
-#: ../shapes.h:187
-#: ../shapes.h:188
+#: ../shapes.h:187 ../shapes.h:188
 msgid "Triangle"
 msgstr "Треугольник"
 
 #. Pentagone shape tool (5 sides)
-#: ../shapes.h:191
-#: ../shapes.h:192
+#: ../shapes.h:191 ../shapes.h:192
 msgid "Pentagon"
 msgstr "Пятиугольник"
 
 #. Rhombus shape tool (4 sides, not at right angles)
-#: ../shapes.h:195
-#: ../shapes.h:196
+#: ../shapes.h:195 ../shapes.h:196
 msgid "Rhombus"
 msgstr "Ромб"
 
 #. Octagon shape tool (8 sides)
-#: ../shapes.h:199
-#: ../shapes.h:200
+#: ../shapes.h:199 ../shapes.h:200
 msgid "Octagon"
 msgstr "Восьмиугольник"
 
 #. Description of a square
-#: ../shapes.h:208
-#: ../shapes.h:209
+#: ../shapes.h:208 ../shapes.h:209
 msgid "A square is a rectangle with four equal sides."
 msgstr "Квадрат - прямоугольник с четырьмя равными сторонами."
 
 #. Description of a rectangle
-#: ../shapes.h:212
-#: ../shapes.h:213
+#: ../shapes.h:212 ../shapes.h:213
 msgid "A rectangle has four sides and four right angles."
 msgstr "У прямоугольника четыре стороны и четыре прямых угла."
 
-#: ../shapes.h:217
-#: ../shapes.h:219
-msgid "A circle is a curve where all points have the same distance from the center."
-msgstr "Окружность - это кривая, все точки которой удалены на равное расстояние от центра."
+#: ../shapes.h:217 ../shapes.h:219
+msgid ""
+"A circle is a curve where all points have the same distance from the center."
+msgstr ""
+"Окружность - это кривая, все точки которой удалены на равное расстояние от "
+"центра."
 
 #. Description of an ellipse
-#: ../shapes.h:222
-#: ../shapes.h:223
+#: ../shapes.h:222 ../shapes.h:223
 msgid "An ellipse is a stretched circle."
 msgstr "Эллипс - это вытянутая окружность."
 
 #. Description of a triangle
-#: ../shapes.h:226
-#: ../shapes.h:227
+#: ../shapes.h:226 ../shapes.h:227
 msgid "A triangle has three sides."
 msgstr "У треугольника три стороны (и угла!)"
 
 #. Description of a pentagon
-#: ../shapes.h:230
-#: ../shapes.h:231
+#: ../shapes.h:230 ../shapes.h:231
 msgid "A pentagon has five sides."
 msgstr "А у пятиугольника пять сторон (и углов!)"
 
-#: ../shapes.h:235
-#: ../shapes.h:237
+#: ../shapes.h:235 ../shapes.h:237
 msgid "A rhombus has four equal sides, and opposite sides are parallel."
-msgstr "У ромба все четыре стороны равны и противоположные стороны параллельны."
+msgstr ""
+"У ромба все четыре стороны равны и противоположные стороны параллельны."
 
-#: ../shapes.h:241
-#: ../shapes.h:243
+#: ../shapes.h:241 ../shapes.h:243
 msgid "An octagon has eight equal sides."
 msgstr "А у восьмиугольника восемь сторон."
 
@@ -362,8 +350,7 @@ msgstr "Штампы"
 
 #. Title of shape selector (buttons down the right for shapes tool)
 #. Shape creation tool (square, circle, etc.)
-#: ../titles.h:56
-#: ../tools.h:54
+#: ../titles.h:56 ../tools.h:54
 msgid "Shapes"
 msgstr "Формы"
 
@@ -374,8 +361,7 @@ msgstr "Буквы"
 
 #. Title of magic tool selector (buttons down the right for magic (effect plugin) tool)
 #. "Magic" effects tools (blur, flip image, etc.)
-#: ../titles.h:62
-#: ../tools.h:60
+#: ../titles.h:62 ../tools.h:60
 msgid "Magic"
 msgstr "Магия"
 
@@ -422,8 +408,7 @@ msgstr "Новая"
 #. Open a saved picture
 #. buttons for the file open dialog
 #. Open dialog: 'Open' button, to load the selected picture
-#: ../tools.h:75
-#: ../tuxpaint.c:7974
+#: ../tools.h:75 ../tuxpaint.c:7973
 msgid "Open"
 msgstr "Открыть"
 
@@ -455,12 +440,17 @@ msgstr "Выберите картину, чтобы поставить печа�
 #. Line tool instructions
 #: ../tools.h:98
 msgid "Click to start drawing a line. Let go to complete it."
-msgstr "Щёлкните, чтобы начать рисовать линию. Отпустите кнопку, чтобы закончить."
+msgstr ""
+"Щёлкните, чтобы начать рисовать линию. Отпустите кнопку, чтобы закончить."
 
 #. Shape tool instructions
 #: ../tools.h:101
-msgid "Pick a shape. Click to pick the center, drag, then let go when it is the size you want. Move around to rotate it, and click to draw it."
-msgstr "Выберите форму. Щёлкните для выбора центра, растяните до нужного размера, отпустите. Покрутите форму, затем щёлкните, чтобы нарисовать её."
+msgid ""
+"Pick a shape. Click to pick the center, drag, then let go when it is the "
+"size you want. Move around to rotate it, and click to draw it."
+msgstr ""
+"Выберите форму. Щёлкните для выбора центра, растяните до нужного размера, "
+"отпустите. Покрутите форму, затем щёлкните, чтобы нарисовать её."
 
 #. Text tool instructions
 #: ../tools.h:104
@@ -543,8 +533,7 @@ msgid "Yes, I’m done!"
 msgstr "Да, я закончил!"
 
 #. Quit prompt negative response (don't quit)
-#: ../tuxpaint.c:1861
-#: ../tuxpaint.c:1888
+#: ../tuxpaint.c:1861 ../tuxpaint.c:1888
 msgid "No, take me back!"
 msgstr "Нет, хочу обратно!"
 
@@ -553,13 +542,11 @@ msgstr "Нет, хочу обратно!"
 msgid "If you quit, you’ll lose your picture! Save it?"
 msgstr "Если вы выйдите, вы потеряете вашу картинку! Сохранить?"
 
-#: ../tuxpaint.c:1866
-#: ../tuxpaint.c:1871
+#: ../tuxpaint.c:1866 ../tuxpaint.c:1871
 msgid "Yes, save it!"
 msgstr "Да, сохранить!"
 
-#: ../tuxpaint.c:1867
-#: ../tuxpaint.c:1872
+#: ../tuxpaint.c:1867 ../tuxpaint.c:1872
 msgid "No, don’t bother saving!"
 msgstr "Нет, не нужно сохранять!"
 
@@ -574,10 +561,7 @@ msgid "Can’t open that picture!"
 msgstr "Не могу открыть эту картинку!"
 
 #. Generic dialog dismissal
-#: ../tuxpaint.c:1878
-#: ../tuxpaint.c:1883
-#: ../tuxpaint.c:1892
-#: ../tuxpaint.c:1899
+#: ../tuxpaint.c:1878 ../tuxpaint.c:1883 ../tuxpaint.c:1892 ../tuxpaint.c:1899
 #: ../tuxpaint.c:1908
 msgid "OK"
 msgstr "Хорошо"
@@ -642,79 +626,78 @@ msgid "Sound unmuted."
 msgstr "Звук включён."
 
 #. Wait while Text tool finishes loading fonts
-#: ../tuxpaint.c:2493
+#: ../tuxpaint.c:2494
 msgid "Please wait…"
 msgstr "Пожалуйста, подождите..."
 
-#: ../tuxpaint.c:7197
+#: ../tuxpaint.c:7196
 msgid "Pick a color."
 msgstr "Выберите цвет."
 
 #. Open dialog: 'Erase' button, to erase/deleted the selected picture
-#: ../tuxpaint.c:7977
+#: ../tuxpaint.c:7976
 msgid "Erase"
 msgstr "Удалить"
 
 #. Open dialog: 'Slides' button, to switch to slide show mode
-#: ../tuxpaint.c:7980
+#: ../tuxpaint.c:7979
 msgid "Slides"
 msgstr "Слайды"
 
 #. Open dialog: 'Back' button, to dismiss Open dialog without opening a picture
-#: ../tuxpaint.c:7983
+#: ../tuxpaint.c:7982
 msgid "Back"
 msgstr "Назад"
 
 #. Slideshow: 'Next' button, to load next slide (image)
-#: ../tuxpaint.c:7986
+#: ../tuxpaint.c:7985
 msgid "Next"
 msgstr "Далее"
 
 #. Slideshow: 'Play' button, to begin a slideshow sequence
-#: ../tuxpaint.c:7989
+#: ../tuxpaint.c:7988
 msgid "Play"
 msgstr "Запуск"
 
 #. Label for 'Letters' buttons (font selector, down the right when the Text tool is being used); used to show the difference between font faces
-#: ../tuxpaint.c:8636
+#: ../tuxpaint.c:8635
 msgid "Aa"
 msgstr "Аа"
 
 #. Admittedly stupid way of determining which keys can be used for
 #. positive and negative responses in dialogs (e.g., [Y] (for 'yes') in English)
-#: ../tuxpaint.c:11636
+#: ../tuxpaint.c:11635
 msgid "Yes"
 msgstr "Да"
 
-#: ../tuxpaint.c:11640
+#: ../tuxpaint.c:11639
 msgid "No"
 msgstr "Нет"
 
 #. Prompt to ask whether user wishes to save over old version of their file
-#: ../tuxpaint.c:12592
+#: ../tuxpaint.c:12591
 msgid "Replace the picture with your changes?"
 msgstr "Заменить старую картинку?"
 
 #. Positive response to saving over old version
 #. (like a 'File:Save' action in other applications)
-#: ../tuxpaint.c:12596
+#: ../tuxpaint.c:12595
 msgid "Yes, replace the old one!"
 msgstr "Да, заменить старую картинку!"
 
 #. Negative response to saving over old version (saves a new image)
 #. (like a 'File:Save As...' action in other applications)
-#: ../tuxpaint.c:12600
+#: ../tuxpaint.c:12599
 msgid "No, save a new file!"
 msgstr "Нет, сохранить в новый файл!"
 
-#: ../tuxpaint.c:13363
+#: ../tuxpaint.c:13362
 msgid "Choose the picture you want, then click “Open”."
 msgstr "Выберите желаемую картинку, а потом щёлкните «Открыть»."
 
 #. Let user choose images:
 #. Instructions for Slideshow file dialog (FIXME: Make a #define)
-#: ../tuxpaint.c:14350
-#: ../tuxpaint.c:14664
+#: ../tuxpaint.c:14349 ../tuxpaint.c:14663
 msgid "Choose the pictures you want, then click “Play”."
 msgstr "Выберите картинку, а потом нажмите \"Запуск\"."
 
@@ -759,8 +742,10 @@ msgid "Click and move the mouse around to make the picture blocky."
 msgstr "Щёлкните и поводите по картинке, чтобы превратить её часть в мозаику."
 
 #: ../../magic/src/blocks_chalk_drip.c:149
-msgid "Click and move the mouse around to turn the picture into a chalk drawing."
-msgstr "Щёлкните и поводите по картинке, чтобы превратить её часть в рисунок мелом."
+msgid ""
+"Click and move the mouse around to turn the picture into a chalk drawing."
+msgstr ""
+"Щёлкните и поводите по картинке, чтобы превратить её часть в рисунок мелом."
 
 #: ../../magic/src/blocks_chalk_drip.c:152
 msgid "Click and move the mouse around to make the picture drip."
@@ -805,7 +790,8 @@ msgstr "Мультфильм"
 
 #: ../../magic/src/cartoon.c:87
 msgid "Click and move the mouse around to turn the picture into a cartoon."
-msgstr "Щёлкните и поводите по картинке, чтобы превратить её часть в мультфильм."
+msgstr ""
+"Щёлкните и поводите по картинке, чтобы превратить её часть в мультфильм."
 
 #: ../../magic/src/confetti.c:63
 msgid "Confetti"
@@ -878,7 +864,9 @@ msgstr "Цветок"
 
 #: ../../magic/src/flower.c:130
 msgid "Click and drag to draw a flower stalk. Let go to finish the flower."
-msgstr "Нажмите и тяните, чтобы нарисовать стебель. Отпустите, чтобы завершить цветок."
+msgstr ""
+"Нажмите и тяните, чтобы нарисовать стебель. Отпустите, чтобы завершить "
+"цветок."
 
 #: ../../magic/src/foam.c:104
 msgid "Foam"
@@ -888,12 +876,13 @@ msgstr "Пузыри"
 msgid "Click and drag the mouse to cover an area with foamy bubbles."
 msgstr "Нажмите и ведите мышь, чтобы нарисовать мыльные пузыри."
 
-#: ../../magic/src/fold.c:60
+#: ../../magic/src/fold.c:82
 msgid "Fold"
 msgstr "Сгиб"
 
-#: ../../magic/src/fold.c:62
-msgid "Choose a background color and click to turn the corner of the page over."
+#: ../../magic/src/fold.c:84
+msgid ""
+"Choose a background color and click to turn the corner of the page over."
 msgstr "Выберите фоновый цвет и щёлкните, чтобы загнуть уголок страницы."
 
 #: ../../magic/src/glasstile.c:83
@@ -914,15 +903,19 @@ msgstr "Трава"
 
 #: ../../magic/src/grass.c:98
 msgid "Click and move to draw grass. Don’t forget the dirt!"
-msgstr "Щёлкните и поводите по картинке, чтобы нарисовать траву. Не забудьте про грязь!"
+msgstr ""
+"Щёлкните и поводите по картинке, чтобы нарисовать траву. Не забудьте про "
+"грязь!"
 
 #: ../../magic/src/kalidescope.c:77
 msgid "Kaleidoscope"
 msgstr "Калейдоскоп"
 
 #: ../../magic/src/kalidescope.c:83
-msgid "Click and drag the mouse to draw with symmetric brushes (a kaleidoscope)."
-msgstr "Нажмите и ведите мышь, чтобы рисовать симметричными кистями (калейдоскоп)."
+msgid ""
+"Click and drag the mouse to draw with symmetric brushes (a kaleidoscope)."
+msgstr ""
+"Нажмите и ведите мышь, чтобы рисовать симметричными кистями (калейдоскоп)."
 
 #: ../../magic/src/light.c:84
 msgid "Light"
@@ -961,8 +954,10 @@ msgid "Mosaic"
 msgstr "Мозаика"
 
 #: ../../magic/src/mosaic.c:73
-msgid "Click and move the mouse to add a mosaic effect to parts of your picture."
-msgstr "Щёлкните и поводите по картинке, чтобы добавить к её части эффект мозаики."
+msgid ""
+"Click and move the mouse to add a mosaic effect to parts of your picture."
+msgstr ""
+"Щёлкните и поводите по картинке, чтобы добавить к её части эффект мозаики."
 
 #: ../../magic/src/mosaic.c:74
 msgid "Click to add a mosaic effect to your entire picture."
@@ -1019,6 +1014,18 @@ msgstr "Щёлкните, чтобы поместить дождевые кап�
 #: ../../magic/src/rain.c:69
 msgid "Click to cover your picture with rain drops."
 msgstr "Щёлкните, чтобы покрыть вашу картинку дождевыми каплями."
+
+#: ../../magic/src/realrainbow.c:70
+#, fuzzy
+#| msgid "Rainbow"
+msgid "Real Rainbow"
+msgstr "Радуга"
+
+#: ../../magic/src/realrainbow.c:75
+msgid ""
+"Click where you want your rainbow to start, drag to where you want it to "
+"end, and then let go to draw a rainbow."
+msgstr ""
 
 #: ../../magic/src/ripples.c:81
 msgid "Ripples"
@@ -1125,16 +1132,26 @@ msgid "String 'V'"
 msgstr "Строка 'V'"
 
 #: ../../magic/src/string.c:135
-msgid "Click and drag to draw string art. Drag top-bottom to draw less or more lines, to the center to approach the lines to center."
-msgstr "Нажмите и потяните мышь, чтобы нарисовать строку. Потяните вверх-вниз, чтобы нарисовать меньше или больше линий; к центру, чтобы приблизить линии к центру."
+msgid ""
+"Click and drag to draw string art. Drag top-bottom to draw less or more "
+"lines, to the center to approach the lines to center."
+msgstr ""
+"Нажмите и потяните мышь, чтобы нарисовать строку. Потяните вверх-вниз, чтобы "
+"нарисовать меньше или больше линий; к центру, чтобы приблизить линии к "
+"центру."
 
 #: ../../magic/src/string.c:138
 msgid "Click and drag to draw string art aligned to the edges."
-msgstr "Нажмите и потяните мышь, чтобы нарисовать строку, выровненную по границам."
+msgstr ""
+"Нажмите и потяните мышь, чтобы нарисовать строку, выровненную по границам."
 
 #: ../../magic/src/string.c:141
-msgid "Draw string art with free angles. Click and drag a V: drag to the vertex, drag backwards a little to the start, then drag to the end."
-msgstr "Рисует строки по любыми углами. Нажмите и потяните V: потяните - будет создана вершина, потяните немного назад к началу, затем потяните к концу."
+msgid ""
+"Draw string art with free angles. Click and drag a V: drag to the vertex, "
+"drag backwards a little to the start, then drag to the end."
+msgstr ""
+"Рисует строки по любыми углами. Нажмите и потяните V: потяните - будет "
+"создана вершина, потяните немного назад к началу, затем потяните к концу."
 
 #: ../../magic/src/tint.c:71
 msgid "Tint"
@@ -1145,7 +1162,8 @@ msgid "Color & White"
 msgstr "Цветной и белый"
 
 #: ../../magic/src/tint.c:75
-msgid "Click and move the mouse around to change the color of parts of your picture."
+msgid ""
+"Click and move the mouse around to change the color of parts of your picture."
 msgstr "Щёлкните и поводите по картинке, чтобы изменить цвет её части."
 
 #: ../../magic/src/tint.c:76
@@ -1153,8 +1171,12 @@ msgid "Click to change the color of your entire picture."
 msgstr "Щёлкните, чтобы изменить цвет картинки."
 
 #: ../../magic/src/tint.c:77
-msgid "Click and move the mouse around to turn parts of your picture into white and a color you choose."
-msgstr "Щёлкните и поводите по картинке, чтобы оставить на её части белый и выбранный вами цвет."
+msgid ""
+"Click and move the mouse around to turn parts of your picture into white and "
+"a color you choose."
+msgstr ""
+"Щёлкните и поводите по картинке, чтобы оставить на её части белый и "
+"выбранный вами цвет."
 
 #: ../../magic/src/tint.c:78
 msgid "Click to turn your entire picture into white and a color you choose."
@@ -1185,12 +1207,23 @@ msgid "Wavelets"
 msgstr "Волны"
 
 #: ../../magic/src/waves.c:83
-msgid "Click to make the picture horizontally wavy. Click toward the top for shorter waves, the bottom for taller waves, the left for small waves, and the right for long waves."
-msgstr "Нажмите, чтобы нарисовать горизонтальные волны. Двигайте вверх, чтобы сделать волны короче, вниз - выше, налево - для низких волн, направо - для длинных."
+msgid ""
+"Click to make the picture horizontally wavy. Click toward the top for "
+"shorter waves, the bottom for taller waves, the left for small waves, and "
+"the right for long waves."
+msgstr ""
+"Нажмите, чтобы нарисовать горизонтальные волны. Двигайте вверх, чтобы "
+"сделать волны короче, вниз - выше, налево - для низких волн, направо - для "
+"длинных."
 
 #: ../../magic/src/waves.c:84
-msgid "Click to make the picture vertically wavy. Click toward the top for shorter waves, the bottom for taller waves, the left for small waves, and the right for long waves."
-msgstr "Нажмите, чтобы нарисовать вертикальные волны. Двигайте вверх, чтобы сделать волны короче, вниз - выше, налево - для низких волн, направо - для длинных."
+msgid ""
+"Click to make the picture vertically wavy. Click toward the top for shorter "
+"waves, the bottom for taller waves, the left for small waves, and the right "
+"for long waves."
+msgstr ""
+"Нажмите, чтобы нарисовать вертикальные волны. Двигайте вверх, чтобы сделать "
+"волны короче, вниз - выше, налево - для низких волн, направо - для длинных."
 
 #, fuzzy
 #~ msgid ""
@@ -1210,6 +1243,7 @@ msgstr "Нажмите, чтобы нарисовать вертикальные
 #~| msgid "Click and drag to shift your picture around on the canvas."
 #~ msgid "Click the part of your picture where would you like a puzzle."
 #~ msgstr "Нажмите и ведите мышь, чтобы сдвинуть рисунок относительно холста."
+
 #, fuzzy
 #~ msgid "Click to make a puzzle in fullscreen mode."
 #~ msgstr "Щёлкните на картинку, чтобы превратить её в зеркальное отражение."
@@ -1252,48 +1286,68 @@ msgstr "Нажмите, чтобы нарисовать вертикальные
 #, fuzzy
 #~ msgid "Blur All"
 #~ msgstr "Размывание"
+
 #~ msgid "Click and move to fade the colors."
 #~ msgstr ""
 #~ "Щёлкните и поводите по картинке, чтобы сделать её часть более светлой."
+
 #~ msgid "Click and move to darken the colors."
 #~ msgstr ""
 #~ "Щёлкните и поводите по картинке, чтобы сделать её часть более тёмной."
+
 #~ msgid "Sparkles"
 #~ msgstr "Искры"
+
 #~ msgid "You now have a blank sheet to draw on!"
 #~ msgstr "Теперь у вас есть чистый лист!"
+
 #~ msgid "Start a new picture?"
 #~ msgstr "Начнём новую картинку?"
+
 #~ msgid "Yes, let's start fresh!"
 #~ msgstr "Да, начнём заново!"
+
 #~ msgid "Click and move to draw sparkles."
 #~ msgstr "Щёлкните и поводите по картинке, чтобы нарисовать искры."
+
 #~ msgid "Starting a new picture will erase the current one!"
 #~ msgstr "Начиная новую картинку вы уничтожите текущую!"
+
 #~ msgid "That’s OK!"
 #~ msgstr "Хорошо!"
+
 #~ msgid "Never mind!"
 #~ msgstr "Нет!"
+
 #~ msgid "Save over the older version of this picture?"
 #~ msgstr "Сохранить поверх старой версии этой картинки?"
+
 #~ msgid "Dark Gray!"
 #~ msgstr "Тёмно-серый!"
+
 #~ msgid "Neon green!"
 #~ msgstr "Ярко-зеленый!"
+
 #~ msgid "Green!"
 #~ msgstr "Зелёный!"
+
 #~ msgid "Magenta!"
 #~ msgstr "Ярко-красный!"
+
 #~ msgid "Fade"
 #~ msgstr "Исчезновение"
+
 #~ msgid "Oval"
 #~ msgstr "Овал"
+
 #~ msgid "Diamond"
 #~ msgstr "Ромб"
+
 #~ msgid "A square has four sides, each the same length."
 #~ msgstr "У квадрата четыре стороны, все одной длины."
+
 #~ msgid "A circle is exactly round."
 #~ msgstr "А круг совершенно круглый :)"
+
 #~ msgid "A diamond is a square, turned around slightly."
 #~ msgstr "Ромб похож на квадрат, но с другими углами."
-
