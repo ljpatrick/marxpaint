@@ -8,7 +8,7 @@ http://www.tuxpaint.org/
 
 $Id$
 
-2009.April.5 (0.9.21)
+2009.April.7 (0.9.21)
   * New Starters:
     -------------
     * Silver Frame
@@ -127,11 +127,6 @@ $Id$
 
     * Updated to the latest version (2.27) of DejaVu Sans Regular for UI font.
 
-  * Bug Fixes:
-    ----------
-    * Was inadvertently calling "magic_switchin()" on Quit. Fixed.
-      Dan Shields <d4ndeveloper@gmail.com>
-
   * New localizations:
     ------------------
     * Shuswap (Secwepemctín) translation
@@ -208,6 +203,9 @@ $Id$
 
   * Bug Fixes
     ---------
+    * Was inadvertently calling "magic_switchin()" on Quit. Fixed.
+      Dan Shields <d4ndeveloper@gmail.com>
+
     * [Ctrl]+[P] keyboard shortcut for printing was not complying with
       option to disable printing capability (e.g., "--noprint")! Fixed.
 
