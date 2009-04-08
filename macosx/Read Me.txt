@@ -73,7 +73,7 @@ This library will already have been built and installed by MacPorts, but will no
 % cp /opt/local/var/macports/distfiles/fontconfig/fontconfig*.tar.gz .
 % tar xzf fontconfig*.tar.gz
 % cd fontconfig*
-% sudo port deactivte fontconfig
+% sudo port deactivate fontconfig
 % ./configure --prefix=/Users/Shared/tuxpaint --enable-static --disable-shared --disable-docs --with-confdir=/Library/Application Support/TuxPaint/fontconfig/fonts --with-cache-dir=/Library/Application Support/TuxPaint/fontconfig/cache CPPFLAGS=-I/opt/local/include LDFLAGS=-L/opt/local/lib
 % make install
 % sudo port activate fontconfig
