@@ -74,8 +74,9 @@ This library will already have been built and installed by MacPorts, but will no
 % tar xzf fontconfig*.tar.gz
 % cd fontconfig*
 % sudo port deactivate fontconfig
-% ./configure --prefix=/Users/Shared/tuxpaint --enable-static --disable-shared --disable-docs --with-confdir=/Library/Application Support/TuxPaint/fontconfig/fonts --with-cache-dir=/Library/Application Support/TuxPaint/fontconfig/cache CPPFLAGS=-I/opt/local/include LDFLAGS=-L/opt/local/lib
-% make install
+% ./configure --prefix=/Users/Shared/tuxpaint --enable-static --disable-shared
+% --disable-docs --with-confdir="/Library/Application Support/TuxPaint/fontconfig/fonts" --with-cache-dir="/Library/Application Support/TuxPaint/fontconfig/cache" CPPFLAGS=-I/opt/local/include LDFLAGS=-L/opt/local/lib
+% sudo make install
 % sudo port activate fontconfig
 
 GLib:
@@ -83,9 +84,9 @@ GLib:
 MacPorts only installs the dynamic libraries for GLib.  We need to reconfigure and build GLib with static libraries enabled as follows:
 
 % cd /Users/Shared/tuxpaint/src
-% cp /opt/local/var/macports/distfiles/fontconfig/fontconfig*.tar.gz .
-% tar xzf fontconfig*.tar.gz
-% cd fontconfig*
+% cp /opt/local/var/macports/distfiles/glib/glib*.tar.gz .
+% tar xzf glib*.tar.gz
+% cd glib*
 % sudo port deactivate glib
 % ./configure --prefix=/Users/Shared/tuxpaint --enable-static CPPFLAGS=-I/opt/local/include LDFLAGS=-L/opt/local/lib
 % make install
@@ -97,13 +98,12 @@ MacPorts only installs the dynamic libraries for Pango.  We need to reconfigure 
 
 % cd /Users/Shared/tuxpaint/src
 % cp /opt/local/var/macports/distfiles/pango/pango*.tar.bz2 .
-% bunzip2 pango*.tar.bz2
-% tar xf pango*.tar
+% tar xvjf pango*.tar
 % cd pango*
 % sudo port deactivate pango
 % ./configure --prefix=/Users/Shared/tuxpaint --enable-static CPPFLAGS=-I/opt/local/include LDFLAGS=-L/opt/local/lib --with-included-modules=yes --with-dynamic-modules=no --disable-shared
-% make install
-% find . -name "*.a" -exec cp {} /Users/Shared/tuxpaint/lib/ \;
+% sudo make install
+% sudo find . -name "*.a" -exec cp {} /Users/Shared/tuxpaint/lib/ \;
 % sudo port activate pango
 
 SVG Scalable Vector Graphics:
