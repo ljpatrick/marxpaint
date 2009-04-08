@@ -87,10 +87,10 @@ MacPorts only installs the dynamic libraries for GLib.  We need to reconfigure a
 % cp /opt/local/var/macports/distfiles/glib/glib*.tar.gz .
 % tar xzf glib*.tar.gz
 % cd glib*
-% sudo port deactivate glib
+% sudo port deactivate glib2
 % ./configure --prefix=/Users/Shared/tuxpaint --enable-static CPPFLAGS=-I/opt/local/include LDFLAGS=-L/opt/local/lib
-% make install
-% sudo port activate glib
+% sudo make install
+% sudo port activate glib2
 
 Pango:
 
