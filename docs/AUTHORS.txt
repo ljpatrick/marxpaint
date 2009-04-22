@@ -7,7 +7,7 @@ bill@newbreedsoftware.com
 http://www.tuxpaint.org/
 
 
-June 17, 2002 - April 5, 2009
+June 17, 2002 - April 23, 2009
 
 $Id$
 
@@ -368,6 +368,7 @@ $Id$
     J.F.M. Lange <jfm.lange@hky.de>
 
   * Greek
+    Serafeim Kyriaki <pse04178@rhodes.aegean.gr>
     Yannis Papatzikos <papatzikos@yahoo.gr>
     Sokratis Sofianopoulos <sokratis.sofianopoulos@gmail.com>
     The Greek Linux i18n Team <i18ngr@lists.hellug.gr>  [NOTE: mailing list]

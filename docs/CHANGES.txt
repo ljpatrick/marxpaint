@@ -8,7 +8,7 @@ http://www.tuxpaint.org/
 
 $Id$
 
-2009.April.21 (0.9.21)
+2009.April.23 (0.9.21)
   * New Starters:
     -------------
     * Silver Frame
@@ -165,11 +165,14 @@ $Id$
     * French translation
       Jacques Chion <Jacques.Chion@wanadoo.fr>
 
-    * Georgian translation created.
+    * Georgian translation
       Gia Shervashidze <giasher@gmail.com>
 
     * Gujarati translation
       Kartik Mistry <kartik.mistry@gmail.com>
+
+    * Greek translation
+      Serafeim Kyriaki <pse04178@rhodes.aegean.gr>
 
     * Hebrew translation
       Jorge Mariano <mjminfo@mjminformatique.com>
