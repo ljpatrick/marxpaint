@@ -1017,16 +1017,15 @@ msgid "Click to cover your picture with rain drops."
 msgstr "Clique pour remplir le dessin avec des gouttes de pluie."
 
 #: ../../magic/src/realrainbow.c:70
-#, fuzzy
-#| msgid "Rainbow"
 msgid "Real Rainbow"
-msgstr "Arc-en-ciel"
+msgstr "Arc-en-ciel réel"
 
 #: ../../magic/src/realrainbow.c:75
 msgid ""
 "Click where you want your rainbow to start, drag to where you want it to "
 "end, and then let go to draw a rainbow."
-msgstr ""
+msgstr "Clique à l'endroit où tu veux démarrer l'arc-en-ciel, fais glisser le curseur jusqu'à l'endroit "
+"où tu veux qu'il se termine, et enfin relâche le bouton."
 
 #: ../../magic/src/ripples.c:81
 msgid "Ripples"
