@@ -3,13 +3,13 @@
 
   A simple drawing program for children
 
-                Copyright 2002-2008 by Bill Kendrick and others
-                               New Breed Software
+                Copyright 2002-2009 by Bill Kendrick and others
+                         New Breed Software & Tux4Kids
 
                            bill@newbreedsoftware.com
                             http://www.tuxpaint.org/
 
-                        June 14, 2002 - October 29, 2008
+                         June 14, 2002 - April 28, 2009
 
      ----------------------------------------------------------------------
 
@@ -349,12 +349,18 @@ Available Tools
 
                  The 'Magic' tool is actually a set of special tools. Select
                  one of the "magic" effects from the selector on the right.
-                 Then, depending on the tool, either click and drag around
-                 the picture, or simply click the picture once, to apply the
-                 effect.
+                 Then, depending on the tool, you can either click and drag
+                 around the picture, and/or simply click the picture once, to
+                 apply the effect.
 
-                 Each 'Magic' tool's instructions are contained within the
-                 "magic-docs" folder.
+                 If the tool can be used by clicking and dragging, a
+                 'painting' button will be available on the left, below the
+                 list of "magic" tools on the right side of the screen. If
+                 the tool can affect the entire picture at once, an
+                 'entire picture' button will be available on the right.
+
+                 See the instructions for each Magic tool (in the
+                 'magic-docs' folder).
 
      ----------------------------------------------------------------------
 
