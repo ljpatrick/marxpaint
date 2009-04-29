@@ -20,11 +20,11 @@ $Id$
   * New Magic Tools:
     ----------------
     * + Blur (entire image mode) - Blurs entire image
-      + Alien - Modifies the colours in the image to give an "alien" apperance.
+      + Color Shift - Modifies the colors in the image.
       + Sharpen - Sharpens entire image
-      + Trace Contour - Traces the edges of the image, over a white background.
+      + Edges - Traces the edges of the image, over a white background.
       + Silhouette - Creates an outline of the image, over a black background.
-      + Threshold - Turns image pure colour & pure white (no grey or color).
+      + Color and White - Turns image pure color & white (no grey or color).
       + Snow Ball - Places random snow balls over the image.
       + Snow Flake - Places random snow flakes over the image.
       + Noise - Adds random noise to the image.
