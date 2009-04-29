@@ -636,7 +636,6 @@ $Id$
 
 * Support / Testers
 
-  Tux4Kids.org, Sam Hart  (Tux4Kids project manager)
   Many others in the community!  (Testing, bug fixes, comments, kudos)
 
 

@@ -8,7 +8,7 @@ http://www.tuxpaint.org/
 
 $Id$
 
-2009.April.23 (0.9.21)
+2009.April.28 (0.9.21)
   * New Starters:
     -------------
     * Silver Frame
@@ -112,6 +112,10 @@ $Id$
   * Documentation Improvements:
     ---------------------------
     * Corrected location of config files for Mac OS X in OPTIONS docs.
+
+    * HTML documentation files for the various Magic tools are now
+      generated using a PHP script.  Tool details are stored in a PHP array
+      (which is easier-to-edit than individual HTML files).
 
   * Other Improvements:
     -------------------

@@ -1,10 +1,10 @@
 # Tux Paint - A simple drawing program for children.
 
-# Copyright (c) 2002-2008 by Bill Kendrick and others
+# Copyright (c) 2002-2009 by Bill Kendrick and others
 # bill@newbreedsoftware.com
 # http://www.tuxpaint.org/
 
-# June 14, 2002 - January 2, 2009
+# June 14, 2002 - April 28, 2009
 
 
 # The version number, for release:
@@ -793,7 +793,7 @@ install-doc:
 	@install -d $(DOC_PREFIX)
 	@cp -R docs/* $(DOC_PREFIX)
 	@cp -R magic/magic-docs $(DOC_PREFIX)
-	@chmod a=rX,g=rX,u=rwX $(DOC_PREFIX)
+	@chmod -R a=rX,g=rX,u=rwX $(DOC_PREFIX)
 
 
 # Install the man page:

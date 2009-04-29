@@ -1,0 +1,30 @@
+                  Tux Paint "Magic" Tool: List of Magic Tools
+
+   * Blocks
+   * Blur
+   * Bricks
+   * Calligraphy
+   * Cartoon
+   * Chalk
+   * Darken
+   * Distortion
+   * Drip
+   * Emboss
+   * Fade
+   * Fill
+   * Flip
+   * Flower
+   * Foam
+   * Glass Tile
+   * Grass
+   * Kaleidoscope
+   * Light
+   * Metal Paint
+   * Mirror
+   * Negative
+   * Rainbow
+   * Ripples
+   * Shift
+   * Smudge
+   * Tint
+   * Waves
