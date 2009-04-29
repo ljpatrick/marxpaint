@@ -1,4 +1,4 @@
-                          Tux Paint "Magic" Tool: Fade
+                        Tux Paint "Magic" Tool: Lighten
 
                   By Bill Kendrick <bill@newbreedsoftware.com>
 

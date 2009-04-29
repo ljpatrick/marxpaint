@@ -1,5 +1,0 @@
-                      Tux Paint "Magic" Tool: Kaleidoscope
-
-   This paint brush draws in four places at the same time, mirroring
-   symmetrically, both horizontally and vertically. It uses the currently
-   selected color.

@@ -12,6 +12,9 @@ them all. */
 
 $AUTHOR_KENDRICK = "Bill Kendrick|bill@newbreedsoftware.com";
 $AUTHOR_ALBERT = "Albert Cahalan|albert@users.sf.net";
+$AUTHOR_ANDREWC = "Andrew Corcoran|akanewbie@gmail.com";
+$AUTHOR_ADAMR = "Adam Rakowski|foo-script@o2.pl";
+$AUTHOR_PERE = "Pere Pujal i Carabantes|pere@fornol.no-ip.org";
 
 
 /* Information about each of the tools:
@@ -52,7 +55,8 @@ $tools = array(
 
   array('name'=>'Blur',
    'desc'=>'This makes the picture fuzzy wherever you drag the mouse.',
-   'author'=>array($AUTHOR_KENDRICK,$AUTHOR_ALBERT)),
+   'author'=>array($AUTHOR_KENDRICK,$AUTHOR_ALBERT),
+   'see'=>array('Sharpen', 'Smudge')),
 
   array('name'=>'Bricks',
    'desc'=>'These two tools intelligently paint large and small brick patterns on the canvas.  The bricks can be tinted various redish hues by selecting different colors in the color palette.',
@@ -70,10 +74,22 @@ $tools = array(
    'desc'=>'This makes parts of the picture (where you move the mouse) look like a chalk drawing.',
    'author'=>$AUTHOR_KENDRICK),
 
+  array('name'=>'Color and White',
+   'desc'=>'This makes parts of your picture two colors: white, and the color chosen in the palette. (i.e., if you choose black, you\'ll get a black and white picture).',
+   'author'=>$AUTHOR_ANDREWC),
+
+  array('name'=>'Color Shift',
+   'desc'=>'This shifts the colors in your picture.', /* What? */
+   'author'=>$AUTHOR_ANDREWC),
+
+  array('name'=>'Confetti',
+   'desc'=>'Throw confetti around your picture!',
+   'author'=>$AUTHOR_ADAMR),
+
   array('name'=>'Darken',
    'desc'=>'This dakrens the colors wherever you drag the mouse.  (Do it to the same spot many times, and it will eventually become black.)',
    'author'=>$AUTHOR_KENDRICK,
-   'see'=>array('Fade', 'Tint')),
+   'see'=>array('Lighten', 'Tint')),
 
   array('name'=>'Distortion',
    'desc'=>'This slightly distorts the picture wherever you move the mouse.',
@@ -83,18 +99,23 @@ $tools = array(
    'desc'=>'This makes the paint "drip" wherever you move the mouse.',
    'author'=>$AUTHOR_KENDRICK),
 
+  array('name'=>'Edges',
+   'desc'=>'Trace the edges in your picture, over a white background.',
+   'author'=>$AUTHOR_ANDREWC,
+   'see'=>array('Emboss', 'Silhouette')),
+
   array('name'=>'Emboss',
    'desc'=>'This makes parts of your picture look "embossed."  Wherever there are sharp edges in your picture, the picture will look raised like it was stamped in metal.',
-   'author'=>$AUTHOR_KENDRICK),
-
-  array('name'=>'Fade',
-   'desc'=>'This fades the colors wherever you drag the mouse.  (Do it to the same spot many times, and it will eventually become white.)',
    'author'=>$AUTHOR_KENDRICK,
-   'see'=>array('Darken', 'Tint')),
+   'see'=>array('Edges', 'Silhouette')),
 
   array('name'=>'Fill',
    'desc'=>'This floods the picture with a color.  It lets you quickly fill parts of the picture, as if it were a coloring book.',
    'author'=>$AUTHOR_KENDRICK),
+
+  array('name'=>'Fisheye',
+   'desc'=>'Warp parts of your picture like it\'s being seen through a fisheye lens.',
+   'author'=>$AUTHOR_ADAMR),
 
   array('name'=>'Flip',
    'desc'=>'Similar to "Mirror."  Click and the entire image will be turned upside-down.',
@@ -110,6 +131,10 @@ $tools = array(
    'desc'=>'Click and drag the mouse to draw foamy bubbles.  The more you drag the mouse in a particular spot, the more likely small bubbles will combine to form bigger bubbles.',
    'author'=>$AUTHOR_KENDRICK),
 
+  array('name'=>'Fold',
+   'desc'=>'Click a corner of your picture and drag towards the center to fold it up like a piece of paper.',
+   'author'=>array($AUTHOR_ADAMR, $AUTHOR_KENDRICK, $AUTHOR_PERE)),
+
   array('name'=>'Glass Tile',
    'desc'=>'Click and drag over your picture to make it look like it\'s being seen through glass tiles.',
    'author'=>$AUTHOR_KENDRICK),
@@ -121,11 +146,17 @@ $tools = array(
 
   array('name'=>'Kaleidoscope',
    'desc'=>'This paint brush draws in four places at the same time, mirroring symmetrically, both horizontally and vertically.  It uses the currently selected color.',
-   'author'=>$AUTHOR_KENDRICK),
+   'author'=>$AUTHOR_KENDRICK,
+   'see'=>'Picasso', 'Rosette'),
 
   array('name'=>'Light',
    'desc'=>'This draws a glowing beam on the canvas, in the currently-selected color.  The more you use it on one spot, the more white it becomes.',
    'author'=>$AUTHOR_KENDRICK),
+
+  array('name'=>'Lighten',
+   'desc'=>'This fades the colors wherever you drag the mouse.  (Do it to the same spot many times, and it will eventually become white.)',
+   'author'=>$AUTHOR_KENDRICK,
+   'see'=>array('Darken', 'Tint')),
 
   array('name'=>'Metal Paint',
    'desc'=>'Click and drag to draw shiny metal using the current color.',
@@ -140,30 +171,107 @@ $tools = array(
    'desc'=>'This inverts the colors wherever you drag the mouse.  (e.g., white becomes black, and vice versa.)',
    'author'=>$AUTHOR_KENDRICK),
 
+  array('name'=>'Noise',
+   'desc'=>'Add random noise and static to your picture.',
+   'author'=>$AUTHOR_ANDREWC),
+
+  array('name'=>'Picasso',
+   'desc'=>'Draw three swirling brushes at once, in a Picasso style.',
+   'author'=>$AUTHOR_ADAMR,
+   'see'=>'Rosette', 'Kaleidoscope'),
+
+  array('name'=>'Rails',
+   'desc'=>'Draw connecting locomotive train rails on your picture.',
+   'author'=>array($AUTHOR_ADAMR, $AUTHOR_PERE, $AUTHOR_KENDRICK)),
+
+  array('name'=>'Rain',
+   'desc'=>'Paint raindrops on your picture.',
+   'author'=>$AUTHOR_ANDREWC,
+   'see'=>array('Snow Ball', 'Snow Flake')),
+
   array('name'=>'Rainbow',
    'desc'=>'This is similar to the paint brush, but as you move the mouse around, it cycles through a spectrum of bright colors.',
+   'author'=>$AUTHOR_KENDRICK),
+
+  array('name'=>'Real Rainbow',
+   'desc'=>'Draw a transparent arc that looks like a real rainbow.',
    'author'=>$AUTHOR_KENDRICK),
 
   array('name'=>'Ripples',
    'desc'=>'Click in your picture to make water ripple distortions appear over it.',
    'author'=>$AUTHOR_KENDRICK),
 
+  array('name'=>'Rosette',
+   'desc'=>'Draw three brushes at once, in a rosette shape.',
+   'author'=>$AUTHOR_ADAMR,
+   'see'=>array('Kaleidoscope', 'Picasso')),
+
+  array('name'=>'Sharpen',
+   'desc'=>'Sharpen the focus of the picture.',
+   'author'=>$AUTHOR_ANDREWC,
+   'see'=>'Blur'),
+
   array('name'=>'Shift',
    'desc'=>'This shifts your picture around the canvas.  Anything that gets shifts off an edge reappears on the opposite edge.',
    'author'=>$AUTHOR_KENDRICK),
 
+  array('name'=>'Silhouette',
+   'desc'=>'Trace the edges in your picture, over a black background.',
+   'author'=>$AUTHOR_ANDREWC,
+   'see'=>array('Edges', 'Emboss')),
+
   array('name'=>'Smudge',
    'desc'=>'This pushes the colors around under the mouse, like finger painting with wet paint.',
-   'author'=>$AUTHOR_ALBERT),
+   'author'=>$AUTHOR_ALBERT,
+   'see'=>'Blur'),
+
+  array('name'=>'Snow Ball',
+   'desc'=>'Fill the picture with snowballs.',
+   'author'=>$AUTHOR_ANDREWC,
+   'see'=>array('Rain', 'Snow Flake')),
+
+  array('name'=>'Snow Flake',
+   'desc'=>'Fill the picture with snowflakes.',
+   'author'=>$AUTHOR_ANDREWC,
+   'see'=>array('Rain', 'Snow Ball')),
+
+  array('name'=>'String V',
+   'desc'=>'Draw V-shaped string art at any angle.',
+   'author'=>$AUTHOR_PERE,
+   'see'=>array('String Corner', 'String Edges')),
+
+  array('name'=>'String Corner',
+   'desc'=>'Draw V-shaped string art at right angles.',
+   'author'=>$AUTHOR_PERE,
+   'see'=>array('String V', 'String Edges')),
+
+  array('name'=>'String Edges',
+   'desc'=>'Draw string art around the edges of your picture.',
+   'author'=>$AUTHOR_PERE,
+   'see'=>array('String V', 'String Corner')),
+
+  array('name'=>'TV',
+   'desc'=>'Distort your picture so it looks like it\'s on a television (TV).',
+   'author'=>$AUTHOR_ADAMR),
 
   array('name'=>'Tint',
    'desc'=>'This changes the color (or hue) of the parts of the picture to the selected color.',
    'author'=>$AUTHOR_KENDRICK,
-   'see'=>array('Fade', 'Darken')),
+   'see'=>array('Lighten', 'Darken')),
+
+  array('name'=>'Toothpaste',
+   'desc'=>'Paint thick blobs of color on your picture that look like toothpaste.',
+   'author'=>$AUTHOR_ANDREWC),
 
   array('name'=>'Waves',
-   'desc'=>'Click to make the entire picture wavy.  Drag the mouse up and down to change the height of the ripples, and left and right to change the width.  Release the mouse button when it looks the way you like it.',
-   'author'=>$AUTHOR_KENDRICK),
+   'desc'=>'Click to make the entire picture wavy, side-to-side.  Drag the mouse up and down to change the height of the ripples, and left and right to change the width.  Release the mouse button when it looks the way you like it.', /* FIXME: Dragging went away! */
+   'author'=>$AUTHOR_KENDRICK,
+   'see'=>'Wavelets'),
+
+  array('name'=>'Wavelets',
+   'desc'=>'Click to make the entire picture wavy, up-and-down.  Drag the mouse up and down to change the height of the ripples, and left and right to change the width.  Release the mouse button when it looks the way you like it.',
+   'author'=>array($AUTHOR_KENDRICK, $AUTHOR_ADAMR),
+   'see'=>'Waves'),
 
 );
 

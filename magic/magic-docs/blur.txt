@@ -4,3 +4,5 @@
                       Albert Cahalan <albert@users.sf.net>
 
    This makes the picture fuzzy wherever you drag the mouse.
+
+   See also: Sharpen Smudge

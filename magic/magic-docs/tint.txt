@@ -5,4 +5,4 @@
    This changes the color (or hue) of the parts of the picture to the
    selected color.
 
-   See also: Fade Darken
+   See also: Lighten Darken
