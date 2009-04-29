@@ -6,12 +6,11 @@
   by Bill Kendrick <bill@newbreedsoftware.com>
   Math assistence by Jeff Newmiller <jdnewmil@dcn.davis.ca.us>
 
-  2009.04.02 - 2009.04.05
+  2009.04.02 - 2009.04.28
 
 FIXME:
 * Needs icon.
 * Needs sound effect.
-* Rect update needs fixing (leaving dirt).
 * Color/alpha art needs improvement.
 * Pixel gaps appear in lines sometimes (esp. larger rainbows).
 */
@@ -284,35 +283,24 @@ void realrainbow_arc(magic_api * api, SDL_Surface * canvas, SDL_Surface * last, 
       nx = (rr * cos(a * M_PI / 180.0)) + xc;
       ny = (rr * sin(a * M_PI / 180.0)) + yc;
 
-/*    if (fulldraw) */
-      {
-        colorindex = realrainbow_colors->h - 1 - (((rr - r + (thick / 2)) * realrainbow_colors->h) / thick);
+      colorindex = realrainbow_colors->h - 1 - (((rr - r + (thick / 2)) * realrainbow_colors->h) / thick);
 
-        SDL_GetRGBA(api->getpixel(realrainbow_colors, 0, colorindex),
-                    realrainbow_colors->format, &realrainbow_blendr, &realrainbow_blendg, &realrainbow_blendb, &realrainbow_blenda);
+      SDL_GetRGBA(api->getpixel(realrainbow_colors, 0, colorindex),
+                  realrainbow_colors->format, &realrainbow_blendr, &realrainbow_blendg, &realrainbow_blendb, &realrainbow_blenda);
 
-        api->line((void *) api, 0, canvas, last, ox, oy, nx, ny, 1, realrainbow_linecb);
-      }
-/*
-      else
-      {
-        api->putpixel(canvas, ox, oy,
-                      SDL_MapRGB(canvas->format, rand() % 256, rand() % 256, rand() % 256));
-      }
-*/
+      if (!fulldraw)
+        realrainbow_blenda = 255;
+
+      api->line((void *) api, 0, canvas, last, ox, oy, nx, ny, 1, realrainbow_linecb);
     }
 
     oa = a;
 
-    if (step > 0 && a + step > theta)
+    if ((step > 0 && a + step > theta) ||
+        (step < 0 && a + step < theta))
     {
       done++;
       a = theta - step;
-    }
-    else if (step < 0 && a - step < theta)
-    {
-      done++;
-      a = theta + step;
     }
   }
 
