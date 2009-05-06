@@ -7,7 +7,7 @@ bill@newbreedsoftware.com
 http://www.tuxpaint.org/
 
 
-June 17, 2002 - April 23, 2009
+June 17, 2002 - May 6, 2009
 
 $Id$
 
@@ -51,7 +51,7 @@ $Id$
     Thomas Kalka <thomas.kalka@googlemail.com>
 
   Blur ('entire image' mode), Sharpen, Trace Contour, Silhouette,
-  Snow Flake, Snow Ball, Black & White, Threshold, Alien, Toothpaste,
+  Snow Flake, Snow Ball, Color & White, Threshold, Alien, Toothpaste,
   Tint ('Brush' mode), Noise, Rain and Mosaic Magic Tools.
   Jigsaw 3x3 and Jigsaw 5x5 starter images.
   by Andrew 'akanewbie' Corcoran <akanewbie@gmail.com>
@@ -75,7 +75,11 @@ $Id$
   * UI buttons - Created using "AquaPro" button script in The GIMP
     Copyright (C) 2001 Denis Bodor <b.bodor@calixo.net>
 
-  * UI icons - Created by Bill Kendrick using The GIMP
+  * Many UI icons - Created by Bill Kendrick using The GIMP
+
+  * Magic tool icons
+    + Individual Magic tool authors
+    + Donelle Cory <thegirlbassist@gmail.com>
 
   * Cartoon representation of "Tux," the Linux penguin
     Created by Sam "Criswell" Hart  <criswell@geekcomix.com>

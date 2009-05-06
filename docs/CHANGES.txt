@@ -63,6 +63,10 @@ $Id$
       String 'V' - Draw free-form string-like patterns.
       By Pere Pujal i Carabantes <pere@fornol.no-ip.org>
 
+    * Icons for some new Magic Tools
+      (Color and White, Fisheye, Mosaic, Picasso, Silhouette, TV and Wavelet)
+      Donelle Cory <thegirlbassist@gmail.com>
+
   * Magic Tool Improvememnts:
     --------------------------
     * Added "_switchin()" and "_switchout()" functions to Magic tool API,

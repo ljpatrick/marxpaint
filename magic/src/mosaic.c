@@ -7,7 +7,7 @@
 
   Credits: Andrew Corcoran <akanewbie@gmail.com>
 
-  Copyright (c) 2002-2007 by Bill Kendrick and others; see AUTHORS.txt
+  Copyright (c) 2002-2009 by Bill Kendrick and others; see AUTHORS.txt
   bill@newbreedsoftware.com
   http://www.tuxpaint.org/
 
@@ -26,7 +26,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  Last updated: June 6, 2008
+  Last updated: May 6, 2009
   $Id$
 */
 
@@ -61,10 +61,10 @@ enum {
 static Mix_Chunk * mosaic_snd_effect[mosaic_NUM_TOOLS];
 
 const char * mosaic_snd_filenames[mosaic_NUM_TOOLS] = {
-  "flip.wav",
+  "flip.wav", /* FIXME */
 };
 const char * mosaic_icon_filenames[mosaic_NUM_TOOLS] = {
-  "flip.png",
+  "mosaic.png",
 };
 const char * mosaic_names[mosaic_NUM_TOOLS] = {
   gettext_noop("Mosaic"),

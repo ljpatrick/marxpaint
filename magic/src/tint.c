@@ -10,7 +10,7 @@
 
   Credits: Andrew Corcoran <akanewbie@gmail.com>
 
-  Copyright (c) 2002-2008 by Bill Kendrick and others; see AUTHORS.txt
+  Copyright (c) 2002-2009 by Bill Kendrick and others; see AUTHORS.txt
   bill@newbreedsoftware.com
   http://www.tuxpaint.org/
 
@@ -29,7 +29,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  Last updated: July 8, 2008
+  Last updated: May 6, 2009
   $Id$
 */
 
@@ -61,11 +61,11 @@ static Mix_Chunk * tint_snd_effect[tint_NUM_TOOLS];
 
 const char * tint_snd_filenames[tint_NUM_TOOLS] = {
   "tint.wav",
-  "flip.wav"
+  "flip.wav" /* FIXME */
 };
 const char * tint_icon_filenames[tint_NUM_TOOLS] = {
   "tint.png",
-  "flip.png"
+  "colornwhite.png"
 };
 const char * tint_names[tint_NUM_TOOLS] = {
   gettext_noop("Tint"),

@@ -6,7 +6,7 @@
 
   Credits: Andrew Corcoran <akanewbie@gmail.com>
 
-  Copyright (c) 2002-2008 by Bill Kendrick and others; see AUTHORS.txt
+  Copyright (c) 2002-2009 by Bill Kendrick and others; see AUTHORS.txt
   bill@newbreedsoftware.com
   http://www.tuxpaint.org/
 
@@ -25,7 +25,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  Last updated: July 8, 2008
+  Last updated: May 6, 2009
   $Id$
 */
 
@@ -62,12 +62,12 @@ static Mix_Chunk * sharpen_snd_effect[sharpen_NUM_TOOLS];
 const char * sharpen_snd_filenames[sharpen_NUM_TOOLS] = {
   "edges.ogg",
   "sharpen.ogg",
-  "flip.wav"
+  "flip.wav" /* FIXME */
 };
 const char * sharpen_icon_filenames[sharpen_NUM_TOOLS] = {
   "edges.png",
   "sharpen.png",
-  "flip.png"
+  "silhouette.png"
 };
 const char * sharpen_names[sharpen_NUM_TOOLS] = {
   gettext_noop("Edges"),
