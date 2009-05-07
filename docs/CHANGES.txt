@@ -65,7 +65,8 @@ $Id$
 
     * Icons for some new Magic Tools
       (Color and White, Fisheye, Mosaic, Picasso, Silhouette, TV and Wavelet)
-      Donelle Cory <thegirlbassist@gmail.com>
+      Donelle Cory <8bitonion@gmail.com>
+      http://www.8bitonion.com/portfolio
 
   * Magic Tool Improvememnts:
     --------------------------

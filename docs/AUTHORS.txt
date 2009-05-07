@@ -79,7 +79,8 @@ $Id$
 
   * Magic tool icons
     + Individual Magic tool authors
-    + Donelle Cory <thegirlbassist@gmail.com>
+    + Donelle Cory <8bitonion@gmail.com>
+      http://www.8bitonion.com/portfolio
 
   * Cartoon representation of "Tux," the Linux penguin
     Created by Sam "Criswell" Hart  <criswell@geekcomix.com>
