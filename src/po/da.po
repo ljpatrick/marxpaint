@@ -14,7 +14,7 @@ msgstr ""
 "Project-Id-Version: Tux Paint\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2009-04-06 04:05-0700\n"
-"PO-Revision-Date: 2009-02-14 22:30+0100\n"
+"PO-Revision-Date: 2009-05-08 22:30+0100\n"
 "Last-Translator: Joe Hansen <joedalton2@yahoo.dk>\n"
 "Language-Team: Danish <dansk@dansk-gruppen.dk>\n"
 "MIME-Version: 1.0\n"
@@ -784,7 +784,7 @@ msgstr "Forvrængning"
 
 #: ../../magic/src/distortion.c:129
 msgid "Click and drag the mouse to cause distortion in your picture."
-msgstr "Klik og bevæg musen rundt, for at skabe en forvrængning i dit billede."
+msgstr "Klik og bevæg musen rundt, for at skabe forvrængning i dit billede."
 
 # Engelsk forklaring af ordet emboss: to raise or represent (surface designs) in relief. 
 # Kunne også være præget, drevet, presset (præg, driv, pres), fremhæv.
@@ -996,17 +996,18 @@ msgstr "Klik for at placere en regndråbe på dit billede."
 msgid "Click to cover your picture with rain drops."
 msgstr "Klik for at dække dit billede med regndråber."
 
+# Virkelig, reel, ægte
 #: ../../magic/src/realrainbow.c:70
-#, fuzzy
-#| msgid "Rainbow"
 msgid "Real Rainbow"
-msgstr "Regnbue"
+msgstr "Ægte regnbue"
 
 #: ../../magic/src/realrainbow.c:75
 msgid ""
 "Click where you want your rainbow to start, drag to where you want it to "
 "end, and then let go to draw a rainbow."
 msgstr ""
+"Klik hvor du ønsker at regnbuen skal starte, træk så til hvor den skal "
+"ende, og slip for at tegne en regnbue."
 
 # Ripple -> ring, bølge (i vand) 
 #: ../../magic/src/ripples.c:81
@@ -1044,17 +1045,18 @@ msgstr "Skærp"
 
 #: ../../magic/src/sharpen.c:75
 msgid "Silhouette"
-msgstr "Silhouet"
+msgstr "Silhuet"
 
+# hjørner -> kanter
+# jeg ville måske kalde det noget med at "fremhæve kanter"
 #: ../../magic/src/sharpen.c:78
 msgid "Click and move the mouse to trace edges in parts of your picture."
 msgstr ""
-"Klik og bevæg musen rundt for at lave antydning af hjørner i dele af dit "
-"billede."
+"Klik og bevæg musen rundt for at fremhæve kanter i dele af dit billede."
 
 #: ../../magic/src/sharpen.c:79
 msgid "Click to trace edges in your entire picture."
-msgstr "Klik for at antyde hjørner i hele dit billede."
+msgstr "Klik for at fremhæve kanter i hele dit billede."
 
 #: ../../magic/src/sharpen.c:80
 msgid "Click and move the mouse to sharpen parts of your picture."
@@ -1066,11 +1068,11 @@ msgstr "Klik for at skærpe hele billedet."
 
 #: ../../magic/src/sharpen.c:82
 msgid "Click and move the mouse to create a black and white silhouette."
-msgstr "Klik og bevæg musen rundt for at oprette en sort og hvid silhouet."
+msgstr "Klik og bevæg musen rundt for at oprette en sort og hvid silhuet."
 
 #: ../../magic/src/sharpen.c:83
 msgid "Click to create a black and white silhouette of your entire picture."
-msgstr "Klik for at oprette en sort og hvid silhouet af hele dit billede."
+msgstr "Klik for at oprette en sort og hvid silhuet af hele dit billede."
 
 #: ../../magic/src/shift.c:104
 msgid "Shift"
@@ -1107,33 +1109,35 @@ msgstr "Klik for at tilføje snefnug i dit billede."
 
 #: ../../magic/src/string.c:121
 msgid "String edges"
-msgstr ""
+msgstr "Strengkanter"
 
 #: ../../magic/src/string.c:124
 msgid "String corner"
-msgstr ""
+msgstr "Strenghjørne"
 
 #: ../../magic/src/string.c:127
 msgid "String 'V'"
-msgstr ""
+msgstr "Streng 'V'"
 
 #: ../../magic/src/string.c:135
 msgid ""
 "Click and drag to draw string art. Drag top-bottom to draw less or more "
 "lines, to the center to approach the lines to center."
 msgstr ""
+"Klik og træk for at tegne strengkunst. Træk top mod bund for at tegne "
+"færre eller flere linjer, mod midten for at nærme linjerne mod midten."
 
 #: ../../magic/src/string.c:138
-#, fuzzy
-#| msgid "Click and drag to draw train track rails on your picture."
 msgid "Click and drag to draw string art aligned to the edges."
-msgstr "Klik og bevæg musen rundt for at tegne togspor på dit billede."
+msgstr "Klik og bevæg musen rundt for at tegne strenge på dit billede."
 
 #: ../../magic/src/string.c:141
 msgid ""
 "Draw string art with free angles. Click and drag a V: drag to the vertex, "
 "drag backwards a little to the start, then drag to the end."
 msgstr ""
+"Tegn strengkunst med frie vinkler. Klik og træk et V: Træk til spidsen, "
+"træk en smule tilbage til starten, og træk så til afslutningen."
 
 #: ../../magic/src/tint.c:71
 msgid "Tint"
@@ -1184,6 +1188,7 @@ msgstr "Klik for at få dit billede til at se ud som om, det er i fjernsynet."
 msgid "Waves"
 msgstr "Bølger"
 
+# evt. småbølger.
 #: ../../magic/src/waves.c:76
 msgid "Wavelets"
 msgstr "Mindre bølger"
