@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: he\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2009-04-06 04:05-0700\n"
-"PO-Revision-Date: 2009-03-06 11:09+0200\n"
+"PO-Revision-Date: 2009-05-10 21:45+0200\n"
 "Last-Translator: Jorge Mariano <jmariano@ymail.com>\n"
 "Language-Team: Hebrew <mdk-hebrew@iglu.org.il>\n"
 "MIME-Version: 1.0\n"
@@ -220,83 +220,98 @@ msgstr "תאילנדית"
 #. Input Method: Traditional Chinese mode
 #: ../im.c:90
 msgid "ZH_TW"
-msgstr ""
+msgstr "ZH_TW"
 
 #. Square shape tool (4 equally-lengthed sides at right angles)
-#: ../shapes.h:171 ../shapes.h:172
+#: ../shapes.h:171
+#: ../shapes.h:172
 msgid "Square"
 msgstr "ריבוע"
 
 #. Rectangle shape tool (4 sides at right angles)
-#: ../shapes.h:175 ../shapes.h:176
+#: ../shapes.h:175
+#: ../shapes.h:176
 msgid "Rectangle"
 msgstr "מלבן"
 
 #. Circle shape tool (X radius and Y radius are the same)
-#: ../shapes.h:179 ../shapes.h:180
+#: ../shapes.h:179
+#: ../shapes.h:180
 msgid "Circle"
 msgstr "עיגול"
 
 #. Ellipse shape tool (X radius and Y radius may differ)
-#: ../shapes.h:183 ../shapes.h:184
+#: ../shapes.h:183
+#: ../shapes.h:184
 msgid "Ellipse"
 msgstr "אליפסה"
 
 #. Triangle shape tool (3 sides)
-#: ../shapes.h:187 ../shapes.h:188
+#: ../shapes.h:187
+#: ../shapes.h:188
 msgid "Triangle"
 msgstr "משולש"
 
 #. Pentagone shape tool (5 sides)
-#: ../shapes.h:191 ../shapes.h:192
+#: ../shapes.h:191
+#: ../shapes.h:192
 msgid "Pentagon"
 msgstr "מחומש"
 
 #. Rhombus shape tool (4 sides, not at right angles)
-#: ../shapes.h:195 ../shapes.h:196
+#: ../shapes.h:195
+#: ../shapes.h:196
 msgid "Rhombus"
 msgstr "מעוין"
 
 #. Octagon shape tool (8 sides)
-#: ../shapes.h:199 ../shapes.h:200
+#: ../shapes.h:199
+#: ../shapes.h:200
 msgid "Octagon"
 msgstr "מתומן"
 
 #. Description of a square
-#: ../shapes.h:208 ../shapes.h:209
+#: ../shapes.h:208
+#: ../shapes.h:209
 msgid "A square is a rectangle with four equal sides."
 msgstr "ריבוע הוא מלבן עם ארבע צלעות שוות."
 
 #. Description of a rectangle
-#: ../shapes.h:212 ../shapes.h:213
+#: ../shapes.h:212
+#: ../shapes.h:213
 msgid "A rectangle has four sides and four right angles."
 msgstr "למלבן יש ארבע צלעות וארבע זוויות ישרות."
 
-#: ../shapes.h:217 ../shapes.h:219
-msgid ""
-"A circle is a curve where all points have the same distance from the center."
+#: ../shapes.h:217
+#: ../shapes.h:219
+msgid "A circle is a curve where all points have the same distance from the center."
 msgstr "עיגול הוא עקומה בה כל הנקודות הן במרחק שווה מהמרכז."
 
 #. Description of an ellipse
-#: ../shapes.h:222 ../shapes.h:223
+#: ../shapes.h:222
+#: ../shapes.h:223
 msgid "An ellipse is a stretched circle."
 msgstr "אליפסה היא עיגול שנמתח."
 
 #. Description of a triangle
-#: ../shapes.h:226 ../shapes.h:227
+#: ../shapes.h:226
+#: ../shapes.h:227
 msgid "A triangle has three sides."
 msgstr "למשולש יש שלוש צלעות."
 
 #. Description of a pentagon
-#: ../shapes.h:230 ../shapes.h:231
+#: ../shapes.h:230
+#: ../shapes.h:231
 msgid "A pentagon has five sides."
 msgstr "למחומש יש חמש צלעות."
 
-#: ../shapes.h:235 ../shapes.h:237
+#: ../shapes.h:235
+#: ../shapes.h:237
 msgid "A rhombus has four equal sides, and opposite sides are parallel."
 msgstr "למעוין יש ארבע צלעות שוות, וצלעות מנוגדות הן מקבילות."
 
-#: ../shapes.h:241 ../shapes.h:243
+#: ../shapes.h:241
+#: ../shapes.h:243
 msgid "An octagon has eight equal sides."
 msgstr "למתומן יש שמונה צלעות."
 
@@ -327,7 +342,8 @@ msgstr "חותמות"
 
 #. Title of shape selector (buttons down the right for shapes tool)
 #. Shape creation tool (square, circle, etc.)
-#: ../titles.h:56 ../tools.h:54
+#: ../titles.h:56
+#: ../tools.h:54
 msgid "Shapes"
 msgstr "צורות"
 
@@ -338,7 +354,8 @@ msgstr "אותיות"
 
 #. Title of magic tool selector (buttons down the right for magic (effect plugin) tool)
 #. "Magic" effects tools (blur, flip image, etc.)
-#: ../titles.h:62 ../tools.h:60
+#: ../titles.h:62
+#: ../tools.h:60
 msgid "Magic"
 msgstr "קסם"
 
@@ -385,7 +402,8 @@ msgstr "חדש"
 #. Open a saved picture
 #. buttons for the file open dialog
 #. Open dialog: 'Open' button, to load the selected picture
-#: ../tools.h:75 ../tuxpaint.c:7973
+#: ../tools.h:75
+#: ../tuxpaint.c:7973
 msgid "Open"
 msgstr "פתיחה"
 
@@ -421,12 +439,8 @@ msgstr "לחצי כדי להתחיל לצייר קו. שחררי כדי להשל
 
 #. Shape tool instructions
 #: ../tools.h:101
-msgid ""
-"Pick a shape. Click to pick the center, drag, then let go when it is the "
-"size you want. Move around to rotate it, and click to draw it."
-msgstr ""
-"בחרי צורה. לחצי לבחירת המרכז, גררי, ואז עזבי אותה כשהיא בגודל הרצוי לך. "
-"הזיזי את העכבר כדי לסובב אותה, ואז לחצי כדי לצייר אותה."
+msgid "Pick a shape. Click to pick the center, drag, then let go when it is the size you want. Move around to rotate it, and click to draw it."
+msgstr "בחרי צורה. לחצי לבחירת המרכז, גררי, ואז עזבי אותה כשהיא בגודל הרצוי לך. הזיזי את העכבר כדי לסובב אותה, ואז לחצי כדי לצייר אותה."
 
 #. Text tool instructions
 #: ../tools.h:104
@@ -509,7 +523,8 @@ msgid "Yes, I’m done!"
 msgstr "כן, אני סיימתי!"
 
 #. Quit prompt negative response (don't quit)
-#: ../tuxpaint.c:1861 ../tuxpaint.c:1888
+#: ../tuxpaint.c:1861
+#: ../tuxpaint.c:1888
 msgid "No, take me back!"
 msgstr "לא, תחזיר אותי!"
 
@@ -518,11 +533,13 @@ msgstr "לא, תחזיר אותי!"
 msgid "If you quit, you’ll lose your picture! Save it?"
 msgstr "יציאה ללא שמירה תגרום לאיבוד הציור שלך! האם לשמור אותו?"
 
-#: ../tuxpaint.c:1866 ../tuxpaint.c:1871
+#: ../tuxpaint.c:1866
+#: ../tuxpaint.c:1871
 msgid "Yes, save it!"
 msgstr "כן, שמור אותו!"
 
-#: ../tuxpaint.c:1867 ../tuxpaint.c:1872
+#: ../tuxpaint.c:1867
+#: ../tuxpaint.c:1872
 msgid "No, don’t bother saving!"
 msgstr "לא, אל תטרח לשמור!"
 
@@ -537,7 +554,10 @@ msgid "Can’t open that picture!"
 msgstr "לא ניתן לפתוח תמונה זו!"
 
 #. Generic dialog dismissal
-#: ../tuxpaint.c:1878 ../tuxpaint.c:1883 ../tuxpaint.c:1892 ../tuxpaint.c:1899
+#: ../tuxpaint.c:1878
+#: ../tuxpaint.c:1883
+#: ../tuxpaint.c:1892
+#: ../tuxpaint.c:1899
 #: ../tuxpaint.c:1908
 msgid "OK"
 msgstr "בסדר"
@@ -671,7 +691,8 @@ msgstr "בחרי תמונה, ואז לחצי \"פתיחה\"."
 
 #. Let user choose images:
 #. Instructions for Slideshow file dialog (FIXME: Make a #define)
-#: ../tuxpaint.c:14349 ../tuxpaint.c:14663
+#: ../tuxpaint.c:14349
+#: ../tuxpaint.c:14663
 msgid "Choose the pictures you want, then click “Play”."
 msgstr "בחרי תמונה, ואז לחצי \"הצג\"."
 
@@ -717,8 +738,7 @@ msgid "Click and move the mouse around to make the picture blocky."
 msgstr "לחצי והזיזי את העכבר לאפקט בלוקים."
 
 #: ../../magic/src/blocks_chalk_drip.c:149
-msgid ""
-"Click and move the mouse around to turn the picture into a chalk drawing."
+msgid "Click and move the mouse around to turn the picture into a chalk drawing."
 msgstr "לחצי והזיזי את העכבר להפיכת התמונה לציור גיר."
 
 #: ../../magic/src/blocks_chalk_drip.c:152
@@ -853,8 +873,7 @@ msgid "Fold"
 msgstr "כפל"
 
 #: ../../magic/src/fold.c:84
-msgid ""
-"Choose a background color and click to turn the corner of the page over."
+msgid "Choose a background color and click to turn the corner of the page over."
 msgstr "בחרי צבע רקע ולחצי כדי להפוך את פינת העמוד."
 
 #: ../../magic/src/glasstile.c:83
@@ -883,8 +902,7 @@ msgid "Kaleidoscope"
 msgstr "קליידוסקופ"
 
 #: ../../magic/src/kalidescope.c:83
-msgid ""
-"Click and drag the mouse to draw with symmetric brushes (a kaleidoscope)."
+msgid "Click and drag the mouse to draw with symmetric brushes (a kaleidoscope)."
 msgstr "לחצי וגררי את העכבר לציור במברשות סימטריות (קליידוסקופ)."
 
 #: ../../magic/src/light.c:84
@@ -924,8 +942,7 @@ msgid "Mosaic"
 msgstr "פסיפס"
 
 #: ../../magic/src/mosaic.c:73
-msgid ""
-"Click and move the mouse to add a mosaic effect to parts of your picture."
+msgid "Click and move the mouse to add a mosaic effect to parts of your picture."
 msgstr "לחצי והזיזי את העכבר להוספת מראה פסיפס לתמונה."
 
 #: ../../magic/src/mosaic.c:74
@@ -985,16 +1002,13 @@ msgid "Click to cover your picture with rain drops."
 msgstr "לחצי לכיסוי התמונה בטיפות גשם."
 
 #: ../../magic/src/realrainbow.c:70
-#, fuzzy
 #| msgid "Rainbow"
 msgid "Real Rainbow"
 msgstr "קשת בענן"
 
 #: ../../magic/src/realrainbow.c:75
-msgid ""
-"Click where you want your rainbow to start, drag to where you want it to "
-"end, and then let go to draw a rainbow."
-msgstr ""
+msgid "Click where you want your rainbow to start, drag to where you want it to end, and then let go to draw a rainbow."
+msgstr "לחץ במקום שבו תרצה להתחיל את קשת, גרור למקום שבו אתה רוצה את זה עד הסוף, ולאחר מכן אפשר ללכת צייר הקשת"
 
 #: ../../magic/src/ripples.c:81
 msgid "Ripples"
@@ -1101,20 +1115,16 @@ msgid "String 'V'"
 msgstr "מחרוזת 'V'"
 
 #: ../../magic/src/string.c:135
-msgid ""
-"Click and drag to draw string art. Drag top-bottom to draw less or more "
-"lines, to the center to approach the lines to center."
-msgstr ""
+msgid "Click and drag to draw string art. Drag top-bottom to draw less or more lines, to the center to approach the lines to center."
+msgstr "לחץ וגרור כדי לצייר את המחרוזת האמנות. גרור העליונה התחתונה לצייר קווים פחות או יותר, למרכז לפנות השורות למרכז ."
 
 #: ../../magic/src/string.c:138
 msgid "Click and drag to draw string art aligned to the edges."
 msgstr "לחצי וגררי לציור מסילת רכבת על התמונה."
 
 #: ../../magic/src/string.c:141
-msgid ""
-"Draw string art with free angles. Click and drag a V: drag to the vertex, "
-"drag backwards a little to the start, then drag to the end."
-msgstr ""
+msgid "Draw string art with free angles. Click and drag a V: drag to the vertex, drag backwards a little to the start, then drag to the end."
+msgstr "צייר מחרוזת אמנות עם חופשי זווית  לחץ וגרור \"V:\"  גרור את קדקוד, לגרור אחורה קצת על התחל, ולאחר מכן גרור עד הסוף "
 
 #: ../../magic/src/tint.c:71
 msgid "Tint"
@@ -1125,8 +1135,7 @@ msgid "Color & White"
 msgstr "צבע ולבן"
 
 #: ../../magic/src/tint.c:75
-msgid ""
-"Click and move the mouse around to change the color of parts of your picture."
+msgid "Click and move the mouse around to change the color of parts of your picture."
 msgstr "לחצי והזיזי את העכבר לשינוי הצבע של חלקים מהתמונה."
 
 #: ../../magic/src/tint.c:76
@@ -1134,9 +1143,7 @@ msgid "Click to change the color of your entire picture."
 msgstr "לחצי לשינוי הצבע של כל התמונה."
 
 #: ../../magic/src/tint.c:77
-msgid ""
-"Click and move the mouse around to turn parts of your picture into white and "
-"a color you choose."
+msgid "Click and move the mouse around to turn parts of your picture into white and a color you choose."
 msgstr "לחצי והזיזי את העכבר כדי להפוך את התמונה לסרט מצויר."
 
 #: ../../magic/src/tint.c:78
@@ -1168,22 +1175,12 @@ msgid "Wavelets"
 msgstr "גלים"
 
 #: ../../magic/src/waves.c:83
-msgid ""
-"Click to make the picture horizontally wavy. Click toward the top for "
-"shorter waves, the bottom for taller waves, the left for small waves, and "
-"the right for long waves."
-msgstr ""
-"לחצי ליצירת תמונה גלית. לחצי כלפי מעלה לגלים יותר קצרים, כלפי מטה לגלים יותר "
-"גבוהים, שמאלה לגלים קטנים וימינה לגלים ארוכים."
+msgid "Click to make the picture horizontally wavy. Click toward the top for shorter waves, the bottom for taller waves, the left for small waves, and the right for long waves."
+msgstr "לחצי ליצירת תמונה גלית. לחצי כלפי מעלה לגלים יותר קצרים, כלפי מטה לגלים יותר גבוהים, שמאלה לגלים קטנים וימינה לגלים ארוכים."
 
 #: ../../magic/src/waves.c:84
-msgid ""
-"Click to make the picture vertically wavy. Click toward the top for shorter "
-"waves, the bottom for taller waves, the left for small waves, and the right "
-"for long waves."
-msgstr ""
-"לחצי ליצירת תמונה גלית. לחצי כלפי מעלה לגלים יותר קצרים, כלפי מטה לגלים יותר "
-"גבוהים, שמאלה לגלים קטנים וימינה לגלים ארוכים."
+msgid "Click to make the picture vertically wavy. Click toward the top for shorter waves, the bottom for taller waves, the left for small waves, and the right for long waves."
+msgstr "לחצי ליצירת תמונה גלית. לחצי כלפי מעלה לגלים יותר קצרים, כלפי מטה לגלים יותר גבוהים, שמאלה לגלים קטנים וימינה לגלים ארוכים."
 
 #~ msgid "Alien"
 #~ msgstr "חיזר"
@@ -1205,29 +1202,21 @@ msgstr ""
 #~| msgid "Click and drag to shift your picture around on the canvas."
 #~ msgid "Click the part of your picture where would you like a puzzle."
 #~ msgstr "לחצי וגררי להזזת התמונה על בד הציור."
-
 #, fuzzy
 #~ msgid "Click to make a puzzle in fullscreen mode."
 #~ msgstr "לחצי ליצירת תמונת מראה."
-
 #~ msgid "Threshold"
 #~ msgstr "סף"
-
 #~ msgid "Click and move the mouse to add noise to the image."
 #~ msgstr "לחצי והזיזי את העכבר להוספת רעש לתמונה."
-
 #~ msgid "Click to add noise to the entire image."
 #~ msgstr ".לחצי להוספת רעש לכל התמונה"
-
 #~ msgid "Click and move the mouse to trace the edges of objects in the image."
 #~ msgstr "לחצי והזיזי את העכבר לאיתור הקצוות של עצם או דמות."
-
 #~ msgid "Click to trace the edges of objects in the image."
 #~ msgstr "לחצי לאיתור הקצוות של עצם או דמות."
-
 #~ msgid "Click and move the mouse to sharpen the image."
 #~ msgstr "לחצי והזיזי את העכבר לחידוד התמונה."
-
 #~ msgid "Click to add snow to the entire image."
 #~ msgstr "לחצי להוספת שלג לכל התמונה."
 
@@ -1237,7 +1226,6 @@ msgstr ""
 #~ "white regions."
 #~ msgstr ""
 #~ "לחצי והזיזי את העכבר לקביעת סף לתמונה, והפיכתה לצבע טהור ואזורים לבנים."
-
 #~ msgid "Trace Contour"
 #~ msgstr "קוי מתאר"
 
@@ -1252,40 +1240,30 @@ msgstr ""
 #, fuzzy
 #~ msgid "Blur All"
 #~ msgstr "טשטוש"
-
 #~ msgid "Click and move to fade the colors."
 #~ msgstr "עליך ללחוץ ולהזיז כדי לעמעם את הצבעים."
-
 #~ msgid "Click and move to darken the colors."
 #~ msgstr "עליך ללחוץ ולהזיז כדי להשחיר את הצבעים."
-
 #~ msgid "Sparkles"
 #~ msgstr "ניצוצות"
-
 #~ msgid "You now have a blank sheet to draw on!"
 #~ msgstr "עכשיו יש לך לוח ריק לצייר עליו!"
 
 #, fuzzy
 #~ msgid "Start a new picture?"
 #~ msgstr "האם למחוק תמונה זו?"
-
 #~ msgid "Click and move to draw sparkles."
 #~ msgstr "עליך ללחוץ ולהזיז כדי לצייר ניצוצות."
-
 #~ msgid "Starting a new picture will erase the current one!"
 #~ msgstr "התחלת תמונה חדשה תמחק את התמונה הנוכחית!"
-
 #~ msgid "That’s OK!"
 #~ msgstr "זה בסדר!"
-
 #~ msgid "Never mind!"
 #~ msgstr "לא משנה!"
-
 #~ msgid "jq"
 #~ msgstr "jq"
-
 #~ msgid "JQ"
 #~ msgstr "JQ"
-
 #~ msgid "Save over the older version of this picture?"
 #~ msgstr "האם לשמור במקום הציור הקודם?"
+
