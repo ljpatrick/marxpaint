@@ -8,7 +8,7 @@ http://www.tuxpaint.org/
 
 $Id$
 
-2009.May.8 (0.9.21)
+2009.May.12 (0.9.21)
   * New Starters:
     -------------
     * Silver Frame
@@ -150,26 +150,29 @@ $Id$
     * Arabic translation
       Tilo <Drfortilo@gmail.com>
 
-    * Basque
+    * Basque translation
       Juan Irigoien <juanirigoien@gmail.com>
 
-    * Brazilian Portuguese
+    * Brazilian Portuguese translation
       Frederico Goncalves Guimaraes <frederico@teia.bio.br>
 
     * Catalan translation
       Pere Pujal i Carabantes <pere@fornol.no-ip.org>
 
-    * Chinese (Simplified)
+    * Chinese (Simplified) translation
       Huang Zuzhen <zuzhenhuang@vip.sina.com>
 
-    * Chinese (Traditional)
+    * Chinese (Traditional) translation
       Song Huang <songhuang@users.sourceforge.net>
 
     * Danish translation
       Joe Dalton <joedalton2@yahoo.dk>
 
-    * Dutch
+    * Dutch translation
       Bert Saal <bertsaal@gmail.com>
+
+    * Estonian translation
+      Henrik Pihl <henrik@saarlane.ee>
 
     * French translation
       Jacques Chion <Jacques.Chion@wanadoo.fr>
@@ -193,22 +196,22 @@ $Id$
     * Italian translation
       Simona Riva <simona.riva@tiscali.it>
 
-    * Portuguese
+    * Portuguese translation
       Sergio Marques <smarquespt@gmail.com>
 
-    * Romanian
+    * Romanian translation
       Sorin Paliga <sorin.paliga@gmail.com>
 
-    * Russian
+    * Russian translation
       Nikolay Parukhin <parukhin@gmail.com>
 
-    * Slovak
+    * Slovak translation
       Jaroslav Rynik <jrynik@yahoo.co.uk>
 
-    * Swedish
+    * Swedish translation
       Daniel Nylander <po@danielnylander.se>
 
-    * Tamil
+    * Tamil translation
       Ravishankar Ayyakkannu <ravishankar.ayyakkannu@gmail.com>
 
     * Zapotec (Miahuatlan dialect) name and locale code correction
