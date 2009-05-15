@@ -298,12 +298,12 @@ msgstr ""
 #. Title of tool selector (buttons down the left)
 #: ../titles.h:41
 msgid "Tools"
-msgstr ""
+msgstr "T7elksten"
 
 #. Title of color palette (buttons across the bottom)
 #: ../titles.h:44
 msgid "Colors"
-msgstr ""
+msgstr "ts̓kenélqwes"
 
 #. Title of brush selector (buttons down the right for paint and line tools)
 #: ../titles.h:47
@@ -435,7 +435,7 @@ msgstr ""
 #: ../tools.h:110
 #, fuzzy
 msgid "Undo!"
-msgstr "tswéxwens"
+msgstr "Tswéxwens"
 
 #. Response to 'redo' action
 #: ../tools.h:113
@@ -602,7 +602,7 @@ msgstr ""
 #. Wait while Text tool finishes loading fonts
 #: ../tuxpaint.c:2494
 msgid "Please wait…"
-msgstr ""
+msgstr "Tsk̓lem…"
 
 #: ../tuxpaint.c:7196
 msgid "Pick a color."
@@ -944,7 +944,7 @@ msgstr ""
 
 #: ../../magic/src/noise.c:63
 msgid "Noise"
-msgstr ""
+msgstr "P̓ewt"
 
 #: ../../magic/src/noise.c:66
 msgid "Click and move the mouse to add noise to parts of your picture."
@@ -974,7 +974,7 @@ msgstr ""
 #, fuzzy
 #| msgid "Rainbow"
 msgid "Rain"
-msgstr "Sk̓úlenst"
+msgstr "Skllékstem"
 
 #: ../../magic/src/rain.c:68
 msgid "Click to place a rain drop onto your picture."
@@ -998,7 +998,7 @@ msgstr ""
 
 #: ../../magic/src/ripples.c:81
 msgid "Ripples"
-msgstr ""
+msgstr "n7ikw"
 
 #: ../../magic/src/ripples.c:87
 msgid "Click to make ripples appear over your picture."
@@ -1022,7 +1022,7 @@ msgstr ""
 
 #: ../../magic/src/sharpen.c:73
 msgid "Edges"
-msgstr ""
+msgstr "Sk̓men̓st"
 
 #: ../../magic/src/sharpen.c:74
 msgid "Sharpen"
