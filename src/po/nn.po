@@ -6,14 +6,14 @@ msgid ""
 msgstr ""
 "Project-Id-Version: nn\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-04-06 04:05-0700\n"
-"PO-Revision-Date: 2009-01-01 01:17+0100\n"
+"POT-Creation-Date: 2009-05-17 20:03+0200\n"
+"PO-Revision-Date: 2009-05-17 20:20+0200\n"
 "Last-Translator: Karl Ove Hufthammer <karl@huftis.org>\n"
 "Language-Team: Norwegian Nynorsk <i18n-nn@lister.ping.uio.no>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 0.2\n"
+"X-Generator: Lokalize 0.3\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #. Response to Black (0, 0, 0) color selected
@@ -989,17 +989,18 @@ msgstr "Trykk for å sleppa ein regndrope på teikninga."
 msgid "Click to cover your picture with rain drops."
 msgstr "Trykk for å dekkja teikninga med regndropar."
 
-#: ../../magic/src/realrainbow.c:70
-#, fuzzy
+#: ../../magic/src/realrainbow.c:69
 #| msgid "Rainbow"
 msgid "Real Rainbow"
-msgstr "Regnboge"
+msgstr "Ekte regnboge"
 
-#: ../../magic/src/realrainbow.c:75
+#: ../../magic/src/realrainbow.c:74
 msgid ""
 "Click where you want your rainbow to start, drag to where you want it to "
 "end, and then let go to draw a rainbow."
 msgstr ""
+"Trykk der du vil starta regnbogen, flytt til der du vil han skal enda, og "
+"slepp så museknappen."
 
 #: ../../magic/src/ripples.c:81
 msgid "Ripples"
@@ -1099,33 +1100,37 @@ msgstr "Trykk for å dryssa snøflak på teikninga."
 
 #: ../../magic/src/string.c:121
 msgid "String edges"
-msgstr ""
+msgstr "Trådkantar"
 
 #: ../../magic/src/string.c:124
 msgid "String corner"
-msgstr ""
+msgstr "Trådhjørne"
 
 #: ../../magic/src/string.c:127
 msgid "String 'V'"
-msgstr ""
+msgstr "Tråd-V"
 
 #: ../../magic/src/string.c:135
 msgid ""
 "Click and drag to draw string art. Drag top-bottom to draw less or more "
 "lines, to the center to approach the lines to center."
 msgstr ""
+"Hald inne knappen og flytt rundt for å teikna trådkunst. Dra nedover eller "
+"oppover for å teikna fleire eller færre trådar, eller mot midten for å "
+"flytta trådane mot midten."
 
 #: ../../magic/src/string.c:138
-#, fuzzy
 #| msgid "Click and drag to draw train track rails on your picture."
 msgid "Click and drag to draw string art aligned to the edges."
-msgstr "Hald inne knappen og flytt rundt for å teikna jarnbanelinjer."
+msgstr "Hald inne knappen og flytt rundt for å teikna trådhjørne."
 
 #: ../../magic/src/string.c:141
 msgid ""
 "Draw string art with free angles. Click and drag a V: drag to the vertex, "
 "drag backwards a little to the start, then drag to the end."
 msgstr ""
+"Teikn trådkunst med valfrie vinklar. Trykk og dra ut eine hjørnet, dra "
+"bakover lite grann, og dra til slutt V-en ferdig."
 
 #: ../../magic/src/tint.c:71
 msgid "Tint"
