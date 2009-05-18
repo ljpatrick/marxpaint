@@ -14,10 +14,10 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Tuxpaint cvs 2009-01-01\n"
+"Project-Id-Version: Tuxpaint cvs 2009-05-18\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2009-04-06 04:05-0700\n"
-"PO-Revision-Date: 2009-01-01 23:26+0100\n"
+"PO-Revision-Date: 2009-05-18 21:57+0200\n"
 "Last-Translator: Pere Pujal i Carabantes <pere@fornol.no-ip.org>\n"
 "Language-Team: Català <linux-ca@chanae.alphanet.ch>\n"
 "MIME-Version: 1.0\n"
@@ -979,7 +979,7 @@ msgstr "Feu clic i arrossegueu per dibuixar una via de tren."
 
 #: ../../magic/src/rainbow.c:107
 msgid "Rainbow"
-msgstr "Arc de Sant Martí"
+msgstr "Colors de l'arc"
 
 #: ../../magic/src/rainbow.c:114
 msgid "You can draw in rainbow colors!"
@@ -998,16 +998,15 @@ msgid "Click to cover your picture with rain drops."
 msgstr "Feu clic per cobrir de pluja la imatge."
 
 #: ../../magic/src/realrainbow.c:70
-#, fuzzy
 #| msgid "Rainbow"
 msgid "Real Rainbow"
-msgstr "Arc de Sant Martí"
+msgstr "Arc iris"
 
 #: ../../magic/src/realrainbow.c:75
 msgid ""
 "Click where you want your rainbow to start, drag to where you want it to "
 "end, and then let go to draw a rainbow."
-msgstr ""
+msgstr "Feu clic on comença l'arc, arrossegueu fins on s´acaba, deixeu anar per dibuixar-lo."
 
 #: ../../magic/src/ripples.c:81
 msgid "Ripples"
@@ -1105,33 +1104,32 @@ msgstr "Feu clic per afegir flocs de neu al dibuix."
 
 #: ../../magic/src/string.c:121
 msgid "String edges"
-msgstr ""
+msgstr "Fils vores"
 
 #: ../../magic/src/string.c:124
 msgid "String corner"
-msgstr ""
+msgstr "Fils recte"
 
 #: ../../magic/src/string.c:127
 msgid "String 'V'"
-msgstr ""
+msgstr "Fils angle"
 
 #: ../../magic/src/string.c:135
 msgid ""
 "Click and drag to draw string art. Drag top-bottom to draw less or more "
 "lines, to the center to approach the lines to center."
-msgstr ""
+msgstr "Cliqueu i arrossegueu per fer un dibuix amb fils. Arrossegueu amunt i avall per tenir més o menys fils, acosteu la busca al centre per que els fils s'hi apropin."
 
 #: ../../magic/src/string.c:138
-#, fuzzy
 #| msgid "Click and drag to draw train track rails on your picture."
 msgid "Click and drag to draw string art aligned to the edges."
-msgstr "Feu clic i arrossegueu per dibuixar una via de tren."
+msgstr "Feu clic i arrossegueu per fer un dibuix de fils alineat amb les vores."
 
 #: ../../magic/src/string.c:141
 msgid ""
 "Draw string art with free angles. Click and drag a V: drag to the vertex, "
 "drag backwards a little to the start, then drag to the end."
-msgstr ""
+msgstr "Fa un dibuix de fils amb angles lliures. Feu clic i arrossegueu com si dibuixessiu una V: Arrossegueu fins el vertex, una mica endarrera cap el començament, llavors fins el destí."
 
 #: ../../magic/src/tint.c:71
 msgid "Tint"
