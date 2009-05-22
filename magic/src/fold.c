@@ -164,6 +164,8 @@ void fold_draw(magic_api * api, int which,
 
   for (fold_shadow_value = 0; fold_shadow_value < 40; fold_shadow_value+=1)
     {
+      if (fold_shadow_value*left_step_x > x || fold_shadow_value*right_step_y > y) break;
+
       dist_x=fold_shadow_value*(right_step_x+left_step_x);
       dist_y=fold_shadow_value*(right_step_y+left_step_y);
       api->line((void *)api, which, canvas, temp, left_arm_x+fold_shadow_value*right_step_x, fold_shadow_value*right_step_y, fold_shadow_value*left_step_x, right_arm_y+fold_shadow_value*left_step_y, 1, fold_shadow);
