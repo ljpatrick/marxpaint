@@ -488,7 +488,6 @@ msgstr "Bien... ¡Sigamos dibujando en esta imagen!"
 msgid "Do you really want to quit?"
 msgstr "¿Realmente quieres salir?"
 
-#| msgid "Yes, I'm done!"
 #. Quit prompt positive response (quit)
 #: ../tuxpaint.c:1858
 msgid "Yes, I’m done!"
@@ -510,7 +509,6 @@ msgstr "¡Si te vas perderás tu imagen! ¿Quieres guardarla?"
 msgid "Yes, save it!"
 msgstr "¡Sí, guárdala!"
 
-#| msgid "No, don't bother saving!"
 #: ../tuxpaint.c:1867
 #: ../tuxpaint.c:1872
 msgid "No, don’t bother saving!"
@@ -554,7 +552,6 @@ msgstr "¡Sí, imprimirla!"
 msgid "Your picture has been printed!"
 msgstr "¡Tu imagen ha sido impresa!"
 
-#| msgid "Your picture has been printed!"
 #. We got an error printing
 #: ../tuxpaint.c:1895
 msgid "Sorry! Your picture could not be printed!"
@@ -574,7 +571,6 @@ msgstr "¿Borrar esta imagen?"
 msgid "Yes, erase it!"
 msgstr "¡Sí, borrarla!"
 
-#| msgid "No, don't erase it!"
 #: ../tuxpaint.c:1904
 msgid "No, don’t erase it!"
 msgstr "¡No, no borrarla!"
@@ -679,7 +675,6 @@ msgstr "Programa de dibujo"
 msgid "Tux Paint"
 msgstr "Tux Paint"
 
-#| msgid "Shift"
 #: ../../magic/src/alien.c:64
 msgid "Color Shift"
 msgstr "Desplazar color"
@@ -817,7 +812,6 @@ msgstr "Haz clic en la imagen para rellenar ese área con color."
 msgid "Fisheye"
 msgstr "Ojo de pez"
 
-#| msgid "Click and drag to shift your picture around on the canvas."
 #. Needs better name
 #: ../../magic/src/fisheye.c:79
 msgid "Click on part of your picture to create a fisheye effect."
@@ -923,7 +917,6 @@ msgstr "Haz clic para agregar un efecto de mosaico a toda la imagen."
 msgid "Negative"
 msgstr "Negativo"
 
-#| msgid "Click and move the mouse around to draw a negative."
 #: ../../magic/src/negative.c:80
 msgid "Click and move the mouse around to make your painting negative."
 msgstr "Haz clic y arrastra el ratón para ver el negativo de partes de la imagen."
@@ -972,7 +965,6 @@ msgstr "Haz clic para colocar una gota de lluvia sobre la imagen."
 msgid "Click to cover your picture with rain drops."
 msgstr "Haz clic para cubrir la imagen con gotas de lluvia."
 
-#| msgid "Rainbow"
 #: ../../magic/src/realrainbow.c:70
 msgid "Real Rainbow"
 msgstr "Arcoiris Real"
