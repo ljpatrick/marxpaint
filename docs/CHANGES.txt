@@ -8,7 +8,7 @@ http://www.tuxpaint.org/
 
 $Id$
 
-2009.May.12 (0.9.21)
+2009.May.21 (0.9.21)
   * New Starters:
     -------------
     * Silver Frame
@@ -207,6 +207,9 @@ $Id$
 
     * Slovak translation
       Jaroslav Rynik <jrynik@yahoo.co.uk>
+
+    * Spanish translation
+      Gabriel Gazzan <gabcorreo@gmail.com>
 
     * Swedish translation
       Daniel Nylander <po@danielnylander.se>
