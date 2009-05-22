@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-04-06 04:05-0700\n"
+"POT-Creation-Date: 2009-05-21 17:41-0700\n"
 "PO-Revision-Date: 2007-04-26 15:45+0200\n"
 "Last-Translator: Joana Portia Antwi-Danso <portnass2003@yahoo.com>\n"
 "MIME-Version: 1.0\n"
@@ -1019,13 +1019,13 @@ msgstr "Mia akura no so ma mfoni no baako mmɛka ho."
 msgid "Click to cover your picture with rain drops."
 msgstr "Mia akura no so ma mfoni no baako mmɛka ho."
 
-#: ../../magic/src/realrainbow.c:70
+#: ../../magic/src/realrainbow.c:69
 #, fuzzy
 #| msgid "Rainbow"
 msgid "Real Rainbow"
 msgstr "Nyankontɔn"
 
-#: ../../magic/src/realrainbow.c:75
+#: ../../magic/src/realrainbow.c:74
 msgid ""
 "Click where you want your rainbow to start, drag to where you want it to "
 "end, and then let go to draw a rainbow."

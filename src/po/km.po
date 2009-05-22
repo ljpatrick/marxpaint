@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-04-06 04:05-0700\n"
+"POT-Creation-Date: 2009-05-21 17:41-0700\n"
 "PO-Revision-Date: 2008-05-30 15:41+0700\n"
 "Last-Translator: Khoem Sokhem <khoemsokhem@khmeros.info>\n"
 "Language-Team: Khmer <support@khmeros.info>\n"
@@ -1010,13 +1010,13 @@ msgstr "ចុច ដើម្បី​ចាំង​ឆ្លុះ​រូ�
 msgid "Click to cover your picture with rain drops."
 msgstr "ចុច ដើម្បី​ចាំង​ឆ្លុះ​រូបភាព ។"
 
-#: ../../magic/src/realrainbow.c:70
+#: ../../magic/src/realrainbow.c:69
 #, fuzzy
 #| msgid "Rainbow"
 msgid "Real Rainbow"
 msgstr "ឥន្ទធនូ"
 
-#: ../../magic/src/realrainbow.c:75
+#: ../../magic/src/realrainbow.c:74
 msgid ""
 "Click where you want your rainbow to start, drag to where you want it to "
 "end, and then let go to draw a rainbow."

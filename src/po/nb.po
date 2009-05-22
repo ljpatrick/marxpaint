@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: nb\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-05-17 20:03+0200\n"
+"POT-Creation-Date: 2009-05-21 17:41-0700\n"
 "PO-Revision-Date: 2009-05-17 20:34+0200\n"
 "Last-Translator: Karl Ove Hufthammer <karl@huftis.org>\n"
 "Language-Team: Norwegian Nynorsk <i18n-nn@lister.ping.uio.no>\n"
@@ -500,7 +500,6 @@ msgstr "Er du sikker på at du vil avslutte?"
 
 #. Quit prompt positive response (quit)
 #: ../tuxpaint.c:1858
-#| msgid "Yes, I'm done!"
 msgid "Yes, I’m done!"
 msgstr "Ja, jeg er ferdig!"
 
@@ -519,7 +518,6 @@ msgid "Yes, save it!"
 msgstr "Ja, lagra den!"
 
 #: ../tuxpaint.c:1867 ../tuxpaint.c:1872
-#| msgid "No, don't bother saving!"
 msgid "No, don’t bother saving!"
 msgstr "Nei, ikke lagre den!"
 
@@ -560,7 +558,6 @@ msgstr "Tegningen er skrevet ut."
 
 #. We got an error printing
 #: ../tuxpaint.c:1895
-#| msgid "Your picture has been printed!"
 msgid "Sorry! Your picture could not be printed!"
 msgstr "Klarte ikke skrive ut tegningen."
 
@@ -579,7 +576,6 @@ msgid "Yes, erase it!"
 msgstr "Ja, slett den!"
 
 #: ../tuxpaint.c:1904
-#| msgid "No, don't erase it!"
 msgid "No, don’t erase it!"
 msgstr "Nei, ikke slett den!"
 
@@ -687,7 +683,6 @@ msgid "Tux Paint"
 msgstr "Tux Paint"
 
 #: ../../magic/src/alien.c:64
-#| msgid "Shift"
 msgid "Color Shift"
 msgstr "Fargeskift"
 
@@ -833,7 +828,6 @@ msgstr "Fiskeøye"
 
 #. Needs better name
 #: ../../magic/src/fisheye.c:79
-#| msgid "Click and drag to shift your picture around on the canvas."
 msgid "Click on part of your picture to create a fisheye effect."
 msgstr "Trykk på deler av tegningen for å se den gjennom en fiskeøyelinse."
 
@@ -949,7 +943,6 @@ msgid "Negative"
 msgstr "Negativ"
 
 #: ../../magic/src/negative.c:80
-#| msgid "Click and move the mouse around to draw a negative."
 msgid "Click and move the mouse around to make your painting negative."
 msgstr "Hold inne knappen og flytt rundt for bytte om på fargene."
 
@@ -998,7 +991,6 @@ msgid "Click to cover your picture with rain drops."
 msgstr "Trykk for å dekke tegnigen med regndråper."
 
 #: ../../magic/src/realrainbow.c:69
-#| msgid "Rainbow"
 msgid "Real Rainbow"
 msgstr "Ekte regnbue"
 
@@ -1198,9 +1190,8 @@ msgid ""
 "the right for long waves."
 msgstr ""
 "Trykk for å gjøre tegningen bølgete bortover. Trykk oppe for å lage lave "
-"bølger, nede "
-"for å lage høye bølger, til venstre for å lage korte bølger og til høyre for "
-"å lage lange bølger."
+"bølger, nede for å lage høye bølger, til venstre for å lage korte bølger og "
+"til høyre for å lage lange bølger."
 
 #: ../../magic/src/waves.c:84
 msgid ""
@@ -1209,9 +1200,8 @@ msgid ""
 "for long waves."
 msgstr ""
 "Trykk for å gjøre tegningen bølgete oppover. Trykk oppe for å lage lave "
-"bølger, nede "
-"for å lage høye bølger, til venstre for å lage korte bølger og til høyre for "
-"å lage lange bølger."
+"bølger, nede for å lage høye bølger, til venstre for å lage korte bølger og "
+"til høyre for å lage lange bølger."
 
 #, fuzzy
 #~ msgid ""

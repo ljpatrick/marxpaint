@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint 0.9.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-04-06 04:05-0700\n"
+"POT-Creation-Date: 2009-05-21 17:41-0700\n"
 "PO-Revision-Date: 2004-12-04 15:45-0800\n"
 "Last-Translator: Alberto Escudero <aep@it46.se>\n"
 "Language-Team: Swahili\n"
@@ -1026,13 +1026,13 @@ msgstr "Bofya kuona picha kwenye kioo."
 msgid "Click to cover your picture with rain drops."
 msgstr "Bofya kuona picha kwenye kioo."
 
-#: ../../magic/src/realrainbow.c:70
+#: ../../magic/src/realrainbow.c:69
 #, fuzzy
 #| msgid "Rainbow"
 msgid "Real Rainbow"
 msgstr "Upinde wa mvua"
 
-#: ../../magic/src/realrainbow.c:75
+#: ../../magic/src/realrainbow.c:74
 msgid ""
 "Click where you want your rainbow to start, drag to where you want it to "
 "end, and then let go to draw a rainbow."

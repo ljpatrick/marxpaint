@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: nn\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-05-17 20:03+0200\n"
+"POT-Creation-Date: 2009-05-21 17:41-0700\n"
 "PO-Revision-Date: 2009-05-17 20:20+0200\n"
 "Last-Translator: Karl Ove Hufthammer <karl@huftis.org>\n"
 "Language-Team: Norwegian Nynorsk <i18n-nn@lister.ping.uio.no>\n"
@@ -990,7 +990,6 @@ msgid "Click to cover your picture with rain drops."
 msgstr "Trykk for å dekkja teikninga med regndropar."
 
 #: ../../magic/src/realrainbow.c:69
-#| msgid "Rainbow"
 msgid "Real Rainbow"
 msgstr "Ekte regnboge"
 
@@ -1120,7 +1119,6 @@ msgstr ""
 "flytta trådane mot midten."
 
 #: ../../magic/src/string.c:138
-#| msgid "Click and drag to draw train track rails on your picture."
 msgid "Click and drag to draw string art aligned to the edges."
 msgstr "Hald inne knappen og flytt rundt for å teikna trådhjørne."
 

@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: af\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-04-06 04:05-0700\n"
+"POT-Creation-Date: 2009-05-21 17:41-0700\n"
 "PO-Revision-Date: 2008-06-19 13:24-0700\n"
 "Last-Translator: Samuel Murray (Groenkloof) <samuel@translate.org.za>\n"
 "Language-Team: \n"
@@ -1013,13 +1013,13 @@ msgstr "Klik om 'n spieëlbeeld te maak!"
 msgid "Click to cover your picture with rain drops."
 msgstr "Klik om 'n spieëlbeeld te maak!"
 
-#: ../../magic/src/realrainbow.c:70
+#: ../../magic/src/realrainbow.c:69
 #, fuzzy
 #| msgid "Rainbow"
 msgid "Real Rainbow"
 msgstr "Reënboog"
 
-#: ../../magic/src/realrainbow.c:75
+#: ../../magic/src/realrainbow.c:74
 msgid ""
 "Click where you want your rainbow to start, drag to where you want it to "
 "end, and then let go to draw a rainbow."

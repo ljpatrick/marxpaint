@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TuxPaint 0.9.2\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-04-06 04:05-0700\n"
+"POT-Creation-Date: 2009-05-21 17:41-0700\n"
 "PO-Revision-Date: 2007-08-05 19:22-0400\n"
 "Last-Translator: Ignacio Tike <itike17@yahoo.com>\n"
 "Language-Team: Español <ggabriel@internet.com.uy>\n"
@@ -1032,13 +1032,13 @@ msgstr "Haz clic para hacer una imagen espejo."
 msgid "Click to cover your picture with rain drops."
 msgstr "Haz clic para hacer una imagen espejo."
 
-#: ../../magic/src/realrainbow.c:70
+#: ../../magic/src/realrainbow.c:69
 #, fuzzy
 #| msgid "Rainbow"
 msgid "Real Rainbow"
 msgstr "Arcoiris"
 
-#: ../../magic/src/realrainbow.c:75
+#: ../../magic/src/realrainbow.c:74
 msgid ""
 "Click where you want your rainbow to start, drag to where you want it to "
 "end, and then let go to draw a rainbow."

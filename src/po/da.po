@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Tux Paint\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-04-06 04:05-0700\n"
+"POT-Creation-Date: 2009-05-21 17:41-0700\n"
 "PO-Revision-Date: 2009-05-08 22:30+0100\n"
 "Last-Translator: Joe Hansen <joedalton2@yahoo.dk>\n"
 "Language-Team: Danish <dansk@dansk-gruppen.dk>\n"
@@ -997,17 +997,17 @@ msgid "Click to cover your picture with rain drops."
 msgstr "Klik for at dække dit billede med regndråber."
 
 # Virkelig, reel, ægte
-#: ../../magic/src/realrainbow.c:70
+#: ../../magic/src/realrainbow.c:69
 msgid "Real Rainbow"
 msgstr "Ægte regnbue"
 
-#: ../../magic/src/realrainbow.c:75
+#: ../../magic/src/realrainbow.c:74
 msgid ""
 "Click where you want your rainbow to start, drag to where you want it to "
 "end, and then let go to draw a rainbow."
 msgstr ""
-"Klik hvor du ønsker at regnbuen skal starte, træk så til hvor den skal "
-"ende, og slip for at tegne en regnbue."
+"Klik hvor du ønsker at regnbuen skal starte, træk så til hvor den skal ende, "
+"og slip for at tegne en regnbue."
 
 # Ripple -> ring, bølge (i vand) 
 #: ../../magic/src/ripples.c:81
@@ -1124,8 +1124,8 @@ msgid ""
 "Click and drag to draw string art. Drag top-bottom to draw less or more "
 "lines, to the center to approach the lines to center."
 msgstr ""
-"Klik og træk for at tegne strengkunst. Træk top mod bund for at tegne "
-"færre eller flere linjer, mod midten for at nærme linjerne mod midten."
+"Klik og træk for at tegne strengkunst. Træk top mod bund for at tegne færre "
+"eller flere linjer, mod midten for at nærme linjerne mod midten."
 
 #: ../../magic/src/string.c:138
 msgid "Click and drag to draw string art aligned to the edges."
@@ -1136,8 +1136,8 @@ msgid ""
 "Draw string art with free angles. Click and drag a V: drag to the vertex, "
 "drag backwards a little to the start, then drag to the end."
 msgstr ""
-"Tegn strengkunst med frie vinkler. Klik og træk et V: Træk til spidsen, "
-"træk en smule tilbage til starten, og træk så til afslutningen."
+"Tegn strengkunst med frie vinkler. Klik og træk et V: Træk til spidsen, træk "
+"en smule tilbage til starten, og træk så til afslutningen."
 
 #: ../../magic/src/tint.c:71
 msgid "Tint"

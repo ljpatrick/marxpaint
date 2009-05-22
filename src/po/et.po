@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: et\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-04-06 04:05-0700\n"
+"POT-Creation-Date: 2009-05-21 17:41-0700\n"
 "PO-Revision-Date: 2009-05-11 17:56+0200\n"
 "Last-Translator: Henrik Pihl <henrik@saarlane.ee>\n"
 "Language-Team: Estonian <et@li.org>\n"
@@ -215,95 +215,80 @@ msgid "ZH_TW"
 msgstr "ZH_TW"
 
 #. Square shape tool (4 equally-lengthed sides at right angles)
-#: ../shapes.h:171
-#: ../shapes.h:172
+#: ../shapes.h:171 ../shapes.h:172
 msgid "Square"
 msgstr "Ruut"
 
 #. Rectangle shape tool (4 sides at right angles)
-#: ../shapes.h:175
-#: ../shapes.h:176
+#: ../shapes.h:175 ../shapes.h:176
 msgid "Rectangle"
 msgstr "Ristkülik"
 
 #. Circle shape tool (X radius and Y radius are the same)
-#: ../shapes.h:179
-#: ../shapes.h:180
+#: ../shapes.h:179 ../shapes.h:180
 msgid "Circle"
 msgstr "Ring"
 
 #. Ellipse shape tool (X radius and Y radius may differ)
-#: ../shapes.h:183
-#: ../shapes.h:184
+#: ../shapes.h:183 ../shapes.h:184
 msgid "Ellipse"
 msgstr "Ellips"
 
 #. Triangle shape tool (3 sides)
-#: ../shapes.h:187
-#: ../shapes.h:188
+#: ../shapes.h:187 ../shapes.h:188
 msgid "Triangle"
 msgstr "Kolmnurk"
 
 #. Pentagone shape tool (5 sides)
-#: ../shapes.h:191
-#: ../shapes.h:192
+#: ../shapes.h:191 ../shapes.h:192
 msgid "Pentagon"
 msgstr "Viisnurk"
 
 #. Rhombus shape tool (4 sides, not at right angles)
-#: ../shapes.h:195
-#: ../shapes.h:196
+#: ../shapes.h:195 ../shapes.h:196
 msgid "Rhombus"
 msgstr "Romb"
 
 #. Octagon shape tool (8 sides)
-#: ../shapes.h:199
-#: ../shapes.h:200
+#: ../shapes.h:199 ../shapes.h:200
 msgid "Octagon"
 msgstr "Kaheksanurk"
 
 #. Description of a square
-#: ../shapes.h:208
-#: ../shapes.h:209
+#: ../shapes.h:208 ../shapes.h:209
 msgid "A square is a rectangle with four equal sides."
 msgstr "Ruut on ristkülik nelja võrdse küljega."
 
 #. Description of a rectangle
-#: ../shapes.h:212
-#: ../shapes.h:213
+#: ../shapes.h:212 ../shapes.h:213
 msgid "A rectangle has four sides and four right angles."
 msgstr "Ristkülikul on neli külge ja neli täisnurka."
 
-#: ../shapes.h:217
-#: ../shapes.h:219
-msgid "A circle is a curve where all points have the same distance from the center."
+#: ../shapes.h:217 ../shapes.h:219
+msgid ""
+"A circle is a curve where all points have the same distance from the center."
 msgstr "Ring on kaar, kus kõik kaare punktid on keskelt ühel kaugusel."
 
 #. Description of an ellipse
-#: ../shapes.h:222
-#: ../shapes.h:223
+#: ../shapes.h:222 ../shapes.h:223
 msgid "An ellipse is a stretched circle."
 msgstr "Ellips on lapergune ring."
 
 #. Description of a triangle
-#: ../shapes.h:226
-#: ../shapes.h:227
+#: ../shapes.h:226 ../shapes.h:227
 msgid "A triangle has three sides."
 msgstr "Kolmnurgal on kolm külge."
 
 #. Description of a pentagon
-#: ../shapes.h:230
-#: ../shapes.h:231
+#: ../shapes.h:230 ../shapes.h:231
 msgid "A pentagon has five sides."
 msgstr "Viisnurgal on viis külge."
 
-#: ../shapes.h:235
-#: ../shapes.h:237
+#: ../shapes.h:235 ../shapes.h:237
 msgid "A rhombus has four equal sides, and opposite sides are parallel."
 msgstr "Rombil on neli võrdset külge ja vastasküljed on paralleelsed."
 
-#: ../shapes.h:241
-#: ../shapes.h:243
+#: ../shapes.h:241 ../shapes.h:243
 msgid "An octagon has eight equal sides."
 msgstr "Kaheksanurk omab kaheksat võrdse pikkusega külge."
 
@@ -334,8 +319,7 @@ msgstr "Templid"
 
 #. Title of shape selector (buttons down the right for shapes tool)
 #. Shape creation tool (square, circle, etc.)
-#: ../titles.h:56
-#: ../tools.h:54
+#: ../titles.h:56 ../tools.h:54
 msgid "Shapes"
 msgstr "Kujundid"
 
@@ -346,8 +330,7 @@ msgstr "Tähed"
 
 #. Title of magic tool selector (buttons down the right for magic (effect plugin) tool)
 #. "Magic" effects tools (blur, flip image, etc.)
-#: ../titles.h:62
-#: ../tools.h:60
+#: ../titles.h:62 ../tools.h:60
 msgid "Magic"
 msgstr "Maagia"
 
@@ -394,8 +377,7 @@ msgstr "Uus"
 #. Open a saved picture
 #. buttons for the file open dialog
 #. Open dialog: 'Open' button, to load the selected picture
-#: ../tools.h:75
-#: ../tuxpaint.c:7973
+#: ../tools.h:75 ../tuxpaint.c:7973
 msgid "Open"
 msgstr "Ava"
 
@@ -431,8 +413,13 @@ msgstr "Klõpsa pildil joone joonistamiseks. Lõpetamiseks vabasta hiire nupp."
 
 #. Shape tool instructions
 #: ../tools.h:101
-msgid "Pick a shape. Click to pick the center, drag, then let go when it is the size you want. Move around to rotate it, and click to draw it."
-msgstr "Vali kujund. Klõpsa, et valida keskkoht, lohista, siis lase paraja suuruse juures nupp lahti. Liiguta hiirt ringi, et pöörata kujund ümber, ning siis klõpsa uuesti lõpetamiseks."
+msgid ""
+"Pick a shape. Click to pick the center, drag, then let go when it is the "
+"size you want. Move around to rotate it, and click to draw it."
+msgstr ""
+"Vali kujund. Klõpsa, et valida keskkoht, lohista, siis lase paraja suuruse "
+"juures nupp lahti. Liiguta hiirt ringi, et pöörata kujund ümber, ning siis "
+"klõpsa uuesti lõpetamiseks."
 
 #. Text tool instructions
 #: ../tools.h:104
@@ -517,8 +504,7 @@ msgid "Yes, I’m done!"
 msgstr "Jah, ma olen lõpetanud!"
 
 #. Quit prompt negative response (don't quit)
-#: ../tuxpaint.c:1861
-#: ../tuxpaint.c:1888
+#: ../tuxpaint.c:1861 ../tuxpaint.c:1888
 msgid "No, take me back!"
 msgstr "Ei, vii mind tagasi!"
 
@@ -527,13 +513,11 @@ msgstr "Ei, vii mind tagasi!"
 msgid "If you quit, you’ll lose your picture! Save it?"
 msgstr "Kui sa praegu väljud, kaotad sa oma pildi ära! Kas salvestame?"
 
-#: ../tuxpaint.c:1866
-#: ../tuxpaint.c:1871
+#: ../tuxpaint.c:1866 ../tuxpaint.c:1871
 msgid "Yes, save it!"
 msgstr "Jah, salvesta!"
 
-#: ../tuxpaint.c:1867
-#: ../tuxpaint.c:1872
+#: ../tuxpaint.c:1867 ../tuxpaint.c:1872
 #, fuzzy
 #| msgid "No, don't bother saving!"
 msgid "No, don’t bother saving!"
@@ -550,10 +534,7 @@ msgid "Can’t open that picture!"
 msgstr "Selle pildi avamine ei ole võimalik!"
 
 #. Generic dialog dismissal
-#: ../tuxpaint.c:1878
-#: ../tuxpaint.c:1883
-#: ../tuxpaint.c:1892
-#: ../tuxpaint.c:1899
+#: ../tuxpaint.c:1878 ../tuxpaint.c:1883 ../tuxpaint.c:1892 ../tuxpaint.c:1899
 #: ../tuxpaint.c:1908
 msgid "OK"
 msgstr "Selge"
@@ -691,8 +672,7 @@ msgstr "Vali pilt ja klõpsa nupul  \"Ava\""
 
 #. Let user choose images:
 #. Instructions for Slideshow file dialog (FIXME: Make a #define)
-#: ../tuxpaint.c:14349
-#: ../tuxpaint.c:14663
+#: ../tuxpaint.c:14349 ../tuxpaint.c:14663
 msgid "Choose the pictures you want, then click “Play”."
 msgstr "Vali pilt ja klõpsa nupul  \"Esita\""
 
@@ -741,7 +721,8 @@ msgid "Click and move the mouse around to make the picture blocky."
 msgstr "Tee klõps ja liiguta hiirt pildi ruudulisemaks muutmiseks."
 
 #: ../../magic/src/blocks_chalk_drip.c:149
-msgid "Click and move the mouse around to turn the picture into a chalk drawing."
+msgid ""
+"Click and move the mouse around to turn the picture into a chalk drawing."
 msgstr "Tee klõps ja liiguta hiirt, et muuta pilt kriidijoonistuse sarnaseks."
 
 #: ../../magic/src/blocks_chalk_drip.c:152
@@ -885,7 +866,8 @@ msgstr "Voldi"
 
 #: ../../magic/src/fold.c:84
 #, fuzzy
-msgid "Choose a background color and click to turn the corner of the page over."
+msgid ""
+"Choose a background color and click to turn the corner of the page over."
 msgstr "Vali taustavärv ja "
 
 #: ../../magic/src/glasstile.c:83
@@ -914,8 +896,11 @@ msgid "Kaleidoscope"
 msgstr "Kaleidoskoop"
 
 #: ../../magic/src/kalidescope.c:83
-msgid "Click and drag the mouse to draw with symmetric brushes (a kaleidoscope)."
-msgstr "Tee klõps ja liiguta hiirt, et joonistada sümmeetriliste pintslitega (nagu kaleidoskoop)."
+msgid ""
+"Click and drag the mouse to draw with symmetric brushes (a kaleidoscope)."
+msgstr ""
+"Tee klõps ja liiguta hiirt, et joonistada sümmeetriliste pintslitega (nagu "
+"kaleidoskoop)."
 
 #: ../../magic/src/light.c:84
 msgid "Light"
@@ -956,7 +941,8 @@ msgstr "Maagia"
 
 #: ../../magic/src/mosaic.c:73
 #, fuzzy
-msgid "Click and move the mouse to add a mosaic effect to parts of your picture."
+msgid ""
+"Click and move the mouse to add a mosaic effect to parts of your picture."
 msgstr "Tee klõps, et tekitada peegelpilt."
 
 #: ../../magic/src/mosaic.c:74
@@ -1026,14 +1012,16 @@ msgstr "Tee klõps, et tekitada peegelpilt."
 msgid "Click to cover your picture with rain drops."
 msgstr "Tee klõps, et tekitada peegelpilt."
 
-#: ../../magic/src/realrainbow.c:70
+#: ../../magic/src/realrainbow.c:69
 #, fuzzy
 #| msgid "Rainbow"
 msgid "Real Rainbow"
 msgstr "Vikerkaar"
 
-#: ../../magic/src/realrainbow.c:75
-msgid "Click where you want your rainbow to start, drag to where you want it to end, and then let go to draw a rainbow."
+#: ../../magic/src/realrainbow.c:74
+msgid ""
+"Click where you want your rainbow to start, drag to where you want it to "
+"end, and then let go to draw a rainbow."
 msgstr ""
 
 #: ../../magic/src/ripples.c:81
@@ -1152,7 +1140,9 @@ msgid "String 'V'"
 msgstr "Täht 'V'"
 
 #: ../../magic/src/string.c:135
-msgid "Click and drag to draw string art. Drag top-bottom to draw less or more lines, to the center to approach the lines to center."
+msgid ""
+"Click and drag to draw string art. Drag top-bottom to draw less or more "
+"lines, to the center to approach the lines to center."
 msgstr ""
 
 #: ../../magic/src/string.c:138
@@ -1161,7 +1151,9 @@ msgid "Click and drag to draw string art aligned to the edges."
 msgstr "Tee klõps ja liiguta hiirt, et tekitada valguskiiri."
 
 #: ../../magic/src/string.c:141
-msgid "Draw string art with free angles. Click and drag a V: drag to the vertex, drag backwards a little to the start, then drag to the end."
+msgid ""
+"Draw string art with free angles. Click and drag a V: drag to the vertex, "
+"drag backwards a little to the start, then drag to the end."
 msgstr ""
 
 #: ../../magic/src/tint.c:71
@@ -1174,7 +1166,8 @@ msgstr "Värviline & Valge"
 
 #: ../../magic/src/tint.c:75
 #, fuzzy
-msgid "Click and move the mouse around to change the color of parts of your picture."
+msgid ""
+"Click and move the mouse around to change the color of parts of your picture."
 msgstr "Tee klõps ja liiguta hiirt, et teha pilt ähmasemaks."
 
 #: ../../magic/src/tint.c:76
@@ -1184,7 +1177,9 @@ msgstr "Tee klõps ja liiguta hiirt, et teha pilt ähmasemaks."
 
 #: ../../magic/src/tint.c:77
 #, fuzzy
-msgid "Click and move the mouse around to turn parts of your picture into white and a color you choose."
+msgid ""
+"Click and move the mouse around to turn parts of your picture into white and "
+"a color you choose."
 msgstr "Tee klõps ja liiguta hiirt, et muuta pilt multika sarnaseks."
 
 #: ../../magic/src/tint.c:78
@@ -1220,11 +1215,17 @@ msgid "Wavelets"
 msgstr "Lained"
 
 #: ../../magic/src/waves.c:83
-msgid "Click to make the picture horizontally wavy. Click toward the top for shorter waves, the bottom for taller waves, the left for small waves, and the right for long waves."
+msgid ""
+"Click to make the picture horizontally wavy. Click toward the top for "
+"shorter waves, the bottom for taller waves, the left for small waves, and "
+"the right for long waves."
 msgstr ""
 
 #: ../../magic/src/waves.c:84
-msgid "Click to make the picture vertically wavy. Click toward the top for shorter waves, the bottom for taller waves, the left for small waves, and the right for long waves."
+msgid ""
+"Click to make the picture vertically wavy. Click toward the top for shorter "
+"waves, the bottom for taller waves, the left for small waves, and the right "
+"for long waves."
 msgstr ""
 
 #, fuzzy
@@ -1244,6 +1245,7 @@ msgstr ""
 #~| msgid "Click and drag to shift your picture around on the canvas."
 #~ msgid "Click the part of your picture where would you like a puzzle."
 #~ msgstr "Tee klõps ja liiguta hiirt oma pildi liigutamiseks lõuendil."
+
 #, fuzzy
 #~ msgid "Click to make a puzzle in fullscreen mode."
 #~ msgstr "Tee klõps, et tekitada peegelpilt."
@@ -1285,18 +1287,24 @@ msgstr ""
 #, fuzzy
 #~ msgid "Blur All"
 #~ msgstr "Udu"
+
 #~ msgid "Click and move to fade the colors."
 #~ msgstr "Tee klõps ja liiguta hiirt, et pleegitada värve."
+
 #~ msgid "Click and move to darken the colors."
 #~ msgstr "Tee klõps ja liiguta hiirt, et muuta värve tumedamaks."
+
 #~ msgid "Sparkles"
 #~ msgstr "Sädelus"
+
 #~ msgid "You now have a blank sheet to draw on!"
 #~ msgstr "Sul on nüüd tühi leht oma pildi jaoks!"
+
 #~ msgid "Start a new picture?"
 #~ msgstr "Kas joonistame uue pildi?"
+
 #~ msgid "Yes, let's start fresh!"
 #~ msgstr "Jah, teeme lehe puhtaks!"
+
 #~ msgid "Click and move to draw sparkles."
 #~ msgstr "Tee klõps ja liiguta hiirt sädemete tekitamiseks."
-
