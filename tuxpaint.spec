@@ -1,6 +1,6 @@
 Summary: A drawing program for young children
 Name: tuxpaint
-Version: 0.9.20
+Version: 0.9.21
 Release: 1
 Epoch: 1
 License: GPL
@@ -9,10 +9,10 @@ URL: http://www.tuxpaint.org/
 Source0: %{name}-%{version}.tar.gz
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-root
 Requires: SDL >= 1.2.4 SDL_image SDL_mixer SDL_ttf SDL_Pango libpng zlib
-Requires: librsvg2 libpaper
+Requires: librsvg2 libpaper fribidi
 BuildRequires: SDL-devel >= 1.2.4 SDL_image-devel SDL_mixer-devel SDL_ttf-devel SDL_Pango-devel
 BuildRequires: libpng-devel zlib-devel gettext
-BuildRequires: librsvg2-devel libpaper-devel
+BuildRequires: librsvg2-devel libpaper-devel fribidi-devel
 
 %description
 "Tux Paint" is a drawing program for young children.
@@ -30,7 +30,7 @@ Summary: development files for tuxpaint plugins.
 Group: Development/Libraries
 Requires: tuxpaint = %{version}
 Requires: SDL-devel >= 1.2.4 SDL_image-devel SDL_mixer-devel SDL_ttf-devel SDL_Pango-devel
-Requires: libpng-devel zlib-devel gettext, librsvg2-devel libpaper-devel
+Requires: libpng-devel zlib-devel gettext, librsvg2-devel libpaper-devel fribidi-devel
 
 %description devel
 development files for tuxpaint plugins.
@@ -87,6 +87,10 @@ rm -rf $RPM_BUILD_ROOT
 %{_prefix}/bin/tp-magic-config
 
 %changelog
+* Sun May 24 2009 <shin1@wmail.plala.or.jp> -
+- For 0.9.21
+- Added dependency for fribidi
+
 * Tue Jun 17 2008 <shin1@wmail.plala.or.jp> -
 - Actually set Epoch number
 
