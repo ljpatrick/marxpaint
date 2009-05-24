@@ -34,6 +34,7 @@
 #define POSTSCRIPT_PRINT_H
 
 #include <stdio.h>
+#include <sys/wait.h>
 #include "SDL.h"
 
 
