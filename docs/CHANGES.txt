@@ -8,7 +8,7 @@ http://www.tuxpaint.org/
 
 $Id$
 
-2009.May.21 (0.9.21)
+2009.May.25 (0.9.21)
   * New Starters:
     -------------
     * Silver Frame
@@ -195,6 +195,9 @@ $Id$
 
     * Italian translation
       Simona Riva <simona.riva@tiscali.it>
+
+    * Kurdish translation
+      Amed Çeko Jiyan <amedcj@gmail.com>
 
     * Portuguese translation
       Sergio Marques <smarquespt@gmail.com>
