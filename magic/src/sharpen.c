@@ -115,12 +115,12 @@ SDL_Surface * sharpen_get_icon(magic_api * api, int which){
 
 // Return our names, localized:
 char * sharpen_get_name(magic_api * api, int which){
-    return(strdup(gettext(sharpen_names[which])));
+    return(strdup(gettext_noop(sharpen_names[which])));
 }
 
 // Return our descriptions, localized:
 char * sharpen_get_description(magic_api * api, int which, int mode){
-  return(strdup(gettext(sharpen_descs[which][mode-1])));
+  return(strdup(gettext_noop(sharpen_descs[which][mode-1])));
 }
 
 //Calculates the grey scale value for a rgb pixel

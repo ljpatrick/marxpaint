@@ -106,12 +106,12 @@ SDL_Surface * rain_get_icon(magic_api * api, int which){
 
 // Return our names, localized:
 char * rain_get_name(magic_api * api, int which){
-    return(strdup(gettext(rain_names[which])));
+    return(strdup(gettext_noop(rain_names[which])));
 }
 
 // Return our descriptions, localized:
 char * rain_get_description(magic_api * api, int which, int mode){
-  return(strdup(gettext(rain_descs[which][mode-1])));
+  return(strdup(gettext_noop(rain_descs[which][mode-1])));
 }
 
 // Do the effect:

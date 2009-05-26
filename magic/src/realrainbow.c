@@ -66,12 +66,12 @@ SDL_Surface * realrainbow_get_icon(magic_api * api, int which)
 
 char * realrainbow_get_name(magic_api * api, int which)
 {
-  return(strdup(gettext("Real Rainbow")));
+  return(strdup(gettext_noop("Real Rainbow")));
 }
 
 char * realrainbow_get_description(magic_api * api, int which, int mode)
 {
-  return(strdup(gettext("Click where you want your rainbow to start, drag to where you want it to end, and then let go to draw a rainbow.")));
+  return(strdup(gettext_noop("Click where you want your rainbow to start, drag to where you want it to end, and then let go to draw a rainbow.")));
 }
 
 int realrainbow_modes(magic_api * api, int which)

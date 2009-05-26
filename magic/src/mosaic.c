@@ -103,12 +103,12 @@ SDL_Surface * mosaic_get_icon(magic_api * api, int which){
 
 // Return our names, localized:
 char * mosaic_get_name(magic_api * api, int which){
-    return(strdup(gettext(mosaic_names[which])));
+    return(strdup(gettext_noop(mosaic_names[which])));
 }
 
 // Return our descriptions, localized:
 char * mosaic_get_description(magic_api * api, int which, int mode){
-  return(strdup(gettext(mosaic_descs[which][mode-1])));
+  return(strdup(gettext_noop(mosaic_descs[which][mode-1])));
 }
 
 //Calculates the grey scale value for a rgb pixel

@@ -115,12 +115,12 @@ SDL_Surface * snow_get_icon(magic_api * api, int which){
 
 // Return our names, localized:
 char * snow_get_name(magic_api * api, int which){
-    return(strdup(gettext(snow_names[which])));
+    return(strdup(gettext_noop(snow_names[which])));
 }
 
 // Return our descriptions, localized:
 char * snow_get_description(magic_api * api, int which){
-  return(strdup(gettext(snow_descs[which])));
+  return(strdup(gettext_noop(snow_descs[which])));
 }
 
 // Do the effect:

@@ -105,12 +105,12 @@ SDL_Surface * tint_get_icon(magic_api * api, int which){
 
 // Return our names, localized:
 char * tint_get_name(magic_api * api, int which){
-    return(strdup(gettext(tint_names[which])));
+    return(strdup(gettext_noop(tint_names[which])));
 }
 
 // Return our descriptions, localized:
 char * tint_get_description(magic_api * api, int which, int mode){
-  return(strdup(gettext(tint_descs[which][mode-1])));
+  return(strdup(gettext_noop(tint_descs[which][mode-1])));
 }
 
 //Calculates the grey scale value for a rgb pixel

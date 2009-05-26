@@ -113,12 +113,12 @@ SDL_Surface * toothpaste_get_icon(magic_api * api, int which){
 
 // Return our names, localized:
 char * toothpaste_get_name(magic_api * api, int which){
-    return(strdup(gettext(toothpaste_names[which])));
+    return(strdup(gettext_noop(toothpaste_names[which])));
 }
 
 // Return our descriptions, localized:
 char * toothpaste_get_description(magic_api * api, int which, int mode){
-  return(strdup(gettext(toothpaste_descs[which])));
+  return(strdup(gettext_noop(toothpaste_descs[which])));
 }
 
 // Do the effect:
