@@ -139,6 +139,7 @@ static void do_sharpen_pixel(void * ptr, int which,
  	int grey;
 	int i,j;
 	double sobel_1=0,sobel_2=0;
+	double temp;
 
   	//Sobel weighting masks
 	const int sobel_weights_1[3][3] = {	{1,2,1},
@@ -160,7 +161,7 @@ static void do_sharpen_pixel(void * ptr, int which,
 				}
 			}
   
-  double temp = sqrt(sobel_1*sobel_1 + sobel_2*sobel_2);
+  temp = sqrt(sobel_1*sobel_1 + sobel_2*sobel_2);
   temp = (temp/1443)*255.0;
 
 	// set image to white where edge value is below THRESHOLD

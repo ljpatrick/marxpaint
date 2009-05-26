@@ -105,17 +105,17 @@ static void do_blur_pixel(void * ptr, int which,
   int i,j,k;
 	Uint8 temp[3];
   double blurValue[3];
-
-  for (k =0;k<3;k++){
-		blurValue[k] = 0;
-  }
-
   //5x5 gaussiann weighting window
   const int weight[5][5] = {  {1,4,7,4,1},
                               {4,16,26,16,4},
                               {7,26,41,26,7},
                               {4,16,26,16,4},
                               {1,4,7,4,1}};
+
+  for (k =0;k<3;k++){
+		blurValue[k] = 0;
+  }
+
   for (i=-2;i<3;i++){
     for (j=-2;j<3;j++){
       //Add the pixels around the current one wieghted 

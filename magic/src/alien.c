@@ -72,10 +72,10 @@ Uint32 alien_api_version(void) { return(TP_MAGIC_API_VERSION); }
 
 //Load sounds
 int alien_init(magic_api * api){
-  srand(time(0));
-
   int i;
   char fname[1024];
+
+  srand(time(0));
 
   for (i = 0; i < alien_NUM_TOOLS; i++){
     snprintf(fname, sizeof(fname), "%s/sounds/magic/%s", api->data_directory, alien_snd_filenames[i]);
@@ -113,9 +113,9 @@ static void do_alien_pixel(void * ptr, int which,
 
   Uint8 temp[3];
   double temp2[3];
+  int k;
 
 	SDL_GetRGB(api->getpixel(canvas,x, y), canvas->format, &temp[0], &temp[1], &temp[2]);
-  int k;
   for (k =0;k<3;k++){
 		temp2[k] = clamp(0,127.5 * (1.0 + sin (((temp[k] / 127.5 - 1.0) * alien_FREQUENCY[k] + alien_ANGLE[k] / 180.0) * M_PI)),255);
   }
@@ -176,10 +176,12 @@ void alien_drag(magic_api * api, int which, SDL_Surface * canvas,
 int use_sound = 1;
 
 Mix_Chunk * magic_loadsound(char* file){
+  Mix_Chunk * temp;
+
   if (!use_sound){
     return (Mix_Chunk*)-1;
   }
-  Mix_Chunk * temp = Mix_LoadWAV(file);
+  temp = Mix_LoadWAV(file);
   return temp;
 }
 

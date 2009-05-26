@@ -71,10 +71,10 @@ Uint32 noise_api_version(void) { return(TP_MAGIC_API_VERSION); }
 
 //Load sounds
 int noise_init(magic_api * api){
-  srand(time(0));
-
   int i;
   char fname[1024];
+
+  srand(time(0));
 
   for (i = 0; i < noise_NUM_TOOLS; i++){
     snprintf(fname, sizeof(fname), "%s/sounds/magic/%s", api->data_directory, noise_snd_filenames[i]);
@@ -112,9 +112,9 @@ static void do_noise_pixel(void * ptr, int which,
 
   Uint8 temp[3];
   double temp2[3];
+  int k;
 
 	SDL_GetRGB(api->getpixel(canvas,x, y), canvas->format, &temp[0], &temp[1], &temp[2]);
-  int k;
   for (k =0;k<3;k++){
 		temp2[k] = clamp(0.0, (int)temp[k] - (rand()%noise_AMOUNT) + noise_AMOUNT/2.0, 255.0);
   }

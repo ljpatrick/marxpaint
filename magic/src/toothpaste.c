@@ -75,6 +75,7 @@ int toothpaste_init(magic_api * api){
 
   int i;
   char fname[1024];
+  int k,j;
   //Load sounds
   for (i = 0; i < toothpaste_NUM_TOOLS; i++){
     snprintf(fname, sizeof(fname), "%s/sounds/magic/%s", api->data_directory, toothpaste_snd_filenames[i]);
@@ -88,7 +89,6 @@ int toothpaste_init(magic_api * api){
     return(0);
   }
 
-  int k,j;
   for (k =  - toothpaste_RADIUS; k <  + toothpaste_RADIUS; k++){
     for (j =  - toothpaste_RADIUS; j <  + toothpaste_RADIUS; j++){
       if (api->in_circle(j , k, toothpaste_RADIUS)){

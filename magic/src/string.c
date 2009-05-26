@@ -313,9 +313,9 @@ void string_draw_triangle_preview(magic_api * api, int which,
 				  SDL_Surface * canvas, SDL_Surface * snapshot, int ox, int oy, int x, int y,
 				  SDL_Rect * update_rect)
 { 
-  scale_coords(&ox, &oy,&x, &y);
   int middle_x, middle_y;
   int w, h;
+  scale_coords(&ox, &oy,&x, &y);
   w=max(string_ox,x)-min(string_ox,x);
   h=max(string_oy,y)-min(string_oy,y);
 

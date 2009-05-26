@@ -217,9 +217,9 @@ static void mosaic_noise_pixel(void * ptr, SDL_Surface * canvas, int noise_AMOUN
 
   Uint8 temp[3];
   double temp2[3];
+  int k;
 
 	SDL_GetRGB(api->getpixel(canvas,x, y), canvas->format, &temp[0], &temp[1], &temp[2]);
-  int k;
   for (k =0;k<3;k++){
 		temp2[k] = clamp(0.0, (int)temp[k] - (rand()%noise_AMOUNT) + noise_AMOUNT/2.0, 255.0);
   }
@@ -232,17 +232,17 @@ static void mosaic_blur_pixel(void * ptr, SDL_Surface * canvas, SDL_Surface * la
   int i,j,k;
 	Uint8 temp[3];
   double blurValue[3];
-
-  for (k =0;k<3;k++){
-		blurValue[k] = 0;
-  }
-
   //5x5 gaussiann weighting window
   const int weight[5][5] = {  {1,4,7,4,1},
                               {4,16,26,16,4},
                               {7,26,41,26,7},
                               {4,16,26,16,4},
                               {1,4,7,4,1}};
+
+  for (k =0;k<3;k++){
+		blurValue[k] = 0;
+  }
+
   for (i=-2;i<3;i++){
     for (j=-2;j<3;j++){
       //Add the pixels around the current one wieghted 
@@ -269,6 +269,7 @@ static void mosaic_sharpen_pixel(void * ptr,
  	int grey;
 	int i,j;
 	double sobel_1=0,sobel_2=0;
+	double temp;
 
   	//Sobel weighting masks
 	const int sobel_weights_1[3][3] = {	{1,2,1},
@@ -290,7 +291,7 @@ static void mosaic_sharpen_pixel(void * ptr,
 				}
 			}
   
-  double temp = sqrt(sobel_1*sobel_1 + sobel_2*sobel_2);
+  temp = sqrt(sobel_1*sobel_1 + sobel_2*sobel_2);
   temp = (temp/1443)*255.0;
 
   SDL_GetRGB(api->getpixel(last, x, y), last->format, &r1, &g1, &b1);
