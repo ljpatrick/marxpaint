@@ -6,10 +6,9 @@
   by Bill Kendrick <bill@newbreedsoftware.com>
   Math assistence by Jeff Newmiller <jdnewmil@dcn.davis.ca.us>
 
-  2009.04.02 - 2009.04.28
+  2009.04.02 - 2009.05.27
 
 FIXME:
-* Needs icon.
 * Needs sound effect.
 * Color/alpha art needs improvement.
 * Pixel gaps appear in lines sometimes (esp. larger rainbows).
@@ -60,8 +59,12 @@ int realrainbow_get_tool_count(magic_api * api)
 
 SDL_Surface * realrainbow_get_icon(magic_api * api, int which)
 {
-  /* FIXME */
-  return(NULL);
+  char fname[1024];
+
+  snprintf(fname, sizeof(fname), "%s/images/magic/realrainbow.png",
+           api->data_directory);
+
+  return(IMG_Load(fname));
 }
 
 char * realrainbow_get_name(magic_api * api, int which)
