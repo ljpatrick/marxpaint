@@ -6,30 +6,47 @@
 <body bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#FF0000"
 alink="#FF00FF">
 
-<p align=center>
-<h2><img src="../../html/images/tuxpaint-title.png" width=220 height=219
+<center>
+<h1><img src="../../html/images/tuxpaint-title.png" width=220 height=219
 alt="Tux&nbsp;Paint"><br>
 
 version
 
-0.9.18
+0.9.21
 
-</h2>
-<h4>兒童專用的簡易繪圖軟體</h4>
+</h1>
+<h3>兒童專用的簡易繪圖軟體</h3>
 
-<p>Copyright 2002-2007 by Bill Kendrick and others<br>
-New Breed Software</p>
+<p>Copyright 2002-2009 by Bill Kendrick and others<br>
+<a href="http://www.newbreedsoftware.com/">New Breed Software &amp;
+<a href="http://tux4kids.alioth.debian.org/">Tux4Kids</a></p>
 
 <p><a href="mailto:bill@newbreedsoftware.com">bill@newbreedsoftware.com</a><br>
 <a href="http://www.tuxpaint.org/">http://www.tuxpaint.org/</a><br>
 翻譯：黃敏松 &lt;<a href="mailto:songhuang.tw@gmail.com">songhuang.tw@gmail.com</a>&gt;</p>
 
-<p> 6 月 14 日, 2002 - 8 月 2 日 2007</p>
+<p> 6 月 14 日, 2002 - 4 月 28 日 2009</p>
 
+</center>
 
 <hr size=2 noshade>
 
-<h1>簡介</h1>
+<table border=2 cellspacing=0 cellpadding=2>
+<tr><th>Table of Contents</th></tr>
+<tr><td>
+<ul>
+<li><a href="#about">簡介</a>
+<li><a href="#using">使用 Tux&nbsp;Paint</a>
+<li><a href="#loading_into">Loading Other Pictures into Tux&nbsp;Paint</a>
+<li><a href="#further">Further Reading</a>
+<li><a href="#help">How to Get Help</a>
+</ul>
+</td></tr>
+</table>
+
+<hr size=2 noshade>
+
+<h1><a name="about">簡介</a></h1>
 <blockquote>
 
   <h2>什麼是 'Tux&nbsp;Paint?'</h2>
@@ -117,7 +134,7 @@ New Breed Software</p>
 <hr size=2 noshade //-->
 
 
-<h1>使用 Tux&nbsp;Paint</h1>
+<h1><a name="using">使用 Tux&nbsp;Paint</a></h1>
 <blockquote>
 
   <!-- h2>建構 Tux&nbsp;Paint</h2>
@@ -208,6 +225,8 @@ New Breed Software</p>
 
       <p align=center><img src="../../html/images/canvas.jpg" width=324 height=254
       alt="[(圖紙)]"></p>
+
+      <p><b>備註:</b> 圖紙的尺寸就是 Tux&nbsp;Paint 的大小。你可以使用 <i>Tux&nbsp;Paint&nbsp;Config</i> 設定工具或是其他的方式來變更 Tux&nbsp;Paint 的大小。詳細內容請見 <a href="OPTIONS.html">OPTIONS</a> 文件。</p>
     </dd>
 
 
@@ -402,6 +421,8 @@ New Breed Software</p>
 	             &mdash; <b>right&nbsp;[Alt]</b> or <b>left&nbsp;[Alt]</b>
 	         <li>繁體中文 &mdash; Traditional Chinese
 	             &mdash; <b>right&nbsp;[Alt]</b> or <b>left&nbsp;[Alt]</b>
+                 <li>泰文
+                     &mdash; <b>right&nbsp;[Alt]</b>
 	       </ul>
 	    </p>
 	  </dd>
@@ -418,9 +439,11 @@ New Breed Software</p>
 	<p>魔術工具包含了一組特殊工具。在右邊選擇一種魔術效果，然後依照不同的工具，
 	   有些要按著在圖畫上來施展他，有些呢只要按一下就行了。</p>
 
-   	   <br clear=all>
+        <p>如果這個工具是用按著在圖畫上來施展的話，繪圖按鈕會出現在右邊的魔術工具清單裡。如果這個工具是按一下就會對整張圖畫產生效果的話，會有一個全圖的按鈕出現在右邊。</p>
 
-	<p>每一個魔術工具的介紹都在 "<a href="../../../magic/docs/html/">magic-docs</a>" 目錄裡.</p>
+	<br clear=all>
+
+	<p>請看 "<a href="../../../magic-docs/html/index.html">每一個魔術工具的簡介</a>" (在 magic-docs 目錄裡)。</p>
       
         <hr size=1>
       </dd>
@@ -431,9 +454,9 @@ New Breed Software</p>
         <img src="../../html/images/tool_eraser.png" width=48 height=48 alt=""
         align=right>
 
-        <p>這個用法和繪圖一樣，只要按著滑鼠鍵(或者同時拖動)的地方，顏色就會被擦成白色的。</p>
+        <p>這個用法和繪圖一樣，只要按著滑鼠鍵(或者同時拖動)的地方，圖案就會被擦掉。(可能會變白色或是背景圖案，要看圖畫而定。)</p>
         
-        <p>有幾種的橡皮擦尺寸可以選擇。</p>
+        <p>有幾種的橡皮擦尺寸以及圓形或是方形可供選擇。</p>
 
         <p>當你移動滑鼠時就會看到一個蠻大的正方形隨著滑鼠的游標移動，
         顯示出將會把什麼地方擦成白色的。</p>
@@ -486,11 +509,23 @@ New Breed Software</p>
       <dd>
         <img src="../../html/images/tool_new.png" width=48 height=48 alt="" align=right>
 
-        <p>按下新圖按鈕會開啟一張新的圖紙，你會先被訊問是否要這麼作。</p>
+	<p>按下新圖按鈕將會開啟一張新的圖紙，一個交談框會跳出來讓你選擇是要使用背景色圖紙，或是一個啟始圖案來開啟新的圖畫。
+	
+	你會先被訊問到底要怎麼作。</p>
 
 	<p>註：你也可以使用 <b>[Control]-[N]</b> 的組合鍵來開啟一張新圖。</p>
 	
-        <br clear=all>
+        <b>起始圖形</b>
+
+	<blockquote>
+	  <p>起始圖形可以像是一頁的著色簿(黑白線條的圖形，可以填色上去)，
+	     或是像立體的圖片一樣，你可以畫些東西在裡面。</p>
+
+	  <p>如果你是載入一張起始圖形來作畫時，當按下「儲存」時他會儲成一張新圖
+	  (他不會覆蓋掉原始的「起始圖形」，所以你可以再一次的使用他)。</p>
+	</blockquote>
+	
+	<br clear=all>
 
         <hr size=1>
       </dd>
@@ -550,18 +585,7 @@ New Breed Software</p>
         </ul>
         </blockquote>
 
-        <b>起始圖形</b>
 
-	<blockquote>
-	  <p>在你新增任何圖形之前， Tux Paint 可以提供給你「起始圖形」。
-	  開啟他們就像建立一張新圖，除了這張新圖不是空白的。啟始圖形可以像是一頁的著色簿
-	  (黑白線條的圖形，可以填色上去)，或是像立體的圖片一樣，你可以畫東西在其間。</p>
-
-	  <p>「起始圖形」在「開啟」的畫面中是綠色的背景(一般是藍色的背景)。
-	  當你是載入一張起始圖形來畫他時，當按下「儲存」時他會儲成一張新圖
-	  (他不會覆蓋掉原始的「起始圖形」，所以你可以再一次的使用他)。</p>
-	</blockquote>
-	
 	<p>如果選擇開啟一張圖畫，而目前正在畫的圖還沒有儲存，
 	就會被訊問是否要存檔。(請見下面的「儲存」。)</p>
 	
@@ -609,8 +633,8 @@ New Breed Software</p>
 
         <p>按下這個按鈕就會將你的圖畫列印出來!</p>
 
-	<p>在大部份的平台上，你也可以按住 <b>[Alt]</b> 鍵再點擊「列印」鈕來呼叫出列印的交談框。
-	不過這只有在不是執行全螢幕模式下才行。請見後面說明。</p>
+	<p>在大部份的平台上，你也可以按住 <b>[Alt]</b> 鍵 (在 Macs 上叫作<b>[Option]</b>) 再點擊「列印」鈕來呼叫出列印的交談框。
+	不過如果你是執行全螢幕模式的話就不能這麼作。請見後面說明。</p>
 
         <dl>
 	<dt>關閉列印功能</dt>
@@ -663,12 +687,12 @@ New Breed Software</p>
 
 	<dt>印表機設定</dt>
 	<dd>
-	  <p><i>(只限於 Windows)</i></p>
+	  <p><i>(Windows 和 Mac&nbsp;OS&nbsp;X)</i></p>
 
 	  <p>預設的情況下，按下「列印」按鈕後 Tux&nbsp;Paint 直接用預設的印表機設定值，
 	  將圖畫由預設印機機列印出來。</p>
 
-	  <p>但是當你按住 <b>[Alt]</b> 鍵才去點列印鈕時，只要不是在全螢幕的模式下，
+	  <p>但是當你按住 <b>[Alt]</b> 鍵(或是  <b>[Option]</b> )才去點列印鈕時，只要不是在全螢幕的模式下，
 	  印表機設定的對話框就會跳出來，你可以修改印表機的設定。</p>
 
 	  <p>你可以使用 "<code>--printcfg</code>" 啟動參數，或是在 Tux&nbsp;Paint
@@ -683,13 +707,13 @@ New Breed Software</p>
 
 	<dt>列印交談框的選項</dt>
 	<dd>
-	  <p>當按下 <b>[Alt]</b> 鍵同時按下「列印」按鈕時， Tux&nbsp;Paint 預設只會叫出列印交談框。
+	  <p>當按下 <b>[Alt]</b> 鍵 (或 <b>[Option]</b>) 同時按下「列印」按鈕時， Tux&nbsp;Paint 預設只會叫出列印交談框。
 	  ( 或是在 Linux/Unix 執行 "altprintcommand" ，例如用 "kprinter" 取代 "lpr" )</p>
 
 	  <p>不過這個行為可以被改變，你可以在命令列使用 "<code>--altprintalways</code>" 或是在
 	  Tux&nbsp;Paint 的規劃檔裡用 "<code>altprint=always</code>" 讓列印交談框總是會出現。
 	  或者你也可以使用 "<code>--altprintnever</code>" 或 "<code>altprint=never</code>"
-	  讓 <b>[Alt]</b> 永遠不會發生作用。</p>
+	  讓 <b>[Alt]</b>  (或 <b>[Option]</b>) 永遠不會發生作用。</p>
 	  
 	  <p>請參閱「<a href="OPTIONS.html"><i>選項</i></a>」文件的說明。</p>
 	</dd>
@@ -700,13 +724,13 @@ New Breed Software</p>
         <hr size=1>
       </dd>
 
-      <dt><a name="slides"><b>幻燈片</b></a></dt>
+      <dt><a name="slides"><b>幻燈片(在「開啟」之下)</b></a></dt>
       <dd>
         <img src="images/open_slides.png" width=48 height=48 alt=""
         align=right>
 
          <p>「幻燈片」鈕是在「開啟」交談框中，他會顯示出一份你儲存檔案的清單，
-         和「開啟」交談框很像，但是少了「起啟圖形」。</p>
+         就像是「開啟」交談框。</p>
 
          <p>一一點選你想要顯示在幻燈片模式中呈現的圖畫，每個圖畫上會出現一個序號，
          讓你知道他們顯示的順序。</p>
@@ -716,7 +740,10 @@ New Breed Software</p>
          <p>在左下角的撥放速度(「撥放」的下面)可以讓你調整撥放的速度，由慢到快，
          將他調到最左邊的話會取消自動撥放 - 你就必須要按一下鍵盤或滑鼠才會跳到下一張圖畫。</p>
 
-         <p>當你準備好了，按下「撥放」鈕開始撥放幻燈片。(注意：如果你沒有點選任何一張圖畫的話，
+	 <p><b>注意：</b> 最慢速的設定就不會自動跳到下一張幻燈片了，
+	 當你要跳到下一張時要手動切換。</p>
+
+	 <p>當你準備好了，按下「撥放」鈕開始撥放幻燈片。(注意：如果你沒有點選任何一張圖畫的話，
          所有的圖畫都會被撥放。)</p>
 
          <p>在撥放的期間，按下空格鍵，Enter 鍵或 Return 鍵，或向右的方向鍵，或是按下左下方的
@@ -755,7 +782,13 @@ New Breed Software</p>
 	
         <br clear=all>
       </dd>
-      </dl>
+      <dt><b>靜音</b></dt>
+      <dd>
+        <p>這時候在螢幕上並沒有控制鈕可以按的，只能在程式執行時用<b>[Alt]</b>&nbsp;+&nbsp;<b>[S]</b>，來關閉和開啟音效(靜音和非靜音)。</p>
+
+	<p>請注意當音效是被完全關閉時(例如在<i>Tux&nbsp;Paint&nbsp;Config</i> 設定工具裡沒有開啟音效，或是使用 "<code>--nosound</code>" 命令列參數來啟動<i>Tux&nbsp;Paint</i>)，用<b>[Alt]</b>&nbsp;+&nbsp;<b>[S]</b>組合鍵是沒有效果的。(當家長或老師希望關閉音效時，這組合鍵就不能用來開啟音效了。)</p>
+      </dd>
+    </dl>
     </blockquote>
   </blockquote>
 </blockquote>
@@ -763,7 +796,7 @@ New Breed Software</p>
 <hr size=2 noshade>
 
 
-<h1>載入其他的圖畫到 Tux&nbsp;Paint</h1>
+<h1><a name="loading_into">載入其他的圖畫到 Tux&nbsp;Paint</a></h1>
 <blockquote>
   <p>當使用 Tux&nbsp;Paint 的開啟圖畫功能時，只會顯示出你用 Tux&nbsp;Paint 所畫的圖，
   如果你想載入其他的圖形或照片到 Tux&nbsp;Paint 裡來編輯的話該怎麼作呢？</p>
@@ -772,7 +805,11 @@ New Breed Software</p>
   的儲存目錄 ：</p>
   
   <dl>
-  <dt>Windows</dt>
+  <dt>Windows Vista</dt>
+  <dd>放到使用者的 "<code>AppData</code>" 目錄：
+    例如：<code>"C:\Users\<i>(user&nbsp;name)</i>\AppData\Roaming\TuxPaint\saved\</code>"</dd>
+
+  <dt>Windows 95, 98, ME, 2000, XP</dt>
   <dd>放到使用者的 "<code>Application&nbsp;Data</code>" 目錄：
     例如：<code>"C:\Documents and Settings\<i>(user&nbsp;name)</i>\Application
     Data\TuxPaint\saved\</code>"</dd>
@@ -785,6 +822,8 @@ New Breed Software</p>
   <dd>放到一個隱藏的 "<code>.tuxpaint</code>" 目錄，這個目錄位於使用者的家目錄：
     "<code>$(HOME)/.tuxpaint/saved/</code>"</dd>
   </dl> 
+
+  <p><b>備註:</b> 你可以從這個目錄來複製圖畫，或是用其他的程式來開啟圖畫。</p>
 
   <h3>使用 '<code>tuxpaint-import</code>'</h3>
   <blockquote>
@@ -830,6 +869,14 @@ New Breed Software</p>
     <p>縮減圖形的尺寸讓他不要寬於 448 像素，不要高於 376 像素。
     (換句話說，最大的尺寸就是 448x376 像素。)</p>
 
+    <p>當 Tux Paint 開啟一張與圖紙尺寸不符合的圖檔時，他會縮放(有時會裁去
+       邊緣)圖畫以符合圖紙。</p>
+
+       <p>要避免圖檔被拉伸或裁邊，你可以重新設定 Tux&nbsp;Paint 圖紙的尺寸，
+          這個尺寸就視 Tux&nbsp;Paint 視窗的大小。如果是全螢幕模式的話，
+          就必須調整解析度。(<b>注意:</b> 預設的解析度是 800x600.)
+          詳見「計算圖檔的尺寸」</p>
+
     <p>用 PNG 格式來儲存圖形，強烈的建議你，圖檔的名稱使用目前的日期及時間，
     Tux&nbsp;Paint 使用的規則是：</p>
 
@@ -855,12 +902,39 @@ New Breed Software</p>
     <p>將這個 PNG 檔放到你 Tux&nbsp;Paint 的儲存目錄中。
     (請參閱前面的說明。)</p>
 
+    <h3>計算圖檔的尺寸</h3>
+    <blockquote>
+      <p>Tux&nbsp;Paint 的圖紙寬度就是視窗的寬度 (例如 640, 800 或是 1024
+         像素) 減去 192。</p>
+
+      <p>計算 Tux&nbsp;Paint 的圖紙高度需要幾個步驟:
+      <ol>
+      <li>取得視窗的高度 (例如 480, 600 或是 768 像素) 然後減去 144
+      <li>取得第一個步驟的結果除以 48
+      <li>取得第二個步驟結果的整數值 (例如 9.5 就取 9)
+      <li>取得第三個步驟的結果乘上 48
+      <li>最後，取得第四個步驟的結果加上 40
+      </ol></p>
+
+      <p><b>範例:</b> Tux&nbsp;Paint 執行全螢幕模式於 1440x900.
+      <ul>
+      <li>圖紙寬度就是 1440&nbsp;-&nbsp;192 等於 1248.
+      <li>圖紙高度的計算如下:
+        <ol>
+        <li>900&nbsp;-&nbsp;144 等於 756
+        <li>756&nbsp;/&nbsp;48 等於 15.75
+        <li>15.75 取整數值等於 15
+        <li>15&nbsp;*&nbsp;48 等於 720
+        <li>720&nbsp;+&nbsp;40 等於 760
+        </ol>
+      </ul>
+      所以當視窗是 1440x900 時 Tux&nbsp;Paint 的圖紙是 1248x760.</p>
   </blockquote>
 </blockquote>
 
 <hr size=2 noshade>
 
-<h1>其他文件</h1>
+<h1><a name="further">其他文件</a></h1>
 <blockquote>
   Tux Paint 其他的文件包括：(在 "<code>docs</code>" 目錄裡)
   
@@ -897,11 +971,9 @@ New Breed Software</p>
 
 <hr size=2 noshade>
 
-<h1>More Information</h1>
+<h1><a name="help">如何取得協助</a></h1>
 <blockquote>
-  <p>其他的資訊請參閱 Tux&nbsp;Paint 的其他文件。</p>
-
-  <p>如果你需要幫助話，請不用拘束的來聯繫 New Breed Software ：</p>
+  <p>如果你需要協助的話，請不用拘束的來聯繫 New Breed Software ：</p>
 
   <blockquote>
     <a href="http://www.newbreedsoftware.com/">http://www.newbreedsoftware.com/</a>
