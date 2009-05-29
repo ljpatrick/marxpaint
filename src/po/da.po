@@ -14,7 +14,7 @@ msgstr ""
 "Project-Id-Version: Tux Paint\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2009-05-21 17:41-0700\n"
-"PO-Revision-Date: 2009-05-08 22:30+0100\n"
+"PO-Revision-Date: 2009-05-29 22:30+0100\n"
 "Last-Translator: Joe Hansen <joedalton2@yahoo.dk>\n"
 "Language-Team: Danish <dansk@dansk-gruppen.dk>\n"
 "MIME-Version: 1.0\n"
@@ -27,15 +27,17 @@ msgstr ""
 msgid "Black!"
 msgstr "Sort!"
 
+# Alternativ Mørk grå! (som det var før).
 #. Response to Dark grey (128, 128, 128) color selected
 #: ../colors.h:89
 msgid "Dark grey! Some people spell it “dark gray”."
-msgstr "Mørk grå!"
+msgstr "Mørkegrå!"
 
+# Alternativ Lys grå! (som det var før).
 #. Response to Light grey (192, 192, 192) color selected
 #: ../colors.h:92
 msgid "Light grey! Some people spell it “light gray”."
-msgstr "Lys grå!"
+msgstr "Lysegrå!"
 
 #. Response to White (255, 255, 255) color selected
 #: ../colors.h:95
@@ -60,12 +62,12 @@ msgstr "Gul!"
 #. Response to Light green (160, 228, 128) color selected
 #: ../colors.h:107
 msgid "Light green!"
-msgstr "Lys grøn!"
+msgstr "Lysegrøn!"
 
 #. Response to Dark green (33, 148, 70) color selected
 #: ../colors.h:110
 msgid "Dark green!"
-msgstr "Mørk grøn!"
+msgstr "Mørkegrøn!"
 
 #. Response to "Sky" blue (138, 168, 205) color selected
 #: ../colors.h:113
