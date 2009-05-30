@@ -6,9 +6,9 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: tuxpaint 0.9.17\n"
+"Project-Id-Version: tuxpaint\n"
 "POT-Creation-Date: 2009-05-21 17:41-0700\n"
-"PO-Revision-Date: 2009-05-28 18:37+0800\n"
+"PO-Revision-Date: 2009-05-30 09:04+0800\n"
 "Last-Translator: 黃敏松 <songhuang.tw@gmail.com>\n"
 "Language-Team: Chinese (traditional) <zh-l10n@linux.org.tw>\n"
 "MIME-Version: 1.0\n"
@@ -672,7 +672,7 @@ msgstr "播放"
 #  Label for 'Letters' buttons (font selector, down the right when the Text tool is being used); used to show the difference between font faces
 #: ../tuxpaint.c:8635
 msgid "Aa"
-msgstr "Aa"
+msgstr "A中"
 
 #  Admittedly stupid way of determining which keys can be used for
 #  positive and negative responses in dialogs (e.g., [Y] (for 'yes') in English)
