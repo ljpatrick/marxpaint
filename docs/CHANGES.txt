@@ -8,7 +8,7 @@ http://www.tuxpaint.org/
 
 $Id$
 
-2009.May.28 (0.9.21)
+2009.May.31 (0.9.21)
   * New Starters:
     -------------
     * Silver Frame
@@ -225,6 +225,9 @@ $Id$
 
     * Tamil translation
       Ravishankar Ayyakkannu <ravishankar.ayyakkannu@gmail.com>
+
+    * Ukranian translation
+      Serhij Dubyk <serhijdubyk@gmail.com>
 
     * Zapotec (Miahuatlan dialect) name and locale code correction
 
