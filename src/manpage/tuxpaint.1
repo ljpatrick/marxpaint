@@ -1,5 +1,5 @@
-.\" tuxpaint.1 - 2009.05.25
-.TH TUXPAINT 1 "25 May 2009" "0.9.21" "Tux Paint"
+.\" tuxpaint.1 - 2009.05.31
+.TH TUXPAINT 1 "31 May 2009" "0.9.21" "Tux Paint"
 .SH NAME
 tuxpaint -- "Tux Paint", a drawing program for young children.
 
@@ -66,6 +66,8 @@ tuxpaint -- "Tux Paint", a drawing program for young children.
 [\-\-keyboard]
 .br
 [\-\-nosysfonts]
+.br
+[\-\-alllocalefonts]
 .br
 [\-\-savedir \fIDIR\fP]
 .br
@@ -136,6 +138,8 @@ tuxpaint -- "Tux Paint", a drawing program for young children.
 [\-\-mouse]
 .br
 [\-\-sysfonts]
+.br
+[\-\-currentlocalefont]
 .br
 [\-\-saveoverask]
 .br
@@ -369,6 +373,13 @@ controlled with the keyboard.  The \fIarrow keys\fP move the pointer.
 installed in common places on your system.  If this causes trouble, or you'd
 prefer to only make fonts installed in \fITux Paint\fP's directory available,
 use the \fInosysfonts\fP option to disable this feature.
+
+.TP 8
+.B \-\-alllocalefonts \-\-currentlocalefont
+Tux Paint avoids loading any fonts in its 'locale' font subdirectory,
+except any that match the current locale \fITux Paint\fP is running under.
+Use the \fIalllocalefonts\fP option to load all such fonts, for use in the
+"Text" tool. (This is the old behavior, prior to version 0.9.21.)
 
 .TP 8
 .B \-\-savedir \fIDIR\fP
