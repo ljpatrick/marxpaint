@@ -8,7 +8,7 @@ http://www.tuxpaint.org/
 
 $Id$
 
-2009.May.31 (0.9.21)
+2009.June.1 (0.9.21)
   * New Starters:
     -------------
     * Silver Frame
@@ -158,6 +158,9 @@ $Id$
 
     * Arabic translation
       Tilo <Drfortilo@gmail.com>
+
+    * Asturian
+      Xandru Armesto <alarmes@wanadoo.es>
 
     * Basque translation
       Juan Irigoien <juanirigoien@gmail.com>
