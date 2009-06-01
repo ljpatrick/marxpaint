@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: TuxPaint 0.9.21 uk\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2009-05-21 17:41-0700\n"
-"PO-Revision-Date: 2009-05-30 19:15+0300\n"
+"PO-Revision-Date: 2009-06-01 23:22+0300\n"
 "Last-Translator: Serhij Dubyk <serhijdubyk@gmail.com>\n"
 "Language-Team: translation@linux.org.ua <Ukrainian Linux Team>\n"
 "MIME-Version: 1.0\n"
@@ -117,20 +117,20 @@ msgstr "Беж!"
 #. Line X
 #: ../dirwalk.c:121
 msgid "qx"
-msgstr "qx"
+msgstr "юж"
 
 #: ../dirwalk.c:121
 msgid "QX"
-msgstr "QX"
+msgstr "ЮЖ"
 
 #. Line Y
 #: ../dirwalk.c:124
 msgid "qy"
-msgstr "qy"
+msgstr "ює"
 
 #: ../dirwalk.c:124
 msgid "QY"
-msgstr "QY"
+msgstr "ЮЄ"
 
 #. Now we score fonts to ensure that the best ones will be placed at
 #. the top of the list. The user will see them first. This sorting is
@@ -139,17 +139,17 @@ msgstr "QY"
 #. distinct uppercase and lowercase (e.g., 'o' vs. 'O')
 #: ../dirwalk.c:147
 msgid "oO"
-msgstr "oO"
+msgstr "оО"
 
 #. uncommon punctuation (e.g., '@', '#', '*', etc.)
 #: ../dirwalk.c:150
 msgid "`\\%_@$~#{}<>^&*"
-msgstr "`\\%_@$~#{}<>^&*"
+msgstr "«»„“…-—–№%₴²°•≠±™©®`\\%_@$~#{}<>^&*"
 
 #. common punctuation (e.g., '?', '!', '.', ',', etc.)
 #: ../dirwalk.c:153
 msgid ",.?!"
-msgstr ",.?!"
+msgstr ",.;’?!"
 
 #. digits (e.g., '0', '1' and '7')
 #: ../dirwalk.c:156
@@ -159,12 +159,12 @@ msgstr "017"
 #. distinct circle-like characters (e.g., 'O' (capital oh) vs. '0' (zero))
 #: ../dirwalk.c:159
 msgid "O0"
-msgstr "O0"
+msgstr "О0"
 
 #. distinct line-like characters (e.g., 'l' (lowercase elle) vs. '1' (one) vs. 'I' (capital aye))
 #: ../dirwalk.c:162
 msgid "1Il|"
-msgstr "1Il|"
+msgstr "1Il|іІїї"
 
 #. Congratulations #1
 #: ../great.h:37
