@@ -1479,6 +1479,7 @@ int charset_works(TuxPaint_Font * font, const char *s)
     }
 #endif
 
+/* FIXME: Should the following be in an "#else" block!? -bjk 2009.06.01 */
     if (font->typ == FONT_TYPE_TTF)
     {
       tmp_surf = TTF_RenderUTF8_Blended(font->ttf_font, c, black);
