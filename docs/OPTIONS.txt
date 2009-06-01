@@ -9,7 +9,7 @@ Options Documentation
                            bill@newbreedsoftware.com
                             http://www.tuxpaint.org/
 
-                                January 23, 2009
+                                  May 31, 2009
 
      ----------------------------------------------------------------------
 
@@ -325,6 +325,17 @@ Windows Users
                in the Text tool) from your operating system. Normally,
                Tux Paint will only load the ones that came bundled with
                Tux Paint.
+
+       alllocalefonts=yes
+
+               Prior to version 0.9.21, Tux Paint loaded all fonts in its own
+               fonts directory, including locale-specific ones (e.g., the one
+               for Tibetan, which had no latin characters). As of 0.9.21, the
+               only font loaded from the locale-specific subdirectory, if
+               any, is one matching the locale Tux Paint is running on.
+
+               To load all locale-specific fonts (the old behavior), set this
+               option.
 
        nostamps=yes
 
@@ -732,6 +743,7 @@ Windows Users
          --nostampcontrols
          --nomagiccontrols
          --sysfonts
+         --alllocalefonts
          --mirrorstamps
          --stampsize=SIZE
          --keyboard
@@ -773,6 +785,7 @@ Windows Users
          --stampcontrols
          --magiccontrols
          --nosysfonts
+         --currentlocalefont
          --dontmirrorstamps
          --stampsize=default
          --mouse
