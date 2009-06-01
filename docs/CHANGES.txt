@@ -136,6 +136,12 @@ $Id$
 
     * Updated to the latest version (2.27) of DejaVu Sans Regular for UI font.
 
+    * Only loads locale-specific fonts (e.g., Tibetan's "bo.ttf", which is
+      unusable with any language _except_ Tibetan) when Tux Paint is running
+      in that locale.  (Use "--alllocalefonts" command-line option
+      or "alllocalefonts=yes" config. file option, to load all of those fonts,
+      regardless of locale setting -- the old behavior.)
+
   * New localizations:
     ------------------
     * Shuswap (Secwepemctín) translation

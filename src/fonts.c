@@ -100,6 +100,7 @@ SDL_Thread *font_thread;
 
 
 int no_system_fonts;
+int all_locale_fonts;
 volatile long font_thread_done = 0, font_thread_aborted = 0;
 volatile long waiting_for_fonts = 0;
 int font_scanner_pid;
@@ -117,6 +118,9 @@ int num_font_styles_max = 0;
 
 int text_state = 0;
 unsigned text_size = 4;		// initial text size
+
+
+void loadfonts_locale_filter(SDL_Surface * screen, const char *const dir, char * locale);
 
 
 /* Unfortunately, there is a bug in SDL_ttf-2.0.6, the current version
@@ -416,7 +420,7 @@ void reliable_read(int fd, void *buf, size_t count)
 }
 
 
-void run_font_scanner(SDL_Surface * screen)
+void run_font_scanner(SDL_Surface * screen, char * locale)
 {
   int sv[2];
   int size, i;
@@ -442,7 +446,7 @@ void run_font_scanner(SDL_Surface * screen)
   sched_yield();		// try to let the parent run right now
   SDL_Init(SDL_INIT_NOPARACHUTE);
   TTF_Init();
-  load_user_fonts(screen, NULL);
+  load_user_fonts(screen, NULL, locale);
 
   size = 0;
   i = num_font_families;
@@ -657,13 +661,13 @@ void receive_some_font_info(SDL_Surface * screen)
 #endif
 
 
-int load_user_fonts(SDL_Surface * screen, void *vp)
+int load_user_fonts(SDL_Surface * screen, void *vp, char * locale)
 {
   char *homedirdir;
 
   (void) vp;			// junk passed by threading library
 
-  loadfonts(screen, DATA_PREFIX "fonts");
+  loadfonts_locale_filter(screen, DATA_PREFIX "fonts", locale);
 
   if (!no_system_fonts)
   {
@@ -1366,11 +1370,16 @@ TuxPaint_Font *getfonthandle(int desire)
 
 void loadfonts(SDL_Surface * screen, const char *const dir)
 {
+  loadfonts_locale_filter(screen, dir, NULL);
+}
+
+void loadfonts_locale_filter(SDL_Surface * screen, const char *const dir, char * locale)
+{
   char buf[TP_FTW_PATHSIZE];
   unsigned dirlen = strlen(dir);
 
   memcpy(buf, dir, dirlen);
-  tp_ftw(screen, buf, dirlen, 1, loadfont_callback);
+  tp_ftw(screen, buf, dirlen, 1, loadfont_callback, locale);
 }
 
 

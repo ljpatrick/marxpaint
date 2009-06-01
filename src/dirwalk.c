@@ -48,7 +48,7 @@
 ///////////////// directory walking callers and callbacks //////////////////
 
 void loadfont_callback(SDL_Surface * screen, const char *restrict const dir,
-		       unsigned dirlen, tp_ftw_str * files, unsigned i)
+		       unsigned dirlen, tp_ftw_str * files, unsigned i, char * locale)
 {
   dirlen = dirlen;
 
@@ -87,8 +87,22 @@ void loadfont_callback(SDL_Surface * screen, const char *restrict const dir,
       char fname[512];
       TuxPaint_Font *font;
       snprintf(fname, sizeof fname, "%s/%s", dir, files[i].str);
-//printf("Loading font: %s\n", fname);
-      font = TuxPaint_Font_OpenFont("", fname, text_sizes[text_size]);
+/* printf("Loading font: %s  (locale is: %s)\n", fname, (locale != NULL ? locale : "NULL")); */
+      if (locale != NULL && strstr(fname, "locale") != NULL && all_locale_fonts == 0)
+      {
+        char fname_check[512];
+        /* We're (probably) loading from our locale fonts folder; ONLY load our locale's font */
+        snprintf(fname_check, sizeof fname_check, "%s/%s.ttf", dir, locale);
+/* printf("checking vs \"%s\" vs \"%s\"\n", fname_check, fname); */
+        if (strcmp(fname, fname_check) == 0)
+          font = TuxPaint_Font_OpenFont("", fname, text_sizes[text_size]);
+        else
+          font = NULL;
+      }
+      else
+      {
+        font = TuxPaint_Font_OpenFont("", fname, text_sizes[text_size]);
+      }
       if (font)
       {
 	const char *restrict const family = TuxPaint_Font_FontFaceFamilyName(font);
@@ -205,7 +219,8 @@ void tp_ftw(SDL_Surface * screen, char *restrict const dir, unsigned dirlen,
 	    int rsrc, void (*fn) (SDL_Surface * screen,
 				  const char *restrict const dir,
 				  unsigned dirlen, tp_ftw_str * files,
-				  unsigned count))
+				  unsigned count, char * locale),
+            char * locale)
 {
   DIR *d;
   unsigned num_file_names = 0;
@@ -329,7 +344,7 @@ void tp_ftw(SDL_Surface * screen, char *restrict const dir, unsigned dirlen,
     }
     free(file_names);
 #else
-    fn(screen, dir, dirlen, file_names, num_file_names);
+    fn(screen, dir, dirlen, file_names, num_file_names, locale);
 #endif
   }
 
@@ -340,7 +355,7 @@ void tp_ftw(SDL_Surface * screen, char *restrict const dir, unsigned dirlen,
     {
       memcpy(dir + dirlen, dir_names[num_dir_names].str,
 	     dir_names[num_dir_names].len + 1);
-      tp_ftw(screen, dir, dirlen + dir_names[num_dir_names].len, rsrc, fn);
+      tp_ftw(screen, dir, dirlen + dir_names[num_dir_names].len, rsrc, fn, locale);
       free(dir_names[num_dir_names].str);
     }
     free(dir_names);

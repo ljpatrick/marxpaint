@@ -54,6 +54,7 @@ extern int font_scanner_pid;
 extern int font_socket_fd;
 
 extern int no_system_fonts;
+extern int all_locale_fonts;
 extern int was_bad_font;
 
 /* FIXME: SDL_ttf is up to 2.0.8, so we can probably fully remove this;
@@ -87,12 +88,12 @@ int TuxPaint_Font_FontHeight(TuxPaint_Font * tpf);
 
 TuxPaint_Font *try_alternate_font(int size);
 TuxPaint_Font *load_locale_font(TuxPaint_Font * fallback, int size);
-int load_user_fonts(SDL_Surface * screen, void *vp);
+int load_user_fonts(SDL_Surface * screen, void *vp, char * locale);
 
 #ifdef FORKED_FONTS
 void reliable_write(int fd, const void *buf, size_t count);
 void reliable_read(int fd, void *buf, size_t count);
-void run_font_scanner(SDL_Surface * screen);
+void run_font_scanner(SDL_Surface * screen, char * locale);
 void receive_some_font_info(SDL_Surface * screen);
 #endif
 

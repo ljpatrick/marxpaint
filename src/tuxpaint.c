@@ -22,7 +22,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
   
-  June 14, 2002 - February 22, 2009
+  June 14, 2002 - May 31, 2009
   $Id$
 */
 
@@ -5165,7 +5165,7 @@ static unsigned compute_default_scale_factor(double ratio)
 static void loadbrush_callback(SDL_Surface * screen,
 			       const char *restrict const dir,
 			       unsigned dirlen, tp_ftw_str * files,
-			       unsigned i)
+			       unsigned i, char * locale)
 {
   FILE * fi;
   char buf[64];
@@ -5258,7 +5258,7 @@ static void load_brush_dir(SDL_Surface * screen, const char *const dir)
   unsigned dirlen = strlen(dir);
 
   memcpy(buf, dir, dirlen);
-  tp_ftw(screen, buf, dirlen, 0, loadbrush_callback);
+  tp_ftw(screen, buf, dirlen, 0, loadbrush_callback, NULL);
 }
 
 SDL_Surface *mirror_surface(SDL_Surface * s)
@@ -5974,7 +5974,7 @@ static void get_stamp_thumb(stamp_type * sd)
 static void loadstamp_callback(SDL_Surface * screen,
 			       const char *restrict const dir,
 			       unsigned dirlen, tp_ftw_str * files,
-			       unsigned i)
+			       unsigned i, char * locale)
 {
 #ifdef DEBUG
   printf("loadstamp_callback: %s\n", dir);
@@ -6099,7 +6099,7 @@ static void load_stamp_dir(SDL_Surface * screen, const char *const dir)
   unsigned dirlen = strlen(dir);
   memcpy(buf, dir, dirlen);
   load_stamp_basedir = dir;
-  tp_ftw(screen, buf, dirlen, 0, loadstamp_callback);
+  tp_ftw(screen, buf, dirlen, 0, loadstamp_callback, NULL);
 }
 
 
@@ -6242,6 +6242,7 @@ static void setup(int argc, char *argv[])
   autosave_on_quit = 0;
   dont_load_stamps = 0;
   no_system_fonts = 1;
+  all_locale_fonts = 0;
   mirrorstamps = 0;
   disable_stamp_controls = 0;
   disable_magic_controls = 0;
@@ -6663,6 +6664,14 @@ static void setup(int argc, char *argv[])
     {
       no_system_fonts = 0;
     }
+    else if (strcmp(argv[i], "--alllocalefonts") == 0)
+    {
+      all_locale_fonts = 1;
+    }
+    else if (strcmp(argv[i], "--currentlocalefont") == 0)
+    {
+      all_locale_fonts = 0;
+    }
     else if (strcmp(argv[i], "--noprint") == 0 || strcmp(argv[i], "-p") == 0)
     {
       disable_print = 1;
@@ -6860,6 +6869,8 @@ static void setup(int argc, char *argv[])
 
   
   setup_language(getfilename(argv[0]), &button_label_y_nudge);
+/*  printf("cur locale = %d (%s)\n", get_current_language(), lang_prefixes[get_current_language()]);  */
+
   im_init(&im_data, get_current_language());
 
 #ifndef NO_SDLPANGO
@@ -6873,7 +6884,7 @@ static void setup(int argc, char *argv[])
      -bjk 2007.06.05 */
 
 #ifdef FORKED_FONTS
-  run_font_scanner(screen);
+  run_font_scanner(screen, lang_prefixes[get_current_language()]);
 #endif
 
 
@@ -15883,6 +15894,15 @@ static void parse_options(FILE * fi)
 	       strcmp(str, "stampcontrols=yes") == 0)
       {
 	disable_stamp_controls = 0;
+      }
+      else if (strcmp(str, "alllocalefonts=yes") == 0)
+      {
+        all_locale_fonts = 1;
+      }
+      else if (strcmp(str, "alllocalefonts=no") == 0 ||
+               strcmp(str, "currentlocalefont=yes") == 0)
+      {
+        all_locale_fonts = 0;
       }
       else if (strcmp(str, "nomagiccontrols=yes") == 0)
       {
