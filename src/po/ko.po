@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Tux Paint 0.9.16\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-05-21 17:41-0700\n"
+"POT-Creation-Date: 2009-06-03 16:01-0700\n"
 "PO-Revision-Date: 2007-04-29 23:10-0400\n"
 "Last-Translator: Mark K. Kim <mkkim214@gmail.com>\n"
 "Language-Team: N/A\n"
@@ -115,20 +115,20 @@ msgstr "낙타색!"
 #. and the ASCII-only fonts should be given bad scores in the scoring
 #. code below (the best scores going to fonts that support both).
 #. Line X
-#: ../dirwalk.c:121
+#: ../dirwalk.c:155
 msgid "qx"
 msgstr "ㄱㅎ"
 
-#: ../dirwalk.c:121
+#: ../dirwalk.c:155
 msgid "QX"
 msgstr "ㄲㅍ"
 
 #. Line Y
-#: ../dirwalk.c:124
+#: ../dirwalk.c:158
 msgid "qy"
 msgstr ""
 
-#: ../dirwalk.c:124
+#: ../dirwalk.c:158
 msgid "QY"
 msgstr ""
 
@@ -137,32 +137,32 @@ msgstr ""
 #. especially important for users who have scroll buttons disabled.
 #. Translators should do whatever is needed to put crummy fonts last.
 #. distinct uppercase and lowercase (e.g., 'o' vs. 'O')
-#: ../dirwalk.c:147
+#: ../dirwalk.c:181
 msgid "oO"
 msgstr "ㄱㄴ"
 
 #. uncommon punctuation (e.g., '@', '#', '*', etc.)
-#: ../dirwalk.c:150
+#: ../dirwalk.c:184
 msgid "`\\%_@$~#{}<>^&*"
 msgstr "`\\%_@$~#{}<>^&*"
 
 #. common punctuation (e.g., '?', '!', '.', ',', etc.)
-#: ../dirwalk.c:153
+#: ../dirwalk.c:187
 msgid ",.?!"
 msgstr ",.?!"
 
 #. digits (e.g., '0', '1' and '7')
-#: ../dirwalk.c:156
+#: ../dirwalk.c:190
 msgid "017"
 msgstr "017"
 
 #. distinct circle-like characters (e.g., 'O' (capital oh) vs. '0' (zero))
-#: ../dirwalk.c:159
+#: ../dirwalk.c:193
 msgid "O0"
 msgstr "O0ㅇ"
 
 #. distinct line-like characters (e.g., 'l' (lowercase elle) vs. '1' (one) vs. 'I' (capital aye))
-#: ../dirwalk.c:162
+#: ../dirwalk.c:196
 msgid "1Il|"
 msgstr "1Il|ㅣ"
 
@@ -295,128 +295,128 @@ msgid "An octagon has eight equal sides."
 msgstr "5개의 면이 있는 모양이 '5각형' 입니다."
 
 #. Title of tool selector (buttons down the left)
-#: ../titles.h:41
+#: ../titles.h:56
 msgid "Tools"
 msgstr "도구"
 
 #. Title of color palette (buttons across the bottom)
-#: ../titles.h:44
+#: ../titles.h:59
 msgid "Colors"
 msgstr "색"
 
 #. Title of brush selector (buttons down the right for paint and line tools)
-#: ../titles.h:47
+#: ../titles.h:62
 msgid "Brushes"
 msgstr "붓"
 
 #. Title of eraser selector (buttons down the right for eraser tool)
-#: ../titles.h:50
+#: ../titles.h:65
 msgid "Erasers"
 msgstr "지우개"
 
 #. Title of stamp selector (buttons down the right for stamps tool)
-#: ../titles.h:53
+#: ../titles.h:68
 msgid "Stamps"
 msgstr "도장"
 
 #. Title of shape selector (buttons down the right for shapes tool)
 #. Shape creation tool (square, circle, etc.)
-#: ../titles.h:56 ../tools.h:54
+#: ../titles.h:71 ../tools.h:69
 msgid "Shapes"
 msgstr "모양"
 
 #. Title of font selector (buttons down the right for text tool)
-#: ../titles.h:59
+#: ../titles.h:74
 msgid "Letters"
 msgstr "글"
 
 #. Title of magic tool selector (buttons down the right for magic (effect plugin) tool)
 #. "Magic" effects tools (blur, flip image, etc.)
-#: ../titles.h:62 ../tools.h:60
+#: ../titles.h:77 ../tools.h:75
 msgid "Magic"
 msgstr "효과"
 
 #. Freehand painting tool
-#: ../tools.h:45
+#: ../tools.h:60
 msgid "Paint"
 msgstr "물감"
 
 #. Stamp tool (aka Rubber Stamps)
-#: ../tools.h:48
+#: ../tools.h:63
 msgid "Stamp"
 msgstr "도장"
 
 #. Line drawing tool
-#: ../tools.h:51
+#: ../tools.h:66
 msgid "Lines"
 msgstr "줄"
 
 #. Text tool
-#: ../tools.h:57
+#: ../tools.h:72
 msgid "Text"
 msgstr "글"
 
 #. Undo last action
-#: ../tools.h:63
+#: ../tools.h:78
 msgid "Undo"
 msgstr "전으로"
 
 #. Redo undone action
-#: ../tools.h:66
+#: ../tools.h:81
 msgid "Redo"
 msgstr "다시"
 
 #. Eraser tool
-#: ../tools.h:69
+#: ../tools.h:84
 msgid "Eraser"
 msgstr "지우개"
 
 #. Start a new picture
-#: ../tools.h:72
+#: ../tools.h:87
 msgid "New"
 msgstr "새 그림"
 
 #. Open a saved picture
 #. buttons for the file open dialog
 #. Open dialog: 'Open' button, to load the selected picture
-#: ../tools.h:75 ../tuxpaint.c:7973
+#: ../tools.h:90 ../tuxpaint.c:7984
 msgid "Open"
 msgstr "열기"
 
 #. Save the current picture
-#: ../tools.h:78
+#: ../tools.h:93
 msgid "Save"
 msgstr "저장"
 
 #. Print the current picture
-#: ../tools.h:81
+#: ../tools.h:96
 msgid "Print"
 msgstr "인쇄"
 
 #. Quit/exit Tux Paint application
-#: ../tools.h:84
+#: ../tools.h:99
 msgid "Quit"
 msgstr "끝"
 
 #. Paint tool instructions
-#: ../tools.h:92
+#: ../tools.h:107
 msgid "Pick a color and a brush shape to draw with."
 msgstr "그림 그릴 색과 붓의 모양을 고르세요."
 
 #. Stamp tool instructions
-#: ../tools.h:95
+#: ../tools.h:110
 msgid "Pick a picture to stamp around your drawing."
 msgstr "도장 그림을 고르세요."
 
 #. Line tool instructions
-#: ../tools.h:98
+#: ../tools.h:113
 msgid "Click to start drawing a line. Let go to complete it."
 msgstr ""
 "마우스의 버튼을 누르는 곳이 줄의 시작점 입니다. 버튼을 놓는곳이 종료점 입니"
 "다."
 
 #. Shape tool instructions
-#: ../tools.h:101
+#: ../tools.h:116
 msgid ""
 "Pick a shape. Click to pick the center, drag, then let go when it is the "
 "size you want. Move around to rotate it, and click to draw it."
@@ -425,72 +425,72 @@ msgstr ""
 "를 잡고 버튼을 놓으세요.  (4) 모양을 돌린후 마우스 버튼을 누르세요."
 
 #. Text tool instructions
-#: ../tools.h:104
+#: ../tools.h:119
 msgid "Choose a style of text. Click on your drawing and you can start typing."
 msgstr "(1) 글체를 고르세요.  (2) 그림을 누르고 원하는 글을 키보드로 치세요."
 
 #. Magic tool instruction
-#: ../tools.h:107
+#: ../tools.h:122
 msgid "Pick a magical effect to use on your drawing!"
 msgstr "어떤 효과를 사용 할까요?"
 
 #. Response to 'undo' action
-#: ../tools.h:110
+#: ../tools.h:125
 msgid "Undo!"
 msgstr "전 상태로!"
 
 #. Response to 'redo' action
-#: ../tools.h:113
+#: ../tools.h:128
 msgid "Redo!"
 msgstr "다시 상태로!"
 
 #. Eraser tool
-#: ../tools.h:116
+#: ../tools.h:131
 msgid "Eraser!"
 msgstr "지우개!"
 
 #. Response to 'start a new image' action
-#: ../tools.h:119
+#: ../tools.h:134
 msgid "Pick a color or picture with which to start a new drawing."
 msgstr "도장 그림을 고르세요."
 
 #. Response to 'open' action (while file dialog is being constructed)
-#: ../tools.h:122
+#: ../tools.h:137
 msgid "Open…"
 msgstr "그림 열기..."
 
 #. Response to 'save' action
-#: ../tools.h:125
+#: ../tools.h:140
 msgid "Your image has been saved!"
 msgstr "그림을 저장 했습니다!"
 
 #. Response to 'print' action (while printing, or print dialog is being used)
-#: ../tools.h:128
+#: ../tools.h:143
 msgid "Printing…"
 msgstr "인쇄 중..."
 
 #. Response to 'quit' (exit) action
-#: ../tools.h:131
+#: ../tools.h:146
 msgid "Bye bye!"
 msgstr "안녕!"
 
 #. Instruction while using Line tool (after click, before release)
-#: ../tools.h:135
+#: ../tools.h:150
 msgid "Let go of the button to complete the line."
 msgstr "마우스를 놓으면 줄이 완성돼요."
 
 #. Instruction while using Shape tool (after first click, before release)
-#: ../tools.h:138
+#: ../tools.h:153
 msgid "Hold the button to stretch the shape."
 msgstr "마우스를 누르고 옮기면 모양이 늘려져요."
 
 #. Instruction while finishing Shape tool (after release, during rotation step before second click)
-#: ../tools.h:141
+#: ../tools.h:156
 msgid "Move the mouse to rotate the shape. Click to draw it."
 msgstr "마우스를 옮기면 모양이 돌려져요. 마우스를 누르면 그림이 만들어 져요."
 
 #. Notification that 'New' action was aborted (current image would have been lost)
-#: ../tools.h:144
+#: ../tools.h:159
 msgid "OK then… Let’s keep drawing this one!"
 msgstr "그럼, 계속 그림을 그리세요!"
 
@@ -600,74 +600,74 @@ msgstr "음향복구"
 msgid "Please wait…"
 msgstr "잠깐만 기다려 주세요..."
 
-#: ../tuxpaint.c:7196
+#: ../tuxpaint.c:7207
 msgid "Pick a color."
 msgstr "색을 고르세요"
 
 #. Open dialog: 'Erase' button, to erase/deleted the selected picture
-#: ../tuxpaint.c:7976
+#: ../tuxpaint.c:7987
 msgid "Erase"
 msgstr "지우기"
 
 #. Open dialog: 'Slides' button, to switch to slide show mode
-#: ../tuxpaint.c:7979
+#: ../tuxpaint.c:7990
 msgid "Slides"
 msgstr "슬라이드"
 
 #. Open dialog: 'Back' button, to dismiss Open dialog without opening a picture
-#: ../tuxpaint.c:7982
+#: ../tuxpaint.c:7993
 msgid "Back"
 msgstr "되 돌아가기"
 
 #. Slideshow: 'Next' button, to load next slide (image)
-#: ../tuxpaint.c:7985
+#: ../tuxpaint.c:7996
 msgid "Next"
 msgstr "다음"
 
 #. Slideshow: 'Play' button, to begin a slideshow sequence
-#: ../tuxpaint.c:7988
+#: ../tuxpaint.c:7999
 msgid "Play"
 msgstr "시작"
 
 #. Label for 'Letters' buttons (font selector, down the right when the Text tool is being used); used to show the difference between font faces
-#: ../tuxpaint.c:8635
+#: ../tuxpaint.c:8646
 msgid "Aa"
 msgstr "A가"
 
 #. Admittedly stupid way of determining which keys can be used for
 #. positive and negative responses in dialogs (e.g., [Y] (for 'yes') in English)
-#: ../tuxpaint.c:11635
+#: ../tuxpaint.c:11646
 msgid "Yes"
 msgstr "네"
 
-#: ../tuxpaint.c:11639
+#: ../tuxpaint.c:11650
 msgid "No"
 msgstr "아니요"
 
 #. Prompt to ask whether user wishes to save over old version of their file
-#: ../tuxpaint.c:12591
+#: ../tuxpaint.c:12602
 msgid "Replace the picture with your changes?"
 msgstr "전그림에 덮어쓸까요? 전그림은 없어집니다."
 
 #. Positive response to saving over old version
 #. (like a 'File:Save' action in other applications)
-#: ../tuxpaint.c:12595
+#: ../tuxpaint.c:12606
 msgid "Yes, replace the old one!"
 msgstr "네, 전그림을 덮어쓰세요!"
 
 #. Negative response to saving over old version (saves a new image)
 #. (like a 'File:Save As...' action in other applications)
-#: ../tuxpaint.c:12599
+#: ../tuxpaint.c:12610
 msgid "No, save a new file!"
 msgstr "아니요, 새로운 파일로 저장하죠"
 
-#: ../tuxpaint.c:13362
+#: ../tuxpaint.c:13373
 msgid "Choose the picture you want, then click “Open”."
 msgstr "원하는 그림을 고른후 「열기」버튼을 눌러주세요."
 
 #. Let user choose images:
 #. Instructions for Slideshow file dialog (FIXME: Make a #define)
-#: ../tuxpaint.c:14349 ../tuxpaint.c:14663
+#: ../tuxpaint.c:14360 ../tuxpaint.c:14674
 msgid "Choose the pictures you want, then click “Play”."
 msgstr "원하는 그림을 고른후 「시작」버튼을 눌러주세요."
 
@@ -832,7 +832,9 @@ msgstr "꽃"
 
 #: ../../magic/src/flower.c:130
 msgid "Click and drag to draw a flower stalk. Let go to finish the flower."
-msgstr "마우스를 누르고 움직이면 꽃의 줄기를 그릴 수 있어요. 마우스늘 놓으면 꽃의 얼굴이 생겨요."
+msgstr ""
+"마우스를 누르고 움직이면 꽃의 줄기를 그릴 수 있어요. 마우스늘 놓으면 꽃의 얼"
+"굴이 생겨요."
 
 #: ../../magic/src/foam.c:104
 msgid "Foam"
@@ -849,8 +851,7 @@ msgstr "졉기"
 #: ../../magic/src/fold.c:84
 msgid ""
 "Choose a background color and click to turn the corner of the page over."
-msgstr ""
-"배경의 색을 고른 후 퍼이지의 모퉁이를 클릭하면 다음 페이지로 넘어가요."
+msgstr "배경의 색을 고른 후 퍼이지의 모퉁이를 클릭하면 다음 페이지로 넘어가요."
 
 #: ../../magic/src/glasstile.c:83
 msgid "Glass Tile"
@@ -978,17 +979,17 @@ msgstr "마우스를 누르면 비를 그릴 수 있어요."
 msgid "Click to cover your picture with rain drops."
 msgstr "마우스를 누르면 그림에 비를 그릴 수 있어요."
 
-#: ../../magic/src/realrainbow.c:69
+#: ../../magic/src/realrainbow.c:72
 msgid "Real Rainbow"
 msgstr "무지개"
 
-#: ../../magic/src/realrainbow.c:74
+#: ../../magic/src/realrainbow.c:77
 msgid ""
 "Click where you want your rainbow to start, drag to where you want it to "
 "end, and then let go to draw a rainbow."
 msgstr ""
-"무지개를 시작하고 싶은곳에 마우스를 눌르고 무지개를 끝내고 싶은곳에 "
-"마우스를 놓으세요."
+"무지개를 시작하고 싶은곳에 마우스를 눌르고 무지개를 끝내고 싶은곳에 마우스를 "
+"놓으세요."
 
 #: ../../magic/src/ripples.c:81
 msgid "Ripples"
@@ -1169,9 +1170,9 @@ msgid ""
 "shorter waves, the bottom for taller waves, the left for small waves, and "
 "the right for long waves."
 msgstr ""
-"그림을 양옆으로 물결화 하세요.  그림의 위쪽을 누르면 짧은 물결이 되고, "
-"밑을 누르면 큰물결이 생깁니다.  그림의 왼쪽을 누르면 작은 물결이 되고, "
-"오른쪽을 누르면 긴물결이 생깁니다."
+"그림을 양옆으로 물결화 하세요.  그림의 위쪽을 누르면 짧은 물결이 되고, 밑을 "
+"누르면 큰물결이 생깁니다.  그림의 왼쪽을 누르면 작은 물결이 되고, 오른쪽을 누"
+"르면 긴물결이 생깁니다."
 
 #: ../../magic/src/waves.c:84
 msgid ""
@@ -1179,9 +1180,9 @@ msgid ""
 "waves, the bottom for taller waves, the left for small waves, and the right "
 "for long waves."
 msgstr ""
-"그림을 위아래로 물결화 하세요.  그림의 위쪽을 누르면 짧은 물결이 되고, "
-"밑을 누르면 큰물결이 생깁니다.  그림의 왼쪽을 누르면 작은 물결이 되고, "
-"오른쪽을 누르면 긴물결이 생깁니다."
+"그림을 위아래로 물결화 하세요.  그림의 위쪽을 누르면 짧은 물결이 되고, 밑을 "
+"누르면 큰물결이 생깁니다.  그림의 왼쪽을 누르면 작은 물결이 되고, 오른쪽을 누"
+"르면 긴물결이 생깁니다."
 
 #, fuzzy
 #~ msgid ""

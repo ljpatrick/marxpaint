@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint 0.9.17\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-05-21 17:41-0700\n"
+"POT-Creation-Date: 2009-06-03 16:01-0700\n"
 "PO-Revision-Date: 2007-10-01 09:55+0200\n"
 "Last-Translator: Andrzej M. Krzysztofowicz <ankry@mif.pg.gda.pl>\n"
 "Language-Team: Polish <translation-team-pl@lists.sourceforge.net>\n"
@@ -114,20 +114,20 @@ msgstr "Beżowy!"
 #. and the ASCII-only fonts should be given bad scores in the scoring
 #. code below (the best scores going to fonts that support both).
 #. Line X
-#: ../dirwalk.c:121
+#: ../dirwalk.c:155
 msgid "qx"
 msgstr "qx"
 
-#: ../dirwalk.c:121
+#: ../dirwalk.c:155
 msgid "QX"
 msgstr "QX"
 
 #. Line Y
-#: ../dirwalk.c:124
+#: ../dirwalk.c:158
 msgid "qy"
 msgstr "qy"
 
-#: ../dirwalk.c:124
+#: ../dirwalk.c:158
 msgid "QY"
 msgstr "QY"
 
@@ -136,32 +136,32 @@ msgstr "QY"
 #. especially important for users who have scroll buttons disabled.
 #. Translators should do whatever is needed to put crummy fonts last.
 #. distinct uppercase and lowercase (e.g., 'o' vs. 'O')
-#: ../dirwalk.c:147
+#: ../dirwalk.c:181
 msgid "oO"
 msgstr "oO"
 
 #. uncommon punctuation (e.g., '@', '#', '*', etc.)
-#: ../dirwalk.c:150
+#: ../dirwalk.c:184
 msgid "`\\%_@$~#{}<>^&*"
 msgstr "`\\%_@$~#{}<>^&*"
 
 #. common punctuation (e.g., '?', '!', '.', ',', etc.)
-#: ../dirwalk.c:153
+#: ../dirwalk.c:187
 msgid ",.?!"
 msgstr ",.?!"
 
 #. digits (e.g., '0', '1' and '7')
-#: ../dirwalk.c:156
+#: ../dirwalk.c:190
 msgid "017"
 msgstr "017"
 
 #. distinct circle-like characters (e.g., 'O' (capital oh) vs. '0' (zero))
-#: ../dirwalk.c:159
+#: ../dirwalk.c:193
 msgid "O0"
 msgstr "O0"
 
 #. distinct line-like characters (e.g., 'l' (lowercase elle) vs. '1' (one) vs. 'I' (capital aye))
-#: ../dirwalk.c:162
+#: ../dirwalk.c:196
 msgid "1Il|"
 msgstr "1Il|"
 
@@ -299,126 +299,126 @@ msgid "An octagon has eight equal sides."
 msgstr "Pięciokąt ma pięć boków."
 
 #. Title of tool selector (buttons down the left)
-#: ../titles.h:41
+#: ../titles.h:56
 msgid "Tools"
 msgstr "Narzędzia"
 
 #. Title of color palette (buttons across the bottom)
-#: ../titles.h:44
+#: ../titles.h:59
 msgid "Colors"
 msgstr "Kolory"
 
 #. Title of brush selector (buttons down the right for paint and line tools)
-#: ../titles.h:47
+#: ../titles.h:62
 msgid "Brushes"
 msgstr "Pędzle"
 
 #. Title of eraser selector (buttons down the right for eraser tool)
-#: ../titles.h:50
+#: ../titles.h:65
 msgid "Erasers"
 msgstr "Gumki"
 
 #. Title of stamp selector (buttons down the right for stamps tool)
-#: ../titles.h:53
+#: ../titles.h:68
 msgid "Stamps"
 msgstr "Pieczątki"
 
 #. Title of shape selector (buttons down the right for shapes tool)
 #. Shape creation tool (square, circle, etc.)
-#: ../titles.h:56 ../tools.h:54
+#: ../titles.h:71 ../tools.h:69
 msgid "Shapes"
 msgstr "Kształty"
 
 #. Title of font selector (buttons down the right for text tool)
-#: ../titles.h:59
+#: ../titles.h:74
 msgid "Letters"
 msgstr "Litery"
 
 #. Title of magic tool selector (buttons down the right for magic (effect plugin) tool)
 #. "Magic" effects tools (blur, flip image, etc.)
-#: ../titles.h:62 ../tools.h:60
+#: ../titles.h:77 ../tools.h:75
 msgid "Magic"
 msgstr "Magia"
 
 #. Freehand painting tool
-#: ../tools.h:45
+#: ../tools.h:60
 msgid "Paint"
 msgstr "Rysuj"
 
 #. Stamp tool (aka Rubber Stamps)
-#: ../tools.h:48
+#: ../tools.h:63
 msgid "Stamp"
 msgstr "Pieczęć"
 
 #. Line drawing tool
-#: ../tools.h:51
+#: ../tools.h:66
 msgid "Lines"
 msgstr "Linie"
 
 #. Text tool
-#: ../tools.h:57
+#: ../tools.h:72
 msgid "Text"
 msgstr "Tekst"
 
 #. Undo last action
-#: ../tools.h:63
+#: ../tools.h:78
 msgid "Undo"
 msgstr "Cofnij"
 
 #. Redo undone action
-#: ../tools.h:66
+#: ../tools.h:81
 msgid "Redo"
 msgstr "Ponów"
 
 #. Eraser tool
-#: ../tools.h:69
+#: ../tools.h:84
 msgid "Eraser"
 msgstr "Gumka"
 
 #. Start a new picture
-#: ../tools.h:72
+#: ../tools.h:87
 msgid "New"
 msgstr "Nowy"
 
 #. Open a saved picture
 #. buttons for the file open dialog
 #. Open dialog: 'Open' button, to load the selected picture
-#: ../tools.h:75 ../tuxpaint.c:7973
+#: ../tools.h:90 ../tuxpaint.c:7984
 msgid "Open"
 msgstr "Otwórz"
 
 #. Save the current picture
-#: ../tools.h:78
+#: ../tools.h:93
 msgid "Save"
 msgstr "Zapisz"
 
 #. Print the current picture
-#: ../tools.h:81
+#: ../tools.h:96
 msgid "Print"
 msgstr "Wydrukuj"
 
 #. Quit/exit Tux Paint application
-#: ../tools.h:84
+#: ../tools.h:99
 msgid "Quit"
 msgstr "Zakończ"
 
 #. Paint tool instructions
-#: ../tools.h:92
+#: ../tools.h:107
 msgid "Pick a color and a brush shape to draw with."
 msgstr "Wybierz kolor i kształt pędzla, aby nimi rysować."
 
 #. Stamp tool instructions
-#: ../tools.h:95
+#: ../tools.h:110
 msgid "Pick a picture to stamp around your drawing."
 msgstr "Wybierz obrazek, aby opieczętować swój rysunek."
 
 #. Line tool instructions
-#: ../tools.h:98
+#: ../tools.h:113
 msgid "Click to start drawing a line. Let go to complete it."
 msgstr "Kliknij, aby rozpocząć rysowanie linii. Puść, aby je zakończyć."
 
 #. Shape tool instructions
-#: ../tools.h:101
+#: ../tools.h:116
 msgid ""
 "Pick a shape. Click to pick the center, drag, then let go when it is the "
 "size you want. Move around to rotate it, and click to draw it."
@@ -427,73 +427,73 @@ msgstr ""
 "dobra. Ruszaj myszką, aby obrócić, kliknij, aby narysować."
 
 #. Text tool instructions
-#: ../tools.h:104
+#: ../tools.h:119
 msgid "Choose a style of text. Click on your drawing and you can start typing."
 msgstr "Wybierz styl tekstu. Kliknij na rysunek i rozpocznij pisanie."
 
 #. Magic tool instruction
-#: ../tools.h:107
+#: ../tools.h:122
 msgid "Pick a magical effect to use on your drawing!"
 msgstr "Wybierz magiczny efekt wykorzystywany przy rysowaniu!"
 
 #. Response to 'undo' action
-#: ../tools.h:110
+#: ../tools.h:125
 msgid "Undo!"
 msgstr "Cofnij!"
 
 #. Response to 'redo' action
-#: ../tools.h:113
+#: ../tools.h:128
 msgid "Redo!"
 msgstr "Ponów!"
 
 #. Eraser tool
-#: ../tools.h:116
+#: ../tools.h:131
 msgid "Eraser!"
 msgstr "Gumka!"
 
 #. Response to 'start a new image' action
-#: ../tools.h:119
+#: ../tools.h:134
 #, fuzzy
 msgid "Pick a color or picture with which to start a new drawing."
 msgstr "Wybierz obrazek, aby opieczętować swój rysunek."
 
 #. Response to 'open' action (while file dialog is being constructed)
-#: ../tools.h:122
+#: ../tools.h:137
 msgid "Open…"
 msgstr "Otwórz..."
 
 #. Response to 'save' action
-#: ../tools.h:125
+#: ../tools.h:140
 msgid "Your image has been saved!"
 msgstr "Twój obrazek został zapisany!"
 
 #. Response to 'print' action (while printing, or print dialog is being used)
-#: ../tools.h:128
+#: ../tools.h:143
 msgid "Printing…"
 msgstr "Drukowanie..."
 
 #. Response to 'quit' (exit) action
-#: ../tools.h:131
+#: ../tools.h:146
 msgid "Bye bye!"
 msgstr "Do widzenia!"
 
 #. Instruction while using Line tool (after click, before release)
-#: ../tools.h:135
+#: ../tools.h:150
 msgid "Let go of the button to complete the line."
 msgstr "Puść przycisk, aby zakończyć linię."
 
 #. Instruction while using Shape tool (after first click, before release)
-#: ../tools.h:138
+#: ../tools.h:153
 msgid "Hold the button to stretch the shape."
 msgstr "Przytrzymaj przycisk, aby rozciągnąć kształt."
 
 #. Instruction while finishing Shape tool (after release, during rotation step before second click)
-#: ../tools.h:141
+#: ../tools.h:156
 msgid "Move the mouse to rotate the shape. Click to draw it."
 msgstr "Przesuń myszkę, aby obrócić kształt. Kliknij, aby go narysować."
 
 #. Notification that 'New' action was aborted (current image would have been lost)
-#: ../tools.h:144
+#: ../tools.h:159
 msgid "OK then… Let’s keep drawing this one!"
 msgstr "Dobrze więc... Rysujmy dalej ten obrazek!"
 
@@ -611,74 +611,74 @@ msgstr ""
 msgid "Please wait…"
 msgstr "Proszę zaczekaj..."
 
-#: ../tuxpaint.c:7196
+#: ../tuxpaint.c:7207
 msgid "Pick a color."
 msgstr ""
 
 #. Open dialog: 'Erase' button, to erase/deleted the selected picture
-#: ../tuxpaint.c:7976
+#: ../tuxpaint.c:7987
 msgid "Erase"
 msgstr "Usuń"
 
 #. Open dialog: 'Slides' button, to switch to slide show mode
-#: ../tuxpaint.c:7979
+#: ../tuxpaint.c:7990
 msgid "Slides"
 msgstr "Slajdy"
 
 #. Open dialog: 'Back' button, to dismiss Open dialog without opening a picture
-#: ../tuxpaint.c:7982
+#: ../tuxpaint.c:7993
 msgid "Back"
 msgstr "Wróć"
 
 #. Slideshow: 'Next' button, to load next slide (image)
-#: ../tuxpaint.c:7985
+#: ../tuxpaint.c:7996
 msgid "Next"
 msgstr "Następny"
 
 #. Slideshow: 'Play' button, to begin a slideshow sequence
-#: ../tuxpaint.c:7988
+#: ../tuxpaint.c:7999
 msgid "Play"
 msgstr "Pokaż"
 
 #. Label for 'Letters' buttons (font selector, down the right when the Text tool is being used); used to show the difference between font faces
-#: ../tuxpaint.c:8635
+#: ../tuxpaint.c:8646
 msgid "Aa"
 msgstr "Aa"
 
 #. Admittedly stupid way of determining which keys can be used for
 #. positive and negative responses in dialogs (e.g., [Y] (for 'yes') in English)
-#: ../tuxpaint.c:11635
+#: ../tuxpaint.c:11646
 msgid "Yes"
 msgstr "Tak"
 
-#: ../tuxpaint.c:11639
+#: ../tuxpaint.c:11650
 msgid "No"
 msgstr "Nie"
 
 #. Prompt to ask whether user wishes to save over old version of their file
-#: ../tuxpaint.c:12591
+#: ../tuxpaint.c:12602
 msgid "Replace the picture with your changes?"
 msgstr "Czy zapisać zmiany w tym obrazku?"
 
 #. Positive response to saving over old version
 #. (like a 'File:Save' action in other applications)
-#: ../tuxpaint.c:12595
+#: ../tuxpaint.c:12606
 msgid "Yes, replace the old one!"
 msgstr "Tak, zastąp stary plik!"
 
 #. Negative response to saving over old version (saves a new image)
 #. (like a 'File:Save As...' action in other applications)
-#: ../tuxpaint.c:12599
+#: ../tuxpaint.c:12610
 msgid "No, save a new file!"
 msgstr "Nie, zapisz jako nowy plik!"
 
-#: ../tuxpaint.c:13362
+#: ../tuxpaint.c:13373
 msgid "Choose the picture you want, then click “Open”."
 msgstr "Wybierz obrazek, a potem kliknij 'Otwórz'."
 
 #. Let user choose images:
 #. Instructions for Slideshow file dialog (FIXME: Make a #define)
-#: ../tuxpaint.c:14349 ../tuxpaint.c:14663
+#: ../tuxpaint.c:14360 ../tuxpaint.c:14674
 msgid "Choose the pictures you want, then click “Play”."
 msgstr "Wybierz obrazki, a potem kliknij 'Pokaż'."
 
@@ -1021,13 +1021,13 @@ msgstr "Kliknij, aby zrobić odbicie obrazka jak w lusterku."
 msgid "Click to cover your picture with rain drops."
 msgstr "Kliknij, aby zrobić odbicie obrazka jak w lusterku."
 
-#: ../../magic/src/realrainbow.c:69
+#: ../../magic/src/realrainbow.c:72
 #, fuzzy
 #| msgid "Rainbow"
 msgid "Real Rainbow"
 msgstr "Tęcza"
 
-#: ../../magic/src/realrainbow.c:74
+#: ../../magic/src/realrainbow.c:77
 msgid ""
 "Click where you want your rainbow to start, drag to where you want it to "
 "end, and then let go to draw a rainbow."
