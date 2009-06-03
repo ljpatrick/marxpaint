@@ -8,7 +8,7 @@ http://www.tuxpaint.org/
 
 $Id$
 
-2009.June.1 (0.9.21)
+2009.June.2 (0.9.21)
   * New Starters:
     -------------
     * Silver Frame
@@ -175,6 +175,7 @@ $Id$
       Huang Zuzhen <zuzhenhuang@vip.sina.com>
 
     * Chinese (Traditional) translation
+      Frank Weng <franklin@goodhorse.idv.tw>
       Song Huang <songhuang@users.sourceforge.net>
 
     * Danish translation

@@ -120,11 +120,11 @@ msgstr "米黃色!"
 #  Line X
 #: ../dirwalk.c:121
 msgid "qx"
-msgstr "qx"
+msgstr "正體中文"
 
 #: ../dirwalk.c:121
 msgid "QX"
-msgstr "QX"
+msgstr "正體中文"
 
 #  Line Y
 #: ../dirwalk.c:124
@@ -147,7 +147,7 @@ msgstr "oO"
 #  uncommon punctuation (e.g., '@', '#', '*', etc.)
 #: ../dirwalk.c:150
 msgid "`\\%_@$~#{}<>^&*"
-msgstr "`\\%_@$~#{}<>^&*"
+msgstr "，。、；：？（）"
 
 #  common punctuation (e.g., '?', '!', '.', ',', etc.)
 #: ../dirwalk.c:153

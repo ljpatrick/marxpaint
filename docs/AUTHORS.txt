@@ -7,7 +7,7 @@ bill@newbreedsoftware.com
 http://www.tuxpaint.org/
 
 
-June 17, 2002 - May 25, 2009
+June 17, 2002 - June 2, 2009
 
 $Id$
 
@@ -305,6 +305,7 @@ $Id$
 
   * Chinese (Traditional)
     Song Huang <song@song.idv.tw>
+    Frank Weng <franklin@goodhorse.idv.tw>
     Wei-Lun Chao <chaoweilun@gmail.com>
 
   * Chinese (Traditional) documentation
