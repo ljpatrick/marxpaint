@@ -22,7 +22,7 @@
   
 /* Jan. 17, 2003 */ 
 /* $Id$ */ 
-  
+  
 #ifndef __BEOS_PRINT_H__
 #define __BEOS_PRINT_H__
   
