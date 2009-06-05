@@ -294,12 +294,12 @@ msgstr "Kanje hinza goo nda ceraw hinza."
 #: ../shapes.h:230
 #: ../shapes.h:231
 msgid "A pentagon has five sides."
-msgstr "Kanjeguu goo nda caraw guu.\n"
+msgstr "Kanjeguu goo nda caraw guu."
 
 #: ../shapes.h:235
 #: ../shapes.h:237
 msgid "A rhombus has four equal sides, and opposite sides are parallel."
-msgstr "Kaarekuwante goo nda caraw taaci kaŋ kuurey ga sawa, woo din banda ga carawey kaŋ ga cere hoo kul ga tenji nda cere.\n"
+msgstr "Kaarekuwante goo nda caraw taaci kaŋ kuurey ga sawa, woo din banda ga carawey kaŋ ga cere hoo kul ga tenji nda cere."
 
 #: ../shapes.h:241
 #: ../shapes.h:243
