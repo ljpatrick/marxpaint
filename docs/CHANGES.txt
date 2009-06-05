@@ -8,7 +8,7 @@ http://www.tuxpaint.org/
 
 $Id$
 
-2009.June.2 (0.9.21)
+2009.June.5 (0.9.21)
   * New Starters:
     -------------
     * Silver Frame
@@ -58,9 +58,10 @@ $Id$
       Creative Commons Attribution 2.0 Generic
       http://creativecommons.org/licenses/by/2.0/deed.en
 
-    * String Edges - Draw string-like patters around the screen.
+    * String Edges - Draw string-like patters around the picture.
       String Corner - Draw aligned string-like patterns.
       String 'V' - Draw free-form string-like patterns.
+      Tornado (based on Flowers) - Draws a tornado effect onto the picture.
       By Pere Pujal i Carabantes <pere@fornol.no-ip.org>
 
     * Icons for some new Magic Tools

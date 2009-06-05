@@ -7,7 +7,7 @@ bill@newbreedsoftware.com
 http://www.tuxpaint.org/
 
 
-June 17, 2002 - June 2, 2009
+June 17, 2002 - June 5, 2009
 
 $Id$
 
@@ -68,6 +68,20 @@ $Id$
 
   Math for arc used by Real Rainbow provided by
   Jeff Newmiller <jdnewmil@dcn.davis.ca.us>
+
+  String Art Magic Tools
+  by Pere Pujal i Carabantes <pere@fornol.no-ip.org>
+
+  Tornado Magic Tool
+  (based on Flowers)
+  by Pere Pujal i Carabantes <pere@fornol.no-ip.org>
+
+  Tornado sound effect from
+  "Tornado" film, from Prelinger Archives,
+  produced by Calvin Productions, sponsored by U.S. Weather Bureau.
+  Extracted and edited using 'mplayer' and 'Audacity'.
+  Public Domain.  Archived at the Internet Archive:
+  http://www.archive.org/details/tornado
 
 
 * Graphics
