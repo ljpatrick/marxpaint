@@ -62,7 +62,7 @@ static Mix_Chunk * sharpen_snd_effect[sharpen_NUM_TOOLS];
 const char * sharpen_snd_filenames[sharpen_NUM_TOOLS] = {
   "edges.ogg",
   "sharpen.ogg",
-  "flip.wav" /* FIXME */
+  "silhouette.ogg"
 };
 const char * sharpen_icon_filenames[sharpen_NUM_TOOLS] = {
   "edges.png",

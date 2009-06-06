@@ -290,6 +290,16 @@ $Id$
      http://soundbible.com/431-Pouring-Rain-On-Cement.html
      Pouring rain on cement by Mike Koenig
      Creative Commons attribution licence 3.0
+
+   * Confetti sound (confetti.ogg)
+     http://soundbible.com/419-Tiny-Button-Push.html
+     Tiny button push sound by Mike Koenig
+     Creative Commons attribution licence 3.0
+
+   * Silhouette sound (silhouette.ogg)
+     http://soundbible.com/417-Right-Channel-Scramble.html
+     Right channel scramble by Mike Koenig
+     Creative Commons attribution licence 3.0
  
 * Translations
 
