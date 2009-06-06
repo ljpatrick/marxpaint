@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: fr\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-06-05 17:02-0700\n"
+"POT-Creation-Date: 2009-06-06 10:30+0200\n"
 "PO-Revision-Date: 2004-05-30 21:20-0700\n"
 "Last-Translator: jimmy <jacques.chion@orange.fr>\n"
 "Language-Team:  <fr@li.org>\n"
@@ -1211,14 +1211,12 @@ msgstr ""
 
 #: ../../magic/src/tornado.c:127
 msgid "Tornado"
-msgstr ""
+msgstr "Tornade"
 
-#
 #: ../../magic/src/tornado.c:133
-#, fuzzy
-#| msgid "Click and drag to draw train track rails on your picture."
-msgid "Click and drag to draw a tornado funnel on your picture."
-msgstr "Clique et déplace la souris pour dessiner des rails."
+msgid "Click and drag to draw a tornado stalk. Let go to finish the tornado."
+msgstr ""
+"Clique et déplace la souris pour dessiner le tourbillon d'une torande. Relâche pour finir."
 
 #: ../../magic/src/tv.c:72
 msgid "TV"
@@ -1258,70 +1256,7 @@ msgstr ""
 "courtes vagues, vers le bas pour de longues vagues, à gauche pour diminuer "
 "l'amplitude et à droite pour augmenter l'amplitude."
 
-#, fuzzy
-#~| msgid "Click and drag to draw a flower stalk. Let go to finish the flower."
-#~ msgid ""
-#~ "Click and drag to draw a tornado stalk. Let go to finish the tornado."
+#
+#~ msgid "Click and drag to draw a tornado funnel on your picture."
 #~ msgstr ""
-#~ "Clique et déplace la souris pour dessiner une fleur. Relâche pour la "
-#~ "finir."
-
-#~ msgid "Alien"
-#~ msgstr "Étrange"
-
-#~ msgid ""
-#~ "Click and move the mouse to give parts of your picture an \"alien\" "
-#~ "appearance."
-#~ msgstr ""
-#~ "Clique et déplace la souris pour ajouter à l'image une apparence "
-#~ "“étrange”."
-
-#~ msgid "Click to give your entire picture an \"alien\" appearance."
-#~ msgstr "Clique pour donner une apparence “étrange” à toute l'image."
-
-#~ msgid "Click the part of your picture where would you like a puzzle."
-#~ msgstr "Choisis une partie du dessin où tu voudrais faire un puzzle."
-
-#~ msgid "Click to make a puzzle in fullscreen mode."
-#~ msgstr "Clique pour fabriquer un puzzle à partir de l'ensembble du dessin."
-
-#~ msgid "Separate Colors"
-#~ msgstr "Couleurs distinctes"
-
-#~ msgid "Threshold"
-#~ msgstr "Seuil"
-
-#
-#~ msgid "Click and move the mouse to add noise to the image."
-#~ msgstr "Clique et déplace la souris pour ajouter des parasites à l'image."
-
-#
-#~ msgid "Click to add noise to the entire image."
-#~ msgstr "Clique pour ajouter des parasites à toute l'image."
-
-#
-#~ msgid "Click and move the mouse to trace the edges of objects in the image."
-#~ msgstr ""
-#~ "Clique et déplace la souris pour avoir le contour d'objets de l'image."
-
-#~ msgid "Click to trace the edges of objects in the image."
-#~ msgstr "Clique pour avoir le contour de tous les objets de l'image."
-
-#
-#~ msgid "Click and move the mouse to sharpen the image."
-#~ msgstr "Clique et déplace la souris pour affiner l'image."
-
-#
-#~ msgid "Click to add snow to the entire image."
-#~ msgstr "Clique pour obtenir de la neige sur toute l'image."
-
-#
-#~ msgid ""
-#~ "Click and move the mouse around to turn the image into pure color and "
-#~ "white regions."
-#~ msgstr ""
-#~ "Clique et déplace la souris pour obtenir une image en blanc et une seule "
-#~ "couleur que tu as choisie. "
-
-#~ msgid "Trace Contour"
-#~ msgstr "Contour"
+#~ "Clique et déplace la souris pour dessiner le tourbillon d'une tornade."
