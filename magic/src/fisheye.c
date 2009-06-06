@@ -53,7 +53,7 @@ int fisheye_init(magic_api * api)
 {
   char fname[1024];
 	
-    snprintf(fname, sizeof(fname), "%s/sounds/magic/fisheye.wav", api->data_directory);
+    snprintf(fname, sizeof(fname), "%s/sounds/magic/fisheye.ogg", api->data_directory);
     fisheye_snd = Mix_LoadWAV(fname);
 
   return(1);

@@ -272,6 +272,13 @@ $Id$
      http://soundbible.com/474-Magic-Wand-Noise.html
      Magic Wand Noise Sounds by Mike Koenig
      Creative Commons attribution licence 3.0
+
+   * Fisheye sound (fisheye.ogg)
+     Caroline Ford <caroline.ford.work@googlemail.com> 2009 cropped from
+     http://http://soundbible.com/146-UFO-Exit.html
+     UFO Exit by Stephan
+     Public domain.   
+
  
 * Translations
 
