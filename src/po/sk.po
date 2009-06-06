@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint 0.9.17\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-06-03 16:01-0700\n"
+"POT-Creation-Date: 2009-06-05 17:02-0700\n"
 "PO-Revision-Date: 2009-02-02 19:20+0100\n"
 "Last-Translator: Jaroslav Ryník <jrynik at yahoo dot co dot uk>, \n"
 "Language-Team: Slovak <sk-i18n@lists.linux.sk>\n"
@@ -1177,6 +1177,17 @@ msgstr "Zubná pasta"
 msgid "Click and drag to squirt toothpaste onto your picture."
 msgstr "Klikním a pohybom myši postriekaš obrázok zubnou pastou."
 
+#: ../../magic/src/tornado.c:127
+msgid "Tornado"
+msgstr ""
+
+#: ../../magic/src/tornado.c:133
+#, fuzzy
+#| msgid "Click and drag to draw train track rails on your picture."
+msgid "Click and drag to draw a tornado funnel on your picture."
+msgstr ""
+"Kliknutím a pohybom myši môžeš na obrázok nakresliť koľajnice pre vlak."
+
 #: ../../magic/src/tv.c:72
 msgid "TV"
 msgstr "TV"
@@ -1212,6 +1223,14 @@ msgstr ""
 "Keď klikneš, obrázok sa zvlní zvislo. Ak pohneš myšou smerom nahor, vlny "
 "budú kratšie. Ak pohneš myšou smerom nadol, vlny budú vyššie, ak doľava, "
 "budú menšie, a ak doprava, tak budú dlhšie."
+
+#, fuzzy
+#~| msgid "Click and drag to draw a flower stalk. Let go to finish the flower."
+#~ msgid ""
+#~ "Click and drag to draw a tornado stalk. Let go to finish the tornado."
+#~ msgstr ""
+#~ "Stlač tlačidlo myši, pohybuj ňou a nakreslíš stonku kvetu. Keď myš "
+#~ "pustíš, kvet sa dokončí."
 
 #, fuzzy
 #~ msgid ""

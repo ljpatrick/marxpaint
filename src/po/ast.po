@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TuxPaint 0.9.18\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-06-03 16:01-0700\n"
+"POT-Creation-Date: 2009-06-05 17:02-0700\n"
 "PO-Revision-Date: 2009-05-29 19:37+0100\n"
 "Last-Translator: Xandru Armesto <alarmes@wanadoo.es>\n"
 "Language-Team: Asturian\n"
@@ -1154,6 +1154,16 @@ msgstr "Pasta de dientes"
 msgid "Click and drag to squirt toothpaste onto your picture."
 msgstr "Calca y arrastra pa chiscar con pasta de dientes."
 
+#: ../../magic/src/tornado.c:127
+msgid "Tornado"
+msgstr ""
+
+#: ../../magic/src/tornado.c:133
+#, fuzzy
+#| msgid "Click and drag to draw train track rails on your picture."
+msgid "Click and drag to draw a tornado funnel on your picture."
+msgstr "Calca y arrastra pa dibuxar víes de tren na imaxe."
+
 #: ../../magic/src/tv.c:72
 msgid "TV"
 msgstr "TV"
@@ -1189,6 +1199,14 @@ msgstr ""
 "Calca pa ondular la imaxe verticalmente. Calca arriba pa llograr ondes más "
 "cortes y p'abaxo pa faceles más altes, a la manzorga pa faceles más pequeñes "
 "y a la drecha pa faceles más llargues. "
+
+#, fuzzy
+#~| msgid "Click and drag to draw a flower stalk. Let go to finish the flower."
+#~ msgid ""
+#~ "Click and drag to draw a tornado stalk. Let go to finish the tornado."
+#~ msgstr ""
+#~ "Fai clic y arrastra pa dibuxar el tallu d'una flor. Suelta pa finar la "
+#~ "flor."
 
 #, fuzzy
 #~ msgid ""

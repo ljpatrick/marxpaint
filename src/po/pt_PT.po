@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint 0.9.20b\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-06-03 16:01-0700\n"
+"POT-Creation-Date: 2009-06-05 17:02-0700\n"
 "PO-Revision-Date: 2009-04-21 17:37-0000\n"
 "Last-Translator: Sérgio Marques <smarquespt@gmail.com>\n"
 "Language-Team: Portuguese <translation-team-pt@lists.sourceforge.net>\n"
@@ -1164,6 +1164,16 @@ msgstr "Pasta de dentes"
 msgid "Click and drag to squirt toothpaste onto your picture."
 msgstr "Clica e arrasta para esguichar pasta de dentes no desenho."
 
+#: ../../magic/src/tornado.c:127
+msgid "Tornado"
+msgstr ""
+
+#: ../../magic/src/tornado.c:133
+#, fuzzy
+#| msgid "Click and drag to draw train track rails on your picture."
+msgid "Click and drag to draw a tornado funnel on your picture."
+msgstr "Clica e arrasta para desenhar carris no desenho"
+
 #: ../../magic/src/tv.c:72
 msgid "TV"
 msgstr "TV"
@@ -1199,6 +1209,12 @@ msgstr ""
 "Clica para fazer ondulações horizontais no desenho. Clica em direcção ao "
 "topo para ondas curtas, para baixo para ondas altas, para a esquerda para "
 "ondas pequenas e para a direita para ondas compridas."
+
+#, fuzzy
+#~| msgid "Click and drag to draw a flower stalk. Let go to finish the flower."
+#~ msgid ""
+#~ "Click and drag to draw a tornado stalk. Let go to finish the tornado."
+#~ msgstr "Clica e arrasta para desenhar uma flor. Larga para acabar a flor."
 
 #, fuzzy
 #~ msgid ""

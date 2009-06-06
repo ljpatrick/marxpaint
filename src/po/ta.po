@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TuxPaint 0.9.13\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-06-03 16:01-0700\n"
+"POT-Creation-Date: 2009-06-05 17:02-0700\n"
 "PO-Revision-Date: 2009-01-18 00:06+0530\n"
 "Last-Translator: ravishankar <ravidreams@gmail.com>\n"
 "Language-Team: A. Ravishankar <ravishankar.ayyakkannu@gmail.com>\n"
@@ -1157,6 +1157,16 @@ msgstr "பற்பசை"
 msgid "Click and drag to squirt toothpaste onto your picture."
 msgstr "சொடுக்கி இழுத்தால், படத்தில் பற்பசை சிதறும்."
 
+#: ../../magic/src/tornado.c:127
+msgid "Tornado"
+msgstr ""
+
+#: ../../magic/src/tornado.c:133
+#, fuzzy
+#| msgid "Click and drag to draw train track rails on your picture."
+msgid "Click and drag to draw a tornado funnel on your picture."
+msgstr "சொடுக்கி இழுத்தால், படத்தில் தொடர்வண்டி இருப்புப் பாதைகளை வரையலாம்."
+
 #: ../../magic/src/tv.c:72
 msgid "TV"
 msgstr "தொலைக்காட்சி"
@@ -1192,6 +1202,12 @@ msgstr ""
 "சொடுக்கினால், படம் நெடுக்குவாட்டில் அலை பாயும். மேலே சொடுக்கினால் தாழ்ந்த அலைகளும், கீழே "
 "சொடுக்கினால் உயர்ந்த அலைகளும், இடப்பக்கம் சொடுக்கினால் சிறிய அலைகளும் வலப்பக்கம் "
 "சொடுக்கினால் பெரிய அலைகளும் கிடைக்கும்."
+
+#, fuzzy
+#~| msgid "Click and drag to draw a flower stalk. Let go to finish the flower."
+#~ msgid ""
+#~ "Click and drag to draw a tornado stalk. Let go to finish the tornado."
+#~ msgstr "பூச்செண்டை வரைய சொடுக்கி இழுங்க. இழுத்து விட்டபின் பூ மலரும்."
 
 #, fuzzy
 #~ msgid ""

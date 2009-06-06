@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-06-03 16:01-0700\n"
+"POT-Creation-Date: 2009-06-05 17:02-0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -1147,6 +1147,14 @@ msgstr ""
 
 #: ../../magic/src/toothpaste.c:68
 msgid "Click and drag to squirt toothpaste onto your picture."
+msgstr ""
+
+#: ../../magic/src/tornado.c:127
+msgid "Tornado"
+msgstr ""
+
+#: ../../magic/src/tornado.c:133
+msgid "Click and drag to draw a tornado funnel on your picture."
 msgstr ""
 
 #: ../../magic/src/tv.c:72

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-06-03 16:01-0700\n"
+"POT-Creation-Date: 2009-06-05 17:02-0700\n"
 "PO-Revision-Date: 2006-10-09 20:32+0200\n"
 "Last-Translator: Vincent Mahlangu <vmahlangu@parliament.gov.za>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -1252,6 +1252,16 @@ msgid "Click and drag to squirt toothpaste onto your picture."
 msgstr ""
 "Qhwarhaza bewudose njalo iKhondlwana ujikeleze ukuze ufiphaze isithombe."
 
+#: ../../magic/src/tornado.c:127
+msgid "Tornado"
+msgstr ""
+
+#: ../../magic/src/tornado.c:133
+#, fuzzy
+msgid "Click and drag to draw a tornado funnel on your picture."
+msgstr ""
+"Qhwarhaza bewudose njalo iKhondlwana ujikeleze ukuze ufiphaze isithombe."
+
 #: ../../magic/src/tv.c:72
 msgid "TV"
 msgstr ""
@@ -1286,6 +1296,12 @@ msgid ""
 "waves, the bottom for taller waves, the left for small waves, and the right "
 "for long waves."
 msgstr ""
+
+#, fuzzy
+#~ msgid ""
+#~ "Click and drag to draw a tornado stalk. Let go to finish the tornado."
+#~ msgstr ""
+#~ "Qhwarhaza bewudose njalo iKhondlwana ujikeleze ukuze ufiphaze isithombe."
 
 #, fuzzy
 #~ msgid ""

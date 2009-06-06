@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint 0.9.17\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-06-03 16:01-0700\n"
+"POT-Creation-Date: 2009-06-05 17:02-0700\n"
 "PO-Revision-Date: 2008-10-20 09:16-0700\n"
 "Last-Translator: Neskie Manuel <neskiem@gmail.com>\n"
 "Language-Team: Ubuntu Secwepemc Translators <ubuntu-l10n-shs@lists.ubuntu."
@@ -1150,6 +1150,14 @@ msgstr ""
 
 #: ../../magic/src/toothpaste.c:68
 msgid "Click and drag to squirt toothpaste onto your picture."
+msgstr ""
+
+#: ../../magic/src/tornado.c:127
+msgid "Tornado"
+msgstr ""
+
+#: ../../magic/src/tornado.c:133
+msgid "Click and drag to draw a tornado funnel on your picture."
 msgstr ""
 
 #: ../../magic/src/tv.c:72

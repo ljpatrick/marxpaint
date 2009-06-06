@@ -14,7 +14,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint 0.9.11\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-06-03 16:01-0700\n"
+"POT-Creation-Date: 2009-06-05 17:02-0700\n"
 "PO-Revision-Date: 2008-10-14 12:34+0800\n"
 "Last-Translator: Ijeal <tomorrow1881@sohu.com>\n"
 "Language-Team: zh_CN <i18n-translation@lists.linux.net.cn>\n"
@@ -1181,6 +1181,16 @@ msgstr "牙膏"
 msgid "Click and drag to squirt toothpaste onto your picture."
 msgstr "单击并拖动在图画上喷出牙膏。"
 
+#: ../../magic/src/tornado.c:127
+msgid "Tornado"
+msgstr ""
+
+#: ../../magic/src/tornado.c:133
+#, fuzzy
+#| msgid "Click and drag to draw train track rails on your picture."
+msgid "Click and drag to draw a tornado funnel on your picture."
+msgstr "单击然后移动鼠标将图片变淡。"
+
 #: ../../magic/src/tv.c:72
 msgid "TV"
 msgstr "电视"
@@ -1214,6 +1224,12 @@ msgid ""
 msgstr ""
 "单击使你的图画起垂直波纹。单击顶部画低波纹，单击底部画高波纹，单击左面画小波"
 "纹，单击右面画长波纹。"
+
+#, fuzzy
+#~| msgid "Click and drag to draw a flower stalk. Let go to finish the flower."
+#~ msgid ""
+#~ "Click and drag to draw a tornado stalk. Let go to finish the tornado."
+#~ msgstr "单击然后移动鼠标画一个花柄。让我们画一朵花。"
 
 #~ msgid "Alien"
 #~ msgstr "外国人"

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-06-03 16:01-0700\n"
+"POT-Creation-Date: 2009-06-05 17:02-0700\n"
 "PO-Revision-Date: 2008-05-30 15:41+0700\n"
 "Last-Translator: Khoem Sokhem <khoemsokhem@khmeros.info>\n"
 "Language-Team: Khmer <support@khmeros.info>\n"
@@ -1194,6 +1194,15 @@ msgstr ""
 msgid "Click and drag to squirt toothpaste onto your picture."
 msgstr "ចុច ហើយ​អូស ដើម្បី​ផ្លាស់ប្ដូរ​រូបភាព​របស់​អ្នក​នៅលើ​ផ្ទាំង​ក្រណាត់ ។"
 
+#: ../../magic/src/tornado.c:127
+msgid "Tornado"
+msgstr ""
+
+#: ../../magic/src/tornado.c:133
+#, fuzzy
+msgid "Click and drag to draw a tornado funnel on your picture."
+msgstr "ចុច ហើយ​អូស ដើម្បី​គូរ​​ភ្លើងហ្វា​នៅលើ​រូបភាព​របស់​អ្នក ។"
+
 #: ../../magic/src/tv.c:72
 msgid "TV"
 msgstr ""
@@ -1231,6 +1240,12 @@ msgid ""
 msgstr ""
 "ចុច ដើម្បី​ធ្វើ​រូបភាព​ឲ្យ​រលក ។ ចុច​រុញ​ទៅ​លើ ដើម្បី​បាន​រលក​ខ្លីៗ រុញ​ទៅ​ក្រោម ដើម្បី​បាន​រលក​វែងៗ រុញ​ទៅ​"
 "ឆ្វេង ដើម្បី​បាន​រលក​តូចៗ និង​រុញ​ទៅ​ស្ដាំ ដើម្បី​បាន​រលក​ធំៗ ។"
+
+#, fuzzy
+#~| msgid "Click and drag to draw a flower stalk. Let go to finish the flower."
+#~ msgid ""
+#~ "Click and drag to draw a tornado stalk. Let go to finish the tornado."
+#~ msgstr "ចុច ហើយ​អូស ដើម្បី​គូរ​ទង​ផ្កា ។ លែង​វា​វិញ ដើម្បី​បញ្ចប់​ការ​គូរ​ផ្កា ។"
 
 #, fuzzy
 #~ msgid ""

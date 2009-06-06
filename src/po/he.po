@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: he\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-06-03 16:01-0700\n"
+"POT-Creation-Date: 2009-06-05 17:02-0700\n"
 "PO-Revision-Date: 2009-05-10 21:45+0200\n"
 "Last-Translator: Jorge Mariano <jmariano@ymail.com>\n"
 "Language-Team: Hebrew <mdk-hebrew@iglu.org.il>\n"
@@ -1155,6 +1155,16 @@ msgstr "משחת שיניים"
 msgid "Click and drag to squirt toothpaste onto your picture."
 msgstr "לחצי וגררי להזזת התמונה על בד הציור."
 
+#: ../../magic/src/tornado.c:127
+msgid "Tornado"
+msgstr ""
+
+#: ../../magic/src/tornado.c:133
+#, fuzzy
+#| msgid "Click and drag to draw train track rails on your picture."
+msgid "Click and drag to draw a tornado funnel on your picture."
+msgstr "לחצי וגררי לציור מסילת רכבת על התמונה."
+
 #: ../../magic/src/tv.c:72
 msgid "TV"
 msgstr "טלוויזיה"
@@ -1188,6 +1198,12 @@ msgid ""
 msgstr ""
 "לחצי ליצירת תמונה גלית. לחצי כלפי מעלה לגלים יותר קצרים, כלפי מטה לגלים יותר "
 "גבוהים, שמאלה לגלים קטנים וימינה לגלים ארוכים."
+
+#, fuzzy
+#~| msgid "Click and drag to draw a flower stalk. Let go to finish the flower."
+#~ msgid ""
+#~ "Click and drag to draw a tornado stalk. Let go to finish the tornado."
+#~ msgstr "לחצי וגררי כדי לצייר פרח. הפסיקי ללחוץ לסיום."
 
 #~ msgid "Alien"
 #~ msgstr "חיזר"

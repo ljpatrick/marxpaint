@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: af\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-06-03 16:01-0700\n"
+"POT-Creation-Date: 2009-06-05 17:02-0700\n"
 "PO-Revision-Date: 2009-05-26 15:02+0200\n"
 "Last-Translator: Petri Jooste <petri.jooste@nwu.ac.za>\n"
 "Language-Team: \n"
@@ -1161,6 +1161,16 @@ msgstr "Tandepasta"
 msgid "Click and drag to squirt toothpaste onto your picture."
 msgstr "Klik en beweeg die muis om tandepasta op die prent uit te druk."
 
+#: ../../magic/src/tornado.c:127
+msgid "Tornado"
+msgstr ""
+
+#: ../../magic/src/tornado.c:133
+#, fuzzy
+#| msgid "Click and drag to draw train track rails on your picture."
+msgid "Click and drag to draw a tornado funnel on your picture."
+msgstr "Klik en beweeg om treinspore te teken."
+
 #: ../../magic/src/tv.c:72
 msgid "TV"
 msgstr "TV"
@@ -1194,6 +1204,13 @@ msgid ""
 msgstr ""
 "Klik om die prent vertikaal te laat golf. Klik nader aan bo vir korter "
 "golwe, onder vir hoër golwe, links vir klein golfies en regs vir lang golwe."
+
+#, fuzzy
+#~| msgid "Click and drag to draw a flower stalk. Let go to finish the flower."
+#~ msgid ""
+#~ "Click and drag to draw a tornado stalk. Let go to finish the tornado."
+#~ msgstr ""
+#~ "Klik en beweeg om 'n blomsteel te teken. Laat los om die blom te voltooi."
 
 #, fuzzy
 #~ msgid ""

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-06-03 16:01-0700\n"
+"POT-Creation-Date: 2009-06-05 17:02-0700\n"
 "PO-Revision-Date: 2008-12-08 12:36+0100\n"
 "Last-Translator: Daniel Nylander <po@danielnylander.se>\n"
 "Language-Team:  <tp-sv@listor.tp-sv.se>\n"
@@ -1157,6 +1157,16 @@ msgstr "Tandkräm"
 msgid "Click and drag to squirt toothpaste onto your picture."
 msgstr "Klicka och rör musen för att spruta tandkräm på din bild."
 
+#: ../../magic/src/tornado.c:127
+msgid "Tornado"
+msgstr ""
+
+#: ../../magic/src/tornado.c:133
+#, fuzzy
+#| msgid "Click and drag to draw train track rails on your picture."
+msgid "Click and drag to draw a tornado funnel on your picture."
+msgstr "Klicka och rör musen för att rita tågräls på bilden."
+
 #: ../../magic/src/tv.c:72
 msgid "TV"
 msgstr "TV"
@@ -1192,6 +1202,14 @@ msgstr ""
 "Klicka för att göra bilden vågig vertikalt. Klicka högt uppe för korta "
 "vågor, långt ner för långa vågor, till vänster för små vågor och till höger "
 "för långa vågor."
+
+#, fuzzy
+#~| msgid "Click and drag to draw a flower stalk. Let go to finish the flower."
+#~ msgid ""
+#~ "Click and drag to draw a tornado stalk. Let go to finish the tornado."
+#~ msgstr ""
+#~ "Klicka och dra musen för att rita blommans stjälk. Släpp för att göra "
+#~ "färdigt blomman."
 
 #~ msgid "Alien"
 #~ msgstr "Utomjordisk"

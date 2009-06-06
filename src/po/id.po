@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: id\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-06-03 16:01-0700\n"
+"POT-Creation-Date: 2009-06-05 17:02-0700\n"
 "PO-Revision-Date: 2005-10-12 20:03+0700\n"
 "Last-Translator: Tedi Heriyanto <tedi_h@gmx.net>\n"
 "Language-Team: Indonesia <translation-team-id@lists.sourceforge.net>\n"
@@ -1216,6 +1216,15 @@ msgstr ""
 msgid "Click and drag to squirt toothpaste onto your picture."
 msgstr "Klik dan pindahkan mouse ke sekitar untuk mengaburkan gambar."
 
+#: ../../magic/src/tornado.c:127
+msgid "Tornado"
+msgstr ""
+
+#: ../../magic/src/tornado.c:133
+#, fuzzy
+msgid "Click and drag to draw a tornado funnel on your picture."
+msgstr "Klik dan pindahkan mouse ke sekitar untuk mengaburkan gambar."
+
 #: ../../magic/src/tv.c:72
 msgid "TV"
 msgstr ""
@@ -1248,6 +1257,11 @@ msgid ""
 "waves, the bottom for taller waves, the left for small waves, and the right "
 "for long waves."
 msgstr ""
+
+#, fuzzy
+#~ msgid ""
+#~ "Click and drag to draw a tornado stalk. Let go to finish the tornado."
+#~ msgstr "Klik dan pindahkan mouse ke sekitar untuk mengaburkan gambar."
 
 #, fuzzy
 #~ msgid ""

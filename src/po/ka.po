@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TuxPaint\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-06-03 16:01-0700\n"
+"POT-Creation-Date: 2009-06-05 17:02-0700\n"
 "PO-Revision-Date: 2008-12-09 06:57+0300\n"
 "Last-Translator: Giasher <giasher@gmail.com>\n"
 "Language-Team: Gia Shervashidze <giasher@telenet.ge>\n"
@@ -1152,6 +1152,16 @@ msgstr "კბილის პასტა"
 msgid "Click and drag to squirt toothpaste onto your picture."
 msgstr "დაწკაპეთ და გადაატარეთ თქვენი ნახატის კბილის პასტით დასაფარად."
 
+#: ../../magic/src/tornado.c:127
+msgid "Tornado"
+msgstr ""
+
+#: ../../magic/src/tornado.c:133
+#, fuzzy
+#| msgid "Click and drag to draw train track rails on your picture."
+msgid "Click and drag to draw a tornado funnel on your picture."
+msgstr "დაწკაპეთ და გადაატარეთ ლიანდაგების დასამატებლად."
+
 #: ../../magic/src/tv.c:72
 msgid "TV"
 msgstr "ტელევიზორი"
@@ -1187,6 +1197,12 @@ msgstr ""
 "დაწკაპეთ ნახატის მართობულად დატალღვისთვის. ზემოთ - დაბალი ტალღებისთვის, "
 "ქვემოთ - მაღალი ტალღებისთვის, მარცხნივ - პატარა ტალღებისთვის, მარჯვნივ - "
 "მოზრდილი ტალღებისთვის."
+
+#, fuzzy
+#~| msgid "Click and drag to draw a flower stalk. Let go to finish the flower."
+#~ msgid ""
+#~ "Click and drag to draw a tornado stalk. Let go to finish the tornado."
+#~ msgstr "დაწკაპეთ და გადაათრიეთ ყვავილის ღერო."
 
 #~ msgid "Alien"
 #~ msgstr "უცხოპლანეტელი"

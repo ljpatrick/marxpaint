@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint 0.9.17\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-06-03 16:01-0700\n"
+"POT-Creation-Date: 2009-06-05 17:02-0700\n"
 "PO-Revision-Date: 2009-05-28 08:35+0100\n"
 "Last-Translator: Matej Urbančič <mateju@svn.gnome.org>\n"
 "Language-Team: Slovenian <translation-team-sl@lists.sourceforge.net>\n"
@@ -1162,6 +1162,16 @@ msgstr "Zobna pasta"
 msgid "Click and drag to squirt toothpaste onto your picture."
 msgstr "S klikom in premikanjem miške je mogoče nanesti zobno pasto na sliko."
 
+#: ../../magic/src/tornado.c:127
+msgid "Tornado"
+msgstr ""
+
+#: ../../magic/src/tornado.c:133
+#, fuzzy
+#| msgid "Click and drag to draw train track rails on your picture."
+msgid "Click and drag to draw a tornado funnel on your picture."
+msgstr "S klikom in premikanjem miške je mogoče narisati tračnice na sliko."
+
 #: ../../magic/src/tv.c:72
 msgid "TV"
 msgstr "TV"
@@ -1197,6 +1207,12 @@ msgstr ""
 "S klikom je mogoče ustvariti navpično valovanje. S premikom navzgor izrišemo "
 "krajše valove, navzdol pa daljše. S premikom levo in desno pa določimo "
 "velikost valov."
+
+#, fuzzy
+#~| msgid "Click and drag to draw a flower stalk. Let go to finish the flower."
+#~ msgid ""
+#~ "Click and drag to draw a tornado stalk. Let go to finish the tornado."
+#~ msgstr "S klikom in vlekom miške je mogoče risati šopek rož. "
 
 #, fuzzy
 #~ msgid ""

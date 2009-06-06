@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-06-03 16:01-0700\n"
+"POT-Creation-Date: 2009-06-05 17:02-0700\n"
 "PO-Revision-Date: 2009-05-28 18:37+0530\n"
 "Last-Translator: Kartik Mistry <kartik.mistry@gmail.com>\n"
 "Language-Team: Gujarati <team@utkarsh.org>\n"
@@ -1153,6 +1153,16 @@ msgstr "ટૂથપેસ્ટ"
 msgid "Click and drag to squirt toothpaste onto your picture."
 msgstr "તમારા ચિત્ર પર ટૂથપેસ્ટ ખરડવા માટે માઉસને ક્લિક કરો અને આજુ-બાજુ ખસેડો."
 
+#: ../../magic/src/tornado.c:127
+msgid "Tornado"
+msgstr ""
+
+#: ../../magic/src/tornado.c:133
+#, fuzzy
+#| msgid "Click and drag to draw train track rails on your picture."
+msgid "Click and drag to draw a tornado funnel on your picture."
+msgstr "તમારા ચિત્રમાં રેલ્વેનાં પાટાઓ દોરવા માટે માઉસને ક્લિક કરીને ખેંચો."
+
 #: ../../magic/src/tv.c:72
 msgid "TV"
 msgstr "ટીવી"
@@ -1188,6 +1198,12 @@ msgstr ""
 "ચિત્રને ઉભા મોજાંઓ વાળું બનાવવા માટે ક્લિક કરો. ઉપરની તરફ ક્લિક કરતાં મોજાં ટૂંકા થશે, "
 "નીચેની તરફ કરતાં લાંબા થશે, ડાબી બાજુ ક્લિક કરતાં મોજા નાનાં થશે, જમણી બાજુ ક્લિક કરતાં "
 "મોજાં પહોળા થશે."
+
+#, fuzzy
+#~| msgid "Click and drag to draw a flower stalk. Let go to finish the flower."
+#~ msgid ""
+#~ "Click and drag to draw a tornado stalk. Let go to finish the tornado."
+#~ msgstr "ફૂલ દાંડી દોરવા માટે ક્લિક કરો અને ખસેડો. ચાલો ફ્લને પૂર્ણ કરીએ."
 
 #, fuzzy
 #~ msgid ""

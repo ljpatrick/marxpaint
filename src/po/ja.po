@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint 0.9.15\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-06-03 16:01-0700\n"
+"POT-Creation-Date: 2009-06-05 17:02-0700\n"
 "PO-Revision-Date: 2009-05-24 16:54+0900\n"
 "Last-Translator: TOYAMA Shin-ichi <shin1@wmail.plala.or.jp>\n"
 "Language-Team: japanese <shin1@wmail.plala.or.jp>\n"
@@ -1178,6 +1178,16 @@ msgstr "はみがきこ"
 msgid "Click and drag to squirt toothpaste onto your picture."
 msgstr "クリックしたまま マウスをうごかして えに　はみがきこを　しぼりだそう"
 
+#: ../../magic/src/tornado.c:127
+msgid "Tornado"
+msgstr ""
+
+#: ../../magic/src/tornado.c:133
+#, fuzzy
+#| msgid "Click and drag to draw train track rails on your picture."
+msgid "Click and drag to draw a tornado funnel on your picture."
+msgstr "クリックしたまま　マウスをうごかして　でんしゃの　せんろを　かこう"
+
 #: ../../magic/src/tv.c:72
 msgid "TV"
 msgstr "テレビ"
@@ -1215,6 +1225,14 @@ msgstr ""
 "うを クリックすれば みじかく したのほうを クリックすれば ながくなるよ。それか"
 "ら なみの たかさは ひだりのほうを クリックすれば おおきく みぎのほうを クリッ"
 "クすれば ひくくなるよ"
+
+#, fuzzy
+#~| msgid "Click and drag to draw a flower stalk. Let go to finish the flower."
+#~ msgid ""
+#~ "Click and drag to draw a tornado stalk. Let go to finish the tornado."
+#~ msgstr ""
+#~ "クリックしたままマウスをうごかして くきを かこう。 マウスを はなせば はな"
+#~ "の できあがり"
 
 #, fuzzy
 #~ msgid ""

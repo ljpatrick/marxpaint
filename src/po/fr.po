@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: fr\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-06-03 16:01-0700\n"
+"POT-Creation-Date: 2009-06-05 17:02-0700\n"
 "PO-Revision-Date: 2004-05-30 21:20-0700\n"
 "Last-Translator: jimmy <jacques.chion@orange.fr>\n"
 "Language-Team:  <fr@li.org>\n"
@@ -1209,6 +1209,17 @@ msgid "Click and drag to squirt toothpaste onto your picture."
 msgstr ""
 "Clique et déplace la souris pour faire gicler du dentifrice sur le dessin."
 
+#: ../../magic/src/tornado.c:127
+msgid "Tornado"
+msgstr ""
+
+#
+#: ../../magic/src/tornado.c:133
+#, fuzzy
+#| msgid "Click and drag to draw train track rails on your picture."
+msgid "Click and drag to draw a tornado funnel on your picture."
+msgstr "Clique et déplace la souris pour dessiner des rails."
+
 #: ../../magic/src/tv.c:72
 msgid "TV"
 msgstr "TV"
@@ -1246,6 +1257,14 @@ msgstr ""
 "Clique pour avoir un effet vagué verticalement. Clique vers le haut pour de "
 "courtes vagues, vers le bas pour de longues vagues, à gauche pour diminuer "
 "l'amplitude et à droite pour augmenter l'amplitude."
+
+#, fuzzy
+#~| msgid "Click and drag to draw a flower stalk. Let go to finish the flower."
+#~ msgid ""
+#~ "Click and drag to draw a tornado stalk. Let go to finish the tornado."
+#~ msgstr ""
+#~ "Clique et déplace la souris pour dessiner une fleur. Relâche pour la "
+#~ "finir."
 
 #~ msgid "Alien"
 #~ msgstr "Étrange"

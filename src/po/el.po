@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Tuxpaint Greek Translation v1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-06-03 16:01-0700\n"
+"POT-Creation-Date: 2009-06-05 17:02-0700\n"
 "PO-Revision-Date: 2009-04-21 12:30+0200\n"
 "Last-Translator: \n"
 "Language-Team: ltee.org\n"
@@ -1212,6 +1212,18 @@ msgstr ""
 "Κάνε κλικ και σύρε το ποντίκι για να εκτοξεύσεις οδοντόκρεμα στη ζωγραφιά "
 "σου."
 
+#: ../../magic/src/tornado.c:127
+msgid "Tornado"
+msgstr ""
+
+#: ../../magic/src/tornado.c:133
+#, fuzzy
+#| msgid "Click and drag to draw train track rails on your picture."
+msgid "Click and drag to draw a tornado funnel on your picture."
+msgstr ""
+"Κάνε κλικ και σύρε το ποντίκι για να σχεδιάσεις ράγες διαδρομής τρένων στη "
+"ζωγραφιά σου."
+
 #: ../../magic/src/tv.c:72
 msgid "TV"
 msgstr "Τηλεόραση"
@@ -1249,6 +1261,14 @@ msgstr ""
 "Κάνε κλικ για να κάνεις τη ζωγραφιά κατακόρυφα κυματιστή. Κάνε κλικ προς την "
 "κορυφή για κοντύτερα κύματα, προς τη βάση για ψηλότερα κύματα,  προς τα "
 "αριστερά για μικρά κύματα και προς τα δεξια για κύματα μεγάλου μήκους. "
+
+#, fuzzy
+#~| msgid "Click and drag to draw a flower stalk. Let go to finish the flower."
+#~ msgid ""
+#~ "Click and drag to draw a tornado stalk. Let go to finish the tornado."
+#~ msgstr ""
+#~ "Κάνε κλικ και σύρε το ποντίκι για να σχεδιάσεις ένα λουλούδι με κοτσάνι. "
+#~ "Άφησε το πλήκτρο του ποντικιού για να ολοκληρωθεί το λουλούδι."
 
 #, fuzzy
 #~ msgid ""

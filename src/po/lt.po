@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Tuxpaint 0.9.9\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-06-03 16:01-0700\n"
+"POT-Creation-Date: 2009-06-05 17:02-0700\n"
 "PO-Revision-Date: 2004-12-10 18:11+0200\n"
 "Last-Translator: Gintaras Goštautas <gintaras@nes.lt>\n"
 "Language-Team: Lithuanian <komp_lt@konf.lt>\n"
@@ -1216,6 +1216,15 @@ msgstr ""
 msgid "Click and drag to squirt toothpaste onto your picture."
 msgstr "Spustelėkite ir pele judinkite piešinį ant drobės."
 
+#: ../../magic/src/tornado.c:127
+msgid "Tornado"
+msgstr ""
+
+#: ../../magic/src/tornado.c:133
+#, fuzzy
+msgid "Click and drag to draw a tornado funnel on your picture."
+msgstr "Spustelėkite ir pele pieškite šviesos spindulį."
+
 #: ../../magic/src/tv.c:72
 msgid "TV"
 msgstr ""
@@ -1256,6 +1265,14 @@ msgstr ""
 "Spustelkite kad subanguotumėte piešinį. Spustelkit link viršaus kad "
 "sumažintumėte bangas,link apačios, kad padidintumėte bangas, link karės, kad "
 "patrumpintumėte bangas, link dešnės, kad pailgintumėte"
+
+#, fuzzy
+#~| msgid "Click and drag to draw a flower stalk. Let go to finish the flower."
+#~ msgid ""
+#~ "Click and drag to draw a tornado stalk. Let go to finish the tornado."
+#~ msgstr ""
+#~ "Spustelkite ir tempkite piešdami gelės stiebą. Paleiskite kad pabaigti "
+#~ "gėlę"
 
 #, fuzzy
 #~ msgid ""

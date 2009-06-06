@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TuxPaint\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-06-03 16:01-0700\n"
+"POT-Creation-Date: 2009-06-05 17:02-0700\n"
 "PO-Revision-Date: 2009-03-30 12:55+0300\n"
 "Last-Translator: Nikolay Parukhin <nik@sevpinro.ru>\n"
 "Language-Team: Dmitriy Ivanov <ace22b@myrealbox.com>\n"
@@ -1190,6 +1190,16 @@ msgstr "Зубная паста"
 msgid "Click and drag to squirt toothpaste onto your picture."
 msgstr "Щёлкните и поводите по картинке, чтобы выдавить зубную пасту на неё."
 
+#: ../../magic/src/tornado.c:127
+msgid "Tornado"
+msgstr ""
+
+#: ../../magic/src/tornado.c:133
+#, fuzzy
+#| msgid "Click and drag to draw train track rails on your picture."
+msgid "Click and drag to draw a tornado funnel on your picture."
+msgstr "Нажмите и потяните мышь, чтобы нарисовать железнодорожные рельсы."
+
 #: ../../magic/src/tv.c:72
 msgid "TV"
 msgstr "ТВ"
@@ -1224,6 +1234,14 @@ msgid ""
 msgstr ""
 "Нажмите, чтобы нарисовать вертикальные волны. Двигайте вверх, чтобы сделать "
 "волны короче, вниз - выше, налево - для низких волн, направо - для длинных."
+
+#, fuzzy
+#~| msgid "Click and drag to draw a flower stalk. Let go to finish the flower."
+#~ msgid ""
+#~ "Click and drag to draw a tornado stalk. Let go to finish the tornado."
+#~ msgstr ""
+#~ "Нажмите и тяните, чтобы нарисовать стебель. Отпустите, чтобы завершить "
+#~ "цветок."
 
 #, fuzzy
 #~ msgid ""

@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: nb\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-06-03 16:01-0700\n"
+"POT-Creation-Date: 2009-06-05 17:02-0700\n"
 "PO-Revision-Date: 2009-05-17 20:34+0200\n"
 "Last-Translator: Karl Ove Hufthammer <karl@huftis.org>\n"
 "Language-Team: Norwegian Nynorsk <i18n-nn@lister.ping.uio.no>\n"
@@ -1167,6 +1167,16 @@ msgstr "Tannkrem"
 msgid "Click and drag to squirt toothpaste onto your picture."
 msgstr "Hold inne knappen og flytt rundt for å sprute tannkrem på tegningen."
 
+#: ../../magic/src/tornado.c:127
+msgid "Tornado"
+msgstr ""
+
+#: ../../magic/src/tornado.c:133
+#, fuzzy
+#| msgid "Click and drag to draw train track rails on your picture."
+msgid "Click and drag to draw a tornado funnel on your picture."
+msgstr "Hold inne knappen og flytt rundt for å tegne jernbanelinjer."
+
 #: ../../magic/src/tv.c:72
 msgid "TV"
 msgstr "Fjernsyn"
@@ -1202,6 +1212,14 @@ msgstr ""
 "Trykk for å gjøre tegningen bølgete oppover. Trykk oppe for å lage lave "
 "bølger, nede for å lage høye bølger, til venstre for å lage korte bølger og "
 "til høyre for å lage lange bølger."
+
+#, fuzzy
+#~| msgid "Click and drag to draw a flower stalk. Let go to finish the flower."
+#~ msgid ""
+#~ "Click and drag to draw a tornado stalk. Let go to finish the tornado."
+#~ msgstr ""
+#~ "Hold inne knappen og flytt rundt for å lage stilken. Slipp knappen for å "
+#~ "tegne blomsten."
 
 #, fuzzy
 #~ msgid ""

@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint 0.9.17\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-06-03 16:01-0700\n"
+"POT-Creation-Date: 2009-06-05 17:02-0700\n"
 "PO-Revision-Date: 2007-10-01 09:55+0200\n"
 "Last-Translator: Andrzej M. Krzysztofowicz <ankry@mif.pg.gda.pl>\n"
 "Language-Team: Polish <translation-team-pl@lists.sourceforge.net>\n"
@@ -1207,6 +1207,15 @@ msgstr ""
 msgid "Click and drag to squirt toothpaste onto your picture."
 msgstr "Kliknij i przesuń myszką dookoła, aby rozmazać obrazek."
 
+#: ../../magic/src/tornado.c:127
+msgid "Tornado"
+msgstr ""
+
+#: ../../magic/src/tornado.c:133
+#, fuzzy
+msgid "Click and drag to draw a tornado funnel on your picture."
+msgstr "Kliknij i przesuń myszką dookoła, aby rozmazać obrazek."
+
 #: ../../magic/src/tv.c:72
 msgid "TV"
 msgstr ""
@@ -1239,6 +1248,11 @@ msgid ""
 "waves, the bottom for taller waves, the left for small waves, and the right "
 "for long waves."
 msgstr ""
+
+#, fuzzy
+#~ msgid ""
+#~ "Click and drag to draw a tornado stalk. Let go to finish the tornado."
+#~ msgstr "Kliknij i przesuń myszką dookoła, aby rozmazać obrazek."
 
 #, fuzzy
 #~ msgid ""

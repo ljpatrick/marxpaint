@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-06-03 16:01-0700\n"
+"POT-Creation-Date: 2009-06-05 17:02-0700\n"
 "PO-Revision-Date: 2008-02-10 19:28+0400\n"
 "Last-Translator: Jamil Farzana <jamil.farzana@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -1247,6 +1247,16 @@ msgid "Click and drag to squirt toothpaste onto your picture."
 msgstr ""
 "Şəkili yerindən çəkmək üçün mausun sol düyməsini bas və mausu hərəkətə gətir."
 
+#: ../../magic/src/tornado.c:127
+msgid "Tornado"
+msgstr ""
+
+#: ../../magic/src/tornado.c:133
+#, fuzzy
+msgid "Click and drag to draw a tornado funnel on your picture."
+msgstr ""
+"Şəkili işıqlandırmaq üçün mausun sol düyməsini bas və mausu hərəkətə gətir."
+
 #: ../../magic/src/tv.c:72
 msgid "TV"
 msgstr ""
@@ -1283,6 +1293,14 @@ msgid ""
 "for long waves."
 msgstr ""
 "Şəkili dalğalı etmək üçün mausun sol düyməsini bas və mausu hərəkətə gətir."
+
+#, fuzzy
+#~| msgid "Click and drag to draw a flower stalk. Let go to finish the flower."
+#~ msgid ""
+#~ "Click and drag to draw a tornado stalk. Let go to finish the tornado."
+#~ msgstr ""
+#~ "Çiçəyin gövdəni çəkmək üçün mausun sol düyməsini bas və mausu hərəkətə "
+#~ "gətir. Çiçəyi çəkmək üçün mausun düyməsini burax."
 
 #, fuzzy
 #~ msgid ""

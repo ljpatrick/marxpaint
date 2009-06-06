@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TuxPaint 0.9.17\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-06-03 16:01-0700\n"
+"POT-Creation-Date: 2009-06-05 17:02-0700\n"
 "PO-Revision-Date: 2009-05-12 10:27+0100\n"
 "Last-Translator: Simona Riva <simona.riva@tiscali.it>\n"
 "Language-Team: Italian <it@li.org>\n"
@@ -1212,6 +1212,16 @@ msgstr "Dentifricio"
 msgid "Click and drag to squirt toothpaste onto your picture."
 msgstr "Fai clic e muovi il mouse per spruzzare il dentifricio sul disegno."
 
+#: ../../magic/src/tornado.c:127
+msgid "Tornado"
+msgstr ""
+
+#: ../../magic/src/tornado.c:133
+#, fuzzy
+#| msgid "Click and drag to draw train track rails on your picture."
+msgid "Click and drag to draw a tornado funnel on your picture."
+msgstr "Fai clic e trascina il mouse per disegnare le rotaie del treno."
+
 #: ../../magic/src/tv.c:72
 msgid "TV"
 msgstr "TV"
@@ -1247,6 +1257,14 @@ msgstr ""
 "Fai clic per ottenere un effetto di onde verticali. Fai clic verso l'alto "
 "per onde basse, verso il basso per onde alte, verso sinistra per onde "
 "piccole e verso destra per onde lunghe."
+
+#, fuzzy
+#~| msgid "Click and drag to draw a flower stalk. Let go to finish the flower."
+#~ msgid ""
+#~ "Click and drag to draw a tornado stalk. Let go to finish the tornado."
+#~ msgstr ""
+#~ "Fai clic e trascina il mouse per disegnare il gambo di un fiore. Lascia "
+#~ "andare il tasto per completarlo."
 
 #, fuzzy
 #~ msgid ""

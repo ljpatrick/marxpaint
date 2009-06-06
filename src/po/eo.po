@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint 0.9.18\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-06-03 16:01-0700\n"
+"POT-Creation-Date: 2009-06-05 17:02-0700\n"
 "PO-Revision-Date: 2008-01-29 15:00+0000\n"
 "Last-Translator: Edmund GRIMLEY EVANS <edmundo@rano.org>\n"
 "Language-Team: Esperanto <translation-team-eo@lists.sourceforge.net>\n"
@@ -1196,6 +1196,15 @@ msgstr ""
 msgid "Click and drag to squirt toothpaste onto your picture."
 msgstr "Alklaku kaj movu la muson por movi vian bildon sur la tolo."
 
+#: ../../magic/src/tornado.c:127
+msgid "Tornado"
+msgstr ""
+
+#: ../../magic/src/tornado.c:133
+#, fuzzy
+msgid "Click and drag to draw a tornado funnel on your picture."
+msgstr "Alklaku kaj movu la muson por desegni lumradion sur vian bildon."
+
 #: ../../magic/src/tv.c:72
 msgid "TV"
 msgstr ""
@@ -1233,6 +1242,14 @@ msgid ""
 msgstr ""
 "Alklaku por ondigi la bildon. Alklaku supre por mallongaj ondoj, sube por "
 "pli altaj ondoj, maldekstre por etaj ondoj, dekstre por longaj ondoj."
+
+#, fuzzy
+#~| msgid "Click and drag to draw a flower stalk. Let go to finish the flower."
+#~ msgid ""
+#~ "Click and drag to draw a tornado stalk. Let go to finish the tornado."
+#~ msgstr ""
+#~ "Alklaku kaj movu la muson por desegni la tigon de floro. Ellasu por fini "
+#~ "la floron."
 
 #, fuzzy
 #~ msgid ""

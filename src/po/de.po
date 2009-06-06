@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-06-03 16:01-0700\n"
+"POT-Creation-Date: 2009-06-05 17:02-0700\n"
 "PO-Revision-Date: 2008-02-27 11:34+0100\n"
 "Last-Translator: Burkhard Lück <lueck@hube-lueck.de>\n"
 "Language-Team: Deutsch <kde-i18n-de@kde.org>\n"
@@ -1208,6 +1208,15 @@ msgstr ""
 msgid "Click and drag to squirt toothpaste onto your picture."
 msgstr "Klick und bewege die Maus, um das Bild zu verschieben."
 
+#: ../../magic/src/tornado.c:127
+msgid "Tornado"
+msgstr ""
+
+#: ../../magic/src/tornado.c:133
+#, fuzzy
+msgid "Click and drag to draw a tornado funnel on your picture."
+msgstr "Klick und bewege die Maus, um helle Kreise auf das Bild zu malen."
+
 #: ../../magic/src/tv.c:72
 msgid "TV"
 msgstr ""
@@ -1247,6 +1256,12 @@ msgstr ""
 "Klicke, um das Bild wellig zu machen. Klicke nach oben für niedrige Wellen, "
 "nach unten für hohe Wellen, nach links für kurze Wellen und nach rechts für "
 "lange Wellen."
+
+#, fuzzy
+#~| msgid "Click and drag to draw a flower stalk. Let go to finish the flower."
+#~ msgid ""
+#~ "Click and drag to draw a tornado stalk. Let go to finish the tornado."
+#~ msgstr "Klicke und ziehe um einen Blütenstiel zu malen."
 
 #, fuzzy
 #~ msgid ""

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-06-03 16:01-0700\n"
+"POT-Creation-Date: 2009-06-05 17:02-0700\n"
 "PO-Revision-Date: 2009-05-30 09:04+0800\n"
 "Last-Translator: 黃敏松 <songhuang.tw@gmail.com>\n"
 "Language-Team: Chinese (traditional) <zh-l10n@linux.org.tw>\n"
@@ -1312,6 +1312,16 @@ msgstr "牙膏"
 msgid "Click and drag to squirt toothpaste onto your picture."
 msgstr "按著並移動滑鼠來噴出牙膏在圖紙上。"
 
+#: ../../magic/src/tornado.c:127
+msgid "Tornado"
+msgstr ""
+
+#: ../../magic/src/tornado.c:133
+#, fuzzy
+#| msgid "Click and drag to draw train track rails on your picture."
+msgid "Click and drag to draw a tornado funnel on your picture."
+msgstr "按著並移動滑鼠畫一段鐵軌到你的圖上。"
+
 #: ../../magic/src/tv.c:72
 msgid "TV"
 msgstr "電視"
@@ -1345,3 +1355,9 @@ msgid ""
 msgstr ""
 "在圖紙上按下滑鼠鍵會讓圖畫如垂直波浪般的扭曲，按著往上是短的波浪，往下是長的"
 "波浪，往左是小的波浪，往右是大的波浪。"
+
+#, fuzzy
+#~| msgid "Click and drag to draw a flower stalk. Let go to finish the flower."
+#~ msgid ""
+#~ "Click and drag to draw a tornado stalk. Let go to finish the tornado."
+#~ msgstr "按著並移動滑鼠來畫出花莖，讓我們來完成這朵花。"

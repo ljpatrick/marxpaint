@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint 081207\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-06-03 16:01-0700\n"
+"POT-Creation-Date: 2009-06-05 17:02-0700\n"
 "PO-Revision-Date: 2008-12-08 14:06-0500\n"
 "Last-Translator: Kevin Scannell <kscanne@gmail.com>\n"
 "Language-Team: Irish <gaeilge-gnulinux@lists.sourceforge.net>\n"
@@ -1172,6 +1172,16 @@ msgstr "Taos Fiacla"
 msgid "Click and drag to squirt toothpaste onto your picture."
 msgstr "Cliceáil agus tarraing chun taos fiacla a stealladh ar do phictiúr."
 
+#: ../../magic/src/tornado.c:127
+msgid "Tornado"
+msgstr ""
+
+#: ../../magic/src/tornado.c:133
+#, fuzzy
+#| msgid "Click and drag to draw train track rails on your picture."
+msgid "Click and drag to draw a tornado funnel on your picture."
+msgstr "Cliceáil agus tarraing chun ráillí traenach a dhearadh ar do phictiúr."
+
 #: ../../magic/src/tv.c:72
 msgid "TV"
 msgstr "Teilifís"
@@ -1201,6 +1211,14 @@ msgid ""
 "waves, the bottom for taller waves, the left for small waves, and the right "
 "for long waves."
 msgstr ""
+
+#, fuzzy
+#~| msgid "Click and drag to draw a flower stalk. Let go to finish the flower."
+#~ msgid ""
+#~ "Click and drag to draw a tornado stalk. Let go to finish the tornado."
+#~ msgstr ""
+#~ "Cliceáil agus tarraing chun bláthchos a dhearadh. Scaoil é chun an bláth "
+#~ "a chríochnú."
 
 #~ msgid "Alien"
 #~ msgstr "Eachtardhomhanda"
