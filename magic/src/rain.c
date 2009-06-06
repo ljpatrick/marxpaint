@@ -56,7 +56,7 @@ enum {
 static Mix_Chunk * rain_snd_effect[rain_NUM_TOOLS];
 
 const char * rain_snd_filenames[rain_NUM_TOOLS] = {
-  "flip.wav",
+  "rain.ogg",
 };
 const char * rain_icon_filenames[rain_NUM_TOOLS] = {
   "rain.png",
