@@ -6,10 +6,9 @@
   by Bill Kendrick <bill@newbreedsoftware.com>
   Math assistence by Jeff Newmiller <jdnewmil@dcn.davis.ca.us>
 
-  2009.04.02 - 2009.05.27
+  2009.04.02 - 2009.06.06
 
 FIXME:
-* Needs sound effect - realrainbow.ogg (needs code)
 * Color/alpha art needs improvement.
 * Pixel gaps appear in lines sometimes (esp. larger rainbows).
 */
@@ -21,6 +20,7 @@ FIXME:
 
 #include "tp_magic_api.h"
 
+Mix_Chunk * realrainbow_snd;
 int realrainbow_x1, realrainbow_y1, realrainbow_x2, realrainbow_y2;
 SDL_Rect realrainbow_rect;
 SDL_Surface * realrainbow_colors;
@@ -48,6 +48,10 @@ int realrainbow_init(magic_api * api)
   realrainbow_colors = IMG_Load(fname);
   if (realrainbow_colors == NULL)
     return(0);
+
+  snprintf(fname, sizeof(fname), "%s/sounds/magic/realrainbow.ogg",
+           api->data_directory);
+  realrainbow_snd = Mix_LoadWAV(fname);
 
   return(1);
 }
@@ -90,6 +94,8 @@ int realrainbow_requires_colors(magic_api * api, int which)
 void realrainbow_shutdown(magic_api * api)
 {
   SDL_FreeSurface(realrainbow_colors);
+  if (realrainbow_snd != NULL)
+    Mix_FreeChunk(realrainbow_snd);
 }
 
 void realrainbow_set_color(magic_api * api, Uint8 r, Uint8 g, Uint8 b)
@@ -184,6 +190,8 @@ void realrainbow_release(magic_api * api, int which,
   update_rect->y = ry1;
   update_rect->w = rx2 - rx1 + 1;
   update_rect->h = ry2 - ry1 + 1;
+
+  api->playsound(realrainbow_snd, 128, 255);
 }
 
 void realrainbow_switchin(magic_api * api, int which, int mode, SDL_Surface * canvas)
