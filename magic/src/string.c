@@ -2,6 +2,7 @@
 #include "SDL_image.h"
 #include "SDL_mixer.h"
 
+// string.ogg is in /sounds but needs code adding 
 
 Mix_Chunk * string_snd;
 unsigned int img_w, img_h;
