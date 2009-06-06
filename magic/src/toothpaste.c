@@ -56,7 +56,7 @@ enum {
 static Mix_Chunk * toothpaste_snd_effect[toothpaste_NUM_TOOLS];
 
 const char * toothpaste_snd_filenames[toothpaste_NUM_TOOLS] = {
-  "flip.wav",
+  "toothpaste.ogg",
 };
 const char * toothpaste_icon_filenames[toothpaste_NUM_TOOLS] = {
   "toothpaste.png",

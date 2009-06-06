@@ -322,6 +322,12 @@ $Id$
      Altered in audacity by Caroline Ford
      Creative Commons Attribution 3.0
 
+    * toothpaste sound (toothpaste.ogg)
+     Based on squishy 2 by Mike Koenig
+     Reversed and pitch shifted in audacity by C Ford
+     http://soundbible.com/512-Squishy-2.html
+     Creative Commons Attribution 3.0
+
 * Translations
 
   * Afrikaans

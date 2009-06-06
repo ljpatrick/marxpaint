@@ -26,6 +26,9 @@
   (See COPYING.txt)
 */
 
+// sound only plays on release
+// also same sound for both tools
+
 #include "tp_magic_api.h"
 #include "SDL_image.h"
 #include "SDL_mixer.h"
