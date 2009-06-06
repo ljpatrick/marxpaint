@@ -61,7 +61,7 @@ static Mix_Chunk * tint_snd_effect[tint_NUM_TOOLS];
 
 const char * tint_snd_filenames[tint_NUM_TOOLS] = {
   "tint.wav",
-  "flip.wav" /* FIXME */
+  "fold.ogg" /* FIXME */
 };
 const char * tint_icon_filenames[tint_NUM_TOOLS] = {
   "tint.png",
