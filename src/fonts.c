@@ -631,8 +631,8 @@ void receive_some_font_info(SDL_Surface * screen)
 
   show_progress_bar(screen);
   walk = buf;
-  num_font_families = *walk++;
-  num_font_families += *walk++ << 8u;
+  num_font_families = *(unsigned char *)walk++;
+  num_font_families += *(unsigned char *)walk++ << 8u;
 #ifdef DEBUG
   printf("Got %u bytes with %u families.\n", buf_fill, num_font_families);
 #endif
