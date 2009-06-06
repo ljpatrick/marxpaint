@@ -279,6 +279,11 @@ $Id$
      UFO Exit by Stephan
      Public domain.   
 
+   * Distortion sound (distortion.ogg)
+     Caroline Ford <caroline.ford.work@googlemail.com> 2009 cropped from
+     http://soundbible.com/366-Alien-Creatures.html
+     Alien Creatures by Mike Koenig
+     Creative Commons attribution licence 3.0
  
 * Translations
 
