@@ -61,7 +61,7 @@ enum {
 static Mix_Chunk * mosaic_snd_effect[mosaic_NUM_TOOLS];
 
 const char * mosaic_snd_filenames[mosaic_NUM_TOOLS] = {
-  "flip.wav", /* FIXME */
+  "mosaic.ogg", /* FIXME */
 };
 const char * mosaic_icon_filenames[mosaic_NUM_TOOLS] = {
   "mosaic.png",

@@ -311,6 +311,17 @@ $Id$
      Ping pong game by Aldor cropped by Caroline Ford
      Public domain. 
 
+   * Picasso sound (picasso.ogg)
+     http://soundbible.com/171-Alien-Brain-Scanner.html
+     Cropped from Alien Brain Scanner by Mike Koenig
+     Creative Commons Attribution 3.0
+
+   * Mosaic sound (mosaic.ogg)
+     http://soundbible.com/171-Alien-Brain-Scanner.html
+     Cropped from Alien Brain Scanner by Mike Koenig
+     Altered in audacity by Caroline Ford
+     Creative Commons Attribution 3.0
+
 * Translations
 
   * Afrikaans

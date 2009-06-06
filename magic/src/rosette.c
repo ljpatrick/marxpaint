@@ -65,7 +65,7 @@ int rosette_init(magic_api * api)
 {
   char fname[1024];
 	
-    snprintf(fname, sizeof(fname), "%s/sounds/magic/rosette.wav", api->data_directory);
+    snprintf(fname, sizeof(fname), "%s/sounds/magic/picasso.ogg", api->data_directory);
     rosette_snd = Mix_LoadWAV(fname);
 
   return(1);
