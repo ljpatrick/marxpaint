@@ -9,7 +9,7 @@
   2009.04.02 - 2009.05.27
 
 FIXME:
-* Needs sound effect.
+* Needs sound effect - realrainbow.ogg (needs code)
 * Color/alpha art needs improvement.
 * Pixel gaps appear in lines sometimes (esp. larger rainbows).
 */

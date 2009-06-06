@@ -266,6 +266,12 @@ $Id$
      http://soundbible.com/170-Elves-Laughing-High-Pitch.html 
      Elves Laughing High Pitch by Mike Koenig
      Creative Commons attribution licence 3.0
+
+   * Real rainbow sound (realrainbow.org)
+     Caroline Ford <caroline.ford.work@googlemail.com> 2009 cropped from
+     http://soundbible.com/474-Magic-Wand-Noise.html
+     Magic Wand Noise Sounds by Mike Koenig
+     Creative Commons attribution licence 3.0
  
 * Translations
 
