@@ -130,7 +130,7 @@ char * tornado_get_name(magic_api * api, int which)
 // Return our descriptions, localized:
 char * tornado_get_description(magic_api * api, int which, int mode)
 {
-  return(strdup(gettext_noop("Click and drag to draw a tornado stalk. Let go to finish the tornado.")));
+  return(strdup(gettext_noop("Click and drag to draw a tornado funnel on your picture.")));
 }
 
 // Affect the canvas on drag:
