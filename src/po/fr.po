@@ -1018,7 +1018,7 @@ msgstr "Clique pour remplir le dessin avec des gouttes de pluie."
 
 #: ../../magic/src/realrainbow.c:72
 msgid "Real Rainbow"
-msgstr "Arc-en-ciel réel"
+msgstr "Vrai arc-en-ciel réel"
 
 #: ../../magic/src/realrainbow.c:77
 msgid ""
@@ -1113,7 +1113,7 @@ msgstr "Baver"
 
 #: ../../magic/src/smudge.c:84
 msgid "Click and move the mouse around to smudge the picture."
-msgstr "Clique et déplace la souris pour faire baver l'image."
+msgstr "Clique et déplace la souris pour avoir une image baveuse."
 
 #: ../../magic/src/snow.c:68
 msgid "Snow Ball"
@@ -1155,8 +1155,8 @@ msgstr ""
 #: ../../magic/src/string.c:138
 msgid "Click and drag to draw string art aligned to the edges."
 msgstr ""
-"Clique et déplace la souris pour dessiner un dessin géométrique à partir "
-"d'un angle droit."
+"Clique et déplace la souris pour dessiner un dessin géométrique ayant "
+"un angle droit."
 
 #: ../../magic/src/string.c:141
 msgid ""
@@ -1216,7 +1216,7 @@ msgstr "Tornade"
 #: ../../magic/src/tornado.c:133
 msgid "Click and drag to draw a tornado stalk. Let go to finish the tornado."
 msgstr ""
-"Clique et déplace la souris pour dessiner le tourbillon d'une torande. Relâche pour finir."
+"Clique et déplace la souris pour dessiner le tourbillon d'une tornade. Relâche pour finir."
 
 #: ../../magic/src/tv.c:72
 msgid "TV"
@@ -1255,8 +1255,3 @@ msgstr ""
 "Clique pour avoir un effet vagué verticalement. Clique vers le haut pour de "
 "courtes vagues, vers le bas pour de longues vagues, à gauche pour diminuer "
 "l'amplitude et à droite pour augmenter l'amplitude."
-
-#
-#~ msgid "Click and drag to draw a tornado funnel on your picture."
-#~ msgstr ""
-#~ "Clique et déplace la souris pour dessiner le tourbillon d'une tornade."
