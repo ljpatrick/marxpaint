@@ -58,7 +58,7 @@ int fold_init(magic_api * api)
 {
   char fname[1024];
 	
-    snprintf(fname, sizeof(fname), "%s/sounds/magic/fold.wav", api->data_directory);
+    snprintf(fname, sizeof(fname), "%s/sounds/magic/fold.ogg", api->data_directory);
     fold_snd = Mix_LoadWAV(fname);
 	
   return(1);

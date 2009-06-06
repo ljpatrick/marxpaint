@@ -60,7 +60,7 @@ int calligraphy_init(magic_api * api)
 {
   char fname[1024];
 
-  snprintf(fname, sizeof(fname), "%s/sounds/magic/calligraphy.wav",
+  snprintf(fname, sizeof(fname), "%s/sounds/magic/calligraphy.ogg",
 	   api->data_directory);
 
   calligraphy_snd = Mix_LoadWAV(fname);

@@ -301,6 +301,16 @@ $Id$
      Right channel scramble by Mike Koenig
      Creative Commons attribution licence 3.0
  
+   * Calligraphy sound (calligraphy.ogg)
+     http://soundbible.com/214-Tearing-Paper.html
+     Tearing Paper by Mike Koenig
+     Creative Commons attribution licence 3.0
+
+   * Fold sound (fold.ogg)
+     http://soundbible.com/341-Ping-Pong-Game.html
+     Ping pong game by Aldor cropped by Caroline Ford
+     Public domain. 
+
 * Translations
 
   * Afrikaans
