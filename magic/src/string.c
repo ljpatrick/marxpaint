@@ -2,8 +2,6 @@
 #include "SDL_image.h"
 #include "SDL_mixer.h"
 
-// string.ogg is in /sounds but needs code adding 
-
 Mix_Chunk * string_snd;
 unsigned int img_w, img_h;
 static Uint8 string_r, string_g, string_b;   
@@ -163,12 +161,17 @@ void string_release(magic_api * api, int which,
       }
     string_draw_angle((void *) api, which, canvas, snapshot, string_ox, string_oy, x, y, update_rect);
     }
-  //  no sound at the moment
-  //  api->playsound(string_snd, (x * 255) / canvas->w, 255);
+  api->playsound(string_snd, (x * 255) / canvas->w, 255);
 }
 
 int string_init(__attribute__((unused)) magic_api * api)
-{  
+{
+  char fname[1024];
+
+  snprintf(fname, sizeof(fname), "%s/sounds/magic/string.ogg",
+           api->data_directory);
+  string_snd = Mix_LoadWAV(fname);
+
   return(1);
 }
 
@@ -176,6 +179,9 @@ void string_shutdown(__attribute__((unused)) magic_api * api)
 {
   if (canvas_backup) 
     SDL_FreeSurface(canvas_backup);
+
+  if (string_snd != NULL)
+    Mix_FreeChunk(string_snd);
 }
 
 void string_switchin(__attribute__((unused)) magic_api * api, __attribute__((unused)) int which, __attribute__((unused)) int mode,  SDL_Surface * canvas, __attribute__((unused)) SDL_Surface * snapshot)
