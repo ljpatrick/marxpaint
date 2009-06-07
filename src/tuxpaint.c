@@ -6135,7 +6135,7 @@ static void load_stamps(SDL_Surface * screen)
 #ifndef FORKED_FONTS
 static int load_user_fonts_stub(void *vp)
 {
-  return load_user_fonts(screen, vp);
+  return load_user_fonts(screen, vp, NULL);
 }
 #endif
 
