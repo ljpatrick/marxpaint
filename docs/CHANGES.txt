@@ -8,7 +8,7 @@ http://www.tuxpaint.org/
 
 $Id$
 
-2009.June.5 (0.9.21)
+2009.June.6 (0.9.21)
   * New Starters:
     -------------
     * Silver Frame
@@ -273,6 +273,11 @@ $Id$
 
     * Improved support for localized Stamp sound effects (e.g., "en_GB" for
       British English now works; only "en" would have worked before).
+
+    * Fixed minor bug that caused Tux Paint to crash when loading
+      many fonts (i.e., with the 'sysfonts' option).
+      Pere Pujal i Carabantes <pere@fornol.no-ip.org> and
+      Albert Cahalan <albert@users.sf.net>
 
 2008.June.26 (0.9.20)
   * New translations:
