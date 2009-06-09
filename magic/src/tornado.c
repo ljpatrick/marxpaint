@@ -535,6 +535,7 @@ void tornado_switchin(magic_api * api, int which, int mode, SDL_Surface * canvas
 
 void tornado_switchout(magic_api * api, int which, int mode, SDL_Surface * canvas)
 {
+  api->stopsound();
 }
 
 int tornado_modes(magic_api * api, int which)
