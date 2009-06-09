@@ -329,6 +329,7 @@ void fold_release(magic_api * api, int which,
   update_rect->x=update_rect->y=0;
   update_rect->w=canvas->w;
   update_rect->h=canvas->h;
+  api->playsound(fold_snd, (x * 255) / canvas->w, 255);
 }
 
 void fold_shutdown(magic_api * api)
