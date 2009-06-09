@@ -17,7 +17,7 @@ msgstr ""
 "Project-Id-Version: Tuxpaint cvs 2009-05-18\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2009-06-05 17:02-0700\n"
-"PO-Revision-Date: 2009-05-18 21:57+0200\n"
+"PO-Revision-Date: 2009-06-09 22:10+0200\n"
 "Last-Translator: Pere Pujal i Carabantes <pere@fornol.no-ip.org>\n"
 "Language-Team: Català <linux-ca@chanae.alphanet.ch>\n"
 "MIME-Version: 1.0\n"
@@ -110,6 +110,10 @@ msgstr "Torrat!"
 msgid "Beige!"
 msgstr "Beix!"
 
+# ç, e accentuada, i amb dièresi.
+# Cadascuna d'aquestes traduccions és independent.
+# No escriviu dues vegades la mateixa lletra en la mateixa traducció!
+#
 #. First, the blacklist. We list font families that can crash Tux Paint
 #. via bugs in the SDL_ttf library. We also test fonts to be sure that
 #. they have both uppercase and lowercase letters. Note that we do not
@@ -124,12 +128,16 @@ msgstr "Beix!"
 #. Line X
 #: ../dirwalk.c:155
 msgid "qx"
-msgstr "qx"
+msgstr "çéï"
 
 #: ../dirwalk.c:155
 msgid "QX"
-msgstr "QX"
+msgstr "ÇÈÏ"
 
+# Si es tradueixen qy i QY, es deshabilitaran 
+# els tipus de lletra que no tinguin la possibilitat de mostrar el
+# texte traduït, aixó implicaria deshabilitar molts tipus de lletra
+# que només disposen de caracters ascii però que encara poden ser útils.
 #. Line Y
 #: ../dirwalk.c:158
 msgid "qy"
@@ -139,6 +147,11 @@ msgstr "qy"
 msgid "QY"
 msgstr "QY"
 
+# 2009-06-09 Here we lack a test for "common letters"
+#
+# Aquí faria falta dos tests:
+# un per si hi ha les lletres i un altre per si dibuixen diferent les majúscules
+# de les minúscules (aquest). Ara mateix he combinat els dos tests en un de sol.
 #. Now we score fonts to ensure that the best ones will be placed at
 #. the top of the list. The user will see them first. This sorting is
 #. especially important for users who have scroll buttons disabled.
@@ -146,17 +159,32 @@ msgstr "QY"
 #. distinct uppercase and lowercase (e.g., 'o' vs. 'O')
 #: ../dirwalk.c:181
 msgid "oO"
-msgstr "oO"
+msgstr "CcÇçEeÉéÈèIiÏï"
 
+# Símbols o lletres que es poden arribar a fer servir.
+# Euro €
+# Obertura d'interrogació i exclamació, opcionals.
+# Enya castellana ñ
+# AE OE franceses
+# Nota: la inclusió del punt volat aquí es fa perquè és un caracter poc comú
+# en els tipus de lletra i si només l'incoem amb els caracters comuns abaix,
+# és molt probable que hi hagi tipus de lletra que passin aquest test i no el
+# de caracters comuns.
+# La inclusió de l'espai es fa per intentar caçar els tipus de lletra que
+# substitueixen els caracters que no tenen per espais.
+#
 #. uncommon punctuation (e.g., '@', '#', '*', etc.)
 #: ../dirwalk.c:184
 msgid "`\\%_@$~#{}<>^&*"
-msgstr "`\\%_@$~#{}<>^&*"
+msgstr " ·€¿¡ñæ`\\%_@$~#{<«ª^&*"
 
+# Símbols o lletres que es fan servir sovint.
+# punt volat ·, apóstrof ', guionet -
+#
 #. common punctuation (e.g., '?', '!', '.', ',', etc.)
 #: ../dirwalk.c:187
 msgid ",.?!"
-msgstr "¿,.?!"
+msgstr " ·'-,.?!"
 
 #. digits (e.g., '0', '1' and '7')
 #: ../dirwalk.c:190
@@ -166,7 +194,7 @@ msgstr "017"
 #. distinct circle-like characters (e.g., 'O' (capital oh) vs. '0' (zero))
 #: ../dirwalk.c:193
 msgid "O0"
-msgstr "O0Q"
+msgstr "O0"
 
 #. distinct line-like characters (e.g., 'l' (lowercase elle) vs. '1' (one) vs. 'I' (capital aye))
 #: ../dirwalk.c:196
@@ -644,7 +672,7 @@ msgstr "Reproduïr"
 #. Label for 'Letters' buttons (font selector, down the right when the Text tool is being used); used to show the difference between font faces
 #: ../tuxpaint.c:8646
 msgid "Aa"
-msgstr "Aa"
+msgstr "Aà"
 
 #. Admittedly stupid way of determining which keys can be used for
 #. positive and negative responses in dialogs (e.g., [Y] (for 'yes') in English)
@@ -1176,13 +1204,11 @@ msgstr "Feu clic i moveu el ratolí per posar pasta de dents al dibuix."
 
 #: ../../magic/src/tornado.c:127
 msgid "Tornado"
-msgstr ""
+msgstr "Tornado"
 
 #: ../../magic/src/tornado.c:133
-#, fuzzy
-#| msgid "Click and drag to draw train track rails on your picture."
 msgid "Click and drag to draw a tornado funnel on your picture."
-msgstr "Feu clic i arrossegueu per dibuixar una via de tren."
+msgstr "Feu clic i arrossegueu per dibuixar un tornado."
 
 #: ../../magic/src/tv.c:72
 msgid "TV"
@@ -1219,14 +1245,6 @@ msgstr ""
 "Feu clic dins la imatge per aplicar-hi ones verticals. Clic a dalt fa ones "
 "curtes, a baix ones altes, a l'esquerra ones petites, a la dreta ones "
 "llargues."
-
-#, fuzzy
-#~| msgid "Click and drag to draw a flower stalk. Let go to finish the flower."
-#~ msgid ""
-#~ "Click and drag to draw a tornado stalk. Let go to finish the tornado."
-#~ msgstr ""
-#~ "Feu clic i arrossegueu per dibuixar el tall de la flor. Deixeu anar per "
-#~ "acabar-la."
 
 #~ msgid "Alien"
 #~ msgstr "Alien"
