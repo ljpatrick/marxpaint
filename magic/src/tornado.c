@@ -333,7 +333,11 @@ static void tornado_drawstalk(magic_api * api, SDL_Surface * canvas, SDL_Surface
   curve = (Point2D *) malloc(sizeof(Point2D) * n_points);
 
   tornado_ComputeBezier(control_points, n_points, curve);
-  top_w = max(32, n_points * n_points / 1000);
+  if (n_points * n_points / 1000 > canvas->w / 2)
+    top_w = canvas->w / 2;
+  else
+    top_w = max(32, n_points * n_points / 1000);
+
   int rotation = 0;
   int p;
   /* Draw the curve: */
@@ -350,11 +354,17 @@ static void tornado_drawstalk(magic_api * api, SDL_Surface * canvas, SDL_Surface
     }
     else
     {
-      int ii;
+      int ii, ww;
       ii = n_points - i;
-      /* min 10 pixels then ii^2 / 2000 after some trys */
-      left = min(curve[i].x, curve[i + 1].x)-5-ii*ii/2000;
-      right = max(curve[i].x, curve[i + 1].x)+5+ii*ii/2000;
+      /* min 10 pixels then ii^2 / 2000 or 4 * ii^2 / canvas->w,
+	 don't let the top of funnel be wider than the half of canvas */
+      if (n_points * n_points / 2000 > canvas->w / 4)
+	ww = 4 * n_points * n_points / canvas->w;
+      else
+	ww = 2000;
+
+      left = min(curve[i].x, curve[i + 1].x)-5-ii*ii/ww;
+      right = max(curve[i].x, curve[i + 1].x)+5+ii*ii/ww;
 
       dest.x = left;
       dest.y = curve[i].y;
