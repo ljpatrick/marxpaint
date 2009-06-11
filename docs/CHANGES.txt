@@ -8,7 +8,7 @@ http://www.tuxpaint.org/
 
 $Id$
 
-2009.June.8 (0.9.21)
+2009.June.11 (0.9.21)
   * New Starters:
     -------------
     * Silver Frame
@@ -142,6 +142,17 @@ $Id$
       in that locale.  (Use "--alllocalefonts" command-line option
       or "alllocalefonts=yes" config. file option, to load all of those fonts,
       regardless of locale setting -- the old behavior.)
+
+    * Font scoring system improved, so that fonts that support the current
+      locale (based on special translation strings -- many of which have been
+      submitted or improved) 'bubble up' to the top of the Fonts list when
+      using the Text tool.
+      Pere Pujal i Carabantes <pere@fornol.no-ip.org> and
+      Bill Kendrick <bill@newbreedsoftware.com>
+      with help from:
+      Albert Cahalan <albert@users.sourceforge.net>,
+      Frank Weng <franklin@goodhorse.idv.tw>
+      and various translators.
 
   * New localizations:
     ------------------
