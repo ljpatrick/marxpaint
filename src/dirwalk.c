@@ -172,16 +172,19 @@ void loadfont_callback(SDL_Surface * screen, const char *restrict const dir,
 	  user_font_styles[num_font_styles]->family = strdup(family);
 	  user_font_styles[num_font_styles]->style = strdup(style);
 
+          user_font_styles[num_font_styles]->score += (charset_works(font, gettext("qx")) * 4);
+          user_font_styles[num_font_styles]->score += (charset_works(font, gettext("QX")) * 4);
+
 	  // Now we score fonts to ensure that the best ones will be placed at
 	  // the top of the list. The user will see them first. This sorting is
 	  // especially important for users who have scroll buttons disabled.
 	  // Translators should do whatever is needed to put crummy fonts last.
 	  
 	  // distinct uppercase and lowercase (e.g., 'o' vs. 'O')
-	  user_font_styles[num_font_styles]->score = charset_works(font, gettext("oO"));
+	  user_font_styles[num_font_styles]->score += charset_works(font, gettext("oO"));
 
 	  // uncommon punctuation (e.g., '@', '#', '*', etc.)
-	  user_font_styles[num_font_styles]->score += charset_works(font, gettext("`\%_@$~#{}<>^&*"));
+	  user_font_styles[num_font_styles]->score += (charset_works(font, gettext("`\%_@$~#{}<>^&*")) * 2);
 
 	  // common punctuation (e.g., '?', '!', '.', ',', etc.)
 	  user_font_styles[num_font_styles]->score += charset_works(font, gettext(",.?!"));
