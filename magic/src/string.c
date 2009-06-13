@@ -131,13 +131,13 @@ char * string_get_description(__attribute__((unused)) magic_api * api, int which
   switch (which)
     {
     case STRING_TOOL_FULL_BY_OFFSET:
-      return strdup(gettext_noop("Click and drag to draw string art. Drag top-bottom to draw less or more lines, to the center to approach the lines to center."));
+      return strdup(gettext_noop("Click and drag to draw string art. Drag top-bottom to draw less or more lines, left or right to make a bigger hole."));
       break;
     case   STRING_TOOL_TRIANGLE:
-      return strdup(gettext_noop("Click and drag to draw string art aligned to the edges."));
+      return strdup(gettext_noop("Click and drag to draw arrows made of string art."));
       break;
     default:
-      return strdup(gettext_noop("Draw string art with free angles. Click and drag a V: drag to the vertex, drag backwards a little to the start, then drag to the end."));
+      return strdup(gettext_noop("Draw string art arrows with free angles."));
     }
 }
 
