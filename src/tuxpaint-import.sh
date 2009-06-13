@@ -5,7 +5,7 @@
 # "Tux Paint Import"
 # Import an arbitrary GIF, JPEG or PNG into Tux Paint
 
-# (c) Copyright 2002-2006, by Bill Kendrick and others
+# (c) Copyright 2002-2009, by Bill Kendrick and others
 # bill@newbreedsoftware.com
 # http://www.newbreedsoftware.com/tuxpaint/
 
@@ -25,7 +25,7 @@
 # (See COPYING.txt)
 
 
-# September 21, 2002 - August 12, 2006
+# September 21, 2002 - June 13, 2009
 
 
 SAVEDIR=$HOME/.tuxpaint
@@ -145,13 +145,13 @@ for x in $(seq 1 $#)
 do
   i="${!x}"
 
-  if [ -e $i ]; then
+  if [ -e "$i" ]; then
     # Determine a filename for it:
     NEWFILENAME=`date "+%Y%m%d%H%M%S"`
     echo "$i -> $SAVEDIR/saved/$NEWFILENAME.png"
 
     # Convert and scale down, save as a temp file:
-    anytopnm $i | pnmscale -xysize $width $height > $TMPDIR/saved/$NEWFILENAME.ppm
+    anytopnm "$i" | pnmscale -xysize $width $height > $TMPDIR/saved/$NEWFILENAME.ppm
     
     # Place inside the correctly-sized canvas:
     # FIXME: Center, instead of placing at upper right

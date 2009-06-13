@@ -8,7 +8,7 @@ http://www.tuxpaint.org/
 
 $Id$
 
-2009.June.11 (0.9.21)
+2009.June.13 (0.9.21)
   * New Starters:
     -------------
     * Silver Frame
@@ -292,6 +292,10 @@ $Id$
       many fonts (i.e., with the 'sysfonts' option).
       Pere Pujal i Carabantes <pere@fornol.no-ip.org> and
       Albert Cahalan <albert@users.sf.net>
+
+    * 'tuxpaint-import' script didn't support files with spaces. Fixed.
+      James Le Cuirot <jerseychewi@users.sourceforge.net>
+
 
 2008.June.26 (0.9.20)
   * New translations:
