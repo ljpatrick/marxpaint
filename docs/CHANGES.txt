@@ -296,6 +296,9 @@ $Id$
     * 'tuxpaint-import' script didn't support files with spaces. Fixed.
       James Le Cuirot <jerseychewi@users.sourceforge.net>
 
+    * Fixed display bugs and icon positioning in pop-up dialogs when
+      using right-to-left languages (like Hebrew or Arabic).
+
 
 2008.June.26 (0.9.20)
   * New translations:

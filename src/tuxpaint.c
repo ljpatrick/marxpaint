@@ -22,7 +22,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
   
-  June 14, 2002 - May 31, 2009
+  June 14, 2002 - June 13, 2009
   $Id$
 */
 
@@ -11637,6 +11637,7 @@ static int do_prompt_image_flash_snd(const char *const text,
   int img1_w, img2_w, img3_w, max_img_w, img_x, img_y, offset;
   SDL_Surface *img1b;
   int free_img1b;
+  int txt_left, txt_right, img_left, btn_left, txt_btn_left, txt_btn_right;
 
   hide_blinking_cursor();
 
@@ -11769,8 +11770,6 @@ static int do_prompt_image_flash_snd(const char *const text,
   /* If we're showing any images on the right, determine the widest width
      for them: */
 
-  /* FIXME: This needs to be fixed for right-to-left interfaces! */
-
   offset = img1_w = img2_w = img3_w = 0;
 
   if (img1b != NULL)
@@ -11788,19 +11787,36 @@ static int do_prompt_image_flash_snd(const char *const text,
 
   /* Draw the question: */
 
-  wordwrap_text(text, black,
-		166 + PROMPTOFFSETX, 100 + PROMPTOFFSETY,
-		475 + PROMPTOFFSETX - offset, 1);
+  if (need_right_to_left == 0)
+  {
+    txt_left = 166 + PROMPTOFFSETX;
+    txt_right = 475 + PROMPTOFFSETX - offset;
+    img_left = 475 + PROMPTOFFSETX - max_img_w - 4;
+    btn_left = 166 + PROMPTOFFSETX;
+    txt_btn_left = txt_left + img_yes->w + 4;
+    txt_btn_right = txt_right;
+  }
+  else
+  {
+    txt_left = 166 + PROMPTOFFSETX + offset;
+    txt_right = 457 + PROMPTOFFSETX;
+    img_left = 166 + PROMPTOFFSETX + 4;
+    btn_left = 475 + PROMPTOFFSETX - img_yes->w - 4;
+    txt_btn_left = txt_left;
+    txt_btn_right = btn_left;
+  }
+
+  wordwrap_text(text, black, txt_left, 100 + PROMPTOFFSETY, txt_right, 1);
 
 
   /* Draw the images (if any, and if not animated): */
 
-  img_x = 457 + PROMPTOFFSETX - offset;
+  img_x = img_left;
   img_y = 100 + PROMPTOFFSETY + 4;
 
   if (img1b != NULL)
   {
-    dest.x = img_x + (max_img_w - img1b->w) / 2;
+    dest.x = img_left + (max_img_w - img1b->w) / 2;
     dest.y = img_y;
 
     SDL_BlitSurface(img1b, NULL, screen, &dest);
@@ -11813,7 +11829,7 @@ static int do_prompt_image_flash_snd(const char *const text,
   {
     if (img2 != NULL)
     {
-      dest.x = img_x + (max_img_w - img2->w) / 2;
+      dest.x = img_left + (max_img_w - img2->w) / 2;
       dest.y = img_y;
 
       SDL_BlitSurface(img2, NULL, screen, &dest);
@@ -11823,7 +11839,7 @@ static int do_prompt_image_flash_snd(const char *const text,
 
     if (img3 != NULL)
     {
-      dest.x = img_x + (max_img_w - img3->w) / 2;
+      dest.x = img_left + (max_img_w - img3->w) / 2;
       dest.y = img_y;
 
       SDL_BlitSurface(img3, NULL, screen, &dest);
@@ -11835,28 +11851,27 @@ static int do_prompt_image_flash_snd(const char *const text,
 
   /* Draw yes button: */
 
-  dest.x = 166 + PROMPTOFFSETX;
+  dest.x = btn_left;
   dest.y = 178 + PROMPTOFFSETY;
   SDL_BlitSurface(img_yes, NULL, screen, &dest);
 
 
   /* (Bound to UTF8 domain, so always ask for UTF8 rendering!) */
 
-  wordwrap_text(btn_yes, black, 166 + PROMPTOFFSETX + 48 + 4,
-		183 + PROMPTOFFSETY, 475 + PROMPTOFFSETX, 1);
+  wordwrap_text(btn_yes, black, txt_btn_left,
+		183 + PROMPTOFFSETY, txt_btn_right, 1);
 
 
   /* Draw no button: */
 
   if (strlen(btn_no) != 0)
   {
-    dest.x = 166 + PROMPTOFFSETX;
+    dest.x = btn_left;
     dest.y = 230 + PROMPTOFFSETY;
     SDL_BlitSurface(img_no, NULL, screen, &dest);
 
-    wordwrap_text(btn_no, black,
-		  166 + PROMPTOFFSETX + 48 + 4, 235 + PROMPTOFFSETY,
-		  475 + PROMPTOFFSETX, 1);
+    wordwrap_text(btn_no, black, txt_btn_left,
+                  235 + PROMPTOFFSETY, txt_btn_right, 1);
   }
 
 
@@ -11930,18 +11945,18 @@ static int do_prompt_image_flash_snd(const char *const text,
       else if (event.type == SDL_MOUSEBUTTONDOWN &&
 	       valid_click(event.button.button))
       {
-	if (event.button.x >= 166 + PROMPTOFFSETX &&
-	    event.button.x < 166 + PROMPTOFFSETX + 48)
+	if (event.button.x >= btn_left &&
+	    event.button.x < btn_left + img_yes->w)
 	{
 	  if (event.button.y >= 178 + PROMPTOFFSETY &&
-	      event.button.y < 178 + PROMPTOFFSETY + 48)
+	      event.button.y < 178 + PROMPTOFFSETY + img_yes->h)
 	  {
 	    ans = 1;
 	    done = 1;
 	  }
 	  else if (strlen(btn_no) != 0 &&
 		   event.button.y >= 230 + PROMPTOFFSETY &&
-		   event.button.y < 230 + PROMPTOFFSETY + 48)
+		   event.button.y < 230 + PROMPTOFFSETY + img_no->h)
 	  {
 	    ans = 0;
 	    done = 1;
@@ -11950,13 +11965,13 @@ static int do_prompt_image_flash_snd(const char *const text,
       }
       else if (event.type == SDL_MOUSEMOTION)
       {
-	if (event.button.x >= 166 + PROMPTOFFSETX &&
-	    event.button.x < 166 + 48 + PROMPTOFFSETX &&
+	if (event.button.x >= btn_left &&
+	    event.button.x < btn_left + img_yes->w &&
 	    ((event.button.y >= 178 + PROMPTOFFSETY &&
-	      event.button.y < 178 + 48 + PROMPTOFFSETY) ||
+	      event.button.y < 178 + img_yes->h + PROMPTOFFSETY) ||
 	     (strlen(btn_no) != 0 &&
 	      event.button.y >= 230 + PROMPTOFFSETY &&
-	      event.button.y < 230 + 48 + PROMPTOFFSETY)))
+	      event.button.y < 230 + img_yes->h + PROMPTOFFSETY)))
 	{
 	  do_setcursor(cursor_hand);
 	}
@@ -11975,7 +11990,7 @@ static int do_prompt_image_flash_snd(const char *const text,
 
       if (counter == 5)
       {
-	dest.x = img_x + (max_img_w - img2->w) / 2;
+	dest.x = img_left + (max_img_w - img2->w) / 2;
 	dest.y = img_y;
 
 	SDL_BlitSurface(img2, NULL, screen, &dest);
@@ -11985,7 +12000,7 @@ static int do_prompt_image_flash_snd(const char *const text,
       {
 	if (img3 != NULL)
 	{
-	  dest.x = img_x + (max_img_w - img3->w) / 2;
+	  dest.x = img_left + (max_img_w - img3->w) / 2;
 	  dest.y = img_y;
 
 	  SDL_BlitSurface(img3, NULL, screen, &dest);
@@ -11997,7 +12012,7 @@ static int do_prompt_image_flash_snd(const char *const text,
 
       if (counter == 15)
       {
-	dest.x = img_x + (max_img_w - img1b->w) / 2;
+	dest.x = img_left + (max_img_w - img1b->w) / 2;
 	dest.y = img_y;
 
 	SDL_BlitSurface(img1b, NULL, screen, &dest);
