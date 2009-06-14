@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint 0.9.17\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-06-05 17:02-0700\n"
+"POT-Creation-Date: 2009-06-13 17:27-0700\n"
 "PO-Revision-Date: 2009-05-28 08:35+0100\n"
 "Last-Translator: Matej Urbančič <mateju@svn.gnome.org>\n"
 "Language-Team: Slovenian <translation-team-sl@lists.sourceforge.net>\n"
@@ -116,11 +116,11 @@ msgstr "Sivkasto rjava!"
 #. and the ASCII-only fonts should be given bad scores in the scoring
 #. code below (the best scores going to fonts that support both).
 #. Line X
-#: ../dirwalk.c:155
+#: ../dirwalk.c:155 ../dirwalk.c:175
 msgid "qx"
 msgstr "qx"
 
-#: ../dirwalk.c:155
+#: ../dirwalk.c:155 ../dirwalk.c:176
 msgid "QX"
 msgstr "QX"
 
@@ -138,32 +138,32 @@ msgstr "QY"
 #. especially important for users who have scroll buttons disabled.
 #. Translators should do whatever is needed to put crummy fonts last.
 #. distinct uppercase and lowercase (e.g., 'o' vs. 'O')
-#: ../dirwalk.c:181
+#: ../dirwalk.c:184
 msgid "oO"
 msgstr "oO"
 
 #. uncommon punctuation (e.g., '@', '#', '*', etc.)
-#: ../dirwalk.c:184
+#: ../dirwalk.c:187
 msgid "`\\%_@$~#{}<>^&*"
 msgstr "`\\%_@$~#{}<>^&*"
 
 #. common punctuation (e.g., '?', '!', '.', ',', etc.)
-#: ../dirwalk.c:187
+#: ../dirwalk.c:190
 msgid ",.?!"
 msgstr ",.?!"
 
 #. digits (e.g., '0', '1' and '7')
-#: ../dirwalk.c:190
+#: ../dirwalk.c:193
 msgid "017"
 msgstr "017"
 
 #. distinct circle-like characters (e.g., 'O' (capital oh) vs. '0' (zero))
-#: ../dirwalk.c:193
+#: ../dirwalk.c:196
 msgid "O0"
 msgstr "O0"
 
 #. distinct line-like characters (e.g., 'l' (lowercase elle) vs. '1' (one) vs. 'I' (capital aye))
-#: ../dirwalk.c:196
+#: ../dirwalk.c:199
 msgid "1Il|"
 msgstr "1Il|"
 
@@ -639,38 +639,38 @@ msgstr "Aa"
 
 #. Admittedly stupid way of determining which keys can be used for
 #. positive and negative responses in dialogs (e.g., [Y] (for 'yes') in English)
-#: ../tuxpaint.c:11646
+#: ../tuxpaint.c:11647
 msgid "Yes"
 msgstr "Da"
 
-#: ../tuxpaint.c:11650
+#: ../tuxpaint.c:11651
 msgid "No"
 msgstr "Ne"
 
 #. Prompt to ask whether user wishes to save over old version of their file
-#: ../tuxpaint.c:12602
+#: ../tuxpaint.c:12617
 msgid "Replace the picture with your changes?"
 msgstr "Ali naj se zamenja slika s spremembami?"
 
 #. Positive response to saving over old version
 #. (like a 'File:Save' action in other applications)
-#: ../tuxpaint.c:12606
+#: ../tuxpaint.c:12621
 msgid "Yes, replace the old one!"
 msgstr "Da, zamenja naj se starejša datoteka!"
 
 #. Negative response to saving over old version (saves a new image)
 #. (like a 'File:Save As...' action in other applications)
-#: ../tuxpaint.c:12610
+#: ../tuxpaint.c:12625
 msgid "No, save a new file!"
 msgstr "Ne, shrani naj se v novo datoteko!"
 
-#: ../tuxpaint.c:13373
+#: ../tuxpaint.c:13388
 msgid "Choose the picture you want, then click “Open”."
 msgstr "Izbor slike s klikom na  “Odpri”.."
 
 #. Let user choose images:
 #. Instructions for Slideshow file dialog (FIXME: Make a #define)
-#: ../tuxpaint.c:14360 ../tuxpaint.c:14674
+#: ../tuxpaint.c:14375 ../tuxpaint.c:14689
 msgid "Choose the pictures you want, then click “Play”."
 msgstr "Z izborom slik je mogoče začeti predstavitev."
 
@@ -848,11 +848,11 @@ msgstr "Pena"
 msgid "Click and drag the mouse to cover an area with foamy bubbles."
 msgstr "S klikom in premikanjem miške je mogoče prekriti sliko s peno."
 
-#: ../../magic/src/fold.c:82
+#: ../../magic/src/fold.c:84
 msgid "Fold"
 msgstr "Zvijanje"
 
-#: ../../magic/src/fold.c:84
+#: ../../magic/src/fold.c:86
 msgid ""
 "Choose a background color and click to turn the corner of the page over."
 msgstr ""
@@ -987,11 +987,11 @@ msgstr "S klikom je mogoče dodati kapljico na sliko."
 msgid "Click to cover your picture with rain drops."
 msgstr "S klikom miške je mogoče pokriti sliko s kapljicami."
 
-#: ../../magic/src/realrainbow.c:72
+#: ../../magic/src/realrainbow.c:76
 msgid "Real Rainbow"
 msgstr "Prava mavrica"
 
-#: ../../magic/src/realrainbow.c:77
+#: ../../magic/src/realrainbow.c:81
 msgid ""
 "Click where you want your rainbow to start, drag to where you want it to "
 "end, and then let go to draw a rainbow."
@@ -1007,19 +1007,19 @@ msgstr "Kodranje"
 msgid "Click to make ripples appear over your picture."
 msgstr "S klikom miške je mogoče ustvariti valovanje."
 
-#: ../../magic/src/rosette.c:90
+#: ../../magic/src/rosette.c:93
 msgid "Rosette"
 msgstr "Rozeta"
 
-#: ../../magic/src/rosette.c:90
+#: ../../magic/src/rosette.c:93
 msgid "Picasso"
 msgstr "Picasso"
 
-#: ../../magic/src/rosette.c:95
+#: ../../magic/src/rosette.c:98
 msgid "Click and start drawing your rosette."
 msgstr "S klikom lahko začnete risati rozeto."
 
-#: ../../magic/src/rosette.c:97
+#: ../../magic/src/rosette.c:100
 msgid "You can draw just like Picasso!"
 msgstr "Tudi Picasso bi uporabljal ta program!"
 
@@ -1091,38 +1091,39 @@ msgstr "S klikom miške je mogoče narisati kepe na sliko."
 msgid "Click to add snow flakes to your picture."
 msgstr "S klikom miške je mogoče dodati snežinke na sliko."
 
-#: ../../magic/src/string.c:121
+#: ../../magic/src/string.c:120
 msgid "String edges"
 msgstr "Stranice niti"
 
-#: ../../magic/src/string.c:124
+#: ../../magic/src/string.c:123
 msgid "String corner"
 msgstr "Robovi niti"
 
-#: ../../magic/src/string.c:127
+#: ../../magic/src/string.c:126
 msgid "String 'V'"
 msgstr "Nit 'V'"
 
-#: ../../magic/src/string.c:135
+#: ../../magic/src/string.c:134
+#, fuzzy
+#| msgid ""
+#| "Click and drag to draw string art. Drag top-bottom to draw less or more "
+#| "lines, to the center to approach the lines to center."
 msgid ""
 "Click and drag to draw string art. Drag top-bottom to draw less or more "
-"lines, to the center to approach the lines to center."
+"lines, left or right to make a bigger hole."
 msgstr ""
 "S klikom in potegom je mogoče risati niti. Premikanje gor in dol omogoča "
 "določevanje števila črt."
 
-#: ../../magic/src/string.c:138
-msgid "Click and drag to draw string art aligned to the edges."
-msgstr ""
-"S klikom in premikanjem miške je mogoče narisati niti ob robovih slike."
+#: ../../magic/src/string.c:137
+#, fuzzy
+#| msgid "Click and drag to draw a beam of light on your picture."
+msgid "Click and drag to draw arrows made of string art."
+msgstr "S klikom in potegom je mogoče narisati žarek svetlobe na sliki."
 
-#: ../../magic/src/string.c:141
-msgid ""
-"Draw string art with free angles. Click and drag a V: drag to the vertex, "
-"drag backwards a little to the start, then drag to the end."
+#: ../../magic/src/string.c:140
+msgid "Draw string art arrows with free angles."
 msgstr ""
-"Risanje črt s prostimi koti. S klikom in potegom na V: je mogoče določiti "
-"točko, nato pa s potegom določimo začetek in konec."
 
 #: ../../magic/src/tint.c:71
 msgid "Tint"
@@ -1207,6 +1208,17 @@ msgstr ""
 "S klikom je mogoče ustvariti navpično valovanje. S premikom navzgor izrišemo "
 "krajše valove, navzdol pa daljše. S premikom levo in desno pa določimo "
 "velikost valov."
+
+#~ msgid "Click and drag to draw string art aligned to the edges."
+#~ msgstr ""
+#~ "S klikom in premikanjem miške je mogoče narisati niti ob robovih slike."
+
+#~ msgid ""
+#~ "Draw string art with free angles. Click and drag a V: drag to the vertex, "
+#~ "drag backwards a little to the start, then drag to the end."
+#~ msgstr ""
+#~ "Risanje črt s prostimi koti. S klikom in potegom na V: je mogoče določiti "
+#~ "točko, nato pa s potegom določimo začetek in konec."
 
 #, fuzzy
 #~| msgid "Click and drag to draw a flower stalk. Let go to finish the flower."

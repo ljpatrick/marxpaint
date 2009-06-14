@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-06-05 17:02-0700\n"
+"POT-Creation-Date: 2009-06-13 17:27-0700\n"
 "PO-Revision-Date: 2009-05-30 09:04+0800\n"
 "Last-Translator: 黃敏松 <songhuang.tw@gmail.com>\n"
 "Language-Team: Chinese (traditional) <zh-l10n@linux.org.tw>\n"
@@ -148,11 +148,11 @@ msgstr "米黃色!"
 #. and the ASCII-only fonts should be given bad scores in the scoring
 #. code below (the best scores going to fonts that support both).
 #. Line X
-#: ../dirwalk.c:155
+#: ../dirwalk.c:155 ../dirwalk.c:175
 msgid "qx"
 msgstr "正體中文"
 
-#: ../dirwalk.c:155
+#: ../dirwalk.c:155 ../dirwalk.c:176
 msgid "QX"
 msgstr "正體中文"
 
@@ -176,38 +176,38 @@ msgstr "QY"
 #. especially important for users who have scroll buttons disabled.
 #. Translators should do whatever is needed to put crummy fonts last.
 #. distinct uppercase and lowercase (e.g., 'o' vs. 'O')
-#: ../dirwalk.c:181
+#: ../dirwalk.c:184
 msgid "oO"
 msgstr "oO"
 
 #  uncommon punctuation (e.g., '@', '#', '*', etc.)
 #. uncommon punctuation (e.g., '@', '#', '*', etc.)
-#: ../dirwalk.c:184
+#: ../dirwalk.c:187
 msgid "`\\%_@$~#{}<>^&*"
 msgstr "，。、；：？（）"
 
 #  common punctuation (e.g., '?', '!', '.', ',', etc.)
 #. common punctuation (e.g., '?', '!', '.', ',', etc.)
-#: ../dirwalk.c:187
+#: ../dirwalk.c:190
 msgid ",.?!"
 msgstr ",.?!"
 
 #  digits (e.g., '0', '1' and '7')
 #. digits (e.g., '0', '1' and '7')
-#: ../dirwalk.c:190
+#: ../dirwalk.c:193
 msgid "017"
 msgstr "017"
 
 #  distinct circle-like characters (e.g., 'O' (capital oh) vs. '0' (zero))
 #. distinct circle-like characters (e.g., 'O' (capital oh) vs. '0' (zero))
-#: ../dirwalk.c:193
+#: ../dirwalk.c:196
 msgid "O0"
 msgstr "O0"
 
 #  distinct line-like characters (e.g., 'l' (lowercase elle) vs. '1' (one) vs. 'I' (capital aye))
 #  distinct line-like characters (e.g., 'l' (lowercase elle) vs. '1' (one) vs. 'I' (capital aye))
 #. distinct line-like characters (e.g., 'l' (lowercase elle) vs. '1' (one) vs. 'I' (capital aye))
-#: ../dirwalk.c:196
+#: ../dirwalk.c:199
 msgid "1Il|"
 msgstr "1Il|"
 
@@ -787,17 +787,17 @@ msgstr "A中"
 #  positive and negative responses in dialogs (e.g., [Y] (for 'yes') in English)
 #. Admittedly stupid way of determining which keys can be used for
 #. positive and negative responses in dialogs (e.g., [Y] (for 'yes') in English)
-#: ../tuxpaint.c:11646
+#: ../tuxpaint.c:11647
 msgid "Yes"
 msgstr "好"
 
-#: ../tuxpaint.c:11650
+#: ../tuxpaint.c:11651
 msgid "No"
 msgstr "不"
 
 #  Prompt to ask whether user wishes to save over old version of their file
 #. Prompt to ask whether user wishes to save over old version of their file
-#: ../tuxpaint.c:12602
+#: ../tuxpaint.c:12617
 msgid "Replace the picture with your changes?"
 msgstr "用你所做的改變來取代圖畫嗎?"
 
@@ -805,7 +805,7 @@ msgstr "用你所做的改變來取代圖畫嗎?"
 #  (like a 'File:Save' action in other applications)
 #. Positive response to saving over old version
 #. (like a 'File:Save' action in other applications)
-#: ../tuxpaint.c:12606
+#: ../tuxpaint.c:12621
 msgid "Yes, replace the old one!"
 msgstr "好，取代舊的!"
 
@@ -813,11 +813,11 @@ msgstr "好，取代舊的!"
 #  (like a 'File:Save As...' action in other applications)
 #. Negative response to saving over old version (saves a new image)
 #. (like a 'File:Save As...' action in other applications)
-#: ../tuxpaint.c:12610
+#: ../tuxpaint.c:12625
 msgid "No, save a new file!"
 msgstr "不，另外存一個新的檔案!"
 
-#: ../tuxpaint.c:13373
+#: ../tuxpaint.c:13388
 msgid "Choose the picture you want, then click “Open”."
 msgstr "選擇你想要的圖畫，然後按一下「打開」。"
 
@@ -825,7 +825,7 @@ msgstr "選擇你想要的圖畫，然後按一下「打開」。"
 #  Instructions for Slideshow file dialog (FIXME: Make a #define)
 #. Let user choose images:
 #. Instructions for Slideshow file dialog (FIXME: Make a #define)
-#: ../tuxpaint.c:14360 ../tuxpaint.c:14674
+#: ../tuxpaint.c:14375 ../tuxpaint.c:14689
 msgid "Choose the pictures you want, then click “Play”."
 msgstr "選擇你要的一些圖畫，然後按一下「播放」。"
 
@@ -1005,11 +1005,11 @@ msgstr "泡泡"
 msgid "Click and drag the mouse to cover an area with foamy bubbles."
 msgstr "在圖案中按下滑鼠來用泡泡填滿整個區域。"
 
-#: ../../magic/src/fold.c:82
+#: ../../magic/src/fold.c:84
 msgid "Fold"
 msgstr "摺疊"
 
-#: ../../magic/src/fold.c:84
+#: ../../magic/src/fold.c:86
 msgid ""
 "Choose a background color and click to turn the corner of the page over."
 msgstr "挑選一個背景色，並按一下圖紙的角落讓他翻起來。"
@@ -1142,11 +1142,11 @@ msgid "Click to cover your picture with rain drops."
 msgstr "按一下來使整張圖畫布滿雨滴。"
 
 #  msgid "Rainbow"
-#: ../../magic/src/realrainbow.c:72
+#: ../../magic/src/realrainbow.c:76
 msgid "Real Rainbow"
 msgstr "彩虹"
 
-#: ../../magic/src/realrainbow.c:77
+#: ../../magic/src/realrainbow.c:81
 msgid ""
 "Click where you want your rainbow to start, drag to where you want it to "
 "end, and then let go to draw a rainbow."
@@ -1162,19 +1162,19 @@ msgstr "波浪"
 msgid "Click to make ripples appear over your picture."
 msgstr "按下會讓你的圖出現一個旋渦。"
 
-#: ../../magic/src/rosette.c:90
+#: ../../magic/src/rosette.c:93
 msgid "Rosette"
 msgstr "玫瑰花形"
 
-#: ../../magic/src/rosette.c:90
+#: ../../magic/src/rosette.c:93
 msgid "Picasso"
 msgstr "畢卡索"
 
-#: ../../magic/src/rosette.c:95
+#: ../../magic/src/rosette.c:98
 msgid "Click and start drawing your rosette."
 msgstr "按一下滑鼠就可以開始畫你的玫瑰花。"
 
-#: ../../magic/src/rosette.c:97
+#: ../../magic/src/rosette.c:100
 msgid "You can draw just like Picasso!"
 msgstr "你可以畫的和畢卡索一樣!"
 
@@ -1246,36 +1246,37 @@ msgstr "按下會讓你的圖出現雪球。"
 msgid "Click to add snow flakes to your picture."
 msgstr "按下會讓你的圖出現雪花。"
 
-#: ../../magic/src/string.c:121
+#: ../../magic/src/string.c:120
 msgid "String edges"
 msgstr "字串邊緣"
 
-#: ../../magic/src/string.c:124
+#: ../../magic/src/string.c:123
 msgid "String corner"
 msgstr "字串角落"
 
-#: ../../magic/src/string.c:127
+#: ../../magic/src/string.c:126
 msgid "String 'V'"
 msgstr "字串 'V'"
 
-#: ../../magic/src/string.c:135
+#: ../../magic/src/string.c:134
+#, fuzzy
+#| msgid ""
+#| "Click and drag to draw string art. Drag top-bottom to draw less or more "
+#| "lines, to the center to approach the lines to center."
 msgid ""
 "Click and drag to draw string art. Drag top-bottom to draw less or more "
-"lines, to the center to approach the lines to center."
+"lines, left or right to make a bigger hole."
 msgstr "按著並移動滑鼠來畫出藝術字，由上向下拖動看要畫出幾行字。"
 
-#  msgid "Click and drag to draw train track rails on your picture."
-#: ../../magic/src/string.c:138
-msgid "Click and drag to draw string art aligned to the edges."
-msgstr "按著並移動滑鼠畫出藝術字對齊邊緣。"
+#: ../../magic/src/string.c:137
+#, fuzzy
+#| msgid "Click and drag to draw a beam of light on your picture."
+msgid "Click and drag to draw arrows made of string art."
+msgstr "按著並移動滑鼠畫一束光到你的圖上。"
 
-#: ../../magic/src/string.c:141
-msgid ""
-"Draw string art with free angles. Click and drag a V: drag to the vertex, "
-"drag backwards a little to the start, then drag to the end."
+#: ../../magic/src/string.c:140
+msgid "Draw string art arrows with free angles."
 msgstr ""
-"畫出不限角度的藝術字，按著並移動滑鼠畫出一個 V 字形：由頂點開始，拖動向後一些"
-"開始，然後拖向結束。"
 
 #: ../../magic/src/tint.c:71
 msgid "Tint"
@@ -1355,6 +1356,17 @@ msgid ""
 msgstr ""
 "在圖紙上按下滑鼠鍵會讓圖畫如垂直波浪般的扭曲，按著往上是短的波浪，往下是長的"
 "波浪，往左是小的波浪，往右是大的波浪。"
+
+#  msgid "Click and drag to draw train track rails on your picture."
+#~ msgid "Click and drag to draw string art aligned to the edges."
+#~ msgstr "按著並移動滑鼠畫出藝術字對齊邊緣。"
+
+#~ msgid ""
+#~ "Draw string art with free angles. Click and drag a V: drag to the vertex, "
+#~ "drag backwards a little to the start, then drag to the end."
+#~ msgstr ""
+#~ "畫出不限角度的藝術字，按著並移動滑鼠畫出一個 V 字形：由頂點開始，拖動向後"
+#~ "一些開始，然後拖向結束。"
 
 #, fuzzy
 #~| msgid "Click and drag to draw a flower stalk. Let go to finish the flower."

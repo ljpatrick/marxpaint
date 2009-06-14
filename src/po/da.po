@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Tux Paint\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-06-05 17:02-0700\n"
+"POT-Creation-Date: 2009-06-13 17:27-0700\n"
 "PO-Revision-Date: 2009-05-29 22:30+0100\n"
 "Last-Translator: Joe Hansen <joedalton2@yahoo.dk>\n"
 "Language-Team: Danish <dansk@dansk-gruppen.dk>\n"
@@ -121,11 +121,11 @@ msgstr "Beige!"
 #. and the ASCII-only fonts should be given bad scores in the scoring
 #. code below (the best scores going to fonts that support both).
 #. Line X
-#: ../dirwalk.c:155
+#: ../dirwalk.c:155 ../dirwalk.c:175
 msgid "qx"
 msgstr "qx"
 
-#: ../dirwalk.c:155
+#: ../dirwalk.c:155 ../dirwalk.c:176
 msgid "QX"
 msgstr "QX"
 
@@ -143,32 +143,32 @@ msgstr "QY"
 #. especially important for users who have scroll buttons disabled.
 #. Translators should do whatever is needed to put crummy fonts last.
 #. distinct uppercase and lowercase (e.g., 'o' vs. 'O')
-#: ../dirwalk.c:181
+#: ../dirwalk.c:184
 msgid "oO"
 msgstr "oO"
 
 #. uncommon punctuation (e.g., '@', '#', '*', etc.)
-#: ../dirwalk.c:184
+#: ../dirwalk.c:187
 msgid "`\\%_@$~#{}<>^&*"
 msgstr "`\\%_@$~#{}<>^&*"
 
 #. common punctuation (e.g., '?', '!', '.', ',', etc.)
-#: ../dirwalk.c:187
+#: ../dirwalk.c:190
 msgid ",.?!"
 msgstr ",.?!"
 
 #. digits (e.g., '0', '1' and '7')
-#: ../dirwalk.c:190
+#: ../dirwalk.c:193
 msgid "017"
 msgstr "017"
 
 #. distinct circle-like characters (e.g., 'O' (capital oh) vs. '0' (zero))
-#: ../dirwalk.c:193
+#: ../dirwalk.c:196
 msgid "O0"
 msgstr "O0"
 
 #. distinct line-like characters (e.g., 'l' (lowercase elle) vs. '1' (one) vs. 'I' (capital aye))
-#: ../dirwalk.c:196
+#: ../dirwalk.c:199
 msgid "1Il|"
 msgstr "1Il|"
 
@@ -645,38 +645,38 @@ msgstr "Aa"
 
 #. Admittedly stupid way of determining which keys can be used for
 #. positive and negative responses in dialogs (e.g., [Y] (for 'yes') in English)
-#: ../tuxpaint.c:11646
+#: ../tuxpaint.c:11647
 msgid "Yes"
 msgstr "Ja"
 
-#: ../tuxpaint.c:11650
+#: ../tuxpaint.c:11651
 msgid "No"
 msgstr "Nej"
 
 #. Prompt to ask whether user wishes to save over old version of their file
-#: ../tuxpaint.c:12602
+#: ../tuxpaint.c:12617
 msgid "Replace the picture with your changes?"
 msgstr "Erstat billedet med dine ændringer?"
 
 #. Positive response to saving over old version
 #. (like a 'File:Save' action in other applications)
-#: ../tuxpaint.c:12606
+#: ../tuxpaint.c:12621
 msgid "Yes, replace the old one!"
 msgstr "Ja, erstat det eksisterende!"
 
 #. Negative response to saving over old version (saves a new image)
 #. (like a 'File:Save As...' action in other applications)
-#: ../tuxpaint.c:12610
+#: ../tuxpaint.c:12625
 msgid "No, save a new file!"
 msgstr "Nej, gem som et nyt billede!"
 
-#: ../tuxpaint.c:13373
+#: ../tuxpaint.c:13388
 msgid "Choose the picture you want, then click “Open”."
 msgstr "Vælg et billede og tryk på »Åbn«."
 
 #. Let user choose images:
 #. Instructions for Slideshow file dialog (FIXME: Make a #define)
-#: ../tuxpaint.c:14360 ../tuxpaint.c:14674
+#: ../tuxpaint.c:14375 ../tuxpaint.c:14689
 msgid "Choose the pictures you want, then click “Play”."
 msgstr "Vælg de ønskede billeder og tryk på »Afspil«."
 
@@ -857,11 +857,11 @@ msgstr "Skum"
 msgid "Click and drag the mouse to cover an area with foamy bubbles."
 msgstr "Klik og bevæg musen rundt, for at dække et område med skumbobler."
 
-#: ../../magic/src/fold.c:82
+#: ../../magic/src/fold.c:84
 msgid "Fold"
 msgstr "Fold"
 
-#: ../../magic/src/fold.c:84
+#: ../../magic/src/fold.c:86
 msgid ""
 "Choose a background color and click to turn the corner of the page over."
 msgstr "Vælg en baggrundsfarve og klik for at vende hjørnet af siden."
@@ -999,11 +999,11 @@ msgid "Click to cover your picture with rain drops."
 msgstr "Klik for at dække dit billede med regndråber."
 
 # Virkelig, reel, ægte
-#: ../../magic/src/realrainbow.c:72
+#: ../../magic/src/realrainbow.c:76
 msgid "Real Rainbow"
 msgstr "Ægte regnbue"
 
-#: ../../magic/src/realrainbow.c:77
+#: ../../magic/src/realrainbow.c:81
 msgid ""
 "Click where you want your rainbow to start, drag to where you want it to "
 "end, and then let go to draw a rainbow."
@@ -1020,19 +1020,19 @@ msgstr "Ringe"
 msgid "Click to make ripples appear over your picture."
 msgstr "Klik for at skabe ringe i dit billede."
 
-#: ../../magic/src/rosette.c:90
+#: ../../magic/src/rosette.c:93
 msgid "Rosette"
 msgstr "Roset"
 
-#: ../../magic/src/rosette.c:90
+#: ../../magic/src/rosette.c:93
 msgid "Picasso"
 msgstr "Picasso"
 
-#: ../../magic/src/rosette.c:95
+#: ../../magic/src/rosette.c:98
 msgid "Click and start drawing your rosette."
 msgstr "Klik og start på din tegning af en roset."
 
-#: ../../magic/src/rosette.c:97
+#: ../../magic/src/rosette.c:100
 msgid "You can draw just like Picasso!"
 msgstr "Du kan tegne lige som Picasso!"
 
@@ -1109,37 +1109,39 @@ msgstr "Klik for at tilføje snebolde i dit billede."
 msgid "Click to add snow flakes to your picture."
 msgstr "Klik for at tilføje snefnug i dit billede."
 
-#: ../../magic/src/string.c:121
+#: ../../magic/src/string.c:120
 msgid "String edges"
 msgstr "Strengkanter"
 
-#: ../../magic/src/string.c:124
+#: ../../magic/src/string.c:123
 msgid "String corner"
 msgstr "Strenghjørne"
 
-#: ../../magic/src/string.c:127
+#: ../../magic/src/string.c:126
 msgid "String 'V'"
 msgstr "Streng 'V'"
 
-#: ../../magic/src/string.c:135
+#: ../../magic/src/string.c:134
+#, fuzzy
+#| msgid ""
+#| "Click and drag to draw string art. Drag top-bottom to draw less or more "
+#| "lines, to the center to approach the lines to center."
 msgid ""
 "Click and drag to draw string art. Drag top-bottom to draw less or more "
-"lines, to the center to approach the lines to center."
+"lines, left or right to make a bigger hole."
 msgstr ""
 "Klik og træk for at tegne strengkunst. Træk top mod bund for at tegne færre "
 "eller flere linjer, mod midten for at nærme linjerne mod midten."
 
-#: ../../magic/src/string.c:138
-msgid "Click and drag to draw string art aligned to the edges."
-msgstr "Klik og bevæg musen rundt for at tegne strenge på dit billede."
+#: ../../magic/src/string.c:137
+#, fuzzy
+#| msgid "Click and drag to draw a beam of light on your picture."
+msgid "Click and drag to draw arrows made of string art."
+msgstr "Klik og bevæg musen rundt, for at tegne en lysstråle på dit billede."
 
-#: ../../magic/src/string.c:141
-msgid ""
-"Draw string art with free angles. Click and drag a V: drag to the vertex, "
-"drag backwards a little to the start, then drag to the end."
+#: ../../magic/src/string.c:140
+msgid "Draw string art arrows with free angles."
 msgstr ""
-"Tegn strengkunst med frie vinkler. Klik og træk et V: Træk til spidsen, træk "
-"en smule tilbage til starten, og træk så til afslutningen."
 
 #: ../../magic/src/tint.c:71
 msgid "Tint"
@@ -1224,6 +1226,16 @@ msgstr ""
 "Klik for at indsætte bølger vertikalt i billedet. Klik mod toppen for lave "
 "bølger, bunden for højere bølger, til venstre for små bølger og mod højre "
 "for lange bølger."
+
+#~ msgid "Click and drag to draw string art aligned to the edges."
+#~ msgstr "Klik og bevæg musen rundt for at tegne strenge på dit billede."
+
+#~ msgid ""
+#~ "Draw string art with free angles. Click and drag a V: drag to the vertex, "
+#~ "drag backwards a little to the start, then drag to the end."
+#~ msgstr ""
+#~ "Tegn strengkunst med frie vinkler. Klik og træk et V: Træk til spidsen, "
+#~ "træk en smule tilbage til starten, og træk så til afslutningen."
 
 # stalk = stilk; stængel 
 #, fuzzy

@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint 0.9.17\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-06-05 17:02-0700\n"
+"POT-Creation-Date: 2009-06-13 17:27-0700\n"
 "PO-Revision-Date: 2009-02-02 19:20+0100\n"
 "Last-Translator: Jaroslav Ryník <jrynik at yahoo dot co dot uk>, \n"
 "Language-Team: Slovak <sk-i18n@lists.linux.sk>\n"
@@ -118,11 +118,11 @@ msgstr "Béžová!"
 #. and the ASCII-only fonts should be given bad scores in the scoring
 #. code below (the best scores going to fonts that support both).
 #. Line X
-#: ../dirwalk.c:155
+#: ../dirwalk.c:155 ../dirwalk.c:175
 msgid "qx"
 msgstr "qx"
 
-#: ../dirwalk.c:155
+#: ../dirwalk.c:155 ../dirwalk.c:176
 msgid "QX"
 msgstr "QX"
 
@@ -140,32 +140,32 @@ msgstr ""
 #. especially important for users who have scroll buttons disabled.
 #. Translators should do whatever is needed to put crummy fonts last.
 #. distinct uppercase and lowercase (e.g., 'o' vs. 'O')
-#: ../dirwalk.c:181
+#: ../dirwalk.c:184
 msgid "oO"
 msgstr "oO"
 
 #. uncommon punctuation (e.g., '@', '#', '*', etc.)
-#: ../dirwalk.c:184
+#: ../dirwalk.c:187
 msgid "`\\%_@$~#{}<>^&*"
 msgstr "`\\%_@$~#{}<>^&*"
 
 #. common punctuation (e.g., '?', '!', '.', ',', etc.)
-#: ../dirwalk.c:187
+#: ../dirwalk.c:190
 msgid ",.?!"
 msgstr ",.?!"
 
 #. digits (e.g., '0', '1' and '7')
-#: ../dirwalk.c:190
+#: ../dirwalk.c:193
 msgid "017"
 msgstr "017"
 
 #. distinct circle-like characters (e.g., 'O' (capital oh) vs. '0' (zero))
-#: ../dirwalk.c:193
+#: ../dirwalk.c:196
 msgid "O0"
 msgstr "O0"
 
 #. distinct line-like characters (e.g., 'l' (lowercase elle) vs. '1' (one) vs. 'I' (capital aye))
-#: ../dirwalk.c:196
+#: ../dirwalk.c:199
 msgid "1Il|"
 msgstr "1Il|"
 
@@ -649,38 +649,38 @@ msgstr "Aa"
 
 #. Admittedly stupid way of determining which keys can be used for
 #. positive and negative responses in dialogs (e.g., [Y] (for 'yes') in English)
-#: ../tuxpaint.c:11646
+#: ../tuxpaint.c:11647
 msgid "Yes"
 msgstr "Áno"
 
-#: ../tuxpaint.c:11650
+#: ../tuxpaint.c:11651
 msgid "No"
 msgstr "Nie"
 
 #. Prompt to ask whether user wishes to save over old version of their file
-#: ../tuxpaint.c:12602
+#: ../tuxpaint.c:12617
 msgid "Replace the picture with your changes?"
 msgstr "Mám zmeny uložiť do súbora so starým obrázkom?"
 
 #. Positive response to saving over old version
 #. (like a 'File:Save' action in other applications)
-#: ../tuxpaint.c:12606
+#: ../tuxpaint.c:12621
 msgid "Yes, replace the old one!"
 msgstr "Áno, nahraď ten starý súbor!"
 
 #. Negative response to saving over old version (saves a new image)
 #. (like a 'File:Save As...' action in other applications)
-#: ../tuxpaint.c:12610
+#: ../tuxpaint.c:12625
 msgid "No, save a new file!"
 msgstr "Nie, ulož ho ako nový súbor!"
 
-#: ../tuxpaint.c:13373
+#: ../tuxpaint.c:13388
 msgid "Choose the picture you want, then click “Open”."
 msgstr "Vyber si obrázok, ktorý chceš, a potom klikni na „Otvor”."
 
 #. Let user choose images:
 #. Instructions for Slideshow file dialog (FIXME: Make a #define)
-#: ../tuxpaint.c:14360 ../tuxpaint.c:14674
+#: ../tuxpaint.c:14375 ../tuxpaint.c:14689
 msgid "Choose the pictures you want, then click “Play”."
 msgstr ""
 "Klikni na obrázky, ktoré chceš vidieť, a potom klikni na tlačidlo „Začni”."
@@ -861,11 +861,11 @@ msgstr "Pena"
 msgid "Click and drag the mouse to cover an area with foamy bubbles."
 msgstr "Keď klikneš a pohýbeš myšou, nakreslíš penové bublinky."
 
-#: ../../magic/src/fold.c:82
+#: ../../magic/src/fold.c:84
 msgid "Fold"
 msgstr "Zohnúť"
 
-#: ../../magic/src/fold.c:84
+#: ../../magic/src/fold.c:86
 msgid ""
 "Choose a background color and click to turn the corner of the page over."
 msgstr "Vyber si farbu pozadia. Potom klikni myšou a roh strany sa zohne."
@@ -1001,13 +1001,13 @@ msgstr "Daj do obrázka jednu kvapku dažďa."
 msgid "Click to cover your picture with rain drops."
 msgstr "Keď klikneš, obrázok sa zaplní dažďovými kvapkami."
 
-#: ../../magic/src/realrainbow.c:72
+#: ../../magic/src/realrainbow.c:76
 #, fuzzy
 #| msgid "Rainbow"
 msgid "Real Rainbow"
 msgstr "Dúha"
 
-#: ../../magic/src/realrainbow.c:77
+#: ../../magic/src/realrainbow.c:81
 msgid ""
 "Click where you want your rainbow to start, drag to where you want it to "
 "end, and then let go to draw a rainbow."
@@ -1021,19 +1021,19 @@ msgstr "Kruhové vlnky"
 msgid "Click to make ripples appear over your picture."
 msgstr "Klikni a na obrázku vytvoríš kruhové vlnky."
 
-#: ../../magic/src/rosette.c:90
+#: ../../magic/src/rosette.c:93
 msgid "Rosette"
 msgstr "Ružička"
 
-#: ../../magic/src/rosette.c:90
+#: ../../magic/src/rosette.c:93
 msgid "Picasso"
 msgstr "Picasso"
 
-#: ../../magic/src/rosette.c:95
+#: ../../magic/src/rosette.c:98
 msgid "Click and start drawing your rosette."
 msgstr "Klikni myšou a začni kresliť ružičku."
 
-#: ../../magic/src/rosette.c:97
+#: ../../magic/src/rosette.c:100
 msgid "You can draw just like Picasso!"
 msgstr "Môžeš kresliť presne ako Picasso!"
 
@@ -1107,35 +1107,32 @@ msgstr "Klikni a do obrázka pridáš snehové gule."
 msgid "Click to add snow flakes to your picture."
 msgstr "Klikni a do obrázka pridáš snehové vločky."
 
-#: ../../magic/src/string.c:121
+#: ../../magic/src/string.c:120
 msgid "String edges"
 msgstr ""
 
-#: ../../magic/src/string.c:124
+#: ../../magic/src/string.c:123
 msgid "String corner"
 msgstr ""
 
-#: ../../magic/src/string.c:127
+#: ../../magic/src/string.c:126
 msgid "String 'V'"
 msgstr ""
 
-#: ../../magic/src/string.c:135
+#: ../../magic/src/string.c:134
 msgid ""
 "Click and drag to draw string art. Drag top-bottom to draw less or more "
-"lines, to the center to approach the lines to center."
+"lines, left or right to make a bigger hole."
 msgstr ""
 
-#: ../../magic/src/string.c:138
+#: ../../magic/src/string.c:137
 #, fuzzy
-#| msgid "Click and drag to draw train track rails on your picture."
-msgid "Click and drag to draw string art aligned to the edges."
-msgstr ""
-"Kliknutím a pohybom myši môžeš na obrázok nakresliť koľajnice pre vlak."
+#| msgid "Click and drag to draw a beam of light on your picture."
+msgid "Click and drag to draw arrows made of string art."
+msgstr "Drž tlačidlo myši, pohýb ňou a na obrázku sa objaví svetlo."
 
-#: ../../magic/src/string.c:141
-msgid ""
-"Draw string art with free angles. Click and drag a V: drag to the vertex, "
-"drag backwards a little to the start, then drag to the end."
+#: ../../magic/src/string.c:140
+msgid "Draw string art arrows with free angles."
 msgstr ""
 
 #: ../../magic/src/tint.c:71
@@ -1223,6 +1220,12 @@ msgstr ""
 "Keď klikneš, obrázok sa zvlní zvislo. Ak pohneš myšou smerom nahor, vlny "
 "budú kratšie. Ak pohneš myšou smerom nadol, vlny budú vyššie, ak doľava, "
 "budú menšie, a ak doprava, tak budú dlhšie."
+
+#, fuzzy
+#~| msgid "Click and drag to draw train track rails on your picture."
+#~ msgid "Click and drag to draw string art aligned to the edges."
+#~ msgstr ""
+#~ "Kliknutím a pohybom myši môžeš na obrázok nakresliť koľajnice pre vlak."
 
 #, fuzzy
 #~| msgid "Click and drag to draw a flower stalk. Let go to finish the flower."

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eu\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-06-05 17:02-0700\n"
+"POT-Creation-Date: 2009-06-13 17:27-0700\n"
 "PO-Revision-Date: 2009-05-29 00:22+0200\n"
 "Last-Translator: juanillo <juanirigoien@gmail.com>\n"
 "Language-Team: Basque <es@li.org>\n"
@@ -114,11 +114,11 @@ msgstr "Beisa!"
 #. and the ASCII-only fonts should be given bad scores in the scoring
 #. code below (the best scores going to fonts that support both).
 #. Line X
-#: ../dirwalk.c:155
+#: ../dirwalk.c:155 ../dirwalk.c:175
 msgid "qx"
 msgstr "qx"
 
-#: ../dirwalk.c:155
+#: ../dirwalk.c:155 ../dirwalk.c:176
 msgid "QX"
 msgstr "QX"
 
@@ -136,32 +136,32 @@ msgstr "QY"
 #. especially important for users who have scroll buttons disabled.
 #. Translators should do whatever is needed to put crummy fonts last.
 #. distinct uppercase and lowercase (e.g., 'o' vs. 'O')
-#: ../dirwalk.c:181
+#: ../dirwalk.c:184
 msgid "oO"
 msgstr "oO"
 
 #. uncommon punctuation (e.g., '@', '#', '*', etc.)
-#: ../dirwalk.c:184
+#: ../dirwalk.c:187
 msgid "`\\%_@$~#{}<>^&*"
 msgstr "`\\%_@$~#{}<>^&*"
 
 #. common punctuation (e.g., '?', '!', '.', ',', etc.)
-#: ../dirwalk.c:187
+#: ../dirwalk.c:190
 msgid ",.?!"
 msgstr ",.?!"
 
 #. digits (e.g., '0', '1' and '7')
-#: ../dirwalk.c:190
+#: ../dirwalk.c:193
 msgid "017"
 msgstr "017"
 
 #. distinct circle-like characters (e.g., 'O' (capital oh) vs. '0' (zero))
-#: ../dirwalk.c:193
+#: ../dirwalk.c:196
 msgid "O0"
 msgstr "O0"
 
 #. distinct line-like characters (e.g., 'l' (lowercase elle) vs. '1' (one) vs. 'I' (capital aye))
-#: ../dirwalk.c:196
+#: ../dirwalk.c:199
 msgid "1Il|"
 msgstr "1Il|"
 
@@ -642,39 +642,39 @@ msgstr "Aa"
 
 #. Admittedly stupid way of determining which keys can be used for
 #. positive and negative responses in dialogs (e.g., [Y] (for 'yes') in English)
-#: ../tuxpaint.c:11646
+#: ../tuxpaint.c:11647
 msgid "Yes"
 msgstr "Bai"
 
-#: ../tuxpaint.c:11650
+#: ../tuxpaint.c:11651
 msgid "No"
 msgstr "Ez"
 
 #. Prompt to ask whether user wishes to save over old version of their file
-#: ../tuxpaint.c:12602
+#: ../tuxpaint.c:12617
 msgid "Replace the picture with your changes?"
 msgstr "Ordeztu irudia zure aldaketa berriekin?"
 
 #. Positive response to saving over old version
 #. (like a 'File:Save' action in other applications)
-#: ../tuxpaint.c:12606
+#: ../tuxpaint.c:12621
 msgid "Yes, replace the old one!"
 msgstr "Bai, zaharra ordeztu!"
 
 #. Negative response to saving over old version (saves a new image)
 #. (like a 'File:Save As...' action in other applications)
-#: ../tuxpaint.c:12610
+#: ../tuxpaint.c:12625
 msgid "No, save a new file!"
 msgstr "Ez, artxibo berria gorde"
 
-#: ../tuxpaint.c:13373
+#: ../tuxpaint.c:13388
 msgid "Choose the picture you want, then click “Open”."
 msgstr ""
 "Aukera ezazu ireki nahi duzun irudia. Ondoren klik egin ‘Ireki’ botoian"
 
 #. Let user choose images:
 #. Instructions for Slideshow file dialog (FIXME: Make a #define)
-#: ../tuxpaint.c:14360 ../tuxpaint.c:14674
+#: ../tuxpaint.c:14375 ../tuxpaint.c:14689
 msgid "Choose the pictures you want, then click “Play”."
 msgstr "Aukera ezazu ireki nahi duzun irudia. Ondoren klik egin ‘Hasi’ botoian"
 
@@ -855,11 +855,11 @@ msgid "Click and drag the mouse to cover an area with foamy bubbles."
 msgstr ""
 "Klik egin eta mugi ezazu sagua irudiaren eremu bat bitz burbuilez estaltzeko."
 
-#: ../../magic/src/fold.c:82
+#: ../../magic/src/fold.c:84
 msgid "Fold"
 msgstr "Tolestu"
 
-#: ../../magic/src/fold.c:84
+#: ../../magic/src/fold.c:86
 msgid ""
 "Choose a background color and click to turn the corner of the page over."
 msgstr ""
@@ -997,13 +997,13 @@ msgstr "Egin klik irudiaren gainean euri tanta bat kokatzeko"
 msgid "Click to cover your picture with rain drops."
 msgstr "Egin klik irudia euri tantez estaltzeko."
 
-#: ../../magic/src/realrainbow.c:72
+#: ../../magic/src/realrainbow.c:76
 #, fuzzy
 #| msgid "Rainbow"
 msgid "Real Rainbow"
 msgstr "Ostadarra"
 
-#: ../../magic/src/realrainbow.c:77
+#: ../../magic/src/realrainbow.c:81
 msgid ""
 "Click where you want your rainbow to start, drag to where you want it to "
 "end, and then let go to draw a rainbow."
@@ -1017,19 +1017,19 @@ msgstr "Uhinak"
 msgid "Click to make ripples appear over your picture."
 msgstr "Klik egin irudiaren gainean uhinak agertarazteko."
 
-#: ../../magic/src/rosette.c:90
+#: ../../magic/src/rosette.c:93
 msgid "Rosette"
 msgstr "Eskarapela"
 
-#: ../../magic/src/rosette.c:90
+#: ../../magic/src/rosette.c:93
 msgid "Picasso"
 msgstr "Picasso"
 
-#: ../../magic/src/rosette.c:95
+#: ../../magic/src/rosette.c:98
 msgid "Click and start drawing your rosette."
 msgstr "Egin klik eta hasi eskarapela marrazten."
 
-#: ../../magic/src/rosette.c:97
+#: ../../magic/src/rosette.c:100
 msgid "You can draw just like Picasso!"
 msgstr "Picassok bezain ondo marraztu dezakezu!"
 
@@ -1102,34 +1102,32 @@ msgstr "Klik egin irudiari elur-bolak gehitzeko."
 msgid "Click to add snow flakes to your picture."
 msgstr "Klik egin irudiari elur malutak gehitzeko."
 
-#: ../../magic/src/string.c:121
+#: ../../magic/src/string.c:120
 msgid "String edges"
 msgstr ""
 
-#: ../../magic/src/string.c:124
+#: ../../magic/src/string.c:123
 msgid "String corner"
 msgstr ""
 
-#: ../../magic/src/string.c:127
+#: ../../magic/src/string.c:126
 msgid "String 'V'"
 msgstr ""
 
-#: ../../magic/src/string.c:135
+#: ../../magic/src/string.c:134
 msgid ""
 "Click and drag to draw string art. Drag top-bottom to draw less or more "
-"lines, to the center to approach the lines to center."
+"lines, left or right to make a bigger hole."
 msgstr ""
 
-#: ../../magic/src/string.c:138
+#: ../../magic/src/string.c:137
 #, fuzzy
-#| msgid "Click and drag to draw train track rails on your picture."
-msgid "Click and drag to draw string art aligned to the edges."
-msgstr "Klik egin eta mugitu irudiaren gainean trenbidea marrazteko"
+#| msgid "Click and drag to draw a beam of light on your picture."
+msgid "Click and drag to draw arrows made of string art."
+msgstr "Klik egin eta arrastatu argi-izpia irudiaren gainean marrazteko."
 
-#: ../../magic/src/string.c:141
-msgid ""
-"Draw string art with free angles. Click and drag a V: drag to the vertex, "
-"drag backwards a little to the start, then drag to the end."
+#: ../../magic/src/string.c:140
+msgid "Draw string art arrows with free angles."
 msgstr ""
 
 #: ../../magic/src/tint.c:71
@@ -1214,6 +1212,11 @@ msgstr ""
 "Klik egin irudian uhin bertikalak ipintzeko. Klik gorantz uhinak laburtzeko, "
 "beherantz uhinak handitzeko, ezkerretara uhin txikiak egiteko eta eskuina "
 "luzeak egiteko."
+
+#, fuzzy
+#~| msgid "Click and drag to draw train track rails on your picture."
+#~ msgid "Click and drag to draw string art aligned to the edges."
+#~ msgstr "Klik egin eta mugitu irudiaren gainean trenbidea marrazteko"
 
 #, fuzzy
 #~| msgid "Click and drag to draw a flower stalk. Let go to finish the flower."
