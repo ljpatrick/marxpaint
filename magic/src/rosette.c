@@ -105,9 +105,7 @@ int rosette_requires_colors(magic_api * api, int which) { return 1; }
 void rosette_release(magic_api * api, int which,
 	           SDL_Surface * canvas, SDL_Surface * snapshot,
 	           int x, int y, SDL_Rect * update_rect)
-{
-	api->playsound(rosette_snd, (x * 255) / canvas->w, 255);
-}
+{}
 
 void rosette_shutdown(magic_api * api)
 	{ Mix_FreeChunk(rosette_snd); }
@@ -179,7 +177,8 @@ void rosette_drag(magic_api * api, int which, SDL_Surface * canvas,
 		  SDL_Rect * update_rect)
 {
 	api->line((void *) api, which, canvas, snapshot, ox, oy, x, y, 1, rosette_draw);
-	
+	api->playsound(rosette_snd, (x * 255) / canvas->w, 255);
+
 	update_rect->x=update_rect->y=0;
 	update_rect->w=canvas->w;
 	update_rect->h=canvas->h;
