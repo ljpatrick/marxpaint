@@ -1999,6 +1999,19 @@ static void mainloop(void)
 	key = event.key.keysym.sym;
 	mod = event.key.keysym.mod;
 
+// FIXME: debug junk
+	    fprintf(stderr,
+	      "key 0x%04x mod 0x%04x character 0x%04x %d <%c> is %sprintable, key_down 0x%x\n",
+	      (unsigned)key,
+	      (unsigned)mod,
+	      (unsigned)event.key.keysym.unicode,
+	      (int)event.key.keysym.unicode,
+	      (key_unicode>' ' && key_unicode<127)?(char)event.key.keysym.unicode:' ',
+              iswprint(key_unicode)?"":"not ",
+              (unsigned)key_down
+            );
+
+
 	handle_keymouse(key, SDL_KEYDOWN);
 
 	if (key == SDLK_ESCAPE && !disable_quit)

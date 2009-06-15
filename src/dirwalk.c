@@ -139,25 +139,32 @@ void loadfont_callback(SDL_Surface * screen, const char *restrict const dir,
 	       (unsigned int) font, (unsigned int) font->ttf_font);
 #endif
 
+	// These fonts crash Tux Paint via a library bug.
+	int blacklisted = !strcmp("Zapfino", family) || !strcmp("Elvish Ring NFI", family);
+
 	// First, the blacklist. We list font families that can crash Tux Paint
 	// via bugs in the SDL_ttf library. We also test fonts to be sure that
 	// they have both uppercase and lowercase letters. Note that we do not
 	// test for "Aa", because it is OK if uppercase and lowercase are the
 	// same (but not nice -- such fonts get a low score later).
 	//
-	// We test the alphabet twice, to help with translation. If the users
-	// will be unable to type ASCII letters, then both Line X and Line Y
-	// should be translated. Otherwise, only Line X should be translated
-	// and the ASCII-only fonts should be given bad scores in the scoring
-	// code below (the best scores going to fonts that support both).
-	
-	// Line X
-	if (strcmp("Zapfino", family) && strcmp("Elvish Ring NFI", family) && ((charset_works(font, gettext("qx")) && charset_works(font, gettext("QX")))
+	// Most locales leave the blacklist strings alone: "QX" and "qx"
+	// (it is less destructive to use the scoring strings instead)
+	//
+	// Locales that absolutely require all fonts to have some
+	// extra characters should use "QX..." and "qx...", where "..."
+	// are some characters you absolutely require in all fonts.
+	//
+	// Locales with absolutely NO use for ASCII may use "..." and "...",
+	// where "..." are some characters you absolutely require in
+	// all fonts. This would be the case for a locale in which it is
+	// impossible for a user to type ASCII letters.
+	//
+	// Most translators should use scoring instead.
+	if(!charset_works(font, gettext("qx")) || !charset_works(font, gettext("QX")))
+		blacklisted = 1;
 
-	// Line Y
-									       || (charset_works(font, gettext("qy")) && charset_works(font, gettext("QY")))
-	    ))
-	{
+	if(!blacklisted){
 	  if (num_font_styles == num_font_styles_max)
 	  {
 	    num_font_styles_max = num_font_styles_max * 5 / 4 + 30;
@@ -171,9 +178,9 @@ void loadfont_callback(SDL_Surface * screen, const char *restrict const dir,
 	  user_font_styles[num_font_styles]->filename = files[i].str;	// steal it (mark NULL below)
 	  user_font_styles[num_font_styles]->family = strdup(family);
 	  user_font_styles[num_font_styles]->style = strdup(style);
+          user_font_styles[num_font_styles]->score = 0;
 
-          user_font_styles[num_font_styles]->score += (charset_works(font, gettext("qx")) * 4);
-          user_font_styles[num_font_styles]->score += (charset_works(font, gettext("QX")) * 4);
+	  // TODO: weight specification
 
 	  // Now we score fonts to ensure that the best ones will be placed at
 	  // the top of the list. The user will see them first. This sorting is
@@ -183,11 +190,11 @@ void loadfont_callback(SDL_Surface * screen, const char *restrict const dir,
 	  // distinct uppercase and lowercase (e.g., 'o' vs. 'O')
 	  user_font_styles[num_font_styles]->score += charset_works(font, gettext("oO"));
 
-	  // uncommon punctuation (e.g., '@', '#', '*', etc.)
-	  user_font_styles[num_font_styles]->score += (charset_works(font, gettext("`\%_@$~#{}<>^&*")) * 2);
-
 	  // common punctuation (e.g., '?', '!', '.', ',', etc.)
 	  user_font_styles[num_font_styles]->score += charset_works(font, gettext(",.?!"));
+
+	  // uncommon punctuation (e.g., '@', '#', '*', etc.)
+	  user_font_styles[num_font_styles]->score += charset_works(font, gettext("`\%_@$~#{<(^&*"));
 
 	  // digits (e.g., '0', '1' and '7')
 	  user_font_styles[num_font_styles]->score += charset_works(font, gettext("017"));
@@ -198,9 +205,20 @@ void loadfont_callback(SDL_Surface * screen, const char *restrict const dir,
 	  // distinct line-like characters (e.g., 'l' (lowercase elle) vs. '1' (one) vs. 'I' (capital aye))
 	  user_font_styles[num_font_styles]->score += charset_works(font, gettext("1Il|"));
 
+	  // translation spares -- design not finalized
+#if 0
+	  user_font_styles[num_font_styles]->score += charset_works(font, gettext("<1>spare-1a"));
+	  user_font_styles[num_font_styles]->score += charset_works(font, gettext("<1>spare-1b"));
+	  user_font_styles[num_font_styles]->score += charset_works(font, gettext("<9>spare-9a"))*9;
+	  user_font_styles[num_font_styles]->score += charset_works(font, gettext("<9>spare-9b"))*9;
+#endif
+
+// this really should be dynamic, avoiding the need for a special build
 #ifdef OLPC_XO
 	  user_font_styles[num_font_styles]->score += charset_works(font, "\xc3\x97\xc3\xb7");	// multiply and divide
 #endif
+
+	  // FIXME: add topology tests ('A' has one hole, 'B' has two holes, etc.)
 
 	  num_font_styles++;
 //printf("Accepted: %s, %s, %s, score(%d)\n", files[i].str, family, style, user_font_styles[num_font_styles]->score);
