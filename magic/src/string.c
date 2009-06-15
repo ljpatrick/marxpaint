@@ -193,6 +193,7 @@ void string_shutdown(__attribute__((unused)) magic_api * api)
     {
       if (string_snd[i] != NULL)
 	Mix_FreeChunk(string_snd[i]);
+      i ++;
     }
 }
 
