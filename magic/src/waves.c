@@ -34,7 +34,7 @@
 
 /* Our globals: */
 
-static Mix_Chunk * waves_snd;
+static Mix_Chunk * waves_snd[2];
 
 
 Uint32 waves_api_version(void) { return(TP_MAGIC_API_VERSION); }
@@ -47,7 +47,12 @@ int waves_init(magic_api * api)
 
   snprintf(fname, sizeof(fname), "%s/sounds/magic/waves.wav",
 	    api->data_directory);
-  waves_snd = Mix_LoadWAV(fname);
+  waves_snd[0] = Mix_LoadWAV(fname);
+
+  snprintf(fname, sizeof(fname), "%s/sounds/magic/waves.wav",
+	    api->data_directory);
+  waves_snd[1] = Mix_LoadWAV(fname);
+
 
   return(1);
 }
@@ -149,6 +154,7 @@ void waves_click(magic_api * api, int which, int mode,
 	           int x, int y, SDL_Rect * update_rect)
 {
   waves_drag(api, which, canvas, last, x, y, x, y, update_rect);
+  api->playsound(waves_snd[which], 128, 255);
 }
 
 // Affect the canvas on release:
@@ -156,14 +162,15 @@ void waves_release(magic_api * api, int which,
 	           SDL_Surface * canvas, SDL_Surface * last,
 	           int x, int y, SDL_Rect * update_rect)
 {
-  api->playsound(waves_snd, 128, 255);
 }
 
 // No setup happened:
 void waves_shutdown(magic_api * api)
 {
-  if (waves_snd != NULL)
-    Mix_FreeChunk(waves_snd);
+  if (waves_snd[0] != NULL)
+    Mix_FreeChunk(waves_snd[0]);
+  if (waves_snd[1] != NULL)
+    Mix_FreeChunk(waves_snd[1]);
 }
 
 // Record the color from Tux Paint:
