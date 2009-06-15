@@ -2,7 +2,6 @@
 #include "SDL_image.h"
 #include "SDL_mixer.h"
 
-Mix_Chunk * string_snd;
 unsigned int img_w, img_h;
 static Uint8 string_r, string_g, string_b;   
 static int string_ox, string_oy;
@@ -14,6 +13,7 @@ enum string_tools{
   STRING_TOOL_ANGLE,
   STRING_NUMTOOLS};
 
+Mix_Chunk * string_snd[STRING_NUMTOOLS];
 // Custom function declarations
 
 void string_callback(void * ptr, int which_tool,
@@ -161,7 +161,6 @@ void string_release(magic_api * api, int which,
       }
     string_draw_angle((void *) api, which, canvas, snapshot, string_ox, string_oy, x, y, update_rect);
     }
-  api->playsound(string_snd, (x * 255) / canvas->w, 255);
 }
 
 int string_init(__attribute__((unused)) magic_api * api)
@@ -170,18 +169,31 @@ int string_init(__attribute__((unused)) magic_api * api)
 
   snprintf(fname, sizeof(fname), "%s/sounds/magic/string.ogg",
            api->data_directory);
-  string_snd = Mix_LoadWAV(fname);
+  string_snd[STRING_TOOL_FULL_BY_OFFSET] = Mix_LoadWAV(fname);
+
+  snprintf(fname, sizeof(fname), "%s/sounds/magic/string.ogg",
+           api->data_directory);
+  string_snd[STRING_TOOL_TRIANGLE] = Mix_LoadWAV(fname);
+
+  snprintf(fname, sizeof(fname), "%s/sounds/magic/string.ogg",
+           api->data_directory);
+  string_snd[STRING_TOOL_ANGLE] = Mix_LoadWAV(fname);
 
   return(1);
 }
 
 void string_shutdown(__attribute__((unused)) magic_api * api)
 {
+  int i = 0;
+
   if (canvas_backup) 
     SDL_FreeSurface(canvas_backup);
 
-  if (string_snd != NULL)
-    Mix_FreeChunk(string_snd);
+  while (i < STRING_NUMTOOLS)
+    {
+      if (string_snd[i] != NULL)
+	Mix_FreeChunk(string_snd[i]);
+    }
 }
 
 void string_switchin(__attribute__((unused)) magic_api * api, __attribute__((unused)) int which, __attribute__((unused)) int mode,  SDL_Surface * canvas, __attribute__((unused)) SDL_Surface * snapshot)
@@ -465,5 +477,7 @@ void string_drag(magic_api * api, int which,
     {
       string_set_vertex(x,y);
       string_draw_wrapper((void *) api, which, canvas, snapshot,ox,oy, x, y,  update_rect);
+      api->playsound(string_snd[which], (x * 255) / canvas->w, 255);
+
     }
 }
