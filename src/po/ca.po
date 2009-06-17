@@ -16,8 +16,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Tuxpaint cvs 2009-05-18\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-06-13 17:27-0700\n"
-"PO-Revision-Date: 2009-06-09 22:10+0200\n"
+"POT-Creation-Date: 2009-06-17 21:40+0200\n"
+"PO-Revision-Date: 2009-06-17 22:56+0200\n"
 "Last-Translator: Pere Pujal i Carabantes <pere@fornol.no-ip.org>\n"
 "Language-Team: Català <linux-ca@chanae.alphanet.ch>\n"
 "MIME-Version: 1.0\n"
@@ -110,56 +110,50 @@ msgstr "Torrat!"
 msgid "Beige!"
 msgstr "Beix!"
 
-# ç, e accentuada, i amb dièresi.
-# Cadascuna d'aquestes traduccions és independent.
-# No escriviu dues vegades la mateixa lletra en la mateixa traducció!
-#
 #. First, the blacklist. We list font families that can crash Tux Paint
 #. via bugs in the SDL_ttf library. We also test fonts to be sure that
 #. they have both uppercase and lowercase letters. Note that we do not
 #. test for "Aa", because it is OK if uppercase and lowercase are the
 #. same (but not nice -- such fonts get a low score later).
 #.
-#. We test the alphabet twice, to help with translation. If the users
-#. will be unable to type ASCII letters, then both Line X and Line Y
-#. should be translated. Otherwise, only Line X should be translated
-#. and the ASCII-only fonts should be given bad scores in the scoring
-#. code below (the best scores going to fonts that support both).
-#. Line X
-#: ../dirwalk.c:155 ../dirwalk.c:175
+#. Most locales leave the blacklist strings alone: "QX" and "qx"
+#. (it is less destructive to use the scoring strings instead)
+#.
+#. Locales that absolutely require all fonts to have some
+#. extra characters should use "QX..." and "qx...", where "..."
+#. are some characters you absolutely require in all fonts.
+#.
+#. Locales with absolutely NO use for ASCII may use "..." and "...",
+#. where "..." are some characters you absolutely require in
+#. all fonts. This would be the case for a locale in which it is
+#. impossible for a user to type ASCII letters.
+#.
+#. Most translators should use scoring instead.
+#: ../dirwalk.c:164
 msgid "qx"
-msgstr "çéï"
+msgstr "qx"
 
-#: ../dirwalk.c:155 ../dirwalk.c:176
+#: ../dirwalk.c:164
 msgid "QX"
-msgstr "ÇÈÏ"
+msgstr "QX"
 
-# Si es tradueixen qy i QY, es deshabilitaran 
-# els tipus de lletra que no tinguin la possibilitat de mostrar el
-# texte traduït, aixó implicaria deshabilitar molts tipus de lletra
-# que només disposen de caracters ascii però que encara poden ser útils.
-#. Line Y
-#: ../dirwalk.c:158
-msgid "qy"
-msgstr "qy"
-
-#: ../dirwalk.c:158
-msgid "QY"
-msgstr "QY"
-
-# 2009-06-09 Here we lack a test for "common letters"
-#
-# Aquí faria falta dos tests:
-# un per si hi ha les lletres i un altre per si dibuixen diferent les majúscules
-# de les minúscules (aquest). Ara mateix he combinat els dos tests en un de sol.
+#. TODO: weight specification
 #. Now we score fonts to ensure that the best ones will be placed at
 #. the top of the list. The user will see them first. This sorting is
 #. especially important for users who have scroll buttons disabled.
 #. Translators should do whatever is needed to put crummy fonts last.
 #. distinct uppercase and lowercase (e.g., 'o' vs. 'O')
-#: ../dirwalk.c:184
+#: ../dirwalk.c:191
 msgid "oO"
-msgstr "CcÇçEeÉéÈèIiÏï"
+msgstr "oO"
+
+# Símbols o lletres que es fan servir sovint.
+# punt volat ·, apóstrof ', guionet -
+#
+#. common punctuation (e.g., '?', '!', '.', ',', etc.)
+#: ../dirwalk.c:194
+msgid ",.?!"
+msgstr " ·'-,.?!"
 
 # Símbols o lletres que es poden arribar a fer servir.
 # Euro €
@@ -174,32 +168,40 @@ msgstr "CcÇçEeÉéÈèIiÏï"
 # substitueixen els caracters que no tenen per espais.
 #
 #. uncommon punctuation (e.g., '@', '#', '*', etc.)
-#: ../dirwalk.c:187
-msgid "`\\%_@$~#{}<>^&*"
+#: ../dirwalk.c:197
+msgid "`\\%_@$~#{<(^&*"
 msgstr " ·€¿¡ñæ`\\%_@$~#{<«ª^&*"
 
-# Símbols o lletres que es fan servir sovint.
-# punt volat ·, apóstrof ', guionet -
-#
-#. common punctuation (e.g., '?', '!', '.', ',', etc.)
-#: ../dirwalk.c:190
-msgid ",.?!"
-msgstr " ·'-,.?!"
-
 #. digits (e.g., '0', '1' and '7')
-#: ../dirwalk.c:193
+#: ../dirwalk.c:200
 msgid "017"
 msgstr "017"
 
 #. distinct circle-like characters (e.g., 'O' (capital oh) vs. '0' (zero))
-#: ../dirwalk.c:196
+#: ../dirwalk.c:203
 msgid "O0"
 msgstr "O0"
 
 #. distinct line-like characters (e.g., 'l' (lowercase elle) vs. '1' (one) vs. 'I' (capital aye))
-#: ../dirwalk.c:199
+#: ../dirwalk.c:206
 msgid "1Il|"
 msgstr "1Il|"
+
+#: ../dirwalk.c:210
+msgid "<1>spare-1a"
+msgstr "<0>spare-1a"
+
+#: ../dirwalk.c:211
+msgid "<1>spare-1b"
+msgstr "<0>spare-1b"
+
+#: ../dirwalk.c:212
+msgid "<9>spare-9a"
+msgstr "<9>eèéëcÇ"
+
+#: ../dirwalk.c:213
+msgid "<9>spare-9b"
+msgstr "<9>EÉÈËCÇ"
 
 #. Congratulations #1
 #: ../great.h:37
@@ -416,7 +418,7 @@ msgstr "Nou"
 #. Open a saved picture
 #. buttons for the file open dialog
 #. Open dialog: 'Open' button, to load the selected picture
-#: ../tools.h:90 ../tuxpaint.c:7984
+#: ../tools.h:90 ../tuxpaint.c:7997
 msgid "Open"
 msgstr "Obre"
 
@@ -626,88 +628,88 @@ msgid "Remember to use the left mouse button!"
 msgstr "Recordeu de fer servir el botó esquerre!"
 
 #. Sound has been muted (silenced) via keyboard shortcut
-#: ../tuxpaint.c:2022
+#: ../tuxpaint.c:2035
 msgid "Sound muted."
 msgstr "S'ha desactivat el so."
 
 #. Sound has been unmuted (unsilenced) via keyboard shortcut
-#: ../tuxpaint.c:2027
+#: ../tuxpaint.c:2040
 msgid "Sound unmuted."
 msgstr "S'ha activat el so."
 
 #. Wait while Text tool finishes loading fonts
-#: ../tuxpaint.c:2494
+#: ../tuxpaint.c:2507
 msgid "Please wait…"
 msgstr "Espereu, si us plau…"
 
-#: ../tuxpaint.c:7207
+#: ../tuxpaint.c:7220
 msgid "Pick a color."
 msgstr "Trieu un color."
 
 #. Open dialog: 'Erase' button, to erase/deleted the selected picture
-#: ../tuxpaint.c:7987
+#: ../tuxpaint.c:8000
 msgid "Erase"
 msgstr "Esborra"
 
 #. Open dialog: 'Slides' button, to switch to slide show mode
-#: ../tuxpaint.c:7990
+#: ../tuxpaint.c:8003
 msgid "Slides"
 msgstr "Diapositives"
 
 #. Open dialog: 'Back' button, to dismiss Open dialog without opening a picture
-#: ../tuxpaint.c:7993
+#: ../tuxpaint.c:8006
 msgid "Back"
 msgstr "Endarrera"
 
 #. Slideshow: 'Next' button, to load next slide (image)
-#: ../tuxpaint.c:7996
+#: ../tuxpaint.c:8009
 msgid "Next"
 msgstr "Següent"
 
 #. Slideshow: 'Play' button, to begin a slideshow sequence
-#: ../tuxpaint.c:7999
+#: ../tuxpaint.c:8012
 msgid "Play"
 msgstr "Reproduïr"
 
 #. Label for 'Letters' buttons (font selector, down the right when the Text tool is being used); used to show the difference between font faces
-#: ../tuxpaint.c:8646
+#: ../tuxpaint.c:8659
 msgid "Aa"
 msgstr "Aà"
 
 #. Admittedly stupid way of determining which keys can be used for
 #. positive and negative responses in dialogs (e.g., [Y] (for 'yes') in English)
-#: ../tuxpaint.c:11647
+#: ../tuxpaint.c:11660
 msgid "Yes"
 msgstr "Sí"
 
-#: ../tuxpaint.c:11651
+#: ../tuxpaint.c:11664
 msgid "No"
 msgstr "No"
 
 #. Prompt to ask whether user wishes to save over old version of their file
-#: ../tuxpaint.c:12617
+#: ../tuxpaint.c:12630
 msgid "Replace the picture with your changes?"
 msgstr "Reemplaço el dibuix amb els vostres canvis?"
 
 #. Positive response to saving over old version
 #. (like a 'File:Save' action in other applications)
-#: ../tuxpaint.c:12621
+#: ../tuxpaint.c:12634
 msgid "Yes, replace the old one!"
 msgstr "Sí, reemplaça l'antic!"
 
 #. Negative response to saving over old version (saves a new image)
 #. (like a 'File:Save As...' action in other applications)
-#: ../tuxpaint.c:12625
+#: ../tuxpaint.c:12638
 msgid "No, save a new file!"
 msgstr "No, desa en un fitxer nou!"
 
-#: ../tuxpaint.c:13388
+#: ../tuxpaint.c:13401
 msgid "Choose the picture you want, then click “Open”."
 msgstr "Trieu el dibuix que voleu, llavors feu clic en Obre."
 
 #. Let user choose images:
 #. Instructions for Slideshow file dialog (FIXME: Make a #define)
-#: ../tuxpaint.c:14375 ../tuxpaint.c:14689
+#: ../tuxpaint.c:14388 ../tuxpaint.c:14702
 msgid "Choose the pictures you want, then click “Play”."
 msgstr "Trieu els dibuixos que voleu, llavors feu clic en «Reproduïr»."
 
@@ -1144,10 +1146,6 @@ msgid "String 'V'"
 msgstr "Fils angle"
 
 #: ../../magic/src/string.c:134
-#, fuzzy
-#| msgid ""
-#| "Click and drag to draw string art. Drag top-bottom to draw less or more "
-#| "lines, to the center to approach the lines to center."
 msgid ""
 "Click and drag to draw string art. Drag top-bottom to draw less or more "
 "lines, left or right to make a bigger hole."
@@ -1157,14 +1155,12 @@ msgstr ""
 "apropin."
 
 #: ../../magic/src/string.c:137
-#, fuzzy
-#| msgid "Click and drag to draw a beam of light on your picture."
 msgid "Click and drag to draw arrows made of string art."
-msgstr "Feu clic i arrossegueu per dibuixar un camí de llum en la imatge."
+msgstr "Feu clic i arrossegueu per fer un dibuix de fils alineat amb les vores."
 
 #: ../../magic/src/string.c:140
 msgid "Draw string art arrows with free angles."
-msgstr ""
+msgstr "Fa un dibuix de fils amb angles lliures. Feu clic i arrossegueu com si dibuixessiu una V: Arrossegueu fins el vertex, una mica endarrera cap el començament, llavors fins el destí."
 
 #: ../../magic/src/tint.c:71
 msgid "Tint"
@@ -1218,15 +1214,15 @@ msgstr "TV"
 msgid "Click to make your picture look like it's on television."
 msgstr "Feu clic per convertir la imatge com si estés en el televisor."
 
-#: ../../magic/src/waves.c:75
+#: ../../magic/src/waves.c:80
 msgid "Waves"
 msgstr "Ones"
 
-#: ../../magic/src/waves.c:76
+#: ../../magic/src/waves.c:81
 msgid "Wavelets"
 msgstr "Ones verticals"
 
-#: ../../magic/src/waves.c:83
+#: ../../magic/src/waves.c:88
 msgid ""
 "Click to make the picture horizontally wavy. Click toward the top for "
 "shorter waves, the bottom for taller waves, the left for small waves, and "
@@ -1236,7 +1232,7 @@ msgstr ""
 "ones curtes, a baix ones altes, a l'esquerra ones petites, a la dreta ones "
 "llargues."
 
-#: ../../magic/src/waves.c:84
+#: ../../magic/src/waves.c:89
 msgid ""
 "Click to make the picture vertically wavy. Click toward the top for shorter "
 "waves, the bottom for taller waves, the left for small waves, and the right "
@@ -1245,6 +1241,16 @@ msgstr ""
 "Feu clic dins la imatge per aplicar-hi ones verticals. Clic a dalt fa ones "
 "curtes, a baix ones altes, a l'esquerra ones petites, a la dreta ones "
 "llargues."
+
+# Si es tradueixen qy i QY, es deshabilitaran 
+# els tipus de lletra que no tinguin la possibilitat de mostrar el
+# texte traduït, aixó implicaria deshabilitar molts tipus de lletra
+# que només disposen de caracters ascii però que encara poden ser útils.
+#~ msgid "qy"
+#~ msgstr "qy"
+
+#~ msgid "QY"
+#~ msgstr "QY"
 
 #~ msgid "Click and drag to draw string art aligned to the edges."
 #~ msgstr ""
