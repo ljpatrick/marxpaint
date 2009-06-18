@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint 0.9.18\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-06-13 17:27-0700\n"
+"POT-Creation-Date: 2009-06-18 14:09-0700\n"
 "PO-Revision-Date: 2008-01-29 15:00+0000\n"
 "Last-Translator: Edmund GRIMLEY EVANS <edmundo@rano.org>\n"
 "Language-Team: Esperanto <translation-team-eo@lists.sourceforge.net>\n"
@@ -105,61 +105,76 @@ msgstr "Helflava!"
 #. test for "Aa", because it is OK if uppercase and lowercase are the
 #. same (but not nice -- such fonts get a low score later).
 #.
-#. We test the alphabet twice, to help with translation. If the users
-#. will be unable to type ASCII letters, then both Line X and Line Y
-#. should be translated. Otherwise, only Line X should be translated
-#. and the ASCII-only fonts should be given bad scores in the scoring
-#. code below (the best scores going to fonts that support both).
-#. Line X
-#: ../dirwalk.c:155 ../dirwalk.c:175
+#. Most locales leave the blacklist strings alone: "QX" and "qx"
+#. (it is less destructive to use the scoring strings instead)
+#.
+#. Locales that absolutely require all fonts to have some
+#. extra characters should use "QX..." and "qx...", where "..."
+#. are some characters you absolutely require in all fonts.
+#.
+#. Locales with absolutely NO use for ASCII may use "..." and "...",
+#. where "..." are some characters you absolutely require in
+#. all fonts. This would be the case for a locale in which it is
+#. impossible for a user to type ASCII letters.
+#.
+#. Most translators should use scoring instead.
+#: ../dirwalk.c:164
 msgid "qx"
 msgstr ""
 
-#: ../dirwalk.c:155 ../dirwalk.c:176
+#: ../dirwalk.c:164
 msgid "QX"
 msgstr ""
 
-#. Line Y
-#: ../dirwalk.c:158
-msgid "qy"
-msgstr ""
-
-#: ../dirwalk.c:158
-msgid "QY"
-msgstr ""
-
+#. TODO: weight specification
 #. Now we score fonts to ensure that the best ones will be placed at
 #. the top of the list. The user will see them first. This sorting is
 #. especially important for users who have scroll buttons disabled.
 #. Translators should do whatever is needed to put crummy fonts last.
 #. distinct uppercase and lowercase (e.g., 'o' vs. 'O')
-#: ../dirwalk.c:184
+#: ../dirwalk.c:191
 msgid "oO"
 msgstr ""
 
-#. uncommon punctuation (e.g., '@', '#', '*', etc.)
-#: ../dirwalk.c:187
-msgid "`\\%_@$~#{}<>^&*"
-msgstr ""
-
 #. common punctuation (e.g., '?', '!', '.', ',', etc.)
-#: ../dirwalk.c:190
+#: ../dirwalk.c:194
 msgid ",.?!"
 msgstr ""
 
+#. uncommon punctuation (e.g., '@', '#', '*', etc.)
+#: ../dirwalk.c:197
+msgid "`\\%_@$~#{<(^&*"
+msgstr ""
+
 #. digits (e.g., '0', '1' and '7')
-#: ../dirwalk.c:193
+#: ../dirwalk.c:200
 msgid "017"
 msgstr ""
 
 #. distinct circle-like characters (e.g., 'O' (capital oh) vs. '0' (zero))
-#: ../dirwalk.c:196
+#: ../dirwalk.c:203
 msgid "O0"
 msgstr ""
 
 #. distinct line-like characters (e.g., 'l' (lowercase elle) vs. '1' (one) vs. 'I' (capital aye))
-#: ../dirwalk.c:199
+#: ../dirwalk.c:206
 msgid "1Il|"
+msgstr ""
+
+#: ../dirwalk.c:210
+msgid "<1>spare-1a"
+msgstr ""
+
+#: ../dirwalk.c:211
+msgid "<1>spare-1b"
+msgstr ""
+
+#: ../dirwalk.c:212
+msgid "<9>spare-9a"
+msgstr ""
+
+#: ../dirwalk.c:213
+msgid "<9>spare-9b"
 msgstr ""
 
 #. Congratulations #1
@@ -377,7 +392,7 @@ msgstr "Nova"
 #. Open a saved picture
 #. buttons for the file open dialog
 #. Open dialog: 'Open' button, to load the selected picture
-#: ../tools.h:90 ../tuxpaint.c:7984
+#: ../tools.h:90 ../tuxpaint.c:7998
 msgid "Open"
 msgstr "Malfermi"
 
@@ -591,88 +606,88 @@ msgid "Remember to use the left mouse button!"
 msgstr "Ne forgesu uzi la maldekstran musbutonon!"
 
 #. Sound has been muted (silenced) via keyboard shortcut
-#: ../tuxpaint.c:2022
+#: ../tuxpaint.c:2036
 msgid "Sound muted."
 msgstr "Sono malŝaltita."
 
 #. Sound has been unmuted (unsilenced) via keyboard shortcut
-#: ../tuxpaint.c:2027
+#: ../tuxpaint.c:2041
 msgid "Sound unmuted."
 msgstr "Sono ŝaltita."
 
 #. Wait while Text tool finishes loading fonts
-#: ../tuxpaint.c:2494
+#: ../tuxpaint.c:2508
 msgid "Please wait…"
 msgstr "Bonvolu atendi ..."
 
-#: ../tuxpaint.c:7207
+#: ../tuxpaint.c:7221
 msgid "Pick a color."
 msgstr "Elektu koloron."
 
 #. Open dialog: 'Erase' button, to erase/deleted the selected picture
-#: ../tuxpaint.c:7987
+#: ../tuxpaint.c:8001
 msgid "Erase"
 msgstr "Forviŝi"
 
 #. Open dialog: 'Slides' button, to switch to slide show mode
-#: ../tuxpaint.c:7990
+#: ../tuxpaint.c:8004
 msgid "Slides"
 msgstr "Lumbildoj"
 
 #. Open dialog: 'Back' button, to dismiss Open dialog without opening a picture
-#: ../tuxpaint.c:7993
+#: ../tuxpaint.c:8007
 msgid "Back"
 msgstr "Reen"
 
 #. Slideshow: 'Next' button, to load next slide (image)
-#: ../tuxpaint.c:7996
+#: ../tuxpaint.c:8010
 msgid "Next"
 msgstr "Sekva"
 
 #. Slideshow: 'Play' button, to begin a slideshow sequence
-#: ../tuxpaint.c:7999
+#: ../tuxpaint.c:8013
 msgid "Play"
 msgstr "Ludi"
 
 #. Label for 'Letters' buttons (font selector, down the right when the Text tool is being used); used to show the difference between font faces
-#: ../tuxpaint.c:8646
+#: ../tuxpaint.c:8660
 msgid "Aa"
 msgstr ""
 
 #. Admittedly stupid way of determining which keys can be used for
 #. positive and negative responses in dialogs (e.g., [Y] (for 'yes') in English)
-#: ../tuxpaint.c:11647
+#: ../tuxpaint.c:11661
 msgid "Yes"
 msgstr "Jes"
 
-#: ../tuxpaint.c:11651
+#: ../tuxpaint.c:11665
 msgid "No"
 msgstr "Ne"
 
 #. Prompt to ask whether user wishes to save over old version of their file
-#: ../tuxpaint.c:12617
+#: ../tuxpaint.c:12631
 msgid "Replace the picture with your changes?"
 msgstr "Ĉu anstataŭigi la bildon per viaj ŝanĝoj?"
 
 #. Positive response to saving over old version
 #. (like a 'File:Save' action in other applications)
-#: ../tuxpaint.c:12621
+#: ../tuxpaint.c:12635
 msgid "Yes, replace the old one!"
 msgstr "Jes, anstataŭigi la malnovan!"
 
 #. Negative response to saving over old version (saves a new image)
 #. (like a 'File:Save As...' action in other applications)
-#: ../tuxpaint.c:12625
+#: ../tuxpaint.c:12639
 msgid "No, save a new file!"
 msgstr "Ne, skribu novan dosieron!"
 
-#: ../tuxpaint.c:13388
+#: ../tuxpaint.c:13402
 msgid "Choose the picture you want, then click “Open”."
 msgstr "Elektu la bildon, kiun vi volas, kaj alklaku \"Malfermi\"."
 
 #. Let user choose images:
 #. Instructions for Slideshow file dialog (FIXME: Make a #define)
-#: ../tuxpaint.c:14375 ../tuxpaint.c:14689
+#: ../tuxpaint.c:14389 ../tuxpaint.c:14703
 msgid "Choose the pictures you want, then click “Play”."
 msgstr "Elektu la bildon, kiun vi volas, kaj alklaku \"Ludi\"."
 
@@ -1213,16 +1228,16 @@ msgstr ""
 msgid "Click to make your picture look like it's on television."
 msgstr "Alklaku kaj movu la muson por ŝanĝi la koloron de la bildo."
 
-#: ../../magic/src/waves.c:75
+#: ../../magic/src/waves.c:80
 msgid "Waves"
 msgstr "Ondoj"
 
-#: ../../magic/src/waves.c:76
+#: ../../magic/src/waves.c:81
 #, fuzzy
 msgid "Wavelets"
 msgstr "Ondoj"
 
-#: ../../magic/src/waves.c:83
+#: ../../magic/src/waves.c:88
 #, fuzzy
 msgid ""
 "Click to make the picture horizontally wavy. Click toward the top for "
@@ -1232,7 +1247,7 @@ msgstr ""
 "Alklaku por ondigi la bildon. Alklaku supre por mallongaj ondoj, sube por "
 "pli altaj ondoj, maldekstre por etaj ondoj, dekstre por longaj ondoj."
 
-#: ../../magic/src/waves.c:84
+#: ../../magic/src/waves.c:89
 #, fuzzy
 msgid ""
 "Click to make the picture vertically wavy. Click toward the top for shorter "

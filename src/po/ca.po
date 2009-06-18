@@ -16,7 +16,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Tuxpaint cvs 2009-05-18\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-06-17 21:40+0200\n"
+"POT-Creation-Date: 2009-06-18 14:09-0700\n"
 "PO-Revision-Date: 2009-06-17 22:56+0200\n"
 "Last-Translator: Pere Pujal i Carabantes <pere@fornol.no-ip.org>\n"
 "Language-Team: Català <linux-ca@chanae.alphanet.ch>\n"
@@ -418,7 +418,7 @@ msgstr "Nou"
 #. Open a saved picture
 #. buttons for the file open dialog
 #. Open dialog: 'Open' button, to load the selected picture
-#: ../tools.h:90 ../tuxpaint.c:7997
+#: ../tools.h:90 ../tuxpaint.c:7998
 msgid "Open"
 msgstr "Obre"
 
@@ -628,88 +628,88 @@ msgid "Remember to use the left mouse button!"
 msgstr "Recordeu de fer servir el botó esquerre!"
 
 #. Sound has been muted (silenced) via keyboard shortcut
-#: ../tuxpaint.c:2035
+#: ../tuxpaint.c:2036
 msgid "Sound muted."
 msgstr "S'ha desactivat el so."
 
 #. Sound has been unmuted (unsilenced) via keyboard shortcut
-#: ../tuxpaint.c:2040
+#: ../tuxpaint.c:2041
 msgid "Sound unmuted."
 msgstr "S'ha activat el so."
 
 #. Wait while Text tool finishes loading fonts
-#: ../tuxpaint.c:2507
+#: ../tuxpaint.c:2508
 msgid "Please wait…"
 msgstr "Espereu, si us plau…"
 
-#: ../tuxpaint.c:7220
+#: ../tuxpaint.c:7221
 msgid "Pick a color."
 msgstr "Trieu un color."
 
 #. Open dialog: 'Erase' button, to erase/deleted the selected picture
-#: ../tuxpaint.c:8000
+#: ../tuxpaint.c:8001
 msgid "Erase"
 msgstr "Esborra"
 
 #. Open dialog: 'Slides' button, to switch to slide show mode
-#: ../tuxpaint.c:8003
+#: ../tuxpaint.c:8004
 msgid "Slides"
 msgstr "Diapositives"
 
 #. Open dialog: 'Back' button, to dismiss Open dialog without opening a picture
-#: ../tuxpaint.c:8006
+#: ../tuxpaint.c:8007
 msgid "Back"
 msgstr "Endarrera"
 
 #. Slideshow: 'Next' button, to load next slide (image)
-#: ../tuxpaint.c:8009
+#: ../tuxpaint.c:8010
 msgid "Next"
 msgstr "Següent"
 
 #. Slideshow: 'Play' button, to begin a slideshow sequence
-#: ../tuxpaint.c:8012
+#: ../tuxpaint.c:8013
 msgid "Play"
 msgstr "Reproduïr"
 
 #. Label for 'Letters' buttons (font selector, down the right when the Text tool is being used); used to show the difference between font faces
-#: ../tuxpaint.c:8659
+#: ../tuxpaint.c:8660
 msgid "Aa"
 msgstr "Aà"
 
 #. Admittedly stupid way of determining which keys can be used for
 #. positive and negative responses in dialogs (e.g., [Y] (for 'yes') in English)
-#: ../tuxpaint.c:11660
+#: ../tuxpaint.c:11661
 msgid "Yes"
 msgstr "Sí"
 
-#: ../tuxpaint.c:11664
+#: ../tuxpaint.c:11665
 msgid "No"
 msgstr "No"
 
 #. Prompt to ask whether user wishes to save over old version of their file
-#: ../tuxpaint.c:12630
+#: ../tuxpaint.c:12631
 msgid "Replace the picture with your changes?"
 msgstr "Reemplaço el dibuix amb els vostres canvis?"
 
 #. Positive response to saving over old version
 #. (like a 'File:Save' action in other applications)
-#: ../tuxpaint.c:12634
+#: ../tuxpaint.c:12635
 msgid "Yes, replace the old one!"
 msgstr "Sí, reemplaça l'antic!"
 
 #. Negative response to saving over old version (saves a new image)
 #. (like a 'File:Save As...' action in other applications)
-#: ../tuxpaint.c:12638
+#: ../tuxpaint.c:12639
 msgid "No, save a new file!"
 msgstr "No, desa en un fitxer nou!"
 
-#: ../tuxpaint.c:13401
+#: ../tuxpaint.c:13402
 msgid "Choose the picture you want, then click “Open”."
 msgstr "Trieu el dibuix que voleu, llavors feu clic en Obre."
 
 #. Let user choose images:
 #. Instructions for Slideshow file dialog (FIXME: Make a #define)
-#: ../tuxpaint.c:14388 ../tuxpaint.c:14702
+#: ../tuxpaint.c:14389 ../tuxpaint.c:14703
 msgid "Choose the pictures you want, then click “Play”."
 msgstr "Trieu els dibuixos que voleu, llavors feu clic en «Reproduïr»."
 
@@ -1156,11 +1156,15 @@ msgstr ""
 
 #: ../../magic/src/string.c:137
 msgid "Click and drag to draw arrows made of string art."
-msgstr "Feu clic i arrossegueu per fer un dibuix de fils alineat amb les vores."
+msgstr ""
+"Feu clic i arrossegueu per fer un dibuix de fils alineat amb les vores."
 
 #: ../../magic/src/string.c:140
 msgid "Draw string art arrows with free angles."
-msgstr "Fa un dibuix de fils amb angles lliures. Feu clic i arrossegueu com si dibuixessiu una V: Arrossegueu fins el vertex, una mica endarrera cap el començament, llavors fins el destí."
+msgstr ""
+"Fa un dibuix de fils amb angles lliures. Feu clic i arrossegueu com si "
+"dibuixessiu una V: Arrossegueu fins el vertex, una mica endarrera cap el "
+"començament, llavors fins el destí."
 
 #: ../../magic/src/tint.c:71
 msgid "Tint"
