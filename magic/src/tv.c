@@ -48,7 +48,7 @@ int tv_init(magic_api * api)
 {
   char fname[1024];
 	
-    snprintf(fname, sizeof(fname), "%s/sounds/magic/tv.wav", api->data_directory);
+    snprintf(fname, sizeof(fname), "%s/sounds/magic/tv.ogg", api->data_directory);
     tv_snd = Mix_LoadWAV(fname);
 
   return(1);
