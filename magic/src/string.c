@@ -171,11 +171,11 @@ int string_init(__attribute__((unused)) magic_api * api)
            api->data_directory);
   string_snd[STRING_TOOL_FULL_BY_OFFSET] = Mix_LoadWAV(fname);
 
-  snprintf(fname, sizeof(fname), "%s/sounds/magic/string.ogg",
+  snprintf(fname, sizeof(fname), "%s/sounds/magic/string2.ogg",
            api->data_directory);
   string_snd[STRING_TOOL_TRIANGLE] = Mix_LoadWAV(fname);
 
-  snprintf(fname, sizeof(fname), "%s/sounds/magic/string.ogg",
+  snprintf(fname, sizeof(fname), "%s/sounds/magic/string3.ogg",
            api->data_directory);
   string_snd[STRING_TOOL_ANGLE] = Mix_LoadWAV(fname);
 
