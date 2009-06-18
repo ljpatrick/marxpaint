@@ -26,6 +26,8 @@
   (See COPYING.txt)
 */
 
+//*FIXME Sound does not play
+
 #include "tp_magic_api.h"
 #include "SDL_image.h"
 #include "SDL_mixer.h"
