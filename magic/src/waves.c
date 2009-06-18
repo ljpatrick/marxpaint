@@ -45,11 +45,11 @@ int waves_init(magic_api * api)
 {
   char fname[1024];
 
-  snprintf(fname, sizeof(fname), "%s/sounds/magic/waves.wav",
+  snprintf(fname, sizeof(fname), "%s/sounds/magic/waves.ogg",
 	    api->data_directory);
   waves_snd[0] = Mix_LoadWAV(fname);
 
-  snprintf(fname, sizeof(fname), "%s/sounds/magic/waves.wav",
+  snprintf(fname, sizeof(fname), "%s/sounds/magic/wavelet.ogg",
 	    api->data_directory);
   waves_snd[1] = Mix_LoadWAV(fname);
 
