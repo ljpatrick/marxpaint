@@ -26,8 +26,6 @@
   (See COPYING.txt)
 */
 
-//*FIXME Sound does not play
-
 #include "tp_magic_api.h"
 #include "SDL_image.h"
 #include "SDL_mixer.h"
@@ -81,7 +79,6 @@ void tv_release(magic_api * api, int which,
 	           SDL_Surface * canvas, SDL_Surface * snapshot,
 	           int x, int y, SDL_Rect * update_rect)
 {
-	api->playsound(tv_snd, x * 255,255);
 }
 
 void tv_shutdown(magic_api * api)
@@ -117,6 +114,7 @@ void tv_click(magic_api * api, int which, int mode,
 	           int x, int y, SDL_Rect * update_rect)
 {
 	tv_drag(api, which, canvas, last, x, y, x, y, update_rect);
+	api->playsound(tv_snd, x * 255,255);
 }
 
 void tv_switchin(magic_api * api, int which, int mode, SDL_Surface * canvas)
