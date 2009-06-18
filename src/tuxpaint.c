@@ -1999,6 +1999,7 @@ static void mainloop(void)
 	key = event.key.keysym.sym;
 	mod = event.key.keysym.mod;
 
+#ifdef DEBUG
 // FIXME: debug junk
 	    fprintf(stderr,
 	      "key 0x%04x mod 0x%04x character 0x%04x %d <%c> is %sprintable, key_down 0x%x\n",
@@ -2010,7 +2011,7 @@ static void mainloop(void)
               iswprint(key_unicode)?"":"not ",
               (unsigned)key_down
             );
-
+#endif
 
 	handle_keymouse(key, SDL_KEYDOWN);
 
