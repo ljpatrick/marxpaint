@@ -102,7 +102,7 @@ void fisheye_draw(void * ptr, int which, SDL_Surface * canvas, SDL_Surface * las
 	int xx, yy;
 	unsigned short int i;
 
-	SDL_BlitSurface(canvas, NULL, last, NULL);
+	/*SDL_BlitSurface(canvas, NULL, last, NULL); */
 	oryg=SDL_CreateRGBSurface(SDL_ANYFORMAT, 80, 80, canvas->format->BitsPerPixel,
 				canvas->format->Rmask, canvas->format->Gmask, canvas->format->Bmask, canvas->format->Amask);
 
@@ -212,18 +212,17 @@ void fisheye_drag(magic_api * api, int which, SDL_Surface * canvas,
 	          SDL_Surface * snapshot, int ox, int oy, int x, int y,
 		  SDL_Rect * update_rect)
 {
-	fisheye_draw(api, which, canvas, snapshot, x, y);
-
-	update_rect->x=x-40;
-	update_rect->y=y-40;
-	update_rect->w=update_rect->h=80;
 }
 
 void fisheye_click(magic_api * api, int which, int mode,
 	           SDL_Surface * canvas, SDL_Surface * last,
 	           int x, int y, SDL_Rect * update_rect)
 {
-	fisheye_drag(api, which, canvas, last, x, y, x, y, update_rect);
+	fisheye_draw(api, which, canvas, last, x, y);
+
+	update_rect->x=x-40;
+	update_rect->y=y-40;
+	update_rect->w=update_rect->h=80;
 }
 
 void fisheye_switchin(magic_api * api, int which, int mode, SDL_Surface * canvas)
