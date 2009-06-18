@@ -215,6 +215,7 @@ void loadfont_callback(SDL_Surface * screen, const char *restrict const dir,
 
 // this really should be dynamic, avoiding the need for a special build
 #ifdef OLPC_XO
+	  // Maybe German adds a "\xc2\xb7" (middle dot) and colon here? The key wouldn't change though.
 	  user_font_styles[num_font_styles]->score += charset_works(font, "\xc3\x97\xc3\xb7");	// multiply and divide
 #endif
 
