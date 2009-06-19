@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: nb\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2009-06-19 12:57-0700\n"
-"PO-Revision-Date: 2009-05-17 20:34+0200\n"
+"PO-Revision-Date: 2009-06-19 22:36+0200\n"
 "Last-Translator: Karl Ove Hufthammer <karl@huftis.org>\n"
 "Language-Team: Norwegian Nynorsk <i18n-nn@lister.ping.uio.no>\n"
 "MIME-Version: 1.0\n"
@@ -144,14 +144,13 @@ msgstr "oO"
 #. common punctuation (e.g., '?', '!', '.', ',', etc.)
 #: ../dirwalk.c:194
 msgid ",.?!"
-msgstr ",.?!"
+msgstr "«»,.?!-–"
 
 #. uncommon punctuation (e.g., '@', '#', '*', etc.)
 #: ../dirwalk.c:197
-#, fuzzy
 #| msgid "`\\%_@$~#{}<>^&*"
 msgid "`\\%_@$~#{<(^&*"
-msgstr "`\\%_@$~#{}<>^&*"
+msgstr "`\\%_@$~#{<(^&*"
 
 #. digits (e.g., '0', '1' and '7')
 #: ../dirwalk.c:200
@@ -1126,7 +1125,6 @@ msgid "String 'V'"
 msgstr "Tråd-V"
 
 #: ../../magic/src/string.c:134
-#, fuzzy
 #| msgid ""
 #| "Click and drag to draw string art. Drag top-bottom to draw less or more "
 #| "lines, to the center to approach the lines to center."
@@ -1135,18 +1133,17 @@ msgid ""
 "lines, left or right to make a bigger hole."
 msgstr ""
 "Hold inne knappen og flytt rundt for å tegne trådkunst. Dra nedover eller "
-"oppover for å tegne flere eller færre tråder, eller mot midten for å flytte "
-"trådene mot midten."
+"oppover for å tegne flere eller færre tråder, eller til sidene for å lage "
+"hullet større."
 
 #: ../../magic/src/string.c:137
-#, fuzzy
 #| msgid "Click and drag to draw a beam of light on your picture."
 msgid "Click and drag to draw arrows made of string art."
-msgstr "Hold inne knappen og flytt rundt for å tegne lysstråler."
+msgstr "Hold inne knappen og flytt rundt for å tegne trådhjørner."
 
 #: ../../magic/src/string.c:140
 msgid "Draw string art arrows with free angles."
-msgstr ""
+msgstr "Hold inne knappen og flytt rundt for å tegne trådpiler."
 
 #: ../../magic/src/tint.c:71
 msgid "Tint"
@@ -1188,25 +1185,25 @@ msgstr "Hold inne knappen og flytt rundt for å sprute tannkrem på tegningen."
 
 #: ../../magic/src/tornado.c:127
 msgid "Tornado"
-msgstr ""
+msgstr "Tornado"
 
 #: ../../magic/src/tornado.c:133
-#, fuzzy
 #| msgid "Click and drag to draw train track rails on your picture."
 msgid "Click and drag to draw a tornado funnel on your picture."
-msgstr "Hold inne knappen og flytt rundt for å tegne jernbanelinjer."
+msgstr "Hold inne knappen og flytt rundt for å tegne en tornado."
 
 #: ../../magic/src/tv.c:74
 msgid "TV"
 msgstr "Fjernsyn"
 
 #: ../../magic/src/tv.c:79
-#, fuzzy
 #| msgid "Click to make your picture look like it's on television."
 msgid ""
 "Click and drag to make parts of your picture look like they are on "
 "television."
-msgstr "Trykk for å få tegningen til å se ut som den blir vist på TV."
+msgstr ""
+"Hold inne knappen og flytt rundt for å få tegningen til å se ut som den blir "
+"vist på TV."
 
 #: ../../magic/src/tv.c:82
 msgid "Click to make your picture look like it's on television."
