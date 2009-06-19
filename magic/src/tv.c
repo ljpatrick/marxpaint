@@ -30,6 +30,8 @@
 #include "SDL_image.h"
 #include "SDL_mixer.h"
 
+int RADIUS = 16;
+
 Mix_Chunk * tv_snd;
 
 //				Housekeeping functions
@@ -71,7 +73,15 @@ SDL_Surface * tv_get_icon(magic_api * api, int which)
 
 char * tv_get_name(magic_api * api, int which) { return strdup(gettext_noop("TV")); }
 
-char * tv_get_description(magic_api * api, int which, int mode) { return strdup(gettext_noop("Click to make your picture look like it's on television.")); }
+char * tv_get_description(magic_api * api, int which, int mode) 
+{ 
+  if (mode == MODE_PAINT)
+    return strdup(gettext_noop("Click and drag to make parts of your picture look like they are on television.")); 
+
+  else
+    return strdup(gettext_noop("Click to make your picture look like it's on television.")); 
+
+}
 
 int tv_requires_colors(magic_api * api, int which) { return 0; }
 
@@ -86,6 +96,20 @@ void tv_shutdown(magic_api * api)
 
 // Interactivity functions
 
+void tv_paint_tv(void * ptr_to_api, int which_tool,
+               SDL_Surface * canvas, SDL_Surface * snapshot, int x, int y)
+{
+  int i, j;
+  magic_api * api = (magic_api *) ptr_to_api;
+
+  for (i = x - RADIUS; i < x + RADIUS; i++)
+    for (j = y - RADIUS; j < y + RADIUS; j++)
+      if ((j + 1) % 2 &&
+	  api->in_circle(i - x, j - y, RADIUS) &&
+	  ! api->touched(i, j))
+	api->putpixel(canvas, i, j, SDL_MapRGB(canvas->format, 128, 128, 165));
+}
+
 void tv_do_tv(void * ptr_to_api, int which_tool,
                SDL_Surface * canvas, SDL_Surface * snapshot, int x, int y)
 {
@@ -99,22 +123,35 @@ void tv_drag(magic_api * api, int which, SDL_Surface * canvas,
 	          SDL_Surface * snapshot, int ox, int oy, int x, int y,
 		  SDL_Rect * update_rect)
 {
-	int i;
-	
-	for (i=0; i<canvas->h; i+=2)
-		api->line(api, which, canvas, snapshot, 0, i, canvas->w, i, 1, tv_do_tv);
-	
-	update_rect->w=canvas->w;
-	update_rect->h=canvas->h;
-	update_rect->x=update_rect->y=0;
+  api->line(api, which, canvas, snapshot, ox, oy, x, y, 1, tv_paint_tv);
+
+  update_rect->x = min(ox, x) - RADIUS;
+  update_rect->y = min(oy, y) - RADIUS;
+  update_rect->w = abs(ox - x) + RADIUS * 2;
+  update_rect->h = abs(oy - y) + RADIUS * 2;
+  api->playsound(tv_snd, (x * 255) / canvas->w, 255);
 }
 
 void tv_click(magic_api * api, int which, int mode,
 	           SDL_Surface * canvas, SDL_Surface * last,
 	           int x, int y, SDL_Rect * update_rect)
 {
+  if (mode == MODE_FULLSCREEN)
+    {
+	int i;
+
+	for (i=0; i<canvas->h; i+=2)
+		api->line(api, which, canvas, last, 0, i, canvas->w, i, 1, tv_do_tv);
+
+	update_rect->w=canvas->w;
+	update_rect->h=canvas->h;
+	update_rect->x=update_rect->y=0;
+	api->playsound(tv_snd, 128,255);
+    }
+  else
+    {
 	tv_drag(api, which, canvas, last, x, y, x, y, update_rect);
-	api->playsound(tv_snd, x * 255,255);
+    }
 }
 
 void tv_switchin(magic_api * api, int which, int mode, SDL_Surface * canvas)
@@ -129,5 +166,5 @@ void tv_switchout(magic_api * api, int which, int mode, SDL_Surface * canvas)
 
 int tv_modes(magic_api * api, int which)
 {
-  return(MODE_FULLSCREEN);
+  return(MODE_FULLSCREEN | MODE_PAINT);
 }
