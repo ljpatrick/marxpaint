@@ -16,7 +16,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Tuxpaint cvs 2009-05-18\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-06-18 14:09-0700\n"
+"POT-Creation-Date: 2009-06-19 12:57-0700\n"
 "PO-Revision-Date: 2009-06-17 22:56+0200\n"
 "Last-Translator: Pere Pujal i Carabantes <pere@fornol.no-ip.org>\n"
 "Language-Team: Català <linux-ca@chanae.alphanet.ch>\n"
@@ -1210,11 +1210,19 @@ msgstr "Tornado"
 msgid "Click and drag to draw a tornado funnel on your picture."
 msgstr "Feu clic i arrossegueu per dibuixar un tornado."
 
-#: ../../magic/src/tv.c:72
+#: ../../magic/src/tv.c:74
 msgid "TV"
 msgstr "TV"
 
-#: ../../magic/src/tv.c:74
+#: ../../magic/src/tv.c:79
+#, fuzzy
+#| msgid "Click to make your picture look like it's on television."
+msgid ""
+"Click and drag to make parts of your picture look like they are on "
+"television."
+msgstr "Feu clic per convertir la imatge com si estés en el televisor."
+
+#: ../../magic/src/tv.c:82
 msgid "Click to make your picture look like it's on television."
 msgstr "Feu clic per convertir la imatge com si estés en el televisor."
 

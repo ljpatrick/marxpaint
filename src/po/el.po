@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Tuxpaint Greek Translation v1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-06-18 14:09-0700\n"
+"POT-Creation-Date: 2009-06-19 12:57-0700\n"
 "PO-Revision-Date: 2009-04-21 12:30+0200\n"
 "Last-Translator: \n"
 "Language-Team: ltee.org\n"
@@ -1241,11 +1241,21 @@ msgstr ""
 "Κάνε κλικ και σύρε το ποντίκι για να σχεδιάσεις ράγες διαδρομής τρένων στη "
 "ζωγραφιά σου."
 
-#: ../../magic/src/tv.c:72
+#: ../../magic/src/tv.c:74
 msgid "TV"
 msgstr "Τηλεόραση"
 
-#: ../../magic/src/tv.c:74
+#: ../../magic/src/tv.c:79
+#, fuzzy
+#| msgid "Click to make your picture look like it's on television."
+msgid ""
+"Click and drag to make parts of your picture look like they are on "
+"television."
+msgstr ""
+"Κάνε κλικ για να κάνεις τη ζωγραφιά σου να μοιάζει σαν να είναι στην "
+"τηλεόραση."
+
+#: ../../magic/src/tv.c:82
 msgid "Click to make your picture look like it's on television."
 msgstr ""
 "Κάνε κλικ για να κάνεις τη ζωγραφιά σου να μοιάζει σαν να είναι στην "

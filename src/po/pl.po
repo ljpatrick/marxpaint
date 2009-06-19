@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint 0.9.17\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-06-18 14:09-0700\n"
+"POT-Creation-Date: 2009-06-19 12:57-0700\n"
 "PO-Revision-Date: 2007-10-01 09:55+0200\n"
 "Last-Translator: Andrzej M. Krzysztofowicz <ankry@mif.pg.gda.pl>\n"
 "Language-Team: Polish <translation-team-pl@lists.sourceforge.net>\n"
@@ -1231,11 +1231,18 @@ msgstr ""
 msgid "Click and drag to draw a tornado funnel on your picture."
 msgstr "Kliknij i przesuń myszką dookoła, aby rozmazać obrazek."
 
-#: ../../magic/src/tv.c:72
+#: ../../magic/src/tv.c:74
 msgid "TV"
 msgstr ""
 
-#: ../../magic/src/tv.c:74
+#: ../../magic/src/tv.c:79
+#, fuzzy
+msgid ""
+"Click and drag to make parts of your picture look like they are on "
+"television."
+msgstr "Kliknij i przesuń myszką dookoła, aby zmienić kolor obrazka."
+
+#: ../../magic/src/tv.c:82
 #, fuzzy
 msgid "Click to make your picture look like it's on television."
 msgstr "Kliknij i przesuń myszką dookoła, aby zmienić kolor obrazka."

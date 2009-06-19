@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint-0.9.17\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-06-18 14:09-0700\n"
+"POT-Creation-Date: 2009-06-19 12:57-0700\n"
 "PO-Revision-Date: 2009-05-30 03:58+0200\n"
 "Last-Translator: Gabor Kelemen <kelemeng@gnome.hu>\n"
 "Language-Team: Hungarian <translation-team-hu@lists.sourceforge.net>\n"
@@ -1194,11 +1194,19 @@ msgstr ""
 msgid "Click and drag to draw a tornado funnel on your picture."
 msgstr "Kattints oda a rajzodon, ahova vasúti síneket szeretnél rajzolni."
 
-#: ../../magic/src/tv.c:72
+#: ../../magic/src/tv.c:74
 msgid "TV"
 msgstr "TV"
 
-#: ../../magic/src/tv.c:74
+#: ../../magic/src/tv.c:79
+#, fuzzy
+#| msgid "Click to make your picture look like it's on television."
+msgid ""
+"Click and drag to make parts of your picture look like they are on "
+"television."
+msgstr "Kattints oda a rajzodon, ahol azt TV kinézetűvé szeretnéd változtatni."
+
+#: ../../magic/src/tv.c:82
 msgid "Click to make your picture look like it's on television."
 msgstr "Kattints oda a rajzodon, ahol azt TV kinézetűvé szeretnéd változtatni."
 

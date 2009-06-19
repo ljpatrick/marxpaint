@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint 0.9.17\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-06-18 14:09-0700\n"
+"POT-Creation-Date: 2009-06-19 12:57-0700\n"
 "PO-Revision-Date: 2008-10-20 09:16-0700\n"
 "Last-Translator: Neskie Manuel <neskiem@gmail.com>\n"
 "Language-Team: Ubuntu Secwepemc Translators <ubuntu-l10n-shs@lists.ubuntu."
@@ -1173,11 +1173,17 @@ msgstr ""
 msgid "Click and drag to draw a tornado funnel on your picture."
 msgstr ""
 
-#: ../../magic/src/tv.c:72
+#: ../../magic/src/tv.c:74
 msgid "TV"
 msgstr ""
 
-#: ../../magic/src/tv.c:74
+#: ../../magic/src/tv.c:79
+msgid ""
+"Click and drag to make parts of your picture look like they are on "
+"television."
+msgstr ""
+
+#: ../../magic/src/tv.c:82
 msgid "Click to make your picture look like it's on television."
 msgstr ""
 

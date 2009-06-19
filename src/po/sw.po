@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint 0.9.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-06-18 14:09-0700\n"
+"POT-Creation-Date: 2009-06-19 12:57-0700\n"
 "PO-Revision-Date: 2004-12-04 15:45-0800\n"
 "Last-Translator: Alberto Escudero <aep@it46.se>\n"
 "Language-Team: Swahili\n"
@@ -1236,11 +1236,18 @@ msgstr ""
 msgid "Click and drag to draw a tornado funnel on your picture."
 msgstr "Bofya na sogea puku kupunguza upana wa picha."
 
-#: ../../magic/src/tv.c:72
+#: ../../magic/src/tv.c:74
 msgid "TV"
 msgstr ""
 
-#: ../../magic/src/tv.c:74
+#: ../../magic/src/tv.c:79
+#, fuzzy
+msgid ""
+"Click and drag to make parts of your picture look like they are on "
+"television."
+msgstr "Bofya na sogea puku kuweka miraba midogo kwenye picha."
+
+#: ../../magic/src/tv.c:82
 #, fuzzy
 msgid "Click to make your picture look like it's on television."
 msgstr "Bofya na sogea puku kuweka miraba midogo kwenye picha."

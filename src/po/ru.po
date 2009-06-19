@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TuxPaint\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-06-18 14:09-0700\n"
+"POT-Creation-Date: 2009-06-19 12:57-0700\n"
 "PO-Revision-Date: 2009-03-30 12:55+0300\n"
 "Last-Translator: Nikolay Parukhin <nik@sevpinro.ru>\n"
 "Language-Team: Dmitriy Ivanov <ace22b@myrealbox.com>\n"
@@ -1218,11 +1218,19 @@ msgstr ""
 msgid "Click and drag to draw a tornado funnel on your picture."
 msgstr "Нажмите и потяните мышь, чтобы нарисовать железнодорожные рельсы."
 
-#: ../../magic/src/tv.c:72
+#: ../../magic/src/tv.c:74
 msgid "TV"
 msgstr "ТВ"
 
-#: ../../magic/src/tv.c:74
+#: ../../magic/src/tv.c:79
+#, fuzzy
+#| msgid "Click to make your picture look like it's on television."
+msgid ""
+"Click and drag to make parts of your picture look like they are on "
+"television."
+msgstr "Щёлкните, чтобы ваша картинка выглядела, как телевизионная."
+
+#: ../../magic/src/tv.c:82
 msgid "Click to make your picture look like it's on television."
 msgstr "Щёлкните, чтобы ваша картинка выглядела, как телевизионная."
 

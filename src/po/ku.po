@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ku\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-06-18 14:09-0700\n"
+"POT-Creation-Date: 2009-06-19 12:57-0700\n"
 "PO-Revision-Date: 2009-05-25 12:52+0300\n"
 "Last-Translator: \n"
 "Language-Team: en_US <kde-i18n-doc@kde.org>\n"
@@ -1237,11 +1237,18 @@ msgstr ""
 msgid "Click and drag to draw a tornado funnel on your picture."
 msgstr "Mişkî li dora reşahiya wêneyê bitikîne û rake."
 
-#: ../../magic/src/tv.c:72
+#: ../../magic/src/tv.c:74
 msgid "TV"
 msgstr "TV"
 
-#: ../../magic/src/tv.c:74
+#: ../../magic/src/tv.c:79
+#, fuzzy
+msgid ""
+"Click and drag to make parts of your picture look like they are on "
+"television."
+msgstr "Ji bo guherandina rengê wêneyê bitikîne mişkî li dorê bigerîne."
+
+#: ../../magic/src/tv.c:82
 #, fuzzy
 msgid "Click to make your picture look like it's on television."
 msgstr "Ji bo guherandina rengê wêneyê bitikîne mişkî li dorê bigerîne."

@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TuxPaint 0.9.21\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-06-18 14:09-0700\n"
+"POT-Creation-Date: 2009-06-19 12:57-0700\n"
 "PO-Revision-Date: 2009-05-21 03:10-0300\n"
 "Last-Translator: Gabriel Gazzán <gablistas@gmail.com>\n"
 "Language-Team: Español <gablistas@gmail.com>\n"
@@ -1193,11 +1193,20 @@ msgid "Click and drag to draw a tornado funnel on your picture."
 msgstr ""
 "Haz clic y arrastra el ratón para dibujar vías de tren sobre la imagen."
 
-#: ../../magic/src/tv.c:72
+#: ../../magic/src/tv.c:74
 msgid "TV"
 msgstr "TV"
 
-#: ../../magic/src/tv.c:74
+#: ../../magic/src/tv.c:79
+#, fuzzy
+#| msgid "Click to make your picture look like it's on television."
+msgid ""
+"Click and drag to make parts of your picture look like they are on "
+"television."
+msgstr ""
+"Haz clic para hacer que la imagen luzca como la pantalla de un televisor."
+
+#: ../../magic/src/tv.c:82
 msgid "Click to make your picture look like it's on television."
 msgstr ""
 "Haz clic para hacer que la imagen luzca como la pantalla de un televisor."
