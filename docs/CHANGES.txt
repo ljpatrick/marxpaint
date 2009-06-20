@@ -8,7 +8,7 @@ http://www.tuxpaint.org/
 
 $Id$
 
-2009.June.13 (0.9.21)
+2009.June.20 (0.9.21)
   * New Starters:
     -------------
     * Silver Frame
@@ -107,9 +107,6 @@ $Id$
       errors when attempting to issue a print command (e.g., trying to use
       "lpr", but that command is not available) should appear in Tux Paint.
       (SourceForge bug #2205528)
-
-    * Further adjustments to postscript_print scaling.
-      Thomas Kalka <thomas.kalka@googlemail.com>
 
   * Build System Improvements:
     --------------------------
@@ -281,6 +278,7 @@ $Id$
       canvas printed small, compared to when they're printed at the size
       they were drawn.
       Pere Pujal i Carabantes <pere@fornol.no-ip.org>
+      Thomas Kalka <thomas.kalka@googlemail.com>
 
     * Corrected 'oval' brush shape so that colors came out right.
       (Thanks to Andrei Skoogarev)
