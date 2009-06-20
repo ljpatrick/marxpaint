@@ -300,7 +300,9 @@ static void tornado_drawstalk(magic_api * api, SDL_Surface * canvas, SDL_Surface
   int left, right;
   SDL_Rect dest, src;
   int xx, yy, side;
-
+  int rotation = 0;
+  int p;
+  int ii, ww;
 
   /* Compute a nice bezier curve for the stalk, based on the
      base (x,y), leftmost (x), rightmost (x), and top (x,y) */
@@ -338,8 +340,6 @@ static void tornado_drawstalk(magic_api * api, SDL_Surface * canvas, SDL_Surface
   else
     top_w = max(32, n_points * n_points / 1000);
 
-  int rotation = 0;
-  int p;
   /* Draw the curve: */
  
   for (i = 0; i < n_points - 1; i++)
@@ -354,7 +354,6 @@ static void tornado_drawstalk(magic_api * api, SDL_Surface * canvas, SDL_Surface
     }
     else
     {
-      int ii, ww;
       ii = n_points - i;
       /* min 10 pixels then ii^2 / 2000 or 4 * ii^2 / canvas->w,
 	 don't let the top of funnel be wider than the half of canvas */
