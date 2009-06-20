@@ -145,10 +145,8 @@ msgstr ",.?!"
 
 #. uncommon punctuation (e.g., '@', '#', '*', etc.)
 #: ../dirwalk.c:197
-#, fuzzy
-#| msgid "`\\%_@$~#{}<>^&*"
 msgid "`\\%_@$~#{<(^&*"
-msgstr "\\%_@$~#{}<>^&*"
+msgstr "\\%_@$~#{<>^&*"
 
 #. digits (e.g., '0', '1' and '7')
 #: ../dirwalk.c:200
@@ -1161,26 +1159,21 @@ msgid "String 'V'"
 msgstr "Ficelles (1)"
 
 #: ../../magic/src/string.c:134
-#, fuzzy
-#| msgid ""
-#| "Click and drag to draw string art. Drag top-bottom to draw less or more "
-#| "lines, to the center to approach the lines to center."
 msgid ""
 "Click and drag to draw string art. Drag top-bottom to draw less or more "
 "lines, left or right to make a bigger hole."
 msgstr ""
 "Clique et déplace la souris pour obtenir un dessin géométrique. Plus tu vas "
-"vers le centre, plus tu augmentes le nombre de lignes."
+"vers le centre, plus tu augmentes le nombre de lignes et en allant à droite ou à gauche, "
+"tu augmentes les dimensions du trou central."
 
 #: ../../magic/src/string.c:137
-#, fuzzy
-#| msgid "Click and drag to draw a beam of light on your picture."
 msgid "Click and drag to draw arrows made of string art."
-msgstr "Clique et déplace la souris pour dessiner un rayon de lumière."
+msgstr "Clique et promène la souris pour dessiner des angles droits avec des motifs géométriques."
 
 #: ../../magic/src/string.c:140
 msgid "Draw string art arrows with free angles."
-msgstr ""
+msgstr "Dessine des pointes de flèches avec des motifs géométriques."
 
 #: ../../magic/src/tint.c:71
 msgid "Tint"
@@ -1230,10 +1223,8 @@ msgstr "Tornade"
 
 #
 #: ../../magic/src/tornado.c:133
-#, fuzzy
-#| msgid "Click and drag to draw train track rails on your picture."
 msgid "Click and drag to draw a tornado funnel on your picture."
-msgstr "Clique et déplace la souris pour dessiner des rails."
+msgstr "Clique et déplace la souris pour dessiner une tornade."
 
 #: ../../magic/src/tv.c:74
 msgid "TV"
@@ -1241,19 +1232,18 @@ msgstr "TV"
 
 #
 #: ../../magic/src/tv.c:79
-#, fuzzy
-#| msgid "Click to make your picture look like it's on television."
 msgid ""
 "Click and drag to make parts of your picture look like they are on "
 "television."
 msgstr ""
-"Clique, et tu verras ton dessin comme s'il apparaissait à la télévision."
+"Clique, et promène ta souris : tu verras des morceaux de ton dessin avec des lignes horizontales, "
+"comme à la télévision."
 
 #
 #: ../../magic/src/tv.c:82
 msgid "Click to make your picture look like it's on television."
 msgstr ""
-"Clique, et tu verras ton dessin comme s'il apparaissait à la télévision."
+"Clique, et tu verras tout ton dessin avec des lignes horizontales comme s'il apparaissait à la télévision."
 
 #: ../../magic/src/waves.c:80
 msgid "Waves"
