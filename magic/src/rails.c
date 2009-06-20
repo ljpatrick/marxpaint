@@ -1,7 +1,6 @@
 #include "tp_magic_api.h"
 #include "SDL_image.h"
 #include "SDL_mixer.h"
-#include <stdbool.h>
 
 #define SEG_NONE 0
 
@@ -202,7 +201,7 @@ static void rails_flip_flop(void * ptr, SDL_Surface * dest, SDL_Surface * src)
       api->putpixel(dest, x, y, api->getpixel(src, y, x));
 }
 
-static void rails_rotate (void * ptr, SDL_Surface * dest, SDL_Surface * src, _Bool direction)
+static void rails_rotate (void * ptr, SDL_Surface * dest, SDL_Surface * src, unsigned int direction)
 //src and dest must have same size
 {
 	magic_api * api = (magic_api *) ptr;
@@ -345,7 +344,7 @@ static void rails_draw(void * ptr, int which, SDL_Surface * canvas, SDL_Surface 
 	magic_api * api = (magic_api *) ptr;
 	SDL_Surface * result, * temp;
 	Uint8 image;
-	_Bool use_temp;
+	unsigned int use_temp;
 	
 	use_temp=0;
 	if (segment>rails_segments_x*rails_segments_y)
