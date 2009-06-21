@@ -32,6 +32,7 @@
 #include "SDL_mixer.h"
 
 Mix_Chunk * fisheye_snd;
+int last_x, last_y;
 
 //				Housekeeping functions
 
@@ -102,7 +103,11 @@ void fisheye_draw(void * ptr, int which, SDL_Surface * canvas, SDL_Surface * las
 	int xx, yy;
 	unsigned short int i;
 
-	/*SDL_BlitSurface(canvas, NULL, last, NULL); */
+	if(api->in_circle(last_x - x, last_y - y, 80)) return;
+
+	last_x = x;
+	last_y = y;
+
 	oryg=SDL_CreateRGBSurface(SDL_ANYFORMAT, 80, 80, canvas->format->BitsPerPixel,
 				canvas->format->Rmask, canvas->format->Gmask, canvas->format->Bmask, canvas->format->Amask);
 
@@ -212,17 +217,21 @@ void fisheye_drag(magic_api * api, int which, SDL_Surface * canvas,
 	          SDL_Surface * snapshot, int ox, int oy, int x, int y,
 		  SDL_Rect * update_rect)
 {
+
+	api->line(api, which, canvas, snapshot, ox, oy, x, y, 1, fisheye_draw);
+	update_rect->x = min(ox, x) - 40;
+	update_rect->y = min(oy, y) - 40;
+	update_rect->w = max(ox, x) - update_rect->x + 40;
+	update_rect->h = max(oy, y) - update_rect->y + 40;
 }
 
 void fisheye_click(magic_api * api, int which, int mode,
 	           SDL_Surface * canvas, SDL_Surface * last,
 	           int x, int y, SDL_Rect * update_rect)
 {
-	fisheye_draw(api, which, canvas, last, x, y);
-
-	update_rect->x=x-40;
-	update_rect->y=y-40;
-	update_rect->w=update_rect->h=80;
+	last_x = -80; /* A value that will be beyond any clicked position */
+	last_y = -80;
+	fisheye_drag(api, which, canvas, last, x, y, x, y, update_rect);
 }
 
 void fisheye_switchin(magic_api * api, int which, int mode, SDL_Surface * canvas)
