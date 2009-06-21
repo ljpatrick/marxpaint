@@ -14,10 +14,10 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Tuxpaint cvs 2009-05-18\n"
+"Project-Id-Version: Tuxpaint cvs 2009-06-21\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2009-06-19 12:57-0700\n"
-"PO-Revision-Date: 2009-06-17 22:56+0200\n"
+"PO-Revision-Date: 2009-06-21 15:23+0200\n"
 "Last-Translator: Pere Pujal i Carabantes <pere@fornol.no-ip.org>\n"
 "Language-Team: Català <linux-ca@chanae.alphanet.ch>\n"
 "MIME-Version: 1.0\n"
@@ -137,6 +137,16 @@ msgstr "qx"
 msgid "QX"
 msgstr "QX"
 
+# Els tests següents miren 
+# 1) si les lletres dibuixen: falla en cas de que no dibuixin. Si dibuixen un espai o un quadrat passen el test.
+# 2) si hi ha dues lletres dibuixades igual: falla en cas de que hi hagi dues lletres que dibuixin igual.
+# Hi ha tipus de lletra que substitueixen els caracters que no tenen per espais o quadrats. Si voleu caçar-los, heu de fer que dibuixin dos quadrats o espais, vaja, fer-los fallar dues vegades perquè dibuixin igual dues lletres.
+#
+# Si voleu que un test falli, (per exemple perquè no el necessiteu) poseu dues lletres idèntiques al començament.
+# Si coneixeu algun mnemònic i aquest té dues lletres idèntiques NO el poseu, farà fallar el test, abreujeu-lo a no repetir cap lletra.
+#
+# Tots els tests valen 1 punt excepte els que comencen per <9> que valen 9 punts. (això pot canviar en futures versions)
+#
 #. TODO: weight specification
 #. Now we score fonts to ensure that the best ones will be placed at
 #. the top of the list. The user will see them first. This sorting is
@@ -187,21 +197,25 @@ msgstr "O0"
 msgid "1Il|"
 msgstr "1Il|"
 
+# Aquests dos compten 1 punt.
+# Els deshabilito perquè no calen.
+#
 #: ../dirwalk.c:210
 msgid "<1>spare-1a"
-msgstr "<0>spare-1a"
+msgstr "aa"
 
 #: ../dirwalk.c:211
 msgid "<1>spare-1b"
-msgstr "<0>spare-1b"
+msgstr "aa"
 
+# Aquest dos compten 9 punts.
 #: ../dirwalk.c:212
 msgid "<9>spare-9a"
-msgstr "<9>eèéëcÇ"
+msgstr "eèéëcÇ"
 
 #: ../dirwalk.c:213
 msgid "<9>spare-9b"
-msgstr "<9>EÉÈËCÇ"
+msgstr "EÉÈËCÇ"
 
 #. Congratulations #1
 #: ../great.h:37
@@ -1215,12 +1229,10 @@ msgid "TV"
 msgstr "TV"
 
 #: ../../magic/src/tv.c:79
-#, fuzzy
-#| msgid "Click to make your picture look like it's on television."
 msgid ""
 "Click and drag to make parts of your picture look like they are on "
 "television."
-msgstr "Feu clic per convertir la imatge com si estés en el televisor."
+msgstr "Feu clic i arrossegueu per pintar parts de la imatge com si estés en el televisor."
 
 #: ../../magic/src/tv.c:82
 msgid "Click to make your picture look like it's on television."
@@ -1254,10 +1266,6 @@ msgstr ""
 "curtes, a baix ones altes, a l'esquerra ones petites, a la dreta ones "
 "llargues."
 
-# Si es tradueixen qy i QY, es deshabilitaran 
-# els tipus de lletra que no tinguin la possibilitat de mostrar el
-# texte traduït, aixó implicaria deshabilitar molts tipus de lletra
-# que només disposen de caracters ascii però que encara poden ser útils.
 #~ msgid "qy"
 #~ msgstr "qy"
 
