@@ -57,8 +57,8 @@ enum {
 static Mix_Chunk * snow_snd_effect[snow_NUM_TOOLS];
 
 const char * snow_snd_filenames[snow_NUM_TOOLS] = {
-  "flip.wav",
-  "flip.wav",
+  "snowball.ogg",
+  "snowflake.ogg",
 };
 const char * snow_icon_filenames[snow_NUM_TOOLS] = {
   "snowball.png",
