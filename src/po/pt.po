@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: tuxpaint 0.9.20b\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2009-06-19 12:57-0700\n"
-"PO-Revision-Date: 2009-04-21 17:37-0000\n"
+"PO-Revision-Date: 2009-06-23 17:20-0000\n"
 "Last-Translator: Sérgio Marques <smarquespt@gmail.com>\n"
 "Language-Team: Portuguese <translation-team-pt@lists.sourceforge.net>\n"
 "MIME-Version: 1.0\n"
@@ -147,10 +147,9 @@ msgstr ",.?!"
 
 #. uncommon punctuation (e.g., '@', '#', '*', etc.)
 #: ../dirwalk.c:197
-#, fuzzy
 #| msgid "`\\%_@$~#{}<>^&*"
 msgid "`\\%_@$~#{<(^&*"
-msgstr "`\\%_@$~#{}<>^&*"
+msgstr "`\\%_@$~#{<(^&*"
 
 #. digits (e.g., '0', '1' and '7')
 #: ../dirwalk.c:200
@@ -169,19 +168,19 @@ msgstr "1Il|"
 
 #: ../dirwalk.c:210
 msgid "<1>spare-1a"
-msgstr ""
+msgstr "<1>reservar-1a"
 
 #: ../dirwalk.c:211
 msgid "<1>spare-1b"
-msgstr ""
+msgstr "<1>reservar-1b"
 
 #: ../dirwalk.c:212
 msgid "<9>spare-9a"
-msgstr ""
+msgstr "<9>reservar-9a"
 
 #: ../dirwalk.c:213
 msgid "<9>spare-9b"
-msgstr ""
+msgstr "<9>reservar-9b"
 
 #. Congratulations #1
 #: ../great.h:37
@@ -234,82 +233,95 @@ msgid "ZH_TW"
 msgstr "ZH_TW"
 
 #. Square shape tool (4 equally-lengthed sides at right angles)
-#: ../shapes.h:171 ../shapes.h:172
+#: ../shapes.h:171
+#: ../shapes.h:172
 msgid "Square"
 msgstr "Quadrado"
 
 #. Rectangle shape tool (4 sides at right angles)
-#: ../shapes.h:175 ../shapes.h:176
+#: ../shapes.h:175
+#: ../shapes.h:176
 msgid "Rectangle"
 msgstr "Rectângulo"
 
 #. Circle shape tool (X radius and Y radius are the same)
-#: ../shapes.h:179 ../shapes.h:180
+#: ../shapes.h:179
+#: ../shapes.h:180
 msgid "Circle"
 msgstr "Círculo"
 
 #. Ellipse shape tool (X radius and Y radius may differ)
-#: ../shapes.h:183 ../shapes.h:184
+#: ../shapes.h:183
+#: ../shapes.h:184
 msgid "Ellipse"
 msgstr "Elipse"
 
 #. Triangle shape tool (3 sides)
-#: ../shapes.h:187 ../shapes.h:188
+#: ../shapes.h:187
+#: ../shapes.h:188
 msgid "Triangle"
 msgstr "Triângulo"
 
 #. Pentagone shape tool (5 sides)
-#: ../shapes.h:191 ../shapes.h:192
+#: ../shapes.h:191
+#: ../shapes.h:192
 msgid "Pentagon"
 msgstr "Pentágono"
 
 #. Rhombus shape tool (4 sides, not at right angles)
-#: ../shapes.h:195 ../shapes.h:196
+#: ../shapes.h:195
+#: ../shapes.h:196
 msgid "Rhombus"
 msgstr "Losango"
 
 #. Octagon shape tool (8 sides)
-#: ../shapes.h:199 ../shapes.h:200
+#: ../shapes.h:199
+#: ../shapes.h:200
 msgid "Octagon"
 msgstr "Octógono"
 
 #. Description of a square
-#: ../shapes.h:208 ../shapes.h:209
+#: ../shapes.h:208
+#: ../shapes.h:209
 msgid "A square is a rectangle with four equal sides."
 msgstr "Um quadrado é um rectângulo com quatro lados iguais."
 
 #. Description of a rectangle
-#: ../shapes.h:212 ../shapes.h:213
+#: ../shapes.h:212
+#: ../shapes.h:213
 msgid "A rectangle has four sides and four right angles."
 msgstr "Um rectângulo tem quatro lados e quatro ângulos rectos."
 
-#: ../shapes.h:217 ../shapes.h:219
-msgid ""
-"A circle is a curve where all points have the same distance from the center."
-msgstr ""
-"Um círculo é uma curva em que todos os pontos estão à mesma distância do "
-"centro."
+#: ../shapes.h:217
+#: ../shapes.h:219
+msgid "A circle is a curve where all points have the same distance from the center."
+msgstr "Um círculo é uma curva em que todos os pontos estão à mesma distância do centro."
 
 #. Description of an ellipse
-#: ../shapes.h:222 ../shapes.h:223
+#: ../shapes.h:222
+#: ../shapes.h:223
 msgid "An ellipse is a stretched circle."
 msgstr "Uma elipse é um círculo esticado."
 
 #. Description of a triangle
-#: ../shapes.h:226 ../shapes.h:227
+#: ../shapes.h:226
+#: ../shapes.h:227
 msgid "A triangle has three sides."
 msgstr "Um triângulo tem três lados."
 
 #. Description of a pentagon
-#: ../shapes.h:230 ../shapes.h:231
+#: ../shapes.h:230
+#: ../shapes.h:231
 msgid "A pentagon has five sides."
 msgstr "Um pentágono tem cinco lados."
 
-#: ../shapes.h:235 ../shapes.h:237
+#: ../shapes.h:235
+#: ../shapes.h:237
 msgid "A rhombus has four equal sides, and opposite sides are parallel."
 msgstr "Um losango tem quatro lados iguais e os lados opostos são paralelos."
 
-#: ../shapes.h:241 ../shapes.h:243
+#: ../shapes.h:241
+#: ../shapes.h:243
 msgid "An octagon has eight equal sides."
 msgstr "Um octágono tem oito lados iguais."
 
@@ -340,7 +352,8 @@ msgstr "Carimbos"
 
 #. Title of shape selector (buttons down the right for shapes tool)
 #. Shape creation tool (square, circle, etc.)
-#: ../titles.h:71 ../tools.h:69
+#: ../titles.h:71
+#: ../tools.h:69
 msgid "Shapes"
 msgstr "Formas"
 
@@ -351,7 +364,8 @@ msgstr "Letras"
 
 #. Title of magic tool selector (buttons down the right for magic (effect plugin) tool)
 #. "Magic" effects tools (blur, flip image, etc.)
-#: ../titles.h:77 ../tools.h:75
+#: ../titles.h:77
+#: ../tools.h:75
 msgid "Magic"
 msgstr "Mágico"
 
@@ -398,7 +412,8 @@ msgstr "Novo"
 #. Open a saved picture
 #. buttons for the file open dialog
 #. Open dialog: 'Open' button, to load the selected picture
-#: ../tools.h:90 ../tuxpaint.c:7998
+#: ../tools.h:90
+#: ../tuxpaint.c:7998
 msgid "Open"
 msgstr "Abrir"
 
@@ -425,32 +440,25 @@ msgstr "Escolhe uma cor e um pincel para desenhar."
 #. Stamp tool instructions
 #: ../tools.h:110
 msgid "Pick a picture to stamp around your drawing."
-msgstr "Escolhe uma imagem para estampar em volta do desenho."
+msgstr "Escolhe uma imagem para colocar em volta do desenho."
 
 #. Line tool instructions
 #: ../tools.h:113
 msgid "Click to start drawing a line. Let go to complete it."
-msgstr ""
-"Clica para começares a desenhar uma linha. Solta o botão quando terminares."
+msgstr "Clica para começares a desenhar uma linha. Solta o botão quando terminares."
 
 # #: tools.h:65
 # msgid "Pick a shape to draw.  Click once to pick the center of the shape, #click again to draw it."
 # msgstr "Escolha uma forma para desenhar. Clique uma vez para definir o centro da imagem. Clique de novo para desenhá-la."
 #. Shape tool instructions
 #: ../tools.h:116
-msgid ""
-"Pick a shape. Click to pick the center, drag, then let go when it is the "
-"size you want. Move around to rotate it, and click to draw it."
-msgstr ""
-"Escolhe uma forma. Clica para pores o centro, arrasta, e larga quando "
-"estiver do tamanho que queres. Move o rato para a rodares e clica para "
-"desenhar."
+msgid "Pick a shape. Click to pick the center, drag, then let go when it is the size you want. Move around to rotate it, and click to draw it."
+msgstr "Escolhe uma forma. Clica para pores o centro, arrasta, e larga quando estiver do tamanho que queres. Move o rato para a rodares e clica para desenhar."
 
 #. Text tool instructions
 #: ../tools.h:119
 msgid "Choose a style of text. Click on your drawing and you can start typing."
-msgstr ""
-"Escolhe um estilo de texto. Clica no desenho e podes começar a escrever."
+msgstr "Escolhe um estilo de texto. Clica no desenho e podes começar a escrever."
 
 #. Magic tool instruction
 #: ../tools.h:122
@@ -528,35 +536,41 @@ msgid "Yes, I’m done!"
 msgstr "Sim, terminei !"
 
 #. Quit prompt negative response (don't quit)
-#: ../tuxpaint.c:1861 ../tuxpaint.c:1888
+#: ../tuxpaint.c:1861
+#: ../tuxpaint.c:1888
 msgid "No, take me back!"
 msgstr "Não, quero continuar!"
 
 #. Current picture is not saved; user is quitting
 #: ../tuxpaint.c:1865
 msgid "If you quit, you’ll lose your picture! Save it?"
-msgstr "Se saires, vais perder o desenho! Queres guardá-lo?"
+msgstr "Se saires, vais perder a imagem! Queres guardá-la?"
 
-#: ../tuxpaint.c:1866 ../tuxpaint.c:1871
+#: ../tuxpaint.c:1866
+#: ../tuxpaint.c:1871
 msgid "Yes, save it!"
 msgstr "Sim, guardar!"
 
-#: ../tuxpaint.c:1867 ../tuxpaint.c:1872
+#: ../tuxpaint.c:1867
+#: ../tuxpaint.c:1872
 msgid "No, don’t bother saving!"
 msgstr "Não, não é preciso !"
 
 #. Current picture is not saved; user is opening another picture
 #: ../tuxpaint.c:1870
 msgid "Save your picture first?"
-msgstr "Queres guardar o teu desenho primeiro?"
+msgstr "Queres guardar primeiro a imagem?"
 
 #. Error opening picture
 #: ../tuxpaint.c:1875
 msgid "Can’t open that picture!"
-msgstr "Não consigo abrir esse desenho!"
+msgstr "Não consigo abrir essa imagem!"
 
 #. Generic dialog dismissal
-#: ../tuxpaint.c:1878 ../tuxpaint.c:1883 ../tuxpaint.c:1892 ../tuxpaint.c:1899
+#: ../tuxpaint.c:1878
+#: ../tuxpaint.c:1883
+#: ../tuxpaint.c:1892
+#: ../tuxpaint.c:1899
 #: ../tuxpaint.c:1908
 msgid "OK"
 msgstr "Está bem"
@@ -569,7 +583,7 @@ msgstr "Não há desenhos guardados!"
 #. Verification of print action
 #: ../tuxpaint.c:1886
 msgid "Print your picture now?"
-msgstr "Queres imprimir o teu desenho agora?"
+msgstr "Queres imprimir a imagem agora?"
 
 #: ../tuxpaint.c:1887
 msgid "Yes, print it!"
@@ -578,12 +592,12 @@ msgstr "Sim, imprimir!"
 #. Confirmation of successful (we hope) printing
 #: ../tuxpaint.c:1891
 msgid "Your picture has been printed!"
-msgstr "O desenho foi impresso!"
+msgstr "A imagem foi impressa!"
 
 #. We got an error printing
 #: ../tuxpaint.c:1895
 msgid "Sorry! Your picture could not be printed!"
-msgstr "Desculpa! O teu desenho não pôde ser impresso!"
+msgstr "Desculpa! A tua imagem não pôde ser impressa!"
 
 #. Notification that it's too soon to print again (--printdelay option is in effect)
 #: ../tuxpaint.c:1898
@@ -593,7 +607,7 @@ msgstr "Ainda não podes imprimir!"
 #. Prompt to confirm erasing a picture in the Open dialog
 #: ../tuxpaint.c:1902
 msgid "Erase this picture?"
-msgstr "Apagar este desenho?"
+msgstr "Apagar esta imagem?"
 
 #: ../tuxpaint.c:1903
 msgid "Yes, erase it!"
@@ -670,7 +684,7 @@ msgstr "Não"
 #. Prompt to ask whether user wishes to save over old version of their file
 #: ../tuxpaint.c:12631
 msgid "Replace the picture with your changes?"
-msgstr "Substituir o desenho com as alterações?"
+msgstr "Substituir a imagem com as alterações?"
 
 #. Positive response to saving over old version
 #. (like a 'File:Save' action in other applications)
@@ -686,11 +700,12 @@ msgstr "Não, guarda como um novo desenho!"
 
 #: ../tuxpaint.c:13402
 msgid "Choose the picture you want, then click “Open”."
-msgstr "Escolhe o desenho que queres e clica em “Abrir”."
+msgstr "Escolhe a imagem que queres e clica em “Abrir”."
 
 #. Let user choose images:
 #. Instructions for Slideshow file dialog (FIXME: Make a #define)
-#: ../tuxpaint.c:14389 ../tuxpaint.c:14703
+#: ../tuxpaint.c:14389
+#: ../tuxpaint.c:14703
 msgid "Choose the pictures you want, then click “Play”."
 msgstr "Escolhe as imagens que queres e clica em “Mostrar”."
 
@@ -712,11 +727,11 @@ msgstr "Mudança de Cor"
 
 #: ../../magic/src/alien.c:67
 msgid "Click and move the mouse to change the colors in parts of your picture."
-msgstr "Clica e move o rato para alterar, parcialmente, as cores do desenho."
+msgstr "Clica e move o rato para alterar as cores em algumas partes da imagem."
 
 #: ../../magic/src/alien.c:68
 msgid "Click to change the colors in your entire picture."
-msgstr "Clica para alterar as cores em todo o desenho."
+msgstr "Clica para alterar as cores da tua imagem."
 
 #: ../../magic/src/blocks_chalk_drip.c:132
 msgid "Blocks"
@@ -732,16 +747,15 @@ msgstr "Gota"
 
 #: ../../magic/src/blocks_chalk_drip.c:146
 msgid "Click and move the mouse around to make the picture blocky."
-msgstr "Clica e move o rato para transformares o desenho em blocos."
+msgstr "Clica e move o rato para transformares a imagem em blocos."
 
 #: ../../magic/src/blocks_chalk_drip.c:149
-msgid ""
-"Click and move the mouse around to turn the picture into a chalk drawing."
-msgstr "Clica e move o rato para transformares o desenho num desenho de giz."
+msgid "Click and move the mouse around to turn the picture into a chalk drawing."
+msgstr "Clica e move o rato para transformares a imagem num desenho de giz."
 
 #: ../../magic/src/blocks_chalk_drip.c:152
 msgid "Click and move the mouse around to make the picture drip."
-msgstr "Clica e move o rato para fazer gotas no desenho."
+msgstr "Clica e move o rato para fazer gotas na imagem."
 
 #: ../../magic/src/blur.c:57
 msgid "Blur"
@@ -753,7 +767,7 @@ msgstr "Clica e move o rato à volta para borrar a imagem."
 
 #: ../../magic/src/blur.c:61
 msgid "Click to blur the entire image."
-msgstr "Clica para borrar toda a imagem."
+msgstr "Clica para borrar a imagem."
 
 #. Both are named "Bricks", at the moment:
 #: ../../magic/src/bricks.c:104
@@ -798,7 +812,7 @@ msgstr "Distorção"
 
 #: ../../magic/src/distortion.c:129
 msgid "Click and drag the mouse to cause distortion in your picture."
-msgstr "Clica e arrasta o rato para causar distorção no desenho."
+msgstr "Clica e arrasta o rato para causar distorção na imagem."
 
 #: ../../magic/src/emboss.c:76
 msgid "Emboss"
@@ -806,7 +820,7 @@ msgstr "Realçar"
 
 #: ../../magic/src/emboss.c:82
 msgid "Click and drag the mouse to emboss the picture."
-msgstr "Clica e arrasta o rato para realçar o desenho."
+msgstr "Clica e arrasta o rato para realçar a imagem."
 
 #: ../../magic/src/fade_darken.c:119
 msgid "Lighten"
@@ -818,19 +832,19 @@ msgstr "Escurecer"
 
 #: ../../magic/src/fade_darken.c:132
 msgid "Click and move the mouse to lighten parts of your picture."
-msgstr "Clica e move o rato para iluminar, parcialmente, o desenho."
+msgstr "Clica e move o rato para iluminar algumas partes da imagem."
 
 #: ../../magic/src/fade_darken.c:134
 msgid "Click to lighten your entire picture."
-msgstr "Clica para iluminar todo o desenho."
+msgstr "Clica para iluminar a imagem."
 
 #: ../../magic/src/fade_darken.c:139
 msgid "Click and move the mouse to darken parts of your picture."
-msgstr "Clica e move o rato para escurecer, parcialmente, o desenho."
+msgstr "Clica e move o rato para escurecer algumas partes da imagem."
 
 #: ../../magic/src/fade_darken.c:141
 msgid "Click to darken your entire picture."
-msgstr "Clica para escurecer todo o desenho."
+msgstr "Clica para escurecer a imagem."
 
 #: ../../magic/src/fill.c:87
 msgid "Fill"
@@ -838,7 +852,7 @@ msgstr "Preencher"
 
 #: ../../magic/src/fill.c:94
 msgid "Click in the picture to fill that area with color."
-msgstr "Clica no desenho para preencher a área com cor."
+msgstr "Clica na imagem para preencher a área com cor."
 
 #: ../../magic/src/fisheye.c:77
 msgid "Fisheye"
@@ -847,7 +861,7 @@ msgstr "Fisheye"
 #. Needs better name
 #: ../../magic/src/fisheye.c:79
 msgid "Click on part of your picture to create a fisheye effect."
-msgstr "Clica no local do desenho para criar um efeito Fisheye."
+msgstr "Clica no local da imagem em que queres criar o efeito fisheye."
 
 #: ../../magic/src/flower.c:124
 msgid "Flower"
@@ -870,10 +884,8 @@ msgid "Fold"
 msgstr "Dobra"
 
 #: ../../magic/src/fold.c:86
-msgid ""
-"Choose a background color and click to turn the corner of the page over."
-msgstr ""
-"Escolhe uma cor de fundo e clica para virar o canto da página por cima."
+msgid "Choose a background color and click to turn the corner of the page over."
+msgstr "Escolhe uma cor de fundo e clica para virar o canto da página por cima."
 
 #: ../../magic/src/glasstile.c:83
 msgid "Glass Tile"
@@ -881,11 +893,11 @@ msgstr "Fundo de Garrafa"
 
 #: ../../magic/src/glasstile.c:90
 msgid "Click and drag the mouse to put glass tile over your picture."
-msgstr "Cilca e arrasta o rato para pôr fundo de garrafa sobre o desenho."
+msgstr "Clica e arrasta o rato para pôr um fundo de garrafa por cima da imagem."
 
 #: ../../magic/src/glasstile.c:92
 msgid "Click to cover your entire picture in glass tiles."
-msgstr "Clica para cobrir todo o desenho com fundo de garrafa."
+msgstr "Clica para cobrir a imagem com fundo de garrafa."
 
 #: ../../magic/src/grass.c:92
 msgid "Grass"
@@ -900,10 +912,8 @@ msgid "Kaleidoscope"
 msgstr "Caleidoscópio"
 
 #: ../../magic/src/kalidescope.c:83
-msgid ""
-"Click and drag the mouse to draw with symmetric brushes (a kaleidoscope)."
-msgstr ""
-"Clica e arrasta o rato para desenhar com pincéis simétricos (caleidoscópio)."
+msgid "Click and drag the mouse to draw with symmetric brushes (a kaleidoscope)."
+msgstr "Clica e arrasta o rato para desenhar com pincéis simétricos (caleidoscópio)."
 
 #: ../../magic/src/light.c:84
 msgid "Light"
@@ -911,7 +921,7 @@ msgstr "Iluminar"
 
 #: ../../magic/src/light.c:90
 msgid "Click and drag to draw a beam of light on your picture."
-msgstr "Clica e arrasta para desenhar um feixe de luz no desenho."
+msgstr "Clica e arrasta para desenhar um feixe de luz na imagem."
 
 #: ../../magic/src/metalpaint.c:77
 msgid "Metal Paint"
@@ -935,21 +945,19 @@ msgstr "Clica para espelhares o desenho."
 
 #: ../../magic/src/mirror_flip.c:109
 msgid "Click to flip the picture upside-down."
-msgstr "Clica para girares o desenho de cabeça para baixo."
+msgstr "Clica para inverteres a imagem de cabeça para baixo."
 
 #: ../../magic/src/mosaic.c:70
 msgid "Mosaic"
 msgstr "Mosaico"
 
 #: ../../magic/src/mosaic.c:73
-msgid ""
-"Click and move the mouse to add a mosaic effect to parts of your picture."
-msgstr ""
-"Clica e move o rato para adicionar um efeito de mosaico, parcial, ao desenho."
+msgid "Click and move the mouse to add a mosaic effect to parts of your picture."
+msgstr "Clica e move o rato para adicionar um efeito de mosaico em algumas partes da imagem."
 
 #: ../../magic/src/mosaic.c:74
 msgid "Click to add a mosaic effect to your entire picture."
-msgstr "Clica para adicionar um efeito de mosaico a todo o desenho."
+msgstr "Clica para adicionar um efeito de mosaico à imagem."
 
 #: ../../magic/src/negative.c:72
 msgid "Negative"
@@ -969,11 +977,11 @@ msgstr "Ruído"
 
 #: ../../magic/src/noise.c:66
 msgid "Click and move the mouse to add noise to parts of your picture."
-msgstr "Clica e move o rato para adicionar ruído, parcialmente, ao desenho."
+msgstr "Clica e move o rato para adicionar ruído em algumas partes da imagem."
 
 #: ../../magic/src/noise.c:67
 msgid "Click to add noise to your entire picture."
-msgstr "Clica para adicionar ruído a todo o desenho."
+msgstr "Clica para adicionar ruído à imagem."
 
 #: ../../magic/src/rails.c:102
 msgid "Rails"
@@ -981,7 +989,7 @@ msgstr "Carris"
 
 #: ../../magic/src/rails.c:104
 msgid "Click and drag to draw train track rails on your picture."
-msgstr "Clica e arrasta para desenhar carris no desenho"
+msgstr "Clica e arrasta para desenhar carris na imagem."
 
 #: ../../magic/src/rainbow.c:107
 msgid "Rainbow"
@@ -997,23 +1005,19 @@ msgstr "Chuva"
 
 #: ../../magic/src/rain.c:68
 msgid "Click to place a rain drop onto your picture."
-msgstr "Clica para colocar gotas de chuva no desenho."
+msgstr "Clica para colocar gotas de chuva na imagem."
 
 #: ../../magic/src/rain.c:69
 msgid "Click to cover your picture with rain drops."
-msgstr "Clica para cobrir o desenho com gotas de chuva."
+msgstr "Clica para cobrir a imagem com gotas de chuva."
 
 #: ../../magic/src/realrainbow.c:76
 msgid "Real Rainbow"
 msgstr "Arco-íris Real"
 
 #: ../../magic/src/realrainbow.c:81
-msgid ""
-"Click where you want your rainbow to start, drag to where you want it to "
-"end, and then let go to draw a rainbow."
-msgstr ""
-"Clica onde queres começar o arco-íris, arrasta-o para onde queres que acabe "
-"e larga para desenha-lo."
+msgid "Click where you want your rainbow to start, drag to where you want it to end, and then let go to draw a rainbow."
+msgstr "Clica onde queres começar o arco-íris, arrasta-o para onde queres que acabe e larga para desenha-lo."
 
 #: ../../magic/src/ripples.c:81
 msgid "Ripples"
@@ -1021,7 +1025,7 @@ msgstr "Ondulações"
 
 #: ../../magic/src/ripples.c:87
 msgid "Click to make ripples appear over your picture."
-msgstr "Clica para fazer aparecer ondulações sobre o desenho."
+msgstr "Clica para fazer aparecer ondulações por cima da imagem."
 
 #: ../../magic/src/rosette.c:93
 msgid "Rosette"
@@ -1041,7 +1045,7 @@ msgstr "Podes desenhar como o Picasso."
 
 #: ../../magic/src/sharpen.c:73
 msgid "Edges"
-msgstr "Arestas"
+msgstr "Limites"
 
 #: ../../magic/src/sharpen.c:74
 msgid "Sharpen"
@@ -1053,19 +1057,19 @@ msgstr "Silhueta"
 
 #: ../../magic/src/sharpen.c:78
 msgid "Click and move the mouse to trace edges in parts of your picture."
-msgstr "Clica e move o rato para desenhar arestas, parcialmente, no desenho."
+msgstr "Clica e move o rato para desenhar limites em algumas partes da imagem."
 
 #: ../../magic/src/sharpen.c:79
 msgid "Click to trace edges in your entire picture."
-msgstr "Clica para desenhar arestas em todo o desenho."
+msgstr "Clica para desenhar limites na imagem."
 
 #: ../../magic/src/sharpen.c:80
 msgid "Click and move the mouse to sharpen parts of your picture."
-msgstr "Clica e move o rato para afiar parte do desenho."
+msgstr "Clica e move o rato para afiar algumas partes da imagem."
 
 #: ../../magic/src/sharpen.c:81
 msgid "Click to sharpen the entire picture."
-msgstr "Clica para afiar todo o desenho."
+msgstr "Clica para afiar a imagem."
 
 #: ../../magic/src/sharpen.c:82
 msgid "Click and move the mouse to create a black and white silhouette."
@@ -1073,8 +1077,7 @@ msgstr "Clica e move o rato para criar silhuetas a preto e branco."
 
 #: ../../magic/src/sharpen.c:83
 msgid "Click to create a black and white silhouette of your entire picture."
-msgstr ""
-"Clica e move o rato para criar silhuetas a preto e branco em todo o desenho."
+msgstr "Clica e move o rato para criar silhuetas a preto e branco na imagem."
 
 #: ../../magic/src/shift.c:104
 msgid "Shift"
@@ -1082,7 +1085,7 @@ msgstr "Mudar"
 
 #: ../../magic/src/shift.c:110
 msgid "Click and drag to shift your picture around on the canvas."
-msgstr "Clica e arrasta para alterar o desenho na tela."
+msgstr "Clica e arrasta para alterar a imagem na tela."
 
 #: ../../magic/src/smudge.c:77
 msgid "Smudge"
@@ -1090,7 +1093,7 @@ msgstr "Manchar"
 
 #: ../../magic/src/smudge.c:84
 msgid "Click and move the mouse around to smudge the picture."
-msgstr "Clica e move o rato para manchar o desenho."
+msgstr "Clica e move o rato para manchar a imagem."
 
 #: ../../magic/src/snow.c:68
 msgid "Snow Ball"
@@ -1102,15 +1105,15 @@ msgstr "Floco de Neve"
 
 #: ../../magic/src/snow.c:72
 msgid "Click to add snow balls to your picture."
-msgstr "Clica para adicionar bolas de neve no desenho."
+msgstr "Clica para adicionar bolas de neve à imagem."
 
 #: ../../magic/src/snow.c:73
 msgid "Click to add snow flakes to your picture."
-msgstr "Clica para adicionar flocos de neve no desenho."
+msgstr "Clica para adicionar flocos de neve na imagem."
 
 #: ../../magic/src/string.c:120
 msgid "String edges"
-msgstr "Margens das linhas"
+msgstr "Limites das linhas"
 
 #: ../../magic/src/string.c:123
 msgid "String corner"
@@ -1121,27 +1124,20 @@ msgid "String 'V'"
 msgstr "Linhas em V"
 
 #: ../../magic/src/string.c:134
-#, fuzzy
 #| msgid ""
 #| "Click and drag to draw string art. Drag top-bottom to draw less or more "
 #| "lines, to the center to approach the lines to center."
-msgid ""
-"Click and drag to draw string art. Drag top-bottom to draw less or more "
-"lines, left or right to make a bigger hole."
-msgstr ""
-"Clica e arrasta para desenhar linhas em cadeia. Arrasta superior-inferior "
-"para desenhar menos ou mais linhas, para o centro para aproximar as linhas "
-"ao centro."
+msgid "Click and drag to draw string art. Drag top-bottom to draw less or more lines, left or right to make a bigger hole."
+msgstr "Clica e arrasta para desenhar linhas artísticas. Arrasta para cima/baixo para desenhar menos ou mais linhas e esquerda ou direita para aumentar o buraco."
 
 #: ../../magic/src/string.c:137
-#, fuzzy
 #| msgid "Click and drag to draw a beam of light on your picture."
 msgid "Click and drag to draw arrows made of string art."
-msgstr "Clica e arrasta para desenhar um feixe de luz no desenho."
+msgstr "Clica e arrasta para desenhar setas artísticas."
 
 #: ../../magic/src/string.c:140
 msgid "Draw string art arrows with free angles."
-msgstr ""
+msgstr "Desenhar setas artísticas com ângulos livres."
 
 #: ../../magic/src/tint.c:71
 msgid "Tint"
@@ -1152,27 +1148,20 @@ msgid "Color & White"
 msgstr "Cor & Branco"
 
 #: ../../magic/src/tint.c:75
-msgid ""
-"Click and move the mouse around to change the color of parts of your picture."
-msgstr "Clica e move o rato para alterar as cores, parcialmente, do desenho."
+msgid "Click and move the mouse around to change the color of parts of your picture."
+msgstr "Clica e move o rato para alterar as cores de algumas partes da imagem."
 
 #: ../../magic/src/tint.c:76
 msgid "Click to change the color of your entire picture."
-msgstr "Clica para alterar as cores de todo o desenho."
+msgstr "Clica para alterar as cores da imagem."
 
 #: ../../magic/src/tint.c:77
-msgid ""
-"Click and move the mouse around to turn parts of your picture into white and "
-"a color you choose."
-msgstr ""
-"Clica e move o rato para transformar partes do teu desenho em branco e outra "
-"cor à tua escolha."
+msgid "Click and move the mouse around to turn parts of your picture into white and a color you choose."
+msgstr "Clica e move o rato para transformar partes da tua imagem em branco e outra cor à tua escolha."
 
 #: ../../magic/src/tint.c:78
 msgid "Click to turn your entire picture into white and a color you choose."
-msgstr ""
-"Clica para transformar todo o teu desenho em branco e outra cor à tua "
-"escolha."
+msgstr "Clica para transformar a imagem em branco e outra cor à tua escolha."
 
 #: ../../magic/src/toothpaste.c:65
 msgid "Toothpaste"
@@ -1180,33 +1169,29 @@ msgstr "Pasta de dentes"
 
 #: ../../magic/src/toothpaste.c:68
 msgid "Click and drag to squirt toothpaste onto your picture."
-msgstr "Clica e arrasta para esguichar pasta de dentes no desenho."
+msgstr "Clica e arrasta para esguichar pasta de dentes na imagem."
 
 #: ../../magic/src/tornado.c:127
 msgid "Tornado"
-msgstr ""
+msgstr "Tornado"
 
 #: ../../magic/src/tornado.c:133
-#, fuzzy
 #| msgid "Click and drag to draw train track rails on your picture."
 msgid "Click and drag to draw a tornado funnel on your picture."
-msgstr "Clica e arrasta para desenhar carris no desenho"
+msgstr "Clica e arrasta para desenhar um tornado na tua imagem."
 
 #: ../../magic/src/tv.c:74
 msgid "TV"
 msgstr "TV"
 
 #: ../../magic/src/tv.c:79
-#, fuzzy
 #| msgid "Click to make your picture look like it's on television."
-msgid ""
-"Click and drag to make parts of your picture look like they are on "
-"television."
-msgstr "Clica para fazer com que o desenho pareça estar numa televisão."
+msgid "Click and drag to make parts of your picture look like they are on television."
+msgstr "Clica e arrasta para fazer com que algumas partes da imagem apareçam como se estivessem na televisão."
 
 #: ../../magic/src/tv.c:82
 msgid "Click to make your picture look like it's on television."
-msgstr "Clica para fazer com que o desenho pareça estar numa televisão."
+msgstr "Clica para fazer com que a imagem pareça estar numa televisão."
 
 #: ../../magic/src/waves.c:80
 msgid "Waves"
@@ -1217,35 +1202,20 @@ msgid "Wavelets"
 msgstr "Ondulação leve"
 
 #: ../../magic/src/waves.c:88
-msgid ""
-"Click to make the picture horizontally wavy. Click toward the top for "
-"shorter waves, the bottom for taller waves, the left for small waves, and "
-"the right for long waves."
-msgstr ""
-"Clica para fazer ondulações horizontais no desenho. Clica em direcção ao "
-"topo para ondas curtas, para baixo para ondas altas, para a esquerda para "
-"ondas pequenas e para a direita para ondas compridas."
+msgid "Click to make the picture horizontally wavy. Click toward the top for shorter waves, the bottom for taller waves, the left for small waves, and the right for long waves."
+msgstr "Clica para fazer ondulações horizontais na imagem. Clica para cima para ondas curtas, para baixo para ondas altas, para a esquerda para ondas pequenas e para a direita para ondas compridas."
 
 #: ../../magic/src/waves.c:89
-msgid ""
-"Click to make the picture vertically wavy. Click toward the top for shorter "
-"waves, the bottom for taller waves, the left for small waves, and the right "
-"for long waves."
-msgstr ""
-"Clica para fazer ondulações horizontais no desenho. Clica em direcção ao "
-"topo para ondas curtas, para baixo para ondas altas, para a esquerda para "
-"ondas pequenas e para a direita para ondas compridas."
+msgid "Click to make the picture vertically wavy. Click toward the top for shorter waves, the bottom for taller waves, the left for small waves, and the right for long waves."
+msgstr "Clica para fazer ondulações horizontais na imagem. Clica para cima para ondas curtas, para baixo para ondas altas, para a esquerda para ondas pequenas e para a direita para ondas compridas."
 
 #~ msgid "qy"
 #~ msgstr "qy"
-
 #~ msgid "QY"
 #~ msgstr "QY"
-
 #~ msgid "Click and drag to draw string art aligned to the edges."
 #~ msgstr ""
 #~ "Clica e arrasta para desenhar linhas em cadeia alinhadas ás margens."
-
 #~ msgid ""
 #~ "Draw string art with free angles. Click and drag a V: drag to the vertex, "
 #~ "drag backwards a little to the start, then drag to the end."
@@ -1254,12 +1224,10 @@ msgstr ""
 #~ "arrasta para o vértice, arrasta um pouco para trás para iniciar e em "
 #~ "seguida arrasta para o fim"
 
-#, fuzzy
 #~| msgid "Click and drag to draw a flower stalk. Let go to finish the flower."
 #~ msgid ""
 #~ "Click and drag to draw a tornado stalk. Let go to finish the tornado."
 #~ msgstr "Clica e arrasta para desenhar uma flor. Larga para acabar a flor."
-
 #, fuzzy
 #~ msgid ""
 #~ "Click and move the mouse to give parts of your picture an \"alien\" "
@@ -1320,24 +1288,18 @@ msgstr ""
 #, fuzzy
 #~ msgid "Blur All"
 #~ msgstr "Embaciar"
-
 #~ msgid "Click and move to fade the colors."
 #~ msgstr "Clica e move o rato para desbotares as cores."
-
 #~ msgid "Click and move to darken the colors."
 #~ msgstr "Clica e move o rato para escurecer as cores."
-
 #~ msgid "Sparkles"
 #~ msgstr "Fagulhas"
-
 #~ msgid "You now have a blank sheet to draw on!"
 #~ msgstr "Agora tens uma folha nova para desenhares!"
-
 #~ msgid "Start a new picture?"
 #~ msgstr "Começar um novo desenho?"
-
 #~ msgid "Yes, let's start fresh!"
 #~ msgstr "Sim, vamos começar de novo"
-
 #~ msgid "Click and move to draw sparkles."
 #~ msgstr "Clica e move o rato para desenhares fagulhas."
+
