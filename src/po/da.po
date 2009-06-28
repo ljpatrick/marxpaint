@@ -14,7 +14,7 @@ msgstr ""
 "Project-Id-Version: Tux Paint\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2009-06-19 12:57-0700\n"
-"PO-Revision-Date: 2009-05-29 22:30+0100\n"
+"PO-Revision-Date: 2009-06-28 22:30+0100\n"
 "Last-Translator: Joe Hansen <joedalton2@yahoo.dk>\n"
 "Language-Team: Danish <dansk@dansk-gruppen.dk>\n"
 "MIME-Version: 1.0\n"
@@ -153,10 +153,8 @@ msgstr ",.?!"
 
 #. uncommon punctuation (e.g., '@', '#', '*', etc.)
 #: ../dirwalk.c:197
-#, fuzzy
-#| msgid "`\\%_@$~#{}<>^&*"
 msgid "`\\%_@$~#{<(^&*"
-msgstr "`\\%_@$~#{}<>^&*"
+msgstr "`\\%_@$~#{<(^&*"
 
 #. digits (e.g., '0', '1' and '7')
 #: ../dirwalk.c:200
@@ -175,19 +173,19 @@ msgstr "1Il|"
 
 #: ../dirwalk.c:210
 msgid "<1>spare-1a"
-msgstr ""
+msgstr "<1>spare-1a"
 
 #: ../dirwalk.c:211
 msgid "<1>spare-1b"
-msgstr ""
+msgstr "<1>spare-1b"
 
 #: ../dirwalk.c:212
 msgid "<9>spare-9a"
-msgstr ""
+msgstr "<9>spare-9a"
 
 #: ../dirwalk.c:213
 msgid "<9>spare-9b"
-msgstr ""
+msgstr "<9>spare-9b"
 
 #. Congratulations #1
 #: ../great.h:37
@@ -703,11 +701,12 @@ msgstr "Et tegneprogram for børn."
 
 #: ../tuxpaint.desktop.in.h:2
 msgid "Drawing program"
-msgstr "Tegne program"
+msgstr "Tegneprogram"
 
+# Måske Tux Maling
 #: ../tuxpaint.desktop.in.h:3
 msgid "Tux Paint"
-msgstr "Tux maling"
+msgstr "Tux Paint"
 
 #: ../../magic/src/alien.c:64
 msgid "Color Shift"
@@ -735,7 +734,7 @@ msgstr "Dryp"
 
 #: ../../magic/src/blocks_chalk_drip.c:146
 msgid "Click and move the mouse around to make the picture blocky."
-msgstr "Klik og bevæg musen rundt for at gøre billedet 'ternet'."
+msgstr "Klik og bevæg musen rundt for at gøre billedet »ternet«."
 
 #: ../../magic/src/blocks_chalk_drip.c:149
 msgid ""
@@ -903,7 +902,7 @@ msgstr "Græs"
 
 #: ../../magic/src/grass.c:98
 msgid "Click and move to draw grass. Don’t forget the dirt!"
-msgstr "Klik og flyt for at tegne græs. Husk 'skidtet'!"
+msgstr "Klik og flyt for at tegne græs. Husk »skidtet«!"
 
 #: ../../magic/src/kalidescope.c:77
 msgid "Kaleidoscope"
@@ -1136,29 +1135,23 @@ msgstr "Strenghjørne"
 
 #: ../../magic/src/string.c:126
 msgid "String 'V'"
-msgstr "Streng 'V'"
+msgstr "Streng »V«"
 
 #: ../../magic/src/string.c:134
-#, fuzzy
-#| msgid ""
-#| "Click and drag to draw string art. Drag top-bottom to draw less or more "
-#| "lines, to the center to approach the lines to center."
 msgid ""
 "Click and drag to draw string art. Drag top-bottom to draw less or more "
 "lines, left or right to make a bigger hole."
 msgstr ""
 "Klik og træk for at tegne strengkunst. Træk top mod bund for at tegne færre "
-"eller flere linjer, mod midten for at nærme linjerne mod midten."
+"eller flere linjer, venstre og højre for at lave større huller."
 
 #: ../../magic/src/string.c:137
-#, fuzzy
-#| msgid "Click and drag to draw a beam of light on your picture."
 msgid "Click and drag to draw arrows made of string art."
-msgstr "Klik og bevæg musen rundt, for at tegne en lysstråle på dit billede."
+msgstr "Klik og bevæg for at tegne pile omkring strengkunst."
 
 #: ../../magic/src/string.c:140
 msgid "Draw string art arrows with free angles."
-msgstr ""
+msgstr "Tegn strengkunstpile med frie vinkler."
 
 #: ../../magic/src/tint.c:71
 msgid "Tint"
@@ -1199,25 +1192,22 @@ msgstr "Klik og hiv for at spilde tandpaste på dit billede."
 
 #: ../../magic/src/tornado.c:127
 msgid "Tornado"
-msgstr ""
+msgstr "Tornado"
 
 #: ../../magic/src/tornado.c:133
-#, fuzzy
-#| msgid "Click and drag to draw train track rails on your picture."
 msgid "Click and drag to draw a tornado funnel on your picture."
-msgstr "Klik og bevæg musen rundt for at tegne togspor på dit billede."
+msgstr "Klik og bevæg musen rundt for at tegne en tornadotragt på dit billede."
 
 #: ../../magic/src/tv.c:74
 msgid "TV"
 msgstr "Tv"
 
 #: ../../magic/src/tv.c:79
-#, fuzzy
-#| msgid "Click to make your picture look like it's on television."
 msgid ""
 "Click and drag to make parts of your picture look like they are on "
 "television."
-msgstr "Klik for at få dit billede til at se ud som om, det er i fjernsynet."
+msgstr ""
+"Klik og træk musen rundt for at få dit billede til at se ud som om, det er i fjernsynet."
 
 #: ../../magic/src/tv.c:82
 msgid "Click to make your picture look like it's on television."
@@ -1252,27 +1242,4 @@ msgstr ""
 "bølger, bunden for højere bølger, til venstre for små bølger og mod højre "
 "for lange bølger."
 
-#~ msgid "qy"
-#~ msgstr "qy"
 
-#~ msgid "QY"
-#~ msgstr "QY"
-
-#~ msgid "Click and drag to draw string art aligned to the edges."
-#~ msgstr "Klik og bevæg musen rundt for at tegne strenge på dit billede."
-
-#~ msgid ""
-#~ "Draw string art with free angles. Click and drag a V: drag to the vertex, "
-#~ "drag backwards a little to the start, then drag to the end."
-#~ msgstr ""
-#~ "Tegn strengkunst med frie vinkler. Klik og træk et V: Træk til spidsen, "
-#~ "træk en smule tilbage til starten, og træk så til afslutningen."
-
-# stalk = stilk; stængel 
-#, fuzzy
-#~| msgid "Click and drag to draw a flower stalk. Let go to finish the flower."
-#~ msgid ""
-#~ "Click and drag to draw a tornado stalk. Let go to finish the tornado."
-#~ msgstr ""
-#~ "Klik og træk for at tegne en blomsterstilk. Slip for at færdiggøre "
-#~ "blomsten."
