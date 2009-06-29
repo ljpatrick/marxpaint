@@ -601,7 +601,7 @@
 		22710E920AE5DEAC00FC7FCF /* OPTIONS.txt */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text; name = OPTIONS.txt; path = ../docs/OPTIONS.txt; sourceTree = SOURCE_ROOT; };
 		22710E9B0AE5DEAC00FC7FCF /* PNG.txt */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text; name = PNG.txt; path = ../docs/PNG.txt; sourceTree = SOURCE_ROOT; };
 		2271114E0AE5EC6E00FC7FCF /* fonts */ = {isa = PBXFileReference; lastKnownFileType = folder; name = fonts; path = ../fonts; sourceTree = SOURCE_ROOT; };
-		228437C30EF5DE5F002A13FD /* libfribidi.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libfribidi.a; path = /Volumes/Users/Shared/tuxpaint/lib/libfribidi.a; sourceTree = "<absolute>"; };
+		228437C30EF5DE5F002A13FD /* libfribidi.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libfribidi.a; path = /Users/Shared/tuxpaint/lib/libfribidi.a; sourceTree = "<absolute>"; };
 		2286F34E0740B3FC001164FE /* English */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = English; path = English.lproj/SDLMain.nib; sourceTree = "<group>"; };
 		22C005D30736650D008555A2 /* tuxpaint.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = tuxpaint.icns; sourceTree = SOURCE_ROOT; };
 		22C0EA9A0735B76F008555A2 /* SDLMain.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = SDLMain.h; sourceTree = SOURCE_ROOT; };
@@ -2527,12 +2527,12 @@
 					HAVE_STRCASESTR,
 					"$(PREPROCESSOR_MACROS_$(CURRENT_ARCH))",
 				);
-				GCC_PREPROCESSOR_DEFINITIONS_QUOTED_1 = "VER_DATE=\\\"2008-06-28\\\"";
+				GCC_PREPROCESSOR_DEFINITIONS_QUOTED_1 = "VER_DATE=\\\"2009-06-29\\\"";
 				GCC_PREPROCESSOR_DEFINITIONS_QUOTED_2 = "DATA_PREFIX=\\\"Tux\\ Paint.app/Contents/Resources/\\\"";
 				GCC_PREPROCESSOR_DEFINITIONS_QUOTED_3 = "DOC_PREFIX=\\\"./share/doc/tuxpaint/\\\"";
 				GCC_PREPROCESSOR_DEFINITIONS_QUOTED_4 = "CONFDIR=\\\"$(HOME)/Library/Application\\ Support/TuxPaint/\\\"";
 				GCC_PREPROCESSOR_DEFINITIONS_QUOTED_5 = "LOCALEDIR=\\\"Tux\\ Paint.app/Contents/Resources/locale/\\\"";
-				GCC_PREPROCESSOR_DEFINITIONS_QUOTED_6 = "VER_VERSION=\\\"0.9.20\\\"";
+				GCC_PREPROCESSOR_DEFINITIONS_QUOTED_6 = "VER_VERSION=\\\"0.9.21\\\"";
 				GCC_PREPROCESSOR_DEFINITIONS_QUOTED_7 = "MAGIC_PREFIX=\\\"Tux\\ Paint.app/Contents/Resources/plugins/\\\"";
 				GCC_PREPROCESSOR_DEFINITIONS_QUOTED_8 = "IMDIR=\\\"Tux\\ Paint.app/Contents/Resources/im/\\\"";
 				HEADER_SEARCH_PATHS = (
@@ -2599,12 +2599,12 @@
 					HAVE_STRCASESTR,
 					"$(PREPROCESSOR_MACROS_$(CURRENT_ARCH))",
 				);
-				GCC_PREPROCESSOR_DEFINITIONS_QUOTED_1 = "VER_DATE=\\\"2008-06-28\\\"";
+				GCC_PREPROCESSOR_DEFINITIONS_QUOTED_1 = "VER_DATE=\\\"2009-06-29\\\"";
 				GCC_PREPROCESSOR_DEFINITIONS_QUOTED_2 = "DATA_PREFIX=\\\"Tux\\ Paint.app/Contents/Resources/\\\"";
 				GCC_PREPROCESSOR_DEFINITIONS_QUOTED_3 = "DOC_PREFIX=\\\"./share/doc/tuxpaint/\\\"";
 				GCC_PREPROCESSOR_DEFINITIONS_QUOTED_4 = "CONFDIR=\\\"$(HOME)/Library/Application\\ Support/TuxPaint/\\\"";
 				GCC_PREPROCESSOR_DEFINITIONS_QUOTED_5 = "LOCALEDIR=\\\"Tux\\ Paint.app/Contents/Resources/locale/\\\"";
-				GCC_PREPROCESSOR_DEFINITIONS_QUOTED_6 = "VER_VERSION=\\\"0.9.20\\\"";
+				GCC_PREPROCESSOR_DEFINITIONS_QUOTED_6 = "VER_VERSION=\\\"0.9.21\\\"";
 				GCC_PREPROCESSOR_DEFINITIONS_QUOTED_7 = "MAGIC_PREFIX=\\\"Tux\\ Paint.app/Contents/Resources/plugins/\\\"";
 				GCC_PREPROCESSOR_DEFINITIONS_QUOTED_8 = "IMDIR=\\\"Tux\\ Paint.app/Contents/Resources/im/\\\"";
 				HEADER_SEARCH_PATHS = (
@@ -2670,12 +2670,12 @@
 					HAVE_STRCASESTR,
 					"$(PREPROCESSOR_MACROS_$(CURRENT_ARCH))",
 				);
-				GCC_PREPROCESSOR_DEFINITIONS_QUOTED_1 = "VER_DATE=\\\"2008-06-28\\\"";
+				GCC_PREPROCESSOR_DEFINITIONS_QUOTED_1 = "VER_DATE=\\\"2009-06-29\\\"";
 				GCC_PREPROCESSOR_DEFINITIONS_QUOTED_2 = "DATA_PREFIX=\\\"Tux\\ Paint.app/Contents/Resources/\\\"";
 				GCC_PREPROCESSOR_DEFINITIONS_QUOTED_3 = "DOC_PREFIX=\\\"./share/doc/tuxpaint/\\\"";
 				GCC_PREPROCESSOR_DEFINITIONS_QUOTED_4 = "CONFDIR=\\\"$(HOME)/Library/Application\\ Support/TuxPaint/\\\"";
 				GCC_PREPROCESSOR_DEFINITIONS_QUOTED_5 = "LOCALEDIR=\\\"Tux\\ Paint.app/Contents/Resources/locale/\\\"";
-				GCC_PREPROCESSOR_DEFINITIONS_QUOTED_6 = "VER_VERSION=\\\"0.9.20\\\"";
+				GCC_PREPROCESSOR_DEFINITIONS_QUOTED_6 = "VER_VERSION=\\\"0.9.21\\\"";
 				GCC_PREPROCESSOR_DEFINITIONS_QUOTED_7 = "MAGIC_PREFIX=\\\"Tux\\ Paint.app/Contents/Resources/plugins/\\\"";
 				GCC_PREPROCESSOR_DEFINITIONS_QUOTED_8 = "IMDIR=\\\"Tux\\ Paint.app/Contents/Resources/im/\\\"";
 				HEADER_SEARCH_PATHS = (
