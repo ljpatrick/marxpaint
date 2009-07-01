@@ -55,6 +55,166 @@
 		225FE6F00939891500F0B02F /* SDL_image.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 225FD5240934EC1A00F0B02F /* SDL_image.framework */; };
 		225FE6F40939892300F0B02F /* SDL_mixer.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 225FD5250934EC1A00F0B02F /* SDL_mixer.framework */; };
 		225FEDBA093ACC0A00F0B02F /* html in Resources */ = {isa = PBXBuildFile; fileRef = 225FED8E093ACC0A00F0B02F /* html */; };
+		226E96AE0FFB981500A9A38E /* alien.c in Sources */ = {isa = PBXBuildFile; fileRef = 226E969D0FFB981500A9A38E /* alien.c */; };
+		226E96AF0FFB981500A9A38E /* confetti.c in Sources */ = {isa = PBXBuildFile; fileRef = 226E969E0FFB981500A9A38E /* confetti.c */; };
+		226E96B00FFB981500A9A38E /* fisheye.c in Sources */ = {isa = PBXBuildFile; fileRef = 226E969F0FFB981500A9A38E /* fisheye.c */; };
+		226E96B10FFB981500A9A38E /* fold.c in Sources */ = {isa = PBXBuildFile; fileRef = 226E96A00FFB981500A9A38E /* fold.c */; };
+		226E96B20FFB981500A9A38E /* mosaic.c in Sources */ = {isa = PBXBuildFile; fileRef = 226E96A10FFB981500A9A38E /* mosaic.c */; };
+		226E96B30FFB981500A9A38E /* noise.c in Sources */ = {isa = PBXBuildFile; fileRef = 226E96A20FFB981500A9A38E /* noise.c */; };
+		226E96B40FFB981500A9A38E /* puzzle.c in Sources */ = {isa = PBXBuildFile; fileRef = 226E96A30FFB981500A9A38E /* puzzle.c */; };
+		226E96B50FFB981500A9A38E /* rails.c in Sources */ = {isa = PBXBuildFile; fileRef = 226E96A40FFB981500A9A38E /* rails.c */; };
+		226E96B60FFB981500A9A38E /* rain.c in Sources */ = {isa = PBXBuildFile; fileRef = 226E96A50FFB981500A9A38E /* rain.c */; };
+		226E96B70FFB981500A9A38E /* realrainbow.c in Sources */ = {isa = PBXBuildFile; fileRef = 226E96A60FFB981500A9A38E /* realrainbow.c */; };
+		226E96B80FFB981500A9A38E /* rosette.c in Sources */ = {isa = PBXBuildFile; fileRef = 226E96A70FFB981500A9A38E /* rosette.c */; };
+		226E96B90FFB981500A9A38E /* sharpen.c in Sources */ = {isa = PBXBuildFile; fileRef = 226E96A80FFB981500A9A38E /* sharpen.c */; };
+		226E96BA0FFB981500A9A38E /* snow.c in Sources */ = {isa = PBXBuildFile; fileRef = 226E96A90FFB981500A9A38E /* snow.c */; };
+		226E96BB0FFB981500A9A38E /* string.c in Sources */ = {isa = PBXBuildFile; fileRef = 226E96AA0FFB981500A9A38E /* string.c */; };
+		226E96BC0FFB981500A9A38E /* toothpaste.c in Sources */ = {isa = PBXBuildFile; fileRef = 226E96AB0FFB981500A9A38E /* toothpaste.c */; };
+		226E96BD0FFB981500A9A38E /* tornado.c in Sources */ = {isa = PBXBuildFile; fileRef = 226E96AC0FFB981500A9A38E /* tornado.c */; };
+		226E96BE0FFB981500A9A38E /* tv.c in Sources */ = {isa = PBXBuildFile; fileRef = 226E96AD0FFB981500A9A38E /* tv.c */; };
+		226E96D20FFB999A00A9A38E /* tp_magic_api.h in Headers */ = {isa = PBXBuildFile; fileRef = 22F4616E0CE41B6E00DB7761 /* tp_magic_api.h */; };
+		226E96D60FFB999A00A9A38E /* libintl.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2248FC390CDEF241004BC461 /* libintl.a */; };
+		226E96D70FFB999A00A9A38E /* SDL_image.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 225FD5240934EC1A00F0B02F /* SDL_image.framework */; };
+		226E96D80FFB999A00A9A38E /* SDL_mixer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 225FD5250934EC1A00F0B02F /* SDL_mixer.framework */; };
+		226E96D90FFB999A00A9A38E /* SDL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 225FD5270934EC1A00F0B02F /* SDL.framework */; };
+		226E96DF0FFB99DB00A9A38E /* alien.c in Sources */ = {isa = PBXBuildFile; fileRef = 226E969D0FFB981500A9A38E /* alien.c */; };
+		226E96E70FFB9B3200A9A38E /* tp_magic_api.h in Headers */ = {isa = PBXBuildFile; fileRef = 22F4616E0CE41B6E00DB7761 /* tp_magic_api.h */; };
+		226E96EB0FFB9B3200A9A38E /* libintl.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2248FC390CDEF241004BC461 /* libintl.a */; };
+		226E96EC0FFB9B3200A9A38E /* SDL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 225FD5270934EC1A00F0B02F /* SDL.framework */; };
+		226E96ED0FFB9B3200A9A38E /* SDL_image.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 225FD5240934EC1A00F0B02F /* SDL_image.framework */; };
+		226E96EE0FFB9B3200A9A38E /* SDL_mixer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 225FD5250934EC1A00F0B02F /* SDL_mixer.framework */; };
+		226E97010FFB9BAE00A9A38E /* confetti.c in Sources */ = {isa = PBXBuildFile; fileRef = 226E969E0FFB981500A9A38E /* confetti.c */; };
+		226E97040FFB9BBD00A9A38E /* tp_magic_api.h in Headers */ = {isa = PBXBuildFile; fileRef = 22F4616E0CE41B6E00DB7761 /* tp_magic_api.h */; };
+		226E97080FFB9BBD00A9A38E /* libintl.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2248FC390CDEF241004BC461 /* libintl.a */; };
+		226E97090FFB9BBD00A9A38E /* SDL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 225FD5270934EC1A00F0B02F /* SDL.framework */; };
+		226E970A0FFB9BBD00A9A38E /* SDL_image.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 225FD5240934EC1A00F0B02F /* SDL_image.framework */; };
+		226E970B0FFB9BBD00A9A38E /* SDL_mixer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 225FD5250934EC1A00F0B02F /* SDL_mixer.framework */; };
+		226E97140FFB9C1800A9A38E /* fisheye.c in Sources */ = {isa = PBXBuildFile; fileRef = 226E969F0FFB981500A9A38E /* fisheye.c */; };
+		226E971A0FFB9C4E00A9A38E /* tp_magic_api.h in Headers */ = {isa = PBXBuildFile; fileRef = 22F4616E0CE41B6E00DB7761 /* tp_magic_api.h */; };
+		226E971E0FFB9C4E00A9A38E /* libintl.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2248FC390CDEF241004BC461 /* libintl.a */; };
+		226E971F0FFB9C4E00A9A38E /* SDL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 225FD5270934EC1A00F0B02F /* SDL.framework */; };
+		226E97200FFB9C4E00A9A38E /* SDL_image.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 225FD5240934EC1A00F0B02F /* SDL_image.framework */; };
+		226E97210FFB9C4E00A9A38E /* SDL_mixer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 225FD5250934EC1A00F0B02F /* SDL_mixer.framework */; };
+		226E97270FFB9C7200A9A38E /* fold.c in Sources */ = {isa = PBXBuildFile; fileRef = 226E96A00FFB981500A9A38E /* fold.c */; };
+		226E972E0FFB9CB500A9A38E /* tp_magic_api.h in Headers */ = {isa = PBXBuildFile; fileRef = 22F4616E0CE41B6E00DB7761 /* tp_magic_api.h */; };
+		226E97320FFB9CB500A9A38E /* libintl.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2248FC390CDEF241004BC461 /* libintl.a */; };
+		226E97330FFB9CB500A9A38E /* SDL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 225FD5270934EC1A00F0B02F /* SDL.framework */; };
+		226E97340FFB9CB500A9A38E /* SDL_image.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 225FD5240934EC1A00F0B02F /* SDL_image.framework */; };
+		226E97350FFB9CB500A9A38E /* SDL_mixer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 225FD5250934EC1A00F0B02F /* SDL_mixer.framework */; };
+		226E97400FFB9D1300A9A38E /* mosaic.c in Sources */ = {isa = PBXBuildFile; fileRef = 226E96A10FFB981500A9A38E /* mosaic.c */; };
+		226E97480FFB9D3300A9A38E /* tp_magic_api.h in Headers */ = {isa = PBXBuildFile; fileRef = 22F4616E0CE41B6E00DB7761 /* tp_magic_api.h */; };
+		226E974C0FFB9D3300A9A38E /* libintl.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2248FC390CDEF241004BC461 /* libintl.a */; };
+		226E974D0FFB9D3300A9A38E /* SDL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 225FD5270934EC1A00F0B02F /* SDL.framework */; };
+		226E974E0FFB9D3300A9A38E /* SDL_image.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 225FD5240934EC1A00F0B02F /* SDL_image.framework */; };
+		226E974F0FFB9D3300A9A38E /* SDL_mixer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 225FD5250934EC1A00F0B02F /* SDL_mixer.framework */; };
+		226E97550FFB9D7A00A9A38E /* noise.c in Sources */ = {isa = PBXBuildFile; fileRef = 226E96A20FFB981500A9A38E /* noise.c */; };
+		226E975E0FFB9D9100A9A38E /* tp_magic_api.h in Headers */ = {isa = PBXBuildFile; fileRef = 22F4616E0CE41B6E00DB7761 /* tp_magic_api.h */; };
+		226E97620FFB9D9100A9A38E /* libintl.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2248FC390CDEF241004BC461 /* libintl.a */; };
+		226E97630FFB9D9100A9A38E /* SDL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 225FD5270934EC1A00F0B02F /* SDL.framework */; };
+		226E97640FFB9D9100A9A38E /* SDL_image.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 225FD5240934EC1A00F0B02F /* SDL_image.framework */; };
+		226E97650FFB9D9100A9A38E /* SDL_mixer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 225FD5250934EC1A00F0B02F /* SDL_mixer.framework */; };
+		226E976B0FFB9DCB00A9A38E /* rails.c in Sources */ = {isa = PBXBuildFile; fileRef = 226E96A40FFB981500A9A38E /* rails.c */; };
+		226E976E0FFB9DD600A9A38E /* tp_magic_api.h in Headers */ = {isa = PBXBuildFile; fileRef = 22F4616E0CE41B6E00DB7761 /* tp_magic_api.h */; };
+		226E97720FFB9DD600A9A38E /* libintl.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2248FC390CDEF241004BC461 /* libintl.a */; };
+		226E97730FFB9DD600A9A38E /* SDL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 225FD5270934EC1A00F0B02F /* SDL.framework */; };
+		226E97740FFB9DD600A9A38E /* SDL_image.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 225FD5240934EC1A00F0B02F /* SDL_image.framework */; };
+		226E97750FFB9DD600A9A38E /* SDL_mixer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 225FD5250934EC1A00F0B02F /* SDL_mixer.framework */; };
+		226E977E0FFB9E2A00A9A38E /* rain.c in Sources */ = {isa = PBXBuildFile; fileRef = 226E96A50FFB981500A9A38E /* rain.c */; };
+		226E97810FFB9E4000A9A38E /* tp_magic_api.h in Headers */ = {isa = PBXBuildFile; fileRef = 22F4616E0CE41B6E00DB7761 /* tp_magic_api.h */; };
+		226E97850FFB9E4000A9A38E /* libintl.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2248FC390CDEF241004BC461 /* libintl.a */; };
+		226E97860FFB9E4000A9A38E /* SDL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 225FD5270934EC1A00F0B02F /* SDL.framework */; };
+		226E97870FFB9E4000A9A38E /* SDL_image.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 225FD5240934EC1A00F0B02F /* SDL_image.framework */; };
+		226E97880FFB9E4000A9A38E /* SDL_mixer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 225FD5250934EC1A00F0B02F /* SDL_mixer.framework */; };
+		226E97900FFB9E8A00A9A38E /* realrainbow.c in Sources */ = {isa = PBXBuildFile; fileRef = 226E96A60FFB981500A9A38E /* realrainbow.c */; };
+		226E97930FFB9E9600A9A38E /* tp_magic_api.h in Headers */ = {isa = PBXBuildFile; fileRef = 22F4616E0CE41B6E00DB7761 /* tp_magic_api.h */; };
+		226E97970FFB9E9600A9A38E /* libintl.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2248FC390CDEF241004BC461 /* libintl.a */; };
+		226E97980FFB9E9600A9A38E /* SDL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 225FD5270934EC1A00F0B02F /* SDL.framework */; };
+		226E97990FFB9E9600A9A38E /* SDL_image.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 225FD5240934EC1A00F0B02F /* SDL_image.framework */; };
+		226E979A0FFB9E9600A9A38E /* SDL_mixer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 225FD5250934EC1A00F0B02F /* SDL_mixer.framework */; };
+		226E97A20FFB9EE600A9A38E /* rosette.c in Sources */ = {isa = PBXBuildFile; fileRef = 226E96A70FFB981500A9A38E /* rosette.c */; };
+		226E97A50FFB9EEF00A9A38E /* tp_magic_api.h in Headers */ = {isa = PBXBuildFile; fileRef = 22F4616E0CE41B6E00DB7761 /* tp_magic_api.h */; };
+		226E97A90FFB9EEF00A9A38E /* libintl.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2248FC390CDEF241004BC461 /* libintl.a */; };
+		226E97AA0FFB9EEF00A9A38E /* SDL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 225FD5270934EC1A00F0B02F /* SDL.framework */; };
+		226E97AB0FFB9EEF00A9A38E /* SDL_image.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 225FD5240934EC1A00F0B02F /* SDL_image.framework */; };
+		226E97AC0FFB9EEF00A9A38E /* SDL_mixer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 225FD5250934EC1A00F0B02F /* SDL_mixer.framework */; };
+		226E97B40FFB9F3300A9A38E /* sharpen.c in Sources */ = {isa = PBXBuildFile; fileRef = 226E96A80FFB981500A9A38E /* sharpen.c */; };
+		226E97B70FFB9F4200A9A38E /* tp_magic_api.h in Headers */ = {isa = PBXBuildFile; fileRef = 22F4616E0CE41B6E00DB7761 /* tp_magic_api.h */; };
+		226E97BB0FFB9F4200A9A38E /* libintl.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2248FC390CDEF241004BC461 /* libintl.a */; };
+		226E97BC0FFB9F4200A9A38E /* SDL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 225FD5270934EC1A00F0B02F /* SDL.framework */; };
+		226E97BD0FFB9F4200A9A38E /* SDL_image.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 225FD5240934EC1A00F0B02F /* SDL_image.framework */; };
+		226E97BE0FFB9F4200A9A38E /* SDL_mixer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 225FD5250934EC1A00F0B02F /* SDL_mixer.framework */; };
+		226E97C70FFB9F8400A9A38E /* snow.c in Sources */ = {isa = PBXBuildFile; fileRef = 226E96A90FFB981500A9A38E /* snow.c */; };
+		226E97CA0FFB9F8E00A9A38E /* tp_magic_api.h in Headers */ = {isa = PBXBuildFile; fileRef = 22F4616E0CE41B6E00DB7761 /* tp_magic_api.h */; };
+		226E97CE0FFB9F8E00A9A38E /* libintl.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2248FC390CDEF241004BC461 /* libintl.a */; };
+		226E97CF0FFB9F8E00A9A38E /* SDL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 225FD5270934EC1A00F0B02F /* SDL.framework */; };
+		226E97D00FFB9F8E00A9A38E /* SDL_image.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 225FD5240934EC1A00F0B02F /* SDL_image.framework */; };
+		226E97D10FFB9F8E00A9A38E /* SDL_mixer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 225FD5250934EC1A00F0B02F /* SDL_mixer.framework */; };
+		226E97DB0FFB9FD100A9A38E /* string.c in Sources */ = {isa = PBXBuildFile; fileRef = 226E96AA0FFB981500A9A38E /* string.c */; };
+		226E97DE0FFB9FEE00A9A38E /* tp_magic_api.h in Headers */ = {isa = PBXBuildFile; fileRef = 22F4616E0CE41B6E00DB7761 /* tp_magic_api.h */; };
+		226E97E20FFB9FEE00A9A38E /* libintl.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2248FC390CDEF241004BC461 /* libintl.a */; };
+		226E97E30FFB9FEE00A9A38E /* SDL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 225FD5270934EC1A00F0B02F /* SDL.framework */; };
+		226E97E40FFB9FEE00A9A38E /* SDL_image.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 225FD5240934EC1A00F0B02F /* SDL_image.framework */; };
+		226E97E50FFB9FEE00A9A38E /* SDL_mixer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 225FD5250934EC1A00F0B02F /* SDL_mixer.framework */; };
+		226E97EF0FFBA03800A9A38E /* toothpaste.c in Sources */ = {isa = PBXBuildFile; fileRef = 226E96AB0FFB981500A9A38E /* toothpaste.c */; };
+		226E97F20FFBA04000A9A38E /* tp_magic_api.h in Headers */ = {isa = PBXBuildFile; fileRef = 22F4616E0CE41B6E00DB7761 /* tp_magic_api.h */; };
+		226E97F60FFBA04000A9A38E /* libintl.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2248FC390CDEF241004BC461 /* libintl.a */; };
+		226E97F70FFBA04000A9A38E /* SDL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 225FD5270934EC1A00F0B02F /* SDL.framework */; };
+		226E97F80FFBA04000A9A38E /* SDL_image.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 225FD5240934EC1A00F0B02F /* SDL_image.framework */; };
+		226E97F90FFBA04000A9A38E /* SDL_mixer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 225FD5250934EC1A00F0B02F /* SDL_mixer.framework */; };
+		226E98040FFBA08500A9A38E /* tornado.c in Sources */ = {isa = PBXBuildFile; fileRef = 226E96AC0FFB981500A9A38E /* tornado.c */; };
+		226E98070FFBA08F00A9A38E /* tp_magic_api.h in Headers */ = {isa = PBXBuildFile; fileRef = 22F4616E0CE41B6E00DB7761 /* tp_magic_api.h */; };
+		226E980B0FFBA08F00A9A38E /* libintl.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2248FC390CDEF241004BC461 /* libintl.a */; };
+		226E980C0FFBA08F00A9A38E /* SDL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 225FD5270934EC1A00F0B02F /* SDL.framework */; };
+		226E980D0FFBA08F00A9A38E /* SDL_image.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 225FD5240934EC1A00F0B02F /* SDL_image.framework */; };
+		226E980E0FFBA08F00A9A38E /* SDL_mixer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 225FD5250934EC1A00F0B02F /* SDL_mixer.framework */; };
+		226E98160FFBA10500A9A38E /* tp_magic_api.h in Headers */ = {isa = PBXBuildFile; fileRef = 22F4616E0CE41B6E00DB7761 /* tp_magic_api.h */; };
+		226E981A0FFBA10500A9A38E /* libintl.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2248FC390CDEF241004BC461 /* libintl.a */; };
+		226E981B0FFBA10500A9A38E /* SDL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 225FD5270934EC1A00F0B02F /* SDL.framework */; };
+		226E981C0FFBA10500A9A38E /* SDL_image.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 225FD5240934EC1A00F0B02F /* SDL_image.framework */; };
+		226E981D0FFBA10500A9A38E /* SDL_mixer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 225FD5250934EC1A00F0B02F /* SDL_mixer.framework */; };
+		226E98240FFBA14E00A9A38E /* tv.c in Sources */ = {isa = PBXBuildFile; fileRef = 226E96AD0FFB981500A9A38E /* tv.c */; };
+		226E98250FFBA15400A9A38E /* puzzle.c in Sources */ = {isa = PBXBuildFile; fileRef = 226E96A30FFB981500A9A38E /* puzzle.c */; };
+		226E987A0FFBA41C00A9A38E /* alien.so in Copy Magic Plugins */ = {isa = PBXBuildFile; fileRef = 226E96DE0FFB999A00A9A38E /* alien.so */; };
+		226E987B0FFBA41C00A9A38E /* blocks_chalk_drip.so in Copy Magic Plugins */ = {isa = PBXBuildFile; fileRef = 22ECE2AF0CEFE00200D390B3 /* blocks_chalk_drip.so */; };
+		226E987C0FFBA41C00A9A38E /* blur.so in Copy Magic Plugins */ = {isa = PBXBuildFile; fileRef = 22ECE3120CF0BC8F00D390B3 /* blur.so */; };
+		226E987D0FFBA41C00A9A38E /* bricks.so in Copy Magic Plugins */ = {isa = PBXBuildFile; fileRef = 22ECE3450CF0C4F100D390B3 /* bricks.so */; };
+		226E987E0FFBA41C00A9A38E /* calligraphy.so in Copy Magic Plugins */ = {isa = PBXBuildFile; fileRef = 22ECE35C0CF0C7EF00D390B3 /* calligraphy.so */; };
+		226E987F0FFBA41C00A9A38E /* cartoon.so in Copy Magic Plugins */ = {isa = PBXBuildFile; fileRef = 22ECE36F0CF0C81E00D390B3 /* cartoon.so */; };
+		226E98800FFBA41C00A9A38E /* confetti.so in Copy Magic Plugins */ = {isa = PBXBuildFile; fileRef = 226E96F30FFB9B3200A9A38E /* confetti.so */; };
+		226E98810FFBA41C00A9A38E /* distortion.so in Copy Magic Plugins */ = {isa = PBXBuildFile; fileRef = 22ECE4CB0CF0CDE200D390B3 /* distortion.so */; };
+		226E98820FFBA41C00A9A38E /* emboss.so in Copy Magic Plugins */ = {isa = PBXBuildFile; fileRef = 22ECE3810CF0C89300D390B3 /* emboss.so */; };
+		226E98830FFBA41C00A9A38E /* fade_darken.so in Copy Magic Plugins */ = {isa = PBXBuildFile; fileRef = 22ECE3960CF0C8E600D390B3 /* fade_darken.so */; };
+		226E98840FFBA41C00A9A38E /* fill.so in Copy Magic Plugins */ = {isa = PBXBuildFile; fileRef = 22ECE3A90CF0C90600D390B3 /* fill.so */; };
+		226E98850FFBA41C00A9A38E /* fisheye.so in Copy Magic Plugins */ = {isa = PBXBuildFile; fileRef = 226E97100FFB9BBD00A9A38E /* fisheye.so */; };
+		226E98860FFBA41C00A9A38E /* flower.so in Copy Magic Plugins */ = {isa = PBXBuildFile; fileRef = 22ECE3BC0CF0C9A300D390B3 /* flower.so */; };
+		226E98870FFBA41C00A9A38E /* foam.so in Copy Magic Plugins */ = {isa = PBXBuildFile; fileRef = 22ECE3F30CF0CBDC00D390B3 /* foam.so */; };
+		226E98880FFBA41C00A9A38E /* fold.so in Copy Magic Plugins */ = {isa = PBXBuildFile; fileRef = 226E97260FFB9C4E00A9A38E /* fold.so */; };
+		226E98890FFBA41C00A9A38E /* glasstile.so in Copy Magic Plugins */ = {isa = PBXBuildFile; fileRef = 22ECE4050CF0CC0200D390B3 /* glasstile.so */; };
+		226E988A0FFBA41C00A9A38E /* grass.so in Copy Magic Plugins */ = {isa = PBXBuildFile; fileRef = 22ECE4B90CF0CDA500D390B3 /* grass.so */; };
+		226E988B0FFBA41C00A9A38E /* kalidescope.so in Copy Magic Plugins */ = {isa = PBXBuildFile; fileRef = 22ECE4170CF0CC2500D390B3 /* kalidescope.so */; };
+		226E988C0FFBA41C00A9A38E /* light.so in Copy Magic Plugins */ = {isa = PBXBuildFile; fileRef = 22ECE4290CF0CC4C00D390B3 /* light.so */; };
+		226E988D0FFBA41C00A9A38E /* metalpaint.so in Copy Magic Plugins */ = {isa = PBXBuildFile; fileRef = 22ECE4DD0CF0CE4A00D390B3 /* metalpaint.so */; };
+		226E988E0FFBA41C00A9A38E /* mirror_flip.so in Copy Magic Plugins */ = {isa = PBXBuildFile; fileRef = 22ECE43B0CF0CC6B00D390B3 /* mirror_flip.so */; };
+		226E988F0FFBA41C00A9A38E /* mosaic.so in Copy Magic Plugins */ = {isa = PBXBuildFile; fileRef = 226E973A0FFB9CB500A9A38E /* mosaic.so */; };
+		226E98900FFBA41C00A9A38E /* negative.so in Copy Magic Plugins */ = {isa = PBXBuildFile; fileRef = 22ECE44D0CF0CCB400D390B3 /* negative.so */; };
+		226E98910FFBA41C00A9A38E /* noise.so in Copy Magic Plugins */ = {isa = PBXBuildFile; fileRef = 226E97540FFB9D3300A9A38E /* noise.so */; };
+		226E98920FFBA41C00A9A38E /* puzzle.so in Copy Magic Plugins */ = {isa = PBXBuildFile; fileRef = 226E98220FFBA10600A9A38E /* puzzle.so */; };
+		226E98930FFBA41C00A9A38E /* rails.so in Copy Magic Plugins */ = {isa = PBXBuildFile; fileRef = 226E976A0FFB9D9100A9A38E /* rails.so */; };
+		226E98940FFBA41C00A9A38E /* rain.so in Copy Magic Plugins */ = {isa = PBXBuildFile; fileRef = 226E977A0FFB9DD600A9A38E /* rain.so */; };
+		226E98950FFBA41C00A9A38E /* rainbow.so in Copy Magic Plugins */ = {isa = PBXBuildFile; fileRef = 22ECE45F0CF0CCDB00D390B3 /* rainbow.so */; };
+		226E98960FFBA41C00A9A38E /* realrainbow.so in Copy Magic Plugins */ = {isa = PBXBuildFile; fileRef = 226E978D0FFB9E4000A9A38E /* realrainbow.so */; };
+		226E98970FFBA41C00A9A38E /* ripples.so in Copy Magic Plugins */ = {isa = PBXBuildFile; fileRef = 22ECE4710CF0CD1500D390B3 /* ripples.so */; };
+		226E98980FFBA41C00A9A38E /* rosette.so in Copy Magic Plugins */ = {isa = PBXBuildFile; fileRef = 226E979F0FFB9E9600A9A38E /* rosette.so */; };
+		226E98990FFBA41C00A9A38E /* sharpen.so in Copy Magic Plugins */ = {isa = PBXBuildFile; fileRef = 226E97B10FFB9EEF00A9A38E /* sharpen.so */; };
+		226E989A0FFBA41C00A9A38E /* shift.so in Copy Magic Plugins */ = {isa = PBXBuildFile; fileRef = 22ECE4830CF0CD4000D390B3 /* shift.so */; };
+		226E989B0FFBA41C00A9A38E /* smudge.so in Copy Magic Plugins */ = {isa = PBXBuildFile; fileRef = 22ECE4950CF0CD6400D390B3 /* smudge.so */; };
+		226E989C0FFBA41C00A9A38E /* snow.so in Copy Magic Plugins */ = {isa = PBXBuildFile; fileRef = 226E97C30FFB9F4200A9A38E /* snow.so */; };
+		226E989D0FFBA41C00A9A38E /* string.so in Copy Magic Plugins */ = {isa = PBXBuildFile; fileRef = 226E97D60FFB9F8E00A9A38E /* string.so */; };
+		226E989E0FFBA41C00A9A38E /* tint.so in Copy Magic Plugins */ = {isa = PBXBuildFile; fileRef = 2248FCE30CE2CA54004BC461 /* tint.so */; };
+		226E989F0FFBA41C00A9A38E /* toothpaste.so in Copy Magic Plugins */ = {isa = PBXBuildFile; fileRef = 226E97EA0FFB9FEE00A9A38E /* toothpaste.so */; };
+		226E98A00FFBA41C00A9A38E /* tornado.so in Copy Magic Plugins */ = {isa = PBXBuildFile; fileRef = 226E97FE0FFBA04000A9A38E /* tornado.so */; };
+		226E98A10FFBA41C00A9A38E /* tv.so in Copy Magic Plugins */ = {isa = PBXBuildFile; fileRef = 226E98130FFBA08F00A9A38E /* tv.so */; };
+		226E98A20FFBA41C00A9A38E /* waves.so in Copy Magic Plugins */ = {isa = PBXBuildFile; fileRef = 22ECE4A70CF0CD8600D390B3 /* waves.so */; };
 		22710EE50AE5DEAD00FC7FCF /* AUTHORS.txt in Resources */ = {isa = PBXBuildFile; fileRef = 22710D420AE5DEAB00FC7FCF /* AUTHORS.txt */; };
 		22710F030AE5DEAD00FC7FCF /* CHANGES.txt in Resources */ = {isa = PBXBuildFile; fileRef = 22710D640AE5DEAB00FC7FCF /* CHANGES.txt */; };
 		22710F040AE5DEAD00FC7FCF /* COPYING.txt in Resources */ = {isa = PBXBuildFile; fileRef = 22710D650AE5DEAB00FC7FCF /* COPYING.txt */; };
@@ -214,30 +374,6 @@
 		22ECE4D70CF0CE4A00D390B3 /* SDL_image.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 225FD5240934EC1A00F0B02F /* SDL_image.framework */; };
 		22ECE4D80CF0CE4A00D390B3 /* SDL_mixer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 225FD5250934EC1A00F0B02F /* SDL_mixer.framework */; };
 		22ECE4E00CF0CE6900D390B3 /* metalpaint.c in Sources */ = {isa = PBXBuildFile; fileRef = 2248FC990CE2C707004BC461 /* metalpaint.c */; };
-		22ECE5770CF0D71200D390B3 /* blocks_chalk_drip.so in CopyFiles */ = {isa = PBXBuildFile; fileRef = 22ECE2AF0CEFE00200D390B3 /* blocks_chalk_drip.so */; };
-		22ECE5780CF0D71200D390B3 /* blur.so in CopyFiles */ = {isa = PBXBuildFile; fileRef = 22ECE3120CF0BC8F00D390B3 /* blur.so */; };
-		22ECE5790CF0D71200D390B3 /* bricks.so in CopyFiles */ = {isa = PBXBuildFile; fileRef = 22ECE3450CF0C4F100D390B3 /* bricks.so */; };
-		22ECE57A0CF0D71200D390B3 /* calligraphy.so in CopyFiles */ = {isa = PBXBuildFile; fileRef = 22ECE35C0CF0C7EF00D390B3 /* calligraphy.so */; };
-		22ECE57B0CF0D71200D390B3 /* cartoon.so in CopyFiles */ = {isa = PBXBuildFile; fileRef = 22ECE36F0CF0C81E00D390B3 /* cartoon.so */; };
-		22ECE57C0CF0D71200D390B3 /* distortion.so in CopyFiles */ = {isa = PBXBuildFile; fileRef = 22ECE4CB0CF0CDE200D390B3 /* distortion.so */; };
-		22ECE57D0CF0D71200D390B3 /* emboss.so in CopyFiles */ = {isa = PBXBuildFile; fileRef = 22ECE3810CF0C89300D390B3 /* emboss.so */; };
-		22ECE57E0CF0D71200D390B3 /* fade_darken.so in CopyFiles */ = {isa = PBXBuildFile; fileRef = 22ECE3960CF0C8E600D390B3 /* fade_darken.so */; };
-		22ECE57F0CF0D71200D390B3 /* fill.so in CopyFiles */ = {isa = PBXBuildFile; fileRef = 22ECE3A90CF0C90600D390B3 /* fill.so */; };
-		22ECE5800CF0D71200D390B3 /* flower.so in CopyFiles */ = {isa = PBXBuildFile; fileRef = 22ECE3BC0CF0C9A300D390B3 /* flower.so */; };
-		22ECE5810CF0D71200D390B3 /* foam.so in CopyFiles */ = {isa = PBXBuildFile; fileRef = 22ECE3F30CF0CBDC00D390B3 /* foam.so */; };
-		22ECE5820CF0D71200D390B3 /* glasstile.so in CopyFiles */ = {isa = PBXBuildFile; fileRef = 22ECE4050CF0CC0200D390B3 /* glasstile.so */; };
-		22ECE5830CF0D71200D390B3 /* grass.so in CopyFiles */ = {isa = PBXBuildFile; fileRef = 22ECE4B90CF0CDA500D390B3 /* grass.so */; };
-		22ECE5840CF0D71200D390B3 /* kalidescope.so in CopyFiles */ = {isa = PBXBuildFile; fileRef = 22ECE4170CF0CC2500D390B3 /* kalidescope.so */; };
-		22ECE5850CF0D71200D390B3 /* light.so in CopyFiles */ = {isa = PBXBuildFile; fileRef = 22ECE4290CF0CC4C00D390B3 /* light.so */; };
-		22ECE5860CF0D71200D390B3 /* metalpaint.so in CopyFiles */ = {isa = PBXBuildFile; fileRef = 22ECE4DD0CF0CE4A00D390B3 /* metalpaint.so */; };
-		22ECE5870CF0D71200D390B3 /* mirror_flip.so in CopyFiles */ = {isa = PBXBuildFile; fileRef = 22ECE43B0CF0CC6B00D390B3 /* mirror_flip.so */; };
-		22ECE5880CF0D71200D390B3 /* negative.so in CopyFiles */ = {isa = PBXBuildFile; fileRef = 22ECE44D0CF0CCB400D390B3 /* negative.so */; };
-		22ECE5890CF0D71200D390B3 /* rainbow.so in CopyFiles */ = {isa = PBXBuildFile; fileRef = 22ECE45F0CF0CCDB00D390B3 /* rainbow.so */; };
-		22ECE58A0CF0D71200D390B3 /* ripples.so in CopyFiles */ = {isa = PBXBuildFile; fileRef = 22ECE4710CF0CD1500D390B3 /* ripples.so */; };
-		22ECE58B0CF0D71200D390B3 /* shift.so in CopyFiles */ = {isa = PBXBuildFile; fileRef = 22ECE4830CF0CD4000D390B3 /* shift.so */; };
-		22ECE58C0CF0D71200D390B3 /* smudge.so in CopyFiles */ = {isa = PBXBuildFile; fileRef = 22ECE4950CF0CD6400D390B3 /* smudge.so */; };
-		22ECE58D0CF0D71200D390B3 /* waves.so in CopyFiles */ = {isa = PBXBuildFile; fileRef = 22ECE4A70CF0CD8600D390B3 /* waves.so */; };
-		22ECE58E0CF0D71200D390B3 /* tint.so in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2248FCE30CE2CA54004BC461 /* tint.so */; };
 		22F3EC9F0D5682620068DFB4 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22F3EC9E0D5682620068DFB4 /* Security.framework */; };
 		22F4616F0CE41B6E00DB7761 /* tp_magic_api.h in Headers */ = {isa = PBXBuildFile; fileRef = 22F4616E0CE41B6E00DB7761 /* tp_magic_api.h */; };
 		22F461770CE41CDE00DB7761 /* libintl.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2248FC390CDEF241004BC461 /* libintl.a */; };
@@ -273,186 +409,296 @@
 /* End PBXBuildRule section */
 
 /* Begin PBXContainerItemProxy section */
-		22ECE4E10CF0CEF900D390B3 /* PBXContainerItemProxy */ = {
+		226E98260FFBA24900A9A38E /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 29B97313FDCFA39411CA2CEA /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 22ECE4990CF0CD8600D390B3;
 			remoteInfo = waves;
 		};
-		22ECE4E30CF0CEF900D390B3 /* PBXContainerItemProxy */ = {
+		226E98280FFBA24900A9A38E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 29B97313FDCFA39411CA2CEA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 226E98050FFBA08F00A9A38E;
+			remoteInfo = tv;
+		};
+		226E982A0FFBA24900A9A38E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 29B97313FDCFA39411CA2CEA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 226E97F00FFBA04000A9A38E;
+			remoteInfo = tornado;
+		};
+		226E982C0FFBA24A00A9A38E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 29B97313FDCFA39411CA2CEA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 226E97DC0FFB9FEE00A9A38E;
+			remoteInfo = toothpaste;
+		};
+		226E982E0FFBA24A00A9A38E /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 29B97313FDCFA39411CA2CEA /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 2248FC700CE2C385004BC461;
 			remoteInfo = tint;
 		};
-		22ECE4E50CF0CEF900D390B3 /* PBXContainerItemProxy */ = {
+		226E98300FFBA24A00A9A38E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 29B97313FDCFA39411CA2CEA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 226E97C80FFB9F8E00A9A38E;
+			remoteInfo = string;
+		};
+		226E98320FFBA24A00A9A38E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 29B97313FDCFA39411CA2CEA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 226E97B50FFB9F4200A9A38E;
+			remoteInfo = snow;
+		};
+		226E98340FFBA24A00A9A38E /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 29B97313FDCFA39411CA2CEA /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 22ECE4870CF0CD6400D390B3;
 			remoteInfo = smudge;
 		};
-		22ECE4E70CF0CEF900D390B3 /* PBXContainerItemProxy */ = {
+		226E98360FFBA24A00A9A38E /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 29B97313FDCFA39411CA2CEA /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 22ECE4750CF0CD4000D390B3;
 			remoteInfo = shift;
 		};
-		22ECE4E90CF0CEF900D390B3 /* PBXContainerItemProxy */ = {
+		226E98380FFBA24A00A9A38E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 29B97313FDCFA39411CA2CEA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 226E97A30FFB9EEF00A9A38E;
+			remoteInfo = sharpen;
+		};
+		226E983A0FFBA24A00A9A38E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 29B97313FDCFA39411CA2CEA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 226E97910FFB9E9600A9A38E;
+			remoteInfo = rosette;
+		};
+		226E983C0FFBA24A00A9A38E /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 29B97313FDCFA39411CA2CEA /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 22ECE4630CF0CD1500D390B3;
 			remoteInfo = ripples;
 		};
-		22ECE4EB0CF0CEF900D390B3 /* PBXContainerItemProxy */ = {
+		226E983E0FFBA24A00A9A38E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 29B97313FDCFA39411CA2CEA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 226E977F0FFB9E4000A9A38E;
+			remoteInfo = realrainbow;
+		};
+		226E98400FFBA24A00A9A38E /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 29B97313FDCFA39411CA2CEA /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 22ECE4510CF0CCDB00D390B3;
 			remoteInfo = rainbow;
 		};
-		22ECE4ED0CF0CEF900D390B3 /* PBXContainerItemProxy */ = {
+		226E98420FFBA24A00A9A38E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 29B97313FDCFA39411CA2CEA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 226E976C0FFB9DD600A9A38E;
+			remoteInfo = rain;
+		};
+		226E98440FFBA24A00A9A38E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 29B97313FDCFA39411CA2CEA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 226E975C0FFB9D9100A9A38E;
+			remoteInfo = rails;
+		};
+		226E98460FFBA24A00A9A38E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 29B97313FDCFA39411CA2CEA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 226E98140FFBA10500A9A38E;
+			remoteInfo = puzzle;
+		};
+		226E98480FFBA24A00A9A38E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 29B97313FDCFA39411CA2CEA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 226E97460FFB9D3300A9A38E;
+			remoteInfo = noise;
+		};
+		226E984A0FFBA24A00A9A38E /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 29B97313FDCFA39411CA2CEA /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 22ECE43F0CF0CCB400D390B3;
 			remoteInfo = negative;
 		};
-		22ECE4EF0CF0CEF900D390B3 /* PBXContainerItemProxy */ = {
+		226E984C0FFBA24A00A9A38E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 29B97313FDCFA39411CA2CEA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 226E972C0FFB9CB500A9A38E;
+			remoteInfo = mosaic;
+		};
+		226E984E0FFBA24A00A9A38E /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 29B97313FDCFA39411CA2CEA /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 22ECE42D0CF0CC6B00D390B3;
 			remoteInfo = mirror_flip;
 		};
-		22ECE4F10CF0CEF900D390B3 /* PBXContainerItemProxy */ = {
+		226E98500FFBA24A00A9A38E /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 29B97313FDCFA39411CA2CEA /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 22ECE4CF0CF0CE4A00D390B3;
 			remoteInfo = metalpaint;
 		};
-		22ECE4F30CF0CEFA00D390B3 /* PBXContainerItemProxy */ = {
+		226E98520FFBA24A00A9A38E /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 29B97313FDCFA39411CA2CEA /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 22ECE41B0CF0CC4C00D390B3;
 			remoteInfo = light;
 		};
-		22ECE4F50CF0CEFA00D390B3 /* PBXContainerItemProxy */ = {
+		226E98540FFBA24A00A9A38E /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 29B97313FDCFA39411CA2CEA /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 22ECE4090CF0CC2500D390B3;
 			remoteInfo = kalidescope;
 		};
-		22ECE4F70CF0CEFA00D390B3 /* PBXContainerItemProxy */ = {
+		226E98560FFBA24A00A9A38E /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 29B97313FDCFA39411CA2CEA /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 22ECE4AB0CF0CDA500D390B3;
 			remoteInfo = grass;
 		};
-		22ECE4F90CF0CEFA00D390B3 /* PBXContainerItemProxy */ = {
+		226E98580FFBA24A00A9A38E /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 29B97313FDCFA39411CA2CEA /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 22ECE3F70CF0CC0100D390B3;
 			remoteInfo = glasstile;
 		};
-		22ECE4FB0CF0CEFA00D390B3 /* PBXContainerItemProxy */ = {
+		226E985A0FFBA24A00A9A38E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 29B97313FDCFA39411CA2CEA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 226E97180FFB9C4E00A9A38E;
+			remoteInfo = fold;
+		};
+		226E985C0FFBA24A00A9A38E /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 29B97313FDCFA39411CA2CEA /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 22ECE3E50CF0CBDC00D390B3;
 			remoteInfo = foam;
 		};
-		22ECE4FD0CF0CEFA00D390B3 /* PBXContainerItemProxy */ = {
+		226E985E0FFBA24A00A9A38E /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 29B97313FDCFA39411CA2CEA /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 22ECE3AE0CF0C9A300D390B3;
 			remoteInfo = flower;
 		};
-		22ECE4FF0CF0CEFA00D390B3 /* PBXContainerItemProxy */ = {
+		226E98600FFBA24A00A9A38E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 29B97313FDCFA39411CA2CEA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 226E97020FFB9BBD00A9A38E;
+			remoteInfo = fisheye;
+		};
+		226E98620FFBA24A00A9A38E /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 29B97313FDCFA39411CA2CEA /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 22ECE39B0CF0C90600D390B3;
 			remoteInfo = fill;
 		};
-		22ECE5010CF0CEFA00D390B3 /* PBXContainerItemProxy */ = {
+		226E98640FFBA24A00A9A38E /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 29B97313FDCFA39411CA2CEA /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 22ECE3880CF0C8E600D390B3;
 			remoteInfo = fade_darken;
 		};
-		22ECE5030CF0CEFA00D390B3 /* PBXContainerItemProxy */ = {
+		226E98660FFBA24A00A9A38E /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 29B97313FDCFA39411CA2CEA /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 22ECE3730CF0C89300D390B3;
 			remoteInfo = emboss;
 		};
-		22ECE5050CF0CEFA00D390B3 /* PBXContainerItemProxy */ = {
+		226E98680FFBA24A00A9A38E /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 29B97313FDCFA39411CA2CEA /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 22ECE4BD0CF0CDE200D390B3;
 			remoteInfo = distortion;
 		};
-		22ECE5070CF0CEFA00D390B3 /* PBXContainerItemProxy */ = {
+		226E986A0FFBA24A00A9A38E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 29B97313FDCFA39411CA2CEA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 226E96E50FFB9B3200A9A38E;
+			remoteInfo = confetti;
+		};
+		226E986C0FFBA24A00A9A38E /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 29B97313FDCFA39411CA2CEA /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 22ECE3610CF0C81E00D390B3;
 			remoteInfo = cartoon;
 		};
-		22ECE5090CF0CEFA00D390B3 /* PBXContainerItemProxy */ = {
+		226E986E0FFBA24A00A9A38E /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 29B97313FDCFA39411CA2CEA /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 22ECE34E0CF0C7EF00D390B3;
 			remoteInfo = calligraphy;
 		};
-		22ECE50B0CF0CEFA00D390B3 /* PBXContainerItemProxy */ = {
+		226E98700FFBA24A00A9A38E /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 29B97313FDCFA39411CA2CEA /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 22ECE3370CF0C4F100D390B3;
 			remoteInfo = bricks;
 		};
-		22ECE50D0CF0CEFA00D390B3 /* PBXContainerItemProxy */ = {
+		226E98720FFBA24A00A9A38E /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 29B97313FDCFA39411CA2CEA /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 22ECE3110CF0BC8F00D390B3;
 			remoteInfo = blur;
 		};
-		22ECE50F0CF0CEFA00D390B3 /* PBXContainerItemProxy */ = {
+		226E98740FFBA24A00A9A38E /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 29B97313FDCFA39411CA2CEA /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 22ECE2AE0CEFE00200D390B3;
 			remoteInfo = blocks_chalk_drip;
 		};
+		226E98760FFBA24A00A9A38E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 29B97313FDCFA39411CA2CEA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 226E96CF0FFB999A00A9A38E;
+			remoteInfo = alien;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		22A0082D0D653729008B70C7 /* CopyFiles */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 7;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		22D5D2A80738498300B67229 /* Copy Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -467,46 +713,55 @@
 			name = "Copy Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		22ECE5730CF0D6F000D390B3 /* CopyFiles */ = {
+		22ECE5730CF0D6F000D390B3 /* Copy Magic Plugins */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = plugins;
 			dstSubfolderSpec = 7;
 			files = (
-				22ECE5770CF0D71200D390B3 /* blocks_chalk_drip.so in CopyFiles */,
-				22ECE5780CF0D71200D390B3 /* blur.so in CopyFiles */,
-				22ECE5790CF0D71200D390B3 /* bricks.so in CopyFiles */,
-				22ECE57A0CF0D71200D390B3 /* calligraphy.so in CopyFiles */,
-				22ECE57B0CF0D71200D390B3 /* cartoon.so in CopyFiles */,
-				22ECE57C0CF0D71200D390B3 /* distortion.so in CopyFiles */,
-				22ECE57D0CF0D71200D390B3 /* emboss.so in CopyFiles */,
-				22ECE57E0CF0D71200D390B3 /* fade_darken.so in CopyFiles */,
-				22ECE57F0CF0D71200D390B3 /* fill.so in CopyFiles */,
-				22ECE5800CF0D71200D390B3 /* flower.so in CopyFiles */,
-				22ECE5810CF0D71200D390B3 /* foam.so in CopyFiles */,
-				22ECE5820CF0D71200D390B3 /* glasstile.so in CopyFiles */,
-				22ECE5830CF0D71200D390B3 /* grass.so in CopyFiles */,
-				22ECE5840CF0D71200D390B3 /* kalidescope.so in CopyFiles */,
-				22ECE5850CF0D71200D390B3 /* light.so in CopyFiles */,
-				22ECE5860CF0D71200D390B3 /* metalpaint.so in CopyFiles */,
-				22ECE5870CF0D71200D390B3 /* mirror_flip.so in CopyFiles */,
-				22ECE5880CF0D71200D390B3 /* negative.so in CopyFiles */,
-				22ECE5890CF0D71200D390B3 /* rainbow.so in CopyFiles */,
-				22ECE58A0CF0D71200D390B3 /* ripples.so in CopyFiles */,
-				22ECE58B0CF0D71200D390B3 /* shift.so in CopyFiles */,
-				22ECE58C0CF0D71200D390B3 /* smudge.so in CopyFiles */,
-				22ECE58D0CF0D71200D390B3 /* waves.so in CopyFiles */,
-				22ECE58E0CF0D71200D390B3 /* tint.so in CopyFiles */,
+				226E987A0FFBA41C00A9A38E /* alien.so in Copy Magic Plugins */,
+				226E987B0FFBA41C00A9A38E /* blocks_chalk_drip.so in Copy Magic Plugins */,
+				226E987C0FFBA41C00A9A38E /* blur.so in Copy Magic Plugins */,
+				226E987D0FFBA41C00A9A38E /* bricks.so in Copy Magic Plugins */,
+				226E987E0FFBA41C00A9A38E /* calligraphy.so in Copy Magic Plugins */,
+				226E987F0FFBA41C00A9A38E /* cartoon.so in Copy Magic Plugins */,
+				226E98800FFBA41C00A9A38E /* confetti.so in Copy Magic Plugins */,
+				226E98810FFBA41C00A9A38E /* distortion.so in Copy Magic Plugins */,
+				226E98820FFBA41C00A9A38E /* emboss.so in Copy Magic Plugins */,
+				226E98830FFBA41C00A9A38E /* fade_darken.so in Copy Magic Plugins */,
+				226E98840FFBA41C00A9A38E /* fill.so in Copy Magic Plugins */,
+				226E98850FFBA41C00A9A38E /* fisheye.so in Copy Magic Plugins */,
+				226E98860FFBA41C00A9A38E /* flower.so in Copy Magic Plugins */,
+				226E98870FFBA41C00A9A38E /* foam.so in Copy Magic Plugins */,
+				226E98880FFBA41C00A9A38E /* fold.so in Copy Magic Plugins */,
+				226E98890FFBA41C00A9A38E /* glasstile.so in Copy Magic Plugins */,
+				226E988A0FFBA41C00A9A38E /* grass.so in Copy Magic Plugins */,
+				226E988B0FFBA41C00A9A38E /* kalidescope.so in Copy Magic Plugins */,
+				226E988C0FFBA41C00A9A38E /* light.so in Copy Magic Plugins */,
+				226E988D0FFBA41C00A9A38E /* metalpaint.so in Copy Magic Plugins */,
+				226E988E0FFBA41C00A9A38E /* mirror_flip.so in Copy Magic Plugins */,
+				226E988F0FFBA41C00A9A38E /* mosaic.so in Copy Magic Plugins */,
+				226E98900FFBA41C00A9A38E /* negative.so in Copy Magic Plugins */,
+				226E98910FFBA41C00A9A38E /* noise.so in Copy Magic Plugins */,
+				226E98920FFBA41C00A9A38E /* puzzle.so in Copy Magic Plugins */,
+				226E98930FFBA41C00A9A38E /* rails.so in Copy Magic Plugins */,
+				226E98940FFBA41C00A9A38E /* rain.so in Copy Magic Plugins */,
+				226E98950FFBA41C00A9A38E /* rainbow.so in Copy Magic Plugins */,
+				226E98960FFBA41C00A9A38E /* realrainbow.so in Copy Magic Plugins */,
+				226E98970FFBA41C00A9A38E /* ripples.so in Copy Magic Plugins */,
+				226E98980FFBA41C00A9A38E /* rosette.so in Copy Magic Plugins */,
+				226E98990FFBA41C00A9A38E /* sharpen.so in Copy Magic Plugins */,
+				226E989A0FFBA41C00A9A38E /* shift.so in Copy Magic Plugins */,
+				226E989B0FFBA41C00A9A38E /* smudge.so in Copy Magic Plugins */,
+				226E989C0FFBA41C00A9A38E /* snow.so in Copy Magic Plugins */,
+				226E989D0FFBA41C00A9A38E /* string.so in Copy Magic Plugins */,
+				226E989E0FFBA41C00A9A38E /* tint.so in Copy Magic Plugins */,
+				226E989F0FFBA41C00A9A38E /* toothpaste.so in Copy Magic Plugins */,
+				226E98A00FFBA41C00A9A38E /* tornado.so in Copy Magic Plugins */,
+				226E98A10FFBA41C00A9A38E /* tv.so in Copy Magic Plugins */,
+				226E98A20FFBA41C00A9A38E /* waves.so in Copy Magic Plugins */,
 			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		22F3ECD10D5691BD0068DFB4 /* CopyFiles */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 6;
-			files = (
-			);
+			name = "Copy Magic Plugins";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
@@ -592,6 +847,40 @@
 		225FD5250934EC1A00F0B02F /* SDL_mixer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDL_mixer.framework; path = /Library/Frameworks/SDL_mixer.framework; sourceTree = "<absolute>"; };
 		225FD5270934EC1A00F0B02F /* SDL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDL.framework; path = /Library/Frameworks/SDL.framework; sourceTree = "<absolute>"; };
 		225FED8E093ACC0A00F0B02F /* html */ = {isa = PBXFileReference; lastKnownFileType = folder; path = html; sourceTree = "<group>"; };
+		226E969D0FFB981500A9A38E /* alien.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = alien.c; path = ../magic/src/alien.c; sourceTree = SOURCE_ROOT; };
+		226E969E0FFB981500A9A38E /* confetti.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = confetti.c; path = ../magic/src/confetti.c; sourceTree = SOURCE_ROOT; };
+		226E969F0FFB981500A9A38E /* fisheye.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = fisheye.c; path = ../magic/src/fisheye.c; sourceTree = SOURCE_ROOT; };
+		226E96A00FFB981500A9A38E /* fold.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = fold.c; path = ../magic/src/fold.c; sourceTree = SOURCE_ROOT; };
+		226E96A10FFB981500A9A38E /* mosaic.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = mosaic.c; path = ../magic/src/mosaic.c; sourceTree = SOURCE_ROOT; };
+		226E96A20FFB981500A9A38E /* noise.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = noise.c; path = ../magic/src/noise.c; sourceTree = SOURCE_ROOT; };
+		226E96A30FFB981500A9A38E /* puzzle.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = puzzle.c; path = ../magic/src/puzzle.c; sourceTree = SOURCE_ROOT; };
+		226E96A40FFB981500A9A38E /* rails.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = rails.c; path = ../magic/src/rails.c; sourceTree = SOURCE_ROOT; };
+		226E96A50FFB981500A9A38E /* rain.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = rain.c; path = ../magic/src/rain.c; sourceTree = SOURCE_ROOT; };
+		226E96A60FFB981500A9A38E /* realrainbow.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = realrainbow.c; path = ../magic/src/realrainbow.c; sourceTree = SOURCE_ROOT; };
+		226E96A70FFB981500A9A38E /* rosette.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = rosette.c; path = ../magic/src/rosette.c; sourceTree = SOURCE_ROOT; };
+		226E96A80FFB981500A9A38E /* sharpen.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = sharpen.c; path = ../magic/src/sharpen.c; sourceTree = SOURCE_ROOT; };
+		226E96A90FFB981500A9A38E /* snow.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = snow.c; path = ../magic/src/snow.c; sourceTree = SOURCE_ROOT; };
+		226E96AA0FFB981500A9A38E /* string.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = string.c; path = ../magic/src/string.c; sourceTree = SOURCE_ROOT; };
+		226E96AB0FFB981500A9A38E /* toothpaste.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = toothpaste.c; path = ../magic/src/toothpaste.c; sourceTree = SOURCE_ROOT; };
+		226E96AC0FFB981500A9A38E /* tornado.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = tornado.c; path = ../magic/src/tornado.c; sourceTree = SOURCE_ROOT; };
+		226E96AD0FFB981500A9A38E /* tv.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = tv.c; path = ../magic/src/tv.c; sourceTree = SOURCE_ROOT; };
+		226E96DE0FFB999A00A9A38E /* alien.so */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = alien.so; sourceTree = BUILT_PRODUCTS_DIR; };
+		226E96F30FFB9B3200A9A38E /* confetti.so */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = confetti.so; sourceTree = BUILT_PRODUCTS_DIR; };
+		226E97100FFB9BBD00A9A38E /* fisheye.so */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = fisheye.so; sourceTree = BUILT_PRODUCTS_DIR; };
+		226E97260FFB9C4E00A9A38E /* fold.so */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = fold.so; sourceTree = BUILT_PRODUCTS_DIR; };
+		226E973A0FFB9CB500A9A38E /* mosaic.so */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = mosaic.so; sourceTree = BUILT_PRODUCTS_DIR; };
+		226E97540FFB9D3300A9A38E /* noise.so */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = noise.so; sourceTree = BUILT_PRODUCTS_DIR; };
+		226E976A0FFB9D9100A9A38E /* rails.so */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = rails.so; sourceTree = BUILT_PRODUCTS_DIR; };
+		226E977A0FFB9DD600A9A38E /* rain.so */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = rain.so; sourceTree = BUILT_PRODUCTS_DIR; };
+		226E978D0FFB9E4000A9A38E /* realrainbow.so */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = realrainbow.so; sourceTree = BUILT_PRODUCTS_DIR; };
+		226E979F0FFB9E9600A9A38E /* rosette.so */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = rosette.so; sourceTree = BUILT_PRODUCTS_DIR; };
+		226E97B10FFB9EEF00A9A38E /* sharpen.so */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = sharpen.so; sourceTree = BUILT_PRODUCTS_DIR; };
+		226E97C30FFB9F4200A9A38E /* snow.so */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = snow.so; sourceTree = BUILT_PRODUCTS_DIR; };
+		226E97D60FFB9F8E00A9A38E /* string.so */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = string.so; sourceTree = BUILT_PRODUCTS_DIR; };
+		226E97EA0FFB9FEE00A9A38E /* toothpaste.so */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = toothpaste.so; sourceTree = BUILT_PRODUCTS_DIR; };
+		226E97FE0FFBA04000A9A38E /* tornado.so */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = tornado.so; sourceTree = BUILT_PRODUCTS_DIR; };
+		226E98130FFBA08F00A9A38E /* tv.so */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = tv.so; sourceTree = BUILT_PRODUCTS_DIR; };
+		226E98220FFBA10600A9A38E /* puzzle.so */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = puzzle.so; sourceTree = BUILT_PRODUCTS_DIR; };
 		22710D420AE5DEAB00FC7FCF /* AUTHORS.txt */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text; name = AUTHORS.txt; path = ../docs/AUTHORS.txt; sourceTree = SOURCE_ROOT; };
 		22710D640AE5DEAB00FC7FCF /* CHANGES.txt */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text; name = CHANGES.txt; path = ../docs/CHANGES.txt; sourceTree = SOURCE_ROOT; };
 		22710D650AE5DEAB00FC7FCF /* COPYING.txt */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text; name = COPYING.txt; path = ../docs/COPYING.txt; sourceTree = SOURCE_ROOT; };
@@ -663,6 +952,193 @@
 				2248FCA10CE2C7CB004BC461 /* SDL.framework in Frameworks */,
 				2248FCD10CE2C7E1004BC461 /* SDL_mixer.framework in Frameworks */,
 				22F461770CE41CDE00DB7761 /* libintl.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		226E96D50FFB999A00A9A38E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				226E96D60FFB999A00A9A38E /* libintl.a in Frameworks */,
+				226E96D70FFB999A00A9A38E /* SDL_image.framework in Frameworks */,
+				226E96D80FFB999A00A9A38E /* SDL_mixer.framework in Frameworks */,
+				226E96D90FFB999A00A9A38E /* SDL.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		226E96EA0FFB9B3200A9A38E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				226E96EB0FFB9B3200A9A38E /* libintl.a in Frameworks */,
+				226E96EC0FFB9B3200A9A38E /* SDL.framework in Frameworks */,
+				226E96ED0FFB9B3200A9A38E /* SDL_image.framework in Frameworks */,
+				226E96EE0FFB9B3200A9A38E /* SDL_mixer.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		226E97070FFB9BBD00A9A38E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				226E97080FFB9BBD00A9A38E /* libintl.a in Frameworks */,
+				226E97090FFB9BBD00A9A38E /* SDL.framework in Frameworks */,
+				226E970A0FFB9BBD00A9A38E /* SDL_image.framework in Frameworks */,
+				226E970B0FFB9BBD00A9A38E /* SDL_mixer.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		226E971D0FFB9C4E00A9A38E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				226E971E0FFB9C4E00A9A38E /* libintl.a in Frameworks */,
+				226E971F0FFB9C4E00A9A38E /* SDL.framework in Frameworks */,
+				226E97200FFB9C4E00A9A38E /* SDL_image.framework in Frameworks */,
+				226E97210FFB9C4E00A9A38E /* SDL_mixer.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		226E97310FFB9CB500A9A38E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				226E97320FFB9CB500A9A38E /* libintl.a in Frameworks */,
+				226E97330FFB9CB500A9A38E /* SDL.framework in Frameworks */,
+				226E97340FFB9CB500A9A38E /* SDL_image.framework in Frameworks */,
+				226E97350FFB9CB500A9A38E /* SDL_mixer.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		226E974B0FFB9D3300A9A38E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				226E974C0FFB9D3300A9A38E /* libintl.a in Frameworks */,
+				226E974D0FFB9D3300A9A38E /* SDL.framework in Frameworks */,
+				226E974E0FFB9D3300A9A38E /* SDL_image.framework in Frameworks */,
+				226E974F0FFB9D3300A9A38E /* SDL_mixer.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		226E97610FFB9D9100A9A38E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				226E97620FFB9D9100A9A38E /* libintl.a in Frameworks */,
+				226E97630FFB9D9100A9A38E /* SDL.framework in Frameworks */,
+				226E97640FFB9D9100A9A38E /* SDL_image.framework in Frameworks */,
+				226E97650FFB9D9100A9A38E /* SDL_mixer.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		226E97710FFB9DD600A9A38E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				226E97720FFB9DD600A9A38E /* libintl.a in Frameworks */,
+				226E97730FFB9DD600A9A38E /* SDL.framework in Frameworks */,
+				226E97740FFB9DD600A9A38E /* SDL_image.framework in Frameworks */,
+				226E97750FFB9DD600A9A38E /* SDL_mixer.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		226E97840FFB9E4000A9A38E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				226E97850FFB9E4000A9A38E /* libintl.a in Frameworks */,
+				226E97860FFB9E4000A9A38E /* SDL.framework in Frameworks */,
+				226E97870FFB9E4000A9A38E /* SDL_image.framework in Frameworks */,
+				226E97880FFB9E4000A9A38E /* SDL_mixer.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		226E97960FFB9E9600A9A38E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				226E97970FFB9E9600A9A38E /* libintl.a in Frameworks */,
+				226E97980FFB9E9600A9A38E /* SDL.framework in Frameworks */,
+				226E97990FFB9E9600A9A38E /* SDL_image.framework in Frameworks */,
+				226E979A0FFB9E9600A9A38E /* SDL_mixer.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		226E97A80FFB9EEF00A9A38E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				226E97A90FFB9EEF00A9A38E /* libintl.a in Frameworks */,
+				226E97AA0FFB9EEF00A9A38E /* SDL.framework in Frameworks */,
+				226E97AB0FFB9EEF00A9A38E /* SDL_image.framework in Frameworks */,
+				226E97AC0FFB9EEF00A9A38E /* SDL_mixer.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		226E97BA0FFB9F4200A9A38E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				226E97BB0FFB9F4200A9A38E /* libintl.a in Frameworks */,
+				226E97BC0FFB9F4200A9A38E /* SDL.framework in Frameworks */,
+				226E97BD0FFB9F4200A9A38E /* SDL_image.framework in Frameworks */,
+				226E97BE0FFB9F4200A9A38E /* SDL_mixer.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		226E97CD0FFB9F8E00A9A38E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				226E97CE0FFB9F8E00A9A38E /* libintl.a in Frameworks */,
+				226E97CF0FFB9F8E00A9A38E /* SDL.framework in Frameworks */,
+				226E97D00FFB9F8E00A9A38E /* SDL_image.framework in Frameworks */,
+				226E97D10FFB9F8E00A9A38E /* SDL_mixer.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		226E97E10FFB9FEE00A9A38E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				226E97E20FFB9FEE00A9A38E /* libintl.a in Frameworks */,
+				226E97E30FFB9FEE00A9A38E /* SDL.framework in Frameworks */,
+				226E97E40FFB9FEE00A9A38E /* SDL_image.framework in Frameworks */,
+				226E97E50FFB9FEE00A9A38E /* SDL_mixer.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		226E97F50FFBA04000A9A38E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				226E97F60FFBA04000A9A38E /* libintl.a in Frameworks */,
+				226E97F70FFBA04000A9A38E /* SDL.framework in Frameworks */,
+				226E97F80FFBA04000A9A38E /* SDL_image.framework in Frameworks */,
+				226E97F90FFBA04000A9A38E /* SDL_mixer.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		226E980A0FFBA08F00A9A38E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				226E980B0FFBA08F00A9A38E /* libintl.a in Frameworks */,
+				226E980C0FFBA08F00A9A38E /* SDL.framework in Frameworks */,
+				226E980D0FFBA08F00A9A38E /* SDL_image.framework in Frameworks */,
+				226E980E0FFBA08F00A9A38E /* SDL_mixer.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		226E98190FFBA10500A9A38E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				226E981A0FFBA10500A9A38E /* libintl.a in Frameworks */,
+				226E981B0FFBA10500A9A38E /* SDL.framework in Frameworks */,
+				226E981C0FFBA10500A9A38E /* SDL_image.framework in Frameworks */,
+				226E981D0FFBA10500A9A38E /* SDL_mixer.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1002,6 +1478,23 @@
 		2248FC820CE2C64E004BC461 /* Magic */ = {
 			isa = PBXGroup;
 			children = (
+				226E969D0FFB981500A9A38E /* alien.c */,
+				226E969E0FFB981500A9A38E /* confetti.c */,
+				226E969F0FFB981500A9A38E /* fisheye.c */,
+				226E96A00FFB981500A9A38E /* fold.c */,
+				226E96A10FFB981500A9A38E /* mosaic.c */,
+				226E96A20FFB981500A9A38E /* noise.c */,
+				226E96A30FFB981500A9A38E /* puzzle.c */,
+				226E96A40FFB981500A9A38E /* rails.c */,
+				226E96A50FFB981500A9A38E /* rain.c */,
+				226E96A60FFB981500A9A38E /* realrainbow.c */,
+				226E96A70FFB981500A9A38E /* rosette.c */,
+				226E96A80FFB981500A9A38E /* sharpen.c */,
+				226E96A90FFB981500A9A38E /* snow.c */,
+				226E96AA0FFB981500A9A38E /* string.c */,
+				226E96AB0FFB981500A9A38E /* toothpaste.c */,
+				226E96AC0FFB981500A9A38E /* tornado.c */,
+				226E96AD0FFB981500A9A38E /* tv.c */,
 				2248FC830CE2C6B5004BC461 /* blocks_chalk_drip.c */,
 				2248FC840CE2C6B5004BC461 /* blur.c */,
 				2248FC850CE2C6B5004BC461 /* bricks.c */,
@@ -1034,29 +1527,46 @@
 			isa = PBXGroup;
 			children = (
 				22F45B110CE3FF4D00DB7761 /* Tux Paint.app */,
+				226E96DE0FFB999A00A9A38E /* alien.so */,
 				22ECE2AF0CEFE00200D390B3 /* blocks_chalk_drip.so */,
 				22ECE3120CF0BC8F00D390B3 /* blur.so */,
 				22ECE3450CF0C4F100D390B3 /* bricks.so */,
 				22ECE35C0CF0C7EF00D390B3 /* calligraphy.so */,
 				22ECE36F0CF0C81E00D390B3 /* cartoon.so */,
+				226E96F30FFB9B3200A9A38E /* confetti.so */,
 				22ECE4CB0CF0CDE200D390B3 /* distortion.so */,
 				22ECE3810CF0C89300D390B3 /* emboss.so */,
 				22ECE3960CF0C8E600D390B3 /* fade_darken.so */,
 				22ECE3A90CF0C90600D390B3 /* fill.so */,
+				226E97100FFB9BBD00A9A38E /* fisheye.so */,
 				22ECE3BC0CF0C9A300D390B3 /* flower.so */,
 				22ECE3F30CF0CBDC00D390B3 /* foam.so */,
+				226E97260FFB9C4E00A9A38E /* fold.so */,
 				22ECE4050CF0CC0200D390B3 /* glasstile.so */,
 				22ECE4B90CF0CDA500D390B3 /* grass.so */,
 				22ECE4170CF0CC2500D390B3 /* kalidescope.so */,
 				22ECE4290CF0CC4C00D390B3 /* light.so */,
 				22ECE4DD0CF0CE4A00D390B3 /* metalpaint.so */,
 				22ECE43B0CF0CC6B00D390B3 /* mirror_flip.so */,
+				226E973A0FFB9CB500A9A38E /* mosaic.so */,
 				22ECE44D0CF0CCB400D390B3 /* negative.so */,
+				226E97540FFB9D3300A9A38E /* noise.so */,
+				226E98220FFBA10600A9A38E /* puzzle.so */,
+				226E976A0FFB9D9100A9A38E /* rails.so */,
+				226E977A0FFB9DD600A9A38E /* rain.so */,
 				22ECE45F0CF0CCDB00D390B3 /* rainbow.so */,
+				226E978D0FFB9E4000A9A38E /* realrainbow.so */,
 				22ECE4710CF0CD1500D390B3 /* ripples.so */,
+				226E979F0FFB9E9600A9A38E /* rosette.so */,
+				226E97B10FFB9EEF00A9A38E /* sharpen.so */,
 				22ECE4830CF0CD4000D390B3 /* shift.so */,
 				22ECE4950CF0CD6400D390B3 /* smudge.so */,
+				226E97C30FFB9F4200A9A38E /* snow.so */,
+				226E97D60FFB9F8E00A9A38E /* string.so */,
 				2248FCE30CE2CA54004BC461 /* tint.so */,
+				226E97EA0FFB9FEE00A9A38E /* toothpaste.so */,
+				226E97FE0FFBA04000A9A38E /* tornado.so */,
+				226E98130FFBA08F00A9A38E /* tv.so */,
 				22ECE4A70CF0CD8600D390B3 /* waves.so */,
 			);
 			name = Products;
@@ -1204,6 +1714,142 @@
 			buildActionMask = 2147483647;
 			files = (
 				22F4616F0CE41B6E00DB7761 /* tp_magic_api.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		226E96D10FFB999A00A9A38E /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				226E96D20FFB999A00A9A38E /* tp_magic_api.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		226E96E60FFB9B3200A9A38E /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				226E96E70FFB9B3200A9A38E /* tp_magic_api.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		226E97030FFB9BBD00A9A38E /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				226E97040FFB9BBD00A9A38E /* tp_magic_api.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		226E97190FFB9C4E00A9A38E /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				226E971A0FFB9C4E00A9A38E /* tp_magic_api.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		226E972D0FFB9CB500A9A38E /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				226E972E0FFB9CB500A9A38E /* tp_magic_api.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		226E97470FFB9D3300A9A38E /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				226E97480FFB9D3300A9A38E /* tp_magic_api.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		226E975D0FFB9D9100A9A38E /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				226E975E0FFB9D9100A9A38E /* tp_magic_api.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		226E976D0FFB9DD600A9A38E /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				226E976E0FFB9DD600A9A38E /* tp_magic_api.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		226E97800FFB9E4000A9A38E /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				226E97810FFB9E4000A9A38E /* tp_magic_api.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		226E97920FFB9E9600A9A38E /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				226E97930FFB9E9600A9A38E /* tp_magic_api.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		226E97A40FFB9EEF00A9A38E /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				226E97A50FFB9EEF00A9A38E /* tp_magic_api.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		226E97B60FFB9F4200A9A38E /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				226E97B70FFB9F4200A9A38E /* tp_magic_api.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		226E97C90FFB9F8E00A9A38E /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				226E97CA0FFB9F8E00A9A38E /* tp_magic_api.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		226E97DD0FFB9FEE00A9A38E /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				226E97DE0FFB9FEE00A9A38E /* tp_magic_api.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		226E97F10FFBA04000A9A38E /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				226E97F20FFBA04000A9A38E /* tp_magic_api.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		226E98060FFBA08F00A9A38E /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				226E98070FFBA08F00A9A38E /* tp_magic_api.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		226E98150FFBA10500A9A38E /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				226E98160FFBA10500A9A38E /* tp_magic_api.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1409,6 +2055,296 @@
 			name = tint;
 			productName = tint;
 			productReference = 2248FCE30CE2CA54004BC461 /* tint.so */;
+			productType = "com.apple.product-type.library.dynamic";
+		};
+		226E96CF0FFB999A00A9A38E /* alien */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 226E96DA0FFB999A00A9A38E /* Build configuration list for PBXNativeTarget "alien" */;
+			buildPhases = (
+				226E96D00FFB999A00A9A38E /* Make Magic API */,
+				226E96D10FFB999A00A9A38E /* Headers */,
+				226E96D30FFB999A00A9A38E /* Sources */,
+				226E96D50FFB999A00A9A38E /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = alien;
+			productName = blocks_chalk_drip;
+			productReference = 226E96DE0FFB999A00A9A38E /* alien.so */;
+			productType = "com.apple.product-type.library.dynamic";
+		};
+		226E96E50FFB9B3200A9A38E /* confetti */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 226E96EF0FFB9B3200A9A38E /* Build configuration list for PBXNativeTarget "confetti" */;
+			buildPhases = (
+				226E96E60FFB9B3200A9A38E /* Headers */,
+				226E96E80FFB9B3200A9A38E /* Sources */,
+				226E96EA0FFB9B3200A9A38E /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = confetti;
+			productName = blur;
+			productReference = 226E96F30FFB9B3200A9A38E /* confetti.so */;
+			productType = "com.apple.product-type.library.dynamic";
+		};
+		226E97020FFB9BBD00A9A38E /* fisheye */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 226E970C0FFB9BBD00A9A38E /* Build configuration list for PBXNativeTarget "fisheye" */;
+			buildPhases = (
+				226E97030FFB9BBD00A9A38E /* Headers */,
+				226E97050FFB9BBD00A9A38E /* Sources */,
+				226E97070FFB9BBD00A9A38E /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = fisheye;
+			productName = blur;
+			productReference = 226E97100FFB9BBD00A9A38E /* fisheye.so */;
+			productType = "com.apple.product-type.library.dynamic";
+		};
+		226E97180FFB9C4E00A9A38E /* fold */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 226E97220FFB9C4E00A9A38E /* Build configuration list for PBXNativeTarget "fold" */;
+			buildPhases = (
+				226E97190FFB9C4E00A9A38E /* Headers */,
+				226E971B0FFB9C4E00A9A38E /* Sources */,
+				226E971D0FFB9C4E00A9A38E /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = fold;
+			productName = blur;
+			productReference = 226E97260FFB9C4E00A9A38E /* fold.so */;
+			productType = "com.apple.product-type.library.dynamic";
+		};
+		226E972C0FFB9CB500A9A38E /* mosaic */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 226E97360FFB9CB500A9A38E /* Build configuration list for PBXNativeTarget "mosaic" */;
+			buildPhases = (
+				226E972D0FFB9CB500A9A38E /* Headers */,
+				226E972F0FFB9CB500A9A38E /* Sources */,
+				226E97310FFB9CB500A9A38E /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = mosaic;
+			productName = blur;
+			productReference = 226E973A0FFB9CB500A9A38E /* mosaic.so */;
+			productType = "com.apple.product-type.library.dynamic";
+		};
+		226E97460FFB9D3300A9A38E /* noise */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 226E97500FFB9D3300A9A38E /* Build configuration list for PBXNativeTarget "noise" */;
+			buildPhases = (
+				226E97470FFB9D3300A9A38E /* Headers */,
+				226E97490FFB9D3300A9A38E /* Sources */,
+				226E974B0FFB9D3300A9A38E /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = noise;
+			productName = blur;
+			productReference = 226E97540FFB9D3300A9A38E /* noise.so */;
+			productType = "com.apple.product-type.library.dynamic";
+		};
+		226E975C0FFB9D9100A9A38E /* rails */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 226E97660FFB9D9100A9A38E /* Build configuration list for PBXNativeTarget "rails" */;
+			buildPhases = (
+				226E975D0FFB9D9100A9A38E /* Headers */,
+				226E975F0FFB9D9100A9A38E /* Sources */,
+				226E97610FFB9D9100A9A38E /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = rails;
+			productName = blur;
+			productReference = 226E976A0FFB9D9100A9A38E /* rails.so */;
+			productType = "com.apple.product-type.library.dynamic";
+		};
+		226E976C0FFB9DD600A9A38E /* rain */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 226E97760FFB9DD600A9A38E /* Build configuration list for PBXNativeTarget "rain" */;
+			buildPhases = (
+				226E976D0FFB9DD600A9A38E /* Headers */,
+				226E976F0FFB9DD600A9A38E /* Sources */,
+				226E97710FFB9DD600A9A38E /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = rain;
+			productName = blur;
+			productReference = 226E977A0FFB9DD600A9A38E /* rain.so */;
+			productType = "com.apple.product-type.library.dynamic";
+		};
+		226E977F0FFB9E4000A9A38E /* realrainbow */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 226E97890FFB9E4000A9A38E /* Build configuration list for PBXNativeTarget "realrainbow" */;
+			buildPhases = (
+				226E97800FFB9E4000A9A38E /* Headers */,
+				226E97820FFB9E4000A9A38E /* Sources */,
+				226E97840FFB9E4000A9A38E /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = realrainbow;
+			productName = blur;
+			productReference = 226E978D0FFB9E4000A9A38E /* realrainbow.so */;
+			productType = "com.apple.product-type.library.dynamic";
+		};
+		226E97910FFB9E9600A9A38E /* rosette */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 226E979B0FFB9E9600A9A38E /* Build configuration list for PBXNativeTarget "rosette" */;
+			buildPhases = (
+				226E97920FFB9E9600A9A38E /* Headers */,
+				226E97940FFB9E9600A9A38E /* Sources */,
+				226E97960FFB9E9600A9A38E /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = rosette;
+			productName = blur;
+			productReference = 226E979F0FFB9E9600A9A38E /* rosette.so */;
+			productType = "com.apple.product-type.library.dynamic";
+		};
+		226E97A30FFB9EEF00A9A38E /* sharpen */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 226E97AD0FFB9EEF00A9A38E /* Build configuration list for PBXNativeTarget "sharpen" */;
+			buildPhases = (
+				226E97A40FFB9EEF00A9A38E /* Headers */,
+				226E97A60FFB9EEF00A9A38E /* Sources */,
+				226E97A80FFB9EEF00A9A38E /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = sharpen;
+			productName = blur;
+			productReference = 226E97B10FFB9EEF00A9A38E /* sharpen.so */;
+			productType = "com.apple.product-type.library.dynamic";
+		};
+		226E97B50FFB9F4200A9A38E /* snow */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 226E97BF0FFB9F4200A9A38E /* Build configuration list for PBXNativeTarget "snow" */;
+			buildPhases = (
+				226E97B60FFB9F4200A9A38E /* Headers */,
+				226E97B80FFB9F4200A9A38E /* Sources */,
+				226E97BA0FFB9F4200A9A38E /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = snow;
+			productName = blur;
+			productReference = 226E97C30FFB9F4200A9A38E /* snow.so */;
+			productType = "com.apple.product-type.library.dynamic";
+		};
+		226E97C80FFB9F8E00A9A38E /* string */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 226E97D20FFB9F8E00A9A38E /* Build configuration list for PBXNativeTarget "string" */;
+			buildPhases = (
+				226E97C90FFB9F8E00A9A38E /* Headers */,
+				226E97CB0FFB9F8E00A9A38E /* Sources */,
+				226E97CD0FFB9F8E00A9A38E /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = string;
+			productName = blur;
+			productReference = 226E97D60FFB9F8E00A9A38E /* string.so */;
+			productType = "com.apple.product-type.library.dynamic";
+		};
+		226E97DC0FFB9FEE00A9A38E /* toothpaste */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 226E97E60FFB9FEE00A9A38E /* Build configuration list for PBXNativeTarget "toothpaste" */;
+			buildPhases = (
+				226E97DD0FFB9FEE00A9A38E /* Headers */,
+				226E97DF0FFB9FEE00A9A38E /* Sources */,
+				226E97E10FFB9FEE00A9A38E /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = toothpaste;
+			productName = blur;
+			productReference = 226E97EA0FFB9FEE00A9A38E /* toothpaste.so */;
+			productType = "com.apple.product-type.library.dynamic";
+		};
+		226E97F00FFBA04000A9A38E /* tornado */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 226E97FA0FFBA04000A9A38E /* Build configuration list for PBXNativeTarget "tornado" */;
+			buildPhases = (
+				226E97F10FFBA04000A9A38E /* Headers */,
+				226E97F30FFBA04000A9A38E /* Sources */,
+				226E97F50FFBA04000A9A38E /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = tornado;
+			productName = blur;
+			productReference = 226E97FE0FFBA04000A9A38E /* tornado.so */;
+			productType = "com.apple.product-type.library.dynamic";
+		};
+		226E98050FFBA08F00A9A38E /* tv */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 226E980F0FFBA08F00A9A38E /* Build configuration list for PBXNativeTarget "tv" */;
+			buildPhases = (
+				226E98060FFBA08F00A9A38E /* Headers */,
+				226E98080FFBA08F00A9A38E /* Sources */,
+				226E980A0FFBA08F00A9A38E /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = tv;
+			productName = blur;
+			productReference = 226E98130FFBA08F00A9A38E /* tv.so */;
+			productType = "com.apple.product-type.library.dynamic";
+		};
+		226E98140FFBA10500A9A38E /* puzzle */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 226E981E0FFBA10500A9A38E /* Build configuration list for PBXNativeTarget "puzzle" */;
+			buildPhases = (
+				226E98150FFBA10500A9A38E /* Headers */,
+				226E98170FFBA10500A9A38E /* Sources */,
+				226E98190FFBA10500A9A38E /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = puzzle;
+			productName = blur;
+			productReference = 226E98220FFBA10600A9A38E /* puzzle.so */;
 			productType = "com.apple.product-type.library.dynamic";
 		};
 		22ECE2AE0CEFE00200D390B3 /* blocks_chalk_drip */ = {
@@ -1815,10 +2751,8 @@
 				8D11072C0486CEB800E47090 /* Sources */,
 				8D11072E0486CEB800E47090 /* Frameworks */,
 				22D5D2A80738498300B67229 /* Copy Frameworks */,
-				22ECE5730CF0D6F000D390B3 /* CopyFiles */,
-				22F3ECD10D5691BD0068DFB4 /* CopyFiles */,
+				22ECE5730CF0D6F000D390B3 /* Copy Magic Plugins */,
 				2217B7D50CD6F6C400DC1DA3 /* Update Library Install Paths */,
-				22A0082D0D653729008B70C7 /* CopyFiles */,
 			);
 			buildRules = (
 				225FD5360934EF5600F0B02F /* PBXBuildRule */,
@@ -1826,30 +2760,47 @@
 				224A386D0933E9C4005A3695 /* PBXBuildRule */,
 			);
 			dependencies = (
-				22ECE5100CF0CEFA00D390B3 /* PBXTargetDependency */,
-				22ECE50E0CF0CEFA00D390B3 /* PBXTargetDependency */,
-				22ECE50C0CF0CEFA00D390B3 /* PBXTargetDependency */,
-				22ECE50A0CF0CEFA00D390B3 /* PBXTargetDependency */,
-				22ECE5080CF0CEFA00D390B3 /* PBXTargetDependency */,
-				22ECE5060CF0CEFA00D390B3 /* PBXTargetDependency */,
-				22ECE5040CF0CEFA00D390B3 /* PBXTargetDependency */,
-				22ECE5020CF0CEFA00D390B3 /* PBXTargetDependency */,
-				22ECE5000CF0CEFA00D390B3 /* PBXTargetDependency */,
-				22ECE4FE0CF0CEFA00D390B3 /* PBXTargetDependency */,
-				22ECE4FC0CF0CEFA00D390B3 /* PBXTargetDependency */,
-				22ECE4FA0CF0CEFA00D390B3 /* PBXTargetDependency */,
-				22ECE4F80CF0CEFA00D390B3 /* PBXTargetDependency */,
-				22ECE4F60CF0CEFA00D390B3 /* PBXTargetDependency */,
-				22ECE4F40CF0CEFA00D390B3 /* PBXTargetDependency */,
-				22ECE4F20CF0CEF900D390B3 /* PBXTargetDependency */,
-				22ECE4F00CF0CEF900D390B3 /* PBXTargetDependency */,
-				22ECE4EE0CF0CEF900D390B3 /* PBXTargetDependency */,
-				22ECE4EC0CF0CEF900D390B3 /* PBXTargetDependency */,
-				22ECE4EA0CF0CEF900D390B3 /* PBXTargetDependency */,
-				22ECE4E80CF0CEF900D390B3 /* PBXTargetDependency */,
-				22ECE4E60CF0CEF900D390B3 /* PBXTargetDependency */,
-				22ECE4E40CF0CEF900D390B3 /* PBXTargetDependency */,
-				22ECE4E20CF0CEF900D390B3 /* PBXTargetDependency */,
+				226E98770FFBA24A00A9A38E /* PBXTargetDependency */,
+				226E98750FFBA24A00A9A38E /* PBXTargetDependency */,
+				226E98730FFBA24A00A9A38E /* PBXTargetDependency */,
+				226E98710FFBA24A00A9A38E /* PBXTargetDependency */,
+				226E986F0FFBA24A00A9A38E /* PBXTargetDependency */,
+				226E986D0FFBA24A00A9A38E /* PBXTargetDependency */,
+				226E986B0FFBA24A00A9A38E /* PBXTargetDependency */,
+				226E98690FFBA24A00A9A38E /* PBXTargetDependency */,
+				226E98670FFBA24A00A9A38E /* PBXTargetDependency */,
+				226E98650FFBA24A00A9A38E /* PBXTargetDependency */,
+				226E98630FFBA24A00A9A38E /* PBXTargetDependency */,
+				226E98610FFBA24A00A9A38E /* PBXTargetDependency */,
+				226E985F0FFBA24A00A9A38E /* PBXTargetDependency */,
+				226E985D0FFBA24A00A9A38E /* PBXTargetDependency */,
+				226E985B0FFBA24A00A9A38E /* PBXTargetDependency */,
+				226E98590FFBA24A00A9A38E /* PBXTargetDependency */,
+				226E98570FFBA24A00A9A38E /* PBXTargetDependency */,
+				226E98550FFBA24A00A9A38E /* PBXTargetDependency */,
+				226E98530FFBA24A00A9A38E /* PBXTargetDependency */,
+				226E98510FFBA24A00A9A38E /* PBXTargetDependency */,
+				226E984F0FFBA24A00A9A38E /* PBXTargetDependency */,
+				226E984D0FFBA24A00A9A38E /* PBXTargetDependency */,
+				226E984B0FFBA24A00A9A38E /* PBXTargetDependency */,
+				226E98490FFBA24A00A9A38E /* PBXTargetDependency */,
+				226E98470FFBA24A00A9A38E /* PBXTargetDependency */,
+				226E98450FFBA24A00A9A38E /* PBXTargetDependency */,
+				226E98430FFBA24A00A9A38E /* PBXTargetDependency */,
+				226E98410FFBA24A00A9A38E /* PBXTargetDependency */,
+				226E983F0FFBA24A00A9A38E /* PBXTargetDependency */,
+				226E983D0FFBA24A00A9A38E /* PBXTargetDependency */,
+				226E983B0FFBA24A00A9A38E /* PBXTargetDependency */,
+				226E98390FFBA24A00A9A38E /* PBXTargetDependency */,
+				226E98370FFBA24A00A9A38E /* PBXTargetDependency */,
+				226E98350FFBA24A00A9A38E /* PBXTargetDependency */,
+				226E98330FFBA24A00A9A38E /* PBXTargetDependency */,
+				226E98310FFBA24A00A9A38E /* PBXTargetDependency */,
+				226E982F0FFBA24A00A9A38E /* PBXTargetDependency */,
+				226E982D0FFBA24A00A9A38E /* PBXTargetDependency */,
+				226E982B0FFBA24900A9A38E /* PBXTargetDependency */,
+				226E98290FFBA24900A9A38E /* PBXTargetDependency */,
+				226E98270FFBA24900A9A38E /* PBXTargetDependency */,
 			);
 			name = "Tux Paint";
 			productInstallPath = "$(HOME)/Applications";
@@ -1871,29 +2822,46 @@
 			projectRoot = "";
 			targets = (
 				8D1107260486CEB800E47090 /* Tux Paint */,
+				226E96CF0FFB999A00A9A38E /* alien */,
 				22ECE2AE0CEFE00200D390B3 /* blocks_chalk_drip */,
 				22ECE3110CF0BC8F00D390B3 /* blur */,
 				22ECE3370CF0C4F100D390B3 /* bricks */,
 				22ECE34E0CF0C7EF00D390B3 /* calligraphy */,
 				22ECE3610CF0C81E00D390B3 /* cartoon */,
+				226E96E50FFB9B3200A9A38E /* confetti */,
 				22ECE4BD0CF0CDE200D390B3 /* distortion */,
 				22ECE3730CF0C89300D390B3 /* emboss */,
 				22ECE3880CF0C8E600D390B3 /* fade_darken */,
 				22ECE39B0CF0C90600D390B3 /* fill */,
+				226E97020FFB9BBD00A9A38E /* fisheye */,
 				22ECE3AE0CF0C9A300D390B3 /* flower */,
 				22ECE3E50CF0CBDC00D390B3 /* foam */,
+				226E97180FFB9C4E00A9A38E /* fold */,
 				22ECE3F70CF0CC0100D390B3 /* glasstile */,
 				22ECE4AB0CF0CDA500D390B3 /* grass */,
 				22ECE4090CF0CC2500D390B3 /* kalidescope */,
 				22ECE41B0CF0CC4C00D390B3 /* light */,
 				22ECE4CF0CF0CE4A00D390B3 /* metalpaint */,
 				22ECE42D0CF0CC6B00D390B3 /* mirror_flip */,
+				226E972C0FFB9CB500A9A38E /* mosaic */,
 				22ECE43F0CF0CCB400D390B3 /* negative */,
+				226E97460FFB9D3300A9A38E /* noise */,
+				226E98140FFBA10500A9A38E /* puzzle */,
+				226E975C0FFB9D9100A9A38E /* rails */,
+				226E976C0FFB9DD600A9A38E /* rain */,
 				22ECE4510CF0CCDB00D390B3 /* rainbow */,
+				226E977F0FFB9E4000A9A38E /* realrainbow */,
 				22ECE4630CF0CD1500D390B3 /* ripples */,
+				226E97910FFB9E9600A9A38E /* rosette */,
+				226E97A30FFB9EEF00A9A38E /* sharpen */,
 				22ECE4750CF0CD4000D390B3 /* shift */,
 				22ECE4870CF0CD6400D390B3 /* smudge */,
+				226E97B50FFB9F4200A9A38E /* snow */,
+				226E97C80FFB9F8E00A9A38E /* string */,
 				2248FC700CE2C385004BC461 /* tint */,
+				226E97DC0FFB9FEE00A9A38E /* toothpaste */,
+				226E97F00FFBA04000A9A38E /* tornado */,
+				226E98050FFBA08F00A9A38E /* tv */,
 				22ECE4990CF0CD8600D390B3 /* waves */,
 			);
 		};
@@ -1979,6 +2947,22 @@
 			shellPath = /bin/sh;
 			shellScript = "#LIBPATH=${BUILT_PRODUCTS_DIR}/${SHARED_SUPPORT_FOLDER_PATH}\n\n#TARGETS=`ls -1 \"${LIBPATH}\"` \n#for TARGET in ${TARGETS} ; do\n#\tLIBFILE=${LIBPATH}/${TARGET}\n#\trm \"${LIBFILE}\"\n#done\n";
 		};
+		226E96D00FFB999A00A9A38E /* Make Magic API */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/../src/tp_magic_api.h.in",
+			);
+			name = "Make Magic API";
+			outputPaths = (
+				"$(SRCROOT)/../src/tp_magic_api.h",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "cd ..\nmake src/tp_magic_api.h";
+		};
 		227111870AE5ED2700FC7FCF /* Copy TrueType Fonts */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -2030,6 +3014,142 @@
 			buildActionMask = 2147483647;
 			files = (
 				2248FC9C0CE2C797004BC461 /* tint.c in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		226E96D30FFB999A00A9A38E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				226E96DF0FFB99DB00A9A38E /* alien.c in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		226E96E80FFB9B3200A9A38E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				226E97010FFB9BAE00A9A38E /* confetti.c in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		226E97050FFB9BBD00A9A38E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				226E97140FFB9C1800A9A38E /* fisheye.c in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		226E971B0FFB9C4E00A9A38E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				226E97270FFB9C7200A9A38E /* fold.c in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		226E972F0FFB9CB500A9A38E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				226E97400FFB9D1300A9A38E /* mosaic.c in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		226E97490FFB9D3300A9A38E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				226E97550FFB9D7A00A9A38E /* noise.c in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		226E975F0FFB9D9100A9A38E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				226E976B0FFB9DCB00A9A38E /* rails.c in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		226E976F0FFB9DD600A9A38E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				226E977E0FFB9E2A00A9A38E /* rain.c in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		226E97820FFB9E4000A9A38E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				226E97900FFB9E8A00A9A38E /* realrainbow.c in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		226E97940FFB9E9600A9A38E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				226E97A20FFB9EE600A9A38E /* rosette.c in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		226E97A60FFB9EEF00A9A38E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				226E97B40FFB9F3300A9A38E /* sharpen.c in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		226E97B80FFB9F4200A9A38E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				226E97C70FFB9F8400A9A38E /* snow.c in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		226E97CB0FFB9F8E00A9A38E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				226E97DB0FFB9FD100A9A38E /* string.c in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		226E97DF0FFB9FEE00A9A38E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				226E97EF0FFBA03800A9A38E /* toothpaste.c in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		226E97F30FFBA04000A9A38E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				226E98040FFBA08500A9A38E /* tornado.c in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		226E98080FFBA08F00A9A38E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				226E98240FFBA14E00A9A38E /* tv.c in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		226E98170FFBA10500A9A38E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				226E98250FFBA15400A9A38E /* puzzle.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2237,131 +3357,233 @@
 				222862BE0D0B48B100CA3F84 /* message.m in Sources */,
 				22140ABE0D110600009534C6 /* TransparentTextView.m in Sources */,
 				22140B9D0D1252E5009534C6 /* speech.m in Sources */,
+				226E96AE0FFB981500A9A38E /* alien.c in Sources */,
+				226E96AF0FFB981500A9A38E /* confetti.c in Sources */,
+				226E96B00FFB981500A9A38E /* fisheye.c in Sources */,
+				226E96B10FFB981500A9A38E /* fold.c in Sources */,
+				226E96B20FFB981500A9A38E /* mosaic.c in Sources */,
+				226E96B30FFB981500A9A38E /* noise.c in Sources */,
+				226E96B40FFB981500A9A38E /* puzzle.c in Sources */,
+				226E96B50FFB981500A9A38E /* rails.c in Sources */,
+				226E96B60FFB981500A9A38E /* rain.c in Sources */,
+				226E96B70FFB981500A9A38E /* realrainbow.c in Sources */,
+				226E96B80FFB981500A9A38E /* rosette.c in Sources */,
+				226E96B90FFB981500A9A38E /* sharpen.c in Sources */,
+				226E96BA0FFB981500A9A38E /* snow.c in Sources */,
+				226E96BB0FFB981500A9A38E /* string.c in Sources */,
+				226E96BC0FFB981500A9A38E /* toothpaste.c in Sources */,
+				226E96BD0FFB981500A9A38E /* tornado.c in Sources */,
+				226E96BE0FFB981500A9A38E /* tv.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		22ECE4E20CF0CEF900D390B3 /* PBXTargetDependency */ = {
+		226E98270FFBA24900A9A38E /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 22ECE4990CF0CD8600D390B3 /* waves */;
-			targetProxy = 22ECE4E10CF0CEF900D390B3 /* PBXContainerItemProxy */;
+			targetProxy = 226E98260FFBA24900A9A38E /* PBXContainerItemProxy */;
 		};
-		22ECE4E40CF0CEF900D390B3 /* PBXTargetDependency */ = {
+		226E98290FFBA24900A9A38E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 226E98050FFBA08F00A9A38E /* tv */;
+			targetProxy = 226E98280FFBA24900A9A38E /* PBXContainerItemProxy */;
+		};
+		226E982B0FFBA24900A9A38E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 226E97F00FFBA04000A9A38E /* tornado */;
+			targetProxy = 226E982A0FFBA24900A9A38E /* PBXContainerItemProxy */;
+		};
+		226E982D0FFBA24A00A9A38E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 226E97DC0FFB9FEE00A9A38E /* toothpaste */;
+			targetProxy = 226E982C0FFBA24A00A9A38E /* PBXContainerItemProxy */;
+		};
+		226E982F0FFBA24A00A9A38E /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 2248FC700CE2C385004BC461 /* tint */;
-			targetProxy = 22ECE4E30CF0CEF900D390B3 /* PBXContainerItemProxy */;
+			targetProxy = 226E982E0FFBA24A00A9A38E /* PBXContainerItemProxy */;
 		};
-		22ECE4E60CF0CEF900D390B3 /* PBXTargetDependency */ = {
+		226E98310FFBA24A00A9A38E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 226E97C80FFB9F8E00A9A38E /* string */;
+			targetProxy = 226E98300FFBA24A00A9A38E /* PBXContainerItemProxy */;
+		};
+		226E98330FFBA24A00A9A38E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 226E97B50FFB9F4200A9A38E /* snow */;
+			targetProxy = 226E98320FFBA24A00A9A38E /* PBXContainerItemProxy */;
+		};
+		226E98350FFBA24A00A9A38E /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 22ECE4870CF0CD6400D390B3 /* smudge */;
-			targetProxy = 22ECE4E50CF0CEF900D390B3 /* PBXContainerItemProxy */;
+			targetProxy = 226E98340FFBA24A00A9A38E /* PBXContainerItemProxy */;
 		};
-		22ECE4E80CF0CEF900D390B3 /* PBXTargetDependency */ = {
+		226E98370FFBA24A00A9A38E /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 22ECE4750CF0CD4000D390B3 /* shift */;
-			targetProxy = 22ECE4E70CF0CEF900D390B3 /* PBXContainerItemProxy */;
+			targetProxy = 226E98360FFBA24A00A9A38E /* PBXContainerItemProxy */;
 		};
-		22ECE4EA0CF0CEF900D390B3 /* PBXTargetDependency */ = {
+		226E98390FFBA24A00A9A38E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 226E97A30FFB9EEF00A9A38E /* sharpen */;
+			targetProxy = 226E98380FFBA24A00A9A38E /* PBXContainerItemProxy */;
+		};
+		226E983B0FFBA24A00A9A38E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 226E97910FFB9E9600A9A38E /* rosette */;
+			targetProxy = 226E983A0FFBA24A00A9A38E /* PBXContainerItemProxy */;
+		};
+		226E983D0FFBA24A00A9A38E /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 22ECE4630CF0CD1500D390B3 /* ripples */;
-			targetProxy = 22ECE4E90CF0CEF900D390B3 /* PBXContainerItemProxy */;
+			targetProxy = 226E983C0FFBA24A00A9A38E /* PBXContainerItemProxy */;
 		};
-		22ECE4EC0CF0CEF900D390B3 /* PBXTargetDependency */ = {
+		226E983F0FFBA24A00A9A38E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 226E977F0FFB9E4000A9A38E /* realrainbow */;
+			targetProxy = 226E983E0FFBA24A00A9A38E /* PBXContainerItemProxy */;
+		};
+		226E98410FFBA24A00A9A38E /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 22ECE4510CF0CCDB00D390B3 /* rainbow */;
-			targetProxy = 22ECE4EB0CF0CEF900D390B3 /* PBXContainerItemProxy */;
+			targetProxy = 226E98400FFBA24A00A9A38E /* PBXContainerItemProxy */;
 		};
-		22ECE4EE0CF0CEF900D390B3 /* PBXTargetDependency */ = {
+		226E98430FFBA24A00A9A38E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 226E976C0FFB9DD600A9A38E /* rain */;
+			targetProxy = 226E98420FFBA24A00A9A38E /* PBXContainerItemProxy */;
+		};
+		226E98450FFBA24A00A9A38E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 226E975C0FFB9D9100A9A38E /* rails */;
+			targetProxy = 226E98440FFBA24A00A9A38E /* PBXContainerItemProxy */;
+		};
+		226E98470FFBA24A00A9A38E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 226E98140FFBA10500A9A38E /* puzzle */;
+			targetProxy = 226E98460FFBA24A00A9A38E /* PBXContainerItemProxy */;
+		};
+		226E98490FFBA24A00A9A38E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 226E97460FFB9D3300A9A38E /* noise */;
+			targetProxy = 226E98480FFBA24A00A9A38E /* PBXContainerItemProxy */;
+		};
+		226E984B0FFBA24A00A9A38E /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 22ECE43F0CF0CCB400D390B3 /* negative */;
-			targetProxy = 22ECE4ED0CF0CEF900D390B3 /* PBXContainerItemProxy */;
+			targetProxy = 226E984A0FFBA24A00A9A38E /* PBXContainerItemProxy */;
 		};
-		22ECE4F00CF0CEF900D390B3 /* PBXTargetDependency */ = {
+		226E984D0FFBA24A00A9A38E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 226E972C0FFB9CB500A9A38E /* mosaic */;
+			targetProxy = 226E984C0FFBA24A00A9A38E /* PBXContainerItemProxy */;
+		};
+		226E984F0FFBA24A00A9A38E /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 22ECE42D0CF0CC6B00D390B3 /* mirror_flip */;
-			targetProxy = 22ECE4EF0CF0CEF900D390B3 /* PBXContainerItemProxy */;
+			targetProxy = 226E984E0FFBA24A00A9A38E /* PBXContainerItemProxy */;
 		};
-		22ECE4F20CF0CEF900D390B3 /* PBXTargetDependency */ = {
+		226E98510FFBA24A00A9A38E /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 22ECE4CF0CF0CE4A00D390B3 /* metalpaint */;
-			targetProxy = 22ECE4F10CF0CEF900D390B3 /* PBXContainerItemProxy */;
+			targetProxy = 226E98500FFBA24A00A9A38E /* PBXContainerItemProxy */;
 		};
-		22ECE4F40CF0CEFA00D390B3 /* PBXTargetDependency */ = {
+		226E98530FFBA24A00A9A38E /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 22ECE41B0CF0CC4C00D390B3 /* light */;
-			targetProxy = 22ECE4F30CF0CEFA00D390B3 /* PBXContainerItemProxy */;
+			targetProxy = 226E98520FFBA24A00A9A38E /* PBXContainerItemProxy */;
 		};
-		22ECE4F60CF0CEFA00D390B3 /* PBXTargetDependency */ = {
+		226E98550FFBA24A00A9A38E /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 22ECE4090CF0CC2500D390B3 /* kalidescope */;
-			targetProxy = 22ECE4F50CF0CEFA00D390B3 /* PBXContainerItemProxy */;
+			targetProxy = 226E98540FFBA24A00A9A38E /* PBXContainerItemProxy */;
 		};
-		22ECE4F80CF0CEFA00D390B3 /* PBXTargetDependency */ = {
+		226E98570FFBA24A00A9A38E /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 22ECE4AB0CF0CDA500D390B3 /* grass */;
-			targetProxy = 22ECE4F70CF0CEFA00D390B3 /* PBXContainerItemProxy */;
+			targetProxy = 226E98560FFBA24A00A9A38E /* PBXContainerItemProxy */;
 		};
-		22ECE4FA0CF0CEFA00D390B3 /* PBXTargetDependency */ = {
+		226E98590FFBA24A00A9A38E /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 22ECE3F70CF0CC0100D390B3 /* glasstile */;
-			targetProxy = 22ECE4F90CF0CEFA00D390B3 /* PBXContainerItemProxy */;
+			targetProxy = 226E98580FFBA24A00A9A38E /* PBXContainerItemProxy */;
 		};
-		22ECE4FC0CF0CEFA00D390B3 /* PBXTargetDependency */ = {
+		226E985B0FFBA24A00A9A38E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 226E97180FFB9C4E00A9A38E /* fold */;
+			targetProxy = 226E985A0FFBA24A00A9A38E /* PBXContainerItemProxy */;
+		};
+		226E985D0FFBA24A00A9A38E /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 22ECE3E50CF0CBDC00D390B3 /* foam */;
-			targetProxy = 22ECE4FB0CF0CEFA00D390B3 /* PBXContainerItemProxy */;
+			targetProxy = 226E985C0FFBA24A00A9A38E /* PBXContainerItemProxy */;
 		};
-		22ECE4FE0CF0CEFA00D390B3 /* PBXTargetDependency */ = {
+		226E985F0FFBA24A00A9A38E /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 22ECE3AE0CF0C9A300D390B3 /* flower */;
-			targetProxy = 22ECE4FD0CF0CEFA00D390B3 /* PBXContainerItemProxy */;
+			targetProxy = 226E985E0FFBA24A00A9A38E /* PBXContainerItemProxy */;
 		};
-		22ECE5000CF0CEFA00D390B3 /* PBXTargetDependency */ = {
+		226E98610FFBA24A00A9A38E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 226E97020FFB9BBD00A9A38E /* fisheye */;
+			targetProxy = 226E98600FFBA24A00A9A38E /* PBXContainerItemProxy */;
+		};
+		226E98630FFBA24A00A9A38E /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 22ECE39B0CF0C90600D390B3 /* fill */;
-			targetProxy = 22ECE4FF0CF0CEFA00D390B3 /* PBXContainerItemProxy */;
+			targetProxy = 226E98620FFBA24A00A9A38E /* PBXContainerItemProxy */;
 		};
-		22ECE5020CF0CEFA00D390B3 /* PBXTargetDependency */ = {
+		226E98650FFBA24A00A9A38E /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 22ECE3880CF0C8E600D390B3 /* fade_darken */;
-			targetProxy = 22ECE5010CF0CEFA00D390B3 /* PBXContainerItemProxy */;
+			targetProxy = 226E98640FFBA24A00A9A38E /* PBXContainerItemProxy */;
 		};
-		22ECE5040CF0CEFA00D390B3 /* PBXTargetDependency */ = {
+		226E98670FFBA24A00A9A38E /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 22ECE3730CF0C89300D390B3 /* emboss */;
-			targetProxy = 22ECE5030CF0CEFA00D390B3 /* PBXContainerItemProxy */;
+			targetProxy = 226E98660FFBA24A00A9A38E /* PBXContainerItemProxy */;
 		};
-		22ECE5060CF0CEFA00D390B3 /* PBXTargetDependency */ = {
+		226E98690FFBA24A00A9A38E /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 22ECE4BD0CF0CDE200D390B3 /* distortion */;
-			targetProxy = 22ECE5050CF0CEFA00D390B3 /* PBXContainerItemProxy */;
+			targetProxy = 226E98680FFBA24A00A9A38E /* PBXContainerItemProxy */;
 		};
-		22ECE5080CF0CEFA00D390B3 /* PBXTargetDependency */ = {
+		226E986B0FFBA24A00A9A38E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 226E96E50FFB9B3200A9A38E /* confetti */;
+			targetProxy = 226E986A0FFBA24A00A9A38E /* PBXContainerItemProxy */;
+		};
+		226E986D0FFBA24A00A9A38E /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 22ECE3610CF0C81E00D390B3 /* cartoon */;
-			targetProxy = 22ECE5070CF0CEFA00D390B3 /* PBXContainerItemProxy */;
+			targetProxy = 226E986C0FFBA24A00A9A38E /* PBXContainerItemProxy */;
 		};
-		22ECE50A0CF0CEFA00D390B3 /* PBXTargetDependency */ = {
+		226E986F0FFBA24A00A9A38E /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 22ECE34E0CF0C7EF00D390B3 /* calligraphy */;
-			targetProxy = 22ECE5090CF0CEFA00D390B3 /* PBXContainerItemProxy */;
+			targetProxy = 226E986E0FFBA24A00A9A38E /* PBXContainerItemProxy */;
 		};
-		22ECE50C0CF0CEFA00D390B3 /* PBXTargetDependency */ = {
+		226E98710FFBA24A00A9A38E /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 22ECE3370CF0C4F100D390B3 /* bricks */;
-			targetProxy = 22ECE50B0CF0CEFA00D390B3 /* PBXContainerItemProxy */;
+			targetProxy = 226E98700FFBA24A00A9A38E /* PBXContainerItemProxy */;
 		};
-		22ECE50E0CF0CEFA00D390B3 /* PBXTargetDependency */ = {
+		226E98730FFBA24A00A9A38E /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 22ECE3110CF0BC8F00D390B3 /* blur */;
-			targetProxy = 22ECE50D0CF0CEFA00D390B3 /* PBXContainerItemProxy */;
+			targetProxy = 226E98720FFBA24A00A9A38E /* PBXContainerItemProxy */;
 		};
-		22ECE5100CF0CEFA00D390B3 /* PBXTargetDependency */ = {
+		226E98750FFBA24A00A9A38E /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 22ECE2AE0CEFE00200D390B3 /* blocks_chalk_drip */;
-			targetProxy = 22ECE50F0CF0CEFA00D390B3 /* PBXContainerItemProxy */;
+			targetProxy = 226E98740FFBA24A00A9A38E /* PBXContainerItemProxy */;
+		};
+		226E98770FFBA24A00A9A38E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 226E96CF0FFB999A00A9A38E /* alien */;
+			targetProxy = 226E98760FFBA24A00A9A38E /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -2736,6 +3958,1961 @@
 				HEADER_SEARCH_PATHS = include;
 				LIBRARY_SEARCH_PATHS = lib;
 				SDKROOT = /Developer/SDKs/MacOSX10.4u.sdk;
+			};
+			name = Default;
+		};
+		226E96DB0FFB999A00A9A38E /* Development */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				EXECUTABLE_EXTENSION = so;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_MODEL_TUNING = G5;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				HEADER_SEARCH_PATHS = (
+					/Library/Frameworks/SDL_mixer.framework/Headers,
+					/Library/Frameworks/SDL_image.framework/Headers,
+					/Library/Frameworks/SDL.framework/Headers,
+					/opt/local/include,
+					"$(inherited)",
+				);
+				INSTALL_PATH = /usr/local/lib;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_1)",
+				);
+				LIBRARY_SEARCH_PATHS_QUOTED_1 = "\"$(SRCROOT)/../../../../../../Shared/tuxpaint/lib\"";
+				MACOSX_DEPLOYMENT_TARGET = 10.3;
+				OTHER_LDFLAGS = (
+					"-framework",
+					Foundation,
+					"-framework",
+					AppKit,
+					"-liconv",
+				);
+				PREBINDING = NO;
+				PRODUCT_NAME = alien;
+				ZERO_LINK = YES;
+			};
+			name = Development;
+		};
+		226E96DC0FFB999A00A9A38E /* Deployment */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = (
+					ppc,
+					i386,
+				);
+				COPY_PHASE_STRIP = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				EXECUTABLE_EXTENSION = so;
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_MODEL_TUNING = G5;
+				HEADER_SEARCH_PATHS = (
+					/Library/Frameworks/SDL_mixer.framework/Headers,
+					/Library/Frameworks/SDL_image.framework/Headers,
+					/Library/Frameworks/SDL.framework/Headers,
+					/opt/local/include,
+					"$(inherited)",
+				);
+				INSTALL_PATH = /usr/local/lib;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_1)",
+				);
+				LIBRARY_SEARCH_PATHS_QUOTED_1 = "\"$(SRCROOT)/../../../../../../Shared/tuxpaint/lib\"";
+				MACOSX_DEPLOYMENT_TARGET = 10.3;
+				OTHER_LDFLAGS = (
+					"-framework",
+					Foundation,
+					"-framework",
+					AppKit,
+					"-liconv",
+				);
+				PREBINDING = NO;
+				PRODUCT_NAME = alien;
+				ZERO_LINK = NO;
+			};
+			name = Deployment;
+		};
+		226E96DD0FFB999A00A9A38E /* Default */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				EXECUTABLE_EXTENSION = so;
+				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_MODEL_TUNING = G5;
+				HEADER_SEARCH_PATHS = (
+					/Library/Frameworks/SDL_mixer.framework/Headers,
+					/Library/Frameworks/SDL_image.framework/Headers,
+					/Library/Frameworks/SDL.framework/Headers,
+					/opt/local/include,
+					"$(inherited)",
+				);
+				INSTALL_PATH = /usr/local/lib;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_1)",
+				);
+				LIBRARY_SEARCH_PATHS_QUOTED_1 = "\"$(SRCROOT)/../../../../../../Shared/tuxpaint/lib\"";
+				MACOSX_DEPLOYMENT_TARGET = 10.3;
+				OTHER_LDFLAGS = (
+					"-framework",
+					Foundation,
+					"-framework",
+					AppKit,
+					"-liconv",
+				);
+				PREBINDING = NO;
+				PRODUCT_NAME = alien;
+				ZERO_LINK = YES;
+			};
+			name = Default;
+		};
+		226E96F00FFB9B3200A9A38E /* Development */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				EXECUTABLE_EXTENSION = so;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_MODEL_TUNING = G5;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				HEADER_SEARCH_PATHS = (
+					/Library/Frameworks/SDL_mixer.framework/Headers,
+					/Library/Frameworks/SDL_image.framework/Headers,
+					/Library/Frameworks/SDL.framework/Headers,
+					/opt/local/include,
+					"$(inherited)",
+				);
+				INSTALL_PATH = /usr/local/lib;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_1)",
+				);
+				LIBRARY_SEARCH_PATHS_QUOTED_1 = "\"$(SRCROOT)/../../../../../../Shared/tuxpaint/lib\"";
+				MACOSX_DEPLOYMENT_TARGET = 10.3;
+				OTHER_LDFLAGS = (
+					"-framework",
+					Foundation,
+					"-framework",
+					AppKit,
+					"-liconv",
+				);
+				PREBINDING = NO;
+				PRODUCT_NAME = confetti;
+				ZERO_LINK = YES;
+			};
+			name = Development;
+		};
+		226E96F10FFB9B3200A9A38E /* Deployment */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = (
+					ppc,
+					i386,
+				);
+				COPY_PHASE_STRIP = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				EXECUTABLE_EXTENSION = so;
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_MODEL_TUNING = G5;
+				HEADER_SEARCH_PATHS = (
+					/Library/Frameworks/SDL_mixer.framework/Headers,
+					/Library/Frameworks/SDL_image.framework/Headers,
+					/Library/Frameworks/SDL.framework/Headers,
+					/opt/local/include,
+					"$(inherited)",
+				);
+				INSTALL_PATH = /usr/local/lib;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_1)",
+				);
+				LIBRARY_SEARCH_PATHS_QUOTED_1 = "\"$(SRCROOT)/../../../../../../Shared/tuxpaint/lib\"";
+				MACOSX_DEPLOYMENT_TARGET = 10.3;
+				OTHER_LDFLAGS = (
+					"-framework",
+					Foundation,
+					"-framework",
+					AppKit,
+					"-liconv",
+				);
+				PREBINDING = NO;
+				PRODUCT_NAME = confetti;
+				ZERO_LINK = NO;
+			};
+			name = Deployment;
+		};
+		226E96F20FFB9B3200A9A38E /* Default */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				EXECUTABLE_EXTENSION = so;
+				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_MODEL_TUNING = G5;
+				HEADER_SEARCH_PATHS = (
+					/Library/Frameworks/SDL_mixer.framework/Headers,
+					/Library/Frameworks/SDL_image.framework/Headers,
+					/Library/Frameworks/SDL.framework/Headers,
+					/opt/local/include,
+					"$(inherited)",
+				);
+				INSTALL_PATH = /usr/local/lib;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_1)",
+				);
+				LIBRARY_SEARCH_PATHS_QUOTED_1 = "\"$(SRCROOT)/../../../../../../Shared/tuxpaint/lib\"";
+				MACOSX_DEPLOYMENT_TARGET = 10.3;
+				OTHER_LDFLAGS = (
+					"-framework",
+					Foundation,
+					"-framework",
+					AppKit,
+					"-liconv",
+				);
+				PREBINDING = NO;
+				PRODUCT_NAME = confetti;
+				ZERO_LINK = YES;
+			};
+			name = Default;
+		};
+		226E970D0FFB9BBD00A9A38E /* Development */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				EXECUTABLE_EXTENSION = so;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_MODEL_TUNING = G5;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				HEADER_SEARCH_PATHS = (
+					/Library/Frameworks/SDL_mixer.framework/Headers,
+					/Library/Frameworks/SDL_image.framework/Headers,
+					/Library/Frameworks/SDL.framework/Headers,
+					/opt/local/include,
+					"$(inherited)",
+				);
+				INSTALL_PATH = /usr/local/lib;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_1)",
+				);
+				LIBRARY_SEARCH_PATHS_QUOTED_1 = "\"$(SRCROOT)/../../../../../../Shared/tuxpaint/lib\"";
+				MACOSX_DEPLOYMENT_TARGET = 10.3;
+				OTHER_LDFLAGS = (
+					"-framework",
+					Foundation,
+					"-framework",
+					AppKit,
+					"-liconv",
+				);
+				PREBINDING = NO;
+				PRODUCT_NAME = fisheye;
+				ZERO_LINK = YES;
+			};
+			name = Development;
+		};
+		226E970E0FFB9BBD00A9A38E /* Deployment */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = (
+					ppc,
+					i386,
+				);
+				COPY_PHASE_STRIP = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				EXECUTABLE_EXTENSION = so;
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_MODEL_TUNING = G5;
+				HEADER_SEARCH_PATHS = (
+					/Library/Frameworks/SDL_mixer.framework/Headers,
+					/Library/Frameworks/SDL_image.framework/Headers,
+					/Library/Frameworks/SDL.framework/Headers,
+					/opt/local/include,
+					"$(inherited)",
+				);
+				INSTALL_PATH = /usr/local/lib;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_1)",
+				);
+				LIBRARY_SEARCH_PATHS_QUOTED_1 = "\"$(SRCROOT)/../../../../../../Shared/tuxpaint/lib\"";
+				MACOSX_DEPLOYMENT_TARGET = 10.3;
+				OTHER_LDFLAGS = (
+					"-framework",
+					Foundation,
+					"-framework",
+					AppKit,
+					"-liconv",
+				);
+				PREBINDING = NO;
+				PRODUCT_NAME = fisheye;
+				ZERO_LINK = NO;
+			};
+			name = Deployment;
+		};
+		226E970F0FFB9BBD00A9A38E /* Default */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				EXECUTABLE_EXTENSION = so;
+				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_MODEL_TUNING = G5;
+				HEADER_SEARCH_PATHS = (
+					/Library/Frameworks/SDL_mixer.framework/Headers,
+					/Library/Frameworks/SDL_image.framework/Headers,
+					/Library/Frameworks/SDL.framework/Headers,
+					/opt/local/include,
+					"$(inherited)",
+				);
+				INSTALL_PATH = /usr/local/lib;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_1)",
+				);
+				LIBRARY_SEARCH_PATHS_QUOTED_1 = "\"$(SRCROOT)/../../../../../../Shared/tuxpaint/lib\"";
+				MACOSX_DEPLOYMENT_TARGET = 10.3;
+				OTHER_LDFLAGS = (
+					"-framework",
+					Foundation,
+					"-framework",
+					AppKit,
+					"-liconv",
+				);
+				PREBINDING = NO;
+				PRODUCT_NAME = fisheye;
+				ZERO_LINK = YES;
+			};
+			name = Default;
+		};
+		226E97230FFB9C4E00A9A38E /* Development */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				EXECUTABLE_EXTENSION = so;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_MODEL_TUNING = G5;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				HEADER_SEARCH_PATHS = (
+					/Library/Frameworks/SDL_mixer.framework/Headers,
+					/Library/Frameworks/SDL_image.framework/Headers,
+					/Library/Frameworks/SDL.framework/Headers,
+					/opt/local/include,
+					"$(inherited)",
+				);
+				INSTALL_PATH = /usr/local/lib;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_1)",
+				);
+				LIBRARY_SEARCH_PATHS_QUOTED_1 = "\"$(SRCROOT)/../../../../../../Shared/tuxpaint/lib\"";
+				MACOSX_DEPLOYMENT_TARGET = 10.3;
+				OTHER_LDFLAGS = (
+					"-framework",
+					Foundation,
+					"-framework",
+					AppKit,
+					"-liconv",
+				);
+				PREBINDING = NO;
+				PRODUCT_NAME = fold;
+				ZERO_LINK = YES;
+			};
+			name = Development;
+		};
+		226E97240FFB9C4E00A9A38E /* Deployment */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = (
+					ppc,
+					i386,
+				);
+				COPY_PHASE_STRIP = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				EXECUTABLE_EXTENSION = so;
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_MODEL_TUNING = G5;
+				HEADER_SEARCH_PATHS = (
+					/Library/Frameworks/SDL_mixer.framework/Headers,
+					/Library/Frameworks/SDL_image.framework/Headers,
+					/Library/Frameworks/SDL.framework/Headers,
+					/opt/local/include,
+					"$(inherited)",
+				);
+				INSTALL_PATH = /usr/local/lib;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_1)",
+				);
+				LIBRARY_SEARCH_PATHS_QUOTED_1 = "\"$(SRCROOT)/../../../../../../Shared/tuxpaint/lib\"";
+				MACOSX_DEPLOYMENT_TARGET = 10.3;
+				OTHER_LDFLAGS = (
+					"-framework",
+					Foundation,
+					"-framework",
+					AppKit,
+					"-liconv",
+				);
+				PREBINDING = NO;
+				PRODUCT_NAME = fold;
+				ZERO_LINK = NO;
+			};
+			name = Deployment;
+		};
+		226E97250FFB9C4E00A9A38E /* Default */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				EXECUTABLE_EXTENSION = so;
+				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_MODEL_TUNING = G5;
+				HEADER_SEARCH_PATHS = (
+					/Library/Frameworks/SDL_mixer.framework/Headers,
+					/Library/Frameworks/SDL_image.framework/Headers,
+					/Library/Frameworks/SDL.framework/Headers,
+					/opt/local/include,
+					"$(inherited)",
+				);
+				INSTALL_PATH = /usr/local/lib;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_1)",
+				);
+				LIBRARY_SEARCH_PATHS_QUOTED_1 = "\"$(SRCROOT)/../../../../../../Shared/tuxpaint/lib\"";
+				MACOSX_DEPLOYMENT_TARGET = 10.3;
+				OTHER_LDFLAGS = (
+					"-framework",
+					Foundation,
+					"-framework",
+					AppKit,
+					"-liconv",
+				);
+				PREBINDING = NO;
+				PRODUCT_NAME = fold;
+				ZERO_LINK = YES;
+			};
+			name = Default;
+		};
+		226E97370FFB9CB500A9A38E /* Development */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				EXECUTABLE_EXTENSION = so;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_MODEL_TUNING = G5;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				HEADER_SEARCH_PATHS = (
+					/Library/Frameworks/SDL_mixer.framework/Headers,
+					/Library/Frameworks/SDL_image.framework/Headers,
+					/Library/Frameworks/SDL.framework/Headers,
+					/opt/local/include,
+					"$(inherited)",
+				);
+				INSTALL_PATH = /usr/local/lib;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_1)",
+				);
+				LIBRARY_SEARCH_PATHS_QUOTED_1 = "\"$(SRCROOT)/../../../../../../Shared/tuxpaint/lib\"";
+				MACOSX_DEPLOYMENT_TARGET = 10.3;
+				OTHER_LDFLAGS = (
+					"-framework",
+					Foundation,
+					"-framework",
+					AppKit,
+					"-liconv",
+				);
+				PREBINDING = NO;
+				PRODUCT_NAME = mosaic;
+				ZERO_LINK = YES;
+			};
+			name = Development;
+		};
+		226E97380FFB9CB500A9A38E /* Deployment */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = (
+					ppc,
+					i386,
+				);
+				COPY_PHASE_STRIP = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				EXECUTABLE_EXTENSION = so;
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_MODEL_TUNING = G5;
+				HEADER_SEARCH_PATHS = (
+					/Library/Frameworks/SDL_mixer.framework/Headers,
+					/Library/Frameworks/SDL_image.framework/Headers,
+					/Library/Frameworks/SDL.framework/Headers,
+					/opt/local/include,
+					"$(inherited)",
+				);
+				INSTALL_PATH = /usr/local/lib;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_1)",
+				);
+				LIBRARY_SEARCH_PATHS_QUOTED_1 = "\"$(SRCROOT)/../../../../../../Shared/tuxpaint/lib\"";
+				MACOSX_DEPLOYMENT_TARGET = 10.3;
+				OTHER_LDFLAGS = (
+					"-framework",
+					Foundation,
+					"-framework",
+					AppKit,
+					"-liconv",
+				);
+				PREBINDING = NO;
+				PRODUCT_NAME = mosaic;
+				ZERO_LINK = NO;
+			};
+			name = Deployment;
+		};
+		226E97390FFB9CB500A9A38E /* Default */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				EXECUTABLE_EXTENSION = so;
+				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_MODEL_TUNING = G5;
+				HEADER_SEARCH_PATHS = (
+					/Library/Frameworks/SDL_mixer.framework/Headers,
+					/Library/Frameworks/SDL_image.framework/Headers,
+					/Library/Frameworks/SDL.framework/Headers,
+					/opt/local/include,
+					"$(inherited)",
+				);
+				INSTALL_PATH = /usr/local/lib;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_1)",
+				);
+				LIBRARY_SEARCH_PATHS_QUOTED_1 = "\"$(SRCROOT)/../../../../../../Shared/tuxpaint/lib\"";
+				MACOSX_DEPLOYMENT_TARGET = 10.3;
+				OTHER_LDFLAGS = (
+					"-framework",
+					Foundation,
+					"-framework",
+					AppKit,
+					"-liconv",
+				);
+				PREBINDING = NO;
+				PRODUCT_NAME = mosaic;
+				ZERO_LINK = YES;
+			};
+			name = Default;
+		};
+		226E97510FFB9D3300A9A38E /* Development */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				EXECUTABLE_EXTENSION = so;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_MODEL_TUNING = G5;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				HEADER_SEARCH_PATHS = (
+					/Library/Frameworks/SDL_mixer.framework/Headers,
+					/Library/Frameworks/SDL_image.framework/Headers,
+					/Library/Frameworks/SDL.framework/Headers,
+					/opt/local/include,
+					"$(inherited)",
+				);
+				INSTALL_PATH = /usr/local/lib;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_1)",
+				);
+				LIBRARY_SEARCH_PATHS_QUOTED_1 = "\"$(SRCROOT)/../../../../../../Shared/tuxpaint/lib\"";
+				MACOSX_DEPLOYMENT_TARGET = 10.3;
+				OTHER_LDFLAGS = (
+					"-framework",
+					Foundation,
+					"-framework",
+					AppKit,
+					"-liconv",
+				);
+				PREBINDING = NO;
+				PRODUCT_NAME = noise;
+				ZERO_LINK = YES;
+			};
+			name = Development;
+		};
+		226E97520FFB9D3300A9A38E /* Deployment */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = (
+					ppc,
+					i386,
+				);
+				COPY_PHASE_STRIP = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				EXECUTABLE_EXTENSION = so;
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_MODEL_TUNING = G5;
+				HEADER_SEARCH_PATHS = (
+					/Library/Frameworks/SDL_mixer.framework/Headers,
+					/Library/Frameworks/SDL_image.framework/Headers,
+					/Library/Frameworks/SDL.framework/Headers,
+					/opt/local/include,
+					"$(inherited)",
+				);
+				INSTALL_PATH = /usr/local/lib;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_1)",
+				);
+				LIBRARY_SEARCH_PATHS_QUOTED_1 = "\"$(SRCROOT)/../../../../../../Shared/tuxpaint/lib\"";
+				MACOSX_DEPLOYMENT_TARGET = 10.3;
+				OTHER_LDFLAGS = (
+					"-framework",
+					Foundation,
+					"-framework",
+					AppKit,
+					"-liconv",
+				);
+				PREBINDING = NO;
+				PRODUCT_NAME = noise;
+				ZERO_LINK = NO;
+			};
+			name = Deployment;
+		};
+		226E97530FFB9D3300A9A38E /* Default */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				EXECUTABLE_EXTENSION = so;
+				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_MODEL_TUNING = G5;
+				HEADER_SEARCH_PATHS = (
+					/Library/Frameworks/SDL_mixer.framework/Headers,
+					/Library/Frameworks/SDL_image.framework/Headers,
+					/Library/Frameworks/SDL.framework/Headers,
+					/opt/local/include,
+					"$(inherited)",
+				);
+				INSTALL_PATH = /usr/local/lib;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_1)",
+				);
+				LIBRARY_SEARCH_PATHS_QUOTED_1 = "\"$(SRCROOT)/../../../../../../Shared/tuxpaint/lib\"";
+				MACOSX_DEPLOYMENT_TARGET = 10.3;
+				OTHER_LDFLAGS = (
+					"-framework",
+					Foundation,
+					"-framework",
+					AppKit,
+					"-liconv",
+				);
+				PREBINDING = NO;
+				PRODUCT_NAME = noise;
+				ZERO_LINK = YES;
+			};
+			name = Default;
+		};
+		226E97670FFB9D9100A9A38E /* Development */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				EXECUTABLE_EXTENSION = so;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_MODEL_TUNING = G5;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				HEADER_SEARCH_PATHS = (
+					/Library/Frameworks/SDL_mixer.framework/Headers,
+					/Library/Frameworks/SDL_image.framework/Headers,
+					/Library/Frameworks/SDL.framework/Headers,
+					/opt/local/include,
+					"$(inherited)",
+				);
+				INSTALL_PATH = /usr/local/lib;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_1)",
+				);
+				LIBRARY_SEARCH_PATHS_QUOTED_1 = "\"$(SRCROOT)/../../../../../../Shared/tuxpaint/lib\"";
+				MACOSX_DEPLOYMENT_TARGET = 10.3;
+				OTHER_LDFLAGS = (
+					"-framework",
+					Foundation,
+					"-framework",
+					AppKit,
+					"-liconv",
+				);
+				PREBINDING = NO;
+				PRODUCT_NAME = rails;
+				ZERO_LINK = YES;
+			};
+			name = Development;
+		};
+		226E97680FFB9D9100A9A38E /* Deployment */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = (
+					ppc,
+					i386,
+				);
+				COPY_PHASE_STRIP = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				EXECUTABLE_EXTENSION = so;
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_MODEL_TUNING = G5;
+				HEADER_SEARCH_PATHS = (
+					/Library/Frameworks/SDL_mixer.framework/Headers,
+					/Library/Frameworks/SDL_image.framework/Headers,
+					/Library/Frameworks/SDL.framework/Headers,
+					/opt/local/include,
+					"$(inherited)",
+				);
+				INSTALL_PATH = /usr/local/lib;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_1)",
+				);
+				LIBRARY_SEARCH_PATHS_QUOTED_1 = "\"$(SRCROOT)/../../../../../../Shared/tuxpaint/lib\"";
+				MACOSX_DEPLOYMENT_TARGET = 10.3;
+				OTHER_LDFLAGS = (
+					"-framework",
+					Foundation,
+					"-framework",
+					AppKit,
+					"-liconv",
+				);
+				PREBINDING = NO;
+				PRODUCT_NAME = rails;
+				ZERO_LINK = NO;
+			};
+			name = Deployment;
+		};
+		226E97690FFB9D9100A9A38E /* Default */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				EXECUTABLE_EXTENSION = so;
+				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_MODEL_TUNING = G5;
+				HEADER_SEARCH_PATHS = (
+					/Library/Frameworks/SDL_mixer.framework/Headers,
+					/Library/Frameworks/SDL_image.framework/Headers,
+					/Library/Frameworks/SDL.framework/Headers,
+					/opt/local/include,
+					"$(inherited)",
+				);
+				INSTALL_PATH = /usr/local/lib;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_1)",
+				);
+				LIBRARY_SEARCH_PATHS_QUOTED_1 = "\"$(SRCROOT)/../../../../../../Shared/tuxpaint/lib\"";
+				MACOSX_DEPLOYMENT_TARGET = 10.3;
+				OTHER_LDFLAGS = (
+					"-framework",
+					Foundation,
+					"-framework",
+					AppKit,
+					"-liconv",
+				);
+				PREBINDING = NO;
+				PRODUCT_NAME = rails;
+				ZERO_LINK = YES;
+			};
+			name = Default;
+		};
+		226E97770FFB9DD600A9A38E /* Development */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				EXECUTABLE_EXTENSION = so;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_MODEL_TUNING = G5;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				HEADER_SEARCH_PATHS = (
+					/Library/Frameworks/SDL_mixer.framework/Headers,
+					/Library/Frameworks/SDL_image.framework/Headers,
+					/Library/Frameworks/SDL.framework/Headers,
+					/opt/local/include,
+					"$(inherited)",
+				);
+				INSTALL_PATH = /usr/local/lib;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_1)",
+				);
+				LIBRARY_SEARCH_PATHS_QUOTED_1 = "\"$(SRCROOT)/../../../../../../Shared/tuxpaint/lib\"";
+				MACOSX_DEPLOYMENT_TARGET = 10.3;
+				OTHER_LDFLAGS = (
+					"-framework",
+					Foundation,
+					"-framework",
+					AppKit,
+					"-liconv",
+				);
+				PREBINDING = NO;
+				PRODUCT_NAME = rain;
+				ZERO_LINK = YES;
+			};
+			name = Development;
+		};
+		226E97780FFB9DD600A9A38E /* Deployment */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = (
+					ppc,
+					i386,
+				);
+				COPY_PHASE_STRIP = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				EXECUTABLE_EXTENSION = so;
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_MODEL_TUNING = G5;
+				HEADER_SEARCH_PATHS = (
+					/Library/Frameworks/SDL_mixer.framework/Headers,
+					/Library/Frameworks/SDL_image.framework/Headers,
+					/Library/Frameworks/SDL.framework/Headers,
+					/opt/local/include,
+					"$(inherited)",
+				);
+				INSTALL_PATH = /usr/local/lib;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_1)",
+				);
+				LIBRARY_SEARCH_PATHS_QUOTED_1 = "\"$(SRCROOT)/../../../../../../Shared/tuxpaint/lib\"";
+				MACOSX_DEPLOYMENT_TARGET = 10.3;
+				OTHER_LDFLAGS = (
+					"-framework",
+					Foundation,
+					"-framework",
+					AppKit,
+					"-liconv",
+				);
+				PREBINDING = NO;
+				PRODUCT_NAME = rain;
+				ZERO_LINK = NO;
+			};
+			name = Deployment;
+		};
+		226E97790FFB9DD600A9A38E /* Default */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				EXECUTABLE_EXTENSION = so;
+				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_MODEL_TUNING = G5;
+				HEADER_SEARCH_PATHS = (
+					/Library/Frameworks/SDL_mixer.framework/Headers,
+					/Library/Frameworks/SDL_image.framework/Headers,
+					/Library/Frameworks/SDL.framework/Headers,
+					/opt/local/include,
+					"$(inherited)",
+				);
+				INSTALL_PATH = /usr/local/lib;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_1)",
+				);
+				LIBRARY_SEARCH_PATHS_QUOTED_1 = "\"$(SRCROOT)/../../../../../../Shared/tuxpaint/lib\"";
+				MACOSX_DEPLOYMENT_TARGET = 10.3;
+				OTHER_LDFLAGS = (
+					"-framework",
+					Foundation,
+					"-framework",
+					AppKit,
+					"-liconv",
+				);
+				PREBINDING = NO;
+				PRODUCT_NAME = rain;
+				ZERO_LINK = YES;
+			};
+			name = Default;
+		};
+		226E978A0FFB9E4000A9A38E /* Development */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				EXECUTABLE_EXTENSION = so;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_MODEL_TUNING = G5;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				HEADER_SEARCH_PATHS = (
+					/Library/Frameworks/SDL_mixer.framework/Headers,
+					/Library/Frameworks/SDL_image.framework/Headers,
+					/Library/Frameworks/SDL.framework/Headers,
+					/opt/local/include,
+					"$(inherited)",
+				);
+				INSTALL_PATH = /usr/local/lib;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_1)",
+				);
+				LIBRARY_SEARCH_PATHS_QUOTED_1 = "\"$(SRCROOT)/../../../../../../Shared/tuxpaint/lib\"";
+				MACOSX_DEPLOYMENT_TARGET = 10.3;
+				OTHER_LDFLAGS = (
+					"-framework",
+					Foundation,
+					"-framework",
+					AppKit,
+					"-liconv",
+				);
+				PREBINDING = NO;
+				PRODUCT_NAME = realrainbow;
+				ZERO_LINK = YES;
+			};
+			name = Development;
+		};
+		226E978B0FFB9E4000A9A38E /* Deployment */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = (
+					ppc,
+					i386,
+				);
+				COPY_PHASE_STRIP = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				EXECUTABLE_EXTENSION = so;
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_MODEL_TUNING = G5;
+				HEADER_SEARCH_PATHS = (
+					/Library/Frameworks/SDL_mixer.framework/Headers,
+					/Library/Frameworks/SDL_image.framework/Headers,
+					/Library/Frameworks/SDL.framework/Headers,
+					/opt/local/include,
+					"$(inherited)",
+				);
+				INSTALL_PATH = /usr/local/lib;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_1)",
+				);
+				LIBRARY_SEARCH_PATHS_QUOTED_1 = "\"$(SRCROOT)/../../../../../../Shared/tuxpaint/lib\"";
+				MACOSX_DEPLOYMENT_TARGET = 10.3;
+				OTHER_LDFLAGS = (
+					"-framework",
+					Foundation,
+					"-framework",
+					AppKit,
+					"-liconv",
+				);
+				PREBINDING = NO;
+				PRODUCT_NAME = realrainbow;
+				ZERO_LINK = NO;
+			};
+			name = Deployment;
+		};
+		226E978C0FFB9E4000A9A38E /* Default */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				EXECUTABLE_EXTENSION = so;
+				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_MODEL_TUNING = G5;
+				HEADER_SEARCH_PATHS = (
+					/Library/Frameworks/SDL_mixer.framework/Headers,
+					/Library/Frameworks/SDL_image.framework/Headers,
+					/Library/Frameworks/SDL.framework/Headers,
+					/opt/local/include,
+					"$(inherited)",
+				);
+				INSTALL_PATH = /usr/local/lib;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_1)",
+				);
+				LIBRARY_SEARCH_PATHS_QUOTED_1 = "\"$(SRCROOT)/../../../../../../Shared/tuxpaint/lib\"";
+				MACOSX_DEPLOYMENT_TARGET = 10.3;
+				OTHER_LDFLAGS = (
+					"-framework",
+					Foundation,
+					"-framework",
+					AppKit,
+					"-liconv",
+				);
+				PREBINDING = NO;
+				PRODUCT_NAME = realrainbow;
+				ZERO_LINK = YES;
+			};
+			name = Default;
+		};
+		226E979C0FFB9E9600A9A38E /* Development */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				EXECUTABLE_EXTENSION = so;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_MODEL_TUNING = G5;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				HEADER_SEARCH_PATHS = (
+					/Library/Frameworks/SDL_mixer.framework/Headers,
+					/Library/Frameworks/SDL_image.framework/Headers,
+					/Library/Frameworks/SDL.framework/Headers,
+					/opt/local/include,
+					"$(inherited)",
+				);
+				INSTALL_PATH = /usr/local/lib;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_1)",
+				);
+				LIBRARY_SEARCH_PATHS_QUOTED_1 = "\"$(SRCROOT)/../../../../../../Shared/tuxpaint/lib\"";
+				MACOSX_DEPLOYMENT_TARGET = 10.3;
+				OTHER_LDFLAGS = (
+					"-framework",
+					Foundation,
+					"-framework",
+					AppKit,
+					"-liconv",
+				);
+				PREBINDING = NO;
+				PRODUCT_NAME = rosette;
+				ZERO_LINK = YES;
+			};
+			name = Development;
+		};
+		226E979D0FFB9E9600A9A38E /* Deployment */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = (
+					ppc,
+					i386,
+				);
+				COPY_PHASE_STRIP = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				EXECUTABLE_EXTENSION = so;
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_MODEL_TUNING = G5;
+				HEADER_SEARCH_PATHS = (
+					/Library/Frameworks/SDL_mixer.framework/Headers,
+					/Library/Frameworks/SDL_image.framework/Headers,
+					/Library/Frameworks/SDL.framework/Headers,
+					/opt/local/include,
+					"$(inherited)",
+				);
+				INSTALL_PATH = /usr/local/lib;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_1)",
+				);
+				LIBRARY_SEARCH_PATHS_QUOTED_1 = "\"$(SRCROOT)/../../../../../../Shared/tuxpaint/lib\"";
+				MACOSX_DEPLOYMENT_TARGET = 10.3;
+				OTHER_LDFLAGS = (
+					"-framework",
+					Foundation,
+					"-framework",
+					AppKit,
+					"-liconv",
+				);
+				PREBINDING = NO;
+				PRODUCT_NAME = rosette;
+				ZERO_LINK = NO;
+			};
+			name = Deployment;
+		};
+		226E979E0FFB9E9600A9A38E /* Default */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				EXECUTABLE_EXTENSION = so;
+				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_MODEL_TUNING = G5;
+				HEADER_SEARCH_PATHS = (
+					/Library/Frameworks/SDL_mixer.framework/Headers,
+					/Library/Frameworks/SDL_image.framework/Headers,
+					/Library/Frameworks/SDL.framework/Headers,
+					/opt/local/include,
+					"$(inherited)",
+				);
+				INSTALL_PATH = /usr/local/lib;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_1)",
+				);
+				LIBRARY_SEARCH_PATHS_QUOTED_1 = "\"$(SRCROOT)/../../../../../../Shared/tuxpaint/lib\"";
+				MACOSX_DEPLOYMENT_TARGET = 10.3;
+				OTHER_LDFLAGS = (
+					"-framework",
+					Foundation,
+					"-framework",
+					AppKit,
+					"-liconv",
+				);
+				PREBINDING = NO;
+				PRODUCT_NAME = rosette;
+				ZERO_LINK = YES;
+			};
+			name = Default;
+		};
+		226E97AE0FFB9EEF00A9A38E /* Development */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				EXECUTABLE_EXTENSION = so;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_MODEL_TUNING = G5;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				HEADER_SEARCH_PATHS = (
+					/Library/Frameworks/SDL_mixer.framework/Headers,
+					/Library/Frameworks/SDL_image.framework/Headers,
+					/Library/Frameworks/SDL.framework/Headers,
+					/opt/local/include,
+					"$(inherited)",
+				);
+				INSTALL_PATH = /usr/local/lib;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_1)",
+				);
+				LIBRARY_SEARCH_PATHS_QUOTED_1 = "\"$(SRCROOT)/../../../../../../Shared/tuxpaint/lib\"";
+				MACOSX_DEPLOYMENT_TARGET = 10.3;
+				OTHER_LDFLAGS = (
+					"-framework",
+					Foundation,
+					"-framework",
+					AppKit,
+					"-liconv",
+				);
+				PREBINDING = NO;
+				PRODUCT_NAME = sharpen;
+				ZERO_LINK = YES;
+			};
+			name = Development;
+		};
+		226E97AF0FFB9EEF00A9A38E /* Deployment */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = (
+					ppc,
+					i386,
+				);
+				COPY_PHASE_STRIP = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				EXECUTABLE_EXTENSION = so;
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_MODEL_TUNING = G5;
+				HEADER_SEARCH_PATHS = (
+					/Library/Frameworks/SDL_mixer.framework/Headers,
+					/Library/Frameworks/SDL_image.framework/Headers,
+					/Library/Frameworks/SDL.framework/Headers,
+					/opt/local/include,
+					"$(inherited)",
+				);
+				INSTALL_PATH = /usr/local/lib;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_1)",
+				);
+				LIBRARY_SEARCH_PATHS_QUOTED_1 = "\"$(SRCROOT)/../../../../../../Shared/tuxpaint/lib\"";
+				MACOSX_DEPLOYMENT_TARGET = 10.3;
+				OTHER_LDFLAGS = (
+					"-framework",
+					Foundation,
+					"-framework",
+					AppKit,
+					"-liconv",
+				);
+				PREBINDING = NO;
+				PRODUCT_NAME = sharpen;
+				ZERO_LINK = NO;
+			};
+			name = Deployment;
+		};
+		226E97B00FFB9EEF00A9A38E /* Default */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				EXECUTABLE_EXTENSION = so;
+				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_MODEL_TUNING = G5;
+				HEADER_SEARCH_PATHS = (
+					/Library/Frameworks/SDL_mixer.framework/Headers,
+					/Library/Frameworks/SDL_image.framework/Headers,
+					/Library/Frameworks/SDL.framework/Headers,
+					/opt/local/include,
+					"$(inherited)",
+				);
+				INSTALL_PATH = /usr/local/lib;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_1)",
+				);
+				LIBRARY_SEARCH_PATHS_QUOTED_1 = "\"$(SRCROOT)/../../../../../../Shared/tuxpaint/lib\"";
+				MACOSX_DEPLOYMENT_TARGET = 10.3;
+				OTHER_LDFLAGS = (
+					"-framework",
+					Foundation,
+					"-framework",
+					AppKit,
+					"-liconv",
+				);
+				PREBINDING = NO;
+				PRODUCT_NAME = sharpen;
+				ZERO_LINK = YES;
+			};
+			name = Default;
+		};
+		226E97C00FFB9F4200A9A38E /* Development */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				EXECUTABLE_EXTENSION = so;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_MODEL_TUNING = G5;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				HEADER_SEARCH_PATHS = (
+					/Library/Frameworks/SDL_mixer.framework/Headers,
+					/Library/Frameworks/SDL_image.framework/Headers,
+					/Library/Frameworks/SDL.framework/Headers,
+					/opt/local/include,
+					"$(inherited)",
+				);
+				INSTALL_PATH = /usr/local/lib;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_1)",
+				);
+				LIBRARY_SEARCH_PATHS_QUOTED_1 = "\"$(SRCROOT)/../../../../../../Shared/tuxpaint/lib\"";
+				MACOSX_DEPLOYMENT_TARGET = 10.3;
+				OTHER_LDFLAGS = (
+					"-framework",
+					Foundation,
+					"-framework",
+					AppKit,
+					"-liconv",
+				);
+				PREBINDING = NO;
+				PRODUCT_NAME = snow;
+				ZERO_LINK = YES;
+			};
+			name = Development;
+		};
+		226E97C10FFB9F4200A9A38E /* Deployment */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = (
+					ppc,
+					i386,
+				);
+				COPY_PHASE_STRIP = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				EXECUTABLE_EXTENSION = so;
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_MODEL_TUNING = G5;
+				HEADER_SEARCH_PATHS = (
+					/Library/Frameworks/SDL_mixer.framework/Headers,
+					/Library/Frameworks/SDL_image.framework/Headers,
+					/Library/Frameworks/SDL.framework/Headers,
+					/opt/local/include,
+					"$(inherited)",
+				);
+				INSTALL_PATH = /usr/local/lib;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_1)",
+				);
+				LIBRARY_SEARCH_PATHS_QUOTED_1 = "\"$(SRCROOT)/../../../../../../Shared/tuxpaint/lib\"";
+				MACOSX_DEPLOYMENT_TARGET = 10.3;
+				OTHER_LDFLAGS = (
+					"-framework",
+					Foundation,
+					"-framework",
+					AppKit,
+					"-liconv",
+				);
+				PREBINDING = NO;
+				PRODUCT_NAME = snow;
+				ZERO_LINK = NO;
+			};
+			name = Deployment;
+		};
+		226E97C20FFB9F4200A9A38E /* Default */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				EXECUTABLE_EXTENSION = so;
+				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_MODEL_TUNING = G5;
+				HEADER_SEARCH_PATHS = (
+					/Library/Frameworks/SDL_mixer.framework/Headers,
+					/Library/Frameworks/SDL_image.framework/Headers,
+					/Library/Frameworks/SDL.framework/Headers,
+					/opt/local/include,
+					"$(inherited)",
+				);
+				INSTALL_PATH = /usr/local/lib;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_1)",
+				);
+				LIBRARY_SEARCH_PATHS_QUOTED_1 = "\"$(SRCROOT)/../../../../../../Shared/tuxpaint/lib\"";
+				MACOSX_DEPLOYMENT_TARGET = 10.3;
+				OTHER_LDFLAGS = (
+					"-framework",
+					Foundation,
+					"-framework",
+					AppKit,
+					"-liconv",
+				);
+				PREBINDING = NO;
+				PRODUCT_NAME = snow;
+				ZERO_LINK = YES;
+			};
+			name = Default;
+		};
+		226E97D30FFB9F8E00A9A38E /* Development */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				EXECUTABLE_EXTENSION = so;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_MODEL_TUNING = G5;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				HEADER_SEARCH_PATHS = (
+					/Library/Frameworks/SDL_mixer.framework/Headers,
+					/Library/Frameworks/SDL_image.framework/Headers,
+					/Library/Frameworks/SDL.framework/Headers,
+					/opt/local/include,
+					"$(inherited)",
+				);
+				INSTALL_PATH = /usr/local/lib;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_1)",
+				);
+				LIBRARY_SEARCH_PATHS_QUOTED_1 = "\"$(SRCROOT)/../../../../../../Shared/tuxpaint/lib\"";
+				MACOSX_DEPLOYMENT_TARGET = 10.3;
+				OTHER_LDFLAGS = (
+					"-framework",
+					Foundation,
+					"-framework",
+					AppKit,
+					"-liconv",
+				);
+				PREBINDING = NO;
+				PRODUCT_NAME = string;
+				ZERO_LINK = YES;
+			};
+			name = Development;
+		};
+		226E97D40FFB9F8E00A9A38E /* Deployment */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = (
+					ppc,
+					i386,
+				);
+				COPY_PHASE_STRIP = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				EXECUTABLE_EXTENSION = so;
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_MODEL_TUNING = G5;
+				HEADER_SEARCH_PATHS = (
+					/Library/Frameworks/SDL_mixer.framework/Headers,
+					/Library/Frameworks/SDL_image.framework/Headers,
+					/Library/Frameworks/SDL.framework/Headers,
+					/opt/local/include,
+					"$(inherited)",
+				);
+				INSTALL_PATH = /usr/local/lib;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_1)",
+				);
+				LIBRARY_SEARCH_PATHS_QUOTED_1 = "\"$(SRCROOT)/../../../../../../Shared/tuxpaint/lib\"";
+				MACOSX_DEPLOYMENT_TARGET = 10.3;
+				OTHER_LDFLAGS = (
+					"-framework",
+					Foundation,
+					"-framework",
+					AppKit,
+					"-liconv",
+				);
+				PREBINDING = NO;
+				PRODUCT_NAME = string;
+				ZERO_LINK = NO;
+			};
+			name = Deployment;
+		};
+		226E97D50FFB9F8E00A9A38E /* Default */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				EXECUTABLE_EXTENSION = so;
+				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_MODEL_TUNING = G5;
+				HEADER_SEARCH_PATHS = (
+					/Library/Frameworks/SDL_mixer.framework/Headers,
+					/Library/Frameworks/SDL_image.framework/Headers,
+					/Library/Frameworks/SDL.framework/Headers,
+					/opt/local/include,
+					"$(inherited)",
+				);
+				INSTALL_PATH = /usr/local/lib;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_1)",
+				);
+				LIBRARY_SEARCH_PATHS_QUOTED_1 = "\"$(SRCROOT)/../../../../../../Shared/tuxpaint/lib\"";
+				MACOSX_DEPLOYMENT_TARGET = 10.3;
+				OTHER_LDFLAGS = (
+					"-framework",
+					Foundation,
+					"-framework",
+					AppKit,
+					"-liconv",
+				);
+				PREBINDING = NO;
+				PRODUCT_NAME = string;
+				ZERO_LINK = YES;
+			};
+			name = Default;
+		};
+		226E97E70FFB9FEE00A9A38E /* Development */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				EXECUTABLE_EXTENSION = so;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_MODEL_TUNING = G5;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				HEADER_SEARCH_PATHS = (
+					/Library/Frameworks/SDL_mixer.framework/Headers,
+					/Library/Frameworks/SDL_image.framework/Headers,
+					/Library/Frameworks/SDL.framework/Headers,
+					/opt/local/include,
+					"$(inherited)",
+				);
+				INSTALL_PATH = /usr/local/lib;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_1)",
+				);
+				LIBRARY_SEARCH_PATHS_QUOTED_1 = "\"$(SRCROOT)/../../../../../../Shared/tuxpaint/lib\"";
+				MACOSX_DEPLOYMENT_TARGET = 10.3;
+				OTHER_LDFLAGS = (
+					"-framework",
+					Foundation,
+					"-framework",
+					AppKit,
+					"-liconv",
+				);
+				PREBINDING = NO;
+				PRODUCT_NAME = toothpaste;
+				ZERO_LINK = YES;
+			};
+			name = Development;
+		};
+		226E97E80FFB9FEE00A9A38E /* Deployment */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = (
+					ppc,
+					i386,
+				);
+				COPY_PHASE_STRIP = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				EXECUTABLE_EXTENSION = so;
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_MODEL_TUNING = G5;
+				HEADER_SEARCH_PATHS = (
+					/Library/Frameworks/SDL_mixer.framework/Headers,
+					/Library/Frameworks/SDL_image.framework/Headers,
+					/Library/Frameworks/SDL.framework/Headers,
+					/opt/local/include,
+					"$(inherited)",
+				);
+				INSTALL_PATH = /usr/local/lib;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_1)",
+				);
+				LIBRARY_SEARCH_PATHS_QUOTED_1 = "\"$(SRCROOT)/../../../../../../Shared/tuxpaint/lib\"";
+				MACOSX_DEPLOYMENT_TARGET = 10.3;
+				OTHER_LDFLAGS = (
+					"-framework",
+					Foundation,
+					"-framework",
+					AppKit,
+					"-liconv",
+				);
+				PREBINDING = NO;
+				PRODUCT_NAME = toothpaste;
+				ZERO_LINK = NO;
+			};
+			name = Deployment;
+		};
+		226E97E90FFB9FEE00A9A38E /* Default */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				EXECUTABLE_EXTENSION = so;
+				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_MODEL_TUNING = G5;
+				HEADER_SEARCH_PATHS = (
+					/Library/Frameworks/SDL_mixer.framework/Headers,
+					/Library/Frameworks/SDL_image.framework/Headers,
+					/Library/Frameworks/SDL.framework/Headers,
+					/opt/local/include,
+					"$(inherited)",
+				);
+				INSTALL_PATH = /usr/local/lib;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_1)",
+				);
+				LIBRARY_SEARCH_PATHS_QUOTED_1 = "\"$(SRCROOT)/../../../../../../Shared/tuxpaint/lib\"";
+				MACOSX_DEPLOYMENT_TARGET = 10.3;
+				OTHER_LDFLAGS = (
+					"-framework",
+					Foundation,
+					"-framework",
+					AppKit,
+					"-liconv",
+				);
+				PREBINDING = NO;
+				PRODUCT_NAME = toothpaste;
+				ZERO_LINK = YES;
+			};
+			name = Default;
+		};
+		226E97FB0FFBA04000A9A38E /* Development */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				EXECUTABLE_EXTENSION = so;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_MODEL_TUNING = G5;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				HEADER_SEARCH_PATHS = (
+					/Library/Frameworks/SDL_mixer.framework/Headers,
+					/Library/Frameworks/SDL_image.framework/Headers,
+					/Library/Frameworks/SDL.framework/Headers,
+					/opt/local/include,
+					"$(inherited)",
+				);
+				INSTALL_PATH = /usr/local/lib;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_1)",
+				);
+				LIBRARY_SEARCH_PATHS_QUOTED_1 = "\"$(SRCROOT)/../../../../../../Shared/tuxpaint/lib\"";
+				MACOSX_DEPLOYMENT_TARGET = 10.3;
+				OTHER_LDFLAGS = (
+					"-framework",
+					Foundation,
+					"-framework",
+					AppKit,
+					"-liconv",
+				);
+				PREBINDING = NO;
+				PRODUCT_NAME = tornado;
+				ZERO_LINK = YES;
+			};
+			name = Development;
+		};
+		226E97FC0FFBA04000A9A38E /* Deployment */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = (
+					ppc,
+					i386,
+				);
+				COPY_PHASE_STRIP = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				EXECUTABLE_EXTENSION = so;
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_MODEL_TUNING = G5;
+				HEADER_SEARCH_PATHS = (
+					/Library/Frameworks/SDL_mixer.framework/Headers,
+					/Library/Frameworks/SDL_image.framework/Headers,
+					/Library/Frameworks/SDL.framework/Headers,
+					/opt/local/include,
+					"$(inherited)",
+				);
+				INSTALL_PATH = /usr/local/lib;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_1)",
+				);
+				LIBRARY_SEARCH_PATHS_QUOTED_1 = "\"$(SRCROOT)/../../../../../../Shared/tuxpaint/lib\"";
+				MACOSX_DEPLOYMENT_TARGET = 10.3;
+				OTHER_LDFLAGS = (
+					"-framework",
+					Foundation,
+					"-framework",
+					AppKit,
+					"-liconv",
+				);
+				PREBINDING = NO;
+				PRODUCT_NAME = tornado;
+				ZERO_LINK = NO;
+			};
+			name = Deployment;
+		};
+		226E97FD0FFBA04000A9A38E /* Default */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				EXECUTABLE_EXTENSION = so;
+				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_MODEL_TUNING = G5;
+				HEADER_SEARCH_PATHS = (
+					/Library/Frameworks/SDL_mixer.framework/Headers,
+					/Library/Frameworks/SDL_image.framework/Headers,
+					/Library/Frameworks/SDL.framework/Headers,
+					/opt/local/include,
+					"$(inherited)",
+				);
+				INSTALL_PATH = /usr/local/lib;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_1)",
+				);
+				LIBRARY_SEARCH_PATHS_QUOTED_1 = "\"$(SRCROOT)/../../../../../../Shared/tuxpaint/lib\"";
+				MACOSX_DEPLOYMENT_TARGET = 10.3;
+				OTHER_LDFLAGS = (
+					"-framework",
+					Foundation,
+					"-framework",
+					AppKit,
+					"-liconv",
+				);
+				PREBINDING = NO;
+				PRODUCT_NAME = tornado;
+				ZERO_LINK = YES;
+			};
+			name = Default;
+		};
+		226E98100FFBA08F00A9A38E /* Development */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				EXECUTABLE_EXTENSION = so;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_MODEL_TUNING = G5;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				HEADER_SEARCH_PATHS = (
+					/Library/Frameworks/SDL_mixer.framework/Headers,
+					/Library/Frameworks/SDL_image.framework/Headers,
+					/Library/Frameworks/SDL.framework/Headers,
+					/opt/local/include,
+					"$(inherited)",
+				);
+				INSTALL_PATH = /usr/local/lib;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_1)",
+				);
+				LIBRARY_SEARCH_PATHS_QUOTED_1 = "\"$(SRCROOT)/../../../../../../Shared/tuxpaint/lib\"";
+				MACOSX_DEPLOYMENT_TARGET = 10.3;
+				OTHER_LDFLAGS = (
+					"-framework",
+					Foundation,
+					"-framework",
+					AppKit,
+					"-liconv",
+				);
+				PREBINDING = NO;
+				PRODUCT_NAME = tv;
+				ZERO_LINK = YES;
+			};
+			name = Development;
+		};
+		226E98110FFBA08F00A9A38E /* Deployment */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = (
+					ppc,
+					i386,
+				);
+				COPY_PHASE_STRIP = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				EXECUTABLE_EXTENSION = so;
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_MODEL_TUNING = G5;
+				HEADER_SEARCH_PATHS = (
+					/Library/Frameworks/SDL_mixer.framework/Headers,
+					/Library/Frameworks/SDL_image.framework/Headers,
+					/Library/Frameworks/SDL.framework/Headers,
+					/opt/local/include,
+					"$(inherited)",
+				);
+				INSTALL_PATH = /usr/local/lib;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_1)",
+				);
+				LIBRARY_SEARCH_PATHS_QUOTED_1 = "\"$(SRCROOT)/../../../../../../Shared/tuxpaint/lib\"";
+				MACOSX_DEPLOYMENT_TARGET = 10.3;
+				OTHER_LDFLAGS = (
+					"-framework",
+					Foundation,
+					"-framework",
+					AppKit,
+					"-liconv",
+				);
+				PREBINDING = NO;
+				PRODUCT_NAME = tv;
+				ZERO_LINK = NO;
+			};
+			name = Deployment;
+		};
+		226E98120FFBA08F00A9A38E /* Default */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				EXECUTABLE_EXTENSION = so;
+				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_MODEL_TUNING = G5;
+				HEADER_SEARCH_PATHS = (
+					/Library/Frameworks/SDL_mixer.framework/Headers,
+					/Library/Frameworks/SDL_image.framework/Headers,
+					/Library/Frameworks/SDL.framework/Headers,
+					/opt/local/include,
+					"$(inherited)",
+				);
+				INSTALL_PATH = /usr/local/lib;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_1)",
+				);
+				LIBRARY_SEARCH_PATHS_QUOTED_1 = "\"$(SRCROOT)/../../../../../../Shared/tuxpaint/lib\"";
+				MACOSX_DEPLOYMENT_TARGET = 10.3;
+				OTHER_LDFLAGS = (
+					"-framework",
+					Foundation,
+					"-framework",
+					AppKit,
+					"-liconv",
+				);
+				PREBINDING = NO;
+				PRODUCT_NAME = tv;
+				ZERO_LINK = YES;
+			};
+			name = Default;
+		};
+		226E981F0FFBA10500A9A38E /* Development */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				EXECUTABLE_EXTENSION = so;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_MODEL_TUNING = G5;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				HEADER_SEARCH_PATHS = (
+					/Library/Frameworks/SDL_mixer.framework/Headers,
+					/Library/Frameworks/SDL_image.framework/Headers,
+					/Library/Frameworks/SDL.framework/Headers,
+					/opt/local/include,
+					"$(inherited)",
+				);
+				INSTALL_PATH = /usr/local/lib;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_1)",
+				);
+				LIBRARY_SEARCH_PATHS_QUOTED_1 = "\"$(SRCROOT)/../../../../../../Shared/tuxpaint/lib\"";
+				MACOSX_DEPLOYMENT_TARGET = 10.3;
+				OTHER_LDFLAGS = (
+					"-framework",
+					Foundation,
+					"-framework",
+					AppKit,
+					"-liconv",
+				);
+				PREBINDING = NO;
+				PRODUCT_NAME = puzzle;
+				ZERO_LINK = YES;
+			};
+			name = Development;
+		};
+		226E98200FFBA10500A9A38E /* Deployment */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = (
+					ppc,
+					i386,
+				);
+				COPY_PHASE_STRIP = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				EXECUTABLE_EXTENSION = so;
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_MODEL_TUNING = G5;
+				HEADER_SEARCH_PATHS = (
+					/Library/Frameworks/SDL_mixer.framework/Headers,
+					/Library/Frameworks/SDL_image.framework/Headers,
+					/Library/Frameworks/SDL.framework/Headers,
+					/opt/local/include,
+					"$(inherited)",
+				);
+				INSTALL_PATH = /usr/local/lib;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_1)",
+				);
+				LIBRARY_SEARCH_PATHS_QUOTED_1 = "\"$(SRCROOT)/../../../../../../Shared/tuxpaint/lib\"";
+				MACOSX_DEPLOYMENT_TARGET = 10.3;
+				OTHER_LDFLAGS = (
+					"-framework",
+					Foundation,
+					"-framework",
+					AppKit,
+					"-liconv",
+				);
+				PREBINDING = NO;
+				PRODUCT_NAME = puzzle;
+				ZERO_LINK = NO;
+			};
+			name = Deployment;
+		};
+		226E98210FFBA10500A9A38E /* Default */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				EXECUTABLE_EXTENSION = so;
+				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_MODEL_TUNING = G5;
+				HEADER_SEARCH_PATHS = (
+					/Library/Frameworks/SDL_mixer.framework/Headers,
+					/Library/Frameworks/SDL_image.framework/Headers,
+					/Library/Frameworks/SDL.framework/Headers,
+					/opt/local/include,
+					"$(inherited)",
+				);
+				INSTALL_PATH = /usr/local/lib;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_1)",
+				);
+				LIBRARY_SEARCH_PATHS_QUOTED_1 = "\"$(SRCROOT)/../../../../../../Shared/tuxpaint/lib\"";
+				MACOSX_DEPLOYMENT_TARGET = 10.3;
+				OTHER_LDFLAGS = (
+					"-framework",
+					Foundation,
+					"-framework",
+					AppKit,
+					"-liconv",
+				);
+				PREBINDING = NO;
+				PRODUCT_NAME = puzzle;
+				ZERO_LINK = YES;
 			};
 			name = Default;
 		};
@@ -5413,6 +8590,176 @@
 				224A35FC09339642005A3695 /* Development */,
 				224A35FD09339642005A3695 /* Deployment */,
 				224A35FE09339642005A3695 /* Default */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Default;
+		};
+		226E96DA0FFB999A00A9A38E /* Build configuration list for PBXNativeTarget "alien" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				226E96DB0FFB999A00A9A38E /* Development */,
+				226E96DC0FFB999A00A9A38E /* Deployment */,
+				226E96DD0FFB999A00A9A38E /* Default */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Default;
+		};
+		226E96EF0FFB9B3200A9A38E /* Build configuration list for PBXNativeTarget "confetti" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				226E96F00FFB9B3200A9A38E /* Development */,
+				226E96F10FFB9B3200A9A38E /* Deployment */,
+				226E96F20FFB9B3200A9A38E /* Default */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Default;
+		};
+		226E970C0FFB9BBD00A9A38E /* Build configuration list for PBXNativeTarget "fisheye" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				226E970D0FFB9BBD00A9A38E /* Development */,
+				226E970E0FFB9BBD00A9A38E /* Deployment */,
+				226E970F0FFB9BBD00A9A38E /* Default */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Default;
+		};
+		226E97220FFB9C4E00A9A38E /* Build configuration list for PBXNativeTarget "fold" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				226E97230FFB9C4E00A9A38E /* Development */,
+				226E97240FFB9C4E00A9A38E /* Deployment */,
+				226E97250FFB9C4E00A9A38E /* Default */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Default;
+		};
+		226E97360FFB9CB500A9A38E /* Build configuration list for PBXNativeTarget "mosaic" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				226E97370FFB9CB500A9A38E /* Development */,
+				226E97380FFB9CB500A9A38E /* Deployment */,
+				226E97390FFB9CB500A9A38E /* Default */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Default;
+		};
+		226E97500FFB9D3300A9A38E /* Build configuration list for PBXNativeTarget "noise" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				226E97510FFB9D3300A9A38E /* Development */,
+				226E97520FFB9D3300A9A38E /* Deployment */,
+				226E97530FFB9D3300A9A38E /* Default */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Default;
+		};
+		226E97660FFB9D9100A9A38E /* Build configuration list for PBXNativeTarget "rails" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				226E97670FFB9D9100A9A38E /* Development */,
+				226E97680FFB9D9100A9A38E /* Deployment */,
+				226E97690FFB9D9100A9A38E /* Default */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Default;
+		};
+		226E97760FFB9DD600A9A38E /* Build configuration list for PBXNativeTarget "rain" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				226E97770FFB9DD600A9A38E /* Development */,
+				226E97780FFB9DD600A9A38E /* Deployment */,
+				226E97790FFB9DD600A9A38E /* Default */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Default;
+		};
+		226E97890FFB9E4000A9A38E /* Build configuration list for PBXNativeTarget "realrainbow" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				226E978A0FFB9E4000A9A38E /* Development */,
+				226E978B0FFB9E4000A9A38E /* Deployment */,
+				226E978C0FFB9E4000A9A38E /* Default */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Default;
+		};
+		226E979B0FFB9E9600A9A38E /* Build configuration list for PBXNativeTarget "rosette" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				226E979C0FFB9E9600A9A38E /* Development */,
+				226E979D0FFB9E9600A9A38E /* Deployment */,
+				226E979E0FFB9E9600A9A38E /* Default */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Default;
+		};
+		226E97AD0FFB9EEF00A9A38E /* Build configuration list for PBXNativeTarget "sharpen" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				226E97AE0FFB9EEF00A9A38E /* Development */,
+				226E97AF0FFB9EEF00A9A38E /* Deployment */,
+				226E97B00FFB9EEF00A9A38E /* Default */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Default;
+		};
+		226E97BF0FFB9F4200A9A38E /* Build configuration list for PBXNativeTarget "snow" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				226E97C00FFB9F4200A9A38E /* Development */,
+				226E97C10FFB9F4200A9A38E /* Deployment */,
+				226E97C20FFB9F4200A9A38E /* Default */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Default;
+		};
+		226E97D20FFB9F8E00A9A38E /* Build configuration list for PBXNativeTarget "string" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				226E97D30FFB9F8E00A9A38E /* Development */,
+				226E97D40FFB9F8E00A9A38E /* Deployment */,
+				226E97D50FFB9F8E00A9A38E /* Default */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Default;
+		};
+		226E97E60FFB9FEE00A9A38E /* Build configuration list for PBXNativeTarget "toothpaste" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				226E97E70FFB9FEE00A9A38E /* Development */,
+				226E97E80FFB9FEE00A9A38E /* Deployment */,
+				226E97E90FFB9FEE00A9A38E /* Default */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Default;
+		};
+		226E97FA0FFBA04000A9A38E /* Build configuration list for PBXNativeTarget "tornado" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				226E97FB0FFBA04000A9A38E /* Development */,
+				226E97FC0FFBA04000A9A38E /* Deployment */,
+				226E97FD0FFBA04000A9A38E /* Default */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Default;
+		};
+		226E980F0FFBA08F00A9A38E /* Build configuration list for PBXNativeTarget "tv" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				226E98100FFBA08F00A9A38E /* Development */,
+				226E98110FFBA08F00A9A38E /* Deployment */,
+				226E98120FFBA08F00A9A38E /* Default */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Default;
+		};
+		226E981E0FFBA10500A9A38E /* Build configuration list for PBXNativeTarget "puzzle" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				226E981F0FFBA10500A9A38E /* Development */,
+				226E98200FFBA10500A9A38E /* Deployment */,
+				226E98210FFBA10500A9A38E /* Default */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Default;
