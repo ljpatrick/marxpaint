@@ -8,6 +8,10 @@ http://www.tuxpaint.org/
 
 $Id$
 
+2009.July.1 (0.9.22)
+  * TBD
+
+
 2009.June.28 (0.9.21)
   * New Starters:
     -------------

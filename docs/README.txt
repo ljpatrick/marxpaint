@@ -1,5 +1,5 @@
                                    Tux Paint
-                                 version 0.9.21
+                                 version 0.9.22
 
   A simple drawing program for children
 
@@ -9,7 +9,7 @@
                            bill@newbreedsoftware.com
                             http://www.tuxpaint.org/
 
-                         June 14, 2002 - April 28, 2009
+                          June 14, 2002 - July 1, 2009
 
      ----------------------------------------------------------------------
 

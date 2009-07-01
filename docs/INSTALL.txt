@@ -79,6 +79,13 @@ Requirements:
 
         http://www.debian.org/
 
+    FriBiDi
+    -------
+      As of Tux Paint 0.9.21, Tux Paint's "Text" tool supports bidirectional
+      languages, thanks to the FriBiDi library:
+
+        http://fribidi.org/
+
     SVG graphics support
     --------------------
       As of Tux Paint 0.9.17, Tux Paint can load SVG

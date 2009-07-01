@@ -4,12 +4,12 @@
 # bill@newbreedsoftware.com
 # http://www.tuxpaint.org/
 
-# June 14, 2002 - April 28, 2009
+# June 14, 2002 - July 1, 2009
 
 
 # The version number, for release:
 
-VER_VERSION:=0.9.21
+VER_VERSION:=0.9.22
 VER_DATE:=$(shell date +"%Y-%m-%d")
 MAGIC_API_VERSION:=0x00000002
 

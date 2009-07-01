@@ -1,14 +1,14 @@
                                    Tux Paint
-                                 version 0.9.21
+                                 version 0.9.22
                               Extending Tux Paint
 
-                Copyright 2002-2008 by Bill Kendrick and others
+                Copyright 2002-2009 by Bill Kendrick and others
                                New Breed Software
 
                            bill@newbreedsoftware.com
                             http://www.tuxpaint.org/
 
-                         June 14, 2002 - July 10, 2008
+                          June 14, 2002 - July 1, 2009
 
      ----------------------------------------------------------------------
 
@@ -48,8 +48,8 @@ Where Files Go
     Mac OS X
 
          Tux Paint stores its data files inside the "Tux Paint" application
-         (which is actually a special kind of folder on Mac OS X). The following
-         steps explain how to get to the folders within:
+         (which is actually a special kind of folder on Mac OS X). The
+         following steps explain how to get to the folders within:
 
           1. Bring up a 'context' menu by holding the [Control] key and
              clicking the Tux Paint icon the in Finder. (If you have a mouse
@@ -63,9 +63,10 @@ Where Files Go
              content available to any user that launches this copy (icon) of
              Tux Paint.
 
-         If you install a newer version of Tux Paint and replace or discard
-         the old version, you will lose changes made by following the instructions
-         above, so keep backups of your new content (stamps, brushes, etc.).
+         Note: If you install a newer version of Tux Paint and replace or
+         discard the old version, you will lose changes made by following the
+         instructions above, so keep backups of your new content (stamps,
+         brushes, etc.).
 
          Tux Paint also looks for files in a "TuxPaint" folder that you can
          place in your system's "Application Support" folder (found under
@@ -77,9 +78,10 @@ Where Files Go
 
            /Users/(user name)/Library/Application Support/TuxPaint/
 
-         When you upgrade to a newer version of Tux Paint, the contents of this
-         TuxPaint folder will stay the same and remain accessible by all users
-         of Tux Paint.
+         When you upgrade to a newer version of Tux Paint, the contents of
+         this TuxPaint folder will stay the same and remain accessible by all
+         users of Tux Paint.
+
      ----------------------------------------------------------------------
 
   Personal Files
@@ -96,10 +98,10 @@ Where Files Go
 
     Mac OS X
 
-         Your personal Tux Paint folder is stored in your "Application Support"
-         folder:
+         Your personal Tux Paint folder is stored in your "Application
+         Support" folder:
 
-           /Users/(user name)/Library/Application Support/TuxPaint/
+           /Users/(user name)/Library/Application Support/ TuxPaint/
 
     Linux and Unix
 
@@ -494,10 +496,10 @@ Fonts
        (that will come out as white in Tux Paint), and save it as a PNG
        format file.
 
-       Note: A common mistake is to make the image black and white, rather
-       than black and transparent. Unless there are transparent zones in the
-       'starter' image, all drawing done by the user in Tux Paint will be
-       covered up by the 'starter'.
+       Note: Previous to Tux Paint 0.9.21, images needed to be black and
+       transparent. As of 0.9.21, if a Starter is black and white, with no
+       transparency, white will be converted to transparent when the Starter
+       is opened.
 
      Scene-Style
 
