@@ -1,7 +1,7 @@
 # Translation of nn to Norwegian Nynorsk
 # Omsetjing av Tux Paint til nynorsk.
 # Copyright © 2004 Karl Ove Hufthammer.
-# Karl Ove Hufthammer <karl@huftis.org>, 2003-2004, 2005, 2006, 2007, 2008, 2009.
+# Karl Ove Hufthammer <karl@huftis.org>, 2003, 2004, 2005, 2006, 2007, 2008, 2009.
 msgid ""
 msgstr ""
 "Project-Id-Version: nn\n"
