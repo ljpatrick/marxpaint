@@ -48,17 +48,22 @@
 static void mosaic_noise_pixel(void * ptr, SDL_Surface * canvas, int noise_AMOUNT, int x, int y);
 static void mosaic_blur_pixel(void * ptr, SDL_Surface * canvas, SDL_Surface * last, int x, int y);
 static void mosaic_sharpen_pixel(void * ptr, SDL_Surface * canvas, SDL_Surface * last, int x, int y);
+static void reset_mosaic_blured(SDL_Surface * canvas);
 
 static const int mosaic_AMOUNT= 300;
 static const int mosaic_RADIUS = 16;
 static const double mosaic_SHARPEN = 1.0;
-
+static int randnoise;
+Uint8 * mosaic_blured;
 enum {
 	TOOL_MOSAIC,
 	mosaic_NUM_TOOLS
 };
 
 static Mix_Chunk * mosaic_snd_effect[mosaic_NUM_TOOLS];
+static SDL_Surface * canvas_noise;
+static SDL_Surface * canvas_blur;
+static SDL_Surface * canvas_sharp;
 
 const char * mosaic_snd_filenames[mosaic_NUM_TOOLS] = {
   "mosaic.ogg", /* FIXME */
@@ -121,7 +126,9 @@ static void do_mosaic_full(void * ptr, SDL_Surface * canvas, SDL_Surface * last,
 
 	magic_api * api = (magic_api *) ptr;
 
-  Uint32 amask = ~(canvas->format->Rmask |
+int x,y;
+  
+Uint32 amask = ~(canvas->format->Rmask |
             canvas->format->Gmask |
             canvas->format->Bmask);
   SDL_Surface * mosaic_temp = 
@@ -133,23 +140,17 @@ static void do_mosaic_full(void * ptr, SDL_Surface * canvas, SDL_Surface * last,
                          canvas->format->Gmask,
                          canvas->format->Bmask, amask);
 
-  int x,y;
-  api->update_progress_bar();
-
-  for (y = 0; y < canvas->h; y++){ 
-		for (x=0; x < canvas->w; x++){
-      mosaic_noise_pixel(api, canvas, mosaic_AMOUNT, x, y);
-    }
-  }
+    
 
   api->update_progress_bar();
 
   for (y = 0; y < canvas->h; y++){ 
+
 		for (x=0; x < canvas->w; x++){
-      mosaic_blur_pixel(api, mosaic_temp, canvas, x, y);
+      mosaic_blur_pixel(api, mosaic_temp, canvas_noise, x, y);
     }
   }
-  
+
   api->update_progress_bar();
   
   for (y = 0; y < canvas->h; y++){ 
@@ -160,11 +161,49 @@ static void do_mosaic_full(void * ptr, SDL_Surface * canvas, SDL_Surface * last,
   SDL_FreeSurface(mosaic_temp);
 }
 
+/* Paint the brush, noise is yet done at switchin, 
+   blurs 2 pixels around the brush in order to get sharpen well done.*/
+void mosaic_paint(void * ptr_to_api, int which, SDL_Surface * canvas,
+	          SDL_Surface * last, int x, int y)
+{
+  int i, j, pix_row_pos;
+
+  magic_api * api = (magic_api *) ptr_to_api;
+
+  for (j = max(0, y - mosaic_RADIUS - 2); j < min(canvas->h, y + mosaic_RADIUS + 2); j++)
+    {
+      pix_row_pos = j * canvas->w;
+      for (i = max(0, x - mosaic_RADIUS - 2); i < min(canvas->w, x + mosaic_RADIUS + 2); i++)
+	if( !mosaic_blured[pix_row_pos + i] &&
+	    api->in_circle(i - x,j - y, mosaic_RADIUS + 2))
+	  {
+	    mosaic_blur_pixel(api, canvas_blur, canvas_noise, i, j);
+	    mosaic_blured[pix_row_pos + i] = 1; /* Track what are yet blured */
+	  }
+    }
+
+for (i = x - mosaic_RADIUS; i < x + mosaic_RADIUS; i++)
+    for (j=y - mosaic_RADIUS; j < y + mosaic_RADIUS; j++)
+      if (api->in_circle(i - x, j - y, mosaic_RADIUS))
+	if( !api->touched(i, j))
+	  {
+	    mosaic_sharpen_pixel(api, canvas_sharp, canvas_blur, i, j);
+	    api->putpixel(canvas, i, j, api->getpixel(canvas_sharp, i, j)); 
+	  }
+}
+
 // Affect the canvas on drag:
 void mosaic_drag(magic_api * api, int which, SDL_Surface * canvas,
 	          SDL_Surface * last, int ox, int oy, int x, int y,
 		  SDL_Rect * update_rect){
-  //no-op
+  api->line(api, which, canvas, last, ox, oy, x, y, 1, mosaic_paint);
+
+  update_rect->x = min(ox, x) - mosaic_RADIUS;
+  update_rect->y = min(oy, y) - mosaic_RADIUS;
+  update_rect->w = max(ox, x) + mosaic_RADIUS - update_rect->x;
+  update_rect->h = max(oy, y) + mosaic_RADIUS - update_rect->y;
+  api->playsound(mosaic_snd_effect[which], (x * 255) / canvas->w, 255);
+
 }
 
 // Affect the canvas on click:
@@ -172,12 +211,19 @@ void mosaic_click(magic_api * api, int which, int mode,
 	            SDL_Surface * canvas, SDL_Surface * last,
 	            int x, int y, SDL_Rect * update_rect){
 
-    update_rect->x = 0;
-    update_rect->y = 0;
-    update_rect->w = canvas->w;
-    update_rect->h = canvas->h;
-    do_mosaic_full(api, canvas,  last, which);
-    api->playsound(mosaic_snd_effect[which], 128, 255);
+  if (mode == MODE_FULLSCREEN)
+    {
+      update_rect->x = 0;
+      update_rect->y = 0;
+      update_rect->w = canvas->w;
+      update_rect->h = canvas->h;
+
+      do_mosaic_full(api, canvas_noise,  last, which);
+      SDL_BlitSurface(canvas_noise, NULL, canvas, NULL);
+      api->playsound(mosaic_snd_effect[which], 128, 255);
+    }
+  else
+    mosaic_drag(api, which, canvas, last, x, y, x, y, update_rect);
 
 }
 
@@ -303,16 +349,72 @@ static void mosaic_sharpen_pixel(void * ptr,
 
 void mosaic_switchin(magic_api * api, int which, int mode, SDL_Surface * canvas)
 {
- 
+  int y, x;
+
+  mosaic_blured = (Uint8 *) malloc(sizeof(Uint8) * (canvas->w * canvas->h));
+  if (mosaic_blured == NULL)
+  {
+    fprintf(stderr, "\nError: Can't build drawing touch mask!\n");
+    exit(1);
+  }
+
+   Uint32 amask = ~(canvas->format->Rmask |
+		   canvas->format->Gmask |
+		   canvas->format->Bmask);
+
+   canvas_noise = SDL_CreateRGBSurface(SDL_SWSURFACE,
+                         canvas->w,
+                         canvas->h,
+                         canvas->format->BitsPerPixel,
+                         canvas->format->Rmask,
+                         canvas->format->Gmask,
+                         canvas->format->Bmask, amask);
+
+   SDL_BlitSurface(canvas, NULL, canvas_noise, NULL);
+
+  for (y = 0; y < canvas->h; y++){ 
+		for (x=0; x < canvas->w; x++){
+      mosaic_noise_pixel(api, canvas_noise, mosaic_AMOUNT, x, y);
+    }
+  }
+
+   canvas_blur = SDL_CreateRGBSurface(SDL_SWSURFACE,
+                         canvas->w,
+                         canvas->h,
+                         canvas->format->BitsPerPixel,
+                         canvas->format->Rmask,
+                         canvas->format->Gmask,
+                         canvas->format->Bmask, amask);
+
+   canvas_sharp = SDL_CreateRGBSurface(SDL_SWSURFACE,
+                         canvas->w,
+                         canvas->h,
+                         canvas->format->BitsPerPixel,
+                         canvas->format->Rmask,
+                         canvas->format->Gmask,
+                         canvas->format->Bmask, amask);
+   reset_mosaic_blured(canvas);
 }
 
 void mosaic_switchout(magic_api * api, int which, int mode, SDL_Surface * canvas)
 {
+  SDL_FreeSurface(canvas_noise);
+  SDL_FreeSurface(canvas_blur);
+  SDL_FreeSurface(canvas_sharp);
+  free (mosaic_blured);
 }
 
 int mosaic_modes(magic_api * api, int which)
 {
-  return(MODE_FULLSCREEN);
+  return(MODE_PAINT|MODE_FULLSCREEN);
 }
 
+void reset_mosaic_blured(SDL_Surface * canvas)
+{
+  int i, j;
 
+  for (j = 0; j < canvas->h; j++)
+    for (i = 0; i < canvas->w; i++)
+      mosaic_blured[j * canvas->w + i] = 0;
+
+}
