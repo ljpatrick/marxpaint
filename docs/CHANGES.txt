@@ -8,11 +8,14 @@ http://www.tuxpaint.org/
 
 $Id$
 
-2009.July.2 (0.9.22)
+2009.July.4 (0.9.22)
   * Localization Updates:
     ---------------------
     * Russian translation
       Sergei Popov <skein@rambler.ru>
+
+    * Chinese (Traditional) translation
+      Song Huang <songhuang@users.sourceforge.net>
 
 
 2009.June.28 (0.9.21)
