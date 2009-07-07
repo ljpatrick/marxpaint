@@ -1,4 +1,4 @@
-﻿# Translation of Tux Paint to Songhay
+# Translation of Tux Paint to Songhay
 # Copyright (C) 2009
 # This file is distributed under the same license as the Tux Paint package.
 # Abdoul Cisse <abdoulseydou@hotmail.com> and Mohomodou Houssouba <mh@songhay.org>, 2009
