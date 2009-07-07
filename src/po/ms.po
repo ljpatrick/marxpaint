@@ -2,20 +2,21 @@
 # tuxpaint Bahasa Melayu (Malay) (ms).
 # Copyright (C) 2003 Muhammad Najmi Ahmad Zabidi
 # This file is distributed under the same license as the tuxpaint package.
-# Muhammad Najmi bin Ahmad Zabidi <md_najmi@yahoo.com>, 2004.
 #
+# Muhammad Najmi bin Ahmad Zabidi <md_najmi@yahoo.com>, 2004.
+# Muhammad Najmi Ahmad Zabidi <najmi.zabidi@gmail.com>, 2009.
 msgid ""
 msgstr ""
 "Project-Id-Version: ms\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2009-06-19 12:57-0700\n"
-"PO-Revision-Date: 2004-08-23 16:06+0800\n"
-"Last-Translator: Muhammad Najmi bin Ahmad Zabidi <md_najmi@yahoo.com>\n"
-"Language-Team: Malay <kedidiemas@yahoogroups.com>\n"
+"PO-Revision-Date: 2009-07-07 21:42+0800\n"
+"Last-Translator: Muhammad Najmi Ahmad Zabidi <najmi.zabidi@gmail.com>\n"
+"Language-Team: Malay <translation-team-ms@lists.sourceforge.net>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: KBabel 1.3.1\n"
+"X-Generator: KBabel 1.11.4\n"
 
 #. Response to Black (0, 0, 0) color selected
 #: ../colors.h:86
@@ -25,12 +26,12 @@ msgstr "Hitam!"
 #. Response to Dark grey (128, 128, 128) color selected
 #: ../colors.h:89
 msgid "Dark grey! Some people spell it “dark gray”."
-msgstr ""
+msgstr "Kelabu gelap! Sesetengah orang menyebutnya sebagai \"kelabu gelap\"."
 
 #. Response to Light grey (192, 192, 192) color selected
 #: ../colors.h:92
 msgid "Light grey! Some people spell it “light gray”."
-msgstr ""
+msgstr "Kelabu cerah! Sesetengah orang menyebutnya sebagai \"kelabu cerah\"."
 
 #. Response to White (255, 255, 255) color selected
 #: ../colors.h:95
@@ -55,18 +56,17 @@ msgstr "Kuning!"
 #. Response to Light green (160, 228, 128) color selected
 #: ../colors.h:107
 msgid "Light green!"
-msgstr ""
+msgstr "Hijau cerah!"
 
 #. Response to Dark green (33, 148, 70) color selected
 #: ../colors.h:110
-#, fuzzy
 msgid "Dark green!"
-msgstr "Kelabu!"
+msgstr "Hijau gelap!"
 
 #. Response to "Sky" blue (138, 168, 205) color selected
 #: ../colors.h:113
 msgid "Sky blue!"
-msgstr ""
+msgstr "Biru langit!"
 
 #. Response to Blue (50, 100, 255) color selected
 #: ../colors.h:116
@@ -95,9 +95,8 @@ msgstr "Coklat!"
 
 #. Response to Tan (226, 189, 166) color selected
 #: ../colors.h:131
-#, fuzzy
 msgid "Tan!"
-msgstr "Cyan!"
+msgstr "Tan!"
 
 #. Response to Beige (247, 228, 219) color selected
 #: ../colors.h:134
@@ -205,17 +204,17 @@ msgstr "Usaha yang baik!"
 #. Input Method: English mode
 #: ../im.c:75
 msgid "English"
-msgstr ""
+msgstr "Inggeris"
 
 #. Input Method: Japanese Romanized Hiragana mode
 #: ../im.c:78
 msgid "Hiragana"
-msgstr ""
+msgstr "Hiragana"
 
 #. Input Method: Japanese Romanized Katakana mode
 #: ../im.c:81
 msgid "Katakana"
-msgstr ""
+msgstr "Katakana"
 
 #. Input Method: Korean Hangul 2-Bul mode
 #: ../im.c:84
@@ -224,9 +223,8 @@ msgstr ""
 
 #. Input Method: Thai mode
 #: ../im.c:87
-#, fuzzy
 msgid "Thai"
-msgstr "Tebal"
+msgstr "Siam"
 
 #. Input Method: Traditional Chinese mode
 #: ../im.c:90
@@ -251,7 +249,7 @@ msgstr "Bulatan"
 #. Ellipse shape tool (X radius and Y radius may differ)
 #: ../shapes.h:183 ../shapes.h:184
 msgid "Ellipse"
-msgstr ""
+msgstr "Bujur"
 
 #. Triangle shape tool (3 sides)
 #: ../shapes.h:187 ../shapes.h:188
@@ -270,31 +268,27 @@ msgstr ""
 
 #. Octagon shape tool (8 sides)
 #: ../shapes.h:199 ../shapes.h:200
-#, fuzzy
 msgid "Octagon"
-msgstr "Pentagon"
+msgstr "Oktagon"
 
 #. Description of a square
 #: ../shapes.h:208 ../shapes.h:209
-#, fuzzy
 msgid "A square is a rectangle with four equal sides."
-msgstr "Segiempat tepat ada empat bahagian."
+msgstr "Segiempat sama ada empat bahagian yang serupa."
 
 #. Description of a rectangle
 #: ../shapes.h:212 ../shapes.h:213
-#, fuzzy
 msgid "A rectangle has four sides and four right angles."
 msgstr "Segiempat tepat ada empat bahagian."
 
 #: ../shapes.h:217 ../shapes.h:219
-msgid ""
-"A circle is a curve where all points have the same distance from the center."
-msgstr ""
+msgid "A circle is a curve where all points have the same distance from the center."
+msgstr "Bulatan ialah bentuk yang di mana semua titik adalah sama jarak dengan bahagian tengahnya."
 
 #. Description of an ellipse
 #: ../shapes.h:222 ../shapes.h:223
 msgid "An ellipse is a stretched circle."
-msgstr ""
+msgstr "Bujur ialah bulatan yang seperti ditarik-tarik."
 
 #. Description of a triangle
 #: ../shapes.h:226 ../shapes.h:227
@@ -307,13 +301,13 @@ msgid "A pentagon has five sides."
 msgstr "Pentagon ada lima bahagian."
 
 #: ../shapes.h:235 ../shapes.h:237
+#, fuzzy
 msgid "A rhombus has four equal sides, and opposite sides are parallel."
-msgstr ""
+msgstr "A dan."
 
 #: ../shapes.h:241 ../shapes.h:243
-#, fuzzy
 msgid "An octagon has eight equal sides."
-msgstr "Pentagon ada lima bahagian."
+msgstr "Oktagon ada lapan bahagian yang sama."
 
 #. Title of tool selector (buttons down the left)
 #: ../titles.h:56
@@ -332,7 +326,6 @@ msgstr "Berus"
 
 #. Title of eraser selector (buttons down the right for eraser tool)
 #: ../titles.h:65
-#, fuzzy
 msgid "Erasers"
 msgstr "Pemadam"
 
@@ -471,9 +464,8 @@ msgstr "Pemadam!"
 
 #. Response to 'start a new image' action
 #: ../tools.h:134
-#, fuzzy
 msgid "Pick a color or picture with which to start a new drawing."
-msgstr "Ambil gambar untuk mengecop di sekeliling lukisan anda."
+msgstr "Pilih warna atau gambar untuk mula melukis."
 
 #. Response to 'open' action (while file dialog is being constructed)
 #: ../tools.h:137
@@ -523,12 +515,12 @@ msgstr "Anda pasti mahu keluar?"
 #. Quit prompt positive response (quit)
 #: ../tuxpaint.c:1858
 msgid "Yes, I’m done!"
-msgstr ""
+msgstr "Ya, saya sudah siap!"
 
 #. Quit prompt negative response (don't quit)
 #: ../tuxpaint.c:1861 ../tuxpaint.c:1888
 msgid "No, take me back!"
-msgstr ""
+msgstr "Tidak, kembalikan semula!"
 
 #. Current picture is not saved; user is quitting
 #: ../tuxpaint.c:1865
@@ -537,11 +529,11 @@ msgstr "Jika anda keluar, anda akan kehilangan hasil kerja anda! Simpan?"
 
 #: ../tuxpaint.c:1866 ../tuxpaint.c:1871
 msgid "Yes, save it!"
-msgstr ""
+msgstr "Ya, simpan!"
 
 #: ../tuxpaint.c:1867 ../tuxpaint.c:1872
 msgid "No, don’t bother saving!"
-msgstr ""
+msgstr "Tidak, jangan simpan!"
 
 #. Current picture is not saved; user is opening another picture
 #: ../tuxpaint.c:1870
@@ -570,8 +562,9 @@ msgid "Print your picture now?"
 msgstr "Cetak?"
 
 #: ../tuxpaint.c:1887
+#, fuzzy
 msgid "Yes, print it!"
-msgstr ""
+msgstr "Ya!"
 
 #. Confirmation of successful (we hope) printing
 #: ../tuxpaint.c:1891
@@ -596,27 +589,32 @@ msgid "Erase this picture?"
 msgstr "Padam hasil kerja?"
 
 #: ../tuxpaint.c:1903
+#, fuzzy
 msgid "Yes, erase it!"
-msgstr ""
+msgstr "Ya!"
 
 #: ../tuxpaint.c:1904
+#, fuzzy
 msgid "No, don’t erase it!"
-msgstr ""
+msgstr "Tidak!"
 
 #. Reminder that Mouse Button 1 is the button to use in Tux Paint
 #: ../tuxpaint.c:1907
+#, fuzzy
 msgid "Remember to use the left mouse button!"
-msgstr ""
+msgstr "Ingat ke  kiri!"
 
 #. Sound has been muted (silenced) via keyboard shortcut
 #: ../tuxpaint.c:2036
+#, fuzzy
 msgid "Sound muted."
-msgstr ""
+msgstr "Bunyi."
 
 #. Sound has been unmuted (unsilenced) via keyboard shortcut
 #: ../tuxpaint.c:2041
+#, fuzzy
 msgid "Sound unmuted."
-msgstr ""
+msgstr "Bunyi."
 
 #. Wait while Text tool finishes loading fonts
 #: ../tuxpaint.c:2508
@@ -624,8 +622,9 @@ msgid "Please wait…"
 msgstr ""
 
 #: ../tuxpaint.c:7221
+#, fuzzy
 msgid "Pick a color."
-msgstr ""
+msgstr "a."
 
 #. Open dialog: 'Erase' button, to erase/deleted the selected picture
 #: ../tuxpaint.c:8001
@@ -650,13 +649,15 @@ msgstr "Teks"
 
 #. Slideshow: 'Play' button, to begin a slideshow sequence
 #: ../tuxpaint.c:8013
+#, fuzzy
 msgid "Play"
-msgstr ""
+msgstr "Main"
 
 #. Label for 'Letters' buttons (font selector, down the right when the Text tool is being used); used to show the difference between font faces
 #: ../tuxpaint.c:8660
+#, fuzzy
 msgid "Aa"
-msgstr ""
+msgstr "Ss"
 
 #. Admittedly stupid way of determining which keys can be used for
 #. positive and negative responses in dialogs (e.g., [Y] (for 'yes') in English)
@@ -670,14 +671,16 @@ msgstr "Tidak"
 
 #. Prompt to ask whether user wishes to save over old version of their file
 #: ../tuxpaint.c:12631
+#, fuzzy
 msgid "Replace the picture with your changes?"
-msgstr ""
+msgstr "Ganti?"
 
 #. Positive response to saving over old version
 #. (like a 'File:Save' action in other applications)
 #: ../tuxpaint.c:12635
+#, fuzzy
 msgid "Yes, replace the old one!"
-msgstr ""
+msgstr "Ya!"
 
 #. Negative response to saving over old version (saves a new image)
 #. (like a 'File:Save As...' action in other applications)
@@ -710,8 +713,9 @@ msgid "Tux Paint"
 msgstr "Tux Paint"
 
 #: ../../magic/src/alien.c:64
+#, fuzzy
 msgid "Color Shift"
-msgstr ""
+msgstr "Warna Shift"
 
 #: ../../magic/src/alien.c:67
 #, fuzzy
@@ -737,12 +741,10 @@ msgstr "Titisan"
 
 #: ../../magic/src/blocks_chalk_drip.c:146
 msgid "Click and move the mouse around to make the picture blocky."
-msgstr ""
-"Klik dan gerakkan tetikus di sekeliling untuk menjadikan gambar berblok."
+msgstr "Klik dan gerakkan tetikus di sekeliling untuk menjadikan gambar berblok."
 
 #: ../../magic/src/blocks_chalk_drip.c:149
-msgid ""
-"Click and move the mouse around to turn the picture into a chalk drawing."
+msgid "Click and move the mouse around to turn the picture into a chalk drawing."
 msgstr "Klik dan alihkan tetikus di sekeliling untuk membuat lukisan kapur."
 
 #: ../../magic/src/blocks_chalk_drip.c:152
@@ -800,12 +802,14 @@ msgid "Click and move the mouse around to turn the picture into a cartoon."
 msgstr "Klik dan alihkan tetikus di sekeliling untuk membuat lukisan kapur."
 
 #: ../../magic/src/confetti.c:63
+#, fuzzy
 msgid "Confetti"
-msgstr ""
+msgstr "Konfeti"
 
 #: ../../magic/src/confetti.c:65
+#, fuzzy
 msgid "Click to throw confetti!"
-msgstr ""
+msgstr "ke !"
 
 #: ../../magic/src/distortion.c:121
 msgid "Distortion"
@@ -817,8 +821,9 @@ msgid "Click and drag the mouse to cause distortion in your picture."
 msgstr "Klik dan gerakkan tetikus di sekeliling untuk menipiskan gambar."
 
 #: ../../magic/src/emboss.c:76
+#, fuzzy
 msgid "Emboss"
-msgstr ""
+msgstr "Ukir timbul"
 
 #: ../../magic/src/emboss.c:82
 #, fuzzy
@@ -826,12 +831,14 @@ msgid "Click and drag the mouse to emboss the picture."
 msgstr "Klik dan gerakkan tetikus di sekeliling untuk menipiskan gambar."
 
 #: ../../magic/src/fade_darken.c:119
+#, fuzzy
 msgid "Lighten"
-msgstr ""
+msgstr "Cerahkan "
 
 #: ../../magic/src/fade_darken.c:121
+#, fuzzy
 msgid "Darken"
-msgstr ""
+msgstr "Lebih Gelap"
 
 #: ../../magic/src/fade_darken.c:132
 #, fuzzy
@@ -841,8 +848,7 @@ msgstr "Klik dan gerakkan tetikus di sekeliling untuk mengaburkan gambar."
 #: ../../magic/src/fade_darken.c:134
 #, fuzzy
 msgid "Click to lighten your entire picture."
-msgstr ""
-"Klik dan gerakkan tetikus di sekeliling untuk menjadikan gambar berblok."
+msgstr "Klik dan gerakkan tetikus di sekeliling untuk menjadikan gambar berblok."
 
 #: ../../magic/src/fade_darken.c:139
 #, fuzzy
@@ -852,8 +858,7 @@ msgstr "Klik dan gerakkan tetikus di sekeliling untuk mengaburkan gambar."
 #: ../../magic/src/fade_darken.c:141
 #, fuzzy
 msgid "Click to darken your entire picture."
-msgstr ""
-"Klik dan gerakkan tetikus di sekeliling untuk menjadikan gambar berblok."
+msgstr "Klik dan gerakkan tetikus di sekeliling untuk menjadikan gambar berblok."
 
 #: ../../magic/src/fill.c:87
 msgid "Fill"
@@ -880,8 +885,9 @@ msgid "Flower"
 msgstr ""
 
 #: ../../magic/src/flower.c:130
+#, fuzzy
 msgid "Click and drag to draw a flower stalk. Let go to finish the flower."
-msgstr ""
+msgstr "dan ke  a ke  selesai."
 
 #: ../../magic/src/foam.c:104
 msgid "Foam"
@@ -897,13 +903,14 @@ msgid "Fold"
 msgstr ""
 
 #: ../../magic/src/fold.c:86
-msgid ""
-"Choose a background color and click to turn the corner of the page over."
-msgstr ""
+#, fuzzy
+msgid "Choose a background color and click to turn the corner of the page over."
+msgstr "a latar belakang dan ke  bagi halaman."
 
 #: ../../magic/src/glasstile.c:83
+#, fuzzy
 msgid "Glass Tile"
-msgstr ""
+msgstr "Kaca"
 
 #: ../../magic/src/glasstile.c:90
 #, fuzzy
@@ -913,8 +920,7 @@ msgstr "Klik dan gerakkan tetikus di sekeliling untuk menipiskan gambar."
 #: ../../magic/src/glasstile.c:92
 #, fuzzy
 msgid "Click to cover your entire picture in glass tiles."
-msgstr ""
-"Klik dan gerakkan tetikus di sekeliling untuk menjadikan gambar berblok."
+msgstr "Klik dan gerakkan tetikus di sekeliling untuk menjadikan gambar berblok."
 
 #: ../../magic/src/grass.c:92
 #, fuzzy
@@ -927,18 +933,19 @@ msgid "Click and move to draw grass. Don’t forget the dirt!"
 msgstr "Klik dan alihkan untuk melukis percikan."
 
 #: ../../magic/src/kalidescope.c:77
+#, fuzzy
 msgid "Kaleidoscope"
-msgstr ""
+msgstr "Kaleidoskope"
 
 #: ../../magic/src/kalidescope.c:83
 #, fuzzy
-msgid ""
-"Click and drag the mouse to draw with symmetric brushes (a kaleidoscope)."
+msgid "Click and drag the mouse to draw with symmetric brushes (a kaleidoscope)."
 msgstr "Klik dan gerakkan tetikus di sekeliling untuk menebalkan gambar."
 
 #: ../../magic/src/light.c:84
+#, fuzzy
 msgid "Light"
-msgstr ""
+msgstr "Cahaya"
 
 #: ../../magic/src/light.c:90
 #, fuzzy
@@ -978,8 +985,7 @@ msgstr "Ajaib"
 
 #: ../../magic/src/mosaic.c:73
 #, fuzzy
-msgid ""
-"Click and move the mouse to add a mosaic effect to parts of your picture."
+msgid "Click and move the mouse to add a mosaic effect to parts of your picture."
 msgstr "Klik untuk membuat imej cermin!"
 
 #: ../../magic/src/mosaic.c:74
@@ -1003,8 +1009,9 @@ msgid "Click to turn your painting into its negative."
 msgstr "Klik untuk membuat imej cermin!"
 
 #: ../../magic/src/noise.c:63
+#, fuzzy
 msgid "Noise"
-msgstr ""
+msgstr "Hingar"
 
 #: ../../magic/src/noise.c:66
 #, fuzzy
@@ -1014,8 +1021,7 @@ msgstr "Klik dan gerakkan tetikus di sekeliling untuk mengaburkan gambar."
 #: ../../magic/src/noise.c:67
 #, fuzzy
 msgid "Click to add noise to your entire picture."
-msgstr ""
-"Klik dan gerakkan tetikus di sekeliling untuk menjadikan gambar berblok."
+msgstr "Klik dan gerakkan tetikus di sekeliling untuk menjadikan gambar berblok."
 
 #: ../../magic/src/rails.c:102
 msgid "Rails"
@@ -1056,14 +1062,16 @@ msgid "Real Rainbow"
 msgstr "Pelangi"
 
 #: ../../magic/src/realrainbow.c:81
+#, fuzzy
 msgid ""
 "Click where you want your rainbow to start, drag to where you want it to "
 "end, and then let go to draw a rainbow."
-msgstr ""
+msgstr "pelangi ke  ke  ke  dan ke  a pelangi."
 
 #: ../../magic/src/ripples.c:81
+#, fuzzy
 msgid "Ripples"
-msgstr ""
+msgstr "Riak"
 
 #: ../../magic/src/ripples.c:87
 #, fuzzy
@@ -1109,8 +1117,7 @@ msgstr "Klik dan gerakkan tetikus di sekeliling untuk mengaburkan gambar."
 #: ../../magic/src/sharpen.c:79
 #, fuzzy
 msgid "Click to trace edges in your entire picture."
-msgstr ""
-"Klik dan gerakkan tetikus di sekeliling untuk menjadikan gambar berblok."
+msgstr "Klik dan gerakkan tetikus di sekeliling untuk menjadikan gambar berblok."
 
 #: ../../magic/src/sharpen.c:80
 #, fuzzy
@@ -1133,8 +1140,9 @@ msgid "Click to create a black and white silhouette of your entire picture."
 msgstr "Klik dan gerakkan tetikus di sekeliling untuk mengaburkan gambar."
 
 #: ../../magic/src/shift.c:104
+#, fuzzy
 msgid "Shift"
-msgstr ""
+msgstr "Shift"
 
 #: ../../magic/src/shift.c:110
 #, fuzzy
@@ -1151,12 +1159,14 @@ msgid "Click and move the mouse around to smudge the picture."
 msgstr "Klik dan gerakkan tetikus di sekeliling untuk mengaburkan gambar."
 
 #: ../../magic/src/snow.c:68
+#, fuzzy
 msgid "Snow Ball"
-msgstr ""
+msgstr "Salji"
 
 #: ../../magic/src/snow.c:69
+#, fuzzy
 msgid "Snow Flake"
-msgstr ""
+msgstr "Salji"
 
 #: ../../magic/src/snow.c:72
 #, fuzzy
@@ -1169,22 +1179,26 @@ msgid "Click to add snow flakes to your picture."
 msgstr "Klik dan gerakkan tetikus di sekeliling untuk menipiskan gambar."
 
 #: ../../magic/src/string.c:120
+#, fuzzy
 msgid "String edges"
-msgstr ""
+msgstr "Rentetan"
 
 #: ../../magic/src/string.c:123
+#, fuzzy
 msgid "String corner"
-msgstr ""
+msgstr "Rentetan"
 
 #: ../../magic/src/string.c:126
+#, fuzzy
 msgid "String 'V'"
-msgstr ""
+msgstr "Rentetan V"
 
 #: ../../magic/src/string.c:134
+#, fuzzy
 msgid ""
 "Click and drag to draw string art. Drag top-bottom to draw less or more "
 "lines, left or right to make a bigger hole."
-msgstr ""
+msgstr "dan ke  Rentetan Seret atas bawah ke  kurang atau lebih kiri atau kanan ke  a."
 
 #: ../../magic/src/string.c:137
 #, fuzzy
@@ -1192,8 +1206,9 @@ msgid "Click and drag to draw arrows made of string art."
 msgstr "Klik dan gerakkan tetikus di sekeliling untuk menipiskan gambar."
 
 #: ../../magic/src/string.c:140
+#, fuzzy
 msgid "Draw string art arrows with free angles."
-msgstr ""
+msgstr "Rentetan."
 
 #: ../../magic/src/tint.c:71
 #, fuzzy
@@ -1201,13 +1216,13 @@ msgid "Tint"
 msgstr "Nipis"
 
 #: ../../magic/src/tint.c:72
+#, fuzzy
 msgid "Color & White"
-msgstr ""
+msgstr "Warna"
 
 #: ../../magic/src/tint.c:75
 #, fuzzy
-msgid ""
-"Click and move the mouse around to change the color of parts of your picture."
+msgid "Click and move the mouse around to change the color of parts of your picture."
 msgstr "Klik dan gerakkan tetikus di sekeliling untuk mengaburkan gambar."
 
 #: ../../magic/src/tint.c:76
@@ -1237,8 +1252,9 @@ msgid "Click and drag to squirt toothpaste onto your picture."
 msgstr "Klik dan gerakkan tetikus di sekeliling untuk menipiskan gambar."
 
 #: ../../magic/src/tornado.c:127
+#, fuzzy
 msgid "Tornado"
-msgstr ""
+msgstr "Puting Beliung"
 
 #: ../../magic/src/tornado.c:133
 #, fuzzy
@@ -1254,14 +1270,12 @@ msgstr ""
 msgid ""
 "Click and drag to make parts of your picture look like they are on "
 "television."
-msgstr ""
-"Klik dan gerakkan tetikus di sekeliling untuk menjadikan gambar berblok."
+msgstr "Klik dan gerakkan tetikus di sekeliling untuk menjadikan gambar berblok."
 
 #: ../../magic/src/tv.c:82
 #, fuzzy
 msgid "Click to make your picture look like it's on television."
-msgstr ""
-"Klik dan gerakkan tetikus di sekeliling untuk menjadikan gambar berblok."
+msgstr "Klik dan gerakkan tetikus di sekeliling untuk menjadikan gambar berblok."
 
 #: ../../magic/src/waves.c:80
 #, fuzzy
@@ -1274,148 +1288,18 @@ msgid "Wavelets"
 msgstr "Simpan"
 
 #: ../../magic/src/waves.c:88
+#, fuzzy
 msgid ""
 "Click to make the picture horizontally wavy. Click toward the top for "
 "shorter waves, the bottom for taller waves, the left for small waves, and "
 "the right for long waves."
-msgstr ""
+msgstr "ke  atas bawah kiri kecil dan kanan."
 
 #: ../../magic/src/waves.c:89
+#, fuzzy
 msgid ""
 "Click to make the picture vertically wavy. Click toward the top for shorter "
 "waves, the bottom for taller waves, the left for small waves, and the right "
 "for long waves."
-msgstr ""
+msgstr "ke  atas bawah kiri kecil dan kanan."
 
-#, fuzzy
-#~ msgid "Click and drag to draw string art aligned to the edges."
-#~ msgstr "Klik dan gerakkan tetikus di sekeliling untuk menipiskan gambar."
-
-#, fuzzy
-#~ msgid ""
-#~ "Click and drag to draw a tornado stalk. Let go to finish the tornado."
-#~ msgstr "Klik dan gerakkan tetikus di sekeliling untuk menipiskan gambar."
-
-#, fuzzy
-#~ msgid ""
-#~ "Click and move the mouse to give parts of your picture an \"alien\" "
-#~ "appearance."
-#~ msgstr "Klik dan gerakkan tetikus di sekeliling untuk mengaburkan gambar."
-
-#, fuzzy
-#~ msgid "Click to give your entire picture an \"alien\" appearance."
-#~ msgstr ""
-#~ "Klik dan gerakkan tetikus di sekeliling untuk menjadikan gambar berblok."
-
-#, fuzzy
-#~ msgid "Puzzle"
-#~ msgstr "Ungu!"
-
-#, fuzzy
-#~ msgid "Click the part of your picture where would you like a puzzle."
-#~ msgstr "Klik dan gerakkan tetikus di sekeliling untuk menipiskan gambar."
-
-#, fuzzy
-#~ msgid "Click to make a puzzle in fullscreen mode."
-#~ msgstr "Klik untuk membuat imej cermin!"
-
-#, fuzzy
-#~ msgid "Click and move the mouse to add noise to the image."
-#~ msgstr "Klik dan gerakkan tetikus di sekeliling untuk mengaburkan gambar."
-
-#, fuzzy
-#~ msgid "Click to add noise to the entire image."
-#~ msgstr "Klik untuk membuat imej cermin!"
-
-#, fuzzy
-#~ msgid "Click and move the mouse to trace the edges of objects in the image."
-#~ msgstr "Klik dan gerakkan tetikus di sekeliling untuk mengaburkan gambar."
-
-#, fuzzy
-#~ msgid "Click and move the mouse to sharpen the image."
-#~ msgstr "Klik dan gerakkan tetikus di sekeliling untuk mengaburkan gambar."
-
-#, fuzzy
-#~ msgid "Click to add snow to the entire image."
-#~ msgstr "Klik untuk membuat imej cermin!"
-
-#, fuzzy
-#~ msgid ""
-#~ "Click and move the mouse around to turn the image into pure color and "
-#~ "white regions."
-#~ msgstr "Klik dan alihkan tetikus di sekeliling untuk membuat lukisan kapur."
-
-#, fuzzy
-#~ msgid "Click and move the mouse around convert the image to greyscale."
-#~ msgstr "Klik dan gerakkan tetikus di sekeliling untuk mengaburkan gambar."
-
-#, fuzzy
-#~ msgid "Click to change the entire picture’s color."
-#~ msgstr ""
-#~ "Klik dan gerakkan tetikus di sekeliling untuk menjadikan gambar berblok."
-
-#, fuzzy
-#~ msgid "Blur All"
-#~ msgstr "Kabur"
-
-#~ msgid "Click and move to fade the colors."
-#~ msgstr "Klik dan alihkan untuk lunturkan warna"
-
-#, fuzzy
-#~ msgid "Click and move to darken the colors."
-#~ msgstr "Klik dan alihkan untuk lunturkan warna"
-
-#~ msgid "Sparkles"
-#~ msgstr "Percikan"
-
-#~ msgid "You now have a blank sheet to draw on!"
-#~ msgstr "Sekarang anda ada sehelai laman kosong untuk mula melukis!"
-
-#, fuzzy
-#~ msgid "Start a new picture?"
-#~ msgstr "Padam hasil kerja?"
-
-#~ msgid "Click and move to draw sparkles."
-#~ msgstr "Klik dan alihkan untuk melukis percikan."
-
-#~ msgid "Starting a new picture will erase the current one!"
-#~ msgstr "Mula dengan gambar yang baru akan memadamkan apa yang ada!"
-
-#~ msgid "That’s OK!"
-#~ msgstr "OK!"
-
-#~ msgid "Never mind!"
-#~ msgstr "Tidak sekali!"
-
-#~ msgid "Save over the older version of this picture?"
-#~ msgstr "Simpan versi?"
-
-#~ msgid "Green!"
-#~ msgstr "Hijau!"
-
-#~ msgid "Fade"
-#~ msgstr "Luntur"
-
-#~ msgid "Oval"
-#~ msgstr "Bujur"
-
-#~ msgid "Diamond"
-#~ msgstr "Permata"
-
-#~ msgid "A square has four sides, each the same length."
-#~ msgstr "Segiempat ada empat bahagian, setiap satu dengan panjang yang sama."
-
-#~ msgid "A circle is exactly round."
-#~ msgstr "Bulatan adalah betul-betul bulat."
-
-#~ msgid "A diamond is a square, turned around slightly."
-#~ msgstr "Permata adalah segiempat yang diserongkan sedikit."
-
-#~ msgid "Lime!"
-#~ msgstr "Lemon!"
-
-#~ msgid "Fuchsia!"
-#~ msgstr "Fuchsia!"
-
-#~ msgid "Silver!"
-#~ msgstr "Perak!"
