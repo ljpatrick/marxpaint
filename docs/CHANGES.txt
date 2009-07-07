@@ -11,14 +11,17 @@ $Id$
 2009.July.7 (0.9.22)
   * Localization Updates:
     ---------------------
-    * Russian translation
-      Sergei Popov <skein@rambler.ru>
-
     * Chinese (Traditional) translation
       Song Huang <songhuang@users.sourceforge.net>
 
     * Malay translation
       Muhammad Najmi Ahmad Zabidi <najmi.zabidi@gmail.com>
+
+    * Russian translation
+      Sergei Popov <skein@rambler.ru>
+
+    * Songhay translation
+      Abdoul Cisse <abdoulseydou@hotmail.com>
 
 
 2009.June.28 (0.9.21)
