@@ -8,7 +8,7 @@ http://www.tuxpaint.org/
 
 $Id$
 
-2009.July.4 (0.9.22)
+2009.July.7 (0.9.22)
   * Localization Updates:
     ---------------------
     * Russian translation
@@ -16,6 +16,9 @@ $Id$
 
     * Chinese (Traditional) translation
       Song Huang <songhuang@users.sourceforge.net>
+
+    * Malay translation
+      Muhammad Najmi Ahmad Zabidi <najmi.zabidi@gmail.com>
 
 
 2009.June.28 (0.9.21)
