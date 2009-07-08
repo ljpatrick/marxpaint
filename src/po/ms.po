@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: ms\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2009-06-19 12:57-0700\n"
-"PO-Revision-Date: 2009-07-07 21:42+0800\n"
+"PO-Revision-Date: 2009-07-08 21:19+0800\n"
 "Last-Translator: Muhammad Najmi Ahmad Zabidi <najmi.zabidi@gmail.com>\n"
 "Language-Team: Malay <translation-team-ms@lists.sourceforge.net>\n"
 "MIME-Version: 1.0\n"
@@ -301,9 +301,8 @@ msgid "A pentagon has five sides."
 msgstr "Pentagon ada lima bahagian."
 
 #: ../shapes.h:235 ../shapes.h:237
-#, fuzzy
 msgid "A rhombus has four equal sides, and opposite sides are parallel."
-msgstr "A dan."
+msgstr "Rombus ada empat sisi sama, dan sisi bertentangan adalah selari."
 
 #: ../shapes.h:241 ../shapes.h:243
 msgid "An octagon has eight equal sides."
@@ -562,9 +561,8 @@ msgid "Print your picture now?"
 msgstr "Cetak?"
 
 #: ../tuxpaint.c:1887
-#, fuzzy
 msgid "Yes, print it!"
-msgstr "Ya!"
+msgstr "Ya, cetaknya!"
 
 #. Confirmation of successful (we hope) printing
 #: ../tuxpaint.c:1891
@@ -573,10 +571,9 @@ msgstr "Hasil kerja anda sudah dicetak!"
 
 #. We got an error printing
 #: ../tuxpaint.c:1895
-#, fuzzy
 #| msgid "Your picture has been printed!"
 msgid "Sorry! Your picture could not be printed!"
-msgstr "Hasil kerja anda sudah dicetak!"
+msgstr "Maaf! Gambar awak tidak dapat dicetak!"
 
 #. Notification that it's too soon to print again (--printdelay option is in effect)
 #: ../tuxpaint.c:1898
@@ -589,42 +586,36 @@ msgid "Erase this picture?"
 msgstr "Padam hasil kerja?"
 
 #: ../tuxpaint.c:1903
-#, fuzzy
 msgid "Yes, erase it!"
-msgstr "Ya!"
+msgstr "Ya, padamnya!"
 
 #: ../tuxpaint.c:1904
-#, fuzzy
 msgid "No, don’t erase it!"
-msgstr "Tidak!"
+msgstr "Tidak, jangan padam!"
 
 #. Reminder that Mouse Button 1 is the button to use in Tux Paint
 #: ../tuxpaint.c:1907
-#, fuzzy
 msgid "Remember to use the left mouse button!"
-msgstr "Ingat ke  kiri!"
+msgstr "Ingat untuk gunakan butang kiri tetikus!"
 
 #. Sound has been muted (silenced) via keyboard shortcut
 #: ../tuxpaint.c:2036
-#, fuzzy
 msgid "Sound muted."
-msgstr "Bunyi."
+msgstr "Bunyi disenyapkan."
 
 #. Sound has been unmuted (unsilenced) via keyboard shortcut
 #: ../tuxpaint.c:2041
-#, fuzzy
 msgid "Sound unmuted."
-msgstr "Bunyi."
+msgstr "Bunyi berfungsi."
 
 #. Wait while Text tool finishes loading fonts
 #: ../tuxpaint.c:2508
 msgid "Please wait…"
-msgstr ""
+msgstr "Sila tunggu..."
 
 #: ../tuxpaint.c:7221
-#, fuzzy
 msgid "Pick a color."
-msgstr "a."
+msgstr "Pilih warna."
 
 #. Open dialog: 'Erase' button, to erase/deleted the selected picture
 #: ../tuxpaint.c:8001
@@ -634,7 +625,7 @@ msgstr "Padam"
 #. Open dialog: 'Slides' button, to switch to slide show mode
 #: ../tuxpaint.c:8004
 msgid "Slides"
-msgstr ""
+msgstr "Slaid"
 
 #. Open dialog: 'Back' button, to dismiss Open dialog without opening a picture
 #: ../tuxpaint.c:8007
@@ -643,21 +634,18 @@ msgstr "Undur"
 
 #. Slideshow: 'Next' button, to load next slide (image)
 #: ../tuxpaint.c:8010
-#, fuzzy
 msgid "Next"
-msgstr "Teks"
+msgstr "Seterusnya"
 
 #. Slideshow: 'Play' button, to begin a slideshow sequence
 #: ../tuxpaint.c:8013
-#, fuzzy
 msgid "Play"
 msgstr "Main"
 
 #. Label for 'Letters' buttons (font selector, down the right when the Text tool is being used); used to show the difference between font faces
 #: ../tuxpaint.c:8660
-#, fuzzy
 msgid "Aa"
-msgstr "Ss"
+msgstr "Aa"
 
 #. Admittedly stupid way of determining which keys can be used for
 #. positive and negative responses in dialogs (e.g., [Y] (for 'yes') in English)
@@ -671,16 +659,14 @@ msgstr "Tidak"
 
 #. Prompt to ask whether user wishes to save over old version of their file
 #: ../tuxpaint.c:12631
-#, fuzzy
 msgid "Replace the picture with your changes?"
-msgstr "Ganti?"
+msgstr "Ganti gambar dengan perubahan anda?"
 
 #. Positive response to saving over old version
 #. (like a 'File:Save' action in other applications)
 #: ../tuxpaint.c:12635
-#, fuzzy
 msgid "Yes, replace the old one!"
-msgstr "Ya!"
+msgstr "Ya. ganti yang lama!"
 
 #. Negative response to saving over old version (saves a new image)
 #. (like a 'File:Save As...' action in other applications)
