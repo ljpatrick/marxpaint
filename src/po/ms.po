@@ -124,11 +124,11 @@ msgstr ""
 #. Most translators should use scoring instead.
 #: ../dirwalk.c:164
 msgid "qx"
-msgstr ""
+msgstr "qx"
 
 #: ../dirwalk.c:164
 msgid "QX"
-msgstr ""
+msgstr "QX"
 
 #. TODO: weight specification
 #. Now we score fonts to ensure that the best ones will be placed at
@@ -264,7 +264,7 @@ msgstr "Pentagon"
 #. Rhombus shape tool (4 sides, not at right angles)
 #: ../shapes.h:195 ../shapes.h:196
 msgid "Rhombus"
-msgstr ""
+msgstr "Rombus"
 
 #. Octagon shape tool (8 sides)
 #: ../shapes.h:199 ../shapes.h:200
@@ -755,14 +755,12 @@ msgstr "Klik untuk membuat imej cermin!"
 
 #. Both are named "Bricks", at the moment:
 #: ../../magic/src/bricks.c:104
-#, fuzzy
 msgid "Bricks"
-msgstr "Blok"
+msgstr "Bentuk Batu"
 
 #: ../../magic/src/bricks.c:111
-#, fuzzy
 msgid "Click and move to draw large bricks."
-msgstr "Klik dan alihkan untuk melukis percikan."
+msgstr "Klik dan alihkan untuk melukis bentuk batu."
 
 #: ../../magic/src/bricks.c:113
 #, fuzzy
