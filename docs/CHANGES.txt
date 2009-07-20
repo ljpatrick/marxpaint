@@ -8,11 +8,14 @@ http://www.tuxpaint.org/
 
 $Id$
 
-2009.July.7 (0.9.22)
+2009.July.19 (0.9.22)
   * Localization Updates:
     ---------------------
     * Chinese (Traditional) translation
       Song Huang <songhuang@users.sourceforge.net>
+
+    * Dutch translation
+      Freek de Kruijf <f.de.kruijf@hetnet.nl>
 
     * Malay translation
       Muhammad Najmi Ahmad Zabidi <najmi.zabidi@gmail.com>
