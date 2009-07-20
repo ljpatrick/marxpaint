@@ -143,27 +143,27 @@ msgstr ""
 #. common punctuation (e.g., '?', '!', '.', ',', etc.)
 #: ../dirwalk.c:194
 msgid ",.?!"
-msgstr ""
+msgstr ",.?!"
 
 #. uncommon punctuation (e.g., '@', '#', '*', etc.)
 #: ../dirwalk.c:197
 msgid "`\\%_@$~#{<(^&*"
-msgstr ""
+msgstr "`\\%_@$~#{<(^&*"
 
 #. digits (e.g., '0', '1' and '7')
 #: ../dirwalk.c:200
 msgid "017"
-msgstr ""
+msgstr "017"
 
 #. distinct circle-like characters (e.g., 'O' (capital oh) vs. '0' (zero))
 #: ../dirwalk.c:203
 msgid "O0"
-msgstr ""
+msgstr "O0"
 
 #. distinct line-like characters (e.g., 'l' (lowercase elle) vs. '1' (one) vs. 'I' (capital aye))
 #: ../dirwalk.c:206
 msgid "1Il|"
-msgstr ""
+msgstr "1Il|"
 
 #: ../dirwalk.c:210
 msgid "<1>spare-1a"
@@ -219,7 +219,7 @@ msgstr "Katakana"
 #. Input Method: Korean Hangul 2-Bul mode
 #: ../im.c:84
 msgid "Hangul"
-msgstr ""
+msgstr "Hangul"
 
 #. Input Method: Thai mode
 #: ../im.c:87
@@ -699,9 +699,8 @@ msgid "Tux Paint"
 msgstr "Tux Paint"
 
 #: ../../magic/src/alien.c:64
-#, fuzzy
 msgid "Color Shift"
-msgstr "Warna Shift"
+msgstr "Shift Warna"
 
 #: ../../magic/src/alien.c:67
 #, fuzzy
@@ -709,9 +708,8 @@ msgid "Click and move the mouse to change the colors in parts of your picture."
 msgstr "Klik dan gerakkan tetikus di sekeliling untuk mengaburkan gambar."
 
 #: ../../magic/src/alien.c:68
-#, fuzzy
 msgid "Click to change the colors in your entire picture."
-msgstr "Klik dan gerakkan tetikus di sekeliling untuk mengaburkan gambar."
+msgstr "Klik untuk tukar warna di seluruh gambar."
 
 #: ../../magic/src/blocks_chalk_drip.c:132
 msgid "Blocks"
@@ -744,14 +742,12 @@ msgid "Blur"
 msgstr "Kabur"
 
 #: ../../magic/src/blur.c:60
-#, fuzzy
 msgid "Click and move the mouse around to blur the image."
 msgstr "Klik dan gerakkan tetikus di sekeliling untuk mengaburkan gambar."
 
 #: ../../magic/src/blur.c:61
-#, fuzzy
 msgid "Click to blur the entire image."
-msgstr "Klik untuk membuat imej cermin!"
+msgstr "Klik untuk mengaburkan seluruh imej"
 
 #. Both are named "Bricks", at the moment:
 #: ../../magic/src/bricks.c:104
@@ -786,7 +782,6 @@ msgid "Click and move the mouse around to turn the picture into a cartoon."
 msgstr "Klik dan alihkan tetikus di sekeliling untuk membuat lukisan kapur."
 
 #: ../../magic/src/confetti.c:63
-#, fuzzy
 msgid "Confetti"
 msgstr "Konfeti"
 
@@ -805,7 +800,6 @@ msgid "Click and drag the mouse to cause distortion in your picture."
 msgstr "Klik dan gerakkan tetikus di sekeliling untuk menipiskan gambar."
 
 #: ../../magic/src/emboss.c:76
-#, fuzzy
 msgid "Emboss"
 msgstr "Ukir timbul"
 
@@ -815,14 +809,12 @@ msgid "Click and drag the mouse to emboss the picture."
 msgstr "Klik dan gerakkan tetikus di sekeliling untuk menipiskan gambar."
 
 #: ../../magic/src/fade_darken.c:119
-#, fuzzy
 msgid "Lighten"
 msgstr "Cerahkan "
 
 #: ../../magic/src/fade_darken.c:121
-#, fuzzy
 msgid "Darken"
-msgstr "Lebih Gelap"
+msgstr "Gelapkan"
 
 #: ../../magic/src/fade_darken.c:132
 #, fuzzy
