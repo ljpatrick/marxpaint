@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: tuxpaint.nl\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2009-06-19 12:57-0700\n"
-"PO-Revision-Date: 2009-07-18 22:00+0200\n"
+"PO-Revision-Date: 2009-07-20 10:01+0200\n"
 "Last-Translator: Freek de Kruijf <f.de.kruijf@hetnet.nl>\n"
 "Language-Team: Dutch <vertaling@vrijschrift.org>\n"
 "MIME-Version: 1.0\n"
@@ -807,7 +807,7 @@ msgstr "Klik en sleep de muis om vervormingen te maken in je tekening."
 
 #: ../../magic/src/emboss.c:76
 msgid "Emboss"
-msgstr "Reliëf maken"
+msgstr "Reliëf"
 
 #: ../../magic/src/emboss.c:82
 msgid "Click and drag the mouse to emboss the picture."
@@ -819,7 +819,7 @@ msgstr "Oplichten."
 
 #: ../../magic/src/fade_darken.c:121
 msgid "Darken"
-msgstr "Verduisteren."
+msgstr "Verdonkeren"
 
 #: ../../magic/src/fade_darken.c:132
 msgid "Click and move the mouse to lighten parts of your picture."
@@ -970,7 +970,7 @@ msgstr "Klik om van de tekening een negatief beeld te maken."
 
 #: ../../magic/src/noise.c:63
 msgid "Noise"
-msgstr "Geluid"
+msgstr "Ruis"
 
 #: ../../magic/src/noise.c:66
 msgid "Click and move the mouse to add noise to parts of your picture."
