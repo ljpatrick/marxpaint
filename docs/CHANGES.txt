@@ -8,7 +8,7 @@ http://www.tuxpaint.org/
 
 $Id$
 
-2009.July.20 (0.9.22)
+2009.July.23 (0.9.22)
   * Localization Updates:
     ---------------------
     * Chinese (Traditional) translation
@@ -21,6 +21,7 @@ $Id$
       Muhammad Najmi Ahmad Zabidi <najmi.zabidi@gmail.com>
 
     * Russian translation
+      Nikolay Parukhin <parukhin@gmail.com>
       Sergei Popov <skein@rambler.ru>
 
     * Songhay translation
