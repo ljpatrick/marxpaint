@@ -25,7 +25,7 @@
 
   $Id$
 
-  June 14, 2002 - October 26, 2008
+  June 14, 2002 - July 23, 2009
 */
 
 #include <stdio.h>
@@ -110,7 +110,7 @@ const char *lang_prefixes[NUM_LANGS] = {
   "oj",
   "pl",
   "pt_BR",
-  "pt_PT",
+  "pt",
   "ro",
   "ru",
   "rw",
@@ -538,7 +538,7 @@ void show_lang_usage(FILE * f, const char *const prg)
 /* oc */ "  occitan\n"
 /* oj */ "  ojibwe       ojibway\n"
 /* pl */ "  polish       polski\n"
-/* pt_PT */ "  portuguese   portugues\n"
+/* pt */ "  portuguese   portugues\n"
 /* ro */ "  romanian\n"
 /* ru */ "  russian      russkiy\n"
 /* gd */ "  scottish     scottish-gaelic        ghaidhlig\n"

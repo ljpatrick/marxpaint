@@ -25,7 +25,7 @@
 
   $Id$
   
-  June 14, 2002 - January 23, 2009
+  June 14, 2002 - July 23, 2009
 */
 
 
@@ -96,7 +96,7 @@ enum
   LANG_OJ,			/* Ojibway */
   LANG_PL,			/* Polish */
   LANG_PT_BR,			/* Portuguese (Brazilian) */
-  LANG_PT_PT,			/* Portuguese (Portugal) */
+  LANG_PT,			/* Portuguese */
   LANG_RO,			/* Romanian */
   LANG_RU,			/* Russian */
   LANG_RW,			/* Kinyarwanda */

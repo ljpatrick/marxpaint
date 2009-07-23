@@ -24,6 +24,8 @@ $Id$
       Nikolay Parukhin <parukhin@gmail.com>
       Sergei Popov <skein@rambler.ru>
 
+    * Portuguese now using plain "pt" locale (vs. always specifying "_PT")
+
     * Songhay translation
       Abdoul Cisse <abdoulseydou@hotmail.com>
 
