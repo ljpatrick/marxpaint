@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TuxPaint 0.9.13\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-06-19 12:57-0700\n"
+"POT-Creation-Date: 2009-07-27 09:53-0700\n"
 "PO-Revision-Date: 2009-01-18 00:06+0530\n"
 "Last-Translator: ravishankar <ravidreams@gmail.com>\n"
 "Language-Team: A. Ravishankar <ravishankar.ayyakkannu@gmail.com>\n"
@@ -718,6 +718,16 @@ msgstr "சொடுக்கி நகர்த்தினால், படத
 msgid "Click to change the colors in your entire picture."
 msgstr "சொடுக்கினால், முழுப் படத்தில் உள்ள வண்ணங்களையும் மாற்றலாம்."
 
+#: ../../magic/src/blind.c:92
+msgid "Blind"
+msgstr ""
+
+#: ../../magic/src/blind.c:97
+msgid ""
+"Click on a side and drag the blind to were you want, slide on the first lame "
+"to open or close the blind."
+msgstr ""
+
 #: ../../magic/src/blocks_chalk_drip.c:132
 msgid "Blocks"
 msgstr "கற்கள்"
@@ -842,12 +852,12 @@ msgstr "நிரப்பு"
 msgid "Click in the picture to fill that area with color."
 msgstr "சொடுக்கினால், படத்தின் குறிப்பிட்ட பகுதியில் வண்ணத்தை நிரப்பலாம்."
 
-#: ../../magic/src/fisheye.c:77
+#: ../../magic/src/fisheye.c:78
 msgid "Fisheye"
 msgstr "மீன்கண்"
 
 #. Needs better name
-#: ../../magic/src/fisheye.c:79
+#: ../../magic/src/fisheye.c:80
 msgid "Click on part of your picture to create a fisheye effect."
 msgstr "சொடுக்கினால், படத்தின் குறிப்பிட்ட பகுதியில் மீன்கண் விளைவு கிடைக்கும்."
 
@@ -939,17 +949,77 @@ msgstr "சொடுக்கினால், கண்ணாடிப் பட
 msgid "Click to flip the picture upside-down."
 msgstr "சொடுக்கினால் படம் தலைகீழாகும்."
 
-#: ../../magic/src/mosaic.c:70
+#: ../../magic/src/mosaic.c:75
 msgid "Mosaic"
 msgstr "Mosaic"
 
-#: ../../magic/src/mosaic.c:73
+#: ../../magic/src/mosaic.c:78
 msgid ""
 "Click and move the mouse to add a mosaic effect to parts of your picture."
 msgstr "சொடுக்கி நகர்த்தினால், படத்தில் mosais விளைவு சேர்க்கலாம்."
 
-#: ../../magic/src/mosaic.c:74
+#: ../../magic/src/mosaic.c:79
 msgid "Click to add a mosaic effect to your entire picture."
+msgstr "சொடுக்கினால், முழுப்படத்திலும் mosaic விளைவு சேர்க்கலாம்."
+
+#: ../../magic/src/mosaic_shaped.c:134
+#, fuzzy
+#| msgid "Mosaic"
+msgid "Mosaic square"
+msgstr "Mosaic"
+
+#: ../../magic/src/mosaic_shaped.c:135
+#, fuzzy
+#| msgid "Mosaic"
+msgid "Mosaic hexagon"
+msgstr "Mosaic"
+
+#: ../../magic/src/mosaic_shaped.c:136
+msgid "Mosaic irregular"
+msgstr ""
+
+#: ../../magic/src/mosaic_shaped.c:141
+#, fuzzy
+#| msgid ""
+#| "Click and move the mouse to add a mosaic effect to parts of your picture."
+msgid ""
+"Click and move the mouse to add a mosaic squared effect to parts of your "
+"picture."
+msgstr "சொடுக்கி நகர்த்தினால், படத்தில் mosais விளைவு சேர்க்கலாம்."
+
+#: ../../magic/src/mosaic_shaped.c:142
+#, fuzzy
+#| msgid "Click to add a mosaic effect to your entire picture."
+msgid "Click to add a mosaic squared effect to your entire picture."
+msgstr "சொடுக்கினால், முழுப்படத்திலும் mosaic விளைவு சேர்க்கலாம்."
+
+#: ../../magic/src/mosaic_shaped.c:144
+#, fuzzy
+#| msgid ""
+#| "Click and move the mouse to add a mosaic effect to parts of your picture."
+msgid ""
+"Click and move the mouse to add a mosaic hexagonal effect to parts of your "
+"picture."
+msgstr "சொடுக்கி நகர்த்தினால், படத்தில் mosais விளைவு சேர்க்கலாம்."
+
+#: ../../magic/src/mosaic_shaped.c:145
+#, fuzzy
+#| msgid "Click to add a mosaic effect to your entire picture."
+msgid "Click to add a mosaic hexagonal effect to your entire picture."
+msgstr "சொடுக்கினால், முழுப்படத்திலும் mosaic விளைவு சேர்க்கலாம்."
+
+#: ../../magic/src/mosaic_shaped.c:147
+#, fuzzy
+#| msgid ""
+#| "Click and move the mouse to add a mosaic effect to parts of your picture."
+msgid ""
+"Click and move the mouse to add a irregular mosaic to parts of your picture."
+msgstr "சொடுக்கி நகர்த்தினால், படத்தில் mosais விளைவு சேர்க்கலாம்."
+
+#: ../../magic/src/mosaic_shaped.c:148
+#, fuzzy
+#| msgid "Click to add a mosaic effect to your entire picture."
+msgid "Click to add a irregular mosaic to your entire picture."
 msgstr "சொடுக்கினால், முழுப்படத்திலும் mosaic விளைவு சேர்க்கலாம்."
 
 #: ../../magic/src/negative.c:72
@@ -976,11 +1046,11 @@ msgstr "சொடுக்கி நகர்த்தினால், படத
 msgid "Click to add noise to your entire picture."
 msgstr "சொடுக்கினால், படத்தில் இரைச்சலைச் சேர்க்கலாம்."
 
-#: ../../magic/src/rails.c:102
+#: ../../magic/src/rails.c:101
 msgid "Rails"
 msgstr "இருப்புப் பாதைகள்"
 
-#: ../../magic/src/rails.c:104
+#: ../../magic/src/rails.c:103
 msgid "Click and drag to draw train track rails on your picture."
 msgstr "சொடுக்கி இழுத்தால், படத்தில் தொடர்வண்டி இருப்புப் பாதைகளை வரையலாம்."
 

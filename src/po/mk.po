@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-06-19 12:57-0700\n"
+"POT-Creation-Date: 2009-07-27 09:53-0700\n"
 "PO-Revision-Date: 2006-06-17 23:07+0000\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: Macedonian <mk@li.org>\n"
@@ -721,6 +721,16 @@ msgstr "Кликнете и движете го глувчето наоколу 
 msgid "Click to change the colors in your entire picture."
 msgstr "Кликнете и движете го глувчето наоколу за да ја замаглите сликата."
 
+#: ../../magic/src/blind.c:92
+msgid "Blind"
+msgstr ""
+
+#: ../../magic/src/blind.c:97
+msgid ""
+"Click on a side and drag the blind to were you want, slide on the first lame "
+"to open or close the blind."
+msgstr ""
+
 #: ../../magic/src/blocks_chalk_drip.c:132
 msgid "Blocks"
 msgstr "Блокови"
@@ -860,12 +870,12 @@ msgstr "Пополни"
 msgid "Click in the picture to fill that area with color."
 msgstr "Кликнете на сликата за да ја пополните областа со боја."
 
-#: ../../magic/src/fisheye.c:77
+#: ../../magic/src/fisheye.c:78
 msgid "Fisheye"
 msgstr ""
 
 #. Needs better name
-#: ../../magic/src/fisheye.c:79
+#: ../../magic/src/fisheye.c:80
 #, fuzzy
 msgid "Click on part of your picture to create a fisheye effect."
 msgstr "Кликнете и движете го глувчето наоколу за да ја замаглите сликата."
@@ -964,20 +974,69 @@ msgstr "Кликнете за да направите огледална сли�
 msgid "Click to flip the picture upside-down."
 msgstr "Кликнете за да ја превртите сликата наопаку."
 
-#: ../../magic/src/mosaic.c:70
+#: ../../magic/src/mosaic.c:75
 #, fuzzy
 msgid "Mosaic"
 msgstr "Магија"
 
-#: ../../magic/src/mosaic.c:73
+#: ../../magic/src/mosaic.c:78
 #, fuzzy
 msgid ""
 "Click and move the mouse to add a mosaic effect to parts of your picture."
 msgstr "Кликнете за да направите огледална слика."
 
-#: ../../magic/src/mosaic.c:74
+#: ../../magic/src/mosaic.c:79
 #, fuzzy
 msgid "Click to add a mosaic effect to your entire picture."
+msgstr "Кликнете за да направите огледална слика."
+
+#: ../../magic/src/mosaic_shaped.c:134
+#, fuzzy
+msgid "Mosaic square"
+msgstr "Магија"
+
+#: ../../magic/src/mosaic_shaped.c:135
+#, fuzzy
+msgid "Mosaic hexagon"
+msgstr "Магија"
+
+#: ../../magic/src/mosaic_shaped.c:136
+msgid "Mosaic irregular"
+msgstr ""
+
+#: ../../magic/src/mosaic_shaped.c:141
+#, fuzzy
+msgid ""
+"Click and move the mouse to add a mosaic squared effect to parts of your "
+"picture."
+msgstr "Кликнете за да направите огледална слика."
+
+#: ../../magic/src/mosaic_shaped.c:142
+#, fuzzy
+msgid "Click to add a mosaic squared effect to your entire picture."
+msgstr "Кликнете за да направите огледална слика."
+
+#: ../../magic/src/mosaic_shaped.c:144
+#, fuzzy
+msgid ""
+"Click and move the mouse to add a mosaic hexagonal effect to parts of your "
+"picture."
+msgstr "Кликнете за да направите огледална слика."
+
+#: ../../magic/src/mosaic_shaped.c:145
+#, fuzzy
+msgid "Click to add a mosaic hexagonal effect to your entire picture."
+msgstr "Кликнете за да направите огледална слика."
+
+#: ../../magic/src/mosaic_shaped.c:147
+#, fuzzy
+msgid ""
+"Click and move the mouse to add a irregular mosaic to parts of your picture."
+msgstr "Кликнете за да направите огледална слика."
+
+#: ../../magic/src/mosaic_shaped.c:148
+#, fuzzy
+msgid "Click to add a irregular mosaic to your entire picture."
 msgstr "Кликнете за да направите огледална слика."
 
 #: ../../magic/src/negative.c:72
@@ -1011,11 +1070,11 @@ msgstr ""
 "Кликнете на глувчето и влечете го наоколу за да ја промените бојата на "
 "сликата."
 
-#: ../../magic/src/rails.c:102
+#: ../../magic/src/rails.c:101
 msgid "Rails"
 msgstr ""
 
-#: ../../magic/src/rails.c:104
+#: ../../magic/src/rails.c:103
 #, fuzzy
 msgid "Click and drag to draw train track rails on your picture."
 msgstr "Кликнете и движете го глувчето наоколу за да ја замаглите сликата."

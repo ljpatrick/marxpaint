@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-06-19 12:57-0700\n"
+"POT-Creation-Date: 2009-07-27 09:53-0700\n"
 "PO-Revision-Date: 2008-02-27 11:34+0100\n"
 "Last-Translator: Burkhard Lück <lueck@hube-lueck.de>\n"
 "Language-Team: Deutsch <kde-i18n-de@kde.org>\n"
@@ -732,6 +732,16 @@ msgstr "Klick und bewege die Maus, um das Bild unscharf zu machen."
 msgid "Click to change the colors in your entire picture."
 msgstr "Klick und bewege die Maus, um das Bild unscharf zu machen."
 
+#: ../../magic/src/blind.c:92
+msgid "Blind"
+msgstr ""
+
+#: ../../magic/src/blind.c:97
+msgid ""
+"Click on a side and drag the blind to were you want, slide on the first lame "
+"to open or close the blind."
+msgstr ""
+
 #: ../../magic/src/blocks_chalk_drip.c:132
 msgid "Blocks"
 msgstr "Blöcke"
@@ -864,12 +874,12 @@ msgstr "Füllen"
 msgid "Click in the picture to fill that area with color."
 msgstr "Klick in das Bild, um einen Bereich mit Farbe auszufüllen."
 
-#: ../../magic/src/fisheye.c:77
+#: ../../magic/src/fisheye.c:78
 msgid "Fisheye"
 msgstr ""
 
 #. Needs better name
-#: ../../magic/src/fisheye.c:79
+#: ../../magic/src/fisheye.c:80
 #, fuzzy
 #| msgid "Click and drag to shift your picture around on the canvas."
 msgid "Click on part of your picture to create a fisheye effect."
@@ -963,20 +973,69 @@ msgstr "Klicke, um das Bild zu spiegeln."
 msgid "Click to flip the picture upside-down."
 msgstr "Klicke, um das Bild auf den Kopf zu stellen."
 
-#: ../../magic/src/mosaic.c:70
+#: ../../magic/src/mosaic.c:75
 #, fuzzy
 msgid "Mosaic"
 msgstr "Magie"
 
-#: ../../magic/src/mosaic.c:73
+#: ../../magic/src/mosaic.c:78
 #, fuzzy
 msgid ""
 "Click and move the mouse to add a mosaic effect to parts of your picture."
 msgstr "Klicke, um das Bild zu spiegeln."
 
-#: ../../magic/src/mosaic.c:74
+#: ../../magic/src/mosaic.c:79
 #, fuzzy
 msgid "Click to add a mosaic effect to your entire picture."
+msgstr "Klicke, um das Bild zu spiegeln."
+
+#: ../../magic/src/mosaic_shaped.c:134
+#, fuzzy
+msgid "Mosaic square"
+msgstr "Magie"
+
+#: ../../magic/src/mosaic_shaped.c:135
+#, fuzzy
+msgid "Mosaic hexagon"
+msgstr "Magie"
+
+#: ../../magic/src/mosaic_shaped.c:136
+msgid "Mosaic irregular"
+msgstr ""
+
+#: ../../magic/src/mosaic_shaped.c:141
+#, fuzzy
+msgid ""
+"Click and move the mouse to add a mosaic squared effect to parts of your "
+"picture."
+msgstr "Klicke, um das Bild zu spiegeln."
+
+#: ../../magic/src/mosaic_shaped.c:142
+#, fuzzy
+msgid "Click to add a mosaic squared effect to your entire picture."
+msgstr "Klicke, um das Bild zu spiegeln."
+
+#: ../../magic/src/mosaic_shaped.c:144
+#, fuzzy
+msgid ""
+"Click and move the mouse to add a mosaic hexagonal effect to parts of your "
+"picture."
+msgstr "Klicke, um das Bild zu spiegeln."
+
+#: ../../magic/src/mosaic_shaped.c:145
+#, fuzzy
+msgid "Click to add a mosaic hexagonal effect to your entire picture."
+msgstr "Klicke, um das Bild zu spiegeln."
+
+#: ../../magic/src/mosaic_shaped.c:147
+#, fuzzy
+msgid ""
+"Click and move the mouse to add a irregular mosaic to parts of your picture."
+msgstr "Klicke, um das Bild zu spiegeln."
+
+#: ../../magic/src/mosaic_shaped.c:148
+#, fuzzy
+msgid "Click to add a irregular mosaic to your entire picture."
 msgstr "Klicke, um das Bild zu spiegeln."
 
 #: ../../magic/src/negative.c:72
@@ -1008,12 +1067,12 @@ msgstr "Klick und bewege die Maus, um das Bild unscharf zu machen."
 msgid "Click to add noise to your entire picture."
 msgstr "Klick und bewege die Maus, um die Farben des Bildes zu ändern."
 
-#: ../../magic/src/rails.c:102
+#: ../../magic/src/rails.c:101
 #, fuzzy
 msgid "Rails"
 msgstr "Kräuseln"
 
-#: ../../magic/src/rails.c:104
+#: ../../magic/src/rails.c:103
 #, fuzzy
 msgid "Click and drag to draw train track rails on your picture."
 msgstr "Klick und bewege die Maus, um helle Kreise auf das Bild zu malen."

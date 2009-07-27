@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: lv\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-06-19 12:57-0700\n"
+"POT-Creation-Date: 2009-07-27 09:53-0700\n"
 "PO-Revision-Date: 2007-05-14 18:13-0700\n"
 "Last-Translator: Raivis Strogonovs <raivucis@gmail.com>\n"
 "Language-Team: Valoda <raivucis@gmail.com>\n"
@@ -726,6 +726,16 @@ msgid "Click to change the colors in your entire picture."
 msgstr ""
 "Nospied, pieturi peles pogu un velc peli lai bildi padarītu miglaināku."
 
+#: ../../magic/src/blind.c:92
+msgid "Blind"
+msgstr ""
+
+#: ../../magic/src/blind.c:97
+msgid ""
+"Click on a side and drag the blind to were you want, slide on the first lame "
+"to open or close the blind."
+msgstr ""
+
 #: ../../magic/src/blocks_chalk_drip.c:132
 msgid "Blocks"
 msgstr "Kluči"
@@ -866,12 +876,12 @@ msgstr "Piepildi"
 msgid "Click in the picture to fill that area with color."
 msgstr "Nospied uz bildi, lai to piepildītu ar krāsu."
 
-#: ../../magic/src/fisheye.c:77
+#: ../../magic/src/fisheye.c:78
 msgid "Fisheye"
 msgstr ""
 
 #. Needs better name
-#: ../../magic/src/fisheye.c:79
+#: ../../magic/src/fisheye.c:80
 #, fuzzy
 msgid "Click on part of your picture to create a fisheye effect."
 msgstr ""
@@ -975,20 +985,69 @@ msgstr "Nospied peli uz zīmējumu lai to pārvērstu spoguļskatā."
 msgid "Click to flip the picture upside-down."
 msgstr "Nospied peli uz zīmējuma lai to apgrieztu riņķī."
 
-#: ../../magic/src/mosaic.c:70
+#: ../../magic/src/mosaic.c:75
 #, fuzzy
 msgid "Mosaic"
 msgstr "Maģija"
 
-#: ../../magic/src/mosaic.c:73
+#: ../../magic/src/mosaic.c:78
 #, fuzzy
 msgid ""
 "Click and move the mouse to add a mosaic effect to parts of your picture."
 msgstr "Nospied peli uz zīmējumu lai to pārvērstu spoguļskatā."
 
-#: ../../magic/src/mosaic.c:74
+#: ../../magic/src/mosaic.c:79
 #, fuzzy
 msgid "Click to add a mosaic effect to your entire picture."
+msgstr "Nospied peli uz zīmējumu lai to pārvērstu spoguļskatā."
+
+#: ../../magic/src/mosaic_shaped.c:134
+#, fuzzy
+msgid "Mosaic square"
+msgstr "Maģija"
+
+#: ../../magic/src/mosaic_shaped.c:135
+#, fuzzy
+msgid "Mosaic hexagon"
+msgstr "Maģija"
+
+#: ../../magic/src/mosaic_shaped.c:136
+msgid "Mosaic irregular"
+msgstr ""
+
+#: ../../magic/src/mosaic_shaped.c:141
+#, fuzzy
+msgid ""
+"Click and move the mouse to add a mosaic squared effect to parts of your "
+"picture."
+msgstr "Nospied peli uz zīmējumu lai to pārvērstu spoguļskatā."
+
+#: ../../magic/src/mosaic_shaped.c:142
+#, fuzzy
+msgid "Click to add a mosaic squared effect to your entire picture."
+msgstr "Nospied peli uz zīmējumu lai to pārvērstu spoguļskatā."
+
+#: ../../magic/src/mosaic_shaped.c:144
+#, fuzzy
+msgid ""
+"Click and move the mouse to add a mosaic hexagonal effect to parts of your "
+"picture."
+msgstr "Nospied peli uz zīmējumu lai to pārvērstu spoguļskatā."
+
+#: ../../magic/src/mosaic_shaped.c:145
+#, fuzzy
+msgid "Click to add a mosaic hexagonal effect to your entire picture."
+msgstr "Nospied peli uz zīmējumu lai to pārvērstu spoguļskatā."
+
+#: ../../magic/src/mosaic_shaped.c:147
+#, fuzzy
+msgid ""
+"Click and move the mouse to add a irregular mosaic to parts of your picture."
+msgstr "Nospied peli uz zīmējumu lai to pārvērstu spoguļskatā."
+
+#: ../../magic/src/mosaic_shaped.c:148
+#, fuzzy
+msgid "Click to add a irregular mosaic to your entire picture."
 msgstr "Nospied peli uz zīmējumu lai to pārvērstu spoguļskatā."
 
 #: ../../magic/src/negative.c:72
@@ -1022,11 +1081,11 @@ msgstr ""
 msgid "Click to add noise to your entire picture."
 msgstr "Nospied, pieturi peles pogu un velc peli lai zīmējumā mainītu krāsas."
 
-#: ../../magic/src/rails.c:102
+#: ../../magic/src/rails.c:101
 msgid "Rails"
 msgstr ""
 
-#: ../../magic/src/rails.c:104
+#: ../../magic/src/rails.c:103
 #, fuzzy
 msgid "Click and drag to draw train track rails on your picture."
 msgstr ""

@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Tux Paint\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-06-19 12:57-0700\n"
+"POT-Creation-Date: 2009-07-27 09:53-0700\n"
 "PO-Revision-Date: 2009-06-28 22:30+0100\n"
 "Last-Translator: Joe Hansen <joedalton2@yahoo.dk>\n"
 "Language-Team: Danish <dansk@dansk-gruppen.dk>\n"
@@ -720,6 +720,16 @@ msgstr "Klik og bevæg musen rundt for at ændre farverne i dele af dit billede.
 msgid "Click to change the colors in your entire picture."
 msgstr "Klik for at ændre farverne i hele dit billede."
 
+#: ../../magic/src/blind.c:92
+msgid "Blind"
+msgstr ""
+
+#: ../../magic/src/blind.c:97
+msgid ""
+"Click on a side and drag the blind to were you want, slide on the first lame "
+"to open or close the blind."
+msgstr ""
+
 #: ../../magic/src/blocks_chalk_drip.c:132
 msgid "Blocks"
 msgstr "Blokke"
@@ -846,12 +856,12 @@ msgstr "Fyld"
 msgid "Click in the picture to fill that area with color."
 msgstr "Klik i billedet for at fylde området med en farve."
 
-#: ../../magic/src/fisheye.c:77
+#: ../../magic/src/fisheye.c:78
 msgid "Fisheye"
 msgstr "Fiskeøje"
 
 #. Needs better name
-#: ../../magic/src/fisheye.c:79
+#: ../../magic/src/fisheye.c:80
 msgid "Click on part of your picture to create a fisheye effect."
 msgstr "Klik og bevæg musen rundt, for at skabe en fiskeøjeeffekt."
 
@@ -947,19 +957,85 @@ msgstr "Klik på billedet for at spejlvende det."
 msgid "Click to flip the picture upside-down."
 msgstr "Klik på billedet for at vende det op/ned."
 
-#: ../../magic/src/mosaic.c:70
+#: ../../magic/src/mosaic.c:75
 msgid "Mosaic"
 msgstr "Mosaik"
 
-#: ../../magic/src/mosaic.c:73
+#: ../../magic/src/mosaic.c:78
 msgid ""
 "Click and move the mouse to add a mosaic effect to parts of your picture."
 msgstr ""
 "Klik og flyt musen rundt for at tilføje en mosaikeffekt til dele af dit "
 "billede."
 
-#: ../../magic/src/mosaic.c:74
+#: ../../magic/src/mosaic.c:79
 msgid "Click to add a mosaic effect to your entire picture."
+msgstr "Klik for at tilføje en mosaikeffekt på hele dit billede."
+
+#: ../../magic/src/mosaic_shaped.c:134
+#, fuzzy
+#| msgid "Mosaic"
+msgid "Mosaic square"
+msgstr "Mosaik"
+
+#: ../../magic/src/mosaic_shaped.c:135
+#, fuzzy
+#| msgid "Mosaic"
+msgid "Mosaic hexagon"
+msgstr "Mosaik"
+
+#: ../../magic/src/mosaic_shaped.c:136
+msgid "Mosaic irregular"
+msgstr ""
+
+#: ../../magic/src/mosaic_shaped.c:141
+#, fuzzy
+#| msgid ""
+#| "Click and move the mouse to add a mosaic effect to parts of your picture."
+msgid ""
+"Click and move the mouse to add a mosaic squared effect to parts of your "
+"picture."
+msgstr ""
+"Klik og flyt musen rundt for at tilføje en mosaikeffekt til dele af dit "
+"billede."
+
+#: ../../magic/src/mosaic_shaped.c:142
+#, fuzzy
+#| msgid "Click to add a mosaic effect to your entire picture."
+msgid "Click to add a mosaic squared effect to your entire picture."
+msgstr "Klik for at tilføje en mosaikeffekt på hele dit billede."
+
+#: ../../magic/src/mosaic_shaped.c:144
+#, fuzzy
+#| msgid ""
+#| "Click and move the mouse to add a mosaic effect to parts of your picture."
+msgid ""
+"Click and move the mouse to add a mosaic hexagonal effect to parts of your "
+"picture."
+msgstr ""
+"Klik og flyt musen rundt for at tilføje en mosaikeffekt til dele af dit "
+"billede."
+
+#: ../../magic/src/mosaic_shaped.c:145
+#, fuzzy
+#| msgid "Click to add a mosaic effect to your entire picture."
+msgid "Click to add a mosaic hexagonal effect to your entire picture."
+msgstr "Klik for at tilføje en mosaikeffekt på hele dit billede."
+
+#: ../../magic/src/mosaic_shaped.c:147
+#, fuzzy
+#| msgid ""
+#| "Click and move the mouse to add a mosaic effect to parts of your picture."
+msgid ""
+"Click and move the mouse to add a irregular mosaic to parts of your picture."
+msgstr ""
+"Klik og flyt musen rundt for at tilføje en mosaikeffekt til dele af dit "
+"billede."
+
+#: ../../magic/src/mosaic_shaped.c:148
+#, fuzzy
+#| msgid "Click to add a mosaic effect to your entire picture."
+msgid "Click to add a irregular mosaic to your entire picture."
 msgstr "Klik for at tilføje en mosaikeffekt på hele dit billede."
 
 #: ../../magic/src/negative.c:72
@@ -986,11 +1062,11 @@ msgstr "Klik og bevæg musen rundt for at tilføje støj til dele af dit billede
 msgid "Click to add noise to your entire picture."
 msgstr "Klik for at tilføje støj til hele dit billede."
 
-#: ../../magic/src/rails.c:102
+#: ../../magic/src/rails.c:101
 msgid "Rails"
 msgstr "Togspor"
 
-#: ../../magic/src/rails.c:104
+#: ../../magic/src/rails.c:103
 msgid "Click and drag to draw train track rails on your picture."
 msgstr "Klik og bevæg musen rundt for at tegne togspor på dit billede."
 
@@ -1207,7 +1283,8 @@ msgid ""
 "Click and drag to make parts of your picture look like they are on "
 "television."
 msgstr ""
-"Klik og træk musen rundt for at få dit billede til at se ud som om, det er i fjernsynet."
+"Klik og træk musen rundt for at få dit billede til at se ud som om, det er i "
+"fjernsynet."
 
 #: ../../magic/src/tv.c:82
 msgid "Click to make your picture look like it's on television."
@@ -1241,5 +1318,3 @@ msgstr ""
 "Klik for at indsætte bølger vertikalt i billedet. Klik mod toppen for lave "
 "bølger, bunden for højere bølger, til venstre for små bølger og mod højre "
 "for lange bølger."
-
-

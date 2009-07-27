@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TuxPaint 0.9.21 uk\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-06-19 12:57-0700\n"
+"POT-Creation-Date: 2009-07-27 09:53-0700\n"
 "PO-Revision-Date: 2009-06-01 23:22+0300\n"
 "Last-Translator: Serhij Dubyk <serhijdubyk@gmail.com>\n"
 "Language-Team: translation@linux.org.ua <Ukrainian Linux Team>\n"
@@ -721,6 +721,16 @@ msgstr ""
 msgid "Click to change the colors in your entire picture."
 msgstr "Клацніть та посовгайте по малюнку, щоб змінити колір малюнка."
 
+#: ../../magic/src/blind.c:92
+msgid "Blind"
+msgstr ""
+
+#: ../../magic/src/blind.c:97
+msgid ""
+"Click on a side and drag the blind to were you want, slide on the first lame "
+"to open or close the blind."
+msgstr ""
+
 #: ../../magic/src/blocks_chalk_drip.c:132
 msgid "Blocks"
 msgstr "Мозаїка"
@@ -849,12 +859,12 @@ msgstr "Залити"
 msgid "Click in the picture to fill that area with color."
 msgstr "Клацніть, щоб заповнити цю область кольором."
 
-#: ../../magic/src/fisheye.c:77
+#: ../../magic/src/fisheye.c:78
 msgid "Fisheye"
 msgstr "Здуття"
 
 #. Needs better name
-#: ../../magic/src/fisheye.c:79
+#: ../../magic/src/fisheye.c:80
 msgid "Click on part of your picture to create a fisheye effect."
 msgstr "Клацніть на деякі місця малюнку, щоб там створити ефекти здуття."
 
@@ -949,19 +959,85 @@ msgstr "Клацніть, щоб зробити зеркальне відобр�
 msgid "Click to flip the picture upside-down."
 msgstr "Клацніть на малюнку, щоб перевернути його догори ногами."
 
-#: ../../magic/src/mosaic.c:70
+#: ../../magic/src/mosaic.c:75
 msgid "Mosaic"
 msgstr "Мозаїка"
 
-#: ../../magic/src/mosaic.c:73
+#: ../../magic/src/mosaic.c:78
 msgid ""
 "Click and move the mouse to add a mosaic effect to parts of your picture."
 msgstr ""
 "Натисніть та потягайте мишку, щоб додати ефект мозаїки у деяких місцях "
 "малюнка."
 
-#: ../../magic/src/mosaic.c:74
+#: ../../magic/src/mosaic.c:79
 msgid "Click to add a mosaic effect to your entire picture."
+msgstr "Клацніть, щоб покрити мозаїкою весь малюнок."
+
+#: ../../magic/src/mosaic_shaped.c:134
+#, fuzzy
+#| msgid "Mosaic"
+msgid "Mosaic square"
+msgstr "Мозаїка"
+
+#: ../../magic/src/mosaic_shaped.c:135
+#, fuzzy
+#| msgid "Mosaic"
+msgid "Mosaic hexagon"
+msgstr "Мозаїка"
+
+#: ../../magic/src/mosaic_shaped.c:136
+msgid "Mosaic irregular"
+msgstr ""
+
+#: ../../magic/src/mosaic_shaped.c:141
+#, fuzzy
+#| msgid ""
+#| "Click and move the mouse to add a mosaic effect to parts of your picture."
+msgid ""
+"Click and move the mouse to add a mosaic squared effect to parts of your "
+"picture."
+msgstr ""
+"Натисніть та потягайте мишку, щоб додати ефект мозаїки у деяких місцях "
+"малюнка."
+
+#: ../../magic/src/mosaic_shaped.c:142
+#, fuzzy
+#| msgid "Click to add a mosaic effect to your entire picture."
+msgid "Click to add a mosaic squared effect to your entire picture."
+msgstr "Клацніть, щоб покрити мозаїкою весь малюнок."
+
+#: ../../magic/src/mosaic_shaped.c:144
+#, fuzzy
+#| msgid ""
+#| "Click and move the mouse to add a mosaic effect to parts of your picture."
+msgid ""
+"Click and move the mouse to add a mosaic hexagonal effect to parts of your "
+"picture."
+msgstr ""
+"Натисніть та потягайте мишку, щоб додати ефект мозаїки у деяких місцях "
+"малюнка."
+
+#: ../../magic/src/mosaic_shaped.c:145
+#, fuzzy
+#| msgid "Click to add a mosaic effect to your entire picture."
+msgid "Click to add a mosaic hexagonal effect to your entire picture."
+msgstr "Клацніть, щоб покрити мозаїкою весь малюнок."
+
+#: ../../magic/src/mosaic_shaped.c:147
+#, fuzzy
+#| msgid ""
+#| "Click and move the mouse to add a mosaic effect to parts of your picture."
+msgid ""
+"Click and move the mouse to add a irregular mosaic to parts of your picture."
+msgstr ""
+"Натисніть та потягайте мишку, щоб додати ефект мозаїки у деяких місцях "
+"малюнка."
+
+#: ../../magic/src/mosaic_shaped.c:148
+#, fuzzy
+#| msgid "Click to add a mosaic effect to your entire picture."
+msgid "Click to add a irregular mosaic to your entire picture."
 msgstr "Клацніть, щоб покрити мозаїкою весь малюнок."
 
 #: ../../magic/src/negative.c:72
@@ -990,11 +1066,11 @@ msgstr "Клацніть та протягніть мишку по малюнк�
 msgid "Click to add noise to your entire picture."
 msgstr "Клацніть і  шум додасться на весь малюнок."
 
-#: ../../magic/src/rails.c:102
+#: ../../magic/src/rails.c:101
 msgid "Rails"
 msgstr "Рейки"
 
-#: ../../magic/src/rails.c:104
+#: ../../magic/src/rails.c:103
 msgid "Click and drag to draw train track rails on your picture."
 msgstr "Натисніть та тягніть мишку — за нею прокладатимуться залізничні рейки."
 

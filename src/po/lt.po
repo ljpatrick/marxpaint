@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Tuxpaint 0.9.9\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-06-19 12:57-0700\n"
+"POT-Creation-Date: 2009-07-27 09:53-0700\n"
 "PO-Revision-Date: 2004-12-10 18:11+0200\n"
 "Last-Translator: Gintaras Goštautas <gintaras@nes.lt>\n"
 "Language-Team: Lithuanian <komp_lt@konf.lt>\n"
@@ -732,6 +732,16 @@ msgstr "Spustelėkite ir judindami pelę suliesite piešinį."
 msgid "Click to change the colors in your entire picture."
 msgstr "Spustelėkite ir judindami pelę suliesite piešinį."
 
+#: ../../magic/src/blind.c:92
+msgid "Blind"
+msgstr ""
+
+#: ../../magic/src/blind.c:97
+msgid ""
+"Click on a side and drag the blind to were you want, slide on the first lame "
+"to open or close the blind."
+msgstr ""
+
 #: ../../magic/src/blocks_chalk_drip.c:132
 msgid "Blocks"
 msgstr "Kaladėlės"
@@ -864,12 +874,12 @@ msgstr "Užpildymas"
 msgid "Click in the picture to fill that area with color."
 msgstr "Spustelėkite piešinyje, norėdami tą plotą nuspalvinti."
 
-#: ../../magic/src/fisheye.c:77
+#: ../../magic/src/fisheye.c:78
 msgid "Fisheye"
 msgstr ""
 
 #. Needs better name
-#: ../../magic/src/fisheye.c:79
+#: ../../magic/src/fisheye.c:80
 #, fuzzy
 msgid "Click on part of your picture to create a fisheye effect."
 msgstr "Spustelėkite ir pele judinkite piešinį ant drobės."
@@ -969,20 +979,69 @@ msgstr "Spustelėkite ir gausite veidrodinį atspindį."
 msgid "Click to flip the picture upside-down."
 msgstr "Spustelėkite, jei norite apversti piešinį aukštyn kojom."
 
-#: ../../magic/src/mosaic.c:70
+#: ../../magic/src/mosaic.c:75
 #, fuzzy
 msgid "Mosaic"
 msgstr "Magija"
 
-#: ../../magic/src/mosaic.c:73
+#: ../../magic/src/mosaic.c:78
 #, fuzzy
 msgid ""
 "Click and move the mouse to add a mosaic effect to parts of your picture."
 msgstr "Spustelėkite ir gausite veidrodinį atspindį."
 
-#: ../../magic/src/mosaic.c:74
+#: ../../magic/src/mosaic.c:79
 #, fuzzy
 msgid "Click to add a mosaic effect to your entire picture."
+msgstr "Spustelėkite ir gausite veidrodinį atspindį."
+
+#: ../../magic/src/mosaic_shaped.c:134
+#, fuzzy
+msgid "Mosaic square"
+msgstr "Magija"
+
+#: ../../magic/src/mosaic_shaped.c:135
+#, fuzzy
+msgid "Mosaic hexagon"
+msgstr "Magija"
+
+#: ../../magic/src/mosaic_shaped.c:136
+msgid "Mosaic irregular"
+msgstr ""
+
+#: ../../magic/src/mosaic_shaped.c:141
+#, fuzzy
+msgid ""
+"Click and move the mouse to add a mosaic squared effect to parts of your "
+"picture."
+msgstr "Spustelėkite ir gausite veidrodinį atspindį."
+
+#: ../../magic/src/mosaic_shaped.c:142
+#, fuzzy
+msgid "Click to add a mosaic squared effect to your entire picture."
+msgstr "Spustelėkite ir gausite veidrodinį atspindį."
+
+#: ../../magic/src/mosaic_shaped.c:144
+#, fuzzy
+msgid ""
+"Click and move the mouse to add a mosaic hexagonal effect to parts of your "
+"picture."
+msgstr "Spustelėkite ir gausite veidrodinį atspindį."
+
+#: ../../magic/src/mosaic_shaped.c:145
+#, fuzzy
+msgid "Click to add a mosaic hexagonal effect to your entire picture."
+msgstr "Spustelėkite ir gausite veidrodinį atspindį."
+
+#: ../../magic/src/mosaic_shaped.c:147
+#, fuzzy
+msgid ""
+"Click and move the mouse to add a irregular mosaic to parts of your picture."
+msgstr "Spustelėkite ir gausite veidrodinį atspindį."
+
+#: ../../magic/src/mosaic_shaped.c:148
+#, fuzzy
+msgid "Click to add a irregular mosaic to your entire picture."
 msgstr "Spustelėkite ir gausite veidrodinį atspindį."
 
 #: ../../magic/src/negative.c:72
@@ -1014,12 +1073,12 @@ msgstr "Spustelėkite ir judindami pelę suliesite piešinį."
 msgid "Click to add noise to your entire picture."
 msgstr "Spustelėkite ir judindami pelę pakeisite piešinio spalvas."
 
-#: ../../magic/src/rails.c:102
+#: ../../magic/src/rails.c:101
 #, fuzzy
 msgid "Rails"
 msgstr "Bangelės"
 
-#: ../../magic/src/rails.c:104
+#: ../../magic/src/rails.c:103
 #, fuzzy
 msgid "Click and drag to draw train track rails on your picture."
 msgstr "Spustelėkite ir pele pieškite šviesos spindulį."

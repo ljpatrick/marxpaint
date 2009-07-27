@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: af\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-06-19 12:57-0700\n"
+"POT-Creation-Date: 2009-07-27 09:53-0700\n"
 "PO-Revision-Date: 2009-05-26 15:02+0200\n"
 "Last-Translator: Petri Jooste <petri.jooste@nwu.ac.za>\n"
 "Language-Team: \n"
@@ -712,6 +712,16 @@ msgstr ""
 msgid "Click to change the colors in your entire picture."
 msgstr "Klik om kleure in die hele prent te verander."
 
+#: ../../magic/src/blind.c:92
+msgid "Blind"
+msgstr ""
+
+#: ../../magic/src/blind.c:97
+msgid ""
+"Click on a side and drag the blind to were you want, slide on the first lame "
+"to open or close the blind."
+msgstr ""
+
 #: ../../magic/src/blocks_chalk_drip.c:132
 msgid "Blocks"
 msgstr "Blokke"
@@ -835,12 +845,12 @@ msgstr "Opvul"
 msgid "Click in the picture to fill that area with color."
 msgstr "Klik in die prent om daardie area met kleur te vul."
 
-#: ../../magic/src/fisheye.c:77
+#: ../../magic/src/fisheye.c:78
 msgid "Fisheye"
 msgstr "Visoog"
 
 #. Needs better name
-#: ../../magic/src/fisheye.c:79
+#: ../../magic/src/fisheye.c:80
 msgid "Click on part of your picture to create a fisheye effect."
 msgstr "Klik iewers op die prent vir 'n visoog-lens-effek."
 
@@ -933,18 +943,81 @@ msgstr "Klik om 'n spieëlbeeld te maak!"
 msgid "Click to flip the picture upside-down."
 msgstr "Klik om die prent onderstebo te swaai!"
 
-#: ../../magic/src/mosaic.c:70
+#: ../../magic/src/mosaic.c:75
 msgid "Mosaic"
 msgstr "Mosaïek"
 
-#: ../../magic/src/mosaic.c:73
+#: ../../magic/src/mosaic.c:78
 msgid ""
 "Click and move the mouse to add a mosaic effect to parts of your picture."
 msgstr ""
 "Klik en beweeg die muis om gedeeltes van die prent 'n mosaïek-effek te gee."
 
-#: ../../magic/src/mosaic.c:74
+#: ../../magic/src/mosaic.c:79
 msgid "Click to add a mosaic effect to your entire picture."
+msgstr "Klik om die hele prent 'n mosaïek-effek te gee."
+
+#: ../../magic/src/mosaic_shaped.c:134
+#, fuzzy
+#| msgid "Mosaic"
+msgid "Mosaic square"
+msgstr "Mosaïek"
+
+#: ../../magic/src/mosaic_shaped.c:135
+#, fuzzy
+#| msgid "Mosaic"
+msgid "Mosaic hexagon"
+msgstr "Mosaïek"
+
+#: ../../magic/src/mosaic_shaped.c:136
+msgid "Mosaic irregular"
+msgstr ""
+
+#: ../../magic/src/mosaic_shaped.c:141
+#, fuzzy
+#| msgid ""
+#| "Click and move the mouse to add a mosaic effect to parts of your picture."
+msgid ""
+"Click and move the mouse to add a mosaic squared effect to parts of your "
+"picture."
+msgstr ""
+"Klik en beweeg die muis om gedeeltes van die prent 'n mosaïek-effek te gee."
+
+#: ../../magic/src/mosaic_shaped.c:142
+#, fuzzy
+#| msgid "Click to add a mosaic effect to your entire picture."
+msgid "Click to add a mosaic squared effect to your entire picture."
+msgstr "Klik om die hele prent 'n mosaïek-effek te gee."
+
+#: ../../magic/src/mosaic_shaped.c:144
+#, fuzzy
+#| msgid ""
+#| "Click and move the mouse to add a mosaic effect to parts of your picture."
+msgid ""
+"Click and move the mouse to add a mosaic hexagonal effect to parts of your "
+"picture."
+msgstr ""
+"Klik en beweeg die muis om gedeeltes van die prent 'n mosaïek-effek te gee."
+
+#: ../../magic/src/mosaic_shaped.c:145
+#, fuzzy
+#| msgid "Click to add a mosaic effect to your entire picture."
+msgid "Click to add a mosaic hexagonal effect to your entire picture."
+msgstr "Klik om die hele prent 'n mosaïek-effek te gee."
+
+#: ../../magic/src/mosaic_shaped.c:147
+#, fuzzy
+#| msgid ""
+#| "Click and move the mouse to add a mosaic effect to parts of your picture."
+msgid ""
+"Click and move the mouse to add a irregular mosaic to parts of your picture."
+msgstr ""
+"Klik en beweeg die muis om gedeeltes van die prent 'n mosaïek-effek te gee."
+
+#: ../../magic/src/mosaic_shaped.c:148
+#, fuzzy
+#| msgid "Click to add a mosaic effect to your entire picture."
+msgid "Click to add a irregular mosaic to your entire picture."
 msgstr "Klik om die hele prent 'n mosaïek-effek te gee."
 
 #: ../../magic/src/negative.c:72
@@ -975,11 +1048,11 @@ msgstr ""
 msgid "Click to add noise to your entire picture."
 msgstr "Klik om geraas (spikkels) op die hele prent te maak."
 
-#: ../../magic/src/rails.c:102
+#: ../../magic/src/rails.c:101
 msgid "Rails"
 msgstr "Treinspore"
 
-#: ../../magic/src/rails.c:104
+#: ../../magic/src/rails.c:103
 msgid "Click and drag to draw train track rails on your picture."
 msgstr "Klik en beweeg om treinspore te teken."
 

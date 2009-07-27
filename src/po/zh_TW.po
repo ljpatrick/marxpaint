@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-06-19 12:57-0700\n"
+"POT-Creation-Date: 2009-07-27 09:53-0700\n"
 "PO-Revision-Date: 2009-07-02 09:54+0800\n"
 "Last-Translator: Song Huang <songhuang.tw@gmail.com>\n"
 "Language-Team: Chinese (traditional) <zh-l10n@linux.org.tw>\n"
@@ -187,7 +187,6 @@ msgstr ",.?!"
 #  uncommon punctuation (e.g., '@', '#', '*', etc.)
 #. uncommon punctuation (e.g., '@', '#', '*', etc.)
 #: ../dirwalk.c:197
-#| msgid "`\\%_@$~#{}<>^&*"
 msgid "`\\%_@$~#{<(^&*"
 msgstr "，。、；：？（）"
 
@@ -291,110 +290,95 @@ msgstr "繁體中文"
 
 #  Square shape tool (4 equally-lengthed sides at right angles)
 #. Square shape tool (4 equally-lengthed sides at right angles)
-#: ../shapes.h:171
-#: ../shapes.h:172
+#: ../shapes.h:171 ../shapes.h:172
 msgid "Square"
 msgstr "正方形"
 
 #  Rectangle shape tool (4 sides at right angles)
 #. Rectangle shape tool (4 sides at right angles)
-#: ../shapes.h:175
-#: ../shapes.h:176
+#: ../shapes.h:175 ../shapes.h:176
 msgid "Rectangle"
 msgstr "長方形"
 
 #  Circle shape tool (X radius and Y radius are the same)
 #. Circle shape tool (X radius and Y radius are the same)
-#: ../shapes.h:179
-#: ../shapes.h:180
+#: ../shapes.h:179 ../shapes.h:180
 msgid "Circle"
 msgstr "圓形"
 
 #  Ellipse shape tool (X radius and Y radius may differ)
 #. Ellipse shape tool (X radius and Y radius may differ)
-#: ../shapes.h:183
-#: ../shapes.h:184
+#: ../shapes.h:183 ../shapes.h:184
 msgid "Ellipse"
 msgstr "橢圓形"
 
 #  Triangle shape tool (3 sides)
 #. Triangle shape tool (3 sides)
-#: ../shapes.h:187
-#: ../shapes.h:188
+#: ../shapes.h:187 ../shapes.h:188
 msgid "Triangle"
 msgstr "三角形"
 
 #  Pentagone shape tool (5 sides)
 #. Pentagone shape tool (5 sides)
-#: ../shapes.h:191
-#: ../shapes.h:192
+#: ../shapes.h:191 ../shapes.h:192
 msgid "Pentagon"
 msgstr "五角形"
 
 #  Rhombus shape tool (4 sides, not at right angles)
 #. Rhombus shape tool (4 sides, not at right angles)
-#: ../shapes.h:195
-#: ../shapes.h:196
+#: ../shapes.h:195 ../shapes.h:196
 msgid "Rhombus"
 msgstr "菱形"
 
 #  Octagon shape tool (8 sides)
 #  Octagon shape tool (8 sides)
 #. Octagon shape tool (8 sides)
-#: ../shapes.h:199
-#: ../shapes.h:200
+#: ../shapes.h:199 ../shapes.h:200
 msgid "Octagon"
 msgstr "八角形"
 
 #  Description of a square
 #. Description of a square
-#: ../shapes.h:208
-#: ../shapes.h:209
+#: ../shapes.h:208 ../shapes.h:209
 msgid "A square is a rectangle with four equal sides."
 msgstr "正方形是四邊一樣長的長方形。"
 
 #  Description of a rectangle
 #. Description of a rectangle
-#: ../shapes.h:212
-#: ../shapes.h:213
+#: ../shapes.h:212 ../shapes.h:213
 msgid "A rectangle has four sides and four right angles."
 msgstr "長方形有四個邊和四個直角。"
 
-#: ../shapes.h:217
-#: ../shapes.h:219
-msgid "A circle is a curve where all points have the same distance from the center."
+#: ../shapes.h:217 ../shapes.h:219
+msgid ""
+"A circle is a curve where all points have the same distance from the center."
 msgstr "圓形是每一點都和圓心保持相同距離的曲線。"
 
 #  Description of an ellipse
 #  Description of an ellipse
 #. Description of an ellipse
-#: ../shapes.h:222
-#: ../shapes.h:223
+#: ../shapes.h:222 ../shapes.h:223
 msgid "An ellipse is a stretched circle."
 msgstr "橢圓形是伸展開來的圓形。"
 
 #  Description of a triangle
 #. Description of a triangle
-#: ../shapes.h:226
-#: ../shapes.h:227
+#: ../shapes.h:226 ../shapes.h:227
 msgid "A triangle has three sides."
 msgstr "三角形有三個邊。"
 
 #  Description of a pentagon
 #  Description of a pentagon
 #. Description of a pentagon
-#: ../shapes.h:230
-#: ../shapes.h:231
+#: ../shapes.h:230 ../shapes.h:231
 msgid "A pentagon has five sides."
 msgstr "五角形有五個邊。"
 
-#: ../shapes.h:235
-#: ../shapes.h:237
+#: ../shapes.h:235 ../shapes.h:237
 msgid "A rhombus has four equal sides, and opposite sides are parallel."
 msgstr "菱形有四個相同的邊，而且和對面的邊是平行的。"
 
-#: ../shapes.h:241
-#: ../shapes.h:243
+#: ../shapes.h:241 ../shapes.h:243
 msgid "An octagon has eight equal sides."
 msgstr "八角形有八個相等的邊。"
 
@@ -432,8 +416,7 @@ msgstr "圖章"
 #  Shape creation tool (square, circle, etc.)
 #. Title of shape selector (buttons down the right for shapes tool)
 #. Shape creation tool (square, circle, etc.)
-#: ../titles.h:71
-#: ../tools.h:69
+#: ../titles.h:71 ../tools.h:69
 msgid "Shapes"
 msgstr "形狀"
 
@@ -447,8 +430,7 @@ msgstr "字體"
 #  "Magic" effects tools (blur, flip image, etc.)
 #. Title of magic tool selector (buttons down the right for magic (effect plugin) tool)
 #. "Magic" effects tools (blur, flip image, etc.)
-#: ../titles.h:77
-#: ../tools.h:75
+#: ../titles.h:77 ../tools.h:75
 msgid "Magic"
 msgstr "魔法"
 
@@ -506,8 +488,7 @@ msgstr "新圖"
 #. Open a saved picture
 #. buttons for the file open dialog
 #. Open dialog: 'Open' button, to load the selected picture
-#: ../tools.h:90
-#: ../tuxpaint.c:7998
+#: ../tools.h:90 ../tuxpaint.c:7998
 msgid "Open"
 msgstr "打開"
 
@@ -552,8 +533,12 @@ msgstr "按一下滑鼠就可以開始畫一條線. 讓我們來完成它吧!"
 #  Shape tool instructions
 #. Shape tool instructions
 #: ../tools.h:116
-msgid "Pick a shape. Click to pick the center, drag, then let go when it is the size you want. Move around to rotate it, and click to draw it."
-msgstr "挑選一個形狀。點一下來決定形狀的中心位置，然後持續拖拉它到你要的大小。繞著中心移動來旋轉它，然後點一下把它畫下來。"
+msgid ""
+"Pick a shape. Click to pick the center, drag, then let go when it is the "
+"size you want. Move around to rotate it, and click to draw it."
+msgstr ""
+"挑選一個形狀。點一下來決定形狀的中心位置，然後持續拖拉它到你要的大小。繞著中"
+"心移動來旋轉它，然後點一下把它畫下來。"
 
 #  Text tool instructions
 #. Text tool instructions
@@ -657,8 +642,7 @@ msgstr "好，我做完了!"
 
 #  Quit prompt negative response (don't quit)
 #. Quit prompt negative response (don't quit)
-#: ../tuxpaint.c:1861
-#: ../tuxpaint.c:1888
+#: ../tuxpaint.c:1861 ../tuxpaint.c:1888
 msgid "No, take me back!"
 msgstr "不，讓我回去!"
 
@@ -668,14 +652,12 @@ msgstr "不，讓我回去!"
 msgid "If you quit, you’ll lose your picture! Save it?"
 msgstr "如果離開，將會丟掉你的圖畫喔! 要先存檔嗎?"
 
-#: ../tuxpaint.c:1866
-#: ../tuxpaint.c:1871
+#: ../tuxpaint.c:1866 ../tuxpaint.c:1871
 msgid "Yes, save it!"
 msgstr "好，把它存起來!"
 
 #  msgid "No, don't bother saving!"
-#: ../tuxpaint.c:1867
-#: ../tuxpaint.c:1872
+#: ../tuxpaint.c:1867 ../tuxpaint.c:1872
 msgid "No, don’t bother saving!"
 msgstr "不，別存了!"
 
@@ -693,10 +675,7 @@ msgstr "沒辦法打開這個圖畫!"
 
 #  Generic dialog dismissal
 #. Generic dialog dismissal
-#: ../tuxpaint.c:1878
-#: ../tuxpaint.c:1883
-#: ../tuxpaint.c:1892
-#: ../tuxpaint.c:1899
+#: ../tuxpaint.c:1878 ../tuxpaint.c:1883 ../tuxpaint.c:1892 ../tuxpaint.c:1899
 #: ../tuxpaint.c:1908
 msgid "OK"
 msgstr "好的"
@@ -860,8 +839,7 @@ msgstr "選擇你想要的圖畫，然後按一下「打開」。"
 #  Instructions for Slideshow file dialog (FIXME: Make a #define)
 #. Let user choose images:
 #. Instructions for Slideshow file dialog (FIXME: Make a #define)
-#: ../tuxpaint.c:14389
-#: ../tuxpaint.c:14703
+#: ../tuxpaint.c:14389 ../tuxpaint.c:14703
 msgid "Choose the pictures you want, then click “Play”."
 msgstr "選擇你要的一些圖畫，然後按一下「播放」。"
 
@@ -890,6 +868,16 @@ msgstr "按著並移動滑鼠來改變經過圖畫的顏色。"
 msgid "Click to change the colors in your entire picture."
 msgstr "按一下來改變整張圖畫的顏色。"
 
+#: ../../magic/src/blind.c:92
+msgid "Blind"
+msgstr ""
+
+#: ../../magic/src/blind.c:97
+msgid ""
+"Click on a side and drag the blind to were you want, slide on the first lame "
+"to open or close the blind."
+msgstr ""
+
 #: ../../magic/src/blocks_chalk_drip.c:132
 msgid "Blocks"
 msgstr "馬賽克"
@@ -907,7 +895,8 @@ msgid "Click and move the mouse around to make the picture blocky."
 msgstr "按著並移動滑鼠來使圖畫有馬賽克效果。"
 
 #: ../../magic/src/blocks_chalk_drip.c:149
-msgid "Click and move the mouse around to turn the picture into a chalk drawing."
+msgid ""
+"Click and move the mouse around to turn the picture into a chalk drawing."
 msgstr "按著並移動滑鼠來產生粉筆的痕跡。"
 
 #: ../../magic/src/blocks_chalk_drip.c:152
@@ -1012,7 +1001,7 @@ msgstr "填滿"
 msgid "Click in the picture to fill that area with color."
 msgstr "在圖案中按下滑鼠來用顏色填滿整個區域。"
 
-#: ../../magic/src/fisheye.c:77
+#: ../../magic/src/fisheye.c:78
 msgid "Fisheye"
 msgstr "魚眼"
 
@@ -1020,7 +1009,7 @@ msgstr "魚眼"
 #  msgid "Click and drag to shift your picture around on the canvas."
 #  Needs better name
 #. Needs better name
-#: ../../magic/src/fisheye.c:79
+#: ../../magic/src/fisheye.c:80
 msgid "Click on part of your picture to create a fisheye effect."
 msgstr "按一下來使圖畫產生魚眼效果。"
 
@@ -1045,7 +1034,8 @@ msgid "Fold"
 msgstr "摺疊"
 
 #: ../../magic/src/fold.c:86
-msgid "Choose a background color and click to turn the corner of the page over."
+msgid ""
+"Choose a background color and click to turn the corner of the page over."
 msgstr "挑選一個背景色，並按一下圖紙的角落讓他翻起來。"
 
 #: ../../magic/src/glasstile.c:83
@@ -1073,7 +1063,8 @@ msgid "Kaleidoscope"
 msgstr "萬花筒"
 
 #: ../../magic/src/kalidescope.c:83
-msgid "Click and drag the mouse to draw with symmetric brushes (a kaleidoscope)."
+msgid ""
+"Click and drag the mouse to draw with symmetric brushes (a kaleidoscope)."
 msgstr "按著並移動滑鼠來畫出對稱的筆刷(萬花筒)。"
 
 #: ../../magic/src/light.c:84
@@ -1108,16 +1099,77 @@ msgstr "按一下可以產生左右對稱的圖畫。"
 msgid "Click to flip the picture upside-down."
 msgstr "按一下可以產生上下顛倒的圖畫。"
 
-#: ../../magic/src/mosaic.c:70
+#: ../../magic/src/mosaic.c:75
 msgid "Mosaic"
 msgstr "馬賽克"
 
-#: ../../magic/src/mosaic.c:73
-msgid "Click and move the mouse to add a mosaic effect to parts of your picture."
+#: ../../magic/src/mosaic.c:78
+msgid ""
+"Click and move the mouse to add a mosaic effect to parts of your picture."
 msgstr "按著並移動滑鼠來使經過的圖畫產生馬賽克效果。"
 
-#: ../../magic/src/mosaic.c:74
+#: ../../magic/src/mosaic.c:79
 msgid "Click to add a mosaic effect to your entire picture."
+msgstr "按一下來使整張圖畫產生馬賽克效果。"
+
+#: ../../magic/src/mosaic_shaped.c:134
+#, fuzzy
+#| msgid "Mosaic"
+msgid "Mosaic square"
+msgstr "馬賽克"
+
+#: ../../magic/src/mosaic_shaped.c:135
+#, fuzzy
+#| msgid "Mosaic"
+msgid "Mosaic hexagon"
+msgstr "馬賽克"
+
+#: ../../magic/src/mosaic_shaped.c:136
+msgid "Mosaic irregular"
+msgstr ""
+
+#: ../../magic/src/mosaic_shaped.c:141
+#, fuzzy
+#| msgid ""
+#| "Click and move the mouse to add a mosaic effect to parts of your picture."
+msgid ""
+"Click and move the mouse to add a mosaic squared effect to parts of your "
+"picture."
+msgstr "按著並移動滑鼠來使經過的圖畫產生馬賽克效果。"
+
+#: ../../magic/src/mosaic_shaped.c:142
+#, fuzzy
+#| msgid "Click to add a mosaic effect to your entire picture."
+msgid "Click to add a mosaic squared effect to your entire picture."
+msgstr "按一下來使整張圖畫產生馬賽克效果。"
+
+#: ../../magic/src/mosaic_shaped.c:144
+#, fuzzy
+#| msgid ""
+#| "Click and move the mouse to add a mosaic effect to parts of your picture."
+msgid ""
+"Click and move the mouse to add a mosaic hexagonal effect to parts of your "
+"picture."
+msgstr "按著並移動滑鼠來使經過的圖畫產生馬賽克效果。"
+
+#: ../../magic/src/mosaic_shaped.c:145
+#, fuzzy
+#| msgid "Click to add a mosaic effect to your entire picture."
+msgid "Click to add a mosaic hexagonal effect to your entire picture."
+msgstr "按一下來使整張圖畫產生馬賽克效果。"
+
+#: ../../magic/src/mosaic_shaped.c:147
+#, fuzzy
+#| msgid ""
+#| "Click and move the mouse to add a mosaic effect to parts of your picture."
+msgid ""
+"Click and move the mouse to add a irregular mosaic to parts of your picture."
+msgstr "按著並移動滑鼠來使經過的圖畫產生馬賽克效果。"
+
+#: ../../magic/src/mosaic_shaped.c:148
+#, fuzzy
+#| msgid "Click to add a mosaic effect to your entire picture."
+msgid "Click to add a irregular mosaic to your entire picture."
 msgstr "按一下來使整張圖畫產生馬賽克效果。"
 
 #: ../../magic/src/negative.c:72
@@ -1145,11 +1197,11 @@ msgstr "按著並移動滑鼠來使經過的圖畫產生雜訊。"
 msgid "Click to add noise to your entire picture."
 msgstr "按一下來使整張圖畫產生雜訊。"
 
-#: ../../magic/src/rails.c:102
+#: ../../magic/src/rails.c:101
 msgid "Rails"
 msgstr "鐵軌"
 
-#: ../../magic/src/rails.c:104
+#: ../../magic/src/rails.c:103
 msgid "Click and drag to draw train track rails on your picture."
 msgstr "按著並移動滑鼠畫一段鐵軌到你的圖上。"
 
@@ -1179,8 +1231,12 @@ msgid "Real Rainbow"
 msgstr "彩虹"
 
 #: ../../magic/src/realrainbow.c:81
-msgid "Click where you want your rainbow to start, drag to where you want it to end, and then let go to draw a rainbow."
-msgstr "在你希望彩虹開始的地方按下滑鼠左鍵不放，拖著到你希望彩虹結束的地方放開，就會畫出一道彩虹。"
+msgid ""
+"Click where you want your rainbow to start, drag to where you want it to "
+"end, and then let go to draw a rainbow."
+msgstr ""
+"在你希望彩虹開始的地方按下滑鼠左鍵不放，拖著到你希望彩虹結束的地方放開，就會"
+"畫出一道彩虹。"
 
 #: ../../magic/src/ripples.c:81
 msgid "Ripples"
@@ -1287,14 +1343,12 @@ msgid "String 'V'"
 msgstr "字串 'V'"
 
 #: ../../magic/src/string.c:134
-#| msgid ""
-#| "Click and drag to draw string art. Drag top-bottom to draw less or more "
-#| "lines, to the center to approach the lines to center."
-msgid "Click and drag to draw string art. Drag top-bottom to draw less or more lines, left or right to make a bigger hole."
+msgid ""
+"Click and drag to draw string art. Drag top-bottom to draw less or more "
+"lines, left or right to make a bigger hole."
 msgstr "按著並移動滑鼠來畫出藝術字，由上向下拖動看要畫出幾行字。"
 
 #: ../../magic/src/string.c:137
-#| msgid "Click and drag to draw a beam of light on your picture."
 msgid "Click and drag to draw arrows made of string art."
 msgstr "按著並移動滑鼠來畫出箭頭藝術字。"
 
@@ -1311,7 +1365,8 @@ msgid "Color & White"
 msgstr "彩色和白色"
 
 #: ../../magic/src/tint.c:75
-msgid "Click and move the mouse around to change the color of parts of your picture."
+msgid ""
+"Click and move the mouse around to change the color of parts of your picture."
 msgstr "按著並移動滑鼠來使經過的圖畫顏色改變。"
 
 #: ../../magic/src/tint.c:76
@@ -1319,7 +1374,9 @@ msgid "Click to change the color of your entire picture."
 msgstr "按一下來使整張圖畫顏色改變。"
 
 #: ../../magic/src/tint.c:77
-msgid "Click and move the mouse around to turn parts of your picture into white and a color you choose."
+msgid ""
+"Click and move the mouse around to turn parts of your picture into white and "
+"a color you choose."
 msgstr "按著並移動滑鼠來將經過的圖案變成白色和你挑選的顏色。"
 
 #: ../../magic/src/tint.c:78
@@ -1339,7 +1396,6 @@ msgid "Tornado"
 msgstr "龍捲風"
 
 #: ../../magic/src/tornado.c:133
-#| msgid "Click and drag to draw train track rails on your picture."
 msgid "Click and drag to draw a tornado funnel on your picture."
 msgstr "按著並移動滑鼠畫一個龍捲風到你的圖上。"
 
@@ -1348,8 +1404,9 @@ msgid "TV"
 msgstr "電視"
 
 #: ../../magic/src/tv.c:79
-#| msgid "Click to make your picture look like it's on television."
-msgid "Click and drag to make parts of your picture look like they are on television."
+msgid ""
+"Click and drag to make parts of your picture look like they are on "
+"television."
 msgstr "按著並拖動滑鼠來使選取的圖畫像是在電視裡面。"
 
 #: ../../magic/src/tv.c:82
@@ -1365,10 +1422,19 @@ msgid "Wavelets"
 msgstr "漣漪"
 
 #: ../../magic/src/waves.c:88
-msgid "Click to make the picture horizontally wavy. Click toward the top for shorter waves, the bottom for taller waves, the left for small waves, and the right for long waves."
-msgstr "在圖紙上按下滑鼠鍵會讓圖畫如水平波浪般的扭曲，按著往上是短的波浪，往下是長的波浪，往左是小的波浪，往右是大的波浪。"
+msgid ""
+"Click to make the picture horizontally wavy. Click toward the top for "
+"shorter waves, the bottom for taller waves, the left for small waves, and "
+"the right for long waves."
+msgstr ""
+"在圖紙上按下滑鼠鍵會讓圖畫如水平波浪般的扭曲，按著往上是短的波浪，往下是長的"
+"波浪，往左是小的波浪，往右是大的波浪。"
 
 #: ../../magic/src/waves.c:89
-msgid "Click to make the picture vertically wavy. Click toward the top for shorter waves, the bottom for taller waves, the left for small waves, and the right for long waves."
-msgstr "在圖紙上按下滑鼠鍵會讓圖畫如垂直波浪般的扭曲，按著往上是短的波浪，往下是長的波浪，往左是小的波浪，往右是大的波浪。"
-
+msgid ""
+"Click to make the picture vertically wavy. Click toward the top for shorter "
+"waves, the bottom for taller waves, the left for small waves, and the right "
+"for long waves."
+msgstr ""
+"在圖紙上按下滑鼠鍵會讓圖畫如垂直波浪般的扭曲，按著往上是短的波浪，往下是長的"
+"波浪，往左是小的波浪，往右是大的波浪。"

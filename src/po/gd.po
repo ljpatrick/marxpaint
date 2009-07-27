@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Tux paint anns a' ghàidhlig\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-06-19 12:57-0700\n"
+"POT-Creation-Date: 2009-07-27 09:53-0700\n"
 "PO-Revision-Date: 2006-03-04 15:51-0000\n"
 "Last-Translator: Niall Tracey <internationiall@hotmail.com>\n"
 "Language-Team:  <internationiall@hotmail.com>\n"
@@ -804,6 +804,16 @@ msgstr "Briog agus slaod airson na breigichean beaga."
 msgid "Click to change the colors in your entire picture."
 msgstr "Briog agus slaod airson na breigichean beaga."
 
+#: ../../magic/src/blind.c:92
+msgid "Blind"
+msgstr ""
+
+#: ../../magic/src/blind.c:97
+msgid ""
+"Click on a side and drag the blind to were you want, slide on the first lame "
+"to open or close the blind."
+msgstr ""
+
 # Teach Yourself Gaelic Dictionary: Boyd Robertson & Ian Taylor
 #: ../../magic/src/blocks_chalk_drip.c:132
 msgid "Blocks"
@@ -953,12 +963,12 @@ msgstr ""
 msgid "Click in the picture to fill that area with color."
 msgstr "Briog anns a' dhealbh airson lìon le dath."
 
-#: ../../magic/src/fisheye.c:77
+#: ../../magic/src/fisheye.c:78
 msgid "Fisheye"
 msgstr ""
 
 #. Needs better name
-#: ../../magic/src/fisheye.c:79
+#: ../../magic/src/fisheye.c:80
 msgid "Click on part of your picture to create a fisheye effect."
 msgstr ""
 
@@ -1066,21 +1076,74 @@ msgstr ""
 msgid "Click to flip the picture upside-down."
 msgstr ""
 
-#: ../../magic/src/mosaic.c:70
+#: ../../magic/src/mosaic.c:75
 msgid "Mosaic"
 msgstr ""
 
 # Gràmar?
-#: ../../magic/src/mosaic.c:73
+#: ../../magic/src/mosaic.c:78
 #, fuzzy
 msgid ""
 "Click and move the mouse to add a mosaic effect to parts of your picture."
 msgstr "Briog agus slaod airson na breigichean beaga."
 
 # Gràmar?
-#: ../../magic/src/mosaic.c:74
+#: ../../magic/src/mosaic.c:79
 #, fuzzy
 msgid "Click to add a mosaic effect to your entire picture."
+msgstr "Briog agus slaod airson na breigichean beaga."
+
+#: ../../magic/src/mosaic_shaped.c:134
+msgid "Mosaic square"
+msgstr ""
+
+#: ../../magic/src/mosaic_shaped.c:135
+msgid "Mosaic hexagon"
+msgstr ""
+
+#: ../../magic/src/mosaic_shaped.c:136
+msgid "Mosaic irregular"
+msgstr ""
+
+# Gràmar?
+#: ../../magic/src/mosaic_shaped.c:141
+#, fuzzy
+msgid ""
+"Click and move the mouse to add a mosaic squared effect to parts of your "
+"picture."
+msgstr "Briog agus slaod airson na breigichean beaga."
+
+# Gràmar?
+#: ../../magic/src/mosaic_shaped.c:142
+#, fuzzy
+msgid "Click to add a mosaic squared effect to your entire picture."
+msgstr "Briog agus slaod airson na breigichean beaga."
+
+# Gràmar?
+#: ../../magic/src/mosaic_shaped.c:144
+#, fuzzy
+msgid ""
+"Click and move the mouse to add a mosaic hexagonal effect to parts of your "
+"picture."
+msgstr "Briog agus slaod airson na breigichean beaga."
+
+# Gràmar?
+#: ../../magic/src/mosaic_shaped.c:145
+#, fuzzy
+msgid "Click to add a mosaic hexagonal effect to your entire picture."
+msgstr "Briog agus slaod airson na breigichean beaga."
+
+# Gràmar?
+#: ../../magic/src/mosaic_shaped.c:147
+#, fuzzy
+msgid ""
+"Click and move the mouse to add a irregular mosaic to parts of your picture."
+msgstr "Briog agus slaod airson na breigichean beaga."
+
+# Gràmar?
+#: ../../magic/src/mosaic_shaped.c:148
+#, fuzzy
+msgid "Click to add a irregular mosaic to your entire picture."
 msgstr "Briog agus slaod airson na breigichean beaga."
 
 #: ../../magic/src/negative.c:72
@@ -1116,13 +1179,13 @@ msgstr "Briog agus slaod airson lainnir a dhèanamh dealbh."
 msgid "Click to add noise to your entire picture."
 msgstr "Briog agus slaod airson na breigichean beaga."
 
-#: ../../magic/src/rails.c:102
+#: ../../magic/src/rails.c:101
 msgid "Rails"
 msgstr ""
 
 # Gràmar?
 # Is the word "lainnir" appropriate/common?
-#: ../../magic/src/rails.c:104
+#: ../../magic/src/rails.c:103
 #, fuzzy
 msgid "Click and drag to draw train track rails on your picture."
 msgstr "Briog agus slaod airson lainnir a dhèanamh dealbh."

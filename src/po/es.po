@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TuxPaint 0.9.21\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-06-19 12:57-0700\n"
+"POT-Creation-Date: 2009-07-27 09:53-0700\n"
 "PO-Revision-Date: 2009-05-21 03:10-0300\n"
 "Last-Translator: Gabriel Gazzán <gablistas@gmail.com>\n"
 "Language-Team: Español <gablistas@gmail.com>\n"
@@ -708,6 +708,16 @@ msgstr ""
 msgid "Click to change the colors in your entire picture."
 msgstr "Haz clic para cambiar los colores en toda la imagen."
 
+#: ../../magic/src/blind.c:92
+msgid "Blind"
+msgstr ""
+
+#: ../../magic/src/blind.c:97
+msgid ""
+"Click on a side and drag the blind to were you want, slide on the first lame "
+"to open or close the blind."
+msgstr ""
+
 #: ../../magic/src/blocks_chalk_drip.c:132
 msgid "Blocks"
 msgstr "Bloques"
@@ -832,12 +842,12 @@ msgstr "Rellenar"
 msgid "Click in the picture to fill that area with color."
 msgstr "Haz clic en la imagen para rellenar ese área con color."
 
-#: ../../magic/src/fisheye.c:77
+#: ../../magic/src/fisheye.c:78
 msgid "Fisheye"
 msgstr "Ojo de pez"
 
 #. Needs better name
-#: ../../magic/src/fisheye.c:79
+#: ../../magic/src/fisheye.c:80
 msgid "Click on part of your picture to create a fisheye effect."
 msgstr ""
 "Haz clic sobre una parte de la imagen para crear un efecto de ojo de pez."
@@ -932,19 +942,85 @@ msgstr "Haz clic para hacer una imagen a espejo."
 msgid "Click to flip the picture upside-down."
 msgstr "Haz clic para poner la imagen de cabeza."
 
-#: ../../magic/src/mosaic.c:70
+#: ../../magic/src/mosaic.c:75
 msgid "Mosaic"
 msgstr "Mosaico"
 
-#: ../../magic/src/mosaic.c:73
+#: ../../magic/src/mosaic.c:78
 msgid ""
 "Click and move the mouse to add a mosaic effect to parts of your picture."
 msgstr ""
 "Haz clic y arrastra el ratón para agregar un efecto de mosaico a partes de "
 "la imagen."
 
-#: ../../magic/src/mosaic.c:74
+#: ../../magic/src/mosaic.c:79
 msgid "Click to add a mosaic effect to your entire picture."
+msgstr "Haz clic para agregar un efecto de mosaico a toda la imagen."
+
+#: ../../magic/src/mosaic_shaped.c:134
+#, fuzzy
+#| msgid "Mosaic"
+msgid "Mosaic square"
+msgstr "Mosaico"
+
+#: ../../magic/src/mosaic_shaped.c:135
+#, fuzzy
+#| msgid "Mosaic"
+msgid "Mosaic hexagon"
+msgstr "Mosaico"
+
+#: ../../magic/src/mosaic_shaped.c:136
+msgid "Mosaic irregular"
+msgstr ""
+
+#: ../../magic/src/mosaic_shaped.c:141
+#, fuzzy
+#| msgid ""
+#| "Click and move the mouse to add a mosaic effect to parts of your picture."
+msgid ""
+"Click and move the mouse to add a mosaic squared effect to parts of your "
+"picture."
+msgstr ""
+"Haz clic y arrastra el ratón para agregar un efecto de mosaico a partes de "
+"la imagen."
+
+#: ../../magic/src/mosaic_shaped.c:142
+#, fuzzy
+#| msgid "Click to add a mosaic effect to your entire picture."
+msgid "Click to add a mosaic squared effect to your entire picture."
+msgstr "Haz clic para agregar un efecto de mosaico a toda la imagen."
+
+#: ../../magic/src/mosaic_shaped.c:144
+#, fuzzy
+#| msgid ""
+#| "Click and move the mouse to add a mosaic effect to parts of your picture."
+msgid ""
+"Click and move the mouse to add a mosaic hexagonal effect to parts of your "
+"picture."
+msgstr ""
+"Haz clic y arrastra el ratón para agregar un efecto de mosaico a partes de "
+"la imagen."
+
+#: ../../magic/src/mosaic_shaped.c:145
+#, fuzzy
+#| msgid "Click to add a mosaic effect to your entire picture."
+msgid "Click to add a mosaic hexagonal effect to your entire picture."
+msgstr "Haz clic para agregar un efecto de mosaico a toda la imagen."
+
+#: ../../magic/src/mosaic_shaped.c:147
+#, fuzzy
+#| msgid ""
+#| "Click and move the mouse to add a mosaic effect to parts of your picture."
+msgid ""
+"Click and move the mouse to add a irregular mosaic to parts of your picture."
+msgstr ""
+"Haz clic y arrastra el ratón para agregar un efecto de mosaico a partes de "
+"la imagen."
+
+#: ../../magic/src/mosaic_shaped.c:148
+#, fuzzy
+#| msgid "Click to add a mosaic effect to your entire picture."
+msgid "Click to add a irregular mosaic to your entire picture."
 msgstr "Haz clic para agregar un efecto de mosaico a toda la imagen."
 
 #: ../../magic/src/negative.c:72
@@ -972,11 +1048,11 @@ msgstr "Haz clic y arrastra el ratón para agregar ruido a partes de la imagen."
 msgid "Click to add noise to your entire picture."
 msgstr "Haz clic para agregar ruido a toda la imagen."
 
-#: ../../magic/src/rails.c:102
+#: ../../magic/src/rails.c:101
 msgid "Rails"
 msgstr "Vías"
 
-#: ../../magic/src/rails.c:104
+#: ../../magic/src/rails.c:103
 msgid "Click and drag to draw train track rails on your picture."
 msgstr ""
 "Haz clic y arrastra el ratón para dibujar vías de tren sobre la imagen."

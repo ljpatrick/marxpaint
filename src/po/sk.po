@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint 0.9.17\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-06-19 12:57-0700\n"
+"POT-Creation-Date: 2009-07-27 09:53-0700\n"
 "PO-Revision-Date: 2009-02-02 19:20+0100\n"
 "Last-Translator: Jaroslav Ryník <jrynik at yahoo dot co dot uk>, \n"
 "Language-Team: Slovak <sk-i18n@lists.linux.sk>\n"
@@ -726,6 +726,16 @@ msgstr "Kliknutím a pohybom myši zmeníš farby v časti svojho obrázka."
 msgid "Click to change the colors in your entire picture."
 msgstr "Kliknutím a pohybom myši zmeníš farby na celom obrázku."
 
+#: ../../magic/src/blind.c:92
+msgid "Blind"
+msgstr ""
+
+#: ../../magic/src/blind.c:97
+msgid ""
+"Click on a side and drag the blind to were you want, slide on the first lame "
+"to open or close the blind."
+msgstr ""
+
 #: ../../magic/src/blocks_chalk_drip.c:132
 msgid "Blocks"
 msgstr "Kocky"
@@ -849,12 +859,12 @@ msgstr "Výplň"
 msgid "Click in the picture to fill that area with color."
 msgstr "Klikni na obrázok a vymaľuj ho."
 
-#: ../../magic/src/fisheye.c:77
+#: ../../magic/src/fisheye.c:78
 msgid "Fisheye"
 msgstr "Pod mikroskopom"
 
 #. Needs better name
-#: ../../magic/src/fisheye.c:79
+#: ../../magic/src/fisheye.c:80
 msgid "Click on part of your picture to create a fisheye effect."
 msgstr ""
 "Klikni na časť obrázka myšou a uvidíš ju tak, akoby si sa na ňu pozeral(a) "
@@ -952,17 +962,77 @@ msgstr "Klikni myšou a obrázok sa zrkadlovo otočí."
 msgid "Click to flip the picture upside-down."
 msgstr "Klikni myšou a otočíš obrázok dole hlavou."
 
-#: ../../magic/src/mosaic.c:70
+#: ../../magic/src/mosaic.c:75
 msgid "Mosaic"
 msgstr "Čary"
 
-#: ../../magic/src/mosaic.c:73
+#: ../../magic/src/mosaic.c:78
 msgid ""
 "Click and move the mouse to add a mosaic effect to parts of your picture."
 msgstr "Keď klikneš myšou, urobíš z časti obrázka mozaiku."
 
-#: ../../magic/src/mosaic.c:74
+#: ../../magic/src/mosaic.c:79
 msgid "Click to add a mosaic effect to your entire picture."
+msgstr "Keď klikneš myšou, urobíš mozaiku z celého obrázka."
+
+#: ../../magic/src/mosaic_shaped.c:134
+#, fuzzy
+#| msgid "Mosaic"
+msgid "Mosaic square"
+msgstr "Čary"
+
+#: ../../magic/src/mosaic_shaped.c:135
+#, fuzzy
+#| msgid "Mosaic"
+msgid "Mosaic hexagon"
+msgstr "Čary"
+
+#: ../../magic/src/mosaic_shaped.c:136
+msgid "Mosaic irregular"
+msgstr ""
+
+#: ../../magic/src/mosaic_shaped.c:141
+#, fuzzy
+#| msgid ""
+#| "Click and move the mouse to add a mosaic effect to parts of your picture."
+msgid ""
+"Click and move the mouse to add a mosaic squared effect to parts of your "
+"picture."
+msgstr "Keď klikneš myšou, urobíš z časti obrázka mozaiku."
+
+#: ../../magic/src/mosaic_shaped.c:142
+#, fuzzy
+#| msgid "Click to add a mosaic effect to your entire picture."
+msgid "Click to add a mosaic squared effect to your entire picture."
+msgstr "Keď klikneš myšou, urobíš mozaiku z celého obrázka."
+
+#: ../../magic/src/mosaic_shaped.c:144
+#, fuzzy
+#| msgid ""
+#| "Click and move the mouse to add a mosaic effect to parts of your picture."
+msgid ""
+"Click and move the mouse to add a mosaic hexagonal effect to parts of your "
+"picture."
+msgstr "Keď klikneš myšou, urobíš z časti obrázka mozaiku."
+
+#: ../../magic/src/mosaic_shaped.c:145
+#, fuzzy
+#| msgid "Click to add a mosaic effect to your entire picture."
+msgid "Click to add a mosaic hexagonal effect to your entire picture."
+msgstr "Keď klikneš myšou, urobíš mozaiku z celého obrázka."
+
+#: ../../magic/src/mosaic_shaped.c:147
+#, fuzzy
+#| msgid ""
+#| "Click and move the mouse to add a mosaic effect to parts of your picture."
+msgid ""
+"Click and move the mouse to add a irregular mosaic to parts of your picture."
+msgstr "Keď klikneš myšou, urobíš z časti obrázka mozaiku."
+
+#: ../../magic/src/mosaic_shaped.c:148
+#, fuzzy
+#| msgid "Click to add a mosaic effect to your entire picture."
+msgid "Click to add a irregular mosaic to your entire picture."
 msgstr "Keď klikneš myšou, urobíš mozaiku z celého obrázka."
 
 #: ../../magic/src/negative.c:72
@@ -989,11 +1059,11 @@ msgstr "Kliknutím a pohybom myši pridáš do obrázku viac zrnitosti."
 msgid "Click to add noise to your entire picture."
 msgstr "Drž myš, pohybuj ňou a obrázok sa prekryje farbou."
 
-#: ../../magic/src/rails.c:102
+#: ../../magic/src/rails.c:101
 msgid "Rails"
 msgstr "Koľajnice"
 
-#: ../../magic/src/rails.c:104
+#: ../../magic/src/rails.c:103
 msgid "Click and drag to draw train track rails on your picture."
 msgstr ""
 "Kliknutím a pohybom myši môžeš na obrázok nakresliť koľajnice pre vlak."

@@ -14,7 +14,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint 0.9.11\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-06-19 12:57-0700\n"
+"POT-Creation-Date: 2009-07-27 09:53-0700\n"
 "PO-Revision-Date: 2008-10-14 12:34+0800\n"
 "Last-Translator: Ijeal <tomorrow1881@sohu.com>\n"
 "Language-Team: zh_CN <i18n-translation@lists.linux.net.cn>\n"
@@ -728,6 +728,18 @@ msgstr "单击然后移动鼠标改变部分图片的颜色。"
 msgid "Click to change the colors in your entire picture."
 msgstr "单击改变整个图片的颜色。"
 
+#: ../../magic/src/blind.c:92
+#, fuzzy
+#| msgid "Alien"
+msgid "Blind"
+msgstr "外国人"
+
+#: ../../magic/src/blind.c:97
+msgid ""
+"Click on a side and drag the blind to were you want, slide on the first lame "
+"to open or close the blind."
+msgstr ""
+
 #: ../../magic/src/blocks_chalk_drip.c:132
 msgid "Blocks"
 msgstr "拼块"
@@ -850,12 +862,12 @@ msgstr "填充"
 msgid "Click in the picture to fill that area with color."
 msgstr "单击图片用颜色填充区域。"
 
-#: ../../magic/src/fisheye.c:77
+#: ../../magic/src/fisheye.c:78
 msgid "Fisheye"
 msgstr "鱼眼效果"
 
 #. Needs better name
-#: ../../magic/src/fisheye.c:79
+#: ../../magic/src/fisheye.c:80
 #, fuzzy
 #| msgid "Select an area of the image to create the fisheye effect"
 msgid "Click on part of your picture to create a fisheye effect."
@@ -950,17 +962,77 @@ msgstr "单击做出镜像。"
 msgid "Click to flip the picture upside-down."
 msgstr "单击将图片上下翻转。"
 
-#: ../../magic/src/mosaic.c:70
+#: ../../magic/src/mosaic.c:75
 msgid "Mosaic"
 msgstr "马赛克"
 
-#: ../../magic/src/mosaic.c:73
+#: ../../magic/src/mosaic.c:78
 msgid ""
 "Click and move the mouse to add a mosaic effect to parts of your picture."
 msgstr "单击然后移动鼠标为你的图画部分添加马赛克效果。"
 
-#: ../../magic/src/mosaic.c:74
+#: ../../magic/src/mosaic.c:79
 msgid "Click to add a mosaic effect to your entire picture."
+msgstr "单击为你的整张图画添加马赛克效果。"
+
+#: ../../magic/src/mosaic_shaped.c:134
+#, fuzzy
+#| msgid "Mosaic"
+msgid "Mosaic square"
+msgstr "马赛克"
+
+#: ../../magic/src/mosaic_shaped.c:135
+#, fuzzy
+#| msgid "Mosaic"
+msgid "Mosaic hexagon"
+msgstr "马赛克"
+
+#: ../../magic/src/mosaic_shaped.c:136
+msgid "Mosaic irregular"
+msgstr ""
+
+#: ../../magic/src/mosaic_shaped.c:141
+#, fuzzy
+#| msgid ""
+#| "Click and move the mouse to add a mosaic effect to parts of your picture."
+msgid ""
+"Click and move the mouse to add a mosaic squared effect to parts of your "
+"picture."
+msgstr "单击然后移动鼠标为你的图画部分添加马赛克效果。"
+
+#: ../../magic/src/mosaic_shaped.c:142
+#, fuzzy
+#| msgid "Click to add a mosaic effect to your entire picture."
+msgid "Click to add a mosaic squared effect to your entire picture."
+msgstr "单击为你的整张图画添加马赛克效果。"
+
+#: ../../magic/src/mosaic_shaped.c:144
+#, fuzzy
+#| msgid ""
+#| "Click and move the mouse to add a mosaic effect to parts of your picture."
+msgid ""
+"Click and move the mouse to add a mosaic hexagonal effect to parts of your "
+"picture."
+msgstr "单击然后移动鼠标为你的图画部分添加马赛克效果。"
+
+#: ../../magic/src/mosaic_shaped.c:145
+#, fuzzy
+#| msgid "Click to add a mosaic effect to your entire picture."
+msgid "Click to add a mosaic hexagonal effect to your entire picture."
+msgstr "单击为你的整张图画添加马赛克效果。"
+
+#: ../../magic/src/mosaic_shaped.c:147
+#, fuzzy
+#| msgid ""
+#| "Click and move the mouse to add a mosaic effect to parts of your picture."
+msgid ""
+"Click and move the mouse to add a irregular mosaic to parts of your picture."
+msgstr "单击然后移动鼠标为你的图画部分添加马赛克效果。"
+
+#: ../../magic/src/mosaic_shaped.c:148
+#, fuzzy
+#| msgid "Click to add a mosaic effect to your entire picture."
+msgid "Click to add a irregular mosaic to your entire picture."
 msgstr "单击为你的整张图画添加马赛克效果。"
 
 #: ../../magic/src/negative.c:72
@@ -991,11 +1063,11 @@ msgstr "单击然后移动鼠标，将图片变模糊。"
 msgid "Click to add noise to your entire picture."
 msgstr "单击然后移动鼠标将图片变成驳裂的效果。"
 
-#: ../../magic/src/rails.c:102
+#: ../../magic/src/rails.c:101
 msgid "Rails"
 msgstr "铁路"
 
-#: ../../magic/src/rails.c:104
+#: ../../magic/src/rails.c:103
 msgid "Click and drag to draw train track rails on your picture."
 msgstr "单击然后移动鼠标将图片变淡。"
 
@@ -1256,9 +1328,6 @@ msgstr ""
 #~ msgid ""
 #~ "Click and drag to draw a tornado stalk. Let go to finish the tornado."
 #~ msgstr "单击然后移动鼠标画一个花柄。让我们画一朵花。"
-
-#~ msgid "Alien"
-#~ msgstr "外国人"
 
 #~ msgid ""
 #~ "Click and move the mouse to give parts of your picture an \"alien\" "
