@@ -8,7 +8,7 @@ http://www.tuxpaint.org/
 
 $Id$
 
-2009.July.23 (0.9.22)
+2009.July.27 (0.9.22)
   * Localization Updates:
     ---------------------
     * Chinese (Traditional) translation
