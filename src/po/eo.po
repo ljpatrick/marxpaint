@@ -1,6 +1,6 @@
 # Tux Paint: mesaĝoj en Esperanto.
 # Kopirajto (C) 2002 Free Software Foundation, Inc.
-# Edmund GRIMLEY EVANS <edmundo@rano.org>, 2007-2008.
+# Edmund GRIMLEY EVANS <edmundo@rano.org>, 2007, 2008.
 #
 msgid ""
 msgstr ""

@@ -4,9 +4,8 @@
 #
 # Copyright (c) 2002
 # This file is distributed under the same license as the Tux Paint
+# Tedi Heriyanto <tedi_h@gmx.net>, 2003, 2004, 2005.
 # program.
-# Tedi Heriyanto <tedi_heriyanto@yahoo.com>, 2003, 2004, 2005.
-# Tedi Heriyanto <tedi_h@gmx.net>, 2005.
 #
 #
 msgid ""

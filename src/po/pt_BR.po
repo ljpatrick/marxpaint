@@ -1,9 +1,9 @@
 # translation of Tuxpaint to Português do Brasil
+# Copyright (C) 2002
 # Daniel José Viana <danjovic@vespanet.com.br>, 2002.
 # Fred Ulisses Maranhao <fred_maranhao@yahoo.com.br>, 2006.
-# Frederico Goncalves Guimaraes <frederico@teia.bio.br>, 2007-2008.
+# Frederico Goncalves Guimaraes <frederico@teia.bio.br>, 2007, 2008.
 # Tux Paint brazilian portuguese messages
-# Copyright (C) 2002
 msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint-pt_BR\n"

@@ -2,8 +2,8 @@
 # Traducció al català del Tuxpaint.
 # Copyright (C) 2002-2009
 # This file is distributed under the same license as the Tuxpaint package.
+# Pere Pujal i Carabantes <pere@fornol.no-ip.org>, 2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009.
 # Aquest fitxer és distribueix amb la mateixa llicència que el Tuxpaint.
-# Pere Pujal i Carabantes <pere@fornol.no-ip.org>, 2002-2009.
 #
 #
 # Nota per futures traduccions/actualitzacions:

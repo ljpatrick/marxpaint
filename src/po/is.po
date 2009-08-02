@@ -3,7 +3,7 @@
 # Tux Paint Icelandic messages.
 # Copyright (C) 2002.
 # Pjetur Hjaltason <pjetur@pjetur.net>, 2002.
-# Pjetur G. Hjaltason <pjetur@pjetur.net>, 2003,2004
+# Pjetur G. Hjaltason <pjetur@pjetur.net>, 2003, 2004.
 #
 msgid ""
 msgstr ""

@@ -1,7 +1,7 @@
 # Portuguese translation of the "tuxpaint" messages
 # This file is distributed under the same license as the findutils package.
-# Ricardo Cruz <rick2@aeiou.pt>, 2003
-# Helder Correia <helder.pereira.correia@gmail.com>, 2005-2007.
+# Ricardo Cruz <rick2@aeiou.pt>, 2003.
+# Helder Correia <helder.pereira.correia@gmail.com>, 2005, 2006, 2007.
 #
 msgid ""
 msgstr ""

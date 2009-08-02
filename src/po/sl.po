@@ -1,6 +1,6 @@
 # Slovenian message catalogue for tuxpaint.
 # Copyright (C) 2005 Free Software Foundation, Inc.
-# Matej Urbančič <mateju@svn.gnome.org>, 2005 - 2009.
+# Matej Urbančič <mateju@svn.gnome.org>, 2005, 2006, 2007, 2008, 2009.
 #
 msgid ""
 msgstr ""

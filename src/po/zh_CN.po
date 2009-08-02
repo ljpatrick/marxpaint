@@ -1,11 +1,8 @@
 # Tux Paint messages
 # Copyright (C) 2003  Wang Jian <lark@linux.net.cn>
-#
-# This file is distributed under the same license as the Tux Paint
-# program.
-#
-# Wang Jian <lark@linux.net.cn>, 2003, 2004
-# Huang Zuzhen <zuzhenhuang@vip.sina.com>, 2008
+# This file is distributed under the same license as the Tux Paint program.
+# Wang Jian <lark@linux.net.cn>, 2003, 2004.
+# Huang Zuzhen <zuzhenhuang@vip.sina.com>, 2008.
 #
 # Special note from lark: Because it is for children, the translation
 # should not be cold.

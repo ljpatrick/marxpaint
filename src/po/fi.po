@@ -1,7 +1,7 @@
 # Tux Paint messages in Finnish
 # Copyright © 2002, 2008 Free Software Foundation, Inc.
 # This file is distributed under the same license as the tuxpaint package.
-# Tarmo Toikkanen <tarmo.toikkanen@iki.fi>, 2002
+# Tarmo Toikkanen <tarmo.toikkanen@iki.fi>, 2002.
 # Jorma Karvonen <karvjorm@users.sf.net>, 2008.
 #
 msgid ""

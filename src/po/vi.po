@@ -1,8 +1,8 @@
 # Vietnamese translation for Tuxpaint.
 # Copyright © 2004 Bill Kendrick
-# Copyright © 2007 Free Software Foundation, Inc.
 # Le Quang Phan <lqphan@hn.vnn.vn>, 2004.
-# Clytie Siddall <clytie@riverland.net.au>, 2005-2007.
+# Clytie Siddall <clytie@riverland.net.au>, 2005, 2006, 2007.
+# Copyright © 2007 Free Software Foundation, Inc.
 #
 msgid ""
 msgstr ""

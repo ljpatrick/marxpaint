@@ -1,7 +1,7 @@
 # Translation of Tux Paint to Songhay
 # Copyright (C) 2009
 # This file is distributed under the same license as the Tux Paint package.
-# Abdoul Cisse <abdoulseydou@hotmail.com>, 2009
+# Abdoul Cisse <abdoulseydou@hotmail.com>, 2009.
 #
 msgid ""
 msgstr ""
