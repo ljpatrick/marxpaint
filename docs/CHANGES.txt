@@ -8,7 +8,7 @@ http://www.tuxpaint.org/
 
 $Id$
 
-2009.July.27 (0.9.22)
+2009.August.3 (0.9.22)
   * Localization Updates:
     ---------------------
     * Chinese (Traditional) translation
@@ -25,6 +25,9 @@ $Id$
       Sergei Popov <skein@rambler.ru>
 
     * Portuguese now using plain "pt" locale (vs. always specifying "_PT")
+
+    * Portuguese translation
+      Sergio Marques <smarquespt@gmail.com>
 
     * Songhay translation
       Abdoul Cisse <abdoulseydou@hotmail.com>
