@@ -8,7 +8,7 @@ http://www.tuxpaint.org/
 
 $Id$
 
-2009.August.3 (0.9.22)
+2009.August.6 (0.9.22)
   * Localization Updates:
     ---------------------
     * Chinese (Traditional) translation
@@ -28,6 +28,9 @@ $Id$
 
     * Portuguese translation
       Sergio Marques <smarquespt@gmail.com>
+
+    * Slovak translation
+      Jaroslav Rynik <jrynik@yahoo.co.uk>
 
     * Songhay translation
       Abdoul Cisse <abdoulseydou@hotmail.com>
