@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-07-27 09:53-0700\n"
+"POT-Creation-Date: 2009-08-08 16:39-0700\n"
 "PO-Revision-Date: 2008-02-27 11:34+0100\n"
 "Last-Translator: Burkhard Lück <lueck@hube-lueck.de>\n"
 "Language-Team: Deutsch <kde-i18n-de@kde.org>\n"
@@ -1066,6 +1066,28 @@ msgstr "Klick und bewege die Maus, um das Bild unscharf zu machen."
 #, fuzzy
 msgid "Click to add noise to your entire picture."
 msgstr "Klick und bewege die Maus, um die Farben des Bildes zu ändern."
+
+#: ../../magic/src/perspective.c:145
+msgid "Perspective"
+msgstr ""
+
+#: ../../magic/src/perspective.c:146
+msgid "Zoom"
+msgstr ""
+
+#: ../../magic/src/perspective.c:151
+#, fuzzy
+#| msgid "Click and drag the mouse to emboss the picture."
+msgid "Click on the corners and drag where you want to stretch the picture."
+msgstr ""
+"Klick und bewege die Maus, um Teile des Bildes hervorgehoben erscheinen zu "
+"lassen."
+
+#: ../../magic/src/perspective.c:154
+#, fuzzy
+msgid ""
+"Click and drag to up to zoom in or drag to down to zoom out the picture."
+msgstr "Klick und bewege die Maus, um das Bild zu verschieben."
 
 #: ../../magic/src/rails.c:101
 #, fuzzy

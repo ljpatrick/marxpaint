@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ojibwaytuxpaint\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-07-27 09:53-0700\n"
+"POT-Creation-Date: 2009-08-08 16:39-0700\n"
 "PO-Revision-Date: 2007-10-08 18:19-0500\n"
 "Last-Translator: Ed Montgomery <edm@rocketmail.com>\n"
 "Language-Team: Ed <edm@rocketmail.com>\n"
@@ -1039,6 +1039,25 @@ msgstr "Waabizo"
 #, fuzzy
 msgid "Click to add noise to your entire picture."
 msgstr "Waabimoojichaagwaazo"
+
+#: ../../magic/src/perspective.c:145
+msgid "Perspective"
+msgstr ""
+
+#: ../../magic/src/perspective.c:146
+msgid "Zoom"
+msgstr ""
+
+#: ../../magic/src/perspective.c:151
+#, fuzzy
+msgid "Click on the corners and drag where you want to stretch the picture."
+msgstr "Waabizo"
+
+#: ../../magic/src/perspective.c:154
+#, fuzzy
+msgid ""
+"Click and drag to up to zoom in or drag to down to zoom out the picture."
+msgstr "Waabizo"
 
 #: ../../magic/src/rails.c:101
 #, fuzzy

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint 0.9.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-07-27 09:53-0700\n"
+"POT-Creation-Date: 2009-08-08 16:39-0700\n"
 "PO-Revision-Date: 2004-12-04 15:45-0800\n"
 "Last-Translator: Alberto Escudero <aep@it46.se>\n"
 "Language-Team: Swahili\n"
@@ -1067,6 +1067,25 @@ msgstr "Bofya na sogea puku kuweka ukungu."
 #, fuzzy
 msgid "Click to add noise to your entire picture."
 msgstr "Bofya na sogea puku kuweka miraba midogo kwenye picha."
+
+#: ../../magic/src/perspective.c:145
+msgid "Perspective"
+msgstr ""
+
+#: ../../magic/src/perspective.c:146
+msgid "Zoom"
+msgstr ""
+
+#: ../../magic/src/perspective.c:151
+#, fuzzy
+msgid "Click on the corners and drag where you want to stretch the picture."
+msgstr "Bofya na sogea puku kupunguza upana wa picha."
+
+#: ../../magic/src/perspective.c:154
+#, fuzzy
+msgid ""
+"Click and drag to up to zoom in or drag to down to zoom out the picture."
+msgstr "Bofya na sogea puku kupunguza upana wa picha."
 
 #: ../../magic/src/rails.c:101
 msgid "Rails"

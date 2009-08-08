@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TuxPaint 0.9.21\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-07-27 09:53-0700\n"
+"POT-Creation-Date: 2009-08-08 16:39-0700\n"
 "PO-Revision-Date: 2009-05-21 03:10-0300\n"
 "Last-Translator: Gabriel Gazzán <gablistas@gmail.com>\n"
 "Language-Team: Español <gablistas@gmail.com>\n"
@@ -1047,6 +1047,28 @@ msgstr "Haz clic y arrastra el ratón para agregar ruido a partes de la imagen."
 #: ../../magic/src/noise.c:67
 msgid "Click to add noise to your entire picture."
 msgstr "Haz clic para agregar ruido a toda la imagen."
+
+#: ../../magic/src/perspective.c:145
+msgid "Perspective"
+msgstr ""
+
+#: ../../magic/src/perspective.c:146
+msgid "Zoom"
+msgstr ""
+
+#: ../../magic/src/perspective.c:151
+#, fuzzy
+#| msgid "Click and drag the mouse to emboss the picture."
+msgid "Click on the corners and drag where you want to stretch the picture."
+msgstr "Haz clic y arrastra el ratón para hacer un bajorrelieve con la imagen."
+
+#: ../../magic/src/perspective.c:154
+#, fuzzy
+#| msgid "Click and drag to squirt toothpaste onto your picture."
+msgid ""
+"Click and drag to up to zoom in or drag to down to zoom out the picture."
+msgstr ""
+"Haz clic y arrastra el ratón para chorrear pasta dental sobre la imagen."
 
 #: ../../magic/src/rails.c:101
 msgid "Rails"

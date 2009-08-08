@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint 0.9.11\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-07-27 09:53-0700\n"
+"POT-Creation-Date: 2009-08-08 16:39-0700\n"
 "PO-Revision-Date: 2008-10-14 12:34+0800\n"
 "Last-Translator: Ijeal <tomorrow1881@sohu.com>\n"
 "Language-Team: zh_CN <i18n-translation@lists.linux.net.cn>\n"
@@ -1059,6 +1059,27 @@ msgstr "单击然后移动鼠标，将图片变模糊。"
 #: ../../magic/src/noise.c:67
 msgid "Click to add noise to your entire picture."
 msgstr "单击然后移动鼠标将图片变成驳裂的效果。"
+
+#: ../../magic/src/perspective.c:145
+msgid "Perspective"
+msgstr ""
+
+#: ../../magic/src/perspective.c:146
+msgid "Zoom"
+msgstr ""
+
+#: ../../magic/src/perspective.c:151
+#, fuzzy
+#| msgid "Click and drag the mouse to emboss the picture."
+msgid "Click on the corners and drag where you want to stretch the picture."
+msgstr "单击然后移动鼠标将图片凸起。"
+
+#: ../../magic/src/perspective.c:154
+#, fuzzy
+#| msgid "Click and drag to squirt toothpaste onto your picture."
+msgid ""
+"Click and drag to up to zoom in or drag to down to zoom out the picture."
+msgstr "单击并拖动在图画上喷出牙膏。"
 
 #: ../../magic/src/rails.c:101
 msgid "Rails"

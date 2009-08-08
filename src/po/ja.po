@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint 0.9.15\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-07-27 09:53-0700\n"
+"POT-Creation-Date: 2009-08-08 16:39-0700\n"
 "PO-Revision-Date: 2009-05-24 16:54+0900\n"
 "Last-Translator: TOYAMA Shin-ichi <shin1@wmail.plala.or.jp>\n"
 "Language-Team: japanese <shin1@wmail.plala.or.jp>\n"
@@ -1063,6 +1063,27 @@ msgstr "クリックしたまま マウスをうごかして えを　ざらざ�
 #: ../../magic/src/noise.c:67
 msgid "Click to add noise to your entire picture."
 msgstr "えを　クリックして　ぜんたいを　ざらざらに　しよう"
+
+#: ../../magic/src/perspective.c:145
+msgid "Perspective"
+msgstr ""
+
+#: ../../magic/src/perspective.c:146
+msgid "Zoom"
+msgstr ""
+
+#: ../../magic/src/perspective.c:151
+#, fuzzy
+#| msgid "Click and drag the mouse to emboss the picture."
+msgid "Click on the corners and drag where you want to stretch the picture."
+msgstr "クリックしたまま マウスをうごかして えを うきぼりに しよう"
+
+#: ../../magic/src/perspective.c:154
+#, fuzzy
+#| msgid "Click and drag to squirt toothpaste onto your picture."
+msgid ""
+"Click and drag to up to zoom in or drag to down to zoom out the picture."
+msgstr "クリックしたまま マウスをうごかして えに　はみがきこを　しぼりだそう"
 
 #: ../../magic/src/rails.c:101
 msgid "Rails"

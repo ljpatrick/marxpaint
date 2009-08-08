@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TuxPaint\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-07-27 09:53-0700\n"
+"POT-Creation-Date: 2009-08-08 16:39-0700\n"
 "PO-Revision-Date: 2004-05-23 10:53+0100\n"
 "Last-Translator: Nedjeljko Jedbaj <jedvajn@netlane.com>\n"
 "Language-Team: \n"
@@ -1065,6 +1065,25 @@ msgstr "Klikni i pomakni miša. Zamutiti ćeš crtež."
 #, fuzzy
 msgid "Click to add noise to your entire picture."
 msgstr "Klikni i pomakni miša. Crtež ćeš pretvoriti u kvadratiće."
+
+#: ../../magic/src/perspective.c:145
+msgid "Perspective"
+msgstr ""
+
+#: ../../magic/src/perspective.c:146
+msgid "Zoom"
+msgstr ""
+
+#: ../../magic/src/perspective.c:151
+#, fuzzy
+msgid "Click on the corners and drag where you want to stretch the picture."
+msgstr "Klikni i pomakni miša. Crte će postati tanje."
+
+#: ../../magic/src/perspective.c:154
+#, fuzzy
+msgid ""
+"Click and drag to up to zoom in or drag to down to zoom out the picture."
+msgstr "Klikni i pomakni miša. Crte će postati tanje."
 
 #: ../../magic/src/rails.c:101
 msgid "Rails"

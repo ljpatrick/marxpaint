@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TuxPaint 0.0.1pre\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-07-27 09:53-0700\n"
+"POT-Creation-Date: 2009-08-08 16:39-0700\n"
 "PO-Revision-Date: 2005-01-09 14:49+0100\n"
 "Last-Translator: Gugusse <titi>\n"
 "Language-Team: Breton <drouizig@drouizig.org>\n"
@@ -1060,6 +1060,25 @@ msgstr "Klik ha fiñv al logodenn evit displanaat ar skeudenn."
 #, fuzzy
 msgid "Click to add noise to your entire picture."
 msgstr "Klik ha fiñv al logodenn evit cheñch liv an dresadenn."
+
+#: ../../magic/src/perspective.c:145
+msgid "Perspective"
+msgstr ""
+
+#: ../../magic/src/perspective.c:146
+msgid "Zoom"
+msgstr ""
+
+#: ../../magic/src/perspective.c:151
+#, fuzzy
+msgid "Click on the corners and drag where you want to stretch the picture."
+msgstr "Klik ha fiñv al logodenn evit displanaat ar skeudenn."
+
+#: ../../magic/src/perspective.c:154
+#, fuzzy
+msgid ""
+"Click and drag to up to zoom in or drag to down to zoom out the picture."
+msgstr "Klik ha fiñv al logodenn evit displanaat ar skeudenn."
 
 #: ../../magic/src/rails.c:101
 msgid "Rails"

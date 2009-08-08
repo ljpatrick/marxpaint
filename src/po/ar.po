@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint-HEAD\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-07-27 09:53-0700\n"
+"POT-Creation-Date: 2009-08-08 16:39-0700\n"
 "PO-Revision-Date: 2008-10-07 14:54+0200\n"
 "Last-Translator: Tilo <Drfortilo@gmail.com>\n"
 "Language-Team: Arabic <doc@arabeyes.org>\n"
@@ -1070,6 +1070,27 @@ msgstr "انقر الفأره لإضافة تأثير التشويش لأجزا�
 #: ../../magic/src/noise.c:67
 msgid "Click to add noise to your entire picture."
 msgstr "انقر الفأره لإضافة تأثير التشويش على صورتك."
+
+#: ../../magic/src/perspective.c:145
+msgid "Perspective"
+msgstr ""
+
+#: ../../magic/src/perspective.c:146
+msgid "Zoom"
+msgstr ""
+
+#: ../../magic/src/perspective.c:151
+#, fuzzy
+#| msgid "Click and drag the mouse to emboss the picture."
+msgid "Click on the corners and drag where you want to stretch the picture."
+msgstr "انقر واسحب الماوس لزخرفه الصورة بطريقه بارزه "
+
+#: ../../magic/src/perspective.c:154
+#, fuzzy
+#| msgid "Click and drag to squirt toothpaste onto your picture."
+msgid ""
+"Click and drag to up to zoom in or drag to down to zoom out the picture."
+msgstr "انقر واسحب انشر معجون الاسنان على الصوره"
 
 #: ../../magic/src/rails.c:101
 msgid "Rails"

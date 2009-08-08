@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TuxPaint 0.9.13\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-07-27 09:53-0700\n"
+"POT-Creation-Date: 2009-08-08 16:39-0700\n"
 "PO-Revision-Date: 2009-01-18 00:06+0530\n"
 "Last-Translator: ravishankar <ravidreams@gmail.com>\n"
 "Language-Team: A. Ravishankar <ravishankar.ayyakkannu@gmail.com>\n"
@@ -1045,6 +1045,27 @@ msgstr "சொடுக்கி நகர்த்தினால், படத
 #: ../../magic/src/noise.c:67
 msgid "Click to add noise to your entire picture."
 msgstr "சொடுக்கினால், படத்தில் இரைச்சலைச் சேர்க்கலாம்."
+
+#: ../../magic/src/perspective.c:145
+msgid "Perspective"
+msgstr ""
+
+#: ../../magic/src/perspective.c:146
+msgid "Zoom"
+msgstr ""
+
+#: ../../magic/src/perspective.c:151
+#, fuzzy
+#| msgid "Click and drag the mouse to emboss the picture."
+msgid "Click on the corners and drag where you want to stretch the picture."
+msgstr "சொடுக்கி இழுத்தால், படத்தைப் புடைக்கச் செய்யலாம்."
+
+#: ../../magic/src/perspective.c:154
+#, fuzzy
+#| msgid "Click and drag to squirt toothpaste onto your picture."
+msgid ""
+"Click and drag to up to zoom in or drag to down to zoom out the picture."
+msgstr "சொடுக்கி இழுத்தால், படத்தில் பற்பசை சிதறும்."
 
 #: ../../magic/src/rails.c:101
 msgid "Rails"
