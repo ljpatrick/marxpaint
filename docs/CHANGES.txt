@@ -8,7 +8,13 @@ http://www.tuxpaint.org/
 
 $Id$
 
-2009.August.7 (0.9.22)
+2009.August.8 (0.9.22)
+  * New Magic Tools:
+    ----------------
+    * Perspective - Change the image's perspective.
+      Zoom - Zoom the image in or out.
+      By Pere Pujal i Carabantes <pere@fornol.no-ip.org>
+
   * Other Improvements:
     -------------------
     * Starter images can be in SVG format.

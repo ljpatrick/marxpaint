@@ -5,7 +5,7 @@ individual HTML files for each of them, and an index.html that links to
 them all. */
 
 /* Bill Kendrick <bill@newbreedsoftware.com> */
-/* 2008.04.28 */
+/* 2009.08.08 */
 
 
 /* Authors of the Magic tools: */
@@ -175,6 +175,10 @@ $tools = array(
    'desc'=>'Add random noise and static to your picture.',
    'author'=>$AUTHOR_ANDREWC),
 
+  array('name'=>'Perspective',
+   'desc'=>'Click and drag from the corners to change the perspective of your picture.',
+   'author'=>$AUTHOR_PERE),
+
   array('name'=>'Picasso',
    'desc'=>'Draw three swirling brushes at once, in a Picasso style.',
    'author'=>$AUTHOR_ADAMR,
@@ -273,6 +277,9 @@ $tools = array(
    'author'=>array($AUTHOR_KENDRICK, $AUTHOR_ADAMR),
    'see'=>'Waves'),
 
+  array('name'=>'Zoom',
+   'desc'=>'Click and drag up to zoom in, or down to zoom out.',
+   'author'=>$AUTHOR_PERE),
 );
 
 $fiidx = fopen("../html/index.html", "w");

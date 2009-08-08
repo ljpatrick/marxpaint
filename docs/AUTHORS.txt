@@ -7,7 +7,7 @@ bill@newbreedsoftware.com
 http://www.tuxpaint.org/
 
 
-June 17, 2002 - June 5, 2009
+June 17, 2002 - August 8, 2009
 
 $Id$
 
@@ -70,6 +70,9 @@ $Id$
   Jeff Newmiller <jdnewmil@dcn.davis.ca.us>
 
   String Art Magic Tools
+  by Pere Pujal i Carabantes <pere@fornol.no-ip.org>
+
+  Perspective and Zoom Magic Tools
   by Pere Pujal i Carabantes <pere@fornol.no-ip.org>
 
   Tornado Magic Tool

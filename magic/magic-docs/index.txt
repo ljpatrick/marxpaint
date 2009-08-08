@@ -29,6 +29,7 @@
    * Mirror
    * Negative
    * Noise
+   * Perspective
    * Picasso
    * Rails
    * Rain
@@ -50,3 +51,4 @@
    * Toothpaste
    * Waves
    * Wavelets
+   * Zoom
