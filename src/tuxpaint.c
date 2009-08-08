@@ -17937,6 +17937,9 @@ int do_new_dialog(void)
         if (strcasestr(f->d_name, FNAME_EXTENSION) != NULL
             /* Support legacy BMP files for load: */
             || strcasestr(f->d_name, ".bmp") != NULL
+#ifndef NO_SVG
+            || strcasestr(f->d_name, ".svg") != NULL
+#endif
            )
         {
           strcpy(fname, f->d_name);
@@ -17950,6 +17953,12 @@ int do_new_dialog(void)
           {
             strcpy((char *) strcasestr(fname, ".bmp"), "");
             d_exts[num_files] = strdup(".bmp");
+          }
+
+          if (strcasestr(fname, ".svg") != NULL)
+          {
+            strcpy((char *) strcasestr(fname, ".svg"), "");
+            d_exts[num_files] = strdup(".svg");
           }
 
           d_names[num_files] = strdup(fname);
@@ -17966,7 +17975,7 @@ int do_new_dialog(void)
           if (img == NULL)
           {
             /* No thumbnail in the new location ("saved/.thumbs"),
-               try the old locatin ("saved/"): */
+               try the old location ("saved/"): */
 
             snprintf(fname, sizeof(fname), "%s/%s-t.png",
                 dirname[d_places[num_files]], d_names[num_files]);
