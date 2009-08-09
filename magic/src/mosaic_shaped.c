@@ -115,7 +115,7 @@ static SDL_Surface * mosaic_shaped_pattern;
 const char * mosaic_shaped_snd_filenames[mosaic_shaped_NUM_TOOLS] = {
   "mosaic_shaped_square.ogg",
   "mosaic_shaped_hex.ogg",
-  "mosaic_shaped_irregular.ogg", /* FIXME */
+  "mosaic_shaped_irregular.ogg", /* FIXME */ /*what's problem?*/
 };
 
 const char * mosaic_shaped_icon_filenames[mosaic_shaped_NUM_TOOLS] = {
@@ -138,14 +138,14 @@ const char * mosaic_shaped_names[mosaic_shaped_NUM_TOOLS] = {
 };
 
 const char * mosaic_shaped_descs[mosaic_shaped_NUM_TOOLS][2] = {
-  {gettext_noop("Click and move the mouse to add a mosaic squared effect to parts of your picture."),
-    gettext_noop("Click to add a mosaic squared effect to your entire picture."),},
+  {gettext_noop("Click and move the mouse to add a square mosaic to parts of your picture."),
+    gettext_noop("Click to add a square mosaic to your entire picture."),},
 
-  {gettext_noop("Click and move the mouse to add a mosaic hexagonal effect to parts of your picture."),
-    gettext_noop("Click to add a mosaic hexagonal effect to your entire picture."),},
+  {gettext_noop("Click and move the mouse to add a hexagonal mosaic to parts of your picture."),
+    gettext_noop("Click to add a hexagonal mosaic to your entire picture."),},
 
-  {gettext_noop("Click and move the mouse to add a irregular mosaic to parts of your picture."),
-    gettext_noop("Click to add a irregular mosaic to your entire picture."),},
+  {gettext_noop("Click and move the mouse to add an irregular mosaic to parts of your picture."),
+    gettext_noop("Click to add an irregular mosaic to your entire picture."),},
 };
 
 Uint32 mosaic_shaped_api_version(void) { return(TP_MAGIC_API_VERSION); }

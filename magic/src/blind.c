@@ -94,7 +94,7 @@ char * blind_get_name(magic_api * api, int which)
 
 char * blind_get_description(magic_api * api, int which, int mode) 
 { 
-    return strdup(gettext_noop("Click on a side and drag the blind to were you want, slide on the first lame to open or close the blind.")); 
+    return strdup(gettext_noop("Click on a side and drag the blind to where you want, move the first line to open or close the blind.")); 
 }
 
 int blind_requires_colors(magic_api * api, int which)
