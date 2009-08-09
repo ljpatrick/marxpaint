@@ -14,6 +14,8 @@ $Id$
     * Perspective - Change the image's perspective.
       Zoom - Zoom the image in or out.
       By Pere Pujal i Carabantes <pere@fornol.no-ip.org>
+ 
+/*blind and mosaic?*/
 
   * Other Improvements:
     -------------------
@@ -22,6 +24,16 @@ $Id$
     * Widened dialog windows, to help avoid word-wrap and overlap problems
       with some prompts, in some locales.
       (SF.net bug #2834461)
+
+ * New Starters:
+    -------------
+    * Elephant
+    * Hat
+    * Old Soviet Car
+    * Skull 
+
+    From Open Clip Art, curated by 
+    Caroline Ford<caroline.ford.work@googlemail.com>
 
   * Localization Updates:
     ---------------------

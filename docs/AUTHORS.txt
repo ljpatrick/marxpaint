@@ -204,6 +204,9 @@ $Id$
   * Silver Frame
     Original is by Nicu Buculei and taken from Open Clip Art. Prepared by Caroline Ford <caroline.ford.work@googlemail.com>
 
+  * Hat, Elephant, Skull, Old Soviet Car
+    Originals from Open Clip Art and Public Domain. 
+
 * Fonts
 
   * DejaVu Sans
