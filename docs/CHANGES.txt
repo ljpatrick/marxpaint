@@ -19,6 +19,10 @@ $Id$
     -------------------
     * Starter images can be in SVG format.
 
+    * Widened dialog windows, to help avoid word-wrap and overlap problems
+      with some prompts, in some locales.
+      (SF.net bug #2834461)
+
   * Localization Updates:
     ---------------------
     * Chinese (Traditional) translation

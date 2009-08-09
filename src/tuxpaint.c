@@ -22,7 +22,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
   
-  June 14, 2002 - June 13, 2009
+  June 14, 2002 - August 9, 2009
   $Id$
 */
 
@@ -11628,6 +11628,9 @@ static int do_prompt_image_flash(const char *const text,
 	  (text, btn_yes, btn_no, img1, img2, img3, animate, SND_NONE, ox, oy));
 }
 
+#define PROMPT_LEFT 96
+#define PROMPT_W 440
+
 static int do_prompt_image_flash_snd(const char *const text,
 				     const char *const btn_yes,
 				     const char *const btn_no,
@@ -11654,7 +11657,6 @@ static int do_prompt_image_flash_snd(const char *const text,
   int txt_left, txt_right, img_left, btn_left, txt_btn_left, txt_btn_right;
 
   hide_blinking_cursor();
-
 
   /* Admittedly stupid way of determining which keys can be used for
      positive and negative responses in dialogs (e.g., [Y] (for 'yes') in English) */
@@ -11698,12 +11700,12 @@ static int do_prompt_image_flash_snd(const char *const text,
     oox = ox - w;
     ooy = oy - w;
 
-    nx = 160 + 96 - w + PROMPTOFFSETX;
+    nx = PROMPT_LEFT + 96 - w + PROMPTOFFSETX;
     ny = 94 + 96 - w + PROMPTOFFSETY;
 
     dest.x = ((nx * w) + (oox * (96 - w))) / 96;
     dest.y = ((ny * w) + (ooy * (96 - w))) / 96;
-    dest.w = (320 - 96 * 2) + w * 2;
+    dest.w = (PROMPT_W - 96 * 2) + w * 2;
     dest.h = w * 2;
     SDL_FillRect(screen, &dest, SDL_MapRGB(screen->format, 224 - w, 224 - w, 244 -w));
 
@@ -11723,7 +11725,7 @@ static int do_prompt_image_flash_snd(const char *const text,
 
 #ifndef NO_PROMPT_SHADOWS
   alpha_surf = SDL_CreateRGBSurface(SDL_SWSURFACE | SDL_SRCALPHA,
-				    (320 - 96 * 2) + (w - 4) * 2,
+				    (PROMPT_W - 96 * 2) + (w - 4) * 2,
 				    (w - 4) * 2,
 				    screen->format->BitsPerPixel,
 				    screen->format->Rmask,
@@ -11738,9 +11740,9 @@ static int do_prompt_image_flash_snd(const char *const text,
 
     for (i = 8; i > 0; i = i - 2)
     {
-      dest.x = 160 + 96 - (w - 4) + i + PROMPTOFFSETX;
+      dest.x = PROMPT_LEFT + 96 - (w - 4) + i + PROMPTOFFSETX;
       dest.y = 94 + 96 - (w - 4) + i + PROMPTOFFSETY;
-      dest.w = (320 - 96 * 2) + (w - 4) * 2;
+      dest.w = (PROMPT_W - 96 * 2) + (w - 4) * 2;
       dest.h = (w - 4) * 2;
 
       SDL_BlitSurface(alpha_surf, NULL, screen, &dest);
@@ -11753,9 +11755,9 @@ static int do_prompt_image_flash_snd(const char *const text,
 
   w = w - 6;
 
-  dest.x = 160 + 96 - w + PROMPTOFFSETX;
+  dest.x = PROMPT_LEFT + 96 - w + PROMPTOFFSETX;
   dest.y = 94 + 96 - w + PROMPTOFFSETY;
-  dest.w = (320 - 96 * 2) + w * 2;
+  dest.w = (PROMPT_W - 96 * 2) + w * 2;
   dest.h = w * 2;
   SDL_FillRect(screen, &dest, SDL_MapRGB(screen->format, 255, 255, 255));
 
@@ -11803,19 +11805,19 @@ static int do_prompt_image_flash_snd(const char *const text,
 
   if (need_right_to_left == 0)
   {
-    txt_left = 166 + PROMPTOFFSETX;
-    txt_right = 475 + PROMPTOFFSETX - offset;
-    img_left = 475 + PROMPTOFFSETX - max_img_w - 4;
-    btn_left = 166 + PROMPTOFFSETX;
+    txt_left = (PROMPT_LEFT + 6) + PROMPTOFFSETX;
+    txt_right = (PROMPT_LEFT + PROMPT_W - 5) + PROMPTOFFSETX - offset;
+    img_left = (PROMPT_LEFT + PROMPT_W - 5) + PROMPTOFFSETX - max_img_w - 4;
+    btn_left = (PROMPT_LEFT + 6) + PROMPTOFFSETX;
     txt_btn_left = txt_left + img_yes->w + 4;
     txt_btn_right = txt_right;
   }
   else
   {
-    txt_left = 166 + PROMPTOFFSETX + offset;
-    txt_right = 457 + PROMPTOFFSETX;
-    img_left = 166 + PROMPTOFFSETX + 4;
-    btn_left = 475 + PROMPTOFFSETX - img_yes->w - 4;
+    txt_left = (PROMPT_LEFT + 6) + PROMPTOFFSETX + offset;
+    txt_right = (PROMPT_LEFT + PROMPT_W - 5) + PROMPTOFFSETX;
+    img_left = (PROMPT_LEFT + 6) + PROMPTOFFSETX + 4;
+    btn_left = (PROMPT_LEFT + PROMPT_W - 5) + PROMPTOFFSETX - img_yes->w - 4;
     txt_btn_left = txt_left;
     txt_btn_right = btn_left;
   }
@@ -18847,13 +18849,13 @@ int do_color_picker(void)
     oox = ox - w;
     ooy = oy - w;
 
-    nx = 160 + 96 - w + PROMPTOFFSETX;
+    nx = PROMPT_LEFT + 96 - w + PROMPTOFFSETX;
     ny = 94 + 96 - w + PROMPTOFFSETY;
 
     dest.x = ((nx * w) + (oox * (128 - w))) / 128;
     dest.y = ((ny * w) + (ooy * (128 - w))) / 128;
 
-    dest.w = (320 - 96 * 2) + w * 2;
+    dest.w = (PROMPT_W - 96 * 2) + w * 2;
     dest.h = w * 2;
     SDL_FillRect(screen, &dest, SDL_MapRGB(screen->format, 255 - w, 255 - w, 255 - w));
 
@@ -18867,7 +18869,7 @@ int do_color_picker(void)
 
 #ifndef NO_PROMPT_SHADOWS
   alpha_surf = SDL_CreateRGBSurface(SDL_SWSURFACE | SDL_SRCALPHA,
-                                    (320 - 96 * 2) + (w - 4) * 2,
+                                    (PROMPT_W - 96 * 2) + (w - 4) * 2,
                                     (w - 4) * 2,
                                     screen->format->BitsPerPixel,
                                     screen->format->Rmask,
@@ -18882,9 +18884,9 @@ int do_color_picker(void)
 
     for (i = 8; i > 0; i = i - 2)
     {
-      dest.x = 160 + 96 - (w - 4) + i + PROMPTOFFSETX;
+      dest.x = PROMPT_LEFT + 96 - (w - 4) + i + PROMPTOFFSETX;
       dest.y = 94 + 96 - (w - 4) + i + PROMPTOFFSETY;
-      dest.w = (320 - 96 * 2) + (w - 4) * 2;
+      dest.w = (PROMPT_W - 96 * 2) + (w - 4) * 2;
       dest.h = (w - 4) * 2;
 
       SDL_BlitSurface(alpha_surf, NULL, screen, &dest);
@@ -18899,16 +18901,16 @@ int do_color_picker(void)
 
   w = w - 6;
 
-  dest.x = 160 + 96 - w + PROMPTOFFSETX;
+  dest.x = PROMPT_LEFT + 96 - w + PROMPTOFFSETX;
   dest.y = 94 + 96 - w + PROMPTOFFSETY;
-  dest.w = (320 - 96 * 2) + w * 2;
+  dest.w = (PROMPT_W - 96 * 2) + w * 2;
   dest.h = w * 2;
   SDL_FillRect(screen, &dest, SDL_MapRGB(screen->format, 255, 255, 255));
 
 
   /* Draw color palette: */
 
-  color_picker_left = 160 + 96 - w + PROMPTOFFSETX + 2;
+  color_picker_left = PROMPT_LEFT + 96 - w + PROMPTOFFSETX + 2;
   color_picker_top = 94 + 96 - w + PROMPTOFFSETY + 2;
 
   dest.x = color_picker_left;
@@ -18952,7 +18954,7 @@ int do_color_picker(void)
 
   color_example_dest.x = color_picker_left + img_color_picker->w + 2;
   color_example_dest.y = color_picker_top + 2;
-  color_example_dest.w = (320 - 96 * 2) + w * 2 - img_color_picker->w - 6;
+  color_example_dest.w = (PROMPT_W - 96 * 2) + w * 2 - img_color_picker->w - 6;
   color_example_dest.h = 124;
 
 
@@ -18985,7 +18987,7 @@ int do_color_picker(void)
 
   /* Show "Back" button */
 
-  back_left = (((320 - 96 * 2) + w * 2 - img_color_picker->w) - img_back->w) / 2 + color_picker_left + img_color_picker->w;
+  back_left = (((PROMPT_W - 96 * 2) + w * 2 - img_color_picker->w) - img_back->w) / 2 + color_picker_left + img_color_picker->w;
   back_top = color_picker_top + img_color_picker->h - img_back->h - 2;
 
   dest.x = back_left;
