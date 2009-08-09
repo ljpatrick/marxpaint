@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-08-08 16:39-0700\n"
+"POT-Creation-Date: 2009-08-09 23:46+0100\n"
 "PO-Revision-Date: 2008-02-27 11:34+0100\n"
 "Last-Translator: Burkhard Lück <lueck@hube-lueck.de>\n"
 "Language-Team: Deutsch <kde-i18n-de@kde.org>\n"
@@ -669,38 +669,38 @@ msgstr "Ah!"
 
 #. Admittedly stupid way of determining which keys can be used for
 #. positive and negative responses in dialogs (e.g., [Y] (for 'yes') in English)
-#: ../tuxpaint.c:11661
+#: ../tuxpaint.c:11663
 msgid "Yes"
 msgstr "Ja"
 
-#: ../tuxpaint.c:11665
+#: ../tuxpaint.c:11667
 msgid "No"
 msgstr "Nein"
 
 #. Prompt to ask whether user wishes to save over old version of their file
-#: ../tuxpaint.c:12631
+#: ../tuxpaint.c:12633
 msgid "Replace the picture with your changes?"
 msgstr "Möchtest du das Bild mit deinen Änderungen überschreiben?"
 
 #. Positive response to saving over old version
 #. (like a 'File:Save' action in other applications)
-#: ../tuxpaint.c:12635
+#: ../tuxpaint.c:12637
 msgid "Yes, replace the old one!"
 msgstr "Ja, überschreibe das alte Bild!"
 
 #. Negative response to saving over old version (saves a new image)
 #. (like a 'File:Save As...' action in other applications)
-#: ../tuxpaint.c:12639
+#: ../tuxpaint.c:12641
 msgid "No, save a new file!"
 msgstr "Nein, speichere in eine neue Datei!"
 
-#: ../tuxpaint.c:13402
+#: ../tuxpaint.c:13404
 msgid "Choose the picture you want, then click “Open”."
 msgstr "Wähle ein Bild, dass du öffnen willst und klick auf 'Öffnen'."
 
 #. Let user choose images:
 #. Instructions for Slideshow file dialog (FIXME: Make a #define)
-#: ../tuxpaint.c:14389 ../tuxpaint.c:14703
+#: ../tuxpaint.c:14391 ../tuxpaint.c:14705
 msgid "Choose the pictures you want, then click “Play”."
 msgstr "Wähle ein Bild und klicke auf 'Öffnen'."
 
@@ -737,10 +737,10 @@ msgid "Blind"
 msgstr ""
 
 #: ../../magic/src/blind.c:97
-msgid ""
-"Click on a side and drag the blind to were you want, slide on the first lame "
-"to open or close the blind."
-msgstr ""
+#, fuzzy
+#| msgid "Click and drag to draw a beam of light on your picture."
+msgid "Click and drag to draw the blind, move left or right to open or close."
+msgstr "Klick und bewege die Maus, um helle Kreise auf das Bild zu malen."
 
 #: ../../magic/src/blocks_chalk_drip.c:132
 msgid "Blocks"
@@ -991,51 +991,50 @@ msgstr "Klicke, um das Bild zu spiegeln."
 
 #: ../../magic/src/mosaic_shaped.c:134
 #, fuzzy
-msgid "Mosaic square"
-msgstr "Magie"
+#| msgid "Square"
+msgid "Square Mosaic"
+msgstr "Quadrat"
 
 #: ../../magic/src/mosaic_shaped.c:135
 #, fuzzy
-msgid "Mosaic hexagon"
+msgid "Hexagon Mosaic"
 msgstr "Magie"
 
 #: ../../magic/src/mosaic_shaped.c:136
-msgid "Mosaic irregular"
+msgid "Irregular Mosaic"
 msgstr ""
 
 #: ../../magic/src/mosaic_shaped.c:141
 #, fuzzy
 msgid ""
-"Click and move the mouse to add a mosaic squared effect to parts of your "
-"picture."
+"Click and move the mouse to add a square mosaic to parts of your picture."
 msgstr "Klicke, um das Bild zu spiegeln."
 
 #: ../../magic/src/mosaic_shaped.c:142
 #, fuzzy
-msgid "Click to add a mosaic squared effect to your entire picture."
+msgid "Click to add a square mosaic to your entire picture."
 msgstr "Klicke, um das Bild zu spiegeln."
 
 #: ../../magic/src/mosaic_shaped.c:144
 #, fuzzy
 msgid ""
-"Click and move the mouse to add a mosaic hexagonal effect to parts of your "
-"picture."
+"Click and move the mouse to add a hexagonal mosaic to parts of your picture."
 msgstr "Klicke, um das Bild zu spiegeln."
 
 #: ../../magic/src/mosaic_shaped.c:145
 #, fuzzy
-msgid "Click to add a mosaic hexagonal effect to your entire picture."
+msgid "Click to add a hexagonal mosaic to your entire picture."
 msgstr "Klicke, um das Bild zu spiegeln."
 
 #: ../../magic/src/mosaic_shaped.c:147
 #, fuzzy
 msgid ""
-"Click and move the mouse to add a irregular mosaic to parts of your picture."
+"Click and move the mouse to add an irregular mosaic to parts of your picture."
 msgstr "Klicke, um das Bild zu spiegeln."
 
 #: ../../magic/src/mosaic_shaped.c:148
 #, fuzzy
-msgid "Click to add a irregular mosaic to your entire picture."
+msgid "Click to add an irregular mosaic to your entire picture."
 msgstr "Klicke, um das Bild zu spiegeln."
 
 #: ../../magic/src/negative.c:72
@@ -1085,8 +1084,7 @@ msgstr ""
 
 #: ../../magic/src/perspective.c:154
 #, fuzzy
-msgid ""
-"Click and drag to up to zoom in or drag to down to zoom out the picture."
+msgid "Click and drag up to zoom in or drag down to zoom out the picture."
 msgstr "Klick und bewege die Maus, um das Bild zu verschieben."
 
 #: ../../magic/src/rails.c:101
@@ -1360,6 +1358,34 @@ msgstr ""
 "Klicke, um das Bild wellig zu machen. Klicke nach oben für niedrige Wellen, "
 "nach unten für hohe Wellen, nach links für kurze Wellen und nach rechts für "
 "lange Wellen."
+
+#, fuzzy
+#~ msgid "Mosaic square"
+#~ msgstr "Magie"
+
+#, fuzzy
+#~ msgid "Mosaic hexagon"
+#~ msgstr "Magie"
+
+#, fuzzy
+#~ msgid ""
+#~ "Click and move the mouse to add a mosaic squared effect to parts of your "
+#~ "picture."
+#~ msgstr "Klicke, um das Bild zu spiegeln."
+
+#, fuzzy
+#~ msgid "Click to add a mosaic squared effect to your entire picture."
+#~ msgstr "Klicke, um das Bild zu spiegeln."
+
+#, fuzzy
+#~ msgid ""
+#~ "Click and move the mouse to add a mosaic hexagonal effect to parts of "
+#~ "your picture."
+#~ msgstr "Klicke, um das Bild zu spiegeln."
+
+#, fuzzy
+#~ msgid "Click to add a mosaic hexagonal effect to your entire picture."
+#~ msgstr "Klicke, um das Bild zu spiegeln."
 
 #~ msgid "qy"
 #~ msgstr "qy"

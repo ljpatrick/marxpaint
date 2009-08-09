@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint 0.9.17\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-08-08 16:39-0700\n"
+"POT-Creation-Date: 2009-08-09 23:46+0100\n"
 "PO-Revision-Date: 2007-08-30 18:24+0200\n"
 "Last-Translator: Pablo Saratxaga <pablo@walon.org>\n"
 "Language-Team: Walloon <linux-wa@walon.org>\n"
@@ -670,38 +670,38 @@ msgstr "Aa"
 
 #. Admittedly stupid way of determining which keys can be used for
 #. positive and negative responses in dialogs (e.g., [Y] (for 'yes') in English)
-#: ../tuxpaint.c:11661
+#: ../tuxpaint.c:11663
 msgid "Yes"
 msgstr "Oyi"
 
-#: ../tuxpaint.c:11665
+#: ../tuxpaint.c:11667
 msgid "No"
 msgstr "Neni"
 
 #. Prompt to ask whether user wishes to save over old version of their file
-#: ../tuxpaint.c:12631
+#: ../tuxpaint.c:12633
 msgid "Replace the picture with your changes?"
 msgstr "Replaecî l' imådje avou vos candjmints?"
 
 #. Positive response to saving over old version
 #. (like a 'File:Save' action in other applications)
-#: ../tuxpaint.c:12635
+#: ../tuxpaint.c:12637
 msgid "Yes, replace the old one!"
 msgstr "Oyi, replaecî l' vî!"
 
 #. Negative response to saving over old version (saves a new image)
 #. (like a 'File:Save As...' action in other applications)
-#: ../tuxpaint.c:12639
+#: ../tuxpaint.c:12641
 msgid "No, save a new file!"
 msgstr "Neni, schaper en on novea fitchî"
 
-#: ../tuxpaint.c:13402
+#: ../tuxpaint.c:13404
 msgid "Choose the picture you want, then click “Open”."
 msgstr "Tchoezixhoz l' imådje ki vos vloz, poy clitchîz so «Drovi»."
 
 #. Let user choose images:
 #. Instructions for Slideshow file dialog (FIXME: Make a #define)
-#: ../tuxpaint.c:14389 ../tuxpaint.c:14703
+#: ../tuxpaint.c:14391 ../tuxpaint.c:14705
 msgid "Choose the pictures you want, then click “Play”."
 msgstr "Tchoezixhoz l' imådje ki vos vloz, poy clitchîz so «Djouwer»."
 
@@ -736,10 +736,10 @@ msgid "Blind"
 msgstr ""
 
 #: ../../magic/src/blind.c:97
-msgid ""
-"Click on a side and drag the blind to were you want, slide on the first lame "
-"to open or close the blind."
+#, fuzzy
+msgid "Click and drag to draw the blind, move left or right to open or close."
 msgstr ""
+"Clitchîz et s' bodjîz l' sori po mete des bokets d' l' imådje pus féns."
 
 #: ../../magic/src/blocks_chalk_drip.c:132
 msgid "Blocks"
@@ -1007,51 +1007,50 @@ msgstr "Clitchîz po mete l' imådje come dins on muroe."
 
 #: ../../magic/src/mosaic_shaped.c:134
 #, fuzzy
-msgid "Mosaic square"
-msgstr "Madjike"
+#| msgid "Square"
+msgid "Square Mosaic"
+msgstr "Cwåré"
 
 #: ../../magic/src/mosaic_shaped.c:135
 #, fuzzy
-msgid "Mosaic hexagon"
+msgid "Hexagon Mosaic"
 msgstr "Madjike"
 
 #: ../../magic/src/mosaic_shaped.c:136
-msgid "Mosaic irregular"
+msgid "Irregular Mosaic"
 msgstr ""
 
 #: ../../magic/src/mosaic_shaped.c:141
 #, fuzzy
 msgid ""
-"Click and move the mouse to add a mosaic squared effect to parts of your "
-"picture."
+"Click and move the mouse to add a square mosaic to parts of your picture."
 msgstr "Clitchîz po mete l' imådje come dins on muroe."
 
 #: ../../magic/src/mosaic_shaped.c:142
 #, fuzzy
-msgid "Click to add a mosaic squared effect to your entire picture."
+msgid "Click to add a square mosaic to your entire picture."
 msgstr "Clitchîz po mete l' imådje come dins on muroe."
 
 #: ../../magic/src/mosaic_shaped.c:144
 #, fuzzy
 msgid ""
-"Click and move the mouse to add a mosaic hexagonal effect to parts of your "
-"picture."
+"Click and move the mouse to add a hexagonal mosaic to parts of your picture."
 msgstr "Clitchîz po mete l' imådje come dins on muroe."
 
 #: ../../magic/src/mosaic_shaped.c:145
 #, fuzzy
-msgid "Click to add a mosaic hexagonal effect to your entire picture."
+msgid "Click to add a hexagonal mosaic to your entire picture."
 msgstr "Clitchîz po mete l' imådje come dins on muroe."
 
 #: ../../magic/src/mosaic_shaped.c:147
 #, fuzzy
 msgid ""
-"Click and move the mouse to add a irregular mosaic to parts of your picture."
+"Click and move the mouse to add an irregular mosaic to parts of your picture."
 msgstr "Clitchîz po mete l' imådje come dins on muroe."
 
 #: ../../magic/src/mosaic_shaped.c:148
 #, fuzzy
-msgid "Click to add a irregular mosaic to your entire picture."
+msgid "Click to add an irregular mosaic to your entire picture."
 msgstr "Clitchîz po mete l' imådje come dins on muroe."
 
 #: ../../magic/src/negative.c:72
@@ -1100,8 +1099,7 @@ msgstr ""
 
 #: ../../magic/src/perspective.c:154
 #, fuzzy
-msgid ""
-"Click and drag to up to zoom in or drag to down to zoom out the picture."
+msgid "Click and drag up to zoom in or drag down to zoom out the picture."
 msgstr "Clitchîz et s' bodjîz l' sori po-z adoûci des bokets d' l' imådje."
 
 #: ../../magic/src/rails.c:101
@@ -1377,6 +1375,34 @@ msgid ""
 "waves, the bottom for taller waves, the left for small waves, and the right "
 "for long waves."
 msgstr ""
+
+#, fuzzy
+#~ msgid "Mosaic square"
+#~ msgstr "Madjike"
+
+#, fuzzy
+#~ msgid "Mosaic hexagon"
+#~ msgstr "Madjike"
+
+#, fuzzy
+#~ msgid ""
+#~ "Click and move the mouse to add a mosaic squared effect to parts of your "
+#~ "picture."
+#~ msgstr "Clitchîz po mete l' imådje come dins on muroe."
+
+#, fuzzy
+#~ msgid "Click to add a mosaic squared effect to your entire picture."
+#~ msgstr "Clitchîz po mete l' imådje come dins on muroe."
+
+#, fuzzy
+#~ msgid ""
+#~ "Click and move the mouse to add a mosaic hexagonal effect to parts of "
+#~ "your picture."
+#~ msgstr "Clitchîz po mete l' imådje come dins on muroe."
+
+#, fuzzy
+#~ msgid "Click to add a mosaic hexagonal effect to your entire picture."
+#~ msgstr "Clitchîz po mete l' imådje come dins on muroe."
 
 #~ msgid "qy"
 #~ msgstr "qy"

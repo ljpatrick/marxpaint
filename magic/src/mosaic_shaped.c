@@ -131,9 +131,9 @@ const char * mosaic_shaped_pattern_filenames[mosaic_shaped_NUM_TOOLS] = {
 };
 
 const char * mosaic_shaped_names[mosaic_shaped_NUM_TOOLS] = {
-  gettext_noop("Mosaic square"),
-  gettext_noop("Mosaic hexagon"),
-  gettext_noop("Mosaic irregular"),
+  gettext_noop("Square Mosaic"),
+  gettext_noop("Hexagon Mosaic"),
+  gettext_noop("Irregular Mosaic"),
 
 };
 

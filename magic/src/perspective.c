@@ -151,7 +151,7 @@ const char * perspective_descs[perspective_NUM_TOOLS] = {
   gettext_noop("Click on the corners and drag where you want to stretch the picture."),
    
 
-  gettext_noop("Click and drag to up to zoom in or drag to down to zoom out the picture."),
+  gettext_noop("Click and drag up to zoom in or drag down to zoom out the picture."),
   
 
 };

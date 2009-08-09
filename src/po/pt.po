@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint 0.9.21\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-08-08 16:39-0700\n"
+"POT-Creation-Date: 2009-08-09 23:46+0100\n"
 "PO-Revision-Date: 2009-08-03 12:11-0000\n"
 "Last-Translator: Sérgio Marques <smarquespt@gmail.com>\n"
 "Language-Team: Portuguese <translation-team-pt@lists.sourceforge.net>\n"
@@ -657,38 +657,38 @@ msgstr "Aa"
 
 #. Admittedly stupid way of determining which keys can be used for
 #. positive and negative responses in dialogs (e.g., [Y] (for 'yes') in English)
-#: ../tuxpaint.c:11661
+#: ../tuxpaint.c:11663
 msgid "Yes"
 msgstr "Sim"
 
-#: ../tuxpaint.c:11665
+#: ../tuxpaint.c:11667
 msgid "No"
 msgstr "Não"
 
 #. Prompt to ask whether user wishes to save over old version of their file
-#: ../tuxpaint.c:12631
+#: ../tuxpaint.c:12633
 msgid "Replace the picture with your changes?"
 msgstr "Substituir a imagem com as alterações?"
 
 #. Positive response to saving over old version
 #. (like a 'File:Save' action in other applications)
-#: ../tuxpaint.c:12635
+#: ../tuxpaint.c:12637
 msgid "Yes, replace the old one!"
 msgstr "Sim, substitui o antigo!"
 
 #. Negative response to saving over old version (saves a new image)
 #. (like a 'File:Save As...' action in other applications)
-#: ../tuxpaint.c:12639
+#: ../tuxpaint.c:12641
 msgid "No, save a new file!"
 msgstr "Não, guarda como um novo desenho!"
 
-#: ../tuxpaint.c:13402
+#: ../tuxpaint.c:13404
 msgid "Choose the picture you want, then click “Open”."
 msgstr "Escolhe a imagem que queres e clica em “Abrir”."
 
 #. Let user choose images:
 #. Instructions for Slideshow file dialog (FIXME: Make a #define)
-#: ../tuxpaint.c:14389 ../tuxpaint.c:14703
+#: ../tuxpaint.c:14391 ../tuxpaint.c:14705
 msgid "Choose the pictures you want, then click “Play”."
 msgstr "Escolhe as imagens que queres e clica em “Mostrar”."
 
@@ -721,12 +721,10 @@ msgid "Blind"
 msgstr "Persiana"
 
 #: ../../magic/src/blind.c:97
-msgid ""
-"Click on a side and drag the blind to were you want, slide on the first lame "
-"to open or close the blind."
-msgstr ""
-"Clica nul lado e arrasta a persiana para onde a queres, desliza na primeira "
-"para abrir ou fecha-la."
+#, fuzzy
+#| msgid "Click and drag to draw a beam of light on your picture."
+msgid "Click and drag to draw the blind, move left or right to open or close."
+msgstr "Clica e arrasta para desenhar um feixe de luz na imagem."
 
 #: ../../magic/src/blocks_chalk_drip.c:132
 msgid "Blocks"
@@ -964,50 +962,70 @@ msgid "Click to add a mosaic effect to your entire picture."
 msgstr "Clica para adicionar um efeito de mosaico à imagem."
 
 #: ../../magic/src/mosaic_shaped.c:134
-msgid "Mosaic square"
-msgstr "Mosaico quadrado"
+#, fuzzy
+#| msgid "Square"
+msgid "Square Mosaic"
+msgstr "Quadrado"
 
 #: ../../magic/src/mosaic_shaped.c:135
-msgid "Mosaic hexagon"
-msgstr "Mosaico hexagonal"
+#, fuzzy
+#| msgid "Mosaic"
+msgid "Hexagon Mosaic"
+msgstr "Mosaico"
 
 #: ../../magic/src/mosaic_shaped.c:136
-msgid "Mosaic irregular"
-msgstr "Mosaico irregular"
+msgid "Irregular Mosaic"
+msgstr ""
 
 #: ../../magic/src/mosaic_shaped.c:141
+#, fuzzy
+#| msgid ""
+#| "Click and move the mouse to add a irregular mosaic to parts of your "
+#| "picture."
 msgid ""
-"Click and move the mouse to add a mosaic squared effect to parts of your "
-"picture."
+"Click and move the mouse to add a square mosaic to parts of your picture."
 msgstr ""
-"Clica e move o rato para adicionar um efeito de mosaico quadrado em algumas "
+"Clica e move o rato para adicionar um efeito de mosaico irregular em algumas "
 "partes da imagem."
 
 #: ../../magic/src/mosaic_shaped.c:142
-msgid "Click to add a mosaic squared effect to your entire picture."
-msgstr "Clica para adicionar um efeito de mosaico quadrado à imagem."
+#, fuzzy
+#| msgid "Click to add a irregular mosaic to your entire picture."
+msgid "Click to add a square mosaic to your entire picture."
+msgstr "Clica para adicionar um efeito de mosaico irregular à imagem."
 
 #: ../../magic/src/mosaic_shaped.c:144
+#, fuzzy
+#| msgid ""
+#| "Click and move the mouse to add a irregular mosaic to parts of your "
+#| "picture."
 msgid ""
-"Click and move the mouse to add a mosaic hexagonal effect to parts of your "
-"picture."
+"Click and move the mouse to add a hexagonal mosaic to parts of your picture."
 msgstr ""
-"Clica e move o rato para adicionar um efeito de mosaico hexagonal em algumas "
+"Clica e move o rato para adicionar um efeito de mosaico irregular em algumas "
 "partes da imagem."
 
 #: ../../magic/src/mosaic_shaped.c:145
-msgid "Click to add a mosaic hexagonal effect to your entire picture."
-msgstr "Clica para adicionar um efeito de mosaico hexagonal à imagem."
+#, fuzzy
+#| msgid "Click to add a irregular mosaic to your entire picture."
+msgid "Click to add a hexagonal mosaic to your entire picture."
+msgstr "Clica para adicionar um efeito de mosaico irregular à imagem."
 
 #: ../../magic/src/mosaic_shaped.c:147
+#, fuzzy
+#| msgid ""
+#| "Click and move the mouse to add a irregular mosaic to parts of your "
+#| "picture."
 msgid ""
-"Click and move the mouse to add a irregular mosaic to parts of your picture."
+"Click and move the mouse to add an irregular mosaic to parts of your picture."
 msgstr ""
 "Clica e move o rato para adicionar um efeito de mosaico irregular em algumas "
 "partes da imagem."
 
 #: ../../magic/src/mosaic_shaped.c:148
-msgid "Click to add a irregular mosaic to your entire picture."
+#, fuzzy
+#| msgid "Click to add a irregular mosaic to your entire picture."
+msgid "Click to add an irregular mosaic to your entire picture."
 msgstr "Clica para adicionar um efeito de mosaico irregular à imagem."
 
 #: ../../magic/src/negative.c:72
@@ -1051,8 +1069,7 @@ msgstr "Clica e arrasta o rato para realçar a imagem."
 #: ../../magic/src/perspective.c:154
 #, fuzzy
 #| msgid "Click and drag to squirt toothpaste onto your picture."
-msgid ""
-"Click and drag to up to zoom in or drag to down to zoom out the picture."
+msgid "Click and drag up to zoom in or drag down to zoom out the picture."
 msgstr "Clica e arrasta para esguichar pasta de dentes na imagem."
 
 #: ../../magic/src/rails.c:101
@@ -1304,6 +1321,42 @@ msgstr ""
 "Clica para fazer ondulações horizontais na imagem. Clica para cima para "
 "ondas curtas, para baixo para ondas altas, para a esquerda para ondas "
 "pequenas e para a direita para ondas compridas."
+
+#~ msgid "Mosaic square"
+#~ msgstr "Mosaico quadrado"
+
+#~ msgid "Mosaic hexagon"
+#~ msgstr "Mosaico hexagonal"
+
+#~ msgid "Mosaic irregular"
+#~ msgstr "Mosaico irregular"
+
+#~ msgid ""
+#~ "Click on a side and drag the blind to were you want, slide on the first "
+#~ "lame to open or close the blind."
+#~ msgstr ""
+#~ "Clica nul lado e arrasta a persiana para onde a queres, desliza na "
+#~ "primeira para abrir ou fecha-la."
+
+#~ msgid ""
+#~ "Click and move the mouse to add a mosaic squared effect to parts of your "
+#~ "picture."
+#~ msgstr ""
+#~ "Clica e move o rato para adicionar um efeito de mosaico quadrado em "
+#~ "algumas partes da imagem."
+
+#~ msgid "Click to add a mosaic squared effect to your entire picture."
+#~ msgstr "Clica para adicionar um efeito de mosaico quadrado à imagem."
+
+#~ msgid ""
+#~ "Click and move the mouse to add a mosaic hexagonal effect to parts of "
+#~ "your picture."
+#~ msgstr ""
+#~ "Clica e move o rato para adicionar um efeito de mosaico hexagonal em "
+#~ "algumas partes da imagem."
+
+#~ msgid "Click to add a mosaic hexagonal effect to your entire picture."
+#~ msgstr "Clica para adicionar um efeito de mosaico hexagonal à imagem."
 
 #~ msgid "qy"
 #~ msgstr "qy"

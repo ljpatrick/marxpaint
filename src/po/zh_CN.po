@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint 0.9.11\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-08-08 16:39-0700\n"
+"POT-Creation-Date: 2009-08-09 23:46+0100\n"
 "PO-Revision-Date: 2008-10-14 12:34+0800\n"
 "Last-Translator: Ijeal <tomorrow1881@sohu.com>\n"
 "Language-Team: zh_CN <i18n-translation@lists.linux.net.cn>\n"
@@ -658,38 +658,38 @@ msgstr ""
 
 #. Admittedly stupid way of determining which keys can be used for
 #. positive and negative responses in dialogs (e.g., [Y] (for 'yes') in English)
-#: ../tuxpaint.c:11661
+#: ../tuxpaint.c:11663
 msgid "Yes"
 msgstr "是的"
 
-#: ../tuxpaint.c:11665
+#: ../tuxpaint.c:11667
 msgid "No"
 msgstr "不要"
 
 #. Prompt to ask whether user wishes to save over old version of their file
-#: ../tuxpaint.c:12631
+#: ../tuxpaint.c:12633
 msgid "Replace the picture with your changes?"
 msgstr "确信要更改图片？"
 
 #. Positive response to saving over old version
 #. (like a 'File:Save' action in other applications)
-#: ../tuxpaint.c:12635
+#: ../tuxpaint.c:12637
 msgid "Yes, replace the old one!"
 msgstr "是的，替换原来的图片！"
 
 #. Negative response to saving over old version (saves a new image)
 #. (like a 'File:Save As...' action in other applications)
-#: ../tuxpaint.c:12639
+#: ../tuxpaint.c:12641
 msgid "No, save a new file!"
 msgstr "不，保存到新文件"
 
-#: ../tuxpaint.c:13402
+#: ../tuxpaint.c:13404
 msgid "Choose the picture you want, then click “Open”."
 msgstr "选择你要打开的图片，然后点击“打开”。"
 
 #. Let user choose images:
 #. Instructions for Slideshow file dialog (FIXME: Make a #define)
-#: ../tuxpaint.c:14389 ../tuxpaint.c:14703
+#: ../tuxpaint.c:14391 ../tuxpaint.c:14705
 msgid "Choose the pictures you want, then click “Play”."
 msgstr "选择你要打开的图片，然后点击“打开”。"
 
@@ -732,10 +732,10 @@ msgid "Blind"
 msgstr "外国人"
 
 #: ../../magic/src/blind.c:97
-msgid ""
-"Click on a side and drag the blind to were you want, slide on the first lame "
-"to open or close the blind."
-msgstr ""
+#, fuzzy
+#| msgid "Click and drag to draw a beam of light on your picture."
+msgid "Click and drag to draw the blind, move left or right to open or close."
+msgstr "单击然后移动鼠标在你的图画上画一束光。"
 
 #: ../../magic/src/blocks_chalk_drip.c:132
 msgid "Blocks"
@@ -974,18 +974,18 @@ msgstr "单击为你的整张图画添加马赛克效果。"
 
 #: ../../magic/src/mosaic_shaped.c:134
 #, fuzzy
-#| msgid "Mosaic"
-msgid "Mosaic square"
-msgstr "马赛克"
+#| msgid "Square"
+msgid "Square Mosaic"
+msgstr "正方形"
 
 #: ../../magic/src/mosaic_shaped.c:135
 #, fuzzy
 #| msgid "Mosaic"
-msgid "Mosaic hexagon"
+msgid "Hexagon Mosaic"
 msgstr "马赛克"
 
 #: ../../magic/src/mosaic_shaped.c:136
-msgid "Mosaic irregular"
+msgid "Irregular Mosaic"
 msgstr ""
 
 #: ../../magic/src/mosaic_shaped.c:141
@@ -993,14 +993,13 @@ msgstr ""
 #| msgid ""
 #| "Click and move the mouse to add a mosaic effect to parts of your picture."
 msgid ""
-"Click and move the mouse to add a mosaic squared effect to parts of your "
-"picture."
+"Click and move the mouse to add a square mosaic to parts of your picture."
 msgstr "单击然后移动鼠标为你的图画部分添加马赛克效果。"
 
 #: ../../magic/src/mosaic_shaped.c:142
 #, fuzzy
 #| msgid "Click to add a mosaic effect to your entire picture."
-msgid "Click to add a mosaic squared effect to your entire picture."
+msgid "Click to add a square mosaic to your entire picture."
 msgstr "单击为你的整张图画添加马赛克效果。"
 
 #: ../../magic/src/mosaic_shaped.c:144
@@ -1008,14 +1007,13 @@ msgstr "单击为你的整张图画添加马赛克效果。"
 #| msgid ""
 #| "Click and move the mouse to add a mosaic effect to parts of your picture."
 msgid ""
-"Click and move the mouse to add a mosaic hexagonal effect to parts of your "
-"picture."
+"Click and move the mouse to add a hexagonal mosaic to parts of your picture."
 msgstr "单击然后移动鼠标为你的图画部分添加马赛克效果。"
 
 #: ../../magic/src/mosaic_shaped.c:145
 #, fuzzy
 #| msgid "Click to add a mosaic effect to your entire picture."
-msgid "Click to add a mosaic hexagonal effect to your entire picture."
+msgid "Click to add a hexagonal mosaic to your entire picture."
 msgstr "单击为你的整张图画添加马赛克效果。"
 
 #: ../../magic/src/mosaic_shaped.c:147
@@ -1023,13 +1021,13 @@ msgstr "单击为你的整张图画添加马赛克效果。"
 #| msgid ""
 #| "Click and move the mouse to add a mosaic effect to parts of your picture."
 msgid ""
-"Click and move the mouse to add a irregular mosaic to parts of your picture."
+"Click and move the mouse to add an irregular mosaic to parts of your picture."
 msgstr "单击然后移动鼠标为你的图画部分添加马赛克效果。"
 
 #: ../../magic/src/mosaic_shaped.c:148
 #, fuzzy
 #| msgid "Click to add a mosaic effect to your entire picture."
-msgid "Click to add a irregular mosaic to your entire picture."
+msgid "Click to add an irregular mosaic to your entire picture."
 msgstr "单击为你的整张图画添加马赛克效果。"
 
 #: ../../magic/src/negative.c:72
@@ -1077,8 +1075,7 @@ msgstr "单击然后移动鼠标将图片凸起。"
 #: ../../magic/src/perspective.c:154
 #, fuzzy
 #| msgid "Click and drag to squirt toothpaste onto your picture."
-msgid ""
-"Click and drag to up to zoom in or drag to down to zoom out the picture."
+msgid "Click and drag up to zoom in or drag down to zoom out the picture."
 msgstr "单击并拖动在图画上喷出牙膏。"
 
 #: ../../magic/src/rails.c:101
@@ -1335,6 +1332,42 @@ msgid ""
 msgstr ""
 "单击使你的图画起垂直波纹。单击顶部画低波纹，单击底部画高波纹，单击左面画小波"
 "纹，单击右面画长波纹。"
+
+#, fuzzy
+#~| msgid "Mosaic"
+#~ msgid "Mosaic square"
+#~ msgstr "马赛克"
+
+#, fuzzy
+#~| msgid "Mosaic"
+#~ msgid "Mosaic hexagon"
+#~ msgstr "马赛克"
+
+#, fuzzy
+#~| msgid ""
+#~| "Click and move the mouse to add a mosaic effect to parts of your picture."
+#~ msgid ""
+#~ "Click and move the mouse to add a mosaic squared effect to parts of your "
+#~ "picture."
+#~ msgstr "单击然后移动鼠标为你的图画部分添加马赛克效果。"
+
+#, fuzzy
+#~| msgid "Click to add a mosaic effect to your entire picture."
+#~ msgid "Click to add a mosaic squared effect to your entire picture."
+#~ msgstr "单击为你的整张图画添加马赛克效果。"
+
+#, fuzzy
+#~| msgid ""
+#~| "Click and move the mouse to add a mosaic effect to parts of your picture."
+#~ msgid ""
+#~ "Click and move the mouse to add a mosaic hexagonal effect to parts of "
+#~ "your picture."
+#~ msgstr "单击然后移动鼠标为你的图画部分添加马赛克效果。"
+
+#, fuzzy
+#~| msgid "Click to add a mosaic effect to your entire picture."
+#~ msgid "Click to add a mosaic hexagonal effect to your entire picture."
+#~ msgstr "单击为你的整张图画添加马赛克效果。"
 
 #, fuzzy
 #~| msgid "Click and drag to draw train track rails on your picture."

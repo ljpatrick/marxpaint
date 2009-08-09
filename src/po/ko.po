@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Tux Paint 0.9.16\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-08-08 16:39-0700\n"
+"POT-Creation-Date: 2009-08-09 23:46+0100\n"
 "PO-Revision-Date: 2007-04-29 23:10-0400\n"
 "Last-Translator: Mark K. Kim <mkkim214@gmail.com>\n"
 "Language-Team: N/A\n"
@@ -653,38 +653,38 @@ msgstr "A가"
 
 #. Admittedly stupid way of determining which keys can be used for
 #. positive and negative responses in dialogs (e.g., [Y] (for 'yes') in English)
-#: ../tuxpaint.c:11661
+#: ../tuxpaint.c:11663
 msgid "Yes"
 msgstr "네"
 
-#: ../tuxpaint.c:11665
+#: ../tuxpaint.c:11667
 msgid "No"
 msgstr "아니요"
 
 #. Prompt to ask whether user wishes to save over old version of their file
-#: ../tuxpaint.c:12631
+#: ../tuxpaint.c:12633
 msgid "Replace the picture with your changes?"
 msgstr "전그림에 덮어쓸까요? 전그림은 없어집니다."
 
 #. Positive response to saving over old version
 #. (like a 'File:Save' action in other applications)
-#: ../tuxpaint.c:12635
+#: ../tuxpaint.c:12637
 msgid "Yes, replace the old one!"
 msgstr "네, 전그림을 덮어쓰세요!"
 
 #. Negative response to saving over old version (saves a new image)
 #. (like a 'File:Save As...' action in other applications)
-#: ../tuxpaint.c:12639
+#: ../tuxpaint.c:12641
 msgid "No, save a new file!"
 msgstr "아니요, 새로운 파일로 저장하죠"
 
-#: ../tuxpaint.c:13402
+#: ../tuxpaint.c:13404
 msgid "Choose the picture you want, then click “Open”."
 msgstr "원하는 그림을 고른후 「열기」버튼을 눌러주세요."
 
 #. Let user choose images:
 #. Instructions for Slideshow file dialog (FIXME: Make a #define)
-#: ../tuxpaint.c:14389 ../tuxpaint.c:14703
+#: ../tuxpaint.c:14391 ../tuxpaint.c:14705
 msgid "Choose the pictures you want, then click “Play”."
 msgstr "원하는 그림을 고른후 「시작」버튼을 눌러주세요."
 
@@ -717,10 +717,10 @@ msgid "Blind"
 msgstr ""
 
 #: ../../magic/src/blind.c:97
-msgid ""
-"Click on a side and drag the blind to were you want, slide on the first lame "
-"to open or close the blind."
-msgstr ""
+#, fuzzy
+#| msgid "Click and drag to draw a beam of light on your picture."
+msgid "Click and drag to draw the blind, move left or right to open or close."
+msgstr "마우스를 누르면 그림을 밝게 만들 수 있어요."
 
 #: ../../magic/src/blocks_chalk_drip.c:132
 msgid "Blocks"
@@ -956,18 +956,18 @@ msgstr "마우스를 누르면 그림을 모자이크로 덮을 수 있어요."
 
 #: ../../magic/src/mosaic_shaped.c:134
 #, fuzzy
-#| msgid "Mosaic"
-msgid "Mosaic square"
-msgstr "모자이크"
+#| msgid "Square"
+msgid "Square Mosaic"
+msgstr "정사각형"
 
 #: ../../magic/src/mosaic_shaped.c:135
 #, fuzzy
 #| msgid "Mosaic"
-msgid "Mosaic hexagon"
+msgid "Hexagon Mosaic"
 msgstr "모자이크"
 
 #: ../../magic/src/mosaic_shaped.c:136
-msgid "Mosaic irregular"
+msgid "Irregular Mosaic"
 msgstr ""
 
 #: ../../magic/src/mosaic_shaped.c:141
@@ -975,14 +975,13 @@ msgstr ""
 #| msgid ""
 #| "Click and move the mouse to add a mosaic effect to parts of your picture."
 msgid ""
-"Click and move the mouse to add a mosaic squared effect to parts of your "
-"picture."
+"Click and move the mouse to add a square mosaic to parts of your picture."
 msgstr "마우스를 누르면 그림을 모자이크로 만들 수 있어요."
 
 #: ../../magic/src/mosaic_shaped.c:142
 #, fuzzy
 #| msgid "Click to add a mosaic effect to your entire picture."
-msgid "Click to add a mosaic squared effect to your entire picture."
+msgid "Click to add a square mosaic to your entire picture."
 msgstr "마우스를 누르면 그림을 모자이크로 덮을 수 있어요."
 
 #: ../../magic/src/mosaic_shaped.c:144
@@ -990,14 +989,13 @@ msgstr "마우스를 누르면 그림을 모자이크로 덮을 수 있어요."
 #| msgid ""
 #| "Click and move the mouse to add a mosaic effect to parts of your picture."
 msgid ""
-"Click and move the mouse to add a mosaic hexagonal effect to parts of your "
-"picture."
+"Click and move the mouse to add a hexagonal mosaic to parts of your picture."
 msgstr "마우스를 누르면 그림을 모자이크로 만들 수 있어요."
 
 #: ../../magic/src/mosaic_shaped.c:145
 #, fuzzy
 #| msgid "Click to add a mosaic effect to your entire picture."
-msgid "Click to add a mosaic hexagonal effect to your entire picture."
+msgid "Click to add a hexagonal mosaic to your entire picture."
 msgstr "마우스를 누르면 그림을 모자이크로 덮을 수 있어요."
 
 #: ../../magic/src/mosaic_shaped.c:147
@@ -1005,13 +1003,13 @@ msgstr "마우스를 누르면 그림을 모자이크로 덮을 수 있어요."
 #| msgid ""
 #| "Click and move the mouse to add a mosaic effect to parts of your picture."
 msgid ""
-"Click and move the mouse to add a irregular mosaic to parts of your picture."
+"Click and move the mouse to add an irregular mosaic to parts of your picture."
 msgstr "마우스를 누르면 그림을 모자이크로 만들 수 있어요."
 
 #: ../../magic/src/mosaic_shaped.c:148
 #, fuzzy
 #| msgid "Click to add a mosaic effect to your entire picture."
-msgid "Click to add a irregular mosaic to your entire picture."
+msgid "Click to add an irregular mosaic to your entire picture."
 msgstr "마우스를 누르면 그림을 모자이크로 덮을 수 있어요."
 
 #: ../../magic/src/negative.c:72
@@ -1055,8 +1053,7 @@ msgstr "마우스를 누르면 그림을 약각 시킬 수 있어요."
 #: ../../magic/src/perspective.c:154
 #, fuzzy
 #| msgid "Click and drag to squirt toothpaste onto your picture."
-msgid ""
-"Click and drag to up to zoom in or drag to down to zoom out the picture."
+msgid "Click and drag up to zoom in or drag down to zoom out the picture."
 msgstr "마우스를 누르면 치약을 뿌릴수 있어요."
 
 #: ../../magic/src/rails.c:101
@@ -1313,6 +1310,42 @@ msgstr ""
 "그림을 위아래로 물결화 하세요.  그림의 위쪽을 누르면 짧은 물결이 되고, 밑을 "
 "누르면 큰물결이 생깁니다.  그림의 왼쪽을 누르면 작은 물결이 되고, 오른쪽을 누"
 "르면 긴물결이 생깁니다."
+
+#, fuzzy
+#~| msgid "Mosaic"
+#~ msgid "Mosaic square"
+#~ msgstr "모자이크"
+
+#, fuzzy
+#~| msgid "Mosaic"
+#~ msgid "Mosaic hexagon"
+#~ msgstr "모자이크"
+
+#, fuzzy
+#~| msgid ""
+#~| "Click and move the mouse to add a mosaic effect to parts of your picture."
+#~ msgid ""
+#~ "Click and move the mouse to add a mosaic squared effect to parts of your "
+#~ "picture."
+#~ msgstr "마우스를 누르면 그림을 모자이크로 만들 수 있어요."
+
+#, fuzzy
+#~| msgid "Click to add a mosaic effect to your entire picture."
+#~ msgid "Click to add a mosaic squared effect to your entire picture."
+#~ msgstr "마우스를 누르면 그림을 모자이크로 덮을 수 있어요."
+
+#, fuzzy
+#~| msgid ""
+#~| "Click and move the mouse to add a mosaic effect to parts of your picture."
+#~ msgid ""
+#~ "Click and move the mouse to add a mosaic hexagonal effect to parts of "
+#~ "your picture."
+#~ msgstr "마우스를 누르면 그림을 모자이크로 만들 수 있어요."
+
+#, fuzzy
+#~| msgid "Click to add a mosaic effect to your entire picture."
+#~ msgid "Click to add a mosaic hexagonal effect to your entire picture."
+#~ msgstr "마우스를 누르면 그림을 모자이크로 덮을 수 있어요."
 
 #~ msgid "Click and drag to draw string art aligned to the edges."
 #~ msgstr "마우스를 누르면 줄그림이 가장자리에 맞아서 그려져요."

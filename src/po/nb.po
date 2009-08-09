@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: nb\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-08-08 16:39-0700\n"
+"POT-Creation-Date: 2009-08-09 23:46+0100\n"
 "PO-Revision-Date: 2009-06-19 22:36+0200\n"
 "Last-Translator: Karl Ove Hufthammer <karl@huftis.org>\n"
 "Language-Team: Norwegian Nynorsk <i18n-nn@lister.ping.uio.no>\n"
@@ -650,38 +650,38 @@ msgstr "Aa"
 
 #. Admittedly stupid way of determining which keys can be used for
 #. positive and negative responses in dialogs (e.g., [Y] (for 'yes') in English)
-#: ../tuxpaint.c:11661
+#: ../tuxpaint.c:11663
 msgid "Yes"
 msgstr "Ja!"
 
-#: ../tuxpaint.c:11665
+#: ../tuxpaint.c:11667
 msgid "No"
 msgstr "Nei!"
 
 #. Prompt to ask whether user wishes to save over old version of their file
-#: ../tuxpaint.c:12631
+#: ../tuxpaint.c:12633
 msgid "Replace the picture with your changes?"
 msgstr "Vil du bytte ut den gamle tegningen med den nye?"
 
 #. Positive response to saving over old version
 #. (like a 'File:Save' action in other applications)
-#: ../tuxpaint.c:12635
+#: ../tuxpaint.c:12637
 msgid "Yes, replace the old one!"
 msgstr "Ja, bytt ut den gamle!"
 
 #. Negative response to saving over old version (saves a new image)
 #. (like a 'File:Save As...' action in other applications)
-#: ../tuxpaint.c:12639
+#: ../tuxpaint.c:12641
 msgid "No, save a new file!"
 msgstr "Nei, lagre som en ny tegning!"
 
-#: ../tuxpaint.c:13402
+#: ../tuxpaint.c:13404
 msgid "Choose the picture you want, then click “Open”."
 msgstr "Velg en tegning og trykk «Åpne»."
 
 #. Let user choose images:
 #. Instructions for Slideshow file dialog (FIXME: Make a #define)
-#: ../tuxpaint.c:14389 ../tuxpaint.c:14703
+#: ../tuxpaint.c:14391 ../tuxpaint.c:14705
 msgid "Choose the pictures you want, then click “Play”."
 msgstr "Vel tegningene du vil ha, og trykk sjå på «Kjør»."
 
@@ -715,10 +715,10 @@ msgid "Blind"
 msgstr ""
 
 #: ../../magic/src/blind.c:97
-msgid ""
-"Click on a side and drag the blind to were you want, slide on the first lame "
-"to open or close the blind."
-msgstr ""
+#, fuzzy
+#| msgid "Click and drag to draw a beam of light on your picture."
+msgid "Click and drag to draw the blind, move left or right to open or close."
+msgstr "Hold inne knappen og flytt rundt for å tegne lysstråler."
 
 #: ../../magic/src/blocks_chalk_drip.c:132
 msgid "Blocks"
@@ -965,18 +965,18 @@ msgstr "Trykk for å legge en mosaikk på hele tegningen."
 
 #: ../../magic/src/mosaic_shaped.c:134
 #, fuzzy
-#| msgid "Mosaic"
-msgid "Mosaic square"
-msgstr "Mosaikk"
+#| msgid "Square"
+msgid "Square Mosaic"
+msgstr "Kvadrat"
 
 #: ../../magic/src/mosaic_shaped.c:135
 #, fuzzy
 #| msgid "Mosaic"
-msgid "Mosaic hexagon"
+msgid "Hexagon Mosaic"
 msgstr "Mosaikk"
 
 #: ../../magic/src/mosaic_shaped.c:136
-msgid "Mosaic irregular"
+msgid "Irregular Mosaic"
 msgstr ""
 
 #: ../../magic/src/mosaic_shaped.c:141
@@ -984,8 +984,7 @@ msgstr ""
 #| msgid ""
 #| "Click and move the mouse to add a mosaic effect to parts of your picture."
 msgid ""
-"Click and move the mouse to add a mosaic squared effect to parts of your "
-"picture."
+"Click and move the mouse to add a square mosaic to parts of your picture."
 msgstr ""
 "Hold inne knappen og flytt rundt for å legge en mosaikk på deler av "
 "tegningen."
@@ -993,7 +992,7 @@ msgstr ""
 #: ../../magic/src/mosaic_shaped.c:142
 #, fuzzy
 #| msgid "Click to add a mosaic effect to your entire picture."
-msgid "Click to add a mosaic squared effect to your entire picture."
+msgid "Click to add a square mosaic to your entire picture."
 msgstr "Trykk for å legge en mosaikk på hele tegningen."
 
 #: ../../magic/src/mosaic_shaped.c:144
@@ -1001,8 +1000,7 @@ msgstr "Trykk for å legge en mosaikk på hele tegningen."
 #| msgid ""
 #| "Click and move the mouse to add a mosaic effect to parts of your picture."
 msgid ""
-"Click and move the mouse to add a mosaic hexagonal effect to parts of your "
-"picture."
+"Click and move the mouse to add a hexagonal mosaic to parts of your picture."
 msgstr ""
 "Hold inne knappen og flytt rundt for å legge en mosaikk på deler av "
 "tegningen."
@@ -1010,7 +1008,7 @@ msgstr ""
 #: ../../magic/src/mosaic_shaped.c:145
 #, fuzzy
 #| msgid "Click to add a mosaic effect to your entire picture."
-msgid "Click to add a mosaic hexagonal effect to your entire picture."
+msgid "Click to add a hexagonal mosaic to your entire picture."
 msgstr "Trykk for å legge en mosaikk på hele tegningen."
 
 #: ../../magic/src/mosaic_shaped.c:147
@@ -1018,7 +1016,7 @@ msgstr "Trykk for å legge en mosaikk på hele tegningen."
 #| msgid ""
 #| "Click and move the mouse to add a mosaic effect to parts of your picture."
 msgid ""
-"Click and move the mouse to add a irregular mosaic to parts of your picture."
+"Click and move the mouse to add an irregular mosaic to parts of your picture."
 msgstr ""
 "Hold inne knappen og flytt rundt for å legge en mosaikk på deler av "
 "tegningen."
@@ -1026,7 +1024,7 @@ msgstr ""
 #: ../../magic/src/mosaic_shaped.c:148
 #, fuzzy
 #| msgid "Click to add a mosaic effect to your entire picture."
-msgid "Click to add a irregular mosaic to your entire picture."
+msgid "Click to add an irregular mosaic to your entire picture."
 msgstr "Trykk for å legge en mosaikk på hele tegningen."
 
 #: ../../magic/src/negative.c:72
@@ -1070,8 +1068,7 @@ msgstr "Hold inne knappen og flytt rundt for å gjøre tegningen om til relieff.
 #: ../../magic/src/perspective.c:154
 #, fuzzy
 #| msgid "Click and drag to squirt toothpaste onto your picture."
-msgid ""
-"Click and drag to up to zoom in or drag to down to zoom out the picture."
+msgid "Click and drag up to zoom in or drag down to zoom out the picture."
 msgstr "Hold inne knappen og flytt rundt for å sprute tannkrem på tegningen."
 
 #: ../../magic/src/rails.c:101
@@ -1326,6 +1323,46 @@ msgstr ""
 "Trykk for å gjøre tegningen bølgete oppover. Trykk oppe for å lage lave "
 "bølger, nede for å lage høye bølger, til venstre for å lage korte bølger og "
 "til høyre for å lage lange bølger."
+
+#, fuzzy
+#~| msgid "Mosaic"
+#~ msgid "Mosaic square"
+#~ msgstr "Mosaikk"
+
+#, fuzzy
+#~| msgid "Mosaic"
+#~ msgid "Mosaic hexagon"
+#~ msgstr "Mosaikk"
+
+#, fuzzy
+#~| msgid ""
+#~| "Click and move the mouse to add a mosaic effect to parts of your picture."
+#~ msgid ""
+#~ "Click and move the mouse to add a mosaic squared effect to parts of your "
+#~ "picture."
+#~ msgstr ""
+#~ "Hold inne knappen og flytt rundt for å legge en mosaikk på deler av "
+#~ "tegningen."
+
+#, fuzzy
+#~| msgid "Click to add a mosaic effect to your entire picture."
+#~ msgid "Click to add a mosaic squared effect to your entire picture."
+#~ msgstr "Trykk for å legge en mosaikk på hele tegningen."
+
+#, fuzzy
+#~| msgid ""
+#~| "Click and move the mouse to add a mosaic effect to parts of your picture."
+#~ msgid ""
+#~ "Click and move the mouse to add a mosaic hexagonal effect to parts of "
+#~ "your picture."
+#~ msgstr ""
+#~ "Hold inne knappen og flytt rundt for å legge en mosaikk på deler av "
+#~ "tegningen."
+
+#, fuzzy
+#~| msgid "Click to add a mosaic effect to your entire picture."
+#~ msgid "Click to add a mosaic hexagonal effect to your entire picture."
+#~ msgstr "Trykk for å legge en mosaikk på hele tegningen."
 
 #~ msgid "qy"
 #~ msgstr "æé"

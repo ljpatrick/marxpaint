@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint 0.9.15\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-08-08 16:39-0700\n"
+"POT-Creation-Date: 2009-08-09 23:46+0100\n"
 "PO-Revision-Date: 2009-05-24 16:54+0900\n"
 "Last-Translator: TOYAMA Shin-ichi <shin1@wmail.plala.or.jp>\n"
 "Language-Team: japanese <shin1@wmail.plala.or.jp>\n"
@@ -665,38 +665,38 @@ msgstr "Aa"
 #  FIXME: Move elsewhere! Or not?!
 #. Admittedly stupid way of determining which keys can be used for
 #. positive and negative responses in dialogs (e.g., [Y] (for 'yes') in English)
-#: ../tuxpaint.c:11661
+#: ../tuxpaint.c:11663
 msgid "Yes"
 msgstr "はい"
 
-#: ../tuxpaint.c:11665
+#: ../tuxpaint.c:11667
 msgid "No"
 msgstr "いいえ"
 
 #. Prompt to ask whether user wishes to save over old version of their file
-#: ../tuxpaint.c:12631
+#: ../tuxpaint.c:12633
 msgid "Replace the picture with your changes?"
 msgstr "いまかいたえと まえのえを いれかえる？"
 
 #. Positive response to saving over old version
 #. (like a 'File:Save' action in other applications)
-#: ../tuxpaint.c:12635
+#: ../tuxpaint.c:12637
 msgid "Yes, replace the old one!"
 msgstr "はい、まえのえと いれかえます！"
 
 #. Negative response to saving over old version (saves a new image)
 #. (like a 'File:Save As...' action in other applications)
-#: ../tuxpaint.c:12639
+#: ../tuxpaint.c:12641
 msgid "No, save a new file!"
 msgstr "いいえ、あたらしく セーブします！"
 
-#: ../tuxpaint.c:13402
+#: ../tuxpaint.c:13404
 msgid "Choose the picture you want, then click “Open”."
 msgstr "えを えらんでから 「ひらく」をクリックしてね"
 
 #. Let user choose images:
 #. Instructions for Slideshow file dialog (FIXME: Make a #define)
-#: ../tuxpaint.c:14389 ../tuxpaint.c:14703
+#: ../tuxpaint.c:14391 ../tuxpaint.c:14705
 msgid "Choose the pictures you want, then click “Play”."
 msgstr "えを えらんでから 「かいし」をクリックしてね"
 
@@ -729,10 +729,11 @@ msgid "Blind"
 msgstr ""
 
 #: ../../magic/src/blind.c:97
-msgid ""
-"Click on a side and drag the blind to were you want, slide on the first lame "
-"to open or close the blind."
+#, fuzzy
+#| msgid "Click and drag to draw a beam of light on your picture."
+msgid "Click and drag to draw the blind, move left or right to open or close."
 msgstr ""
+"クリックしたまま マウスをうごかして かいちゅうでんとうの あかりで てらそう"
 
 #: ../../magic/src/blocks_chalk_drip.c:132
 msgid "Blocks"
@@ -976,18 +977,18 @@ msgstr ""
 
 #: ../../magic/src/mosaic_shaped.c:134
 #, fuzzy
-#| msgid "Mosaic"
-msgid "Mosaic square"
-msgstr "モザイク"
+#| msgid "Square"
+msgid "Square Mosaic"
+msgstr "ましかく"
 
 #: ../../magic/src/mosaic_shaped.c:135
 #, fuzzy
 #| msgid "Mosaic"
-msgid "Mosaic hexagon"
+msgid "Hexagon Mosaic"
 msgstr "モザイク"
 
 #: ../../magic/src/mosaic_shaped.c:136
-msgid "Mosaic irregular"
+msgid "Irregular Mosaic"
 msgstr ""
 
 #: ../../magic/src/mosaic_shaped.c:141
@@ -995,14 +996,13 @@ msgstr ""
 #| msgid ""
 #| "Click and move the mouse to add a mosaic effect to parts of your picture."
 msgid ""
-"Click and move the mouse to add a mosaic squared effect to parts of your "
-"picture."
+"Click and move the mouse to add a square mosaic to parts of your picture."
 msgstr "クリックしたまま　マウスをうごかして　モザイクえのようにしよう"
 
 #: ../../magic/src/mosaic_shaped.c:142
 #, fuzzy
 #| msgid "Click to add a mosaic effect to your entire picture."
-msgid "Click to add a mosaic squared effect to your entire picture."
+msgid "Click to add a square mosaic to your entire picture."
 msgstr ""
 "クリックしたまま　マウスをうごかして　えの　ぜんたいを　モザイクえのようにし"
 "よう"
@@ -1012,14 +1012,13 @@ msgstr ""
 #| msgid ""
 #| "Click and move the mouse to add a mosaic effect to parts of your picture."
 msgid ""
-"Click and move the mouse to add a mosaic hexagonal effect to parts of your "
-"picture."
+"Click and move the mouse to add a hexagonal mosaic to parts of your picture."
 msgstr "クリックしたまま　マウスをうごかして　モザイクえのようにしよう"
 
 #: ../../magic/src/mosaic_shaped.c:145
 #, fuzzy
 #| msgid "Click to add a mosaic effect to your entire picture."
-msgid "Click to add a mosaic hexagonal effect to your entire picture."
+msgid "Click to add a hexagonal mosaic to your entire picture."
 msgstr ""
 "クリックしたまま　マウスをうごかして　えの　ぜんたいを　モザイクえのようにし"
 "よう"
@@ -1029,13 +1028,13 @@ msgstr ""
 #| msgid ""
 #| "Click and move the mouse to add a mosaic effect to parts of your picture."
 msgid ""
-"Click and move the mouse to add a irregular mosaic to parts of your picture."
+"Click and move the mouse to add an irregular mosaic to parts of your picture."
 msgstr "クリックしたまま　マウスをうごかして　モザイクえのようにしよう"
 
 #: ../../magic/src/mosaic_shaped.c:148
 #, fuzzy
 #| msgid "Click to add a mosaic effect to your entire picture."
-msgid "Click to add a irregular mosaic to your entire picture."
+msgid "Click to add an irregular mosaic to your entire picture."
 msgstr ""
 "クリックしたまま　マウスをうごかして　えの　ぜんたいを　モザイクえのようにし"
 "よう"
@@ -1081,8 +1080,7 @@ msgstr "クリックしたまま マウスをうごかして えを うきぼり
 #: ../../magic/src/perspective.c:154
 #, fuzzy
 #| msgid "Click and drag to squirt toothpaste onto your picture."
-msgid ""
-"Click and drag to up to zoom in or drag to down to zoom out the picture."
+msgid "Click and drag up to zoom in or drag down to zoom out the picture."
 msgstr "クリックしたまま マウスをうごかして えに　はみがきこを　しぼりだそう"
 
 #: ../../magic/src/rails.c:101
@@ -1347,6 +1345,46 @@ msgstr ""
 "うを クリックすれば みじかく したのほうを クリックすれば ながくなるよ。それか"
 "ら なみの たかさは ひだりのほうを クリックすれば おおきく みぎのほうを クリッ"
 "クすれば ひくくなるよ"
+
+#, fuzzy
+#~| msgid "Mosaic"
+#~ msgid "Mosaic square"
+#~ msgstr "モザイク"
+
+#, fuzzy
+#~| msgid "Mosaic"
+#~ msgid "Mosaic hexagon"
+#~ msgstr "モザイク"
+
+#, fuzzy
+#~| msgid ""
+#~| "Click and move the mouse to add a mosaic effect to parts of your picture."
+#~ msgid ""
+#~ "Click and move the mouse to add a mosaic squared effect to parts of your "
+#~ "picture."
+#~ msgstr "クリックしたまま　マウスをうごかして　モザイクえのようにしよう"
+
+#, fuzzy
+#~| msgid "Click to add a mosaic effect to your entire picture."
+#~ msgid "Click to add a mosaic squared effect to your entire picture."
+#~ msgstr ""
+#~ "クリックしたまま　マウスをうごかして　えの　ぜんたいを　モザイクえのように"
+#~ "しよう"
+
+#, fuzzy
+#~| msgid ""
+#~| "Click and move the mouse to add a mosaic effect to parts of your picture."
+#~ msgid ""
+#~ "Click and move the mouse to add a mosaic hexagonal effect to parts of "
+#~ "your picture."
+#~ msgstr "クリックしたまま　マウスをうごかして　モザイクえのようにしよう"
+
+#, fuzzy
+#~| msgid "Click to add a mosaic effect to your entire picture."
+#~ msgid "Click to add a mosaic hexagonal effect to your entire picture."
+#~ msgstr ""
+#~ "クリックしたまま　マウスをうごかして　えの　ぜんたいを　モザイクえのように"
+#~ "しよう"
 
 #~ msgid "qy"
 #~ msgstr "qy"
