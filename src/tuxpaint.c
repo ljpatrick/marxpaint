@@ -12432,8 +12432,8 @@ static void do_shape(int cx, int cy, int ox, int oy, int rotn, int use_brush)
   cy += ((y2 - y1) / 2);
 #endif
 
-  rx = ox - cx;
-  ry = oy - cy;
+  rx = abs(ox - cx);
+  ry = abs(oy - cy);
 
   /* If the shape has a 1:1 ("locked") aspect ratio, use the larger radius: */
 

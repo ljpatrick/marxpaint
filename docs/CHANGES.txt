@@ -64,6 +64,11 @@ $Id$
   * Bug Fixes
     ---------
     * Buffersize for holding Starter and image filenames was way too low.
+      (Could crash with Starter images with very long filenames.)
+
+    * Shape tool would only resize a shape if you dragged down or right,
+      not up or left.
+      (SF.net Bug #2834320)
 
 
 2009.June.28 (0.9.21)
