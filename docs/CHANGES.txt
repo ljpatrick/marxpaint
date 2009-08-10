@@ -8,14 +8,14 @@ http://www.tuxpaint.org/
 
 $Id$
 
-2009.August.8 (0.9.22)
+2009.August.10 (0.9.22)
   * New Magic Tools:
     ----------------
-    * Perspective - Change the image's perspective.
+    * Blinds - Close window blinds over your picture.
+      Perspective - Change the image's perspective.
+      Moasic Hexagon, Mosaic irregular, Mosaic square - Glass mosaic effects.
       Zoom - Zoom the image in or out.
       By Pere Pujal i Carabantes <pere@fornol.no-ip.org>
- 
-/*blind and mosaic?*/
 
   * Other Improvements:
     -------------------
