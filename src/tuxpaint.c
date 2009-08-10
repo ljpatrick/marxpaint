@@ -3,7 +3,7 @@
 
   Tux Paint - A simple drawing program for children.
   
-  Copyright (c) 2002-2008 by Bill Kendrick and others; see AUTHORS.txt
+  Copyright (c) 2002-2009 by Bill Kendrick and others; see AUTHORS.txt
   bill@newbreedsoftware.com
   http://www.tuxpaint.org/
 
@@ -22,7 +22,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
   
-  June 14, 2002 - August 9, 2009
+  June 14, 2002 - August 10, 2009
   $Id$
 */
 
@@ -1337,8 +1337,8 @@ static int cur_shape, cur_magic;
 static int cur_font, cur_eraser;
 static int cursor_left, cursor_x, cursor_y, cursor_textwidth;	/* canvas-relative */
 static int been_saved;
-static char file_id[32];
-static char starter_id[32];
+static char file_id[NAME_MAX];
+static char starter_id[NAME_MAX];
 static int brush_scroll;
 static int stamp_scroll[MAX_STAMP_GROUPS];
 static int font_scroll, magic_scroll;
@@ -11226,7 +11226,7 @@ static void autoscale_copy_smear_free(SDL_Surface * src, SDL_Surface * dst,
 static void load_starter_id(char *saved_id)
 {
   char *rname;
-  char fname[32];
+  char fname[NAME_MAX];
   FILE *fi;
   char color_tag;
   int r, g, b;

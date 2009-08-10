@@ -61,6 +61,10 @@ $Id$
     * Songhay translation
       Abdoul Cisse <abdoulseydou@hotmail.com>
 
+  * Bug Fixes
+    ---------
+    * Buffersize for holding Starter and image filenames was way too low.
+
 
 2009.June.28 (0.9.21)
   * New Starters:
