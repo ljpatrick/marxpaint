@@ -6,7 +6,7 @@
 
   Author: Adam 'foo-script' Rakowski ; foo-script@o2.pl
 
-  Copyright (c) 2002-2008 by Bill Kendrick and others; see AUTHORS.txt
+  Copyright (c) 2002-2009 by Bill Kendrick and others; see AUTHORS.txt
   bill@newbreedsoftware.com
   http://www.tuxpaint.org/
 
@@ -44,6 +44,7 @@ static Mix_Chunk * puzzle_snd;
 static int puzzle_gcd=0;		//length of side of each rectangle; 0 is temporary value.
 static int puzzle_rect_q=4;		//quantity of rectangles when using paint mode. Must be an odd value - but it's even!
 static int rects_w, rects_h;
+SDL_Surface * canvas_backup;
 
 Uint32 puzzle_api_version(void) { return(TP_MAGIC_API_VERSION); }
 
@@ -119,10 +120,13 @@ void puzzle_switchin(magic_api * api, int which, int mode, SDL_Surface * canvas)
 	puzzle_gcd=RATIO*gcd(canvas->w, canvas->h);
 	rects_w=(unsigned int)canvas->w/puzzle_gcd;
 	rects_h=(unsigned int)canvas->h/puzzle_gcd;
+        canvas_backup = SDL_CreateRGBSurface(SDL_ANYFORMAT,canvas->w, canvas->h, canvas->format->BitsPerPixel, canvas->format->Rmask, canvas->format->Gmask, canvas->format->Bmask, canvas->format->Amask);
 }
 
 void puzzle_switchout(magic_api * api, int which, int mode, SDL_Surface * canvas)
 {
+  SDL_FreeSurface(canvas_backup);
+  canvas_backup = NULL;
 }
 
 int puzzle_modes(magic_api * api, int which)
@@ -140,7 +144,7 @@ static void puzzle_draw(void * ptr, int which_tool,
   Uint8 i, j, r;		//r - random value
   SDL_Rect rect_this, rect_that;
 
-  SDL_BlitSurface(canvas, NULL, snapshot, NULL);
+  SDL_BlitSurface(canvas, NULL, canvas_backup, NULL);
 
   x = (x / puzzle_gcd) * puzzle_gcd;
   y = (y / puzzle_gcd) * puzzle_gcd;
@@ -184,7 +188,7 @@ static void puzzle_draw(void * ptr, int which_tool,
   }
   
   SDL_BlitSurface(canvas, &rect_this, canvas, &rect_that);
-  SDL_BlitSurface(snapshot, &rect_that, canvas, &rect_this);
+  SDL_BlitSurface(canvas_backup, &rect_that, canvas, &rect_this);
 }
 
 void puzzle_drag(magic_api * api, int which, SDL_Surface * canvas,
