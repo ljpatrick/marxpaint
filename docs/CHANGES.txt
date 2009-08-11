@@ -8,7 +8,7 @@ http://www.tuxpaint.org/
 
 $Id$
 
-2009.August.10 (0.9.22)
+2009.August.11 (0.9.22)
   * New Magic Tools:
     ----------------
     * Blinds - Close window blinds over your picture.
@@ -16,6 +16,10 @@ $Id$
       Moasic Hexagon, Mosaic irregular, Mosaic square - Glass mosaic effects.
       Zoom - Zoom the image in or out.
       By Pere Pujal i Carabantes <pere@fornol.no-ip.org>
+
+    * Puzzle - Slide parts of your picture around like a sliding puzzle.
+      By Adam 'foo-script' Rakowski <foo-script@o2.pl>
+      with modifications by Pere Pujal i Carabantes <pere@fornol.no-ip.org>
 
   * Other Improvements:
     -------------------
