@@ -886,6 +886,8 @@ static int starter_mirrored, starter_flipped, starter_personal;
 static Uint8 canvas_color_r, canvas_color_g, canvas_color_b;
 Uint8 * touched;
 
+int shape_radius;
+
 
 /* Magic tools API and tool handles: */
 
@@ -3730,6 +3732,8 @@ static void mainloop(void)
 	      if (!simple_shapes && !shape_no_rotate[cur_shape])
 	      {
 		shape_tool_mode = SHAPE_TOOL_MODE_ROTATE;
+  
+                shape_radius = sqrt((shape_ctr_x - shape_outer_x) * (shape_ctr_x - shape_outer_x) + (shape_ctr_y - shape_outer_y) * (shape_ctr_y - shape_outer_y));
 
 		SDL_WarpMouse(shape_outer_x + 96, shape_ctr_y);
 		do_setcursor(cursor_rotate);
@@ -3737,7 +3741,9 @@ static void mainloop(void)
 
 		/* Erase stretchy XOR: */
 
-		do_shape(shape_ctr_x, shape_ctr_y, old_x, old_y, 0, 0);
+                if (abs(shape_ctr_x - shape_outer_x) > 15 ||
+                    abs(shape_ctr_y - shape_outer_y) > 15)
+		  do_shape(shape_ctr_x, shape_ctr_y, old_x, old_y, 0, 0);
 
 		/* Make an initial rotation XOR to be erased: */
 
@@ -12625,7 +12631,24 @@ static void do_shape(int cx, int cy, int ox, int oy, int rotn, int use_brush)
 
 static int rotation(int ctr_x, int ctr_y, int ox, int oy)
 {
-  return (atan2(oy - ctr_y, ox - ctr_x) * 180 / M_PI);
+  int deg;
+
+
+  deg = (atan2(oy - ctr_y, ox - ctr_x) * 180 / M_PI);
+
+  if (shape_radius < 50)
+    deg = ((deg - 15) / 30) * 30;
+  else if (shape_radius < 100)
+    deg = ((deg - 7) / 15) * 15;
+
+  if (shape_locked[cur_shape])
+  {
+    int angle_skip;
+    angle_skip = 360 / shape_sides[cur_shape];
+    deg = deg % angle_skip;
+  }
+
+  return(deg);
 }
 
 

@@ -8,7 +8,7 @@ http://www.tuxpaint.org/
 
 $Id$
 
-2009.August.11 (0.9.22)
+2009.August.13 (0.9.22)
   * New Magic Tools:
     ----------------
     * Blinds - Close window blinds over your picture.
@@ -29,8 +29,19 @@ $Id$
       with some prompts, in some locales.
       (SF.net bug #2834461)
 
+    * Shape Tool now locks rotation into 15 or 5 degree steps, when the
+      radius of the shape is very small or small, respectively.
+      (SF.net bug #2837177)
+
+    * Shape Tool tries to avoid glitches where lines connect, when shape is
+      rotated.  (Rotation of fixed-aspect shapes like Square and Octagon
+      stays within the angle of the corners. i.e., rotating a square 140 deg.
+      actually only rotates it 30 deg., since it looks identical,
+      sans glitches.)
+      (SF.net bug #2837177)
+
  * New Starters:
-    -------------
+   -------------
     * Elephant
     * Hat
     * Old Soviet Car
