@@ -22,7 +22,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
   
-  June 14, 2002 - August 10, 2009
+  June 14, 2002 - August 17, 2009
   $Id$
 */
 
@@ -1500,7 +1500,8 @@ static void free_surface_array(SDL_Surface * surface_array[], int count);
 /*static void update_shape(int cx, int ox1, int ox2, int cy, int oy1, int oy2,
                           int fixed); */
 static void do_shape(int cx, int cy, int ox, int oy, int rotn, int use_brush);
-static int rotation(int ctr_x, int ctr_y, int ox, int oy);
+static int shape_rotation(int ctr_x, int ctr_y, int ox, int oy);
+static int brush_rotation(int ctr_x, int ctr_y, int ox, int oy);
 static int do_save(int tool, int dont_show_success_results);
 static int do_png_save(FILE * fi, const char *const fname,
 		       SDL_Surface * surf);
@@ -3396,9 +3397,9 @@ static void mainloop(void)
 	      playsound(screen, 1, SND_LINE_END, 1, event.button.x,
 			SNDDIST_NEAR);
 	      do_shape(shape_ctr_x, shape_ctr_y, shape_outer_x, shape_outer_y,
-		       rotation(shape_ctr_x, shape_ctr_y,
-				event.button.x - r_canvas.x,
-				event.button.y - r_canvas.y), 1);
+		       shape_rotation(shape_ctr_x, shape_ctr_y,
+				      event.button.x - r_canvas.x,
+			              event.button.y - r_canvas.y), 1);
 
 	      shape_tool_mode = SHAPE_TOOL_MODE_DONE;
 	      draw_tux_text(TUX_GREAT, tool_tips[TOOL_SHAPES], 1);
@@ -3749,8 +3750,8 @@ static void mainloop(void)
 
 		do_shape(shape_ctr_x, shape_ctr_y,
 			 shape_outer_x, shape_outer_y,
-			 rotation(shape_ctr_x, shape_ctr_y,
-				  shape_outer_x, shape_outer_y), 0);
+			 shape_rotation(shape_ctr_x, shape_ctr_y,
+				        shape_outer_x, shape_outer_y), 0);
 
 		playsound(screen, 1, SND_LINE_START, 1, event.button.x,
 			  SNDDIST_NEAR);
@@ -4137,12 +4138,12 @@ static void mainloop(void)
 	{
 	  do_shape(shape_ctr_x, shape_ctr_y,
 		   shape_outer_x, shape_outer_y,
-		   rotation(shape_ctr_x, shape_ctr_y, old_x, old_y), 0);
+		   shape_rotation(shape_ctr_x, shape_ctr_y, old_x, old_y), 0);
 
 
 	  do_shape(shape_ctr_x, shape_ctr_y,
 		   shape_outer_x, shape_outer_y,
-		   rotation(shape_ctr_x, shape_ctr_y, new_x, new_y), 0);
+		   shape_rotation(shape_ctr_x, shape_ctr_y, new_x, new_y), 0);
 
 
 	  /* FIXME: Do something less intensive! */
@@ -4224,7 +4225,7 @@ static void brush_draw(int x1, int y1, int x2, int y2, int update)
   direction = BRUSH_DIRECTION_NONE;
   if (brushes_directional[cur_brush])
   {
-    r = rotation(x1, y1, x2, y2) + 22;
+    r = brush_rotation(x1, y1, x2, y2) + 22;
     if (r < 0)
       r = r + 360;
 
@@ -12629,7 +12630,7 @@ static void do_shape(int cx, int cy, int ox, int oy, int rotn, int use_brush)
 
 /* What angle is the mouse away from the center of a shape? */
 
-static int rotation(int ctr_x, int ctr_y, int ox, int oy)
+static int shape_rotation(int ctr_x, int ctr_y, int ox, int oy)
 {
   int deg;
 
@@ -12647,6 +12648,18 @@ static int rotation(int ctr_x, int ctr_y, int ox, int oy)
     angle_skip = 360 / shape_sides[cur_shape];
     deg = deg % angle_skip;
   }
+
+  return(deg);
+}
+
+
+/* What angle is the mouse away from a brush drag or line draw? */
+
+static int brush_rotation(int ctr_x, int ctr_y, int ox, int oy)
+{
+  int deg;
+
+  deg = (atan2(oy - ctr_y, ox - ctr_x) * 180 / M_PI);
 
   return(deg);
 }
