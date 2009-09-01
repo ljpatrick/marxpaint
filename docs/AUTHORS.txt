@@ -202,9 +202,11 @@ $Id$
     Caroline Ford <caroline.ford.work@googlemail.com>
 
   * Silver Frame
-    Original is by Nicu Buculei and taken from Open Clip Art. Prepared by Caroline Ford <caroline.ford.work@googlemail.com>
+    Original is by Nicu Buculei and taken from Open Clip Art. Prepared by    Caroline Ford <caroline.ford.work@googlemail.com>
 
-  * Hat, Elephant, Skull, Old Soviet Car
+  * Hat, Elephant, Skull, Old Soviet Car, Bald Eagle, Car 2, 
+    Desert Tortoise, Gecko, Manatee, Pansy, Stained Glass,
+    Woodpecker
     Originals from Open Clip Art and Public Domain. 
 
 * Fonts

@@ -49,6 +49,14 @@ $Id$
     * Hat
     * Old Soviet Car
     * Skull 
+    * Bald Eagle
+    * Car 2
+    * Desert Tortoise
+    * Gecko
+    * Manatee
+    * Pansy
+    * Stained Glass
+    * Woodpecker
 
     From Open Clip Art, curated by 
     Caroline Ford<caroline.ford.work@googlemail.com>
