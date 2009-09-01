@@ -5,7 +5,7 @@ individual HTML files for each of them, and an index.html that links to
 them all. */
 
 /* Bill Kendrick <bill@newbreedsoftware.com> */
-/* 2009.08.10 */
+/* 2009.08.31 */
 
 
 /* Authors of the Magic tools: */
@@ -50,7 +50,9 @@ $AUTHOR_PERE = "Pere Pujal i Carabantes|pere@fornol.no-ip.org";
 
 $tools = array(
 
-/* FIXME: Blinds */
+  array('name'=>'Blinds',
+   'desc'=>'Click towards the edge of your picture to pull window blinds over it. Move perpendicularly to open or close the blinds.',
+   'author'=>$AUTHOR_PERE),
 
   array('name'=>'Blocks',
    'desc'=>'This makes the picture blocky looking ("pixelated") wherever you drag the mouse.',
@@ -170,10 +172,41 @@ $tools = array(
    'author'=>$AUTHOR_KENDRICK,
    'see'=>'Flip'),
 
-/* FIXME: Mosaic */
-/* FIXME: Mosaic hexagon */
-/* FIXME: Mosaic irregular */
-/* FIXME: Mosaic square */
+  array('name'=>'Mosaic',
+   'desc'=>'Adds a glass mosaic effect to your picture.',
+   'author'=>array($AUTHOR_ADAMR, $AUTHOR_PERE),
+   'see'=>array(
+                'Hexagon Mosaic',
+                'Irregular Mosaic',
+                'Square Mosaic',
+               )),
+
+  array('name'=>'Hexagon Mosaic',
+   'desc'=>'Converts parts of your picture into a mosaic of hexagon cells.',
+   'author'=>$AUTHOR_PERE,
+   'see'=>array(
+                'Irregular Mosaic',
+                'Square Mosaic',
+                'Mosaic',
+               )),
+
+  array('name'=>'Irregular Mosaic',
+   'desc'=>'Converts parts of your picture into a mosaic of irregularly-shaped cells.',
+   'author'=>$AUTHOR_PERE,
+   'see'=>array(
+                'Hexagon Mosaic',
+                'Square Mosaic',
+                'Mosaic',
+               )),
+
+  array('name'=>'Square Mosaic',
+   'desc'=>'Converts parts of your picture into a mosaic of square cells.',
+   'author'=>$AUTHOR_PERE,
+   'see'=>array(
+                'Hexagon Mosaic',
+                'Irregular Mosaic',
+                'Mosaic',
+               )),
 
   array('name'=>'Negative',
    'desc'=>'This inverts the colors wherever you drag the mouse.  (e.g., white becomes black, and vice versa.)',
@@ -207,6 +240,10 @@ $tools = array(
 
   array('name'=>'Real Rainbow',
    'desc'=>'Draw a transparent arc that looks like a real rainbow.',
+   'author'=>$AUTHOR_KENDRICK),
+
+  array('name'=>'ROYGBIV Rainbow',
+   'desc'=>'Draw a rainbow arc of red, orange, yellow, green, blue, indigo and violet.',
    'author'=>$AUTHOR_KENDRICK),
 
   array('name'=>'Ripples',

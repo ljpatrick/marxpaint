@@ -4,9 +4,9 @@
   BLIND Magic Tools Plugin
   Tux Paint - A simple drawing program for children.
 
-  Credits: Adam 'foo-script' Rakowski <foo-script@o2.pl>
+  By Pere Pujal Carabantes
 
-  Copyright (c) 2002-2008 by Bill Kendrick and others; see AUTHORS.txt
+  Copyright (c) 2002-2009 by Bill Kendrick and others; see AUTHORS.txt
   bill@newbreedsoftware.com
   http://www.tuxpaint.org/
 
@@ -94,7 +94,7 @@ char * blind_get_name(magic_api * api, int which)
 
 char * blind_get_description(magic_api * api, int which, int mode) 
 { 
-    return strdup(gettext_noop("Click and drag to draw the blind, move left or right to open or close.")); 
+    return strdup(gettext_noop("Click towards the edge of your picture to pull window blinds over it. Move perpendicularly to open or close the blinds."));
 }
 
 int blind_requires_colors(magic_api * api, int which)

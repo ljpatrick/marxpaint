@@ -8,7 +8,7 @@ http://www.tuxpaint.org/
 
 $Id$
 
-2009.August.28 (0.9.22)
+2009.August.31 (0.9.22)
   * New Magic Tools:
     ----------------
     * Blinds - Close window blinds over your picture.
@@ -20,6 +20,9 @@ $Id$
     * Puzzle - Slide parts of your picture around like a sliding puzzle.
       By Adam 'foo-script' Rakowski <foo-script@o2.pl>
       with modifications by Pere Pujal i Carabantes <pere@fornol.no-ip.org>
+
+    * ROYGBIV Rainbow - Draw a rainbow arc using solid colors of
+      Red, Orange, Yellow, Green, Blue, Indigo and Violet.
 
   * Other Improvements:
     -------------------
