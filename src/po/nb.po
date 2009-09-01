@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: nb\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-08-09 23:46+0100\n"
+"POT-Creation-Date: 2009-08-31 18:32-0700\n"
 "PO-Revision-Date: 2009-06-19 22:36+0200\n"
 "Last-Translator: Karl Ove Hufthammer <karl@huftis.org>\n"
 "Language-Team: Norwegian Nynorsk <i18n-nn@lister.ping.uio.no>\n"
@@ -395,7 +395,7 @@ msgstr "Ny"
 #. Open a saved picture
 #. buttons for the file open dialog
 #. Open dialog: 'Open' button, to load the selected picture
-#: ../tools.h:90 ../tuxpaint.c:7998
+#: ../tools.h:90 ../tuxpaint.c:8005
 msgid "Open"
 msgstr "Åpne"
 
@@ -509,179 +509,179 @@ msgid "OK then… Let’s keep drawing this one!"
 msgstr "Greit! Da fortsetter vi med denne tegningen."
 
 #. Prompt to confirm user wishes to quit
-#: ../tuxpaint.c:1855
+#: ../tuxpaint.c:1858
 msgid "Do you really want to quit?"
 msgstr "Er du sikker på at du vil avslutte?"
 
 #. Quit prompt positive response (quit)
-#: ../tuxpaint.c:1858
+#: ../tuxpaint.c:1861
 msgid "Yes, I’m done!"
 msgstr "Ja, jeg er ferdig!"
 
 #. Quit prompt negative response (don't quit)
-#: ../tuxpaint.c:1861 ../tuxpaint.c:1888
+#: ../tuxpaint.c:1864 ../tuxpaint.c:1891
 msgid "No, take me back!"
 msgstr "Nei, jeg vil tegne mer!"
 
 #. Current picture is not saved; user is quitting
-#: ../tuxpaint.c:1865
+#: ../tuxpaint.c:1868
 msgid "If you quit, you’ll lose your picture! Save it?"
 msgstr "Du mister tegningen hvis du avslutter. Vil du lagre den først?"
 
-#: ../tuxpaint.c:1866 ../tuxpaint.c:1871
+#: ../tuxpaint.c:1869 ../tuxpaint.c:1874
 msgid "Yes, save it!"
 msgstr "Ja, lagra den!"
 
-#: ../tuxpaint.c:1867 ../tuxpaint.c:1872
+#: ../tuxpaint.c:1870 ../tuxpaint.c:1875
 msgid "No, don’t bother saving!"
 msgstr "Nei, ikke lagre den!"
 
 #. Current picture is not saved; user is opening another picture
-#: ../tuxpaint.c:1870
+#: ../tuxpaint.c:1873
 msgid "Save your picture first?"
 msgstr "Vil du lagre tegningen først?"
 
 #. Error opening picture
-#: ../tuxpaint.c:1875
+#: ../tuxpaint.c:1878
 msgid "Can’t open that picture!"
 msgstr "Klarte ikke åpne tegningen."
 
 #. Generic dialog dismissal
-#: ../tuxpaint.c:1878 ../tuxpaint.c:1883 ../tuxpaint.c:1892 ../tuxpaint.c:1899
-#: ../tuxpaint.c:1908
+#: ../tuxpaint.c:1881 ../tuxpaint.c:1886 ../tuxpaint.c:1895 ../tuxpaint.c:1902
+#: ../tuxpaint.c:1911
 msgid "OK"
 msgstr "OK"
 
 #. Notification that 'Open' dialog has nothing to show
-#: ../tuxpaint.c:1882
+#: ../tuxpaint.c:1885
 msgid "There are no saved files!"
 msgstr "Det finnes ingen lagrede tegninger."
 
 #. Verification of print action
-#: ../tuxpaint.c:1886
+#: ../tuxpaint.c:1889
 msgid "Print your picture now?"
 msgstr "Er du sikker på at du vil skrive ut tegningen?"
 
-#: ../tuxpaint.c:1887
+#: ../tuxpaint.c:1890
 msgid "Yes, print it!"
 msgstr "Ja, skriv den ut!"
 
 #. Confirmation of successful (we hope) printing
-#: ../tuxpaint.c:1891
+#: ../tuxpaint.c:1894
 msgid "Your picture has been printed!"
 msgstr "Tegningen er skrevet ut."
 
 #. We got an error printing
-#: ../tuxpaint.c:1895
+#: ../tuxpaint.c:1898
 msgid "Sorry! Your picture could not be printed!"
 msgstr "Klarte ikke skrive ut tegningen."
 
 #. Notification that it's too soon to print again (--printdelay option is in effect)
-#: ../tuxpaint.c:1898
+#: ../tuxpaint.c:1901
 msgid "You can’t print yet!"
 msgstr "Du kan ikke skrive ut enda!"
 
 #. Prompt to confirm erasing a picture in the Open dialog
-#: ../tuxpaint.c:1902
+#: ../tuxpaint.c:1905
 msgid "Erase this picture?"
 msgstr "Vil du virkelig slette tegningen?"
 
-#: ../tuxpaint.c:1903
+#: ../tuxpaint.c:1906
 msgid "Yes, erase it!"
 msgstr "Ja, slett den!"
 
-#: ../tuxpaint.c:1904
+#: ../tuxpaint.c:1907
 msgid "No, don’t erase it!"
 msgstr "Nei, ikke slett den!"
 
 #. Reminder that Mouse Button 1 is the button to use in Tux Paint
-#: ../tuxpaint.c:1907
+#: ../tuxpaint.c:1910
 msgid "Remember to use the left mouse button!"
 msgstr "Husk å bruke venstre museknapp!"
 
 #. Sound has been muted (silenced) via keyboard shortcut
-#: ../tuxpaint.c:2036
+#: ../tuxpaint.c:2039
 msgid "Sound muted."
 msgstr "Lyd slått av."
 
 #. Sound has been unmuted (unsilenced) via keyboard shortcut
-#: ../tuxpaint.c:2041
+#: ../tuxpaint.c:2044
 msgid "Sound unmuted."
 msgstr "Lyd slått på."
 
 #. Wait while Text tool finishes loading fonts
-#: ../tuxpaint.c:2508
+#: ../tuxpaint.c:2511
 msgid "Please wait…"
 msgstr "Vent litt …"
 
-#: ../tuxpaint.c:7221
+#: ../tuxpaint.c:7228
 msgid "Pick a color."
 msgstr "Velg en farge."
 
 #. Open dialog: 'Erase' button, to erase/deleted the selected picture
-#: ../tuxpaint.c:8001
+#: ../tuxpaint.c:8008
 msgid "Erase"
 msgstr "Slett"
 
 #. Open dialog: 'Slides' button, to switch to slide show mode
-#: ../tuxpaint.c:8004
+#: ../tuxpaint.c:8011
 msgid "Slides"
 msgstr "Lysbilder"
 
 #. Open dialog: 'Back' button, to dismiss Open dialog without opening a picture
-#: ../tuxpaint.c:8007
+#: ../tuxpaint.c:8014
 msgid "Back"
 msgstr "Tilbake"
 
 #. Slideshow: 'Next' button, to load next slide (image)
-#: ../tuxpaint.c:8010
+#: ../tuxpaint.c:8017
 msgid "Next"
 msgstr "Neste"
 
 #. Slideshow: 'Play' button, to begin a slideshow sequence
-#: ../tuxpaint.c:8013
+#: ../tuxpaint.c:8020
 msgid "Play"
 msgstr "Kjør"
 
 #. Label for 'Letters' buttons (font selector, down the right when the Text tool is being used); used to show the difference between font faces
-#: ../tuxpaint.c:8660
+#: ../tuxpaint.c:8667
 msgid "Aa"
 msgstr "Aa"
 
 #. Admittedly stupid way of determining which keys can be used for
 #. positive and negative responses in dialogs (e.g., [Y] (for 'yes') in English)
-#: ../tuxpaint.c:11663
+#: ../tuxpaint.c:11670
 msgid "Yes"
 msgstr "Ja!"
 
-#: ../tuxpaint.c:11667
+#: ../tuxpaint.c:11674
 msgid "No"
 msgstr "Nei!"
 
 #. Prompt to ask whether user wishes to save over old version of their file
-#: ../tuxpaint.c:12633
+#: ../tuxpaint.c:12669
 msgid "Replace the picture with your changes?"
 msgstr "Vil du bytte ut den gamle tegningen med den nye?"
 
 #. Positive response to saving over old version
 #. (like a 'File:Save' action in other applications)
-#: ../tuxpaint.c:12637
+#: ../tuxpaint.c:12673
 msgid "Yes, replace the old one!"
 msgstr "Ja, bytt ut den gamle!"
 
 #. Negative response to saving over old version (saves a new image)
 #. (like a 'File:Save As...' action in other applications)
-#: ../tuxpaint.c:12641
+#: ../tuxpaint.c:12677
 msgid "No, save a new file!"
 msgstr "Nei, lagre som en ny tegning!"
 
-#: ../tuxpaint.c:13404
+#: ../tuxpaint.c:13440
 msgid "Choose the picture you want, then click “Open”."
 msgstr "Velg en tegning og trykk «Åpne»."
 
 #. Let user choose images:
 #. Instructions for Slideshow file dialog (FIXME: Make a #define)
-#: ../tuxpaint.c:14391 ../tuxpaint.c:14705
+#: ../tuxpaint.c:14427 ../tuxpaint.c:14741
 msgid "Choose the pictures you want, then click “Play”."
 msgstr "Vel tegningene du vil ha, og trykk sjå på «Kjør»."
 
@@ -715,10 +715,10 @@ msgid "Blind"
 msgstr ""
 
 #: ../../magic/src/blind.c:97
-#, fuzzy
-#| msgid "Click and drag to draw a beam of light on your picture."
-msgid "Click and drag to draw the blind, move left or right to open or close."
-msgstr "Hold inne knappen og flytt rundt for å tegne lysstråler."
+msgid ""
+"Click towards the edge of your picture to pull window blinds over it. Move "
+"perpendicularly to open or close the blinds."
+msgstr ""
 
 #: ../../magic/src/blocks_chalk_drip.c:132
 msgid "Blocks"
@@ -1071,6 +1071,22 @@ msgstr "Hold inne knappen og flytt rundt for å gjøre tegningen om til relieff.
 msgid "Click and drag up to zoom in or drag down to zoom out the picture."
 msgstr "Hold inne knappen og flytt rundt for å sprute tannkrem på tegningen."
 
+#: ../../magic/src/puzzle.c:79
+#, fuzzy
+msgid "Puzzle"
+msgstr "Fiolett!"
+
+#: ../../magic/src/puzzle.c:86
+#, fuzzy
+#| msgid "Click and drag to shift your picture around on the canvas."
+msgid "Click the part of your picture where would you like a puzzle."
+msgstr "Hold inne knappen og flytt rundt for å flytte på tegningen."
+
+#: ../../magic/src/puzzle.c:87
+#, fuzzy
+msgid "Click to make a puzzle in fullscreen mode."
+msgstr "Trykk for å speilvende tegningen!"
+
 #: ../../magic/src/rails.c:101
 msgid "Rails"
 msgstr "Jernbane"
@@ -1099,11 +1115,17 @@ msgstr "Trykk for å slippe en regndråpe på tegningen."
 msgid "Click to cover your picture with rain drops."
 msgstr "Trykk for å dekke tegnigen med regndråper."
 
-#: ../../magic/src/realrainbow.c:76
+#: ../../magic/src/realrainbow.c:86
 msgid "Real Rainbow"
 msgstr "Ekte regnbue"
 
-#: ../../magic/src/realrainbow.c:81
+#: ../../magic/src/realrainbow.c:88
+#, fuzzy
+#| msgid "Real Rainbow"
+msgid "ROYGBIV Rainbow"
+msgstr "Ekte regnbue"
+
+#: ../../magic/src/realrainbow.c:93
 msgid ""
 "Click where you want your rainbow to start, drag to where you want it to "
 "end, and then let go to draw a rainbow."
@@ -1325,6 +1347,12 @@ msgstr ""
 "til høyre for å lage lange bølger."
 
 #, fuzzy
+#~| msgid "Click and drag to draw a beam of light on your picture."
+#~ msgid ""
+#~ "Click and drag to draw the blind, move left or right to open or close."
+#~ msgstr "Hold inne knappen og flytt rundt for å tegne lysstråler."
+
+#, fuzzy
 #~| msgid "Mosaic"
 #~ msgid "Mosaic square"
 #~ msgstr "Mosaikk"
@@ -1398,19 +1426,6 @@ msgstr ""
 #~ msgid "Click to give your entire picture an \"alien\" appearance."
 #~ msgstr ""
 #~ "Hold inne knappen og flytt rundt for å forandre fargene på tegningen."
-
-#, fuzzy
-#~ msgid "Puzzle"
-#~ msgstr "Fiolett!"
-
-#, fuzzy
-#~| msgid "Click and drag to shift your picture around on the canvas."
-#~ msgid "Click the part of your picture where would you like a puzzle."
-#~ msgstr "Hold inne knappen og flytt rundt for å flytte på tegningen."
-
-#, fuzzy
-#~ msgid "Click to make a puzzle in fullscreen mode."
-#~ msgstr "Trykk for å speilvende tegningen!"
 
 #, fuzzy
 #~ msgid "Click and move the mouse to add noise to the image."

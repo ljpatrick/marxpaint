@@ -16,7 +16,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Tuxpaint cvs 2009-06-21\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-08-09 23:46+0100\n"
+"POT-Creation-Date: 2009-08-31 18:32-0700\n"
 "PO-Revision-Date: 2009-06-21 15:23+0200\n"
 "Last-Translator: Pere Pujal i Carabantes <pere@fornol.no-ip.org>\n"
 "Language-Team: Català <linux-ca@chanae.alphanet.ch>\n"
@@ -432,7 +432,7 @@ msgstr "Nou"
 #. Open a saved picture
 #. buttons for the file open dialog
 #. Open dialog: 'Open' button, to load the selected picture
-#: ../tools.h:90 ../tuxpaint.c:7998
+#: ../tools.h:90 ../tuxpaint.c:8005
 msgid "Open"
 msgstr "Obre"
 
@@ -551,179 +551,179 @@ msgid "OK then… Let’s keep drawing this one!"
 msgstr "D'acord, llavors… Seguirem dibuixant en aquest!"
 
 #. Prompt to confirm user wishes to quit
-#: ../tuxpaint.c:1855
+#: ../tuxpaint.c:1858
 msgid "Do you really want to quit?"
 msgstr "De veres voleu sortir?"
 
 #. Quit prompt positive response (quit)
-#: ../tuxpaint.c:1858
+#: ../tuxpaint.c:1861
 msgid "Yes, I’m done!"
 msgstr "Sí, ja he acabat!"
 
 #. Quit prompt negative response (don't quit)
-#: ../tuxpaint.c:1861 ../tuxpaint.c:1888
+#: ../tuxpaint.c:1864 ../tuxpaint.c:1891
 msgid "No, take me back!"
 msgstr "No, tornem-hi!"
 
 #. Current picture is not saved; user is quitting
-#: ../tuxpaint.c:1865
+#: ../tuxpaint.c:1868
 msgid "If you quit, you’ll lose your picture! Save it?"
 msgstr "Si sortiu perdreu el vostre dibuix! El voleu desar?"
 
-#: ../tuxpaint.c:1866 ../tuxpaint.c:1871
+#: ../tuxpaint.c:1869 ../tuxpaint.c:1874
 msgid "Yes, save it!"
 msgstr "Sí, desa'l!"
 
-#: ../tuxpaint.c:1867 ../tuxpaint.c:1872
+#: ../tuxpaint.c:1870 ../tuxpaint.c:1875
 msgid "No, don’t bother saving!"
 msgstr "No, no cal que el desis!"
 
 #. Current picture is not saved; user is opening another picture
-#: ../tuxpaint.c:1870
+#: ../tuxpaint.c:1873
 msgid "Save your picture first?"
 msgstr "Deso el vostre dibuix abans?"
 
 #. Error opening picture
-#: ../tuxpaint.c:1875
+#: ../tuxpaint.c:1878
 msgid "Can’t open that picture!"
 msgstr "No puc obrir aquest dibuix!"
 
 #. Generic dialog dismissal
-#: ../tuxpaint.c:1878 ../tuxpaint.c:1883 ../tuxpaint.c:1892 ../tuxpaint.c:1899
-#: ../tuxpaint.c:1908
+#: ../tuxpaint.c:1881 ../tuxpaint.c:1886 ../tuxpaint.c:1895 ../tuxpaint.c:1902
+#: ../tuxpaint.c:1911
 msgid "OK"
 msgstr "D'acord"
 
 #. Notification that 'Open' dialog has nothing to show
-#: ../tuxpaint.c:1882
+#: ../tuxpaint.c:1885
 msgid "There are no saved files!"
 msgstr "No hi ha fitxers desats!"
 
 #. Verification of print action
-#: ../tuxpaint.c:1886
+#: ../tuxpaint.c:1889
 msgid "Print your picture now?"
 msgstr "Imprimeixo ara el vostre dibuix?"
 
-#: ../tuxpaint.c:1887
+#: ../tuxpaint.c:1890
 msgid "Yes, print it!"
 msgstr "Sí, imprimeix-lo!"
 
 #. Confirmation of successful (we hope) printing
-#: ../tuxpaint.c:1891
+#: ../tuxpaint.c:1894
 msgid "Your picture has been printed!"
 msgstr "El vostre dibuix s'ha imprés!"
 
 #. We got an error printing
-#: ../tuxpaint.c:1895
+#: ../tuxpaint.c:1898
 msgid "Sorry! Your picture could not be printed!"
 msgstr "El vostre dibuix no s'ha pogut imprimir!"
 
 #. Notification that it's too soon to print again (--printdelay option is in effect)
-#: ../tuxpaint.c:1898
+#: ../tuxpaint.c:1901
 msgid "You can’t print yet!"
 msgstr "Encara no podeu imprimir!"
 
 #. Prompt to confirm erasing a picture in the Open dialog
-#: ../tuxpaint.c:1902
+#: ../tuxpaint.c:1905
 msgid "Erase this picture?"
 msgstr "Esborro aquest dibuix?"
 
-#: ../tuxpaint.c:1903
+#: ../tuxpaint.c:1906
 msgid "Yes, erase it!"
 msgstr "Sí, esborra'l!"
 
-#: ../tuxpaint.c:1904
+#: ../tuxpaint.c:1907
 msgid "No, don’t erase it!"
 msgstr "No, no l'esborris!"
 
 #. Reminder that Mouse Button 1 is the button to use in Tux Paint
-#: ../tuxpaint.c:1907
+#: ../tuxpaint.c:1910
 msgid "Remember to use the left mouse button!"
 msgstr "Recordeu de fer servir el botó esquerre!"
 
 #. Sound has been muted (silenced) via keyboard shortcut
-#: ../tuxpaint.c:2036
+#: ../tuxpaint.c:2039
 msgid "Sound muted."
 msgstr "S'ha desactivat el so."
 
 #. Sound has been unmuted (unsilenced) via keyboard shortcut
-#: ../tuxpaint.c:2041
+#: ../tuxpaint.c:2044
 msgid "Sound unmuted."
 msgstr "S'ha activat el so."
 
 #. Wait while Text tool finishes loading fonts
-#: ../tuxpaint.c:2508
+#: ../tuxpaint.c:2511
 msgid "Please wait…"
 msgstr "Espereu, si us plau…"
 
-#: ../tuxpaint.c:7221
+#: ../tuxpaint.c:7228
 msgid "Pick a color."
 msgstr "Trieu un color."
 
 #. Open dialog: 'Erase' button, to erase/deleted the selected picture
-#: ../tuxpaint.c:8001
+#: ../tuxpaint.c:8008
 msgid "Erase"
 msgstr "Esborra"
 
 #. Open dialog: 'Slides' button, to switch to slide show mode
-#: ../tuxpaint.c:8004
+#: ../tuxpaint.c:8011
 msgid "Slides"
 msgstr "Diapositives"
 
 #. Open dialog: 'Back' button, to dismiss Open dialog without opening a picture
-#: ../tuxpaint.c:8007
+#: ../tuxpaint.c:8014
 msgid "Back"
 msgstr "Endarrera"
 
 #. Slideshow: 'Next' button, to load next slide (image)
-#: ../tuxpaint.c:8010
+#: ../tuxpaint.c:8017
 msgid "Next"
 msgstr "Següent"
 
 #. Slideshow: 'Play' button, to begin a slideshow sequence
-#: ../tuxpaint.c:8013
+#: ../tuxpaint.c:8020
 msgid "Play"
 msgstr "Reproduïr"
 
 #. Label for 'Letters' buttons (font selector, down the right when the Text tool is being used); used to show the difference between font faces
-#: ../tuxpaint.c:8660
+#: ../tuxpaint.c:8667
 msgid "Aa"
 msgstr "Aà"
 
 #. Admittedly stupid way of determining which keys can be used for
 #. positive and negative responses in dialogs (e.g., [Y] (for 'yes') in English)
-#: ../tuxpaint.c:11663
+#: ../tuxpaint.c:11670
 msgid "Yes"
 msgstr "Sí"
 
-#: ../tuxpaint.c:11667
+#: ../tuxpaint.c:11674
 msgid "No"
 msgstr "No"
 
 #. Prompt to ask whether user wishes to save over old version of their file
-#: ../tuxpaint.c:12633
+#: ../tuxpaint.c:12669
 msgid "Replace the picture with your changes?"
 msgstr "Reemplaço el dibuix amb els vostres canvis?"
 
 #. Positive response to saving over old version
 #. (like a 'File:Save' action in other applications)
-#: ../tuxpaint.c:12637
+#: ../tuxpaint.c:12673
 msgid "Yes, replace the old one!"
 msgstr "Sí, reemplaça l'antic!"
 
 #. Negative response to saving over old version (saves a new image)
 #. (like a 'File:Save As...' action in other applications)
-#: ../tuxpaint.c:12641
+#: ../tuxpaint.c:12677
 msgid "No, save a new file!"
 msgstr "No, desa en un fitxer nou!"
 
-#: ../tuxpaint.c:13404
+#: ../tuxpaint.c:13440
 msgid "Choose the picture you want, then click “Open”."
 msgstr "Trieu el dibuix que voleu, llavors feu clic en Obre."
 
 #. Let user choose images:
 #. Instructions for Slideshow file dialog (FIXME: Make a #define)
-#: ../tuxpaint.c:14391 ../tuxpaint.c:14705
+#: ../tuxpaint.c:14427 ../tuxpaint.c:14741
 msgid "Choose the pictures you want, then click “Play”."
 msgstr "Trieu els dibuixos que voleu, llavors feu clic en «Reproduïr»."
 
@@ -758,10 +758,10 @@ msgid "Blind"
 msgstr "Alien"
 
 #: ../../magic/src/blind.c:97
-#, fuzzy
-#| msgid "Click and drag to draw a beam of light on your picture."
-msgid "Click and drag to draw the blind, move left or right to open or close."
-msgstr "Feu clic i arrossegueu per dibuixar un camí de llum en la imatge."
+msgid ""
+"Click towards the edge of your picture to pull window blinds over it. Move "
+"perpendicularly to open or close the blinds."
+msgstr ""
 
 #: ../../magic/src/blocks_chalk_drip.c:132
 msgid "Blocks"
@@ -1106,6 +1106,18 @@ msgstr "Feu clic i moveu el ratolí per obtenir un relleu de la imatge."
 msgid "Click and drag up to zoom in or drag down to zoom out the picture."
 msgstr "Feu clic i moveu el ratolí per posar pasta de dents al dibuix."
 
+#: ../../magic/src/puzzle.c:79
+msgid "Puzzle"
+msgstr "Barreja"
+
+#: ../../magic/src/puzzle.c:86
+msgid "Click the part of your picture where would you like a puzzle."
+msgstr "Feu clic en la part del dibuix que volgueu barrejar."
+
+#: ../../magic/src/puzzle.c:87
+msgid "Click to make a puzzle in fullscreen mode."
+msgstr "Feu clic per barrejar la imatge."
+
 #: ../../magic/src/rails.c:101
 msgid "Rails"
 msgstr "Rails"
@@ -1134,11 +1146,17 @@ msgstr "Feu clic per dibuixar una gota de pluja."
 msgid "Click to cover your picture with rain drops."
 msgstr "Feu clic per cobrir de pluja la imatge."
 
-#: ../../magic/src/realrainbow.c:76
+#: ../../magic/src/realrainbow.c:86
 msgid "Real Rainbow"
 msgstr "Arc iris"
 
-#: ../../magic/src/realrainbow.c:81
+#: ../../magic/src/realrainbow.c:88
+#, fuzzy
+#| msgid "Real Rainbow"
+msgid "ROYGBIV Rainbow"
+msgstr "Arc iris"
+
+#: ../../magic/src/realrainbow.c:93
 msgid ""
 "Click where you want your rainbow to start, drag to where you want it to "
 "end, and then let go to draw a rainbow."
@@ -1362,6 +1380,12 @@ msgstr ""
 "llargues."
 
 #, fuzzy
+#~| msgid "Click and drag to draw a beam of light on your picture."
+#~ msgid ""
+#~ "Click and drag to draw the blind, move left or right to open or close."
+#~ msgstr "Feu clic i arrossegueu per dibuixar un camí de llum en la imatge."
+
+#, fuzzy
 #~| msgid "Mosaic"
 #~ msgid "Mosaic square"
 #~ msgstr "Mosaic"
@@ -1426,15 +1450,6 @@ msgstr ""
 
 #~ msgid "Click to give your entire picture an \"alien\" appearance."
 #~ msgstr "Feu clic per donar una aparença estranya a la imatge."
-
-#~ msgid "Puzzle"
-#~ msgstr "Barreja"
-
-#~ msgid "Click the part of your picture where would you like a puzzle."
-#~ msgstr "Feu clic en la part del dibuix que volgueu barrejar."
-
-#~ msgid "Click to make a puzzle in fullscreen mode."
-#~ msgstr "Feu clic per barrejar la imatge."
 
 #~ msgid "Threshold"
 #~ msgstr "Llindar"
