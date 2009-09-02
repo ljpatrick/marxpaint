@@ -27,6 +27,7 @@ $Id$
   * Other Improvements:
     -------------------
     * Starter images can be in SVG format.
+      (Avoids loading PNG if SVG with the same name exists.)
 
     * Widened dialog windows, to help avoid word-wrap and overlap problems
       with some prompts, in some locales.

@@ -22,7 +22,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
   
-  June 14, 2002 - August 17, 2009
+  June 14, 2002 - September 1, 2009
   $Id$
 */
 
@@ -17975,7 +17975,7 @@ int do_new_dialog(void)
         if (strcasestr(f->d_name, FNAME_EXTENSION) != NULL
             /* Support legacy BMP files for load: */
             || strcasestr(f->d_name, ".bmp") != NULL
-#ifndef NO_SVG
+#ifndef NOSVG
             || strcasestr(f->d_name, ".svg") != NULL
 #endif
            )
@@ -17985,6 +17985,22 @@ int do_new_dialog(void)
           {
             strcpy((char *) strcasestr(fname, FNAME_EXTENSION), "");
             d_exts[num_files] = strdup(FNAME_EXTENSION);
+
+#ifndef NOSVG
+            /* Found a PNG; but if identically-named SVG exists, skip it */
+            if (1)
+            {
+              char svgname[512];
+              FILE * fi;
+
+              sprintf(svgname, "%s/%s.svg", dirname[place], fname);
+              fi = fopen(svgname, "r");
+              if (fi != NULL) {
+                fclose(fi);
+                continue;
+              }
+            }
+#endif
           }
 
           if (strcasestr(fname, ".bmp") != NULL)
