@@ -64,6 +64,8 @@ $Id$
     * Frame - Screen
     * Frame - Television
     * Frame - Gold
+    * Frame - heart
+    * Frame - hearts
 
     From Open Clip Art, curated by 
     Caroline Ford<caroline.ford.work@googlemail.com>
