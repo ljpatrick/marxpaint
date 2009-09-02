@@ -134,6 +134,7 @@ $Id$
       + Splat
       + Star
       + Triangle (up and down)
+      + Flower (from some open clipart)
 
 
 * Starter Images

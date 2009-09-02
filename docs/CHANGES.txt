@@ -67,6 +67,11 @@ $Id$
     From Open Clip Art, curated by 
     Caroline Ford<caroline.ford.work@googlemail.com>
 
+  * New Brush
+    ---------
+    * Another flower brush
+      Made out of some open clipart by C Ford.
+
   * Localization Updates:
     ---------------------
     * Chinese (Traditional) translation
