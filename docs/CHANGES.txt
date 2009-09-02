@@ -57,6 +57,12 @@ $Id$
     * Pansy
     * Stained Glass
     * Woodpecker
+    * Frame - Filmstrip
+    * Frame - Flowers
+    * Frame - Picture
+    * Frame - Screen
+    * Frame - Television
+    * Frame - Gold
 
     From Open Clip Art, curated by 
     Caroline Ford<caroline.ford.work@googlemail.com>

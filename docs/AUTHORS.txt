@@ -209,6 +209,11 @@ $Id$
     Woodpecker
     Originals from Open Clip Art and Public Domain. 
 
+  * Frame-filmstrip, frame-television, frame-screen, frame-flowers
+    frame-picture
+    Originals from Open clipart, PD. Prepared by C Ford
+    Frame-gold made from frame-silver.
+
 * Fonts
 
   * DejaVu Sans
