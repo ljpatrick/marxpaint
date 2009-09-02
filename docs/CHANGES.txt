@@ -70,6 +70,9 @@ $Id$
     From Open Clip Art, curated by 
     Caroline Ford<caroline.ford.work@googlemail.com>
 
+    * Frame - neon
+      Made in inkscape and the gimp by C Ford.
+
   * New Brush
     ---------
     * Another flower brush

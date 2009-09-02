@@ -215,6 +215,9 @@ $Id$
     Originals from Open clipart, PD. Prepared by C Ford
     Frame-gold made from frame-silver.
 
+  * Frame-neon
+    Caroline Ford <caroline.ford.work@googlemail.com>
+
 * Fonts
 
   * DejaVu Sans
