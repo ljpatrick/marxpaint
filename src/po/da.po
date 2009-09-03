@@ -14,7 +14,7 @@ msgstr ""
 "Project-Id-Version: Tux Paint\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2009-08-31 18:32-0700\n"
-"PO-Revision-Date: 2009-08-28 22:30+0100\n"
+"PO-Revision-Date: 2009-09-03 22:30+0100\n"
 "Last-Translator: Joe Hansen <joedalton2@yahoo.dk>\n"
 "Language-Team: Danish <dansk@dansk-gruppen.dk>\n"
 "MIME-Version: 1.0\n"
@@ -729,6 +729,8 @@ msgid ""
 "Click towards the edge of your picture to pull window blinds over it. Move "
 "perpendicularly to open or close the blinds."
 msgstr ""
+"Klik mod hjørnet af dit billede for at trække rullegardiner over billedet. Flyt "
+"lodret for at åbne eller lukke rullegardinerne."
 
 #: ../../magic/src/blocks_chalk_drip.c:132
 msgid "Blocks"
@@ -982,7 +984,7 @@ msgstr "Sekskantmosaik"
 
 #: ../../magic/src/mosaic_shaped.c:136
 msgid "Irregular Mosaic"
-msgstr "Irregulær mosaik"
+msgstr "Asymmetrisk mosaik"
 
 #: ../../magic/src/mosaic_shaped.c:141
 msgid ""
@@ -1015,7 +1017,7 @@ msgstr ""
 
 #: ../../magic/src/mosaic_shaped.c:148
 msgid "Click to add an irregular mosaic to your entire picture."
-msgstr "Klik for at tilføje en irregulær mosaik på hele dit billede."
+msgstr "Klik for at tilføje en asymmetrisk mosaik på hele dit billede."
 
 #: ../../magic/src/negative.c:72
 msgid "Negative"
@@ -1060,22 +1062,16 @@ msgstr ""
 "Klik og træk op for at zoome ind eller træk ned for at zoome billedet ud."
 
 #: ../../magic/src/puzzle.c:79
-#, fuzzy
-#| msgid "Purple!"
 msgid "Puzzle"
-msgstr "Violet!"
+msgstr "Puslespil"
 
 #: ../../magic/src/puzzle.c:86
-#, fuzzy
-#| msgid "Click on part of your picture to create a fisheye effect."
 msgid "Click the part of your picture where would you like a puzzle."
-msgstr "Klik og bevæg musen rundt, for at skabe en fiskeøjeeffekt."
+msgstr "Klik på den del af billedet hvor du ønsker et puslespil."
 
 #: ../../magic/src/puzzle.c:87
-#, fuzzy
-#| msgid "Click to make a mirror image."
 msgid "Click to make a puzzle in fullscreen mode."
-msgstr "Klik på billedet for at spejlvende det."
+msgstr "Klik for at oprette et puslespil i fuldskærmtilstand."
 
 #: ../../magic/src/rails.c:101
 msgid "Rails"
@@ -1110,12 +1106,9 @@ msgstr "Klik for at dække dit billede med regndråber."
 msgid "Real Rainbow"
 msgstr "Ægte regnbue"
 
-# Virkelig, reel, ægte
 #: ../../magic/src/realrainbow.c:88
-#, fuzzy
-#| msgid "Real Rainbow"
 msgid "ROYGBIV Rainbow"
-msgstr "Ægte regnbue"
+msgstr "ROYGBIV regnbue"
 
 #: ../../magic/src/realrainbow.c:93
 msgid ""
