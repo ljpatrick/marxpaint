@@ -24,12 +24,12 @@ msgstr "E zezë!"
 #. Response to Dark grey (128, 128, 128) color selected
 #: ../colors.h:89
 msgid "Dark grey! Some people spell it “dark gray”."
-msgstr ""
+msgstr "Hi i errët!"
 
 #. Response to Light grey (192, 192, 192) color selected
 #: ../colors.h:92
 msgid "Light grey! Some people spell it “light gray”."
-msgstr ""
+msgstr "Hi i çelët!"
 
 #. Response to White (255, 255, 255) color selected
 #: ../colors.h:95
@@ -54,7 +54,7 @@ msgstr "E verdhë!"
 #. Response to Light green (160, 228, 128) color selected
 #: ../colors.h:107
 msgid "Light green!"
-msgstr ""
+msgstr "E gjelbërt e çelët!"
 
 #. Response to Dark green (33, 148, 70) color selected
 #: ../colors.h:110
@@ -65,7 +65,7 @@ msgstr "Gri!"
 #. Response to "Sky" blue (138, 168, 205) color selected
 #: ../colors.h:113
 msgid "Sky blue!"
-msgstr ""
+msgstr "E kaltër Qiellore!"
 
 #. Response to Blue (50, 100, 255) color selected
 #: ../colors.h:116
@@ -75,7 +75,7 @@ msgstr "Blu!"
 #. Response to Lavender (186, 157, 255) color selected
 #: ../colors.h:119
 msgid "Lavender!"
-msgstr ""
+msgstr "Purpur i zbetë"
 
 #. Response to Purple (128, 0, 128) color selected
 #: ../colors.h:122
@@ -101,7 +101,7 @@ msgstr "Cyan!"
 #. Response to Beige (247, 228, 219) color selected
 #: ../colors.h:134
 msgid "Beige!"
-msgstr ""
+msgstr "Bezh!"
 
 #. First, the blacklist. We list font families that can crash Tux Paint
 #. via bugs in the SDL_ttf library. We also test fonts to be sure that
@@ -250,7 +250,7 @@ msgstr "Rreth"
 #. Ellipse shape tool (X radius and Y radius may differ)
 #: ../shapes.h:183 ../shapes.h:184
 msgid "Ellipse"
-msgstr ""
+msgstr "Elips"
 
 #. Triangle shape tool (3 sides)
 #: ../shapes.h:187 ../shapes.h:188
@@ -265,7 +265,7 @@ msgstr "Pesëkëndësh"
 #. Rhombus shape tool (4 sides, not at right angles)
 #: ../shapes.h:195 ../shapes.h:196
 msgid "Rhombus"
-msgstr ""
+msgstr "Romb"
 
 #. Octagon shape tool (8 sides)
 #: ../shapes.h:199 ../shapes.h:200
@@ -277,13 +277,13 @@ msgstr "Pesëkëndësh"
 #: ../shapes.h:208 ../shapes.h:209
 #, fuzzy
 msgid "A square is a rectangle with four equal sides."
-msgstr "Një drejtkëndësh ka katër anë."
+msgstr "Katrori është drejtkëndësh me katër anë të barabarata ."
 
 #. Description of a rectangle
 #: ../shapes.h:212 ../shapes.h:213
 #, fuzzy
 msgid "A rectangle has four sides and four right angles."
-msgstr "Një drejtkëndësh ka katër anë."
+msgstr "Një drejtkëndësh ka katër anë dhe katër kënde të drejta."
 
 #: ../shapes.h:217 ../shapes.h:219
 msgid ""
@@ -293,7 +293,7 @@ msgstr ""
 #. Description of an ellipse
 #: ../shapes.h:222 ../shapes.h:223
 msgid "An ellipse is a stretched circle."
-msgstr ""
+msgstr "Elipsa është rreth i zgjatur."
 
 #. Description of a triangle
 #: ../shapes.h:226 ../shapes.h:227
@@ -307,7 +307,7 @@ msgstr "Një pesëkëndësh ka pesë anë."
 
 #: ../shapes.h:235 ../shapes.h:237
 msgid "A rhombus has four equal sides, and opposite sides are parallel."
-msgstr ""
+msgstr "Rombi ka katër anë të barabarta, dhe anët e kundërta janë paralele."
 
 #: ../shapes.h:241 ../shapes.h:243
 #, fuzzy
@@ -608,7 +608,7 @@ msgstr ""
 #. Reminder that Mouse Button 1 is the button to use in Tux Paint
 #: ../tuxpaint.c:1910
 msgid "Remember to use the left mouse button!"
-msgstr ""
+msgstr "Mos harroni të përdorni butonin e majtë të miut!"
 
 #. Sound has been muted (silenced) via keyboard shortcut
 #: ../tuxpaint.c:2039
@@ -658,7 +658,7 @@ msgstr ""
 #. Label for 'Letters' buttons (font selector, down the right when the Text tool is being used); used to show the difference between font faces
 #: ../tuxpaint.c:8667
 msgid "Aa"
-msgstr ""
+msgstr "Aa"
 
 #. Admittedly stupid way of determining which keys can be used for
 #. positive and negative responses in dialogs (e.g., [Y] (for 'yes') in English)
@@ -701,11 +701,11 @@ msgstr "Zgjidh pikturën që dëshiron, pastaj kliko \"Hap\"."
 
 #: ../tuxpaint.desktop.in.h:1
 msgid "A drawing program for children."
-msgstr ""
+msgstr "Program vizatimi për fëmijë."
 
 #: ../tuxpaint.desktop.in.h:2
 msgid "Drawing program"
-msgstr ""
+msgstr "Program për vizatim"
 
 #: ../tuxpaint.desktop.in.h:3
 #, fuzzy
@@ -786,12 +786,12 @@ msgstr "Blloqe"
 #: ../../magic/src/bricks.c:111
 #, fuzzy
 msgid "Click and move to draw large bricks."
-msgstr "Kliko dhe lëviz për të vizatuar spërkatje."
+msgstr "Kliko dhe lëviz për të vizatuar tullë të madhe."
 
 #: ../../magic/src/bricks.c:113
 #, fuzzy
 msgid "Click and move to draw small bricks."
-msgstr "Kliko dhe lëviz për të vizatuar spërkatje."
+msgstr "Kliko dhe lëviz për të vizatuar tullë të vogël."
 
 #: ../../magic/src/calligraphy.c:108
 msgid "Calligraphy"
@@ -804,7 +804,7 @@ msgstr "Kliko dhe lëviz mausin rreth e qark për të krijuar një negativ."
 
 #: ../../magic/src/cartoon.c:80
 msgid "Cartoon"
-msgstr ""
+msgstr "Vizatimor"
 
 #: ../../magic/src/cartoon.c:87
 #, fuzzy
@@ -841,11 +841,11 @@ msgstr "Kliko dhe lëviz miun për t'a \"holluar\" foton."
 
 #: ../../magic/src/fade_darken.c:119
 msgid "Lighten"
-msgstr ""
+msgstr "Ndriçim"
 
 #: ../../magic/src/fade_darken.c:121
 msgid "Darken"
-msgstr ""
+msgstr "Errësim"
 
 #: ../../magic/src/fade_darken.c:132
 #, fuzzy
@@ -928,7 +928,7 @@ msgstr "Kliko dhe lëviz përqark miun për të grupuar foton."
 #: ../../magic/src/grass.c:92
 #, fuzzy
 msgid "Grass"
-msgstr "Gri!"
+msgstr "Bar!"
 
 #: ../../magic/src/grass.c:98
 #, fuzzy
@@ -1237,7 +1237,7 @@ msgstr "Kliko dhe lëviz miun për t'a \"holluar\" foton."
 
 #: ../../magic/src/smudge.c:77
 msgid "Smudge"
-msgstr ""
+msgstr "Njollë"
 
 #: ../../magic/src/smudge.c:84
 #, fuzzy
@@ -1292,7 +1292,7 @@ msgstr ""
 #: ../../magic/src/tint.c:71
 #, fuzzy
 msgid "Tint"
-msgstr "Hollim"
+msgstr "Lyerje
 
 #: ../../magic/src/tint.c:72
 msgid "Color & White"

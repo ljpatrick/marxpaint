@@ -80,6 +80,9 @@ $Id$
 
   * Localization Updates:
     ---------------------
+    * Albanian
+      Launchpad translations.
+
     * Chinese (Traditional) translation
       Song Huang <songhuang@users.sourceforge.net>
 
