@@ -1292,7 +1292,7 @@ msgstr ""
 #: ../../magic/src/tint.c:71
 #, fuzzy
 msgid "Tint"
-msgstr "Lyerje
+msgstr "Lyerje"
 
 #: ../../magic/src/tint.c:72
 msgid "Color & White"
