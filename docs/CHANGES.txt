@@ -8,7 +8,7 @@ http://www.tuxpaint.org/
 
 $Id$
 
-2009.September.1 (0.9.22)
+2009.September.9 (0.9.22)
   * New Magic Tools:
     ----------------
     * Blinds - Close window blinds over your picture.
@@ -43,6 +43,11 @@ $Id$
       actually only rotates it 30 deg., since it looks identical,
       sans glitches.)
       (SF.net bug #2837177)
+
+    * Created a BASH tab-completion file for Tux Paint, so that
+      command-line options are easier to discover (without necessarily
+      needing to consult the man page, 'Options' documentation, or --usage
+      output).
 
  * New Starters:
    -------------

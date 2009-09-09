@@ -4,7 +4,7 @@
 # bill@newbreedsoftware.com
 # http://www.tuxpaint.org/
 
-# June 14, 2002 - July 1, 2009
+# June 14, 2002 - September 9, 2009
 
 
 # The version number, for release:
@@ -129,6 +129,8 @@ DEVDOC_PREFIX:=$(DESTDIR)$(PREFIX)/share/doc/tuxpaint-dev
 MAN_PREFIX:=$(DESTDIR)$(PREFIX)/share/man
 DEVMAN_PREFIX:=$(DESTDIR)$(PREFIX)/share/man
 
+# BASH tab-completion file:
+COMPLETIONDIR:=$(DESTDIR)/etc/bash_completion.d
 
 # 'System-wide' Config file:
 ifeq ($(PREFIX),/usr)
@@ -406,6 +408,7 @@ install:	install-bin install-data install-man install-doc \
 		install-icon install-gettext install-im install-importscript \
 		install-default-config install-example-stamps \
 		install-example-starters \
+		install-bash-completion \
 		$(ARCH_INSTALL)
 	@echo
 	@echo "--------------------------------------------------------------"
@@ -468,6 +471,7 @@ bdist-win32:
 		LOCALE_PREFIX:=locale \
 		IM_PREFIX:=im \
 		CONFDIR:=. \
+		COMPLETIONDIR:=. \
 		INCLUDE_PREFIX:=plugins/include \
 		MAGIC_PREFIX:=plugins
 	strip -s tuxpaint.exe
@@ -479,6 +483,7 @@ bdist-win32:
 		LOCALE_PREFIX:=./win32/bdist/locale \
 		IM_PREFIX:=./win32/bdist/im \
 		CONFDIR:=./win32/bdist \
+		COMPLETIONDIR:=./win32/bdist \
 		INCLUDE_PREFIX:=./win32/bdist/plugins/include \
 		MAGIC_PREFIX:=./win32/bdist/plugins \
 		windows_ARCH_INSTALL:=install-dlls
@@ -545,6 +550,7 @@ uninstall:	uninstall-i18n
 	-rm $(MAN_PREFIX)/man1/tuxpaint-import.1.gz
 	-rm $(MAN_PREFIX)/man1/tp-magic-config.1.gz
 	-rm -f -r $(CONFDIR)
+	-rm $(COMPLETIONDIR)/tuxpaint-completion.bash
 	-rm -r $(MAGIC_PREFIX)
 	-rm -r $(INCLUDE_PREFIX)/tuxpaint
 	-rm $(BIN_PREFIX)/tp-magic-config
@@ -559,6 +565,15 @@ install-default-config:
 	@install -d $(CONFDIR)
 	@cp src/tuxpaint.conf $(CONFDIR)
 	@chmod 644 $(CONFDIR)/tuxpaint.conf
+
+# Install BASH completion file:
+.PHONY: install-bash-completion
+install-bash-completion:
+	@echo
+	@echo "...Installing BASH completion file..."
+	@install -d $(COMPLETIONDIR)
+	@cp src/tuxpaint-completion.bash $(COMPLETIONDIR)
+	@chmod 644 $(COMPLETIONDIR)/tuxpaint-completion.bash
 
 
 # Install example stamps
