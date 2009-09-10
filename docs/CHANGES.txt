@@ -8,7 +8,7 @@ http://www.tuxpaint.org/
 
 $Id$
 
-2009.September.9 (0.9.22)
+2009.September.10 (0.9.22)
   * New Magic Tools:
     ----------------
     * Blinds - Close window blinds over your picture.
@@ -117,6 +117,9 @@ $Id$
 
     * Songhay translation
       Abdoul Cisse <abdoulseydou@hotmail.com>
+
+    * Zapoteco
+      Rodrigo Perez Ramirez and Indigenas Sin Fronteras <isf_mx@yahoo.com>
 
   * Bug Fixes
     ---------
