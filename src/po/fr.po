@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: fr\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-09-07 07:37+0200\n"
+"POT-Creation-Date: 2009-09-10 15:53-0700\n"
 "PO-Revision-Date: 2009-09-07 07:36+0100\n"
 "Last-Translator: Chion Jacques <jacques.chion@orange.fr>\n"
 "Language-Team:  <fr@li.org>\n"
@@ -714,38 +714,6 @@ msgstr "Clique et déplace la souris pour changer la couleur localement."
 msgid "Click to change the colors in your entire picture."
 msgstr "Clique pour changer la couleur de tout le dessin."
 
-#: ../../magic/src/blackAndWhite.c:67
-msgid "Black & White"
-msgstr "Gris"
-
-#: ../../magic/src/blackAndWhite.c:68
-msgid "Threshold"
-msgstr "Noir et blanc"
-
-#
-#: ../../magic/src/blackAndWhite.c:71
-msgid "Click and move the mouse around convert the image to greyscale."
-msgstr "Clique et déplace la souris pour obtenir une partie de l'image en gris"
-
-#
-#: ../../magic/src/blackAndWhite.c:72
-msgid "Click to convert the image to greyscale."
-msgstr "Clique pour que toute l'image devienne grise."
-
-#: ../../magic/src/blackAndWhite.c:73
-msgid ""
-"Click and move the mouse around to threshold the image into black and white "
-"regions."
-msgstr ""
-"Clique et déplace la souris pour avoir le dessin en noir et blanc par "
-"endroits."
-
-#
-#: ../../magic/src/blackAndWhite.c:74
-msgid "Click to threshold the image into black and white regions."
-msgstr ""
-"Clique et déplace la souris pour avoir tout le dessin en noir et blanc."
-
 #: ../../magic/src/blind.c:92
 msgid "Blind"
 msgstr "Store"
@@ -952,19 +920,6 @@ msgid "Click and move to draw grass. Don’t forget the dirt!"
 msgstr ""
 "Clique et déplace la souris pour dessiner de l'herbe. N'oublie pas la "
 "poussière !"
-
-#: ../../magic/src/jigsaw.c:62
-msgid "Jigsaw"
-msgstr "Scie sauteuse"
-
-#: ../../magic/src/jigsaw.c:65
-msgid ""
-"Click to make your picture into a jigsaw which you can print and cut out, "
-"make sure to ask an adult for help."
-msgstr ""
-"Clique pour découper ton image avec une scie sauteuse, que tu pourras "
-"ensuite imprimer puis découper avec des ciseaux. Demande à une grande "
-"personne de t'aider."
 
 #: ../../magic/src/kalidescope.c:77
 msgid "Kaleidoscope"
@@ -1424,6 +1379,44 @@ msgstr ""
 "Clique pour avoir un effet vagué verticalement. Clique vers le haut pour de "
 "courtes vagues, vers le bas pour de longues vagues, à gauche pour diminuer "
 "l'amplitude et à droite pour augmenter l'amplitude."
+
+#~ msgid "Black & White"
+#~ msgstr "Gris"
+
+#~ msgid "Threshold"
+#~ msgstr "Noir et blanc"
+
+#
+#~ msgid "Click and move the mouse around convert the image to greyscale."
+#~ msgstr ""
+#~ "Clique et déplace la souris pour obtenir une partie de l'image en gris"
+
+#
+#~ msgid "Click to convert the image to greyscale."
+#~ msgstr "Clique pour que toute l'image devienne grise."
+
+#~ msgid ""
+#~ "Click and move the mouse around to threshold the image into black and "
+#~ "white regions."
+#~ msgstr ""
+#~ "Clique et déplace la souris pour avoir le dessin en noir et blanc par "
+#~ "endroits."
+
+#
+#~ msgid "Click to threshold the image into black and white regions."
+#~ msgstr ""
+#~ "Clique et déplace la souris pour avoir tout le dessin en noir et blanc."
+
+#~ msgid "Jigsaw"
+#~ msgstr "Scie sauteuse"
+
+#~ msgid ""
+#~ "Click to make your picture into a jigsaw which you can print and cut out, "
+#~ "make sure to ask an adult for help."
+#~ msgstr ""
+#~ "Clique pour découper ton image avec une scie sauteuse, que tu pourras "
+#~ "ensuite imprimer puis découper avec des ciseaux. Demande à une grande "
+#~ "personne de t'aider."
 
 #~ msgid ""
 #~ "Click and drag to draw the blind, move left or right to open or close."
