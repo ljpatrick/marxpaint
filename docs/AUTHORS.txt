@@ -207,7 +207,7 @@ $Id$
 
   * Hat, Elephant, Skull, Old Soviet Car, Bald Eagle, Car 2, 
     Desert Tortoise, Gecko, Manatee, Pansy, Stained Glass,
-    Woodpecker
+    Woodpecker, fish_icon, mosaic.
     Originals from Open Clip Art and Public Domain. 
 
   * Frame-filmstrip, frame-television, frame-screen, frame-flowers
@@ -217,6 +217,10 @@ $Id$
 
   * Frame-neon
     Caroline Ford <caroline.ford.work@googlemail.com>
+
+  * at-at 
+    From a US patent drawing and public domain. Via open clipart, prepared
+    by Caroline Ford. 
 
 * Fonts
 

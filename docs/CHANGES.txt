@@ -71,6 +71,9 @@ $Id$
     * Frame - Gold
     * Frame - heart
     * Frame - hearts
+    * Fish Icon
+    * Mosaic
+    * At-At (from a US patent)
 
     From Open Clip Art, curated by 
     Caroline Ford<caroline.ford.work@googlemail.com>
