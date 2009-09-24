@@ -8,7 +8,7 @@ http://www.tuxpaint.org/
 
 $Id$
 
-2009.September.10 (0.9.22)
+2009.September.23 (0.9.22)
   * New Magic Tools:
     ----------------
     * Blinds - Close window blinds over your picture.
@@ -73,7 +73,6 @@ $Id$
     * Frame - hearts
     * Fish Icon
     * Mosaic
-    * At-At (from a US patent)
 
     From Open Clip Art, curated by 
     Caroline Ford<caroline.ford.work@googlemail.com>
