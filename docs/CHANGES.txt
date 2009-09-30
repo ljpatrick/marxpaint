@@ -8,7 +8,7 @@ http://www.tuxpaint.org/
 
 $Id$
 
-2009.September.27 (0.9.22)
+2009.September.29 (0.9.22)
   * New Magic Tools:
     ----------------
     * Blinds - Close window blinds over your picture.
@@ -28,6 +28,12 @@ $Id$
     -------------------
     * Starter images can be in SVG format.
       (Avoids loading PNG if SVG with the same name exists.)
+
+    * When a default size was not specified, SVG-based Stamps would default
+      to the largest, which was canvas-sized.  Now defaulting to a more
+      reasonable size.  (And users can click the maximum size choice to get
+      the largest, canvas-sized rendition.)
+      (SF.net bug #2836471)
 
     * Widened dialog windows, to help avoid word-wrap and overlap problems
       with some prompts, in some locales.

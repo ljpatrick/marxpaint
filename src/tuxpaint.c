@@ -1252,6 +1252,8 @@ typedef struct stamp_type
   unsigned min:5;
   unsigned size:5;
   unsigned max:5;
+
+  unsigned is_svg:1;
 } stamp_type;
 
 #define MAX_STAMP_GROUPS 256
@@ -5403,9 +5405,15 @@ static void loadstamp_finisher(stamp_type * sd, unsigned w, unsigned h,
     lower = upper;
   }
 
+
   mid = default_stamp_size;
   if (ratio != 1.0)
     mid = compute_default_scale_factor(ratio);
+
+  /* Ratio override for SVGs! */
+  if (ratio == 1.0 && sd->is_svg) {
+    mid = compute_default_scale_factor(0.2);
+  }
 
   if (mid > upper)
     mid = upper;
@@ -5690,7 +5698,24 @@ static void get_stamp_thumb(stamp_type * sd)
     ratio = loadinfo(buf, sd);
   }
   else
+  {
+    /* So here, unless an SVG stamp has a .dat file with a 'scale',
+       the Stamp ends up defaulting to 100% (ratio=1.0).
+       Since we render the SVG as large as possible, for quality reasons,
+       we almost never want the _default_ size to be 100%.
+
+       So we need to either (a) keep track of the SVG's own pixel size
+       and try to set the default size to something close to that,
+       or (b) pick a universal initial size that we can apply to _all_ SVGs
+       where the initial size is left unspecified (which means knowing when
+       they're SVGs).
+
+       So far, I'm doing (b), in loadstamp_finisher...
+   
+       -bjk 2009.09.29 */
+
     ratio = 1.0;
+  }
 
 #ifndef NOSOUND
   /* good time to load the sound */
@@ -6105,6 +6130,13 @@ static void loadstamp_callback(SDL_Surface * screen,
 	     dotext - files[i].str + 1 + dirlen);
       stamp_data[stamp_group][num_stamps[stamp_group]]->stampname[dotext - files[i].str +
                                                      1 + dirlen] = '\0';
+
+      if (strcmp(ext, ".svg") == 0) {
+          stamp_data[stamp_group][num_stamps[stamp_group]]->is_svg = 1;
+      } else {
+          stamp_data[stamp_group][num_stamps[stamp_group]]->is_svg = 0;
+      }
+
       num_stamps[stamp_group]++;
     }
     free(files[i].str);
