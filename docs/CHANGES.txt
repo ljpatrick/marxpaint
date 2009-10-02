@@ -8,7 +8,7 @@ http://www.tuxpaint.org/
 
 $Id$
 
-2009.September.29 (0.9.22)
+2009.October.2 (0.9.22)
   * New Magic Tools:
     ----------------
     * Blinds - Close window blinds over your picture.
@@ -107,6 +107,9 @@ $Id$
 
     * Greek translation
       Kiriaki SERAFEIM <pse04178@rhodes.aegean.gr>
+
+    * Latvian
+      Raivis Strogonovs <raivucis@gmail.com>
 
     * Malay translation
       Muhammad Najmi Ahmad Zabidi <najmi.zabidi@gmail.com>
