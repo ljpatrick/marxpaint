@@ -116,6 +116,9 @@ $Id$
     * Greek translation
       Kiriaki SERAFEIM <pse04178@rhodes.aegean.gr>
 
+    * Gujarati translation
+      Kartik Mistry <kartik.mistry@gmail.com>
+
     * Latvian
       Raivis Strogonovs <raivucis@gmail.com>
 
