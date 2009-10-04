@@ -5612,6 +5612,7 @@ static void show_usage(FILE * f, char *prg)
 	  "  %s [--sysfonts | --nosysfonts]\n"
 	  "  %s [--nostampcontrols | --stampcontrols]\n"
 	  "  %s [--nomagiccontrols | --magiccontrols]\n"
+          "  %s [--nolabel | --label]\n"
 	  "  %s [--mirrorstamps | --dontmirrorstamps]\n"
 	  "  %s [--stampsize=[0-10] | --stampsize=default]\n"
 	  "  %s [--saveoverask | --saveover | --saveovernew]\n"
@@ -5636,7 +5637,7 @@ static void show_usage(FILE * f, char *prg)
 	  blank, blank, blank, blank,
 	  blank, blank, blank, blank,
 	  blank, blank, blank, blank,
-	  blank, blank, blank,
+	  blank, blank, blank, blank,
 	  blank, blank, blank,
 	  blank, blank, blank, blank, blank, blank, blank, blank, blank,
 #ifdef WIN32
@@ -7000,7 +7001,7 @@ static void setup(int argc, char *argv[])
       }
     else if (strcmp(argv[i], "--label") == 0)
     {
-      disable_label = 1;
+      disable_label = 0;
     }
     else if (strcmp(argv[i], "--noshortcuts") == 0)
     {
@@ -16868,6 +16869,15 @@ static void parse_options(FILE * fi)
 	       strcmp(str, "magiccontrols=yes") == 0)
       {
 	disable_magic_controls = 0;
+      }
+      else if (strcmp(str, "nolabel=yes") == 0)
+      {
+	disable_label = 1;
+      }
+      else if (strcmp(str, "nolabel=no") == 0 ||
+	       strcmp(str, "label=yes") == 0)
+      {
+	disable_label = 0;
       }
       else if (strcmp(str, "mirrorstamps=yes") == 0)
       {

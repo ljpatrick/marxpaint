@@ -9,7 +9,7 @@ Options Documentation
                            bill@newbreedsoftware.com
                             http://www.tuxpaint.org/
 
-                                  July 1, 2009
+                                October 3, 2009
 
      ----------------------------------------------------------------------
 
@@ -356,6 +356,10 @@ Windows Users
                or affecting the entire canvas at once. This option disables
                the controls, and only provides the default functionality
                (usually paint-mode).
+
+       nolabel=yes
+               Disables the Label tool: the tool that allows text entry which
+               can be edited later.
 
        mirrorstamps=yes
 
@@ -742,6 +746,7 @@ Windows Users
          --nostamps
          --nostampcontrols
          --nomagiccontrols
+         --nolabel
          --sysfonts
          --alllocalefonts
          --mirrorstamps
@@ -784,6 +789,7 @@ Windows Users
          --stamps
          --stampcontrols
          --magiccontrols
+         --label
          --nosysfonts
          --currentlocalefont
          --dontmirrorstamps
